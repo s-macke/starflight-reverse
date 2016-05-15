@@ -1,0 +1,195 @@
+// =================================
+// ==== Directory of Star Files ====
+// =================================
+// idx: 0x00 name:'DIRECTORY   ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks: 163 blocksize:  21 lsize:0x00 gap:0x03f800
+// idx: 0x01 name:'INSTANCE    ' fileno: 2  start:0x03f800 end:0x0643f0 size:0x24c00 nblocks:9408 blocksize:  16 lsize:0x00 gap:0xfff9bc10
+// idx: 0x02 name:'IROOT       ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x03 name:'ISYSTEM     ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x04 name:'INACTIVE    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x05 name:'FRAGMENT    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x001000
+// idx: 0x06 name:'ELO-CPIC    ' fileno: 1  start:0x001000 end:0x0022c0 size:0x012d0 nblocks: 301 blocksize:  16 lsize:0x00 gap:0xffffdd40
+// idx: 0x07 name:'IAPPLICATION' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x0022d0
+// idx: 0x08 name:'GAZ-CPIC    ' fileno: 1  start:0x0022d0 end:0x002ef0 size:0x00c30 nblocks: 195 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x09 name:'MEC-CPIC    ' fileno: 1  start:0x002f00 end:0x003a10 size:0x00b20 nblocks: 178 blocksize:  16 lsize:0x00 gap:0xffffc5f0
+// idx: 0x0a name:'BOOT/KERNEL ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:8192 blocksize:  16 lsize:0x00 gap:0x064400
+// idx: 0x0b name:'BOX         ' fileno: 2  start:0x064400 end:0x0647f0 size:0x00400 nblocks:  64 blocksize:  16 lsize:0x08 gap:0xfff9b810
+// idx: 0x0c name:'STARPORT    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x0d name:'BANK        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x09 gap:0x064800
+// idx: 0x0e name:'BANK-TRANS  ' fileno: 2  start:0x064800 end:0x064880 size:0x00090 nblocks:   7 blocksize:  19 lsize:0x06 gap:0xfff9b780
+// idx: 0x0f name:'PERSONNEL   ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x064890
+// idx: 0x10 name:'CREWMEMBER  ' fileno: 2  start:0x064890 end:0x064900 size:0x00080 nblocks:   6 blocksize:  20 lsize:0x18 gap:0xfff9b700
+// idx: 0x11 name:'ASSIGN-CREW ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x18 gap:0x000000
+// idx: 0x12 name:'SHIP-CONFIG ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x13 name:'TRADE-DEPOT ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x14 name:'SHIP        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x4b gap:0x003a20
+// idx: 0x15 name:'MYS-CPIC    ' fileno: 1  start:0x003a20 end:0x0051c0 size:0x017b0 nblocks: 379 blocksize:  16 lsize:0x00 gap:0xffffae40
+// idx: 0x16 name:'TIME        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x04 gap:0x000000
+// idx: 0x17 name:'STARSYSTEM  ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x08 gap:0x000000
+// idx: 0x18 name:'STAR        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x06 gap:0x064910
+// idx: 0x19 name:'VESSEL      ' fileno: 2  start:0x064910 end:0x065090 size:0x00790 nblocks:  26 blocksize:  73 lsize:0x10 gap:0x000010
+// idx: 0x1a name:'ELEMENT     ' fileno: 2  start:0x0650a0 end:0x0652b0 size:0x00220 nblocks:  23 blocksize:  23 lsize:0x06 gap:0xfff9ad50
+// idx: 0x1b name:'MESSAGE     ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x11 gap:0x0652c0
+// idx: 0x1c name:'ARTIFACT    ' fileno: 2  start:0x0652c0 end:0x0658e0 size:0x00630 nblocks:  52 blocksize:  30 lsize:0x06 gap:0xfff9a720
+// idx: 0x1d name:'PROJECTILE  ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x08 gap:0x0051d0
+// idx: 0x1e name:'NOM-CPIC    ' fileno: 1  start:0x0051d0 end:0x005630 size:0x00470 nblocks:  71 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x1f name:'SPE-CPIC    ' fileno: 1  start:0x005640 end:0x005d90 size:0x00760 nblocks: 118 blocksize:  16 lsize:0x00 gap:0x05fb60
+// idx: 0x20 name:'PLANET      ' fileno: 2  start:0x0658f0 end:0x065e30 size:0x00550 nblocks:  61 blocksize:  22 lsize:0x00 gap:0xfff9ff70
+// idx: 0x21 name:'THR-CPIC    ' fileno: 1  start:0x005da0 end:0x006740 size:0x009b0 nblocks: 155 blocksize:  16 lsize:0x00 gap:0xffff98c0
+// idx: 0x22 name:'OPERATIONS  ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x23 name:'NOTICE      ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x01 gap:0x000000
+// idx: 0x24 name:'EVALUATION  ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x19 gap:0x006750
+// idx: 0x25 name:'VEL-CPIC    ' fileno: 1  start:0x006750 end:0x007980 size:0x01240 nblocks: 292 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x26 name:'VPR-CPIC    ' fileno: 1  start:0x007990 end:0x007e60 size:0x004e0 nblocks:  78 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x27 name:'MIN-CPIC    ' fileno: 1  start:0x007e70 end:0x008690 size:0x00830 nblocks: 131 blocksize:  16 lsize:0x00 gap:0x05d7b0
+// idx: 0x28 name:'SPECIMEN    ' fileno: 2  start:0x065e40 end:0x065ff0 size:0x001c0 nblocks:  28 blocksize:  16 lsize:0x0d gap:0xfff9a010
+// idx: 0x29 name:'RUIN        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x07 gap:0x000000
+// idx: 0x2a name:'TVEHICLE    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x07 gap:0x065e40
+// idx: 0x2b name:'BIO-DATA    ' fileno: 0  start:0x065e40 end:0x065ff0 size:0x001c0 nblocks:  28 blocksize:  16 lsize:0x0d gap:0x000010
+// idx: 0x2c name:'TPORT-PIC   ' fileno: 2  start:0x066000 end:0x066960 size:0x00970 nblocks: 151 blocksize:  16 lsize:0x00 gap:0xfff996a0
+// idx: 0x2d name:'FLUX-NODE   ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x08 gap:0x000000
+// idx: 0x2e name:'NEBULA      ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x06 gap:0x000000
+// idx: 0x2f name:'CAPT-LOG    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x24 gap:0x000000
+// idx: 0x30 name:'STRING      ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x066970
+// idx: 0x31 name:'BPORT-PIC   ' fileno: 2  start:0x066970 end:0x0678f0 size:0x00f90 nblocks: 249 blocksize:  16 lsize:0x00 gap:0xfff98710
+// idx: 0x32 name:'PHRASECONTRL' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x06 gap:0x000000
+// idx: 0x33 name:'SUBJECT     ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x34 name:'ORIGINATOR  ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x13 gap:0x000000
+// idx: 0x35 name:'MESSAGE'    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x02 gap:0x0086a0
+// idx: 0x36 name:'SPLASH      ' fileno: 1  start:0x0086a0 end:0x00c690 size:0x04000 nblocks:1024 blocksize:  16 lsize:0x00 gap:0xffff3970
+// idx: 0x37 name:'TEXT        ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x28 gap:0x000000
+// idx: 0x38 name:'SCROLL-TEXT ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x2c gap:0x067900
+// idx: 0x39 name:'ANALYZE-TEXT' fileno: 2  start:0x067900 end:0x068570 size:0x00c80 nblocks:  16 blocksize: 190 lsize:0x00 gap:0x000010
+// idx: 0x3a name:'BUTTONS     ' fileno: 2  start:0x068580 end:0x068920 size:0x003b0 nblocks:  12 blocksize:  73 lsize:0x00 gap:0xfff976e0
+// idx: 0x3b name:'BLT-HEAD    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x12 gap:0x00c6a0
+// idx: 0x3c name:'MED-PIC     ' fileno: 1  start:0x00c6a0 end:0x00ce90 size:0x00800 nblocks: 128 blocksize:  16 lsize:0x00 gap:0xffff3170
+// idx: 0x3d name:'ENCOUNTER   ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x11 gap:0x068930
+// idx: 0x3e name:'ICON1:1     ' fileno: 2  start:0x068930 end:0x068cb0 size:0x00390 nblocks:  50 blocksize:  18 lsize:0x00 gap:0x000010
+// idx: 0x3f name:'ICON1:2     ' fileno: 2  start:0x068cc0 end:0x069040 size:0x00390 nblocks:  50 blocksize:  18 lsize:0x00 gap:0x000010
+// idx: 0x40 name:'ICON1:4     ' fileno: 2  start:0x069050 end:0x0693d0 size:0x00390 nblocks:  50 blocksize:  18 lsize:0x00 gap:0x000010
+// idx: 0x41 name:'ICON-NAME   ' fileno: 2  start:0x0693e0 end:0x0696b0 size:0x002e0 nblocks:  27 blocksize:  27 lsize:0x00 gap:0x000010
+// idx: 0x42 name:'DPART-OV    ' fileno: 2  start:0x0696c0 end:0x069cc0 size:0x00610 nblocks:  97 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x43 name:'REGIONS     ' fileno: 2  start:0x069cd0 end:0x069d70 size:0x000b0 nblocks:   6 blocksize:  28 lsize:0x02 gap:0x000010
+// idx: 0x44 name:'CREATURE    ' fileno: 2  start:0x069d80 end:0x06dff0 size:0x04280 nblocks: 100 blocksize: 156 lsize:0x11 gap:0xfff9f010
+// idx: 0x45 name:'PHAZES      ' fileno: 4  start:0x00d000 end:0x00e7f0 size:0x01800 nblocks: 384 blocksize:  16 lsize:0x00 gap:0x05f810
+// idx: 0x46 name:'CHKFLIGHT-OV' fileno: 2  start:0x06e000 end:0x06e3b0 size:0x003c0 nblocks:  60 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x47 name:'FRACT-OV    ' fileno: 2  start:0x06e3c0 end:0x06f5d0 size:0x01220 nblocks: 290 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x48 name:'ICONP-OV    ' fileno: 2  start:0x06f5e0 end:0x06f910 size:0x00340 nblocks:  52 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x49 name:'SITE-OV     ' fileno: 2  start:0x06f920 end:0x070070 size:0x00760 nblocks: 118 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x4a name:'HYPERMSG-OV ' fileno: 2  start:0x070080 end:0x071080 size:0x01010 nblocks: 257 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x4b name:'GPOLY       ' fileno: 2  start:0x071090 end:0x0711f0 size:0x00170 nblocks:  89 blocksize:   4 lsize:0x00 gap:0x000010
+// idx: 0x4c name:'FACET       ' fileno: 2  start:0x071200 end:0x071310 size:0x00120 nblocks:  72 blocksize:   4 lsize:0x00 gap:0x000010
+// idx: 0x4d name:'VERTEX      ' fileno: 2  start:0x071320 end:0x0714b0 size:0x001a0 nblocks: 134 blocksize:   3 lsize:0x00 gap:0x000010
+// idx: 0x4e name:'BLT-OV      ' fileno: 2  start:0x0714c0 end:0x071810 size:0x00360 nblocks:  54 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x4f name:'MISC-OV     ' fileno: 2  start:0x071820 end:0x071db0 size:0x005a0 nblocks:  90 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x50 name:'BANK-OV     ' fileno: 2  start:0x071dc0 end:0x0723a0 size:0x005f0 nblocks:  95 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x51 name:'ASSCREW-OV  ' fileno: 2  start:0x0723b0 end:0x072e90 size:0x00af0 nblocks: 175 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x52 name:'PERSONNEL-OV' fileno: 2  start:0x072ea0 end:0x073ef0 size:0x01060 nblocks: 262 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x53 name:'SHIPGRPH-OV ' fileno: 2  start:0x073f00 end:0x074730 size:0x00840 nblocks: 132 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x54 name:'CONFIG-OV   ' fileno: 2  start:0x074740 end:0x075330 size:0x00c00 nblocks: 192 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x55 name:'TDEPOT-OV   ' fileno: 2  start:0x075340 end:0x0765f0 size:0x012c0 nblocks: 300 blocksize:  16 lsize:0x00 gap:0xfff89a10
+// idx: 0x56 name:'EDIT-OV     ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x076600
+// idx: 0x57 name:'PORTMENU-OV ' fileno: 2  start:0x076600 end:0x077220 size:0x00c30 nblocks: 195 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x58 name:'VITA-OV     ' fileno: 2  start:0x077230 end:0x078000 size:0x00de0 nblocks: 222 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x59 name:'HP-OV       ' fileno: 2  start:0x078010 end:0x0792e0 size:0x012e0 nblocks: 302 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5a name:'LP-OV       ' fileno: 2  start:0x0792f0 end:0x07a780 size:0x014a0 nblocks: 330 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5b name:'SENT-OV     ' fileno: 2  start:0x07a790 end:0x07ba30 size:0x012b0 nblocks: 299 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5c name:'TV-OV       ' fileno: 2  start:0x07ba40 end:0x07c7c0 size:0x00d90 nblocks: 217 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5d name:'COMM-OV     ' fileno: 2  start:0x07c7d0 end:0x07e400 size:0x01c40 nblocks: 452 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5e name:'COMMSPEC-OV ' fileno: 2  start:0x07e410 end:0x07ef30 size:0x00b30 nblocks: 179 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x5f name:'SEED-OV     ' fileno: 2  start:0x07ef40 end:0x07f890 size:0x00960 nblocks: 150 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x60 name:'LISTICONS   ' fileno: 2  start:0x07f8a0 end:0x07fb60 size:0x002d0 nblocks:  45 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x61 name:'MOVE-OV     ' fileno: 2  start:0x07fb70 end:0x080a40 size:0x00ee0 nblocks: 238 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x62 name:'ENGINEER    ' fileno: 2  start:0x080a50 end:0x081350 size:0x00910 nblocks: 145 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x63 name:'DOCTOR      ' fileno: 2  start:0x081360 end:0x081850 size:0x00500 nblocks:  80 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x64 name:'ORBIT-OV    ' fileno: 2  start:0x081860 end:0x083240 size:0x019f0 nblocks: 415 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x65 name:'CAPTAIN     ' fileno: 2  start:0x083250 end:0x084980 size:0x01740 nblocks: 372 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x66 name:'SCIENCE     ' fileno: 2  start:0x084990 end:0x0858f0 size:0x00f70 nblocks: 247 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x67 name:'NAVIGATR    ' fileno: 2  start:0x085900 end:0x085c60 size:0x00370 nblocks:  55 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x68 name:'SHIPBUTTONS ' fileno: 2  start:0x085c70 end:0x086420 size:0x007c0 nblocks: 124 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x69 name:'*MAP-OV     ' fileno: 2  start:0x086430 end:0x087460 size:0x01040 nblocks: 260 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6a name:'HYPER-OV    ' fileno: 2  start:0x087470 end:0x089060 size:0x01c00 nblocks: 448 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6b name:'ANALYZE-OV  ' fileno: 2  start:0x089070 end:0x089a60 size:0x00a00 nblocks: 160 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6c name:'LAUNCH-OV   ' fileno: 2  start:0x089a70 end:0x089fb0 size:0x00550 nblocks:  85 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6d name:'FLUX-EFFECT ' fileno: 2  start:0x089fc0 end:0x08a180 size:0x001d0 nblocks:  29 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6e name:'OP-OV       ' fileno: 2  start:0x08a190 end:0x08b2b0 size:0x01130 nblocks: 275 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x6f name:'ITEMS-OV    ' fileno: 2  start:0x08b2c0 end:0x08ca30 size:0x01780 nblocks: 376 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x70 name:'LSYSICON    ' fileno: 2  start:0x08ca40 end:0x08cd20 size:0x002f0 nblocks:  47 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x71 name:'MSYSICON    ' fileno: 2  start:0x08cd30 end:0x08cee0 size:0x001c0 nblocks:  28 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x72 name:'SSYSICON    ' fileno: 2  start:0x08cef0 end:0x08cf90 size:0x000b0 nblocks:  11 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x73 name:'BEHAV-OV    ' fileno: 2  start:0x08cfa0 end:0x08e480 size:0x014f0 nblocks: 335 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x74 name:'CMAP        ' fileno: 2  start:0x08e490 end:0x08e870 size:0x003f0 nblocks:  15 blocksize:  64 lsize:0x00 gap:0x000010
+// idx: 0x75 name:'INSTALL     ' fileno: 2  start:0x08e880 end:0x08eb90 size:0x00320 nblocks:  50 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x76 name:'HEAL-OV     ' fileno: 2  start:0x08eba0 end:0x08f060 size:0x004d0 nblocks:  77 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x77 name:'REPAIR-OV   ' fileno: 2  start:0x08f070 end:0x08f700 size:0x006a0 nblocks: 106 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x78 name:'GAME-OV     ' fileno: 2  start:0x08f710 end:0x090e20 size:0x01720 nblocks: 370 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x79 name:'PLSET-OV    ' fileno: 2  start:0x090e30 end:0x091780 size:0x00960 nblocks: 150 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x7a name:'MAPS-OV     ' fileno: 2  start:0x091790 end:0x092040 size:0x008c0 nblocks: 140 blocksize:  16 lsize:0x00 gap:0x0003c0
+// idx: 0x7b name:'VES-BLT     ' fileno: 3  start:0x092400 end:0x0935a0 size:0x011b0 nblocks: 283 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x7c name:'STORM-OV    ' fileno: 2  start:0x0935b0 end:0x093a70 size:0x004d0 nblocks:  77 blocksize:  16 lsize:0x00 gap:0xfff7ad90
+// idx: 0x7d name:'HUM-PIC     ' fileno: 1  start:0x00e800 end:0x00e9d0 size:0x001e0 nblocks:  30 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x7e name:'VEL-PIC     ' fileno: 1  start:0x00e9e0 end:0x00eb80 size:0x001b0 nblocks:  27 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x7f name:'THR-PIC     ' fileno: 1  start:0x00eb90 end:0x00ec90 size:0x00110 nblocks:  17 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x80 name:'ELO-PIC     ' fileno: 1  start:0x00eca0 end:0x00eef0 size:0x00260 nblocks:  38 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x81 name:'AND-PIC     ' fileno: 1  start:0x00ef00 end:0x00f170 size:0x00280 nblocks:  40 blocksize:  16 lsize:0x00 gap:0x084910
+// idx: 0x82 name:'COMPOUNDS   ' fileno: 2  start:0x093a80 end:0x093b20 size:0x000b0 nblocks:  23 blocksize:   7 lsize:0x00 gap:0x000010
+// idx: 0x83 name:'IT-OV       ' fileno: 2  start:0x093b30 end:0x0942b0 size:0x00790 nblocks: 121 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x84 name:'COMBAT-OV   ' fileno: 2  start:0x0942c0 end:0x095ae0 size:0x01830 nblocks: 387 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x85 name:'DAMAGE-OV   ' fileno: 2  start:0x095af0 end:0x0965a0 size:0x00ac0 nblocks: 172 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x86 name:'LAND-OV     ' fileno: 2  start:0x0965b0 end:0x0969e0 size:0x00440 nblocks:  68 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x87 name:'PSTATS      ' fileno: 2  start:0x0969f0 end:0x096a20 size:0x00040 nblocks:   5 blocksize:  11 lsize:0x00 gap:0xfff789e0
+// idx: 0x88 name:'SAVE        ' fileno: 4  start:0x00f400 end:0x02d850 size:0x1e460 nblocks:7750 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x89 name:'MUSIC       ' fileno: 1  start:0x02d860 end:0x02ebb0 size:0x01360 nblocks: 310 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x8a name:'EARTH       ' fileno: 1  start:0x02ebc0 end:0x02f030 size:0x00480 nblocks:  72 blocksize:  16 lsize:0x00 gap:0x067a00
+// idx: 0x8b name:'STP-OV      ' fileno: 2  start:0x096a30 end:0x096fc0 size:0x005a0 nblocks:  90 blocksize:  16 lsize:0x00 gap:0xfff98080
+// idx: 0x8c name:'GALAXY      ' fileno: 1  start:0x02f040 end:0x0308d0 size:0x018a0 nblocks: 394 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x8d name:'CREDITS     ' fileno: 1  start:0x0308e0 end:0x0348d0 size:0x04000 nblocks:1024 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x8e name:'COP-CPIC    ' fileno: 1  start:0x0348e0 end:0x035440 size:0x00b70 nblocks: 183 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x8f name:'FONTS       ' fileno: 1  start:0x035450 end:0x035740 size:0x00300 nblocks:  48 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x90 name:'CGA         ' fileno: 1  start:0x035750 end:0x036550 size:0x00e10 nblocks: 225 blocksize:  16 lsize:0x00 gap:0x000010
+// idx: 0x91 name:'EGA         ' fileno: 1  start:0x036560 end:0x037360 size:0x00e10 nblocks: 225 blocksize:  16 lsize:0x00 gap:0xfffc8ca0
+// idx: 0x92 name:'<unused>    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x93 name:'<unused>    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x94 name:'<unused>    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x95 name:'<unused>    ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x96 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x97 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x98 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x99 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9a name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9b name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9c name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9d name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9e name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0x9f name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0xa0 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0xa1 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x000000
+// idx: 0xa2 name:'            ' fileno: 0  start:0x000000 end:0x000000 size:0x00010 nblocks:   0 blocksize:   0 lsize:0x00 gap:0x020200
+// idx: 0xa3 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa4 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa5 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa6 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa7 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa8 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xa9 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xaa name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xab name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xac name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xad name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xae name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xaf name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb0 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb1 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb2 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb3 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb4 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb5 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb6 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb7 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb8 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xb9 name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xba name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xbb name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xbc name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xbd name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xbe name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0x000000
+// idx: 0xbf name:'            ' fileno:32  start:0x020200 end:0x020200 size:0x00010 nblocks:8224 blocksize:  32 lsize:0x20 gap:0xfffdfe00
