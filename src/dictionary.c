@@ -54,6 +54,253 @@ int FindDictEntry(const char *s)
     return -1;
 }
 
+char* Forth2CString(char *in)
+{
+    static char out[512];
+    memset(out, 0, 512);
+    int n = strlen(in);
+    int j = 0;
+    int i = 0;
+
+    if (in[0] >= '0')
+    if (in[0] <= '9')
+    {
+        out[j++] = '_';
+    }
+
+    for(; i<n; i++)
+    {
+        if ((in[i] >= 'a') && (in[i] <= 'z'))
+        {
+            out[j++] = in[i];
+            continue;
+        }
+        if ((in[i] >= 'A') && (in[i] <= 'Z'))
+        {
+            out[j++] = in[i];
+            continue;
+        }
+        if ((in[i] >= '0') && (in[i] <= '9'))
+        {
+            out[j++] = in[i];
+            continue;
+        }
+        switch(in[i])
+        {
+            case '_':
+                out[j++] = '_';
+                break;
+
+            case '(':
+                out[j++] = '_';
+                out[j++] = 'r';
+                out[j++] = 'o';
+                out[j++] = '_';
+                break;
+
+            case '.':
+                out[j++] = '_';
+                out[j++] = 'd';
+                out[j++] = '_';
+                break;
+
+            case '$':
+                out[j++] = '_';
+                out[j++] = 'd';
+                out[j++] = 'o';
+                out[j++] = '_';
+                break;
+
+            case ')':
+                out[j++] = '_';
+                out[j++] = 'r';
+                out[j++] = 'c';
+                out[j++] = '_';
+                break;
+
+            case '/':
+                out[j++] = '_';
+                out[j++] = 's';
+                out[j++] = 'l';
+                out[j++] = '_';
+                break;
+
+            case '!':
+                out[j++] = '_';
+                out[j++] = 'e';
+                out[j++] = 'x';
+                out[j++] = '_';
+                break;
+
+            case '-':
+                out[j++] = '_';
+                out[j++] = 'm';
+                out[j++] = '_';
+                break;
+
+            case '>':
+                out[j++] = '_';
+                out[j++] = 'g';
+                out[j++] = 't';
+                out[j++] = '_';
+                break;
+
+            case '<':
+                out[j++] = '_';
+                out[j++] = 's';
+                out[j++] = 't';
+                out[j++] = '_';
+                break;
+
+            case '=':
+                out[j++] = '_';
+                out[j++] = 'e';
+                out[j++] = 'q';
+                out[j++] = '_';
+                break;
+
+            case '#':
+                out[j++] = '_';
+                out[j++] = 'n';
+                out[j++] = '_';
+                break;
+
+            case '?':
+                out[j++] = '_';
+                out[j++] = 'q';
+                out[j++] = '_';
+                break;
+
+            case '\'':
+                out[j++] = '_';
+                out[j++] = 'i';
+                out[j++] = '_';
+                break;
+
+            case '+':
+                out[j++] = '_';
+                out[j++] = 'p';
+                out[j++] = '_';
+                break;
+
+            case '%':
+                out[j++] = '_';
+                out[j++] = 'p';
+                out[j++] = 'e';
+                out[j++] = '_';
+                break;
+
+            case '@':
+                out[j++] = '_';
+                out[j++] = 'a';
+                out[j++] = 'd';
+                out[j++] = '_';
+                break;
+
+            case '&':
+                out[j++] = '_';
+                out[j++] = 'a';
+                out[j++] = '_';
+                break;
+
+            case '*':
+                out[j++] = '_';
+                out[j++] = 's';
+                out[j++] = '_';
+                break;
+
+            case ';':
+                out[j++] = '_';
+                out[j++] = 's';
+                out[j++] = 'c';
+                out[j++] = '_';
+                break;
+
+            case '[':
+                out[j++] = '_';
+                out[j++] = 'b';
+                out[j++] = 'o';
+                out[j++] = '_';
+                break;
+
+            case ']':
+                out[j++] = '_';
+                out[j++] = 'b';
+                out[j++] = 'c';
+                out[j++] = '_';
+                break;
+
+            case '{':
+                out[j++] = '_';
+                out[j++] = 'c';
+                out[j++] = 'o';
+                out[j++] = '_';
+                break;
+
+            case '}':
+                out[j++] = '_';
+                out[j++] = 'c';
+                out[j++] = 'c';
+                out[j++] = '_';
+                break;
+
+                case '"':
+                out[j++] = '_';
+                out[j++] = 'q';
+                out[j++] = 'm';
+                out[j++] = '_';
+                break;
+
+            case ',':
+                out[j++] = '_';
+                out[j++] = 'c';
+                out[j++] = 'o';
+                out[j++] = '_';
+                break;
+
+            case ':':
+                out[j++] = '_';
+                out[j++] = 'c';
+                out[j++] = '_';
+                break;
+
+            case '^':
+                out[j++] = '_';
+                out[j++] = 'h';
+                out[j++] = '_';
+                break;
+
+            case '|':
+                out[j++] = '_';
+                out[j++] = 'v';
+                out[j++] = '_';
+                break;
+
+            case '~':
+                out[j++] = '_';
+                out[j++] = 't';
+                out[j++] = '_';
+                break;
+
+            case '\\':
+                out[j++] = '_';
+                out[j++] = 'b';
+                out[j++] = 's';
+                out[j++] = '_';
+                break;
+
+            case 0x7F:
+                break;
+
+            default:
+                printf("sign '%c' (0x%02x) not found\n", in[i], in[i]);
+                exit(1);
+                break;
+        }
+    }
+    return out;
+}
+
 // --------------------------------------------
 
 int AddDirectory(int ofs, unsigned char *mem, int decrypt)
@@ -130,16 +377,13 @@ void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
     for(i=startidx; i<endidx; i++)
     {
         fprintf(fp, "// %4i: %15s", i, dict[i].r);
-
+        fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'", 
+        dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(dict[i].r));
+/*
         fprintf(fp, " bitfield: %i %i %i  codep:0x%04x parp:0x%04x size:0x%04x", 
         (bitfield>>7)&1, (bitfield>>6)&1, (bitfield>>5)&1,
         dict[i].codep, dict[i].parp, dict[i].size);
-
-        if (dict[i].codep == CODECONSTANT)
-        {
-            int varp = (mem[dict[i].parp+1]<<8) | mem[dict[i].parp+0];            
-            fprintf(fp, " = 0x%x", varp);
-        }    
+*/
         fprintf(fp, "\n");
     }
 }
