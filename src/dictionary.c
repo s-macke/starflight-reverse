@@ -25,7 +25,7 @@ char* FindDictPar(unsigned short addr)
     {
         if (dict[i].parp == addr) return dict[i].r;
     }
-    
+
     sprintf(dict[ndict].r, "UNK_0x%04x", addr);
     dict[ndict].codep = Read16(addr-2);
     dict[ndict].parp = addr;
@@ -322,9 +322,9 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt)
         i++;
         if (decrypt)
         {
-            if (length == 1) 
+            if (length == 1)
             {
-                dict[ndict].r[n] = mem[ofs+2+i] & 0x7F;            
+                dict[ndict].r[n] = mem[ofs+2+i] & 0x7F;
             } else
             {
                 dict[ndict].r[n] = (mem[ofs+2+i] ^ 0x7F) & 0x7F;
@@ -335,12 +335,12 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt)
             dict[ndict].r[n] = (mem[ofs+2+i]) & 0x7F;
             mem[ofs+2+i] = ((mem[ofs+2+i])&0x7F) | (mem[ofs+2+i]&0x80); // restore upper bit
         }
-        
+
         n++;
     } while ((mem[ofs+2+i]&128) == 0);
     int varp = ofs + i + 3;
     dict[ndict].codep = (mem[varp+1]<<8) | mem[varp+0];
-    dict[ndict].parp = ofs+5+n;    
+    dict[ndict].parp = ofs+5+n;
     ndict++;
     return linkp - 2;
 }
@@ -349,7 +349,7 @@ void ParseDict(unsigned char *mem, int linkp, int decrypt)
 {
     int i = 0;
     int j = 0;
-   
+
     for(i=0; i<30000; i++)
     {
         for(j=0; j<ndict; j++)
@@ -373,14 +373,14 @@ void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
     fprintf(fp, "\n// =================================\n");
     fprintf(fp, "// =========== DICTIONARY ==========\n");
     fprintf(fp, "// =================================\n");
-    
+
     for(i=startidx; i<endidx; i++)
     {
         fprintf(fp, "// %4i: %15s", i, dict[i].r);
-        fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'", 
+        fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'",
         dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(dict[i].r));
 /*
-        fprintf(fp, " bitfield: %i %i %i  codep:0x%04x parp:0x%04x size:0x%04x", 
+        fprintf(fp, " bitfield: %i %i %i  codep:0x%04x parp:0x%04x size:0x%04x",
         (bitfield>>7)&1, (bitfield>>6)&1, (bitfield>>5)&1,
         dict[i].codep, dict[i].parp, dict[i].size);
 */
@@ -411,7 +411,7 @@ void SortDictionary()
 
 // --------------------------------------------
 
-typedef struct 
+typedef struct
 {
     char str0[200];
     char str[200];
@@ -421,7 +421,7 @@ typedef struct
 
 } LineDesc;
 
-static LineDesc pline[0x10000];    
+static LineDesc pline[0x10000];
 
 int PutEasyMacro(int ofs, char *s)
 {
@@ -440,19 +440,19 @@ int PutEasyMacro(int ofs, char *s)
         sprintf(pline[ofs].str, "Push(2); ", s);
         return 1;
     }
-    return 0; 
+    return 0;
 }
 
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
 {
     static int nlabel = 1;
-    
+
     while(1)
     {
         if (ofs < minaddr) return;
         if (ofs > maxaddr) return;
-        if (pline[ofs].done) return;        
-        
+        if (pline[ofs].done) return;
+
         int par = Read16(ofs);
         int codep = Read16(par);
         pline[ofs+0].done = 1;
@@ -473,12 +473,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             int length = Read8(ofs+2);
             char str[0x100];
             memset(str, 0, 0x100);
-            int ll = 0;            
-            
+            int ll = 0;
+
             if (length >= 128)
             {
                 ofs += 2;
-                sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i\n  ", length);                
+                sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i\n  ", length);
             } else
             {
                 pline[ofs+2].done = 1;
@@ -488,7 +488,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                     str[ll] = Read8(ofs);
                     pline[ofs].done = 1;
                     ofs++;
-                }            
+                }
                 sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i \"%s\"\n  ", length, str);
             }
         } else
@@ -496,22 +496,22 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
         {
             int ofstemp = ofs;
             int length = Read8(ofs+2);
-            
+
             char str[0x100];
             memset(str, 0, 0x100);
-            int ll = 0;            
+            int ll = 0;
 /*
             if ((length == 253) || (length == 141))
             {
                 ofs += 2;
                 sprintf(pline[ofstemp].str, "\n  (.\\\") string %i\n  ", length);
             } else
-*/            
-            
+*/
+
             if (length >= 128)
             {
                 ofs += 2;
-                sprintf(pline[ofstemp].str, "\n  (.\") // string %i\n  ", length);                
+                sprintf(pline[ofstemp].str, "\n  (.\") // string %i\n  ", length);
             } else
             {
                 pline[ofs+2].done = 1;
@@ -521,10 +521,10 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                     str[ll] = Read8(ofs);
                     pline[ofs].done = 1;
                     ofs++;
-                }            
+                }
                 sprintf(pline[ofstemp].str, "\n  (.\") string %i \"%s\"\n  ", length, str);
             }
-            
+
         } else
 #ifdef STARFLT1
           if (par == 0x3f39) // a call, but gets a string as input? , TODO for STARFLIGHT2?
@@ -532,18 +532,18 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             int ofstemp = ofs;
             pline[ofs+2].done = 1;
             int length = Read8(ofs+2);
-            
+
             char str[0x200];
             memset(str, 0, 0x200);
-            int ll = 0;            
-            
+            int ll = 0;
+
             ofs += 3;
             for(ll=0; ll<length; ll++)
             {
                 str[ll] = Read8(ofs);
                 pline[ofs].done = 1;
                 ofs++;
-            }            
+            }
             sprintf(pline[ofstemp].str, "\n  UNK_0x3f39(\"%s\");\n  ", str);
             /*
             sprintf(pline[ofs].str, "\n  dw3f39() string %i\n  ", length);
@@ -606,7 +606,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + 2 + par)&0xFFFF;
-            if (pline[addr].label == 0) 
+            if (pline[addr].label == 0)
             {
                 pline[addr].label = nlabel++;
             }
@@ -620,10 +620,10 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + 2 + par)&0xFFFF;
-            if (pline[addr].label == 0) 
+            if (pline[addr].label == 0)
             {
                 pline[addr].label = nlabel++;
-            }            
+            }
             sprintf(pline[ofs].str, "\n  if (Pop() == 0) goto label%i;\n  ", pline[addr].label);
             ParsePartFunction(addr, l, minaddr, maxaddr);
             ofs += 4;
@@ -715,10 +715,10 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
     for(i=startidx; i<endidx; i++)
     {
         if (dict[i].codep != CODELOADDATA) continue;
-        fprintf(fp, "const unsigned short int %s = { 0x%04x, 0x%04x, addr: 0x%04x } // struct to load data from directory\n", 
-            dict[i].r, 
-            Read16(dict[i].parp+0), 
-            Read16(dict[i].parp+2), 
+        fprintf(fp, "const unsigned short int %s = { 0x%04x, 0x%04x, addr: 0x%04x } // struct to load data from directory\n",
+            dict[i].r,
+            Read16(dict[i].parp+0),
+            Read16(dict[i].parp+2),
             Read16(dict[i].parp+4));
     }
     fprintf(fp, "\n");
@@ -727,8 +727,8 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
 
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
 {
-    int i = 0; 
-   
+    int i = 0;
+
     int dbmode = 0; // bool
     char str[0x10000];
     int nstr = 0;
@@ -767,7 +767,7 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
             str[nstr+0] = 0x20;
             str[nstr+1] = 0x0;
             nstr++;
-            if ((Read8(i) >= 0x20) && (Read8(i) < 128)) 
+            if ((Read8(i) >= 0x20) && (Read8(i) < 128))
             {
                 str[nstr-1] = Read8(i);
                 //fprintf(fp, "'%c' ", Read8(i));
