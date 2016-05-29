@@ -5,22 +5,22 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:      UNK_0xf20b bitfield: 0 0 0  codep:0x744d parp:0xf20b size:0x0003
-// 1704:      UNK_0xf210 bitfield: 0 0 0  codep:0x744d parp:0xf210 size:0x0003
-// 1705:      UNK_0xf215 bitfield: 0 0 0  codep:0x744d parp:0xf215 size:0x0003
-// 1706:      UNK_0xf21a bitfield: 0 0 0  codep:0x73ea parp:0xf21a size:0x0006
-// 1707:      UNK_0xf222 bitfield: 0 0 0  codep:0x73ea parp:0xf222 size:0x0006
-// 1708:      UNK_0xf22a bitfield: 0 0 0  codep:0x224c parp:0xf22a size:0x0008
-// 1709:      UNK_0xf234 bitfield: 0 0 0  codep:0x224c parp:0xf234 size:0x0010
-// 1710:      UNK_0xf246 bitfield: 0 0 0  codep:0x224c parp:0xf246 size:0x0008
-// 1711:      UNK_0xf250 bitfield: 0 0 0  codep:0x224c parp:0xf250 size:0x0020
-// 1712:      UNK_0xf272 bitfield: 0 0 0  codep:0x224c parp:0xf272 size:0x0030
-// 1713:    >DOWN-SHIELD bitfield: 0 0 0  codep:0x224c parp:0xf2b3 size:0x00a4
-// 1714:      UNK_0xf359 bitfield: 0 0 0  codep:0x224c parp:0xf359 size:0x0050
-// 1715:         >DISARM bitfield: 0 0 0  codep:0x224c parp:0xf3b5 size:0x0044
-// 1716:      UNK_0xf3fb bitfield: 0 0 0  codep:0x224c parp:0xf3fb size:0x00bd
-// 1717:     (/(DIS)ARM) bitfield: 0 0 0  codep:0x224c parp:0xf4c8 size:0x0020
-// 1718:   (/(UD)SHIELD) bitfield: 0 0 0  codep:0x224c parp:0xf4fa size:0x0066
+// 1703:      UNK_0xf20b  codep:0x744d parp:0xf20b size:0x0003 C-string:'UNK_0xf20b'
+// 1704:      UNK_0xf210  codep:0x744d parp:0xf210 size:0x0003 C-string:'UNK_0xf210'
+// 1705:      UNK_0xf215  codep:0x744d parp:0xf215 size:0x0003 C-string:'UNK_0xf215'
+// 1706:      UNK_0xf21a  codep:0x73ea parp:0xf21a size:0x0006 C-string:'UNK_0xf21a'
+// 1707:      UNK_0xf222  codep:0x73ea parp:0xf222 size:0x0006 C-string:'UNK_0xf222'
+// 1708:      UNK_0xf22a  codep:0x224c parp:0xf22a size:0x0008 C-string:'UNK_0xf22a'
+// 1709:      UNK_0xf234  codep:0x224c parp:0xf234 size:0x0010 C-string:'UNK_0xf234'
+// 1710:      UNK_0xf246  codep:0x224c parp:0xf246 size:0x0008 C-string:'UNK_0xf246'
+// 1711:      UNK_0xf250  codep:0x224c parp:0xf250 size:0x0020 C-string:'UNK_0xf250'
+// 1712:      UNK_0xf272  codep:0x224c parp:0xf272 size:0x0030 C-string:'UNK_0xf272'
+// 1713:    >DOWN-SHIELD  codep:0x224c parp:0xf2b3 size:0x00a4 C-string:'_gt_DOWN_minus_SHIELD'
+// 1714:      UNK_0xf359  codep:0x224c parp:0xf359 size:0x0050 C-string:'UNK_0xf359'
+// 1715:         >DISARM  codep:0x224c parp:0xf3b5 size:0x0044 C-string:'_gt_DISARM'
+// 1716:      UNK_0xf3fb  codep:0x224c parp:0xf3fb size:0x00bd C-string:'UNK_0xf3fb'
+// 1717:     (/(DIS)ARM)  codep:0x224c parp:0xf4c8 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
+// 1718:   (/(UD)SHIELD)  codep:0x224c parp:0xf4fa size:0x0066 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -29,40 +29,40 @@
 
 
 // 0xf202: db 0x36 0x00 0x4d 0x74 0x14 0x19 0x02 '6 Mt   '
-  
+
 // ================================================
 // 0xf209: WORD 'UNK_0xf20b' codep=0x744d parp=0xf20b
 // ================================================
 // 0xf20b: db 0x14 0x1b 0x02 '   '
-  
+
 // ================================================
 // 0xf20e: WORD 'UNK_0xf210' codep=0x744d parp=0xf210
 // ================================================
 // 0xf210: db 0x14 0x1d 0x02 '   '
-  
+
 // ================================================
 // 0xf213: WORD 'UNK_0xf215' codep=0x744d parp=0xf215
 // ================================================
 // 0xf215: db 0x14 0x45 0x04 ' E '
-  
+
 // ================================================
 // 0xf218: WORD 'UNK_0xf21a' codep=0x73ea parp=0xf21a
 // ================================================
 // 0xf21a: db 0x3a 0x18 0x0c 0x49 0x58 0x68 ':  IXh'
-  
+
 // ================================================
 // 0xf220: WORD 'UNK_0xf222' codep=0x73ea parp=0xf222
 // ================================================
 // 0xf222: db 0x3a 0x24 0x0c 0x49 0x58 0x68 ':$ IXh'
-  
+
 // ================================================
 // 0xf228: WORD 'UNK_0xf22a' codep=0x224c parp=0xf22a
 // ================================================
 
-void UNK_0xf22a()
+void UNK_0xf22a() // UNK_0xf22a
 {
-  Push(0xbdef); MODULE();
-  
+  Push(0xbdef);
+  MODULE(); // MODULE
 }
 
 
@@ -70,11 +70,14 @@ void UNK_0xf22a()
 // 0xf232: WORD 'UNK_0xf234' codep=0x224c parp=0xf234
 // ================================================
 
-void UNK_0xf234()
+void UNK_0xf234() // UNK_0xf234
 {
-  Push(0x003a); pp_FILE# !();
-  Push(cc_3); pp_RECORD# !();
-  
+  Push(0x003a);
+  Push(pp_FILE_n_); // FILE#
+  _ex_(); // !
+  Push(cc__3); // 3
+  Push(pp_RECORD_n_); // RECORD#
+  _ex_(); // !
 }
 
 
@@ -82,11 +85,11 @@ void UNK_0xf234()
 // 0xf244: WORD 'UNK_0xf246' codep=0x224c parp=0xf246
 // ================================================
 
-void UNK_0xf246()
+void UNK_0xf246() // UNK_0xf246
 {
-  SWAP CMOVE();
-  SET-CUR();
-  
+  SWAP(); // SWAP
+  CMOVE(); // CMOVE
+  SET_minus_CUR(); // SET-CUR
 }
 
 
@@ -94,12 +97,18 @@ void UNK_0xf246()
 // 0xf24e: WORD 'UNK_0xf250' codep=0x224c parp=0xf250
 // ================================================
 
-void UNK_0xf250()
+void UNK_0xf250() // UNK_0xf250
 {
-  Push(0x003c); Push(0x03e8); Push(0x000f); Push(cc_3); 2OVER();
-  2OVER();
-  Push(0x003c); Push(0x01f4); Push(cc_5); >SND();
-  
+  Push(0x003c);
+  Push(0x03e8);
+  Push(0x000f);
+  Push(cc__3); // 3
+  _2OVER(); // 2OVER
+  _2OVER(); // 2OVER
+  Push(0x003c);
+  Push(0x01f4);
+  Push(cc__5); // 5
+  _gt_SND(); // >SND
 }
 
 
@@ -107,13 +116,23 @@ void UNK_0xf250()
 // 0xf270: WORD 'UNK_0xf272' codep=0x224c parp=0xf272
 // ================================================
 
-void UNK_0xf272()
+void UNK_0xf272() // UNK_0xf272
 {
-  Push(0x0064); Push(cc_3); Push(0x003c); Push(0x01f4); Push(0x000f); Push(cc_3); 2OVER();
-  2OVER();
-  Push(0x003c); Push(0x03e8); 2OVER();
-  Push(0x003c); Push(0x01f4); Push(cc_8); >SND();
-  
+  Push(0x0064);
+  Push(cc__3); // 3
+  Push(0x003c);
+  Push(0x01f4);
+  Push(0x000f);
+  Push(cc__3); // 3
+  _2OVER(); // 2OVER
+  _2OVER(); // 2OVER
+  Push(0x003c);
+  Push(0x03e8);
+  _2OVER(); // 2OVER
+  Push(0x003c);
+  Push(0x01f4);
+  Push(cc__8); // 8
+  _gt_SND(); // >SND
 }
 
 
@@ -121,34 +140,50 @@ void UNK_0xf272()
 // 0xf2a2: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf2b3
 // ================================================
 
-void >DOWN-SHIELD()
-{
-  pp_?NEB @ 
+void _gt_DOWN_minus_SHIELD()
+{ // >DOWN-SHIELD
+  Push(pp__ask_NEB); // ?NEB
+  _at_(); // @
   if (Pop() == 0) goto label1347;
-  
+
+
   UNK_0x3f39("MAGNETIC DISTURBANCES IN NEBULA");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
+
   UNK_0x3f39("CAUSING ENERGY FLUCTUATIONS");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
+
   label1347:
-  UNK_0xf234();
-  
+  UNK_0xf234(); // UNK_0xf234
+
   UNK_0x3f39("RAISE SHIELD");
-  UNK_0xf21a UNK_0xf246();
-  UNK_0xf215 C@ Push(0x00f7); AND Push(0x0010); OR UNK_0xf215 C!();
-  UNK_0xf250();
-  
+  UNK_0xf21a(); // UNK_0xf21a
+  UNK_0xf246(); // UNK_0xf246
+  UNK_0xf215(); // UNK_0xf215
+  C_at_(); // C@
+  Push(0x00f7);
+  Push(Pop() & Pop()); // AND
+  Push(0x0010);
+  Push(Pop() | Pop()); // OR
+  UNK_0xf215(); // UNK_0xf215
+  C_ex_(); // C!
+  UNK_0xf250(); // UNK_0xf250
+
   UNK_0x3f39("SHIELDS ARE DOWN");
-  .TTY();
-  pp_BTN-REC @ Push(cc_3); = 
+  _dot_TTY(); // .TTY
+  Push(pp_BTN_minus_REC); // BTN-REC
+  _at_(); // @
+  Push(cc__3); // 3
+  _eq_(); // =
   if (Pop() == 0) goto label1348;
-  Push(cc_3); Push(2); .ABTN();
-  
+
+  Push(cc__3); // 3
+  Push(2); // 2
+  _dot_ABTN(); // .ABTN
+
   label1348:
-  pp_?SUP OFF();
-  
+  Push(pp__ask_SUP); // ?SUP
+  OFF(); // OFF
 }
 
 
@@ -156,25 +191,34 @@ void >DOWN-SHIELD()
 // 0xf357: WORD 'UNK_0xf359' codep=0x224c parp=0xf359
 // ================================================
 
-void UNK_0xf359()
+void UNK_0xf359() // UNK_0xf359
 {
-  Push(cc_6); UNK_0xf22a();
-  
+  Push(cc__6); // 6
+  UNK_0xf22a(); // UNK_0xf22a
   if (Pop() == 0) goto label1351;
-  UNK_0xf234();
-  
+
+  UNK_0xf234(); // UNK_0xf234
+
   UNK_0x3f39("DROP SHIELD ");
-  UNK_0xf21a UNK_0xf246();
-  UNK_0xf215 C@ Push(0x0018); OR UNK_0xf215 C!();
-  UNK_0xf250();
-  
+  UNK_0xf21a(); // UNK_0xf21a
+  UNK_0xf246(); // UNK_0xf246
+  UNK_0xf215(); // UNK_0xf215
+  C_at_(); // C@
+  Push(0x0018);
+  Push(Pop() | Pop()); // OR
+  UNK_0xf215(); // UNK_0xf215
+  C_ex_(); // C!
+  UNK_0xf250(); // UNK_0xf250
+
   UNK_0x3f39("SHIELDS ARE NOW UP");
-  .TTY();
-  Push(cc_3); Push(2); .ABTN();
-  pp_?SUP ON();
-  
+  _dot_TTY(); // .TTY
+  Push(cc__3); // 3
+  Push(2); // 2
+  _dot_ABTN(); // .ABTN
+  Push(pp__ask_SUP); // ?SUP
+  ON(); // ON
+
   label1351:
-  
 }
 
 
@@ -182,18 +226,25 @@ void UNK_0xf359()
 // 0xf3a9: WORD '>DISARM' codep=0x224c parp=0xf3b5
 // ================================================
 
-void >DISARM()
+void _gt_DISARM() // >DISARM
 {
-  UNK_0xf234();
-  
+  UNK_0xf234(); // UNK_0xf234
+
   UNK_0x3f39("ARM WEAPON");
-  UNK_0xf222 UNK_0xf246();
-  UNK_0xf215 C@ Push(0x00fc); AND Push(0x0020); OR UNK_0xf215 C!();
-  UNK_0xf272();
-  
+  UNK_0xf222(); // UNK_0xf222
+  UNK_0xf246(); // UNK_0xf246
+  UNK_0xf215(); // UNK_0xf215
+  C_at_(); // C@
+  Push(0x00fc);
+  Push(Pop() & Pop()); // AND
+  Push(0x0020);
+  Push(Pop() | Pop()); // OR
+  UNK_0xf215(); // UNK_0xf215
+  C_ex_(); // C!
+  UNK_0xf272(); // UNK_0xf272
+
   UNK_0x3f39("WEAPONS ARE DISARMED");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
 }
 
 
@@ -201,63 +252,82 @@ void >DISARM()
 // 0xf3f9: WORD 'UNK_0xf3fb' codep=0x224c parp=0xf3fb
 // ================================================
 
-void UNK_0xf3fb()
+void UNK_0xf3fb() // UNK_0xf3fb
 {
-  UNK_0xf210 1+ C@ UNK_0xf20b 1+ C@ 2DUP OR 
+  UNK_0xf210(); // UNK_0xf210
+  Push(Pop()+1); // 1+
+  C_at_(); // C@
+  UNK_0xf20b(); // UNK_0xf20b
+  Push(Pop()+1); // 1+
+  C_at_(); // C@
+  _2DUP(); // 2DUP
+  Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1337;
-  
+
   if (Pop() == 0) goto label1338;
-  Push(cc_4); UNK_0xf22a();
-  
+
+  Push(cc__4); // 4
+  UNK_0xf22a(); // UNK_0xf22a
   goto label1345;
-  
+
   label1338:
-  Push(0); 
+  Push(0); // 0
+
   label1345:
-  DUP 
+  DUP(); // DUP
   if (Pop() == 0) goto label1339;
-  UNK_0xf272();
-  
+
+  UNK_0xf272(); // UNK_0xf272
+
   UNK_0x3f39("ARMING MISSILES");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
+
   label1339:
-  SWAP 
+  SWAP(); // SWAP
   if (Pop() == 0) goto label1340;
-  Push(cc_3); UNK_0xf22a();
-  
+
+  Push(cc__3); // 3
+  UNK_0xf22a(); // UNK_0xf22a
   goto label1344;
-  
+
   label1340:
-  Push(0); 
+  Push(0); // 0
+
   label1344:
-  DUP 
+  DUP(); // DUP
   if (Pop() == 0) goto label1341;
-  UNK_0xf272();
-  
+
+  UNK_0xf272(); // UNK_0xf272
+
   UNK_0x3f39("ARMING LASERS");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
+
   label1341:
-  + 
+  Push(Pop() + Pop()); // +
   if (Pop() == 0) goto label1342;
-  UNK_0xf215 @ Push(0x0023); OR UNK_0xf215 !();
-  UNK_0xf234();
-  
+
+  UNK_0xf215(); // UNK_0xf215
+  _at_(); // @
+  Push(0x0023);
+  Push(Pop() | Pop()); // OR
+  UNK_0xf215(); // UNK_0xf215
+  _ex_(); // !
+  UNK_0xf234(); // UNK_0xf234
+
   UNK_0x3f39("DISARM    ");
-  UNK_0xf222 UNK_0xf246();
-  
+  UNK_0xf222(); // UNK_0xf222
+  UNK_0xf246(); // UNK_0xf246
+
   label1342:
-  
   goto label1343;
-  
+
   label1337:
-  2DROP 
+  Pop(); Pop();// 2DROP
+
   UNK_0x3f39("SHIP IS NOT EQUIPPED WITH WEAPONS");
-  .TTY();
-  
+  _dot_TTY(); // .TTY
+
   label1343:
-  
 }
 
 
@@ -265,23 +335,26 @@ void UNK_0xf3fb()
 // 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8
 // ================================================
 
-void (/(DIS)ARM)()
+void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 {
-  CTINIT();
-  *SHIP >C+S();
-  UNK_0xf215 @ Push(cc_3); AND 
+  CTINIT(); // CTINIT
+  _star_SHIP(); // *SHIP
+  _gt_C_plus_S(); // >C+S
+  UNK_0xf215(); // UNK_0xf215
+  _at_(); // @
+  Push(cc__3); // 3
+  Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1336;
-  >DISARM();
-  
+
+  _gt_DISARM(); // >DISARM
   goto label1346;
-  
+
   label1336:
-  UNK_0xf3fb();
-  
+  UNK_0xf3fb(); // UNK_0xf3fb
+
   label1346:
-  ICLOSE();
-  .SORD();
-  
+  ICLOSE(); // ICLOSE
+  _dot_SORD(); // .SORD
 }
 
 
@@ -289,34 +362,41 @@ void (/(DIS)ARM)()
 // 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa
 // ================================================
 
-void (/(UD)SHIELD)()
+void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
 {
-  CTINIT();
-  *SHIP >C+S();
-  UNK_0xf215 @ Push(cc_8); AND 
+  CTINIT(); // CTINIT
+  _star_SHIP(); // *SHIP
+  _gt_C_plus_S(); // >C+S
+  UNK_0xf215(); // UNK_0xf215
+  _at_(); // @
+  Push(cc__8); // 8
+  Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1349;
-  >DOWN-SHIELD();
-  
+
+  _gt_DOWN_minus_SHIELD(); // >DOWN-SHIELD
   goto label1352;
-  
+
   label1349:
-  pp_?NEB @ pp_10*END 2@ D0=();
-  OR 
+  Push(pp__ask_NEB); // ?NEB
+  _at_(); // @
+  Push(pp__10_star_END); // 10*END
+  _2_at_(); // 2@
+  D0_eq_(); // D0=
+  Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1350;
-  
+
+
   UNK_0x3f39("SHIELDS CAN'T BE RAISED");
-  .TTY();
-  BEEP();
-  
+  _dot_TTY(); // .TTY
+  BEEP(); // BEEP
   goto label1352;
-  
+
   label1350:
-  UNK_0xf359();
-  
+  UNK_0xf359(); // UNK_0xf359
+
   label1352:
-  ICLOSE();
-  .SORD();
-  
+  ICLOSE(); // ICLOSE
+  _dot_SORD(); // .SORD
 }
 
 // 0xf54c: db 0x4e 0x41 0x56 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'NAV-VOC_____________ '

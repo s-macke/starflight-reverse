@@ -5,26 +5,26 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:         .RUNBIT bitfield: 0 0 0  codep:0xf220 parp:0xf220 size:0x00cd
-// 1704:          .PARMS bitfield: 0 0 0  codep:0x224c parp:0xf2f8 size:0x0059
-// 1705:          BRIGHT bitfield: 0 0 0  codep:0x1d29 parp:0xf35c size:0x0002
-// 1706:           2TEMP bitfield: 0 0 0  codep:0x1d29 parp:0xf368 size:0x0002
-// 1707:      .EGARUNBIT bitfield: 0 0 0  codep:0xf379 parp:0xf379 size:0x00e1
-// 1708:         .HYBRID bitfield: 0 0 0  codep:0x224c parp:0xf466 size:0x0094
-// 1709:          PADSEG bitfield: 0 0 0  codep:0x224c parp:0xf505 size:0x0008
-// 1710:        @.HYBRID bitfield: 0 0 0  codep:0x224c parp:0xf51a size:0x000c
-// 1711:           SETUP bitfield: 0 0 0  codep:0x224c parp:0xf530 size:0x0030
+// 1703:         .RUNBIT  codep:0xf220 parp:0xf220 size:0x00cd C-string:'_dot_RUNBIT'
+// 1704:          .PARMS  codep:0x224c parp:0xf2f8 size:0x0059 C-string:'_dot_PARMS'
+// 1705:          BRIGHT  codep:0x1d29 parp:0xf35c size:0x0002 C-string:'BRIGHT'
+// 1706:           2TEMP  codep:0x1d29 parp:0xf368 size:0x0002 C-string:'_2TEMP'
+// 1707:      .EGARUNBIT  codep:0xf379 parp:0xf379 size:0x00e1 C-string:'_dot_EGARUNBIT'
+// 1708:         .HYBRID  codep:0x224c parp:0xf466 size:0x0094 C-string:'_dot_HYBRID'
+// 1709:          PADSEG  codep:0x224c parp:0xf505 size:0x0008 C-string:'PADSEG'
+// 1710:        @.HYBRID  codep:0x224c parp:0xf51a size:0x000c C-string:'_at__dot_HYBRID'
+// 1711:           SETUP  codep:0x224c parp:0xf530 size:0x0030 C-string:'SETUP'
 
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char BRIGHT[2] = {0x2e, 0x52};
-unsigned char 2TEMP[2] = {0x20, 0x2e};
+unsigned char BRIGHT[2] = {0x2e, 0x52}; // BRIGHT
+unsigned char _2TEMP[2] = {0x20, 0x2e}; // 2TEMP
 
 
 
 // 0xf212: db 0x35 0x00 '5 '
-  
+
 // ================================================
 // 0xf214: WORD '.RUNBIT' codep=0xf220 parp=0xf220
 // ================================================
@@ -117,30 +117,42 @@ unsigned char 2TEMP[2] = {0x20, 0x2e};
 // 0xf2ed: WORD '.PARMS' codep=0x224c parp=0xf2f8
 // ================================================
 
-void .PARMS()
+void _dot_PARMS() // .PARMS
 {
-  CR 
-  (.") string 4 "x2= "
-  pp_X2 @ Push(cc_4); .R();
-  
-  (.") string 4 "x1= "
-  pp_X1 @ Push(cc_4); .R();
-  
-  (.") string 3 "st "
-  pp_XSTART @ Push(cc_4); .R();
-  
-  (.") string 3 "en "
-  pp_XEND @ Push(cc_4); .R();
-  
-  (.") string 2 "y "
-  pp_YLINE @ Push(cc_4); .R();
-  KEY();
-  Push(0x000d); = 
+  CR(); // CR
+  PRINT("x2= ", 4); // (.")
+  Push(pp_X2); // X2
+  _at_(); // @
+  Push(cc__4); // 4
+  _dot_R(); // .R
+  PRINT("x1= ", 4); // (.")
+  Push(pp_X1); // X1
+  _at_(); // @
+  Push(cc__4); // 4
+  _dot_R(); // .R
+  PRINT("st ", 3); // (.")
+  Push(pp_XSTART); // XSTART
+  _at_(); // @
+  Push(cc__4); // 4
+  _dot_R(); // .R
+  PRINT("en ", 3); // (.")
+  Push(pp_XEND); // XEND
+  _at_(); // @
+  Push(cc__4); // 4
+  _dot_R(); // .R
+  PRINT("y ", 2); // (.")
+  Push(pp_YLINE); // YLINE
+  _at_(); // @
+  Push(cc__4); // 4
+  _dot_R(); // .R
+  KEY(); // KEY
+  Push(0x000d);
+  _eq_(); // =
   if (Pop() == 0) goto label538;
-  QUIT();
-  
+
+  QUIT(); // QUIT
+
   label538:
-  
 }
 
 
@@ -148,12 +160,12 @@ void .PARMS()
 // 0xf351: WORD 'BRIGHT' codep=0x1d29 parp=0xf35c
 // ================================================
 // 0xf35c: db 0x2e 0x52 '.R'
-  
+
 // ================================================
 // 0xf35e: WORD '2TEMP' codep=0x1d29 parp=0xf368
 // ================================================
 // 0xf368: db 0x20 0x2e ' .'
-  
+
 // ================================================
 // 0xf36a: WORD '.EGARUNBIT' codep=0xf379 parp=0xf379
 // ================================================
@@ -247,38 +259,89 @@ void .PARMS()
 // 0xf45a: WORD '.HYBRID' codep=0x224c parp=0xf466
 // ================================================
 
-void .HYBRID()
+void _dot_HYBRID() // .HYBRID
 {
-  DUP pp_BLTSEG !();
-  >R Push(cc_5); pp_ABLT !();
-  I Push(2); LC@ pp_LBLT !();
-  I Push(cc_3); LC@ pp_WBLT !();
-  R> Push(cc_4); LC@ Push(0); 
+  DUP(); // DUP
+  Push(pp_BLTSEG); // BLTSEG
+  _ex_(); // !
+  _gt_R(); // >R
+  Push(cc__5); // 5
+  Push(pp_ABLT); // ABLT
+  _ex_(); // !
+  I(); // I
+  Push(2); // 2
+  LC_at_(); // LC@
+  Push(pp_LBLT); // LBLT
+  _ex_(); // !
+  I(); // I
+  Push(cc__3); // 3
+  LC_at_(); // LC@
+  Push(pp_WBLT); // WBLT
+  _ex_(); // !
+  R_gt_(); // R>
+  Push(cc__4); // 4
+  LC_at_(); // LC@
+  Push(0); // 0
+
   do // (DO)
   {
-  pp_ABLT @ >R pp_BLTSEG @ >R Push(cc_4); pp_ABLT +!();
-  I I' 2+ LC@ ?>EGA();
-  pp_COLOR !();
-  R> R> Push(cc_3); + LC@ 
+  Push(pp_ABLT); // ABLT
+  _at_(); // @
+  _gt_R(); // >R
+  Push(pp_BLTSEG); // BLTSEG
+  _at_(); // @
+  _gt_R(); // >R
+  Push(cc__4); // 4
+  Push(pp_ABLT); // ABLT
+  _plus__ex_(); // +!
+  I(); // I
+  I_i_(); // I'
+  Push(Pop()+2); // 2+
+  LC_at_(); // LC@
+  _ask__gt_EGA(); // ?>EGA
+  Push(pp_COLOR); // COLOR
+  _ex_(); // !
+  R_gt_(); // R>
+  R_gt_(); // R>
+  Push(cc__3); // 3
+  Push(Pop() + Pop()); // +
+  LC_at_(); // LC@
   if (Pop() == 0) goto label534;
-  pp_BLTSEG @ pp_ABLT @ pp_?EGA @ 
+
+  Push(pp_BLTSEG); // BLTSEG
+  _at_(); // @
+  Push(pp_ABLT); // ABLT
+  _at_(); // @
+  Push(pp__ask_EGA); // ?EGA
+  _at_(); // @
   if (Pop() == 0) goto label535;
-  .EGARUNBIT 
+
+  _dot_EGARUNBIT(); // .EGARUNBIT
   goto label537;
-  
+
   label535:
-  .RUNBIT 
+  _dot_RUNBIT(); // .RUNBIT
+
   label537:
-  
   goto label536;
-  
+
   label534:
-  {BLT} 
+  _co_BLT_cc_(); // {BLT}
+
   label536:
-  pp_BLTSEG @ pp_ABLT @ Push(cc_4); - L@ Push(cc_4); - pp_ABLT +!();
-  
+  Push(pp_BLTSEG); // BLTSEG
+  _at_(); // @
+  Push(pp_ABLT); // ABLT
+  _at_(); // @
+  Push(cc__4); // 4
+  _minus_(); // -
+  L_at_(); // L@
+  Push(cc__4); // 4
+  _minus_(); // -
+  Push(pp_ABLT); // ABLT
+  _plus__ex_(); // +!
+
   } while(...); // (LOOP) 0xff9c
-  
 }
 
 
@@ -286,10 +349,11 @@ void .HYBRID()
 // 0xf4fa: WORD 'PADSEG' codep=0x224c parp=0xf505
 // ================================================
 
-void PADSEG()
+void PADSEG() // PADSEG
 {
-  PAD();
-  ADDR>SEG 1+ 
+  PAD(); // PAD
+  ADDR_gt_SEG(); // ADDR>SEG
+  Push(Pop()+1); // 1+
 }
 
 
@@ -297,13 +361,13 @@ void PADSEG()
 // 0xf50d: WORD '@.HYBRID' codep=0x224c parp=0xf51a
 // ================================================
 
-void @.HYBRID()
+void _at__dot_HYBRID() // @.HYBRID
 {
-  PADSEG();
-  SWAP FILE<();
-  PADSEG();
-  .HYBRID();
-  
+  PADSEG(); // PADSEG
+  SWAP(); // SWAP
+  FILE_st_(); // FILE<
+  PADSEG(); // PADSEG
+  _dot_HYBRID(); // .HYBRID
 }
 
 
@@ -311,17 +375,18 @@ void @.HYBRID()
 // 0xf526: WORD 'SETUP' codep=0x224c parp=0xf530
 // ================================================
 
-void SETUP()
+void SETUP() // SETUP
 {
-  >LORES();
-  >MONO();
-  >A();
-  DARK();
-  Push(0); Push(0x00c7); POS.();
-  NODRIVES();
-  MOUNTA();
-  MOUNTB();
-  
+  _gt_LORES(); // >LORES
+  _gt_MONO(); // >MONO
+  _gt_A(); // >A
+  DARK(); // DARK
+  Push(0); // 0
+  Push(0x00c7);
+  POS_dot_(); // POS.
+  NODRIVES(); // NODRIVES
+  MOUNTA(); // MOUNTA
+  MOUNTB(); // MOUNTB
 }
 
 // 0xf548: db 0x42 0x4c 0x54 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'BLT-VOC_________________ '
