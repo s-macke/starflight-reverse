@@ -101,6 +101,8 @@ char* Forth2CString(char *in)
             case '.':
                 out[j++] = '_';
                 out[j++] = 'd';
+                out[j++] = 'o';
+                out[j++] = 't';
                 out[j++] = '_';
                 break;
 
@@ -122,6 +124,9 @@ char* Forth2CString(char *in)
                 out[j++] = '_';
                 out[j++] = 's';
                 out[j++] = 'l';
+                out[j++] = 'a';
+                out[j++] = 's';
+                out[j++] = 'h';
                 out[j++] = '_';
                 break;
 
@@ -135,6 +140,10 @@ char* Forth2CString(char *in)
             case '-':
                 out[j++] = '_';
                 out[j++] = 'm';
+                out[j++] = 'i';
+                out[j++] = 'n';
+                out[j++] = 'u';
+                out[j++] = 's';
                 out[j++] = '_';
                 break;
 
@@ -167,7 +176,9 @@ char* Forth2CString(char *in)
 
             case '?':
                 out[j++] = '_';
-                out[j++] = 'q';
+                out[j++] = 'a';
+                out[j++] = 's';
+                out[j++] = 'k';
                 out[j++] = '_';
                 break;
 
@@ -180,6 +191,9 @@ char* Forth2CString(char *in)
             case '+':
                 out[j++] = '_';
                 out[j++] = 'p';
+                out[j++] = 'l';
+                out[j++] = 'u';
+                out[j++] = 's';
                 out[j++] = '_';
                 break;
 
@@ -193,19 +207,24 @@ char* Forth2CString(char *in)
             case '@':
                 out[j++] = '_';
                 out[j++] = 'a';
-                out[j++] = 'd';
+                out[j++] = 't';
                 out[j++] = '_';
                 break;
 
             case '&':
                 out[j++] = '_';
                 out[j++] = 'a';
+                out[j++] = 'n';
+                out[j++] = 'd';
                 out[j++] = '_';
                 break;
 
             case '*':
                 out[j++] = '_';
                 out[j++] = 's';
+                out[j++] = 't';
+                out[j++] = 'a';
+                out[j++] = 'r';
                 out[j++] = '_';
                 break;
 
@@ -413,7 +432,8 @@ void SortDictionary()
 
 typedef struct
 {
-    char str0[200];
+    char strasm[200];
+    char strfunc[200];
     char str[200];
     char strword[200];
     int label;
@@ -427,19 +447,115 @@ int PutEasyMacro(int ofs, char *s)
 {
     if (strcmp(s, "0") == 0)
     {
-        sprintf(pline[ofs].str, "Push(0); ", s);
+        sprintf(pline[ofs].str, "  Push(0); // 0\n");
         return 1;
     }
     if (strcmp(s, "1") == 0)
     {
-        sprintf(pline[ofs].str, "Push(1); ", s);
+        sprintf(pline[ofs].str, "  Push(1); // 1\n");
         return 1;
     }
     if (strcmp(s, "2") == 0)
     {
-        sprintf(pline[ofs].str, "Push(2); ", s);
+        sprintf(pline[ofs].str, "  Push(2); // 2\n");
         return 1;
     }
+    if (strcmp(s, "0=") == 0)
+    {
+        sprintf(pline[ofs].str, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
+        return 1;
+    }
+    if (strcmp(s, "OR") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop() | Pop()); // OR\n");
+        return 1;
+    }
+    if (strcmp(s, "AND") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop() & Pop()); // AND\n");
+        return 1;
+    }
+    if (strcmp(s, "XOR") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop() ^ Pop()); // XOR\n");
+        return 1;
+    }
+    if (strcmp(s, "+") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop() + Pop()); // +\n");
+        return 1;
+    }
+    if (strcmp(s, "*") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop() * Pop()); // *\n");
+        return 1;
+    }
+    if (strcmp(s, "NEGATE") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(-Pop()); // NEGATE\n");
+        return 1;
+    }
+    if (strcmp(s, "NOT") == 0)
+    {
+        sprintf(pline[ofs].str, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
+        return 1;
+    }
+    if (strcmp(s, "DROP") == 0)
+    {
+        sprintf(pline[ofs].str, "  Pop(); // DROP\n");
+        return 1;
+    }
+    if (strcmp(s, "2DROP") == 0)
+    {
+        sprintf(pline[ofs].str, "  Pop(); Pop();// 2DROP\n");
+        return 1;
+    }
+    if (strcmp(s, "2*") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()*2); // 2*\n");
+        return 1;
+    }
+    if (strcmp(s, "3+") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()+3); // 3+\n");
+        return 1;
+    }
+    if (strcmp(s, "1+") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()+1); // 1+\n");
+        return 1;
+    }
+    if (strcmp(s, "2+") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()+2); // 2+\n");
+        return 1;
+    }
+    if (strcmp(s, "1-") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()-1); // 1-\n");
+        return 1;
+    }
+    if (strcmp(s, "2-") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()-2); // 2-\n");
+        return 1;
+    }
+    if (strcmp(s, "16/") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()>>4); // 16/\n");
+        return 1;
+    }
+    if (strcmp(s, "2/") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()>>1); // 2/\n");
+        return 1;
+    }
+    if (strcmp(s, "16*") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Pop()<<4); // 16*\n");
+        return 1;
+    }
+
     return 0;
 }
 
@@ -478,7 +594,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             if (length >= 128)
             {
                 ofs += 2;
-                sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i\n  ", length);
+                sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i\n", length);
             } else
             {
                 pline[ofs+2].done = 1;
@@ -489,7 +605,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                     pline[ofs].done = 1;
                     ofs++;
                 }
-                sprintf(pline[ofstemp].str, "\n  (ABORT\") // string %i \"%s\"\n  ", length, str);
+                sprintf(pline[ofstemp].str, "  ABORT(\"%s\", %i);// (ABORT\")\n", str, length);
             }
         } else
         if (strcmp(s, "(.\")") == 0) // print string
@@ -504,14 +620,14 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             if ((length == 253) || (length == 141))
             {
                 ofs += 2;
-                sprintf(pline[ofstemp].str, "\n  (.\\\") string %i\n  ", length);
+                sprintf(pline[ofstemp].str, "\n  (.\\\") string %i\n", length);
             } else
 */
 
             if (length >= 128)
             {
                 ofs += 2;
-                sprintf(pline[ofstemp].str, "\n  (.\") // string %i\n  ", length);
+                sprintf(pline[ofstemp].str, "  (.\") // string %i\n", length);
             } else
             {
                 pline[ofs+2].done = 1;
@@ -522,7 +638,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                     pline[ofs].done = 1;
                     ofs++;
                 }
-                sprintf(pline[ofstemp].str, "\n  (.\") string %i \"%s\"\n  ", length, str);
+                sprintf(pline[ofstemp].str, "  PRINT(\"%s\", %i); // (.\")\n", str, length);
             }
 
         } else
@@ -544,9 +660,9 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                 pline[ofs].done = 1;
                 ofs++;
             }
-            sprintf(pline[ofstemp].str, "\n  UNK_0x3f39(\"%s\");\n  ", str);
+            sprintf(pline[ofstemp].str, "\n  UNK_0x3f39(\"%s\");\n", str);
             /*
-            sprintf(pline[ofs].str, "\n  dw3f39() string %i\n  ", length);
+            sprintf(pline[ofs].str, "\n  dw3f39() string %i\n", length);
             ofs += length;
             */
         } else
@@ -555,25 +671,25 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
         {
             if ((par+2 >= minaddr) && (par+2 <= maxaddr))
             {
-                sprintf(pline[par+2].str0, "\nvoid %s()\n{\n  ", s);
+                sprintf(pline[par+2].strfunc, "\nvoid %s()\n{ // %s\n", Forth2CString(s), s);
                 ParsePartFunction(par+2, l, minaddr, maxaddr);
             }
-            sprintf(pline[ofs].str, "%s();\n  ", s);
+            sprintf(pline[ofs].str, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
         } else
         if (codep == CODEPOINTER) // pointer to variable or table
         {
-            sprintf(pline[ofs].str, "pp_%s ", s);
+            sprintf(pline[ofs].str, "  Push(pp_%s); // %s\n", Forth2CString(s), s); // TODO: check
             ofs += 2;
         } else
         if (codep == CODECONSTANT)
         {
-            sprintf(pline[ofs].str, "Push(cc_%s); ", s);
+            sprintf(pline[ofs].str, "  Push(cc_%s); // %s\n", Forth2CString(s), s); // TODO: check
             ofs += 2;
         } else
         if (codep == CODEDI) // load from fixed table?
         {
-            sprintf(pline[ofs].str, "tt_%s ", s);
+            sprintf(pline[ofs].str, "  Push(tt_%s); // %s\n", Forth2CString(s), s); // TODO: check
             ofs += 2;
         } else
         if (codep == CODELIT) // constant number
@@ -581,7 +697,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             par = Read16(ofs + 2);
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
-            sprintf(pline[ofs].str, "Push(0x%04x); ", par);
+            sprintf(pline[ofs].str, "  Push(0x%04x);\n", par);
             ofs += 4;
         } else
         if (codep == CODE2LIT) // constant number
@@ -591,12 +707,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             pline[ofs+3].done = 1;
             pline[ofs+4].done = 1;
             pline[ofs+5].done = 1;
-            sprintf(pline[ofs].str, "Push(0x%04x); Pust(0x%04x); ", Read16(ofs + 2), Read16(ofs + 4));
+            sprintf(pline[ofs].str, "  Push(0x%04x); Pust(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
             ofs += 6;
         } else
         if (strcmp(s, "EXIT") == 0)
         {
-            sprintf(pline[ofs].str, "\n}\n\n", par);
+            sprintf(pline[ofs].str, "}\n\n", par);
             ofs += 2;
             return;
         } else
@@ -610,7 +726,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             {
                 pline[addr].label = nlabel++;
             }
-            sprintf(pline[ofs].str, "\n  goto label%i;\n  ", pline[addr].label);
+            sprintf(pline[ofs].str, "  goto label%i;\n", pline[addr].label);
             ParsePartFunction(addr, l, minaddr, maxaddr);
             ofs += 4;
         } else
@@ -624,13 +740,13 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             {
                 pline[addr].label = nlabel++;
             }
-            sprintf(pline[ofs].str, "\n  if (Pop() == 0) goto label%i;\n  ", pline[addr].label);
+            sprintf(pline[ofs].str, "  if (Pop() == 0) goto label%i;\n\n", pline[addr].label);
             ParsePartFunction(addr, l, minaddr, maxaddr);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
         {
-            sprintf(pline[ofs].str, "\n  do // (DO)\n  {\n  ", par);
+            sprintf(pline[ofs].str, "\n  do // (DO)\n  {\n", par);
             ofs += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -638,7 +754,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             par = Read16(ofs+2);
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
-            sprintf(pline[ofs].str, "\n  } while(...); // (/LOOP) 0x%04x\n  ", par);
+            sprintf(pline[ofs].str, "\n  } while(...); // (/LOOP) 0x%04x\n", par);
             ofs += 4;
         } else
         if (strcmp(s, "(LOOP)") == 0)
@@ -646,7 +762,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             par = Read16(ofs+2);
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
-            sprintf(pline[ofs].str, "\n  } while(...); // (LOOP) 0x%04x\n  ", par);
+            sprintf(pline[ofs].str, "\n  } while(...); // (LOOP) 0x%04x\n", par);
             ofs += 4;
         } else
         if (strcmp(s, "(+LOOP)") == 0)
@@ -654,13 +770,13 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             par = Read16(ofs+2);
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
-            sprintf(pline[ofs].str, "\n  } while(...); // (+LOOP) 0x%04x\n  ", par);
+            sprintf(pline[ofs].str, "\n  } while(...); // (+LOOP) 0x%04x\n", par);
             ofs += 4;
         } else
         {
             if (!PutEasyMacro(ofs, s))
             {
-                sprintf(pline[ofs].str, "%s ", s);
+                sprintf(pline[ofs].str, "  %s(); // %s\n", Forth2CString(s), s);
             }
             ofs += 2;
         }
@@ -676,7 +792,7 @@ void ParseFunction2(unsigned short parp, int minaddr, int maxaddr)
 {
     char *s = FindDictPar(parp);
 
-    sprintf(pline[parp].str0, "\nvoid %s()\n{\n  ", s);
+    sprintf(pline[parp].strfunc, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
     ParsePartFunction(parp, pline, minaddr, maxaddr);
 
 }
@@ -693,22 +809,22 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
     for(i=startidx; i<endidx; i++)
     {
         if (dict[i].codep != CODEPOINTER) continue;
-        fprintf(fp, "unsigned char %s[%i] = {", dict[i].r, dict[i].size);
+        fprintf(fp, "unsigned char %s[%i] = {", Forth2CString(dict[i].r), dict[i].size);
         for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
         fprintf(fp, "0x%02x", Read8(dict[i].parp+j));
-        fprintf(fp, "};\n");
+        fprintf(fp, "}; // %s\n", dict[i].r);
     }
     fprintf(fp, "\n");
     for(i=startidx; i<endidx; i++)
     {
         if (dict[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x;\n", dict[i].r, Read16(dict[i].parp));
+        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(dict[i].r), Read16(dict[i].parp), dict[i].r);
     }
     fprintf(fp, "\n");
     for(i=startidx; i<endidx; i++)
     {
         if (dict[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int %s = 0x%04x; // accessed via di (in WORD OPERATOR)\n", dict[i].r, Read16(Read16(dict[i].parp)+REGDI));
+        fprintf(fp, "const unsigned short int %s = 0x%04x; // %s // accessed via di (in WORD OPERATOR)\n", Forth2CString(dict[i].r), Read16(Read16(dict[i].parp)+REGDI), dict[i].r);
     }
     fprintf(fp, "\n");
     /*
@@ -734,33 +850,38 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
     int nstr = 0;
     for(i=minaddr; i<=maxaddr; i++)
     {
-        if (pline[i].label)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n  ", str); nstr = 0;}
-            fprintf(fp, "\n  label%i:\n  ", pline[i].label);
-            dbmode = 0;
-        }
         if (pline[i].strword[0] != 0)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n  ", str); nstr = 0;}
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].strword);
             dbmode = 0;
         }
-        if (pline[i].str0[0] != 0)
+        if (pline[i].strfunc[0] != 0)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n  ", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].str0);
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            fprintf(fp, "%s", pline[i].strfunc);
+            dbmode = 0;
+        }
+        if (pline[i].label)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            fprintf(fp, "\n  label%i:\n", pline[i].label);
+            dbmode = 0;
+        }
+        if (pline[i].strasm[0] != 0)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            fprintf(fp, "%s", pline[i].strasm);
             dbmode = 0;
         }
         if (pline[i].str[0] != 0)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n  ", str); nstr = 0;}
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].str);
             dbmode = 0;
         }
         if (!pline[i].done)
         {
-            //fprintf(fp, "// 0x%04x: db 0x%02x\n", i, Read8(i));
             if (!dbmode) fprintf(fp, "// 0x%04x: db ", i);
             dbmode = 1;
             fprintf(fp, "0x%02x ", Read8(i));

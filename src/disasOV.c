@@ -7,7 +7,11 @@
 #include"extract.c"
 #include"disasm/debugger.h"
 
-// TODO: some dicts have the same name. Check and add _1, _2, _3, ...
+// TODO:
+// some dicts might have the same name.
+// Check and add _1, _2, _3, ...
+// Check tt_ cc_ pp_
+//
 
 unsigned char mem[0x10000];
 
@@ -33,7 +37,7 @@ int DisasmRange(int offset, int size, FILE *fp)
         if (offset > 0xFFFF)
         {
             fprintf(fp, "Warning: outside of segment\n");
-            exit(1);
+           exit(1);
         }
         if (pline[offset].done)
         {
@@ -45,7 +49,7 @@ int DisasmRange(int offset, int size, FILE *fp)
         int newoffset = disasm(0x0, (unsigned)offset, mem, buffer);
         int len = newoffset-offset;
         //fprintf(fp, "Disasm done %04x\n", offset);
-        sprintf(pline[currentoffset].str0, "// 0x%04x: %s\n", currentoffset, buffer);
+        sprintf(pline[currentoffset].strasm, "// 0x%04x: %s\n", currentoffset, buffer);
         for(i=0; i<len; i++)
         {
             pline[offset].done = 1;
