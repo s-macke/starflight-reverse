@@ -576,7 +576,6 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
 
         char *s = FindDictPar(par+2);
 
-
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
             sprintf(pline[ofs].str, "\n  %s();\n// inlined assembler code\n", s);
@@ -709,6 +708,21 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             pline[ofs+5].done = 1;
             sprintf(pline[ofs].str, "  Push(0x%04x); Pust(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
             ofs += 6;
+        } else
+        if (codep == CODELOADOVERLAY) // This code loads the overlay
+        {
+            par = Read16(ofs+2);
+            if (par < 0xA000)
+            {
+                sprintf(pline[ofs].str, "  LoadOverlay(\"%s\");\n", s);
+                ofs += 2;
+            } else
+            {
+                sprintf(pline[ofs].str, "  LoadOverlay(\"%s\"); UNK_0x%04x();\n", s, par+2);
+                pline[ofs+2].done = 1;
+                pline[ofs+3].done = 1;
+                ofs += 4;
+            }
         } else
         if (strcmp(s, "EXIT") == 0)
         {
@@ -897,3 +911,4 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
     }
     if (dbmode) fprintf(fp, "'%s'\n  ", str);
 }
+

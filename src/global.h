@@ -30,6 +30,7 @@ extern OVERLAYS overlays[];
     #define REGDI 0x78C // always constant, points to WORD "OPERATOR"
     #define OUTDIR "starflt1-out"
     #define CODELOADDATA 0x73ea // code executed when data is loaded from directory
+    #define CODELOADOVERLAY 0x83F8
 
 #else
     #define CODECALL 0x224c
@@ -51,6 +52,7 @@ extern OVERLAYS overlays[];
     #define REGDI 0x78C // always constant, points to WORD "OPERATOR"
     #define OUTDIR "starflt2-out"
     #define CODELOADDATA 0x7394 // code executed when data is loaded from directory
+    #define CODELOADOVERLAY 0x83DD
 #endif
 
 
