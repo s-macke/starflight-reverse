@@ -555,6 +555,11 @@ int PutEasyMacro(int ofs, char *s)
         sprintf(pline[ofs].str, "  Push(Pop()<<4); // 16*\n");
         return 1;
     }
+    if (strcmp(s, "@") == 0)
+    {
+        sprintf(pline[ofs].str, "  Push(Read16(Pop())); // @\n");
+        return 1;
+    }
 
     return 0;
 }

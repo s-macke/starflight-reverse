@@ -82,13 +82,15 @@ int DisasmRange(int offset, int size, FILE *fp)
 
 // ---------------------------------
 
-void LoadOverlay(int id, FILE *fp)
+void LoadOverlay(int id, FILE *fp, char *name)
 {
     int i, j;
     unsigned char *buf;
     // first two byte contain offset in file and then two bytes with size of overlay
     
-    //fprintf(fp, "\n// ==== %s ====\n", dir[id].name);
+    fprintf(fp, "// ====== OVERLAY '%s' ======\n", name);
+    fprintf(fp, "\n#include\"interface.h\"\n\n");
+
     int size = 0;
     buf = Extract(id, &size);
     
@@ -99,7 +101,7 @@ void LoadOverlay(int id, FILE *fp)
     fprintf(fp, "// overlay size   = 0x%04x\n", ovlsize);    
     memcpy(&mem[storeofs], buf, ovlsize);
     int namep = (buf[0x6] | (buf[0x7]<<8));
-    fprintf(fp, "// name = '%s'\n", &mem[namep]);
+    //fprintf(fp, "// name = '%s'\n", &mem[namep]);
     int ndictstart = ndict;
     for(i=0; i<8; i+=2)
     {
@@ -238,7 +240,7 @@ int main()
         printf("Generate %s\n", filename);
         fp = fopen(filename, "w");
         ndict = ndictstart;
-        LoadOverlay(overlays[i].id, fp);
+        LoadOverlay(overlays[i].id, fp, overlays[i].name);
         fclose(fp);
     }
 
