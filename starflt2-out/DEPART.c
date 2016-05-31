@@ -1,6 +1,9 @@
+// ====== OVERLAY 'DEPART' ======
+
+#include"interface.h"
+
 // store offset = 0xf390
 // overlay size   = 0x01d0
-// name = 'DPART-VOC______'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -156,7 +159,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_EDL); // EDL
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf4b7(); // UNK_0xf4b7
   C_at_(); // C@
   _minus_(); // -
@@ -206,7 +209,7 @@ void DEPART() // DEPART
   Push(pp__i_THROW_minus_); // 'THROW-
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label473;
 
   UNK_0xf447(); // UNK_0xf447

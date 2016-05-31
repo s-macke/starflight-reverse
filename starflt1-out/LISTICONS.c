@@ -1,6 +1,9 @@
+// ====== OVERLAY 'LISTICONS' ======
+
+#include"interface.h"
+
 // store offset = 0xf290
 // overlay size   = 0x02d0
-// name = 'ICON-VOC________________________VERLAY -----------(rfg11sep85)e1636S®õú'
 
 // =================================
 // =========== DICTIONARY ==========

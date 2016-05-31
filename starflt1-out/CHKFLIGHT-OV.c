@@ -1,6 +1,9 @@
+// ====== OVERLAY 'CHKFLIGHT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf1a0
 // overlay size   = 0x03c0
-// name = 'CHKFLT-VOC______________________or CHKFLIGHT-OV -'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -86,7 +89,7 @@ void UNK_0xf1c5() // UNK_0xf1c5
   POS_dot_(); // POS.
   PRINT("PRE", 3); // (.")
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x00c0);
   OVER(); // OVER
   Push(Pop()+2); // 2+
@@ -115,7 +118,7 @@ void UNK_0xf258() // UNK_0xf258
 {
   Push(cc__6); // 6
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0014);
   _minus_(); // -
   Push(0x00aa);
@@ -176,7 +179,7 @@ void UNK_0xf32b() // UNK_0xf32b
   UNK_0xf258(); // UNK_0xf258
   PRINT("TO ", 3); // (.")
   Push(pp_UNK_0xf327); // UNK_0xf327
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
@@ -259,7 +262,7 @@ void UNK_0xf3ad() // UNK_0xf3ad
 void UNK_0xf40a() // UNK_0xf40a
 {
   Push(pp__ask_EVAL); // ?EVAL
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label439;
@@ -288,11 +291,11 @@ void UNK_0xf40a() // UNK_0xf40a
 
   label439:
   Push(pp__ask_TV); // ?TV
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
   Push(pp__ask_RECALL); // ?RECALL
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
 }
 
@@ -316,7 +319,7 @@ void UNK_0xf450() // UNK_0xf450
   I(); // I
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf1b6(); // UNK_0xf1b6
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -378,7 +381,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   if (Pop() == 0) goto label443;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x000a);
   M_star_(); // M*

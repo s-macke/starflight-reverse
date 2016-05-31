@@ -1,6 +1,9 @@
+// ====== OVERLAY 'STORM-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf090
 // overlay size   = 0x04d0
-// name = 'STORM-VOC_______________________RAGE FOR FUNCTION] ï*³àITEMS1672______________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -185,7 +188,7 @@ void UNK_0xf298() // UNK_0xf298
 void UNK_0xf2b2() // UNK_0xf2b2
 {
   Push(pp__n_STORM); // #STORM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__6); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
@@ -213,7 +216,7 @@ void UNK_0xf2da() // UNK_0xf2da
 {
   Push(1); // 1
   Push(pp_E_slash_M); // E/M
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
   _3_star_(); // 3*
   Push(2); // 2
@@ -249,24 +252,24 @@ void UNK_0xf2f4() // UNK_0xf2f4
 void UNK_0xf30e() // UNK_0xf30e
 {
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WBOTTOM); // WBOTTOM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(pp_WRIGHT); // WRIGHT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   BLACK(); // BLACK
   POLY_minus_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   POS_dot_(); // POS.
 }
@@ -317,11 +320,11 @@ void INJURE_minus_PL() // INJURE-PL
   Push(1); // 1
   MAX(); // MAX
   Push(pp_E_slash_M); // E/M
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _3_star_(); // 3*
   ABS(); // ABS
   Push(pp__pe_EFF); // %EFF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
@@ -357,7 +360,7 @@ void INJURE_minus_PL() // INJURE-PL
 void UNK_0xf3e2() // UNK_0xf3e2
 {
   Push(pp_STORM); // STORM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   UNK_0xf275(); // UNK_0xf275
   Push(Pop() | Pop()); // OR
@@ -369,7 +372,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x00c1);
   Push(0x0044);
   Push(pp_LCOLOR); // LCOLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   POLY_minus_WI(); // POLY-WI
   Push(0x0074);
   Push(0x0096);
@@ -395,7 +398,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf42e() // UNK_0xf42e
 {
   Push(pp__n_STORM); // #STORM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(cc__3); // 3
   _gt_(); // >
@@ -487,7 +490,7 @@ void UNK_0xf4a8() // UNK_0xf4a8
 void _ro_DO_dot_STORM() // (DO.STORM
 {
   Push(pp__n_STORM); // #STORM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
@@ -507,7 +510,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   UNK_0xf42e(); // UNK_0xf42e
   R_gt_(); // R>
   Push(pp__n_STORM); // #STORM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1796;

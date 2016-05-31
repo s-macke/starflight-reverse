@@ -1,6 +1,9 @@
+// ====== OVERLAY 'MISC-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xee30
 // overlay size   = 0x0730
-// name = 'MISC-_____________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -183,7 +186,7 @@ void UNK_0xef6e() // UNK_0xef6e
   IOPEN(); // IOPEN
   CTINIT(); // CTINIT
   Push(pp__i__dot_HUFF); // '.HUFF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
@@ -221,7 +224,7 @@ void UNK_0xefae() // UNK_0xefae
 {
   UNK_0xefa6(); // UNK_0xefa6
   SCNT(); // SCNT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0dac);
   _gt_(); // >
   if (Pop() == 0) goto label622;
@@ -312,10 +315,10 @@ void UNK_0xf042() // UNK_0xf042
   if (Pop() == 0) goto label635;
 
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   L_at_PIXEL(); // L@PIXEL
   Push(0xfffc);
   Push(pp_XBLT); // XBLT
@@ -393,12 +396,12 @@ void UNK_0xf09a() // UNK_0xf09a
 void UNK_0xf0c0() // UNK_0xf0c0
 {
   Push(pp__minus_AIN); // -AIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label629;
 
   DUP(); // DUP
   Push(pp__minus_AIN); // -AIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   SWAP(); // SWAP
   Push(0x0030);
@@ -575,7 +578,7 @@ void _ro__ask_ART() // (?ART
 void UNK_0xf208() // UNK_0xf208
 {
   Push(pp_UNK_0xee46); // UNK_0xee46
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0); // 0
   Push(cc__4); // 4
@@ -762,7 +765,7 @@ void UNK_0xf35b() // UNK_0xf35b
   RRND(); // RRND
   _gt_(); // >
   Push(pp_UNK_0xee46); // UNK_0xee46
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label623;
 
@@ -889,7 +892,7 @@ void _eq_CARG() // =CARG
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xef20(); // UNK_0xef20
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
@@ -931,7 +934,7 @@ void _eq_CARG() // =CARG
   if (Pop() == 0) goto label611;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
   Push(pp__10_star_END); // 10*END
@@ -939,7 +942,7 @@ void _eq_CARG() // =CARG
 
   label611:
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   NULL(); // NULL
   INST_minus_X(); // INST-X

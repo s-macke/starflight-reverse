@@ -1,6 +1,9 @@
+// ====== OVERLAY 'ENGINEER' ======
+
+#include"interface.h"
+
 // store offset = 0xeca0
 // overlay size   = 0x08c0
-// name = 'ENG-VOC____________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -202,7 +205,7 @@ void UNK_0xedac() // UNK_0xedac
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1034;
 
   BLT(); // BLT
@@ -210,13 +213,13 @@ void UNK_0xedac() // UNK_0xedac
   label1034:
   Push(0x0072);
   Push(pp_WBLT); // WBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex_(); // !
   Push(0x0028);
   Push(pp_WBLT); // WBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
   Push(pp_WBLT); // WBLT
   _ex_(); // !
@@ -226,7 +229,7 @@ void UNK_0xedac() // UNK_0xedac
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1035;
 
   BLT(); // BLT
@@ -756,7 +759,7 @@ void UNK_0xf31e() // UNK_0xf31e
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _dot_SHIP_minus_ITEM(); // .SHIP-ITEM
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
@@ -916,7 +919,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   Push(pp_NCRS); // NCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   _minus_(); // -
   Push(cc__7); // 7
@@ -931,19 +934,19 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label1059;
 
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415
   Push(pp_NCRS); // NCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   UNK_0xf415(); // UNK_0xf415
   UNK_0xf255(); // UNK_0xf255
 
   label1059:
   Push(pp_FTRIG); // FTRIG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   UNK_0xecc0(); // UNK_0xecc0
   Push(Pop() + Pop()); // +
@@ -960,7 +963,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label1060;
 
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf281(); // UNK_0xf281
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1060;
@@ -972,7 +975,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _gt_R(); // >R
   I(); // I
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label1068;
 
@@ -988,7 +991,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   I(); // I
   UNK_0xf38a(); // UNK_0xf38a
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   CTCR(); // CTCR
   UNK_0xf3f1(); // UNK_0xf3f1
   goto label1070;
@@ -1005,7 +1008,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   label1067:
   CTERASE(); // CTERASE
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
 
   label1060:
@@ -1013,7 +1016,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label1061;
 
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415
   ICLOSE(); // ICLOSE
 }

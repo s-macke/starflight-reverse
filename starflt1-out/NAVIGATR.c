@@ -1,6 +1,9 @@
+// ====== OVERLAY 'NAVIGATR' ======
+
+#include"interface.h"
+
 // store offset = 0xf1f0
 // overlay size   = 0x0370
-// name = 'NAV-VOC_____________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -143,7 +146,7 @@ void UNK_0xf272() // UNK_0xf272
 void _gt_DOWN_minus_SHIELD()
 { // >DOWN-SHIELD
   Push(pp__ask_NEB); // ?NEB
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1347;
 
 
@@ -172,7 +175,7 @@ void _gt_DOWN_minus_SHIELD()
   UNK_0x3f39("SHIELDS ARE DOWN");
   _dot_TTY(); // .TTY
   Push(pp_BTN_minus_REC); // BTN-REC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1348;
@@ -307,7 +310,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   if (Pop() == 0) goto label1342;
 
   UNK_0xf215(); // UNK_0xf215
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
   UNK_0xf215(); // UNK_0xf215
@@ -341,7 +344,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xf215(); // UNK_0xf215
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1336;
@@ -368,7 +371,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xf215(); // UNK_0xf215
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1349;
@@ -378,7 +381,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
 
   label1349:
   Push(pp__ask_NEB); // ?NEB
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=

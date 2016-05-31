@@ -1,6 +1,9 @@
+// ====== OVERLAY 'MOVE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xea20
 // overlay size   = 0x0b40
-// name = 'MOVE-VOC_____'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -139,9 +142,9 @@ void UNK_0xea76() // UNK_0xea76
 void UNK_0xeadb() // UNK_0xeadb
 {
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 // 0xeae5: db 0x4c 0x22 0x34 0xea 0xd9 0xea 0xdf 0x79 0x90 0x16 'L"4    y  '
@@ -166,9 +169,9 @@ void UNK_0xeaf1() // UNK_0xeaf1
 void UNK_0xeafd() // UNK_0xeafd
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -197,15 +200,15 @@ void UNK_0xeb23() // UNK_0xeb23
   Push(0x6a82);
   SETLARR(); // SETLARR
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_XCON); // XCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _minus_(); // -
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YCON); // YCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
 }
 
@@ -475,7 +478,7 @@ void _dot_ENERGY() // .ENERGY
 void UNK_0xed2a() // UNK_0xed2a
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x000c);
   MOD(); // MOD
@@ -485,7 +488,7 @@ void UNK_0xed2a() // UNK_0xed2a
   Push(pp_XCON); // XCON
   _ex_(); // !
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x0014);
   MOD(); // MOD
@@ -499,13 +502,13 @@ void UNK_0xed2a() // UNK_0xed2a
   Push(pp_DYCON); // DYCON
   _099(); // 099
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0012);
   _minus_(); // -
   Push(pp_XVIS); // XVIS
   _ex_(); // !
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x001e);
   _minus_(); // -
   Push(pp_YVIS); // YVIS
@@ -562,9 +565,9 @@ void UNK_0xedc8() // UNK_0xedc8
 {
   UNK_0xea36(); // UNK_0xea36
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xeaf1(); // UNK_0xeaf1
   ICLOSE(); // ICLOSE
 }
@@ -817,9 +820,9 @@ void UNK_0xef79() // UNK_0xef79
 void UNK_0xef99() // UNK_0xef99
 {
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
 
@@ -992,7 +995,7 @@ void UNK_0xf095() // UNK_0xf095
 void UNK_0xf0b9() // UNK_0xf0b9
 {
   Push(pp_MOVED); // MOVED
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -1123,7 +1126,7 @@ void UNK_0xf20b() // UNK_0xf20b
 void UNK_0xf25f() // UNK_0xf25f
 {
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1010;
 
   BEEPON(); // BEEPON
@@ -1162,10 +1165,10 @@ void UNK_0xf30d() // UNK_0xf30d
   Push(0xb78d);
   MODULE(); // MODULE
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   Push(pp_NOF); // NOF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1005;
@@ -1205,7 +1208,7 @@ void UNK_0xf30d() // UNK_0xf30d
 
   label1005:
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1006;
 
   _gt_TVCT(); // >TVCT
@@ -1360,7 +1363,7 @@ void UNK_0xf30d() // UNK_0xf30d
 void TELE() // TELE
 {
   Push(pp__i_KEY_minus_CA); // 'KEY-CA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0xf499);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT

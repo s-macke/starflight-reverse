@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SEED-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xec10
 // overlay size   = 0x0950
-// name = 'SEED___'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -324,7 +327,7 @@ void UNK_0xed46() // UNK_0xed46
 void UNK_0xed52() // UNK_0xed52
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0012);
   _slash_(); // /
   Push(0x0012);
@@ -343,7 +346,7 @@ void UNK_0xed52() // UNK_0xed52
 void UNK_0xed70() // UNK_0xed70
 {
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x001e);
   _slash_(); // /
   Push(0x001e);
@@ -374,9 +377,9 @@ void UNK_0xed8e() // UNK_0xed8e
 void UNK_0xedae() // UNK_0xedae
 {
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -403,7 +406,7 @@ void UNK_0xedc6() // UNK_0xedc6
   _ask_INVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_MOVED); // MOVED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
 }
@@ -419,12 +422,12 @@ void UNK_0xedd8() // UNK_0xedd8
   SETLARR(); // SETLARR
   SWAP(); // SWAP
   Push(pp_XCON); // XCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _minus_(); // -
   SWAP(); // SWAP
   Push(pp_YCON); // YCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _minus_(); // -
 }
@@ -540,7 +543,7 @@ void UNK_0xeec0() // UNK_0xeec0
   _gt_R(); // >R
   UNK_0xedf6(); // UNK_0xedf6
   Push(pp_MOVED); // MOVED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   R_gt_(); // R>
@@ -795,7 +798,7 @@ void UNK_0xf016() // UNK_0xf016
 void UNK_0xf02a() // UNK_0xf02a
 {
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label938;
 
   Push(cc__minus_1); // -1
@@ -803,7 +806,7 @@ void UNK_0xf02a() // UNK_0xf02a
 
   label938:
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
 
   label939:
   INST_minus_DA(); // INST-DA
@@ -886,7 +889,7 @@ void UNK_0xf0b2() // UNK_0xf0b2
 {
   Push(0); // 0
   Push(pp_UNK_0xec46); // UNK_0xec46
-  _at_(); // @
+  Push(Read16(Pop())); // @
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label948;
@@ -1241,7 +1244,7 @@ void UNK_0xf2a2() // UNK_0xf2a2
   if (Pop() == 0) goto label929;
 
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   goto label930;
 
   label929:
@@ -1262,7 +1265,7 @@ void UNK_0xf2bc() // UNK_0xf2bc
   if (Pop() == 0) goto label953;
 
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
 
@@ -1535,7 +1538,7 @@ void UNK_0xf3fa() // UNK_0xf3fa
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
 }
@@ -1667,7 +1670,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_UNK_0xec42); // UNK_0xec42
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label997;
 
@@ -1717,7 +1720,7 @@ void UNK_0xf506() // UNK_0xf506
   D_plus_(); // D+
   D_st_(); // D<
   Push(pp__ask_CRITIC); // ?CRITIC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -1750,7 +1753,7 @@ void POPULA() // POPULA
   label1001:
   UNK_0xf0da(); // UNK_0xf0da
   Push(pp_PLHI); // PLHI
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label955;
 
   UNK_0xefd4(); // UNK_0xefd4

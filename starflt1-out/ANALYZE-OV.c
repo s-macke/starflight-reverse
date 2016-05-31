@@ -1,6 +1,9 @@
+// ====== OVERLAY 'ANALYZE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xeb60
 // overlay size   = 0x0a00
-// name = 'AN-VOC__________________________rlay Suffix-------------9/10/85)1155DOCTOR-----------'
 
 // =================================
 // =========== DICTIONARY ==========

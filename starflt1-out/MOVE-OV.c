@@ -1,6 +1,9 @@
+// ====== OVERLAY 'MOVE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe680
 // overlay size   = 0x0ee0
-// name = 'MOVE-VOC________________________NT OVERLAY -------( rfg28apr86)¶1225î¶O…'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -65,16 +68,16 @@ void UNK_0xe6c6() // UNK_0xe6c6
 void UNK_0xe6e0() // UNK_0xe6e0
 {
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WBOTTOM); // WBOTTOM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(pp_WRIGHT); // WRIGHT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   BLACK(); // BLACK
   POLY_minus_WI(); // POLY-WI
@@ -93,10 +96,10 @@ void UNK_0xe702() // UNK_0xe702
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   POS_dot_(); // POS.
 }
@@ -110,9 +113,9 @@ void UNK_0xe702() // UNK_0xe702
 void UNK_0xe794() // UNK_0xe794
 {
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 // 0xe79e: db 0x4c 0x22 0x6d 0x62 0x02 0x7a 0x92 0xe7 0xc9 0x79 0x90 0x16 'L"mb z   y  '
@@ -137,9 +140,9 @@ void UNK_0xe7ac() // UNK_0xe7ac
 void UNK_0xe7b8() // UNK_0xe7b8
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 // 0xe7c2: db 0x4d 0x74 0x11 0x17 0x03 0x4d 0x74 0x10 0x1b 0x01 0x4c 0x22 0xb4 0x51 0xf2 0x79 0xc2 0xe7 0x02 0x7a 0xc7 0xe7 0x92 0x0c 0x91 0x75 0xc9 0x79 0x5d 0x17 0xc7 0x00 0x2d 0x12 0x90 0x16 0x4c 0x22 0xb4 0x0d 0x5d 0x17 0xc5 0x00 0x5d 0x17 0x0c 0x00 0x5d 0x17 0xc1 0x00 0x5d 0x17 0x44 0x00 0x90 0x0e 0xee 0xa0 0x90 0x16 0x4c 0x22 0xf2 0x5a 0xae 0x0b 0x41 0x0e 0x7b 0x3b 0x46 0x12 0xf2 0x0e 0x5d 0x17 0x0b 0x00 0x2d 0x12 0x3e 0x13 0xcc 0xe7 0x3e 0x13 0xfa 0x15 0x3e 0x00 0xb6 0x4f 0x17 0x85 0x9e 0xe7 0x22 0xe7 0x5d 0x17 0x10 0x00 0x5d 0x17 0xc5 0x00 0x2b 0xa0 0x41 0x0e 0x41 0x0e 0x78 0x12 0xfa 0x15 0x04 0x00 0xc6 0x11 0x7b 0x3b 0xe1 0x27 0x6e 0xe7 0xdc 0x1b 0x03 0x20 0x2a 0x20 0x41 0x0e 0x41 0x0e 0x78 0x12 0xfa 0x15 0x04 0x00 0xc6 0x11 0x20 0x0f 0xe1 0x27 0x4a 0xe7 0x90 0x16 'Mt   Mt   L" Q y   z     u y]   -   L"  ]   ]   ]   ] D       L" Z  A {;F   ]   - >   >   >  O    " ]   ]   + A A x       {; 'n     * A A x          'J   '
@@ -153,15 +156,15 @@ void UNK_0xe85e() // UNK_0xe85e
   Push(0x6ac1);
   SETLARR(); // SETLARR
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_XCON); // XCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _minus_(); // -
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YCON); // YCON
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
 }
 
@@ -454,9 +457,9 @@ void UNK_0xed14() // UNK_0xed14
 void UNK_0xed34() // UNK_0xed34
 {
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
 
@@ -650,7 +653,7 @@ void _ask_POPULA() // ?POPULA
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
   Push(pp_MOVED); // MOVED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1122;
 
   UNK_0xe702(); // UNK_0xe702
@@ -663,7 +666,7 @@ void _ask_POPULA() // ?POPULA
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(pp_MOVED); // MOVED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1123;
 
   UNK_0xe6e0(); // UNK_0xe6e0
@@ -724,7 +727,7 @@ void APPROACH() // APPROACH
 
   label1104:
   UNK_0xf417(); // UNK_0xf417
-  _at_(); // @
+  Push(Read16(Pop())); // @
 
   label1105:
   DUP(); // DUP
@@ -737,7 +740,7 @@ void APPROACH() // APPROACH
   Push(0xc4a2);
   MODULE(); // MODULE
   Push(pp__n_CLRMAP); // #CLRMAP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   SWAP(); // SWAP
   Push(0xc380);
   MODULE(); // MODULE

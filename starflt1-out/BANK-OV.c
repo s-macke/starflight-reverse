@@ -1,6 +1,9 @@
+// ====== OVERLAY 'BANK-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xef70
 // overlay size   = 0x05f0
-// name = 'BANK-VOC________________________for BANK--------------'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -241,7 +244,7 @@ void TRANSACT() // TRANSACT
   COVER(); // COVER
   SET_minus_CUR(); // SET-CUR
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xefa4(); // UNK_0xefa4
   _2_at_(); // 2@
   UNK_0xefa9(); // UNK_0xefa9
@@ -282,9 +285,9 @@ void INT_pe_() // INT%
   Push(0x0064);
   M_star__slash_(); // M*/
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
   Push(0x012c);
   M_star__slash_(); // M*/
@@ -303,7 +306,7 @@ void INT_pe_() // INT%
   Push(cc__5); // 5
   TRANSACT(); // TRANSACT
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   _ex_(); // !
 
@@ -326,7 +329,7 @@ void UNK_0xf128() // UNK_0xf128
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
   Push(pp_WBLT); // WBLT
   _ex_(); // !
@@ -350,7 +353,7 @@ void UNK_0xf128() // UNK_0xf128
 void UNK_0xf152() // UNK_0xf152
 {
   UNK_0xefc0(); // UNK_0xefc0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
   Push(0x120c);

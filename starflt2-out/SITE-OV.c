@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SITE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf140
 // overlay size   = 0x0420
-// name = 'SITE-'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -161,7 +164,7 @@ void UNK_0xf1e1() // UNK_0xf1e1
 void UNK_0xf233() // UNK_0xf233
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0480);
   _minus_(); // -
   Push(0x000a);
@@ -224,7 +227,7 @@ void UNK_0xf233() // UNK_0xf233
 void UNK_0xf2a7() // UNK_0xf2a7
 {
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x01e0);
   _minus_(); // -
   Push(0x000a);
@@ -287,7 +290,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
 void UNK_0xf31b() // UNK_0xf31b
 {
   Push(pp_PLHI); // PLHI
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__minus_1); // -1
   _eq_(); // =
   if (Pop() == 0) goto label526;
@@ -301,11 +304,11 @@ void UNK_0xf31b() // UNK_0xf31b
 
   label526:
   Push(pp_UNK_0xf22b); // UNK_0xf22b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
   _ex_(); // !
   Push(pp_UNK_0xf22f); // UNK_0xf22f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
   _ex_(); // !
   SAVE_minus_OV(); // SAVE-OV
@@ -353,7 +356,7 @@ void UNK_0xf38d() // UNK_0xf38d
 {
   Push(0x0060);
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0028);
   _slash_(); // /
   Push(Pop()*2); // 2*
@@ -376,7 +379,7 @@ void UNK_0xf38d() // UNK_0xf38d
 void UNK_0xf3b7() // UNK_0xf3b7
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0030);
   _slash_(); // /
   Push(0x0060);
@@ -401,14 +404,14 @@ void UNK_0xf3df() // UNK_0xf3df
   UNK_0xf176(); // UNK_0xf176
   UNK_0xf3b7(); // UNK_0xf3b7
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x00c1);
   OVER(); // OVER
   Push(0x008f);
   LLINE(); // LLINE
   UNK_0xf38d(); // UNK_0xf38d
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   _gt_R(); // >R
   Push(0x005f);
@@ -500,7 +503,7 @@ void GETSITE() // GETSITE
   UNK_0xf233(); // UNK_0xf233
   UNK_0xf42f(); // UNK_0xf42f
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
@@ -509,7 +512,7 @@ void GETSITE() // GETSITE
   Push(pp_YABS); // YABS
   _ex_(); // !
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
@@ -531,11 +534,11 @@ void GETSITE() // GETSITE
   if (Pop() == 0) goto label538;
 
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xf22b); // UNK_0xf22b
   _ex_(); // !
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xf22f); // UNK_0xf22f
   _ex_(); // !
   Push(pp_ESC_minus_EN); // ESC-EN
@@ -571,7 +574,7 @@ void _dot_MERCATOR() // .MERCATOR
   SETREGI(); // SETREGI
   _dot_REGION(); // .REGION
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label540;
 
@@ -591,7 +594,7 @@ void _dot_MERCATOR() // .MERCATOR
 void GETSITE() // GETSITE
 {
   Push(pp__n_AUX); // #AUX
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT

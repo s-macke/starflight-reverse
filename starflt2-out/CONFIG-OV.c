@@ -1,6 +1,9 @@
+// ====== OVERLAY 'CONFIG-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe6e0
 // overlay size   = 0x0e80
-// name = 'CONFIG-______________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -110,7 +113,7 @@ void UNK_0xe80a() // UNK_0xe80a
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xe77d(); // UNK_0xe77d
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   _n_JUMPOS(); // #JUMPOS
   C_at_(); // C@
@@ -685,7 +688,7 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
 
   Push(0); // 0
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   CONFIG_minus_FUNCTION(); // CONFIG-FUNCTION
   goto label709;
 

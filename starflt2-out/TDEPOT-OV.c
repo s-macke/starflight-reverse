@@ -1,6 +1,9 @@
+// ====== OVERLAY 'TDEPOT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe5d0
 // overlay size   = 0x0f90
-// name = 'TD-VOC____________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -60,7 +63,7 @@ unsigned char UNK_0xe7d2[125] = {0x02, 0x0a, 0x02, 0x09, 0x33, 0x0a, 0x36, 0x09,
 void UNK_0xe5f2() // UNK_0xe5f2
 {
   ELEM_minus_VA(); // ELEM-VA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   U_slash_MOD(); // U/MOD
   SWAP(); // SWAP
   Pop(); // DROP
@@ -102,7 +105,7 @@ void UNK_0xe644() // UNK_0xe644
 void UNK_0xe668() // UNK_0xe668
 {
   Push(pp__ask_TD); // ?TD
-  _at_(); // @
+  Push(Read16(Pop())); // @
   GREY2(); // GREY2
   Push(Pop() * Pop()); // *
   _gt_R(); // >R
@@ -140,7 +143,7 @@ void UNK_0xe6d4() // UNK_0xe6d4
 {
   UNK_0xe6cc(); // UNK_0xe6cc
   UNK_0xe6bf(); // UNK_0xe6bf
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
 
@@ -342,7 +345,7 @@ void UNK_0xeb09() // UNK_0xeb09
 void UNK_0xed96() // UNK_0xed96
 {
   Push(pp__ask_TD); // ?TD
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label722;
 
   UNK_0xe644(); // UNK_0xe644
@@ -399,7 +402,7 @@ void UNK_0xed96() // UNK_0xed96
   _minus_(); // -
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label724;
 
@@ -409,7 +412,7 @@ void UNK_0xed96() // UNK_0xed96
 
   } while(...); // (LOOP) 0xffb6
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label725;
 
   Push(0x000a);
@@ -418,7 +421,7 @@ void UNK_0xed96() // UNK_0xed96
   label725:
   ABS(); // ABS
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MIN(); // MIN
 }
 
@@ -436,9 +439,9 @@ void UNK_0xee30() // UNK_0xee30
   if (Pop() == 0) goto label716;
 
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(pp_ELEM_minus_AM); // ELEM-AM
   _ex_(); // !
@@ -457,7 +460,7 @@ void UNK_0xee30() // UNK_0xee30
 
   label717:
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(1); // 1
   MAX(); // MAX
@@ -475,9 +478,9 @@ void UNK_0xee30() // UNK_0xee30
 void KEY_minus_ELEM_minus_AMT() // KEY-ELEM-AMT
 {
   Push(pp_UNK_0xe5e6); // UNK_0xe5e6
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_TD); // ?TD
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   INST_minus_X(); // INST-X
@@ -489,7 +492,7 @@ void KEY_minus_ELEM_minus_AMT() // KEY-ELEM-AMT
   if (Pop() == 0) goto label715;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_ELEM_minus_AM); // ELEM-AM
   _ex_(); // !
   goto label730;
@@ -506,7 +509,7 @@ void KEY_minus_ELEM_minus_AMT() // KEY-ELEM-AMT
   Push(0x001f);
   CMESS(); // CMESS
   Push(pp__ask_TD); // ?TD
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label719;
 
   PRINT("TRANSFER", 8); // (.")
@@ -540,7 +543,7 @@ void KEY_minus_ELEM_minus_AMT() // KEY-ELEM-AMT
   CMESS(); // CMESS
   PRINT("ENTER VOLUME (0-", 16); // (.")
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_MOD(); // /MOD
   Push(0); // 0
@@ -609,7 +612,7 @@ void SELL_minus_IT() // SELL-IT
   Pop(); // DROP
   R_gt_(); // R>
   Push(pp_SCROLL_minus_); // SCROLL-
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 // 0xf226: db 0x4c 0x22 0xe2 0xf1 0xfa 0x15 0x08 0x00 0x72 0xf1 0x60 0x16 0x20 0x00 0x32 0x0e 0xdf 0xeb 0x5c 0x5d 0xae 0x0b 0x83 0x5d 0xae 0x0b 0x6a 0x5d 0xae 0x0b 0xa7 0x3b 0x92 0x0f 0x77 0x5d 0xae 0x0b 0x02 0x50 0x93 0x9b 0xdf 0xeb 0x8c 0xe9 0xcc 0xea 0x90 0x16 0x4c 0x22 0xe4 0xe5 0x57 0x6d 0xe1 0xea 0x03 0xb9 0x5d 0x17 0x32 0x00 'L"      r `   2   \]   ]  j]   ;  w]   P          L"  Wm    ] 2 '
@@ -988,7 +991,7 @@ void _ro_U_minus_DEPOT_rc_() // (U-DEPOT)
   _at_CRS(); // @CRS
   Push(0); // 0
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DEPOT_minus_FUNCTION(); // DEPOT-FUNCTION
   _gt_R(); // >R
   Push(cc__minus_1); // -1

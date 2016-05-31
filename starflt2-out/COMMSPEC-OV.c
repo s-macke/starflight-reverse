@@ -1,6 +1,9 @@
+// ====== OVERLAY 'COMMSPEC-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe540
 // overlay size   = 0x1020
-// name = 'XCOM-VOC_________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -95,7 +98,7 @@ void UNK_0xe58a() // UNK_0xe58a
 void UNK_0xe59e() // UNK_0xe59e
 {
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label924;
 
   BEEPON(); // BEEPON
@@ -196,14 +199,14 @@ void UNK_0xe642() // UNK_0xe642
 void UNK_0xe658() // UNK_0xe658
 {
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label919;
 
   BLUE(); // BLUE
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _dot_ON(); // .ON
   CTINIT(); // CTINIT
   UNK_0xe642(); // UNK_0xe642
@@ -230,7 +233,7 @@ void UNK_0xe658() // UNK_0xe658
   label921:
   BLACK(); // BLACK
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _dot_ON(); // .ON
 }
 
@@ -320,7 +323,7 @@ void UNK_0xe84f() // UNK_0xe84f
   label917:
   UNK_0xe6cc(); // UNK_0xe6cc
   Push(pp_FTRIG); // FTRIG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_TIRED_minus_T); // TIRED-T
@@ -330,12 +333,12 @@ void UNK_0xe84f() // UNK_0xe84f
   if (Pop() == 0) goto label917;
 
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(2); // 2
   _eq_(); // =
   Push(pp_FTRIG); // FTRIG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp__ro_STOP_minus_C); // (STOP-C
   _ex_(); // !
@@ -939,7 +942,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   I(); // I
   _at_EXECUTE(); // @EXECUTE
   Push(pp_UNK_0xe63e); // UNK_0xe63e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label928;
 
   LEAVE(); // LEAVE

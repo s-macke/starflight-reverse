@@ -1,6 +1,9 @@
+// ====== OVERLAY 'CULTURE' ======
+
+#include"interface.h"
+
 // store offset = 0xef40
 // overlay size   = 0x0620
-// name = 'CULTURE________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -68,10 +71,10 @@
 void UNK_0xef56() // UNK_0xef56
 {
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   I(); // I
   if (Pop() == 0) goto label391;
@@ -221,9 +224,9 @@ void UNK_0xf082() // UNK_0xf082
   Push(pp_LINE_minus_CO); // LINE-CO
   _plus__ex_(); // +!
   Push(pp_LINE_minus_CO); // LINE-CO
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WLINES); // WLINES
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   _gt_(); // >
   if (Pop() == 0) goto label390;
@@ -390,7 +393,7 @@ void UNK_0xf199() // UNK_0xf199
   if (Pop() == 0) goto label399;
 
   Push(pp__i__dot_HUFF); // '.HUFF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
@@ -436,7 +439,7 @@ void _dot_RACE()
   UNK_0xf0a2(); // UNK_0xf0a2
   ICLOSE(); // ICLOSE
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label388;
 
@@ -522,7 +525,7 @@ void UNK_0xf3d0() // UNK_0xf3d0
 {
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label397;
 
@@ -607,7 +610,7 @@ void UNK_0xf444() // UNK_0xf444
 void _dot_CULTURE() // .CULTURE
 {
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label389;
 

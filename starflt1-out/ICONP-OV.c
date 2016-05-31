@@ -1,6 +1,9 @@
+// ====== OVERLAY 'ICONP-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf220
 // overlay size   = 0x0340
-// name = 'VICONP__________________________FIX ------------'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -67,7 +70,7 @@ void UNK_0xf3f1() // UNK_0xf3f1
 {
   _at_INST_minus_C(); // @INST-C
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label471;
 
   SPACE_minus_ID(); // SPACE-ID
@@ -118,9 +121,9 @@ void UNK_0xf4e8() // UNK_0xf4e8
 void ICON_minus_PARM()
 { // ICON-PARM
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
   UNK_0xf4e8(); // UNK_0xf4e8
   CI(); // CI

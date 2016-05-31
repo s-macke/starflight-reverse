@@ -1,6 +1,9 @@
+// ====== OVERLAY 'ASSCREW-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xeab0
 // overlay size   = 0x0ab0
-// name = 'ACR_____________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -118,7 +121,7 @@ void UNK_0xeadc() // UNK_0xeadc
 void UNK_0xeb20() // UNK_0xeb20
 {
   Push(pp_UNK_0xead8); // UNK_0xead8
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) goto label652;
@@ -212,7 +215,7 @@ void UNK_0xeb49() // UNK_0xeb49
 void UNK_0xebad() // UNK_0xebad
 {
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label647;
 
   BLUE(); // BLUE
@@ -580,7 +583,7 @@ void UNK_0xee31() // UNK_0xee31
 void UNK_0xef80() // UNK_0xef80
 {
   Push(pp_UNK_0xecb3); // UNK_0xecb3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000a);
   Push(0x0030);
@@ -684,7 +687,7 @@ void UNK_0xf052() // UNK_0xf052
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
   Push(pp_UNK_0xecb3); // UNK_0xecb3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000e);
   GREY2(); // GREY2
@@ -764,7 +767,7 @@ void UNK_0xf052() // UNK_0xf052
   Push(2); // 2
   _dot_R(); // .R
   UNK_0xeb9e(); // UNK_0xeb9e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label654;
@@ -789,7 +792,7 @@ void UNK_0xf052() // UNK_0xf052
   label656:
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xecb3); // UNK_0xecb3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0033);
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
@@ -862,7 +865,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   if (Pop() == 0) goto label651;
 
   UNK_0xeb9e(); // UNK_0xeb9e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label651;
@@ -996,7 +999,7 @@ void UNK_0xf2ea() // UNK_0xf2ea
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
   UNK_0xeb9e(); // UNK_0xeb9e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label667;

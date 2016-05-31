@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SENT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe2b0
 // overlay size   = 0x12b0
-// name = 'SENTS___________________________`ü'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -111,9 +114,9 @@ unsigned char UNK_0xeea9[2] = {0x3a, 0x20}; // UNK_0xeea9
 void UNK_0xe2e6() // UNK_0xe2e6
 {
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_FILE_n_); // FILE#
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -244,7 +247,7 @@ void UNK_0xe47c() // UNK_0xe47c
 {
   UNK_0xe41d(); // UNK_0xe41d
   Push(pp_PROBABLE); // PROBABLE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _st_(); // <
 }
 
@@ -362,17 +365,17 @@ void UNK_0xe867() // UNK_0xe867
   Push(pp_PM_minus_PTR); // PM-PTR
   _ex_(); // !
   Push(pp_LINE_minus_CO); // LINE-CO
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
 
   do // (DO)
   {
   Push(pp_PM_minus_PTR); // PM-PTR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WLINES); // WLINES
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   _gt_(); // >
   if (Pop() == 0) goto label921;
@@ -382,7 +385,7 @@ void UNK_0xe867() // UNK_0xe867
 
   label921:
   Push(pp_SHOW); // SHOW
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label922;
 
   COUNT(); // COUNT
@@ -427,7 +430,7 @@ void UNK_0xe8b7() // UNK_0xe8b7
 void UNK_0xe8c7() // UNK_0xe8c7
 {
   Push(pp_PM_minus_PTR); // PM-PTR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   _minus_(); // -
   Push(cc_TEXTC_slash_L); // TEXTC/L
@@ -481,7 +484,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   DUP(); // DUP
   _gt_R(); // >R
   Push(pp_PM_minus_PTR); // PM-PTR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   R_gt_(); // R>
@@ -733,7 +736,7 @@ void UNK_0xeb8b() // UNK_0xeb8b
   if (Pop() == 0) goto label928;
 
   Push(pp_UNK_0xea63); // UNK_0xea63
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label928;
 
   Push(0xdac2); Pust(0x0001);
@@ -810,7 +813,7 @@ void UNK_0xebdb() // UNK_0xebdb
   if (Pop() == 0) goto label916;
 
   Push(pp_PM_minus_PTR); // PM-PTR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   C_at_(); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1218,7 +1221,7 @@ void UNK_0xeded() // UNK_0xeded
 void UNK_0xeea1() // UNK_0xeea1
 {
   Push(pp_UNK_0xee9d); // UNK_0xee9d
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -1234,7 +1237,7 @@ void UNK_0xeea1() // UNK_0xeea1
 void UNK_0xeead() // UNK_0xeead
 {
   Push(pp_UNK_0xeea9); // UNK_0xeea9
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label938;
 
   Push(0xdb5b); Pust(0x0001);
@@ -1257,7 +1260,7 @@ void UNK_0xeead() // UNK_0xeead
 void UNK_0xeecb() // UNK_0xeecb
 {
   UNK_0xeea1(); // UNK_0xeea1
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xe69d(); // UNK_0xe69d
   Push(Pop() | Pop()); // OR
@@ -1287,7 +1290,7 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xeea1(); // UNK_0xeea1
   Push(2); // 2
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xeaeb(); // UNK_0xeaeb
   Pop(); // DROP
@@ -1297,15 +1300,15 @@ void UNK_0xeecb() // UNK_0xeecb
   R_at_(); // R@
   Push(cc__8); // 8
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   R_at_(); // R@
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   R_gt_(); // R>
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0032);
   UNK_0xe474(); // UNK_0xe474
   UNK_0xed2b(); // UNK_0xed2b
@@ -1313,7 +1316,7 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xeea1(); // UNK_0xeea1
   Push(0x000a);
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xe69d(); // UNK_0xe69d
   Push(Pop() | Pop()); // OR
@@ -1326,7 +1329,7 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xeea1(); // UNK_0xeea1
   Push(0x000c);
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xeb5f(); // UNK_0xeb5f
 
@@ -1340,12 +1343,12 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xeea1(); // UNK_0xeea1
   Push(0x000e);
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xeb5f(); // UNK_0xeb5f
   UNK_0xeea1(); // UNK_0xeea1
   Push(Pop()+2); // 2+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   IFLD_at_(); // IFLD@
   UNK_0xed59(); // UNK_0xed59
 
@@ -1444,7 +1447,7 @@ void SAYIT() // SAYIT
 void _ask_TALK() // ?TALK
 {
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
@@ -1461,7 +1464,7 @@ void _ask_TALK() // ?TALK
   _gt_C_plus_S(); // >C+S
   _at_INST_minus_C(); // @INST-C
   Push(pp_NCRS); // NCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label948;

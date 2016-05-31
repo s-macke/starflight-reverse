@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SHIPBUTTONS' ======
+
+#include"interface.h"
+
 // store offset = 0xebe0
 // overlay size   = 0x0980
-// name = 'BTN-VOC__________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -625,13 +628,13 @@ void _gt_FLT() // >FLT
   Push(pp_ENC_minus_TIM); // ENC-TIM
   D_ex_(); // D!
   Push(pp_STAR_minus_HR); // STAR-HR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_TRAK_minus_HR); // TRAK-HR
   _ex_(); // !
   GREY2(); // GREY2
   _ro_SHIP_minus_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
   if (Pop() == 0) goto label1271;

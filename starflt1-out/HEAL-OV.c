@@ -1,6 +1,9 @@
+// ====== OVERLAY 'HEAL-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf090
 // overlay size   = 0x04d0
-// name = 'HEALER__________________________Y ----------------( rf'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -86,11 +89,11 @@ void UNK_0xf0ce() // UNK_0xf0ce
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
   Push(Pop() + Pop()); // +
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   ROT(); // ROT
   Push(cc__7); // 7
@@ -218,7 +221,7 @@ void UNK_0xf183() // UNK_0xf183
   NULL(); // NULL
   D_eq_(); // D=
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1630;
@@ -226,14 +229,14 @@ void UNK_0xf183() // UNK_0xf183
   UNK_0xf0bc(); // UNK_0xf0bc
   _gt_DISPLA(); // >DISPLA
   Push(pp_WTOP); // WTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WLEFT); // WLEFT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_WBOTTOM); // WBOTTOM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(pp_WRIGHT); // WRIGHT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   YELLOW(); // YELLOW
   POLY_minus_WI(); // POLY-WI
@@ -429,7 +432,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1644;
@@ -486,12 +489,12 @@ void UNK_0xf2cd() // UNK_0xf2cd
 void _dot_VITS() // .VITS
 {
   Push(pp_XORMODE); // XORMODE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
@@ -506,7 +509,7 @@ void _dot_VITS() // .VITS
   {
   GCR(); // GCR
   Push(pp_WCHARS); // WCHARS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   BLACK(); // BLACK
   POLY_minus_ER(); // POLY-ER
   I(); // I
@@ -539,7 +542,7 @@ void _dot_VITS() // .VITS
 
   label1628:
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__minus_1); // -1
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -578,7 +581,7 @@ void _dot_VITS() // .VITS
 void UNK_0xf416() // UNK_0xf416
 {
   UNK_0xf122(); // UNK_0xf122
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   Push(Pop() | Pop()); // OR
   UNK_0xf122(); // UNK_0xf122
@@ -629,7 +632,7 @@ void UNK_0xf42f() // UNK_0xf42f
   C_at_(); // C@
   DUP(); // DUP
   Push(pp_UNK_0xf426); // UNK_0xf426
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) goto label1634;
 

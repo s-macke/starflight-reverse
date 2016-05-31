@@ -1,6 +1,9 @@
+// ====== OVERLAY 'EYE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xebb0
 // overlay size   = 0x09b0
-// name = 'EYE-VOC_______'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -456,7 +459,7 @@ void UNK_0xecf5() // UNK_0xecf5
   TONE(); // TONE
   TIME(); // TIME
   Push(Pop()+2); // 2+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_SEED); // SEED
   _ex_(); // !
   YELLOW(); // YELLOW
@@ -544,7 +547,7 @@ void UNK_0xedb5() // UNK_0xedb5
   _gt_R(); // >R
   Push(0x000a);
   Push(pp_UNK_0xed9f); // UNK_0xed9f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   RRND(); // RRND
   I(); // I
   Push(Pop()+1); // 1+
@@ -620,7 +623,7 @@ void UNK_0xee3f() // UNK_0xee3f
   I(); // I
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   C_at_(); // C@
   _slash_(); // /
@@ -632,7 +635,7 @@ void UNK_0xee3f() // UNK_0xee3f
   MIN(); // MIN
   I(); // I
   Push(Pop()+2); // 2+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   C_at_(); // C@
   _slash_(); // /
@@ -644,7 +647,7 @@ void UNK_0xee3f() // UNK_0xee3f
   MIN(); // MIN
   LPLOT(); // LPLOT
   Push(pp_UNK_0xed9f); // UNK_0xed9f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0064);
   Push(Pop() * Pop()); // *
   DUP(); // DUP
@@ -682,7 +685,7 @@ void UNK_0xee3f() // UNK_0xee3f
 void UNK_0xeebd() // UNK_0xeebd
 {
   Push(pp_UNK_0xed9b); // UNK_0xed9b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label777;
 
@@ -731,7 +734,7 @@ void UNK_0xeee3() // UNK_0xeee3
 void UNK_0xeeff() // UNK_0xeeff
 {
   Push(pp_COLOR); // COLOR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xeee3(); // UNK_0xeee3
   _ex_COLOR(); // !COLOR
   _dot_TTY(); // .TTY
@@ -745,7 +748,7 @@ void UNK_0xeeff() // UNK_0xeeff
 void UNK_0xef0d() // UNK_0xef0d
 {
   Push(pp__minus_END); // -END
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -815,7 +818,7 @@ void UNK_0xef25() // UNK_0xef25
   IFIND(); // IFIND
   Pop(); // DROP
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xef0d(); // UNK_0xef0d
   _minus_(); // -
   Push(0); // 0
@@ -967,7 +970,7 @@ void UNK_0xf078() // UNK_0xf078
   UNK_0xebdf(); // UNK_0xebdf
   Push(0x09c4);
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label791;
 
@@ -1010,7 +1013,7 @@ void UNK_0xf0b2() // UNK_0xf0b2
 {
   CTINIT(); // CTINIT
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label794;
 
   UNK_0xefd4(); // UNK_0xefd4
@@ -1063,7 +1066,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
 void UNK_0xf0fe() // UNK_0xf0fe
 {
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_PAST); // PAST
   _ex_(); // !
@@ -1078,7 +1081,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   UNK_0xf078(); // UNK_0xf078
   Push(0x1388);
   Push(pp_PAST); // PAST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label792;
 
@@ -1561,7 +1564,7 @@ void UNK_0xf40b() // UNK_0xf40b
 // 0xf417: WORD 'UNK_0xf419' codep=0x0e7f parp=0xf419
 // ================================================
   OVER(); // OVER
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   DUP(); // DUP
@@ -1623,12 +1626,12 @@ void UNK_0xf45f() // UNK_0xf45f
   _star_EYE(); // *EYE
   _gt_C_plus_S(); // >C+S
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__5); // 5
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__5); // 5
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +

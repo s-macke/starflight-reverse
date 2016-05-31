@@ -1,6 +1,9 @@
+// ====== OVERLAY 'VITA-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe780
 // overlay size   = 0x0de0
-// name = 'VITA___________________________________________________---------2218----'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -196,7 +199,7 @@ void UNK_0xe8af() // UNK_0xe8af
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -352,7 +355,7 @@ void UNK_0xec19() // UNK_0xec19
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   UNK_0xe7e2(); // UNK_0xe7e2
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(pp_SEED); // SEED
   _ex_(); // !
@@ -422,7 +425,7 @@ void UNK_0xeee7() // UNK_0xeee7
 {
   _gt_R(); // >R
   DUP(); // DUP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label692;
 
   R_at_(); // R@
@@ -484,7 +487,7 @@ void UNK_0xef3b() // UNK_0xef3b
 {
   UNK_0xe822(); // UNK_0xe822
   Push(pp_UNK_0xef37); // UNK_0xef37
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
 
@@ -497,7 +500,7 @@ void UNK_0xef47() // UNK_0xef47
 {
   UNK_0xe86a(); // UNK_0xe86a
   Push(pp_UNK_0xef37); // UNK_0xef37
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
 
@@ -577,9 +580,9 @@ void UNK_0xf055() // UNK_0xf055
 void UNK_0xf067() // UNK_0xf067
 {
   Push(pp_FILE_n_); // FILE#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Push(0x0044);
   FILE_minus_RL(); // FILE-RL
@@ -614,7 +617,7 @@ void UNK_0xf081() // UNK_0xf081
 void UNK_0xf093() // UNK_0xf093
 {
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
 }
@@ -818,7 +821,7 @@ void UNK_0xf1b5() // UNK_0xf1b5
 void UNK_0xf1d3() // UNK_0xf1d3
 {
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0063);
   _gt_(); // >
   if (Pop() == 0) goto label696;
@@ -847,9 +850,9 @@ void UNK_0xf1d3() // UNK_0xf1d3
 void UNK_0xf23c() // UNK_0xf23c
 {
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xe88f(); // UNK_0xe88f
   _ex_(); // !
   UNK_0xe89f(); // UNK_0xe89f
@@ -881,7 +884,7 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf1d3(); // UNK_0xf1d3
   UNK_0xe897(); // UNK_0xe897
   _ex_(); // !
@@ -895,7 +898,7 @@ void UNK_0xf23c() // UNK_0xf23c
 void UNK_0xf286() // UNK_0xf286
 {
   DUP(); // DUP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(1); // 1
 
@@ -908,7 +911,7 @@ void UNK_0xf286() // UNK_0xf286
   UNK_0xf081(); // UNK_0xf081
   UNK_0xf155(); // UNK_0xf155
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ROT(); // ROT
   ROT(); // ROT
   UNK_0xf093(); // UNK_0xf093
@@ -963,11 +966,11 @@ void UNK_0xf2da() // UNK_0xf2da
   UNK_0xe8af(); // UNK_0xe8af
   UNK_0xf067(); // UNK_0xf067
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xe87f(); // UNK_0xe87f
   _ex_(); // !
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   SWAP(); // SWAP
   UNK_0xf286(); // UNK_0xf286
   SWAP(); // SWAP
@@ -975,7 +978,7 @@ void UNK_0xf2da() // UNK_0xf2da
   _ex_(); // !
   UNK_0xe8af(); // UNK_0xe8af
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xe887(); // UNK_0xe887
   _ex_(); // !
   goto label711;
@@ -1002,7 +1005,7 @@ void UNK_0xf320() // UNK_0xf320
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -1018,12 +1021,12 @@ void UNK_0xf334() // UNK_0xf334
   OFF(); // OFF
   Push(pp_PLANTS); // PLANTS
   DUP(); // DUP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   UNK_0xf0c7(); // UNK_0xf0c7
   Push(pp_ANIMALS); // ANIMALS
   DUP(); // DUP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   UNK_0xf0c7(); // UNK_0xf0c7
   Push(0); // 0
@@ -1034,7 +1037,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf179(); // UNK_0xf179
   UNK_0xf2da(); // UNK_0xf2da
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label712;
 
   Push(1); // 1
@@ -1050,7 +1053,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf320(); // UNK_0xf320
   UNK_0xf2da(); // UNK_0xf2da
   Push(pp_UNK_0xef53); // UNK_0xef53
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_PLHI); // PLHI
   _ex_(); // !
 }
@@ -1063,7 +1066,7 @@ void UNK_0xf334() // UNK_0xf334
 void UNK_0xf382() // UNK_0xf382
 {
   Push(pp_PLHI); // PLHI
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(0); // 0
   Push(pp_RECORD_n_); // RECORD#
@@ -1072,7 +1075,7 @@ void UNK_0xf382() // UNK_0xf382
   label715:
   UNK_0xe8af(); // UNK_0xe8af
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   _st_(); // <
   if (Pop() == 0) goto label713;
@@ -1082,10 +1085,10 @@ void UNK_0xf382() // UNK_0xf382
   UNK_0xe89f(); // UNK_0xe89f
   C_at_(); // C@
   UNK_0xe897(); // UNK_0xe897
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   UNK_0xe88f(); // UNK_0xe88f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
   _minus_(); // -
@@ -1130,12 +1133,12 @@ void UNK_0xf382() // UNK_0xf382
 void UNK_0xf3ea() // UNK_0xf3ea
 {
   UNK_0xe87a(); // UNK_0xe87a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) goto label718;
 
   Push(pp_PLHI); // PLHI
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000a);
   Push(Pop() + Pop()); // +
   _slash_(); // /

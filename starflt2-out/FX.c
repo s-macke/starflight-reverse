@@ -1,6 +1,9 @@
+// ====== OVERLAY 'FX' ======
+
+#include"interface.h"
+
 // store offset = 0xf060
 // overlay size   = 0x0500
-// name = 'FX-VOC__'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -89,7 +92,7 @@ void UNK_0xf07e() // UNK_0xf07e
 void UNK_0xf090() // UNK_0xf090
 {
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__6); // 6
   _eq_(); // =
 }
@@ -119,7 +122,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 void UNK_0xf0c5() // UNK_0xf0c5
 {
   Push(pp_PATIENC); // PATIENC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _gt_(); // >
   UNK_0xf07e(); // UNK_0xf07e
@@ -148,7 +151,7 @@ void UNK_0xf0d9() // UNK_0xf0d9
 void UNK_0xf0e3() // UNK_0xf0e3
 {
   Push(pp_PATIENC); // PATIENC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   _gt_(); // >
   UNK_0xf0d9(); // UNK_0xf0d9
@@ -164,7 +167,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
 void UNK_0xf0f5() // UNK_0xf0f5
 {
   Push(pp_PATIENC); // PATIENC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _st_(); // <
   UNK_0xf0d9(); // UNK_0xf0d9
@@ -324,7 +327,7 @@ void PSYCH() // PSYCH
   CTINIT(); // CTINIT
   UNK_0xf13d(); // UNK_0xf13d
   Push(pp_UNK_0xf08c); // UNK_0xf08c
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
@@ -525,27 +528,27 @@ void UNK_0xf32a() // UNK_0xf32a
   ON(); // ON
   CLIPPER(); // CLIPPER
   Push(pp__n_IN); // #IN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_OPEN); // ?OPEN
   _099(); // 099
   if (Pop() == 0) goto label407;
 
   Push(pp_VIN); // VIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   I(); // I
   Push(Pop()+2); // 2+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   R_gt_(); // R>
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   goto label408;
 
@@ -629,14 +632,14 @@ void UNK_0xf3de() // UNK_0xf3de
   UNK_0xf2fe(); // UNK_0xf2fe
   Push(Pop() + Pop()); // +
   Push(Pop()+2); // 2+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   I(); // I
   _4_star_(); // 4*
   UNK_0xf2fe(); // UNK_0xf2fe
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   UNK_0xf1bc(); // UNK_0xf1bc
@@ -697,13 +700,13 @@ void UNK_0xf48c() // UNK_0xf48c
   _gt_R(); // >R
   _at_CRS(); // @CRS
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   DUP(); // DUP
   Push(cc__6); // 6
   _minus_(); // -
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   _minus_(); // -
   SWAP(); // SWAP

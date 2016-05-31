@@ -1,6 +1,9 @@
+// ====== OVERLAY 'ASSCREW-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xea70
 // overlay size   = 0x0af0
-// name = 'ACREW-VOC_______________________for ASSIGN-CREW-------------- )--171-----'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -146,7 +149,7 @@ void UNK_0xeac4() // UNK_0xeac4
 void UNK_0xeae0() // UNK_0xeae0
 {
   Push(pp_UNK_0xea98); // UNK_0xea98
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) goto label582;
@@ -240,7 +243,7 @@ void UNK_0xeb09() // UNK_0xeb09
 void UNK_0xeb6d() // UNK_0xeb6d
 {
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label577;
 
   BLUE(); // BLUE
@@ -612,7 +615,7 @@ void UNK_0xedf8() // UNK_0xedf8
 void UNK_0xef47() // UNK_0xef47
 {
   Push(pp_UNK_0xec7a); // UNK_0xec7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000a);
   Push(0x0030);
@@ -716,7 +719,7 @@ void UNK_0xf019() // UNK_0xf019
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
   Push(pp_UNK_0xec7a); // UNK_0xec7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000e);
   GREY2(); // GREY2
@@ -796,7 +799,7 @@ void UNK_0xf019() // UNK_0xf019
   Push(2); // 2
   _dot_R(); // .R
   UNK_0xeb5e(); // UNK_0xeb5e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label584;
@@ -821,7 +824,7 @@ void UNK_0xf019() // UNK_0xf019
   label586:
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xec7a); // UNK_0xec7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0033);
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
@@ -894,7 +897,7 @@ void UNK_0xf192() // UNK_0xf192
   if (Pop() == 0) goto label581;
 
   UNK_0xeb5e(); // UNK_0xeb5e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label581;
@@ -1028,7 +1031,7 @@ void UNK_0xf2b1() // UNK_0xf2b1
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
   UNK_0xeb5e(); // UNK_0xeb5e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label597;

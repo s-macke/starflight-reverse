@@ -1,6 +1,9 @@
+// ====== OVERLAY 'IT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xedd0
 // overlay size   = 0x0790
-// name = 'IT-VOC__________________________---------------------  4/03/86)  101                     DISK>PRM           \ load parameter stack                       DISK>RTN           \ load return stack to RTNTEMP               CKSUM @ :CKSUM @ = \ cmp check sum                              IF   .LOADED                                 '
 
 // =================================
 // =========== DICTIONARY ==========
@@ -74,11 +77,11 @@ void UNK_0xee1a() // UNK_0xee1a
 void UNK_0xee2c() // UNK_0xee2c
 {
   Push(pp_TIME_minus_PA); // TIME-PA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1808;
 
   Push(pp_CTTOP); // CTTOP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   WHITE(); // WHITE
   goto label1809;
 
@@ -167,7 +170,7 @@ void UNK_0xee70() // UNK_0xee70
 void UNK_0xef27() // UNK_0xef27
 {
   Push(pp_SCROLL_minus_); // SCROLL-
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x004a);
   _gt_(); // >
   if (Pop() == 0) goto label1807;
@@ -284,7 +287,7 @@ void UNK_0xf157() // UNK_0xf157
   _eq_(); // =
   ICLOSE(); // ICLOSE
   Push(pp_SCROLL_minus_); // SCROLL-
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x004b);
   _st_(); // <
   Push(Pop() | Pop()); // OR
@@ -335,7 +338,7 @@ void BOX_gt_LIST() // BOX>LIST
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_SCROLL_minus_); // SCROLL-
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x004b);
   _st_(); // <
   _at_INST_minus_C(); // @INST-C
@@ -520,7 +523,7 @@ void _gt_BOX() // >BOX
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   CI(); // CI
   ICLOSE(); // ICLOSE
   _gt_INACTI(); // >INACTI
@@ -567,15 +570,15 @@ void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_(); // >
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1819;
 
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
   INST_minus_QT(); // INST-QT
   _plus__ex_(); // +!
@@ -584,7 +587,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_QT(); // INST-QT
   _ex_(); // !
   C_gt_(); // C>

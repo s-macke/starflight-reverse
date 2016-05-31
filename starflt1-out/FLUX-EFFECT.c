@@ -1,6 +1,9 @@
+// ====== OVERLAY 'FLUX-EFFECT' ======
+
+#include"interface.h"
+
 // store offset = 0xf390
 // overlay size   = 0x01d0
-// name = 'FLUX-VOC________________________erlay Suffix-----'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -130,7 +133,7 @@ void UNK_0xf470() // UNK_0xf470
   I(); // I
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   C_at_(); // C@
   _slash_(); // /
@@ -142,7 +145,7 @@ void UNK_0xf470() // UNK_0xf470
   MIN(); // MIN
   I(); // I
   Push(Pop()+1); // 1+
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   C_at_(); // C@
   _slash_(); // /
@@ -179,7 +182,7 @@ void UNK_0xf470() // UNK_0xf470
 void UNK_0xf4d0() // UNK_0xf4d0
 {
   Push(pp_UNK_0xf3da); // UNK_0xf3da
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1494;
 
   DARK(); // DARK

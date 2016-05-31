@@ -1,6 +1,9 @@
+// ====== OVERLAY 'DPART-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xef50
 // overlay size   = 0x0610
-// name = 'DPART-VOC_______________________________________1086       '
 
 // =================================
 // =========== DICTIONARY ==========
@@ -258,7 +261,7 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(pp_TIME_minus_PA); // TIME-PA
   ON(); // ON
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_WIN); // ?WIN
   _ex_(); // !
 }
@@ -317,7 +320,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(cc__3); // 3
   _eq_(); // =
   Push(pp__ask_WIN); // ?WIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   Push(Pop() & Pop()); // AND
@@ -547,12 +550,12 @@ void UNK_0xf2b0() // UNK_0xf2b0
   if (Pop() == 0) goto label430;
 
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x05a0);
   _minus_(); // -
   ABS(); // ABS
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x02da);
   _minus_(); // -
   ABS(); // ABS
@@ -583,7 +586,7 @@ void UNK_0xf2eb() // UNK_0xf2eb
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
   Push(pp__ro_SYSTEM); // (SYSTEM
@@ -761,11 +764,11 @@ void DEPART() // DEPART
   Push(pp__i_THROW_minus_); // 'THROW-
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label407;
 
   Push(pp__ask_BOMB); // ?BOMB
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label408;
 
   UNK_0xf1d6(); // UNK_0xf1d6

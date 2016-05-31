@@ -1,6 +1,9 @@
+// ====== OVERLAY 'NAVIGATR' ======
+
+#include"interface.h"
+
 // store offset = 0xf180
 // overlay size   = 0x03e0
-// name = 'NAV'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -159,15 +162,15 @@ void UNK_0xf202() // UNK_0xf202
 void _gt_DOWN_minus_SHIELD()
 { // >DOWN-SHIELD
   Push(pp__ask_NEB); // ?NEB
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_3); // ?3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xf196(); // UNK_0xf196
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -243,7 +246,7 @@ void _gt_DOWN_minus_SHIELD()
   UNK_0x4e59(); // UNK_0x4e59
   _dot_TTY(); // .TTY
   Push(pp_BTN_minus_REC); // BTN-REC
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1265;
@@ -265,9 +268,9 @@ void _gt_DOWN_minus_SHIELD()
 void UNK_0xf301() // UNK_0xf301
 {
   Push(pp__ask_3); // ?3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_NEB); // ?NEB
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
 }
@@ -283,7 +286,7 @@ void UNK_0xf311() // UNK_0xf311
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
   Push(pp_NLR); // NLR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__minus_1); // -1
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -331,7 +334,7 @@ void UNK_0xf311() // UNK_0xf311
 
   label1268:
   Push(pp_NLR); // NLR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__minus_1); // -1
   _eq_(); // =
   if (Pop() == 0) goto label1269;
@@ -433,7 +436,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   UNK_0x2049(); // UNK_0x2049
   _dot_TTY(); // .TTY
   Push(pp__ask_3); // ?3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1261;
 
   PRINT("PLASMA BOLTS", 12); // (.")
@@ -473,7 +476,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   if (Pop() == 0) goto label1258;
 
   UNK_0xf1a5(); // UNK_0xf1a5
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
   UNK_0xf1a5(); // UNK_0xf1a5
@@ -528,7 +531,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xf1a5(); // UNK_0xf1a5
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1252;
@@ -559,7 +562,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xf1a5(); // UNK_0xf1a5
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1266;

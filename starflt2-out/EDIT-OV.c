@@ -1,6 +1,9 @@
+// ====== OVERLAY 'EDIT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xedc0
 // overlay size   = 0x07a0
-// name = '+EDIT____'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -148,7 +151,7 @@ void UNK_0xee94() // UNK_0xee94
 void UNK_0xeea0() // UNK_0xeea0
 {
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -159,7 +162,7 @@ void UNK_0xeea0() // UNK_0xeea0
 void UNK_0xeea8() // UNK_0xeea8
 {
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -267,7 +270,7 @@ void UNK_0xef44() // UNK_0xef44
   Push(cc_UNK_0xee6a); // UNK_0xee6a
   Push(Pop() * Pop()); // *
   Push(tt_SCR); // SCR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   BLOCK(); // BLOCK
   Push(Pop() + Pop()); // +
 }
@@ -432,7 +435,7 @@ void _dot_MODE() // .MODE
   Push(0x0048);
   POSITION(); // POSITION
   Push(pp_UNK_0xee7a); // UNK_0xee7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label731;
 
   PRINT("Insert ", 7); // (.")
@@ -671,7 +674,7 @@ void INSERT() // INSERT
   DUP(); // DUP
   EMIT(); // EMIT
   Push(pp_UNK_0xee7a); // UNK_0xee7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label735;
 
   UNK_0xef66(); // UNK_0xef66
@@ -715,7 +718,7 @@ void DELETE() // DELETE
   UNK_0xef16(); // UNK_0xef16
   UNK_0xeec0(); // UNK_0xeec0
   Push(pp_UNK_0xee7a); // UNK_0xee7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label752;
 
   XC(); // XC
@@ -807,7 +810,7 @@ void PUT() // PUT
 
   } while(...); // (LOOP) 0xffe2
   Push(pp_UNK_0xee7a); // UNK_0xee7a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) goto label749;
 
@@ -898,7 +901,7 @@ void SET_minus_USER()
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   Push(cc_CX); // CX
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x076c);
   _minus_(); // -
   DUP(); // DUP
@@ -946,13 +949,13 @@ void SET_minus_USER()
 void _gt_STAMP() // >STAMP
 {
   Push(pp_STAMP); // STAMP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label755;
 
   SET_minus_USER(); // SET-USER
   Push(pp_UNK_0xedd6); // UNK_0xedd6
   Push(tt_SCR); // SCR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   BLOCK(); // BLOCK
   _gt_R(); // >R
   R_at_(); // R@

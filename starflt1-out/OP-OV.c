@@ -1,6 +1,9 @@
+// ====== OVERLAY 'OP-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe430
 // overlay size   = 0x1130
-// name = 'OP-VOC__________________________         '
 
 // =================================
 // =========== DICTIONARY ==========
@@ -71,7 +74,7 @@ unsigned char UNK_0xe58c[13] = {0x02, 0x0a, 0x02, 0x09, 0x34, 0x0a, 0x37, 0x09, 
 void UNK_0xe44a() // UNK_0xe44a
 {
   Push(pp_UNK_0xe446); // UNK_0xe446
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 // 0xe450: db 0x4d 0x74 0x23 0x0a 0x02 0x4d 0x74 0x30 0x0b 0xff 'Mt#  Mt0  '
@@ -290,7 +293,7 @@ void UNK_0xe637() // UNK_0xe637
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
   Push(pp__ask__gt_OP); // ?>OP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(pp_NCRS); // NCRS
   _ex_(); // !
@@ -419,7 +422,7 @@ void UNK_0xe842() // UNK_0xe842
   Push(0); // 0
   Push(1); // 1
   Push(pp_CTY); // CTY
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   UNK_0xe81c(); // UNK_0xe81c
 }
@@ -433,7 +436,7 @@ void UNK_0xe842() // UNK_0xe842
 void UNK_0xe856() // UNK_0xe856
 {
   Push(pp_CTX); // CTX
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0x0026);
   _st_(); // <
@@ -463,7 +466,7 @@ void UNK_0xeb09() // UNK_0xeb09
   POS_dot_(); // POS.
   PRINT("DATE: ", 6); // (.")
   UNK_0xe461(); // UNK_0xe461
-  _at_(); // @
+  Push(Read16(Pop())); // @
   PAD(); // PAD
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
@@ -474,14 +477,14 @@ void UNK_0xeb09() // UNK_0xeb09
   POS_dot_(); // POS.
   PRINT("SYSTEM: ", 8); // (.")
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   _dot_(); // .
@@ -514,7 +517,7 @@ void UNK_0xebc1() // UNK_0xebc1
 {
   UNK_0xe78b(); // UNK_0xe78b
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   _gt_R(); // >R
   Push(0x0022);
@@ -955,7 +958,7 @@ void UNK_0xf450() // UNK_0xf450
   Pop(); Pop();// 2DROP
   _ask_TRIG(); // ?TRIG
   Push(pp_FQUIT); // FQUIT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   _ask_LAST(); // ?LAST
   Push(Pop() | Pop()); // OR
@@ -985,7 +988,7 @@ void UNK_0xf47a() // UNK_0xf47a
   _i_KEY(); // 'KEY
   Pop(); // DROP
   Push(pp__ask_TV); // ?TV
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1500;
 
@@ -993,14 +996,14 @@ void UNK_0xf47a() // UNK_0xf47a
 
   label1500:
   Push(pp__ask_RECALL); // ?RECALL
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1501;
 
   UNK_0xf12c(); // UNK_0xf12c
 
   label1501:
   Push(pp_WMSG); // WMSG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1502;
 
   UNK_0xf274(); // UNK_0xf274
@@ -1043,7 +1046,7 @@ void _ro_U_minus_OP_rc_() // (U-OP)
 {
   UNK_0xe637(); // UNK_0xe637
   Push(pp__ask__gt_OP); // ?>OP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1497;
 
   Push(0x03e8);
@@ -1069,7 +1072,7 @@ void _ro_U_minus_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label1499;
 
   Push(pp_NCRS); // NCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OP_minus_CASE(); // OP-CASE
 
   label1499:

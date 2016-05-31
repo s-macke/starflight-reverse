@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SITE-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xee00
 // overlay size   = 0x0760
-// name = 'SITE-VOC_____________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -174,7 +177,7 @@ void UNK_0xeed3() // UNK_0xeed3
 void _dot_LON()
 { // .LON
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0480);
   _minus_(); // -
   Push(0x000a);
@@ -241,7 +244,7 @@ void _dot_LON()
 void UNK_0xefa0() // UNK_0xefa0
 {
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x01e0);
   _minus_(); // -
   Push(0x000a);
@@ -303,7 +306,7 @@ void UNK_0xefa0() // UNK_0xefa0
 void UNK_0xf014() // UNK_0xf014
 {
   Push(pp_PLHI); // PLHI
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__minus_1); // -1
   _eq_(); // =
   if (Pop() == 0) goto label483;
@@ -317,11 +320,11 @@ void UNK_0xf014() // UNK_0xf014
 
   label483:
   Push(pp_UNK_0xef1d); // UNK_0xef1d
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
   _ex_(); // !
   Push(pp_UNK_0xef9c); // UNK_0xef9c
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
   _ex_(); // !
 }
@@ -426,7 +429,7 @@ void UNK_0xf014() // UNK_0xf014
 void _v_REGION()
 { // |REGION
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label474;
 
   SWAP(); // SWAP
@@ -448,7 +451,7 @@ void _v_REGION()
 void UNK_0xf119() // UNK_0xf119
 {
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -459,7 +462,7 @@ void UNK_0xf119() // UNK_0xf119
 void UNK_0xf121() // UNK_0xf121
 {
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0014);
   Push(Pop() + Pop()); // +
 }
@@ -473,7 +476,7 @@ void UNK_0xf12f() // UNK_0xf12f
 {
   Push(0x0060);
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0028);
   _slash_(); // /
   Push(Pop()*2); // 2*
@@ -496,7 +499,7 @@ void UNK_0xf12f() // UNK_0xf12f
 void UNK_0xf159() // UNK_0xf159
 {
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0030);
   _slash_(); // /
   Push(0x0060);
@@ -520,14 +523,14 @@ void UNK_0xf181() // UNK_0xf181
 {
   UNK_0xf159(); // UNK_0xf159
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x00c1);
   OVER(); // OVER
   Push(0x0091);
   LLINE(); // LLINE
   UNK_0xf12f(); // UNK_0xf12f
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   _gt_R(); // >R
   Push(0x005f);
@@ -564,7 +567,7 @@ void _gt_XHAIR()
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label480;
 
   Push(0); // 0
@@ -595,7 +598,7 @@ void _gt_XHAIR()
 void _st_XHAIR()
 { // <XHAIR
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label473;
 
   Push(1); // 1
@@ -850,7 +853,7 @@ void UNK_0xf405() // UNK_0xf405
   Push(0xbdd8);
   MODULE(); // MODULE
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -903,7 +906,7 @@ void GETSITE() // GETSITE
   _dot_LON(); // .LON
   _st_XHAIR(); // <XHAIR
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
@@ -912,7 +915,7 @@ void GETSITE() // GETSITE
   Push(pp_YABS); // YABS
   _ex_(); // !
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
@@ -935,11 +938,11 @@ void GETSITE() // GETSITE
   if (Pop() == 0) goto label488;
 
   Push(pp_XABS); // XABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xef1d); // UNK_0xef1d
   _ex_(); // !
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xef9c); // UNK_0xef9c
   _ex_(); // !
 }
@@ -973,7 +976,7 @@ void _dot_MERCATOR() // .MERCATOR
   SETREGI(); // SETREGI
   _dot_REGION(); // .REGION
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label490;
 
@@ -1007,7 +1010,7 @@ void _dot_MERCATOR() // .MERCATOR
 void GETSITE() // GETSITE
 {
   Push(pp__n_AUX); // #AUX
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT

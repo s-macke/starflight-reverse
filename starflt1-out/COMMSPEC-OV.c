@@ -1,6 +1,9 @@
+// ====== OVERLAY 'COMMSPEC-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xea30
 // overlay size   = 0x0b30
-// name = 'XCOM-VOC________________________ SPEC -------------8/13/85 AWK )1175œãêCOMM-VOC'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -61,14 +64,14 @@ void UNK_0xea8e() // UNK_0xea8e
 void UNK_0xeaee() // UNK_0xeaee
 {
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label1042;
 
   BLUE(); // BLUE
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _dot_ON(); // .ON
   CTINIT(); // CTINIT
   Push(0x118a); Pust(0x0002);
@@ -97,7 +100,7 @@ void UNK_0xeaee() // UNK_0xeaee
   label1044:
   BLACK(); // BLACK
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _dot_ON(); // .ON
 }
 
@@ -151,7 +154,7 @@ void XY_slash_N() // XY/N
   label1040:
   UNK_0xeb7b(); // UNK_0xeb7b
   Push(pp_FTRIG); // FTRIG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_TIRED_minus_T); // TIRED-T
@@ -161,12 +164,12 @@ void XY_slash_N() // XY/N
   if (Pop() == 0) goto label1040;
 
   Push(pp_THIS_minus_BU); // THIS-BU
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(2); // 2
   _eq_(); // =
   Push(pp_FTRIG); // FTRIG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp__ro_STOP_minus_C); // (STOP-C
   _ex_(); // !
@@ -218,7 +221,7 @@ void UNK_0xf486() // UNK_0xf486
   I(); // I
   _at_EXECUTE(); // @EXECUTE
   Push(pp_UNK_0xecca); // UNK_0xecca
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1049;
 
   LEAVE(); // LEAVE

@@ -1,6 +1,9 @@
+// ====== OVERLAY 'MUSIC' ======
+
+#include"interface.h"
+
 // store offset = 0xe200
 // overlay size   = 0x1360
-// name = 'MUSIC___________________________                            9-12-127 \ EMPTY CR ." NOTICE! EMPTY EXECUTED IN COMBLT.CMP "            V= #FRAMES                                                      V= FRAMEOFF               ( frame offset pointer)               ( V= LFRAME )                                                   V= BIT-COUNT                                                    CREATE FILENAME 15 ALLOT                                        2V= DPVA                  ( allocation pointer within VESBLT)   CREATE BLTCOLORS 16 ALLOT ( flags showing color exists in blt)                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ( COMBLT - ?COLORS HFRAMELEN                           9-12-85)                                                                 : ?COLORS ( -- \ set blt color flags based on contents of blt)    BLTCOLORS 16 0 FILL                                             LBLT @ 0 DO                                                     WBLT @ 0 DO YBLT @ J - XBLT @ I + L@PIXEL                                   BLTCOLORS + 1 SWAP C!                                        LOOP LOOP ;                                                                                                                                                                          : HFRAMELEN ( -- \ compute the length of a hybrid blt frame)      ( [framelen][color][image/run][image] )                         LBLT @ WBLT @ * 15 + 16/ 2* 4 + LFRAME ! ;                                                                                                                                                                                                                    ( COMBLT - BLTFRAME                                    9-12-85) : BLTFRAME ( -- \ build a blt image for the current color)        ( relative to bltseg & frameoff)                                BIT-COUNT OFF  FRAMEOFF @ DUP >R 4 + ABLT !  BLTSEG @ >R        LFRAME @ I I' L!  COLOR @ I I' 2+ LC!  0 R> R> 3+ LC!           0                                                               LBLT @ 0 DO                                                     WBLT @ 0 DO YBLT @ J - XBLT @ I + L@PIXEL                                   COLOR @ 15 AND =  SHL-BIT  1 BIT-COUNT +!                       BIT-COUNT @ 16 =                                                IF BLTSEG @ ABLT @ L!  2 ABLT +! 0. BIT-COUNT !                 THEN                                                         LOOP LOOP                                              BIT-COUNT @ ?DUP IF 16 SWAP DO 2* LOOP BLTSEG '
 
 // =================================
 // =========== DICTIONARY ==========
@@ -315,7 +318,7 @@ void HIMUS()
 { // HIMUS
   _at_DS(); // @DS
   Push(pp_UNK_0xe2ca); // UNK_0xe2ca
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc_MUSSEG); // MUSSEG
   Push(0); // 0
   Push(0x0320);
@@ -331,7 +334,7 @@ void HIMUS()
 void CSCR_gt_EGA()
 { // CSCR>EGA
   Push(pp_XBUF_minus_SE); // XBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   SWAP(); // SWAP
   FILE_st_(); // FILE<
   _gt_HIDDEN(); // >HIDDEN
@@ -349,7 +352,7 @@ void CSCR_gt_EGA()
   {
   Push(Pop()+1); // 1+
   Push(pp_XBUF_minus_SE); // XBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   LC_at_(); // LC@
   DUP(); // DUP
@@ -425,7 +428,7 @@ void UNK_0xe69c() // UNK_0xe69c
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x008d);
   FILE_st_(); // FILE<
   _gt_DISPLA(); // >DISPLA
@@ -493,7 +496,7 @@ void UNK_0xe69c() // UNK_0xe69c
 void UNK_0xe6e4() // UNK_0xe6e4
 {
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -506,7 +509,7 @@ void UNK_0xe6ec() // UNK_0xe6ec
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0036);
   FILE_st_(); // FILE<
   _gt_DISPLA(); // >DISPLA
@@ -520,12 +523,12 @@ void UNK_0xe6ec() // UNK_0xe6ec
 void UNK_0xe700() // UNK_0xe700
 {
   Push(pp_UNK_0xe6c8); // UNK_0xe6c8
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(0x0400);
   _slash_MOD(); // /MOD
   Push(pp_UNK_0xe6cc); // UNK_0xe6cc
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
 
@@ -577,10 +580,10 @@ void BRMOVE()
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
 
   do // (DO)
@@ -590,15 +593,15 @@ void BRMOVE()
   ROT(); // ROT
   I(); // I
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   ROT(); // ROT
   ROT(); // ROT
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   I(); // I
   _minus_(); // -
@@ -606,10 +609,10 @@ void BRMOVE()
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe6d4); // UNK_0xe6d4
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
-  _at_(); // @
+  Push(Read16(Pop())); // @
   LCMOVE(); // LCMOVE
 
   } while(...); // (LOOP) 0xffc8
@@ -618,16 +621,16 @@ void BRMOVE()
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(0x0010);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   _plus__ex_(); // +!
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MS(); // MS
 }
 
@@ -656,7 +659,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
   BRMOVE(); // BRMOVE
   UNK_0xe716(); // UNK_0xe716
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1942;
 
   LEAVE(); // LEAVE
@@ -669,7 +672,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
   _2_at_(); // 2@
   D_st_(); // D<
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1943;
 
@@ -715,7 +718,7 @@ void UNK_0xe82b() // UNK_0xe82b
   _ex_(); // !
   Push(0x0045);
   FILE_minus_ST(); // FILE-ST
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /
   Push(pp_UNK_0xe6cc); // UNK_0xe6cc
@@ -764,7 +767,7 @@ void REDUCE() // REDUCE
   Push(pp_LFSEG); // LFSEG
   _plus__ex_(); // +!
   Push(pp_LFSEG); // LFSEG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
   _ex_(); // !
 }
@@ -778,7 +781,7 @@ void INCREASE() // INCREASE
 {
   FLUSH(); // FLUSH
   Push(pp__bo__n_CACHE); // [#CACHE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
   _ex_(); // !
   AUTO_minus_CACHE(); // AUTO-CACHE
@@ -808,7 +811,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(cc__7); // 7
   REDUCE(); // REDUCE
   Push(pp_LFSEG); // LFSEG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x008c);
   FILE_st_(); // FILE<
   Push(0x0046);
@@ -827,7 +830,7 @@ void UNK_0xe928() // UNK_0xe928
   I(); // I
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6d4); // UNK_0xe6d4
   _ex_(); // !
   I(); // I
@@ -835,11 +838,11 @@ void UNK_0xe928() // UNK_0xe928
   I(); // I
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
   _ex_(); // !
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   BRMOVE(); // BRMOVE
 
   } while(...); // (LOOP) 0xffd8
@@ -869,7 +872,7 @@ void INTROS() // INTROS
 {
   HIMUS(); // HIMUS
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1939;
 
   Push(0x008d);

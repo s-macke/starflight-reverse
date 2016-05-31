@@ -1,6 +1,9 @@
+// ====== OVERLAY 'DOCTOR' ======
+
+#include"interface.h"
+
 // store offset = 0xf060
 // overlay size   = 0x0500
-// name = 'DOC-VOC________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -97,7 +100,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   J(); // J
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1071;
@@ -125,7 +128,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 void UNK_0xf0e6() // UNK_0xf0e6
 {
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0010);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1085;
@@ -294,7 +297,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
   UNK_0xf263(); // UNK_0xf263
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
   UNK_0xf088(); // UNK_0xf088
@@ -342,7 +345,7 @@ void UNK_0xf2f8() // UNK_0xf2f8
   _gt_C_plus_S(); // >C+S
   UNK_0xf2ce(); // UNK_0xf2ce
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0xfffb);
   Push(Pop() & Pop()); // AND
   UNK_0xf088(); // UNK_0xf088
@@ -374,7 +377,7 @@ void UNK_0xf33d() // UNK_0xf33d
   _gt_C_plus_S(); // >C+S
   UNK_0xf310(); // UNK_0xf310
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
   UNK_0xf088(); // UNK_0xf088
@@ -494,7 +497,7 @@ void UNK_0xf440() // UNK_0xf440
   PRINT(".", 1); // (.")
   CTCR(); // CTCR
   UNK_0xf088(); // UNK_0xf088
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1095;

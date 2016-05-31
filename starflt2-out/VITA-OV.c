@@ -1,6 +1,9 @@
+// ====== OVERLAY 'VITA-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf170
 // overlay size   = 0x03f0
-// name = 'VITA__________________________'
 
 // =================================
 // =========== DICTIONARY ==========

@@ -1,6 +1,9 @@
+// ====== OVERLAY 'PLSET-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xec00
 // overlay size   = 0x0960
-// name = 'SETTER__________________________‘u`'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -342,7 +345,7 @@ void UNK_0xed2e() // UNK_0xed2e
   label1721:
   _gt_C_plus_S(); // >C+S
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 
   label1726:
@@ -362,9 +365,9 @@ void UNK_0xed8e() // UNK_0xed8e
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
 }
@@ -408,14 +411,14 @@ void UNK_0xedf8() // UNK_0xedf8
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x007d);
   _minus_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0064);
   _minus_(); // -
   DUP(); // DUP
@@ -503,7 +506,7 @@ void UNK_0xee46() // UNK_0xee46
 void UNK_0xee92() // UNK_0xee92
 {
   UNK_0xec4a(); // UNK_0xec4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0046);
   _slash_(); // /
   Push(cc__5); // 5
@@ -777,7 +780,7 @@ void UNK_0xf01c() // UNK_0xf01c
 void UNK_0xf03e() // UNK_0xf03e
 {
   UNK_0xec4a(); // UNK_0xec4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
   Push(cc__6); // 6
@@ -1065,7 +1068,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
   label1767:
   UNK_0xf1c8(); // UNK_0xf1c8
   Push(pp_ATMO); // ATMO
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1767;
 
   goto label1768;
@@ -1105,7 +1108,7 @@ void UNK_0xf234() // UNK_0xf234
 void UNK_0xf24e() // UNK_0xf24e
 {
   Push(pp_YABS); // YABS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x01e0);
   _gt_(); // >

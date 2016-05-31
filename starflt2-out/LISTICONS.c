@@ -1,6 +1,9 @@
+// ====== OVERLAY 'LISTICONS' ======
+
+#include"interface.h"
+
 // store offset = 0xf2b0
 // overlay size   = 0x02b0
-// name = 'ICON-V______'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -216,7 +219,7 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(pp_ICON_h_); // ICON^
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   Push(0x0012);
   Push(Pop() * Pop()); // *

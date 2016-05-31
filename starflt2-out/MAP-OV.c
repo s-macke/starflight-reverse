@@ -1,7 +1,9 @@
+// ====== OVERLAY 'MAP-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe340
 // overlay size   = 0x1220
-// name = '*MAP____________________________----\ STARMAP OVR-( rfg09sep88)
-1250·'∏'‹GêL"‹THINêL"‹VERY ÅÚêL"‹MODERATEêL"‹THICKêL"‹VERY ©Úê”Òá(.ATMO©;K'
 
 // =================================
 // =========== DICTIONARY ==========

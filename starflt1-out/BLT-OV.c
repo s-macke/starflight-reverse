@@ -1,6 +1,9 @@
+// ====== OVERLAY 'BLT-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf200
 // overlay size   = 0x0360
-// name = 'BLT-VOC_________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -122,27 +125,27 @@ void _dot_PARMS() // .PARMS
   CR(); // CR
   PRINT("x2= ", 4); // (.")
   Push(pp_X2); // X2
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("x1= ", 4); // (.")
   Push(pp_X1); // X1
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("st ", 3); // (.")
   Push(pp_XSTART); // XSTART
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("en ", 3); // (.")
   Push(pp_XEND); // XEND
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("y ", 2); // (.")
   Push(pp_YLINE); // YLINE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   KEY(); // KEY
@@ -286,10 +289,10 @@ void _dot_HYBRID() // .HYBRID
   do // (DO)
   {
   Push(pp_ABLT); // ABLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(pp_BLTSEG); // BLTSEG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(cc__4); // 4
   Push(pp_ABLT); // ABLT
@@ -309,11 +312,11 @@ void _dot_HYBRID() // .HYBRID
   if (Pop() == 0) goto label534;
 
   Push(pp_BLTSEG); // BLTSEG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label535;
 
   _dot_EGARUNBIT(); // .EGARUNBIT
@@ -330,9 +333,9 @@ void _dot_HYBRID() // .HYBRID
 
   label536:
   Push(pp_BLTSEG); // BLTSEG
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _minus_(); // -
   L_at_(); // L@

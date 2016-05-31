@@ -1,6 +1,9 @@
+// ====== OVERLAY 'MISC-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xefc0
 // overlay size   = 0x05a0
-// name = 'MISC-___________________________for MISC----------'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -181,12 +184,12 @@ void UNK_0xf08f() // UNK_0xf08f
 void UNK_0xf0b9() // UNK_0xf0b9
 {
   Push(pp__minus_AIN); // -AIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label559;
 
   DUP(); // DUP
   Push(pp__minus_AIN); // -AIN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   SWAP(); // SWAP
   Push(0x0030);
@@ -609,7 +612,7 @@ void _eq_CARG() // =CARG
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xefdb(); // UNK_0xefdb
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
@@ -651,7 +654,7 @@ void _eq_CARG() // =CARG
   if (Pop() == 0) goto label546;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
   Push(pp__10_star_END); // 10*END
@@ -659,7 +662,7 @@ void _eq_CARG() // =CARG
 
   label546:
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   NULL(); // NULL
   INST_minus_X(); // INST-X

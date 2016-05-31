@@ -1,6 +1,9 @@
+// ====== OVERLAY 'LAND-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf120
 // overlay size   = 0x0440
-// name = 'LAND-VOC________________________for LAND-OV-------------------)-2263/85)1155DOCTOR-----------'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -58,7 +61,7 @@ void UNK_0xf147() // UNK_0xf147
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf13b(); // UNK_0xf13b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x0320);
   _gt_(); // >
@@ -97,10 +100,10 @@ void UNK_0xf177() // UNK_0xf177
   Push(cc__6); // 6
   IFIND(); // IFIND
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1918;
 
   UNK_0xf147(); // UNK_0xf147
@@ -225,14 +228,14 @@ void UNK_0xf258() // UNK_0xf258
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   INST_minus_X(); // INST-X
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   INST_minus_Y(); // INST-Y
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
@@ -304,7 +307,7 @@ void UNK_0xf37b() // UNK_0xf37b
   MIN(); // MIN
   DUP(); // DUP
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -389,7 +392,7 @@ void UNK_0xf430() // UNK_0xf430
   Push(0xc3a7);
   MODULE(); // MODULE
   Push(pp__ask_FUEL_minus_D); // ?FUEL-D
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1921;
 
   UNK_0xf258(); // UNK_0xf258
@@ -412,7 +415,7 @@ void UNK_0xf430() // UNK_0xf430
 void UNK_0xf45e() // UNK_0xf45e
 {
   Push(pp_GWF); // GWF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1924;
@@ -439,7 +442,7 @@ void UNK_0xf45e() // UNK_0xf45e
 
   label1930:
   Push(pp_GWF); // GWF
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
 
   label1924:
@@ -453,9 +456,9 @@ void UNK_0xf45e() // UNK_0xf45e
 void _ask_LAND() // ?LAND
 {
   Push(pp__i_EXTERN); // 'EXTERN
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp__i_HEAT); // 'HEAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label1915;
 
@@ -467,7 +470,7 @@ void _ask_LAND() // ?LAND
 
   label1915:
   Push(pp__ask_G_minus_AWAR); // ?G-AWAR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1916;
 
   UNK_0xf45e(); // UNK_0xf45e

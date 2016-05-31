@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SHIPGRPH-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xecb0
 // overlay size   = 0x08b0
-// name = 'SHI'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -174,7 +177,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
 {
   Push(0x0032);
   UNK_0xed33(); // UNK_0xed33
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0032);
@@ -188,7 +191,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   UNK_0xed47(); // UNK_0xed47
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -230,7 +233,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
   UNK_0xed51(); // UNK_0xed51
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   _ex_CRS(); // !CRS
@@ -264,7 +267,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
   UNK_0xed4c(); // UNK_0xed4c
-  _at_(); // @
+  Push(Read16(Pop())); // @
   A_gt_TEXT(); // A>TEXT
   _ex_CRS(); // !CRS
 }
@@ -301,7 +304,7 @@ void UNK_0xef3a() // UNK_0xef3a
   if (Pop() == 0) goto label697;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   goto label699;
 
   label697:
@@ -474,7 +477,7 @@ void UNK_0xf046() // UNK_0xf046
 void UNK_0xf0e0() // UNK_0xf0e0
 {
   Push(pp_UNK_0xf0dc); // UNK_0xf0dc
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(pp_UNK_0xf0b8); // UNK_0xf0b8
   Push(Pop() + Pop()); // +
@@ -540,7 +543,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   GREY1(); // GREY1
   _ex_COLOR(); // !COLOR
   UNK_0xed47(); // UNK_0xed47
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   UNK_0xf106(); // UNK_0xf106
   WHITE(); // WHITE
@@ -557,7 +560,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   _ex_COLOR(); // !COLOR
   Push(0x0010);
   Push(pp_UNK_0xf0dc); // UNK_0xf0dc
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _minus_(); // -
   UNK_0xf106(); // UNK_0xf106
   _ex_CRS(); // !CRS

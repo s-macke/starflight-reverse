@@ -1,6 +1,9 @@
+// ====== OVERLAY 'PORTMENU-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xece0
 // overlay size   = 0x0880
-// name = 'PM-VOC_______'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -90,7 +93,7 @@ void _v_REGION()
   Push(cc_AX); // AX
   _099(); // 099
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(cc_BX); // BX
   Push(Pop()+1); // 1+
@@ -99,21 +102,21 @@ void _v_REGION()
   Push(Pop()+1); // 1+
   C_ex_(); // C!
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(cc_BX); // BX
   C_ex_(); // C!
   Push(cc_DX); // DX
   C_ex_(); // C!
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000c);
   _minus_(); // -
   Push(cc_CX); // CX
   Push(Pop()+1); // 1+
   C_ex_(); // C!
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0014);
   Push(Pop() + Pop()); // +
   Push(cc_CX); // CX
@@ -221,7 +224,7 @@ void UNK_0xeffe() // UNK_0xeffe
 {
   _at_CRS(); // @CRS
   Push(pp_UNK_0xeed0); // UNK_0xeed0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _ro__dot_DOOR_rc_(); // (.DOOR)
   UNK_0xeee5(); // UNK_0xeee5
   _ex_CRS(); // !CRS
@@ -243,7 +246,7 @@ void UNK_0xf091() // UNK_0xf091
   SAVE_minus_BU(); // SAVE-BU
   Push(cc_STPORT); // STPORT
   Push(pp_PIC_h_); // PIC^
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   MOUNTB(); // MOUNTB
 }
@@ -287,15 +290,15 @@ void UNK_0xf0b7() // UNK_0xf0b7
 
   label758:
   Push(pp_PIC_h_); // PIC^
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
   Push(pp_XBUF_minus_SE); // XBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
   Push(0x3ded);
   LCMOVE(); // LCMOVE
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label759;
 
   _gt_HIDDEN(); // >HIDDEN
@@ -313,7 +316,7 @@ void UNK_0xf0b7() // UNK_0xf0b7
   _dot_RAW(); // .RAW
   UNK_0xf0a1(); // UNK_0xf0a1
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label760;
 
   SCR_minus_RES(); // SCR-RES
@@ -399,7 +402,7 @@ void UNK_0xf2aa() // UNK_0xf2aa
   Push(pp_UNK_0xf1d4); // UNK_0xf1d4
   Push(0x000c);
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x8040);
   Push(Pop() ^ Pop()); // XOR
   Push(pp_UNK_0xf1d4); // UNK_0xf1d4
@@ -418,7 +421,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _at_CRS(); // @CRS
   Push(pp_UNK_0xf1c6); // UNK_0xf1c6
   Push(pp_UNK_0xf1be); // UNK_0xf1be
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -468,9 +471,9 @@ void UNK_0xf308() // UNK_0xf308
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(pp_MANX); // MANX
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_MANY); // MANY
-  _at_(); // @
+  Push(Read16(Pop())); // @
   POS_dot_(); // POS.
   Push(0); // 0
   _v_REGION(); // |REGION
@@ -525,7 +528,7 @@ void UNK_0xf352() // UNK_0xf352
 void UNK_0xf360() // UNK_0xf360
 {
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   MAX(); // MAX
   Push(0x009b);
@@ -554,9 +557,9 @@ void UNK_0xf37e() // UNK_0xf37e
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _2SWAP(); // 2SWAP
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -564,9 +567,9 @@ void UNK_0xf37e() // UNK_0xf37e
   _plus__ex_(); // +!
   UNK_0xf360(); // UNK_0xf360
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _2SWAP(); // 2SWAP
   POS_dot_(); // POS.
   DISPLAY(); // DISPLAY
@@ -624,7 +627,7 @@ void UNK_0xf42a() // UNK_0xf42a
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
   Push(pp_ABLT); // ABLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_UNK_0xf1d4); // UNK_0xf1d4
   _eq_(); // =
   if (Pop() == 0) goto label770;
@@ -698,11 +701,11 @@ void UNK_0xf486() // UNK_0xf486
 void UNK_0xf4c0() // UNK_0xf4c0
 {
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_MANX); // MANX
   _ex_(); // !
   Push(pp_UNK_0xeed0); // UNK_0xeed0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) goto label768;
 
@@ -714,7 +717,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   label768:
   DO_minus_ROOM(); // DO-ROOM
   Push(pp_UNK_0xeed0); // UNK_0xeed0
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label769;
 
   Push(pp_HUB); // HUB

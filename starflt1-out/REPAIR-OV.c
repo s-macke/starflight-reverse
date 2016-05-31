@@ -1,6 +1,9 @@
+// ====== OVERLAY 'REPAIR-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xeec0
 // overlay size   = 0x06a0
-// name = 'REPAIR__________________________-------------( rf'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -141,7 +144,7 @@ void UNK_0xef56() // UNK_0xef56
 void UNK_0xef5e() // UNK_0xef5e
 {
   Push(pp_UNK_0xef52); // UNK_0xef52
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -152,7 +155,7 @@ void UNK_0xef5e() // UNK_0xef5e
 void UNK_0xef66() // UNK_0xef66
 {
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -264,7 +267,7 @@ void UNK_0xefe0() // UNK_0xefe0
 {
   Push(0); // 0
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xef02(); // UNK_0xef02
   Push(Pop() + Pop()); // +
   C_ex_(); // C!
@@ -376,7 +379,7 @@ void UNK_0xf03e() // UNK_0xf03e
 void UNK_0xf086() // UNK_0xf086
 {
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -425,7 +428,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
   Push(Pop()*2); // 2*
   Push(pp_UNK_0xf0c4); // UNK_0xf0c4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(pp_UNK_0xef4e); // UNK_0xef4e
   _ex_(); // !
@@ -440,7 +443,7 @@ void UNK_0xf0e8() // UNK_0xf0e8
 {
   Push(1); // 1
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
   Push(1); // 1
@@ -480,7 +483,7 @@ void UNK_0xf122() // UNK_0xf122
 {
   Push(0); // 0
   Push(pp_UNK_0xf03a); // UNK_0xf03a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
@@ -509,7 +512,7 @@ void UNK_0xf130() // UNK_0xf130
 
   UNK_0xef5e(); // UNK_0xef5e
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1660;
@@ -574,7 +577,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   Push(Pop() + Pop()); // +
   UNK_0xef02(); // UNK_0xef02
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   C_ex_(); // C!
 }
@@ -587,7 +590,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 void UNK_0xf1c0() // UNK_0xf1c0
 {
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xef02(); // UNK_0xef02
   Push(Pop() + Pop()); // +
   C_at_(); // C@
@@ -609,7 +612,7 @@ void UNK_0xf1c0() // UNK_0xf1c0
 void UNK_0xf1e4() // UNK_0xf1e4
 {
   Push(pp_UNK_0xef4e); // UNK_0xef4e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   Push(0x001a);
@@ -738,7 +741,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
 void UNK_0xf2da() // UNK_0xf2da
 {
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1653;
@@ -836,7 +839,7 @@ void UNK_0xf35b() // UNK_0xf35b
 
   label1670:
   Push(pp_UNK_0xef4e); // UNK_0xef4e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   UNK_0xf10e(); // UNK_0xf10e
   UNK_0xf1a6(); // UNK_0xf1a6
 
@@ -851,7 +854,7 @@ void UNK_0xf35b() // UNK_0xf35b
 void UNK_0xf38f() // UNK_0xf38f
 {
   Push(pp_ELEM_minus_AM); // ELEM-AM
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   UNK_0xf1c0(); // UNK_0xf1c0
   SWAP(); // SWAP
@@ -859,7 +862,7 @@ void UNK_0xf38f() // UNK_0xf38f
   Pop(); // DROP
   UNK_0xef5e(); // UNK_0xef5e
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   MIN(); // MIN
   DUP(); // DUP
   Push(pp_ELEM_minus_AM); // ELEM-AM
@@ -975,7 +978,7 @@ void UNK_0xf407() // UNK_0xf407
 
   label1673:
   Push(pp_UNK_0xef46); // UNK_0xef46
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1668;
 
@@ -1067,7 +1070,7 @@ void UNK_0xf4a9() // UNK_0xf4a9
 void UNK_0xf4bd() // UNK_0xf4bd
 {
   Push(pp__ask_REPAIR); // ?REPAIR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1647;
@@ -1104,7 +1107,7 @@ void DO_minus_REPA() // DO-REPA
 
   UNK_0xf407(); // UNK_0xf407
   Push(pp_UNK_0xef46); // UNK_0xef46
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1674;
 
   UNK_0xf4a9(); // UNK_0xf4a9

@@ -1,6 +1,9 @@
+// ====== OVERLAY 'PERSONNEL-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe500
 // overlay size   = 0x1060
-// name = 'PFILE-VOC_____________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -607,7 +610,7 @@ void UNK_0xea44() // UNK_0xea44
   _ex_COLOR(); // !COLOR
   Push(0x0041);
   Push(pp_UNK_0xe91e); // UNK_0xe91e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0x0033);
   UNK_0xe922(); // UNK_0xe922
   _gt_3FONT(); // >3FONT
@@ -623,7 +626,7 @@ void UNK_0xea44() // UNK_0xea44
 void UNK_0xea7d() // UNK_0xea7d
 {
   Push(pp_UNK_0xe91e); // UNK_0xe91e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000a);
   Push(0x0030);
@@ -740,7 +743,7 @@ void UNK_0xeb45() // UNK_0xeb45
   Push(Pop()+1); // 1+
   Push(0); // 0
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label608;
 
   Push(0xbeb2);
@@ -843,7 +846,7 @@ void UNK_0xec5d() // UNK_0xec5d
   GREY2(); // GREY2
   POLY_minus_WI(); // POLY-WI
   Push(pp_UNK_0xe91e); // UNK_0xe91e
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000e);
   GREY2(); // GREY2
@@ -920,7 +923,7 @@ void UNK_0xec5d() // UNK_0xec5d
   Push(2); // 2
   _dot_R(); // .R
   UNK_0xe6a3(); // UNK_0xe6a3
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label605;
@@ -1030,7 +1033,7 @@ void _ro_U_minus_PFILE_rc_() // (U-PFILE)
 
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   PFILE_minus_FUNCTION(); // PFILE-FUNCTION
 
   label618:

@@ -1,6 +1,9 @@
+// ====== OVERLAY 'PERSONNEL-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe3d0
 // overlay size   = 0x1190
-// name = 'PFIL_______'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -153,13 +156,13 @@ void UNK_0xe43a() // UNK_0xe43a
   PAD_v_16(); // PAD|16
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(0); // 0
 
   do // (DO)
   {
   Push(pp_YBLT); // YBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   I(); // I
   _minus_(); // -
   Push(pp_YLINE); // YLINE
@@ -177,7 +180,7 @@ void UNK_0xe43a() // UNK_0xe43a
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_XSTART); // XSTART
   _ex_(); // !
@@ -185,7 +188,7 @@ void UNK_0xe43a() // UNK_0xe43a
   Push(Pop()+2); // 2+
   C_at_(); // C@
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_XEND); // XEND
   _ex_(); // !
@@ -298,7 +301,7 @@ void UNK_0xe581() // UNK_0xe581
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(pp_SIL_h_); // SIL^
-  _at_(); // @
+  Push(Read16(Pop())); // @
   R_at_(); // R@
   C_at_(); // C@
   Push(Pop() + Pop()); // +
@@ -845,7 +848,7 @@ void UNK_0xea41() // UNK_0xea41
 void UNK_0xea83() // UNK_0xea83
 {
   Push(pp_UNK_0xe91b); // UNK_0xe91b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000a);
   Push(0x0030);
@@ -1051,7 +1054,7 @@ void UNK_0xec39() // UNK_0xec39
   GREY1(); // GREY1
   POLY_minus_WI(); // POLY-WI
   Push(pp_UNK_0xe91b); // UNK_0xe91b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000e);
   GREY1(); // GREY1
@@ -1134,7 +1137,7 @@ void UNK_0xec39() // UNK_0xec39
   Push(2); // 2
   _dot_R(); // .R
   UNK_0xe514(); // UNK_0xe514
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label677;
@@ -1580,7 +1583,7 @@ void _ro_U_minus_PFILE_rc_() // (U-PFILE)
 
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS
-  _at_(); // @
+  Push(Read16(Pop())); // @
   PFILE_minus_FUNCTI(); // PFILE-FUNCTI
 
   label693:

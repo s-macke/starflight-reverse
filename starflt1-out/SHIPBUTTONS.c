@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SHIPBUTTONS' ======
+
+#include"interface.h"
+
 // store offset = 0xeda0
 // overlay size   = 0x07c0
-// name = 'BTN-VOC_________________________ for BUTTONS-------------------)2120-'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -153,7 +156,7 @@ void _gt_FLT() // >FLT
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   ELEM_minus_VA(); // ELEM-VA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   ELEM_minus_VA(); // ELEM-VA
   _ex_(); // !
@@ -166,14 +169,14 @@ void _gt_FLT() // >FLT
   Push(pp_ENC_minus_TIM); // ENC-TIM
   D_ex_(); // D!
   Push(pp_STAR_minus_HR); // STAR-HR
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_TRAK_minus_HR); // TRAK-HR
   _ex_(); // !
   CFIGARR(); // CFIGARR
   GREY2(); // GREY2
   _ro_SHIP_minus_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
   if (Pop() == 0) goto label1353;
@@ -191,7 +194,7 @@ void _gt_FLT() // >FLT
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   ELEM_minus_VA(); // ELEM-VA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
   ELEM_minus_VA(); // ELEM-VA
   _ex_(); // !

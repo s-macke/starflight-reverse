@@ -1,6 +1,9 @@
+// ====== OVERLAY 'LAUNCH-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xf010
 // overlay size   = 0x0550
-// name = 'LAUNCH-VOC______________________x for COUNTDOWN---------------)_1280_____ for STP----------'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -68,7 +71,7 @@ void UNK_0xf034() // UNK_0xf034
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
   Push(pp_XBLT); // XBLT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   OVER(); // OVER
   _dot_(); // .
   Push(pp_XBLT); // XBLT
@@ -167,7 +170,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
   UNK_0xf09a(); // UNK_0xf09a
   CTERASE(); // CTERASE
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1487;
 
@@ -197,12 +200,12 @@ void UNK_0xf112() // UNK_0xf112
   if (Pop() == 0) goto label1489;
 
   Push(pp__ask_SECURE); // ?SECURE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1489;
 
   Push(pp_STARDAT); // STARDAT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
@@ -401,9 +404,9 @@ void UNK_0xf2ee() // UNK_0xf2ee
 {
   Push(Pop()*2); // 2*
   Push(pp_YTABL); // YTABL
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -457,11 +460,11 @@ void UNK_0xf306() // UNK_0xf306
   R_gt_(); // R>
   Pop(); // DROP
   Push(pp_HBUF_minus_SE); // HBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   ROT(); // ROT
   UNK_0xf2fc(); // UNK_0xf2fc
   Push(pp_DBUF_minus_SE); // DBUF-SE
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
@@ -496,7 +499,7 @@ void UNK_0xf393() // UNK_0xf393
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1490;
 
   Push(0x05dc);
@@ -543,7 +546,7 @@ void UNK_0xf393() // UNK_0xf393
 void _and_LAUNCH() // &LAUNCH
 {
   Push(pp_CONTEXT); // CONTEXT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
   DUP(); // DUP
@@ -612,7 +615,7 @@ void _and_RETURN() // &RETURN
   GREY2(); // GREY2
   _ex_COLOR(); // !COLOR
   Push(pp__ask_EGA); // ?EGA
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1482;
 

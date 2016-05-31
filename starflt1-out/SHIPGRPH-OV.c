@@ -1,6 +1,9 @@
+// ====== OVERLAY 'SHIPGRPH-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xed20
 // overlay size   = 0x0840
-// name = 'SHIP-GR-VOC_____________________for SHIP-CONFIGURATION------- )ê127LE-VOC_____________________'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -141,7 +144,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
 {
   Push(0x0032);
   UNK_0xed3b(); // UNK_0xed3b
-  _at_(); // @
+  Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0032);
@@ -155,7 +158,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   UNK_0xed4f(); // UNK_0xed4f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -187,7 +190,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
   UNK_0xed59(); // UNK_0xed59
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   _ex_CRS(); // !CRS
@@ -205,7 +208,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   UNK_0xed59(); // UNK_0xed59
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _slash_(); // /
   UNK_0xed54(); // UNK_0xed54
   _ex_(); // !
@@ -220,7 +223,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
   UNK_0xed54(); // UNK_0xed54
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(2); // 2
   _dot_R(); // .R
   _ex_CRS(); // !CRS
@@ -258,7 +261,7 @@ void UNK_0xef1a() // UNK_0xef1a
   if (Pop() == 0) goto label621;
 
   INST_minus_QT(); // INST-QT
-  _at_(); // @
+  Push(Read16(Pop())); // @
   goto label623;
 
   label621:
@@ -420,7 +423,7 @@ void UNK_0xf098() // UNK_0xf098
   _ex_(); // !
   DUP(); // DUP
   UNK_0xed4f(); // UNK_0xed4f
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=

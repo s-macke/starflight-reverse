@@ -1,6 +1,9 @@
+// ====== OVERLAY 'LP-OV' ======
+
+#include"interface.h"
+
 // store offset = 0xe0c0
 // overlay size   = 0x14a0
-// name = 'LOPARMS________________________________---------2218----'
 
 // =================================
 // =========== DICTIONARY ==========
@@ -138,9 +141,9 @@ void UNK_0xe0e6() // UNK_0xe0e6
 void UNK_0xe0f4() // UNK_0xe0f4
 {
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_FILE_n_); // FILE#
-  _at_(); // @
+  Push(Read16(Pop())); // @
 }
 
 
@@ -519,7 +522,7 @@ void UNK_0xe4b6() // UNK_0xe4b6
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -532,7 +535,7 @@ void UNK_0xe4b6() // UNK_0xe4b6
 void UNK_0xe4ca() // UNK_0xe4ca
 {
   DUP(); // DUP
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
   RANGE(); // RANGE
   Push(Pop()+2); // 2+
@@ -633,7 +636,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
 
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  _at_(); // @
+  Push(Read16(Pop())); // @
   goto label847;
 
   label846:
@@ -705,7 +708,7 @@ void UNK_0xeb97() // UNK_0xeb97
 void UNK_0xebb3() // UNK_0xebb3
 {
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
@@ -1029,7 +1032,7 @@ void UNK_0xed63() // UNK_0xed63
 void UNK_0xedaf() // UNK_0xedaf
 {
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _gt_R(); // >R
   UNK_0xe316(); // UNK_0xe316
   C_at_(); // C@
@@ -1420,7 +1423,7 @@ void UNK_0xf0b0() // UNK_0xf0b0
   UNK_0xe3ae(); // UNK_0xe3ae
   _ex_(); // !
   UNK_0xe3b6(); // UNK_0xe3b6
-  _at_(); // @
+  Push(Read16(Pop())); // @
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
@@ -1949,7 +1952,7 @@ void SPEC_dot_PARM() // SPEC.PARM
 {
   UNK_0xe4b6(); // UNK_0xe4b6
   Push(pp_RECORD_n_); // RECORD#
-  _at_(); // @
+  Push(Read16(Pop())); // @
   Push(pp_SEED); // SEED
   _st__ex__gt_(); // <!>
   UNK_0xf162(); // UNK_0xf162
