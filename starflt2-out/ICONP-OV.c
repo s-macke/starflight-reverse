@@ -70,15 +70,12 @@ void UNK_0xf365() // UNK_0xf365
   _at_INST_minus_C(); // @INST-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label523;
-
+  if (Pop() == 0) goto label1;
   SPACE_minus_ID(); // SPACE-ID
-  goto label524;
+  return;
 
-  label523:
+  label1:
   PLANET_minus_ID(); // PLANET-ID
-
-  label524:
 }
 
 

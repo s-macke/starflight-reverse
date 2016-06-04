@@ -46,13 +46,12 @@ void UNK_0xed19() // UNK_0xed19
 {
   BLUE(); // BLUE
   _ex_COLOR(); // !COLOR
-  if (Pop() == 0) goto label1480;
-
+  if (Pop() == 0) goto label1;
   PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
   CTCR(); // CTCR
   PRINT(" OBJECT: ", 9); // (.")
 
-  label1480:
+  label1:
   CTINIT(); // CTINIT
   _at_INST_minus_C(); // @INST-C
   _ro__dot_OBJECT_rc_(); // (.OBJECT)
@@ -109,31 +108,29 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   DABS(); // DABS
   Push(0x0002); Pust(0x0000);
   D_gt_(); // D>
-  if (Pop() == 0) goto label1477;
-
+  if (Pop() == 0) goto label1;
   _gt_C_plus_S(); // >C+S
   UNK_0xed19(); // UNK_0xed19
   _at_INST_minus_C(); // @INST-C
   _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS)
   ICLOSE(); // ICLOSE
   Push(0x1b58); Pust(0x0000);
-  goto label1481;
+  goto label4;
 
-  label1477:
+  label1:
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1478;
-
+  if (Pop() == 0) goto label2;
   PRINT("I SAID THERE'S NOTHING THERE!", 29); // (.")
-  goto label1479;
+  goto label3;
 
-  label1478:
+  label2:
   PRINT("I NEED A CURRENT SENSOR READING.", 32); // (.")
 
-  label1479:
+  label3:
   Pop(); // DROP
   Push(0x05dc); Pust(0x0000);
 
-  label1481:
+  label4:
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+

@@ -181,28 +181,24 @@ void UNK_0xeaaa() // UNK_0xeaaa
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label703;
-
+  if (Pop() == 0) goto label1;
   DUP(); // DUP
   Push(cc__6); // 6
   _eq_(); // =
-  if (Pop() == 0) goto label704;
-
+  if (Pop() == 0) goto label2;
   PRINT("PLASMA", 6); // (.")
   Pop(); // DROP
-  goto label706;
+  goto label3;
 
-  label704:
+  label2:
   PRINT("CLASS ", 6); // (.")
   _dot_(); // .
 
-  label706:
-  goto label705;
+  label3:
+  return;
 
-  label703:
+  label1:
   PRINT("NONE", 4); // (.")
-
-  label705:
 }
 
 
@@ -675,7 +671,7 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   _gt_DISPLA(); // >DISPLA
   SCR_minus_RES(); // SCR-RES
 
-  label708:
+  label2:
   XYSCAN(); // XYSCAN
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -684,20 +680,18 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   SET_minus_CRS(); // SET-CRS
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label707;
-
+  if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   CONFIG_minus_FUNCTION(); // CONFIG-FUNCTION
-  goto label709;
+  goto label3;
 
-  label707:
+  label1:
   Push(0); // 0
 
-  label709:
-  if (Pop() == 0) goto label708;
-
+  label3:
+  if (Pop() == 0) goto label2;
   Push(1); // 1
   UNK_0xe700(); // UNK_0xe700
   ICLOSE(); // ICLOSE

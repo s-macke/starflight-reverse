@@ -76,33 +76,30 @@ void UNK_0xef56() // UNK_0xef56
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  I(); // I
-  if (Pop() == 0) goto label391;
-
+  Push(h); // I
+  if (Pop() == 0) goto label1;
   PINK(); // PINK
-  goto label395;
+  goto label5;
 
-  label391:
+  label1:
   BLUE(); // BLUE
 
-  label395:
+  label5:
   _ex_COLOR(); // !COLOR
   TXT_minus_WIN(); // TXT-WIN
 
-  label392:
+  label2:
   _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label392;
-
+  if (Pop() == 0) goto label2;
   R_gt_(); // R>
-  if (Pop() == 0) goto label393;
-
+  if (Pop() == 0) goto label3;
   RED(); // RED
-  goto label394;
+  goto label4;
 
-  label393:
+  label3:
   DK_minus_BLUE(); // DK-BLUE
 
-  label394:
+  label4:
   _ex_COLOR(); // !COLOR
   TXT_minus_WIN(); // TXT-WIN
   R_gt_(); // R>
@@ -229,13 +226,10 @@ void UNK_0xf082() // UNK_0xf082
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   _gt_(); // >
-  if (Pop() == 0) goto label390;
-
+  if (Pop() == 0) return;
   UNK_0xef56(); // UNK_0xef56
   Push(pp_LINE_minus_CO); // LINE-CO
   _099(); // 099
-
-  label390:
 }
 
 
@@ -280,8 +274,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 void UNK_0xf0bc() // UNK_0xf0bc
 {
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label402;
-
+  if (Pop() == 0) return;
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x001c);
   SWAP(); // SWAP
@@ -290,8 +283,6 @@ void UNK_0xf0bc() // UNK_0xf0bc
   Push(0x002e);
   _minus_XTRAIL(); // -XTRAIL
   TYPE(); // TYPE
-
-  label402:
 }
 
 
@@ -334,14 +325,13 @@ void UNK_0xf10e() // UNK_0xf10e
   UNK_0xf023(); // UNK_0xf023
   UNK_0xefd3(); // UNK_0xefd3
   C_at_(); // C@
-  if (Pop() == 0) goto label401;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf0b4(); // UNK_0xf0b4
   UNK_0xf017(); // UNK_0xf017
   PRINT("WILL SELL (AT TRADING CENTER)", 29); // (.")
   UNK_0xf00b(); // UNK_0xf00b
 
-  label401:
+  label1:
   UNK_0xefd3(); // UNK_0xefd3
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
@@ -352,24 +342,22 @@ void UNK_0xf10e() // UNK_0xf10e
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   UNK_0xf0dc(); // UNK_0xf0dc
-  if (Pop() == 0) goto label403;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf0b4(); // UNK_0xf0b4
   UNK_0xf017(); // UNK_0xf017
   PRINT("WILL BUY (AT TRADING CENTER)", 28); // (.")
   UNK_0xf00b(); // UNK_0xf00b
 
-  label403:
+  label2:
   UNK_0xefeb(); // UNK_0xefeb
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   UNK_0xeff3(); // UNK_0xeff3
   C_at_(); // C@
-  if (Pop() == 0) goto label404;
-
+  if (Pop() == 0) goto label3;
   PRINT("*", 1); // (.")
 
-  label404:
+  label3:
   UNK_0xeffb(); // UNK_0xeffb
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
@@ -390,16 +378,13 @@ void UNK_0xf199() // UNK_0xf199
   _at__gt_C_plus_S(); // @>C+S
   CI(); // CI
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label399;
-
+  if (Pop() == 0) return;
   Push(pp__i__dot_HUFF); // '.HUFF
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
   UNK_0xef56(); // UNK_0xef56
-
-  label399:
 }
 
 
@@ -430,8 +415,8 @@ void UNK_0xf1bb() // UNK_0xf1bb
 // 0xf213: WORD '.RACE' codep=0x224c parp=0xf21d
 // ================================================
 
-void _dot_RACE()
-{ // .RACE
+void _dot_RACE() // .RACE
+{
   UNK_0xf023(); // UNK_0xf023
   UNK_0xef98(); // UNK_0xef98
   Push(0x0010);
@@ -441,12 +426,9 @@ void _dot_RACE()
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label388;
-
+  if (Pop() == 0) return;
   _at_INST_minus_C(); // @INST-C
   _gt_EXTRA(); // >EXTRA
-
-  label388:
 }
 
 // 0xf23b: db 0x4c 0x22 0x07 0x3f 0x06 0x53 0x50 0x41 0x52 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x08 0x4d 0x4f 0x44 0x45 0x52 0x41 0x54 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x05 0x44 0x45 0x4e 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x56 0x45 0x52 0x59 0x20 0x44 0x45 0x4e 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x09 0x53 0x54 0x4f 0x4e 0x45 0x20 0x41 0x47 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x09 0x4d 0x45 0x54 0x41 0x4c 0x20 0x45 0x52 0x41 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x49 0x4e 0x44 0x55 0x53 0x54 0x52 0x49 0x41 0x4c 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0b 0x53 0x50 0x41 0x43 0x45 0x46 0x41 0x52 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x4e 0x4f 0x20 0x54 0x52 0x41 0x44 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0c 0x4e 0x4f 0x20 0x42 0x41 0x52 0x54 0x45 0x52 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x10 0x42 0x41 0x52 0x47 0x41 0x49 0x4e 0x20 0x41 0x20 0x4c 0x49 0x54 0x54 0x4c 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0d 0x42 0x41 0x52 0x47 0x41 0x49 0x4e 0x20 0x41 0x20 0x4c 0x4f 0x54 0x90 0x16 'L" ? SPARSE  L" ? MODERATE  L" ? DENSE  L" ? VERY DENSE  L" ? STONE AGE  L" ? METAL ERA  L" ? INDUSTRIAL  L" ? SPACEFARING  L" ? NO TRADING  L" ? NO BARTERING  L" ? BARGAIN A LITTLE  L" ? BARGAIN A LOT  '
@@ -527,8 +509,7 @@ void UNK_0xf3d0() // UNK_0xf3d0
   Push(pp__ask_ON_minus_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label397;
-
+  if (Pop() == 0) goto label1;
   UNK_0x3f09(); // UNK_0x3f09
   UNK_0x490f(); // UNK_0x490f
   UNK_0x4850(); // UNK_0x4850
@@ -537,13 +518,13 @@ void UNK_0xf3d0() // UNK_0xf3d0
   UNK_0x4447(); // UNK_0x4447
   UNK_0x4222(); // UNK_0x4222
   UNK_0x205b(); // UNK_0x205b
-  goto label398;
+  goto label2;
 
-  label397:
+  label1:
   UNK_0x3f09(); // UNK_0x3f09
   UNK_0x2003(); // UNK_0x2003
 
-  label398:
+  label2:
   _dot_TTY(); // .TTY
   Push(1); // 1
   Push(pp_LINE_minus_CO); // LINE-CO
@@ -586,8 +567,7 @@ void UNK_0xf444() // UNK_0xf444
   Push(0x0044);
   Push(0); // 0
   IFIND(); // IFIND
-  if (Pop() == 0) goto label405;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x0044);
   Push(0); // 0
@@ -596,7 +576,7 @@ void UNK_0xf444() // UNK_0xf444
   EACH(); // EACH
   Pop(); Pop();// 2DROP
 
-  label405:
+  label1:
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
 }
@@ -612,8 +592,7 @@ void _dot_CULTURE() // .CULTURE
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label389;
-
+  if (Pop() == 0) return;
   WHITE(); // WHITE
   Push(pp_CTCOLOR); // CTCOLOR
   _ex_(); // !
@@ -630,8 +609,7 @@ void _dot_CULTURE() // .CULTURE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label396;
-
+  if (Pop() == 0) goto label1;
   Push(pp_LINE_minus_CO); // LINE-CO
   _099(); // 099
   UNK_0xf3d0(); // UNK_0xf3d0
@@ -645,18 +623,15 @@ void _dot_CULTURE() // .CULTURE
   ATTITUDE(); // ATTITUDE
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label400;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf10e(); // UNK_0xf10e
   UNK_0xf444(); // UNK_0xf444
 
-  label400:
-  goto label389;
+  label2:
+  return;
 
-  label396:
+  label1:
   _dot_RACE(); // .RACE
-
-  label389:
 }
 
 // 0xf549: db 0x43 0x55 0x4c 0x54 0x55 0x52 0x45 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'CULTURE________________ '

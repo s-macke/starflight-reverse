@@ -114,16 +114,13 @@ void UNK_0xea65() // UNK_0xea65
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label626;
-
+  if (Pop() == 0) goto label1;
   PRINT("CLASS ", 6); // (.")
   _dot_(); // .
-  goto label627;
+  return;
 
-  label626:
+  label1:
   PRINT("NONE", 4); // (.")
-
-  label627:
 }
 
 
@@ -239,7 +236,7 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   _gt_DISPLA(); // >DISPLA
   SCR_minus_RES(); // SCR-RES
 
-  label629:
+  label2:
   XYSCAN(); // XYSCAN
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -248,20 +245,18 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   SET_minus_CRS(); // SET-CRS
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label628;
-
+  if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   CONFIG_minus_FUNCTION(); // CONFIG-FUNCTION
-  goto label630;
+  goto label3;
 
-  label628:
+  label1:
   Push(0); // 0
 
-  label630:
-  if (Pop() == 0) goto label629;
-
+  label3:
+  if (Pop() == 0) goto label2;
   Push(1); // 1
   UNK_0xe980(); // UNK_0xe980
   ICLOSE(); // ICLOSE

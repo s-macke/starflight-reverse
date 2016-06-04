@@ -91,30 +91,32 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(cc__6); // 6
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   UNK_0xf08d(); // UNK_0xf08d
-  I(); // I
+  Push(i); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf088(); // UNK_0xf088
   Push(Read16(Pop())); // @
-  J(); // J
+  Push(h); // J
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1071;
-
+  if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
   _gt_R(); // >R
   CI(); // CI
   R_gt_(); // R>
   LEAVE(); // LEAVE
 
-  label1071:
+  label1:
   ICLOSE(); // ICLOSE
+  i++;
+  } while(i<imax); // (LOOP) 0xffda
 
-  } while(...); // (LOOP) 0xffda
   ICLOSE(); // ICLOSE
   R_gt_(); // R>
   Pop(); // DROP
@@ -131,72 +133,64 @@ void UNK_0xf0e6() // UNK_0xf0e6
   Push(Read16(Pop())); // @
   Push(0x0010);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1085;
-
+  if (Pop() == 0) goto label1;
   PRINT("COMATOSE", 8); // (.")
   Pop(); // DROP
-  goto label1093;
+  return;
 
-  label1085:
+  label1:
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1086;
-
+  if (Pop() == 0) goto label2;
   PRINT("DEAD", 4); // (.")
-  goto label1092;
+  goto label8;
 
-  label1086:
-  I(); // I
+  label2:
+  Push(h); // I
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1087;
-
+  if (Pop() == 0) goto label3;
   PRINT("CRITICALLY", 10); // (.")
-  goto label1091;
+  goto label7;
 
-  label1087:
-  I(); // I
+  label3:
+  Push(h); // I
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1088;
-
+  if (Pop() == 0) goto label4;
   PRINT("HEAVILY", 7); // (.")
-  goto label1091;
+  goto label7;
 
-  label1088:
-  I(); // I
+  label4:
+  Push(h); // I
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1089;
-
+  if (Pop() == 0) goto label5;
   PRINT("MODERATELY", 10); // (.")
-  goto label1091;
+  goto label7;
 
-  label1089:
-  I(); // I
+  label5:
+  Push(h); // I
   Push(0x0051);
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1090;
-
+  if (Pop() == 0) goto label6;
   PRINT("SLIGHTLY", 8); // (.")
-  goto label1091;
+  goto label7;
 
-  label1090:
+  label6:
   PRINT("NOT", 3); // (.")
 
-  label1091:
+  label7:
   PRINT(" WOUNDED", 8); // (.")
 
-  label1092:
+  label8:
   R_gt_(); // R>
   Pop(); // DROP
-
-  label1093:
 }
 
 
@@ -206,15 +200,12 @@ void UNK_0xf0e6() // UNK_0xf0e6
 
 void UNK_0xf1b0() // UNK_0xf1b0
 {
-  if (Pop() == 0) goto label1073;
-
+  if (Pop() == 0) goto label1;
   PRINT("TREAT", 5); // (.")
-  goto label1074;
+  return;
 
-  label1073:
+  label1:
   PRINT("EXAMINE", 7); // (.")
-
-  label1074:
 }
 
 
@@ -293,8 +284,7 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(1); // 1
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1079;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf263(); // UNK_0xf263
   UNK_0xf088(); // UNK_0xf088
   Push(Read16(Pop())); // @
@@ -302,22 +292,21 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(Pop() | Pop()); // OR
   UNK_0xf088(); // UNK_0xf088
   _ex_(); // !
-  goto label1081;
+  goto label3;
 
-  label1079:
+  label1:
   UNK_0xf083(); // UNK_0xf083
   C_at_(); // C@
   Push(0x0064);
   _eq_(); // =
-  if (Pop() == 0) goto label1080;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf219(); // UNK_0xf219
-  goto label1081;
+  goto label3;
 
-  label1080:
+  label2:
   UNK_0xf248(); // UNK_0xf248
 
-  label1081:
+  label3:
   ICLOSE(); // ICLOSE
 }
 
@@ -407,18 +396,17 @@ void UNK_0xf392() // UNK_0xf392
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
 
-  label1078:
+  label4:
   UNK_0xf088(); // UNK_0xf088
   C_at_(); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1075;
-
+  if (Pop() == 0) goto label1;
   INEXT(); // INEXT
-  goto label1078;
+  goto label4;
 
-  label1075:
+  label1:
   Push(1); // 1
   Push(0x0015);
   CMESS(); // CMESS
@@ -435,12 +423,11 @@ void UNK_0xf392() // UNK_0xf392
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
 
-  label1077:
+  label3:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   NPCREW(); // NPCREW
-  if (Pop() == 0) goto label1076;
-
+  if (Pop() == 0) goto label2;
   Push(0x000b);
   Push(2); // 2
   CTPOS_dot_(); // CTPOS.
@@ -450,10 +437,9 @@ void UNK_0xf392() // UNK_0xf392
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
 
-  label1076:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1077;
-
+  if (Pop() == 0) goto label3;
   CI(); // CI
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -476,8 +462,7 @@ void UNK_0xf440() // UNK_0xf440
   C_at_(); // C@
   DUP(); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
-  if (Pop() == 0) goto label1094;
-
+  if (Pop() == 0) goto label1;
   PRINT(",", 1); // (.")
   CTCR(); // CTCR
   PRINT("AND HAS A VITALITY OF ", 22); // (.")
@@ -493,22 +478,21 @@ void UNK_0xf440() // UNK_0xf440
   Push(0); // 0
   _dot_R(); // .R
 
-  label1094:
+  label1:
   PRINT(".", 1); // (.")
   CTCR(); // CTCR
   UNK_0xf088(); // UNK_0xf088
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1095;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
   PRINT(" IS CURRENTLY BEING", 19); // (.")
   CTCR(); // CTCR
   PRINT("TREATED.", 8); // (.")
 
-  label1095:
+  label2:
   ICLOSE(); // ICLOSE
 }
 
@@ -536,15 +520,13 @@ void _ro__slash_TREAT_rc_() // (/TREAT)
   CTERASE(); // CTERASE
   Push(cc__4); // 4
   UNK_0xf0a6(); // UNK_0xf0a6
-  if (Pop() == 0) goto label1072;
-
+  if (Pop() == 0) goto label1;
   _2DUP(); // 2DUP
   Push(1); // 1
   ROT(); // ROT
   ROT(); // ROT
   UNK_0xf1ce(); // UNK_0xf1ce
-  if (Pop() == 0) goto label1082;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf2f8(); // UNK_0xf2f8
   Push(0x09c4);
   MS(); // MS
@@ -552,21 +534,19 @@ void _ro__slash_TREAT_rc_() // (/TREAT)
   UNK_0xf392(); // UNK_0xf392
   CTERASE(); // CTERASE
   UNK_0xf28e(); // UNK_0xf28e
-  goto label1084;
+  goto label3;
 
-  label1082:
+  label2:
   UNK_0xf33d(); // UNK_0xf33d
 
-  label1084:
-  goto label1083;
+  label3:
+  return;
 
-  label1072:
+  label1:
   Push(1); // 1
   UNK_0xf392(); // UNK_0xf392
   CTERASE(); // CTERASE
   UNK_0xf28e(); // UNK_0xf28e
-
-  label1083:
 }
 
 // 0xf549: db 0x44 0x4f 0x43 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'DOC-VOC________________ '

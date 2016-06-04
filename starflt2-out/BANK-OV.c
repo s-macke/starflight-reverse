@@ -151,8 +151,8 @@ void _ex_TFLAG() // !TFLAG
 // 0xeff2: WORD 'D@BALANCE' codep=0x224c parp=0xf000
 // ================================================
 
-void D_at_BALANCE()
-{ // D@BALANCE
+void D_at_BALANCE() // D@BALANCE
+{
   UNK_0xefd5(); // UNK_0xefd5
   UNK_0xefb9(); // UNK_0xefb9
   _2_at_(); // 2@
@@ -209,8 +209,7 @@ void TRANSACT() // TRANSACT
   UNK_0xefd5(); // UNK_0xefd5
   UNK_0xefbe(); // UNK_0xefbe
   C_at_(); // C@
-  if (Pop() == 0) goto label642;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x000e);
   SWAP(); // SWAP
@@ -221,25 +220,26 @@ void TRANSACT() // TRANSACT
   Push(cc__9); // 9
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label643;
-
+  if (Pop() == 0) goto label2;
   Push(Pop()+1); // 1+
   LEAVE(); // LEAVE
 
-  label643:
+  label2:
+  i++;
+  } while(i<imax); // (LOOP) 0xfff2
 
-  } while(...); // (LOOP) 0xfff2
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label644;
-
+  if (Pop() == 0) goto label3;
   IFIRST(); // IFIRST
   IDELETE(); // IDELETE
 
-  label644:
+  label3:
   ILAST(); // ILAST
   COVER(); // COVER
   SET_minus_CUR(); // SET-CUR
@@ -263,12 +263,12 @@ void TRANSACT() // TRANSACT
   Push(0); // 0
   UNK_0xefbe(); // UNK_0xefbe
   C_ex_(); // C!
-  goto label645;
+  goto label4;
 
-  label642:
+  label1:
   Pop(); // DROP
 
-  label645:
+  label4:
   ICLOSE(); // ICLOSE
 }
 
@@ -293,12 +293,11 @@ void INT_pe_() // INT%
   M_star__slash_(); // M*/
   _2DUP(); // 2DUP
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label641;
-
+  if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  goto label646;
+  return;
 
-  label641:
+  label1:
   D_at_BALANCE(); // D@BALANCE
   D_plus_(); // D+
   D_ex_BALANCE(); // D!BALANCE
@@ -309,8 +308,6 @@ void INT_pe_() // INT%
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   _ex_(); // !
-
-  label646:
 }
 
 
@@ -400,15 +397,14 @@ void UNK_0xf1a6() // UNK_0xf1a6
   Push(0); // 0
   Push(0); // 0
   D_st_(); // D<
-  if (Pop() == 0) goto label637;
-
+  if (Pop() == 0) goto label1;
   Push(0x000b);
-  goto label638;
+  goto label2;
 
-  label637:
+  label1:
   Push(0x000d);
 
-  label638:
+  label2:
   _gt_R(); // >R
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -493,46 +489,49 @@ void UNK_0xf27f() // UNK_0xf27f
   Push(cc__3); // 3
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(1); // 1
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(0x00c4);
   Push(1); // 1
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   LLINE(); // LLINE
   Push(0x009c);
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(0x00c4);
   Push(0x009c);
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   LLINE(); // LLINE
   Push(0x009c);
   Push(1); // 1
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   Push(1); // 1
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   LLINE(); // LLINE
   Push(0x009c);
   Push(0x00c4);
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   Push(0x00c4);
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   LLINE(); // LLINE
+  i++;
+  } while(i<imax); // (LOOP) 0xffa6
 
-  } while(...); // (LOOP) 0xffa6
   Push(cc__5); // 5
   Push(0x00c2);
   Push(cc__5); // 5
@@ -730,14 +729,13 @@ void UNK_0xf4d4() // UNK_0xf4d4
   IOPEN(); // IOPEN
   Push(0); // 0
 
-  label639:
+  label1:
   DUP(); // DUP
   UNK_0xf482(); // UNK_0xf482
   Push(Pop()+1); // 1+
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label639;
-
+  if (Pop() == 0) goto label1;
   Pop(); // DROP
   ICLOSE(); // ICLOSE
   UNK_0xf4bc(); // UNK_0xf4bc
@@ -765,12 +763,11 @@ void _ro_U_minus_BANK_rc_() // (U-BANK)
   _gt_DISPLA(); // >DISPLA
   SCR_minus_RES(); // SCR-RES
 
-  label640:
+  label1:
   XYSCAN(); // XYSCAN
   Pop(); Pop();// 2DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label640;
-
+  if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   Push(tt_CONTEXT); // CONTEXT
   _ex_(); // !

@@ -65,8 +65,7 @@ void UNK_0xf147() // UNK_0xf147
   DUP(); // DUP
   Push(0x0320);
   _gt_(); // >
-  if (Pop() == 0) goto label1920;
-
+  if (Pop() == 0) goto label1;
   Push(0x0320);
   _minus_(); // -
   Push(0); // 0
@@ -76,7 +75,7 @@ void UNK_0xf147() // UNK_0xf147
   Push(0x0320);
   Push(Pop() + Pop()); // +
 
-  label1920:
+  label1:
   ICLOSE(); // ICLOSE
 }
 
@@ -93,8 +92,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1917;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(cc__6); // 6
@@ -104,8 +102,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1918;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf147(); // UNK_0xf147
   Push(0x0028);
   _slash_(); // /
@@ -117,14 +114,14 @@ void UNK_0xf177() // UNK_0xf177
   INST_minus_QT(); // INST-QT
   _ex_(); // !
 
-  label1918:
+  label2:
   CDROP(); // CDROP
-  goto label1919;
+  goto label3;
 
-  label1917:
+  label1:
   Push(0); // 0
 
-  label1919:
+  label3:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -202,7 +199,7 @@ void UNK_0xf258() // UNK_0xf258
   _i_KEY(); // 'KEY
   Pop(); // DROP
 
-  label1923:
+  label1:
   TTY_minus_SCR(); // TTY-SCR
   TTY_minus_SCR(); // TTY-SCR
 
@@ -253,8 +250,7 @@ void UNK_0xf258() // UNK_0xf258
   Push(2); // 2
   _gt_SND(); // >SND
   _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label1923;
-
+  if (Pop() == 0) goto label1;
   BYE(); // BYE
 }
 
@@ -283,16 +279,13 @@ void UNK_0xf342() // UNK_0xf342
 {
   UNK_0xf32c(); // UNK_0xf32c
   DUP(); // DUP
-  if (Pop() == 0) goto label1927;
-
+  if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
   UNK_0x3f39("INSUFFICIENT FUEL FOR SAFE LANDING");
   TYPE(); // TYPE
   BEEP(); // BEEP
-
-  label1927:
 }
 
 
@@ -326,16 +319,13 @@ void UNK_0xf39d() // UNK_0xf39d
 {
   UNK_0xf37b(); // UNK_0xf37b
   DUP(); // DUP
-  if (Pop() == 0) goto label1929;
-
+  if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
   UNK_0x3f39("INSUFFICIENT FUEL FOR RE-LAUNCHING");
   TYPE(); // TYPE
   BEEP(); // BEEP
-
-  label1929:
 }
 
 
@@ -359,8 +349,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 {
   UNK_0xf3d6(); // UNK_0xf3d6
   DUP(); // DUP
-  if (Pop() == 0) goto label1925;
-
+  if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
@@ -371,8 +360,6 @@ void UNK_0xf3e2() // UNK_0xf3e2
   UNK_0x3f39("SHIP'S HULL.");
   TYPE(); // TYPE
   BEEP(); // BEEP
-
-  label1925:
 }
 
 
@@ -393,18 +380,14 @@ void UNK_0xf430() // UNK_0xf430
   MODULE(); // MODULE
   Push(pp__ask_FUEL_minus_D); // ?FUEL-D
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1921;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf258(); // UNK_0xf258
-  goto label1922;
+  return;
 
-  label1921:
+  label1:
   UNK_0xf3d6(); // UNK_0xf3d6
-  if (Pop() == 0) goto label1922;
-
+  if (Pop() == 0) return;
   UNK_0xf1f1(); // UNK_0xf1f1
-
-  label1922:
 }
 
 
@@ -418,34 +401,29 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(Read16(Pop())); // @
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1924;
-
+  if (Pop() == 0) return;
   UNK_0xf3e2(); // UNK_0xf3e2
-  if (Pop() == 0) goto label1926;
-
+  if (Pop() == 0) goto label1;
   Push(pp_GWF); // GWF
   ON(); // ON
-  goto label1930;
+  goto label3;
 
-  label1926:
+  label1:
   UNK_0xf342(); // UNK_0xf342
-  if (Pop() == 0) goto label1928;
-
+  if (Pop() == 0) goto label2;
   Push(pp_GWF); // GWF
   ON(); // ON
-  goto label1930;
+  goto label3;
 
-  label1928:
+  label2:
   UNK_0xf39d(); // UNK_0xf39d
   Push(pp_GWF); // GWF
   _ex_(); // !
 
-  label1930:
+  label3:
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
-
-  label1924:
 }
 
 
@@ -460,31 +438,26 @@ void _ask_LAND() // ?LAND
   Push(pp__i_HEAT); // 'HEAT
   Push(Read16(Pop())); // @
   _eq_(); // =
-  if (Pop() == 0) goto label1915;
-
+  if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   PRINT("COMPUTER NOT RESPONDING!", 24); // (.")
   BEEP(); // BEEP
-  goto label1932;
+  return;
 
-  label1915:
+  label1:
   Push(pp__ask_G_minus_AWAR); // ?G-AWAR
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1916;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf45e(); // UNK_0xf45e
-  if (Pop() == 0) goto label1931;
-
+  if (Pop() == 0) goto label3;
   UNK_0xf430(); // UNK_0xf430
 
-  label1931:
-  goto label1932;
+  label3:
+  return;
 
-  label1916:
+  label2:
   UNK_0xf430(); // UNK_0xf430
-
-  label1932:
 }
 
 
@@ -497,11 +470,8 @@ void _ask_LAUNCH() // ?LAUNCH
   UNK_0xf39d(); // UNK_0xf39d
   if (Pop() == 0) Push(1); else Push(0); // NOT
   DUP(); // DUP
-  if (Pop() == 0) goto label1933;
-
+  if (Pop() == 0) return;
   UNK_0xf1db(); // UNK_0xf1db
-
-  label1933:
 }
 
 // 0xf503: db 0x4c 0x41 0x4e 0x44 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x66 0x6f 0x72 0x20 0x4c 0x41 0x4e 0x44 0x2d 0x4f 0x56 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x29 0x2d 0x32 0x32 0x36 0x33 0x2f 0x38 0x35 0x29 0x31 0x31 0x35 0x35 0x44 0x4f 0x43 0x54 0x4f 0x52 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x00 'LAND-VOC________________________for LAND-OV-------------------)-2263/85)1155DOCTOR----------- '

@@ -115,8 +115,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   Push(0); // 0
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label774;
-
+  if (Pop() == 0) return;
   ICLOSE(); // ICLOSE
   Push(0xf1e2);
   IFLD_at_(); // IFLD@
@@ -125,16 +124,17 @@ void UNK_0xf3aa() // UNK_0xf3aa
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(cc_UNK_0xf18a); // UNK_0xf18a
-  I(); // I
+  Push(i); // I
   Push(1); // 1
   _star_CREATE(); // *CREATE
+  i++;
+  } while(i<imax); // (LOOP) 0xfff6
 
-  } while(...); // (LOOP) 0xfff6
-
-  label774:
 }
 
 
@@ -187,14 +187,17 @@ void UNK_0xf440() // UNK_0xf440
   Push(cc__6); // 6
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
-  I(); // I
+  Push(i); // I
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xf418(); // UNK_0xf418
+  i++;
+  } while(i<imax); // (LOOP) 0xfff6
 
-  } while(...); // (LOOP) 0xfff6
   SET_minus_CUR(); // SET-CUR
 }
 
@@ -223,8 +226,7 @@ void UNK_0xf474() // UNK_0xf474
 {
   UNK_0xf45e(); // UNK_0xf45e
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label775;
-
+  if (Pop() == 0) goto label1;
   Push(0x000b);
   Push(0x002e);
   ICREATE(); // ICREATE
@@ -242,7 +244,7 @@ void UNK_0xf474() // UNK_0xf474
   UNK_0xf45e(); // UNK_0xf45e
   Pop(); // DROP
 
-  label775:
+  label1:
   CI(); // CI
   Push(pp_SUPER_minus_B); // SUPER-B
   _1_dot_5_ex_(); // 1.5!
@@ -297,13 +299,12 @@ void DIO() // DIO
   UNK_0xf1ca(); // UNK_0xf1ca
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label776;
-
+  if (Pop() == 0) goto label1;
   Push(pp_PLHI); // PLHI
   ON(); // ON
-  goto label776;
+  goto label1;
 
-  label776:
+  label1:
   UNK_0x3f09(); // UNK_0x3f09
   UNK_0x5021(); // UNK_0x5021
   UNK_0x5247(); // UNK_0x5247

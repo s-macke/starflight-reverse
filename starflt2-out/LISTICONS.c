@@ -33,17 +33,19 @@ void UNK_0xf2c6() // UNK_0xf2c6
   Push(cc__8); // 8
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(pp_CMAP); // CMAP
-  I(); // I
+  Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_minus_PT); // TILE-PT
   _ex_(); // !
   Push(0x0020);
-  I(); // I
+  Push(i); // I
   Push(0x000c);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -51,8 +53,9 @@ void UNK_0xf2c6() // UNK_0xf2c6
   Push(0x000f);
   Push(0x000c);
   TILEFIL(); // TILEFIL
+  i++;
+  } while(i<imax); // (LOOP) 0xffd4
 
-  } while(...); // (LOOP) 0xffd4
   BLACK(); // BLACK
   _ex_COLOR(); // !COLOR
   Push(0x001f);
@@ -134,10 +137,12 @@ void UNK_0xf3e6() // UNK_0xf3e6
   Push(2); // 2
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   DUP(); // DUP
-  I(); // I
+  Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -145,18 +150,18 @@ void UNK_0xf3e6() // UNK_0xf3e6
   C_at_(); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label1002;
-
+  if (Pop() == 0) goto label1;
   _gt_FLAG(); // >FLAG
 
-  label1002:
+  label1:
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
   Push(pp_ABLT); // ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
+  i++;
+  } while(i<imax); // (LOOP) 0xffdc
 
-  } while(...); // (LOOP) 0xffdc
   Pop(); // DROP
 }
 
@@ -202,6 +207,8 @@ void UNK_0xf45e() // UNK_0xf45e
 {
   _gt_1FONT(); // >1FONT
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(0x000a);
@@ -220,7 +227,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _st__ex__gt_(); // <!>
   Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
-  I(); // I
+  Push(i); // I
   Push(0x0012);
   Push(Pop() * Pop()); // *
   _at_DS(); // @DS
@@ -238,24 +245,24 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
-  I(); // I
+  Push(i); // I
   DUP(); // DUP
   Push(0x002b);
   _gt_(); // >
-  if (Pop() == 0) goto label1003;
-
+  if (Pop() == 0) goto label1;
   Push(0x0011);
   _minus_(); // -
 
-  label1003:
+  label1:
   _at_RECORD(); // @RECORD
   Push(0x001b);
   TYPE(); // TYPE
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
+  i++;
+  } while(i<imax); // (LOOP) 0xff8c
 
-  } while(...); // (LOOP) 0xff8c
   Pop(); // DROP
 }
 

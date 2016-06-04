@@ -63,7 +63,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(cc__5); // 5
   Push(0x0014);
   RRND(); // RRND
-  I(); // I
+  Push(h); // I
   C_ex_(); // C!
   Push(0); // 0
   Push(2); // 2
@@ -80,7 +80,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   MAX(); // MAX
   Push(0x0023);
   MIN(); // MIN
-  I(); // I
+  Push(h); // I
   Push(Pop()+1); // 1+
   _ex_(); // !
   Push(0x0078);
@@ -109,15 +109,19 @@ void UNK_0xf456() // UNK_0xf456
   Push(0x0032);
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(pp_UNK_0xf3a6); // UNK_0xf3a6
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3f0(); // UNK_0xf3f0
   Push(cc__5); // 5
+  int step = Pop();
+  i += step;
+  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff4
 
-  } while(...); // (+LOOP) 0xfff4
 }
 
 
@@ -130,11 +134,11 @@ void UNK_0xf470() // UNK_0xf470
   Push(pp_UNK_0xf3a6); // UNK_0xf3a6
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  I(); // I
+  Push(h); // I
   C_at_(); // C@
   _slash_(); // /
   Push(0x0024);
@@ -143,10 +147,10 @@ void UNK_0xf470() // UNK_0xf470
   MAX(); // MAX
   Push(0x0047);
   MIN(); // MIN
-  I(); // I
+  Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read16(Pop())); // @
-  I(); // I
+  Push(h); // I
   C_at_(); // C@
   _slash_(); // /
   Push(0x003c);
@@ -156,22 +160,19 @@ void UNK_0xf470() // UNK_0xf470
   Push(0x0077);
   MIN(); // MIN
   LPLOT(); // LPLOT
-  I(); // I
+  Push(h); // I
   C_at_(); // C@
   Push(Pop()-1); // 1-
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1495;
-
+  if (Pop() == 0) goto label1;
   R_gt_(); // R>
   UNK_0xf3f0(); // UNK_0xf3f0
-  goto label1496;
+  return;
 
-  label1495:
+  label1:
   R_gt_(); // R>
   C_ex_(); // C!
-
-  label1496:
 }
 
 
@@ -183,25 +184,28 @@ void UNK_0xf4d0() // UNK_0xf4d0
 {
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1494;
-
+  if (Pop() == 0) goto label1;
   DARK(); // DARK
 
-  label1494:
+  label1:
   Push(0x0032);
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
-  I(); // I
+  Push(i); // I
   UNK_0xf470(); // UNK_0xf470
   Push(0xfff6);
   Push(0x0028);
   RRND(); // RRND
   TONE(); // TONE
   Push(cc__5); // 5
+  int step = Pop();
+  i += step;
+  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffec
 
-  } while(...); // (+LOOP) 0xffec
   V_gt_DISPL(); // V>DISPL
 }
 
@@ -224,11 +228,14 @@ void FLUX() // FLUX
   Push(0x0096);
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   UNK_0xf4d0(); // UNK_0xf4d0
+  i++;
+  } while(i<imax); // (LOOP) 0xfffc
 
-  } while(...); // (LOOP) 0xfffc
   BEEPOFF(); // BEEPOFF
   DARK(); // DARK
   V_gt_DISPL(); // V>DISPL

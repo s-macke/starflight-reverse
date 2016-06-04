@@ -168,15 +168,14 @@ void UNK_0xedac() // UNK_0xedac
   UNK_0xecc0(); // UNK_0xecc0
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  I(); // I
+  Push(h); // I
   UNK_0xecc0(); // UNK_0xecc0
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1033;
-
+  if (Pop() == 0) goto label1;
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
   _ex_(); // !
@@ -185,7 +184,7 @@ void UNK_0xedac() // UNK_0xedac
   Push(cc__5); // 5
   Push(pp_LBLT); // LBLT
   _ex_(); // !
-  I(); // I
+  Push(h); // I
   C_at_(); // C@
   Push(Pop()*2); // 2*
   Push(cc__5); // 5
@@ -206,11 +205,10 @@ void UNK_0xedac() // UNK_0xedac
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1034;
-
+  if (Pop() == 0) goto label2;
   BLT(); // BLT
 
-  label1034:
+  label2:
   Push(0x0072);
   Push(pp_WBLT); // WBLT
   Push(Read16(Pop())); // @
@@ -230,17 +228,16 @@ void UNK_0xedac() // UNK_0xedac
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1035;
-
+  if (Pop() == 0) goto label3;
   BLT(); // BLT
 
-  label1035:
-  goto label1036;
+  label3:
+  goto label4;
 
-  label1033:
+  label1:
   Pop(); // DROP
 
-  label1036:
+  label4:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -257,27 +254,29 @@ void DBARS() // DBARS
   Push(cc__7); // 7
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
-  I(); // I
+  Push(i); // I
   UNK_0xedac(); // UNK_0xedac
+  i++;
+  } while(i<imax); // (LOOP) 0xfffa
 
-  } while(...); // (LOOP) 0xfffa
   UNK_0xecc0(); // UNK_0xecc0
   C_at_(); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   Push(0x000f);
   _st_(); // <
-  if (Pop() == 0) goto label1037;
-
+  if (Pop() == 0) goto label1;
   Push(0x1d4c); Pust(0x0000);
-  goto label1038;
+  goto label2;
 
-  label1037:
+  label1:
   Push(0x3a98); Pust(0x0000);
 
-  label1038:
+  label2:
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
@@ -317,26 +316,28 @@ void UNK_0xeeb8() // UNK_0xeeb8
   Push(cc__7); // 7
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   UNK_0xecc0(); // UNK_0xecc0
-  I(); // I
+  Push(i); // I
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  J(); // J
+  Push(h); // J
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1066;
-
+  if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
-  I(); // I
+  Push(i); // I
   SWAP(); // SWAP
   LEAVE(); // LEAVE
 
-  label1066:
+  label1:
+  i++;
+  } while(i<imax); // (LOOP) 0xffe2
 
-  } while(...); // (LOOP) 0xffe2
   R_gt_(); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -350,70 +351,64 @@ void UNK_0xeeb8() // UNK_0xeeb8
 void UNK_0xeef0() // UNK_0xeef0
 {
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1040;
-
+  if (Pop() == 0) goto label1;
   PRINT("DESTROYED", 9); // (.")
-  goto label1047;
+  goto label8;
 
-  label1040:
-  I(); // I
+  label1:
+  Push(h); // I
   Push(1); // 1
   Push(0x0014);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1041;
-
+  if (Pop() == 0) goto label2;
   PRINT("CRITICALLY", 10); // (.")
-  goto label1046;
+  goto label7;
 
-  label1041:
-  I(); // I
+  label2:
+  Push(h); // I
   Push(0x0014);
   Push(0x0028);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1042;
-
+  if (Pop() == 0) goto label3;
   PRINT("HEAVILY", 7); // (.")
-  goto label1046;
+  goto label7;
 
-  label1042:
-  I(); // I
+  label3:
+  Push(h); // I
   Push(0x0028);
   Push(0x0046);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1043;
-
+  if (Pop() == 0) goto label4;
   PRINT("MODERATELY", 10); // (.")
-  goto label1046;
+  goto label7;
 
-  label1043:
-  I(); // I
+  label4:
+  Push(h); // I
   Push(0x0046);
   Push(0x005a);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1044;
-
+  if (Pop() == 0) goto label5;
   PRINT("SLIGHTLY", 8); // (.")
-  goto label1046;
+  goto label7;
 
-  label1044:
-  I(); // I
+  label5:
+  Push(h); // I
   Push(0x005a);
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1045;
-
+  if (Pop() == 0) goto label6;
   PRINT("MINIMALLY", 9); // (.")
-  goto label1046;
+  goto label7;
 
-  label1045:
+  label6:
   PRINT("NOT", 3); // (.")
 
-  label1046:
+  label7:
   PRINT(" DAMAGED", 8); // (.")
 
-  label1047:
+  label8:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -440,28 +435,27 @@ void UNK_0xf063() // UNK_0xf063
   UNK_0xecc0(); // UNK_0xecc0
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  I(); // I
+  Push(h); // I
   UNK_0xecc0(); // UNK_0xecc0
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1039;
-
-  I(); // I
+  if (Pop() == 0) goto label1;
+  Push(h); // I
   C_at_(); // C@
   UNK_0xeef0(); // UNK_0xeef0
-  I(); // I
+  Push(h); // I
   C_at_(); // C@
   _0_gt_(); // 0>
-  goto label1048;
+  goto label2;
 
-  label1039:
+  label1:
   PRINT("NONE", 4); // (.")
   Push(0); // 0
 
-  label1048:
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -492,8 +486,7 @@ void UNK_0xf0ab() // UNK_0xf0ab
 void UNK_0xf0d0() // UNK_0xf0d0
 {
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label1050;
-
+  if (Pop() == 0) return;
   CTCR(); // CTCR
   PRINT("CURRENT FUNCTIONALITY: ", 23); // (.")
   Push(Pop()*2); // 2*
@@ -503,14 +496,11 @@ void UNK_0xf0d0() // UNK_0xf0d0
   C_at_(); // C@
   Push(0x0080);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1051;
-
+  if (Pop() == 0) goto label1;
   PRINT("IN", 2); // (.")
 
-  label1051:
+  label1:
   PRINT("OPERATIVE", 9); // (.")
-
-  label1050:
 }
 
 
@@ -552,8 +542,7 @@ void UNK_0xf14f() // UNK_0xf14f
   DUP(); // DUP
   Push(0x003c);
   _st_(); // <
-  if (Pop() == 0) goto label1053;
-
+  if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -563,14 +552,13 @@ void UNK_0xf14f() // UNK_0xf14f
   DUP(); // DUP
   _dot_(); // .
   PRINT("MINUTE", 6); // (.")
-  goto label1056;
+  goto label4;
 
-  label1053:
+  label1:
   DUP(); // DUP
   Push(0x05a0);
   _st_(); // <
-  if (Pop() == 0) goto label1054;
-
+  if (Pop() == 0) goto label2;
   Push(0x003c);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -580,9 +568,9 @@ void UNK_0xf14f() // UNK_0xf14f
   DUP(); // DUP
   _dot_(); // .
   PRINT("HOUR", 4); // (.")
-  goto label1056;
+  goto label4;
 
-  label1054:
+  label2:
   Push(0x05a0);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -593,15 +581,14 @@ void UNK_0xf14f() // UNK_0xf14f
   _dot_(); // .
   PRINT("DAY", 3); // (.")
 
-  label1056:
+  label4:
   Push(1); // 1
   _gt_(); // >
-  if (Pop() == 0) goto label1055;
-
+  if (Pop() == 0) goto label3;
   Push(0x0053);
   EMIT(); // EMIT
 
-  label1055:
+  label3:
   PRINT(".", 1); // (.")
 }
 
@@ -619,19 +606,16 @@ void UNK_0xf1d3() // UNK_0xf1d3
   DUP(); // DUP
   Push(0x0064);
   _st_(); // <
-  if (Pop() == 0) goto label1052;
-
+  if (Pop() == 0) goto label1;
   CTCR(); // CTCR
   PRINT("ESTIMATED TIME FOR COMPLETE REPAIRS: ", 37); // (.")
   CTCR(); // CTCR
   UNK_0xf11b(); // UNK_0xf11b
   UNK_0xf14f(); // UNK_0xf14f
-  goto label1057;
+  return;
 
-  label1052:
+  label1:
   Pop(); // DROP
-
-  label1057:
 }
 
 
@@ -648,12 +632,9 @@ void UNK_0xf221() // UNK_0xf221
   C_at_(); // C@
   Push(0x0040);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1058;
-
+  if (Pop() == 0) return;
   CTCR(); // CTCR
   PRINT("CURRENTLY UNDER REPAIR.", 23); // (.")
-
-  label1058:
 }
 
 
@@ -668,20 +649,19 @@ void UNK_0xf255() // UNK_0xf255
   _gt_R(); // >R
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  I(); // I
+  Push(h); // I
   UNK_0xf063(); // UNK_0xf063
-  if (Pop() == 0) goto label1049;
-
-  I(); // I
+  if (Pop() == 0) goto label1;
+  Push(h); // I
   UNK_0xf0ab(); // UNK_0xf0ab
-  I(); // I
+  Push(h); // I
   UNK_0xf0d0(); // UNK_0xf0d0
-  I(); // I
+  Push(h); // I
   UNK_0xf1d3(); // UNK_0xf1d3
-  I(); // I
+  Push(h); // I
   UNK_0xf221(); // UNK_0xf221
 
-  label1049:
+  label1:
   R_gt_(); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -705,30 +685,26 @@ void UNK_0xf281() // UNK_0xf281
   Push(1); // 1
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1062;
-
+  if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
   Push(0); // 0
-  goto label1065;
+  return;
 
-  label1062:
+  label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
   _dot_SHIP_minus_ITEM(); // .SHIP-ITEM
   PRINT(": ", 2); // (.")
-  if (Pop() == 0) goto label1063;
-
+  if (Pop() == 0) goto label2;
   PRINT("NO REPAIRS NEEDED.", 18); // (.")
-  goto label1064;
+  goto label3;
 
-  label1063:
+  label2:
   CTCR(); // CTCR
   PRINT("DAMAGED BEYOND REPAIR.", 22); // (.")
 
-  label1064:
+  label3:
   Push(1); // 1
-
-  label1065:
 }
 
 
@@ -862,10 +838,10 @@ void UNK_0xf415() // UNK_0xf415
 {
   _gt_R(); // >R
   _at_CRS(); // @CRS
-  I(); // I
+  Push(h); // I
   Push(pp_OCRS); // OCRS
   _ex_(); // !
-  I(); // I
+  Push(h); // I
   Push(0x0054);
   Push(0x00b3);
   ROT(); // ROT
@@ -915,7 +891,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
 
-  label1061:
+  label3:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   Push(pp_NCRS); // NCRS
@@ -931,8 +907,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Pop() + Pop()); // +
   Push(pp_NCRS); // NCRS
   _ex_(); // !
-  if (Pop() == 0) goto label1059;
-
+  if (Pop() == 0) goto label1;
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415
@@ -942,7 +917,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   UNK_0xf415(); // UNK_0xf415
   UNK_0xf255(); // UNK_0xf255
 
-  label1059:
+  label1:
   Push(pp_FTRIG); // FTRIG
   Push(Read16(Pop())); // @
   Push(pp_OCRS); // OCRS
@@ -951,7 +926,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   UNK_0xecc0(); // UNK_0xecc0
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
   _0_gt_(); // 0>
@@ -960,61 +935,55 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1060;
-
+  if (Pop() == 0) goto label2;
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xf281(); // UNK_0xf281
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1060;
-
+  if (Pop() == 0) goto label2;
   Push(0x0040);
   UNK_0xeeb8(); // UNK_0xeeb8
-  if (Pop() == 0) goto label1067;
-
+  if (Pop() == 0) goto label4;
   _gt_R(); // >R
-  I(); // I
+  Push(h); // I
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   _eq_(); // =
-  if (Pop() == 0) goto label1068;
-
-  I(); // I
+  if (Pop() == 0) goto label5;
+  Push(h); // I
   UNK_0xf2f0(); // UNK_0xf2f0
-  goto label1070;
+  goto label7;
 
-  label1068:
-  I(); // I
+  label5:
+  Push(h); // I
   UNK_0xf31e(); // UNK_0xf31e
-  if (Pop() == 0) goto label1069;
-
-  I(); // I
+  if (Pop() == 0) goto label6;
+  Push(h); // I
   UNK_0xf38a(); // UNK_0xf38a
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   CTCR(); // CTCR
   UNK_0xf3f1(); // UNK_0xf3f1
-  goto label1070;
+  goto label7;
 
-  label1069:
-  I(); // I
+  label6:
+  Push(h); // I
   UNK_0xf3a8(); // UNK_0xf3a8
 
-  label1070:
+  label7:
   R_gt_(); // R>
   Pop(); // DROP
-  goto label1060;
+  goto label2;
 
-  label1067:
+  label4:
   CTERASE(); // CTERASE
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
 
-  label1060:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1061;
-
+  if (Pop() == 0) goto label3;
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415

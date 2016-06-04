@@ -637,11 +637,10 @@ void _gt_FLT() // >FLT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
-  if (Pop() == 0) goto label1271;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf502(); // UNK_0xf502
 
-  label1271:
+  label1:
   Push(pp_UNK_0xebf6); // UNK_0xebf6
   _099(); // 099
   UNK_0xf460(); // UNK_0xf460

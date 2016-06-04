@@ -71,15 +71,12 @@ void UNK_0xf3f1() // UNK_0xf3f1
   _at_INST_minus_C(); // @INST-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label471;
-
+  if (Pop() == 0) goto label1;
   SPACE_minus_ID(); // SPACE-ID
-  goto label472;
+  return;
 
-  label471:
+  label1:
   PLANET_minus_ID(); // PLANET-ID
-
-  label472:
 }
 
 
@@ -118,8 +115,8 @@ void UNK_0xf4e8() // UNK_0xf4e8
 // 0xf4ee: WORD 'ICON-PARM' codep=0x224c parp=0xf4fc
 // ================================================
 
-void ICON_minus_PARM()
-{ // ICON-PARM
+void ICON_minus_PARM() // ICON-PARM
+{
   INST_minus_X(); // INST-X
   Push(Read16(Pop())); // @
   INST_minus_Y(); // INST-Y

@@ -143,12 +143,11 @@ void UNK_0xf272() // UNK_0xf272
 // 0xf2a2: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf2b3
 // ================================================
 
-void _gt_DOWN_minus_SHIELD()
-{ // >DOWN-SHIELD
+void _gt_DOWN_minus_SHIELD() // >DOWN-SHIELD
+{
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1347;
-
+  if (Pop() == 0) goto label1;
 
   UNK_0x3f39("MAGNETIC DISTURBANCES IN NEBULA");
   _dot_TTY(); // .TTY
@@ -156,7 +155,7 @@ void _gt_DOWN_minus_SHIELD()
   UNK_0x3f39("CAUSING ENERGY FLUCTUATIONS");
   _dot_TTY(); // .TTY
 
-  label1347:
+  label1:
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f39("RAISE SHIELD");
@@ -178,13 +177,12 @@ void _gt_DOWN_minus_SHIELD()
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
-  if (Pop() == 0) goto label1348;
-
+  if (Pop() == 0) goto label2;
   Push(cc__3); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
 
-  label1348:
+  label2:
   Push(pp__ask_SUP); // ?SUP
   OFF(); // OFF
 }
@@ -198,8 +196,7 @@ void UNK_0xf359() // UNK_0xf359
 {
   Push(cc__6); // 6
   UNK_0xf22a(); // UNK_0xf22a
-  if (Pop() == 0) goto label1351;
-
+  if (Pop() == 0) return;
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f39("DROP SHIELD ");
@@ -220,8 +217,6 @@ void UNK_0xf359() // UNK_0xf359
   _dot_ABTN(); // .ABTN
   Push(pp__ask_SUP); // ?SUP
   ON(); // ON
-
-  label1351:
 }
 
 
@@ -265,50 +260,44 @@ void UNK_0xf3fb() // UNK_0xf3fb
   C_at_(); // C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1337;
-
-  if (Pop() == 0) goto label1338;
-
+  if (Pop() == 0) goto label1;
+  if (Pop() == 0) goto label2;
   Push(cc__4); // 4
   UNK_0xf22a(); // UNK_0xf22a
-  goto label1345;
+  goto label8;
 
-  label1338:
+  label2:
   Push(0); // 0
 
-  label1345:
+  label8:
   DUP(); // DUP
-  if (Pop() == 0) goto label1339;
-
+  if (Pop() == 0) goto label3;
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f39("ARMING MISSILES");
   _dot_TTY(); // .TTY
 
-  label1339:
+  label3:
   SWAP(); // SWAP
-  if (Pop() == 0) goto label1340;
-
+  if (Pop() == 0) goto label4;
   Push(cc__3); // 3
   UNK_0xf22a(); // UNK_0xf22a
-  goto label1344;
+  goto label7;
 
-  label1340:
+  label4:
   Push(0); // 0
 
-  label1344:
+  label7:
   DUP(); // DUP
-  if (Pop() == 0) goto label1341;
-
+  if (Pop() == 0) goto label5;
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f39("ARMING LASERS");
   _dot_TTY(); // .TTY
 
-  label1341:
+  label5:
   Push(Pop() + Pop()); // +
-  if (Pop() == 0) goto label1342;
-
+  if (Pop() == 0) goto label6;
   UNK_0xf215(); // UNK_0xf215
   Push(Read16(Pop())); // @
   Push(0x0023);
@@ -321,16 +310,14 @@ void UNK_0xf3fb() // UNK_0xf3fb
   UNK_0xf222(); // UNK_0xf222
   UNK_0xf246(); // UNK_0xf246
 
-  label1342:
-  goto label1343;
+  label6:
+  return;
 
-  label1337:
+  label1:
   Pop(); Pop();// 2DROP
 
   UNK_0x3f39("SHIP IS NOT EQUIPPED WITH WEAPONS");
   _dot_TTY(); // .TTY
-
-  label1343:
 }
 
 
@@ -347,15 +334,14 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1336;
-
+  if (Pop() == 0) goto label1;
   _gt_DISARM(); // >DISARM
-  goto label1346;
+  goto label2;
 
-  label1336:
+  label1:
   UNK_0xf3fb(); // UNK_0xf3fb
 
-  label1346:
+  label2:
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }
@@ -374,30 +360,28 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1349;
-
+  if (Pop() == 0) goto label1;
   _gt_DOWN_minus_SHIELD(); // >DOWN-SHIELD
-  goto label1352;
+  goto label3;
 
-  label1349:
+  label1:
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1350;
-
+  if (Pop() == 0) goto label2;
 
   UNK_0x3f39("SHIELDS CAN'T BE RAISED");
   _dot_TTY(); // .TTY
   BEEP(); // BEEP
-  goto label1352;
+  goto label3;
 
-  label1350:
+  label2:
   UNK_0xf359(); // UNK_0xf359
 
-  label1352:
+  label3:
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }

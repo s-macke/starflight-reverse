@@ -51,7 +51,7 @@
 void UNK_0xf14c() // UNK_0xf14c
 {
 
-  label1803:
+  label1:
   OVER(); // OVER
   OVER(); // OVER
   C_at_(); // C@
@@ -63,13 +63,10 @@ void UNK_0xf14c() // UNK_0xf14c
   _gt_(); // >
   R_gt_(); // R>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1802;
-
+  if (Pop() == 0) return;
   Push(Pop()+1); // 1+
   Push(Pop()+3); // 3+
-  goto label1803;
-
-  label1802:
+  goto label1;
 }
 
 
@@ -192,19 +189,16 @@ void UNK_0xf2b2() // UNK_0xf2b2
   Push(cc__6); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1797;
-
+  if (Pop() == 0) goto label1;
   Push(1); // 1
   Push(0x0064);
   RRND(); // RRND
   Push(0x001e);
   _st_(); // <
-  goto label1798;
+  return;
 
-  label1797:
+  label1:
   Push(0); // 0
-
-  label1798:
 }
 
 
@@ -290,15 +284,14 @@ void UNK_0xf33c() // UNK_0xf33c
   PRINT(" IS ", 4); // (.")
   UNK_0xf286(); // UNK_0xf286
   C_at_(); // C@
-  if (Pop() == 0) goto label1800;
-
+  if (Pop() == 0) goto label1;
   PRINT("INJURED", 7); // (.")
-  goto label1801;
+  goto label2;
 
-  label1800:
+  label1:
   PRINT("KILLED", 6); // (.")
 
-  label1801:
+  label2:
   PRINT(".", 1); // (.")
 }
 
@@ -365,8 +358,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
   UNK_0xf275(); // UNK_0xf275
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1792;
-
+  if (Pop() == 0) return;
   Push(0x00c5);
   Push(0x000c);
   Push(0x00c1);
@@ -386,8 +378,6 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0009);
   BLACK(); // BLACK
   POLY_minus_ER(); // POLY-ER
-
-  label1792:
 }
 
 
@@ -402,27 +392,25 @@ void UNK_0xf42e() // UNK_0xf42e
   DUP(); // DUP
   Push(cc__3); // 3
   _gt_(); // >
-  if (Pop() == 0) goto label1791;
-
+  if (Pop() == 0) goto label1;
   Push(cc__6); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1793;
-
+  if (Pop() == 0) goto label2;
   Push(0x0032);
-  goto label1795;
+  goto label4;
 
-  label1793:
+  label2:
   Push(0x004b);
 
-  label1795:
-  goto label1794;
+  label4:
+  goto label3;
 
-  label1791:
+  label1:
   Pop(); // DROP
   Push(0x0064);
 
-  label1794:
+  label3:
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
   Push(pp_FORCED); // FORCED
@@ -497,15 +485,14 @@ void _ro_DO_dot_STORM() // (DO.STORM
   UNK_0xf24d(); // UNK_0xf24d
   C_at_(); // C@
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label1790;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf46c(); // UNK_0xf46c
-  goto label1804;
+  goto label3;
 
-  label1790:
+  label1:
   UNK_0xf4a8(); // UNK_0xf4a8
 
-  label1804:
+  label3:
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
   R_gt_(); // R>
@@ -513,18 +500,14 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1796;
-
+  if (Pop() == 0) goto label2;
   Push(0xcdd8);
   MODULE(); // MODULE
 
-  label1796:
+  label2:
   UNK_0xf2b2(); // UNK_0xf2b2
-  if (Pop() == 0) goto label1799;
-
+  if (Pop() == 0) return;
   INJURE_minus_PL(); // INJURE-PL
-
-  label1799:
 }
 
 // 0xf506: db 0x53 0x54 0x4f 0x52 0x4d 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x52 0x41 0x47 0x45 0x20 0x46 0x4f 0x52 0x20 0x46 0x55 0x4e 0x43 0x54 0x49 0x4f 0x4e 0x5d 0x17 0xa0 0x0f 0xef 0x2a 0xb3 0xe0 0x90 0x16 0x49 0x54 0x45 0x4d 0x53 0x31 0x36 0x37 0x32 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'STORM-VOC_______________________RAGE FOR FUNCTION]    *    ITEMS1672______________________ '

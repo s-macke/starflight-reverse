@@ -179,11 +179,10 @@ void _gt_FLT() // >FLT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
-  if (Pop() == 0) goto label1353;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf4a0(); // UNK_0xf4a0
 
-  label1353:
+  label1:
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
   UNK_0xf3fe(); // UNK_0xf3fe

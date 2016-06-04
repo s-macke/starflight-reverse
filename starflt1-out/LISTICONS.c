@@ -55,17 +55,19 @@ void UNK_0xf2a6() // UNK_0xf2a6
   Push(cc__8); // 8
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(pp_CMAP); // CMAP
-  I(); // I
+  Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_minus_PT); // TILE-PT
   _ex_(); // !
   Push(0x0021);
-  I(); // I
+  Push(i); // I
   Push(0x000c);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -73,8 +75,9 @@ void UNK_0xf2a6() // UNK_0xf2a6
   Push(0x0010);
   Push(0x000c);
   TILEFIL(); // TILEFIL
+  i++;
+  } while(i<imax); // (LOOP) 0xffd4
 
-  } while(...); // (LOOP) 0xffd4
   Push(0x0023);
   Push(0x0019);
   POS_dot_(); // POS.
@@ -134,10 +137,12 @@ void UNK_0xf3c6() // UNK_0xf3c6
   Push(2); // 2
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   DUP(); // DUP
-  I(); // I
+  Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -150,8 +155,9 @@ void UNK_0xf3c6() // UNK_0xf3c6
   Push(pp_ABLT); // ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
+  i++;
+  } while(i<imax); // (LOOP) 0xffe2
 
-  } while(...); // (LOOP) 0xffe2
   Pop(); // DROP
 }
 
@@ -184,6 +190,8 @@ void UNK_0xf42c() // UNK_0xf42c
 {
   _gt_1FONT(); // >1FONT
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(0x000a);
@@ -201,7 +209,7 @@ void UNK_0xf42c() // UNK_0xf42c
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(0x003e);
-  I(); // I
+  Push(i); // I
   _at_RECORD(); // @RECORD
   UNK_0xf3c6(); // UNK_0xf3c6
   Push(0x000c);
@@ -213,15 +221,16 @@ void UNK_0xf42c() // UNK_0xf42c
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
-  I(); // I
+  Push(i); // I
   _at_RECORD(); // @RECORD
   Push(0x001b);
   TYPE(); // TYPE
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
+  i++;
+  } while(i<imax); // (LOOP) 0xffae
 
-  } while(...); // (LOOP) 0xffae
   Pop(); // DROP
 }
 

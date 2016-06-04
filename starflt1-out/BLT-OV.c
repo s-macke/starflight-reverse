@@ -151,11 +151,8 @@ void _dot_PARMS() // .PARMS
   KEY(); // KEY
   Push(0x000d);
   _eq_(); // =
-  if (Pop() == 0) goto label538;
-
+  if (Pop() == 0) return;
   QUIT(); // QUIT
-
-  label538:
 }
 
 
@@ -271,12 +268,12 @@ void _dot_HYBRID() // .HYBRID
   Push(cc__5); // 5
   Push(pp_ABLT); // ABLT
   _ex_(); // !
-  I(); // I
+  Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
   Push(pp_LBLT); // LBLT
   _ex_(); // !
-  I(); // I
+  Push(h); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
   Push(pp_WBLT); // WBLT
@@ -286,6 +283,8 @@ void _dot_HYBRID() // .HYBRID
   LC_at_(); // LC@
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(pp_ABLT); // ABLT
@@ -297,8 +296,8 @@ void _dot_HYBRID() // .HYBRID
   Push(cc__4); // 4
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
-  I(); // I
-  I_i_(); // I'
+  Push(i); // I
+  Push(i); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
@@ -309,29 +308,27 @@ void _dot_HYBRID() // .HYBRID
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
-  if (Pop() == 0) goto label534;
-
+  if (Pop() == 0) goto label1;
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label535;
-
+  if (Pop() == 0) goto label2;
   _dot_EGARUNBIT(); // .EGARUNBIT
-  goto label537;
+  goto label4;
 
-  label535:
+  label2:
   _dot_RUNBIT(); // .RUNBIT
 
-  label537:
-  goto label536;
+  label4:
+  goto label3;
 
-  label534:
+  label1:
   _co_BLT_cc_(); // {BLT}
 
-  label536:
+  label3:
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
@@ -343,8 +340,9 @@ void _dot_HYBRID() // .HYBRID
   _minus_(); // -
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
+  i++;
+  } while(i<imax); // (LOOP) 0xff9c
 
-  } while(...); // (LOOP) 0xff9c
 }
 
 

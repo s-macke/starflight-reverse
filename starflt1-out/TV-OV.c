@@ -337,24 +337,20 @@ void UNK_0xe943() // UNK_0xe943
 void UNK_0xe96b() // UNK_0xe96b
 {
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label968;
-
+  if (Pop() == 0) goto label1;
   _0_st_(); // 0<
-  if (Pop() == 0) goto label969;
-
+  if (Pop() == 0) goto label2;
   PRINT("W", 1); // (.")
-  goto label971;
+  goto label3;
 
-  label969:
+  label2:
   PRINT("E", 1); // (.")
 
-  label971:
-  goto label970;
+  label3:
+  return;
 
-  label968:
+  label1:
   PRINT(" ", 1); // (.")
-
-  label970:
 }
 
 
@@ -365,24 +361,20 @@ void UNK_0xe96b() // UNK_0xe96b
 void UNK_0xe98f() // UNK_0xe98f
 {
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label963;
-
+  if (Pop() == 0) goto label1;
   _0_st_(); // 0<
-  if (Pop() == 0) goto label964;
-
+  if (Pop() == 0) goto label2;
   PRINT("S", 1); // (.")
-  goto label966;
+  goto label3;
 
-  label964:
+  label2:
   PRINT("N", 1); // (.")
 
-  label966:
-  goto label965;
+  label3:
+  return;
 
-  label963:
+  label1:
   PRINT(" ", 1); // (.")
-
-  label965:
 }
 
 
@@ -435,8 +427,7 @@ void UNK_0xe9f1() // UNK_0xe9f1
   UNK_0xe88d(); // UNK_0xe88d
   UNK_0xe8a5(); // UNK_0xe8a5
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label961;
-
+  if (Pop() == 0) return;
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
   UNK_0xe9d3(); // UNK_0xe9d3
@@ -447,11 +438,10 @@ void UNK_0xe9f1() // UNK_0xe9f1
   DUP(); // DUP
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label962;
-
+  if (Pop() == 0) goto label1;
   Push(-Pop()); // NEGATE
 
-  label962:
+  label1:
   Push(cc__4); // 4
   _dot_R(); // .R
   UNK_0xe98f(); // UNK_0xe98f
@@ -459,16 +449,13 @@ void UNK_0xe9f1() // UNK_0xe9f1
   DUP(); // DUP
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label967;
-
+  if (Pop() == 0) goto label2;
   Push(-Pop()); // NEGATE
 
-  label967:
+  label2:
   Push(0); // 0
   _dot_R(); // .R
   UNK_0xe96b(); // UNK_0xe96b
-
-  label961:
 }
 
 
@@ -522,12 +509,15 @@ void UNK_0xea67() // UNK_0xea67
   Push(Pop() + Pop()); // +
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   PAD(); // PAD
   WLINE_minus_U(); // WLINE-U
+  i++;
+  } while(i<imax); // (LOOP) 0xfffa
 
-  } while(...); // (LOOP) 0xfffa
   Push(pp_UNK_0xea3b); // UNK_0xea3b
   OFF(); // OFF
 }
@@ -542,12 +532,14 @@ void UNK_0xea91() // UNK_0xea91
   Push(2); // 2
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(Pop()-2); // 2-
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(pp_WBOTTOM); // WBOTTOM
   Push(Read16(Pop())); // @
@@ -560,7 +552,7 @@ void UNK_0xea91() // UNK_0xea91
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
-  I(); // I
+  Push(i); // I
   Push(Pop() + Pop()); // +
   Push(pp_WBOTTOM); // WBOTTOM
   Push(Read16(Pop())); // @
@@ -570,8 +562,9 @@ void UNK_0xea91() // UNK_0xea91
   Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
   LLINE(); // LLINE
+  i++;
+  } while(i<imax); // (LOOP) 0xffca
 
-  } while(...); // (LOOP) 0xffca
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(Pop()-2); // 2-
@@ -767,7 +760,7 @@ void UNK_0xec5b() // UNK_0xec5b
   Push(pp_LKEYTIM); // LKEYTIM
   _2_ex_(); // 2!
 
-  label984:
+  label1:
   DUP(); // DUP
   Push(0); // 0
   Push(pp_LKEYTIM); // LKEYTIM
@@ -778,8 +771,7 @@ void UNK_0xec5b() // UNK_0xec5b
   D_st_(); // D<
   _i_KEY(); // 'KEY
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label984;
-
+  if (Pop() == 0) goto label1;
   Pop(); // DROP
 }
 
@@ -842,15 +834,14 @@ void UNK_0xecf4() // UNK_0xecf4
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
-  label997:
+  label2:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label996;
-
+  if (Pop() == 0) goto label1;
   UNK_0xecec(); // UNK_0xecec
-  goto label997;
+  goto label2;
 
-  label996:
+  label1:
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
   ICLOSE(); // ICLOSE
@@ -877,17 +868,15 @@ void UNK_0xed12() // UNK_0xed12
   Push(0x000b);
   Push(0x000b);
 
-  label994:
+  label3:
   Push(pp_SUPER_minus_B); // SUPER-B
   _1_dot_5_at_(); // 1.5@
   CI(); // CI
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label992;
-
+  if (Pop() == 0) goto label1;
   _ask_CLASS_slash_(); // ?CLASS/
-  if (Pop() == 0) goto label993;
-
+  if (Pop() == 0) goto label2;
   UNK_0xecc4(); // UNK_0xecc4
   Push(pp_UNK_0xecbc); // UNK_0xecbc
   Push(cc__4); // 4
@@ -895,8 +884,7 @@ void UNK_0xed12() // UNK_0xed12
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _st_(); // <
-  if (Pop() == 0) goto label995;
-
+  if (Pop() == 0) goto label4;
   CI(); // CI
   Push(pp_UNK_0xecbc); // UNK_0xecbc
   _1_dot_5_ex_(); // 1.5!
@@ -904,16 +892,16 @@ void UNK_0xed12() // UNK_0xed12
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   _st__ex__gt_(); // <!>
-  goto label993;
+  goto label2;
 
-  label995:
+  label4:
   Pop(); // DROP
 
-  label993:
+  label2:
   INEXT(); // INEXT
-  goto label994;
+  goto label3;
 
-  label992:
+  label1:
   Pop(); Pop();// 2DROP
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -989,14 +977,11 @@ void TV_minus_SETUP() // TV-SETUP
 void UNK_0xede5() // UNK_0xede5
 {
   _ask_NULL(); // ?NULL
-  if (Pop() == 0) goto label960;
-
+  if (Pop() == 0) return;
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
   _0_dot_(); // 0.
   _gt_C(); // >C
-
-  label960:
 }
 
 
@@ -1009,19 +994,18 @@ void UNK_0xedf7() // UNK_0xedf7
   Push(0x000b);
   Push(0x000f);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label955;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001c);
   Push(cc__5); // 5
   IFIND(); // IFIND
   ICLOSE(); // ICLOSE
-  goto label956;
+  goto label2;
 
-  label955:
+  label1:
   Push(0); // 0
 
-  label956:
+  label2:
   Push(pp__ask_FLAT); // ?FLAT
   _st__ex__gt_(); // <!>
 }
@@ -1063,8 +1047,7 @@ void UNK_0xee39() // UNK_0xee39
   UNK_0xee1f(); // UNK_0xee1f
   Push(pp__ask_FLAT); // ?FLAT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label957;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001c);
   Push(cc__5); // 5
@@ -1086,17 +1069,15 @@ void UNK_0xee39() // UNK_0xee39
   Push(0xfffd);
   UNK_0xee2b(); // UNK_0xee2b
 
-  label957:
+  label1:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label958;
-
+  if (Pop() == 0) goto label2;
   IOPEN(); // IOPEN
   Push(0x001c);
   Push(cc__3); // 3
   IFIND(); // IFIND
-  if (Pop() == 0) goto label959;
-
+  if (Pop() == 0) goto label3;
   Push(1); // 1
   INST_minus_QT(); // INST-QT
   _ex_(); // !
@@ -1112,10 +1093,10 @@ void UNK_0xee39() // UNK_0xee39
   Push(cc__minus_1); // -1
   UNK_0xee2b(); // UNK_0xee2b
 
-  label959:
+  label3:
   ICLOSE(); // ICLOSE
 
-  label958:
+  label2:
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
 }
@@ -1175,13 +1156,10 @@ void UNK_0xeefd() // UNK_0xeefd
 {
   Push(pp__ask_TV); // ?TV
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label985;
-
+  if (Pop() == 0) return;
   PRINT("REFUELING TERRAIN VEHICLE ", 26); // (.")
   GCR(); // GCR
   PRINT("AND TRANSFERRING ALL CARGO", 26); // (.")
-
-  label985:
 }
 
 
@@ -1222,19 +1200,18 @@ void UNK_0xef63() // UNK_0xef63
   Push(Read16(Pop())); // @
   _st_(); // <
   DUP(); // DUP
-  if (Pop() == 0) goto label980;
-
+  if (Pop() == 0) goto label1;
   SWAP(); // SWAP
   Push(-Pop()); // NEGATE
   UNK_0xe7f4(); // UNK_0xe7f4
   _plus__ex_(); // +!
-  goto label981;
+  goto label2;
 
-  label980:
+  label1:
   SWAP(); // SWAP
   Pop(); // DROP
 
-  label981:
+  label2:
   ICLOSE(); // ICLOSE
 }
 
@@ -1247,11 +1224,10 @@ void UNK_0xef8f() // UNK_0xef8f
 {
   IOPEN(); // IOPEN
 
-  label990:
+  label4:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label987;
-
+  if (Pop() == 0) goto label1;
   IEXTRAC(); // IEXTRAC
   _star_STARSH(); // *STARSH
   _gt_C_plus_S(); // >C+S
@@ -1259,9 +1235,9 @@ void UNK_0xef8f() // UNK_0xef8f
   CDROP(); // CDROP
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
-  goto label990;
+  goto label4;
 
-  label987:
+  label1:
   ICLOSE(); // ICLOSE
   _star_STARSH(); // *STARSH
   _gt_C_plus_S(); // >C+S
@@ -1269,8 +1245,7 @@ void UNK_0xef8f() // UNK_0xef8f
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label988;
-
+  if (Pop() == 0) goto label2;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(cc__6); // 6
@@ -1281,12 +1256,12 @@ void UNK_0xef8f() // UNK_0xef8f
   Push(0x000a);
   U_star_(); // U*
   CDROP(); // CDROP
-  goto label989;
+  goto label3;
 
-  label988:
+  label2:
   NULL(); // NULL
 
-  label989:
+  label3:
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
   CDROP(); // CDROP
@@ -1301,16 +1276,13 @@ void UNK_0xef8f() // UNK_0xef8f
 void UNK_0xefeb() // UNK_0xefeb
 {
 
-  label991:
+  label1:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label986;
-
+  if (Pop() == 0) return;
   UNK_0xef8f(); // UNK_0xef8f
   IDELETE(); // IDELETE
-  goto label991;
-
-  label986:
+  goto label1;
 }
 
 
@@ -1329,8 +1301,7 @@ void UNK_0xefff() // UNK_0xefff
   Push(pp_TV_minus_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xef63(); // UNK_0xef63
-  if (Pop() == 0) goto label982;
-
+  if (Pop() == 0) goto label1;
   UNK_0xeefd(); // UNK_0xeefd
   IOPEN(); // IOPEN
   UNK_0xefeb(); // UNK_0xefeb
@@ -1338,13 +1309,12 @@ void UNK_0xefff() // UNK_0xefff
   Push(0); // 0
   UNK_0xe7ef(); // UNK_0xe7ef
   _ex_(); // !
-  goto label983;
+  goto label2;
 
-  label982:
+  label1:
   Push(pp__ask_TV); // ?TV
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label983;
-
+  if (Pop() == 0) goto label2;
   PRINT("NOT ENOUGH ROOM IN SHIP HOLD. TO", 32); // (.")
   GCR(); // GCR
   PRINT("TRANSFER FROM TERRAIN VEHICLE", 29); // (.")
@@ -1353,7 +1323,7 @@ void UNK_0xefff() // UNK_0xefff
   Push(0x09c4);
   UNK_0xec5b(); // UNK_0xec5b
 
-  label983:
+  label2:
   Push(0x05dc);
   MS(); // MS
   ICLOSE(); // ICLOSE
@@ -1530,13 +1500,16 @@ void UNK_0xf1ba() // UNK_0xf1ba
   Push(0x000b);
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   BLT(); // BLT
   Push(0x0032);
   MS(); // MS
+  i++;
+  } while(i<imax); // (LOOP) 0xfff6
 
-  } while(...); // (LOOP) 0xfff6
 }
 
 
@@ -1551,6 +1524,8 @@ void UNK_0xf1d2() // UNK_0xf1d2
   DUP(); // DUP
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   DUP(); // DUP
@@ -1561,8 +1536,9 @@ void UNK_0xf1d2() // UNK_0xf1d2
   TONE(); // TONE
   Push(2); // 2
   MS(); // MS
+  i++;
+  } while(i<imax); // (LOOP) 0xffec
 
-  } while(...); // (LOOP) 0xffec
   Pop(); // DROP
   BEEPOFF(); // BEEPOFF
 }
@@ -1582,12 +1558,11 @@ void UNK_0xf1fc() // UNK_0xf1fc
   UNK_0xf184(); // UNK_0xf184
   UNK_0xf1ba(); // UNK_0xf1ba
 
-  label952:
+  label2:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label951;
-
+  if (Pop() == 0) goto label1;
   CLICK(); // CLICK
   BLT(); // BLT
   Push(pp_EYEXY); // EYEXY
@@ -1608,15 +1583,14 @@ void UNK_0xf1fc() // UNK_0xf1fc
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
-  goto label953;
+  goto label3;
 
-  label951:
+  label1:
   Pop(); Pop();// 2DROP
 
-  label953:
+  label3:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label952;
-
+  if (Pop() == 0) goto label2;
 }
 
 
@@ -1630,11 +1604,10 @@ void UNK_0xf24e() // UNK_0xf24e
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =
-  if (Pop() == 0) goto label954;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf1d2(); // UNK_0xf1d2
 
-  label954:
+  label1:
   _at_CRS(); // @CRS
   Push(pp_EYEXY); // EYEXY
   _2_at_(); // 2@
@@ -1704,15 +1677,14 @@ void UNK_0xf296() // UNK_0xf296
 
 void UNK_0xf2ce() // UNK_0xf2ce
 {
-  if (Pop() == 0) goto label977;
-
+  if (Pop() == 0) goto label1;
   RED(); // RED
-  goto label978;
+  goto label2;
 
-  label977:
+  label1:
   BLUE(); // BLUE
 
-  label978:
+  label2:
   UNK_0xf296(); // UNK_0xf296
 }
 
@@ -1825,15 +1797,14 @@ void UNK_0xf3b5() // UNK_0xf3b5
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   _gt_(); // >
-  if (Pop() == 0) goto label972;
-
+  if (Pop() == 0) goto label1;
   Push(0); // 0
-  goto label973;
+  goto label2;
 
-  label972:
+  label1:
   Push(cc__minus_1); // -1
 
-  label973:
+  label2:
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
@@ -1923,39 +1894,36 @@ void DO_dot_WEAPON() // DO.WEAPON
   _gt_R(); // >R
   _gt_R(); // >R
 
-  label976:
+  label3:
   XYSCAN(); // XYSCAN
   Push(1); // 1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label974;
-
+  if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
   Push(cc__minus_1); // -1
   UNK_0xf44d(); // UNK_0xf44d
-  goto label979;
+  goto label4;
 
-  label974:
+  label1:
   Push(cc__minus_1); // -1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label975;
-
+  if (Pop() == 0) goto label2;
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xf44d(); // UNK_0xf44d
-  goto label979;
+  goto label4;
 
-  label975:
+  label2:
   Pop(); // DROP
   Pop(); // DROP
 
-  label979:
+  label4:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label976;
-
+  if (Pop() == 0) goto label3;
   Push(pp_UNK_0xf435); // UNK_0xf435
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-

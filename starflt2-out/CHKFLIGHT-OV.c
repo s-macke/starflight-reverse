@@ -64,27 +64,23 @@ void UNK_0xf195() // UNK_0xf195
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label488;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(0x0017);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label489;
-
+  if (Pop() == 0) goto label2;
   Push(cc_TRUE); // TRUE
-  goto label491;
+  goto label3;
 
-  label489:
+  label2:
   Push(cc_FALSE); // FALSE
 
-  label491:
-  goto label490;
+  label3:
+  return;
 
-  label488:
+  label1:
   Push(cc_FALSE); // FALSE
-
-  label490:
 }
 
 
@@ -254,34 +250,30 @@ void UNK_0xf3a9() // UNK_0xf3a9
   DUP(); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label499;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf276(); // UNK_0xf276
 
-  label499:
+  label1:
   DUP(); // DUP
   Push(2); // 2
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label500;
-
+  if (Pop() == 0) goto label2;
   UNK_0xf2ae(); // UNK_0xf2ae
 
-  label500:
+  label2:
   DUP(); // DUP
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label501;
-
+  if (Pop() == 0) goto label3;
   UNK_0xf331(); // UNK_0xf331
 
-  label501:
+  label3:
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label502;
-
+  if (Pop() == 0) goto label4;
   UNK_0xf378(); // UNK_0xf378
 
-  label502:
+  label4:
   Push(1); // 1
   Push(0x0016);
   CMESS(); // CMESS
@@ -314,8 +306,7 @@ void UNK_0xf414() // UNK_0xf414
   Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label487;
-
+  if (Pop() == 0) goto label1;
   _star_OP(); // *OP
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -325,20 +316,19 @@ void UNK_0xf414() // UNK_0xf414
   Pop(); // DROP
   IOPEN(); // IOPEN
 
-  label493:
+  label3:
   CI(); // CI
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label492;
-
+  if (Pop() == 0) goto label2;
   IDELETE(); // IDELETE
-  goto label493;
+  goto label3;
 
-  label492:
+  label2:
   ICLOSE(); // ICLOSE
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 
-  label487:
+  label1:
   Push(pp__ask_TV); // ?TV
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -367,9 +357,11 @@ void UNK_0xf462() // UNK_0xf462
   Push(Pop() + Pop()); // +
   UNK_0xf18b(); // UNK_0xf18b
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
-  I(); // I
+  Push(i); // I
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf186(); // UNK_0xf186
   Push(Read16(Pop())); // @
@@ -379,8 +371,10 @@ void UNK_0xf462() // UNK_0xf462
   Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
   Push(cc__6); // 6
+  int step = Pop();
+  i += step;
+  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffea
 
-  } while(...); // (+LOOP) 0xffea
   ICLOSE(); // ICLOSE
 }
 
@@ -425,14 +419,12 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label494;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  if (Pop() == 0) goto label495;
-
+  if (Pop() == 0) goto label2;
   INST_minus_QT(); // INST-QT
   Push(Read16(Pop())); // @
   DUP(); // DUP
@@ -441,19 +433,19 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  goto label497;
+  goto label4;
 
-  label495:
+  label2:
   Push(1); // 1
 
-  label497:
+  label4:
   CDROP(); // CDROP
-  goto label496;
+  goto label3;
 
-  label494:
+  label1:
   Push(1); // 1
 
-  label496:
+  label3:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -478,18 +470,15 @@ void _ask_CAN_minus_LEAVE() // ?CAN-LEAVE
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label498;
-
+  if (Pop() == 0) goto label1;
   UNK_0xf3a9(); // UNK_0xf3a9
   KEY(); // KEY
   Pop(); // DROP
   Push(0); // 0
-  goto label503;
+  return;
 
-  label498:
+  label1:
   Push(1); // 1
-
-  label503:
 }
 
 // 0xf541: db 0x43 0x48 0x4b 0x46 0x4c 0x54 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'CHKFLT_________________________ '

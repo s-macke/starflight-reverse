@@ -295,29 +295,27 @@ void UNK_0xef3a() // UNK_0xef3a
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label696;
-
+  if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  if (Pop() == 0) goto label697;
-
+  if (Pop() == 0) goto label2;
   INST_minus_QT(); // INST-QT
   Push(Read16(Pop())); // @
-  goto label699;
+  goto label4;
 
-  label697:
+  label2:
   Push(0); // 0
 
-  label699:
+  label4:
   ICLOSE(); // ICLOSE
-  goto label698;
+  goto label3;
 
-  label696:
+  label1:
   Push(0); // 0
 
-  label698:
+  label3:
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(0x000a);
@@ -404,12 +402,15 @@ void UNK_0xf034() // UNK_0xf034
 {
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   _2OVER(); // 2OVER
   LLINE(); // LLINE
+  i++;
+  } while(i<imax); // (LOOP) 0xfffa
 
-  } while(...); // (LOOP) 0xfffa
   Pop(); Pop();// 2DROP
 }
 
@@ -503,17 +504,17 @@ void UNK_0xf0e0() // UNK_0xf0e0
 void UNK_0xf106() // UNK_0xf106
 {
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label702;
-
+  if (Pop() == 0) return;
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   UNK_0xf0e0(); // UNK_0xf0e0
+  i++;
+  } while(i<imax); // (LOOP) 0xfffc
 
-  } while(...); // (LOOP) 0xfffc
-
-  label702:
 }
 
 
@@ -627,15 +628,14 @@ void UNK_0xf1d4() // UNK_0xf1d4
 {
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed65(); // UNK_0xed65
-  if (Pop() == 0) goto label700;
-
+  if (Pop() == 0) goto label1;
   LT_minus_BLUE(); // LT-BLUE
-  goto label701;
+  goto label2;
 
-  label700:
+  label1:
   DK_minus_BLUE(); // DK-BLUE
 
-  label701:
+  label2:
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -858,10 +858,12 @@ void UNK_0xf478() // UNK_0xf478
   Push(cc__5); // 5
   Push(0); // 0
 
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(0x000f);
-  I(); // I
+  Push(i); // I
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(0x002c);
@@ -869,13 +871,14 @@ void UNK_0xf478() // UNK_0xf478
   POS_dot_(); // POS.
   PRINT("CLASS ", 6); // (.")
   Push(cc__5); // 5
-  I(); // I
+  Push(i); // I
   _minus_(); // -
   Push(0); // 0
   _dot_R(); // .R
   PRINT("...", 3); // (.")
+  i++;
+  } while(i<imax); // (LOOP) 0xffd1
 
-  } while(...); // (LOOP) 0xffd1
   Push(cc__6); // 6
   Push(cc__8); // 8
   POS_dot_(); // POS.
