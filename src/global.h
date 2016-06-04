@@ -12,6 +12,7 @@ extern OVERLAYS overlays[];
 
 #ifdef STARFLT1
     #define CODECALL 0x224c
+    #define CODEEXIT 0x1692 // exit function
     #define CODELIT 0x175f // push constant
     #define CODE2LIT 0x1618 // push two constants
     #define CODEPOINTER 0x1d29 // push pointer on stack of (probably constant) variable or pointer.
@@ -34,6 +35,7 @@ extern OVERLAYS overlays[];
 
 #else
     #define CODECALL 0x224c
+    #define CODEEXIT 0x1692 // exit function
     #define CODELIT 0x175F // push constant
     #define CODE2LIT 0x1618 // push two constants
     #define CODEPOINTER 0x1d29 // push pointer on stack of (probably constant) variable or pointer.
@@ -54,7 +56,6 @@ extern OVERLAYS overlays[];
     #define CODELOADDATA 0x7394 // code executed when data is loaded from directory
     #define CODELOADOVERLAY 0x83DD
 #endif
-
 
 
 #endif
