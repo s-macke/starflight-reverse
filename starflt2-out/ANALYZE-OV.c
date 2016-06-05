@@ -16,7 +16,7 @@
 // 1874:         (.SURF)  codep:0x4b3b parp:0xf1dd size:0x00e6 C-string:'_ro__dot_SURF_rc_'
 // 1875:         (.ATMO)  codep:0x4b3b parp:0xf2cf size:0x0078 C-string:'_ro__dot_ATMO_rc_'
 // 1876:        (.WEATH)  codep:0x4b3b parp:0xf354 size:0x0104 C-string:'_ro__dot_WEATH_rc_'
-// 1877:      (.V/P-OBJ)  codep:0x4b3b parp:0xf467 size:0x002c C-string:'_ro__dot_V_slash_P_minus_OBJ_rc_'
+// 1877:      (.V/P-OBJ)  codep:0x4b3b parp:0xf467 size:0x002c C-string:'_ro__dot_V_slash_P_dash_OBJ_rc_'
 // 1878:     (.ANALYSIS)  codep:0x4b3b parp:0xf4a3 size:0x0014 C-string:'_ro__dot_ANALYSIS_rc_'
 // 1879:     (/ANALYSIS)  codep:0x224c parp:0xf4c7 size:0x0099 C-string:'_ro__slash_ANALYSIS_rc_'
 
@@ -44,7 +44,7 @@
 
 void UNK_0xed9f() // UNK_0xed9f
 {
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(0x003c);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -58,7 +58,7 @@ void UNK_0xed9f() // UNK_0xed9f
 
   label1:
   CTINIT(); // CTINIT
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   _ro__dot_OBJECT_rc_(); // (.OBJECT)
 }
 
@@ -107,7 +107,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(pp_SENSE_minus_A); // SENSE-A
+  Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   DABS(); // DABS
@@ -116,7 +116,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   if (Pop() == 0) goto label1;
   _gt_C_plus_S(); // >C+S
   UNK_0xed9f(); // UNK_0xed9f
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS)
   ICLOSE(); // ICLOSE
   Push(0x1b58); Pust(0x0000);
@@ -139,10 +139,10 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(pp_OK_minus_TALK); // OK-TALK
+  Push(pp_OK_dash_TALK); // OK-TALK
   D_ex_(); // D!
   NULL(); // NULL
-  Push(pp_SENSE_minus_A); // SENSE-A
+  Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_ex_(); // 1.5!
 }
 

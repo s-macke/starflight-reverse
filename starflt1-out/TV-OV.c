@@ -51,7 +51,7 @@
 // 1743:         HEAVEHO  codep:0x224c parp:0xed84 size:0x000a C-string:'HEAVEHO'
 // 1744:      UNK_0xed90  codep:0x2214 parp:0xed90 size:0x000a C-string:'UNK_0xed90'
 // 1745:      UNK_0xed9c  codep:0x224c parp:0xed9c size:0x002c C-string:'UNK_0xed9c'
-// 1746:        TV-SETUP  codep:0x224c parp:0xedd5 size:0x000e C-string:'TV_minus_SETUP'
+// 1746:        TV-SETUP  codep:0x224c parp:0xedd5 size:0x000e C-string:'TV_dash_SETUP'
 // 1747:      UNK_0xede5  codep:0x224c parp:0xede5 size:0x0010 C-string:'UNK_0xede5'
 // 1748:      UNK_0xedf7  codep:0x224c parp:0xedf7 size:0x0026 C-string:'UNK_0xedf7'
 // 1749:      UNK_0xee1f  codep:0x224c parp:0xee1f size:0x000a C-string:'UNK_0xee1f'
@@ -77,8 +77,8 @@
 // 1769:       WALK&TALK  codep:0x224c parp:0xf282 size:0x0012 C-string:'WALK_and_TALK'
 // 1770:      UNK_0xf296  codep:0x224c parp:0xf296 size:0x0036 C-string:'UNK_0xf296'
 // 1771:      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x0010 C-string:'UNK_0xf2ce'
-// 1772:         TV-DISP  codep:0x224c parp:0xf2ea size:0x007d C-string:'TV_minus_DISP'
-// 1773:       TV-CLEANU  codep:0x224c parp:0xf375 size:0x0004 C-string:'TV_minus_CLEANU'
+// 1772:         TV-DISP  codep:0x224c parp:0xf2ea size:0x007d C-string:'TV_dash_DISP'
+// 1773:       TV-CLEANU  codep:0x224c parp:0xf375 size:0x0004 C-string:'TV_dash_CLEANU'
 // 1774:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0038 C-string:'UNK_0xf37b'
 // 1775:      UNK_0xf3b5  codep:0x224c parp:0xf3b5 size:0x007e C-string:'UNK_0xf3b5'
 // 1776:      UNK_0xf435  codep:0x1d29 parp:0xf435 size:0x0002 C-string:'UNK_0xf435'
@@ -176,7 +176,7 @@ void UNK_0xe873() // UNK_0xe873
   Push(0x00c1);
   Push(0x0044);
   R_gt_(); // R>
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
 }
 
 
@@ -223,7 +223,7 @@ void UNK_0xe8a5() // UNK_0xe8a5
 
 void UNK_0xe8bf() // UNK_0xe8bf
 {
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_WBOTTOM); // WBOTTOM
   _st__plus__ex__gt_(); // <+!>
 }
@@ -317,13 +317,13 @@ void UNK_0xe923() // UNK_0xe923
 void UNK_0xe943() // UNK_0xe943
 {
   Push(0x01e0);
-  _minus_(); // -
+  _dash_(); // -
   Push(0x000a);
   Push(0x0035);
   _star__slash_(); // */
   SWAP(); // SWAP
   Push(0x0480);
-  _minus_(); // -
+  _dash_(); // -
   Push(0x000a);
   Push(0x0040);
   _star__slash_(); // */
@@ -397,7 +397,7 @@ void UNK_0xe9b3() // UNK_0xe9b3
   ROT(); // ROT
   Push(cc__7); // 7
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   POS_dot_(); // POS.
 }
 
@@ -410,9 +410,9 @@ void UNK_0xe9d3() // UNK_0xe9d3
 {
   Push(pp_TVEHICL); // TVEHICL
   _at__gt_C_plus_S(); // @>C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -484,7 +484,7 @@ void UNK_0xea3f() // UNK_0xea3f
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   BLACK(); // BLACK
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   Push(0); // 0
   Push(0); // 0
   UNK_0xe9b3(); // UNK_0xe9b3
@@ -506,7 +506,7 @@ void UNK_0xea67() // UNK_0xea67
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop() + Pop()); // +
   Push(0); // 0
 
@@ -515,7 +515,7 @@ void UNK_0xea67() // UNK_0xea67
   do // (DO)
   {
   PAD(); // PAD
-  WLINE_minus_U(); // WLINE-U
+  WLINE_dash_U(); // WLINE-U
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
@@ -612,7 +612,7 @@ void UNK_0xeb15() // UNK_0xeb15
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
   Push(cc__5); // 5
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   UNK_0xe9b3(); // UNK_0xe9b3
   BLACK(); // BLACK
   UNK_0xe873(); // UNK_0xe873
@@ -793,19 +793,19 @@ void UNK_0xec5b() // UNK_0xec5b
 
 void UNK_0xecc4() // UNK_0xecc4
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   DUP(); // DUP
   U_star_(); // U*
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   DUP(); // DUP
   U_star_(); // U*
@@ -820,7 +820,7 @@ void UNK_0xecc4() // UNK_0xecc4
 
 void UNK_0xecec() // UNK_0xecec
 {
-  _minus_ICON(); // -ICON
+  _dash_ICON(); // -ICON
   IDELETE(); // IDELETE
 }
 
@@ -870,7 +870,7 @@ void UNK_0xed12() // UNK_0xed12
   Push(0x000b);
 
   label3:
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_at_(); // 1.5@
   CI(); // CI
   D_eq_(); // D=
@@ -937,20 +937,20 @@ void UNK_0xed9c() // UNK_0xed9c
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
   Push(cc_UNK_0xed90); // UNK_0xed90
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   ICLOSE(); // ICLOSE
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x01f4);
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -960,14 +960,14 @@ void UNK_0xed9c() // UNK_0xed9c
 // 0xedc8: WORD 'TV-SETUP' codep=0x224c parp=0xedd5
 // ================================================
 
-void TV_minus_SETUP() // TV-SETUP
+void TV_dash_SETUP() // TV-SETUP
 {
   UNK_0xec2b(); // UNK_0xec2b
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
   Push(pp_FUNCTIONS); // FUNCTIONS
-  BLD_minus_CRS(); // BLD-CRS
+  BLD_dash_CRS(); // BLD-CRS
 }
 
 
@@ -1055,12 +1055,12 @@ void UNK_0xee39() // UNK_0xee39
   IFIND(); // IFIND
   Pop(); // DROP
   Push(cc__3); // 3
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   IEXTRAC(); // IEXTRAC
   UNK_0xede5(); // UNK_0xede5
   ICLOSE(); // ICLOSE
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   _gt_BOX(); // >BOX
   Push(cc__3); // 3
@@ -1080,18 +1080,18 @@ void UNK_0xee39() // UNK_0xee39
   IFIND(); // IFIND
   if (Pop() == 0) goto label3;
   Push(1); // 1
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   IEXTRAC(); // IEXTRAC
   UNK_0xede5(); // UNK_0xede5
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   _gt_BOX(); // >BOX
   Push(1); // 1
   UNK_0xe7ef(); // UNK_0xe7ef
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   UNK_0xee2b(); // UNK_0xee2b
 
   label3:
@@ -1117,10 +1117,10 @@ void UNK_0xeeab() // UNK_0xeeab
   _plus_ICON(); // +ICON
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   IEXTRAC(); // IEXTRAC
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1134,12 +1134,12 @@ void UNK_0xeeab() // UNK_0xeeab
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
   Push(0xc437);
   MODULE(); // MODULE
@@ -1170,11 +1170,11 @@ void UNK_0xeefd() // UNK_0xeefd
 
 void UNK_0xef45() // UNK_0xef45
 {
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   IEXTRAC(); // IEXTRAC
   ICLOSE(); // ICLOSE
@@ -1182,7 +1182,7 @@ void UNK_0xef45() // UNK_0xef45
   Push(pp_TVEHICL); // TVEHICL
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
-  INIT_minus_IC(); // INIT-IC
+  INIT_dash_IC(); // INIT-IC
 }
 
 
@@ -1251,7 +1251,7 @@ void UNK_0xef8f() // UNK_0xef8f
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(0x000a);
@@ -1295,11 +1295,11 @@ void UNK_0xefff() // UNK_0xefff
 {
   UNK_0xe8df(); // UNK_0xe8df
   UNK_0xea3f(); // UNK_0xea3f
-  Push(cc__minus_2); // -2
+  Push(cc__dash_2); // -2
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   CTINIT(); // CTINIT
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xef63(); // UNK_0xef63
   if (Pop() == 0) goto label1;
@@ -1380,7 +1380,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
   _gt_MAINVI(); // >MAINVI
   VCLIPSE(); // VCLIPSE
   _dot_BACKGR(); // .BACKGR
-  _dot_LOCAL_minus_(); // .LOCAL-
+  _dot_LOCAL_dash_(); // .LOCAL-
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
   DCLIPSE(); // DCLIPSE
@@ -1614,7 +1614,7 @@ void UNK_0xf24e() // UNK_0xf24e
   _2_at_(); // 2@
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_minus_(); // ?ICONS-
+  _ask_ICONS_dash_(); // ?ICONS-
   UNK_0xea67(); // UNK_0xea67
   Push(0xcd7c);
   MODULE(); // MODULE
@@ -1694,14 +1694,14 @@ void UNK_0xf2ce() // UNK_0xf2ce
 // 0xf2de: WORD 'TV-DISP' codep=0x224c parp=0xf2ea
 // ================================================
 
-void TV_minus_DISP() // TV-DISP
+void TV_dash_DISP() // TV-DISP
 {
   DCLIPSE(); // DCLIPSE
   _gt_DISPLA(); // >DISPLA
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
 
-  UNK_0x3f39("ACTIVATING TERRAIN VEHICLE");
+  UNK_0x3f3b("ACTIVATING TERRAIN VEHICLE");
   _dot_TTY(); // .TTY
   _0_dot_(); // 0.
   Push(pp__ro_SCROLL); // (SCROLL
@@ -1717,14 +1717,14 @@ void TV_minus_DISP() // TV-DISP
   _st__ex__gt_(); // <!>
   Push(pp_OCRS); // OCRS
   _st__ex__gt_(); // <!>
-  INIT_minus_IC(); // INIT-IC
+  INIT_dash_IC(); // INIT-IC
   Push(0x0014);
   Push(pp_LOCRADI); // LOCRADI
   _st__ex__gt_(); // <!>
   UNK_0xf0f9(); // UNK_0xf0f9
   UNK_0xf0a5(); // UNK_0xf0a5
   _0_dot_(); // 0.
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_ex_(); // 1.5!
   Push(0xcf62);
   MODULE(); // MODULE
@@ -1734,7 +1734,7 @@ void TV_minus_DISP() // TV-DISP
   Push(pp_ANCHOR); // ANCHOR
   _st_D_ex__gt_(); // <D!>
   ORGLIST(); // ORGLIST
-  TV_minus_SETUP(); // TV-SETUP
+  TV_dash_SETUP(); // TV-SETUP
   UNK_0xf0e3(); // UNK_0xf0e3
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
@@ -1748,7 +1748,7 @@ void TV_minus_DISP() // TV-DISP
 // 0xf367: WORD 'TV-CLEANU' codep=0x224c parp=0xf375
 // ================================================
 
-void TV_minus_CLEANU() // TV-CLEANU
+void TV_dash_CLEANU() // TV-CLEANU
 {
   UNK_0xefff(); // UNK_0xefff
 }
@@ -1774,7 +1774,7 @@ void UNK_0xf37b() // UNK_0xf37b
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(1); // 1
   Push(pp_XORMODE); // XORMODE
@@ -1803,14 +1803,14 @@ void UNK_0xf3b5() // UNK_0xf3b5
   goto label2;
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
 
   label2:
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
-  Push(pp_WEAPON_minus_); // WEAPON-
+  Push(pp_WEAPON_dash_); // WEAPON-
   _st__plus__ex__gt_(); // <+!>
   UNK_0xe8df(); // UNK_0xe8df
   UNK_0xea3f(); // UNK_0xea3f
@@ -1831,7 +1831,7 @@ void UNK_0xf3b5() // UNK_0xf3b5
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(cc__7); // 7
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xf37b(); // UNK_0xf37b
 }
 
@@ -1853,7 +1853,7 @@ void UNK_0xf439() // UNK_0xf439
   Push(Read16(Pop())); // @
   Push(cc__7); // 7
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xf37b(); // UNK_0xf37b
 }
 
@@ -1903,12 +1903,12 @@ void DO_dot_WEAPON() // DO.WEAPON
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   UNK_0xf44d(); // UNK_0xf44d
   goto label4;
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -1937,7 +1937,7 @@ void DO_dot_WEAPON() // DO.WEAPON
   Push(Pop()+1); // 1+
   Push(0xfed4);
   Push(Pop() * Pop()); // *
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   UNK_0xf1fc(); // UNK_0xf1fc

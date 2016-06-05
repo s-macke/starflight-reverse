@@ -58,12 +58,12 @@
 // 1750:      UNK_0xee04  codep:0x224c parp:0xee04 size:0x0021 C-string:'UNK_0xee04'
 // 1751:      UNK_0xee27  codep:0x224c parp:0xee27 size:0x001d C-string:'UNK_0xee27'
 // 1752:      UNK_0xee46  codep:0x224c parp:0xee46 size:0x0058 C-string:'UNK_0xee46'
-// 1753:         ENGINE-  codep:0xee6d parp:0xeeaa size:0x0004 C-string:'ENGINE_minus_'
-// 1754:         SENSOR-  codep:0xee6d parp:0xeeba size:0x0004 C-string:'SENSOR_minus_'
-// 1755:         COMM-CH  codep:0xee6d parp:0xeeca size:0x0004 C-string:'COMM_minus_CH'
-// 1756:         MISS-CH  codep:0xee6d parp:0xeeda size:0x0004 C-string:'MISS_minus_CH'
-// 1757:         LASER-C  codep:0xee6d parp:0xeeea size:0x0004 C-string:'LASER_minus_C'
-// 1758:         SHIELD-  codep:0xee6d parp:0xeefa size:0x0004 C-string:'SHIELD_minus_'
+// 1753:         ENGINE-  codep:0xee6d parp:0xeeaa size:0x0004 C-string:'ENGINE_dash_'
+// 1754:         SENSOR-  codep:0xee6d parp:0xeeba size:0x0004 C-string:'SENSOR_dash_'
+// 1755:         COMM-CH  codep:0xee6d parp:0xeeca size:0x0004 C-string:'COMM_dash_CH'
+// 1756:         MISS-CH  codep:0xee6d parp:0xeeda size:0x0004 C-string:'MISS_dash_CH'
+// 1757:         LASER-C  codep:0xee6d parp:0xeeea size:0x0004 C-string:'LASER_dash_C'
+// 1758:         SHIELD-  codep:0xee6d parp:0xeefa size:0x0004 C-string:'SHIELD_dash_'
 // 1759:      UNK_0xef00  codep:0x224c parp:0xef00 size:0x000a C-string:'UNK_0xef00'
 // 1760:         #>?FIEL  codep:0x4a4f parp:0xef16 size:0x0024 C-string:'_n__gt__ask_FIEL'
 // 1761:      UNK_0xef3c  codep:0x224c parp:0xef3c size:0x0038 C-string:'UNK_0xef3c'
@@ -92,7 +92,7 @@
 // 1784:      UNK_0xf4e5  codep:0x224c parp:0xf4e5 size:0x0010 C-string:'UNK_0xf4e5'
 // 1785:      UNK_0xf4f7  codep:0x224c parp:0xf4f7 size:0x000e C-string:'UNK_0xf4f7'
 // 1786:      UNK_0xf507  codep:0x224c parp:0xf507 size:0x000e C-string:'UNK_0xf507'
-// 1787:         DO-DAMA  codep:0x224c parp:0xf521 size:0x003f C-string:'DO_minus_DAMA'
+// 1787:         DO-DAMA  codep:0x224c parp:0xf521 size:0x003f C-string:'DO_dash_DAMA'
 
 // =================================
 // =========== VARIABLES ===========
@@ -149,9 +149,9 @@ void UNK_0xead5() // UNK_0xead5
 
 void UNK_0xeae9() // UNK_0xeae9
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
 }
 
@@ -335,11 +335,11 @@ void UNK_0xec0a() // UNK_0xec0a
 void UNK_0xec12() // UNK_0xec12
 {
   ROT(); // ROT
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   _gt_R(); // >R
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
@@ -360,7 +360,7 @@ void UNK_0xec30() // UNK_0xec30
   R_at_(); // R@
   IFLD_at_(); // IFLD@
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   R_gt_(); // R>
@@ -386,7 +386,7 @@ void UNK_0xec6a() // UNK_0xec6a
   SWAP(); // SWAP
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp__n_VESS); // #VESS
   _plus__ex_(); // +!
 }
@@ -495,7 +495,7 @@ void UNK_0xed12() // UNK_0xed12
   UNK_0xec12(); // UNK_0xec12
   Push(0x000a);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   R_gt_(); // R>
   IFLD_at_(); // IFLD@
   Push(Pop()*2); // 2*
@@ -569,7 +569,7 @@ void UNK_0xedf2() // UNK_0xedf2
 void UNK_0xee04() // UNK_0xee04
 {
 
-  UNK_0x3f39("**  GAME  OVER  **");
+  UNK_0x3f3b("**  GAME  OVER  **");
   _dot_TTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -586,7 +586,7 @@ void UNK_0xee27() // UNK_0xee27
 {
   UNK_0xedf2(); // UNK_0xedf2
 
-  UNK_0x3f39("!!HULL DESTROYED!!");
+  UNK_0x3f3b("!!HULL DESTROYED!!");
   _dot_TTY(); // .TTY
   UNK_0xee04(); // UNK_0xee04
 }
@@ -600,7 +600,7 @@ void UNK_0xee46() // UNK_0xee46
 {
   UNK_0xedf2(); // UNK_0xedf2
 
-  UNK_0x3f39("!!CREW  DECEASED!!");
+  UNK_0x3f3b("!!CREW  DECEASED!!");
   _dot_TTY(); // .TTY
   UNK_0xee04(); // UNK_0xee04
 }
@@ -730,7 +730,7 @@ void UNK_0xef8e() // UNK_0xef8e
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
 
-  UNK_0x3f39("KILLED");
+  UNK_0x3f3b("KILLED");
   goto label6;
 
   label1:
@@ -740,7 +740,7 @@ void UNK_0xef8e() // UNK_0xef8e
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label2;
 
-  UNK_0x3f39("CRITICALLY ");
+  UNK_0x3f3b("CRITICALLY ");
   goto label5;
 
   label2:
@@ -750,7 +750,7 @@ void UNK_0xef8e() // UNK_0xef8e
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label3;
 
-  UNK_0x3f39("HEAVILIY ");
+  UNK_0x3f3b("HEAVILIY ");
   goto label5;
 
   label3:
@@ -760,17 +760,17 @@ void UNK_0xef8e() // UNK_0xef8e
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label4;
 
-  UNK_0x3f39("MODERATELY ");
+  UNK_0x3f3b("MODERATELY ");
   goto label5;
 
   label4:
 
-  UNK_0x3f39("SLIGHTLY ");
+  UNK_0x3f3b("SLIGHTLY ");
 
   label5:
   TYPE(); // TYPE
 
-  UNK_0x3f39("WOUNDED ");
+  UNK_0x3f3b("WOUNDED ");
 
   label6:
   TYPE(); // TYPE
@@ -810,7 +810,7 @@ void UNK_0xf02e() // UNK_0xf02e
   _gt_C_plus_S(); // >C+S
   UNK_0xebbf(); // UNK_0xebbf
   COUNT(); // COUNT
-  _minus_TRAILING(); // -TRAILING
+  _dash_TRAILING(); // -TRAILING
   _dot_TTY(); // .TTY
   PRINT(" IS ", 4); // (.")
   UNK_0xef8e(); // UNK_0xef8e
@@ -853,7 +853,7 @@ void UNK_0xf08a() // UNK_0xf08a
   _gt_DISPLA(); // >DISPLA
   DCLIPSE(); // DCLIPSE
 
-  UNK_0x3f39("ALIEN SHIP DESTROYED ");
+  UNK_0x3f3b("ALIEN SHIP DESTROYED ");
   _dot_TTY(); // .TTY
   Push(0); // 0
   UNK_0xeb31(); // UNK_0xeb31
@@ -863,8 +863,8 @@ void UNK_0xf08a() // UNK_0xf08a
   Push(cc__7); // 7
   CMOVE(); // CMOVE
   Push(0x0018);
-  _ex_INST_minus_S(); // !INST-S
-  SET_minus_CUR(); // SET-CUR
+  _ex_INST_dash_S(); // !INST-S
+  SET_dash_CUR(); // SET-CUR
   Push(pp_UNK_0xf081); // UNK_0xf081
   UNK_0xeb4a(); // UNK_0xeb4a
   Push(cc__7); // 7
@@ -886,7 +886,7 @@ void UNK_0xf136() // UNK_0xf136
   C_at_(); // C@
   DUP(); // DUP
   Push(-Pop()); // NEGATE
-  Push(pp_A_minus_STREN); // A-STREN
+  Push(pp_A_dash_STREN); // A-STREN
   _plus__ex_(); // +!
   UNK_0xeb3b(); // UNK_0xeb3b
   _2_at_(); // 2@
@@ -895,12 +895,12 @@ void UNK_0xf136() // UNK_0xf136
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
   _star__slash_(); // */
-  Push(pp_A_minus_STREN); // A-STREN
+  Push(pp_A_dash_STREN); // A-STREN
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
-  Push(pp_A_minus_STREN); // A-STREN
+  Push(pp_A_dash_STREN); // A-STREN
   _ex_(); // !
 }
 
@@ -914,7 +914,7 @@ void UNK_0xf162() // UNK_0xf162
   UNK_0xeb40(); // UNK_0xeb40
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(cc__ask_A_minus_SHIE); // ?A-SHIE
+  Push(cc__ask_A_dash_SHIE); // ?A-SHIE
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
   Push(pp__ask_NEB); // ?NEB
@@ -945,10 +945,10 @@ void UNK_0xf162() // UNK_0xf162
 
 void UNK_0xf19a() // UNK_0xf19a
 {
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0018);
   _eq_(); // =
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(0x0014);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -1001,7 +1001,7 @@ void UNK_0xf1ec() // UNK_0xf1ec
   _gt_R(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_minus_(); // ?ICONS-
+  _ask_ICONS_dash_(); // ?ICONS-
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@
@@ -1061,11 +1061,11 @@ void UNK_0xf248() // UNK_0xf248
   Push(cc__6); // 6
   UNK_0xeb80(); // UNK_0xeb80
   UNK_0xebf2(); // UNK_0xebf2
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop() * Pop()); // *
   Push(cc__5); // 5
   _slash_(); // /
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   UNK_0xeb99(); // UNK_0xeb99
@@ -1085,11 +1085,11 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(cc__6); // 6
   UNK_0xeb58(); // UNK_0xeb58
   UNK_0xebf2(); // UNK_0xebf2
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop() * Pop()); // *
   Push(cc__5); // 5
   _slash_(); // /
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   UNK_0xeba3(); // UNK_0xeba3
@@ -1127,7 +1127,7 @@ void UNK_0xf358() // UNK_0xf358
   MAX(); // MAX
   DUP(); // DUP
   _gt_R(); // >R
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   R_gt_(); // R>
@@ -1248,7 +1248,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   Push(cc__3); // 3
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
@@ -1289,13 +1289,13 @@ void UNK_0xf43c() // UNK_0xf43c
   if (Pop() == 0) goto label1;
   Pop(); // DROP
 
-  UNK_0x3f39("PLASMA BOLT");
+  UNK_0x3f3b("PLASMA BOLT");
   _dot_TTY(); // .TTY
   return;
 
   label1:
 
-  UNK_0x3f39("MISSILE CLASS ");
+  UNK_0x3f3b("MISSILE CLASS ");
   _dot_TTY(); // .TTY
   _dot_(); // .
 }
@@ -1309,14 +1309,14 @@ void UNK_0xf47f() // UNK_0xf47f
 {
   UNK_0xf3f8(); // UNK_0xf3f8
   UNK_0xeaf5(); // UNK_0xeaf5
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   UNK_0xf404(); // UNK_0xf404
   UNK_0xec0a(); // UNK_0xec0a
   UNK_0xf23a(); // UNK_0xf23a
   _gt_R(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_minus_(); // ?ICONS-
+  _ask_ICONS_dash_(); // ?ICONS-
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@
@@ -1333,7 +1333,7 @@ void UNK_0xf47f() // UNK_0xf47f
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(0x0014);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1418,7 +1418,7 @@ void UNK_0xf507() // UNK_0xf507
 // 0xf515: WORD 'DO-DAMA' codep=0x224c parp=0xf521
 // ================================================
 
-void DO_minus_DAMA() // DO-DAMA
+void DO_dash_DAMA() // DO-DAMA
 {
   if (Pop() == 0) goto label1;
   UNK_0xf4f7(); // UNK_0xf4f7

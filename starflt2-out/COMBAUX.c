@@ -21,7 +21,7 @@
 // 1879:      UNK_0xf480  codep:0x224c parp:0xf480 size:0x0044 C-string:'UNK_0xf480'
 // 1880:      UNK_0xf4c6  codep:0x224c parp:0xf4c6 size:0x001c C-string:'UNK_0xf4c6'
 // 1881:      UNK_0xf4e4  codep:0x224c parp:0xf4e4 size:0x0008 C-string:'UNK_0xf4e4'
-// 1882:          SET-SC  codep:0x224c parp:0xf4f7 size:0x003c C-string:'SET_minus_SC'
+// 1882:          SET-SC  codep:0x224c parp:0xf4f7 size:0x003c C-string:'SET_dash_SC'
 // 1883:             @NF  codep:0x224c parp:0xf53b size:0x0025 C-string:'_at_NF'
 
 // =================================
@@ -42,9 +42,9 @@ void UNK_0xf2c6() // UNK_0xf2c6
 {
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -63,9 +63,9 @@ void UNK_0xf2d8() // UNK_0xf2d8
   Push(0x001d);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   goto label2;
 
@@ -101,11 +101,11 @@ void UNK_0xf308() // UNK_0xf308
 
   label2:
   Push(0x001e);
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_YVIS); // YVIS
   _st__ex__gt_(); // <!>
   Push(0x0012);
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_XVIS); // XVIS
   _st__ex__gt_(); // <!>
 }
@@ -266,12 +266,12 @@ void UNK_0xf438() // UNK_0xf438
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   _at_IX(); // @IX
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _at_IY(); // @IY
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
   Push(pp_UNK_0xf434); // UNK_0xf434
@@ -291,12 +291,12 @@ void UNK_0xf45c() // UNK_0xf45c
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   _at_IX(); // @IX
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _at_IY(); // @IY
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
   Push(pp_UNK_0xf430); // UNK_0xf430
@@ -333,7 +333,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(0x002c);
   WITHIN(); // WITHIN
   _at_ID(); // @ID
-  Push(cc_INVIS_minus_I); // INVIS-I
+  Push(cc_INVIS_dash_I); // INVIS-I
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   _at_ID(); // @ID
@@ -358,11 +358,11 @@ void UNK_0xf480() // UNK_0xf480
 void UNK_0xf4c6() // UNK_0xf4c6
 {
   ROT(); // ROT
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   _gt_R(); // >R
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
@@ -389,7 +389,7 @@ void UNK_0xf4e4() // UNK_0xf4e4
 // 0xf4ec: WORD 'SET-SC' codep=0x224c parp=0xf4f7
 // ================================================
 
-void SET_minus_SC() // SET-SC
+void SET_dash_SC() // SET-SC
 {
   UNK_0xf308(); // UNK_0xf308
   Push(pp__ask_UF); // ?UF

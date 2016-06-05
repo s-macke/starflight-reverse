@@ -25,7 +25,7 @@
 // 1883:      UNK_0xf332  codep:0x224c parp:0xf332 size:0x0026 C-string:'UNK_0xf332'
 // 1884:      UNK_0xf35a  codep:0x224c parp:0xf35a size:0x0018 C-string:'UNK_0xf35a'
 // 1885:      UNK_0xf374  codep:0x224c parp:0xf374 size:0x0036 C-string:'UNK_0xf374'
-// 1886:       INJURE-PL  codep:0x224c parp:0xf3b8 size:0x0062 C-string:'INJURE_minus_PL'
+// 1886:       INJURE-PL  codep:0x224c parp:0xf3b8 size:0x0062 C-string:'INJURE_dash_PL'
 // 1887:      UNK_0xf41c  codep:0x224c parp:0xf41c size:0x004a C-string:'UNK_0xf41c'
 // 1888:      UNK_0xf468  codep:0x224c parp:0xf468 size:0x003c C-string:'UNK_0xf468'
 // 1889:      UNK_0xf4a6  codep:0x224c parp:0xf4a6 size:0x003a C-string:'UNK_0xf4a6'
@@ -249,7 +249,7 @@ void UNK_0xf374() // UNK_0xf374
 // 0xf3aa: WORD 'INJURE-PL' codep=0x224c parp=0xf3b8
 // ================================================
 
-void INJURE_minus_PL() // INJURE-PL
+void INJURE_dash_PL() // INJURE-PL
 {
   Push(0x03e8);
   MS(); // MS
@@ -274,7 +274,7 @@ void INJURE_minus_PL() // INJURE-PL
   UNK_0xf306(); // UNK_0xf306
   C_at_(); // C@
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   Push(0x0064);
@@ -315,19 +315,19 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x0044);
   Push(pp_LCOLOR); // LCOLOR
   Push(Read16(Pop())); // @
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.
   Push(cc__7); // 7
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(0x0009);
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
 }
 
 
@@ -377,7 +377,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
 {
   Push(cc__5); // 5
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   _3_star_(); // 3*
   Push(1); // 1
   SWAP(); // SWAP
@@ -457,7 +457,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   label2:
   UNK_0xf332(); // UNK_0xf332
   if (Pop() == 0) return;
-  INJURE_minus_PL(); // INJURE-PL
+  INJURE_dash_PL(); // INJURE-PL
 }
 
 // 0xf540: db 0x53 0x54 0x4f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'STO_____________________________ '

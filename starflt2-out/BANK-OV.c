@@ -25,7 +25,7 @@
 // 1883:       D@BALANCE  codep:0x224c parp:0xf000 size:0x000a C-string:'D_at_BALANCE'
 // 1884:       D!BALANCE  codep:0x224c parp:0xf018 size:0x000a C-string:'D_ex_BALANCE'
 // 1885:        ?BALANCE  codep:0x224c parp:0xf02f size:0x0008 C-string:'_ask_BALANCE'
-// 1886:    INIT-BALANCE  codep:0x224c parp:0xf048 size:0x000e C-string:'INIT_minus_BALANCE'
+// 1886:    INIT-BALANCE  codep:0x224c parp:0xf048 size:0x000e C-string:'INIT_dash_BALANCE'
 // 1887:        TRANSACT  codep:0x224c parp:0xf063 size:0x0072 C-string:'TRANSACT'
 // 1888:            INT%  codep:0x224c parp:0xf0de size:0x0042 C-string:'INT_pe_'
 // 1889:      UNK_0xf122  codep:0x1d29 parp:0xf122 size:0x0014 C-string:'UNK_0xf122'
@@ -40,7 +40,7 @@
 // 1898:      UNK_0xf482  codep:0x224c parp:0xf482 size:0x0038 C-string:'UNK_0xf482'
 // 1899:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0016 C-string:'UNK_0xf4bc'
 // 1900:      UNK_0xf4d4  codep:0x224c parp:0xf4d4 size:0x001e C-string:'UNK_0xf4d4'
-// 1901:        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0061 C-string:'_ro_U_minus_BANK_rc_'
+// 1901:        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0061 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -189,7 +189,7 @@ void _ask_BALANCE() // ?BALANCE
 // 0xf037: WORD 'INIT-BALANCE' codep=0x224c parp=0xf048
 // ================================================
 
-void INIT_minus_BALANCE() // INIT-BALANCE
+void INIT_dash_BALANCE() // INIT-BALANCE
 {
   UNK_0xefd5(); // UNK_0xefd5
   UNK_0xefb4(); // UNK_0xefb4
@@ -242,14 +242,14 @@ void TRANSACT() // TRANSACT
   label3:
   ILAST(); // ILAST
   COVER(); // COVER
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   Push(pp_STARDAT); // STARDAT
   Push(Read16(Pop())); // @
   UNK_0xefb4(); // UNK_0xefb4
   _2_at_(); // 2@
   UNK_0xefb9(); // UNK_0xefb9
   _2_at_(); // 2@
-  D_minus_(); // D-
+  D_dash_(); // D-
   ICLOSE(); // ICLOSE
   UNK_0xefcb(); // UNK_0xefcb
   D_ex_(); // D!
@@ -279,7 +279,7 @@ void TRANSACT() // TRANSACT
 
 void INT_pe_() // INT%
 {
-  INIT_minus_BALANCE(); // INIT-BALANCE
+  INIT_dash_BALANCE(); // INIT-BALANCE
   D_at_BALANCE(); // D@BALANCE
   Push(0x000c);
   Push(0x0064);
@@ -288,7 +288,7 @@ void INT_pe_() // INT%
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   Push(0x012c);
   M_star__slash_(); // M*/
   _2DUP(); // 2DUP
@@ -327,7 +327,7 @@ void UNK_0xf138() // UNK_0xf138
   _plus__ex_(); // +!
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_WBLT); // WBLT
   _ex_(); // !
   Push(1); // 1
@@ -602,7 +602,7 @@ void UNK_0xf27f() // UNK_0xf27f
   UNK_0xef96(); // UNK_0xef96
   Push(cc__6); // 6
   Push(0x000f);
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _dot_1LOGO(); // .1LOGO
 }
 
@@ -664,7 +664,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
 void UNK_0xf474() // UNK_0xf474
 {
   DARK(); // DARK
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   UNK_0xf27f(); // UNK_0xf27f
   UNK_0xf1f2(); // UNK_0xf1f2
   UNK_0xf3bb(); // UNK_0xf3bb
@@ -683,7 +683,7 @@ void UNK_0xf482() // UNK_0xf482
   Push(Pop() * Pop()); // *
   Push(0x0095);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(cc__7); // 7
   SWAP(); // SWAP
   POS_dot_(); // POS.
@@ -747,9 +747,9 @@ void UNK_0xf4d4() // UNK_0xf4d4
 // 0xf4f2: WORD '(U-BANK)' codep=0x224c parp=0xf4ff
 // ================================================
 
-void _ro_U_minus_BANK_rc_() // (U-BANK)
+void _ro_U_dash_BANK_rc_() // (U-BANK)
 {
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(tt_CONTEXT); // CONTEXT
   _ex_(); // !
   _gt_HIDDEN(); // >HIDDEN
@@ -761,7 +761,7 @@ void _ro_U_minus_BANK_rc_() // (U-BANK)
   POS_dot_(); // POS.
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 
   label1:
   XYSCAN(); // XYSCAN

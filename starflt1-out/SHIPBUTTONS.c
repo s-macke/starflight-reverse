@@ -10,7 +10,7 @@
 // =================================
 // 1703:      UNK_0x3f3b  codep:0x224c parp:0x3f3b size:0xae79 C-string:'UNK_0x3f3b'
 // 1704:      UNK_0xedb6  codep:0x1d29 parp:0xedb6 size:0x01dc C-string:'UNK_0xedb6'
-// 1705:       (GET-AUX)  codep:0x4a4f parp:0xefa0 size:0x0082 C-string:'_ro_GET_minus_AUX_rc_'
+// 1705:       (GET-AUX)  codep:0x4a4f parp:0xefa0 size:0x0082 C-string:'_ro_GET_dash_AUX_rc_'
 // 1706:      1.1BTN.XEQ  codep:0x4a4f parp:0xf031 size:0x0140 C-string:'_1_dot_1BTN_dot_XEQ'
 // 1707:      >DISEMBARK  codep:0x4a4f parp:0xf180 size:0x0092 C-string:'_gt_DISEMBARK'
 // 1708:        1BTN.XEQ  codep:0x4a4f parp:0xf21f size:0x0038 C-string:'_1BTN_dot_XEQ'
@@ -109,25 +109,25 @@ void UNK_0xf41a() // UNK_0xf41a
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f39("SHIP COMPUTER ACTIVATED");
+  UNK_0x3f3b("SHIP COMPUTER ACTIVATED");
   _dot_TTY(); // .TTY
   Push(0xbef3);
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("PRE-LAUNCH PROCEDURES COMPLETE");
+  UNK_0x3f3b("PRE-LAUNCH PROCEDURES COMPLETE");
   _dot_TTY(); // .TTY
   Push(0x00fa);
   MS(); // MS
 
-  UNK_0x3f39("STANDING BY TO INITIATE LAUNCH");
+  UNK_0x3f3b("STANDING BY TO INITIATE LAUNCH");
   _dot_TTY(); // .TTY
   Push(0x00fa);
   MS(); // MS
-  TTY_minus_SCR(); // TTY-SCR
-  TTY_minus_SCR(); // TTY-SCR
-  TTY_minus_SCR(); // TTY-SCR
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
 }
 
 
@@ -156,26 +156,26 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   _ex_(); // !
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   TIME(); // TIME
   _2_at_(); // 2@
   _2DUP(); // 2DUP
-  Push(pp_NAV_minus_TIM); // NAV-TIM
+  Push(pp_NAV_dash_TIM); // NAV-TIM
   D_ex_(); // D!
-  Push(pp_ENC_minus_TIM); // ENC-TIM
+  Push(pp_ENC_dash_TIM); // ENC-TIM
   D_ex_(); // D!
-  Push(pp_STAR_minus_HR); // STAR-HR
+  Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
-  Push(pp_TRAK_minus_HR); // TRAK-HR
+  Push(pp_TRAK_dash_HR); // TRAK-HR
   _ex_(); // !
   CFIGARR(); // CFIGARR
   GREY2(); // GREY2
-  _ro_SHIP_minus_C(); // (SHIP-C
+  _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
@@ -193,12 +193,12 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   _ex_(); // !
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
 }
 
 // 0xf51b: db 0x42 0x54 0x4e 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x20 0x66 0x6f 0x72 0x20 0x42 0x55 0x54 0x54 0x4f 0x4e 0x53 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x29 0x32 0x31 0x32 0x30 0x2d 0x00 'BTN-VOC_________________________ for BUTTONS-------------------)2120- '

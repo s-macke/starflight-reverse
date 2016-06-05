@@ -15,7 +15,7 @@
 // 1873:      UNK_0xf3a0  codep:0x224c parp:0xf3a0 size:0x0064 C-string:'UNK_0xf3a0'
 // 1874:      UNK_0xf406  codep:0x224c parp:0xf406 size:0x0018 C-string:'UNK_0xf406'
 // 1875:      UNK_0xf420  codep:0x224c parp:0xf420 size:0x005e C-string:'UNK_0xf420'
-// 1876:     HYPER-FRAME  codep:0x224c parp:0xf48e size:0x0022 C-string:'HYPER_minus_FRAME'
+// 1876:     HYPER-FRAME  codep:0x224c parp:0xf48e size:0x0022 C-string:'HYPER_dash_FRAME'
 // 1877:            FLUX  codep:0x224c parp:0xf4b9 size:0x002a C-string:'FLUX'
 // 1878:      UNK_0xf4e5  codep:0x224c parp:0xf4e5 size:0x0024 C-string:'UNK_0xf4e5'
 // 1879:          JUMPFX  codep:0x224c parp:0xf514 size:0x004c C-string:'JUMPFX'
@@ -196,7 +196,7 @@ void UNK_0xf420() // UNK_0xf420
 // 0xf47e: WORD 'HYPER-FRAME' codep=0x224c parp=0xf48e
 // ================================================
 
-void HYPER_minus_FRAME() // HYPER-FRAME
+void HYPER_dash_FRAME() // HYPER-FRAME
 {
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
@@ -245,7 +245,7 @@ void FLUX() // FLUX
   signed short int imax = Pop();
   do // (DO)
   {
-  HYPER_minus_FRAME(); // HYPER-FRAME
+  HYPER_dash_FRAME(); // HYPER-FRAME
   i++;
   } while(i<imax); // (LOOP) 0xfffc
 

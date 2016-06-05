@@ -32,7 +32,7 @@
 // 1890:      UNK_0xde9f  codep:0x224c parp:0xde9f size:0x000e C-string:'UNK_0xde9f'
 // 1891:      UNK_0xdeaf  codep:0x224c parp:0xdeaf size:0x001e C-string:'UNK_0xdeaf'
 // 1892:      UNK_0xdecf  codep:0x224c parp:0xdecf size:0x005a C-string:'UNK_0xdecf'
-// 1893:            X=-1  codep:0x4b3b parp:0xdf32 size:0x0010 C-string:'X_eq__minus_1'
+// 1893:            X=-1  codep:0x4b3b parp:0xdf32 size:0x0010 C-string:'X_eq__dash_1'
 // 1894:             X=0  codep:0x4b3b parp:0xdf4a size:0x0010 C-string:'X_eq_0'
 // 1895:             X=1  codep:0x4b3b parp:0xdf62 size:0x0010 C-string:'X_eq_1'
 // 1896:      KEY>ORIENT  codep:0x4b3b parp:0xdf81 size:0x0143 C-string:'KEY_gt_ORIENT'
@@ -110,7 +110,7 @@
 // 1968:      UNK_0xefdb  codep:0x224c parp:0xefdb size:0x0018 C-string:'UNK_0xefdb'
 // 1969:          COMBAT  codep:0x224c parp:0xeffe size:0x04e8 C-string:'COMBAT'
 // 1970:             WAR  codep:0x224c parp:0xf4ee size:0x001c C-string:'WAR'
-// 1971:        CLEAR-CO  codep:0x224c parp:0xf517 size:0x0030 C-string:'CLEAR_minus_CO'
+// 1971:        CLEAR-CO  codep:0x224c parp:0xf517 size:0x0030 C-string:'CLEAR_dash_CO'
 // 1972:          (COMB)  codep:0x224c parp:0xf552 size:0x000e C-string:'_ro_COMB_rc_'
 
 // =================================
@@ -175,9 +175,9 @@ void UNK_0xdd42() // UNK_0xdd42
 void UNK_0xdd4c() // UNK_0xdd4c
 {
   UNK_0xdd2e(); // UNK_0xdd2e
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -200,9 +200,9 @@ void UNK_0xdd5c() // UNK_0xdd5c
 
 void UNK_0xdd64() // UNK_0xdd64
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
 }
 
@@ -326,7 +326,7 @@ void UNK_0xde9f() // UNK_0xde9f
 {
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(2); // 2
   RRND(); // RRND
   _ask_DUP(); // ?DUP
@@ -373,7 +373,7 @@ void UNK_0xdecf() // UNK_0xdecf
   _2OVER(); // 2OVER
   ROT(); // ROT
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   if (Pop() == 0) goto label2;
   DUP(); // DUP
@@ -382,7 +382,7 @@ void UNK_0xdecf() // UNK_0xdecf
 
   label2:
   _gt_R(); // >R
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   if (Pop() == 0) goto label3;
   DUP(); // DUP
@@ -649,7 +649,7 @@ void UNK_0xe29a() // UNK_0xe29a
 
 void UNK_0xe2f9() // UNK_0xe2f9
 {
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
 }
 
 
@@ -673,7 +673,7 @@ void UNK_0xe2ff() // UNK_0xe2ff
   _star_CLOSE(); // *CLOSE
   Push(pp__n_MISS); // #MISS
   _099(); // 099
-  SAVE_minus_OV(); // SAVE-OV
+  SAVE_dash_OV(); // SAVE-OV
 }
 
 // 0xe31b: db 0x4c 0x22 0xe3 0xe2 0x92 0x0c 0xb8 0xe2 0x5f 0x12 0xfa 0x15 0x08 0x00 0xd5 0x4f 0x60 0x16 0x04 0x00 0x26 0x50 0x90 0x16 'L"      _      O`   &P  '
@@ -742,14 +742,14 @@ void UNK_0xe452() // UNK_0xe452
   Push(Read16(Pop())); // @
   UNK_0xe2c2(); // UNK_0xe2c2
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   ABS(); // ABS
   UNK_0xe2d1(); // UNK_0xe2d1
   Push(Read16(Pop())); // @
   UNK_0xe2c7(); // UNK_0xe2c7
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   ABS(); // ABS
   ROT(); // ROT
@@ -914,7 +914,7 @@ void UNK_0xe61a() // UNK_0xe61a
   UNK_0xe357(); // UNK_0xe357
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_minus_(); // ?ICONS-
+  _ask_ICONS_dash_(); // ?ICONS-
   DUP(); // DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -1049,9 +1049,9 @@ void UNK_0xe72c() // UNK_0xe72c
   if (Pop() == 0) return;
   UNK_0xe2f4(); // UNK_0xe2f4
   _at__gt_C_plus_S(); // @>C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   UNK_0xe71c(); // UNK_0xe71c
@@ -1224,7 +1224,7 @@ void UNK_0xe812() // UNK_0xe812
 void UNK_0xe840() // UNK_0xe840
 {
   _at_ID(); // @ID
-  Push(cc_INVIS_minus_I); // INVIS-I
+  Push(cc_INVIS_dash_I); // INVIS-I
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -1306,9 +1306,9 @@ void UNK_0xe9a2() // UNK_0xe9a2
   Push(pp_YABS); // YABS
   _plus__ex_(); // +!
   _2DUP(); // 2DUP
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _plus__ex_(); // +!
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _plus__ex_(); // +!
   _at_IX(); // @IX
   Push(Pop() + Pop()); // +
@@ -1408,21 +1408,21 @@ void _ask_APPROACHI() // ?APPROACHI
 
 void UNK_0xec7a() // UNK_0xec7a
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(1); // 1
   UNK_0xec45(); // UNK_0xec45
   DUP(); // DUP
   _gt_R(); // >R
   Push(Pop() + Pop()); // +
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   R_gt_(); // R>
   UNK_0xec45(); // UNK_0xec45
   Push(Pop() + Pop()); // +
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
   UNK_0xdd5c(); // UNK_0xdd5c
   UNK_0xe7ec(); // UNK_0xe7ec
@@ -1609,7 +1609,7 @@ void UNK_0xee8f() // UNK_0xee8f
   if (Pop() == 0) goto label2;
   DUP(); // DUP
   if (Pop() == 0) goto label3;
-  Push(cc_INVIS_minus_I); // INVIS-I
+  Push(cc_INVIS_dash_I); // INVIS-I
   _ex_ID(); // !ID
   goto label2;
 
@@ -1754,7 +1754,7 @@ void UNK_0xefb1() // UNK_0xefb1
   Push(0x002b);
   WITHIN(); // WITHIN
   SWAP(); // SWAP
-  Push(cc_INVIS_minus_I); // INVIS-I
+  Push(cc_INVIS_dash_I); // INVIS-I
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   _at_IL(); // @IL
@@ -1858,7 +1858,7 @@ void WAR() // WAR
 // 0xf50a: WORD 'CLEAR-CO' codep=0x224c parp=0xf517
 // ================================================
 
-void CLEAR_minus_CO() // CLEAR-CO
+void CLEAR_dash_CO() // CLEAR-CO
 {
   Push(pp_MOVED); // MOVED
   _099(); // 099
@@ -1890,7 +1890,7 @@ void CLEAR_minus_CO() // CLEAR-CO
 void _ro_COMB_rc_() // (COMB)
 {
   COMBAT(); // COMBAT
-  SAVE_minus_OV(); // SAVE-OV
+  SAVE_dash_OV(); // SAVE-OV
 }
 
 // 0xf558: db 0x43 0x4f 0x4d 0x42 0x41 0x54 0x2d 0x56 0x00 'COMBAT-V '

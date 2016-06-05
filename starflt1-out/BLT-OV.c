@@ -334,10 +334,10 @@ void _dot_HYBRID() // .HYBRID
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _minus_(); // -
+  _dash_(); // -
   L_at_(); // L@
   Push(cc__4); // 4
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
   i++;

@@ -325,7 +325,7 @@ void UNK_0xeaa0() // UNK_0xeaa0
   i++;
   } while(i<imax); // (LOOP) 0xfff6
 
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
 }
 
 // 0xeabc: db 0x4c 0x22 0xbd 0x62 0x95 0x49 0xf2 0x79 0x00 0xe8 0x92 0x0c 0x4b 0xea 0xf8 0xe7 0xae 0x0b 0xd0 0xe7 0xae 0x0b 0x5d 0x17 0x64 0x00 0x4c 0x0f 0x83 0x3b 0xad 0x11 0xe7 0x0f 0x66 0xea 0x72 0x0f 0x72 0x0f 0x72 0x0f 0xc9 0x79 0x90 0x16 'L" b I y    K         ] d L  ;    f r r r  y  '
@@ -584,7 +584,7 @@ void UNK_0xf067() // UNK_0xf067
   Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Push(0x0044);
-  FILE_minus_RL(); // FILE-RL
+  FILE_dash_RL(); // FILE-RL
   C_at_(); // C@
   Push(0); // 0
   FILL(); // FILL
@@ -598,7 +598,7 @@ void UNK_0xf067() // UNK_0xf067
 void UNK_0xf081() // UNK_0xf081
 {
   Push(1); // 1
-  _minus_(); // -
+  _dash_(); // -
   if (Pop() == 0) return;
   Push(1); // 1
   Push(pp_UNK_0xef53); // UNK_0xef53
@@ -678,10 +678,10 @@ void UNK_0xf0ff() // UNK_0xf0ff
 void UNK_0xf107() // UNK_0xf107
 {
   UNK_0xf0e9(); // UNK_0xf0e9
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   SWAP(); // SWAP
   _plus__ex_(); // +!
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   UNK_0xef47(); // UNK_0xef47
   _plus__ex_(); // +!
 }
@@ -814,13 +814,13 @@ void UNK_0xf1d3() // UNK_0xf1d3
   _gt_(); // >
   if (Pop() == 0) return;
 
-  UNK_0x3f39("PROGRAMMER ERROR ");
+  UNK_0x3f3b("PROGRAMMER ERROR ");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("#SPECIES OVERFLOW ");
+  UNK_0x3f3b("#SPECIES OVERFLOW ");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("SO SORRY- WHERE WERE YOU, ANYWAY?");
+  UNK_0x3f3b("SO SORRY- WHERE WERE YOU, ANYWAY?");
   _dot_TTY(); // .TTY
 
   label1:
@@ -842,7 +842,7 @@ void UNK_0xf23c() // UNK_0xf23c
   _ex_(); // !
   UNK_0xe89f(); // UNK_0xe89f
   C_at_(); // C@
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe872(); // UNK_0xe872
@@ -860,7 +860,7 @@ void UNK_0xf23c() // UNK_0xf23c
   UNK_0xe8af(); // UNK_0xe8af
   Push(i); // I
   Push(1); // 1
-  _minus_(); // -
+  _dash_(); // -
   if (Pop() == 0) goto label1;
   UNK_0xf067(); // UNK_0xf067
 
@@ -906,7 +906,7 @@ void UNK_0xf286() // UNK_0xf286
   UNK_0xe8af(); // UNK_0xe8af
   Push(i); // I
   Push(1); // 1
-  _minus_(); // -
+  _dash_(); // -
   if (Pop() == 0) goto label2;
   UNK_0xf067(); // UNK_0xf067
 
@@ -1079,7 +1079,7 @@ void UNK_0xf382() // UNK_0xf382
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
-  _minus_(); // -
+  _dash_(); // -
   if (Pop() == 0) goto label2;
 
   signed short int i = Pop();
@@ -1216,7 +1216,7 @@ void UNK_0xf448() // UNK_0xf448
 
   label1:
   CI(); // CI
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_ex_(); // 1.5!
   IOPEN(); // IOPEN
   CI(); // CI
@@ -1242,7 +1242,7 @@ void DIO() // DIO
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
 
-  UNK_0x3f39("AUTO SAMPLING DEVICES ACTIVATED");
+  UNK_0x3f3b("AUTO SAMPLING DEVICES ACTIVATED");
   _dot_TTY(); // .TTY
   UNK_0xea0a(); // UNK_0xea0a
   UNK_0xeaa0(); // UNK_0xeaa0
@@ -1265,7 +1265,7 @@ void DIO() // DIO
 
   label2:
 
-  UNK_0x3f39("INITIATING HULL INTEGRITY CHECK");
+  UNK_0x3f3b("INITIATING HULL INTEGRITY CHECK");
   _dot_TTY(); // .TTY
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE

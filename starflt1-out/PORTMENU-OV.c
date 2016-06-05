@@ -51,8 +51,8 @@
 // 1743:      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x0010 C-string:'UNK_0xf2a1'
 // 1744:      UNK_0xf2b3  codep:0x224c parp:0xf2b3 size:0x00f4 C-string:'UNK_0xf2b3'
 // 1745:      UNK_0xf3a9  codep:0x224c parp:0xf3a9 size:0x005a C-string:'UNK_0xf3a9'
-// 1746:        PORT-PIC  codep:0x224c parp:0xf410 size:0x004a C-string:'PORT_minus_PIC'
-// 1747:         DO-ROOM  codep:0x4a4f parp:0xf466 size:0x0020 C-string:'DO_minus_ROOM'
+// 1746:        PORT-PIC  codep:0x224c parp:0xf410 size:0x004a C-string:'PORT_dash_PIC'
+// 1747:         DO-ROOM  codep:0x4a4f parp:0xf466 size:0x0020 C-string:'DO_dash_ROOM'
 // 1748:      UNK_0xf488  codep:0x224c parp:0xf488 size:0x0024 C-string:'UNK_0xf488'
 // 1749:           XWALK  codep:0x4a4f parp:0xf4b6 size:0x000c C-string:'XWALK'
 // 1750:           YWALK  codep:0x4a4f parp:0xf4cc size:0x000c C-string:'YWALK'
@@ -213,7 +213,7 @@ void _v_REGION() // |REGION
   if (Pop() == 0) goto label1;
   SWAP(); // SWAP
   Pop(); // DROP
-  Push(pp_BUF_minus_SEG); // BUF-SEG
+  Push(pp_BUF_dash_SEG); // BUF-SEG
   Push(Read16(Pop())); // @
   Push(0xa000);
   _eq_(); // =
@@ -248,7 +248,7 @@ void UNK_0xed10() // UNK_0xed10
   Push(Pop()*2); // 2*
   Push(0x0050);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(0x00c7);
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
@@ -309,7 +309,7 @@ void UNK_0xede1() // UNK_0xede1
   Push(0x00c0);
   Push(0x0072);
   BLACK(); // BLACK
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   Push(0); // 0
   Push(0); // 0
 }
@@ -370,7 +370,7 @@ void UNK_0xef43() // UNK_0xef43
   Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
   Push(h); // I
   Push(Pop()+2); // 2+
   C_at_(); // C@
@@ -378,7 +378,7 @@ void UNK_0xef43() // UNK_0xef43
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
 }
 
 
@@ -439,7 +439,7 @@ void UNK_0xef9d() // UNK_0xef9d
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   Push(h); // I
   UNK_0xef43(); // UNK_0xef43
   SWAP(); // SWAP
@@ -677,7 +677,7 @@ void UNK_0xf1a9() // UNK_0xf1a9
   C_at_(); // C@
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
-  Push(cc__minus_2); // -2
+  Push(cc__dash_2); // -2
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   Push(2); // 2
@@ -945,7 +945,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
 // 0xf403: WORD 'PORT-PIC' codep=0x224c parp=0xf410
 // ================================================
 
-void PORT_minus_PIC() // PORT-PIC
+void PORT_dash_PIC() // PORT-PIC
 {
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
@@ -972,7 +972,7 @@ void PORT_minus_PIC() // PORT-PIC
   Pop(); Pop();// 2DROP
   UNK_0xee29(); // UNK_0xee29
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1001,11 +1001,11 @@ void UNK_0xf488() // UNK_0xf488
   _ex_(); // !
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
-  DO_minus_ROOM(); // DO-ROOM
+  DO_dash_ROOM(); // DO-ROOM
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  PORT_minus_PIC(); // PORT-PIC
+  PORT_dash_PIC(); // PORT-PIC
   UNK_0xed4e(); // UNK_0xed4e
 }
 
@@ -1027,7 +1027,7 @@ void UNK_0xf488() // UNK_0xf488
 void WALKIES() // WALKIES
 {
   UNK_0xed4e(); // UNK_0xed4e
-  PORT_minus_PIC(); // PORT-PIC
+  PORT_dash_PIC(); // PORT-PIC
 
   label3:
   XYSCAN(); // XYSCAN

@@ -24,7 +24,7 @@
 // 1716:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x002e C-string:'UNK_0xf450'
 // 1717:      UNK_0xf480  codep:0x224c parp:0xf480 size:0x0028 C-string:'UNK_0xf480'
 // 1718:      UNK_0xf4aa  codep:0x224c parp:0xf4aa size:0x0048 C-string:'UNK_0xf4aa'
-// 1719:      ?CAN-LEAVE  codep:0x224c parp:0xf501 size:0x005f C-string:'_ask_CAN_minus_LEAVE'
+// 1719:      ?CAN-LEAVE  codep:0x224c parp:0xf501 size:0x005f C-string:'_ask_CAN_dash_LEAVE'
 
 // =================================
 // =========== VARIABLES ===========
@@ -120,7 +120,7 @@ void UNK_0xf258() // UNK_0xf258
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(0x0014);
-  _minus_(); // -
+  _dash_(); // -
   Push(0x00aa);
   MIN(); // MIN
   POS_dot_(); // POS.
@@ -376,7 +376,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x000a);
@@ -406,7 +406,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 // 0xf4f2: WORD '?CAN-LEAVE' codep=0x224c parp=0xf501
 // ================================================
 
-void _ask_CAN_minus_LEAVE() // ?CAN-LEAVE
+void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
 {
   UNK_0xf40a(); // UNK_0xf40a
   UNK_0xf450(); // UNK_0xf450

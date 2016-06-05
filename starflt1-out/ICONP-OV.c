@@ -8,19 +8,19 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:   STAR-ID-CASES  codep:0x4a4f parp:0xf2cf size:0x0012 C-string:'STAR_minus_ID_minus_CASES'
-// 1704: PLANET-ID-CASES  codep:0x4a4f parp:0xf2f5 size:0x001e C-string:'PLANET_minus_ID_minus_CASES'
-// 1705:          BOX-ID  codep:0x4a4f parp:0xf31e size:0x0018 C-string:'BOX_minus_ID'
-// 1706:        SPACE-ID  codep:0x4a4f parp:0xf343 size:0x0024 C-string:'SPACE_minus_ID'
-// 1707:   RUIN-ID-CASES  codep:0x4a4f parp:0xf379 size:0x0048 C-string:'RUIN_minus_ID_minus_CASES'
-// 1708:       PLANET-ID  codep:0x4a4f parp:0xf3cf size:0x0020 C-string:'PLANET_minus_ID'
+// 1703:   STAR-ID-CASES  codep:0x4a4f parp:0xf2cf size:0x0012 C-string:'STAR_dash_ID_dash_CASES'
+// 1704: PLANET-ID-CASES  codep:0x4a4f parp:0xf2f5 size:0x001e C-string:'PLANET_dash_ID_dash_CASES'
+// 1705:          BOX-ID  codep:0x4a4f parp:0xf31e size:0x0018 C-string:'BOX_dash_ID'
+// 1706:        SPACE-ID  codep:0x4a4f parp:0xf343 size:0x0024 C-string:'SPACE_dash_ID'
+// 1707:   RUIN-ID-CASES  codep:0x4a4f parp:0xf379 size:0x0048 C-string:'RUIN_dash_ID_dash_CASES'
+// 1708:       PLANET-ID  codep:0x4a4f parp:0xf3cf size:0x0020 C-string:'PLANET_dash_ID'
 // 1709:      UNK_0xf3f1  codep:0x224c parp:0xf3f1 size:0x0014 C-string:'UNK_0xf3f1'
-// 1710:   STAR-IC-CASES  codep:0x4a4f parp:0xf417 size:0x0038 C-string:'STAR_minus_IC_minus_CASES'
-// 1711:   PLAN-IC-CASES  codep:0x4a4f parp:0xf461 size:0x0034 C-string:'PLAN_minus_IC_minus_CASES'
-// 1712:          BOX-IC  codep:0x4a4f parp:0xf4a0 size:0x0018 C-string:'BOX_minus_IC'
-// 1713:       #IC-CASES  codep:0x4a4f parp:0xf4c6 size:0x0020 C-string:'_n_IC_minus_CASES'
+// 1710:   STAR-IC-CASES  codep:0x4a4f parp:0xf417 size:0x0038 C-string:'STAR_dash_IC_dash_CASES'
+// 1711:   PLAN-IC-CASES  codep:0x4a4f parp:0xf461 size:0x0034 C-string:'PLAN_dash_IC_dash_CASES'
+// 1712:          BOX-IC  codep:0x4a4f parp:0xf4a0 size:0x0018 C-string:'BOX_dash_IC'
+// 1713:       #IC-CASES  codep:0x4a4f parp:0xf4c6 size:0x0020 C-string:'_n_IC_dash_CASES'
 // 1714:      UNK_0xf4e8  codep:0x224c parp:0xf4e8 size:0x0006 C-string:'UNK_0xf4e8'
-// 1715:       ICON-PARM  codep:0x224c parp:0xf4fc size:0x0010 C-string:'ICON_minus_PARM'
+// 1715:       ICON-PARM  codep:0x224c parp:0xf4fc size:0x0010 C-string:'ICON_dash_PARM'
 // 1716:            +ICP  codep:0x224c parp:0xf515 size:0x0006 C-string:'_plus_ICP'
 // 1717:        +ICONBOX  codep:0x224c parp:0xf528 size:0x0038 C-string:'_plus_ICONBOX'
 
@@ -68,15 +68,15 @@
 
 void UNK_0xf3f1() // UNK_0xf3f1
 {
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  SPACE_minus_ID(); // SPACE-ID
+  SPACE_dash_ID(); // SPACE-ID
   return;
 
   label1:
-  PLANET_minus_ID(); // PLANET-ID
+  PLANET_dash_ID(); // PLANET-ID
 }
 
 
@@ -106,8 +106,8 @@ void UNK_0xf3f1() // UNK_0xf3f1
 
 void UNK_0xf4e8() // UNK_0xf4e8
 {
-  _at_INST_minus_C(); // @INST-C
-  _n_IC_minus_CASES(); // #IC-CASES
+  _at_INST_dash_C(); // @INST-C
+  _n_IC_dash_CASES(); // #IC-CASES
 }
 
 
@@ -115,11 +115,11 @@ void UNK_0xf4e8() // UNK_0xf4e8
 // 0xf4ee: WORD 'ICON-PARM' codep=0x224c parp=0xf4fc
 // ================================================
 
-void ICON_minus_PARM() // ICON-PARM
+void ICON_dash_PARM() // ICON-PARM
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
   UNK_0xf4e8(); // UNK_0xf4e8
@@ -133,7 +133,7 @@ void ICON_minus_PARM() // ICON-PARM
 
 void _plus_ICP() // +ICP
 {
-  ICON_minus_PARM(); // ICON-PARM
+  ICON_dash_PARM(); // ICON-PARM
   _plus_ICON(); // +ICON
 }
 

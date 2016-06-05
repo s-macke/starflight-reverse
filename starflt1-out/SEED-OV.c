@@ -269,7 +269,7 @@ void UNK_0xed19() // UNK_0xed19
   UNK_0xec2e(); // UNK_0xec2e
   C_at_(); // C@
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop()+1); // 1+
   ICLOSE(); // ICLOSE
 }
@@ -281,9 +281,9 @@ void UNK_0xed19() // UNK_0xed19
 
 void UNK_0xed31() // UNK_0xed31
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
 }
 
@@ -294,9 +294,9 @@ void UNK_0xed31() // UNK_0xed31
 
 void UNK_0xed3d() // UNK_0xed3d
 {
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
 }
 
@@ -329,12 +329,12 @@ void UNK_0xed5b() // UNK_0xed5b
   Push(pp_XCON); // XCON
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  _minus_(); // -
+  _dash_(); // -
   SWAP(); // SWAP
   Push(pp_YCON); // YCON
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  _minus_(); // -
+  _dash_(); // -
 }
 
 
@@ -397,7 +397,7 @@ void UNK_0xedaf() // UNK_0xedaf
   if (Pop() == 0) goto label1;
   Push(0x03c0);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
 
   label1:
   Push(0x01e0);
@@ -420,7 +420,7 @@ void UNK_0xedaf() // UNK_0xedaf
 
 void UNK_0xee01() // UNK_0xee01
 {
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xede1);
@@ -445,7 +445,7 @@ void UNK_0xee15() // UNK_0xee15
   C_ex_(); // C!
   UNK_0xeca0(); // UNK_0xeca0
   Push(Read16(Pop())); // @
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   UNK_0xec98(); // UNK_0xec98
   C_at_(); // C@
@@ -497,7 +497,7 @@ void UNK_0xee4d() // UNK_0xee4d
   UNK_0xed3d(); // UNK_0xed3d
   UNK_0xee15(); // UNK_0xee15
   Push(1); // 1
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _plus__ex_(); // +!
   return;
 
@@ -746,7 +746,7 @@ void UNK_0xf00b() // UNK_0xf00b
   IFLD_at_(); // IFLD@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_RECORD_n_); // RECORD#
   _st__plus__ex__gt_(); // <+!>
   UNK_0xef75(); // UNK_0xef75
@@ -944,7 +944,7 @@ void UNK_0xf143() // UNK_0xf143
   Pop(); Pop();// 2DROP
   R_gt_(); // R>
   if (Pop() == 0) return;
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   Push(0x5239);
   _2_ex_(); // 2!
@@ -961,7 +961,7 @@ void UNK_0xf163() // UNK_0xf163
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -969,7 +969,7 @@ void UNK_0xf163() // UNK_0xf163
   Push(0x000a);
   Push(0x0064);
   RRND(); // RRND
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
 }
 
@@ -982,7 +982,7 @@ void UNK_0xf189() // UNK_0xf189
 {
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(2); // 2
   RRND(); // RRND
   _ask_DUP(); // ?DUP
@@ -1072,7 +1072,7 @@ void UNK_0xf1c1() // UNK_0xf1c1
 
 void UNK_0xf207() // UNK_0xf207
 {
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0); // 0
@@ -1142,15 +1142,15 @@ void UNK_0xf26b() // UNK_0xf26b
   UNK_0xf245(); // UNK_0xf245
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
   _2DUP(); // 2DUP
   UNK_0xed3d(); // UNK_0xed3d
-  ART_minus_VOL(); // ART-VOL
+  ART_dash_VOL(); // ART-VOL
   Push(Read16(Pop())); // @
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -1195,7 +1195,7 @@ void UNK_0xf2bb() // UNK_0xf2bb
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -1237,7 +1237,7 @@ void UNK_0xf2ed() // UNK_0xf2ed
 
 void UNK_0xf30d() // UNK_0xf30d
 {
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xed31(); // UNK_0xed31
   UNK_0xf2ed(); // UNK_0xf2ed
@@ -1278,7 +1278,7 @@ void UNK_0xf327() // UNK_0xf327
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -1328,7 +1328,7 @@ void _ask_EXIST() // ?EXIST
   UNK_0xf143(); // UNK_0xf143
   IEXTRAC(); // IEXTRAC
   IPREV(); // IPREV
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   Push(h); // I'
@@ -1450,10 +1450,10 @@ void UNK_0xf42c() // UNK_0xf42c
 void UNK_0xf442() // UNK_0xf442
 {
   UNK_0xed3d(); // UNK_0xed3d
-  INST_minus_DA(); // INST-DA
+  INST_dash_DA(); // INST-DA
   OFF(); // OFF
   IEXTRAC(); // IEXTRAC
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
 }
@@ -1489,7 +1489,7 @@ void UNK_0xf468() // UNK_0xf468
   IFLD_at_(); // IFLD@
   DUP(); // DUP
   if (Pop() == 0) goto label1;
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0040);
   _slash_(); // /
   RRND(); // RRND

@@ -22,7 +22,7 @@
 // 1880:      UNK_0xf107  codep:0x224c parp:0xf107 size:0x000c C-string:'UNK_0xf107'
 // 1881:      UNK_0xf115  codep:0x224c parp:0xf115 size:0x003a C-string:'UNK_0xf115'
 // 1882:      UNK_0xf151  codep:0x224c parp:0xf151 size:0x006a C-string:'UNK_0xf151'
-// 1883:          ROLE-C  codep:0x224c parp:0xf1c6 size:0x004a C-string:'ROLE_minus_C'
+// 1883:          ROLE-C  codep:0x224c parp:0xf1c6 size:0x004a C-string:'ROLE_dash_C'
 // 1884:      UNK_0xf212  codep:0x224c parp:0xf212 size:0x0042 C-string:'UNK_0xf212'
 // 1885:      UNK_0xf256  codep:0x224c parp:0xf256 size:0x0010 C-string:'UNK_0xf256'
 // 1886:      UNK_0xf268  codep:0x224c parp:0xf268 size:0x0020 C-string:'UNK_0xf268'
@@ -86,7 +86,7 @@ void UNK_0xf09c() // UNK_0xf09c
   ROT(); // ROT
   Push(cc__7); // 7
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   POS_dot_(); // POS.
 }
 
@@ -210,7 +210,7 @@ void UNK_0xf151() // UNK_0xf151
   NULL(); // NULL
   D_eq_(); // D=
   if (Pop() == 0) return;
-  Push(pp__ask_ON_minus_PLA); // ?ON-PLA
+  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   _gt_TVCT(); // >TVCT
@@ -246,12 +246,12 @@ void UNK_0xf151() // UNK_0xf151
 // 0xf1bb: WORD 'ROLE-C' codep=0x224c parp=0xf1c6
 // ================================================
 
-void ROLE_minus_C() // ROLE-C
+void ROLE_dash_C() // ROLE-C
 {
   UNK_0xf107(); // UNK_0xf107
   _star_ASSIGN(); // *ASSIGN
   _gt_C_plus_S(); // >C+S
-  INST_minus_SI(); // INST-SI
+  INST_dash_SI(); // INST-SI
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6
@@ -362,13 +362,13 @@ void UNK_0xf268() // UNK_0xf268
 {
   _star_ASSIGN(); // *ASSIGN
   _gt_C(); // >C
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   UNK_0xf0c8(); // UNK_0xf0c8
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0104);
   UNK_0xf0e6(); // UNK_0xf0e6
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
   Push(0x00fa);
   Push(Pop() * Pop()); // *
   CDROP(); // CDROP
@@ -396,7 +396,7 @@ void UNK_0xf28a() // UNK_0xf28a
 
 void UNK_0xf2a3() // UNK_0xf2a3
 {
-  ROLE_minus_C(); // ROLE-C
+  ROLE_dash_C(); // ROLE-C
   UNK_0xf256(); // UNK_0xf256
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -504,7 +504,7 @@ void _dot_VITS() // .VITS
   Push(pp_WCHARS); // WCHARS
   Push(Read16(Pop())); // @
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
   Push(i); // I
   UNK_0xf0fd(); // UNK_0xf0fd
   _1_dot_5_at_(); // 1.5@
@@ -520,7 +520,7 @@ void _dot_VITS() // .VITS
   Push(0x000e);
   UNK_0xf0cd(); // UNK_0xf0cd
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label2;
   Push(0); // 0
@@ -537,12 +537,12 @@ void _dot_VITS() // .VITS
   label2:
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   Push(cc__4); // 4
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
   Push(pp_XBLT); // XBLT
   _ex_(); // !
   UNK_0xf0eb(); // UNK_0xf0eb
@@ -631,7 +631,7 @@ void UNK_0xf429() // UNK_0xf429
   _1_dot_5_at_(); // 1.5@
   Push(pp_UNK_0xf424); // UNK_0xf424
   _1_dot_5_ex_(); // 1.5!
-  INST_minus_SI(); // INST-SI
+  INST_dash_SI(); // INST-SI
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6

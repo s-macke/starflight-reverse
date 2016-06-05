@@ -258,7 +258,7 @@ void UNK_0xef1a() // UNK_0xef1a
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   goto label4;
 
@@ -298,7 +298,7 @@ void UNK_0xef1a() // UNK_0xef1a
 
 void UNK_0xef90() // UNK_0xef90
 {
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -514,7 +514,7 @@ void UNK_0xf132() // UNK_0xf132
   UNK_0xed45(); // UNK_0xed45
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -551,11 +551,11 @@ void UNK_0xf174() // UNK_0xf174
   UNK_0xed4a(); // UNK_0xed4a
   UNK_0xed63(); // UNK_0xed63
   if (Pop() == 0) goto label1;
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   goto label2;
 
   label1:
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
 
   label2:
   _ex_COLOR(); // !COLOR
@@ -624,7 +624,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
 
 void UNK_0xf21d() // UNK_0xf21d
 {
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(0x009d);
   Push(1); // 1
@@ -688,7 +688,7 @@ void UNK_0xf21d() // UNK_0xf21d
   LLINE(); // LLINE
   Push(0x0015);
   Push(0x00c3);
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _dot_1LOGO(); // .1LOGO
   BLUE(); // BLUE
   _ex_COLOR(); // !COLOR
@@ -786,7 +786,7 @@ void UNK_0xf40f() // UNK_0xf40f
   PRINT("CLASS ", 6); // (.")
   Push(cc__5); // 5
   Push(i); // I
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   _dot_R(); // .R
   PRINT("...", 3); // (.")

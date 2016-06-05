@@ -27,7 +27,7 @@
 // 1719:      UNK_0xf2f4  codep:0x224c parp:0xf2f4 size:0x0018 C-string:'UNK_0xf2f4'
 // 1720:      UNK_0xf30e  codep:0x224c parp:0xf30e size:0x002c C-string:'UNK_0xf30e'
 // 1721:      UNK_0xf33c  codep:0x224c parp:0xf33c size:0x0038 C-string:'UNK_0xf33c'
-// 1722:       INJURE-PL  codep:0x224c parp:0xf382 size:0x005e C-string:'INJURE_minus_PL'
+// 1722:       INJURE-PL  codep:0x224c parp:0xf382 size:0x005e C-string:'INJURE_dash_PL'
 // 1723:      UNK_0xf3e2  codep:0x224c parp:0xf3e2 size:0x004a C-string:'UNK_0xf3e2'
 // 1724:      UNK_0xf42e  codep:0x224c parp:0xf42e size:0x003c C-string:'UNK_0xf42e'
 // 1725:      UNK_0xf46c  codep:0x224c parp:0xf46c size:0x003a C-string:'UNK_0xf46c'
@@ -232,7 +232,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
   Push(cc__7); // 7
   Push(0x0026);
   WINDOW(); // WINDOW
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_WBOTTOM); // WBOTTOM
   _st__plus__ex__gt_(); // <+!>
   _gt_TVCT(); // >TVCT
@@ -258,7 +258,7 @@ void UNK_0xf30e() // UNK_0xf30e
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   BLACK(); // BLACK
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -300,7 +300,7 @@ void UNK_0xf33c() // UNK_0xf33c
 // 0xf374: WORD 'INJURE-PL' codep=0x224c parp=0xf382
 // ================================================
 
-void INJURE_minus_PL() // INJURE-PL
+void INJURE_dash_PL() // INJURE-PL
 {
   Push(0x03e8);
   MS(); // MS
@@ -325,7 +325,7 @@ void INJURE_minus_PL() // INJURE-PL
   UNK_0xf286(); // UNK_0xf286
   C_at_(); // C@
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
   Push(0x0064);
@@ -365,19 +365,19 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0044);
   Push(pp_LCOLOR); // LCOLOR
   Push(Read16(Pop())); // @
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.
   Push(cc__7); // 7
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(0x0009);
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
 }
 
 
@@ -427,7 +427,7 @@ void UNK_0xf46c() // UNK_0xf46c
 {
   Push(cc__5); // 5
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   _3_star_(); // 3*
   Push(1); // 1
   SWAP(); // SWAP
@@ -507,7 +507,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   label2:
   UNK_0xf2b2(); // UNK_0xf2b2
   if (Pop() == 0) return;
-  INJURE_minus_PL(); // INJURE-PL
+  INJURE_dash_PL(); // INJURE-PL
 }
 
 // 0xf506: db 0x53 0x54 0x4f 0x52 0x4d 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x52 0x41 0x47 0x45 0x20 0x46 0x4f 0x52 0x20 0x46 0x55 0x4e 0x43 0x54 0x49 0x4f 0x4e 0x5d 0x17 0xa0 0x0f 0xef 0x2a 0xb3 0xe0 0x90 0x16 0x49 0x54 0x45 0x4d 0x53 0x31 0x36 0x37 0x32 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'STORM-VOC_______________________RAGE FOR FUNCTION]    *    ITEMS1672______________________ '

@@ -39,7 +39,7 @@ void UNK_0xf423() // UNK_0xf423
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   DISPOSAL(); // DISPOSAL
   return;
 
@@ -118,7 +118,7 @@ void UNK_0xf48d() // UNK_0xf48d
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -154,7 +154,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(Read16(Pop())); // @
   UNK_0xf4b7(); // UNK_0xf4b7
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) goto label1;
@@ -197,7 +197,7 @@ void DEPART() // DEPART
   Push(pp__ask_CRITIC); // ?CRITIC
   _099(); // 099
   Push(0x3a48);
-  Push(pp__i_THROW_minus_); // 'THROW-
+  Push(pp__i_THROW_dash_); // 'THROW-
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
@@ -206,7 +206,7 @@ void DEPART() // DEPART
   UNK_0xf48d(); // UNK_0xf48d
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_PLHI); // PLHI
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED
@@ -224,7 +224,7 @@ void DEPART() // DEPART
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
-  _ex_INST_minus_S(); // !INST-S
+  _ex_INST_dash_S(); // !INST-S
   ICLOSE(); // ICLOSE
 }
 

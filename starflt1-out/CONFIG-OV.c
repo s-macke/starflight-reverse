@@ -22,8 +22,8 @@
 // 1714:      UNK_0xeadd  codep:0x224c parp:0xeadd size:0x0176 C-string:'UNK_0xeadd'
 // 1715:      (PARTADDR)  codep:0x4a4f parp:0xec62 size:0x001c C-string:'_ro_PARTADDR_rc_'
 // 1716:           (PTS)  codep:0x4a4f parp:0xec88 size:0x07f7 C-string:'_ro_PTS_rc_'
-// 1717: CONFIG-FUNCTION  codep:0x4a4f parp:0xf493 size:0x0018 C-string:'CONFIG_minus_FUNCTION'
-// 1718:      (U-CONFIG)  codep:0x224c parp:0xf4ba size:0x00a6 C-string:'_ro_U_minus_CONFIG_rc_'
+// 1717: CONFIG-FUNCTION  codep:0x4a4f parp:0xf493 size:0x0018 C-string:'CONFIG_dash_FUNCTION'
+// 1718:      (U-CONFIG)  codep:0x224c parp:0xf4ba size:0x00a6 C-string:'_ro_U_dash_CONFIG_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -211,14 +211,14 @@ void UNK_0xeadd() // UNK_0xeadd
 // 0xf4ab: WORD '(U-CONFIG)' codep=0x224c parp=0xf4ba
 // ================================================
 
-void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
+void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
 {
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
   UNK_0xe976(); // UNK_0xe976
   WHITE(); // WHITE
   GREY1(); // GREY1
-  DK_minus_GREE(); // DK-GREE
+  DK_dash_GREE(); // DK-GREE
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
@@ -232,9 +232,9 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   MODULE(); // MODULE
   UNK_0xeadd(); // UNK_0xeadd
   Push(pp_UNK_0xea33); // UNK_0xea33
-  BLD_minus_CRS(); // BLD-CRS
+  BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 
   label2:
   XYSCAN(); // XYSCAN
@@ -242,14 +242,14 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   _plus__ex_(); // +!
   Pop(); // DROP
   Push(pp_UNK_0xea33); // UNK_0xea33
-  SET_minus_CRS(); // SET-CRS
+  SET_dash_CRS(); // SET-CRS
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  CONFIG_minus_FUNCTION(); // CONFIG-FUNCTION
+  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION
   goto label3;
 
   label1:

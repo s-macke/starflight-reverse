@@ -33,8 +33,8 @@
 // 1725:      UNK_0xecf8  codep:0x224c parp:0xecf8 size:0x0034 C-string:'UNK_0xecf8'
 // 1726:      UNK_0xed2e  codep:0x224c parp:0xed2e size:0x005e C-string:'UNK_0xed2e'
 // 1727:      UNK_0xed8e  codep:0x224c parp:0xed8e size:0x001a C-string:'UNK_0xed8e'
-// 1728:         LO-MASS  codep:0xeca2 parp:0xedb4 size:0x0010 C-string:'LO_minus_MASS'
-// 1729:         HI-MASS  codep:0xeca2 parp:0xedd0 size:0x0010 C-string:'HI_minus_MASS'
+// 1728:         LO-MASS  codep:0xeca2 parp:0xedb4 size:0x0010 C-string:'LO_dash_MASS'
+// 1729:         HI-MASS  codep:0xeca2 parp:0xedd0 size:0x0010 C-string:'HI_dash_MASS'
 // 1730:      UNK_0xede2  codep:0x224c parp:0xede2 size:0x0014 C-string:'UNK_0xede2'
 // 1731:      UNK_0xedf8  codep:0x224c parp:0xedf8 size:0x002e C-string:'UNK_0xedf8'
 // 1732:      UNK_0xee28  codep:0x224c parp:0xee28 size:0x001c C-string:'UNK_0xee28'
@@ -73,7 +73,7 @@
 // 1765:          (SAND)  codep:0x1d29 parp:0xf3a8 size:0x009e C-string:'_ro_SAND_rc_'
 // 1766:        (TERRAIN  codep:0x4a4f parp:0xf453 size:0x0018 C-string:'_ro_TERRAIN'
 // 1767:      UNK_0xf46d  codep:0x224c parp:0xf46d size:0x0008 C-string:'UNK_0xf46d'
-// 1768:        PLAN-RUL  codep:0x224c parp:0xf482 size:0x00de C-string:'PLAN_minus_RUL'
+// 1768:        PLAN-RUL  codep:0x224c parp:0xf482 size:0x00de C-string:'PLAN_dash_RUL'
 
 // =================================
 // =========== VARIABLES ===========
@@ -210,7 +210,7 @@ void UNK_0xecc9() // UNK_0xecc9
   _gt_R(); // >R
   Push(Pop()+1); // 1+
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   R_gt_(); // R>
   Push(0x0100);
   _star__slash_(); // */
@@ -265,7 +265,7 @@ void UNK_0xecf8() // UNK_0xecf8
   Push(0); // 0
 
   label2:
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(cc_UNK_0xec16); // UNK_0xec16
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -339,7 +339,7 @@ void UNK_0xed2e() // UNK_0xed2e
 
   label1:
   _gt_C_plus_S(); // >C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -357,9 +357,9 @@ void UNK_0xed8e() // UNK_0xed8e
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
@@ -385,9 +385,9 @@ void UNK_0xede2() // UNK_0xede2
   UNK_0xec42(); // UNK_0xec42
   C_at_(); // C@
   DUP(); // DUP
-  LO_minus_MASS(); // LO-MASS
+  LO_dash_MASS(); // LO-MASS
   SWAP(); // SWAP
-  HI_minus_MASS(); // HI-MASS
+  HI_dash_MASS(); // HI-MASS
   RRND(); // RRND
   UNK_0xec4a(); // UNK_0xec4a
   _ex_(); // !
@@ -403,17 +403,17 @@ void UNK_0xedf8() // UNK_0xedf8
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(0x007d);
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   Push(0x0064);
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
@@ -472,7 +472,7 @@ void UNK_0xee46() // UNK_0xee46
   UNK_0xee28(); // UNK_0xee28
   UNK_0xec32(); // UNK_0xec32
   C_ex_(); // C!
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0017);
   _eq_(); // =
   if (Pop() == 0) return;
@@ -618,7 +618,7 @@ void UNK_0xef7a() // UNK_0xef7a
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   UNK_0xeee8(); // UNK_0xeee8
   ICLOSE(); // ICLOSE
 }
@@ -630,7 +630,7 @@ void UNK_0xef7a() // UNK_0xef7a
 
 void UNK_0xef8a() // UNK_0xef8a
 {
-  Push(cc__minus_2); // -2
+  Push(cc__dash_2); // -2
   OVER(); // OVER
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -639,7 +639,7 @@ void UNK_0xef8a() // UNK_0xef8a
   return;
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   OVER(); // OVER
   _eq_(); // =
   if (Pop() == 0) goto label2;
@@ -690,7 +690,7 @@ void UNK_0xefea() // UNK_0xefea
   UNK_0xed2e(); // UNK_0xed2e
   DUP(); // DUP
   UNK_0xef7a(); // UNK_0xef7a
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xef8a(); // UNK_0xef8a
   SWAP(); // SWAP
   UNK_0xec7a(); // UNK_0xec7a
@@ -704,9 +704,9 @@ void UNK_0xefea() // UNK_0xefea
   Push(2); // 2
 
   label2:
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xef7a(); // UNK_0xef7a
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xef8a(); // UNK_0xef8a
   UNK_0xec6a(); // UNK_0xec6a
   C_ex_(); // C!
@@ -755,7 +755,7 @@ void UNK_0xf03e() // UNK_0xf03e
   MAX(); // MAX
   Push(cc__6); // 6
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   UNK_0xec8a(); // UNK_0xec8a
   C_ex_(); // C!
@@ -997,7 +997,7 @@ void UNK_0xf1c8() // UNK_0xf1c8
 
 void UNK_0xf1e6() // UNK_0xf1e6
 {
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   DUP(); // DUP
   Push(0x0012);
   _eq_(); // =
@@ -1049,7 +1049,7 @@ void UNK_0xf234() // UNK_0xf234
   UNK_0xec6a(); // UNK_0xec6a
   C_at_(); // C@
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop()+1); // 1+
   ICLOSE(); // ICLOSE
 }
@@ -1069,7 +1069,7 @@ void UNK_0xf24e() // UNK_0xf24e
   if (Pop() == 0) goto label1;
   Push(0x03c0);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
 
   label1:
   Push(0x01e0);
@@ -1116,7 +1116,7 @@ void UNK_0xf280() // UNK_0xf280
   i++;
   } while(i<imax); // (LOOP) 0xfff4
 
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
 }
 
 
@@ -1157,7 +1157,7 @@ void SETC() // SETC
   _0_dot_(); // 0.
 
   label2:
-  Push(pp_P_minus_CARP); // P-CARP
+  Push(pp_P_dash_CARP); // P-CARP
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1204,13 +1204,13 @@ void UNK_0xf46d() // UNK_0xf46d
 // 0xf475: WORD 'PLAN-RUL' codep=0x224c parp=0xf482
 // ================================================
 
-void PLAN_minus_RUL() // PLAN-RUL
+void PLAN_dash_RUL() // PLAN-RUL
 {
   UNK_0xed8e(); // UNK_0xed8e
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0011);
   _gt_(); // >
   if (Pop() == 0) goto label1;

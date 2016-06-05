@@ -80,13 +80,13 @@ void UNK_0xef73() // UNK_0xef73
   Push(cc_UNK_0xef66); // UNK_0xef66
   TONE(); // TONE
   BEEPON(); // BEEPON
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   V_gt_DISPL(); // V>DISPL
   Push(0x00c8);
   MS(); // MS
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   BLACK(); // BLACK
@@ -95,25 +95,25 @@ void UNK_0xef73() // UNK_0xef73
   Push(0x0064);
   POS_dot_(); // POS.
 
-  UNK_0x3f39("INCOMING");
+  UNK_0x3f3b("INCOMING");
   TYPE(); // TYPE
   Push(0x0018);
   Push(0x0050);
   POS_dot_(); // POS.
 
-  UNK_0x3f39("HIGH");
+  UNK_0x3f3b("HIGH");
   TYPE(); // TYPE
   Push(0x000f);
   Push(0x003c);
   POS_dot_(); // POS.
 
-  UNK_0x3f39("PRIORITY");
+  UNK_0x3f3b("PRIORITY");
   TYPE(); // TYPE
   Push(0x0011);
   Push(0x0028);
   POS_dot_(); // POS.
 
-  UNK_0x3f39("MESSAGE");
+  UNK_0x3f3b("MESSAGE");
   TYPE(); // TYPE
   Push(cc_UNK_0xef6a); // UNK_0xef6a
   TONE(); // TONE
@@ -207,7 +207,7 @@ void UNK_0xf064() // UNK_0xf064
   label1:
   CDEPTH(); // CDEPTH
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   _ask_DUP(); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -243,7 +243,7 @@ void UNK_0xf08e() // UNK_0xf08e
 
 void UNK_0xf09c() // UNK_0xf09c
 {
-  Push(pp_TIME_minus_PA); // TIME-PA
+  Push(pp_TIME_dash_PA); // TIME-PA
   OFF(); // OFF
   UNK_0xef73(); // UNK_0xef73
   UNK_0xf008(); // UNK_0xf008
@@ -259,7 +259,7 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(cc__3); // 3
   Push(0xc542);
   MODULE(); // MODULE
-  Push(pp_TIME_minus_PA); // TIME-PA
+  Push(pp_TIME_dash_PA); // TIME-PA
   ON(); // ON
   Push(pp_STARDAT); // STARDAT
   Push(Read16(Pop())); // @
@@ -277,7 +277,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   _gt_R(); // >R
   Push(h); // I
   Push(0x0044);
@@ -290,7 +290,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   DUP(); // DUP
   if (Pop() == 0) goto label2;
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__3); // 3
   _st_(); // <
   Push(Pop() & Pop()); // AND
@@ -301,7 +301,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   DUP(); // DUP
   if (Pop() == 0) goto label3;
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0010);
   Push(0x0033);
   WITHIN(); // WITHIN
@@ -313,7 +313,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   DUP(); // DUP
   if (Pop() == 0) goto label4;
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__3); // 3
   _eq_(); // =
   Push(pp__ask_WIN); // ?WIN
@@ -406,7 +406,7 @@ void UNK_0xf1ac() // UNK_0xf1ac
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_SUPER_minus_B); // SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -433,13 +433,13 @@ void UNK_0xf1d6() // UNK_0xf1d6
 {
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("CAPTAIN, WE ARE RECEIVING A ");
+  UNK_0x3f3b("CAPTAIN, WE ARE RECEIVING A ");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("COUNTDOWN TRANSMISSION FROM ");
+  UNK_0x3f3b("COUNTDOWN TRANSMISSION FROM ");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("THE BLACK EGG... ");
+  UNK_0x3f3b("THE BLACK EGG... ");
   _dot_TTY(); // .TTY
   Push(1); // 1
   Push(cc__5); // 5
@@ -456,7 +456,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   _dot_TTY(); // .TTY
   Push(0x03e8);
   MS(); // MS
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
   } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffea
@@ -484,7 +484,7 @@ void UNK_0xf252() // UNK_0xf252
 void UNK_0xf25e() // UNK_0xf25e
 {
 
-  UNK_0x3f39("BOOM!");
+  UNK_0x3f3b("BOOM!");
   _dot_TTY(); // .TTY
   Push(cc__3); // 3
   Push(cc_MPS); // MPS
@@ -531,7 +531,7 @@ void UNK_0xf29e() // UNK_0xf29e
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
   Push(0x0017);
   _eq_(); // =
@@ -546,17 +546,17 @@ void UNK_0xf2b0() // UNK_0xf2b0
 {
   Push(pp__ro_BOMB_rc_); // (BOMB)
   _at__gt_C_plus_S(); // @>C+S
-  _ask__minus_NULL(); // ?-NULL
+  _ask__dash_NULL(); // ?-NULL
   if (Pop() == 0) goto label1;
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(0x05a0);
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   Push(0x02da);
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   Push(Pop() + Pop()); // +
   Push(0x000a);
@@ -584,7 +584,7 @@ void UNK_0xf2eb() // UNK_0xf2eb
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
@@ -632,13 +632,13 @@ void UNK_0xf331() // UNK_0xf331
 {
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("CAPTAIN, I FELT A TREMOR AS IF");
+  UNK_0x3f3b("CAPTAIN, I FELT A TREMOR AS IF");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("MILLIONS OF VOICES CRIED OUT AND WERE");
+  UNK_0x3f3b("MILLIONS OF VOICES CRIED OUT AND WERE");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("SUDDENLY SILENCED.");
+  UNK_0x3f3b("SUDDENLY SILENCED.");
   _dot_TTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
@@ -655,16 +655,16 @@ void UNK_0xf39d() // UNK_0xf39d
   SUBROOT(); // SUBROOT
 
   label3:
-  NEXT_minus_NO(); // NEXT-NO
+  NEXT_dash_NO(); // NEXT-NO
   CI(); // CI
   _star_SECS(); // *SECS
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(0x003d);
   _eq_(); // =
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__9); // 9
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -680,10 +680,10 @@ void UNK_0xf39d() // UNK_0xf39d
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");
+  UNK_0x3f3b("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("THE LOCAL VICINITY HAVE CEASED!");
+  UNK_0x3f3b("THE LOCAL VICINITY HAVE CEASED!");
   _dot_TTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
@@ -740,7 +740,7 @@ void UNK_0xf430() // UNK_0xf430
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("PLANET OBLITERATED");
+  UNK_0x3f3b("PLANET OBLITERATED");
   _dot_TTY(); // .TTY
 }
 
@@ -754,7 +754,7 @@ void DEPART() // DEPART
   Push(pp__ask_CRITIC); // ?CRITIC
   OFF(); // OFF
   Push(0x3a48);
-  Push(pp__i_THROW_minus_); // 'THROW-
+  Push(pp__i_THROW_dash_); // 'THROW-
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
@@ -777,10 +777,10 @@ void DEPART() // DEPART
   label4:
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("CRYSTAL PLANET DAMAGED");
+  UNK_0x3f3b("CRYSTAL PLANET DAMAGED");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("BUT NOT DESTROYED");
+  UNK_0x3f3b("BUT NOT DESTROYED");
   _dot_TTY(); // .TTY
   Push(0x1388);
   MS(); // MS
@@ -805,7 +805,7 @@ void DEPART() // DEPART
   UNK_0xf1ac(); // UNK_0xf1ac
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_PLHI); // PLHI
   _ex_(); // !
   Push(pp__ask_LANDED); // ?LANDED

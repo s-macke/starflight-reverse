@@ -29,8 +29,8 @@
 // 1887:         #>VALUE  codep:0x4b3b parp:0xeda0 size:0x00d8 C-string:'_n__gt_VALUE'
 // 1888:           #>BUY  codep:0x4b3b parp:0xee82 size:0x025c C-string:'_n__gt_BUY'
 // 1889:          #>SELL  codep:0x4b3b parp:0xf0e9 size:0x03bd C-string:'_n__gt_SELL'
-// 1890: CONFIG-FUNCTION  codep:0x4b3b parp:0xf4ba size:0x0018 C-string:'CONFIG_minus_FUNCTION'
-// 1891:      (U-CONFIG)  codep:0x224c parp:0xf4e1 size:0x007f C-string:'_ro_U_minus_CONFIG_rc_'
+// 1890: CONFIG-FUNCTION  codep:0x4b3b parp:0xf4ba size:0x0018 C-string:'CONFIG_dash_FUNCTION'
+// 1891:      (U-CONFIG)  codep:0x224c parp:0xf4e1 size:0x007f C-string:'_ro_U_dash_CONFIG_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -280,7 +280,7 @@ void UNK_0xeb07() // UNK_0xeb07
 // 0xf4d2: WORD '(U-CONFIG)' codep=0x224c parp=0xf4e1
 // ================================================
 
-void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
+void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
 {
   Push(0xc8c3);
   MODULE(); // MODULE
@@ -289,7 +289,7 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   UNK_0xe6f6(); // UNK_0xe6f6
   WHITE(); // WHITE
   GREY1(); // GREY1
-  DK_minus_GREE(); // DK-GREE
+  DK_dash_GREE(); // DK-GREE
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
@@ -303,9 +303,9 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   MODULE(); // MODULE
   UNK_0xeb07(); // UNK_0xeb07
   Push(pp_UNK_0xe8ec); // UNK_0xe8ec
-  BLD_minus_CRS(); // BLD-CRS
+  BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 
   label2:
   XYSCAN(); // XYSCAN
@@ -313,14 +313,14 @@ void _ro_U_minus_CONFIG_rc_() // (U-CONFIG)
   _plus__ex_(); // +!
   Pop(); // DROP
   Push(pp_UNK_0xe8ec); // UNK_0xe8ec
-  SET_minus_CRS(); // SET-CRS
+  SET_dash_CRS(); // SET-CRS
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  CONFIG_minus_FUNCTION(); // CONFIG-FUNCTION
+  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION
   goto label3;
 
   label1:

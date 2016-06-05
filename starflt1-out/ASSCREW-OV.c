@@ -51,7 +51,7 @@
 // 1743:      UNK_0xf395  codep:0x224c parp:0xf395 size:0x0040 C-string:'UNK_0xf395'
 // 1744:      UNK_0xf3d7  codep:0x224c parp:0xf3d7 size:0x0030 C-string:'UNK_0xf3d7'
 // 1745:      UNK_0xf409  codep:0x224c parp:0xf409 size:0x0046 C-string:'UNK_0xf409'
-// 1746:     (U-ASSCREW)  codep:0x224c parp:0xf45f size:0x0101 C-string:'_ro_U_minus_ASSCREW_rc_'
+// 1746:     (U-ASSCREW)  codep:0x224c parp:0xf45f size:0x0101 C-string:'_ro_U_dash_ASSCREW_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -245,7 +245,7 @@ void UNK_0xeb6d() // UNK_0xeb6d
   return;
 
   label1:
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
 }
 
 
@@ -260,13 +260,13 @@ void UNK_0xeb81() // UNK_0xeb81
   Push(cc__8); // 8
   Push(0x0043);
   GREY2(); // GREY2
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   Push(0x003c);
   Push(0x0044);
   Push(cc__8); // 8
   Push(0x009d);
   GREY2(); // GREY2
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   WHITE(); // WHITE
   WHITE(); // WHITE
   UNK_0xeb6d(); // UNK_0xeb6d
@@ -598,7 +598,7 @@ void UNK_0xedf8() // UNK_0xedf8
   Push(cc__9); // 9
   UNK_0xec86(); // UNK_0xec86
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 }
 
 
@@ -707,7 +707,7 @@ void UNK_0xef47() // UNK_0xef47
 
 void UNK_0xf019() // UNK_0xf019
 {
-  SAVE_minus_SC(); // SAVE-SC
+  SAVE_dash_SC(); // SAVE-SC
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
@@ -831,7 +831,7 @@ void UNK_0xf019() // UNK_0xf019
   _ex_CRS(); // !CRS
   _gt_1FONT(); // >1FONT
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 }
 
 
@@ -848,7 +848,7 @@ void UNK_0xf128() // UNK_0xf128
   SWAP(); // SWAP
   Push(0x000a);
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   Push(0x005f);
   _2DUP(); // 2DUP
   Push(0x000e);
@@ -991,7 +991,7 @@ void UNK_0xf238() // UNK_0xf238
   Push(Pop() * Pop()); // *
   Push(0x00a9);
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_YBLT); // YBLT
   _ex_(); // !
   BLT(); // BLT
@@ -1213,7 +1213,7 @@ void UNK_0xf409() // UNK_0xf409
 // 0xf44f: WORD '(U-ASSCREW)' codep=0x224c parp=0xf45f
 // ================================================
 
-void _ro_U_minus_ASSCREW_rc_() // (U-ASSCREW)
+void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
 {
   UNK_0xedf8(); // UNK_0xedf8
   _star_PERSON(); // *PERSON
@@ -1240,7 +1240,7 @@ void _ro_U_minus_ASSCREW_rc_() // (U-ASSCREW)
   POS_dot_(); // POS.
   WHITE(); // WHITE
   GREY2(); // GREY2
-  DK_minus_GREE(); // DK-GREE
+  DK_dash_GREE(); // DK-GREE
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE

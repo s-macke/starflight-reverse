@@ -42,7 +42,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_minus_PT); // TILE-PT
+  Push(pp_TILE_dash_PT); // TILE-PT
   _ex_(); // !
   Push(0x0020);
   Push(i); // I
@@ -212,7 +212,7 @@ void UNK_0xf45e() // UNK_0xf45e
   do // (DO)
   {
   Push(0x000a);
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
@@ -241,7 +241,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _st__plus__ex__gt_(); // <+!>
   BLACK(); // BLACK
   _ex_COLOR(); // !COLOR
-  Push(cc__minus_2); // -2
+  Push(cc__dash_2); // -2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
@@ -251,7 +251,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _gt_(); // >
   if (Pop() == 0) goto label1;
   Push(0x0011);
-  _minus_(); // -
+  _dash_(); // -
 
   label1:
   _at_RECORD(); // @RECORD
@@ -275,7 +275,7 @@ void ICONS() // ICONS
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(pp_ESC_minus_EN); // ESC-EN
+  Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
   Push(pp_NOF); // NOF
   ON(); // ON
@@ -309,7 +309,7 @@ void ICONS() // ICONS
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf2c6(); // UNK_0xf2c6
   UNK_0xf418(); // UNK_0xf418
-  Push(pp_ESC_minus_EN); // ESC-EN
+  Push(pp_ESC_dash_EN); // ESC-EN
   ON(); // ON
   Push(pp_NOF); // NOF
   _099(); // 099

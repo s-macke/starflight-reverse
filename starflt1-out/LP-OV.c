@@ -207,7 +207,7 @@ void UNK_0xe121() // UNK_0xe121
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
   PHRASE(); // PHRASE
-  PHR_minus_CNT(); // PHR-CNT
+  PHR_dash_CNT(); // PHR-CNT
   C_at_(); // C@
   TYPE(); // TYPE
   ICLOSE(); // ICLOSE
@@ -293,7 +293,7 @@ void UNK_0xe29d() // UNK_0xe29d
   _gt_R(); // >R
   Push(Pop()+1); // 1+
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   R_gt_(); // R>
   Push(0x0100);
   _star__slash_(); // */
@@ -637,7 +637,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
   return;
 
   label2:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
 }
 
 
@@ -649,7 +649,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
 {
   UNK_0xe5a6(); // UNK_0xe5a6
   DUP(); // DUP
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -683,7 +683,7 @@ void UNK_0xeb97() // UNK_0xeb97
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__7); // 7
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -1053,7 +1053,7 @@ void UNK_0xedef() // UNK_0xedef
 
   label1:
   Push(cc__3); // 3
-  _minus_(); // -
+  _dash_(); // -
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Push(0x000d);
@@ -1112,7 +1112,7 @@ void UNK_0xee77() // UNK_0xee77
   Push(cc__9); // 9
   UNK_0xe306(); // UNK_0xe306
   C_at_(); // C@
-  _minus_(); // -
+  _dash_(); // -
   Push(cc__3); // 3
   _slash_(); // /
   Push(2); // 2

@@ -254,7 +254,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   Push(pp_UNK_0xee59); // UNK_0xee59
   Push(Pop() + Pop()); // +
   C_at_(); // C@
-  Push(pp__minus_END); // -END
+  Push(pp__dash_END); // -END
   _ex_(); // !
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
@@ -301,7 +301,7 @@ void UNK_0xef3a() // UNK_0xef3a
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   goto label4;
 
@@ -341,7 +341,7 @@ void UNK_0xef3a() // UNK_0xef3a
 
 void UNK_0xefb0() // UNK_0xefb0
 {
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -562,7 +562,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(0x0010);
   Push(pp_UNK_0xf0dc); // UNK_0xf0dc
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xf106(); // UNK_0xf106
   _ex_CRS(); // !CRS
 }
@@ -592,7 +592,7 @@ void UNK_0xf192() // UNK_0xf192
   UNK_0xed3d(); // UNK_0xed3d
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -629,11 +629,11 @@ void UNK_0xf1d4() // UNK_0xf1d4
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed65(); // UNK_0xed65
   if (Pop() == 0) goto label1;
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   goto label2;
 
   label1:
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
 
   label2:
   _ex_COLOR(); // !COLOR
@@ -702,7 +702,7 @@ void _ro_BALANC() // (BALANC
 
 void UNK_0xf277() // UNK_0xf277
 {
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(0x009d);
   Push(1); // 1
@@ -766,7 +766,7 @@ void UNK_0xf277() // UNK_0xf277
   LLINE(); // LLINE
   Push(0x0015);
   Push(0x00c3);
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _dot_1LOGO(); // .1LOGO
   BLUE(); // BLUE
   _ex_COLOR(); // !COLOR
@@ -872,7 +872,7 @@ void UNK_0xf478() // UNK_0xf478
   PRINT("CLASS ", 6); // (.")
   Push(cc__5); // 5
   Push(i); // I
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   _dot_R(); // .R
   PRINT("...", 3); // (.")

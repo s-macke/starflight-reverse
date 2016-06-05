@@ -67,7 +67,7 @@
 // 1925:      UNK_0xf320  codep:0x224c parp:0xf320 size:0x0036 C-string:'UNK_0xf320'
 // 1926:      UNK_0xf358  codep:0x224c parp:0xf358 size:0x002e C-string:'UNK_0xf358'
 // 1927:      UNK_0xf388  codep:0x224c parp:0xf388 size:0x001c C-string:'UNK_0xf388'
-// 1928:     TANDY-ALLOC  codep:0x224c parp:0xf3b4 size:0x003c C-string:'TANDY_minus_ALLOC'
+// 1928:     TANDY-ALLOC  codep:0x224c parp:0xf3b4 size:0x003c C-string:'TANDY_dash_ALLOC'
 // 1929:      UNK_0xf3f2  codep:0x224c parp:0xf3f2 size:0x001a C-string:'UNK_0xf3f2'
 // 1930:      UNK_0xf40e  codep:0x224c parp:0xf40e size:0x0020 C-string:'UNK_0xf40e'
 // 1931:      UNK_0xf430  codep:0x224c parp:0xf430 size:0x003a C-string:'UNK_0xf430'
@@ -209,7 +209,7 @@ void R_co_() // R,
 {
   Push(cc_MUSSEG); // MUSSEG
   SEG_gt_ADDR(); // SEG>ADDR
-  _minus_(); // -
+  _dash_(); // -
   _co_(); // ,
 }
 
@@ -427,7 +427,7 @@ void INITMUS() // INITMUS
   Pop(); Pop();// 2DROP
 
   label2:
-  SAVE_minus_OV(); // SAVE-OV
+  SAVE_dash_OV(); // SAVE-OV
 }
 
 
@@ -462,7 +462,7 @@ void UNK_0xefd1() // UNK_0xefd1
   Push(pp_FONTSEG); // FONTSEG
   Push(Read16(Pop())); // @
   Push(0x008f);
-  FILE_minus__n_R(); // FILE-#R
+  FILE_dash__n_R(); // FILE-#R
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
@@ -501,7 +501,7 @@ void UNK_0xefe3() // UNK_0xefe3
 
 void UNK_0xf00b() // UNK_0xf00b
 {
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   L_at_(); // L@
@@ -516,7 +516,7 @@ void UNK_0xf00b() // UNK_0xf00b
 
 void UNK_0xf01b() // UNK_0xf01b
 {
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(0x000a);
   LC_at_(); // LC@
@@ -765,7 +765,7 @@ void SETABLT() // SETABLT
   goto label2;
 
   label1:
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(0x000d);
 
@@ -819,7 +819,7 @@ void UNK_0xf209() // UNK_0xf209
 void UNK_0xf21d() // UNK_0xf21d
 {
   UNK_0xf209(); // UNK_0xf209
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   SETABLT(); // SETABLT
@@ -837,7 +837,7 @@ void UNK_0xf21d() // UNK_0xf21d
   _ask_VGA(); // ?VGA
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   SETABLT(); // SETABLT
@@ -997,7 +997,7 @@ void UNK_0xf358() // UNK_0xf358
   Push(0x0040);
   Push(Pop() * Pop()); // *
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_UNK_0xf261); // UNK_0xf261
   _ex_(); // !
   Push(0xc350);
@@ -1005,9 +1005,9 @@ void UNK_0xf358() // UNK_0xf358
   SETBLOC(); // SETBLOC
   Pop(); // DROP
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(1); // 1
-  _minus_(); // -
+  _dash_(); // -
   _at_DS(); // @DS
   SETBLOC(); // SETBLOC
   Pop(); Pop();// 2DROP
@@ -1025,7 +1025,7 @@ void UNK_0xf388() // UNK_0xf388
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf259); // UNK_0xf259
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   _0_gt_(); // 0>
   Push(pp_UNK_0xf25d); // UNK_0xf25d
@@ -1041,7 +1041,7 @@ void UNK_0xf388() // UNK_0xf388
 // 0xf3a4: WORD 'TANDY-ALLOC' codep=0x224c parp=0xf3b4
 // ================================================
 
-void TANDY_minus_ALLOC() // TANDY-ALLOC
+void TANDY_dash_ALLOC() // TANDY-ALLOC
 {
   Push(pp_TANDY); // TANDY
   _099(); // 099
@@ -1116,7 +1116,7 @@ void UNK_0xf40e() // UNK_0xf40e
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 }
 
 
@@ -1153,7 +1153,7 @@ void UNK_0xf430() // UNK_0xf430
   TIME(); // TIME
   _2_at_(); // 2@
   _2SWAP(); // 2SWAP
-  D_minus_(); // D-
+  D_dash_(); // D-
   Pop(); // DROP
   _slash_(); // /
   Push(1); // 1

@@ -15,7 +15,7 @@
 // 1707:      UNK_0xe7ac  codep:0x224c parp:0xe7ac size:0x000a C-string:'UNK_0xe7ac'
 // 1708:      UNK_0xe7b8  codep:0x224c parp:0xe7b8 size:0x00a4 C-string:'UNK_0xe7b8'
 // 1709:      UNK_0xe85e  codep:0x224c parp:0xe85e size:0x002e C-string:'UNK_0xe85e'
-// 1710:       SET-SPEED  codep:0x224c parp:0xe89a size:0x0042 C-string:'SET_minus_SPEED'
+// 1710:       SET-SPEED  codep:0x224c parp:0xe89a size:0x0042 C-string:'SET_dash_SPEED'
 // 1711:            CBLT  codep:0x1d29 parp:0xe8e5 size:0x0004 C-string:'CBLT'
 // 1712:           CBLTP  codep:0xe8f3 parp:0xe8f3 size:0x014e C-string:'CBLTP'
 // 1713:          %STORM  codep:0x1d29 parp:0xea4c size:0x023a C-string:'_pe_STORM'
@@ -29,7 +29,7 @@
 // 1721:      UNK_0xeda8  codep:0x224c parp:0xeda8 size:0x008a C-string:'UNK_0xeda8'
 // 1722:      UNK_0xee34  codep:0x224c parp:0xee34 size:0x0024 C-string:'UNK_0xee34'
 // 1723:         ?POPULA  codep:0x224c parp:0xee64 size:0x0591 C-string:'_ask_POPULA'
-// 1724:         TV-MOVE  codep:0x224c parp:0xf401 size:0x0014 C-string:'TV_minus_MOVE'
+// 1724:         TV-MOVE  codep:0x224c parp:0xf401 size:0x0014 C-string:'TV_dash_MOVE'
 // 1725:      UNK_0xf417  codep:0x73ea parp:0xf417 size:0x0006 C-string:'UNK_0xf417'
 // 1726:        APPROACH  codep:0x224c parp:0xf42a size:0x0136 C-string:'APPROACH'
 
@@ -54,7 +54,7 @@ void UNK_0xe6c6() // UNK_0xe6c6
   Push(cc__7); // 7
   Push(0x0026);
   WINDOW(); // WINDOW
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex_(); // +!
   _gt_TVCT(); // >TVCT
@@ -80,7 +80,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   BLACK(); // BLACK
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
 }
 
@@ -112,9 +112,9 @@ void UNK_0xe702() // UNK_0xe702
 
 void UNK_0xe794() // UNK_0xe794
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
 }
 
@@ -126,9 +126,9 @@ void UNK_0xe794() // UNK_0xe794
 
 void UNK_0xe7ac() // UNK_0xe7ac
 {
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
 }
 
@@ -160,12 +160,12 @@ void UNK_0xe85e() // UNK_0xe85e
   Push(pp_XCON); // XCON
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(pp_YCON); // YCON
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
 }
 
 // 0xe87c: db 0x4c 0x22 0x5c 0xe8 0x4e 0x4d 0x90 0x4d 0x5d 0x17 0x10 0x00 0x46 0x12 0x90 0x16 'L"\ NM M]   F   '
@@ -174,7 +174,7 @@ void UNK_0xe85e() // UNK_0xe85e
 // 0xe88c: WORD 'SET-SPEED' codep=0x224c parp=0xe89a
 // ================================================
 
-void SET_minus_SPEED() // SET-SPEED
+void SET_dash_SPEED() // SET-SPEED
 {
   UNK_0xe85e(); // UNK_0xe85e
   ACELLAD(); // ACELLAD
@@ -451,9 +451,9 @@ void UNK_0xed14() // UNK_0xed14
 
 void UNK_0xed34() // UNK_0xed34
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -485,15 +485,15 @@ void UNK_0xed4c() // UNK_0xed4c
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _2DUP(); // 2DUP
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_ex_(); // 1.5!
   _2DUP(); // 2DUP
   _gt_C(); // >C
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed34(); // UNK_0xed34
   Push(0); // 0
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -505,7 +505,7 @@ void UNK_0xed4c() // UNK_0xed4c
 
 void UNK_0xed7a() // UNK_0xed7a
 {
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_at_(); // 1.5@
   UNK_0xec88(); // UNK_0xec88
   Push(Pop() | Pop()); // OR
@@ -552,10 +552,10 @@ void UNK_0xeda8() // UNK_0xeda8
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  _at_INST_minus_C(); // @INST-C
+  _at_INST_dash_C(); // @INST-C
   Push(0x000b);
   _eq_(); // =
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x000b);
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -595,7 +595,7 @@ void UNK_0xee34() // UNK_0xee34
 {
   _2DUP(); // 2DUP
   _gt_C(); // >C
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   IOPEN(); // IOPEN
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I
@@ -659,7 +659,7 @@ void _ask_POPULA() // ?POPULA
 
   label1:
   UNK_0xee34(); // UNK_0xee34
-  Push(pp_THIS_minus_RE); // THIS-RE
+  Push(pp_THIS_dash_RE); // THIS-RE
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -669,13 +669,13 @@ void _ask_POPULA() // ?POPULA
 // 0xf3f5: WORD 'TV-MOVE' codep=0x224c parp=0xf401
 // ================================================
 
-void TV_minus_MOVE() // TV-MOVE
+void TV_dash_MOVE() // TV-MOVE
 {
   Push(0xf37b);
   Push(0xf3a7);
   Push(0xf355);
   DOTASKS(); // DOTASKS
-  Push(pp_TIME_minus_PA); // TIME-PA
+  Push(pp_TIME_dash_PA); // TIME-PA
   ON(); // ON
 }
 
@@ -696,8 +696,8 @@ void APPROACH() // APPROACH
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
-  SET_minus_CUR(); // SET-CUR
-  _at_INST_minus_S(); // @INST-S
+  SET_dash_CUR(); // SET-CUR
+  _at_INST_dash_S(); // @INST-S
   Push(0x0012);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -713,7 +713,7 @@ void APPROACH() // APPROACH
   DUP(); // DUP
   Push(0xc302);
   MODULE(); // MODULE
-  SHIP_minus_CO(); // SHIP-CO
+  SHIP_dash_CO(); // SHIP-CO
   Push(0xc48c);
   MODULE(); // MODULE
   _dot_REGION(); // .REGION

@@ -27,7 +27,7 @@
 // 1719:      UNK_0xde9b  codep:0x224c parp:0xde9b size:0x000e C-string:'UNK_0xde9b'
 // 1720:      UNK_0xdeab  codep:0x224c parp:0xdeab size:0x0008 C-string:'UNK_0xdeab'
 // 1721:      UNK_0xdeb5  codep:0x224c parp:0xdeb5 size:0x0054 C-string:'UNK_0xdeb5'
-// 1722:            X=-1  codep:0x4a4f parp:0xdf12 size:0x0010 C-string:'X_eq__minus_1'
+// 1722:            X=-1  codep:0x4a4f parp:0xdf12 size:0x0010 C-string:'X_eq__dash_1'
 // 1723:             X=0  codep:0x4a4f parp:0xdf2a size:0x0010 C-string:'X_eq_0'
 // 1724:             X=1  codep:0x4a4f parp:0xdf42 size:0x0010 C-string:'X_eq_1'
 // 1725:       KEY>ORIEN  codep:0x4a4f parp:0xdf60 size:0x00db C-string:'KEY_gt_ORIEN'
@@ -87,7 +87,7 @@
 // 1779:      UNK_0xebc3  codep:0x224c parp:0xebc3 size:0x0022 C-string:'UNK_0xebc3'
 // 1780:      UNK_0xebe7  codep:0x224c parp:0xebe7 size:0x0022 C-string:'UNK_0xebe7'
 // 1781:      UNK_0xec0b  codep:0x224c parp:0xec0b size:0x0032 C-string:'UNK_0xec0b'
-// 1782:       SET-SCALE  codep:0x224c parp:0xec4b size:0x014d C-string:'SET_minus_SCALE'
+// 1782:       SET-SCALE  codep:0x224c parp:0xec4b size:0x014d C-string:'SET_dash_SCALE'
 // 1783:      UNK_0xed9a  codep:0x224c parp:0xed9a size:0x001a C-string:'UNK_0xed9a'
 // 1784:       ?APPROACH  codep:0x224c parp:0xedc2 size:0x000a C-string:'_ask_APPROACH'
 // 1785:      UNK_0xedce  codep:0x224c parp:0xedce size:0x002e C-string:'UNK_0xedce'
@@ -100,7 +100,7 @@
 // 1792:          COMBAT  codep:0x224c parp:0xef3b size:0x006c C-string:'COMBAT'
 // 1793:        ORIENT>O  codep:0x1d29 parp:0xefb4 size:0x0501 C-string:'ORIENT_gt_O'
 // 1794:             WAR  codep:0x224c parp:0xf4bd size:0x0022 C-string:'WAR'
-// 1795:        CLEAR-CO  codep:0x224c parp:0xf4ec size:0x0074 C-string:'CLEAR_minus_CO'
+// 1795:        CLEAR-CO  codep:0x224c parp:0xf4ec size:0x0074 C-string:'CLEAR_dash_CO'
 
 // =================================
 // =========== VARIABLES ===========
@@ -180,9 +180,9 @@ void UNK_0xdd70() // UNK_0xdd70
 
 void UNK_0xdd78() // UNK_0xdd78
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
 }
 
@@ -259,7 +259,7 @@ void UNK_0xde9b() // UNK_0xde9b
 {
 
   label1:
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(2); // 2
   RRND(); // RRND
   _ask_DUP(); // ?DUP
@@ -273,7 +273,7 @@ void UNK_0xde9b() // UNK_0xde9b
 
 void UNK_0xdeab() // UNK_0xdeab
 {
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(2); // 2
   RRND(); // RRND
 }
@@ -297,7 +297,7 @@ void UNK_0xdeb5() // UNK_0xdeb5
   _2OVER(); // 2OVER
   ROT(); // ROT
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   if (Pop() == 0) goto label2;
   DUP(); // DUP
@@ -306,7 +306,7 @@ void UNK_0xdeb5() // UNK_0xdeb5
 
   label2:
   _gt_R(); // >R
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   if (Pop() == 0) goto label3;
   DUP(); // DUP
@@ -406,7 +406,7 @@ void UNK_0xe167() // UNK_0xe167
   Push(pp_UNK_0xde41); // UNK_0xde41
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(1); // 1
   RRND(); // RRND
   goto label2;
@@ -564,7 +564,7 @@ void UNK_0xe4e8() // UNK_0xe4e8
   return;
 
   label1:
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
 }
 
 
@@ -633,14 +633,14 @@ void UNK_0xe546() // UNK_0xe546
   Push(Read16(Pop())); // @
   CURRX(); // CURRX
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   ABS(); // ABS
   DESTY(); // DESTY
   Push(Read16(Pop())); // @
   CURRY(); // CURRY
   Push(Read16(Pop())); // @
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   ABS(); // ABS
   ROT(); // ROT
@@ -737,7 +737,7 @@ void UNK_0xe5dc() // UNK_0xe5dc
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  DK_minus_GREE(); // DK-GREE
+  DK_dash_GREE(); // DK-GREE
   goto label2;
 
   label1:
@@ -806,14 +806,14 @@ void UNK_0xe60a() // UNK_0xe60a
 
 void UNK_0xe72c() // UNK_0xe72c
 {
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   UNK_0xe60a(); // UNK_0xe60a
   Push(pp_UNK_0xe1f7); // UNK_0xe1f7
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xe1ff); // UNK_0xe1ff
   Push(0); // 0
   FILL(); // FILL
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_UNK_0xe6ac); // UNK_0xe6ac
   _st__plus__ex__gt_(); // <+!>
 }
@@ -828,7 +828,7 @@ void UNK_0xe744() // UNK_0xe744
   UNK_0xe482(); // UNK_0xe482
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_minus_(); // ?ICONS-
+  _ask_ICONS_dash_(); // ?ICONS-
   DUP(); // DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -1072,7 +1072,7 @@ void UNK_0xe97d() // UNK_0xe97d
   Push(0xc8c3);
   MODULE(); // MODULE
   UNK_0xe72c(); // UNK_0xe72c
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_UNK_0xe6b0); // UNK_0xe6b0
   _plus__ex_(); // +!
   i++;
@@ -1088,7 +1088,7 @@ void UNK_0xe97d() // UNK_0xe97d
 
 void UNK_0xe9b5() // UNK_0xe9b5
 {
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0018);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1119,13 +1119,13 @@ void UNK_0xea01() // UNK_0xea01
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(0x0012);
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_XVIS); // XVIS
   _st__ex__gt_(); // <!>
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(0x001e);
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_YVIS); // YVIS
   _st__ex__gt_(); // <!>
 }
@@ -1290,12 +1290,12 @@ void UNK_0xebc3() // UNK_0xebc3
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   _at_IX(); // @IX
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _at_IY(); // @IY
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
   Push(pp_UNK_0xebbf); // UNK_0xebbf
@@ -1315,12 +1315,12 @@ void UNK_0xebe7() // UNK_0xebe7
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   _at_IX(); // @IX
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _at_IY(); // @IY
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
   Push(pp_UNK_0xebbb); // UNK_0xebbb
@@ -1371,7 +1371,7 @@ void UNK_0xec0b() // UNK_0xec0b
 // 0xec3d: WORD 'SET-SCALE' codep=0x224c parp=0xec4b
 // ================================================
 
-void SET_minus_SCALE() // SET-SCALE
+void SET_dash_SCALE() // SET-SCALE
 {
   UNK_0xec0b(); // UNK_0xec0b
   Push(pp_UNK_0xebbb); // UNK_0xebbb
@@ -1443,21 +1443,21 @@ void _ask_APPROACH() // ?APPROACH
 
 void UNK_0xedce() // UNK_0xedce
 {
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(1); // 1
   UNK_0xed9a(); // UNK_0xed9a
   DUP(); // DUP
   _gt_R(); // >R
   Push(Pop() + Pop()); // +
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _ex_(); // !
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   R_gt_(); // R>
   UNK_0xed9a(); // UNK_0xed9a
   Push(Pop() + Pop()); // +
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   _ex_(); // !
   UNK_0xdd70(); // UNK_0xdd70
   UNK_0xe9b5(); // UNK_0xe9b5
@@ -1560,7 +1560,7 @@ void UNK_0xef20() // UNK_0xef20
 
 void COMBAT() // COMBAT
 {
-  SET_minus_SCALE(); // SET-SCALE
+  SET_dash_SCALE(); // SET-SCALE
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(1); // 1
@@ -1643,7 +1643,7 @@ void WAR() // WAR
 // 0xf4df: WORD 'CLEAR-CO' codep=0x224c parp=0xf4ec
 // ================================================
 
-void CLEAR_minus_CO() // CLEAR-CO
+void CLEAR_dash_CO() // CLEAR-CO
 {
   UNK_0xe462(); // UNK_0xe462
   Push(pp_UNK_0xe6ac); // UNK_0xe6ac

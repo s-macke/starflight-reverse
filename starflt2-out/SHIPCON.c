@@ -19,7 +19,7 @@
 // 1877:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x0010 C-string:'UNK_0xf4a0'
 // 1878:      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x000c C-string:'UNK_0xf4b2'
 // 1879:      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x000c C-string:'UNK_0xf4c0'
-// 1880:          TOW-US  codep:0x224c parp:0xf4d7 size:0x0089 C-string:'TOW_minus_US'
+// 1880:          TOW-US  codep:0x224c parp:0xf4d7 size:0x0089 C-string:'TOW_dash_US'
 
 // =================================
 // =========== VARIABLES ===========
@@ -61,7 +61,7 @@ void _dot_NOFUN() // .NOFUN
   Push(cc__5); // 5
   _st_(); // <
   if (Pop() == 0) goto label1;
-  Push(pp__ask_ON_minus_PLA); // ?ON-PLA
+  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _gt_TVCT(); // >TVCT
@@ -127,15 +127,15 @@ void UNK_0xf3f6() // UNK_0xf3f6
 
   label1:
   _gt_C_plus_S(); // >C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
   Push(0x0118);
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   _gt_R(); // >R
   Push(0x0248);
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   R_gt_(); // R>
   MAX(); // MAX
@@ -149,7 +149,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
 void UNK_0xf436() // UNK_0xf436
 {
   UNK_0xf3f6(); // UNK_0xf3f6
-  Push(pp__minus_END); // -END
+  Push(pp__dash_END); // -END
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _star__slash_(); // */
@@ -159,12 +159,12 @@ void UNK_0xf436() // UNK_0xf436
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
   U_star_(); // U*
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   Push(0x3a98); Pust(0x0000);
   DMAX(); // DMAX
   Push(pp_TOWFINE); // TOWFINE
@@ -248,7 +248,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 // 0xf4cc: WORD 'TOW-US' codep=0x224c parp=0xf4d7
 // ================================================
 
-void TOW_minus_US() // TOW-US
+void TOW_dash_US() // TOW-US
 {
   UNK_0xf4a0(); // UNK_0xf4a0
   CTCR(); // CTCR
@@ -284,7 +284,7 @@ void TOW_minus_US() // TOW-US
   MODULE(); // MODULE
   CTINIT(); // CTINIT
   UNK_0xf46c(); // UNK_0xf46c
-  Push(pp__ro_STOP_minus_C); // (STOP-C
+  Push(pp__ro_STOP_dash_C); // (STOP-C
   ON(); // ON
   Push(pp__ask_RECALL); // ?RECALL
   ON(); // ON

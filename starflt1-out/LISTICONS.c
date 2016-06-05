@@ -64,7 +64,7 @@ void UNK_0xf2a6() // UNK_0xf2a6
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_minus_PT); // TILE-PT
+  Push(pp_TILE_dash_PT); // TILE-PT
   _ex_(); // !
   Push(0x0021);
   Push(i); // I
@@ -195,7 +195,7 @@ void UNK_0xf42c() // UNK_0xf42c
   do // (DO)
   {
   Push(0x000a);
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
@@ -217,7 +217,7 @@ void UNK_0xf42c() // UNK_0xf42c
   _st__plus__ex__gt_(); // <+!>
   BLACK(); // BLACK
   _ex_COLOR(); // !COLOR
-  Push(cc__minus_2); // -2
+  Push(cc__dash_2); // -2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);

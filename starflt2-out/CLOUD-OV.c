@@ -9,8 +9,8 @@
 // =========== DICTIONARY ==========
 // =================================
 // 1869:         #HUMANS  codep:0x224c parp:0xf42e size:0x00c6 C-string:'_n_HUMANS'
-// 1870:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_minus_CLOUD_rc_'
-// 1871:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0034 C-string:'DO_minus_CLOUD'
+// 1870:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
+// 1871:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0034 C-string:'DO_dash_CLOUD'
 
 // =================================
 // =========== VARIABLES ===========
@@ -47,7 +47,7 @@ void _n_HUMANS() // #HUMANS
 // 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
 // ================================================
 
-void DO_minus_CLOUD() // DO-CLOUD
+void DO_dash_CLOUD() // DO-CLOUD
 {
   _n_HUMANS(); // #HUMANS
   if (Pop() == 0) goto label1;
@@ -55,7 +55,7 @@ void DO_minus_CLOUD() // DO-CLOUD
   WUP(); // WUP
   WHITE(); // WHITE
   _ex_COLOR(); // !COLOR
-  _ro_DO_minus_CLOUD_rc_(); // (DO-CLOUD)
+  _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD)
   return;
 
   label1:

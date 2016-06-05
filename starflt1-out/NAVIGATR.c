@@ -19,7 +19,7 @@
 // 1711:      UNK_0xf246  codep:0x224c parp:0xf246 size:0x0008 C-string:'UNK_0xf246'
 // 1712:      UNK_0xf250  codep:0x224c parp:0xf250 size:0x0020 C-string:'UNK_0xf250'
 // 1713:      UNK_0xf272  codep:0x224c parp:0xf272 size:0x0030 C-string:'UNK_0xf272'
-// 1714:    >DOWN-SHIELD  codep:0x224c parp:0xf2b3 size:0x00a4 C-string:'_gt_DOWN_minus_SHIELD'
+// 1714:    >DOWN-SHIELD  codep:0x224c parp:0xf2b3 size:0x00a4 C-string:'_gt_DOWN_dash_SHIELD'
 // 1715:      UNK_0xf359  codep:0x224c parp:0xf359 size:0x0050 C-string:'UNK_0xf359'
 // 1716:         >DISARM  codep:0x224c parp:0xf3b5 size:0x0044 C-string:'_gt_DISARM'
 // 1717:      UNK_0xf3fb  codep:0x224c parp:0xf3fb size:0x00bd C-string:'UNK_0xf3fb'
@@ -93,7 +93,7 @@ void UNK_0xf246() // UNK_0xf246
 {
   SWAP(); // SWAP
   CMOVE(); // CMOVE
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
 }
 
 
@@ -144,22 +144,22 @@ void UNK_0xf272() // UNK_0xf272
 // 0xf2a2: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf2b3
 // ================================================
 
-void _gt_DOWN_minus_SHIELD() // >DOWN-SHIELD
+void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
 
-  UNK_0x3f39("MAGNETIC DISTURBANCES IN NEBULA");
+  UNK_0x3f3b("MAGNETIC DISTURBANCES IN NEBULA");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39("CAUSING ENERGY FLUCTUATIONS");
+  UNK_0x3f3b("CAUSING ENERGY FLUCTUATIONS");
   _dot_TTY(); // .TTY
 
   label1:
   UNK_0xf234(); // UNK_0xf234
 
-  UNK_0x3f39("RAISE SHIELD");
+  UNK_0x3f3b("RAISE SHIELD");
   UNK_0xf21a(); // UNK_0xf21a
   UNK_0xf246(); // UNK_0xf246
   UNK_0xf215(); // UNK_0xf215
@@ -172,9 +172,9 @@ void _gt_DOWN_minus_SHIELD() // >DOWN-SHIELD
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
-  UNK_0x3f39("SHIELDS ARE DOWN");
+  UNK_0x3f3b("SHIELDS ARE DOWN");
   _dot_TTY(); // .TTY
-  Push(pp_BTN_minus_REC); // BTN-REC
+  Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
@@ -200,7 +200,7 @@ void UNK_0xf359() // UNK_0xf359
   if (Pop() == 0) return;
   UNK_0xf234(); // UNK_0xf234
 
-  UNK_0x3f39("DROP SHIELD ");
+  UNK_0x3f3b("DROP SHIELD ");
   UNK_0xf21a(); // UNK_0xf21a
   UNK_0xf246(); // UNK_0xf246
   UNK_0xf215(); // UNK_0xf215
@@ -211,7 +211,7 @@ void UNK_0xf359() // UNK_0xf359
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
-  UNK_0x3f39("SHIELDS ARE NOW UP");
+  UNK_0x3f3b("SHIELDS ARE NOW UP");
   _dot_TTY(); // .TTY
   Push(cc__3); // 3
   Push(2); // 2
@@ -229,7 +229,7 @@ void _gt_DISARM() // >DISARM
 {
   UNK_0xf234(); // UNK_0xf234
 
-  UNK_0x3f39("ARM WEAPON");
+  UNK_0x3f3b("ARM WEAPON");
   UNK_0xf222(); // UNK_0xf222
   UNK_0xf246(); // UNK_0xf246
   UNK_0xf215(); // UNK_0xf215
@@ -242,7 +242,7 @@ void _gt_DISARM() // >DISARM
   C_ex_(); // C!
   UNK_0xf272(); // UNK_0xf272
 
-  UNK_0x3f39("WEAPONS ARE DISARMED");
+  UNK_0x3f3b("WEAPONS ARE DISARMED");
   _dot_TTY(); // .TTY
 }
 
@@ -275,7 +275,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   if (Pop() == 0) goto label3;
   UNK_0xf272(); // UNK_0xf272
 
-  UNK_0x3f39("ARMING MISSILES");
+  UNK_0x3f3b("ARMING MISSILES");
   _dot_TTY(); // .TTY
 
   label3:
@@ -293,7 +293,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   if (Pop() == 0) goto label5;
   UNK_0xf272(); // UNK_0xf272
 
-  UNK_0x3f39("ARMING LASERS");
+  UNK_0x3f3b("ARMING LASERS");
   _dot_TTY(); // .TTY
 
   label5:
@@ -307,7 +307,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   _ex_(); // !
   UNK_0xf234(); // UNK_0xf234
 
-  UNK_0x3f39("DISARM    ");
+  UNK_0x3f3b("DISARM    ");
   UNK_0xf222(); // UNK_0xf222
   UNK_0xf246(); // UNK_0xf246
 
@@ -317,7 +317,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   label1:
   Pop(); Pop();// 2DROP
 
-  UNK_0x3f39("SHIP IS NOT EQUIPPED WITH WEAPONS");
+  UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH WEAPONS");
   _dot_TTY(); // .TTY
 }
 
@@ -362,7 +362,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  _gt_DOWN_minus_SHIELD(); // >DOWN-SHIELD
+  _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD
   goto label3;
 
   label1:
@@ -374,7 +374,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
 
-  UNK_0x3f39("SHIELDS CAN'T BE RAISED");
+  UNK_0x3f3b("SHIELDS CAN'T BE RAISED");
   _dot_TTY(); // .TTY
   BEEP(); // BEEP
   goto label3;

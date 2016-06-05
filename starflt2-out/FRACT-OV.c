@@ -23,7 +23,7 @@
 // 1881:      UNK_0xe75e  codep:0xe75e parp:0xe75e size:0x0010 C-string:'UNK_0xe75e'
 // 1882:      UNK_0xe770  codep:0xe770 parp:0xe770 size:0x001a C-string:'UNK_0xe770'
 // 1883:      UNK_0xe78c  codep:0x224c parp:0xe78c size:0x001c C-string:'UNK_0xe78c'
-// 1884:    MERCATOR-GEN  codep:0x224c parp:0xe7b9 size:0x003c C-string:'MERCATOR_minus_GEN'
+// 1884:    MERCATOR-GEN  codep:0x224c parp:0xe7b9 size:0x003c C-string:'MERCATOR_dash_GEN'
 // 1885:      UNK_0xe7f7  codep:0x3b74 parp:0xe7f7 size:0x0004 C-string:'UNK_0xe7f7'
 // 1886:      UNK_0xe7fd  codep:0x2214 parp:0xe7fd size:0x0002 C-string:'UNK_0xe7fd'
 // 1887:      UNK_0xe801  codep:0x224c parp:0xe801 size:0x000c C-string:'UNK_0xe801'
@@ -59,7 +59,7 @@
 // 1917:      UNK_0xeb8c  codep:0x1d29 parp:0xeb8c size:0x0002 C-string:'UNK_0xeb8c'
 // 1918:      UNK_0xeb90  codep:0x224c parp:0xeb90 size:0x006a C-string:'UNK_0xeb90'
 // 1919:      UNK_0xebfc  codep:0x224c parp:0xebfc size:0x0060 C-string:'UNK_0xebfc'
-// 1920: POLYGON-EXTRACT  codep:0x224c parp:0xec70 size:0x0054 C-string:'POLYGON_minus_EXTRACT'
+// 1920: POLYGON-EXTRACT  codep:0x224c parp:0xec70 size:0x0054 C-string:'POLYGON_dash_EXTRACT'
 // 1921:      UNK_0xecc6  codep:0x224c parp:0xecc6 size:0x0068 C-string:'UNK_0xecc6'
 // 1922:      UNK_0xed30  codep:0x1d29 parp:0xed30 size:0x0002 C-string:'UNK_0xed30'
 // 1923:      UNK_0xed34  codep:0xed34 parp:0xed34 size:0x000e C-string:'UNK_0xed34'
@@ -79,7 +79,7 @@
 // 1937:      UNK_0xeee5  codep:0xeee5 parp:0xeee5 size:0x0013 C-string:'UNK_0xeee5'
 // 1938:      UNK_0xeefa  codep:0x224c parp:0xeefa size:0x008a C-string:'UNK_0xeefa'
 // 1939:      UNK_0xef86  codep:0x224c parp:0xef86 size:0x0018 C-string:'UNK_0xef86'
-// 1940:      MAKE-GLOBE  codep:0x224c parp:0xefad size:0x0006 C-string:'MAKE_minus_GLOBE'
+// 1940:      MAKE-GLOBE  codep:0x224c parp:0xefad size:0x0006 C-string:'MAKE_dash_GLOBE'
 // 1941:      UNK_0xefb5  codep:0x224c parp:0xefb5 size:0x0022 C-string:'UNK_0xefb5'
 // 1942:      UNK_0xefd9  codep:0x224c parp:0xefd9 size:0x0020 C-string:'UNK_0xefd9'
 // 1943:      UNK_0xeffb  codep:0x224c parp:0xeffb size:0x0026 C-string:'UNK_0xeffb'
@@ -679,7 +679,7 @@ void UNK_0xe78c() // UNK_0xe78c
 // 0xe7a8: WORD 'MERCATOR-GEN' codep=0x224c parp=0xe7b9
 // ================================================
 
-void MERCATOR_minus_GEN() // MERCATOR-GEN
+void MERCATOR_dash_GEN() // MERCATOR-GEN
 {
   DUP(); // DUP
   Push(pp_SEED); // SEED
@@ -875,7 +875,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
   Push(Pop()*2); // 2*
   OVER(); // OVER
   Push(2); // 2
-  _minus_(); // -
+  _dash_(); // -
   OVER(); // OVER
   UNK_0xe86f(); // UNK_0xe86f
   j++;
@@ -1405,15 +1405,15 @@ void UNK_0xeb90() // UNK_0xeb90
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   UNK_0xeb38(); // UNK_0xeb38
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(h); // I
   LC_ex_(); // LC!
   UNK_0xeb06(); // UNK_0xeb06
   Push(pp_UNK_0xeb8c); // UNK_0xeb8c
   Push(Read16(Pop())); // @
-  _minus_(); // -
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  _dash_(); // -
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(h); // I
   Push(Pop()+1); // 1+
@@ -1421,8 +1421,8 @@ void UNK_0xeb90() // UNK_0xeb90
   Push(pp_UNK_0xeb88); // UNK_0xeb88
   Push(Read16(Pop())); // @
   UNK_0xeb20(); // UNK_0xeb20
-  _minus_(); // -
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  _dash_(); // -
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(h); // I
   Push(Pop()+2); // 2+
@@ -1430,8 +1430,8 @@ void UNK_0xeb90() // UNK_0xeb90
   UNK_0xeb0e(); // UNK_0xeb0e
   Push(pp_UNK_0xeb8c); // UNK_0xeb8c
   Push(Read16(Pop())); // @
-  _minus_(); // -
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  _dash_(); // -
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(h); // I
   Push(cc__3); // 3
@@ -1440,8 +1440,8 @@ void UNK_0xeb90() // UNK_0xeb90
   Push(pp_UNK_0xeb88); // UNK_0xeb88
   Push(Read16(Pop())); // @
   UNK_0xeb28(); // UNK_0xeb28
-  _minus_(); // -
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  _dash_(); // -
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   R_gt_(); // R>
   Push(cc__4); // 4
@@ -1466,7 +1466,7 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb20(); // UNK_0xeb20
   Push(Pop()-1); // 1-
   MERCATO(); // MERCATO
-  L_plus__minus__at_(); // L+-@
+  L_plus__dash__at_(); // L+-@
   COLORMA(); // COLORMA
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
@@ -1488,7 +1488,7 @@ void UNK_0xebfc() // UNK_0xebfc
   Push(j); // I
   Push(i); // J
   MERCATO(); // MERCATO
-  L_plus__minus__at_(); // L+-@
+  L_plus__dash__at_(); // L+-@
   COLORMA(); // COLORMA
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
@@ -1525,7 +1525,7 @@ void UNK_0xebfc() // UNK_0xebfc
 // 0xec5c: WORD 'POLYGON-EXTRACT' codep=0x224c parp=0xec70
 // ================================================
 
-void POLYGON_minus_EXTRACT() // POLYGON-EXTRACT
+void POLYGON_dash_EXTRACT() // POLYGON-EXTRACT
 {
   UNK_0xead1(); // UNK_0xead1
   UNK_0xebfc(); // UNK_0xebfc
@@ -1542,7 +1542,7 @@ void POLYGON_minus_EXTRACT() // POLYGON-EXTRACT
   UNK_0xeb20(); // UNK_0xeb20
   UNK_0xeb16(); // UNK_0xeb16
   UNK_0xeb30(); // UNK_0xeb30
-  POLYGON_minus_EXTRACT(); // POLYGON-EXTRACT
+  POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(0); // 0
   Push(0); // 0
   Push(0); // 0
@@ -1550,7 +1550,7 @@ void POLYGON_minus_EXTRACT() // POLYGON-EXTRACT
   UNK_0xeb20(); // UNK_0xeb20
   UNK_0xeb0e(); // UNK_0xeb0e
   UNK_0xeb30(); // UNK_0xeb30
-  POLYGON_minus_EXTRACT(); // POLYGON-EXTRACT
+  POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(0); // 0
   Push(0); // 0
   Push(0); // 0
@@ -1558,7 +1558,7 @@ void POLYGON_minus_EXTRACT() // POLYGON-EXTRACT
   UNK_0xeb30(); // UNK_0xeb30
   UNK_0xeb16(); // UNK_0xeb16
   UNK_0xeb28(); // UNK_0xeb28
-  POLYGON_minus_EXTRACT(); // POLYGON-EXTRACT
+  POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(0); // 0
   Push(0); // 0
   Push(0); // 0
@@ -1566,7 +1566,7 @@ void POLYGON_minus_EXTRACT() // POLYGON-EXTRACT
   UNK_0xeb30(); // UNK_0xeb30
   UNK_0xeb0e(); // UNK_0xeb0e
   UNK_0xeb28(); // UNK_0xeb28
-  POLYGON_minus_EXTRACT(); // POLYGON-EXTRACT
+  POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
 
   label2:
   UNK_0xeadc(); // UNK_0xeadc
@@ -1596,7 +1596,7 @@ void UNK_0xecc6() // UNK_0xecc6
   _slash_MOD(); // /MOD
   Push(cc__6); // 6
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop()*2); // 2*
   Push(Pop()*2); // 2*
   DUP(); // DUP
@@ -1614,7 +1614,7 @@ void UNK_0xecc6() // UNK_0xecc6
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(cc__4); // 4
-  _minus_(); // -
+  _dash_(); // -
   Push(pp_UNK_0xeb84); // UNK_0xeb84
   _099(); // 099
   Push(pp_POLYPTR); // POLYPTR
@@ -1623,7 +1623,7 @@ void UNK_0xecc6() // UNK_0xecc6
   Push(i); // I
   FACE(); // FACE
   L_ex_(); // L!
-  POLYGON_minus_EXTRACT(); // POLYGON-EXTRACT
+  POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(pp_UNK_0xeb84); // UNK_0xeb84
   Push(Read16(Pop())); // @
   Push(2); // 2
@@ -1771,7 +1771,7 @@ void UNK_0xedd9() // UNK_0xedd9
   Push(pp_UNK_0xed30); // UNK_0xed30
   Push(Read16(Pop())); // @
   Push(0x0044);
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0046);
   Push(0); // 0
   FILL(); // FILL
@@ -1783,7 +1783,7 @@ void UNK_0xedd9() // UNK_0xedd9
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   OVER(); // OVER
   LC_at_(); // LC@
@@ -2043,7 +2043,7 @@ void UNK_0xef86() // UNK_0xef86
 // 0xef9e: WORD 'MAKE-GLOBE' codep=0x224c parp=0xefad
 // ================================================
 
-void MAKE_minus_GLOBE() // MAKE-GLOBE
+void MAKE_dash_GLOBE() // MAKE-GLOBE
 {
   UNK_0xecc6(); // UNK_0xecc6
   UNK_0xef86(); // UNK_0xef86
@@ -2066,11 +2066,11 @@ void UNK_0xefb5() // UNK_0xefb5
   Push(cc__3); // 3
   PICK(); // PICK
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   _n_BYTES(); // #BYTES
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   _st_LCMOVE(); // <LCMOVE
 }
 
@@ -2090,11 +2090,11 @@ void UNK_0xefd9() // UNK_0xefd9
   Push(cc__3); // 3
   PICK(); // PICK
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   ABS(); // ABS
   _n_BYTES(); // #BYTES
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   LCMOVE(); // LCMOVE
 }
 
@@ -2122,7 +2122,7 @@ void UNK_0xeffb() // UNK_0xeffb
   _n_COLZ(); // #COLZ
   Push(cc__6); // 6
   PICK(); // PICK
-  _minus_(); // -
+  _dash_(); // -
   _st_LCMOVE(); // <LCMOVE
   i++;
   } while(i<imax); // (LOOP) 0xffe6
@@ -2153,7 +2153,7 @@ void UNK_0xf023() // UNK_0xf023
   _n_COLZ(); // #COLZ
   Push(cc__6); // 6
   PICK(); // PICK
-  _minus_(); // -
+  _dash_(); // -
   LCMOVE(); // LCMOVE
   i++;
   } while(i<imax); // (LOOP) 0xffe8

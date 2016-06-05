@@ -89,9 +89,9 @@
 // 1947:        APOST>PO  codep:0x4b3b parp:0xf3c4 size:0x0022 C-string:'APOST_gt_PO'
 // 1948:      UNK_0xf3e8  codep:0x224c parp:0xf3e8 size:0x0034 C-string:'UNK_0xf3e8'
 // 1949:      UNK_0xf41e  codep:0x224c parp:0xf41e size:0x0066 C-string:'UNK_0xf41e'
-// 1950:        SET-CARG  codep:0x224c parp:0xf491 size:0x0024 C-string:'SET_minus_CARG'
+// 1950:        SET-CARG  codep:0x224c parp:0xf491 size:0x0024 C-string:'SET_dash_CARG'
 // 1951:      UNK_0xf4b7  codep:0x224c parp:0xf4b7 size:0x003e C-string:'UNK_0xf4b7'
-// 1952:        BLD-LIST  codep:0x224c parp:0xf502 size:0x005e C-string:'BLD_minus_LIST'
+// 1952:        BLD-LIST  codep:0x224c parp:0xf502 size:0x005e C-string:'BLD_dash_LIST'
 
 // =================================
 // =========== VARIABLES ===========
@@ -274,7 +274,7 @@ void UNK_0xec82() // UNK_0xec82
   Push(0); // 0
   SWAP(); // SWAP
   RRND(); // RRND
-  _minus_(); // -
+  _dash_(); // -
 }
 
 
@@ -424,7 +424,7 @@ void UNK_0xede4() // UNK_0xede4
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  INST_minus_VA(); // INST-VA
+  INST_dash_VA(); // INST-VA
   _099(); // 099
   ICLOSE(); // ICLOSE
 }
@@ -499,7 +499,7 @@ void UNK_0xee31() // UNK_0xee31
 void UNK_0xee3f() // UNK_0xee3f
 {
   UNK_0xec7a(); // UNK_0xec7a
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   Push(pp_STARDAT); // STARDAT
@@ -573,7 +573,7 @@ void UNK_0xee89() // UNK_0xee89
   _star_4SALE(); // *4SALE
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -659,7 +659,7 @@ void UNK_0xeef3() // UNK_0xeef3
   _star_2BUY(); // *2BUY
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -852,7 +852,7 @@ void UNK_0xf009() // UNK_0xf009
 {
   _star_2BUY(); // *2BUY
   _gt_C_plus_S(); // >C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _099(); // 099
   UNK_0xef03(); // UNK_0xef03
   UNK_0xef67(); // UNK_0xef67
@@ -870,7 +870,7 @@ void UNK_0xf01f() // UNK_0xf01f
 {
   _star_4SALE(); // *4SALE
   _gt_C_plus_S(); // >C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _099(); // 099
   UNK_0xee99(); // UNK_0xee99
   UNK_0xeed9(); // UNK_0xeed9
@@ -901,12 +901,12 @@ void UNK_0xf039() // UNK_0xf039
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   Push(0x000a);
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   Push(0x0003);
   UNK_0xed58(); // UNK_0xed58
   C_ex_(); // C!
-  ELEM_minus_VA(); // ELEM-VA
+  ELEM_dash_VA(); // ELEM-VA
   Push(Read16(Pop())); // @
   ASKING(); // ASKING
   _ex_(); // !
@@ -982,7 +982,7 @@ void UNK_0xf24f() // UNK_0xf24f
   UNK_0xf233(); // UNK_0xf233
   _star_4SALE(); // *4SALE
   UNK_0xf233(); // UNK_0xf233
-  BUY_minus_LIS(); // BUY-LIS
+  BUY_dash_LIS(); // BUY-LIS
   UNK_0xf233(); // UNK_0xf233
 }
 
@@ -1054,7 +1054,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
 
 void UNK_0xf2bb() // UNK_0xf2bb
 {
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x0019);
   Push(0x001c);
   WITHIN(); // WITHIN
@@ -1075,7 +1075,7 @@ void UNK_0xf2bb() // UNK_0xf2bb
 void UNK_0xf30d() // UNK_0xf30d
 {
   IEXTRAC(); // IEXTRAC
-  BUY_minus_LIS(); // BUY-LIS
+  BUY_dash_LIS(); // BUY-LIS
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
@@ -1182,10 +1182,10 @@ void UNK_0xf3e8() // UNK_0xf3e8
   DUP(); // DUP
   _star_STARSH(); // *STARSH
   _gt_C_plus_S(); // >C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xeba4(); // UNK_0xeba4
   _ex_(); // !
   Push(2); // 2
@@ -1200,7 +1200,7 @@ void UNK_0xf3e8() // UNK_0xf3e8
 void UNK_0xf41e() // UNK_0xf41e
 {
   UNK_0xec7a(); // UNK_0xec7a
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   TRADE_gt_OR(); // TRADE>OR
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1210,7 +1210,7 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_ex_(); // 1.5!
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
   _eq_(); // =
   if (Pop() == 0) goto label4;
@@ -1227,7 +1227,7 @@ void UNK_0xf41e() // UNK_0xf41e
   ICLOSE(); // ICLOSE
   Push(0xbfda);
   MODULE(); // MODULE
-  Push(pp_A_minus_POSTU); // A-POSTU
+  Push(pp_A_dash_POSTU); // A-POSTU
   C_at_(); // C@
   APOST_gt_PO(); // APOST>PO
   goto label5;
@@ -1259,7 +1259,7 @@ void UNK_0xf41e() // UNK_0xf41e
 // 0xf484: WORD 'SET-CARG' codep=0x224c parp=0xf491
 // ================================================
 
-void SET_minus_CARG() // SET-CARG
+void SET_dash_CARG() // SET-CARG
 {
   _star_STARSH(); // *STARSH
   _gt_C_plus_S(); // >C+S
@@ -1268,7 +1268,7 @@ void SET_minus_CARG() // SET-CARG
   ALL(); // ALL
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  Push(pp_TV_minus_HOLD); // TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xf3da);
@@ -1309,7 +1309,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
   Push(0); // 0
 
   label1:
-  _ex_INST_minus_S(); // !INST-S
+  _ex_INST_dash_S(); // !INST-S
   R_at_(); // R@
   if (Pop() == 0) goto label2;
   UNK_0xf41e(); // UNK_0xf41e
@@ -1324,7 +1324,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
 // 0xf4f5: WORD 'BLD-LIST' codep=0x224c parp=0xf502
 // ================================================
 
-void BLD_minus_LIST() // BLD-LIST
+void BLD_dash_LIST() // BLD-LIST
 {
   UNK_0xf24f(); // UNK_0xf24f
   UNK_0xf4b7(); // UNK_0xf4b7
@@ -1341,7 +1341,7 @@ void BLD_minus_LIST() // BLD-LIST
   UNK_0xf1a3(); // UNK_0xf1a3
   UNK_0xf25f(); // UNK_0xf25f
   UNK_0xf039(); // UNK_0xf039
-  SET_minus_CARG(); // SET-CARG
+  SET_dash_CARG(); // SET-CARG
   UNK_0xf31b(); // UNK_0xf31b
   UNK_0xec92(); // UNK_0xec92
   UNK_0xf2a3(); // UNK_0xf2a3

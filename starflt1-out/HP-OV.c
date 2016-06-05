@@ -155,7 +155,7 @@ void UNK_0xe344() // UNK_0xe344
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  PHR_minus_CNT(); // PHR-CNT
+  PHR_dash_CNT(); // PHR-CNT
   C_at_(); // C@
   Push(Pop()-1); // 1-
   PHRASE(); // PHRASE
@@ -163,7 +163,7 @@ void UNK_0xe344() // UNK_0xe344
   C_at_(); // C@
   Push(0x0053);
   _eq_(); // =
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__4); // 4
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -185,7 +185,7 @@ void UNK_0xe374() // UNK_0xe374
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__5); // 5
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -206,7 +206,7 @@ void UNK_0xe390() // UNK_0xe390
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(cc__3); // 3
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -272,7 +272,7 @@ void UNK_0xe3d6() // UNK_0xe3d6
   _gt_R(); // >R
   Push(Pop()+1); // 1+
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   R_gt_(); // R>
   Push(0x0100);
   _star__slash_(); // */
@@ -613,7 +613,7 @@ void UNK_0xe762() // UNK_0xe762
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
-  _minus_(); // -
+  _dash_(); // -
   if (Pop() == 0) goto label2;
 
   signed short int i = Pop();
@@ -703,7 +703,7 @@ void UNK_0xede0() // UNK_0xede0
   ICLOSE(); // ICLOSE
   Push(cc__6); // 6
   SWAP(); // SWAP
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0014);
   Push(Pop() * Pop()); // *
   Push(pp_PEAK); // PEAK
@@ -739,7 +739,7 @@ void UNK_0xee38() // UNK_0xee38
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_minus_S(); // @INST-S
+  _at_INST_dash_S(); // @INST-S
   Push(0x004d);
   OVER(); // OVER
   _eq_(); // =
@@ -1098,7 +1098,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   UNK_0xe3ce(); // UNK_0xe3ce
   R_gt_(); // R>
   R_gt_(); // R>
-  _minus_(); // -
+  _dash_(); // -
   Push(cc__5); // 5
   Push(Pop() + Pop()); // +
   DUP(); // DUP
@@ -1281,7 +1281,7 @@ void UNK_0xf210() // UNK_0xf210
   _eq_(); // =
   if (Pop() == 0) goto label2;
   Push(0x0019);
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
 
@@ -1677,7 +1677,7 @@ void C_plus_OPARMS() // C+OPARMS
 
   label2:
 
-  UNK_0x3f39("HULL CHECK COMPLETE");
+  UNK_0x3f3b("HULL CHECK COMPLETE");
   _dot_TTY(); // .TTY
 }
 

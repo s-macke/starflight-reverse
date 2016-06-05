@@ -51,7 +51,7 @@ void UNK_0xf026() // UNK_0xf026
   TIME(); // TIME
   _2_at_(); // 2@
   _2SWAP(); // 2SWAP
-  D_minus_(); // D-
+  D_dash_(); // D-
 }
 
 
@@ -158,7 +158,7 @@ void UNK_0xf09a() // UNK_0xf09a
   V_gt_DISPL(); // V>DISPL
   Push(0x0190);
   MS(); // MS
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
   } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffde
@@ -184,7 +184,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
   Push(1); // 1
   Push(pp_CONTEXT); // CONTEXT
   _ex_(); // !
-  Push(pp__ask_G_minus_AWAR); // ?G-AWAR
+  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
   ON(); // ON
   Push(pp_GWF); // GWF
   OFF(); // OFF
@@ -270,10 +270,10 @@ void UNK_0xf162() // UNK_0xf162
   _2DUP(); // 2DUP
   LPLOT(); // LPLOT
   Push(0x0048);
-  _minus_(); // -
+  _dash_(); // -
   SWAP(); // SWAP
   Push(cc__4); // 4
-  _minus_(); // -
+  _dash_(); // -
   SWAP(); // SWAP
   _gt_MAINVI(); // >MAINVI
   LPLOT(); // LPLOT
@@ -435,7 +435,7 @@ void UNK_0xf306() // UNK_0xf306
   Push(0x004c);
   Push(0x00bf);
   Push(h); // I
-  _minus_(); // -
+  _dash_(); // -
   Push(cc__4); // 4
   Push(0x00be);
   goto label2;
@@ -456,11 +456,11 @@ void UNK_0xf306() // UNK_0xf306
   LCOPYBL(); // LCOPYBL
   R_gt_(); // R>
   Pop(); // DROP
-  Push(pp_HBUF_minus_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SE); // HBUF-SE
   Push(Read16(Pop())); // @
   ROT(); // ROT
   UNK_0xf2fc(); // UNK_0xf2fc
-  Push(pp_DBUF_minus_SE); // DBUF-SE
+  Push(pp_DBUF_dash_SE); // DBUF-SE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   ROLL(); // ROLL
@@ -517,7 +517,7 @@ void UNK_0xf393() // UNK_0xf393
   UNK_0xf1c0(); // UNK_0xf1c0
   Push(0x0084);
   Push(i); // I
-  _minus_(); // -
+  _dash_(); // -
   UNK_0xf1de(); // UNK_0xf1de
   Push(0x7148);
   TONE(); // TONE
@@ -552,7 +552,7 @@ void _and_LAUNCH() // &LAUNCH
   UNK_0xf026(); // UNK_0xf026
   UNK_0xf112(); // UNK_0xf112
 
-  UNK_0x3f39("OPENING");
+  UNK_0x3f3b("OPENING");
   UNK_0xf36c(); // UNK_0xf36c
   UNK_0xf393(); // UNK_0xf393
 
@@ -563,7 +563,7 @@ void _and_LAUNCH() // &LAUNCH
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("STANDING BY TO MANEUVER");
+  UNK_0x3f3b("STANDING BY TO MANEUVER");
   _dot_TTY(); // .TTY
 }
 
@@ -605,7 +605,7 @@ void _and_RETURN() // &RETURN
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
 
-  UNK_0x3f39("CLOSING");
+  UNK_0x3f3b("CLOSING");
   UNK_0xf36c(); // UNK_0xf36c
   _dot_AIRLOCK(); // .AIRLOCK
   GREY2(); // GREY2
@@ -636,7 +636,7 @@ void _and_RETURN() // &RETURN
   UNK_0xf306(); // UNK_0xf306
   Push(0x003c);
   Push(j); // I
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   Push(j); // I
   UNK_0xf306(); // UNK_0xf306

@@ -68,7 +68,7 @@ void UNK_0xf147() // UNK_0xf147
   _gt_(); // >
   if (Pop() == 0) goto label1;
   Push(0x0320);
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   SQRT(); // SQRT
   Push(0x000a);
@@ -98,7 +98,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
@@ -109,10 +109,10 @@ void UNK_0xf177() // UNK_0xf177
   _slash_(); // /
   SWAP(); // SWAP
   OVER(); // OVER
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ex_(); // !
 
   label2:
@@ -169,11 +169,11 @@ void UNK_0xf1f1() // UNK_0xf1f1
   CTINIT(); // CTINIT
   UNK_0xf1c9(); // UNK_0xf1c9
 
-  UNK_0x3f39("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
+  UNK_0x3f3b("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
   TYPE(); // TYPE
   CTCR(); // CTCR
 
-  UNK_0x3f39("EXTREME GRAVITY. THE ...");
+  UNK_0x3f3b("EXTREME GRAVITY. THE ...");
   TYPE(); // TYPE
   Push(0x1388);
   Push(0x03e8);
@@ -201,38 +201,38 @@ void UNK_0xf258() // UNK_0xf258
   Pop(); // DROP
 
   label1:
-  TTY_minus_SCR(); // TTY-SCR
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
 
-  UNK_0x3f39("EMERGENCY LOCATOR TRANSMISSION:");
+  UNK_0x3f3b("EMERGENCY LOCATOR TRANSMISSION:");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f39(" STARSHIP ISS ");
+  UNK_0x3f3b(" STARSHIP ISS ");
   _dot_TTY(); // .TTY
   UNK_0xf136(); // UNK_0xf136
   COUNT(); // COUNT
   TYPE(); // TYPE
 
-  UNK_0x3f39(" CRASHED ON PLANET ");
+  UNK_0x3f3b(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   _ask_(); // ?
   ICLOSE(); // ICLOSE
 
-  UNK_0x3f39(" IN SYSTEM ");
+  UNK_0x3f3b(" IN SYSTEM ");
   _dot_TTY(); // .TTY
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
@@ -240,10 +240,10 @@ void UNK_0xf258() // UNK_0xf258
   _dot_R(); // .R
   ICLOSE(); // ICLOSE
 
-  UNK_0x3f39("NO SURVIVORS");
+  UNK_0x3f3b("NO SURVIVORS");
   _dot_TTY(); // .TTY
-  TTY_minus_SCR(); // TTY-SCR
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
   Push(0x1388);
   Push(cc__3); // 3
   Push(0x0032);
@@ -284,7 +284,7 @@ void UNK_0xf342() // UNK_0xf342
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f39("INSUFFICIENT FUEL FOR SAFE LANDING");
+  UNK_0x3f3b("INSUFFICIENT FUEL FOR SAFE LANDING");
   TYPE(); // TYPE
   BEEP(); // BEEP
 }
@@ -324,7 +324,7 @@ void UNK_0xf39d() // UNK_0xf39d
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f39("INSUFFICIENT FUEL FOR RE-LAUNCHING");
+  UNK_0x3f3b("INSUFFICIENT FUEL FOR RE-LAUNCHING");
   TYPE(); // TYPE
   BEEP(); // BEEP
 }
@@ -354,11 +354,11 @@ void UNK_0xf3e2() // UNK_0xf3e2
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f39("THIS PLANET'S GRAVITY WILL CRUSH THE");
+  UNK_0x3f3b("THIS PLANET'S GRAVITY WILL CRUSH THE");
   TYPE(); // TYPE
   CTCR(); // CTCR
 
-  UNK_0x3f39("SHIP'S HULL.");
+  UNK_0x3f3b("SHIP'S HULL.");
   TYPE(); // TYPE
   BEEP(); // BEEP
 }
@@ -371,15 +371,15 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf430() // UNK_0xf430
 {
   UNK_0xf32c(); // UNK_0xf32c
-  Push(pp__ask_FUEL_minus_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
   _ex_(); // !
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(pp_GWF); // GWF
   _ex_(); // !
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7);
   MODULE(); // MODULE
-  Push(pp__ask_FUEL_minus_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf258(); // UNK_0xf258
@@ -447,7 +447,7 @@ void _ask_LAND() // ?LAND
   return;
 
   label1:
-  Push(pp__ask_G_minus_AWAR); // ?G-AWAR
+  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf45e(); // UNK_0xf45e

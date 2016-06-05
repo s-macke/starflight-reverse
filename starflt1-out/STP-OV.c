@@ -83,7 +83,7 @@ void SIC_i_EM() // SIC'EM
   Push(Read16(Pop())); // @
   _star_ARREST(); // *ARREST
   _gt_C_plus_S(); // >C+S
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   _star_ARREST(); // *ARREST
@@ -130,13 +130,13 @@ void UNK_0xf048() // UNK_0xf048
   _2DUP(); // 2DUP
   _st_(); // <
   if (Pop() == 0) goto label1;
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0018);
   Push(Pop() + Pop()); // +
   goto label2;
 
   label1:
-  _minus_(); // -
+  _dash_(); // -
 
   label2:
   DUP(); // DUP
@@ -194,12 +194,12 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
-  ART_minus_NAM(); // ART-NAM
+  ART_dash_NAM(); // ART-NAM
   Push(0x0018);
   Push(0x002e);
-  _minus_XTRAIL(); // -XTRAIL
+  _dash_XTRAIL(); // -XTRAIL
   _dot_TTY(); // .TTY
-  SET_minus_CUR(); // SET-CUR
+  SET_dash_CUR(); // SET-CUR
   Push(pp_UNK_0xf03a); // UNK_0xf03a
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
@@ -218,7 +218,7 @@ void UNK_0xf32d() // UNK_0xf32d
 {
   PRINT(" SECURITY CODE FOR:", 19); // (.")
   UNK_0xf2e7(); // UNK_0xf2e7
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
 }
 
 
@@ -229,10 +229,10 @@ void UNK_0xf32d() // UNK_0xf32d
 void UNK_0xf34b() // UNK_0xf34b
 {
 
-  UNK_0x3f39("CODE: ");
+  UNK_0x3f3b("CODE: ");
   _dot_TTY(); // .TTY
-  Push(cc__minus_1); // -1
-  Push(pp__minus_AIN); // -AIN
+  Push(cc__dash_1); // -1
+  Push(pp__dash_AIN); // -AIN
   _ex_(); // !
   Push(0x000a);
   Push(0xbd5b);
@@ -258,7 +258,7 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(i); // I
   C_at_(); // C@
   Push(0x0030);
-  _minus_(); // -
+  _dash_(); // -
   Push(0); // 0
   D_plus_(); // D+
   i++;
@@ -297,10 +297,10 @@ void UNK_0xf3a0() // UNK_0xf3a0
   _ex_(); // !
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("REQUEST");
+  UNK_0x3f3b("REQUEST");
   _dot_TTY(); // .TTY
   UNK_0xf32d(); // UNK_0xf32d
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
   UNK_0xf34b(); // UNK_0xf34b
 }
 
@@ -313,17 +313,17 @@ void UNK_0xf3e4() // UNK_0xf3e4
 {
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("VERIFYING");
+  UNK_0x3f3b("VERIFYING");
   _dot_TTY(); // .TTY
   UNK_0xf32d(); // UNK_0xf32d
 
-  UNK_0x3f39("CODE ENTERED: ");
+  UNK_0x3f3b("CODE ENTERED: ");
   _dot_TTY(); // .TTY
   Push(pp_UNK_0xf042); // UNK_0xf042
   _2_at_(); // 2@
   D_dot_(); // D.
 
-  UNK_0x3f39("CONFIRM [N Y]");
+  UNK_0x3f3b("CONFIRM [N Y]");
   _dot_TTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -352,10 +352,10 @@ void UNK_0xf441() // UNK_0xf441
 {
   CTINIT(); // CTINIT
 
-  UNK_0x3f39("RE-ENTER");
+  UNK_0x3f3b("RE-ENTER");
   _dot_TTY(); // .TTY
   UNK_0xf32d(); // UNK_0xf32d
-  TTY_minus_SCR(); // TTY-SCR
+  TTY_dash_SCR(); // TTY-SCR
   UNK_0xf34b(); // UNK_0xf34b
 }
 
@@ -369,7 +369,7 @@ void UNK_0xf45a() // UNK_0xf45a
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f39("ARE YOU SURE? BETTER DOUBLE CHECK!");
+  UNK_0x3f3b("ARE YOU SURE? BETTER DOUBLE CHECK!");
   _dot_TTY(); // .TTY
   Push(0x07d0);
   MS(); // MS

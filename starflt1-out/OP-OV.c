@@ -34,7 +34,7 @@
 // 1726:      UNK_0xeb09  codep:0x224c parp:0xeb09 size:0x00b6 C-string:'UNK_0xeb09'
 // 1727:      UNK_0xebc1  codep:0x224c parp:0xebc1 size:0x006d C-string:'UNK_0xebc1'
 // 1728:      UNK_0xec30  codep:0x224c parp:0xec30 size:0x00af C-string:'UNK_0xec30'
-// 1729:      (BAD-PLAN)  codep:0x4a4f parp:0xecee size:0x001c C-string:'_ro_BAD_minus_PLAN_rc_'
+// 1729:      (BAD-PLAN)  codep:0x4a4f parp:0xecee size:0x001c C-string:'_ro_BAD_dash_PLAN_rc_'
 // 1730:      UNK_0xed0c  codep:0x224c parp:0xed0c size:0x010b C-string:'UNK_0xed0c'
 // 1731:      UNK_0xee19  codep:0x224c parp:0xee19 size:0x003a C-string:'UNK_0xee19'
 // 1732:      UNK_0xee55  codep:0x224c parp:0xee55 size:0x0035 C-string:'UNK_0xee55'
@@ -49,8 +49,8 @@
 // 1741:      UNK_0xf274  codep:0x224c parp:0xf274 size:0x01da C-string:'UNK_0xf274'
 // 1742:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x0028 C-string:'UNK_0xf450'
 // 1743:      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x005a C-string:'UNK_0xf47a'
-// 1744:         OP-CASE  codep:0x4a4f parp:0xf4e0 size:0x0010 C-string:'OP_minus_CASE'
-// 1745:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0065 C-string:'_ro_U_minus_OP_rc_'
+// 1744:         OP-CASE  codep:0x4a4f parp:0xf4e0 size:0x0010 C-string:'OP_dash_CASE'
+// 1745:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0065 C-string:'_ro_U_dash_OP_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -177,14 +177,14 @@ void UNK_0xe50e() // UNK_0xe50e
 {
   WHITE(); // WHITE
   WHITE(); // WHITE
-  LT_minus_BLUE(); // LT-BLUE
+  LT_dash_BLUE(); // LT-BLUE
   _ask_MRC(); // ?MRC
   DUP(); // DUP
   Push(pp_UNK_0xe446); // UNK_0xe446
   _ex_(); // !
   _ex_COLOR(); // !COLOR
   SFILL(); // SFILL
-  DK_minus_BLUE(); // DK-BLUE
+  DK_dash_BLUE(); // DK-BLUE
   _ex_COLOR(); // !COLOR
   Push(2); // 2
   Push(1); // 1
@@ -308,9 +308,9 @@ void UNK_0xe637() // UNK_0xe637
   Push(pp_OCRS); // OCRS
   _ex_(); // !
   Push(pp_UNK_0xe58c); // UNK_0xe58c
-  BLD_minus_CRS(); // BLD-CRS
+  BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
 }
 
 // 0xe663: db 0x4c 0x22 0x82 0xe4 0x20 0x0f 0x5d 0x17 0x23 0x00 0xe6 0xae 0x0a 0x4f 0x17 0x85 0xdc 0x1b 0x22 0x5c 0x20 0x4e 0x45 0x58 0x54 0x20 0x4d 0x45 0x53 0x53 0x41 0x47 0x45 0x20 0x20 0x50 0x52 0x45 0x56 0x49 0x4f 0x55 0x53 0x20 0x4d 0x45 0x53 0x53 0x41 0x47 0x45 0x20 0x5e 0xfc 0xa2 0x2e 0x0f 0x5d 0x17 0x25 0x00 0xe6 0xae 0x0a 0x4f 0x17 0x85 0xdc 0x1b 0x24 0x50 0x52 0x45 0x53 0x53 0x20 0x53 0x50 0x41 0x43 0x45 0x42 0x41 0x52 0x20 0x54 0x4f 0x20 0x52 0x45 0x50 0x4c 0x41 0x59 0x20 0x4f 0x52 0x20 0x5b 0x20 0x51 0x55 0x49 0x54 0x20 0x5d 0xfc 0xa2 0x90 0x16 0x4c 0x22 0x82 0xe4 0x20 0x0f 0x5d 0x17 0x1a 0x00 0xe6 0xae 0x0a 0x4f 0x17 0x85 0xdc 0x1b 0x1a 0x50 0x52 0x45 0x53 0x53 0x20 0x53 0x50 0x41 0x43 0x45 0x42 0x41 0x52 0x20 0x54 0x4f 0x20 0x43 0x4f 0x4e 0x54 0x49 0x4e 0x55 0x45 0xfc 0xa2 0x2e 0x0f 0x5d 0x17 0x21 0x00 0xe6 0xae 0x0a 0x4f 0x17 0x85 0xdc 0x1b 0x20 0x50 0x52 0x45 0x53 0x53 0x20 0x5b 0x5d 0x20 0x54 0x4f 0x20 0x41 0x42 0x4f 0x52 0x54 0x20 0x43 0x55 0x52 0x52 0x45 0x4e 0x54 0x20 0x4e 0x4f 0x54 0x49 0x43 0x45 0xfc 0xa2 0x90 0x16 0x4c 0x22 0xfd 0x8e 0xf9 0x8b 0x5d 0x17 0xc5 0x00 0x3d 0x0f 0x5d 0x17 0x0c 0x00 0x5d 0x17 0x9d 0x00 0x48 0xe4 0xee 0xa0 0x25 0x95 0x73 0x3b 0x5d 0x17 0xc3 0x00 0x2b 0xa0 0x0a 0x4f 0x17 0x85 0x7a 0x58 0xc5 0x6d 0xdc 0x1b 0x07 0x4e 0x4f 0x54 0x49 0x43 0x45 0x53 0x81 0x94 0x5d 0x17 0x2d 0x00 0x5d 0x17 0xc1 0x00 0x2b 0xa0 0x72 0x5e 0xae 0x0b 0xdb 0x23 0xc2 0xba 0xdb 0x23 0x5d 0x17 0x0a 0x00 0xe6 0x06 0xcf 0x8b 0x13 0x8f 0x90 0x16 'L"    ] #    O    "\ NEXT MESSAGE  PREVIOUS MESSAGE ^  . ] %    O    $PRESS SPACEBAR TO REPLAY OR [ QUIT ]    L"    ]      O     PRESS SPACEBAR TO CONTINUE  . ] !    O     PRESS [] TO ABORT CURRENT NOTICE    L"    ]   = ]   ]   H   % s;]   +  O  zX m   NOTICES  ] - ]   + r^   #   #]           '
@@ -321,14 +321,14 @@ void UNK_0xe637() // UNK_0xe637
 
 void UNK_0xe78b() // UNK_0xe78b
 {
-  SAVE_minus_SC(); // SAVE-SC
+  SAVE_dash_SC(); // SAVE-SC
   _gt_HIDDEN(); // >HIDDEN
   Push(0x00c5);
   Push(cc__3); // 3
   Push(0x000c);
   Push(0x009c);
   UNK_0xe44a(); // UNK_0xe44a
-  POLY_minus_WI(); // POLY-WI
+  POLY_dash_WI(); // POLY-WI
   _gt_2FONT(); // >2FONT
   Push(cc__3); // 3
   Push(0x00c3);
@@ -339,7 +339,7 @@ void UNK_0xe78b() // UNK_0xe78b
   OFF(); // OFF
   PRINT("EVALUATION", 10); // (.")
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
   _gt_1FONT(); // >1FONT
 }
 
@@ -377,7 +377,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   Push(i); // I
   Push(cc__3); // 3
   PICK(); // PICK
-  _minus_(); // -
+  _dash_(); // -
   LEAVE(); // LEAVE
 
   label1:
@@ -392,7 +392,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   ROT(); // ROT
   Push(cc__3); // 3
   PICK(); // PICK
-  _minus_(); // -
+  _dash_(); // -
   Push(Pop()-1); // 1-
   _2SWAP(); // 2SWAP
 }
@@ -418,7 +418,7 @@ void UNK_0xe81c() // UNK_0xe81c
   ROT(); // ROT
   Push(cc__7); // 7
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   POS_dot_(); // POS.
 }
 
@@ -486,14 +486,14 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x009c);
   POS_dot_(); // POS.
   PRINT("SYSTEM: ", 8); // (.")
-  INST_minus_X(); // INST-X
+  INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
-  INST_minus_Y(); // INST-Y
+  INST_dash_Y(); // INST-Y
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
@@ -526,7 +526,7 @@ void UNK_0xeb09() // UNK_0xeb09
 void UNK_0xebc1() // UNK_0xebc1
 {
   UNK_0xe78b(); // UNK_0xe78b
-  INST_minus_QT(); // INST-QT
+  INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   _gt_R(); // >R
@@ -534,7 +534,7 @@ void UNK_0xebc1() // UNK_0xebc1
   Push(h); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0064);
   POS_dot_(); // POS.
   PRINT("YOU HAVE NOT FILED ANY", 22); // (.")
@@ -600,7 +600,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c
 
-  UNK_0x3f39("DUE TO");
+  UNK_0x3f3b("DUE TO");
   UNK_0xec30(); // UNK_0xec30
   Push(cc__7); // 7
   Push(1); // 1
@@ -615,7 +615,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  _ro_BAD_minus_PLAN_rc_(); // (BAD-PLAN)
+  _ro_BAD_dash_PLAN_rc_(); // (BAD-PLAN)
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
@@ -631,7 +631,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
 
-  UNK_0x3f39("AND");
+  UNK_0x3f3b("AND");
   UNK_0xec30(); // UNK_0xec30
 
   label2:
@@ -643,10 +643,10 @@ void UNK_0xed0c() // UNK_0xed0c
 
   Pop(); // DROP
 
-  UNK_0x3f39("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
+  UNK_0x3f3b("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
   UNK_0xec30(); // UNK_0xec30
 
-  UNK_0x3f39("YOU HAVE BEEN FINED");
+  UNK_0x3f3b("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe45c(); // UNK_0xe45c
   C_at_(); // C@
@@ -660,12 +660,12 @@ void UNK_0xed0c() // UNK_0xed0c
   _n__gt_(); // #>
   UNK_0xec30(); // UNK_0xec30
 
-  UNK_0x3f39("MU'S.");
+  UNK_0x3f3b("MU'S.");
   UNK_0xec30(); // UNK_0xec30
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
 
-  UNK_0x3f39("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
+  UNK_0x3f3b("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -677,7 +677,7 @@ void UNK_0xed0c() // UNK_0xed0c
 void UNK_0xee19() // UNK_0xee19
 {
 
-  UNK_0x3f39("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
+  UNK_0x3f3b("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -689,7 +689,7 @@ void UNK_0xee19() // UNK_0xee19
 void UNK_0xee55() // UNK_0xee55
 {
 
-  UNK_0x3f39("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
+  UNK_0x3f3b("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -701,7 +701,7 @@ void UNK_0xee55() // UNK_0xee55
 void UNK_0xee8c() // UNK_0xee8c
 {
 
-  UNK_0x3f39("YOU HAVE EARNED A BONUS OF");
+  UNK_0x3f3b("YOU HAVE EARNED A BONUS OF");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe45c(); // UNK_0xe45c
   C_at_(); // C@
@@ -712,7 +712,7 @@ void UNK_0xee8c() // UNK_0xee8c
   _n__gt_(); // #>
   UNK_0xec30(); // UNK_0xec30
 
-  UNK_0x3f39("MU'S FOR THIS RECOMMENDATION.");
+  UNK_0x3f3b("MU'S FOR THIS RECOMMENDATION.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -780,7 +780,7 @@ void UNK_0xef37() // UNK_0xef37
   UNK_0xe842(); // UNK_0xe842
   UNK_0xe842(); // UNK_0xe842
 
-  UNK_0x3f39("END OF EVALUATIONS");
+  UNK_0x3f3b("END OF EVALUATIONS");
   UNK_0xec30(); // UNK_0xec30
   return;
 
@@ -867,7 +867,7 @@ void UNK_0xf045() // UNK_0xf045
   Push(cc__6); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
-  UNK_0x3f39("DUE TO YOUR NEGLIGENCE, YOUR SHIP IS NO LONGER EQUIPPED WITH A TERRAIN VEHICLE. A NEW TERRAIN VEHICLE IS CURRENTLY BEING INSTALLED. CONSEQUENTLY, YOU HAVE BEEN FINED 10,000 MU.");
+  UNK_0x3f3b("DUE TO YOUR NEGLIGENCE, YOUR SHIP IS NO LONGER EQUIPPED WITH A TERRAIN VEHICLE. A NEW TERRAIN VEHICLE IS CURRENTLY BEING INSTALLED. CONSEQUENTLY, YOU HAVE BEEN FINED 10,000 MU.");
   UNK_0xec30(); // UNK_0xec30
   Push(0xd8f0); Pust(0xffff);
   UNK_0xf02b(); // UNK_0xf02b
@@ -888,11 +888,11 @@ void UNK_0xf12c() // UNK_0xf12c
   Push(cc__6); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
-  UNK_0x3f39("I.S. CORP. REG. 12A-7312 EMERGENCY DISTRESS CALLS: CAPTAIN AND CREW OF ANY VESSEL INVOKING AN EMERGENCY DISTRESS CALL SHALL BE LIABLE FOR ALL COSTS INCURRED BY INTERSTEL CORP. AS A RESULT OF RESCUE OPERATIONS INITIATED ON BEHALF OF SAID CREW.");
+  UNK_0x3f3b("I.S. CORP. REG. 12A-7312 EMERGENCY DISTRESS CALLS: CAPTAIN AND CREW OF ANY VESSEL INVOKING AN EMERGENCY DISTRESS CALL SHALL BE LIABLE FOR ALL COSTS INCURRED BY INTERSTEL CORP. AS A RESULT OF RESCUE OPERATIONS INITIATED ON BEHALF OF SAID CREW.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
 
-  UNK_0x3f39("YOU HAVE BEEN FINED");
+  UNK_0x3f3b("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
   SPACE(); // SPACE
   Push(pp_TOWFINE); // TOWFINE
@@ -920,15 +920,15 @@ void UNK_0xf274() // UNK_0xf274
   Push(cc__6); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
-  UNK_0x3f39("CONGRATULATIONS! AS A RESULT OF YOUR EFFORTS, OUR SUN IS ONCE AGAIN STABLE. ALL OF ARTH, AND INDEED THE ENTIRE GALAXY OWES YOU A DEBT WHICH CAN NEVER BE FULLY REPAID. YOUR HEROIC EXPLOITS WILL SURELY BECOME INTER-GALACTIC LEGEND.");
+  UNK_0x3f3b("CONGRATULATIONS! AS A RESULT OF YOUR EFFORTS, OUR SUN IS ONCE AGAIN STABLE. ALL OF ARTH, AND INDEED THE ENTIRE GALAXY OWES YOU A DEBT WHICH CAN NEVER BE FULLY REPAID. YOUR HEROIC EXPLOITS WILL SURELY BECOME INTER-GALACTIC LEGEND.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
 
-  UNK_0x3f39("OUR TOKEN BONUS OF 500,000 MU WILL ALLOW YOU TO LIVE HERE ON ARTH IN LUXURY FOR MANY YEARS TO COME, ALTHOUGH WE SUSPECT YOU MAY USE IT TO FURTHER YOUR EXPLORATIONS.");
+  UNK_0x3f3b("OUR TOKEN BONUS OF 500,000 MU WILL ALLOW YOU TO LIVE HERE ON ARTH IN LUXURY FOR MANY YEARS TO COME, ALTHOUGH WE SUSPECT YOU MAY USE IT TO FURTHER YOUR EXPLORATIONS.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
 
-  UNK_0x3f39("ONCE AGAIN, THANK YOU!");
+  UNK_0x3f3b("ONCE AGAIN, THANK YOU!");
   UNK_0xec30(); // UNK_0xec30
   Push(pp_WMSG); // WMSG
   OFF(); // OFF
@@ -1031,7 +1031,7 @@ void UNK_0xf47a() // UNK_0xf47a
 // 0xf4f0: WORD '(U-OP)' codep=0x224c parp=0xf4fb
 // ================================================
 
-void _ro_U_minus_OP_rc_() // (U-OP)
+void _ro_U_dash_OP_rc_() // (U-OP)
 {
   UNK_0xe637(); // UNK_0xe637
   Push(pp__ask__gt_OP); // ?>OP
@@ -1050,7 +1050,7 @@ void _ro_U_minus_OP_rc_() // (U-OP)
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
   Push(pp_UNK_0xe58c); // UNK_0xe58c
-  SET_minus_CRS(); // SET-CRS
+  SET_dash_CRS(); // SET-CRS
   Pop(); // DROP
 
   label2:
@@ -1059,7 +1059,7 @@ void _ro_U_minus_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  OP_minus_CASE(); // OP-CASE
+  OP_dash_CASE(); // OP-CASE
 
   label3:
   if (Pop() == 0) goto label1;

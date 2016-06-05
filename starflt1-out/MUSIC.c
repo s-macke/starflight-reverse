@@ -260,7 +260,7 @@ void R_co_() // R,
 {
   Push(cc_MUSSEG); // MUSSEG
   SEG_gt_ADDR(); // SEG>ADDR
-  _minus_(); // -
+  _dash_(); // -
   _co_(); // ,
 }
 
@@ -330,13 +330,13 @@ void HIMUS() // HIMUS
 
 void CSCR_gt_EGA() // CSCR>EGA
 {
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   FILE_st_(); // FILE<
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(cc__minus_1); // -1
+  Push(cc__dash_1); // -1
   Push(0x00c8);
   Push(0); // 0
 
@@ -352,7 +352,7 @@ void CSCR_gt_EGA() // CSCR>EGA
   do // (DO)
   {
   Push(Pop()+1); // 1+
-  Push(pp_XBUF_minus_SE); // XBUF-SE
+  Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   OVER(); // OVER
   LC_at_(); // LC@
@@ -392,7 +392,7 @@ void CSCR_gt_EGA() // CSCR>EGA
   } while(i<imax); // (LOOP) 0xffae
 
   Pop(); // DROP
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
   _gt_DISPLA(); // >DISPLA
 }
 
@@ -427,12 +427,12 @@ void UNK_0xe69c() // UNK_0xe69c
 {
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(pp_HBUF_minus_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SE); // HBUF-SE
   Push(Read16(Pop())); // @
   Push(0x008d);
   FILE_st_(); // FILE<
   _gt_DISPLA(); // >DISPLA
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
   Push(0x02bc);
   MS(); // MS
 }
@@ -508,7 +508,7 @@ void UNK_0xe6ec() // UNK_0xe6ec
 {
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(pp_HBUF_minus_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SE); // HBUF-SE
   Push(Read16(Pop())); // @
   Push(0x0036);
   FILE_st_(); // FILE<
@@ -576,7 +576,7 @@ void BRMOVE() // BRMOVE
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
-  Push(pp_HBUF_minus_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SE); // HBUF-SE
   Push(Read16(Pop())); // @
   Push(0); // 0
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
@@ -603,7 +603,7 @@ void BRMOVE() // BRMOVE
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(i); // I
-  _minus_(); // -
+  _dash_(); // -
   Push(0x0050);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -617,7 +617,7 @@ void BRMOVE() // BRMOVE
   } while(i<imax); // (LOOP) 0xffc8
 
   DISPLAY(); // DISPLAY
-  SCR_minus_RES(); // SCR-RES
+  SCR_dash_RES(); // SCR-RES
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
@@ -721,7 +721,7 @@ void UNK_0xe82b() // UNK_0xe82b
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
   _ex_(); // !
   Push(0x0045);
-  FILE_minus_ST(); // FILE-ST
+  FILE_dash_ST(); // FILE-ST
   Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /
@@ -763,7 +763,7 @@ void REDUCE() // REDUCE
   Push(-Pop()); // NEGATE
   Push(pp__n_CACHE); // #CACHE
   _plus__ex_(); // +!
-  AUTO_minus_CACHE(); // AUTO-CACHE
+  AUTO_dash_CACHE(); // AUTO-CACHE
   R_gt_(); // R>
   Push(0x0040);
   Push(Pop() * Pop()); // *
@@ -788,7 +788,7 @@ void INCREASE() // INCREASE
   Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
   _ex_(); // !
-  AUTO_minus_CACHE(); // AUTO-CACHE
+  AUTO_dash_CACHE(); // AUTO-CACHE
   Push(0x0040);
   Push(Pop() * Pop()); // *
   Push(pp_LFSEG); // LFSEG

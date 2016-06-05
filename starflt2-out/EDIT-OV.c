@@ -8,62 +8,60 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1869:      UNK_0x3f09  codep:0x224c parp:0x3f09 size:0x285d C-string:'UNK_0x3f09'
-// 1870:      UNK_0x6768  codep:0x0b01 parp:0x6768 size:0x0a9b C-string:'UNK_0x6768'
-// 1871:      UNK_0x7205  codep:0x532d parp:0x7205 size:0x7bcf C-string:'UNK_0x7205'
-// 1872:      UNK_0xedd6  codep:0x1d29 parp:0xedd6 size:0x000e C-string:'UNK_0xedd6'
-// 1873:           STAMP  codep:0x1d29 parp:0xedee size:0x007a C-string:'STAMP'
-// 1874:      UNK_0xee6a  codep:0x2214 parp:0xee6a size:0x0002 C-string:'UNK_0xee6a'
-// 1875:      UNK_0xee6e  codep:0x2214 parp:0xee6e size:0x0002 C-string:'UNK_0xee6e'
-// 1876:      UNK_0xee72  codep:0x1d29 parp:0xee72 size:0x0002 C-string:'UNK_0xee72'
-// 1877:      UNK_0xee76  codep:0x1d29 parp:0xee76 size:0x0002 C-string:'UNK_0xee76'
-// 1878:      UNK_0xee7a  codep:0x1d29 parp:0xee7a size:0x0002 C-string:'UNK_0xee7a'
-// 1879:      UNK_0xee7e  codep:0x224c parp:0xee7e size:0x0014 C-string:'UNK_0xee7e'
-// 1880:      UNK_0xee94  codep:0x224c parp:0xee94 size:0x000a C-string:'UNK_0xee94'
-// 1881:      UNK_0xeea0  codep:0x224c parp:0xeea0 size:0x0006 C-string:'UNK_0xeea0'
-// 1882:      UNK_0xeea8  codep:0x224c parp:0xeea8 size:0x0006 C-string:'UNK_0xeea8'
-// 1883:      UNK_0xeeb0  codep:0x224c parp:0xeeb0 size:0x000e C-string:'UNK_0xeeb0'
-// 1884:      UNK_0xeec0  codep:0x224c parp:0xeec0 size:0x0012 C-string:'UNK_0xeec0'
-// 1885:      UNK_0xeed4  codep:0x224c parp:0xeed4 size:0x000e C-string:'UNK_0xeed4'
-// 1886:      UNK_0xeee4  codep:0x224c parp:0xeee4 size:0x001e C-string:'UNK_0xeee4'
-// 1887:      UNK_0xef04  codep:0x224c parp:0xef04 size:0x0010 C-string:'UNK_0xef04'
-// 1888:      UNK_0xef16  codep:0x224c parp:0xef16 size:0x002c C-string:'UNK_0xef16'
-// 1889:      UNK_0xef44  codep:0x224c parp:0xef44 size:0x000e C-string:'UNK_0xef44'
-// 1890:      UNK_0xef54  codep:0x224c parp:0xef54 size:0x0006 C-string:'UNK_0xef54'
-// 1891:      UNK_0xef5c  codep:0x224c parp:0xef5c size:0x0008 C-string:'UNK_0xef5c'
-// 1892:      UNK_0xef66  codep:0x224c parp:0xef66 size:0x0008 C-string:'UNK_0xef66'
-// 1893:      UNK_0xef70  codep:0x224c parp:0xef70 size:0x0008 C-string:'UNK_0xef70'
-// 1894:      UNK_0xef7a  codep:0x224c parp:0xef7a size:0x0008 C-string:'UNK_0xef7a'
-// 1895:      UNK_0xef84  codep:0x224c parp:0xef84 size:0x0006 C-string:'UNK_0xef84'
-// 1896:      UNK_0xef8c  codep:0x224c parp:0xef8c size:0x0008 C-string:'UNK_0xef8c'
-// 1897:      UNK_0xef96  codep:0x224c parp:0xef96 size:0x004c C-string:'UNK_0xef96'
-// 1898:      UNK_0xefe4  codep:0x224c parp:0xefe4 size:0x0016 C-string:'UNK_0xefe4'
-// 1899:      UNK_0xeffc  codep:0x224c parp:0xeffc size:0x0028 C-string:'UNK_0xeffc'
-// 1900:           .MODE  codep:0x224c parp:0xf02e size:0x002c C-string:'_dot_MODE'
-// 1901:      DISPLAYKEY  codep:0x224c parp:0xf069 size:0x0057 C-string:'DISPLAYKEY'
-// 1902:           CLEAR  codep:0x224c parp:0xf0ca size:0x0018 C-string:'CLEAR'
-// 1903:              ML  codep:0x224c parp:0xf0e9 size:0x0010 C-string:'ML'
-// 1904:            MLDN  codep:0x224c parp:0xf102 size:0x0006 C-string:'MLDN'
-// 1905:            MLUP  codep:0x224c parp:0xf111 size:0x0008 C-string:'MLUP'
-// 1906:           LHOLD  codep:0x224c parp:0xf123 size:0x000a C-string:'LHOLD'
-// 1907:          (DUPL)  codep:0x224c parp:0xf138 size:0x001c C-string:'_ro_DUPL_rc_'
-// 1908:            INSL  codep:0x224c parp:0xf15d size:0x000a C-string:'INSL'
-// 1909:            DUPL  codep:0x224c parp:0xf170 size:0x0006 C-string:'DUPL'
-// 1910:           SPLIT  codep:0x224c parp:0xf180 size:0x0022 C-string:'SPLIT'
-// 1911:              XL  codep:0x224c parp:0xf1a9 size:0x002a C-string:'XL'
-// 1912:              XC  codep:0x224c parp:0xf1da size:0x0020 C-string:'XC'
-// 1913:          INSERT  codep:0x224c parp:0xf205 size:0x003c C-string:'INSERT'
-// 1914:          DELETE  codep:0x224c parp:0xf24c size:0x001c C-string:'DELETE'
-// 1915:           #>MON  codep:0x4b82 parp:0xf272 size:0x001c C-string:'_n__gt_MON'
-// 1916:        ?VISIBLE  codep:0x224c parp:0xf29b size:0x0016 C-string:'_ask_VISIBLE'
-// 1917:             EOL  codep:0x224c parp:0xf2b9 size:0x001c C-string:'EOL'
-// 1918:             PUT  codep:0x224c parp:0xf2dd size:0x0058 C-string:'PUT'
-// 1919:        SET-USER  codep:0x224c parp:0xf342 size:0x00e2 C-string:'SET_minus_USER'
-// 1920:          >STAMP  codep:0x224c parp:0xf42f size:0x004a C-string:'_gt_STAMP'
-// 1921:       EDIT-KEYS  codep:0x4b3b parp:0xf487 size:0x0064 C-string:'EDIT_minus_KEYS'
-// 1922:            EDIT  codep:0x224c parp:0xf4f4 size:0x0020 C-string:'EDIT'
-// 1923:       VIEW-KEYS  codep:0x4b3b parp:0xf522 size:0x0010 C-string:'VIEW_minus_KEYS'
-// 1924:            VIEW  codep:0x224c parp:0xf53b size:0x0025 C-string:'VIEW'
+// 1869:      UNK_0x3f09  codep:0x224c parp:0x3f09 size:0xaecb C-string:'UNK_0x3f09'
+// 1870:      UNK_0xedd6  codep:0x1d29 parp:0xedd6 size:0x000e C-string:'UNK_0xedd6'
+// 1871:           STAMP  codep:0x1d29 parp:0xedee size:0x007a C-string:'STAMP'
+// 1872:      UNK_0xee6a  codep:0x2214 parp:0xee6a size:0x0002 C-string:'UNK_0xee6a'
+// 1873:      UNK_0xee6e  codep:0x2214 parp:0xee6e size:0x0002 C-string:'UNK_0xee6e'
+// 1874:      UNK_0xee72  codep:0x1d29 parp:0xee72 size:0x0002 C-string:'UNK_0xee72'
+// 1875:      UNK_0xee76  codep:0x1d29 parp:0xee76 size:0x0002 C-string:'UNK_0xee76'
+// 1876:      UNK_0xee7a  codep:0x1d29 parp:0xee7a size:0x0002 C-string:'UNK_0xee7a'
+// 1877:      UNK_0xee7e  codep:0x224c parp:0xee7e size:0x0014 C-string:'UNK_0xee7e'
+// 1878:      UNK_0xee94  codep:0x224c parp:0xee94 size:0x000a C-string:'UNK_0xee94'
+// 1879:      UNK_0xeea0  codep:0x224c parp:0xeea0 size:0x0006 C-string:'UNK_0xeea0'
+// 1880:      UNK_0xeea8  codep:0x224c parp:0xeea8 size:0x0006 C-string:'UNK_0xeea8'
+// 1881:      UNK_0xeeb0  codep:0x224c parp:0xeeb0 size:0x000e C-string:'UNK_0xeeb0'
+// 1882:      UNK_0xeec0  codep:0x224c parp:0xeec0 size:0x0012 C-string:'UNK_0xeec0'
+// 1883:      UNK_0xeed4  codep:0x224c parp:0xeed4 size:0x000e C-string:'UNK_0xeed4'
+// 1884:      UNK_0xeee4  codep:0x224c parp:0xeee4 size:0x001e C-string:'UNK_0xeee4'
+// 1885:      UNK_0xef04  codep:0x224c parp:0xef04 size:0x0010 C-string:'UNK_0xef04'
+// 1886:      UNK_0xef16  codep:0x224c parp:0xef16 size:0x002c C-string:'UNK_0xef16'
+// 1887:      UNK_0xef44  codep:0x224c parp:0xef44 size:0x000e C-string:'UNK_0xef44'
+// 1888:      UNK_0xef54  codep:0x224c parp:0xef54 size:0x0006 C-string:'UNK_0xef54'
+// 1889:      UNK_0xef5c  codep:0x224c parp:0xef5c size:0x0008 C-string:'UNK_0xef5c'
+// 1890:      UNK_0xef66  codep:0x224c parp:0xef66 size:0x0008 C-string:'UNK_0xef66'
+// 1891:      UNK_0xef70  codep:0x224c parp:0xef70 size:0x0008 C-string:'UNK_0xef70'
+// 1892:      UNK_0xef7a  codep:0x224c parp:0xef7a size:0x0008 C-string:'UNK_0xef7a'
+// 1893:      UNK_0xef84  codep:0x224c parp:0xef84 size:0x0006 C-string:'UNK_0xef84'
+// 1894:      UNK_0xef8c  codep:0x224c parp:0xef8c size:0x0008 C-string:'UNK_0xef8c'
+// 1895:      UNK_0xef96  codep:0x224c parp:0xef96 size:0x004c C-string:'UNK_0xef96'
+// 1896:      UNK_0xefe4  codep:0x224c parp:0xefe4 size:0x0016 C-string:'UNK_0xefe4'
+// 1897:      UNK_0xeffc  codep:0x224c parp:0xeffc size:0x0028 C-string:'UNK_0xeffc'
+// 1898:           .MODE  codep:0x224c parp:0xf02e size:0x002c C-string:'_dot_MODE'
+// 1899:      DISPLAYKEY  codep:0x224c parp:0xf069 size:0x0057 C-string:'DISPLAYKEY'
+// 1900:           CLEAR  codep:0x224c parp:0xf0ca size:0x0018 C-string:'CLEAR'
+// 1901:              ML  codep:0x224c parp:0xf0e9 size:0x0010 C-string:'ML'
+// 1902:            MLDN  codep:0x224c parp:0xf102 size:0x0006 C-string:'MLDN'
+// 1903:            MLUP  codep:0x224c parp:0xf111 size:0x0008 C-string:'MLUP'
+// 1904:           LHOLD  codep:0x224c parp:0xf123 size:0x000a C-string:'LHOLD'
+// 1905:          (DUPL)  codep:0x224c parp:0xf138 size:0x001c C-string:'_ro_DUPL_rc_'
+// 1906:            INSL  codep:0x224c parp:0xf15d size:0x000a C-string:'INSL'
+// 1907:            DUPL  codep:0x224c parp:0xf170 size:0x0006 C-string:'DUPL'
+// 1908:           SPLIT  codep:0x224c parp:0xf180 size:0x0022 C-string:'SPLIT'
+// 1909:              XL  codep:0x224c parp:0xf1a9 size:0x002a C-string:'XL'
+// 1910:              XC  codep:0x224c parp:0xf1da size:0x0020 C-string:'XC'
+// 1911:          INSERT  codep:0x224c parp:0xf205 size:0x003c C-string:'INSERT'
+// 1912:          DELETE  codep:0x224c parp:0xf24c size:0x001c C-string:'DELETE'
+// 1913:           #>MON  codep:0x4b82 parp:0xf272 size:0x001c C-string:'_n__gt_MON'
+// 1914:        ?VISIBLE  codep:0x224c parp:0xf29b size:0x0016 C-string:'_ask_VISIBLE'
+// 1915:             EOL  codep:0x224c parp:0xf2b9 size:0x001c C-string:'EOL'
+// 1916:             PUT  codep:0x224c parp:0xf2dd size:0x0058 C-string:'PUT'
+// 1917:        SET-USER  codep:0x224c parp:0xf342 size:0x00e2 C-string:'SET_dash_USER'
+// 1918:          >STAMP  codep:0x224c parp:0xf42f size:0x004a C-string:'_gt_STAMP'
+// 1919:       EDIT-KEYS  codep:0x4b3b parp:0xf487 size:0x0064 C-string:'EDIT_dash_KEYS'
+// 1920:            EDIT  codep:0x224c parp:0xf4f4 size:0x0020 C-string:'EDIT'
+// 1921:       VIEW-KEYS  codep:0x4b3b parp:0xf522 size:0x0010 C-string:'VIEW_dash_KEYS'
+// 1922:            VIEW  codep:0x224c parp:0xf53b size:0x0025 C-string:'VIEW'
 
 // =================================
 // =========== VARIABLES ===========
@@ -308,7 +306,7 @@ void UNK_0xef66() // UNK_0xef66
 {
   Push(cc_UNK_0xee6a); // UNK_0xee6a
   UNK_0xeea0(); // UNK_0xeea0
-  _minus_(); // -
+  _dash_(); // -
 }
 
 
@@ -320,7 +318,7 @@ void UNK_0xef70() // UNK_0xef70
 {
   Push(cc_UNK_0xee6e); // UNK_0xee6e
   UNK_0xeea8(); // UNK_0xeea8
-  _minus_(); // -
+  _dash_(); // -
 }
 
 
@@ -549,7 +547,7 @@ void _ro_DUPL_rc_() // (DUPL)
   {
   Push(0x000e);
   Push(i); // I
-  _minus_(); // -
+  _dash_(); // -
   MLDN(); // MLDN
   i++;
   } while(i<imax); // (LOOP) 0xfff4
@@ -756,7 +754,7 @@ void EOL() // EOL
 {
   UNK_0xef54(); // UNK_0xef54
   Push(cc_UNK_0xee6a); // UNK_0xee6a
-  _minus_TRAILING(); // -TRAILING
+  _dash_TRAILING(); // -TRAILING
   DUP(); // DUP
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
@@ -834,7 +832,7 @@ void PUT() // PUT
 // 0xf335: WORD 'SET-USER' codep=0x224c parp=0xf342
 // ================================================
 
-void SET_minus_USER() // SET-USER
+void SET_dash_USER() // SET-USER
 {
   Push(pp_UNK_0xedd6); // UNK_0xedd6
   Push(0x000e);
@@ -844,9 +842,8 @@ void SET_minus_USER() // SET-USER
   Push(0x000c);
   UNK_0xef84(); // UNK_0xef84
   C_ex_(); // C!
-  UNK_0x3f09(); // UNK_0x3f09
-  UNK_0x7205(); // UNK_0x7205
-  UNK_0x6768(); // UNK_0x6768
+
+  UNK_0x3f09("rfg");
   Push(1); // 1
   UNK_0xef84(); // UNK_0xef84
   SWAP(); // SWAP
@@ -891,7 +888,7 @@ void SET_minus_USER() // SET-USER
   Push(cc_CX); // CX
   Push(Read16(Pop())); // @
   Push(0x076c);
-  _minus_(); // -
+  _dash_(); // -
   DUP(); // DUP
   Push(0x000a);
   _slash_MOD(); // /MOD
@@ -917,7 +914,7 @@ void _gt_STAMP() // >STAMP
   Push(pp_STAMP); // STAMP
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  SET_minus_USER(); // SET-USER
+  SET_dash_USER(); // SET-USER
   Push(pp_UNK_0xedd6); // UNK_0xedd6
   Push(tt_SCR); // SCR
   Push(Read16(Pop())); // @
@@ -943,7 +940,7 @@ void _gt_STAMP() // >STAMP
   _ex_(); // !
 
   label1:
-  SAVE_minus_BU(); // SAVE-BU
+  SAVE_dash_BU(); // SAVE-BU
 }
 
 
@@ -972,7 +969,7 @@ void EDIT() // EDIT
   goto label3;
 
   label1:
-  EDIT_minus_KEYS(); // EDIT-KEYS
+  EDIT_dash_KEYS(); // EDIT-KEYS
 
   label3:
   goto label2;
@@ -1001,7 +998,7 @@ void VIEW() // VIEW
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  VIEW_minus_KEYS(); // VIEW-KEYS
+  VIEW_dash_KEYS(); // VIEW-KEYS
 
   label1:
   goto label2;

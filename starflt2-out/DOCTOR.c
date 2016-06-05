@@ -433,7 +433,7 @@ void UNK_0xf392() // UNK_0xf392
   CTPOS_dot_(); // CTPOS.
   Push(0x000f);
   BLACK(); // BLACK
-  POLY_minus_ER(); // POLY-ER
+  POLY_dash_ER(); // POLY-ER
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
 
