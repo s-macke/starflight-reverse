@@ -14,7 +14,7 @@ typedef struct DICTENTRY
 } DICTENTRY;
 
 extern int ndict;
-extern struct DICTENTRY dict[10000];
+extern struct DICTENTRY dict[3000];
 
 #define STRINGLEN 300
 
@@ -35,7 +35,7 @@ typedef struct
 
 extern LineDesc pline[0x10000];
 
-void SortDictionary();
+void SortDictionary(int start, int end);
 void ParseDict(unsigned char *mem, int linkp, int decrypt);
 void InitParseFunction2();
 void ParseFunction2(unsigned short parp, int minaddr, int maxaddr);

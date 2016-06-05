@@ -9,16 +9,16 @@ disasm.o: src/disasm/debugger.c
 cpu.o: src/cpu.c
 	$(CC) $(CFLAGS) -c src/cpu.c -o cpu.o
 
-dictionary1.o: src/dictionary.c
+dictionary1.o: src/dictionary.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/dictionary.c -o dictionary1.o
 
-dictionary2.o: src/dictionary.c
+dictionary2.o: src/dictionary.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/dictionary.c -o dictionary2.o
 
-extract1.o: src/extract.c
+extract1.o: src/extract.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/extract.c -o extract1.o
 
-extract2.o: src/extract.c
+extract2.o: src/extract.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/extract.c -o extract2.o
 
 global1.o: src/global.c src/global.h

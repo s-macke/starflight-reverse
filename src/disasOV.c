@@ -82,7 +82,7 @@ void LoadOverlay(int id, FILE *fp, char *name)
     // first two byte contain offset in file and then two bytes with size of overlay
     
     fprintf(fp, "// ====== OVERLAY '%s' ======\n", name);
-    fprintf(fp, "\n#include\"interface.h\"\n\n");
+    fprintf(fp, "\n#include\"cpu.h\"\n\n");
 
     int size = 0;
     buf = (unsigned char*)Extract(id, &size);
@@ -94,7 +94,7 @@ void LoadOverlay(int id, FILE *fp, char *name)
     fprintf(fp, "// overlay size   = 0x%04x\n", ovlsize);    
     memcpy(&mem[storeofs], buf, ovlsize);
     int namep = (buf[0x6] | (buf[0x7]<<8));
-    //fprintf(fp, "// name = '%s'\n", &mem[namep]);
+    
     int ndictstart = ndict;
     for(i=0; i<8; i+=2)
     {
@@ -109,7 +109,7 @@ void LoadOverlay(int id, FILE *fp, char *name)
         if (dict[i].codep == CODECALL)
             ParseFunction2(dict[i].parp, storeofs+0x8+0xa, storeofs+ovlsize);
     }
-    SortDictionary();
+    SortDictionary(ndictstart, ndict);
     dict[ndict-1].size = storeofs+ovlsize-dict[ndict-1].parp;
     
     WriteDict(mem, fp, ndictstart, ndict);
@@ -159,7 +159,7 @@ void LoadSTARFLT()
     ParseDict(mem, DICTLIST4-2, 1);
     //if (DICTLIST5 != 0) ParseDict(mem, DICTLIST5-2, 1);
     
-    SortDictionary();  
+    SortDictionary(0, ndict);
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
 }
 
@@ -172,7 +172,7 @@ void DisasStarflt(FILE *fp)
         if (dict[i].codep == CODECALL)
             ParseFunction2(dict[i].parp, 0x100, FILESTAR0SIZE+0x100);
     }    
-    SortDictionary();
+    SortDictionary(0, ndict);
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
     WriteDict(mem, fp, 0, ndict);
     
@@ -218,21 +218,20 @@ int main()
     DisasStarflt(fp);
     fclose(fp);
 
-    //reset list
-    memset(dict, 0, sizeof(dict));
-    ndict = 0;
-    LoadSTARFLT();
-    int ndictstart = ndict;    
    
     // for starflt2
     //dir[0x78].end = dir[0x78].start+0x810;
     char filename[512];
     for(i=0; overlays[i].name != NULL; i++)
     {
+        //reload dictionary
+        memset(dict, 0, sizeof(dict));
+        ndict = 0;
+        LoadSTARFLT();
+
         sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
         printf("Generate %s\n", filename);
         fp = fopen(filename, "w");
-        ndict = ndictstart;
         LoadOverlay(overlays[i].id, fp, overlays[i].name);
         fclose(fp);
     }

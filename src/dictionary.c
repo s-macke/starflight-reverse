@@ -6,7 +6,7 @@
 #include"cpu.h"
 
 
-struct DICTENTRY dict[10000];
+struct DICTENTRY dict[3000];
 int ndict = 0;
 
 char* FindDictPar(unsigned short addr)
@@ -47,8 +47,8 @@ int FindDictEntry(const char *s)
 
 char* Forth2CString(char *in)
 {
-    static char out[512];
-    memset(out, 0, 512);
+    static char out[1024];
+    memset(out, 0, 1024);
     int n = strlen(in);
     int j = 0;
     int i = 0;
@@ -130,11 +130,10 @@ char* Forth2CString(char *in)
 
             case '-':
                 out[j++] = '_';
-                out[j++] = 'm';
-                out[j++] = 'i';
-                out[j++] = 'n';
-                out[j++] = 'u';
+                out[j++] = 'd';
+                out[j++] = 'a';
                 out[j++] = 's';
+                out[j++] = 'h';
                 out[j++] = '_';
                 break;
 
@@ -342,8 +341,8 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt)
             }
         } else
         {
-            dict[ndict].r[n] = (mem[ofs+2+i]) & 0x7F;
-            mem[ofs+2+i] = ((mem[ofs+2+i])&0x7F) | (mem[ofs+2+i]&0x80); // restore upper bit
+            dict[ndict].r[n] = (Read8(ofs+2+i)) & 0x7F;
+            mem[ofs+2+i] = ((Read8(ofs+2+i))&0x7F) | (Read8(ofs+2+i)&0x80); // restore upper bit
         }
 
         n++;
@@ -360,14 +359,14 @@ void ParseDict(unsigned char *mem, int linkp, int decrypt)
     int i = 0;
     int j = 0;
 
-    for(i=0; i<30000; i++)
+    for(i=0; i<3000; i++)
     {
         for(j=0; j<ndict; j++)
         {
             if (dict[j].ofs == linkp)
             {
                 fprintf(stderr, "duplicate\n");
-                //exit(1);
+                exit(1);
                 return;
             }
         }
@@ -398,13 +397,13 @@ void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
     }
 }
 
-void SortDictionary()
+void SortDictionary(int start, int end)
 {
     struct DICTENTRY temp;
     int i = 0;
     int j = 0;
     for(i=0; i<ndict; i++)
-    for(j=0; j<ndict-1; j++)
+    for(j=start; j<end-1; j++)
     {
         if (dict[j].ofs > dict[j+1].ofs)
         {
@@ -413,7 +412,8 @@ void SortDictionary()
             memcpy((void*)&dict[j+1], (void*)&temp, sizeof(DICTENTRY));
         }
     }
-    for(i=0; i<ndict-1; i++)
+
+    for(i=start; i<end-1; i++)
     {
         dict[i].size = dict[i+1].ofs - dict[i].parp;
     }
