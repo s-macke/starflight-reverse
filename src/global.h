@@ -33,7 +33,7 @@ extern OVERLAYS overlays[];
     #define CODELOADDATA 0x73ea // code executed when data is loaded from directory
     #define CODELOADOVERLAY 0x83F8
 
-#else
+#elif STARFLT2
     #define CODECALL 0x224c
     #define CODEEXIT 0x1692 // exit function
     #define CODELIT 0x175F // push constant
@@ -55,6 +55,8 @@ extern OVERLAYS overlays[];
     #define OUTDIR "starflt2-out"
     #define CODELOADDATA 0x7394 // code executed when data is loaded from directory
     #define CODELOADOVERLAY 0x83DD
+#else
+    #error no starfleet defined
 #endif
 
 

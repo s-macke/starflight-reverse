@@ -1,4 +1,8 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 #include"global.h"
+
 
 typedef struct
 {
@@ -29,8 +33,6 @@ void SortDirectory()
         }
     }
 }
-
-
 
 void LoadDir(FILE *fp)
 {

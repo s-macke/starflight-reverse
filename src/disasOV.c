@@ -1,10 +1,12 @@
 #include<stdio.h>
-#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include"global.h"
-#include"dictionary.c"
-#include"extract.c"
+#include"dictionary.h"
+#include"extract.h"
+#include"cpu.h"
+
+
 #include"disasm/debugger.h"
 
 // TODO:
@@ -13,31 +15,22 @@
 // Check tt_ cc_ pp_
 //
 
-unsigned char mem[0x10000];
-
-unsigned char Read8(unsigned short ofs)
-{
-    return mem[ofs];
-}
-
-unsigned short Read16(unsigned short ofs)
-{
-    return mem[ofs+0] | (mem[ofs+1]<<8);
-}
-
 // ---------------------------------
 
 int DisasmRange(int offset, int size, FILE *fp)
 {
     char buffer[0x80];
     int i;
+    if (pline[offset].done) return 0;
+    //fprintf(stderr, "disasm start 0x%04x\n", offset);
     while (size > 0)
     {
-        //fprintf(fp, "Disasm %04x\n", offset);
+        //fprintf(stderr, "Disasm %04x\n", offset);
         if (offset > 0xFFFF)
         {
-            fprintf(fp, "Warning: outside of segment\n");
-           exit(1);
+           fprintf(stderr, "Warning: outside of segment\n");
+           return 0;
+           //exit(1);
         }
         if (pline[offset].done)
         {
@@ -48,8 +41,8 @@ int DisasmRange(int offset, int size, FILE *fp)
         int currentoffset = offset;
         int newoffset = disasm(0x0, (unsigned)offset, mem, buffer);
         int len = newoffset-offset;
-        //fprintf(fp, "Disasm done %04x\n", offset);
-        sprintf(pline[currentoffset].strasm, "// 0x%04x: %s\n", currentoffset, buffer);
+        //fprintf(stderr, "Disasm done %04x\n", offset);
+        snprintf(pline[currentoffset].strasm, STRINGLEN, "// 0x%04x: %s\n", currentoffset, buffer);
         for(i=0; i<len; i++)
         {
             pline[offset].done = 1;
@@ -59,13 +52,13 @@ int DisasmRange(int offset, int size, FILE *fp)
 
         if (Read8(currentoffset) == 0xc3) // ret
         {
-            sprintf(pline[currentoffset].str, "\n");
+            snprintf(pline[currentoffset].str, STRINGLEN, "\n");
             return 0;
         }
         
         if (Read8(currentoffset) == 0xe8) // 16 bit call
         {
-            //fprintf(fp, "call from 0x%04x\n", currentoffset);
+            //fprintf(stderr, "call from 0x%04x\n", currentoffset);
             unsigned short addr = (offset+(short int)Read16(currentoffset+1));
             DisasmRange(addr&0xffff, 0x10000, fp);
             if (addr == 0x1649)
@@ -92,7 +85,7 @@ void LoadOverlay(int id, FILE *fp, char *name)
     fprintf(fp, "\n#include\"interface.h\"\n\n");
 
     int size = 0;
-    buf = Extract(id, &size);
+    buf = (unsigned char*)Extract(id, &size);
     
     int storeofs = buf[0x4] | (buf[0x5]<<8);
     int ovlsize = (buf[0x2] | (buf[0x3]<<8))*16;
@@ -124,7 +117,7 @@ void LoadOverlay(int id, FILE *fp, char *name)
     for(i=0; i<ndict; i++)
     {
         int wordofs = dict[i].ofs;
-        sprintf(pline[wordofs].strword, 
+        snprintf(pline[wordofs].strword, STRINGLEN,
             "\n// ================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ================================================\n", 
@@ -137,10 +130,10 @@ void LoadOverlay(int id, FILE *fp, char *name)
             for(j=0; j<strlen(dict[i].r)+2; j++) pline[wordofs+3+j].done = 1; // and the whole string
         }
     }
-    
-    for(i=0; i<ndict; i++)
+    for(i=ndictstart; i<ndict; i++)
     {
         if ((dict[i].codep < storeofs+0x8+0xa) || (dict[i].codep >= storeofs+ovlsize)) continue;
+        //printf("disasm dict entry %i\n", i);
         DisasmRange(dict[i].codep, 0x100000, fp);
     }
     
@@ -186,7 +179,7 @@ void DisasStarflt(FILE *fp)
     for(i=0; i<ndict; i++) 
     {
         int wordofs = dict[i].ofs;
-        sprintf(pline[wordofs].strword, 
+        snprintf(pline[wordofs].strword, STRINGLEN,
             "\n// ====================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ====================================================\n", wordofs, dict[i].r, dict[i].codep, dict[i].parp);
@@ -226,14 +219,14 @@ int main()
     fclose(fp);
 
     //reset list
+    memset(dict, 0, sizeof(dict));
     ndict = 0;
     LoadSTARFLT();
-    
+    int ndictstart = ndict;    
    
     // for starflt2
     //dir[0x78].end = dir[0x78].start+0x810;
     char filename[512];
-    int ndictstart = ndict;    
     for(i=0; overlays[i].name != NULL; i++)
     {
         sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
