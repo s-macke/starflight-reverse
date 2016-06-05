@@ -1,6 +1,6 @@
 // ====== OVERLAY 'FRACT-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe340
 // overlay size   = 0x1220

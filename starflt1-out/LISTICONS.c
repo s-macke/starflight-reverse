@@ -1,6 +1,6 @@
 // ====== OVERLAY 'LISTICONS' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf290
 // overlay size   = 0x02d0

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'SHIPGRPH-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xecb0
 // overlay size   = 0x08b0

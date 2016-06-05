@@ -1,6 +1,6 @@
 // ====== OVERLAY 'CONFIG-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe960
 // overlay size   = 0x0c00

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'SENT-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe2b0
 // overlay size   = 0x12b0

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'MUSIC' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe200
 // overlay size   = 0x1360

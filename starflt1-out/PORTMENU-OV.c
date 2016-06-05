@@ -1,6 +1,6 @@
 // ====== OVERLAY 'PORTMENU-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe930
 // overlay size   = 0x0c30

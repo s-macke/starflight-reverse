@@ -1,6 +1,6 @@
 // ====== OVERLAY 'ENGINEER' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xeca0
 // overlay size   = 0x08c0

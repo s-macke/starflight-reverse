@@ -1,6 +1,6 @@
 // ====== OVERLAY 'ANALYZE-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xeb60
 // overlay size   = 0x0a00

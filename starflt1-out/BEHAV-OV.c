@@ -1,6 +1,6 @@
 // ====== OVERLAY 'BEHAV-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe070
 // overlay size   = 0x14f0

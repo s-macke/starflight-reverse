@@ -1,6 +1,6 @@
 // ====== OVERLAY 'LP-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe0c0
 // overlay size   = 0x14a0

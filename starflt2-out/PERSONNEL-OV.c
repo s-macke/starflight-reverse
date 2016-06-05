@@ -1,6 +1,6 @@
 // ====== OVERLAY 'PERSONNEL-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe3d0
 // overlay size   = 0x1190

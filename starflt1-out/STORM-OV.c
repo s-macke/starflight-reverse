@@ -1,6 +1,6 @@
 // ====== OVERLAY 'STORM-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf090
 // overlay size   = 0x04d0

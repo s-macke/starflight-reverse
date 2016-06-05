@@ -1,6 +1,6 @@
 // ====== OVERLAY 'CLOUD-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf3b0
 // overlay size   = 0x01b0
@@ -8,13 +8,9 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1869:      UNK_0x7f8e  codep:0x224c parp:0x7f8e size:0x070f C-string:'UNK_0x7f8e'
-// 1870:      UNK_0x869f  codep:0x224c parp:0x869f size:0x03df C-string:'UNK_0x869f'
-// 1871:      UNK_0x8a80  codep:0x224c parp:0x8a80 size:0x1418 C-string:'UNK_0x8a80'
-// 1872:      UNK_0x9e9a  codep:0x224c parp:0x9e9a size:0x5588 C-string:'UNK_0x9e9a'
-// 1873:         #HUMANS  codep:0x224c parp:0xf42e size:0x00c6 C-string:'_n_HUMANS'
-// 1874:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_minus_CLOUD_rc_'
-// 1875:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0034 C-string:'DO_minus_CLOUD'
+// 1869:         #HUMANS  codep:0x224c parp:0xf42e size:0x00c6 C-string:'_n_HUMANS'
+// 1870:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_minus_CLOUD_rc_'
+// 1871:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0034 C-string:'DO_minus_CLOUD'
 
 // =================================
 // =========== VARIABLES ===========
@@ -35,7 +31,7 @@ void _n_HUMANS() // #HUMANS
   IOPEN(); // IOPEN
   Push(0); // 0
   Push(0xf3e2);
-  UNK_0x7f8e(); // UNK_0x7f8e
+  ALL(); // ALL
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
 }
@@ -55,10 +51,10 @@ void DO_minus_CLOUD() // DO-CLOUD
 {
   _n_HUMANS(); // #HUMANS
   if (Pop() == 0) goto label1;
-  UNK_0x8a80(); // UNK_0x8a80
-  UNK_0x9e9a(); // UNK_0x9e9a
+  _gt_1FONT(); // >1FONT
+  WUP(); // WUP
   WHITE(); // WHITE
-  UNK_0x869f(); // UNK_0x869f
+  _ex_COLOR(); // !COLOR
   _ro_DO_minus_CLOUD_rc_(); // (DO-CLOUD)
   return;
 

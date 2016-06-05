@@ -1,6 +1,6 @@
 // ====== OVERLAY 'STORM-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf110
 // overlay size   = 0x0450
@@ -8,36 +8,29 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1869:      UNK_0x9a7d  codep:0x224c parp:0x9a7d size:0x0116 C-string:'UNK_0x9a7d'
-// 1870:      UNK_0x9b95  codep:0x224c parp:0x9b95 size:0x0046 C-string:'UNK_0x9b95'
-// 1871:      UNK_0x9bdd  codep:0x224c parp:0x9bdd size:0x0069 C-string:'UNK_0x9bdd'
-// 1872:      UNK_0x9c48  codep:0x224c parp:0x9c48 size:0x01a6 C-string:'UNK_0x9c48'
-// 1873:      UNK_0x9df0  codep:0x224c parp:0x9df0 size:0x0010 C-string:'UNK_0x9df0'
-// 1874:      UNK_0x9e02  codep:0x224c parp:0x9e02 size:0x01d0 C-string:'UNK_0x9e02'
-// 1875:      UNK_0x9fd4  codep:0x224c parp:0x9fd4 size:0x51f6 C-string:'UNK_0x9fd4'
-// 1876:      UNK_0xf1cc  codep:0x224c parp:0xf1cc size:0x0026 C-string:'UNK_0xf1cc'
-// 1877:      UNK_0xf1f4  codep:0x224c parp:0xf1f4 size:0x000c C-string:'UNK_0xf1f4'
-// 1878:          STORMS  codep:0xf14c parp:0xf20b size:0x00b6 C-string:'STORMS'
-// 1879:      UNK_0xf2c3  codep:0x7420 parp:0xf2c3 size:0x0003 C-string:'UNK_0xf2c3'
-// 1880:      UNK_0xf2c8  codep:0x7420 parp:0xf2c8 size:0x0003 C-string:'UNK_0xf2c8'
-// 1881:      UNK_0xf2cd  codep:0x7394 parp:0xf2cd size:0x0006 C-string:'UNK_0xf2cd'
-// 1882:      UNK_0xf2d5  codep:0x7394 parp:0xf2d5 size:0x000a C-string:'UNK_0xf2d5'
-// 1883:      UNK_0xf2e1  codep:0x224c parp:0xf2e1 size:0x0012 C-string:'UNK_0xf2e1'
-// 1884:      UNK_0xf2f5  codep:0x224c parp:0xf2f5 size:0x000a C-string:'UNK_0xf2f5'
-// 1885:      UNK_0xf301  codep:0x7420 parp:0xf301 size:0x0003 C-string:'UNK_0xf301'
-// 1886:      UNK_0xf306  codep:0x7420 parp:0xf306 size:0x0003 C-string:'UNK_0xf306'
-// 1887:      UNK_0xf30b  codep:0x7420 parp:0xf30b size:0x0003 C-string:'UNK_0xf30b'
-// 1888:      UNK_0xf310  codep:0x7394 parp:0xf310 size:0x0006 C-string:'UNK_0xf310'
-// 1889:      UNK_0xf318  codep:0x224c parp:0xf318 size:0x0018 C-string:'UNK_0xf318'
-// 1890:      UNK_0xf332  codep:0x224c parp:0xf332 size:0x0026 C-string:'UNK_0xf332'
-// 1891:      UNK_0xf35a  codep:0x224c parp:0xf35a size:0x0018 C-string:'UNK_0xf35a'
-// 1892:      UNK_0xf374  codep:0x224c parp:0xf374 size:0x0036 C-string:'UNK_0xf374'
-// 1893:       INJURE-PL  codep:0x224c parp:0xf3b8 size:0x0062 C-string:'INJURE_minus_PL'
-// 1894:      UNK_0xf41c  codep:0x224c parp:0xf41c size:0x004a C-string:'UNK_0xf41c'
-// 1895:      UNK_0xf468  codep:0x224c parp:0xf468 size:0x003c C-string:'UNK_0xf468'
-// 1896:      UNK_0xf4a6  codep:0x224c parp:0xf4a6 size:0x003a C-string:'UNK_0xf4a6'
-// 1897:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0012 C-string:'UNK_0xf4e2'
-// 1898:       (DO.STORM  codep:0x224c parp:0xf502 size:0x005e C-string:'_ro_DO_dot_STORM'
+// 1869:      UNK_0xf1cc  codep:0x224c parp:0xf1cc size:0x0026 C-string:'UNK_0xf1cc'
+// 1870:      UNK_0xf1f4  codep:0x224c parp:0xf1f4 size:0x000c C-string:'UNK_0xf1f4'
+// 1871:          STORMS  codep:0xf14c parp:0xf20b size:0x00b6 C-string:'STORMS'
+// 1872:      UNK_0xf2c3  codep:0x7420 parp:0xf2c3 size:0x0003 C-string:'UNK_0xf2c3'
+// 1873:      UNK_0xf2c8  codep:0x7420 parp:0xf2c8 size:0x0003 C-string:'UNK_0xf2c8'
+// 1874:      UNK_0xf2cd  codep:0x7394 parp:0xf2cd size:0x0006 C-string:'UNK_0xf2cd'
+// 1875:      UNK_0xf2d5  codep:0x7394 parp:0xf2d5 size:0x000a C-string:'UNK_0xf2d5'
+// 1876:      UNK_0xf2e1  codep:0x224c parp:0xf2e1 size:0x0012 C-string:'UNK_0xf2e1'
+// 1877:      UNK_0xf2f5  codep:0x224c parp:0xf2f5 size:0x000a C-string:'UNK_0xf2f5'
+// 1878:      UNK_0xf301  codep:0x7420 parp:0xf301 size:0x0003 C-string:'UNK_0xf301'
+// 1879:      UNK_0xf306  codep:0x7420 parp:0xf306 size:0x0003 C-string:'UNK_0xf306'
+// 1880:      UNK_0xf30b  codep:0x7420 parp:0xf30b size:0x0003 C-string:'UNK_0xf30b'
+// 1881:      UNK_0xf310  codep:0x7394 parp:0xf310 size:0x0006 C-string:'UNK_0xf310'
+// 1882:      UNK_0xf318  codep:0x224c parp:0xf318 size:0x0018 C-string:'UNK_0xf318'
+// 1883:      UNK_0xf332  codep:0x224c parp:0xf332 size:0x0026 C-string:'UNK_0xf332'
+// 1884:      UNK_0xf35a  codep:0x224c parp:0xf35a size:0x0018 C-string:'UNK_0xf35a'
+// 1885:      UNK_0xf374  codep:0x224c parp:0xf374 size:0x0036 C-string:'UNK_0xf374'
+// 1886:       INJURE-PL  codep:0x224c parp:0xf3b8 size:0x0062 C-string:'INJURE_minus_PL'
+// 1887:      UNK_0xf41c  codep:0x224c parp:0xf41c size:0x004a C-string:'UNK_0xf41c'
+// 1888:      UNK_0xf468  codep:0x224c parp:0xf468 size:0x003c C-string:'UNK_0xf468'
+// 1889:      UNK_0xf4a6  codep:0x224c parp:0xf4a6 size:0x003a C-string:'UNK_0xf4a6'
+// 1890:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0012 C-string:'UNK_0xf4e2'
+// 1891:       (DO.STORM  codep:0x224c parp:0xf502 size:0x005e C-string:'_ro_DO_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========
@@ -232,11 +225,11 @@ void UNK_0xf35a() // UNK_0xf35a
 
 void UNK_0xf374() // UNK_0xf374
 {
-  UNK_0x9bdd(); // UNK_0x9bdd
-  UNK_0x9c48(); // UNK_0x9c48
-  UNK_0x9fd4(); // UNK_0x9fd4
+  _gt_TVCT(); // >TVCT
+  CTERASE(); // CTERASE
+  CTINIT(); // CTINIT
   UNK_0xf30b(); // UNK_0xf30b
-  UNK_0x9df0(); // UNK_0x9df0
+  _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
   UNK_0xf306(); // UNK_0xf306
   C_at_(); // C@
@@ -322,19 +315,19 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x0044);
   Push(pp_LCOLOR); // LCOLOR
   Push(Read16(Pop())); // @
-  UNK_0x9b95(); // UNK_0x9b95
+  POLY_minus_WI(); // POLY-WI
   Push(0x0074);
   Push(0x0096);
-  UNK_0x9a7d(); // UNK_0x9a7d
+  POS_dot_(); // POS.
   Push(cc__7); // 7
   BLACK(); // BLACK
-  UNK_0x9e02(); // UNK_0x9e02
+  POLY_minus_ER(); // POLY-ER
   Push(0x0074);
   Push(0x008f);
-  UNK_0x9a7d(); // UNK_0x9a7d
+  POS_dot_(); // POS.
   Push(0x0009);
   BLACK(); // BLACK
-  UNK_0x9e02(); // UNK_0x9e02
+  POLY_minus_ER(); // POLY-ER
 }
 
 

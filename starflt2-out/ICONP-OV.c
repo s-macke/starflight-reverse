@@ -1,6 +1,6 @@
 // ====== OVERLAY 'ICONP-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf0b0
 // overlay size   = 0x04b0

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'DPART-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xef50
 // overlay size   = 0x0610
@@ -8,7 +8,7 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:          LET-TH  codep:0x224c parp:0xd489 size:0x1adb C-string:'LET_minus_TH'
+// 1703:      UNK_0x3f3b  codep:0x224c parp:0x3f3b size:0xb029 C-string:'UNK_0x3f3b'
 // 1704:      UNK_0xef66  codep:0x2214 parp:0xef66 size:0x0002 C-string:'UNK_0xef66'
 // 1705:      UNK_0xef6a  codep:0x2214 parp:0xef6a size:0x0002 C-string:'UNK_0xef6a'
 // 1706:      UNK_0xef6e  codep:0x744d parp:0xef6e size:0x0003 C-string:'UNK_0xef6e'

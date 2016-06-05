@@ -1,6 +1,6 @@
 // ====== OVERLAY 'CULTURE' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xef40
 // overlay size   = 0x0620
@@ -8,15 +8,15 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1869:         GAME-OV  codep:0x83dd parp:0xd545 size:0x0002 C-string:'GAME_minus_OV'
-// 1870:         STARTGA  codep:0x224c parp:0xd553 size:0x0006 C-string:'STARTGA'
-// 1871:            ERR!  codep:0x224c parp:0xd562 size:0x0006 C-string:'ERR_ex_'
-// 1872:            MERR  codep:0x224c parp:0xd571 size:0x0008 C-string:'MERR'
-// 1873:         GAMEOPS  codep:0x224c parp:0xd585 size:0x0008 C-string:'GAMEOPS'
-// 1874:         GAMEOPM  codep:0x224c parp:0xd599 size:0x0008 C-string:'GAMEOPM'
-// 1875:            BOSS  codep:0x224c parp:0xd5aa size:0x0006 C-string:'BOSS'
-// 1876:             DBS  codep:0x224c parp:0xd5b8 size:0x0008 C-string:'DBS'
-// 1877:         LET-THE  codep:0x224c parp:0xd5cc size:0x1988 C-string:'LET_minus_THE'
+// 1869:      UNK_0x2003  codep:0x1017 parp:0x2003 size:0x0056 C-string:'UNK_0x2003'
+// 1870:      UNK_0x205b  codep:0x0bae parp:0x205b size:0x1eac C-string:'UNK_0x205b'
+// 1871:      UNK_0x3f09  codep:0x224c parp:0x3f09 size:0x0317 C-string:'UNK_0x3f09'
+// 1872:      UNK_0x4222  codep:0x0fe7 parp:0x4222 size:0x001f C-string:'UNK_0x4222'
+// 1873:      UNK_0x4243  codep:0x0d33 parp:0x4243 size:0x0202 C-string:'UNK_0x4243'
+// 1874:      UNK_0x4447  codep:0x8743 parp:0x4447 size:0x0407 C-string:'UNK_0x4447'
+// 1875:      UNK_0x4850  codep:0x8d90 parp:0x4850 size:0x00bd C-string:'UNK_0x4850'
+// 1876:      UNK_0x490f  codep:0x0000 parp:0x490f size:0x0b3a C-string:'UNK_0x490f'
+// 1877:      UNK_0x544b  codep:0x29cb parp:0x544b size:0x9b09 C-string:'UNK_0x544b'
 // 1878:      UNK_0xef56  codep:0x224c parp:0xef56 size:0x0040 C-string:'UNK_0xef56'
 // 1879:      UNK_0xef98  codep:0x7394 parp:0xef98 size:0x0006 C-string:'UNK_0xef98'
 // 1880:      UNK_0xefa0  codep:0x7394 parp:0xefa0 size:0x0006 C-string:'UNK_0xefa0'

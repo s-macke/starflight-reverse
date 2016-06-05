@@ -1,6 +1,6 @@
 // ====== OVERLAY 'MOVE-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe680
 // overlay size   = 0x0ee0

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'MISC-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xefc0
 // overlay size   = 0x05a0
@@ -8,28 +8,29 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:      UNK_0xefd6  codep:0x744d parp:0xefd6 size:0x0003 C-string:'UNK_0xefd6'
-// 1704:      UNK_0xefdb  codep:0x744d parp:0xefdb size:0x0003 C-string:'UNK_0xefdb'
-// 1705:      UNK_0xefe0  codep:0x744d parp:0xefe0 size:0x0003 C-string:'UNK_0xefe0'
-// 1706:      UNK_0xefe5  codep:0x1d29 parp:0xefe5 size:0x0014 C-string:'UNK_0xefe5'
-// 1707:           (TRIM  codep:0x224c parp:0xf003 size:0x0030 C-string:'_ro_TRIM'
-// 1708:      UNK_0xf035  codep:0x224c parp:0xf035 size:0x0036 C-string:'UNK_0xf035'
-// 1709:      UNK_0xf06d  codep:0x224c parp:0xf06d size:0x0020 C-string:'UNK_0xf06d'
-// 1710:      UNK_0xf08f  codep:0x224c parp:0xf08f size:0x0028 C-string:'UNK_0xf08f'
-// 1711:      UNK_0xf0b9  codep:0x224c parp:0xf0b9 size:0x0026 C-string:'UNK_0xf0b9'
-// 1712:           (#IN$  codep:0x224c parp:0xf0e9 size:0x00ba C-string:'_ro__n_IN_do_'
-// 1713:           (?ART  codep:0x224c parp:0xf1ad size:0x002e C-string:'_ro__ask_ART'
-// 1714:           (QUIT  codep:0x224c parp:0xf1e5 size:0x0021 C-string:'_ro_QUIT'
-// 1715:           (.0$$  codep:0x224c parp:0xf210 size:0x0019 C-string:'_ro__dot_0_do__do_'
-// 1716:           (0$$$  codep:0x224c parp:0xf233 size:0x0099 C-string:'_ro_0_do__do__do_'
-// 1717:            .ERR  codep:0x4a4f parp:0xf2d5 size:0x001c C-string:'_dot_ERR'
-// 1718:           EINDE  codep:0x4a4f parp:0xf2fb size:0x001c C-string:'EINDE'
-// 1719:      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0068 C-string:'UNK_0xf319'
-// 1720:      UNK_0xf383  codep:0x224c parp:0xf383 size:0x001a C-string:'UNK_0xf383'
-// 1721:      UNK_0xf39f  codep:0x224c parp:0xf39f size:0x0034 C-string:'UNK_0xf39f'
-// 1722:           (?.EQ  codep:0x224c parp:0xf3dd size:0x0079 C-string:'_ro__ask__dot_EQ'
-// 1723:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0020 C-string:'UNK_0xf458'
-// 1724:           =CARG  codep:0x224c parp:0xf482 size:0x00de C-string:'_eq_CARG'
+// 1703:      UNK_0x3f3b  codep:0x224c parp:0x3f3b size:0xb099 C-string:'UNK_0x3f3b'
+// 1704:      UNK_0xefd6  codep:0x744d parp:0xefd6 size:0x0003 C-string:'UNK_0xefd6'
+// 1705:      UNK_0xefdb  codep:0x744d parp:0xefdb size:0x0003 C-string:'UNK_0xefdb'
+// 1706:      UNK_0xefe0  codep:0x744d parp:0xefe0 size:0x0003 C-string:'UNK_0xefe0'
+// 1707:      UNK_0xefe5  codep:0x1d29 parp:0xefe5 size:0x0014 C-string:'UNK_0xefe5'
+// 1708:           (TRIM  codep:0x224c parp:0xf003 size:0x0030 C-string:'_ro_TRIM'
+// 1709:      UNK_0xf035  codep:0x224c parp:0xf035 size:0x0036 C-string:'UNK_0xf035'
+// 1710:      UNK_0xf06d  codep:0x224c parp:0xf06d size:0x0020 C-string:'UNK_0xf06d'
+// 1711:      UNK_0xf08f  codep:0x224c parp:0xf08f size:0x0028 C-string:'UNK_0xf08f'
+// 1712:      UNK_0xf0b9  codep:0x224c parp:0xf0b9 size:0x0026 C-string:'UNK_0xf0b9'
+// 1713:           (#IN$  codep:0x224c parp:0xf0e9 size:0x00ba C-string:'_ro__n_IN_do_'
+// 1714:           (?ART  codep:0x224c parp:0xf1ad size:0x002e C-string:'_ro__ask_ART'
+// 1715:           (QUIT  codep:0x224c parp:0xf1e5 size:0x0021 C-string:'_ro_QUIT'
+// 1716:           (.0$$  codep:0x224c parp:0xf210 size:0x0019 C-string:'_ro__dot_0_do__do_'
+// 1717:           (0$$$  codep:0x224c parp:0xf233 size:0x0099 C-string:'_ro_0_do__do__do_'
+// 1718:            .ERR  codep:0x4a4f parp:0xf2d5 size:0x001c C-string:'_dot_ERR'
+// 1719:           EINDE  codep:0x4a4f parp:0xf2fb size:0x001c C-string:'EINDE'
+// 1720:      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0068 C-string:'UNK_0xf319'
+// 1721:      UNK_0xf383  codep:0x224c parp:0xf383 size:0x001a C-string:'UNK_0xf383'
+// 1722:      UNK_0xf39f  codep:0x224c parp:0xf39f size:0x0034 C-string:'UNK_0xf39f'
+// 1723:           (?.EQ  codep:0x224c parp:0xf3dd size:0x0079 C-string:'_ro__ask__dot_EQ'
+// 1724:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0020 C-string:'UNK_0xf458'
+// 1725:           =CARG  codep:0x224c parp:0xf482 size:0x00de C-string:'_eq_CARG'
 
 // =================================
 // =========== VARIABLES ===========

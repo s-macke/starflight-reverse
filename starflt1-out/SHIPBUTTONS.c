@@ -1,6 +1,6 @@
 // ====== OVERLAY 'SHIPBUTTONS' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xeda0
 // overlay size   = 0x07c0
@@ -8,20 +8,21 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:      UNK_0xedb6  codep:0x1d29 parp:0xedb6 size:0x01dc C-string:'UNK_0xedb6'
-// 1704:       (GET-AUX)  codep:0x4a4f parp:0xefa0 size:0x0082 C-string:'_ro_GET_minus_AUX_rc_'
-// 1705:      1.1BTN.XEQ  codep:0x4a4f parp:0xf031 size:0x0140 C-string:'_1_dot_1BTN_dot_XEQ'
-// 1706:      >DISEMBARK  codep:0x4a4f parp:0xf180 size:0x0092 C-string:'_gt_DISEMBARK'
-// 1707:        1BTN.XEQ  codep:0x4a4f parp:0xf21f size:0x0038 C-string:'_1BTN_dot_XEQ'
-// 1708:        2BTN.XEQ  codep:0x4a4f parp:0xf264 size:0x005a C-string:'_2BTN_dot_XEQ'
-// 1709:        3BTN.XEQ  codep:0x4a4f parp:0xf2cb size:0x002c C-string:'_3BTN_dot_XEQ'
-// 1710:        4BTN.XEQ  codep:0x4a4f parp:0xf304 size:0x0020 C-string:'_4BTN_dot_XEQ'
-// 1711:        6BTN.XEQ  codep:0x4a4f parp:0xf331 size:0x0098 C-string:'_6BTN_dot_XEQ'
-// 1712:        0BTN.XEQ  codep:0x4a4f parp:0xf3d6 size:0x0026 C-string:'_0BTN_dot_XEQ'
-// 1713:      UNK_0xf3fe  codep:0x224c parp:0xf3fe size:0x001a C-string:'UNK_0xf3fe'
-// 1714:      UNK_0xf41a  codep:0x224c parp:0xf41a size:0x0084 C-string:'UNK_0xf41a'
-// 1715:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x000c C-string:'UNK_0xf4a0'
-// 1716:            >FLT  codep:0x224c parp:0xf4b5 size:0x00ab C-string:'_gt_FLT'
+// 1703:      UNK_0x3f3b  codep:0x224c parp:0x3f3b size:0xae79 C-string:'UNK_0x3f3b'
+// 1704:      UNK_0xedb6  codep:0x1d29 parp:0xedb6 size:0x01dc C-string:'UNK_0xedb6'
+// 1705:       (GET-AUX)  codep:0x4a4f parp:0xefa0 size:0x0082 C-string:'_ro_GET_minus_AUX_rc_'
+// 1706:      1.1BTN.XEQ  codep:0x4a4f parp:0xf031 size:0x0140 C-string:'_1_dot_1BTN_dot_XEQ'
+// 1707:      >DISEMBARK  codep:0x4a4f parp:0xf180 size:0x0092 C-string:'_gt_DISEMBARK'
+// 1708:        1BTN.XEQ  codep:0x4a4f parp:0xf21f size:0x0038 C-string:'_1BTN_dot_XEQ'
+// 1709:        2BTN.XEQ  codep:0x4a4f parp:0xf264 size:0x005a C-string:'_2BTN_dot_XEQ'
+// 1710:        3BTN.XEQ  codep:0x4a4f parp:0xf2cb size:0x002c C-string:'_3BTN_dot_XEQ'
+// 1711:        4BTN.XEQ  codep:0x4a4f parp:0xf304 size:0x0020 C-string:'_4BTN_dot_XEQ'
+// 1712:        6BTN.XEQ  codep:0x4a4f parp:0xf331 size:0x0098 C-string:'_6BTN_dot_XEQ'
+// 1713:        0BTN.XEQ  codep:0x4a4f parp:0xf3d6 size:0x0026 C-string:'_0BTN_dot_XEQ'
+// 1714:      UNK_0xf3fe  codep:0x224c parp:0xf3fe size:0x001a C-string:'UNK_0xf3fe'
+// 1715:      UNK_0xf41a  codep:0x224c parp:0xf41a size:0x0084 C-string:'UNK_0xf41a'
+// 1716:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x000c C-string:'UNK_0xf4a0'
+// 1717:            >FLT  codep:0x224c parp:0xf4b5 size:0x00ab C-string:'_gt_FLT'
 
 // =================================
 // =========== VARIABLES ===========

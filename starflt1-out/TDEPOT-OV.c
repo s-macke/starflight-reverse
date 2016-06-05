@@ -1,6 +1,6 @@
 // ====== OVERLAY 'TDEPOT-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xe2a0
 // overlay size   = 0x12c0

@@ -1,6 +1,6 @@
 // ====== OVERLAY 'DEPART' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf390
 // overlay size   = 0x01d0

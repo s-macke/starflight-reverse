@@ -1,6 +1,6 @@
 // ====== OVERLAY 'FLUX-EFFECT' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf330
 // overlay size   = 0x0230

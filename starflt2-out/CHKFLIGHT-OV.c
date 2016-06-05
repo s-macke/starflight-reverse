@@ -1,6 +1,6 @@
 // ====== OVERLAY 'CHKFLIGHT-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xf170
 // overlay size   = 0x03f0

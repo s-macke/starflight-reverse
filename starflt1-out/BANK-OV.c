@@ -1,6 +1,6 @@
 // ====== OVERLAY 'BANK-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xef70
 // overlay size   = 0x05f0

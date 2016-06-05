@@ -1,6 +1,6 @@
 // ====== OVERLAY 'PLSET-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xec00
 // overlay size   = 0x0960

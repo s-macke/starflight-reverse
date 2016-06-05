@@ -1,6 +1,6 @@
 // ====== OVERLAY 'ASSCREW-OV' ======
 
-#include"interface.h"
+#include"cpu.h"
 
 // store offset = 0xeab0
 // overlay size   = 0x0ab0
