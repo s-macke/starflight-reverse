@@ -658,8 +658,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             }
 
         } else
-#ifdef STARFLT1
-          if (par == 0x3f39) // a call, but gets a string as input? , TODO for STARFLIGHT2?
+        if (par+2 == PARPRINT) // a call, but gets a string as input? , TODO for STARFLIGHT2?
         {
             int ofstemp = ofs;
             pline[ofs+2].done = 1;
@@ -676,13 +675,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                 pline[ofs].done = 1;
                 ofs++;
             }
-            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x3f39(\"%s\");\n", str);
+            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par+2, str);
             /*
             snprintf(pline[ofs].str, STRINGLEN, "\n  dw3f39() string %i\n", length);
             ofs += length;
             */
         } else
-#endif
         if (codep == CODECALL) // call
         {
             if ((par+2 >= minaddr) && (par+2 <= maxaddr))
