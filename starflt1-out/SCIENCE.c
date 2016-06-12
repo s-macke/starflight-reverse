@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SCIENCE' ======
+// store offset = 0xe5f0
+// overlay size   = 0x0f70
 
 #include"cpu.h"
 
-// store offset = 0xe5f0
-// overlay size   = 0x0f70
 
 // =================================
 // =========== DICTIONARY ==========
@@ -241,6 +241,7 @@ void UNK_0xe760() // UNK_0xe760
 // ================================================
 // 0xe7b2: WORD '?HEAVY' codep=0x224c parp=0xe7bd
 // ================================================
+// entry
 
 void _ask_HEAVY() // ?HEAVY
 {
@@ -271,6 +272,7 @@ void UNK_0xe7cf() // UNK_0xe7cf
 // ================================================
 // 0xe7dd: WORD '.STARDATE' codep=0x224c parp=0xe7eb
 // ================================================
+// entry
 
 void _dot_STARDATE() // .STARDATE
 {
@@ -696,6 +698,7 @@ void UNK_0xea52() // UNK_0xea52
 // ================================================
 // 0xeaf8: WORD '.STAT-TEXT' codep=0x224c parp=0xeb07
 // ================================================
+// entry
 
 void _dot_STAT_dash_TEXT() // .STAT-TEXT
 {
@@ -799,6 +802,7 @@ void UNK_0xec00() // UNK_0xec00
 // ================================================
 // 0xec0a: WORD '(/STATUS)' codep=0x224c parp=0xec18
 // ================================================
+// entry
 
 void _ro__slash_STATUS_rc_() // (/STATUS)
 {
@@ -1156,6 +1160,7 @@ void UNK_0xeefe() // UNK_0xeefe
 // ================================================
 // 0xf424: WORD '(/SENSORS)' codep=0x224c parp=0xf433
 // ================================================
+// entry
 
 void _ro__slash_SENSORS_rc_() // (/SENSORS)
 {

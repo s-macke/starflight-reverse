@@ -1,9 +1,9 @@
 // ====== OVERLAY 'CAPTAIN' ======
+// store offset = 0xde20
+// overlay size   = 0x1740
 
 #include"cpu.h"
 
-// store offset = 0xde20
-// overlay size   = 0x1740
 
 // =================================
 // =========== DICTIONARY ==========
@@ -863,6 +863,7 @@ void UNK_0xe3da() // UNK_0xe3da
 // ================================================
 // 0xe41e: WORD '(/CAPT-LOG)' codep=0x224c parp=0xe42e
 // ================================================
+// entry
 
 void _ro__slash_CAPT_dash_LOG_rc_() // (/CAPT-LOG)
 {
@@ -1780,6 +1781,7 @@ void UNK_0xeef2() // UNK_0xeef2
 // ================================================
 // 0xef16: WORD '(/ITEMS)' codep=0x224c parp=0xef23
 // ================================================
+// entry
 
 void _ro__slash_ITEMS_rc_() // (/ITEMS)
 {
@@ -1884,6 +1886,7 @@ void UNK_0xefbf() // UNK_0xefbf
 // ================================================
 // 0xefc7: WORD '>DESCEND' codep=0x224c parp=0xefd4
 // ================================================
+// entry
 
 void _gt_DESCEND() // >DESCEND
 {
@@ -2032,6 +2035,7 @@ void UNK_0xf0ea() // UNK_0xf0ea
 // ================================================
 // 0xf12a: WORD '(/LAUNCH/LAND)' codep=0x224c parp=0xf13d
 // ================================================
+// entry
 
 void _ro__slash_LAUNCH_slash_LAND_rc_() // (/LAUNCH/LAND)
 {
@@ -2486,6 +2490,7 @@ void UNK_0xf3d3() // UNK_0xf3d3
 // ================================================
 // 0xf42a: WORD '(/LOG-PLAN)' codep=0x224c parp=0xf43a
 // ================================================
+// entry
 
 void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
 {

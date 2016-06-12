@@ -1,9 +1,9 @@
 // ====== OVERLAY 'LAND-OV' ======
+// store offset = 0xf120
+// overlay size   = 0x0440
 
 #include"cpu.h"
 
-// store offset = 0xf120
-// overlay size   = 0x0440
 
 // =================================
 // =========== DICTIONARY ==========
@@ -431,6 +431,7 @@ void UNK_0xf45e() // UNK_0xf45e
 // ================================================
 // 0xf494: WORD '?LAND' codep=0x224c parp=0xf49e
 // ================================================
+// entry
 
 void _ask_LAND() // ?LAND
 {
@@ -465,6 +466,7 @@ void _ask_LAND() // ?LAND
 // ================================================
 // 0xf4e9: WORD '?LAUNCH' codep=0x224c parp=0xf4f5
 // ================================================
+// entry
 
 void _ask_LAUNCH() // ?LAUNCH
 {

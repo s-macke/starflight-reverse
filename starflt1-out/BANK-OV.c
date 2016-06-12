@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BANK-OV' ======
+// store offset = 0xef70
+// overlay size   = 0x05f0
 
 #include"cpu.h"
 
-// store offset = 0xef70
-// overlay size   = 0x05f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -136,6 +136,7 @@ void UNK_0xefc5() // UNK_0xefc5
 // ================================================
 // 0xefcb: WORD '!TFLAG' codep=0x224c parp=0xefd6
 // ================================================
+// entry
 
 void _ex_TFLAG() // !TFLAG
 {
@@ -150,6 +151,7 @@ void _ex_TFLAG() // !TFLAG
 // ================================================
 // 0xefe2: WORD 'D@BALANCE' codep=0x224c parp=0xeff0
 // ================================================
+// entry
 
 void D_at_BALANCE() // D@BALANCE
 {
@@ -163,6 +165,7 @@ void D_at_BALANCE() // D@BALANCE
 // ================================================
 // 0xeffa: WORD 'D!BALANCE' codep=0x224c parp=0xf008
 // ================================================
+// entry
 
 void D_ex_BALANCE() // D!BALANCE
 {
@@ -176,6 +179,7 @@ void D_ex_BALANCE() // D!BALANCE
 // ================================================
 // 0xf012: WORD '?BALANCE' codep=0x224c parp=0xf01f
 // ================================================
+// entry
 
 void _ask_BALANCE() // ?BALANCE
 {
@@ -188,6 +192,7 @@ void _ask_BALANCE() // ?BALANCE
 // ================================================
 // 0xf027: WORD 'INIT-BALANCE' codep=0x224c parp=0xf038
 // ================================================
+// entry
 
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
@@ -203,6 +208,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 // ================================================
 // 0xf046: WORD 'TRANSACT' codep=0x224c parp=0xf053
 // ================================================
+// entry
 
 void TRANSACT() // TRANSACT
 {
@@ -276,6 +282,7 @@ void TRANSACT() // TRANSACT
 // ================================================
 // 0xf0c5: WORD 'INT%' codep=0x224c parp=0xf0ce
 // ================================================
+// entry
 
 void INT_pe_() // INT%
 {
@@ -746,6 +753,7 @@ void UNK_0xf4c4() // UNK_0xf4c4
 // ================================================
 // 0xf4e2: WORD '(U-BANK)' codep=0x224c parp=0xf4ef
 // ================================================
+// entry
 
 void _ro_U_dash_BANK_rc_() // (U-BANK)
 {

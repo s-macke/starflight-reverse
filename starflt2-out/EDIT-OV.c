@@ -1,9 +1,9 @@
 // ====== OVERLAY 'EDIT-OV' ======
+// store offset = 0xedc0
+// overlay size   = 0x07a0
 
 #include"cpu.h"
 
-// store offset = 0xedc0
-// overlay size   = 0x07a0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -952,6 +952,7 @@ void _gt_STAMP() // >STAMP
 // ================================================
 // 0xf4eb: WORD 'EDIT' codep=0x224c parp=0xf4f4
 // ================================================
+// entry
 
 void EDIT() // EDIT
 {

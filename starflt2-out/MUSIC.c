@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MUSIC' ======
+// store offset = 0xeb60
+// overlay size   = 0x0a00
 
 #include"cpu.h"
 
-// store offset = 0xeb60
-// overlay size   = 0x0a00
 
 // =================================
 // =========== DICTIONARY ==========
@@ -434,6 +434,7 @@ void INITMUS() // INITMUS
 // ================================================
 // 0xefa9: WORD 'HIMUS' codep=0x224c parp=0xefb3
 // ================================================
+// entry
 
 void HIMUS() // HIMUS
 {
@@ -752,6 +753,7 @@ void _ex_VPAL() // !VPAL
 // ================================================
 // 0xf185: WORD 'SETABLT' codep=0x224c parp=0xf191
 // ================================================
+// entry
 
 void SETABLT() // SETABLT
 {
@@ -1040,6 +1042,7 @@ void UNK_0xf388() // UNK_0xf388
 // ================================================
 // 0xf3a4: WORD 'TANDY-ALLOC' codep=0x224c parp=0xf3b4
 // ================================================
+// entry
 
 void TANDY_dash_ALLOC() // TANDY-ALLOC
 {
@@ -1216,6 +1219,7 @@ void SPLASH_dot_SCREEN() // SPLASH.SCREEN
 // ================================================
 // 0xf4d0: WORD 'INTROS' codep=0x224c parp=0xf4db
 // ================================================
+// entry
 
 void INTROS() // INTROS
 {

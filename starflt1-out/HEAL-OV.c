@@ -1,9 +1,9 @@
 // ====== OVERLAY 'HEAL-OV' ======
+// store offset = 0xf090
+// overlay size   = 0x04d0
 
 #include"cpu.h"
 
-// store offset = 0xf090
-// overlay size   = 0x04d0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -261,6 +261,7 @@ void UNK_0xf183() // UNK_0xf183
 // ================================================
 // 0xf1f7: WORD 'ROLE-C' codep=0x224c parp=0xf202
 // ================================================
+// entry
 
 void ROLE_dash_C() // ROLE-C
 {
@@ -485,6 +486,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 // ================================================
 // 0xf353: WORD '.VITS' codep=0x224c parp=0xf35d
 // ================================================
+// entry
 
 void _dot_VITS() // .VITS
 {
@@ -759,6 +761,7 @@ void UNK_0xf4c1() // UNK_0xf4c1
 // ================================================
 // 0xf50b: WORD 'OBITS' codep=0x224c parp=0xf515
 // ================================================
+// entry
 
 void OBITS() // OBITS
 {
@@ -770,6 +773,7 @@ void OBITS() // OBITS
 // ================================================
 // 0xf51b: WORD 'HEAL' codep=0x224c parp=0xf524
 // ================================================
+// entry
 
 void HEAL() // HEAL
 {

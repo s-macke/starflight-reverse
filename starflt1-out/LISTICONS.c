@@ -1,9 +1,9 @@
 // ====== OVERLAY 'LISTICONS' ======
+// store offset = 0xf290
+// overlay size   = 0x02d0
 
 #include"cpu.h"
 
-// store offset = 0xf290
-// overlay size   = 0x02d0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -251,6 +251,7 @@ void UNK_0xf48a() // UNK_0xf48a
 // ================================================
 // 0xf494: WORD 'ICONS' codep=0x224c parp=0xf49e
 // ================================================
+// entry
 
 void ICONS() // ICONS
 {

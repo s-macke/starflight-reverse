@@ -1,9 +1,9 @@
 // ====== OVERLAY 'JUMP' ======
+// store offset = 0xed30
+// overlay size   = 0x0830
 
 #include"cpu.h"
 
-// store offset = 0xed30
-// overlay size   = 0x0830
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1314,6 +1314,7 @@ void UNK_0xf482() // UNK_0xf482
 // ================================================
 // 0xf4c8: WORD 'JUMP' codep=0x224c parp=0xf4d1
 // ================================================
+// entry
 
 void JUMP() // JUMP
 {

@@ -1,9 +1,9 @@
 // ====== OVERLAY 'FLUX-EFFECT' ======
+// store offset = 0xf390
+// overlay size   = 0x01d0
 
 #include"cpu.h"
 
-// store offset = 0xf390
-// overlay size   = 0x01d0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -213,6 +213,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
 // ================================================
 // 0xf4fc: WORD 'FLUX' codep=0x224c parp=0xf505
 // ================================================
+// entry
 
 void FLUX() // FLUX
 {

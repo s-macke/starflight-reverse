@@ -1,9 +1,9 @@
 // ====== OVERLAY 'GAME-OV' ======
+// store offset = 0xde40
+// overlay size   = 0x1720
 
 #include"cpu.h"
 
-// store offset = 0xde40
-// overlay size   = 0x1720
 
 // =================================
 // =========== DICTIONARY ==========
@@ -2576,6 +2576,7 @@ void UNK_0xf504() // UNK_0xf504
 // ================================================
 // 0xf512: WORD 'GAMEOP' codep=0x224c parp=0xf51d
 // ================================================
+// entry
 
 void GAMEOP() // GAMEOP
 {
@@ -2599,6 +2600,7 @@ void UNK_0xf527() // UNK_0xf527
 // ================================================
 // 0xf52d: WORD 'START.' codep=0x224c parp=0xf538
 // ================================================
+// entry
 
 void START_dot_() // START.
 {

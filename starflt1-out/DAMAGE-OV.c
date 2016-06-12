@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DAMAGE-OV' ======
+// store offset = 0xeaa0
+// overlay size   = 0x0ac0
 
 #include"cpu.h"
 
-// store offset = 0xeaa0
-// overlay size   = 0x0ac0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1417,6 +1417,7 @@ void UNK_0xf507() // UNK_0xf507
 // ================================================
 // 0xf515: WORD 'DO-DAMA' codep=0x224c parp=0xf521
 // ================================================
+// entry
 
 void DO_dash_DAMA() // DO-DAMA
 {

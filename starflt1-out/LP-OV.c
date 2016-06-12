@@ -1,9 +1,9 @@
 // ====== OVERLAY 'LP-OV' ======
+// store offset = 0xe0c0
+// overlay size   = 0x14a0
 
 #include"cpu.h"
 
-// store offset = 0xe0c0
-// overlay size   = 0x14a0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1865,6 +1865,7 @@ void UNK_0xf4cc() // UNK_0xf4cc
 // ================================================
 // 0xf4f0: WORD 'SPEC.PARM' codep=0x224c parp=0xf4fe
 // ================================================
+// entry
 
 void SPEC_dot_PARM() // SPEC.PARM
 {

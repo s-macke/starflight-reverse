@@ -1,9 +1,9 @@
 // ====== OVERLAY 'PERSONNEL-OV' ======
+// store offset = 0xe500
+// overlay size   = 0x1060
 
 #include"cpu.h"
 
-// store offset = 0xe500
-// overlay size   = 0x1060
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1001,6 +1001,7 @@ void UNK_0xf497() // UNK_0xf497
 // ================================================
 // 0xf4fc: WORD '(U-PFILE)' codep=0x224c parp=0xf50a
 // ================================================
+// entry
 
 void _ro_U_dash_PFILE_rc_() // (U-PFILE)
 {

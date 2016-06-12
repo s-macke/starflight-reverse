@@ -1,9 +1,9 @@
 // ====== OVERLAY 'CLOUD-OV' ======
+// store offset = 0xf3b0
+// overlay size   = 0x01b0
 
 #include"cpu.h"
 
-// store offset = 0xf3b0
-// overlay size   = 0x01b0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -46,6 +46,7 @@ void _n_HUMANS() // #HUMANS
 // ================================================
 // 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
 // ================================================
+// entry
 
 void DO_dash_CLOUD() // DO-CLOUD
 {

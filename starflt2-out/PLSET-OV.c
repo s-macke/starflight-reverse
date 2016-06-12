@@ -1,9 +1,9 @@
 // ====== OVERLAY 'PLSET-OV' ======
+// store offset = 0xed50
+// overlay size   = 0x0810
 
 #include"cpu.h"
 
-// store offset = 0xed50
-// overlay size   = 0x0810
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1038,6 +1038,7 @@ void UNK_0xf501() // UNK_0xf501
 // ================================================
 // 0xf51b: WORD 'PLAN-RUL' codep=0x224c parp=0xf528
 // ================================================
+// entry
 
 void PLAN_dash_RUL() // PLAN-RUL
 {

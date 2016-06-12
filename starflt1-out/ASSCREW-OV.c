@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ASSCREW-OV' ======
+// store offset = 0xea70
+// overlay size   = 0x0af0
 
 #include"cpu.h"
 
-// store offset = 0xea70
-// overlay size   = 0x0af0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1212,6 +1212,7 @@ void UNK_0xf409() // UNK_0xf409
 // ================================================
 // 0xf44f: WORD '(U-ASSCREW)' codep=0x224c parp=0xf45f
 // ================================================
+// entry
 
 void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
 {

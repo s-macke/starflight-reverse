@@ -1,9 +1,9 @@
 // ====== OVERLAY 'CONFIG-OV' ======
+// store offset = 0xe6e0
+// overlay size   = 0x0e80
 
 #include"cpu.h"
 
-// store offset = 0xe6e0
-// overlay size   = 0x0e80
 
 // =================================
 // =========== DICTIONARY ==========
@@ -279,6 +279,7 @@ void UNK_0xeb07() // UNK_0xeb07
 // ================================================
 // 0xf4d2: WORD '(U-CONFIG)' codep=0x224c parp=0xf4e1
 // ================================================
+// entry
 
 void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
 {

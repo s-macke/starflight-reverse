@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ANALYZE-OV' ======
+// store offset = 0xeb60
+// overlay size   = 0x0a00
 
 #include"cpu.h"
 
-// store offset = 0xeb60
-// overlay size   = 0x0a00
 
 // =================================
 // =========== DICTIONARY ==========
@@ -97,6 +97,7 @@ void UNK_0xed19() // UNK_0xed19
 // ================================================
 // 0xf468: WORD '(/ANALYSIS)' codep=0x224c parp=0xf478
 // ================================================
+// entry
 
 void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
 {

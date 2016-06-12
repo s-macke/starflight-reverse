@@ -1,9 +1,9 @@
 // ====== OVERLAY 'CHKFLIGHT-OV' ======
+// store offset = 0xf170
+// overlay size   = 0x03f0
 
 #include"cpu.h"
 
-// store offset = 0xf170
-// overlay size   = 0x03f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -454,6 +454,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 // ================================================
 // 0xf504: WORD '?CAN-LEAVE' codep=0x224c parp=0xf513
 // ================================================
+// entry
 
 void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
 {

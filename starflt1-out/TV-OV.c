@@ -1,9 +1,9 @@
 // ====== OVERLAY 'TV-OV' ======
+// store offset = 0xe7d0
+// overlay size   = 0x0d90
 
 #include"cpu.h"
 
-// store offset = 0xe7d0
-// overlay size   = 0x0d90
 
 // =================================
 // =========== DICTIONARY ==========
@@ -912,6 +912,7 @@ void UNK_0xed12() // UNK_0xed12
 // ================================================
 // 0xed78: WORD 'HEAVEHO' codep=0x224c parp=0xed84
 // ================================================
+// entry
 
 void HEAVEHO() // HEAVEHO
 {
@@ -959,6 +960,7 @@ void UNK_0xed9c() // UNK_0xed9c
 // ================================================
 // 0xedc8: WORD 'TV-SETUP' codep=0x224c parp=0xedd5
 // ================================================
+// entry
 
 void TV_dash_SETUP() // TV-SETUP
 {
@@ -1625,6 +1627,7 @@ void UNK_0xf24e() // UNK_0xf24e
 // ================================================
 // 0xf274: WORD 'WALK&TALK' codep=0x224c parp=0xf282
 // ================================================
+// entry
 
 void WALK_and_TALK() // WALK&TALK
 {
@@ -1693,6 +1696,7 @@ void UNK_0xf2ce() // UNK_0xf2ce
 // ================================================
 // 0xf2de: WORD 'TV-DISP' codep=0x224c parp=0xf2ea
 // ================================================
+// entry
 
 void TV_dash_DISP() // TV-DISP
 {
@@ -1747,6 +1751,7 @@ void TV_dash_DISP() // TV-DISP
 // ================================================
 // 0xf367: WORD 'TV-CLEANU' codep=0x224c parp=0xf375
 // ================================================
+// entry
 
 void TV_dash_CLEANU() // TV-CLEANU
 {
@@ -1883,6 +1888,7 @@ void UNK_0xf44d() // UNK_0xf44d
 // ================================================
 // 0xf469: WORD 'DO.WEAPON' codep=0x224c parp=0xf477
 // ================================================
+// entry
 
 void DO_dot_WEAPON() // DO.WEAPON
 {

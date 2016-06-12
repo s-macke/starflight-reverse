@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ICONP-OV' ======
+// store offset = 0xf220
+// overlay size   = 0x0340
 
 #include"cpu.h"
 
-// store offset = 0xf220
-// overlay size   = 0x0340
 
 // =================================
 // =========== DICTIONARY ==========
@@ -114,6 +114,7 @@ void UNK_0xf4e8() // UNK_0xf4e8
 // ================================================
 // 0xf4ee: WORD 'ICON-PARM' codep=0x224c parp=0xf4fc
 // ================================================
+// entry
 
 void ICON_dash_PARM() // ICON-PARM
 {
@@ -141,6 +142,7 @@ void _plus_ICP() // +ICP
 // ================================================
 // 0xf51b: WORD '+ICONBOX' codep=0x224c parp=0xf528
 // ================================================
+// entry
 
 void _plus_ICONBOX() // +ICONBOX
 {

@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DPART-OV' ======
+// store offset = 0xef50
+// overlay size   = 0x0610
 
 #include"cpu.h"
 
-// store offset = 0xef50
-// overlay size   = 0x0610
 
 // =================================
 // =========== DICTIONARY ==========
@@ -748,6 +748,7 @@ void UNK_0xf430() // UNK_0xf430
 // ================================================
 // 0xf483: WORD 'DEPART' codep=0x224c parp=0xf48e
 // ================================================
+// entry
 
 void DEPART() // DEPART
 {

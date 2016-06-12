@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SEED-OV' ======
+// store offset = 0xec00
+// overlay size   = 0x0960
 
 #include"cpu.h"
 
-// store offset = 0xec00
-// overlay size   = 0x0960
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1543,6 +1543,7 @@ void UNK_0xf492() // UNK_0xf492
 // ================================================
 // 0xf4c8: WORD 'POPULA' codep=0x224c parp=0xf4d3
 // ================================================
+// entry
 
 void POPULA() // POPULA
 {

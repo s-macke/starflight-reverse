@@ -1,9 +1,9 @@
 // ====== OVERLAY 'COMBAT-OV' ======
+// store offset = 0xdd30
+// overlay size   = 0x1830
 
 #include"cpu.h"
 
-// store offset = 0xdd30
-// overlay size   = 0x1830
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1370,6 +1370,7 @@ void UNK_0xec0b() // UNK_0xec0b
 // ================================================
 // 0xec3d: WORD 'SET-SCALE' codep=0x224c parp=0xec4b
 // ================================================
+// entry
 
 void SET_dash_SCALE() // SET-SCALE
 {
@@ -1557,6 +1558,7 @@ void UNK_0xef20() // UNK_0xef20
 // ================================================
 // 0xef30: WORD 'COMBAT' codep=0x224c parp=0xef3b
 // ================================================
+// entry
 
 void COMBAT() // COMBAT
 {
@@ -1620,6 +1622,7 @@ void COMBAT() // COMBAT
 // ================================================
 // 0xf4b5: WORD 'WAR' codep=0x224c parp=0xf4bd
 // ================================================
+// entry
 
 void WAR() // WAR
 {
@@ -1642,6 +1645,7 @@ void WAR() // WAR
 // ================================================
 // 0xf4df: WORD 'CLEAR-CO' codep=0x224c parp=0xf4ec
 // ================================================
+// entry
 
 void CLEAR_dash_CO() // CLEAR-CO
 {

@@ -1,9 +1,9 @@
 // ====== OVERLAY 'WEAPONS' ======
+// store offset = 0xec10
+// overlay size   = 0x0950
 
 #include"cpu.h"
 
-// store offset = 0xec10
-// overlay size   = 0x0950
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1342,6 +1342,7 @@ void UNK_0xf306() // UNK_0xf306
 // ================================================
 // 0xf344: WORD 'GNUNK>NUL' codep=0x224c parp=0xf352
 // ================================================
+// entry
 
 void GNUNK_gt_NUL() // GNUNK>NUL
 {
@@ -1500,6 +1501,7 @@ void UNK_0xf476() // UNK_0xf476
 // ================================================
 // 0xf486: WORD 'DONULL' codep=0x224c parp=0xf491
 // ================================================
+// entry
 
 void DONULL() // DONULL
 {
@@ -1576,6 +1578,7 @@ void DONULL() // DONULL
 // ================================================
 // 0xf517: WORD 'TARG' codep=0x224c parp=0xf520
 // ================================================
+// entry
 
 void TARG() // TARG
 {

@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MAP-OV' ======
+// store offset = 0xe340
+// overlay size   = 0x1220
 
 #include"cpu.h"
 
-// store offset = 0xe340
-// overlay size   = 0x1220
 
 // =================================
 // =========== DICTIONARY ==========
@@ -2040,6 +2040,7 @@ void UNK_0xf131() // UNK_0xf131
 // ================================================
 // 0xf151: WORD '(/STARMAP)' codep=0x224c parp=0xf160
 // ================================================
+// entry
 
 void _ro__slash_STARMAP_rc_() // (/STARMAP)
 {

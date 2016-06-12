@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MOVE-OV' ======
+// store offset = 0xea20
+// overlay size   = 0x0b40
 
 #include"cpu.h"
 
-// store offset = 0xea20
-// overlay size   = 0x0b40
 
 // =================================
 // =========== DICTIONARY ==========
@@ -191,6 +191,7 @@ void UNK_0xeb23() // UNK_0xeb23
 // ================================================
 // 0xeb51: WORD 'SET-SPE' codep=0x224c parp=0xeb5d
 // ================================================
+// entry
 
 void SET_dash_SPE() // SET-SPE
 {
@@ -837,6 +838,7 @@ void UNK_0xf0b9() // UNK_0xf0b9
 // ================================================
 // 0xf0bf: WORD '?POPULA' codep=0x224c parp=0xf0cb
 // ================================================
+// entry
 
 void _ask_POPULA() // ?POPULA
 {
@@ -1038,6 +1040,7 @@ void UNK_0xf30d() // UNK_0xf30d
 // ================================================
 // 0xf4e9: WORD 'TELE' codep=0x224c parp=0xf4f2
 // ================================================
+// entry
 
 void TELE() // TELE
 {
@@ -1064,6 +1067,7 @@ void TELE() // TELE
 // ================================================
 // 0xf52f: WORD 'TV-MOVE' codep=0x224c parp=0xf53b
 // ================================================
+// entry
 
 void TV_dash_MOVE() // TV-MOVE
 {

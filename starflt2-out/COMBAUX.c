@@ -1,9 +1,9 @@
 // ====== OVERLAY 'COMBAUX' ======
+// store offset = 0xf2b0
+// overlay size   = 0x02b0
 
 #include"cpu.h"
 
-// store offset = 0xf2b0
-// overlay size   = 0x02b0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -388,6 +388,7 @@ void UNK_0xf4e4() // UNK_0xf4e4
 // ================================================
 // 0xf4ec: WORD 'SET-SC' codep=0x224c parp=0xf4f7
 // ================================================
+// entry
 
 void SET_dash_SC() // SET-SC
 {
@@ -428,6 +429,7 @@ void SET_dash_SC() // SET-SC
 // ================================================
 // 0xf533: WORD '@NF' codep=0x224c parp=0xf53b
 // ================================================
+// entry
 
 void _at_NF() // @NF
 {

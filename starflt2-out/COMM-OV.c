@@ -1,9 +1,9 @@
 // ====== OVERLAY 'COMM-OV' ======
+// store offset = 0xd7e0
+// overlay size   = 0x1d80
 
 #include"cpu.h"
 
-// store offset = 0xd7e0
-// overlay size   = 0x1d80
 
 // =================================
 // =========== DICTIONARY ==========
@@ -634,6 +634,7 @@ void UNK_0xda98() // UNK_0xda98
 // ================================================
 // 0xdaa8: WORD 'ORIGINATOR>' codep=0x224c parp=0xdab8
 // ================================================
+// entry
 
 void ORIGINATOR_gt_() // ORIGINATOR>
 {
@@ -653,6 +654,7 @@ void ORIGINATOR_gt_() // ORIGINATOR>
 // ================================================
 // 0xdace: WORD 'A>ORIGINATO' codep=0x224c parp=0xdade
 // ================================================
+// entry
 
 void A_gt_ORIGINATO() // A>ORIGINATO
 {
@@ -883,6 +885,7 @@ void UNK_0xdc83() // UNK_0xdc83
 // ================================================
 // 0xdcd5: WORD 'EDL>P' codep=0x224c parp=0xdcdf
 // ================================================
+// entry
 
 void EDL_gt_P() // EDL>P
 {
@@ -897,6 +900,7 @@ void EDL_gt_P() // EDL>P
 // ================================================
 // 0xdceb: WORD '+!EDL' codep=0x224c parp=0xdcf5
 // ================================================
+// entry
 
 void _plus__ex_EDL() // +!EDL
 {
@@ -949,6 +953,7 @@ void UNK_0xde55() // UNK_0xde55
 // ================================================
 // 0xde71: WORD '>HAIL$' codep=0x224c parp=0xde7c
 // ================================================
+// entry
 
 void _gt_HAIL_do_() // >HAIL$
 {
@@ -1090,6 +1095,7 @@ void UNK_0xdf92() // UNK_0xdf92
 // ================================================
 // 0xdf9e: WORD '1SYL' codep=0x224c parp=0xdfa7
 // ================================================
+// entry
 
 void _1SYL() // 1SYL
 {
@@ -1367,6 +1373,7 @@ void UNK_0xe1cd() // UNK_0xe1cd
 // ================================================
 // 0xe1db: WORD 'CTSCROLL' codep=0x224c parp=0xe1e8
 // ================================================
+// entry
 
 void CTSCROLL() // CTSCROLL
 {
@@ -1496,6 +1503,7 @@ void UNK_0xe3e1() // UNK_0xe3e1
 // ================================================
 // 0xe3fb: WORD '(PHRASE>CT)' codep=0x224c parp=0xe40b
 // ================================================
+// entry
 
 void _ro_PHRASE_gt_CT_rc_() // (PHRASE>CT)
 {
@@ -1849,6 +1857,7 @@ void UNK_0xee5f() // UNK_0xee5f
 // ================================================
 // 0xefd5: WORD 'EDL+AUX' codep=0x224c parp=0xefe1
 // ================================================
+// entry
 
 void EDL_plus_AUX() // EDL+AUX
 {
@@ -1871,6 +1880,7 @@ void EDL_plus_AUX() // EDL+AUX
 // ================================================
 // 0xf003: WORD 'COMM-EXPERT' codep=0x224c parp=0xf013
 // ================================================
+// entry
 
 void COMM_dash_EXPERT() // COMM-EXPERT
 {
@@ -2107,6 +2117,7 @@ void UNK_0xf1dc() // UNK_0xf1dc
 // ================================================
 // 0xf20a: WORD 'CL1' codep=0x224c parp=0xf212
 // ================================================
+// entry
 
 void CL1() // CL1
 {
@@ -2444,6 +2455,7 @@ void UNK_0xf45e() // UNK_0xf45e
 // ================================================
 // 0xf474: WORD 'IAPWR' codep=0x224c parp=0xf47e
 // ================================================
+// entry
 
 void IAPWR() // IAPWR
 {
@@ -2546,6 +2558,7 @@ void UNK_0xf4fa() // UNK_0xf4fa
 // ================================================
 // 0xf524: WORD 'ICOMM' codep=0x224c parp=0xf52e
 // ================================================
+// entry
 
 void ICOMM() // ICOMM
 {

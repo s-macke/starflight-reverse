@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ORBIT-OV' ======
+// store offset = 0xdb70
+// overlay size   = 0x19f0
 
 #include"cpu.h"
 
-// store offset = 0xdb70
-// overlay size   = 0x19f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1989,6 +1989,7 @@ void UNK_0xe6dc() // UNK_0xe6dc
 // ================================================
 // 0xe6f6: WORD 'SHOWSITE' codep=0x224c parp=0xe703
 // ================================================
+// entry
 
 void SHOWSITE() // SHOWSITE
 {
@@ -2889,6 +2890,7 @@ void UNK_0xebd1() // UNK_0xebd1
 // ================================================
 // 0xec59: WORD 'SEEGRID' codep=0x224c parp=0xec65
 // ================================================
+// entry
 
 void SEEGRID() // SEEGRID
 {
@@ -3792,6 +3794,7 @@ void UNK_0xf19d() // UNK_0xf19d
 // ================================================
 // 0xf1ab: WORD 'DESCEND' codep=0x224c parp=0xf1b7
 // ================================================
+// entry
 
 void DESCEND() // DESCEND
 {
@@ -4014,6 +4017,7 @@ void UNK_0xf314() // UNK_0xf314
 // ================================================
 // 0xf37c: WORD 'ASCEND' codep=0x224c parp=0xf387
 // ================================================
+// entry
 
 void ASCEND() // ASCEND
 {
@@ -4112,6 +4116,7 @@ void UNK_0xf413() // UNK_0xf413
 // ================================================
 // 0xf41f: WORD 'INIT-ORBIT' codep=0x224c parp=0xf42e
 // ================================================
+// entry
 
 void INIT_dash_ORBIT() // INIT-ORBIT
 {
@@ -4160,6 +4165,7 @@ void INIT_dash_ORBIT() // INIT-ORBIT
 // ================================================
 // 0xf486: WORD 'ROTATE' codep=0x224c parp=0xf491
 // ================================================
+// entry
 
 void ROTATE() // ROTATE
 {

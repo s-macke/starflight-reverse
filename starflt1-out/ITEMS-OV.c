@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ITEMS-OV' ======
+// store offset = 0xdde0
+// overlay size   = 0x1780
 
 #include"cpu.h"
 
-// store offset = 0xdde0
-// overlay size   = 0x1780
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1256,6 +1256,7 @@ void UNK_0xf43a() // UNK_0xf43a
 // ================================================
 // 0xf442: WORD '>DEBRIS' codep=0x224c parp=0xf44e
 // ================================================
+// entry
 
 void _gt_DEBRIS() // >DEBRIS
 {
@@ -1309,6 +1310,7 @@ void UNK_0xf480() // UNK_0xf480
 // ================================================
 // 0xf48e: WORD '(/ITEMS)' codep=0x224c parp=0xf49b
 // ================================================
+// entry
 
 void _ro__slash_ITEMS_rc_() // (/ITEMS)
 {

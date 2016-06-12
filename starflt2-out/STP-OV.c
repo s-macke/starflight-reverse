@@ -1,9 +1,9 @@
 // ====== OVERLAY 'STP-OV' ======
+// store offset = 0xf070
+// overlay size   = 0x04f0
 
 #include"cpu.h"
 
-// store offset = 0xf070
-// overlay size   = 0x04f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -86,6 +86,7 @@ const unsigned short int cc_UNK_0xf18c = 0x0014; // UNK_0xf18c
 // ================================================
 // 0xf0c7: WORD 'MP'ER' codep=0x224c parp=0xf0d1
 // ================================================
+// entry
 
 void MP_i_ER() // MP'ER
 {
@@ -691,6 +692,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 // ================================================
 // 0xf4cc: WORD 'SP' codep=0x224c parp=0xf4d3
 // ================================================
+// entry
 
 void SP() // SP
 {
@@ -715,6 +717,7 @@ void SP() // SP
 // ================================================
 // 0xf4f1: WORD '2N' codep=0x224c parp=0xf4f8
 // ================================================
+// entry
 
 void _2N() // 2N
 {

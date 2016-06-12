@@ -1,9 +1,9 @@
 // ====== OVERLAY 'NAVIGATR' ======
+// store offset = 0xf180
+// overlay size   = 0x03e0
 
 #include"cpu.h"
 
-// store offset = 0xf180
-// overlay size   = 0x03e0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -150,6 +150,7 @@ void UNK_0xf202() // UNK_0xf202
 // ================================================
 // 0xf232: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf243
 // ================================================
+// entry
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
@@ -279,6 +280,7 @@ void UNK_0xf311() // UNK_0xf311
 // ================================================
 // 0xf39d: WORD '>DISARM' codep=0x224c parp=0xf3a9
 // ================================================
+// entry
 
 void _gt_DISARM() // >DISARM
 {
@@ -388,6 +390,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
 // ================================================
 // 0xf4c9: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4d9
 // ================================================
+// entry
 
 void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 {
@@ -414,6 +417,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 // ================================================
 // 0xf4f9: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf50b
 // ================================================
+// entry
 
 void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
 {

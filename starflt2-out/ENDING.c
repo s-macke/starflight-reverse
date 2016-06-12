@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ENDING' ======
+// store offset = 0xe7f0
+// overlay size   = 0x0d70
 
 #include"cpu.h"
 
-// store offset = 0xe7f0
-// overlay size   = 0x0d70
 
 // =================================
 // =========== DICTIONARY ==========
@@ -272,6 +272,7 @@ void UNK_0xe86a() // UNK_0xe86a
 // ================================================
 // 0xe8ac: WORD 'FREEB' codep=0x224c parp=0xe8b6
 // ================================================
+// entry
 
 void FREEB() // FREEB
 {
@@ -2147,6 +2148,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
 // ================================================
 // 0xf40c: WORD 'BOLT' codep=0x224c parp=0xf415
 // ================================================
+// entry
 
 void BOLT() // BOLT
 {
@@ -2303,6 +2305,7 @@ void UNK_0xf4f5() // UNK_0xf4f5
 // ================================================
 // 0xf509: WORD 'DO-HALLS' codep=0x224c parp=0xf516
 // ================================================
+// entry
 
 void DO_dash_HALLS() // DO-HALLS
 {
@@ -2320,6 +2323,7 @@ void DO_dash_HALLS() // DO-HALLS
 // ================================================
 // 0xf52c: WORD '!INIT' codep=0x224c parp=0xf536
 // ================================================
+// entry
 
 void _ex_INIT() // !INIT
 {
@@ -2331,6 +2335,7 @@ void _ex_INIT() // !INIT
 // ================================================
 // 0xf53c: WORD 'DUHL' codep=0x224c parp=0xf545
 // ================================================
+// entry
 
 void DUHL() // DUHL
 {

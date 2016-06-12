@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SENT-OV' ======
+// store offset = 0xe2b0
+// overlay size   = 0x12b0
 
 #include"cpu.h"
 
-// store offset = 0xe2b0
-// overlay size   = 0x12b0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1368,6 +1368,7 @@ void SAYIT() // SAYIT
 // ================================================
 // 0xf2e0: WORD 'CLASS>DE' codep=0x4a4f parp=0xf2ed
 // ================================================
+// entry
 // 0xf2ed: db 0x08 0x00 0x6b 0x26 0x44 0x00 0xce 0xf0 0x2a 0x00 0x7b 0xf2 0x28 0x00 0x99 0xf2 0x14 0x00 0x1e 0xf2 0x29 0x00 0xbf 0xf2 0x1a 0x00 0x45 0xf2 0x1c 0x00 0x31 0xf2 0x1b 0x00 0xcf 0xf2 '  k&D   * { (       )     E   1     '
 
 // ================================================
@@ -1378,6 +1379,7 @@ void SAYIT() // SAYIT
 // ================================================
 // 0xf342: WORD '?TALK' codep=0x224c parp=0xf34c
 // ================================================
+// entry
 
 void _ask_TALK() // ?TALK
 {

@@ -1,9 +1,9 @@
 // ====== OVERLAY 'COMBAT-OV' ======
+// store offset = 0xdd00
+// overlay size   = 0x1860
 
 #include"cpu.h"
 
-// store offset = 0xdd00
-// overlay size   = 0x1860
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1450,6 +1450,7 @@ void UNK_0xece4() // UNK_0xece4
 // ================================================
 // 0xecee: WORD '?J' codep=0x224c parp=0xecf5
 // ================================================
+// entry
 
 void _ask_J() // ?J
 {
@@ -1838,6 +1839,7 @@ void COMBAT() // COMBAT
 // ================================================
 // 0xf4e6: WORD 'WAR' codep=0x224c parp=0xf4ee
 // ================================================
+// entry
 
 void WAR() // WAR
 {
@@ -1857,6 +1859,7 @@ void WAR() // WAR
 // ================================================
 // 0xf50a: WORD 'CLEAR-CO' codep=0x224c parp=0xf517
 // ================================================
+// entry
 
 void CLEAR_dash_CO() // CLEAR-CO
 {
@@ -1886,6 +1889,7 @@ void CLEAR_dash_CO() // CLEAR-CO
 // ================================================
 // 0xf547: WORD '(COMB)' codep=0x224c parp=0xf552
 // ================================================
+// entry
 
 void _ro_COMB_rc_() // (COMB)
 {

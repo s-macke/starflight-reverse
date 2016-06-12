@@ -1,9 +1,9 @@
 // ====== OVERLAY 'STP-OV' ======
+// store offset = 0xefc0
+// overlay size   = 0x05a0
 
 #include"cpu.h"
 
-// store offset = 0xefc0
-// overlay size   = 0x05a0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -60,6 +60,7 @@ unsigned char UNK_0xf2cd[24] = {0x0c, 0x0f, 0x1d, 0x01, 0x17, 0x06, 0x0b, 0x25, 
 // ================================================
 // 0xefdd: WORD 'SIC'EM' codep=0x224c parp=0xefe8
 // ================================================
+// entry
 
 void SIC_i_EM() // SIC'EM
 {
@@ -408,6 +409,7 @@ void UNK_0xf48f() // UNK_0xf48f
 // ================================================
 // 0xf4b7: WORD 'STP' codep=0x224c parp=0xf4bf
 // ================================================
+// entry
 
 void STP() // STP
 {
@@ -435,6 +437,7 @@ void STP() // STP
 // ================================================
 // 0xf4eb: WORD '2NDS' codep=0x224c parp=0xf4f4
 // ================================================
+// entry
 
 void _2NDS() // 2NDS
 {

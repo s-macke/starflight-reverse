@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MUSIC' ======
+// store offset = 0xe200
+// overlay size   = 0x1360
 
 #include"cpu.h"
 
-// store offset = 0xe200
-// overlay size   = 0x1360
 
 // =================================
 // =========== DICTIONARY ==========
@@ -874,6 +874,7 @@ void CREDIT_dot_SCREEN() // CREDIT.SCREEN
 // ================================================
 // 0xe99c: WORD 'INTROS' codep=0x224c parp=0xe9a7
 // ================================================
+// entry
 
 void INTROS() // INTROS
 {

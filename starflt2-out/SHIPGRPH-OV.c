@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SHIPGRPH-OV' ======
+// store offset = 0xecb0
+// overlay size   = 0x08b0
 
 #include"cpu.h"
 
-// store offset = 0xecb0
-// overlay size   = 0x08b0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -172,6 +172,7 @@ void UNK_0xed65() // UNK_0xed65
 // ================================================
 // 0xee5f: WORD '(.MASS)' codep=0x224c parp=0xee6b
 // ================================================
+// entry
 
 void _ro__dot_MASS_rc_() // (.MASS)
 {
@@ -243,6 +244,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
 // ================================================
 // 0xeef7: WORD '(.ACC)' codep=0x224c parp=0xef02
 // ================================================
+// entry
 
 void _ro__dot_ACC_rc_() // (.ACC)
 {
@@ -521,6 +523,7 @@ void UNK_0xf106() // UNK_0xf106
 // ================================================
 // 0xf118: WORD '(.PODS)' codep=0x224c parp=0xf124
 // ================================================
+// entry
 
 void _ro__dot_PODS_rc_() // (.PODS)
 {
@@ -658,6 +661,7 @@ void UNK_0xf1d4() // UNK_0xf1d4
 // ================================================
 // 0xf20a: WORD '(.SHIP)' codep=0x224c parp=0xf216
 // ================================================
+// entry
 
 void _ro__dot_SHIP_rc_() // (.SHIP)
 {
@@ -677,6 +681,7 @@ void _ro__dot_SHIP_rc_() // (.SHIP)
 // ================================================
 // 0xf22c: WORD '(BALANC' codep=0x224c parp=0xf238
 // ================================================
+// entry
 
 void _ro_BALANC() // (BALANC
 {
@@ -921,6 +926,7 @@ void UNK_0xf478() // UNK_0xf478
 // ================================================
 // 0xf549: WORD '(.CONFI' codep=0x224c parp=0xf555
 // ================================================
+// entry
 
 void _ro__dot_CONFI() // (.CONFI
 {

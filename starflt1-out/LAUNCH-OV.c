@@ -1,9 +1,9 @@
 // ====== OVERLAY 'LAUNCH-OV' ======
+// store offset = 0xf010
+// overlay size   = 0x0550
 
 #include"cpu.h"
 
-// store offset = 0xf010
-// overlay size   = 0x0550
 
 // =================================
 // =========== DICTIONARY ==========
@@ -332,6 +332,7 @@ void UNK_0xf1de() // UNK_0xf1de
 // ================================================
 // 0xf22e: WORD '.AIRLOCK' codep=0x224c parp=0xf23b
 // ================================================
+// entry
 
 void _dot_AIRLOCK() // .AIRLOCK
 {
@@ -539,6 +540,7 @@ void UNK_0xf393() // UNK_0xf393
 // ================================================
 // 0xf3ef: WORD '&LAUNCH' codep=0x224c parp=0xf3fb
 // ================================================
+// entry
 
 void _and_LAUNCH() // &LAUNCH
 {
@@ -571,6 +573,7 @@ void _and_LAUNCH() // &LAUNCH
 // ================================================
 // 0xf449: WORD '&RETURN' codep=0x224c parp=0xf455
 // ================================================
+// entry
 
 void _and_RETURN() // &RETURN
 {

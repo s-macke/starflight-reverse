@@ -1,9 +1,9 @@
 // ====== OVERLAY 'REPAIR-OV' ======
+// store offset = 0xeec0
+// overlay size   = 0x06a0
 
 #include"cpu.h"
 
-// store offset = 0xeec0
-// overlay size   = 0x06a0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1060,6 +1060,7 @@ void UNK_0xf4bd() // UNK_0xf4bd
 // ================================================
 // 0xf4d7: WORD 'DO-REPA' codep=0x224c parp=0xf4e3
 // ================================================
+// entry
 
 void DO_dash_REPA() // DO-REPA
 {

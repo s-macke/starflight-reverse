@@ -1,9 +1,9 @@
 // ====== OVERLAY 'TDEPOT-OV' ======
+// store offset = 0xe2a0
+// overlay size   = 0x12c0
 
 #include"cpu.h"
 
-// store offset = 0xe2a0
-// overlay size   = 0x12c0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -504,6 +504,7 @@ void UNK_0xeb74() // UNK_0xeb74
 // ================================================
 // 0xebe2: WORD 'KEY-ELEM-AMT' codep=0x224c parp=0xebf3
 // ================================================
+// entry
 
 void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 {
@@ -589,6 +590,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 // ================================================
 // 0xf156: WORD 'SELL-IT' codep=0x224c parp=0xf162
 // ================================================
+// entry
 
 void SELL_dash_IT() // SELL-IT
 {
@@ -643,6 +645,7 @@ void SELL_dash_IT() // SELL-IT
 // ================================================
 // 0xf44f: WORD '(U-DEPOT)' codep=0x224c parp=0xf45d
 // ================================================
+// entry
 
 void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
 {
@@ -703,6 +706,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
 // ================================================
 // 0xf4bf: WORD '<TDART' codep=0x224c parp=0xf4ca
 // ================================================
+// entry
 
 void _st_TDART() // <TDART
 {

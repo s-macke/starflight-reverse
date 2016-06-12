@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SITE-OV' ======
+// store offset = 0xee00
+// overlay size   = 0x0760
 
 #include"cpu.h"
 
-// store offset = 0xee00
-// overlay size   = 0x0760
 
 // =================================
 // =========== DICTIONARY ==========
@@ -944,6 +944,7 @@ void GETSITE() // GETSITE
 // ================================================
 // 0xf4c1: WORD '.MERCATOR' codep=0x224c parp=0xf4cf
 // ================================================
+// entry
 
 void _dot_MERCATOR() // .MERCATOR
 {
@@ -996,6 +997,7 @@ void _dot_MERCATOR() // .MERCATOR
 // ================================================
 // 0xf52b: WORD 'GETSITE' codep=0x224c parp=0xf537
 // ================================================
+// entry
 
 void GETSITE() // GETSITE
 {

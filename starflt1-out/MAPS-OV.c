@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MAPS-OV' ======
+// store offset = 0xeca0
+// overlay size   = 0x08c0
 
 #include"cpu.h"
 
-// store offset = 0xeca0
-// overlay size   = 0x08c0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -432,6 +432,7 @@ void UNK_0xef1a() // UNK_0xef1a
 // ================================================
 // 0xef30: WORD '2X2CONTOUR' codep=0x224c parp=0xef3f
 // ================================================
+// entry
 
 void _2X2CONTOUR() // 2X2CONTOUR
 {
@@ -462,6 +463,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
 // ================================================
 // 0xef73: WORD '4X4CONTOUR' codep=0x224c parp=0xef82
 // ================================================
+// entry
 
 void _4X4CONTOUR() // 4X4CONTOUR
 {
@@ -634,6 +636,7 @@ void UNK_0xf007() // UNK_0xf007
 // ================================================
 // 0xf0c1: WORD '8X8CONTOUR' codep=0x224c parp=0xf0d0
 // ================================================
+// entry
 
 void _8X8CONTOUR() // 8X8CONTOUR
 {
@@ -1149,6 +1152,7 @@ void UNK_0xf50a() // UNK_0xf50a
 // ================================================
 // 0xf512: WORD 'MAPS' codep=0x224c parp=0xf51b
 // ================================================
+// entry
 
 void MAPS() // MAPS
 {
@@ -1176,6 +1180,7 @@ void MAPS() // MAPS
 // ================================================
 // 0xf541: WORD '.STORM' codep=0x224c parp=0xf54c
 // ================================================
+// entry
 
 void _dot_STORM() // .STORM
 {

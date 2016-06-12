@@ -1,9 +1,9 @@
 // ====== OVERLAY 'CULTURE' ======
+// store offset = 0xef40
+// overlay size   = 0x0620
 
 #include"cpu.h"
 
-// store offset = 0xef40
-// overlay size   = 0x0620
 
 // =================================
 // =========== DICTIONARY ==========
@@ -406,6 +406,7 @@ void UNK_0xf1bb() // UNK_0xf1bb
 // ================================================
 // 0xf213: WORD '.RACE' codep=0x224c parp=0xf21d
 // ================================================
+// entry
 
 void _dot_RACE() // .RACE
 {
@@ -572,6 +573,7 @@ void UNK_0xf444() // UNK_0xf444
 // ================================================
 // 0xf4e4: WORD '.CULTURE' codep=0x224c parp=0xf4f1
 // ================================================
+// entry
 
 void _dot_CULTURE() // .CULTURE
 {

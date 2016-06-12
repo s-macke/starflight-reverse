@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DAMAGE-OV' ======
+// store offset = 0xe6c0
+// overlay size   = 0x0ea0
 
 #include"cpu.h"
 
-// store offset = 0xe6c0
-// overlay size   = 0x0ea0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -609,6 +609,7 @@ void UNK_0xe9fe() // UNK_0xe9fe
 // ================================================
 // 0xea08: WORD 'REFRESH' codep=0x224c parp=0xea14
 // ================================================
+// entry
 
 void REFRESH() // REFRESH
 {
@@ -680,6 +681,7 @@ void UNK_0xea4a() // UNK_0xea4a
 // ================================================
 // 0xea70: WORD '#WOUNDE' codep=0x1d29 parp=0xea7c
 // ================================================
+// entry
 // 0xea7c: db 0x00 0x00 '  '
 
 // ================================================
@@ -1523,6 +1525,7 @@ void UNK_0xf125() // UNK_0xf125
 // ================================================
 // 0xf145: WORD 'DO-ADAM' codep=0x224c parp=0xf151
 // ================================================
+// entry
 
 void DO_dash_ADAM() // DO-ADAM
 {
@@ -1741,6 +1744,7 @@ void UNK_0xf283() // UNK_0xf283
 // ================================================
 // 0xf2e7: WORD 'CDAM' codep=0x224c parp=0xf2f0
 // ================================================
+// entry
 
 void CDAM() // CDAM
 {
@@ -1998,6 +2002,7 @@ void UNK_0xf4fb() // UNK_0xf4fb
 // ================================================
 // 0xf509: WORD 'DO-DAMA' codep=0x224c parp=0xf515
 // ================================================
+// entry
 
 void DO_dash_DAMA() // DO-DAMA
 {
@@ -2013,6 +2018,7 @@ void DO_dash_DAMA() // DO-DAMA
 // ================================================
 // 0xf523: WORD 'DOBLAST' codep=0x224c parp=0xf52f
 // ================================================
+// entry
 
 void DOBLAST() // DOBLAST
 {

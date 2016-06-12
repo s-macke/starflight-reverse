@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SHIPCON' ======
+// store offset = 0xf360
+// overlay size   = 0x0200
 
 #include"cpu.h"
 
-// store offset = 0xf360
-// overlay size   = 0x0200
 
 // =================================
 // =========== DICTIONARY ==========
@@ -53,6 +53,7 @@ void UNK_0xf37b() // UNK_0xf37b
 // ================================================
 // 0xf38b: WORD '.NOFUN' codep=0x224c parp=0xf396
 // ================================================
+// entry
 
 void _dot_NOFUN() // .NOFUN
 {
@@ -247,6 +248,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 // ================================================
 // 0xf4cc: WORD 'TOW-US' codep=0x224c parp=0xf4d7
 // ================================================
+// entry
 
 void TOW_dash_US() // TOW-US
 {

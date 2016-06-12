@@ -1,9 +1,9 @@
 // ====== OVERLAY 'FRACT-OV' ======
+// store offset = 0xe340
+// overlay size   = 0x1220
 
 #include"cpu.h"
 
-// store offset = 0xe340
-// overlay size   = 0x1220
 
 // =================================
 // =========== DICTIONARY ==========
@@ -678,6 +678,7 @@ void UNK_0xe78c() // UNK_0xe78c
 // ================================================
 // 0xe7a8: WORD 'MERCATOR-GEN' codep=0x224c parp=0xe7b9
 // ================================================
+// entry
 
 void MERCATOR_dash_GEN() // MERCATOR-GEN
 {
@@ -2042,6 +2043,7 @@ void UNK_0xef86() // UNK_0xef86
 // ================================================
 // 0xef9e: WORD 'MAKE-GLOBE' codep=0x224c parp=0xefad
 // ================================================
+// entry
 
 void MAKE_dash_GLOBE() // MAKE-GLOBE
 {
@@ -2237,6 +2239,7 @@ void UNK_0xf08b() // UNK_0xf08b
 // ================================================
 // 0xf0cb: WORD 'SCRLCON' codep=0x224c parp=0xf0d7
 // ================================================
+// entry
 
 void SCRLCON() // SCRLCON
 {
@@ -2260,6 +2263,7 @@ void SCRLCON() // SCRLCON
 // ================================================
 // 0xf0f9: WORD 'NEWCONTOUR' codep=0x224c parp=0xf108
 // ================================================
+// entry
 
 void NEWCONTOUR() // NEWCONTOUR
 {

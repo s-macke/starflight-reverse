@@ -1,9 +1,9 @@
 // ====== OVERLAY 'SHIPBUTTONS' ======
+// store offset = 0xeda0
+// overlay size   = 0x07c0
 
 #include"cpu.h"
 
-// store offset = 0xeda0
-// overlay size   = 0x07c0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -147,6 +147,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
 // ================================================
 // 0xf4ac: WORD '>FLT' codep=0x224c parp=0xf4b5
 // ================================================
+// entry
 
 void _gt_FLT() // >FLT
 {

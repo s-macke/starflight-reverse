@@ -1,9 +1,9 @@
 // ====== OVERLAY 'OP-OV' ======
+// store offset = 0xe430
+// overlay size   = 0x1130
 
 #include"cpu.h"
 
-// store offset = 0xe430
-// overlay size   = 0x1130
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1030,6 +1030,7 @@ void UNK_0xf47a() // UNK_0xf47a
 // ================================================
 // 0xf4f0: WORD '(U-OP)' codep=0x224c parp=0xf4fb
 // ================================================
+// entry
 
 void _ro_U_dash_OP_rc_() // (U-OP)
 {

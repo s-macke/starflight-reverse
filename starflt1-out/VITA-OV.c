@@ -1,9 +1,9 @@
 // ====== OVERLAY 'VITA-OV' ======
+// store offset = 0xe780
+// overlay size   = 0x0de0
 
 #include"cpu.h"
 
-// store offset = 0xe780
-// overlay size   = 0x0de0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1234,6 +1234,7 @@ void UNK_0xf448() // UNK_0xf448
 // ================================================
 // 0xf494: WORD 'DIO' codep=0x224c parp=0xf49c
 // ================================================
+// entry
 
 void DIO() // DIO
 {

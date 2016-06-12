@@ -1,9 +1,9 @@
 // ====== OVERLAY 'HP-OV' ======
+// store offset = 0xe280
+// overlay size   = 0x12e0
 
 #include"cpu.h"
 
-// store offset = 0xe280
-// overlay size   = 0x12e0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1661,6 +1661,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 // ================================================
 // 0xf4ec: WORD 'C+OPARMS' codep=0x224c parp=0xf4f9
 // ================================================
+// entry
 
 void C_plus_OPARMS() // C+OPARMS
 {

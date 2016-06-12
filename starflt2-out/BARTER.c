@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BARTER' ======
+// store offset = 0xdfc0
+// overlay size   = 0x15a0
 
 #include"cpu.h"
 
-// store offset = 0xdfc0
-// overlay size   = 0x15a0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -806,6 +806,7 @@ void UNK_0xe67a() // UNK_0xe67a
 // ================================================
 // 0xe737: WORD 'DO-ENTER' codep=0x224c parp=0xe744
 // ================================================
+// entry
 
 void DO_dash_ENTER() // DO-ENTER
 {
@@ -1126,6 +1127,7 @@ void UNK_0xf1f0() // UNK_0xf1f0
 // ================================================
 // 0xf450: WORD 'DO-BARTER' codep=0x224c parp=0xf45e
 // ================================================
+// entry
 
 void DO_dash_BARTER() // DO-BARTER
 {
@@ -1171,6 +1173,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 // ================================================
 // 0xf4c4: WORD '!PFLAGS' codep=0x224c parp=0xf4d0
 // ================================================
+// entry
 
 void _ex_PFLAGS() // !PFLAGS
 {
@@ -1203,6 +1206,7 @@ void _ex_PFLAGS() // !PFLAGS
 // ================================================
 // 0xf500: WORD 'L>P' codep=0x224c parp=0xf508
 // ================================================
+// entry
 
 void L_gt_P() // L>P
 {
@@ -1251,6 +1255,7 @@ void UNK_0xf518() // UNK_0xf518
 // ================================================
 // 0xf54c: WORD 'DO-OPEN' codep=0x224c parp=0xf558
 // ================================================
+// entry
 
 void DO_dash_OPEN() // DO-OPEN
 {

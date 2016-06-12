@@ -1,9 +1,9 @@
 // ====== OVERLAY 'EYE-OV' ======
+// store offset = 0xebb0
+// overlay size   = 0x09b0
 
 #include"cpu.h"
 
-// store offset = 0xebb0
-// overlay size   = 0x09b0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1254,6 +1254,7 @@ void UNK_0xf4a5() // UNK_0xf4a5
 // ================================================
 // 0xf4fb: WORD 'DO-EYE' codep=0x224c parp=0xf506
 // ================================================
+// entry
 
 void DO_dash_EYE() // DO-EYE
 {

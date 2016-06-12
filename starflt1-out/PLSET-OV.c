@@ -1,9 +1,9 @@
 // ====== OVERLAY 'PLSET-OV' ======
+// store offset = 0xec00
+// overlay size   = 0x0960
 
 #include"cpu.h"
 
-// store offset = 0xec00
-// overlay size   = 0x0960
 
 // =================================
 // =========== DICTIONARY ==========
@@ -1145,6 +1145,7 @@ void UNK_0xf2d9() // UNK_0xf2d9
 // ================================================
 // 0xf2eb: WORD 'SETC' codep=0x224c parp=0xf2f4
 // ================================================
+// entry
 
 void SETC() // SETC
 {
@@ -1203,6 +1204,7 @@ void UNK_0xf46d() // UNK_0xf46d
 // ================================================
 // 0xf475: WORD 'PLAN-RUL' codep=0x224c parp=0xf482
 // ================================================
+// entry
 
 void PLAN_dash_RUL() // PLAN-RUL
 {

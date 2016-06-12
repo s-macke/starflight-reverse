@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BEHAV-OV' ======
+// store offset = 0xe470
+// overlay size   = 0x10f0
 
 #include"cpu.h"
 
-// store offset = 0xe470
-// overlay size   = 0x10f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -489,6 +489,7 @@ void UNK_0xed66() // UNK_0xed66
 // ================================================
 // 0xed6c: WORD 'CIRCLES' codep=0x224c parp=0xed78
 // ================================================
+// entry
 
 void CIRCLES() // CIRCLES
 {
@@ -649,6 +650,7 @@ void UNK_0xeea3() // UNK_0xeea3
 // ================================================
 // 0xeed2: WORD '1SIMULATE' codep=0x224c parp=0xeee0
 // ================================================
+// entry
 
 void _1SIMULATE() // 1SIMULATE
 {
@@ -1294,6 +1296,7 @@ void GNUNK_dash_CHEC() // GNUNK-CHEC
 // ================================================
 // 0xf42b: WORD 'TV-TASKS' codep=0x224c parp=0xf438
 // ================================================
+// entry
 
 void TV_dash_TASKS() // TV-TASKS
 {
@@ -1336,6 +1339,7 @@ void TV_dash_TASKS() // TV-TASKS
 // ================================================
 // 0xf53c: WORD 'TV' codep=0x224c parp=0xf543
 // ================================================
+// entry
 
 void TV() // TV
 {

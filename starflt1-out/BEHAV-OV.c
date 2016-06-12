@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BEHAV-OV' ======
+// store offset = 0xe070
+// overlay size   = 0x14f0
 
 #include"cpu.h"
 
-// store offset = 0xe070
-// overlay size   = 0x14f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -993,6 +993,7 @@ void UNK_0xebf8() // UNK_0xebf8
 // ================================================
 // 0xec4e: WORD 'SIMULATE' codep=0x224c parp=0xec5b
 // ================================================
+// entry
 
 void SIMULATE() // SIMULATE
 {
@@ -1786,6 +1787,7 @@ void _dot_STATS() // .STATS
 // ================================================
 // 0xf3c3: WORD 'TV-TASKS' codep=0x224c parp=0xf3d0
 // ================================================
+// entry
 
 void TV_dash_TASKS() // TV-TASKS
 {
@@ -1834,6 +1836,7 @@ void TV_dash_TASKS() // TV-TASKS
 // ================================================
 // 0xf4de: WORD 'TV' codep=0x224c parp=0xf4e5
 // ================================================
+// entry
 
 void TV() // TV
 {

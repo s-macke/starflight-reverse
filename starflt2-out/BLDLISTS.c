@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BLDLISTS' ======
+// store offset = 0xeb70
+// overlay size   = 0x09f0
 
 #include"cpu.h"
 
-// store offset = 0xeb70
-// overlay size   = 0x09f0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -351,6 +351,7 @@ void UNK_0xeccc() // UNK_0xeccc
 // ================================================
 // 0xed02: WORD '!TAMT' codep=0x224c parp=0xed0c
 // ================================================
+// entry
 
 void _ex_TAMT() // !TAMT
 {
@@ -367,6 +368,7 @@ void _ex_TAMT() // !TAMT
 // ================================================
 // 0xed1e: WORD '@TAMT' codep=0x224c parp=0xed28
 // ================================================
+// entry
 
 void _at_TAMT() // @TAMT
 {
@@ -1138,6 +1140,7 @@ void UNK_0xf33b() // UNK_0xf33b
 // ================================================
 // 0xf38c: WORD 'TRADE>OR' codep=0x224c parp=0xf399
 // ================================================
+// entry
 
 void TRADE_gt_OR() // TRADE>OR
 {
@@ -1258,6 +1261,7 @@ void UNK_0xf41e() // UNK_0xf41e
 // ================================================
 // 0xf484: WORD 'SET-CARG' codep=0x224c parp=0xf491
 // ================================================
+// entry
 
 void SET_dash_CARG() // SET-CARG
 {
@@ -1323,6 +1327,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
 // ================================================
 // 0xf4f5: WORD 'BLD-LIST' codep=0x224c parp=0xf502
 // ================================================
+// entry
 
 void BLD_dash_LIST() // BLD-LIST
 {

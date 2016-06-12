@@ -1,9 +1,9 @@
 // ====== OVERLAY 'COMMSPEC-OV' ======
+// store offset = 0xe540
+// overlay size   = 0x1020
 
 #include"cpu.h"
 
-// store offset = 0xe540
-// overlay size   = 0x1020
 
 // =================================
 // =========== DICTIONARY ==========
@@ -513,6 +513,7 @@ void UNK_0xee17() // UNK_0xee17
 // ================================================
 // 0xf260: WORD '#>PRO' codep=0x224c parp=0xf26a
 // ================================================
+// entry
 
 void _n__gt_PRO() // #>PRO
 {
@@ -593,6 +594,7 @@ void UNK_0xf51d() // UNK_0xf51d
 // ================================================
 // 0xf531: WORD '(XCOMM)' codep=0x224c parp=0xf53d
 // ================================================
+// entry
 
 void _ro_XCOMM_rc_() // (XCOMM)
 {

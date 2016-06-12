@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DESCRIBE' ======
+// store offset = 0xe5f0
+// overlay size   = 0x0f70
 
 #include"cpu.h"
 
-// store offset = 0xe5f0
-// overlay size   = 0x0f70
 
 // =================================
 // =========== DICTIONARY ==========
@@ -115,6 +115,7 @@ void UNK_0xe606() // UNK_0xe606
 // ================================================
 // 0xe6f0: WORD 'APAUSE' codep=0x224c parp=0xe6fb
 // ================================================
+// entry
 
 void APAUSE() // APAUSE
 {
@@ -489,6 +490,7 @@ void UNK_0xea51() // UNK_0xea51
 // ================================================
 // 0xea67: WORD '.PHRASE' codep=0x224c parp=0xea73
 // ================================================
+// entry
 
 void _dot_PHRASE() // .PHRASE
 {
@@ -519,6 +521,7 @@ void UNK_0xea83() // UNK_0xea83
 // ================================================
 // 0xea93: WORD '.APHRASE' codep=0x224c parp=0xeaa0
 // ================================================
+// entry
 
 void _dot_APHRASE() // .APHRASE
 {
@@ -1015,6 +1018,7 @@ void UNK_0xee0e() // UNK_0xee0e
 // ================================================
 // 0xee96: WORD '?COMSG' codep=0x224c parp=0xeea1
 // ================================================
+// entry
 
 void _ask_COMSG() // ?COMSG
 {
@@ -1119,6 +1123,7 @@ void UNK_0xf2a6() // UNK_0xf2a6
 // ================================================
 // 0xf2b8: WORD 'SYSCAN' codep=0x224c parp=0xf2c3
 // ================================================
+// entry
 
 void SYSCAN() // SYSCAN
 {
@@ -1194,11 +1199,13 @@ void SYSCAN() // SYSCAN
 // ================================================
 // 0xf49b: WORD 'CLASS>TY' codep=0x4b3b parp=0xf4a8
 // ================================================
+// entry
 // 0xf4a8: db 0x0a 0x00 0x6b 0x26 0x44 0x00 0x8b 0xf3 0x2a 0x00 0x61 0xf4 0x14 0x00 0x15 0xf4 0x29 0x00 0xe1 0xf3 0x1a 0x00 0x37 0xf4 0x1c 0x00 0x25 0xf4 0x15 0x00 0xa5 0xf3 0x1f 0x00 0x6f 0xf4 0x21 0x00 0x79 0xf4 0x1b 0x00 0x8d 0xf4 '  k&D   * a     )     7   %       o ! y     '
 
 // ================================================
 // 0xf4d4: WORD 'DESCRIBE' codep=0x224c parp=0xf4e1
 // ================================================
+// entry
 
 void DESCRIBE() // DESCRIBE
 {

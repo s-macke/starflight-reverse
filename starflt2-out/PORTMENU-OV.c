@@ -1,9 +1,9 @@
 // ====== OVERLAY 'PORTMENU-OV' ======
+// store offset = 0xece0
+// overlay size   = 0x0880
 
 #include"cpu.h"
 
-// store offset = 0xece0
-// overlay size   = 0x0880
 
 // =================================
 // =========== DICTIONARY ==========
@@ -652,6 +652,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 // ================================================
 // 0xf508: WORD 'WALKIES' codep=0x224c parp=0xf514
 // ================================================
+// entry
 
 void WALKIES() // WALKIES
 {
@@ -687,6 +688,7 @@ void WALKIES() // WALKIES
 // ================================================
 // 0xf544: WORD 'PPIC' codep=0x224c parp=0xf54d
 // ================================================
+// entry
 
 void PPIC() // PPIC
 {

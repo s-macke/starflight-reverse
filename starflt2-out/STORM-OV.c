@@ -1,9 +1,9 @@
 // ====== OVERLAY 'STORM-OV' ======
+// store offset = 0xf110
+// overlay size   = 0x0450
 
 #include"cpu.h"
 
-// store offset = 0xf110
-// overlay size   = 0x0450
 
 // =================================
 // =========== DICTIONARY ==========
@@ -248,6 +248,7 @@ void UNK_0xf374() // UNK_0xf374
 // ================================================
 // 0xf3aa: WORD 'INJURE-PL' codep=0x224c parp=0xf3b8
 // ================================================
+// entry
 
 void INJURE_dash_PL() // INJURE-PL
 {
@@ -424,6 +425,7 @@ void UNK_0xf4e2() // UNK_0xf4e2
 // ================================================
 // 0xf4f4: WORD '(DO.STORM' codep=0x224c parp=0xf502
 // ================================================
+// entry
 
 void _ro_DO_dot_STORM() // (DO.STORM
 {

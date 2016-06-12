@@ -571,10 +571,8 @@ unsigned short int FindLoopID(unsigned short int addr)
 }
 
 
-void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
+void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int currentovidx)
 {
-    int currentovidx = -1;
-
     // for starflt1
     /*
     if (ofs == 0x84fa) // MSET-CO
@@ -707,7 +705,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             {
                 pline[par+2].isfunction = 1;
                 snprintf(pline[par+2].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-                ParsePartFunction(par+2, l, minaddr, maxaddr);
+                ParsePartFunction(par+2, l, minaddr, maxaddr, currentovidx);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
@@ -791,7 +789,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            //ParsePartFunction(addr, l, minaddr, maxaddr);
+            ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -812,7 +810,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
-            //ParsePartFunction(addr, l, minaddr, maxaddr);
+            ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
@@ -924,7 +922,7 @@ void ParseFunction2(unsigned short parp, int minaddr, int maxaddr)
     char *s = FindDictPar(parp);
     pline[parp].isfunction = 1;
     snprintf(pline[parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    ParsePartFunction(parp, pline, minaddr, maxaddr);
+    ParsePartFunction(parp, pline, minaddr, maxaddr, -1);
 }
 
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx)

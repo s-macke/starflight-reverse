@@ -1,9 +1,9 @@
 // ====== OVERLAY 'IT-OV' ======
+// store offset = 0xedd0
+// overlay size   = 0x0790
 
 #include"cpu.h"
 
-// store offset = 0xedd0
-// overlay size   = 0x0790
 
 // =================================
 // =========== DICTIONARY ==========

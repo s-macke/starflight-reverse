@@ -1,9 +1,9 @@
 // ====== OVERLAY 'FLUX-EFFECT' ======
+// store offset = 0xf330
+// overlay size   = 0x0230
 
 #include"cpu.h"
 
-// store offset = 0xf330
-// overlay size   = 0x0230
 
 // =================================
 // =========== DICTIONARY ==========
@@ -226,6 +226,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
 // ================================================
 // 0xf4b0: WORD 'FLUX' codep=0x224c parp=0xf4b9
 // ================================================
+// entry
 
 void FLUX() // FLUX
 {
@@ -291,6 +292,7 @@ void UNK_0xf4e5() // UNK_0xf4e5
 // ================================================
 // 0xf509: WORD 'JUMPFX' codep=0x224c parp=0xf514
 // ================================================
+// entry
 
 void JUMPFX() // JUMPFX
 {

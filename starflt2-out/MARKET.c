@@ -1,9 +1,9 @@
 // ====== OVERLAY 'MARKET' ======
+// store offset = 0xe810
+// overlay size   = 0x0d50
 
 #include"cpu.h"
 
-// store offset = 0xe810
-// overlay size   = 0x0d50
 
 // =================================
 // =========== DICTIONARY ==========
@@ -870,6 +870,7 @@ void UNK_0xf4d2() // UNK_0xf4d2
 // ================================================
 // 0xf504: WORD 'TRADE' codep=0x224c parp=0xf50e
 // ================================================
+// entry
 
 void TRADE() // TRADE
 {

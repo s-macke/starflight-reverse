@@ -1,9 +1,9 @@
 // ====== OVERLAY 'HYPER-OV' ======
+// store offset = 0xd980
+// overlay size   = 0x1be0
 
 #include"cpu.h"
 
-// store offset = 0xd980
-// overlay size   = 0x1be0
 
 // =================================
 // =========== DICTIONARY ==========
@@ -716,6 +716,7 @@ void UNK_0xdfe9() // UNK_0xdfe9
 // ================================================
 // 0xe049: WORD '.AUXSYS' codep=0x224c parp=0xe055
 // ================================================
+// entry
 
 void _dot_AUXSYS() // .AUXSYS
 {
@@ -1106,6 +1107,7 @@ void UNK_0xe37b() // UNK_0xe37b
 // ================================================
 // 0xe39f: WORD '.MVS' codep=0x224c parp=0xe3a8
 // ================================================
+// entry
 
 void _dot_MVS() // .MVS
 {
@@ -1686,6 +1688,7 @@ void UNK_0xe7b0() // UNK_0xe7b0
 // ================================================
 // 0xe7c2: WORD 'USE-E' codep=0x224c parp=0xe7cc
 // ================================================
+// entry
 
 void USE_dash_E() // USE-E
 {
@@ -2095,6 +2098,7 @@ void UNK_0xeafe() // UNK_0xeafe
 // ================================================
 // 0xeb4e: WORD 'JMPSHP' codep=0x224c parp=0xeb59
 // ================================================
+// entry
 
 void JMPSHP() // JMPSHP
 {
@@ -2461,6 +2465,7 @@ void UNK_0xee14() // UNK_0xee14
 // ================================================
 // 0xee3a: WORD 'UNNEST' codep=0x224c parp=0xee45
 // ================================================
+// entry
 
 void UNNEST() // UNNEST
 {
@@ -2549,6 +2554,7 @@ void UNK_0xeebb() // UNK_0xeebb
 // ================================================
 // 0xeee3: WORD '(GET-AU' codep=0x224c parp=0xeeef
 // ================================================
+// entry
 
 void _ro_GET_dash_AU() // (GET-AU
 {
@@ -2624,6 +2630,7 @@ void UNK_0xef35() // UNK_0xef35
 // ================================================
 // 0xef5b: WORD 'FLY' codep=0x224c parp=0xef63
 // ================================================
+// entry
 
 void FLY() // FLY
 {
@@ -2908,6 +2915,7 @@ void CLEANUP() // CLEANUP
 // ================================================
 // 0xf17d: WORD 'CHK-MOV' codep=0x224c parp=0xf189
 // ================================================
+// entry
 
 void CHK_dash_MOV() // CHK-MOV
 {
@@ -3003,6 +3011,7 @@ void UNK_0xf219() // UNK_0xf219
 // ================================================
 // 0xf248: WORD '+NEST' codep=0x224c parp=0xf252
 // ================================================
+// entry
 
 void _plus_NEST() // +NEST
 {
@@ -3016,6 +3025,7 @@ void _plus_NEST() // +NEST
 // ================================================
 // 0xf25c: WORD 'COME-HI' codep=0x224c parp=0xf268
 // ================================================
+// entry
 
 void COME_dash_HI() // COME-HI
 {

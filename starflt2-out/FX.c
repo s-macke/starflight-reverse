@@ -1,9 +1,9 @@
 // ====== OVERLAY 'FX' ======
+// store offset = 0xf060
+// overlay size   = 0x0500
 
 #include"cpu.h"
 
-// store offset = 0xf060
-// overlay size   = 0x0500
 
 // =================================
 // =========== DICTIONARY ==========
@@ -299,6 +299,7 @@ void UNK_0xf20a() // UNK_0xf20a
 // ================================================
 // 0xf230: WORD 'PSYCH' codep=0x224c parp=0xf23a
 // ================================================
+// entry
 
 void PSYCH() // PSYCH
 {
@@ -766,6 +767,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
 // ================================================
 // 0xf53a: WORD '.TMAP' codep=0x224c parp=0xf544
 // ================================================
+// entry
 
 void _dot_TMAP() // .TMAP
 {

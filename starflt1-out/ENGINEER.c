@@ -1,9 +1,9 @@
 // ====== OVERLAY 'ENGINEER' ======
+// store offset = 0xec50
+// overlay size   = 0x0910
 
 #include"cpu.h"
 
-// store offset = 0xec50
-// overlay size   = 0x0910
 
 // =================================
 // =========== DICTIONARY ==========
@@ -246,6 +246,7 @@ void UNK_0xed5c() // UNK_0xed5c
 // ================================================
 // 0xedf8: WORD 'DBARS' codep=0x224c parp=0xee02
 // ================================================
+// entry
 
 void DBARS() // DBARS
 {
@@ -289,6 +290,7 @@ void DBARS() // DBARS
 // ================================================
 // 0xee46: WORD '(/DAMAGE)' codep=0x224c parp=0xee54
 // ================================================
+// entry
 
 void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 {
@@ -873,6 +875,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
 // ================================================
 // 0xf40b: WORD '(/REPAIR)' codep=0x224c parp=0xf419
 // ================================================
+// entry
 
 void _ro__slash_REPAIR_rc_() // (/REPAIR)
 {

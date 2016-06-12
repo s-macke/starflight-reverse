@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DRONE' ======
+// store offset = 0xebe0
+// overlay size   = 0x0980
 
 #include"cpu.h"
 
-// store offset = 0xebe0
-// overlay size   = 0x0980
 
 // =================================
 // =========== DICTIONARY ==========
@@ -971,6 +971,7 @@ void UNK_0xf46f() // UNK_0xf46f
 // ================================================
 // 0xf48f: WORD 'RECALL' codep=0x224c parp=0xf49a
 // ================================================
+// entry
 
 void RECALL() // RECALL
 {
@@ -1002,6 +1003,7 @@ void RECALL() // RECALL
 // ================================================
 // 0xf4c6: WORD 'DRONE' codep=0x224c parp=0xf4d0
 // ================================================
+// entry
 
 void DRONE() // DRONE
 {

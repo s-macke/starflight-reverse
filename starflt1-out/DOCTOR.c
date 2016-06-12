@@ -1,9 +1,9 @@
 // ====== OVERLAY 'DOCTOR' ======
+// store offset = 0xf060
+// overlay size   = 0x0500
 
 #include"cpu.h"
 
-// store offset = 0xf060
-// overlay size   = 0x0500
 
 // =================================
 // =========== DICTIONARY ==========
@@ -490,6 +490,7 @@ void UNK_0xf421() // UNK_0xf421
 // ================================================
 // 0xf4c6: WORD '(/EXAMINE)' codep=0x224c parp=0xf4d5
 // ================================================
+// entry
 
 void _ro__slash_EXAMINE_rc_() // (/EXAMINE)
 {
@@ -504,6 +505,7 @@ void _ro__slash_EXAMINE_rc_() // (/EXAMINE)
 // ================================================
 // 0xf4e1: WORD '(/TREAT)' codep=0x224c parp=0xf4ee
 // ================================================
+// entry
 
 void _ro__slash_TREAT_rc_() // (/TREAT)
 {

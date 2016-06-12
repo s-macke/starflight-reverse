@@ -1,9 +1,9 @@
 // ====== OVERLAY 'BLT-OV' ======
+// store offset = 0xf200
+// overlay size   = 0x0360
 
 #include"cpu.h"
 
-// store offset = 0xf200
-// overlay size   = 0x0360
 
 // =================================
 // =========== DICTIONARY ==========
@@ -31,6 +31,7 @@ unsigned char _2TEMP[2] = {0x20, 0x2e}; // 2TEMP
 // ================================================
 // 0xf214: WORD '.RUNBIT' codep=0xf220 parp=0xf220
 // ================================================
+// entry
 // 0xf220: cli    
 // 0xf221: push   word ptr [586E]
 // 0xf225: pop    word ptr [561C]
@@ -169,6 +170,7 @@ void _dot_PARMS() // .PARMS
 // ================================================
 // 0xf36a: WORD '.EGARUNBIT' codep=0xf379 parp=0xf379
 // ================================================
+// entry
 // 0xf379: mov    dx,03CE
 // 0xf37c: mov    ah,[55F2]
 // 0xf380: mov    al,00
@@ -361,6 +363,7 @@ void PADSEG() // PADSEG
 // ================================================
 // 0xf50d: WORD '@.HYBRID' codep=0x224c parp=0xf51a
 // ================================================
+// entry
 
 void _at__dot_HYBRID() // @.HYBRID
 {

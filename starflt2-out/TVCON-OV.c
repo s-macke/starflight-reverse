@@ -1,9 +1,9 @@
 // ====== OVERLAY 'TVCON-OV' ======
+// store offset = 0xed50
+// overlay size   = 0x0810
 
 #include"cpu.h"
 
-// store offset = 0xed50
-// overlay size   = 0x0810
 
 // =================================
 // =========== DICTIONARY ==========
@@ -309,6 +309,7 @@ void UNK_0xeefe() // UNK_0xeefe
 // ================================================
 // 0xef26: WORD 'DO-STORM' codep=0x224c parp=0xef33
 // ================================================
+// entry
 
 void DO_dash_STORM() // DO-STORM
 {
@@ -570,6 +571,7 @@ void UNK_0xf0e2() // UNK_0xf0e2
 // ================================================
 // 0xf10c: WORD '.STARDATE' codep=0x224c parp=0xf11a
 // ================================================
+// entry
 
 void _dot_STARDATE() // .STARDATE
 {
@@ -859,6 +861,7 @@ void UNK_0xf32c() // UNK_0xf32c
 // ================================================
 // 0xf358: WORD '.ENERGY' codep=0x224c parp=0xf364
 // ================================================
+// entry
 
 void _dot_ENERGY() // .ENERGY
 {
@@ -934,6 +937,7 @@ void _dot_ENERGY() // .ENERGY
 // ================================================
 // 0xf409: WORD '.CARGO' codep=0x224c parp=0xf414
 // ================================================
+// entry
 
 void _dot_CARGO() // .CARGO
 {
@@ -1036,6 +1040,7 @@ void UNK_0xf49d() // UNK_0xf49d
 // ================================================
 // 0xf4bf: WORD '.WHERE' codep=0x224c parp=0xf4ca
 // ================================================
+// entry
 
 void _dot_WHERE() // .WHERE
 {
@@ -1075,6 +1080,7 @@ void _dot_WHERE() // .WHERE
 // ================================================
 // 0xf50e: WORD '.DISTANCE' codep=0x224c parp=0xf51c
 // ================================================
+// entry
 
 void _dot_DISTANCE() // .DISTANCE
 {
@@ -1086,6 +1092,7 @@ void _dot_DISTANCE() // .DISTANCE
 // ================================================
 // 0xf522: WORD '.STATS' codep=0x224c parp=0xf52d
 // ================================================
+// entry
 
 void _dot_STATS() // .STATS
 {
