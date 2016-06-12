@@ -66,7 +66,7 @@
 // 1924:        (TERRAIN  codep:0x4b3b parp:0xf4d3 size:0x0018 C-string:'_ro_TERRAIN'
 // 1925:      UNK_0xf4ed  codep:0x224c parp:0xf4ed size:0x0012 C-string:'UNK_0xf4ed'
 // 1926:      UNK_0xf501  codep:0x224c parp:0xf501 size:0x001a C-string:'UNK_0xf501'
-// 1927:        PLAN-RUL  codep:0x224c parp:0xf528 size:0x0038 C-string:'PLAN_dash_RUL'
+// 1927:        PLAN-RUL  codep:0x224c parp:0xf528 size:0x0000 C-string:'PLAN_dash_RUL'
 
 // =================================
 // =========== VARIABLES ===========

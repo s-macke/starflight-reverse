@@ -73,7 +73,7 @@
 // 1765:          (SAND)  codep:0x1d29 parp:0xf3a8 size:0x009e C-string:'_ro_SAND_rc_'
 // 1766:        (TERRAIN  codep:0x4a4f parp:0xf453 size:0x0018 C-string:'_ro_TERRAIN'
 // 1767:      UNK_0xf46d  codep:0x224c parp:0xf46d size:0x0008 C-string:'UNK_0xf46d'
-// 1768:        PLAN-RUL  codep:0x224c parp:0xf482 size:0x00de C-string:'PLAN_dash_RUL'
+// 1768:        PLAN-RUL  codep:0x224c parp:0xf482 size:0x0000 C-string:'PLAN_dash_RUL'
 
 // =================================
 // =========== VARIABLES ===========

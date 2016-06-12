@@ -35,7 +35,7 @@
 // 1727:      UNK_0xf39d  codep:0x224c parp:0xf39d size:0x0087 C-string:'UNK_0xf39d'
 // 1728:      UNK_0xf426  codep:0x224c parp:0xf426 size:0x0008 C-string:'UNK_0xf426'
 // 1729:      UNK_0xf430  codep:0x224c parp:0xf430 size:0x0053 C-string:'UNK_0xf430'
-// 1730:          DEPART  codep:0x224c parp:0xf48e size:0x00d2 C-string:'DEPART'
+// 1730:          DEPART  codep:0x224c parp:0xf48e size:0x0000 C-string:'DEPART'
 
 // =================================
 // =========== VARIABLES ===========

@@ -141,7 +141,7 @@
 // 1833:           IAPWR  codep:0x224c parp:0xf444 size:0x006a C-string:'IAPWR'
 // 1834:      UNK_0xf4b0  codep:0x224c parp:0xf4b0 size:0x0014 C-string:'UNK_0xf4b0'
 // 1835:      UNK_0xf4c6  codep:0x224c parp:0xf4c6 size:0x006a C-string:'UNK_0xf4c6'
-// 1836:           ICOMM  codep:0x224c parp:0xf53a size:0x0026 C-string:'ICOMM'
+// 1836:           ICOMM  codep:0x224c parp:0xf53a size:0x0000 C-string:'ICOMM'
 
 // =================================
 // =========== VARIABLES ===========

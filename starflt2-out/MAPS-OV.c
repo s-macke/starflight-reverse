@@ -60,7 +60,7 @@
 // 1918:      UNK_0xf4b5  codep:0x224c parp:0xf4b5 size:0x002b C-string:'UNK_0xf4b5'
 // 1919:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0014 C-string:'UNK_0xf4e2'
 // 1920:            MAPS  codep:0x224c parp:0xf4ff size:0x0030 C-string:'MAPS'
-// 1921:          .STORM  codep:0x224c parp:0xf53a size:0x0026 C-string:'_dot_STORM'
+// 1921:          .STORM  codep:0x224c parp:0xf53a size:0x0000 C-string:'_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========

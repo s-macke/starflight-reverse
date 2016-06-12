@@ -10,7 +10,7 @@
 // =================================
 // 1869:         #HUMANS  codep:0x224c parp:0xf42e size:0x00c6 C-string:'_n_HUMANS'
 // 1870:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
-// 1871:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0034 C-string:'DO_dash_CLOUD'
+// 1871:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
 
 // =================================
 // =========== VARIABLES ===========

@@ -145,7 +145,7 @@
 // 2003:         CHK-MOV  codep:0x224c parp:0xf189 size:0x008e C-string:'CHK_dash_MOV'
 // 2004:      UNK_0xf219  codep:0x224c parp:0xf219 size:0x002f C-string:'UNK_0xf219'
 // 2005:           +NEST  codep:0x224c parp:0xf252 size:0x000a C-string:'_plus_NEST'
-// 2006:         COME-HI  codep:0x224c parp:0xf268 size:0x02f8 C-string:'COME_dash_HI'
+// 2006:         COME-HI  codep:0x224c parp:0xf268 size:0x0000 C-string:'COME_dash_HI'
 
 // =================================
 // =========== VARIABLES ===========

@@ -40,7 +40,7 @@
 // 1732:      UNK_0xf21d  codep:0x224c parp:0xf21d size:0x00f1 C-string:'UNK_0xf21d'
 // 1733:      UNK_0xf310  codep:0x224c parp:0xf310 size:0x00fd C-string:'UNK_0xf310'
 // 1734:      UNK_0xf40f  codep:0x224c parp:0xf40f size:0x00dc C-string:'UNK_0xf40f'
-// 1735:       (.CONFIG)  codep:0x224c parp:0xf4f9 size:0x0067 C-string:'_ro__dot_CONFIG_rc_'
+// 1735:       (.CONFIG)  codep:0x224c parp:0xf4f9 size:0x0000 C-string:'_ro__dot_CONFIG_rc_'
 
 // =================================
 // =========== VARIABLES ===========

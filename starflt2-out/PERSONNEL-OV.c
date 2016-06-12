@@ -58,7 +58,7 @@
 // 1916:      UNK_0xed3d  codep:0x224c parp:0xed3d size:0x0757 C-string:'UNK_0xed3d'
 // 1917:      UNK_0xf496  codep:0x224c parp:0xf496 size:0x0034 C-string:'UNK_0xf496'
 // 1918:    PFILE-FUNCTI  codep:0x4b3b parp:0xf4db size:0x0014 C-string:'PFILE_dash_FUNCTI'
-// 1919:       (U-PFILE)  codep:0x224c parp:0xf4fd size:0x0063 C-string:'_ro_U_dash_PFILE_rc_'
+// 1919:       (U-PFILE)  codep:0x224c parp:0xf4fd size:0x0000 C-string:'_ro_U_dash_PFILE_rc_'
 
 // =================================
 // =========== VARIABLES ===========

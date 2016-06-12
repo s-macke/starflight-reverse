@@ -31,7 +31,7 @@
 // 1723:         ?POPULA  codep:0x224c parp:0xee64 size:0x0591 C-string:'_ask_POPULA'
 // 1724:         TV-MOVE  codep:0x224c parp:0xf401 size:0x0014 C-string:'TV_dash_MOVE'
 // 1725:      UNK_0xf417  codep:0x73ea parp:0xf417 size:0x0006 C-string:'UNK_0xf417'
-// 1726:        APPROACH  codep:0x224c parp:0xf42a size:0x0136 C-string:'APPROACH'
+// 1726:        APPROACH  codep:0x224c parp:0xf42a size:0x0000 C-string:'APPROACH'
 
 // =================================
 // =========== VARIABLES ===========

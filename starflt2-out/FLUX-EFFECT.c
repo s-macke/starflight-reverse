@@ -18,7 +18,7 @@
 // 1876:     HYPER-FRAME  codep:0x224c parp:0xf48e size:0x0022 C-string:'HYPER_dash_FRAME'
 // 1877:            FLUX  codep:0x224c parp:0xf4b9 size:0x002a C-string:'FLUX'
 // 1878:      UNK_0xf4e5  codep:0x224c parp:0xf4e5 size:0x0024 C-string:'UNK_0xf4e5'
-// 1879:          JUMPFX  codep:0x224c parp:0xf514 size:0x004c C-string:'JUMPFX'
+// 1879:          JUMPFX  codep:0x224c parp:0xf514 size:0x0000 C-string:'JUMPFX'
 
 // =================================
 // =========== VARIABLES ===========

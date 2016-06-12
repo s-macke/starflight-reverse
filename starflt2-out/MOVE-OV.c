@@ -51,7 +51,7 @@
 // 1909:      UNK_0xf25f  codep:0x224c parp:0xf25f size:0x00ac C-string:'UNK_0xf25f'
 // 1910:      UNK_0xf30d  codep:0x224c parp:0xf30d size:0x01dc C-string:'UNK_0xf30d'
 // 1911:            TELE  codep:0x224c parp:0xf4f2 size:0x003d C-string:'TELE'
-// 1912:         TV-MOVE  codep:0x224c parp:0xf53b size:0x0025 C-string:'TV_dash_MOVE'
+// 1912:         TV-MOVE  codep:0x224c parp:0xf53b size:0x0000 C-string:'TV_dash_MOVE'
 
 // =================================
 // =========== VARIABLES ===========

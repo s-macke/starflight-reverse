@@ -30,7 +30,7 @@
 // 1722:      UNK_0xf36c  codep:0x224c parp:0xf36c size:0x0025 C-string:'UNK_0xf36c'
 // 1723:      UNK_0xf393  codep:0x224c parp:0xf393 size:0x005c C-string:'UNK_0xf393'
 // 1724:         &LAUNCH  codep:0x224c parp:0xf3fb size:0x004e C-string:'_and_LAUNCH'
-// 1725:         &RETURN  codep:0x224c parp:0xf455 size:0x010b C-string:'_and_RETURN'
+// 1725:         &RETURN  codep:0x224c parp:0xf455 size:0x0000 C-string:'_and_RETURN'
 
 // =================================
 // =========== VARIABLES ===========

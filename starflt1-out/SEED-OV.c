@@ -94,7 +94,7 @@
 // 1786:      UNK_0xf454  codep:0x224c parp:0xf454 size:0x0012 C-string:'UNK_0xf454'
 // 1787:      UNK_0xf468  codep:0x224c parp:0xf468 size:0x0028 C-string:'UNK_0xf468'
 // 1788:      UNK_0xf492  codep:0x224c parp:0xf492 size:0x0036 C-string:'UNK_0xf492'
-// 1789:          POPULA  codep:0x224c parp:0xf4d3 size:0x008d C-string:'POPULA'
+// 1789:          POPULA  codep:0x224c parp:0xf4d3 size:0x0000 C-string:'POPULA'
 
 // =================================
 // =========== VARIABLES ===========

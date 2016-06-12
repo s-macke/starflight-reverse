@@ -92,7 +92,7 @@
 // 1950:      UNK_0xf085  codep:0x224c parp:0xf085 size:0x0094 C-string:'UNK_0xf085'
 // 1951:      UNK_0xf11b  codep:0x224c parp:0xf11b size:0x0014 C-string:'UNK_0xf11b'
 // 1952:      UNK_0xf131  codep:0x224c parp:0xf131 size:0x0020 C-string:'UNK_0xf131'
-// 1953:      (/STARMAP)  codep:0x224c parp:0xf160 size:0x0400 C-string:'_ro__slash_STARMAP_rc_'
+// 1953:      (/STARMAP)  codep:0x224c parp:0xf160 size:0x0000 C-string:'_ro__slash_STARMAP_rc_'
 
 // =================================
 // =========== VARIABLES ===========

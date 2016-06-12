@@ -16,7 +16,7 @@
 // 1708:         .HYBRID  codep:0x224c parp:0xf466 size:0x0094 C-string:'_dot_HYBRID'
 // 1709:          PADSEG  codep:0x224c parp:0xf505 size:0x0008 C-string:'PADSEG'
 // 1710:        @.HYBRID  codep:0x224c parp:0xf51a size:0x000c C-string:'_at__dot_HYBRID'
-// 1711:           SETUP  codep:0x224c parp:0xf530 size:0x0030 C-string:'SETUP'
+// 1711:           SETUP  codep:0x224c parp:0xf530 size:0x0000 C-string:'SETUP'
 
 // =================================
 // =========== VARIABLES ===========

@@ -19,7 +19,7 @@
 // 1711:      UNK_0xf486  codep:0x224c parp:0xf486 size:0x002e C-string:'UNK_0xf486'
 // 1712:         SA-CASE  codep:0x4a4f parp:0xf4c0 size:0x001c C-string:'SA_dash_CASE'
 // 1713:      UNK_0xf4de  codep:0x224c parp:0xf4de size:0x0014 C-string:'UNK_0xf4de'
-// 1714:         (XCOMM)  codep:0x224c parp:0xf4fe size:0x0062 C-string:'_ro_XCOMM_rc_'
+// 1714:         (XCOMM)  codep:0x224c parp:0xf4fe size:0x0000 C-string:'_ro_XCOMM_rc_'
 
 // =================================
 // =========== VARIABLES ===========

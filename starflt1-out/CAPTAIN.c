@@ -111,7 +111,7 @@
 // 1803:      UNK_0xf37a  codep:0x224c parp:0xf37a size:0x0036 C-string:'UNK_0xf37a'
 // 1804:      UNK_0xf3b2  codep:0x224c parp:0xf3b2 size:0x001f C-string:'UNK_0xf3b2'
 // 1805:      UNK_0xf3d3  codep:0x224c parp:0xf3d3 size:0x0057 C-string:'UNK_0xf3d3'
-// 1806:     (/LOG-PLAN)  codep:0x224c parp:0xf43a size:0x0126 C-string:'_ro__slash_LOG_dash_PLAN_rc_'
+// 1806:     (/LOG-PLAN)  codep:0x224c parp:0xf43a size:0x0000 C-string:'_ro__slash_LOG_dash_PLAN_rc_'
 
 // =================================
 // =========== VARIABLES ===========

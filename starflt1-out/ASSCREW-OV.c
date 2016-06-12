@@ -51,7 +51,7 @@
 // 1743:      UNK_0xf395  codep:0x224c parp:0xf395 size:0x0040 C-string:'UNK_0xf395'
 // 1744:      UNK_0xf3d7  codep:0x224c parp:0xf3d7 size:0x0030 C-string:'UNK_0xf3d7'
 // 1745:      UNK_0xf409  codep:0x224c parp:0xf409 size:0x0046 C-string:'UNK_0xf409'
-// 1746:     (U-ASSCREW)  codep:0x224c parp:0xf45f size:0x0101 C-string:'_ro_U_dash_ASSCREW_rc_'
+// 1746:     (U-ASSCREW)  codep:0x224c parp:0xf45f size:0x0000 C-string:'_ro_U_dash_ASSCREW_rc_'
 
 // =================================
 // =========== VARIABLES ===========

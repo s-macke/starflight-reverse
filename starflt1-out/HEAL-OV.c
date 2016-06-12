@@ -39,7 +39,7 @@
 // 1731:      UNK_0xf497  codep:0x224c parp:0xf497 size:0x0028 C-string:'UNK_0xf497'
 // 1732:      UNK_0xf4c1  codep:0x224c parp:0xf4c1 size:0x004a C-string:'UNK_0xf4c1'
 // 1733:           OBITS  codep:0x224c parp:0xf515 size:0x0006 C-string:'OBITS'
-// 1734:            HEAL  codep:0x224c parp:0xf524 size:0x003c C-string:'HEAL'
+// 1734:            HEAL  codep:0x224c parp:0xf524 size:0x0000 C-string:'HEAL'
 
 // =================================
 // =========== VARIABLES ===========

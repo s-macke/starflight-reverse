@@ -43,7 +43,7 @@
 // 1901:      UNK_0xf464  codep:0x224c parp:0xf464 size:0x0044 C-string:'UNK_0xf464'
 // 1902:      UNK_0xf4aa  codep:0x224c parp:0xf4aa size:0x0022 C-string:'UNK_0xf4aa'
 // 1903:              SP  codep:0x224c parp:0xf4d3 size:0x001e C-string:'SP'
-// 1904:              2N  codep:0x224c parp:0xf4f8 size:0x0068 C-string:'_2N'
+// 1904:              2N  codep:0x224c parp:0xf4f8 size:0x0000 C-string:'_2N'
 
 // =================================
 // =========== VARIABLES ===========

@@ -49,7 +49,7 @@
 // 1907:      UNK_0xf36a  codep:0x224c parp:0xf36a size:0x000a C-string:'UNK_0xf36a'
 // 1908:      UNK_0xf376  codep:0x224c parp:0xf376 size:0x0100 C-string:'UNK_0xf376'
 // 1909:      UNK_0xf478  codep:0x224c parp:0xf478 size:0x00d1 C-string:'UNK_0xf478'
-// 1910:         (.CONFI  codep:0x224c parp:0xf555 size:0x000b C-string:'_ro__dot_CONFI'
+// 1910:         (.CONFI  codep:0x224c parp:0xf555 size:0x0000 C-string:'_ro__dot_CONFI'
 
 // =================================
 // =========== VARIABLES ===========

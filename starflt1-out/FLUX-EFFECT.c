@@ -15,7 +15,7 @@
 // 1707:      UNK_0xf456  codep:0x224c parp:0xf456 size:0x0018 C-string:'UNK_0xf456'
 // 1708:      UNK_0xf470  codep:0x224c parp:0xf470 size:0x005e C-string:'UNK_0xf470'
 // 1709:      UNK_0xf4d0  codep:0x224c parp:0xf4d0 size:0x002c C-string:'UNK_0xf4d0'
-// 1710:            FLUX  codep:0x224c parp:0xf505 size:0x005b C-string:'FLUX'
+// 1710:            FLUX  codep:0x224c parp:0xf505 size:0x0000 C-string:'FLUX'
 
 // =================================
 // =========== VARIABLES ===========

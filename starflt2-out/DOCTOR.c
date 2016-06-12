@@ -30,7 +30,7 @@
 // 1888:      UNK_0xf392  codep:0x224c parp:0xf392 size:0x00ac C-string:'UNK_0xf392'
 // 1889:      UNK_0xf440  codep:0x224c parp:0xf440 size:0x00a5 C-string:'UNK_0xf440'
 // 1890:      (/EXAMINE)  codep:0x224c parp:0xf4f4 size:0x000c C-string:'_ro__slash_EXAMINE_rc_'
-// 1891:        (/TREAT)  codep:0x224c parp:0xf50d size:0x0053 C-string:'_ro__slash_TREAT_rc_'
+// 1891:        (/TREAT)  codep:0x224c parp:0xf50d size:0x0000 C-string:'_ro__slash_TREAT_rc_'
 
 // =================================
 // =========== VARIABLES ===========

@@ -163,7 +163,7 @@
 // 1855:         SKYCASE  codep:0x4a4f parp:0xf3fd size:0x0014 C-string:'SKYCASE'
 // 1856:      UNK_0xf413  codep:0x224c parp:0xf413 size:0x000c C-string:'UNK_0xf413'
 // 1857:      INIT-ORBIT  codep:0x224c parp:0xf42e size:0x0058 C-string:'INIT_dash_ORBIT'
-// 1858:          ROTATE  codep:0x224c parp:0xf491 size:0x00cf C-string:'ROTATE'
+// 1858:          ROTATE  codep:0x224c parp:0xf491 size:0x0000 C-string:'ROTATE'
 
 // =================================
 // =========== VARIABLES ===========

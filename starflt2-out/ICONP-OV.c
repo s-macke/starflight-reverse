@@ -21,7 +21,7 @@
 // 1879:       #IC-CASES  codep:0x4b3b parp:0xf48e size:0x0024 C-string:'_n_IC_dash_CASES'
 // 1880:      UNK_0xf4b4  codep:0x224c parp:0xf4b4 size:0x0046 C-string:'UNK_0xf4b4'
 // 1881:       ICON-PARM  codep:0x224c parp:0xf508 size:0x001e C-string:'ICON_dash_PARM'
-// 1882:        +ICONBOX  codep:0x224c parp:0xf533 size:0x002d C-string:'_plus_ICONBOX'
+// 1882:        +ICONBOX  codep:0x224c parp:0xf533 size:0x0000 C-string:'_plus_ICONBOX'
 
 // =================================
 // =========== VARIABLES ===========

@@ -41,7 +41,7 @@
 // 1899:           (?.EQ  codep:0x224c parp:0xf39f size:0x007b C-string:'_ro__ask__dot_EQ'
 // 1900:      UNK_0xf41c  codep:0x224c parp:0xf41c size:0x0020 C-string:'UNK_0xf41c'
 // 1901:           =CARG  codep:0x224c parp:0xf446 size:0x00ac C-string:'_eq_CARG'
-// 1902:           TV?AR  codep:0x224c parp:0xf4fc size:0x0064 C-string:'TV_ask_AR'
+// 1902:           TV?AR  codep:0x224c parp:0xf4fc size:0x0000 C-string:'TV_ask_AR'
 
 // =================================
 // =========== VARIABLES ===========

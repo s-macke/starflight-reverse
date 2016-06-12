@@ -42,7 +42,7 @@
 // 1900:      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x0032 C-string:'UNK_0xf4c0'
 // 1901:           XWALK  codep:0x4b3b parp:0xf4fc size:0x000c C-string:'XWALK'
 // 1902:         WALKIES  codep:0x224c parp:0xf514 size:0x0030 C-string:'WALKIES'
-// 1903:            PPIC  codep:0x224c parp:0xf54d size:0x0013 C-string:'PPIC'
+// 1903:            PPIC  codep:0x224c parp:0xf54d size:0x0000 C-string:'PPIC'
 
 // =================================
 // =========== VARIABLES ===========

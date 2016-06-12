@@ -38,7 +38,7 @@
 // 1896:      UNK_0xf3cb  codep:0x224c parp:0xf3cb size:0x0024 C-string:'UNK_0xf3cb'
 // 1897:      UNK_0xf3f1  codep:0x224c parp:0xf3f1 size:0x0022 C-string:'UNK_0xf3f1'
 // 1898:      UNK_0xf415  codep:0x224c parp:0xf415 size:0x0046 C-string:'UNK_0xf415'
-// 1899:       (/REPAIR)  codep:0x224c parp:0xf469 size:0x00f7 C-string:'_ro__slash_REPAIR_rc_'
+// 1899:       (/REPAIR)  codep:0x224c parp:0xf469 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
 
 // =================================
 // =========== VARIABLES ===========

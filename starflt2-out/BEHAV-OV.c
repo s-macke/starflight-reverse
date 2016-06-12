@@ -70,7 +70,7 @@
 // 1928:      UNK_0xf354  codep:0x224c parp:0xf354 size:0x00a0 C-string:'UNK_0xf354'
 // 1929:      GNUNK-CHEC  codep:0x224c parp:0xf403 size:0x0028 C-string:'GNUNK_dash_CHEC'
 // 1930:        TV-TASKS  codep:0x224c parp:0xf438 size:0x0104 C-string:'TV_dash_TASKS'
-// 1931:              TV  codep:0x224c parp:0xf543 size:0x001d C-string:'TV'
+// 1931:              TV  codep:0x224c parp:0xf543 size:0x0000 C-string:'TV'
 
 // =================================
 // =========== VARIABLES ===========

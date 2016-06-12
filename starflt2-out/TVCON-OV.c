@@ -49,7 +49,7 @@
 // 1907:      UNK_0xf49d  codep:0x224c parp:0xf49d size:0x0022 C-string:'UNK_0xf49d'
 // 1908:          .WHERE  codep:0x224c parp:0xf4ca size:0x0044 C-string:'_dot_WHERE'
 // 1909:       .DISTANCE  codep:0x224c parp:0xf51c size:0x0006 C-string:'_dot_DISTANCE'
-// 1910:          .STATS  codep:0x224c parp:0xf52d size:0x0033 C-string:'_dot_STATS'
+// 1910:          .STATS  codep:0x224c parp:0xf52d size:0x0000 C-string:'_dot_STATS'
 
 // =================================
 // =========== VARIABLES ===========

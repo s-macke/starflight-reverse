@@ -101,7 +101,7 @@
 // 1793:      UNK_0xf256  codep:0x224c parp:0xf256 size:0x012c C-string:'UNK_0xf256'
 // 1794:      UNK_0xf384  codep:0x224c parp:0xf384 size:0x0146 C-string:'UNK_0xf384'
 // 1795:      UNK_0xf4cc  codep:0x224c parp:0xf4cc size:0x0024 C-string:'UNK_0xf4cc'
-// 1796:       SPEC.PARM  codep:0x224c parp:0xf4fe size:0x0062 C-string:'SPEC_dot_PARM'
+// 1796:       SPEC.PARM  codep:0x224c parp:0xf4fe size:0x0000 C-string:'SPEC_dot_PARM'
 
 // =================================
 // =========== VARIABLES ===========

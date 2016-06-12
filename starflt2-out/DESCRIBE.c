@@ -67,7 +67,7 @@
 // 1925:          SYSCAN  codep:0x224c parp:0xf2c3 size:0x00a0 C-string:'SYSCAN'
 // 1926:           RCASE  codep:0x4b3b parp:0xf36d size:0x012e C-string:'RCASE'
 // 1927:        CLASS>TY  codep:0x4b3b parp:0xf4a8 size:0x002c C-string:'CLASS_gt_TY'
-// 1928:        DESCRIBE  codep:0x224c parp:0xf4e1 size:0x007f C-string:'DESCRIBE'
+// 1928:        DESCRIBE  codep:0x224c parp:0xf4e1 size:0x0000 C-string:'DESCRIBE'
 
 // =================================
 // =========== VARIABLES ===========

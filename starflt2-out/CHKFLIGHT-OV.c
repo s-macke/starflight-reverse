@@ -26,7 +26,7 @@
 // 1884:      UNK_0xf462  codep:0x224c parp:0xf462 size:0x002e C-string:'UNK_0xf462'
 // 1885:      UNK_0xf492  codep:0x224c parp:0xf492 size:0x0028 C-string:'UNK_0xf492'
 // 1886:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0048 C-string:'UNK_0xf4bc'
-// 1887:      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x004d C-string:'_ask_CAN_dash_LEAVE'
+// 1887:      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
 
 // =================================
 // =========== VARIABLES ===========

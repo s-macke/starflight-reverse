@@ -62,7 +62,7 @@
 // 1754:      UNK_0xf4f4  codep:0x224c parp:0xf4f4 size:0x0014 C-string:'UNK_0xf4f4'
 // 1755:      UNK_0xf50a  codep:0x224c parp:0xf50a size:0x0008 C-string:'UNK_0xf50a'
 // 1756:            MAPS  codep:0x224c parp:0xf51b size:0x0026 C-string:'MAPS'
-// 1757:          .STORM  codep:0x224c parp:0xf54c size:0x0014 C-string:'_dot_STORM'
+// 1757:          .STORM  codep:0x224c parp:0xf54c size:0x0000 C-string:'_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========

@@ -157,7 +157,7 @@
 // 2015:         SKYCASE  codep:0x4b3b parp:0xf31b size:0x0014 C-string:'SKYCASE'
 // 2016:      UNK_0xf331  codep:0x224c parp:0xf331 size:0x000c C-string:'UNK_0xf331'
 // 2017:      INIT-ORBIT  codep:0x224c parp:0xf34c size:0x0024 C-string:'INIT_dash_ORBIT'
-// 2018:          ROTATE  codep:0x224c parp:0xf37b size:0x01e5 C-string:'ROTATE'
+// 2018:          ROTATE  codep:0x224c parp:0xf37b size:0x0000 C-string:'ROTATE'
 
 // =================================
 // =========== VARIABLES ===========

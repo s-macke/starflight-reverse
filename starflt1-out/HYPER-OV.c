@@ -135,7 +135,7 @@
 // 1827:         CHK-MOV  codep:0x224c parp:0xf125 size:0x008e C-string:'CHK_dash_MOV'
 // 1828:      UNK_0xf1b5  codep:0x224c parp:0xf1b5 size:0x002f C-string:'UNK_0xf1b5'
 // 1829:           +NEST  codep:0x224c parp:0xf1ee size:0x000a C-string:'_plus_NEST'
-// 1830:         COME-HI  codep:0x224c parp:0xf204 size:0x035c C-string:'COME_dash_HI'
+// 1830:         COME-HI  codep:0x224c parp:0xf204 size:0x0000 C-string:'COME_dash_HI'
 
 // =================================
 // =========== VARIABLES ===========

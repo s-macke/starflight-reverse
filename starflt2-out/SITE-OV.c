@@ -26,7 +26,7 @@
 // 1884:      UNK_0xf42f  codep:0x224c parp:0xf42f size:0x0006 C-string:'UNK_0xf42f'
 // 1885:         GETSITE  codep:0x224c parp:0xf441 size:0x00a6 C-string:'GETSITE'
 // 1886:       .MERCATOR  codep:0x224c parp:0xf4f5 size:0x0046 C-string:'_dot_MERCATOR'
-// 1887:         GETSITE  codep:0x224c parp:0xf547 size:0x0019 C-string:'GETSITE'
+// 1887:         GETSITE  codep:0x224c parp:0xf547 size:0x0000 C-string:'GETSITE'
 
 // =================================
 // =========== VARIABLES ===========

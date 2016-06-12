@@ -86,7 +86,7 @@
 // 1778:         ANALOGS  codep:0xe963 parp:0xf0ee size:0x01f2 C-string:'ANALOGS'
 // 1779:        CLASS>DE  codep:0x4a4f parp:0xf2ed size:0x0024 C-string:'CLASS_gt_DE'
 // 1780:        CLASS>TY  codep:0x4a4f parp:0xf31e size:0x0024 C-string:'CLASS_gt_TY'
-// 1781:           ?TALK  codep:0x224c parp:0xf34c size:0x0214 C-string:'_ask_TALK'
+// 1781:           ?TALK  codep:0x224c parp:0xf34c size:0x0000 C-string:'_ask_TALK'
 
 // =================================
 // =========== VARIABLES ===========

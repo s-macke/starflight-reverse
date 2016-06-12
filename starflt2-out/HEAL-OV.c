@@ -41,7 +41,7 @@
 // 1899:      UNK_0xf4d3  codep:0x224c parp:0xf4d3 size:0x0050 C-string:'UNK_0xf4d3'
 // 1900:           OBITS  codep:0x224c parp:0xf52d size:0x0006 C-string:'OBITS'
 // 1901:            KILL  codep:0x224c parp:0xf53c size:0x000c C-string:'KILL'
-// 1902:            HEAL  codep:0x224c parp:0xf551 size:0x000f C-string:'HEAL'
+// 1902:            HEAL  codep:0x224c parp:0xf551 size:0x0000 C-string:'HEAL'
 
 // =================================
 // =========== VARIABLES ===========

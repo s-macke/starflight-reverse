@@ -97,7 +97,7 @@
 // 1955:      UNK_0xf4c9  codep:0x224c parp:0xf4c9 size:0x001c C-string:'UNK_0xf4c9'
 // 1956:      UNK_0xf4e7  codep:0x224c parp:0xf4e7 size:0x0042 C-string:'UNK_0xf4e7'
 // 1957:       (/STATUS)  codep:0x224c parp:0xf537 size:0x000e C-string:'_ro__slash_STATUS_rc_'
-// 1958:      .STAT-TEXT  codep:0x224c parp:0xf554 size:0x000c C-string:'_dot_STAT_dash_TEXT'
+// 1958:      .STAT-TEXT  codep:0x224c parp:0xf554 size:0x0000 C-string:'_dot_STAT_dash_TEXT'
 
 // =================================
 // =========== VARIABLES ===========

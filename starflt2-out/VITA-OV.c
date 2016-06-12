@@ -24,7 +24,7 @@
 // 1882:      UNK_0xf440  codep:0x224c parp:0xf440 size:0x001c C-string:'UNK_0xf440'
 // 1883:      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x0014 C-string:'UNK_0xf45e'
 // 1884:      UNK_0xf474  codep:0x224c parp:0xf474 size:0x004c C-string:'UNK_0xf474'
-// 1885:             DIO  codep:0x224c parp:0xf4c8 size:0x0098 C-string:'DIO'
+// 1885:             DIO  codep:0x224c parp:0xf4c8 size:0x0000 C-string:'DIO'
 
 // =================================
 // =========== VARIABLES ===========

@@ -100,7 +100,7 @@
 // 1792:          COMBAT  codep:0x224c parp:0xef3b size:0x006c C-string:'COMBAT'
 // 1793:        ORIENT>O  codep:0x1d29 parp:0xefb4 size:0x0501 C-string:'ORIENT_gt_O'
 // 1794:             WAR  codep:0x224c parp:0xf4bd size:0x0022 C-string:'WAR'
-// 1795:        CLEAR-CO  codep:0x224c parp:0xf4ec size:0x0074 C-string:'CLEAR_dash_CO'
+// 1795:        CLEAR-CO  codep:0x224c parp:0xf4ec size:0x0000 C-string:'CLEAR_dash_CO'
 
 // =================================
 // =========== VARIABLES ===========

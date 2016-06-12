@@ -91,7 +91,7 @@
 // 1783:      UNK_0xf494  codep:0x224c parp:0xf494 size:0x0010 C-string:'UNK_0xf494'
 // 1784:      UNK_0xf4a6  codep:0x224c parp:0xf4a6 size:0x0018 C-string:'UNK_0xf4a6'
 // 1785:      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x002c C-string:'UNK_0xf4c0'
-// 1786:        C+OPARMS  codep:0x224c parp:0xf4f9 size:0x0067 C-string:'C_plus_OPARMS'
+// 1786:        C+OPARMS  codep:0x224c parp:0xf4f9 size:0x0000 C-string:'C_plus_OPARMS'
 
 // =================================
 // =========== VARIABLES ===========

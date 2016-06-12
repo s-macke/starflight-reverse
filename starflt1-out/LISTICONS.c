@@ -14,7 +14,7 @@
 // 1706:      UNK_0xf3f2  codep:0x224c parp:0xf3f2 size:0x0038 C-string:'UNK_0xf3f2'
 // 1707:      UNK_0xf42c  codep:0x224c parp:0xf42c size:0x005c C-string:'UNK_0xf42c'
 // 1708:      UNK_0xf48a  codep:0x224c parp:0xf48a size:0x000a C-string:'UNK_0xf48a'
-// 1709:           ICONS  codep:0x224c parp:0xf49e size:0x00c2 C-string:'ICONS'
+// 1709:           ICONS  codep:0x224c parp:0xf49e size:0x0000 C-string:'ICONS'
 
 // =================================
 // =========== VARIABLES ===========

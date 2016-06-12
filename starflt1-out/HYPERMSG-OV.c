@@ -74,7 +74,7 @@
 // 1766:      UNK_0xf43d  codep:0x1d29 parp:0xf43d size:0x0002 C-string:'UNK_0xf43d'
 // 1767:          TRAK-E  codep:0x224c parp:0xf44a size:0x00a6 C-string:'TRAK_dash_E'
 // 1768:           @'EXT  codep:0x4a4f parp:0xf4fa size:0x0010 C-string:'_at__i_EXT'
-// 1769:         (!'EXT)  codep:0x224c parp:0xf516 size:0x004a C-string:'_ro__ex__i_EXT_rc_'
+// 1769:         (!'EXT)  codep:0x224c parp:0xf516 size:0x0000 C-string:'_ro__ex__i_EXT_rc_'
 
 // =================================
 // =========== VARIABLES ===========

@@ -92,7 +92,7 @@
 // 1784:      UNK_0xf4e5  codep:0x224c parp:0xf4e5 size:0x0010 C-string:'UNK_0xf4e5'
 // 1785:      UNK_0xf4f7  codep:0x224c parp:0xf4f7 size:0x000e C-string:'UNK_0xf4f7'
 // 1786:      UNK_0xf507  codep:0x224c parp:0xf507 size:0x000e C-string:'UNK_0xf507'
-// 1787:         DO-DAMA  codep:0x224c parp:0xf521 size:0x003f C-string:'DO_dash_DAMA'
+// 1787:         DO-DAMA  codep:0x224c parp:0xf521 size:0x0000 C-string:'DO_dash_DAMA'
 
 // =================================
 // =========== VARIABLES ===========

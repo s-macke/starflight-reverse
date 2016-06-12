@@ -36,7 +36,7 @@
 // 1894:        ?ELEMENT  codep:0x224c parp:0xf411 size:0x002c C-string:'_ask_ELEMENT'
 // 1895:            >BOX  codep:0x224c parp:0xf446 size:0x0082 C-string:'_gt_BOX'
 // 1896:          (BOX>)  codep:0x224c parp:0xf4d3 size:0x0036 C-string:'_ro_BOX_gt__rc_'
-// 1897:            BOX>  codep:0x224c parp:0xf512 size:0x004e C-string:'BOX_gt_'
+// 1897:            BOX>  codep:0x224c parp:0xf512 size:0x0000 C-string:'BOX_gt_'
 
 // =================================
 // =========== VARIABLES ===========

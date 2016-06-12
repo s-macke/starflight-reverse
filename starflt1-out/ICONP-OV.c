@@ -22,7 +22,7 @@
 // 1714:      UNK_0xf4e8  codep:0x224c parp:0xf4e8 size:0x0006 C-string:'UNK_0xf4e8'
 // 1715:       ICON-PARM  codep:0x224c parp:0xf4fc size:0x0010 C-string:'ICON_dash_PARM'
 // 1716:            +ICP  codep:0x224c parp:0xf515 size:0x0006 C-string:'_plus_ICP'
-// 1717:        +ICONBOX  codep:0x224c parp:0xf528 size:0x0038 C-string:'_plus_ICONBOX'
+// 1717:        +ICONBOX  codep:0x224c parp:0xf528 size:0x0000 C-string:'_plus_ICONBOX'
 
 // =================================
 // =========== VARIABLES ===========

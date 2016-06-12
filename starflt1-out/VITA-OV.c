@@ -75,7 +75,7 @@
 // 1767:      UNK_0xf40c  codep:0x224c parp:0xf40c size:0x0024 C-string:'UNK_0xf40c'
 // 1768:      UNK_0xf432  codep:0x224c parp:0xf432 size:0x0014 C-string:'UNK_0xf432'
 // 1769:      UNK_0xf448  codep:0x224c parp:0xf448 size:0x004c C-string:'UNK_0xf448'
-// 1770:             DIO  codep:0x224c parp:0xf49c size:0x00c4 C-string:'DIO'
+// 1770:             DIO  codep:0x224c parp:0xf49c size:0x0000 C-string:'DIO'
 
 // =================================
 // =========== VARIABLES ===========

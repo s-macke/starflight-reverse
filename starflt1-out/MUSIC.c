@@ -63,7 +63,7 @@
 // 1755:        PAUSEOFF  codep:0x1d29 parp:0xe90c size:0x001a C-string:'PAUSEOFF'
 // 1756:      UNK_0xe928  codep:0x224c parp:0xe928 size:0x0054 C-string:'UNK_0xe928'
 // 1757:   CREDIT.SCREEN  codep:0x224c parp:0xe98e size:0x000e C-string:'CREDIT_dot_SCREEN'
-// 1758:          INTROS  codep:0x224c parp:0xe9a7 size:0x0bb9 C-string:'INTROS'
+// 1758:          INTROS  codep:0x224c parp:0xe9a7 size:0x0000 C-string:'INTROS'
 
 // =================================
 // =========== VARIABLES ===========

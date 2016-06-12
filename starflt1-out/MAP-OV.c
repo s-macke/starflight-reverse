@@ -54,7 +54,7 @@
 // 1746:      UNK_0xecac  codep:0x224c parp:0xecac size:0x0012 C-string:'UNK_0xecac'
 // 1747:      UNK_0xecc0  codep:0x224c parp:0xecc0 size:0x008a C-string:'UNK_0xecc0'
 // 1748:      UNK_0xed4c  codep:0x224c parp:0xed4c size:0x0014 C-string:'UNK_0xed4c'
-// 1749:      (/STARMAP)  codep:0x224c parp:0xed6f size:0x07f1 C-string:'_ro__slash_STARMAP_rc_'
+// 1749:      (/STARMAP)  codep:0x224c parp:0xed6f size:0x0000 C-string:'_ro__slash_STARMAP_rc_'
 
 // =================================
 // =========== VARIABLES ===========

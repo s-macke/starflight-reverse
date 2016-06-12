@@ -19,7 +19,7 @@
 // 1877:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x0010 C-string:'UNK_0xf4a0'
 // 1878:      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x000c C-string:'UNK_0xf4b2'
 // 1879:      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x000c C-string:'UNK_0xf4c0'
-// 1880:          TOW-US  codep:0x224c parp:0xf4d7 size:0x0089 C-string:'TOW_dash_US'
+// 1880:          TOW-US  codep:0x224c parp:0xf4d7 size:0x0000 C-string:'TOW_dash_US'
 
 // =================================
 // =========== VARIABLES ===========

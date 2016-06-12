@@ -70,7 +70,7 @@
 // 1928:      UNK_0xf441  codep:0x224c parp:0xf441 size:0x001c C-string:'UNK_0xf441'
 // 1929:      UNK_0xf45f  codep:0x224c parp:0xf45f size:0x0044 C-string:'UNK_0xf45f'
 // 1930:      UNK_0xf4a5  codep:0x224c parp:0xf4a5 size:0x0056 C-string:'UNK_0xf4a5'
-// 1931:          DO-EYE  codep:0x224c parp:0xf506 size:0x005a C-string:'DO_dash_EYE'
+// 1931:          DO-EYE  codep:0x224c parp:0xf506 size:0x0000 C-string:'DO_dash_EYE'
 
 // =================================
 // =========== VARIABLES ===========

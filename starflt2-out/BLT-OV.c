@@ -36,7 +36,7 @@
 // 1894:            LDSY  codep:0x224c parp:0xf41e size:0x003e C-string:'LDSY'
 // 1895:            @.HY  codep:0x224c parp:0xf465 size:0x005c C-string:'_at__dot_HY'
 // 1896:            .TPI  codep:0x224c parp:0xf4ca size:0x0036 C-string:'_dot_TPI'
-// 1897:            .API  codep:0x224c parp:0xf509 size:0x0057 C-string:'_dot_API'
+// 1897:            .API  codep:0x224c parp:0xf509 size:0x0000 C-string:'_dot_API'
 
 // =================================
 // =========== VARIABLES ===========

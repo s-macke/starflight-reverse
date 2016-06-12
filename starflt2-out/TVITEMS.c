@@ -64,7 +64,7 @@
 // 1922:         >DEBRIS  codep:0x224c parp:0xf45c size:0x0008 C-string:'_gt_DEBRIS'
 // 1923:      UNK_0xf466  codep:0x224c parp:0xf466 size:0x0028 C-string:'UNK_0xf466'
 // 1924:      UNK_0xf490  codep:0x224c parp:0xf490 size:0x000e C-string:'UNK_0xf490'
-// 1925:        (/ITEMS)  codep:0x224c parp:0xf4ab size:0x00b5 C-string:'_ro__slash_ITEMS_rc_'
+// 1925:        (/ITEMS)  codep:0x224c parp:0xf4ab size:0x0000 C-string:'_ro__slash_ITEMS_rc_'
 
 // =================================
 // =========== VARIABLES ===========

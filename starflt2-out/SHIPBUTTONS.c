@@ -22,7 +22,7 @@
 // 1880:      UNK_0xf460  codep:0x224c parp:0xf460 size:0x001a C-string:'UNK_0xf460'
 // 1881:      UNK_0xf47c  codep:0x224c parp:0xf47c size:0x0084 C-string:'UNK_0xf47c'
 // 1882:      UNK_0xf502  codep:0x224c parp:0xf502 size:0x000c C-string:'UNK_0xf502'
-// 1883:            >FLT  codep:0x224c parp:0xf517 size:0x0049 C-string:'_gt_FLT'
+// 1883:            >FLT  codep:0x224c parp:0xf517 size:0x0000 C-string:'_gt_FLT'
 
 // =================================
 // =========== VARIABLES ===========

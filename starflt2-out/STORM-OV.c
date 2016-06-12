@@ -30,7 +30,7 @@
 // 1888:      UNK_0xf468  codep:0x224c parp:0xf468 size:0x003c C-string:'UNK_0xf468'
 // 1889:      UNK_0xf4a6  codep:0x224c parp:0xf4a6 size:0x003a C-string:'UNK_0xf4a6'
 // 1890:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0012 C-string:'UNK_0xf4e2'
-// 1891:       (DO.STORM  codep:0x224c parp:0xf502 size:0x005e C-string:'_ro_DO_dot_STORM'
+// 1891:       (DO.STORM  codep:0x224c parp:0xf502 size:0x0000 C-string:'_ro_DO_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========

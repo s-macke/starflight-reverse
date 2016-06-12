@@ -1945,7 +1945,7 @@
 // 1940:      UNK_0xdac2  codep:0x0000 parp:0xdac2 size:0x0e77 C-string:'UNK_0xdac2'
 // 1941:      UNK_0xe93b  codep:0x0000 parp:0xe93b size:0x000c C-string:'UNK_0xe93b'
 // 1942:      UNK_0xe949  codep:0x0000 parp:0xe949 size:0x008f C-string:'UNK_0xe949'
-// 1943:      UNK_0xe9da  codep:0x0000 parp:0xe9da size:0xffffeacd C-string:'UNK_0xe9da'
+// 1943:      UNK_0xe9da  codep:0x0000 parp:0xe9da size:0x0000 C-string:'UNK_0xe9da'
 
 // =================================
 // =========== VARIABLES ===========
@@ -24821,7 +24821,7 @@ void DOS() // DOS
 void HIMUS() // HIMUS
 {
   LoadOverlay("MUSIC-OV");
-  UNK_0xe9a7(); // Overlay MUSIC
+  INTROS(); // Overlay MUSIC
 }
 
 
@@ -25130,7 +25130,8 @@ void EXPERT() // EXPERT
   ALLOT(); // ALLOT
   (;CODE)();
 // inlined assembler code
-// 0xb869: db 0xe8 0xdd 0x5d 0x41 0x0e 0x3a 0xb7 0xe5 0x7a 0xe8 0xb6 0x41 0x0e 0xda 0xb6 0x92 0x0c 0x05 0x10 0x72 0x0f 0xf2 0x0e 0xb8 0x15 0x50 0x0e 0xae 0x0b 0xb2 0xb7 0xfa 0x15 0x30 0x00 0xfc 0x7a 0x41 0x0e 0x3a 0xb7 0x07 0x13 0xe5 0x7a 0x4a 0x17 0x50 0x0e 0xe8 0xb6 0x92 0x0f 0x35 0x10 0x35 0x10 0x05 0x10 0xe8 0xb6 0x72 0x0f 0x41 0x0e 0xae 0x0b 0x50 0x0e 0xae 0x0b 0xf2 0x0e 0x50 0x0e 0x76 0x6d 0xf2 0x0e 0x76 0x6d 0x3d 0x0f 0x91 0x15 0xc4 0xff 0xfc 0x7a 0x07 0x13 0x90 0x16 '  ]A :  z  A       r     P       0  zA :    zJ P     5 5     r A   P     P vm  vm=      z    '
+// 0xb869: call   1649
+// 0xb86c: db 0x41 0x0e 0x3a 0xb7 0xe5 0x7a 0xe8 0xb6 0x41 0x0e 0xda 0xb6 0x92 0x0c 0x05 0x10 0x72 0x0f 0xf2 0x0e 0xb8 0x15 0x50 0x0e 0xae 0x0b 0xb2 0xb7 0xfa 0x15 0x30 0x00 0xfc 0x7a 0x41 0x0e 0x3a 0xb7 0x07 0x13 0xe5 0x7a 0x4a 0x17 0x50 0x0e 0xe8 0xb6 0x92 0x0f 0x35 0x10 0x35 0x10 0x05 0x10 0xe8 0xb6 0x72 0x0f 0x41 0x0e 0xae 0x0b 0x50 0x0e 0xae 0x0b 0xf2 0x0e 0x50 0x0e 0x76 0x6d 0xf2 0x0e 0x76 0x6d 0x3d 0x0f 0x91 0x15 0xc4 0xff 0xfc 0x7a 0x07 0x13 0x90 0x16 'A :  z  A       r     P       0  zA :    zJ P     5 5     r A   P     P vm  vm=      z    '
 
 // ====================================================
 // 0xb8c6: WORD '-->' codep=0x224c parp=0xb8ce
@@ -25599,7 +25600,7 @@ void HUFF_gt_() // HUFF>
 void _eq_CARGO() // =CARGO
 {
   LoadOverlay("MISC-");
-  UNK_0xf482(); // Overlay MISC-OV
+  =CARG(); // Overlay MISC-OV
 }
 
 
@@ -25610,7 +25611,7 @@ void _eq_CARGO() // =CARGO
 void OV_n_IN_do_() // OV#IN$
 {
   LoadOverlay("MISC-");
-  UNK_0xf0e9(); // Overlay MISC-OV
+  (#IN$(); // Overlay MISC-OV
 }
 
 
@@ -25621,7 +25622,7 @@ void OV_n_IN_do_() // OV#IN$
 void OVQUITMESS() // OVQUITMESS
 {
   LoadOverlay("MISC-");
-  UNK_0xf1e5(); // Overlay MISC-OV
+  (QUIT(); // Overlay MISC-OV
 }
 
 
@@ -25632,7 +25633,7 @@ void OVQUITMESS() // OVQUITMESS
 void OV_dot_0_do__do__do_() // OV.0$$$
 {
   LoadOverlay("MISC-");
-  UNK_0xf210(); // Overlay MISC-OV
+  (.0$$(); // Overlay MISC-OV
 }
 
 
@@ -25643,7 +25644,7 @@ void OV_dot_0_do__do__do_() // OV.0$$$
 void OV0_do__do__do_MESS() // OV0$$$MESS
 {
   LoadOverlay("MISC-");
-  UNK_0xf233(); // Overlay MISC-OV
+  (0$$$(); // Overlay MISC-OV
 }
 
 
@@ -25654,7 +25655,7 @@ void OV0_do__do__do_MESS() // OV0$$$MESS
 void OVTRIM() // OVTRIM
 {
   LoadOverlay("MISC-");
-  UNK_0xf003(); // Overlay MISC-OV
+  (TRIM(); // Overlay MISC-OV
 }
 
 
@@ -25671,7 +25672,7 @@ void OVTRIMS() // OVTRIMS
   signed short int imax = Pop();
   do // (DO)
   {
-  UNK_0xf003(); // Overlay MISC-OV
+  (TRIM(); // Overlay MISC-OV
   i++;
   } while(i<imax); // (LOOP) 0xfffc
 
@@ -25685,7 +25686,7 @@ void OVTRIMS() // OVTRIMS
 void OV_ask_ARTIFACT() // OV?ARTIFACT
 {
   LoadOverlay("MISC-");
-  UNK_0xf1ad(); // Overlay MISC-OV
+  (?ART(); // Overlay MISC-OV
 }
 
 
@@ -25696,7 +25697,7 @@ void OV_ask_ARTIFACT() // OV?ARTIFACT
 void OV_ask__dot_EQUIP_dash_OK() // OV?.EQUIP-OK
 {
   LoadOverlay("MISC-");
-  UNK_0xf3dd(); // Overlay MISC-OV
+  (?.EQ(); // Overlay MISC-OV
 }
 
 
@@ -25717,7 +25718,7 @@ void OV_ask__dot_EQUIP_dash_OK() // OV?.EQUIP-OK
 void OV_slash_DA() // OV/DA
 {
   LoadOverlay("ENG-O");
-  UNK_0xee54(); // Overlay ENGINEER
+  (/DAMAGE)(); // Overlay ENGINEER
 }
 
 
@@ -25728,7 +25729,7 @@ void OV_slash_DA() // OV/DA
 void OV_slash_RE() // OV/RE
 {
   LoadOverlay("ENG-O");
-  UNK_0xf419(); // Overlay ENGINEER
+  (/REPAIR)(); // Overlay ENGINEER
 }
 
 
@@ -25739,7 +25740,7 @@ void OV_slash_RE() // OV/RE
 void OVDBA() // OVDBA
 {
   LoadOverlay("ENG-O");
-  UNK_0xee02(); // Overlay ENGINEER
+  DBARS(); // Overlay ENGINEER
 }
 
 
@@ -25760,7 +25761,7 @@ void OVDBA() // OVDBA
 void _dot_RUNBIT() // .RUNBIT
 {
   LoadOverlay("BLT-OV");
-  UNK_0xf220(); // Overlay BLT-OV
+  .RUNBIT(); // Overlay BLT-OV
 }
 
 
@@ -25771,7 +25772,7 @@ void _dot_RUNBIT() // .RUNBIT
 void _at__dot_HYBRID() // @.HYBRID
 {
   LoadOverlay("BLT-OV");
-  UNK_0xf51a(); // Overlay BLT-OV
+  @.HYBRID(); // Overlay BLT-OV
 }
 
 
@@ -25782,7 +25783,7 @@ void _at__dot_HYBRID() // @.HYBRID
 void _dot_EGARUNBIT() // .EGARUNBIT
 {
   LoadOverlay("BLT-OV");
-  UNK_0xf379(); // Overlay BLT-OV
+  .EGARUNBIT(); // Overlay BLT-OV
 }
 
 
@@ -25803,7 +25804,7 @@ void _dot_EGARUNBIT() // .EGARUNBIT
 void OV_slash_STATUS() // OV/STATUS
 {
   LoadOverlay("SCI-OV");
-  UNK_0xec18(); // Overlay SCIENCE
+  (/STATUS)(); // Overlay SCIENCE
 }
 
 
@@ -25814,7 +25815,7 @@ void OV_slash_STATUS() // OV/STATUS
 void OV_slash_STXT() // OV/STXT
 {
   LoadOverlay("SCI-OV");
-  UNK_0xeb07(); // Overlay SCIENCE
+  .STAT-TEXT(); // Overlay SCIENCE
 }
 
 
@@ -25826,7 +25827,7 @@ void OVSTARDATE() // OVSTARDATE
 {
   LoadOverlay("SCI-OV");
   Push(0); // 0
-  UNK_0xe7eb(); // Overlay SCIENCE
+  .STARDATE(); // Overlay SCIENCE
 }
 
 
@@ -25837,7 +25838,7 @@ void OVSTARDATE() // OVSTARDATE
 void OV_slash_SENSORS() // OV/SENSORS
 {
   LoadOverlay("SCI-OV");
-  UNK_0xf433(); // Overlay SCIENCE
+  (/SENSORS)(); // Overlay SCIENCE
 }
 
 
@@ -25848,7 +25849,7 @@ void OV_slash_SENSORS() // OV/SENSORS
 void _ask_HEAVY() // ?HEAVY
 {
   LoadOverlay("SCI-OV");
-  UNK_0xe7bd(); // Overlay SCIENCE
+  ?HEAVY(); // Overlay SCIENCE
 }
 
 
@@ -25933,7 +25934,7 @@ void _ask_VCYCLE() // ?VCYCLE
 void _ro_OBI() // (OBI
 {
   LoadOverlay("HEAL-O");
-  UNK_0xf515(); // Overlay HEAL-OV
+  OBITS(); // Overlay HEAL-OV
 }
 
 
@@ -25944,7 +25945,7 @@ void _ro_OBI() // (OBI
 void _ro__dot_VI() // (.VI
 {
   LoadOverlay("HEAL-O");
-  UNK_0xf35d(); // Overlay HEAL-OV
+  .VITS(); // Overlay HEAL-OV
 }
 
 
@@ -25955,7 +25956,7 @@ void _ro__dot_VI() // (.VI
 void _ro_HEA() // (HEA
 {
   LoadOverlay("HEAL-O");
-  UNK_0xf524(); // Overlay HEAL-OV
+  HEAL(); // Overlay HEAL-OV
 }
 
 
@@ -25966,7 +25967,7 @@ void _ro_HEA() // (HEA
 void _ro_ROL() // (ROL
 {
   LoadOverlay("HEAL-O");
-  UNK_0xf202(); // Overlay HEAL-OV
+  ROLE-C(); // Overlay HEAL-OV
 }
 
 
@@ -26051,7 +26052,7 @@ void _ask_APP() // ?APP
 void DO_dash_REPA() // DO-REPA
 {
   LoadOverlay("REPAIR-");
-  UNK_0xf4e3(); // Overlay REPAIR-OV
+  DO-REPA(); // Overlay REPAIR-OV
   SAVE_dash_OV(); // SAVE-OV
   TIME(); // TIME
   _2_at_(); // 2@
@@ -26124,7 +26125,7 @@ void MREPAIR() // MREPAIR
 void OVINIT_dash_COMM() // OVINIT-COMM
 {
   LoadOverlay("COMM-OV");
-  UNK_0xf53a(); // Overlay COMM-OV
+  ICOMM(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26136,7 +26137,7 @@ void OVINIT_dash_COMM() // OVINIT-COMM
 void U_dash_COMM() // U-COMM
 {
   LoadOverlay("COMM-OV");
-  UNK_0xf174(); // Overlay COMM-OV
+  CL1(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26148,7 +26149,7 @@ void U_dash_COMM() // U-COMM
 void COMM_dash_EXPERTS() // COMM-EXPERTS
 {
   LoadOverlay("COMM-OV");
-  UNK_0xeed1(); // Overlay COMM-OV
+  COMM-EXPERTS(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26160,7 +26161,7 @@ void COMM_dash_EXPERTS() // COMM-EXPERTS
 void A_gt_O() // A>O
 {
   LoadOverlay("COMM-OV");
-  UNK_0xdb48(); // Overlay COMM-OV
+  A>ORIGINATOR(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26172,7 +26173,7 @@ void A_gt_O() // A>O
 void O_gt_C() // O>C
 {
   LoadOverlay("COMM-OV");
-  UNK_0xdb23(); // Overlay COMM-OV
+  ORIGINATOR>C(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26184,7 +26185,7 @@ void O_gt_C() // O>C
 void _gt_HAIL() // >HAIL
 {
   LoadOverlay("COMM-OV");
-  UNK_0xdee2(); // Overlay COMM-OV
+  >HAIL$(); // Overlay COMM-OV
 }
 
 
@@ -26195,7 +26196,7 @@ void _gt_HAIL() // >HAIL
 void OV_plus__ex_EDL() // OV+!EDL
 {
   LoadOverlay("COMM-OV");
-  UNK_0xdce9(); // Overlay COMM-OV
+  +!EDL(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26207,7 +26208,7 @@ void OV_plus__ex_EDL() // OV+!EDL
 void P_gt_CT() // P>CT
 {
   LoadOverlay("COMM-OV");
-  UNK_0xe446(); // Overlay COMM-OV
+  (PHRASE>CT)(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26219,7 +26220,7 @@ void P_gt_CT() // P>CT
 void CTUP() // CTUP
 {
   LoadOverlay("COMM-OV");
-  UNK_0xe261(); // Overlay COMM-OV
+  CTSCROLL(); // Overlay COMM-OV
 }
 
 
@@ -26230,7 +26231,7 @@ void CTUP() // CTUP
 void OVEDL_plus_AUX() // OVEDL+AUX
 {
   LoadOverlay("COMM-OV");
-  UNK_0xee9e(); // Overlay COMM-OV
+  EDL+AUX(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26264,7 +26265,7 @@ void MEDL_plus_AUX() // MEDL+AUX
 void DA_dash_STR() // DA-STR
 {
   LoadOverlay("COMM-OV");
-  UNK_0xf444(); // Overlay COMM-OV
+  IAPWR(); // Overlay COMM-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26286,7 +26287,7 @@ void DA_dash_STR() // DA-STR
 void XCOMM() // XCOMM
 {
   LoadOverlay("XCOM-OV");
-  UNK_0xf4fe(); // Overlay COMMSPEC-OV
+  (XCOMM)(); // Overlay COMMSPEC-OV
 }
 
 
@@ -26307,7 +26308,7 @@ void XCOMM() // XCOMM
 void MERCATOR_dash_GEN() // MERCATOR-GEN
 {
   LoadOverlay("FRACT-OV");
-  UNK_0xe7b9(); // Overlay FRACT-OV
+  MERCATOR-GEN(); // Overlay FRACT-OV
 }
 
 
@@ -26318,7 +26319,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
 void NEWCONTOUR() // NEWCONTOUR
 {
   LoadOverlay("FRACT-OV");
-  UNK_0xf108(); // Overlay FRACT-OV
+  NEWCONTOUR(); // Overlay FRACT-OV
 }
 
 
@@ -26329,7 +26330,7 @@ void NEWCONTOUR() // NEWCONTOUR
 void MAKE_dash_GLOBE() // MAKE-GLOBE
 {
   LoadOverlay("FRACT-OV");
-  UNK_0xefad(); // Overlay FRACT-OV
+  MAKE-GLOBE(); // Overlay FRACT-OV
 }
 
 
@@ -26340,7 +26341,7 @@ void MAKE_dash_GLOBE() // MAKE-GLOBE
 void SCRLCON() // SCRLCON
 {
   LoadOverlay("FRACT-OV");
-  UNK_0xf0d7(); // Overlay FRACT-OV
+  SCRLCON(); // Overlay FRACT-OV
 }
 
 
@@ -26361,7 +26362,7 @@ void SCRLCON() // SCRLCON
 void INIT_dash_ORBIT() // INIT-ORBIT
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xf42e(); // Overlay ORBIT-OV
+  INIT-ORBIT(); // Overlay ORBIT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26373,7 +26374,7 @@ void INIT_dash_ORBIT() // INIT-ORBIT
 void SHOWSITE() // SHOWSITE
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xe703(); // Overlay ORBIT-OV
+  SHOWSITE(); // Overlay ORBIT-OV
 }
 
 
@@ -26384,7 +26385,7 @@ void SHOWSITE() // SHOWSITE
 void DESCEND() // DESCEND
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xf1b7(); // Overlay ORBIT-OV
+  DESCEND(); // Overlay ORBIT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26396,7 +26397,7 @@ void DESCEND() // DESCEND
 void ASCEND() // ASCEND
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xf387(); // Overlay ORBIT-OV
+  ASCEND(); // Overlay ORBIT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26408,7 +26409,7 @@ void ASCEND() // ASCEND
 void ROTATE() // ROTATE
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xf491(); // Overlay ORBIT-OV
+  ROTATE(); // Overlay ORBIT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26420,7 +26421,7 @@ void ROTATE() // ROTATE
 void SEEGRID() // SEEGRID
 {
   LoadOverlay("ORBIT-OV");
-  UNK_0xec65(); // Overlay ORBIT-OV
+  SEEGRID(); // Overlay ORBIT-OV
 }
 
 
@@ -26452,7 +26453,7 @@ void MROTATE() // MROTATE
 void ICON_dash_PARM() // ICON-PARM
 {
   LoadOverlay("ICONP-OV");
-  UNK_0xf4fc(); // Overlay ICONP-OV
+  ICON-PARM(); // Overlay ICONP-OV
 }
 
 
@@ -26463,7 +26464,7 @@ void ICON_dash_PARM() // ICON-PARM
 void _plus_ICONBXOV() // +ICONBXOV
 {
   LoadOverlay("ICONP-OV");
-  UNK_0xf528(); // Overlay ICONP-OV
+  +ICONBOX(); // Overlay ICONP-OV
 }
 
 
@@ -26484,7 +26485,7 @@ void _plus_ICONBXOV() // +ICONBXOV
 void _ro__dot_MERC_rc_() // (.MERC)
 {
   LoadOverlay("SITE-OV");
-  UNK_0xf4cf(); // Overlay SITE-OV
+  .MERCATOR(); // Overlay SITE-OV
   OV_dash_CANC(); // OV-CANC
 }
 
@@ -26496,7 +26497,7 @@ void _ro__dot_MERC_rc_() // (.MERC)
 void _ro_GETSITE_rc_() // (GETSITE)
 {
   LoadOverlay("SITE-OV");
-  UNK_0xf537(); // Overlay SITE-OV
+  GETSITE(); // Overlay SITE-OV
   SAVE_dash_OV(); // SAVE-OV
   OV_dash_CANC(); // OV-CANC
 }
@@ -26519,7 +26520,7 @@ void _ro_GETSITE_rc_() // (GETSITE)
 void OVFLU() // OVFLU
 {
   LoadOverlay("FLUX-OV");
-  UNK_0xf505(); // Overlay FLUX-EFFECT
+  FLUX(); // Overlay FLUX-EFFECT
 }
 
 
@@ -26540,7 +26541,7 @@ void OVFLU() // OVFLU
 void OVINIT_dash_BALANCE() // OVINIT-BALANCE
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf038(); // Overlay BANK-OV
+  INIT-BALANCE(); // Overlay BANK-OV
 }
 
 
@@ -26551,7 +26552,7 @@ void OVINIT_dash_BALANCE() // OVINIT-BALANCE
 void OVTRANSACT() // OVTRANSACT
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf053(); // Overlay BANK-OV
+  TRANSACT(); // Overlay BANK-OV
 }
 
 
@@ -26562,7 +26563,7 @@ void OVTRANSACT() // OVTRANSACT
 void OVD_at_BALANCE() // OVD@BALANCE
 {
   LoadOverlay("BANK-OV");
-  UNK_0xeff0(); // Overlay BANK-OV
+  D@BALANCE(); // Overlay BANK-OV
 }
 
 
@@ -26573,7 +26574,7 @@ void OVD_at_BALANCE() // OVD@BALANCE
 void OVD_ex_BALANCE() // OVD!BALANCE
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf008(); // Overlay BANK-OV
+  D!BALANCE(); // Overlay BANK-OV
 }
 
 
@@ -26584,7 +26585,7 @@ void OVD_ex_BALANCE() // OVD!BALANCE
 void OV_ask_BALANCE() // OV?BALANCE
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf01f(); // Overlay BANK-OV
+  ?BALANCE(); // Overlay BANK-OV
 }
 
 
@@ -26595,7 +26596,7 @@ void OV_ask_BALANCE() // OV?BALANCE
 void OV_ex_TFLAG() // OV!TFLAG
 {
   LoadOverlay("BANK-OV");
-  UNK_0xefd6(); // Overlay BANK-OV
+  !TFLAG(); // Overlay BANK-OV
 }
 
 
@@ -26606,7 +26607,7 @@ void OV_ex_TFLAG() // OV!TFLAG
 void I_dash_TRANS() // I-TRANS
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf0ce(); // Overlay BANK-OV
+  INT%(); // Overlay BANK-OV
 }
 
 
@@ -26617,7 +26618,7 @@ void I_dash_TRANS() // I-TRANS
 void U_dash_B() // U-B
 {
   LoadOverlay("BANK-OV");
-  UNK_0xf4ef(); // Overlay BANK-OV
+  (U-BANK)(); // Overlay BANK-OV
 }
 
 
@@ -26628,10 +26629,10 @@ void U_dash_B() // U-B
 void T_plus_BALANCE() // T+BALANCE
 {
   LoadOverlay("BANK-OV");
-  UNK_0xeff0(); // Overlay BANK-OV
+  D@BALANCE(); // Overlay BANK-OV
   D_plus_(); // D+
-  UNK_0xf008(); // Overlay BANK-OV
-  UNK_0xefd6(); // Overlay BANK-OV
+  D!BALANCE(); // Overlay BANK-OV
+  !TFLAG(); // Overlay BANK-OV
 }
 
 
@@ -26652,7 +26653,7 @@ void T_plus_BALANCE() // T+BALANCE
 void U_dash_AC() // U-AC
 {
   LoadOverlay("ACREW-OV");
-  UNK_0xf45f(); // Overlay ASSCREW-OV
+  (U-ASSCREW)(); // Overlay ASSCREW-OV
 }
 
 
@@ -26673,7 +26674,7 @@ void U_dash_AC() // U-AC
 void U_dash_PF() // U-PF
 {
   LoadOverlay("PFILE-OV");
-  UNK_0xf50a(); // Overlay PERSONNEL-OV
+  (U-PFILE)(); // Overlay PERSONNEL-OV
 }
 
 
@@ -26694,7 +26695,7 @@ void U_dash_PF() // U-PF
 void OV_dot_MASS() // OV.MASS
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xee61(); // Overlay SHIPGRPH-OV
+  (.MASS)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26705,7 +26706,7 @@ void OV_dot_MASS() // OV.MASS
 void OV_dot_ACC() // OV.ACC
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xeee0(); // Overlay SHIPGRPH-OV
+  (.ACC)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26716,7 +26717,7 @@ void OV_dot_ACC() // OV.ACC
 void OV_dot_PODS() // OV.PODS
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xf0c2(); // Overlay SHIPGRPH-OV
+  (.PODS)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26727,7 +26728,7 @@ void OV_dot_PODS() // OV.PODS
 void OV_dot_SHIP() // OV.SHIP
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xf1b6(); // Overlay SHIPGRPH-OV
+  (.SHIP)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26738,7 +26739,7 @@ void OV_dot_SHIP() // OV.SHIP
 void OVBALANCEMESS() // OVBALANCEMESS
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xf1de(); // Overlay SHIPGRPH-OV
+  (BALANCEMESS)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26749,7 +26750,7 @@ void OVBALANCEMESS() // OVBALANCEMESS
 void OV_dot_CONFIG() // OV.CONFIG
 {
   LoadOverlay("SHIP-GR-OV");
-  UNK_0xf4f9(); // Overlay SHIPGRPH-OV
+  (.CONFIG)(); // Overlay SHIPGRPH-OV
 }
 
 
@@ -26770,7 +26771,7 @@ void OV_dot_CONFIG() // OV.CONFIG
 void U_dash_SC() // U-SC
 {
   LoadOverlay("CONFIG-OV");
-  UNK_0xf4ba(); // Overlay CONFIG-OV
+  (U-CONFIG)(); // Overlay CONFIG-OV
 }
 
 
@@ -26791,7 +26792,7 @@ void U_dash_SC() // U-SC
 void _st_TDART() // <TDART
 {
   LoadOverlay("TD-OV");
-  UNK_0xf4ca(); // Overlay TDEPOT-OV
+  <TDART(); // Overlay TDEPOT-OV
 }
 
 
@@ -26802,7 +26803,7 @@ void _st_TDART() // <TDART
 void U_dash_TD() // U-TD
 {
   LoadOverlay("TD-OV");
-  UNK_0xf45d(); // Overlay TDEPOT-OV
+  (U-DEPOT)(); // Overlay TDEPOT-OV
 }
 
 
@@ -26813,7 +26814,7 @@ void U_dash_TD() // U-TD
 void TOSS() // TOSS
 {
   LoadOverlay("TD-OV");
-  UNK_0xf162(); // Overlay TDEPOT-OV
+  SELL-IT(); // Overlay TDEPOT-OV
 }
 
 
@@ -26824,7 +26825,7 @@ void TOSS() // TOSS
 void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 {
   LoadOverlay("TD-OV");
-  UNK_0xebf3(); // Overlay TDEPOT-OV
+  KEY-ELEM-AMT(); // Overlay TDEPOT-OV
 }
 
 
@@ -26850,7 +26851,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 void U_dash_OP() // U-OP
 {
   LoadOverlay("OP-OV");
-  UNK_0xf4fb(); // Overlay OP-OV
+  (U-OP)(); // Overlay OP-OV
 }
 
 
@@ -26871,7 +26872,7 @@ void U_dash_OP() // U-OP
 void SET_dash_PLAN() // SET-PLAN
 {
   LoadOverlay("PLSET-OV");
-  UNK_0xf482(); // Overlay PLSET-OV
+  PLAN-RUL(); // Overlay PLSET-OV
 }
 
 
@@ -26882,7 +26883,7 @@ void SET_dash_PLAN() // SET-PLAN
 void SETC() // SETC
 {
   LoadOverlay("PLSET-OV");
-  UNK_0xf2f4(); // Overlay PLSET-OV
+  SETC(); // Overlay PLSET-OV
 }
 
 
@@ -26903,7 +26904,7 @@ void SETC() // SETC
 void DEPART() // DEPART
 {
   LoadOverlay("DPART-OV");
-  UNK_0xf48e(); // Overlay DPART-OV
+  DEPART(); // Overlay DPART-OV
 }
 
 
@@ -26924,7 +26925,7 @@ void DEPART() // DEPART
 void DO_dash_DA() // DO-DA
 {
   LoadOverlay("DAMAGE-");
-  UNK_0xf521(); // Overlay DAMAGE-OV
+  DO-DAMA(); // Overlay DAMAGE-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26946,7 +26947,7 @@ void DO_dash_DA() // DO-DA
 void _ro_WA() // (WA
 {
   LoadOverlay("COMBAT-O");
-  UNK_0xf4bd(); // Overlay COMBAT-OV
+  WAR(); // Overlay COMBAT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -26960,7 +26961,7 @@ void _ro_CO() // (CO
   LoadOverlay("COMBAT-O");
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
-  UNK_0xef3b(); // Overlay COMBAT-OV
+  COMBAT(); // Overlay COMBAT-OV
   ICLOSE(); // ICLOSE
   SAVE_dash_OV(); // SAVE-OV
 }
@@ -26973,7 +26974,7 @@ void _ro_CO() // (CO
 void CSC() // CSC
 {
   LoadOverlay("COMBAT-O");
-  UNK_0xec4b(); // Overlay COMBAT-OV
+  SET-SCALE(); // Overlay COMBAT-OV
 }
 
 
@@ -26984,7 +26985,7 @@ void CSC() // CSC
 void C_and_C() // C&C
 {
   LoadOverlay("COMBAT-O");
-  UNK_0xf4ec(); // Overlay COMBAT-OV
+  CLEAR-CO(); // Overlay COMBAT-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -27033,7 +27034,7 @@ void WAR() // WAR
 void UFM() // UFM
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf0cd(); // Overlay HYPERMSG-OV
+  UF-MESS(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27044,7 +27045,7 @@ void UFM() // UFM
 void USM() // USM
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf135(); // Overlay HYPERMSG-OV
+  US-MESS(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27055,7 +27056,7 @@ void USM() // USM
 void NFM() // NFM
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xebce(); // Overlay HYPERMSG-OV
+  NF-MESS(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27066,7 +27067,7 @@ void NFM() // NFM
 void NSM() // NSM
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xecf1(); // Overlay HYPERMSG-OV
+  NS-MESS(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27077,7 +27078,7 @@ void NSM() // NSM
 void _dot_EX() // .EX
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf19e(); // Overlay HYPERMSG-OV
+  .EX(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27088,7 +27089,7 @@ void _dot_EX() // .EX
 void DMSG() // DMSG
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf1bc(); // Overlay HYPERMSG-OV
+  DMSG(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27099,7 +27100,7 @@ void DMSG() // DMSG
 void D_dash_UP() // D-UP
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xe917(); // Overlay HYPERMSG-OV
+  DISP-SETUP(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27110,7 +27111,7 @@ void D_dash_UP() // D-UP
 void DO_dash_FLARE() // DO-FLARE
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xe970(); // Overlay HYPERMSG-OV
+  DO-FLARE(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27121,7 +27122,7 @@ void DO_dash_FLARE() // DO-FLARE
 void _ask_PRL() // ?PRL
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xe76d(); // Overlay HYPERMSG-OV
+  ?PRL(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27132,7 +27133,7 @@ void _ask_PRL() // ?PRL
 void OSET() // OSET
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xef3c(); // Overlay HYPERMSG-OV
+  OSET(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27164,7 +27165,7 @@ void TRAK_dash_ENCS() // TRAK-ENCS
   WITHIN(); // WITHIN
   if (Pop() == 0) return;
   LoadOverlay("HMISC-OV");
-  UNK_0xf44a(); // Overlay HYPERMSG-OV
+  TRAK-E(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27175,7 +27176,7 @@ void TRAK_dash_ENCS() // TRAK-ENCS
 void HEAT() // HEAT
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xeec0(); // Overlay HYPERMSG-OV
+  HEAT(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27186,7 +27187,7 @@ void HEAT() // HEAT
 void _ex__i_EXT() // !'EXT
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf516(); // Overlay HYPERMSG-OV
+  (!'EXT)(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27197,7 +27198,7 @@ void _ex__i_EXT() // !'EXT
 void _ro_CTXT_rc_() // (CTXT)
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xf261(); // Overlay HYPERMSG-OV
+  (CTXT)(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27219,7 +27220,7 @@ void CONTEXT_dash_CASES() // CONTEXT-CASES
 void _plus_A_dash_VESS() // +A-VESS
 {
   LoadOverlay("HMISC-OV");
-  UNK_0xe692(); // Overlay HYPERMSG-OV
+  +A-VESS(); // Overlay HYPERMSG-OV
 }
 
 
@@ -27262,7 +27263,7 @@ void MHEAT() // MHEAT
 void OV_slash__ro_D() // OV/(D
 {
   LoadOverlay("NAV-O");
-  UNK_0xf4c8(); // Overlay NAVIGATR
+  (/(DIS)ARM)(); // Overlay NAVIGATR
 }
 
 
@@ -27273,7 +27274,7 @@ void OV_slash__ro_D() // OV/(D
 void OV_slash__ro_U() // OV/(U
 {
   LoadOverlay("NAV-O");
-  UNK_0xf4fa(); // Overlay NAVIGATR
+  (/(UD)SHIELD)(); // Overlay NAVIGATR
 }
 
 
@@ -27287,7 +27288,7 @@ void OV_dash_SH() // OV-SH
   LoadOverlay("NAV-O");
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
-  UNK_0xf2b3(); // Overlay NAVIGATR
+  >DOWN-SHIELD(); // Overlay NAVIGATR
   ICLOSE(); // ICLOSE
 }
 
@@ -27302,7 +27303,7 @@ void OV_dash_AR() // OV-AR
   LoadOverlay("NAV-O");
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
-  UNK_0xf3b5(); // Overlay NAVIGATR
+  >DISARM(); // Overlay NAVIGATR
   ICLOSE(); // ICLOSE
 }
 
@@ -27324,7 +27325,7 @@ void OV_dash_AR() // OV-AR
 void FLY() // FLY
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xeec9(); // Overlay HYPER-OV
+  FLY(); // Overlay HYPER-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -27339,17 +27340,17 @@ void MANEUVER() // MANEUVER
   Push(0xca20);
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
-  UNK_0xeae3(); // Overlay HYPER-OV
+  JMPSHP(); // Overlay HYPER-OV
   goto label4;
 
   label1:
-  UNK_0xf125(); // Overlay HYPER-OV
+  CHK-MOV(); // Overlay HYPER-OV
   if (Pop() == 0) goto label2;
-  UNK_0xe0a3(); // Overlay HYPER-OV
+  .AUXSYS(); // Overlay HYPER-OV
   Push(pp_SKIP2NE); // SKIP2NE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label3;
-  UNK_0xede3(); // Overlay HYPER-OV
+  UNNEST(); // Overlay HYPER-OV
   goto label2;
 
   label3:
@@ -27375,7 +27376,7 @@ void MANEUVER() // MANEUVER
 void UNNEST() // UNNEST
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xede3(); // Overlay HYPER-OV
+  UNNEST(); // Overlay HYPER-OV
 }
 
 
@@ -27386,7 +27387,7 @@ void UNNEST() // UNNEST
 void _gt_NEST() // >NEST
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xf1ee(); // Overlay HYPER-OV
+  +NEST(); // Overlay HYPER-OV
 }
 
 
@@ -27397,7 +27398,7 @@ void _gt_NEST() // >NEST
 void GET_dash_HAUX() // GET-HAUX
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xee87(); // Overlay HYPER-OV
+  (GET-AU(); // Overlay HYPER-OV
 }
 
 
@@ -27408,7 +27409,7 @@ void GET_dash_HAUX() // GET-HAUX
 void OV_dot_MVS() // OV.MVS
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xe3f6(); // Overlay HYPER-OV
+  .MVS(); // Overlay HYPER-OV
 }
 
 
@@ -27419,7 +27420,7 @@ void OV_dot_MVS() // OV.MVS
 void S_gt_PORT() // S>PORT
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xf204(); // Overlay HYPER-OV
+  COME-HI(); // Overlay HYPER-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -27431,7 +27432,7 @@ void S_gt_PORT() // S>PORT
 void USE_dash_E() // USE-E
 {
   LoadOverlay("SHPMOV-");
-  UNK_0xe808(); // Overlay HYPER-OV
+  USE-E(); // Overlay HYPER-OV
 }
 
 
@@ -27463,7 +27464,7 @@ void MUSE_dash_E() // MUSE-E
 void DIO() // DIO
 {
   LoadOverlay("VITA-OV");
-  UNK_0xf49c(); // Overlay VITA-OV
+  DIO(); // Overlay VITA-OV
 }
 
 
@@ -27484,7 +27485,7 @@ void DIO() // DIO
 void C_plus_OPARMS() // C+OPARMS
 {
   LoadOverlay("HP-OV");
-  UNK_0xf4f9(); // Overlay HP-OV
+  C+OPARMS(); // Overlay HP-OV
 }
 
 
@@ -27518,7 +27519,7 @@ void BIO() // BIO
 void OTHER_dash_PAR() // OTHER-PAR
 {
   LoadOverlay("LP-OV");
-  UNK_0xf4fe(); // Overlay LP-OV
+  SPEC.PARM(); // Overlay LP-OV
 }
 
 
@@ -27539,7 +27540,7 @@ void OTHER_dash_PAR() // OTHER-PAR
 void _ask_TALK() // ?TALK
 {
   LoadOverlay("SENT-OV");
-  UNK_0xf34c(); // Overlay SENT-OV
+  ?TALK(); // Overlay SENT-OV
 }
 
 
@@ -27550,7 +27551,7 @@ void _ask_TALK() // ?TALK
 void SAYIT() // SAYIT
 {
   LoadOverlay("SENT-OV");
-  UNK_0xf2ed(); // Overlay SENT-OV
+  CLASS>DE(); // Overlay SENT-OV
 }
 
 
@@ -27571,7 +27572,7 @@ void SAYIT() // SAYIT
 void MAPS() // MAPS
 {
   LoadOverlay("MAPS-");
-  UNK_0xf51b(); // Overlay MAPS-OV
+  MAPS(); // Overlay MAPS-OV
 }
 
 
@@ -27582,7 +27583,7 @@ void MAPS() // MAPS
 void _dot_STOR() // .STOR
 {
   LoadOverlay("MAPS-");
-  UNK_0xf54c(); // Overlay MAPS-OV
+  .STORM(); // Overlay MAPS-OV
 }
 
 
@@ -27593,7 +27594,7 @@ void _dot_STOR() // .STOR
 void _ro_2X2_rc_() // (2X2)
 {
   LoadOverlay("MAPS-");
-  UNK_0xef3f(); // Overlay MAPS-OV
+  2X2CONTOUR(); // Overlay MAPS-OV
 }
 
 
@@ -27615,7 +27616,7 @@ void _2X2CO() // 2X2CO
 void _ro_4X4_rc_() // (4X4)
 {
   LoadOverlay("MAPS-");
-  UNK_0xef82(); // Overlay MAPS-OV
+  4X4CONTOUR(); // Overlay MAPS-OV
 }
 
 
@@ -27637,7 +27638,7 @@ void _4X4CO() // 4X4CO
 void _ro_8X8_rc_() // (8X8)
 {
   LoadOverlay("MAPS-");
-  UNK_0xf0d0(); // Overlay MAPS-OV
+  8X8CONTOUR(); // Overlay MAPS-OV
 }
 
 
@@ -27669,7 +27670,7 @@ void _8X8CO() // 8X8CO
 void POPULA() // POPULA
 {
   LoadOverlay("SEED-OV");
-  UNK_0xf4d3(); // Overlay SEED-OV
+  POPULA(); // Overlay SEED-OV
 }
 
 
@@ -27690,7 +27691,7 @@ void POPULA() // POPULA
 void ICONS() // ICONS
 {
   LoadOverlay("LISTICONS-OV");
-  UNK_0xf49e(); // Overlay LISTICONS
+  ICONS(); // Overlay LISTICONS
 }
 
 
@@ -27711,7 +27712,7 @@ void ICONS() // ICONS
 void _slash_ITEMS() // /ITEMS
 {
   LoadOverlay("ITEMS-OV");
-  UNK_0xf49b(); // Overlay ITEMS-OV
+  (/ITEMS)(); // Overlay ITEMS-OV
 }
 
 
@@ -27722,7 +27723,7 @@ void _slash_ITEMS() // /ITEMS
 void _gt_DEBRIS() // >DEBRIS
 {
   LoadOverlay("ITEMS-OV");
-  UNK_0xf44e(); // Overlay ITEMS-OV
+  >DEBRIS(); // Overlay ITEMS-OV
 }
 
 
@@ -27743,7 +27744,7 @@ void _gt_DEBRIS() // >DEBRIS
 void TVMOVE() // TVMOVE
 {
   LoadOverlay("MOVE-OV");
-  UNK_0xf401(); // Overlay MOVE-OV
+  TV-MOVE(); // Overlay MOVE-OV
 }
 
 
@@ -27754,7 +27755,7 @@ void TVMOVE() // TVMOVE
 void _ask_POPULA() // ?POPULA
 {
   LoadOverlay("MOVE-OV");
-  UNK_0xee64(); // Overlay MOVE-OV
+  ?POPULA(); // Overlay MOVE-OV
 }
 
 
@@ -27765,7 +27766,7 @@ void _ask_POPULA() // ?POPULA
 void _ex_E_slash_M() // !E/M
 {
   LoadOverlay("MOVE-OV");
-  UNK_0xe89a(); // Overlay MOVE-OV
+  SET-SPEED(); // Overlay MOVE-OV
 }
 
 
@@ -27786,7 +27787,7 @@ void _ex_E_slash_M() // !E/M
 void DO_dot_STORM() // DO.STORM
 {
   LoadOverlay("STORM-OV");
-  UNK_0xf4c8(); // Overlay STORM-OV
+  (DO.STORM(); // Overlay STORM-OV
 }
 
 
@@ -27797,7 +27798,7 @@ void DO_dot_STORM() // DO.STORM
 void INJURE() // INJURE
 {
   LoadOverlay("STORM-OV");
-  UNK_0xf382(); // Overlay STORM-OV
+  INJURE-PL(); // Overlay STORM-OV
 }
 
 
@@ -27818,7 +27819,7 @@ void INJURE() // INJURE
 void TV_dash_DISP() // TV-DISP
 {
   LoadOverlay("TV-OV");
-  UNK_0xf2ea(); // Overlay TV-OV
+  TV-DISP(); // Overlay TV-OV
 }
 
 
@@ -27829,7 +27830,7 @@ void TV_dash_DISP() // TV-DISP
 void _ro_TVSET_rc_() // (TVSET)
 {
   LoadOverlay("TV-OV");
-  UNK_0xedd5(); // Overlay TV-OV
+  TV-SETUP(); // Overlay TV-OV
 }
 
 
@@ -27840,7 +27841,7 @@ void _ro_TVSET_rc_() // (TVSET)
 void _ro_CLEAN_rc_() // (CLEAN)
 {
   LoadOverlay("TV-OV");
-  UNK_0xf375(); // Overlay TV-OV
+  TV-CLEANU(); // Overlay TV-OV
 }
 
 
@@ -27851,7 +27852,7 @@ void _ro_CLEAN_rc_() // (CLEAN)
 void _ro_HEAVE_rc_() // (HEAVE)
 {
   LoadOverlay("TV-OV");
-  UNK_0xed84(); // Overlay TV-OV
+  HEAVEHO(); // Overlay TV-OV
 }
 
 
@@ -27862,7 +27863,7 @@ void _ro_HEAVE_rc_() // (HEAVE)
 void _ro_WEAPONS_rc_() // (WEAPONS)
 {
   LoadOverlay("TV-OV");
-  UNK_0xf477(); // Overlay TV-OV
+  DO.WEAPON(); // Overlay TV-OV
 }
 
 
@@ -27873,7 +27874,7 @@ void _ro_WEAPONS_rc_() // (WEAPONS)
 void _ro_TALK_rc_() // (TALK)
 {
   LoadOverlay("TV-OV");
-  UNK_0xf282(); // Overlay TV-OV
+  WALK&TALK(); // Overlay TV-OV
 }
 
 
@@ -27905,7 +27906,7 @@ void HEAVEHO() // HEAVEHO
 void TVTASKS() // TVTASKS
 {
   LoadOverlay("BEHAVE-OV");
-  UNK_0xf3d0(); // Overlay BEHAV-OV
+  TV-TASKS(); // Overlay BEHAV-OV
 }
 
 
@@ -27916,7 +27917,7 @@ void TVTASKS() // TVTASKS
 void TV() // TV
 {
   LoadOverlay("BEHAVE-OV");
-  UNK_0xf4e5(); // Overlay BEHAV-OV
+  TV(); // Overlay BEHAV-OV
 }
 
 
@@ -27927,7 +27928,7 @@ void TV() // TV
 void _ro_SIMULA_rc_() // (SIMULA)
 {
   LoadOverlay("BEHAVE-OV");
-  UNK_0xec5b(); // Overlay BEHAV-OV
+  SIMULATE(); // Overlay BEHAV-OV
 }
 
 
@@ -27959,7 +27960,7 @@ void SIMULATE() // SIMULATE
 void SECURE() // SECURE
 {
   LoadOverlay("STP-OV");
-  UNK_0xf4bf(); // Overlay STP-OV
+  STP(); // Overlay STP-OV
 }
 
 
@@ -27970,7 +27971,7 @@ void SECURE() // SECURE
 void SIC_i_EM() // SIC'EM
 {
   LoadOverlay("STP-OV");
-  UNK_0xefe8(); // Overlay STP-OV
+  SIC'EM(); // Overlay STP-OV
 }
 
 
@@ -27981,7 +27982,7 @@ void SIC_i_EM() // SIC'EM
 void _2NDS() // 2NDS
 {
   LoadOverlay("STP-OV");
-  UNK_0xf4f4(); // Overlay STP-OV
+  2NDS(); // Overlay STP-OV
 }
 
 
@@ -28002,7 +28003,7 @@ void _2NDS() // 2NDS
 void OVCOU() // OVCOU
 {
   LoadOverlay("LAUNC");
-  UNK_0xf3fb(); // Overlay LAUNCH-OV
+  &LAUNCH(); // Overlay LAUNCH-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -28014,7 +28015,7 @@ void OVCOU() // OVCOU
 void OVBAC() // OVBAC
 {
   LoadOverlay("LAUNC");
-  UNK_0xf455(); // Overlay LAUNCH-OV
+  &RETURN(); // Overlay LAUNCH-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 
@@ -28026,7 +28027,7 @@ void OVBAC() // OVBAC
 void _dot_AIRL() // .AIRL
 {
   LoadOverlay("LAUNC");
-  UNK_0xf23b(); // Overlay LAUNCH-OV
+  .AIRLOCK(); // Overlay LAUNCH-OV
 }
 
 
@@ -28047,7 +28048,7 @@ void _dot_AIRL() // .AIRL
 void OV_slash_IT() // OV/IT
 {
   LoadOverlay("CAP-O");
-  UNK_0xef23(); // Overlay CAPTAIN
+  (/ITEMS)(); // Overlay CAPTAIN
 }
 
 
@@ -28058,7 +28059,7 @@ void OV_slash_IT() // OV/IT
 void OV_slash_CA() // OV/CA
 {
   LoadOverlay("CAP-O");
-  UNK_0xe42e(); // Overlay CAPTAIN
+  (/CAPT-LOG)(); // Overlay CAPTAIN
 }
 
 
@@ -28069,7 +28070,7 @@ void OV_slash_CA() // OV/CA
 void OV_slash_LA() // OV/LA
 {
   LoadOverlay("CAP-O");
-  UNK_0xf13d(); // Overlay CAPTAIN
+  (/LAUNCH/LAND)(); // Overlay CAPTAIN
 }
 
 
@@ -28080,7 +28081,7 @@ void OV_slash_LA() // OV/LA
 void OV_gt_DE() // OV>DE
 {
   LoadOverlay("CAP-O");
-  UNK_0xefd4(); // Overlay CAPTAIN
+  >DESCEND(); // Overlay CAPTAIN
 }
 
 
@@ -28091,7 +28092,7 @@ void OV_gt_DE() // OV>DE
 void OV_slash_LO() // OV/LO
 {
   LoadOverlay("CAP-O");
-  UNK_0xf43a(); // Overlay CAPTAIN
+  (/LOG-PLAN)(); // Overlay CAPTAIN
 }
 
 
@@ -28112,7 +28113,7 @@ void OV_slash_LO() // OV/LO
 void OV_slash_EXAMINE() // OV/EXAMINE
 {
   LoadOverlay("DOC-OV");
-  UNK_0xf4d5(); // Overlay DOCTOR
+  (/EXAMINE)(); // Overlay DOCTOR
 }
 
 
@@ -28123,7 +28124,7 @@ void OV_slash_EXAMINE() // OV/EXAMINE
 void OV_slash_TREAT() // OV/TREAT
 {
   LoadOverlay("DOC-OV");
-  UNK_0xf4ee(); // Overlay DOCTOR
+  (/TREAT)(); // Overlay DOCTOR
 }
 
 
@@ -28144,7 +28145,7 @@ void OV_slash_TREAT() // OV/TREAT
 void OV_slash_ANALYSIS() // OV/ANALYSIS
 {
   LoadOverlay("AN-OV");
-  UNK_0xf478(); // Overlay ANALYZE-OV
+  (/ANALYSIS)(); // Overlay ANALYZE-OV
 }
 
 
@@ -28165,7 +28166,7 @@ void OV_slash_ANALYSIS() // OV/ANALYSIS
 void OV_slash_STARMAP() // OV/STARMAP
 {
   LoadOverlay("*MAP-OV");
-  UNK_0xed6f(); // Overlay MAP-OV
+  (/STARMAP)(); // Overlay MAP-OV
   Push(pp_FTRIG); // FTRIG
   OFF(); // OFF
   SAVE_dash_OV(); // SAVE-OV
@@ -28189,7 +28190,7 @@ void OV_slash_STARMAP() // OV/STARMAP
 void TRY_dash_LAND() // TRY-LAND
 {
   LoadOverlay("LAND-OV");
-  UNK_0xf49e(); // Overlay LAND-OV
+  ?LAND(); // Overlay LAND-OV
 }
 
 
@@ -28200,7 +28201,7 @@ void TRY_dash_LAND() // TRY-LAND
 void TRY_dash_LAUNCH() // TRY-LAUNCH
 {
   LoadOverlay("LAND-OV");
-  UNK_0xf4f5(); // Overlay LAND-OV
+  ?LAUNCH(); // Overlay LAND-OV
 }
 
 
@@ -28221,7 +28222,7 @@ void TRY_dash_LAUNCH() // TRY-LAUNCH
 void OVFLT() // OVFLT
 {
   LoadOverlay("BTN-OV");
-  UNK_0xf4b5(); // Overlay SHIPBUTTONS
+  >FLT(); // Overlay SHIPBUTTONS
 }
 
 
@@ -28242,7 +28243,7 @@ void OVFLT() // OVFLT
 void _ask_FLIGHT_dash_OK() // ?FLIGHT-OK
 {
   LoadOverlay("CHKFLT-OV");
-  UNK_0xf501(); // Overlay CHKFLIGHT-OV
+  ?CAN-LEAVE(); // Overlay CHKFLIGHT-OV
 }
 
 
@@ -28263,7 +28264,7 @@ void _ask_FLIGHT_dash_OK() // ?FLIGHT-OK
 void PORTM() // PORTM
 {
   LoadOverlay("PM-OV");
-  UNK_0xf4e4(); // Overlay PORTMENU-OV
+  WALKIES(); // Overlay PORTMENU-OV
 }
 
 
@@ -28284,7 +28285,7 @@ void PORTM() // PORTM
 void STARTG() // STARTG
 {
   LoadOverlay("GAME-O");
-  UNK_0xf538(); // Overlay GAME-OV
+  START.(); // Overlay GAME-OV
 }
 
 
@@ -28295,7 +28296,7 @@ void STARTG() // STARTG
 void GAMEOP() // GAMEOP
 {
   LoadOverlay("GAME-O");
-  UNK_0xf51d(); // Overlay GAME-OV
+  GAMEOP(); // Overlay GAME-OV
   SAVE_dash_OV(); // SAVE-OV
 }
 

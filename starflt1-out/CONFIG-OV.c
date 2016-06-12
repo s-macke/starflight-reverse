@@ -23,7 +23,7 @@
 // 1715:      (PARTADDR)  codep:0x4a4f parp:0xec62 size:0x001c C-string:'_ro_PARTADDR_rc_'
 // 1716:           (PTS)  codep:0x4a4f parp:0xec88 size:0x07f7 C-string:'_ro_PTS_rc_'
 // 1717: CONFIG-FUNCTION  codep:0x4a4f parp:0xf493 size:0x0018 C-string:'CONFIG_dash_FUNCTION'
-// 1718:      (U-CONFIG)  codep:0x224c parp:0xf4ba size:0x00a6 C-string:'_ro_U_dash_CONFIG_rc_'
+// 1718:      (U-CONFIG)  codep:0x224c parp:0xf4ba size:0x0000 C-string:'_ro_U_dash_CONFIG_rc_'
 
 // =================================
 // =========== VARIABLES ===========

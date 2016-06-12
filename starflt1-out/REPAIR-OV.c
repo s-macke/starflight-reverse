@@ -66,7 +66,7 @@
 // 1758:      UNK_0xf45f  codep:0x224c parp:0xf45f size:0x0048 C-string:'UNK_0xf45f'
 // 1759:      UNK_0xf4a9  codep:0x224c parp:0xf4a9 size:0x0012 C-string:'UNK_0xf4a9'
 // 1760:      UNK_0xf4bd  codep:0x224c parp:0xf4bd size:0x001a C-string:'UNK_0xf4bd'
-// 1761:         DO-REPA  codep:0x224c parp:0xf4e3 size:0x007d C-string:'DO_dash_REPA'
+// 1761:         DO-REPA  codep:0x224c parp:0xf4e3 size:0x0000 C-string:'DO_dash_REPA'
 
 // =================================
 // =========== VARIABLES ===========

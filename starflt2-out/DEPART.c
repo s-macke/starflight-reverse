@@ -15,7 +15,7 @@
 // 1873:      UNK_0xf48d  codep:0x224c parp:0xf48d size:0x0028 C-string:'UNK_0xf48d'
 // 1874:      UNK_0xf4b7  codep:0x7420 parp:0xf4b7 size:0x0003 C-string:'UNK_0xf4b7'
 // 1875:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x004a C-string:'UNK_0xf4bc'
-// 1876:          DEPART  codep:0x224c parp:0xf511 size:0x004f C-string:'DEPART'
+// 1876:          DEPART  codep:0x224c parp:0xf511 size:0x0000 C-string:'DEPART'
 
 // =================================
 // =========== VARIABLES ===========

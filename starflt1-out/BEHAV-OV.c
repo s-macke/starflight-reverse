@@ -99,7 +99,7 @@
 // 1791:          .WHERE  codep:0x224c parp:0xf346 size:0x0048 C-string:'_dot_WHERE'
 // 1792:          .STATS  codep:0x224c parp:0xf399 size:0x002a C-string:'_dot_STATS'
 // 1793:        TV-TASKS  codep:0x224c parp:0xf3d0 size:0x010e C-string:'TV_dash_TASKS'
-// 1794:              TV  codep:0x224c parp:0xf4e5 size:0x007b C-string:'TV'
+// 1794:              TV  codep:0x224c parp:0xf4e5 size:0x0000 C-string:'TV'
 
 // =================================
 // =========== VARIABLES ===========

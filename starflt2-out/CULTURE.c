@@ -46,7 +46,7 @@
 // 1904:      UNK_0xf3d0  codep:0x224c parp:0xf3d0 size:0x0040 C-string:'UNK_0xf3d0'
 // 1905:      UNK_0xf412  codep:0x224c parp:0xf412 size:0x0030 C-string:'UNK_0xf412'
 // 1906:      UNK_0xf444  codep:0x224c parp:0xf444 size:0x00a0 C-string:'UNK_0xf444'
-// 1907:        .CULTURE  codep:0x224c parp:0xf4f1 size:0x006f C-string:'_dot_CULTURE'
+// 1907:        .CULTURE  codep:0x224c parp:0xf4f1 size:0x0000 C-string:'_dot_CULTURE'
 
 // =================================
 // =========== VARIABLES ===========

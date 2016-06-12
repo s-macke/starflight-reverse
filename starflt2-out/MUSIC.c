@@ -72,7 +72,7 @@
 // 1930:      UNK_0xf40e  codep:0x224c parp:0xf40e size:0x0020 C-string:'UNK_0xf40e'
 // 1931:      UNK_0xf430  codep:0x224c parp:0xf430 size:0x003a C-string:'UNK_0xf430'
 // 1932:   SPLASH.SCREEN  codep:0x224c parp:0xf47c size:0x0054 C-string:'SPLASH_dot_SCREEN'
-// 1933:          INTROS  codep:0x224c parp:0xf4db size:0x0085 C-string:'INTROS'
+// 1933:          INTROS  codep:0x224c parp:0xf4db size:0x0000 C-string:'INTROS'
 
 // =================================
 // =========== VARIABLES ===========

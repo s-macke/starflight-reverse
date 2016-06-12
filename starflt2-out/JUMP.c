@@ -69,7 +69,7 @@
 // 1927:      UNK_0xf440  codep:0x224c parp:0xf440 size:0x0022 C-string:'UNK_0xf440'
 // 1928:      UNK_0xf464  codep:0x224c parp:0xf464 size:0x001c C-string:'UNK_0xf464'
 // 1929:      UNK_0xf482  codep:0x224c parp:0xf482 size:0x0046 C-string:'UNK_0xf482'
-// 1930:            JUMP  codep:0x224c parp:0xf4d1 size:0x008f C-string:'JUMP'
+// 1930:            JUMP  codep:0x224c parp:0xf4d1 size:0x0000 C-string:'JUMP'
 
 // =================================
 // =========== VARIABLES ===========

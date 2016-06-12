@@ -30,7 +30,7 @@
 // 1722:      UNK_0xf39f  codep:0x224c parp:0xf39f size:0x0034 C-string:'UNK_0xf39f'
 // 1723:           (?.EQ  codep:0x224c parp:0xf3dd size:0x0079 C-string:'_ro__ask__dot_EQ'
 // 1724:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0020 C-string:'UNK_0xf458'
-// 1725:           =CARG  codep:0x224c parp:0xf482 size:0x00de C-string:'_eq_CARG'
+// 1725:           =CARG  codep:0x224c parp:0xf482 size:0x0000 C-string:'_eq_CARG'
 
 // =================================
 // =========== VARIABLES ===========

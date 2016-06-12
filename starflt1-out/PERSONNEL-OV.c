@@ -49,7 +49,7 @@
 // 1741:      UNK_0xed59  codep:0x224c parp:0xed59 size:0x073c C-string:'UNK_0xed59'
 // 1742:      UNK_0xf497  codep:0x224c parp:0xf497 size:0x003e C-string:'UNK_0xf497'
 // 1743:  PFILE-FUNCTION  codep:0x4a4f parp:0xf4e8 size:0x0014 C-string:'PFILE_dash_FUNCTION'
-// 1744:       (U-PFILE)  codep:0x224c parp:0xf50a size:0x0056 C-string:'_ro_U_dash_PFILE_rc_'
+// 1744:       (U-PFILE)  codep:0x224c parp:0xf50a size:0x0000 C-string:'_ro_U_dash_PFILE_rc_'
 
 // =================================
 // =========== VARIABLES ===========

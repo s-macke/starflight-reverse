@@ -42,7 +42,7 @@
 // 1900:      UNK_0xf48c  codep:0x224c parp:0xf48c size:0x0030 C-string:'UNK_0xf48c'
 // 1901:      UNK_0xf4be  codep:0x224c parp:0xf4be size:0x002c C-string:'UNK_0xf4be'
 // 1902:      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x004e C-string:'UNK_0xf4ec'
-// 1903:           .TMAP  codep:0x224c parp:0xf544 size:0x001c C-string:'_dot_TMAP'
+// 1903:           .TMAP  codep:0x224c parp:0xf544 size:0x0000 C-string:'_dot_TMAP'
 
 // =================================
 // =========== VARIABLES ===========

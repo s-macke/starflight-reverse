@@ -40,7 +40,7 @@
 // 1732:      UNK_0xf405  codep:0x224c parp:0xf405 size:0x0012 C-string:'UNK_0xf405'
 // 1733:         GETSITE  codep:0x224c parp:0xf423 size:0x009e C-string:'GETSITE'
 // 1734:       .MERCATOR  codep:0x224c parp:0xf4cf size:0x005c C-string:'_dot_MERCATOR'
-// 1735:         GETSITE  codep:0x224c parp:0xf537 size:0x0029 C-string:'GETSITE'
+// 1735:         GETSITE  codep:0x224c parp:0xf537 size:0x0000 C-string:'GETSITE'
 
 // =================================
 // =========== VARIABLES ===========

@@ -63,7 +63,7 @@
 // 1921:      UNK_0xf44e  codep:0x224c parp:0xf44e size:0x002a C-string:'UNK_0xf44e'
 // 1922:      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x0060 C-string:'UNK_0xf47a'
 // 1923:         OP-CASE  codep:0x4b3b parp:0xf4e6 size:0x0010 C-string:'OP_dash_CASE'
-// 1924:          (U-OP)  codep:0x224c parp:0xf501 size:0x005f C-string:'_ro_U_dash_OP_rc_'
+// 1924:          (U-OP)  codep:0x224c parp:0xf501 size:0x0000 C-string:'_ro_U_dash_OP_rc_'
 
 // =================================
 // =========== VARIABLES ===========

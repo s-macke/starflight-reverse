@@ -51,7 +51,7 @@
 // 1743:      UNK_0xeee0  codep:0x224c parp:0xeee0 size:0x001c C-string:'UNK_0xeee0'
 // 1744:      UNK_0xeefe  codep:0x224c parp:0xeefe size:0x050c C-string:'UNK_0xeefe'
 // 1745:       .READINGS  codep:0x4a4f parp:0xf418 size:0x000c C-string:'_dot_READINGS'
-// 1746:      (/SENSORS)  codep:0x224c parp:0xf433 size:0x012d C-string:'_ro__slash_SENSORS_rc_'
+// 1746:      (/SENSORS)  codep:0x224c parp:0xf433 size:0x0000 C-string:'_ro__slash_SENSORS_rc_'
 
 // =================================
 // =========== VARIABLES ===========

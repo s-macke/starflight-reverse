@@ -68,7 +68,7 @@
 // 1760:         >DEBRIS  codep:0x224c parp:0xf44e size:0x0008 C-string:'_gt_DEBRIS'
 // 1761:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0026 C-string:'UNK_0xf458'
 // 1762:      UNK_0xf480  codep:0x224c parp:0xf480 size:0x000e C-string:'UNK_0xf480'
-// 1763:        (/ITEMS)  codep:0x224c parp:0xf49b size:0x00c5 C-string:'_ro__slash_ITEMS_rc_'
+// 1763:        (/ITEMS)  codep:0x224c parp:0xf49b size:0x0000 C-string:'_ro__slash_ITEMS_rc_'
 
 // =================================
 // =========== VARIABLES ===========

@@ -87,7 +87,7 @@
 // 1779:      UNK_0xf049  codep:0x224c parp:0xf049 size:0x0040 C-string:'UNK_0xf049'
 // 1780:      UNK_0xf08b  codep:0x224c parp:0xf08b size:0x0040 C-string:'UNK_0xf08b'
 // 1781:         SCRLCON  codep:0x224c parp:0xf0d7 size:0x0022 C-string:'SCRLCON'
-// 1782:      NEWCONTOUR  codep:0x224c parp:0xf108 size:0x0458 C-string:'NEWCONTOUR'
+// 1782:      NEWCONTOUR  codep:0x224c parp:0xf108 size:0x0000 C-string:'NEWCONTOUR'
 
 // =================================
 // =========== VARIABLES ===========

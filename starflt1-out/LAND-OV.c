@@ -27,7 +27,7 @@
 // 1719:      UNK_0xf430  codep:0x224c parp:0xf430 size:0x002c C-string:'UNK_0xf430'
 // 1720:      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x0036 C-string:'UNK_0xf45e'
 // 1721:           ?LAND  codep:0x224c parp:0xf49e size:0x004b C-string:'_ask_LAND'
-// 1722:         ?LAUNCH  codep:0x224c parp:0xf4f5 size:0x006b C-string:'_ask_LAUNCH'
+// 1722:         ?LAUNCH  codep:0x224c parp:0xf4f5 size:0x0000 C-string:'_ask_LAUNCH'
 
 // =================================
 // =========== VARIABLES ===========

@@ -77,7 +77,7 @@
 // 1935:      UNK_0xf448  codep:0x224c parp:0xf448 size:0x002c C-string:'UNK_0xf448'
 // 1936:      UNK_0xf476  codep:0x224c parp:0xf476 size:0x0010 C-string:'UNK_0xf476'
 // 1937:          DONULL  codep:0x224c parp:0xf491 size:0x0086 C-string:'DONULL'
-// 1938:            TARG  codep:0x224c parp:0xf520 size:0x0040 C-string:'TARG'
+// 1938:            TARG  codep:0x224c parp:0xf520 size:0x0000 C-string:'TARG'
 
 // =================================
 // =========== VARIABLES ===========

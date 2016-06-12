@@ -91,7 +91,7 @@
 // 1949:      UNK_0xf41e  codep:0x224c parp:0xf41e size:0x0066 C-string:'UNK_0xf41e'
 // 1950:        SET-CARG  codep:0x224c parp:0xf491 size:0x0024 C-string:'SET_dash_CARG'
 // 1951:      UNK_0xf4b7  codep:0x224c parp:0xf4b7 size:0x003e C-string:'UNK_0xf4b7'
-// 1952:        BLD-LIST  codep:0x224c parp:0xf502 size:0x005e C-string:'BLD_dash_LIST'
+// 1952:        BLD-LIST  codep:0x224c parp:0xf502 size:0x0000 C-string:'BLD_dash_LIST'
 
 // =================================
 // =========== VARIABLES ===========

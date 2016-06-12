@@ -33,7 +33,7 @@
 // 1891:         SELL-IT  codep:0x224c parp:0xf1e4 size:0x020e C-string:'SELL_dash_IT'
 // 1892:        BUY-WHAT  codep:0x4b3b parp:0xf3ff size:0x00ac C-string:'BUY_dash_WHAT'
 // 1893:  DEPOT-FUNCTION  codep:0x4b3b parp:0xf4be size:0x0010 C-string:'DEPOT_dash_FUNCTION'
-// 1894:       (U-DEPOT)  codep:0x224c parp:0xf4dc size:0x0084 C-string:'_ro_U_dash_DEPOT_rc_'
+// 1894:       (U-DEPOT)  codep:0x224c parp:0xf4dc size:0x0000 C-string:'_ro_U_dash_DEPOT_rc_'
 
 // =================================
 // =========== VARIABLES ===========

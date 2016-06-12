@@ -50,7 +50,7 @@
 // 1742:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x0028 C-string:'UNK_0xf450'
 // 1743:      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x005a C-string:'UNK_0xf47a'
 // 1744:         OP-CASE  codep:0x4a4f parp:0xf4e0 size:0x0010 C-string:'OP_dash_CASE'
-// 1745:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0065 C-string:'_ro_U_dash_OP_rc_'
+// 1745:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0000 C-string:'_ro_U_dash_OP_rc_'
 
 // =================================
 // =========== VARIABLES ===========

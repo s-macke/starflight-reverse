@@ -35,7 +35,7 @@
 // 1893:      UNK_0xf4ad  codep:0x224c parp:0xf4ad size:0x0036 C-string:'UNK_0xf4ad'
 // 1894:         SA-CASE  codep:0x4b3b parp:0xf4ef size:0x002c C-string:'SA_dash_CASE'
 // 1895:      UNK_0xf51d  codep:0x224c parp:0xf51d size:0x0014 C-string:'UNK_0xf51d'
-// 1896:         (XCOMM)  codep:0x224c parp:0xf53d size:0x0023 C-string:'_ro_XCOMM_rc_'
+// 1896:         (XCOMM)  codep:0x224c parp:0xf53d size:0x0000 C-string:'_ro_XCOMM_rc_'
 
 // =================================
 // =========== VARIABLES ===========

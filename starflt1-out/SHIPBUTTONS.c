@@ -22,7 +22,7 @@
 // 1714:      UNK_0xf3fe  codep:0x224c parp:0xf3fe size:0x001a C-string:'UNK_0xf3fe'
 // 1715:      UNK_0xf41a  codep:0x224c parp:0xf41a size:0x0084 C-string:'UNK_0xf41a'
 // 1716:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x000c C-string:'UNK_0xf4a0'
-// 1717:            >FLT  codep:0x224c parp:0xf4b5 size:0x00ab C-string:'_gt_FLT'
+// 1717:            >FLT  codep:0x224c parp:0xf4b5 size:0x0000 C-string:'_gt_FLT'
 
 // =================================
 // =========== VARIABLES ===========

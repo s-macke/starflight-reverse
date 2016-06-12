@@ -145,7 +145,7 @@
 // 2003:            ERR!  codep:0x224c parp:0xf452 size:0x002c C-string:'ERR_ex_'
 // 2004:           GAMEO  codep:0x224c parp:0xf488 size:0x0030 C-string:'GAMEO'
 // 2005:            BOSS  codep:0x224c parp:0xf4c1 size:0x003a C-string:'BOSS'
-// 2006:           START  codep:0x224c parp:0xf505 size:0x005b C-string:'START'
+// 2006:           START  codep:0x224c parp:0xf505 size:0x0000 C-string:'START'
 
 // =================================
 // =========== VARIABLES ===========

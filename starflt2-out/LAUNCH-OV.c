@@ -30,7 +30,7 @@
 // 1888:      UNK_0xf390  codep:0x224c parp:0xf390 size:0x0025 C-string:'UNK_0xf390'
 // 1889:      UNK_0xf3b7  codep:0x224c parp:0xf3b7 size:0x0054 C-string:'UNK_0xf3b7'
 // 1890:         &LAUNCH  codep:0x224c parp:0xf417 size:0x004e C-string:'_and_LAUNCH'
-// 1891:         &RETURN  codep:0x224c parp:0xf471 size:0x00ef C-string:'_and_RETURN'
+// 1891:         &RETURN  codep:0x224c parp:0xf471 size:0x0000 C-string:'_and_RETURN'
 
 // =================================
 // =========== VARIABLES ===========

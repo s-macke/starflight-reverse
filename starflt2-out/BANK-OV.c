@@ -40,7 +40,7 @@
 // 1898:      UNK_0xf482  codep:0x224c parp:0xf482 size:0x0038 C-string:'UNK_0xf482'
 // 1899:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0016 C-string:'UNK_0xf4bc'
 // 1900:      UNK_0xf4d4  codep:0x224c parp:0xf4d4 size:0x001e C-string:'UNK_0xf4d4'
-// 1901:        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0061 C-string:'_ro_U_dash_BANK_rc_'
+// 1901:        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
 // =========== VARIABLES ===========

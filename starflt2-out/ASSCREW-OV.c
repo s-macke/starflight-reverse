@@ -49,7 +49,7 @@
 // 1907:      UNK_0xf3ce  codep:0x224c parp:0xf3ce size:0x0040 C-string:'UNK_0xf3ce'
 // 1908:      UNK_0xf410  codep:0x224c parp:0xf410 size:0x0030 C-string:'UNK_0xf410'
 // 1909:      UNK_0xf442  codep:0x224c parp:0xf442 size:0x0046 C-string:'UNK_0xf442'
-// 1910:     (U-ASSCREW)  codep:0x224c parp:0xf498 size:0x00c8 C-string:'_ro_U_dash_ASSCREW_rc_'
+// 1910:     (U-ASSCREW)  codep:0x224c parp:0xf498 size:0x0000 C-string:'_ro_U_dash_ASSCREW_rc_'
 
 // =================================
 // =========== VARIABLES ===========

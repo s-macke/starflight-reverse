@@ -95,7 +95,7 @@
 // 1953:      UNK_0xf48e  codep:0x224c parp:0xf48e size:0x0030 C-string:'UNK_0xf48e'
 // 1954:      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x0044 C-string:'UNK_0xf4c0'
 // 1955:      UNK_0xf506  codep:0x224c parp:0xf506 size:0x001a C-string:'UNK_0xf506'
-// 1956:          POPULA  codep:0x224c parp:0xf52b size:0x0035 C-string:'POPULA'
+// 1956:          POPULA  codep:0x224c parp:0xf52b size:0x0000 C-string:'POPULA'
 
 // =================================
 // =========== VARIABLES ===========

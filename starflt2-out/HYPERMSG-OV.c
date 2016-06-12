@@ -81,7 +81,7 @@
 // 1939:      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x0028 C-string:'UNK_0xf4b2'
 // 1940:         >ORBITS  codep:0x224c parp:0xf4e6 size:0x001e C-string:'_gt_ORBITS'
 // 1941:      UNK_0xf506  codep:0x224c parp:0xf506 size:0x001e C-string:'UNK_0xf506'
-// 1942:         ORBITS>  codep:0x224c parp:0xf530 size:0x0030 C-string:'ORBITS_gt_'
+// 1942:         ORBITS>  codep:0x224c parp:0xf530 size:0x0000 C-string:'ORBITS_gt_'
 
 // =================================
 // =========== VARIABLES ===========

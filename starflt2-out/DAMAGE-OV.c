@@ -108,7 +108,7 @@
 // 1966:      UNK_0xf4eb  codep:0x224c parp:0xf4eb size:0x000e C-string:'UNK_0xf4eb'
 // 1967:      UNK_0xf4fb  codep:0x224c parp:0xf4fb size:0x000e C-string:'UNK_0xf4fb'
 // 1968:         DO-DAMA  codep:0x224c parp:0xf515 size:0x000e C-string:'DO_dash_DAMA'
-// 1969:         DOBLAST  codep:0x224c parp:0xf52f size:0x0031 C-string:'DOBLAST'
+// 1969:         DOBLAST  codep:0x224c parp:0xf52f size:0x0000 C-string:'DOBLAST'
 
 // =================================
 // =========== VARIABLES ===========

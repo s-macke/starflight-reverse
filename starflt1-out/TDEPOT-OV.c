@@ -34,7 +34,7 @@
 // 1726:        BUY-WHAT  codep:0x4a4f parp:0xf378 size:0x00b0 C-string:'BUY_dash_WHAT'
 // 1727:  DEPOT-FUNCTION  codep:0x4a4f parp:0xf43b size:0x0014 C-string:'DEPOT_dash_FUNCTION'
 // 1728:       (U-DEPOT)  codep:0x224c parp:0xf45d size:0x0062 C-string:'_ro_U_dash_DEPOT_rc_'
-// 1729:          <TDART  codep:0x224c parp:0xf4ca size:0x0096 C-string:'_st_TDART'
+// 1729:          <TDART  codep:0x224c parp:0xf4ca size:0x0000 C-string:'_st_TDART'
 
 // =================================
 // =========== VARIABLES ===========

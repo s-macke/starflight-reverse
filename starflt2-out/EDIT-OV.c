@@ -61,7 +61,7 @@
 // 1919:       EDIT-KEYS  codep:0x4b3b parp:0xf487 size:0x0064 C-string:'EDIT_dash_KEYS'
 // 1920:            EDIT  codep:0x224c parp:0xf4f4 size:0x0020 C-string:'EDIT'
 // 1921:       VIEW-KEYS  codep:0x4b3b parp:0xf522 size:0x0010 C-string:'VIEW_dash_KEYS'
-// 1922:            VIEW  codep:0x224c parp:0xf53b size:0x0025 C-string:'VIEW'
+// 1922:            VIEW  codep:0x224c parp:0xf53b size:0x0000 C-string:'VIEW'
 
 // =================================
 // =========== VARIABLES ===========

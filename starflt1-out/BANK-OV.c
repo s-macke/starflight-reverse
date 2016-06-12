@@ -40,7 +40,7 @@
 // 1732:      UNK_0xf472  codep:0x224c parp:0xf472 size:0x0038 C-string:'UNK_0xf472'
 // 1733:      UNK_0xf4ac  codep:0x224c parp:0xf4ac size:0x0016 C-string:'UNK_0xf4ac'
 // 1734:      UNK_0xf4c4  codep:0x224c parp:0xf4c4 size:0x001e C-string:'UNK_0xf4c4'
-// 1735:        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0071 C-string:'_ro_U_dash_BANK_rc_'
+// 1735:        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
 // =========== VARIABLES ===========

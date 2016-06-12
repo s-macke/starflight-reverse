@@ -26,7 +26,7 @@
 // 1884:         >DISARM  codep:0x224c parp:0xf3a9 size:0x0044 C-string:'_gt_DISARM'
 // 1885:      UNK_0xf3ef  codep:0x224c parp:0xf3ef size:0x00da C-string:'UNK_0xf3ef'
 // 1886:     (/(DIS)ARM)  codep:0x224c parp:0xf4d9 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
-// 1887:   (/(UD)SHIELD)  codep:0x224c parp:0xf50b size:0x0055 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
+// 1887:   (/(UD)SHIELD)  codep:0x224c parp:0xf50b size:0x0000 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
 
 // =================================
 // =========== VARIABLES ===========

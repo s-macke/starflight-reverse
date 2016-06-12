@@ -89,7 +89,7 @@
 // 1947:      UNK_0xf385  codep:0x224c parp:0xf385 size:0x0034 C-string:'UNK_0xf385'
 // 1948:      UNK_0xf3bb  codep:0x224c parp:0xf3bb size:0x001f C-string:'UNK_0xf3bb'
 // 1949:      UNK_0xf3dc  codep:0x224c parp:0xf3dc size:0x0065 C-string:'UNK_0xf3dc'
-// 1950:     (/LOG-PLAN)  codep:0x224c parp:0xf451 size:0x010f C-string:'_ro__slash_LOG_dash_PLAN_rc_'
+// 1950:     (/LOG-PLAN)  codep:0x224c parp:0xf451 size:0x0000 C-string:'_ro__slash_LOG_dash_PLAN_rc_'
 
 // =================================
 // =========== VARIABLES ===========

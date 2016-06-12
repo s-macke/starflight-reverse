@@ -111,7 +111,7 @@
 // 1969:          COMBAT  codep:0x224c parp:0xeffe size:0x04e8 C-string:'COMBAT'
 // 1970:             WAR  codep:0x224c parp:0xf4ee size:0x001c C-string:'WAR'
 // 1971:        CLEAR-CO  codep:0x224c parp:0xf517 size:0x0030 C-string:'CLEAR_dash_CO'
-// 1972:          (COMB)  codep:0x224c parp:0xf552 size:0x000e C-string:'_ro_COMB_rc_'
+// 1972:          (COMB)  codep:0x224c parp:0xf552 size:0x0000 C-string:'_ro_COMB_rc_'
 
 // =================================
 // =========== VARIABLES ===========

@@ -30,7 +30,7 @@
 // 1722:      UNK_0xf373  codep:0x224c parp:0xf373 size:0x00ac C-string:'UNK_0xf373'
 // 1723:      UNK_0xf421  codep:0x224c parp:0xf421 size:0x00a5 C-string:'UNK_0xf421'
 // 1724:      (/EXAMINE)  codep:0x224c parp:0xf4d5 size:0x000c C-string:'_ro__slash_EXAMINE_rc_'
-// 1725:        (/TREAT)  codep:0x224c parp:0xf4ee size:0x0072 C-string:'_ro__slash_TREAT_rc_'
+// 1725:        (/TREAT)  codep:0x224c parp:0xf4ee size:0x0000 C-string:'_ro__slash_TREAT_rc_'
 
 // =================================
 // =========== VARIABLES ===========

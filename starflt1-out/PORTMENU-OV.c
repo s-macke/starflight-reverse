@@ -56,7 +56,7 @@
 // 1748:      UNK_0xf488  codep:0x224c parp:0xf488 size:0x0024 C-string:'UNK_0xf488'
 // 1749:           XWALK  codep:0x4a4f parp:0xf4b6 size:0x000c C-string:'XWALK'
 // 1750:           YWALK  codep:0x4a4f parp:0xf4cc size:0x000c C-string:'YWALK'
-// 1751:         WALKIES  codep:0x224c parp:0xf4e4 size:0x007c C-string:'WALKIES'
+// 1751:         WALKIES  codep:0x224c parp:0xf4e4 size:0x0000 C-string:'WALKIES'
 
 // =================================
 // =========== VARIABLES ===========

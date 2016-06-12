@@ -155,7 +155,7 @@
 // 2013:           IAPWR  codep:0x224c parp:0xf47e size:0x0064 C-string:'IAPWR'
 // 2014:      UNK_0xf4e4  codep:0x224c parp:0xf4e4 size:0x0014 C-string:'UNK_0xf4e4'
 // 2015:      UNK_0xf4fa  codep:0x224c parp:0xf4fa size:0x002a C-string:'UNK_0xf4fa'
-// 2016:           ICOMM  codep:0x224c parp:0xf52e size:0x0032 C-string:'ICOMM'
+// 2016:           ICOMM  codep:0x224c parp:0xf52e size:0x0000 C-string:'ICOMM'
 
 // =================================
 // =========== VARIABLES ===========

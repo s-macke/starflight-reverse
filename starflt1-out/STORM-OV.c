@@ -32,7 +32,7 @@
 // 1724:      UNK_0xf42e  codep:0x224c parp:0xf42e size:0x003c C-string:'UNK_0xf42e'
 // 1725:      UNK_0xf46c  codep:0x224c parp:0xf46c size:0x003a C-string:'UNK_0xf46c'
 // 1726:      UNK_0xf4a8  codep:0x224c parp:0xf4a8 size:0x0012 C-string:'UNK_0xf4a8'
-// 1727:       (DO.STORM  codep:0x224c parp:0xf4c8 size:0x0098 C-string:'_ro_DO_dot_STORM'
+// 1727:       (DO.STORM  codep:0x224c parp:0xf4c8 size:0x0000 C-string:'_ro_DO_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========

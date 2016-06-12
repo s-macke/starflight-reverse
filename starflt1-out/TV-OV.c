@@ -84,7 +84,7 @@
 // 1776:      UNK_0xf435  codep:0x1d29 parp:0xf435 size:0x0002 C-string:'UNK_0xf435'
 // 1777:      UNK_0xf439  codep:0x224c parp:0xf439 size:0x0012 C-string:'UNK_0xf439'
 // 1778:      UNK_0xf44d  codep:0x224c parp:0xf44d size:0x001c C-string:'UNK_0xf44d'
-// 1779:       DO.WEAPON  codep:0x224c parp:0xf477 size:0x00e9 C-string:'DO_dot_WEAPON'
+// 1779:       DO.WEAPON  codep:0x224c parp:0xf477 size:0x0000 C-string:'DO_dot_WEAPON'
 
 // =================================
 // =========== VARIABLES ===========

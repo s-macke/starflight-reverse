@@ -53,7 +53,7 @@
 // 1911:        T>ACTION  codep:0x4b3b parp:0xf49a size:0x0010 C-string:'T_gt_ACTION'
 // 1912:      UNK_0xf4ac  codep:0x224c parp:0xf4ac size:0x0024 C-string:'UNK_0xf4ac'
 // 1913:      UNK_0xf4d2  codep:0x224c parp:0xf4d2 size:0x0032 C-string:'UNK_0xf4d2'
-// 1914:           TRADE  codep:0x224c parp:0xf50e size:0x0052 C-string:'TRADE'
+// 1914:           TRADE  codep:0x224c parp:0xf50e size:0x0000 C-string:'TRADE'
 
 // =================================
 // =========== VARIABLES ===========

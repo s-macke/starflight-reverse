@@ -30,7 +30,7 @@
 // 1722:            >BOX  codep:0x224c parp:0xf301 size:0x0080 C-string:'_gt_BOX'
 // 1723:        ?ELEMENT  codep:0x224c parp:0xf38e size:0x000a C-string:'_ask_ELEMENT'
 // 1724:          (BOX>)  codep:0x224c parp:0xf3a3 size:0x0038 C-string:'_ro_BOX_gt__rc_'
-// 1725:            BOX>  codep:0x224c parp:0xf3e4 size:0x017c C-string:'BOX_gt_'
+// 1725:            BOX>  codep:0x224c parp:0xf3e4 size:0x0000 C-string:'BOX_gt_'
 
 // =================================
 // =========== VARIABLES ===========

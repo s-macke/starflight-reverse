@@ -85,7 +85,7 @@
 // 1943:         !PFLAGS  codep:0x224c parp:0xf4d0 size:0x0030 C-string:'_ex_PFLAGS'
 // 1944:             L>P  codep:0x224c parp:0xf508 size:0x000e C-string:'L_gt_P'
 // 1945:      UNK_0xf518  codep:0x224c parp:0xf518 size:0x0034 C-string:'UNK_0xf518'
-// 1946:         DO-OPEN  codep:0x224c parp:0xf558 size:0x0008 C-string:'DO_dash_OPEN'
+// 1946:         DO-OPEN  codep:0x224c parp:0xf558 size:0x0000 C-string:'DO_dash_OPEN'
 
 // =================================
 // =========== VARIABLES ===========

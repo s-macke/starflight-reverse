@@ -24,7 +24,7 @@
 // 1716:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x002e C-string:'UNK_0xf450'
 // 1717:      UNK_0xf480  codep:0x224c parp:0xf480 size:0x0028 C-string:'UNK_0xf480'
 // 1718:      UNK_0xf4aa  codep:0x224c parp:0xf4aa size:0x0048 C-string:'UNK_0xf4aa'
-// 1719:      ?CAN-LEAVE  codep:0x224c parp:0xf501 size:0x005f C-string:'_ask_CAN_dash_LEAVE'
+// 1719:      ?CAN-LEAVE  codep:0x224c parp:0xf501 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
 
 // =================================
 // =========== VARIABLES ===========

@@ -29,7 +29,7 @@
 // 1721:      UNK_0xf45a  codep:0x224c parp:0xf45a size:0x0033 C-string:'UNK_0xf45a'
 // 1722:      UNK_0xf48f  codep:0x224c parp:0xf48f size:0x0028 C-string:'UNK_0xf48f'
 // 1723:             STP  codep:0x224c parp:0xf4bf size:0x002c C-string:'STP'
-// 1724:            2NDS  codep:0x224c parp:0xf4f4 size:0x006c C-string:'_2NDS'
+// 1724:            2NDS  codep:0x224c parp:0xf4f4 size:0x0000 C-string:'_2NDS'
 
 // =================================
 // =========== VARIABLES ===========

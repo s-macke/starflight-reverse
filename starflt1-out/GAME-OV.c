@@ -138,7 +138,7 @@
 // 1830:      UNK_0xf504  codep:0x224c parp:0xf504 size:0x000e C-string:'UNK_0xf504'
 // 1831:          GAMEOP  codep:0x224c parp:0xf51d size:0x0008 C-string:'GAMEOP'
 // 1832:      UNK_0xf527  codep:0x224c parp:0xf527 size:0x0006 C-string:'UNK_0xf527'
-// 1833:          START.  codep:0x224c parp:0xf538 size:0x0028 C-string:'START_dot_'
+// 1833:          START.  codep:0x224c parp:0xf538 size:0x0000 C-string:'START_dot_'
 
 // =================================
 // =========== VARIABLES ===========

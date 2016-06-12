@@ -92,7 +92,7 @@
 // 1950:      UNK_0xf423  codep:0x224c parp:0xf423 size:0x0049 C-string:'UNK_0xf423'
 // 1951:      UNK_0xf46e  codep:0x1d29 parp:0xf46e size:0x0002 C-string:'UNK_0xf46e'
 // 1952:      UNK_0xf472  codep:0x224c parp:0xf472 size:0x0080 C-string:'UNK_0xf472'
-// 1953:       DO.WEAPON  codep:0x224c parp:0xf500 size:0x0060 C-string:'DO_dot_WEAPON'
+// 1953:       DO.WEAPON  codep:0x224c parp:0xf500 size:0x0000 C-string:'DO_dot_WEAPON'
 
 // =================================
 // =========== VARIABLES ===========

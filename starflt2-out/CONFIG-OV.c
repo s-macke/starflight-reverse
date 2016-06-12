@@ -30,7 +30,7 @@
 // 1888:           #>BUY  codep:0x4b3b parp:0xee82 size:0x025c C-string:'_n__gt_BUY'
 // 1889:          #>SELL  codep:0x4b3b parp:0xf0e9 size:0x03bd C-string:'_n__gt_SELL'
 // 1890: CONFIG-FUNCTION  codep:0x4b3b parp:0xf4ba size:0x0018 C-string:'CONFIG_dash_FUNCTION'
-// 1891:      (U-CONFIG)  codep:0x224c parp:0xf4e1 size:0x007f C-string:'_ro_U_dash_CONFIG_rc_'
+// 1891:      (U-CONFIG)  codep:0x224c parp:0xf4e1 size:0x0000 C-string:'_ro_U_dash_CONFIG_rc_'
 
 // =================================
 // =========== VARIABLES ===========

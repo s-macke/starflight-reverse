@@ -14,7 +14,7 @@
 // 1872:      UNK_0xf418  codep:0x224c parp:0xf418 size:0x0038 C-string:'UNK_0xf418'
 // 1873:      UNK_0xf452  codep:0x224c parp:0xf452 size:0x000a C-string:'UNK_0xf452'
 // 1874:      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x007e C-string:'UNK_0xf45e'
-// 1875:           ICONS  codep:0x224c parp:0xf4e6 size:0x007a C-string:'ICONS'
+// 1875:           ICONS  codep:0x224c parp:0xf4e6 size:0x0000 C-string:'ICONS'
 
 // =================================
 // =========== VARIABLES ===========

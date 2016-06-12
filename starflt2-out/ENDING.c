@@ -117,7 +117,7 @@
 // 1975:      UNK_0xf4f5  codep:0x224c parp:0xf4f5 size:0x0014 C-string:'UNK_0xf4f5'
 // 1976:        DO-HALLS  codep:0x224c parp:0xf516 size:0x0016 C-string:'DO_dash_HALLS'
 // 1977:           !INIT  codep:0x224c parp:0xf536 size:0x0006 C-string:'_ex_INIT'
-// 1978:            DUHL  codep:0x224c parp:0xf545 size:0x001b C-string:'DUHL'
+// 1978:            DUHL  codep:0x224c parp:0xf545 size:0x0000 C-string:'DUHL'
 
 // =================================
 // =========== VARIABLES ===========

@@ -66,7 +66,7 @@
 // 1924:      UNK_0xf481  codep:0x224c parp:0xf481 size:0x0048 C-string:'UNK_0xf481'
 // 1925:      UNK_0xf4cb  codep:0x224c parp:0xf4cb size:0x0012 C-string:'UNK_0xf4cb'
 // 1926:      UNK_0xf4df  codep:0x224c parp:0xf4df size:0x001a C-string:'UNK_0xf4df'
-// 1927:         DO-REPA  codep:0x224c parp:0xf505 size:0x005b C-string:'DO_dash_REPA'
+// 1927:         DO-REPA  codep:0x224c parp:0xf505 size:0x0000 C-string:'DO_dash_REPA'
 
 // =================================
 // =========== VARIABLES ===========

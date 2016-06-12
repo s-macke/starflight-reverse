@@ -22,7 +22,7 @@
 // 1880:      UNK_0xf4c6  codep:0x224c parp:0xf4c6 size:0x001c C-string:'UNK_0xf4c6'
 // 1881:      UNK_0xf4e4  codep:0x224c parp:0xf4e4 size:0x0008 C-string:'UNK_0xf4e4'
 // 1882:          SET-SC  codep:0x224c parp:0xf4f7 size:0x003c C-string:'SET_dash_SC'
-// 1883:             @NF  codep:0x224c parp:0xf53b size:0x0025 C-string:'_at_NF'
+// 1883:             @NF  codep:0x224c parp:0xf53b size:0x0000 C-string:'_at_NF'
 
 // =================================
 // =========== VARIABLES ===========

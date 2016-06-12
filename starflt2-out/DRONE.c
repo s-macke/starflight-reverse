@@ -62,7 +62,7 @@
 // 1920:      UNK_0xf3f9  codep:0x224c parp:0xf3f9 size:0x0074 C-string:'UNK_0xf3f9'
 // 1921:      UNK_0xf46f  codep:0x224c parp:0xf46f size:0x0020 C-string:'UNK_0xf46f'
 // 1922:          RECALL  codep:0x224c parp:0xf49a size:0x002c C-string:'RECALL'
-// 1923:           DRONE  codep:0x224c parp:0xf4d0 size:0x0090 C-string:'DRONE'
+// 1923:           DRONE  codep:0x224c parp:0xf4d0 size:0x0000 C-string:'DRONE'
 
 // =================================
 // =========== VARIABLES ===========

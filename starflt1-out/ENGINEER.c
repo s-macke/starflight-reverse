@@ -38,7 +38,7 @@
 // 1730:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0024 C-string:'UNK_0xf37b'
 // 1731:      UNK_0xf3a1  codep:0x224c parp:0xf3a1 size:0x0022 C-string:'UNK_0xf3a1'
 // 1732:      UNK_0xf3c5  codep:0x224c parp:0xf3c5 size:0x0046 C-string:'UNK_0xf3c5'
-// 1733:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0147 C-string:'_ro__slash_REPAIR_rc_'
+// 1733:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
 
 // =================================
 // =========== VARIABLES ===========
