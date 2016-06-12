@@ -573,6 +573,16 @@ unsigned short int FindLoopID(unsigned short int addr)
 
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
 {
+    int currentovidx = -1;
+
+    // for starflt1
+    /*
+    if (ofs == 0x84fa) // MSET-CO
+    {
+        currentovidx = 42; // GAME-OV
+    }
+    */
+
     while(1)
     {
         if (ofs < minaddr) return;
@@ -584,6 +594,16 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
 
+        if (currentovidx != -1)
+        if (par+2 >= maxaddr)
+        {
+            overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par;
+            overlays[currentovidx].nentrypoints++;
+
+            snprintf(pline[ofs].str, STRINGLEN, "  UNK_0x%04x(); // Overlay %s\n", par+2, overlays[currentovidx].name);
+            ofs += 2;
+            continue;
+        }
         char *s = FindDictPar(par+2);
 
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
@@ -727,18 +747,23 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
         } else
         if (codep == CODELOADOVERLAY) // This code loads the overlay
         {
-            par = Read16(ofs+2);
-            if (par < 0xA000)
+            int codep = Read16(par);
+            unsigned short startaddress = Read16(par+2);
+            int i=0;
+            //fprintf(stderr, "LoadOverlay(\"%s\");\n", s);
+            for(i=0; overlays[i].name != NULL; i++)
             {
-                snprintf(pline[ofs].str, STRINGLEN, "  LoadOverlay(\"%s\");\n", s);
-                ofs += 2;
-            } else
-            {
-                snprintf(pline[ofs].str, STRINGLEN, "  LoadOverlay(\"%s\"); UNK_0x%04x();\n", s, par+2);
-                pline[ofs+2].done = 1;
-                pline[ofs+3].done = 1;
-                ofs += 4;
+                if (overlays[i].startaddress != startaddress) continue;
+                //fprintf(stderr, "0x%04x\n", i);
+                currentovidx = i;
             }
+            if (currentovidx == -1)
+            {
+                fprintf(stderr, "Error: Cannot find overlay\n");
+                exit(1);
+            }
+            snprintf(pline[ofs].str, STRINGLEN, "  LoadOverlay(\"%s\");\n", s);
+            ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
         {
@@ -766,7 +791,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(addr, l, minaddr, maxaddr);
+            //ParsePartFunction(addr, l, minaddr, maxaddr);
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -787,7 +812,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(addr, l, minaddr, maxaddr);
+            //ParsePartFunction(addr, l, minaddr, maxaddr);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
@@ -795,7 +820,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             int funcaddr = FindFunctionAddress(ofs);
             pline[funcaddr].nloop++;
             pline[ofs].loopid = pline[funcaddr].nloop;
-            snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %c = Pop();\n  signed short int %cmax = Pop();\n  do // (DO)\n  {\n", 
+            snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %c = Pop();\n  signed short int %cmax = Pop();\n  do // (DO)\n  {\n",
                 'h'+pline[funcaddr].nloop,
                 'h'+pline[funcaddr].nloop);
             ofs += 2;
@@ -813,7 +838,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             }
             snprintf(pline[ofs].str, STRINGLEN,
                 "  %c += Pop();\n"
-                "  } while(%c<%cmax); // (/LOOP) 0x%04x\n\n", 
+                "  } while(%c<%cmax); // (/LOOP) 0x%04x\n\n",
                 'h' + loopid,
                 'h' + loopid,
                 'h' + loopid,
@@ -852,7 +877,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr)
             }
             snprintf(pline[ofs].str, STRINGLEN,
                 "  int step = Pop();\n  %c += step;\n"
-                "  } while(((step>=0) && (%c<%cmax)) || ((step<0) && (%c>%cmax))); // (+LOOP) 0x%04x\n\n", 
+                "  } while(((step>=0) && (%c<%cmax)) || ((step<0) && (%c>%cmax))); // (+LOOP) 0x%04x\n\n",
                 'h' + loopid,
                 'h' + loopid,
                 'h' + loopid,
@@ -955,6 +980,11 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
     int nstr = 0;
     for(i=minaddr; i<=maxaddr; i++)
     {
+        if (pline[i].isentry)
+        {
+            fprintf(fp, "// entry\n");
+        }
+
         if (pline[i].strword[0] != 0)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}

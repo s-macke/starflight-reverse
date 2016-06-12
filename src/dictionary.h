@@ -28,6 +28,7 @@ typedef struct
     int loopid; // != 0 is a label for a loop
     int done; // this line has been processed
 
+    int isentry;
     int isfunction;
     int nlabel;
     int nloop;
@@ -42,6 +43,7 @@ void ParseFunction2(unsigned short parp, int minaddr, int maxaddr);
 void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx);
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx);
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
-
+char* FindDictPar(unsigned short addr);
+char* Forth2CString(char *in);
 
 #endif

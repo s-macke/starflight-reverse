@@ -2,17 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 #include"global.h"
+#include"extract.h"
 
-
-typedef struct
-{
-    int idx;
-    char name[13];
-    unsigned char fileno; // STARA = 1, STARB = 2
-    unsigned short start, end, nblocks;
-    unsigned char blocksize;
-    unsigned char lsize;
-} DIRENTRY;
 
 DIRENTRY dir[512];
 int ndir = 0;
@@ -127,4 +118,10 @@ char* Extract(int diridx, int *size)
 
     return buf;
 }
+
+unsigned short GetStartAddress(int diridx)
+{
+    return dir[diridx].start;
+}
+
 
