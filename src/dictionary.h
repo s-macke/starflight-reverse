@@ -11,10 +11,11 @@ typedef struct DICTENTRY
 //    int t; // type x86=1;
     char r[64]; // name
     int size;
+    int ovidx;
 } DICTENTRY;
 
 extern int ndict;
-extern struct DICTENTRY dict[3000];
+extern struct DICTENTRY dict[5000];
 
 #define STRINGLEN 300
 
@@ -36,14 +37,15 @@ typedef struct
 
 extern LineDesc pline[0x10000];
 
-void SortDictionary(int start, int end);
-void ParseDict(unsigned char *mem, int linkp, int decrypt);
+void SortDictionary();
+void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
 void InitParseFunction2();
-void ParseFunction2(unsigned short parp, int minaddr, int maxaddr);
-void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx);
-void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx);
+void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx);
+void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
+void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
-char* FindDictPar(unsigned short addr);
+
+char* FindDictPar(unsigned short addr, int ovidx);
 char* Forth2CString(char *in);
 
 #endif

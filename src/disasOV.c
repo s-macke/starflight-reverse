@@ -75,46 +75,69 @@ int DisasmRange(int offset, int size, FILE *fp)
 
 // ---------------------------------
 
-void LoadOverlay(int id, FILE *fpc, FILE *fph)
+typedef struct
 {
-    int i, j;
+    int storeofs;
+    int ovlsize;
+    int size;
     unsigned char *buf;
-    // first two byte contain offset in file and then two bytes with size of overlay
+} OVLHeader;
 
-    fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[id].name);
+void LoadOverlay(int ovidx, OVLHeader *head)
+{
+    head->size = 0;
+    head->buf = (unsigned char*)Extract(overlays[ovidx].id, &head->size);
 
-    fprintf(fph, "// ====== OVERLAY '%s' ======\n\n", overlays[id].name);
-    fprintf(fph, "#ifndef %s_H\n", overlays[id].name);
-    fprintf(fph, "#define %s_H\n\n", overlays[id].name);
+    head->storeofs = head->buf[0x4] | (head->buf[0x5]<<8);
+    head->ovlsize = (head->buf[0x2] | (head->buf[0x3]<<8))*16;
 
-    int size = 0;
-    buf = (unsigned char*)Extract(overlays[id].id, &size);
+    memcpy(&mem[head->storeofs], head->buf, head->ovlsize);
+}
 
-    int storeofs = buf[0x4] | (buf[0x5]<<8);
-    int ovlsize = (buf[0x2] | (buf[0x3]<<8))*16;
-
-    fprintf(fpc, "// store offset = 0x%04x\n", storeofs);
-    fprintf(fpc, "// overlay size   = 0x%04x\n", ovlsize);
-    memcpy(&mem[storeofs], buf, ovlsize);
-    int namep = (buf[0x6] | (buf[0x7]<<8));
-
-    int ndictstart = ndict;
+void LoadOverlayDict(int ovidx)
+{
+    OVLHeader head;
+    LoadOverlay(ovidx, &head);
+    int i;
     for(i=0; i<8; i+=2)
     {
-        int vocofs = (buf[0xa+i] | (buf[0xb+i]<<8));
+        int vocofs = (head.buf[0xa+i] | (head.buf[0xb+i]<<8));
         if (vocofs == 0) continue;
-        ParseDict(mem, vocofs - 2, 0);
+        ParseDict(mem, vocofs - 2, 0, ovidx);
     }
+    SortDictionary();
+    //dict[ndict-1].size = storeofs+ovlsize-dict[ndict-1].parp;
+}
 
+
+void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
+{
+    int i, j;
+    // first two byte contain offset in file and then two bytes with size of overlay
+
+    OVLHeader head;
+    LoadOverlay(ovidx, &head);
+    int namep = (head.buf[0x6] | (head.buf[0x7]<<8));
+
+
+    fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
+
+    fprintf(fph, "// ====== OVERLAY '%s' ======\n\n", overlays[ovidx].name);
+    fprintf(fph, "#ifndef %s_H\n", overlays[ovidx].name);
+    fprintf(fph, "#define %s_H\n\n", overlays[ovidx].name);
+
+
+    fprintf(fpc, "// store offset = 0x%04x\n", head.storeofs);
+    fprintf(fpc, "// overlay size   = 0x%04x\n", head.ovlsize);
     fprintf(fpc, "\n#include\"cpu.h\"\n\n");
 
     InitParseFunction2();
 
-    for(i=0; i<overlays[id].nentrypoints; i++)
+    for(i=0; i<overlays[ovidx].nentrypoints; i++)
     {
-        unsigned short par = overlays[id].entrypoints[i];
+        unsigned short par = overlays[ovidx].entrypoints[i];
         unsigned short codep = Read16(par);
-        char *s = FindDictPar(par+2);
+        char *s = FindDictPar(par+2, ovidx);
         pline[par].isentry = 1;
         //fprintf(stderr, "0x%04x\n", codep);
         fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
@@ -122,20 +145,16 @@ void LoadOverlay(int id, FILE *fpc, FILE *fph)
 
     fprintf(fph, "\n#endif\n");
 
-
-    /*
-    overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par;
-    */
-
-    for(i=ndictstart; i<ndict; i++)
+    for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx == ovidx)
         if (dict[i].codep == CODECALL)
-            ParseFunction2(dict[i].parp, storeofs+0x8+0xa, storeofs+ovlsize);
+            ParseFunction2(dict[i].parp, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, ovidx);
     }
-    SortDictionary(ndictstart, ndict);
-    dict[ndict-1].size = storeofs+ovlsize-dict[ndict-1].parp;
+    SortDictionary();
+    //dict[ndict-1].size = head.storeofs+head.ovlsize-dict[ndict-1].parp;
 
-    WriteDict(mem, fpc, ndictstart, ndict);
+    WriteDict(mem, fpc, ovidx);
 
     for(i=0; i<ndict; i++)
     {
@@ -153,19 +172,21 @@ void LoadOverlay(int id, FILE *fpc, FILE *fph)
             for(j=0; j<strlen(dict[i].r)+2; j++) pline[wordofs+3+j].done = 1; // and the whole string
         }
     }
-    for(i=ndictstart; i<ndict; i++)
+    for(i=0; i<ndict; i++)
     {
-        if ((dict[i].codep < storeofs+0x8+0xa) || (dict[i].codep >= storeofs+ovlsize)) continue;
+        if (dict[i].ovidx != ovidx) continue;
+        if ((dict[i].codep < head.storeofs+0x8+0xa) || (dict[i].codep >= head.storeofs+head.ovlsize)) continue;
         //printf("disasm dict entry %i\n", i);
         DisasmRange(dict[i].codep, 0x100000, fpc);
     }
 
-    WriteVariables(storeofs+0x8+0xa, storeofs+ovlsize, fpc, ndictstart, ndict);
-    WriteParsedFunctions(storeofs+0x8+0xa, storeofs+ovlsize, fpc);
+    WriteVariables(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc, ovidx);
+    WriteParsedFunctions(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc);
 }
 
 void LoadSTARFLT()
 {
+    memset(mem, 0, 0x10000);
     FILE *fp = fopen(FILESTAR0, "rb");
     if (fp == NULL)
     {
@@ -174,15 +195,18 @@ void LoadSTARFLT()
     }
     fread(&mem[0x100], FILESTAR0SIZE, 1, fp);
     fclose(fp);
+}
+
+void ParseStarFltDict()
+{
     // these addresses are in the "FORTH" dict entry
     ndict = 0;
-    ParseDict(mem, DICTLIST1-2, 1);
-    ParseDict(mem, DICTLIST2-2, 1);
-    ParseDict(mem, DICTLIST3-2, 1);
-    ParseDict(mem, DICTLIST4-2, 1);
-    //if (DICTLIST5 != 0) ParseDict(mem, DICTLIST5-2, 1);
+    ParseDict(mem, DICTLIST1-2, 1, -1);
+    ParseDict(mem, DICTLIST2-2, 1, -1);
+    ParseDict(mem, DICTLIST3-2, 1, -1);
+    ParseDict(mem, DICTLIST4-2, 1, -1);
 
-    SortDictionary(0, ndict);
+    SortDictionary();
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
 }
 
@@ -192,12 +216,13 @@ void DisasStarflt(FILE *fp)
     InitParseFunction2();
     for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx == -1)
         if (dict[i].codep == CODECALL)
-            ParseFunction2(dict[i].parp, 0x100, FILESTAR0SIZE+0x100);
+            ParseFunction2(dict[i].parp, 0x100, FILESTAR0SIZE+0x100, -1);
     }
-    SortDictionary(0, ndict);
+    SortDictionary();
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
-    WriteDict(mem, fp, 0, ndict);
+    WriteDict(mem, fp, -1);
 
     for(i=0; i<ndict; i++)
     {
@@ -221,8 +246,22 @@ void DisasStarflt(FILE *fp)
         DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, fp);
     }
 
-    WriteVariables(0x100, FILESTAR0SIZE+0x100, fp, 0, ndict);
+    WriteVariables(0x100, FILESTAR0SIZE+0x100, fp, -1);
     WriteParsedFunctions(0x100, FILESTAR0SIZE+0x100, fp);
+}
+
+void OutputDirectory()
+{
+    FILE *fp;
+    fp = fopen(OUTDIR"/directory.txt", "w");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot create file\n");
+        exit(1);
+    }
+    LoadDir(fp);
+    fclose(fp);
+
 }
 
 
@@ -232,20 +271,26 @@ int main()
     FILE *fpc;
     FILE *fph;
 
-    fph = fopen(OUTDIR"/directory.txt", "w");
-    if (fph == NULL)
-    {
-        fprintf(stderr, "Error: Cannot create file\n");
-        exit(1);
-    }
-    LoadDir(fph);
-    fclose(fph);
+    OutputDirectory();
+
+// ---------------------
 
     for(i=0; overlays[i].name != NULL; i++)
     {
         overlays[i].startaddress = GetStartAddress(overlays[i].id);
         overlays[i].nentrypoints = 0;
     }
+
+// ---------------------
+
+    LoadSTARFLT();
+    ParseStarFltDict();
+    for(i=0; overlays[i].name != NULL; i++)
+    {
+        LoadOverlayDict(i);
+    }
+
+// ---------------------
 
     LoadSTARFLT();
     fpc = fopen(OUTDIR"/starflt.c", "w");
@@ -262,10 +307,12 @@ int main()
     char filename[512];
     for(i=0; overlays[i].name != NULL; i++)
     {
-        //reload dictionary
-        memset(dict, 0, sizeof(dict));
-        ndict = 0;
         LoadSTARFLT();
+        ParseStarFltDict();
+        LoadOverlayDict(i);
+
+        //reload dictionary
+        //memset(dict, 0, sizeof(dict));
 
         sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
         printf("Generate %s\n", filename);
@@ -282,7 +329,7 @@ int main()
             fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
             exit(1);
         }
-        LoadOverlay(i, fpc, fph);
+        ParseOverlay(i, fpc, fph);
         fclose(fpc);
         fclose(fph);
     }

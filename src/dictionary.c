@@ -6,14 +6,15 @@
 #include"cpu.h"
 
 
-struct DICTENTRY dict[3000];
+struct DICTENTRY dict[5000];
 int ndict = 0;
 
-char* FindDictPar(unsigned short addr)
+char* FindDictPar(unsigned short addr, int ovidx)
 {
     int i = 0;
     for(i=0; i<ndict; i++)
     {
+        if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
         if (dict[i].parp == addr) return dict[i].r;
     }
 
@@ -21,6 +22,7 @@ char* FindDictPar(unsigned short addr)
     dict[ndict].codep = Read16(addr-2);
     dict[ndict].parp = addr;
     dict[ndict].ofs = addr-2;
+    dict[ndict].ovidx = ovidx;
     ndict++;
     return dict[ndict-1].r;
 }
@@ -312,7 +314,7 @@ char* Forth2CString(char *in)
 
 // --------------------------------------------
 
-int AddDirectory(int ofs, unsigned char *mem, int decrypt)
+int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
 {
     unsigned short linkp = Read16(ofs);
     unsigned char bitfield = Read8(ofs+2);
@@ -323,6 +325,7 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt)
     dict[ndict].ofs = ofs;
     dict[ndict].linkp = linkp;
     dict[ndict].bits = bitfield;
+    dict[ndict].ovidx = ovidx;
     dict[ndict].size = -1;
 
     int n = 0;
@@ -354,28 +357,29 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt)
     return linkp - 2;
 }
 
-void ParseDict(unsigned char *mem, int linkp, int decrypt)
+void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx)
 {
     int i = 0;
     int j = 0;
 
-    for(i=0; i<3000; i++)
+    for(i=0; i<5000; i++)
     {
         for(j=0; j<ndict; j++)
         {
             if (dict[j].ofs == linkp)
+            if (dict[j].ovidx == ovidx)
             {
                 fprintf(stderr, "duplicate\n");
                 exit(1);
                 return;
             }
         }
-        linkp = AddDirectory(linkp, mem, decrypt);
+        linkp = AddDirectory(linkp, mem, decrypt, ovidx);
         if (linkp <= 0) return;
     }
 }
 
-void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
+void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
 {
     int i;
     unsigned int bitfield = 0;
@@ -383,8 +387,9 @@ void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
     fprintf(fp, "// =========== DICTIONARY ==========\n");
     fprintf(fp, "// =================================\n");
 
-    for(i=startidx; i<endidx; i++)
+    for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         fprintf(fp, "// %4i: %15s", i, dict[i].r);
         fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'",
         dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(dict[i].r));
@@ -397,14 +402,23 @@ void WriteDict(unsigned char *mem, FILE *fp, int startidx, int endidx)
     }
 }
 
-void SortDictionary(int start, int end)
+void SortDictionary()
 {
     struct DICTENTRY temp;
     int i = 0;
     int j = 0;
     for(i=0; i<ndict; i++)
-    for(j=start; j<end-1; j++)
+    for(j=0; j<ndict-1; j++)
     {
+        if (dict[j].ovidx > dict[j+1].ovidx)
+        {
+            memcpy((void*)&temp,      (void*)&dict[j], sizeof(DICTENTRY));
+            memcpy((void*)&dict[j],   (void*)&dict[j+1], sizeof(DICTENTRY));
+            memcpy((void*)&dict[j+1], (void*)&temp, sizeof(DICTENTRY));
+            continue;
+        }
+
+        if (dict[j].ovidx == dict[j+1].ovidx)
         if (dict[j].ofs > dict[j+1].ofs)
         {
             memcpy((void*)&temp,      (void*)&dict[j], sizeof(DICTENTRY));
@@ -413,10 +427,17 @@ void SortDictionary(int start, int end)
         }
     }
 
-    for(i=start; i<end-1; i++)
+    for(i=0; i<ndict-1; i++)
     {
-        dict[i].size = dict[i+1].ofs - dict[i].parp;
+        if (dict[i].ovidx == dict[i+1].ovidx)
+        {
+            dict[i].size = dict[i+1].ofs - dict[i].parp;
+        } else
+        {
+            dict[i].size = 0;
+        }
     }
+    dict[ndict-1].size = 0;
 }
 
 // --------------------------------------------
@@ -592,17 +613,21 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
 
+        char *s = FindDictPar(par+2, currentovidx);
+
+        if (ofs < 0x100+FILESTAR0SIZE)
         if (currentovidx != -1)
         if (par+2 >= maxaddr)
         {
             overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par;
             overlays[currentovidx].nentrypoints++;
 
-            snprintf(pline[ofs].str, STRINGLEN, "  UNK_0x%04x(); // Overlay %s\n", par+2, overlays[currentovidx].name);
+            snprintf(pline[ofs].str, STRINGLEN, "  %s(); // Overlay %s\n", s, overlays[currentovidx].name);
             ofs += 2;
             continue;
         }
-        char *s = FindDictPar(par+2);
+
+        //char *s = FindDictPar(par+2, currentovidx);
 
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
@@ -917,15 +942,15 @@ void InitParseFunction2()
     memset(pline, 0, 0x10000*sizeof(LineDesc));
 }
 
-void ParseFunction2(unsigned short parp, int minaddr, int maxaddr)
+void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx)
 {
-    char *s = FindDictPar(parp);
+    char *s = FindDictPar(parp, ovidx);
     pline[parp].isfunction = 1;
     snprintf(pline[parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    ParsePartFunction(parp, pline, minaddr, maxaddr, -1);
+    ParsePartFunction(parp, pline, minaddr, maxaddr, ovidx);
 }
 
-void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx)
+void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)
 {
     int i = 0;
     int j = 0;
@@ -934,8 +959,9 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
     fprintf(fp, "// =========== VARIABLES ===========\n");
     fprintf(fp, "// =================================\n");
 
-    for(i=startidx; i<endidx; i++)
+    for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEPOINTER) continue;
         fprintf(fp, "unsigned char %s[%i] = {", Forth2CString(dict[i].r), dict[i].size);
         for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
@@ -943,14 +969,16 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
         fprintf(fp, "}; // %s\n", dict[i].r);
     }
     fprintf(fp, "\n");
-    for(i=startidx; i<endidx; i++)
+    for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODECONSTANT) continue;
         fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(dict[i].r), Read16(dict[i].parp), dict[i].r);
     }
     fprintf(fp, "\n");
-    for(i=startidx; i<endidx; i++)
+    for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEDI) continue;
         fprintf(fp, "const unsigned short int %s = 0x%04x; // %s // accessed via di (in WORD OPERATOR)\n", Forth2CString(dict[i].r), Read16(Read16(dict[i].parp)+REGDI), dict[i].r);
     }
@@ -958,6 +986,7 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int startidx, int endidx
     /*
     for(i=startidx; i<endidx; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODELOADDATA) continue;
         fprintf(fp, "const unsigned short int %s = { 0x%04x, 0x%04x, addr: 0x%04x } // struct to load data from directory\n",
             dict[i].r,
