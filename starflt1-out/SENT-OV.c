@@ -3,6 +3,7 @@
 // overlay size   = 0x12b0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -763,7 +764,7 @@ void UNK_0xebdb() // UNK_0xebdb
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
 
-  label4:
+  label7:
   UNK_0xea2f(); // UNK_0xea2f
   _2OVER(); // 2OVER
   D_dash_(); // D-
@@ -774,13 +775,13 @@ void UNK_0xebdb() // UNK_0xebdb
   Pop(); Pop();// 2DROP
   U_gt__do_(); // U>$
   UNK_0xe8c7(); // UNK_0xe8c7
-  goto label6;
+  goto label3;
 
   label2:
   CI(); // CI
   UNK_0xe6bf(); // UNK_0xe6bf
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp_PM_dash_PTR); // PM-PTR
   Push(Read16(Pop())); // @
   C_at_(); // C@
@@ -790,21 +791,21 @@ void UNK_0xebdb() // UNK_0xebdb
   UNK_0xebcf(); // UNK_0xebcf
   UNK_0xe8c7(); // UNK_0xe8c7
   ICLOSE(); // ICLOSE
-  goto label7;
+  goto label6;
 
   label5:
   Pop(); Pop();// 2DROP
 
-  label7:
-  goto label6;
+  label6:
+  goto label3;
 
-  label3:
+  label4:
   UNK_0xebcf(); // UNK_0xebcf
   UNK_0xe8c7(); // UNK_0xe8c7
   ICLOSE(); // ICLOSE
 
-  label6:
-  goto label4;
+  label3:
+  goto label7;
 
   label1:
   UNK_0xebcf(); // UNK_0xebcf
@@ -1092,7 +1093,7 @@ void UNK_0xeded() // UNK_0xeded
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push(0xcaa8); Pust(0x0001);
-  goto label5;
+  goto label2;
 
   label1:
   UNK_0xe680(); // UNK_0xe680
@@ -1100,32 +1101,32 @@ void UNK_0xeded() // UNK_0xeded
   UNK_0xe568(); // UNK_0xe568
   C_at_(); // C@
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0xe262); Pust(0x0001);
-  goto label5;
+  goto label2;
 
-  label2:
+  label3:
   UNK_0xe68a(); // UNK_0xe68a
   C_at_(); // C@
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
-  Push(0xe24c); Pust(0x0001);
-  goto label5;
-
-  label3:
-  UNK_0xe685(); // UNK_0xe685
-  C_at_(); // C@
   if (Pop() == 0) goto label4;
-  UNK_0xe548(); // UNK_0xe548
-  _1_dot_5_at_(); // 1.5@
-  goto label5;
+  Push(0xe24c); Pust(0x0001);
+  goto label2;
 
   label4:
+  UNK_0xe685(); // UNK_0xe685
+  C_at_(); // C@
+  if (Pop() == 0) goto label5;
+  UNK_0xe548(); // UNK_0xe548
+  _1_dot_5_at_(); // 1.5@
+  goto label2;
+
+  label5:
   UNK_0xe540(); // UNK_0xe540
   _1_dot_5_at_(); // 1.5@
 
-  label5:
+  label2:
   UNK_0xe6bf(); // UNK_0xe6bf
   Push(0xdd05); Pust(0x0001);
   UNK_0xe6bf(); // UNK_0xe6bf
@@ -1221,13 +1222,13 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xeead(); // UNK_0xeead
   R_gt_(); // R>
   R_gt_(); // R>
-  goto label6;
+  goto label3;
 
   label2:
   Push(pp_UNK_0xeea9); // UNK_0xeea9
   ON(); // ON
 
-  label6:
+  label3:
   UNK_0xeea1(); // UNK_0xeea1
   Push(2); // 2
   Push(Pop() + Pop()); // +
@@ -1262,9 +1263,9 @@ void UNK_0xeecb() // UNK_0xeecb
   UNK_0xe69d(); // UNK_0xe69d
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
-  UNK_0xe413(); // UNK_0xe413
   if (Pop() == 0) goto label4;
+  UNK_0xe413(); // UNK_0xe413
+  if (Pop() == 0) goto label5;
   UNK_0xeea1(); // UNK_0xeea1
   Push(0x000c);
   Push(Pop() + Pop()); // +
@@ -1272,13 +1273,13 @@ void UNK_0xeecb() // UNK_0xeecb
   IFLD_at_(); // IFLD@
   UNK_0xeb5f(); // UNK_0xeb5f
 
-  label4:
-  goto label5;
+  label5:
+  goto label6;
 
-  label3:
+  label4:
   UNK_0xeb5f(); // UNK_0xeb5f
 
-  label5:
+  label6:
   UNK_0xeea1(); // UNK_0xeea1
   Push(0x000e);
   Push(Pop() + Pop()); // +
@@ -1407,12 +1408,12 @@ void _ask_TALK() // ?TALK
   _eq_(); // =
   if (Pop() == 0) goto label2;
   CLASS_gt_DE(); // CLASS>DE
-  goto label4;
+  goto label3;
 
   label2:
   CLASS_gt_TY(); // CLASS>TY
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
   Push(i); // I'
   Push(1); // 1
@@ -1423,13 +1424,13 @@ void _ask_TALK() // ?TALK
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(0x05dc);
   MS(); // MS
   UNK_0xec53(); // UNK_0xec53
   UNK_0xec53(); // UNK_0xec53
 
-  label3:
+  label4:
   i++;
   } while(i<imax); // (LOOP) 0xffbe
 

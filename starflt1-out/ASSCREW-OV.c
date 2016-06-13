@@ -3,6 +3,7 @@
 // overlay size   = 0x0af0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -1088,7 +1089,7 @@ void UNK_0xf395() // UNK_0xf395
 {
   _gt_R(); // >R
 
-  label2:
+  label5:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   UNK_0xf2a3(); // UNK_0xf2a3
@@ -1101,25 +1102,25 @@ void UNK_0xf395() // UNK_0xf395
   Push(1); // 1
   Push(Pop() ^ Pop()); // XOR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   Push(h); // I
   UNK_0xf238(); // UNK_0xf238
   Push(h); // I
   UNK_0xf1ce(); // UNK_0xf1ce
   Push(1); // 1
-  goto label5;
+  goto label3;
 
-  label3:
+  label2:
   UNK_0xf2b1(); // UNK_0xf2b1
 
-  label5:
+  label3:
   goto label4;
 
   label1:
   Push(0); // 0
 
   label4:
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label5;
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -1273,7 +1274,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   ICLOSE(); // ICLOSE
   Push(i); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   _star_PERSON(); // *PERSON
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1283,7 +1284,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   _gt_C_plus_S(); // >C+S
   goto label2;
 
-  label4:
+  label3:
   UNK_0xeb68(); // UNK_0xeb68
   Push(i); // I
   Push(Pop()-1); // 1-
@@ -1304,13 +1305,13 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   ICLOSE(); // ICLOSE
   KEY(); // KEY
   Pop(); // DROP
-  goto label3;
+  goto label4;
 
   label1:
   UNK_0xf32e(); // UNK_0xf32e
   UNK_0xea9c(); // UNK_0xea9c
 
-  label3:
+  label4:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }

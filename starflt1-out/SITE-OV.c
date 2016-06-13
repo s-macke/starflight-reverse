@@ -3,6 +3,7 @@
 // overlay size   = 0x0760
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -871,7 +872,7 @@ void GETSITE() // GETSITE
   _dot_LON(); // .LON
   _gt_XHAIR(); // >XHAIR
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(0x1388);
   Push(pp_KEYTIME); // KEYTIME
@@ -922,14 +923,14 @@ void GETSITE() // GETSITE
   _ex_COLOR(); // !COLOR
   UNK_0xefa0(); // UNK_0xefa0
   _dot_LON(); // .LON
-  goto label3;
+  goto label2;
 
   label1:
   Pop(); Pop();// 2DROP
 
-  label3:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xef1d); // UNK_0xef1d

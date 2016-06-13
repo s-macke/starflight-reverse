@@ -4,10 +4,10 @@
 #define HYPER-OV_H
 
 void FLY(); // FLY
+void JMPSHP(); // JMPSHP
 void CHK_dash_MOV(); // CHK-MOV
 void _dot_AUXSYS(); // .AUXSYS
 void UNNEST(); // UNNEST
-void JMPSHP(); // JMPSHP
 void UNNEST(); // UNNEST
 void _plus_NEST(); // +NEST
 void _ro_GET_dash_AU(); // (GET-AU

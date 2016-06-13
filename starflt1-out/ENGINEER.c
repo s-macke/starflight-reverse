@@ -3,6 +3,7 @@
 // overlay size   = 0x0910
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -357,60 +358,60 @@ void UNK_0xeea0() // UNK_0xeea0
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   PRINT("DESTROYED", 9); // (.")
-  goto label8;
+  goto label2;
 
   label1:
   Push(h); // I
   Push(1); // 1
   Push(0x0014);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("CRITICALLY", 10); // (.")
-  goto label7;
+  goto label4;
 
-  label2:
+  label3:
   Push(h); // I
   Push(0x0014);
   Push(0x0028);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   PRINT("HEAVILY", 7); // (.")
-  goto label7;
+  goto label4;
 
-  label3:
+  label5:
   Push(h); // I
   Push(0x0028);
   Push(0x0046);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   PRINT("MODERATELY", 10); // (.")
-  goto label7;
+  goto label4;
 
-  label4:
+  label6:
   Push(h); // I
   Push(0x0046);
   Push(0x005a);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label7;
   PRINT("SLIGHTLY", 8); // (.")
-  goto label7;
+  goto label4;
 
-  label5:
+  label7:
   Push(h); // I
   Push(0x005a);
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label8;
   PRINT("MINIMALLY", 9); // (.")
-  goto label7;
-
-  label6:
-  PRINT("NOT", 3); // (.")
-
-  label7:
-  PRINT(" DAMAGED", 8); // (.")
+  goto label4;
 
   label8:
+  PRINT("NOT", 3); // (.")
+
+  label4:
+  PRINT(" DAMAGED", 8); // (.")
+
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -554,13 +555,13 @@ void UNK_0xf0ff() // UNK_0xf0ff
   DUP(); // DUP
   _dot_(); // .
   PRINT("MINUTE", 6); // (.")
-  goto label4;
+  goto label2;
 
   label1:
   DUP(); // DUP
   Push(0x05a0);
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0x003c);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -570,9 +571,9 @@ void UNK_0xf0ff() // UNK_0xf0ff
   DUP(); // DUP
   _dot_(); // .
   PRINT("HOUR", 4); // (.")
-  goto label4;
+  goto label2;
 
-  label2:
+  label3:
   Push(0x05a0);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -583,14 +584,14 @@ void UNK_0xf0ff() // UNK_0xf0ff
   _dot_(); // .
   PRINT("DAY", 3); // (.")
 
-  label4:
+  label2:
   Push(1); // 1
   _gt_(); // >
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(0x0053);
   EMIT(); // EMIT
 
-  label3:
+  label4:
   PRINT(".", 1); // (.")
 }
 
@@ -894,7 +895,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _star_SHIP(); // *SHIP
   _gt_C_plus_S(); // >C+S
 
-  label3:
+  label7:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   Push(pp_NCRS); // NCRS
@@ -946,18 +947,18 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label2;
   Push(0x0040);
   UNK_0xee68(); // UNK_0xee68
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   _gt_R(); // >R
   Push(h); // I
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   _eq_(); // =
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(h); // I
   UNK_0xf2a0(); // UNK_0xf2a0
-  goto label7;
+  goto label5;
 
-  label5:
+  label4:
   Push(h); // I
   UNK_0xf2ce(); // UNK_0xf2ce
   if (Pop() == 0) goto label6;
@@ -967,18 +968,18 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Read16(Pop())); // @
   CTCR(); // CTCR
   UNK_0xf3a1(); // UNK_0xf3a1
-  goto label7;
+  goto label5;
 
   label6:
   Push(h); // I
   UNK_0xf358(); // UNK_0xf358
 
-  label7:
+  label5:
   R_gt_(); // R>
   Pop(); // DROP
   goto label2;
 
-  label4:
+  label3:
   CTERASE(); // CTERASE
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
@@ -986,7 +987,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
 
   label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label7;
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xf3c5(); // UNK_0xf3c5

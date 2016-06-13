@@ -3,6 +3,7 @@
 // overlay size   = 0x10f0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -419,19 +420,19 @@ void UNK_0xece0() // UNK_0xece0
   Push(0x002a);
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   UNK_0xe8fb(); // UNK_0xe8fb
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label2:
   Push(0x0015);
   _eq_(); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xe758(); // UNK_0xe758
 
-  label3:
+  label4:
   ICLOSE(); // ICLOSE
   i++;
   } while(i<imax); // (LOOP) 0xffc6
@@ -1108,36 +1109,36 @@ void TV_dash_KEY() // TV-KEY
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xf079(); // UNK_0xf079
-  goto label7;
+  goto label2;
 
   label1:
   Push(0); // 0
   Push(cc__dash_1); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
   Push(cc__dash_1); // -1
   UNK_0xf079(); // UNK_0xf079
-  goto label7;
+  goto label2;
 
-  label2:
+  label3:
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf012(); // UNK_0xf012
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
   _gt_BUTTONS(); // >BUTTONS
   UNK_0xe6ba(); // UNK_0xe6ba
 
-  label3:
+  label4:
   _1SIMULATE(); // 1SIMULATE
   Pop(); // DROP
 
-  label7:
+  label2:
   UNK_0xef4c(); // UNK_0xef4c
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   UNK_0xef9a(); // UNK_0xef9a
   if (Pop() == 0) goto label6;
   UNK_0xefd0(); // UNK_0xefd0
@@ -1145,9 +1146,9 @@ void TV_dash_KEY() // TV-KEY
   label6:
   UNK_0xe9f7(); // UNK_0xe9f7
 
-  label4:
+  label5:
   UNK_0xf19a(); // UNK_0xf19a
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label7;
   Push(0xc8b4);
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
@@ -1155,7 +1156,7 @@ void TV_dash_KEY() // TV-KEY
   UNK_0xe6ba(); // UNK_0xe6ba
   UNK_0xe9f7(); // UNK_0xe9f7
 
-  label5:
+  label7:
   UNK_0xf002(); // UNK_0xf002
   if (Pop() == 0) return;
   if (Pop() == 0) Push(1); else Push(0); // 0=

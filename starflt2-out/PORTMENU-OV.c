@@ -3,6 +3,7 @@
 // overlay size   = 0x0880
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -289,12 +290,12 @@ void UNK_0xf0b7() // UNK_0xf0b7
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _gt_HIDDEN(); // >HIDDEN
-  goto label5;
+  goto label3;
 
   label2:
   _gt_DISPLA(); // >DISPLA
 
-  label5:
+  label3:
   DARK(); // DARK
   Push(0xb9f9);
   MODULE(); // MODULE
@@ -304,14 +305,14 @@ void UNK_0xf0b7() // UNK_0xf0b7
   UNK_0xf0a1(); // UNK_0xf0a1
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   SCR_dash_RES(); // SCR-RES
-  goto label4;
-
-  label3:
-  SAVE_dash_SC(); // SAVE-SC
+  goto label5;
 
   label4:
+  SAVE_dash_SC(); // SAVE-SC
+
+  label5:
   H_gt_D(); // H>D
   _gt_DISPLA(); // >DISPLA
 }

@@ -3,6 +3,7 @@
 // overlay size   = 0x07a0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -792,7 +793,7 @@ void PUT() // PUT
   R_gt_(); // R>
   Pop(); Pop();// 2DROP
   BELL(); // BELL
-}
+  return;
 
 
   label1:
@@ -961,19 +962,19 @@ void EDIT() // EDIT
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
 
-  label2:
+  label3:
   UNK_0xeec0(); // UNK_0xeec0
   KEY(); // KEY
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) goto label1;
   INSERT(); // INSERT
-  goto label3;
+  goto label2;
 
   label1:
   EDIT_dash_KEYS(); // EDIT-KEYS
 
-  label3:
-  goto label2;
+  label2:
+  goto label3;
 }
 
 

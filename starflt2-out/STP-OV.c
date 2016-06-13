@@ -3,6 +3,7 @@
 // overlay size   = 0x04f0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -274,31 +275,31 @@ void UNK_0xf1f8() // UNK_0xf1f8
   UNK_0xf1ca(); // UNK_0xf1ca
   Push(pp_UNK_0xf17c); // UNK_0xf17c
   _ex_(); // !
-  goto label4;
+  goto label2;
 
   label1:
   R_at_(); // R@
   Push(1); // 1
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__5); // 5
   RRND(); // RRND
   UNK_0xf1ca(); // UNK_0xf1ca
-  goto label3;
+  goto label4;
 
-  label2:
+  label3:
   Push(0x0012);
   Push(0x0016);
   RRND(); // RRND
   UNK_0xf1ca(); // UNK_0xf1ca
 
-  label3:
+  label4:
   Push(pp_UNK_0xf178); // UNK_0xf178
   _ex_(); // !
   UNK_0xf1e6(); // UNK_0xf1e6
 
-  label4:
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }

@@ -3,6 +3,7 @@
 // overlay size   = 0x0d50
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -365,12 +366,12 @@ void UNK_0xeada() // UNK_0xeada
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   PRINT("SELLING", 7); // (.")
-  goto label3;
+  goto label2;
 
   label1:
   PRINT("BUYING", 6); // (.")
 
-  label3:
+  label2:
   _ex_COLOR(); // !COLOR
   Push(0x003a);
   Push(0x00b5);
@@ -380,11 +381,11 @@ void UNK_0xeada() // UNK_0xeada
   POLY_dash_ER(); // POLY-ER
   Push(pp_SELLING); // SELLING
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("TO ", 3); // (.")
   return;
 
-  label2:
+  label3:
   PRINT("FROM ", 5); // (.")
 }
 

@@ -3,6 +3,7 @@
 // overlay size   = 0x0c00
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -237,7 +238,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   _gt_DISPLA(); // >DISPLA
   SCR_dash_RES(); // SCR-RES
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -251,13 +252,13 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION
-  goto label3;
+  goto label2;
 
   label1:
   Push(0); // 0
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   Push(1); // 1
   UNK_0xe980(); // UNK_0xe980
   ICLOSE(); // ICLOSE

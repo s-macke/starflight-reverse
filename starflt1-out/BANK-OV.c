@@ -3,6 +3,7 @@
 // overlay size   = 0x05f0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================

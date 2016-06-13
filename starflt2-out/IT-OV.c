@@ -3,6 +3,7 @@
 // overlay size   = 0x06e0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -622,12 +623,12 @@ void _gt_BOX() // >BOX
   if (Pop() == 0) goto label3;
   IOPEN(); // IOPEN
 
-  label5:
+  label4:
   DUP(); // DUP
   INEXT(); // INEXT
   _at_INST_dash_S(); // @INST-S
   _eq_(); // =
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
   INST_dash_QT(); // INST-QT
@@ -638,22 +639,22 @@ void _gt_BOX() // >BOX
   INST_dash_QT(); // INST-QT
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
-  goto label6;
+  goto label5;
 
   label3:
   Pop(); // DROP
   CI(); // CI
   IINSERT(); // IINSERT
 
-  label6:
-  goto label4;
+  label5:
+  goto label6;
 
   label2:
   Pop(); Pop();// 2DROP
   CI(); // CI
   IINSERT(); // IINSERT
 
-  label4:
+  label6:
   ICLOSE(); // ICLOSE
 }
 

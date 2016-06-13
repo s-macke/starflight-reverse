@@ -3,6 +3,7 @@
 // overlay size   = 0x0620
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -71,27 +72,27 @@ void UNK_0xef56() // UNK_0xef56
   Push(h); // I
   if (Pop() == 0) goto label1;
   PINK(); // PINK
-  goto label5;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label5:
+  label2:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
 
-  label2:
-  _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label2;
-  R_gt_(); // R>
-  if (Pop() == 0) goto label3;
-  RED(); // RED
-  goto label4;
-
   label3:
-  DK_dash_BLUE(); // DK-BLUE
+  _i_KEY(); // 'KEY
+  if (Pop() == 0) goto label3;
+  R_gt_(); // R>
+  if (Pop() == 0) goto label4;
+  RED(); // RED
+  goto label5;
 
   label4:
+  DK_dash_BLUE(); // DK-BLUE
+
+  label5:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   R_gt_(); // R>

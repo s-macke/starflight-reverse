@@ -3,6 +3,7 @@
 // overlay size   = 0x0200
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -274,7 +275,7 @@ void TOW_dash_US() // TOW-US
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf4b2(); // UNK_0xf4b2
-  goto label4;
+  goto label3;
 
   label2:
   UNK_0xf4c0(); // UNK_0xf4c0
@@ -293,8 +294,8 @@ void TOW_dash_US() // TOW-US
   Push(pp__ask_NEB); // ?NEB
   _099(); // 099
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label1:
   CTERASE(); // CTERASE
@@ -302,7 +303,7 @@ void TOW_dash_US() // TOW-US
   UNK_0xf37b(); // UNK_0xf37b
   TYPE(); // TYPE
 
-  label3:
+  label4:
   BLACK(); // BLACK
   Push(1); // 1
   _dot_ON(); // .ON

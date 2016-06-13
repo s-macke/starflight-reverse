@@ -3,6 +3,7 @@
 // overlay size   = 0x0b40
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -755,7 +756,7 @@ void UNK_0xf00d() // UNK_0xf00d
   UNK_0xea3e(); // UNK_0xea3e
   IOPEN(); // IOPEN
 
-  label3:
+  label4:
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -774,16 +775,16 @@ void UNK_0xf00d() // UNK_0xf00d
   _2DUP(); // 2DUP
   UNK_0xeadb(); // UNK_0xeadb
   D_eq_(); // D=
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   CI(); // CI
   goto label2;
 
-  label4:
+  label3:
   NULL(); // NULL
 
   label2:
   INEXT(); // INEXT
-  goto label3;
+  goto label4;
 
   label1:
   _gt_R(); // >R
@@ -994,7 +995,7 @@ void UNK_0xf30d() // UNK_0xf30d
   Push(pp_NOF); // NOF
   ON(); // ON
   UNK_0xf1d9(); // UNK_0xf1d9
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   Push(0x69ba); Pust(0x0002);
   UNK_0xed8a(); // UNK_0xed8a
   _dot_TTY(); // .TTY
@@ -1018,7 +1019,7 @@ void UNK_0xf30d() // UNK_0xf30d
   Push(0xbab2);
   MODULE(); // MODULE
 
-  label3:
+  label2:
   Push(pp_NOF); // NOF
   _099(); // 099
   return;
@@ -1026,11 +1027,11 @@ void UNK_0xf30d() // UNK_0xf30d
   label1:
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   _gt_TVCT(); // >TVCT
   CTINIT(); // CTINIT
 
-  label2:
+  label3:
   Push(0xb7e7);
   MODULE(); // MODULE
 }

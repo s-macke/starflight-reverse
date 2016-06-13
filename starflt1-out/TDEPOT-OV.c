@@ -3,6 +3,7 @@
 // overlay size   = 0x12c0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -353,12 +354,12 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xe2fa(); // UNK_0xe2fa
-  goto label6;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label6:
+  label2:
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xe2be); // UNK_0xe2be
   ON(); // ON
@@ -383,21 +384,21 @@ void UNK_0xeacc() // UNK_0xeacc
   C_at_(); // C@
   Push(0x002e);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(0x0030);
   Push(0x003a);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(pp_UNK_0xe2be); // UNK_0xe2be
   OFF(); // OFF
 
-  label5:
-  goto label3;
+  label4:
+  goto label5;
 
-  label2:
+  label3:
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(i); // I
@@ -408,20 +409,20 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(pp_UNK_0xe2be); // UNK_0xe2be
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   LEAVE(); // LEAVE
 
-  label3:
+  label5:
   i++;
   } while(i<imax); // (LOOP) 0xffb6
 
   Push(pp_UNK_0xe2be); // UNK_0xe2be
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   Push(0x000a);
   Push(Pop() * Pop()); // *
 
-  label4:
+  label6:
   ABS(); // ABS
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -525,7 +526,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex_(); // !
-  goto label5;
+  goto label2;
 
   label1:
   UNK_0xe3a8(); // UNK_0xe3a8
@@ -533,27 +534,27 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   _ex_(); // !
   UNK_0xeb74(); // UNK_0xeb74
 
-  label5:
+  label2:
   UNK_0xe32c(); // UNK_0xe32c
   Push(0); // 0
   Push(0x001f);
   CMESS(); // CMESS
   Push(pp__ask_TD); // ?TD
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("TRANSFER", 8); // (.")
   goto label4;
 
-  label2:
+  label3:
   INST_dash_X(); // INST-X
   _2_at_(); // 2@
   Push(0xffff); Pust(0xffff);
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   PRINT("PICK UP", 7); // (.")
   goto label4;
 
-  label3:
+  label5:
   PRINT("JETTISON", 8); // (.")
 
   label4:
@@ -668,7 +669,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(pp_UNK_0xe4b4); // UNK_0xe4b4
   BLD_dash_CRS(); // BLD-CRS
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -689,13 +690,13 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   UNK_0xe32c(); // UNK_0xe32c
   _ex_CRS(); // !CRS
   R_gt_(); // R>
-  goto label3;
+  goto label2;
 
   label1:
   Push(0); // 0
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   Push(2); // 2
   UNK_0xe2cc(); // UNK_0xe2cc
   Push(pp__ask_TD); // ?TD
@@ -720,7 +721,7 @@ void _st_TDART() // <TDART
   IOPEN(); // IOPEN
   Push(0); // 0
 
-  label3:
+  label4:
   _at_INST_dash_S(); // @INST-S
   Push(0x000f);
   _gt_(); // >
@@ -734,14 +735,14 @@ void _st_TDART() // <TDART
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   IDELETE(); // IDELETE
-  goto label4;
+  goto label3;
 
   label2:
   INEXT(); // INEXT
 
-  label4:
+  label3:
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 

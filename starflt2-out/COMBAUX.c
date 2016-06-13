@@ -3,6 +3,7 @@
 // overlay size   = 0x02b0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -397,31 +398,31 @@ void SET_dash_SC() // SET-SC
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf4e4(); // UNK_0xf4e4
-  goto label4;
+  goto label2;
 
   label1:
   UNK_0xf480(); // UNK_0xf480
   Push(pp_UNK_0xf430); // UNK_0xf430
   Push(Read16(Pop())); // @
 
-  label4:
+  label2:
   DUP(); // DUP
   Push(cc__5); // 5
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); // DROP
   UNK_0xf3da(); // UNK_0xf3da
   return;
 
-  label2:
+  label3:
   Push(cc__5); // 5
   Push(cc__8); // 8
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf336(); // UNK_0xf336
   return;
 
-  label3:
+  label4:
   UNK_0xf38e(); // UNK_0xf38e
 }
 

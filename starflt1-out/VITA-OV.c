@@ -3,6 +3,7 @@
 // overlay size   = 0x0de0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -1061,7 +1062,7 @@ void UNK_0xf382() // UNK_0xf382
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
 
-  label3:
+  label4:
   UNK_0xe8af(); // UNK_0xe8af
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
@@ -1099,17 +1100,17 @@ void UNK_0xf382() // UNK_0xf382
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  goto label4;
+  goto label3;
 
   label2:
   Pop(); Pop();// 2DROP
 
-  label4:
+  label3:
   Pop(); Pop();// 2DROP
   Push(1); // 1
   Push(pp_RECORD_n_); // RECORD#
   _plus__ex_(); // +!
-  goto label3;
+  goto label4;
 
   label1:
   Pop(); // DROP

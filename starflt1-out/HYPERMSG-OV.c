@@ -3,6 +3,7 @@
 // overlay size   = 0x1010
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -753,13 +754,13 @@ void OSET() // OSET
   if (Pop() == 0) goto label2;
   CI(); // CI
   Pop(); // DROP
-  goto label7;
+  goto label3;
 
   label2:
   UNK_0xeed2(); // UNK_0xeed2
   Push(Read16(Pop())); // @
 
-  label7:
+  label3:
   DUP(); // DUP
   Push(pp_GLOBALS); // GLOBALS
   _ex_(); // !
@@ -771,18 +772,18 @@ void OSET() // OSET
   _at_INST_dash_S(); // @INST-S
   Push(0x0017);
   _eq_(); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(1); // 1
   Push(0xbdd8);
   MODULE(); // MODULE
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
 
   UNK_0x3f3b("THE CRYSTAL ORB IS GLOWING");
   _dot_TTY(); // .TTY
   Push(0x3a48);
   goto label6;
 
-  label4:
+  label5:
   UNK_0xed4b(); // UNK_0xed4b
   Push(pp__i_HEAT); // 'HEAT
   Push(Read16(Pop())); // @
@@ -790,12 +791,12 @@ void OSET() // OSET
   ON(); // ON
 
   label6:
-  goto label5;
+  goto label7;
 
-  label3:
+  label4:
   Push(0xc3f3);
 
-  label5:
+  label7:
   Push(pp__i_EXTERN); // 'EXTERN
   _ex_(); // !
   Push(cc__dash_1); // -1
@@ -1044,13 +1045,13 @@ void UNK_0xf333() // UNK_0xf333
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
   Push(cc__4); // 4
-  goto label4;
+  goto label2;
 
   label1:
   Push(1); // 1
   Push(2); // 2
 
-  label4:
+  label2:
   Push(pp__ask_12); // ?12
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
@@ -1071,20 +1072,6 @@ void UNK_0xf333() // UNK_0xf333
   SWAP(); // SWAP
   _dash_(); // -
   DUP(); // DUP
-  if (Pop() == 0) goto label2;
-  DUP(); // DUP
-  Push(h); // I
-  Push(h); // I'
-  UNK_0xf31b(); // UNK_0xf31b
-
-  label2:
-  Push(pp_UNK_0xf287); // UNK_0xf287
-  _ex_(); // !
-  INST_dash_X(); // INST-X
-  Push(Read16(Pop())); // @
-  SWAP(); // SWAP
-  _dash_(); // -
-  DUP(); // DUP
   if (Pop() == 0) goto label3;
   DUP(); // DUP
   Push(h); // I
@@ -1092,6 +1079,20 @@ void UNK_0xf333() // UNK_0xf333
   UNK_0xf31b(); // UNK_0xf31b
 
   label3:
+  Push(pp_UNK_0xf287); // UNK_0xf287
+  _ex_(); // !
+  INST_dash_X(); // INST-X
+  Push(Read16(Pop())); // @
+  SWAP(); // SWAP
+  _dash_(); // -
+  DUP(); // DUP
+  if (Pop() == 0) goto label4;
+  DUP(); // DUP
+  Push(h); // I
+  Push(h); // I'
+  UNK_0xf31b(); // UNK_0xf31b
+
+  label4:
   Push(pp_UNK_0xf283); // UNK_0xf283
   _ex_(); // !
   ICLOSE(); // ICLOSE
@@ -1223,12 +1224,12 @@ void TRAK_dash_E() // TRAK-E
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(pp_IGLOBAL); // IGLOBAL
-  goto label4;
+  goto label2;
 
   label1:
   Push(pp_ILOCAL); // ILOCAL
 
-  label4:
+  label2:
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(0); // 0
@@ -1242,17 +1243,17 @@ void TRAK_dash_E() // TRAK-E
   _at_ID(); // @ID
   Push(0x00fe);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
   UNK_0xf3ab(); // UNK_0xf3ab
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf333(); // UNK_0xf333
   UNK_0xf425(); // UNK_0xf425
   UNK_0xf3f5(); // UNK_0xf3f5
 
-  label3:
+  label4:
   INST_dash_X(); // INST-X
   Push(Read16(Pop())); // @
   INST_dash_Y(); // INST-Y
@@ -1263,11 +1264,11 @@ void TRAK_dash_E() // TRAK-E
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   D_eq_(); // D=
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(pp_UNK_0xf43d); // UNK_0xf43d
   ON(); // ON
 
-  label2:
+  label3:
   i++;
   } while(i<imax); // (LOOP) 0xffc0
 

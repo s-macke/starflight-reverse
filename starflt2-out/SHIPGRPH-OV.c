@@ -3,6 +3,7 @@
 // overlay size   = 0x08b0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -305,19 +306,19 @@ void UNK_0xef3a() // UNK_0xef3a
   if (Pop() == 0) goto label2;
   INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
-  goto label4;
+  goto label3;
 
   label2:
   Push(0); // 0
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label4;
 
   label1:
   Push(0); // 0
 
-  label3:
+  label4:
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(0x000a);

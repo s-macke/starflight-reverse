@@ -3,6 +3,7 @@
 // overlay size   = 0x1020
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -209,21 +210,21 @@ void UNK_0xe658() // UNK_0xe658
   if (Pop() == 0) goto label2;
 
   UNK_0x3f09("YES.");
-  goto label4;
+  goto label3;
 
   label2:
 
   UNK_0x3f09("NO.");
 
-  label4:
+  label3:
   _dot_TTY(); // .TTY
   TTY_dash_SCR(); // TTY-SCR
-  goto label3;
+  goto label4;
 
   label1:
   Pop(); // DROP
 
-  label3:
+  label4:
   BLACK(); // BLACK
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @

@@ -3,6 +3,7 @@
 // overlay size   = 0x0960
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -873,25 +874,25 @@ void UNK_0xf128() // UNK_0xf128
   Push(cc__5); // 5
   RRND(); // RRND
   Push(pp_SUBHYDRO); // SUBHYDRO
-  goto label3;
+  goto label2;
 
   label1:
   Push(cc__5); // 5
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__7); // 7
   RRND(); // RRND
   Push(pp_INFHYDRO); // INFHYDRO
-  goto label3;
+  goto label2;
 
-  label2:
+  label3:
   Push(0); // 0
   Push(cc__7); // 7
   RRND(); // RRND
   Push(pp_TEMPHYDR); // TEMPHYDR
 
-  label3:
+  label2:
   Push(Pop() + Pop()); // +
   C_at_(); // C@
 }
@@ -942,25 +943,25 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(cc__5); // 5
   RRND(); // RRND
   Push(pp_SUBATMO); // SUBATMO
-  goto label3;
+  goto label2;
 
   label1:
   Push(cc__5); // 5
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__7); // 7
   RRND(); // RRND
   Push(pp_INFATMO); // INFATMO
-  goto label3;
+  goto label2;
 
-  label2:
+  label3:
   Push(0); // 0
   Push(cc__9); // 9
   RRND(); // RRND
   Push(pp_TEMPATMO); // TEMPATMO
 
-  label3:
+  label2:
   Push(Pop() + Pop()); // +
   C_at_(); // C@
 }

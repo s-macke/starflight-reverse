@@ -3,6 +3,7 @@
 // overlay size   = 0x1220
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -933,16 +934,16 @@ void UNK_0xe89c() // UNK_0xe89c
   UNK_0xe39c(); // UNK_0xe39c
   C_at_(); // C@
   Push(Pop() | Pop()); // OR
-  goto label3;
+  goto label2;
 
   label1:
   Push(1); // 1
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   _dot_CIRCLE(); // .CIRCLE
 
-  label2:
+  label3:
   ICLOSE(); // ICLOSE
   i++;
   } while(i<imax); // (LOOP) 0xffd0
@@ -985,25 +986,25 @@ void UNK_0xe8e6() // UNK_0xe8e6
   UNK_0xe3a1(); // UNK_0xe3a1
   C_at_(); // C@
   Push(Pop() | Pop()); // OR
-  goto label4;
+  goto label3;
 
   label2:
   Push(1); // 1
 
-  label4:
-  if (Pop() == 0) goto label3;
+  label3:
+  if (Pop() == 0) goto label4;
   _at_IC(); // @IC
   _ex_COLOR(); // !COLOR
   _at_IX(); // @IX
   _at_IY(); // @IY
   _ask_INVIS(); // ?INVIS
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   _at_IX(); // @IX
   _at_IY(); // @IY
   WLD_gt_SCR(); // WLD>SCR
   LPLOT(); // LPLOT
 
-  label3:
+  label4:
   ICLOSE(); // ICLOSE
   i++;
   } while(i<imax); // (LOOP) 0xffbe
@@ -1917,7 +1918,7 @@ void UNK_0xf05d() // UNK_0xf05d
 void UNK_0xf085() // UNK_0xf085
 {
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(0x00fa); Pust(0x0000);
   Push(pp_KEYTIME); // KEYTIME
@@ -1974,11 +1975,11 @@ void UNK_0xf085() // UNK_0xf085
   Push(Read16(Pop())); // @
   _ask_INVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   UNK_0xea7c(); // UNK_0xea7c
   UNK_0xee51(); // UNK_0xee51
 
-  label3:
+  label2:
   UNK_0xe722(); // UNK_0xe722
   UNK_0xeb47(); // UNK_0xeb47
   CLICK(); // CLICK
@@ -1988,7 +1989,7 @@ void UNK_0xf085() // UNK_0xf085
   UNK_0xe864(); // UNK_0xe864
   UNK_0xf05d(); // UNK_0xf05d
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 }
 
 

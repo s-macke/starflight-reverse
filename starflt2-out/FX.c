@@ -3,6 +3,7 @@
 // overlay size   = 0x0500
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -570,22 +571,22 @@ void UNK_0xf3de() // UNK_0xf3de
   if (Pop() == 0) goto label1;
   Push(Pop()-1); // 1-
   Push(cc__8); // 8
-  goto label5;
+  goto label2;
 
   label1:
   Push(0); // 0
 
-  label5:
+  label2:
   Push(Pop() * Pop()); // *
   UNK_0xf2e6(); // UNK_0xf2e6
   Push(Pop() + Pop()); // +
   Push(h); // I
   _0_gt_(); // 0>
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
 
-  label2:
+  label3:
   _2_at_(); // 2@
   SWAP(); // SWAP
   WLD_gt_SCR(); // WLD>SCR
@@ -605,7 +606,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   UNK_0xf1bc(); // UNK_0xf1bc
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   _2DUP(); // 2DUP
   POS_dot_(); // POS.
   Push(h); // I
@@ -640,12 +641,12 @@ void UNK_0xf3de() // UNK_0xf3de
   _dash_(); // -
   POS_dot_(); // POS.
   TYPE(); // TYPE
-  goto label4;
-
-  label3:
-  Pop(); Pop();// 2DROP
+  goto label5;
 
   label4:
+  Pop(); Pop();// 2DROP
+
+  label5:
   R_gt_(); // R>
   Pop(); // DROP
 }

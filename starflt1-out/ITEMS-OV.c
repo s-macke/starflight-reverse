@@ -3,6 +3,7 @@
 // overlay size   = 0x1780
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -795,7 +796,7 @@ void UNK_0xf028() // UNK_0xf028
   Push(pp_FQUIT); // FQUIT
   OFF(); // OFF
 
-  label5:
+  label7:
   _ask_QUIT(); // ?QUIT
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -808,23 +809,23 @@ void UNK_0xf028() // UNK_0xf028
   Pop(); Pop();// 2DROP
   Push(cc__dash_1); // -1
   UNK_0xef32(); // UNK_0xef32
-  goto label7;
+  goto label3;
 
   label2:
   Push(cc__dash_1); // -1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xef32(); // UNK_0xef32
-  goto label7;
+  goto label3;
 
-  label3:
+  label4:
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Push(pp_UNK_0xdec9); // UNK_0xdec9
   Push(Read16(Pop())); // @
   _at_INST_dash_C(); // @INST-C
@@ -838,11 +839,11 @@ void UNK_0xf028() // UNK_0xf028
   Push(pp_FQUIT); // FQUIT
   ON(); // ON
 
-  label4:
+  label5:
   Pop(); // DROP
 
-  label7:
-  goto label5;
+  label3:
+  goto label7;
 
   label1:
   CDROP(); // CDROP
@@ -907,31 +908,31 @@ void UNK_0xf108() // UNK_0xf108
 void UNK_0xf222() // UNK_0xf222
 {
 
-  label3:
+  label4:
   UNK_0xdf0b(); // UNK_0xdf0b
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   TD_dash_SCROLL(); // TD-SCROLL
-  goto label4;
+  goto label2;
 
   label1:
   Pop(); // DROP
 
-  label4:
+  label2:
   _ask_TRIG(); // ?TRIG
   UNK_0xef20(); // UNK_0xef20
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xefa6(); // UNK_0xefa6
   Push(pp_FQUIT); // FQUIT
   OFF(); // OFF
   UNK_0xf028(); // UNK_0xf028
 
-  label2:
+  label3:
   Push(pp_FQUIT); // FQUIT
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
 }
 
 
@@ -990,7 +991,7 @@ void UNK_0xf29c() // UNK_0xf29c
 {
   _0_dot_(); // 0.
 
-  label2:
+  label3:
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1009,15 +1010,15 @@ void UNK_0xf29c() // UNK_0xf29c
   ICLOSE(); // ICLOSE
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   _2SWAP(); // 2SWAP
 
-  label3:
+  label2:
   Pop(); Pop();// 2DROP
 
   label1:
   INEXT(); // INEXT
-  goto label2;
+  goto label3;
 }
 
 // 0xf2d8: db 0x4c 0x22 0xf1 0x75 0xfa 0x15 0x0c 0x00 0xc9 0x79 0xda 0x7e 0x9c 0x7a 0x58 0x51 0xf2 0x79 0x90 0x16 'L" u     y ~ zXQ y  '

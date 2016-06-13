@@ -3,6 +3,7 @@
 // overlay size   = 0x0680
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -512,14 +513,14 @@ void UNK_0xf150() // UNK_0xf150
   Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(1); // 1
-  goto label6;
+  goto label4;
 
-  label4:
+  label3:
   Push(0); // 0
 
-  label6:
+  label4:
   goto label5;
 
   label2:
@@ -527,13 +528,13 @@ void UNK_0xf150() // UNK_0xf150
 
   label5:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label6;
 
   label1:
   Pop(); // DROP
   Push(0); // 0
 
-  label3:
+  label6:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -944,7 +945,7 @@ void UNK_0xf429() // UNK_0xf429
   label2:
   Push(pp_UNK_0xef66); // UNK_0xef66
   ON(); // ON
-}
+  return;
 
 
   label3:
@@ -1078,31 +1079,31 @@ void DO_dash_REPA() // DO-REPA
   UNK_0xf429(); // UNK_0xf429
   Push(pp_UNK_0xef66); // UNK_0xef66
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   UNK_0xf4cb(); // UNK_0xf4cb
   Push(0x0064);
   _eq_(); // =
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   UNK_0xf346(); // UNK_0xf346
   UNK_0xf2fc(); // UNK_0xf2fc
   UNK_0xf010(); // UNK_0xf010
   UNK_0xf46b(); // UNK_0xf46b
 
-  label5:
+  label4:
   goto label2;
 
-  label4:
+  label3:
   Pop(); // DROP
 
   label2:
-  goto label3;
+  goto label5;
 
   label1:
   UNK_0xf346(); // UNK_0xf346
   UNK_0xf2fc(); // UNK_0xf2fc
   UNK_0xf010(); // UNK_0xf010
 
-  label3:
+  label5:
   ICLOSE(); // ICLOSE
 }
 

@@ -3,6 +3,7 @@
 // overlay size   = 0x0360
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -319,18 +320,18 @@ void _dot_HYBRID() // .HYBRID
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _dot_EGARUNBIT(); // .EGARUNBIT
-  goto label4;
+  goto label3;
 
   label2:
   _dot_RUNBIT(); // .RUNBIT
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label1:
   _co_BLT_cc_(); // {BLT}
 
-  label3:
+  label4:
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT

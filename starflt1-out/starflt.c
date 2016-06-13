@@ -5357,21 +5357,21 @@ void _ro_FORGET_rc_() // (FORGET)
   Push(tt_VOC_dash_LINK); // VOC-LINK
   Push(Read16(Pop())); // @
 
-  label8:
+  label4:
   _2DUP(); // 2DUP
   UNK_0x1a6e(); // UNK_0x1a6e
   if (Pop() == 0) goto label3;
   Push(Read16(Pop())); // @
-  goto label8;
+  goto label4;
 
   label3:
   DUP(); // DUP
   Push(tt_VOC_dash_LINK); // VOC-LINK
   _ex_(); // !
 
-  label6:
+  label8:
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Push(0); // 0
   OVER(); // OVER
   Push(Pop()+2); // 2+
@@ -5395,12 +5395,12 @@ void _ro_FORGET_rc_() // (FORGET)
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
   UNK_0x1a6e(); // UNK_0x1a6e
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label6;
   Push(Pop()-2); // 2-
   Push(Read16(Pop())); // @
   goto label7;
 
-  label5:
+  label6:
   Push(i); // I
   _ex_(); // !
   OVER(); // OVER
@@ -5418,9 +5418,9 @@ void _ro_FORGET_rc_() // (FORGET)
 
   Pop(); // DROP
   Push(Read16(Pop())); // @
-  goto label6;
+  goto label8;
 
-  label4:
+  label5:
   Push(tt_LFALEN); // LFALEN
   Push(Read16(Pop())); // @
   _dash_(); // -
@@ -6009,16 +6009,16 @@ void _ro_EXPECT_rc_() // (EXPECT)
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label2;
   BELL(); // BELL
-  goto label7;
+  goto label3;
 
-  label6:
+  label2:
   BS(); // BS
   SPACE(); // SPACE
   BS(); // BS
 
-  label7:
+  label3:
   Push(0); // 0
   Push(0x0020);
   goto label4;
@@ -6027,25 +6027,25 @@ void _ro_EXPECT_rc_() // (EXPECT)
   DUP(); // DUP
   Push(0x000d);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label5;
   Pop(); // DROP
   Push(0); // 0
   Push(cc_BL); // BL
   LEAVE(); // LEAVE
-  goto label5;
-
-  label2:
-  DUP(); // DUP
+  goto label6;
 
   label5:
+  DUP(); // DUP
+
+  label6:
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label7;
   EMIT(); // EMIT
   Push(1); // 1
   SWAP(); // SWAP
   goto label4;
 
-  label3:
+  label7:
   DUP(); // DUP
 
   label4:
@@ -6065,23 +6065,23 @@ void _ro_EXPECT_rc_() // (EXPECT)
 void _ro_INTERPRET_rc_() // (INTERPRET)
 {
 
-  label3:
+  label6:
   _st_NAME_gt_(); // <NAME>
   _dash_FIND(); // -FIND
   if (Pop() == 0) goto label1;
   Push(tt_STATE); // STATE
   Push(Read16(Pop())); // @
   U_st_(); // U<
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label2;
   Push(Pop()-2); // 2-
   _co_(); // ,
-  goto label6;
+  goto label3;
 
-  label5:
+  label2:
   EXECUTE(); // EXECUTE
   UNK_0x21c9(); // UNK_0x21c9
 
-  label6:
+  label3:
   goto label4;
 
   label1:
@@ -6090,16 +6090,16 @@ void _ro_INTERPRET_rc_() // (INTERPRET)
   Push(tt_DPL); // DPL
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label5;
   _2LITERAL(); // 2LITERAL
   goto label4;
 
-  label2:
+  label5:
   Pop(); // DROP
   LITERAL(); // LITERAL
 
   label4:
-  goto label3;
+  goto label6;
 }
 
 
@@ -6172,13 +6172,13 @@ void _ro_WHERE_rc_() // (WHERE)
   Push(0x03ff);
   _gt_(); // >
   Push(Pop() + Pop()); // +
-  goto label3;
+  goto label2;
 
   label1:
   Push(tt__gt_IN); // >IN
   Push(Read16(Pop())); // @
 
-  label3:
+  label2:
   CR(); // CR
   HERE(); // HERE
   C_at_(); // C@
@@ -6192,10 +6192,10 @@ void _ro_WHERE_rc_() // (WHERE)
   C_at_(); // C@
   Push(0x0020);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(Pop()-1); // 1-
 
-  label2:
+  label3:
   SPACES(); // SPACES
   R_gt_(); // R>
   Push(0); // 0
@@ -6420,21 +6420,21 @@ void UNK_0x20c6() // UNK_0x20c6
   _plus_FIND(); // +FIND
   if (Pop() == 0) goto label1;
   Push(1); // 1
-  goto label3;
+  goto label2;
 
   label1:
   Push(tt_MSGFLAGS); // MSGFLAGS
   Push(Read16(Pop())); // @
   Push(0x0002);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   _dash_FIND(); // -FIND
-  goto label3;
-
-  label2:
-  Push(0); // 0
+  goto label2;
 
   label3:
+  Push(0); // 0
+
+  label2:
   if (Pop() == 0) return;
   Pop(); Pop();// 2DROP
   HERE(); // HERE
@@ -8852,12 +8852,12 @@ void _bo_DIRECT_bc_() // [DIRECT]
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(1); // 1
-  goto label3;
+  goto label2;
 
   label1:
   Push(2); // 2
 
-  label3:
+  label2:
   Push(pp__n_SECS); // #SECS
   _ex_(); // !
   _bo_R_slash_W_bc_(); // [R/W]
@@ -8865,7 +8865,7 @@ void _bo_DIRECT_bc_() // [DIRECT]
   Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(cc_SECORIGIN); // SECORIGIN
   Push(pp_SEC); // SEC
   _ex_(); // !
@@ -8877,7 +8877,7 @@ void _bo_DIRECT_bc_() // [DIRECT]
   _plus__ex_(); // +!
   _bo_R_slash_W_bc_(); // [R/W]
 
-  label2:
+  label3:
   Pop(); // DROP
 }
 
@@ -9448,26 +9448,26 @@ void UNK_0x37d3() // UNK_0x37d3
   Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(h); // I
   BUF_gt_CACHE(); // BUF>CACHE
 
-  label5:
-  goto label6;
+  label4:
+  goto label5;
 
   label3:
   Push(h); // I
   UNK_0x3783(); // UNK_0x3783
   UNK_0x37af(); // UNK_0x37af
 
-  label6:
-  goto label4;
+  label5:
+  goto label6;
 
   label2:
   Push(h); // I
   UNK_0x3753(); // UNK_0x3753
 
-  label4:
+  label6:
   Push(h); // I
   MTBUF(); // MTBUF
 
@@ -9656,27 +9656,6 @@ void BLOCKS() // BLOCKS
   R_gt_(); // R>
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
-  do // (DO)
-  {
-  OVER(); // OVER
-  Push(j); // I
-  Push(Pop() + Pop()); // +
-  OVER(); // OVER
-  Push(j); // I
-  Push(Pop() + Pop()); // +
-  COPY(); // COPY
-  j++;
-  } while(j<jmax); // (LOOP) 0xfff0
-
-  goto label2;
-
-  label1:
-  Push(0); // 0
-  R_gt_(); // R>
-  Push(Pop()-1); // 1-
-
   signed short int i = Pop();
   signed short int imax = Pop();
   do // (DO)
@@ -9688,10 +9667,31 @@ void BLOCKS() // BLOCKS
   Push(i); // I
   Push(Pop() + Pop()); // +
   COPY(); // COPY
+  i++;
+  } while(i<imax); // (LOOP) 0xfff0
+
+  goto label2;
+
+  label1:
+  Push(0); // 0
+  R_gt_(); // R>
+  Push(Pop()-1); // 1-
+
+  signed short int j = Pop();
+  signed short int jmax = Pop();
+  do // (DO)
+  {
+  OVER(); // OVER
+  Push(j); // I
+  Push(Pop() + Pop()); // +
+  OVER(); // OVER
+  Push(j); // I
+  Push(Pop() + Pop()); // +
+  COPY(); // COPY
   Push(0xffff);
   int step = Pop();
-  i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffec
+  j += step;
+  } while(((step>=0) && (j<jmax)) || ((step<0) && (j>jmax))); // (+LOOP) 0xffec
 
 
   label2:
@@ -10167,7 +10167,7 @@ void T_sc_() // T;
 void UNK_0x3ceb() // UNK_0x3ceb
 {
 
-  label3:
+  label5:
   DUP(); // DUP
   Push(Pop()-2); // 2-
   Push(Read16(Pop())); // @
@@ -10186,25 +10186,25 @@ void UNK_0x3ceb() // UNK_0x3ceb
   if (Pop() == 0) goto label2;
   Push(pp_TRACE); // TRACE
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   DUP(); // DUP
   ID_dot_(); // ID.
   SPACE(); // SPACE
 
-  label4:
+  label3:
   Push(Pop()-2); // 2-
   Push(Read16(Pop())); // @
   OVER(); // OVER
   Push(Pop()-2); // 2-
   _ex_(); // !
-  goto label5;
+  goto label4;
 
   label2:
   SWAP(); // SWAP
   Pop(); // DROP
 
-  label5:
-  goto label3;
+  label4:
+  goto label5;
 
   label1:
   Pop(); // DROP
@@ -10219,7 +10219,7 @@ void UNK_0x3d39() // UNK_0x3d39
 {
   Push(tt_VOC_dash_LINK); // VOC-LINK
 
-  label3:
+  label5:
   DUP(); // DUP
   Push(Read16(Pop())); // @
   _ask_DUP(); // ?DUP
@@ -10237,24 +10237,24 @@ void UNK_0x3d39() // UNK_0x3d39
   if (Pop() == 0) goto label2;
   Push(pp_TRACE); // TRACE
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   DUP(); // DUP
   Push(Pop()-2); // 2-
   NFA(); // NFA
   ID_dot_(); // ID.
 
-  label4:
+  label3:
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _ex_(); // !
-  goto label5;
+  goto label4;
 
   label2:
   SWAP(); // SWAP
   Pop(); // DROP
 
-  label5:
-  goto label3;
+  label4:
+  goto label5;
 
   label1:
   Pop(); // DROP
@@ -15611,7 +15611,7 @@ void UNK_0x70d9() // UNK_0x70d9
   Push(pp_MEMOFF); // MEMOFF
   OFF(); // OFF
 
-  label2:
+  label3:
   Push(pp_MEMSEG); // MEMSEG
   Push(Read16(Pop())); // @
   Push(pp_MEMOFF); // MEMOFF
@@ -15639,12 +15639,12 @@ void UNK_0x70d9() // UNK_0x70d9
   Push(h); // I'
   if (Pop() == 0) goto label1;
   UPDATE(); // UPDATE
-  goto label3;
+  goto label2;
 
   label1:
   _2SWAP(); // 2SWAP
 
-  label3:
+  label2:
   Push(h); // I
   LCMOVE(); // LCMOVE
   Push(h); // I
@@ -15661,7 +15661,7 @@ void UNK_0x70d9() // UNK_0x70d9
   Push(pp_UNK_0x6150); // UNK_0x6150
   _2_at_(); // 2@
   D_eq_(); // D=
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -16530,19 +16530,19 @@ void UNK_0x7720() // UNK_0x7720
   _dash_(); // -
   Push(h); // I
   LWSCAN(); // LWSCAN
-  goto label5;
+  goto label4;
 
   label3:
   Push(1); // 1
 
-  label5:
-  goto label4;
+  label4:
+  goto label5;
 
   label2:
   Pop(); // DROP
   Push(0); // 0
 
-  label4:
+  label5:
   R_gt_(); // R>
   Pop(); // DROP
   return;
@@ -17630,20 +17630,20 @@ void UNK_0x7e70() // UNK_0x7e70
   if (Pop() == 0) goto label2;
   MAKE1ST(); // MAKE1ST
   CI(); // CI
-  goto label4;
+  goto label3;
 
   label2:
   CI_i_(); // CI'
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label4;
 
   label1:
   Pop(); // DROP
   CI(); // CI
 
-  label3:
+  label4:
   IINSERT(); // IINSERT
   ICLOSE(); // ICLOSE
 }
@@ -17713,19 +17713,19 @@ void UNK_0x7f08() // UNK_0x7f08
   UNK_0x7d5f(); // UNK_0x7d5f
   IFIRST(); // IFIRST
 
-  label2:
+  label3:
   SELECT(); // SELECT
   if (Pop() == 0) goto label1;
   MAP(); // MAP
   UNK_0x7d49(); // UNK_0x7d49
   _ask_FIRST(); // ?FIRST
-  goto label3;
+  goto label2;
 
   label1:
   Push(1); // 1
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   Push(pp_UNK_0x5532); // UNK_0x5532
   UNK_0x7d6b(); // UNK_0x7d6b
   Push(pp__i__ask_EXIT); // '?EXIT
@@ -17829,19 +17829,19 @@ void UNK_0x7fb1() // UNK_0x7fb1
   ON(); // ON
   MAKE1ST(); // MAKE1ST
   UNK_0x7f9b(); // UNK_0x7f9b
-  goto label4;
+  goto label3;
 
   label2:
   NULL(); // NULL
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label4;
 
   label1:
   NULL(); // NULL
 
-  label3:
+  label4:
   ICLOSE(); // ICLOSE
   _gt_C(); // >C
 }
@@ -17947,21 +17947,21 @@ void UNK_0x8049() // UNK_0x8049
 void UNK_0x8083() // UNK_0x8083
 {
 
-  label3:
+  label6:
   Push(pp_UNK_0x5e58); // UNK_0x5e58
   OFF(); // OFF
   Push(pp_UNK_0x5d6b); // UNK_0x5d6b
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0x7fb1(); // UNK_0x7fb1
-  goto label6;
+  goto label2;
 
   label1:
   UNK_0x8049(); // UNK_0x8049
 
-  label6:
+  label2:
   _ask_NULL(); // ?NULL
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   CDROP(); // CDROP
   Push(pp_UNK_0x5d6b); // UNK_0x5d6b
   Push(Read16(Pop())); // @
@@ -17974,14 +17974,14 @@ void UNK_0x8083() // UNK_0x8083
 
   label5:
   _ask_NULL(); // ?NULL
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0x7f79(); // UNK_0x7f79
 
-  label2:
+  label3:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) return;
   CDROP(); // CDROP
-  goto label3;
+  goto label6;
 }
 
 
@@ -19090,19 +19090,19 @@ void BLD_dash_DIS() // BLD-DIS
   _ask_HERCUL(); // ?HERCUL
   if (Pop() == 0) goto label1;
   Push(0x8a54);
-  goto label3;
+  goto label2;
 
   label1:
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0x8a19);
-  goto label3;
-
-  label2:
-  Push(0x8a2d);
+  goto label2;
 
   label3:
+  Push(0x8a2d);
+
+  label2:
   Push(0x00c8);
   Push(0); // 0
 
@@ -19623,10 +19623,10 @@ void _v_DISPLA() // |DISPLA
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   SWAP(); // SWAP
 
-  label3:
+  label2:
   Push(0); // 0
   SWAP(); // SWAP
   Push(0); // 0
@@ -19650,10 +19650,10 @@ void _v_DISPLA() // |DISPLA
   Push(0x0050);
   Push(Pop() * Pop()); // *
   Push(h); // J
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   _2SWAP(); // 2SWAP
 
-  label2:
+  label3:
   Push(0x0050);
   LCMOVE(); // LCMOVE
   i++;
@@ -21502,7 +21502,7 @@ void _ask_ICON_eq_I() // ?ICON=I
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
 
-  label2:
+  label5:
   Push(pp_UNK_0x59ce); // UNK_0x59ce
   Push(Read16(Pop())); // @
   ROT(); // ROT
@@ -21519,11 +21519,11 @@ void _ask_ICON_eq_I() // ?ICON=I
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label2;
   Push(1); // 1
-  goto label6;
+  goto label3;
 
-  label4:
+  label2:
   Push(Pop()+2); // 2+
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
@@ -21532,26 +21532,26 @@ void _ask_ICON_eq_I() // ?ICON=I
   _dash_(); // -
   Push(0); // 0
 
-  label6:
-  goto label5;
+  label3:
+  goto label4;
 
   label1:
   Push(cc__dash_1); // -1
   Push(1); // 1
 
-  label5:
-  if (Pop() == 0) goto label2;
+  label4:
+  if (Pop() == 0) goto label5;
   _gt_R(); // >R
   Pop(); Pop();// 2DROP
   R_gt_(); // R>
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label6;
   Pop(); // DROP
   Push(0); // 0
   return;
 
-  label3:
+  label6:
   Push(Pop()>>1); // 2/
   Push(1); // 1
 }
@@ -22124,27 +22124,27 @@ void _gt_SND() // >SND
   TONE(); // TONE
   BEEPON(); // BEEPON
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   TONE(); // TONE
   MS(); // MS
-  j++;
-  } while(j<jmax); // (LOOP) 0xfffa
+  i++;
+  } while(i<imax); // (LOOP) 0xfffa
 
   BEEPOFF(); // BEEPOFF
   return;
 
   label1:
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  signed short int j = Pop();
+  signed short int jmax = Pop();
   do // (DO)
   {
   Pop(); Pop();// 2DROP
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+  j++;
+  } while(j<jmax); // (LOOP) 0xfffc
 
 }
 
@@ -24253,7 +24253,7 @@ void DOTASKS() // DOTASKS
   _ex_(); // !
   Push(1); // 1
 
-  label3:
+  label4:
   _ask_TERMINAL(); // ?TERMINAL
   Push(pp_FORCEKE); // FORCEKE
   Push(Read16(Pop())); // @
@@ -24265,7 +24265,7 @@ void DOTASKS() // DOTASKS
   _2_at_(); // 2@
   Push(pp_KEYTIME); // KEYTIME
   D_ex_(); // D!
-  goto label4;
+  goto label2;
 
   label1:
   Push(pp_SKEY); // SKEY
@@ -24273,7 +24273,7 @@ void DOTASKS() // DOTASKS
   Push(pp_LKEY); // LKEY
   OFF(); // OFF
 
-  label4:
+  label2:
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_KEYTIME); // KEYTIME
@@ -24284,13 +24284,13 @@ void DOTASKS() // DOTASKS
   Push(pp_FORCEPT); // FORCEPT
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PARALLE(); // PARALLE
 
-  label2:
+  label3:
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp__i_CLEANU); // 'CLEANU
   _at_EXECUTE(); // @EXECUTE
   UNK_0xb0e1(); // UNK_0xb0e1
@@ -24313,7 +24313,7 @@ void SETDBUF() // SETDBUF
   Push(0xa200);
   Push(pp_HBUF_dash_SE); // HBUF-SE
   _ex_(); // !
-  goto label3;
+  goto label2;
 
   label1:
   Push(pp_XBUF_dash_SE); // XBUF-SE
@@ -24321,17 +24321,17 @@ void SETDBUF() // SETDBUF
   Push(pp_HBUF_dash_SE); // HBUF-SE
   _ex_(); // !
   _ask_HERCUL(); // ?HERCUL
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0xb000);
   Push(cc__16K); // 16K
   Push(Pop()*2); // 2*
-  goto label3;
+  goto label2;
 
-  label2:
+  label3:
   Push(0xb800);
   Push(cc__16K); // 16K
 
-  label3:
+  label2:
   Push(0x50c2);
   _ex_(); // !
   Push(pp_DBUF_dash_SE); // DBUF-SE
@@ -27341,29 +27341,29 @@ void MANEUVER() // MANEUVER
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   JMPSHP(); // Overlay HYPER-OV
-  goto label4;
+  goto label2;
 
   label1:
   CHK-MOV(); // Overlay HYPER-OV
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   .AUXSYS(); // Overlay HYPER-OV
   Push(pp_SKIP2NE); // SKIP2NE
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNNEST(); // Overlay HYPER-OV
-  goto label2;
+  goto label3;
 
-  label3:
+  label4:
   Push(0xf0ab);
   Push(0xef37);
   Push(0xf003);
   DOTASKS(); // DOTASKS
 
-  label2:
+  label3:
   Push(pp_FTRIG); // FTRIG
   OFF(); // OFF
 
-  label4:
+  label2:
   _dot_SORD(); // .SORD
   SAVE_dash_OV(); // SAVE-OV
 }

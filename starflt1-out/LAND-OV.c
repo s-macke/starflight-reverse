@@ -3,6 +3,7 @@
 // overlay size   = 0x0440
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -407,21 +408,21 @@ void UNK_0xf45e() // UNK_0xf45e
   if (Pop() == 0) goto label1;
   Push(pp_GWF); // GWF
   ON(); // ON
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xf342(); // UNK_0xf342
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(pp_GWF); // GWF
   ON(); // ON
-  goto label3;
+  goto label2;
 
-  label2:
+  label3:
   UNK_0xf39d(); // UNK_0xf39d
   Push(pp_GWF); // GWF
   _ex_(); // !
 
-  label3:
+  label2:
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT

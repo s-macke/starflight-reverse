@@ -3,6 +3,7 @@
 // overlay size   = 0x05a0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -262,17 +263,17 @@ void _ro__n_IN_do_() // (#IN$
   PAD(); // PAD
   Push(Pop() + Pop()); // +
   C_ex_(); // C!
-  goto label4;
+  goto label3;
 
   label2:
   Push(h); // I
   Push(cc__8); // 8
   _eq_(); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf035(); // UNK_0xf035
-  goto label4;
+  goto label3;
 
-  label3:
+  label4:
   Push(h); // I
   Push(0x000d);
   _eq_(); // =
@@ -280,10 +281,10 @@ void _ro__n_IN_do_() // (#IN$
   Push(h); // I
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   BEEP(); // BEEP
 
-  label4:
+  label3:
   R_gt_(); // R>
   Push(0x000d);
   _eq_(); // =
@@ -538,14 +539,14 @@ void _ro__ask__dot_EQ() // (?.EQ
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0); // 0
-  goto label4;
+  goto label3;
 
   label2:
   Push(h); // I
   UNK_0xf39f(); // UNK_0xf39f
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label1:
 
@@ -556,7 +557,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   TYPE(); // TYPE
   Push(0); // 0
 
-  label3:
+  label4:
   R_gt_(); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -571,7 +572,7 @@ void UNK_0xf458() // UNK_0xf458
 {
   Push(0); // 0
 
-  label2:
+  label3:
   _ask__dash_NULL(); // ?-NULL
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -580,13 +581,13 @@ void UNK_0xf458() // UNK_0xf458
   ICLOSE(); // ICLOSE
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  goto label3;
+  goto label2;
 
   label1:
   Push(1); // 1
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
 }
 
 
@@ -615,7 +616,7 @@ void _eq_CARG() // =CARG
   if (Pop() == 0) goto label1;
   Push(0); // 0
 
-  label3:
+  label5:
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
   _eq_(); // =
@@ -632,7 +633,7 @@ void _eq_CARG() // =CARG
   if (Pop() == 0) goto label2;
   IOPEN(); // IOPEN
 
-  label6:
+  label4:
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
   _eq_(); // =
@@ -640,7 +641,7 @@ void _eq_CARG() // =CARG
   Push(0x001a);
   _eq_(); // =
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label3;
   INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   Push(0x000a);
@@ -648,7 +649,7 @@ void _eq_CARG() // =CARG
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
 
-  label5:
+  label3:
   INST_dash_QT(); // INST-QT
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -657,19 +658,19 @@ void _eq_CARG() // =CARG
   D_ex_(); // D!
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label4;
   ICLOSE(); // ICLOSE
 
   label2:
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label3;
-  goto label4;
+  if (Pop() == 0) goto label5;
+  goto label6;
 
   label1:
   Push(0); // 0
 
-  label4:
+  label6:
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   _dash_(); // -

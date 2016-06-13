@@ -3,6 +3,7 @@
 // overlay size   = 0x01d0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -73,14 +74,14 @@ void UNK_0xf447() // UNK_0xf447
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
-  label4:
+  label5:
   Push(0x000b);
   Push(0x000b);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
 
-  label5:
+  label3:
   _ask_LAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   _ask_NULL(); // ?NULL
@@ -89,18 +90,18 @@ void UNK_0xf447() // UNK_0xf447
   if (Pop() == 0) goto label2;
   UNK_0xf423(); // UNK_0xf423
   UNK_0xf439(); // UNK_0xf439
-  goto label5;
+  goto label3;
 
   label2:
   UNK_0xf423(); // UNK_0xf423
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   IDELETE(); // IDELETE
 
-  label3:
+  label4:
   _ask_NULL(); // ?NULL
   ICLOSE(); // ICLOSE
   UNK_0xf439(); // UNK_0xf439
-  goto label4;
+  goto label5;
 
   label1:
   CDROP(); // CDROP

@@ -3,6 +3,7 @@
 // overlay size   = 0x1a40
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -1230,39 +1231,39 @@ void UNK_0xe1be() // UNK_0xe1be
   if (Pop() == 0) goto label1;
   Push(1); // 1
   SWAP(); // SWAP
-  goto label4;
+  goto label2;
 
   label1:
   DUP(); // DUP
   Push(0x0018);
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(1); // 1
   SWAP(); // SWAP
   Push(0x0017);
   _dash_(); // -
   Push(-Pop()); // NEGATE
-  goto label4;
+  goto label2;
 
-  label2:
+  label3:
   DUP(); // DUP
   Push(0x0024);
   _st_(); // <
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(cc__dash_1); // -1
   SWAP(); // SWAP
   Push(0x0018);
   _dash_(); // -
-  goto label4;
+  goto label2;
 
-  label3:
+  label4:
   Push(cc__dash_1); // -1
   SWAP(); // SWAP
   Push(0x002f);
   _dash_(); // -
   Push(-Pop()); // NEGATE
 
-  label4:
+  label2:
   Push(pp_UNK_0xdb42); // UNK_0xdb42
   Push(Pop() + Pop()); // +
   C_at_(); // C@
@@ -1289,38 +1290,38 @@ void UNK_0xe22a() // UNK_0xe22a
   Push(0x000b);
   _dash_(); // -
   Push(-Pop()); // NEGATE
-  goto label4;
+  goto label2;
 
   label1:
   DUP(); // DUP
   Push(0x0018);
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(cc__dash_1); // -1
   SWAP(); // SWAP
   Push(0x000c);
   _dash_(); // -
-  goto label4;
+  goto label2;
 
-  label2:
+  label3:
   DUP(); // DUP
   Push(0x0024);
   _st_(); // <
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(cc__dash_1); // -1
   SWAP(); // SWAP
   Push(0x0023);
   _dash_(); // -
   Push(-Pop()); // NEGATE
-  goto label4;
+  goto label2;
 
-  label3:
+  label4:
   Push(1); // 1
   SWAP(); // SWAP
   Push(0x0024);
   _dash_(); // -
 
-  label4:
+  label2:
   Push(pp_UNK_0xdb42); // UNK_0xdb42
   Push(Pop() + Pop()); // +
   C_at_(); // C@
@@ -2758,18 +2759,18 @@ void UNK_0xeb13() // UNK_0xeb13
   Push(cc__4); // 4
   Push(pp__n_IN); // #IN
   _ex_(); // !
-  goto label4;
+  goto label3;
 
   label2:
   Push(i); // I
   UNK_0xea35(); // UNK_0xea35
 
-  label4:
+  label3:
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(2); // 2
   _gt_(); // >
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp_UNK_0xdbe8); // UNK_0xdbe8
   Push(pp_VIN); // VIN
   _ex_(); // !
@@ -2786,7 +2787,7 @@ void UNK_0xeb13() // UNK_0xeb13
   _099(); // 099
   CLIPPER(); // CLIPPER
 
-  label3:
+  label4:
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(2); // 2
@@ -3864,7 +3865,7 @@ void UNK_0xf238() // UNK_0xf238
   Push(pp_UNK_0xdbe4); // UNK_0xdbe4
   _ex_(); // !
 
-  label2:
+  label3:
   Push(pp_UNK_0xdbc0); // UNK_0xdbc0
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdbe4); // UNK_0xdbe4
@@ -3881,12 +3882,12 @@ void UNK_0xf238() // UNK_0xf238
   _st_(); // <
   if (Pop() == 0) goto label1;
   Push(1); // 1
-  goto label3;
+  goto label2;
 
   label1:
   Push(cc__dash_1); // -1
 
-  label3:
+  label2:
   Push(pp_UNK_0xdbc8); // UNK_0xdbc8
   _plus__ex_(); // +!
   UNK_0xe620(); // UNK_0xe620
@@ -3896,7 +3897,7 @@ void UNK_0xf238() // UNK_0xf238
   Push(pp_UNK_0xdb74); // UNK_0xdb74
   Push(Read16(Pop())); // @
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 }
 
 

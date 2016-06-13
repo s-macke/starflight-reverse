@@ -3,6 +3,7 @@
 // overlay size   = 0x0500
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -134,51 +135,51 @@ void UNK_0xf0e6() // UNK_0xf0e6
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   PRINT("DEAD", 4); // (.")
-  goto label7;
+  goto label2;
 
   label1:
   Push(h); // I
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("CRITICALLY", 10); // (.")
-  goto label6;
+  goto label4;
 
-  label2:
+  label3:
   Push(h); // I
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   PRINT("HEAVILY", 7); // (.")
-  goto label6;
+  goto label4;
 
-  label3:
+  label5:
   Push(h); // I
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   PRINT("MODERATELY", 10); // (.")
-  goto label6;
+  goto label4;
 
-  label4:
+  label6:
   Push(h); // I
   Push(0x0051);
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label7;
   PRINT("SLIGHTLY", 8); // (.")
-  goto label6;
-
-  label5:
-  PRINT("NOT", 3); // (.")
-
-  label6:
-  PRINT(" WOUNDED", 8); // (.")
+  goto label4;
 
   label7:
+  PRINT("NOT", 3); // (.")
+
+  label4:
+  PRINT(" WOUNDED", 8); // (.")
+
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -282,21 +283,21 @@ void UNK_0xf26f() // UNK_0xf26f
   Push(Pop() | Pop()); // OR
   UNK_0xf088(); // UNK_0xf088
   _ex_(); // !
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xf083(); // UNK_0xf083
   C_at_(); // C@
   Push(0x0064);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xf1fa(); // UNK_0xf1fa
-  goto label3;
-
-  label2:
-  UNK_0xf229(); // UNK_0xf229
+  goto label2;
 
   label3:
+  UNK_0xf229(); // UNK_0xf229
+
+  label2:
   ICLOSE(); // ICLOSE
 }
 
@@ -386,7 +387,7 @@ void UNK_0xf373() // UNK_0xf373
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
 
-  label4:
+  label2:
   UNK_0xf088(); // UNK_0xf088
   C_at_(); // C@
   Push(cc__8); // 8
@@ -394,7 +395,7 @@ void UNK_0xf373() // UNK_0xf373
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   INEXT(); // INEXT
-  goto label4;
+  goto label2;
 
   label1:
   Push(1); // 1
@@ -413,11 +414,11 @@ void UNK_0xf373() // UNK_0xf373
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
 
-  label3:
+  label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   NPCREW(); // NPCREW
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0x000b);
   Push(2); // 2
   CTPOS_dot_(); // CTPOS.
@@ -427,9 +428,9 @@ void UNK_0xf373() // UNK_0xf373
   UNK_0xf07e(); // UNK_0xf07e
   _do__dot_(); // $.
 
-  label2:
+  label3:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   CI(); // CI
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE

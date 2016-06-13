@@ -3,6 +3,7 @@
 // overlay size   = 0x1040
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -1191,7 +1192,7 @@ void UNK_0xecac() // UNK_0xecac
 void UNK_0xecc0() // UNK_0xecc0
 {
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(0x00fa); Pust(0x0000);
   Push(pp_KEYTIME); // KEYTIME
@@ -1247,17 +1248,17 @@ void UNK_0xecc0() // UNK_0xecc0
   Push(Read16(Pop())); // @
   _ask_INVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   UNK_0xeac6(); // UNK_0xeac6
 
-  label3:
+  label2:
   UNK_0xe818(); // UNK_0xe818
   UNK_0xeb91(); // UNK_0xeb91
   CLICK(); // CLICK
 
   label1:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 }
 
 

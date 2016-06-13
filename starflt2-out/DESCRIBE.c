@@ -3,6 +3,7 @@
 // overlay size   = 0x0f70
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -129,25 +130,25 @@ void APAUSE() // APAUSE
   Push(h); // I
   if (Pop() == 0) goto label1;
   PINK(); // PINK
-  goto label6;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label6:
+  label2:
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); // DROP
   WHITE(); // WHITE
 
-  label2:
+  label3:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
 
-  label3:
+  label4:
   TIME(); // TIME
   _2_at_(); // 2@
   _2OVER(); // 2OVER
@@ -157,16 +158,16 @@ void APAUSE() // APAUSE
   _ro_XYSCAN(); // (XYSCAN
   Pop(); Pop();// 2DROP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
-  Push(h); // I
   if (Pop() == 0) goto label4;
+  Push(h); // I
+  if (Pop() == 0) goto label5;
   RED(); // RED
-  goto label5;
-
-  label4:
-  DK_dash_BLUE(); // DK-BLUE
+  goto label6;
 
   label5:
+  DK_dash_BLUE(); // DK-BLUE
+
+  label6:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   Pop(); Pop();// 2DROP
@@ -428,18 +429,18 @@ void UNK_0xe9fb() // UNK_0xe9fb
   OVER(); // OVER
   C_at_(); // C@
   _gt_SPECIAL(); // >SPECIAL
-  goto label3;
+  goto label2;
 
   label1:
   Push(0); // 0
 
-  label3:
+  label2:
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xe853(); // UNK_0xe853
   UNK_0xe833(); // UNK_0xe833
 
-  label2:
+  label3:
   R_gt_(); // R>
   _ex_COLOR(); // !COLOR
 }
@@ -984,19 +985,19 @@ void UNK_0xee0e() // UNK_0xee0e
   UNK_0xed75(); // UNK_0xed75
   UNK_0xebf2(); // UNK_0xebf2
 
-  label3:
+  label4:
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
   RACE_dash_SCR(); // RACE-SCR
-  goto label4;
+  goto label3;
 
   label2:
   Pop(); // DROP
 
-  label4:
+  label3:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xebea(); // UNK_0xebea
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_S(); // @INST-S
@@ -1139,7 +1140,7 @@ void SYSCAN() // SYSCAN
   Push(Read16(Pop())); // @
   Push(2); // 2
   _eq_(); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label2;
   Push(pp_NOF); // NOF
   ON(); // ON
   Push(pp_FQUIT); // FQUIT
@@ -1155,9 +1156,9 @@ void SYSCAN() // SYSCAN
   UNK_0xf1c4(); // UNK_0xf1c4
   Push(pp_FTRIG); // FTRIG
   _099(); // 099
-  goto label4;
+  goto label3;
 
-  label3:
+  label2:
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
@@ -1166,24 +1167,24 @@ void SYSCAN() // SYSCAN
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   BEEP(); // BEEP
   CTINIT(); // CTINIT
   UNK_0xf094(); // UNK_0xf094
 
-  label4:
-  goto label2;
+  label3:
+  goto label4;
 
   label1:
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _st_(); // <
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label4;
   Push(0xb7e7);
   MODULE(); // MODULE
 
-  label2:
+  label4:
   NULL(); // NULL
   Push(pp_NOF); // NOF
   _099(); // 099

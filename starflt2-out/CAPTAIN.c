@@ -3,6 +3,7 @@
 // overlay size   = 0x1140
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -650,7 +651,7 @@ void UNK_0xe8d0() // UNK_0xe8d0
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   C_ex_(); // C!
-  goto label4;
+  goto label3;
 
   label2:
   Push(cc__3); // 3
@@ -665,7 +666,7 @@ void UNK_0xe8d0() // UNK_0xe8d0
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp_UNK_0xe542); // UNK_0xe542
   Push(Read16(Pop())); // @
   UNK_0xe4ec(); // UNK_0xe4ec
@@ -682,12 +683,12 @@ void UNK_0xe8d0() // UNK_0xe8d0
   C_ex_(); // C!
   LEAVE(); // LEAVE
 
-  label3:
+  label4:
   j++;
   } while(j<jmax); // (LOOP) 0xffd2
 
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
 
   label1:
@@ -771,22 +772,22 @@ void UNK_0xe98c() // UNK_0xe98c
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label3;
   Push(0x001a);
   Push(j); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label4;
   Push(cc__6); // 6
-  goto label7;
+  goto label5;
 
-  label6:
+  label4:
   UNK_0xe4ec(); // UNK_0xe4ec
   Push(j); // I
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   C_at_(); // C@
 
-  label7:
+  label5:
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   INST_dash_QT(); // INST-QT
@@ -798,7 +799,7 @@ void UNK_0xe98c() // UNK_0xe98c
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
 
-  label5:
+  label3:
   j++;
   } while(j<jmax); // (LOOP) 0xffbc
 
@@ -819,20 +820,20 @@ void UNK_0xe98c() // UNK_0xe98c
   Push(pp_UNK_0xe436); // UNK_0xe436
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label6;
   Push(0x0030);
   _ex_INST_dash_S(); // !INST-S
 
-  label3:
+  label6:
   IFIRST(); // IFIRST
   Push(0x000b);
   Push(0x0031);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label7;
   Push(0x000a);
   _ex_INST_dash_S(); // !INST-S
 
-  label4:
+  label7:
   ICLOSE(); // ICLOSE
   UNK_0xe8a4(); // UNK_0xe8a4
   ICLOSE(); // ICLOSE
@@ -1053,7 +1054,7 @@ void UNK_0xeeb4() // UNK_0xeeb4
   UNK_0xea52(); // UNK_0xea52
   UNK_0xee61(); // UNK_0xee61
 
-  label4:
+  label6:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
   _ask_DUP(); // ?DUP
@@ -1068,7 +1069,7 @@ void UNK_0xeeb4() // UNK_0xeeb4
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label7;
+  if (Pop() == 0) goto label3;
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xedbb); // UNK_0xedbb
@@ -1093,34 +1094,34 @@ void UNK_0xeeb4() // UNK_0xeeb4
   UNK_0xe617(); // UNK_0xe617
   goto label2;
 
-  label7:
+  label3:
   Pop(); // DROP
 
   label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   DO_dash_OPTION(); // DO-OPTION
-  goto label6;
+  goto label5;
 
-  label3:
+  label4:
   Push(0); // 0
 
-  label6:
+  label5:
   Push(pp_FQUIT); // FQUIT
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
   Push(1); // 1
   _gt_(); // >
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label7;
   UNK_0xea9b(); // UNK_0xea9b
   UNK_0xed21(); // UNK_0xed21
 
-  label5:
+  label7:
   return;
 
   label1:
@@ -1280,7 +1281,7 @@ void UNK_0xf05f() // UNK_0xf05f
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   DUP(); // DUP
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   UNK_0xe47c(); // UNK_0xe47c
   Push(0xbd8b);
   MODULE(); // MODULE
@@ -1292,23 +1293,23 @@ void UNK_0xf05f() // UNK_0xf05f
   Push(pp__i_EXTERN); // 'EXTERN
   _ex_(); // !
 
-  label4:
-  goto label5;
+  label3:
+  goto label4;
 
   label2:
   Push(0xd272);
   MODULE(); // MODULE
   Push(1); // 1
 
-  label5:
-  if (Pop() == 0) goto label3;
+  label4:
+  if (Pop() == 0) goto label5;
   UNK_0xe552(); // UNK_0xe552
 
   UNK_0x3f09("LAND  ");
   _1BTN(); // 1BTN
   UNK_0xe564(); // UNK_0xe564
 
-  label3:
+  label5:
   Push(pp_STIME); // STIME
   _2_at_(); // 2@
   Push(0x03e8); Pust(0x0000);
@@ -1377,13 +1378,13 @@ void _ro__slash_LAUNCH_slash_LAND_rc_() // (/LAUNCH/LAND)
   Push(cc__5); // 5
   Push(0xb77c);
   MODULE(); // MODULE
-  goto label5;
+  goto label2;
 
   label1:
   Push(1); // 1
 
-  label5:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   DUP(); // DUP
@@ -1392,18 +1393,18 @@ void _ro__slash_LAUNCH_slash_LAND_rc_() // (/LAUNCH/LAND)
   Push(cc__5); // 5
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf05f(); // UNK_0xf05f
   Push(0); // 0
-  goto label4;
-
-  label3:
-  UNK_0xf12a(); // UNK_0xf12a
+  goto label5;
 
   label4:
+  UNK_0xf12a(); // UNK_0xf12a
+
+  label5:
   return;
 
-  label2:
+  label3:
   Push(0); // 0
 }
 
@@ -1777,18 +1778,18 @@ void UNK_0xf3dc() // UNK_0xf3dc
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xe529(); // UNK_0xe529
   C_ex_(); // C!
 
-  label3:
+  label2:
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("THIS PLANET HAS ALREADY BEEN LOGGED.", 36); // (.")
 
-  label2:
+  label3:
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
 
@@ -1821,22 +1822,22 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   PRINT("THE PLANET THAT STARPORT ORBITS IS", 34); // (.")
   GCR(); // GCR
   PRINT("DEFINITELY NOT COLONIZABLE!", 27); // (.")
-  goto label5;
+  goto label3;
 
   label2:
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
   CTCR(); // CTCR
   PRINT("COLONIZATION? [N Y]", 19); // (.")
   Y_slash_N(); // Y/N
   CTCR(); // CTCR
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   UNK_0xf3dc(); // UNK_0xf3dc
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Push(0xc2cd);
   MODULE(); // MODULE
   Push(pp_STARDAT); // STARDAT
@@ -1845,13 +1846,13 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   _ex_(); // !
   UNK_0xf3bb(); // UNK_0xf3bb
 
-  label4:
-  goto label5;
+  label5:
+  goto label3;
 
-  label3:
+  label4:
   UNK_0xf10d(); // UNK_0xf10d
 
-  label5:
+  label3:
   return;
 
   label1:

@@ -3,6 +3,7 @@
 // overlay size   = 0x0f90
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -348,12 +349,12 @@ void UNK_0xed96() // UNK_0xed96
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xe644(); // UNK_0xe644
-  goto label6;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label6:
+  label2:
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
   ON(); // ON
@@ -378,21 +379,21 @@ void UNK_0xed96() // UNK_0xed96
   C_at_(); // C@
   Push(0x002e);
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(0x0030);
   Push(0x003a);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
   _099(); // 099
 
-  label5:
-  goto label3;
+  label4:
+  goto label5;
 
-  label2:
+  label3:
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(i); // I
@@ -403,20 +404,20 @@ void UNK_0xed96() // UNK_0xed96
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   LEAVE(); // LEAVE
 
-  label3:
+  label5:
   i++;
   } while(i<imax); // (LOOP) 0xffb6
 
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   Push(0x000a);
   Push(Pop() * Pop()); // *
 
-  label4:
+  label6:
   ABS(); // ABS
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -489,7 +490,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex_(); // !
-  goto label6;
+  goto label2;
 
   label1:
   UNK_0xe6d4(); // UNK_0xe6d4
@@ -497,36 +498,36 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   _ex_(); // !
   UNK_0xee30(); // UNK_0xee30
 
-  label6:
+  label2:
   UNK_0xe668(); // UNK_0xe668
   Push(0); // 0
   Push(0x001f);
   CMESS(); // CMESS
   Push(pp__ask_TD); // ?TD
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("TRANSFER", 8); // (.")
-  goto label5;
+  goto label4;
 
-  label2:
+  label3:
   INST_dash_X(); // INST-X
   _2_at_(); // 2@
   Push(0xffff); Pust(0xffff);
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   PRINT("PICK UP", 7); // (.")
-  goto label5;
-
-  label3:
-  PRINT("JETTISON", 8); // (.")
+  goto label4;
 
   label5:
+  PRINT("JETTISON", 8); // (.")
+
+  label4:
   INST_dash_X(); // INST-X
   _2_at_(); // 2@
   Push(0xffff); Pust(0xffff);
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   PRINT(" HOW MANY CUBIC METERS?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
@@ -550,7 +551,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   UNK_0xe668(); // UNK_0xe668
   return;
 
-  label4:
+  label6:
   _ex_CRS(); // !CRS
 }
 
@@ -642,7 +643,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(pp_UNK_0xe7d2); // UNK_0xe7d2
   BLD_dash_CRS(); // BLD-CRS
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -663,13 +664,13 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   UNK_0xe668(); // UNK_0xe668
   _ex_CRS(); // !CRS
   R_gt_(); // R>
-  goto label3;
+  goto label2;
 
   label1:
   Push(0); // 0
 
-  label3:
-  if (Pop() == 0) goto label2;
+  label2:
+  if (Pop() == 0) goto label3;
   Push(2); // 2
   UNK_0xe616(); // UNK_0xe616
   Push(pp__ask_TD); // ?TD

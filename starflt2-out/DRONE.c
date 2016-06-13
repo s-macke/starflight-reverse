@@ -3,6 +3,7 @@
 // overlay size   = 0x0980
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -440,19 +441,19 @@ void UNK_0xf02a() // UNK_0xf02a
 void UNK_0xf092() // UNK_0xf092
 {
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   ACT_dash_SCR(); // ACT-SCR
-  goto label3;
+  goto label2;
 
   label1:
   Pop(); // DROP
 
-  label3:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 }
 
 
@@ -615,32 +616,32 @@ void UNK_0xf289() // UNK_0xf289
   if (Pop() == 0) goto label1;
   UNK_0xec16(); // UNK_0xec16
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  signed short int i = Pop();
+  signed short int imax = Pop();
   do // (DO)
   {
   Push(1); // 1
-  Push(j); // I
+  Push(i); // I
   UNK_0xf271(); // UNK_0xf271
-  j++;
-  } while(j<jmax); // (LOOP) 0xfff8
+  i++;
+  } while(i<imax); // (LOOP) 0xfff8
 
   goto label2;
 
   label1:
   UNK_0xec16(); // UNK_0xec16
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  signed short int j = Pop();
+  signed short int jmax = Pop();
   do // (DO)
   {
   INEXT(); // INEXT
   TEXT_dash_CO(); // TEXT-CO
   Push(Read16(Pop())); // @
-  Push(i); // I
+  Push(j); // I
   UNK_0xf271(); // UNK_0xf271
-  i++;
-  } while(i<imax); // (LOOP) 0xfff4
+  j++;
+  } while(j<jmax); // (LOOP) 0xfff4
 
 
   label2:
@@ -1031,20 +1032,20 @@ void DRONE() // DRONE
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
 
-  label4:
+  label3:
   ACTION_ask_(); // ACTION?
   Push(pp_ACT_n_); // ACT#
   Push(Read16(Pop())); // @
   _n__gt_ACTIO(); // #>ACTIO
   _ask_DUP(); // ?DUP
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(pp_ESC_dash_EN); // ESC-EN
   ON(); // ON
   Push(pp_NOF); // NOF
   _099(); // 099
   Push(1); // 1
   _eq_(); // =
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   UNK_0xf289(); // UNK_0xf289
   UNK_0xf3c9(); // UNK_0xf3c9
   UNK_0xeca2(); // UNK_0xeca2
@@ -1052,12 +1053,12 @@ void DRONE() // DRONE
   _2_at_(); // 2@
   Push(pp__n_ETIME); // #ETIME
   D_ex_(); // D!
-  goto label7;
+  goto label5;
 
-  label5:
+  label4:
   UNK_0xec4e(); // UNK_0xec4e
 
-  label7:
+  label5:
   goto label6;
 
   label2:
@@ -1068,7 +1069,7 @@ void DRONE() // DRONE
   Push(pp_NOF); // NOF
   _099(); // 099
   CTERASE(); // CTERASE
-  goto label3;
+  goto label7;
 
   label1:
   Push(0xb7e7);
@@ -1076,7 +1077,7 @@ void DRONE() // DRONE
   Push(0x07d0);
   MS(); // MS
 
-  label3:
+  label7:
   NULL(); // NULL
 }
 

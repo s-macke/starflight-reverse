@@ -3,6 +3,7 @@
 // overlay size   = 0x0810
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -323,7 +324,7 @@ void DO_dash_STORM() // DO-STORM
   Push(pp_STORM); // STORM
   _plus__ex_(); // +!
   _ask__dot_STORM(); // ?.STORM
-  goto label5;
+  goto label3;
 
   label2:
   Push(pp__ro_PLANET); // (PLANET
@@ -337,13 +338,13 @@ void DO_dash_STORM() // DO-STORM
   Push(0x0064);
   RRND(); // RRND
   _gt_(); // >
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp__i_STORM); // 'STORM
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
-  goto label4;
+  goto label5;
 
-  label3:
+  label4:
   Push(1); // 1
   Push(cc__4); // 4
   RRND(); // RRND
@@ -353,10 +354,10 @@ void DO_dash_STORM() // DO-STORM
   MODULE(); // MODULE
   UNK_0xeefe(); // UNK_0xeefe
 
-  label4:
+  label5:
   ICLOSE(); // ICLOSE
 
-  label5:
+  label3:
   UNK_0xee9a(); // UNK_0xee9a
   return;
 

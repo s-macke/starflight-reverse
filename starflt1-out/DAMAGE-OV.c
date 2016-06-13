@@ -3,6 +3,7 @@
 // overlay size   = 0x0ac0
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -731,48 +732,48 @@ void UNK_0xef8e() // UNK_0xef8e
   if (Pop() == 0) goto label1;
 
   UNK_0x3f3b("KILLED");
-  goto label6;
+  goto label2;
 
   label1:
   R_at_(); // R@
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 
   UNK_0x3f3b("CRITICALLY ");
-  goto label5;
+  goto label4;
 
-  label2:
+  label3:
   R_at_(); // R@
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
 
   UNK_0x3f3b("HEAVILIY ");
-  goto label5;
+  goto label4;
 
-  label3:
+  label5:
   R_at_(); // R@
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
 
   UNK_0x3f3b("MODERATELY ");
-  goto label5;
+  goto label4;
 
-  label4:
+  label6:
 
   UNK_0x3f3b("SLIGHTLY ");
 
-  label5:
+  label4:
   TYPE(); // TYPE
 
   UNK_0x3f3b("WOUNDED ");
 
-  label6:
+  label2:
   TYPE(); // TYPE
   R_gt_(); // R>
   Pop(); // DROP
@@ -1169,34 +1170,34 @@ void UNK_0xf378() // UNK_0xf378
 void UNK_0xf3a4() // UNK_0xf3a4
 {
 
-  label4:
+  label2:
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   UNK_0xf358(); // UNK_0xf358
   UNK_0xf378(); // UNK_0xf378
-  goto label4;
+  goto label2;
 
   label1:
   Push(pp_UNK_0xed9a); // UNK_0xed9a
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xf02e(); // UNK_0xf02e
   Push(0xc012);
   MODULE(); // MODULE
   Push(0xc03f);
   MODULE(); // MODULE
 
-  label2:
+  label3:
   UNK_0xecf2(); // UNK_0xecf2
   Push(0xeb53);
   IFLD_at_(); // IFLD@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xee27(); // UNK_0xee27
 
-  label3:
+  label4:
   UNK_0xef00(); // UNK_0xef00
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -1342,20 +1343,20 @@ void UNK_0xf47f() // UNK_0xf47f
   C_at_(); // C@
   if (Pop() == 0) goto label3;
   UNK_0xf19a(); // UNK_0xf19a
-  goto label5;
+  goto label4;
 
   label3:
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 
-  label5:
-  goto label4;
+  label4:
+  goto label5;
 
   label2:
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 
-  label4:
+  label5:
   i++;
   } while(i<imax); // (LOOP) 0xffca
 

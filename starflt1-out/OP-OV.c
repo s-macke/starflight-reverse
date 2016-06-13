@@ -3,6 +3,7 @@
 // overlay size   = 0x1130
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -557,7 +558,7 @@ void UNK_0xebc1() // UNK_0xebc1
 void UNK_0xec30() // UNK_0xec30
 {
 
-  label2:
+  label3:
   UNK_0xe7ca(); // UNK_0xe7ca
   DUP(); // DUP
   UNK_0xe856(); // UNK_0xe856
@@ -566,7 +567,7 @@ void UNK_0xec30() // UNK_0xec30
   Push(Pop()+1); // 1+
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xe842(); // UNK_0xe842
@@ -574,12 +575,12 @@ void UNK_0xec30() // UNK_0xec30
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
 
-  label3:
+  label2:
   TYPE(); // TYPE
   SPACE(); // SPACE
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
 }
 
@@ -769,14 +770,14 @@ void UNK_0xef37() // UNK_0xef37
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xed0c(); // UNK_0xed0c
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xeee3(); // UNK_0xeee3
 
-  label3:
+  label2:
   _ask_LAST(); // ?LAST
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xe842(); // UNK_0xe842
   UNK_0xe842(); // UNK_0xe842
 
@@ -784,7 +785,7 @@ void UNK_0xef37() // UNK_0xef37
   UNK_0xec30(); // UNK_0xec30
   return;
 
-  label2:
+  label3:
   Push(0); // 0
   Push(0x0022);
   CMESS(); // CMESS

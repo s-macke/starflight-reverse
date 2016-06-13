@@ -3,6 +3,7 @@
 // overlay size   = 0x03f0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -433,19 +434,19 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  goto label4;
+  goto label3;
 
   label2:
   Push(1); // 1
 
-  label4:
+  label3:
   CDROP(); // CDROP
-  goto label3;
+  goto label4;
 
   label1:
   Push(1); // 1
 
-  label3:
+  label4:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }

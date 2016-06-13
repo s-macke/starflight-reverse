@@ -3,6 +3,7 @@
 // overlay size   = 0x0950
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -426,38 +427,38 @@ void UNK_0xedf7() // UNK_0xedf7
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   UNK_0xed39(); // UNK_0xed39
-  goto label4;
+  goto label2;
 
   label1:
   UNK_0xeddb(); // UNK_0xeddb
   R_at_(); // R@
   _dash_(); // -
   _0_st_(); // 0<
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xede5(); // UNK_0xede5
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   UNK_0xed01(); // UNK_0xed01
-  goto label6;
+  goto label5;
 
-  label5:
+  label4:
   UNK_0xed0f(); // UNK_0xed0f
 
-  label6:
-  goto label4;
+  label5:
+  goto label2;
 
-  label2:
+  label3:
   UNK_0xedb5(); // UNK_0xedb5
   R_at_(); // R@
   _dash_(); // -
   _0_st_(); // 0<
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label6;
   UNK_0xed1d(); // UNK_0xed1d
-  goto label4;
+  goto label2;
 
-  label3:
+  label6:
   UNK_0xed2b(); // UNK_0xed2b
 
-  label4:
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
   _ex_COLOR(); // !COLOR
@@ -1041,25 +1042,25 @@ void UNK_0xf172() // UNK_0xf172
   D_dash_(); // D-
   Push(0x1388); Pust(0x0000);
   D_gt_(); // D>
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(pp__i_WAX); // 'WAX
   _at_EXECUTE(); // @EXECUTE
 
-  label4:
+  label3:
   XYSCAN(); // XYSCAN
   UNK_0xef2c(); // UNK_0xef2c
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(pp_EYEXY); // EYEXY
   Push(Pop()+2); // 2+
   _plus__ex_(); // +!
   Push(pp_EYEXY); // EYEXY
   _plus__ex_(); // +!
-  goto label10;
+  goto label5;
 
-  label5:
+  label4:
   Pop(); Pop();// 2DROP
 
-  label10:
+  label5:
   UNK_0xef54(); // UNK_0xef54
   UNK_0xedf7(); // UNK_0xedf7
   _ask_TRIG(); // ?TRIG
@@ -1070,24 +1071,24 @@ void UNK_0xf172() // UNK_0xf172
   UNK_0xf158(); // UNK_0xf158
   Push(pp_WEAPON_dash_); // WEAPON-
   ON(); // ON
-  goto label9;
+  goto label8;
 
   label7:
   UNK_0xed47(); // UNK_0xed47
 
-  label9:
+  label8:
   Push(0x03e8);
   MS(); // MS
   CTERASE(); // CTERASE
-  goto label8;
+  goto label9;
 
   label2:
 
   UNK_0x3f09("CANCELLED");
   _dot_TTY(); // .TTY
 
-  label8:
-  goto label3;
+  label9:
+  goto label10;
 
   label1:
   CTINIT(); // CTINIT
@@ -1096,7 +1097,7 @@ void UNK_0xf172() // UNK_0xf172
   UNK_0xec7b(); // UNK_0xec7b
   _dot_TTY(); // .TTY
 
-  label3:
+  label10:
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
   V_gt_DISPL(); // V>DISPL
@@ -1200,21 +1201,21 @@ void UNK_0xf26c() // UNK_0xf26c
   _dash_(); // -
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  goto label4;
+  goto label3;
 
   label2:
   Pop(); // DROP
   Push(0); // 0
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label4;
 
   label1:
   Pop(); Pop();// 2DROP
   Push(0); // 0
 
-  label3:
+  label4:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -1522,53 +1523,53 @@ void DONULL() // DONULL
   MODULE(); // MODULE
   if (Pop() == 0) goto label2;
   UNK_0xf3bc(); // UNK_0xf3bc
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(0x00c8);
   Push(cc__4); // 4
   UNK_0xf26c(); // UNK_0xf26c
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label4;
   UNK_0xf20c(); // UNK_0xf20c
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label8;
+  if (Pop() == 0) goto label5;
   Push(pp_NOF); // NOF
   ON(); // ON
   UNK_0xf374(); // UNK_0xf374
   Push(pp_NOF); // NOF
   _099(); // 099
-  goto label10;
+  goto label6;
 
-  label8:
+  label5:
   UNK_0xf448(); // UNK_0xf448
 
-  label10:
-  goto label9;
-
   label6:
-  UNK_0xf476(); // UNK_0xf476
-
-  label9:
   goto label7;
 
   label4:
+  UNK_0xf476(); // UNK_0xf476
+
+  label7:
+  goto label8;
+
+  label3:
 
   UNK_0x3f09("CANCELLED");
   _dot_TTY(); // .TTY
 
-  label7:
-  goto label5;
+  label8:
+  goto label9;
 
   label2:
   Push(0xb7e7);
   MODULE(); // MODULE
 
-  label5:
-  goto label3;
+  label9:
+  goto label10;
 
   label1:
   Push(0xb7e7);
   MODULE(); // MODULE
 
-  label3:
+  label10:
   NULL(); // NULL
   Push(pp_NOF); // NOF
   _099(); // 099

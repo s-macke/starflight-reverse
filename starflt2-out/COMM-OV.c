@@ -3,6 +3,7 @@
 // overlay size   = 0x1d80
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -1198,24 +1199,24 @@ void UNK_0xe081() // UNK_0xe081
   Push(h); // I
   if (Pop() == 0) goto label1;
   PINK(); // PINK
-  goto label6;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label6:
+  label2:
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); // DROP
   WHITE(); // WHITE
 
-  label2:
+  label3:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   UNK_0xd806(); // UNK_0xd806
   D_plus_(); // D+
 
-  label3:
+  label4:
   UNK_0xd806(); // UNK_0xd806
   _2OVER(); // 2OVER
   D_gt_(); // D>
@@ -1223,16 +1224,16 @@ void UNK_0xe081() // UNK_0xe081
   Push(0x0020);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
-  R_gt_(); // R>
   if (Pop() == 0) goto label4;
+  R_gt_(); // R>
+  if (Pop() == 0) goto label5;
   RED(); // RED
-  goto label5;
-
-  label4:
-  DK_dash_BLUE(); // DK-BLUE
+  goto label6;
 
   label5:
+  DK_dash_BLUE(); // DK-BLUE
+
+  label6:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   Push(pp_CTCOLOR); // CTCOLOR
@@ -2023,7 +2024,7 @@ void UNK_0xf0df() // UNK_0xf0df
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
 
-  label3:
+  label4:
   UNK_0xf065(); // UNK_0xf065
   COMM_dash_EXPERT(); // COMM-EXPERT
   UNK_0xdb71(); // UNK_0xdb71
@@ -2038,7 +2039,7 @@ void UNK_0xf0df() // UNK_0xf0df
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xd92d); // UNK_0xd92d
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(0xd92d);
   _099(); // 099
   UNK_0xea14(); // UNK_0xea14
@@ -2055,12 +2056,12 @@ void UNK_0xf0df() // UNK_0xf0df
   INIT_dash_BU(); // INIT-BU
   goto label2;
 
-  label4:
+  label3:
   _gt_CM(); // >CM
 
   label2:
   UNK_0xeb10(); // UNK_0xeb10
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp_P_dash_POSTU); // P-POSTU
   Push(Read16(Pop())); // @
   Push(0x62b1);

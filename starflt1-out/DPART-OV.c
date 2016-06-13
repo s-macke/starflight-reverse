@@ -3,6 +3,7 @@
 // overlay size   = 0x0610
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -361,14 +362,14 @@ void UNK_0xf166() // UNK_0xf166
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
-  label4:
+  label5:
   Push(0x000b);
   Push(0x000b);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
 
-  label5:
+  label3:
   _ask_LAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   _ask_NULL(); // ?NULL
@@ -377,18 +378,18 @@ void UNK_0xf166() // UNK_0xf166
   if (Pop() == 0) goto label2;
   UNK_0xf0d6(); // UNK_0xf0d6
   UNK_0xf158(); // UNK_0xf158
-  goto label5;
+  goto label3;
 
   label2:
   UNK_0xf0d6(); // UNK_0xf0d6
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   IDELETE(); // IDELETE
 
-  label3:
+  label4:
   _ask_NULL(); // ?NULL
   ICLOSE(); // ICLOSE
   UNK_0xf158(); // UNK_0xf158
-  goto label4;
+  goto label5;
 
   label1:
   CDROP(); // CDROP
@@ -773,7 +774,7 @@ void DEPART() // DEPART
   UNK_0xf09c(); // UNK_0xf09c
   Push(pp_WMSG); // WMSG
   ON(); // ON
-  goto label6;
+  goto label5;
 
   label4:
   CTINIT(); // CTINIT
@@ -787,13 +788,13 @@ void DEPART() // DEPART
   MS(); // MS
   UNK_0xf1ac(); // UNK_0xf1ac
 
-  label6:
-  goto label5;
+  label5:
+  goto label6;
 
   label3:
   UNK_0xf430(); // UNK_0xf430
 
-  label5:
+  label6:
   NULL(); // NULL
   Push(pp__ro_BOMB_rc_); // (BOMB)
   _1_dot_5_ex_(); // 1.5!

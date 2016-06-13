@@ -3,6 +3,7 @@
 // overlay size   = 0x0910
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -121,22 +122,22 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS)
   ICLOSE(); // ICLOSE
   Push(0x1b58); Pust(0x0000);
-  goto label4;
+  goto label2;
 
   label1:
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("I SAID THERE'S NOTHING THERE!", 29); // (.")
-  goto label3;
-
-  label2:
-  PRINT("I NEED A CURRENT SENSOR READING.", 32); // (.")
+  goto label4;
 
   label3:
+  PRINT("I NEED A CURRENT SENSOR READING.", 32); // (.")
+
+  label4:
   Pop(); // DROP
   Push(0x05dc); Pust(0x0000);
 
-  label4:
+  label2:
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+

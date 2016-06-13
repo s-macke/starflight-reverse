@@ -3,6 +3,7 @@
 // overlay size   = 0x0450
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -349,19 +350,19 @@ void UNK_0xf468() // UNK_0xf468
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label2;
   Push(0x0032);
-  goto label4;
+  goto label3;
 
   label2:
   Push(0x004b);
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label1:
   Pop(); // DROP
   Push(0x0064);
 
-  label3:
+  label4:
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
   Push(pp_FORCED); // FORCED
@@ -439,12 +440,12 @@ void _ro_DO_dot_STORM() // (DO.STORM
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf4a6(); // UNK_0xf4a6
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xf4e2(); // UNK_0xf4e2
 
-  label3:
+  label2:
   ICLOSE(); // ICLOSE
   UNK_0xf468(); // UNK_0xf468
   R_gt_(); // R>
@@ -452,11 +453,11 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0xcdc0);
   MODULE(); // MODULE
 
-  label2:
+  label3:
   UNK_0xf332(); // UNK_0xf332
   if (Pop() == 0) return;
   INJURE_dash_PL(); // INJURE-PL

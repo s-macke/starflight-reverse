@@ -3,6 +3,7 @@
 // overlay size   = 0x1c40
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -1117,19 +1118,19 @@ void UNK_0xe1f0() // UNK_0xe1f0
   Push(h); // I
   if (Pop() == 0) goto label1;
   PINK(); // PINK
-  goto label5;
+  goto label2;
 
   label1:
   BLUE(); // BLUE
 
-  label5:
+  label2:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
 
-  label2:
+  label3:
   TIME(); // TIME
   _2_at_(); // 2@
   _2OVER(); // 2OVER
@@ -1138,16 +1139,16 @@ void UNK_0xe1f0() // UNK_0xe1f0
   Push(0x002b);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
-  Push(h); // I
   if (Pop() == 0) goto label3;
+  Push(h); // I
+  if (Pop() == 0) goto label4;
   RED(); // RED
-  goto label4;
-
-  label3:
-  DK_dash_BLUE(); // DK-BLUE
+  goto label5;
 
   label4:
+  DK_dash_BLUE(); // DK-BLUE
+
+  label5:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   Push(pp_CTCOLOR); // CTCOLOR
@@ -1687,7 +1688,7 @@ void UNK_0xf061() // UNK_0xf061
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
 
-  label3:
+  label4:
   COMM_dash_EXPERTS(); // COMM-EXPERTS
   UNK_0xdbdb(); // UNK_0xdbdb
   UNK_0xecf3(); // UNK_0xecf3
@@ -1701,7 +1702,7 @@ void UNK_0xf061() // UNK_0xf061
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xda55); // UNK_0xda55
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(0xda55);
   OFF(); // OFF
   UNK_0xe8b6(); // UNK_0xe8b6
@@ -1718,12 +1719,12 @@ void UNK_0xf061() // UNK_0xf061
   INIT_dash_BU(); // INIT-BU
   goto label2;
 
-  label4:
+  label3:
   _gt_CM(); // >CM
 
   label2:
   UNK_0xe9b6(); // UNK_0xe9b6
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
 
   label1:
   Push(pp_UNK_0xda2b); // UNK_0xda2b

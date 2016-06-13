@@ -3,6 +3,7 @@
 // overlay size   = 0x15d0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -230,48 +231,48 @@ void UNK_0xe151() // UNK_0xe151
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   PRINT("CRITICAL", 8); // (.")
-  goto label6;
+  goto label2;
 
   label1:
   Push(h); // I
   Push(0x0014);
   Push(0x0032);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   PRINT("HEAVY", 5); // (.")
-  goto label6;
+  goto label2;
 
-  label2:
+  label3:
   Push(h); // I
   Push(0x0032);
   Push(0x0050);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   PRINT("MODERATE", 8); // (.")
-  goto label6;
+  goto label2;
 
-  label3:
+  label4:
   Push(h); // I
   Push(0x0050);
   Push(0x005f);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   PRINT("SLIGHT", 6); // (.")
-  goto label6;
+  goto label2;
 
-  label4:
+  label5:
   Push(h); // I
   Push(0x005f);
   Push(0x0064);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label6;
   PRINT("MINIMAL", 7); // (.")
-  goto label6;
-
-  label5:
-  PRINT("NONE", 4); // (.")
+  goto label2;
 
   label6:
+  PRINT("NONE", 4); // (.")
+
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -1340,18 +1341,18 @@ void UNK_0xe9a0() // UNK_0xe9a0
   UNK_0xe95c(); // UNK_0xe95c
   Push(0x0032);
   MS(); // MS
-  goto label4;
+  goto label3;
 
   label2:
   Pop(); Pop();// 2DROP
 
-  label4:
-  goto label3;
+  label3:
+  goto label4;
 
   label1:
   Pop(); Pop();// 2DROP
 
-  label3:
+  label4:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -1616,7 +1617,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   _2DUP(); // 2DUP
   Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_ex_(); // 1.5!
-  goto label5;
+  goto label2;
 
   label1:
   Push(0x0023);
@@ -1624,10 +1625,10 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   RED(); // RED
   UNK_0xe922(); // UNK_0xe922
 
-  label2:
+  label3:
   UNK_0xe9a0(); // UNK_0xe9a0
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xeabc(); // UNK_0xeabc
   Push(pp_UNK_0xe914); // UNK_0xe914
   Push(Read16(Pop())); // @
@@ -1636,20 +1637,20 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   RED(); // RED
   UNK_0xe922(); // UNK_0xe922
 
-  label5:
+  label2:
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   _dot_READINGS(); // .READINGS
   ICLOSE(); // ICLOSE
-  goto label4;
-
-  label3:
-  Pop(); Pop();// 2DROP
+  goto label5;
 
   label4:
+  Pop(); Pop();// 2DROP
+
+  label5:
   Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_at_(); // 1.5@
   D0_eq_(); // D0=

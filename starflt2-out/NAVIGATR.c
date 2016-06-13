@@ -3,6 +3,7 @@
 // overlay size   = 0x03e0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -322,48 +323,48 @@ void UNK_0xf3ef() // UNK_0xf3ef
   if (Pop() == 0) goto label2;
   Push(cc__4); // 4
   UNK_0xf1ba(); // UNK_0xf1ba
-  goto label9;
+  goto label3;
 
   label2:
   Push(0); // 0
 
-  label9:
+  label3:
   DUP(); // DUP
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf202(); // UNK_0xf202
 
   UNK_0x3f09("ARMING ");
   _dot_TTY(); // .TTY
   Push(pp__ask_3); // ?3
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label8;
+  if (Pop() == 0) goto label5;
   PRINT("PLASMA BOLTS", 12); // (.")
-  goto label3;
+  goto label4;
 
-  label8:
+  label5:
   PRINT("MISSLES", 7); // (.")
 
-  label3:
+  label4:
   SWAP(); // SWAP
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label6;
   Push(cc__3); // 3
   UNK_0xf1ba(); // UNK_0xf1ba
   goto label7;
 
-  label4:
+  label6:
   Push(0); // 0
 
   label7:
   DUP(); // DUP
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label8;
   UNK_0xf202(); // UNK_0xf202
 
   UNK_0x3f09("ARMING LASERS");
   _dot_TTY(); // .TTY
 
-  label5:
+  label8:
   Push(Pop() + Pop()); // +
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label9;
   UNK_0xf1a5(); // UNK_0xf1a5
   Push(Read16(Pop())); // @
   Push(0x0023);
@@ -376,7 +377,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   UNK_0xf1b2(); // UNK_0xf1b2
   UNK_0xf1d6(); // UNK_0xf1d6
 
-  label6:
+  label9:
   return;
 
   label1:
@@ -430,7 +431,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xf301(); // UNK_0xf301
@@ -439,17 +440,17 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 
   UNK_0x3f09("SHIELDS CAN'T BE RAISED");
   _dot_TTY(); // .TTY
   BEEP(); // BEEP
-  goto label3;
-
-  label2:
-  UNK_0xf311(); // UNK_0xf311
+  goto label2;
 
   label3:
+  UNK_0xf311(); // UNK_0xf311
+
+  label2:
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }

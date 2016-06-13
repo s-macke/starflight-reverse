@@ -3,6 +3,7 @@
 // overlay size   = 0x0370
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -267,40 +268,40 @@ void UNK_0xf3fb() // UNK_0xf3fb
   if (Pop() == 0) goto label2;
   Push(cc__4); // 4
   UNK_0xf22a(); // UNK_0xf22a
-  goto label8;
+  goto label3;
 
   label2:
   Push(0); // 0
 
-  label8:
+  label3:
   DUP(); // DUP
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f3b("ARMING MISSILES");
   _dot_TTY(); // .TTY
 
-  label3:
+  label4:
   SWAP(); // SWAP
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Push(cc__3); // 3
   UNK_0xf22a(); // UNK_0xf22a
-  goto label7;
+  goto label6;
 
-  label4:
+  label5:
   Push(0); // 0
 
-  label7:
+  label6:
   DUP(); // DUP
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label7;
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f3b("ARMING LASERS");
   _dot_TTY(); // .TTY
 
-  label5:
+  label7:
   Push(Pop() + Pop()); // +
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label8;
   UNK_0xf215(); // UNK_0xf215
   Push(Read16(Pop())); // @
   Push(0x0023);
@@ -313,7 +314,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   UNK_0xf222(); // UNK_0xf222
   UNK_0xf246(); // UNK_0xf246
 
-  label6:
+  label8:
   return;
 
   label1:
@@ -367,7 +368,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD
-  goto label3;
+  goto label2;
 
   label1:
   Push(pp__ask_NEB); // ?NEB
@@ -376,17 +377,17 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 
   UNK_0x3f3b("SHIELDS CAN'T BE RAISED");
   _dot_TTY(); // .TTY
   BEEP(); // BEEP
-  goto label3;
-
-  label2:
-  UNK_0xf359(); // UNK_0xf359
+  goto label2;
 
   label3:
+  UNK_0xf359(); // UNK_0xf359
+
+  label2:
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }

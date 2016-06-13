@@ -3,6 +3,7 @@
 // overlay size   = 0x09f0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -328,21 +329,21 @@ void UNK_0xeccc() // UNK_0xeccc
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(0xec46);
-  goto label3;
+  goto label2;
 
   label1:
   R_at_(); // R@
   UNK_0xebf6(); // UNK_0xebf6
   C_at_(); // C@
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(0xec4e);
-  goto label3;
-
-  label2:
-  Push(0xec56);
+  goto label2;
 
   label3:
+  Push(0xec56);
+
+  label2:
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -1216,15 +1217,15 @@ void UNK_0xf41e() // UNK_0xf41e
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
   _eq_(); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label2;
   Push(0x0023);
-  goto label6;
+  goto label3;
 
-  label4:
+  label2:
   UNK_0xeba9(); // UNK_0xeba9
   C_at_(); // C@
 
-  label6:
+  label3:
   Push(pp_EDL); // EDL
   _st__ex__gt_(); // <!>
   ICLOSE(); // ICLOSE
@@ -1233,25 +1234,25 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(pp_A_dash_POSTU); // A-POSTU
   C_at_(); // C@
   APOST_gt_PO(); // APOST>PO
-  goto label5;
+  goto label4;
 
   label1:
   UNK_0xf2bb(); // UNK_0xf2bb
 
-  label5:
+  label4:
   DUP(); // DUP
   UNK_0xebae(); // UNK_0xebae
   C_ex_(); // C!
   Push(cc__4); // 4
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label5;
   Push(0x000a);
-  goto label3;
+  goto label6;
 
-  label2:
+  label5:
   Push(cc__4); // 4
 
-  label3:
+  label6:
   UNK_0xec3e(); // UNK_0xec3e
   C_ex_(); // C!
   ICLOSE(); // ICLOSE

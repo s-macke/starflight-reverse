@@ -3,6 +3,7 @@
 // overlay size   = 0x1870
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -1532,14 +1533,14 @@ void UNK_0xe95b() // UNK_0xe95b
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   _gt_HIDDEN(); // >HIDDEN
-  goto label3;
+  goto label2;
 
   label1:
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
 
-  label3:
+  label2:
   DARK(); // DARK
   UNK_0xe1a5(); // UNK_0xe1a5
   Push(pp_UNK_0xde1a); // UNK_0xde1a
@@ -1577,10 +1578,10 @@ void UNK_0xe95b() // UNK_0xe95b
   _dot_RAW(); // .RAW
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   SCR_dash_RES(); // SCR-RES
 
-  label2:
+  label3:
   UNK_0xe7c1(); // UNK_0xe7c1
 }
 
@@ -2734,7 +2735,7 @@ void BOSS() // BOSS
   _gt_A(); // >A
   PRINT("A:>", 3); // (.")
 
-  label2:
+  label3:
   KEY(); // KEY
   DUP(); // DUP
   DUP(); // DUP
@@ -2744,15 +2745,15 @@ void BOSS() // BOSS
   Pop(); // DROP
   CR(); // CR
   PRINT("A:>", 3); // (.")
-  goto label3;
+  goto label2;
 
   label1:
   EMIT(); // EMIT
 
-  label3:
+  label2:
   Push(2); // 2
   _eq_(); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   _gt_LORES(); // >LORES
   DARK(); // DARK
   UNK_0xf429(); // UNK_0xf429

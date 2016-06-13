@@ -3,6 +3,7 @@
 // overlay size   = 0x0fe0
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -637,7 +638,7 @@ void UNK_0xed8e() // UNK_0xed8e
 void UNK_0xedc8() // UNK_0xedc8
 {
 
-  label2:
+  label3:
   UNK_0xe91a(); // UNK_0xe91a
   DUP(); // DUP
   UNK_0xe9b0(); // UNK_0xe9b0
@@ -646,7 +647,7 @@ void UNK_0xedc8() // UNK_0xedc8
   Push(Pop()+1); // 1+
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  goto label3;
+  goto label2;
 
   label1:
   UNK_0xe99c(); // UNK_0xe99c
@@ -654,12 +655,12 @@ void UNK_0xedc8() // UNK_0xedc8
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
 
-  label3:
+  label2:
   TYPE(); // TYPE
   SPACE(); // SPACE
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
 }
 
@@ -895,15 +896,15 @@ void UNK_0xf142() // UNK_0xf142
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xef2d(); // UNK_0xef2d
-  goto label5;
+  goto label2;
 
   label1:
   UNK_0xf0ee(); // UNK_0xf0ee
 
-  label5:
+  label2:
   UNK_0xed8e(); // UNK_0xed8e
   _ask_LAST(); // ?LAST
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   UNK_0xe99c(); // UNK_0xe99c
   UNK_0xe99c(); // UNK_0xe99c
 
@@ -918,19 +919,19 @@ void UNK_0xf142() // UNK_0xf142
   Pop(); // DROP
   IOPEN(); // IOPEN
 
-  label4:
+  label5:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   IDELETE(); // IDELETE
-  goto label4;
+  goto label5;
 
-  label3:
+  label4:
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
   return;
 
-  label2:
+  label3:
   Push(0); // 0
   Push(0x0022);
   CMESS(); // CMESS
@@ -1189,19 +1190,19 @@ void UNK_0xf3b4() // UNK_0xf3b4
   Push(cc_TRUE); // TRUE
   Push(0xb6ec);
   MODULE(); // MODULE
-  goto label4;
+  goto label3;
 
   label2:
   Push(cc_FALSE); // FALSE
 
-  label4:
+  label3:
   ICLOSE(); // ICLOSE
-  goto label3;
+  goto label4;
 
   label1:
   Push(cc_FALSE); // FALSE
 
-  label3:
+  label4:
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
 }

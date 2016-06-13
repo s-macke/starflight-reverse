@@ -3,6 +3,7 @@
 // overlay size   = 0x0960
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -1299,7 +1300,7 @@ void _ask_EXIST() // ?EXIST
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
-  label3:
+  label6:
   _ask_LAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -1312,7 +1313,7 @@ void _ask_EXIST() // ?EXIST
   if (Pop() == 0) goto label2;
   UNK_0xf30d(); // UNK_0xf30d
   UNK_0xf31b(); // UNK_0xf31b
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   UNK_0xed31(); // UNK_0xed31
   Push(0x0029);
   Push(cc__4); // 4
@@ -1320,11 +1321,11 @@ void _ask_EXIST() // ?EXIST
   _gt_R(); // >R
   Pop(); Pop();// 2DROP
   R_gt_(); // R>
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   _2DUP(); // 2DUP
   UNK_0xf19b(); // UNK_0xf19b
 
-  label5:
+  label4:
   UNK_0xf143(); // UNK_0xf143
   IEXTRAC(); // IEXTRAC
   IPREV(); // IPREV
@@ -1340,21 +1341,21 @@ void _ask_EXIST() // ?EXIST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   R_gt_(); // R>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label5;
   Push(h); // I'
   UNK_0xf327(); // UNK_0xf327
-  goto label4;
+  goto label3;
 
-  label6:
+  label5:
   Pop(); Pop();// 2DROP
 
-  label4:
+  label3:
   Pop(); Pop();// 2DROP
 
   label2:
   INEXT(); // INEXT
   R_gt_(); // R>
-  goto label3;
+  goto label6;
 
   label1:
   ICLOSE(); // ICLOSE
@@ -1516,26 +1517,26 @@ void UNK_0xf492() // UNK_0xf492
   if (Pop() == 0) goto label1;
   Push(2); // 2
   UNK_0xf2bb(); // UNK_0xf2bb
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label2;
   UNK_0xf26b(); // UNK_0xf26b
 
-  label4:
+  label2:
   UNK_0xf19b(); // UNK_0xf19b
 
   label1:
   Push(0xef6d);
   UNK_0xf468(); // UNK_0xf468
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(1); // 1
   UNK_0xf2bb(); // UNK_0xf2bb
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   UNK_0xf26b(); // UNK_0xf26b
   UNK_0xf454(); // UNK_0xf454
 
-  label3:
+  label4:
   Pop(); Pop();// 2DROP
 
-  label2:
+  label3:
   ICLOSE(); // ICLOSE
 }
 

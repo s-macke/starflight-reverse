@@ -3,6 +3,7 @@
 // overlay size   = 0x0420
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -184,15 +185,15 @@ void UNK_0xf233() // UNK_0xf233
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
   UNK_0xf176(); // UNK_0xf176
-  goto label4;
+  goto label2;
 
   label1:
   UNK_0xf16e(); // UNK_0xf16e
 
-  label4:
+  label2:
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(-Pop()); // NEGATE
   Push(0); // 0
   Push(cc__3); // 3
@@ -200,17 +201,17 @@ void UNK_0xf233() // UNK_0xf233
   PRINT("W", 1); // (.")
   return;
 
-  label2:
+  label3:
   DUP(); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(0x0082);
   Push(0x0083);
   POS_dot_(); // POS.
   _dot_(); // .
   return;
 
-  label3:
+  label4:
   Push(0); // 0
   Push(cc__3); // 3
   D_dot_R(); // D.R
@@ -242,15 +243,15 @@ void UNK_0xf2a7() // UNK_0xf2a7
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
   UNK_0xf176(); // UNK_0xf176
-  goto label4;
+  goto label2;
 
   label1:
   UNK_0xf16e(); // UNK_0xf16e
 
-  label4:
+  label2:
   DUP(); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(-Pop()); // NEGATE
   Push(0); // 0
   Push(2); // 2
@@ -258,17 +259,17 @@ void UNK_0xf2a7() // UNK_0xf2a7
   PRINT("S", 1); // (.")
   return;
 
-  label2:
+  label3:
   DUP(); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(0x006a);
   Push(0x0083);
   POS_dot_(); // POS.
   _dot_(); // .
   return;
 
-  label3:
+  label4:
   Push(0); // 0
   Push(2); // 2
   D_dot_R(); // D.R
@@ -465,7 +466,7 @@ void GETSITE() // GETSITE
   UNK_0xf233(); // UNK_0xf233
   UNK_0xf425(); // UNK_0xf425
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   Push(0x1388);
   Push(pp_KEYTIME); // KEYTIME
@@ -515,14 +516,14 @@ void GETSITE() // GETSITE
   UNK_0xf176(); // UNK_0xf176
   UNK_0xf2a7(); // UNK_0xf2a7
   UNK_0xf233(); // UNK_0xf233
-  goto label3;
+  goto label2;
 
   label1:
   Pop(); Pop();// 2DROP
 
-  label3:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf22b); // UNK_0xf22b

@@ -3,6 +3,7 @@
 // overlay size   = 0x0a00
 
 #include"cpu.h"
+#include"starflt2.h"
 
 
 // =================================
@@ -675,7 +676,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   {
   DUP(); // DUP
 
-  label2:
+  label3:
   UNK_0xf0bf(); // UNK_0xf0bf
   Push(Pop()>>4); // 16/
   UNK_0xf0b7(); // UNK_0xf0b7
@@ -694,13 +695,13 @@ void UNK_0xf0d5() // UNK_0xf0d5
   _4_star_(); // 4*
   _gt_R(); // >R
   UNK_0xf0b7(); // UNK_0xf0b7
-  goto label3;
+  goto label2;
 
   label1:
   NULL(); // NULL
   _gt_R(); // >R
 
-  label3:
+  label2:
   R_gt_(); // R>
   Push(Pop() | Pop()); // OR
   R_gt_(); // R>
@@ -720,7 +721,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   MAX(); // MAX
   _ask_DUP(); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   i++;
   } while(i<imax); // (LOOP) 0xffa2
 

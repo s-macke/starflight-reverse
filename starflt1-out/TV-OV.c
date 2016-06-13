@@ -3,6 +3,7 @@
 // overlay size   = 0x0d90
 
 #include"cpu.h"
+#include"starflt1.h"
 
 
 // =================================
@@ -869,7 +870,7 @@ void UNK_0xed12() // UNK_0xed12
   Push(0x000b);
   Push(0x000b);
 
-  label3:
+  label4:
   Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_at_(); // 1.5@
   CI(); // CI
@@ -885,7 +886,7 @@ void UNK_0xed12() // UNK_0xed12
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _st_(); // <
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   CI(); // CI
   Push(pp_UNK_0xecbc); // UNK_0xecbc
   _1_dot_5_ex_(); // 1.5!
@@ -895,12 +896,12 @@ void UNK_0xed12() // UNK_0xed12
   _st__ex__gt_(); // <!>
   goto label2;
 
-  label4:
+  label3:
   Pop(); // DROP
 
   label2:
   INEXT(); // INEXT
-  goto label3;
+  goto label4;
 
   label1:
   Pop(); Pop();// 2DROP
@@ -1227,7 +1228,7 @@ void UNK_0xef8f() // UNK_0xef8f
 {
   IOPEN(); // IOPEN
 
-  label4:
+  label2:
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1238,7 +1239,7 @@ void UNK_0xef8f() // UNK_0xef8f
   CDROP(); // CDROP
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
-  goto label4;
+  goto label2;
 
   label1:
   ICLOSE(); // ICLOSE
@@ -1248,7 +1249,7 @@ void UNK_0xef8f() // UNK_0xef8f
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(cc__6); // 6
@@ -1259,12 +1260,12 @@ void UNK_0xef8f() // UNK_0xef8f
   Push(0x000a);
   U_star_(); // U*
   CDROP(); // CDROP
-  goto label3;
-
-  label2:
-  NULL(); // NULL
+  goto label4;
 
   label3:
+  NULL(); // NULL
+
+  label4:
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
   CDROP(); // CDROP
@@ -1561,7 +1562,7 @@ void UNK_0xf1fc() // UNK_0xf1fc
   UNK_0xf184(); // UNK_0xf184
   UNK_0xf1ba(); // UNK_0xf1ba
 
-  label2:
+  label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -1586,14 +1587,14 @@ void UNK_0xf1fc() // UNK_0xf1fc
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
-  goto label3;
+  goto label2;
 
   label1:
   Pop(); Pop();// 2DROP
 
-  label3:
+  label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
 }
 
 
@@ -1901,7 +1902,7 @@ void DO_dot_WEAPON() // DO.WEAPON
   _gt_R(); // >R
   _gt_R(); // >R
 
-  label3:
+  label4:
   XYSCAN(); // XYSCAN
   Push(1); // 1
   Push(0); // 0
@@ -1911,26 +1912,26 @@ void DO_dot_WEAPON() // DO.WEAPON
   Pop(); Pop();// 2DROP
   Push(cc__dash_1); // -1
   UNK_0xf44d(); // UNK_0xf44d
-  goto label4;
+  goto label2;
 
   label1:
   Push(cc__dash_1); // -1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label2;
+  if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xf44d(); // UNK_0xf44d
-  goto label4;
+  goto label2;
+
+  label3:
+  Pop(); // DROP
+  Pop(); // DROP
 
   label2:
-  Pop(); // DROP
-  Pop(); // DROP
-
-  label4:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Push(pp_UNK_0xf435); // UNK_0xf435
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
