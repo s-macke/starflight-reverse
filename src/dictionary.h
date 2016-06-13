@@ -44,6 +44,7 @@ void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
+void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int currentovidx);
 
 char* FindDictPar(unsigned short addr, int ovidx);
 char* Forth2CString(char *in);
