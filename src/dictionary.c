@@ -730,6 +730,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             {
                 pline[par+2].isfunction = 1;
                 snprintf(pline[par+2].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+                ParsePartFunction(ofs+2, l, minaddr, maxaddr, currentovidx);
                 ParsePartFunction(par+2, l, minaddr, maxaddr, currentovidx);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
@@ -790,8 +791,15 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (strcmp(s, "EXIT") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "}\n\n");
+            if (pline[ofs+2].labelid)
+            {
+                snprintf(pline[ofs].str, STRINGLEN, "  return;\n\n");
+            } else
+            {
+                snprintf(pline[ofs].str, STRINGLEN, "}\n\n");
+            }
             ofs += 2;
+
             return;
         } else
         if (strcmp(s, "BRANCH") == 0)
@@ -814,6 +822,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
+            ParsePartFunction(ofs+4, l, minaddr, maxaddr, currentovidx);
             ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
             ofs += 4;
         } else
@@ -835,6 +844,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
+            ParsePartFunction(ofs+4, l, minaddr, maxaddr, currentovidx);
             ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
             ofs += 4;
         } else
