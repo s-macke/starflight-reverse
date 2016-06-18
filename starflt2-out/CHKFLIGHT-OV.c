@@ -59,7 +59,7 @@ unsigned char UNK_0xf32d[2] = {0x3a, 0x20}; // UNK_0xf32d
 
 void UNK_0xf195() // UNK_0xf195
 {
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -91,10 +91,10 @@ void UNK_0xf195() // UNK_0xf195
 
 void UNK_0xf1cb() // UNK_0xf1cb
 {
-  GREY1(); // GREY1
+  SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   SFILL(); // SFILL
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -140,7 +140,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   PRINT("CHECK", 5); // (.")
   Push(2); // 2
   Push(0x00c5);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _dot_1LOGO(); // .1LOGO
 }
 
@@ -218,10 +218,10 @@ void UNK_0xf331() // UNK_0xf331
   DUP(); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  _ro__dot_CS_rc_(); // (.CS)
+  Func10("(.CS)");
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  _ro__dot_CS_rc_(); // (.CS)
+  Func10("(.CS)");
 }
 
 
@@ -278,7 +278,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(1); // 1
   Push(0x0016);
   CMESS(); // CMESS
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   _ex_CRS(); // !CRS
@@ -308,7 +308,7 @@ void UNK_0xf414() // UNK_0xf414
   DUP(); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  _star_OP(); // *OP
+  Push2Words("*OP");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -350,13 +350,13 @@ void UNK_0xf414() // UNK_0xf414
 
 void UNK_0xf462() // UNK_0xf462
 {
-  _star_ASSIGN(); // *ASSIGN
+  Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
-  UNK_0xf18b(); // UNK_0xf18b
+  Func8("UNK_0xf18b");
   Push(0x0012);
   Push(Pop() + Pop()); // +
-  UNK_0xf18b(); // UNK_0xf18b
+  Func8("UNK_0xf18b");
 
   signed short int i = Pop();
   signed short int imax = Pop();
@@ -364,7 +364,7 @@ void UNK_0xf462() // UNK_0xf462
   {
   Push(i); // I
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf186(); // UNK_0xf186
+  Func8("UNK_0xf186");
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -386,12 +386,12 @@ void UNK_0xf462() // UNK_0xf462
 
 void UNK_0xf492() // UNK_0xf492
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  _pe_NAME(); // %NAME
+  Func8("%NAME");
   C_at_(); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  UNK_0xf190(); // UNK_0xf190
+  Func8("UNK_0xf190");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -414,7 +414,7 @@ void UNK_0xf492() // UNK_0xf492
 
 void UNK_0xf4bc() // UNK_0xf4bc
 {
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -426,7 +426,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x000a);

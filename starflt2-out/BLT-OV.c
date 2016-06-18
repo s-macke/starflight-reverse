@@ -77,7 +77,7 @@ void UNK_0xf046() // UNK_0xf046
   Push(pp_FONTSEG); // FONTSEG
   Push(Read16(Pop())); // @
   Push(0x008f);
-  FILE_dash__n_R(); // FILE-#R
+  Func6("FILE-#R");
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
@@ -479,7 +479,7 @@ void UNK_0xf280() // UNK_0xf280
   goto label2;
 
   label1:
-  NULL(); // NULL
+  Push2Words("NULL");
   _gt_R(); // >R
 
   label2:
@@ -588,7 +588,7 @@ void SETB() // SETB
   _ex_(); // !
   BMSEG(); // BMSEG
   _ex_(); // !
-  NULL(); // NULL
+  Push2Words("NULL");
   BMWIDE(); // BMWIDE
   Push(Pop()+2); // 2+
   D_ex_(); // D!

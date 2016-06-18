@@ -160,10 +160,10 @@ void UNK_0xe344() // UNK_0xe344
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  PHR_dash_CNT(); // PHR-CNT
+  Func8("PHR-CNT");
   C_at_(); // C@
   Push(Pop()-1); // 1-
-  PHRASE(); // PHRASE
+  Func8("PHRASE");
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   Push(0x0053);
@@ -586,13 +586,13 @@ void UNK_0xe60b() // UNK_0xe60b
 void UNK_0xe6f8() // UNK_0xe6f8
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0); // 0
   SHAPES(); // SHAPES
   UNK_0xe5fd(); // UNK_0xe5fd
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -603,7 +603,7 @@ void UNK_0xe6f8() // UNK_0xe6f8
 
 void UNK_0xe70e() // UNK_0xe70e
 {
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
 
   label2:
@@ -637,7 +637,7 @@ void UNK_0xe70e() // UNK_0xe70e
 
 void UNK_0xe740() // UNK_0xe740
 {
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -650,7 +650,7 @@ void UNK_0xe740() // UNK_0xe740
   Push(0xdd55); Pust(0x0001);
 
   label2:
-  UNK_0xe46f(); // UNK_0xe46f
+  LoadData("UNK_0xe46f"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -676,14 +676,14 @@ void UNK_0xe762() // UNK_0xe762
   if (Pop() == 0) goto label1;
   UNK_0xe6f8(); // UNK_0xe6f8
   UNK_0xe740(); // UNK_0xe740
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  UNK_0xe46f(); // UNK_0xe46f
+  LoadData("UNK_0xe46f"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  UNK_0xe45f(); // UNK_0xe45f
+  LoadData("UNK_0xe45f"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  UNK_0xe457(); // UNK_0xe457
+  LoadData("UNK_0xe457"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
@@ -699,10 +699,10 @@ void UNK_0xe762() // UNK_0xe762
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
   _2DUP(); // 2DUP
-  UNK_0xe46f(); // UNK_0xe46f
+  LoadData("UNK_0xe46f"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   _2OVER(); // 2OVER
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   i++;
   } while(i<imax); // (LOOP) 0xffea
@@ -767,7 +767,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  UNK_0xe44f(); // UNK_0xe44f
+  LoadData("UNK_0xe44f"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -796,7 +796,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe477(); // UNK_0xe477
+  LoadData("UNK_0xe477"); // from 'CREATURE    '
   C_ex_(); // C!
 }
 
@@ -904,7 +904,7 @@ void UNK_0xef05() // UNK_0xef05
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe487(); // UNK_0xe487
+  LoadData("UNK_0xe487"); // from 'CREATURE    '
   C_ex_(); // C!
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
@@ -915,7 +915,7 @@ void UNK_0xef05() // UNK_0xef05
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe48f(); // UNK_0xe48f
+  LoadData("UNK_0xe48f"); // from 'CREATURE    '
   C_ex_(); // C!
   Pop(); // DROP
 }
@@ -960,7 +960,7 @@ void UNK_0xef75() // UNK_0xef75
   UNK_0xe2b3(); // UNK_0xe2b3
   _gt_R(); // >R
   _gt_R(); // >R
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -997,7 +997,7 @@ void UNK_0xef75() // UNK_0xef75
 void UNK_0xefd1() // UNK_0xefd1
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0); // 0
@@ -1027,9 +1027,9 @@ void UNK_0xefd1() // UNK_0xefd1
   DUP(); // DUP
 
   label5:
-  UNK_0xe4a7(); // UNK_0xe4a7
+  LoadData("UNK_0xe4a7"); // from 'CREATURE    '
   C_ex_(); // C!
-  UNK_0xe49f(); // UNK_0xe49f
+  LoadData("UNK_0xe49f"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1041,13 +1041,13 @@ void UNK_0xefd1() // UNK_0xefd1
 void UNK_0xf015() // UNK_0xf015
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0); // 0
   DECORATIONS(); // DECORATIONS
   UNK_0xe5fd(); // UNK_0xe5fd
-  UNK_0xe4af(); // UNK_0xe4af
+  LoadData("UNK_0xe4af"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1058,7 +1058,7 @@ void UNK_0xf015() // UNK_0xf015
 
 void UNK_0xf02b() // UNK_0xf02b
 {
-  UNK_0xe4af(); // UNK_0xe4af
+  LoadData("UNK_0xe4af"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -1073,7 +1073,7 @@ void UNK_0xf02b() // UNK_0xf02b
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label4;
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _n_LEGS(); // #LEGS
   UNK_0xe5fd(); // UNK_0xe5fd
@@ -1098,7 +1098,7 @@ void UNK_0xf02b() // UNK_0xf02b
   Push(0); // 0
 
   label6:
-  UNK_0xe4b7(); // UNK_0xe4b7
+  LoadData("UNK_0xe4b7"); // from 'CREATURE    '
   C_ex_(); // C!
   Pop(); Pop();// 2DROP
 }
@@ -1150,7 +1150,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  UNK_0xe44f(); // UNK_0xe44f
+  LoadData("UNK_0xe44f"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -1160,7 +1160,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   DUP(); // DUP
   _gt_R(); // >R
   GROUNDED(); // GROUNDED
-  UNK_0xe437(); // UNK_0xe437
+  LoadData("UNK_0xe437"); // from 'PLANET      '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   DUP(); // DUP
@@ -1192,7 +1192,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
 
 void UNK_0xf11c() // UNK_0xf11c
 {
-  UNK_0xe477(); // UNK_0xe477
+  LoadData("UNK_0xe477"); // from 'CREATURE    '
   C_at_(); // C@
   Push(pp_UNK_0xf0b4); // UNK_0xf0b4
   Push(Read16(Pop())); // @
@@ -1227,7 +1227,7 @@ void UNK_0xf136() // UNK_0xf136
   _ex_(); // !
   Push(pp_UNK_0xf0b0); // UNK_0xf0b0
   _ex_(); // !
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1296,11 +1296,11 @@ void UNK_0xf136() // UNK_0xf136
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe4c7(); // UNK_0xe4c7
+  LoadData("UNK_0xe4c7"); // from 'CREATURE    '
   C_ex_(); // C!
-  UNK_0xe4e7(); // UNK_0xe4e7
+  LoadData("UNK_0xe4e7"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
-  UNK_0xe4bf(); // UNK_0xe4bf
+  LoadData("UNK_0xe4bf"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1341,7 +1341,7 @@ void UNK_0xf210() // UNK_0xf210
   UNK_0xf1ea(); // UNK_0xf1ea
   Push(pp_UNK_0xf1e6); // UNK_0xf1e6
   _ex_(); // !
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_PLANTS); // PLANTS
@@ -1349,7 +1349,7 @@ void UNK_0xf210() // UNK_0xf210
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xf1e6); // UNK_0xf1e6
   Push(Read16(Pop())); // @
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   Push(0x0002);
   _eq_(); // =
@@ -1376,7 +1376,7 @@ void UNK_0xf210() // UNK_0xf210
   Push(0xe225); Pust(0x0001);
 
   label5:
-  UNK_0xe4df(); // UNK_0xe4df
+  LoadData("UNK_0xe4df"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1388,7 +1388,7 @@ void UNK_0xf210() // UNK_0xf210
 void UNK_0xf26a() // UNK_0xf26a
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   ANIMAL_dot_APPENDAGE(); // ANIMAL.APPENDAGE
   UNK_0xe5fd(); // UNK_0xe5fd
@@ -1401,7 +1401,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 void UNK_0xf278() // UNK_0xf278
 {
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1411,7 +1411,7 @@ void UNK_0xf278() // UNK_0xf278
   goto label2;
 
   label1:
-  UNK_0xe4df(); // UNK_0xe4df
+  LoadData("UNK_0xe4df"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xe225); Pust(0x0001);
   D_eq_(); // D=
@@ -1421,7 +1421,7 @@ void UNK_0xf278() // UNK_0xf278
   _st_(); // <
   if (Pop() == 0) goto label4;
   Push(0xe238); Pust(0x0001);
-  UNK_0xe4df(); // UNK_0xe4df
+  LoadData("UNK_0xe4df"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   Push(0); // 0
   Push(0); // 0
@@ -1439,7 +1439,7 @@ void UNK_0xf278() // UNK_0xf278
 
   label2:
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe4cf(); // UNK_0xe4cf
+  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1486,7 +1486,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  UNK_0xe44f(); // UNK_0xe44f
+  LoadData("UNK_0xe44f"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -1506,7 +1506,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() == 0) goto label5;
   Pop(); Pop();// 2DROP
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(0xddb3); Pust(0x0001);
@@ -1541,7 +1541,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
 
 void UNK_0xf3c2() // UNK_0xf3c2
 {
-  UNK_0xe4d7(); // UNK_0xe4d7
+  LoadData("UNK_0xe4d7"); // from 'CREATURE    '
   C_at_(); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -1549,7 +1549,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
   return;
 
   label1:
-  UNK_0xe4cf(); // UNK_0xe4cf
+  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   UNK_0xf2d2(); // UNK_0xf2d2
 }
@@ -1561,7 +1561,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
 
 void UNK_0xf3e0() // UNK_0xf3e0
 {
-  UNK_0xe4df(); // UNK_0xe4df
+  LoadData("UNK_0xe4df"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xe225); Pust(0x0001);
   D_eq_(); // D=
@@ -1583,7 +1583,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  UNK_0xe47f(); // UNK_0xe47f
+  LoadData("UNK_0xe47f"); // from 'CREATURE    '
   C_at_(); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1600,7 +1600,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   UNK_0xe51b(); // UNK_0xe51b
-  UNK_0xe4df(); // UNK_0xe4df
+  LoadData("UNK_0xe4df"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1611,7 +1611,7 @@ void UNK_0xf404() // UNK_0xf404
 
 void UNK_0xf430() // UNK_0xf430
 {
-  UNK_0xe4cf(); // UNK_0xe4cf
+  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _gt_R(); // >R
   _gt_R(); // >R
@@ -1631,7 +1631,7 @@ void UNK_0xf430() // UNK_0xf430
 
   label3:
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe467(); // UNK_0xe467
+  LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _n_LEGS(); // #LEGS
   UNK_0xe5fd(); // UNK_0xe5fd
@@ -1648,13 +1648,13 @@ void UNK_0xf430() // UNK_0xf430
   Pop(); Pop();// 2DROP
   R_gt_(); // R>
   DUP(); // DUP
-  UNK_0xe4d7(); // UNK_0xe4d7
+  LoadData("UNK_0xe4d7"); // from 'CREATURE    '
   C_ex_(); // C!
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(0); // 0
-  UNK_0xe4cf(); // UNK_0xe4cf
+  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 
   label1:
@@ -1671,11 +1671,11 @@ void UNK_0xf430() // UNK_0xf430
 void UNK_0xf494() // UNK_0xf494
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  UNK_0xe46f(); // UNK_0xe46f
+  LoadData("UNK_0xe46f"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   APPEARANCE(); // APPEARANCE
   UNK_0xe5fd(); // UNK_0xe5fd
-  UNK_0xe497(); // UNK_0xe497
+  LoadData("UNK_0xe497"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1720,7 +1720,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   _st_(); // <
   if (Pop() == 0) goto label1;
   UNK_0xf4a6(); // UNK_0xf4a6
-  UNK_0xe4f7(); // UNK_0xe4f7
+  LoadData("UNK_0xe4f7"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(pp_RECORD_n_); // RECORD#

@@ -163,7 +163,7 @@ void _gt_FLT() // >FLT
   Push(Read16(Pop())); // @
   Push(pp_TRAK_dash_HR); // TRAK-HR
   _ex_(); // !
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @

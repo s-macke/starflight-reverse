@@ -83,12 +83,12 @@ void UNK_0xee2c() // UNK_0xee2c
   if (Pop() == 0) goto label1;
   Push(pp_CTTOP); // CTTOP
   Push(Read16(Pop())); // @
-  WHITE(); // WHITE
+  SetColor("WHITE");
   goto label2;
 
   label1:
   Push(0x0096);
-  GREY1(); // GREY1
+  SetColor("GREY1");
 
   label2:
   _ex_COLOR(); // !COLOR
@@ -267,7 +267,7 @@ void ITEM_gt_PAD() // ITEM>PAD
   PAD(); // PAD
   C_ex_(); // C!
   _at_INST_dash_C(); // @INST-C
-  IDENT_dash_ITEM_do_(); // IDENT-ITEM$
+  Func10("IDENT-ITEM$");
 }
 
 
@@ -300,12 +300,12 @@ void UNK_0xf157() // UNK_0xf157
   Push(0); // 0
   Push(1); // 1
   _star_CREATE(); // *CREATE
-  TEXT_dash_TE(); // TEXT-TE
+  Func8("TEXT-TE");
   Push(0x0026);
   CMOVE(); // CMOVE
-  TEXT_dash_IN(); // TEXT-IN
+  Func8("TEXT-IN");
   _1_dot_5_ex_(); // 1.5!
-  TEXT_dash_CO(); // TEXT-CO
+  Func8("TEXT-CO");
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
   Push(1); // 1
@@ -391,7 +391,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
   OFF(); // OFF
   Push(pp_ESC_dash_EN); // ESC-EN
   OFF(); // OFF
-  FRAGMEN(); // FRAGMEN
+  Push2Words("FRAGMEN");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -443,7 +443,7 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 
 void UNK_0xf2cf() // UNK_0xf2cf
 {
-  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC
+  Func10("CLASS>BOX-SPEC");
   Push(0x000b);
   SWAP(); // SWAP
   Push(1); // 1
@@ -457,7 +457,7 @@ void UNK_0xf2cf() // UNK_0xf2cf
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
-  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC
+  Func10("CLASS>BOX-SPEC");
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
@@ -479,7 +479,7 @@ void _gt_BOX() // >BOX
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(h); // I
-  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC
+  Func10("CLASS>BOX-SPEC");
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -513,12 +513,12 @@ void _gt_BOX() // >BOX
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   CI(); // CI
   ICLOSE(); // ICLOSE
   _gt_INACTI(); // >INACTI
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   goto label5;
@@ -560,7 +560,7 @@ void _ask_ELEMENT() // ?ELEMENT
 void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -570,7 +570,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _plus__ex_(); // +!
   Push(0x001a);
   _at_INST_dash_S(); // @INST-S
@@ -578,7 +578,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   _gt_C_plus_S(); // >C+S
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   C_gt_(); // C>
   return;

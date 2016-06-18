@@ -138,22 +138,22 @@ void UNK_0xf3aa() // UNK_0xf3aa
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0); // 0
-  UNK_0xf272(); // UNK_0xf272
+  Func8("UNK_0xf272");
   _ex_(); // !
-  UNK_0xf222(); // UNK_0xf222
+  LoadData("UNK_0xf222"); // from 'REGIONS     '
   Push(cc__4); // 4
   Push(0); // 0
   FILL(); // FILL
-  UNK_0xf21a(); // UNK_0xf21a
+  LoadData("UNK_0xf21a"); // from 'REGIONS     '
   Push(cc__8); // 8
   Push(0); // 0
   FILL(); // FILL
-  UNK_0xf262(); // UNK_0xf262
+  LoadData("UNK_0xf262"); // from 'REGIONS     '
   Push(cc__8); // 8
   Push(0); // 0
   FILL(); // FILL
   Push(0); // 0
-  UNK_0xf26a(); // UNK_0xf26a
+  LoadData("UNK_0xf26a"); // from 'REGIONS     '
   C_ex_(); // C!
 }
 
@@ -236,7 +236,7 @@ void UNK_0xf474() // UNK_0xf474
   Push(pp__ro_SURFAC); // (SURFAC
   _1_dot_5_ex_(); // 1.5!
   Push(0); // 0
-  UNK_0xf1b2(); // UNK_0xf1b2
+  LoadData("UNK_0xf1b2"); // from 'BOX         '
   _ex_(); // !
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -255,7 +255,7 @@ void DIO() // DIO
   _099(); // 099
   Push(pp_FSTUN); // FSTUN
   _099(); // 099
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 
   UNK_0x3f09("AUTO SAMPLING DEVICES ACTIVATED");
@@ -265,7 +265,7 @@ void DIO() // DIO
   UNK_0xf474(); // UNK_0xf474
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  UNK_0xf1ca(); // UNK_0xf1ca
+  LoadData("UNK_0xf1ca"); // from 'PLANET      '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;

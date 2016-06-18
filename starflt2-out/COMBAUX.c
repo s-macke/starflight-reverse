@@ -41,11 +41,11 @@ unsigned char UNK_0xf434[2] = {0x3a, 0x20}; // UNK_0xf434
 
 void UNK_0xf2c6() // UNK_0xf2c6
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -64,9 +64,9 @@ void UNK_0xf2d8() // UNK_0xf2d8
   Push(0x001d);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   goto label2;
 
@@ -209,7 +209,7 @@ void UNK_0xf38e() // UNK_0xf38e
 void UNK_0xf3da() // UNK_0xf3da
 {
   _gt_1ICONF(); // >1ICONF
-  _0_dot_(); // 0.
+  Push2Words("0.");
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST

@@ -161,9 +161,9 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xf196(); // UNK_0xf196
+  Func8("UNK_0xf196");
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
@@ -181,15 +181,15 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0xf1c4(); // UNK_0xf1c4
 
   UNK_0x3f09("RAISE SHIELD");
-  UNK_0xf1aa(); // UNK_0xf1aa
+  LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_at_(); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_ex_(); // C!
   UNK_0xf1e0(); // UNK_0xf1e0
 
@@ -246,13 +246,13 @@ void UNK_0xf311() // UNK_0xf311
   UNK_0xf1c4(); // UNK_0xf1c4
 
   UNK_0x3f09("DROP SHIELD ");
-  UNK_0xf1aa(); // UNK_0xf1aa
+  LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_at_(); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_ex_(); // C!
   UNK_0xf1e0(); // UNK_0xf1e0
 
@@ -288,15 +288,15 @@ void _gt_DISARM() // >DISARM
   UNK_0xf1c4(); // UNK_0xf1c4
 
   UNK_0x3f09("ARM WEAPON");
-  UNK_0xf1b2(); // UNK_0xf1b2
+  LoadData("UNK_0xf1b2"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_at_(); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
   Push(Pop() | Pop()); // OR
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   C_ex_(); // C!
   UNK_0xf202(); // UNK_0xf202
 
@@ -311,10 +311,10 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3ef() // UNK_0xf3ef
 {
-  UNK_0xf1a0(); // UNK_0xf1a0
+  Func8("UNK_0xf1a0");
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  UNK_0xf19b(); // UNK_0xf19b
+  Func8("UNK_0xf19b");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   _2DUP(); // 2DUP
@@ -365,16 +365,16 @@ void UNK_0xf3ef() // UNK_0xf3ef
   label8:
   Push(Pop() + Pop()); // +
   if (Pop() == 0) goto label9;
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   _ex_(); // !
   UNK_0xf1c4(); // UNK_0xf1c4
 
   UNK_0x3f09("DISARM    ");
-  UNK_0xf1b2(); // UNK_0xf1b2
+  LoadData("UNK_0xf1b2"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
 
   label9:
@@ -396,9 +396,9 @@ void UNK_0xf3ef() // UNK_0xf3ef
 void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 {
   CTINIT(); // CTINIT
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -423,9 +423,9 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
 {
   CTINIT(); // CTINIT
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xf1a5(); // UNK_0xf1a5
+  Func8("UNK_0xf1a5");
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND

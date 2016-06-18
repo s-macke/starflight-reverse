@@ -116,7 +116,7 @@ void UNK_0xed0e() // UNK_0xed0e
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xecf2(); // UNK_0xecf2
+  LoadData("UNK_0xecf2"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   DUP(); // DUP
@@ -159,9 +159,9 @@ void UNK_0xed60() // UNK_0xed60
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xece2(); // UNK_0xece2
+  LoadData("UNK_0xece2"); // from 'PLANET      '
   C_at_(); // C@
-  UNK_0xecea(); // UNK_0xecea
+  LoadData("UNK_0xecea"); // from 'PLANET      '
   C_at_(); // C@
   OVER(); // OVER
   _dash_(); // -
@@ -217,11 +217,11 @@ void UNK_0xedb2() // UNK_0xedb2
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  UNK_0xedaa(); // UNK_0xedaa
+  LoadData("UNK_0xedaa"); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
-  PHR_dash_CNT(); // PHR-CNT
+  Func8("PHR-CNT");
   C_at_(); // C@
-  PHRASE(); // PHRASE
+  Func8("PHRASE");
   OVER(); // OVER
   TYPE(); // TYPE
   Push(0x000a);
@@ -288,7 +288,7 @@ void UNK_0xee28() // UNK_0xee28
   _i_KEY(); // 'KEY
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
-  _ro_XYSCAN(); // (XYSCAN
+  Func10("(XYSCAN");
   Pop(); Pop();// 2DROP
 }
 
@@ -329,7 +329,7 @@ void UNK_0xee58() // UNK_0xee58
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
@@ -348,8 +348,8 @@ void UNK_0xee58() // UNK_0xee58
 void UNK_0xee86() // UNK_0xee86
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE(); // PHRASE
-  PHR_dash_CNT(); // PHR-CNT
+  Func8("PHRASE");
+  Func8("PHR-CNT");
   C_at_(); // C@
   TYPE(); // TYPE
   ICLOSE(); // ICLOSE
@@ -375,7 +375,7 @@ void UNK_0xee96() // UNK_0xee96
 
 void UNK_0xeea4() // UNK_0xeea4
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   Push(0x001a);
@@ -646,7 +646,7 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(0x98dc);
   Push(pp__i__dot_CELL); // '.CELL
   _st__ex__gt_(); // <!>
-  _0_dot_(); // 0.
+  Push2Words("0.");
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
@@ -846,7 +846,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
   label1:
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  WPHRASE(); // WPHRASE
+  Func10("WPHRASE");
 
   label2:
   UNK_0xee86(); // UNK_0xee86
@@ -977,9 +977,9 @@ void _dot_SURFACE() // .SURFACE
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xecba(); // UNK_0xecba
+  LoadData("UNK_0xecba"); // from 'PLANET      '
   C_at_(); // C@
-  _slash_SURF(); // /SURF
+  Func10("/SURF");
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }
@@ -991,7 +991,7 @@ void _dot_SURFACE() // .SURFACE
 
 void UNK_0xf430() // UNK_0xf430
 {
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -1002,7 +1002,7 @@ void UNK_0xf430() // UNK_0xf430
 
 void UNK_0xf438() // UNK_0xf438
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -1018,7 +1018,7 @@ void UNK_0xf440() // UNK_0xf440
   Push(cc_UNK_0xed02); // UNK_0xed02
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  UNK_0xed06(); // UNK_0xed06
+  LoadData("UNK_0xed06"); // from 'COMPOUNDS   '
   _1_dot_5_at_(); // 1.5@
   UNK_0xee86(); // UNK_0xee86
 }

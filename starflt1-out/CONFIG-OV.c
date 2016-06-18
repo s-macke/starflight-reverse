@@ -100,7 +100,7 @@ void UNK_0xe980() // UNK_0xe980
 void UNK_0xea65() // UNK_0xea65
 {
   Push(cc__7); // 7
-  BLACK(); // BLACK
+  SetColor("BLACK");
   ROT(); // ROT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -133,7 +133,7 @@ void UNK_0xeaa9() // UNK_0xeaa9
 {
   _at_CRS(); // @CRS
   Push(2); // 2
-  BLACK(); // BLACK
+  SetColor("BLACK");
   Push(0x00ae);
   Push(0x0085);
   _2DUP(); // 2DUP
@@ -141,7 +141,7 @@ void UNK_0xeaa9() // UNK_0xeaa9
   POS_dot_(); // POS.
   POS_dot_PXT(); // POS.PXT
   CTINIT(); // CTINIT
-  UNK_0xe9fd(); // UNK_0xe9fd
+  Func8("UNK_0xe9fd");
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(2); // 2
@@ -162,27 +162,27 @@ void UNK_0xeadd() // UNK_0xeadd
 {
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
-  UNK_0xe9df(); // UNK_0xe9df
+  Func8("UNK_0xe9df");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(cc__4); // 4
   UNK_0xea65(); // UNK_0xea65
-  UNK_0xe9ee(); // UNK_0xe9ee
+  Func8("UNK_0xe9ee");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(cc__3); // 3
   UNK_0xea65(); // UNK_0xea65
-  UNK_0xe9da(); // UNK_0xe9da
+  Func8("UNK_0xe9da");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(2); // 2
   UNK_0xea65(); // UNK_0xea65
-  UNK_0xe9f3(); // UNK_0xe9f3
+  Func8("UNK_0xe9f3");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(1); // 1
   UNK_0xea65(); // UNK_0xea65
-  UNK_0xe9f8(); // UNK_0xe9f8
+  Func8("UNK_0xe9f8");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(0); // 0
@@ -215,12 +215,12 @@ void UNK_0xeadd() // UNK_0xeadd
 
 void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe976(); // UNK_0xe976
-  WHITE(); // WHITE
-  GREY1(); // GREY1
-  DK_dash_GREE(); // DK-GREE
+  SetColor("WHITE");
+  SetColor("GREY1");
+  SetColor("DK-GREE");
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
@@ -251,7 +251,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION
+  Func10("CONFIG-FUNCTION");
   goto label2;
 
   label1:

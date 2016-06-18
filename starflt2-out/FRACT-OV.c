@@ -690,7 +690,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
   _ex_(); // !
   Push(pp_UNK_0xe356); // UNK_0xe356
   _099(); // 099
-  UNK_0xe380(); // UNK_0xe380
+  Push2Words("UNK_0xe380");
   Push(cc_UNK_0xe386); // UNK_0xe386
   UNK_0xe39a(); // UNK_0xe39a
   Push(pp_SPHEREW); // SPHEREW
@@ -786,7 +786,7 @@ void UNK_0xe80f() // UNK_0xe80f
   Push(Pop() * Pop()); // *
   Push(i); // J
   Push(Pop()*2); // 2*
-  CONANCH(); // CONANCH
+  Func11("CONANCH");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffdc
@@ -1081,7 +1081,7 @@ void UNK_0xe985() // UNK_0xe985
   OVER(); // OVER
   Push(i); // J
   Push(Pop() + Pop()); // +
-  CONANCH(); // CONANCH
+  Func11("CONANCH");
   LC_at_(); // LC@
   Push(j); // I
   Push(0x000c);
@@ -1089,7 +1089,7 @@ void UNK_0xe985() // UNK_0xe985
   Push(i); // J
   Push(0x0014);
   Push(Pop() * Pop()); // *
-  CONTOUR(); // CONTOUR
+  Func11("CONTOUR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffda
@@ -1181,7 +1181,7 @@ void UNK_0xea97() // UNK_0xea97
   SETLARR(); // SETLARR
   Push(pp_UNK_0xe356); // UNK_0xe356
   ON(); // ON
-  UNK_0xe7f7(); // UNK_0xe7f7
+  Push2Words("UNK_0xe7f7");
   Push(cc_UNK_0xe7fd); // UNK_0xe7fd
   UNK_0xe39a(); // UNK_0xe39a
   Push(cc__5); // 5
@@ -1467,7 +1467,7 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb06(); // UNK_0xeb06
   UNK_0xeb20(); // UNK_0xeb20
   Push(Pop()-1); // 1-
-  MERCATO(); // MERCATO
+  Func11("MERCATO");
   L_plus__dash__at_(); // L+-@
   COLORMA(); // COLORMA
   Push(pp_COLOR); // COLOR
@@ -1489,7 +1489,7 @@ void UNK_0xebfc() // UNK_0xebfc
   {
   Push(j); // I
   Push(i); // J
-  MERCATO(); // MERCATO
+  Func11("MERCATO");
   L_plus__dash__at_(); // L+-@
   COLORMA(); // COLORMA
   Push(pp_COLOR); // COLOR
@@ -1623,14 +1623,14 @@ void UNK_0xecc6() // UNK_0xecc6
   Push(Read16(Pop())); // @
   Push(0); // 0
   Push(i); // I
-  FACE(); // FACE
+  Func11("FACE");
   L_ex_(); // L!
   POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(pp_UNK_0xeb84); // UNK_0xeb84
   Push(Read16(Pop())); // @
   Push(2); // 2
   Push(i); // I
-  FACE(); // FACE
+  Func11("FACE");
   LC_ex_(); // LC!
   i++;
   } while(i<imax); // (LOOP) 0xffa8
@@ -1936,7 +1936,7 @@ void UNK_0xeefa() // UNK_0xeefa
 {
   Push(0); // 0
   OVER(); // OVER
-  FACE(); // FACE
+  Func11("FACE");
   OVER(); // OVER
   OVER(); // OVER
   L_at_(); // L@
@@ -2000,7 +2000,7 @@ void UNK_0xeefa() // UNK_0xeefa
 
   Push(0); // 0
   SWAP(); // SWAP
-  FACE(); // FACE
+  Func11("FACE");
   OVER(); // OVER
   OVER(); // OVER
   Push(pp_UNK_0xed85); // UNK_0xed85

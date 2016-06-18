@@ -243,7 +243,7 @@ void UNK_0xf152() // UNK_0xf152
 
 void UNK_0xf162() // UNK_0xf162
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   DUP(); // DUP
   UNK_0xf152(); // UNK_0xf152
@@ -338,12 +338,12 @@ void UNK_0xf1de() // UNK_0xf1de
 void _dot_AIRLOCK() // .AIRLOCK
 {
   _gt_MAINVI(); // >MAINVI
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
-  BLACK(); // BLACK
-  BLACK(); // BLACK
-  YELLOW(); // YELLOW
+  SetColor("BLACK");
+  SetColor("BLACK");
+  SetColor("YELLOW");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -612,7 +612,7 @@ void _and_RETURN() // &RETURN
   UNK_0x3f3b("CLOSING");
   UNK_0xf36c(); // UNK_0xf36c
   _dot_AIRLOCK(); // .AIRLOCK
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @

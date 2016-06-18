@@ -51,7 +51,7 @@ unsigned char UNK_0xf22f[2] = {0xe0, 0x01}; // UNK_0xf22f
 
 void UNK_0xf16e() // UNK_0xf16e
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -62,7 +62,7 @@ void UNK_0xf16e() // UNK_0xf16e
 
 void UNK_0xf176() // UNK_0xf176
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
 }
 
@@ -77,7 +77,7 @@ void UNK_0xf17e() // UNK_0xf17e
   Push(0x0053);
   Push(0x007e);
   Push(0x009c);
-  GREY1(); // GREY1
+  SetColor("GREY1");
   POLY_dash_WI(); // POLY-WI
   CTINIT(); // CTINIT
   UNK_0xf176(); // UNK_0xf176
@@ -93,13 +93,13 @@ void UNK_0xf17e() // UNK_0xf17e
   Push(0x005f);
   Push(0x008e);
   Push(0x0090);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   Push(0x00c1);
   Push(0x0093);
   Push(0x008e);
   Push(0x0098);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -180,7 +180,7 @@ void UNK_0xf233() // UNK_0xf233
   Push(0x0083);
   POS_dot_(); // POS.
   Push(cc__7); // 7
-  GREY1(); // GREY1
+  SetColor("GREY1");
   POLY_dash_ER(); // POLY-ER
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
@@ -238,7 +238,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
   Push(0x0083);
   POS_dot_(); // POS.
   Push(cc__7); // 7
-  GREY1(); // GREY1
+  SetColor("GREY1");
   POLY_dash_ER(); // POLY-ER
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
@@ -489,7 +489,7 @@ void GETSITE() // GETSITE
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  GREY1(); // GREY1
+  SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   UNK_0xf2a7(); // UNK_0xf2a7
   UNK_0xf233(); // UNK_0xf233

@@ -80,7 +80,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
 }
@@ -94,7 +94,7 @@ void UNK_0xe702() // UNK_0xe702
 {
   UNK_0xe6c6(); // UNK_0xe6c6
   UNK_0xe6e0(); // UNK_0xe6e0
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -113,9 +113,9 @@ void UNK_0xe702() // UNK_0xe702
 
 void UNK_0xe794() // UNK_0xe794
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
 }
 
@@ -127,9 +127,9 @@ void UNK_0xe794() // UNK_0xe794
 
 void UNK_0xe7ac() // UNK_0xe7ac
 {
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
 }
 
@@ -453,9 +453,9 @@ void UNK_0xed14() // UNK_0xed14
 
 void UNK_0xed34() // UNK_0xed34
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -495,7 +495,7 @@ void UNK_0xed4c() // UNK_0xed4c
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed34(); // UNK_0xed34
   Push(0); // 0
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -541,7 +541,7 @@ void UNK_0xeda8() // UNK_0xeda8
 {
   UNK_0xe7b8(); // UNK_0xe7b8
   UNK_0xed14(); // UNK_0xed14
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -571,7 +571,7 @@ void UNK_0xeda8() // UNK_0xeda8
   goto label2;
 
   label3:
-  _0_dot_(); // 0.
+  Push2Words("0.");
 
   label2:
   INEXT(); // INEXT
@@ -710,7 +710,7 @@ void APPROACH() // APPROACH
   goto label2;
 
   label1:
-  UNK_0xf417(); // UNK_0xf417
+  LoadData("UNK_0xf417"); // from 'PLANET      '
   Push(Read16(Pop())); // @
 
   label2:
@@ -733,7 +733,7 @@ void APPROACH() // APPROACH
   Push(0xc3a7);
   MODULE(); // MODULE
   _gt_DISPLA(); // >DISPLA
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   DCLIPSE(); // DCLIPSE
   Push(pp_CONTEXT); // CONTEXT

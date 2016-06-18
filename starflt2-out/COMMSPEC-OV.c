@@ -76,7 +76,7 @@ void UNK_0xe580() // UNK_0xe580
 
 void UNK_0xe58a() // UNK_0xe58a
 {
-  _star_PLIST(); // *PLIST
+  Push2Words("*PLIST");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -139,7 +139,7 @@ void UNK_0xe59e() // UNK_0xe59e
 void UNK_0xe5e2() // UNK_0xe5e2
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -201,7 +201,7 @@ void UNK_0xe658() // UNK_0xe658
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label1;
-  BLUE(); // BLUE
+  SetColor("BLUE");
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
@@ -225,7 +225,7 @@ void UNK_0xe658() // UNK_0xe658
   Pop(); // DROP
 
   label4:
-  BLACK(); // BLACK
+  SetColor("BLACK");
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
@@ -326,7 +326,7 @@ void UNK_0xe935() // UNK_0xe935
   _099(); // 099
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xe62a(); // UNK_0xe62a
+  Func8("UNK_0xe62a");
   C_at_(); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
@@ -423,7 +423,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   Push(pp__ro_ENCOUN); // (ENCOUN
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
-  UNK_0xe639(); // UNK_0xe639
+  Func8("UNK_0xe639");
   C_ex_(); // C!
   IOPEN(); // IOPEN
   Push(0x0019);
@@ -466,9 +466,9 @@ void GORZEK_gt_UHL() // GORZEK>UHL
 void UNK_0xee17() // UNK_0xee17
 {
   Push(cc_TRUE); // TRUE
-  _star_ASSIGN(); // *ASSIGN
+  Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  INST_dash_SI(); // INST-SI
+  Func8("INST-SI");
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6
@@ -485,7 +485,7 @@ void UNK_0xee17() // UNK_0xee17
   _at__gt_C_plus_S(); // @>C+S
   Push(cc__6); // 6
   _eq_SPECIE(); // =SPECIE
-  UNK_0xea9c(); // UNK_0xea9c
+  Func8("UNK_0xea9c");
   C_at_(); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -521,7 +521,7 @@ void _n__gt_PRO() // #>PRO
   UNK_0xee17(); // UNK_0xee17
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _n__gt_PROTEST(); // #>PROTEST
+  Func10("#>PROTEST");
   return;
 
   label1:
@@ -604,7 +604,7 @@ void _ro_XCOMM_rc_() // (XCOMM)
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
-  SA_dash_CASE(); // SA-CASE
+  Func10("SA-CASE");
   UNK_0xf4ad(); // UNK_0xf4ad
   UNK_0xf51d(); // UNK_0xf51d
 }

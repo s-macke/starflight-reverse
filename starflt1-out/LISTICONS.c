@@ -31,7 +31,7 @@
 
 void UNK_0xf2a6() // UNK_0xf2a6
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
@@ -98,7 +98,7 @@ void UNK_0xf34f() // UNK_0xf34f
   Push(0x0037);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
@@ -175,7 +175,7 @@ void UNK_0xf3f2() // UNK_0xf3f2
   Push(0x001b);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY(); // KEY
@@ -216,7 +216,7 @@ void UNK_0xf42c() // UNK_0xf42c
   Push(0x000c);
   Push(pp_XBLT); // XBLT
   _st__plus__ex__gt_(); // <+!>
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
   Push(pp_YBLT); // YBLT
@@ -242,7 +242,7 @@ void UNK_0xf42c() // UNK_0xf42c
 
 void UNK_0xf48a() // UNK_0xf48a
 {
-  GREY1(); // GREY1
+  SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   SFILL(); // SFILL
   UNK_0xf34f(); // UNK_0xf34f

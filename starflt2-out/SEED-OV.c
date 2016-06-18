@@ -309,7 +309,7 @@ void UNK_0xed34() // UNK_0xed34
 void UNK_0xed46() // UNK_0xed46
 {
   UNK_0xed24(); // UNK_0xed24
-  UNK_0xecb1(); // UNK_0xecb1
+  LoadData("UNK_0xecb1"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
 }
@@ -371,9 +371,9 @@ void UNK_0xed8e() // UNK_0xed8e
 
 void UNK_0xedae() // UNK_0xedae
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
 }
 
@@ -384,9 +384,9 @@ void UNK_0xedae() // UNK_0xedae
 
 void UNK_0xedba() // UNK_0xedba
 {
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
 }
 
@@ -556,7 +556,7 @@ void UNK_0xeec0() // UNK_0xeec0
 void UNK_0xeeee() // UNK_0xeeee
 {
   UNK_0xed2c(); // UNK_0xed2c
-  UNK_0xec8a(); // UNK_0xec8a
+  LoadData("UNK_0xec8a"); // from 'PLANET      '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   Push(0x0059);
@@ -587,30 +587,30 @@ void UNK_0xef0a() // UNK_0xef0a
 void UNK_0xef14() // UNK_0xef14
 {
   UNK_0xedba(); // UNK_0xedba
-  UNK_0xecb9(); // UNK_0xecb9
+  LoadData("UNK_0xecb9"); // from 'CREATURE    '
   C_at_(); // C@
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   Push(1); // 1
-  UNK_0xecdd(); // UNK_0xecdd
+  Func8("UNK_0xecdd");
   C_ex_(); // C!
   Push(0); // 0
-  UNK_0xecd8(); // UNK_0xecd8
+  Func8("UNK_0xecd8");
   C_ex_(); // C!
   Push(1); // 1
-  UNK_0xecd3(); // UNK_0xecd3
+  Func8("UNK_0xecd3");
   C_ex_(); // C!
-  UNK_0xecc1(); // UNK_0xecc1
+  LoadData("UNK_0xecc1"); // from 'CREATURE    '
   C_at_(); // C@
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xef0a(); // UNK_0xef0a
-  UNK_0xecc9(); // UNK_0xecc9
+  Func8("UNK_0xecc9");
   C_ex_(); // C!
   UNK_0xef0a(); // UNK_0xef0a
-  UNK_0xecce(); // UNK_0xecce
+  Func8("UNK_0xecce");
   C_ex_(); // C!
 }
 
@@ -711,7 +711,7 @@ void UNK_0xef94() // UNK_0xef94
 void UNK_0xefd4() // UNK_0xefd4
 {
   UNK_0xed2c(); // UNK_0xed2c
-  UNK_0xec8a(); // UNK_0xec8a
+  LoadData("UNK_0xec8a"); // from 'PLANET      '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) return;
@@ -725,7 +725,7 @@ void UNK_0xefd4() // UNK_0xefd4
 
 void UNK_0xefe6() // UNK_0xefe6
 {
-  UNK_0xec62(); // UNK_0xec62
+  LoadData("UNK_0xec62"); // from 'PLANET      '
   C_at_(); // C@
   Push(cc__6); // 6
   _eq_(); // =
@@ -785,7 +785,7 @@ void UNK_0xf02a() // UNK_0xf02a
   Push(Read16(Pop())); // @
 
   label2:
-  INST_dash_DA(); // INST-DA
+  Func8("INST-DA");
   _ex_(); // !
 }
 
@@ -804,7 +804,7 @@ void UNK_0xf044() // UNK_0xf044
   _st_(); // <
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  UNK_0xec62(); // UNK_0xec62
+  LoadData("UNK_0xec62"); // from 'PLANET      '
   C_at_(); // C@
   return;
 
@@ -814,7 +814,7 @@ void UNK_0xf044() // UNK_0xf044
   _st_(); // <
   if (Pop() == 0) goto label2;
   Pop(); // DROP
-  UNK_0xec6a(); // UNK_0xec6a
+  LoadData("UNK_0xec6a"); // from 'PLANET      '
   C_at_(); // C@
   return;
 
@@ -822,7 +822,7 @@ void UNK_0xf044() // UNK_0xf044
   Push(0x005a);
   _st_(); // <
   if (Pop() == 0) goto label3;
-  UNK_0xec72(); // UNK_0xec72
+  LoadData("UNK_0xec72"); // from 'PLANET      '
   C_at_(); // C@
   return;
 
@@ -847,7 +847,7 @@ void UNK_0xf090() // UNK_0xf090
   Push(0x000a);
   Push(0x0064);
   RRND(); // RRND
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
 }
 
@@ -886,7 +886,7 @@ void UNK_0xf0da() // UNK_0xf0da
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xec4a(); // UNK_0xec4a
+  LoadData("UNK_0xec4a"); // from 'PLANET      '
   C_at_(); // C@
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1196,7 +1196,7 @@ void UNK_0xf2a2() // UNK_0xf2a2
 {
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
-  _star_GD(); // *GD
+  Push2Words("*GD");
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   Push(pp_PAST); // PAST
@@ -1271,7 +1271,7 @@ void UNK_0xf2fa() // UNK_0xf2fa
 
 void UNK_0xf300() // UNK_0xf300
 {
-  _star_ARTH(); // *ARTH
+  Push2Words("*ARTH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x001b);
@@ -1415,7 +1415,7 @@ void UNK_0xf3c0() // UNK_0xf3c0
   ON(); // ON
   Push(cc_UNK_0xec36); // UNK_0xec36
   UNK_0xed24(); // UNK_0xed24
-  UNK_0xec92(); // UNK_0xec92
+  LoadData("UNK_0xec92"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   ICREATE(); // ICREATE
@@ -1444,7 +1444,7 @@ void UNK_0xf3d4() // UNK_0xf3d4
 
   label1:
   Pop(); Pop();// 2DROP
-  _0_dot_(); // 0.
+  Push2Words("0.");
 }
 
 
@@ -1513,7 +1513,7 @@ void UNK_0xf43a() // UNK_0xf43a
   R_gt_(); // R>
   Push(Pop() & Pop()); // AND
   UNK_0xed24(); // UNK_0xed24
-  UNK_0xeca9(); // UNK_0xeca9
+  LoadData("UNK_0xeca9"); // from 'TRADERS     '
   C_at_(); // C@
   _at_INST_dash_S(); // @INST-S
   _gt_R(); // >R
@@ -1561,14 +1561,14 @@ void UNK_0xf480() // UNK_0xf480
 void UNK_0xf48e() // UNK_0xf48e
 {
   Push(1); // 1
-  UNK_0xec9f(); // UNK_0xec9f
+  Func8("UNK_0xec9f");
   C_ex_(); // C!
-  UNK_0xec92(); // UNK_0xec92
+  LoadData("UNK_0xec92"); // from 'TRADERS     '
   C_at_(); // C@
   Push(Pop()-1); // 1-
   Push(1); // 1
   MAX(); // MAX
-  UNK_0xec9a(); // UNK_0xec9a
+  Func8("UNK_0xec9a");
   C_ex_(); // C!
   Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
@@ -1580,7 +1580,7 @@ void UNK_0xf48e() // UNK_0xf48e
   CI(); // CI
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  UNK_0xeca4(); // UNK_0xeca4
+  Func8("UNK_0xeca4");
   _1_dot_5_ex_(); // 1.5!
 }
 

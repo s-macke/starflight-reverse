@@ -158,10 +158,10 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   _ex_(); // !
   SET_dash_CUR(); // SET-CUR
   TIME(); // TIME
@@ -176,7 +176,7 @@ void _gt_FLT() // >FLT
   Push(pp_TRAK_dash_HR); // TRAK-HR
   _ex_(); // !
   CFIGARR(); // CFIGARR
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
@@ -195,10 +195,10 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   _ex_(); // !
   SET_dash_CUR(); // SET-CUR
 }

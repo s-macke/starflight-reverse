@@ -287,27 +287,27 @@ void UNK_0xec92() // UNK_0xec92
 {
   UNK_0xec7a(); // UNK_0xec7a
   UNK_0xec6c(); // UNK_0xec6c
-  UNK_0xec36(); // UNK_0xec36
+  LoadData("UNK_0xec36"); // from 'TRADERS     '
   C_at_(); // C@
   _gt_(); // >
   if (Pop() == 0) goto label1;
-  UNK_0xebc6(); // UNK_0xebc6
+  LoadData("UNK_0xebc6"); // from 'TRADERS     '
   C_at_(); // C@
   Push(0x0032);
   Push(Pop() * Pop()); // *
   DUP(); // DUP
   UNK_0xec82(); // UNK_0xec82
-  UNK_0xec46(); // UNK_0xec46
+  LoadData("UNK_0xec46"); // from 'TRADERS     '
   C_ex_(); // C!
   DUP(); // DUP
   UNK_0xec82(); // UNK_0xec82
-  UNK_0xec4e(); // UNK_0xec4e
+  LoadData("UNK_0xec4e"); // from 'TRADERS     '
   C_ex_(); // C!
   UNK_0xec82(); // UNK_0xec82
-  UNK_0xec56(); // UNK_0xec56
+  LoadData("UNK_0xec56"); // from 'TRADERS     '
   C_ex_(); // C!
   UNK_0xec6c(); // UNK_0xec6c
-  UNK_0xec36(); // UNK_0xec36
+  LoadData("UNK_0xec36"); // from 'TRADERS     '
   C_ex_(); // C!
 
   label1:
@@ -324,7 +324,7 @@ void UNK_0xeccc() // UNK_0xeccc
   UNK_0xec7a(); // UNK_0xec7a
   _gt_R(); // >R
   R_at_(); // R@
-  UNK_0xebe6(); // UNK_0xebe6
+  LoadData("UNK_0xebe6"); // from 'TRADERS     '
   C_at_(); // C@
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -333,7 +333,7 @@ void UNK_0xeccc() // UNK_0xeccc
 
   label1:
   R_at_(); // R@
-  UNK_0xebf6(); // UNK_0xebf6
+  LoadData("UNK_0xebf6"); // from 'TRADERS     '
   C_at_(); // C@
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -399,7 +399,7 @@ void _at_TAMT() // @TAMT
 void UNK_0xed70() // UNK_0xed70
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -427,7 +427,7 @@ void UNK_0xede4() // UNK_0xede4
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  INST_dash_VA(); // INST-VA
+  Func8("INST-VA");
   _099(); // 099
   ICLOSE(); // ICLOSE
 }
@@ -461,7 +461,7 @@ void UNK_0xee06() // UNK_0xee06
   Push(0xed68);
   IFLD_ex_(); // IFLD!
   Push(0); // 0
-  UNK_0xed68(); // UNK_0xed68
+  LoadData("UNK_0xed68"); // from 'STIS        '
   C_ex_(); // C!
 }
 
@@ -528,7 +528,7 @@ void UNK_0xee51() // UNK_0xee51
 void UNK_0xee57() // UNK_0xee57
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebbe(); // UNK_0xebbe
+  LoadData("UNK_0xebbe"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xee23); // UNK_0xee23
@@ -544,7 +544,7 @@ void UNK_0xee57() // UNK_0xee57
 void UNK_0xee69() // UNK_0xee69
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebc6(); // UNK_0xebc6
+  LoadData("UNK_0xebc6"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xee1c); // UNK_0xee1c
@@ -573,10 +573,10 @@ void UNK_0xee7b() // UNK_0xee7b
 
 void UNK_0xee89() // UNK_0xee89
 {
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -590,7 +590,7 @@ void UNK_0xee99() // UNK_0xee99
 {
   UNK_0xee51(); // UNK_0xee51
   UNK_0xee31(); // UNK_0xee31
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   UNK_0xee57(); // UNK_0xee57
   Push(1); // 1
 
@@ -627,7 +627,7 @@ void UNK_0xeec1() // UNK_0xeec1
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   UNK_0xede4(); // UNK_0xede4
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   IINSERT(); // IINSERT
   UNK_0xee89(); // UNK_0xee89
 }
@@ -640,13 +640,13 @@ void UNK_0xeec1() // UNK_0xeec1
 void UNK_0xeed9() // UNK_0xeed9
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebe6(); // UNK_0xebe6
+  LoadData("UNK_0xebe6"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xeec1(); // UNK_0xeec1
-  UNK_0xebf6(); // UNK_0xebf6
+  LoadData("UNK_0xebf6"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xeec1(); // UNK_0xeec1
-  UNK_0xebfe(); // UNK_0xebfe
+  LoadData("UNK_0xebfe"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xeec1(); // UNK_0xeec1
   ICLOSE(); // ICLOSE
@@ -659,10 +659,10 @@ void UNK_0xeed9() // UNK_0xeed9
 
 void UNK_0xeef3() // UNK_0xeef3
 {
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -675,7 +675,7 @@ void UNK_0xeef3() // UNK_0xeef3
 void UNK_0xef03() // UNK_0xef03
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebc6(); // UNK_0xebc6
+  LoadData("UNK_0xebc6"); // from 'TRADERS     '
   C_at_(); // C@
   Push(pp_UNK_0xee2a); // UNK_0xee2a
   Push(Pop() + Pop()); // +
@@ -703,7 +703,7 @@ void UNK_0xef03() // UNK_0xef03
   ICREATE(); // ICREATE
   UNK_0xede4(); // UNK_0xede4
   _2DUP(); // 2DUP
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   IINSERT(); // IINSERT
   UNK_0xeef3(); // UNK_0xeef3
   UNK_0xee06(); // UNK_0xee06
@@ -729,7 +729,7 @@ void UNK_0xef4f() // UNK_0xef4f
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   UNK_0xede4(); // UNK_0xede4
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   IINSERT(); // IINSERT
   UNK_0xeef3(); // UNK_0xeef3
 }
@@ -742,10 +742,10 @@ void UNK_0xef4f() // UNK_0xef4f
 void UNK_0xef67() // UNK_0xef67
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xec06(); // UNK_0xec06
+  LoadData("UNK_0xec06"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xef4f(); // UNK_0xef4f
-  UNK_0xec0e(); // UNK_0xec0e
+  LoadData("UNK_0xec0e"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xef4f(); // UNK_0xef4f
   ICLOSE(); // ICLOSE
@@ -764,7 +764,7 @@ void UNK_0xef7b() // UNK_0xef7b
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   UNK_0xede4(); // UNK_0xede4
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   IINSERT(); // IINSERT
   UNK_0xeef3(); // UNK_0xeef3
 }
@@ -777,13 +777,13 @@ void UNK_0xef7b() // UNK_0xef7b
 void UNK_0xef93() // UNK_0xef93
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xec1e(); // UNK_0xec1e
+  LoadData("UNK_0xec1e"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xef7b(); // UNK_0xef7b
-  UNK_0xec26(); // UNK_0xec26
+  LoadData("UNK_0xec26"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xef7b(); // UNK_0xef7b
-  UNK_0xec2e(); // UNK_0xec2e
+  LoadData("UNK_0xec2e"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xef7b(); // UNK_0xef7b
   ICLOSE(); // ICLOSE
@@ -797,7 +797,7 @@ void UNK_0xef93() // UNK_0xef93
 void UNK_0xefad() // UNK_0xefad
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebc6(); // UNK_0xebc6
+  LoadData("UNK_0xebc6"); // from 'TRADERS     '
   C_at_(); // C@
   Push(pp_UNK_0xee2a); // UNK_0xee2a
   Push(Pop() + Pop()); // +
@@ -834,7 +834,7 @@ void UNK_0xefad() // UNK_0xefad
   Push(i); // I
   ICREATE(); // ICREATE
   UNK_0xede4(); // UNK_0xede4
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   IINSERT(); // IINSERT
   UNK_0xeef3(); // UNK_0xeef3
 
@@ -853,9 +853,9 @@ void UNK_0xefad() // UNK_0xefad
 
 void UNK_0xf009() // UNK_0xf009
 {
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _099(); // 099
   UNK_0xef03(); // UNK_0xef03
   UNK_0xef67(); // UNK_0xef67
@@ -871,9 +871,9 @@ void UNK_0xf009() // UNK_0xf009
 
 void UNK_0xf01f() // UNK_0xf01f
 {
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _099(); // 099
   UNK_0xee99(); // UNK_0xee99
   UNK_0xeed9(); // UNK_0xeed9
@@ -904,18 +904,18 @@ void UNK_0xf039() // UNK_0xf039
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   Push(0x000a);
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   Push(0x0003);
-  UNK_0xed58(); // UNK_0xed58
+  LoadData("UNK_0xed58"); // from 'ELEMENT     '
   C_ex_(); // C!
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
-  ASKING(); // ASKING
+  Func8("ASKING");
   _ex_(); // !
   CI(); // CI
   ICLOSE(); // ICLOSE
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   IINSERT(); // IINSERT
 }
 
@@ -927,7 +927,7 @@ void UNK_0xf039() // UNK_0xf039
 
 void UNK_0xf18f() // UNK_0xf18f
 {
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf163);
@@ -943,7 +943,7 @@ void UNK_0xf18f() // UNK_0xf18f
 
 void UNK_0xf1a3() // UNK_0xf1a3
 {
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf177);
@@ -981,11 +981,11 @@ void UNK_0xf233() // UNK_0xf233
 
 void UNK_0xf24f() // UNK_0xf24f
 {
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   UNK_0xf233(); // UNK_0xf233
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   UNK_0xf233(); // UNK_0xf233
-  BUY_dash_LIS(); // BUY-LIS
+  Push2Words("BUY-LIS");
   UNK_0xf233(); // UNK_0xf233
 }
 
@@ -997,17 +997,17 @@ void UNK_0xf24f() // UNK_0xf24f
 void UNK_0xf25f() // UNK_0xf25f
 {
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebd6(); // UNK_0xebd6
+  LoadData("UNK_0xebd6"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf1d1);
   ALL(); // ALL
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf1d1);
@@ -1024,7 +1024,7 @@ void UNK_0xf25f() // UNK_0xf25f
 
 void UNK_0xf28d() // UNK_0xf28d
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x5b65); Pust(0x0002);
   UNK_0xed70(); // UNK_0xed70
@@ -1078,7 +1078,7 @@ void UNK_0xf2bb() // UNK_0xf2bb
 void UNK_0xf30d() // UNK_0xf30d
 {
   IEXTRAC(); // IEXTRAC
-  BUY_dash_LIS(); // BUY-LIS
+  Push2Words("BUY-LIS");
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
@@ -1091,7 +1091,7 @@ void UNK_0xf30d() // UNK_0xf30d
 
 void UNK_0xf31b() // UNK_0xf31b
 {
-  _star_4SALE(); // *4SALE
+  Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
 
   label2:
@@ -1173,24 +1173,24 @@ void UNK_0xf3e8() // UNK_0xf3e8
 {
   Push(0xb6ec);
   MODULE(); // MODULE
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xeb9a(); // UNK_0xeb9a
+  Func8("UNK_0xeb9a");
   Push(Read16(Pop())); // @
-  UNK_0xeb9f(); // UNK_0xeb9f
+  Func8("UNK_0xeb9f");
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   DUP(); // DUP
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   SWAP(); // SWAP
   _dash_(); // -
-  UNK_0xeba4(); // UNK_0xeba4
+  Func8("UNK_0xeba4");
   _ex_(); // !
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
@@ -1222,7 +1222,7 @@ void UNK_0xf41e() // UNK_0xf41e
   goto label3;
 
   label2:
-  UNK_0xeba9(); // UNK_0xeba9
+  Func8("UNK_0xeba9");
   C_at_(); // C@
 
   label3:
@@ -1233,7 +1233,7 @@ void UNK_0xf41e() // UNK_0xf41e
   MODULE(); // MODULE
   Push(pp_A_dash_POSTU); // A-POSTU
   C_at_(); // C@
-  APOST_gt_PO(); // APOST>PO
+  Func10("APOST>PO");
   goto label4;
 
   label1:
@@ -1241,7 +1241,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
   label4:
   DUP(); // DUP
-  UNK_0xebae(); // UNK_0xebae
+  LoadData("UNK_0xebae"); // from 'TRADERS     '
   C_ex_(); // C!
   Push(cc__4); // 4
   _eq_(); // =
@@ -1253,7 +1253,7 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(cc__4); // 4
 
   label6:
-  UNK_0xec3e(); // UNK_0xec3e
+  LoadData("UNK_0xec3e"); // from 'TRADERS     '
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -1266,7 +1266,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void SET_dash_CARG() // SET-CARG
 {
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf3da);
@@ -1292,7 +1292,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xebb6(); // UNK_0xebb6
+  LoadData("UNK_0xebb6"); // from 'PLANET      '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   _gt_R(); // >R
@@ -1337,7 +1337,7 @@ void BLD_dash_LIST() // BLD-LIST
   if (Pop() == 0) return;
   UNK_0xf28d(); // UNK_0xf28d
   UNK_0xec7a(); // UNK_0xec7a
-  UNK_0xebd6(); // UNK_0xebd6
+  LoadData("UNK_0xebd6"); // from 'TRADERS     '
   C_at_(); // C@
   _gt_FLAG(); // >FLAG
   ICLOSE(); // ICLOSE

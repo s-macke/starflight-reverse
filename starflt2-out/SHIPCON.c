@@ -42,7 +42,7 @@
 void UNK_0xf37b() // UNK_0xf37b
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0xf376(); // UNK_0xf376
+  Func8("UNK_0xf376");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -125,11 +125,11 @@ void UNK_0xf3f6() // UNK_0xf3f6
   D0_eq_(); // D0=
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
 
   label1:
   _gt_C_plus_S(); // >C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
   Push(0x0118);
@@ -161,7 +161,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  ELEM_dash_VA(); // ELEM-VA
+  LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -304,7 +304,7 @@ void TOW_dash_US() // TOW-US
   TYPE(); // TYPE
 
   label4:
-  BLACK(); // BLACK
+  SetColor("BLACK");
   Push(1); // 1
   _dot_ON(); // .ON
 }

@@ -62,7 +62,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf1ab(); // UNK_0xf1ab
+  LoadData("UNK_0xf1ab"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   DUP(); // DUP
   Push(0x0320);
@@ -88,7 +88,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
 
 void UNK_0xf1e7() // UNK_0xf1e7
 {
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -99,7 +99,7 @@ void UNK_0xf1e7() // UNK_0xf1e7
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf1b3); // UNK_0xf1b3
@@ -113,7 +113,7 @@ void UNK_0xf1e7() // UNK_0xf1e7
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
 
   label2:
@@ -135,9 +135,9 @@ void UNK_0xf1e7() // UNK_0xf1e7
 
 void UNK_0xf239() // UNK_0xf239
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
   Push(0x4fa9);
   _ex_(); // !
   CTERASE(); // CTERASE
@@ -196,7 +196,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
 {
   CTINIT(); // CTINIT
   UNK_0xf239(); // UNK_0xf239
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -210,7 +210,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
 
   UNK_0x3f09(" STARSHIP ISS ");
   _dot_TTY(); // .TTY
-  UNK_0xf1a6(); // UNK_0xf1a6
+  Func8("UNK_0xf1a6");
   COUNT(); // COUNT
   TYPE(); // TYPE
 
@@ -218,7 +218,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _dot_TTY(); // .TTY
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ask_(); // ?
   ICLOSE(); // ICLOSE
 
@@ -226,14 +226,14 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _dot_TTY(); // .TTY
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCA); // *MAPSCA
   _slash_(); // /

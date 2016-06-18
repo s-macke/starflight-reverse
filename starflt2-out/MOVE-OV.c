@@ -96,7 +96,7 @@ void UNK_0xea76() // UNK_0xea76
 {
   _gt_TVCT(); // >TVCT
   CTERASE(); // CTERASE
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0); // 0
   Push(0); // 0
@@ -116,9 +116,9 @@ void UNK_0xea76() // UNK_0xea76
 
 void UNK_0xeadb() // UNK_0xeadb
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
 }
 
@@ -130,9 +130,9 @@ void UNK_0xeadb() // UNK_0xeadb
 
 void UNK_0xeaf1() // UNK_0xeaf1
 {
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
 }
 
@@ -499,7 +499,7 @@ void UNK_0xed2a() // UNK_0xed2a
 void UNK_0xed8a() // UNK_0xed8a
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -664,9 +664,9 @@ void UNK_0xef79() // UNK_0xef79
 
 void UNK_0xef99() // UNK_0xef99
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -706,7 +706,7 @@ void UNK_0xefb1() // UNK_0xefb1
   UNK_0xefa7(); // UNK_0xefa7
   UNK_0xef99(); // UNK_0xef99
   Push(0); // 0
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -752,7 +752,7 @@ void UNK_0xf00d() // UNK_0xf00d
 {
   UNK_0xeafd(); // UNK_0xeafd
   UNK_0xef79(); // UNK_0xef79
-  NULL(); // NULL
+  Push2Words("NULL");
   UNK_0xea3e(); // UNK_0xea3e
   IOPEN(); // IOPEN
 
@@ -780,7 +780,7 @@ void UNK_0xf00d() // UNK_0xf00d
   goto label2;
 
   label3:
-  NULL(); // NULL
+  Push2Words("NULL");
 
   label2:
   INEXT(); // INEXT
@@ -913,7 +913,7 @@ void UNK_0xf1d9() // UNK_0xf1d9
 
 void UNK_0xf201() // UNK_0xf201
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   UNK_0xeb09(); // UNK_0xeb09
   _dot_WHERE(); // .WHERE
 }
@@ -1001,7 +1001,7 @@ void UNK_0xf30d() // UNK_0xf30d
   _dot_TTY(); // .TTY
   UNK_0xf25f(); // UNK_0xf25f
   UNK_0xf201(); // UNK_0xf201
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xeadb(); // UNK_0xeadb
   ICLOSE(); // ICLOSE
@@ -1061,7 +1061,7 @@ void TELE() // TELE
   _dot_TTY(); // .TTY
 
   label2:
-  NULL(); // NULL
+  Push2Words("NULL");
 }
 
 

@@ -162,15 +162,15 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("RAISE SHIELD");
-  UNK_0xf21a(); // UNK_0xf21a
+  LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_at_(); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
@@ -203,13 +203,13 @@ void UNK_0xf359() // UNK_0xf359
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("DROP SHIELD ");
-  UNK_0xf21a(); // UNK_0xf21a
+  LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_at_(); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
@@ -233,15 +233,15 @@ void _gt_DISARM() // >DISARM
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("ARM WEAPON");
-  UNK_0xf222(); // UNK_0xf222
+  LoadData("UNK_0xf222"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_at_(); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
   Push(Pop() | Pop()); // OR
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   C_ex_(); // C!
   UNK_0xf272(); // UNK_0xf272
 
@@ -256,10 +256,10 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3fb() // UNK_0xf3fb
 {
-  UNK_0xf210(); // UNK_0xf210
+  Func8("UNK_0xf210");
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  UNK_0xf20b(); // UNK_0xf20b
+  Func8("UNK_0xf20b");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   _2DUP(); // 2DUP
@@ -302,16 +302,16 @@ void UNK_0xf3fb() // UNK_0xf3fb
   label7:
   Push(Pop() + Pop()); // +
   if (Pop() == 0) goto label8;
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   _ex_(); // !
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("DISARM    ");
-  UNK_0xf222(); // UNK_0xf222
+  LoadData("UNK_0xf222"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
 
   label8:
@@ -333,9 +333,9 @@ void UNK_0xf3fb() // UNK_0xf3fb
 void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 {
   CTINIT(); // CTINIT
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -360,9 +360,9 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
 {
   CTINIT(); // CTINIT
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xf215(); // UNK_0xf215
+  Func8("UNK_0xf215");
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND

@@ -128,7 +128,7 @@ void UNK_0xebd5() // UNK_0xebd5
 
 void UNK_0xebdf() // UNK_0xebdf
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
 }
 
@@ -316,7 +316,7 @@ void UNK_0xecf5() // UNK_0xecf5
   Push(Read16(Pop())); // @
   Push(pp_SEED); // SEED
   _ex_(); // !
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
 
   UNK_0x3f09("GAME OVER - NO FUEL");
@@ -629,7 +629,7 @@ void UNK_0xef25() // UNK_0xef25
   _2_at_(); // 2@
   UNK_0xef1d(); // UNK_0xef1d
   D_dash_(); // D-
-  NULL(); // NULL
+  Push2Words("NULL");
   DMAX(); // DMAX
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
@@ -639,9 +639,9 @@ void UNK_0xef25() // UNK_0xef25
   UNK_0xef15(); // UNK_0xef15
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xef0d(); // UNK_0xef0d
-  UNK_0xebc6(); // UNK_0xebc6
+  Func8("UNK_0xebc6");
   _plus__ex_(); // +!
-  _star_STARSH(); // *STARSH
+  Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -653,13 +653,13 @@ void UNK_0xef25() // UNK_0xef25
   Push(cc__6); // 6
   IFIND(); // IFIND
   Pop(); // DROP
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   UNK_0xef0d(); // UNK_0xef0d
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   Push(cc__4); // 4
   _star_CLOSE(); // *CLOSE
@@ -702,11 +702,11 @@ void UNK_0xefd4() // UNK_0xefd4
   UNK_0x3f09("TRAVELLED BACK IN TIME.");
   _dot_TTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
-  UNK_0xebcb(); // UNK_0xebcb
+  Func8("UNK_0xebcb");
   UNK_0xebd5(); // UNK_0xebd5
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  UNK_0xebd0(); // UNK_0xebd0
+  Func8("UNK_0xebd0");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -827,7 +827,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   Push(pp_PAST); // PAST
   _ex_(); // !
   INIT_dash_IC(); // INIT-IC
-  _star_SECS(); // *SECS
+  Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   _plus_ICONBO(); // +ICONBO
@@ -961,7 +961,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
 
   UNK_0x3f09(" ");
@@ -1045,7 +1045,7 @@ void UNK_0xf297() // UNK_0xf297
 
 void UNK_0xf2ad() // UNK_0xf2ad
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 
   UNK_0x3f09("IF WE APPLY FULL REVERSE THRUST WE MAY");
@@ -1068,7 +1068,7 @@ void UNK_0xf2ad() // UNK_0xf2ad
 
 void UNK_0xf338() // UNK_0xf338
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 
   UNK_0x3f09("COMMANDER, THE SHIP'S HULL IS UNDER");
@@ -1172,14 +1172,14 @@ void UNK_0xf441() // UNK_0xf441
 
 void UNK_0xf45f() // UNK_0xf45f
 {
-  _star_EYE(); // *EYE
+  Push2Words("*EYE");
   _gt_C_plus_S(); // >C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   UNK_0xf431(); // UNK_0xf431
@@ -1191,9 +1191,9 @@ void UNK_0xf45f() // UNK_0xf45f
   _ex_(); // !
   UNK_0xebdf(); // UNK_0xebdf
   _2DUP(); // 2DUP
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I

@@ -881,7 +881,7 @@ void SET_dash_USER() // SET-USER
   Push(cc_DX); // DX
   Push(Pop()+1); // 1+
   C_at_(); // C@
-  _n__gt_MON(); // #>MON
+  Func5("#>MON");
   Push(cc__6); // 6
   UNK_0xef84(); // UNK_0xef84
   SWAP(); // SWAP
@@ -971,7 +971,7 @@ void EDIT() // EDIT
   goto label2;
 
   label1:
-  EDIT_dash_KEYS(); // EDIT-KEYS
+  Func10("EDIT-KEYS");
 
   label2:
   goto label3;
@@ -1000,7 +1000,7 @@ void VIEW() // VIEW
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  VIEW_dash_KEYS(); // VIEW-KEYS
+  Func10("VIEW-KEYS");
 
   label1:
   goto label2;

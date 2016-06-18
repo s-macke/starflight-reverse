@@ -309,7 +309,7 @@ void UNK_0xede1() // UNK_0xede1
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   Push(0); // 0
   Push(0); // 0
@@ -330,7 +330,7 @@ void UNK_0xee29() // UNK_0xee29
   _at_CRS(); // @CRS
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
-  _ro__dot_DOOR_rc_(); // (.DOOR)
+  Func10("(.DOOR)");
   UNK_0xed10(); // UNK_0xed10
   _ex_CRS(); // !CRS
 }
@@ -866,7 +866,7 @@ void UNK_0xf2b3() // UNK_0xf2b3
   Push(pp_UNK_0xebfc); // UNK_0xebfc
   _ex_(); // !
   DISPLAY(); // DISPLAY
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf293(); // UNK_0xf293
   POS_dot_(); // POS.
@@ -892,7 +892,7 @@ void UNK_0xf2b3() // UNK_0xf2b3
 
 void UNK_0xf3a9() // UNK_0xf3a9
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
@@ -936,8 +936,8 @@ void UNK_0xf3a9() // UNK_0xf3a9
   label1:
   Push(pp_UNK_0xf09f); // UNK_0xf09f
   OFF(); // OFF
-  NULL(); // NULL
-  NULL(); // NULL
+  Push2Words("NULL");
+  Push2Words("NULL");
   UNK_0xf2b3(); // UNK_0xf2b3
 }
 
@@ -1002,7 +1002,7 @@ void UNK_0xf488() // UNK_0xf488
   _ex_(); // !
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
-  DO_dash_ROOM(); // DO-ROOM
+  Func10("DO-ROOM");
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1034,8 +1034,8 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  XWALK(); // XWALK
-  YWALK(); // YWALK
+  Func10("XWALK");
+  Func10("YWALK");
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;

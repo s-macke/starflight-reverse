@@ -235,7 +235,7 @@ void FLUX() // FLUX
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   ON(); // ON
   UNK_0xf406(); // UNK_0xf406
-  GREY1(); // GREY1
+  SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   Push(0); // 0
   TONE(); // TONE

@@ -95,10 +95,10 @@ void _dot_LATFRAME() // .LATFRAME
   Push(0x0053);
   Push(0x007e);
   Push(0x009c);
-  GREY1(); // GREY1
+  SetColor("GREY1");
   POLY_dash_WI(); // POLY-WI
   CTINIT(); // CTINIT
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x0066);
   Push(0x008a);
@@ -112,13 +112,13 @@ void _dot_LATFRAME() // .LATFRAME
   Push(0x005f);
   Push(0x008e);
   Push(0x0090);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   Push(0x00c1);
   Push(0x0093);
   Push(0x008e);
   Push(0x0098);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -551,7 +551,7 @@ void _gt_XHAIR() // >XHAIR
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
@@ -800,13 +800,13 @@ void UNK_0xf389() // UNK_0xf389
   Push(0x001b);
   Push(0x001d);
   WITHIN(); // WITHIN
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _2_at_(); // 2@
   D0_eq_(); // D0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _2_at_(); // 2@
   SWAP(); // SWAP
   UNK_0xf239(); // UNK_0xf239
@@ -895,7 +895,7 @@ void GETSITE() // GETSITE
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  GREY1(); // GREY1
+  SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   UNK_0xefa0(); // UNK_0xefa0
   _dot_LON(); // .LON
@@ -919,7 +919,7 @@ void GETSITE() // GETSITE
   Push(pp_XABS); // XABS
   _ex_(); // !
   _gt_XHAIR(); // >XHAIR
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xefa0(); // UNK_0xefa0
   _dot_LON(); // .LON

@@ -251,7 +251,7 @@ void UNK_0xde2c() // UNK_0xde2c
   Push(pp_FONTSEG); // FONTSEG
   Push(Read16(Pop())); // @
   Push(0x008f);
-  FILE_dash__n_R(); // FILE-#R
+  Func6("FILE-#R");
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
@@ -1040,7 +1040,7 @@ void UNK_0xe40f() // UNK_0xe40f
   Push(0x0014);
   Push(0x001e);
   Push(0x0099);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
 }
@@ -1060,7 +1060,7 @@ void UNK_0xe431() // UNK_0xe431
   Push(0x0014);
   Push(cc__5); // 5
   Push(0x009f);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   _ex_COLOR(); // !COLOR
 }
@@ -1086,7 +1086,7 @@ void UNK_0xe451() // UNK_0xe451
 
 void UNK_0xe45f() // UNK_0xe45f
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(cc__5); // 5
   Push(0x009b);
@@ -1300,7 +1300,7 @@ void UNK_0xe67c() // UNK_0xe67c
 void UNK_0xe684() // UNK_0xe684
 {
   DUP(); // DUP
-  _c_TIMEST(); // :TIMEST
+  Func3(":TIMEST");
   _ex_(); // !
 }
 
@@ -1414,7 +1414,7 @@ void UNK_0xe825() // UNK_0xe825
 
 void UNK_0xe84f() // UNK_0xe84f
 {
-  _c_SAVE(); // :SAVE
+  Func3(":SAVE");
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -1793,7 +1793,7 @@ void UNK_0xeaad() // UNK_0xeaad
   do // (DO)
   {
   Push(i); // I
-  VECTORS(); // VECTORS
+  Func1("VECTORS");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -1816,7 +1816,7 @@ void UNK_0xead7() // UNK_0xead7
   do // (DO)
   {
   Push(i); // I
-  VECTORS(); // VECTORS
+  Func1("VECTORS");
   _ex_(); // !
   Push(cc__dash_1); // -1
   int step = Pop();
@@ -2127,7 +2127,7 @@ void UNK_0xed5e() // UNK_0xed5e
 
 void UNK_0xed74() // UNK_0xed74
 {
-  _c_SAVE(); // :SAVE
+  Func3(":SAVE");
   _ex_(); // !
 }
 
@@ -2243,7 +2243,7 @@ void UNK_0xee50() // UNK_0xee50
   do // (DO)
   {
   Push(i); // I
-  HOST(); // HOST
+  Func1("HOST");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -2267,7 +2267,7 @@ void UNK_0xee66() // UNK_0xee66
   do // (DO)
   {
   Push(i); // I
-  HOST(); // HOST
+  Func1("HOST");
   _ex_(); // !
   Push(cc__dash_1); // -1
   int step = Pop();
@@ -2298,7 +2298,7 @@ void UNK_0xee82() // UNK_0xee82
   UNK_0xedf6(); // UNK_0xedf6
   Push(pp_UNK_0xde16); // UNK_0xde16
   Push(Read16(Pop())); // @
-  _c_CKSUM(); // :CKSUM
+  Func3(":CKSUM");
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -2563,7 +2563,7 @@ void UNK_0xf21d() // UNK_0xf21d
   DUP(); // DUP
   Push(pp_OPTIO); // OPTIO
   _ex_(); // !
-  KEY_gt_O(); // KEY>O
+  Func10("KEY>O");
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
@@ -2615,7 +2615,7 @@ void UNK_0xf3d2() // UNK_0xf3d2
 
 void UNK_0xf3e2() // UNK_0xf3e2
 {
-  _c_TIMEST(); // :TIMEST
+  Func3(":TIMEST");
   Push(Read16(Pop())); // @
 }
 
@@ -2632,7 +2632,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   label1:
   UNK_0xe571(); // UNK_0xe571
   UNK_0xf21d(); // UNK_0xf21d
-  GAMEO(); // GAMEO
+  Func10("GAMEO");
   Push(pp_UNK_0xdd2e); // UNK_0xdd2e
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;

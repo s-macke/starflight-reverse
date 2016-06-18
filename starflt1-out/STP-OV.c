@@ -65,9 +65,9 @@ unsigned char UNK_0xf2cd[24] = {0x0c, 0x0f, 0x1d, 0x01, 0x17, 0x06, 0x0b, 0x25, 
 
 void SIC_i_EM() // SIC'EM
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xefd6(); // UNK_0xefd6
+  Func8("UNK_0xefd6");
   C_at_(); // C@
   DUP(); // DUP
   Push(0x0080);
@@ -76,19 +76,19 @@ void SIC_i_EM() // SIC'EM
   _ex_(); // !
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  UNK_0xefd6(); // UNK_0xefd6
+  Func8("UNK_0xefd6");
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  _star_ARREST(); // *ARREST
+  Push2Words("*ARREST");
   _gt_C_plus_S(); // >C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
-  _star_ARREST(); // *ARREST
+  Push2Words("*ARREST");
   Push(0xcc1a);
   MODULE(); // MODULE
   Push(pp__ask_AUTO); // ?AUTO
@@ -196,7 +196,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
-  ART_dash_NAM(); // ART-NAM
+  LoadData("ART-NAM"); // from 'ARTIFACT    '
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
@@ -239,7 +239,7 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(0x000a);
   Push(0xbd5b);
   MODULE(); // MODULE
-  NULL(); // NULL
+  Push2Words("NULL");
   ROT(); // ROT
   COUNT(); // COUNT
   OVER(); // OVER
@@ -457,13 +457,13 @@ void _2NDS() // 2NDS
   Push(pp_UNK_0xefdb); // UNK_0xefdb
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xefd6(); // UNK_0xefd6
+  Func8("UNK_0xefd6");
   C_at_(); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  UNK_0xefd6(); // UNK_0xefd6
+  Func8("UNK_0xefd6");
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }

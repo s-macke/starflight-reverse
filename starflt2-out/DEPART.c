@@ -41,7 +41,7 @@ void UNK_0xf423() // UNK_0xf423
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _at_INST_dash_C(); // @INST-C
-  DISPOSAL(); // DISPOSAL
+  Func10("DISPOSAL");
   return;
 
   label1:
@@ -153,7 +153,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
-  UNK_0xf4b7(); // UNK_0xf4b7
+  Func8("UNK_0xf4b7");
   C_at_(); // C@
   _dash_(); // -
   DUP(); // DUP
@@ -170,14 +170,14 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(cc__5); // 5
   MAX(); // MAX
   Push(Pop() * Pop()); // *
-  UNK_0xf4b7(); // UNK_0xf4b7
+  Func8("UNK_0xf4b7");
   C_at_(); // C@
   Push(Pop() + Pop()); // +
   Push(0x0064);
   MIN(); // MIN
   Push(0); // 0
   MAX(); // MAX
-  UNK_0xf4b7(); // UNK_0xf4b7
+  Func8("UNK_0xf4b7");
   C_ex_(); // C!
   goto label2;
 
@@ -220,7 +220,7 @@ void DEPART() // DEPART
   UNK_0xf4bc(); // UNK_0xf4bc
 
   label2:
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_ex_(); // 1.5!
   Push(pp__ro_TRADER); // (TRADER

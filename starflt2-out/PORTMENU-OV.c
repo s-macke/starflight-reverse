@@ -197,7 +197,7 @@ void UNK_0xefb6() // UNK_0xefb6
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_WI(); // POLY-WI
   Push(0); // 0
   Push(0); // 0
@@ -218,7 +218,7 @@ void UNK_0xeffe() // UNK_0xeffe
   _at_CRS(); // @CRS
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
-  _ro__dot_DOOR_rc_(); // (.DOOR)
+  Func10("(.DOOR)");
   UNK_0xeee5(); // UNK_0xeee5
   _ex_CRS(); // !CRS
 }
@@ -494,7 +494,7 @@ void UNK_0xf360() // UNK_0xf360
 
 void UNK_0xf37e() // UNK_0xf37e
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x000e);
   Push(Pop() * Pop()); // *
@@ -543,7 +543,7 @@ void UNK_0xf37e() // UNK_0xf37e
 
 void UNK_0xf42a() // UNK_0xf42a
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
@@ -587,8 +587,8 @@ void UNK_0xf42a() // UNK_0xf42a
   label1:
   Push(pp_UNK_0xf1be); // UNK_0xf1be
   _099(); // 099
-  NULL(); // NULL
-  NULL(); // NULL
+  Push2Words("NULL");
+  Push2Words("NULL");
   UNK_0xf37e(); // UNK_0xf37e
 }
 
@@ -632,7 +632,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   _099(); // 099
 
   label1:
-  DO_dash_ROOM(); // DO-ROOM
+  Func10("DO-ROOM");
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -667,7 +667,7 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  XWALK(); // XWALK
+  Func10("XWALK");
   Pop(); // DROP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT

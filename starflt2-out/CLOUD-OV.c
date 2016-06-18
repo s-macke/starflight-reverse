@@ -27,7 +27,7 @@
 
 void _n_HUMANS() // #HUMANS
 {
-  _star_PERSON(); // *PERSON
+  Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0); // 0
@@ -55,9 +55,9 @@ void DO_dash_CLOUD() // DO-CLOUD
   if (Pop() == 0) goto label1;
   _gt_1FONT(); // >1FONT
   WUP(); // WUP
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD)
+  Func10("(DO-CLOUD)");
   return;
 
   label1:

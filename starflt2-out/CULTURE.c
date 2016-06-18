@@ -71,11 +71,11 @@ void UNK_0xef56() // UNK_0xef56
   _gt_R(); // >R
   Push(h); // I
   if (Pop() == 0) goto label1;
-  PINK(); // PINK
+  SetColor("PINK");
   goto label2;
 
   label1:
-  BLUE(); // BLUE
+  SetColor("BLUE");
 
   label2:
   _ex_COLOR(); // !COLOR
@@ -86,11 +86,11 @@ void UNK_0xef56() // UNK_0xef56
   if (Pop() == 0) goto label3;
   R_gt_(); // R>
   if (Pop() == 0) goto label4;
-  RED(); // RED
+  SetColor("RED");
   goto label5;
 
   label4:
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
 
   label5:
   _ex_COLOR(); // !COLOR
@@ -169,7 +169,7 @@ void UNK_0xf00b() // UNK_0xf00b
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -182,7 +182,7 @@ void UNK_0xf017() // UNK_0xf017
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -286,14 +286,14 @@ void UNK_0xf0bc() // UNK_0xf0bc
 void UNK_0xf0dc() // UNK_0xf0dc
 {
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefeb(); // UNK_0xefeb
+  LoadData("UNK_0xefeb"); // from 'TRADERS     '
   C_at_(); // C@
-  UNK_0xefa0(); // UNK_0xefa0
+  LoadData("UNK_0xefa0"); // from 'TRADERS     '
   C_at_(); // C@
   Push(2); // 2
   _gt_(); // >
   Push(Pop() | Pop()); // OR
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x001a);
@@ -316,7 +316,7 @@ void UNK_0xf0dc() // UNK_0xf0dc
 void UNK_0xf10e() // UNK_0xf10e
 {
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefd3(); // UNK_0xefd3
+  LoadData("UNK_0xefd3"); // from 'TRADERS     '
   C_at_(); // C@
   if (Pop() == 0) goto label1;
   UNK_0xf0b4(); // UNK_0xf0b4
@@ -325,13 +325,13 @@ void UNK_0xf10e() // UNK_0xf10e
   UNK_0xf00b(); // UNK_0xf00b
 
   label1:
-  UNK_0xefd3(); // UNK_0xefd3
+  LoadData("UNK_0xefd3"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
-  UNK_0xefdb(); // UNK_0xefdb
+  LoadData("UNK_0xefdb"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
-  UNK_0xefe3(); // UNK_0xefe3
+  LoadData("UNK_0xefe3"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   UNK_0xf0dc(); // UNK_0xf0dc
@@ -342,16 +342,16 @@ void UNK_0xf10e() // UNK_0xf10e
   UNK_0xf00b(); // UNK_0xf00b
 
   label2:
-  UNK_0xefeb(); // UNK_0xefeb
+  LoadData("UNK_0xefeb"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
-  UNK_0xeff3(); // UNK_0xeff3
+  LoadData("UNK_0xeff3"); // from 'TRADERS     '
   C_at_(); // C@
   if (Pop() == 0) goto label3;
   PRINT("*", 1); // (.")
 
   label3:
-  UNK_0xeffb(); // UNK_0xeffb
+  LoadData("UNK_0xeffb"); // from 'TRADERS     '
   C_at_(); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   ICLOSE(); // ICLOSE
@@ -367,7 +367,7 @@ void UNK_0xf199() // UNK_0xf199
   UNK_0xf00b(); // UNK_0xf00b
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xefcb(); // UNK_0xefcb
+  LoadData("UNK_0xefcb"); // from 'TRADERS     '
   _at__gt_C_plus_S(); // @>C+S
   CI(); // CI
   Push(Pop() | Pop()); // OR
@@ -390,10 +390,10 @@ void UNK_0xf1bb() // UNK_0xf1bb
   UNK_0xf017(); // UNK_0xf017
   PRINT("ECONOMY: ", 9); // (.")
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefb0(); // UNK_0xefb0
+  LoadData("UNK_0xefb0"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  _gt_ECO(); // >ECO
+  Func10(">ECO");
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -412,7 +412,7 @@ void UNK_0xf1bb() // UNK_0xf1bb
 void _dot_RACE() // .RACE
 {
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xef98(); // UNK_0xef98
+  LoadData("UNK_0xef98"); // from 'TRADERS     '
   Push(0x0010);
   _dash_TRAILING(); // -TRAILING
   UNK_0xf0a2(); // UNK_0xf0a2
@@ -422,7 +422,7 @@ void _dot_RACE() // .RACE
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   _at_INST_dash_C(); // @INST-C
-  _gt_EXTRA(); // >EXTRA
+  Func10(">EXTRA");
 }
 
 // 0xf23b: db 0x4c 0x22 0x07 0x3f 0x06 0x53 0x50 0x41 0x52 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x08 0x4d 0x4f 0x44 0x45 0x52 0x41 0x54 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x05 0x44 0x45 0x4e 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x56 0x45 0x52 0x59 0x20 0x44 0x45 0x4e 0x53 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x09 0x53 0x54 0x4f 0x4e 0x45 0x20 0x41 0x47 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x09 0x4d 0x45 0x54 0x41 0x4c 0x20 0x45 0x52 0x41 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x49 0x4e 0x44 0x55 0x53 0x54 0x52 0x49 0x41 0x4c 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0b 0x53 0x50 0x41 0x43 0x45 0x46 0x41 0x52 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0a 0x4e 0x4f 0x20 0x54 0x52 0x41 0x44 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0c 0x4e 0x4f 0x20 0x42 0x41 0x52 0x54 0x45 0x52 0x49 0x4e 0x47 0x90 0x16 0x4c 0x22 0x07 0x3f 0x10 0x42 0x41 0x52 0x47 0x41 0x49 0x4e 0x20 0x41 0x20 0x4c 0x49 0x54 0x54 0x4c 0x45 0x90 0x16 0x4c 0x22 0x07 0x3f 0x0d 0x42 0x41 0x52 0x47 0x41 0x49 0x4e 0x20 0x41 0x20 0x4c 0x4f 0x54 0x90 0x16 'L" ? SPARSE  L" ? MODERATE  L" ? DENSE  L" ? VERY DENSE  L" ? STONE AGE  L" ? METAL ERA  L" ? INDUSTRIAL  L" ? SPACEFARING  L" ? NO TRADING  L" ? NO BARTERING  L" ? BARGAIN A LITTLE  L" ? BARGAIN A LOT  '
@@ -441,10 +441,10 @@ void UNK_0xf326() // UNK_0xf326
   UNK_0xf017(); // UNK_0xf017
   PRINT("TECH LEVEL: ", 12); // (.")
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefa0(); // UNK_0xefa0
+  LoadData("UNK_0xefa0"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  _gt_TECH(); // >TECH
+  Func10(">TECH");
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -463,10 +463,10 @@ void UNK_0xf366() // UNK_0xf366
   UNK_0xf017(); // UNK_0xf017
   PRINT("POPULATION DENSITY: ", 20); // (.")
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefa8(); // UNK_0xefa8
+  LoadData("UNK_0xefa8"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  _gt_DENSE(); // >DENSE
+  Func10(">DENSE");
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -485,10 +485,10 @@ void UNK_0xf3ac() // UNK_0xf3ac
   UNK_0xf017(); // UNK_0xf017
   PRINT("TRADING STYLE: ", 15); // (.")
   UNK_0xf023(); // UNK_0xf023
-  ATTITUDE(); // ATTITUDE
+  LoadData("ATTITUDE"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
-  _gt_ATT(); // >ATT
+  Func10(">ATT");
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -549,7 +549,7 @@ void UNK_0xf412() // UNK_0xf412
 
 void UNK_0xf444() // UNK_0xf444
 {
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x0044);
@@ -582,14 +582,14 @@ void _dot_CULTURE() // .CULTURE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  WHITE(); // WHITE
+  SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
   _ex_(); // !
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
   UNK_0xf0aa(); // UNK_0xf0aa
   UNK_0xf023(); // UNK_0xf023
-  UNK_0xefcb(); // UNK_0xefcb
+  LoadData("UNK_0xefcb"); // from 'TRADERS     '
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   _gt_FLAG(); // >FLAG
@@ -609,7 +609,7 @@ void _dot_CULTURE() // .CULTURE
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
   UNK_0xf023(); // UNK_0xf023
-  ATTITUDE(); // ATTITUDE
+  LoadData("ATTITUDE"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label2;

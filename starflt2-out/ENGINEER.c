@@ -83,7 +83,7 @@ void UNK_0xecc5() // UNK_0xecc5
 
 void UNK_0xecd9() // UNK_0xecd9
 {
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   Push(0x009a);
   Push(0x00b4);
@@ -130,14 +130,14 @@ void UNK_0xed21() // UNK_0xed21
 void UNK_0xed35() // UNK_0xed35
 {
   _gt_2FONT(); // >2FONT
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x0067);
   Push(0x00c2);
   POS_dot_(); // POS.
   PRINT("DAMAGE", 6); // (.")
   _gt_1FONT(); // >1FONT
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   Push(0x0055);
   Push(0x00b2);
@@ -166,14 +166,14 @@ void UNK_0xedac() // UNK_0xedac
 {
   DUP(); // DUP
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(h); // I
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -199,9 +199,9 @@ void UNK_0xedac() // UNK_0xedac
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
-  WHITE(); // WHITE
-  BLUE(); // BLUE
-  DK_dash_GREE(); // DK-GREE
+  SetColor("WHITE");
+  SetColor("BLUE");
+  SetColor("DK-GREE");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
@@ -222,9 +222,9 @@ void UNK_0xedac() // UNK_0xedac
   _dash_(); // -
   Push(pp_WBLT); // WBLT
   _ex_(); // !
-  GREY1(); // GREY1
-  RED(); // RED
-  RED(); // RED
+  SetColor("GREY1");
+  SetColor("RED");
+  SetColor("RED");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
@@ -251,7 +251,7 @@ void UNK_0xedac() // UNK_0xedac
 
 void DBARS() // DBARS
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(cc__7); // 7
   Push(0); // 0
@@ -265,7 +265,7 @@ void DBARS() // DBARS
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   C_at_(); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -295,7 +295,7 @@ void DBARS() // DBARS
 
 void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   ERASE_dash_A(); // ERASE-A
   UNK_0xecd9(); // UNK_0xecd9
   UNK_0xed35(); // UNK_0xed35
@@ -313,7 +313,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 void UNK_0xeeb8() // UNK_0xeeb8
 {
   _gt_R(); // >R
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
   Push(cc__7); // 7
@@ -323,7 +323,7 @@ void UNK_0xeeb8() // UNK_0xeeb8
   signed short int imax = Pop();
   do // (DO)
   {
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(i); // I
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
@@ -429,20 +429,20 @@ void UNK_0xeef0() // UNK_0xeef0
 
 void UNK_0xf063() // UNK_0xf063
 {
-  NULL(); // NULL
+  Push2Words("NULL");
   CTPOS_dot_(); // CTPOS.
   DUP(); // DUP
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(h); // I
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -473,7 +473,7 @@ void UNK_0xf0ab() // UNK_0xf0ab
   CTCR(); // CTCR
   PRINT("EFFICIENCY: ", 12); // (.")
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   Push(0); // 0
@@ -493,7 +493,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
   CTCR(); // CTCR
   PRINT("CURRENT FUNCTIONALITY: ", 23); // (.")
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   C_at_(); // C@
@@ -513,12 +513,12 @@ void UNK_0xf0d0() // UNK_0xf0d0
 
 void UNK_0xf11b() // UNK_0xf11b
 {
-  _star_ASSIGN(); // *ASSIGN
+  Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  UNK_0xecbb(); // UNK_0xecbb
+  Func8("UNK_0xecbb");
   _at__gt_C_plus_S(); // @>C+S
   Push(0x00fb);
-  UNK_0xecb6(); // UNK_0xecb6
+  Func8("UNK_0xecb6");
   C_at_(); // C@
   _dash_(); // -
   Push(0x0064);
@@ -603,7 +603,7 @@ void UNK_0xf14f() // UNK_0xf14f
 void UNK_0xf1d3() // UNK_0xf1d3
 {
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   DUP(); // DUP
@@ -629,7 +629,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
 void UNK_0xf221() // UNK_0xf221
 {
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   C_at_(); // C@
@@ -647,7 +647,7 @@ void UNK_0xf221() // UNK_0xf221
 
 void UNK_0xf255() // UNK_0xf255
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   _gt_R(); // >R
   CTINIT(); // CTINIT
@@ -679,7 +679,7 @@ void UNK_0xf281() // UNK_0xf281
 {
   DUP(); // DUP
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   C_at_(); // C@
   Push(0x007f);
@@ -696,7 +696,7 @@ void UNK_0xf281() // UNK_0xf281
   label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(": ", 2); // (.")
   if (Pop() == 0) goto label2;
   PRINT("NO REPAIRS NEEDED.", 18); // (.")
@@ -719,7 +719,7 @@ void UNK_0xf2f0() // UNK_0xf2f0
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(":", 1); // (.")
   CTCR(); // CTCR
   PRINT("ALREADY UNDERGOING REPAIRS.", 27); // (.")
@@ -734,12 +734,12 @@ void UNK_0xf31e() // UNK_0xf31e
 {
   CTERASE(); // CTERASE
   PRINT("CEASE REPAIRS ON ", 17); // (.")
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xecc5(); // UNK_0xecc5
@@ -757,7 +757,7 @@ void UNK_0xf31e() // UNK_0xf31e
 void UNK_0xf36a() // UNK_0xf36a
 {
   PRINT("CEASING REPAIRS ON ", 19); // (.")
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(".", 1); // (.")
 }
 
@@ -771,7 +771,7 @@ void UNK_0xf38a() // UNK_0xf38a
   DUP(); // DUP
   UNK_0xf36a(); // UNK_0xf36a
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   DUP(); // DUP
@@ -790,7 +790,7 @@ void UNK_0xf38a() // UNK_0xf38a
 void UNK_0xf3a8() // UNK_0xf3a8
 {
   PRINT("CONTINUING REPAIRS ON ", 22); // (.")
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(".", 1); // (.")
 }
 
@@ -802,7 +802,7 @@ void UNK_0xf3a8() // UNK_0xf3a8
 void UNK_0xf3cb() // UNK_0xf3cb
 {
   PRINT("BEGINNING REPAIRS ON ", 21); // (.")
-  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM
+  Func10(".SHIP-ITEM");
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR
   ON(); // ON
@@ -817,10 +817,10 @@ void UNK_0xf3f1() // UNK_0xf3f1
 {
   DUP(); // DUP
   UNK_0xf3cb(); // UNK_0xf3cb
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   DUP(); // DUP
@@ -861,7 +861,7 @@ void UNK_0xf415() // UNK_0xf415
   Push(cc__7); // 7
   Push(pp_LBLT); // LBLT
   _ex_(); // !
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON(); // ON
@@ -892,7 +892,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _099(); // 099
   Push(pp_FQUIT); // FQUIT
   _099(); // 099
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
 
   label7:
@@ -927,7 +927,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
@@ -935,7 +935,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   C_at_(); // C@
   _0_gt_(); // 0>
   R_gt_(); // R>
-  UNK_0xecc0(); // UNK_0xecc0
+  Func8("UNK_0xecc0");
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND

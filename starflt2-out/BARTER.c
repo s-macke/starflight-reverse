@@ -135,7 +135,7 @@ unsigned char UNK_0xe676[2] = {0x3a, 0x20}; // UNK_0xe676
 
 void UNK_0xdfe6() // UNK_0xdfe6
 {
-  _star_PLIST(); // *PLIST
+  Push2Words("*PLIST");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -225,11 +225,11 @@ void UNK_0xe16c() // UNK_0xe16c
 {
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
-  BLUE(); // BLUE
+  SetColor("BLUE");
   return;
 
   label1:
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
 }
 
 
@@ -239,7 +239,7 @@ void UNK_0xe16c() // UNK_0xe16c
 
 void UNK_0xe17e() // UNK_0xe17e
 {
-  GREY1(); // GREY1
+  SetColor("GREY1");
 }
 
 // 0xe182: db 0x4c 0x22 0x53 0x50 0x90 0x16 'L"SP  '
@@ -474,7 +474,7 @@ void UNK_0xe454() // UNK_0xe454
   C_at_(); // C@
   _at_COLOR(); // @COLOR
   _gt_R(); // >R
-  SPL(); // SPL
+  Func10("SPL");
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xe28c(); // UNK_0xe28c
@@ -517,7 +517,7 @@ void UNK_0xe492() // UNK_0xe492
 {
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
   _099(); // 099
-  PHRASE(); // PHRASE
+  Func8("PHRASE");
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
@@ -595,12 +595,12 @@ void UNK_0xe568() // UNK_0xe568
   _at_INST_dash_C(); // @INST-C
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
-  _star_2BUY(); // *2BUY
+  Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
-  ASKING(); // ASKING
+  Func8("ASKING");
   _ex_(); // !
   goto label2;
 
@@ -725,7 +725,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
   CI(); // CI
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  INST_dash_OF(); // INST-OF
+  Func8("INST-OF");
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -758,7 +758,7 @@ void UNK_0xe640() // UNK_0xe640
   UNK_0xe5b8(); // UNK_0xe5b8
   MAX(); // MAX
   UNK_0xe5c6(); // UNK_0xe5c6
-  UNK_0xe53e(); // UNK_0xe53e
+  LoadData("UNK_0xe53e"); // from 'TRADERS     '
   C_at_(); // C@
   DUP(); // DUP
   Push(1); // 1
@@ -818,7 +818,7 @@ void DO_dash_ENTER() // DO-ENTER
   UNK_0xe18a(); // UNK_0xe18a
 
   label1:
-  ENTER_dash_TRADE(); // ENTER-TRADE
+  Func13("ENTER-TRADE");
   if (Pop() == 0) goto label1;
 }
 
@@ -886,7 +886,7 @@ void DO_dash_OPEN() // DO-OPEN
   UNK_0xe18a(); // UNK_0xe18a
 
   label1:
-  OPEN_dash_EXPERT(); // OPEN-EXPERT
+  Func13("OPEN-EXPERT");
   if (Pop() == 0) goto label1;
 }
 
@@ -1147,7 +1147,7 @@ void DO_dash_BARTER() // DO-BARTER
   UNK_0xe18a(); // UNK_0xe18a
   Push(0xf3ce);
   DISTRAC(); // DISTRAC
-  _ro_DO_dash_BARTER_rc_(); // (DO-BARTER)
+  Func13("(DO-BARTER)");
   Pop(); // DROP
   UNK_0xf1f0(); // UNK_0xf1f0
 }
@@ -1166,7 +1166,7 @@ void DO_dash_BARTER() // DO-BARTER
 void UNK_0xf4bc() // UNK_0xf4bc
 {
   UNK_0xe5ae(); // UNK_0xe5ae
-  N_gt_REPLY(); // N>REPLY
+  Func10("N>REPLY");
   UNK_0xe610(); // UNK_0xe610
 }
 

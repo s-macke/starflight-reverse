@@ -89,9 +89,9 @@ void UNK_0xeda6() // UNK_0xeda6
 
 void UNK_0xedae() // UNK_0xedae
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
 }
 
@@ -288,7 +288,7 @@ void _ask__dot_STORM() // ?.STORM
 void UNK_0xeefe() // UNK_0xeefe
 {
   Push(1); // 1
-  UNK_0xedc9(); // UNK_0xedc9
+  LoadData("UNK_0xedc9"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   SWAP(); // SWAP
@@ -329,7 +329,7 @@ void DO_dash_STORM() // DO-STORM
   label2:
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xedc9(); // UNK_0xedc9
+  LoadData("UNK_0xedc9"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(pp__pe_STORM); // %STORM
   Push(Pop() + Pop()); // +
@@ -468,7 +468,7 @@ void UNK_0xf003() // UNK_0xf003
 void UNK_0xf00d() // UNK_0xf00d
 {
   UNK_0xefa3(); // UNK_0xefa3
-  _0_dot_(); // 0.
+  Push2Words("0.");
   UNK_0xefd1(); // UNK_0xefd1
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -508,7 +508,7 @@ void UNK_0xf00d() // UNK_0xf00d
 void UNK_0xf06f() // UNK_0xf06f
 {
   Push(0); // 0
-  _star_PERSON(); // *PERSON
+  Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf067);
@@ -529,12 +529,12 @@ void FADE() // FADE
   Push(cc__6); // 6
   Push(0xc5da);
   MODULE(); // MODULE
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp_HAZE); // HAZE
   D_ex_(); // D!
   Push(0x0fa0);
   MS(); // MS
-  _star_PERSON(); // *PERSON
+  Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xf085);
@@ -584,9 +584,9 @@ void _dot_STARDATE() // .STARDATE
   Push(0x00b2);
   POS_dot_(); // POS.
   Push(0x000a);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -663,11 +663,11 @@ void UNK_0xf1ac() // UNK_0xf1ac
 
 void UNK_0xf1c4() // UNK_0xf1c4
 {
-  _star_ASSIGN(); // *ASSIGN
+  Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  UNK_0xedd1(); // UNK_0xedd1
+  Func8("UNK_0xedd1");
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xedd6(); // UNK_0xedd6
+  Func8("UNK_0xedd6");
   C_at_(); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -785,17 +785,17 @@ void UNK_0xf1e8() // UNK_0xf1e8
 
 void UNK_0xf2ce() // UNK_0xf2ce
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xedba(); // UNK_0xedba
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   DUP(); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -816,9 +816,9 @@ void UNK_0xf2f6() // UNK_0xf2f6
   Push(0x0096);
   POS_dot_(); // POS.
   Push(cc__8); // 8
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) goto label1;
@@ -843,9 +843,9 @@ void UNK_0xf32c() // UNK_0xf32c
   Push(0x008f);
   POS_dot_(); // POS.
   Push(0x0009);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
@@ -870,23 +870,23 @@ void _dot_ENERGY() // .ENERGY
   Push(0x00ab);
   POS_dot_(); // POS.
   Push(cc__7); // 7
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ask_DUP(); // ?DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
   PRINT("NONE", 4); // (.")
   return;
 
   label1:
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x07d0);
   _dash_(); // -
@@ -900,7 +900,7 @@ void _dot_ENERGY() // .ENERGY
   Pop(); // DROP
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  PINK(); // PINK
+  SetColor("PINK");
   _ex_COLOR(); // !COLOR
   PRINT("RESERVE", 7); // (.")
   _ex_COLOR(); // !COLOR
@@ -916,7 +916,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x00a4);
   POS_dot_(); // POS.
   Push(cc__3); // 3
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
@@ -946,11 +946,11 @@ void _dot_CARGO() // .CARGO
   Push(0x009d);
   POS_dot_(); // POS.
   Push(cc__3); // 3
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xedc4(); // UNK_0xedc4
+  Func8("UNK_0xedc4");
   Push(Read16(Pop())); // @
   DUP(); // DUP
   if (Pop() == 0) goto label1;
@@ -960,7 +960,7 @@ void _dot_CARGO() // .CARGO
   _slash_(); // /
 
   label1:
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1047,7 +1047,7 @@ void _dot_WHERE() // .WHERE
 {
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x0010);
   Push(0x00c5);

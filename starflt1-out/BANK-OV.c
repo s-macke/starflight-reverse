@@ -129,7 +129,7 @@ void UNK_0xef86() // UNK_0xef86
 
 void UNK_0xefc5() // UNK_0xefc5
 {
-  _star_BANK(); // *BANK
+  Push2Words("*BANK");
   _gt_C_plus_S(); // >C+S
 }
 
@@ -143,7 +143,7 @@ void _ex_TFLAG() // !TFLAG
 {
   UNK_0xefc5(); // UNK_0xefc5
   Push(1); // 1
-  UNK_0xefae(); // UNK_0xefae
+  Func8("UNK_0xefae");
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -157,7 +157,7 @@ void _ex_TFLAG() // !TFLAG
 void D_at_BALANCE() // D@BALANCE
 {
   UNK_0xefc5(); // UNK_0xefc5
-  UNK_0xefa9(); // UNK_0xefa9
+  Func8("UNK_0xefa9");
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
 }
@@ -171,7 +171,7 @@ void D_at_BALANCE() // D@BALANCE
 void D_ex_BALANCE() // D!BALANCE
 {
   UNK_0xefc5(); // UNK_0xefc5
-  UNK_0xefa9(); // UNK_0xefa9
+  Func8("UNK_0xefa9");
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -198,9 +198,9 @@ void _ask_BALANCE() // ?BALANCE
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
   UNK_0xefc5(); // UNK_0xefc5
-  UNK_0xefa4(); // UNK_0xefa4
+  Func8("UNK_0xefa4");
   _2_at_(); // 2@
-  UNK_0xefa9(); // UNK_0xefa9
+  Func8("UNK_0xefa9");
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -214,7 +214,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 void TRANSACT() // TRANSACT
 {
   UNK_0xefc5(); // UNK_0xefc5
-  UNK_0xefae(); // UNK_0xefae
+  Func8("UNK_0xefae");
   C_at_(); // C@
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -252,23 +252,23 @@ void TRANSACT() // TRANSACT
   SET_dash_CUR(); // SET-CUR
   Push(pp_STARDAT); // STARDAT
   Push(Read16(Pop())); // @
-  UNK_0xefa4(); // UNK_0xefa4
+  Func8("UNK_0xefa4");
   _2_at_(); // 2@
-  UNK_0xefa9(); // UNK_0xefa9
+  Func8("UNK_0xefa9");
   _2_at_(); // 2@
   D_dash_(); // D-
   ICLOSE(); // ICLOSE
-  UNK_0xefbb(); // UNK_0xefbb
+  Func8("UNK_0xefbb");
   D_ex_(); // D!
-  UNK_0xefc0(); // UNK_0xefc0
+  Func8("UNK_0xefc0");
   _ex_(); // !
   ICLOSE(); // ICLOSE
-  UNK_0xefa9(); // UNK_0xefa9
+  Func8("UNK_0xefa9");
   _2_at_(); // 2@
-  UNK_0xefa4(); // UNK_0xefa4
+  Func8("UNK_0xefa4");
   D_ex_(); // D!
   Push(0); // 0
-  UNK_0xefae(); // UNK_0xefae
+  Func8("UNK_0xefae");
   C_ex_(); // C!
   goto label4;
 
@@ -357,7 +357,7 @@ void UNK_0xf128() // UNK_0xf128
 
 void UNK_0xf152() // UNK_0xf152
 {
-  UNK_0xefc0(); // UNK_0xefc0
+  Func8("UNK_0xefc0");
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -393,7 +393,7 @@ void UNK_0xf152() // UNK_0xf152
 
 void UNK_0xf196() // UNK_0xf196
 {
-  UNK_0xefbb(); // UNK_0xefbb
+  Func8("UNK_0xefbb");
   _2_at_(); // 2@
   _2DUP(); // 2DUP
   _2DUP(); // 2DUP
@@ -431,7 +431,7 @@ void UNK_0xf196() // UNK_0xf196
 
 void UNK_0xf1da() // UNK_0xf1da
 {
-  UNK_0xefb3(); // UNK_0xefb3
+  LoadData("UNK_0xefb3"); // from 'BANK-TRANS  '
   _do__dot_(); // $.
 }
 
@@ -610,7 +610,7 @@ void UNK_0xf26f() // UNK_0xf26f
   UNK_0xef86(); // UNK_0xef86
   Push(cc__6); // 6
   Push(0x000f);
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _dot_1LOGO(); // .1LOGO
 }
 
@@ -672,7 +672,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 void UNK_0xf464() // UNK_0xf464
 {
   DARK(); // DARK
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   UNK_0xf26f(); // UNK_0xf26f
   UNK_0xf1e2(); // UNK_0xf1e2
   UNK_0xf3ab(); // UNK_0xf3ab
@@ -720,7 +720,7 @@ void UNK_0xf4ac() // UNK_0xf4ac
   Push(0x001d);
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  UNK_0xefa4(); // UNK_0xefa4
+  Func8("UNK_0xefa4");
   _2_at_(); // 2@
   Push(cc__7); // 7
   D_dot_R(); // D.R

@@ -73,11 +73,11 @@ void UNK_0xf3f1() // UNK_0xf3f1
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  SPACE_dash_ID(); // SPACE-ID
+  Func10("SPACE-ID");
   return;
 
   label1:
-  PLANET_dash_ID(); // PLANET-ID
+  Func10("PLANET-ID");
 }
 
 
@@ -108,7 +108,7 @@ void UNK_0xf3f1() // UNK_0xf3f1
 void UNK_0xf4e8() // UNK_0xf4e8
 {
   _at_INST_dash_C(); // @INST-C
-  _n_IC_dash_CASES(); // #IC-CASES
+  Func10("#IC-CASES");
 }
 
 
@@ -119,9 +119,9 @@ void UNK_0xf4e8() // UNK_0xf4e8
 
 void ICON_dash_PARM() // ICON-PARM
 {
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
   UNK_0xf4e8(); // UNK_0xf4e8

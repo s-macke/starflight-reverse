@@ -93,7 +93,7 @@ const unsigned short int cc_UNK_0xeaf4 = 0x002b; // UNK_0xeaf4
 void UNK_0xe606() // UNK_0xe606
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -129,17 +129,17 @@ void APAUSE() // APAUSE
   _gt_R(); // >R
   Push(h); // I
   if (Pop() == 0) goto label1;
-  PINK(); // PINK
+  SetColor("PINK");
   goto label2;
 
   label1:
-  BLUE(); // BLUE
+  SetColor("BLUE");
 
   label2:
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label3;
   Pop(); // DROP
-  WHITE(); // WHITE
+  SetColor("WHITE");
 
   label3:
   _ex_COLOR(); // !COLOR
@@ -155,17 +155,17 @@ void APAUSE() // APAUSE
   D_gt_(); // D>
   _i_KEY(); // 'KEY
   DUP(); // DUP
-  _ro_XYSCAN(); // (XYSCAN
+  Func10("(XYSCAN");
   Pop(); Pop();// 2DROP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label4;
   Push(h); // I
   if (Pop() == 0) goto label5;
-  RED(); // RED
+  SetColor("RED");
   goto label6;
 
   label5:
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
 
   label6:
   _ex_COLOR(); // !COLOR
@@ -428,7 +428,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   if (Pop() == 0) goto label1;
   OVER(); // OVER
   C_at_(); // C@
-  _gt_SPECIAL(); // >SPECIAL
+  Func10(">SPECIAL");
   goto label2;
 
   label1:
@@ -479,7 +479,7 @@ void UNK_0xea51() // UNK_0xea51
   _099(); // 099
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
-  PHRASE(); // PHRASE
+  Func8("PHRASE");
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
@@ -513,7 +513,7 @@ void UNK_0xea83() // UNK_0xea83
   CI(); // CI
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  INST_dash_OF(); // INST-OF
+  Func8("INST-OF");
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -563,7 +563,7 @@ void _dot_APHRASE() // .APHRASE
 void UNK_0xeb51() // UNK_0xeb51
 {
   Push(cc_FALSE); // FALSE
-  _star_MESS(); // *MESS
+  Push2Words("*MESS");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0xeb3b);
@@ -592,7 +592,7 @@ void UNK_0xeb67() // UNK_0xeb67
   _star_CREATE(); // *CREATE
   Push(pp_UNK_0xeb35); // UNK_0xeb35
   _1_dot_5_at_(); // 1.5@
-  UNK_0xe64a(); // UNK_0xe64a
+  Func8("UNK_0xe64a");
   _1_dot_5_ex_(); // 1.5!
   goto label1;
 
@@ -622,7 +622,7 @@ void UNK_0xeb8d() // UNK_0xeb8d
   Push(0x0099);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   Push(1); // 1
   Push(pp_XORMODE); // XORMODE
@@ -653,7 +653,7 @@ void UNK_0xebc1() // UNK_0xebc1
 
 void UNK_0xebcd() // UNK_0xebcd
 {
-  RACE_gt_TRA(); // RACE>TRA
+  Func10("RACE>TRA");
   Push(0x0015);
   SWAP(); // SWAP
   _at_RECORD(); // @RECORD
@@ -725,7 +725,7 @@ void UNK_0xec29() // UNK_0xec29
 
 void UNK_0xec63() // UNK_0xec63
 {
-  _star_MESS(); // *MESS
+  Push2Words("*MESS");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(cc_UNK_0xeaf4); // UNK_0xeaf4
@@ -765,11 +765,11 @@ void UNK_0xec89() // UNK_0xec89
   Push(1); // 1
   _star_CREATE(); // *CREATE
   UNK_0xebcd(); // UNK_0xebcd
-  TEXT_dash_TE(); // TEXT-TE
+  Func8("TEXT-TE");
   Push(0x0026);
   Push(cc_BL); // BL
   FILL(); // FILL
-  TEXT_dash_TE(); // TEXT-TE
+  Func8("TEXT-TE");
   Push(Pop()+1); // 1+
   Push(0x0010);
   CMOVE(); // CMOVE
@@ -836,7 +836,7 @@ void UNK_0xecbd() // UNK_0xecbd
 
 void UNK_0xed0f() // UNK_0xed0f
 {
-  TEXT_dash_TE(); // TEXT-TE
+  Func8("TEXT-TE");
   _do__dot_(); // $.
 }
 
@@ -847,7 +847,7 @@ void UNK_0xed0f() // UNK_0xed0f
 
 void UNK_0xed17() // UNK_0xed17
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -914,7 +914,7 @@ void UNK_0xed5d() // UNK_0xed5d
 void UNK_0xed6b() // UNK_0xed6b
 {
   UNK_0xebc1(); // UNK_0xebc1
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -989,7 +989,7 @@ void UNK_0xee0e() // UNK_0xee0e
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
-  RACE_dash_SCR(); // RACE-SCR
+  Func10("RACE-SCR");
   goto label3;
 
   label2:
@@ -1095,10 +1095,10 @@ void UNK_0xf1c4() // UNK_0xf1c4
   ALL(); // ALL
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_ex_(); // 1.5!
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _1_dot_5_ex_(); // 1.5!
 }
@@ -1185,7 +1185,7 @@ void SYSCAN() // SYSCAN
   MODULE(); // MODULE
 
   label4:
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp_NOF); // NOF
   _099(); // 099
 }
@@ -1228,7 +1228,7 @@ void DESCRIBE() // DESCRIBE
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   _gt_BOTT(); // >BOTT
-  CLASS_gt_TY(); // CLASS>TY
+  Func10("CLASS>TY");
   ICLOSE(); // ICLOSE
   Push(i); // I'
   Push(1); // 1

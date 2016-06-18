@@ -49,7 +49,7 @@ void UNK_0xea84() // UNK_0xea84
 void UNK_0xea8e() // UNK_0xea8e
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -70,7 +70,7 @@ void UNK_0xeaee() // UNK_0xeaee
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label1;
-  BLUE(); // BLUE
+  SetColor("BLUE");
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
@@ -98,7 +98,7 @@ void UNK_0xeaee() // UNK_0xeaee
   Pop(); // DROP
 
   label4:
-  BLACK(); // BLACK
+  SetColor("BLACK");
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
@@ -267,7 +267,7 @@ void _ro_XCOMM_rc_() // (XCOMM)
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
-  SA_dash_CASE(); // SA-CASE
+  Func10("SA-CASE");
   UNK_0xf486(); // UNK_0xf486
   UNK_0xf4de(); // UNK_0xf4de
 }

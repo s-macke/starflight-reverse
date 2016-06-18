@@ -67,7 +67,7 @@ void UNK_0xf07e() // UNK_0xf07e
 {
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf076(); // UNK_0xf076
+  LoadData("UNK_0xf076"); // from 'TRADERS     '
   C_at_(); // C@
   ICLOSE(); // ICLOSE
 }
@@ -104,7 +104,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 {
   Push(pp_A_dash_POSTU); // A-POSTU
   C_at_(); // C@
-  N_gt_STAT(); // N>STAT
+  Func10("N>STAT");
 }
 
 
@@ -315,7 +315,7 @@ void PSYCH() // PSYCH
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf13d(); // UNK_0xf13d
   DUP(); // DUP
@@ -324,7 +324,7 @@ void PSYCH() // PSYCH
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
   _dot_TTY(); // .TTY
-  _n__gt__dot_COL(); // #>.COL
+  Func10("#>.COL");
   PRINT(".", 1); // (.")
 
   label2:
@@ -703,9 +703,9 @@ void UNK_0xf4be() // UNK_0xf4be
   Push(0x00c4);
   POS_dot_(); // POS.
   DUP(); // DUP
-  BLACK(); // BLACK
+  SetColor("BLACK");
   UNK_0xf48c(); // UNK_0xf48c
-  YELLOW(); // YELLOW
+  SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
   TYPE(); // TYPE
 }
@@ -718,7 +718,7 @@ void UNK_0xf4be() // UNK_0xf4be
 void UNK_0xf4ec() // UNK_0xf4ec
 {
   UNK_0xf28a(); // UNK_0xf28a
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf2d8(); // UNK_0xf2d8
   Push(0); // 0
@@ -776,7 +776,7 @@ void _dot_TMAP() // .TMAP
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf4ec(); // UNK_0xf4ec
   UNK_0xf4be(); // UNK_0xf4be

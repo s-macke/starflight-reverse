@@ -121,7 +121,7 @@ void UNK_0xe646() // UNK_0xe646
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   Push(1); // 1
   Push(pp_XORMODE); // XORMODE
@@ -253,9 +253,9 @@ void UNK_0xea57() // UNK_0xea57
 {
   Push(pp_TVEHICL); // TVEHICL
   _at__gt_C_plus_S(); // @>C+S
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -346,7 +346,7 @@ void UNK_0xedf0() // UNK_0xedf0
   POS_dot_(); // POS.
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
   PRINT("SCROLL ITEMS: ^\   QUIT: []", 27); // (.")
   Push(pp_SCROLL_dash_); // SCROLL-
@@ -384,13 +384,13 @@ void UNK_0xee3e() // UNK_0xee3e
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xe762(); // UNK_0xe762
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
   _gt_BOTT(); // >BOTT
   PRINT("REVISING TERRAIN VEHICLE INVENTORY", 34); // (.")
   Push(pp_UNK_0xe636); // UNK_0xe636
   OFF(); // OFF
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -420,7 +420,7 @@ void UNK_0xeec2() // UNK_0xeec2
 {
   UNK_0xee96(); // UNK_0xee96
   _gt_C_plus_S(); // >C+S
-  TEXT_dash_IN(); // TEXT-IN
+  Func8("TEXT-IN");
   _1_dot_5_at_(); // 1.5@
   ICLOSE(); // ICLOSE
   _gt_C_plus_S(); // >C+S
@@ -461,7 +461,7 @@ void UNK_0xeee2() // UNK_0xeee2
   signed short int imax = Pop();
   do // (DO)
   {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   WSHORTE(); // WSHORTE
   i++;
   } while(i<imax); // (LOOP) 0xfffa
@@ -538,7 +538,7 @@ void UNK_0xef52() // UNK_0xef52
   Push(pp__ro_SCROLL); // (SCROLL
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-  TEXT_dash_IN(); // TEXT-IN
+  Func8("TEXT-IN");
   _at__gt_C_plus_S(); // @>C+S
   CI(); // CI
   Push(pp__ro_SURFAC); // (SURFAC
@@ -592,18 +592,18 @@ void UNK_0xef94() // UNK_0xef94
   Push(cc__7); // 7
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xeec2(); // UNK_0xeec2
   _at_INST_dash_C(); // @INST-C
   Push(pp_UNK_0xe642); // UNK_0xe642
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  T_dot_OPTIONS(); // T.OPTIONS
+  Func10("T.OPTIONS");
   goto label2;
 
   label1:
-  P_dot_OPTIONS(); // P.OPTIONS
+  Func10("P.OPTIONS");
 
   label2:
   UNK_0xeed2(); // UNK_0xeed2
@@ -719,7 +719,7 @@ void UNK_0xf018() // UNK_0xf018
   Push(pp_UNK_0xe63e); // UNK_0xe63e
   Push(Read16(Pop())); // @
   _at_INST_dash_C(); // @INST-C
-  DISPATCH(); // DISPATCH
+  Func10("DISPATCH");
   Push(pp_UNK_0xe636); // UNK_0xe636
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label6;
@@ -741,7 +741,7 @@ void UNK_0xf018() // UNK_0xf018
   _gt_TVCT(); // >TVCT
   UNK_0xe784(); // UNK_0xe784
   UNK_0xeee2(); // UNK_0xeee2
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xeff2(); // UNK_0xeff2
   UNK_0xef52(); // UNK_0xef52
@@ -769,7 +769,7 @@ void UNK_0xf096() // UNK_0xf096
 void UNK_0xf0f6() // UNK_0xf0f6
 {
   UNK_0xf096(); // UNK_0xf096
-  BLACK(); // BLACK
+  SetColor("BLACK");
   UNK_0xf096(); // UNK_0xf096
   Push(0x007f);
   Push(0x0015);
@@ -802,7 +802,7 @@ void UNK_0xf228() // UNK_0xf228
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  TD_dash_SCROLL(); // TD-SCROLL
+  Func10("TD-SCROLL");
   goto label2;
 
   label1:
@@ -831,7 +831,7 @@ void UNK_0xf228() // UNK_0xf228
 
 void UNK_0xf258() // UNK_0xf258
 {
-  _0_dot_(); // 0.
+  Push2Words("0.");
   _2SWAP(); // 2SWAP
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -878,7 +878,7 @@ void UNK_0xf258() // UNK_0xf258
 
 void UNK_0xf2a2() // UNK_0xf2a2
 {
-  _0_dot_(); // 0.
+  Push2Words("0.");
 
   label3:
   _2DUP(); // 2DUP
@@ -964,7 +964,7 @@ void UNK_0xf322() // UNK_0xf322
   Push(Read16(Pop())); // @
 
   label3:
-  INST_dash_DA(); // INST-DA
+  Func8("INST-DA");
   _ex_(); // !
 
   label1:
@@ -975,7 +975,7 @@ void UNK_0xf322() // UNK_0xf322
   CJ(); // CJ
   _gt_C_plus_S(); // >C+S
   Push(cc__dash_1); // -1
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -988,14 +988,14 @@ void UNK_0xf322() // UNK_0xf322
 void UNK_0xf35c() // UNK_0xf35c
 {
   UNK_0xea57(); // UNK_0xea57
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
   SWAP(); // SWAP
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -1077,9 +1077,9 @@ void UNK_0xf3e4() // UNK_0xf3e4
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   UNK_0xea57(); // UNK_0xea57
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
 
   label1:
@@ -1244,17 +1244,17 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   UNK_0xeee2(); // UNK_0xeee2
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xeff2(); // UNK_0xeff2
   UNK_0xef52(); // UNK_0xef52
   UNK_0xf228(); // UNK_0xf228
   _ask_QUIT(); // ?QUIT
   if (Pop() == 0) goto label3;
-  GREEN(); // GREEN
+  SetColor("GREEN");
   UNK_0xf0f6(); // UNK_0xf0f6
   DELETE_dash_(); // DELETE-
-  _0_dot_(); // 0.
+  Push2Words("0.");
   Push(pp__ro_SCROLL); // (SCROLL
   _1_dot_5_ex_(); // 1.5!
   Push(pp_ESC_dash_EN); // ESC-EN
@@ -1266,7 +1266,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   Push(cc__7); // 7
   Push(pp_UNK_0xe63a); // UNK_0xe63a
   _st__ex__gt_(); // <!>
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   UNK_0xf0f6(); // UNK_0xf0f6
   UNK_0xe67a(); // UNK_0xe67a
   UNK_0xe784(); // UNK_0xe784

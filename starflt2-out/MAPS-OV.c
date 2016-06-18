@@ -114,7 +114,7 @@ void UNK_0xed4e() // UNK_0xed4e
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xed32(); // UNK_0xed32
+  LoadData("UNK_0xed32"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   DUP(); // DUP
@@ -157,9 +157,9 @@ void UNK_0xeda0() // UNK_0xeda0
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xed22(); // UNK_0xed22
+  LoadData("UNK_0xed22"); // from 'PLANET      '
   C_at_(); // C@
-  UNK_0xed2a(); // UNK_0xed2a
+  LoadData("UNK_0xed2a"); // from 'PLANET      '
   C_at_(); // C@
   OVER(); // OVER
   _dash_(); // -
@@ -243,11 +243,11 @@ void UNK_0xee22() // UNK_0xee22
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  UNK_0xee1a(); // UNK_0xee1a
+  LoadData("UNK_0xee1a"); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
-  PHR_dash_CNT(); // PHR-CNT
+  Func8("PHR-CNT");
   C_at_(); // C@
-  PHRASE(); // PHRASE
+  Func8("PHRASE");
   OVER(); // OVER
   TYPE(); // TYPE
   Push(0x000a);
@@ -296,8 +296,8 @@ void UNK_0xee66() // UNK_0xee66
 void UNK_0xee72() // UNK_0xee72
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE(); // PHRASE
-  PHR_dash_CNT(); // PHR-CNT
+  Func8("PHRASE");
+  Func8("PHR-CNT");
   C_at_(); // C@
   TYPE(); // TYPE
   ICLOSE(); // ICLOSE
@@ -323,7 +323,7 @@ void UNK_0xee82() // UNK_0xee82
 
 void UNK_0xee90() // UNK_0xee90
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   Push(0x001a);
@@ -596,7 +596,7 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(0x9241);
   Push(pp__i__dot_CELL); // '.CELL
   _st__ex__gt_(); // <!>
-  _0_dot_(); // 0.
+  Push2Words("0.");
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
@@ -795,7 +795,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
   label1:
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  WPHRASE(); // WPHRASE
+  Func10("WPHRASE");
 
   label2:
   UNK_0xee72(); // UNK_0xee72
@@ -926,9 +926,9 @@ void _dot_SURFACE() // .SURFACE
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xecfa(); // UNK_0xecfa
+  LoadData("UNK_0xecfa"); // from 'PLANET      '
   C_at_(); // C@
-  _slash_SURF(); // /SURF
+  Func10("/SURF");
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }
@@ -940,7 +940,7 @@ void _dot_SURFACE() // .SURFACE
 
 void UNK_0xf41e() // UNK_0xf41e
 {
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -951,7 +951,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void UNK_0xf426() // UNK_0xf426
 {
-  WHITE(); // WHITE
+  SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
 
@@ -967,7 +967,7 @@ void UNK_0xf42e() // UNK_0xf42e
   Push(cc_UNK_0xed42); // UNK_0xed42
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  UNK_0xed46(); // UNK_0xed46
+  LoadData("UNK_0xed46"); // from 'COMPOUNDS   '
   _1_dot_5_at_(); // 1.5@
   UNK_0xee72(); // UNK_0xee72
 }

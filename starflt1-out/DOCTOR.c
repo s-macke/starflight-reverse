@@ -86,7 +86,7 @@ void UNK_0xf092() // UNK_0xf092
 void UNK_0xf0a6() // UNK_0xf0a6
 {
   _gt_R(); // >R
-  _star_ASSIGN(); // *ASSIGN
+  Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
   Push(cc__6); // 6
@@ -96,13 +96,13 @@ void UNK_0xf0a6() // UNK_0xf0a6
   signed short int imax = Pop();
   do // (DO)
   {
-  UNK_0xf08d(); // UNK_0xf08d
+  Func8("UNK_0xf08d");
   Push(i); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   Push(Read16(Pop())); // @
   Push(h); // J
   Push(Pop() & Pop()); // AND
@@ -209,7 +209,7 @@ void UNK_0xf1af() // UNK_0xf1af
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   PRINT("SHOULD I STOP TREATING ", 23); // (.")
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   ICLOSE(); // ICLOSE
   CTCR(); // CTCR
@@ -229,7 +229,7 @@ void UNK_0xf1af() // UNK_0xf1af
 
 void UNK_0xf1fa() // UNK_0xf1fa
 {
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(" DOESN'T NEED MEDICAL", 21); // (.")
   CTCR(); // CTCR
@@ -243,7 +243,7 @@ void UNK_0xf1fa() // UNK_0xf1fa
 
 void UNK_0xf229() // UNK_0xf229
 {
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(" IS BEYOND HELP.", 16); // (.")
 }
@@ -257,7 +257,7 @@ void UNK_0xf244() // UNK_0xf244
 {
   PRINT("I AM STARTING TREATMENT ON", 26); // (.")
   CTCR(); // CTCR
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -270,23 +270,23 @@ void UNK_0xf244() // UNK_0xf244
 void UNK_0xf26f() // UNK_0xf26f
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0xf083(); // UNK_0xf083
+  Func8("UNK_0xf083");
   C_at_(); // C@
   Push(1); // 1
   Push(0x0064);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   UNK_0xf244(); // UNK_0xf244
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   _ex_(); // !
   goto label2;
 
   label1:
-  UNK_0xf083(); // UNK_0xf083
+  Func8("UNK_0xf083");
   C_at_(); // C@
   Push(0x0064);
   _eq_(); // =
@@ -310,7 +310,7 @@ void UNK_0xf2af() // UNK_0xf2af
 {
   PRINT("I AM CEASING TREATMENT ON", 25); // (.")
   CTCR(); // CTCR
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -324,11 +324,11 @@ void UNK_0xf2d9() // UNK_0xf2d9
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf2af(); // UNK_0xf2af
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   Push(Read16(Pop())); // @
   Push(0xfffb);
   Push(Pop() & Pop()); // AND
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -342,7 +342,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
 {
   PRINT("I AM CONTINUING TREATMENT ON", 28); // (.")
   CTCR(); // CTCR
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -356,11 +356,11 @@ void UNK_0xf31e() // UNK_0xf31e
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf2f1(); // UNK_0xf2f1
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -383,12 +383,12 @@ void UNK_0xf373() // UNK_0xf373
   PRINT("WHO SHOULD I ", 13); // (.")
   UNK_0xf191(); // UNK_0xf191
   PRINT("?", 1); // (.")
-  _star_PERSON(); // *PERSON
+  Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
 
   label2:
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   C_at_(); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -411,21 +411,21 @@ void UNK_0xf373() // UNK_0xf373
   Push(0x000b);
   Push(2); // 2
   CTPOS_dot_(); // CTPOS.
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
 
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  NPCREW(); // NPCREW
+  Func10("NPCREW");
   if (Pop() == 0) goto label3;
   Push(0x000b);
   Push(2); // 2
   CTPOS_dot_(); // CTPOS.
   Push(0x000f);
-  BLACK(); // BLACK
+  SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
 
   label3:
@@ -446,10 +446,10 @@ void UNK_0xf421() // UNK_0xf421
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   _gt_C_plus_S(); // >C+S
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
-  UNK_0xf083(); // UNK_0xf083
+  Func8("UNK_0xf083");
   C_at_(); // C@
   DUP(); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
@@ -457,14 +457,14 @@ void UNK_0xf421() // UNK_0xf421
   PRINT(",", 1); // (.")
   CTCR(); // CTCR
   PRINT("AND HAS A VITALITY OF ", 22); // (.")
-  UNK_0xf083(); // UNK_0xf083
+  Func8("UNK_0xf083");
   C_at_(); // C@
   Push(0); // 0
   _dot_R(); // .R
   PRINT(" AND A", 6); // (.")
   CTCR(); // CTCR
   PRINT("DURABILITY OF ", 14); // (.")
-  UNK_0xf076(); // UNK_0xf076
+  LoadData("UNK_0xf076"); // from 'CREWMEMBER  '
   C_at_(); // C@
   Push(0); // 0
   _dot_R(); // .R
@@ -472,12 +472,12 @@ void UNK_0xf421() // UNK_0xf421
   label1:
   PRINT(".", 1); // (.")
   CTCR(); // CTCR
-  UNK_0xf088(); // UNK_0xf088
+  Func8("UNK_0xf088");
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  UNK_0xf07e(); // UNK_0xf07e
+  Func8("UNK_0xf07e");
   _do__dot_(); // $.
   PRINT(" IS CURRENTLY BEING", 19); // (.")
   CTCR(); // CTCR

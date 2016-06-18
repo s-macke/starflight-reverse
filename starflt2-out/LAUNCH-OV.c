@@ -227,7 +227,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   DUP(); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
@@ -301,12 +301,12 @@ void UNK_0xf202() // UNK_0xf202
 void _dot_AIRLOCK() // .AIRLOCK
 {
   _gt_MAINVI(); // >MAINVI
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
-  BLACK(); // BLACK
-  BLACK(); // BLACK
-  YELLOW(); // YELLOW
+  SetColor("BLACK");
+  SetColor("BLACK");
+  SetColor("YELLOW");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -575,7 +575,7 @@ void _and_RETURN() // &RETURN
   UNK_0x3f09("CLOSING");
   UNK_0xf390(); // UNK_0xf390
   _dot_AIRLOCK(); // .AIRLOCK
-  GREY2(); // GREY2
+  SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(cc_FALSE); // FALSE
   if (Pop() == 0) goto label1;

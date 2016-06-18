@@ -81,16 +81,16 @@ void UNK_0xef73() // UNK_0xef73
   Push(cc_UNK_0xef66); // UNK_0xef66
   TONE(); // TONE
   BEEPON(); // BEEPON
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   V_gt_DISPL(); // V>DISPL
   Push(0x00c8);
   MS(); // MS
-  LT_dash_BLUE(); // LT-BLUE
+  SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x000c);
   Push(0x0064);
@@ -160,13 +160,13 @@ void UNK_0xf020() // UNK_0xf020
 
 void UNK_0xf026() // UNK_0xf026
 {
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(Pop()+1); // 1+
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
   COUNT(); // COUNT
-  WHITE(); // WHITE
+  SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
   _ex_(); // !
   Push(0xc216);
@@ -496,16 +496,16 @@ void UNK_0xf25e() // UNK_0xf25e
   signed short int imax = Pop();
   do // (DO)
   {
-  BLACK(); // BLACK
-  ORANGE(); // ORANGE
-  RED(); // RED
-  ORANGE(); // ORANGE
-  YELLOW(); // YELLOW
-  ORANGE(); // ORANGE
-  YELLOW(); // YELLOW
-  WHITE(); // WHITE
-  YELLOW(); // YELLOW
-  WHITE(); // WHITE
+  SetColor("BLACK");
+  SetColor("ORANGE");
+  SetColor("RED");
+  SetColor("ORANGE");
+  SetColor("YELLOW");
+  SetColor("ORANGE");
+  SetColor("YELLOW");
+  SetColor("WHITE");
+  SetColor("YELLOW");
+  SetColor("WHITE");
   Push(0x000a);
   Push(0); // 0
 
@@ -549,12 +549,12 @@ void UNK_0xf2b0() // UNK_0xf2b0
   _at__gt_C_plus_S(); // @>C+S
   _ask__dash_NULL(); // ?-NULL
   if (Pop() == 0) goto label1;
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   Push(Read16(Pop())); // @
   Push(0x05a0);
   _dash_(); // -
   ABS(); // ABS
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   Push(Read16(Pop())); // @
   Push(0x02da);
   _dash_(); // -
@@ -585,16 +585,16 @@ void UNK_0xf2eb() // UNK_0xf2eb
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf2e6(); // UNK_0xf2e6
+  Func8("UNK_0xf2e6");
   C_at_(); // C@
   Push(Pop() ^ Pop()); // XOR
-  UNK_0xf2e6(); // UNK_0xf2e6
+  Func8("UNK_0xf2e6");
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -651,14 +651,14 @@ void UNK_0xf331() // UNK_0xf331
 
 void UNK_0xf39d() // UNK_0xf39d
 {
-  _star_SECS(); // *SECS
+  Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
   SUBROOT(); // SUBROOT
 
   label3:
   NEXT_dash_NO(); // NEXT-NO
   CI(); // CI
-  _star_SECS(); // *SECS
+  Push2Words("*SECS");
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -671,7 +671,7 @@ void UNK_0xf39d() // UNK_0xf39d
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(0); // 0
-  UNK_0xef6e(); // UNK_0xef6e
+  Func8("UNK_0xef6e");
   C_ex_(); // C!
 
   label2:
@@ -708,14 +708,14 @@ void UNK_0xf426() // UNK_0xf426
 
 void UNK_0xf430() // UNK_0xf430
 {
-  _star_SPHEXI(); // *SPHEXI
+  Push2Words("*SPHEXI");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() == 0) goto label1;
   Push(pp__ask_SPHEXI); // ?SPHEXI
   OFF(); // OFF
 
   label1:
-  _star_ELAN(); // *ELAN
+  Push2Words("*ELAN");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() == 0) goto label2;
   Push(pp__ask_ELAN); // ?ELAN
@@ -723,7 +723,7 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf331(); // UNK_0xf331
 
   label2:
-  _star_BRAIN(); // *BRAIN
+  Push2Words("*BRAIN");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() == 0) goto label3;
   UNK_0xf39d(); // UNK_0xf39d
@@ -795,7 +795,7 @@ void DEPART() // DEPART
   UNK_0xf430(); // UNK_0xf430
 
   label6:
-  NULL(); // NULL
+  Push2Words("NULL");
   Push(pp__ro_BOMB_rc_); // (BOMB)
   _1_dot_5_ex_(); // 1.5!
   Push(pp__ask_BOMB); // ?BOMB

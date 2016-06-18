@@ -111,15 +111,15 @@ void UNK_0xe700() // UNK_0xe700
 
 void UNK_0xe80a() // UNK_0xe80a
 {
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  UNK_0xe77d(); // UNK_0xe77d
+  Func8("UNK_0xe77d");
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
-  _n_JUMPOS(); // #JUMPOS
+  Func8("#JUMPOS");
   C_at_(); // C@
   Push(Pop() + Pop()); // +
-  _n_BLASTOS(); // #BLASTOS
+  Func8("#BLASTOS");
   C_at_(); // C@
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
@@ -135,7 +135,7 @@ void UNK_0xe888() // UNK_0xe888
 {
   _at_CRS(); // @CRS
   Push(2); // 2
-  BLACK(); // BLACK
+  SetColor("BLACK");
   Push(0x00ae);
   Push(0x0085);
   _2DUP(); // 2DUP
@@ -167,7 +167,7 @@ void UNK_0xe888() // UNK_0xe888
 void UNK_0xeaaa() // UNK_0xeaaa
 {
   Push(cc__7); // 7
-  BLACK(); // BLACK
+  SetColor("BLACK");
   ROT(); // ROT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -211,27 +211,27 @@ void UNK_0xeb07() // UNK_0xeb07
 {
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
-  UNK_0xe75f(); // UNK_0xe75f
+  Func8("UNK_0xe75f");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(cc__4); // 4
   UNK_0xeaaa(); // UNK_0xeaaa
-  UNK_0xe76e(); // UNK_0xe76e
+  Func8("UNK_0xe76e");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(cc__3); // 3
   UNK_0xeaaa(); // UNK_0xeaaa
-  UNK_0xe75a(); // UNK_0xe75a
+  Func8("UNK_0xe75a");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(2); // 2
   UNK_0xeaaa(); // UNK_0xeaaa
-  UNK_0xe773(); // UNK_0xe773
+  Func8("UNK_0xe773");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(1); // 1
   UNK_0xeaaa(); // UNK_0xeaaa
-  UNK_0xe778(); // UNK_0xe778
+  Func8("UNK_0xe778");
   Push(Pop()+1); // 1+
   C_at_(); // C@
   Push(0); // 0
@@ -286,12 +286,12 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
 {
   Push(0xc8c3);
   MODULE(); // MODULE
-  _star_SHIP(); // *SHIP
+  Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe6f6(); // UNK_0xe6f6
-  WHITE(); // WHITE
-  GREY1(); // GREY1
-  DK_dash_GREE(); // DK-GREE
+  SetColor("WHITE");
+  SetColor("GREY1");
+  SetColor("DK-GREE");
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
@@ -322,7 +322,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION
+  Func10("CONFIG-FUNCTION");
   goto label2;
 
   label1:

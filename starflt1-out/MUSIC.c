@@ -722,7 +722,7 @@ void UNK_0xe82b() // UNK_0xe82b
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
   _ex_(); // !
   Push(0x0045);
-  FILE_dash_ST(); // FILE-ST
+  Func6("FILE-ST");
   Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /

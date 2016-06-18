@@ -117,7 +117,7 @@ void UNK_0xec2a() // UNK_0xec2a
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _st__ex__gt_(); // <!>
-  BLACK(); // BLACK
+  SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -264,7 +264,7 @@ void UNK_0xecf1() // UNK_0xecf1
 void UNK_0xed1f() // UNK_0xed1f
 {
   _gt_C_plus_S(); // >C+S
-  PHRASE_do_(); // PHRASE$
+  Func8("PHRASE$");
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -293,7 +293,7 @@ void UNK_0xed31() // UNK_0xed31
   Push(0x0099);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  DK_dash_BLUE(); // DK-BLUE
+  SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   Push(1); // 1
   Push(pp_XORMODE); // XORMODE
@@ -445,7 +445,7 @@ void UNK_0xf092() // UNK_0xf092
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  ACT_dash_SCR(); // ACT-SCR
+  Func10("ACT-SCR");
   goto label2;
 
   label1:
@@ -564,7 +564,7 @@ void UNK_0xf223() // UNK_0xf223
 {
   Push(0xf1dd);
   DISTRAC(); // DISTRAC
-  _ro_TIMER_rc_(); // (TIMER)
+  Func13("(TIMER)");
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xf1a9(); // UNK_0xf1a9
@@ -615,7 +615,7 @@ void UNK_0xf289() // UNK_0xf289
   Push(0); // 0
   FILL(); // FILL
   UNK_0xed86(); // UNK_0xed86
-  TEXT_dash_CO(); // TEXT-CO
+  Func8("TEXT-CO");
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xec16(); // UNK_0xec16
@@ -640,7 +640,7 @@ void UNK_0xf289() // UNK_0xf289
   do // (DO)
   {
   INEXT(); // INEXT
-  TEXT_dash_CO(); // TEXT-CO
+  Func8("TEXT-CO");
   Push(Read16(Pop())); // @
   Push(j); // I
   UNK_0xf271(); // UNK_0xf271
@@ -765,7 +765,7 @@ void UNK_0xf351() // UNK_0xf351
   Push(0x0065);
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  UNK_0xec0e(); // UNK_0xec0e
+  LoadData("UNK_0xec0e"); // from 'PLANET      '
   C_at_(); // C@
   Push(0x0064);
   Push(0x0100);
@@ -920,16 +920,16 @@ void UNK_0xf3f9() // UNK_0xf3f9
   MIN(); // MIN
   Push(0); // 0
   MAX(); // MAX
-  INST_dash_QT(); // INST-QT
+  Func8("INST-QT");
   _ex_(); // !
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  INST_dash_X(); // INST-X
+  Func8("INST-X");
   _ex_(); // !
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
-  INST_dash_Y(); // INST-Y
+  Func8("INST-Y");
   _ex_(); // !
   Push(0xba55);
   MODULE(); // MODULE
@@ -996,7 +996,7 @@ void RECALL() // RECALL
   _099(); // 099
   Push(pp_ETIME); // ETIME
   _099(); // 099
-  _i_F2(); // 'F2
+  Func12("'F2");
   Pop(); Pop();// 2DROP
 
   label1:
@@ -1040,7 +1040,7 @@ void DRONE() // DRONE
   ACTION_ask_(); // ACTION?
   Push(pp_ACT_n_); // ACT#
   Push(Read16(Pop())); // @
-  _n__gt_ACTIO(); // #>ACTIO
+  Func10("#>ACTIO");
   _ask_DUP(); // ?DUP
   if (Pop() == 0) goto label3;
   Push(pp_ESC_dash_EN); // ESC-EN
@@ -1082,7 +1082,7 @@ void DRONE() // DRONE
   MS(); // MS
 
   label7:
-  NULL(); // NULL
+  Push2Words("NULL");
 }
 
 // 0xf55a: db 0x44 0x52 0x4f 0x4e 0x45 0x2d 0x00 'DRONE- '
