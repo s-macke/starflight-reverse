@@ -17,6 +17,6 @@ extern int ndir;
 char* Extract(int diridx, int *size);
 void LoadDir(FILE *fp);
 unsigned short GetStartAddress(int diridx);
-
+char* FindDirEntry(int startaddr);
 
 #endif

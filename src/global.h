@@ -35,8 +35,24 @@ extern OVERLAYS overlays[];
     #define DICTLIST5 0x0
     #define REGDI 0x78C // always constant, points to WORD "OPERATOR"
     #define OUTDIR "starflt1-out"
-    #define CODELOADDATA 0x73ea // code executed when data is loaded from directory
-    #define CODELOADOVERLAY 0x83F8
+    #define CODELOADDATA      0x73ea // code executed when data is loaded from directory
+    #define CODELOADOVERLAY   0x83F8
+    #define CODEFUNC1         0x5275 // "OVT" "IARRAYS"
+    #define CODESETCOLOR      0x4ef5 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
+    #define CODEFUNC3         0x6ec1 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
+    #define CODEPUSH2WORDS    0x3b68 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
+    #define CODEFUNC5         0x4a96 // "CCASE" (in CASE:)
+    #define CODEFUNC6         0x7227 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
+    #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
+    #define CODEFUNC8         0x744d // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+    #define CODEFUNC9         0x3aec // <ON> <OFF> <BLOCK> V= C=
+    #define CODEFUNC10        0x4a4f // FLD@ FLD! SET?REU MON>MEM SYSCASE (XYSCAN
+    #define CODEFUNC11        0x4e00 // MERCATO CONANCH ...
+    #define CODEFUNC12        0x0000 //
+    #define CODEFUNC13        0xb869 // // maybe expert
+
+
+
 
 #elif STARFLT2
     #define CODECALL 0x224c
@@ -59,8 +75,28 @@ extern OVERLAYS overlays[];
     #define DICTLIST5 0xD5A6
     #define REGDI 0x78C // always constant, points to WORD "OPERATOR"
     #define OUTDIR "starflt2-out"
-    #define CODELOADDATA 0x7394 // code executed when data is loaded from directory
-    #define CODELOADOVERLAY 0x83DD
+
+    #define CODELOADDATA      0x7394 // code executed when data is loaded from directory
+    #define CODELOADOVERLAY   0x83DD
+    #define CODEFUNC1         0x53f7 // "OVT" "IARRAYS"
+    #define CODESETCOLOR      0x4f96 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
+    #define CODEFUNC3         0x6e67 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
+    #define CODEPUSH2WORDS    0x3b74 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
+    #define CODEFUNC5         0x4b82 // "CCASE"
+    #define CODEFUNC6         0x71d1 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
+    #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
+    #define CODEFUNC8         0x7420 // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+    #define CODEFUNC9         0x3af8 // <ON> <OFF> <BLOCK> V= C=
+    #define CODEFUNC10        0x4b3b // FLD@ FLD! SET?REU MON>MEM SYSCASE (XYSCAN
+    #define CODEFUNC11        0x4e6f // MERCATO CONANCH ...
+    #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
+    #define CODEFUNC13        0xaccc // maybe expert
+
+
+
+
+
+
 #else
     #error no starfleet defined
 #endif

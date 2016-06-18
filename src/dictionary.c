@@ -3,6 +3,7 @@
 #include<string.h>
 #include"global.h"
 #include"dictionary.h"
+#include"extract.h"
 #include"cpu.h"
 
 
@@ -787,6 +788,77 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 exit(1);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  LoadOverlay(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODELOADDATA)
+        {
+            int addr = Read16(par+2+4);
+            snprintf(pline[ofs].str, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC1)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func1(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODESETCOLOR)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  SetColor(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC3)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func3(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEPUSH2WORDS)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Push2Words(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC5)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func5(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC6)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func6(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODESETVOCABULARY)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  SetVocabulary(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC8)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func8(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC9)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func9(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC10)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func10(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC11)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func11(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC12)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func12(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC13)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Func13(\"%s\");\n", s);
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
