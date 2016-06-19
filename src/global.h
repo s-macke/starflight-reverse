@@ -49,7 +49,8 @@ extern OVERLAYS overlays[];
     #define CODEFUNC10        0x4a4f // FLD@ FLD! SET?REU MON>MEM SYSCASE (XYSCAN
     #define CODEFUNC11        0x4e00 // MERCATO CONANCH ...
     #define CODEFUNC12        0x0000 //
-    #define CODEFUNC13        0xb869 // // maybe expert
+    #define CODEFUNC13        0xb869 // maybe EXPERT
+    #define CODEFUNC14        0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
 
 
 
@@ -90,7 +91,8 @@ extern OVERLAYS overlays[];
     #define CODEFUNC10        0x4b3b // FLD@ FLD! SET?REU MON>MEM SYSCASE (XYSCAN
     #define CODEFUNC11        0x4e6f // MERCATO CONANCH ...
     #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
-    #define CODEFUNC13        0xaccc // maybe expert
+    #define CODEFUNC13        0xaccc // maybe EXPERT
+    #define CODEFUNC14        0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
 
 
 

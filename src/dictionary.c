@@ -562,6 +562,21 @@ int PutEasyMacro(int ofs, char *s)
         snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(Pop())); // @\n");
         return 1;
     }
+    if (strcmp(s, "C@") == 0)
+    {
+        snprintf(pline[ofs].str, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
+        return 1;
+    }
+    if (strcmp(s, "DUP") == 0)
+    {
+        snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(sp)); // DUP\n");
+        return 1;
+    }
+    if (strcmp(s, "?DUP") == 0)
+    {
+        snprintf(pline[ofs].str, STRINGLEN, "  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP\n");
+        return 1;
+    }
 
     return 0;
 }
@@ -611,16 +626,17 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
 
         int par = Read16(ofs);
         int codep = Read16(par);
+        par += 2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
 
-        char *s = FindDictPar(par+2, currentovidx);
+        char *s = FindDictPar(par, currentovidx);
 
         if (ofs < 0x100+FILESTAR0SIZE)
         if (currentovidx != -1)
-        if (par+2 >= maxaddr)
+        if (par >= maxaddr)
         {
-            overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par;
+            overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par-2;
             overlays[currentovidx].nentrypoints++;
 
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // Overlay %s\n", s, overlays[currentovidx].name);
@@ -628,7 +644,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             continue;
         }
 
-        //char *s = FindDictPar(par+2, currentovidx);
+        //char *s = FindDictPar(par, currentovidx);
 
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
@@ -702,7 +718,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             }
 
         } else
-        if (par+2 == PARPRINT) // a call, but gets a string as input? , TODO for STARFLIGHT2?
+        if (par == PARPRINT) // a call, but gets a string as input? , TODO for STARFLIGHT2?
         {
             int ofstemp = ofs;
             pline[ofs+2].done = 1;
@@ -719,7 +735,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 pline[ofs].done = 1;
                 ofs++;
             }
-            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par+2, str);
+            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par, str);
             /*
             snprintf(pline[ofs].str, STRINGLEN, "\n  dw3f39() string %i\n", length);
             ofs += length;
@@ -727,12 +743,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODECALL) // call
         {
-            if ((par+2 >= minaddr) && (par+2 <= maxaddr))
+            if ((par >= minaddr) && (par <= maxaddr))
             {
-                pline[par+2].isfunction = 1;
-                snprintf(pline[par+2].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+                pline[par].isfunction = 1;
+                snprintf(pline[par].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
                 ParsePartFunction(ofs+2, l, minaddr, maxaddr, currentovidx);
-                ParsePartFunction(par+2, l, minaddr, maxaddr, currentovidx);
+                ParsePartFunction(par, l, minaddr, maxaddr, currentovidx);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
@@ -772,8 +788,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODELOADOVERLAY) // This code loads the overlay
         {
-            int codep = Read16(par);
-            unsigned short startaddress = Read16(par+2);
+            //int codep = Read16(par-2);
+            unsigned short startaddress = Read16(par);
             int i=0;
             //fprintf(stderr, "LoadOverlay(\"%s\");\n", s);
             for(i=0; overlays[i].name != NULL; i++)
@@ -792,7 +808,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODELOADDATA)
         {
-            int addr = Read16(par+2+4);
+            int addr = Read16(par+4);
             snprintf(pline[ofs].str, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
             ofs += 2;
         } else
@@ -859,6 +875,22 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         if (codep == CODEFUNC13)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func13(\"%s\");\n", s);
+            ofs += 2;
+        } else
+        if (codep == CODEFUNC14)
+        {
+            par = Read16(Read16(par)+REGDI);
+            fprintf(stderr, "0x%04x\n", par);
+            /*
+            bx += 2;  // points to data in word
+            bx = Read16(bx);
+            bx = Read16(bx+di);
+            bx -= 2;
+            ax = Read16(bx);
+            //printf("jump to %x\n", ax);
+			Call(ax, bx);
+            */
+            snprintf(pline[ofs].str, STRINGLEN, "  Func14(\"%s\"); // call of word 0x%04x\n", s, par);
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
