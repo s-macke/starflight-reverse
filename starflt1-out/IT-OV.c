@@ -114,7 +114,7 @@ void UNK_0xee54() // UNK_0xee54
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -494,7 +494,7 @@ void _gt_BOX() // >BOX
   _at_INST_dash_S(); // @INST-S
   _at_INST_dash_C(); // @INST-C
   ICLOSE(); // ICLOSE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x001a);
   _eq_(); // =
   if (Pop() == 0) goto label2;
@@ -506,7 +506,7 @@ void _gt_BOX() // >BOX
   IOPEN(); // IOPEN
 
   label4:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   INEXT(); // INEXT
   _at_INST_dash_S(); // @INST-S
   _eq_(); // =

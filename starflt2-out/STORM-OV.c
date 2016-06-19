@@ -43,7 +43,7 @@
 
 void UNK_0xf126() // UNK_0xf126
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
   RANGE(); // RANGE
@@ -92,7 +92,7 @@ void UNK_0xf126() // UNK_0xf126
   } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffd4
 
   Pop(); Pop();// 2DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
@@ -116,8 +116,8 @@ void UNK_0xf1cc() // UNK_0xf1cc
   label1:
   OVER(); // OVER
   OVER(); // OVER
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x0064);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -182,7 +182,7 @@ void UNK_0xf2e1() // UNK_0xf2e1
   Func8("UNK_0xf2c8");
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xf2c3");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -296,7 +296,7 @@ void UNK_0xf374() // UNK_0xf374
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
   Func8("UNK_0xf306");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   PRINT("INJURED", 7); // (.")
   goto label2;
@@ -322,7 +322,7 @@ void INJURE_dash_PL() // INJURE-PL
   UNK_0xf318(); // UNK_0xf318
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xf310"); // from 'CREWMEMBER  '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
@@ -337,7 +337,7 @@ void INJURE_dash_PL() // INJURE-PL
   MAX(); // MAX
   Push(Pop() * Pop()); // *
   Func8("UNK_0xf306");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
@@ -404,7 +404,7 @@ void UNK_0xf468() // UNK_0xf468
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__3); // 3
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -457,7 +457,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
   Push(0x0064);
   RRND(); // RRND
   LoadData("UNK_0xf2d5"); // from 'PLANET      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop()+1); // 1+
   Push(0); // 0
@@ -499,8 +499,8 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf2cd"); // from 'PLANET      '
-  C_at_(); // C@
-  _ask_DUP(); // ?DUP
+  Push(Read8(Pop())&0xFF); // C@
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf4a6(); // UNK_0xf4a6
   goto label2;

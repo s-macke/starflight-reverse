@@ -90,7 +90,7 @@ void _v_REGION() // |REGION
   _099(); // 099
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc_BX); // BX
   Push(Pop()+1); // 1+
   C_ex_(); // C!
@@ -99,7 +99,7 @@ void _v_REGION() // |REGION
   C_ex_(); // C!
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc_BX); // BX
   C_ex_(); // C!
   Push(cc_DX); // DX
@@ -132,7 +132,7 @@ void _v_REGION() // |REGION
 
 void UNK_0xeee5() // UNK_0xeee5
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(Pop()*2); // 2*
   Push(0x0050);
@@ -141,10 +141,10 @@ void UNK_0xeee5() // UNK_0xeee5
   Push(0x00c7);
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()-1); // 1-
-  C_at_(); // C@
-  TYPE(); // TYPE
+  Push(Read8(Pop())&0xFF); // C@
+  Func14("TYPE"); // call of word 0x2690
   return;
 
   label1:
@@ -371,16 +371,16 @@ void UNK_0xf2c8() // UNK_0xf2c8
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_WBLT); // WBLT
   _ex_(); // !
   Push(Pop()+2); // 2+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   Push(cc__dash_2); // -2
@@ -479,7 +479,7 @@ void UNK_0xf360() // UNK_0xf360
   MAX(); // MAX
   Push(0x009b);
   MIN(); // MIN
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XBLT); // XBLT
   _ex_(); // !
   Push(pp_MANX); // MANX
@@ -522,7 +522,7 @@ void UNK_0xf37e() // UNK_0xf37e
   UNK_0xf33e(); // UNK_0xf33e
   POS_dot_(); // POS.
   UNK_0xf346(); // UNK_0xf346
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   UNK_0xf352(); // UNK_0xf352
@@ -624,7 +624,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   _ex_(); // !
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(pp_HUB); // HUB
   _099(); // 099

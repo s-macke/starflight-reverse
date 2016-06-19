@@ -245,7 +245,7 @@ void UNK_0xf162() // UNK_0xf162
 {
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xf152(); // UNK_0xf152
   Push(0); // 0
   Push(0x000a);
@@ -260,7 +260,7 @@ void UNK_0xf162() // UNK_0xf162
   Push(1); // 1
   Push(0x0010);
   RRND(); // RRND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
@@ -371,7 +371,7 @@ void _dot_AIRLOCK() // .AIRLOCK
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_WBLT); // WBLT
   _ex_(); // !
   Push(pp_LBLT); // LBLT
@@ -480,7 +480,7 @@ void UNK_0xf36c() // UNK_0xf36c
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   PRINT(" DOCKING BAY DOORS", 18); // (.")
   Push(0x7148);
   TONE(); // TONE
@@ -549,7 +549,7 @@ void _and_LAUNCH() // &LAUNCH
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xf2e2(); // UNK_0xf2e2
   UNK_0xf026(); // UNK_0xf026
@@ -592,7 +592,7 @@ void _and_RETURN() // &RETURN
   Push(1); // 1
   Push(0x0010);
   RRND(); // RRND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR

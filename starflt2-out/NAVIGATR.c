@@ -184,7 +184,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
   Func8("UNK_0xf1a5");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
@@ -249,7 +249,7 @@ void UNK_0xf311() // UNK_0xf311
   LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
   Func8("UNK_0xf1a5");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
   Func8("UNK_0xf1a5");
@@ -291,7 +291,7 @@ void _gt_DISARM() // >DISARM
   LoadData("UNK_0xf1b2"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
   Func8("UNK_0xf1a5");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
@@ -313,10 +313,10 @@ void UNK_0xf3ef() // UNK_0xf3ef
 {
   Func8("UNK_0xf1a0");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func8("UNK_0xf19b");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -329,7 +329,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   Push(0); // 0
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label4;
   UNK_0xf202(); // UNK_0xf202
 
@@ -355,7 +355,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   Push(0); // 0
 
   label7:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label8;
   UNK_0xf202(); // UNK_0xf202
 

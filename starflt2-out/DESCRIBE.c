@@ -154,7 +154,7 @@ void APAUSE() // APAUSE
   _2OVER(); // 2OVER
   D_gt_(); // D>
   _i_KEY(); // 'KEY
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func10("(XYSCAN");
   Pop(); Pop();// 2DROP
   Push(Pop() | Pop()); // OR
@@ -236,8 +236,8 @@ void UNK_0xe797() // UNK_0xe797
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -283,7 +283,7 @@ void UNK_0xe7df() // UNK_0xe7df
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   Push(i); // I
@@ -303,7 +303,7 @@ void UNK_0xe7df() // UNK_0xe7df
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   PICK(); // PICK
   Push(Pop() + Pop()); // +
@@ -356,9 +356,9 @@ void UNK_0xe843() // UNK_0xe843
 
 void UNK_0xe853() // UNK_0xe853
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe843(); // UNK_0xe843
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
@@ -369,7 +369,7 @@ void UNK_0xe853() // UNK_0xe853
 
   label2:
   OVER(); // OVER
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
   _eq_(); // =
   Push(pp_CTX); // CTX
@@ -381,10 +381,10 @@ void UNK_0xe853() // UNK_0xe853
   SPACE(); // SPACE
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(pp_UNK_0xe83f); // UNK_0xe83f
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label4;
@@ -418,7 +418,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   _099(); // 099
   _at_COLOR(); // @COLOR
   _gt_R(); // >R
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   _eq_(); // =
   Push(pp_HAZE); // HAZE
@@ -427,7 +427,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   OVER(); // OVER
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func10(">SPECIAL");
   goto label2;
 
@@ -435,7 +435,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   Push(0); // 0
 
   label2:
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label3;
   UNK_0xe853(); // UNK_0xe853
   UNK_0xe833(); // UNK_0xe833
@@ -462,7 +462,7 @@ void UNK_0xea33() // UNK_0xea33
   Push(1); // 1
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -1210,7 +1210,7 @@ void SYSCAN() // SYSCAN
 
 void DESCRIBE() // DESCRIBE
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @

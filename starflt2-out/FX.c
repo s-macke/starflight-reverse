@@ -68,7 +68,7 @@ void UNK_0xf07e() // UNK_0xf07e
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf076"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }
 
@@ -103,7 +103,7 @@ void UNK_0xf090() // UNK_0xf090
 void UNK_0xf0bb() // UNK_0xf0bb
 {
   Push(pp_A_dash_POSTU); // A-POSTU
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func10("N>STAT");
 }
 
@@ -231,8 +231,8 @@ void UNK_0xf13d() // UNK_0xf13d
 
 void UNK_0xf1bc() // UNK_0xf1bc
 {
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x00c8);
   _st_(); // <
   SWAP(); // SWAP
@@ -241,7 +241,7 @@ void UNK_0xf1bc() // UNK_0xf1bc
   Push(Pop() & Pop()); // AND
   _gt_R(); // >R
   OVER(); // OVER
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x00c8);
   _st_(); // <
   SWAP(); // SWAP
@@ -318,7 +318,7 @@ void PSYCH() // PSYCH
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf13d(); // UNK_0xf13d
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf08c); // UNK_0xf08c
   _ex_(); // !
 
@@ -374,7 +374,7 @@ void UNK_0xf2d8() // UNK_0xf2d8
   UNK_0xf2c4(); // UNK_0xf2c4
   Push(0x0012);
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
 }
 
 
@@ -565,7 +565,7 @@ void UNK_0xf3de() // UNK_0xf3de
 {
   _gt_R(); // >R
   Push(h); // I
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -614,22 +614,22 @@ void UNK_0xf3de() // UNK_0xf3de
   UNK_0xf2f2(); // UNK_0xf2f2
   Push(Pop() + Pop()); // +
   Push(2); // 2
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(h); // I
   UNK_0xf30a(); // UNK_0xf30a
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf3ce(); // UNK_0xf3ce
   _dash_TRAILING(); // -TRAILING
   _2OVER(); // 2OVER
   Push(cc__6); // 6
   _dash_(); // -
   POS_dot_(); // POS.
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   R_at_(); // R@
   UNK_0xf316(); // UNK_0xf316
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x001c);
   SWAP(); // SWAP
   _at_RECORD(); // @RECORD
@@ -640,7 +640,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(0x000c);
   _dash_(); // -
   POS_dot_(); // POS.
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   goto label5;
 
   label4:
@@ -664,7 +664,7 @@ void UNK_0xf48c() // UNK_0xf48c
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   _dash_(); // -
   Push(pp_XBLT); // XBLT
@@ -693,7 +693,7 @@ void UNK_0xf4be() // UNK_0xf4be
   UNK_0xf2c4(); // UNK_0xf2c4
   Push(0x0012);
   _dash_TRAILING(); // -TRAILING
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()>>1); // 2/
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
@@ -702,12 +702,12 @@ void UNK_0xf4be() // UNK_0xf4be
   _dash_(); // -
   Push(0x00c4);
   POS_dot_(); // POS.
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   SetColor("BLACK");
   UNK_0xf48c(); // UNK_0xf48c
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -748,7 +748,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
   Push(Pop()+1); // 1+
   UNK_0xf3de(); // UNK_0xf3de
   Push(i); // I
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   UNK_0xf3de(); // UNK_0xf3de

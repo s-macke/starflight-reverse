@@ -181,7 +181,7 @@ void UNK_0xf32b() // UNK_0xf32b
   PRINT("TO ", 3); // (.")
   Push(pp_UNK_0xf327); // UNK_0xf327
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   Func10("(.CS)");
@@ -215,21 +215,21 @@ void UNK_0xf3ad() // UNK_0xf3ad
 {
   UNK_0xf1c5(); // UNK_0xf1c5
   _gt_2FONT(); // >2FONT
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf270(); // UNK_0xf270
 
   label1:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(2); // 2
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf2a8(); // UNK_0xf2a8
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
@@ -260,7 +260,7 @@ void UNK_0xf40a() // UNK_0xf40a
 {
   Push(pp__ask_EVAL); // ?EVAL
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push2Words("*OP");
@@ -340,16 +340,16 @@ void UNK_0xf480() // UNK_0xf480
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Func8("%NAME");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Func8("UNK_0xf1c0");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf327); // UNK_0xf327
@@ -379,7 +379,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   if (Pop() == 0) goto label2;
   Func8("INST-QT");
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   M_star_(); // M*
   Push(pp__10_star_END); // 10*END
@@ -422,7 +422,7 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf3ad(); // UNK_0xf3ad
   KEY(); // KEY

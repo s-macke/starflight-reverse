@@ -128,7 +128,7 @@ void UNK_0xef2e() // UNK_0xef2e
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -564,7 +564,7 @@ void _ask_ELEMENT() // ?ELEMENT
   _eq_(); // =
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xee9e"); // from 'ARTIFACT    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   return;
 
@@ -624,7 +624,7 @@ void _gt_BOX() // >BOX
   IOPEN(); // IOPEN
 
   label4:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   INEXT(); // INEXT
   _at_INST_dash_S(); // @INST-S
   _eq_(); // =

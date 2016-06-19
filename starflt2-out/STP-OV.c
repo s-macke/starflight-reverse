@@ -94,8 +94,8 @@ void MP_i_ER() // MP'ER
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf08f");
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x0080);
   _st_(); // <
   Push(pp_UNK_0xf08b); // UNK_0xf08b
@@ -109,7 +109,7 @@ void MP_i_ER() // MP'ER
   C_ex_(); // C!
   Func8("UNK_0xf094");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   Func8("UNK_0xf094");
@@ -417,7 +417,7 @@ void UNK_0xf2f5() // UNK_0xf2f5
   IOPEN(); // IOPEN
   _plus_ICONBO(); // +ICONBO
   UNK_0xf2db(); // UNK_0xf2db
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xf188); // UNK_0xf188
   _099(); // 099
@@ -441,13 +441,13 @@ void UNK_0xf2f5() // UNK_0xf2f5
   Push(cc_SYS_dash_ICO); // SYS-ICO
   _eq_(); // =
   Push(Pop() & Pop()); // AND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf086");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0080);
   Push(Pop() & Pop()); // AND
   _gt_FLAG(); // >FLAG
@@ -494,7 +494,7 @@ void UNK_0xf365() // UNK_0xf365
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf35d); // UNK_0xf35d
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _st_(); // <
   return;
 
@@ -515,7 +515,7 @@ void UNK_0xf38f() // UNK_0xf38f
   Push(pp_UNK_0xf180); // UNK_0xf180
   Push(Read16(Pop())); // @
   Func10("COLORS");
-  CR(); // CR
+  Func14("CR"); // call of word 0x26ee
   PRINT("AND ", 4); // (.")
   Push(pp_UNK_0xf184); // UNK_0xf184
   Push(Read16(Pop())); // @
@@ -558,7 +558,7 @@ void UNK_0xf3bc() // UNK_0xf3bc
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
   Push(0); // 0
@@ -656,7 +656,7 @@ void UNK_0xf464() // UNK_0xf464
   label1:
   SWAP(); // SWAP
   Pop(); // DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(1); // 1
   _eq_(); // =
@@ -738,7 +738,7 @@ void _2N() // 2N
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf08f");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   Func8("UNK_0xf08f");

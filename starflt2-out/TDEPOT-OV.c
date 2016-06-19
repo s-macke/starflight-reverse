@@ -376,13 +376,13 @@ void UNK_0xed96() // UNK_0xed96
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
   _eq_(); // =
   if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   Push(0x003a);
   WITHIN(); // WITHIN
@@ -397,7 +397,7 @@ void UNK_0xed96() // UNK_0xed96
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
   Push(Pop() + Pop()); // +
@@ -449,7 +449,7 @@ void UNK_0xee30() // UNK_0xee30
   Push(0xc285);
   MODULE(); // MODULE
   UNK_0xe5f2(); // UNK_0xe5f2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Pop(); // DROP
@@ -591,7 +591,7 @@ void SELL_dash_IT() // SELL-IT
   _plus__ex_(); // +!
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   CDEPTH(); // CDEPTH
   _st_(); // <
   if (Pop() == 0) goto label1;

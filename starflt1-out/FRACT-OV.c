@@ -183,7 +183,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
   {
   Push(pp_UNK_0xe35a); // UNK_0xe35a
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(-Pop()); // NEGATE
   SWAP(); // SWAP
   RRND(); // RRND
@@ -683,7 +683,7 @@ void UNK_0xe78c() // UNK_0xe78c
 
 void MERCATOR_dash_GEN() // MERCATOR-GEN
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_SEED); // SEED
   _ex_(); // !
   Push(pp_GLOBALS); // GLOBALS
@@ -1601,13 +1601,13 @@ void UNK_0xecc6() // UNK_0xecc6
   _dash_(); // -
   Push(Pop()*2); // 2*
   Push(Pop()*2); // 2*
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xeb88); // UNK_0xeb88
   _ex_(); // !
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xeb8c); // UNK_0xeb8c
   _ex_(); // !
   SWAP(); // SWAP
@@ -1722,10 +1722,10 @@ void UNK_0xed8d() // UNK_0xed8d
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(i); // I
   UNK_0xed50(); // UNK_0xed50
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -1743,7 +1743,7 @@ void UNK_0xed8d() // UNK_0xed8d
   if (Pop() == 0) goto label2;
   Push(i); // I
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xed50(); // UNK_0xed50
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
@@ -1808,7 +1808,7 @@ void UNK_0xedd9() // UNK_0xedd9
   Push(j); // I
   Push(Pop()+1); // 1+
   UNK_0xed50(); // UNK_0xed50
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0021);
   UNK_0xed50(); // UNK_0xed50
   _gt_(); // >
@@ -2147,7 +2147,7 @@ void UNK_0xf023() // UNK_0xf023
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(i); // I
   ACELLAD(); // ACELLAD
   Push(0); // 0
@@ -2176,7 +2176,7 @@ void UNK_0xf049() // UNK_0xf049
   if (Pop() == 0) return;
   Push(pp_DXCON); // DXCON
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   ABS(); // ABS
@@ -2212,7 +2212,7 @@ void UNK_0xf08b() // UNK_0xf08b
   if (Pop() == 0) return;
   Push(pp_DYCON); // DYCON
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   ABS(); // ABS

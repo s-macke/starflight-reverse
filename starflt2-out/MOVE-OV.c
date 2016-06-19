@@ -199,7 +199,7 @@ void SET_dash_SPE() // SET-SPE
   UNK_0xeb23(); // UNK_0xeb23
   ACELLAD(); // ACELLAD
   A_at_(); // A@
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0010);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -451,7 +451,7 @@ void UNK_0xed2a() // UNK_0xed2a
 {
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000c);
   MOD(); // MOD
   _dash_(); // -
@@ -461,7 +461,7 @@ void UNK_0xed2a() // UNK_0xed2a
   _ex_(); // !
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0014);
   MOD(); // MOD
   _dash_(); // -
@@ -608,7 +608,7 @@ void UNK_0xeee3() // UNK_0xeee3
 void UNK_0xeef1() // UNK_0xeef1
 {
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
@@ -629,7 +629,7 @@ void UNK_0xef57() // UNK_0xef57
   Push(0xef2d);
   ALL(); // ALL
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
@@ -864,7 +864,7 @@ void _ask_POPULA() // ?POPULA
   UNK_0xea76(); // UNK_0xea76
   Push(0x6934); Pust(0x0002);
   UNK_0xed8a(); // UNK_0xed8a
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 
   label2:
   Push(0xcfa8);
@@ -898,7 +898,7 @@ void UNK_0xf1d9() // UNK_0xf1d9
   UNK_0xed8a(); // UNK_0xed8a
   _dot_TTY(); // .TTY
   Y_slash_N(); // Y/N
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
 
@@ -925,12 +925,12 @@ void UNK_0xf201() // UNK_0xf201
 
 void UNK_0xf20b() // UNK_0xf20b
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xedb4); // UNK_0xedb4
   _st__ex__gt_(); // <!>
   Push(pp_YABS); // YABS
   _st__plus__ex__gt_(); // <+!>
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xedb0); // UNK_0xedb0
   _st__ex__gt_(); // <!>
   Push(pp_XABS); // XABS

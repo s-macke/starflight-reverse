@@ -64,7 +64,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf1ab"); // from 'PLANET      '
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -171,11 +171,11 @@ void UNK_0xf261() // UNK_0xf261
   UNK_0xf239(); // UNK_0xf239
 
   UNK_0x3f09("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   CTCR(); // CTCR
 
   UNK_0x3f09("EXTREME GRAVITY. THE ...");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(0x1388);
   Push(0x03e8);
   Push(1); // 1
@@ -212,7 +212,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _dot_TTY(); // .TTY
   Func8("UNK_0xf1a6");
   COUNT(); // COUNT
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 
   UNK_0x3f09(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
@@ -280,13 +280,13 @@ void UNK_0xf39c() // UNK_0xf39c
 void UNK_0xf3b2() // UNK_0xf3b2
 {
   UNK_0xf39c(); // UNK_0xf39c
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR SAFE LANDING");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   BEEP(); // BEEP
 }
 
@@ -300,7 +300,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
   UNK_0xf1e7(); // UNK_0xf1e7
   Push(0x0140);
   MIN(); // MIN
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -320,13 +320,13 @@ void UNK_0xf3eb() // UNK_0xf3eb
 void UNK_0xf40d() // UNK_0xf40d
 {
   UNK_0xf3eb(); // UNK_0xf3eb
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR RE-LAUNCHING");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   BEEP(); // BEEP
 }
 
@@ -350,17 +350,17 @@ void UNK_0xf446() // UNK_0xf446
 void UNK_0xf452() // UNK_0xf452
 {
   UNK_0xf446(); // UNK_0xf446
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
   UNK_0x3f09("THIS PLANET'S GRAVITY WILL CRUSH THE");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   CTCR(); // CTCR
 
   UNK_0x3f09("SHIP'S HULL.");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   BEEP(); // BEEP
 }
 
@@ -401,7 +401,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
 {
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   UNK_0xf452(); // UNK_0xf452
@@ -460,7 +460,7 @@ void _ask_LAUNCH() // ?LAUNCH
 {
   UNK_0xf40d(); // UNK_0xf40d
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   UNK_0xf24b(); // UNK_0xf24b
 }

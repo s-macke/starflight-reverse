@@ -173,18 +173,18 @@ void UNK_0xee1a() // UNK_0xee1a
   ROT(); // ROT
   SWAP(); // SWAP
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
   label2:
   _gt_R(); // >R
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label3;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
@@ -202,7 +202,7 @@ void UNK_0xee58() // UNK_0xee58
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__7); // 7
   Push(0x000a);
   WITHIN(); // WITHIN
@@ -333,7 +333,7 @@ void DO_dash_STORM() // DO-STORM
   Push(Read16(Pop())); // @
   Push(pp__pe_STORM); // %STORM
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(0x0064);
   RRND(); // RRND
@@ -438,7 +438,7 @@ void UNK_0xefd1() // UNK_0xefd1
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   OVER(); // OVER
   ON(); // ON
@@ -604,7 +604,7 @@ void _dot_STARDATE() // .STARDATE
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label2;
@@ -614,7 +614,7 @@ void _dot_STARDATE() // .STARDATE
   Push(0); // 0
   _dot_R(); // .R
   PRINT("-", 1); // (.")
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label3;
@@ -647,7 +647,7 @@ void UNK_0xf1ac() // UNK_0xf1ac
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   _st_(); // <
   SWAP(); // SWAP
@@ -668,7 +668,7 @@ void UNK_0xf1c4() // UNK_0xf1c4
   Func8("UNK_0xedd1");
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xedd6");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(0x00c7);
@@ -792,14 +792,14 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
   Func8("INST-X");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   U_star_(); // U*
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -876,7 +876,7 @@ void _dot_ENERGY() // .ENERGY
   Func8("INST-QT");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -893,7 +893,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0064);
   Push(0x782f);
   _star__slash_(); // */
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
@@ -952,7 +952,7 @@ void _dot_CARGO() // .CARGO
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xedc4");
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   MAX(); // MAX
@@ -996,7 +996,7 @@ void UNK_0xf451() // UNK_0xf451
 
 void UNK_0xf479() // UNK_0xf479
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1020,7 +1020,7 @@ void UNK_0xf479() // UNK_0xf479
 
 void UNK_0xf49d() // UNK_0xf49d
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1054,8 +1054,8 @@ void _dot_WHERE() // .WHERE
   POS_dot_(); // POS.
   UNK_0xedba(); // UNK_0xedba
   UNK_0xf451(); // UNK_0xf451
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   Push(-Pop()); // NEGATE
@@ -1065,8 +1065,8 @@ void _dot_WHERE() // .WHERE
   _dot_R(); // .R
   UNK_0xf49d(); // UNK_0xf49d
   PRINT(" * ", 3); // (.")
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Push(-Pop()); // NEGATE

@@ -556,7 +556,7 @@ void UNK_0xeee4() // UNK_0xeee4
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   ABS(); // ABS
@@ -618,7 +618,7 @@ void UNK_0xef32() // UNK_0xef32
   Push(pp_UNK_0xdec9); // UNK_0xdec9
   _st__plus__ex__gt_(); // <+!>
   Push(pp_UNK_0xdec9); // UNK_0xdec9
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Read16(Pop())); // @
   Push(1); // 1
   MAX(); // MAX
@@ -1127,7 +1127,7 @@ void UNK_0xf36a() // UNK_0xf36a
   Push(i); // I
   POINT_gt_I(); // POINT>I
   _at_ID(); // @ID
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   Push(0x0011);
   _st_(); // <

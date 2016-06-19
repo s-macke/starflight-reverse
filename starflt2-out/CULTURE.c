@@ -233,7 +233,7 @@ void UNK_0xf082() // UNK_0xf082
 void UNK_0xf0a2() // UNK_0xf0a2
 {
   UNK_0xf00b(); // UNK_0xf00b
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -266,7 +266,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 
 void UNK_0xf0bc() // UNK_0xf0bc
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x001c);
@@ -275,7 +275,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -287,9 +287,9 @@ void UNK_0xf0dc() // UNK_0xf0dc
 {
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefeb"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xefa0"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   _gt_(); // >
   Push(Pop() | Pop()); // OR
@@ -317,7 +317,7 @@ void UNK_0xf10e() // UNK_0xf10e
 {
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefd3"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   UNK_0xf0b4(); // UNK_0xf0b4
   UNK_0xf017(); // UNK_0xf017
@@ -326,13 +326,13 @@ void UNK_0xf10e() // UNK_0xf10e
 
   label1:
   LoadData("UNK_0xefd3"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   LoadData("UNK_0xefdb"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   LoadData("UNK_0xefe3"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   UNK_0xf0dc(); // UNK_0xf0dc
   if (Pop() == 0) goto label2;
@@ -343,16 +343,16 @@ void UNK_0xf10e() // UNK_0xf10e
 
   label2:
   LoadData("UNK_0xefeb"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   LoadData("UNK_0xeff3"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label3;
   PRINT("*", 1); // (.")
 
   label3:
   LoadData("UNK_0xeffb"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   ICLOSE(); // ICLOSE
 }
@@ -391,7 +391,7 @@ void UNK_0xf1bb() // UNK_0xf1bb
   PRINT("ECONOMY: ", 9); // (.")
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefb0"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Func10(">ECO");
   UNK_0xf0a2(); // UNK_0xf0a2
@@ -442,7 +442,7 @@ void UNK_0xf326() // UNK_0xf326
   PRINT("TECH LEVEL: ", 12); // (.")
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefa0"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Func10(">TECH");
   UNK_0xf0a2(); // UNK_0xf0a2
@@ -464,7 +464,7 @@ void UNK_0xf366() // UNK_0xf366
   PRINT("POPULATION DENSITY: ", 20); // (.")
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefa8"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Func10(">DENSE");
   UNK_0xf0a2(); // UNK_0xf0a2
@@ -486,7 +486,7 @@ void UNK_0xf3ac() // UNK_0xf3ac
   PRINT("TRADING STYLE: ", 15); // (.")
   UNK_0xf023(); // UNK_0xf023
   LoadData("ATTITUDE"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Func10(">ATT");
   UNK_0xf0a2(); // UNK_0xf0a2
@@ -610,7 +610,7 @@ void _dot_CULTURE() // .CULTURE
   _099(); // 099
   UNK_0xf023(); // UNK_0xf023
   LoadData("ATTITUDE"); // from 'TRADERS     '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label2;
   UNK_0xf10e(); // UNK_0xf10e

@@ -124,7 +124,7 @@ unsigned char _2TEMP[2] = {0x20, 0x2e}; // 2TEMP
 
 void _dot_PARMS() // .PARMS
 {
-  CR(); // CR
+  Func14("CR"); // call of word 0x26ee
   PRINT("x2= ", 4); // (.")
   Push(pp_X2); // X2
   Push(Read16(Pop())); // @
@@ -264,7 +264,7 @@ void _dot_PARMS() // .PARMS
 
 void _dot_HYBRID() // .HYBRID
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_BLTSEG); // BLTSEG
   _ex_(); // !
   _gt_R(); // >R

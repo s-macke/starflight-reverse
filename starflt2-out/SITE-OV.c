@@ -134,7 +134,7 @@ void UNK_0xf1e1() // UNK_0xf1e1
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _ex_COLOR(); // !COLOR
   Push(0x0094);
   Push(0x0095);
@@ -191,7 +191,7 @@ void UNK_0xf233() // UNK_0xf233
   UNK_0xf16e(); // UNK_0xf16e
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label3;
   Push(-Pop()); // NEGATE
@@ -202,7 +202,7 @@ void UNK_0xf233() // UNK_0xf233
   return;
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label4;
   Push(0x0082);
@@ -249,7 +249,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
   UNK_0xf16e(); // UNK_0xf16e
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label3;
   Push(-Pop()); // NEGATE
@@ -260,7 +260,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
   return;
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label4;
   Push(0x006a);
@@ -405,11 +405,11 @@ void UNK_0xf3df() // UNK_0xf3df
   UNK_0xf38d(); // UNK_0xf38d
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   Push(0x005f);
   SWAP(); // SWAP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0090);
   SWAP(); // SWAP
   LLINE(); // LLINE
@@ -417,7 +417,7 @@ void UNK_0xf3df() // UNK_0xf3df
   Push(Pop()-1); // 1-
   Push(0x005f);
   SWAP(); // SWAP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0090);
   SWAP(); // SWAP
   LLINE(); // LLINE

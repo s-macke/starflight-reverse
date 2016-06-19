@@ -156,10 +156,10 @@ void UNK_0xe4e2() // UNK_0xe4e2
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(i); // I
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   int step = Pop();
   i += step;
@@ -180,7 +180,7 @@ void UNK_0xe50e() // UNK_0xe50e
   SetColor("WHITE");
   SetColor("LT-BLUE");
   _ask_MRC(); // ?MRC
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xe446); // UNK_0xe446
   _ex_(); // !
   _ex_COLOR(); // !COLOR
@@ -303,7 +303,7 @@ void UNK_0xe637() // UNK_0xe637
   _ex_(); // !
   Push(pp__ask__gt_OP); // ?>OP
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_NCRS); // NCRS
   _ex_(); // !
   Push(pp_OCRS); // OCRS
@@ -365,7 +365,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   Push(i); // I
@@ -385,7 +385,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   PICK(); // PICK
   Push(Pop() + Pop()); // +
@@ -482,7 +482,7 @@ void UNK_0xeb09() // UNK_0xeb09
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
   Push(0x000a);
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(cc__4); // 4
   Push(0x009c);
   POS_dot_(); // POS.
@@ -504,7 +504,7 @@ void UNK_0xeb09() // UNK_0xeb09
   POS_dot_(); // POS.
   PRINT("ORBIT: ", 7); // (.")
   Func8("UNK_0xe46b");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
   Push(cc__4); // 4
   Push(0x008c);
@@ -512,7 +512,7 @@ void UNK_0xeb09() // UNK_0xeb09
   PRINT("NAME: ", 6); // (.")
   Func8("UNK_0xe475");
   Push(0x000f);
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(cc__4); // 4
   Push(0x007a);
   POS_dot_(); // POS.
@@ -560,10 +560,10 @@ void UNK_0xec30() // UNK_0xec30
 
   label3:
   UNK_0xe7ca(); // UNK_0xe7ca
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe856(); // UNK_0xe856
   if (Pop() == 0) goto label1;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
@@ -571,14 +571,14 @@ void UNK_0xec30() // UNK_0xec30
 
   label1:
   UNK_0xe842(); // UNK_0xe842
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
 
   label2:
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   SPACE(); // SPACE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
@@ -621,11 +621,11 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop()+1); // 1+
   BIT(); // BIT
   Func8("UNK_0xe470");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Func8("UNK_0xe470");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _plus_BIT(); // +BIT
   Push(1); // 1
   _gt_(); // >
@@ -650,8 +650,8 @@ void UNK_0xed0c() // UNK_0xed0c
   UNK_0x3f3b("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
   Func8("UNK_0xe45c");
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x03e8);
   M_star_(); // M*
   Push(0x0064); Pust(0x0000);
@@ -705,7 +705,7 @@ void UNK_0xee8c() // UNK_0xee8c
   UNK_0x3f3b("YOU HAVE EARNED A BONUS OF");
   UNK_0xec30(); // UNK_0xec30
   Func8("UNK_0xe45c");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x03e8);
   U_star_(); // U*
   _st__n_(); // <#
@@ -728,10 +728,10 @@ void UNK_0xeee3() // UNK_0xeee3
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c
   Func8("UNK_0xe45c");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0028);
   _gt_(); // >
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xee55(); // UNK_0xee55
   goto label2;
@@ -766,8 +766,8 @@ void UNK_0xeee3() // UNK_0xeee3
 void UNK_0xef37() // UNK_0xef37
 {
   Func8("UNK_0xe470");
-  C_at_(); // C@
-  _ask_DUP(); // ?DUP
+  Push(Read8(Pop())&0xFF); // C@
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xed0c(); // UNK_0xed0c
   goto label2;
@@ -1047,7 +1047,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   XYSCAN(); // XYSCAN
   SWAP(); // SWAP
   Pop(); // DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!

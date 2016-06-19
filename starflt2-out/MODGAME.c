@@ -407,7 +407,7 @@ void UNK_0xdfbb() // UNK_0xdfbb
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x004b);
   FILE_st_(); // FILE<
   Push(0); // 0
@@ -429,7 +429,7 @@ void UNK_0xdfdf() // UNK_0xdfdf
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x004c);
   FILE_st_(); // FILE<
   Push(0); // 0
@@ -451,7 +451,7 @@ void UNK_0xe003() // UNK_0xe003
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x004d);
   FILE_st_(); // FILE<
   Push(0); // 0
@@ -564,7 +564,7 @@ void UNK_0xe0e1() // UNK_0xe0e1
   UNK_0xe081(); // UNK_0xe081
   Push(pp_SSYSEG); // SSYSEG
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0); // 0
   UNK_0xe081(); // UNK_0xe081
   UNK_0xdfbb(); // UNK_0xdfbb
@@ -656,7 +656,7 @@ void UNK_0xe1af() // UNK_0xe1af
   LCMOVE(); // LCMOVE
   Push(0x000c);
   SWAP(); // SWAP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0064);
   _dash_(); // -
   SWAP(); // SWAP
@@ -673,7 +673,7 @@ void UNK_0xe1af() // UNK_0xe1af
   do // (DO)
   {
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(j); // I
   Push(i); // J
   L_at_PIXEL(); // L@PIXEL
@@ -703,7 +703,7 @@ void UNK_0xe1af() // UNK_0xe1af
 
   Pop(); // DROP
   Push(0x0140);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xde1a); // UNK_0xde1a
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
@@ -783,8 +783,8 @@ void UNK_0xe287() // UNK_0xe287
 {
 
   label1:
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -814,7 +814,7 @@ void UNK_0xe29f() // UNK_0xe29f
   Push(pp_UNK_0xde5a); // UNK_0xde5a
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xde62); // UNK_0xde62
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe02b); // UNK_0xe02b
@@ -883,7 +883,7 @@ void UNK_0xe30b() // UNK_0xe30b
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xde72); // UNK_0xde72
   Push(Read16(Pop())); // @
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(pp_YBLT); // YBLT
   _ex_(); // !
   Push(pp_UNK_0xde42); // UNK_0xde42
@@ -915,7 +915,7 @@ void UNK_0xe34f() // UNK_0xe34f
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xde72); // UNK_0xde72
   Push(Read16(Pop())); // @
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -937,7 +937,7 @@ void UNK_0xe35f() // UNK_0xe35f
   Push(pp_UNK_0xde5a); // UNK_0xde5a
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xde62); // UNK_0xde62
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe02b); // UNK_0xe02b
@@ -1241,7 +1241,7 @@ void UNK_0xe60c() // UNK_0xe60c
   KEY(); // KEY
   Pop(); // DROP
   _gt_A(); // >A
-  PAGE(); // PAGE
+  Func14("PAGE"); // call of word 0x274c
   BYE(); // BYE
 }
 
@@ -1262,7 +1262,7 @@ void UNK_0xe652() // UNK_0xe652
   _2OVER(); // 2OVER
   D_gt_(); // D>
   _i_KEY(); // 'KEY
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xde76); // UNK_0xde76
   _ex_(); // !
   Push(Pop() | Pop()); // OR
@@ -1299,7 +1299,7 @@ void UNK_0xe67c() // UNK_0xe67c
 
 void UNK_0xe684() // UNK_0xe684
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func3(":TIMEST");
   _ex_(); // !
 }
@@ -1314,7 +1314,7 @@ void UNK_0xe68e() // UNK_0xe68e
   TIME(); // TIME
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push(2); // 2
@@ -1687,10 +1687,10 @@ void UNK_0xea3f() // UNK_0xea3f
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(i); // I
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_UNK_0xde16); // UNK_0xde16
   _plus__ex_(); // +!
   Push(1); // 1
@@ -1734,7 +1734,7 @@ void UNK_0xea6f() // UNK_0xea6f
 
 void UNK_0xea79() // UNK_0xea79
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xea6f(); // UNK_0xea6f
   if (Pop() == 0) goto label1;
   _at_DS(); // @DS
@@ -1978,7 +1978,7 @@ void UNK_0xeb4b() // UNK_0xeb4b
 void UNK_0xec7a() // UNK_0xec7a
 {
   _gt_R(); // >R
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0); // 0
   Push(0x0400);
   U_slash_MOD(); // U/MOD
@@ -1987,7 +1987,7 @@ void UNK_0xec7a() // UNK_0xec7a
   Push(Pop()+1); // 1+
 
   label1:
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(0); // 0
 
@@ -2345,12 +2345,12 @@ void LOAD_dot_() // LOAD.
 void UNK_0xef06() // UNK_0xef06
 {
   Push(0x00c9);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bb);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
 }
 
 
@@ -2361,16 +2361,16 @@ void UNK_0xef06() // UNK_0xef06
 void UNK_0xef1e() // UNK_0xef1e
 {
   Push(0x00ba);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
   Push(tt_ROW); // ROW
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   Push(tt_COL); // COL
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   Push(0x00ba);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
 }
 
 
@@ -2381,12 +2381,12 @@ void UNK_0xef1e() // UNK_0xef1e
 void UNK_0xef3c() // UNK_0xef3c
 {
   Push(0x00c8);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bc);
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
 }
 
 
@@ -2399,7 +2399,7 @@ void UNK_0xef54() // UNK_0xef54
   _gt_R(); // >R
   _gt_R(); // >R
   _2DUP(); // 2DUP
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   Push(h); // I'
   UNK_0xef06(); // UNK_0xef06
   R_gt_(); // R>
@@ -2413,7 +2413,7 @@ void UNK_0xef54() // UNK_0xef54
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   _2DUP(); // 2DUP
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   Push(h); // J
   UNK_0xef1e(); // UNK_0xef1e
   i++;
@@ -2422,7 +2422,7 @@ void UNK_0xef54() // UNK_0xef54
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   R_gt_(); // R>
   UNK_0xef3c(); // UNK_0xef3c
 }
@@ -2506,7 +2506,7 @@ void UNK_0xefdd() // UNK_0xefdd
 void UNK_0xf019() // UNK_0xf019
 {
   _gt_ALPHA(); // >ALPHA
-  PAGE(); // PAGE
+  Func14("PAGE"); // call of word 0x274c
   Push(1); // 1
   Push(cc__7); // 7
   Push(cc__4); // 4
@@ -2514,24 +2514,24 @@ void UNK_0xf019() // UNK_0xf019
   UNK_0xef54(); // UNK_0xef54
   Push(2); // 2
   Push(0x000a);
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   PRINT("WARNING:  Any  Being  caught with an unauthorized  copy or", 58); // (.")
   Push(cc__3); // 3
   Push(0x000a);
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   PRINT("version  of  this  Software  Product  will  be punished by", 58); // (.")
   Push(cc__4); // 4
   Push(0x000a);
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   PRINT("Interstel Corporate Police.  Punishment  may  include  the", 58); // (.")
   Push(cc__5); // 5
   Push(0x000a);
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   PRINT("destruction of the offending Being.", 35); // (.")
   UNK_0xefdd(); // UNK_0xefdd
   Push(0x9c40); Pust(0x0000);
   UNK_0xe652(); // UNK_0xe652
-  PAGE(); // PAGE
+  Func14("PAGE"); // call of word 0x274c
   _gt_LORES(); // >LORES
   UNK_0xedc4(); // UNK_0xedc4
   DARK(); // DARK
@@ -2560,7 +2560,7 @@ void UNK_0xf21d() // UNK_0xf21d
   _i_KEY(); // 'KEY
   Push(0x0030);
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_OPTIO); // OPTIO
   _ex_(); // !
   Func10("KEY>O");
@@ -2737,18 +2737,18 @@ void BOSS() // BOSS
 
   label3:
   KEY(); // KEY
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000d);
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  CR(); // CR
+  Func14("CR"); // call of word 0x26ee
   PRINT("A:>", 3); // (.")
   goto label2;
 
   label1:
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
 
   label2:
   Push(2); // 2

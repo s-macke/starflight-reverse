@@ -106,7 +106,7 @@ unsigned char UNK_0xf128[8] = {0x78, 0x30, 0xf8, 0xff, 0xff, 0xf8, 0x30, 0x78}; 
 void UNK_0xed63() // UNK_0xed63
 {
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
 }
@@ -154,7 +154,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() + Pop()); // +
   Func8("UNK_0xed36");
   UNK_0xed63(); // UNK_0xed63
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
@@ -287,7 +287,7 @@ void UNK_0xef1a() // UNK_0xef1a
   _dot_R(); // .R
   PRINT("M", 1); // (.")
   Push(cc__3); // 3
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   _dot_(); // .
@@ -425,7 +425,7 @@ void UNK_0xf098() // UNK_0xf098
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
   _ex_(); // !
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func8("UNK_0xed4f");
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND

@@ -97,25 +97,25 @@ void UNK_0xef73() // UNK_0xef73
   POS_dot_(); // POS.
 
   UNK_0x3f3b("INCOMING");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(0x0018);
   Push(0x0050);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("HIGH");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(0x000f);
   Push(0x003c);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("PRIORITY");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(0x0011);
   Push(0x0028);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("MESSAGE");
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(cc_UNK_0xef6a); // UNK_0xef6a
   TONE(); // TONE
   V_gt_DISPL(); // V>DISPL
@@ -209,7 +209,7 @@ void UNK_0xf064() // UNK_0xf064
   CDEPTH(); // CDEPTH
   SWAP(); // SWAP
   _dash_(); // -
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
 
@@ -289,7 +289,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(h); // I
   Push(0x0029);
   _eq_(); // =
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
   _at_INST_dash_S(); // @INST-S
   Push(cc__3); // 3
@@ -300,7 +300,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(h); // I
   Push(0x001c);
   _eq_(); // =
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label3;
   _at_INST_dash_S(); // @INST-S
   Push(0x0010);
@@ -312,7 +312,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(h); // I
   Push(0x001c);
   _eq_(); // =
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label4;
   _at_INST_dash_S(); // @INST-S
   Push(cc__3); // 3
@@ -592,7 +592,7 @@ void UNK_0xf2eb() // UNK_0xf2eb
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xf2e6");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() ^ Pop()); // XOR
   Func8("UNK_0xf2e6");
   C_ex_(); // C!
@@ -618,7 +618,7 @@ void UNK_0xf30b() // UNK_0xf30b
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  _ask_TERMINAL(); // ?TERMINAL
+  Func14("?TERMINAL"); // call of word 0x25bc
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP

@@ -208,7 +208,7 @@ void UNK_0xe6ba() // UNK_0xe6ba
 void UNK_0xe72e() // UNK_0xe72e
 {
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
@@ -359,7 +359,7 @@ void UNK_0xeca4() // UNK_0xeca4
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_(); // ?ICONS-
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
 
@@ -399,7 +399,7 @@ void UNK_0xece0() // UNK_0xece0
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_(); // ?ICONS-
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0); // 0
 
@@ -412,7 +412,7 @@ void UNK_0xece0() // UNK_0xece0
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0044);
   _eq_(); // =
   if (Pop() == 0) goto label2;
@@ -502,7 +502,7 @@ void CIRCLES() // CIRCLES
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   Push(pp_XORMODE); // XORMODE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   _099(); // 099
@@ -617,7 +617,7 @@ void UNK_0xee8f() // UNK_0xee8f
 {
   Push(pp_WEAPON_dash_); // WEAPON-
   Push(Read16(Pop())); // @
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(Pop()-1); // 1-
   Push(pp_WEAPON_dash_); // WEAPON-
@@ -657,10 +657,10 @@ void _1SIMULATE() // 1SIMULATE
 {
   Push(pp_FSTUN); // FSTUN
   Push(Read16(Pop())); // @
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(Pop()-1); // 1-
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_FSTUN); // FSTUN
   _st__ex__gt_(); // <!>
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -735,9 +735,9 @@ void UNK_0xef4c() // UNK_0xef4c
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   UNK_0xef38(); // UNK_0xef38
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -785,7 +785,7 @@ void UNK_0xef9a() // UNK_0xef9a
   UNK_0xe9f7(); // UNK_0xe9f7
   PRINT("DO YOU WANT TO TRADE?   [ NO YES ] ", 35); // (.")
   Y_slash_N(); // Y/N
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
   _ex_(); // !
@@ -860,7 +860,7 @@ void UNK_0xf012() // UNK_0xf012
 void UNK_0xf026() // UNK_0xf026
 {
   Push(cc__dash_1); // -1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_YVIS); // YVIS
   _st__plus__ex__gt_(); // <+!>
   Push(pp_YABS); // YABS
@@ -1053,9 +1053,9 @@ void UNK_0xf19a() // UNK_0xf19a
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xef38(); // UNK_0xef38
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label3;

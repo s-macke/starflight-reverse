@@ -142,13 +142,13 @@ void UNK_0xf3e6() // UNK_0xf3e6
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
@@ -214,7 +214,7 @@ void UNK_0xf45e() // UNK_0xf45e
   {
   Push(0x000a);
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
@@ -247,7 +247,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x002b);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -257,7 +257,7 @@ void UNK_0xf45e() // UNK_0xf45e
   label1:
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>

@@ -114,7 +114,7 @@ void UNK_0xeb7b() // UNK_0xeb7b
 {
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   NEW_dash_BUT(); // NEW-BUT
 }
@@ -161,7 +161,7 @@ void XY_slash_N() // XY/N
   if (Pop() == 0) goto label1;
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(2); // 2
   _eq_(); // =
   Push(pp_FTRIG); // FTRIG
@@ -186,7 +186,7 @@ void XY_slash_N() // XY/N
   Push(0); // 0
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xeaee(); // UNK_0xeaee
   Push(cc__9); // 9
   _dot_BTN_dash_TE(); // .BTN-TE
@@ -200,7 +200,7 @@ void XY_slash_N() // XY/N
 
 void UNK_0xf486() // UNK_0xf486
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xecca); // UNK_0xecca
   OFF(); // OFF
@@ -249,7 +249,7 @@ void UNK_0xf4de() // UNK_0xf4de
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  _ask_TERMINAL(); // ?TERMINAL
+  Func14("?TERMINAL"); // call of word 0x25bc
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

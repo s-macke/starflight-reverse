@@ -279,7 +279,7 @@ void INITMUS() // INITMUS
 {
   Push(0x001c);
   _ro__ex_OLD_rc_(); // (!OLD)
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc_MUSINT); // MUSINT
   UNK_0xe2de(); // UNK_0xe2de
   _eq_(); // =
@@ -357,12 +357,12 @@ void CSCR_gt_EGA() // CSCR>EGA
   Push(Read16(Pop())); // @
   OVER(); // OVER
   LC_at_(); // LC@
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()>>4); // 16/
   Push(0x000f);
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
@@ -375,7 +375,7 @@ void CSCR_gt_EGA() // CSCR>EGA
   Push(0x000f);
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
@@ -557,8 +557,8 @@ void UNK_0xe716() // UNK_0xe716
 
 void BRMOVE() // BRMOVE
 {
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4

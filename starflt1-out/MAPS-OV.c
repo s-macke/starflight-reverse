@@ -119,7 +119,7 @@ void UNK_0xed0e() // UNK_0xed0e
   LoadData("UNK_0xecf2"); // from 'PLANET      '
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -135,7 +135,7 @@ void UNK_0xed0e() // UNK_0xed0e
   label1:
   Push(0x0064);
   _slash_MOD(); // /MOD
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(0); // 0
   _dot_R(); // .R
@@ -160,9 +160,9 @@ void UNK_0xed60() // UNK_0xed60
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xece2"); // from 'PLANET      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xecea"); // from 'PLANET      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
   _dash_(); // -
   Push(Pop()+1); // 1+
@@ -178,7 +178,7 @@ void UNK_0xed78() // UNK_0xed78
 {
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x01e0);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -220,10 +220,10 @@ void UNK_0xedb2() // UNK_0xedb2
   LoadData("UNK_0xedaa"); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
   Func8("PHR-CNT");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func8("PHRASE");
   OVER(); // OVER
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(0x000a);
   SWAP(); // SWAP
   _dash_(); // -
@@ -286,7 +286,7 @@ void UNK_0xee28() // UNK_0xee28
   Push(pp__i_SIMULA); // 'SIMULA
   _at_EXECUTE(); // @EXECUTE
   _i_KEY(); // 'KEY
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Func10("(XYSCAN");
   Pop(); Pop();// 2DROP
@@ -350,8 +350,8 @@ void UNK_0xee86() // UNK_0xee86
   _gt_C_plus_S(); // >C+S
   Func8("PHRASE");
   Func8("PHR-CNT");
-  C_at_(); // C@
-  TYPE(); // TYPE
+  Push(Read8(Pop())&0xFF); // C@
+  Func14("TYPE"); // call of word 0x2690
   ICLOSE(); // ICLOSE
 }
 
@@ -443,7 +443,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
   Push(pp__i__dot_CELL); // '.CELL
   _st__ex__gt_(); // <!>
   Push(1); // 1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
@@ -474,7 +474,7 @@ void _4X4CONTOUR() // 4X4CONTOUR
   Push(pp__i__dot_CELL); // '.CELL
   _st__ex__gt_(); // <!>
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
@@ -698,7 +698,7 @@ void UNK_0xf133() // UNK_0xf133
   _gt_2ICONF(); // >2ICONF
   VCLIPSE(); // VCLIPSE
   Push(cc__4); // 4
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
@@ -746,7 +746,7 @@ void UNK_0xf187() // UNK_0xf187
   Push(pp__i__dot_BACKG); // '.BACKG
   _ex_(); // !
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
@@ -785,7 +785,7 @@ void UNK_0xf1cf() // UNK_0xf1cf
   Push(pp__i__dot_BACKG); // '.BACKG
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
@@ -978,7 +978,7 @@ void _dot_SURFACE() // .SURFACE
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xecba"); // from 'PLANET      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func10("/SURF");
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE

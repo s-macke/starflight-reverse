@@ -69,7 +69,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(0); // 0
   Push(2); // 2
   RRND(); // RRND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0048);
   UNK_0xf3de(); // UNK_0xf3de
@@ -140,7 +140,7 @@ void UNK_0xf470() // UNK_0xf470
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x0024);
   Push(Pop() + Pop()); // +
@@ -152,7 +152,7 @@ void UNK_0xf470() // UNK_0xf470
   Push(Pop()+1); // 1+
   Push(Read16(Pop())); // @
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x003c);
   Push(Pop() + Pop()); // +
@@ -162,9 +162,9 @@ void UNK_0xf470() // UNK_0xf470
   MIN(); // MIN
   LPLOT(); // LPLOT
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   R_gt_(); // R>

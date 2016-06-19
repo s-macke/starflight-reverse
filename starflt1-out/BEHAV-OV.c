@@ -244,7 +244,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
   Push(pp_TVEHICL); // TVEHICL
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -285,7 +285,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
 void _ask_ALIEN_dash_SMA() // ?ALIEN-SMA
 {
   LoadData("UNK_0xe140"); // from 'CREATURE    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0045);
   _gt_(); // >
 }
@@ -317,16 +317,16 @@ void _ask_ALIEN_dash_HIT() // ?ALIEN-HIT
   Push(pp_TVEHICL); // TVEHICL
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   _eq_(); // =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   Push(0x0020);
   Func8("BEHAVE");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() | Pop()); // OR
   Func8("BEHAVE");
   C_ex_(); // C!
@@ -347,7 +347,7 @@ void _ask_ALIEN_dash_HIT() // ?ALIEN-HIT
   Push(pp_TVEHICL); // TVEHICL
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
@@ -362,7 +362,7 @@ void _ask_ALIEN_dash_HIT() // ?ALIEN-HIT
 void _ask_NOTICE_dash_PL() // ?NOTICE-PL
 {
   Func8("BEHAVE");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0040);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -372,7 +372,7 @@ void _ask_NOTICE_dash_PL() // ?NOTICE-PL
   _st_(); // <
   if (Pop() == 0) goto label2;
   Func8("BEHAVE");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0040);
   Push(Pop() | Pop()); // OR
   Func8("BEHAVE");
@@ -421,9 +421,9 @@ void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
 void UNK_0xe388() // UNK_0xe388
 {
   Func8("HITS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() | Pop()); // OR
   UNK_0xe0e4(); // UNK_0xe0e4
 }
@@ -437,7 +437,7 @@ void UNK_0xe388() // UNK_0xe388
 void UNK_0xe44e() // UNK_0xe44e
 {
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0080);
   _gt_(); // >
 }
@@ -450,9 +450,9 @@ void UNK_0xe44e() // UNK_0xe44e
 void _ask_STUNS_st_STU() // ?STUNS<STU
 {
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   LoadData("STUN.EFFEC"); // from 'CREATURE    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _st_(); // <
 }
 
@@ -511,18 +511,18 @@ void UNK_0xe564() // UNK_0xe564
   ROT(); // ROT
   SWAP(); // SWAP
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
   label2:
   _gt_R(); // >R
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label3;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
@@ -539,7 +539,7 @@ void UNK_0xe564() // UNK_0xe564
 void UNK_0xe5b4() // UNK_0xe5b4
 {
   Func8("BEHAVE");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(-Pop()); // NEGATE
   Push(Pop() | Pop()); // OR
@@ -589,7 +589,7 @@ void UNK_0xe5c8() // UNK_0xe5c8
 void UNK_0xe5fc() // UNK_0xe5fc
 {
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
@@ -604,7 +604,7 @@ void UNK_0xe5fc() // UNK_0xe5fc
 void REDUCE_dash_AGG() // REDUCE-AGG
 {
   LoadData("UNK_0xe148"); // from 'CREATURE    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(0x0033);
   RRND(); // RRND
@@ -623,7 +623,7 @@ void REDUCE_dash_AGG() // REDUCE-AGG
 void INCREASES_dash_() // INCREASES-
 {
   LoadData("UNK_0xe148"); // from 'CREATURE    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(0x0015);
   RRND(); // RRND
@@ -656,7 +656,7 @@ void UNK_0xe6b0() // UNK_0xe6b0
 void UNK_0xe6bc() // UNK_0xe6bc
 {
   Func8("HITS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xe6b0(); // UNK_0xe6b0
@@ -685,7 +685,7 @@ void ERASE_dash_LIFE() // ERASE-LIFE
 void REDUCE_dash_HIT() // REDUCE-HIT
 {
   Func8("HITS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(0x0033);
   RRND(); // RRND
@@ -719,7 +719,7 @@ void UNK_0xe75c() // UNK_0xe75c
 void REDUCE_dash_STU() // REDUCE-STU
 {
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(0x001f);
   RRND(); // RRND
@@ -736,10 +736,10 @@ void REDUCE_dash_STU() // REDUCE-STU
 void STUN_dash_EFFEC() // STUN-EFFEC
 {
   Func8("HITS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0100);
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   _dash_(); // -
   Push(0); // 0
@@ -761,10 +761,10 @@ void INCREMENT_dash_() // INCREMENT-
 {
   Push(1); // 1
   Func8("STUNS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   LoadData("STUN.EFFEC"); // from 'CREATURE    '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   MIN(); // MIN
   Func8("STUNS");
   C_ex_(); // C!
@@ -959,7 +959,7 @@ void UNK_0xebf8() // UNK_0xebf8
 
   label1:
   Func8("HITS");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label2;
   Push(0xea3a);
   DISTRACT(); // DISTRACT
@@ -1020,7 +1020,7 @@ void SIMULATE() // SIMULATE
   if (Pop() == 0) goto label2;
   UNK_0xebf8(); // UNK_0xebf8
   Push(pp_WEAPON_dash_); // WEAPON-
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label3;
   Push(cc__dash_1); // -1
@@ -1075,7 +1075,7 @@ void UNK_0xecb7() // UNK_0xecb7
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -1085,7 +1085,7 @@ void UNK_0xecb7() // UNK_0xecb7
   Push(0); // 0
   _dot_R(); // .R
   PRINT("-", 1); // (.")
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label2;
@@ -1330,14 +1330,14 @@ void UNK_0xef37() // UNK_0xef37
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
   Func8("INST-X");
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   U_star_(); // U*
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -1460,7 +1460,7 @@ void _dash_STORM() // -STORM
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   _st_(); // <
   SWAP(); // SWAP
@@ -1481,7 +1481,7 @@ void _ask_NAV() // ?NAV
   Func8("NAVIG");
   _at__gt_C_plus_S(); // @>C+S
   Func8("^NAV");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(0x00c7);
@@ -1558,7 +1558,7 @@ void _dot_CARGO() // .CARGO
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xe1e6");
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   MAX(); // MAX
@@ -1593,7 +1593,7 @@ void _dot_ENERGY() // .ENERGY
   Func8("INST-QT");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1611,7 +1611,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0064);
   Push(0x782f);
   _star__slash_(); // */
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
@@ -1680,7 +1680,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 void UNK_0xf2f5() // UNK_0xf2f5
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1704,7 +1704,7 @@ void UNK_0xf2f5() // UNK_0xf2f5
 
 void UNK_0xf319() // UNK_0xf319
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1739,8 +1739,8 @@ void _dot_WHERE() // .WHERE
   Push(0x0010);
   Push(0x00c5);
   POS_dot_(); // POS.
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   Push(-Pop()); // NEGATE
@@ -1750,8 +1750,8 @@ void _dot_WHERE() // .WHERE
   _dot_R(); // .R
   UNK_0xf319(); // UNK_0xf319
   PRINT(" * ", 3); // (.")
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Push(-Pop()); // NEGATE

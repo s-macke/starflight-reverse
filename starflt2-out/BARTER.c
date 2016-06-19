@@ -286,8 +286,8 @@ void UNK_0xe1b8() // UNK_0xe1b8
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -333,7 +333,7 @@ void UNK_0xe200() // UNK_0xe200
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
   _eq_(); // =
   Push(i); // I
@@ -353,7 +353,7 @@ void UNK_0xe200() // UNK_0xe200
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__4); // 4
   PICK(); // PICK
   Push(Pop() + Pop()); // +
@@ -405,9 +405,9 @@ void UNK_0xe27c() // UNK_0xe27c
 
 void UNK_0xe28c() // UNK_0xe28c
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe27c(); // UNK_0xe27c
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
@@ -418,7 +418,7 @@ void UNK_0xe28c() // UNK_0xe28c
 
   label2:
   OVER(); // OVER
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
   _eq_(); // =
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
@@ -430,10 +430,10 @@ void UNK_0xe28c() // UNK_0xe28c
   SPACE(); // SPACE
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
   _plus__ex_(); // +!
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(pp_UNK_0xe260); // UNK_0xe260
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label4;
@@ -471,11 +471,11 @@ void UNK_0xe454() // UNK_0xe454
   Push(pp_UNK_0xe260); // UNK_0xe260
   _099(); // 099
   OVER(); // OVER
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _at_COLOR(); // @COLOR
   _gt_R(); // >R
   Func10("SPL");
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xe28c(); // UNK_0xe28c
   UNK_0xe254(); // UNK_0xe254
@@ -502,7 +502,7 @@ void UNK_0xe474() // UNK_0xe474
   Push(1); // 1
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
   _plus__ex_(); // +!
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -759,8 +759,8 @@ void UNK_0xe640() // UNK_0xe640
   MAX(); // MAX
   UNK_0xe5c6(); // UNK_0xe5c6
   LoadData("UNK_0xe53e"); // from 'TRADERS     '
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -946,7 +946,7 @@ void UNK_0xeffe() // UNK_0xeffe
 void UNK_0xf014() // UNK_0xf014
 {
   UNK_0xe55a(); // UNK_0xe55a
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe5ea(); // UNK_0xe5ea
   _dash_(); // -
   ABS(); // ABS
@@ -1060,7 +1060,7 @@ void UNK_0xf1b0() // UNK_0xf1b0
 void UNK_0xf1be() // UNK_0xf1be
 {
   UNK_0xf014(); // UNK_0xf014
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe5d4(); // UNK_0xe5d4
   Push(pp_PLAST); // PLAST
   Push(Read16(Pop())); // @
@@ -1180,14 +1180,14 @@ void _ex_PFLAGS() // !PFLAGS
 {
   UNK_0xe17e(); // UNK_0xe17e
   _ex_COLOR(); // !COLOR
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xf4bc(); // UNK_0xf4bc
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(2); // 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xe4b6); // UNK_0xe4b6
   _ex_(); // !
   Push(pp_UNK_0xe4aa); // UNK_0xe4aa
@@ -1195,7 +1195,7 @@ void _ex_PFLAGS() // !PFLAGS
   return;
 
   label1:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp_UNK_0xe4b6); // UNK_0xe4b6
   _ex_(); // !

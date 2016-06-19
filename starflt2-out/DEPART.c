@@ -154,12 +154,12 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
   Func8("UNK_0xf4b7");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) goto label1;
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   Push(Pop()*2); // 2*
   Push(Pop()-1); // 1-
@@ -171,7 +171,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   MAX(); // MAX
   Push(Pop() * Pop()); // *
   Func8("UNK_0xf4b7");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(0x0064);
   MIN(); // MIN

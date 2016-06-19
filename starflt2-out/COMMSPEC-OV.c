@@ -241,7 +241,7 @@ void UNK_0xe6cc() // UNK_0xe6cc
 {
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   NEW_dash_BUT(); // NEW-BUT
 }
@@ -283,7 +283,7 @@ void UNK_0xe84f() // UNK_0xe84f
   if (Pop() == 0) goto label1;
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(2); // 2
   _eq_(); // =
   Push(pp_FTRIG); // FTRIG
@@ -308,7 +308,7 @@ void UNK_0xe84f() // UNK_0xe84f
   Push(0); // 0
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xe658(); // UNK_0xe658
   Push(cc__9); // 9
   _dot_BTN_dash_TE(); // .BTN-TE
@@ -327,14 +327,14 @@ void UNK_0xe935() // UNK_0xe935
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xe62a");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
   if (Pop() == 0) goto label1;
   _gt_FLAG(); // >FLAG
 
   label1:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _ex_COLOR(); // !COLOR
   Push(pp_CTCOLOR); // CTCOLOR
   _ex_(); // !
@@ -486,7 +486,7 @@ void UNK_0xee17() // UNK_0xee17
   Push(cc__6); // 6
   _eq_SPECIE(); // =SPECIE
   Func8("UNK_0xea9c");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -536,7 +536,7 @@ void _n__gt_PRO() // #>PRO
 
 void UNK_0xf4ad() // UNK_0xf4ad
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xe63e); // UNK_0xe63e
   _099(); // 099
@@ -586,7 +586,7 @@ void UNK_0xf51d() // UNK_0xf51d
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  _ask_TERMINAL(); // ?TERMINAL
+  Func14("?TERMINAL"); // call of word 0x25bc
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

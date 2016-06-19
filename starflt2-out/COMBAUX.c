@@ -120,19 +120,19 @@ void UNK_0xf336() // UNK_0xf336
 {
   _gt_2ICONF(); // >2ICONF
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
   Push(cc__4); // 4
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
   Push(1); // 1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
   _st__ex__gt_(); // <!>
@@ -167,19 +167,19 @@ void UNK_0xf38e() // UNK_0xf38e
 {
   _gt_3ICONF(); // >3ICONF
   Push(1); // 1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
   Push(1); // 1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
   _st__ex__gt_(); // <!>
@@ -215,13 +215,13 @@ void UNK_0xf3da() // UNK_0xf3da
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
   Push(1); // 1
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
   _st__ex__gt_(); // <!>
@@ -360,11 +360,11 @@ void UNK_0xf4c6() // UNK_0xf4c6
 {
   ROT(); // ROT
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   _gt_R(); // >R
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
   R_gt_(); // R>
@@ -406,7 +406,7 @@ void SET_dash_SC() // SET-SC
   Push(Read16(Pop())); // @
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__5); // 5
   _st_(); // <
   if (Pop() == 0) goto label3;

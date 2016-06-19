@@ -181,7 +181,7 @@ void SET_dash_SPEED() // SET-SPEED
   UNK_0xe85e(); // UNK_0xe85e
   ACELLAD(); // ACELLAD
   A_at_(); // A@
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0010);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -418,7 +418,7 @@ void UNK_0xecf2() // UNK_0xecf2
   Push(0xecd4);
   ALL(); // ALL
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
@@ -714,7 +714,7 @@ void APPROACH() // APPROACH
   Push(Read16(Pop())); // @
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0xc302);
   MODULE(); // MODULE
   SHIP_dash_CO(); // SHIP-CO

@@ -215,7 +215,7 @@ void TRANSACT() // TRANSACT
 {
   UNK_0xefc5(); // UNK_0xefc5
   Func8("UNK_0xefae");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x000e);
@@ -374,14 +374,14 @@ void UNK_0xf152() // UNK_0xf152
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   PRINT("-", 1); // (.")
   _dot_(); // .
 }
@@ -421,7 +421,7 @@ void UNK_0xf196() // UNK_0xf196
   Push(Pop() * Pop()); // *
   Push(0x0020);
   Push(Pop() + Pop()); // +
-  EMIT(); // EMIT
+  Func14("EMIT"); // call of word 0x2731
 }
 
 
@@ -738,7 +738,7 @@ void UNK_0xf4c4() // UNK_0xf4c4
   Push(0); // 0
 
   label1:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xf472(); // UNK_0xf472
   Push(Pop()+1); // 1+
   INEXT(); // INEXT

@@ -114,7 +114,7 @@ void UNK_0xea65() // UNK_0xea65
   CTINIT(); // CTINIT
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   PRINT("CLASS ", 6); // (.")
   _dot_(); // .
@@ -164,27 +164,27 @@ void UNK_0xeadd() // UNK_0xeadd
   CTINIT(); // CTINIT
   Func8("UNK_0xe9df");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__4); // 4
   UNK_0xea65(); // UNK_0xea65
   Func8("UNK_0xe9ee");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   UNK_0xea65(); // UNK_0xea65
   Func8("UNK_0xe9da");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   UNK_0xea65(); // UNK_0xea65
   Func8("UNK_0xe9f3");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   UNK_0xea65(); // UNK_0xea65
   Func8("UNK_0xe9f8");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
   UNK_0xea65(); // UNK_0xea65
   UNK_0xeaa9(); // UNK_0xeaa9

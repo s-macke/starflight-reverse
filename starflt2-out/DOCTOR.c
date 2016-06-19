@@ -281,7 +281,7 @@ void UNK_0xf28e() // UNK_0xf28e
 {
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf083");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(0x0064);
   WITHIN(); // WITHIN
@@ -297,7 +297,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
   label1:
   Func8("UNK_0xf083");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0064);
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -399,7 +399,7 @@ void UNK_0xf392() // UNK_0xf392
 
   label2:
   Func8("UNK_0xf088");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -460,22 +460,22 @@ void UNK_0xf440() // UNK_0xf440
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
   Func8("UNK_0xf083");
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
   if (Pop() == 0) goto label1;
   PRINT(",", 1); // (.")
   CTCR(); // CTCR
   PRINT("AND HAS A VITALITY OF ", 22); // (.")
   Func8("UNK_0xf083");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
   _dot_R(); // .R
   PRINT(" AND A", 6); // (.")
   CTCR(); // CTCR
   PRINT("DURABILITY OF ", 14); // (.")
   LoadData("UNK_0xf076"); // from 'CREWMEMBER  '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
   _dot_R(); // .R
 

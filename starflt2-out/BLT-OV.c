@@ -125,8 +125,8 @@ void UNK_0xf07b() // UNK_0xf07b
   DOS(); // DOS
   NAM(); // NAM
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(cc_BL); // BL
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -158,8 +158,8 @@ void UNK_0xf07b() // UNK_0xf07b
   DOS(); // DOS
   TYP(); // TYP
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(cc_BL); // BL
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -192,7 +192,7 @@ void UNK_0xf111() // UNK_0xf111
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xeff6); // UNK_0xeff6
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   BMPAL(); // BMPAL
   C_ex_(); // C!
   return;
@@ -212,7 +212,7 @@ void UNK_0xf12b() // UNK_0xf12b
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xf006); // UNK_0xf006
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   BMPAL(); // BMPAL
   C_ex_(); // C!
   return;
@@ -265,7 +265,7 @@ void UNK_0xf179() // UNK_0xf179
   _at_INST_dash_S(); // @INST-S
   Push(pp_UNK_0xf01b); // UNK_0xf01b
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }
 
@@ -314,17 +314,17 @@ void UNK_0xf1d8() // UNK_0xf1d8
   Push(Read16(Pop())); // @
   Push(pp_P_slash_B); // P/B
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   R_gt_(); // R>
   _slash_(); // /
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   BMBYTES(); // BMBYTES
   C_ex_(); // C!
   BMHIGH(); // BMHIGH
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
   Push(pp_PLZ); // PLZ
   _ex_(); // !
@@ -377,7 +377,7 @@ void UNK_0xf222() // UNK_0xf222
   Push(pp_SRC); // SRC
   _ex_(); // !
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
   _ex_(); // !
   BMOFF(); // BMOFF
@@ -405,7 +405,7 @@ void UNK_0xf25a() // UNK_0xf25a
   Push(Pop() & Pop()); // AND
   Push(pp_PCGA); // PCGA
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
 }
 
 
@@ -420,7 +420,7 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(pp_SRC); // SRC
   Push(Read16(Pop())); // @
   LC_at_(); // LC@
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(pp_SRC); // SRC
   _plus__ex_(); // +!
@@ -435,14 +435,14 @@ void UNK_0xf280() // UNK_0xf280
 {
   BMOFF(); // BMOFF
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
   _ex_(); // !
   Push(pp_SRC); // SRC
   _ex_(); // !
   BMBYTES(); // BMBYTES
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop()>>1); // 2/
   BMBYTES(); // BMBYTES
@@ -455,7 +455,7 @@ void UNK_0xf280() // UNK_0xf280
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
 
   label3:
   UNK_0xf26a(); // UNK_0xf26a
@@ -468,7 +468,7 @@ void UNK_0xf280() // UNK_0xf280
   Push(Pop()<<4); // 16*
   _gt_R(); // >R
   Push(Pop()-1); // 1-
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xf26a(); // UNK_0xf26a
   Push(Pop()>>4); // 16/
@@ -500,7 +500,7 @@ void UNK_0xf280() // UNK_0xf280
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   i++;
@@ -517,7 +517,7 @@ void UNK_0xf280() // UNK_0xf280
 void UNK_0xf30a() // UNK_0xf30a
 {
   BMHIGH(); // BMHIGH
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
 
   signed short int i = Pop();
@@ -529,8 +529,8 @@ void UNK_0xf30a() // UNK_0xf30a
   Push(pp_DST); // DST
   Push(Read16(Pop())); // @
   BMBYTES(); // BMBYTES
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0); // 0
 
   signed short int j = Pop();
@@ -691,7 +691,7 @@ void LDSY() // LDSY
   UNK_0xf3bb(); // UNK_0xf3bb
   Push(pp_SSYSEG); // SSYSEG
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0); // 0
   UNK_0xf3bb(); // UNK_0xf3bb
 }
@@ -710,11 +710,11 @@ void _at__dot_HY() // @.HY
   DARK(); // DARK
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_PIC_n_); // PIC#
   _ex_(); // !
   Push(Pop()-1); // 1-
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   Push(0x21cd);
   SWAP(); // SWAP
@@ -753,7 +753,7 @@ void _dot_TPI() // .TPI
 {
   Push(pp_CANSKIP); // CANSKIP
   ON(); // ON
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0021);
   Push(Pop() + Pop()); // +
   Push(pp_PIC_n_); // PIC#
@@ -781,8 +781,8 @@ void _dot_API() // .API
 {
   Push(pp_UNK_0xf01b); // UNK_0xf01b
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x000f);
   Push(Pop() + Pop()); // +
   Push(pp_PIC_n_); // PIC#

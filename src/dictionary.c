@@ -880,16 +880,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         if (codep == CODEFUNC14)
         {
             par = Read16(Read16(par)+REGDI);
-            fprintf(stderr, "0x%04x\n", par);
-            /*
-            bx += 2;  // points to data in word
-            bx = Read16(bx);
-            bx = Read16(bx+di);
-            bx -= 2;
-            ax = Read16(bx);
-            //printf("jump to %x\n", ax);
-			Call(ax, bx);
-            */
+            //fprintf(stderr, "0x%04x\n", par);
             snprintf(pline[ofs].str, STRINGLEN, "  Func14(\"%s\"); // call of word 0x%04x\n", s, par);
             ofs += 2;
         } else

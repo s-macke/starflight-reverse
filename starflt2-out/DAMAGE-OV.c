@@ -352,7 +352,7 @@ void UNK_0xe75a() // UNK_0xe75a
 void UNK_0xe84c() // UNK_0xe84c
 {
   Push(pp_UNK_0xe842); // UNK_0xe842
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x000f);
   Push(Pop() & Pop()); // AND
 }
@@ -364,7 +364,7 @@ void UNK_0xe84c() // UNK_0xe84c
 
 void UNK_0xe85a() // UNK_0xe85a
 {
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
 }
@@ -390,11 +390,11 @@ void UNK_0xe886() // UNK_0xe886
 {
   ROT(); // ROT
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   _gt_R(); // >R
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
   R_gt_(); // R>
@@ -461,8 +461,8 @@ void UNK_0xe910() // UNK_0xe910
   _plus__ex_(); // +!
   Push(1); // 1
   Func8("UNK_0xe817");
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   ROT(); // ROT
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -648,7 +648,7 @@ void UNK_0xea2c() // UNK_0xea2c
   Push(Pop()+1); // 1+
   RRND(); // RRND
   LoadData("UNK_0xe826"); // from 'CREWMEMBER  '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x000a);
   _slash_(); // /
@@ -707,7 +707,7 @@ void UNK_0xea80() // UNK_0xea80
 void UNK_0xea92() // UNK_0xea92
 {
   Push(pp_WOUNDED); // WOUNDED
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -717,7 +717,7 @@ void UNK_0xea92() // UNK_0xea92
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -727,7 +727,7 @@ void UNK_0xea92() // UNK_0xea92
 
   label1:
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x00ff);
   _eq_(); // =
   if (Pop() == 0) goto label2;
@@ -754,7 +754,7 @@ void UNK_0xead4() // UNK_0xead4
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Func8("UNK_0xe7af");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }
 
@@ -931,7 +931,7 @@ void UNK_0xec56() // UNK_0xec56
   {
   Push(i); // I
   Func10("#>?FIEL");
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(i); // I
   Push(pp_UNK_0xe83e); // UNK_0xe83e
@@ -967,7 +967,7 @@ void UNK_0xec90() // UNK_0xec90
   RRND(); // RRND
   Push(pp_UNK_0xe833); // UNK_0xe833
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp__ask_COMBAT); // ?COMBAT
   Push(Read16(Pop())); // @
   UNK_0xe726(); // UNK_0xe726
@@ -976,7 +976,7 @@ void UNK_0xec90() // UNK_0xec90
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   SWAP(); // SWAP
@@ -994,8 +994,8 @@ void UNK_0xec90() // UNK_0xec90
 void UNK_0xecc8() // UNK_0xecc8
 {
   Func8("UNK_0xe821");
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -1038,12 +1038,12 @@ void UNK_0xecc8() // UNK_0xecc8
   UNK_0x3f09("SLIGHTLY ");
 
   label4:
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 
   UNK_0x3f09("WOUNDED ");
 
   label2:
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   R_gt_(); // R>
   Pop(); // DROP
 }
@@ -1057,7 +1057,7 @@ void UNK_0xed68() // UNK_0xed68
 {
   Push(pp__n_WOUNDE); // #WOUNDE
   Push(Read16(Pop())); // @
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
   Push(0); // 0
@@ -1069,7 +1069,7 @@ void UNK_0xed68() // UNK_0xed68
   Push(i); // I
   Push(pp_WOUNDED); // WOUNDED
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _3_star_(); // 3*
   Push(pp_ROSTER); // ROSTER
   Push(Pop() + Pop()); // +
@@ -1153,7 +1153,7 @@ void UNK_0xee11() // UNK_0xee11
   _st__ex__gt_(); // <!>
   UNK_0xea80(); // UNK_0xea80
   Push(pp_ROSTER); // ROSTER
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0012);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -1234,7 +1234,7 @@ void UNK_0xee67() // UNK_0xee67
   Push(0xe7a0);
   UNK_0xe8a4(); // UNK_0xe8a4
   R_gt_(); // R>
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label3;
   ABS(); // ABS
@@ -1375,7 +1375,7 @@ void UNK_0xef73() // UNK_0xef73
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_(); // ?ICONS-
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@
   SWAP(); // SWAP
@@ -1385,7 +1385,7 @@ void UNK_0xef73() // UNK_0xef73
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ROT(); // ROT
   POINT_gt_I(); // POINT>I
   _at_IL(); // @IL
@@ -1398,7 +1398,7 @@ void UNK_0xef73() // UNK_0xef73
   if (Pop() == 0) goto label2;
   LoadData("UNK_0xe776"); // from 'VESSEL      '
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   Pop(); // DROP
@@ -1497,14 +1497,14 @@ void UNK_0xf013() // UNK_0xf013
 
 void UNK_0xf105() // UNK_0xf105
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   RRND(); // RRND
   Push(0x000a);
   MAX(); // MAX
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   _dash_(); // -
   Push(0); // 0
@@ -1548,7 +1548,7 @@ void DO_dash_ADAM() // DO-ADAM
   UNK_0xea80(); // UNK_0xea80
 
   label2:
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1674,9 +1674,9 @@ void UNK_0xf25f() // UNK_0xf25f
   CTINIT(); // CTINIT
   _gt_DISPLA(); // >DISPLA
   UNK_0xe84c(); // UNK_0xe84c
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func10("#>DISP");
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   Push(cc__7); // 7
   UNK_0xe6d6(); // UNK_0xe6d6
@@ -1705,7 +1705,7 @@ void UNK_0xf283() // UNK_0xf283
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_(); // ?ICONS-
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@
   SWAP(); // SWAP
@@ -1715,7 +1715,7 @@ void UNK_0xf283() // UNK_0xf283
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ROT(); // ROT
   POINT_gt_I(); // POINT>I
   _at_IL(); // @IL
@@ -1727,7 +1727,7 @@ void UNK_0xf283() // UNK_0xf283
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   LoadData("UNK_0xe776"); // from 'VESSEL      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label3;
   UNK_0xef1f(); // UNK_0xef1f
   goto label4;
@@ -1838,7 +1838,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   _2_at_(); // 2@
   Push(pp__dash_END); // -END
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x0014);
   M_star_(); // M*
   _2DUP(); // 2DUP
@@ -1857,7 +1857,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   _2_at_(); // 2@
   Push(pp__dash_END); // -END
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   M_star_(); // M*
   _2DUP(); // 2DUP
@@ -2043,7 +2043,7 @@ void DOBLAST() // DOBLAST
 
   label1:
   LoadData("UNK_0xe776"); // from 'VESSEL      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) Push(1); else Push(0); // NOT

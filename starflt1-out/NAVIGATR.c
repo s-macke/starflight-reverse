@@ -165,7 +165,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Func8("UNK_0xf215");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
@@ -206,7 +206,7 @@ void UNK_0xf359() // UNK_0xf359
   LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Func8("UNK_0xf215");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
   Func8("UNK_0xf215");
@@ -236,7 +236,7 @@ void _gt_DISARM() // >DISARM
   LoadData("UNK_0xf222"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Func8("UNK_0xf215");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
@@ -258,10 +258,10 @@ void UNK_0xf3fb() // UNK_0xf3fb
 {
   Func8("UNK_0xf210");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func8("UNK_0xf20b");
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -274,7 +274,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(0); // 0
 
   label3:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label4;
   UNK_0xf272(); // UNK_0xf272
 
@@ -292,7 +292,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(0); // 0
 
   label6:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label7;
   UNK_0xf272(); // UNK_0xf272
 

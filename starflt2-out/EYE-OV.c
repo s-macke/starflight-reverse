@@ -116,7 +116,7 @@ const unsigned short int cc_UNK_0xf180 = 0x0008; // UNK_0xf180
 
 void UNK_0xebd5() // UNK_0xebd5
 {
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
 }
@@ -333,7 +333,7 @@ void UNK_0xecf5() // UNK_0xecf5
 
   label1:
   UNK_0xecbd(); // UNK_0xecbd
-  _ask_TERMINAL(); // ?TERMINAL
+  Func14("?TERMINAL"); // call of word 0x25bc
   if (Pop() == 0) goto label1;
   BYE(); // BYE
 }
@@ -390,7 +390,7 @@ void UNK_0xedb5() // UNK_0xedb5
   Push(0); // 0
   Push(2); // 2
   RRND(); // RRND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0048);
   UNK_0xeda3(); // UNK_0xeda3
@@ -461,7 +461,7 @@ void UNK_0xee3f() // UNK_0xee3f
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x0024);
   Push(Pop() + Pop()); // +
@@ -473,7 +473,7 @@ void UNK_0xee3f() // UNK_0xee3f
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x003c);
   Push(Pop() + Pop()); // +
@@ -486,18 +486,18 @@ void UNK_0xee3f() // UNK_0xee3f
   Push(Read16(Pop())); // @
   Push(0x0064);
   Push(Pop() * Pop()); // *
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x00c8);
   Push(Pop() + Pop()); // +
   RRND(); // RRND
   TONE(); // TONE
   Push(h); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(h); // I
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
@@ -865,7 +865,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
 
 void UNK_0xf146() // UNK_0xf146
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_gt_(); // 0>
   if (Pop() == 0) goto label2;
@@ -995,7 +995,7 @@ void UNK_0xf265() // UNK_0xf265
 {
   Push(pp_UNK_0xec5d); // UNK_0xec5d
   ON(); // ON
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1120,7 +1120,7 @@ void UNK_0xf40b() // UNK_0xf40b
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   OVER(); // OVER
   ON(); // ON
@@ -1155,7 +1155,7 @@ void UNK_0xf441() // UNK_0xf441
   VCLIPSE(); // VCLIPSE
   DARK(); // DARK
   Push(0xec78);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST

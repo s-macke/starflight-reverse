@@ -177,7 +177,7 @@ void UNK_0xeeb0() // UNK_0xeeb0
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
 }
 
 
@@ -189,7 +189,7 @@ void UNK_0xeec0() // UNK_0xeec0
 {
   Push(0); // 0
   Push(cc__5); // 5
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   UNK_0xeea0(); // UNK_0xeea0
   _dot_(); // .
   UNK_0xeea0(); // UNK_0xeea0
@@ -353,7 +353,7 @@ void UNK_0xef8c() // UNK_0xef8c
 {
   UNK_0xef5c(); // UNK_0xef5c
   UNK_0xef66(); // UNK_0xef66
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -365,7 +365,7 @@ void UNK_0xef96() // UNK_0xef96
 {
   UNK_0xeea8(); // UNK_0xeea8
   UNK_0xef70(); // UNK_0xef70
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
 
@@ -376,13 +376,13 @@ void UNK_0xef96() // UNK_0xef96
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0); // 0
   OVER(); // OVER
   UNK_0xeeb0(); // UNK_0xeeb0
   UNK_0xef44(); // UNK_0xef44
   Push(cc_UNK_0xee6a); // UNK_0xee6a
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(Pop()+1); // 1+
   i++;
   } while(i<imax); // (LOOP) 0xffee
@@ -398,7 +398,7 @@ void UNK_0xef96() // UNK_0xef96
 
 void UNK_0xefe4() // UNK_0xefe4
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   UNK_0xef44(); // UNK_0xef44
   Push(cc_UNK_0xee6a); // UNK_0xee6a
   Push(cc_BL); // BL
@@ -435,7 +435,7 @@ void _dot_MODE() // .MODE
 {
   Push(0x0018);
   Push(0x0048);
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -455,7 +455,7 @@ void DISPLAYKEY() // DISPLAYKEY
 {
   Push(0x0018);
   Push(0); // 0
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   PRINT("1:SV-BUF 2:RCL  3:IL  4:XL  5:DUP  6:SPLIT  7:>L  ", 50); // (.")
   PRINT("8:>S  9:HOLD 10:PUT", 19); // (.")
   _dot_MODE(); // .MODE
@@ -470,12 +470,12 @@ void CLEAR() // CLEAR
 {
   Push(0x0018);
   Push(0); // 0
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
   Push(0x004f);
   SPACES(); // SPACES
   Push(0x0012);
   Push(0); // 0
-  POSITION(); // POSITION
+  Func14("POSITION"); // call of word 0x2767
 }
 
 
@@ -487,7 +487,7 @@ void ML() // ML
 {
   SWAP(); // SWAP
   UNK_0xef44(); // UNK_0xef44
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   ROT(); // ROT
   Push(Pop() + Pop()); // +
   Push(cc_UNK_0xee6a); // UNK_0xee6a
@@ -538,7 +538,7 @@ void LHOLD() // LHOLD
 void _ro_DUPL_rc_() // (DUPL)
 {
   UNK_0xef70(); // UNK_0xef70
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
 
@@ -612,7 +612,7 @@ void XL() // XL
 {
   LHOLD(); // LHOLD
   UNK_0xef70(); // UNK_0xef70
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0); // 0
 
@@ -646,8 +646,8 @@ void XL() // XL
 void XC() // XC
 {
   UNK_0xef5c(); // UNK_0xef5c
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   UNK_0xef66(); // UNK_0xef66
@@ -669,8 +669,8 @@ void XC() // XC
 
 void INSERT() // INSERT
 {
-  DUP(); // DUP
-  EMIT(); // EMIT
+  Push(Read16(sp)); // DUP
+  Func14("EMIT"); // call of word 0x2731
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -678,8 +678,8 @@ void INSERT() // INSERT
   Push(Pop()-1); // 1-
   if (Pop() == 0) goto label2;
   UNK_0xef5c(); // UNK_0xef5c
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   UNK_0xef66(); // UNK_0xef66
   Push(Pop()-1); // 1-
@@ -736,8 +736,8 @@ void DELETE() // DELETE
 
 void _ask_VISIBLE() // ?VISIBLE
 {
-  DUP(); // DUP
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x001f);
   _gt_(); // >
   SWAP(); // SWAP
@@ -756,7 +756,7 @@ void EOL() // EOL
   UNK_0xef54(); // UNK_0xef54
   Push(cc_UNK_0xee6a); // UNK_0xee6a
   _dash_TRAILING(); // -TRAILING
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
 
@@ -785,14 +785,14 @@ void PUT() // PUT
   UNK_0xee94(); // UNK_0xee94
   Push(i); // I
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   R_gt_(); // R>
   R_gt_(); // R>
   Pop(); Pop();// 2DROP
-  BELL(); // BELL
+  Func14("BELL"); // call of word 0x266b
   return;
 
 
@@ -803,7 +803,7 @@ void PUT() // PUT
 
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
   _ro_DUPL_rc_(); // (DUPL)
 
@@ -852,8 +852,8 @@ void SET_dash_USER() // SET-USER
   Push(0x002a);
   DOSCALL(); // DOSCALL
   Push(cc_DX); // DX
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -863,7 +863,7 @@ void SET_dash_USER() // SET-USER
   goto label2;
 
   label1:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -880,7 +880,7 @@ void SET_dash_USER() // SET-USER
   C_ex_(); // C!
   Push(cc_DX); // DX
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Func5("#>MON");
   Push(cc__6); // 6
   UNK_0xef84(); // UNK_0xef84
@@ -890,7 +890,7 @@ void SET_dash_USER() // SET-USER
   Push(Read16(Pop())); // @
   Push(0x076c);
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _slash_MOD(); // /MOD
   UNK_0xef7a(); // UNK_0xef7a
@@ -958,7 +958,7 @@ void _gt_STAMP() // >STAMP
 void EDIT() // EDIT
 {
   UNK_0xeed4(); // UNK_0xeed4
-  PAGE(); // PAGE
+  Func14("PAGE"); // call of word 0x274c
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
 
@@ -990,7 +990,7 @@ void EDIT() // EDIT
 void VIEW() // VIEW
 {
   UNK_0xeed4(); // UNK_0xeed4
-  PAGE(); // PAGE
+  Func14("PAGE"); // call of word 0x274c
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
 

@@ -134,7 +134,7 @@ unsigned char UNK_0xf188[8] = {0x78, 0x30, 0xf8, 0xff, 0xff, 0xf8, 0x30, 0x78}; 
 void UNK_0xed65() // UNK_0xed65
 {
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
 }
@@ -187,7 +187,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() + Pop()); // +
   Func8("UNK_0xed2e");
   UNK_0xed65(); // UNK_0xed65
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
@@ -199,12 +199,12 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Func8("UNK_0xed60");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Func8("UNK_0xed5b");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -251,12 +251,12 @@ void _ro__dot_ACC_rc_() // (.ACC)
 {
   Func8("UNK_0xed33");
   UNK_0xed65(); // UNK_0xed65
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func8("UNK_0xed4c");
   _ex_(); // !
   Push(pp_UNK_0xee59); // UNK_0xee59
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp__dash_END); // -END
   _ex_(); // !
   _at_CRS(); // @CRS
@@ -330,7 +330,7 @@ void UNK_0xef3a() // UNK_0xef3a
   _dot_R(); // .R
   PRINT("M", 1); // (.")
   Push(cc__3); // 3
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   _dot_(); // .
@@ -482,15 +482,15 @@ void UNK_0xf0e0() // UNK_0xf0e0
 {
   Push(pp_UNK_0xf0dc); // UNK_0xf0dc
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf0b8); // UNK_0xf0b8
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_XBLT); // XBLT
   _ex_(); // !
   Push(pp_UNK_0xf0ca); // UNK_0xf0ca
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_YBLT); // YBLT
   _ex_(); // !
   BLT(); // BLT
@@ -506,7 +506,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
 
 void UNK_0xf106() // UNK_0xf106
 {
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
 
@@ -540,7 +540,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_LBLT); // LBLT
   _ex_(); // !
   Push(pp_WBLT); // WBLT
@@ -554,12 +554,12 @@ void _ro__dot_PODS_rc_() // (.PODS)
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Func8("UNK_0xed5b");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf106(); // UNK_0xf106
   SetColor("RED");
   _ex_COLOR(); // !COLOR
   Func8("UNK_0xed60");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   UNK_0xf106(); // UNK_0xf106
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR

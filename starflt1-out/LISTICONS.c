@@ -142,13 +142,13 @@ void UNK_0xf3c6() // UNK_0xf3c6
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
-  C_at_(); // C@
+  Push(Read16(sp)); // DUP
+  Push(Read8(Pop())&0xFF); // C@
   _ask__gt_EGA(); // ?>EGA
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
@@ -197,7 +197,7 @@ void UNK_0xf42c() // UNK_0xf42c
   {
   Push(0x000a);
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
@@ -225,7 +225,7 @@ void UNK_0xf42c() // UNK_0xf42c
   Push(i); // I
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>

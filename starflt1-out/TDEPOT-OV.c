@@ -381,13 +381,13 @@ void UNK_0xeacc() // UNK_0xeacc
   do // (DO)
   {
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
   _eq_(); // =
   if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   Push(0x003a);
   WITHIN(); // WITHIN
@@ -402,7 +402,7 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
   Push(Pop() + Pop()); // +
@@ -485,7 +485,7 @@ void UNK_0xeb74() // UNK_0xeb74
   _slash_(); // /
   LoadData("ELEM-VA"); // from 'ELEMENT     '
   _ex_(); // !
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Pop(); // DROP
@@ -617,7 +617,7 @@ void SELL_dash_IT() // SELL-IT
   _plus__ex_(); // +!
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   CDEPTH(); // CDEPTH
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -726,7 +726,7 @@ void _st_TDART() // <TDART
   Push(0x000f);
   _gt_(); // >
   Push(Pop() + Pop()); // +
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(0x000a);
   _gt_(); // >
   _at_INST_dash_S(); // @INST-S

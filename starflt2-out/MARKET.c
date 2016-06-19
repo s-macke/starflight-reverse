@@ -74,7 +74,7 @@ void UNK_0xe826() // UNK_0xe826
   _gt_R(); // >R
   _gt_R(); // >R
   _gt_R(); // >R
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(h); // I
   SWAP(); // SWAP
   Push(g); // J
@@ -264,13 +264,13 @@ void UNK_0xe9ef() // UNK_0xe9ef
   Push(pp_WLEFT); // WLEFT
   _ex_(); // !
   Push(0x000d);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_WBOTTOM); // WBOTTOM
   _ex_(); // !
   Push(pp_CTBOT); // CTBOT
   _ex_(); // !
   Push(0x0084);
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_WTOP); // WTOP
   _ex_(); // !
   Push(Pop()-1); // 1-
@@ -297,7 +297,7 @@ void UNK_0xea2f() // UNK_0xea2f
   UNK_0xe93c(); // UNK_0xe93c
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_NCRS); // NCRS
   _ex_(); // !
   Push(pp_OCRS); // OCRS
@@ -399,7 +399,7 @@ void UNK_0xeb48() // UNK_0xeb48
   UNK_0xe8a6(); // UNK_0xe8a6
   LoadData("UNK_0xe89e"); // from 'TRADERS     '
   Push(0x0010);
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   ICLOSE(); // ICLOSE
 }
 
@@ -535,7 +535,7 @@ void UNK_0xed01() // UNK_0xed01
 void UNK_0xed77() // UNK_0xed77
 {
   _at_INST_dash_C(); // @INST-C
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Func10("T>NAME");
   SWAP(); // SWAP
   Func10("TLEN");
@@ -544,7 +544,7 @@ void UNK_0xed77() // UNK_0xed77
   Push(0x003a);
   Push(0x00bc);
   POS_dot_(); // POS.
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 

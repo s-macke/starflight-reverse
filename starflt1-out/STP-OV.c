@@ -68,8 +68,8 @@ void SIC_i_EM() // SIC'EM
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xefd6");
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0x0080);
   _st_(); // <
   Push(pp_UNK_0xefdb); // UNK_0xefdb
@@ -141,12 +141,12 @@ void UNK_0xf048() // UNK_0xf048
   _dash_(); // -
 
   label2:
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf03a); // UNK_0xf03a
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(Pop()-1); // 1-
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -190,7 +190,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf2cd); // UNK_0xf2cd
   Push(Pop() + Pop()); // +
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   Push(0x001c);
@@ -258,7 +258,7 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(i); // I
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
   Push(0); // 0
@@ -339,7 +339,7 @@ void UNK_0xf3e4() // UNK_0xf3e4
   label1:
   SWAP(); // SWAP
   Pop(); // DROP
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(1); // 1
   _eq_(); // =
@@ -460,7 +460,7 @@ void _2NDS() // 2NDS
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xefd6");
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   Func8("UNK_0xefd6");

@@ -266,7 +266,7 @@ void DIO() // DIO
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xf1ca"); // from 'PLANET      '
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
   Push(pp_PLHI); // PLHI

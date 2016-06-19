@@ -252,7 +252,7 @@ void R_co_() // R,
 void UNK_0xeea9() // UNK_0xeea9
 {
   Push(pp_UNK_0xeea5); // UNK_0xeea5
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label1;
   ON(); // ON
@@ -390,7 +390,7 @@ void UNK_0xef59() // UNK_0xef59
 {
   Push(0x001c);
   _ro__ex_OLD_rc_(); // (!OLD)
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(cc_UNK_0xeb7e); // UNK_0xeb7e
   UNK_0xebbe(); // UNK_0xebbe
   _eq_(); // =
@@ -480,17 +480,17 @@ void UNK_0xefe3() // UNK_0xefe3
   Push(Read16(Pop())); // @
   Push(pp_P_slash_B); // P/B
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _gt_R(); // >R
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   R_gt_(); // R>
   _slash_(); // /
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   BMBYTES(); // BMBYTES
   C_ex_(); // C!
   BMHIGH(); // BMHIGH
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
   Push(pp_PLZ); // PLZ
   _ex_(); // !
@@ -544,7 +544,7 @@ void UNK_0xf033() // UNK_0xf033
   Push(pp_SRC); // SRC
   _ex_(); // !
   Push(2); // 2
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
   _ex_(); // !
   BMOFF(); // BMOFF
@@ -572,7 +572,7 @@ void UNK_0xf033() // UNK_0xf033
 void UNK_0xf071() // UNK_0xf071
 {
   BMHIGH(); // BMHIGH
-  C_at_(); // C@
+  Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
 
   signed short int i = Pop();
@@ -584,8 +584,8 @@ void UNK_0xf071() // UNK_0xf071
   Push(pp_DST); // DST
   Push(Read16(Pop())); // @
   BMBYTES(); // BMBYTES
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(0); // 0
 
   signed short int j = Pop();
@@ -639,7 +639,7 @@ void UNK_0xf0bf() // UNK_0xf0bf
   Push(pp_SRC); // SRC
   Push(Read16(Pop())); // @
   LC_at_(); // LC@
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(pp_SRC); // SRC
   _plus__ex_(); // +!
@@ -654,14 +654,14 @@ void UNK_0xf0d5() // UNK_0xf0d5
 {
   BMOFF(); // BMOFF
   Push(Read16(Pop())); // @
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
   _ex_(); // !
   Push(pp_SRC); // SRC
   _ex_(); // !
   BMBYTES(); // BMBYTES
-  C_at_(); // C@
-  DUP(); // DUP
+  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop()>>1); // 2/
   BMBYTES(); // BMBYTES
@@ -674,7 +674,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   signed short int imax = Pop();
   do // (DO)
   {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
 
   label3:
   UNK_0xf0bf(); // UNK_0xf0bf
@@ -687,7 +687,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Pop()<<4); // 16*
   _gt_R(); // >R
   Push(Pop()-1); // 1-
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xf0bf(); // UNK_0xf0bf
   Push(Pop()>>4); // 16/
@@ -719,7 +719,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
-  _ask_DUP(); // ?DUP
+  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   i++;
@@ -1029,7 +1029,7 @@ void UNK_0xf388() // UNK_0xf388
   Push(pp_UNK_0xf259); // UNK_0xf259
   Push(Read16(Pop())); // @
   _dash_(); // -
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   _0_gt_(); // 0>
   Push(pp_UNK_0xf25d); // UNK_0xf25d
   Push(Read16(Pop())); // @
@@ -1052,7 +1052,7 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
   UNK_0xf27f(); // UNK_0xf27f
   if (Pop() == 0) goto label1;
   _at_K(); // @K
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_SYSK); // SYSK
   _ex_(); // !
   UNK_0xf320(); // UNK_0xf320

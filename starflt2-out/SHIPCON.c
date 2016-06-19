@@ -90,7 +90,7 @@ void _dot_NOFUN() // .NOFUN
 
 void UNK_0xf3c8() // UNK_0xf3c8
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -192,7 +192,7 @@ void UNK_0xf46c() // UNK_0xf46c
 
 void UNK_0xf47a() // UNK_0xf47a
 {
-  DUP(); // DUP
+  Push(Read16(sp)); // DUP
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
@@ -218,7 +218,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   CTERASE(); // CTERASE
   Push(0x52f5); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 }
 
 
@@ -257,7 +257,7 @@ void TOW_dash_US() // TOW-US
   CTCR(); // CTCR
   Push(0x5373); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
   Y_slash_N(); // Y/N
   UNK_0xf47a(); // UNK_0xf47a
   UNK_0xf3c8(); // UNK_0xf3c8
@@ -301,7 +301,7 @@ void TOW_dash_US() // TOW-US
   CTERASE(); // CTERASE
   Push(0x538e); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  TYPE(); // TYPE
+  Func14("TYPE"); // call of word 0x2690
 
   label4:
   SetColor("BLACK");
