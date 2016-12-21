@@ -864,8 +864,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODEIFIELD)
         {
-            //snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", 0x63EF + Read8(par+1), s);
-            snprintf(pline[ofs].str, STRINGLEN, "  IFIELD(%s);\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(par+1), s);
+            //snprintf(pline[ofs].str, STRINGLEN, "  IFIELD(%s);\n", s);
             ofs += 2;
         } else
         if (codep == CODEFUNC9)

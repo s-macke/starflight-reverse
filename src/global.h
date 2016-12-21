@@ -61,13 +61,13 @@ extern WORDRENAME renamewords[];
     #define CODEFUNC6         0x7227 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
     #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
     #define CODEIFIELD        0x744d // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+	#define IFIELDOFFSET      0x63ef
     #define CODEFUNC9         0x3aec // <ON> <OFF> <BLOCK> V= C=
     #define CODECASE          0x4a4f // switch cases
     #define CODEFUNC11        0x4e00 // MERCATO CONANCH ...
     #define CODEFUNC12        0x0000 //
     #define CODEFUNC13        0xb869 // maybe EXPERT
     #define CODEFUNC14        0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
-
 
 
 
@@ -102,18 +102,14 @@ extern WORDRENAME renamewords[];
     #define CODEFUNC5         0x4b82 // "CCASE"
     #define CODEFUNC6         0x71d1 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
     #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
-    #define CODEIFIELD         0x7420 // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+    #define CODEIFIELD        0x7420 // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+    #define IFIELDOFFSET      0x65e1
     #define CODEFUNC9         0x3af8 // <ON> <OFF> <BLOCK> V= C=
     #define CODECASE          0x4b3b // switch cases
     #define CODEFUNC11        0x4e6f // MERCATO CONANCH ...
     #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
     #define CODEFUNC13        0xaccc // maybe EXPERT
     #define CODEFUNC14        0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
-
-
-
-
-
 
 #else
     #error no starfleet defined
