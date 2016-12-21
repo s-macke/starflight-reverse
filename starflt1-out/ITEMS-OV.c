@@ -111,7 +111,7 @@ void UNK_0xdecd() // UNK_0xdecd
   Push(cc__3); // 3
   R_gt_(); // R>
   POS_dot_(); // POS.
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _st__ex__gt_(); // <!>
   Push(cc__7); // 7
@@ -154,7 +154,7 @@ void UNK_0xdf0b() // UNK_0xdf0b
   if (Pop() == 0) goto label1;
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp_LAST_dash_UP); // LAST-UP
+  Push(pp_LAST_dash_UPDATE); // LAST-UPDATE
   D_ex_(); // D!
   Push(1); // 1
   Push(pp_STAR_dash_HR); // STAR-HR
@@ -167,11 +167,11 @@ void UNK_0xdf0b() // UNK_0xdf0b
   Push(pp_STAR_dash_HR); // STAR-HR
   OFF(); // OFF
   Push(1); // 1
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   _plus__ex_(); // +!
 
   label1:
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp__ro_FLARE_rc_); // (FLARE)
   Push(Read16(Pop())); // @
@@ -250,13 +250,13 @@ void UNK_0xe05e() // UNK_0xe05e
 
 void UNK_0xe072() // UNK_0xe072
 {
-  _gt_MAINVI(); // >MAINVI
-  VCLIPSE(); // VCLIPSE
+  _gt_MAINVIEW(); // >MAINVIEW
+  VCLIPSET(); // VCLIPSET
   _dot_BACKGR(); // .BACKGR
-  _dot_LOCAL_dash_(); // .LOCAL-
-  V_gt_DISPL(); // V>DISPL
-  _gt_DISPLA(); // >DISPLA
-  DCLIPSE(); // DCLIPSE
+  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  V_gt_DISPLAY(); // V>DISPLAY
+  _gt_DISPLAY(); // >DISPLAY
+  DCLIPSET(); // DCLIPSET
 }
 
 // 0xe082: db 0x4c 0x22 0xe9 0x5b 0xae 0x0b 0xe7 0x0f 0xd0 0x5b 0xae 0x0b 0x83 0x3b 0x72 0x0f 0x2b 0xa0 0x89 0x4f 0x17 0x85 0xdc 0x1b 0x16 0x50 0x52 0x45 0x53 0x53 0x20 0x4b 0x45 0x59 0x20 0x54 0x4f 0x20 0x43 0x4f 0x4e 0x54 0x49 0x4e 0x55 0x45 0x20 0x90 0x16 'L" [     [   ;r +  O     PRESS KEY TO CONTINUE   '
@@ -280,7 +280,7 @@ void UNK_0xe0b5() // UNK_0xe0b5
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0); // 0
   Push(0); // 0
   UNK_0xdf55(); // UNK_0xdf55
@@ -314,7 +314,7 @@ void _ro_EXTRACT_rc_() // (EXTRACT)
   UNK_0xe0b5(); // UNK_0xe0b5
   CI(); // CI
   _2SWAP(); // 2SWAP
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   _gt_R(); // >R
   ICLOSE(); // ICLOSE
   _gt_C_plus_S(); // >C+S
@@ -344,7 +344,7 @@ void _ro_EXTRACT_rc_() // (EXTRACT)
 
 void UNK_0xe5c1() // UNK_0xe5c1
 {
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   Func8("INST-X");
   Push(Read16(Pop())); // @
@@ -363,7 +363,7 @@ void UNK_0xea76() // UNK_0xea76
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   _gt_R(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
@@ -385,8 +385,8 @@ void UNK_0xea76() // UNK_0xea76
   BOX_gt_TOC(); // BOX>TOC
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
   Pop(); Pop();// 2DROP
   CI(); // CI
@@ -600,7 +600,7 @@ void UNK_0xef0c() // UNK_0xef0c
 void UNK_0xef20() // UNK_0xef20
 {
   UNK_0xeec4(); // UNK_0xeec4
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -681,7 +681,7 @@ void UNK_0xef8e() // UNK_0xef8e
   UNK_0xee3e(); // UNK_0xee3e
   DELETE_dash_(); // DELETE-
   MAKE_dash_SC(); // MAKE-SC
-  Push(pp_SUPER_dash_B); // SUPER-B
+  Push(pp_SUPER_dash_BOX); // SUPER-BOX
   _1_dot_5_at_(); // 1.5@
   GET_dash_BOX(); // GET-BOX
   UNK_0xef62(); // UNK_0xef62
@@ -705,15 +705,15 @@ void UNK_0xefa6() // UNK_0xefa6
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xeec4(); // UNK_0xeec4
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(pp_UNK_0xebcb); // UNK_0xebcb
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Func10("T.OPTIONS");
+  Case(T.OPTIONS);
   goto label2;
 
   label1:
-  Func10("P.OPTIONS");
+  Case(P.OPTIONS);
 
   label2:
   UNK_0xeed4(); // UNK_0xeed4
@@ -828,8 +828,8 @@ void UNK_0xf028() // UNK_0xf028
   if (Pop() == 0) goto label5;
   Push(pp_UNK_0xdec9); // UNK_0xdec9
   Push(Read16(Pop())); // @
-  _at_INST_dash_C(); // @INST-C
-  Func10("DISPATCH");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(DISPATCH);
   Push(pp_UNK_0xddf6); // UNK_0xddf6
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label6;
@@ -913,7 +913,7 @@ void UNK_0xf222() // UNK_0xf222
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Func10("TD-SCROLL");
+  Case(TD-SCROLL);
   goto label2;
 
   label1:
@@ -1060,24 +1060,24 @@ void UNK_0xf2ee() // UNK_0xf2ee
 
 void UNK_0xf31c() // UNK_0xf31c
 {
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001b);
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Func8("INST-DA");
+  Func8("INST-DATE");
   _ex_(); // !
 
   label1:
-  IEXTRAC(); // IEXTRAC
+  IEXTRACT(); // IEXTRACT
   Push(pp__ro_SURFAC); // (SURFAC
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xea76(); // UNK_0xea76
   CJ(); // CJ
   _gt_C_plus_S(); // >C+S
   Push(cc__dash_1); // -1
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -1125,7 +1125,7 @@ void UNK_0xf36a() // UNK_0xf36a
   do // (DO)
   {
   Push(i); // I
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   _at_ID(); // @ID
   Push(Read16(sp)); // DUP
   _gt_R(); // >R
@@ -1315,9 +1315,9 @@ void UNK_0xf480() // UNK_0xf480
 
 void _ro__slash_ITEMS_rc_() // (/ITEMS)
 {
-  MAXSPAC(); // MAXSPAC
+  MAXSPACE(); // MAXSPACE
   _1_dot_5_at_(); // 1.5@
-  _at_NEWSPA(); // @NEWSPA
+  _at_NEWSPACE(); // @NEWSPACE
   D_st_(); // D<
   Push(pp__ask_CRITIC); // ?CRITIC
   Push(Read16(Pop())); // @
@@ -1335,7 +1335,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   if (Pop() == 0) goto label2;
   MAKE_dash_SC(); // MAKE-SC
   UNK_0xf36a(); // UNK_0xf36a
-  Push(pp_SUPER_dash_B); // SUPER-B
+  Push(pp_SUPER_dash_BOX); // SUPER-BOX
   _1_dot_5_at_(); // 1.5@
   GET_dash_BOX(); // GET-BOX
 

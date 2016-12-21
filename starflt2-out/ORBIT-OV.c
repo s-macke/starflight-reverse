@@ -3991,7 +3991,7 @@ void UNK_0xf331() // UNK_0xf331
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
-  Func10("SKYCASE");
+  Case(SKYCASE);
   Push(pp_UNK_0xdb50); // UNK_0xdb50
   _ex_(); // !
 }

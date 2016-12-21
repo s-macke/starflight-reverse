@@ -271,7 +271,7 @@ void UNK_0xecf8() // UNK_0xecf8
   Push(0); // 0
 
   label2:
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(cc_UNK_0xec16); // UNK_0xec16
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -345,7 +345,7 @@ void UNK_0xed2e() // UNK_0xed2e
 
   label1:
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -358,7 +358,7 @@ void UNK_0xed2e() // UNK_0xed2e
 void UNK_0xed8e() // UNK_0xed8e
 {
   UNK_0xed2e(); // UNK_0xed2e
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   _ex_(); // !
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
@@ -478,7 +478,7 @@ void UNK_0xee46() // UNK_0xee46
   UNK_0xee28(); // UNK_0xee28
   LoadData("UNK_0xec32"); // from 'PLANET      '
   C_ex_(); // C!
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
   _eq_(); // =
   if (Pop() == 0) return;
@@ -624,7 +624,7 @@ void UNK_0xef7a() // UNK_0xef7a
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   UNK_0xeee8(); // UNK_0xeee8
   ICLOSE(); // ICLOSE
 }
@@ -1003,7 +1003,7 @@ void UNK_0xf1c8() // UNK_0xf1c8
 
 void UNK_0xf1e6() // UNK_0xf1e6
 {
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(sp)); // DUP
   Push(0x0012);
   _eq_(); // =
@@ -1122,7 +1122,7 @@ void UNK_0xf280() // UNK_0xf280
   i++;
   } while(i<imax); // (LOOP) 0xfff4
 
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 
@@ -1203,7 +1203,7 @@ void UNK_0xf46d() // UNK_0xf46d
 {
   LoadData("UNK_0xec5a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  Func10("(TERRAIN");
+  Case((TERRAIN);
 }
 
 
@@ -1218,7 +1218,7 @@ void PLAN_dash_RUL() // PLAN-RUL
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0011);
   _gt_(); // >
   if (Pop() == 0) goto label1;

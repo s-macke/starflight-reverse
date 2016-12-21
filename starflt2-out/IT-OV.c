@@ -308,7 +308,7 @@ void ITEM_gt_PAD() // ITEM>PAD
   PAD(); // PAD
   C_ex_(); // C!
   _at_INST_dash_C(); // @INST-C
-  Func10("IDENT-IT");
+  Case(IDENT-IT);
 }
 
 
@@ -531,7 +531,7 @@ void DELETE_dash_S() // DELETE-S
 
 void UNK_0xf3db() // UNK_0xf3db
 {
-  Func10("CLASS>BO");
+  Case(CLASS>BO);
   Push(0x000b);
   SWAP(); // SWAP
   Push(1); // 1
@@ -545,7 +545,7 @@ void UNK_0xf3db() // UNK_0xf3db
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
-  Func10("CLASS>BO");
+  Case(CLASS>BO);
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
@@ -597,7 +597,7 @@ void _gt_BOX() // >BOX
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
   Push(h); // I
-  Func10("CLASS>BO");
+  Case(CLASS>BO);
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND

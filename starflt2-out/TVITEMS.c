@@ -599,11 +599,11 @@ void UNK_0xef94() // UNK_0xef94
   Push(pp_UNK_0xe642); // UNK_0xe642
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Func10("T.OPTIONS");
+  Case(T.OPTIONS);
   goto label2;
 
   label1:
-  Func10("P.OPTIONS");
+  Case(P.OPTIONS);
 
   label2:
   UNK_0xeed2(); // UNK_0xeed2
@@ -719,7 +719,7 @@ void UNK_0xf018() // UNK_0xf018
   Push(pp_UNK_0xe63e); // UNK_0xe63e
   Push(Read16(Pop())); // @
   _at_INST_dash_C(); // @INST-C
-  Func10("DISPATCH");
+  Case(DISPATCH);
   Push(pp_UNK_0xe636); // UNK_0xe636
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label6;
@@ -802,7 +802,7 @@ void UNK_0xf228() // UNK_0xf228
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Func10("TD-SCROLL");
+  Case(TD-SCROLL);
   goto label2;
 
   label1:

@@ -69,15 +69,15 @@
 
 void UNK_0xf3f1() // UNK_0xf3f1
 {
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Func10("SPACE-ID");
+  Case(SPACE-ID);
   return;
 
   label1:
-  Func10("PLANET-ID");
+  Case(PLANET-ID);
 }
 
 
@@ -107,8 +107,8 @@ void UNK_0xf3f1() // UNK_0xf3f1
 
 void UNK_0xf4e8() // UNK_0xf4e8
 {
-  _at_INST_dash_C(); // @INST-C
-  Func10("#IC-CASES");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(#IC-CASES);
 }
 
 

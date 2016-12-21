@@ -388,10 +388,10 @@ void UNK_0xdf3e() // UNK_0xdf3e
 void UNK_0xdfb6() // UNK_0xdfb6
 {
   UNK_0xdf3e(); // UNK_0xdf3e
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
-  V_gt_DISPL(); // V>DISPL
-  _gt_DISPLA(); // >DISPLA
+  V_gt_DISPLAY(); // V>DISPLAY
+  _gt_DISPLAY(); // >DISPLAY
   Push(0x000a);
   Push(0); // 0
 
@@ -463,7 +463,7 @@ void UNK_0xe003() // UNK_0xe003
   UNK_0xdfb6(); // UNK_0xdfb6
 
   label1:
-  SAVE_dash_OV(); // SAVE-OV
+  SAVE_dash_OVERLAY(); // SAVE-OVERLAY
 }
 
 // 0xe03a: db 0xea 0x73 0x1c 0x18 0x01 0x1e 0x2c 0x65 0xea 0x73 0x1c 0x1d 0x01 0x1e 0x2c 0x65 0xea 0x73 0x39 0x00 0xbe 0xbe 0x90 0x67 ' s    ,e s    ,e s9    g'
@@ -632,7 +632,7 @@ void UNK_0xe12b() // UNK_0xe12b
   Push(1); // 1
   Push(0x009e);
   SetColor("DK-BLUE");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   CTINIT(); // CTINIT
   Push(0x0098);
   Push(Read16(sp)); // DUP
@@ -725,7 +725,7 @@ void UNK_0xe2f6() // UNK_0xe2f6
   label5:
   UNK_0xe18d(); // UNK_0xe18d
   PAD(); // PAD
-  WLINE_dash_U(); // WLINE-U
+  WLINE_dash_UP(); // WLINE-UP
 
   label4:
   SetColor("WHITE");
@@ -739,7 +739,7 @@ void UNK_0xe2f6() // UNK_0xe2f6
 
 void UNK_0xe34e() // UNK_0xe34e
 {
-  Func10("(XYSCAN");
+  Case((XYSCAN);
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
   Push(-Pop()); // NEGATE
@@ -853,7 +853,7 @@ void UNK_0xe3da() // UNK_0xe3da
   if (Pop() == 0) goto label3;
   Push(h); // I
   Push(h); // I
-  Func10("CHAR>SCR");
+  Case(CHAR>SCR);
 
   label3:
   R_gt_(); // R>
@@ -963,7 +963,7 @@ void UNK_0xe4ae() // UNK_0xe4ae
   Push(cc__3); // 3
   R_gt_(); // R>
   POS_dot_(); // POS.
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(cc__7); // 7
@@ -974,7 +974,7 @@ void UNK_0xe4ae() // UNK_0xe4ae
   _ex_(); // !
   SetColor("WHITE");
   SetColor("GREY1");
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1136,7 +1136,7 @@ void UNK_0xe709() // UNK_0xe709
   signed short int imax = Pop();
   do // (DO)
   {
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   UNK_0xe6df(); // UNK_0xe6df
   Push(pp_UNK_0xde36); // UNK_0xde36
   _plus__ex_(); // +!
@@ -1194,22 +1194,22 @@ void UNK_0xe767() // UNK_0xe767
   signed short int imax = Pop();
   do // (DO)
   {
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   _at_ID(); // @ID
   Push(0x002b);
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(0x00ff);
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(Read16(sp)); // DUP
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex_(); // !
   Push(-Pop()); // NEGATE
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _plus__ex_(); // +!
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xe0d7); // UNK_0xe0d7
   _ex_(); // !
@@ -1278,7 +1278,7 @@ void UNK_0xe767() // UNK_0xe767
 
 void UNK_0xe7f7() // UNK_0xe7f7
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -1307,7 +1307,7 @@ void UNK_0xe7f7() // UNK_0xe7f7
 
 void UNK_0xe823() // UNK_0xe823
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -1315,7 +1315,7 @@ void UNK_0xe823() // UNK_0xe823
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
   Push(0x0031);
-  _ex_INST_dash_S(); // !INST-S
+  _ex_INST_dash_SIB(); // !INST-SIB
 
   label1:
   ICLOSE(); // ICLOSE
@@ -1326,7 +1326,7 @@ void UNK_0xe823() // UNK_0xe823
   signed short int imax = Pop();
   do // (DO)
   {
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   UNK_0xe6df(); // UNK_0xe6df
   if (Pop() == 0) goto label2;
   _at_IL(); // @IL
@@ -1364,11 +1364,11 @@ void UNK_0xe823() // UNK_0xe823
   label5:
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _ex_(); // !
   CI(); // CI
   ICLOSE(); // ICLOSE
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
@@ -1396,7 +1396,7 @@ void UNK_0xe823() // UNK_0xe823
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label6;
   Push(0x0030);
-  _ex_INST_dash_S(); // !INST-S
+  _ex_INST_dash_SIB(); // !INST-SIB
 
   label6:
   IFIRST(); // IFIRST
@@ -1405,7 +1405,7 @@ void UNK_0xe823() // UNK_0xe823
   IFIND(); // IFIND
   if (Pop() == 0) goto label7;
   Push(0x000a);
-  _ex_INST_dash_S(); // !INST-S
+  _ex_INST_dash_SIB(); // !INST-SIB
 
   label7:
   ICLOSE(); // ICLOSE
@@ -1432,7 +1432,7 @@ void UNK_0xe8e9() // UNK_0xe8e9
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   R_gt_(); // R>
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
 
@@ -1485,7 +1485,7 @@ void UNK_0xe932() // UNK_0xe932
 void UNK_0xe970() // UNK_0xe970
 {
   UNK_0xe48e(); // UNK_0xe48e
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_MOD(); // /MOD
@@ -1544,7 +1544,7 @@ void UNK_0xe9e2() // UNK_0xe9e2
 
   label1:
   UNK_0xe48e(); // UNK_0xe48e
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(0x001a);
   _eq_(); // =
@@ -1623,8 +1623,8 @@ void DO_dash_OPTION() // DO-OPTION
   goto label2;
 
   label1:
-  _at_INST_dash_C(); // @INST-C
-  Func10("1STOPTION");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(1STOPTION);
 
   label2:
   Push(1); // 1
@@ -1651,8 +1651,8 @@ void UNK_0xedf7() // UNK_0xedf7
   _dash_(); // -
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
-  _at_INST_dash_C(); // @INST-C
-  Func10("ITEM-OPTIONS");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(ITEM-OPTIONS);
   Push(pp_UNK_0xed3b); // UNK_0xed3b
   _ex_(); // !
   Push(pp_UNK_0xed37); // UNK_0xed37
@@ -1678,7 +1678,7 @@ void UNK_0xedf7() // UNK_0xedf7
 void UNK_0xee4a() // UNK_0xee4a
 {
   UNK_0xe48e(); // UNK_0xe48e
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(0x000b);
   _eq_(); // =
@@ -1791,7 +1791,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   Push(pp_UNK_0xde36); // UNK_0xde36
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -1816,16 +1816,16 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   UNK_0xe823(); // UNK_0xe823
 
   label2:
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   GET_dash_BOX(); // GET-BOX
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   UNK_0xe49e(); // UNK_0xe49e
   UNK_0xe51a(); // UNK_0xe51a
 
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Func10("TD-SCROLL");
+  Case(TD-SCROLL);
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label3;
   UNK_0xee4a(); // UNK_0xee4a
@@ -1880,7 +1880,7 @@ void UNK_0xefbf() // UNK_0xefbf
 {
   SWAP(); // SWAP
   CMOVE(); // CMOVE
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 
@@ -1899,7 +1899,7 @@ void _gt_DESCEND() // >DESCEND
   Push(pp_CONTEXT); // CONTEXT
   OFF(); // OFF
   Push(0x3a48);
-  Push(pp__i_EXTERN); // 'EXTERN
+  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
   _ex_(); // !
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -1947,7 +1947,7 @@ void UNK_0xf007() // UNK_0xf007
   Push(0xc3ba);
   MODULE(); // MODULE
   Push(0xc3f3);
-  Push(pp__i_EXTERN); // 'EXTERN
+  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
   _ex_(); // !
 
   label3:
@@ -1976,7 +1976,7 @@ void UNK_0xf007() // UNK_0xf007
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label6;
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
@@ -2331,7 +2331,7 @@ void UNK_0xf2d0() // UNK_0xf2d0
   D_ex_(); // D!
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Func8("UNK_0xe0a5");
@@ -2392,7 +2392,7 @@ void UNK_0xf348() // UNK_0xf348
   Push(1); // 1
   Push(pp_UNK_0xf2cc); // UNK_0xf2cc
   _plus__ex_(); // +!
-  SAVE_dash_OV(); // SAVE-OV
+  SAVE_dash_OVERLAY(); // SAVE-OVERLAY
   goto label2;
 
   label1:
@@ -2416,16 +2416,16 @@ void UNK_0xf37a() // UNK_0xf37a
   Push(pp_UNK_0xf18d); // UNK_0xf18d
   OFF(); // OFF
   UNK_0xf2d0(); // UNK_0xf2d0
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Func8("UNK_0xe09b");
   _ex_(); // !
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _plus__ex_(); // +!
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Func8("UNK_0xe0a0");
@@ -2462,7 +2462,7 @@ void UNK_0xf3d3() // UNK_0xf3d3
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   BIT(); // BIT
   Push(Read16(sp)); // DUP
@@ -2532,7 +2532,7 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   if (Pop() == 0) goto label5;
   Push(0xc5a8);
   MODULE(); // MODULE
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   _ex_(); // !

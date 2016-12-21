@@ -310,7 +310,7 @@ void UNK_0xede1() // UNK_0xede1
   Push(0x00c0);
   Push(0x0072);
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0); // 0
   Push(0); // 0
 }
@@ -330,7 +330,7 @@ void UNK_0xee29() // UNK_0xee29
   _at_CRS(); // @CRS
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
-  Func10("(.DOOR)");
+  Case((.DOOR));
   UNK_0xed10(); // UNK_0xed10
   _ex_CRS(); // !CRS
 }
@@ -972,7 +972,7 @@ void PORT_dash_PIC() // PORT-PIC
   UNK_0xede1(); // UNK_0xede1
   Pop(); Pop();// 2DROP
   UNK_0xee29(); // UNK_0xee29
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
@@ -1002,7 +1002,7 @@ void UNK_0xf488() // UNK_0xf488
   _ex_(); // !
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
-  Func10("DO-ROOM");
+  Case(DO-ROOM);
   Push(pp_UNK_0xeced); // UNK_0xeced
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1034,8 +1034,8 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  Func10("XWALK");
-  Func10("YWALK");
+  Case(XWALK);
+  Case(YWALK);
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;

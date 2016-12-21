@@ -140,7 +140,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
 {
   Push(0xd1a8);
   MODULE(); // MODULE
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   UNK_0xf41a(); // UNK_0xf41a
 }
 
@@ -158,24 +158,24 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   _ex_(); // !
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   TIME(); // TIME
   _2_at_(); // 2@
   _2DUP(); // 2DUP
-  Push(pp_NAV_dash_TIM); // NAV-TIM
+  Push(pp_NAV_dash_TIME); // NAV-TIME
   D_ex_(); // D!
-  Push(pp_ENC_dash_TIM); // ENC-TIM
+  Push(pp_ENC_dash_TIME); // ENC-TIME
   D_ex_(); // D!
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(pp_TRAK_dash_HR); // TRAK-HR
   _ex_(); // !
-  CFIGARR(); // CFIGARR
+  CFIGARRAYS(); // CFIGARRAYS
   SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT); // CONTEXT
@@ -195,12 +195,12 @@ void _gt_FLT() // >FLT
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   _ex_(); // !
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 // 0xf51b: db 0x42 0x54 0x4e 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x20 0x66 0x6f 0x72 0x20 0x42 0x55 0x54 0x54 0x4f 0x4e 0x53 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x29 0x32 0x31 0x32 0x30 0x2d 0x00 'BTN-VOC_________________________ for BUTTONS-------------------)2120- '

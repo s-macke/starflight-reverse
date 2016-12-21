@@ -682,7 +682,7 @@ void _1SIMULATE() // 1SIMULATE
   Push(1); // 1
   if (Pop() == 0) goto label3;
   _at_INST_dash_C(); // @INST-C
-  Func10("(SIMULATE)");
+  Case((SIMULATE));
 
   label3:
   ICLOSE(); // ICLOSE
@@ -1100,7 +1100,7 @@ void UNK_0xf19a() // UNK_0xf19a
 
 void TV_dash_KEY() // TV-KEY
 {
-  Func10("(XYSCAN");
+  Case((XYSCAN);
   Push(0); // 0
   Push(1); // 1
   _2OVER(); // 2OVER
@@ -1129,7 +1129,7 @@ void TV_dash_KEY() // TV-KEY
   UNK_0xf012(); // UNK_0xf012
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  Func10(">BUTTONS");
+  Case(>BUTTONS);
   UNK_0xe6ba(); // UNK_0xe6ba
 
   label4:

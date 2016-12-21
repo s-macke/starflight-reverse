@@ -433,7 +433,7 @@ void UNK_0xef65() // UNK_0xef65
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
-  Func10("(GET-AU");
+  Case((GET-AU);
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   UNK_0xeee3(); // UNK_0xeee3

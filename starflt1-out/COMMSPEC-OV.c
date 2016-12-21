@@ -263,11 +263,11 @@ void UNK_0xf4de() // UNK_0xf4de
 void _ro_XCOMM_rc_() // (XCOMM)
 {
   UNK_0xf4de(); // UNK_0xf4de
-  Push(pp__ro_AORIGI); // (AORIGI
+  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
   _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
-  Func10("SA-CASE");
+  Case(SA-CASE);
   UNK_0xf486(); // UNK_0xf486
   UNK_0xf4de(); // UNK_0xf4de
 }

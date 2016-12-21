@@ -1901,7 +1901,7 @@ void UNK_0xf05d() // UNK_0xf05d
   if (Pop() == 0) goto label1;
   Push(pp_FTRIG); // FTRIG
   _099(); // 099
-  Func10("KEY>ACTION");
+  Case(KEY>ACTION);
   Push(pp_LKEY); // LKEY
   _099(); // 099
   return;

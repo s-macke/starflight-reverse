@@ -450,7 +450,7 @@ void UNK_0xec9d() // UNK_0xec9d
   Push(0x0064);
   M_star_(); // M*
   _at_INST_dash_C(); // @INST-C
-  Func10("C>VAL");
+  Case(C>VAL);
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -536,9 +536,9 @@ void UNK_0xed77() // UNK_0xed77
 {
   _at_INST_dash_C(); // @INST-C
   Push(Read16(sp)); // DUP
-  Func10("T>NAME");
+  Case(T>NAME);
   SWAP(); // SWAP
-  Func10("TLEN");
+  Case(TLEN);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
   Push(0x003a);
@@ -834,7 +834,7 @@ void UNK_0xf4ac() // UNK_0xf4ac
   UNK_0xf485(); // UNK_0xf485
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  Func10("T>ACTION");
+  Case(T>ACTION);
   goto label1;
 }
 

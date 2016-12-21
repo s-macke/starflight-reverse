@@ -271,7 +271,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   POS_dot_PXT(); // POS.PXT
   Func8("UNK_0xed4c");
   Push(Read16(Pop())); // @
-  Func10("A>TEXT");
+  Case(A>TEXT);
   _ex_CRS(); // !CRS
 }
 

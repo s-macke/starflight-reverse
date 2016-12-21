@@ -744,7 +744,7 @@ void UNK_0xef2d() // UNK_0xef2d
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Func10("(BAD-PLAN)");
+  Case((BAD-PLAN));
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
@@ -1391,7 +1391,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  Func10("OP-CASE");
+  Case(OP-CASE);
 
   label3:
   if (Pop() == 0) goto label1;

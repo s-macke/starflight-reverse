@@ -988,7 +988,7 @@ void DO_dash_OPTION() // DO-OPTION
 
   label1:
   _at_INST_dash_C(); // @INST-C
-  Func10("1STOPTION");
+  Case(1STOPTION);
 
   label2:
   Push(1); // 1
@@ -1016,7 +1016,7 @@ void UNK_0xee61() // UNK_0xee61
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
   _at_INST_dash_C(); // @INST-C
-  Func10("ITEM-OPTIONS");
+  Case(ITEM-OPTIONS);
   Push(pp_UNK_0xedbf); // UNK_0xedbf
   _ex_(); // !
   Push(pp_UNK_0xedbb); // UNK_0xedbb
@@ -1192,7 +1192,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Func10("TD-SCROLL");
+  Case(TD-SCROLL);
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label3;
   UNK_0xeeb4(); // UNK_0xeeb4

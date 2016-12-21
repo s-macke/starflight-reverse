@@ -41,7 +41,7 @@ void UNK_0xf423() // UNK_0xf423
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _at_INST_dash_C(); // @INST-C
-  Func10("DISPOSAL");
+  Case(DISPOSAL);
   return;
 
   label1:

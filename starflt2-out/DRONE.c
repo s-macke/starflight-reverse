@@ -445,7 +445,7 @@ void UNK_0xf092() // UNK_0xf092
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Func10("ACT-SCR");
+  Case(ACT-SCR);
   goto label2;
 
   label1:
@@ -1040,7 +1040,7 @@ void DRONE() // DRONE
   ACTION_ask_(); // ACTION?
   Push(pp_ACT_n_); // ACT#
   Push(Read16(Pop())); // @
-  Func10("#>ACTIO");
+  Case(#>ACTIO);
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label3;
   Push(pp_ESC_dash_EN); // ESC-EN

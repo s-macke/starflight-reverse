@@ -155,7 +155,7 @@ void APAUSE() // APAUSE
   D_gt_(); // D>
   _i_KEY(); // 'KEY
   Push(Read16(sp)); // DUP
-  Func10("(XYSCAN");
+  Case((XYSCAN);
   Pop(); Pop();// 2DROP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label4;
@@ -428,7 +428,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   if (Pop() == 0) goto label1;
   OVER(); // OVER
   Push(Read8(Pop())&0xFF); // C@
-  Func10(">SPECIAL");
+  Case(>SPECIAL);
   goto label2;
 
   label1:
@@ -653,7 +653,7 @@ void UNK_0xebc1() // UNK_0xebc1
 
 void UNK_0xebcd() // UNK_0xebcd
 {
-  Func10("RACE>TRA");
+  Case(RACE>TRA);
   Push(0x0015);
   SWAP(); // SWAP
   _at_RECORD(); // @RECORD
@@ -989,7 +989,7 @@ void UNK_0xee0e() // UNK_0xee0e
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
-  Func10("RACE-SCR");
+  Case(RACE-SCR);
   goto label3;
 
   label2:
@@ -1228,7 +1228,7 @@ void DESCRIBE() // DESCRIBE
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   _gt_BOTT(); // >BOTT
-  Func10("CLASS>TY");
+  Case(CLASS>TY);
   ICLOSE(); // ICLOSE
   Push(i); // I'
   Push(1); // 1

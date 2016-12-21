@@ -177,7 +177,7 @@ void UNK_0xed5c() // UNK_0xed5c
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(pp_XORMODE); // XORMODE
@@ -201,7 +201,7 @@ void UNK_0xed5c() // UNK_0xed5c
   POS_dot_(); // POS.
   SetColor("WHITE");
   SetColor("GREY2");
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_WBLT); // WBLT
@@ -296,7 +296,7 @@ void DBARS() // DBARS
 void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 {
   SetColor("BLACK");
-  ERASE_dash_A(); // ERASE-A
+  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xec89(); // UNK_0xec89
   UNK_0xece5(); // UNK_0xece5
   Push(cc__3); // 3
@@ -432,7 +432,7 @@ void UNK_0xf013() // UNK_0xf013
   Push2Words("NULL");
   CTPOS_dot_(); // CTPOS.
   Push(Read16(sp)); // DUP
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
   Func8("UNK_0xec70");
@@ -513,7 +513,7 @@ void UNK_0xf080() // UNK_0xf080
 
 void UNK_0xf0cb() // UNK_0xf0cb
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xec6b");
   _at__gt_C_plus_S(); // @>C+S
@@ -696,7 +696,7 @@ void UNK_0xf231() // UNK_0xf231
   label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(": ", 2); // (.")
   if (Pop() == 0) goto label2;
   PRINT("NO REPAIRS NEEDED.", 18); // (.")
@@ -719,7 +719,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(":", 1); // (.")
   CTCR(); // CTCR
   PRINT("ALREADY UNDERGOING REPAIRS.", 27); // (.")
@@ -734,12 +734,12 @@ void UNK_0xf2ce() // UNK_0xf2ce
 {
   CTERASE(); // CTERASE
   PRINT("CEASE REPAIRS ON ", 17); // (.")
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xec75(); // UNK_0xec75
@@ -757,7 +757,7 @@ void UNK_0xf2ce() // UNK_0xf2ce
 void UNK_0xf31a() // UNK_0xf31a
 {
   PRINT("CEASING REPAIRS ON ", 19); // (.")
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(".", 1); // (.")
 }
 
@@ -790,7 +790,7 @@ void UNK_0xf33a() // UNK_0xf33a
 void UNK_0xf358() // UNK_0xf358
 {
   PRINT("CONTINUING REPAIRS ON ", 22); // (.")
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(".", 1); // (.")
 }
 
@@ -802,7 +802,7 @@ void UNK_0xf358() // UNK_0xf358
 void UNK_0xf37b() // UNK_0xf37b
 {
   PRINT("BEGINNING REPAIRS ON ", 21); // (.")
-  Func10(".SHIP-ITEM");
+  Case(.SHIP-ITEM);
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR
   ON(); // ON
@@ -852,7 +852,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(0x001d);

@@ -10,13 +10,25 @@
 struct DICTENTRY dict[5000];
 int ndict = 0;
 
+char* GetWordName(DICTENTRY *dict)
+{
+	int i;
+	for(i = 0; renamewords[i].newword != NULL; i++)
+	{
+		if ((dict->ovidx == (signed char)renamewords[i].ovidx) && (dict->parp == renamewords[i].parp))
+			return renamewords[i].newword;
+	}
+
+	return dict->r;
+}
+
 char* FindDictPar(unsigned short addr, int ovidx)
 {
     int i = 0;
     for(i=0; i<ndict; i++)
     {
         if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
-        if (dict[i].parp == addr) return dict[i].r;
+        if (dict[i].parp == addr) return GetWordName(&dict[i]);
     }
 
     snprintf(dict[ndict].r, STRINGLEN, "UNK_0x%04x", addr);
@@ -25,7 +37,7 @@ char* FindDictPar(unsigned short addr, int ovidx)
     dict[ndict].ofs = addr-2;
     dict[ndict].ovidx = ovidx;
     ndict++;
-    return dict[ndict-1].r;
+    return GetWordName(&dict[ndict-1]);
 }
 
 int FindDictStart(int addr)
@@ -37,7 +49,7 @@ int FindDictStart(int addr)
     }
     return -1;
 }
-
+/*
 int FindDictEntry(const char *s)
 {
     int i;
@@ -47,6 +59,7 @@ int FindDictEntry(const char *s)
     }
     return -1;
 }
+*/
 
 char* Forth2CString(char *in)
 {
@@ -391,9 +404,9 @@ void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        fprintf(fp, "// %4i: %15s", i, dict[i].r);
+        fprintf(fp, "// %4i: %15s", i, GetWordName(&dict[i]));
         fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'",
-        dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(dict[i].r));
+        dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(GetWordName(&dict[i])));
 /*
         fprintf(fp, " bitfield: %i %i %i  codep:0x%04x parp:0x%04x size:0x%04x",
         (bitfield>>7)&1, (bitfield>>6)&1, (bitfield>>5)&1,
@@ -859,7 +872,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODEFUNC10)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Func10(\"%s\");\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "  Case(%s);\n", s);
             ofs += 2;
         } else
         if (codep == CODEFUNC11)
@@ -1068,24 +1081,24 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEPOINTER) continue;
-        fprintf(fp, "unsigned char %s[%i] = {", Forth2CString(dict[i].r), dict[i].size);
+        fprintf(fp, "unsigned char %s[%i] = {", Forth2CString(GetWordName(&dict[i])), dict[i].size);
         for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
         fprintf(fp, "0x%02x", Read8(dict[i].parp+j));
-        fprintf(fp, "}; // %s\n", dict[i].r);
+        fprintf(fp, "}; // %s\n", GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(dict[i].r), Read16(dict[i].parp), dict[i].r);
+        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp), GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int %s = 0x%04x; // %s // accessed via di (in WORD OPERATOR)\n", Forth2CString(dict[i].r), Read16(Read16(dict[i].parp)+REGDI), dict[i].r);
+        fprintf(fp, "const unsigned short int %s = 0x%04x; // %s // accessed via di (in WORD OPERATOR)\n", Forth2CString(GetWordName(&dict[i])), Read16(Read16(dict[i].parp)+REGDI), GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
     /*

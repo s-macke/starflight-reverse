@@ -322,7 +322,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("CONFIG-FUNCTION");
+  Case(CONFIG-FUNCTION);
   goto label2;
 
   label1:

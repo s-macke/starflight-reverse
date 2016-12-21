@@ -142,7 +142,7 @@ void UNK_0xe0e4() // UNK_0xe0e4
 
 void UNK_0xe0ec() // UNK_0xe0ec
 {
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   Func8("INST-X");
@@ -241,7 +241,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
 {
   Push(pp_WEAPON_dash_); // WEAPON-
   Push(Read16(Pop())); // @
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
   Push(Read8(Pop())&0xFF); // C@
@@ -314,7 +314,7 @@ void _ask_ALIEN_dash_HIT() // ?ALIEN-HIT
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
   D_eq_(); // D=
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
   Push(Read8(Pop())&0xFF); // C@
@@ -344,7 +344,7 @@ void _ask_ALIEN_dash_HIT() // ?ALIEN-HIT
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
   D_eq_(); // D=
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   Func8("TV-WEAPON");
   Push(Read8(Pop())&0xFF); // C@
@@ -561,7 +561,7 @@ void UNK_0xe5c8() // UNK_0xe5c8
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I
   if (Pop() == 0) goto label1;
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   Func8("INST-X");
   Push(Read16(Pop())); // @
   Func8("INST-Y");
@@ -570,13 +570,13 @@ void UNK_0xe5c8() // UNK_0xe5c8
   _ex_IX(); // !IX
 
   label1:
-  _gt_MAINVI(); // >MAINVI
-  VCLIPSE(); // VCLIPSE
+  _gt_MAINVIEW(); // >MAINVIEW
+  VCLIPSET(); // VCLIPSET
   _dot_BACKGR(); // .BACKGR
-  _dot_LOCAL_dash_(); // .LOCAL-
-  V_gt_DISPL(); // V>DISPL
-  _gt_DISPLA(); // >DISPLA
-  DCLIPSE(); // DCLIPSE
+  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  V_gt_DISPLAY(); // V>DISPLAY
+  _gt_DISPLAY(); // >DISPLAY
+  DCLIPSET(); // DCLIPSET
   Push(pp_XORMODE); // XORMODE
   _ex_(); // !
 }
@@ -590,7 +590,7 @@ void UNK_0xe5fc() // UNK_0xe5fc
 {
   Push(0xec78);
   Push(Read16(sp)); // DUP
-  Push(pp_ANCHOR); // ANCHOR
+  Push(pp_ANCHOR_dash_CONTOUR); // ANCHOR-CONTOUR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
 }
@@ -645,7 +645,7 @@ void UNK_0xe6b0() // UNK_0xe6b0
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I
   Pop(); // DROP
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
 }
 
 
@@ -819,7 +819,7 @@ void UNK_0xe83b() // UNK_0xe83b
 {
   Push(pp__h_CRIT); // ^CRIT
   Push(Read16(Pop())); // @
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
@@ -1063,7 +1063,7 @@ void UNK_0xecb7() // UNK_0xecb7
   POLY_dash_ER(); // POLY-ER
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -1384,7 +1384,7 @@ void TVMOVE() // TVMOVE
 {
   Push(0xcf50);
   MODULE(); // MODULE
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON(); // ON
 }
 
@@ -1395,9 +1395,9 @@ void TVMOVE() // TVMOVE
 
 void DO_dot_WEAPONS() // DO.WEAPONS
 {
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
@@ -1476,7 +1476,7 @@ void _dash_STORM() // -STORM
 
 void _ask_NAV() // ?NAV
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("NAVIG");
   _at__gt_C_plus_S(); // @>C+S
@@ -1588,9 +1588,9 @@ void _dot_ENERGY() // .ENERGY
   Push(cc__7); // 7
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  Push(pp_TVEHICL); // TVEHICL
+  Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(Read16(sp)); // DUP
@@ -1793,19 +1793,19 @@ void _dot_STATS() // .STATS
 void TV_dash_TASKS() // TV-TASKS
 {
   Push(0xf3b5);
-  Push(pp__i_VEHICL); // 'VEHICL
+  Push(pp__i_VEHICLE_dash_CYCLE); // 'VEHICLE-CYCLE
   _st__ex__gt_(); // <!>
   Push(0xed75);
   Push(pp__i_REPAIR); // 'REPAIR
   _st__ex__gt_(); // <!>
   Push(0xf399);
-  Push(pp__i__dot_VEHIC); // '.VEHIC
+  Push(pp__i__dot_VEHICLE_dash_STATUS); // '.VEHICLE-STATUS
   _st__ex__gt_(); // <!>
   Push(0xc04e);
   Push(pp__i_DEATH); // 'DEATH
   _st__ex__gt_(); // <!>
   Push(0xec5b);
-  Push(pp__i_EXTERN); // 'EXTERN
+  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
   _st__ex__gt_(); // <!>
   Push(0x3a6e);
   Push(pp__i_ENDING); // 'ENDING
@@ -1825,7 +1825,7 @@ void TV_dash_TASKS() // TV-TASKS
   Push(0xecb7);
   Push(pp__i__dot_DATE); // '.DATE
   _st__ex__gt_(); // <!>
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON(); // ON
   Push(0xd06e);
   Push(pp__i_THROW_dash_); // 'THROW-
@@ -1845,7 +1845,7 @@ void TV() // TV
   Push(0xf077);
   Push(0xf4b0);
   DOTASKS(); // DOTASKS
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON(); // ON
 }
 

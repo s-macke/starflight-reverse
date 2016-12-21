@@ -146,17 +146,17 @@ void UNK_0xf09a() // UNK_0xf09a
   signed short int imax = Pop();
   do // (DO)
   {
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   Push(i); // I
   UNK_0xf064(); // UNK_0xf064
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   Push(i); // I
   UNK_0xf07a(); // UNK_0xf07a
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   UNK_0xf08c(); // UNK_0xf08c
   Push(0x0064);
   MS(); // MS
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   Push(0x0190);
   MS(); // MS
   Push(cc__dash_1); // -1
@@ -185,7 +185,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
   Push(1); // 1
   Push(pp_CONTEXT); // CONTEXT
   _ex_(); // !
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
+  Push(pp__ask_G_dash_AWARE); // ?G-AWARE
   ON(); // ON
   Push(pp_GWF); // GWF
   OFF(); // OFF
@@ -208,7 +208,7 @@ void UNK_0xf112() // UNK_0xf112
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
@@ -276,9 +276,9 @@ void UNK_0xf162() // UNK_0xf162
   Push(cc__4); // 4
   _dash_(); // -
   SWAP(); // SWAP
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   LPLOT(); // LPLOT
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   return;
 
   label1:
@@ -299,7 +299,7 @@ void UNK_0xf1c0() // UNK_0xf1c0
   Push(h); // I
   Push(cc__4); // 4
   Push(0x00bf);
-  LCOPYBL(); // LCOPYBL
+  LCOPYBLK(); // LCOPYBLK
   R_gt_(); // R>
   UNK_0xf162(); // UNK_0xf162
 }
@@ -319,7 +319,7 @@ void UNK_0xf1de() // UNK_0xf1de
   Push(cc__4); // 4
   Push(h); // I
   Push(Pop()-1); // 1-
-  LCOPYBL(); // LCOPYBL
+  LCOPYBLK(); // LCOPYBLK
   R_gt_(); // R>
   UNK_0xf162(); // UNK_0xf162
 }
@@ -337,7 +337,7 @@ void UNK_0xf1de() // UNK_0xf1de
 
 void _dot_AIRLOCK() // .AIRLOCK
 {
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
@@ -380,7 +380,7 @@ void _dot_AIRLOCK() // .AIRLOCK
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   BLT(); // BLT
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -416,9 +416,9 @@ void UNK_0xf2ee() // UNK_0xf2ee
 
 void UNK_0xf2fc() // UNK_0xf2fc
 {
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   UNK_0xf2ee(); // UNK_0xf2ee
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -455,14 +455,14 @@ void UNK_0xf306() // UNK_0xf306
   Push(Pop()+1); // 1+
 
   label2:
-  LCOPYBL(); // LCOPYBL
+  LCOPYBLK(); // LCOPYBLK
   R_gt_(); // R>
   Pop(); // DROP
-  Push(pp_HBUF_dash_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SEG); // HBUF-SEG
   Push(Read16(Pop())); // @
   ROT(); // ROT
   UNK_0xf2fc(); // UNK_0xf2fc
-  Push(pp_DBUF_dash_SE); // DBUF-SE
+  Push(pp_DBUF_dash_SEG); // DBUF-SEG
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   ROLL(); // ROLL
@@ -494,15 +494,15 @@ void UNK_0xf36c() // UNK_0xf36c
 
 void UNK_0xf393() // UNK_0xf393
 {
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(0x05dc);
   MS(); // MS
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   return;
 
   label1:
@@ -578,7 +578,7 @@ void _and_LAUNCH() // &LAUNCH
 
 void _and_RETURN() // &RETURN
 {
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
   Push(cc__6); // 6
   Push(0x0012);
@@ -606,8 +606,8 @@ void _and_RETURN() // &RETURN
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  V_gt_DISPL(); // V>DISPL
-  _gt_DISPLA(); // >DISPLA
+  V_gt_DISPLAY(); // V>DISPLAY
+  _gt_DISPLAY(); // >DISPLAY
 
   UNK_0x3f3b("CLOSING");
   UNK_0xf36c(); // UNK_0xf36c
@@ -659,7 +659,7 @@ void _and_RETURN() // &RETURN
   _dot_AIRLOCK(); // .AIRLOCK
 
   label2:
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   BEEPOFF(); // BEEPOFF
 }
 

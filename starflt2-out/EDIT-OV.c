@@ -971,7 +971,7 @@ void EDIT() // EDIT
   goto label2;
 
   label1:
-  Func10("EDIT-KEYS");
+  Case(EDIT-KEYS);
 
   label2:
   goto label3;
@@ -1000,7 +1000,7 @@ void VIEW() // VIEW
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Func10("VIEW-KEYS");
+  Case(VIEW-KEYS);
 
   label1:
   goto label2;

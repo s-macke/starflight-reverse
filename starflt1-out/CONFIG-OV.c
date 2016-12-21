@@ -220,7 +220,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   UNK_0xe976(); // UNK_0xe976
   SetColor("WHITE");
   SetColor("GREY1");
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   _ex_(); // !
@@ -235,7 +235,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   UNK_0xeadd(); // UNK_0xeadd
   Push(pp_UNK_0xea33); // UNK_0xea33
   BLD_dash_CRS(); // BLD-CRS
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 
   label3:
@@ -251,7 +251,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("CONFIG-FUNCTION");
+  Case(CONFIG-FUNCTION);
   goto label2;
 
   label1:

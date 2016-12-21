@@ -306,7 +306,7 @@ void _ro__n_IN_do_() // (#IN$
 
 void _ro__ask_ART() // (?ART
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -413,9 +413,9 @@ void _ro_0_do__do__do_() // (0$$$
 void UNK_0xf319() // UNK_0xf319
 {
   SetColor("BLACK");
-  ERASE_dash_A(); // ERASE-A
+  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT
-  Func10(".ERR");
+  Case(.ERR);
   Push(0x0079);
   OVER(); // OVER
   Push(Pop()*2); // 2*
@@ -465,7 +465,7 @@ void UNK_0xf319() // UNK_0xf319
 
 void UNK_0xf383() // UNK_0xf383
 {
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -486,7 +486,7 @@ void UNK_0xf383() // UNK_0xf383
 void UNK_0xf39f() // UNK_0xf39f
 {
   Push(Read16(sp)); // DUP
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -523,7 +523,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   Push(h); // I
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -535,7 +535,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Func10(".ERR");
+  Case(.ERR);
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0); // 0
@@ -553,7 +553,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
   Push(h); // I
-  Func10(".ERR");
+  Case(.ERR);
   Func14("TYPE"); // call of word 0x2690
   Push(0); // 0
 
@@ -609,7 +609,7 @@ void _eq_CARG() // =CARG
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   UNK_0xf458(); // UNK_0xf458
@@ -617,15 +617,15 @@ void _eq_CARG() // =CARG
   Push(0); // 0
 
   label5:
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   _eq_(); // =
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0011);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0030);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -634,15 +634,15 @@ void _eq_CARG() // =CARG
   IOPEN(); // IOPEN
 
   label4:
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__6); // 6
   _eq_(); // =
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);
   _eq_(); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
@@ -650,7 +650,7 @@ void _eq_CARG() // =CARG
   D_ex_(); // D!
 
   label3:
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push2Words("NULL");
@@ -679,7 +679,7 @@ void _eq_CARG() // =CARG
   _ex_(); // !
   Push(0x000a);
   U_star_(); // U*
-  Push(pp__10_star_CARG); // 10*CARG
+  Push(pp__10_star_CARGO); // 10*CARGO
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }

@@ -514,12 +514,12 @@ void UNK_0xf38f() // UNK_0xf38f
   _dot_TTY(); // .TTY
   Push(pp_UNK_0xf180); // UNK_0xf180
   Push(Read16(Pop())); // @
-  Func10("COLORS");
+  Case(COLORS);
   Func14("CR"); // call of word 0x26ee
   PRINT("AND ", 4); // (.")
   Push(pp_UNK_0xf184); // UNK_0xf184
   Push(Read16(Pop())); // @
-  Func10("COLORS");
+  Case(COLORS);
   PRINT(" STARS?", 7); // (.")
 }
 

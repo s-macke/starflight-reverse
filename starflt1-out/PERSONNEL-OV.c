@@ -259,13 +259,13 @@ void UNK_0xe6c5() // UNK_0xe6c5
   Push(0x001c);
   Push(0x0043);
   SetColor("GREY2");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x00b6);
   Push(0x0044);
   Push(0x001c);
   Push(0x009d);
   SetColor("GREY2");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("WHITE");
   SetColor("WHITE");
   SetColor("DK-BLUE");
@@ -819,7 +819,7 @@ void UNK_0xebcd() // UNK_0xebcd
   _dot_(); // .
   PRINT("KG", 2); // (.")
   _ex_CRS(); // !CRS
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 
@@ -829,7 +829,7 @@ void UNK_0xebcd() // UNK_0xebcd
 
 void UNK_0xec5d() // UNK_0xec5d
 {
-  SAVE_dash_SC(); // SAVE-SC
+  SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
   Push(0x0080);
@@ -837,7 +837,7 @@ void UNK_0xec5d() // UNK_0xec5d
   Push(0x001e);
   Push(0x0099);
   SetColor("GREY2");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(pp_UNK_0xe91e); // UNK_0xe91e
   Push(Read16(Pop())); // @
   _gt_R(); // >R
@@ -928,8 +928,8 @@ void UNK_0xec5d() // UNK_0xec5d
   Push(0x001e);
   Push(0x0099);
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
-  _at_INST_dash_S(); // @INST-S
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(sp)); // DUP
   UNK_0xeb45(); // UNK_0xeb45
   UNK_0xebcd(); // UNK_0xebcd
@@ -938,7 +938,7 @@ void UNK_0xec5d() // UNK_0xec5d
   label1:
   UNK_0xea44(); // UNK_0xea44
   _ex_CRS(); // !CRS
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 }
 
@@ -981,7 +981,7 @@ void UNK_0xf497() // UNK_0xf497
   BLD_dash_CRS(); // BLD-CRS
   Push(0x0081);
   UNK_0xe92a(); // UNK_0xe92a
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
   UNK_0xec5d(); // UNK_0xec5d
   Push(0); // 0
@@ -1026,7 +1026,7 @@ void _ro_U_dash_PFILE_rc_() // (U-PFILE)
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("PFILE-FUNCTION");
+  Case(PFILE-FUNCTION);
 
   label1:
   if (Pop() == 0) goto label2;

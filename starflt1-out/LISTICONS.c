@@ -65,7 +65,7 @@ void UNK_0xf2a6() // UNK_0xf2a6
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_dash_PT); // TILE-PT
+  Push(pp_TILE_dash_PTR); // TILE-PTR
   _ex_(); // !
   Push(0x0021);
   Push(i); // I
@@ -75,7 +75,7 @@ void UNK_0xf2a6() // UNK_0xf2a6
   Push(0x002d);
   Push(0x0010);
   Push(0x000c);
-  TILEFIL(); // TILEFIL
+  TILEFILL(); // TILEFILL
   i++;
   } while(i<imax); // (LOOP) 0xffd4
 

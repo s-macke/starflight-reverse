@@ -930,7 +930,7 @@ void UNK_0xec56() // UNK_0xec56
   do // (DO)
   {
   Push(i); // I
-  Func10("#>?FIEL");
+  Case(#>?FIEL);
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(i); // I
@@ -1533,7 +1533,7 @@ void UNK_0xf125() // UNK_0xf125
 
   label2:
   UNK_0xec90(); // UNK_0xec90
-  Func10("#>DAMAG");
+  Case(#>DAMAG);
 }
 
 
@@ -1675,7 +1675,7 @@ void UNK_0xf25f() // UNK_0xf25f
   _gt_DISPLA(); // >DISPLA
   UNK_0xe84c(); // UNK_0xe84c
   Push(Read16(sp)); // DUP
-  Func10("#>DISP");
+  Case(#>DISP);
   Push(Read16(sp)); // DUP
   Push(cc__6); // 6
   Push(cc__7); // 7
@@ -1849,7 +1849,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   UNK_0xf316(); // UNK_0xf316
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
-  Func10(".EX");
+  Case(.EX);
   return;
 
   label1:
@@ -1868,7 +1868,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   UNK_0xf316(); // UNK_0xf316
   if (Pop() == 0) goto label2;
   Push(2); // 2
-  Func10(".EX");
+  Case(.EX);
   return;
 
   label2:
@@ -1879,7 +1879,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(pp__ask_AUTO); // ?AUTO
   ON(); // ON
   Push(1); // 1
-  Func10(".EX");
+  Case(.EX);
 }
 
 

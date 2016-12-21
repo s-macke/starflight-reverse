@@ -582,7 +582,7 @@ void SELL_dash_IT() // SELL-IT
   _gt_C_plus_(); // >C+
   SET_dash_CUR(); // SET-CUR
   _at_INST_dash_C(); // @INST-C
-  Func10("SELL-WHAT");
+  Case(SELL-WHAT);
   _gt_R(); // >R
   Push(h); // I
   Push(cc__dash_1); // -1
@@ -656,7 +656,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("DEPOT-FUNCTION");
+  Case(DEPOT-FUNCTION);
   _gt_R(); // >R
   Push(cc__dash_1); // -1
   SetColor("GREY2");

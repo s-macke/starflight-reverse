@@ -104,7 +104,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 {
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
-  Func10("N>STAT");
+  Case(N>STAT);
 }
 
 
@@ -324,7 +324,7 @@ void PSYCH() // PSYCH
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
   _dot_TTY(); // .TTY
-  Func10("#>.COL");
+  Case(#>.COL);
   PRINT(".", 1); // (.")
 
   label2:

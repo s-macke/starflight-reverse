@@ -436,7 +436,7 @@ void UNK_0xeacc() // UNK_0xeacc
 
 void UNK_0xeb66() // UNK_0xeb66
 {
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   U_slash_MOD(); // U/MOD
   SWAP(); // SWAP
@@ -457,7 +457,7 @@ void UNK_0xeb74() // UNK_0xeb74
   if (Pop() == 0) goto label1;
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(pp_ELEM_dash_AM); // ELEM-AM
@@ -471,19 +471,19 @@ void UNK_0xeb74() // UNK_0xeb74
   UNK_0xeb66(); // UNK_0xeb66
   ROT(); // ROT
   ROT(); // ROT
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x0064);
   Push(Pop() * Pop()); // *
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   _ex_(); // !
   UNK_0xeb66(); // UNK_0xeb66
   MAX(); // MAX
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData("ELEM-VAL"); // from 'ELEMENT     '
   _ex_(); // !
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<
@@ -522,7 +522,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex_(); // !
@@ -602,13 +602,13 @@ void SELL_dash_IT() // SELL-IT
   _1_dot_5_at_(); // 1.5@
   Func8("TEXT-CO");
   _1_dot_5_at_(); // 1.5@
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C(); // >C
   _gt_C(); // >C
   _gt_C_plus_(); // >C+
-  SET_dash_CUR(); // SET-CUR
-  _at_INST_dash_C(); // @INST-C
-  Func10("SELL-WHAT");
+  SET_dash_CURRENT(); // SET-CURRENT
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(SELL-WHAT);
   _gt_R(); // >R
   Push(h); // I
   Push(cc__dash_1); // -1
@@ -654,7 +654,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   ON(); // ON
   _gt_HIDDEN(); // >HIDDEN
   UNK_0xe835(); // UNK_0xe835
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
   Push(pp_NCRS); // NCRS
   OFF(); // OFF
@@ -682,7 +682,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(0); // 0
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("DEPOT-FUNCTION");
+  Case(DEPOT-FUNCTION);
   _gt_R(); // >R
   Push(cc__dash_1); // -1
   SetColor("GREY2");
@@ -722,14 +722,14 @@ void _st_TDART() // <TDART
   Push(0); // 0
 
   label4:
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000f);
   _gt_(); // >
   Push(Pop() + Pop()); // +
   Push(Read16(sp)); // DUP
   Push(0x000a);
   _gt_(); // >
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000f);
   _gt_(); // >
   Push(Pop() & Pop()); // AND

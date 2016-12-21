@@ -18098,7 +18098,7 @@ void IFLD_at_() // IFLD@
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
-  Func10("FLD@");
+  Case(FLD@);
 }
 
 
@@ -18114,7 +18114,7 @@ void IFLD_ex_() // IFLD!
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
-  Func10("FLD!");
+  Case(FLD!);
 }
 
 // 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
@@ -18782,7 +18782,7 @@ void ICREATE() // ICREATE
   Push(pp_UNK_0x5efa); // UNK_0x5efa
   Push(cc__3); // 3
   PICK(); // PICK
-  Func10("SET?REU");
+  Case(SET?REU);
   OVER(); // OVER
   Func6("FILE-SL");
   Push(Read8(Pop())&0xFF); // C@
@@ -19560,7 +19560,7 @@ void SETDBUF() // SETDBUF
   Push(Read16(Pop())); // @
   Push(0x010a);
   L_at_(); // L@
-  Func10("MON>MEM");
+  Case(MON>MEM);
   Push(0x51b8);
   D_ex_(); // D!
   Push(pp_DBUF_dash_SE); // DBUF-SE
@@ -21749,7 +21749,7 @@ void _dot_ICON() // .ICON
 
   label1:
   _at_ID(); // @ID
-  Func10(".ICONCA");
+  Case(.ICONCA);
 }
 
 
@@ -23819,7 +23819,7 @@ void XYSCAN() // XYSCAN
   Push(pp_FTRIG); // FTRIG
   _099(); // 099
   _i_KEY(); // 'KEY
-  Func10("(XYSCAN");
+  Case((XYSCAN);
 }
 
 
@@ -26173,7 +26173,7 @@ void ORGIA() // ORGIA
   Push(0x000c);
   MIN(); // MIN
   SWAP(); // SWAP
-  Func10("+ORG");
+  Case(+ORG);
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *

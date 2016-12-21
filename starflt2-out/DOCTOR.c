@@ -427,7 +427,7 @@ void UNK_0xf392() // UNK_0xf392
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Func10("NPCREW");
+  Case(NPCREW);
   if (Pop() == 0) goto label3;
   Push(0x000b);
   Push(2); // 2

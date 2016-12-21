@@ -211,7 +211,7 @@ void UNK_0xe121() // UNK_0xe121
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE");
+  Func8("PHRASE-MEM");
   Func8("PHR-CNT");
   Push(Read8(Pop())&0xFF); // C@
   Func14("TYPE"); // call of word 0x2690
@@ -746,7 +746,7 @@ void UNK_0xeb97() // UNK_0xeb97
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__7); // 7
   _eq_(); // =
   ICLOSE(); // ICLOSE

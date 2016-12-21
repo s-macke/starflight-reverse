@@ -2563,7 +2563,7 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(Read16(sp)); // DUP
   Push(pp_OPTIO); // OPTIO
   _ex_(); // !
-  Func10("KEY>O");
+  Case(KEY>O);
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
@@ -2632,7 +2632,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   label1:
   UNK_0xe571(); // UNK_0xe571
   UNK_0xf21d(); // UNK_0xf21d
-  Func10("GAMEO");
+  Case(GAMEO);
   Push(pp_UNK_0xdd2e); // UNK_0xdd2e
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;

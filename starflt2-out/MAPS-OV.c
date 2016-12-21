@@ -795,7 +795,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
   label1:
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  Func10("WPHRASE");
+  Case(WPHRASE);
 
   label2:
   UNK_0xee72(); // UNK_0xee72
@@ -928,7 +928,7 @@ void _dot_SURFACE() // .SURFACE
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xecfa"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  Func10("/SURF");
+  Case(/SURF);
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }

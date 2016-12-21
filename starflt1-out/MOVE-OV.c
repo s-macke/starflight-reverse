@@ -81,7 +81,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   _ex_COLOR(); // !COLOR
 }
 
@@ -155,7 +155,7 @@ void UNK_0xe7b8() // UNK_0xe7b8
 void UNK_0xe85e() // UNK_0xe85e
 {
   Push(0x6ac1);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_XCON); // XCON
@@ -179,7 +179,7 @@ void UNK_0xe85e() // UNK_0xe85e
 void SET_dash_SPEED() // SET-SPEED
 {
   UNK_0xe85e(); // UNK_0xe85e
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(Read16(sp)); // DUP
   Push(0x0010);
@@ -419,7 +419,7 @@ void UNK_0xecf2() // UNK_0xecf2
   ALL(); // ALL
   Push(0xec78);
   Push(Read16(sp)); // DUP
-  Push(pp_ANCHOR); // ANCHOR
+  Push(pp_ANCHOR_dash_CONTOUR); // ANCHOR-CONTOUR
   _2_ex_(); // 2!
   ORGLIST(); // ORGLIST
 
@@ -491,11 +491,11 @@ void UNK_0xed4c() // UNK_0xed4c
   _1_dot_5_ex_(); // 1.5!
   _2DUP(); // 2DUP
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed34(); // UNK_0xed34
   Push(0); // 0
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -554,10 +554,10 @@ void UNK_0xeda8() // UNK_0xeda8
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   _eq_(); // =
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000b);
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -597,7 +597,7 @@ void UNK_0xee34() // UNK_0xee34
 {
   _2DUP(); // 2DUP
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   IOPEN(); // IOPEN
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I
@@ -679,7 +679,7 @@ void TV_dash_MOVE() // TV-MOVE
   Push(0xf3a7);
   Push(0xf355);
   DOTASKS(); // DOTASKS
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON(); // ON
 }
 
@@ -700,8 +700,8 @@ void APPROACH() // APPROACH
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
-  _at_INST_dash_S(); // @INST-S
+  SET_dash_CURRENT(); // SET-CURRENT
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0012);
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -717,10 +717,10 @@ void APPROACH() // APPROACH
   Push(Read16(sp)); // DUP
   Push(0xc302);
   MODULE(); // MODULE
-  SHIP_dash_CO(); // SHIP-CO
+  SHIP_dash_CONSOLE(); // SHIP-CONSOLE
   Push(0xc48c);
   MODULE(); // MODULE
-  _dot_REGION(); // .REGION
+  _dot_REGION_plus_(); // .REGION+
   Push(0xc4a2);
   MODULE(); // MODULE
   Push(pp__n_CLRMAP); // #CLRMAP
@@ -732,10 +732,10 @@ void APPROACH() // APPROACH
   MODULE(); // MODULE
   Push(0xc3a7);
   MODULE(); // MODULE
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  DCLIPSE(); // DCLIPSE
+  DCLIPSET(); // DCLIPSET
   Push(pp_CONTEXT); // CONTEXT
   OFF(); // OFF
   ICLOSE(); // ICLOSE

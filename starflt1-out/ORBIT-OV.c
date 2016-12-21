@@ -530,7 +530,7 @@ void UNK_0xddc6() // UNK_0xddc6
   {
   Push(j); // I
   Push(i); // J
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_ex_(); // A!
   Push(cc__dash_1); // -1
   int step = Pop();
@@ -551,10 +551,10 @@ void UNK_0xddc6() // UNK_0xddc6
 
 void UNK_0xddee() // UNK_0xddee
 {
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6b31);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc__6); // 6
   Push(0); // 0
 
@@ -602,10 +602,10 @@ void UNK_0xddee() // UNK_0xddee
 
 void UNK_0xde3c() // UNK_0xde3c
 {
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6b31);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc__9); // 9
   Push(0); // 0
 
@@ -1576,14 +1576,14 @@ void UNK_0xe462() // UNK_0xe462
   LC_at_(); // LC@
   Push(cc__4); // 4
   SWAP(); // SWAP
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
   R_gt_(); // R>
   Push(0x003e);
   Push(Pop() + Pop()); // +
   Push(cc__4); // 4
   SWAP(); // SWAP
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
   _gt_(); // >
 }
@@ -1693,8 +1693,8 @@ void UNK_0xe4b4() // UNK_0xe4b4
   Push(2); // 2
   _gt_(); // >
   if (Pop() == 0) return;
-  SCANPOL(); // SCANPOL
-  LFILLPO(); // LFILLPO
+  SCANPOLY(); // SCANPOLY
+  LFILLPOLY(); // LFILLPOLY
 }
 
 
@@ -1706,11 +1706,11 @@ void UNK_0xe550() // UNK_0xe550
 {
   Push(0); // 0
   OVER(); // OVER
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
   Push(2); // 2
   ROT(); // ROT
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
 }
 
@@ -1759,7 +1759,7 @@ void UNK_0xe59c() // UNK_0xe59c
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   goto label2;
 
   label1:
@@ -1925,14 +1925,14 @@ void UNK_0xe670() // UNK_0xe670
 
 void UNK_0xe68e() // UNK_0xe68e
 {
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   _ex_COLOR(); // !COLOR
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   DARK(); // DARK
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   Push(Read16(Pop())); // @
   Push(pp_SEED); // SEED
   _ex_(); // !
@@ -1971,19 +1971,19 @@ void UNK_0xe68e() // UNK_0xe68e
 
 void UNK_0xe6dc() // UNK_0xe6dc
 {
-  _gt_MAINVI(); // >MAINVI
-  VCLIPSE(); // VCLIPSE
+  _gt_MAINVIEW(); // >MAINVIEW
+  VCLIPSET(); // VCLIPSET
   UNK_0xe68e(); // UNK_0xe68e
   UNK_0xe5fe(); // UNK_0xe5fe
   Push(pp_UNK_0xe5fa); // UNK_0xe5fa
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
 
   label1:
-  _gt_DISPLA(); // >DISPLA
-  DCLIPSE(); // DCLIPSE
+  _gt_DISPLAY(); // >DISPLAY
+  DCLIPSET(); // DCLIPSET
 }
 
 
@@ -2056,25 +2056,25 @@ void UNK_0xe769() // UNK_0xe769
   Push(Read16(Pop())); // @
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(pp_XUR); // XUR
   Push(Read16(Pop())); // @
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(pp_XUR); // XUR
   Push(Read16(Pop())); // @
   Push(pp_YUR); // YUR
   Push(Read16(Pop())); // @
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(pp_XLL); // XLL
   Push(Read16(Pop())); // @
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
@@ -2090,12 +2090,12 @@ void UNK_0xe769() // UNK_0xe769
 
 void UNK_0xe7a7() // UNK_0xe7a7
 {
-  Push(pp_SIGNEXT); // SIGNEXT
+  Push(pp_SIGNEXTEND); // SIGNEXTEND
   ON(); // ON
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6ac1);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc__9); // 9
   Push(0); // 0
 
@@ -2136,11 +2136,11 @@ void UNK_0xe7a7() // UNK_0xe7a7
   OVER(); // OVER
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
-  SETREGI(); // SETREGI
+  SETREGION(); // SETREGION
   UNK_0xe769(); // UNK_0xe769
   Push(j); // I
   Push(i); // J
-  Func11("9X9COAR");
+  Func11("9X9COARSE");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffbe
@@ -2201,7 +2201,7 @@ void UNK_0xe80d() // UNK_0xe80d
   LC_at_(); // LC@
   Push(j); // I
   Push(i); // J
-  Func11("9X9FINE");
+  Func11("9X9FINE>GVERTEX");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffe2
@@ -2238,7 +2238,7 @@ void UNK_0xe865() // UNK_0xe865
   {
   Push(j); // I
   OVER(); // OVER
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_at_(); // LC@
   Push(i); // J
   Push(cc__3); // 3
@@ -2286,7 +2286,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
   Push(j); // I
   Push(Pop()*2); // 2*
   OVER(); // OVER
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
   Push(i); // J
   Push(cc__4); // 4
@@ -2381,7 +2381,7 @@ void UNK_0xe947() // UNK_0xe947
   LC_at_(); // LC@
   Push(cc__4); // 4
   SWAP(); // SWAP
-  Func11("XFORMVE");
+  Func11("XFORMVERT");
   L_at_(); // L@
   Push(cc_UNK_0xdb86); // UNK_0xdb86
   _dash_(); // -
@@ -2434,7 +2434,7 @@ void UNK_0xe99f() // UNK_0xe99f
   Push(0x3e80);
   Push(cc_UNK_0xdb86); // UNK_0xdb86
   Push(0xc180);
-  SETCLIP(); // SETCLIP
+  SETCLIPWINDOW(); // SETCLIPWINDOW
 }
 
 
@@ -2709,7 +2709,7 @@ void UNK_0xeaf1() // UNK_0xeaf1
   CLIPPER(); // CLIPPER
   UNK_0xea59(); // UNK_0xea59
   UNK_0xea89(); // UNK_0xea89
-  VCLIPSE(); // VCLIPSE
+  VCLIPSET(); // VCLIPSET
   Push(pp_UNK_0xdc90); // UNK_0xdc90
   Push(pp_VOUT); // VOUT
   _ex_(); // !
@@ -2726,7 +2726,7 @@ void UNK_0xeb45() // UNK_0xeb45
 {
   Push(0); // 0
   SWAP(); // SWAP
-  Func11("GRIDCOL");
+  Func11("GRIDCOLOR");
   OVER(); // OVER
   OVER(); // OVER
   LC_at_(); // LC@
@@ -2870,8 +2870,8 @@ void UNK_0xebd1() // UNK_0xebd1
   if (Pop() == 0) goto label1;
   Push(i); // I
   UNK_0xeb45(); // UNK_0xeb45
-  SCANPOL(); // SCANPOL
-  LFILLPO(); // LFILLPO
+  SCANPOLY(); // SCANPOLY
+  LFILLPOLY(); // LFILLPOLY
   Push(i); // I
   Push(0x0018);
   _gt_(); // >
@@ -2895,16 +2895,16 @@ void UNK_0xebd1() // UNK_0xebd1
 
 void SEEGRID() // SEEGRID
 {
-  _gt_MAINVI(); // >MAINVI
-  VCLIPSE(); // VCLIPSE
+  _gt_MAINVIEW(); // >MAINVIEW
+  VCLIPSET(); // VCLIPSET
   Push(pp_UNK_0xdba0); // UNK_0xdba0
   Push(Read16(Pop())); // @
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   UNK_0xebd1(); // UNK_0xebd1
-  V_gt_DISPL(); // V>DISPL
-  DCLIPSE(); // DCLIPSE
-  _gt_DISPLA(); // >DISPLA
+  V_gt_DISPLAY(); // V>DISPLAY
+  DCLIPSET(); // DCLIPSET
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -2924,7 +2924,7 @@ void UNK_0xec7d() // UNK_0xec7d
   Push(0); // 0
   Push(1); // 1
   Push(i); // I
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   i++;
   } while(i<imax); // (LOOP) 0xfff4
@@ -2968,7 +2968,7 @@ void UNK_0xec97() // UNK_0xec97
   Push(Pop() + Pop()); // +
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffe2
@@ -2986,7 +2986,7 @@ void UNK_0xec97() // UNK_0xec97
 void UNK_0xecd5() // UNK_0xecd5
 {
   Push(0); // 0
-  COLORMA(); // COLORMA
+  COLORMAP(); // COLORMAP
   Push(0x0059);
   Push(0x0019);
 
@@ -2996,7 +2996,7 @@ void UNK_0xecd5() // UNK_0xecd5
   {
   Push(0); // 0
   Push(i); // I
-  Func11("GRIDCOL");
+  Func11("GRIDCOLOR");
   LC_at_(); // LC@
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
@@ -3015,7 +3015,7 @@ void UNK_0xecd5() // UNK_0xecd5
   Push(i); // J
   Func11("GPOLY");
   LC_at_(); // LC@
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffee
@@ -3054,9 +3054,9 @@ void UNK_0xed17() // UNK_0xed17
   Push(Pop() * Pop()); // *
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   L_plus__dash__at_(); // L+-@
-  COLORMA(); // COLORMA
+  COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
@@ -3069,7 +3069,7 @@ void UNK_0xed17() // UNK_0xed17
   Push(Pop() * Pop()); // *
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Func11("GRIDCOL");
+  Func11("GRIDCOLOR");
   L_ex_(); // L!
   j++;
   } while(j<jmax); // (LOOP) 0xffce
@@ -3099,9 +3099,9 @@ void UNK_0xed17() // UNK_0xed17
   Push(Pop() + Pop()); // +
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   L_plus__dash__at_(); // L+-@
-  COLORMA(); // COLORMA
+  COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
@@ -3116,7 +3116,7 @@ void UNK_0xed17() // UNK_0xed17
   Push(Pop() + Pop()); // +
   Push(0x0019);
   Push(Pop() + Pop()); // +
-  Func11("GRIDCOL");
+  Func11("GRIDCOLOR");
   L_ex_(); // L!
   l++;
   } while(l<lmax); // (LOOP) 0xffc2
@@ -3144,7 +3144,7 @@ void UNK_0xedb1() // UNK_0xedb1
   Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(i); // I
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   i++;
   } while(i<imax); // (LOOP) 0xfff4
@@ -3176,7 +3176,7 @@ void UNK_0xedcf() // UNK_0xedcf
   {
   Push(j); // I
   Push(i); // J
-  Func11("9X9COAR");
+  Func11("9X9COARSE");
   L_plus__dash__at_(); // L+-@
   Push(Pop() + Pop()); // +
   j++;
@@ -3212,12 +3212,12 @@ void UNK_0xedfb() // UNK_0xedfb
   _dash_(); // -
   Push(pp_X1); // X1
   _ex_(); // !
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   ON(); // ON
-  Push(pp_SIGNEXT); // SIGNEXT
+  Push(pp_SIGNEXTEND); // SIGNEXTEND
   ON(); // ON
   Push(0x6a99);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc__6); // 6
   Push(0); // 0
 
@@ -3240,7 +3240,7 @@ void UNK_0xedfb() // UNK_0xedfb
   Push(Read16(Pop())); // @
   Push(i); // J
   _dash_(); // -
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(1); // 1
   Push(i); // J
@@ -3248,7 +3248,7 @@ void UNK_0xedfb() // UNK_0xedfb
   Push(Pop() * Pop()); // *
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffda
@@ -3281,7 +3281,7 @@ void UNK_0xee65() // UNK_0xee65
   {
   Push(j); // I
   Push(i); // J
-  Func11("9X9COAR");
+  Func11("9X9COARSE");
   LC_at_(); // LC@
   Push(1); // 1
   Push(i); // J
@@ -3291,7 +3291,7 @@ void UNK_0xee65() // UNK_0xee65
   Push(Pop() + Pop()); // +
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffe0
@@ -3324,7 +3324,7 @@ void UNK_0xee9b() // UNK_0xee9b
   {
   Push(j); // I
   Push(i); // J
-  Func11("9X9FINE");
+  Func11("9X9FINE>GVERTEX");
   LC_at_(); // LC@
   Push(1); // 1
   Push(i); // J
@@ -3334,7 +3334,7 @@ void UNK_0xee9b() // UNK_0xee9b
   Push(Pop() + Pop()); // +
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffe0
@@ -3489,7 +3489,7 @@ void UNK_0xef97() // UNK_0xef97
   Push(j); // I
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_at_(); // LC@
   Push(1); // 1
   Push(i); // J
@@ -3497,7 +3497,7 @@ void UNK_0xef97() // UNK_0xef97
   Push(Pop() * Pop()); // *
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffda
@@ -3668,7 +3668,7 @@ void UNK_0xf0af() // UNK_0xf0af
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
 }
 
@@ -3766,7 +3766,7 @@ void UNK_0xf0d3() // UNK_0xf0d3
   Push(2); // 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -3815,7 +3815,7 @@ void DESCEND() // DESCEND
   _dot_TTY(); // .TTY
   _gt_VIEWSITE(); // >VIEWSITE
   UNK_0xeed1(); // UNK_0xeed1
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   CTERASE(); // CTERASE
@@ -3922,7 +3922,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
   UNK_0xedfb(); // UNK_0xedfb
   Push(1); // 1
   Push(0x000e);
-  Func11("GVERTEX");
+  Func11("GVERTEX>GRIDCOLOR");
   LC_at_(); // LC@
   UNK_0xedb1(); // UNK_0xedb1
   UNK_0xed17(); // UNK_0xed17
@@ -4048,7 +4048,7 @@ void UNK_0xf391() // UNK_0xf391
 
 void UNK_0xf39f() // UNK_0xf39f
 {
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   Push(Read16(Pop())); // @
   Push(pp_SEED); // SEED
   _ex_(); // !
@@ -4108,7 +4108,7 @@ void UNK_0xf413() // UNK_0xf413
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
-  Func10("SKYCASE");
+  Case(SKYCASE);
   Push(pp_UNK_0xdba0); // UNK_0xdba0
   _ex_(); // !
 }
@@ -4121,21 +4121,21 @@ void UNK_0xf413() // UNK_0xf413
 
 void INIT_dash_ORBIT() // INIT-ORBIT
 {
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   _ex_(); // !
   Push(pp__n_CLRMAP); // #CLRMAP
   _ex_(); // !
-  SET_dash_COL(); // SET-COL
+  SET_dash_COLORMAP(); // SET-COLORMAP
   UNK_0xf3cb(); // UNK_0xf3cb
   UNK_0xf413(); // UNK_0xf413
   UNK_0xf0bb(); // UNK_0xf0bb
   if (Pop() == 0) goto label1;
   Push(0x6a99);
-  SETLARR(); // SETLARR
-  FULLARR(); // FULLARR
-  SETREGI(); // SETREGI
+  SETLARRAY(); // SETLARRAY
+  FULLARRAY(); // FULLARRAY
+  SETREGION(); // SETREGION
   Push(0x0061);
-  FILLREG(); // FILLREG
+  FILLREGION(); // FILLREGION
   goto label2;
 
   label1:
@@ -4150,7 +4150,7 @@ void INIT_dash_ORBIT() // INIT-ORBIT
   goto label2;
 
   label3:
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   Push(Read16(Pop())); // @
   Push(0xc302);
   MODULE(); // MODULE

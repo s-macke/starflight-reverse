@@ -292,7 +292,7 @@ void _dot_STARDATE() // .STARDATE
   Push(1); // 1
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -450,7 +450,7 @@ void UNK_0xe90e() // UNK_0xe90e
   Push(Read16(sp)); // DUP
   Func8("UNK_0xe623");
   Push(Read16(Pop())); // @
-  Push(pp__10_star_CARG); // 10*CARG
+  Push(pp__10_star_CARGO); // 10*CARGO
   _2_at_(); // 2@
   Push(0x000a);
   U_slash_MOD(); // U/MOD
@@ -714,7 +714,7 @@ void _dot_STAT_dash_TEXT() // .STAT-TEXT
   _gt_1FONT(); // >1FONT
   SetColor("WHITE");
   SetColor("WHITE");
-  SetColor("LT-GREE");
+  SetColor("LT-GREEN");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(0x0055);
@@ -794,7 +794,7 @@ void _dot_STAT_dash_TEXT() // .STAT-TEXT
 void UNK_0xec00() // UNK_0xec00
 {
   SetColor("BLACK");
-  ERASE_dash_A(); // ERASE-A
+  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xea52(); // UNK_0xea52
   _dot_STAT_dash_TEXT(); // .STAT-TEXT
 }
@@ -979,7 +979,7 @@ void UNK_0xecb4() // UNK_0xecb4
 void UNK_0xedd0() // UNK_0xedd0
 {
   Push2Words("NULL");
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
   Push(pp_UNK_0xec28); // UNK_0xec28
   Push(Read16(Pop())); // @
@@ -1020,7 +1020,7 @@ void UNK_0xedd0() // UNK_0xedd0
   Push(Read16(Pop())); // @
   Push(0x001f);
   _dash_(); // -
-  Push(pp_XWLD_c_XP); // XWLD:XP
+  Push(pp_XWLD_c_XPIX); // XWLD:XPIX
   _2_at_(); // 2@
   _star__slash_(); // */
   Push(Pop() + Pop()); // +
@@ -1030,12 +1030,12 @@ void UNK_0xedd0() // UNK_0xedd0
   Push(Read16(Pop())); // @
   Push(0x003f);
   _dash_(); // -
-  Push(pp_YWLD_c_YP); // YWLD:YP
+  Push(pp_YWLD_c_YPIX); // YWLD:YPIX
   _2_at_(); // 2@
   _star__slash_(); // */
   Push(Pop() + Pop()); // +
   Push(cc__4); // 4
-  Push(pp_XWLD_c_XP); // XWLD:XP
+  Push(pp_XWLD_c_XPIX); // XWLD:XPIX
   _2_at_(); // 2@
   SWAP(); // SWAP
   _slash_(); // /
@@ -1054,7 +1054,7 @@ void UNK_0xedd0() // UNK_0xedd0
   signed short int jmax = Pop();
   do // (DO)
   {
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   _at_IL(); // @IL
   _at_IH(); // @IH
   Push2Words("*SHIP");
@@ -1063,7 +1063,7 @@ void UNK_0xedd0() // UNK_0xedd0
   if (Pop() == 0) goto label2;
   _at_IL(); // @IL
   _at_IH(); // @IH
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
 
   label2:
@@ -1072,7 +1072,7 @@ void UNK_0xedd0() // UNK_0xedd0
 
 
   label1:
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -1091,13 +1091,13 @@ void UNK_0xee86() // UNK_0xee86
   SetColor("GREY1");
   SetColor("VIOLET");
   _ask_MRC(); // ?MRC
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x00b4);
   Push(0x0071);
   Push(0x0080);
   Push(0x0099);
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
 
@@ -1145,7 +1145,7 @@ void UNK_0xeee0() // UNK_0xeee0
 void UNK_0xeefe() // UNK_0xeefe
 {
   SetColor("BLACK");
-  ERASE_dash_A(); // ERASE-A
+  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xeeb8(); // UNK_0xeeb8
   UNK_0xee86(); // UNK_0xee86
   UNK_0xeee0(); // UNK_0xeee0
@@ -1194,7 +1194,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
   goto label2;
 
@@ -1221,8 +1221,8 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
-  Func10(".READINGS");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(.READINGS);
   ICLOSE(); // ICLOSE
   goto label5;
 
@@ -1230,7 +1230,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   Pop(); Pop();// 2DROP
 
   label5:
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_at_(); // 1.5@
   D0_eq_(); // D0=
   if (Pop() == 0) return;
@@ -1238,7 +1238,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   CTERASE(); // CTERASE
   PRINT("THERE'S NOTHING THERE.", 22); // (.")
   Push(0x0001); Pust(0x0000);
-  Push(pp_SENSE_dash_A); // SENSE-A
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
 }
 

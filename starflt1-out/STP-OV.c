@@ -196,12 +196,12 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
-  LoadData("ART-NAM"); // from 'ARTIFACT    '
+  LoadData("ART-NAME"); // from 'ARTIFACT    '
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
   _dot_TTY(); // .TTY
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   Push(pp_UNK_0xf03a); // UNK_0xf03a
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
@@ -280,7 +280,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   TIME(); // TIME
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   _ex_(); // !
   Push(0); // 0
   Push(0x0018);
@@ -426,7 +426,7 @@ void STP() // STP
   UNK_0xf48f(); // UNK_0xf48f
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +

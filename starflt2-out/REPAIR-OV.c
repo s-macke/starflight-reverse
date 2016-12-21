@@ -179,7 +179,7 @@ void UNK_0xef8e() // UNK_0xef8e
 void UNK_0xef96() // UNK_0xef96
 {
   UNK_0xef86(); // UNK_0xef86
-  Func10(">FIELD");
+  Case(>FIELD);
 }
 
 
@@ -304,11 +304,11 @@ void UNK_0xf01c() // UNK_0xf01c
   do // (DO)
   {
   Push(i); // I
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xef9e(); // UNK_0xef9e
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xefae(); // UNK_0xefae
   Push(0x0064);
   _st_(); // <
@@ -387,7 +387,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xefae(); // UNK_0xefae
   Push(Read16(sp)); // DUP
   UNK_0xf05e(); // UNK_0xf05e

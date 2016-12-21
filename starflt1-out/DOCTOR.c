@@ -86,7 +86,7 @@ void UNK_0xf092() // UNK_0xf092
 void UNK_0xf0a6() // UNK_0xf0a6
 {
   _gt_R(); // >R
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
   Push(cc__6); // 6
@@ -417,7 +417,7 @@ void UNK_0xf373() // UNK_0xf373
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Func10("NPCREW");
+  Case(NPCREW);
   if (Pop() == 0) goto label3;
   Push(0x000b);
   Push(2); // 2

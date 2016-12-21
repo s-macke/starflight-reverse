@@ -69,7 +69,7 @@ const unsigned short int cc_UNK_0xef6a = 0x0fa0; // UNK_0xef6a
 
 void UNK_0xef73() // UNK_0xef73
 {
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   _gt_2FONT(); // >2FONT
   Push(cc__3); // 3
   Push(0); // 0
@@ -84,7 +84,7 @@ void UNK_0xef73() // UNK_0xef73
   SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   Push(0x00c8);
   MS(); // MS
   SetColor("LT-BLUE");
@@ -118,7 +118,7 @@ void UNK_0xef73() // UNK_0xef73
   Func14("TYPE"); // call of word 0x2690
   Push(cc_UNK_0xef6a); // UNK_0xef6a
   TONE(); // TONE
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
   Push(0x01f4);
   MS(); // MS
   i++;
@@ -134,7 +134,7 @@ void UNK_0xef73() // UNK_0xef73
 
 void UNK_0xf008() // UNK_0xf008
 {
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   Push(cc__4); // 4
   Push(0x00bf);
   POS_dot_(); // POS.
@@ -244,7 +244,7 @@ void UNK_0xf08e() // UNK_0xf08e
 
 void UNK_0xf09c() // UNK_0xf09c
 {
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   OFF(); // OFF
   UNK_0xef73(); // UNK_0xef73
   UNK_0xf008(); // UNK_0xf008
@@ -260,9 +260,9 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(cc__3); // 3
   Push(0xc542);
   MODULE(); // MODULE
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON(); // ON
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp__ask_WIN); // ?WIN
   _ex_(); // !
@@ -278,7 +278,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   _gt_R(); // >R
   Push(h); // I
   Push(0x0044);
@@ -291,7 +291,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label2;
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__3); // 3
   _st_(); // <
   Push(Pop() & Pop()); // AND
@@ -302,7 +302,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label3;
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0010);
   Push(0x0033);
   WITHIN(); // WITHIN
@@ -314,7 +314,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _eq_(); // =
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label4;
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__3); // 3
   _eq_(); // =
   Push(pp__ask_WIN); // ?WIN
@@ -407,7 +407,7 @@ void UNK_0xf1ac() // UNK_0xf1ac
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_SUPER_dash_B); // SUPER-B
+  Push(pp_SUPER_dash_BOX); // SUPER-BOX
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -472,9 +472,9 @@ void UNK_0xf1d6() // UNK_0xf1d6
 void UNK_0xf252() // UNK_0xf252
 {
   _ex_COLOR(); // !COLOR
-  _gt_MAINVI(); // >MAINVI
+  _gt_MAINVIEW(); // >MAINVIEW
   BFILL(); // BFILL
-  V_gt_DISPL(); // V>DISPL
+  V_gt_DISPLAY(); // V>DISPLAY
 }
 
 
@@ -520,7 +520,7 @@ void UNK_0xf25e() // UNK_0xf25e
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -532,7 +532,7 @@ void UNK_0xf29e() // UNK_0xf29e
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
   Push(0x0017);
   _eq_(); // =
@@ -585,7 +585,7 @@ void UNK_0xf2eb() // UNK_0xf2eb
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
@@ -662,10 +662,10 @@ void UNK_0xf39d() // UNK_0xf39d
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x003d);
   _eq_(); // =
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__9); // 9
   _eq_(); // =
   Push(Pop() & Pop()); // AND

@@ -88,7 +88,7 @@ void UNK_0xf147() // UNK_0xf147
 
 void UNK_0xf177() // UNK_0xf177
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -99,7 +99,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
@@ -113,7 +113,7 @@ void UNK_0xf177() // UNK_0xf177
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _ex_(); // !
 
   label2:
@@ -218,7 +218,7 @@ void UNK_0xf258() // UNK_0xf258
   _dot_TTY(); // .TTY
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _ask_(); // ?
   ICLOSE(); // ICLOSE
 
@@ -228,14 +228,14 @@ void UNK_0xf258() // UNK_0xf258
   _at__gt_C_plus_S(); // @>C+S
   Func8("INST-X");
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCA); // *MAPSCA
+  Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   Func8("INST-Y");
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCA); // *MAPSCA
+  Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
@@ -372,7 +372,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf430() // UNK_0xf430
 {
   UNK_0xf32c(); // UNK_0xf32c
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   _ex_(); // !
   Push(cc__dash_1); // -1
   Push(pp_GWF); // GWF
@@ -380,7 +380,7 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7);
   MODULE(); // MODULE
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf258(); // UNK_0xf258
@@ -436,7 +436,7 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void _ask_LAND() // ?LAND
 {
-  Push(pp__i_EXTERN); // 'EXTERN
+  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
   Push(Read16(Pop())); // @
   Push(pp__i_HEAT); // 'HEAT
   Push(Read16(Pop())); // @
@@ -449,7 +449,7 @@ void _ask_LAND() // ?LAND
   return;
 
   label1:
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
+  Push(pp__ask_G_dash_AWARE); // ?G-AWARE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf45e(); // UNK_0xf45e

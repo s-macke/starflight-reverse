@@ -168,7 +168,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
             "\n// ================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ================================================\n",
-            wordofs, dict[i].r, dict[i].codep, dict[i].parp);
+            wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
         pline[wordofs+0].done = 1; // linkp
         pline[wordofs+1].done = 1; // linkp
         if (strncmp(dict[i].r, "UNK_", 4) != 0)
@@ -235,7 +235,7 @@ void DisasStarflt(FILE *fp)
         snprintf(pline[wordofs].strword, STRINGLEN,
             "\n// ====================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-            "// ====================================================\n", wordofs, dict[i].r, dict[i].codep, dict[i].parp);
+            "// ====================================================\n", wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
         pline[wordofs+0].done = 1; // linkp or codep
         pline[wordofs+1].done = 1; // linkp or codep
         if (strncmp(dict[i].r, "UNK_", 4) != 0)
@@ -268,7 +268,6 @@ void OutputDirectory()
     fclose(fp);
 
 }
-
 
 int main()
 {

@@ -1643,7 +1643,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
-  Func10(".READINGS");
+  Case(.READINGS);
   ICLOSE(); // ICLOSE
   goto label5;
 
@@ -1981,7 +1981,7 @@ void UNK_0xf3c1() // UNK_0xf3c1
 {
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
-  Func10("CTXT>I");
+  Case(CTXT>I);
   _gt_C_plus_S(); // >C+S
   Func8("INST-X");
   Push(Read16(Pop())); // @

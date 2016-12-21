@@ -179,7 +179,7 @@ void UNK_0xef6e() // UNK_0xef6e
 void UNK_0xef76() // UNK_0xef76
 {
   UNK_0xef66(); // UNK_0xef66
-  Func10(">FIELD");
+  Case(>FIELD);
 }
 
 
@@ -304,11 +304,11 @@ void UNK_0xeffc() // UNK_0xeffc
   do // (DO)
   {
   Push(i); // I
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xef7e(); // UNK_0xef7e
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xef8e(); // UNK_0xef8e
   Push(0x0064);
   _st_(); // <
@@ -343,7 +343,7 @@ void UNK_0xeffc() // UNK_0xeffc
 
 void UNK_0xf03e() // UNK_0xf03e
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xef11");
   _at__gt_C_plus_S(); // @>C+S
@@ -387,7 +387,7 @@ void UNK_0xf086() // UNK_0xf086
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Func10(">FIELD");
+  Case(>FIELD);
   UNK_0xef8e(); // UNK_0xef8e
   Push(Read16(sp)); // DUP
   UNK_0xf03e(); // UNK_0xf03e
@@ -442,7 +442,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
 void UNK_0xf0e8() // UNK_0xf0e8
 {
   Push(1); // 1
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -495,9 +495,9 @@ void UNK_0xf122() // UNK_0xf122
 
 void UNK_0xf130() // UNK_0xf130
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(0x000a);
@@ -509,7 +509,7 @@ void UNK_0xf130() // UNK_0xf130
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
   UNK_0xef5e(); // UNK_0xef5e
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -546,9 +546,9 @@ void UNK_0xf130() // UNK_0xf130
 
 void UNK_0xf182() // UNK_0xf182
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(0x000a);
@@ -615,12 +615,12 @@ void UNK_0xf1e4() // UNK_0xf1e4
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   _ex_(); // !
-  LoadData("ELEM-NA"); // from 'ELEMENT     '
+  LoadData("ELEM-NAME"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
   _dot_TTY(); // .TTY
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 
@@ -851,7 +851,7 @@ void UNK_0xf38f() // UNK_0xf38f
   UNK_0xf182(); // UNK_0xf182
   Pop(); // DROP
   UNK_0xef5e(); // UNK_0xef5e
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(Read16(sp)); // DUP

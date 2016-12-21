@@ -218,10 +218,10 @@ void UNK_0xf331() // UNK_0xf331
   Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  Func10("(.CS)");
+  Case((.CS));
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  Func10("(.CS)");
+  Case((.CS));
 }
 
 

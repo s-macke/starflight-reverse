@@ -218,7 +218,7 @@ void UNK_0xeffe() // UNK_0xeffe
   _at_CRS(); // @CRS
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
-  Func10("(.DOOR)");
+  Case((.DOOR));
   UNK_0xeee5(); // UNK_0xeee5
   _ex_CRS(); // !CRS
 }
@@ -632,7 +632,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   _099(); // 099
 
   label1:
-  Func10("DO-ROOM");
+  Case(DO-ROOM);
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -667,7 +667,7 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  Func10("XWALK");
+  Case(XWALK);
   Pop(); // DROP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT

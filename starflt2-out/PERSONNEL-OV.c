@@ -1239,7 +1239,7 @@ void _ro_U_dash_PFILE_rc_() // (U-PFILE)
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Func10("PFILE-FUNCTI");
+  Case(PFILE-FUNCTI);
 
   label1:
   if (Pop() == 0) goto label2;

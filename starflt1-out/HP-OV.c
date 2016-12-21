@@ -163,12 +163,12 @@ void UNK_0xe344() // UNK_0xe344
   Func8("PHR-CNT");
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Func8("PHRASE");
+  Func8("PHRASE-MEM");
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);
   _eq_(); // =
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__4); // 4
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -190,7 +190,7 @@ void UNK_0xe374() // UNK_0xe374
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__5); // 5
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -211,7 +211,7 @@ void UNK_0xe390() // UNK_0xe390
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__3); // 3
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -813,7 +813,7 @@ void UNK_0xee38() // UNK_0xee38
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x004d);
   OVER(); // OVER
   _eq_(); // =

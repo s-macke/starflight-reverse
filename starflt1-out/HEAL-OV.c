@@ -228,7 +228,7 @@ void UNK_0xf183() // UNK_0xf183
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   UNK_0xf0bc(); // UNK_0xf0bc
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(pp_WLEFT); // WLEFT
@@ -240,7 +240,7 @@ void UNK_0xf183() // UNK_0xf183
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   SetColor("YELLOW");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("RED");
   _ex_COLOR(); // !COLOR
   Push(1); // 1
@@ -267,7 +267,7 @@ void UNK_0xf183() // UNK_0xf183
 void ROLE_dash_C() // ROLE-C
 {
   UNK_0xf139(); // UNK_0xf139
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("INST-SI");
   Push(0x0011);
@@ -370,9 +370,9 @@ void UNK_0xf280() // UNK_0xf280
 
 void UNK_0xf292() // UNK_0xf292
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   Func8("UNK_0xf0fa");
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0104);
@@ -615,7 +615,7 @@ void UNK_0xf42f() // UNK_0xf42f
   Push(0); // 0
   Push(pp_UNK_0xf426); // UNK_0xf426
   _ex_(); // !
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf0f0");
   _1_dot_5_at_(); // 1.5@
@@ -637,7 +637,7 @@ void UNK_0xf42f() // UNK_0xf42f
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   OVER(); // OVER
-  Func10(">SKILL");
+  Case(>SKILL);
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf426); // UNK_0xf426
@@ -684,7 +684,7 @@ void UNK_0xf489() // UNK_0xf489
 
 void UNK_0xf497() // UNK_0xf497
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf0f0");
   _at__gt_C_plus_S(); // @>C+S
@@ -713,9 +713,9 @@ void UNK_0xf497() // UNK_0xf497
 
 void UNK_0xf4c1() // UNK_0xf4c1
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C(); // >C
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   Func8("UNK_0xf0f0");
   Push(cc__6); // 6
   Push(1); // 1

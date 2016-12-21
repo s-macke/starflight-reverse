@@ -521,7 +521,7 @@ void _n__gt_PRO() // #>PRO
   UNK_0xee17(); // UNK_0xee17
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Func10("#>PROTEST");
+  Case(#>PROTEST);
   return;
 
   label1:
@@ -604,7 +604,7 @@ void _ro_XCOMM_rc_() // (XCOMM)
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
-  Func10("SA-CASE");
+  Case(SA-CASE);
   UNK_0xf4ad(); // UNK_0xf4ad
   UNK_0xf51d(); // UNK_0xf51d
 }

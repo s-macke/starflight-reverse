@@ -650,7 +650,7 @@ void UNK_0xf429() // UNK_0xf429
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   OVER(); // OVER
-  Func10(">SKILL");
+  Case(>SKILL);
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf420); // UNK_0xf420

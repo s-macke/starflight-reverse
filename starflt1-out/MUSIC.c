@@ -394,7 +394,7 @@ void CSCR_gt_EGA() // CSCR>EGA
 
   Pop(); // DROP
   SCR_dash_RES(); // SCR-RES
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -428,11 +428,11 @@ void UNK_0xe69c() // UNK_0xe69c
 {
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(pp_HBUF_dash_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SEG); // HBUF-SEG
   Push(Read16(Pop())); // @
   Push(0x008d);
   FILE_st_(); // FILE<
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
   Push(0x02bc);
   MS(); // MS
@@ -509,11 +509,11 @@ void UNK_0xe6ec() // UNK_0xe6ec
 {
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(pp_HBUF_dash_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SEG); // HBUF-SEG
   Push(Read16(Pop())); // @
   Push(0x0036);
   FILE_st_(); // FILE<
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -577,7 +577,7 @@ void BRMOVE() // BRMOVE
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
-  Push(pp_HBUF_dash_SE); // HBUF-SE
+  Push(pp_HBUF_dash_SEG); // HBUF-SEG
   Push(Read16(Pop())); // @
   Push(0); // 0
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
@@ -722,7 +722,7 @@ void UNK_0xe82b() // UNK_0xe82b
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
   _ex_(); // !
   Push(0x0045);
-  Func6("FILE-ST");
+  Func6("FILE-START");
   Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /
@@ -742,13 +742,13 @@ void UNK_0xe82b() // UNK_0xe82b
   Push(Pop() + Pop()); // +
   BRMOVE(); // BRMOVE
   UNK_0xe7cd(); // UNK_0xe7cd
-  CFIGARR(); // CFIGARR
+  CFIGARRAYS(); // CFIGARRAYS
   Push(0); // 0
   Push(cc_MUSSEG); // MUSSEG
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
 }
 
 
@@ -785,7 +785,7 @@ void REDUCE() // REDUCE
 void INCREASE() // INCREASE
 {
   FLUSH(); // FLUSH
-  Push(pp__bo__n_CACHE); // [#CACHE
+  Push(pp__bo__n_CACHE_bc_); // [#CACHE]
   Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
   _ex_(); // !
@@ -822,7 +822,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(0x0046);
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
   _ex_(); // !
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   OFF(); // OFF
   Push(0x000d);
@@ -893,13 +893,13 @@ void INTROS() // INTROS
   CSCR_gt_EGA(); // CSCR>EGA
   Push(0x4e20); Pust(0x0000);
   UNK_0xe680(); // UNK_0xe680
-  CFIGARR(); // CFIGARR
+  CFIGARRAYS(); // CFIGARRAYS
   Push(0); // 0
   Push(cc_MUSSEG); // MUSSEG
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   return;
 
   label1:

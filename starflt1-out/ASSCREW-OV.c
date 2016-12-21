@@ -261,13 +261,13 @@ void UNK_0xeb81() // UNK_0xeb81
   Push(cc__8); // 8
   Push(0x0043);
   SetColor("GREY2");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x003c);
   Push(0x0044);
   Push(cc__8); // 8
   Push(0x009d);
   SetColor("GREY2");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("WHITE");
   SetColor("WHITE");
   UNK_0xeb6d(); // UNK_0xeb6d
@@ -598,7 +598,7 @@ void UNK_0xedf8() // UNK_0xedf8
   UNK_0xeb81(); // UNK_0xeb81
   Push(cc__9); // 9
   UNK_0xec86(); // UNK_0xec86
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 }
 
@@ -708,7 +708,7 @@ void UNK_0xef47() // UNK_0xef47
 
 void UNK_0xf019() // UNK_0xf019
 {
-  SAVE_dash_SC(); // SAVE-SC
+  SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
@@ -831,7 +831,7 @@ void UNK_0xf019() // UNK_0xf019
   PRINT("DEAD", 4); // (.")
   _ex_CRS(); // !CRS
   _gt_1FONT(); // >1FONT
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 }
 
@@ -874,7 +874,7 @@ void UNK_0xf128() // UNK_0xf128
 void UNK_0xf192() // UNK_0xf192
 {
   CTINIT(); // CTINIT
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(cc__6); // 6
   Push(0); // 0
@@ -917,7 +917,7 @@ void UNK_0xf1ce() // UNK_0xf1ce
 {
   _gt_R(); // >R
   CI(); // CI
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xeb68");
   Push(h); // I
@@ -960,7 +960,7 @@ void UNK_0xf1ec() // UNK_0xf1ec
 
 void UNK_0xf238() // UNK_0xf238
 {
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(pp_XORMODE); // XORMODE
@@ -1228,7 +1228,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   OFF(); // OFF
   Push(pp_OCRS); // OCRS
   OFF(); // OFF
-  CURSORS(); // CURSORS
+  CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
   _ex_(); // !
   Push(cc__9); // 9
@@ -1242,7 +1242,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   POS_dot_(); // POS.
   SetColor("WHITE");
   SetColor("GREY2");
-  SetColor("DK-GREE");
+  SetColor("DK-GREEN");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1250,7 +1250,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   BLT(); // BLT
   SetColor("WHITE");
   UNK_0xf1ec(); // UNK_0xf1ec
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(cc__6); // 6
   Push(0); // 0

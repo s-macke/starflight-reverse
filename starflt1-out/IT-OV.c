@@ -78,7 +78,7 @@ void UNK_0xee1a() // UNK_0xee1a
 
 void UNK_0xee2c() // UNK_0xee2c
 {
-  Push(pp_TIME_dash_PA); // TIME-PA
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(pp_CTTOP); // CTTOP
@@ -188,7 +188,7 @@ void UNK_0xef27() // UNK_0xef27
   KEY(); // KEY
   Pop(); // DROP
   UNK_0xee70(); // UNK_0xee70
-  SAVE_dash_OV(); // SAVE-OV
+  SAVE_dash_OVERLAY(); // SAVE-OVERLAY
 }
 
 // 0xef4f: db 0x4c 0x22 0x08 0xee 0x59 0xad 0x18 0xee 0x5d 0x17 0x10 0x00 0xea 0x6d 0x90 0x16 0x4c 0x22 0x47 0xad 0x95 0x49 0xf0 0x0d 0x3e 0x13 0x89 0x12 0xfa 0x15 0x08 0x00 0xde 0x0d 0x26 0xad 0x95 0x49 0xf2 0x79 0x16 0xae 0x08 0xae 0x92 0x0c 0x18 0xee 0xf2 0x0e 0xea 0x6d 0xc9 0x79 0x90 0x16 0x4c 0x22 0x5d 0x17 0x0a 0x00 0x60 0x0f 0xf2 0x0e 0x21 0xae 0x32 0x0e 0x92 0x0c 0xdb 0x23 0x5d 0x17 0x20 0x00 0x72 0x0f 0x6a 0x6d 0x5d 0x17 0x2e 0x00 0xdb 0x23 0x5d 0x17 0x1f 0x00 0x72 0x0f 0x6a 0x6d 0x21 0xae 0xdb 0x23 0x5d 0x17 0x1f 0x00 0x72 0x0f 0x7f 0x0e 0x92 0x0f 0xf2 0x0e 0xea 0x6d 0x13 0x5d 0xae 0x0b 0xd6 0x11 0x5d 0x17 0x64 0x00 0xeb 0x11 0xf2 0x0e 0x32 0x0e 0x21 0xae 0xdb 0x23 0x5d 0x17 0x26 0x00 0x72 0x0f 0x7f 0x0e 0xf6 0x0f 0x92 0x0f 0xf2 0x0e 0xea 0x6d 0x90 0x16 0x4c 0x22 0xae 0xad 0x18 0xee 0x5d 0x17 0x10 0x00 0xea 0x6d 0xa9 0x74 0xae 0x0b 0xc0 0xad 0xae 0x0b 0x5d 0x17 0x0a 0x00 0xb3 0x0f 0xf2 0x0e 0x87 0xef 0x90 0x16 'L"  Y   ]    m  L"G  I  >         &  I y           m y  L"]   `   ! 2    #]   r jm] .  #]   r jm!  #]   r       m ]    ] d     2 !  #] & r         m  L"    ]    m t      ]           '
@@ -266,8 +266,8 @@ void ITEM_gt_PAD() // ITEM>PAD
   Push(0x0026);
   PAD(); // PAD
   C_ex_(); // C!
-  _at_INST_dash_C(); // @INST-C
-  Func10("IDENT-ITEM$");
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Case(IDENT-ITEM$);
 }
 
 
@@ -283,7 +283,7 @@ void UNK_0xf157() // UNK_0xf157
   Push(cc__3); // 3
   PICK(); // PICK
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -331,7 +331,7 @@ void BOX_gt_LIST() // BOX>LIST
   CI(); // CI
 
   label2:
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x0035);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -339,7 +339,7 @@ void BOX_gt_LIST() // BOX>LIST
   Push(Read16(Pop())); // @
   Push(0x004b);
   _st_(); // <
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -391,7 +391,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
   OFF(); // OFF
   Push(pp_ESC_dash_EN); // ESC-EN
   OFF(); // OFF
-  Push2Words("FRAGMEN");
+  Push2Words("FRAGMENT");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -423,7 +423,7 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
   Push(pp__ro_SCROLL); // (SCROLL
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_(); // >C+
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
   IDELETE(); // IDELETE
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -443,7 +443,7 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 
 void UNK_0xf2cf() // UNK_0xf2cf
 {
-  Func10("CLASS>BOX-SPEC");
+  Case(CLASS>BOX-SPEC);
   Push(0x000b);
   SWAP(); // SWAP
   Push(1); // 1
@@ -457,7 +457,7 @@ void UNK_0xf2cf() // UNK_0xf2cf
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
-  Func10("CLASS>BOX-SPEC");
+  Case(CLASS>BOX-SPEC);
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
@@ -473,13 +473,13 @@ void _gt_BOX() // >BOX
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   _gt_R(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(h); // I
-  Func10("CLASS>BOX-SPEC");
+  Case(CLASS>BOX-SPEC);
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -491,8 +491,8 @@ void _gt_BOX() // >BOX
   BOX_gt_TOCS(); // BOX>TOCS
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  _at_INST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(Read16(sp)); // DUP
   Push(0x001a);
@@ -508,17 +508,17 @@ void _gt_BOX() // >BOX
   label4:
   Push(Read16(sp)); // DUP
   INEXT(); // INEXT
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   _eq_(); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   CI(); // CI
   ICLOSE(); // ICLOSE
-  _gt_INACTI(); // >INACTI
-  Func8("INST-QT");
+  _gt_INACTIVE(); // >INACTIVE
+  Func8("INST-QTY");
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   goto label5;
@@ -547,7 +547,7 @@ void _gt_BOX() // >BOX
 
 void _ask_ELEMENT() // ?ELEMENT
 {
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);
   _eq_(); // =
 }
@@ -560,7 +560,7 @@ void _ask_ELEMENT() // ?ELEMENT
 void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -570,21 +570,21 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _plus__ex_(); // +!
   Push(0x001a);
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  Func8("INST-QT");
+  Func8("INST-QTY");
   _ex_(); // !
   C_gt_(); // C>
   return;
 
   label1:
-  IEXTRAC(); // IEXTRAC
+  IEXTRACT(); // IEXTRACT
 }
 
 
@@ -613,9 +613,9 @@ void BOX_gt_() // BOX>
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _ask_ELEMENT(); // ?ELEMENT
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND

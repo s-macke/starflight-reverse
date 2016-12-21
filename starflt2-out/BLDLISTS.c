@@ -1233,7 +1233,7 @@ void UNK_0xf41e() // UNK_0xf41e
   MODULE(); // MODULE
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
-  Func10("APOST>PO");
+  Case(APOST>PO);
   goto label4;
 
   label1:

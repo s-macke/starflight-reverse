@@ -57,7 +57,7 @@ void DO_dash_CLOUD() // DO-CLOUD
   WUP(); // WUP
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Func10("(DO-CLOUD)");
+  Case((DO-CLOUD));
   return;
 
   label1:

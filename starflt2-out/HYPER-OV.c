@@ -650,7 +650,7 @@ void UNK_0xdcc8() // UNK_0xdcc8
 
 void UNK_0xdfd5() // UNK_0xdfd5
 {
-  Func10("SC>C");
+  Case(SC>C);
   _ex_COLOR(); // !COLOR
   Push(0x0078);
   Push(0x00a1);
@@ -677,7 +677,7 @@ void UNK_0xdfe9() // UNK_0xdfe9
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xda73"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  Func10("PS>C");
+  Case(PS>C);
   _ex_COLOR(); // !COLOR
 
   label1:
@@ -848,11 +848,11 @@ void UNK_0xe1c2() // UNK_0xe1c2
   _at_INST_dash_C(); // @INST-C
   CONTEXT(); // CONTEXT
   Push(Read16(sp)); // DUP
-  Func10("RADII");
+  Case(RADII);
   _gt_R(); // >R
   _gt_R(); // >R
   Push(h); // I
-  Func10("IVAR");
+  Case(IVAR);
   R_gt_(); // R>
   R_gt_(); // R>
   ICLOSE(); // ICLOSE
@@ -913,7 +913,7 @@ void UNK_0xe23b() // UNK_0xe23b
   _gt_1FONT(); // >1FONT
   if (Pop() == 0) goto label1;
   UNK_0xdaca(); // UNK_0xdaca
-  Func10("XYCASE");
+  Case(XYCASE);
   goto label2;
 
   label1:
@@ -1825,7 +1825,7 @@ void UNK_0xe8c9() // UNK_0xe8c9
   Push(pp__n_ACC); // #ACC
   _099(); // 099
   UNK_0xdaca(); // UNK_0xdaca
-  Func10("CSPEED");
+  Case(CSPEED);
   Push(0xd9f8);
   _ex_(); // !
 }
@@ -2019,7 +2019,7 @@ void NEST() // NEST
   Push(Read16(sp)); // DUP
   UNK_0xe9f1(); // UNK_0xe9f1
   Push(Read16(sp)); // DUP
-  Func10("NEST-SE");
+  Case(NEST-SE);
   Push(Read16(sp)); // DUP
   Push(0xc994);
   MODULE(); // MODULE
@@ -2195,7 +2195,7 @@ void UNK_0xebdb() // UNK_0xebdb
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label4;
   Push(Read16(sp)); // DUP
-  Func10("?~C");
+  Case(?~C);
   if (Pop() == 0) goto label5;
   Push(0x0096);
   Push(0x0fa0);
@@ -2483,7 +2483,7 @@ void UNNEST() // UNNEST
   Push(0xc94c);
   MODULE(); // MODULE
   Push(h); // I
-  Func10("UNNEST-");
+  Case(UNNEST-);
   UNK_0xe157(); // UNK_0xe157
   ICLOSE(); // ICLOSE
   CI(); // CI
@@ -2624,7 +2624,7 @@ void UNK_0xef35() // UNK_0xef35
   R_gt_(); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Func10("COLLIDE");
+  Case(COLLIDE);
 }
 
 
@@ -2708,7 +2708,7 @@ void SET_dash_DES() // SET-DES
   _ex_(); // !
 
   label1:
-  Func10("(XYSCAN");
+  Case((XYSCAN);
   Push(pp_SKEY); // SKEY
   Push(Read16(Pop())); // @
   Push(0x005b);

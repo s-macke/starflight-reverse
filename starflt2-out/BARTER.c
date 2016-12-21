@@ -474,7 +474,7 @@ void UNK_0xe454() // UNK_0xe454
   Push(Read8(Pop())&0xFF); // C@
   _at_COLOR(); // @COLOR
   _gt_R(); // >R
-  Func10("SPL");
+  Case(SPL);
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xe28c(); // UNK_0xe28c
@@ -1166,7 +1166,7 @@ void DO_dash_BARTER() // DO-BARTER
 void UNK_0xf4bc() // UNK_0xf4bc
 {
   UNK_0xe5ae(); // UNK_0xe5ae
-  Func10("N>REPLY");
+  Case(N>REPLY);
   UNK_0xe610(); // UNK_0xe610
 }
 

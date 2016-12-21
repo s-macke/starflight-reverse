@@ -165,12 +165,12 @@ void UNK_0xe39f() // UNK_0xe39f
   Func8("PHR-CNT");
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Func8("PHRASE");
+  Func8("PHRASE-MEM");
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);
   _eq_(); // =
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__4); // 4
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -192,7 +192,7 @@ void UNK_0xe3cf() // UNK_0xe3cf
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__5); // 5
   _eq_(); // =
   ICLOSE(); // ICLOSE
@@ -366,7 +366,7 @@ void UNK_0xe867() // UNK_0xe867
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   Push(pp_PM_dash_PTR); // PM-PTR
   _ex_(); // !
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(pp_LINE_dash_COUNT); // LINE-COUNT
   Push(Read16(Pop())); // @
   Push(0); // 0
 
@@ -395,7 +395,7 @@ void UNK_0xe867() // UNK_0xe867
   goto label3;
 
   label2:
-  WLINE_dash_U(); // WLINE-U
+  WLINE_dash_UP(); // WLINE-UP
 
   label3:
   Push(cc_TEXTC_slash_L); // TEXTC/L
@@ -471,7 +471,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   Push(pp_PM_dash_PTR); // PM-PTR
   _ex_(); // !
   Push(1); // 1
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(pp_LINE_dash_COUNT); // LINE-COUNT
   _plus__ex_(); // +!
 
   label2:
@@ -694,7 +694,7 @@ void UNK_0xeafb() // UNK_0xeafb
   if (Pop() == 0) goto label1;
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE");
+  Func8("PHRASE-MEM");
   Push(Read8(Pop())&0xFF); // C@
   _gt_R(); // >R
   R_at_(); // R@
@@ -825,7 +825,7 @@ void UNK_0xebb1() // UNK_0xebb1
 void UNK_0xebcf() // UNK_0xebcf
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE");
+  Func8("PHRASE-MEM");
   Func8("PHR-CNT");
   Push(Read8(Pop())&0xFF); // C@
 }
@@ -898,7 +898,7 @@ void UNK_0xebdb() // UNK_0xebdb
 void UNK_0xec3b() // UNK_0xec3b
 {
   Push(1); // 1
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(pp_LINE_dash_COUNT); // LINE-COUNT
   _ex_(); // !
   Push(0); // 0
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
@@ -929,10 +929,10 @@ void UNK_0xec53() // UNK_0xec53
   Push(cc_BL); // BL
   FILL(); // FILL
   Push(1); // 1
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(pp_LINE_dash_COUNT); // LINE-COUNT
   _ex_(); // !
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
-  WLINE_dash_U(); // WLINE-U
+  WLINE_dash_UP(); // WLINE-UP
 }
 
 
@@ -990,7 +990,7 @@ void UNK_0xeca3() // UNK_0xeca3
 
 void UNK_0xecc5() // UNK_0xecc5
 {
-  LoadData("RESEMBL"); // from 'CREATURE    '
+  LoadData("RESEMBLES"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   UNK_0xe69d(); // UNK_0xe69d
   Push(Pop() | Pop()); // OR
@@ -1474,21 +1474,21 @@ void _ask_TALK() // ?TALK
   signed short int imax = Pop();
   do // (DO)
   {
-  POINT_gt_I(); // POINT>I
+  POINT_gt_ICON(); // POINT>ICON
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
+  _at_INST_dash_CLASS(); // @INST-CLASS
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label2;
-  Func10("CLASS>DE");
+  Case(CLASS>DE);
   goto label3;
 
   label2:
-  Func10("CLASS>TY");
+  Case(CLASS>TY);
 
   label3:
   ICLOSE(); // ICLOSE

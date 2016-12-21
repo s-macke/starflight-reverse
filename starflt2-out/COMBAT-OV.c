@@ -1178,7 +1178,7 @@ void UNK_0xe7ec() // UNK_0xe7ec
   UNK_0xdd64(); // UNK_0xdd64
   UNK_0xdecf(); // UNK_0xdecf
   SWAP(); // SWAP
-  Func10("KEY>ORIENT");
+  Case(KEY>ORIENT);
   Push(Read16(sp)); // DUP
   Func8("UNK_0xddc0");
   C_ex_(); // C!

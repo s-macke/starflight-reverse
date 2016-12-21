@@ -118,7 +118,7 @@ void UNK_0xee4a() // UNK_0xee4a
 
 void UNK_0xef36() // UNK_0xef36
 {
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xef16");
   Push(Pop() + Pop()); // +
@@ -138,7 +138,7 @@ void UNK_0xef36() // UNK_0xef36
 
 void UNK_0xef52() // UNK_0xef52
 {
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xef16");
   Push(Pop() + Pop()); // +
@@ -229,7 +229,7 @@ void UNK_0xefc8() // UNK_0xefc8
 {
   UNK_0xefa6(); // UNK_0xefa6
   Push(Read16(sp)); // DUP
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xef16");
   Push(Pop() + Pop()); // +
@@ -673,7 +673,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
   SetColor("BLACK");
   ERASE_dash_A(); // ERASE-A
   CTINIT(); // CTINIT
-  Func10(".ERR");
+  Case(.ERR);
   Push(0x0079);
   OVER(); // OVER
   Push(Pop()*2); // 2*
@@ -724,7 +724,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
 void UNK_0xf35b() // UNK_0xf35b
 {
   Push(Read16(sp)); // DUP
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xef16");
   Push(Pop() + Pop()); // +
@@ -764,7 +764,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   Push(h); // I
-  Func10("EINDE");
+  Case(EINDE);
   Push(Pop()*2); // 2*
   Func8("UNK_0xef16");
   Push(Pop() + Pop()); // +
@@ -776,7 +776,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Func10(".ERR");
+  Case(.ERR);
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0); // 0
@@ -795,7 +795,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   UNK_0x3f09("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
   Push(h); // I
-  Func10(".ERR");
+  Case(.ERR);
   Func14("TYPE"); // call of word 0x2690
   Push(0); // 0
 

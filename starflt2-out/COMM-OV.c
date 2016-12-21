@@ -538,7 +538,7 @@ void UNK_0xd9e9() // UNK_0xd9e9
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
-  Func10("S>EDL");
+  Case(S>EDL);
   ICLOSE(); // ICLOSE
 }
 
@@ -764,7 +764,7 @@ void UNK_0xdbd6() // UNK_0xdbd6
   label1:
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read16(Pop())); // @
-  Func10("#PHR");
+  Case(#PHR);
   RRND(); // RRND
 
   label2:
@@ -830,7 +830,7 @@ void UNK_0xdc1d() // UNK_0xdc1d
   Push(Pop() | Pop()); // OR
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
-  Func10("N>POST");
+  Case(N>POST);
   Push(pp_A_dash_POSTU); // A-POSTU
   _ex_(); // !
 }
@@ -1493,7 +1493,7 @@ void UNK_0xe3e1() // UNK_0xe3e1
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() * Pop()); // *
-  Func10("SPL");
+  Case(SPL);
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   UNK_0xe23a(); // UNK_0xe23a
@@ -2048,7 +2048,7 @@ void UNK_0xf0df() // UNK_0xf0df
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   UNK_0xdb95(); // UNK_0xdb95
-  Func10(">Y/N");
+  Case(>Y/N);
   Push(pp_UNK_0xd91b); // UNK_0xd91b
   _099(); // 099
   Push(cc__9); // 9
@@ -2057,7 +2057,7 @@ void UNK_0xf0df() // UNK_0xf0df
   goto label2;
 
   label3:
-  Func10(">CM");
+  Case(>CM);
 
   label2:
   UNK_0xeb10(); // UNK_0xeb10
@@ -2154,7 +2154,7 @@ void CL1() // CL1
   if (Pop() == 0) goto label3;
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
-  Func10("(CBTN)");
+  Case((CBTN));
 
   label3:
   Push(pp_UNK_0xd8fb); // UNK_0xd8fb

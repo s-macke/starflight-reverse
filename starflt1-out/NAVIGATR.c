@@ -94,7 +94,7 @@ void UNK_0xf246() // UNK_0xf246
 {
   SWAP(); // SWAP
   CMOVE(); // CMOVE
-  SET_dash_CUR(); // SET-CUR
+  SET_dash_CURRENT(); // SET-CURRENT
 }
 
 

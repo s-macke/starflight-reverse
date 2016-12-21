@@ -184,10 +184,10 @@ void UNK_0xf32b() // UNK_0xf32b
   Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  Func10("(.CS)");
+  Case((.CS));
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  Func10("(.CS)");
+  Case((.CS));
 }
 
 
@@ -301,7 +301,7 @@ void UNK_0xf40a() // UNK_0xf40a
 
 void UNK_0xf450() // UNK_0xf450
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
   Func8("UNK_0xf1bb");
@@ -365,7 +365,7 @@ void UNK_0xf480() // UNK_0xf480
 
 void UNK_0xf4aa() // UNK_0xf4aa
 {
-  Push2Words("*STARSH");
+  Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
@@ -377,7 +377,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(0x000a);

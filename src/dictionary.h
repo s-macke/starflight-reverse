@@ -48,5 +48,6 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
 
 char* FindDictPar(unsigned short addr, int ovidx);
 char* Forth2CString(char *in);
+char* GetWordName(DICTENTRY *dict);
 
 #endif

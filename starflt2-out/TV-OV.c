@@ -862,7 +862,7 @@ void UNK_0xeca1() // UNK_0xeca1
 {
   _ask_LAST(); // ?LAST
   _at_INST_dash_C(); // @INST-C
-  Func10("DISPOSAL");
+  Case(DISPOSAL);
   Push(cc_FALSE); // FALSE
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -881,7 +881,7 @@ void UNK_0xeca1() // UNK_0xeca1
 void UNK_0xecd8() // UNK_0xecd8
 {
   _at_INST_dash_C(); // @INST-C
-  Func10("DISPOSAL");
+  Case(DISPOSAL);
   if (Pop() == 0) goto label1;
   _dash_ICON(); // -ICON
   IDELETE(); // IDELETE

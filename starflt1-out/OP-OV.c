@@ -310,7 +310,7 @@ void UNK_0xe637() // UNK_0xe637
   _ex_(); // !
   Push(pp_UNK_0xe58c); // UNK_0xe58c
   BLD_dash_CRS(); // BLD-CRS
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 }
 
@@ -322,14 +322,14 @@ void UNK_0xe637() // UNK_0xe637
 
 void UNK_0xe78b() // UNK_0xe78b
 {
-  SAVE_dash_SC(); // SAVE-SC
+  SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   Push(0x00c5);
   Push(cc__3); // 3
   Push(0x000c);
   Push(0x009c);
   UNK_0xe44a(); // UNK_0xe44a
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   _gt_2FONT(); // >2FONT
   Push(cc__3); // 3
   Push(0x00c3);
@@ -339,7 +339,7 @@ void UNK_0xe78b() // UNK_0xe78b
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   PRINT("EVALUATION", 10); // (.")
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
   _gt_1FONT(); // >1FONT
 }
@@ -479,7 +479,7 @@ void UNK_0xeb09() // UNK_0xeb09
   Func8("UNK_0xe461");
   Push(Read16(Pop())); // @
   PAD(); // PAD
-  DATE_do__gt_A(); // DATE$>A
+  DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
   Push(0x000a);
   Func14("TYPE"); // call of word 0x2690
@@ -489,14 +489,14 @@ void UNK_0xeb09() // UNK_0xeb09
   PRINT("SYSTEM: ", 8); // (.")
   Func8("INST-X");
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCA); // *MAPSCA
+  Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   Func8("INST-Y");
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCA); // *MAPSCA
+  Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   _dot_(); // .
   Push(cc__4); // 4
@@ -527,7 +527,7 @@ void UNK_0xeb09() // UNK_0xeb09
 void UNK_0xebc1() // UNK_0xebc1
 {
   UNK_0xe78b(); // UNK_0xe78b
-  Func8("INST-QT");
+  Func8("INST-QTY");
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   _gt_R(); // >R
@@ -616,7 +616,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Func10("(BAD-PLAN)");
+  Case((BAD-PLAN));
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
@@ -1061,7 +1061,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  Func10("OP-CASE");
+  Case(OP-CASE);
 
   label3:
   if (Pop() == 0) goto label1;

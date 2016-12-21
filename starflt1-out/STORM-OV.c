@@ -179,7 +179,7 @@ void UNK_0xf174() // UNK_0xf174
 
 void UNK_0xf261() // UNK_0xf261
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf248");
   _at__gt_C_plus_S(); // @>C+S
@@ -228,7 +228,7 @@ void UNK_0xf275() // UNK_0xf275
 
 void UNK_0xf298() // UNK_0xf298
 {
-  Push2Words("*ASSIGN");
+  Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Func8("UNK_0xf281");
   Push(0); // 0
@@ -322,7 +322,7 @@ void UNK_0xf30e() // UNK_0xf30e
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   SetColor("BLACK");
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   _ex_COLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -430,7 +430,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0044);
   Push(pp_LCOLOR); // LCOLOR
   Push(Read16(Pop())); // @
-  POLY_dash_WI(); // POLY-WI
+  POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.

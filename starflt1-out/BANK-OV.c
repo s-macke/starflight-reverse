@@ -249,8 +249,8 @@ void TRANSACT() // TRANSACT
   label3:
   ILAST(); // ILAST
   COVER(); // COVER
-  SET_dash_CUR(); // SET-CUR
-  Push(pp_STARDAT); // STARDAT
+  SET_dash_CURRENT(); // SET-CURRENT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Func8("UNK_0xefa4");
   _2_at_(); // 2@
@@ -292,7 +292,7 @@ void INT_pe_() // INT%
   Push(0x000c);
   Push(0x0064);
   M_star__slash_(); // M*/
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   Push(Read16(Pop())); // @
@@ -312,7 +312,7 @@ void INT_pe_() // INT%
   _ex_TFLAG(); // !TFLAG
   Push(cc__5); // 5
   TRANSACT(); // TRANSACT
-  Push(pp_STARDAT); // STARDAT
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
   _ex_(); // !
@@ -766,7 +766,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   Push(0x000e);
   POS_dot_(); // POS.
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
-  _gt_DISPLA(); // >DISPLA
+  _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
 
   label1:

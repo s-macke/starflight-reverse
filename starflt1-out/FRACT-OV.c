@@ -686,24 +686,24 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
   Push(Read16(sp)); // DUP
   Push(pp_SEED); // SEED
   _ex_(); // !
-  Push(pp_GLOBALS); // GLOBALS
+  Push(pp_GLOBALSEED); // GLOBALSEED
   _ex_(); // !
   Push(pp_UNK_0xe356); // UNK_0xe356
   OFF(); // OFF
   Push2Words("UNK_0xe380");
   Push(cc_UNK_0xe386); // UNK_0xe386
   UNK_0xe39a(); // UNK_0xe39a
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   ON(); // ON
-  Push(pp_SIGNEXT); // SIGNEXT
+  Push(pp_SIGNEXTEND); // SIGNEXTEND
   ON(); // ON
   Push(0x6a99);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(0); // 0
   Push(0); // 0
   Push(0x0030);
   Push(0x0017);
-  SETREGI(); // SETREGI
+  SETREGION(); // SETREGION
   Push(cc_UNK_0xe364); // UNK_0xe364
   UNK_0xe770(); // UNK_0xe770
   UNK_0xe3a6(); // UNK_0xe3a6
@@ -729,7 +729,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
 void UNK_0xe801() // UNK_0xe801
 {
   Push(0x6ac1);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc_UNK_0xe364); // UNK_0xe364
   UNK_0xe770(); // UNK_0xe770
 }
@@ -753,10 +753,10 @@ void UNK_0xe80f() // UNK_0xe80f
   _slash_(); // /
   Push(pp_X2); // X2
   _ex_(); // !
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   ON(); // ON
   Push(0x6a99);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(cc__4); // 4
   Push(0); // 0
 
@@ -779,14 +779,14 @@ void UNK_0xe80f() // UNK_0xe80f
   Push(Read16(Pop())); // @
   Push(i); // J
   Push(Pop() + Pop()); // +
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(j); // I
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
   Push(i); // J
   Push(Pop()*2); // 2*
-  Func11("CONANCH");
+  Func11("CONANCHOR");
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffdc
@@ -804,11 +804,11 @@ void UNK_0xe80f() // UNK_0xe80f
 void UNK_0xe86f() // UNK_0xe86f
 {
   _2OVER(); // 2OVER
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   _gt_R(); // >R
   _2DUP(); // 2DUP
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   R_gt_(); // R>
   Push(Pop() + Pop()); // +
@@ -824,7 +824,7 @@ void UNK_0xe86f() // UNK_0xe86f
   R_gt_(); // R>
   ROT(); // ROT
   ROT(); // ROT
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_ex_(); // A!
 }
 
@@ -1081,7 +1081,7 @@ void UNK_0xe985() // UNK_0xe985
   OVER(); // OVER
   Push(i); // J
   Push(Pop() + Pop()); // +
-  Func11("CONANCH");
+  Func11("CONANCHOR");
   LC_at_(); // LC@
   Push(j); // I
   Push(0x000c);
@@ -1109,7 +1109,7 @@ void UNK_0xea21() // UNK_0xea21
 {
   UNK_0xe80f(); // UNK_0xe80f
   Push(0x6aad);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   UNK_0xe8a1(); // UNK_0xe8a1
   UNK_0xe8f7(); // UNK_0xe8f7
   UNK_0xe921(); // UNK_0xe921
@@ -1134,7 +1134,7 @@ void UNK_0xea37() // UNK_0xea37
   Push(Pop()+1); // 1+
   OVER(); // OVER
   Push(Pop()+1); // 1+
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(cc_UNK_0xe364); // UNK_0xe364
   _eq_(); // =
@@ -1145,7 +1145,7 @@ void UNK_0xea37() // UNK_0xea37
   OVER(); // OVER
   Push(0x0013);
   Push(Pop() + Pop()); // +
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   A_at_(); // A@
   Push(cc_UNK_0xe364); // UNK_0xe364
   _eq_(); // =
@@ -1158,7 +1158,7 @@ void UNK_0xea37() // UNK_0xea37
   OVER(); // OVER
   Push(0x0014);
   Push(Pop() + Pop()); // +
-  SETREGI(); // SETREGI
+  SETREGION(); // SETREGION
   UNK_0xe78c(); // UNK_0xe78c
   return;
 
@@ -1173,12 +1173,12 @@ void UNK_0xea37() // UNK_0xea37
 
 void UNK_0xea97() // UNK_0xea97
 {
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
-  Push(pp_SIGNEXT); // SIGNEXT
+  Push(pp_SIGNEXTEND); // SIGNEXTEND
   ON(); // ON
   Push(0x6ac1);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   Push(pp_UNK_0xe356); // UNK_0xe356
   ON(); // ON
   Push2Words("UNK_0xe7f7");
@@ -1467,9 +1467,9 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb06(); // UNK_0xeb06
   UNK_0xeb20(); // UNK_0xeb20
   Push(Pop()-1); // 1-
-  Func11("MERCATO");
+  Func11("MERCATOR");
   L_plus__dash__at_(); // L+-@
-  COLORMA(); // COLORMA
+  COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   UNK_0xeb54(); // UNK_0xeb54
@@ -1489,9 +1489,9 @@ void UNK_0xebfc() // UNK_0xebfc
   {
   Push(j); // I
   Push(i); // J
-  Func11("MERCATO");
+  Func11("MERCATOR");
   L_plus__dash__at_(); // L+-@
-  COLORMA(); // COLORMA
+  COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   UNK_0xeb38(); // UNK_0xeb38
@@ -2061,11 +2061,11 @@ void UNK_0xefb5() // UNK_0xefb5
 {
   Push(0); // 0
   Push(0); // 0
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   ROT(); // ROT
   Push(0); // 0
   SWAP(); // SWAP
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   Push(cc__3); // 3
   PICK(); // PICK
   OVER(); // OVER
@@ -2086,10 +2086,10 @@ void UNK_0xefd9() // UNK_0xefd9
 {
   Push(0); // 0
   SWAP(); // SWAP
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   Push(0); // 0
   Push(0); // 0
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   Push(cc__3); // 3
   PICK(); // PICK
   OVER(); // OVER
@@ -2117,11 +2117,11 @@ void UNK_0xeffb() // UNK_0xeffb
   {
   Push(0); // 0
   Push(i); // I
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   Push(cc__3); // 3
   PICK(); // PICK
   Push(i); // I
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   _n_COLZ(); // #COLZ
   Push(cc__6); // 6
   PICK(); // PICK
@@ -2149,10 +2149,10 @@ void UNK_0xf023() // UNK_0xf023
   {
   Push(Read16(sp)); // DUP
   Push(i); // I
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   Push(0); // 0
   Push(i); // I
-  ACELLAD(); // ACELLAD
+  ACELLADDR(); // ACELLADDR
   _n_COLZ(); // #COLZ
   Push(cc__6); // 6
   PICK(); // PICK
@@ -2195,9 +2195,9 @@ void UNK_0xf049() // UNK_0xf049
   Push(0x0064);
 
   label2:
-  SETREGI(); // SETREGI
+  SETREGION(); // SETREGION
   Push(cc_UNK_0xe364); // UNK_0xe364
-  FILLREG(); // FILLREG
+  FILLREGION(); // FILLREGION
 }
 
 
@@ -2231,9 +2231,9 @@ void UNK_0xf08b() // UNK_0xf08b
   Push(0x0064);
 
   label2:
-  SETREGI(); // SETREGI
+  SETREGION(); // SETREGION
   Push(cc_UNK_0xe364); // UNK_0xe364
-  FILLREG(); // FILLREG
+  FILLREGION(); // FILLREGION
 }
 
 
@@ -2250,10 +2250,10 @@ void SCRLCON() // SCRLCON
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Push(pp_SPHEREW); // SPHEREW
+  Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6ac1);
-  SETLARR(); // SETLARR
+  SETLARRAY(); // SETLARRAY
   UNK_0xf049(); // UNK_0xf049
   UNK_0xf08b(); // UNK_0xf08b
   UNK_0xea21(); // UNK_0xea21
