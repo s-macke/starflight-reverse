@@ -23,7 +23,7 @@ typedef struct
 {
     char strasm[STRINGLEN];
     char strfunc[STRINGLEN];
-    char str[STRINGLEN];
+    char *str;
     char strword[STRINGLEN];
     int labelid; // != 0 is a label for a goto
     int loopid; // != 0 is a label for a loop

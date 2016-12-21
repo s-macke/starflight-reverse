@@ -62,7 +62,7 @@ extern WORDRENAME renamewords[];
     #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
     #define CODEFUNC8         0x744d // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
     #define CODEFUNC9         0x3aec // <ON> <OFF> <BLOCK> V= C=
-    #define CODEFUNC10        0x4a4f // switch cases
+    #define CODECASE        0x4a4f // switch cases
     #define CODEFUNC11        0x4e00 // MERCATO CONANCH ...
     #define CODEFUNC12        0x0000 //
     #define CODEFUNC13        0xb869 // maybe EXPERT
@@ -104,7 +104,7 @@ extern WORDRENAME renamewords[];
     #define CODESETVOCABULARY 0x1ab5 // "FORTH MUSIC IT-VOC MISC-"
     #define CODEFUNC8         0x7420 // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
     #define CODEFUNC9         0x3af8 // <ON> <OFF> <BLOCK> V= C=
-    #define CODEFUNC10        0x4b3b // switch cases
+    #define CODECASE        0x4b3b // switch cases
     #define CODEFUNC11        0x4e6f // MERCATO CONANCH ...
     #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
     #define CODEFUNC13        0xaccc // maybe EXPERT

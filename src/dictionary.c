@@ -458,140 +458,144 @@ void SortDictionary()
 
 LineDesc pline[0x10000];
 
-int PutEasyMacro(int ofs, char *s)
+char* PutEasyMacro(char *s)
 {
+	static char ret[STRINGLEN];
+	ret[0] = 0;
+
     if (strcmp(s, "0") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(0); // 0\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(0); // 0\n");
+        return ret;
     }
     if (strcmp(s, "1") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(1); // 1\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(1); // 1\n");
+        return ret;
     }
     if (strcmp(s, "2") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(2); // 2\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(2); // 2\n");
+        return ret;
     }
     if (strcmp(s, "0=") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
+        return ret;
     }
     if (strcmp(s, "OR") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop() | Pop()); // OR\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop() | Pop()); // OR\n");
+        return ret;
     }
     if (strcmp(s, "AND") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop() & Pop()); // AND\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop() & Pop()); // AND\n");
+        return ret;
     }
     if (strcmp(s, "XOR") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
+        return ret;
     }
     if (strcmp(s, "+") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
+        return ret;
     }
     if (strcmp(s, "*") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop() * Pop()); // *\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop() * Pop()); // *\n");
+        return ret;
     }
     if (strcmp(s, "NEGATE") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(-Pop()); // NEGATE\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(-Pop()); // NEGATE\n");
+        return ret;
     }
     if (strcmp(s, "NOT") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
+        return ret;
     }
     if (strcmp(s, "DROP") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Pop(); // DROP\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Pop(); // DROP\n");
+        return ret;
     }
     if (strcmp(s, "2DROP") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Pop(); Pop();// 2DROP\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Pop(); Pop();// 2DROP\n");
+        return ret;
     }
     if (strcmp(s, "2*") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()*2); // 2*\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()*2); // 2*\n");
+        return ret;
     }
     if (strcmp(s, "3+") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()+3); // 3+\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()+3); // 3+\n");
+        return ret;
     }
     if (strcmp(s, "1+") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()+1); // 1+\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()+1); // 1+\n");
+        return ret;
     }
     if (strcmp(s, "2+") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()+2); // 2+\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()+2); // 2+\n");
+        return ret;
     }
     if (strcmp(s, "1-") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()-1); // 1-\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()-1); // 1-\n");
+        return ret;
     }
     if (strcmp(s, "2-") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()-2); // 2-\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()-2); // 2-\n");
+        return ret;
     }
     if (strcmp(s, "16/") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()>>4); // 16/\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()>>4); // 16/\n");
+        return ret;
     }
     if (strcmp(s, "2/") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()>>1); // 2/\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()>>1); // 2/\n");
+        return ret;
     }
     if (strcmp(s, "16*") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Pop()<<4); // 16*\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Pop()<<4); // 16*\n");
+        return ret;
     }
     if (strcmp(s, "@") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(Pop())); // @\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Read16(Pop())); // @\n");
+        return ret;
     }
     if (strcmp(s, "C@") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
+        return ret;
     }
     if (strcmp(s, "DUP") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(sp)); // DUP\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  Push(Read16(sp)); // DUP\n");
+        return ret;
     }
     if (strcmp(s, "?DUP") == 0)
     {
-        snprintf(pline[ofs].str, STRINGLEN, "  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP\n");
-        return 1;
+        snprintf(ret, STRINGLEN, "  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP\n");
+        return ret;
     }
 
-    return 0;
+    snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
+    return ret;
 }
 
 unsigned short int FindFunctionAddress(unsigned short int addr)
@@ -870,9 +874,22 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             snprintf(pline[ofs].str, STRINGLEN, "  Func9(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC10)
+        if (codep == CODECASE)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Case(%s);\n", s);
+            //snprintf(pline[ofs].str, STRINGLEN, "  Case(%s);\n", s);
+			pline[ofs].str = (char*)malloc(4096);
+			pline[ofs].str[0] = 0;
+			int n = Read16(par);
+			int i;
+			sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
+			for(i=0; i<n; i++) {
+				char temp[256];
+				char *s = FindDictPar(Read16(par + i*4 + 2), currentovidx);
+				sprintf(temp, "  case %i:\n  %s    break;\n",
+				Read16(par + i*4 + 4), PutEasyMacro(s));
+				strcat(pline[ofs].str, temp);
+			}
+			strcat(pline[ofs].str, "  }\n");
             ofs += 2;
         } else
         if (codep == CODEFUNC11)
@@ -1046,10 +1063,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             ofs += 2;
         } else
         {
-            if (!PutEasyMacro(ofs, s))
-            {
-                snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
-            }
+            snprintf(pline[ofs].str, STRINGLEN, "%s", PutEasyMacro(s));
             ofs += 2;
         }
     }
@@ -1057,7 +1071,13 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
 
 void InitParseFunction2()
 {
+	int i;
     memset(pline, 0, 0x10000*sizeof(LineDesc));
+	for(i=0; i<0x10000; i++)
+	{
+		pline[i].str = malloc(STRINGLEN);
+		pline[i].str[0] = 0;
+	}
 }
 
 void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx)
