@@ -655,7 +655,7 @@ void UNK_0xeb48() // UNK_0xeb48
   UNK_0xe8a6(); // UNK_0xe8a6
   LoadData("UNK_0xe89e"); // from 'TRADERS     '
   Push(0x0010);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }
 
@@ -839,7 +839,7 @@ void UNK_0xec27() // UNK_0xec27
   Push(Pop()+1); // 1+
   Push(Pop() + Pop()); // +
   _ex_(); // !
-  Func14("NUMBER"); // call of word 0x13d1
+  Func14(NUMBER); // call of word 0x13d1 '(NUMBER)'
   Push(0xfde8); Pust(0x0000);
   DMIN(); // DMIN
   Pop(); // DROP
@@ -1055,7 +1055,7 @@ void UNK_0xed77() // UNK_0xed77
   Push(0x003a);
   Push(0x00bc);
   POS_dot_(); // POS.
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1246,7 +1246,7 @@ void UNK_0xee71() // UNK_0xee71
   Push(Read16(Pop())); // @
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1362,7 +1362,7 @@ void UNK_0xef14() // UNK_0xef14
   Push(0x65f2); // IFIELD(TEXT-TE)
   Push(pp_WCHARS); // WCHARS
   Push(Read16(Pop())); // @
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   GCR(); // GCR
   INEXT(); // INEXT
   i++;
@@ -1483,7 +1483,7 @@ void UNK_0xefbe() // UNK_0xefbe
   _gt_C_plus_S(); // >C+S
   Push(0x65f2); // IFIELD(TEXT-TE)
   Push(0x0026);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }
 

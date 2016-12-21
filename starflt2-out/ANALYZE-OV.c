@@ -644,7 +644,7 @@ void UNK_0xf02c() // UNK_0xf02c
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   SET_dash_CUR(); // SET-CUR
   CTCR(); // CTCR
   Push(0x000f);
@@ -1174,7 +1174,7 @@ void UNK_0xf38f() // UNK_0xf38f
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
   _at_INST_dash_S(); // @INST-S
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 

@@ -178,7 +178,7 @@ void UNK_0xee54() // UNK_0xee54
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

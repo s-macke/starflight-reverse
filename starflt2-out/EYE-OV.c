@@ -333,7 +333,7 @@ void UNK_0xecf5() // UNK_0xecf5
 
   label1:
   UNK_0xecbd(); // UNK_0xecbd
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label1;
   BYE(); // BYE
 }

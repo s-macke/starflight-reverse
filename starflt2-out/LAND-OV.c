@@ -171,11 +171,11 @@ void UNK_0xf261() // UNK_0xf261
   UNK_0xf239(); // UNK_0xf239
 
   UNK_0x3f09("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
 
   UNK_0x3f09("EXTREME GRAVITY. THE ...");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x1388);
   Push(0x03e8);
   Push(1); // 1
@@ -212,7 +212,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _dot_TTY(); // .TTY
   Push(0x6615); // IFIELD(UNK_0xf1a6)
   COUNT(); // COUNT
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 
   UNK_0x3f09(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
@@ -286,7 +286,7 @@ void UNK_0xf3b2() // UNK_0xf3b2
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR SAFE LANDING");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 
@@ -326,7 +326,7 @@ void UNK_0xf40d() // UNK_0xf40d
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR RE-LAUNCHING");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 
@@ -356,11 +356,11 @@ void UNK_0xf452() // UNK_0xf452
   CTERASE(); // CTERASE
 
   UNK_0x3f09("THIS PLANET'S GRAVITY WILL CRUSH THE");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
 
   UNK_0x3f09("SHIP'S HULL.");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 

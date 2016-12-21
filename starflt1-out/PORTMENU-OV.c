@@ -711,7 +711,7 @@ void UNK_0xed10() // UNK_0xed10
   Push(Read16(sp)); // DUP
   Push(Pop()-1); // 1-
   Push(Read8(Pop())&0xFF); // C@
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:

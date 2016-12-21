@@ -690,12 +690,12 @@ void UNK_0xeee5() // UNK_0xeee5
 {
   _gt_BOTT(); // >BOTT
   UNK_0xeed9(); // UNK_0xeed9
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc__8); // 8
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   UNK_0xeecd(); // UNK_0xeecd
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -851,7 +851,7 @@ void UNK_0xefbb() // UNK_0xefbb
 {
   Push(0x68ac); Pust(0x0002);
   UNK_0xed1f(); // UNK_0xed1f
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -863,7 +863,7 @@ void UNK_0xefc9() // UNK_0xefc9
 {
   Push(0x68df); Pust(0x0002);
   UNK_0xed1f(); // UNK_0xed1f
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -875,7 +875,7 @@ void UNK_0xefd7() // UNK_0xefd7
 {
   Push(0x690e); Pust(0x0002);
   UNK_0xed1f(); // UNK_0xed1f
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

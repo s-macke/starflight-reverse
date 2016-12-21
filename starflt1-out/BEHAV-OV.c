@@ -1060,7 +1060,7 @@ void UNK_0xecb7() // UNK_0xecb7
   POS_dot_(); // POS.
   Push(0x000a);
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_STARDATE); // STARDATE
@@ -1500,7 +1500,7 @@ void _dot_DISTANCE() // .DISTANCE
   POS_dot_(); // POS.
   Push(cc__8); // 8
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   _dash_STORM(); // -STORM
@@ -1522,7 +1522,7 @@ void _dot_DISTANCE() // .DISTANCE
   POS_dot_(); // POS.
   Push(0x0009);
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   _dash_STORM(); // -STORM
@@ -1553,7 +1553,7 @@ void _dot_CARGO() // .CARGO
   POS_dot_(); // POS.
   Push(cc__3); // 3
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6400); // IFIELD(UNK_0xe1e6)
@@ -1587,7 +1587,7 @@ void _dot_ENERGY() // .ENERGY
   POS_dot_(); // POS.
   Push(cc__7); // 7
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(INST-QTY)
@@ -1635,7 +1635,7 @@ void _dot_ENERGY() // .ENERGY
   POS_dot_(); // POS.
   Push(cc__3); // 3
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
   Push(0x0064);

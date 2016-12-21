@@ -436,13 +436,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   POS_dot_(); // POS.
   Push(cc__7); // 7
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(0x0009);
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 }
 
 

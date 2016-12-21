@@ -712,7 +712,7 @@ void UNK_0xf3de() // UNK_0xf3de
   UNK_0xf2f2(); // UNK_0xf2f2
   Push(Pop() + Pop()); // +
   Push(2); // 2
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(h); // I
   UNK_0xf30a(); // UNK_0xf30a
   Push(Pop() + Pop()); // +
@@ -723,7 +723,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(cc__6); // 6
   _dash_(); // -
   POS_dot_(); // POS.
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   R_at_(); // R@
   UNK_0xf316(); // UNK_0xf316
   Push(Pop() + Pop()); // +
@@ -738,7 +738,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(0x000c);
   _dash_(); // -
   POS_dot_(); // POS.
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   goto label5;
 
   label4:
@@ -805,7 +805,7 @@ void UNK_0xf4be() // UNK_0xf4be
   UNK_0xf48c(); // UNK_0xf48c
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

@@ -1191,7 +1191,7 @@ void UNK_0xe5df() // UNK_0xe5df
   POS_dot_(); // POS.
   Push(cc__3); // 3
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6400); // IFIELD(UNK_0xdff2)
@@ -1954,7 +1954,7 @@ void UNK_0xeb62() // UNK_0xeb62
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x0026);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   GCR(); // GCR
   i++;
   } while(i<imax); // (LOOP) 0xffea

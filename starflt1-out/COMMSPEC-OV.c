@@ -291,7 +291,7 @@ void UNK_0xf4de() // UNK_0xf4de
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

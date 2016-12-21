@@ -1823,7 +1823,7 @@ void UNK_0xe2a5() // UNK_0xe2a5
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:
@@ -2931,11 +2931,11 @@ void UNK_0xefc3() // UNK_0xefc3
   CTERASE(); // CTERASE
   Push(0x105b); Pust(0x0002);
   UNK_0xd93b(); // UNK_0xd93b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   Push(0x1088); Pust(0x0002);
   UNK_0xd93b(); // UNK_0xd93b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
   UNK_0xef9d(); // UNK_0xef9d
   UNK_0xed28(); // UNK_0xed28
@@ -2989,7 +2989,7 @@ void UNK_0xefc3() // UNK_0xefc3
   CTERASE(); // CTERASE
   Push(0x1121); Pust(0x0002);
   UNK_0xd93b(); // UNK_0xd93b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 
   label4:
   SetColor("BLACK");
@@ -3139,7 +3139,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   CTINIT(); // CTINIT
   Push(0x1137); Pust(0x0002);
   UNK_0xd93b(); // UNK_0xd93b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   SetColor("BLACK");
   Push(0); // 0
   _dot_ON(); // .ON

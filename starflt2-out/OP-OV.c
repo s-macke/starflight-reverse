@@ -484,7 +484,7 @@ void UNK_0xe890() // UNK_0xe890
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
   Push(0x000a);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   _gt_DISPLA(); // >DISPLA
   SCR_dash_RES(); // SCR-RES
 }
@@ -691,7 +691,7 @@ void UNK_0xe9e4() // UNK_0xe9e4
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:
@@ -1028,7 +1028,7 @@ void UNK_0xec6f() // UNK_0xec6f
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
   Push(0x000a);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc__4); // 4
   Push(0x009c);
   POS_dot_(); // POS.
@@ -1058,7 +1058,7 @@ void UNK_0xec6f() // UNK_0xec6f
   PRINT("NAME: ", 6); // (.")
   Push(0x65f6); // IFIELD(UNK_0xe5c5)
   Push(0x000f);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc__4); // 4
   Push(0x007a);
   POS_dot_(); // POS.
@@ -1154,7 +1154,7 @@ void UNK_0xedc8() // UNK_0xedc8
   _plus__ex_(); // +!
 
   label2:
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   SPACE(); // SPACE
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<

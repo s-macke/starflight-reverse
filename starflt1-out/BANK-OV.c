@@ -374,14 +374,14 @@ void UNK_0xf152() // UNK_0xf152
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   _dot_(); // .
 }
@@ -421,7 +421,7 @@ void UNK_0xf196() // UNK_0xf196
   Push(Pop() * Pop()); // *
   Push(0x0020);
   Push(Pop() + Pop()); // +
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 

@@ -443,7 +443,7 @@ void UNK_0xf390() // UNK_0xf390
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" DOCKING BAY DOORS", 18); // (.")
   Push(0x7148);
   TONE(); // TONE

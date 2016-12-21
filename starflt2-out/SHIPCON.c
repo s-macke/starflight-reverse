@@ -218,7 +218,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   CTERASE(); // CTERASE
   Push(0x52f5); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -257,7 +257,7 @@ void TOW_dash_US() // TOW-US
   CTCR(); // CTCR
   Push(0x5373); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
   UNK_0xf47a(); // UNK_0xf47a
   UNK_0xf3c8(); // UNK_0xf3c8
@@ -301,7 +301,7 @@ void TOW_dash_US() // TOW-US
   CTERASE(); // CTERASE
   Push(0x538e); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 
   label4:
   SetColor("BLACK");

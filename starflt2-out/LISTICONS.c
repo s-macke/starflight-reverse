@@ -257,7 +257,7 @@ void UNK_0xf45e() // UNK_0xf45e
   label1:
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>

@@ -743,7 +743,7 @@ void UNK_0xe2ea() // UNK_0xe2ea
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(".", 1); // (.")
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
@@ -752,14 +752,14 @@ void UNK_0xe2ea() // UNK_0xe2ea
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _dot_R(); // .R
@@ -796,7 +796,7 @@ void UNK_0xe388() // UNK_0xe388
   UNK_0x3f09("DOWN");
 
   label2:
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -2248,7 +2248,7 @@ void UNK_0xed4d() // UNK_0xed4d
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   SET_dash_CUR(); // SET-CUR
 }
 
@@ -2261,7 +2261,7 @@ void UNK_0xed6d() // UNK_0xed6d
 {
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(": ", 2); // (.")
   CTINIT(); // CTINIT
 }
@@ -2329,7 +2329,7 @@ void UNK_0xedae() // UNK_0xedae
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65ec); // IFIELD(PHRASE$)
   COUNT(); // COUNT
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
 
@@ -2346,7 +2346,7 @@ void UNK_0xedae() // UNK_0xedae
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65ec); // IFIELD(PHRASE$)
   COUNT(); // COUNT
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
   Push(pp__ro_PLANET); // (PLANET

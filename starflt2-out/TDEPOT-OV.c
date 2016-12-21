@@ -521,7 +521,7 @@ void UNK_0xe920() // UNK_0xe920
   D_dash_(); // D-
   Push(0x0dac); Pust(0x0000);
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -620,7 +620,7 @@ void UNK_0xe9b8() // UNK_0xe9b8
 void UNK_0xea04() // UNK_0xea04
 {
   PRINT("PRESS SPACEBAR TO ", 18); // (.")
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" OR [ QUIT ]", 12); // (.")
   _ex_CRS(); // !CRS
 }
@@ -1510,7 +1510,7 @@ void UNK_0xf07e() // UNK_0xf07e
   POS_dot_(); // POS.
   Push(0x65f2); // IFIELD(TEXT-TE)
   Push(0x0026);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
   UNK_0xebe1(); // UNK_0xebe1
   _gt_DISPLA(); // >DISPLA

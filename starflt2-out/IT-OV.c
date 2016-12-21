@@ -203,7 +203,7 @@ void UNK_0xef2e() // UNK_0xef2e
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

@@ -694,7 +694,7 @@ void UNK_0xe0f9() // UNK_0xe0f9
   UNK_0xe0db(); // UNK_0xe0db
   Push(0x63fa); // IFIELD(UNK_0xdffe)
   Push(0x0024);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   INEXT(); // INEXT
   i++;
   } while(i<imax); // (LOOP) 0xffee
@@ -784,7 +784,7 @@ void UNK_0xe1b1() // UNK_0xe1b1
   UNK_0xe0db(); // UNK_0xe0db
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(pp_XORMODE); // XORMODE
   ON(); // ON
   SetColor("WHITE");
@@ -1116,7 +1116,7 @@ void UNK_0xe394() // UNK_0xe394
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -2222,7 +2222,7 @@ void UNK_0xea62() // UNK_0xea62
   _dash_(); // -
   Push(Pop()>>1); // 2/
   SPACES(); // SPACES
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   GCR(); // GCR
   Push(0x0026);
   int step = Pop();
@@ -2479,7 +2479,7 @@ void UNK_0xec60() // UNK_0xec60
   CTCR(); // CTCR
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(": ", 2); // (.")
   CTINIT(); // CTINIT
 }
@@ -2529,7 +2529,7 @@ void UNK_0xec73() // UNK_0xec73
   DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
   Push(0x000a);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   UNK_0xea14(); // UNK_0xea14
 }
 

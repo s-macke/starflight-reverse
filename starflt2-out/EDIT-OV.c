@@ -187,7 +187,7 @@ void UNK_0xeeb0() // UNK_0xeeb0
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
 }
 
 
@@ -199,7 +199,7 @@ void UNK_0xeec0() // UNK_0xeec0
 {
   Push(0); // 0
   Push(cc__5); // 5
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   UNK_0xeea0(); // UNK_0xeea0
   _dot_(); // .
   UNK_0xeea0(); // UNK_0xeea0
@@ -377,7 +377,7 @@ void UNK_0xef8c() // UNK_0xef8c
 {
   UNK_0xef5c(); // UNK_0xef5c
   UNK_0xef66(); // UNK_0xef66
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -406,7 +406,7 @@ void UNK_0xef96() // UNK_0xef96
   UNK_0xeeb0(); // UNK_0xeeb0
   UNK_0xef44(); // UNK_0xef44
   Push(cc_UNK_0xee6a); // UNK_0xee6a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(Pop()+1); // 1+
   i++;
   } while(i<imax); // (LOOP) 0xffee
@@ -433,7 +433,7 @@ void UNK_0xefc0() // UNK_0xefc0
   _ex_(); // !
   Push(1); // 1
   Push(cc__5); // 5
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(tt_SCR); // SCR
   Push(Read16(Pop())); // @
   _dot_(); // .
@@ -507,7 +507,7 @@ void _dot_MODE() // .MODE
 {
   Push(0x0018);
   Push(0x0048);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -527,7 +527,7 @@ void DISPLAYKEY() // DISPLAYKEY
 {
   Push(0x0018);
   Push(0); // 0
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("1:SV-BUF 2:RCL  3:IL  4:XL  5:DUP  6:SPLIT  7:>L  ", 50); // (.")
   PRINT("8:>S  9:HOLD 10:PUT", 19); // (.")
   _dot_MODE(); // .MODE
@@ -542,12 +542,12 @@ void CLEAR() // CLEAR
 {
   Push(0x0018);
   Push(0); // 0
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(0x004f);
   SPACES(); // SPACES
   Push(0x0012);
   Push(0); // 0
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
 }
 
 
@@ -742,7 +742,7 @@ void XC() // XC
 void INSERT() // INSERT
 {
   Push(Read16(sp)); // DUP
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -864,7 +864,7 @@ void PUT() // PUT
   R_gt_(); // R>
   R_gt_(); // R>
   Pop(); Pop();// 2DROP
-  Func14("BELL"); // call of word 0x266b
+  Func14(BELL); // call of word 0x266b 'BEEP'
   return;
 
 
@@ -1115,7 +1115,7 @@ void _gt_STAMP() // >STAMP
 void EDIT() // EDIT
 {
   UNK_0xeed4(); // UNK_0xeed4
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
 
@@ -1226,7 +1226,7 @@ void EDIT() // EDIT
 void VIEW() // VIEW
 {
   UNK_0xeed4(); // UNK_0xeed4
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
 

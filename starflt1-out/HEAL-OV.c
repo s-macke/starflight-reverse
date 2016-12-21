@@ -534,7 +534,7 @@ void _dot_VITS() // .VITS
   Push(pp_WCHARS); // WCHARS
   Push(Read16(Pop())); // @
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(i); // I
   UNK_0xf12f(); // UNK_0xf12f
   _1_dot_5_at_(); // 1.5@
@@ -572,7 +572,7 @@ void _dot_VITS() // .VITS
   _plus__ex_(); // +!
   Push(cc__4); // 4
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_XBLT); // XBLT
   _ex_(); // !
   Push(0x640e); // IFIELD(UNK_0xf11d)

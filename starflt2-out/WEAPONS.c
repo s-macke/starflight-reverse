@@ -463,7 +463,7 @@ void UNK_0xedf7() // UNK_0xedf7
   Pop(); // DROP
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -520,7 +520,7 @@ void UNK_0xeeac() // UNK_0xeeac
   ICLOSE(); // ICLOSE
   Push(0x6356); Pust(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x6378); Pust(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
   _dot_TTY(); // .TTY
@@ -1455,7 +1455,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   _ex_COLOR(); // !COLOR
   Push(0x653c); Pust(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   KEY(); // KEY
   Pop(); // DROP
   BYE(); // BYE
@@ -1495,7 +1495,7 @@ void UNK_0xf476() // UNK_0xf476
   CTINIT(); // CTINIT
   Push(0x65ed); Pust(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

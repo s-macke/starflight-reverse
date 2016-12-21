@@ -575,7 +575,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
   POS_dot_(); // POS.
   Push(cc__3); // 3
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_LVIS); // LVIS
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
@@ -590,7 +590,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0019);
   int step = Pop();
   i += step;
@@ -620,7 +620,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
   POS_dot_(); // POS.
   Push(cc__3); // 3
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(1); // 1
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -639,7 +639,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0032);
   int step = Pop();
   i += step;
@@ -935,7 +935,7 @@ void UNK_0xead8() // UNK_0xead8
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe542); // UNK_0xe542
   Push(Read16(Pop())); // @
   Push(Pop()+3); // 3+
@@ -948,7 +948,7 @@ void UNK_0xead8() // UNK_0xead8
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe546); // UNK_0xe546
   Push(Read16(Pop())); // @
   Push(Pop()+3); // 3+
@@ -973,7 +973,7 @@ void UNK_0xeb1a() // UNK_0xeb1a
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe552); // UNK_0xe552
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
@@ -995,7 +995,7 @@ void UNK_0xeb3a() // UNK_0xeb3a
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe552); // UNK_0xe552
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
@@ -1079,7 +1079,7 @@ void UNK_0xebcf() // UNK_0xebcf
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe54a); // UNK_0xe54a
   Push(Read16(Pop())); // @
   Push(Pop()+3); // 3+
@@ -1092,7 +1092,7 @@ void UNK_0xebcf() // UNK_0xebcf
   POS_dot_(); // POS.
   Push(cc__3); // 3
   UNK_0xe71f(); // UNK_0xe71f
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_UNK_0xe54e); // UNK_0xe54e
   Push(Read16(Pop())); // @
   Push(Pop()+3); // 3+

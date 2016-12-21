@@ -2098,7 +2098,7 @@ void UNK_0xe23a() // UNK_0xe23a
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:
@@ -3527,7 +3527,7 @@ void UNK_0xf165() // UNK_0xf165
   CTINIT(); // CTINIT
   Push(0x5b12); Pust(0x0002);
   UNK_0xd80e(); // UNK_0xd80e
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   SetColor("BLACK");
   Push(0); // 0
   _dot_ON(); // .ON

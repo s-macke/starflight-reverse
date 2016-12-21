@@ -295,7 +295,7 @@ void UNK_0xf082() // UNK_0xf082
 void UNK_0xf0a2() // UNK_0xf0a2
 {
   UNK_0xf00b(); // UNK_0xf00b
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -337,7 +337,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

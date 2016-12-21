@@ -553,7 +553,7 @@ void UNK_0xe28c() // UNK_0xe28c
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
   _plus__ex_(); // +!
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_UNK_0xe260); // UNK_0xe260
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label4;

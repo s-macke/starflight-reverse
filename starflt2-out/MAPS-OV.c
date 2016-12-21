@@ -262,7 +262,7 @@ void UNK_0xee22() // UNK_0xee22
   Push(Read8(Pop())&0xFF); // C@
   Push(0x65ed); // IFIELD(PHRASE)
   OVER(); // OVER
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
   SWAP(); // SWAP
   _dash_(); // -
@@ -312,7 +312,7 @@ void UNK_0xee72() // UNK_0xee72
   Push(0x65ed); // IFIELD(PHRASE)
   Push(0x65ec); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }
 

@@ -568,7 +568,7 @@ void UNK_0xea57() // UNK_0xea57
 
   UNK_0x3f09("...COMMENCING ");
   _dot_TTY(); // .TTY
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TRAVEL", 7); // (.")
 }
 
@@ -638,7 +638,7 @@ void UNK_0xeaca() // UNK_0xeaca
   UNK_0xeab2(); // UNK_0xeab2
   PRINT("DOCK WITH ", 10); // (.")
   UNK_0xea93(); // UNK_0xea93
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -650,7 +650,7 @@ void UNK_0xeae1() // UNK_0xeae1
 {
   UNK_0xeab2(); // UNK_0xeab2
   UNK_0xea7a(); // UNK_0xea7a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_ENC_dash_TIM); // ENC-TIM
@@ -695,7 +695,7 @@ void UNK_0xeb2d() // UNK_0xeb2d
   UNK_0x3f09("...");
   _dot_TTY(); // .TTY
   UNK_0xea7a(); // UNK_0xea7a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" ESTABLISHED", 12); // (.")
   Push(pp__ask_FUEL_dash_D); // ?FUEL-D
   _099(); // 099
@@ -713,7 +713,7 @@ void UNK_0xeb52() // UNK_0xeb52
   UNK_0x3f09("...");
   _dot_TTY(); // .TTY
   UNK_0xea86(); // UNK_0xea86
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" ENTRY", 6); // (.")
   UNK_0xea47(); // UNK_0xea47
   Push(pp__i_ASYS); // 'ASYS
@@ -807,7 +807,7 @@ void UNK_0xebe3() // UNK_0xebe3
   UNK_0x3f09("COMPUTING SUB-");
   _dot_TTY(); // .TTY
   UNK_0xea7a(); // UNK_0xea7a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL TRAJECTORY...", 16); // (.")
 }
 
@@ -822,7 +822,7 @@ void UNK_0xec11() // UNK_0xec11
   UNK_0x3f09("INITIATING ");
   _dot_TTY(); // .TTY
   UNK_0xea7a(); // UNK_0xea7a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL MANEUVER...", 14); // (.")
 }
 
@@ -837,7 +837,7 @@ void UNK_0xec3a() // UNK_0xec3a
   UNK_0x3f09("COMMENCING ");
   _dot_TTY(); // .TTY
   UNK_0xea86(); // UNK_0xea86
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" PENETRATION...", 15); // (.")
 }
 
@@ -1075,7 +1075,7 @@ void UNK_0xede8() // UNK_0xede8
   UNK_0x3f09("...");
   _dot_TTY(); // .TTY
   UNK_0xea93(); // UNK_0xea93
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" CLEAR", 6); // (.")
 }
 
@@ -1090,7 +1090,7 @@ void UNK_0xee09() // UNK_0xee09
   UNK_0x3f09("...");
   _dot_TTY(); // .TTY
   UNK_0xeaa2(); // UNK_0xeaa2
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TERMINATED", 11); // (.")
   Push(0xc090);
   MODULE(); // MODULE
@@ -1149,7 +1149,7 @@ void UNK_0xee7d() // UNK_0xee7d
   UNK_0x3f09("OUTSIDE ");
   _dot_TTY(); // .TTY
   UNK_0xea7a(); // UNK_0xea7a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL RANGE", 8); // (.")
   Push(pp_UNK_0xe9e5); // UNK_0xe9e5
   Push(Read16(Pop())); // @
@@ -1206,7 +1206,7 @@ void UNK_0xeeda() // UNK_0xeeda
 
   UNK_0x3f09("LEAVING ");
   _dot_TTY(); // .TTY
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("...", 3); // (.")
 }
 

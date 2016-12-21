@@ -1788,7 +1788,7 @@ void UNK_0xe542() // UNK_0xe542
   UNK_0xe3ee(); // UNK_0xe3ee
 
   label1:
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label2;
   Push(pp_UNK_0xe53e); // UNK_0xe53e
   ON(); // ON

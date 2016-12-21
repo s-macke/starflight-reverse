@@ -822,7 +822,7 @@ void UNK_0xe7b4() // UNK_0xe7b4
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0019);
   int step = Pop();
   i += step;
@@ -871,7 +871,7 @@ void UNK_0xe7fe() // UNK_0xe7fe
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0032);
   int step = Pop();
   i += step;
@@ -1959,7 +1959,7 @@ void UNK_0xef29() // UNK_0xef29
 
   label1:
   _ask_LAST(); // ?LAST
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
   Push(2); // 2

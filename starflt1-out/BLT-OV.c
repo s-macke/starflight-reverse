@@ -124,7 +124,7 @@ unsigned char _2TEMP[2] = {0x20, 0x2e}; // 2TEMP
 
 void _dot_PARMS() // .PARMS
 {
-  Func14("CR"); // call of word 0x26ee
+  Func14(CR); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
   Push(pp_X2); // X2
   Push(Read16(Pop())); // @

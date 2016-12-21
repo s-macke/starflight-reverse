@@ -773,7 +773,7 @@ void UNK_0xe278() // UNK_0xe278
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Push(Read16(Pop())); // @
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_YBLT); // YBLT
   _ex_(); // !
   Push(pp_UNK_0xdf72); // UNK_0xdf72
@@ -803,7 +803,7 @@ void UNK_0xe2b6() // UNK_0xe2b6
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Push(Read16(Pop())); // @
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1137,7 +1137,7 @@ void UNK_0xe5e9() // UNK_0xe5e9
   _gt_0FONT(); // >0FONT
   KEY(); // KEY
   Pop(); // DROP
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   BYE(); // BYE
 }
 
@@ -2372,12 +2372,12 @@ void UNK_0xee39() // UNK_0xee39
 void UNK_0xee63() // UNK_0xee63
 {
   Push(0x00c9);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bb);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2388,16 +2388,16 @@ void UNK_0xee63() // UNK_0xee63
 void UNK_0xee7b() // UNK_0xee7b
 {
   Push(0x00ba);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(tt_ROW); // ROW
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   Push(tt_COL); // COL
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(0x00ba);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2408,12 +2408,12 @@ void UNK_0xee7b() // UNK_0xee7b
 void UNK_0xee99() // UNK_0xee99
 {
   Push(0x00c8);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bc);
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2426,7 +2426,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   _gt_R(); // >R
   _gt_R(); // >R
   _2DUP(); // 2DUP
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(h); // I'
   UNK_0xee63(); // UNK_0xee63
   R_gt_(); // R>
@@ -2440,7 +2440,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   _2DUP(); // 2DUP
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(h); // J
   UNK_0xee7b(); // UNK_0xee7b
   i++;
@@ -2449,7 +2449,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   R_gt_(); // R>
   UNK_0xee99(); // UNK_0xee99
 }
@@ -2465,15 +2465,15 @@ void UNK_0xeee5() // UNK_0xeee5
   label1:
   Push(0x0016);
   Push(0x0028);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   Push(2); // 2
   SPACES(); // SPACES
   Push(0x0016);
   Push(0x0028);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PAD(); // PAD
   Push(2); // 2
-  Func14("EXPECT"); // call of word 0x1d3e
+  Func14(EXPECT); // call of word 0x1d3e '(EXPECT)'
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0031);
@@ -2516,7 +2516,7 @@ void UNK_0xeee5() // UNK_0xeee5
 void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
 {
   _gt_ALPHA(); // >ALPHA
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   Push(cc__6); // 6
   Push(0x0015);
   Push(0x000b);
@@ -2524,31 +2524,31 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
   UNK_0xeeb1(); // UNK_0xeeb1
   Push(cc__8); // 8
   Push(0x001c);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("1. Black/white", 14); // (.")
   Push(0x000a);
   Push(0x001c);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("2. RGB", 6); // (.")
   Push(0x000c);
   Push(0x001c);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("3. Color TV or Composite", 24); // (.")
   Push(0x000e);
   Push(0x001c);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("4. Hercules (monochrome)", 24); // (.")
   Push(0x0010);
   Push(0x001c);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("5. EGA", 6); // (.")
   Push(0x0013);
   Push(0x0016);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("S E L E C T   D I S P L A Y   M O D E", 37); // (.")
   Push(0x0014);
   Push(0x001a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("A N D  P R E S S  R E T U R N", 29); // (.")
   UNK_0xeee5(); // UNK_0xeee5
   Push(pp_MONITOR); // MONITOR
@@ -2613,7 +2613,7 @@ void POLICE_dot_WARNING() // POLICE.WARNING
 {
   _gt_ALPHA(); // >ALPHA
   _gt_0FONT(); // >0FONT
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   Push(1); // 1
   Push(cc__7); // 7
   Push(0x0012);
@@ -2621,64 +2621,64 @@ void POLICE_dot_WARNING() // POLICE.WARNING
   UNK_0xeeb1(); // UNK_0xeeb1
   Push(2); // 2
   Push(0x000f);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("I N T E R S T E L   P O L I C E   W A R N I N G", 47); // (.")
   Push(cc__4); // 4
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("As provided by the Galactic Treaty of 4410, this  computer", 58); // (.")
   Push(cc__5); // 5
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("software  product  is  hereby  declared  the  Intellectual", 58); // (.")
   Push(cc__6); // 6
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Property of the Human authors, Binary Systems.  All rights", 58); // (.")
   Push(cc__7); // 7
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("are  henceforth  reserved  in  space and time.", 46); // (.")
   Push(cc__9); // 9
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Provision for the protection of  Intellectual Property  is", 58); // (.")
   Push(0x000a);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("covered under Section 8.9.1A-F of the  Intangible Property", 58); // (.")
   Push(0x000b);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Act of 4506,  ratified by all beings except the Gazurtoid.", 58); // (.")
   Push(0x000d);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Included  in   Section  8.9.1A-C   is  the  provision  for", 58); // (.")
   Push(0x000e);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Interstel Corporate Police to enforce the Law.", 46); // (.")
   Push(0x0010);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("WARNING:  Any  being  caught with an unauthorized  copy or", 58); // (.")
   Push(0x0011);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("version  of  this  Software  Product  will  be punished by", 58); // (.")
   Push(0x0012);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("Interstel Corporate Police.  Punishment  may  include  the", 58); // (.")
   Push(0x0013);
   Push(0x000a);
-  Func14("POSITION"); // call of word 0x2767
+  Func14(POSITION); // call of word 0x2767 '(POSITION)'
   PRINT("destruction of the offending being.", 35); // (.")
   UNK_0xf069(); // UNK_0xf069
   Push(0x9c40); Pust(0x0000);
   UNK_0xe61d(); // UNK_0xe61d
-  Func14("PAGE"); // call of word 0x274c
+  Func14(PAGE); // call of word 0x274c '(PAGE)'
   SET_dot_COLORS(); // SET.COLORS
   _gt_LORES(); // >LORES
   DARK(); // DARK

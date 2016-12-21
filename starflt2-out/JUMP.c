@@ -352,7 +352,7 @@ void UNK_0xee6d() // UNK_0xee6d
   LoadData("1BTN"); // from 'ANALYZE-TEXT'
   Push(Pop() + Pop()); // +
   Push(0x000c);
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0010);
   Push(0x003b);
   UNK_0xeddd(); // UNK_0xeddd

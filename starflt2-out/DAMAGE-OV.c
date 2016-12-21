@@ -1122,12 +1122,12 @@ void UNK_0xecc8() // UNK_0xecc8
   UNK_0x3f09("SLIGHTLY ");
 
   label4:
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 
   UNK_0x3f09("WOUNDED ");
 
   label2:
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   R_gt_(); // R>
   Pop(); // DROP
 }

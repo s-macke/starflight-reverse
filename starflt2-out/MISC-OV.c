@@ -487,7 +487,7 @@ void UNK_0xf078() // UNK_0xf078
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -595,7 +595,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Func14("EMIT"); // call of word 0x2731
+  Func14(EMIT); // call of word 0x2731 '(EMIT)'
   Push(h); // I
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -806,7 +806,7 @@ void _ro_0_do__do__do_() // (0$$$
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -855,7 +855,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
   _dash_(); // -
   Push(0x00b4);
   POS_dot_(); // POS.
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON(); // ON
   SetColor("PINK");
@@ -1071,7 +1071,7 @@ void _ro__ask__dot_EQ() // (?.EQ
     break;
 
   }
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 
   label4:

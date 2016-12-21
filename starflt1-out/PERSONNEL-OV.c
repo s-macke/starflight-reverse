@@ -913,7 +913,7 @@ void UNK_0xebcd() // UNK_0xebcd
   PRINT("TYPE    : ", 10); // (.")
   LoadData("UNK_0xe6ad"); // from 'PSTATS      '
   Push(cc__9); // 9
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
   Push(0x0050);
   POS_dot_(); // POS.
@@ -1210,7 +1210,7 @@ void UNK_0xee3f() // UNK_0xee3f
   D_dash_(); // D-
   Push(0x0dac); Pust(0x0000);
   D_gt_(); // D>
-  Func14("?TERMINAL"); // call of word 0x25bc
+  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP

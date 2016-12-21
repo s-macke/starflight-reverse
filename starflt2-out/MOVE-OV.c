@@ -864,7 +864,7 @@ void _ask_POPULA() // ?POPULA
   UNK_0xea76(); // UNK_0xea76
   Push(0x6934); Pust(0x0002);
   UNK_0xed8a(); // UNK_0xed8a
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 
   label2:
   Push(0xcfa8);

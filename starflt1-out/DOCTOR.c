@@ -474,7 +474,7 @@ void UNK_0xf373() // UNK_0xf373
   CTPOS_dot_(); // CTPOS.
   Push(0x000f);
   SetColor("BLACK");
-  POLY_dash_ER(); // POLY-ER
+  POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(0x63fa); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
 

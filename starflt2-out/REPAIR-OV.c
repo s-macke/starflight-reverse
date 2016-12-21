@@ -816,7 +816,7 @@ void UNK_0xf278() // UNK_0xf278
 {
 
   UNK_0x3f09(" FOR REPAIRS.");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -832,7 +832,7 @@ void UNK_0xf28e() // UNK_0xf28e
   _dot_(); // .
 
   UNK_0x3f09("CUBIC METER");
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   UNK_0xef7e(); // UNK_0xef7e
   Push(0x000a);
   _dash_(); // -

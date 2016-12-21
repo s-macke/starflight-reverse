@@ -562,7 +562,7 @@ void UNK_0xe853() // UNK_0xe853
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_UNK_0xe83f); // UNK_0xe83f
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label4;
@@ -1850,7 +1850,7 @@ void UNK_0xf3a5() // UNK_0xf3a5
   LoadData("UNK_0xe663"); // from 'TRADERS     '
   Push(0x0010);
   _dash_TRAILING(); // -TRAILING
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   LoadData("UNK_0xe66b"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
@@ -1858,7 +1858,7 @@ void UNK_0xf3a5() // UNK_0xf3a5
   if (Pop() == 0) goto label1;
   Push(0x590b); Pust(0x0002);
   UNK_0xe606(); // UNK_0xe606
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:
@@ -1928,7 +1928,7 @@ void UNK_0xf425() // UNK_0xf425
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1947,12 +1947,12 @@ void UNK_0xf437() // UNK_0xf437
   _dot_(); // .
   Push(0x5926); Pust(0x0002);
   UNK_0xe606(); // UNK_0xe606
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
   LoadData("UNK_0xe6ab"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1964,7 +1964,7 @@ void UNK_0xf461() // UNK_0xf461
 {
   Push(0x5942); Pust(0x0002);
   UNK_0xe606(); // UNK_0xe606
-  Func14("TYPE"); // call of word 0x2690
+  Func14(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
