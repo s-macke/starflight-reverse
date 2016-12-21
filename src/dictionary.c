@@ -661,8 +661,6 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             continue;
         }
 
-        //char *s = FindDictPar(par, currentovidx);
-
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
             snprintf(pline[ofs].str, STRINGLEN, "  %s();\n// inlined assembler code\n", s);
@@ -864,9 +862,10 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             snprintf(pline[ofs].str, STRINGLEN, "  SetVocabulary(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC8)
+        if (codep == CODEIFIELD)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Func8(\"%s\");\n", s);
+            //snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", 0x63EF + Read8(par+1), s);
+            snprintf(pline[ofs].str, STRINGLEN, "  IFIELD(%s);\n", s);
             ofs += 2;
         } else
         if (codep == CODEFUNC9)
@@ -876,20 +875,23 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODECASE)
         {
-            //snprintf(pline[ofs].str, STRINGLEN, "  Case(%s);\n", s);
 			pline[ofs].str = (char*)malloc(4096);
 			pline[ofs].str[0] = 0;
 			int n = Read16(par);
 			int i;
-			sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
+			char temp[256];
+			sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
 			for(i=0; i<n; i++) {
-				char temp[256];
-				char *s = FindDictPar(Read16(par + i*4 + 2), currentovidx);
+				char *s = FindDictPar(Read16(par + i*4 + 6), currentovidx);
 				sprintf(temp, "  case %i:\n  %s    break;\n",
-				Read16(par + i*4 + 4), PutEasyMacro(s));
+					Read16(par + i*4 + 4), PutEasyMacro(s));
 				strcat(pline[ofs].str, temp);
 			}
-			strcat(pline[ofs].str, "  }\n");
+			char *s = FindDictPar(Read16(par + 2), currentovidx);
+			sprintf(temp, "  default:\n  %s    break;\n", PutEasyMacro(s));
+			strcat(pline[ofs].str, temp);
+
+			strcat(pline[ofs].str, "\n  }\n");
             ofs += 2;
         } else
         if (codep == CODEFUNC11)
