@@ -16198,7 +16198,7 @@ void IFIELD() // IFIELD
 
 void UNK_0x74cc() // UNK_0x74cc
 {
-  Func8("INST-SI");
+  Push(0x63ef); // IFIELD(INST-SI)
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -16209,7 +16209,7 @@ void UNK_0x74cc() // UNK_0x74cc
 
 void UNK_0x74d4() // UNK_0x74d4
 {
-  Func8("INST-PR");
+  Push(0x63f2); // IFIELD(INST-PR)
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -16220,7 +16220,7 @@ void UNK_0x74d4() // UNK_0x74d4
 
 void UNK_0x74dc() // UNK_0x74dc
 {
-  Func8("INST-OF");
+  Push(0x63f5); // IFIELD(INST-OF)
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -16231,7 +16231,7 @@ void UNK_0x74dc() // UNK_0x74dc
 
 void UNK_0x74e4() // UNK_0x74e4
 {
-  Func8("INST-CL");
+  Push(0x63f8); // IFIELD(INST-CL)
   C_ex_(); // C!
 }
 
@@ -16242,7 +16242,7 @@ void UNK_0x74e4() // UNK_0x74e4
 
 void _ex_INST_dash_SIB() // !INST-SIB
 {
-  Func8("INST-SP");
+  Push(0x63f9); // IFIELD(INST-SP)
   C_ex_(); // C!
 }
 
@@ -16253,7 +16253,7 @@ void _ex_INST_dash_SIB() // !INST-SIB
 
 void UNK_0x74fe() // UNK_0x74fe
 {
-  Func8("INST-SI");
+  Push(0x63ef); // IFIELD(INST-SI)
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -16264,7 +16264,7 @@ void UNK_0x74fe() // UNK_0x74fe
 
 void UNK_0x7506() // UNK_0x7506
 {
-  Func8("INST-PR");
+  Push(0x63f2); // IFIELD(INST-PR)
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -16275,7 +16275,7 @@ void UNK_0x7506() // UNK_0x7506
 
 void UNK_0x750e() // UNK_0x750e
 {
-  Func8("INST-OF");
+  Push(0x63f5); // IFIELD(INST-OF)
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -16286,7 +16286,7 @@ void UNK_0x750e() // UNK_0x750e
 
 void _at_INST_dash_CLASS() // @INST-CLASS
 {
-  Func8("INST-CL");
+  Push(0x63f8); // IFIELD(INST-CL)
   Push(Read8(Pop())&0xFF); // C@
 }
 
@@ -16297,7 +16297,7 @@ void _at_INST_dash_CLASS() // @INST-CLASS
 
 void _at_INST_dash_SPECIES() // @INST-SPECIES
 {
-  Func8("INST-SP");
+  Push(0x63f9); // IFIELD(INST-SP)
   Push(Read8(Pop())&0xFF); // C@
 }
 
@@ -17465,17 +17465,22 @@ void IFLD_at_() // IFLD@
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
+  Pop();
   switch(Pop()) // FLD@
   {
   case 1:
-    Push(Read16(Pop())); // @
-    break;
-  case 2:
     Push(Read8(Pop())&0xFF); // C@
     break;
-  case 3:
+  case 2:
     Push(Read16(Pop())); // @
     break;
+  case 3:
+    _1_dot_5_at_(); // 1.5@
+    break;
+  default:
+    Push(Read16(Pop())); // @
+    break;
+
   }
 }
 
@@ -17492,17 +17497,22 @@ void IFLD_ex_() // IFLD!
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
+  Pop();
   switch(Pop()) // FLD!
   {
   case 1:
-    _ex_(); // !
-    break;
-  case 2:
     C_ex_(); // C!
     break;
-  case 3:
+  case 2:
     _ex_(); // !
     break;
+  case 3:
+    _1_dot_5_ex_(); // 1.5!
+    break;
+  default:
+    _ex_(); // !
+    break;
+
   }
 }
 
@@ -18171,10 +18181,11 @@ void ICREATE() // ICREATE
   Push(pp_UNK_0x5d6b); // UNK_0x5d6b
   Push(cc__3); // 3
   PICK(); // PICK
+  Pop();
   switch(Pop()) // SET?REU
   {
   case 11:
-    _st_OFF_gt_(); // <OFF>
+    _st_ON_gt_(); // <ON>
     break;
   case 41:
     _st_ON_gt_(); // <ON>
@@ -18212,6 +18223,10 @@ void ICREATE() // ICREATE
   case 67:
     _st_ON_gt_(); // <ON>
     break;
+  default:
+    _st_OFF_gt_(); // <OFF>
+    break;
+
   }
   OVER(); // OVER
   Func6("FILE-SLEN");
@@ -21550,20 +21565,25 @@ void _dot_CIRCLE() // .CIRCLE
 void UNK_0x9c76() // UNK_0x9c76
 {
   _at_IC(); // @IC
+  Pop();
   switch(Pop()) // SYSCASE
   {
   case 4:
-    LSYSEG(); // LSYSEG
+    SSYSEG(); // SSYSEG
     break;
   case 6:
     SSYSEG(); // SSYSEG
     break;
   case 15:
-    SSYSEG(); // SSYSEG
+    MSYSEG(); // MSYSEG
     break;
   case 14:
     MSYSEG(); // MSYSEG
     break;
+  default:
+    LSYSEG(); // LSYSEG
+    break;
+
   }
   Push(Read16(Pop())); // @
   _at_IX(); // @IX
@@ -21602,20 +21622,25 @@ void _dot_ICON() // .ICON
 
   label1:
   _at_ID(); // @ID
+  Pop();
   switch(Pop()) // .ICONCA
   {
   case 253:
-    _dot_CIRCLE(); // .CIRCLE
-    break;
-  case 50:
     UNK_0x9c76(); // UNK_0x9c76
     break;
-  case 255:
+  case 50:
     NOP(); // NOP
     break;
-  case 254:
+  case 255:
     UNK_0x9c22(); // UNK_0x9c22
     break;
+  case 254:
+    NOP(); // NOP
+    break;
+  default:
+    _dot_CIRCLE(); // .CIRCLE
+    break;
+
   }
 }
 
@@ -23618,53 +23643,58 @@ void XYSCAN() // XYSCAN
   Push(pp_FTRIG); // FTRIG
   OFF(); // OFF
   _i_KEY(); // 'KEY
+  Pop();
   switch(Pop()) // (XYSCAN
   {
   case 327:
-    UNK_0xa9db(); // UNK_0xa9db
+    UNK_0xa98d(); // UNK_0xa98d
     break;
   case 328:
-    UNK_0xa98d(); // UNK_0xa98d
+    UNK_0xa995(); // UNK_0xa995
     break;
   case 329:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 331:
     UNK_0xa99d(); // UNK_0xa99d
     break;
-  case 333:
+  case 331:
     UNK_0xa9a5(); // UNK_0xa9a5
     break;
-  case 335:
+  case 333:
     UNK_0xa9b1(); // UNK_0xa9b1
+    break;
+  case 335:
+    UNK_0xa9bd(); // UNK_0xa9bd
     break;
   case 336:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 337:
     UNK_0xa9c5(); // UNK_0xa9c5
     break;
-  case 0:
+  case 337:
     UNK_0xa9cd(); // UNK_0xa9cd
     break;
-  case 92:
+  case 0:
     UNK_0xa9d5(); // UNK_0xa9d5
     break;
-  case 126:
+  case 92:
     UNK_0xa98d(); // UNK_0xa98d
     break;
-  case 124:
+  case 126:
     UNK_0xa995(); // UNK_0xa995
     break;
-  case 500:
+  case 124:
     UNK_0xa9a5(); // UNK_0xa9a5
     break;
-  case 335:
+  case 500:
     UNK_0xa9b1(); // UNK_0xa9b1
     break;
-  case 96:
+  case 335:
     UNK_0xa9bd(); // UNK_0xa9bd
     break;
+  case 96:
+    UNK_0xa9c5(); // UNK_0xa9c5
+    break;
+  default:
+    UNK_0xa9db(); // UNK_0xa9db
+    break;
+
   }
 }
 
@@ -24250,7 +24280,7 @@ void _st_CTASKMOUNT_gt_() // <CTASKMOUNT>
 
 void TEXT_gt_PA() // TEXT>PA
 {
-  Func8("TEXT-TE");
+  Push(0x6400); // IFIELD(TEXT-TE)
   PAD(); // PAD
   Push(Pop()+1); // 1+
   Push(0x0026);
@@ -25261,17 +25291,22 @@ void ORGIADDR() // ORGIADDR
   Push(0x000b);
   MIN(); // MIN
   SWAP(); // SWAP
+  Pop();
   switch(Pop()) // +ORG
   {
   case 18:
-    _dash_1(); // -1
-    break;
-  case 19:
     Push(0); // 0
     break;
-  case 21:
+  case 19:
     Push(1); // 1
     break;
+  case 21:
+    Push(2); // 2
+    break;
+  default:
+    _dash_1(); // -1
+    break;
+
   }
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3

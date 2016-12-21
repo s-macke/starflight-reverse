@@ -253,7 +253,7 @@ void UNK_0xee44() // UNK_0xee44
   UNK_0xee0e(); // UNK_0xee0e
   Push(0); // 0
   ICLOSE(); // ICLOSE
-  Func8("UNK_0xee09");
+  Push(0x65f2); // IFIELD(UNK_0xee09)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__9); // 9
   Push(1); // 1
@@ -293,7 +293,7 @@ void UNK_0xee44() // UNK_0xee44
 
   label1:
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -311,9 +311,9 @@ void UNK_0xeea4() // UNK_0xeea4
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
@@ -357,14 +357,14 @@ void UNK_0xef0e() // UNK_0xef0e
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x007d);
   _dash_(); // -
   Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(0x0064);
   _dash_(); // -
@@ -1160,23 +1160,28 @@ void UNK_0xf4ed() // UNK_0xf4ed
 {
   LoadData("UNK_0xedaa"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
+  Pop();
   switch(Pop()) // (TERRAIN
   {
   case 1:
-    UNK_0xf4b4(); // UNK_0xf4b4
-    break;
-  case 2:
     UNK_0xf38a(); // UNK_0xf38a
     break;
-  case 3:
+  case 2:
     UNK_0xf48e(); // UNK_0xf48e
     break;
-  case 4:
+  case 3:
     UNK_0xf409(); // UNK_0xf409
     break;
-  case 5:
+  case 4:
     UNK_0xf49c(); // UNK_0xf49c
     break;
+  case 5:
+    UNK_0xf43a(); // UNK_0xf43a
+    break;
+  default:
+    UNK_0xf4b4(); // UNK_0xf4b4
+    break;
+
   }
 }
 
@@ -1195,7 +1200,7 @@ void UNK_0xf501() // UNK_0xf501
   ALL(); // ALL
   IFIRST(); // IFIRST
   Push(1); // 1
-  Func8("TEXT-CO");
+  Push(0x65ec); // IFIELD(TEXT-CO)
   _ex_(); // !
   Push(2); // 2
   _star_CLOSE(); // *CLOSE

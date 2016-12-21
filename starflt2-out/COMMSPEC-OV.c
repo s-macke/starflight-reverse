@@ -41,16 +41,17 @@
 // 1898:           #>PRO  codep:0x224c parp:0xf26a size:0x0206 C-string:'_n__gt_PRO'
 // 1899:      UNK_0xf472  codep:0x1d29 parp:0xf472 size:0x0003 C-string:'UNK_0xf472'
 // 1900:      UNK_0xf477  codep:0x1d29 parp:0xf477 size:0x0005 C-string:'UNK_0xf477'
-// 1901:      UNK_0xf47e  codep:0x1d29 parp:0xf47e size:0x000e C-string:'UNK_0xf47e'
-// 1902:      UNK_0xf48e  codep:0x1d29 parp:0xf48e size:0x0005 C-string:'UNK_0xf48e'
-// 1903:      UNK_0xf495  codep:0x1d29 parp:0xf495 size:0x0005 C-string:'UNK_0xf495'
-// 1904:      UNK_0xf49c  codep:0x1d29 parp:0xf49c size:0x0005 C-string:'UNK_0xf49c'
-// 1905:      UNK_0xf4a3  codep:0x1d29 parp:0xf4a3 size:0x0003 C-string:'UNK_0xf4a3'
-// 1906:      UNK_0xf4a8  codep:0x1d29 parp:0xf4a8 size:0x0003 C-string:'UNK_0xf4a8'
-// 1907:      UNK_0xf4ad  codep:0x224c parp:0xf4ad size:0x0036 C-string:'UNK_0xf4ad'
-// 1908:         SA-CASE  codep:0x4b3b parp:0xf4ef size:0x002c C-string:'SA_dash_CASE'
-// 1909:      UNK_0xf51d  codep:0x224c parp:0xf51d size:0x0014 C-string:'UNK_0xf51d'
-// 1910:         (XCOMM)  codep:0x224c parp:0xf53d size:0x0000 C-string:'_ro_XCOMM_rc_'
+// 1901:      UNK_0xf47e  codep:0x1d29 parp:0xf47e size:0x0005 C-string:'UNK_0xf47e'
+// 1902:      UNK_0xf485  codep:0x1d29 parp:0xf485 size:0x0007 C-string:'UNK_0xf485'
+// 1903:      UNK_0xf48e  codep:0x1d29 parp:0xf48e size:0x0005 C-string:'UNK_0xf48e'
+// 1904:      UNK_0xf495  codep:0x1d29 parp:0xf495 size:0x0005 C-string:'UNK_0xf495'
+// 1905:      UNK_0xf49c  codep:0x1d29 parp:0xf49c size:0x0005 C-string:'UNK_0xf49c'
+// 1906:      UNK_0xf4a3  codep:0x1d29 parp:0xf4a3 size:0x0003 C-string:'UNK_0xf4a3'
+// 1907:      UNK_0xf4a8  codep:0x1d29 parp:0xf4a8 size:0x0003 C-string:'UNK_0xf4a8'
+// 1908:      UNK_0xf4ad  codep:0x224c parp:0xf4ad size:0x0036 C-string:'UNK_0xf4ad'
+// 1909:         SA-CASE  codep:0x4b3b parp:0xf4ef size:0x002c C-string:'SA_dash_CASE'
+// 1910:      UNK_0xf51d  codep:0x224c parp:0xf51d size:0x0014 C-string:'UNK_0xf51d'
+// 1911:         (XCOMM)  codep:0x224c parp:0xf53d size:0x0000 C-string:'_ro_XCOMM_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -58,7 +59,8 @@
 unsigned char UNK_0xe63e[2] = {0x3a, 0x20}; // UNK_0xe63e
 unsigned char UNK_0xf472[3] = {0x01, 0xc3, 0xe9}; // UNK_0xf472
 unsigned char UNK_0xf477[5] = {0x02, 0x4f, 0xef, 0x88, 0xf0}; // UNK_0xf477
-unsigned char UNK_0xf47e[14] = {0x02, 0x0a, 0xf4, 0x44, 0xf4, 0x29, 0x1d, 0x03, 0x1a, 0xf1, 0x64, 0xeb, 0xe6, 0xf0}; // UNK_0xf47e
+unsigned char UNK_0xf47e[5] = {0x02, 0x0a, 0xf4, 0x44, 0xf4}; // UNK_0xf47e
+unsigned char UNK_0xf485[7] = {0x03, 0x1a, 0xf1, 0x64, 0xeb, 0xe6, 0xf0}; // UNK_0xf485
 unsigned char UNK_0xf48e[5] = {0x02, 0x59, 0xe9, 0xd1, 0xed}; // UNK_0xf48e
 unsigned char UNK_0xf495[5] = {0x02, 0x59, 0xe9, 0xd1, 0xed}; // UNK_0xf495
 unsigned char UNK_0xf49c[5] = {0x02, 0xf6, 0xf2, 0x8a, 0xf2}; // UNK_0xf49c
@@ -161,7 +163,7 @@ void UNK_0xe59e() // UNK_0xe59e
 void UNK_0xe5e2() // UNK_0xe5e2
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -348,7 +350,7 @@ void UNK_0xe935() // UNK_0xe935
   _099(); // 099
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xe62a");
+  Push(0x65ec); // IFIELD(UNK_0xe62a)
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
@@ -445,7 +447,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   Push(pp__ro_ENCOUN); // (ENCOUN
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
-  Func8("UNK_0xe639");
+  Push(0x65fc); // IFIELD(UNK_0xe639)
   C_ex_(); // C!
   IOPEN(); // IOPEN
   Push(0x0019);
@@ -490,7 +492,7 @@ void UNK_0xee17() // UNK_0xee17
   Push(cc_TRUE); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6
@@ -507,7 +509,7 @@ void UNK_0xee17() // UNK_0xee17
   _at__gt_C_plus_S(); // @>C+S
   Push(cc__6); // 6
   _eq_SPECIE(); // =SPECIE
-  Func8("UNK_0xea9c");
+  Push(0x6600); // IFIELD(UNK_0xea9c)
   Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -537,7 +539,7 @@ void UNK_0xf190() // UNK_0xf190
   Push2Words("NULL");
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(0x0012);
@@ -672,17 +674,22 @@ void _n__gt_PRO() // #>PRO
   UNK_0xee17(); // UNK_0xee17
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
+  Pop();
   switch(Pop()) // #>PROTEST
   {
   case 1:
-    UNK_0xf23c(); // UNK_0xf23c
-    break;
-  case 2:
     UNK_0xf204(); // UNK_0xf204
     break;
-  case 4:
+  case 2:
     UNK_0xf22a(); // UNK_0xf22a
     break;
+  case 4:
+    NOP(); // NOP
+    break;
+  default:
+    UNK_0xf23c(); // UNK_0xf23c
+    break;
+
   }
   return;
 
@@ -705,7 +712,12 @@ void _n__gt_PRO() // #>PRO
 // ================================================
 // 0xf47c: WORD 'UNK_0xf47e' codep=0x1d29 parp=0xf47e
 // ================================================
-// 0xf47e: db 0x02 0x0a 0xf4 0x44 0xf4 0x29 0x1d 0x03 0x1a 0xf1 0x64 0xeb 0xe6 0xf0 '   D )    d   '
+// 0xf47e: db 0x02 0x0a 0xf4 0x44 0xf4 '   D '
+
+// ================================================
+// 0xf483: WORD 'UNK_0xf485' codep=0x1d29 parp=0xf485
+// ================================================
+// 0xf485: db 0x03 0x1a 0xf1 0x64 0xeb 0xe6 0xf0 '   d   '
 
 // ================================================
 // 0xf48c: WORD 'UNK_0xf48e' codep=0x1d29 parp=0xf48e
@@ -806,38 +818,43 @@ void _ro_XCOMM_rc_() // (XCOMM)
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
+  Pop();
   switch(Pop()) // SA-CASE
   {
   case 1:
-    Push(0); // 0
+    UNK_0xf472(); // UNK_0xf472
     break;
   case 2:
     UNK_0xf472(); // UNK_0xf472
     break;
   case 7:
-    UNK_0xf472(); // UNK_0xf472
-    break;
-  case 6:
     UNK_0xf477(); // UNK_0xf477
     break;
-  case 8:
+  case 6:
     UNK_0xf4a8(); // UNK_0xf4a8
     break;
-  case 11:
+  case 8:
     UNK_0xf48e(); // UNK_0xf48e
     break;
-  case 10:
+  case 11:
     UNK_0xf495(); // UNK_0xf495
     break;
-  case 21:
+  case 10:
     UNK_0xf4a3(); // UNK_0xf4a3
     break;
-  case 22:
+  case 21:
     UNK_0xf49c(); // UNK_0xf49c
     break;
-  case 18:
+  case 22:
     UNK_0xf47e(); // UNK_0xf47e
     break;
+  case 18:
+    UNK_0xf485(); // UNK_0xf485
+    break;
+  default:
+    Push(0); // 0
+    break;
+
   }
   UNK_0xf4ad(); // UNK_0xf4ad
   UNK_0xf51d(); // UNK_0xf51d

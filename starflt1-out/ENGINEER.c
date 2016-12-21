@@ -26,26 +26,27 @@
 // 1717:      UNK_0xef89  codep:0x224c parp:0xef89 size:0x000c C-string:'UNK_0xef89'
 // 1718:      UNK_0xef97  codep:0x224c parp:0xef97 size:0x0013 C-string:'UNK_0xef97'
 // 1719:      UNK_0xefac  codep:0x224c parp:0xefac size:0x000c C-string:'UNK_0xefac'
-// 1720:      UNK_0xefba  codep:0x224c parp:0xefba size:0x0028 C-string:'UNK_0xefba'
-// 1721:      .SHIP-ITEM  codep:0x4a4f parp:0xeff1 size:0x0020 C-string:'_dot_SHIP_dash_ITEM'
-// 1722:      UNK_0xf013  codep:0x224c parp:0xf013 size:0x0046 C-string:'UNK_0xf013'
-// 1723:      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x0023 C-string:'UNK_0xf05b'
-// 1724:      UNK_0xf080  codep:0x224c parp:0xf080 size:0x0049 C-string:'UNK_0xf080'
-// 1725:      UNK_0xf0cb  codep:0x224c parp:0xf0cb size:0x0032 C-string:'UNK_0xf0cb'
-// 1726:      UNK_0xf0ff  codep:0x224c parp:0xf0ff size:0x0082 C-string:'UNK_0xf0ff'
-// 1727:      UNK_0xf183  codep:0x224c parp:0xf183 size:0x004c C-string:'UNK_0xf183'
-// 1728:      UNK_0xf1d1  codep:0x224c parp:0xf1d1 size:0x0032 C-string:'UNK_0xf1d1'
-// 1729:      UNK_0xf205  codep:0x224c parp:0xf205 size:0x002a C-string:'UNK_0xf205'
-// 1730:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x006d C-string:'UNK_0xf231'
-// 1731:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x002c C-string:'UNK_0xf2a0'
-// 1732:      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x004a C-string:'UNK_0xf2ce'
-// 1733:      UNK_0xf31a  codep:0x224c parp:0xf31a size:0x001e C-string:'UNK_0xf31a'
-// 1734:      UNK_0xf33a  codep:0x224c parp:0xf33a size:0x001c C-string:'UNK_0xf33a'
-// 1735:      UNK_0xf358  codep:0x224c parp:0xf358 size:0x0021 C-string:'UNK_0xf358'
-// 1736:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0024 C-string:'UNK_0xf37b'
-// 1737:      UNK_0xf3a1  codep:0x224c parp:0xf3a1 size:0x0022 C-string:'UNK_0xf3a1'
-// 1738:      UNK_0xf3c5  codep:0x224c parp:0xf3c5 size:0x0046 C-string:'UNK_0xf3c5'
-// 1739:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
+// 1720:      UNK_0xefba  codep:0x224c parp:0xefba size:0x0015 C-string:'UNK_0xefba'
+// 1721:      UNK_0xefd1  codep:0x224c parp:0xefd1 size:0x0011 C-string:'UNK_0xefd1'
+// 1722:      .SHIP-ITEM  codep:0x4a4f parp:0xeff1 size:0x0020 C-string:'_dot_SHIP_dash_ITEM'
+// 1723:      UNK_0xf013  codep:0x224c parp:0xf013 size:0x0046 C-string:'UNK_0xf013'
+// 1724:      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x0023 C-string:'UNK_0xf05b'
+// 1725:      UNK_0xf080  codep:0x224c parp:0xf080 size:0x0049 C-string:'UNK_0xf080'
+// 1726:      UNK_0xf0cb  codep:0x224c parp:0xf0cb size:0x0032 C-string:'UNK_0xf0cb'
+// 1727:      UNK_0xf0ff  codep:0x224c parp:0xf0ff size:0x0082 C-string:'UNK_0xf0ff'
+// 1728:      UNK_0xf183  codep:0x224c parp:0xf183 size:0x004c C-string:'UNK_0xf183'
+// 1729:      UNK_0xf1d1  codep:0x224c parp:0xf1d1 size:0x0032 C-string:'UNK_0xf1d1'
+// 1730:      UNK_0xf205  codep:0x224c parp:0xf205 size:0x002a C-string:'UNK_0xf205'
+// 1731:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x006d C-string:'UNK_0xf231'
+// 1732:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x002c C-string:'UNK_0xf2a0'
+// 1733:      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x004a C-string:'UNK_0xf2ce'
+// 1734:      UNK_0xf31a  codep:0x224c parp:0xf31a size:0x001e C-string:'UNK_0xf31a'
+// 1735:      UNK_0xf33a  codep:0x224c parp:0xf33a size:0x001c C-string:'UNK_0xf33a'
+// 1736:      UNK_0xf358  codep:0x224c parp:0xf358 size:0x0021 C-string:'UNK_0xf358'
+// 1737:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0024 C-string:'UNK_0xf37b'
+// 1738:      UNK_0xf3a1  codep:0x224c parp:0xf3a1 size:0x0022 C-string:'UNK_0xf3a1'
+// 1739:      UNK_0xf3c5  codep:0x224c parp:0xf3c5 size:0x0046 C-string:'UNK_0xf3c5'
+// 1740:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -172,14 +173,14 @@ void UNK_0xed5c() // UNK_0xed5c
 {
   Push(Read16(sp)); // DUP
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(h); // I
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -271,7 +272,7 @@ void DBARS() // DBARS
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -329,7 +330,7 @@ void UNK_0xee68() // UNK_0xee68
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(i); // I
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
@@ -482,7 +483,16 @@ void UNK_0xefba() // UNK_0xefba
   PRINT("MISSILE LAUNCHER", 16); // (.")
 }
 
-// 0xefcf: db 0x4c 0x22 0xdc 0x1b 0x0c 0x4c 0x41 0x53 0x45 0x52 0x20 0x43 0x41 0x4e 0x4e 0x4f 0x4e 0x90 0x16 'L"   LASER CANNON  '
+
+// ================================================
+// 0xefcf: WORD 'UNK_0xefd1' codep=0x224c parp=0xefd1
+// ================================================
+
+void UNK_0xefd1() // UNK_0xefd1
+{
+  PRINT("LASER CANNON", 12); // (.")
+}
+
 
 // ================================================
 // 0xefe2: WORD '.SHIP-ITEM' codep=0x4a4f parp=0xeff1
@@ -498,40 +508,45 @@ void UNK_0xf013() // UNK_0xf013
   Push2Words("NULL");
   CTPOS_dot_(); // CTPOS.
   Push(Read16(sp)); // DUP
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(h); // I
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -562,7 +577,7 @@ void UNK_0xf05b() // UNK_0xf05b
   CTCR(); // CTCR
   PRINT("EFFICIENCY: ", 12); // (.")
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
@@ -582,7 +597,7 @@ void UNK_0xf080() // UNK_0xf080
   CTCR(); // CTCR
   PRINT("CURRENT FUNCTIONALITY: ", 23); // (.")
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
@@ -604,10 +619,10 @@ void UNK_0xf0cb() // UNK_0xf0cb
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xec6b");
+  Push(0x6409); // IFIELD(UNK_0xec6b)
   _at__gt_C_plus_S(); // @>C+S
   Push(0x00fb);
-  Func8("UNK_0xec66");
+  Push(0x640b); // IFIELD(UNK_0xec66)
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   Push(0x0064);
@@ -692,7 +707,7 @@ void UNK_0xf0ff() // UNK_0xf0ff
 void UNK_0xf183() // UNK_0xf183
 {
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
@@ -718,7 +733,7 @@ void UNK_0xf183() // UNK_0xf183
 void UNK_0xf1d1() // UNK_0xf1d1
 {
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
@@ -768,7 +783,7 @@ void UNK_0xf231() // UNK_0xf231
 {
   Push(Read16(sp)); // DUP
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
@@ -785,29 +800,34 @@ void UNK_0xf231() // UNK_0xf231
   label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(": ", 2); // (.")
   if (Pop() == 0) goto label2;
@@ -831,29 +851,34 @@ void UNK_0xf2a0() // UNK_0xf2a0
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(":", 1); // (.")
   CTCR(); // CTCR
@@ -869,57 +894,67 @@ void UNK_0xf2ce() // UNK_0xf2ce
 {
   CTERASE(); // CTERASE
   PRINT("CEASE REPAIRS ON ", 17); // (.")
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
@@ -938,29 +973,34 @@ void UNK_0xf2ce() // UNK_0xf2ce
 void UNK_0xf31a() // UNK_0xf31a
 {
   PRINT("CEASING REPAIRS ON ", 19); // (.")
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(".", 1); // (.")
 }
@@ -975,7 +1015,7 @@ void UNK_0xf33a() // UNK_0xf33a
   Push(Read16(sp)); // DUP
   UNK_0xf31a(); // UNK_0xf31a
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read16(sp)); // DUP
@@ -994,29 +1034,34 @@ void UNK_0xf33a() // UNK_0xf33a
 void UNK_0xf358() // UNK_0xf358
 {
   PRINT("CONTINUING REPAIRS ON ", 22); // (.")
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(".", 1); // (.")
 }
@@ -1029,29 +1074,34 @@ void UNK_0xf358() // UNK_0xf358
 void UNK_0xf37b() // UNK_0xf37b
 {
   PRINT("BEGINNING REPAIRS ON ", 21); // (.")
+  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xef70(); // UNK_0xef70
     break;
-  case 2:
+  case 1:
     UNK_0xef7b(); // UNK_0xef7b
     break;
-  case 3:
+  case 2:
     UNK_0xef89(); // UNK_0xef89
     break;
-  case 4:
+  case 3:
     UNK_0xef97(); // UNK_0xef97
     break;
-  case 5:
+  case 4:
     UNK_0xefac(); // UNK_0xefac
     break;
-  case 6:
+  case 5:
     UNK_0xefba(); // UNK_0xefba
     break;
+  case 6:
+    UNK_0xefd1(); // UNK_0xefd1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR
@@ -1070,7 +1120,7 @@ void UNK_0xf3a1() // UNK_0xf3a1
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read16(sp)); // DUP
@@ -1177,7 +1227,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
@@ -1185,7 +1235,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   R_gt_(); // R>
-  Func8("UNK_0xec70");
+  Push(0x6400); // IFIELD(UNK_0xec70)
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND

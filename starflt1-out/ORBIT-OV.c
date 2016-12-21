@@ -4108,13 +4108,14 @@ void UNK_0xf413() // UNK_0xf413
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // SKYCASE
   {
   case 0:
-    LT_dash_BLUE(); // LT-BLUE
+    BLACK(); // BLACK
     break;
   case 7:
-    BLACK(); // BLACK
+    YELLOW(); // YELLOW
     break;
   case 12:
     YELLOW(); // YELLOW
@@ -4122,6 +4123,10 @@ void UNK_0xf413() // UNK_0xf413
   case 19:
     YELLOW(); // YELLOW
     break;
+  default:
+    LT_dash_BLUE(); // LT-BLUE
+    break;
+
   }
   Push(pp_UNK_0xdba0); // UNK_0xdba0
   _ex_(); // !

@@ -99,7 +99,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x001a);
   Push(cc__6); // 6
   IFIND(); // IFIND
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
@@ -113,7 +113,7 @@ void UNK_0xf177() // UNK_0xf177
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
 
   label2:
@@ -210,7 +210,7 @@ void UNK_0xf258() // UNK_0xf258
 
   UNK_0x3f3b(" STARSHIP ISS ");
   _dot_TTY(); // .TTY
-  Func8("UNK_0xf136");
+  Push(0x6423); // IFIELD(UNK_0xf136)
   COUNT(); // COUNT
   Func14("TYPE"); // call of word 0x2690
 
@@ -218,7 +218,7 @@ void UNK_0xf258() // UNK_0xf258
   _dot_TTY(); // .TTY
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ask_(); // ?
   ICLOSE(); // ICLOSE
 
@@ -226,14 +226,14 @@ void UNK_0xf258() // UNK_0xf258
   _dot_TTY(); // .TTY
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /

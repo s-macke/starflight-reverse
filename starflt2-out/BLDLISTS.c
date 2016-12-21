@@ -399,7 +399,7 @@ void _at_TAMT() // @TAMT
 void UNK_0xed70() // UNK_0xed70
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -427,7 +427,7 @@ void UNK_0xede4() // UNK_0xede4
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Func8("INST-VA");
+  Push(0x65f2); // IFIELD(INST-VA)
   _099(); // 099
   ICLOSE(); // ICLOSE
 }
@@ -576,7 +576,7 @@ void UNK_0xee89() // UNK_0xee89
   Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -662,7 +662,7 @@ void UNK_0xeef3() // UNK_0xeef3
   Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   Push(1); // 1
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -855,7 +855,7 @@ void UNK_0xf009() // UNK_0xf009
 {
   Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _099(); // 099
   UNK_0xef03(); // UNK_0xef03
   UNK_0xef67(); // UNK_0xef67
@@ -873,7 +873,7 @@ void UNK_0xf01f() // UNK_0xf01f
 {
   Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _099(); // 099
   UNK_0xee99(); // UNK_0xee99
   UNK_0xeed9(); // UNK_0xeed9
@@ -904,14 +904,14 @@ void UNK_0xf039() // UNK_0xf039
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   Push(0x000a);
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _ex_(); // !
   Push(0x0003);
   LoadData("UNK_0xed58"); // from 'ELEMENT     '
   C_ex_(); // C!
   LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
-  Func8("ASKING");
+  Push(0x65f4); // IFIELD(ASKING)
   _ex_(); // !
   CI(); // CI
   ICLOSE(); // ICLOSE
@@ -1175,9 +1175,9 @@ void UNK_0xf3e8() // UNK_0xf3e8
   MODULE(); // MODULE
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xeb9a");
+  Push(0x6624); // IFIELD(UNK_0xeb9a)
   Push(Read16(Pop())); // @
-  Func8("UNK_0xeb9f");
+  Push(0x6600); // IFIELD(UNK_0xeb9f)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
@@ -1186,11 +1186,11 @@ void UNK_0xf3e8() // UNK_0xf3e8
   Push(Read16(sp)); // DUP
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _ex_(); // !
   SWAP(); // SWAP
   _dash_(); // -
-  Func8("UNK_0xeba4");
+  Push(0x65f2); // IFIELD(UNK_0xeba4)
   _ex_(); // !
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
@@ -1222,7 +1222,7 @@ void UNK_0xf41e() // UNK_0xf41e
   goto label3;
 
   label2:
-  Func8("UNK_0xeba9");
+  Push(0x65f3); // IFIELD(UNK_0xeba9)
   Push(Read8(Pop())&0xFF); // C@
 
   label3:
@@ -1233,20 +1233,25 @@ void UNK_0xf41e() // UNK_0xf41e
   MODULE(); // MODULE
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
+  Pop();
   switch(Pop()) // APOST>PO
   {
   case 16:
-    Push(2); // 2
+    _4(); // 4
     break;
   case 2:
-    _4(); // 4
+    Push(1); // 1
     break;
   case 1:
     Push(1); // 1
     break;
   case 8:
-    Push(1); // 1
+    _4(); // 4
     break;
+  default:
+    Push(2); // 2
+    break;
+
   }
   goto label4;
 

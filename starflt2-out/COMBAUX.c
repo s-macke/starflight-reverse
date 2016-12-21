@@ -43,9 +43,9 @@ void UNK_0xf2c6() // UNK_0xf2c6
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -64,9 +64,9 @@ void UNK_0xf2d8() // UNK_0xf2d8
   Push(0x001d);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   goto label2;
 

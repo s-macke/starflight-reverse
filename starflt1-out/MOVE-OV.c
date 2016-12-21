@@ -113,9 +113,9 @@ void UNK_0xe702() // UNK_0xe702
 
 void UNK_0xe794() // UNK_0xe794
 {
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -127,9 +127,9 @@ void UNK_0xe794() // UNK_0xe794
 
 void UNK_0xe7ac() // UNK_0xe7ac
 {
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   _ex_(); // !
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   _ex_(); // !
 }
 
@@ -453,9 +453,9 @@ void UNK_0xed14() // UNK_0xed14
 
 void UNK_0xed34() // UNK_0xed34
 {
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -495,7 +495,7 @@ void UNK_0xed4c() // UNK_0xed4c
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed34(); // UNK_0xed34
   Push(0); // 0
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }

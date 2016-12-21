@@ -144,7 +144,7 @@ void UNK_0xe3fe() // UNK_0xe3fe
   Push(cc_TRUE); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6
@@ -436,7 +436,7 @@ void UNK_0xe581() // UNK_0xe581
 
 void UNK_0xe5bb() // UNK_0xe5bb
 {
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(2); // 2
@@ -455,7 +455,7 @@ void UNK_0xe5bb() // UNK_0xe5bb
 
 void UNK_0xe5d3() // UNK_0xe5d3
 {
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(Pop() & Pop()); // AND
@@ -739,7 +739,7 @@ void UNK_0xe803() // UNK_0xe803
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   INEXT(); // INEXT
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
@@ -759,7 +759,7 @@ void UNK_0xe827() // UNK_0xe827
 {
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<
-  Func8("UNK_0xe6ac");
+  Push(0x6603); // IFIELD(UNK_0xe6ac)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
@@ -770,11 +770,11 @@ void UNK_0xe827() // UNK_0xe827
 
   label1:
   _0_gt_(); // 0>
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe803(); // UNK_0xe803
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xe6ac");
+  Push(0x6603); // IFIELD(UNK_0xe6ac)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   _st_(); // <
@@ -984,7 +984,7 @@ void UNK_0xea83() // UNK_0xea83
   UNK_0xe3e6(); // UNK_0xe3e6
 
   label1:
-  Func8("UNK_0xe689");
+  Push(0x65ec); // IFIELD(UNK_0xe689)
   Push(Read16(sp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label2;
@@ -998,7 +998,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x007a);
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  Func8("UNK_0xe6a7");
+  Push(0x6600); // IFIELD(UNK_0xe6a7)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1006,7 +1006,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x0022);
   Push(h); // I
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1019,7 +1019,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x001b);
   Push(h); // I
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe693");
+  Push(0x65fc); // IFIELD(UNK_0xe693)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1027,7 +1027,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x0014);
   Push(h); // I
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe698");
+  Push(0x65fd); // IFIELD(UNK_0xe698)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1042,7 +1042,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x000d);
   Push(h); // I
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe69d");
+  Push(0x65fe); // IFIELD(UNK_0xe69d)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1050,7 +1050,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(cc__6); // 6
   R_gt_(); // R>
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe6a2");
+  Push(0x65ff); // IFIELD(UNK_0xe6a2)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -1251,12 +1251,12 @@ void UNK_0xec39() // UNK_0xec39
   Push(0x003d);
   R_gt_(); // R>
   UNK_0xe91f(); // UNK_0xe91f
-  Func8("UNK_0xe6ac");
+  Push(0x6603); // IFIELD(UNK_0xe6ac)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
   Push(2); // 2
   _dot_R(); // .R
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read16(Pop())); // @
   Push(1); // 1
   Push(Pop() & Pop()); // AND
@@ -1328,20 +1328,20 @@ void UNK_0xed4b() // UNK_0xed4b
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(h); // I
-  Func8("INST-SP");
+  Push(0x65eb); // IFIELD(INST-SP)
   _ex_(); // !
   R_gt_(); // R>
   Push(pp_RECORD_n_); // RECORD#
   _ex_(); // !
   LoadData("UNK_0xe669"); // from 'CREWMEMBER  '
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(cc__5); // 5
   CMOVE(); // CMOVE
   Push(1); // 1
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   _ex_(); // !
   Push(0x0064);
-  Func8("UNK_0xe6a7");
+  Push(0x6600); // IFIELD(UNK_0xe6a7)
   C_ex_(); // C!
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
@@ -1446,7 +1446,7 @@ void UNK_0xee3d() // UNK_0xee3d
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -1567,7 +1567,7 @@ void UNK_0xef2b() // UNK_0xef2b
   goto label3;
 
   label2:
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   _099(); // 099
   UNK_0xec39(); // UNK_0xec39
   Push(1); // 1
@@ -1600,7 +1600,7 @@ void UNK_0xefd8() // UNK_0xefd8
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xe689");
+  Push(0x65ec); // IFIELD(UNK_0xe689)
   PAD(); // PAD
   _do__eq_(); // $=
   if (Pop() == 0) goto label1;
@@ -1679,7 +1679,7 @@ void UNK_0xf02c() // UNK_0xf02c
   UNK_0xefd8(); // UNK_0xefd8
   if (Pop() == 0) goto label3;
   PAD(); // PAD
-  Func8("UNK_0xe689");
+  Push(0x65ec); // IFIELD(UNK_0xe689)
   _do__ex_(); // $!
   Push(1); // 1
   goto label4;
@@ -1706,13 +1706,13 @@ void UNK_0xf082() // UNK_0xf082
   Push(1); // 1
   _0MESS(); // 0MESS
   _at_CRS(); // @CRS
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Func8("UNK_0xe689");
+  Push(0x65ec); // IFIELD(UNK_0xe689)
   _099(); // 099
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(cc__5); // 5
   Push(0); // 0
   FILL(); // FILL
@@ -1804,7 +1804,7 @@ void UNK_0xf149() // UNK_0xf149
 
 void UNK_0xf177() // UNK_0xf177
 {
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read16(Pop())); // @
   Push(2); // 2
   Push(Pop() & Pop()); // AND
@@ -1866,7 +1866,7 @@ void UNK_0xf217() // UNK_0xf217
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -1964,14 +1964,14 @@ void UNK_0xf2c4() // UNK_0xf2c4
   Pop(); Pop();// 2DROP
 
   label4:
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xe679"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(Pop() & Pop()); // AND
@@ -1990,7 +1990,7 @@ void UNK_0xf2c4() // UNK_0xf2c4
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   MIN(); // MIN
-  Func8("UNK_0xe68e");
+  Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -2034,7 +2034,7 @@ void UNK_0xf36a() // UNK_0xf36a
 void UNK_0xf3a2() // UNK_0xf3a2
 {
   UNK_0xe4e0(); // UNK_0xe4e0
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read16(Pop())); // @
   Push(1); // 1
   Push(Pop() ^ Pop()); // XOR
@@ -2073,9 +2073,9 @@ void UNK_0xf3a2() // UNK_0xf3a2
 
 void UNK_0xf3e6() // UNK_0xf3e6
 {
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   _099(); // 099
-  Func8("UNK_0xe689");
+  Push(0x65ec); // IFIELD(UNK_0xe689)
   Push(0x000f);
   Push(0); // 0
   FILL(); // FILL
@@ -2089,7 +2089,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
 void UNK_0xf3f8() // UNK_0xf3f8
 {
   UNK_0xe4e0(); // UNK_0xe4e0
-  Func8("UNK_0xe514");
+  Push(0x6601); // IFIELD(UNK_0xe514)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -2206,20 +2206,25 @@ void _ro_U_dash_PFILE_rc_() // (U-PFILE)
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // PFILE-FUNCTI
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xf082(); // UNK_0xf082
     break;
-  case 2:
+  case 1:
     UNK_0xf3a2(); // UNK_0xf3a2
     break;
-  case 3:
+  case 2:
     UNK_0xf3f8(); // UNK_0xf3f8
     break;
+  case 3:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
 
   label1:

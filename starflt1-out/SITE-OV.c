@@ -800,13 +800,13 @@ void UNK_0xf389() // UNK_0xf389
   Push(0x001b);
   Push(0x001d);
   WITHIN(); // WITHIN
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   _2_at_(); // 2@
   D0_eq_(); // D0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   _2_at_(); // 2@
   SWAP(); // SWAP
   UNK_0xf239(); // UNK_0xf239

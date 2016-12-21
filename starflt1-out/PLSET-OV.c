@@ -312,7 +312,7 @@ void UNK_0xed2e() // UNK_0xed2e
   UNK_0xecf8(); // UNK_0xecf8
   Push(0); // 0
   ICLOSE(); // ICLOSE
-  Func8("UNK_0xecf3");
+  Push(0x6400); // IFIELD(UNK_0xecf3)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__9); // 9
   Push(1); // 1
@@ -352,7 +352,7 @@ void UNK_0xed2e() // UNK_0xed2e
 
   label1:
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -370,9 +370,9 @@ void UNK_0xed8e() // UNK_0xed8e
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
@@ -416,14 +416,14 @@ void UNK_0xedf8() // UNK_0xedf8
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x007d);
   _dash_(); // -
   Push(Read16(sp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(0x0064);
   _dash_(); // -
@@ -1347,23 +1347,28 @@ void UNK_0xf46d() // UNK_0xf46d
 {
   LoadData("UNK_0xec5a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
+  Pop();
   switch(Pop()) // (TERRAIN
   {
   case 1:
-    UNK_0xf434(); // UNK_0xf434
-    break;
-  case 2:
     UNK_0xf30a(); // UNK_0xf30a
     break;
-  case 3:
+  case 2:
     UNK_0xf40e(); // UNK_0xf40e
     break;
-  case 4:
+  case 3:
     UNK_0xf389(); // UNK_0xf389
     break;
-  case 5:
+  case 4:
     UNK_0xf41c(); // UNK_0xf41c
     break;
+  case 5:
+    UNK_0xf3ba(); // UNK_0xf3ba
+    break;
+  default:
+    UNK_0xf434(); // UNK_0xf434
+    break;
+
   }
 }
 

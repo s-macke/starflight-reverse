@@ -282,9 +282,9 @@ void UNK_0xed19() // UNK_0xed19
 
 void UNK_0xed31() // UNK_0xed31
 {
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -295,9 +295,9 @@ void UNK_0xed31() // UNK_0xed31
 
 void UNK_0xed3d() // UNK_0xed3d
 {
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   _ex_(); // !
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   _ex_(); // !
 }
 
@@ -439,28 +439,28 @@ void UNK_0xee15() // UNK_0xee15
 {
   LoadData("UNK_0xec6f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xec77");
+  Push(0x6400); // IFIELD(UNK_0xec77)
   C_ex_(); // C!
   Push(0); // 0
-  Func8("UNK_0xec7c");
+  Push(0x6404); // IFIELD(UNK_0xec7c)
   C_ex_(); // C!
   LoadData("UNK_0xeca0"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
   LoadData("UNK_0xec98"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xec93");
+  Push(0x6402); // IFIELD(UNK_0xec93)
   C_ex_(); // C!
   Push2Words("0.");
-  Func8("UNK_0xec8e");
+  Push(0x6407); // IFIELD(UNK_0xec8e)
   _1_dot_5_ex_(); // 1.5!
   Push(0); // 0
-  Func8("UNK_0xeca8");
+  Push(0x640a); // IFIELD(UNK_0xeca8)
   C_ex_(); // C!
   LoadData("UNK_0xec81"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xec89");
+  Push(0x6401); // IFIELD(UNK_0xec89)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -498,7 +498,7 @@ void UNK_0xee4d() // UNK_0xee4d
   UNK_0xed3d(); // UNK_0xed3d
   UNK_0xee15(); // UNK_0xee15
   Push(1); // 1
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _plus__ex_(); // +!
   return;
 
@@ -970,7 +970,7 @@ void UNK_0xf163() // UNK_0xf163
   Push(0x000a);
   Push(0x0064);
   RRND(); // RRND
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
 }
 
@@ -1151,7 +1151,7 @@ void UNK_0xf26b() // UNK_0xf26b
   UNK_0xed3d(); // UNK_0xed3d
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -1451,7 +1451,7 @@ void UNK_0xf42c() // UNK_0xf42c
 void UNK_0xf442() // UNK_0xf442
 {
   UNK_0xed3d(); // UNK_0xed3d
-  Func8("INST-DATE");
+  Push(0x6402); // IFIELD(INST-DATE)
   OFF(); // OFF
   IEXTRACT(); // IEXTRACT
   Push(pp_THIS_dash_RE); // THIS-RE

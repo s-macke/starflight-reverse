@@ -154,11 +154,11 @@ void UNK_0xe57b() // UNK_0xe57b
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe54a); // UNK_0xe54a
   _ex_(); // !
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe54e); // UNK_0xe54e
   _ex_(); // !
@@ -823,14 +823,14 @@ void UNK_0xe9be() // UNK_0xe9be
 void UNK_0xea4c() // UNK_0xea4c
 {
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   WLD_gt_SCR(); // WLD>SCR
-  Func8("UNK_0xe55a");
+  Push(0x63fa); // IFIELD(UNK_0xe55a)
   Push(Read16(Pop())); // @
-  Func8("UNK_0xe55f");
+  Push(0x6400); // IFIELD(UNK_0xe55f)
   Push(Read16(Pop())); // @
   WLD_gt_SCR(); // WLD>SCR
   ICLOSE(); // ICLOSE
@@ -1308,12 +1308,12 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(Read16(Pop())); // @
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xe564");
+  Push(0x6402); // IFIELD(UNK_0xe564)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  Func8("UNK_0xe564");
+  Push(0x6402); // IFIELD(UNK_0xe564)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0064);
   _star__slash_(); // */

@@ -67,7 +67,7 @@ void SIC_i_EM() // SIC'EM
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xefd6");
+  Push(0x6403); // IFIELD(UNK_0xefd6)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(0x0080);
@@ -76,7 +76,7 @@ void SIC_i_EM() // SIC'EM
   _ex_(); // !
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xefd6");
+  Push(0x6403); // IFIELD(UNK_0xefd6)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   Push(pp_YABS); // YABS
@@ -85,7 +85,7 @@ void SIC_i_EM() // SIC'EM
   Push(Read16(Pop())); // @
   Push2Words("*ARREST");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
@@ -459,11 +459,11 @@ void _2NDS() // 2NDS
   if (Pop() == 0) return;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xefd6");
+  Push(0x6403); // IFIELD(UNK_0xefd6)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  Func8("UNK_0xefd6");
+  Push(0x6403); // IFIELD(UNK_0xefd6)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }

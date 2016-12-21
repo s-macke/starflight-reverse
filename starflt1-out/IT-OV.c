@@ -14,39 +14,41 @@
 // 1705:      UNK_0xedee  codep:0x2214 parp:0xedee size:0x0002 C-string:'UNK_0xedee'
 // 1706:      UNK_0xedf2  codep:0x2214 parp:0xedf2 size:0x0002 C-string:'UNK_0xedf2'
 // 1707:      UNK_0xedf6  codep:0x2214 parp:0xedf6 size:0x0002 C-string:'UNK_0xedf6'
-// 1708:      UNK_0xedfa  codep:0x2214 parp:0xedfa size:0x0006 C-string:'UNK_0xedfa'
-// 1709:      UNK_0xee02  codep:0x2214 parp:0xee02 size:0x0002 C-string:'UNK_0xee02'
-// 1710:      UNK_0xee06  codep:0x2214 parp:0xee06 size:0x0002 C-string:'UNK_0xee06'
-// 1711:      UNK_0xee0a  codep:0x224c parp:0xee0a size:0x000e C-string:'UNK_0xee0a'
-// 1712:      UNK_0xee1a  codep:0x224c parp:0xee1a size:0x0010 C-string:'UNK_0xee1a'
-// 1713:      UNK_0xee2c  codep:0x224c parp:0xee2c size:0x0026 C-string:'UNK_0xee2c'
-// 1714:      UNK_0xee54  codep:0x224c parp:0xee54 size:0x0016 C-string:'UNK_0xee54'
-// 1715:      UNK_0xee6c  codep:0x1d29 parp:0xee6c size:0x0002 C-string:'UNK_0xee6c'
-// 1716:      UNK_0xee70  codep:0x224c parp:0xee70 size:0x00b5 C-string:'UNK_0xee70'
-// 1717:      UNK_0xef27  codep:0x224c parp:0xef27 size:0x0028 C-string:'UNK_0xef27'
-// 1718:      UNK_0xef51  codep:0x224c parp:0xef51 size:0x000e C-string:'UNK_0xef51'
-// 1719:      UNK_0xef61  codep:0x224c parp:0xef61 size:0x0026 C-string:'UNK_0xef61'
-// 1720:      UNK_0xef89  codep:0x224c parp:0xef89 size:0x005e C-string:'UNK_0xef89'
-// 1721:      UNK_0xefe9  codep:0x224c parp:0xefe9 size:0x001e C-string:'UNK_0xefe9'
-// 1722:       DATE$>ADR  codep:0x224c parp:0xf015 size:0x005d C-string:'DATE_do__gt_ADR'
-// 1723:      UNK_0xf074  codep:0x224c parp:0xf074 size:0x000c C-string:'UNK_0xf074'
-// 1724:      UNK_0xf082  codep:0x224c parp:0xf082 size:0x0012 C-string:'UNK_0xf082'
-// 1725:      UNK_0xf096  codep:0x224c parp:0xf096 size:0x002e C-string:'UNK_0xf096'
-// 1726:      UNK_0xf0c6  codep:0x224c parp:0xf0c6 size:0x002e C-string:'UNK_0xf0c6'
-// 1727:     IDENT-ITEM$  codep:0x4a4f parp:0xf104 size:0x0020 C-string:'IDENT_dash_ITEM_do_'
-// 1728:        ITEM>PAD  codep:0x224c parp:0xf131 size:0x0024 C-string:'ITEM_gt_PAD'
-// 1729:      UNK_0xf157  codep:0x224c parp:0xf157 size:0x005c C-string:'UNK_0xf157'
-// 1730:        BOX>LIST  codep:0x224c parp:0xf1c0 size:0x0044 C-string:'BOX_gt_LIST'
-// 1731:       GET-BOXES  codep:0x224c parp:0xf212 size:0x0014 C-string:'GET_dash_BOXES'
-// 1732: MAKE-SCROLL-BOX  codep:0x224c parp:0xf23a size:0x0030 C-string:'MAKE_dash_SCROLL_dash_BOX'
-// 1733: DELETE-SCROLL-BOX  codep:0x224c parp:0xf280 size:0x001a C-string:'DELETE_dash_SCROLL_dash_BOX'
-// 1734:  CLASS>BOX-SPEC  codep:0x4a4f parp:0xf2ad size:0x0020 C-string:'CLASS_gt_BOX_dash_SPEC'
-// 1735:      UNK_0xf2cf  codep:0x224c parp:0xf2cf size:0x000e C-string:'UNK_0xf2cf'
-// 1736:        BOX>TOCS  codep:0x224c parp:0xf2ea size:0x000e C-string:'BOX_gt_TOCS'
-// 1737:            >BOX  codep:0x224c parp:0xf301 size:0x0080 C-string:'_gt_BOX'
-// 1738:        ?ELEMENT  codep:0x224c parp:0xf38e size:0x000a C-string:'_ask_ELEMENT'
-// 1739:          (BOX>)  codep:0x224c parp:0xf3a3 size:0x0038 C-string:'_ro_BOX_gt__rc_'
-// 1740:            BOX>  codep:0x224c parp:0xf3e4 size:0x0000 C-string:'BOX_gt_'
+// 1708:      UNK_0xedfa  codep:0x2214 parp:0xedfa size:0x0002 C-string:'UNK_0xedfa'
+// 1709:      UNK_0xedfe  codep:0x2214 parp:0xedfe size:0x0002 C-string:'UNK_0xedfe'
+// 1710:      UNK_0xee02  codep:0x2214 parp:0xee02 size:0x0002 C-string:'UNK_0xee02'
+// 1711:      UNK_0xee06  codep:0x2214 parp:0xee06 size:0x0002 C-string:'UNK_0xee06'
+// 1712:      UNK_0xee0a  codep:0x224c parp:0xee0a size:0x000e C-string:'UNK_0xee0a'
+// 1713:      UNK_0xee1a  codep:0x224c parp:0xee1a size:0x0010 C-string:'UNK_0xee1a'
+// 1714:      UNK_0xee2c  codep:0x224c parp:0xee2c size:0x0026 C-string:'UNK_0xee2c'
+// 1715:      UNK_0xee54  codep:0x224c parp:0xee54 size:0x0016 C-string:'UNK_0xee54'
+// 1716:      UNK_0xee6c  codep:0x1d29 parp:0xee6c size:0x0002 C-string:'UNK_0xee6c'
+// 1717:      UNK_0xee70  codep:0x224c parp:0xee70 size:0x00b5 C-string:'UNK_0xee70'
+// 1718:      UNK_0xef27  codep:0x224c parp:0xef27 size:0x0028 C-string:'UNK_0xef27'
+// 1719:      UNK_0xef51  codep:0x224c parp:0xef51 size:0x000e C-string:'UNK_0xef51'
+// 1720:      UNK_0xef61  codep:0x224c parp:0xef61 size:0x0026 C-string:'UNK_0xef61'
+// 1721:      UNK_0xef89  codep:0x224c parp:0xef89 size:0x005e C-string:'UNK_0xef89'
+// 1722:      UNK_0xefe9  codep:0x224c parp:0xefe9 size:0x001e C-string:'UNK_0xefe9'
+// 1723:       DATE$>ADR  codep:0x224c parp:0xf015 size:0x005d C-string:'DATE_do__gt_ADR'
+// 1724:      UNK_0xf074  codep:0x224c parp:0xf074 size:0x000c C-string:'UNK_0xf074'
+// 1725:      UNK_0xf082  codep:0x224c parp:0xf082 size:0x0012 C-string:'UNK_0xf082'
+// 1726:      UNK_0xf096  codep:0x224c parp:0xf096 size:0x002e C-string:'UNK_0xf096'
+// 1727:      UNK_0xf0c6  codep:0x224c parp:0xf0c6 size:0x0016 C-string:'UNK_0xf0c6'
+// 1728:      UNK_0xf0de  codep:0x224c parp:0xf0de size:0x0016 C-string:'UNK_0xf0de'
+// 1729:     IDENT-ITEM$  codep:0x4a4f parp:0xf104 size:0x0020 C-string:'IDENT_dash_ITEM_do_'
+// 1730:        ITEM>PAD  codep:0x224c parp:0xf131 size:0x0024 C-string:'ITEM_gt_PAD'
+// 1731:      UNK_0xf157  codep:0x224c parp:0xf157 size:0x005c C-string:'UNK_0xf157'
+// 1732:        BOX>LIST  codep:0x224c parp:0xf1c0 size:0x0044 C-string:'BOX_gt_LIST'
+// 1733:       GET-BOXES  codep:0x224c parp:0xf212 size:0x0014 C-string:'GET_dash_BOXES'
+// 1734: MAKE-SCROLL-BOX  codep:0x224c parp:0xf23a size:0x0030 C-string:'MAKE_dash_SCROLL_dash_BOX'
+// 1735: DELETE-SCROLL-BOX  codep:0x224c parp:0xf280 size:0x001a C-string:'DELETE_dash_SCROLL_dash_BOX'
+// 1736:  CLASS>BOX-SPEC  codep:0x4a4f parp:0xf2ad size:0x0020 C-string:'CLASS_gt_BOX_dash_SPEC'
+// 1737:      UNK_0xf2cf  codep:0x224c parp:0xf2cf size:0x000e C-string:'UNK_0xf2cf'
+// 1738:        BOX>TOCS  codep:0x224c parp:0xf2ea size:0x000e C-string:'BOX_gt_TOCS'
+// 1739:            >BOX  codep:0x224c parp:0xf301 size:0x0080 C-string:'_gt_BOX'
+// 1740:        ?ELEMENT  codep:0x224c parp:0xf38e size:0x000a C-string:'_ask_ELEMENT'
+// 1741:          (BOX>)  codep:0x224c parp:0xf3a3 size:0x0038 C-string:'_ro_BOX_gt__rc_'
+// 1742:            BOX>  codep:0x224c parp:0xf3e4 size:0x0000 C-string:'BOX_gt_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -57,6 +59,7 @@ const unsigned short int cc_UNK_0xedee = 0x000a; // UNK_0xedee
 const unsigned short int cc_UNK_0xedf2 = 0x000f; // UNK_0xedf2
 const unsigned short int cc_UNK_0xedf6 = 0x000e; // UNK_0xedf6
 const unsigned short int cc_UNK_0xedfa = 0x0011; // UNK_0xedfa
+const unsigned short int cc_UNK_0xedfe = 0x000b; // UNK_0xedfe
 const unsigned short int cc_UNK_0xee02 = 0x0026; // UNK_0xee02
 const unsigned short int cc_UNK_0xee06 = 0x0010; // UNK_0xee06
 
@@ -86,7 +89,12 @@ const unsigned short int cc_UNK_0xee06 = 0x0010; // UNK_0xee06
 // ================================================
 // 0xedf8: WORD 'UNK_0xedfa' codep=0x2214 parp=0xedfa
 // ================================================
-// 0xedfa: db 0x11 0x00 0x14 0x22 0x0b 0x00 '   "  '
+// 0xedfa: db 0x11 0x00 '  '
+
+// ================================================
+// 0xedfc: WORD 'UNK_0xedfe' codep=0x2214 parp=0xedfe
+// ================================================
+// 0xedfe: db 0x0b 0x00 '  '
 
 // ================================================
 // 0xee00: WORD 'UNK_0xee02' codep=0x2214 parp=0xee02
@@ -280,8 +288,8 @@ void UNK_0xef61() // UNK_0xef61
 
   label1:
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE-MEM");
-  Func8("PHR-CNT");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xee1a(); // UNK_0xee1a
   SWAP(); // SWAP
@@ -348,7 +356,7 @@ void UNK_0xefe9() // UNK_0xefe9
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
@@ -415,7 +423,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 void UNK_0xf074() // UNK_0xf074
 {
   UNK_0xee0a(); // UNK_0xee0a
-  Func8("INST-DATE");
+  Push(0x6402); // IFIELD(INST-DATE)
   Push(Read16(Pop())); // @
   UNK_0xee1a(); // UNK_0xee1a
   DATE_do__gt_ADR(); // DATE$>ADR
@@ -476,14 +484,31 @@ void UNK_0xf0c6() // UNK_0xf0c6
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
-  Func8("INST-VAL");
+  Push(0x6400); // IFIELD(INST-VAL)
   Push(Read16(Pop())); // @
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   UNK_0xef89(); // UNK_0xef89
 }
 
-// 0xf0dc: db 0x4c 0x22 0x9c 0xad 0x18 0xee 0x5d 0x17 0x10 0x00 0xea 0x6d 0x19 0xad 0xae 0x0b 0xa9 0x74 0xae 0x0b 0x87 0xef 0x90 0x16 'L"    ]    m     t      '
+
+// ================================================
+// 0xf0dc: WORD 'UNK_0xf0de' codep=0x224c parp=0xf0de
+// ================================================
+
+void UNK_0xf0de() // UNK_0xf0de
+{
+  LoadData("BD-NAME"); // from 'SPECIMEN    '
+  UNK_0xee1a(); // UNK_0xee1a
+  Push(0x0010);
+  CMOVE(); // CMOVE
+  Push(0x6400); // IFIELD(INST-VAL)
+  Push(Read16(Pop())); // @
+  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(Read16(Pop())); // @
+  UNK_0xef89(); // UNK_0xef89
+}
+
 
 // ================================================
 // 0xf0f4: WORD 'IDENT-ITEM$' codep=0x4a4f parp=0xf104
@@ -509,29 +534,34 @@ void ITEM_gt_PAD() // ITEM>PAD
   PAD(); // PAD
   C_ex_(); // C!
   _at_INST_dash_CLASS(); // @INST-CLASS
+  Pop();
   switch(Pop()) // IDENT-ITEM$
   {
   case 11:
-    UNRAVEL(); // UNRAVEL
-    break;
-  case 26:
     UNK_0xef51(); // UNK_0xef51
     break;
-  case 27:
+  case 26:
     UNK_0xefe9(); // UNK_0xefe9
     break;
-  case 28:
+  case 27:
     UNK_0xf074(); // UNK_0xf074
     break;
-  case 40:
+  case 28:
     UNK_0xf096(); // UNK_0xf096
     break;
-  case 68:
+  case 40:
     UNK_0xf0c6(); // UNK_0xf0c6
     break;
-  case 43:
+  case 68:
     UNK_0xef61(); // UNK_0xef61
     break;
+  case 43:
+    UNK_0xf0de(); // UNK_0xf0de
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
   }
 }
 
@@ -565,12 +595,12 @@ void UNK_0xf157() // UNK_0xf157
   Push(0); // 0
   Push(1); // 1
   _star_CREATE(); // *CREATE
-  Func8("TEXT-TE");
+  Push(0x6400); // IFIELD(TEXT-TE)
   Push(0x0026);
   CMOVE(); // CMOVE
-  Func8("TEXT-IN");
+  Push(0x63fd); // IFIELD(TEXT-IN)
   _1_dot_5_ex_(); // 1.5!
-  Func8("TEXT-CO");
+  Push(0x63fa); // IFIELD(TEXT-CO)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
   Push(1); // 1
@@ -708,29 +738,34 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 
 void UNK_0xf2cf() // UNK_0xf2cf
 {
+  Pop();
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNRAVEL(); // UNRAVEL
-    break;
-  case 28:
     UNK_0xedee(); // UNK_0xedee
     break;
-  case 40:
+  case 28:
     UNK_0xedf2(); // UNK_0xedf2
     break;
-  case 41:
+  case 40:
     UNK_0xedf6(); // UNK_0xedf6
     break;
-  case 43:
+  case 41:
     UNK_0xee06(); // UNK_0xee06
     break;
-  case 27:
+  case 43:
     UNK_0xee02(); // UNK_0xee02
     break;
-  case 68:
+  case 27:
     UNK_0xedfa(); // UNK_0xedfa
     break;
+  case 68:
+    UNK_0xedfe(); // UNK_0xedfe
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
   }
   Push(0x000b);
   SWAP(); // SWAP
@@ -745,29 +780,34 @@ void UNK_0xf2cf() // UNK_0xf2cf
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
+  Pop();
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNRAVEL(); // UNRAVEL
-    break;
-  case 28:
     UNK_0xedee(); // UNK_0xedee
     break;
-  case 40:
+  case 28:
     UNK_0xedf2(); // UNK_0xedf2
     break;
-  case 41:
+  case 40:
     UNK_0xedf6(); // UNK_0xedf6
     break;
-  case 43:
+  case 41:
     UNK_0xee06(); // UNK_0xee06
     break;
-  case 27:
+  case 43:
     UNK_0xee02(); // UNK_0xee02
     break;
-  case 68:
+  case 27:
     UNK_0xedfa(); // UNK_0xedfa
     break;
+  case 68:
+    UNK_0xedfe(); // UNK_0xedfe
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
   }
   Push(0x000b);
   SWAP(); // SWAP
@@ -790,29 +830,34 @@ void _gt_BOX() // >BOX
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(h); // I
+  Pop();
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNRAVEL(); // UNRAVEL
-    break;
-  case 28:
     UNK_0xedee(); // UNK_0xedee
     break;
-  case 40:
+  case 28:
     UNK_0xedf2(); // UNK_0xedf2
     break;
-  case 41:
+  case 40:
     UNK_0xedf6(); // UNK_0xedf6
     break;
-  case 43:
+  case 41:
     UNK_0xee06(); // UNK_0xee06
     break;
-  case 27:
+  case 43:
     UNK_0xee02(); // UNK_0xee02
     break;
-  case 68:
+  case 27:
     UNK_0xedfa(); // UNK_0xedfa
     break;
+  case 68:
+    UNK_0xedfe(); // UNK_0xedfe
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
   }
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -847,12 +892,12 @@ void _gt_BOX() // >BOX
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   CI(); // CI
   ICLOSE(); // ICLOSE
   _gt_INACTIVE(); // >INACTIVE
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   goto label5;
@@ -894,7 +939,7 @@ void _ask_ELEMENT() // ?ELEMENT
 void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -904,7 +949,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _plus__ex_(); // +!
   Push(0x001a);
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -912,7 +957,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   _gt_C_plus_S(); // >C+S
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   _ex_(); // !
   C_gt_(); // C>
   return;

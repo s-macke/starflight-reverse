@@ -164,13 +164,13 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0x3f3b("RAISE SHIELD");
   LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
@@ -205,11 +205,11 @@ void UNK_0xf359() // UNK_0xf359
   UNK_0x3f3b("DROP SHIELD ");
   LoadData("UNK_0xf21a"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
 
@@ -235,13 +235,13 @@ void _gt_DISARM() // >DISARM
   UNK_0x3f3b("ARM WEAPON");
   LoadData("UNK_0xf222"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   C_ex_(); // C!
   UNK_0xf272(); // UNK_0xf272
 
@@ -256,10 +256,10 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3fb() // UNK_0xf3fb
 {
-  Func8("UNK_0xf210");
+  Push(0x640c); // IFIELD(UNK_0xf210)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xf20b");
+  Push(0x640a); // IFIELD(UNK_0xf20b)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   _2DUP(); // 2DUP
@@ -302,11 +302,11 @@ void UNK_0xf3fb() // UNK_0xf3fb
   label7:
   Push(Pop() + Pop()); // +
   if (Pop() == 0) goto label8;
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   _ex_(); // !
   UNK_0xf234(); // UNK_0xf234
 
@@ -335,7 +335,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -362,7 +362,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf215");
+  Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND

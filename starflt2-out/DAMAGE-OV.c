@@ -106,25 +106,27 @@
 // 1963:      UNK_0xf19b  codep:0x224c parp:0xf19b size:0x000c C-string:'UNK_0xf19b'
 // 1964:      UNK_0xf1a9  codep:0x224c parp:0xf1a9 size:0x000a C-string:'UNK_0xf1a9'
 // 1965:      UNK_0xf1b5  codep:0x224c parp:0xf1b5 size:0x0046 C-string:'UNK_0xf1b5'
-// 1966:      UNK_0xf1fd  codep:0x224c parp:0xf1fd size:0x0032 C-string:'UNK_0xf1fd'
-// 1967:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x0015 C-string:'UNK_0xf231'
-// 1968:          #>DISP  codep:0x4b3b parp:0xf251 size:0x000c C-string:'_n__gt_DISP'
-// 1969:      UNK_0xf25f  codep:0x224c parp:0xf25f size:0x0022 C-string:'UNK_0xf25f'
-// 1970:      UNK_0xf283  codep:0x224c parp:0xf283 size:0x0064 C-string:'UNK_0xf283'
-// 1971:            CDAM  codep:0x224c parp:0xf2f0 size:0x0024 C-string:'CDAM'
-// 1972:      UNK_0xf316  codep:0x224c parp:0xf316 size:0x0018 C-string:'UNK_0xf316'
-// 1973:      UNK_0xf330  codep:0x224c parp:0xf330 size:0x0006 C-string:'UNK_0xf330'
-// 1974:      UNK_0xf338  codep:0x224c parp:0xf338 size:0x0022 C-string:'UNK_0xf338'
-// 1975:      UNK_0xf35c  codep:0x224c parp:0xf35c size:0x001f C-string:'UNK_0xf35c'
-// 1976:      UNK_0xf37d  codep:0x224c parp:0xf37d size:0x0016 C-string:'UNK_0xf37d'
-// 1977:             .EX  codep:0x4b3b parp:0xf39b size:0x000c C-string:'_dot_EX'
-// 1978:      UNK_0xf3a9  codep:0x224c parp:0xf3a9 size:0x008c C-string:'UNK_0xf3a9'
-// 1979:      UNK_0xf437  codep:0x224c parp:0xf437 size:0x0070 C-string:'UNK_0xf437'
-// 1980:      UNK_0xf4a9  codep:0x224c parp:0xf4a9 size:0x0040 C-string:'UNK_0xf4a9'
-// 1981:      UNK_0xf4eb  codep:0x224c parp:0xf4eb size:0x000e C-string:'UNK_0xf4eb'
-// 1982:      UNK_0xf4fb  codep:0x224c parp:0xf4fb size:0x000e C-string:'UNK_0xf4fb'
-// 1983:         DO-DAMA  codep:0x224c parp:0xf515 size:0x000e C-string:'DO_dash_DAMA'
-// 1984:         DOBLAST  codep:0x224c parp:0xf52f size:0x0000 C-string:'DOBLAST'
+// 1966:      UNK_0xf1fd  codep:0x224c parp:0xf1fd size:0x0012 C-string:'UNK_0xf1fd'
+// 1967:      UNK_0xf211  codep:0x224c parp:0xf211 size:0x001e C-string:'UNK_0xf211'
+// 1968:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x0015 C-string:'UNK_0xf231'
+// 1969:          #>DISP  codep:0x4b3b parp:0xf251 size:0x000c C-string:'_n__gt_DISP'
+// 1970:      UNK_0xf25f  codep:0x224c parp:0xf25f size:0x0022 C-string:'UNK_0xf25f'
+// 1971:      UNK_0xf283  codep:0x224c parp:0xf283 size:0x0064 C-string:'UNK_0xf283'
+// 1972:            CDAM  codep:0x224c parp:0xf2f0 size:0x0024 C-string:'CDAM'
+// 1973:      UNK_0xf316  codep:0x224c parp:0xf316 size:0x0018 C-string:'UNK_0xf316'
+// 1974:      UNK_0xf330  codep:0x224c parp:0xf330 size:0x0006 C-string:'UNK_0xf330'
+// 1975:      UNK_0xf338  codep:0x224c parp:0xf338 size:0x0006 C-string:'UNK_0xf338'
+// 1976:      UNK_0xf340  codep:0x224c parp:0xf340 size:0x001a C-string:'UNK_0xf340'
+// 1977:      UNK_0xf35c  codep:0x224c parp:0xf35c size:0x001f C-string:'UNK_0xf35c'
+// 1978:      UNK_0xf37d  codep:0x224c parp:0xf37d size:0x0016 C-string:'UNK_0xf37d'
+// 1979:             .EX  codep:0x4b3b parp:0xf39b size:0x000c C-string:'_dot_EX'
+// 1980:      UNK_0xf3a9  codep:0x224c parp:0xf3a9 size:0x008c C-string:'UNK_0xf3a9'
+// 1981:      UNK_0xf437  codep:0x224c parp:0xf437 size:0x0070 C-string:'UNK_0xf437'
+// 1982:      UNK_0xf4a9  codep:0x224c parp:0xf4a9 size:0x0040 C-string:'UNK_0xf4a9'
+// 1983:      UNK_0xf4eb  codep:0x224c parp:0xf4eb size:0x000e C-string:'UNK_0xf4eb'
+// 1984:      UNK_0xf4fb  codep:0x224c parp:0xf4fb size:0x000e C-string:'UNK_0xf4fb'
+// 1985:         DO-DAMA  codep:0x224c parp:0xf515 size:0x000e C-string:'DO_dash_DAMA'
+// 1986:         DOBLAST  codep:0x224c parp:0xf52f size:0x0000 C-string:'DOBLAST'
 
 // =================================
 // =========== VARIABLES ===========
@@ -236,9 +238,9 @@ void UNK_0xe73a() // UNK_0xe73a
 
 void UNK_0xe74e() // UNK_0xe74e
 {
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -442,9 +444,9 @@ void UNK_0xe8a4() // UNK_0xe8a4
   _dot_TTY(); // .TTY
   OVER(); // OVER
   _dot_(); // .
-  Func8("UNK_0xe7a0");
+  Push(0x65f5); // IFIELD(UNK_0xe7a0)
   _ask_(); // ?
-  Func8("UNK_0xe79b");
+  Push(0x65f3); // IFIELD(UNK_0xe79b)
   _ask_(); // ?
   Push(pp_A_dash_STREN); // A-STREN
   _ask_(); // ?
@@ -498,7 +500,7 @@ void UNK_0xe910() // UNK_0xe910
   Push(pp__n_VESS); // #VESS
   _plus__ex_(); // +!
   Push(1); // 1
-  Func8("UNK_0xe817");
+  Push(0x65f5); // IFIELD(UNK_0xe817)
   Push(Read16(sp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   ROT(); // ROT
@@ -515,7 +517,7 @@ void UNK_0xe910() // UNK_0xe910
 
 void UNK_0xe930() // UNK_0xe930
 {
-  Func8("UNK_0xe7fe");
+  Push(0x6611); // IFIELD(UNK_0xe7fe)
   Push(Read16(Pop())); // @
   UNK_0xe726(); // UNK_0xe726
   Push(pp__ask_SUP); // ?SUP
@@ -524,7 +526,7 @@ void UNK_0xe930() // UNK_0xe930
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Func8("UNK_0xe7e5");
+  Push(0x65fb); // IFIELD(UNK_0xe7e5)
   UNK_0xe85a(); // UNK_0xe85a
   Push(cc__7); // 7
   _eq_(); // =
@@ -577,7 +579,7 @@ void UNK_0xe96e() // UNK_0xe96e
 
 void UNK_0xe98a() // UNK_0xe98a
 {
-  Func8("UNK_0xe808");
+  Push(0x6613); // IFIELD(UNK_0xe808)
   Push(Read16(Pop())); // @
   UNK_0xe726(); // UNK_0xe726
   UNK_0xe930(); // UNK_0xe930
@@ -791,7 +793,7 @@ void UNK_0xead4() // UNK_0xead4
 {
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xe7af");
+  Push(0x65ee); // IFIELD(UNK_0xe7af)
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }
@@ -874,7 +876,7 @@ void UNK_0xeb55() // UNK_0xeb55
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(0); // 0
-  Func8("UNK_0xe81c");
+  Push(0x65fc); // IFIELD(UNK_0xe81c)
   C_ex_(); // C!
 
   label1:
@@ -981,32 +983,37 @@ void UNK_0xec56() // UNK_0xec56
   do // (DO)
   {
   Push(i); // I
+  Pop();
   switch(Pop()) // #>?FIEL
   {
   case 1:
-    if (Pop() == 0) Push(1); else Push(0); // 0=
-    break;
-  case 2:
     UNK_0xeba8(); // UNK_0xeba8
     break;
-  case 3:
+  case 2:
     ENGINE_dash_(); // ENGINE-
     break;
-  case 4:
+  case 3:
     SENSOR_dash_(); // SENSOR-
     break;
-  case 5:
+  case 4:
     COMM_dash_CH(); // COMM-CH
     break;
-  case 6:
+  case 5:
     MISS_dash_CH(); // MISS-CH
     break;
-  case 7:
+  case 6:
     LASER_dash_C(); // LASER-C
     break;
-  case 8:
+  case 7:
     SHIELD_dash_(); // SHIELD-
     break;
+  case 8:
+    UNK_0xec1a(); // UNK_0xec1a
+    break;
+  default:
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    break;
+
   }
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
@@ -1070,7 +1077,7 @@ void UNK_0xec90() // UNK_0xec90
 
 void UNK_0xecc8() // UNK_0xecc8
 {
-  Func8("UNK_0xe821");
+  Push(0x6600); // IFIELD(UNK_0xe821)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   _gt_R(); // >R
@@ -1155,7 +1162,7 @@ void UNK_0xed68() // UNK_0xed68
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xe82e");
+  Push(0x65ec); // IFIELD(UNK_0xe82e)
   COUNT(); // COUNT
   _dash_TRAILING(); // -TRAILING
   _dot_TTY(); // .TTY
@@ -1194,7 +1201,7 @@ void UNK_0xedc4() // UNK_0xedc4
   Push(0x002b);
   _ex_ID(); // !ID
   Push(cc__8); // 8
-  Func8("UNK_0xe7a5");
+  Push(0x65ec); // IFIELD(UNK_0xe7a5)
   C_ex_(); // C!
   CTINIT(); // CTINIT
   _gt_DISPLA(); // >DISPLA
@@ -1202,7 +1209,7 @@ void UNK_0xedc4() // UNK_0xedc4
   UNK_0x3f09("ALIEN SHIP DESTROYED");
   _dot_TTY(); // .TTY
   Push(0); // 0
-  Func8("UNK_0xe796");
+  Push(0x65ed); // IFIELD(UNK_0xe796)
   C_ex_(); // C!
   UNK_0xea4a(); // UNK_0xea4a
   UNK_0xeb55(); // UNK_0xeb55
@@ -1213,7 +1220,7 @@ void UNK_0xedc4() // UNK_0xedc4
   Push(0); // 0
   _ex_INST_dash_S(); // !INST-S
   Push(pp_UNK_0xedbb); // UNK_0xedbb
-  Func8("UNK_0xe7aa");
+  Push(0x65f3); // IFIELD(UNK_0xe7aa)
   Push(cc__7); // 7
   CMOVE(); // CMOVE
   UNK_0xe910(); // UNK_0xe910
@@ -1284,7 +1291,7 @@ void UNK_0xee11() // UNK_0xee11
 
 void UNK_0xee67() // UNK_0xee67
 {
-  Func8("UNK_0xe7a0");
+  Push(0x65f5); // IFIELD(UNK_0xe7a0)
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(cc__ask_A_dash_SHIE); // ?A-SHIE
@@ -1303,7 +1310,7 @@ void UNK_0xee67() // UNK_0xee67
   goto label2;
 
   label1:
-  Func8("UNK_0xe7a0");
+  Push(0x65f5); // IFIELD(UNK_0xe7a0)
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dash_(); // -
@@ -1329,7 +1336,7 @@ void UNK_0xee67() // UNK_0xee67
   MODULE(); // MODULE
 
   label4:
-  Func8("UNK_0xe79b");
+  Push(0x65f3); // IFIELD(UNK_0xe79b)
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1525,13 +1532,13 @@ void UNK_0xeff1() // UNK_0xeff1
 
 void UNK_0xefff() // UNK_0xefff
 {
-  Func8("UNK_0xe7fe");
+  Push(0x6611); // IFIELD(UNK_0xe7fe)
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Func8("UNK_0xe7fe");
+  Push(0x6611); // IFIELD(UNK_0xe7fe)
   _ex_(); // !
 }
 
@@ -1542,15 +1549,15 @@ void UNK_0xefff() // UNK_0xefff
 
 void UNK_0xf013() // UNK_0xf013
 {
-  Func8("UNK_0xe808");
+  Push(0x6613); // IFIELD(UNK_0xe808)
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Func8("UNK_0xe808");
+  Push(0x6613); // IFIELD(UNK_0xe808)
   _ex_(); // !
-  Func8("UNK_0xe808");
+  Push(0x6613); // IFIELD(UNK_0xe808)
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -1705,7 +1712,7 @@ void UNK_0xf125() // UNK_0xf125
   return;
 
   label1:
-  Func8("UNK_0xe808");
+  Push(0x6613); // IFIELD(UNK_0xe808)
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf013(); // UNK_0xf013
@@ -1713,32 +1720,37 @@ void UNK_0xf125() // UNK_0xf125
 
   label2:
   UNK_0xec90(); // UNK_0xec90
+  Pop();
   switch(Pop()) // #>DAMAG
   {
   case 1:
-    Pop(); // DROP
-    break;
-  case 2:
     UNK_0xf04f(); // UNK_0xf04f
     break;
-  case 3:
+  case 2:
     UNK_0xf059(); // UNK_0xf059
     break;
-  case 4:
+  case 3:
     UNK_0xf095(); // UNK_0xf095
     break;
-  case 5:
+  case 4:
     UNK_0xf09f(); // UNK_0xf09f
     break;
-  case 6:
+  case 5:
     UNK_0xf0a9(); // UNK_0xf0a9
     break;
-  case 7:
+  case 6:
     UNK_0xf0cb(); // UNK_0xf0cb
     break;
-  case 8:
+  case 7:
     UNK_0xf0b3(); // UNK_0xf0b3
     break;
+  case 8:
+    UNK_0xee11(); // UNK_0xee11
+    break;
+  default:
+    Pop(); // DROP
+    break;
+
   }
 }
 
@@ -1875,7 +1887,23 @@ void UNK_0xf1fd() // UNK_0xf1fd
   _dot_TTY(); // .TTY
 }
 
-// 0xf20f: db 0x4c 0x22 0x38 0x63 0x38 0x0c 0xfa 0x3f 0x07 0x13 0xfa 0x15 0x12 0x00 0x07 0x3f 0x0b 0x45 0x4e 0x45 0x52 0x47 0x59 0x20 0x4c 0x4f 0x53 0x53 0xf1 0x9f 0x90 0x16 'L"8c8  ?       ? ENERGY LOSS    '
+
+// ================================================
+// 0xf20f: WORD 'UNK_0xf211' codep=0x224c parp=0xf211
+// ================================================
+
+void UNK_0xf211() // UNK_0xf211
+{
+  Push(pp__10_star_END); // 10*END
+  _2_at_(); // 2@
+  D0_eq_(); // D0=
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  if (Pop() == 0) return;
+
+  UNK_0x3f09("ENERGY LOSS");
+  _dot_TTY(); // .TTY
+}
+
 
 // ================================================
 // 0xf22f: WORD 'UNK_0xf231' codep=0x224c parp=0xf231
@@ -1905,14 +1933,19 @@ void UNK_0xf25f() // UNK_0xf25f
   _gt_DISPLA(); // >DISPLA
   UNK_0xe84c(); // UNK_0xe84c
   Push(Read16(sp)); // DUP
+  Pop();
   switch(Pop()) // #>DISP
   {
   case 6:
-    UNK_0xf231(); // UNK_0xf231
-    break;
-  case 7:
     UNK_0xf1fd(); // UNK_0xf1fd
     break;
+  case 7:
+    UNK_0xf211(); // UNK_0xf211
+    break;
+  default:
+    UNK_0xf231(); // UNK_0xf231
+    break;
+
   }
   Push(Read16(sp)); // DUP
   Push(cc__6); // 6
@@ -2060,7 +2093,19 @@ void UNK_0xf338() // UNK_0xf338
   _dot_SORD(); // .SORD
 }
 
-// 0xf33e: db 0x4c 0x22 0x48 0x50 0x2e 0xf3 0xdc 0x1b 0x0f 0x46 0x55 0x45 0x4c 0x20 0x53 0x55 0x50 0x50 0x4c 0x59 0x20 0x4c 0x4f 0x57 0x36 0xf3 0x90 0x16 'L"HP.    FUEL SUPPLY LOW6   '
+
+// ================================================
+// 0xf33e: WORD 'UNK_0xf340' codep=0x224c parp=0xf340
+// ================================================
+
+void UNK_0xf340() // UNK_0xf340
+{
+  SetColor("YELLOW");
+  UNK_0xf330(); // UNK_0xf330
+  PRINT("FUEL SUPPLY LOW", 15); // (.")
+  UNK_0xf338(); // UNK_0xf338
+}
+
 
 // ================================================
 // 0xf35a: WORD 'UNK_0xf35c' codep=0x224c parp=0xf35c
@@ -2137,14 +2182,19 @@ void UNK_0xf3a9() // UNK_0xf3a9
   UNK_0xf316(); // UNK_0xf316
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
+  Pop();
   switch(Pop()) // .EX
   {
   case 2:
-    UNK_0xf37d(); // UNK_0xf37d
-    break;
-  case 3:
     UNK_0xf35c(); // UNK_0xf35c
     break;
+  case 3:
+    UNK_0xf340(); // UNK_0xf340
+    break;
+  default:
+    UNK_0xf37d(); // UNK_0xf37d
+    break;
+
   }
   return;
 
@@ -2164,14 +2214,19 @@ void UNK_0xf3a9() // UNK_0xf3a9
   UNK_0xf316(); // UNK_0xf316
   if (Pop() == 0) goto label2;
   Push(2); // 2
+  Pop();
   switch(Pop()) // .EX
   {
   case 2:
-    UNK_0xf37d(); // UNK_0xf37d
-    break;
-  case 3:
     UNK_0xf35c(); // UNK_0xf35c
     break;
+  case 3:
+    UNK_0xf340(); // UNK_0xf340
+    break;
+  default:
+    UNK_0xf37d(); // UNK_0xf37d
+    break;
+
   }
   return;
 
@@ -2183,14 +2238,19 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(pp__ask_AUTO); // ?AUTO
   ON(); // ON
   Push(1); // 1
+  Pop();
   switch(Pop()) // .EX
   {
   case 2:
-    UNK_0xf37d(); // UNK_0xf37d
-    break;
-  case 3:
     UNK_0xf35c(); // UNK_0xf35c
     break;
+  case 3:
+    UNK_0xf340(); // UNK_0xf340
+    break;
+  default:
+    UNK_0xf37d(); // UNK_0xf37d
+    break;
+
   }
 }
 
@@ -2218,7 +2278,7 @@ void UNK_0xf437() // UNK_0xf437
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0x000a);
-  Func8("UNK_0xe812");
+  Push(0x6624); // IFIELD(UNK_0xe812)
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   Push2Words("*STARSH");
@@ -2233,7 +2293,7 @@ void UNK_0xf437() // UNK_0xf437
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label3;
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   R_at_(); // R@
   Push(0x000a);
@@ -2241,7 +2301,7 @@ void UNK_0xf437() // UNK_0xf437
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _ex_(); // !
 
   label3:

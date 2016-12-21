@@ -160,10 +160,10 @@ void UNK_0xe344() // UNK_0xe344
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Func8("PHR-CNT");
+  Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Func8("PHRASE-MEM");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);

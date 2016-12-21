@@ -44,35 +44,37 @@
 // 1735:      UNK_0xe8d4  codep:0x224c parp:0xe8d4 size:0x0028 C-string:'UNK_0xe8d4'
 // 1736:      UNK_0xe8fe  codep:0x1d29 parp:0xe8fe size:0x0002 C-string:'UNK_0xe8fe'
 // 1737:      UNK_0xe902  codep:0x224c parp:0xe902 size:0x000e C-string:'UNK_0xe902'
-// 1738:      UNK_0xe912  codep:0x224c parp:0xe912 size:0x00e8 C-string:'UNK_0xe912'
-// 1739:      UNK_0xe9fc  codep:0x224c parp:0xe9fc size:0x0010 C-string:'UNK_0xe9fc'
-// 1740:       (NOTICES)  codep:0x4a4f parp:0xea1a size:0x000c C-string:'_ro_NOTICES_rc_'
-// 1741:      UNK_0xea28  codep:0x224c parp:0xea28 size:0x00df C-string:'UNK_0xea28'
-// 1742:      UNK_0xeb09  codep:0x224c parp:0xeb09 size:0x00b6 C-string:'UNK_0xeb09'
-// 1743:      UNK_0xebc1  codep:0x224c parp:0xebc1 size:0x006d C-string:'UNK_0xebc1'
-// 1744:      UNK_0xec30  codep:0x224c parp:0xec30 size:0x002e C-string:'UNK_0xec30'
-// 1745:      UNK_0xec60  codep:0x224c parp:0xec60 size:0x0012 C-string:'UNK_0xec60'
-// 1746:      UNK_0xec74  codep:0x224c parp:0xec74 size:0x0012 C-string:'UNK_0xec74'
-// 1747:      UNK_0xec88  codep:0x224c parp:0xec88 size:0x0016 C-string:'UNK_0xec88'
-// 1748:      UNK_0xeca0  codep:0x224c parp:0xeca0 size:0x0014 C-string:'UNK_0xeca0'
-// 1749:      UNK_0xecb6  codep:0x224c parp:0xecb6 size:0x0029 C-string:'UNK_0xecb6'
-// 1750:      (BAD-PLAN)  codep:0x4a4f parp:0xecee size:0x001c C-string:'_ro_BAD_dash_PLAN_rc_'
-// 1751:      UNK_0xed0c  codep:0x224c parp:0xed0c size:0x010b C-string:'UNK_0xed0c'
-// 1752:      UNK_0xee19  codep:0x224c parp:0xee19 size:0x003a C-string:'UNK_0xee19'
-// 1753:      UNK_0xee55  codep:0x224c parp:0xee55 size:0x0035 C-string:'UNK_0xee55'
-// 1754:      UNK_0xee8c  codep:0x224c parp:0xee8c size:0x0055 C-string:'UNK_0xee8c'
-// 1755:      UNK_0xeee3  codep:0x224c parp:0xeee3 size:0x0052 C-string:'UNK_0xeee3'
-// 1756:      UNK_0xef37  codep:0x224c parp:0xef37 size:0x0083 C-string:'UNK_0xef37'
-// 1757:      UNK_0xefbc  codep:0x224c parp:0xefbc size:0x003a C-string:'UNK_0xefbc'
-// 1758:      UNK_0xeff8  codep:0x224c parp:0xeff8 size:0x0031 C-string:'UNK_0xeff8'
-// 1759:      UNK_0xf02b  codep:0x224c parp:0xf02b size:0x0018 C-string:'UNK_0xf02b'
-// 1760:      UNK_0xf045  codep:0x224c parp:0xf045 size:0x00e5 C-string:'UNK_0xf045'
-// 1761:      UNK_0xf12c  codep:0x224c parp:0xf12c size:0x0146 C-string:'UNK_0xf12c'
-// 1762:      UNK_0xf274  codep:0x224c parp:0xf274 size:0x01da C-string:'UNK_0xf274'
-// 1763:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x0028 C-string:'UNK_0xf450'
-// 1764:      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x005a C-string:'UNK_0xf47a'
-// 1765:         OP-CASE  codep:0x4a4f parp:0xf4e0 size:0x0010 C-string:'OP_dash_CASE'
-// 1766:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0000 C-string:'_ro_U_dash_OP_rc_'
+// 1738:      UNK_0xe912  codep:0x224c parp:0xe912 size:0x00ce C-string:'UNK_0xe912'
+// 1739:      UNK_0xe9e2  codep:0x224c parp:0xe9e2 size:0x0018 C-string:'UNK_0xe9e2'
+// 1740:      UNK_0xe9fc  codep:0x224c parp:0xe9fc size:0x0010 C-string:'UNK_0xe9fc'
+// 1741:       (NOTICES)  codep:0x4a4f parp:0xea1a size:0x000c C-string:'_ro_NOTICES_rc_'
+// 1742:      UNK_0xea28  codep:0x224c parp:0xea28 size:0x00df C-string:'UNK_0xea28'
+// 1743:      UNK_0xeb09  codep:0x224c parp:0xeb09 size:0x00b6 C-string:'UNK_0xeb09'
+// 1744:      UNK_0xebc1  codep:0x224c parp:0xebc1 size:0x006d C-string:'UNK_0xebc1'
+// 1745:      UNK_0xec30  codep:0x224c parp:0xec30 size:0x002e C-string:'UNK_0xec30'
+// 1746:      UNK_0xec60  codep:0x224c parp:0xec60 size:0x0012 C-string:'UNK_0xec60'
+// 1747:      UNK_0xec74  codep:0x224c parp:0xec74 size:0x0012 C-string:'UNK_0xec74'
+// 1748:      UNK_0xec88  codep:0x224c parp:0xec88 size:0x0016 C-string:'UNK_0xec88'
+// 1749:      UNK_0xeca0  codep:0x224c parp:0xeca0 size:0x0014 C-string:'UNK_0xeca0'
+// 1750:      UNK_0xecb6  codep:0x224c parp:0xecb6 size:0x0014 C-string:'UNK_0xecb6'
+// 1751:      UNK_0xeccc  codep:0x224c parp:0xeccc size:0x0013 C-string:'UNK_0xeccc'
+// 1752:      (BAD-PLAN)  codep:0x4a4f parp:0xecee size:0x001c C-string:'_ro_BAD_dash_PLAN_rc_'
+// 1753:      UNK_0xed0c  codep:0x224c parp:0xed0c size:0x010b C-string:'UNK_0xed0c'
+// 1754:      UNK_0xee19  codep:0x224c parp:0xee19 size:0x003a C-string:'UNK_0xee19'
+// 1755:      UNK_0xee55  codep:0x224c parp:0xee55 size:0x0035 C-string:'UNK_0xee55'
+// 1756:      UNK_0xee8c  codep:0x224c parp:0xee8c size:0x0055 C-string:'UNK_0xee8c'
+// 1757:      UNK_0xeee3  codep:0x224c parp:0xeee3 size:0x0052 C-string:'UNK_0xeee3'
+// 1758:      UNK_0xef37  codep:0x224c parp:0xef37 size:0x0083 C-string:'UNK_0xef37'
+// 1759:      UNK_0xefbc  codep:0x224c parp:0xefbc size:0x003a C-string:'UNK_0xefbc'
+// 1760:      UNK_0xeff8  codep:0x224c parp:0xeff8 size:0x0031 C-string:'UNK_0xeff8'
+// 1761:      UNK_0xf02b  codep:0x224c parp:0xf02b size:0x0018 C-string:'UNK_0xf02b'
+// 1762:      UNK_0xf045  codep:0x224c parp:0xf045 size:0x00e5 C-string:'UNK_0xf045'
+// 1763:      UNK_0xf12c  codep:0x224c parp:0xf12c size:0x0146 C-string:'UNK_0xf12c'
+// 1764:      UNK_0xf274  codep:0x224c parp:0xf274 size:0x01da C-string:'UNK_0xf274'
+// 1765:      UNK_0xf450  codep:0x224c parp:0xf450 size:0x0028 C-string:'UNK_0xf450'
+// 1766:      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x005a C-string:'UNK_0xf47a'
+// 1767:         OP-CASE  codep:0x4a4f parp:0xf4e0 size:0x0010 C-string:'OP_dash_CASE'
+// 1768:          (U-OP)  codep:0x224c parp:0xf4fb size:0x0000 C-string:'_ro_U_dash_OP_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -706,7 +708,7 @@ void UNK_0xe902() // UNK_0xe902
 {
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Func8("UNK_0xe452");
+  Push(0x63f9); // IFIELD(UNK_0xe452)
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -722,7 +724,7 @@ void UNK_0xe912() // UNK_0xe912
   UNK_0xe6d3(); // UNK_0xe6d3
   UNK_0xe8b6(); // UNK_0xe8b6
   UNK_0xe866(); // UNK_0xe866
-  Func8("UNK_0xe452");
+  Push(0x63f9); // IFIELD(UNK_0xe452)
   Push(Read16(Pop())); // @
   PAD(); // PAD
   DATE_do__gt_ADR(); // DATE$>ADR
@@ -733,7 +735,7 @@ void UNK_0xe912() // UNK_0xe912
   IOPEN(); // IOPEN
 
   label3:
-  Func8("UNK_0xe457");
+  Push(0x63fa); // IFIELD(UNK_0xe457)
   Push(Pop()+1); // 1+
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
@@ -741,7 +743,7 @@ void UNK_0xe912() // UNK_0xe912
   COUNT(); // COUNT
   Push(1); // 1
   UNK_0xe8d4(); // UNK_0xe8d4
-  Func8("UNK_0xe457");
+  Push(0x63fa); // IFIELD(UNK_0xe457)
   Push(Read8(Pop())&0xFF); // C@
   _ask_LAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -781,7 +783,7 @@ void UNK_0xe912() // UNK_0xe912
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xe8fe); // UNK_0xe8fe
   Push(Read16(Pop())); // @
-  Func8("UNK_0xe452");
+  Push(0x63f9); // IFIELD(UNK_0xe452)
   Push(Read16(Pop())); // @
   MAX(); // MAX
   Push(pp_UNK_0xe8fe); // UNK_0xe8fe
@@ -804,7 +806,26 @@ void UNK_0xe912() // UNK_0xe912
   UNK_0xe665(); // UNK_0xe665
 }
 
-// 0xe9e0: db 0x4c 0x22 0x84 0x7a 0x00 0xe9 0x60 0x7a 0x07 0x13 0xf5 0x12 0xfa 0x15 0x08 0x00 0x10 0xe9 0x60 0x16 0x04 0x00 0x9c 0x7a 0x90 0x16 'L" z  `z          `    z  '
+
+// ================================================
+// 0xe9e0: WORD 'UNK_0xe9e2' codep=0x224c parp=0xe9e2
+// ================================================
+
+void UNK_0xe9e2() // UNK_0xe9e2
+{
+  INEXT(); // INEXT
+  UNK_0xe902(); // UNK_0xe902
+  _ask_FIRST(); // ?FIRST
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(Pop() & Pop()); // AND
+  if (Pop() == 0) goto label1;
+  UNK_0xe912(); // UNK_0xe912
+  return;
+
+  label1:
+  IPREV(); // IPREV
+}
+
 
 // ================================================
 // 0xe9fa: WORD 'UNK_0xe9fc' codep=0x224c parp=0xe9fc
@@ -844,7 +865,7 @@ void UNK_0xea28() // UNK_0xea28
   IOPEN(); // IOPEN
 
   label2:
-  Func8("UNK_0xe452");
+  Push(0x63f9); // IFIELD(UNK_0xe452)
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe8fe); // UNK_0xe8fe
   Push(Read16(Pop())); // @
@@ -895,14 +916,19 @@ void UNK_0xea28() // UNK_0xea28
   label8:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
+  Pop();
   switch(Pop()) // (NOTICES)
   {
   case 1:
-    NOP(); // NOP
-    break;
-  case 65535:
     UNK_0xe9fc(); // UNK_0xe9fc
     break;
+  case 65535:
+    UNK_0xe9e2(); // UNK_0xe9e2
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label7;
@@ -932,13 +958,13 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x00ac);
   POS_dot_(); // POS.
   PRINT("RECOMMENDATION: ", 16); // (.")
-  Func8("UNK_0xe466");
+  Push(0x6400); // IFIELD(UNK_0xe466)
   _ask_(); // ?
   Push(cc__4); // 4
   Push(0x00a4);
   POS_dot_(); // POS.
   PRINT("DATE: ", 6); // (.")
-  Func8("UNK_0xe461");
+  Push(0x63fa); // IFIELD(UNK_0xe461)
   Push(Read16(Pop())); // @
   PAD(); // PAD
   DATE_do__gt_ADR(); // DATE$>ADR
@@ -949,14 +975,14 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x009c);
   POS_dot_(); // POS.
   PRINT("SYSTEM: ", 8); // (.")
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(cc__star_MAPSCALE); // *MAPSCALE
   _slash_(); // /
@@ -965,14 +991,14 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x0094);
   POS_dot_(); // POS.
   PRINT("ORBIT: ", 7); // (.")
-  Func8("UNK_0xe46b");
+  Push(0x6402); // IFIELD(UNK_0xe46b)
   Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
   Push(cc__4); // 4
   Push(0x008c);
   POS_dot_(); // POS.
   PRINT("NAME: ", 6); // (.")
-  Func8("UNK_0xe475");
+  Push(0x6404); // IFIELD(UNK_0xe475)
   Push(0x000f);
   Func14("TYPE"); // call of word 0x2690
   Push(cc__4); // 4
@@ -989,7 +1015,7 @@ void UNK_0xeb09() // UNK_0xeb09
 void UNK_0xebc1() // UNK_0xebc1
 {
   UNK_0xe78b(); // UNK_0xe78b
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   _gt_R(); // >R
@@ -1101,7 +1127,17 @@ void UNK_0xecb6() // UNK_0xecb6
   UNK_0x3f3b("LACK OF OXYGEN,");
 }
 
-// 0xecca: db 0x4c 0x22 0x39 0x3f 0x0e 0x4c 0x41 0x43 0x4b 0x20 0x4f 0x46 0x20 0x57 0x41 0x54 0x45 0x52 0x2c 0x90 0x16 'L"9? LACK OF WATER,  '
+
+// ================================================
+// 0xecca: WORD 'UNK_0xeccc' codep=0x224c parp=0xeccc
+// ================================================
+
+void UNK_0xeccc() // UNK_0xeccc
+{
+
+  UNK_0x3f3b("LACK OF WATER,");
+}
+
 
 // ================================================
 // 0xecdf: WORD '(BAD-PLAN)' codep=0x4a4f parp=0xecee
@@ -1133,35 +1169,40 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
+  Pop();
   switch(Pop()) // (BAD-PLAN)
   {
   case 1:
-    NOP(); // NOP
-    break;
-  case 2:
     UNK_0xec60(); // UNK_0xec60
     break;
-  case 3:
+  case 2:
     UNK_0xec74(); // UNK_0xec74
     break;
-  case 4:
+  case 3:
     UNK_0xec88(); // UNK_0xec88
     break;
-  case 5:
+  case 4:
     UNK_0xeca0(); // UNK_0xeca0
     break;
-  case 6:
+  case 5:
     UNK_0xecb6(); // UNK_0xecb6
     break;
+  case 6:
+    UNK_0xeccc(); // UNK_0xeccc
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
-  Func8("UNK_0xe470");
+  Push(0x6403); // IFIELD(UNK_0xe470)
   Push(Read8(Pop())&0xFF); // C@
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Func8("UNK_0xe470");
+  Push(0x6403); // IFIELD(UNK_0xe470)
   Push(Read8(Pop())&0xFF); // C@
   _plus_BIT(); // +BIT
   Push(1); // 1
@@ -1186,7 +1227,7 @@ void UNK_0xed0c() // UNK_0xed0c
 
   UNK_0x3f3b("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
-  Func8("UNK_0xe45c");
+  Push(0x63f9); // IFIELD(UNK_0xe45c)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(0x03e8);
@@ -1241,7 +1282,7 @@ void UNK_0xee8c() // UNK_0xee8c
 
   UNK_0x3f3b("YOU HAVE EARNED A BONUS OF");
   UNK_0xec30(); // UNK_0xec30
-  Func8("UNK_0xe45c");
+  Push(0x63f9); // IFIELD(UNK_0xe45c)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x03e8);
   U_star_(); // U*
@@ -1264,7 +1305,7 @@ void UNK_0xeee3() // UNK_0xeee3
   Push(0); // 0
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c
-  Func8("UNK_0xe45c");
+  Push(0x63f9); // IFIELD(UNK_0xe45c)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0028);
   _gt_(); // >
@@ -1302,7 +1343,7 @@ void UNK_0xeee3() // UNK_0xeee3
 
 void UNK_0xef37() // UNK_0xef37
 {
-  Func8("UNK_0xe470");
+  Push(0x6403); // IFIELD(UNK_0xe470)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1598,17 +1639,22 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // OP-CASE
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 1:
     UNK_0xea28(); // UNK_0xea28
     break;
-  case 2:
+  case 1:
     UNK_0xf47a(); // UNK_0xf47a
     break;
+  case 2:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
 
   label3:

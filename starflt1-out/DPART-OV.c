@@ -160,7 +160,7 @@ void UNK_0xf020() // UNK_0xf020
 
 void UNK_0xf026() // UNK_0xf026
 {
-  Func8("PHRASE$");
+  Push(0x63fa); // IFIELD(PHRASE$)
   Push(Pop()+1); // 1+
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
@@ -549,12 +549,12 @@ void UNK_0xf2b0() // UNK_0xf2b0
   _at__gt_C_plus_S(); // @>C+S
   _ask__dash_NULL(); // ?-NULL
   if (Pop() == 0) goto label1;
-  Func8("INST-X");
+  Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x05a0);
   _dash_(); // -
   ABS(); // ABS
-  Func8("INST-Y");
+  Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(0x02da);
   _dash_(); // -
@@ -585,16 +585,16 @@ void UNK_0xf2eb() // UNK_0xf2eb
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xf2e6");
+  Push(0x6400); // IFIELD(UNK_0xf2e6)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() ^ Pop()); // XOR
-  Func8("UNK_0xf2e6");
+  Push(0x6400); // IFIELD(UNK_0xf2e6)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -671,7 +671,7 @@ void UNK_0xf39d() // UNK_0xf39d
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(0); // 0
-  Func8("UNK_0xef6e");
+  Push(0x640a); // IFIELD(UNK_0xef6e)
   C_ex_(); // C!
 
   label2:

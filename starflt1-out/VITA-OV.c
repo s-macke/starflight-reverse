@@ -353,7 +353,7 @@ void UNK_0xea0a() // UNK_0xea0a
 void UNK_0xea78() // UNK_0xea78
 {
   Push(0); // 0
-  Func8("UNK_0xe87a");
+  Push(0x63fa); // IFIELD(UNK_0xe87a)
   _ex_(); // !
   LoadData("UNK_0xe82a"); // from 'REGIONS     '
   Push(cc__4); // 4
@@ -1193,7 +1193,7 @@ void UNK_0xf382() // UNK_0xf382
 
 void UNK_0xf3ea() // UNK_0xf3ea
 {
-  Func8("UNK_0xe87a");
+  Push(0x63fa); // IFIELD(UNK_0xe87a)
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;

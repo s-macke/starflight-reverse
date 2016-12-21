@@ -89,9 +89,9 @@ void UNK_0xeda6() // UNK_0xeda6
 
 void UNK_0xedae() // UNK_0xedae
 {
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -665,9 +665,9 @@ void UNK_0xf1c4() // UNK_0xf1c4
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xedd1");
+  Push(0x65f8); // IFIELD(UNK_0xedd1)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xedd6");
+  Push(0x65fc); // IFIELD(UNK_0xedd6)
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -788,14 +788,14 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xedba(); // UNK_0xedba
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(sp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -873,7 +873,7 @@ void _dot_ENERGY() // .ENERGY
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
@@ -950,7 +950,7 @@ void _dot_CARGO() // .CARGO
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xedc4");
+  Push(0x65f2); // IFIELD(UNK_0xedc4)
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;

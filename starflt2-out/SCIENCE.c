@@ -106,46 +106,47 @@
 // 1963:      UNK_0xed45  codep:0x224c parp:0xed45 size:0x0006 C-string:'UNK_0xed45'
 // 1964:      UNK_0xed4d  codep:0x224c parp:0xed4d size:0x001e C-string:'UNK_0xed4d'
 // 1965:      UNK_0xed6d  codep:0x224c parp:0xed6d size:0x000f C-string:'UNK_0xed6d'
-// 1966:      UNK_0xed7e  codep:0x224c parp:0xed7e size:0x001e C-string:'UNK_0xed7e'
-// 1967:      UNK_0xed9e  codep:0x224c parp:0xed9e size:0x000e C-string:'UNK_0xed9e'
-// 1968:      UNK_0xedae  codep:0x224c parp:0xedae size:0x008b C-string:'UNK_0xedae'
-// 1969:      UNK_0xee3b  codep:0x224c parp:0xee3b size:0x0052 C-string:'UNK_0xee3b'
-// 1970:      UNK_0xee8f  codep:0x224c parp:0xee8f size:0x008a C-string:'UNK_0xee8f'
-// 1971:      UNK_0xef1b  codep:0x224c parp:0xef1b size:0x0083 C-string:'UNK_0xef1b'
-// 1972:      UNK_0xefa0  codep:0x224c parp:0xefa0 size:0x0010 C-string:'UNK_0xefa0'
-// 1973:      UNK_0xefb2  codep:0x224c parp:0xefb2 size:0x00b8 C-string:'UNK_0xefb2'
-// 1974:      UNK_0xf06c  codep:0x224c parp:0xf06c size:0x0036 C-string:'UNK_0xf06c'
-// 1975:      UNK_0xf0a4  codep:0x224c parp:0xf0a4 size:0x0034 C-string:'UNK_0xf0a4'
-// 1976:      UNK_0xf0da  codep:0x224c parp:0xf0da size:0x000a C-string:'UNK_0xf0da'
-// 1977:      UNK_0xf0e6  codep:0x224c parp:0xf0e6 size:0x0046 C-string:'UNK_0xf0e6'
-// 1978:       .READINGS  codep:0x4b3b parp:0xf13a size:0x0010 C-string:'_dot_READINGS'
-// 1979:      (/SENSORS)  codep:0x224c parp:0xf159 size:0x00b3 C-string:'_ro__slash_SENSORS_rc_'
-// 1980:      UNK_0xf20e  codep:0x224c parp:0xf20e size:0x003e C-string:'UNK_0xf20e'
-// 1981:      UNK_0xf24e  codep:0x224c parp:0xf24e size:0x0010 C-string:'UNK_0xf24e'
-// 1982:      UNK_0xf260  codep:0x224c parp:0xf260 size:0x0006 C-string:'UNK_0xf260'
-// 1983:      UNK_0xf268  codep:0x224c parp:0xf268 size:0x0036 C-string:'UNK_0xf268'
-// 1984:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x0012 C-string:'UNK_0xf2a0'
-// 1985:      UNK_0xf2b4  codep:0x224c parp:0xf2b4 size:0x0020 C-string:'UNK_0xf2b4'
-// 1986:      UNK_0xf2d6  codep:0x224c parp:0xf2d6 size:0x0052 C-string:'UNK_0xf2d6'
-// 1987:      UNK_0xf32a  codep:0x224c parp:0xf32a size:0x0006 C-string:'UNK_0xf32a'
-// 1988:          CTXT>I  codep:0x4b3b parp:0xf33b size:0x000c C-string:'CTXT_gt_I'
-// 1989:      UNK_0xf349  codep:0x224c parp:0xf349 size:0x0004 C-string:'UNK_0xf349'
-// 1990:      UNK_0xf34f  codep:0x224c parp:0xf34f size:0x0006 C-string:'UNK_0xf34f'
-// 1991:      UNK_0xf357  codep:0x224c parp:0xf357 size:0x0008 C-string:'UNK_0xf357'
-// 1992:      UNK_0xf361  codep:0x224c parp:0xf361 size:0x0008 C-string:'UNK_0xf361'
-// 1993:      UNK_0xf36b  codep:0x224c parp:0xf36b size:0x0010 C-string:'UNK_0xf36b'
-// 1994:      UNK_0xf37d  codep:0x224c parp:0xf37d size:0x001e C-string:'UNK_0xf37d'
-// 1995:      UNK_0xf39d  codep:0x224c parp:0xf39d size:0x0022 C-string:'UNK_0xf39d'
-// 1996:      UNK_0xf3c1  codep:0x224c parp:0xf3c1 size:0x0032 C-string:'UNK_0xf3c1'
-// 1997:       'DO-CLOUD  codep:0x1d29 parp:0xf401 size:0x0002 C-string:'_i_DO_dash_CLOUD'
-// 1998:      UNK_0xf405  codep:0x224c parp:0xf405 size:0x0008 C-string:'UNK_0xf405'
-// 1999:      UNK_0xf40f  codep:0x224c parp:0xf40f size:0x0046 C-string:'UNK_0xf40f'
-// 2000:       .STARDATE  codep:0x224c parp:0xf463 size:0x004c C-string:'_dot_STARDATE'
-// 2001:      UNK_0xf4b1  codep:0x224c parp:0xf4b1 size:0x0016 C-string:'UNK_0xf4b1'
-// 2002:      UNK_0xf4c9  codep:0x224c parp:0xf4c9 size:0x001c C-string:'UNK_0xf4c9'
-// 2003:      UNK_0xf4e7  codep:0x224c parp:0xf4e7 size:0x0042 C-string:'UNK_0xf4e7'
-// 2004:       (/STATUS)  codep:0x224c parp:0xf537 size:0x000e C-string:'_ro__slash_STATUS_rc_'
-// 2005:      .STAT-TEXT  codep:0x224c parp:0xf554 size:0x0000 C-string:'_dot_STAT_dash_TEXT'
+// 1966:      UNK_0xed7e  codep:0x224c parp:0xed7e size:0x0012 C-string:'UNK_0xed7e'
+// 1967:      UNK_0xed92  codep:0x224c parp:0xed92 size:0x000a C-string:'UNK_0xed92'
+// 1968:      UNK_0xed9e  codep:0x224c parp:0xed9e size:0x000e C-string:'UNK_0xed9e'
+// 1969:      UNK_0xedae  codep:0x224c parp:0xedae size:0x008b C-string:'UNK_0xedae'
+// 1970:      UNK_0xee3b  codep:0x224c parp:0xee3b size:0x0052 C-string:'UNK_0xee3b'
+// 1971:      UNK_0xee8f  codep:0x224c parp:0xee8f size:0x008a C-string:'UNK_0xee8f'
+// 1972:      UNK_0xef1b  codep:0x224c parp:0xef1b size:0x0083 C-string:'UNK_0xef1b'
+// 1973:      UNK_0xefa0  codep:0x224c parp:0xefa0 size:0x0010 C-string:'UNK_0xefa0'
+// 1974:      UNK_0xefb2  codep:0x224c parp:0xefb2 size:0x00b8 C-string:'UNK_0xefb2'
+// 1975:      UNK_0xf06c  codep:0x224c parp:0xf06c size:0x0036 C-string:'UNK_0xf06c'
+// 1976:      UNK_0xf0a4  codep:0x224c parp:0xf0a4 size:0x0034 C-string:'UNK_0xf0a4'
+// 1977:      UNK_0xf0da  codep:0x224c parp:0xf0da size:0x000a C-string:'UNK_0xf0da'
+// 1978:      UNK_0xf0e6  codep:0x224c parp:0xf0e6 size:0x0046 C-string:'UNK_0xf0e6'
+// 1979:       .READINGS  codep:0x4b3b parp:0xf13a size:0x0010 C-string:'_dot_READINGS'
+// 1980:      (/SENSORS)  codep:0x224c parp:0xf159 size:0x00b3 C-string:'_ro__slash_SENSORS_rc_'
+// 1981:      UNK_0xf20e  codep:0x224c parp:0xf20e size:0x003e C-string:'UNK_0xf20e'
+// 1982:      UNK_0xf24e  codep:0x224c parp:0xf24e size:0x0010 C-string:'UNK_0xf24e'
+// 1983:      UNK_0xf260  codep:0x224c parp:0xf260 size:0x0006 C-string:'UNK_0xf260'
+// 1984:      UNK_0xf268  codep:0x224c parp:0xf268 size:0x0036 C-string:'UNK_0xf268'
+// 1985:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x0012 C-string:'UNK_0xf2a0'
+// 1986:      UNK_0xf2b4  codep:0x224c parp:0xf2b4 size:0x0020 C-string:'UNK_0xf2b4'
+// 1987:      UNK_0xf2d6  codep:0x224c parp:0xf2d6 size:0x0052 C-string:'UNK_0xf2d6'
+// 1988:      UNK_0xf32a  codep:0x224c parp:0xf32a size:0x0006 C-string:'UNK_0xf32a'
+// 1989:          CTXT>I  codep:0x4b3b parp:0xf33b size:0x000c C-string:'CTXT_gt_I'
+// 1990:      UNK_0xf349  codep:0x224c parp:0xf349 size:0x0004 C-string:'UNK_0xf349'
+// 1991:      UNK_0xf34f  codep:0x224c parp:0xf34f size:0x0006 C-string:'UNK_0xf34f'
+// 1992:      UNK_0xf357  codep:0x224c parp:0xf357 size:0x0008 C-string:'UNK_0xf357'
+// 1993:      UNK_0xf361  codep:0x224c parp:0xf361 size:0x0008 C-string:'UNK_0xf361'
+// 1994:      UNK_0xf36b  codep:0x224c parp:0xf36b size:0x0010 C-string:'UNK_0xf36b'
+// 1995:      UNK_0xf37d  codep:0x224c parp:0xf37d size:0x001e C-string:'UNK_0xf37d'
+// 1996:      UNK_0xf39d  codep:0x224c parp:0xf39d size:0x0022 C-string:'UNK_0xf39d'
+// 1997:      UNK_0xf3c1  codep:0x224c parp:0xf3c1 size:0x0032 C-string:'UNK_0xf3c1'
+// 1998:       'DO-CLOUD  codep:0x1d29 parp:0xf401 size:0x0002 C-string:'_i_DO_dash_CLOUD'
+// 1999:      UNK_0xf405  codep:0x224c parp:0xf405 size:0x0008 C-string:'UNK_0xf405'
+// 2000:      UNK_0xf40f  codep:0x224c parp:0xf40f size:0x0046 C-string:'UNK_0xf40f'
+// 2001:       .STARDATE  codep:0x224c parp:0xf463 size:0x004c C-string:'_dot_STARDATE'
+// 2002:      UNK_0xf4b1  codep:0x224c parp:0xf4b1 size:0x0016 C-string:'UNK_0xf4b1'
+// 2003:      UNK_0xf4c9  codep:0x224c parp:0xf4c9 size:0x001c C-string:'UNK_0xf4c9'
+// 2004:      UNK_0xf4e7  codep:0x224c parp:0xf4e7 size:0x0042 C-string:'UNK_0xf4e7'
+// 2005:       (/STATUS)  codep:0x224c parp:0xf537 size:0x000e C-string:'_ro__slash_STATUS_rc_'
+// 2006:      .STAT-TEXT  codep:0x224c parp:0xf554 size:0x0000 C-string:'_dot_STAT_dash_TEXT'
 
 // =================================
 // =========== VARIABLES ===========
@@ -442,26 +443,31 @@ void UNK_0xe107() // UNK_0xe107
 void UNK_0xe141() // UNK_0xe141
 {
   _at_INST_dash_S(); // @INST-S
+  Pop();
   switch(Pop()) // BIO/ENR
   {
   case 20:
-    UNK_0xe0ff(); // UNK_0xe0ff
+    UNK_0xe107(); // UNK_0xe107
     break;
   case 22:
-    UNK_0xe107(); // UNK_0xe107
+    UNK_0xe0f7(); // UNK_0xe0f7
     break;
   case 27:
-    UNK_0xe0f7(); // UNK_0xe0f7
+    UNK_0xe107(); // UNK_0xe107
     break;
   case 32:
-    UNK_0xe107(); // UNK_0xe107
-    break;
-  case 29:
     UNK_0xe0f7(); // UNK_0xe0f7
     break;
-  case 0:
+  case 29:
     UNK_0xe107(); // UNK_0xe107
     break;
+  case 0:
+    UNK_0xe0f7(); // UNK_0xe0f7
+    break;
+  default:
+    UNK_0xe0ff(); // UNK_0xe0ff
+    break;
+
   }
   Push(pp_UNK_0xdfb3); // UNK_0xdfb3
   _ex_(); // !
@@ -571,7 +577,7 @@ void UNK_0xe213() // UNK_0xe213
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xe008");
+  Push(0x65f2); // IFIELD(UNK_0xe008)
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
@@ -582,7 +588,7 @@ void UNK_0xe213() // UNK_0xe213
   MAX(); // MAX
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  Func8("UNK_0xe008");
+  Push(0x65f2); // IFIELD(UNK_0xe008)
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -598,7 +604,7 @@ void UNK_0xe213() // UNK_0xe213
   Push(1); // 1
   MAX(); // MAX
   _slash_(); // /
-  Func8("UNK_0xe008");
+  Push(0x65f2); // IFIELD(UNK_0xe008)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -776,7 +782,7 @@ void UNK_0xe388() // UNK_0xe388
 {
   Push(cc__4); // 4
   UNK_0xe207(); // UNK_0xe207
-  Func8("UNK_0xe026");
+  Push(0x6626); // IFIELD(UNK_0xe026)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -855,14 +861,14 @@ void UNK_0xe408() // UNK_0xe408
   Push(cc__6); // 6
   UNK_0xe207(); // UNK_0xe207
   UNK_0xe2c9(); // UNK_0xe2c9
-  Func8("UNK_0xe017");
+  Push(0x6600); // IFIELD(UNK_0xe017)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   Push(Read16(sp)); // DUP
-  Func8("UNK_0xe021");
+  Push(0x6624); // IFIELD(UNK_0xe021)
   Push(Read16(Pop())); // @
   Push(pp__10_star_CARG); // 10*CARG
   _2_at_(); // 2@
@@ -950,7 +956,7 @@ void UNK_0xe498() // UNK_0xe498
 {
   Push(cc__7); // 7
   UNK_0xe207(); // UNK_0xe207
-  Func8("UNK_0xe026");
+  Push(0x6626); // IFIELD(UNK_0xe026)
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -991,7 +997,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
 {
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-  Func8("UNK_0xe01c");
+  Push(0x6613); // IFIELD(UNK_0xe01c)
   Push(Read16(Pop())); // @
   Push(0x003c);
   _slash_(); // /
@@ -1002,7 +1008,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
 
   label1:
   Push(0x0019);
-  Func8("UNK_0xe01c");
+  Push(0x6613); // IFIELD(UNK_0xe01c)
   Push(Read16(Pop())); // @
   Push(0x003c);
   _slash_(); // /
@@ -1020,7 +1026,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
 
 void UNK_0xe517() // UNK_0xe517
 {
-  Func8("UNK_0xe00d");
+  Push(0x65fa); // IFIELD(UNK_0xe00d)
   Push(Read16(Pop())); // @
   Push(0x00ff);
   Push(Pop() & Pop()); // AND
@@ -1030,7 +1036,7 @@ void UNK_0xe517() // UNK_0xe517
   if (Pop() == 0) return;
   SetColor("RED");
   _ex_COLOR(); // !COLOR
-  Func8("UNK_0xe012");
+  Push(0x6611); // IFIELD(UNK_0xe012)
   Push(Read16(Pop())); // @
   Push(0x09c4);
   MIN(); // MIN
@@ -1043,7 +1049,7 @@ void UNK_0xe517() // UNK_0xe517
 
   label1:
   Push(0x0019);
-  Func8("UNK_0xe012");
+  Push(0x6611); // IFIELD(UNK_0xe012)
   Push(Read16(Pop())); // @
   Push(0x09c4);
   MIN(); // MIN
@@ -1317,13 +1323,13 @@ void UNK_0xe772() // UNK_0xe772
 
 void UNK_0xe780() // UNK_0xe780
 {
-  Func8("UNK_0xe017");
+  Push(0x6600); // IFIELD(UNK_0xe017)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Func8("UNK_0xe021");
+  Push(0x6624); // IFIELD(UNK_0xe021)
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(0x01f4);
@@ -1362,7 +1368,7 @@ void UNK_0xe79e() // UNK_0xe79e
 
 void UNK_0xe7ba() // UNK_0xe7ba
 {
-  Func8("UNK_0xe017");
+  Push(0x6600); // IFIELD(UNK_0xe017)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   UNK_0xe780(); // UNK_0xe780
@@ -1391,7 +1397,7 @@ void UNK_0xe7ba() // UNK_0xe7ba
 
 void UNK_0xe7de() // UNK_0xe7de
 {
-  Func8("UNK_0xe030");
+  Push(0x6637); // IFIELD(UNK_0xe030)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
@@ -1421,7 +1427,7 @@ void UNK_0xe7de() // UNK_0xe7de
 
 void UNK_0xe804() // UNK_0xe804
 {
-  Func8("UNK_0xe035");
+  Push(0x6638); // IFIELD(UNK_0xe035)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
@@ -2274,7 +2280,18 @@ void UNK_0xed7e() // UNK_0xed7e
   UNK_0xe82a(); // UNK_0xe82a
 }
 
-// 0xed90: db 0x4c 0x22 0xd2 0x9f 0x5d 0x17 0xd6 0x00 0x28 0xe8 0x90 0x16 'L"  ]   (   '
+
+// ================================================
+// 0xed90: WORD 'UNK_0xed92' codep=0x224c parp=0xed92
+// ================================================
+
+void UNK_0xed92() // UNK_0xed92
+{
+  CTINIT(); // CTINIT
+  Push(0x00d6);
+  UNK_0xe82a(); // UNK_0xe82a
+}
+
 
 // ================================================
 // 0xed9c: WORD 'UNK_0xed9e' codep=0x224c parp=0xed9e
@@ -2310,7 +2327,7 @@ void UNK_0xedae() // UNK_0xedae
   _ex_(); // !
   LoadData("UNK_0xe0a3"); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   COUNT(); // COUNT
   Func14("TYPE"); // call of word 0x2690
   CTCR(); // CTCR
@@ -2327,7 +2344,7 @@ void UNK_0xedae() // UNK_0xedae
   _ex_(); // !
   LoadData("UNK_0xe0a3"); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   COUNT(); // COUNT
   Func14("TYPE"); // call of word 0x2690
   CTCR(); // CTCR
@@ -2429,7 +2446,7 @@ void UNK_0xee8f() // UNK_0xee8f
   Push(0); // 0
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) goto label3;
-  Func8("UNK_0xe07e");
+  Push(0x65f2); // IFIELD(UNK_0xe07e)
   Push(Pop()+1); // 1+
   goto label4;
 
@@ -2729,7 +2746,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
 
   label2:
   UNK_0xf06c(); // UNK_0xf06c
-  Func8("UNK_0xe064");
+  Push(0x65f3); // IFIELD(UNK_0xe064)
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
   Push(0); // 0
@@ -2820,17 +2837,22 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
+  Pop();
   switch(Pop()) // .READINGS
   {
   case 25:
-    UNK_0xe906(); // UNK_0xe906
-    break;
-  case 32:
     UNK_0xf0e6(); // UNK_0xf0e6
     break;
-  case 60:
+  case 32:
     UNK_0xefb2(); // UNK_0xefb2
     break;
+  case 60:
+    UNK_0xed92(); // UNK_0xed92
+    break;
+  default:
+    UNK_0xe906(); // UNK_0xe906
+    break;
+
   }
   ICLOSE(); // ICLOSE
   goto label5;
@@ -2861,7 +2883,7 @@ void UNK_0xf20e() // UNK_0xf20e
   Push(cc_FALSE); // FALSE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(0x0012);
@@ -2906,7 +2928,7 @@ void UNK_0xf24e() // UNK_0xf24e
   CI(); // CI
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  Func8("INST-OF");
+  Push(0x65e7); // IFIELD(INST-OF)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -2931,7 +2953,7 @@ void UNK_0xf268() // UNK_0xf268
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(0x0012);
@@ -2972,7 +2994,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
   Push(cc__8); // 8
   ORGIA(); // ORGIA
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xdfaa");
+  Push(0x65ec); // IFIELD(UNK_0xdfaa)
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ex_COLOR(); // !COLOR
@@ -3179,22 +3201,27 @@ void UNK_0xf3c1() // UNK_0xf3c1
 {
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // CTXT>I
   {
   case 3:
-    UNK_0xf32a(); // UNK_0xf32a
-    break;
-  case 4:
     _star_SHIP(); // *SHIP
     break;
+  case 4:
+    UNK_0xf260(); // UNK_0xf260
+    break;
+  default:
+    UNK_0xf32a(); // UNK_0xf32a
+    break;
+
   }
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x02d8);
   Push(0x04e0);
   WITHIN(); // WITHIN
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(0x02e8);
   Push(0x0640);
@@ -3362,7 +3389,7 @@ void UNK_0xf4e7() // UNK_0xf4e7
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   UNK_0xe2c9(); // UNK_0xe2c9
-  Func8("UNK_0xe003");
+  Push(0x6606); // IFIELD(UNK_0xe003)
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   Push(Read16(sp)); // DUP

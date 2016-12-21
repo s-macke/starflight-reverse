@@ -163,7 +163,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(Pop() & Pop()); // AND
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf196");
+  Push(0x65fa); // IFIELD(UNK_0xf196)
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
@@ -183,13 +183,13 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0x3f09("RAISE SHIELD");
   LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   C_ex_(); // C!
   UNK_0xf1e0(); // UNK_0xf1e0
 
@@ -248,11 +248,11 @@ void UNK_0xf311() // UNK_0xf311
   UNK_0x3f09("DROP SHIELD ");
   LoadData("UNK_0xf1aa"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   C_ex_(); // C!
   UNK_0xf1e0(); // UNK_0xf1e0
 
@@ -290,13 +290,13 @@ void _gt_DISARM() // >DISARM
   UNK_0x3f09("ARM WEAPON");
   LoadData("UNK_0xf1b2"); // from 'ANALYZE-TEXT'
   UNK_0xf1d6(); // UNK_0xf1d6
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00fc);
   Push(Pop() & Pop()); // AND
   Push(0x0020);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   C_ex_(); // C!
   UNK_0xf202(); // UNK_0xf202
 
@@ -311,10 +311,10 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3ef() // UNK_0xf3ef
 {
-  Func8("UNK_0xf1a0");
+  Push(0x65fe); // IFIELD(UNK_0xf1a0)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Func8("UNK_0xf19b");
+  Push(0x65fc); // IFIELD(UNK_0xf19b)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   _2DUP(); // 2DUP
@@ -365,11 +365,11 @@ void UNK_0xf3ef() // UNK_0xf3ef
   label8:
   Push(Pop() + Pop()); // +
   if (Pop() == 0) goto label9;
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read16(Pop())); // @
   Push(0x0023);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   _ex_(); // !
   UNK_0xf1c4(); // UNK_0xf1c4
 
@@ -398,7 +398,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -425,7 +425,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf1a5");
+  Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND

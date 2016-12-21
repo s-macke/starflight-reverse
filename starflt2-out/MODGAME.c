@@ -2925,13 +2925,14 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(Read16(sp)); // DUP
   Push(pp_OPTIO); // OPTIO
   _ex_(); // !
+  Pop();
   switch(Pop()) // KEY>O
   {
   case 1:
-    FALSE(); // FALSE
+    UNK_0xdf87(); // UNK_0xdf87
     break;
   case 2:
-    UNK_0xdf87(); // UNK_0xdf87
+    TRUE(); // TRUE
     break;
   case 3:
     TRUE(); // TRUE
@@ -2939,6 +2940,10 @@ void UNK_0xf21d() // UNK_0xf21d
   case 7:
     TRUE(); // TRUE
     break;
+  default:
+    FALSE(); // FALSE
+    break;
+
   }
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY
@@ -3142,20 +3147,25 @@ void UNK_0xf3ea() // UNK_0xf3ea
   label1:
   UNK_0xe571(); // UNK_0xe571
   UNK_0xf21d(); // UNK_0xf21d
+  Pop();
   switch(Pop()) // GAMEO
   {
   case 49:
-    UNK_0xf396(); // UNK_0xf396
-    break;
-  case 51:
     UNK_0xf358(); // UNK_0xf358
     break;
-  case 50:
+  case 51:
     UNK_0xf38e(); // UNK_0xf38e
     break;
-  case 55:
+  case 50:
     UNK_0xf370(); // UNK_0xf370
     break;
+  case 55:
+    BYE(); // BYE
+    break;
+  default:
+    UNK_0xf396(); // UNK_0xf396
+    break;
+
   }
   Push(pp_UNK_0xdd2e); // UNK_0xdd2e
   Push(Read16(Pop())); // @

@@ -282,13 +282,13 @@ void FREEB() // FREEB
   if (Pop() == 0) return;
   UNK_0xe862(); // UNK_0xe862
   Push(0x0764);
-  Func8("UNK_0xe814");
+  Push(0x65fa); // IFIELD(UNK_0xe814)
   _ex_(); // !
   Push(0x0664);
-  Func8("UNK_0xe819");
+  Push(0x65fc); // IFIELD(UNK_0xe819)
   _ex_(); // !
   Push(0x0dac);
-  Func8("UNK_0xe81e");
+  Push(0x6611); // IFIELD(UNK_0xe81e)
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -512,9 +512,9 @@ void UNK_0xe9d6() // UNK_0xe9d6
 
 void UNK_0xe9e0() // UNK_0xe9e0
 {
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -558,10 +558,10 @@ void UNK_0xea10() // UNK_0xea10
   Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Push(0x00ff);
-  Func8("UNK_0xe80a");
+  Push(0x65ed); // IFIELD(UNK_0xe80a)
   C_ex_(); // C!
   Push(0); // 0
-  Func8("UNK_0xe80f");
+  Push(0x65f3); // IFIELD(UNK_0xe80f)
   C_ex_(); // C!
   CI(); // CI
   ICLOSE(); // ICLOSE
@@ -587,7 +587,7 @@ void UNK_0xea10() // UNK_0xea10
 void UNK_0xea44() // UNK_0xea44
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -921,13 +921,13 @@ void UNK_0xec1a() // UNK_0xec1a
   Push(Read16(Pop())); // @
   Push(0x000c);
   _dash_(); // -
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   _ex_(); // !
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(0x000c);
   _dash_(); // -
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   _ex_(); // !
   Push(0xba55);
   MODULE(); // MODULE
@@ -1197,11 +1197,11 @@ void UNK_0xedfd() // UNK_0xedfd
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xe82b");
+  Push(0x65f5); // IFIELD(UNK_0xe82b)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xe82b");
+  Push(0x65f5); // IFIELD(UNK_0xe82b)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
@@ -1239,9 +1239,9 @@ void UNK_0xee43() // UNK_0xee43
   R_gt_(); // R>
   UNK_0xe862(); // UNK_0xe862
   _2DUP(); // 2DUP
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   _ex_(); // !
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   _ex_(); // !
   CI(); // CI
   ICLOSE(); // ICLOSE
@@ -1355,11 +1355,11 @@ void UNK_0xeed1() // UNK_0xeed1
   label2:
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xe82b");
+  Push(0x65f5); // IFIELD(UNK_0xe82b)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  Func8("UNK_0xe82b");
+  Push(0x65f5); // IFIELD(UNK_0xe82b)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
@@ -1415,7 +1415,7 @@ void UNK_0xef5d() // UNK_0xef5d
   Push(pp_DICT); // DICT
   Push(Read16(Pop())); // @
   Push(i); // I
-  Func8("PHRASE");
+  Push(0x65ed); // IFIELD(PHRASE)
   _plus__at_(); // +@
   Push(Pop()+3); // 3+
   _at_DS(); // @DS
@@ -1463,7 +1463,7 @@ void UNK_0xefab() // UNK_0xefab
   Push(pp_CTCOLOR); // CTCOLOR
   _ex_(); // !
   WUP(); // WUP
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   COUNT(); // COUNT
   UNK_0xef5d(); // UNK_0xef5d
   Push(pp_LSCAN); // LSCAN
@@ -2232,7 +2232,7 @@ void UNK_0xf49f() // UNK_0xf49f
   _gt_C_plus_S(); // >C+S
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _ex_(); // !
   ICLOSE(); // ICLOSE
   Push2Words("*STARSH");

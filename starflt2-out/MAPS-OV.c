@@ -51,29 +51,30 @@
 // 1908:      UNK_0xf267  codep:0x224c parp:0xf267 size:0x0008 C-string:'UNK_0xf267'
 // 1909:      UNK_0xf271  codep:0x224c parp:0xf271 size:0x0008 C-string:'UNK_0xf271'
 // 1910:      UNK_0xf27b  codep:0x224c parp:0xf27b size:0x0008 C-string:'UNK_0xf27b'
-// 1911:      UNK_0xf285  codep:0x224c parp:0xf285 size:0x0012 C-string:'UNK_0xf285'
-// 1912:         WPHRASE  codep:0x4b3b parp:0xf2a3 size:0x003c C-string:'WPHRASE'
-// 1913:        (.STORM)  codep:0x224c parp:0xf2ec size:0x001a C-string:'_ro__dot_STORM_rc_'
-// 1914:           .ROCK  codep:0x224c parp:0xf310 size:0x0018 C-string:'_dot_ROCK'
-// 1915:         .LIQUID  codep:0x224c parp:0xf334 size:0x0016 C-string:'_dot_LIQUID'
-// 1916:        .CRYSTAL  codep:0x224c parp:0xf357 size:0x000a C-string:'_dot_CRYSTAL'
-// 1917:            .ICE  codep:0x224c parp:0xf36a size:0x001a C-string:'_dot_ICE'
-// 1918:         .MOLTEN  codep:0x224c parp:0xf390 size:0x0010 C-string:'_dot_MOLTEN'
-// 1919:         .CARPET  codep:0x224c parp:0xf3ac size:0x0031 C-string:'_dot_CARPET'
-// 1920:           /SURF  codep:0x4b3b parp:0xf3e7 size:0x0018 C-string:'_slash_SURF'
-// 1921:        .SURFACE  codep:0x224c parp:0xf40c size:0x0010 C-string:'_dot_SURFACE'
-// 1922:      UNK_0xf41e  codep:0x224c parp:0xf41e size:0x0006 C-string:'UNK_0xf41e'
-// 1923:      UNK_0xf426  codep:0x224c parp:0xf426 size:0x0006 C-string:'UNK_0xf426'
-// 1924:      UNK_0xf42e  codep:0x224c parp:0xf42e size:0x0012 C-string:'UNK_0xf42e'
-// 1925:      UNK_0xf442  codep:0x224c parp:0xf442 size:0x0016 C-string:'UNK_0xf442'
-// 1926:      UNK_0xf45a  codep:0x224c parp:0xf45a size:0x0017 C-string:'UNK_0xf45a'
-// 1927:      UNK_0xf473  codep:0x224c parp:0xf473 size:0x0006 C-string:'UNK_0xf473'
-// 1928:      UNK_0xf47b  codep:0x224c parp:0xf47b size:0x0023 C-string:'UNK_0xf47b'
-// 1929:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x0013 C-string:'UNK_0xf4a0'
-// 1930:      UNK_0xf4b5  codep:0x224c parp:0xf4b5 size:0x002b C-string:'UNK_0xf4b5'
-// 1931:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0014 C-string:'UNK_0xf4e2'
-// 1932:            MAPS  codep:0x224c parp:0xf4ff size:0x0030 C-string:'MAPS'
-// 1933:          .STORM  codep:0x224c parp:0xf53a size:0x0000 C-string:'_dot_STORM'
+// 1911:      UNK_0xf285  codep:0x224c parp:0xf285 size:0x0008 C-string:'UNK_0xf285'
+// 1912:      UNK_0xf28f  codep:0x224c parp:0xf28f size:0x0008 C-string:'UNK_0xf28f'
+// 1913:         WPHRASE  codep:0x4b3b parp:0xf2a3 size:0x003c C-string:'WPHRASE'
+// 1914:        (.STORM)  codep:0x224c parp:0xf2ec size:0x001a C-string:'_ro__dot_STORM_rc_'
+// 1915:           .ROCK  codep:0x224c parp:0xf310 size:0x0018 C-string:'_dot_ROCK'
+// 1916:         .LIQUID  codep:0x224c parp:0xf334 size:0x0016 C-string:'_dot_LIQUID'
+// 1917:        .CRYSTAL  codep:0x224c parp:0xf357 size:0x000a C-string:'_dot_CRYSTAL'
+// 1918:            .ICE  codep:0x224c parp:0xf36a size:0x001a C-string:'_dot_ICE'
+// 1919:         .MOLTEN  codep:0x224c parp:0xf390 size:0x0010 C-string:'_dot_MOLTEN'
+// 1920:         .CARPET  codep:0x224c parp:0xf3ac size:0x0031 C-string:'_dot_CARPET'
+// 1921:           /SURF  codep:0x4b3b parp:0xf3e7 size:0x0018 C-string:'_slash_SURF'
+// 1922:        .SURFACE  codep:0x224c parp:0xf40c size:0x0010 C-string:'_dot_SURFACE'
+// 1923:      UNK_0xf41e  codep:0x224c parp:0xf41e size:0x0006 C-string:'UNK_0xf41e'
+// 1924:      UNK_0xf426  codep:0x224c parp:0xf426 size:0x0006 C-string:'UNK_0xf426'
+// 1925:      UNK_0xf42e  codep:0x224c parp:0xf42e size:0x0012 C-string:'UNK_0xf42e'
+// 1926:      UNK_0xf442  codep:0x224c parp:0xf442 size:0x0016 C-string:'UNK_0xf442'
+// 1927:      UNK_0xf45a  codep:0x224c parp:0xf45a size:0x0017 C-string:'UNK_0xf45a'
+// 1928:      UNK_0xf473  codep:0x224c parp:0xf473 size:0x0006 C-string:'UNK_0xf473'
+// 1929:      UNK_0xf47b  codep:0x224c parp:0xf47b size:0x0023 C-string:'UNK_0xf47b'
+// 1930:      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x0013 C-string:'UNK_0xf4a0'
+// 1931:      UNK_0xf4b5  codep:0x224c parp:0xf4b5 size:0x002b C-string:'UNK_0xf4b5'
+// 1932:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0014 C-string:'UNK_0xf4e2'
+// 1933:            MAPS  codep:0x224c parp:0xf4ff size:0x0030 C-string:'MAPS'
+// 1934:          .STORM  codep:0x224c parp:0xf53a size:0x0000 C-string:'_dot_STORM'
 
 // =================================
 // =========== VARIABLES ===========
@@ -257,9 +258,9 @@ void UNK_0xee22() // UNK_0xee22
   _st__ex__gt_(); // <!>
   LoadData("UNK_0xee1a"); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
-  Func8("PHR-CNT");
+  Push(0x65ec); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Func8("PHRASE");
+  Push(0x65ed); // IFIELD(PHRASE)
   OVER(); // OVER
   Func14("TYPE"); // call of word 0x2690
   Push(0x000a);
@@ -308,8 +309,8 @@ void UNK_0xee66() // UNK_0xee66
 void UNK_0xee72() // UNK_0xee72
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE");
-  Func8("PHR-CNT");
+  Push(0x65ed); // IFIELD(PHRASE)
+  Push(0x65ec); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   Func14("TYPE"); // call of word 0x2690
   ICLOSE(); // ICLOSE
@@ -904,7 +905,16 @@ void UNK_0xf285() // UNK_0xf285
   Push(0x4f50); Pust(0x0002);
 }
 
-// 0xf28d: db 0x4c 0x22 0x16 0x16 0x7f 0x4f 0x02 0x00 0x90 0x16 'L"  O    '
+
+// ================================================
+// 0xf28d: WORD 'UNK_0xf28f' codep=0x224c parp=0xf28f
+// ================================================
+
+void UNK_0xf28f() // UNK_0xf28f
+{
+  Push(0x4f7f); Pust(0x0002);
+}
+
 
 // ================================================
 // 0xf297: WORD 'WPHRASE' codep=0x4b3b parp=0xf2a3
@@ -927,50 +937,55 @@ void _ro__dot_STORM_rc_() // (.STORM)
   label1:
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
+  Pop();
   switch(Pop()) // WPHRASE
   {
   case 0:
-    UNRAVEL(); // UNRAVEL
+    UNK_0xf221(); // UNK_0xf221
     break;
   case 1:
-    UNK_0xf221(); // UNK_0xf221
-    break;
-  case 2:
     UNK_0xf217(); // UNK_0xf217
     break;
-  case 3:
+  case 2:
     UNK_0xf221(); // UNK_0xf221
     break;
-  case 4:
+  case 3:
     UNK_0xf22b(); // UNK_0xf22b
     break;
-  case 5:
+  case 4:
     UNK_0xf235(); // UNK_0xf235
     break;
-  case 6:
+  case 5:
     UNK_0xf23f(); // UNK_0xf23f
     break;
-  case 7:
+  case 6:
     UNK_0xf249(); // UNK_0xf249
     break;
-  case 8:
+  case 7:
     UNK_0xf253(); // UNK_0xf253
     break;
-  case 9:
+  case 8:
     UNK_0xf25d(); // UNK_0xf25d
     break;
-  case 10:
+  case 9:
     UNK_0xf267(); // UNK_0xf267
     break;
-  case 11:
+  case 10:
     UNK_0xf271(); // UNK_0xf271
     break;
-  case 12:
+  case 11:
     UNK_0xf27b(); // UNK_0xf27b
     break;
-  case 13:
+  case 12:
     UNK_0xf285(); // UNK_0xf285
     break;
+  case 13:
+    UNK_0xf28f(); // UNK_0xf28f
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
   }
 
   label2:
@@ -1104,23 +1119,28 @@ void _dot_SURFACE() // .SURFACE
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xecfa"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
+  Pop();
   switch(Pop()) // /SURF
   {
   case 0:
-    NOP(); // NOP
-    break;
-  case 2:
     _dot_CRYSTAL(); // .CRYSTAL
     break;
-  case 3:
+  case 2:
     _dot_LIQUID(); // .LIQUID
     break;
-  case 4:
+  case 3:
     _dot_ICE(); // .ICE
     break;
-  case 5:
+  case 4:
     _dot_MOLTEN(); // .MOLTEN
     break;
+  case 5:
+    _dot_ROCK(); // .ROCK
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE

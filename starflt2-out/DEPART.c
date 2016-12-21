@@ -95,10 +95,11 @@ void UNK_0xf423() // UNK_0xf423
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _at_INST_dash_C(); // @INST-C
+  Pop();
   switch(Pop()) // DISPOSAL
   {
   case 68:
-    FALSE(); // FALSE
+    TRUE(); // TRUE
     break;
   case 26:
     TRUE(); // TRUE
@@ -113,14 +114,18 @@ void UNK_0xf423() // UNK_0xf423
     TRUE(); // TRUE
     break;
   case 28:
-    TRUE(); // TRUE
-    break;
-  case 41:
     UNK_0xf3ae(); // UNK_0xf3ae
     break;
-  case 9:
+  case 41:
     UNK_0xf3ba(); // UNK_0xf3ba
     break;
+  case 9:
+    TRUE(); // TRUE
+    break;
+  default:
+    FALSE(); // FALSE
+    break;
+
   }
   return;
 
@@ -233,7 +238,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
-  Func8("UNK_0xf4b7");
+  Push(0x65f3); // IFIELD(UNK_0xf4b7)
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   Push(Read16(sp)); // DUP
@@ -250,14 +255,14 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(cc__5); // 5
   MAX(); // MAX
   Push(Pop() * Pop()); // *
-  Func8("UNK_0xf4b7");
+  Push(0x65f3); // IFIELD(UNK_0xf4b7)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(0x0064);
   MIN(); // MIN
   Push(0); // 0
   MAX(); // MAX
-  Func8("UNK_0xf4b7");
+  Push(0x65f3); // IFIELD(UNK_0xf4b7)
   C_ex_(); // C!
   goto label2;
 

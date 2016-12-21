@@ -27,12 +27,13 @@
 // 1884:      UNK_0xf2f8  codep:0x224c parp:0xf2f8 size:0x0016 C-string:'UNK_0xf2f8'
 // 1885:      UNK_0xf310  codep:0x224c parp:0xf310 size:0x002b C-string:'UNK_0xf310'
 // 1886:      UNK_0xf33d  codep:0x224c parp:0xf33d size:0x0014 C-string:'UNK_0xf33d'
-// 1887:      UNK_0xf353  codep:0x224c parp:0xf353 size:0x0026 C-string:'UNK_0xf353'
-// 1888:          NPCREW  codep:0x4b3b parp:0xf384 size:0x000c C-string:'NPCREW'
-// 1889:      UNK_0xf392  codep:0x224c parp:0xf392 size:0x00ac C-string:'UNK_0xf392'
-// 1890:      UNK_0xf440  codep:0x224c parp:0xf440 size:0x00a5 C-string:'UNK_0xf440'
-// 1891:      (/EXAMINE)  codep:0x224c parp:0xf4f4 size:0x000c C-string:'_ro__slash_EXAMINE_rc_'
-// 1892:        (/TREAT)  codep:0x224c parp:0xf50d size:0x0000 C-string:'_ro__slash_TREAT_rc_'
+// 1887:      UNK_0xf353  codep:0x224c parp:0xf353 size:0x0012 C-string:'UNK_0xf353'
+// 1888:      UNK_0xf367  codep:0x224c parp:0xf367 size:0x0012 C-string:'UNK_0xf367'
+// 1889:          NPCREW  codep:0x4b3b parp:0xf384 size:0x000c C-string:'NPCREW'
+// 1890:      UNK_0xf392  codep:0x224c parp:0xf392 size:0x00ac C-string:'UNK_0xf392'
+// 1891:      UNK_0xf440  codep:0x224c parp:0xf440 size:0x00a5 C-string:'UNK_0xf440'
+// 1892:      (/EXAMINE)  codep:0x224c parp:0xf4f4 size:0x000c C-string:'_ro__slash_EXAMINE_rc_'
+// 1893:        (/TREAT)  codep:0x224c parp:0xf50d size:0x0000 C-string:'_ro__slash_TREAT_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -97,13 +98,13 @@ void UNK_0xf0a6() // UNK_0xf0a6
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xf08d");
+  Push(0x65f2); // IFIELD(UNK_0xf08d)
   Push(i); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(h); // J
   Push(Pop() & Pop()); // AND
@@ -131,7 +132,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 
 void UNK_0xf0e6() // UNK_0xf0e6
 {
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(0x0010);
   Push(Pop() & Pop()); // AND
@@ -220,7 +221,7 @@ void UNK_0xf1ce() // UNK_0xf1ce
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   PRINT("SHOULD I STOP TREATING ", 23); // (.")
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   ICLOSE(); // ICLOSE
   CTCR(); // CTCR
@@ -240,7 +241,7 @@ void UNK_0xf1ce() // UNK_0xf1ce
 
 void UNK_0xf219() // UNK_0xf219
 {
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(" DOESN'T NEED MEDICAL", 21); // (.")
   CTCR(); // CTCR
@@ -254,7 +255,7 @@ void UNK_0xf219() // UNK_0xf219
 
 void UNK_0xf248() // UNK_0xf248
 {
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(" IS BEYOND HELP.", 16); // (.")
 }
@@ -268,7 +269,7 @@ void UNK_0xf263() // UNK_0xf263
 {
   PRINT("I AM STARTING TREATMENT ON", 26); // (.")
   CTCR(); // CTCR
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -281,23 +282,23 @@ void UNK_0xf263() // UNK_0xf263
 void UNK_0xf28e() // UNK_0xf28e
 {
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf083");
+  Push(0x6600); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(0x0064);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   UNK_0xf263(); // UNK_0xf263
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   _ex_(); // !
   goto label2;
 
   label1:
-  Func8("UNK_0xf083");
+  Push(0x6600); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0064);
   _eq_(); // =
@@ -321,7 +322,7 @@ void UNK_0xf2ce() // UNK_0xf2ce
 {
   PRINT("I AM CEASING TREATMENT ON", 25); // (.")
   CTCR(); // CTCR
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -335,11 +336,11 @@ void UNK_0xf2f8() // UNK_0xf2f8
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf2ce(); // UNK_0xf2ce
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(0xfffb);
   Push(Pop() & Pop()); // AND
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -353,7 +354,7 @@ void UNK_0xf310() // UNK_0xf310
 {
   PRINT("I AM CONTINUING TREATMENT ON", 28); // (.")
   CTCR(); // CTCR
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -367,11 +368,11 @@ void UNK_0xf33d() // UNK_0xf33d
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf310(); // UNK_0xf310
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   _ex_(); // !
   ICLOSE(); // ICLOSE
 }
@@ -386,7 +387,7 @@ void UNK_0xf353() // UNK_0xf353
 
   label1:
   INEXT(); // INEXT
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -394,7 +395,24 @@ void UNK_0xf353() // UNK_0xf353
   Push(1); // 1
 }
 
-// 0xf365: db 0x4c 0x22 0xc9 0x7a 0x86 0xf0 0x92 0x0c 0xa7 0x3b 0xf5 0x12 0xfa 0x15 0xf4 0xff 0x2e 0x0f 0x90 0x16 'L" z     ;      .   '
+
+// ================================================
+// 0xf365: WORD 'UNK_0xf367' codep=0x224c parp=0xf367
+// ================================================
+
+void UNK_0xf367() // UNK_0xf367
+{
+
+  label1:
+  IPREV(); // IPREV
+  Push(0x6601); // IFIELD(UNK_0xf088)
+  Push(Read8(Pop())&0xFF); // C@
+  Push(cc__8); // 8
+  Push(Pop() & Pop()); // AND
+  if (Pop() == 0) goto label1;
+  Push(1); // 1
+}
+
 
 // ================================================
 // 0xf379: WORD 'NPCREW' codep=0x4b3b parp=0xf384
@@ -417,7 +435,7 @@ void UNK_0xf392() // UNK_0xf392
   IOPEN(); // IOPEN
 
   label2:
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -440,20 +458,25 @@ void UNK_0xf392() // UNK_0xf392
   Push(0x000b);
   Push(2); // 2
   CTPOS_dot_(); // CTPOS.
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
 
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
+  Pop();
   switch(Pop()) // NPCREW
   {
   case 1:
-    Push(0); // 0
-    break;
-  case 65535:
     UNK_0xf353(); // UNK_0xf353
     break;
+  case 65535:
+    UNK_0xf367(); // UNK_0xf367
+    break;
+  default:
+    Push(0); // 0
+    break;
+
   }
   if (Pop() == 0) goto label3;
   Push(0x000b);
@@ -462,7 +485,7 @@ void UNK_0xf392() // UNK_0xf392
   Push(0x000f);
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
 
   label3:
@@ -483,10 +506,10 @@ void UNK_0xf440() // UNK_0xf440
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
-  Func8("UNK_0xf083");
+  Push(0x6600); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
@@ -494,7 +517,7 @@ void UNK_0xf440() // UNK_0xf440
   PRINT(",", 1); // (.")
   CTCR(); // CTCR
   PRINT("AND HAS A VITALITY OF ", 22); // (.")
-  Func8("UNK_0xf083");
+  Push(0x6600); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
   Push(0); // 0
   _dot_R(); // .R
@@ -509,12 +532,12 @@ void UNK_0xf440() // UNK_0xf440
   label1:
   PRINT(".", 1); // (.")
   CTCR(); // CTCR
-  Func8("UNK_0xf088");
+  Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Func8("UNK_0xf07e");
+  Push(0x65ec); // IFIELD(UNK_0xf07e)
   _do__dot_(); // $.
   PRINT(" IS CURRENTLY BEING", 19); // (.")
   CTCR(); // CTCR

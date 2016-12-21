@@ -181,9 +181,9 @@ void UNK_0xf261() // UNK_0xf261
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf248");
+  Push(0x6406); // IFIELD(UNK_0xf248)
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xf243");
+  Push(0x640a); // IFIELD(UNK_0xf243)
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -230,7 +230,7 @@ void UNK_0xf298() // UNK_0xf298
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf281");
+  Push(0x6400); // IFIELD(UNK_0xf281)
   Push(0); // 0
   Push(cc__6); // 6
   RRND(); // RRND
@@ -343,10 +343,10 @@ void UNK_0xf33c() // UNK_0xf33c
   UNK_0xf30e(); // UNK_0xf30e
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Func8("UNK_0xf28b");
+  Push(0x63fa); // IFIELD(UNK_0xf28b)
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
-  Func8("UNK_0xf286");
+  Push(0x640e); // IFIELD(UNK_0xf286)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   PRINT("INJURED", 7); // (.")
@@ -387,7 +387,7 @@ void INJURE_dash_PL() // INJURE-PL
   Push(1); // 1
   MAX(); // MAX
   Push(Pop() * Pop()); // *
-  Func8("UNK_0xf286");
+  Push(0x640e); // IFIELD(UNK_0xf286)
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   _dash_(); // -
@@ -395,7 +395,7 @@ void INJURE_dash_PL() // INJURE-PL
   MAX(); // MAX
   Push(0x0064);
   MIN(); // MIN
-  Func8("UNK_0xf286");
+  Push(0x640e); // IFIELD(UNK_0xf286)
   C_ex_(); // C!
   UNK_0xf33c(); // UNK_0xf33c
   ICLOSE(); // ICLOSE

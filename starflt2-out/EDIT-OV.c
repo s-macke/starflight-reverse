@@ -1128,80 +1128,85 @@ void EDIT() // EDIT
   goto label2;
 
   label1:
+  Pop();
   switch(Pop()) // EDIT-KEYS
   {
   case 327:
-    NOP(); // NOP
-    break;
-  case 317:
     UNK_0xeed4(); // UNK_0xeed4
     break;
-  case 8:
+  case 317:
     INSL(); // INSL
     break;
-  case 336:
+  case 8:
     DELETE(); // DELETE
     break;
-  case 319:
+  case 336:
     UNK_0xeee4(); // UNK_0xeee4
     break;
-  case 9:
+  case 319:
     DUPL(); // DUPL
     break;
-  case 328:
+  case 9:
     UNK_0xf3e8(); // UNK_0xf3e8
     break;
-  case 320:
+  case 328:
     UNK_0xeef4(); // UNK_0xeef4
     break;
-  case 27:
+  case 320:
     SPLIT(); // SPLIT
     break;
-  case 333:
+  case 27:
     UNK_0xf3f2(); // UNK_0xf3f2
     break;
-  case 318:
+  case 333:
     UNK_0xef04(); // UNK_0xef04
     break;
-  case 316:
+  case 318:
     XL(); // XL
     break;
-  case 331:
+  case 316:
     UNK_0xf3fc(); // UNK_0xf3fc
     break;
-  case 339:
+  case 331:
     UNK_0xef16(); // UNK_0xef16
     break;
-  case 329:
+  case 339:
     XC(); // XC
     break;
-  case 321:
+  case 329:
     UNK_0xf406(); // UNK_0xf406
     break;
-  case 335:
+  case 321:
     UNK_0xeffc(); // UNK_0xeffc
     break;
-  case 337:
+  case 335:
     EOL(); // EOL
     break;
-  case 322:
+  case 337:
     UNK_0xf40e(); // UNK_0xf40e
     break;
-  case 324:
+  case 322:
     UNK_0xf00c(); // UNK_0xf00c
     break;
-  case 338:
+  case 324:
     PUT(); // PUT
     break;
-  case 323:
+  case 338:
     UNK_0xf416(); // UNK_0xf416
     break;
-  case 13:
+  case 323:
     LHOLD(); // LHOLD
     break;
-  case 315:
+  case 13:
     UNK_0xf3dc(); // UNK_0xf3dc
     break;
+  case 315:
+    _gt_STAMP(); // >STAMP
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
 
   label2:
@@ -1231,17 +1236,22 @@ void VIEW() // VIEW
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
+  Pop();
   switch(Pop()) // VIEW-KEYS
   {
   case 27:
-    NOP(); // NOP
-    break;
-  case 329:
     UNK_0xf3f2(); // UNK_0xf3f2
     break;
-  case 337:
+  case 329:
     UNK_0xf406(); // UNK_0xf406
     break;
+  case 337:
+    UNK_0xf40e(); // UNK_0xf40e
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
 
   label1:

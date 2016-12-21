@@ -42,7 +42,7 @@
 void UNK_0xf37b() // UNK_0xf37b
 {
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xf376");
+  Push(0x65ec); // IFIELD(UNK_0xf376)
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -129,7 +129,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
 
   label1:
   _gt_C_plus_S(); // >C+S
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
   Push(0x0118);

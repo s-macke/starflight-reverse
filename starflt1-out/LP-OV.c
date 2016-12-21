@@ -211,8 +211,8 @@ void UNK_0xe121() // UNK_0xe121
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE-MEM");
-  Func8("PHR-CNT");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   Func14("TYPE"); // call of word 0x2690
   ICLOSE(); // ICLOSE

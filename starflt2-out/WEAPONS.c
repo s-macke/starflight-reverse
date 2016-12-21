@@ -101,9 +101,9 @@ unsigned char UNK_0xf254[2] = {0x3a, 0x20}; // UNK_0xf254
 
 void UNK_0xec38() // UNK_0xec38
 {
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
 }
 
@@ -165,7 +165,7 @@ void UNK_0xec54() // UNK_0xec54
 void UNK_0xec7b() // UNK_0xec7b
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE$");
+  Push(0x65ec); // IFIELD(PHRASE$)
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -348,7 +348,7 @@ void UNK_0xed61() // UNK_0xed61
 void UNK_0xeda9() // UNK_0xeda9
 {
   UNK_0xec44(); // UNK_0xec44
-  Func8("UNK_0xec6c");
+  Push(0x6613); // IFIELD(UNK_0xec6c)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -370,7 +370,7 @@ void UNK_0xedb5() // UNK_0xedb5
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xec44(); // UNK_0xec44
-  Func8("UNK_0xec62");
+  Push(0x6611); // IFIELD(UNK_0xec62)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   return;
@@ -513,7 +513,7 @@ void UNK_0xeeac() // UNK_0xeeac
   UNK_0x3f09("YOU HAVE ");
   _dot_TTY(); // .TTY
   UNK_0xec44(); // UNK_0xec44
-  Func8("UNK_0xec76");
+  Push(0x6638); // IFIELD(UNK_0xec76)
   Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
   SPACE(); // SPACE
@@ -534,12 +534,12 @@ void UNK_0xeeac() // UNK_0xeeac
 void UNK_0xeee0() // UNK_0xeee0
 {
   UNK_0xec44(); // UNK_0xec44
-  Func8("UNK_0xec76");
+  Push(0x6638); // IFIELD(UNK_0xec76)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
-  Func8("UNK_0xec76");
+  Push(0x6638); // IFIELD(UNK_0xec76)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -552,7 +552,7 @@ void UNK_0xeee0() // UNK_0xeee0
 void UNK_0xeef6() // UNK_0xeef6
 {
   UNK_0xec44(); // UNK_0xec44
-  Func8("UNK_0xec76");
+  Push(0x6638); // IFIELD(UNK_0xec76)
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }
@@ -1114,7 +1114,7 @@ void UNK_0xf20c() // UNK_0xf20c
   Push(cc_TRUE); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("INST-SI");
+  Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(cc__6); // 6
@@ -1192,7 +1192,7 @@ void UNK_0xf26c() // UNK_0xf26c
   SWAP(); // SWAP
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf254); // UNK_0xf254
@@ -1266,9 +1266,9 @@ void UNK_0xf2d4() // UNK_0xf2d4
 {
   UNK_0xf2aa(); // UNK_0xf2aa
   Push(-Pop()); // NEGATE
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   _plus__ex_(); // +!
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1304,9 +1304,9 @@ void UNK_0xf2f4() // UNK_0xf2f4
 
 void UNK_0xf306() // UNK_0xf306
 {
-  Func8("INST-X");
+  Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Func8("INST-Y");
+  Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   UNK_0xecab(); // UNK_0xecab
   Push(cc__5); // 5

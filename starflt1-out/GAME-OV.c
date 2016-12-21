@@ -2769,17 +2769,22 @@ void GAMEOPTIONS() // GAMEOPTIONS
   label1:
   _dot_GAMEOPS(); // .GAMEOPS
   GET_dash_OPTION_n_(); // GET-OPTION#
+  Pop();
   switch(Pop()) // GAMEOPCASE
   {
   case 49:
-    BYE(); // BYE
-    break;
-  case 50:
     UNK_0xee39(); // UNK_0xee39
     break;
-  case 51:
+  case 50:
     UNK_0xf4b9(); // UNK_0xf4b9
     break;
+  case 51:
+    SET_dot_DISPLAY_dot_MODE(); // SET.DISPLAY.MODE
+    break;
+  default:
+    BYE(); // BYE
+    break;
+
   }
   Push(pp_RESUME); // RESUME
   Push(Read16(Pop())); // @

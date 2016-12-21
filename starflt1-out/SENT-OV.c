@@ -102,10 +102,11 @@
 // 1793:      UNK_0xf245  codep:0x224c parp:0xf245 size:0x0034 C-string:'UNK_0xf245'
 // 1794:      UNK_0xf27b  codep:0x224c parp:0xf27b size:0x001c C-string:'UNK_0xf27b'
 // 1795:      UNK_0xf299  codep:0x224c parp:0xf299 size:0x0024 C-string:'UNK_0xf299'
-// 1796:      UNK_0xf2bf  codep:0x224c parp:0xf2bf size:0x0021 C-string:'UNK_0xf2bf'
-// 1797:        CLASS>DE  codep:0x4a4f parp:0xf2ed size:0x0024 C-string:'CLASS_gt_DE'
-// 1798:        CLASS>TY  codep:0x4a4f parp:0xf31e size:0x0024 C-string:'CLASS_gt_TY'
-// 1799:           ?TALK  codep:0x224c parp:0xf34c size:0x0000 C-string:'_ask_TALK'
+// 1796:      UNK_0xf2bf  codep:0x224c parp:0xf2bf size:0x000e C-string:'UNK_0xf2bf'
+// 1797:      UNK_0xf2cf  codep:0x224c parp:0xf2cf size:0x0011 C-string:'UNK_0xf2cf'
+// 1798:        CLASS>DE  codep:0x4a4f parp:0xf2ed size:0x0024 C-string:'CLASS_gt_DE'
+// 1799:        CLASS>TY  codep:0x4a4f parp:0xf31e size:0x0024 C-string:'CLASS_gt_TY'
+// 1800:           ?TALK  codep:0x224c parp:0xf34c size:0x0000 C-string:'_ask_TALK'
 
 // =================================
 // =========== VARIABLES ===========
@@ -180,10 +181,10 @@ void UNK_0xe39f() // UNK_0xe39f
   _gt_R(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Func8("PHR-CNT");
+  Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Func8("PHRASE-MEM");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);
@@ -805,7 +806,7 @@ void UNK_0xeafb() // UNK_0xeafb
   if (Pop() == 0) goto label1;
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE-MEM");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(Read8(Pop())&0xFF); // C@
   _gt_R(); // >R
   R_at_(); // R@
@@ -936,8 +937,8 @@ void UNK_0xebb1() // UNK_0xebb1
 void UNK_0xebcf() // UNK_0xebcf
 {
   _gt_C_plus_S(); // >C+S
-  Func8("PHRASE-MEM");
-  Func8("PHR-CNT");
+  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
 }
 
@@ -1276,7 +1277,7 @@ void UNK_0xed95() // UNK_0xed95
 void UNK_0xeded() // UNK_0xeded
 {
   Push2Words("UNK_0xea2f");
-  Func8("HITS");
+  Push(0x6400); // IFIELD(HITS)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -1284,7 +1285,7 @@ void UNK_0xeded() // UNK_0xeded
   goto label2;
 
   label1:
-  Func8("UNK_0xe680");
+  Push(0x6401); // IFIELD(UNK_0xe680)
   Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xe568"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -1294,7 +1295,7 @@ void UNK_0xeded() // UNK_0xeded
   goto label2;
 
   label3:
-  Func8("UNK_0xe68a");
+  Push(0x640a); // IFIELD(UNK_0xe68a)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   Push(Pop() & Pop()); // AND
@@ -1303,7 +1304,7 @@ void UNK_0xeded() // UNK_0xeded
   goto label2;
 
   label4:
-  Func8("UNK_0xe685");
+  Push(0x6404); // IFIELD(UNK_0xe685)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label5;
   LoadData("UNK_0xe548"); // from 'CREATURE    '
@@ -1797,7 +1798,7 @@ void UNK_0xf231() // UNK_0xf231
 void UNK_0xf245() // UNK_0xf245
 {
   UNK_0xf20e(); // UNK_0xf20e
-  Func8("INST-QTY");
+  Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -1851,7 +1852,17 @@ void UNK_0xf2bf() // UNK_0xf2bf
   PRINT("A RUIN ", 7); // (.")
 }
 
-// 0xf2cd: db 0x4c 0x22 0x0c 0xf2 0xdc 0x1b 0x0a 0x41 0x20 0x4d 0x45 0x53 0x53 0x41 0x47 0x45 0x20 0x90 0x16 'L"     A MESSAGE   '
+
+// ================================================
+// 0xf2cd: WORD 'UNK_0xf2cf' codep=0x224c parp=0xf2cf
+// ================================================
+
+void UNK_0xf2cf() // UNK_0xf2cf
+{
+  UNK_0xf20e(); // UNK_0xf20e
+  PRINT("A MESSAGE ", 10); // (.")
+}
+
 
 // ================================================
 // 0xf2e0: WORD 'CLASS>DE' codep=0x4a4f parp=0xf2ed
@@ -1894,62 +1905,72 @@ void _ask_TALK() // ?TALK
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label2;
+  Pop();
   switch(Pop()) // CLASS>DE
   {
   case 68:
-    BEEP(); // BEEP
-    break;
-  case 42:
     SAYIT(); // SAYIT
     break;
-  case 40:
+  case 42:
     UNK_0xf27b(); // UNK_0xf27b
     break;
-  case 20:
+  case 40:
     UNK_0xf299(); // UNK_0xf299
     break;
-  case 41:
+  case 20:
     UNK_0xf21e(); // UNK_0xf21e
     break;
-  case 26:
+  case 41:
     UNK_0xf2bf(); // UNK_0xf2bf
     break;
-  case 28:
+  case 26:
     UNK_0xf245(); // UNK_0xf245
     break;
-  case 27:
+  case 28:
     UNK_0xf231(); // UNK_0xf231
     break;
+  case 27:
+    UNK_0xf2cf(); // UNK_0xf2cf
+    break;
+  default:
+    BEEP(); // BEEP
+    break;
+
   }
   goto label3;
 
   label2:
+  Pop();
   switch(Pop()) // CLASS>TY
   {
   case 68:
-    BEEP(); // BEEP
-    break;
-  case 42:
     UNK_0xf166(); // UNK_0xf166
     break;
-  case 40:
+  case 42:
     UNK_0xf27b(); // UNK_0xf27b
     break;
-  case 20:
+  case 40:
     UNK_0xf299(); // UNK_0xf299
     break;
-  case 41:
+  case 20:
     UNK_0xf21e(); // UNK_0xf21e
     break;
-  case 26:
+  case 41:
     UNK_0xf2bf(); // UNK_0xf2bf
     break;
-  case 28:
+  case 26:
     UNK_0xf245(); // UNK_0xf245
     break;
-  case 27:
+  case 28:
     UNK_0xf231(); // UNK_0xf231
     break;
+  case 27:
+    UNK_0xf2cf(); // UNK_0xf2cf
+    break;
+  default:
+    BEEP(); // BEEP
+    break;
+
   }
 
   label3:

@@ -415,13 +415,13 @@ void UNK_0xedd3() // UNK_0xedd3
   Push(0); // 0
 
   label2:
-  Func8("UNK_0xeba3");
+  Push(0x6603); // IFIELD(UNK_0xeba3)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   _st_(); // <
   if (Pop() == 0) goto label1;
   INEXT(); // INEXT
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
@@ -441,7 +441,7 @@ void UNK_0xedfd() // UNK_0xedfd
 {
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<
-  Func8("UNK_0xeba3");
+  Push(0x6603); // IFIELD(UNK_0xeba3)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
@@ -453,7 +453,7 @@ void UNK_0xedfd() // UNK_0xedfd
   label1:
   _0_gt_(); // 0>
   UNK_0xedd3(); // UNK_0xedd3
-  Func8("UNK_0xeba3");
+  Push(0x6603); // IFIELD(UNK_0xeba3)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0018);
   _st_(); // <
@@ -590,7 +590,7 @@ void UNK_0xef80() // UNK_0xef80
   SetColor("WHITE");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
-  Func8("UNK_0xeb7b");
+  Push(0x65ec); // IFIELD(UNK_0xeb7b)
   Push(Read16(sp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
@@ -604,7 +604,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(0x007a);
   Push(pp_XBLT); // XBLT
   _ex_(); // !
-  Func8("UNK_0xeb99");
+  Push(0x6600); // IFIELD(UNK_0xeb99)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -612,7 +612,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(0x0022);
   Push(h); // I
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeb80");
+  Push(0x65fb); // IFIELD(UNK_0xeb80)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -625,7 +625,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(0x001b);
   Push(h); // I
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeb85");
+  Push(0x65fc); // IFIELD(UNK_0xeb85)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -633,7 +633,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(0x0014);
   Push(h); // I
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeb8a");
+  Push(0x65fd); // IFIELD(UNK_0xeb8a)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -648,7 +648,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(0x000d);
   Push(h); // I
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeb8f");
+  Push(0x65fe); // IFIELD(UNK_0xeb8f)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -656,7 +656,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(cc__6); // 6
   R_gt_(); // R>
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeb94");
+  Push(0x65ff); // IFIELD(UNK_0xeb94)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   _dot_R(); // .R
@@ -758,12 +758,12 @@ void UNK_0xf052() // UNK_0xf052
   Push(0x003d);
   R_gt_(); // R>
   UNK_0xecb7(); // UNK_0xecb7
-  Func8("UNK_0xeba3");
+  Push(0x6603); // IFIELD(UNK_0xeba3)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
   Push(2); // 2
   _dot_R(); // .R
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -771,7 +771,7 @@ void UNK_0xf052() // UNK_0xf052
   UNK_0xef80(); // UNK_0xef80
 
   label1:
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   Push(Pop() & Pop()); // AND
@@ -828,7 +828,7 @@ void UNK_0xf161() // UNK_0xf161
   _ex_COLOR(); // !COLOR
   SWAP(); // SWAP
   POS_dot_(); // POS.
-  Func8("UNK_0xeb7b");
+  Push(0x65ec); // IFIELD(UNK_0xeb7b)
   _do__dot_(); // $.
   _ex_CRS(); // !CRS
 }
@@ -851,7 +851,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xeba8");
+  Push(0x65f2); // IFIELD(UNK_0xeba8)
   Push(i); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
@@ -860,7 +860,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   CI(); // CI
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -887,7 +887,7 @@ void UNK_0xf207() // UNK_0xf207
   CI(); // CI
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Func8("UNK_0xeba8");
+  Push(0x65f2); // IFIELD(UNK_0xeba8)
   Push(h); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
@@ -990,7 +990,7 @@ void UNK_0xf2ea() // UNK_0xf2ea
   UNK_0xf225(); // UNK_0xf225
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read16(Pop())); // @
   Push(2); // 2
   Push(Pop() & Pop()); // AND
@@ -1063,7 +1063,7 @@ void UNK_0xf3ce() // UNK_0xf3ce
   UNK_0xf2dc(); // UNK_0xf2dc
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label1;
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -1111,7 +1111,7 @@ void UNK_0xf410() // UNK_0xf410
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
@@ -1141,11 +1141,11 @@ void UNK_0xf442() // UNK_0xf442
   IOPEN(); // IOPEN
 
   label1:
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00f7);
   Push(Pop() & Pop()); // AND
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   C_ex_(); // C!
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
@@ -1159,15 +1159,15 @@ void UNK_0xf442() // UNK_0xf442
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xeba8");
+  Push(0x65f2); // IFIELD(UNK_0xeba8)
   Push(i); // I
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__8); // 8
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   Push(cc__3); // 3
@@ -1227,13 +1227,13 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xeba8");
+  Push(0x65f2); // IFIELD(UNK_0xeba8)
   Push(i); // I
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xeb9e");
+  Push(0x6601); // IFIELD(UNK_0xeb9e)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -1253,7 +1253,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   goto label2;
 
   label3:
-  Func8("UNK_0xeba8");
+  Push(0x65f2); // IFIELD(UNK_0xeba8)
   Push(i); // I
   Push(Pop()-1); // 1-
   Push(cc__3); // 3

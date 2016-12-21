@@ -14,16 +14,17 @@
 // 1871:      UNK_0xf3da  codep:0x224c parp:0xf3da size:0x0048 C-string:'UNK_0xf3da'
 // 1872:         #HUMANS  codep:0x224c parp:0xf42e size:0x0014 C-string:'_n_HUMANS'
 // 1873:      UNK_0xf444  codep:0x224c parp:0xf444 size:0x0018 C-string:'UNK_0xf444'
-// 1874:      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x001c C-string:'UNK_0xf45e'
-// 1875:      UNK_0xf47c  codep:0x224c parp:0xf47c size:0x0034 C-string:'UNK_0xf47c'
-// 1876:      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x0016 C-string:'UNK_0xf4b2'
-// 1877:      UNK_0xf4ca  codep:0x224c parp:0xf4ca size:0x0008 C-string:'UNK_0xf4ca'
-// 1878:      UNK_0xf4d4  codep:0x224c parp:0xf4d4 size:0x0002 C-string:'UNK_0xf4d4'
-// 1879:      UNK_0xf4d8  codep:0x224c parp:0xf4d8 size:0x0008 C-string:'UNK_0xf4d8'
-// 1880:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0008 C-string:'UNK_0xf4e2'
-// 1881:      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x0008 C-string:'UNK_0xf4ec'
-// 1882:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
-// 1883:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
+// 1874:      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x0012 C-string:'UNK_0xf45e'
+// 1875:      UNK_0xf472  codep:0x224c parp:0xf472 size:0x0008 C-string:'UNK_0xf472'
+// 1876:      UNK_0xf47c  codep:0x224c parp:0xf47c size:0x0034 C-string:'UNK_0xf47c'
+// 1877:      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x0016 C-string:'UNK_0xf4b2'
+// 1878:      UNK_0xf4ca  codep:0x224c parp:0xf4ca size:0x0008 C-string:'UNK_0xf4ca'
+// 1879:      UNK_0xf4d4  codep:0x224c parp:0xf4d4 size:0x0002 C-string:'UNK_0xf4d4'
+// 1880:      UNK_0xf4d8  codep:0x224c parp:0xf4d8 size:0x0008 C-string:'UNK_0xf4d8'
+// 1881:      UNK_0xf4e2  codep:0x224c parp:0xf4e2 size:0x0008 C-string:'UNK_0xf4e2'
+// 1882:      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x0008 C-string:'UNK_0xf4ec'
+// 1883:      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
+// 1884:        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
 
 // =================================
 // =========== VARIABLES ===========
@@ -107,7 +108,17 @@ void UNK_0xf45e() // UNK_0xf45e
   _star_CLOSE(); // *CLOSE
 }
 
-// 0xf470: db 0x4c 0x22 0x5d 0x17 0x5f 0x00 0x5c 0xf4 0x90 0x16 'L"] _ \   '
+
+// ================================================
+// 0xf470: WORD 'UNK_0xf472' codep=0x224c parp=0xf472
+// ================================================
+
+void UNK_0xf472() // UNK_0xf472
+{
+  Push(0x005f);
+  UNK_0xf45e(); // UNK_0xf45e
+}
+
 
 // ================================================
 // 0xf47a: WORD 'UNK_0xf47c' codep=0x224c parp=0xf47c
@@ -124,17 +135,17 @@ void UNK_0xf47c() // UNK_0xf47c
   signed short int imax = Pop();
   do // (DO)
   {
-  Func8("UNK_0xf3c6");
+  Push(0x65f2); // IFIELD(UNK_0xf3c6)
   Push(i); // I
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf3da(); // UNK_0xf3da
   if (Pop() == 0) goto label1;
-  Func8("UNK_0xf3d5");
+  Push(0x6601); // IFIELD(UNK_0xf3d5)
   Push(Read16(Pop())); // @
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  Func8("UNK_0xf3d5");
+  Push(0x6601); // IFIELD(UNK_0xf3d5)
   _ex_(); // !
 
   label1:
@@ -235,26 +246,31 @@ void DO_dash_CLOUD() // DO-CLOUD
   WUP(); // WUP
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
+  Pop();
   switch(Pop()) // (DO-CLOUD)
   {
   case 1:
-    UNK_0xf4ec(); // UNK_0xf4ec
-    break;
-  case 2:
     UNK_0xf4e2(); // UNK_0xf4e2
     break;
-  case 3:
+  case 2:
     UNK_0xf4d8(); // UNK_0xf4d8
     break;
-  case 4:
+  case 3:
     UNK_0xf4d4(); // UNK_0xf4d4
     break;
-  case 5:
+  case 4:
     UNK_0xf4ca(); // UNK_0xf4ca
     break;
-  case 6:
+  case 5:
     UNK_0xf4b2(); // UNK_0xf4b2
     break;
+  case 6:
+    UNK_0xf472(); // UNK_0xf472
+    break;
+  default:
+    UNK_0xf4ec(); // UNK_0xf4ec
+    break;
+
   }
   return;
 

@@ -25,29 +25,30 @@
 // 1882:      UNK_0xf14f  codep:0x224c parp:0xf14f size:0x0012 C-string:'UNK_0xf14f'
 // 1883:      UNK_0xf163  codep:0x224c parp:0xf163 size:0x000c C-string:'UNK_0xf163'
 // 1884:      UNK_0xf171  codep:0x224c parp:0xf171 size:0x000d C-string:'UNK_0xf171'
-// 1885:      UNK_0xf180  codep:0x224c parp:0xf180 size:0x001b C-string:'UNK_0xf180'
-// 1886:          #>.COL  codep:0x4b3b parp:0xf1a6 size:0x0014 C-string:'_n__gt__dot_COL'
-// 1887:      UNK_0xf1bc  codep:0x224c parp:0xf1bc size:0x0030 C-string:'UNK_0xf1bc'
-// 1888:      UNK_0xf1ee  codep:0x224c parp:0xf1ee size:0x001a C-string:'UNK_0xf1ee'
-// 1889:      UNK_0xf20a  codep:0x224c parp:0xf20a size:0x0026 C-string:'UNK_0xf20a'
-// 1890:           PSYCH  codep:0x224c parp:0xf23a size:0x004e C-string:'PSYCH'
-// 1891:      UNK_0xf28a  codep:0x224c parp:0xf28a size:0x0038 C-string:'UNK_0xf28a'
-// 1892:      UNK_0xf2c4  codep:0x224c parp:0xf2c4 size:0x0012 C-string:'UNK_0xf2c4'
-// 1893:      UNK_0xf2d8  codep:0x224c parp:0xf2d8 size:0x000c C-string:'UNK_0xf2d8'
-// 1894:      UNK_0xf2e6  codep:0x224c parp:0xf2e6 size:0x000a C-string:'UNK_0xf2e6'
-// 1895:      UNK_0xf2f2  codep:0x224c parp:0xf2f2 size:0x000a C-string:'UNK_0xf2f2'
-// 1896:      UNK_0xf2fe  codep:0x224c parp:0xf2fe size:0x000a C-string:'UNK_0xf2fe'
-// 1897:      UNK_0xf30a  codep:0x224c parp:0xf30a size:0x000a C-string:'UNK_0xf30a'
-// 1898:      UNK_0xf316  codep:0x224c parp:0xf316 size:0x000a C-string:'UNK_0xf316'
-// 1899:      UNK_0xf322  codep:0x224c parp:0xf322 size:0x0006 C-string:'UNK_0xf322'
-// 1900:      UNK_0xf32a  codep:0x224c parp:0xf32a size:0x008c C-string:'UNK_0xf32a'
-// 1901:      UNK_0xf3b8  codep:0x224c parp:0xf3b8 size:0x0014 C-string:'UNK_0xf3b8'
-// 1902:      UNK_0xf3ce  codep:0x224c parp:0xf3ce size:0x000e C-string:'UNK_0xf3ce'
-// 1903:      UNK_0xf3de  codep:0x224c parp:0xf3de size:0x00ac C-string:'UNK_0xf3de'
-// 1904:      UNK_0xf48c  codep:0x224c parp:0xf48c size:0x0030 C-string:'UNK_0xf48c'
-// 1905:      UNK_0xf4be  codep:0x224c parp:0xf4be size:0x002c C-string:'UNK_0xf4be'
-// 1906:      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x004e C-string:'UNK_0xf4ec'
-// 1907:           .TMAP  codep:0x224c parp:0xf544 size:0x0000 C-string:'_dot_TMAP'
+// 1885:      UNK_0xf180  codep:0x224c parp:0xf180 size:0x000a C-string:'UNK_0xf180'
+// 1886:      UNK_0xf18c  codep:0x224c parp:0xf18c size:0x000f C-string:'UNK_0xf18c'
+// 1887:          #>.COL  codep:0x4b3b parp:0xf1a6 size:0x0014 C-string:'_n__gt__dot_COL'
+// 1888:      UNK_0xf1bc  codep:0x224c parp:0xf1bc size:0x0030 C-string:'UNK_0xf1bc'
+// 1889:      UNK_0xf1ee  codep:0x224c parp:0xf1ee size:0x001a C-string:'UNK_0xf1ee'
+// 1890:      UNK_0xf20a  codep:0x224c parp:0xf20a size:0x0026 C-string:'UNK_0xf20a'
+// 1891:           PSYCH  codep:0x224c parp:0xf23a size:0x004e C-string:'PSYCH'
+// 1892:      UNK_0xf28a  codep:0x224c parp:0xf28a size:0x0038 C-string:'UNK_0xf28a'
+// 1893:      UNK_0xf2c4  codep:0x224c parp:0xf2c4 size:0x0012 C-string:'UNK_0xf2c4'
+// 1894:      UNK_0xf2d8  codep:0x224c parp:0xf2d8 size:0x000c C-string:'UNK_0xf2d8'
+// 1895:      UNK_0xf2e6  codep:0x224c parp:0xf2e6 size:0x000a C-string:'UNK_0xf2e6'
+// 1896:      UNK_0xf2f2  codep:0x224c parp:0xf2f2 size:0x000a C-string:'UNK_0xf2f2'
+// 1897:      UNK_0xf2fe  codep:0x224c parp:0xf2fe size:0x000a C-string:'UNK_0xf2fe'
+// 1898:      UNK_0xf30a  codep:0x224c parp:0xf30a size:0x000a C-string:'UNK_0xf30a'
+// 1899:      UNK_0xf316  codep:0x224c parp:0xf316 size:0x000a C-string:'UNK_0xf316'
+// 1900:      UNK_0xf322  codep:0x224c parp:0xf322 size:0x0006 C-string:'UNK_0xf322'
+// 1901:      UNK_0xf32a  codep:0x224c parp:0xf32a size:0x008c C-string:'UNK_0xf32a'
+// 1902:      UNK_0xf3b8  codep:0x224c parp:0xf3b8 size:0x0014 C-string:'UNK_0xf3b8'
+// 1903:      UNK_0xf3ce  codep:0x224c parp:0xf3ce size:0x000e C-string:'UNK_0xf3ce'
+// 1904:      UNK_0xf3de  codep:0x224c parp:0xf3de size:0x00ac C-string:'UNK_0xf3de'
+// 1905:      UNK_0xf48c  codep:0x224c parp:0xf48c size:0x0030 C-string:'UNK_0xf48c'
+// 1906:      UNK_0xf4be  codep:0x224c parp:0xf4be size:0x002c C-string:'UNK_0xf4be'
+// 1907:      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x004e C-string:'UNK_0xf4ec'
+// 1908:           .TMAP  codep:0x224c parp:0xf544 size:0x0000 C-string:'_dot_TMAP'
 
 // =================================
 // =========== VARIABLES ===========
@@ -108,20 +109,25 @@ void UNK_0xf0bb() // UNK_0xf0bb
 {
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
+  Pop();
   switch(Pop()) // N>STAT
   {
   case 4:
-    Push(1); // 1
-    break;
-  case 8:
     Push(2); // 2
     break;
-  case 16:
+  case 8:
     _3(); // 3
+    break;
+  case 16:
+    _4(); // 4
     break;
   case 1:
     _4(); // 4
     break;
+  default:
+    Push(1); // 1
+    break;
+
   }
 }
 
@@ -282,7 +288,16 @@ void UNK_0xf180() // UNK_0xf180
   PRINT("RED", 3); // (.")
 }
 
-// 0xf18a: db 0x4c 0x22 0xdc 0x1b 0x0a 0x42 0x52 0x49 0x47 0x48 0x54 0x20 0x52 0x45 0x44 0x90 0x16 'L"   BRIGHT RED  '
+
+// ================================================
+// 0xf18a: WORD 'UNK_0xf18c' codep=0x224c parp=0xf18c
+// ================================================
+
+void UNK_0xf18c() // UNK_0xf18c
+{
+  PRINT("BRIGHT RED", 10); // (.")
+}
+
 
 // ================================================
 // 0xf19b: WORD '#>.COL' codep=0x4b3b parp=0xf1a6
@@ -388,20 +403,25 @@ void PSYCH() // PSYCH
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
   _dot_TTY(); // .TTY
+  Pop();
   switch(Pop()) // #>.COL
   {
   case 1:
-    NOP(); // NOP
-    break;
-  case 2:
     UNK_0xf163(); // UNK_0xf163
     break;
-  case 3:
+  case 2:
     UNK_0xf171(); // UNK_0xf171
     break;
-  case 4:
+  case 3:
     UNK_0xf180(); // UNK_0xf180
     break;
+  case 4:
+    UNK_0xf18c(); // UNK_0xf18c
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   PRINT(".", 1); // (.")
 

@@ -18,18 +18,19 @@
 // 1875:      UNK_0xf276  codep:0x224c parp:0xf276 size:0x0036 C-string:'UNK_0xf276'
 // 1876:      UNK_0xf2ae  codep:0x224c parp:0xf2ae size:0x0020 C-string:'UNK_0xf2ae'
 // 1877:      UNK_0xf2d0  codep:0x224c parp:0xf2d0 size:0x0012 C-string:'UNK_0xf2d0'
-// 1878:      UNK_0xf2e4  codep:0x224c parp:0xf2e4 size:0x002d C-string:'UNK_0xf2e4'
-// 1879:           (.CS)  codep:0x4b3b parp:0xf31b size:0x0010 C-string:'_ro__dot_CS_rc_'
-// 1880:      UNK_0xf32d  codep:0x1d29 parp:0xf32d size:0x0002 C-string:'UNK_0xf32d'
-// 1881:      UNK_0xf331  codep:0x224c parp:0xf331 size:0x0045 C-string:'UNK_0xf331'
-// 1882:      UNK_0xf378  codep:0x224c parp:0xf378 size:0x002f C-string:'UNK_0xf378'
-// 1883:      UNK_0xf3a9  codep:0x224c parp:0xf3a9 size:0x005b C-string:'UNK_0xf3a9'
-// 1884:      UNK_0xf406  codep:0x224c parp:0xf406 size:0x000c C-string:'UNK_0xf406'
-// 1885:      UNK_0xf414  codep:0x224c parp:0xf414 size:0x004c C-string:'UNK_0xf414'
-// 1886:      UNK_0xf462  codep:0x224c parp:0xf462 size:0x002e C-string:'UNK_0xf462'
-// 1887:      UNK_0xf492  codep:0x224c parp:0xf492 size:0x0028 C-string:'UNK_0xf492'
-// 1888:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0048 C-string:'UNK_0xf4bc'
-// 1889:      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
+// 1878:      UNK_0xf2e4  codep:0x224c parp:0xf2e4 size:0x0015 C-string:'UNK_0xf2e4'
+// 1879:      UNK_0xf2fb  codep:0x224c parp:0xf2fb size:0x0016 C-string:'UNK_0xf2fb'
+// 1880:           (.CS)  codep:0x4b3b parp:0xf31b size:0x0010 C-string:'_ro__dot_CS_rc_'
+// 1881:      UNK_0xf32d  codep:0x1d29 parp:0xf32d size:0x0002 C-string:'UNK_0xf32d'
+// 1882:      UNK_0xf331  codep:0x224c parp:0xf331 size:0x0045 C-string:'UNK_0xf331'
+// 1883:      UNK_0xf378  codep:0x224c parp:0xf378 size:0x002f C-string:'UNK_0xf378'
+// 1884:      UNK_0xf3a9  codep:0x224c parp:0xf3a9 size:0x005b C-string:'UNK_0xf3a9'
+// 1885:      UNK_0xf406  codep:0x224c parp:0xf406 size:0x000c C-string:'UNK_0xf406'
+// 1886:      UNK_0xf414  codep:0x224c parp:0xf414 size:0x004c C-string:'UNK_0xf414'
+// 1887:      UNK_0xf462  codep:0x224c parp:0xf462 size:0x002e C-string:'UNK_0xf462'
+// 1888:      UNK_0xf492  codep:0x224c parp:0xf492 size:0x0028 C-string:'UNK_0xf492'
+// 1889:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0048 C-string:'UNK_0xf4bc'
+// 1890:      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
 
 // =================================
 // =========== VARIABLES ===========
@@ -210,7 +211,21 @@ void UNK_0xf2e4() // UNK_0xf2e4
   PRINT("PURCHASE ENGINES", 16); // (.")
 }
 
-// 0xf2f9: db 0x4c 0x22 0xdc 0x1b 0x05 0x20 0x41 0x4e 0x44 0x20 0x5c 0xf2 0x5d 0x17 0x0a 0x00 0x3b 0x5a 0x23 0x6d 0xe2 0xf2 0x90 0x16 'L"    AND \ ]   ;Z#m    '
+
+// ================================================
+// 0xf2f9: WORD 'UNK_0xf2fb' codep=0x224c parp=0xf2fb
+// ================================================
+
+void UNK_0xf2fb() // UNK_0xf2fb
+{
+  PRINT(" AND ", 5); // (.")
+  UNK_0xf25e(); // UNK_0xf25e
+  Push(0x000a);
+  Push(pp_YBLT); // YBLT
+  _plus__ex_(); // +!
+  UNK_0xf2e4(); // UNK_0xf2e4
+}
+
 
 // ================================================
 // 0xf311: WORD '(.CS)' codep=0x4b3b parp=0xf31b
@@ -240,31 +255,41 @@ void UNK_0xf331() // UNK_0xf331
   Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
+  Pop();
   switch(Pop()) // (.CS)
   {
   case 1:
-    NOP(); // NOP
-    break;
-  case 6:
     UNK_0xf2d0(); // UNK_0xf2d0
     break;
-  case 7:
+  case 6:
     UNK_0xf2e4(); // UNK_0xf2e4
     break;
+  case 7:
+    UNK_0xf2fb(); // UNK_0xf2fb
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
+  Pop();
   switch(Pop()) // (.CS)
   {
   case 1:
-    NOP(); // NOP
-    break;
-  case 6:
     UNK_0xf2d0(); // UNK_0xf2d0
     break;
-  case 7:
+  case 6:
     UNK_0xf2e4(); // UNK_0xf2e4
     break;
+  case 7:
+    UNK_0xf2fb(); // UNK_0xf2fb
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
   }
 }
 
@@ -397,10 +422,10 @@ void UNK_0xf462() // UNK_0xf462
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
-  Func8("UNK_0xf18b");
+  Push(0x65f2); // IFIELD(UNK_0xf18b)
   Push(0x0012);
   Push(Pop() + Pop()); // +
-  Func8("UNK_0xf18b");
+  Push(0x65f2); // IFIELD(UNK_0xf18b)
 
   signed short int i = Pop();
   signed short int imax = Pop();
@@ -408,7 +433,7 @@ void UNK_0xf462() // UNK_0xf462
   {
   Push(i); // I
   _at__gt_C_plus_S(); // @>C+S
-  Func8("UNK_0xf186");
+  Push(0x6601); // IFIELD(UNK_0xf186)
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
@@ -432,10 +457,10 @@ void UNK_0xf492() // UNK_0xf492
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Func8("%NAME");
+  Push(0x6615); // IFIELD(%NAME)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Func8("UNK_0xf190");
+  Push(0x65f4); // IFIELD(UNK_0xf190)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -470,7 +495,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(cc__6); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  Func8("INST-QT");
+  Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(0x000a);

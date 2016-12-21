@@ -138,7 +138,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0); // 0
-  Func8("UNK_0xf272");
+  Push(0x65ec); // IFIELD(UNK_0xf272)
   _ex_(); // !
   LoadData("UNK_0xf222"); // from 'REGIONS     '
   Push(cc__4); // 4

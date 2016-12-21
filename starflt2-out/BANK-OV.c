@@ -143,7 +143,7 @@ void _ex_TFLAG() // !TFLAG
 {
   UNK_0xefd5(); // UNK_0xefd5
   Push(1); // 1
-  Func8("UNK_0xefbe");
+  Push(0x65f4); // IFIELD(UNK_0xefbe)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -157,7 +157,7 @@ void _ex_TFLAG() // !TFLAG
 void D_at_BALANCE() // D@BALANCE
 {
   UNK_0xefd5(); // UNK_0xefd5
-  Func8("UNK_0xefb9");
+  Push(0x65f0); // IFIELD(UNK_0xefb9)
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
 }
@@ -171,7 +171,7 @@ void D_at_BALANCE() // D@BALANCE
 void D_ex_BALANCE() // D!BALANCE
 {
   UNK_0xefd5(); // UNK_0xefd5
-  Func8("UNK_0xefb9");
+  Push(0x65f0); // IFIELD(UNK_0xefb9)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -198,9 +198,9 @@ void _ask_BALANCE() // ?BALANCE
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
   UNK_0xefd5(); // UNK_0xefd5
-  Func8("UNK_0xefb4");
+  Push(0x65ec); // IFIELD(UNK_0xefb4)
   _2_at_(); // 2@
-  Func8("UNK_0xefb9");
+  Push(0x65f0); // IFIELD(UNK_0xefb9)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -214,7 +214,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 void TRANSACT() // TRANSACT
 {
   UNK_0xefd5(); // UNK_0xefd5
-  Func8("UNK_0xefbe");
+  Push(0x65f4); // IFIELD(UNK_0xefbe)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -252,23 +252,23 @@ void TRANSACT() // TRANSACT
   SET_dash_CUR(); // SET-CUR
   Push(pp_STARDAT); // STARDAT
   Push(Read16(Pop())); // @
-  Func8("UNK_0xefb4");
+  Push(0x65ec); // IFIELD(UNK_0xefb4)
   _2_at_(); // 2@
-  Func8("UNK_0xefb9");
+  Push(0x65f0); // IFIELD(UNK_0xefb9)
   _2_at_(); // 2@
   D_dash_(); // D-
   ICLOSE(); // ICLOSE
-  Func8("UNK_0xefcb");
+  Push(0x65ec); // IFIELD(UNK_0xefcb)
   D_ex_(); // D!
-  Func8("UNK_0xefd0");
+  Push(0x65f0); // IFIELD(UNK_0xefd0)
   _ex_(); // !
   ICLOSE(); // ICLOSE
-  Func8("UNK_0xefb9");
+  Push(0x65f0); // IFIELD(UNK_0xefb9)
   _2_at_(); // 2@
-  Func8("UNK_0xefb4");
+  Push(0x65ec); // IFIELD(UNK_0xefb4)
   D_ex_(); // D!
   Push(0); // 0
-  Func8("UNK_0xefbe");
+  Push(0x65f4); // IFIELD(UNK_0xefbe)
   C_ex_(); // C!
   goto label4;
 
@@ -357,7 +357,7 @@ void UNK_0xf138() // UNK_0xf138
 
 void UNK_0xf162() // UNK_0xf162
 {
-  Func8("UNK_0xefd0");
+  Push(0x65f0); // IFIELD(UNK_0xefd0)
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -393,7 +393,7 @@ void UNK_0xf162() // UNK_0xf162
 
 void UNK_0xf1a6() // UNK_0xf1a6
 {
-  Func8("UNK_0xefcb");
+  Push(0x65ec); // IFIELD(UNK_0xefcb)
   _2_at_(); // 2@
   _2DUP(); // 2DUP
   _2DUP(); // 2DUP
@@ -720,7 +720,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(0x001d);
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  Func8("UNK_0xefb4");
+  Push(0x65ec); // IFIELD(UNK_0xefb4)
   _2_at_(); // 2@
   Push(cc__7); // 7
   D_dot_R(); // D.R
