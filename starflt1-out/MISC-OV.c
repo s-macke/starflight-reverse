@@ -23,15 +23,20 @@
 // 1714:           (?ART  codep:0x224c parp:0xf1ad size:0x002e C-string:'_ro__ask_ART'
 // 1715:           (QUIT  codep:0x224c parp:0xf1e5 size:0x0021 C-string:'_ro_QUIT'
 // 1716:           (.0$$  codep:0x224c parp:0xf210 size:0x0019 C-string:'_ro__dot_0_do__do_'
-// 1717:           (0$$$  codep:0x224c parp:0xf233 size:0x0099 C-string:'_ro_0_do__do__do_'
-// 1718:            .ERR  codep:0x4a4f parp:0xf2d5 size:0x001c C-string:'_dot_ERR'
-// 1719:           EINDE  codep:0x4a4f parp:0xf2fb size:0x001c C-string:'EINDE'
-// 1720:      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0068 C-string:'UNK_0xf319'
-// 1721:      UNK_0xf383  codep:0x224c parp:0xf383 size:0x001a C-string:'UNK_0xf383'
-// 1722:      UNK_0xf39f  codep:0x224c parp:0xf39f size:0x0034 C-string:'UNK_0xf39f'
-// 1723:           (?.EQ  codep:0x224c parp:0xf3dd size:0x0079 C-string:'_ro__ask__dot_EQ'
-// 1724:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0020 C-string:'UNK_0xf458'
-// 1725:           =CARG  codep:0x224c parp:0xf482 size:0x0000 C-string:'_eq_CARG'
+// 1717:           (0$$$  codep:0x224c parp:0xf233 size:0x0036 C-string:'_ro_0_do__do__do_'
+// 1718:      UNK_0xf26b  codep:0x224c parp:0xf26b size:0x000c C-string:'UNK_0xf26b'
+// 1719:      UNK_0xf279  codep:0x224c parp:0xf279 size:0x001b C-string:'UNK_0xf279'
+// 1720:      UNK_0xf296  codep:0x224c parp:0xf296 size:0x000b C-string:'UNK_0xf296'
+// 1721:      UNK_0xf2a3  codep:0x224c parp:0xf2a3 size:0x000d C-string:'UNK_0xf2a3'
+// 1722:      UNK_0xf2b2  codep:0x224c parp:0xf2b2 size:0x001a C-string:'UNK_0xf2b2'
+// 1723:            .ERR  codep:0x4a4f parp:0xf2d5 size:0x001c C-string:'_dot_ERR'
+// 1724:           EINDE  codep:0x4a4f parp:0xf2fb size:0x001c C-string:'EINDE'
+// 1725:      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0068 C-string:'UNK_0xf319'
+// 1726:      UNK_0xf383  codep:0x224c parp:0xf383 size:0x001a C-string:'UNK_0xf383'
+// 1727:      UNK_0xf39f  codep:0x224c parp:0xf39f size:0x0034 C-string:'UNK_0xf39f'
+// 1728:           (?.EQ  codep:0x224c parp:0xf3dd size:0x0079 C-string:'_ro__ask__dot_EQ'
+// 1729:      UNK_0xf458  codep:0x224c parp:0xf458 size:0x0020 C-string:'UNK_0xf458'
+// 1730:           =CARG  codep:0x224c parp:0xf482 size:0x0000 C-string:'_eq_CARG'
 
 // =================================
 // =========== VARIABLES ===========
@@ -394,7 +399,66 @@ void _ro_0_do__do__do_() // (0$$$
   _ro_QUIT(); // (QUIT
 }
 
-// 0xf269: db 0x4c 0x22 0x39 0x3f 0x07 0x53 0x45 0x4e 0x53 0x4f 0x52 0x53 0x90 0x16 0x4c 0x22 0xef 0xa4 0x20 0x0f 0x8b 0x3b 0x51 0xa1 0x39 0x3f 0x0e 0x43 0x4f 0x4d 0x4d 0x55 0x4e 0x49 0x43 0x41 0x54 0x49 0x4f 0x4e 0x53 0x90 0x16 0x4c 0x22 0x39 0x3f 0x06 0x4c 0x41 0x53 0x45 0x52 0x53 0x90 0x16 0x4c 0x22 0x39 0x3f 0x08 0x4d 0x49 0x53 0x53 0x49 0x4c 0x45 0x53 0x90 0x16 0x4c 0x22 0x39 0x3f 0x07 0x45 0x4e 0x47 0x49 0x4e 0x45 0x53 0x90 0x16 0x4c 0x22 0x39 0x3f 0x07 0x53 0x48 0x49 0x45 0x4c 0x44 0x53 0x90 0x16 'L"9? SENSORS  L"     ;Q 9? COMMUNICATIONS  L"9? LASERS  L"9? MISSILES  L"9? ENGINES  L"9? SHIELDS  '
+
+// ================================================
+// 0xf269: WORD 'UNK_0xf26b' codep=0x224c parp=0xf26b
+// ================================================
+
+void UNK_0xf26b() // UNK_0xf26b
+{
+
+  UNK_0x3f3b("SENSORS");
+}
+
+
+// ================================================
+// 0xf277: WORD 'UNK_0xf279' codep=0x224c parp=0xf279
+// ================================================
+
+void UNK_0xf279() // UNK_0xf279
+{
+  TTY_dash_SCR(); // TTY-SCR
+  Push(0); // 0
+  Push(cc__6); // 6
+  CTPOS_dot_(); // CTPOS.
+
+  UNK_0x3f3b("COMMUNICATIONS");
+}
+
+
+// ================================================
+// 0xf294: WORD 'UNK_0xf296' codep=0x224c parp=0xf296
+// ================================================
+
+void UNK_0xf296() // UNK_0xf296
+{
+
+  UNK_0x3f3b("LASERS");
+}
+
+
+// ================================================
+// 0xf2a1: WORD 'UNK_0xf2a3' codep=0x224c parp=0xf2a3
+// ================================================
+
+void UNK_0xf2a3() // UNK_0xf2a3
+{
+
+  UNK_0x3f3b("MISSILES");
+}
+
+
+// ================================================
+// 0xf2b0: WORD 'UNK_0xf2b2' codep=0x224c parp=0xf2b2
+// ================================================
+
+void UNK_0xf2b2() // UNK_0xf2b2
+{
+
+  UNK_0x3f3b("ENGINES");
+}
+
+// 0xf2be: db 0x4c 0x22 0x39 0x3f 0x07 0x53 0x48 0x49 0x45 0x4c 0x44 0x53 0x90 0x16 'L"9? SHIELDS  '
 
 // ================================================
 // 0xf2cc: WORD '.ERR' codep=0x4a4f parp=0xf2d5
@@ -415,7 +479,27 @@ void UNK_0xf319() // UNK_0xf319
   SetColor("BLACK");
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT
-  Case(.ERR);
+  switch(Pop()) // .ERR
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    UNK_0xf26b(); // UNK_0xf26b
+    break;
+  case 3:
+    UNK_0xf279(); // UNK_0xf279
+    break;
+  case 4:
+    UNK_0xf296(); // UNK_0xf296
+    break;
+  case 5:
+    UNK_0xf2a3(); // UNK_0xf2a3
+    break;
+  case 6:
+    UNK_0xf2b2(); // UNK_0xf2b2
+    break;
+  }
   Push(0x0079);
   OVER(); // OVER
   Push(Pop()*2); // 2*
@@ -465,7 +549,27 @@ void UNK_0xf319() // UNK_0xf319
 
 void UNK_0xf383() // UNK_0xf383
 {
-  Case(EINDE);
+  switch(Pop()) // EINDE
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    Push(2); // 2
+    break;
+  case 3:
+    _3(); // 3
+    break;
+  case 4:
+    _6(); // 6
+    break;
+  case 5:
+    _5(); // 5
+    break;
+  case 6:
+    Push(1); // 1
+    break;
+  }
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -486,7 +590,27 @@ void UNK_0xf383() // UNK_0xf383
 void UNK_0xf39f() // UNK_0xf39f
 {
   Push(Read16(sp)); // DUP
-  Case(EINDE);
+  switch(Pop()) // EINDE
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    Push(2); // 2
+    break;
+  case 3:
+    _3(); // 3
+    break;
+  case 4:
+    _6(); // 6
+    break;
+  case 5:
+    _5(); // 5
+    break;
+  case 6:
+    Push(1); // 1
+    break;
+  }
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -523,7 +647,27 @@ void _ro__ask__dot_EQ() // (?.EQ
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   Push(h); // I
-  Case(EINDE);
+  switch(Pop()) // EINDE
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    Push(2); // 2
+    break;
+  case 3:
+    _3(); // 3
+    break;
+  case 4:
+    _6(); // 6
+    break;
+  case 5:
+    _5(); // 5
+    break;
+  case 6:
+    Push(1); // 1
+    break;
+  }
   Push(Pop()*2); // 2*
   Func8("UNK_0xefd6");
   Push(Pop() + Pop()); // +
@@ -535,7 +679,27 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Case(.ERR);
+  switch(Pop()) // .ERR
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    UNK_0xf26b(); // UNK_0xf26b
+    break;
+  case 3:
+    UNK_0xf279(); // UNK_0xf279
+    break;
+  case 4:
+    UNK_0xf296(); // UNK_0xf296
+    break;
+  case 5:
+    UNK_0xf2a3(); // UNK_0xf2a3
+    break;
+  case 6:
+    UNK_0xf2b2(); // UNK_0xf2b2
+    break;
+  }
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0); // 0
@@ -553,7 +717,27 @@ void _ro__ask__dot_EQ() // (?.EQ
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
   Push(h); // I
-  Case(.ERR);
+  switch(Pop()) // .ERR
+  {
+  case 1:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 2:
+    UNK_0xf26b(); // UNK_0xf26b
+    break;
+  case 3:
+    UNK_0xf279(); // UNK_0xf279
+    break;
+  case 4:
+    UNK_0xf296(); // UNK_0xf296
+    break;
+  case 5:
+    UNK_0xf2a3(); // UNK_0xf2a3
+    break;
+  case 6:
+    UNK_0xf2b2(); // UNK_0xf2b2
+    break;
+  }
   Func14("TYPE"); // call of word 0x2690
   Push(0); // 0
 

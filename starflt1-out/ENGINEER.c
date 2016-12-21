@@ -20,26 +20,32 @@
 // 1711:           DBARS  codep:0x224c parp:0xee02 size:0x0044 C-string:'DBARS'
 // 1712:       (/DAMAGE)  codep:0x224c parp:0xee54 size:0x0012 C-string:'_ro__slash_DAMAGE_rc_'
 // 1713:      UNK_0xee68  codep:0x224c parp:0xee68 size:0x0036 C-string:'UNK_0xee68'
-// 1714:      UNK_0xeea0  codep:0x224c parp:0xeea0 size:0x0142 C-string:'UNK_0xeea0'
-// 1715:      .SHIP-ITEM  codep:0x4a4f parp:0xeff1 size:0x0020 C-string:'_dot_SHIP_dash_ITEM'
-// 1716:      UNK_0xf013  codep:0x224c parp:0xf013 size:0x0046 C-string:'UNK_0xf013'
-// 1717:      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x0023 C-string:'UNK_0xf05b'
-// 1718:      UNK_0xf080  codep:0x224c parp:0xf080 size:0x0049 C-string:'UNK_0xf080'
-// 1719:      UNK_0xf0cb  codep:0x224c parp:0xf0cb size:0x0032 C-string:'UNK_0xf0cb'
-// 1720:      UNK_0xf0ff  codep:0x224c parp:0xf0ff size:0x0082 C-string:'UNK_0xf0ff'
-// 1721:      UNK_0xf183  codep:0x224c parp:0xf183 size:0x004c C-string:'UNK_0xf183'
-// 1722:      UNK_0xf1d1  codep:0x224c parp:0xf1d1 size:0x0032 C-string:'UNK_0xf1d1'
-// 1723:      UNK_0xf205  codep:0x224c parp:0xf205 size:0x002a C-string:'UNK_0xf205'
-// 1724:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x006d C-string:'UNK_0xf231'
-// 1725:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x002c C-string:'UNK_0xf2a0'
-// 1726:      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x004a C-string:'UNK_0xf2ce'
-// 1727:      UNK_0xf31a  codep:0x224c parp:0xf31a size:0x001e C-string:'UNK_0xf31a'
-// 1728:      UNK_0xf33a  codep:0x224c parp:0xf33a size:0x001c C-string:'UNK_0xf33a'
-// 1729:      UNK_0xf358  codep:0x224c parp:0xf358 size:0x0021 C-string:'UNK_0xf358'
-// 1730:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0024 C-string:'UNK_0xf37b'
-// 1731:      UNK_0xf3a1  codep:0x224c parp:0xf3a1 size:0x0022 C-string:'UNK_0xf3a1'
-// 1732:      UNK_0xf3c5  codep:0x224c parp:0xf3c5 size:0x0046 C-string:'UNK_0xf3c5'
-// 1733:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
+// 1714:      UNK_0xeea0  codep:0x224c parp:0xeea0 size:0x00ce C-string:'UNK_0xeea0'
+// 1715:      UNK_0xef70  codep:0x224c parp:0xef70 size:0x0009 C-string:'UNK_0xef70'
+// 1716:      UNK_0xef7b  codep:0x224c parp:0xef7b size:0x000c C-string:'UNK_0xef7b'
+// 1717:      UNK_0xef89  codep:0x224c parp:0xef89 size:0x000c C-string:'UNK_0xef89'
+// 1718:      UNK_0xef97  codep:0x224c parp:0xef97 size:0x0013 C-string:'UNK_0xef97'
+// 1719:      UNK_0xefac  codep:0x224c parp:0xefac size:0x000c C-string:'UNK_0xefac'
+// 1720:      UNK_0xefba  codep:0x224c parp:0xefba size:0x0028 C-string:'UNK_0xefba'
+// 1721:      .SHIP-ITEM  codep:0x4a4f parp:0xeff1 size:0x0020 C-string:'_dot_SHIP_dash_ITEM'
+// 1722:      UNK_0xf013  codep:0x224c parp:0xf013 size:0x0046 C-string:'UNK_0xf013'
+// 1723:      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x0023 C-string:'UNK_0xf05b'
+// 1724:      UNK_0xf080  codep:0x224c parp:0xf080 size:0x0049 C-string:'UNK_0xf080'
+// 1725:      UNK_0xf0cb  codep:0x224c parp:0xf0cb size:0x0032 C-string:'UNK_0xf0cb'
+// 1726:      UNK_0xf0ff  codep:0x224c parp:0xf0ff size:0x0082 C-string:'UNK_0xf0ff'
+// 1727:      UNK_0xf183  codep:0x224c parp:0xf183 size:0x004c C-string:'UNK_0xf183'
+// 1728:      UNK_0xf1d1  codep:0x224c parp:0xf1d1 size:0x0032 C-string:'UNK_0xf1d1'
+// 1729:      UNK_0xf205  codep:0x224c parp:0xf205 size:0x002a C-string:'UNK_0xf205'
+// 1730:      UNK_0xf231  codep:0x224c parp:0xf231 size:0x006d C-string:'UNK_0xf231'
+// 1731:      UNK_0xf2a0  codep:0x224c parp:0xf2a0 size:0x002c C-string:'UNK_0xf2a0'
+// 1732:      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x004a C-string:'UNK_0xf2ce'
+// 1733:      UNK_0xf31a  codep:0x224c parp:0xf31a size:0x001e C-string:'UNK_0xf31a'
+// 1734:      UNK_0xf33a  codep:0x224c parp:0xf33a size:0x001c C-string:'UNK_0xf33a'
+// 1735:      UNK_0xf358  codep:0x224c parp:0xf358 size:0x0021 C-string:'UNK_0xf358'
+// 1736:      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0024 C-string:'UNK_0xf37b'
+// 1737:      UNK_0xf3a1  codep:0x224c parp:0xf3a1 size:0x0022 C-string:'UNK_0xf3a1'
+// 1738:      UNK_0xf3c5  codep:0x224c parp:0xf3c5 size:0x0046 C-string:'UNK_0xf3c5'
+// 1739:       (/REPAIR)  codep:0x224c parp:0xf419 size:0x0000 C-string:'_ro__slash_REPAIR_rc_'
 
 // =================================
 // =========== VARIABLES ===========
@@ -416,7 +422,67 @@ void UNK_0xeea0() // UNK_0xeea0
   Pop(); // DROP
 }
 
-// 0xef6e: db 0x4c 0x22 0xdc 0x1b 0x04 0x48 0x55 0x4c 0x4c 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x07 0x45 0x4e 0x47 0x49 0x4e 0x45 0x53 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x07 0x53 0x45 0x4e 0x53 0x4f 0x52 0x53 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x0e 0x43 0x4f 0x4d 0x4d 0x55 0x4e 0x49 0x43 0x41 0x54 0x49 0x4f 0x4e 0x53 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x07 0x53 0x48 0x49 0x45 0x4c 0x44 0x53 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x10 0x4d 0x49 0x53 0x53 0x49 0x4c 0x45 0x20 0x4c 0x41 0x55 0x4e 0x43 0x48 0x45 0x52 0x90 0x16 0x4c 0x22 0xdc 0x1b 0x0c 0x4c 0x41 0x53 0x45 0x52 0x20 0x43 0x41 0x4e 0x4e 0x4f 0x4e 0x90 0x16 'L"   HULL  L"   ENGINES  L"   SENSORS  L"   COMMUNICATIONS  L"   SHIELDS  L"   MISSILE LAUNCHER  L"   LASER CANNON  '
+
+// ================================================
+// 0xef6e: WORD 'UNK_0xef70' codep=0x224c parp=0xef70
+// ================================================
+
+void UNK_0xef70() // UNK_0xef70
+{
+  PRINT("HULL", 4); // (.")
+}
+
+
+// ================================================
+// 0xef79: WORD 'UNK_0xef7b' codep=0x224c parp=0xef7b
+// ================================================
+
+void UNK_0xef7b() // UNK_0xef7b
+{
+  PRINT("ENGINES", 7); // (.")
+}
+
+
+// ================================================
+// 0xef87: WORD 'UNK_0xef89' codep=0x224c parp=0xef89
+// ================================================
+
+void UNK_0xef89() // UNK_0xef89
+{
+  PRINT("SENSORS", 7); // (.")
+}
+
+
+// ================================================
+// 0xef95: WORD 'UNK_0xef97' codep=0x224c parp=0xef97
+// ================================================
+
+void UNK_0xef97() // UNK_0xef97
+{
+  PRINT("COMMUNICATIONS", 14); // (.")
+}
+
+
+// ================================================
+// 0xefaa: WORD 'UNK_0xefac' codep=0x224c parp=0xefac
+// ================================================
+
+void UNK_0xefac() // UNK_0xefac
+{
+  PRINT("SHIELDS", 7); // (.")
+}
+
+
+// ================================================
+// 0xefb8: WORD 'UNK_0xefba' codep=0x224c parp=0xefba
+// ================================================
+
+void UNK_0xefba() // UNK_0xefba
+{
+  PRINT("MISSILE LAUNCHER", 16); // (.")
+}
+
+// 0xefcf: db 0x4c 0x22 0xdc 0x1b 0x0c 0x4c 0x41 0x53 0x45 0x52 0x20 0x43 0x41 0x4e 0x4e 0x4f 0x4e 0x90 0x16 'L"   LASER CANNON  '
 
 // ================================================
 // 0xefe2: WORD '.SHIP-ITEM' codep=0x4a4f parp=0xeff1
@@ -432,7 +498,30 @@ void UNK_0xf013() // UNK_0xf013
   Push2Words("NULL");
   CTPOS_dot_(); // CTPOS.
   Push(Read16(sp)); // DUP
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
   Func8("UNK_0xec70");
@@ -696,7 +785,30 @@ void UNK_0xf231() // UNK_0xf231
   label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(": ", 2); // (.")
   if (Pop() == 0) goto label2;
   PRINT("NO REPAIRS NEEDED.", 18); // (.")
@@ -719,7 +831,30 @@ void UNK_0xf2a0() // UNK_0xf2a0
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(":", 1); // (.")
   CTCR(); // CTCR
   PRINT("ALREADY UNDERGOING REPAIRS.", 27); // (.")
@@ -734,12 +869,58 @@ void UNK_0xf2ce() // UNK_0xf2ce
 {
   CTERASE(); // CTERASE
   PRINT("CEASE REPAIRS ON ", 17); // (.")
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xec75(); // UNK_0xec75
@@ -757,7 +938,30 @@ void UNK_0xf2ce() // UNK_0xf2ce
 void UNK_0xf31a() // UNK_0xf31a
 {
   PRINT("CEASING REPAIRS ON ", 19); // (.")
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(".", 1); // (.")
 }
 
@@ -790,7 +994,30 @@ void UNK_0xf33a() // UNK_0xf33a
 void UNK_0xf358() // UNK_0xf358
 {
   PRINT("CONTINUING REPAIRS ON ", 22); // (.")
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(".", 1); // (.")
 }
 
@@ -802,7 +1029,30 @@ void UNK_0xf358() // UNK_0xf358
 void UNK_0xf37b() // UNK_0xf37b
 {
   PRINT("BEGINNING REPAIRS ON ", 21); // (.")
-  Case(.SHIP-ITEM);
+  switch(Pop()) // .SHIP-ITEM
+  {
+  case 0:
+    NOP(); // NOP
+    break;
+  case 1:
+    UNK_0xef70(); // UNK_0xef70
+    break;
+  case 2:
+    UNK_0xef7b(); // UNK_0xef7b
+    break;
+  case 3:
+    UNK_0xef89(); // UNK_0xef89
+    break;
+  case 4:
+    UNK_0xef97(); // UNK_0xef97
+    break;
+  case 5:
+    UNK_0xefac(); // UNK_0xefac
+    break;
+  case 6:
+    UNK_0xefba(); // UNK_0xefba
+    break;
+  }
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR
   ON(); // ON

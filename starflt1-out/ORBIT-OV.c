@@ -4108,7 +4108,21 @@ void UNK_0xf413() // UNK_0xf413
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
-  Case(SKYCASE);
+  switch(Pop()) // SKYCASE
+  {
+  case 0:
+    LT_dash_BLUE(); // LT-BLUE
+    break;
+  case 7:
+    BLACK(); // BLACK
+    break;
+  case 12:
+    YELLOW(); // YELLOW
+    break;
+  case 19:
+    YELLOW(); // YELLOW
+    break;
+  }
   Push(pp_UNK_0xdba0); // UNK_0xdba0
   _ex_(); // !
 }

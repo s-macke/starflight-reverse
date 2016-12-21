@@ -9,14 +9,17 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1869:        DISPOSAL  codep:0x4b3b parp:0xf3fd size:0x0024 C-string:'DISPOSAL'
-// 1870:      UNK_0xf423  codep:0x224c parp:0xf423 size:0x0014 C-string:'UNK_0xf423'
-// 1871:      UNK_0xf439  codep:0x224c parp:0xf439 size:0x000c C-string:'UNK_0xf439'
-// 1872:      UNK_0xf447  codep:0x224c parp:0xf447 size:0x0044 C-string:'UNK_0xf447'
-// 1873:      UNK_0xf48d  codep:0x224c parp:0xf48d size:0x0028 C-string:'UNK_0xf48d'
-// 1874:      UNK_0xf4b7  codep:0x7420 parp:0xf4b7 size:0x0003 C-string:'UNK_0xf4b7'
-// 1875:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x004a C-string:'UNK_0xf4bc'
-// 1876:          DEPART  codep:0x224c parp:0xf511 size:0x0000 C-string:'DEPART'
+// 1869:      UNK_0xf3a6  codep:0x7394 parp:0xf3a6 size:0x0006 C-string:'UNK_0xf3a6'
+// 1870:      UNK_0xf3ae  codep:0x224c parp:0xf3ae size:0x000a C-string:'UNK_0xf3ae'
+// 1871:      UNK_0xf3ba  codep:0x224c parp:0xf3ba size:0x0036 C-string:'UNK_0xf3ba'
+// 1872:        DISPOSAL  codep:0x4b3b parp:0xf3fd size:0x0024 C-string:'DISPOSAL'
+// 1873:      UNK_0xf423  codep:0x224c parp:0xf423 size:0x0014 C-string:'UNK_0xf423'
+// 1874:      UNK_0xf439  codep:0x224c parp:0xf439 size:0x000c C-string:'UNK_0xf439'
+// 1875:      UNK_0xf447  codep:0x224c parp:0xf447 size:0x0044 C-string:'UNK_0xf447'
+// 1876:      UNK_0xf48d  codep:0x224c parp:0xf48d size:0x0028 C-string:'UNK_0xf48d'
+// 1877:      UNK_0xf4b7  codep:0x7420 parp:0xf4b7 size:0x0003 C-string:'UNK_0xf4b7'
+// 1878:      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x004a C-string:'UNK_0xf4bc'
+// 1879:          DEPART  codep:0x224c parp:0xf511 size:0x0000 C-string:'DEPART'
 
 // =================================
 // =========== VARIABLES ===========
@@ -24,7 +27,58 @@
 
 
 
-// 0xf3a2: db 0x1d 0x00 0x94 0x73 0x1c 0x1e 0x01 0x20 0xcd 0x6b 0x4c 0x22 0xa4 0xf3 0x92 0x0c 0x3d 0x0f 0x5f 0x12 0x90 0x16 0x4c 0x22 0x34 0x75 0x7f 0x3b 0x46 0x12 0xb5 0x75 0x1f 0x7a 0x3f 0x7a 0x5d 0x17 0x1b 0x00 0x20 0x0f 0x4c 0x7e 0x07 0x13 0xe2 0x7a 0x5d 0x17 0x1c 0x00 0x20 0x0f 0x4c 0x7e 0x07 0x13 0xf5 0x12 0x34 0x75 0x7f 0x3b 0x8f 0x3b 0x25 0x40 0xf5 0x12 0x3e 0x13 0x3d 0x0f 0x0a 0x7a 0x90 0x16 '   s     kL"    = _   L"4u;F  u z?z]     L~   z]     L~    4u; ;%@  > =  z  '
+// 0xf3a2: db 0x1d 0x00 '  '
+
+// ================================================
+// 0xf3a4: WORD 'UNK_0xf3a6' codep=0x7394 parp=0xf3a6
+// ================================================
+// 0xf3a6: db 0x1c 0x1e 0x01 0x20 0xcd 0x6b '     k'
+
+// ================================================
+// 0xf3ac: WORD 'UNK_0xf3ae' codep=0x224c parp=0xf3ae
+// ================================================
+
+void UNK_0xf3ae() // UNK_0xf3ae
+{
+  LoadData("UNK_0xf3a6"); // from 'ARTIFACT    '
+  Push(Read8(Pop())&0xFF); // C@
+  Push(2); // 2
+  _eq_(); // =
+}
+
+
+// ================================================
+// 0xf3b8: WORD 'UNK_0xf3ba' codep=0x224c parp=0xf3ba
+// ================================================
+
+void UNK_0xf3ba() // UNK_0xf3ba
+{
+  _at_INST_dash_S(); // @INST-S
+  Push(cc__3); // 3
+  _st_(); // <
+  CI_i_(); // CI'
+  _gt_C_plus_S(); // >C+S
+  IOPEN(); // IOPEN
+  Push(0x001b);
+  Push(0); // 0
+  IFIND(); // IFIND
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  IFIRST(); // IFIRST
+  Push(0x001c);
+  Push(0); // 0
+  IFIND(); // IFIND
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(Pop() & Pop()); // AND
+  _at_INST_dash_S(); // @INST-S
+  Push(cc__3); // 3
+  Push(cc__5); // 5
+  WITHIN(); // WITHIN
+  Push(Pop() & Pop()); // AND
+  Push(Pop() | Pop()); // OR
+  Push(2); // 2
+  _star_CLOSE(); // *CLOSE
+}
+
 
 // ================================================
 // 0xf3f0: WORD 'DISPOSAL' codep=0x4b3b parp=0xf3fd
@@ -41,7 +95,33 @@ void UNK_0xf423() // UNK_0xf423
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _at_INST_dash_C(); // @INST-C
-  Case(DISPOSAL);
+  switch(Pop()) // DISPOSAL
+  {
+  case 68:
+    FALSE(); // FALSE
+    break;
+  case 26:
+    TRUE(); // TRUE
+    break;
+  case 21:
+    TRUE(); // TRUE
+    break;
+  case 31:
+    TRUE(); // TRUE
+    break;
+  case 33:
+    TRUE(); // TRUE
+    break;
+  case 28:
+    TRUE(); // TRUE
+    break;
+  case 41:
+    UNK_0xf3ae(); // UNK_0xf3ae
+    break;
+  case 9:
+    UNK_0xf3ba(); // UNK_0xf3ba
+    break;
+  }
   return;
 
   label1:

@@ -3991,7 +3991,21 @@ void UNK_0xf331() // UNK_0xf331
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
-  Case(SKYCASE);
+  switch(Pop()) // SKYCASE
+  {
+  case 0:
+    LT_dash_BLUE(); // LT-BLUE
+    break;
+  case 7:
+    BLACK(); // BLACK
+    break;
+  case 12:
+    YELLOW(); // YELLOW
+    break;
+  case 19:
+    YELLOW(); // YELLOW
+    break;
+  }
   Push(pp_UNK_0xdb50); // UNK_0xdb50
   _ex_(); // !
 }

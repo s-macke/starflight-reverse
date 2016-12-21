@@ -1233,7 +1233,21 @@ void UNK_0xf41e() // UNK_0xf41e
   MODULE(); // MODULE
   Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
-  Case(APOST>PO);
+  switch(Pop()) // APOST>PO
+  {
+  case 16:
+    Push(2); // 2
+    break;
+  case 2:
+    _4(); // 4
+    break;
+  case 1:
+    Push(1); // 1
+    break;
+  case 8:
+    Push(1); // 1
+    break;
+  }
   goto label4;
 
   label1:

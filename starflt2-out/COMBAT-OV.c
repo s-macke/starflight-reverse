@@ -1178,7 +1178,18 @@ void UNK_0xe7ec() // UNK_0xe7ec
   UNK_0xdd64(); // UNK_0xdd64
   UNK_0xdecf(); // UNK_0xdecf
   SWAP(); // SWAP
-  Case(KEY>ORIENT);
+  switch(Pop()) // KEY>ORIENT
+  {
+  case 65535:
+    UNRAVEL(); // UNRAVEL
+    break;
+  case 0:
+    X_eq__dash_1(); // X=-1
+    break;
+  case 1:
+    X_eq_0(); // X=0
+    break;
+  }
   Push(Read16(sp)); // DUP
   Func8("UNK_0xddc0");
   C_ex_(); // C!
