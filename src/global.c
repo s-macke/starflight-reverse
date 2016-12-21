@@ -198,6 +198,8 @@ WORDRENAME renamewords[] =
 	{0x2a, 0xea27, "PUSHVECT"}, // "UNK_0xea27"
 	{0x2a, 0xe9d5, "NEWDOSMSGS"}, // "UNK_0xe9d5"
 	{0x2a, 0xe967, "PRESERVEDISPLAY"}, // "UNK_0xe967"
+	{0xff, 0xa345, "POLY-ERASE-TEXT"}, // "POLY-ER"
+
 
 	{0x0, 0x0, NULL}
 };

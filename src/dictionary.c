@@ -909,11 +909,11 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             snprintf(pline[ofs].str, STRINGLEN, "  Func13(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC14)
+        if (codep == CODEEXEC)
         {
             par = Read16(Read16(par)+REGDI);
-            //fprintf(stderr, "0x%04x\n", par);
-            snprintf(pline[ofs].str, STRINGLEN, "  Func14(\"%s\"); // call of word 0x%04x\n", s, par);
+            snprintf(pline[ofs].str, STRINGLEN, "  Exec(%s); // call of word 0x%04x '%s'\n",
+				s, par, FindDictPar(par, currentovidx));
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
