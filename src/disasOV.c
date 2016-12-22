@@ -169,13 +169,8 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ================================================\n",
             wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-        pline[wordofs+0].done = 1; // linkp
-        pline[wordofs+1].done = 1; // linkp
-        if (strncmp(dict[i].r, "UNK_", 4) != 0)
-        {
-            pline[wordofs+2].done = 1; // bitfield + length
-            for(j=0; j<strlen(dict[i].r)+2; j++) pline[wordofs+3+j].done = 1; // and the whole string
-        }
+
+        for(j=wordofs; j<dict[i].parp; j++) pline[j].done = 1;
     }
     for(i=0; i<ndict; i++)
     {
@@ -235,15 +230,10 @@ void DisasStarflt(FILE *fp)
         snprintf(pline[wordofs].strword, STRINGLEN,
             "\n// ====================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-            "// ====================================================\n", wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-        pline[wordofs+0].done = 1; // linkp or codep
-        pline[wordofs+1].done = 1; // linkp or codep
-        if (strncmp(dict[i].r, "UNK_", 4) != 0)
-        {
-            pline[wordofs+2].done = 1; // bitfield + length
-            for(j=0; j<strlen(dict[i].r)+2; j++) pline[wordofs+3+j].done = 1; // and the whole string
-        }
+            "// ====================================================\n",
+			wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
 
+        for(j=wordofs; j<dict[i].parp; j++) pline[j].done = 1;
     }
     for(i=0; i<ndict; i++)
     {
