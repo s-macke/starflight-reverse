@@ -21,7 +21,7 @@
 // 1712:      UNK_0xefb3  codep:0x73ea parp:0xefb3 size:0x0006 C-string:'UNK_0xefb3'
 // 1713:      UNK_0xefbb  codep:0x744d parp:0xefbb size:0x0003 C-string:'UNK_0xefbb'
 // 1714:      UNK_0xefc0  codep:0x744d parp:0xefc0 size:0x0003 C-string:'UNK_0xefc0'
-// 1715:      UNK_0xefc5  codep:0x224c parp:0xefc5 size:0x0006 C-string:'UNK_0xefc5'
+// 1715:        SET-BANK  codep:0x224c parp:0xefc5 size:0x0006 C-string:'SET_dash_BANK'
 // 1716:          !TFLAG  codep:0x224c parp:0xefd6 size:0x000c C-string:'_ex_TFLAG'
 // 1717:       D@BALANCE  codep:0x224c parp:0xeff0 size:0x000a C-string:'D_at_BALANCE'
 // 1718:       D!BALANCE  codep:0x224c parp:0xf008 size:0x000a C-string:'D_ex_BALANCE'
@@ -39,8 +39,8 @@
 // 1730:      UNK_0xf3ab  codep:0x224c parp:0xf3ab size:0x00b7 C-string:'UNK_0xf3ab'
 // 1731:      UNK_0xf464  codep:0x224c parp:0xf464 size:0x000c C-string:'UNK_0xf464'
 // 1732:      UNK_0xf472  codep:0x224c parp:0xf472 size:0x0038 C-string:'UNK_0xf472'
-// 1733:      UNK_0xf4ac  codep:0x224c parp:0xf4ac size:0x0016 C-string:'UNK_0xf4ac'
-// 1734:      UNK_0xf4c4  codep:0x224c parp:0xf4c4 size:0x001e C-string:'UNK_0xf4c4'
+// 1733:        .BALANCE  codep:0x224c parp:0xf4ac size:0x0016 C-string:'_dot_BALANCE'
+// 1734:           .BANK  codep:0x224c parp:0xf4c4 size:0x001e C-string:'_dot_BANK'
 // 1735:        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
@@ -124,10 +124,10 @@ void UNK_0xef86() // UNK_0xef86
 // 0xefc0: db 0x0e 0x0f 0x02 '   '
 
 // ================================================
-// 0xefc3: WORD 'UNK_0xefc5' codep=0x224c parp=0xefc5
+// 0xefc3: WORD 'SET-BANK' codep=0x224c parp=0xefc5
 // ================================================
 
-void UNK_0xefc5() // UNK_0xefc5
+void SET_dash_BANK() // SET-BANK
 {
   Push2Words("*BANK");
   _gt_C_plus_S(); // >C+S
@@ -141,7 +141,7 @@ void UNK_0xefc5() // UNK_0xefc5
 
 void _ex_TFLAG() // !TFLAG
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   Push(1); // 1
   Push(0x6402); // IFIELD(UNK_0xefae)
   C_ex_(); // C!
@@ -156,7 +156,7 @@ void _ex_TFLAG() // !TFLAG
 
 void D_at_BALANCE() // D@BALANCE
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   Push(0x63fe); // IFIELD(UNK_0xefa9)
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
@@ -170,7 +170,7 @@ void D_at_BALANCE() // D@BALANCE
 
 void D_ex_BALANCE() // D!BALANCE
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   Push(0x63fe); // IFIELD(UNK_0xefa9)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
@@ -197,7 +197,7 @@ void _ask_BALANCE() // ?BALANCE
 
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   Push(0x63fa); // IFIELD(UNK_0xefa4)
   _2_at_(); // 2@
   Push(0x63fe); // IFIELD(UNK_0xefa9)
@@ -213,7 +213,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 void TRANSACT() // TRANSACT
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   Push(0x6402); // IFIELD(UNK_0xefae)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
@@ -374,14 +374,14 @@ void UNK_0xf152() // UNK_0xf152
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   _dot_(); // .
 }
@@ -421,7 +421,7 @@ void UNK_0xf196() // UNK_0xf196
   Push(Pop() * Pop()); // *
   Push(0x0020);
   Push(Pop() + Pop()); // +
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -711,10 +711,10 @@ void UNK_0xf472() // UNK_0xf472
 
 
 // ================================================
-// 0xf4aa: WORD 'UNK_0xf4ac' codep=0x224c parp=0xf4ac
+// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac
 // ================================================
 
-void UNK_0xf4ac() // UNK_0xf4ac
+void _dot_BALANCE() // .BALANCE
 {
   Push(0x0079);
   Push(0x001d);
@@ -728,12 +728,12 @@ void UNK_0xf4ac() // UNK_0xf4ac
 
 
 // ================================================
-// 0xf4c2: WORD 'UNK_0xf4c4' codep=0x224c parp=0xf4c4
+// 0xf4c2: WORD '.BANK' codep=0x224c parp=0xf4c4
 // ================================================
 
-void UNK_0xf4c4() // UNK_0xf4c4
+void _dot_BANK() // .BANK
 {
-  UNK_0xefc5(); // UNK_0xefc5
+  SET_dash_BANK(); // SET-BANK
   IOPEN(); // IOPEN
   Push(0); // 0
 
@@ -746,7 +746,7 @@ void UNK_0xf4c4() // UNK_0xf4c4
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   ICLOSE(); // ICLOSE
-  UNK_0xf4ac(); // UNK_0xf4ac
+  _dot_BALANCE(); // .BALANCE
   ICLOSE(); // ICLOSE
 }
 
@@ -760,7 +760,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
 {
   _gt_HIDDEN(); // >HIDDEN
   UNK_0xf464(); // UNK_0xf464
-  UNK_0xf4c4(); // UNK_0xf4c4
+  _dot_BANK(); // .BANK
   CTINIT(); // CTINIT
   Push(0x0028);
   Push(0x000e);

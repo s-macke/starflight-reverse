@@ -199,7 +199,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   LoadData("ART-NAME"); // from 'ARTIFACT    '
   Push(0x0018);
   Push(0x002e);
-  _dash_XTRAIL(); // -XTRAIL
+  _dash_XTRAILING(); // -XTRAILING
   _dot_TTY(); // .TTY
   SET_dash_CURRENT(); // SET-CURRENT
   Push(pp_UNK_0xf03a); // UNK_0xf03a

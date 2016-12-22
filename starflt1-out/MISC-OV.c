@@ -118,7 +118,7 @@ void UNK_0xf035() // UNK_0xf035
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0xfffc);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -150,7 +150,7 @@ void UNK_0xf06d() // UNK_0xf06d
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -258,7 +258,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(h); // I
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -393,7 +393,7 @@ void _ro_0_do__do__do_() // (0$$$
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -522,7 +522,7 @@ void UNK_0xf319() // UNK_0xf319
   _dash_(); // -
   Push(0x00b4);
   POS_dot_(); // POS.
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON(); // ON
   SetColor("PINK");
@@ -779,7 +779,7 @@ void _ro__ask__dot_EQ() // (?.EQ
     break;
 
   }
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 
   label4:

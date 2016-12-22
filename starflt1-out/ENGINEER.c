@@ -693,7 +693,7 @@ void UNK_0xf0ff() // UNK_0xf0ff
   _gt_(); // >
   if (Pop() == 0) goto label4;
   Push(0x0053);
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
 
   label4:
   PRINT(".", 1); // (.")

@@ -590,7 +590,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0019);
   int step = Pop();
   i += step;
@@ -639,7 +639,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0032);
   int step = Pop();
   i += step;

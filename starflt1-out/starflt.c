@@ -1068,7 +1068,7 @@
 // 1063:         (SYSTEM  codep:0x1d29 parp:0x629f size:0x0004 C-string:'_ro_SYSTEM'
 // 1064:         (ORBIT)  codep:0x1d29 parp:0x62af size:0x0004 C-string:'_ro_ORBIT_rc_'
 // 1065:         (PLANET  codep:0x1d29 parp:0x62bf size:0x0004 C-string:'_ro_PLANET'
-// 1066:         (SURFAC  codep:0x1d29 parp:0x62cf size:0x0004 C-string:'_ro_SURFAC'
+// 1066:       (SURFACE)  codep:0x1d29 parp:0x62cf size:0x0004 C-string:'_ro_SURFACE_rc_'
 // 1067:      (ENCOUNTER  codep:0x1d29 parp:0x62df size:0x0004 C-string:'_ro_ENCOUNTER'
 // 1068:        (SHIPBOX  codep:0x1d29 parp:0x62ef size:0x0004 C-string:'_ro_SHIPBOX'
 // 1069:    (AORIGINATOR  codep:0x1d29 parp:0x62ff size:0x0004 C-string:'_ro_AORIGINATOR'
@@ -1570,7 +1570,7 @@
 // 1565:           CMESS  codep:0x224c parp:0xaee8 size:0x002c C-string:'CMESS'
 // 1566:          X0MESS  codep:0x224c parp:0xaf1f size:0x002a C-string:'X0MESS'
 // 1567:           0MESS  codep:0x224c parp:0xaf53 size:0x000a C-string:'_0MESS'
-// 1568:         -XTRAIL  codep:0x224c parp:0xaf69 size:0x002e C-string:'_dash_XTRAIL'
+// 1568:      -XTRAILING  codep:0x224c parp:0xaf69 size:0x002e C-string:'_dash_XTRAILING'
 // 1569:         CEX+WAX  codep:0x224c parp:0xafa3 size:0x000a C-string:'CEX_plus_WAX'
 // 1570:      UNK_0xafaf  codep:0x224c parp:0xafaf size:0x001c C-string:'UNK_0xafaf'
 // 1571:      UNK_0xafcd  codep:0x224c parp:0xafcd size:0x0006 C-string:'UNK_0xafcd'
@@ -1645,7 +1645,7 @@
 // 1640:         BOX>LIS  codep:0x224c parp:0xbad8 size:0x0008 C-string:'BOX_gt_LIS'
 // 1641:         GET-BOX  codep:0x224c parp:0xbaec size:0x0008 C-string:'GET_dash_BOX'
 // 1642:         MAKE-SC  codep:0x224c parp:0xbb00 size:0x0008 C-string:'MAKE_dash_SC'
-// 1643:         DELETE-  codep:0x224c parp:0xbb14 size:0x0008 C-string:'DELETE_dash_'
+// 1643: delete-scroll-box  codep:0x224c parp:0xbb14 size:0x0008 C-string:'delete_dash_scroll_dash_box'
 // 1644:         BOX>TOC  codep:0x224c parp:0xbb28 size:0x0008 C-string:'BOX_gt_TOC'
 // 1645:            >BOX  codep:0x224c parp:0xbb39 size:0x0008 C-string:'_gt_BOX'
 // 1646:            BOX>  codep:0x224c parp:0xbb4a size:0x0008 C-string:'BOX_gt_'
@@ -2374,7 +2374,7 @@ unsigned char SUPER_dash_BOX[4] = {0x20, 0x72, 0x72, 0x61}; // SUPER-BOX
 unsigned char _ro_SYSTEM[4] = {0x21, 0x16, 0x00, 0x65}; // (SYSTEM
 unsigned char _ro_ORBIT_rc_[4] = {0x88, 0x1d, 0x02, 0x65}; // (ORBIT)
 unsigned char _ro_PLANET[4] = {0x55, 0x16, 0x00, 0x65}; // (PLANET
-unsigned char _ro_SURFAC[4] = {0x20, 0x72, 0x72, 0x65}; // (SURFAC
+unsigned char _ro_SURFACE_rc_[4] = {0x20, 0x72, 0x72, 0x65}; // (SURFACE)
 unsigned char _ro_ENCOUNTER[4] = {0x00, 0x00, 0x00, 0x00}; // (ENCOUNTER
 unsigned char _ro_SHIPBOX[4] = {0xbc, 0x9a, 0x00, 0x65}; // (SHIPBOX
 unsigned char _ro_AORIGINATOR[4] = {0x00, 0x00, 0x00, 0x00}; // (AORIGINATOR
@@ -2773,7 +2773,7 @@ void AUTO_dash_SCREEN() // AUTO-SCREEN
 void COLD() // COLD
 {
   EMPTY(); // EMPTY
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   UNK_0x0939(); // UNK_0x0939
 }
 
@@ -2786,9 +2786,9 @@ void UNK_0x0343() // UNK_0x0343
 {
   PRINT("FORTHOUGHT (P) (C) Copyright ", 29); // (.")
   PRINT("Fantasia Systems Inc. 1982,1983,1984", 36); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("Version 2.52 for Binary Systems for the IBM PC", 46); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
 }
 
 
@@ -3287,11 +3287,11 @@ void UNK_0x0939() // UNK_0x0939
   Push(Read16(Pop())); // @
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
-  Func14(LOAD); // call of word 0x1e23 '(LOAD)'
+  Exec(LOAD); // call of word 0x1e23 '(LOAD)'
 
   label2:
   UNK_0x03c3(); // UNK_0x03c3
-  Func14(ABORT); // call of word 0x1c45 '(ABORT)'
+  Exec(ABORT); // call of word 0x1c45 '(ABORT)'
 }
 
 
@@ -5473,7 +5473,7 @@ void _ro_LINKS_rc_() // (LINKS)
 void _st_NAME_gt_() // <NAME>
 {
   Push(cc_BL); // BL
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(tt_LOWERCASE); // LOWERCASE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -5493,7 +5493,7 @@ void _st_NAME_gt_() // <NAME>
 void _ask_FIND() // ?FIND
 {
   _st_NAME_gt_(); // <NAME>
-  Func14(-FIND); // call of word 0x17e1 '(-FIND)'
+  Exec(-FIND); // call of word 0x17e1 '(-FIND)'
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ABORT("Not found", 9);// (ABORT")
   Pop(); // DROP
@@ -5554,7 +5554,7 @@ void EMPTY() // EMPTY
 void FIND() // FIND
 {
   _st_NAME_gt_(); // <NAME>
-  Func14(-FIND); // call of word 0x17e1 '(-FIND)'
+  Exec(-FIND); // call of word 0x17e1 '(-FIND)'
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   CFA(); // CFA
@@ -5577,7 +5577,7 @@ void FORGET() // FORGET
   Push(0x0040);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Func14(-FIND); // call of word 0x17e1 '(-FIND)'
+  Exec(-FIND); // call of word 0x17e1 '(-FIND)'
   if (Pop() == 0) Push(1); else Push(0); // 0=
   UNK_0x0b5d(); // UNK_0x0b5d
   goto label2;
@@ -5632,7 +5632,7 @@ void UNK_0x1a6e() // UNK_0x1a6e
 
 void VOCABULARY() // VOCABULARY
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   HERE(); // HERE
   Push(0); // 0
   _co_(); // ,
@@ -5652,7 +5652,7 @@ void VOCABULARY() // VOCABULARY
   _co_(); // ,
   Push(0); // 0
   _co_(); // ,
-  Func14(LINKS>); // call of word 0x1a5c 'UNK_0x1a5c'
+  Exec(LINKS>); // call of word 0x1a5c 'UNK_0x1a5c'
   (;CODE)();
 // inlined assembler code
 // 0x1ab5: call   1649
@@ -5810,7 +5810,7 @@ void _ro_() // (
   Push(tt__gt_IN); // >IN
   _plus__ex_(); // +!
   Push(0x0029);
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
   HERE(); // HERE
@@ -5836,7 +5836,7 @@ void _ro__dot__qm__rc_() // (.")
   R_gt_(); // R>
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -5861,11 +5861,11 @@ void _ro__sc_CODE_rc_() // (;CODE)
 void _ro_ABORT_qm__rc_() // (ABORT")
 {
   if (Pop() == 0) goto label1;
-  Func14(WHERE); // call of word 0x1e68 '(WHERE)'
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(WHERE); // call of word 0x1e68 '(WHERE)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   R_at_(); // R@
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SP_ex_(); // SP!
   QUIT(); // QUIT
   return;
@@ -5917,7 +5917,7 @@ void _dot__qm_() // ."
   COMPILE(0x1bdc); // compile?
 
   label2:
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(Read16(sp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
@@ -5938,7 +5938,7 @@ void _dot__qm_() // ."
 
   label3:
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -6021,7 +6021,7 @@ void _ro_EXPECT_rc_() // (EXPECT)
   signed short int imax = Pop();
   do // (DO)
   {
-  Func14(KEY); // call of word 0x25d7 '(KEY)'
+  Exec(KEY); // call of word 0x25d7 '(KEY)'
   Push(0x00ff);
   Push(Pop() & Pop()); // AND
   Push(Read16(sp)); // DUP
@@ -6042,13 +6042,13 @@ void _ro_EXPECT_rc_() // (EXPECT)
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   if (Pop() == 0) goto label2;
-  Func14(BELL); // call of word 0x266b 'BEEP'
+  Exec(BELL); // call of word 0x266b 'BEEP'
   goto label3;
 
   label2:
-  Func14(BS); // call of word 0x26cf '(BS)'
+  Exec(BS); // call of word 0x26cf '(BS)'
   SPACE(); // SPACE
-  Func14(BS); // call of word 0x26cf '(BS)'
+  Exec(BS); // call of word 0x26cf '(BS)'
 
   label3:
   Push(0); // 0
@@ -6072,7 +6072,7 @@ void _ro_EXPECT_rc_() // (EXPECT)
   label6:
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label7;
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(1); // 1
   SWAP(); // SWAP
   goto label4;
@@ -6099,7 +6099,7 @@ void _ro_INTERPRET_rc_() // (INTERPRET)
 
   label6:
   _st_NAME_gt_(); // <NAME>
-  Func14(-FIND); // call of word 0x17e1 '(-FIND)'
+  Exec(-FIND); // call of word 0x17e1 '(-FIND)'
   if (Pop() == 0) goto label1;
   Push(tt_STATE); // STATE
   Push(Read16(Pop())); // @
@@ -6118,7 +6118,7 @@ void _ro_INTERPRET_rc_() // (INTERPRET)
 
   label1:
   HERE(); // HERE
-  Func14(NUMBER); // call of word 0x13d1 '(NUMBER)'
+  Exec(NUMBER); // call of word 0x13d1 '(NUMBER)'
   Push(tt_DPL); // DPL
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -6155,7 +6155,7 @@ void _ro_LOAD_rc_() // (LOAD)
   _ex_(); // !
   Push(tt_BLK); // BLK
   _ex_(); // !
-  Func14(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
+  Exec(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
   R_gt_(); // R>
   Push(tt__gt_IN); // >IN
   _ex_(); // !
@@ -6178,8 +6178,8 @@ void _ro_WHERE_rc_() // (WHERE)
   Push(Read16(sp)); // DUP
   Push(tt_SCR); // SCR
   _ex_(); // !
-  Func14(CR); // call of word 0x26ee '(CR)'
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("Scr# ", 5); // (.")
   Push(Read16(sp)); // DUP
   _dot_(); // .
@@ -6196,8 +6196,8 @@ void _ro_WHERE_rc_() // (WHERE)
   PRINT("LINE# ", 6); // (.")
   _dot_(); // .
   ROT(); // ROT
-  Func14(CR); // call of word 0x26ee '(CR)'
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   _dot_LINE(); // .LINE
   Push(tt__gt_IN); // >IN
   Push(Read16(Pop())); // @
@@ -6211,7 +6211,7 @@ void _ro_WHERE_rc_() // (WHERE)
   Push(Read16(Pop())); // @
 
   label2:
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   HERE(); // HERE
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
@@ -6237,7 +6237,7 @@ void _ro_WHERE_rc_() // (WHERE)
   do // (DO)
   {
   Push(0x005e);
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   i++;
   } while(i<imax); // (LOOP) 0xfff8
 
@@ -6460,7 +6460,7 @@ void UNK_0x20c6() // UNK_0x20c6
   Push(0x0002);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
-  Func14(-FIND); // call of word 0x17e1 '(-FIND)'
+  Exec(-FIND); // call of word 0x17e1 '(-FIND)'
   goto label2;
 
   label3:
@@ -6471,7 +6471,7 @@ void UNK_0x20c6() // UNK_0x20c6
   Pop(); Pop();// 2DROP
   HERE(); // HERE
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" isn't unique ", 14); // (.")
 }
 
@@ -6498,7 +6498,7 @@ void ABORT_qm_() // ABORT"
 
   label1:
   Push(0x0022);
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(Read16(sp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
@@ -6616,7 +6616,7 @@ void COMPILE() // COMPILE
 
 void CONSTANT() // CONSTANT
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   _co_(); // ,
   (;CODE)();
 // inlined assembler code
@@ -6652,7 +6652,7 @@ void _c_() // :
   Push(Read16(Pop())); // @
   Push(tt_CONTEXT); // CONTEXT
   _ex_(); // !
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   SMUDGE(); // SMUDGE
   _bc_(); // ]
   (;CODE)();
@@ -6921,7 +6921,7 @@ void QUERY() // QUERY
   Push(tt_TIB); // TIB
   Push(Read16(Pop())); // @
   Push(0x0050);
-  Func14(EXPECT); // call of word 0x1d3e '(EXPECT)'
+  Exec(EXPECT); // call of word 0x1d3e '(EXPECT)'
   Push(0); // 0
   Push(tt__gt_IN); // >IN
   _ex_(); // !
@@ -6950,10 +6950,10 @@ void QUIT() // QUIT
   _ro_FORGET_rc_(); // (FORGET)
 
   label1:
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   RP_ex_(); // RP!
   QUERY(); // QUERY
-  Func14(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
+  Exec(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
   Push(tt_STATE); // STATE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -7003,7 +7003,7 @@ void TEXT() // TEXT
   Push(cc_C_slash_L); // C/L
   Push(Pop()+1); // 1+
   BLANK(); // BLANK
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(cc_BL); // BL
   OVER(); // OVER
   Push(Read16(sp)); // DUP
@@ -7077,7 +7077,7 @@ void UNTIL() // UNTIL
 
 void VARIABLE() // VARIABLE
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   Push(2); // 2
   ALLOT(); // ALLOT
 }
@@ -7325,7 +7325,7 @@ void _ro_BS_rc_() // (BS)
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   Push(Pop()-1); // 1-
-  Func14(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec(POSITION); // call of word 0x2767 '(POSITION)'
   return;
 
   label1:
@@ -7356,7 +7356,7 @@ void _ro_CR_rc_() // (CR)
 
   label2:
   Push(0); // 0
-  Func14(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec(POSITION); // call of word 0x2767 '(POSITION)'
 }
 
 // 0x270e: mov    bx,[di+1A]
@@ -7479,7 +7479,7 @@ void _dot_LINE() // .LINE
   Push(Pop() + Pop()); // +
   Push(cc_C_slash_L); // C/L
   _dash_TRAILING(); // -TRAILING
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -7574,12 +7574,12 @@ void CURFWD() // CURFWD
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   goto label2;
 
   label1:
   Push(Pop()+1); // 1+
-  Func14(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec(POSITION); // call of word 0x2767 '(POSITION)'
 
   label2:
   i++;
@@ -7622,7 +7622,7 @@ void D_dot_R() // D.R
   OVER(); // OVER
   _dash_(); // -
   SPACES(); // SPACES
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -7669,7 +7669,7 @@ void ID_dot_() // ID.
   Push(Read8(Pop())&0xFF); // C@
   Push(0x001f);
   Push(Pop() & Pop()); // AND
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -7679,7 +7679,7 @@ void ID_dot_() // ID.
 
 void LIST() // LIST
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(Read16(sp)); // DUP
   Push(tt_SCR); // SCR
   _ex_(); // !
@@ -7692,7 +7692,7 @@ void LIST() // LIST
   signed short int imax = Pop();
   do // (DO)
   {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(i); // I
   Push(0x0003);
   _dot_R(); // .R
@@ -7701,7 +7701,7 @@ void LIST() // LIST
   Push(tt_SCR); // SCR
   Push(Read16(Pop())); // @
   _dot_LINE(); // .LINE
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label1;
   LEAVE(); // LEAVE
 
@@ -7709,7 +7709,7 @@ void LIST() // LIST
   i++;
   } while(i<imax); // (LOOP) 0xffe2
 
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
 }
 
 
@@ -7738,7 +7738,7 @@ void LIST() // LIST
 void SPACE() // SPACE
 {
   Push(cc_BL); // BL
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -9125,7 +9125,7 @@ void EMITS() // EMITS
   do // (DO)
   {
   Push(Read16(sp)); // DUP
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
@@ -9141,9 +9141,9 @@ void EMITS() // EMITS
 
 void FILES() // FILES
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("File#    Name     Drv   #Blocks    At   ", 40); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(0x002d);
   Push(0x002e);
   EMITS(); // EMITS
@@ -9154,7 +9154,7 @@ void FILES() // FILES
   signed short int imax = Pop();
   do // (DO)
   {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   SPACE(); // SPACE
   Push(i); // I
   Push(2); // 2
@@ -9177,7 +9177,7 @@ void FILES() // FILES
   Push(pp_FILENAMES); // FILENAMES
   Push(Pop() + Pop()); // +
   Push(0x000b);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SPACE(); // SPACE
   Push(i); // I
   DRIVENUMBERS(); // DRIVENUMBERS
@@ -9185,9 +9185,9 @@ void FILES() // FILES
   Push(0x0041);
   Push(Pop() + Pop()); // +
   Push(Pop()-1); // 1-
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0x003a);
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0x0004);
   SPACES(); // SPACES
   Push(i); // I
@@ -9209,14 +9209,14 @@ void FILES() // FILES
   _eq_(); // =
   if (Pop() == 0) goto label2;
   Push(0x001b);
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   PRINT("OFFSET", 6); // (.")
 
   label2:
   i++;
   } while(i<imax); // (LOOP) 0xff62
 
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(0x002d);
   Push(0x002e);
   EMITS(); // EMITS
@@ -9362,7 +9362,7 @@ void UNK_0x3715() // UNK_0x3715
   Push(0x0008);
   Push(h); // I'
   Push(1); // 1
-  Func14(R/W); // call of word 0x36d7 'UNK_0x36d7'
+  Exec(R/W); // call of word 0x36d7 'UNK_0x36d7'
   Push(h); // I
   Push(h); // I
   Push(0x0006);
@@ -9400,7 +9400,7 @@ void UNK_0x3753() // UNK_0x3753
   Push(0x0008);
   SWAP(); // SWAP
   Push(0); // 0
-  Func14(R/W); // call of word 0x36d7 'UNK_0x36d7'
+  Exec(R/W); // call of word 0x36d7 'UNK_0x36d7'
   Push(0); // 0
   SWAP(); // SWAP
   Push(2); // 2
@@ -9554,7 +9554,7 @@ void UNK_0x3849() // UNK_0x3849
   UNK_0x3715(); // UNK_0x3715
   _ro_BUFFER_rc_(); // (BUFFER)
   Pop(); // DROP
-  Func14(DISKERROR?); // call of word 0x3648 '(DISKERROR?)'
+  Exec(DISKERROR?); // call of word 0x3648 '(DISKERROR?)'
 }
 
 
@@ -9879,7 +9879,7 @@ void UNRAVEL() // UNRAVEL
   R_gt_(); // R>
   Push(Pop()-2); // 2-
   Push(Read16(Pop())); // @
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(Read16(sp)); // DUP
   Push(0); // 0
   Push(0x0008);
@@ -9916,7 +9916,7 @@ void _ask_UNRAVEL() // ?UNRAVEL
 
 void SYN() // SYN
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   FIND(); // FIND
   Push(Read16(sp)); // DUP
   _co_(); // ,
@@ -9984,7 +9984,7 @@ void SYN() // SYN
 
 void _2V_eq_() // 2V=
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   Push(0x0004);
   ALLOT(); // ALLOT
 }
@@ -9996,7 +9996,7 @@ void _2V_eq_() // 2V=
 
 void _2C_eq_() // 2C=
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   _co_(); // ,
   _co_(); // ,
   (;CODE)();
@@ -10061,7 +10061,7 @@ void THRU() // THRU
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  Func14(LOAD); // call of word 0x1e23 '(LOAD)'
+  Exec(LOAD); // call of word 0x1e23 '(LOAD)'
   return;
 
   label1:
@@ -10073,7 +10073,7 @@ void THRU() // THRU
   do // (DO)
   {
   Push(i); // I
-  Func14(LOAD); // call of word 0x1e23 '(LOAD)'
+  Exec(LOAD); // call of word 0x1e23 '(LOAD)'
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
@@ -10175,7 +10175,7 @@ void HEAD_c_() // HEAD:
 {
   HERE(); // HERE
   TRANSIENT(); // TRANSIENT
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   _co_(); // ,
   IMMEDIATE(); // IMMEDIATE
   RESIDENT(); // RESIDENT
@@ -10321,7 +10321,7 @@ void UNK_0x3d39() // UNK_0x3d39
 
 void DISPOSE() // DISPOSE
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(tt_VOC_dash_LINK); // VOC-LINK
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
@@ -10481,7 +10481,7 @@ void TAB() // TAB
   Push(tt_ROW); // ROW
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
-  Func14(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec(POSITION); // call of word 0x2767 '(POSITION)'
 }
 
 
@@ -10498,7 +10498,7 @@ void ROOM_ask_() // ROOM?
   Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) return;
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
 }
 
 
@@ -10562,7 +10562,7 @@ void RANGE() // RANGE
 void ASCII() // ASCII
 {
   Push(cc_BL); // BL
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   LITERAL(); // LITERAL
@@ -10598,7 +10598,7 @@ void _qm_() // "
 
   label1:
   Push(0x0022);
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(tt_STATE); // STATE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
@@ -10852,7 +10852,7 @@ void DOSPARM() // DOSPARM
   Push(0x0080);
   COUNT(); // COUNT
   _gt_TIB(); // >TIB
-  Func14(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
+  Exec(INTERPRET); // call of word 0x1dd8 '(INTERPRET)'
 }
 
 
@@ -11090,7 +11090,7 @@ void SETFCB() // SETFCB
 {
   CLRFCB(); // CLRFCB
   Push(cc_BL); // BL
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   Push(Pop()+1); // 1+
   Push(cc_SI); // SI
   _ex_(); // !
@@ -11329,7 +11329,7 @@ void _bo_FILE_bc_() // [FILE]
 
 void SYSGEN() // SYSGEN
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   FREEZE(); // FREEZE
   _ro_RESTORE_rc_(); // (RESTORE)
   SYSUTIL(); // SYSUTIL
@@ -11628,17 +11628,17 @@ void SMARTOPEN() // SMARTOPEN
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("Place disk containing file", 26); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   NAM(); // NAM
   Push(cc__8); // 8
   _dash_TRAILING(); // -TRAILING
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(".", 1); // (.")
   TYP(); // TYP
   Push(cc__3); // 3
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" into ", 6); // (.")
   DRV(); // DRV
   Push(Read8(Pop())&0xFF); // C@
@@ -11647,16 +11647,16 @@ void _st_ASKMOUNT_gt_() // <ASKMOUNT>
   PRINT("drive ", 6); // (.")
   Push(0x0040);
   Push(Pop() + Pop()); // +
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
   goto label2;
 
   label1:
   PRINT("any drive", 9); // (.")
 
   label2:
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("and press any key when ready.", 29); // (.")
-  Func14(KEY); // call of word 0x25d7 '(KEY)'
+  Exec(KEY); // call of word 0x25d7 '(KEY)'
   Pop(); // DROP
 }
 
@@ -11891,7 +11891,7 @@ void SETSYSK() // SETSYSK
 void KEY() // KEY
 {
   UNK_0x4892(); // UNK_0x4892
-  Func14(KEY); // call of word 0x25d7 '(KEY)'
+  Exec(KEY); // call of word 0x25d7 '(KEY)'
 }
 
 
@@ -12119,7 +12119,7 @@ void _plus__at_() // +@
 
 void CASE() // CASE
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   HERE(); // HERE
   Push2Words("NULL");
   _co_(); // ,
@@ -12168,7 +12168,7 @@ void OTHERS() // OTHERS
 
 void CASE_c_() // CASE:
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   SMUDGE(); // SMUDGE
   _bc_(); // ]
   (;CODE)();
@@ -12629,7 +12629,7 @@ void A_at_() // A@
 
 void ARRAY() // ARRAY
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   HERE(); // HERE
   _gt_R(); // >R
   _gt_R(); // >R
@@ -13105,7 +13105,7 @@ void FILLREGION() // FILLREGION
 
 void TABLE() // TABLE
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   (;CODE)();
 // inlined assembler code
 // 0x5275: call   1649
@@ -14809,7 +14809,7 @@ void COLORCA() // COLORCA
 // 0x62bf: db 0x55 0x16 0x00 0x65 'U  e'
 
 // ====================================================
-// 0x62c3: WORD '(SURFAC' codep=0x1d29 parp=0x62cf
+// 0x62c3: WORD '(SURFACE)' codep=0x1d29 parp=0x62cf
 // ====================================================
 // 0x62cf: db 0x20 0x72 0x72 0x65 ' rre'
 
@@ -15317,7 +15317,7 @@ void LBLOCK() // LBLOCK
 void LOAD() // LOAD
 {
   UNK_0x6e0d(); // UNK_0x6e0d
-  Func14(LOAD); // call of word 0x1e23 '(LOAD)'
+  Exec(LOAD); // call of word 0x1e23 '(LOAD)'
 }
 
 
@@ -15393,7 +15393,7 @@ void _do__eq_() // $=
 
 void SIGFLD() // SIGFLD
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   _co_(); // ,
   (;CODE)();
 // inlined assembler code
@@ -15661,12 +15661,12 @@ void UNK_0x7063() // UNK_0x7063
 
 void UNK_0x7075() // UNK_0x7075
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("Place disk with the correct", 27); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(CR); // call of word 0x26ee '(CR)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" file and press any", 19); // (.")
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("key when ready.", 15); // (.")
   KEY(); // KEY
   Pop(); // DROP
@@ -15935,7 +15935,7 @@ void FILE_c_() // FILE:
   Push(cc_BL); // BL
   FILL(); // FILL
   Push(cc_BL); // BL
-  Func14(WORD); // call of word 0x1f06 '(WORD)'
+  Exec(WORD); // call of word 0x1f06 '(WORD)'
   COUNT(); // COUNT
   Push(pp_LSCAN); // LSCAN
   SWAP(); // SWAP
@@ -16099,7 +16099,7 @@ void _at_RECORD() // @RECORD
 
 void AFIELD() // AFIELD
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   ROT(); // ROT
   Push(Read16(sp)); // DUP
   C_co_(); // C,
@@ -16164,7 +16164,7 @@ void AFIELD() // AFIELD
 
 void IFIELD() // IFIELD
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   ROT(); // ROT
   C_co_(); // C,
   SWAP(); // SWAP
@@ -18342,7 +18342,7 @@ void UNK_0x81d7() // UNK_0x81d7
 
 void _dot_C() // .C
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   CDEPTH(); // CDEPTH
   if (Pop() == 0) goto label1;
   Push(pp_CXSP); // CXSP
@@ -18369,7 +18369,7 @@ void _dot_C() // .C
   PRINT("MT STK", 6); // (.")
 
   label2:
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
 }
 
 // 0x8248: db 0x4c 0x22 0x42 0x06 0x75 0x75 0xd5 0x75 0x05 0x10 0xa5 0x29 0xe1 0x81 0x19 0x06 0xfa 0x15 0x04 0x00 0x1e 0x24 0x90 0x16 'L"B uu u   )         $  '
@@ -18594,7 +18594,7 @@ void SAVE_dash_OVERLAY() // SAVE-OVERLAY
 
 void OVERLAY() // OVERLAY
 {
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   Func6("FILE-START");
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
@@ -18683,7 +18683,7 @@ void OPEN_dash_OVERLAY() // OPEN-OVERLAY
 
 void UNK_0x847b() // UNK_0x847b
 {
-  Func14(CR); // call of word 0x26ee '(CR)'
+  Exec(CR); // call of word 0x26ee '(CR)'
   Push(tt_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
   NFA(); // NFA
@@ -20034,7 +20034,7 @@ void BYE() // BYE
   if (Pop() == 0) goto label1;
   _gt_DISPLAY(); // >DISPLAY
   DARK(); // DARK
-  Func14(PAGE); // call of word 0x274c '(PAGE)'
+  Exec(PAGE); // call of word 0x274c '(PAGE)'
 
   label1:
   BYE(); // BYE
@@ -22635,7 +22635,7 @@ void _ex_CRS() // !CRS
 void _do__dot_() // $.
 {
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -22959,7 +22959,7 @@ void CTINIT() // CTINIT
 void _dot_TTY() // .TTY
 {
   UNK_0xa513(); // UNK_0xa513
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -23484,7 +23484,7 @@ void SHIP_dash_CONSOLE() // SHIP-CONSOLE
 
 void _i_KEY() // 'KEY
 {
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
@@ -23825,7 +23825,7 @@ void _dot_ABTN() // .ABTN
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x000c);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SET_dash_CURRENT(); // SET-CURRENT
 }
 
@@ -23866,7 +23866,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(0x000c);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   UNK_0xaa98(); // UNK_0xaa98
   Push(0x000c);
   int step = Pop();
@@ -24385,10 +24385,10 @@ void _0MESS() // 0MESS
 // 0xaf59: db 0x14 0x22 0x2e 0x00 ' ". '
 
 // ====================================================
-// 0xaf5d: WORD '-XTRAIL' codep=0x224c parp=0xaf69
+// 0xaf5d: WORD '-XTRAILING' codep=0x224c parp=0xaf69
 // ====================================================
 
-void _dash_XTRAIL() // -XTRAIL
+void _dash_XTRAILING() // -XTRAILING
 {
   Push(0xaf5b);
   _ex_(); // !
@@ -24705,7 +24705,7 @@ void DOTASKS() // DOTASKS
   Push(1); // 1
 
   label4:
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(pp_FORCEKEY); // FORCEKEY
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
@@ -25577,7 +25577,7 @@ void EXPERT() // EXPERT
 {
   Push(pp_COND_dash_CNT); // COND-CNT
   OFF(); // OFF
-  Func14(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
   HERE(); // HERE
   _gt_R(); // >R
   C_co_(); // C,
@@ -25868,10 +25868,10 @@ void MAKE_dash_SC() // MAKE-SC
 
 
 // ====================================================
-// 0xbb08: WORD 'DELETE-' codep=0x224c parp=0xbb14
+// 0xbb08: WORD 'delete-scroll-box' codep=0x224c parp=0xbb14
 // ====================================================
 
-void DELETE_dash_() // DELETE-
+void delete_dash_scroll_dash_box() // delete-scroll-box
 {
   Push(0xba74);
   MODULE(); // MODULE

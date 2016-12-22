@@ -677,7 +677,7 @@ void DO_dash_FLARE() // DO-FLARE
   DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
   Push(0x000a);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   UNK_0xe951(); // UNK_0xe951
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -693,7 +693,7 @@ void DO_dash_FLARE() // DO-FLARE
   Pop(); // DROP
 
   label1:
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label1;
   BYE(); // BYE
 }
@@ -708,7 +708,7 @@ void UNK_0xea50() // UNK_0xea50
 
   UNK_0x3f3b("...COMMENCING ");
   _dot_TTY(); // .TTY
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TRAVEL", 7); // (.")
 }
 
@@ -778,7 +778,7 @@ void UNK_0xeac3() // UNK_0xeac3
   UNK_0xeaab(); // UNK_0xeaab
   PRINT("DOCK WITH ", 10); // (.")
   UNK_0xea8c(); // UNK_0xea8c
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -790,7 +790,7 @@ void UNK_0xeada() // UNK_0xeada
 {
   UNK_0xeaab(); // UNK_0xeaab
   UNK_0xea73(); // UNK_0xea73
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_ENC_dash_TIME); // ENC-TIME
@@ -845,7 +845,7 @@ void UNK_0xeb36() // UNK_0xeb36
   UNK_0x3f3b("...");
   _dot_TTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" ESTABLISHED", 12); // (.")
   Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   OFF(); // OFF
@@ -862,7 +862,7 @@ void UNK_0xeb59() // UNK_0xeb59
   UNK_0x3f3b("...");
   _dot_TTY(); // .TTY
   UNK_0xea7f(); // UNK_0xea7f
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" ENTRY", 6); // (.")
   UNK_0xeb26(); // UNK_0xeb26
   UNK_0xe935(); // UNK_0xe935
@@ -948,7 +948,7 @@ void UNK_0xebd6() // UNK_0xebd6
   UNK_0x3f3b("COMPUTING SUB-");
   _dot_TTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL TRAJECTORY...", 16); // (.")
 }
 
@@ -963,7 +963,7 @@ void UNK_0xec04() // UNK_0xec04
   UNK_0x3f3b("INITIATING ");
   _dot_TTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL MANEUVER...", 14); // (.")
 }
 
@@ -978,7 +978,7 @@ void UNK_0xec2d() // UNK_0xec2d
   UNK_0x3f3b("COMMENCING ");
   _dot_TTY(); // .TTY
   UNK_0xea7f(); // UNK_0xea7f
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" PENETRATION...", 15); // (.")
 }
 
@@ -1488,7 +1488,7 @@ void UNK_0xf001() // UNK_0xf001
   UNK_0x3f3b("...");
   _dot_TTY(); // .TTY
   UNK_0xea8c(); // UNK_0xea8c
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" CLEAR", 6); // (.")
 }
 
@@ -1503,7 +1503,7 @@ void UNK_0xf022() // UNK_0xf022
   UNK_0x3f3b("...");
   _dot_TTY(); // .TTY
   UNK_0xea9b(); // UNK_0xea9b
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TERMINATED", 11); // (.")
   Push(0xbef3);
   MODULE(); // MODULE
@@ -1546,7 +1546,7 @@ void UNK_0xf078() // UNK_0xf078
   UNK_0x3f3b("OUTSIDE ");
   _dot_TTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("AL RANGE", 8); // (.")
   Push(pp_UNK_0xe931); // UNK_0xe931
   Push(Read16(Pop())); // @
@@ -1603,7 +1603,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
 
   UNK_0x3f3b("LEAVING ");
   _dot_TTY(); // .TTY
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("...", 3); // (.")
 }
 

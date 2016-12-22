@@ -551,7 +551,7 @@ void UNK_0xe606() // UNK_0xe606
   D_dash_(); // D-
   Push(0x0dac); Pust(0x0000);
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -661,7 +661,7 @@ void UNK_0xe6bd() // UNK_0xe6bd
 void UNK_0xe709() // UNK_0xe709
 {
   PRINT("PRESS SPACEBAR TO ", 18); // (.")
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" OR [ QUIT ]", 12); // (.")
   _ex_CRS(); // !CRS
 }
@@ -912,7 +912,7 @@ void UNK_0xe87b() // UNK_0xe87b
   _ex_COLOR(); // !COLOR
   PAD(); // PAD
   Push(cc__5); // 5
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   _ex_CRS(); // !CRS
 }
 
@@ -1740,7 +1740,7 @@ void UNK_0xee73() // UNK_0xee73
   POS_dot_PXT(); // POS.PXT
 
   label4:
-  DELETE_dash_(); // DELETE-
+  delete_dash_scroll_dash_box(); // delete-scroll-box
   if (Pop() == 0) return;
   UNK_0xe917(); // UNK_0xe917
 }
@@ -1906,7 +1906,7 @@ void UNK_0xefe0() // UNK_0xefe0
   POS_dot_(); // POS.
   Push(0x6400); // IFIELD(TEXT-TE)
   Push(0x0026);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
   UNK_0xe917(); // UNK_0xe917
   _gt_DISPLAY(); // >DISPLAY
@@ -2269,7 +2269,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
   POS_dot_PXT(); // POS.PXT
 
   label7:
-  DELETE_dash_(); // DELETE-
+  delete_dash_scroll_dash_box(); // delete-scroll-box
   if (Pop() == 0) goto label8;
   UNK_0xe917(); // UNK_0xe917
 
@@ -2501,7 +2501,7 @@ void UNK_0xf3ca() // UNK_0xf3ca
   if (Pop() == 0) goto label2;
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
-  DELETE_dash_(); // DELETE-
+  delete_dash_scroll_dash_box(); // delete-scroll-box
   UNK_0xe917(); // UNK_0xe917
 }
 

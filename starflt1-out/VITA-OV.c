@@ -1291,7 +1291,7 @@ void UNK_0xf448() // UNK_0xf448
   _1_dot_5_ex_(); // 1.5!
   IOPEN(); // IOPEN
   CI(); // CI
-  Push(pp__ro_SURFAC); // (SURFAC
+  Push(pp__ro_SURFACE_rc_); // (SURFACE)
   _1_dot_5_ex_(); // 1.5!
   Push(0); // 0
   LoadData("UNK_0xe7c2"); // from 'BOX         '

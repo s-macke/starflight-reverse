@@ -97,25 +97,25 @@ void UNK_0xef73() // UNK_0xef73
   POS_dot_(); // POS.
 
   UNK_0x3f3b("INCOMING");
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0018);
   Push(0x0050);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("HIGH");
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x000f);
   Push(0x003c);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("PRIORITY");
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x0011);
   Push(0x0028);
   POS_dot_(); // POS.
 
   UNK_0x3f3b("MESSAGE");
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc_UNK_0xef6a); // UNK_0xef6a
   TONE(); // TONE
   V_gt_DISPLAY(); // V>DISPLAY
@@ -618,7 +618,7 @@ void UNK_0xf30b() // UNK_0xf30b
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP

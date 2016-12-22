@@ -214,7 +214,7 @@ void UNK_0xe121() // UNK_0xe121
   Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
   PRINT(" not in ", 8); // (.")
   R_gt_(); // R>

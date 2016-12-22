@@ -409,7 +409,7 @@ void _dot_STARDATE() // .STARDATE
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(".", 1); // (.")
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
@@ -418,14 +418,14 @@ void _dot_STARDATE() // .STARDATE
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _dot_R(); // .R
@@ -475,7 +475,7 @@ void UNK_0xe88e() // UNK_0xe88e
   UNK_0x3f3b("DOWN");
 
   label2:
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1575,8 +1575,8 @@ void UNK_0xf09d() // UNK_0xf09d
   LoadData("ELEM-NAME"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
-  _dash_XTRAIL(); // -XTRAIL
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  _dash_XTRAILING(); // -XTRAILING
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SET_dash_CURRENT(); // SET-CURRENT
 }
 
@@ -1589,7 +1589,7 @@ void UNK_0xf0bd() // UNK_0xf0bd
 {
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(": ", 2); // (.")
   CTINIT(); // CTINIT
 }
@@ -1631,7 +1631,7 @@ void UNK_0xf0de() // UNK_0xf0de
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(PHRASE$)
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
 
@@ -1648,7 +1648,7 @@ void UNK_0xf0de() // UNK_0xf0de
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(PHRASE$)
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
   Push(pp__ro_PLANET); // (PLANET

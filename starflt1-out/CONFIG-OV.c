@@ -428,7 +428,7 @@ void UNK_0xeb5b() // UNK_0xeb5b
   D_dash_(); // D-
   Push(0x09c4); Pust(0x0000);
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -1555,7 +1555,7 @@ void UNK_0xf346() // UNK_0xf346
 void UNK_0xf3b8() // UNK_0xf3b8
 {
   PRINT("TYPE", 4); // (.")
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT("SHIP NAME: ISS ", 15); // (.")
 }
 

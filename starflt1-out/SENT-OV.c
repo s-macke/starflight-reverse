@@ -463,7 +463,7 @@ void UNK_0xe867() // UNK_0xe867
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   COUNT(); // COUNT
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   goto label3;
 
   label2:
@@ -1787,7 +1787,7 @@ void UNK_0xf231() // UNK_0xf231
   Push(0x0018);
   Push(0x002e);
   UNK_0xe435(); // UNK_0xe435
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1810,7 +1810,7 @@ void UNK_0xf245() // UNK_0xf245
   Push(0x0010);
   Push(0x002e);
   UNK_0xe435(); // UNK_0xe435
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1837,7 +1837,7 @@ void UNK_0xf299() // UNK_0xf299
   Push(0x0010);
   Push(0x002e);
   UNK_0xe435(); // UNK_0xe435
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" SPECIMEN ", 10); // (.")
 }
 

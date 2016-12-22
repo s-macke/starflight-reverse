@@ -1862,7 +1862,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
   UNK_0xe4aa(); // UNK_0xe4aa
 
   label1:
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() == 0) goto label2;
   Push(pp_UNK_0xe5fa); // UNK_0xe5fa
   ON(); // ON

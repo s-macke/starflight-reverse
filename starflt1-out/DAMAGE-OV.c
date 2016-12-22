@@ -981,12 +981,12 @@ void UNK_0xef8e() // UNK_0xef8e
   UNK_0x3f3b("SLIGHTLY ");
 
   label4:
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 
   UNK_0x3f3b("WOUNDED ");
 
   label2:
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   R_gt_(); // R>
   Pop(); // DROP
 }

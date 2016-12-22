@@ -15,8 +15,8 @@
 // 1706:      UNK_0xf064  codep:0x224c parp:0xf064 size:0x0014 C-string:'UNK_0xf064'
 // 1707:      UNK_0xf07a  codep:0x224c parp:0xf07a size:0x0010 C-string:'UNK_0xf07a'
 // 1708:      UNK_0xf08c  codep:0x224c parp:0xf08c size:0x000c C-string:'UNK_0xf08c'
-// 1709:      UNK_0xf09a  codep:0x224c parp:0xf09a size:0x0032 C-string:'UNK_0xf09a'
-// 1710:      UNK_0xf0ce  codep:0x224c parp:0xf0ce size:0x0042 C-string:'UNK_0xf0ce'
+// 1709:       COUNTDOWN  codep:0x224c parp:0xf09a size:0x0032 C-string:'COUNTDOWN'
+// 1710:          LAUNCH  codep:0x224c parp:0xf0ce size:0x0042 C-string:'LAUNCH'
 // 1711:      UNK_0xf112  codep:0x224c parp:0xf112 size:0x003e C-string:'UNK_0xf112'
 // 1712:      UNK_0xf152  codep:0x224c parp:0xf152 size:0x000e C-string:'UNK_0xf152'
 // 1713:      UNK_0xf162  codep:0x224c parp:0xf162 size:0x005c C-string:'UNK_0xf162'
@@ -28,7 +28,7 @@
 // 1719:      UNK_0xf2ee  codep:0x224c parp:0xf2ee size:0x000c C-string:'UNK_0xf2ee'
 // 1720:      UNK_0xf2fc  codep:0x224c parp:0xf2fc size:0x0008 C-string:'UNK_0xf2fc'
 // 1721:      UNK_0xf306  codep:0x224c parp:0xf306 size:0x0064 C-string:'UNK_0xf306'
-// 1722:      UNK_0xf36c  codep:0x224c parp:0xf36c size:0x0025 C-string:'UNK_0xf36c'
+// 1722:       PORTLEAVE  codep:0x224c parp:0xf36c size:0x0025 C-string:'PORTLEAVE'
 // 1723:      UNK_0xf393  codep:0x224c parp:0xf393 size:0x005c C-string:'UNK_0xf393'
 // 1724:         &LAUNCH  codep:0x224c parp:0xf3fb size:0x004e C-string:'_and_LAUNCH'
 // 1725:         &RETURN  codep:0x224c parp:0xf455 size:0x0000 C-string:'_and_RETURN'
@@ -132,10 +132,10 @@ void UNK_0xf08c() // UNK_0xf08c
 
 
 // ================================================
-// 0xf098: WORD 'UNK_0xf09a' codep=0x224c parp=0xf09a
+// 0xf098: WORD 'COUNTDOWN' codep=0x224c parp=0xf09a
 // ================================================
 
-void UNK_0xf09a() // UNK_0xf09a
+void COUNTDOWN() // COUNTDOWN
 {
   Push(0x2710);
   TONE(); // TONE
@@ -168,15 +168,15 @@ void UNK_0xf09a() // UNK_0xf09a
 
 
 // ================================================
-// 0xf0cc: WORD 'UNK_0xf0ce' codep=0x224c parp=0xf0ce
+// 0xf0cc: WORD 'LAUNCH' codep=0x224c parp=0xf0ce
 // ================================================
 
-void UNK_0xf0ce() // UNK_0xf0ce
+void LAUNCH() // LAUNCH
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
-  UNK_0xf09a(); // UNK_0xf09a
+  COUNTDOWN(); // COUNTDOWN
   CTERASE(); // CTERASE
   Push(pp_CONTEXT); // CONTEXT
   Push(Read16(Pop())); // @
@@ -473,14 +473,14 @@ void UNK_0xf306() // UNK_0xf306
 
 
 // ================================================
-// 0xf36a: WORD 'UNK_0xf36c' codep=0x224c parp=0xf36c
+// 0xf36a: WORD 'PORTLEAVE' codep=0x224c parp=0xf36c
 // ================================================
 
-void UNK_0xf36c() // UNK_0xf36c
+void PORTLEAVE() // PORTLEAVE
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" DOCKING BAY DOORS", 18); // (.")
   Push(0x7148);
   TONE(); // TONE
@@ -556,11 +556,11 @@ void _and_LAUNCH() // &LAUNCH
   UNK_0xf112(); // UNK_0xf112
 
   UNK_0x3f3b("OPENING");
-  UNK_0xf36c(); // UNK_0xf36c
+  PORTLEAVE(); // PORTLEAVE
   UNK_0xf393(); // UNK_0xf393
 
   label1:
-  UNK_0xf0ce(); // UNK_0xf0ce
+  LAUNCH(); // LAUNCH
   if (Pop() == 0) return;
   Push(0xcc0a);
   MODULE(); // MODULE
@@ -610,7 +610,7 @@ void _and_RETURN() // &RETURN
   _gt_DISPLAY(); // >DISPLAY
 
   UNK_0x3f3b("CLOSING");
-  UNK_0xf36c(); // UNK_0xf36c
+  PORTLEAVE(); // PORTLEAVE
   _dot_AIRLOCK(); // .AIRLOCK
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR

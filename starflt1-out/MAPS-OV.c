@@ -246,7 +246,7 @@ void UNK_0xedb2() // UNK_0xedb2
   Push(Read8(Pop())&0xFF); // C@
   Push(0x63fb); // IFIELD(PHRASE-MEM)
   OVER(); // OVER
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
   SWAP(); // SWAP
   _dash_(); // -
@@ -426,7 +426,7 @@ void UNK_0xee86() // UNK_0xee86
   Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }
 
