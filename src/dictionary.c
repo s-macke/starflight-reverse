@@ -12,14 +12,14 @@ int ndict = 0;
 
 char* GetWordName(DICTENTRY *dict)
 {
-	int i;
-	for(i = 0; renamewords[i].newword != NULL; i++)
-	{
-		if ((dict->ovidx == (signed char)renamewords[i].ovidx) && (dict->parp == renamewords[i].parp))
-			return renamewords[i].newword;
-	}
+    int i;
+    for(i = 0; renamewords[i].newword != NULL; i++)
+    {
+        if ((dict->ovidx == (signed char)renamewords[i].ovidx) && (dict->parp == renamewords[i].parp))
+            return renamewords[i].newword;
+    }
 
-	return dict->r;
+    return dict->r;
 }
 
 char* FindDictPar(unsigned short addr, int ovidx)
@@ -368,18 +368,18 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
     dict[ndict].codep = (mem[varp+1]<<8) | mem[varp+0];
     dict[ndict].parp = ofs+5+n;
 
-	// find duplicate word labels
-	/*
-	for(i=0; i<ndict; i++) {
-		if ((dict[i].ovidx == ovidx) && (strcmp(GetWordName(&dict[i]), GetWordName(&dict[ndict])) == 0)) {
-			fprintf(stderr, "found duplicate:\n", ovidx, dict[i].r, dict[ndict].parp, dict[i].parp);
-			fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n", 
-			(unsigned char)ovidx, dict[ndict].parp, GetWordName(&dict[ndict]), dict[ndict].r);
-			fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n", 
-			(unsigned char)ovidx, dict[i].parp, GetWordName(&dict[i]), dict[i].r);
-		}
-	}
-	*/
+    // find duplicate word labels
+    /*
+    for(i=0; i<ndict; i++) {
+        if ((dict[i].ovidx == ovidx) && (strcmp(GetWordName(&dict[i]), GetWordName(&dict[ndict])) == 0)) {
+            fprintf(stderr, "found duplicate:\n", ovidx, dict[i].r, dict[ndict].parp, dict[i].parp);
+            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n", 
+            (unsigned char)ovidx, dict[ndict].parp, GetWordName(&dict[ndict]), dict[ndict].r);
+            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n", 
+            (unsigned char)ovidx, dict[i].parp, GetWordName(&dict[i]), dict[i].r);
+        }
+    }
+    */
     ndict++;
     return linkp - 2;
 }
@@ -473,8 +473,8 @@ LineDesc pline[0x10000];
 
 char* PutEasyMacro(char *s)
 {
-	static char ret[STRINGLEN];
-	ret[0] = 0;
+    static char ret[STRINGLEN];
+    ret[0] = 0;
 
     if (strcmp(s, "0") == 0)
     {
@@ -674,29 +674,29 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             continue;
         }
 
-		if (strcmp(s, "DOTASKS") == 0)
-		{
-			int codep1 = Read16(Read16(ofs-4));
-			int codep2 = Read16(Read16(ofs-8));
-			int codep3 = Read16(Read16(ofs-12));
-	        if ((codep1 != CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT))
-			{
-				fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
-				exit(1);
-			} else
-			{
-				int c1 = Read16(ofs-2);
-				int c2 = Read16(ofs-6);
-				int c3 = Read16(ofs-10);
-				char *s1 = NULL, *s2 = NULL, *s3 = NULL;
-				if (c1 != 0) s1 = FindDictPar(Read16(ofs-2), currentovidx);
-				if (c2 != 0) s2 = FindDictPar(Read16(ofs-6), currentovidx);
-				if (c3 != 0) s3 = FindDictPar(Read16(ofs-10), currentovidx);
-				snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
-			}
-			ofs += 2;
-		} else
-		if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
+        if (strcmp(s, "DOTASKS") == 0)
+        {
+            int codep1 = Read16(Read16(ofs-4));
+            int codep2 = Read16(Read16(ofs-8));
+            int codep3 = Read16(Read16(ofs-12));
+            if ((codep1 != CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT))
+            {
+                fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
+                exit(1);
+            } else
+            {
+                int c1 = Read16(ofs-2);
+                int c2 = Read16(ofs-6);
+                int c3 = Read16(ofs-10);
+                char *s1 = NULL, *s2 = NULL, *s3 = NULL;
+                if (c1 != 0) s1 = FindDictPar(Read16(ofs-2), currentovidx);
+                if (c2 != 0) s2 = FindDictPar(Read16(ofs-6), currentovidx);
+                if (c3 != 0) s3 = FindDictPar(Read16(ofs-10), currentovidx);
+                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
+            }
+            ofs += 2;
+        } else
+        if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
             snprintf(pline[ofs].str, STRINGLEN, "  %s();\n// inlined assembler code\n", s);
             ofs += 2;
@@ -910,28 +910,36 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODECASE)
         {
-			pline[ofs].str = (char*)malloc(4096);
-			pline[ofs].str[0] = 0;
-			int n = Read16(par);
-			int i;
-			char temp[256];
-			sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
-			for(i=0; i<n; i++) {
-				char *s = FindDictPar(Read16(par + i*4 + 6), currentovidx);
-				sprintf(temp, "  case %i:\n  %s    break;\n",
-					Read16(par + i*4 + 4), PutEasyMacro(s));
-				strcat(pline[ofs].str, temp);
-			}
-			char *s = FindDictPar(Read16(par + 2), currentovidx);
-			sprintf(temp, "  default:\n  %s    break;\n", PutEasyMacro(s));
-			strcat(pline[ofs].str, temp);
+            pline[ofs].str = (char*)malloc(4096);
+            pline[ofs].str[0] = 0;
+            int n = Read16(par);
+            int i;
+            char temp[256];
+            sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
+            for(i=0; i<n; i++) {
+                char *s = FindDictPar(Read16(par + i*4 + 6), currentovidx);
+                sprintf(temp, "  case %i:\n  %s    break;\n",
+                    Read16(par + i*4 + 4), PutEasyMacro(s));
+                strcat(pline[ofs].str, temp);
+            }
+            char *s = FindDictPar(Read16(par + 2), currentovidx);
+            sprintf(temp, "  default:\n  %s    break;\n", PutEasyMacro(s));
+            strcat(pline[ofs].str, temp);
 
-			strcat(pline[ofs].str, "\n  }\n");
+            strcat(pline[ofs].str, "\n  }\n");
             ofs += 2;
         } else
-        if (codep == CODEFUNC11)
-        {
-            snprintf(pline[ofs].str, STRINGLEN, "  Func11(\"%s\");\n", s);
+        if (codep == CODEARRAY)
+        {/*
+            unsigned short ds = Read16(par + 6);
+            unsigned short bx = Read16(par + 4);
+            unsigned short bx = bx + (Pop()<<1);
+            unsigned short cx = Read16(ds, bx) + Pop();
+            Push(ds);
+            Push(dx);
+            */
+            snprintf(pline[ofs].str, STRINGLEN, "  ReadArray(0x%04x, 0x%04x); // %s\n",
+            Read16(par + 6), Read16(par + 4), s);
             ofs += 2;
         } else
         if (codep == CODEFUNC12)
@@ -948,7 +956,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         {
             par = Read16(Read16(par)+REGDI);
             snprintf(pline[ofs].str, STRINGLEN, "  Exec(%s); // call of word 0x%04x '%s'\n",
-				s, par, FindDictPar(par, currentovidx));
+                s, par, FindDictPar(par, currentovidx));
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
@@ -1109,13 +1117,13 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
 
 void InitParseFunction2()
 {
-	int i;
+    int i;
     memset(pline, 0, 0x10000*sizeof(LineDesc));
-	for(i=0; i<0x10000; i++)
-	{
-		pline[i].str = malloc(STRINGLEN);
-		pline[i].str[0] = 0;
-	}
+    for(i=0; i<0x10000; i++)
+    {
+        pline[i].str = malloc(STRINGLEN);
+        pline[i].str[0] = 0;
+    }
 }
 
 void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx)

@@ -29,9 +29,9 @@ int DisasmRange(int offset, int size, FILE *fp)
         if (offset > 0xFFFF)
         {
            fprintf(stderr, "Warning: outside of segment\n");
-           return 0;
-           //exit(1);
+           exit(1);
         }
+
         if (pline[offset].done)
         {
             return 0;
@@ -53,6 +53,17 @@ int DisasmRange(int offset, int size, FILE *fp)
         if (Read8(currentoffset) == 0xc3) // ret
         {
             snprintf(pline[currentoffset].str, STRINGLEN, "\n");
+            return 0;
+        }
+
+        if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump
+        {
+            unsigned short addr = (offset+(short int)((char)Read8(currentoffset+1)));
+            DisasmRange(addr&0xffff, 0x10000, fp);
+        }
+
+        if (strcmp(buffer, "jmp    word ptr [bx]") == 0) // jmp
+        {
             return 0;
         }
 
@@ -231,7 +242,7 @@ void DisasStarflt(FILE *fp)
             "\n// ====================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ====================================================\n",
-			wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
+            wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
 
         for(j=wordofs; j<dict[i].parp; j++) pline[j].done = 1;
     }
