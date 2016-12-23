@@ -367,6 +367,19 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
     int varp = ofs + i + 3;
     dict[ndict].codep = (mem[varp+1]<<8) | mem[varp+0];
     dict[ndict].parp = ofs+5+n;
+
+	// find duplicate word labels
+	/*
+	for(i=0; i<ndict; i++) {
+		if ((dict[i].ovidx == ovidx) && (strcmp(GetWordName(&dict[i]), GetWordName(&dict[ndict])) == 0)) {
+			fprintf(stderr, "found duplicate:\n", ovidx, dict[i].r, dict[ndict].parp, dict[i].parp);
+			fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n", 
+			(unsigned char)ovidx, dict[ndict].parp, GetWordName(&dict[ndict]), dict[ndict].r);
+			fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n", 
+			(unsigned char)ovidx, dict[i].parp, GetWordName(&dict[i]), dict[i].r);
+		}
+	}
+	*/
     ndict++;
     return linkp - 2;
 }
@@ -1068,6 +1081,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             snprintf(pline[ofs].str, STRINGLEN, "%s", PutEasyMacro(s));
             ofs += 2;
         }
+
     }
 }
 

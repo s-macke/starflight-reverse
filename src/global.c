@@ -141,8 +141,6 @@ WORDRENAME renamewords[] =
 	{0xff, 0x9b98, "INIT-ICONLIST"}, // "INIT-IC"
 	{0xff, 0x9cea, "POINT>ICON"}, // "POINT>I"
 	{0xff, 0x9cfc, ".LOCAL-ICONS"}, // ".LOCAL-"
-	//{0xff, 0x9d82, "?ICONS-AT"}, // "?ICONS-"
-	//{0xff, 0x9d96, "?ICONS-LOCUS"}, // "?ICONS-"
 	{0xff, 0x9f42, "+ICONBOX"}, // "+ICONBO"
 	{0xff, 0xa0f0, "POLY-WINDOW-FILL"}, // "POLY-WI"
 	{0xff, 0xa424, "WLINE-UP"}, // "WLINE-U"
@@ -171,15 +169,22 @@ WORDRENAME renamewords[] =
 	{0xff, 0xcb80, "SHPMOV-VOC"}, // "SHPMOV-"
 	{0xff, 0xd452, "STARTGAME"}, // "STARTG"
 	{0xff, 0xd489, "LET-THERE-BE-STARFLIGHT"}, // "LET-TH"
-	{0x21, 0xd980, "SHP>C"}, // "UNK_0xd980"
+	{0x21, 0xd980, "SHP>C"}, // "UNK_0xd980" HYPER-OV
 	{0x21, 0xdaa8, "CTXT#"}, // "UNK_0xdaa8"
 	{0x21, 0xe1af, ">[CONTEXT]"}, // "UNK_0xe1af"
 	{0x21, 0xe1d3, "![CONTEXT]"}, // "UNK_0xe1d3"
 	{0x21, 0xe21a, "#CPARMS"}, // "UNK_0xe21a"
 	{0x21, 0xe23a, "!CPARMS"}, // "UNK_0xe23a"
 	{0x21, 0xdc9c, ">CONS-DISP"}, // "UNK_0xdc9c"
+	{0x21, 0xedc2, "?DOUBLE-UNNEST"}, // "UNK_0xedc2" HYPER-OV
+	{0x21, 0xed6c, "?UNNEST"}, // "UNK_0xed6c" HYPER-OV
+	{0x21, 0xda92, "@XYABS"}, // "UNK_0xda92" HYPER-OV
+	{0x21, 0xeca9, "?STARPORT"}, // "UNK_0xeca9" HYPER-OV
+	{0x21, 0xda60, "FLAREDATE"}, // "UNK_0xda60" HYPER-OV
+	{0x21, 0xd988, "PLN>C"}, // "UNK_0xd988" HYPER-OV
+	{0x21, 0xec5d, "?2NEST.ETC"}, // "UNK_0xec5d" HYPER-OV
+	{0x21, 0xeb97, "?COLLISION"}, // "UNK_0xeb97" HYPER-OV
 
-	//{0x21, 0xeb97, "?DEPOSITED"}, // "UNK_0xeb97"
 	{0x2a, 0xe05c, "SET.COLORS"}, // "UNK_0xe05c"
 	{0x2a, 0xde82, "RESUME"}, // "UNK_0xde82"
 	{0x2a, 0xe881, ".RESUMING"}, // "UNK_0xe881"
@@ -235,10 +240,6 @@ WORDRENAME renamewords[] =
 	{0x26, 0xddf6, "revision"}, // "UNK_0xddf6" ITEMS-OV
 	{0x26, 0xddf6, "werase"}, // "UNK_0xe0b5" ITEMS-OV
 	{0xff, 0x62cf, "(SURFACE)"}, // "(SURFAC"
-
-	//{0xff, 0x6192, "(SCROLL-BOX)"}, // "(SCROLL"
-	//{0xff, 0x61b2, "(SCROLL-BOX)"}, // "(SCROLL"
-
 	{0x26, 0xe45b, "plextract"}, // "UNK_0xe45b" ITEMS-OV
 	{0x26, 0xe465, "tvextract"}, // "UNK_0xe465" ITEMS-OV
 	{0x26, 0xe487, "niche>val"}, // "UNK_0xe487" ITEMS-OV
@@ -295,25 +296,76 @@ WORDRENAME renamewords[] =
 	{0x2A, 0xf527, "?GAME.IN.PROGRESS"}, // "UNK_0xf527" GAME-OV
 	{0x2A, 0xe824, "nomaster"}, // "UNK_0xe824" GAME-OV
 
+	{0x27, 0xe2a5, "?ALIEN-HIT-WITH-LASER"}, // "?ALIEN-HIT" BEHAV-OV
+	{0x27, 0xe2ee, "?ALIEN-HIT-WITH-STUNNER"}, // "?ALIEN-HIT" BEHAV-OV
+	{0x27, 0xe4d9, "?WANTS-TO-FLY"}, // "?WANTS-TO-" BEHAV-OV
+	{0x27, 0xe4f2, "?WANTS-TO-FLOAT"}, // "?WANTS-TO-" BEHAV-OV
+	{0x27, 0xe727, "ERASE-LIFEFORM-FROM-ARRAY"}, // "ERASE-LIFE" BEHAV-OV
+	{0x27, 0xee0d, "angle>text"}, // "UNK_0xee0d" BEHAV-OV
+	{0x18, 0xf417, "plan-tseed"}, // "UNK_0xf417" MOVE-OV
+	{0x04, 0xf423, "GETSITE_1"}, // "GETSITE" SITE-OV
+	{0x04, 0xf537, "GETSITE_2"}, // "GETSITE"
+	{0xff, 0x6192, "(SCROLL_1"}, // "(SCROLL" maybe (SCROLL-BOX)
+	{0xff, 0x61b2, "(SCROLL_2"}, // "(SCROLL"
+	{0xff, 0x1320, "OFF_1"}, // "OFF"
+	{0xff, 0x4886, "OFF_2"}, // "OFF"
+	{0xff, 0x6dc7, "OFF"}, // "OFF"
+	{0xff, 0x132f, "ON"}, // "ON"
+	{0xff, 0x4873, "ON_2"}, // "ON"
+	{0xff, 0x6db9, "ON_3"}, // "ON"
+	{0xff, 0x3bc2, "THRU_1"}, // "THRU"
+	{0xff, 0x6f1a, "THRU_2"}, // "THRU"
+	{0xff, 0xa227, "BEEPON"}, // "BEEPON"
+	{0xff, 0x2638, "BEEPON_2"}, // "BEEPON"
+	{0xff, 0x3df7, "'_1"}, // "'"
+	{0xff, 0x1b7d, "'_2"}, // "'"
+	{0xff, 0x6dec, "CMOVE"}, // "CMOVE"
+	{0xff, 0x0d10, "CMOVE_2"}, // "CMOVE"
+	{0xff, 0x6e41, "LOAD_1"}, // "LOAD"
+	{0xff, 0x06a2, "LOAD_2"}, // "LOAD"
+	{0xff, 0x9d96, "?ICONS-AT"}, // "?ICONS-"
+	{0xff, 0x9d82, "?ICONS-LOCUS"}, // "?ICONS-"
+	{0xff, 0x3913, "FLUSH"}, // "FLUSH"
+	{0xff, 0x3913, "FLUSH"}, // "FLUSH"
+	{0xff, 0x7b5f, "FLUSH_2"}, // "FLUSH"
+	{0xff, 0x3880, "LBLOCK_1"}, // "LBLOCK"
+	{0xff, 0x6e32, "LBLOCK_2"}, // "LBLOCK"
+	{0xff, 0x6dff, "FILL_1"}, // "FILL"
+	{0xff, 0x0d35, "FILL_2"}, // "FILL"
+	{0xff, 0x0be1, "!"}, // "!"
+	{0xff, 0x6b78, "!_2"}, // "!"
+	{0xff, 0x6d78, "!_3" }, // "!"
+	{0xff, 0xbd1f, "MISC-_1"}, // "MISC"
+	{0xff, 0xbd3d, "MISC-_2"}, // "MISC"
+	{0xff, 0x965e, ".CIRCLE"}, // ".CIRCLE"
+	{0xff, 0x9c34, ".CIRCLE_2"}, // ".CIRCLE"
+	{0xff, 0x6d94, "1.5!"}, // "1.5!"
+	{0xff, 0x49ae, "1.5!_2"}, // "1.5!"
+	{0xff, 0x6d85, "+!"}, // "+!"
+	{0xff, 0x0f85, "+!_2"}, // "+!"
+	{0xff, 0x6d6c, "C!"}, // "C!"
+	{0xff, 0x0c60, "C!_2"}, // "C!"
+	{0xff, 0x6da1, "2!"}, // "2!"
+	{0xff, 0x0c24, "2!_2"}, // "2!"
+	{0xff, 0x085d, "BYE_2"}, // "BYE"
+	{0xff, 0x8fd9, "BYE"}, // "BYE"
+	{0xff, 0xd463, "GAMEOP_1"}, // "GAMEOP"
+	{0xff, 0xd476, "GAMEOP_2"}, // "GAMEOP"
+	{0xff, 0xc897, "DAMAGE_1"}, // "DAMAGE-"
+	{0xff, 0xc8b7, "DAMAGE_2"}, // "DAMAGE-"
+
+	{0xff, 0x5a5c, "CONTEXT-ID#"}, // "CONTEXT"
+	{0xff, 0x05ac, "CONTEXT_2"}, // "CONTEXT"
+	{0xff, 0x38ad, "SAVE-BU_1"}, // "SAVE-BU"
+	{0xff, 0x7b4f, "SAVE-BU_2"}, // "SAVE-BU"
+	{0xff, 0x385f, "BLOCK_1"}, // "BLOCK"
+	{0xff, 0x6e21, "BLOCK_2"}, // "BLOCK"
+	{0xff, 0x06ac, "KEY_1"}, // "KEY"
+	{0xff, 0x48ab, "KEY_2"}, // "KEY"
+
+
 	{0x0, 0x0, NULL}
 };
-/*
-WORDRENAME renamewords[] =
-{
-    {"UNK_0xf464", "BSCREEN"},
-    {"UNK_0xefa4", "MASTERDATA"},
-    {"UNK_0xe012", "?TANDY"},
-    {"UNK_0xe026", "set.tandy.pallete"},
-    {"UNK_0xe7ee", "?-writable"},
-    {"UNK_0xe824", "nomaster"},
-    {"UNK_0xe881", ".RESUMING"},
-    {"UNK_0xe3b0", ".PAGE"},
-    {"UNK_0xe8b0", "?2SWAP"},
-    {"UNK_0xf069", "GET-MPS"},
-	{"UNK_0xe61d", "TIMEKEY"},
-    {NULL, NULL}
-};
-*/
 
 OVERLAYS overlays[] =
 {
@@ -380,6 +432,98 @@ OVERLAYS overlays[] =
 
 WORDRENAME renamewords[] =
 {
+	{0x07, 0xf441, "GETSITE_1" }, // GETSITE
+	{0x07, 0xf547, "GETSITE_2" }, // GETSITE
+	{0x34, 0xf488, "GAMEO_1" }, // GAMEO
+	{0x34, 0xf3bc, "GAMEO_2" }, // GAMEO
+	{0x39, 0xefc6, "DO-OPEN_1" }, // DO-OPEN
+	{0x39, 0xf558, "DO-OPEN_2" }, // DO-OPEN
+	{0xff, 0xd09f, "TELE_1" }, // TELE
+	{0xff, 0xd0ae, "TELE_2" }, // TELE
+	{0xff, 0xcba7, "PFIL_1" }, // PFIL
+	{0xff, 0xcbc4, "PFIL_2" }, // PFIL
+	{0xff, 0x3bce, "THRU_1" }, // THRU
+	{0xff, 0x6ec0, "THRU_2" }, // THRU
+	{0xff, 0x2638, "BEEPON_1" }, // BEEPON
+	{0xff, 0x9ce4, "BEEPON_2" }, // BEEPON
+	{0xff, 0x1b7d, "'_1" }, // '
+	{0xff, 0x3e03, "'_2" }, // '
+	{0xff, 0x4961, "ON_1" }, // ON
+	{0xff, 0x6d59, "ON_2" }, // ON
+	{0xff, 0x132f, "ON_3" }, // ON
+	{0xff, 0x0d10, "CMOVE_1" }, // CMOVE
+	{0xff, 0x6d8c, "CMOVE_2" }, // CMOVE
+	{0xff, 0x06a2, "LOAD_1" }, // LOAD
+	{0xff, 0x6de1, "LOAD_2" }, // LOAD
+	{0xff, 0xcf9d, "SEED_1" }, // SEED
+	{0xff, 0xcf80, "SEED_2" }, // SEED
+	{0xff, 0x4b9c, "SEED_3" }, // SEED
+	{0xff, 0xcb72, "ACR_1" }, // ACR
+	{0xff, 0xcb8e, "ACR_2" }, // ACR
+	{0xff, 0x97c4, "?ICONS-_1" }, // ?ICONS-
+	{0xff, 0x97d8, "?ICONS-_2" }, // ?ICONS-
+	{0xff, 0x90af, "COLORMA_1" }, // COLORMA
+	{0xff, 0x90e8, "COLORMA_2" }, // COLORMA
+	{0xff, 0x3913, "FLUSH_1" }, // FLUSH
+	{0xff, 0x7b8c, "FLUSH_2" }, // FLUSH
+	{0xff, 0x3880, "LBLOCK_1" }, // LBLOCK
+	{0xff, 0x6dd2, "LBLOCK_2" }, // LBLOCK
+	{0xff, 0x1320, "OFF_1" }, // OFF
+	{0xff, 0x4974, "OFF_2" }, // OFF
+	{0xff, 0x0d35, "FILL_1" }, // FILL
+	{0xff, 0x6d9f, "FILL_2" }, // FILL
+	{0xff, 0x0be1, "!_1" }, // !
+	{0xff, 0x6d18, "!_2" }, // !
+	{0xff, 0x05ac, "CONTEXT_1" }, // CONTEXT
+	{0xff, 0xca30, "CONTEXT_2" }, // CONTEXT
+	{0xff, 0x5c2c, "CONTEXT_3" }, // CONTEXT
+	{0xff, 0xce34, "STO_1" }, // STO
+	{0xff, 0xce50, "STO_2" }, // STO
+	{0xff, 0xc261, "OVINIT-_1" }, // OVINIT-
+	{0xff, 0xbed7, "OVINIT-_2" }, // OVINIT-
+	{0xff, 0xc008, "BLDLI_1" }, // BLDLI
+	{0xff, 0xc014, "BLDLI_2" }, // BLDLI
+	{0xff, 0xbfea, "BLDLI_3" }, // BLDLI
+	{0xff, 0xba65, "+ICON_1" }, // +ICON
+	{0xff, 0x9952, "+ICON_2" }, // +ICON
+	{0xff, 0xb6c1, "MISC-_1" }, // MISC-
+	{0xff, 0xb6df, "MISC-_2" }, // MISC-
+	{0xff, 0x8974, ".CIRCLE_1" }, // .CIRCLE
+	{0xff, 0x95f4, ".CIRCLE_2" }, // .CIRCLE
+	{0xff, 0x6c80, ">0FONT_1" }, // >0FONT
+	{0xff, 0x8ab3, ">0FONT_2" }, // >0FONT
+	{0xff, 0x63d2, "(SCROLL_1" }, // (SCROLL
+	{0xff, 0x63f2, "(SCROLL_2" }, // (SCROLL
+	{0xff, 0x4a9c, "1.5!_1" }, // 1.5!
+	{0xff, 0x6d34, "1.5!_2" }, // 1.5!
+	{0xff, 0x0f85, "+!_1" }, // +!
+	{0xff, 0x6d25, "+!_2" }, // +!
+	{0xff, 0x0c60, "C!_1" }, // C!
+	{0xff, 0x6d0c, "C!_2" }, // C!
+	{0xff, 0x0c24, "2!_1" }, // 2!
+	{0xff, 0x6d41, "2!_2" }, // 2!
+	{0xff, 0x085d, "BYE_1" }, // BYE
+	{0xff, 0x9041, "BYE_2" }, // BYE
+	{0xff, 0xd454, "TRY-L_1" }, // TRY-L
+	{0xff, 0xd444, "TRY-L_2" }, // TRY-L
+	{0xff, 0xcbe1, "SHIP-GR_1" }, // SHIP-GR
+	{0xff, 0xcc01, "SHIP-GR_2" }, // SHIP-GR
+	{0xff, 0xc7a2, "COMBAU_1" }, // COMBAU
+	{0xff, 0xc7c1, "COMBAU_2" }, // COMBAU
+	{0xff, 0xc754, "DNL_1" }, // DNL
+	{0xff, 0xc738, "DNL_2" }, // DNL
+	{0xff, 0xc668, "DAMAGE-_1" }, // DAMAGE-
+	{0xff, 0xc688, "DAMAGE-_2" }, // DAMAGE-
+	{0xff, 0xbd27, "ORBIT_1" }, // ORBIT
+	{0xff, 0xbd09, "ORBIT_2" }, // ORBIT
+	{0xff, 0xb752, "OVTRIM_1" }, // OVTRIM
+	{0xff, 0xb741, "OVTRIM_2" }, // OVTRIM
+	{0xff, 0x385f, "BLOCK_1" }, // BLOCK
+	{0xff, 0x6dc1, "BLOCK_2" }, // BLOCK
+	{0xff, 0x2c3c, "DTA_1" }, // DTA
+	{0xff, 0xc728, "DTA_2" }, // DTA
+	{0xff, 0x06ac, "KEY_1" }, // KEY
+	{0xff, 0x4999, "KEY_2" }, // KEY
     {0x0, 0x0, NULL}
 };
 
