@@ -674,7 +674,29 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             continue;
         }
 
-        if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
+		if (strcmp(s, "DOTASKS") == 0)
+		{
+			int codep1 = Read16(Read16(ofs-4));
+			int codep2 = Read16(Read16(ofs-8));
+			int codep3 = Read16(Read16(ofs-12));
+	        if ((codep1 != CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT))
+			{
+				fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
+				exit(1);
+			} else
+			{
+				int c1 = Read16(ofs-2);
+				int c2 = Read16(ofs-6);
+				int c3 = Read16(ofs-10);
+				char *s1 = NULL, *s2 = NULL, *s3 = NULL;
+				if (c1 != 0) s1 = FindDictPar(Read16(ofs-2), currentovidx);
+				if (c2 != 0) s2 = FindDictPar(Read16(ofs-6), currentovidx);
+				if (c3 != 0) s3 = FindDictPar(Read16(ofs-10), currentovidx);
+				snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
+			}
+			ofs += 2;
+		} else
+		if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
             snprintf(pline[ofs].str, STRINGLEN, "  %s();\n// inlined assembler code\n", s);
             ofs += 2;
