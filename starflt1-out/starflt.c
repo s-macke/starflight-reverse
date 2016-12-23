@@ -2570,8 +2570,7 @@ const unsigned short int WIDTH = 0x001f; // WIDTH // accessed via di (in WORD OP
 // 0x0124: lodsw
 // 0x0125: mov    bx,ax
 // 0x0127: jmp    word ptr [bx]
-// 0x0129: aaa    
-// 0x012a: or     [bp+si+0007],cx
+// 0x0129: db 0x37 0x09 0x8a 0x07 '7   '
 
 // ====================================================
 // 0x012d: WORD '(!SET)' codep=0x0138 parp=0x0138
@@ -12048,7 +12047,7 @@ void _3_star_() // 3*
 // 0x49c3: lodsw
 // 0x49c4: mov    bx,ax
 // 0x49c6: jmp    word ptr [bx]
-// 0x49c8: sub    [di],bx
+// 0x49c8: db 0x29 0x1d ') '
 // 0x49ca: push   cx
 // 0x49cb: es:    
 // 0x49cc: mov    cl,[bx]
@@ -12095,7 +12094,8 @@ void _plus__at_() // +@
 // 0x4a0e: lodsw
 // 0x4a0f: mov    bx,ax
 // 0x4a11: jmp    word ptr [bx]
-// 0x4a13: adc    ax,5B4A
+// 0x4a13: db 0x15 0x4a ' J'
+// 0x4a15: pop    bx
 // 0x4a16: pop    ax
 // 0x4a17: mov    cx,[bx]
 // 0x4a19: add    bx,02
@@ -15827,7 +15827,8 @@ void MEM_st_DSK() // MEM<DSK
 // 0x71d6: lodsw
 // 0x71d7: mov    bx,ax
 // 0x71d9: jmp    word ptr [bx]
-// 0x71db: esc    5,[bx+di+58]
+// 0x71db: db 0xdd 0x71 ' q'
+// 0x71dd: pop    ax
 // 0x71de: cmp    ax,0090
 // 0x71e1: js     71EF
 // 0x71e3: mov    bx,[535E]
@@ -15854,22 +15855,16 @@ void MEM_st_DSK() // MEM<DSK
 // 0x721a: lodsw
 // 0x721b: mov    bx,ax
 // 0x721d: jmp    word ptr [bx]
-// 0x721f: dec    sp
-// 0x7220: and    cl,[bx+06]
-// 0x7223: scasw
-// 0x7224: and    dx,di
-// 0x7226: sbb    bp,ax
-// 0x7228: pop    ds
-// 0x7229: movsb
-// 0x722a: xchg   ax,dx
-// 0x722b: or     al,F2
-// 0x722d: push   cs
-// 0x722e: esc    3,[bx+di+1F]
-// 0x7231: db     6E
-// 0x7232: jb     7243
-// 0x7234: jb     7245
-// 0x7236: nop    
-// 0x7237: push   ss
+// 0x721f: db 0x4c 0x22 0x4f 0x06 0xaf 0x21 0xfa 0x1b 'L"O  !  '
+// 0x7227: call   1649
+  Push(Read8(Pop())&0xFF); // C@
+  SWAP(); // SWAP
+  UNK_0x71dd(); // UNK_0x71dd
+  BLOCK_2(); // BLOCK_2
+  Push(Pop() + Pop()); // +
+  Push(Pop() + Pop()); // +
+}
+
 
 // ====================================================
 // 0x7238: WORD 'FILE-NA' codep=0x7227 parp=0x7244
@@ -17241,22 +17236,7 @@ void VCLR() // VCLR
 // 0x7b1c: lodsw
 // 0x7b1d: mov    bx,ax
 // 0x7b1f: jmp    word ptr [bx]
-// 0x7b21: dec    sp
-// 0x7b22: and    ah,[bp+si+7677]
-// 0x7b26: push   bp
-// 0x7b27: scasb
-// 0x7b28: or     cx,ax
-// 0x7b2a: or     ax,15FA
-// 0x7b2d: adc    al,00
-// 0x7b2f: and    [bx],cl
-// 0x7b31: mov    ax,5015
-// 0x7b34: push   cs
-// 0x7b35: add    ax,EA10
-// 0x7b38: jbe    7AF8
-// 0x7b3a: ja     7B0C
-// 0x7b3c: adc    ax,FFF6
-// 0x7b3f: mov    bh,[bx+di-70]
-// 0x7b42: push   ss
+// 0x7b21: db 0x4c 0x22 0xa2 0x77 0x76 0x55 0xae 0x0b 0xc8 0x0d 0xfa 0x15 0x14 0x00 0x20 0x0f 0xb8 0x15 0x50 0x0e 0x05 0x10 0xea 0x76 0xbe 0x77 0xd0 0x15 0xf6 0xff 0x8a 0x79 0x90 0x16 'L" wvU            P    v w     y  '
 
 // ====================================================
 // 0x7b43: WORD 'SAVE-BUFFERS' codep=0x224c parp=0x7b4f
@@ -19044,7 +19024,7 @@ void _at_COLOR() // @COLOR
 // 0x87da: lodsw
 // 0x87db: mov    bx,ax
 // 0x87dd: jmp    word ptr [bx]
-// 0x87df: sub    [di],bx
+// 0x87df: db 0x29 0x1d ') '
 // 0x87e1: push   word ptr [5710]
 // 0x87e5: mov    ax,[5708]
 // 0x87e9: mov    cx,[5714]
@@ -21181,7 +21161,7 @@ void UNK_0x99e8() // UNK_0x99e8
   _at_RECORD(); // @RECORD
   Push(0); // 0
   Push(i); // I
-  Func11("ICONIMA");
+  ReadArray(0x94b2, 0x0480); // ICONIMA
   Push(0x0012);
   LCMOVE(); // LCMOVE
   i++;
@@ -21480,7 +21460,7 @@ void UNK_0x9bb6() // UNK_0x9bb6
 {
   Push(0); // 0
   SWAP(); // SWAP
-  Func11("ICONIMA");
+  ReadArray(0x94b2, 0x0480); // ICONIMA
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   Push(pp_BLTSEG); // BLTSEG
