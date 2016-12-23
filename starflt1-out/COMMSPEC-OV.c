@@ -180,7 +180,7 @@ void XY_slash_N() // XY/N
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp__ro_STOP_dash_C); // (STOP-C
-  _ex_(); // !
+  _ex__3(); // !_3
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop()*2); // 2*

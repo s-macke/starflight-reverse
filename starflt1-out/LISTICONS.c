@@ -66,7 +66,7 @@ void altitude() // altitude
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PTR); // TILE-PTR
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0021);
   Push(i); // I
   Push(0x000c);
@@ -178,7 +178,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -260,7 +260,7 @@ void ICONS() // ICONS
   OFF(); // OFF
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   title(); // title
   Push(0x00b4);
   Push(0x000f);

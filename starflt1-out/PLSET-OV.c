@@ -366,7 +366,7 @@ void UNK_0xed8e() // UNK_0xed8e
 {
   UNK_0xed2e(); // UNK_0xed2e
   Push(pp_GLOBALSEED); // GLOBALSEED
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -403,7 +403,7 @@ void UNK_0xede2() // UNK_0xede2
   HI_dash_MASS(); // HI-MASS
   RRND(); // RRND
   LoadData("UNK_0xec4a"); // from 'PLANET      '
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -789,7 +789,7 @@ void UNK_0xf06e() // UNK_0xf06e
 {
   Push(0x001e);
   Push(pp_PEAK); // PEAK
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(0x00ff);
   UNK_0xece7(); // UNK_0xece7
@@ -937,7 +937,7 @@ void UNK_0xf162() // UNK_0xf162
   R_gt_(); // R>
   Pop(); // DROP
   Push(pp_HYDRO); // HYDRO
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1000,7 +1000,7 @@ void UNK_0xf1c8() // UNK_0xf1c8
 
   label3:
   Push(pp_ATMO); // ATMO
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1021,10 +1021,10 @@ void UNK_0xf1e6() // UNK_0xf1e6
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   Push(pp_HYDRO); // HYDRO
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x000f);
   Push(pp_ATMO); // ATMO
-  _ex_(); // !
+  _ex__3(); // !_3
   return;
 
   label1:
@@ -1033,7 +1033,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
   if (Pop() == 0) goto label2;
   Push(cc__5); // 5
   Push(pp_HYDRO); // HYDRO
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label3:
   UNK_0xf1c8(); // UNK_0xf1c8
@@ -1106,10 +1106,10 @@ void UNK_0xf280() // UNK_0xf280
 {
   UNK_0xf24e(); // UNK_0xf24e
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   LoadData("UNK_0xec92"); // from 'REGIONS     '
   Push(Read16(sp)); // DUP

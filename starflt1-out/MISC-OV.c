@@ -77,7 +77,7 @@ void _ro_TRIM() // (TRIM
 {
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xefe5); // UNK_0xefe5
@@ -86,16 +86,16 @@ void _ro_TRIM() // (TRIM
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   R_gt_(); // R>
   Push(Pop()+2); // 2+
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   POS_dot_(); // POS.
   BLT(); // BLT
 }
@@ -165,7 +165,7 @@ void UNK_0xf08f() // UNK_0xf08f
 {
   _at_CRS(); // @CRS
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   SetColor("WHITE");
   SetColor("WHITE");
   SetColor("BROWN");
@@ -219,9 +219,9 @@ void _ro__n_IN_do_() // (#IN$
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
 
   label5:
   UNK_0xf08f(); // UNK_0xf08f
@@ -524,7 +524,7 @@ void UNK_0xf319() // UNK_0xf319
   POS_dot_(); // POS.
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -555,7 +555,7 @@ void UNK_0xf319() // UNK_0xf319
   BEEPOFF(); // BEEPOFF
   Push(cc__7); // 7
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -901,7 +901,7 @@ void _eq_CARG() // =CARG
   _dash_(); // -
   Push(Read16(sp)); // DUP
   Push(0x6432); // IFIELD(UNK_0xefe0)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x000a);
   U_star_(); // U*
   Push(pp__10_star_CARGO); // 10*CARGO

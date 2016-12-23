@@ -146,7 +146,7 @@ void UNK_0xf47c() // UNK_0xf47c
   Push(0x0010);
   Push(Pop() | Pop()); // OR
   Push(0x6601); // IFIELD(UNK_0xf3d5)
-  _ex_(); // !
+  _ex__2(); // !_2
 
   label1:
   ICLOSE(); // ICLOSE

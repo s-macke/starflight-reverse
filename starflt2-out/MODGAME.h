@@ -5,7 +5,7 @@
 
 void START(); // START
 void ERR_ex_(); // ERR!
-void GAMEO(); // GAMEO
+void GAMEO_1(); // GAMEO_1
 void BOSS(); // BOSS
 
 #endif

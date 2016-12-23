@@ -210,7 +210,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
 
 void UNK_0xf2d9() // UNK_0xf2d9
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // STAR-ID-CASES
@@ -237,7 +237,7 @@ void UNK_0xf2d9() // UNK_0xf2d9
 
 void UNK_0xf2ff() // UNK_0xf2ff
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // PLANET-ID-CASES
@@ -380,7 +380,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 void UNK_0xf3f1() // UNK_0xf3f1
 {
   _at_INST_dash_CLASS(); // @INST-CLASS
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Pop();

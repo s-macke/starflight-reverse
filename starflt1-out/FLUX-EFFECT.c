@@ -83,7 +83,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   MIN(); // MIN
   Push(h); // I
   Push(Pop()+1); // 1+
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0078);
   UNK_0xf3de(); // UNK_0xf3de
   Push(0xffc4);
@@ -97,7 +97,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   R_gt_(); // R>
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -220,7 +220,7 @@ void FLUX() // FLUX
 {
   _gt_MAINVIEW(); // >MAINVIEW
   Push(pp_UNK_0xf3da); // UNK_0xf3da
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR

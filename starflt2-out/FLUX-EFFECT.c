@@ -81,7 +81,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(0x0014);
   RRND(); // RRND
   Push(h); // I
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   Push(0); // 0
   Push(2); // 2
   RRND(); // RRND
@@ -99,7 +99,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   MIN(); // MIN
   Push(h); // I
   Push(Pop()+1); // 1+
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0078);
   UNK_0xf38e(); // UNK_0xf38e
   Push(0xffc4);
@@ -113,7 +113,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   R_gt_(); // R>
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -189,7 +189,7 @@ void UNK_0xf420() // UNK_0xf420
 
   label1:
   R_gt_(); // R>
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 }
 
 
@@ -233,13 +233,13 @@ void FLUX() // FLUX
 {
   _gt_MAINVI(); // >MAINVI
   Push(pp_UNK_0xf38a); // UNK_0xf38a
-  ON(); // ON
+  ON_2(); // ON_2
   UNK_0xf406(); // UNK_0xf406
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   Push(0); // 0
   TONE(); // TONE
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(0x0096);
   Push(0); // 0
 
@@ -301,7 +301,7 @@ void JUMPFX() // JUMPFX
   UNK_0xf406(); // UNK_0xf406
   Push(0); // 0
   TONE(); // TONE
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(Pop()*2); // 2*
   Push(0); // 0
 
@@ -314,7 +314,7 @@ void JUMPFX() // JUMPFX
   Push(cc__6); // 6
   RRND(); // RRND
   Push(pp_UNK_0xf38a); // UNK_0xf38a
-  _ex_(); // !
+  _ex__2(); // !_2
   i++;
   } while(i<imax); // (LOOP) 0xfff2
 

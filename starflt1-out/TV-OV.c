@@ -918,7 +918,7 @@ void UNK_0xed12() // UNK_0xed12
 void HEAVEHO() // HEAVEHO
 {
   Push(pp__ask_CRITIC); // ?CRITIC
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xed12(); // UNK_0xed12
   UNK_0xecf4(); // UNK_0xecf4
 }
@@ -940,20 +940,20 @@ void UNK_0xed9c() // UNK_0xed9c
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc_UNK_0xed90); // UNK_0xed90
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   ICLOSE(); // ICLOSE
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x01f4);
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   ICLOSE(); // ICLOSE
 }
 
@@ -968,7 +968,7 @@ void TV_dash_SETUP() // TV-SETUP
   UNK_0xec2b(); // UNK_0xec2b
   SetColor("DK-BLUE");
   Push(pp_CRSCOLO); // CRSCOLO
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_FUNCTIONS); // FUNCTIONS
   BLD_dash_CRS(); // BLD-CRS
 }
@@ -1059,7 +1059,7 @@ void UNK_0xee39() // UNK_0xee39
   Pop(); // DROP
   Push(cc__3); // 3
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   IEXTRACT(); // IEXTRACT
   UNK_0xede5(); // UNK_0xede5
   ICLOSE(); // ICLOSE
@@ -1084,7 +1084,7 @@ void UNK_0xee39() // UNK_0xee39
   if (Pop() == 0) goto label3;
   Push(1); // 1
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   IEXTRACT(); // IEXTRACT
   UNK_0xede5(); // UNK_0xede5
   Push(pp_TV_dash_HOLD); // TV-HOLD
@@ -1138,12 +1138,12 @@ void UNK_0xeeab() // UNK_0xeeab
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0xc437);
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
@@ -1312,7 +1312,7 @@ void UNK_0xefff() // UNK_0xefff
   ICLOSE(); // ICLOSE
   Push(0); // 0
   Push(0x6400); // IFIELD(UNK_0xe7ef)
-  _ex_(); // !
+  _ex__3(); // !_3
   goto label2;
 
   label1:
@@ -1347,7 +1347,7 @@ void UNK_0xf0a5() // UNK_0xf0a5
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   OFF(); // OFF
   _gt_1ICONFONT(); // >1ICONFONT
   Push(pp_MOVED); // MOVED
@@ -1558,7 +1558,7 @@ void UNK_0xf1fc() // UNK_0xf1fc
   Push(pp_BLTSEG); // BLTSEG
   _st__ex__gt_(); // <!>
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xf184(); // UNK_0xf184
   UNK_0xf1ba(); // UNK_0xf1ba
 
@@ -1617,7 +1617,7 @@ void UNK_0xf24e() // UNK_0xf24e
   _2_at_(); // 2@
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_AT(); // ?ICONS-AT
   UNK_0xea67(); // UNK_0xea67
   Push(0xcd7c);
   MODULE(); // MODULE
@@ -1709,10 +1709,10 @@ void TV_dash_DISP() // TV-DISP
   UNK_0x3f3b("ACTIVATING TERRAIN VEHICLE");
   _dot_TTY(); // .TTY
   Push2Words("0.");
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _1_dot_5_ex_(); // 1.5!
   Push(pp__ask_NEW); // ?NEW
-  ON(); // ON
+  ON_3(); // ON_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(pp_UNK_0xea3b); // UNK_0xea3b
@@ -1773,7 +1773,7 @@ void UNK_0xf37b() // UNK_0xf37b
   POS_dot_(); // POS.
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__7); // 7
   Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>

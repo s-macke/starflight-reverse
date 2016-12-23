@@ -300,7 +300,7 @@ void UNK_0xeefe() // UNK_0xeefe
   Push(0); // 0
   MAX(); // MAX
   Push(pp_STORM); // STORM
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0064);
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
@@ -322,7 +322,7 @@ void DO_dash_STORM() // DO-STORM
   if (Pop() == 0) goto label2;
   Push(cc__dash_1); // -1
   Push(pp_STORM); // STORM
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   _ask__dot_STORM(); // ?.STORM
   goto label3;
 
@@ -349,7 +349,7 @@ void DO_dash_STORM() // DO-STORM
   Push(cc__4); // 4
   RRND(); // RRND
   Push(pp__n_STORM); // #STORM
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0xcdc0);
   MODULE(); // MODULE
   UNK_0xeefe(); // UNK_0xeefe
@@ -441,7 +441,7 @@ void UNK_0xefd1() // UNK_0xefd1
   Push(Read16(sp)); // DUP
   if (Pop() == 0) goto label1;
   OVER(); // OVER
-  ON(); // ON
+  ON_2(); // ON_2
   SAVE_dash_OV(); // SAVE-OV
 
   label1:
@@ -1117,7 +1117,7 @@ void _dot_STATS() // .STATS
   _dot_DISTANCE(); // .DISTANCE
   R_gt_(); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 // 0xf557: db 0x54 0x56 0x43 0x4f 0x4e 0x2d 0x56 0x5f 0x5f 0x00 'TVCON-V__ '

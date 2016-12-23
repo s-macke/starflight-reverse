@@ -422,7 +422,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf327); // UNK_0xf327
-  _ex_(); // !
+  _ex__3(); // !_3
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -494,7 +494,7 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf3ad(); // UNK_0xf3ad
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   Push(0); // 0
   return;

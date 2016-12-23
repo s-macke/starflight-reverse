@@ -263,7 +263,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(0); // 0
   MAX(); // MAX
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   goto label2;
 
   label1:
@@ -285,7 +285,7 @@ void DEPART() // DEPART
   _099(); // 099
   Push(0x3a48);
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -295,7 +295,7 @@ void DEPART() // DEPART
   label1:
   Push(cc__dash_1); // -1
   Push(pp_PLHI); // PLHI
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp__ask_LANDED); // ?LANDED
   _099(); // 099
   Push(pp__ro_AORIGI); // (AORIGI
@@ -307,7 +307,7 @@ void DEPART() // DEPART
   label2:
   Push2Words("NULL");
   Push(pp__ro_AORIGI); // (AORIGI
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0

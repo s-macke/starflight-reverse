@@ -224,7 +224,7 @@ void UNK_0xe72e() // UNK_0xe72e
   Push(0xec78);
   Push(Read16(sp)); // DUP
   Push(pp_ANCHOR); // ANCHOR
-  _2_ex_(); // 2!
+  _2_ex__2(); // 2!_2
   ORGLIST(); // ORGLIST
 }
 
@@ -239,7 +239,7 @@ void UNK_0xe74a() // UNK_0xe74a
   _dash_ICON(); // -ICON
   Push(0xba55);
   MODULE(); // MODULE
-  _plus_ICON(); // +ICON
+  _plus_ICON_2(); // +ICON_2
 }
 
 
@@ -318,7 +318,7 @@ void UNK_0xe8fb() // UNK_0xe8fb
   if (Pop() == 0) goto label2;
   UNK_0xe8e3(); // UNK_0xe8e3
   Push(0x65f9); // IFIELD(UNK_0xe5c5)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 
   label2:
   UNK_0xe74a(); // UNK_0xe74a
@@ -372,7 +372,7 @@ void UNK_0xeca4() // UNK_0xeca4
   Push(0x00fa);
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash__1(); // ?ICONS-_1
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -412,7 +412,7 @@ void UNK_0xece0() // UNK_0xece0
   Push(0x001e);
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash__1(); // ?ICONS-_1
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0); // 0
@@ -473,7 +473,7 @@ void UNK_0xed40() // UNK_0xed40
   Push(0); // 0
   MAX(); // MAX
   Push(0x65ec); // IFIELD(INST-QT)
-  _ex_(); // !
+  _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -486,7 +486,7 @@ void UNK_0xed5c() // UNK_0xed5c
 {
   UNK_0xe8e3(); // UNK_0xe8e3
   Push(pp_FSTUN); // FSTUN
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -520,7 +520,7 @@ void CIRCLES() // CIRCLES
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   _099(); // 099
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   _gt_MAINVI(); // >MAINVI
   UNK_0xe6ba(); // UNK_0xe6ba
   Push(0x0064);
@@ -535,7 +535,7 @@ void CIRCLES() // CIRCLES
   Push(0x0023);
   Push(0x0040);
   Push(i); // I
-  _dot_CIRCLE(); // .CIRCLE
+  _dot_CIRCLE_1(); // .CIRCLE_1
   V_gt_DISPL(); // V>DISPL
   _at_COLOR(); // @COLOR
   Push(0x000a);
@@ -560,11 +560,11 @@ void CIRCLES() // CIRCLES
   _gt_DISPLA(); // >DISPLA
   R_gt_(); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex_(); // !
+  _ex__2(); // !_2
   goto label3;
 
   label2:
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _st_(); // <
@@ -724,7 +724,7 @@ void _1SIMULATE() // 1SIMULATE
   if (Pop() == 0) goto label2;
   UNK_0xee74(); // UNK_0xee74
   Push(pp__ask_NEW); // ?NEW
-  OFF(); // OFF
+  OFF_2(); // OFF_2
 
   label2:
   _ask_ANYBODY(); // ?ANYBODY
@@ -784,7 +784,7 @@ void UNK_0xef38() // UNK_0xef38
   Push(1); // 1
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash__1(); // ?ICONS-_1
 }
 
 
@@ -852,7 +852,7 @@ void UNK_0xef9a() // UNK_0xef9a
   Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -873,13 +873,13 @@ void UNK_0xefd0() // UNK_0xefd0
   Push(0xc4ac);
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
-  ON(); // ON
+  ON_2(); // ON_2
   R_gt_(); // R>
   Push(pp_OCRS); // OCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   R_gt_(); // R>
   Push(pp_NCRS); // NCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   R_gt_(); // R>
   _ask_ENOUGH(); // ?ENOUGH
   UNK_0xef24(); // UNK_0xef24
@@ -910,7 +910,7 @@ void UNK_0xf012() // UNK_0xf012
 {
   Push(0x1388);
   TONE(); // TONE
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(0x003c);
   MS(); // MS
   BEEPOFF(); // BEEPOFF
@@ -935,7 +935,7 @@ void UNK_0xf026() // UNK_0xf026
   _gt_C_plus_S(); // >C+S
   Push(cc__dash_1); // -1
   Push(0x65f0); // IFIELD(INST-Y)
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   ICLOSE(); // ICLOSE
 }
 
@@ -966,7 +966,7 @@ void UNK_0xf079() // UNK_0xf079
 {
   CLICK(); // CLICK
   Push(pp_NCRS); // NCRS
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf06d(); // UNK_0xf06d
 }
 
@@ -1004,7 +1004,7 @@ void TVMOVE() // TVMOVE
   Push(0xd072);
   MODULE(); // MODULE
   Push(pp_TIME_dash_PA); // TIME-PA
-  ON(); // ON
+  ON_2(); // ON_2
 }
 
 
@@ -1332,7 +1332,7 @@ void TV_dash_KEY() // TV-KEY
   Push(0xc8b4);
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
-  ON(); // ON
+  ON_2(); // ON_2
   UNK_0xe6ba(); // UNK_0xe6ba
   UNK_0xe9f7(); // UNK_0xe9f7
 
@@ -1419,10 +1419,10 @@ void UNK_0xf354() // UNK_0xf354
   MODULE(); // MODULE
   Push(0x0010);
   Push(0x6601); // IFIELD(UNK_0xe582)
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0); // 0
   Push(0x6600); // IFIELD(UNK_0xe57d)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   Push(0xc18b);
   MODULE(); // MODULE
   Push(0xc1b8);
@@ -1431,7 +1431,7 @@ void UNK_0xf354() // UNK_0xf354
   CTINIT(); // CTINIT
   Push(0); // 0
   Push(0x6601); // IFIELD(UNK_0xe582)
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0xbe55);
   MODULE(); // MODULE
   Push(0x1f40); Pust(0x0000);
@@ -1509,10 +1509,10 @@ void TV_dash_TASKS() // TV-TASKS
   Push(pp__i__dot_DATE); // '.DATE
   _st__ex__gt_(); // <!>
   Push(pp_TIME_dash_PA); // TIME-PA
-  ON(); // ON
+  ON_1(); // ON_1
   Push(0xce24);
   Push(pp__i__dot_BACKG); // '.BACKG
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 // 0xf48c: db 0x4c 0x22 0x5d 0x17 0x33 0xb0 0xd5 0x60 0xe9 0x4c 0x5d 0x17 0xcf 0xc3 0xff 0x60 0xe9 0x4c 0x5d 0x17 0xf9 0xc0 0xc7 0x60 0xe9 0x4c 0x5d 0x17 0x48 0x3a 0xf1 0x60 0xe9 0x4c 0x5d 0x17 0xf8 0xc1 0xe3 0x60 0xe9 0x4c 0x5d 0x17 0x48 0x3a 0xac 0x60 0xe9 0x4c 0x5d 0x17 0xc7 0xc1 0x0d 0x61 0xe9 0x4c 0x5d 0x17 0xe7 0xc0 0xb9 0x60 0xe9 0x4c 0x3d 0x55 0xae 0x0b 0xfa 0x15 0x0a 0x00 0x5d 0x17 0x49 0xd1 0x60 0x16 0x06 0x00 0x5d 0x17 0x48 0x3a 0x86 0x56 0xe9 0x4c 0x1b 0x61 0x65 0x6d 0xd4 0x59 0x65 0x6d 0x90 0x16 0x4c 0x22 0x5d 0x17 0x09 0xd1 0xd9 0x84 0x8c 0xf4 0xa5 0x9b 0x90 0x16 0x4c 0x22 0x1b 0x61 0x65 0x6d 0x41 0x5c 0x65 0x6d 0x8b 0x62 0x65 0x6d 0x61 0xab 0x65 0x6d 0x5d 0x17 0x49 0xd1 0x86 0x56 0x16 0x6d 0x5d 0x17 0xe9 0xd0 0xd9 0x84 0x5a 0xe5 0x64 0xe5 0x5d 0x17 0x90 0xd0 0xd9 0x84 0x50 0xe5 0xd6 0xc1 0x36 0xf4 0xa7 0x4f 0xc6 0x55 0x16 0x6d 0xd3 0xf2 0xb8 0xe6 0x01 0xf4 0x90 0x16 'L"] 3  ` L]    ` L]    ` L] H: ` L]    ` L] H: ` L]    a L]    ` L=U      ] I `   ] H: V L aem Yem  L"]           L" aemA\em bema em] I  V m]     Z d ]     P   6  O U m        '
@@ -1529,7 +1529,7 @@ void TV() // TV
   Push(0xf500);
   DOTASKS(); // DOTASKS
   Push(pp_TIME_dash_PA); // TIME-PA
-  ON(); // ON
+  ON_2(); // ON_2
 }
 
 // 0xf557: db 0x42 0x45 0x48 0x41 0x56 0x49 0x4f 0x5f 0x5f 0x00 'BEHAVIO__ '

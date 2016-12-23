@@ -345,11 +345,11 @@ void INJURE_dash_PL() // INJURE-PL
   Push(0x0064);
   MIN(); // MIN
   Push(0x6600); // IFIELD(UNK_0xf306)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UNK_0xf374(); // UNK_0xf374
   ICLOSE(); // ICLOSE
   Push(pp__ask_HEAL); // ?HEAL
-  ON(); // ON
+  ON_2(); // ON_2
   Push(0x01f4);
   MS(); // MS
   Push(0xc18b);
@@ -429,7 +429,7 @@ void UNK_0xf468() // UNK_0xf468
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
   Push(pp_FORCED); // FORCED
-  ON(); // ON
+  ON_1(); // ON_1
   UNK_0xf41c(); // UNK_0xf41c
 }
 

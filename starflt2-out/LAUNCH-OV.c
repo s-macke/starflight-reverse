@@ -79,7 +79,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   OVER(); // OVER
   _dot_(); // .
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0027);
   MS(); // MS
   i++;
@@ -99,7 +99,7 @@ void UNK_0xf0e4() // UNK_0xf0e4
   Push(0x0087);
   POS_dot_(); // POS.
   _gt_2FONT(); // >2FONT
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   UNK_0xf0b4(); // UNK_0xf0b4
   BEEPOFF(); // BEEPOFF
 }
@@ -178,15 +178,15 @@ void UNK_0xf14e() // UNK_0xf14e
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   UNK_0xf11a(); // UNK_0xf11a
   CTERASE(); // CTERASE
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1); // 1
-  Push(pp_CONTEXT); // CONTEXT
-  _ex_(); // !
+  Push(pp_CONTEXT_3); // CONTEXT_3
+  _ex__2(); // !_2
   Push(pp__ask_G_dash_AWAR); // ?G-AWAR
-  ON(); // ON
+  ON_2(); // ON_2
   Push(pp_GWF); // GWF
   _099(); // 099
 }
@@ -329,19 +329,19 @@ void _dot_AIRLOCK() // .AIRLOCK
   PRINT("PROCEDURES APPLY", 16); // (.")
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x001a);
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
   Push(Read16(sp)); // DUP
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_UNK_0xf220); // UNK_0xf220
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__2(); // !_2
   BLT(); // BLT
   _gt_DISPLA(); // >DISPLA
 }
@@ -443,11 +443,11 @@ void UNK_0xf390() // UNK_0xf390
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" DOCKING BAY DOORS", 18); // (.")
   Push(0x7148);
   TONE(); // TONE
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
 }
 
 
@@ -508,7 +508,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
@@ -585,7 +585,7 @@ void _and_RETURN() // &RETURN
   UNK_0xf1a6(); // UNK_0xf1a6
   Push(0x7148);
   TONE(); // TONE
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(0x003b);
   Push(0); // 0
 

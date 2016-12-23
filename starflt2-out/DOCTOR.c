@@ -76,7 +76,7 @@ void UNK_0xf092() // UNK_0xf092
 {
   Push(0x0040);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   PRINT("[N Y]", 5); // (.")
 }
 
@@ -294,7 +294,7 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
   Push(0x6601); // IFIELD(UNK_0xf088)
-  _ex_(); // !
+  _ex__2(); // !_2
   goto label2;
 
   label1:
@@ -341,7 +341,7 @@ void UNK_0xf2f8() // UNK_0xf2f8
   Push(0xfffb);
   Push(Pop() & Pop()); // AND
   Push(0x6601); // IFIELD(UNK_0xf088)
-  _ex_(); // !
+  _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -373,7 +373,7 @@ void UNK_0xf33d() // UNK_0xf33d
   Push(cc__4); // 4
   Push(Pop() | Pop()); // OR
   Push(0x6601); // IFIELD(UNK_0xf088)
-  _ex_(); // !
+  _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
 

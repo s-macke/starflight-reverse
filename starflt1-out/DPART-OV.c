@@ -168,7 +168,7 @@ void UNK_0xf026() // UNK_0xf026
   COUNT(); // COUNT
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0xc216);
   MODULE(); // MODULE
   _i_KEY(); // 'KEY
@@ -261,11 +261,11 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(0xc542);
   MODULE(); // MODULE
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
-  ON(); // ON
+  ON_3(); // ON_3
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp__ask_WIN); // ?WIN
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -757,7 +757,7 @@ void DEPART() // DEPART
   OFF(); // OFF
   Push(0x3a48);
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -773,7 +773,7 @@ void DEPART() // DEPART
   UNK_0xf430(); // UNK_0xf430
   UNK_0xf09c(); // UNK_0xf09c
   Push(pp_WMSG); // WMSG
-  ON(); // ON
+  ON_3(); // ON_3
   goto label5;
 
   label4:
@@ -809,7 +809,7 @@ void DEPART() // DEPART
   label1:
   Push(cc__dash_1); // -1
   Push(pp_PLHI); // PLHI
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ask_LANDED); // ?LANDED
   OFF(); // OFF
 }

@@ -341,7 +341,7 @@ void UNK_0xf192() // UNK_0xf192
 
 void UNK_0xf1e9() // UNK_0xf1e9
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // STAR-ID-CASE
@@ -368,7 +368,7 @@ void UNK_0xf1e9() // UNK_0xf1e9
 
 void UNK_0xf20c() // UNK_0xf20c
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // PLANET-ID-CA
@@ -579,7 +579,7 @@ void UNK_0xf31f() // UNK_0xf31f
 void UNK_0xf365() // UNK_0xf365
 {
   _at_INST_dash_C(); // @INST-C
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Pop();

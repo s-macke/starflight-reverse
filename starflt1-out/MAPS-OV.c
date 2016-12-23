@@ -236,7 +236,7 @@ void UNK_0xedb2() // UNK_0xedb2
 {
   UNK_0xed78(); // UNK_0xed78
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
@@ -687,7 +687,7 @@ void UNK_0xf007() // UNK_0xf007
 
   label5:
   Push(pp_COLOR); // COLOR
-  _ex_(); // !
+  _ex__3(); // !_3
   _2DUP(); // 2DUP
   Push(cc__3); // 3
   Push(cc__3); // 3
@@ -819,7 +819,7 @@ void UNK_0xf187() // UNK_0xf187
   Push(pp__i_2X2); // '2X2
   Push(Read16(Pop())); // @
   Push(pp__i__dot_BACKG); // '.BACKG
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(2); // 2
   Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XPIX); // XWLD:XPIX
@@ -1436,7 +1436,7 @@ void MAPS() // MAPS
   OFF(); // OFF
   UNK_0xf4f4(); // UNK_0xf4f4
   Push(pp_ESC_dash_EN); // ESC-EN
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   UNK_0xf133(); // UNK_0xf133
   UNK_0xf50a(); // UNK_0xf50a
   if (Pop() == 0) goto label1;
@@ -1449,7 +1449,7 @@ void MAPS() // MAPS
   label1:
   UNK_0xf1cf(); // UNK_0xf1cf
   Push(pp_ESC_dash_EN); // ESC-EN
-  ON(); // ON
+  ON_2(); // ON_2
 }
 
 

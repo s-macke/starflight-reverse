@@ -79,7 +79,7 @@ void UNK_0xf034() // UNK_0xf034
   OVER(); // OVER
   _dot_(); // .
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0027);
   MS(); // MS
   i++;
@@ -178,15 +178,15 @@ void LAUNCH() // LAUNCH
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   COUNTDOWN(); // COUNTDOWN
   CTERASE(); // CTERASE
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1); // 1
-  Push(pp_CONTEXT); // CONTEXT
-  _ex_(); // !
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  _ex__3(); // !_3
   Push(pp__ask_G_dash_AWARE); // ?G-AWARE
-  ON(); // ON
+  ON_3(); // ON_3
   Push(pp_GWF); // GWF
   OFF(); // OFF
 }
@@ -213,7 +213,7 @@ void UNK_0xf112() // UNK_0xf112
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x01f4);
   Push(0x2710);
   Push(0x01f4);
@@ -366,19 +366,19 @@ void _dot_AIRLOCK() // .AIRLOCK
   PRINT("PROCEDURES APPLY", 16); // (.")
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x001a);
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
   Push(Read16(sp)); // DUP
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xf1fc); // UNK_0xf1fc
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
   _gt_DISPLAY(); // >DISPLAY
 }
@@ -545,7 +545,7 @@ void UNK_0xf393() // UNK_0xf393
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =

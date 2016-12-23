@@ -353,9 +353,9 @@ void UNK_0xefe0() // UNK_0xefe0
 void UNK_0xeff0() // UNK_0xeff0
 {
   Push(pp__ask_REPAIR); // ?REPAIR
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   Push(pp_UNK_0xef46); // UNK_0xef46
-  OFF(); // OFF
+  OFF_2(); // OFF_2
 }
 
 
@@ -454,7 +454,7 @@ void UNK_0xeffc() // UNK_0xeffc
 
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -497,7 +497,7 @@ void UNK_0xf03e() // UNK_0xf03e
   Push(0x000a);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf03a); // UNK_0xf03a
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -585,7 +585,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xef4e); // UNK_0xef4e
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -765,10 +765,10 @@ void UNK_0xf1e4() // UNK_0xf1e4
   Push(pp_UNK_0xef4e); // UNK_0xef4e
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("ELEM-NAME"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
@@ -1010,7 +1010,7 @@ void UNK_0xf38f() // UNK_0xf38f
   MIN(); // MIN
   Push(Read16(sp)); // DUP
   Push(pp_ELEM_dash_AM); // ELEM-AM
-  _ex_(); // !
+  _ex__3(); // !_3
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0x6432); // IFIELD(UNK_0xef0c)
@@ -1023,7 +1023,7 @@ void UNK_0xf38f() // UNK_0xf38f
   ICLOSE(); // ICLOSE
   R_gt_(); // R>
   Push(pp_ELEM_dash_AM); // ELEM-AM
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xefe0(); // UNK_0xefe0
 }
 
@@ -1042,7 +1042,7 @@ void UNK_0xf3cb() // UNK_0xf3cb
   UNK_0xf340(); // UNK_0xf340
   UNK_0xf38f(); // UNK_0xf38f
   Push(pp_UNK_0xef46); // UNK_0xef46
-  ON(); // ON
+  ON_3(); // ON_3
   return;
 
   label1:
@@ -1059,7 +1059,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
 {
   UNK_0xf316(); // UNK_0xf316
   Push(pp_UNK_0xef46); // UNK_0xef46
-  OFF(); // OFF
+  OFF_2(); // OFF_2
 }
 
 
@@ -1098,7 +1098,7 @@ void UNK_0xf407() // UNK_0xf407
 
   label2:
   Push(pp_UNK_0xef46); // UNK_0xef46
-  ON(); // ON
+  ON_3(); // ON_3
   return;
 
 
@@ -1109,7 +1109,7 @@ void UNK_0xf407() // UNK_0xf407
   UNK_0xef56(); // UNK_0xef56
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xef4e); // UNK_0xef4e
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf3f5(); // UNK_0xf3f5
 
   label4:
@@ -1208,7 +1208,7 @@ void UNK_0xf4bd() // UNK_0xf4bd
   UNK_0xf086(); // UNK_0xf086
   Push(cc__dash_1); // -1
   Push(pp__ask_REPAIR); // ?REPAIR
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 

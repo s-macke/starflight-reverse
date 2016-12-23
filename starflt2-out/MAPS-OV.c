@@ -225,7 +225,7 @@ void UNK_0xedea() // UNK_0xedea
   D_ex_(); // D!
   Push(1); // 1
   Push(pp_STAR_dash_HR); // STAR-HR
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0018);
@@ -235,7 +235,7 @@ void UNK_0xedea() // UNK_0xedea
   _099(); // 099
   Push(1); // 1
   Push(pp_STARDAT); // STARDAT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -252,7 +252,7 @@ void UNK_0xee22() // UNK_0xee22
 {
   UNK_0xedb8(); // UNK_0xedb8
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
@@ -262,7 +262,7 @@ void UNK_0xee22() // UNK_0xee22
   Push(Read8(Pop())&0xFF); // C@
   Push(0x65ed); // IFIELD(PHRASE)
   OVER(); // OVER
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
   SWAP(); // SWAP
   _dash_(); // -
@@ -312,7 +312,7 @@ void UNK_0xee72() // UNK_0xee72
   Push(0x65ed); // IFIELD(PHRASE)
   Push(0x65ec); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }
 
@@ -704,7 +704,7 @@ void UNK_0xf175() // UNK_0xf175
   Push(pp__i_2X2); // '2X2
   Push(Read16(Pop())); // @
   Push(pp__i__dot_BACKG); // '.BACKG
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(2); // 2
   Push(Read16(sp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
@@ -1291,7 +1291,7 @@ void UNK_0xf4e2() // UNK_0xf4e2
   UNK_0xf473(); // UNK_0xf473
   Push(cc__6); // 6
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf4a0(); // UNK_0xf4a0
   UNK_0xf4b5(); // UNK_0xf4b5
   UNK_0xf442(); // UNK_0xf442
@@ -1311,9 +1311,9 @@ void MAPS() // MAPS
   _099(); // 099
   UNK_0xf4e2(); // UNK_0xf4e2
   Push(pp_ESC_dash_EN); // ESC-EN
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   Push(pp_NOF); // NOF
-  ON(); // ON
+  ON_2(); // ON_2
   UNK_0xf123(); // UNK_0xf123
   UNK_0xee66(); // UNK_0xee66
   if (Pop() == 0) goto label1;
@@ -1327,7 +1327,7 @@ void MAPS() // MAPS
   label1:
   UNK_0xf1bd(); // UNK_0xf1bd
   Push(pp_ESC_dash_EN); // ESC-EN
-  ON(); // ON
+  ON_1(); // ON_1
   Push(pp_NOF); // NOF
   _099(); // 099
 }

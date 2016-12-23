@@ -274,7 +274,7 @@ void UNK_0xf082() // UNK_0xf082
 {
   Push(1); // 1
   Push(pp_LINE_dash_CO); // LINE-CO
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(pp_LINE_dash_CO); // LINE-CO
   Push(Read16(Pop())); // @
   Push(pp_WLINES); // WLINES
@@ -295,7 +295,7 @@ void UNK_0xf082() // UNK_0xf082
 void UNK_0xf0a2() // UNK_0xf0a2
 {
   UNK_0xf00b(); // UNK_0xf00b
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -337,7 +337,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -514,7 +514,7 @@ void _dot_RACE() // .RACE
   _dash_TRAILING(); // -TRAILING
   UNK_0xf0a2(); // UNK_0xf0a2
   ICLOSE(); // ICLOSE
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -814,7 +814,7 @@ void UNK_0xf3d0() // UNK_0xf3d0
   _dot_TTY(); // .TTY
   Push(1); // 1
   Push(pp_LINE_dash_CO); // LINE-CO
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   _dot_RACE(); // .RACE
   UNK_0xf0aa(); // UNK_0xf0aa
   UNK_0xf326(); // UNK_0xf326
@@ -882,7 +882,7 @@ void _dot_CULTURE() // .CULTURE
   if (Pop() == 0) return;
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
   UNK_0xf0aa(); // UNK_0xf0aa

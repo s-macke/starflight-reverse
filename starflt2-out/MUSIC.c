@@ -255,7 +255,7 @@ void UNK_0xeea9() // UNK_0xeea9
   Push(Read16(sp)); // DUP
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label1;
-  ON(); // ON
+  ON_2(); // ON_2
   goto label2;
 
   label1:
@@ -324,7 +324,7 @@ void UNK_0xeef9() // UNK_0xeef9
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(0x07d0);
   Push(0); // 0
 
@@ -488,12 +488,12 @@ void UNK_0xefe3() // UNK_0xefe3
   _slash_(); // /
   Push(Read16(sp)); // DUP
   BMBYTES(); // BMBYTES
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
   Push(pp_PLZ); // PLZ
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -508,7 +508,7 @@ void UNK_0xf00b() // UNK_0xf00b
   Push(cc__3); // 3
   L_at_(); // L@
   BMWIDE(); // BMWIDE
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -523,7 +523,7 @@ void UNK_0xf01b() // UNK_0xf01b
   Push(0x000a);
   LC_at_(); // LC@
   BMHIGH(); // BMHIGH
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 }
 
 // 0xf02b: db 0x29 0x1d 0x3a 0x20 0x05 0x41 ') :  A'
@@ -542,26 +542,26 @@ void UNK_0xf033() // UNK_0xf033
   if (Pop() == 0) goto label1;
   Push(0x000d);
   Push(pp_SRC); // SRC
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(2); // 2
   Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
-  _ex_(); // !
+  _ex__2(); // !_2
   BMOFF(); // BMOFF
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xefd1(); // UNK_0xefd1
   Push(pp_SEGME); // SEGME
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xefd1(); // UNK_0xefd1
   BMSEG(); // BMSEG
-  _ex_(); // !
+  _ex__2(); // !_2
 
   label1:
   Push(0); // 0
   Push(pp_BMAP); // BMAP
   Push(0x000c);
   Push(Pop() + Pop()); // +
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -595,22 +595,22 @@ void UNK_0xf071() // UNK_0xf071
   _gt_PLANES(); // >PLANES
   Push(cc__4); // 4
   Push(pp_SRC); // SRC
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(1); // 1
   Push(pp_DST); // DST
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   j++;
   } while(j<jmax); // (LOOP) 0xfff0
 
   Push(Pop() + Pop()); // +
   Push(pp_DST); // DST
-  _ex_(); // !
+  _ex__2(); // !_2
   BMWIDE(); // BMWIDE
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
   Push(Pop() + Pop()); // +
   Push(pp_SRC); // SRC
-  _ex_(); // !
+  _ex__2(); // !_2
   i++;
   } while(i<imax); // (LOOP) 0xffc8
 
@@ -642,7 +642,7 @@ void UNK_0xf0bf() // UNK_0xf0bf
   Push(Read16(sp)); // DUP
   Push(1); // 1
   Push(pp_SRC); // SRC
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -656,16 +656,16 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(pp_DST); // DST
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_SRC); // SRC
-  _ex_(); // !
+  _ex__2(); // !_2
   BMBYTES(); // BMBYTES
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop()>>1); // 2/
   BMBYTES(); // BMBYTES
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
   Push(Read16(Pop())); // @
   Push(0); // 0
@@ -715,7 +715,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   LC_ex_(); // LC!
   Push(1); // 1
   Push(pp_DST); // DST
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
@@ -740,13 +740,13 @@ void _ex_VPAL() // !VPAL
   FILE_st_(); // FILE<
   _at_DS(); // @DS
   Push(cc_DS); // DS
-  _ex_(); // !
+  _ex__2(); // !_2
   PAD_v_16(); // PAD|16
   Push(cc_BX); // BX
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__9); // 9
   Push(cc_AX); // AX
-  _ex_(); // !
+  _ex__2(); // !_2
   GRCALL(); // GRCALL
 }
 
@@ -774,9 +774,9 @@ void SETABLT() // SETABLT
 
   label2:
   BMOFF(); // BMOFF
-  _ex_(); // !
+  _ex__2(); // !_2
   BMSEG(); // BMSEG
-  _ex_(); // !
+  _ex__2(); // !_2
   _ask_CGA(); // ?CGA
   if (Pop() == 0) return;
   UNK_0xf0d5(); // UNK_0xf0d5
@@ -830,7 +830,7 @@ void UNK_0xf21d() // UNK_0xf21d
   if (Pop() == 0) goto label1;
   Push(1); // 1
   BMPAL(); // BMPAL
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 
   label1:
   DARK(); // DARK
@@ -917,7 +917,7 @@ void UNK_0xf2c1() // UNK_0xf2c1
   Push(cc_AX); // AX
   _ask_(); // ?
   PRINT("DOS call error !", 16); // (.")
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   QUIT(); // QUIT
 }
 
@@ -932,7 +932,7 @@ void UNK_0xf2e6() // UNK_0xf2e6
   Push(Pop()*2); // 2*
   Push(Pop()>>4); // 16/
   Push(pp_UNK_0xf25d); // UNK_0xf25d
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -950,7 +950,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf259); // UNK_0xf259
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -961,7 +961,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
 void UNK_0xf30c() // UNK_0xf30c
 {
   Push(cc_BX); // BX
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0048);
   DOSCALL(); // DOSCALL
   UNK_0xf2c1(); // UNK_0xf2c1
@@ -984,8 +984,8 @@ void UNK_0xf320() // UNK_0xf320
   PRINT("384k memory minimum needed!", 27); // (.")
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  KEY(); // KEY
-  BYE(); // BYE
+  KEY_2(); // KEY_2
+  BYE_2(); // BYE_2
 }
 
 
@@ -1002,7 +1002,7 @@ void UNK_0xf358() // UNK_0xf358
   OVER(); // OVER
   _dash_(); // -
   Push(pp_UNK_0xf261); // UNK_0xf261
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0xc350);
   _at_DS(); // @DS
   SETBLOC(); // SETBLOC
@@ -1054,7 +1054,7 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
   _at_K(); // @K
   Push(Read16(sp)); // DUP
   Push(pp_SYSK); // SYSK
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xf320(); // UNK_0xf320
   Push(0x0280);
   _st_(); // <
@@ -1073,7 +1073,7 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
   label1:
   Push(0x0010);
   Push(pp_TANDY); // TANDY
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -1163,7 +1163,7 @@ void UNK_0xf430() // UNK_0xf430
   Push(1); // 1
   MAX(); // MAX
   Push(0x53a9);
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -1191,7 +1191,7 @@ void SPLASH_dot_SCREEN() // SPLASH.SCREEN
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   UNK_0xef2b(); // UNK_0xef2b
   UNK_0xeed7(); // UNK_0xeed7
   UNK_0xeed7(); // UNK_0xeed7
@@ -1213,7 +1213,7 @@ void SPLASH_dot_SCREEN() // SPLASH.SCREEN
   Push(pp_BMAP); // BMAP
   Push(0x000d);
   Push(Pop() + Pop()); // +
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 }
 
 

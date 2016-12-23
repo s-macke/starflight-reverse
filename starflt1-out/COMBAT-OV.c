@@ -520,7 +520,7 @@ void UNK_0xe462() // UNK_0xe462
   Push(cc_UNK_0xe1ff); // UNK_0xe1ff
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
 }
 
 
@@ -878,7 +878,7 @@ void UNK_0xe72c() // UNK_0xe72c
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xe1ff); // UNK_0xe1ff
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(cc__dash_1); // -1
   Push(pp_UNK_0xe6ac); // UNK_0xe6ac
   _st__plus__ex__gt_(); // <+!>
@@ -894,7 +894,7 @@ void UNK_0xe744() // UNK_0xe744
   UNK_0xe482(); // UNK_0xe482
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_AT(); // ?ICONS-AT
   Push(Read16(sp)); // DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -1534,14 +1534,14 @@ void UNK_0xedce() // UNK_0xedce
   _gt_R(); // >R
   Push(Pop() + Pop()); // +
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   R_gt_(); // R>
   UNK_0xed9a(); // UNK_0xed9a
   Push(Pop() + Pop()); // +
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xdd70(); // UNK_0xdd70
   UNK_0xe9b5(); // UNK_0xe9b5
   UNK_0xe86e(); // UNK_0xe86e
@@ -1677,7 +1677,7 @@ void COMBAT() // COMBAT
   Push(Read16(Pop())); // @
   MOD(); // MOD
   Push(pp__h_VES); // ^VES
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe97d(); // UNK_0xe97d
 
   label1:
@@ -1708,7 +1708,7 @@ void COMBAT() // COMBAT
 
 void WAR() // WAR
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =

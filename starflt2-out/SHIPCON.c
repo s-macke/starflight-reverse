@@ -58,7 +58,7 @@ void UNK_0xf37b() // UNK_0xf37b
 
 void _dot_NOFUN() // .NOFUN
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _st_(); // <
@@ -157,10 +157,10 @@ void UNK_0xf436() // UNK_0xf436
   _star__slash_(); // */
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__2(); // !_2
   LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
@@ -193,7 +193,7 @@ void UNK_0xf46c() // UNK_0xf46c
 void UNK_0xf47a() // UNK_0xf47a
 {
   Push(Read16(sp)); // DUP
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
@@ -218,7 +218,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   CTERASE(); // CTERASE
   Push(0x52f5); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -257,12 +257,12 @@ void TOW_dash_US() // TOW-US
   CTCR(); // CTCR
   Push(0x5373); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
   UNK_0xf47a(); // UNK_0xf47a
   UNK_0xf3c8(); // UNK_0xf3c8
   if (Pop() == 0) goto label1;
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =
@@ -288,9 +288,9 @@ void TOW_dash_US() // TOW-US
   CTINIT(); // CTINIT
   UNK_0xf46c(); // UNK_0xf46c
   Push(pp__ro_STOP_dash_C); // (STOP-C
-  ON(); // ON
+  ON_2(); // ON_2
   Push(pp__ask_RECALL); // ?RECALL
-  ON(); // ON
+  ON_2(); // ON_2
   Push(pp__ask_NEB); // ?NEB
   _099(); // 099
 
@@ -301,7 +301,7 @@ void TOW_dash_US() // TOW-US
   CTERASE(); // CTERASE
   Push(0x538e); Pust(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 
   label4:
   SetColor("BLACK");

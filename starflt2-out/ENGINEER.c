@@ -79,7 +79,7 @@ void UNK_0xecc5() // UNK_0xecc5
 {
   Push(0x0040);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   PRINT("[N Y]", 5); // (.")
 }
 
@@ -123,10 +123,10 @@ void UNK_0xed21() // UNK_0xed21
 {
   Push(0xfff9);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0x0055);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -186,19 +186,19 @@ void UNK_0xedac() // UNK_0xedac
   if (Pop() == 0) goto label1;
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(cc__5); // 5
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(cc__5); // 5
   _slash_(); // /
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0072);
   Push(0x00b2);
   ROT(); // ROT
@@ -222,13 +222,13 @@ void UNK_0xedac() // UNK_0xedac
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0028);
   Push(pp_WBLT); // WBLT
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   SetColor("GREY1");
   SetColor("RED");
   SetColor("RED");
@@ -308,7 +308,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
   UNK_0xed35(); // UNK_0xed35
   Push(cc__3); // 3
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__2(); // !_2
   DBARS(); // DBARS
 }
 
@@ -693,7 +693,7 @@ void UNK_0xf14f() // UNK_0xf14f
   _gt_(); // >
   if (Pop() == 0) goto label4;
   Push(0x0053);
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
 
   label4:
   PRINT(".", 1); // (.")
@@ -961,7 +961,7 @@ void UNK_0xf31e() // UNK_0xf31e
   UNK_0xecc5(); // UNK_0xecc5
   Y_slash_N(); // Y/N
   Push(pp_FTRIG); // FTRIG
-  ON(); // ON
+  ON_2(); // ON_2
   CTERASE(); // CTERASE
 }
 
@@ -1023,7 +1023,7 @@ void UNK_0xf38a() // UNK_0xf38a
   Push(0x00bf);
   Push(Pop() & Pop()); // AND
   SWAP(); // SWAP
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 }
 
 
@@ -1105,7 +1105,7 @@ void UNK_0xf3cb() // UNK_0xf3cb
   }
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR
-  ON(); // ON
+  ON_2(); // ON_2
 }
 
 
@@ -1128,7 +1128,7 @@ void UNK_0xf3f1() // UNK_0xf3f1
   Push(0x0040);
   Push(Pop() | Pop()); // OR
   SWAP(); // SWAP
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   ICLOSE(); // ICLOSE
 }
 
@@ -1143,7 +1143,7 @@ void UNK_0xf415() // UNK_0xf415
   _at_CRS(); // @CRS
   Push(h); // I
   Push(pp_OCRS); // OCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(h); // I
   Push(0x0054);
   Push(0x00b3);
@@ -1154,22 +1154,22 @@ void UNK_0xf415() // UNK_0xf415
   POS_dot_(); // POS.
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x001d);
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__7); // 7
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_2(); // ON_2
   BLT(); // BLT
   _ex_CRS(); // !CRS
   R_gt_(); // R>
   Push(pp_OCRS); // OCRS
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -1210,7 +1210,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_NCRS); // NCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   if (Pop() == 0) goto label1;
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @

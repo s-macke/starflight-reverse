@@ -271,7 +271,7 @@ void UNK_0xe69e() // UNK_0xe69e
   _ask_MRC(); // ?MRC
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xe596); // UNK_0xe596
-  _ex_(); // !
+  _ex__2(); // !_2
   _ex_COLOR(); // !COLOR
   SFILL(); // SFILL
   SetColor("DK-BLUE");
@@ -365,11 +365,11 @@ void UNK_0xe787() // UNK_0xe787
   PRINT("NOTICES", 7); // (.")
   Push(0x0042);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xe625(); // UNK_0xe625
   Push(0x0083);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   PRINT("EXIT", 4); // (.")
 }
 
@@ -389,14 +389,14 @@ void UNK_0xe7bc() // UNK_0xe7bc
   SetColor("BLUE");
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp__ask__gt_OP); // ?>OP
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(pp_NCRS); // NCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_OCRS); // OCRS
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_UNK_0xe71c); // UNK_0xe71c
   BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLA(); // >DISPLA
@@ -484,7 +484,7 @@ void UNK_0xe890() // UNK_0xe890
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
   Push(0x000a);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   _gt_DISPLA(); // >DISPLA
   SCR_dash_RES(); // SCR-RES
 }
@@ -581,9 +581,9 @@ void UNK_0xe96c() // UNK_0xe96c
 {
   _2DUP(); // 2DUP
   Push(pp_CTY); // CTY
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp_CTX); // CTX
-  _ex_(); // !
+  _ex__2(); // !_2
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
@@ -690,8 +690,8 @@ void UNK_0xe9e4() // UNK_0xe9e4
   label2:
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
-  _plus__ex_(); // +!
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  _plus__ex__2(); // +!_2
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   return;
 
   label1:
@@ -737,7 +737,7 @@ void UNK_0xea2e() // UNK_0xea2e
   SPACE(); // SPACE
   Push(1); // 1
   Push(pp_CTX); // CTX
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
@@ -838,7 +838,7 @@ void UNK_0xea6c() // UNK_0xea6c
   Push(Read16(Pop())); // @
   MAX(); // MAX
   Push(pp_UNK_0xea58); // UNK_0xea58
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xea10(); // UNK_0xea10
   INEXT(); // INEXT
   UNK_0xea5c(); // UNK_0xea5c
@@ -1028,7 +1028,7 @@ void UNK_0xec6f() // UNK_0xec6f
   DATE_do__gt_A(); // DATE$>A
   PAD(); // PAD
   Push(0x000a);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc__4); // 4
   Push(0x009c);
   POS_dot_(); // POS.
@@ -1058,7 +1058,7 @@ void UNK_0xec6f() // UNK_0xec6f
   PRINT("NAME: ", 6); // (.")
   Push(0x65f6); // IFIELD(UNK_0xe5c5)
   Push(0x000f);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(cc__4); // 4
   Push(0x007a);
   POS_dot_(); // POS.
@@ -1144,17 +1144,17 @@ void UNK_0xedc8() // UNK_0xedc8
   Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(pp_CTX); // CTX
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   goto label2;
 
   label1:
   UNK_0xe99c(); // UNK_0xe99c
   Push(Read16(sp)); // DUP
   Push(pp_CTX); // CTX
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 
   label2:
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SPACE(); // SPACE
   Push(Read16(sp)); // DUP
   _0_st_(); // 0<
@@ -1586,7 +1586,7 @@ void UNK_0xf214() // UNK_0xf214
   Push(0x001a);
   CMESS(); // CMESS
   UNK_0xe5fe(); // UNK_0xe5fe
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -1625,7 +1625,7 @@ void UNK_0xf240() // UNK_0xf240
   Push(0xd8f0); Pust(0xffff);
   UNK_0xf226(); // UNK_0xf226
   Push(pp__ask_TV); // ?TV
-  ON(); // ON
+  ON_2(); // ON_2
 }
 
 
@@ -1709,7 +1709,7 @@ void UNK_0xf2bc() // UNK_0xf2bc
   _gt_C_plus_S(); // >C+S
   Push(0x0064);
   Push(0x65ec); // IFIELD(INST-QT)
-  _ex_(); // !
+  _ex__2(); // !_2
   CI(); // CI
   ICLOSE(); // ICLOSE
   Push2Words("*STARSH");
@@ -1848,7 +1848,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x65ec); // IFIELD(INST-QT)
-  _ex_(); // !
+  _ex__2(); // !_2
   CI(); // CI
   ICLOSE(); // ICLOSE
   Push2Words("*STARSH");
@@ -1856,7 +1856,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
   Push(pp__ask_3); // ?3
-  ON(); // ON
+  ON_2(); // ON_2
   UNK_0xf214(); // UNK_0xf214
   UNK_0xf339(); // UNK_0xf339
 }
@@ -1996,7 +1996,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(pp_NCRS); // NCRS
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(pp_UNK_0xe71c); // UNK_0xe71c
   SET_dash_CRS(); // SET-CRS
   Pop(); // DROP

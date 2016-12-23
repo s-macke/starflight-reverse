@@ -39,9 +39,9 @@
 // 1730:      UNK_0xf311  codep:0x224c parp:0xf311 size:0x0076 C-string:'UNK_0xf311'
 // 1731:      UNK_0xf389  codep:0x224c parp:0xf389 size:0x007a C-string:'UNK_0xf389'
 // 1732:      UNK_0xf405  codep:0x224c parp:0xf405 size:0x0012 C-string:'UNK_0xf405'
-// 1733:         GETSITE  codep:0x224c parp:0xf423 size:0x009e C-string:'GETSITE'
+// 1733:       GETSITE_1  codep:0x224c parp:0xf423 size:0x009e C-string:'GETSITE_1'
 // 1734:       .MERCATOR  codep:0x224c parp:0xf4cf size:0x005c C-string:'_dot_MERCATOR'
-// 1735:         GETSITE  codep:0x224c parp:0xf537 size:0x0000 C-string:'GETSITE'
+// 1735:       GETSITE_2  codep:0x224c parp:0xf537 size:0x0000 C-string:'GETSITE_2'
 
 // =================================
 // =========== VARIABLES ===========
@@ -106,7 +106,7 @@ void _dot_LATFRAME() // .LATFRAME
   PRINT("LAT", 3); // (.")
   Push(0x007d);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("LONG", 4); // (.")
   Push(0x00c1);
   Push(0x005f);
@@ -132,13 +132,13 @@ void UNK_0xeed3() // UNK_0xeed3
   _at_CRS(); // @CRS
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__4); // 4
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__6); // 6
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(cc__8); // 8
@@ -202,10 +202,10 @@ void _dot_LON() // .LON
   D_dot_R(); // D.R
   Push(pp_WLON); // WLON
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__5); // 5
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
   return;
 
@@ -225,10 +225,10 @@ void _dot_LON() // .LON
   D_dot_R(); // D.R
   Push(pp_ELON); // ELON
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__5); // 5
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
 }
 
@@ -265,10 +265,10 @@ void UNK_0xefa0() // UNK_0xefa0
   D_dot_R(); // D.R
   Push(pp_SLAT); // SLAT
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__4); // 4
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
   return;
 
@@ -288,10 +288,10 @@ void UNK_0xefa0() // UNK_0xefa0
   D_dot_R(); // D.R
   Push(pp_NLAT); // NLAT
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__4); // 4
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
 }
 
@@ -309,20 +309,20 @@ void UNK_0xf014() // UNK_0xf014
   if (Pop() == 0) goto label1;
   Push(0x01e0);
   Push(pp_UNK_0xef9c); // UNK_0xef9c
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0480);
   Push(pp_UNK_0xef1d); // UNK_0xef1d
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label1:
   Push(pp_UNK_0xef1d); // UNK_0xef1d
   Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xef9c); // UNK_0xef9c
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -478,10 +478,10 @@ void UNK_0xf12f() // UNK_0xf12f
   POS_dot_(); // POS.
   Push(0x0030);
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(2); // 2
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -501,10 +501,10 @@ void UNK_0xf159() // UNK_0xf159
   POS_dot_(); // POS.
   Push(1); // 1
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0030);
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -555,10 +555,10 @@ void _gt_XHAIR() // >XHAIR
   _ex_COLOR(); // !COLOR
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_LTLNBLT); // LTLNBLT
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -720,13 +720,13 @@ void UNK_0xf311() // UNK_0xf311
   if (Pop() == 0) return;
   Push(pp_UNK_0xf28c); // UNK_0xf28c
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__3); // 3
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__5); // 5
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x05a0);
@@ -793,7 +793,7 @@ void UNK_0xf389() // UNK_0xf389
   Push(pp_UNK_0xf261); // UNK_0xf261
   Push(0x0029);
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
 
   label3:
   _at_INST_dash_CLASS(); // @INST-CLASS
@@ -848,7 +848,7 @@ void UNK_0xf405() // UNK_0xf405
 {
   Push(0xbdd8);
   MODULE(); // MODULE
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
@@ -857,14 +857,14 @@ void UNK_0xf405() // UNK_0xf405
 
 
 // ================================================
-// 0xf417: WORD 'GETSITE' codep=0x224c parp=0xf423
+// 0xf417: WORD 'GETSITE_1' codep=0x224c parp=0xf423
 // ================================================
 
-void GETSITE() // GETSITE
+void GETSITE_1() // GETSITE_1
 {
   Push(cc__8); // 8
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_DISPLAY(); // >DISPLAY
   UNK_0xf014(); // UNK_0xf014
   CTINIT(); // CTINIT
@@ -908,7 +908,7 @@ void GETSITE() // GETSITE
   Push(0x03bf);
   MIN(); // MIN
   Push(pp_YABS); // YABS
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -917,7 +917,7 @@ void GETSITE() // GETSITE
   Push(0x08ff);
   MIN(); // MIN
   Push(pp_XABS); // XABS
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_XHAIR(); // >XHAIR
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -934,11 +934,11 @@ void GETSITE() // GETSITE
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xef1d); // UNK_0xef1d
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xef9c); // UNK_0xef9c
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -951,26 +951,26 @@ void _dot_MERCATOR() // .MERCATOR
 {
   Push(cc__4); // 4
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf014(); // UNK_0xf014
   _gt_DISPLAY(); // >DISPLAY
   _dot_LATFRAME(); // .LATFRAME
   UNK_0xeed3(); // UNK_0xeed3
   Push(0x0060);
   Push(pp_XLLDEST); // XLLDEST
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0090);
   Push(pp_YLLDEST); // YLLDEST
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x9880);
   Push(pp__i__dot_CELL); // '.CELL
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x6a99);
   SETLARRAY(); // SETLARRAY
   FULLARRAY(); // FULLARRAY
   SETREGION(); // SETREGION
   _dot_REGION_plus_(); // .REGION+
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -996,11 +996,11 @@ void _dot_MERCATOR() // .MERCATOR
 
 
 // ================================================
-// 0xf52b: WORD 'GETSITE' codep=0x224c parp=0xf537
+// 0xf52b: WORD 'GETSITE_2' codep=0x224c parp=0xf537
 // ================================================
 // entry
 
-void GETSITE() // GETSITE
+void GETSITE_2() // GETSITE_2
 {
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
@@ -1011,7 +1011,7 @@ void GETSITE() // GETSITE
   _dot_MERCATOR(); // .MERCATOR
 
   label1:
-  GETSITE(); // GETSITE
+  GETSITE_1(); // GETSITE_1
 }
 
 // 0xf54b: db 0x53 0x49 0x54 0x45 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'SITE-VOC_____________ '

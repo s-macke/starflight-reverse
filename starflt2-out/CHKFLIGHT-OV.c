@@ -135,11 +135,11 @@ void UNK_0xf1cb() // UNK_0xf1cb
   LLINE(); // LLINE
   Push(cc__5); // 5
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("FLIGHT", 6); // (.")
   Push(cc__6); // 6
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("CHECK", 5); // (.")
   Push(2); // 2
   Push(0x00c5);
@@ -175,7 +175,7 @@ void UNK_0xf276() // UNK_0xf276
   PRINT("REPORT TO OPERATIONS FOR", 24); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("EVALUATION", 10); // (.")
 }
@@ -222,7 +222,7 @@ void UNK_0xf2fb() // UNK_0xf2fb
   UNK_0xf25e(); // UNK_0xf25e
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf2e4(); // UNK_0xf2e4
 }
 
@@ -247,7 +247,7 @@ void UNK_0xf331() // UNK_0xf331
   PRINT("REPORT TO SHIP-CONFIGURATION", 28); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("TO ", 3); // (.")
   Push(pp_UNK_0xf32d); // UNK_0xf32d
@@ -304,7 +304,7 @@ void UNK_0xf378() // UNK_0xf378
   PRINT("UNABLE TO LAUNCH WITHOUT FUEL ", 30); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
 }
 
@@ -471,7 +471,7 @@ void UNK_0xf492() // UNK_0xf492
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf32d); // UNK_0xf32d
-  _ex_(); // !
+  _ex__2(); // !_2
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -543,7 +543,7 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf3a9(); // UNK_0xf3a9
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   Push(0); // 0
   return;

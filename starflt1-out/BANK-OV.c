@@ -261,7 +261,7 @@ void TRANSACT() // TRANSACT
   Push(0x63fa); // IFIELD(UNK_0xefbb)
   D_ex_(); // D!
   Push(0x63fe); // IFIELD(UNK_0xefc0)
-  _ex_(); // !
+  _ex__3(); // !_3
   ICLOSE(); // ICLOSE
   Push(0x63fe); // IFIELD(UNK_0xefa9)
   _2_at_(); // 2@
@@ -315,7 +315,7 @@ void INT_pe_() // INT%
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -337,13 +337,13 @@ void UNK_0xf128() // UNK_0xf128
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(1); // 1
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xf112); // UNK_0xf112
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
   Push(cc__4); // 4
   Push(pp_YBLT); // YBLT
@@ -493,7 +493,7 @@ void UNK_0xf26f() // UNK_0xf26f
 {
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   Push(cc__3); // 3
   Push(0); // 0
 
@@ -628,11 +628,11 @@ void UNK_0xf3ab() // UNK_0xf3ab
   PRINT("DATE", 4); // (.")
   Push(0x003e);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("TRANSACTIONS", 12); // (.")
   Push(0x0085);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("AMT", 3); // (.")
   Push(0x0013);
   Push(0x00a1);
@@ -699,13 +699,13 @@ void UNK_0xf472() // UNK_0xf472
   UNK_0xf152(); // UNK_0xf152
   Push(0x0032);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf1da(); // UNK_0xf1da
   Push(0x007c);
   UNK_0xf128(); // UNK_0xf128
   Push(0x007d);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf196(); // UNK_0xf196
 }
 

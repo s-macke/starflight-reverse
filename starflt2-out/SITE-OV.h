@@ -4,6 +4,6 @@
 #define SITE-OV_H
 
 void _dot_MERCATOR(); // .MERCATOR
-void GETSITE(); // GETSITE
+void GETSITE_2(); // GETSITE_2
 
 #endif

@@ -696,7 +696,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(pp_WOUNDED); // WOUNDED
   Push(cc__6); // 6
   Push(0x00ff);
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(pp_UNK_0xed9a); // UNK_0xed9a
   OFF(); // OFF
 }
@@ -710,7 +710,7 @@ void UNK_0xedf2() // UNK_0xedf2
 {
   SetColor("YELLOW");
   Push(0x4f0c);
-  _ex_(); // !
+  _ex__3(); // !_3
   CTERASE(); // CTERASE
   Push(0); // 0
   _ex_COLOR(); // !COLOR
@@ -728,7 +728,7 @@ void UNK_0xee04() // UNK_0xee04
   _dot_TTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   BYE(); // BYE
 }
 
@@ -848,7 +848,7 @@ void UNK_0xef3c() // UNK_0xef3c
   Push(pp_RSRC); // RSRC
   Push(cc__9); // 9
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(pp_UNK_0xebd6); // UNK_0xebd6
   OFF(); // OFF
   Push(0); // 0
@@ -1038,7 +1038,7 @@ void UNK_0xf02e() // UNK_0xf02e
   } while(i<imax); // (LOOP) 0xffcb
 
   Push(pp__ask_HEAL); // ?HEAL
-  ON(); // ON
+  ON_3(); // ON_3
 
   label1:
   Push(pp_UNK_0xed9a); // UNK_0xed9a
@@ -1171,7 +1171,7 @@ void UNK_0xf136() // UNK_0xf136
   Push(0); // 0
   MAX(); // MAX
   Push(pp_A_dash_STRENGTH); // A-STRENGTH
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1271,7 +1271,7 @@ void UNK_0xf1ec() // UNK_0xf1ec
   _gt_R(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_AT(); // ?ICONS-AT
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@
@@ -1339,7 +1339,7 @@ void UNK_0xf248() // UNK_0xf248
   Push(0); // 0
   MAX(); // MAX
   Push(0x641f); // IFIELD(UNK_0xeb99)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1363,7 +1363,7 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(0); // 0
   MAX(); // MAX
   Push(0x6421); // IFIELD(UNK_0xeba3)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x6421); // IFIELD(UNK_0xeba3)
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1415,7 +1415,7 @@ void UNK_0xf2ac() // UNK_0xf2ac
   Push(0xeb62);
   IFLD_ex_(); // IFLD!
   Push(pp__ask_AUTO); // ?AUTO
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 
@@ -1720,7 +1720,7 @@ void UNK_0xf47f() // UNK_0xf47f
   _gt_R(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_AT(); // ?ICONS-AT
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   R_at_(); // R@

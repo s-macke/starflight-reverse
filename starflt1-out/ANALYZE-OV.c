@@ -672,10 +672,10 @@ void _dot_DELEM() // .DELEM
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xeb85"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
@@ -992,7 +992,7 @@ void _dot_GRAV() // .GRAV
   _ask__dot_CERTAIN(); // ?.CERTAIN
   Push(Read16(sp)); // DUP
   Push(pp__ask_G_dash_AWARE); // ?G-AWARE
-  _ex_(); // !
+  _ex__3(); // !_3
   if (Pop() == 0) return;
   LoadData("UNK_0xebcf"); // from 'PLANET      '
   Push(Read16(Pop())); // @

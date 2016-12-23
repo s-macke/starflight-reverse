@@ -73,7 +73,7 @@ void SIC_i_EM() // SIC'EM
   Push(0x0080);
   _st_(); // <
   Push(pp_UNK_0xefdb); // UNK_0xefdb
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0080);
   Push(Pop() | Pop()); // OR
   Push(0x6403); // IFIELD(UNK_0xefd6)
@@ -192,10 +192,10 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("ART-NAME"); // from 'ARTIFACT    '
   Push(0x0018);
   Push(0x002e);
@@ -235,7 +235,7 @@ void UNK_0xf34b() // UNK_0xf34b
   _dot_TTY(); // .TTY
   Push(cc__dash_1); // -1
   Push(pp__dash_AIN); // -AIN
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x000a);
   Push(0xbd5b);
   MODULE(); // MODULE
@@ -281,22 +281,22 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
   Push(pp_GLOBALSEED); // GLOBALSEED
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(0x0018);
   RRND(); // RRND
   Push(pp_UNK_0xf032); // UNK_0xf032
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(0x0018);
   RRND(); // RRND
   Push(pp_UNK_0xf036); // UNK_0xf036
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(cc__9); // 9
   RRND(); // RRND
   Push(pp_UNK_0xf03a); // UNK_0xf03a
-  _ex_(); // !
+  _ex__3(); // !_3
   CTINIT(); // CTINIT
 
   UNK_0x3f3b("REQUEST");
@@ -431,7 +431,7 @@ void STP() // STP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 

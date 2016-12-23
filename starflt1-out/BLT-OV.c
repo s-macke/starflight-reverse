@@ -150,7 +150,7 @@ void _dot_PARMS() // .PARMS
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Push(0x000d);
   _eq_(); // =
   if (Pop() == 0) return;
@@ -266,21 +266,21 @@ void _dot_HYBRID() // .HYBRID
 {
   Push(Read16(sp)); // DUP
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_R(); // >R
   Push(cc__5); // 5
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(h); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   R_gt_(); // R>
   Push(cc__4); // 4
   LC_at_(); // LC@
@@ -305,7 +305,7 @@ void _dot_HYBRID() // .HYBRID
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
   Push(pp_COLOR); // COLOR
-  _ex_(); // !
+  _ex__3(); // !_3
   R_gt_(); // R>
   R_gt_(); // R>
   Push(cc__3); // 3

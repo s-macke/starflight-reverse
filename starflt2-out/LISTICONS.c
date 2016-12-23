@@ -44,7 +44,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PT); // TILE-PT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0020);
   Push(i); // I
   Push(0x000c);
@@ -182,7 +182,7 @@ void UNK_0xf418() // UNK_0xf418
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -257,7 +257,7 @@ void UNK_0xf45e() // UNK_0xf45e
   label1:
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
@@ -280,10 +280,10 @@ void ICONS() // ICONS
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
   Push(pp_NOF); // NOF
-  ON(); // ON
+  ON_2(); // ON_2
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
   Push(0x000f);
@@ -312,7 +312,7 @@ void ICONS() // ICONS
   UNK_0xf2c6(); // UNK_0xf2c6
   UNK_0xf418(); // UNK_0xf418
   Push(pp_ESC_dash_EN); // ESC-EN
-  ON(); // ON
+  ON_2(); // ON_2
   Push(pp_NOF); // NOF
   _099(); // 099
 }

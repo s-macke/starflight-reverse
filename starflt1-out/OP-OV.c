@@ -231,7 +231,7 @@ void UNK_0xe50e() // UNK_0xe50e
   _ask_MRC(); // ?MRC
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xe446); // UNK_0xe446
-  _ex_(); // !
+  _ex__3(); // !_3
   _ex_COLOR(); // !COLOR
   SFILL(); // SFILL
   SetColor("DK-BLUE");
@@ -325,11 +325,11 @@ void UNK_0xe5f7() // UNK_0xe5f7
   PRINT("NOTICES", 7); // (.")
   Push(0x0042);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("EVALUATION", 10); // (.")
   Push(0x0083);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("EXIT", 4); // (.")
 }
 
@@ -349,14 +349,14 @@ void UNK_0xe637() // UNK_0xe637
   SetColor("BLUE");
   _ask_MRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ask__gt_OP); // ?>OP
   Push(Read16(Pop())); // @
   Push(Read16(sp)); // DUP
   Push(pp_NCRS); // NCRS
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_OCRS); // OCRS
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xe58c); // UNK_0xe58c
   BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLAY(); // >DISPLAY
@@ -542,9 +542,9 @@ void UNK_0xe81c() // UNK_0xe81c
 {
   _2DUP(); // 2DUP
   Push(pp_CTY); // CTY
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_CTX); // CTX
-  _ex_(); // !
+  _ex__3(); // !_3
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
@@ -787,7 +787,7 @@ void UNK_0xe912() // UNK_0xe912
   Push(Read16(Pop())); // @
   MAX(); // MAX
   Push(pp_UNK_0xe8fe); // UNK_0xe8fe
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe8b6(); // UNK_0xe8b6
   INEXT(); // INEXT
   UNK_0xe902(); // UNK_0xe902
@@ -1412,7 +1412,7 @@ void UNK_0xeff8() // UNK_0xeff8
   _ex_COLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO CONTINUE", 26); // (.")
   _ex_CRS(); // !CRS
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -1451,7 +1451,7 @@ void UNK_0xf045() // UNK_0xf045
   Push(0xd8f0); Pust(0xffff);
   UNK_0xf02b(); // UNK_0xf02b
   Push(pp__ask_TV); // ?TV
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 

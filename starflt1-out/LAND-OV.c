@@ -114,7 +114,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0); // 0
   MAX(); // MAX
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label2:
   CDROP(); // CDROP
@@ -139,7 +139,7 @@ void UNK_0xf1c9() // UNK_0xf1c9
   _ex_COLOR(); // !COLOR
   SetColor("YELLOW");
   Push(0x4f0c);
-  _ex_(); // !
+  _ex__3(); // !_3
   CTERASE(); // CTERASE
 }
 
@@ -151,7 +151,7 @@ void UNK_0xf1c9() // UNK_0xf1c9
 void UNK_0xf1db() // UNK_0xf1db
 {
   Push(pp_UNK_0xf143); // UNK_0xf143
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xf177(); // UNK_0xf177
   Pop(); // DROP
   Push(pp_UNK_0xf143); // UNK_0xf143
@@ -182,7 +182,7 @@ void UNK_0xf1f1() // UNK_0xf1f1
   _gt_SND(); // >SND
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   BYE(); // BYE
 }
@@ -301,7 +301,7 @@ void UNK_0xf37b() // UNK_0xf37b
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(sp)); // DUP
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
@@ -373,10 +373,10 @@ void UNK_0xf430() // UNK_0xf430
 {
   UNK_0xf32c(); // UNK_0xf32c
   Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__dash_1); // -1
   Push(pp_GWF); // GWF
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7);
   MODULE(); // MODULE
@@ -407,20 +407,20 @@ void UNK_0xf45e() // UNK_0xf45e
   UNK_0xf3e2(); // UNK_0xf3e2
   if (Pop() == 0) goto label1;
   Push(pp_GWF); // GWF
-  ON(); // ON
+  ON_3(); // ON_3
   goto label2;
 
   label1:
   UNK_0xf342(); // UNK_0xf342
   if (Pop() == 0) goto label3;
   Push(pp_GWF); // GWF
-  ON(); // ON
+  ON_3(); // ON_3
   goto label2;
 
   label3:
   UNK_0xf39d(); // UNK_0xf39d
   Push(pp_GWF); // GWF
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label2:
   Push(pp_GWF); // GWF

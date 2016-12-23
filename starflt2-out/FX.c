@@ -89,7 +89,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf090() // UNK_0xf090
 {
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   _eq_(); // =
@@ -252,7 +252,7 @@ void UNK_0xf14f() // UNK_0xf14f
   PRINT("GLOWING", 7); // (.")
   Push(cc__4); // 4
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -399,7 +399,7 @@ void PSYCH() // PSYCH
   UNK_0xf13d(); // UNK_0xf13d
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xf08c); // UNK_0xf08c
-  _ex_(); // !
+  _ex__2(); // !_2
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
   _dot_TTY(); // .TTY
@@ -562,37 +562,37 @@ void UNK_0xf32a() // UNK_0xf32a
   label1:
   Push(0); // 0
   UNK_0xf322(); // UNK_0xf322
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(2); // 2
   UNK_0xf322(); // UNK_0xf322
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__4); // 4
   UNK_0xf322(); // UNK_0xf322
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__6); // 6
   UNK_0xf322(); // UNK_0xf322
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(2); // 2
   Push(pp__n_IN); // #IN
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0); // 0
   UNK_0xf322(); // UNK_0xf322
   Push(pp_VIN); // VIN
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0014);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_VOUT); // VOUT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x0028);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_OIN); // OIN
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x003c);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_OOUT); // OOUT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(pp__ask_OPEN); // ?OPEN
-  ON(); // ON
+  ON_2(); // ON_2
   CLIPPER(); // CLIPPER
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
@@ -712,7 +712,7 @@ void UNK_0xf3de() // UNK_0xf3de
   UNK_0xf2f2(); // UNK_0xf2f2
   Push(Pop() + Pop()); // +
   Push(2); // 2
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(h); // I
   UNK_0xf30a(); // UNK_0xf30a
   Push(Pop() + Pop()); // +
@@ -723,7 +723,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(cc__6); // 6
   _dash_(); // -
   POS_dot_(); // POS.
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   R_at_(); // R@
   UNK_0xf316(); // UNK_0xf316
   Push(Pop() + Pop()); // +
@@ -738,7 +738,7 @@ void UNK_0xf3de() // UNK_0xf3de
   Push(0x000c);
   _dash_(); // -
   POS_dot_(); // POS.
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   goto label5;
 
   label4:
@@ -805,7 +805,7 @@ void UNK_0xf4be() // UNK_0xf4be
   UNK_0xf48c(); // UNK_0xf48c
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
 

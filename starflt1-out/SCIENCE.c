@@ -779,16 +779,16 @@ void UNK_0xea52() // UNK_0xea52
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xea2e); // UNK_0xea2e
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__6); // 6
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0014);
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x005c);
   Push(0x009c);
   POS_dot_(); // POS.
@@ -910,7 +910,7 @@ void _ro__slash_STATUS_rc_() // (/STATUS)
   UNK_0xec00(); // UNK_0xec00
   Push(1); // 1
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -938,28 +938,28 @@ void UNK_0xec36() // UNK_0xec36
   _ex_COLOR(); // !COLOR
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xec24); // UNK_0xec24
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x004c);
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xec28); // UNK_0xec28
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(Pop()+1); // 1+
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   Push(cc__8); // 8
   Push(Read16(sp)); // DUP
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xec2c); // UNK_0xec2c
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
 }
 
@@ -985,7 +985,7 @@ void UNK_0xec70() // UNK_0xec70
   MIN(); // MIN
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xec28); // UNK_0xec28
-  _ex_(); // !
+  _ex__3(); // !_3
   SWAP(); // SWAP
   Push(pp_UNK_0xec24); // UNK_0xec24
   Push(Read16(Pop())); // @
@@ -996,7 +996,7 @@ void UNK_0xec70() // UNK_0xec70
   MIN(); // MIN
   Push(Read16(sp)); // DUP
   Push(pp_UNK_0xec24); // UNK_0xec24
-  _ex_(); // !
+  _ex__3(); // !_3
   SetColor("RED");
   UNK_0xec36(); // UNK_0xec36
   CLICK(); // CLICK
@@ -1218,7 +1218,7 @@ void UNK_0xedd0() // UNK_0xedd0
   _dash_(); // -
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_LOCUS(); // ?ICONS-LOCUS
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0); // 0
@@ -1478,12 +1478,12 @@ void UNK_0xefe9() // UNK_0xefe9
   _eq_(); // =
   if (Pop() == 0) goto label2;
   Push(pp_UNK_0xefe1); // UNK_0xefe1
-  ON(); // ON
+  ON_3(); // ON_3
   goto label3;
 
   label2:
   Push(pp_UNK_0xefe5); // UNK_0xefe5
-  ON(); // ON
+  ON_3(); // ON_3
 
   label3:
   Push(Read16(sp)); // DUP
@@ -1525,10 +1525,10 @@ void UNK_0xf043() // UNK_0xf043
   POS_dot_(); // POS.
   Push(0x0037);
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0029);
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   SetColor("GREY1");
   SetColor("GREY1");
   SetColor("VIOLET");
@@ -1568,10 +1568,10 @@ void UNK_0xf043() // UNK_0xf043
 void UNK_0xf09d() // UNK_0xf09d
 {
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("ELEM-NAME"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
@@ -1623,10 +1623,10 @@ void UNK_0xf0de() // UNK_0xf0de
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0082);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xe696"); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(PHRASE$)
@@ -1640,10 +1640,10 @@ void UNK_0xf0de() // UNK_0xf0de
   Push(pp_HYDRO); // HYDRO
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0082);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xe696"); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(PHRASE$)
@@ -1985,7 +1985,7 @@ void UNK_0xf39c() // UNK_0xf39c
   Push(0x0064);
   MIN(); // MIN
   Push(pp_UNK_0xe606); // UNK_0xe606
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0096);
   Push(pp_UNK_0xe606); // UNK_0xe606
   Push(Read16(Pop())); // @
@@ -2051,7 +2051,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
@@ -2064,9 +2064,9 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   if (Pop() == 0) return;
   Push(2); // 2
   Push(pp__n_AUX); // #AUX
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xeefe(); // UNK_0xeefe
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <

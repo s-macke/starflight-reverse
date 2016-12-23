@@ -154,15 +154,15 @@ void _gt_FLT() // >FLT
 {
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
-  _ex_(); // !
+  _ex__3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
   TIME(); // TIME
   _2_at_(); // 2@
@@ -174,11 +174,11 @@ void _gt_FLT() // >FLT
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(pp_TRAK_dash_HR); // TRAK-HR
-  _ex_(); // !
+  _ex__3(); // !_3
   CFIGARRAYS(); // CFIGARRAYS
   SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
@@ -191,15 +191,15 @@ void _gt_FLT() // >FLT
   UNK_0xf3fe(); // UNK_0xf3fe
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__6); // 6
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
-  _ex_(); // !
+  _ex__3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
 }
 

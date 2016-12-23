@@ -543,7 +543,7 @@ void UNK_0xe716() // UNK_0xe716
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label1;
-  ON(); // ON
+  ON_3(); // ON_3
   return;
 
   label1:
@@ -565,14 +565,14 @@ void BRMOVE() // BRMOVE
   SWAP(); // SWAP
   LC_at_(); // LC@
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x000a);
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
   LC_at_(); // LC@
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0010);
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
@@ -657,7 +657,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
   {
   Push(i); // I
   UNK_0xe700(); // UNK_0xe700
-  BLOCK(); // BLOCK
+  BLOCK_2(); // BLOCK_2
   Push(Pop() + Pop()); // +
   BRMOVE(); // BRMOVE
   UNK_0xe716(); // UNK_0xe716
@@ -697,7 +697,7 @@ void UNK_0xe813() // UNK_0xe813
   {
   Push(i); // I
   UNK_0xe700(); // UNK_0xe700
-  BLOCK(); // BLOCK
+  BLOCK_2(); // BLOCK_2
   Pop(); Pop();// 2DROP
   i++;
   } while(i<imax); // (LOOP) 0xfff6
@@ -714,31 +714,31 @@ void UNK_0xe82b() // UNK_0xe82b
   UNK_0xe6ec(); // UNK_0xe6ec
   Push(0x0067);
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x000b);
   Push(pp_UNK_0xe6d4); // UNK_0xe6d4
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x01f4);
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0045);
   Func6("FILE-START");
   Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /
   Push(pp_UNK_0xe6cc); // UNK_0xe6cc
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe813(); // UNK_0xe813
   Push(0); // 0
   SONG(); // SONG
   _at_DS(); // @DS
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_LORES(); // >LORES
   DARK(); // DARK
   Push(0x000a);
   UNK_0xe700(); // UNK_0xe700
-  BLOCK(); // BLOCK
+  BLOCK_2(); // BLOCK_2
   Push(Pop() + Pop()); // +
   BRMOVE(); // BRMOVE
   UNK_0xe7cd(); // UNK_0xe7cd
@@ -759,7 +759,7 @@ void UNK_0xe82b() // UNK_0xe82b
 void REDUCE() // REDUCE
 {
   _gt_R(); // >R
-  FLUSH(); // FLUSH
+  FLUSH_2(); // FLUSH_2
   R_at_(); // R@
   Push(-Pop()); // NEGATE
   Push(pp__n_CACHE); // #CACHE
@@ -774,7 +774,7 @@ void REDUCE() // REDUCE
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -784,11 +784,11 @@ void REDUCE() // REDUCE
 
 void INCREASE() // INCREASE
 {
-  FLUSH(); // FLUSH
+  FLUSH_2(); // FLUSH_2
   Push(pp__bo__n_CACHE_bc_); // [#CACHE]
   Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
-  _ex_(); // !
+  _ex__3(); // !_3
   AUTO_dash_CACHE(); // AUTO-CACHE
   Push(0x0040);
   Push(Pop() * Pop()); // *
@@ -821,7 +821,7 @@ void UNK_0xe928() // UNK_0xe928
   FILE_st_(); // FILE<
   Push(0x0046);
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_DISPLAY(); // >DISPLAY
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   OFF(); // OFF
@@ -839,7 +839,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6d4); // UNK_0xe6d4
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(i); // I
   Push(pp_PAUSEOFF); // PAUSEOFF
   Push(i); // I
@@ -847,7 +847,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   Push(Read16(Pop())); // @
   BRMOVE(); // BRMOVE

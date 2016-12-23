@@ -86,10 +86,10 @@ void UNK_0xf1c4() // UNK_0xf1c4
 {
   Push(0x003a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__3); // 3
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -100,7 +100,7 @@ void UNK_0xf1c4() // UNK_0xf1c4
 void UNK_0xf1d6() // UNK_0xf1d6
 {
   SWAP(); // SWAP
-  CMOVE(); // CMOVE
+  CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR
 }
 
@@ -190,7 +190,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(0x0010);
   Push(Pop() | Pop()); // OR
   Push(0x6626); // IFIELD(UNK_0xf1a5)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UNK_0xf1e0(); // UNK_0xf1e0
 
   UNK_0x3f09("SHIELDS ARE DOWN");
@@ -253,7 +253,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(0x0018);
   Push(Pop() | Pop()); // OR
   Push(0x6626); // IFIELD(UNK_0xf1a5)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UNK_0xf1e0(); // UNK_0xf1e0
 
   UNK_0x3f09("SHIELDS ARE NOW UP");
@@ -262,7 +262,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(2); // 2
   _dot_ABTN(); // .ABTN
   Push(pp__ask_SUP); // ?SUP
-  ON(); // ON
+  ON_2(); // ON_2
   return;
 
   label1:
@@ -297,7 +297,7 @@ void _gt_DISARM() // >DISARM
   Push(0x0020);
   Push(Pop() | Pop()); // OR
   Push(0x6626); // IFIELD(UNK_0xf1a5)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UNK_0xf202(); // UNK_0xf202
 
   UNK_0x3f09("WEAPONS ARE DISARMED");
@@ -370,7 +370,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   Push(0x0023);
   Push(Pop() | Pop()); // OR
   Push(0x6626); // IFIELD(UNK_0xf1a5)
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xf1c4(); // UNK_0xf1c4
 
   UNK_0x3f09("DISARM    ");

@@ -119,7 +119,7 @@ void UNK_0xe59e() // UNK_0xe59e
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  BEEPON(); // BEEPON
+  BEEPON_2(); // BEEPON_2
   Push(0x00c8);
   Push(cc_MPS); // MPS
   Push(Pop()-1); // 1-
@@ -314,7 +314,7 @@ void UNK_0xe84f() // UNK_0xe84f
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
   Push(pp__ro_STOP_dash_C); // (STOP-C
-  _ex_(); // !
+  _ex__2(); // !_2
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop()*2); // 2*
@@ -361,7 +361,7 @@ void UNK_0xe935() // UNK_0xe935
   Push(Read16(sp)); // DUP
   _ex_COLOR(); // !COLOR
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex_(); // !
+  _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -394,7 +394,7 @@ void UNK_0xea63() // UNK_0xea63
   _at_RECORD(); // @RECORD
   Push(0x0048);
   Push(Pop() + Pop()); // +
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UPDATE(); // UPDATE
   SAVE_dash_BU(); // SAVE-BU
   Push(0x5d19); Pust(0x0002);
@@ -403,7 +403,7 @@ void UNK_0xea63() // UNK_0xea63
   Push(0x0036);
   _at_RECORD(); // @RECORD
   SWAP(); // SWAP
-  CMOVE(); // CMOVE
+  CMOVE_2(); // CMOVE_2
   UPDATE(); // UPDATE
   SET_dash_CUR(); // SET-CUR
 }
@@ -448,7 +448,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
   Push(0x65fc); // IFIELD(UNK_0xe639)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   IOPEN(); // IOPEN
   Push(0x0019);
   Push(0x0014);
@@ -456,14 +456,14 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   Pop(); // DROP
   _dash_ICON(); // -ICON
   Push(pp_TERMINA); // TERMINA
-  ON(); // ON
+  ON_2(); // ON_2
   Push(pp__ro_STOP_dash_C); // (STOP-C
-  ON(); // ON
+  ON_2(); // ON_2
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
   UNK_0xea63(); // UNK_0xea63
   Push(pp_UNK_0xe63e); // UNK_0xe63e
-  ON(); // ON
+  ON_2(); // ON_2
   goto label2;
 
   label1:
@@ -607,7 +607,7 @@ void UNK_0xf1f6() // UNK_0xf1f6
   Push(Read16(sp)); // DUP
   _ex_COLOR(); // !COLOR
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -644,7 +644,7 @@ void UNK_0xf22a() // UNK_0xf22a
   UNK_0xf1d2(); // UNK_0xf1d2
   Push(1); // 1
   Push(pp__ask_5_c__ro_); // ?5:(
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -800,7 +800,7 @@ void UNK_0xf51d() // UNK_0xf51d
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  Func14(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

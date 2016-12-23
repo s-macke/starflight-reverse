@@ -31,7 +31,7 @@
 // 1722:      UNK_0xee34  codep:0x224c parp:0xee34 size:0x0024 C-string:'UNK_0xee34'
 // 1723:         ?POPULA  codep:0x224c parp:0xee64 size:0x0591 C-string:'_ask_POPULA'
 // 1724:         TV-MOVE  codep:0x224c parp:0xf401 size:0x0014 C-string:'TV_dash_MOVE'
-// 1725:      UNK_0xf417  codep:0x73ea parp:0xf417 size:0x0006 C-string:'UNK_0xf417'
+// 1725:      plan-tseed  codep:0x73ea parp:0xf417 size:0x0006 C-string:'plan_dash_tseed'
 // 1726:        APPROACH  codep:0x224c parp:0xf42a size:0x0000 C-string:'APPROACH'
 
 // =================================
@@ -128,9 +128,9 @@ void UNK_0xe794() // UNK_0xe794
 void UNK_0xe7ac() // UNK_0xe7ac
 {
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -197,7 +197,7 @@ void SET_dash_SPEED() // SET-SPEED
 
   label2:
   Push(pp_E_slash_M); // E/M
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 // 0xe8c4: db 0x4c 0x22 0x42 0x59 0xae 0x0b 0x14 0x59 0xae 0x0b 0x92 0x0f 0x4d 0x59 0xae 0x0b 0x1f 0x59 0xae 0x0b 0x92 0x0f 0x90 0x16 'L"BY   Y    MY   Y      '
@@ -496,7 +496,7 @@ void UNK_0xed4c() // UNK_0xed4c
   UNK_0xed34(); // UNK_0xed34
   Push(0); // 0
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   ICLOSE(); // ICLOSE
 }
 
@@ -627,7 +627,7 @@ void _ask_POPULA() // ?POPULA
   UNK_0xed7a(); // UNK_0xed7a
   if (Pop() == 0) return;
   Push(pp__ask_NEW); // ?NEW
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xeda8(); // UNK_0xeda8
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -680,12 +680,12 @@ void TV_dash_MOVE() // TV-MOVE
   Push(0xf355);
   DOTASKS(); // DOTASKS
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 
 // ================================================
-// 0xf415: WORD 'UNK_0xf417' codep=0x73ea parp=0xf417
+// 0xf415: WORD 'plan-tseed' codep=0x73ea parp=0xf417
 // ================================================
 // 0xf417: db 0x20 0x07 0x02 0x16 0x8f 0x65 '     e'
 
@@ -710,7 +710,7 @@ void APPROACH() // APPROACH
   goto label2;
 
   label1:
-  LoadData("UNK_0xf417"); // from 'PLANET      '
+  LoadData("plan-tseed"); // from 'PLANET      '
   Push(Read16(Pop())); // @
 
   label2:
@@ -736,7 +736,7 @@ void APPROACH() // APPROACH
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   DCLIPSET(); // DCLIPSET
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   OFF(); // OFF
   ICLOSE(); // ICLOSE
 }

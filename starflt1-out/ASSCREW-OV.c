@@ -130,10 +130,10 @@ void UNK_0xeac4() // UNK_0xeac4
   _at_CRS(); // @CRS
   Push(cc__5); // 5
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xeabe); // UNK_0xeabe
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
   Push(cc__6); // 6
   Push(pp_XBLT); // XBLT
@@ -382,7 +382,7 @@ void UNK_0xec86() // UNK_0xec86
   _gt_R(); // >R
   Push(h); // I
   Push(pp_UNK_0xec7a); // UNK_0xec7a
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -398,7 +398,7 @@ void UNK_0xec86() // UNK_0xec86
   PRINT("SCIENCE       :", 15); // (.")
   Push(0x0061);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("RACE:", 5); // (.")
   Push(0x000f);
   Push(0x001b);
@@ -412,7 +412,7 @@ void UNK_0xec86() // UNK_0xec86
   PRINT("ENGINEERING   :", 15); // (.")
   Push(0x0061);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("DURABILITY:", 11); // (.")
   Push(0x000f);
   Push(0x000d);
@@ -426,7 +426,7 @@ void UNK_0xec86() // UNK_0xec86
   PRINT("MEDICINE      :", 15); // (.")
   Push(0x0061);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   PRINT("LRN RATE  :", 11); // (.")
   Push(0x0057);
   Push(0x0030);
@@ -635,7 +635,7 @@ void UNK_0xef47() // UNK_0xef47
   label2:
   Push(0x007a);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x640e); // IFIELD(UNK_0xeb59)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
@@ -650,7 +650,7 @@ void UNK_0xef47() // UNK_0xef47
   _dot_R(); // .R
   Push(0x0077);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xeb23"); // from 'CREWMEMBER  '
   _do__dot_(); // $.
   Push(0x004a);
@@ -671,7 +671,7 @@ void UNK_0xef47() // UNK_0xef47
   _dot_R(); // .R
   Push(0x008d);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xeb33"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
@@ -694,7 +694,7 @@ void UNK_0xef47() // UNK_0xef47
   _dot_R(); // .R
   Push(0x008d);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xeb2b"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
@@ -823,10 +823,10 @@ void UNK_0xf019() // UNK_0xf019
   Push(0x0033);
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0041);
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   _gt_3FONT(); // >3FONT
   PRINT("DEAD", 4); // (.")
   _ex_CRS(); // !CRS
@@ -962,9 +962,9 @@ void UNK_0xf238() // UNK_0xf238
 {
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   BLT(); // BLT
   Push(Read16(sp)); // DUP
   Push(cc__5); // 5
@@ -973,7 +973,7 @@ void UNK_0xf238() // UNK_0xf238
   Push(Pop()+1); // 1+
   Push(0x0012);
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   SetColor("BLACK");
   UNK_0xf1ec(); // UNK_0xf1ec
   _at_CRS(); // @CRS
@@ -994,7 +994,7 @@ void UNK_0xf238() // UNK_0xf238
   SWAP(); // SWAP
   _dash_(); // -
   Push(pp_YBLT); // YBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   BLT(); // BLT
 }
 
@@ -1230,13 +1230,13 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   OFF(); // OFF
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__9); // 9
   Push(pp_LBLT); // LBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x0090);
   Push(pp_WBLT); // WBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__8); // 8
   Push(0x00a9);
   POS_dot_(); // POS.
@@ -1246,7 +1246,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   BLT(); // BLT
   SetColor("WHITE");
   UNK_0xf1ec(); // UNK_0xf1ec
@@ -1303,7 +1303,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
 
   UNK_0xf409(); // UNK_0xf409
   ICLOSE(); // ICLOSE
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   goto label4;
 

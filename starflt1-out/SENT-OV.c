@@ -147,9 +147,9 @@ void UNK_0xe2e6() // UNK_0xe2e6
 void UNK_0xe2f2() // UNK_0xe2f2
 {
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 // 0xe2fc: db 0x4c 0x22 0xed 0x22 0x73 0x3b 0x8c 0x21 0x92 0x6d 0x90 0x16 0x4c 0x22 0x4f 0x06 0x20 0x0f 0xfc 0xe2 0xfa 0x1b 'L" "s; ! m  L"O       '
@@ -254,20 +254,20 @@ void UNK_0xe41d() // UNK_0xe41d
 void UNK_0xe435() // UNK_0xe435
 {
   Push(0xe431);
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0xe431);
   CFA(); // CFA
   Push(0x2790);
   Push(0x000e);
   Push(Pop() + Pop()); // +
-  _ex_(); // !
+  _ex__3(); // !_3
   _dash_TRAILING(); // -TRAILING
   Push(0x099a);
   CFA(); // CFA
   Push(0x2790);
   Push(0x000e);
   Push(Pop() + Pop()); // +
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -283,7 +283,7 @@ void UNK_0xe435() // UNK_0xe435
 void UNK_0xe474() // UNK_0xe474
 {
   Push(pp_PROBABLE); // PROBABLE
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -437,7 +437,7 @@ void UNK_0xe867() // UNK_0xe867
 {
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   Push(pp_PM_dash_PTR); // PM-PTR
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_LINE_dash_COUNT); // LINE-COUNT
   Push(Read16(Pop())); // @
   Push(0); // 0
@@ -541,7 +541,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(pp_PM_dash_PTR); // PM-PTR
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(1); // 1
   Push(pp_LINE_dash_COUNT); // LINE-COUNT
   _plus__ex_(); // +!
@@ -789,7 +789,7 @@ void UNK_0xeaeb() // UNK_0xeaeb
   Push(0); // 0
   MAX(); // MAX
   Push(pp_UNK_0xea63); // UNK_0xea63
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1011,13 +1011,13 @@ void UNK_0xec3b() // UNK_0xec3b
 {
   Push(1); // 1
   Push(pp_LINE_dash_COUNT); // LINE-COUNT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   Push(Read16(sp)); // DUP
   Push(Pop()+1); // 1+
   Push(pp_PM_dash_PTR); // PM-PTR
-  _ex_(); // !
+  _ex__3(); // !_3
   C_ex_(); // C!
 }
 
@@ -1039,10 +1039,10 @@ void UNK_0xec53() // UNK_0xec53
   Push(Pop()+1); // 1+
   R_gt_(); // R>
   Push(cc_BL); // BL
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(1); // 1
   Push(pp_LINE_dash_COUNT); // LINE-COUNT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   WLINE_dash_UP(); // WLINE-UP
 }
@@ -1266,7 +1266,7 @@ void UNK_0xed95() // UNK_0xed95
   label1:
   Push(0); // 0
   Push(pp_UNK_0xea63); // UNK_0xea63
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1415,7 +1415,7 @@ void UNK_0xeecb() // UNK_0xeecb
 
   label2:
   Push(pp_UNK_0xeea9); // UNK_0xeea9
-  ON(); // ON
+  ON_3(); // ON_3
 
   label3:
   UNK_0xeea1(); // UNK_0xeea1
@@ -1501,21 +1501,21 @@ void UNK_0xef83() // UNK_0xef83
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xee55); // UNK_0xee55
   Push(pp_UNK_0xee9d); // UNK_0xee9d
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xeecb(); // UNK_0xeecb
 
   label1:
   Push(pp_UNK_0xee67); // UNK_0xee67
   Push(pp_UNK_0xee9d); // UNK_0xee9d
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xeecb(); // UNK_0xeecb
   Push(pp_UNK_0xee8b); // UNK_0xee8b
   Push(pp_UNK_0xee9d); // UNK_0xee9d
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xeecb(); // UNK_0xeecb
   Push(pp_UNK_0xee79); // UNK_0xee79
   Push(pp_UNK_0xee9d); // UNK_0xee9d
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xeecb(); // UNK_0xeecb
   UNK_0xeb6f(); // UNK_0xeb6f
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1646,7 +1646,7 @@ void UNK_0xf06e() // UNK_0xf06e
 void SAYIT() // SAYIT
 {
   Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   UNK_0xed95(); // UNK_0xed95
   UNK_0xecfd(); // UNK_0xecfd
   UNK_0xec79(); // UNK_0xec79
@@ -1761,7 +1761,7 @@ void UNK_0xf20e() // UNK_0xf20e
   UNK_0xf1ec(); // UNK_0xf1ec
   Push(1); // 1
   Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 

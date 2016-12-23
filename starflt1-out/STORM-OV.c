@@ -400,7 +400,7 @@ void INJURE_dash_PL() // INJURE-PL
   UNK_0xf33c(); // UNK_0xf33c
   ICLOSE(); // ICLOSE
   Push(pp__ask_HEAL); // ?HEAL
-  ON(); // ON
+  ON_3(); // ON_3
   Push(0x01f4);
   MS(); // MS
   OBIT(); // OBIT
@@ -479,7 +479,7 @@ void UNK_0xf42e() // UNK_0xf42e
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
   Push(pp_FORCED); // FORCED
-  ON(); // ON
+  ON_2(); // ON_2
   UNK_0xf3e2(); // UNK_0xf3e2
 }
 

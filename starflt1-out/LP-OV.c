@@ -152,9 +152,9 @@ void UNK_0xe0f4() // UNK_0xe0f4
 void UNK_0xe100() // UNK_0xe100
 {
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 // 0xe10a: db 0x4c 0x22 0x4f 0x06 0x20 0x0f 0x73 0xd8 0xfa 0x1b 'L"O   s   '
@@ -529,7 +529,7 @@ void UNK_0xe4b6() // UNK_0xe4b6
   Push(cc_UNK_0xe0da); // UNK_0xe0da
   Push(Read16(sp)); // DUP
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
@@ -780,12 +780,12 @@ void UNK_0xebb3() // UNK_0xebb3
   _1_dot_5_at_(); // 1.5@
   R_gt_(); // R>
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   LoadData("UNK_0xe3be"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   LoadData("UNK_0xe3b6"); // from 'CREATURE    '
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -843,7 +843,7 @@ void UNK_0xec3f() // UNK_0xec3f
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
   Push(pp_PEAK); // PEAK
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData("UNK_0xe3a6"); // from 'CREATURE    '
   C_ex_(); // C!
@@ -858,7 +858,7 @@ void UNK_0xec57() // UNK_0xec57
 {
   Push(0); // 0
   Push(pp_PEAK); // PEAK
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0); // 0
   Push(0x0055);
   UNK_0xe2bb(); // UNK_0xe2bb
@@ -1093,7 +1093,7 @@ void UNK_0xedaf() // UNK_0xedaf
   Push(0xe48e);
   R_gt_(); // R>
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   _2SWAP(); // 2SWAP
   UNK_0xed63(); // UNK_0xed63
@@ -1302,7 +1302,7 @@ void UNK_0xef31() // UNK_0xef31
 
   label2:
   LoadData("UNK_0xe49e"); // from 'CREATURE    '
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1432,14 +1432,14 @@ void UNK_0xf0b0() // UNK_0xf0b0
   RRND(); // RRND
   Push(Read16(sp)); // DUP
   LoadData("UNK_0xe3ae"); // from 'CREATURE    '
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xe3b6"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
   LoadData("UNK_0xe3b6"); // from 'CREATURE    '
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1502,7 +1502,7 @@ void UNK_0xf14a() // UNK_0xf14a
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
   Push(pp_PEAK); // PEAK
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData("UNK_0xe39e"); // from 'CREATURE    '
   C_ex_(); // C!

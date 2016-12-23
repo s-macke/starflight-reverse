@@ -232,7 +232,7 @@ void UNK_0xdecd() // UNK_0xdecd
   BLT(); // BLT
   _ex_CRS(); // !CRS
   Push(pp_XORMODE); // XORMODE
-  OFF(); // OFF
+  OFF_2(); // OFF_2
 }
 
 
@@ -550,7 +550,7 @@ void lpos() // lpos
 void _n_options_ex_() // #options!
 {
   Push(pp_UNK_0xe1cb); // UNK_0xe1cb
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -897,7 +897,7 @@ void _ro_EXTRACT_rc_() // (EXTRACT)
   label1:
   ICLOSE(); // ICLOSE
   Push(pp_revision); // revision
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 
@@ -1174,9 +1174,9 @@ void UNK_0xe5c1() // UNK_0xe5c1
 void UNK_0xe5d3() // UNK_0xe5d3
 {
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1289,7 +1289,7 @@ void UNK_0xe672() // UNK_0xe672
 void UNK_0xe67c() // UNK_0xe67c
 {
   Push(0x6400); // IFIELD(INST-VAL)
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xe5c1(); // UNK_0xe5c1
   UNK_0xe5d3(); // UNK_0xe5d3
   Push(0x63fa); // IFIELD(INST-QTY)
@@ -1297,7 +1297,7 @@ void UNK_0xe67c() // UNK_0xe67c
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x6402); // IFIELD(INST-DATE)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fc); // IFIELD(INST-X)
@@ -1327,7 +1327,7 @@ void UNK_0xe6b8() // UNK_0xe6b8
 {
   UNK_0xe307(); // UNK_0xe307
   Push(pp_revision); // revision
-  ON(); // ON
+  ON_3(); // ON_3
   valuate(); // valuate
   LoadData("UNK_0xe009"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -1411,7 +1411,7 @@ void UNK_0xe75b() // UNK_0xe75b
   UNK_0xe67c(); // UNK_0xe67c
   R_at_(); // R@
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   C_gt_(); // C>
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
@@ -1675,7 +1675,7 @@ void UNK_0xe910() // UNK_0xe910
   Push(Read16(Pop())); // @
   UNK_0xe8ae(); // UNK_0xe8ae
   UNK_0xe084(); // UNK_0xe084
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -1739,7 +1739,7 @@ void UNK_0xe9fa() // UNK_0xe9fa
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(pp__ask_BOMB); // ?BOMB
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   GCR(); // GCR
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
@@ -1841,7 +1841,7 @@ void UNK_0xeac0() // UNK_0xeac0
   UNK_0xe5c1(); // UNK_0xe5c1
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
-  _ask_ICONS_dash_(); // ?ICONS-
+  _ask_ICONS_dash_AT(); // ?ICONS-AT
   if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
@@ -1981,7 +1981,7 @@ void UNK_0xeb86() // UNK_0xeb86
   UNK_0xeb62(); // UNK_0xeb62
   SET_dash_CURRENT(); // SET-CURRENT
   UNK_0xe084(); // UNK_0xe084
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   return;
 
@@ -2221,7 +2221,7 @@ void UNK_0xecd3() // UNK_0xecd3
 {
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xecb9(); // UNK_0xecb9
   _ask_CHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
@@ -2231,7 +2231,7 @@ void UNK_0xecd3() // UNK_0xecd3
   Push(0xc227);
   MODULE(); // MODULE
   UNK_0xe084(); // UNK_0xe084
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   UNK_0xecb9(); // UNK_0xecb9
   INEXT(); // INEXT
@@ -2243,7 +2243,7 @@ void UNK_0xecd3() // UNK_0xecd3
   Push(0xc227);
   MODULE(); // MODULE
   UNK_0xe084(); // UNK_0xe084
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -2270,7 +2270,7 @@ void UNK_0xed17() // UNK_0xed17
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x6402); // IFIELD(INST-DATE)
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xea32(); // UNK_0xea32
 }
 
@@ -2349,7 +2349,7 @@ void UNK_0xed67() // UNK_0xed67
   Push(Pop()-1); // 1-
   WLINE_dash_UP(); // WLINE-UP
   UNK_0xe084(); // UNK_0xe084
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
 }
 
@@ -2451,7 +2451,7 @@ void UNK_0xee3e() // UNK_0xee3e
   UNK_0xdf55(); // UNK_0xdf55
   PRINT("REVISING TERRAIN VEHICLE INVENTORY", 34); // (.")
   Push(pp_revision); // revision
-  OFF(); // OFF
+  OFF_2(); // OFF_2
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
 }
@@ -2633,7 +2633,7 @@ void UNK_0xef32() // UNK_0xef32
 
 void UNK_0xef62() // UNK_0xef62
 {
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x63fd); // IFIELD(TEXT-IN)
@@ -2805,7 +2805,7 @@ void UNK_0xefd4() // UNK_0xefd4
 
 void UNK_0xf002() // UNK_0xf002
 {
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI
@@ -2834,7 +2834,7 @@ void UNK_0xf028() // UNK_0xf028
 {
   Push(1); // 1
   Push(pp_UNK_0xdec9); // UNK_0xdec9
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(pp_revision); // revision
   OFF(); // OFF
   Push(pp_FQUIT); // FQUIT
@@ -2906,7 +2906,7 @@ void UNK_0xf028() // UNK_0xf028
 
   label6:
   Push(pp_FQUIT); // FQUIT
-  ON(); // ON
+  ON_3(); // ON_3
 
   label5:
   Pop(); // DROP
@@ -3340,7 +3340,7 @@ void UNK_0xf31c() // UNK_0xf31c
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x6402); // IFIELD(INST-DATE)
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label1:
   IEXTRACT(); // IEXTRACT
@@ -3454,9 +3454,9 @@ void UNK_0xf3d6() // UNK_0xf3d6
   if (Pop() == 0) goto label1;
   UNK_0xe5c1(); // UNK_0xe5c1
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
 
   label1:
   _ro_BOX_gt__rc_(); // (BOX>)
@@ -3601,7 +3601,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   label3:
   UNK_0xe044(); // UNK_0xe044
   UNK_0xe0b5(); // UNK_0xe0b5
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -3629,7 +3629,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   qtbtn(); // qtbtn
   delete_dash_scroll_dash_box(); // delete-scroll-box
   Push2Words("0.");
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _1_dot_5_ex_(); // 1.5!
   return_dash_items(); // return-items
   CDROP(); // CDROP

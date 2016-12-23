@@ -116,7 +116,7 @@ void UNK_0xee0a() // UNK_0xee0a
   Push(Pop()+1); // 1+
   Push(0x0026);
   Push(cc_BL); // BL
-  FILL(); // FILL
+  FILL_1(); // FILL_1
 }
 
 
@@ -177,7 +177,7 @@ void UNK_0xee54() // UNK_0xee54
   Push(cc__7); // 7
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
 }
 
@@ -196,7 +196,7 @@ void UNK_0xee70() // UNK_0xee70
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE
-  ON(); // ON
+  ON_3(); // ON_3
   UNK_0xee2c(); // UNK_0xee2c
   Push(cc__3); // 3
   Push(0); // 0
@@ -243,13 +243,13 @@ void UNK_0xef27() // UNK_0xef27
   _gt_(); // >
   if (Pop() == 0) return;
   Push(pp_UNK_0xee6c); // UNK_0xee6c
-  ON(); // ON
+  ON_3(); // ON_3
   Push(0x03e8);
   MS(); // MS
   _i_KEY(); // 'KEY
   Pop(); // DROP
   UNK_0xee70(); // UNK_0xee70
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   Pop(); // DROP
   UNK_0xee70(); // UNK_0xee70
   SAVE_dash_OVERLAY(); // SAVE-OVERLAY
@@ -441,7 +441,7 @@ void UNK_0xf082() // UNK_0xf082
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   Push(0x003f);
-  FILL(); // FILL
+  FILL_1(); // FILL_1
 }
 
 
@@ -529,7 +529,7 @@ void ITEM_gt_PAD() // ITEM>PAD
   OVER(); // OVER
   _dash_(); // -
   Push(0x002e);
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   Push(0x0026);
   PAD(); // PAD
   C_ex_(); // C!
@@ -588,7 +588,7 @@ void UNK_0xf157() // UNK_0xf157
   _st_(); // <
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x0038);
@@ -694,10 +694,10 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
   Push(1); // 1
   _star_CREATE(); // *CREATE
   CI(); // CI
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _1_dot_5_ex_(); // 1.5!
   CI_i_(); // CI'
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_2); // (SCROLL_2
   _1_dot_5_ex_(); // 1.5!
   Push(pp_SCROLL_dash_); // SCROLL-
   OFF(); // OFF
@@ -712,10 +712,10 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 
 void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 {
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_2); // (SCROLL_2
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
-  Push(pp__ro_SCROLL); // (SCROLL
+  Push(pp__ro_SCROLL_1); // (SCROLL_1
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_(); // >C+
   SET_dash_CURRENT(); // SET-CURRENT
@@ -723,7 +723,7 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(pp_ESC_dash_EN); // ESC-EN
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 
@@ -958,7 +958,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   C_gt_(); // C>
   return;
 

@@ -171,7 +171,7 @@ void UNK_0xf107() // UNK_0xf107
   Push(pp_ROSTER); // ROSTER
   Push(0x0012);
   Push(0); // 0
-  FILL(); // FILL
+  FILL_2(); // FILL_2
 }
 
 
@@ -242,7 +242,7 @@ void UNK_0xf151() // UNK_0xf151
   _gt_DISPLA(); // >DISPLA
   SetColor("YELLOW");
   Push(0x4fa9);
-  _ex_(); // !
+  _ex__2(); // !_2
   CTERASE(); // CTERASE
   SetColor("RED");
   _ex_COLOR(); // !COLOR
@@ -256,8 +256,8 @@ void UNK_0xf151() // UNK_0xf151
   PRINT("  **GAME OVER** ", 16); // (.")
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  KEY(); // KEY
-  BYE(); // BYE
+  KEY_2(); // KEY_2
+  BYE_2(); // BYE_2
 }
 
 
@@ -370,7 +370,7 @@ void UNK_0xf256() // UNK_0xf256
   Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp__ask_HEAL); // ?HEAL
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -443,7 +443,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   _gt_FLAG(); // >FLAG
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
@@ -459,7 +459,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   Push(0x00fb);
   Push(Pop() & Pop()); // AND
   Push(0x6601); // IFIELD(UNK_0xf0f0)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   UNK_0xf28a(); // UNK_0xf28a
 
   label5:
@@ -472,7 +472,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   Push(0x0064);
   MIN(); // MIN
   Push(0x6600); // IFIELD(UNK_0xf0eb)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 
   label3:
   ICLOSE(); // ICLOSE
@@ -489,7 +489,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   label1:
   UNK_0xf268(); // UNK_0xf268
   Push(pp_HEALTI); // HEALTI
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -535,7 +535,7 @@ void _dot_VITS() // .VITS
   if (Pop() == 0) goto label1;
   Push(1); // 1
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0x65ec); // IFIELD(UNK_0xf0cd)
   _do__dot_(); // $.
   Push(0x000e);
@@ -560,12 +560,12 @@ void _dot_VITS() // .VITS
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(cc__4); // 4
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x6600); // IFIELD(UNK_0xf0eb)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
@@ -581,7 +581,7 @@ void _dot_VITS() // .VITS
   _ex_COLOR(); // !COLOR
   R_gt_(); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex_(); // !
+  _ex__2(); // !_2
   _gt_TVCT(); // >TVCT
 }
 
@@ -608,7 +608,7 @@ void UNK_0xf3ec() // UNK_0xf3ec
   Push(2); // 2
   Push(Pop() | Pop()); // OR
   Push(0x6601); // IFIELD(UNK_0xf0f0)
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -623,7 +623,7 @@ void UNK_0xf40c() // UNK_0xf40c
   if (Pop() == 0) return;
   Push(0x000a);
   Push(pp__ask_10); // ?10
-  _ex_(); // !
+  _ex__2(); // !_2
 }
 
 
@@ -645,13 +645,13 @@ void UNK_0xf429() // UNK_0xf429
 {
   Push(0); // 0
   Push(pp_UNK_0xf420); // UNK_0xf420
-  _ex_(); // !
+  _ex__2(); // !_2
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65f2); // IFIELD(UNK_0xf0be)
   _1_dot_5_at_(); // 1.5@
   Push(pp_UNK_0xf424); // UNK_0xf424
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
@@ -746,7 +746,7 @@ void UNK_0xf4a1() // UNK_0xf4a1
   Push(0x65fb); // IFIELD(UNK_0xf0d2)
   Push(cc__6); // 6
   Push(0); // 0
-  FILL(); // FILL
+  FILL_2(); // FILL_2
 }
 
 
@@ -768,7 +768,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push(0x65f5); // IFIELD(UNK_0xf0c3)
   _1_dot_5_at_(); // 1.5@
   Push(0x65f2); // IFIELD(UNK_0xf0be)
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   ICLOSE(); // ICLOSE
 
   label1:
@@ -818,7 +818,7 @@ void UNK_0xf4d3() // UNK_0xf4d3
   Push(cc__4); // 4
   PICK(); // PICK
   Push(Pop() + Pop()); // +
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   goto label3;
 
   label1:
@@ -854,7 +854,7 @@ void KILL() // KILL
 {
   Push(0); // 0
   Push(0x6600); // IFIELD(UNK_0xf0eb)
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
   OBITS(); // OBITS
   UNK_0xf40c(); // UNK_0xf40c
 }

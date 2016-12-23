@@ -79,10 +79,10 @@ void UNK_0xf234() // UNK_0xf234
 {
   Push(0x003a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(cc__3); // 3
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -219,7 +219,7 @@ void UNK_0xf359() // UNK_0xf359
   Push(2); // 2
   _dot_ABTN(); // .ABTN
   Push(pp__ask_SUP); // ?SUP
-  ON(); // ON
+  ON_3(); // ON_3
 }
 
 
@@ -307,7 +307,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(0x0023);
   Push(Pop() | Pop()); // OR
   Push(0x6434); // IFIELD(UNK_0xf215)
-  _ex_(); // !
+  _ex__3(); // !_3
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("DISARM    ");

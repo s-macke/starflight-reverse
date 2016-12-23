@@ -296,9 +296,9 @@ void UNK_0xed31() // UNK_0xed31
 void UNK_0xed3d() // UNK_0xed3d
 {
   Push(0x63fe); // IFIELD(INST-Y)
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x63fc); // IFIELD(INST-X)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -447,7 +447,7 @@ void UNK_0xee15() // UNK_0xee15
   LoadData("UNK_0xeca0"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   LoadData("UNK_0xec98"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x6402); // IFIELD(UNK_0xec93)
@@ -971,7 +971,7 @@ void UNK_0xf163() // UNK_0xf163
   Push(0x0064);
   RRND(); // RRND
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -1152,7 +1152,7 @@ void UNK_0xf26b() // UNK_0xf26b
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x63fa); // IFIELD(INST-QTY)
-  _ex_(); // !
+  _ex__3(); // !_3
   ICLOSE(); // ICLOSE
 }
 

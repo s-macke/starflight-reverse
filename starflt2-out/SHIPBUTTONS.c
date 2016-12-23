@@ -162,10 +162,10 @@ void _gt_FLT() // >FLT
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(pp_TRAK_dash_HR); // TRAK-HR
-  _ex_(); // !
+  _ex__2(); // !_2
   SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =

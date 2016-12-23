@@ -183,7 +183,7 @@ void UNK_0xf139() // UNK_0xf139
   Push(pp_ROSTER); // ROSTER
   Push(0x0012);
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
 }
 
 
@@ -240,7 +240,7 @@ void UNK_0xf183() // UNK_0xf183
   _1_dot_5_at_(); // 1.5@
   Push2Words("NULL");
   D_eq_(); // D=
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
@@ -272,7 +272,7 @@ void UNK_0xf183() // UNK_0xf183
   MS(); // MS
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  KEY(); // KEY
+  KEY_2(); // KEY_2
   BYE(); // BYE
 }
 
@@ -378,7 +378,7 @@ void UNK_0xf280() // UNK_0xf280
   Push(Read16(sp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp__ask_HEAL); // ?HEAL
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -452,7 +452,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp_CONTEXT); // CONTEXT
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
@@ -498,7 +498,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   label1:
   UNK_0xf292(); // UNK_0xf292
   Push(pp_HEALTI); // HEALTI
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -574,7 +574,7 @@ void _dot_VITS() // .VITS
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_XBLT); // XBLT
-  _ex_(); // !
+  _ex__3(); // !_3
   Push(0x640e); // IFIELD(UNK_0xf11d)
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
@@ -590,7 +590,7 @@ void _dot_VITS() // .VITS
   _ex_COLOR(); // !COLOR
   R_gt_(); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -610,7 +610,7 @@ void UNK_0xf416() // UNK_0xf416
   Push(2); // 2
   Push(Pop() | Pop()); // OR
   Push(0x640f); // IFIELD(UNK_0xf122)
-  _ex_(); // !
+  _ex__3(); // !_3
 }
 
 
@@ -632,7 +632,7 @@ void UNK_0xf42f() // UNK_0xf42f
 {
   Push(0); // 0
   Push(pp_UNK_0xf426); // UNK_0xf426
-  _ex_(); // !
+  _ex__3(); // !_3
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x6400); // IFIELD(UNK_0xf0f0)
@@ -713,7 +713,7 @@ void UNK_0xf489() // UNK_0xf489
   Push(0x6409); // IFIELD(UNK_0xf104)
   Push(cc__6); // 6
   Push(0); // 0
-  FILL(); // FILL
+  FILL_1(); // FILL_1
   UNK_0xf416(); // UNK_0xf416
 }
 

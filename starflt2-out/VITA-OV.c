@@ -139,22 +139,22 @@ void UNK_0xf418() // UNK_0xf418
 {
   Push(0); // 0
   Push(0x65ec); // IFIELD(UNK_0xf272)
-  _ex_(); // !
+  _ex__2(); // !_2
   LoadData("UNK_0xf222"); // from 'REGIONS     '
   Push(cc__4); // 4
   Push(0); // 0
-  FILL(); // FILL
+  FILL_2(); // FILL_2
   LoadData("UNK_0xf21a"); // from 'REGIONS     '
   Push(cc__8); // 8
   Push(0); // 0
-  FILL(); // FILL
+  FILL_2(); // FILL_2
   LoadData("UNK_0xf262"); // from 'REGIONS     '
   Push(cc__8); // 8
   Push(0); // 0
-  FILL(); // FILL
+  FILL_2(); // FILL_2
   Push(0); // 0
   LoadData("UNK_0xf26a"); // from 'REGIONS     '
-  C_ex_(); // C!
+  C_ex__2(); // C!_2
 }
 
 
@@ -166,7 +166,7 @@ void UNK_0xf440() // UNK_0xf440
 {
   Push(cc_UNK_0xf18a); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(cc__6); // 6
   Push(0); // 0
 
@@ -176,7 +176,7 @@ void UNK_0xf440() // UNK_0xf440
   {
   Push(i); // I
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__2(); // !_2
   UNK_0xf418(); // UNK_0xf418
   i++;
   } while(i<imax); // (LOOP) 0xfff6
@@ -230,14 +230,14 @@ void UNK_0xf474() // UNK_0xf474
   label1:
   CI(); // CI
   Push(pp_SUPER_dash_B); // SUPER-B
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   IOPEN(); // IOPEN
   CI(); // CI
   Push(pp__ro_SURFAC); // (SURFAC
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
   Push(0); // 0
   LoadData("UNK_0xf1b2"); // from 'BOX         '
-  _ex_(); // !
+  _ex__2(); // !_2
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -270,7 +270,7 @@ void DIO() // DIO
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
   Push(pp_PLHI); // PLHI
-  ON(); // ON
+  ON_2(); // ON_2
   goto label1;
 
   label1:

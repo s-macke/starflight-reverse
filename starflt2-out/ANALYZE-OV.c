@@ -636,15 +636,15 @@ void UNK_0xf02c() // UNK_0xf02c
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
-  _ex_(); // !
+  _ex__2(); // !_2
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex_(); // !
+  _ex__2(); // !_2
   LoadData("UNK_0xec75"); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Func14(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec(TYPE); // call of word 0x2690 '(TYPE)'
   SET_dash_CUR(); // SET-CUR
   CTCR(); // CTCR
   Push(0x000f);
@@ -956,7 +956,7 @@ void UNK_0xf221() // UNK_0xf221
   UNK_0xee5b(); // UNK_0xee5b
   Push(Read16(sp)); // DUP
   Push(pp__ask_G_dash_AWAR); // ?G-AWAR
-  _ex_(); // !
+  _ex__2(); // !_2
   if (Pop() == 0) return;
   LoadData("UNK_0xecbf"); // from 'PLANET      '
   Push(Read16(Pop())); // @
@@ -1174,7 +1174,7 @@ void UNK_0xf38f() // UNK_0xf38f
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
   _at_INST_dash_S(); // @INST-S
-  Func14(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec(EMIT); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -1432,7 +1432,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   D_ex_(); // D!
   Push2Words("NULL");
   Push(pp_SENSE_dash_A); // SENSE-A
-  _1_dot_5_ex_(); // 1.5!
+  _1_dot_5_ex__2(); // 1.5!_2
 }
 
 // 0xf55a: db 0x41 0x4e 0x2d 0x56 0x4f 0x43 0x00 'AN-VOC '
