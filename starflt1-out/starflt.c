@@ -27875,7 +27875,7 @@ void MANEUVER() // MANEUVER
   Push(0xf0ab);
   Push(0xef37);
   Push(0xf003);
-  DOTASKS(); // DOTASKS
+  DOTASKS(SETUP-MOV, SET-DESTINATION, CLEANUP-MOV);
 
   label3:
   Push(pp_FTRIG); // FTRIG

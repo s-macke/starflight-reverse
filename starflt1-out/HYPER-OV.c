@@ -176,7 +176,7 @@
 // 1867:         COLLIDE  codep:0x4a4f parp:0xeb53 size:0x0018 C-string:'COLLIDE'
 // 1868:      UNK_0xeb6d  codep:0x224c parp:0xeb6d size:0x0010 C-string:'UNK_0xeb6d'
 // 1869:             ?~C  codep:0x4a4f parp:0xeb85 size:0x0010 C-string:'_ask__t_C'
-// 1870:      UNK_0xeb97  codep:0x224c parp:0xeb97 size:0x00a0 C-string:'UNK_0xeb97'
+// 1870:      ?COLLISION  codep:0x224c parp:0xeb97 size:0x00a0 C-string:'_ask_COLLISION'
 // 1871:      UNK_0xec39  codep:0x224c parp:0xec39 size:0x0022 C-string:'UNK_0xec39'
 // 1872:      ?2NEST.ETC  codep:0x224c parp:0xec5d size:0x004a C-string:'_ask_2NEST_dot_ETC'
 // 1873:       ?STARPORT  codep:0x224c parp:0xeca9 size:0x007d C-string:'_ask_STARPORT'
@@ -3123,10 +3123,10 @@ void UNK_0xeb6d() // UNK_0xeb6d
 // 0xeb85: db 0x03 0x00 0x22 0x0f 0x0b 0x00 0x6d 0xeb 0x12 0x00 0x30 0x0f 0x17 0x00 0x30 0x0f '  "   m   0   0 '
 
 // ================================================
-// 0xeb95: WORD 'UNK_0xeb97' codep=0x224c parp=0xeb97
+// 0xeb95: WORD '?COLLISION' codep=0x224c parp=0xeb97
 // ================================================
 
-void UNK_0xeb97() // UNK_0xeb97
+void _ask_COLLISION() // ?COLLISION
 {
   UNK_0xda9e(); // UNK_0xda9e
   Push(cc_UNK_0xd9b0); // UNK_0xd9b0
@@ -3609,7 +3609,7 @@ void UNK_0xee9b() // UNK_0xee9b
   UNNEST(); // UNNEST
 
   label1:
-  UNK_0xeb97(); // UNK_0xeb97
+  _ask_COLLISION(); // ?COLLISION
   _gt_R(); // >R
   _ask_2NEST_dot_ETC(); // ?2NEST.ETC
   R_gt_(); // R>

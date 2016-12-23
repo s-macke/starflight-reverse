@@ -29279,7 +29279,7 @@ void MAN() // MAN
   Push(0xf103);
   Push(0xefaf);
   Push(0xf069);
-  DOTASKS(); // DOTASKS
+  DOTASKS(SETUP-M, SET-DES, CLEANUP);
 
   label3:
   Push(pp_FTRIG); // FTRIG
