@@ -2,6 +2,7 @@
 #define CPU_H
 
 extern unsigned char mem[0x10000];
+extern unsigned short regsp;
 
 unsigned char Read8(unsigned short ofs);
 unsigned short Read16(unsigned short ofs);

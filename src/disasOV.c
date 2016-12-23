@@ -4,7 +4,7 @@
 #include"global.h"
 #include"dictionary.h"
 #include"extract.h"
-#include"cpu.h"
+#include"../emul/cpu.h"
 
 
 #include"disasm/debugger.h"
@@ -139,12 +139,12 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     fprintf(fpc, "// store offset = 0x%04x\n", head.storeofs);
     fprintf(fpc, "// overlay size   = 0x%04x\n", head.ovlsize);
-    fprintf(fpc, "\n#include\"cpu.h\"\n");
+    fprintf(fpc, "\n#include\"../emul/cpu.h\"\n");
 
 #ifdef STARFLT1
-    fprintf(fpc, "#include\"starflt1.h\"\n\n");
+    fprintf(fpc, "#include\"../emul/starflt1.h\"\n\n");
 #else
-    fprintf(fpc, "#include\"starflt2.h\"\n\n");
+    fprintf(fpc, "#include\"../emul/starflt2.h\"\n\n");
 #endif
 
     InitParseFunction2();

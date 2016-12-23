@@ -4,7 +4,7 @@
 #include"global.h"
 #include"dictionary.h"
 #include"extract.h"
-#include"cpu.h"
+#include"../emul/cpu.h"
 
 
 struct DICTENTRY dict[5000];
@@ -598,12 +598,12 @@ char* PutEasyMacro(char *s)
     }
     if (strcmp(s, "DUP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(sp)); // DUP\n");
+        snprintf(ret, STRINGLEN, "  Push(Read16(regsp)); // DUP\n");
         return ret;
     }
     if (strcmp(s, "?DUP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP\n");
+        snprintf(ret, STRINGLEN, "  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
         return ret;
     }
 
@@ -805,7 +805,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         } else
         if (codep == CODEPOINTER) // pointer to variable or table
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(pp_%s); // %s\n", Forth2CString(s), s); // TODO: check
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // pointer to %s\n", par, s);
             ofs += 2;
         } else
         if (codep == CODECONSTANT)
@@ -833,7 +833,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             pline[ofs+3].done = 1;
             pline[ofs+4].done = 1;
             pline[ofs+5].done = 1;
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); Pust(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); Push(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
             ofs += 6;
         } else
         if (codep == CODELOADOVERLAY) // This code loads the overlay
@@ -862,9 +862,9 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             snprintf(pline[ofs].str, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
             ofs += 2;
         } else
-        if (codep == CODEFUNC1)
+        if (codep == CODETABLE)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Func1(\"%s\");\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "  GetTableEntry(%s);\n", s);
             ofs += 2;
         } else
         if (codep == CODESETCOLOR)
@@ -938,8 +938,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             Push(ds);
             Push(dx);
             */
-            snprintf(pline[ofs].str, STRINGLEN, "  ReadArray(0x%04x, 0x%04x); // %s\n",
-            Read16(par + 6), Read16(par + 4), s);
+            snprintf(pline[ofs].str, STRINGLEN, "  ReadArray(Read16(0x%04x+6), 0x%04x); // %s\n",
+            par, Read16(par + 4), s);
             ofs += 2;
         } else
         if (codep == CODEFUNC12)

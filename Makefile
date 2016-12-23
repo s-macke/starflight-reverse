@@ -6,8 +6,8 @@ all: disasOV1 disasOV2
 disasm.o: src/disasm/debugger.c
 	$(CC) $(CFLAGS) -c src/disasm/debugger.c -o disasm.o
 
-cpu.o: src/cpu.c
-	$(CC) $(CFLAGS) -c src/cpu.c -o cpu.o
+cpu.o: emul/cpu.c
+	$(CC) $(CFLAGS) -c emul/cpu.c -o cpu.o
 
 dictionary1.o: src/dictionary.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/dictionary.c -o dictionary1.o
