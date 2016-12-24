@@ -343,16 +343,35 @@ char* PutEasyMacro(char *s)
     return ret;
 }
 
-unsigned short int FindFunctionAddress(unsigned short int addr)
+// unsafe test to find closest dict entry
+DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
 {
-    int i;
-    for(i=addr; i >= 0; i--)
+    int i = 0;
+    int dist = 0xFFFF;
+    DICTENTRY *result = NULL;
+    for(i=0; i<ndict; i++)
     {
-        if (pline[i].isfunction) return i;
+        if (dict[i].parp > addr) continue;
+        if (dict[i].codep != CODECALL) continue;
+
+        if (dist > (addr-dict[i].parp)) {
+            result = &dict[i];
+            dist = addr-dict[i].parp;
+        }
     }
-    fprintf(stderr, "Error: Cannot find function header at offset 0x%04x\n", addr);
-    exit(1);
-    return 0;
+    if (result == NULL) {
+        fprintf(stderr, "Error: Cannot find function header at offset 0x%04x\n", addr);
+        exit(1);
+    }
+
+    //test if there is another function in between not yet analyzed
+    for(i=result->parp; i<addr-2; i+=2) {
+        if (Read16(i) == CODECALL) {
+            return GetDictEntry(i+2, ovidx);
+        }
+    }
+
+    return result;
 }
 
 unsigned short int FindLoopID(unsigned short int addr)
@@ -369,8 +388,16 @@ unsigned short int FindLoopID(unsigned short int addr)
 }
 
 
-void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int currentovidx)
+void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
+    if (d == NULL) {
+        d = FindClosestFunction(ofs, currentovidx);
+    }
+
+    if (d->codep != CODECALL) {
+        fprintf(stderr, "Error: not a forth function call");
+        exit(1);
+    }
 
     while(1)
     {
@@ -522,8 +549,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 DICTENTRY *dcall = GetDictEntry(par, currentovidx);
                 pline[par].isfunction = 1;
                 snprintf(pline[par].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-                ParsePartFunction(ofs+2, l, minaddr, maxaddr, currentovidx);
-                ParsePartFunction(par, l, minaddr, maxaddr, currentovidx);
+                ParsePartFunction(ofs+2, l, minaddr, maxaddr, d, currentovidx);
+                ParsePartFunction(par, l, minaddr, maxaddr, dcall, currentovidx);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
@@ -711,14 +738,13 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 if (pline[addr].labelid == 0)
                 {
                     //fprintf(stderr, "jump at 0x%04x to 0x%04x\n", ofs, addr);
-                    int funcaddr = FindFunctionAddress(ofs);
-                    pline[addr].labelid = ++pline[funcaddr].nlabel;
+                    pline[addr].labelid = ++pline[d->parp].nlabel;
                 }
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, l, minaddr, maxaddr, currentovidx);
-            ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
+            ParsePartFunction(ofs+4, l, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(addr, l, minaddr, maxaddr, d, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -734,23 +760,21 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             {
                 if (pline[addr].labelid == 0)
                 {
-                    int funcaddr = FindFunctionAddress(ofs);
-                    pline[addr].labelid = ++pline[funcaddr].nlabel;
+                    pline[addr].labelid = ++pline[d->parp].nlabel;
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, l, minaddr, maxaddr, currentovidx);
-            ParsePartFunction(addr, l, minaddr, maxaddr, currentovidx);
+            ParsePartFunction(ofs+4, l, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(addr, l, minaddr, maxaddr, d, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
         {
-            int funcaddr = FindFunctionAddress(ofs);
-            pline[funcaddr].nloop++;
-            pline[ofs].loopid = pline[funcaddr].nloop;
+            pline[d->parp].nloop++;
+            pline[ofs].loopid = pline[d->parp].nloop;
             snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %c = Pop();\n  signed short int %cmax = Pop();\n  do // (DO)\n  {\n",
-                'h'+pline[funcaddr].nloop,
-                'h'+pline[funcaddr].nloop);
+                'h'+pline[d->parp].nloop,
+                'h'+pline[d->parp].nloop);
             ofs += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -856,7 +880,7 @@ void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr)
     char *s = GetWordName(d);
     pline[d->parp].isfunction = 1;
     snprintf(pline[d->parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    ParsePartFunction(d->parp, pline, minaddr, maxaddr, d->ovidx);
+    ParsePartFunction(d->parp, pline, minaddr, maxaddr, d, d->ovidx);
 }
 
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)

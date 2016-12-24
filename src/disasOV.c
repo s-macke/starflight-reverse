@@ -72,7 +72,7 @@ int DisasmRange(int offset, int size, FILE *fp)
             DisasmRange(addr&0xffff, 0x10000, fp);
             if (addr == 0x1649)
             {
-                ParsePartFunction(newoffset, pline, 0x0, 0x10000, -1);
+                ParsePartFunction(newoffset, pline, 0x0, 0x10000, NULL, -1);
                 return 0;
             }
         }
@@ -115,7 +115,6 @@ void LoadOverlayDict(int ovidx)
         ParseDict(mem, vocofs - 2, 0, ovidx);
     }
     SortDictionary();
-    //dict[ndict-1].size = storeofs+ovlsize-dict[ndict-1].parp;
 }
 
 void PrintHeader()
@@ -185,10 +184,9 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
     SortDictionary();
-    //dict[ndict-1].size = head.storeofs+head.ovlsize-dict[ndict-1].parp;
 
-    WriteDict(mem, fpc, ovidx);
     PrintHeader();
+
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
@@ -197,6 +195,9 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
         DisasmRange(dict[i].codep, 0x100000, fpc);
     }
 
+    SortDictionary();
+    PrintHeader();
+    WriteDict(mem, fpc, ovidx);
     WriteVariables(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc, ovidx);
     WriteParsedFunctions(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc);
 }
@@ -235,15 +236,18 @@ void DisasStarflt(FILE *fp)
 
     SortDictionary();
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
-    WriteDict(mem, fp, -1);
 
     PrintHeader();
+
     for(i=0; i<ndict; i++)
     {
         if ((dict[i].codep < 0x100) || (dict[i].codep >= FILESTAR0SIZE+0x100)) continue;
         DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, fp);
     }
 
+    SortDictionary();
+    PrintHeader();
+    WriteDict(mem, fp, -1);
     WriteVariables(0x100, FILESTAR0SIZE+0x100, fp, -1);
     WriteParsedFunctions(0x100, FILESTAR0SIZE+0x100, fp);
 }
