@@ -614,7 +614,6 @@ char* PutEasyMacro(char *s)
 unsigned short int FindFunctionAddress(unsigned short int addr)
 {
     int i;
-    if (addr == 0x1eb3) return 0; // something strange in CAPTAIN.c in the function >DESCEND
     for(i=addr; i >= 0; i--)
     {
         if (pline[i].isfunction) return i;
@@ -640,13 +639,6 @@ unsigned short int FindLoopID(unsigned short int addr)
 
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int currentovidx)
 {
-    // for starflt1
-    /*
-    if (ofs == 0x84fa) // MSET-CO
-    {
-        currentovidx = 42; // GAME-OV
-    }
-    */
 
     while(1)
     {

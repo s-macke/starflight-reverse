@@ -120,6 +120,19 @@ void LoadOverlayDict(int ovidx)
     //dict[ndict-1].size = storeofs+ovlsize-dict[ndict-1].parp;
 }
 
+void PrintHeader()
+{
+    int i, j;
+    for(i=0; i<ndict; i++)
+    {
+        snprintf(pline[dict[i].ofs].strword, STRINGLEN,
+        "\n// ================================================\n"
+        "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
+        "// ================================================\n",
+        dict[i].ofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
+        for(j=dict[i].ofs; j<dict[i].parp; j++) pline[j].done = 1;
+    }
+}
 
 void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 {
@@ -155,7 +168,6 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
         unsigned short codep = Read16(par);
         char *s = FindDictPar(par+2, ovidx);
         pline[par].isentry = 1;
-        //fprintf(stderr, "0x%04x\n", codep);
         fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
     }
 
@@ -171,18 +183,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     //dict[ndict-1].size = head.storeofs+head.ovlsize-dict[ndict-1].parp;
 
     WriteDict(mem, fpc, ovidx);
-
-    for(i=0; i<ndict; i++)
-    {
-        int wordofs = dict[i].ofs;
-        snprintf(pline[wordofs].strword, STRINGLEN,
-            "\n// ================================================\n"
-            "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-            "// ================================================\n",
-            wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-
-        for(j=wordofs; j<dict[i].parp; j++) pline[j].done = 1;
-    }
+    PrintHeader();
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
@@ -235,17 +236,7 @@ void DisasStarflt(FILE *fp)
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
     WriteDict(mem, fp, -1);
 
-    for(i=0; i<ndict; i++)
-    {
-        int wordofs = dict[i].ofs;
-        snprintf(pline[wordofs].strword, STRINGLEN,
-            "\n// ====================================================\n"
-            "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-            "// ====================================================\n",
-            wordofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-
-        for(j=wordofs; j<dict[i].parp; j++) pline[j].done = 1;
-    }
+    PrintHeader();
     for(i=0; i<ndict; i++)
     {
         if ((dict[i].codep < 0x100) || (dict[i].codep >= FILESTAR0SIZE+0x100)) continue;
