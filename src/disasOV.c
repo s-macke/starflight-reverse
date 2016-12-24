@@ -4,16 +4,14 @@
 #include"global.h"
 #include"dictionary.h"
 #include"extract.h"
+#include"utils.h"
 #include"../emul/cpu.h"
 
 
 #include"disasm/debugger.h"
 
 // TODO:
-// some dicts might have the same name.
-// Check and add _1, _2, _3, ...
 // Check tt_ cc_ pp_
-//
 
 // ---------------------------------
 

@@ -6,6 +6,9 @@ all: disasOV1 disasOV2
 disasm.o: src/disasm/debugger.c
 	$(CC) $(CFLAGS) -c src/disasm/debugger.c -o disasm.o
 
+utils.o: src/utils.c src/utils.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/utils.c -o utils.o
+
 cpu.o: emul/cpu.c
 	$(CC) $(CFLAGS) -c emul/cpu.c -o cpu.o
 
@@ -27,11 +30,11 @@ global1.o: src/global.c src/global.h
 global2.o: src/global.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/global.c -o global2.o
 
-disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o cpu.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o cpu.o
+disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o cpu.o utils.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o cpu.o utils.o
 
-disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o cpu.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o cpu.o
+disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o cpu.o utils.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o cpu.o utils.o
     
 .PHONY: clean
 
