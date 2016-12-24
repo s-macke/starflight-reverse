@@ -176,7 +176,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     {
         unsigned short par = overlays[ovidx].entrypoints[i];
         unsigned short codep = Read16(par);
-        char *s = FindDictPar(par+2, ovidx);
+        char *s = GetDictWord(par+2, ovidx);
         pline[par].isentry = 1;
         fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
     }

@@ -24,13 +24,13 @@ char* GetWordName(DICTENTRY *dict)
     return dict->r;
 }
 
-char* FindDictPar(unsigned short addr, int ovidx)
+DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
 {
     int i = 0;
     for(i=0; i<ndict; i++)
     {
         if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
-        if (dict[i].parp == addr) return GetWordName(&dict[i]);
+        if (dict[i].parp == addr) return &dict[i];
     }
 
     snprintf(dict[ndict].r, STRINGLEN, "UNK_0x%04x", addr);
@@ -39,10 +39,15 @@ char* FindDictPar(unsigned short addr, int ovidx)
     dict[ndict].ofs = addr-2;
     dict[ndict].ovidx = ovidx;
     ndict++;
-    return GetWordName(&dict[ndict-1]);
+    return &dict[ndict-1];
 }
 
-int FindDictStart(int addr)
+char* GetDictWord(unsigned short addr, int ovidx)
+{
+    return GetWordName(GetDictEntry(addr, ovidx));
+}
+
+int GetDictStart(int addr)
 {
     int i = 0;
     for(i=0; i<ndict; i++)
@@ -51,17 +56,6 @@ int FindDictStart(int addr)
     }
     return -1;
 }
-/*
-int FindDictEntry(const char *s)
-{
-    int i;
-    for(i=0; i<ndict; i++)
-    {
-        if (strcmp(dict[i].r, s) == 0) return i;
-    }
-    return -1;
-}
-*/
 
 
 // --------------------------------------------
@@ -390,7 +384,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
 
-        char *s = FindDictPar(par, currentovidx);
+        char *s = GetDictWord(par, currentovidx);
 
         if (ofs < 0x100+FILESTAR0SIZE)
         if (currentovidx != -1)
@@ -419,9 +413,9 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
                 int c2 = Read16(ofs-6);
                 int c3 = Read16(ofs-10);
                 char *s1 = NULL, *s2 = NULL, *s3 = NULL;
-                if (c1 != 0) s1 = FindDictPar(Read16(ofs-2), currentovidx);
-                if (c2 != 0) s2 = FindDictPar(Read16(ofs-6), currentovidx);
-                if (c3 != 0) s3 = FindDictPar(Read16(ofs-10), currentovidx);
+                if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), currentovidx);
+                if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), currentovidx);
+                if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), currentovidx);
                 snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
             }
             ofs += 2;
@@ -525,6 +519,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         {
             if ((par >= minaddr) && (par <= maxaddr))
             {
+                DICTENTRY *dcall = GetDictEntry(par, currentovidx);
                 pline[par].isfunction = 1;
                 snprintf(pline[par].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
                 ParsePartFunction(ofs+2, l, minaddr, maxaddr, currentovidx);
@@ -647,12 +642,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
             char temp[256];
             sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
             for(i=0; i<n; i++) {
-                char *s = FindDictPar(Read16(par + i*4 + 6), currentovidx);
+                char *s = GetDictWord(Read16(par + i*4 + 6), currentovidx);
                 sprintf(temp, "  case %i:\n  %s    break;\n",
                     Read16(par + i*4 + 4), PutEasyMacro(s));
                 strcat(pline[ofs].str, temp);
             }
-            char *s = FindDictPar(Read16(par + 2), currentovidx);
+            char *s = GetDictWord(Read16(par + 2), currentovidx);
             sprintf(temp, "  default:\n  %s    break;\n", PutEasyMacro(s));
             strcat(pline[ofs].str, temp);
 
@@ -686,7 +681,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
         {
             par = Read16(Read16(par)+REGDI);
             snprintf(pline[ofs].str, STRINGLEN, "  Exec(%s); // call of word 0x%04x '%s'\n",
-                s, par, FindDictPar(par, currentovidx));
+                s, par, GetDictWord(par, currentovidx));
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)

@@ -39,14 +39,14 @@ extern LineDesc pline[0x10000];
 
 void SortDictionary();
 void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
-void InitOutput();
-void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr);
+char* GetDictWord(unsigned short addr, int ovidx);
+char* GetWordName(DICTENTRY *dict);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
+
+void InitOutput();
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int currentovidx);
-
-char* FindDictPar(unsigned short addr, int ovidx);
-char* GetWordName(DICTENTRY *dict);
+void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr);
 
 #endif
