@@ -12797,7 +12797,13 @@ void FILLREGION() // FILLREGION
 // ================================================
 // 0x4eed: WORD 'UNK_0x4eef' codep=0x224c parp=0x4eef
 // ================================================
-// 0x4eef: db 0x4f 0x06 0xaf 0x21 0xfa 0x1b 'O  !  '
+
+void UNK_0x4eef() // UNK_0x4eef
+{
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  C_co_(); // C,
+  (;CODE)();
+// inlined assembler code
 // 0x4ef5: call   1649
   Push(Read8(Pop())&0xFF); // C@
   Push(0x4edd); // pointer to UNK_0x4edd
@@ -15884,7 +15890,13 @@ void MEM_st_DSK() // MEM<DSK
 // ================================================
 // 0x721f: WORD 'UNK_0x7221' codep=0x224c parp=0x7221
 // ================================================
-// 0x7221: db 0x4f 0x06 0xaf 0x21 0xfa 0x1b 'O  !  '
+
+void UNK_0x7221() // UNK_0x7221
+{
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  C_co_(); // C,
+  (;CODE)();
+// inlined assembler code
 // 0x7227: call   1649
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP

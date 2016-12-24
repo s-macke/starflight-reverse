@@ -13159,7 +13159,13 @@ void I_gt_C() // I>C
 // ================================================
 // 0x4f8e: WORD 'UNK_0x4f90' codep=0x224c parp=0x4f90
 // ================================================
-// 0x4f90: db 0x4f 0x06 0xaf 0x21 0xfa 0x1b 'O  !  '
+
+void UNK_0x4f90() // UNK_0x4f90
+{
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  C_co_(); // C,
+  (;CODE)();
+// inlined assembler code
 // 0x4f96: call   1649
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
@@ -16458,7 +16464,13 @@ void MEM_st_DSK() // MEM<DSK
 // ================================================
 // 0x71c9: WORD 'UNK_0x71cb' codep=0x224c parp=0x71cb
 // ================================================
-// 0x71cb: db 0x4f 0x06 0xaf 0x21 0xfa 0x1b 'O  !  '
+
+void UNK_0x71cb() // UNK_0x71cb
+{
+  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  C_co_(); // C,
+  (;CODE)();
+// inlined assembler code
 // 0x71d1: call   1649
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
