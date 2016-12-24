@@ -134,6 +134,18 @@ void PrintHeader()
     }
 }
 
+void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
+{
+    int i;
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].ovidx == ovidx)
+        if (dict[i].codep == CODECALL)
+            ParseForthFunction(&dict[i], minaddr, maxaddr);
+    }
+}
+
+
 void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 {
     int i, j;
@@ -160,7 +172,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     fprintf(fpc, "#include\"../emul/starflt2.h\"\n\n");
 #endif
 
-    InitParseFunction2();
+    InitOutput();
 
     for(i=0; i<overlays[ovidx].nentrypoints; i++)
     {
@@ -173,12 +185,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     fprintf(fph, "\n#endif\n");
 
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx == ovidx)
-        if (dict[i].codep == CODECALL)
-            ParseFunction2(dict[i].parp, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, ovidx);
-    }
+    ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
     SortDictionary();
     //dict[ndict-1].size = head.storeofs+head.ovlsize-dict[ndict-1].parp;
 
@@ -225,13 +232,9 @@ void ParseStarFltDict()
 void DisasStarflt(FILE *fp)
 {
     int i, j;
-    InitParseFunction2();
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx == -1)
-        if (dict[i].codep == CODECALL)
-            ParseFunction2(dict[i].parp, 0x100, FILESTAR0SIZE+0x100, -1);
-    }
+    InitOutput();
+    ParseForthFunctions(-1, 0x100, FILESTAR0SIZE+0x100);
+
     SortDictionary();
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
     WriteDict(mem, fp, -1);

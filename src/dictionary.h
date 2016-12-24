@@ -39,8 +39,8 @@ extern LineDesc pline[0x10000];
 
 void SortDictionary();
 void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
-void InitParseFunction2();
-void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx);
+void InitOutput();
+void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);

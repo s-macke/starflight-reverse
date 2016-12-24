@@ -1107,7 +1107,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, int curre
     }
 }
 
-void InitParseFunction2()
+void InitOutput()
 {
     int i;
     memset(pline, 0, 0x10000*sizeof(LineDesc));
@@ -1118,12 +1118,12 @@ void InitParseFunction2()
     }
 }
 
-void ParseFunction2(unsigned short parp, int minaddr, int maxaddr, int ovidx)
+void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr)
 {
-    char *s = FindDictPar(parp, ovidx);
-    pline[parp].isfunction = 1;
-    snprintf(pline[parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    ParsePartFunction(parp, pline, minaddr, maxaddr, ovidx);
+    char *s = GetWordName(d);
+    pline[d->parp].isfunction = 1;
+    snprintf(pline[d->parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+    ParsePartFunction(d->parp, pline, minaddr, maxaddr, d->ovidx);
 }
 
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)
