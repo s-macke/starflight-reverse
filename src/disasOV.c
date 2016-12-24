@@ -117,7 +117,7 @@ void LoadOverlayDict(int ovidx)
     SortDictionary();
 }
 
-void PrintHeader()
+void WriteHeader()
 {
     int i, j;
     for(i=0; i<ndict; i++)
@@ -182,10 +182,11 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     fprintf(fph, "\n#endif\n");
 
+    WriteHeader();
     ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
     SortDictionary();
 
-    PrintHeader();
+    WriteHeader();
 
     for(i=0; i<ndict; i++)
     {
@@ -195,8 +196,9 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
         DisasmRange(dict[i].codep, 0x100000, fpc);
     }
 
+    ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
     SortDictionary();
-    PrintHeader();
+    WriteHeader();
     WriteDict(mem, fpc, ovidx);
     WriteVariables(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc, ovidx);
     WriteParsedFunctions(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc);
@@ -232,12 +234,13 @@ void DisasStarflt(FILE *fp)
 {
     int i, j;
     InitOutput();
+    WriteHeader();
     ParseForthFunctions(-1, 0x100, FILESTAR0SIZE+0x100);
 
     SortDictionary();
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
 
-    PrintHeader();
+    WriteHeader();
 
     for(i=0; i<ndict; i++)
     {
@@ -245,8 +248,9 @@ void DisasStarflt(FILE *fp)
         DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, fp);
     }
 
+    ParseForthFunctions(-1, 0x100, FILESTAR0SIZE+0x100);
     SortDictionary();
-    PrintHeader();
+    WriteHeader();
     WriteDict(mem, fp, -1);
     WriteVariables(0x100, FILESTAR0SIZE+0x100, fp, -1);
     WriteParsedFunctions(0x100, FILESTAR0SIZE+0x100, fp);

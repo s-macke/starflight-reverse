@@ -344,7 +344,7 @@ char* PutEasyMacro(char *s)
 }
 
 // unsafe test to find closest dict entry
-DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
+DICTENTRY* FindClosestFunction(unsigned short int addr)
 {
     int i = 0;
     int dist = 0xFFFF;
@@ -365,13 +365,14 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
     }
 
     //test if there is another function in between not yet analyzed
+    DICTENTRY *result2 = result;
     for(i=result->parp; i<addr-2; i+=2) {
         if (Read16(i) == CODECALL) {
-            return GetDictEntry(i+2, ovidx);
+            result2 = GetDictEntry(i+2, result->ovidx);
         }
     }
 
-    return result;
+    return result2;
 }
 
 unsigned short int FindLoopID(unsigned short int addr)
@@ -391,7 +392,7 @@ unsigned short int FindLoopID(unsigned short int addr)
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     if (d == NULL) {
-        d = FindClosestFunction(ofs, currentovidx);
+        d = FindClosestFunction(ofs);
     }
 
     if (d->codep != CODECALL) {
