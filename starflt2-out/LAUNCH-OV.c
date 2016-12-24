@@ -2,8 +2,8 @@
 // store offset = 0xf090
 // overlay size   = 0x04d0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -74,11 +74,11 @@ void UNK_0xf0b4() // UNK_0xf0b4
   Push(i); // I
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dot_(); // .
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _ex__2(); // !_2
   Push(0x0027);
   MS(); // MS
@@ -178,16 +178,16 @@ void UNK_0xf14e() // UNK_0xf14e
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   UNK_0xf11a(); // UNK_0xf11a
   CTERASE(); // CTERASE
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1); // 1
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   _ex__2(); // !_2
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
+  Push(0x5ab9); // pointer to ?G-AWAR
   ON_2(); // ON_2
-  Push(pp_GWF); // GWF
+  Push(0x5ac3); // pointer to GWF
   _099(); // 099
 }
 
@@ -199,9 +199,9 @@ void UNK_0xf14e() // UNK_0xf14e
 void UNK_0xf192() // UNK_0xf192
 {
   _2DUP(); // 2DUP
-  Push(pp_STIME); // STIME
+  Push(0x637e); // pointer to STIME
   D_ex_(); // D!
-  Push(0x03e8); Pust(0x0000);
+  Push(0x03e8); Push(0x0000);
   D_st_(); // D<
   Pop(); // DROP
 }
@@ -229,7 +229,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
 {
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
   Push(0); // 0
   Push(0x000a);
@@ -328,19 +328,19 @@ void _dot_AIRLOCK() // .AIRLOCK
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x5a84); // pointer to BLTSEG
   _ex__2(); // !_2
   Push(0x001a);
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
-  Push(Read16(sp)); // DUP
-  Push(pp_WBLT); // WBLT
+  Push(Read16(regsp)); // DUP
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
-  Push(pp_UNK_0xf220); // UNK_0xf220
-  Push(pp_ABLT); // ABLT
+  Push(0xf220); // pointer to UNK_0xf220
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
   _gt_DISPLA(); // >DISPLA
@@ -366,7 +366,7 @@ void UNK_0xf306() // UNK_0xf306
 void UNK_0xf312() // UNK_0xf312
 {
   Push(Pop()*2); // 2*
-  Push(pp_YTABL); // YTABL
+  Push(0x578f); // pointer to YTABL
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -421,11 +421,11 @@ void UNK_0xf32a() // UNK_0xf32a
   LCOPYBL(); // LCOPYBL
   R_gt_(); // R>
   Pop(); // DROP
-  Push(pp_HBUF_dash_SE); // HBUF-SE
+  Push(0x572d); // pointer to HBUF-SE
   Push(Read16(Pop())); // @
   ROT(); // ROT
   UNK_0xf320(); // UNK_0xf320
-  Push(pp_DBUF_dash_SE); // DBUF-SE
+  Push(0x573b); // pointer to DBUF-SE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   ROLL(); // ROLL
@@ -508,11 +508,11 @@ void UNK_0xf3b7() // UNK_0xf3b7
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xf306(); // UNK_0xf306
   UNK_0xf0a6(); // UNK_0xf0a6
@@ -555,7 +555,7 @@ void _and_RETURN() // &RETURN
   Push(1); // 1
   Push(0x0010);
   RRND(); // RRND
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR

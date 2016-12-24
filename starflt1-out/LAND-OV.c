@@ -2,8 +2,8 @@
 // store offset = 0xf120
 // overlay size   = 0x0440
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -60,11 +60,11 @@ unsigned char UNK_0xf143[2] = {0x00, 0x00}; // UNK_0xf143
 
 void UNK_0xf147() // UNK_0xf147
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(0x62bf); // pointer to (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf13b"); // from 'PLANET      '
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -102,7 +102,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
-  Push(pp_UNK_0xf143); // UNK_0xf143
+  Push(0xf143); // pointer to UNK_0xf143
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf147(); // UNK_0xf147
@@ -150,11 +150,11 @@ void UNK_0xf1c9() // UNK_0xf1c9
 
 void UNK_0xf1db() // UNK_0xf1db
 {
-  Push(pp_UNK_0xf143); // UNK_0xf143
+  Push(0xf143); // pointer to UNK_0xf143
   ON_3(); // ON_3
   UNK_0xf177(); // UNK_0xf177
   Pop(); // DROP
-  Push(pp_UNK_0xf143); // UNK_0xf143
+  Push(0xf143); // pointer to UNK_0xf143
   OFF(); // OFF
   Push(0xbd4a);
   MODULE(); // MODULE
@@ -216,7 +216,7 @@ void UNK_0xf258() // UNK_0xf258
 
   UNK_0x3f3b(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
-  Push(pp__ro_ORBIT_rc_); // (ORBIT)
+  Push(0x62af); // pointer to (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(INST-QTY)
   _ask_(); // ?
@@ -224,7 +224,7 @@ void UNK_0xf258() // UNK_0xf258
 
   UNK_0x3f3b(" IN SYSTEM ");
   _dot_TTY(); // .TTY
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(0x629f); // pointer to (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
@@ -280,7 +280,7 @@ void UNK_0xf32c() // UNK_0xf32c
 void UNK_0xf342() // UNK_0xf342
 {
   UNK_0xf32c(); // UNK_0xf32c
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
@@ -300,8 +300,8 @@ void UNK_0xf37b() // UNK_0xf37b
   UNK_0xf177(); // UNK_0xf177
   Push(0x0140);
   MIN(); // MIN
-  Push(Read16(sp)); // DUP
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(Read16(regsp)); // DUP
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
@@ -320,7 +320,7 @@ void UNK_0xf37b() // UNK_0xf37b
 void UNK_0xf39d() // UNK_0xf39d
 {
   UNK_0xf37b(); // UNK_0xf37b
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
@@ -350,7 +350,7 @@ void UNK_0xf3d6() // UNK_0xf3d6
 void UNK_0xf3e2() // UNK_0xf3e2
 {
   UNK_0xf3d6(); // UNK_0xf3d6
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
@@ -372,15 +372,15 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf430() // UNK_0xf430
 {
   UNK_0xf32c(); // UNK_0xf32c
-  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
+  Push(0x58db); // pointer to ?FUEL-DIE
   _ex__3(); // !_3
   Push(cc__dash_1); // -1
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   _ex__3(); // !_3
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7);
   MODULE(); // MODULE
-  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
+  Push(0x58db); // pointer to ?FUEL-DIE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf258(); // UNK_0xf258
@@ -399,31 +399,31 @@ void UNK_0xf430() // UNK_0xf430
 
 void UNK_0xf45e() // UNK_0xf45e
 {
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   Push(Read16(Pop())); // @
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   UNK_0xf3e2(); // UNK_0xf3e2
   if (Pop() == 0) goto label1;
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   ON_3(); // ON_3
   goto label2;
 
   label1:
   UNK_0xf342(); // UNK_0xf342
   if (Pop() == 0) goto label3;
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   ON_3(); // ON_3
   goto label2;
 
   label3:
   UNK_0xf39d(); // UNK_0xf39d
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   _ex__3(); // !_3
 
   label2:
-  Push(pp_GWF); // GWF
+  Push(0x58f3); // pointer to GWF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -436,9 +436,9 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void _ask_LAND() // ?LAND
 {
-  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
+  Push(0x5f5c); // pointer to 'EXTERNAL-EVENTS
   Push(Read16(Pop())); // @
-  Push(pp__i_HEAT); // 'HEAT
+  Push(0x5329); // pointer to 'HEAT
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -449,7 +449,7 @@ void _ask_LAND() // ?LAND
   return;
 
   label1:
-  Push(pp__ask_G_dash_AWARE); // ?G-AWARE
+  Push(0x58e9); // pointer to ?G-AWARE
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf45e(); // UNK_0xf45e
@@ -473,7 +473,7 @@ void _ask_LAUNCH() // ?LAUNCH
 {
   UNK_0xf39d(); // UNK_0xf39d
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   UNK_0xf1db(); // UNK_0xf1db
 }

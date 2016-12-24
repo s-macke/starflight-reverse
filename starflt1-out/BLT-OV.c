@@ -2,8 +2,8 @@
 // store offset = 0xf200
 // overlay size   = 0x0360
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -126,27 +126,27 @@ void _dot_PARMS() // .PARMS
 {
   Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
-  Push(pp_X2); // X2
+  Push(0x562e); // pointer to X2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("x1= ", 4); // (.")
-  Push(pp_X1); // X1
+  Push(0x561c); // pointer to X1
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("st ", 3); // (.")
-  Push(pp_XSTART); // XSTART
+  Push(0x57b7); // pointer to XSTART
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("en ", 3); // (.")
-  Push(pp_XEND); // XEND
+  Push(0x57c2); // pointer to XEND
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("y ", 2); // (.")
-  Push(pp_YLINE); // YLINE
+  Push(0x57ce); // pointer to YLINE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
@@ -264,22 +264,22 @@ void _dot_PARMS() // .PARMS
 
 void _dot_HYBRID() // .HYBRID
 {
-  Push(Read16(sp)); // DUP
-  Push(pp_BLTSEG); // BLTSEG
+  Push(Read16(regsp)); // DUP
+  Push(0x58aa); // pointer to BLTSEG
   _ex__3(); // !_3
   _gt_R(); // >R
   Push(cc__5); // 5
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   _ex__3(); // !_3
   Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
-  Push(pp_LBLT); // LBLT
+  Push(0x5887); // pointer to LBLT
   _ex__3(); // !_3
   Push(h); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
-  Push(pp_WBLT); // WBLT
+  Push(0x5892); // pointer to WBLT
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(cc__4); // 4
@@ -290,21 +290,21 @@ void _dot_HYBRID() // .HYBRID
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x58aa); // pointer to BLTSEG
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(cc__4); // 4
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   _plus__ex_(); // +!
   Push(i); // I
   Push(i); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
-  Push(pp_COLOR); // COLOR
+  Push(0x55f2); // pointer to COLOR
   _ex__3(); // !_3
   R_gt_(); // R>
   R_gt_(); // R>
@@ -312,11 +312,11 @@ void _dot_HYBRID() // .HYBRID
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
   if (Pop() == 0) goto label1;
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x58aa); // pointer to BLTSEG
   Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   Push(Read16(Pop())); // @
-  Push(pp__ask_EGA); // ?EGA
+  Push(0x5da3); // pointer to ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _dot_EGARUNBIT(); // .EGARUNBIT
@@ -332,16 +332,16 @@ void _dot_HYBRID() // .HYBRID
   _co_BLT_cc_(); // {BLT}
 
   label4:
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x58aa); // pointer to BLTSEG
   Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dash_(); // -
   L_at_(); // L@
   Push(cc__4); // 4
   _dash_(); // -
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   _plus__ex_(); // +!
   i++;
   } while(i<imax); // (LOOP) 0xff9c

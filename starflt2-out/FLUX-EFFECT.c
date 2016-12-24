@@ -2,8 +2,8 @@
 // store offset = 0xf330
 // overlay size   = 0x0230
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -85,7 +85,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(0); // 0
   Push(2); // 2
   RRND(); // RRND
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0048);
   UNK_0xf38e(); // UNK_0xf38e
@@ -130,7 +130,7 @@ void UNK_0xf406() // UNK_0xf406
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_UNK_0xf356); // UNK_0xf356
+  Push(0xf356); // pointer to UNK_0xf356
   Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3a0(); // UNK_0xf3a0
@@ -148,7 +148,7 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf420() // UNK_0xf420
 {
-  Push(pp_UNK_0xf356); // UNK_0xf356
+  Push(0xf356); // pointer to UNK_0xf356
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
@@ -180,7 +180,7 @@ void UNK_0xf420() // UNK_0xf420
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   R_gt_(); // R>
@@ -199,7 +199,7 @@ void UNK_0xf420() // UNK_0xf420
 
 void HYPER_dash_FRAME() // HYPER-FRAME
 {
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
+  Push(0xf38a); // pointer to UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   DARK(); // DARK
@@ -232,7 +232,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
 void FLUX() // FLUX
 {
   _gt_MAINVI(); // >MAINVI
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
+  Push(0xf38a); // pointer to UNK_0xf38a
   ON_2(); // ON_2
   UNK_0xf406(); // UNK_0xf406
   SetColor("GREY1");
@@ -264,7 +264,7 @@ void FLUX() // FLUX
 
 void UNK_0xf4e5() // UNK_0xf4e5
 {
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
+  Push(0xf38a); // pointer to UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   DARK(); // DARK
@@ -313,7 +313,7 @@ void JUMPFX() // JUMPFX
   Push(0); // 0
   Push(cc__6); // 6
   RRND(); // RRND
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
+  Push(0xf38a); // pointer to UNK_0xf38a
   _ex__2(); // !_2
   i++;
   } while(i<imax); // (LOOP) 0xfff2

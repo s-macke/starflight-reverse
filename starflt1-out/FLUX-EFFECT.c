@@ -2,8 +2,8 @@
 // store offset = 0xf390
 // overlay size   = 0x01d0
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -69,7 +69,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(0); // 0
   Push(2); // 2
   RRND(); // RRND
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0048);
   UNK_0xf3de(); // UNK_0xf3de
@@ -114,7 +114,7 @@ void UNK_0xf456() // UNK_0xf456
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_UNK_0xf3a6); // UNK_0xf3a6
+  Push(0xf3a6); // pointer to UNK_0xf3a6
   Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3f0(); // UNK_0xf3f0
@@ -132,7 +132,7 @@ void UNK_0xf456() // UNK_0xf456
 
 void UNK_0xf470() // UNK_0xf470
 {
-  Push(pp_UNK_0xf3a6); // UNK_0xf3a6
+  Push(0xf3a6); // pointer to UNK_0xf3a6
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
@@ -164,7 +164,7 @@ void UNK_0xf470() // UNK_0xf470
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   R_gt_(); // R>
@@ -183,7 +183,7 @@ void UNK_0xf470() // UNK_0xf470
 
 void UNK_0xf4d0() // UNK_0xf4d0
 {
-  Push(pp_UNK_0xf3da); // UNK_0xf3da
+  Push(0xf3da); // pointer to UNK_0xf3da
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   DARK(); // DARK
@@ -219,7 +219,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
 void FLUX() // FLUX
 {
   _gt_MAINVIEW(); // >MAINVIEW
-  Push(pp_UNK_0xf3da); // UNK_0xf3da
+  Push(0xf3da); // pointer to UNK_0xf3da
   ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
   SetColor("GREY1");

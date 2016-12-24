@@ -2,8 +2,8 @@
 // store offset = 0xf3b0
 // overlay size   = 0x01b0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -101,7 +101,7 @@ void UNK_0xf45e() // UNK_0xf45e
   UNK_0xf444(); // UNK_0xf444
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(pp__i__dot_HUFF); // '.HUFF
+  Push(0x5985); // pointer to '.HUFF
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(2); // 2

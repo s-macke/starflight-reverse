@@ -2,8 +2,8 @@
 // store offset = 0xefc0
 // overlay size   = 0x05a0
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -76,25 +76,25 @@ unsigned char UNK_0xefe5[20] = {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 
 void _ro_TRIM() // (TRIM
 {
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x58aa); // pointer to BLTSEG
   _ex__3(); // !_3
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
-  Push(pp_UNK_0xefe5); // UNK_0xefe5
+  Push(0xefe5); // pointer to UNK_0xefe5
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_LBLT); // LBLT
+  Push(0x5887); // pointer to LBLT
   _ex__3(); // !_3
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_WBLT); // WBLT
+  Push(0x5892); // pointer to WBLT
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(Pop()+2); // 2+
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   _ex__3(); // !_3
   POS_dot_(); // POS.
   BLT(); // BLT
@@ -111,16 +111,16 @@ void UNK_0xf035() // UNK_0xf035
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   Push(0xfffc);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _plus__ex_(); // +!
   PAD(); // PAD
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0xfffc);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _plus__ex_(); // +!
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -140,7 +140,7 @@ void UNK_0xf035() // UNK_0xf035
 
 void UNK_0xf06d() // UNK_0xf06d
 {
-  Push(0x01f4); Pust(0x0000);
+  Push(0x01f4); Push(0x0000);
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
@@ -164,7 +164,7 @@ void UNK_0xf06d() // UNK_0xf06d
 void UNK_0xf08f() // UNK_0xf08f
 {
   _at_CRS(); // @CRS
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   ON_3(); // ON_3
   SetColor("WHITE");
   SetColor("WHITE");
@@ -174,7 +174,7 @@ void UNK_0xf08f() // UNK_0xf08f
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
   Push(0xfffc);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _plus__ex_(); // +!
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
@@ -188,11 +188,11 @@ void UNK_0xf08f() // UNK_0xf08f
 
 void UNK_0xf0b9() // UNK_0xf0b9
 {
-  Push(pp__dash_AIN); // -AIN
+  Push(0x5c1e); // pointer to -AIN
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(Read16(sp)); // DUP
-  Push(pp__dash_AIN); // -AIN
+  Push(Read16(regsp)); // DUP
+  Push(0x5c1e); // pointer to -AIN
   Push(Read16(Pop())); // @
   _eq_(); // =
   SWAP(); // SWAP
@@ -220,13 +220,13 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop()+1); // 1+
   Push(0); // 0
   FILL_1(); // FILL_1
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   ON_3(); // ON_3
 
   label5:
   UNK_0xf08f(); // UNK_0xf08f
   _i_KEY(); // 'KEY
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x005a);
   Push(0x0080);
   WITHIN(); // WITHIN
@@ -263,7 +263,7 @@ void _ro__n_IN_do_() // (#IN$
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   PAD(); // PAD
   C_ex_(); // C!
   PAD(); // PAD
@@ -376,7 +376,7 @@ void _ro_0_do__do__do_() // (0$$$
 {
   Push(1); // 1
   _0MESS(); // 0MESS
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   OFF(); // OFF
   Push(1); // 1
   Push(0x0012);
@@ -385,7 +385,7 @@ void _ro_0_do__do__do_() // (0$$$
   _ex_CRS(); // !CRS
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0x09c4); Pust(0x0000);
+  Push(0x09c4); Push(0x0000);
   D_plus_(); // D+
 
   label1:
@@ -523,7 +523,7 @@ void UNK_0xf319() // UNK_0xf319
   Push(0x00b4);
   POS_dot_(); // POS.
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   ON_3(); // ON_3
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
@@ -554,7 +554,7 @@ void UNK_0xf319() // UNK_0xf319
 
   BEEPOFF(); // BEEPOFF
   Push(cc__7); // 7
-  Push(pp__n_AUX); // #AUX
+  Push(0x5d81); // pointer to #AUX
   _ex__3(); // !_3
 }
 
@@ -595,7 +595,7 @@ void UNK_0xf383() // UNK_0xf383
   Push(0x6400); // IFIELD(UNK_0xefd6)
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0080);
   Push(Pop() | Pop()); // OR
@@ -610,7 +610,7 @@ void UNK_0xf383() // UNK_0xf383
 
 void UNK_0xf39f() // UNK_0xf39f
 {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Pop();
   switch(Pop()) // EINDE
   {
@@ -649,7 +649,7 @@ void UNK_0xf39f() // UNK_0xf39f
   RRND(); // RRND
   _gt_(); // >
   if (Pop() == 0) goto label1;
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xf383(); // UNK_0xf383
   UNK_0xf319(); // UNK_0xf319
   Push(0); // 0
@@ -704,7 +704,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0x0080);
   Push(Pop() & Pop()); // AND
@@ -824,7 +824,7 @@ void UNK_0xf458() // UNK_0xf458
 void _eq_CARG() // =CARG
 {
   Push2Words("NULL");
-  Push(pp__10_star_END); // 10*END
+  Push(0x6106); // pointer to 10*END
   D_ex_(); // D!
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -871,7 +871,7 @@ void _eq_CARG() // =CARG
   Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
-  Push(pp__10_star_END); // 10*END
+  Push(0x6106); // pointer to 10*END
   D_ex_(); // D!
 
   label3:
@@ -899,12 +899,12 @@ void _eq_CARG() // =CARG
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   _dash_(); // -
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x6432); // IFIELD(UNK_0xefe0)
   _ex__3(); // !_3
   Push(0x000a);
   U_star_(); // U*
-  Push(pp__10_star_CARGO); // 10*CARGO
+  Push(0x60ca); // pointer to 10*CARGO
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }

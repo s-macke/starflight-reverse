@@ -2,8 +2,8 @@
 // store offset = 0xeb60
 // overlay size   = 0x0a00
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -251,8 +251,8 @@ void R_co_() // R,
 
 void UNK_0xeea9() // UNK_0xeea9
 {
-  Push(pp_UNK_0xeea5); // UNK_0xeea5
-  Push(Read16(sp)); // DUP
+  Push(0xeea5); // pointer to UNK_0xeea5
+  Push(Read16(regsp)); // DUP
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label1;
   ON_2(); // ON_2
@@ -390,7 +390,7 @@ void UNK_0xef59() // UNK_0xef59
 {
   Push(0x001c);
   _ro__ex_OLD_rc_(); // (!OLD)
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc_UNK_0xeb7e); // UNK_0xeb7e
   UNK_0xebbe(); // UNK_0xebbe
   _eq_(); // =
@@ -442,7 +442,7 @@ void HIMUS() // HIMUS
   UNK_0xef59(); // UNK_0xef59
   if (Pop() == 0) goto label1;
   _at_DS(); // @DS
-  Push(pp_UNK_0xebaa); // UNK_0xebaa
+  Push(0xebaa); // pointer to UNK_0xebaa
   Push(Read16(Pop())); // @
   Push(cc_MUSSEG); // MUSSEG
   Push(0); // 0
@@ -461,7 +461,7 @@ void HIMUS() // HIMUS
 
 void UNK_0xefd1() // UNK_0xefd1
 {
-  Push(pp_FONTSEG); // FONTSEG
+  Push(0x5410); // pointer to FONTSEG
   Push(Read16(Pop())); // @
   Push(0x008f);
   Func6("FILE-#R");
@@ -478,21 +478,21 @@ void UNK_0xefe3() // UNK_0xefe3
 {
   BMWIDE(); // BMWIDE
   Push(Read16(Pop())); // @
-  Push(pp_P_slash_B); // P/B
+  Push(0x5208); // pointer to P/B
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   _gt_R(); // >R
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   R_gt_(); // R>
   _slash_(); // /
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   BMBYTES(); // BMBYTES
   C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
-  Push(pp_PLZ); // PLZ
+  Push(0x8df9); // pointer to PLZ
   _ex__2(); // !_2
 }
 
@@ -503,7 +503,7 @@ void UNK_0xefe3() // UNK_0xefe3
 
 void UNK_0xf00b() // UNK_0xf00b
 {
-  Push(pp_XBUF_dash_SE); // XBUF-SE
+  Push(0x542b); // pointer to XBUF-SE
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   L_at_(); // L@
@@ -518,7 +518,7 @@ void UNK_0xf00b() // UNK_0xf00b
 
 void UNK_0xf01b() // UNK_0xf01b
 {
-  Push(pp_XBUF_dash_SE); // XBUF-SE
+  Push(0x542b); // pointer to XBUF-SE
   Push(Read16(Pop())); // @
   Push(0x000a);
   LC_at_(); // LC@
@@ -537,20 +537,20 @@ void UNK_0xf033() // UNK_0xf033
   UNK_0xf00b(); // UNK_0xf00b
   UNK_0xf01b(); // UNK_0xf01b
   UNK_0xefe3(); // UNK_0xefe3
-  Push(pp__ask_EGA); // ?EGA
+  Push(0x5f1b); // pointer to ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(0x000d);
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   _ex__2(); // !_2
   Push(2); // 2
-  Push(Read16(sp)); // DUP
-  Push(pp_DST); // DST
+  Push(Read16(regsp)); // DUP
+  Push(0x8de3); // pointer to DST
   _ex__2(); // !_2
   BMOFF(); // BMOFF
   _ex__2(); // !_2
   UNK_0xefd1(); // UNK_0xefd1
-  Push(pp_SEGME); // SEGME
+  Push(0x8def); // pointer to SEGME
   _ex__2(); // !_2
   UNK_0xefd1(); // UNK_0xefd1
   BMSEG(); // BMSEG
@@ -558,7 +558,7 @@ void UNK_0xf033() // UNK_0xf033
 
   label1:
   Push(0); // 0
-  Push(pp_BMAP); // BMAP
+  Push(0x506a); // pointer to BMAP
   Push(0x000c);
   Push(Pop() + Pop()); // +
   _ex__2(); // !_2
@@ -579,13 +579,13 @@ void UNK_0xf071() // UNK_0xf071
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   Push(Read16(Pop())); // @
-  Push(pp_DST); // DST
+  Push(0x8de3); // pointer to DST
   Push(Read16(Pop())); // @
   BMBYTES(); // BMBYTES
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0); // 0
 
   signed short int j = Pop();
@@ -594,22 +594,22 @@ void UNK_0xf071() // UNK_0xf071
   {
   _gt_PLANES(); // >PLANES
   Push(cc__4); // 4
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   _plus__ex__2(); // +!_2
   Push(1); // 1
-  Push(pp_DST); // DST
+  Push(0x8de3); // pointer to DST
   _plus__ex__2(); // +!_2
   j++;
   } while(j<jmax); // (LOOP) 0xfff0
 
   Push(Pop() + Pop()); // +
-  Push(pp_DST); // DST
+  Push(0x8de3); // pointer to DST
   _ex__2(); // !_2
   BMWIDE(); // BMWIDE
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
   Push(Pop() + Pop()); // +
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   _ex__2(); // !_2
   i++;
   } while(i<imax); // (LOOP) 0xffc8
@@ -636,12 +636,12 @@ void UNK_0xf0bf() // UNK_0xf0bf
 {
   BMSEG(); // BMSEG
   Push(Read16(Pop())); // @
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   Push(Read16(Pop())); // @
   LC_at_(); // LC@
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(1); // 1
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   _plus__ex__2(); // +!_2
 }
 
@@ -654,14 +654,14 @@ void UNK_0xf0d5() // UNK_0xf0d5
 {
   BMOFF(); // BMOFF
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
-  Push(pp_DST); // DST
+  Push(Read16(regsp)); // DUP
+  Push(0x8de3); // pointer to DST
   _ex__2(); // !_2
-  Push(pp_SRC); // SRC
+  Push(0x8dd9); // pointer to SRC
   _ex__2(); // !_2
   BMBYTES(); // BMBYTES
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop()>>1); // 2/
   BMBYTES(); // BMBYTES
@@ -674,7 +674,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
 
   label3:
   UNK_0xf0bf(); // UNK_0xf0bf
@@ -687,7 +687,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Pop()<<4); // 16*
   _gt_R(); // >R
   Push(Pop()-1); // 1-
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
   UNK_0xf0bf(); // UNK_0xf0bf
   Push(Pop()>>4); // 16/
@@ -710,16 +710,16 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Pop() | Pop()); // OR
   BMSEG(); // BMSEG
   Push(Read16(Pop())); // @
-  Push(pp_DST); // DST
+  Push(0x8de3); // pointer to DST
   Push(Read16(Pop())); // @
   LC_ex_(); // LC!
   Push(1); // 1
-  Push(pp_DST); // DST
+  Push(0x8de3); // pointer to DST
   _plus__ex__2(); // +!_2
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   i++;
@@ -759,7 +759,7 @@ void _ex_VPAL() // !VPAL
 void SETABLT() // SETABLT
 {
   UNK_0xf033(); // UNK_0xf033
-  Push(pp__ask_EGA); // ?EGA
+  Push(0x5f1b); // pointer to ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf071(); // UNK_0xf071
@@ -768,7 +768,7 @@ void SETABLT() // SETABLT
   goto label2;
 
   label1:
-  Push(pp_XBUF_dash_SE); // XBUF-SE
+  Push(0x542b); // pointer to XBUF-SE
   Push(Read16(Pop())); // @
   Push(0x000d);
 
@@ -822,7 +822,7 @@ void UNK_0xf209() // UNK_0xf209
 void UNK_0xf21d() // UNK_0xf21d
 {
   UNK_0xf209(); // UNK_0xf209
-  Push(pp_XBUF_dash_SE); // XBUF-SE
+  Push(0x542b); // pointer to XBUF-SE
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   SETABLT(); // SETABLT
@@ -840,7 +840,7 @@ void UNK_0xf21d() // UNK_0xf21d
   _ask_VGA(); // ?VGA
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  Push(pp_XBUF_dash_SE); // XBUF-SE
+  Push(0x542b); // pointer to XBUF-SE
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   SETABLT(); // SETABLT
@@ -931,7 +931,7 @@ void UNK_0xf2e6() // UNK_0xf2e6
   Push(cc__16K); // 16K
   Push(Pop()*2); // 2*
   Push(Pop()>>4); // 16/
-  Push(pp_UNK_0xf25d); // UNK_0xf25d
+  Push(0xf25d); // pointer to UNK_0xf25d
   _ex__2(); // !_2
 }
 
@@ -946,10 +946,10 @@ void UNK_0xf2f4() // UNK_0xf2f4
   _slash_(); // /
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
-  Push(pp_PARAS); // PARAS
+  Push(0xf275); // pointer to PARAS
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  Push(pp_UNK_0xf259); // UNK_0xf259
+  Push(0xf259); // pointer to UNK_0xf259
   _ex__2(); // !_2
 }
 
@@ -976,7 +976,7 @@ void UNK_0xf30c() // UNK_0xf30c
 
 void UNK_0xf320() // UNK_0xf320
 {
-  Push(pp_SYSK); // SYSK
+  Push(0x2ca8); // pointer to SYSK
   Push(Read16(Pop())); // @
   Push(0x0160);
   _st_(); // <
@@ -995,13 +995,13 @@ void UNK_0xf320() // UNK_0xf320
 
 void UNK_0xf358() // UNK_0xf358
 {
-  Push(pp_SYSK); // SYSK
+  Push(0x2ca8); // pointer to SYSK
   Push(Read16(Pop())); // @
   Push(0x0040);
   Push(Pop() * Pop()); // *
   OVER(); // OVER
   _dash_(); // -
-  Push(pp_UNK_0xf261); // UNK_0xf261
+  Push(0xf261); // pointer to UNK_0xf261
   _ex__2(); // !_2
   Push(0xc350);
   _at_DS(); // @DS
@@ -1024,14 +1024,14 @@ void UNK_0xf358() // UNK_0xf358
 
 void UNK_0xf388() // UNK_0xf388
 {
-  Push(pp_UNK_0xf25d); // UNK_0xf25d
+  Push(0xf25d); // pointer to UNK_0xf25d
   Push(Read16(Pop())); // @
-  Push(pp_UNK_0xf259); // UNK_0xf259
+  Push(0xf259); // pointer to UNK_0xf259
   Push(Read16(Pop())); // @
   _dash_(); // -
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   _0_gt_(); // 0>
-  Push(pp_UNK_0xf25d); // UNK_0xf25d
+  Push(0xf25d); // pointer to UNK_0xf25d
   Push(Read16(Pop())); // @
   Push(cc__16K); // 16K
   Push(Pop()>>4); // 16/
@@ -1047,13 +1047,13 @@ void UNK_0xf388() // UNK_0xf388
 
 void TANDY_dash_ALLOC() // TANDY-ALLOC
 {
-  Push(pp_TANDY); // TANDY
+  Push(0x4f60); // pointer to TANDY
   _099(); // 099
   UNK_0xf27f(); // UNK_0xf27f
   if (Pop() == 0) goto label1;
   _at_K(); // @K
-  Push(Read16(sp)); // DUP
-  Push(pp_SYSK); // SYSK
+  Push(Read16(regsp)); // DUP
+  Push(0x2ca8); // pointer to SYSK
   _ex__2(); // !_2
   UNK_0xf320(); // UNK_0xf320
   Push(0x0280);
@@ -1072,7 +1072,7 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
 
   label1:
   Push(0x0010);
-  Push(pp_TANDY); // TANDY
+  Push(0x4f60); // pointer to TANDY
   _ex__2(); // !_2
 }
 
@@ -1105,7 +1105,7 @@ void UNK_0xf3f2() // UNK_0xf3f2
 
 void UNK_0xf40e() // UNK_0xf40e
 {
-  Push(pp__ask_EGA); // ?EGA
+  Push(0x5f1b); // pointer to ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   _gt_HIDDEN(); // >HIDDEN
@@ -1117,7 +1117,7 @@ void UNK_0xf40e() // UNK_0xf40e
   label2:
   DARK(); // DARK
   UNK_0xf21d(); // UNK_0xf21d
-  Push(pp__ask_EGA); // ?EGA
+  Push(0x5f1b); // pointer to ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   SCR_dash_RES(); // SCR-RES
@@ -1204,13 +1204,13 @@ void SPLASH_dot_SCREEN() // SPLASH.SCREEN
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
-  Push(0xafc8); Pust(0x0000);
+  Push(0xafc8); Push(0x0000);
   UNK_0xf3f2(); // UNK_0xf3f2
   DARK(); // DARK
 
   label3:
   Push(0); // 0
-  Push(pp_BMAP); // BMAP
+  Push(0x506a); // pointer to BMAP
   Push(0x000d);
   Push(Pop() + Pop()); // +
   C_ex__2(); // C!_2

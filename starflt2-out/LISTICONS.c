@@ -2,8 +2,8 @@
 // store offset = 0xf2b0
 // overlay size   = 0x02b0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -38,12 +38,12 @@ void UNK_0xf2c6() // UNK_0xf2c6
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_CMAP); // CMAP
+  Push(0x699a); // pointer to CMAP
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_dash_PT); // TILE-PT
+  Push(0x5a9d); // pointer to TILE-PT
   _ex__2(); // !_2
   Push(0x0020);
   Push(i); // I
@@ -93,17 +93,17 @@ void UNK_0xf2c6() // UNK_0xf2c6
 void UNK_0xf36f() // UNK_0xf36f
 {
   Push(0x00be);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x0037);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _st__plus__ex__gt_(); // <+!>
   PRINT("KEY", 3); // (.")
   Push(0x000a);
@@ -142,12 +142,12 @@ void UNK_0xf3e6() // UNK_0xf3e6
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
@@ -157,7 +157,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   label1:
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
-  Push(pp_ABLT); // ABLT
+  Push(0x5a77); // pointer to ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
   i++;
@@ -174,10 +174,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x001b);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -214,19 +214,19 @@ void UNK_0xf45e() // UNK_0xf45e
   {
   Push(0x000a);
   _dash_(); // -
-  Push(Read16(sp)); // DUP
-  Push(pp_YBLT); // YBLT
+  Push(Read16(regsp)); // DUP
+  Push(0x5a3d); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _st__ex__gt_(); // <!>
-  Push(pp_ICON_h_); // ICON^
+  Push(0x5a27); // pointer to ICON^
   Push(Read16(Pop())); // @
   Push(i); // I
   Push(0x0012);
@@ -238,16 +238,16 @@ void UNK_0xf45e() // UNK_0xf45e
   PAD_v_16(); // PAD|16
   UNK_0xf3e6(); // UNK_0xf3e6
   Push(0x000c);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x002b);
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -259,7 +259,7 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x001b);
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
   } while(i<imax); // (LOOP) 0xff8c
@@ -275,14 +275,14 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void ICONS() // ICONS
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
-  Push(pp_ESC_dash_EN); // ESC-EN
+  Push(0x5ecd); // pointer to ESC-EN
   _099(); // 099
-  Push(pp_NOF); // NOF
+  Push(0xa489); // pointer to NOF
   ON_2(); // ON_2
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x5a84); // pointer to BLTSEG
   _ex__2(); // !_2
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
@@ -311,9 +311,9 @@ void ICONS() // ICONS
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf2c6(); // UNK_0xf2c6
   UNK_0xf418(); // UNK_0xf418
-  Push(pp_ESC_dash_EN); // ESC-EN
+  Push(0x5ecd); // pointer to ESC-EN
   ON_2(); // ON_2
-  Push(pp_NOF); // NOF
+  Push(0xa489); // pointer to NOF
   _099(); // 099
 }
 

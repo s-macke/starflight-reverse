@@ -2,8 +2,8 @@
 // store offset = 0xf290
 // overlay size   = 0x02d0
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -60,12 +60,12 @@ void altitude() // altitude
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_CMAP); // CMAP
+  Push(0x6a3f); // pointer to CMAP
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_dash_PTR); // TILE-PTR
+  Push(0x58cd); // pointer to TILE-PTR
   _ex__3(); // !_3
   Push(0x0021);
   Push(i); // I
@@ -93,17 +93,17 @@ void altitude() // altitude
 void ICON_dash_KEY() // ICON-KEY
 {
   Push(0x00be);
-  Push(pp_YBLT); // YBLT
+  Push(0x5863); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x0037);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _st__plus__ex__gt_(); // <+!>
   PRINT("KEY", 3); // (.")
   Push(0x000a);
@@ -142,18 +142,18 @@ void _dot_BLT() // .BLT
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(i); // I
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   _ask__gt_EGA(); // ?>EGA
-  Push(pp_COLOR); // COLOR
+  Push(0x55f2); // pointer to COLOR
   _st__ex__gt_(); // <!>
   Push(Pop()+1); // 1+
-  Push(pp_ABLT); // ABLT
+  Push(0x589d); // pointer to ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
   i++;
@@ -170,10 +170,10 @@ void _dot_BLT() // .BLT
 void PAUSE_dash_PAGE() // PAUSE-PAGE
 {
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5863); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x001b);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -197,29 +197,29 @@ void SEE_dash_BLTS() // SEE-BLTS
   {
   Push(0x000a);
   _dash_(); // -
-  Push(Read16(sp)); // DUP
-  Push(pp_YBLT); // YBLT
+  Push(Read16(regsp)); // DUP
+  Push(0x5863); // pointer to YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT
+  Push(0x5887); // pointer to LBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT
+  Push(0x5892); // pointer to WBLT
   _st__ex__gt_(); // <!>
   Push(0x003e);
   Push(i); // I
   _at_RECORD(); // @RECORD
   _dot_BLT(); // .BLT
   Push(0x000c);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
-  Push(pp_YBLT); // YBLT
+  Push(0x5863); // pointer to YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
@@ -227,7 +227,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(0x001b);
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
-  Push(pp_YBLT); // YBLT
+  Push(0x5863); // pointer to YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
   } while(i<imax); // (LOOP) 0xffae
@@ -256,10 +256,10 @@ void title() // title
 
 void ICONS() // ICONS
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   OFF(); // OFF
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x58aa); // pointer to BLTSEG
   _ex__3(); // !_3
   title(); // title
   Push(0x00b4);

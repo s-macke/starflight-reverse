@@ -2,8 +2,8 @@
 // store offset = 0xef40
 // overlay size   = 0x0620
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -81,10 +81,10 @@
 
 void UNK_0xef56() // UNK_0xef56
 {
-  Push(pp_COLOR); // COLOR
+  Push(0x5747); // pointer to COLOR
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+  Push(0x5dd4); // pointer to ?ON-PLA
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(h); // I
@@ -185,7 +185,7 @@ void UNK_0xef56() // UNK_0xef56
 
 void UNK_0xf00b() // UNK_0xf00b
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -198,7 +198,7 @@ void UNK_0xf00b() // UNK_0xf00b
 
 void UNK_0xf017() // UNK_0xf017
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
@@ -211,7 +211,7 @@ void UNK_0xf017() // UNK_0xf017
 
 void UNK_0xf023() // UNK_0xf023
 {
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
 }
 
@@ -273,17 +273,17 @@ void UNK_0xf05e() // UNK_0xf05e
 void UNK_0xf082() // UNK_0xf082
 {
   Push(1); // 1
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _plus__ex__2(); // +!_2
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   Push(Read16(Pop())); // @
-  Push(pp_WLINES); // WLINES
+  Push(0x5d92); // pointer to WLINES
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   _gt_(); // >
   if (Pop() == 0) return;
   UNK_0xef56(); // UNK_0xef56
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _099(); // 099
 }
 
@@ -328,7 +328,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 
 void UNK_0xf0bc() // UNK_0xf0bc
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x001c);
@@ -427,14 +427,14 @@ void UNK_0xf10e() // UNK_0xf10e
 void UNK_0xf199() // UNK_0xf199
 {
   UNK_0xf00b(); // UNK_0xf00b
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xefcb"); // from 'TRADERS     '
   _at__gt_C_plus_S(); // @>C+S
   CI(); // CI
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Push(pp__i__dot_HUFF); // '.HUFF
+  Push(0x5985); // pointer to '.HUFF
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(2); // 2
@@ -514,7 +514,7 @@ void _dot_RACE() // .RACE
   _dash_TRAILING(); // -TRAILING
   UNK_0xf0a2(); // UNK_0xf0a2
   ICLOSE(); // ICLOSE
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -798,7 +798,7 @@ void UNK_0xf3ac() // UNK_0xf3ac
 void UNK_0xf3d0() // UNK_0xf3d0
 {
   UNK_0xf0aa(); // UNK_0xf0aa
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+  Push(0x5dd4); // pointer to ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -813,7 +813,7 @@ void UNK_0xf3d0() // UNK_0xf3d0
   label2:
   _dot_TTY(); // .TTY
   Push(1); // 1
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _plus__ex__2(); // +!_2
   _dot_RACE(); // .RACE
   UNK_0xf0aa(); // UNK_0xf0aa
@@ -876,14 +876,14 @@ void UNK_0xf444() // UNK_0xf444
 
 void _dot_CULTURE() // .CULTURE
 {
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   SetColor("WHITE");
-  Push(pp_CTCOLOR); // CTCOLOR
+  Push(0x594b); // pointer to CTCOLOR
   _ex__2(); // !_2
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _099(); // 099
   UNK_0xf0aa(); // UNK_0xf0aa
   UNK_0xf023(); // UNK_0xf023
@@ -897,14 +897,14 @@ void _dot_CULTURE() // .CULTURE
   Push(Pop() & Pop()); // AND
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _099(); // 099
   UNK_0xf3d0(); // UNK_0xf3d0
   UNK_0xef56(); // UNK_0xef56
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _099(); // 099
   UNK_0xf412(); // UNK_0xf412
-  Push(pp_LINE_dash_CO); // LINE-CO
+  Push(0x5ee9); // pointer to LINE-CO
   _099(); // 099
   UNK_0xf023(); // UNK_0xf023
   LoadData("ATTITUDE"); // from 'TRADERS     '

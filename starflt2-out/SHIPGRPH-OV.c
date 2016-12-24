@@ -2,8 +2,8 @@
 // store offset = 0xecb0
 // overlay size   = 0x08b0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -242,7 +242,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() + Pop()); // +
   Push(0x65f2); // IFIELD(UNK_0xed2e)
   UNK_0xed65(); // UNK_0xed65
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(cc__9); // 9
   Push(Pop() * Pop()); // *
@@ -306,13 +306,13 @@ void _ro__dot_ACC_rc_() // (.ACC)
 {
   Push(0x65f4); // IFIELD(UNK_0xed33)
   UNK_0xed65(); // UNK_0xed65
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x6606); // IFIELD(UNK_0xed4c)
   _ex__2(); // !_2
-  Push(pp_UNK_0xee59); // UNK_0xee59
+  Push(0xee59); // pointer to UNK_0xee59
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp__dash_END); // -END
+  Push(0x5703); // pointer to -END
   _ex__2(); // !_2
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
@@ -407,8 +407,8 @@ void UNK_0xef3a() // UNK_0xef3a
   _dot_R(); // .R
   PRINT("M", 1); // (.")
   Push(cc__3); // 3
-  Push(Read16(sp)); // DUP
-  Push(pp_YBLT); // YBLT
+  Push(Read16(regsp)); // DUP
+  Push(0x5a3d); // pointer to YBLT
   _plus__ex__2(); // +!_2
   _dot_(); // .
   _ex_CRS(); // !CRS
@@ -423,52 +423,52 @@ void UNK_0xefb0() // UNK_0xefb0
 {
   SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(0x0011);
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
   Push(0x0020);
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
   Push(0x0055);
   Push(0x006a);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xed71); // UNK_0xed71
-  Push(pp_ABLT); // ABLT
+  Push(0xed71); // pointer to UNK_0xed71
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
   Push(0x0055);
   Push(0x004f);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xedb7); // UNK_0xedb7
-  Push(pp_ABLT); // ABLT
+  Push(0xedb7); // pointer to UNK_0xedb7
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
   Push(0x000a);
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
   Push(0x0028);
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
   Push(0x0065);
   Push(0x0059);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xedfd); // UNK_0xedfd
-  Push(pp_ABLT); // ABLT
+  Push(0xedfd); // pointer to UNK_0xedfd
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
   Push(0x0016);
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
   Push(0x000c);
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
   Push(0x008d);
   Push(0x005f);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xee31); // UNK_0xee31
-  Push(pp_ABLT); // ABLT
+  Push(0xee31); // pointer to UNK_0xee31
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
 }
@@ -507,7 +507,7 @@ void UNK_0xf046() // UNK_0xf046
   SetColor("RED");
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(0x0053);
   Push(0x003c);
@@ -557,22 +557,22 @@ void UNK_0xf046() // UNK_0xf046
 
 void UNK_0xf0e0() // UNK_0xf0e0
 {
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
+  Push(0xf0dc); // pointer to UNK_0xf0dc
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
-  Push(pp_UNK_0xf0b8); // UNK_0xf0b8
+  Push(Read16(regsp)); // DUP
+  Push(0xf0b8); // pointer to UNK_0xf0b8
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _ex__2(); // !_2
-  Push(pp_UNK_0xf0ca); // UNK_0xf0ca
+  Push(0xf0ca); // pointer to UNK_0xf0ca
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _ex__2(); // !_2
   BLT(); // BLT
   Push(1); // 1
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
+  Push(0xf0dc); // pointer to UNK_0xf0dc
   _plus__ex__2(); // +!_2
 }
 
@@ -583,7 +583,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
 
 void UNK_0xf106() // UNK_0xf106
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0); // 0
 
@@ -606,21 +606,21 @@ void UNK_0xf106() // UNK_0xf106
 void _ro__dot_PODS_rc_() // (.PODS)
 {
   _at_CRS(); // @CRS
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
+  Push(0xf0dc); // pointer to UNK_0xf0dc
   _099(); // 099
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x5a84); // pointer to BLTSEG
   _ex__2(); // !_2
-  Push(pp_UNK_0xee55); // UNK_0xee55
-  Push(pp_ABLT); // ABLT
+  Push(0xee55); // pointer to UNK_0xee55
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   Push(2); // 2
-  Push(Read16(sp)); // DUP
-  Push(pp_LBLT); // LBLT
+  Push(Read16(regsp)); // DUP
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
@@ -641,7 +641,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x0010);
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
+  Push(0xf0dc); // pointer to UNK_0xf0dc
   Push(Read16(Pop())); // @
   _dash_(); // -
   UNK_0xf106(); // UNK_0xf106
@@ -676,26 +676,26 @@ void UNK_0xf192() // UNK_0xf192
   SetColor("LT-BLUE");
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(cc__3); // 3
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
   Push(cc__9); // 9
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
   Push(0x0060);
   Push(0x006b);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xf17c); // UNK_0xf17c
-  Push(pp_ABLT); // ABLT
+  Push(0xf17c); // pointer to UNK_0xf17c
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
   Push(0x0040);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _ex__2(); // !_2
-  Push(pp_UNK_0xf182); // UNK_0xf182
-  Push(pp_ABLT); // ABLT
+  Push(0xf182); // pointer to UNK_0xf182
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   BLT(); // BLT
 }
@@ -718,16 +718,16 @@ void UNK_0xf1d4() // UNK_0xf1d4
 
   label2:
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT
+  Push(0x5a61); // pointer to LBLT
   _ex__2(); // !_2
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT
+  Push(0x5a6c); // pointer to WBLT
   _ex__2(); // !_2
-  Push(pp_UNK_0xf188); // UNK_0xf188
-  Push(pp_ABLT); // ABLT
+  Push(0xf188); // pointer to UNK_0xf188
+  Push(0x5a77); // pointer to ABLT
   _ex__2(); // !_2
   Push(0x006b);
   Push(0x0058);
@@ -745,7 +745,7 @@ void _ro__dot_SHIP_rc_() // (.SHIP)
 {
   _at_CRS(); // @CRS
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG
+  Push(0x5a84); // pointer to BLTSEG
   _ex__2(); // !_2
   UNK_0xefb0(); // UNK_0xefb0
   UNK_0xf046(); // UNK_0xf046
@@ -859,7 +859,7 @@ void UNK_0xf277() // UNK_0xf277
   POS_dot_(); // POS.
   PRINT("SHIP", 4); // (.")
   Push(cc__6); // 6
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _plus__ex__2(); // +!_2
   PRINT("CONFIGURATION", 13); // (.")
 }
@@ -872,7 +872,7 @@ void UNK_0xf277() // UNK_0xf277
 void UNK_0xf36a() // UNK_0xf36a
 {
   Push(0x0056);
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _ex__2(); // !_2
 }
 

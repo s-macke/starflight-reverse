@@ -2,8 +2,8 @@
 // store offset = 0xf1f0
 // overlay size   = 0x0370
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -78,10 +78,10 @@ void UNK_0xf22a() // UNK_0xf22a
 void UNK_0xf234() // UNK_0xf234
 {
   Push(0x003a);
-  Push(pp_FILE_n_); // FILE#
+  Push(0x548f); // pointer to FILE#
   _ex__3(); // !_3
   Push(cc__3); // 3
-  Push(pp_RECORD_n_); // RECORD#
+  Push(0x549d); // pointer to RECORD#
   _ex__3(); // !_3
 }
 
@@ -148,7 +148,7 @@ void UNK_0xf272() // UNK_0xf272
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(pp__ask_NEB); // ?NEB
+  Push(0x5cfc); // pointer to ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
 
@@ -176,7 +176,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
   UNK_0x3f3b("SHIELDS ARE DOWN");
   _dot_TTY(); // .TTY
-  Push(pp_BTN_dash_REC); // BTN-REC
+  Push(0x5cb1); // pointer to BTN-REC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
@@ -186,7 +186,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   _dot_ABTN(); // .ABTN
 
   label2:
-  Push(pp__ask_SUP); // ?SUP
+  Push(0x5fa9); // pointer to ?SUP
   OFF(); // OFF
 }
 
@@ -218,7 +218,7 @@ void UNK_0xf359() // UNK_0xf359
   Push(cc__3); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
-  Push(pp__ask_SUP); // ?SUP
+  Push(0x5fa9); // pointer to ?SUP
   ON_3(); // ON_3
 }
 
@@ -274,7 +274,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(0); // 0
 
   label3:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label4;
   UNK_0xf272(); // UNK_0xf272
 
@@ -292,7 +292,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(0); // 0
 
   label6:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label7;
   UNK_0xf272(); // UNK_0xf272
 
@@ -371,9 +371,9 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   goto label2;
 
   label1:
-  Push(pp__ask_NEB); // ?NEB
+  Push(0x5cfc); // pointer to ?NEB
   Push(Read16(Pop())); // @
-  Push(pp__10_star_END); // 10*END
+  Push(0x6106); // pointer to 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR

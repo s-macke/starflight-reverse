@@ -2,8 +2,8 @@
 // store offset = 0xed50
 // overlay size   = 0x0810
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -78,7 +78,7 @@ void UNK_0xed9e() // UNK_0xed9e
 
 void UNK_0xeda6() // UNK_0xeda6
 {
-  Push(pp_TVEHICL); // TVEHICL
+  Push(0x6461); // pointer to TVEHICL
   _at__gt_C_plus_S(); // @>C+S
 }
 
@@ -134,14 +134,14 @@ void UNK_0xedba() // UNK_0xedba
 
 void _ask_ETIME() // ?ETIME
 {
-  Push(pp_ETIME); // ETIME
+  Push(0x638c); // pointer to ETIME
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp__n_ETIME); // #ETIME
+  Push(0x6a31); // pointer to #ETIME
   _2_at_(); // 2@
-  Push(pp_ETIME); // ETIME
+  Push(0x638c); // pointer to ETIME
   Push(Read16(Pop())); // @
   Push(0x03e8);
   M_star_(); // M*
@@ -173,18 +173,18 @@ void UNK_0xee1a() // UNK_0xee1a
   ROT(); // ROT
   SWAP(); // SWAP
   _dash_(); // -
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label2;
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
   label2:
   _gt_R(); // >R
   _dash_(); // -
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   ABS(); // ABS
   _slash_(); // /
 
@@ -199,16 +199,16 @@ void UNK_0xee1a() // UNK_0xee1a
 
 void UNK_0xee58() // UNK_0xee58
 {
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__7); // 7
   Push(0x000a);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   Push(cc__7); // 7
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   Push(0x001e);
   MOD(); // MOD
@@ -238,7 +238,7 @@ void UNK_0xee58() // UNK_0xee58
 
 void UNK_0xee9a() // UNK_0xee9a
 {
-  Push(pp__n_STORM); // #STORM
+  Push(0x5c80); // pointer to #STORM
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   Push(0x000b);
@@ -250,7 +250,7 @@ void UNK_0xee9a() // UNK_0xee9a
   Push(0x001e);
   _st_(); // <
   if (Pop() == 0) return;
-  Push(pp__i_INJURE); // 'INJURE
+  Push(0x5569); // pointer to 'INJURE
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
 }
@@ -267,11 +267,11 @@ void UNK_0xee9a() // UNK_0xee9a
 
 void _ask__dot_STORM() // ?.STORM
 {
-  Push(pp__n_STORM); // #STORM
+  Push(0x5c80); // pointer to #STORM
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _gt_(); // >
-  Push(pp_STORM); // STORM
+  Push(0x5c43); // pointer to STORM
   Push(Read16(Pop())); // @
   UNK_0xed9e(); // UNK_0xed9e
   Push(Pop() & Pop()); // AND
@@ -299,10 +299,10 @@ void UNK_0xeefe() // UNK_0xeefe
   MIN(); // MIN
   Push(0); // 0
   MAX(); // MAX
-  Push(pp_STORM); // STORM
+  Push(0x5c43); // pointer to STORM
   _ex__2(); // !_2
   Push(0x0064);
-  Push(pp__pe_EFF); // %EFF
+  Push(0x5c37); // pointer to %EFF
   _st__ex__gt_(); // <!>
 }
 
@@ -314,24 +314,24 @@ void UNK_0xeefe() // UNK_0xeefe
 
 void DO_dash_STORM() // DO-STORM
 {
-  Push(pp_ATMO); // ATMO
+  Push(0x55bb); // pointer to ATMO
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(pp_STORM); // STORM
+  Push(0x5c43); // pointer to STORM
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   Push(cc__dash_1); // -1
-  Push(pp_STORM); // STORM
+  Push(0x5c43); // pointer to STORM
   _plus__ex__2(); // +!_2
   _ask__dot_STORM(); // ?.STORM
   goto label3;
 
   label2:
-  Push(pp__ro_PLANET); // (PLANET
+  Push(0x64b1); // pointer to (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xedc9"); // from 'PLANET      '
   Push(Read16(Pop())); // @
-  Push(pp__pe_STORM); // %STORM
+  Push(0xeecf); // pointer to %STORM
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
@@ -339,7 +339,7 @@ void DO_dash_STORM() // DO-STORM
   RRND(); // RRND
   _gt_(); // >
   if (Pop() == 0) goto label4;
-  Push(pp__i_STORM); // 'STORM
+  Push(0x5c5b); // pointer to 'STORM
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   goto label5;
@@ -348,7 +348,7 @@ void DO_dash_STORM() // DO-STORM
   Push(1); // 1
   Push(cc__4); // 4
   RRND(); // RRND
-  Push(pp__n_STORM); // #STORM
+  Push(0x5c80); // pointer to #STORM
   _ex__2(); // !_2
   Push(0xcdc0);
   MODULE(); // MODULE
@@ -362,12 +362,12 @@ void DO_dash_STORM() // DO-STORM
   return;
 
   label1:
-  Push(pp__n_STORM); // #STORM
+  Push(0x5c80); // pointer to #STORM
   _099(); // 099
-  Push(pp_STORM); // STORM
+  Push(0x5c43); // pointer to STORM
   _099(); // 099
   Push(0x0064);
-  Push(pp__pe_EFF); // %EFF
+  Push(0x5c37); // pointer to %EFF
   _st__ex__gt_(); // <!>
 }
 
@@ -378,7 +378,7 @@ void DO_dash_STORM() // DO-STORM
 
 void UNK_0xefa3() // UNK_0xefa3
 {
-  Push(pp_STAGES); // STAGES
+  Push(0x625c); // pointer to STAGES
 }
 
 
@@ -388,7 +388,7 @@ void UNK_0xefa3() // UNK_0xefa3
 
 void UNK_0xefa9() // UNK_0xefa9
 {
-  Push(pp_STAGES); // STAGES
+  Push(0x625c); // pointer to STAGES
   Push(Pop()+2); // 2+
 }
 
@@ -399,7 +399,7 @@ void UNK_0xefa9() // UNK_0xefa9
 
 void UNK_0xefb1() // UNK_0xefb1
 {
-  Push(pp_STAGES); // STAGES
+  Push(0x625c); // pointer to STAGES
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
 }
@@ -411,7 +411,7 @@ void UNK_0xefb1() // UNK_0xefb1
 
 void UNK_0xefbb() // UNK_0xefbb
 {
-  Push(pp_STAGES); // STAGES
+  Push(0x625c); // pointer to STAGES
   Push(cc__8); // 8
   Push(Pop() + Pop()); // +
 }
@@ -424,21 +424,21 @@ void UNK_0xefbb() // UNK_0xefbb
 
 void UNK_0xefd1() // UNK_0xefd1
 {
-  Push(pp_HAZE); // HAZE
+  Push(0x623f); // pointer to HAZE
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(pp_STAR_dash_HR); // STAR-HR
+  Push(0x5ff4); // pointer to STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0aaa);
   Push(Pop() * Pop()); // *
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   D_st_(); // D<
   OVER(); // OVER
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
   OVER(); // OVER
   ON_2(); // ON_2
@@ -476,7 +476,7 @@ void UNK_0xf00d() // UNK_0xf00d
 
   label1:
   UNK_0xefa9(); // UNK_0xefa9
-  Push(0xbff4); Pust(0x0000);
+  Push(0xbff4); Push(0x0000);
   UNK_0xefd1(); // UNK_0xefd1
   if (Pop() == 0) goto label2;
   Push(2); // 2
@@ -484,7 +484,7 @@ void UNK_0xf00d() // UNK_0xf00d
 
   label2:
   UNK_0xefb1(); // UNK_0xefb1
-  Push(0x7fe8); Pust(0x0001);
+  Push(0x7fe8); Push(0x0001);
   UNK_0xefd1(); // UNK_0xefd1
   if (Pop() == 0) goto label3;
   Push(cc__4); // 4
@@ -492,7 +492,7 @@ void UNK_0xf00d() // UNK_0xf00d
 
   label3:
   UNK_0xefbb(); // UNK_0xefbb
-  Push(0xffe0); Pust(0x0001);
+  Push(0xffe0); Push(0x0001);
   UNK_0xefd1(); // UNK_0xefd1
   if (Pop() == 0) return;
   Push(cc__5); // 5
@@ -530,7 +530,7 @@ void FADE() // FADE
   Push(0xc5da);
   MODULE(); // MODULE
   Push2Words("NULL");
-  Push(pp_HAZE); // HAZE
+  Push(0x623f); // pointer to HAZE
   D_ex_(); // D!
   Push(0x0fa0);
   MS(); // MS
@@ -553,16 +553,16 @@ void UNK_0xf0e2() // UNK_0xf0e2
 {
   UNK_0xf06f(); // UNK_0xf06f
   if (Pop() == 0) return;
-  Push(pp_STAR_dash_HR); // STAR-HR
+  Push(0x5ff4); // pointer to STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0aaa);
   Push(Pop() * Pop()); // *
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
-  Push(pp_HAZE); // HAZE
+  Push(0x623f); // pointer to HAZE
   _2_at_(); // 2@
   D_dash_(); // D-
-  Push(0x3fdc); Pust(0x0002);
+  Push(0x3fdc); Push(0x0002);
   D_gt_(); // D>
   if (Pop() == 0) return;
   FADE(); // FADE
@@ -576,9 +576,9 @@ void UNK_0xf0e2() // UNK_0xf0e2
 
 void _dot_STARDATE() // .STARDATE
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   Push(Read16(Pop())); // @
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(0x0074);
   Push(0x00b2);
@@ -588,11 +588,11 @@ void _dot_STARDATE() // .STARDATE
   POLY_dash_ER(); // POLY-ER
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -604,7 +604,7 @@ void _dot_STARDATE() // .STARDATE
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label2;
@@ -614,7 +614,7 @@ void _dot_STARDATE() // .STARDATE
   Push(0); // 0
   _dot_R(); // .R
   PRINT("-", 1); // (.")
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x000a);
   _st_(); // <
   if (Pop() == 0) goto label3;
@@ -632,7 +632,7 @@ void _dot_STARDATE() // .STARDATE
   PRINT(" ????", 5); // (.")
 
   label4:
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _st__ex__gt_(); // <!>
   UNK_0xee58(); // UNK_0xee58
   _ask_ETIME(); // ?ETIME
@@ -645,9 +645,9 @@ void _dot_STARDATE() // .STARDATE
 
 void UNK_0xf1ac() // UNK_0xf1ac
 {
-  Push(pp__n_STORM); // #STORM
+  Push(0x5c80); // pointer to #STORM
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__4); // 4
   _st_(); // <
   SWAP(); // SWAP
@@ -792,14 +792,14 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
   Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   U_star_(); // U*
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -876,7 +876,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -893,12 +893,12 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0064);
   Push(0x782f);
   _star__slash_(); // */
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   _0_gt_(); // 0>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Pop(); // DROP
-  Push(pp_COLOR); // COLOR
+  Push(0x5747); // pointer to COLOR
   Push(Read16(Pop())); // @
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
@@ -918,10 +918,10 @@ void _dot_ENERGY() // .ENERGY
   Push(cc__3); // 3
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  Push(pp__pe_EFF); // %EFF
+  Push(0x5c37); // pointer to %EFF
   Push(Read16(Pop())); // @
   Push(0x0064);
-  Push(pp_E_slash_M); // E/M
+  Push(0x5c65); // pointer to E/M
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
@@ -948,11 +948,11 @@ void _dot_CARGO() // .CARGO
   Push(cc__3); // 3
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
-  Push(pp_TV_dash_HOLD); // TV-HOLD
+  Push(0x6471); // pointer to TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65f2); // IFIELD(UNK_0xedc4)
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
   MAX(); // MAX
@@ -996,7 +996,7 @@ void UNK_0xf451() // UNK_0xf451
 
 void UNK_0xf479() // UNK_0xf479
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1020,7 +1020,7 @@ void UNK_0xf479() // UNK_0xf479
 
 void UNK_0xf49d() // UNK_0xf49d
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
@@ -1054,8 +1054,8 @@ void _dot_WHERE() // .WHERE
   POS_dot_(); // POS.
   UNK_0xedba(); // UNK_0xedba
   UNK_0xf451(); // UNK_0xf451
-  Push(Read16(sp)); // DUP
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
+  Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label1;
   Push(-Pop()); // NEGATE
@@ -1065,8 +1065,8 @@ void _dot_WHERE() // .WHERE
   _dot_R(); // .R
   UNK_0xf49d(); // UNK_0xf49d
   PRINT(" * ", 3); // (.")
-  Push(Read16(sp)); // DUP
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
+  Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
   if (Pop() == 0) goto label2;
   Push(-Pop()); // NEGATE
@@ -1097,12 +1097,12 @@ void _dot_DISTANCE() // .DISTANCE
 
 void _dot_STATS() // .STATS
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
-  Push(pp_HAZE); // HAZE
+  Push(0x623f); // pointer to HAZE
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -1116,7 +1116,7 @@ void _dot_STATS() // .STATS
   _dot_CARGO(); // .CARGO
   _dot_DISTANCE(); // .DISTANCE
   R_gt_(); // R>
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _ex__2(); // !_2
 }
 

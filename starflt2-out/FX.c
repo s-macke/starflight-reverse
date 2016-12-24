@@ -2,8 +2,8 @@
 // store offset = 0xf060
 // overlay size   = 0x0500
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -70,7 +70,7 @@ unsigned char UNK_0xf08c[2] = {0x3a, 0x20}; // UNK_0xf08c
 
 void UNK_0xf07e() // UNK_0xf07e
 {
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf076"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
@@ -89,7 +89,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf090() // UNK_0xf090
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   _eq_(); // =
@@ -107,7 +107,7 @@ void UNK_0xf090() // UNK_0xf090
 
 void UNK_0xf0bb() // UNK_0xf0bb
 {
-  Push(pp_A_dash_POSTU); // A-POSTU
+  Push(0x5654); // pointer to A-POSTU
   Push(Read8(Pop())&0xFF); // C@
   Pop();
   switch(Pop()) // N>STAT
@@ -138,7 +138,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 
 void UNK_0xf0c5() // UNK_0xf0c5
 {
-  Push(pp_PATIENC); // PATIENC
+  Push(0x629b); // pointer to PATIENC
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _gt_(); // >
@@ -167,7 +167,7 @@ void UNK_0xf0d9() // UNK_0xf0d9
 
 void UNK_0xf0e3() // UNK_0xf0e3
 {
-  Push(pp_PATIENC); // PATIENC
+  Push(0x629b); // pointer to PATIENC
   Push(Read16(Pop())); // @
   Push(2); // 2
   _gt_(); // >
@@ -183,7 +183,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
 
 void UNK_0xf0f5() // UNK_0xf0f5
 {
-  Push(pp_PATIENC); // PATIENC
+  Push(0x629b); // pointer to PATIENC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _st_(); // <
@@ -251,7 +251,7 @@ void UNK_0xf14f() // UNK_0xf14f
 {
   PRINT("GLOWING", 7); // (.")
   Push(cc__4); // 4
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _plus__ex__2(); // +!_2
 }
 
@@ -310,8 +310,8 @@ void UNK_0xf18c() // UNK_0xf18c
 
 void UNK_0xf1bc() // UNK_0xf1bc
 {
-  Push(Read16(sp)); // DUP
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x00c8);
   _st_(); // <
   SWAP(); // SWAP
@@ -320,7 +320,7 @@ void UNK_0xf1bc() // UNK_0xf1bc
   Push(Pop() & Pop()); // AND
   _gt_R(); // >R
   OVER(); // OVER
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x00c8);
   _st_(); // <
   SWAP(); // SWAP
@@ -358,7 +358,7 @@ void UNK_0xf1ee() // UNK_0xf1ee
 
 void UNK_0xf20a() // UNK_0xf20a
 {
-  Push(pp__ro_AORIGI); // (AORIGI
+  Push(0x64f1); // pointer to (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0013);
   _eq_SPECIE(); // =SPECIE
@@ -388,7 +388,7 @@ void PSYCH() // PSYCH
   if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
   UNK_0xf13d(); // UNK_0xf13d
-  Push(pp_UNK_0xf08c); // UNK_0xf08c
+  Push(0xf08c); // pointer to UNK_0xf08c
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -397,8 +397,8 @@ void PSYCH() // PSYCH
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf13d(); // UNK_0xf13d
-  Push(Read16(sp)); // DUP
-  Push(pp_UNK_0xf08c); // UNK_0xf08c
+  Push(Read16(regsp)); // DUP
+  Push(0xf08c); // pointer to UNK_0xf08c
   _ex__2(); // !_2
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
@@ -542,7 +542,7 @@ void UNK_0xf316() // UNK_0xf316
 
 void UNK_0xf322() // UNK_0xf322
 {
-  Push(pp_LSCAN); // LSCAN
+  Push(0x66f9); // pointer to LSCAN
   Push(Pop() + Pop()); // +
 }
 
@@ -573,33 +573,33 @@ void UNK_0xf32a() // UNK_0xf32a
   UNK_0xf322(); // UNK_0xf322
   _ex__2(); // !_2
   Push(2); // 2
-  Push(pp__n_IN); // #IN
+  Push(0x57bf); // pointer to #IN
   _ex__2(); // !_2
   Push(0); // 0
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_VIN); // VIN
+  Push(0x57d4); // pointer to VIN
   _ex__2(); // !_2
   Push(0x0014);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_VOUT); // VOUT
+  Push(0x57df); // pointer to VOUT
   _ex__2(); // !_2
   Push(0x0028);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_OIN); // OIN
+  Push(0x57e9); // pointer to OIN
   _ex__2(); // !_2
   Push(0x003c);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_OOUT); // OOUT
+  Push(0x57f4); // pointer to OOUT
   _ex__2(); // !_2
-  Push(pp__ask_OPEN); // ?OPEN
+  Push(0x5854); // pointer to ?OPEN
   ON_2(); // ON_2
   CLIPPER(); // CLIPPER
-  Push(pp__n_IN); // #IN
+  Push(0x57bf); // pointer to #IN
   Push(Read16(Pop())); // @
-  Push(pp__ask_OPEN); // ?OPEN
+  Push(0x5854); // pointer to ?OPEN
   _099(); // 099
   if (Pop() == 0) goto label2;
-  Push(pp_VIN); // VIN
+  Push(0x57d4); // pointer to VIN
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(h); // I
@@ -663,7 +663,7 @@ void UNK_0xf3de() // UNK_0xf3de
 {
   _gt_R(); // >R
   Push(h); // I
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) goto label1;
@@ -759,13 +759,13 @@ void UNK_0xf48c() // UNK_0xf48c
   _gt_R(); // >R
   _gt_R(); // >R
   _at_CRS(); // @CRS
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
   _dash_(); // -
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   Push(Read16(Pop())); // @
   Push(2); // 2
   _dash_(); // -
@@ -791,7 +791,7 @@ void UNK_0xf4be() // UNK_0xf4be
   UNK_0xf2c4(); // UNK_0xf2c4
   Push(0x0012);
   _dash_TRAILING(); // -TRAILING
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Pop()>>1); // 2/
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
@@ -800,7 +800,7 @@ void UNK_0xf4be() // UNK_0xf4be
   _dash_(); // -
   Push(0x00c4);
   POS_dot_(); // POS.
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   SetColor("BLACK");
   UNK_0xf48c(); // UNK_0xf48c
   SetColor("YELLOW");
@@ -846,7 +846,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
   Push(Pop()+1); // 1+
   UNK_0xf3de(); // UNK_0xf3de
   Push(i); // I
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   UNK_0xf3de(); // UNK_0xf3de
@@ -870,9 +870,9 @@ void UNK_0xf4ec() // UNK_0xf4ec
 
 void _dot_TMAP() // .TMAP
 {
-  Push(pp_TMAP); // TMAP
+  Push(0x62a6); // pointer to TMAP
   _at__gt_C_plus_S(); // @>C+S
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR

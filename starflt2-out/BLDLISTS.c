@@ -2,8 +2,8 @@
 // store offset = 0xeb70
 // overlay size   = 0x09f0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -246,7 +246,7 @@ const unsigned short int cc_UNK_0xeb96 = 0x0044; // UNK_0xeb96
 
 void UNK_0xec6c() // UNK_0xec6c
 {
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   Push(0x002d);
   _slash_(); // /
@@ -259,7 +259,7 @@ void UNK_0xec6c() // UNK_0xec6c
 
 void UNK_0xec7a() // UNK_0xec7a
 {
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
 }
 
@@ -270,7 +270,7 @@ void UNK_0xec7a() // UNK_0xec7a
 
 void UNK_0xec82() // UNK_0xec82
 {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(Pop()>>1); // 2/
   Push(0); // 0
   SWAP(); // SWAP
@@ -295,11 +295,11 @@ void UNK_0xec92() // UNK_0xec92
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0032);
   Push(Pop() * Pop()); // *
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xec82(); // UNK_0xec82
   LoadData("UNK_0xec46"); // from 'TRADERS     '
   C_ex__2(); // C!_2
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xec82(); // UNK_0xec82
   LoadData("UNK_0xec4e"); // from 'TRADERS     '
   C_ex__2(); // C!_2
@@ -400,9 +400,9 @@ void UNK_0xed70() // UNK_0xed70
 {
   _gt_C_plus_S(); // >C+S
   Push(0x65ec); // IFIELD(PHRASE$)
-  Push(pp_LSCAN); // LSCAN
+  Push(0x66f9); // pointer to LSCAN
   _do__ex_(); // $!
-  Push(pp_LSCAN); // LSCAN
+  Push(0x66f9); // pointer to LSCAN
   COUNT(); // COUNT
   ICLOSE(); // ICLOSE
 }
@@ -487,10 +487,10 @@ void UNK_0xee06() // UNK_0xee06
 
 void UNK_0xee31() // UNK_0xee31
 {
-  Push(Read16(sp)); // DUP
-  Push(pp_GLOBALS); // GLOBALS
+  Push(Read16(regsp)); // DUP
+  Push(0x5b49); // pointer to GLOBALS
   _ex__2(); // !_2
-  Push(pp_SEED_3); // SEED_3
+  Push(0x4b9c); // pointer to SEED_3
   _ex__2(); // !_2
 }
 
@@ -505,7 +505,7 @@ void UNK_0xee3f() // UNK_0xee3f
   _at_INST_dash_S(); // @INST-S
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
 }
@@ -531,7 +531,7 @@ void UNK_0xee57() // UNK_0xee57
   LoadData("UNK_0xebbe"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Push(pp_UNK_0xee23); // UNK_0xee23
+  Push(0xee23); // pointer to UNK_0xee23
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
 }
@@ -547,7 +547,7 @@ void UNK_0xee69() // UNK_0xee69
   LoadData("UNK_0xebc6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Push(pp_UNK_0xee1c); // UNK_0xee1c
+  Push(0xee1c); // pointer to UNK_0xee1c
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
 }
@@ -621,7 +621,7 @@ void UNK_0xee99() // UNK_0xee99
 
 void UNK_0xeec1() // UNK_0xeec1
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(cc_UNK_0xeb8e); // UNK_0xeb8e
   SWAP(); // SWAP
@@ -677,7 +677,7 @@ void UNK_0xef03() // UNK_0xef03
   UNK_0xec7a(); // UNK_0xec7a
   LoadData("UNK_0xebc6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_UNK_0xee2a); // UNK_0xee2a
+  Push(0xee2a); // pointer to UNK_0xee2a
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
@@ -723,7 +723,7 @@ void UNK_0xef03() // UNK_0xef03
 
 void UNK_0xef4f() // UNK_0xef4f
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(cc_UNK_0xeb8e); // UNK_0xeb8e
   SWAP(); // SWAP
@@ -758,7 +758,7 @@ void UNK_0xef67() // UNK_0xef67
 
 void UNK_0xef7b() // UNK_0xef7b
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(cc_UNK_0xeb96); // UNK_0xeb96
   SWAP(); // SWAP
@@ -799,7 +799,7 @@ void UNK_0xefad() // UNK_0xefad
   UNK_0xec7a(); // UNK_0xec7a
   LoadData("UNK_0xebc6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_UNK_0xee2a); // UNK_0xee2a
+  Push(0xee2a); // pointer to UNK_0xee2a
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()>>1); // 2/
@@ -1026,7 +1026,7 @@ void UNK_0xf28d() // UNK_0xf28d
 {
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(0x5b65); Pust(0x0002);
+  Push(0x5b65); Push(0x0002);
   UNK_0xed70(); // UNK_0xed70
   _dot_TTY(); // .TTY
   Push(2); // 2
@@ -1045,7 +1045,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
-  Push(0x5b8f); Pust(0x0002);
+  Push(0x5b8f); Push(0x0002);
   UNK_0xed70(); // UNK_0xed70
   _dot_TTY(); // .TTY
 }
@@ -1116,14 +1116,14 @@ void UNK_0xf31b() // UNK_0xf31b
 
 void UNK_0xf33b() // UNK_0xf33b
 {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__7); // 7
   Push(0x000a);
   WITHIN(); // WITHIN
   if (Pop() == 0) return;
   Pop(); // DROP
   Push(cc__7); // 7
-  Push(pp_STARDAT); // STARDAT
+  Push(0x6002); // pointer to STARDAT
   Push(Read16(Pop())); // @
   Push(0x001e);
   MOD(); // MOD
@@ -1145,14 +1145,14 @@ void UNK_0xf33b() // UNK_0xf33b
 
 void TRADE_gt_OR() // TRADE>OR
 {
-  Push(pp_UNK_0xf363); // UNK_0xf363
+  Push(0xf363); // pointer to UNK_0xf363
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__8); // 8
   _eq_(); // =
   if (Pop() == 0) return;
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   Push(cc__3); // 3
@@ -1183,7 +1183,7 @@ void UNK_0xf3e8() // UNK_0xf3e8
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   Push(0x65ec); // IFIELD(INST-QT)
@@ -1206,12 +1206,12 @@ void UNK_0xf41e() // UNK_0xf41e
   UNK_0xec7a(); // UNK_0xec7a
   _at_INST_dash_S(); // @INST-S
   TRADE_gt_OR(); // TRADE>OR
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   ORGIA(); // ORGIA
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
-  Push(pp__ro_AORIGI); // (AORIGI
+  Push(0x64f1); // pointer to (AORIGI
   _1_dot_5_ex__2(); // 1.5!_2
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_S(); // @INST-S
@@ -1226,12 +1226,12 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(Read8(Pop())&0xFF); // C@
 
   label3:
-  Push(pp_EDL); // EDL
+  Push(0x5646); // pointer to EDL
   _st__ex__gt_(); // <!>
   ICLOSE(); // ICLOSE
   Push(0xbfda);
   MODULE(); // MODULE
-  Push(pp_A_dash_POSTU); // A-POSTU
+  Push(0x5654); // pointer to A-POSTU
   Push(Read8(Pop())&0xFF); // C@
   Pop();
   switch(Pop()) // APOST>PO
@@ -1259,7 +1259,7 @@ void UNK_0xf41e() // UNK_0xf41e
   UNK_0xf2bb(); // UNK_0xf2bb
 
   label4:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   LoadData("UNK_0xebae"); // from 'TRADERS     '
   C_ex__2(); // C!_2
   Push(cc__4); // 4
@@ -1292,7 +1292,7 @@ void SET_dash_CARG() // SET-CARG
   ALL(); // ALL
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  Push(pp_TV_dash_HOLD); // TV-HOLD
+  Push(0x6471); // pointer to TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xf3da);
@@ -1309,7 +1309,7 @@ void SET_dash_CARG() // SET-CARG
 
 void UNK_0xf4b7() // UNK_0xf4b7
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(0x64b1); // pointer to (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xebb6"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
@@ -1317,7 +1317,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
   _gt_R(); // >R
   R_at_(); // R@
   _gt_FLAG(); // >FLAG
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND

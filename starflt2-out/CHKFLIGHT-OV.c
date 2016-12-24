@@ -2,8 +2,8 @@
 // store offset = 0xf170
 // overlay size   = 0x03f0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -99,7 +99,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   SFILL(); // SFILL
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE
+  Push(0x5a56); // pointer to XORMODE
   _099(); // 099
   Push(2); // 2
   Push(1); // 1
@@ -126,7 +126,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   Push(0x00c4);
   POS_dot_(); // POS.
   PRINT("PRE", 3); // (.")
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   Push(Read16(Pop())); // @
   Push(0x00c0);
   OVER(); // OVER
@@ -134,11 +134,11 @@ void UNK_0xf1cb() // UNK_0xf1cb
   OVER(); // OVER
   LLINE(); // LLINE
   Push(cc__5); // 5
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _plus__ex__2(); // +!_2
   PRINT("FLIGHT", 6); // (.")
   Push(cc__6); // 6
-  Push(pp_XBLT); // XBLT
+  Push(0x5a48); // pointer to XBLT
   _plus__ex__2(); // +!_2
   PRINT("CHECK", 5); // (.")
   Push(2); // 2
@@ -155,7 +155,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
 void UNK_0xf25e() // UNK_0xf25e
 {
   Push(cc__6); // 6
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   Push(Read16(Pop())); // @
   Push(0x0014);
   _dash_(); // -
@@ -174,7 +174,7 @@ void UNK_0xf276() // UNK_0xf276
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("REPORT TO OPERATIONS FOR", 24); // (.")
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("EVALUATION", 10); // (.")
@@ -221,7 +221,7 @@ void UNK_0xf2fb() // UNK_0xf2fb
   PRINT(" AND ", 5); // (.")
   UNK_0xf25e(); // UNK_0xf25e
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _plus__ex__2(); // +!_2
   UNK_0xf2e4(); // UNK_0xf2e4
 }
@@ -246,13 +246,13 @@ void UNK_0xf331() // UNK_0xf331
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("REPORT TO SHIP-CONFIGURATION", 28); // (.")
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("TO ", 3); // (.")
-  Push(pp_UNK_0xf32d); // UNK_0xf32d
+  Push(0xf32d); // pointer to UNK_0xf32d
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   Pop();
@@ -303,7 +303,7 @@ void UNK_0xf378() // UNK_0xf378
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("UNABLE TO LAUNCH WITHOUT FUEL ", 30); // (.")
   Push(0x000a);
-  Push(pp_YBLT); // YBLT
+  Push(0x5a3d); // pointer to YBLT
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
 }
@@ -317,21 +317,21 @@ void UNK_0xf3a9() // UNK_0xf3a9
 {
   UNK_0xf1cb(); // UNK_0xf1cb
   _gt_2FONT(); // >2FONT
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf276(); // UNK_0xf276
 
   label1:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(2); // 2
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf2ae(); // UNK_0xf2ae
 
   label2:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__4); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
@@ -372,9 +372,9 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf414() // UNK_0xf414
 {
-  Push(pp__ask_EVAL); // ?EVAL
+  Push(0x5860); // pointer to ?EVAL
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push2Words("*OP");
@@ -399,11 +399,11 @@ void UNK_0xf414() // UNK_0xf414
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(pp__ask_TV); // ?TV
+  Push(0x55d2); // pointer to ?TV
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
-  Push(pp__ask_RECALL); // ?RECALL
+  Push(0x5de2); // pointer to ?RECALL
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   UNK_0xf406(); // UNK_0xf406
@@ -467,10 +467,10 @@ void UNK_0xf492() // UNK_0xf492
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  Push(pp_UNK_0xf32d); // UNK_0xf32d
+  Push(0xf32d); // pointer to UNK_0xf32d
   _ex__2(); // !_2
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -497,10 +497,10 @@ void UNK_0xf4bc() // UNK_0xf4bc
   if (Pop() == 0) goto label2;
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x000a);
   M_star_(); // M*
-  Push(pp__10_star_END); // 10*END
+  Push(0x633a); // pointer to 10*END
   D_ex_(); // D!
   if (Pop() == 0) Push(1); else Push(0); // 0=
   goto label3;
@@ -540,7 +540,7 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   UNK_0xf3a9(); // UNK_0xf3a9
   KEY_2(); // KEY_2

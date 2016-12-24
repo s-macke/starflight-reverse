@@ -2,8 +2,8 @@
 // store offset = 0xf0b0
 // overlay size   = 0x04b0
 
-#include"cpu.h"
-#include"starflt2.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt2.h"
 
 
 // =================================
@@ -261,7 +261,7 @@ const unsigned short int cc_UNK_0xf166 = 0x0062; // UNK_0xf166
 
 void UNK_0xf16a() // UNK_0xf16a
 {
-  Push(pp__ro_TRADER); // (TRADER
+  Push(0x6a02); // pointer to (TRADER
   _at__gt_C_plus_S(); // @>C+S
 }
 
@@ -341,7 +341,7 @@ void UNK_0xf192() // UNK_0xf192
 
 void UNK_0xf1e9() // UNK_0xf1e9
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // STAR-ID-CASE
@@ -368,7 +368,7 @@ void UNK_0xf1e9() // UNK_0xf1e9
 
 void UNK_0xf20c() // UNK_0xf20c
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // PLANET-ID-CA
@@ -433,7 +433,7 @@ void UNK_0xf239() // UNK_0xf239
 
 void UNK_0xf245() // UNK_0xf245
 {
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(cc_UNK_0xf14a); // UNK_0xf14a
@@ -455,7 +455,7 @@ void UNK_0xf245() // UNK_0xf245
 
 void UNK_0xf28e() // UNK_0xf28e
 {
-  Push(pp_PAST); // PAST
+  Push(0x6234); // pointer to PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(0x0031);
@@ -579,7 +579,7 @@ void UNK_0xf31f() // UNK_0xf31f
 void UNK_0xf365() // UNK_0xf365
 {
   _at_INST_dash_C(); // @INST-C
-  Push(pp_CONTEXT_3); // CONTEXT_3
+  Push(0x5c2c); // pointer to CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Pop();
@@ -859,7 +859,7 @@ void UNK_0xf460() // UNK_0xf460
   Push(0x65ed); // IFIELD(UNK_0xf104)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
-  Push(pp_FSTUN); // FSTUN
+  Push(0x628d); // pointer to FSTUN
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   Push(cc__4); // 4

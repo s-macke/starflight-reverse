@@ -2,8 +2,8 @@
 // store offset = 0xeda0
 // overlay size   = 0x07c0
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -95,12 +95,12 @@ void UNK_0xee6c() // UNK_0xee6c
   Push(0x0041);
   UNK_0xee30(); // UNK_0xee30
   Push(0x003a);
-  Push(pp_FILE_n_); // FILE#
+  Push(0x548f); // pointer to FILE#
   _ex__3(); // !_3
-  Push(pp_RECORD_n_); // RECORD#
+  Push(0x549d); // pointer to RECORD#
   OFF(); // OFF
   Push(Pop()-1); // 1-
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
   LoadData("1BTN"); // from 'BUTTONS     '
@@ -151,19 +151,19 @@ void UNK_0xeeba() // UNK_0xeeba
 
 void UNK_0xeee2() // UNK_0xeee2
 {
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0); // 0
   Push(cc__7); // 7
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
   UNK_0xeeba(); // UNK_0xeeba
   goto label1;
 
   label2:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xee6c(); // UNK_0xee6c
 
   label1:
@@ -178,13 +178,13 @@ void UNK_0xeee2() // UNK_0xeee2
 
 void UNK_0xef3a() // UNK_0xef3a
 {
-  Push(pp_BTN_dash_REC); // BTN-REC
+  Push(0x5cb1); // pointer to BTN-REC
   Push(Read16(Pop())); // @
   _gt_V(); // >V
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(0x5ba3); // pointer to THIS-BU
   Push(Read16(Pop())); // @
   _gt_V(); // >V
-  Push(pp__i_BUTTON); // 'BUTTON
+  Push(0x5ca3); // pointer to 'BUTTON
   Push(Read16(Pop())); // @
   _gt_V(); // >V
 }
@@ -199,7 +199,7 @@ void UNK_0xef50() // UNK_0xef50
   UNK_0xef3a(); // UNK_0xef3a
   UNK_0xeee2(); // UNK_0xeee2
   INIT_dash_BU(); // INIT-BU
-  Push(pp__i_BUTTON); // 'BUTTON
+  Push(0x5ca3); // pointer to 'BUTTON
   _ex__3(); // !_3
 }
 
@@ -262,7 +262,7 @@ void UNK_0xf3fe() // UNK_0xf3fe
   Push(0); // 0
   Push(0xef50);
   DOTASKS(UNK_0xef50, UNK_0x0f20, UNK_0x175d);
-  Push(pp_UNK_0xedb6); // UNK_0xedb6
+  Push(0xedb6); // pointer to UNK_0xedb6
   OFF(); // OFF
 }
 
@@ -319,10 +319,10 @@ void UNK_0xf4a0() // UNK_0xf4a0
 void _gt_FLT() // >FLT
 {
   Push(0x001a);
-  Push(pp_FILE_n_); // FILE#
+  Push(0x548f); // pointer to FILE#
   _ex__3(); // !_3
   Push(cc__6); // 6
-  Push(pp_RECORD_n_); // RECORD#
+  Push(0x549d); // pointer to RECORD#
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
@@ -333,18 +333,18 @@ void _gt_FLT() // >FLT
   TIME(); // TIME
   _2_at_(); // 2@
   _2DUP(); // 2DUP
-  Push(pp_NAV_dash_TIME); // NAV-TIME
+  Push(0x6136); // pointer to NAV-TIME
   D_ex_(); // D!
-  Push(pp_ENC_dash_TIME); // ENC-TIME
+  Push(0x6126); // pointer to ENC-TIME
   D_ex_(); // D!
-  Push(pp_STAR_dash_HR); // STAR-HR
+  Push(0x5e66); // pointer to STAR-HR
   Push(Read16(Pop())); // @
-  Push(pp_TRAK_dash_HR); // TRAK-HR
+  Push(0x5343); // pointer to TRAK-HR
   _ex__3(); // !_3
   CFIGARRAYS(); // CFIGARRAYS
   SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
@@ -352,14 +352,14 @@ void _gt_FLT() // >FLT
   UNK_0xf4a0(); // UNK_0xf4a0
 
   label1:
-  Push(pp_UNK_0xedb6); // UNK_0xedb6
+  Push(0xedb6); // pointer to UNK_0xedb6
   OFF(); // OFF
   UNK_0xf3fe(); // UNK_0xf3fe
   Push(0x001a);
-  Push(pp_FILE_n_); // FILE#
+  Push(0x548f); // pointer to FILE#
   _ex__3(); // !_3
   Push(cc__6); // 6
-  Push(pp_RECORD_n_); // RECORD#
+  Push(0x549d); // pointer to RECORD#
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @

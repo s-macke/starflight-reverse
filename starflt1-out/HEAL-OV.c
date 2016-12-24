@@ -2,8 +2,8 @@
 // store offset = 0xf090
 // overlay size   = 0x04d0
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -92,11 +92,11 @@ void UNK_0xf0ce() // UNK_0xf0ce
   SWAP(); // SWAP
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
-  Push(pp_WLEFT); // WLEFT
+  Push(0x5beb); // pointer to WLEFT
   Push(Read16(Pop())); // @
   Push(Pop()+2); // 2+
   Push(Pop() + Pop()); // +
-  Push(pp_WTOP); // WTOP
+  Push(0x5bc4); // pointer to WTOP
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   ROT(); // ROT
@@ -169,7 +169,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
 void UNK_0xf12f() // UNK_0xf12f
 {
   _3_star_(); // 3*
-  Push(pp_ROSTER); // ROSTER
+  Push(0xbfcb); // pointer to ROSTER
   Push(Pop() + Pop()); // +
 }
 
@@ -180,7 +180,7 @@ void UNK_0xf12f() // UNK_0xf12f
 
 void UNK_0xf139() // UNK_0xf139
 {
-  Push(pp_ROSTER); // ROSTER
+  Push(0xbfcb); // pointer to ROSTER
   Push(0x0012);
   Push(0); // 0
   FILL_1(); // FILL_1
@@ -236,25 +236,25 @@ void UNK_0xf147() // UNK_0xf147
 
 void UNK_0xf183() // UNK_0xf183
 {
-  Push(pp_ROSTER); // ROSTER
+  Push(0xbfcb); // pointer to ROSTER
   _1_dot_5_at_(); // 1.5@
   Push2Words("NULL");
   D_eq_(); // D=
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   UNK_0xf0bc(); // UNK_0xf0bc
   _gt_DISPLAY(); // >DISPLAY
-  Push(pp_WTOP); // WTOP
+  Push(0x5bc4); // pointer to WTOP
   Push(Read16(Pop())); // @
-  Push(pp_WLEFT); // WLEFT
+  Push(0x5beb); // pointer to WLEFT
   Push(Read16(Pop())); // @
-  Push(pp_WBOTTOM); // WBOTTOM
+  Push(0x5bd2); // pointer to WBOTTOM
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
-  Push(pp_WRIGHT); // WRIGHT
+  Push(0x5bdf); // pointer to WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   SetColor("YELLOW");
@@ -327,7 +327,7 @@ void UNK_0xf23c() // UNK_0xf23c
 {
   _gt_R(); // >R
   Push(1); // 1
-  Push(pp_ROSTER); // ROSTER
+  Push(0xbfcb); // pointer to ROSTER
   Push(cc__6); // 6
   Push(0); // 0
 
@@ -375,9 +375,9 @@ void UNK_0xf280() // UNK_0xf280
 {
   Push(0x0064);
   UNK_0xf23c(); // UNK_0xf23c
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp__ask_HEAL); // ?HEAL
+  Push(0x5b89); // pointer to ?HEAL
   _ex__3(); // !_3
 }
 
@@ -444,7 +444,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   _gt_C_plus_S(); // >C+S
   Push(0x640e); // IFIELD(UNK_0xf11d)
   Push(Read8(Pop())&0xFF); // C@
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label3;
   Push(0x640f); // IFIELD(UNK_0xf122)
   Push(Read8(Pop())&0xFF); // C@
@@ -452,13 +452,13 @@ void UNK_0xf2cd() // UNK_0xf2cd
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
   Push(Pop()+2); // 2+
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(0x0064);
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -497,7 +497,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
   label1:
   UNK_0xf292(); // UNK_0xf292
-  Push(pp_HEALTI); // HEALTI
+  Push(0xbfaf); // pointer to HEALTI
   _ex__3(); // !_3
 }
 
@@ -509,12 +509,12 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 void _dot_VITS() // .VITS
 {
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   OFF(); // OFF
-  Push(pp_COLOR); // COLOR
+  Push(0x55f2); // pointer to COLOR
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   SetColor("WHITE");
@@ -531,7 +531,7 @@ void _dot_VITS() // .VITS
   do // (DO)
   {
   GCR(); // GCR
-  Push(pp_WCHARS); // WCHARS
+  Push(0x5c05); // pointer to WCHARS
   Push(Read16(Pop())); // @
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
@@ -543,7 +543,7 @@ void _dot_VITS() // .VITS
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(1); // 1
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _plus__ex_(); // +!
   Push(0x63fa); // IFIELD(UNK_0xf0ff)
   _do__dot_(); // $.
@@ -551,7 +551,7 @@ void _dot_VITS() // .VITS
   Push(0x63fa); // IFIELD(UNK_0xf0ff)
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(0); // 0
 
@@ -565,15 +565,15 @@ void _dot_VITS() // .VITS
 
 
   label2:
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _plus__ex_(); // +!
   Push(cc__4); // 4
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _ex__3(); // !_3
   Push(0x640e); // IFIELD(UNK_0xf11d)
   Push(Read8(Pop())&0xFF); // C@
@@ -589,7 +589,7 @@ void _dot_VITS() // .VITS
   R_gt_(); // R>
   _ex_COLOR(); // !COLOR
   R_gt_(); // R>
-  Push(pp_XORMODE); // XORMODE
+  Push(0x587c); // pointer to XORMODE
   _ex__3(); // !_3
 }
 
@@ -631,13 +631,13 @@ void UNK_0xf416() // UNK_0xf416
 void UNK_0xf42f() // UNK_0xf42f
 {
   Push(0); // 0
-  Push(pp_UNK_0xf426); // UNK_0xf426
+  Push(0xf426); // pointer to UNK_0xf426
   _ex__3(); // !_3
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x6400); // IFIELD(UNK_0xf0f0)
   _1_dot_5_at_(); // 1.5@
-  Push(pp_UNK_0xf42a); // UNK_0xf42a
+  Push(0xf42a); // pointer to UNK_0xf42a
   _1_dot_5_ex_(); // 1.5!
   Push(0x63ef); // IFIELD(INST-SI)
   Push(0x0011);
@@ -679,15 +679,15 @@ void UNK_0xf42f() // UNK_0xf42f
 
   }
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(sp)); // DUP
-  Push(pp_UNK_0xf426); // UNK_0xf426
+  Push(Read16(regsp)); // DUP
+  Push(0xf426); // pointer to UNK_0xf426
   Push(Read16(Pop())); // @
   _gt_(); // >
   if (Pop() == 0) goto label1;
   CI(); // CI
-  Push(pp_UNK_0xf42a); // UNK_0xf42a
+  Push(0xf42a); // pointer to UNK_0xf42a
   _st_1_dot_5_ex__gt_(); // <1.5!>
-  Push(pp_UNK_0xf426); // UNK_0xf426
+  Push(0xf426); // pointer to UNK_0xf426
   _st__ex__gt_(); // <!>
   goto label2;
 
@@ -777,7 +777,7 @@ void UNK_0xf4c1() // UNK_0xf4c1
   ICLOSE(); // ICLOSE
   Push(i); // I
   UNK_0xf42f(); // UNK_0xf42f
-  Push(pp_UNK_0xf42a); // UNK_0xf42a
+  Push(0xf42a); // pointer to UNK_0xf42a
   _1_dot_5_at_(); // 1.5@
   Push(i); // I
   _3_star_(); // 3*

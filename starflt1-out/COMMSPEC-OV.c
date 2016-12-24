@@ -2,8 +2,8 @@
 // store offset = 0xea30
 // overlay size   = 0x0b30
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -62,9 +62,9 @@ void UNK_0xea8e() // UNK_0xea8e
 {
   _gt_C_plus_S(); // >C+S
   Push(0x63fa); // IFIELD(PHRASE$)
-  Push(pp_LSCAN); // LSCAN
+  Push(0x679e); // pointer to LSCAN
   _do__ex_(); // $!
-  Push(pp_LSCAN); // LSCAN
+  Push(0x679e); // pointer to LSCAN
   COUNT(); // COUNT
   ICLOSE(); // ICLOSE
 }
@@ -77,17 +77,17 @@ void UNK_0xea8e() // UNK_0xea8e
 
 void UNK_0xeaee() // UNK_0xeaee
 {
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(0x5ba3); // pointer to THIS-BU
   Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label1;
   SetColor("BLUE");
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(0x5ba3); // pointer to THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
   CTINIT(); // CTINIT
-  Push(0x118a); Pust(0x0002);
+  Push(0x118a); Push(0x0002);
   UNK_0xea8e(); // UNK_0xea8e
   _dot_TTY(); // .TTY
   Push(0x01f4);
@@ -111,7 +111,7 @@ void UNK_0xeaee() // UNK_0xeaee
 
   label4:
   SetColor("BLACK");
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(0x5ba3); // pointer to THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
 }
@@ -126,7 +126,7 @@ void UNK_0xeb7b() // UNK_0xeb7b
 {
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   NEW_dash_BUT(); // NEW-BUT
 }
@@ -155,31 +155,31 @@ void XY_slash_N() // XY/N
   INIT_dash_BU(); // INIT-BU
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0xea60); Pust(0x0000);
+  Push(0xea60); Push(0x0000);
   D_plus_(); // D+
-  Push(pp_TIRED_dash_T); // TIRED-T
+  Push(0x608b); // pointer to TIRED-T
   D_ex_(); // D!
 
   label1:
   UNK_0xeb7b(); // UNK_0xeb7b
-  Push(pp_FTRIG); // FTRIG
+  Push(0x5c7e); // pointer to FTRIG
   Push(Read16(Pop())); // @
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp_TIRED_dash_T); // TIRED-T
+  Push(0x608b); // pointer to TIRED-T
   _2_at_(); // 2@
   D_gt_(); // D>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(0x5ba3); // pointer to THIS-BU
   Push(Read16(Pop())); // @
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   Push(2); // 2
   _eq_(); // =
-  Push(pp_FTRIG); // FTRIG
+  Push(0x5c7e); // pointer to FTRIG
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(0x5a4a); // pointer to (STOP-C
   _ex__3(); // !_3
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -198,7 +198,7 @@ void XY_slash_N() // XY/N
   Push(0); // 0
 
   label3:
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xeaee(); // UNK_0xeaee
   Push(cc__9); // 9
   _dot_BTN_dash_TE(); // .BTN-TE
@@ -242,9 +242,9 @@ void XY_slash_N() // XY/N
 
 void UNK_0xf486() // UNK_0xf486
 {
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(pp_UNK_0xecca); // UNK_0xecca
+  Push(0xecca); // pointer to UNK_0xecca
   OFF(); // OFF
   COUNT(); // COUNT
   Push(Pop()*2); // 2*
@@ -258,7 +258,7 @@ void UNK_0xf486() // UNK_0xf486
   {
   Push(i); // I
   _at_EXECUTE(); // @EXECUTE
-  Push(pp_UNK_0xecca); // UNK_0xecca
+  Push(0xecca); // pointer to UNK_0xecca
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   LEAVE(); // LEAVE
@@ -288,7 +288,7 @@ void UNK_0xf4de() // UNK_0xf4de
   label1:
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp_OK_dash_TALK); // OK-TALK
+  Push(0x6240); // pointer to OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
   Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
@@ -305,7 +305,7 @@ void UNK_0xf4de() // UNK_0xf4de
 void _ro_XCOMM_rc_() // (XCOMM)
 {
   UNK_0xf4de(); // UNK_0xf4de
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(0x62ff); // pointer to (AORIGINATOR
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE

@@ -2,8 +2,8 @@
 // store offset = 0xf220
 // overlay size   = 0x0340
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -210,7 +210,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
 
 void UNK_0xf2d9() // UNK_0xf2d9
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // STAR-ID-CASES
@@ -237,7 +237,7 @@ void UNK_0xf2d9() // UNK_0xf2d9
 
 void UNK_0xf2ff() // UNK_0xf2ff
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   Pop();
   switch(Pop()) // PLANET-ID-CASES
@@ -338,7 +338,7 @@ void UNK_0xf38f() // UNK_0xf38f
 {
   Push(0x6404); // IFIELD(UNK_0xf250)
   Push(Read8(Pop())&0xFF); // C@
-  if (Read16(sp) != 0) Push(Read16(sp)); // ?DUP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(0x0010);
   Push(Pop() + Pop()); // +
@@ -380,7 +380,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 void UNK_0xf3f1() // UNK_0xf3f1
 {
   _at_INST_dash_CLASS(); // @INST-CLASS
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
+  Push(0x5a5c); // pointer to CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Pop();

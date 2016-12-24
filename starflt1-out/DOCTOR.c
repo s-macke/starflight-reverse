@@ -2,8 +2,8 @@
 // store offset = 0xf060
 // overlay size   = 0x0500
 
-#include"cpu.h"
-#include"starflt1.h"
+#include"../emul/cpu.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -75,7 +75,7 @@
 void UNK_0xf092() // UNK_0xf092
 {
   Push(0x0040);
-  Push(pp_XBLT); // XBLT
+  Push(0x586e); // pointer to XBLT
   _ex__3(); // !_3
   PRINT("[N Y]", 5); // (.")
 }
@@ -501,7 +501,7 @@ void UNK_0xf421() // UNK_0xf421
   PRINT(" IS ", 4); // (.")
   Push(0x640e); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(sp)); // DUP
+  Push(Read16(regsp)); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
   if (Pop() == 0) goto label1;
   PRINT(",", 1); // (.")
