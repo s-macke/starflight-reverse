@@ -64,7 +64,6 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
 {
     unsigned short linkp = Read16(ofs);
     unsigned char bitfield = Read8(ofs+2);
-    //unsigned short codep = Read16(ofs+3);
     unsigned int length = bitfield & 0x3F;
     int i = 0;
     memset(&dict[ndict], 0, sizeof(DICTENTRY));
@@ -203,144 +202,159 @@ void SortDictionary()
 
 LineDesc pline[0x10000];
 
-char* PutEasyMacro(char *s)
+int PutEasyMacro(DICTENTRY *e, char *ret)
 {
-    static char ret[STRINGLEN];
     ret[0] = 0;
+    char *s = GetWordName(e);
 
+    if (e->codep == CODEPOINTER) // pointer to variable or table
+    {
+        snprintf(ret, STRINGLEN, "  Push(0x%04x); // pointer to %s\n", e->parp, s);
+        return 2;
+    }
+    if (e->codep == CODECONSTANT)
+    {
+        snprintf(ret, STRINGLEN, "  Push(cc_%s); // %s\n", Forth2CString(s), s); // TODO: check
+        return 2;
+    }
+    if (e->codep == CODEDI) // load from fixed table?
+    {
+        snprintf(ret, STRINGLEN, "  Push(tt_%s); // %s\n", Forth2CString(s), s); // TODO: check4
+        return 2;
+    }
     if (strcmp(s, "0") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(0); // 0\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "1") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(1); // 1\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "2") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(2); // 2\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "0=") == 0)
     {
         snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "OR") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() | Pop()); // OR\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "AND") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() & Pop()); // AND\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "XOR") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "+") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "*") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() * Pop()); // *\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "NEGATE") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(-Pop()); // NEGATE\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "NOT") == 0)
     {
         snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "DROP") == 0)
     {
         snprintf(ret, STRINGLEN, "  Pop(); // DROP\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "2DROP") == 0)
     {
         snprintf(ret, STRINGLEN, "  Pop(); Pop();// 2DROP\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "2*") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()*2); // 2*\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "3+") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()+3); // 3+\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "1+") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()+1); // 1+\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "2+") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()+2); // 2+\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "1-") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()-1); // 1-\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "2-") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()-2); // 2-\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "16/") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()>>4); // 16/\n");
-        return ret;
+        snprintf(ret, STRINGLEN, "  Push(Pop()>>4); // 16/\n"); // TODO check for signed and unsigned
+        return 2;
     }
     if (strcmp(s, "2/") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()>>1); // 2/\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "16*") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop()<<4); // 16*\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "@") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Read16(Pop())); // @\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "C@") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "DUP") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Read16(regsp)); // DUP\n");
-        return ret;
+        return 2;
     }
     if (strcmp(s, "?DUP") == 0)
     {
         snprintf(ret, STRINGLEN, "  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
-        return ret;
+        return 2;
     }
 
     snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
-    return ret;
+    return 2;
 }
 
 // unsafe test to find closest dict entry
@@ -406,13 +420,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         if (ofs > maxaddr) return;
         if (pline[ofs].done) return;
 
-        int par = Read16(ofs);
-        int codep = Read16(par);
-        par += 2;
+        int par = Read16(ofs)+2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
+        DICTENTRY *e = GetDictEntry(par, currentovidx);
 
-        char *s = GetDictWord(par, currentovidx);
+        char *s = GetWordName(e);
 
         if (ofs < 0x100+FILESTAR0SIZE)
         if (currentovidx != -1)
@@ -426,6 +439,24 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             continue;
         }
 
+        if (e->codep == CODELIT) // constant number
+        {
+            par = Read16(ofs + 2);
+            pline[ofs+2].done = 1;
+            pline[ofs+3].done = 1;
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x);\n", par);
+            ofs += 4;
+        } else
+        if (e->codep == CODE2LIT) // constant number
+        {
+            par = Read16(ofs + 2);
+            pline[ofs+2].done = 1;
+            pline[ofs+3].done = 1;
+            pline[ofs+4].done = 1;
+            pline[ofs+5].done = 1;
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); Push(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
+            ofs += 6;
+        } else
         if (strcmp(s, "DOTASKS") == 0)
         {
             int codep1 = Read16(Read16(ofs-4));
@@ -543,7 +574,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             ofs += length;
             */
         } else
-        if (codep == CODECALL) // call
+        if (e->codep == CODECALL) // call
         {
             if ((par >= minaddr) && (par <= maxaddr))
             {
@@ -556,40 +587,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
         } else
-        if (codep == CODEPOINTER) // pointer to variable or table
-        {
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // pointer to %s\n", par, s);
-            ofs += 2;
-        } else
-        if (codep == CODECONSTANT)
-        {
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(cc_%s); // %s\n", Forth2CString(s), s); // TODO: check
-            ofs += 2;
-        } else
-        if (codep == CODEDI) // load from fixed table?
-        {
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(tt_%s); // %s\n", Forth2CString(s), s); // TODO: check
-            ofs += 2;
-        } else
-        if (codep == CODELIT) // constant number
-        {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x);\n", par);
-            ofs += 4;
-        } else
-        if (codep == CODE2LIT) // constant number
-        {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            pline[ofs+4].done = 1;
-            pline[ofs+5].done = 1;
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); Push(0x%04x);\n", Read16(ofs + 2), Read16(ofs + 4));
-            ofs += 6;
-        } else
-        if (codep == CODELOADOVERLAY) // This code loads the overlay
+        if (e->codep == CODELOADOVERLAY) // This code loads the overlay
         {
             //int codep = Read16(par-2);
             unsigned short startaddress = Read16(par);
@@ -609,59 +607,59 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             snprintf(pline[ofs].str, STRINGLEN, "  LoadOverlay(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODELOADDATA)
+        if (e->codep == CODELOADDATA)
         {
             int addr = Read16(par+4);
             snprintf(pline[ofs].str, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
             ofs += 2;
         } else
-        if (codep == CODETABLE)
+        if (e->codep == CODETABLE)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  GetTableEntry(%s);\n", s);
             ofs += 2;
         } else
-        if (codep == CODESETCOLOR)
+        if (e->codep == CODESETCOLOR)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  SetColor(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC3)
+        if (e->codep == CODEFUNC3)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func3(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEPUSH2WORDS)
+        if (e->codep == CODEPUSH2WORDS)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Push2Words(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC5)
+        if (e->codep == CODEFUNC5)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func5(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC6)
+        if (e->codep == CODEFUNC6)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func6(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODESETVOCABULARY)
+        if (e->codep == CODESETVOCABULARY)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  SetVocabulary(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEIFIELD)
+        if (e->codep == CODEIFIELD)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(par+1), s);
             //snprintf(pline[ofs].str, STRINGLEN, "  IFIELD(%s);\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC9)
+        if (e->codep == CODEFUNC9)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func9(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODECASE)
+        if (e->codep == CODECASE)
         {
             pline[ofs].str = (char*)malloc(4096);
             pline[ofs].str[0] = 0;
@@ -670,19 +668,31 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             char temp[256];
             sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
             for(i=0; i<n; i++) {
-                char *s = GetDictWord(Read16(par + i*4 + 6), currentovidx);
+                DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), currentovidx);
+                char ret[STRINGLEN];
+                int dofs = PutEasyMacro(e, ret);
+                if (dofs != 2) {
+                    fprintf(stderr, "Error: no additional data is allowed for this word");
+                    exit(1);
+                }
                 sprintf(temp, "  case %i:\n  %s    break;\n",
-                    Read16(par + i*4 + 4), PutEasyMacro(s));
+                    Read16(par + i*4 + 4), ret);
                 strcat(pline[ofs].str, temp);
             }
-            char *s = GetDictWord(Read16(par + 2), currentovidx);
-            sprintf(temp, "  default:\n  %s    break;\n", PutEasyMacro(s));
+            DICTENTRY *e = GetDictEntry(Read16(par + 2), currentovidx);
+            char ret[STRINGLEN];
+            int dofs = PutEasyMacro(e, ret);
+            if (dofs != 2) {
+                fprintf(stderr, "Error: no additional data is allowed for this word");
+                exit(1);
+            }
+            sprintf(temp, "  default:\n  %s    break;\n", ret);
             strcat(pline[ofs].str, temp);
 
             strcat(pline[ofs].str, "\n  }\n");
             ofs += 2;
         } else
-        if (codep == CODEARRAY)
+        if (e->codep == CODEARRAY)
         {/*
             unsigned short ds = Read16(par + 6);
             unsigned short bx = Read16(par + 4);
@@ -695,17 +705,17 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             par, Read16(par + 4), s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC12)
+        if (e->codep == CODEFUNC12)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func12(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEFUNC13)
+        if (e->codep == CODEFUNC13)
         {
             snprintf(pline[ofs].str, STRINGLEN, "  Func13(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (codep == CODEEXEC)
+        if (e->codep == CODEEXEC)
         {
             par = Read16(Read16(par)+REGDI);
             snprintf(pline[ofs].str, STRINGLEN, "  Exec(%s); // call of word 0x%04x '%s'\n",
@@ -858,8 +868,14 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             ofs += 2;
         } else
         {
-            snprintf(pline[ofs].str, STRINGLEN, "%s", PutEasyMacro(s));
-            ofs += 2;
+            char ret[STRINGLEN];
+            int dofs = PutEasyMacro(e, ret);
+            if (dofs != 2) {
+                fprintf(stderr, "Error: no additional data is allowed for this word");
+                exit(1);
+            }
+            snprintf(pline[ofs].str, STRINGLEN, "%s", ret);
+            ofs += dofs;
         }
 
     }

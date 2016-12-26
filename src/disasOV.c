@@ -76,8 +76,6 @@ int DisasmRange(int offset, int size, FILE *fp)
                 return 0;
             }
         }
-
-
     }
     return 0;
 }
