@@ -129,17 +129,6 @@ void WriteHeader()
     }
 }
 
-void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
-{
-    int i;
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx == ovidx)
-        if (dict[i].codep == CODECALL)
-            ParseForthFunction(&dict[i], minaddr, maxaddr);
-    }
-}
-
 
 void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 {
@@ -305,17 +294,12 @@ int main()
     DisasStarflt(fpc);
     fclose(fpc);
 
-    // for starflt2
-    //dir[0x78].end = dir[0x78].start+0x810;
     char filename[512];
     for(i=0; overlays[i].name != NULL; i++)
     {
         LoadSTARFLT();
         ParseStarFltDict();
         LoadOverlayDict(i);
-
-        //reload dictionary
-        //memset(dict, 0, sizeof(dict));
 
         sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
         printf("Generate %s\n", filename);

@@ -892,12 +892,19 @@ void InitOutput()
     }
 }
 
-void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr)
+void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 {
-    char *s = GetWordName(d);
-    pline[d->parp].isfunction = 1;
-    snprintf(pline[d->parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    ParsePartFunction(d->parp, pline, minaddr, maxaddr, d, d->ovidx);
+    int i;
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].ovidx != ovidx) continue;
+        if (dict[i].codep != CODECALL) continue;
+        char *s = GetWordName(&dict[i]);
+        pline[dict[i].parp].isfunction = 1;
+        snprintf(pline[dict[i].parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+        ParsePartFunction(dict[i].parp, pline, minaddr, maxaddr, &dict[i], dict[i].ovidx);
+    }
+
 }
 
 void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)

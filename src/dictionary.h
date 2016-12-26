@@ -47,6 +47,6 @@ void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
 void InitOutput();
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx);
-void ParseForthFunction(DICTENTRY *d, int minaddr, int maxaddr);
+void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);
 
 #endif
