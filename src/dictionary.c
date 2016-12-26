@@ -151,7 +151,7 @@ void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        fprintf(fp, "// %4i: %15s", i, GetWordName(&dict[i]));
+        fprintf(fp, "// %15s", GetWordName(&dict[i]));
         fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'",
         dict[i].codep, dict[i].parp, dict[i].size, Forth2CString(GetWordName(&dict[i])));
 /*
