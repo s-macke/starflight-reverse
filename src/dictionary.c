@@ -9,7 +9,7 @@
 
 
 
-struct DICTENTRY dict[5000];
+struct DICTENTRY dict[10000];
 int ndict = 0;
 
 char* GetWordName(DICTENTRY *dict)

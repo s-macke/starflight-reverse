@@ -280,6 +280,7 @@ int main()
     }
 
 // ---------------------
+// Load words with a valid name
 
     LoadSTARFLT();
     ParseStarFltDict();
@@ -303,9 +304,8 @@ int main()
     char filename[512];
     for(i=0; overlays[i].name != NULL; i++)
     {
+        //reset memory
         LoadSTARFLT();
-        ParseStarFltDict();
-        LoadOverlayDict(i);
 
         sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
         printf("Generate %s\n", filename);

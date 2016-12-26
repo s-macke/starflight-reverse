@@ -15,7 +15,7 @@ typedef struct DICTENTRY
 } DICTENTRY;
 
 extern int ndict;
-extern struct DICTENTRY dict[5000];
+extern struct DICTENTRY dict[10000];
 
 #define STRINGLEN 300
 
