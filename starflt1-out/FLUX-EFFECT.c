@@ -9,14 +9,14 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:      UNK_0xf3a6  codep:0x1d29 parp:0xf3a6 size:0x0032 C-string:'UNK_0xf3a6'
-// 1704:      UNK_0xf3da  codep:0x1d29 parp:0xf3da size:0x0002 C-string:'UNK_0xf3da'
-// 1705:      UNK_0xf3de  codep:0x224c parp:0xf3de size:0x0010 C-string:'UNK_0xf3de'
-// 1706:      UNK_0xf3f0  codep:0x224c parp:0xf3f0 size:0x0064 C-string:'UNK_0xf3f0'
-// 1707:      UNK_0xf456  codep:0x224c parp:0xf456 size:0x0018 C-string:'UNK_0xf456'
-// 1708:      UNK_0xf470  codep:0x224c parp:0xf470 size:0x005e C-string:'UNK_0xf470'
-// 1709:      UNK_0xf4d0  codep:0x224c parp:0xf4d0 size:0x002c C-string:'UNK_0xf4d0'
-// 1710:            FLUX  codep:0x224c parp:0xf505 size:0x0000 C-string:'FLUX'
+//      UNK_0xf3a6  codep:0x1d29 parp:0xf3a6 size:0x0032 C-string:'UNK_0xf3a6'
+//      UNK_0xf3da  codep:0x1d29 parp:0xf3da size:0x0002 C-string:'UNK_0xf3da'
+//      UNK_0xf3de  codep:0x224c parp:0xf3de size:0x0010 C-string:'UNK_0xf3de'
+//      UNK_0xf3f0  codep:0x224c parp:0xf3f0 size:0x0064 C-string:'UNK_0xf3f0'
+//      UNK_0xf456  codep:0x224c parp:0xf456 size:0x0018 C-string:'UNK_0xf456'
+//      UNK_0xf470  codep:0x224c parp:0xf470 size:0x005e C-string:'UNK_0xf470'
+//      UNK_0xf4d0  codep:0x224c parp:0xf4d0 size:0x002c C-string:'UNK_0xf4d0'
+//            FLUX  codep:0x224c parp:0xf505 size:0x0000 C-string:'FLUX'
 
 // =================================
 // =========== VARIABLES ===========

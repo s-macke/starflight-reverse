@@ -9,15 +9,15 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:         .RUNBIT  codep:0xf220 parp:0xf220 size:0x00cd C-string:'_dot_RUNBIT'
-// 1704:          .PARMS  codep:0x224c parp:0xf2f8 size:0x0059 C-string:'_dot_PARMS'
-// 1705:          BRIGHT  codep:0x1d29 parp:0xf35c size:0x0002 C-string:'BRIGHT'
-// 1706:           2TEMP  codep:0x1d29 parp:0xf368 size:0x0002 C-string:'_2TEMP'
-// 1707:      .EGARUNBIT  codep:0xf379 parp:0xf379 size:0x00e1 C-string:'_dot_EGARUNBIT'
-// 1708:         .HYBRID  codep:0x224c parp:0xf466 size:0x0094 C-string:'_dot_HYBRID'
-// 1709:          PADSEG  codep:0x224c parp:0xf505 size:0x0008 C-string:'PADSEG'
-// 1710:        @.HYBRID  codep:0x224c parp:0xf51a size:0x000c C-string:'_at__dot_HYBRID'
-// 1711:           SETUP  codep:0x224c parp:0xf530 size:0x0000 C-string:'SETUP'
+//         .RUNBIT  codep:0xf220 parp:0xf220 size:0x00cd C-string:'_dot_RUNBIT'
+//          .PARMS  codep:0x224c parp:0xf2f8 size:0x0059 C-string:'_dot_PARMS'
+//          BRIGHT  codep:0x1d29 parp:0xf35c size:0x0002 C-string:'BRIGHT'
+//           2TEMP  codep:0x1d29 parp:0xf368 size:0x0002 C-string:'_2TEMP'
+//      .EGARUNBIT  codep:0xf379 parp:0xf379 size:0x00e1 C-string:'_dot_EGARUNBIT'
+//         .HYBRID  codep:0x224c parp:0xf466 size:0x0094 C-string:'_dot_HYBRID'
+//          PADSEG  codep:0x224c parp:0xf505 size:0x0008 C-string:'PADSEG'
+//        @.HYBRID  codep:0x224c parp:0xf51a size:0x000c C-string:'_at__dot_HYBRID'
+//           SETUP  codep:0x224c parp:0xf530 size:0x0000 C-string:'SETUP'
 
 // =================================
 // =========== VARIABLES ===========

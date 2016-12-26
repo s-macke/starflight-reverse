@@ -9,13 +9,13 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-// 1703:        altitude  codep:0x224c parp:0xf2a6 size:0x00a7 C-string:'altitude'
-// 1704:        ICON-KEY  codep:0x224c parp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'
-// 1705:            .BLT  codep:0x224c parp:0xf3c6 size:0x002a C-string:'_dot_BLT'
-// 1706:      PAUSE-PAGE  codep:0x224c parp:0xf3f2 size:0x0038 C-string:'PAUSE_dash_PAGE'
-// 1707:        SEE-BLTS  codep:0x224c parp:0xf42c size:0x005c C-string:'SEE_dash_BLTS'
-// 1708:           title  codep:0x224c parp:0xf48a size:0x000a C-string:'title'
-// 1709:           ICONS  codep:0x224c parp:0xf49e size:0x0000 C-string:'ICONS'
+//        altitude  codep:0x224c parp:0xf2a6 size:0x00a7 C-string:'altitude'
+//        ICON-KEY  codep:0x224c parp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'
+//            .BLT  codep:0x224c parp:0xf3c6 size:0x002a C-string:'_dot_BLT'
+//      PAUSE-PAGE  codep:0x224c parp:0xf3f2 size:0x0038 C-string:'PAUSE_dash_PAGE'
+//        SEE-BLTS  codep:0x224c parp:0xf42c size:0x005c C-string:'SEE_dash_BLTS'
+//           title  codep:0x224c parp:0xf48a size:0x000a C-string:'title'
+//           ICONS  codep:0x224c parp:0xf49e size:0x0000 C-string:'ICONS'
 
 // =================================
 // =========== VARIABLES ===========
