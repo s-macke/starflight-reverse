@@ -742,25 +742,25 @@ void UNK_0xf2cf() // UNK_0xf2cf
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNK_0xedee(); // UNK_0xedee
+    Push(cc_UNK_0xedee); // UNK_0xedee
     break;
   case 28:
-    UNK_0xedf2(); // UNK_0xedf2
+    Push(cc_UNK_0xedf2); // UNK_0xedf2
     break;
   case 40:
-    UNK_0xedf6(); // UNK_0xedf6
+    Push(cc_UNK_0xedf6); // UNK_0xedf6
     break;
   case 41:
-    UNK_0xee06(); // UNK_0xee06
+    Push(cc_UNK_0xee06); // UNK_0xee06
     break;
   case 43:
-    UNK_0xee02(); // UNK_0xee02
+    Push(cc_UNK_0xee02); // UNK_0xee02
     break;
   case 27:
-    UNK_0xedfa(); // UNK_0xedfa
+    Push(cc_UNK_0xedfa); // UNK_0xedfa
     break;
   case 68:
-    UNK_0xedfe(); // UNK_0xedfe
+    Push(cc_UNK_0xedfe); // UNK_0xedfe
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -784,25 +784,25 @@ void BOX_gt_TOCS() // BOX>TOCS
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNK_0xedee(); // UNK_0xedee
+    Push(cc_UNK_0xedee); // UNK_0xedee
     break;
   case 28:
-    UNK_0xedf2(); // UNK_0xedf2
+    Push(cc_UNK_0xedf2); // UNK_0xedf2
     break;
   case 40:
-    UNK_0xedf6(); // UNK_0xedf6
+    Push(cc_UNK_0xedf6); // UNK_0xedf6
     break;
   case 41:
-    UNK_0xee06(); // UNK_0xee06
+    Push(cc_UNK_0xee06); // UNK_0xee06
     break;
   case 43:
-    UNK_0xee02(); // UNK_0xee02
+    Push(cc_UNK_0xee02); // UNK_0xee02
     break;
   case 27:
-    UNK_0xedfa(); // UNK_0xedfa
+    Push(cc_UNK_0xedfa); // UNK_0xedfa
     break;
   case 68:
-    UNK_0xedfe(); // UNK_0xedfe
+    Push(cc_UNK_0xedfe); // UNK_0xedfe
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -834,25 +834,25 @@ void _gt_BOX() // >BOX
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    UNK_0xedee(); // UNK_0xedee
+    Push(cc_UNK_0xedee); // UNK_0xedee
     break;
   case 28:
-    UNK_0xedf2(); // UNK_0xedf2
+    Push(cc_UNK_0xedf2); // UNK_0xedf2
     break;
   case 40:
-    UNK_0xedf6(); // UNK_0xedf6
+    Push(cc_UNK_0xedf6); // UNK_0xedf6
     break;
   case 41:
-    UNK_0xee06(); // UNK_0xee06
+    Push(cc_UNK_0xee06); // UNK_0xee06
     break;
   case 43:
-    UNK_0xee02(); // UNK_0xee02
+    Push(cc_UNK_0xee02); // UNK_0xee02
     break;
   case 27:
-    UNK_0xedfa(); // UNK_0xedfa
+    Push(cc_UNK_0xedfa); // UNK_0xedfa
     break;
   case 68:
-    UNK_0xedfe(); // UNK_0xedfe
+    Push(cc_UNK_0xedfe); // UNK_0xedfe
     break;
   default:
     UNRAVEL(); // UNRAVEL

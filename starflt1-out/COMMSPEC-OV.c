@@ -313,22 +313,22 @@ void _ro_XCOMM_rc_() // (XCOMM)
   switch(Pop()) // SA-CASE
   {
   case 1:
-    UNK_0xf454(); // UNK_0xf454
+    Push(0xf454); // pointer to UNK_0xf454
     break;
   case 7:
-    UNK_0xf45f(); // UNK_0xf45f
+    Push(0xf45f); // pointer to UNK_0xf45f
     break;
   case 8:
-    UNK_0xf46c(); // UNK_0xf46c
+    Push(0xf46c); // pointer to UNK_0xf46c
     break;
   case 3:
-    UNK_0xf475(); // UNK_0xf475
+    Push(0xf475); // pointer to UNK_0xf475
     break;
   case 10:
-    UNK_0xf47a(); // UNK_0xf47a
+    Push(0xf47a); // pointer to UNK_0xf47a
     break;
   case 21:
-    UNK_0xf47f(); // UNK_0xf47f
+    Push(0xf47f); // pointer to UNK_0xf47f
     break;
   default:
     Push(0); // 0

@@ -21938,19 +21938,19 @@ void UNK_0x9668() // UNK_0x9668
   switch(Pop()) // SYSCASE
   {
   case 4:
-    SSYSEG(); // SSYSEG
+    Push(0x5d09); // pointer to SSYSEG
     break;
   case 6:
-    SSYSEG(); // SSYSEG
+    Push(0x5d09); // pointer to SSYSEG
     break;
   case 15:
-    MSYSEG(); // MSYSEG
+    Push(0x5cfc); // pointer to MSYSEG
     break;
   case 14:
-    MSYSEG(); // MSYSEG
+    Push(0x5cfc); // pointer to MSYSEG
     break;
   default:
-    LSYSEG(); // LSYSEG
+    Push(0x5cef); // pointer to LSYSEG
     break;
 
   }
@@ -26728,16 +26728,16 @@ void ORGIA() // ORGIA
     Push(2); // 2
     break;
   case 22:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 23:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 24:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   default:
-    _dash_1(); // -1
+    Push(cc__dash_1); // -1
     break;
 
   }

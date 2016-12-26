@@ -1162,13 +1162,13 @@ void UNK_0xdc1d() // UNK_0xdc1d
     Push(2); // 2
     break;
   case 1:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 2:
-    _8(); // 8
+    Push(cc__8); // 8
     break;
   case 3:
-    UNK_0xda69(); // UNK_0xda69
+    Push(cc_UNK_0xda69); // UNK_0xda69
     break;
   default:
     Push(1); // 1
@@ -3083,19 +3083,19 @@ void UNK_0xeefd() // UNK_0xeefd
   switch(Pop()) // (>?)
   {
   case 0:
-    UNK_0xda6d(); // UNK_0xda6d
+    Push(cc_UNK_0xda6d); // UNK_0xda6d
     break;
   case 1:
-    UNK_0xda71(); // UNK_0xda71
+    Push(cc_UNK_0xda71); // UNK_0xda71
     break;
   case 2:
-    UNK_0xda7d(); // UNK_0xda7d
+    Push(cc_UNK_0xda7d); // UNK_0xda7d
     break;
   case 3:
-    UNK_0xda79(); // UNK_0xda79
+    Push(cc_UNK_0xda79); // UNK_0xda79
     break;
   default:
-    UNK_0xda75(); // UNK_0xda75
+    Push(cc_UNK_0xda75); // UNK_0xda75
     break;
 
   }

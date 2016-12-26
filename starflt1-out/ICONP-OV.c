@@ -216,10 +216,10 @@ void UNK_0xf2d9() // UNK_0xf2d9
   switch(Pop()) // STAR-ID-CASES
   {
   case 2:
-    UNK_0xf26b(); // UNK_0xf26b
+    Push(cc_UNK_0xf26b); // UNK_0xf26b
     break;
   default:
-    UNK_0xf267(); // UNK_0xf267
+    Push(cc_UNK_0xf267); // UNK_0xf267
     break;
 
   }
@@ -243,10 +243,10 @@ void UNK_0xf2ff() // UNK_0xf2ff
   switch(Pop()) // PLANET-ID-CASES
   {
   case 2:
-    UNK_0xf273(); // UNK_0xf273
+    Push(cc_UNK_0xf273); // UNK_0xf273
     break;
   default:
-    UNK_0xf26f(); // UNK_0xf26f
+    Push(cc_UNK_0xf26f); // UNK_0xf26f
     break;
 
   }
@@ -288,7 +288,7 @@ void UNK_0xf32c() // UNK_0xf32c
     UNK_0xf2ff(); // UNK_0xf2ff
     break;
   default:
-    INVIS_dash_I(); // INVIS-I
+    Push(cc_INVIS_dash_I); // INVIS-I
     break;
 
   }
@@ -317,13 +317,13 @@ void UNK_0xf387() // UNK_0xf387
   switch(Pop()) // RUIN-ID-CASES
   {
   case 2:
-    UNK_0xf287(); // UNK_0xf287
+    Push(cc_UNK_0xf287); // UNK_0xf287
     break;
   case 4:
-    UNK_0xf287(); // UNK_0xf287
+    Push(cc_UNK_0xf287); // UNK_0xf287
     break;
   default:
-    UNK_0xf283(); // UNK_0xf283
+    Push(cc_UNK_0xf283); // UNK_0xf283
     break;
 
   }
@@ -393,7 +393,7 @@ void UNK_0xf3f1() // UNK_0xf3f1
     UNK_0xf293(); // UNK_0xf293
     break;
   case 23:
-    SYS_dash_ICO(); // SYS-ICO
+    Push(cc_SYS_dash_ICO); // SYS-ICO
     break;
   case 24:
     UNK_0xf2d9(); // UNK_0xf2d9
@@ -405,13 +405,13 @@ void UNK_0xf3f1() // UNK_0xf3f1
     UNK_0xf2ff(); // UNK_0xf2ff
     break;
   case 45:
-    FLUX_dash_IC(); // FLUX-IC
+    Push(cc_FLUX_dash_IC); // FLUX-IC
     break;
   case 46:
     UNK_0xf309(); // UNK_0xf309
     break;
   default:
-    INVIS_dash_I(); // INVIS-I
+    Push(cc_INVIS_dash_I); // INVIS-I
     break;
 
   }
@@ -422,25 +422,25 @@ void UNK_0xf3f1() // UNK_0xf3f1
   switch(Pop()) // PLANET-ID
   {
   case 40:
-    UNK_0xf277(); // UNK_0xf277
+    Push(cc_UNK_0xf277); // UNK_0xf277
     break;
   case 41:
     UNK_0xf387(); // UNK_0xf387
     break;
   case 42:
-    UNK_0xf28f(); // UNK_0xf28f
+    Push(cc_UNK_0xf28f); // UNK_0xf28f
     break;
   case 68:
     UNK_0xf38f(); // UNK_0xf38f
     break;
   case 20:
-    UNK_0xf28b(); // UNK_0xf28b
+    Push(cc_UNK_0xf28b); // UNK_0xf28b
     break;
   case 26:
     UNK_0xf3ab(); // UNK_0xf3ab
     break;
   case 28:
-    UNK_0xf27f(); // UNK_0xf27f
+    Push(cc_UNK_0xf27f); // UNK_0xf27f
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -586,7 +586,7 @@ void UNK_0xf4ae() // UNK_0xf4ae
     UNK_0xf47b(); // UNK_0xf47b
     break;
   default:
-    DEFAULT(); // DEFAULT
+    Push(cc_DEFAULT); // DEFAULT
     break;
 
   }
@@ -631,7 +631,7 @@ void UNK_0xf4e8() // UNK_0xf4e8
     DK_dash_GREEN(); // DK-GREEN
     break;
   default:
-    DEFAULT(); // DEFAULT
+    Push(cc_DEFAULT); // DEFAULT
     break;
 
   }

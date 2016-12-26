@@ -1237,7 +1237,7 @@ void UNK_0xf41e() // UNK_0xf41e
   switch(Pop()) // APOST>PO
   {
   case 16:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 2:
     Push(1); // 1
@@ -1246,7 +1246,7 @@ void UNK_0xf41e() // UNK_0xf41e
     Push(1); // 1
     break;
   case 8:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     Push(2); // 2

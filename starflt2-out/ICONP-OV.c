@@ -347,10 +347,10 @@ void UNK_0xf1e9() // UNK_0xf1e9
   switch(Pop()) // STAR-ID-CASE
   {
   case 2:
-    UNK_0xf11e(); // UNK_0xf11e
+    Push(cc_UNK_0xf11e); // UNK_0xf11e
     break;
   default:
-    UNK_0xf11a(); // UNK_0xf11a
+    Push(cc_UNK_0xf11a); // UNK_0xf11a
     break;
 
   }
@@ -374,10 +374,10 @@ void UNK_0xf20c() // UNK_0xf20c
   switch(Pop()) // PLANET-ID-CA
   {
   case 2:
-    UNK_0xf126(); // UNK_0xf126
+    Push(cc_UNK_0xf126); // UNK_0xf126
     break;
   default:
-    UNK_0xf122(); // UNK_0xf122
+    Push(cc_UNK_0xf122); // UNK_0xf122
     break;
 
   }
@@ -419,7 +419,7 @@ void UNK_0xf239() // UNK_0xf239
     UNK_0xf20c(); // UNK_0xf20c
     break;
   default:
-    INVIS_dash_I(); // INVIS-I
+    Push(cc_INVIS_dash_I); // INVIS-I
     break;
 
   }
@@ -548,16 +548,16 @@ void UNK_0xf31f() // UNK_0xf31f
   switch(Pop()) // RUIN-ID-CASE
   {
   case 2:
-    UNK_0xf136(); // UNK_0xf136
+    Push(cc_UNK_0xf136); // UNK_0xf136
     break;
   case 4:
-    UNK_0xf136(); // UNK_0xf136
+    Push(cc_UNK_0xf136); // UNK_0xf136
     break;
   case 5:
     UNK_0xf28e(); // UNK_0xf28e
     break;
   case 6:
-    UNK_0xf15e(); // UNK_0xf15e
+    Push(cc_UNK_0xf15e); // UNK_0xf15e
     break;
   default:
     UNK_0xf245(); // UNK_0xf245
@@ -592,7 +592,7 @@ void UNK_0xf365() // UNK_0xf365
     UNK_0xf184(); // UNK_0xf184
     break;
   case 23:
-    SYS_dash_ICO(); // SYS-ICO
+    Push(cc_SYS_dash_ICO); // SYS-ICO
     break;
   case 24:
     UNK_0xf1e9(); // UNK_0xf1e9
@@ -604,16 +604,16 @@ void UNK_0xf365() // UNK_0xf365
     UNK_0xf20c(); // UNK_0xf20c
     break;
   case 45:
-    FLUX_dash_IC(); // FLUX-IC
+    Push(cc_FLUX_dash_IC); // FLUX-IC
     break;
   case 46:
     UNK_0xf216(); // UNK_0xf216
     break;
   case 60:
-    UNK_0xf116(); // UNK_0xf116
+    Push(cc_UNK_0xf116); // UNK_0xf116
     break;
   default:
-    INVIS_dash_I(); // INVIS-I
+    Push(cc_INVIS_dash_I); // INVIS-I
     break;
 
   }
@@ -627,34 +627,34 @@ void UNK_0xf365() // UNK_0xf365
     UNK_0xf31f(); // UNK_0xf31f
     break;
   case 42:
-    UNK_0xf13e(); // UNK_0xf13e
+    Push(cc_UNK_0xf13e); // UNK_0xf13e
     break;
   case 68:
     UNK_0xf2e7(); // UNK_0xf2e7
     break;
   case 20:
-    UNK_0xf13a(); // UNK_0xf13a
+    Push(cc_UNK_0xf13a); // UNK_0xf13a
     break;
   case 26:
     UNK_0xf2ef(); // UNK_0xf2ef
     break;
   case 28:
-    UNK_0xf12e(); // UNK_0xf12e
+    Push(cc_UNK_0xf12e); // UNK_0xf12e
     break;
   case 31:
     UNK_0xf172(); // UNK_0xf172
     break;
   case 33:
-    UNK_0xf152(); // UNK_0xf152
+    Push(cc_UNK_0xf152); // UNK_0xf152
     break;
   case 21:
     UNK_0xf2cb(); // UNK_0xf2cb
     break;
   case 27:
-    UNK_0xf142(); // UNK_0xf142
+    Push(cc_UNK_0xf142); // UNK_0xf142
     break;
   case 48:
-    UNK_0xf142(); // UNK_0xf142
+    Push(cc_UNK_0xf142); // UNK_0xf142
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -842,7 +842,7 @@ void UNK_0xf454() // UNK_0xf454
     UNK_0xf421(); // UNK_0xf421
     break;
   default:
-    DEFAULT(); // DEFAULT
+    Push(cc_DEFAULT); // DEFAULT
     break;
 
   }
@@ -916,7 +916,7 @@ void UNK_0xf4b4() // UNK_0xf4b4
     UNK_0xf460(); // UNK_0xf460
     break;
   default:
-    DEFAULT(); // DEFAULT
+    Push(cc_DEFAULT); // DEFAULT
     break;
 
   }

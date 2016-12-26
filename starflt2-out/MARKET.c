@@ -1040,13 +1040,13 @@ void UNK_0xed77() // UNK_0xed77
   switch(Pop()) // TLEN
   {
   case 26:
-    UNK_0xed56(); // UNK_0xed56
+    Push(cc_UNK_0xed56); // UNK_0xed56
     break;
   case 68:
-    UNK_0xed5a(); // UNK_0xed5a
+    Push(cc_UNK_0xed5a); // UNK_0xed5a
     break;
   default:
-    UNK_0xed5e(); // UNK_0xed5e
+    Push(cc_UNK_0xed5e); // UNK_0xed5e
     break;
 
   }
@@ -1903,7 +1903,7 @@ void UNK_0xf1e9() // UNK_0xf1e9
     UNK_0xf1ae(); // UNK_0xf1ae
     break;
   case 68:
-    UNK_0xf1c8(); // UNK_0xf1c8
+    Push(cc_UNK_0xf1c8); // UNK_0xf1c8
     break;
   default:
     Push(0); // 0

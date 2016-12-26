@@ -99,19 +99,19 @@ void UNK_0xf423() // UNK_0xf423
   switch(Pop()) // DISPOSAL
   {
   case 68:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 26:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 21:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 31:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 33:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 28:
     UNK_0xf3ae(); // UNK_0xf3ae
@@ -120,10 +120,10 @@ void UNK_0xf423() // UNK_0xf423
     UNK_0xf3ba(); // UNK_0xf3ba
     break;
   case 9:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   default:
-    FALSE(); // FALSE
+    Push(cc_FALSE); // FALSE
     break;
 
   }

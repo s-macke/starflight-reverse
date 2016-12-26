@@ -973,13 +973,13 @@ void UNK_0xed5f() // UNK_0xed5f
   switch(Pop()) // S>CM
   {
   case 4:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 1:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 3:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   default:
     UNK_0xed32(); // UNK_0xed32
@@ -1823,7 +1823,7 @@ void _ro__ex__i_EXT_rc_() // (!'EXT)
     UNK_0xf33d(); // UNK_0xf33d
     break;
   default:
-    UNK_0xf339(); // UNK_0xf339
+    Push(cc_UNK_0xf339); // UNK_0xf339
     break;
 
   }

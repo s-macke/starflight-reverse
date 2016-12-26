@@ -1714,19 +1714,19 @@ void UNK_0xe1c2() // UNK_0xe1c2
   switch(Pop()) // RADII
   {
   case 1:
-    UNK_0xd9dc(); // UNK_0xd9dc
+    Push(cc_UNK_0xd9dc); // UNK_0xd9dc
     break;
   case 2:
-    UNK_0xd9e4(); // UNK_0xd9e4
+    Push(cc_UNK_0xd9e4); // UNK_0xd9e4
     break;
   case 4:
-    UNK_0xd9e0(); // UNK_0xd9e0
+    Push(cc_UNK_0xd9e0); // UNK_0xd9e0
     break;
   case 5:
-    UNK_0xd9d4(); // UNK_0xd9d4
+    Push(cc_UNK_0xd9d4); // UNK_0xd9d4
     break;
   default:
-    UNK_0xd9d8(); // UNK_0xd9d8
+    Push(cc_UNK_0xd9d8); // UNK_0xd9d8
     break;
 
   }
@@ -1737,19 +1737,19 @@ void UNK_0xe1c2() // UNK_0xe1c2
   switch(Pop()) // IVAR
   {
   case 0:
-    _ro_PLANET(); // (PLANET
+    Push(0x64b1); // pointer to (PLANET
     break;
   case 1:
-    _ro_ORBIT_rc_(); // (ORBIT)
+    Push(0x64a1); // pointer to (ORBIT)
     break;
   case 2:
-    _ro_SYSTEM(); // (SYSTEM
+    Push(0x6491); // pointer to (SYSTEM
     break;
   case 4:
-    _ro_ENCOUN(); // (ENCOUN
+    Push(0x64d1); // pointer to (ENCOUN
     break;
   default:
-    _ro_SHIPBO(); // (SHIPBO
+    Push(0x64e1); // pointer to (SHIPBO
     break;
 
   }
@@ -2810,7 +2810,7 @@ void UNK_0xe8c9() // UNK_0xe8c9
     UNK_0xe882(); // UNK_0xe882
     break;
   default:
-    UNK_0xe896(); // UNK_0xe896
+    Push(cc_UNK_0xe896); // UNK_0xe896
     break;
 
   }

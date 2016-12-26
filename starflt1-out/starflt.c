@@ -21618,19 +21618,19 @@ void UNK_0x9c76() // UNK_0x9c76
   switch(Pop()) // SYSCASE
   {
   case 4:
-    SSYSEG(); // SSYSEG
+    Push(0x5b6f); // pointer to SSYSEG
     break;
   case 6:
-    SSYSEG(); // SSYSEG
+    Push(0x5b6f); // pointer to SSYSEG
     break;
   case 15:
-    MSYSEG(); // MSYSEG
+    Push(0x5b62); // pointer to MSYSEG
     break;
   case 14:
-    MSYSEG(); // MSYSEG
+    Push(0x5b62); // pointer to MSYSEG
     break;
   default:
-    LSYSEG(); // LSYSEG
+    Push(0x5b55); // pointer to LSYSEG
     break;
 
   }
@@ -25353,7 +25353,7 @@ void ORGIADDR() // ORGIADDR
     Push(2); // 2
     break;
   default:
-    _dash_1(); // -1
+    Push(cc__dash_1); // -1
     break;
 
   }

@@ -116,13 +116,13 @@ void UNK_0xf0bb() // UNK_0xf0bb
     Push(2); // 2
     break;
   case 8:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 16:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 1:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     Push(1); // 1

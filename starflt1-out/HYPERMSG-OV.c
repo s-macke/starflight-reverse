@@ -1357,13 +1357,13 @@ void UNK_0xef2b() // UNK_0xef2b
   switch(Pop()) // S>CM
   {
   case 4:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   case 1:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 3:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   default:
     UNK_0xeefe(); // UNK_0xeefe
@@ -2180,7 +2180,7 @@ void _ro__ex__i_EXT_rc_() // (!'EXT)
     UNK_0xf4e6(); // UNK_0xf4e6
     break;
   default:
-    UNK_0xf4ee(); // UNK_0xf4ee
+    Push(cc_UNK_0xf4ee); // UNK_0xf4ee
     break;
 
   }

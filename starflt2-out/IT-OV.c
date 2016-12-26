@@ -836,22 +836,22 @@ void UNK_0xf3db() // UNK_0xf3db
   switch(Pop()) // CLASS>BO
   {
   case 9:
-    UNK_0xeece(); // UNK_0xeece
+    Push(cc_UNK_0xeece); // UNK_0xeece
     break;
   case 26:
-    UNK_0xeeb6(); // UNK_0xeeb6
+    Push(cc_UNK_0xeeb6); // UNK_0xeeb6
     break;
   case 28:
     UNK_0xf0ea(); // UNK_0xf0ea
     break;
   case 41:
-    UNK_0xeec6(); // UNK_0xeec6
+    Push(cc_UNK_0xeec6); // UNK_0xeec6
     break;
   case 27:
-    UNK_0xeebe(); // UNK_0xeebe
+    Push(cc_UNK_0xeebe); // UNK_0xeebe
     break;
   case 68:
-    UNK_0xeec2(); // UNK_0xeec2
+    Push(cc_UNK_0xeec2); // UNK_0xeec2
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -875,22 +875,22 @@ void BOX_gt_TOCS() // BOX>TOCS
   switch(Pop()) // CLASS>BO
   {
   case 9:
-    UNK_0xeece(); // UNK_0xeece
+    Push(cc_UNK_0xeece); // UNK_0xeece
     break;
   case 26:
-    UNK_0xeeb6(); // UNK_0xeeb6
+    Push(cc_UNK_0xeeb6); // UNK_0xeeb6
     break;
   case 28:
     UNK_0xf0ea(); // UNK_0xf0ea
     break;
   case 41:
-    UNK_0xeec6(); // UNK_0xeec6
+    Push(cc_UNK_0xeec6); // UNK_0xeec6
     break;
   case 27:
-    UNK_0xeebe(); // UNK_0xeebe
+    Push(cc_UNK_0xeebe); // UNK_0xeebe
     break;
   case 68:
-    UNK_0xeec2(); // UNK_0xeec2
+    Push(cc_UNK_0xeec2); // UNK_0xeec2
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -952,22 +952,22 @@ void _gt_BOX() // >BOX
   switch(Pop()) // CLASS>BO
   {
   case 9:
-    UNK_0xeece(); // UNK_0xeece
+    Push(cc_UNK_0xeece); // UNK_0xeece
     break;
   case 26:
-    UNK_0xeeb6(); // UNK_0xeeb6
+    Push(cc_UNK_0xeeb6); // UNK_0xeeb6
     break;
   case 28:
     UNK_0xf0ea(); // UNK_0xf0ea
     break;
   case 41:
-    UNK_0xeec6(); // UNK_0xeec6
+    Push(cc_UNK_0xeec6); // UNK_0xeec6
     break;
   case 27:
-    UNK_0xeebe(); // UNK_0xeebe
+    Push(cc_UNK_0xeebe); // UNK_0xeebe
     break;
   case 68:
-    UNK_0xeec2(); // UNK_0xeec2
+    Push(cc_UNK_0xeec2); // UNK_0xeec2
     break;
   default:
     UNRAVEL(); // UNRAVEL

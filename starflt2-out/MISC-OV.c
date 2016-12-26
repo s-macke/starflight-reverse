@@ -200,19 +200,19 @@ void UNK_0xef36() // UNK_0xef36
     Push(2); // 2
     break;
   case 2:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 3:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -245,19 +245,19 @@ void UNK_0xef52() // UNK_0xef52
     Push(2); // 2
     break;
   case 2:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 3:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -361,19 +361,19 @@ void UNK_0xefc8() // UNK_0xefc8
     Push(2); // 2
     break;
   case 2:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 3:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -906,19 +906,19 @@ void UNK_0xf35b() // UNK_0xf35b
     Push(2); // 2
     break;
   case 2:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 3:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -971,19 +971,19 @@ void _ro__ask__dot_EQ() // (?.EQ
     Push(2); // 2
     break;
   case 2:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 3:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _5(); // 5
+    Push(cc__5); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    _4(); // 4
+    Push(cc__4); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL

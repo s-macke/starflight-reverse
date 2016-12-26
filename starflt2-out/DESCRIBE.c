@@ -986,31 +986,31 @@ void UNK_0xebcd() // UNK_0xebcd
     Push(2); // 2
     break;
   case 8:
-    _3(); // 3
+    Push(cc__3); // 3
     break;
   case 11:
-    UNK_0xeaf4(); // UNK_0xeaf4
+    Push(cc_UNK_0xeaf4); // UNK_0xeaf4
     break;
   case 10:
-    _6(); // 6
+    Push(cc__6); // 6
     break;
   case 4:
-    _8(); // 8
+    Push(cc__8); // 8
     break;
   case 5:
-    _9(); // 9
+    Push(cc__9); // 9
     break;
   case 7:
-    UNK_0xeae4(); // UNK_0xeae4
+    Push(cc_UNK_0xeae4); // UNK_0xeae4
     break;
   case 6:
-    UNK_0xeae8(); // UNK_0xeae8
+    Push(cc_UNK_0xeae8); // UNK_0xeae8
     break;
   case 18:
-    UNK_0xeaec(); // UNK_0xeaec
+    Push(cc_UNK_0xeaec); // UNK_0xeaec
     break;
   case 19:
-    UNK_0xeaf0(); // UNK_0xeaf0
+    Push(cc_UNK_0xeaf0); // UNK_0xeaf0
     break;
   default:
     UNRAVEL(); // UNRAVEL

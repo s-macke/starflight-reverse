@@ -920,19 +920,19 @@ void UNK_0xeca1() // UNK_0xeca1
   switch(Pop()) // DISPOSAL
   {
   case 68:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 26:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 21:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 31:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 33:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 28:
     UNK_0xe76d(); // UNK_0xe76d
@@ -941,10 +941,10 @@ void UNK_0xeca1() // UNK_0xeca1
     UNK_0xe779(); // UNK_0xe779
     break;
   case 9:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   default:
-    FALSE(); // FALSE
+    Push(cc_FALSE); // FALSE
     break;
 
   }
@@ -970,19 +970,19 @@ void UNK_0xecd8() // UNK_0xecd8
   switch(Pop()) // DISPOSAL
   {
   case 68:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 26:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 21:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 31:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 33:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 28:
     UNK_0xe76d(); // UNK_0xe76d
@@ -991,10 +991,10 @@ void UNK_0xecd8() // UNK_0xecd8
     UNK_0xe779(); // UNK_0xe779
     break;
   case 9:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   default:
-    FALSE(); // FALSE
+    Push(cc_FALSE); // FALSE
     break;
 
   }

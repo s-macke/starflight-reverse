@@ -2932,16 +2932,16 @@ void UNK_0xf21d() // UNK_0xf21d
     UNK_0xdf87(); // UNK_0xdf87
     break;
   case 2:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 3:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   case 7:
-    TRUE(); // TRUE
+    Push(cc_TRUE); // TRUE
     break;
   default:
-    FALSE(); // FALSE
+    Push(cc_FALSE); // FALSE
     break;
 
   }
