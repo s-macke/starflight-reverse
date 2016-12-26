@@ -32,9 +32,11 @@ DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
         if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
         if (dict[i].parp == addr) return &dict[i];
     }
+    unsigned short codep = Read16(addr-2);
+    if (codep == 0x0) return NULL;
 
     snprintf(dict[ndict].r, STRINGLEN, "UNK_0x%04x", addr);
-    dict[ndict].codep = Read16(addr-2);
+    dict[ndict].codep = codep;
     dict[ndict].parp = addr;
     dict[ndict].ofs = addr-2;
     dict[ndict].ovidx = ovidx;
@@ -424,6 +426,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
         DICTENTRY *e = GetDictEntry(par, currentovidx);
+        if (e == NULL)
+        {
+            sprintf(pline[ofs].str, "  UNK_0x%04x(); // Unknown overlay function\n", par);
+            ofs += 2;
+            continue;
+        }
 
         char *s = GetWordName(e);
 
