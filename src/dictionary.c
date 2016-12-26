@@ -27,6 +27,7 @@ char* GetWordName(DICTENTRY *dict)
 DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
 {
     int i = 0;
+    if (addr < 0x100+FILESTAR0SIZE) ovidx = -1;
     for(i=0; i<ndict; i++)
     {
         if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
@@ -360,7 +361,7 @@ int PutEasyMacro(DICTENTRY *e, char *ret)
 }
 
 // unsafe test to find closest dict entry
-DICTENTRY* FindClosestFunction(unsigned short int addr)
+DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
 {
     int i = 0;
     int dist = 0xFFFF;
@@ -369,12 +370,14 @@ DICTENTRY* FindClosestFunction(unsigned short int addr)
     {
         if (dict[i].parp > addr) continue;
         if (dict[i].codep != CODECALL) continue;
+        if ((dict[i].ovidx != ovidx) && (dict[i].ovidx != -1)) continue;
 
         if (dist > (addr-dict[i].parp)) {
             result = &dict[i];
             dist = addr-dict[i].parp;
         }
     }
+
     if (result == NULL) {
         fprintf(stderr, "Error: Cannot find function header at offset 0x%04x\n", addr);
         exit(1);
@@ -384,7 +387,7 @@ DICTENTRY* FindClosestFunction(unsigned short int addr)
     DICTENTRY *result2 = result;
     for(i=result->parp; i<addr-2; i+=2) {
         if (Read16(i) == CODECALL) {
-            result2 = GetDictEntry(i+2, result->ovidx);
+            result2 = GetDictEntry(i+2, ovidx);
         }
     }
 
@@ -408,7 +411,7 @@ unsigned short int FindLoopID(unsigned short int addr)
 void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     if (d == NULL) {
-        d = FindClosestFunction(ofs);
+        d = FindClosestFunction(ofs, currentovidx);
     }
 
     if (d->codep != CODECALL) {
@@ -597,6 +600,11 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
         {
+            if (currentovidx != -1)
+            {
+                fprintf(stderr, "Error: Change of overlay inside overlay\n");
+                exit(1);
+            }
             //int codep = Read16(par-2);
             unsigned short startaddress = Read16(par);
             int i=0;
@@ -915,7 +923,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
 }
 
-void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx)
+void WriteVariables(FILE *fp, int ovidx)
 {
     int i = 0;
     int j = 0;

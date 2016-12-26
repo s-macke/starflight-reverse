@@ -42,7 +42,7 @@ void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
 char* GetDictWord(unsigned short addr, int ovidx);
 char* GetWordName(DICTENTRY *dict);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
-void WriteVariables(int minaddr, int maxaddr, FILE *fp, int ovidx);
+void WriteVariables(FILE *fp, int ovidx);
 
 void InitOutput();
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);

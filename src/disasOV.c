@@ -15,7 +15,7 @@
 
 // ---------------------------------
 
-int DisasmRange(int offset, int size, FILE *fp)
+int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE *fp)
 {
     char buffer[0x80];
     int i;
@@ -23,7 +23,9 @@ int DisasmRange(int offset, int size, FILE *fp)
     //fprintf(stderr, "disasm start 0x%04x\n", offset);
     while (size > 0)
     {
+
         //fprintf(stderr, "Disasm %04x\n", offset);
+        if ((offset < minaddr) || (offset >= maxaddr)) return 0;
         if (offset > 0xFFFF)
         {
            fprintf(stderr, "Warning: outside of segment\n");
@@ -57,7 +59,7 @@ int DisasmRange(int offset, int size, FILE *fp)
         if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump
         {
             unsigned short addr = (offset+(short int)((char)Read8(currentoffset+1)));
-            DisasmRange(addr&0xffff, 0x10000, fp);
+            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr, fp);
         }
 
         if (strcmp(buffer, "jmp    word ptr [bx]") == 0) // jmp
@@ -69,10 +71,10 @@ int DisasmRange(int offset, int size, FILE *fp)
         {
             //fprintf(stderr, "call from 0x%04x\n", currentoffset);
             unsigned short addr = (offset+(short int)Read16(currentoffset+1));
-            DisasmRange(addr&0xffff, 0x10000, fp);
+            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr, fp);
             if (addr == 0x1649)
             {
-                ParsePartFunction(newoffset, pline, 0x0, 0x10000, NULL, -1);
+                ParsePartFunction(newoffset, pline, 0x0, 0x10000, NULL, ovidx);
                 return 0;
             }
         }
@@ -115,11 +117,12 @@ void LoadOverlayDict(int ovidx)
     SortDictionary();
 }
 
-void WriteHeader()
+void WriteHeader(int ovidx)
 {
     int i, j;
     for(i=0; i<ndict; i++)
     {
+        if (dict[i].ovidx != ovidx) continue;
         snprintf(pline[dict[i].ofs].strword, STRINGLEN,
         "\n// ================================================\n"
         "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
@@ -138,6 +141,8 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     OVLHeader head;
     LoadOverlay(ovidx, &head);
     int namep = (head.buf[0x6] | (head.buf[0x7]<<8));
+    int minaddr = head.storeofs+0x8+0xa;
+    int maxaddr = head.storeofs+head.ovlsize;
 
 
     fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
@@ -169,26 +174,25 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     fprintf(fph, "\n#endif\n");
 
-    WriteHeader();
-    ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
+    WriteHeader(ovidx);
+    ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
 
-    WriteHeader();
+    WriteHeader(ovidx);
 
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        if ((dict[i].codep < head.storeofs+0x8+0xa) || (dict[i].codep >= head.storeofs+head.ovlsize)) continue;
         //printf("disasm dict entry %i\n", i);
-        DisasmRange(dict[i].codep, 0x100000, fpc);
+        DisasmRange(dict[i].codep, 0x100000, ovidx, minaddr, maxaddr, fpc);
     }
 
-    ParseForthFunctions(ovidx, head.storeofs+0x8+0xa, head.storeofs+head.ovlsize);
+    ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-    WriteHeader();
+    WriteHeader(ovidx);
     WriteDict(mem, fpc, ovidx);
-    WriteVariables(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc, ovidx);
-    WriteParsedFunctions(head.storeofs+0x8+0xa, head.storeofs+head.ovlsize, fpc);
+    WriteVariables(fpc, ovidx);
+    WriteParsedFunctions(minaddr, maxaddr, fpc);
 }
 
 void LoadSTARFLT()
@@ -220,27 +224,29 @@ void ParseStarFltDict()
 void DisasStarflt(FILE *fp)
 {
     int i, j;
+    const int ovidx = -1;
+    int minaddr = 0x100;
+    int maxaddr = FILESTAR0SIZE+0x100;
     InitOutput();
-    WriteHeader();
-    ParseForthFunctions(-1, 0x100, FILESTAR0SIZE+0x100);
+    WriteHeader(ovidx);
+    ParseForthFunctions(ovidx, minaddr, maxaddr);
 
     SortDictionary();
-    dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
+    dict[ndict-1].size = maxaddr-dict[ndict-1].parp;
 
-    WriteHeader();
+    WriteHeader(ovidx);
 
     for(i=0; i<ndict; i++)
     {
-        if ((dict[i].codep < 0x100) || (dict[i].codep >= FILESTAR0SIZE+0x100)) continue;
-        DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, fp);
+        DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, ovidx, minaddr, maxaddr, fp);
     }
 
-    ParseForthFunctions(-1, 0x100, FILESTAR0SIZE+0x100);
+    ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-    WriteHeader();
+    WriteHeader(ovidx);
     WriteDict(mem, fp, -1);
-    WriteVariables(0x100, FILESTAR0SIZE+0x100, fp, -1);
-    WriteParsedFunctions(0x100, FILESTAR0SIZE+0x100, fp);
+    WriteVariables(fp, ovidx);
+    WriteParsedFunctions(minaddr, maxaddr, fp);
 }
 
 void OutputDirectory()
