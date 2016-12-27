@@ -591,7 +591,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             {
                 DICTENTRY *dcall = GetDictEntry(par, currentovidx);
                 pline[par].isfunction = 1;
-                snprintf(pline[par].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+                snprintf(pline[par-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
                 ParsePartFunction(ofs+2, l, minaddr, maxaddr, d, currentovidx);
                 ParsePartFunction(par, l, minaddr, maxaddr, dcall, currentovidx);
             }
@@ -917,7 +917,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (dict[i].codep != CODECALL) continue;
         char *s = GetWordName(&dict[i]);
         pline[dict[i].parp].isfunction = 1;
-        snprintf(pline[dict[i].parp].strfunc, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+        snprintf(pline[dict[i].parp-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
         ParsePartFunction(dict[i].parp, pline, minaddr, maxaddr, &dict[i], dict[i].ovidx);
     }
 
@@ -984,29 +984,10 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
         {
             fprintf(fp, "// entry\n");
         }
-
-        if (pline[i].strword[0] != 0)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].strword);
-            dbmode = 0;
-        }
-        if (pline[i].strfunc[0] != 0)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].strfunc);
-            dbmode = 0;
-        }
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "\n  label%i:\n", pline[i].labelid);
-            dbmode = 0;
-        }
-        if (pline[i].strasm[0] != 0)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].strasm);
             dbmode = 0;
         }
         if (pline[i].str[0] != 0)

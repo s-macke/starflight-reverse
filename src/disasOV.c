@@ -42,7 +42,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE 
         int newoffset = disasm(0x0, (unsigned)offset, mem, buffer);
         int len = newoffset-offset;
         //fprintf(stderr, "Disasm done %04x\n", offset);
-        snprintf(pline[currentoffset].strasm, STRINGLEN, "// 0x%04x: %s\n", currentoffset, buffer);
+        snprintf(pline[currentoffset].str, STRINGLEN, "// 0x%04x: %s\n", currentoffset, buffer);
         for(i=0; i<len; i++)
         {
             pline[offset].done = 1;
@@ -52,7 +52,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE 
 
         if (Read8(currentoffset) == 0xc3) // ret
         {
-            snprintf(pline[currentoffset].str, STRINGLEN, "\n");
+            strcat(pline[currentoffset].str, "\n");
             return 0;
         }
 
@@ -123,7 +123,7 @@ void WriteHeader(int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        snprintf(pline[dict[i].ofs].strword, STRINGLEN,
+        snprintf(pline[dict[i].ofs].str, STRINGLEN,
         "\n// ================================================\n"
         "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
         "// ================================================\n",
