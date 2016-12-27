@@ -8,7 +8,6 @@
 #include"../emul/cpu.h"
 
 
-
 struct DICTENTRY dict[10000];
 int ndict = 0;
 
@@ -39,7 +38,7 @@ DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
     snprintf(dict[ndict].r, STRINGLEN, "UNK_0x%04x", addr);
     dict[ndict].codep = codep;
     dict[ndict].parp = addr;
-    dict[ndict].ofs = addr-2;
+    dict[ndict].addr = addr-2;
     dict[ndict].ovidx = ovidx;
     ndict++;
     return &dict[ndict-1];
@@ -55,7 +54,7 @@ int GetDictStart(int addr)
     int i = 0;
     for(i=0; i<ndict; i++)
     {
-        if (dict[i].ofs == addr) return i;
+        if (dict[i].addr == addr) return i;
     }
     return -1;
 }
@@ -63,14 +62,14 @@ int GetDictStart(int addr)
 
 // --------------------------------------------
 
-int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
+int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
 {
-    unsigned short linkp = Read16(ofs);
-    unsigned char bitfield = Read8(ofs+2);
+    unsigned short linkp = Read16(addr);
+    unsigned char bitfield = Read8(addr+2);
     unsigned int length = bitfield & 0x3F;
     int i = 0;
     memset(&dict[ndict], 0, sizeof(DICTENTRY));
-    dict[ndict].ofs = ofs;
+    dict[ndict].addr = addr;
     dict[ndict].linkp = linkp;
     dict[ndict].bits = bitfield;
     dict[ndict].ovidx = ovidx;
@@ -84,23 +83,23 @@ int AddDirectory(int ofs, unsigned char *mem, int decrypt, int ovidx)
         {
             if (length == 1)
             {
-                dict[ndict].r[n] = Read8(ofs+2+i) & 0x7F;
+                dict[ndict].r[n] = Read8(addr+2+i) & 0x7F;
             } else
             {
-                dict[ndict].r[n] = (Read8(ofs+2+i) ^ 0x7F) & 0x7F;
-                mem[ofs+2+i] = ((Read8(ofs+2+i)^0x7F)&0x7F) | (Read8(ofs+2+i)&0x80); // restore upper bit
+                dict[ndict].r[n] = (Read8(addr+2+i) ^ 0x7F) & 0x7F;
+                mem[addr+2+i] = ((Read8(addr+2+i)^0x7F)&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
             }
         } else
         {
-            dict[ndict].r[n] = (Read8(ofs+2+i)) & 0x7F;
-            mem[ofs+2+i] = ((Read8(ofs+2+i))&0x7F) | (Read8(ofs+2+i)&0x80); // restore upper bit
+            dict[ndict].r[n] = (Read8(addr+2+i)) & 0x7F;
+            mem[addr+2+i] = ((Read8(addr+2+i))&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
         }
 
         n++;
-    } while ((Read8(ofs+2+i)&128) == 0);
-    int varp = ofs + i + 3;
+    } while ((Read8(addr+2+i)&128) == 0);
+    int varp = addr + i + 3;
     dict[ndict].codep = (mem[varp+1]<<8) | mem[varp+0];
-    dict[ndict].parp = ofs+5+n;
+    dict[ndict].parp = addr+5+n;
 
     // find duplicate word labels
     /*
@@ -127,7 +126,7 @@ void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx)
     {
         for(j=0; j<ndict; j++)
         {
-            if (dict[j].ofs == linkp)
+            if (dict[j].addr == linkp)
             if (dict[j].ovidx == ovidx)
             {
                 fprintf(stderr, "duplicate\n");
@@ -180,7 +179,7 @@ void SortDictionary()
         }
 
         if (dict[j].ovidx == dict[j+1].ovidx)
-        if (dict[j].ofs > dict[j+1].ofs)
+        if (dict[j].addr > dict[j+1].addr)
         {
             memcpy((void*)&temp,      (void*)&dict[j], sizeof(DICTENTRY));
             memcpy((void*)&dict[j],   (void*)&dict[j+1], sizeof(DICTENTRY));
@@ -192,7 +191,7 @@ void SortDictionary()
     {
         if (dict[i].ovidx == dict[i+1].ovidx)
         {
-            dict[i].size = dict[i+1].ofs - dict[i].parp;
+            dict[i].size = dict[i+1].addr - dict[i].parp;
         } else
         {
             dict[i].size = 0;

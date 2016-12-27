@@ -123,12 +123,12 @@ void WriteHeader(int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        snprintf(pline[dict[i].ofs].str, STRINGLEN,
+        snprintf(pline[dict[i].addr].str, STRINGLEN,
         "\n// ================================================\n"
         "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
         "// ================================================\n",
-        dict[i].ofs, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-        for(j=dict[i].ofs; j<dict[i].parp; j++) pline[j].done = 1;
+        dict[i].addr, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
+        for(j=dict[i].addr; j<dict[i].parp; j++) pline[j].done = 1;
     }
 }
 

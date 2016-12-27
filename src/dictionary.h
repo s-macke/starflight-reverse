@@ -3,15 +3,14 @@
 
 typedef struct DICTENTRY
 {
-    int ofs; // offset of directory entry
+    int addr; // address of word in code
     int codep; // code pointer
     int linkp; // link pointer
     int parp; // parameter pointer
     int bits; // bitfield
-//    int t; // type x86=1;
-    char r[64]; // name
-    int size;
-    int ovidx;
+    char r[64]; // short name
+    int size; // probable size of the word
+    int ovidx; // overlay index
 } DICTENTRY;
 
 extern int ndict;
