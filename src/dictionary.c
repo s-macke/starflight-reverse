@@ -162,31 +162,20 @@ void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
     }
 }
 
+static int
+cmpdictp(const void *p1, const void *p2)
+{
+    DICTENTRY *a = (DICTENTRY*)p1;
+    DICTENTRY *b = (DICTENTRY*)p2;
+
+    return (a->parp-b->parp) + (a->ovidx-b->ovidx)*0x10000;
+}
+
 void SortDictionary()
 {
-    struct DICTENTRY temp;
+    qsort(dict, ndict, sizeof(DICTENTRY), cmpdictp);
+
     int i = 0;
-    int j = 0;
-    for(i=0; i<ndict; i++)
-    for(j=0; j<ndict-1; j++)
-    {
-        if (dict[j].ovidx > dict[j+1].ovidx)
-        {
-            memcpy((void*)&temp,      (void*)&dict[j], sizeof(DICTENTRY));
-            memcpy((void*)&dict[j],   (void*)&dict[j+1], sizeof(DICTENTRY));
-            memcpy((void*)&dict[j+1], (void*)&temp, sizeof(DICTENTRY));
-            continue;
-        }
-
-        if (dict[j].ovidx == dict[j+1].ovidx)
-        if (dict[j].addr > dict[j+1].addr)
-        {
-            memcpy((void*)&temp,      (void*)&dict[j], sizeof(DICTENTRY));
-            memcpy((void*)&dict[j],   (void*)&dict[j+1], sizeof(DICTENTRY));
-            memcpy((void*)&dict[j+1], (void*)&temp, sizeof(DICTENTRY));
-        }
-    }
-
     for(i=0; i<ndict-1; i++)
     {
         if (dict[i].ovidx == dict[i+1].ovidx)
