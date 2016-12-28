@@ -3,8 +3,8 @@
 #ifndef STP-OV_H
 #define STP-OV_H
 
-void SP(); // SP
 void MP_i_ER(); // MP'ER
+void SP(); // SP
 void _2N(); // 2N
 
 #endif
