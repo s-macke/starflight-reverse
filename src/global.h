@@ -1,6 +1,7 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+#define STRINGLEN 300
 
 // ----------------------------------------------
 typedef struct

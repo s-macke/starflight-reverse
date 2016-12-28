@@ -1,7 +1,7 @@
 #ifndef EXTRACT_H
 #define EXTRACT_H
 
-typedef struct
+typedef struct DIRENTRY
 {
     int idx;
     char name[13];

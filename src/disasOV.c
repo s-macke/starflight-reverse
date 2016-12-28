@@ -3,6 +3,7 @@
 #include<string.h>
 #include"global.h"
 #include"dictionary.h"
+#include"parser.h"
 #include"extract.h"
 #include"utils.h"
 #include"../emul/cpu.h"

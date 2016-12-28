@@ -18,6 +18,12 @@ dictionary1.o: src/dictionary.c src/global.h
 dictionary2.o: src/dictionary.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/dictionary.c -o dictionary2.o
 
+parser1.o: src/parser.c src/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/parser.c -o parser1.o
+
+parser2.o: src/parser.c src/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/parser.c -o parser2.o
+
 extract1.o: src/extract.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/extract.c -o extract1.o
 
@@ -30,11 +36,11 @@ global1.o: src/global.c src/global.h
 global2.o: src/global.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/global.c -o global2.o
 
-disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o cpu.o utils.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o cpu.o utils.o
+disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o
 
-disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o cpu.o utils.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o cpu.o utils.o
+disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o
     
 .PHONY: clean
 
