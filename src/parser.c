@@ -18,7 +18,7 @@ int PutEasyMacro(DICTENTRY *e, char *ret)
 
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        snprintf(ret, STRINGLEN, "  Push(0x%04x); // pointer to %s\n", e->parp, s);
+        snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s size: %i\n", Forth2CString(s), s, e->size);
         return 2;
     }
     if (e->codep == CODECONSTANT)
@@ -207,6 +207,7 @@ unsigned short int FindLoopID(unsigned short int addr, DICTENTRY *e)
     {
         if (pline[i].loopid != 0) return pline[i].loopid;
     }
+    //fprintf(stderr, "Warning: search for loop index without loop in function '%s'\n", GetWordName(e));
     return e->nloop;
 }
 
@@ -737,10 +738,14 @@ void WriteVariables(FILE *fp, int ovidx)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEPOINTER) continue;
-        fprintf(fp, "unsigned char %s[%i] = {", Forth2CString(GetWordName(&dict[i])), dict[i].size);
+        fprintf(fp, "const unsigned short int pp_%s = 0x%04x; // %s size: %i\n// {", 
+            Forth2CString(GetWordName(&dict[i])),
+            dict[i].parp,
+            GetWordName(&dict[i]),
+            dict[i].size
+        );
         for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
-        fprintf(fp, "0x%02x", Read8(dict[i].parp+j));
-        fprintf(fp, "}; // %s\n", GetWordName(&dict[i]));
+        fprintf(fp, "0x%02x}\n\n", Read8(dict[i].parp+j));
     }
     fprintf(fp, "\n");
     for(i=0; i<ndict; i++)
