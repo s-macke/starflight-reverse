@@ -35,7 +35,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xf32d[2] = {0x3a, 0x20}; // UNK_0xf32d
+const unsigned short int pp_UNK_0xf32d = 0xf32d; // UNK_0xf32d size: 2
+// {0x3a, 0x20}
+
 
 
 
@@ -99,7 +101,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   SFILL(); // SFILL
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   _099(); // 099
   Push(2); // 2
   Push(1); // 1
@@ -126,7 +128,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   Push(0x00c4);
   POS_dot_(); // POS.
   PRINT("PRE", 3); // (.")
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   Push(Read16(Pop())); // @
   Push(0x00c0);
   OVER(); // OVER
@@ -134,11 +136,11 @@ void UNK_0xf1cb() // UNK_0xf1cb
   OVER(); // OVER
   LLINE(); // LLINE
   Push(cc__5); // 5
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex__2(); // +!_2
   PRINT("FLIGHT", 6); // (.")
   Push(cc__6); // 6
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex__2(); // +!_2
   PRINT("CHECK", 5); // (.")
   Push(2); // 2
@@ -155,7 +157,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
 void UNK_0xf25e() // UNK_0xf25e
 {
   Push(cc__6); // 6
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   Push(Read16(Pop())); // @
   Push(0x0014);
   _dash_(); // -
@@ -174,7 +176,7 @@ void UNK_0xf276() // UNK_0xf276
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("REPORT TO OPERATIONS FOR", 24); // (.")
   Push(0x000a);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("EVALUATION", 10); // (.")
@@ -221,7 +223,7 @@ void UNK_0xf2fb() // UNK_0xf2fb
   PRINT(" AND ", 5); // (.")
   UNK_0xf25e(); // UNK_0xf25e
   Push(0x000a);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
   UNK_0xf2e4(); // UNK_0xf2e4
 }
@@ -246,11 +248,11 @@ void UNK_0xf331() // UNK_0xf331
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("REPORT TO SHIP-CONFIGURATION", 28); // (.")
   Push(0x000a);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("TO ", 3); // (.")
-  Push(0xf32d); // pointer to UNK_0xf32d
+  Push(pp_UNK_0xf32d); // UNK_0xf32d size: 0
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(1); // 1
@@ -303,7 +305,7 @@ void UNK_0xf378() // UNK_0xf378
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("UNABLE TO LAUNCH WITHOUT FUEL ", 30); // (.")
   Push(0x000a);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
 }
@@ -372,7 +374,7 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf414() // UNK_0xf414
 {
-  Push(0x5860); // pointer to ?EVAL
+  Push(pp__ask_EVAL); // ?EVAL size: 2
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -399,11 +401,11 @@ void UNK_0xf414() // UNK_0xf414
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(0x55d2); // pointer to ?TV
+  Push(pp__ask_TV); // ?TV size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
-  Push(0x5de2); // pointer to ?RECALL
+  Push(pp__ask_RECALL); // ?RECALL size: 2
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   UNK_0xf406(); // UNK_0xf406
@@ -470,7 +472,7 @@ void UNK_0xf492() // UNK_0xf492
   Push(Read16(regsp)); // DUP
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
-  Push(0xf32d); // pointer to UNK_0xf32d
+  Push(pp_UNK_0xf32d); // UNK_0xf32d size: 0
   _ex__2(); // !_2
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -500,7 +502,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(Read16(regsp)); // DUP
   Push(0x000a);
   M_star_(); // M*
-  Push(0x633a); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   D_ex_(); // D!
   if (Pop() == 0) Push(1); else Push(0); // 0=
   goto label3;

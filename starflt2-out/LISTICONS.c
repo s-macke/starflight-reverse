@@ -38,12 +38,12 @@ void UNK_0xf2c6() // UNK_0xf2c6
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(0x699a); // pointer to CMAP
+  Push(pp_CMAP); // CMAP size: 64
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x5a9d); // pointer to TILE-PT
+  Push(pp_TILE_dash_PT); // TILE-PT size: 2
   _ex__2(); // !_2
   Push(0x0020);
   Push(i); // I
@@ -93,17 +93,17 @@ void UNK_0xf2c6() // UNK_0xf2c6
 void UNK_0xf36f() // UNK_0xf36f
 {
   Push(0x00be);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _st__ex__gt_(); // <!>
   Push(0x0037);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _st__plus__ex__gt_(); // <+!>
   PRINT("KEY", 3); // (.")
   Push(0x000a);
@@ -157,7 +157,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   label1:
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
-  Push(0x5a77); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _st__ex__gt_(); // <!>
   BLT(); // BLT
   i++;
@@ -174,10 +174,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0x000a);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _st__ex__gt_(); // <!>
   Push(0x001b);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -215,18 +215,18 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x000a);
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _st__ex__gt_(); // <!>
   Push(0x0014);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(0x5a61); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(0x5a6c); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _st__ex__gt_(); // <!>
-  Push(0x5a27); // pointer to ICON^
+  Push(pp_ICON_h_); // ICON^ size: 2
   Push(Read16(Pop())); // @
   Push(i); // I
   Push(0x0012);
@@ -238,12 +238,12 @@ void UNK_0xf45e() // UNK_0xf45e
   PAD_v_16(); // PAD|16
   UNK_0xf3e6(); // UNK_0xf3e6
   Push(0x000c);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
@@ -259,7 +259,7 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x001b);
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _st__plus__ex__gt_(); // <+!>
   i++;
   } while(i<imax); // (LOOP) 0xff8c
@@ -275,14 +275,14 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void ICONS() // ICONS
 {
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   _099(); // 099
-  Push(0x5ecd); // pointer to ESC-EN
+  Push(pp_ESC_dash_EN); // ESC-EN size: 2
   _099(); // 099
-  Push(0xa489); // pointer to NOF
+  Push(pp_NOF); // NOF size: 2
   ON_2(); // ON_2
   _at_DS(); // @DS
-  Push(0x5a84); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   _ex__2(); // !_2
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
@@ -311,9 +311,9 @@ void ICONS() // ICONS
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf2c6(); // UNK_0xf2c6
   UNK_0xf418(); // UNK_0xf418
-  Push(0x5ecd); // pointer to ESC-EN
+  Push(pp_ESC_dash_EN); // ESC-EN size: 2
   ON_2(); // ON_2
-  Push(0xa489); // pointer to NOF
+  Push(pp_NOF); // NOF size: 2
   _099(); // 099
 }
 

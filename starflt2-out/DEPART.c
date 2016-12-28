@@ -155,7 +155,7 @@ void UNK_0xf439() // UNK_0xf439
 
 void UNK_0xf447() // UNK_0xf447
 {
-  Push(0x64b1); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -200,11 +200,11 @@ void UNK_0xf447() // UNK_0xf447
 
 void UNK_0xf48d() // UNK_0xf48d
 {
-  Push(0x64b1); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(0x6481); // pointer to SUPER-B
+  Push(pp_SUPER_dash_B); // SUPER-B size: 4
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -234,9 +234,9 @@ void UNK_0xf48d() // UNK_0xf48d
 
 void UNK_0xf4bc() // UNK_0xf4bc
 {
-  Push(0x64f1); // pointer to (AORIGI
+  Push(pp__ro_AORIGI); // (AORIGI size: 4
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x5646); // pointer to EDL
+  Push(pp_EDL); // EDL size: 2
   Push(Read16(Pop())); // @
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
   Push(Read8(Pop())&0xFF); // C@
@@ -281,12 +281,12 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 void DEPART() // DEPART
 {
-  Push(0x553f); // pointer to ?CRITIC
+  Push(pp__ask_CRITIC); // ?CRITIC size: 2
   _099(); // 099
   Push(0x3a48);
-  Push(0x5688); // pointer to 'THROW-
+  Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__2(); // !_2
-  Push(0x56d8); // pointer to ?LANDED
+  Push(pp__ask_LANDED); // ?LANDED size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf447(); // UNK_0xf447
@@ -294,11 +294,11 @@ void DEPART() // DEPART
 
   label1:
   Push(cc__dash_1); // -1
-  Push(0x6029); // pointer to PLHI
+  Push(pp_PLHI); // PLHI size: 2
   _ex__2(); // !_2
-  Push(0x56d8); // pointer to ?LANDED
+  Push(pp__ask_LANDED); // ?LANDED size: 2
   _099(); // 099
-  Push(0x64f1); // pointer to (AORIGI
+  Push(pp__ro_AORIGI); // (AORIGI size: 4
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
@@ -306,9 +306,9 @@ void DEPART() // DEPART
 
   label2:
   Push2Words("NULL");
-  Push(0x64f1); // pointer to (AORIGI
+  Push(pp__ro_AORIGI); // (AORIGI size: 4
   _1_dot_5_ex__2(); // 1.5!_2
-  Push(0x6a02); // pointer to (TRADER
+  Push(pp__ro_TRADER); // (TRADER size: 4
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
   _ex_INST_dash_S(); // !INST-S

@@ -46,7 +46,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xf122[20] = {0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44}; // UNK_0xf122
+const unsigned short int pp_UNK_0xf122 = 0xf122; // UNK_0xf122 size: 20
+// {0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44}
+
 
 const unsigned short int cc_UNK_0xefa0 = 0x0000; // UNK_0xefa0
 const unsigned short int cc_UNK_0xefa4 = 0x0001; // UNK_0xefa4
@@ -250,7 +252,7 @@ void TRANSACT() // TRANSACT
   ILAST(); // ILAST
   COVER(); // COVER
   SET_dash_CUR(); // SET-CUR
-  Push(0x6002); // pointer to STARDAT
+  Push(pp_STARDAT); // STARDAT size: 2
   Push(Read16(Pop())); // @
   Push(0x65ec); // IFIELD(UNK_0xefb4)
   _2_at_(); // 2@
@@ -292,9 +294,9 @@ void INT_pe_() // INT%
   Push(0x000c);
   Push(0x0064);
   M_star__slash_(); // M*/
-  Push(0x6002); // pointer to STARDAT
+  Push(pp_STARDAT); // STARDAT size: 2
   Push(Read16(Pop())); // @
-  Push(0x5c9e); // pointer to PORTDAT
+  Push(pp_PORTDAT); // PORTDAT size: 2
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(0x012c);
@@ -312,9 +314,9 @@ void INT_pe_() // INT%
   _ex_TFLAG(); // !TFLAG
   Push(cc__5); // 5
   TRANSACT(); // TRANSACT
-  Push(0x6002); // pointer to STARDAT
+  Push(pp_STARDAT); // STARDAT size: 2
   Push(Read16(Pop())); // @
-  Push(0x5c9e); // pointer to PORTDAT
+  Push(pp_PORTDAT); // PORTDAT size: 2
   _ex__2(); // !_2
 }
 
@@ -331,22 +333,22 @@ void INT_pe_() // INT%
 void UNK_0xf138() // UNK_0xf138
 {
   Push(0xfffc);
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   Push(Read16(Pop())); // @
   _dash_(); // -
-  Push(0x5a6c); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__2(); // !_2
   Push(1); // 1
-  Push(0x5a61); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__2(); // !_2
-  Push(0xf122); // pointer to UNK_0xf122
-  Push(0x5a77); // pointer to ABLT
+  Push(pp_UNK_0xf122); // UNK_0xf122 size: 0
+  Push(pp_ABLT); // ABLT size: 2
   _ex__2(); // !_2
   BLT(); // BLT
   Push(cc__4); // 4
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   _plus__ex__2(); // +!_2
 }
 
@@ -492,7 +494,7 @@ void UNK_0xf1f2() // UNK_0xf1f2
 void UNK_0xf27f() // UNK_0xf27f
 {
   _ex_COLOR(); // !COLOR
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_2(); // ON_2
   Push(cc__3); // 3
   Push(0); // 0
@@ -627,11 +629,11 @@ void UNK_0xf3bb() // UNK_0xf3bb
   POS_dot_(); // POS.
   PRINT("DATE", 4); // (.")
   Push(0x003e);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   PRINT("TRANSACTIONS", 12); // (.")
   Push(0x0085);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   PRINT("AMT", 3); // (.")
   Push(0x0013);
@@ -685,7 +687,7 @@ void UNK_0xf474() // UNK_0xf474
 
 void UNK_0xf482() // UNK_0xf482
 {
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   _099(); // 099
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -698,13 +700,13 @@ void UNK_0xf482() // UNK_0xf482
   _gt_1FONT(); // >1FONT
   UNK_0xf162(); // UNK_0xf162
   Push(0x0032);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   UNK_0xf1ea(); // UNK_0xf1ea
   Push(0x007c);
   UNK_0xf138(); // UNK_0xf138
   Push(0x007d);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   UNK_0xf1a6(); // UNK_0xf1a6
 }

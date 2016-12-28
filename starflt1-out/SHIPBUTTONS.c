@@ -36,7 +36,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xedb6[7] = {0x00, 0x00, 0x4d, 0x74, 0x14, 0x45, 0x04}; // UNK_0xedb6
+const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 7
+// {0x00, 0x00, 0x4d, 0x74, 0x14, 0x45, 0x04}
+
 
 
 
@@ -92,9 +94,9 @@ void UNK_0xee6c() // UNK_0xee6c
   Push(0x0041);
   UNK_0xee30(); // UNK_0xee30
   Push(0x003a);
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__3(); // !_3
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   OFF(); // OFF
   Push(Pop()-1); // 1-
   Push(Read16(regsp)); // DUP
@@ -175,13 +177,13 @@ void UNK_0xeee2() // UNK_0xeee2
 
 void UNK_0xef3a() // UNK_0xef3a
 {
-  Push(0x5cb1); // pointer to BTN-REC
+  Push(pp_BTN_dash_REC); // BTN-REC size: 2
   Push(Read16(Pop())); // @
   _gt_V(); // >V
-  Push(0x5ba3); // pointer to THIS-BU
+  Push(pp_THIS_dash_BU); // THIS-BU size: 2
   Push(Read16(Pop())); // @
   _gt_V(); // >V
-  Push(0x5ca3); // pointer to 'BUTTON
+  Push(pp__i_BUTTON); // 'BUTTON size: 2
   Push(Read16(Pop())); // @
   _gt_V(); // >V
 }
@@ -196,7 +198,7 @@ void UNK_0xef50() // UNK_0xef50
   UNK_0xef3a(); // UNK_0xef3a
   UNK_0xeee2(); // UNK_0xeee2
   INIT_dash_BU(); // INIT-BU
-  Push(0x5ca3); // pointer to 'BUTTON
+  Push(pp__i_BUTTON); // 'BUTTON size: 2
   _ex__3(); // !_3
 }
 
@@ -259,7 +261,7 @@ void UNK_0xf3fe() // UNK_0xf3fe
   Push(0); // 0
   Push(0xef50);
   DOTASKS(UNK_0xef50, UNK_0x0f20, UNK_0x175d);
-  Push(0xedb6); // pointer to UNK_0xedb6
+  Push(pp_UNK_0xedb6); // UNK_0xedb6 size: 0
   OFF(); // OFF
 }
 
@@ -316,10 +318,10 @@ void UNK_0xf4a0() // UNK_0xf4a0
 void _gt_FLT() // >FLT
 {
   Push(0x001a);
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__3(); // !_3
   Push(cc__6); // 6
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
@@ -330,18 +332,18 @@ void _gt_FLT() // >FLT
   TIME(); // TIME
   _2_at_(); // 2@
   _2DUP(); // 2DUP
-  Push(0x6136); // pointer to NAV-TIME
+  Push(pp_NAV_dash_TIME); // NAV-TIME size: 10
   D_ex_(); // D!
-  Push(0x6126); // pointer to ENC-TIME
+  Push(pp_ENC_dash_TIME); // ENC-TIME size: 4
   D_ex_(); // D!
-  Push(0x5e66); // pointer to STAR-HR
+  Push(pp_STAR_dash_HR); // STAR-HR size: 2
   Push(Read16(Pop())); // @
-  Push(0x5343); // pointer to TRAK-HR
+  Push(pp_TRAK_dash_HR); // TRAK-HR size: 2
   _ex__3(); // !_3
   CFIGARRAYS(); // CFIGARRAYS
   SetColor("GREY2");
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(0x5a5c); // pointer to CONTEXT-ID#
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =
@@ -349,14 +351,14 @@ void _gt_FLT() // >FLT
   UNK_0xf4a0(); // UNK_0xf4a0
 
   label1:
-  Push(0xedb6); // pointer to UNK_0xedb6
+  Push(pp_UNK_0xedb6); // UNK_0xedb6 size: 0
   OFF(); // OFF
   UNK_0xf3fe(); // UNK_0xf3fe
   Push(0x001a);
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__3(); // !_3
   Push(cc__6); // 6
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @

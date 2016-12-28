@@ -32,7 +32,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xf143[2] = {0x00, 0x00}; // UNK_0xf143
+const unsigned short int pp_UNK_0xf143 = 0xf143; // UNK_0xf143 size: 2
+// {0x00, 0x00}
+
 
 
 
@@ -59,7 +61,7 @@ unsigned char UNK_0xf143[2] = {0x00, 0x00}; // UNK_0xf143
 
 void UNK_0xf147() // UNK_0xf147
 {
-  Push(0x62bf); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf13b"); // from 'PLANET      '
   Push(Read16(Pop())); // @
@@ -101,7 +103,7 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
-  Push(0xf143); // pointer to UNK_0xf143
+  Push(pp_UNK_0xf143); // UNK_0xf143 size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf147(); // UNK_0xf147
@@ -149,11 +151,11 @@ void UNK_0xf1c9() // UNK_0xf1c9
 
 void UNK_0xf1db() // UNK_0xf1db
 {
-  Push(0xf143); // pointer to UNK_0xf143
+  Push(pp_UNK_0xf143); // UNK_0xf143 size: 0
   ON_3(); // ON_3
   UNK_0xf177(); // UNK_0xf177
   Pop(); // DROP
-  Push(0xf143); // pointer to UNK_0xf143
+  Push(pp_UNK_0xf143); // UNK_0xf143 size: 0
   OFF(); // OFF
   Push(0xbd4a);
   MODULE(); // MODULE
@@ -215,7 +217,7 @@ void UNK_0xf258() // UNK_0xf258
 
   UNK_0x3f3b(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
-  Push(0x62af); // pointer to (ORBIT)
+  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(INST-QTY)
   _ask_(); // ?
@@ -223,7 +225,7 @@ void UNK_0xf258() // UNK_0xf258
 
   UNK_0x3f3b(" IN SYSTEM ");
   _dot_TTY(); // .TTY
-  Push(0x629f); // pointer to (SYSTEM
+  Push(pp__ro_SYSTEM); // (SYSTEM size: 4
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
@@ -300,7 +302,7 @@ void UNK_0xf37b() // UNK_0xf37b
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(0x5a5c); // pointer to CONTEXT-ID#
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
@@ -371,15 +373,15 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf430() // UNK_0xf430
 {
   UNK_0xf32c(); // UNK_0xf32c
-  Push(0x58db); // pointer to ?FUEL-DIE
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE size: 2
   _ex__3(); // !_3
   Push(cc__dash_1); // -1
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   _ex__3(); // !_3
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7);
   MODULE(); // MODULE
-  Push(0x58db); // pointer to ?FUEL-DIE
+  Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf258(); // UNK_0xf258
@@ -398,31 +400,31 @@ void UNK_0xf430() // UNK_0xf430
 
 void UNK_0xf45e() // UNK_0xf45e
 {
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   UNK_0xf3e2(); // UNK_0xf3e2
   if (Pop() == 0) goto label1;
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   ON_3(); // ON_3
   goto label2;
 
   label1:
   UNK_0xf342(); // UNK_0xf342
   if (Pop() == 0) goto label3;
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   ON_3(); // ON_3
   goto label2;
 
   label3:
   UNK_0xf39d(); // UNK_0xf39d
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   _ex__3(); // !_3
 
   label2:
-  Push(0x58f3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -435,9 +437,9 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void _ask_LAND() // ?LAND
 {
-  Push(0x5f5c); // pointer to 'EXTERNAL-EVENTS
+  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
   Push(Read16(Pop())); // @
-  Push(0x5329); // pointer to 'HEAT
+  Push(pp__i_HEAT); // 'HEAT size: 2
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -448,7 +450,7 @@ void _ask_LAND() // ?LAND
   return;
 
   label1:
-  Push(0x58e9); // pointer to ?G-AWARE
+  Push(pp__ask_G_dash_AWARE); // ?G-AWARE size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf45e(); // UNK_0xf45e

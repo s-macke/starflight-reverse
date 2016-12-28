@@ -22,8 +22,12 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char BRIGHT[2] = {0x2e, 0x52}; // BRIGHT
-unsigned char _2TEMP[2] = {0x20, 0x2e}; // 2TEMP
+const unsigned short int pp_BRIGHT = 0xf35c; // BRIGHT size: 2
+// {0x2e, 0x52}
+
+const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
+// {0x20, 0x2e}
+
 
 
 
@@ -126,27 +130,27 @@ void _dot_PARMS() // .PARMS
 {
   Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
-  Push(0x562e); // pointer to X2
+  Push(pp_X2); // X2 size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("x1= ", 4); // (.")
-  Push(0x561c); // pointer to X1
+  Push(pp_X1); // X1 size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("st ", 3); // (.")
-  Push(0x57b7); // pointer to XSTART
+  Push(pp_XSTART); // XSTART size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("en ", 3); // (.")
-  Push(0x57c2); // pointer to XEND
+  Push(pp_XEND); // XEND size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("y ", 2); // (.")
-  Push(0x57ce); // pointer to YLINE
+  Push(pp_YLINE); // YLINE size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
@@ -265,21 +269,21 @@ void _dot_PARMS() // .PARMS
 void _dot_HYBRID() // .HYBRID
 {
   Push(Read16(regsp)); // DUP
-  Push(0x58aa); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   _ex__3(); // !_3
   _gt_R(); // >R
   Push(cc__5); // 5
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _ex__3(); // !_3
   Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
-  Push(0x5887); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__3(); // !_3
   Push(h); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
-  Push(0x5892); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(cc__4); // 4
@@ -290,21 +294,21 @@ void _dot_HYBRID() // .HYBRID
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(0x58aa); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(cc__4); // 4
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _plus__ex_(); // +!
   Push(i); // I
   Push(i); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
-  Push(0x55f2); // pointer to COLOR
+  Push(pp_COLOR); // COLOR size: 2
   _ex__3(); // !_3
   R_gt_(); // R>
   R_gt_(); // R>
@@ -312,11 +316,11 @@ void _dot_HYBRID() // .HYBRID
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
   if (Pop() == 0) goto label1;
-  Push(0x58aa); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   Push(Read16(Pop())); // @
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   Push(Read16(Pop())); // @
-  Push(0x5da3); // pointer to ?EGA
+  Push(pp__ask_EGA); // ?EGA size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _dot_EGARUNBIT(); // .EGARUNBIT
@@ -332,16 +336,16 @@ void _dot_HYBRID() // .HYBRID
   _co_BLT_cc_(); // {BLT}
 
   label4:
-  Push(0x58aa); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   Push(Read16(Pop())); // @
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dash_(); // -
   L_at_(); // L@
   Push(cc__4); // 4
   _dash_(); // -
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _plus__ex_(); // +!
   i++;
   } while(i<imax); // (LOOP) 0xff9c

@@ -52,8 +52,12 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xee46[2] = {0x00, 0x00}; // UNK_0xee46
-unsigned char UNK_0xeff2[20] = {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 0x03, 0x03, 0x00, 0x5d, 0x02, 0x02, 0x00, 0x60, 0x02, 0x02, 0x00, 0x90}; // UNK_0xeff2
+const unsigned short int pp_UNK_0xee46 = 0xee46; // UNK_0xee46 size: 2
+// {0x00, 0x00}
+
+const unsigned short int pp_UNK_0xeff2 = 0xeff2; // UNK_0xeff2 size: 20
+// {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 0x03, 0x03, 0x00, 0x5d, 0x02, 0x02, 0x00, 0x60, 0x02, 0x02, 0x00, 0x90}
+
 
 
 
@@ -71,17 +75,17 @@ unsigned char UNK_0xeff2[20] = {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 
 void UNK_0xee4a() // UNK_0xee4a
 {
   CURSORS(); // CURSORS
-  Push(0x5a77); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _ex__2(); // !_2
   Push(cc__4); // 4
   Push(Read16(regsp)); // DUP
-  Push(0x5a6c); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__2(); // !_2
   Push(cc__5); // 5
-  Push(0x5a61); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__2(); // !_2
   BLT(); // BLT
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex__2(); // +!_2
 }
 
@@ -291,12 +295,12 @@ void UNK_0xef6e() // UNK_0xef6e
   Pop(); // DROP
   IOPEN(); // IOPEN
   CTINIT(); // CTINIT
-  Push(0x5985); // pointer to '.HUFF
+  Push(pp__i__dot_HUFF); // '.HUFF size: 2
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
-  Push(0xee46); // pointer to UNK_0xee46
+  Push(pp_UNK_0xee46); // UNK_0xee46 size: 0
   ON_2(); // ON_2
   SAVE_dash_OV(); // SAVE-OV
   Push(cc__7); // 7
@@ -412,25 +416,25 @@ void UNK_0xefc8() // UNK_0xefc8
 void _ro_TRIM() // (TRIM
 {
   _at_DS(); // @DS
-  Push(0x5a84); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   _ex__2(); // !_2
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
-  Push(0xeff2); // pointer to UNK_0xeff2
+  Push(pp_UNK_0xeff2); // UNK_0xeff2 size: 0
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x5a61); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__2(); // !_2
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x5a6c); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__2(); // !_2
   R_gt_(); // R>
   Push(Pop()+2); // 2+
-  Push(0x5a77); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _ex__2(); // !_2
   POS_dot_(); // POS.
   BLT(); // BLT
@@ -446,14 +450,14 @@ void UNK_0xf042() // UNK_0xf042
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  Push(0x5a3d); // pointer to YBLT
+  Push(pp_YBLT); // YBLT size: 2
   Push(Read16(Pop())); // @
   L_at_PIXEL(); // L@PIXEL
   Push(0xfffc);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex__2(); // +!_2
   Push(1); // 1
   SWAP(); // SWAP
@@ -500,7 +504,7 @@ void UNK_0xf078() // UNK_0xf078
 void UNK_0xf09a() // UNK_0xf09a
 {
   _at_CRS(); // @CRS
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_2(); // ON_2
   SetColor("WHITE");
   SetColor("WHITE");
@@ -510,7 +514,7 @@ void UNK_0xf09a() // UNK_0xf09a
   UNK_0xee4a(); // UNK_0xee4a
   UNK_0xf078(); // UNK_0xf078
   Push(0xfffc);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex__2(); // +!_2
   UNK_0xee4a(); // UNK_0xee4a
   UNK_0xf078(); // UNK_0xf078
@@ -524,11 +528,11 @@ void UNK_0xf09a() // UNK_0xf09a
 
 void UNK_0xf0c0() // UNK_0xf0c0
 {
-  Push(0x5db8); // pointer to -AIN
+  Push(pp__dash_AIN); // -AIN size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(Read16(regsp)); // DUP
-  Push(0x5db8); // pointer to -AIN
+  Push(pp__dash_AIN); // -AIN size: 2
   Push(Read16(Pop())); // @
   _eq_(); // =
   SWAP(); // SWAP
@@ -556,7 +560,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop()+1); // 1+
   Push(0); // 0
   FILL_2(); // FILL_2
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_2(); // ON_2
 
   label5:
@@ -694,7 +698,7 @@ void _ro__ask_ART() // (?ART
 
 void UNK_0xf208() // UNK_0xf208
 {
-  Push(0xee46); // pointer to UNK_0xee46
+  Push(pp_UNK_0xee46); // UNK_0xee46 size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0); // 0
@@ -742,7 +746,7 @@ void RSTE() // RSTE
   } while(i<imax); // (LOOP) 0xfffa
 
   ICLOSE(); // ICLOSE
-  Push(0xee46); // pointer to UNK_0xee46
+  Push(pp_UNK_0xee46); // UNK_0xee46 size: 0
   _099(); // 099
   SAVE_dash_OV(); // SAVE-OV
 }
@@ -788,7 +792,7 @@ void _ro_0_do__do__do_() // (0$$$
 {
   Push(1); // 1
   _0MESS(); // 0MESS
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   _099(); // 099
   Push(1); // 1
   Push(0x0012);
@@ -855,7 +859,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
   Push(0x00b4);
   POS_dot_(); // POS.
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
-  Push(0x5a56); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_2(); // ON_2
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
@@ -886,7 +890,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
 
   BEEPOFF(); // BEEPOFF
   Push(cc__7); // 7
-  Push(0x5f10); // pointer to #AUX
+  Push(pp__n_AUX); // #AUX size: 2
   _ex__2(); // !_2
 }
 
@@ -935,7 +939,7 @@ void UNK_0xf35b() // UNK_0xf35b
   Push(0x0064);
   RRND(); // RRND
   _gt_(); // >
-  Push(0xee46); // pointer to UNK_0xee46
+  Push(pp_UNK_0xee46); // UNK_0xee46 size: 0
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -1115,7 +1119,7 @@ void UNK_0xf41c() // UNK_0xf41c
 void _eq_CARG() // =CARG
 {
   Push2Words("NULL");
-  Push(0x633a); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   D_ex_(); // D!
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -1162,7 +1166,7 @@ void _eq_CARG() // =CARG
   Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
-  Push(0x633a); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   D_ex_(); // D!
 
   label3:
@@ -1195,7 +1199,7 @@ void _eq_CARG() // =CARG
   _ex__2(); // !_2
   Push(0x000a);
   U_star_(); // U*
-  Push(0x62fe); // pointer to 10*CARG
+  Push(pp__10_star_CARG); // 10*CARG size: 4
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -1209,7 +1213,7 @@ void _eq_CARG() // =CARG
 void TV_ask_AR() // TV?AR
 {
   _gt_R(); // >R
-  Push(0x6471); // pointer to TV-HOLD
+  Push(pp_TV_dash_HOLD); // TV-HOLD size: 4
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x000b);

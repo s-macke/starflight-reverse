@@ -271,7 +271,7 @@ void UNK_0xf318() // UNK_0xf318
 
 void UNK_0xf332() // UNK_0xf332
 {
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   Push(0x000b);
@@ -296,7 +296,7 @@ void UNK_0xf332() // UNK_0xf332
 void UNK_0xf35a() // UNK_0xf35a
 {
   Push(1); // 1
-  Push(0x5c65); // pointer to E/M
+  Push(pp_E_slash_M); // E/M size: 2
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
   _3_star_(); // 3*
@@ -351,11 +351,11 @@ void INJURE_dash_PL() // INJURE-PL
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
-  Push(0x5c65); // pointer to E/M
+  Push(pp_E_slash_M); // E/M size: 2
   Push(Read16(Pop())); // @
   _3_star_(); // 3*
   ABS(); // ABS
-  Push(0x5c37); // pointer to %EFF
+  Push(pp__pe_EFF); // %EFF size: 2
   Push(Read16(Pop())); // @
   _slash_(); // /
   Push(1); // 1
@@ -373,7 +373,7 @@ void INJURE_dash_PL() // INJURE-PL
   C_ex__2(); // C!_2
   UNK_0xf374(); // UNK_0xf374
   ICLOSE(); // ICLOSE
-  Push(0x5d23); // pointer to ?HEAL
+  Push(pp__ask_HEAL); // ?HEAL size: 2
   ON_2(); // ON_2
   Push(0x01f4);
   MS(); // MS
@@ -392,7 +392,7 @@ void INJURE_dash_PL() // INJURE-PL
 
 void UNK_0xf41c() // UNK_0xf41c
 {
-  Push(0x5c43); // pointer to STORM
+  Push(pp_STORM); // STORM size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   UNK_0xf2f5(); // UNK_0xf2f5
@@ -403,7 +403,7 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x000c);
   Push(0x00c1);
   Push(0x0044);
-  Push(0x55c8); // pointer to LCOLOR
+  Push(pp_LCOLOR); // LCOLOR size: 2
   Push(Read16(Pop())); // @
   POLY_dash_WI(); // POLY-WI
   Push(0x0074);
@@ -427,7 +427,7 @@ void UNK_0xf41c() // UNK_0xf41c
 
 void UNK_0xf468() // UNK_0xf468
 {
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(cc__3); // 3
@@ -451,9 +451,9 @@ void UNK_0xf468() // UNK_0xf468
   Push(0x0064);
 
   label4:
-  Push(0x5c37); // pointer to %EFF
+  Push(pp__pe_EFF); // %EFF size: 2
   _st__ex__gt_(); // <!>
-  Push(0x5931); // pointer to FORCED
+  Push(pp_FORCED); // FORCED size: 2
   ON_1(); // ON_1
   UNK_0xf41c(); // UNK_0xf41c
 }
@@ -476,7 +476,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
   MIN(); // MIN
   Push(0); // 0
   MAX(); // MAX
-  Push(0x5c43); // pointer to STORM
+  Push(pp_STORM); // STORM size: 2
   _st__ex__gt_(); // <!>
   Push(1); // 1
   Push(0x0064);
@@ -489,7 +489,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
   STORMS(); // STORMS
   UNK_0xf1f4(); // UNK_0xf1f4
   Pop(); // DROP
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   _st__ex__gt_(); // <!>
 }
 
@@ -501,12 +501,12 @@ void UNK_0xf4a6() // UNK_0xf4a6
 void UNK_0xf4e2() // UNK_0xf4e2
 {
   Push(1); // 1
-  Push(0x5c43); // pointer to STORM
+  Push(pp_STORM); // STORM size: 2
   _st__ex__gt_(); // <!>
   Push(0); // 0
   Push(0); // 0
   RRND(); // RRND
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   _st__ex__gt_(); // <!>
 }
 
@@ -518,10 +518,10 @@ void UNK_0xf4e2() // UNK_0xf4e2
 
 void _ro_DO_dot_STORM() // (DO.STORM
 {
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(0x64b1); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf2cd"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
@@ -537,7 +537,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   ICLOSE(); // ICLOSE
   UNK_0xf468(); // UNK_0xf468
   R_gt_(); // R>
-  Push(0x5c80); // pointer to #STORM
+  Push(pp__n_STORM); // #STORM size: 14
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT

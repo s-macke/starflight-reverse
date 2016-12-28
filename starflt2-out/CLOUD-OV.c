@@ -101,7 +101,7 @@ void UNK_0xf45e() // UNK_0xf45e
   UNK_0xf444(); // UNK_0xf444
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(0x5985); // pointer to '.HUFF
+  Push(pp__i__dot_HUFF); // '.HUFF size: 2
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
   Push(2); // 2

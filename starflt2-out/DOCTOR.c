@@ -75,7 +75,7 @@
 void UNK_0xf092() // UNK_0xf092
 {
   Push(0x0040);
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   PRINT("[N Y]", 5); // (.")
 }

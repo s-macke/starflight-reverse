@@ -41,7 +41,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xefe5[20] = {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 0x03, 0x03, 0x00, 0x5d, 0x02, 0x02, 0x00, 0x60, 0x02, 0x02, 0x00, 0x90}; // UNK_0xefe5
+const unsigned short int pp_UNK_0xefe5 = 0xefe5; // UNK_0xefe5 size: 20
+// {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 0x03, 0x03, 0x00, 0x5d, 0x02, 0x02, 0x00, 0x60, 0x02, 0x02, 0x00, 0x90}
+
 
 
 
@@ -75,25 +77,25 @@ unsigned char UNK_0xefe5[20] = {0x03, 0x03, 0x00, 0x22, 0x03, 0x03, 0x80, 0x80, 
 void _ro_TRIM() // (TRIM
 {
   _at_DS(); // @DS
-  Push(0x58aa); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   _ex__3(); // !_3
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
-  Push(0xefe5); // pointer to UNK_0xefe5
+  Push(pp_UNK_0xefe5); // UNK_0xefe5 size: 0
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x5887); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__3(); // !_3
   Push(h); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x5892); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(Pop()+2); // 2+
-  Push(0x589d); // pointer to ABLT
+  Push(pp_ABLT); // ABLT size: 2
   _ex__3(); // !_3
   POS_dot_(); // POS.
   BLT(); // BLT
@@ -110,7 +112,7 @@ void UNK_0xf035() // UNK_0xf035
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
   Push(0xfffc);
-  Push(0x586e); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex_(); // +!
   PAD(); // PAD
   Push(Read16(regsp)); // DUP
@@ -119,7 +121,7 @@ void UNK_0xf035() // UNK_0xf035
   Push(Read8(Pop())&0xFF); // C@
   Exec(EMIT); // call of word 0x2731 '(EMIT)'
   Push(0xfffc);
-  Push(0x586e); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex_(); // +!
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -163,7 +165,7 @@ void UNK_0xf06d() // UNK_0xf06d
 void UNK_0xf08f() // UNK_0xf08f
 {
   _at_CRS(); // @CRS
-  Push(0x587c); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_3(); // ON_3
   SetColor("WHITE");
   SetColor("WHITE");
@@ -173,7 +175,7 @@ void UNK_0xf08f() // UNK_0xf08f
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
   Push(0xfffc);
-  Push(0x586e); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _plus__ex_(); // +!
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
@@ -187,11 +189,11 @@ void UNK_0xf08f() // UNK_0xf08f
 
 void UNK_0xf0b9() // UNK_0xf0b9
 {
-  Push(0x5c1e); // pointer to -AIN
+  Push(pp__dash_AIN); // -AIN size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(Read16(regsp)); // DUP
-  Push(0x5c1e); // pointer to -AIN
+  Push(pp__dash_AIN); // -AIN size: 2
   Push(Read16(Pop())); // @
   _eq_(); // =
   SWAP(); // SWAP
@@ -219,7 +221,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop()+1); // 1+
   Push(0); // 0
   FILL_1(); // FILL_1
-  Push(0x587c); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_3(); // ON_3
 
   label5:
@@ -375,7 +377,7 @@ void _ro_0_do__do__do_() // (0$$$
 {
   Push(1); // 1
   _0MESS(); // 0MESS
-  Push(0x587c); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   OFF(); // OFF
   Push(1); // 1
   Push(0x0012);
@@ -522,7 +524,7 @@ void UNK_0xf319() // UNK_0xf319
   Push(0x00b4);
   POS_dot_(); // POS.
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
-  Push(0x587c); // pointer to XORMODE
+  Push(pp_XORMODE); // XORMODE size: 2
   ON_3(); // ON_3
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
@@ -553,7 +555,7 @@ void UNK_0xf319() // UNK_0xf319
 
   BEEPOFF(); // BEEPOFF
   Push(cc__7); // 7
-  Push(0x5d81); // pointer to #AUX
+  Push(pp__n_AUX); // #AUX size: 2
   _ex__3(); // !_3
 }
 
@@ -823,7 +825,7 @@ void UNK_0xf458() // UNK_0xf458
 void _eq_CARG() // =CARG
 {
   Push2Words("NULL");
-  Push(0x6106); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   D_ex_(); // D!
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -870,7 +872,7 @@ void _eq_CARG() // =CARG
   Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
-  Push(0x6106); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   D_ex_(); // D!
 
   label3:
@@ -903,7 +905,7 @@ void _eq_CARG() // =CARG
   _ex__3(); // !_3
   Push(0x000a);
   U_star_(); // U*
-  Push(0x60ca); // pointer to 10*CARGO
+  Push(pp__10_star_CARGO); // 10*CARGO size: 4
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }

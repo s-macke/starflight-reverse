@@ -84,10 +84,10 @@ void UNK_0xf1ba() // UNK_0xf1ba
 void UNK_0xf1c4() // UNK_0xf1c4
 {
   Push(0x003a);
-  Push(0x5613); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__2(); // !_2
   Push(cc__3); // 3
-  Push(0x5621); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__2(); // !_2
 }
 
@@ -154,9 +154,9 @@ void UNK_0xf202() // UNK_0xf202
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(0x5e8b); // pointer to ?NEB
+  Push(pp__ask_NEB); // ?NEB size: 2
   Push(Read16(Pop())); // @
-  Push(0x5978); // pointer to ?3
+  Push(pp__ask_3); // ?3 size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -194,7 +194,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
   UNK_0x3f09("SHIELDS ARE DOWN");
   _dot_TTY(); // .TTY
-  Push(0x5e40); // pointer to BTN-REC
+  Push(pp_BTN_dash_REC); // BTN-REC size: 2
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
@@ -204,7 +204,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   _dot_ABTN(); // .ABTN
 
   label2:
-  Push(0x6155); // pointer to ?SUP
+  Push(pp__ask_SUP); // ?SUP size: 2
   _099(); // 099
 }
 
@@ -215,9 +215,9 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 void UNK_0xf301() // UNK_0xf301
 {
-  Push(0x5978); // pointer to ?3
+  Push(pp__ask_3); // ?3 size: 2
   Push(Read16(Pop())); // @
-  Push(0x5e8b); // pointer to ?NEB
+  Push(pp__ask_NEB); // ?NEB size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
@@ -233,7 +233,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(cc__6); // 6
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
-  Push(0x61ac); // pointer to NLR
+  Push(pp_NLR); // NLR size: 2
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
   _eq_(); // =
@@ -260,12 +260,12 @@ void UNK_0xf311() // UNK_0xf311
   Push(cc__3); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
-  Push(0x6155); // pointer to ?SUP
+  Push(pp__ask_SUP); // ?SUP size: 2
   ON_2(); // ON_2
   return;
 
   label1:
-  Push(0x61ac); // pointer to NLR
+  Push(pp_NLR); // NLR size: 2
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
   _eq_(); // =
@@ -334,7 +334,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
 
   UNK_0x3f09("ARMING ");
   _dot_TTY(); // .TTY
-  Push(0x5978); // pointer to ?3
+  Push(pp__ask_3); // ?3 size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label5;
   PRINT("PLASMA BOLTS", 12); // (.")
@@ -435,7 +435,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   label1:
   UNK_0xf301(); // UNK_0xf301
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(0x633a); // pointer to 10*END
+  Push(pp__10_star_END); // 10*END size: 4
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR

@@ -104,10 +104,18 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xe400[2] = {0x3a, 0x20}; // UNK_0xe400
-unsigned char UNK_0xf0b0[2] = {0x3a, 0x20}; // UNK_0xf0b0
-unsigned char UNK_0xf0b4[2] = {0x3a, 0x20}; // UNK_0xf0b4
-unsigned char UNK_0xf1e6[2] = {0x3a, 0x20}; // UNK_0xf1e6
+const unsigned short int pp_UNK_0xe400 = 0xe400; // UNK_0xe400 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xf0b0 = 0xf0b0; // UNK_0xf0b0 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xf0b4 = 0xf0b4; // UNK_0xf0b4 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xf1e6 = 0xf1e6; // UNK_0xf1e6 size: 2
+// {0x3a, 0x20}
+
 
 const unsigned short int cc_UNK_0xe2a2 = 0x0044; // UNK_0xe2a2
 
@@ -125,9 +133,9 @@ const unsigned short int cc_UNK_0xe2a2 = 0x0044; // UNK_0xe2a2
 
 void UNK_0xe2b3() // UNK_0xe2b3
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   Push(Read16(Pop())); // @
 }
 
@@ -138,9 +146,9 @@ void UNK_0xe2b3() // UNK_0xe2b3
 
 void UNK_0xe2bf() // UNK_0xe2bf
 {
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__3(); // !_3
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
 }
 
@@ -351,7 +359,7 @@ void UNK_0xe3f4() // UNK_0xe3f4
 
 void UNK_0xe404() // UNK_0xe404
 {
-  Push(0xe400); // pointer to UNK_0xe400
+  Push(pp_UNK_0xe400); // UNK_0xe400 size: 0
   _ex__3(); // !_3
 }
 
@@ -363,7 +371,7 @@ void UNK_0xe404() // UNK_0xe404
 void UNK_0xe40c() // UNK_0xe40c
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  Push(0xe400); // pointer to UNK_0xe400
+  Push(pp_UNK_0xe400); // UNK_0xe400 size: 0
   Push(Read16(Pop())); // @
   _st_(); // <
 }
@@ -507,9 +515,9 @@ void UNK_0xe51b() // UNK_0xe51b
 {
   Push(cc_UNK_0xe2a2); // UNK_0xe2a2
   Push(Read16(regsp)); // DUP
-  Push(0x548f); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__3(); // !_3
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Pop(); // DROP
@@ -653,11 +661,11 @@ void UNK_0xe60b() // UNK_0xe60b
   Push(cc__4); // 4
   MOD(); // MOD
   if (Pop() == 0) goto label1;
-  Push(0x5814); // pointer to PLANTS
+  Push(pp_PLANTS); // PLANTS size: 2
   return;
 
   label1:
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
 }
 
 
@@ -732,7 +740,7 @@ void UNK_0xe740() // UNK_0xe740
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
   UNK_0xe70e(); // UNK_0xe70e
@@ -753,15 +761,15 @@ void UNK_0xe740() // UNK_0xe740
 
 void UNK_0xe762() // UNK_0xe762
 {
-  Push(0x5e9b); // pointer to PLHI
+  Push(pp_PLHI); // PLHI size: 2
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   OFF(); // OFF
 
   label4:
   UNK_0xe51b(); // UNK_0xe51b
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _st_(); // <
@@ -787,7 +795,7 @@ void UNK_0xe762() // UNK_0xe762
   do // (DO)
   {
   Push(i); // I
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   _2DUP(); // 2DUP
@@ -808,7 +816,7 @@ void UNK_0xe762() // UNK_0xe762
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   Push(1); // 1
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _plus__ex_(); // +!
   goto label4;
 
@@ -853,10 +861,10 @@ void UNK_0xe762() // UNK_0xe762
 
 void UNK_0xede0() // UNK_0xede0
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(0x62bf); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xe44f"); // from 'PLANET      '
@@ -872,7 +880,7 @@ void UNK_0xede0() // UNK_0xede0
   _dash_(); // -
   Push(0x0014);
   Push(Pop() * Pop()); // *
-  Push(0x4c57); // pointer to PEAK
+  Push(pp_PEAK); // PEAK size: 36
   _ex__3(); // !_3
   Push(0x000a);
   Push(0x0064);
@@ -885,7 +893,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(cc__9); // 9
   MIN(); // MIN
   R_gt_(); // R>
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   LoadData("UNK_0xe477"); // from 'CREATURE    '
@@ -902,7 +910,7 @@ void UNK_0xee38() // UNK_0xee38
   UNK_0xe2b3(); // UNK_0xe2b3
   _gt_R(); // >R
   _gt_R(); // >R
-  Push(0x629f); // pointer to (SYSTEM
+  Push(pp__ro_SYSTEM); // (SYSTEM size: 4
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -986,14 +994,14 @@ void UNK_0xee38() // UNK_0xee38
 
 void UNK_0xef05() // UNK_0xef05
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   _2DUP(); // 2DUP
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   R_at_(); // R@
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   LoadData("UNK_0xe487"); // from 'CREATURE    '
@@ -1004,7 +1012,7 @@ void UNK_0xef05() // UNK_0xef05
   MIN(); // MIN
   RRND(); // RRND
   R_gt_(); // R>
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   LoadData("UNK_0xe48f"); // from 'CREATURE    '
@@ -1055,7 +1063,7 @@ void UNK_0xef75() // UNK_0xef75
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -1236,10 +1244,10 @@ void UNK_0xf0b8() // UNK_0xf0b8
 
 void UNK_0xf0c6() // UNK_0xf0c6
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(0x62bf); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xe44f"); // from 'PLANET      '
@@ -1272,7 +1280,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   Push(cc__9); // 9
   _slash_(); // /
   R_gt_(); // R>
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
 }
@@ -1286,7 +1294,7 @@ void UNK_0xf11c() // UNK_0xf11c
 {
   LoadData("UNK_0xe477"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(0xf0b4); // pointer to UNK_0xf0b4
+  Push(pp_UNK_0xf0b4); // UNK_0xf0b4 size: 0
   Push(Read16(Pop())); // @
   _st_(); // <
 }
@@ -1298,7 +1306,7 @@ void UNK_0xf11c() // UNK_0xf11c
 
 void UNK_0xf12a() // UNK_0xf12a
 {
-  Push(0xf0b0); // pointer to UNK_0xf0b0
+  Push(pp_UNK_0xf0b0); // UNK_0xf0b0 size: 0
   Push(Read16(Pop())); // @
   UNK_0xe3c2(); // UNK_0xe3c2
   _st_(); // <
@@ -1311,23 +1319,23 @@ void UNK_0xf12a() // UNK_0xf12a
 
 void UNK_0xf136() // UNK_0xf136
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   UNK_0xf0c6(); // UNK_0xf0c6
-  Push(0xf0b4); // pointer to UNK_0xf0b4
+  Push(pp_UNK_0xf0b4); // UNK_0xf0b4 size: 0
   _ex__3(); // !_3
-  Push(0xf0b0); // pointer to UNK_0xf0b0
+  Push(pp_UNK_0xf0b0); // UNK_0xf0b0 size: 0
   _ex__3(); // !_3
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
   _eq_(); // =
   UNK_0xf11c(); // UNK_0xf11c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Push(0xf0b0); // pointer to UNK_0xf0b0
+  Push(pp_UNK_0xf0b0); // UNK_0xf0b0 size: 0
   Push(Read16(Pop())); // @
   UNK_0xe3c2(); // UNK_0xe3c2
   _st_(); // <
@@ -1385,7 +1393,7 @@ void UNK_0xf136() // UNK_0xf136
 
   label6:
   R_gt_(); // R>
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   LoadData("UNK_0xe4c7"); // from 'CREATURE    '
@@ -1408,13 +1416,13 @@ void UNK_0xf136() // UNK_0xf136
 
 void UNK_0xf1ea() // UNK_0xf1ea
 {
-  Push(0x5814); // pointer to PLANTS
+  Push(pp_PLANTS); // PLANTS size: 2
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   Pop(); // DROP
   Push(0x001e);
-  Push(0x4c57); // pointer to PEAK
+  Push(pp_PEAK); // PEAK size: 36
   _ex__3(); // !_3
   Push(0); // 0
   Push(0x0028);
@@ -1431,15 +1439,15 @@ void UNK_0xf1ea() // UNK_0xf1ea
 void UNK_0xf210() // UNK_0xf210
 {
   UNK_0xf1ea(); // UNK_0xf1ea
-  Push(0xf1e6); // pointer to UNK_0xf1e6
+  Push(pp_UNK_0xf1e6); // UNK_0xf1e6 size: 0
   _ex__3(); // !_3
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5814); // pointer to PLANTS
+  Push(pp_PLANTS); // PLANTS size: 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xf1e6); // pointer to UNK_0xf1e6
+  Push(pp_UNK_0xf1e6); // UNK_0xf1e6 size: 0
   Push(Read16(Pop())); // @
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -1496,7 +1504,7 @@ void UNK_0xf278() // UNK_0xf278
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
   UNK_0xf26a(); // UNK_0xf26a
@@ -1575,7 +1583,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   if (Pop() == 0) goto label4;
   Pop(); Pop();// 2DROP
   UNK_0xe3c2(); // UNK_0xe3c2
-  Push(0x62bf); // pointer to (PLANET
+  Push(pp__ro_PLANET); // (PLANET size: 4
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xe44f"); // from 'PLANET      '
@@ -1672,13 +1680,13 @@ void UNK_0xf3e0() // UNK_0xf3e0
 
 void UNK_0xf404() // UNK_0xf404
 {
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   LoadData("UNK_0xe47f"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
-  Push(0x5822); // pointer to ANIMALS
+  Push(pp_ANIMALS); // ANIMALS size: 2
   _eq_(); // =
   if (Pop() == 0) goto label1;
   UNK_0xf3c2(); // UNK_0xf3c2
@@ -1689,7 +1697,7 @@ void UNK_0xf404() // UNK_0xf404
 
   label2:
   R_gt_(); // R>
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
   LoadData("UNK_0xe4df"); // from 'CREATURE    '
@@ -1798,15 +1806,15 @@ void UNK_0xf4a6() // UNK_0xf4a6
 
 void UNK_0xf4c0() // UNK_0xf4c0
 {
-  Push(0x5e9b); // pointer to PLHI
+  Push(pp_PLHI); // PLHI size: 2
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   OFF(); // OFF
 
   label2:
   UNK_0xe51b(); // UNK_0xe51b
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _st_(); // <
@@ -1815,7 +1823,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   LoadData("UNK_0xe4f7"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  Push(0x549d); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
   goto label2;
 
@@ -1831,7 +1839,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 
 void C_plus_OPARMS() // C+OPARMS
 {
-  Push(0x5e9b); // pointer to PLHI
+  Push(pp_PLHI); // PLHI size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xe762(); // UNK_0xe762

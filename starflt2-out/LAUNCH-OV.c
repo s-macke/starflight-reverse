@@ -35,7 +35,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xf220[50] = {0xff, 0x0f, 0xff, 0x01, 0x3f, 0xf8, 0xc7, 0xff, 0xfe, 0xff, 0xf3, 0xfc, 0x8f, 0xff, 0xf0, 0x1f, 0xff, 0xf0, 0x0f, 0x0f, 0xf0, 0x00, 0x0f, 0x00, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x0f, 0xf0, 0xf0, 0x0f, 0xff, 0xf8, 0x0f, 0xff, 0xf1, 0x3f, 0xcf, 0xff, 0x7f, 0xff, 0xe3, 0x1f, 0xfc, 0x80, 0xff, 0xf0, 0xff}; // UNK_0xf220
+const unsigned short int pp_UNK_0xf220 = 0xf220; // UNK_0xf220 size: 50
+// {0xff, 0x0f, 0xff, 0x01, 0x3f, 0xf8, 0xc7, 0xff, 0xfe, 0xff, 0xf3, 0xfc, 0x8f, 0xff, 0xf0, 0x1f, 0xff, 0xf0, 0x0f, 0x0f, 0xf0, 0x00, 0x0f, 0x00, 0x00, 0x00, 0x00, 0xf0, 0x00, 0x0f, 0xf0, 0xf0, 0x0f, 0xff, 0xf8, 0x0f, 0xff, 0xf1, 0x3f, 0xcf, 0xff, 0x7f, 0xff, 0xe3, 0x1f, 0xfc, 0x80, 0xff, 0xf0, 0xff}
+
 
 
 
@@ -73,11 +75,11 @@ void UNK_0xf0b4() // UNK_0xf0b4
   Push(i); // I
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dot_(); // .
-  Push(0x5a48); // pointer to XBLT
+  Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   Push(0x0027);
   MS(); // MS
@@ -177,16 +179,16 @@ void UNK_0xf14e() // UNK_0xf14e
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   UNK_0xf11a(); // UNK_0xf11a
   CTERASE(); // CTERASE
-  Push(0x5c2c); // pointer to CONTEXT_3
+  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1); // 1
-  Push(0x5c2c); // pointer to CONTEXT_3
+  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
   _ex__2(); // !_2
-  Push(0x5ab9); // pointer to ?G-AWAR
+  Push(pp__ask_G_dash_AWAR); // ?G-AWAR size: 2
   ON_2(); // ON_2
-  Push(0x5ac3); // pointer to GWF
+  Push(pp_GWF); // GWF size: 2
   _099(); // 099
 }
 
@@ -198,7 +200,7 @@ void UNK_0xf14e() // UNK_0xf14e
 void UNK_0xf192() // UNK_0xf192
 {
   _2DUP(); // 2DUP
-  Push(0x637e); // pointer to STIME
+  Push(pp_STIME); // STIME size: 4
   D_ex_(); // D!
   Push(0x03e8); Push(0x0000);
   D_st_(); // D<
@@ -327,19 +329,19 @@ void _dot_AIRLOCK() // .AIRLOCK
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
   _at_DS(); // @DS
-  Push(0x5a84); // pointer to BLTSEG
+  Push(pp_BLTSEG); // BLTSEG size: 2
   _ex__2(); // !_2
   Push(0x001a);
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
   Push(Read16(regsp)); // DUP
-  Push(0x5a6c); // pointer to WBLT
+  Push(pp_WBLT); // WBLT size: 2
   _ex__2(); // !_2
-  Push(0x5a61); // pointer to LBLT
+  Push(pp_LBLT); // LBLT size: 2
   _ex__2(); // !_2
-  Push(0xf220); // pointer to UNK_0xf220
-  Push(0x5a77); // pointer to ABLT
+  Push(pp_UNK_0xf220); // UNK_0xf220 size: 0
+  Push(pp_ABLT); // ABLT size: 2
   _ex__2(); // !_2
   BLT(); // BLT
   _gt_DISPLA(); // >DISPLA
@@ -365,7 +367,7 @@ void UNK_0xf306() // UNK_0xf306
 void UNK_0xf312() // UNK_0xf312
 {
   Push(Pop()*2); // 2*
-  Push(0x578f); // pointer to YTABL
+  Push(pp_YTABL); // YTABL size: 2
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -420,11 +422,11 @@ void UNK_0xf32a() // UNK_0xf32a
   LCOPYBL(); // LCOPYBL
   R_gt_(); // R>
   Pop(); // DROP
-  Push(0x572d); // pointer to HBUF-SE
+  Push(pp_HBUF_dash_SE); // HBUF-SE size: 2
   Push(Read16(Pop())); // @
   ROT(); // ROT
   UNK_0xf320(); // UNK_0xf320
-  Push(0x573b); // pointer to DBUF-SE
+  Push(pp_DBUF_dash_SE); // DBUF-SE size: 2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   ROLL(); // ROLL
@@ -507,7 +509,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(0x5c2c); // pointer to CONTEXT_3
+  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
   _eq_(); // =

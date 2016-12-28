@@ -98,7 +98,9 @@
 // =================================
 // =========== VARIABLES ===========
 // =================================
-unsigned char UNK_0xf3af[7] = {0x4d, 0x4b, 0x47, 0x46, 0x41, 0x42, 0x4f}; // UNK_0xf3af
+const unsigned short int pp_UNK_0xf3af = 0xf3af; // UNK_0xf3af size: 7
+// {0x4d, 0x4b, 0x47, 0x46, 0x41, 0x42, 0x4f}
+
 
 
 
@@ -397,7 +399,7 @@ void UNK_0xee5b() // UNK_0xee5b
   _gt_(); // >
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(0x6029); // pointer to PLHI
+  Push(pp_PLHI); // PLHI size: 2
   Push(Read16(Pop())); // @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -505,7 +507,7 @@ void UNK_0xef08() // UNK_0xef08
 
 void UNK_0xef13() // UNK_0xef13
 {
-  Push(0x5e8b); // pointer to ?NEB
+  Push(pp__ask_NEB); // ?NEB size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   _at_INST_dash_S(); // @INST-S
@@ -548,7 +550,7 @@ void UNK_0xef53() // UNK_0xef53
   if (Pop() == 0) goto label1;
   Push(0x001d);
   _eq_SPECIE(); // =SPECIE
-  Push(0x51e5); // pointer to ?AF
+  Push(pp__ask_AF); // ?AF size: 2
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -567,7 +569,7 @@ void UNK_0xef53() // UNK_0xef53
 
   label3:
   Push(cc__ask_A_dash_SHIE); // ?A-SHIE
-  Push(0x61ac); // pointer to NLR
+  Push(pp_NLR); // NLR size: 2
   Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
@@ -635,10 +637,10 @@ void UNK_0xf02c() // UNK_0xf02c
   Push(cc__6); // 6
 
   label3:
-  Push(0x5621); // pointer to RECORD#
+  Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__2(); // !_2
   Push(0x001a);
-  Push(0x5613); // pointer to FILE#
+  Push(pp_FILE_n_); // FILE# size: 2
   _ex__2(); // !_2
   LoadData("UNK_0xec75"); // from 'ELEMENT     '
   Push(0x0010);
@@ -682,7 +684,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf0a7() // UNK_0xf0a7
 {
-  Push(0x64a1); // pointer to (ORBIT)
+  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
@@ -955,7 +957,7 @@ void UNK_0xf221() // UNK_0xf221
   PRINT("GRAVITY: ", 9); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   Push(Read16(regsp)); // DUP
-  Push(0x5ab9); // pointer to ?G-AWAR
+  Push(pp__ask_G_dash_AWAR); // ?G-AWAR size: 2
   _ex__2(); // !_2
   if (Pop() == 0) return;
   LoadData("UNK_0xecbf"); // from 'PLANET      '
@@ -1199,7 +1201,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   do // (DO)
   {
   Push(Pop()+1); // 1+
-  Push(0xf3af); // pointer to UNK_0xf3af
+  Push(pp_UNK_0xf3af); // UNK_0xf3af size: 0
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -1377,7 +1379,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(0x630e); // pointer to SENSE-A
+  Push(pp_SENSE_dash_A); // SENSE-A size: 4
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   DABS(); // DABS
@@ -1428,10 +1430,10 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(0x6451); // pointer to OK-TALK
+  Push(pp_OK_dash_TALK); // OK-TALK size: 4
   D_ex_(); // D!
   Push2Words("NULL");
-  Push(0x630e); // pointer to SENSE-A
+  Push(pp_SENSE_dash_A); // SENSE-A size: 4
   _1_dot_5_ex__2(); // 1.5!_2
 }
 
