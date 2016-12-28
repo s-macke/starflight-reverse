@@ -125,6 +125,7 @@ void WriteHeader(int ovidx)
         "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
         "// ================================================\n",
         dict[i].addr, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
+        if (dict[i].isentry) strcat(pline[dict[i].addr].str, "// entry\n");
         for(j=dict[i].addr; j<dict[i].parp; j++) pline[j].done = 1;
     }
 }
@@ -160,12 +161,13 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     InitOutput();
 
-    for(i=0; i<overlays[ovidx].nentrypoints; i++)
+    SortDictionary();
+    // write header file
+    for(i=0; i<ndict; i++)
     {
-        unsigned short par = overlays[ovidx].entrypoints[i];
-        unsigned short codep = Read16(par);
-        char *s = GetDictWord(par+2, ovidx);
-        pline[par].isentry = 1;
+        if (dict[i].ovidx != ovidx) continue;
+        if (!dict[i].isentry) continue;
+        char *s = GetWordName(&dict[i]);
         fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
     }
 
@@ -273,7 +275,6 @@ int main()
     for(i=0; overlays[i].name != NULL; i++)
     {
         overlays[i].startaddress = GetStartAddress(overlays[i].id);
-        overlays[i].nentrypoints = 0;
     }
 
 // ---------------------

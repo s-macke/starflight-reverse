@@ -15,6 +15,7 @@ typedef struct DICTENTRY
 // Helper for parsing
     int nlabel; // current label identifier
     int nloop; // current loop identifier
+    int isentry;
 } DICTENTRY;
 
 extern int ndict;
@@ -28,8 +29,6 @@ typedef struct
     int labelid; // != 0 is a label for a goto
     int loopid; // != 0 is a label for a loop
     int done; // this line has been processed
-
-    int isentry;
 } LineDesc;
 
 extern LineDesc pline[0x10000];

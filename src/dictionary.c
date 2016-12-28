@@ -444,9 +444,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         if (currentovidx != -1)
         if (par >= maxaddr)
         {
-            overlays[currentovidx].entrypoints[overlays[currentovidx].nentrypoints] = par-2;
-            overlays[currentovidx].nentrypoints++;
-
+            e->isentry = 1;
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // Overlay %s\n", s, overlays[currentovidx].name);
             ofs += 2;
             continue;
@@ -976,10 +974,6 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
     int nstr = 0;
     for(i=minaddr; i<=maxaddr; i++)
     {
-        if (pline[i].isentry)
-        {
-            fprintf(fp, "// entry\n");
-        }
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}

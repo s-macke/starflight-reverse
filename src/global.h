@@ -8,9 +8,6 @@ typedef struct
     int id;
     int startaddress;
     char *name;
-    unsigned short entrypoints[16];
-    int nentrypoints;
-
 } OVERLAYS;
 
 extern OVERLAYS overlays[];
