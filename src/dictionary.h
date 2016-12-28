@@ -11,6 +11,10 @@ typedef struct DICTENTRY
     char r[64]; // short name
     int size; // probable size of the word
     int ovidx; // overlay index
+
+// Helper for parsing
+    int nlabel; // current label identifier
+    int nloop; // current loop identifier
 } DICTENTRY;
 
 extern int ndict;
@@ -26,9 +30,6 @@ typedef struct
     int done; // this line has been processed
 
     int isentry;
-    int isfunction;
-    int nlabel;
-    int nloop;
 } LineDesc;
 
 extern LineDesc pline[0x10000];

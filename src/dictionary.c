@@ -393,17 +393,14 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
     return result2;
 }
 
-unsigned short int FindLoopID(unsigned short int addr)
+unsigned short int FindLoopID(unsigned short int addr, DICTENTRY *e)
 {
     int i;
-    for(i=addr; i >= 0; i--)
+    for(i=addr; i >= e->parp; i--)
     {
-        if (pline[i].isfunction) return pline[i].nloop;
         if (pline[i].loopid != 0) return pline[i].loopid;
     }
-    fprintf(stderr, "Error: Cannot find loop header at offset 0x%04x\n", addr);
-    exit(1);
-    return 0;
+    return e->nloop;
 }
 
 
@@ -416,6 +413,12 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
     if (d->codep != CODECALL) {
         fprintf(stderr, "Error: not a forth function call");
         exit(1);
+    }
+
+    if (ofs == d->parp)
+    {
+        char *s = GetWordName(d);
+        snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
     }
 
     while(1)
@@ -589,10 +592,6 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             if ((par >= minaddr) && (par <= maxaddr))
             {
                 DICTENTRY *dcall = GetDictEntry(par, currentovidx);
-                pline[par].isfunction = 1;
-                snprintf(pline[par-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-                ParsePartFunction(ofs+2, l, minaddr, maxaddr, d, currentovidx);
-                ParsePartFunction(par, l, minaddr, maxaddr, dcall, currentovidx);
             }
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
@@ -764,7 +763,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
                 if (pline[addr].labelid == 0)
                 {
                     //fprintf(stderr, "jump at 0x%04x to 0x%04x\n", ofs, addr);
-                    pline[addr].labelid = ++pline[d->parp].nlabel;
+                    pline[addr].labelid = ++d->nlabel;
                 }
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
@@ -786,7 +785,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             {
                 if (pline[addr].labelid == 0)
                 {
-                    pline[addr].labelid = ++pline[d->parp].nlabel;
+                    pline[addr].labelid = ++d->nlabel;
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
@@ -796,11 +795,11 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         } else
         if (strcmp(s, "(DO)") == 0)
         {
-            pline[d->parp].nloop++;
-            pline[ofs].loopid = pline[d->parp].nloop;
+            d->nloop++;
+            pline[ofs].loopid = d->nloop;
             snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %c = Pop();\n  signed short int %cmax = Pop();\n  do // (DO)\n  {\n",
-                'h'+pline[d->parp].nloop,
-                'h'+pline[d->parp].nloop);
+                'h'+d->nloop,
+                'h'+d->nloop);
             ofs += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -866,19 +865,19 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         } else
         if (strcmp(s, "I") == 0)
         {
-            int id = FindLoopID(ofs);
+            int id = FindLoopID(ofs, d);
             snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // I\n", 'h'+id);
             ofs += 2;
         } else
         if (strcmp(s, "I'") == 0)
         {
-            int id = FindLoopID(ofs);
+            int id = FindLoopID(ofs, d);
             snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // I'\n", 'h'+id);
             ofs += 2;
         } else
         if (strcmp(s, "J") == 0)
         {
-            int id = FindLoopID(ofs);
+            int id = FindLoopID(ofs, d);
             snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // J\n", 'h'+id-1);
             ofs += 2;
         } else
@@ -915,8 +914,6 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODECALL) continue;
         char *s = GetWordName(&dict[i]);
-        pline[dict[i].parp].isfunction = 1;
-        snprintf(pline[dict[i].parp-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
         ParsePartFunction(dict[i].parp, pline, minaddr, maxaddr, &dict[i], dict[i].ovidx);
     }
 

@@ -10,9 +10,6 @@
 
 #include"disasm/debugger.h"
 
-// TODO:
-// Check tt_ cc_ pp_
-
 // ---------------------------------
 
 int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE *fp)
