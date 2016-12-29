@@ -64,7 +64,7 @@ extern WORDRENAME renamewords[];
     #define CODECASE          0x4a4f // switch cases
     #define CODEARRAY         0x4e00 // Arrays
     #define CODEFUNC12        0x0000 //
-    #define CODEFUNC13        0xb869 // maybe EXPERT
+    #define CODERULE          0xb869 //
     #define CODEEXEC          0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
 
 
@@ -106,7 +106,7 @@ extern WORDRENAME renamewords[];
     #define CODECASE          0x4b3b // switch cases
     #define CODEARRAY         0x4e6f // global arrays
     #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
-    #define CODEFUNC13        0xaccc // maybe EXPERT
+    #define CODERULE          0xaccc //
     #define CODEEXEC          0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
 
 #else

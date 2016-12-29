@@ -211,6 +211,85 @@ unsigned short int FindLoopID(unsigned short int addr, DICTENTRY *e)
     return e->nloop;
 }
 
+// TODO: Analysis of EXECUTE-RULE and EXPERT
+void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+{
+    int i = 0;
+    int j = 0;
+    unsigned char RULEIM = Read8(d->parp+0);
+    unsigned char CONDLIM = Read8(d->parp+1);
+    unsigned char RULECNT = Read8(d->parp+2);
+    unsigned short RULEARRp = d->parp+3;
+    unsigned short CONDARRp = RULEARRp + 2*RULEIM;
+    unsigned short CFLGARRp = CONDARRp + 2*CONDLIM;
+
+    /*
+    0xeab7: WORD 'LIFE-SIM' codep=0xb869 parp=0xeac4
+    0xeac4  0x01
+    0xeac5  0x03
+    0xeac6  0x01  RULECNT
+
+    0xeac7  0xd2 0xea  RULEARRp
+
+    0xeac9  0x88 0xe3
+    0xeacb  0x82 0xe4
+    0xeacd  0x08 0xe3
+
+    0xeacf  0xe9 0x5b 0xae
+
+    0xead2  0x03
+    0xead3  0xd0 0xe6
+    0xead5  0x80 0x01 0x82
+    */
+    /*
+    0xeaf8: WORD '?REDUCE-PO' codep=0xb869 parp=0xeb07
+    0xeb07  0x03
+    0xeb08  0x05
+            0x02  RULECNT
+
+    0xeb0a  0x1f 0xeb  RULEARRp
+            0x24 0xeb
+
+            0x52 0x52
+
+    0xeb10  0xa5 0xe2
+            0x2e 0xe4
+            0xee 0xe2
+            0x38 0xe4
+            0x31 0x38
+
+    0xeb1a  0x34 0x30 0x3b 0xac 0x3b
+    0xeb1f  0x02
+            0x3e 0xe7
+            0x80 0x81
+    0xeb24  0x02
+            0x79 0xe7
+            0x82 0x83
+
+    */
+
+    //printf("0x%04x: %20s RULEIM:%2i CONDLIM:%2i RULECNT:%2i\n", d->parp, GetWordName(d), RULEIM, CONDLIM, RULECNT);
+
+    for(i=0; i<RULECNT; i++)
+    {
+        unsigned short rulep = Read16(RULEARRp + i*2);
+        unsigned char n = Read8(rulep + 0);
+        unsigned int p = Read16(rulep + 1);
+        //printf("n=%i p=0x%04x\n", n, p);
+        GetDictEntry(p, currentovidx);
+        for(j=0; j<n; j++)
+        {
+            unsigned char x = Read8(rulep + 3 + j) & 0x7F;
+        }
+    }
+
+    for(i=0; i<CONDLIM; i++)
+    {
+        GetDictEntry(Read16(d->parp+3 + RULEIM*2 + i*2), currentovidx);
+    }
+}
+
+
 void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     int par = d->parp;
@@ -556,9 +635,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             snprintf(pline[ofs].str, STRINGLEN, "  Func12(\"%s\");\n", s);
             ofs += 2;
         } else
-        if (e->codep == CODEFUNC13)
+        if (e->codep == CODERULE)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  Func13(\"%s\");\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "  Rule(%s);\n", s);
             ofs += 2;
         } else
         if (e->codep == CODEEXEC)
@@ -752,7 +831,26 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         {
             ParseCaseFunction(minaddr, maxaddr, &dict[i], dict[i].ovidx);
         }
+        if (dict[i].codep == CODERULE)
+        {
+            ParseRuleFunction(minaddr, maxaddr, &dict[i], dict[i].ovidx);
+        }
     }
+
+/* Find orphaned functions */
+/*
+    for(int i=minaddr; i<maxaddr-3; i++)
+    {
+        if (pline[i+0].done)
+        if (!pline[i+1].done)
+        if (!pline[i+2].done)
+        if (Read16(i+1) == CODECALL)
+        {
+            DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx);
+        }
+    }
+*/
 }
 
 void WriteVariables(FILE *fp, int ovidx)
