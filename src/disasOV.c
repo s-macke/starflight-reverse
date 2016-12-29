@@ -72,7 +72,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE 
             DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr, fp);
             if (addr == 0x1649)
             {
-                ParsePartFunction(newoffset, pline, 0x0, 0x10000, NULL, ovidx);
+                ParsePartFunction(newoffset, 0x0, 0x10000, NULL, ovidx);
                 return 0;
             }
         }

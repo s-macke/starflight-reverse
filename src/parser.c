@@ -211,8 +211,52 @@ unsigned short int FindLoopID(unsigned short int addr, DICTENTRY *e)
     return e->nloop;
 }
 
+void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+{
+    int par = d->parp;
+    int ofs = d->parp;
+    char *s = GetWordName(d);
+    pline[ofs].str = (char*)malloc(4096);
+    pline[ofs].str[0] = 0;
+    int n = Read16(par);
+    pline[ofs+0].done = 1;
+    pline[ofs+1].done = 1;
+    int i;
+    char temp[256];
+    snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+    sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
+    for(i=0; i<n; i++) {
+        DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), currentovidx);
+        pline[par + i*4 + 6].done = 1;
+        pline[par + i*4 + 7].done = 1;
 
-void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+        char ret[STRINGLEN];
+        int dofs = PutEasyMacro(e, ret);
+        if (dofs != 2) {
+            fprintf(stderr, "Error: no additional data is allowed for this word");
+            exit(1);
+        }
+        sprintf(temp, "  case %i:\n  %s    break;\n", Read16(par + i*4 + 4), ret);
+        pline[par + i*4 + 4].done = 1;
+        pline[par + i*4 + 5].done = 1;
+        strcat(pline[ofs].str, temp);
+    }
+    DICTENTRY *e = GetDictEntry(Read16(par + 2), currentovidx);
+    pline[par + 2].done = 1;
+    pline[par + 3].done = 1;
+
+    char ret[STRINGLEN];
+    int dofs = PutEasyMacro(e, ret);
+    if (dofs != 2) {
+        fprintf(stderr, "Error: no additional data is allowed for this word");
+        exit(1);
+    }
+    sprintf(temp, "  default:\n  %s    break;\n", ret);
+    strcat(pline[ofs].str, temp);
+    strcat(pline[ofs].str, "\n  }\n}\n");
+}
+
+void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     if (d == NULL) {
         d = FindClosestFunction(ofs, currentovidx);
@@ -491,35 +535,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         } else
         if (e->codep == CODECASE)
         {
-            pline[ofs].str = (char*)malloc(4096);
-            pline[ofs].str[0] = 0;
-            int n = Read16(par);
-            int i;
-            char temp[256];
-            sprintf(pline[ofs].str, "  Pop();\n  switch(Pop()) // %s\n  {\n", s);
-            for(i=0; i<n; i++) {
-                DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), currentovidx);
-                char ret[STRINGLEN];
-                int dofs = PutEasyMacro(e, ret);
-                if (dofs != 2) {
-                    fprintf(stderr, "Error: no additional data is allowed for this word");
-                    exit(1);
-                }
-                sprintf(temp, "  case %i:\n  %s    break;\n",
-                    Read16(par + i*4 + 4), ret);
-                strcat(pline[ofs].str, temp);
-            }
-            DICTENTRY *e = GetDictEntry(Read16(par + 2), currentovidx);
-            char ret[STRINGLEN];
-            int dofs = PutEasyMacro(e, ret);
-            if (dofs != 2) {
-                fprintf(stderr, "Error: no additional data is allowed for this word");
-                exit(1);
-            }
-            sprintf(temp, "  default:\n  %s    break;\n", ret);
-            strcat(pline[ofs].str, temp);
-
-            strcat(pline[ofs].str, "\n  }\n");
+            snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s case\n", Forth2CString(s), s);
             ofs += 2;
         } else
         if (e->codep == CODEARRAY)
@@ -584,8 +600,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, l, minaddr, maxaddr, d, currentovidx);
-            ParsePartFunction(addr, l, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -605,8 +621,8 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, l, minaddr, maxaddr, d, currentovidx);
-            ParsePartFunction(addr, l, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
@@ -728,11 +744,15 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODECALL) continue;
-        char *s = GetWordName(&dict[i]);
-        ParsePartFunction(dict[i].parp, pline, minaddr, maxaddr, &dict[i], dict[i].ovidx);
+        if (dict[i].codep == CODECALL)
+        {
+            ParsePartFunction(dict[i].parp, minaddr, maxaddr, &dict[i], dict[i].ovidx);
+        }
+        if (dict[i].codep == CODECASE)
+        {
+            ParseCaseFunction(minaddr, maxaddr, &dict[i], dict[i].ovidx);
+        }
     }
-
 }
 
 void WriteVariables(FILE *fp, int ovidx)
