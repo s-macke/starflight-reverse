@@ -499,7 +499,7 @@ void UNK_0xe9ef() // UNK_0xe9ef
   Push(pp_CTTOP); // CTTOP size: 2
   _ex__2(); // !_2
   Push(0x00a0);
-  Push(pp_WRIGHT); // WRIGHT size: 2
+  Push(pp_WRIGHT); // WRIGHT size: -1
   _ex__2(); // !_2
   Push(0x0010);
   Push(pp_WLINES); // WLINES size: 2
@@ -522,7 +522,7 @@ void UNK_0xea2f() // UNK_0xea2f
   Push(Read16(regsp)); // DUP
   Push(pp_NCRS); // NCRS size: 2
   _ex__2(); // !_2
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   _ex__2(); // !_2
   Push(pp_MCURS); // MCURS size: 669
   BLD_dash_CRS(); // BLD-CRS

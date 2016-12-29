@@ -433,7 +433,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x000c);
   Push(0x00c1);
   Push(0x0044);
-  Push(pp_LCOLOR); // LCOLOR size: 2
+  Push(pp_LCOLOR); // LCOLOR size: 9
   Push(Read16(Pop())); // @
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x0074);

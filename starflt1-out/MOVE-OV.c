@@ -1531,7 +1531,7 @@ void UNK_0xf16e() // UNK_0xf16e
   Push(pp__ask_TV); // ?TV size: 2
   OFF_2(); // OFF_2
   UNK_0xef48(); // UNK_0xef48
-  Push(pp_LCOLOR); // LCOLOR size: 2
+  Push(pp_LCOLOR); // LCOLOR size: 9
   OFF(); // OFF
   SetColor("BLACK");
   UNK_0xe7e8(); // UNK_0xe7e8
@@ -1799,7 +1799,7 @@ void UNK_0xf355() // UNK_0xf355
   UNK_0xf2ca(); // UNK_0xf2ca
   UNK_0xf31d(); // UNK_0xf31d
   SetColor("GREEN");
-  Push(pp_LCOLOR); // LCOLOR size: 2
+  Push(pp_LCOLOR); // LCOLOR size: 9
   _ex__3(); // !_3
   Push(cc__dash_1); // -1
   TONE(); // TONE
@@ -1830,7 +1830,7 @@ void UNK_0xf37b() // UNK_0xf37b
   UNK_0xf36d(); // UNK_0xf36d
   UNK_0xf2d8(); // UNK_0xf2d8
   SetColor("BLACK");
-  Push(pp_LCOLOR); // LCOLOR size: 2
+  Push(pp_LCOLOR); // LCOLOR size: 9
   _ex__3(); // !_3
   BEEPOFF(); // BEEPOFF
 }

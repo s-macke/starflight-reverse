@@ -844,7 +844,7 @@ void UNK_0xf31e() // UNK_0xf31e
   _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT("?", 1); // (.")
@@ -949,7 +949,7 @@ void UNK_0xf415() // UNK_0xf415
   _gt_R(); // >R
   _at_CRS(); // @CRS
   Push(h); // I
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   _ex__2(); // !_2
   Push(h); // I
   Push(0x0054);
@@ -975,7 +975,7 @@ void UNK_0xf415() // UNK_0xf415
   BLT(); // BLT
   _ex_CRS(); // !CRS
   R_gt_(); // R>
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   _ex__2(); // !_2
 }
 
@@ -1019,7 +1019,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(pp_NCRS); // NCRS size: 2
   _ex__2(); // !_2
   if (Pop() == 0) goto label1;
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415
   Push(pp_NCRS); // NCRS size: 2
@@ -1031,7 +1031,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   label1:
   Push(pp_FTRIG); // FTRIG size: 2
   Push(Read16(Pop())); // @
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   Push(0x65f2); // IFIELD(UNK_0xecc0)
@@ -1047,7 +1047,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   UNK_0xf281(); // UNK_0xf281
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1057,7 +1057,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label3;
   _gt_R(); // >R
   Push(h); // I
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) goto label4;
@@ -1071,7 +1071,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   if (Pop() == 0) goto label6;
   Push(h); // I
   UNK_0xf38a(); // UNK_0xf38a
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   CTCR(); // CTCR
   UNK_0xf3f1(); // UNK_0xf3f1
@@ -1088,14 +1088,14 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
 
   label3:
   CTERASE(); // CTERASE
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
 
   label2:
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label7;
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   UNK_0xf415(); // UNK_0xf415
   ICLOSE(); // ICLOSE

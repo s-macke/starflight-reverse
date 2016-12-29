@@ -404,7 +404,7 @@ void UNK_0xe7bc() // UNK_0xe7bc
   Push(Read16(regsp)); // DUP
   Push(pp_NCRS); // NCRS size: 2
   _ex__2(); // !_2
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS size: 7
   _ex__2(); // !_2
   Push(pp_UNK_0xe71c); // UNK_0xe71c size: 0
   BLD_dash_CRS(); // BLD-CRS

@@ -1189,7 +1189,7 @@ void UNK_0xf10a() // UNK_0xf10a
 
 void UNK_0xf116() // UNK_0xf116
 {
-  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 82
+  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 0
   Push(Read16(Pop())); // @
   UNK_0xf0f2(); // UNK_0xf0f2
   _eq_(); // =
@@ -1202,7 +1202,7 @@ void UNK_0xf116() // UNK_0xf116
 
 void UNK_0xf122() // UNK_0xf122
 {
-  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 82
+  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 0
   Push(Read16(Pop())); // @
   UNK_0xf0fe(); // UNK_0xf0fe
   _eq_(); // =
@@ -1215,7 +1215,7 @@ void UNK_0xf122() // UNK_0xf122
 
 void UNK_0xf12e() // UNK_0xf12e
 {
-  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 82
+  Push(pp_UNK_0xf0e6); // UNK_0xf0e6 size: 0
   Push(Read16(Pop())); // @
   UNK_0xf10a(); // UNK_0xf10a
   _eq_(); // =
@@ -1318,7 +1318,7 @@ void UNK_0xf223() // UNK_0xf223
 {
   Push(0xf1dd);
   DISTRAC(); // DISTRAC
-  Func13("(TIMER)");
+  Rule((TIMER));
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xf1a9(); // UNK_0xf1a9
