@@ -1955,44 +1955,9 @@ void UNK_0xf2cf() // UNK_0xf2cf
 // 0xf2e0: WORD 'CLASS>DE' codep=0x4a4f parp=0xf2ed
 // ================================================
 // entry
-// 0xf2ed: db 0x08 0x00 0x6b 0x26 0x44 0x00 0xce 0xf0 0x2a 0x00 0x7b 0xf2 0x28 0x00 0x99 0xf2 0x14 0x00 0x1e 0xf2 0x29 0x00 0xbf 0xf2 0x1a 0x00 0x45 0xf2 0x1c 0x00 0x31 0xf2 0x1b 0x00 0xcf 0xf2 '  k&D   * { (       )     E   1     '
 
-// ================================================
-// 0xf311: WORD 'CLASS>TY' codep=0x4a4f parp=0xf31e
-// ================================================
-// 0xf31e: db 0x08 0x00 0x6b 0x26 0x44 0x00 0x66 0xf1 0x2a 0x00 0x7b 0xf2 0x28 0x00 0x99 0xf2 0x14 0x00 0x1e 0xf2 0x29 0x00 0xbf 0xf2 0x1a 0x00 0x45 0xf2 0x1c 0x00 0x31 0xf2 0x1b 0x00 0xcf 0xf2 '  k&D f * { (       )     E   1     '
-
-// ================================================
-// 0xf342: WORD '?TALK' codep=0x224c parp=0xf34c
-// ================================================
-// entry
-
-void _ask_TALK() // ?TALK
+void CLASS_gt_DE() // CLASS>DE
 {
-  Push(pp_COLOR); // COLOR size: 2
-  Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
-  Push(0); // 0
-
-  signed short int i = Pop();
-  signed short int imax = Pop();
-  do // (DO)
-  {
-  POINT_gt_ICON(); // POINT>ICON
-  _at_IL(); // @IL
-  _at_IH(); // @IH
-  _gt_C_plus_S(); // >C+S
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Push(pp_NCRS); // NCRS size: 2
-  Push(Read16(Pop())); // @
-  Push(cc__3); // 3
-  _eq_(); // =
-  if (Pop() == 0) goto label2;
-  Pop();
   switch(Pop()) // CLASS>DE
   {
   case 68:
@@ -2024,10 +1989,14 @@ void _ask_TALK() // ?TALK
     break;
 
   }
-  goto label3;
+}
 
-  label2:
-  Pop();
+// ================================================
+// 0xf311: WORD 'CLASS>TY' codep=0x4a4f parp=0xf31e
+// ================================================
+
+void CLASS_gt_TY() // CLASS>TY
+{
   switch(Pop()) // CLASS>TY
   {
   case 68:
@@ -2059,6 +2028,43 @@ void _ask_TALK() // ?TALK
     break;
 
   }
+}
+
+// ================================================
+// 0xf342: WORD '?TALK' codep=0x224c parp=0xf34c
+// ================================================
+// entry
+
+void _ask_TALK() // ?TALK
+{
+  Push(pp_COLOR); // COLOR size: 2
+  Push(Read16(Pop())); // @
+  _gt_R(); // >R
+  SetColor("WHITE");
+  _ex_COLOR(); // !COLOR
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  if (Pop() == 0) goto label1;
+  Push(0); // 0
+
+  signed short int i = Pop();
+  signed short int imax = Pop();
+  do // (DO)
+  {
+  POINT_gt_ICON(); // POINT>ICON
+  _at_IL(); // @IL
+  _at_IH(); // @IH
+  _gt_C_plus_S(); // >C+S
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Push(pp_NCRS); // NCRS size: 2
+  Push(Read16(Pop())); // @
+  Push(cc__3); // 3
+  _eq_(); // =
+  if (Pop() == 0) goto label2;
+  CLASS_gt_DE(); // CLASS>DE case
+  goto label3;
+
+  label2:
+  CLASS_gt_TY(); // CLASS>TY case
 
   label3:
   ICLOSE(); // ICLOSE

@@ -159,7 +159,38 @@ const unsigned short int pp_UNK_0xf0c4 = 0xf0c4; // UNK_0xf0c4 size: 10
 // ================================================
 // 0xef19: WORD '>FIELD' codep=0x4a4f parp=0xef24
 // ================================================
-// 0xef24: db 0x07 0x00 0x6e 0x3a 0x00 0x00 0xda 0xee 0x01 0x00 0xe4 0xee 0x02 0x00 0xe9 0xee 0x03 0x00 0xee 0xee 0x04 0x00 0xf3 0xee 0x05 0x00 0xf8 0xee 0x06 0x00 0xfd 0xee '  n:                            '
+
+void _gt_FIELD() // >FIELD
+{
+  switch(Pop()) // >FIELD
+  {
+  case 0:
+    UNK_0xeeda(); // UNK_0xeeda
+    break;
+  case 1:
+    UNK_0xeee4(); // UNK_0xeee4
+    break;
+  case 2:
+    UNK_0xeee9(); // UNK_0xeee9
+    break;
+  case 3:
+    UNK_0xeeee(); // UNK_0xeeee
+    break;
+  case 4:
+    UNK_0xeef3(); // UNK_0xeef3
+    break;
+  case 5:
+    UNK_0xeef8(); // UNK_0xeef8
+    break;
+  case 6:
+    UNK_0xeefd(); // UNK_0xeefd
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
+  }
+}
 
 // ================================================
 // 0xef44: WORD 'UNK_0xef46' codep=0x1d29 parp=0xef46
@@ -232,35 +263,7 @@ void UNK_0xef6e() // UNK_0xef6e
 void UNK_0xef76() // UNK_0xef76
 {
   UNK_0xef66(); // UNK_0xef66
-  Pop();
-  switch(Pop()) // >FIELD
-  {
-  case 0:
-    UNK_0xeeda(); // UNK_0xeeda
-    break;
-  case 1:
-    UNK_0xeee4(); // UNK_0xeee4
-    break;
-  case 2:
-    UNK_0xeee9(); // UNK_0xeee9
-    break;
-  case 3:
-    UNK_0xeeee(); // UNK_0xeeee
-    break;
-  case 4:
-    UNK_0xeef3(); // UNK_0xeef3
-    break;
-  case 5:
-    UNK_0xeef8(); // UNK_0xeef8
-    break;
-  case 6:
-    UNK_0xeefd(); // UNK_0xeefd
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _gt_FIELD(); // >FIELD case
 }
 
 
@@ -385,67 +388,11 @@ void UNK_0xeffc() // UNK_0xeffc
   do // (DO)
   {
   Push(i); // I
-  Pop();
-  switch(Pop()) // >FIELD
-  {
-  case 0:
-    UNK_0xeeda(); // UNK_0xeeda
-    break;
-  case 1:
-    UNK_0xeee4(); // UNK_0xeee4
-    break;
-  case 2:
-    UNK_0xeee9(); // UNK_0xeee9
-    break;
-  case 3:
-    UNK_0xeeee(); // UNK_0xeeee
-    break;
-  case 4:
-    UNK_0xeef3(); // UNK_0xeef3
-    break;
-  case 5:
-    UNK_0xeef8(); // UNK_0xeef8
-    break;
-  case 6:
-    UNK_0xeefd(); // UNK_0xeefd
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _gt_FIELD(); // >FIELD case
   UNK_0xef7e(); // UNK_0xef7e
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Pop();
-  switch(Pop()) // >FIELD
-  {
-  case 0:
-    UNK_0xeeda(); // UNK_0xeeda
-    break;
-  case 1:
-    UNK_0xeee4(); // UNK_0xeee4
-    break;
-  case 2:
-    UNK_0xeee9(); // UNK_0xeee9
-    break;
-  case 3:
-    UNK_0xeeee(); // UNK_0xeeee
-    break;
-  case 4:
-    UNK_0xeef3(); // UNK_0xeef3
-    break;
-  case 5:
-    UNK_0xeef8(); // UNK_0xeef8
-    break;
-  case 6:
-    UNK_0xeefd(); // UNK_0xeefd
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _gt_FIELD(); // >FIELD case
   UNK_0xef8e(); // UNK_0xef8e
   Push(0x0064);
   _st_(); // <
@@ -524,35 +471,7 @@ void UNK_0xf086() // UNK_0xf086
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // >FIELD
-  {
-  case 0:
-    UNK_0xeeda(); // UNK_0xeeda
-    break;
-  case 1:
-    UNK_0xeee4(); // UNK_0xeee4
-    break;
-  case 2:
-    UNK_0xeee9(); // UNK_0xeee9
-    break;
-  case 3:
-    UNK_0xeeee(); // UNK_0xeeee
-    break;
-  case 4:
-    UNK_0xeef3(); // UNK_0xeef3
-    break;
-  case 5:
-    UNK_0xeef8(); // UNK_0xeef8
-    break;
-  case 6:
-    UNK_0xeefd(); // UNK_0xeefd
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _gt_FIELD(); // >FIELD case
   UNK_0xef8e(); // UNK_0xef8e
   Push(Read16(regsp)); // DUP
   UNK_0xf03e(); // UNK_0xf03e

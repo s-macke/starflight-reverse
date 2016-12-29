@@ -2131,24 +2131,9 @@ void UNK_0xf01a() // UNK_0xf01a
 // ================================================
 // 0xf03c: WORD 'KEY>ACTION' codep=0x4b3b parp=0xf04b
 // ================================================
-// 0xf04b: db 0x03 0x00 0xee 0xef 0x3b 0x01 0xf6 0xef 0x3f 0x01 0x08 0xf0 0x41 0x01 0x86 0xef '    ;   ?   A   '
 
-// ================================================
-// 0xf05b: WORD 'UNK_0xf05d' codep=0x224c parp=0xf05d
-// ================================================
-
-void UNK_0xf05d() // UNK_0xf05d
+void KEY_gt_ACTION() // KEY>ACTION
 {
-  Push(pp_LKEY); // LKEY size: 2
-  Push(Read16(Pop())); // @
-  Push(Read16(regsp)); // DUP
-  Push(0x013b);
-  Push(0x0145);
-  WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
-  Push(pp_FTRIG); // FTRIG size: 2
-  _099(); // 099
-  Pop();
   switch(Pop()) // KEY>ACTION
   {
   case 315:
@@ -2165,6 +2150,24 @@ void UNK_0xf05d() // UNK_0xf05d
     break;
 
   }
+}
+
+// ================================================
+// 0xf05b: WORD 'UNK_0xf05d' codep=0x224c parp=0xf05d
+// ================================================
+
+void UNK_0xf05d() // UNK_0xf05d
+{
+  Push(pp_LKEY); // LKEY size: 2
+  Push(Read16(Pop())); // @
+  Push(Read16(regsp)); // DUP
+  Push(0x013b);
+  Push(0x0145);
+  WITHIN(); // WITHIN
+  if (Pop() == 0) goto label1;
+  Push(pp_FTRIG); // FTRIG size: 2
+  _099(); // 099
+  KEY_gt_ACTION(); // KEY>ACTION case
   Push(pp_LKEY); // LKEY size: 2
   _099(); // 099
   return;

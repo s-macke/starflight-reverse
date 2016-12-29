@@ -2187,7 +2187,29 @@ void UNK_0xf496() // UNK_0xf496
 // ================================================
 // 0xf4ca: WORD 'PFILE-FUNCTI' codep=0x4b3b parp=0xf4db
 // ================================================
-// 0xf4db: db 0x04 0x00 0x48 0x3a 0x00 0x00 0x82 0xf0 0x01 0x00 0xa2 0xf3 0x02 0x00 0xf8 0xf3 0x03 0x00 0x09 0x13 '  H:                '
+
+void PFILE_dash_FUNCTI() // PFILE-FUNCTI
+{
+  switch(Pop()) // PFILE-FUNCTI
+  {
+  case 0:
+    UNK_0xf082(); // UNK_0xf082
+    break;
+  case 1:
+    UNK_0xf3a2(); // UNK_0xf3a2
+    break;
+  case 2:
+    UNK_0xf3f8(); // UNK_0xf3f8
+    break;
+  case 3:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4ef: WORD '(U-PFILE)' codep=0x224c parp=0xf4fd
@@ -2218,26 +2240,7 @@ void _ro_U_dash_PFILE_rc_() // (U-PFILE)
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // PFILE-FUNCTI
-  {
-  case 0:
-    UNK_0xf082(); // UNK_0xf082
-    break;
-  case 1:
-    UNK_0xf3a2(); // UNK_0xf3a2
-    break;
-  case 2:
-    UNK_0xf3f8(); // UNK_0xf3f8
-    break;
-  case 3:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  PFILE_dash_FUNCTI(); // PFILE-FUNCTI case
 
   label1:
   if (Pop() == 0) goto label2;

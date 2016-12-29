@@ -263,7 +263,26 @@ void UNK_0xf05e() // UNK_0xf05e
 // ================================================
 // 0xf067: WORD '>ECO' codep=0x4b3b parp=0xf070
 // ================================================
-// 0xf070: db 0x03 0x00 0x5e 0xf0 0x01 0x00 0x33 0xf0 0x02 0x00 0x43 0xf0 0x03 0x00 0x4f 0xf0 '  ^   3   C   O '
+
+void _gt_ECO() // >ECO
+{
+  switch(Pop()) // >ECO
+  {
+  case 1:
+    UNK_0xf033(); // UNK_0xf033
+    break;
+  case 2:
+    UNK_0xf043(); // UNK_0xf043
+    break;
+  case 3:
+    UNK_0xf04f(); // UNK_0xf04f
+    break;
+  default:
+    UNK_0xf05e(); // UNK_0xf05e
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf080: WORD 'UNK_0xf082' codep=0x224c parp=0xf082
@@ -454,23 +473,7 @@ void UNK_0xf1bb() // UNK_0xf1bb
   LoadData("UNK_0xefb0"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Pop();
-  switch(Pop()) // >ECO
-  {
-  case 1:
-    UNK_0xf033(); // UNK_0xf033
-    break;
-  case 2:
-    UNK_0xf043(); // UNK_0xf043
-    break;
-  case 3:
-    UNK_0xf04f(); // UNK_0xf04f
-    break;
-  default:
-    UNK_0xf05e(); // UNK_0xf05e
-    break;
-
-  }
+  _gt_ECO(); // >ECO case
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -498,7 +501,23 @@ void UNK_0xf1ed() // UNK_0xf1ed
 // ================================================
 // 0xf1fc: WORD '>EXTRA' codep=0x4b3b parp=0xf207
 // ================================================
-// 0xf207: db 0x02 0x00 0x48 0x3a 0x1f 0x00 0xed 0xf1 0x21 0x00 0xd9 0xf1 '  H:    !   '
+
+void _gt_EXTRA() // >EXTRA
+{
+  switch(Pop()) // >EXTRA
+  {
+  case 31:
+    UNK_0xf1ed(); // UNK_0xf1ed
+    break;
+  case 33:
+    UNK_0xf1d9(); // UNK_0xf1d9
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf213: WORD '.RACE' codep=0x224c parp=0xf21d
@@ -518,20 +537,7 @@ void _dot_RACE() // .RACE
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // >EXTRA
-  {
-  case 31:
-    UNK_0xf1ed(); // UNK_0xf1ed
-    break;
-  case 33:
-    UNK_0xf1d9(); // UNK_0xf1d9
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _gt_EXTRA(); // >EXTRA case
 }
 
 
@@ -670,21 +676,9 @@ void UNK_0xf2f4() // UNK_0xf2f4
 // ================================================
 // 0xf306: WORD '>TECH' codep=0x4b3b parp=0xf310
 // ================================================
-// 0xf310: db 0x04 0x00 0x5e 0xf0 0x01 0x00 0x76 0xf2 0x02 0x00 0x86 0xf2 0x03 0x00 0x96 0xf2 0x04 0x00 0xa7 0xf2 '  ^   v             '
 
-// ================================================
-// 0xf324: WORD 'UNK_0xf326' codep=0x224c parp=0xf326
-// ================================================
-
-void UNK_0xf326() // UNK_0xf326
+void _gt_TECH() // >TECH
 {
-  UNK_0xf017(); // UNK_0xf017
-  PRINT("TECH LEVEL: ", 12); // (.")
-  UNK_0xf023(); // UNK_0xf023
-  LoadData("UNK_0xefa0"); // from 'TRADERS     '
-  Push(Read8(Pop())&0xFF); // C@
-  ICLOSE(); // ICLOSE
-  Pop();
   switch(Pop()) // >TECH
   {
   case 1:
@@ -704,6 +698,21 @@ void UNK_0xf326() // UNK_0xf326
     break;
 
   }
+}
+
+// ================================================
+// 0xf324: WORD 'UNK_0xf326' codep=0x224c parp=0xf326
+// ================================================
+
+void UNK_0xf326() // UNK_0xf326
+{
+  UNK_0xf017(); // UNK_0xf017
+  PRINT("TECH LEVEL: ", 12); // (.")
+  UNK_0xf023(); // UNK_0xf023
+  LoadData("UNK_0xefa0"); // from 'TRADERS     '
+  Push(Read8(Pop())&0xFF); // C@
+  ICLOSE(); // ICLOSE
+  _gt_TECH(); // >TECH case
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -711,21 +720,9 @@ void UNK_0xf326() // UNK_0xf326
 // ================================================
 // 0xf345: WORD '>DENSE' codep=0x4b3b parp=0xf350
 // ================================================
-// 0xf350: db 0x04 0x00 0x5e 0xf0 0x01 0x00 0x3d 0xf2 0x02 0x00 0x4a 0xf2 0x03 0x00 0x59 0xf2 0x04 0x00 0x65 0xf2 '  ^   =   J   Y   e '
 
-// ================================================
-// 0xf364: WORD 'UNK_0xf366' codep=0x224c parp=0xf366
-// ================================================
-
-void UNK_0xf366() // UNK_0xf366
+void _gt_DENSE() // >DENSE
 {
-  UNK_0xf017(); // UNK_0xf017
-  PRINT("POPULATION DENSITY: ", 20); // (.")
-  UNK_0xf023(); // UNK_0xf023
-  LoadData("UNK_0xefa8"); // from 'TRADERS     '
-  Push(Read8(Pop())&0xFF); // C@
-  ICLOSE(); // ICLOSE
-  Pop();
   switch(Pop()) // >DENSE
   {
   case 1:
@@ -745,6 +742,21 @@ void UNK_0xf366() // UNK_0xf366
     break;
 
   }
+}
+
+// ================================================
+// 0xf364: WORD 'UNK_0xf366' codep=0x224c parp=0xf366
+// ================================================
+
+void UNK_0xf366() // UNK_0xf366
+{
+  UNK_0xf017(); // UNK_0xf017
+  PRINT("POPULATION DENSITY: ", 20); // (.")
+  UNK_0xf023(); // UNK_0xf023
+  LoadData("UNK_0xefa8"); // from 'TRADERS     '
+  Push(Read8(Pop())&0xFF); // C@
+  ICLOSE(); // ICLOSE
+  _gt_DENSE(); // >DENSE case
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -752,21 +764,9 @@ void UNK_0xf366() // UNK_0xf366
 // ================================================
 // 0xf38d: WORD '>ATT' codep=0x4b3b parp=0xf396
 // ================================================
-// 0xf396: db 0x04 0x00 0x5e 0xf0 0x00 0x00 0xb9 0xf2 0x01 0x00 0xca 0xf2 0x02 0x00 0xdd 0xf2 0x03 0x00 0xf4 0xf2 '  ^                 '
 
-// ================================================
-// 0xf3aa: WORD 'UNK_0xf3ac' codep=0x224c parp=0xf3ac
-// ================================================
-
-void UNK_0xf3ac() // UNK_0xf3ac
+void _gt_ATT() // >ATT
 {
-  UNK_0xf017(); // UNK_0xf017
-  PRINT("TRADING STYLE: ", 15); // (.")
-  UNK_0xf023(); // UNK_0xf023
-  LoadData("ATTITUDE"); // from 'TRADERS     '
-  Push(Read8(Pop())&0xFF); // C@
-  ICLOSE(); // ICLOSE
-  Pop();
   switch(Pop()) // >ATT
   {
   case 0:
@@ -786,6 +786,21 @@ void UNK_0xf3ac() // UNK_0xf3ac
     break;
 
   }
+}
+
+// ================================================
+// 0xf3aa: WORD 'UNK_0xf3ac' codep=0x224c parp=0xf3ac
+// ================================================
+
+void UNK_0xf3ac() // UNK_0xf3ac
+{
+  UNK_0xf017(); // UNK_0xf017
+  PRINT("TRADING STYLE: ", 15); // (.")
+  UNK_0xf023(); // UNK_0xf023
+  LoadData("ATTITUDE"); // from 'TRADERS     '
+  Push(Read8(Pop())&0xFF); // C@
+  ICLOSE(); // ICLOSE
+  _gt_ATT(); // >ATT case
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 

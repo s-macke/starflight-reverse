@@ -1114,30 +1114,9 @@ void _gt_STAMP() // >STAMP
 // ================================================
 // 0xf479: WORD 'EDIT-KEYS' codep=0x4b3b parp=0xf487
 // ================================================
-// 0xf487: db 0x18 0x00 0x48 0x3a 0x47 0x01 0xd4 0xee 0x3d 0x01 0x5d 0xf1 0x08 0x00 0x4c 0xf2 0x50 0x01 0xe4 0xee 0x3f 0x01 0x70 0xf1 0x09 0x00 0xe8 0xf3 0x48 0x01 0xf4 0xee 0x40 0x01 0x80 0xf1 0x1b 0x00 0xf2 0xf3 0x4d 0x01 0x04 0xef 0x3e 0x01 0xa9 0xf1 0x3c 0x01 0xfc 0xf3 0x4b 0x01 0x16 0xef 0x53 0x01 0xda 0xf1 0x49 0x01 0x06 0xf4 0x41 0x01 0xfc 0xef 0x4f 0x01 0xb9 0xf2 0x51 0x01 0x0e 0xf4 0x42 0x01 0x0c 0xf0 0x44 0x01 0xdd 0xf2 0x52 0x01 0x16 0xf4 0x43 0x01 0x23 0xf1 0x0d 0x00 0xdc 0xf3 0x3b 0x01 0x2f 0xf4 '  H:G   = ]   L P   ? p     H   @       M   >   <   K   S   I   A   O   Q   B   D   R   C #     ; / '
 
-// ================================================
-// 0xf4eb: WORD 'EDIT' codep=0x224c parp=0xf4f4
-// ================================================
-// entry
-
-void EDIT() // EDIT
+void EDIT_dash_KEYS() // EDIT-KEYS
 {
-  UNK_0xeed4(); // UNK_0xeed4
-  Exec(PAGE); // call of word 0x274c '(PAGE)'
-  LIST(); // LIST
-  DISPLAYKEY(); // DISPLAYKEY
-
-  label3:
-  UNK_0xeec0(); // UNK_0xeec0
-  KEY_2(); // KEY_2
-  _ask_VISIBLE(); // ?VISIBLE
-  if (Pop() == 0) goto label1;
-  INSERT(); // INSERT
-  goto label2;
-
-  label1:
-  Pop();
   switch(Pop()) // EDIT-KEYS
   {
   case 327:
@@ -1217,6 +1196,30 @@ void EDIT() // EDIT
     break;
 
   }
+}
+
+// ================================================
+// 0xf4eb: WORD 'EDIT' codep=0x224c parp=0xf4f4
+// ================================================
+// entry
+
+void EDIT() // EDIT
+{
+  UNK_0xeed4(); // UNK_0xeed4
+  Exec(PAGE); // call of word 0x274c '(PAGE)'
+  LIST(); // LIST
+  DISPLAYKEY(); // DISPLAYKEY
+
+  label3:
+  UNK_0xeec0(); // UNK_0xeec0
+  KEY_2(); // KEY_2
+  _ask_VISIBLE(); // ?VISIBLE
+  if (Pop() == 0) goto label1;
+  INSERT(); // INSERT
+  goto label2;
+
+  label1:
+  EDIT_dash_KEYS(); // EDIT-KEYS case
 
   label2:
   goto label3;
@@ -1226,7 +1229,26 @@ void EDIT() // EDIT
 // ================================================
 // 0xf514: WORD 'VIEW-KEYS' codep=0x4b3b parp=0xf522
 // ================================================
-// 0xf522: db 0x03 0x00 0x48 0x3a 0x1b 0x00 0xf2 0xf3 0x49 0x01 0x06 0xf4 0x51 0x01 0x0e 0xf4 '  H:    I   Q   '
+
+void VIEW_dash_KEYS() // VIEW-KEYS
+{
+  switch(Pop()) // VIEW-KEYS
+  {
+  case 27:
+    UNK_0xf3f2(); // UNK_0xf3f2
+    break;
+  case 329:
+    UNK_0xf406(); // UNK_0xf406
+    break;
+  case 337:
+    UNK_0xf40e(); // UNK_0xf40e
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf532: WORD 'VIEW' codep=0x224c parp=0xf53b
@@ -1245,23 +1267,7 @@ void VIEW() // VIEW
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // VIEW-KEYS
-  {
-  case 27:
-    UNK_0xf3f2(); // UNK_0xf3f2
-    break;
-  case 329:
-    UNK_0xf406(); // UNK_0xf406
-    break;
-  case 337:
-    UNK_0xf40e(); // UNK_0xf40e
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  VIEW_dash_KEYS(); // VIEW-KEYS case
 
   label1:
   goto label2;

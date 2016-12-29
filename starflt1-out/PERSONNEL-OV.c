@@ -1949,7 +1949,29 @@ void UNK_0xf497() // UNK_0xf497
 // ================================================
 // 0xf4d5: WORD 'PFILE-FUNCTION' codep=0x4a4f parp=0xf4e8
 // ================================================
-// 0xf4e8: db 0x04 0x00 0x48 0x3a 0x00 0x00 0x9d 0xf0 0x01 0x00 0xa3 0xf3 0x02 0x00 0xf9 0xf3 0x03 0x00 0x09 0x13 '  H:                '
+
+void PFILE_dash_FUNCTION() // PFILE-FUNCTION
+{
+  switch(Pop()) // PFILE-FUNCTION
+  {
+  case 0:
+    UNK_0xf09d(); // UNK_0xf09d
+    break;
+  case 1:
+    UNK_0xf3a3(); // UNK_0xf3a3
+    break;
+  case 2:
+    UNK_0xf3f9(); // UNK_0xf3f9
+    break;
+  case 3:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4fc: WORD '(U-PFILE)' codep=0x224c parp=0xf50a
@@ -1978,26 +2000,7 @@ void _ro_U_dash_PFILE_rc_() // (U-PFILE)
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // PFILE-FUNCTION
-  {
-  case 0:
-    UNK_0xf09d(); // UNK_0xf09d
-    break;
-  case 1:
-    UNK_0xf3a3(); // UNK_0xf3a3
-    break;
-  case 2:
-    UNK_0xf3f9(); // UNK_0xf3f9
-    break;
-  case 3:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  PFILE_dash_FUNCTION(); // PFILE-FUNCTION case
 
   label1:
   if (Pop() == 0) goto label2;

@@ -1519,109 +1519,9 @@ void ICONS() // ICONS
 // ================================================
 // 0xf03c: WORD '>BUTTONS' codep=0x4a4f parp=0xf049
 // ================================================
-// 0xf049: db 0x07 0x00 0x48 0x3a 0x00 0x00 0xa9 0xef 0x01 0x00 0xd2 0xef 0x02 0x00 0x10 0xf0 0x03 0x00 0xbf 0xef 0x04 0x00 0xbf 0xef 0x05 0x00 0xed 0xef 0x06 0x00 0x22 0xf0 '  H:                          " '
 
-// ================================================
-// 0xf069: WORD 'UNK_0xf06b' codep=0x224c parp=0xf06b
-// ================================================
-
-void UNK_0xf06b() // UNK_0xf06b
+void _gt_BUTTONS() // >BUTTONS
 {
-  CLICK(); // CLICK
-  Push(pp_NCRS); // NCRS size: 2
-  _plus__ex_(); // +!
-  UNK_0xef8a(); // UNK_0xef8a
-}
-
-
-// ================================================
-// 0xf075: WORD 'UNK_0xf077' codep=0x224c parp=0xf077
-// ================================================
-
-void UNK_0xf077() // UNK_0xf077
-{
-  Pop();
-  switch(Pop()) // (XYSCAN
-  {
-  case 327:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 328:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 329:
-    UNK_0xa99d(); // UNK_0xa99d
-    break;
-  case 331:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 333:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 336:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  case 337:
-    UNK_0xa9cd(); // UNK_0xa9cd
-    break;
-  case 0:
-    UNK_0xa9d5(); // UNK_0xa9d5
-    break;
-  case 92:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 126:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 124:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 500:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 96:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  default:
-    UNK_0xa9db(); // UNK_0xa9db
-    break;
-
-  }
-  Push(0); // 0
-  Push(1); // 1
-  _2OVER(); // 2OVER
-  D_eq_(); // D=
-  if (Pop() == 0) goto label1;
-  Pop(); Pop();// 2DROP
-  Push(1); // 1
-  UNK_0xf06b(); // UNK_0xf06b
-  goto label2;
-
-  label1:
-  Push(0); // 0
-  Push(cc__dash_1); // -1
-  _2OVER(); // 2OVER
-  D_eq_(); // D=
-  if (Pop() == 0) goto label3;
-  Pop(); Pop();// 2DROP
-  Push(cc__dash_1); // -1
-  UNK_0xf06b(); // UNK_0xf06b
-  goto label2;
-
-  label3:
-  Pop(); // DROP
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label4;
-  UNK_0xef23(); // UNK_0xef23
-  Push(pp_NCRS); // NCRS size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // >BUTTONS
   {
   case 0:
@@ -1650,6 +1550,57 @@ void UNK_0xf077() // UNK_0xf077
     break;
 
   }
+}
+
+// ================================================
+// 0xf069: WORD 'UNK_0xf06b' codep=0x224c parp=0xf06b
+// ================================================
+
+void UNK_0xf06b() // UNK_0xf06b
+{
+  CLICK(); // CLICK
+  Push(pp_NCRS); // NCRS size: 2
+  _plus__ex_(); // +!
+  UNK_0xef8a(); // UNK_0xef8a
+}
+
+
+// ================================================
+// 0xf075: WORD 'UNK_0xf077' codep=0x224c parp=0xf077
+// ================================================
+
+void UNK_0xf077() // UNK_0xf077
+{
+  _ro_XYSCAN(); // (XYSCAN case
+  Push(0); // 0
+  Push(1); // 1
+  _2OVER(); // 2OVER
+  D_eq_(); // D=
+  if (Pop() == 0) goto label1;
+  Pop(); Pop();// 2DROP
+  Push(1); // 1
+  UNK_0xf06b(); // UNK_0xf06b
+  goto label2;
+
+  label1:
+  Push(0); // 0
+  Push(cc__dash_1); // -1
+  _2OVER(); // 2OVER
+  D_eq_(); // D=
+  if (Pop() == 0) goto label3;
+  Pop(); Pop();// 2DROP
+  Push(cc__dash_1); // -1
+  UNK_0xf06b(); // UNK_0xf06b
+  goto label2;
+
+  label3:
+  Pop(); // DROP
+  _ask_TRIG(); // ?TRIG
+  if (Pop() == 0) goto label4;
+  UNK_0xef23(); // UNK_0xef23
+  Push(pp_NCRS); // NCRS size: 2
+  Push(Read16(Pop())); // @
+  _gt_BUTTONS(); // >BUTTONS case
   UNK_0xeef3(); // UNK_0xeef3
 
   label4:

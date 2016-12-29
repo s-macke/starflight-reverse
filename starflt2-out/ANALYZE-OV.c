@@ -209,16 +209,9 @@ void UNK_0xed09() // UNK_0xed09
 // ================================================
 // 0xed14: WORD '(.VESSEL)' codep=0x4b3b parp=0xed22
 // ================================================
-// 0xed22: db 0x04 0x00 0xfc 0xec 0x1d 0x00 0xef 0xec 0x20 0x00 0xef 0xec 0x00 0x00 0x09 0xed 0x14 0x00 0xef 0xec '                    '
 
-// ================================================
-// 0xed36: WORD 'UNK_0xed38' codep=0x224c parp=0xed38
-// ================================================
-
-void UNK_0xed38() // UNK_0xed38
+void _ro__dot_VESSEL_rc_() // (.VESSEL)
 {
-  _at_INST_dash_S(); // @INST-S
-  Pop();
   switch(Pop()) // (.VESSEL)
   {
   case 29:
@@ -238,6 +231,16 @@ void UNK_0xed38() // UNK_0xed38
     break;
 
   }
+}
+
+// ================================================
+// 0xed36: WORD 'UNK_0xed38' codep=0x224c parp=0xed38
+// ================================================
+
+void UNK_0xed38() // UNK_0xed38
+{
+  _at_INST_dash_S(); // @INST-S
+  _ro__dot_VESSEL_rc_(); // (.VESSEL) case
 }
 
 
@@ -277,30 +280,9 @@ void UNK_0xed5a() // UNK_0xed5a
 // ================================================
 // 0xed77: WORD '(.OBJECT)' codep=0x4b3b parp=0xed85
 // ================================================
-// 0xed85: db 0x05 0x00 0xef 0xec 0x19 0x00 0x38 0xed 0x00 0x00 0x40 0xed 0x20 0x00 0x4d 0xed 0x17 0x00 0x5a 0xed 0x3c 0x00 0x48 0x3a '      8   @   M   Z < H:'
 
-// ================================================
-// 0xed9d: WORD 'UNK_0xed9f' codep=0x224c parp=0xed9f
-// ================================================
-
-void UNK_0xed9f() // UNK_0xed9f
+void _ro__dot_OBJECT_rc_() // (.OBJECT)
 {
-  _at_INST_dash_C(); // @INST-C
-  Push(0x003c);
-  _eq_(); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
-  SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
-  if (Pop() == 0) goto label1;
-  PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
-  CTCR(); // CTCR
-  PRINT(" OBJECT: ", 9); // (.")
-
-  label1:
-  CTINIT(); // CTINIT
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // (.OBJECT)
   {
   case 25:
@@ -323,6 +305,30 @@ void UNK_0xed9f() // UNK_0xed9f
     break;
 
   }
+}
+
+// ================================================
+// 0xed9d: WORD 'UNK_0xed9f' codep=0x224c parp=0xed9f
+// ================================================
+
+void UNK_0xed9f() // UNK_0xed9f
+{
+  _at_INST_dash_C(); // @INST-C
+  Push(0x003c);
+  _eq_(); // =
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(Pop() & Pop()); // AND
+  SetColor("BLUE");
+  _ex_COLOR(); // !COLOR
+  if (Pop() == 0) goto label1;
+  PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
+  CTCR(); // CTCR
+  PRINT(" OBJECT: ", 9); // (.")
+
+  label1:
+  CTINIT(); // CTINIT
+  _at_INST_dash_C(); // @INST-C
+  _ro__dot_OBJECT_rc_(); // (.OBJECT) case
 }
 
 
@@ -457,21 +463,9 @@ void UNK_0xeec3() // UNK_0xeec3
 // ================================================
 // 0xeecf: WORD '(.TYPE)' codep=0x4b3b parp=0xeedb
 // ================================================
-// 0xeedb: db 0x03 0x00 0xef 0xec 0x01 0x00 0xa7 0xee 0x02 0x00 0xb7 0xee 0x03 0x00 0xc3 0xee '                '
 
-// ================================================
-// 0xeeeb: WORD 'UNK_0xeeed' codep=0x224c parp=0xeeed
-// ================================================
-
-void UNK_0xeeed() // UNK_0xeeed
+void _ro__dot_TYPE_rc_() // (.TYPE)
 {
-  UNK_0xee9b(); // UNK_0xee9b
-  PRINT("TYPE: ", 6); // (.")
-  UNK_0xee5b(); // UNK_0xee5b
-  if (Pop() == 0) return;
-  LoadData("UNK_0xec8a"); // from 'VESSEL      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.TYPE)
   {
   case 1:
@@ -488,6 +482,21 @@ void UNK_0xeeed() // UNK_0xeeed
     break;
 
   }
+}
+
+// ================================================
+// 0xeeeb: WORD 'UNK_0xeeed' codep=0x224c parp=0xeeed
+// ================================================
+
+void UNK_0xeeed() // UNK_0xeeed
+{
+  UNK_0xee9b(); // UNK_0xee9b
+  PRINT("TYPE: ", 6); // (.")
+  UNK_0xee5b(); // UNK_0xee5b
+  if (Pop() == 0) return;
+  LoadData("UNK_0xec8a"); // from 'VESSEL      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_TYPE_rc_(); // (.TYPE) case
 }
 
 
@@ -774,7 +783,35 @@ void UNK_0xf123() // UNK_0xf123
 // ================================================
 // 0xf12f: WORD '.TDESC' codep=0x4b3b parp=0xf13a
 // ================================================
-// 0xf13a: db 0x06 0x00 0x48 0x3a 0x00 0x00 0xe9 0xf0 0x01 0x00 0xdc 0xf0 0x02 0x00 0xf6 0xf0 0x03 0x00 0x06 0xf1 0x04 0x00 0x15 0xf1 0x05 0x00 0x23 0xf1 '  H:                      # '
+
+void _dot_TDESC() // .TDESC
+{
+  switch(Pop()) // .TDESC
+  {
+  case 0:
+    UNK_0xf0e9(); // UNK_0xf0e9
+    break;
+  case 1:
+    UNK_0xf0dc(); // UNK_0xf0dc
+    break;
+  case 2:
+    UNK_0xf0f6(); // UNK_0xf0f6
+    break;
+  case 3:
+    UNK_0xf106(); // UNK_0xf106
+    break;
+  case 4:
+    UNK_0xf115(); // UNK_0xf115
+    break;
+  case 5:
+    UNK_0xf123(); // UNK_0xf123
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf156: WORD 'UNK_0xf158' codep=0x224c parp=0xf158
@@ -791,32 +828,7 @@ void UNK_0xf158() // UNK_0xf158
   LoadData("UNK_0xecdf"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // .TDESC
-  {
-  case 0:
-    UNK_0xf0e9(); // UNK_0xf0e9
-    break;
-  case 1:
-    UNK_0xf0dc(); // UNK_0xf0dc
-    break;
-  case 2:
-    UNK_0xf0f6(); // UNK_0xf0f6
-    break;
-  case 3:
-    UNK_0xf106(); // UNK_0xf106
-    break;
-  case 4:
-    UNK_0xf115(); // UNK_0xf115
-    break;
-  case 5:
-    UNK_0xf123(); // UNK_0xf123
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_TDESC(); // .TDESC case
   OVER(); // OVER
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -825,32 +837,7 @@ void UNK_0xf158() // UNK_0xf158
 
   label1:
   PRINT(" TO ", 4); // (.")
-  Pop();
-  switch(Pop()) // .TDESC
-  {
-  case 0:
-    UNK_0xf0e9(); // UNK_0xf0e9
-    break;
-  case 1:
-    UNK_0xf0dc(); // UNK_0xf0dc
-    break;
-  case 2:
-    UNK_0xf0f6(); // UNK_0xf0f6
-    break;
-  case 3:
-    UNK_0xf106(); // UNK_0xf106
-    break;
-  case 4:
-    UNK_0xf115(); // UNK_0xf115
-    break;
-  case 5:
-    UNK_0xf123(); // UNK_0xf123
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_TDESC(); // .TDESC case
 }
 
 
@@ -907,21 +894,9 @@ void UNK_0xf1c6() // UNK_0xf1c6
 // ================================================
 // 0xf1d1: WORD '(.SURF)' codep=0x4b3b parp=0xf1dd
 // ================================================
-// 0xf1dd: db 0x05 0x00 0xef 0xec 0x01 0x00 0x97 0xf1 0x02 0x00 0xa1 0xf1 0x03 0x00 0xae 0xf1 0x05 0x00 0xbb 0xf1 0x04 0x00 0xc6 0xf1 '                        '
 
-// ================================================
-// 0xf1f5: WORD 'UNK_0xf1f7' codep=0x224c parp=0xf1f7
-// ================================================
-
-void UNK_0xf1f7() // UNK_0xf1f7
+void _ro__dot_SURF_rc_() // (.SURF)
 {
-  UNK_0xee9b(); // UNK_0xee9b
-  PRINT("PREDOMINANT SURFACE: ", 21); // (.")
-  UNK_0xee5b(); // UNK_0xee5b
-  if (Pop() == 0) return;
-  LoadData("UNK_0xecb7"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.SURF)
   {
   case 1:
@@ -944,6 +919,21 @@ void UNK_0xf1f7() // UNK_0xf1f7
     break;
 
   }
+}
+
+// ================================================
+// 0xf1f5: WORD 'UNK_0xf1f7' codep=0x224c parp=0xf1f7
+// ================================================
+
+void UNK_0xf1f7() // UNK_0xf1f7
+{
+  UNK_0xee9b(); // UNK_0xee9b
+  PRINT("PREDOMINANT SURFACE: ", 21); // (.")
+  UNK_0xee5b(); // UNK_0xee5b
+  if (Pop() == 0) return;
+  LoadData("UNK_0xecb7"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_SURF_rc_(); // (.SURF) case
 }
 
 
@@ -1045,21 +1035,9 @@ void UNK_0xf2b7() // UNK_0xf2b7
 // ================================================
 // 0xf2c3: WORD '(.ATMO)' codep=0x4b3b parp=0xf2cf
 // ================================================
-// 0xf2cf: db 0x05 0x00 0x08 0xef 0x01 0x00 0x8e 0xf2 0x02 0x00 0x83 0xf2 0x03 0x00 0x9c 0xf2 0x04 0x00 0xab 0xf2 0x05 0x00 0xb7 0xf2 '                        '
 
-// ================================================
-// 0xf2e7: WORD 'UNK_0xf2e9' codep=0x224c parp=0xf2e9
-// ================================================
-
-void UNK_0xf2e9() // UNK_0xf2e9
+void _ro__dot_ATMO_rc_() // (.ATMO)
 {
-  UNK_0xee9b(); // UNK_0xee9b
-  PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
-  UNK_0xee5b(); // UNK_0xee5b
-  if (Pop() == 0) return;
-  LoadData("UNK_0xecd7"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.ATMO)
   {
   case 1:
@@ -1082,6 +1060,21 @@ void UNK_0xf2e9() // UNK_0xf2e9
     break;
 
   }
+}
+
+// ================================================
+// 0xf2e7: WORD 'UNK_0xf2e9' codep=0x224c parp=0xf2e9
+// ================================================
+
+void UNK_0xf2e9() // UNK_0xf2e9
+{
+  UNK_0xee9b(); // UNK_0xee9b
+  PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
+  UNK_0xee5b(); // UNK_0xee5b
+  if (Pop() == 0) return;
+  LoadData("UNK_0xecd7"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_ATMO_rc_(); // (.ATMO) case
 }
 
 
@@ -1129,21 +1122,9 @@ void UNK_0xf33b() // UNK_0xf33b
 // ================================================
 // 0xf347: WORD '(.WEATH)' codep=0x4b3b parp=0xf354
 // ================================================
-// 0xf354: db 0x04 0x00 0x08 0xef 0x01 0x00 0x13 0xf3 0x02 0x00 0x1e 0xf3 0x03 0x00 0x2d 0xf3 0x04 0x00 0x3b 0xf3 '              -   ; '
 
-// ================================================
-// 0xf368: WORD 'UNK_0xf36a' codep=0x224c parp=0xf36a
-// ================================================
-
-void UNK_0xf36a() // UNK_0xf36a
+void _ro__dot_WEATH_rc_() // (.WEATH)
 {
-  UNK_0xee9b(); // UNK_0xee9b
-  PRINT("GLOBAL WEATHER: ", 16); // (.")
-  UNK_0xee5b(); // UNK_0xee5b
-  if (Pop() == 0) return;
-  LoadData("UNK_0xeccf"); // from 'PLANET      '
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // (.WEATH)
   {
   case 1:
@@ -1163,6 +1144,21 @@ void UNK_0xf36a() // UNK_0xf36a
     break;
 
   }
+}
+
+// ================================================
+// 0xf368: WORD 'UNK_0xf36a' codep=0x224c parp=0xf36a
+// ================================================
+
+void UNK_0xf36a() // UNK_0xf36a
+{
+  UNK_0xee9b(); // UNK_0xee9b
+  PRINT("GLOBAL WEATHER: ", 16); // (.")
+  UNK_0xee5b(); // UNK_0xee5b
+  if (Pop() == 0) return;
+  LoadData("UNK_0xeccf"); // from 'PLANET      '
+  Push(Read16(Pop())); // @
+  _ro__dot_WEATH_rc_(); // (.WEATH) case
 }
 
 
@@ -1313,16 +1309,9 @@ void UNK_0xf44e() // UNK_0xf44e
 // ================================================
 // 0xf458: WORD '(.V/P-OBJ)' codep=0x4b3b parp=0xf467
 // ================================================
-// 0xf467: db 0x02 0x00 0x4e 0xf4 0x16 0x00 0x42 0xf4 0x00 0x00 0x48 0xf4 '  N   B   H '
 
-// ================================================
-// 0xf473: WORD 'UNK_0xf475' codep=0x224c parp=0xf475
-// ================================================
-
-void UNK_0xf475() // UNK_0xf475
+void _ro__dot_V_slash_P_dash_OBJ_rc_() // (.V/P-OBJ)
 {
-  _at_INST_dash_S(); // @INST-S
-  Pop();
   switch(Pop()) // (.V/P-OBJ)
   {
   case 22:
@@ -1336,6 +1325,16 @@ void UNK_0xf475() // UNK_0xf475
     break;
 
   }
+}
+
+// ================================================
+// 0xf473: WORD 'UNK_0xf475' codep=0x224c parp=0xf475
+// ================================================
+
+void UNK_0xf475() // UNK_0xf475
+{
+  _at_INST_dash_S(); // @INST-S
+  _ro__dot_V_slash_P_dash_OBJ_rc_(); // (.V/P-OBJ) case
 }
 
 
@@ -1368,7 +1367,29 @@ void UNK_0xf48d() // UNK_0xf48d
 // ================================================
 // 0xf493: WORD '(.ANALYSIS)' codep=0x4b3b parp=0xf4a3
 // ================================================
-// 0xf4a3: db 0x04 0x00 0x6e 0x3a 0x20 0x00 0x7d 0xf4 0x17 0x00 0x8d 0xf4 0x19 0x00 0x75 0xf4 0x3c 0x00 0x36 0xf4 '  n:  }       u < 6 '
+
+void _ro__dot_ANALYSIS_rc_() // (.ANALYSIS)
+{
+  switch(Pop()) // (.ANALYSIS)
+  {
+  case 32:
+    UNK_0xf47d(); // UNK_0xf47d
+    break;
+  case 23:
+    UNK_0xf48d(); // UNK_0xf48d
+    break;
+  case 25:
+    UNK_0xf475(); // UNK_0xf475
+    break;
+  case 60:
+    UNK_0xf436(); // UNK_0xf436
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4b7: WORD '(/ANALYSIS)' codep=0x224c parp=0xf4c7
@@ -1389,26 +1410,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   _gt_C_plus_S(); // >C+S
   UNK_0xed9f(); // UNK_0xed9f
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // (.ANALYSIS)
-  {
-  case 32:
-    UNK_0xf47d(); // UNK_0xf47d
-    break;
-  case 23:
-    UNK_0xf48d(); // UNK_0xf48d
-    break;
-  case 25:
-    UNK_0xf475(); // UNK_0xf475
-    break;
-  case 60:
-    UNK_0xf436(); // UNK_0xf436
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS) case
   ICLOSE(); // ICLOSE
   Push(0x1b58); Push(0x0000);
   goto label2;

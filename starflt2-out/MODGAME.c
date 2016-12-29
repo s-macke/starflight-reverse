@@ -2945,7 +2945,29 @@ void UNK_0xf1c5() // UNK_0xf1c5
 // ================================================
 // 0xf1f1: WORD 'KEY>O' codep=0x4b3b parp=0xf1fb
 // ================================================
-// 0xf1fb: db 0x04 0x00 0xd1 0x51 0x01 0x00 0x87 0xdf 0x02 0x00 0xc5 0x51 0x03 0x00 0xc5 0x51 0x07 0x00 0xc5 0x51 '   Q       Q   Q   Q'
+
+void KEY_gt_O() // KEY>O
+{
+  switch(Pop()) // KEY>O
+  {
+  case 1:
+    UNK_0xdf87(); // UNK_0xdf87
+    break;
+  case 2:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 3:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 7:
+    Push(cc_TRUE); // TRUE
+    break;
+  default:
+    Push(cc_FALSE); // FALSE
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf20f: WORD 'OPTIO' codep=0x1d29 parp=0xf219
@@ -2966,26 +2988,7 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(Read16(regsp)); // DUP
   Push(pp_OPTIO); // OPTIO size: 30
   _ex__2(); // !_2
-  Pop();
-  switch(Pop()) // KEY>O
-  {
-  case 1:
-    UNK_0xdf87(); // UNK_0xdf87
-    break;
-  case 2:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 3:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 7:
-    Push(cc_TRUE); // TRUE
-    break;
-  default:
-    Push(cc_FALSE); // FALSE
-    break;
-
-  }
+  KEY_gt_O(); // KEY>O case
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY size: 2
   Push(Read16(Pop())); // @
@@ -3148,7 +3151,29 @@ void UNK_0xf396() // UNK_0xf396
 // ================================================
 // 0xf3b2: WORD 'GAMEO_2' codep=0x4b3b parp=0xf3bc
 // ================================================
-// 0xf3bc: db 0x04 0x00 0x96 0xf3 0x31 0x00 0x58 0xf3 0x33 0x00 0x8e 0xf3 0x32 0x00 0x70 0xf3 0x37 0x00 0x41 0x90 '    1 X 3   2 p 7 A '
+
+void GAMEO_2() // GAMEO_2
+{
+  switch(Pop()) // GAMEO_2
+  {
+  case 49:
+    UNK_0xf358(); // UNK_0xf358
+    break;
+  case 51:
+    UNK_0xf38e(); // UNK_0xf38e
+    break;
+  case 50:
+    UNK_0xf370(); // UNK_0xf370
+    break;
+  case 55:
+    BYE_2(); // BYE_2
+    break;
+  default:
+    UNK_0xf396(); // UNK_0xf396
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf3d0: WORD 'UNK_0xf3d2' codep=0x224c parp=0xf3d2
@@ -3188,26 +3213,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   label1:
   UNK_0xe571(); // UNK_0xe571
   UNK_0xf21d(); // UNK_0xf21d
-  Pop();
-  switch(Pop()) // GAMEO_2
-  {
-  case 49:
-    UNK_0xf358(); // UNK_0xf358
-    break;
-  case 51:
-    UNK_0xf38e(); // UNK_0xf38e
-    break;
-  case 50:
-    UNK_0xf370(); // UNK_0xf370
-    break;
-  case 55:
-    BYE_2(); // BYE_2
-    break;
-  default:
-    UNK_0xf396(); // UNK_0xf396
-    break;
-
-  }
+  GAMEO_2(); // GAMEO_2 case
   Push(pp_UNK_0xdd2e); // UNK_0xdd2e size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;

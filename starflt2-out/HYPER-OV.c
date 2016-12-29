@@ -950,7 +950,32 @@ void UNK_0xdc71() // UNK_0xdc71
 // ================================================
 // 0xdca5: WORD 'PS>C' codep=0x4b3b parp=0xdcae
 // ================================================
-// 0xdcae: db 0x05 0x00 0x3e 0x50 0x00 0x00 0x04 0x50 0x01 0x00 0xe3 0x4f 0x02 0x00 0x0e 0x50 0x03 0x00 0x55 0x50 0x04 0x00 0xd7 0x4f '  >P   P   O   P  UP   O'
+
+void PS_gt_C() // PS>C
+{
+  switch(Pop()) // PS>C
+  {
+  case 0:
+    GREY2(); // GREY2
+    break;
+  case 1:
+    VIOLET(); // VIOLET
+    break;
+  case 2:
+    BLUE(); // BLUE
+    break;
+  case 3:
+    WHITE(); // WHITE
+    break;
+  case 4:
+    RED(); // RED
+    break;
+  default:
+    ORANGE(); // ORANGE
+    break;
+
+  }
+}
 
 // ================================================
 // 0xdcc6: WORD 'UNK_0xdcc8' codep=0x224c parp=0xdcc8
@@ -1390,7 +1415,23 @@ void UNK_0xdf66() // UNK_0xdf66
 // ================================================
 // 0xdf7c: WORD '>XY' codep=0x4b3b parp=0xdf84
 // ================================================
-// 0xdf84: db 0x02 0x00 0x48 0x3a 0x0b 0x00 0x66 0xdf 0x3d 0x00 0xf6 0xde '  H:  f =   '
+
+void _gt_XY() // >XY
+{
+  switch(Pop()) // >XY
+  {
+  case 11:
+    UNK_0xdf66(); // UNK_0xdf66
+    break;
+  case 61:
+    UNK_0xdef6(); // UNK_0xdef6
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xdf90: WORD 'UNK_0xdf92' codep=0x224c parp=0xdf92
@@ -1405,20 +1446,7 @@ void UNK_0xdf92() // UNK_0xdf92
 
   label2:
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // >XY
-  {
-  case 11:
-    UNK_0xdf66(); // UNK_0xdf66
-    break;
-  case 61:
-    UNK_0xdef6(); // UNK_0xdef6
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _gt_XY(); // >XY case
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label2;
@@ -1432,15 +1460,9 @@ void UNK_0xdf92() // UNK_0xdf92
 // ================================================
 // 0xdfae: WORD 'SC>C' codep=0x4b3b parp=0xdfb7
 // ================================================
-// 0xdfb7: db 0x06 0x00 0x28 0x50 0x4d 0x00 0xd7 0x4f 0x4b 0x00 0x3e 0x50 0x47 0x00 0x4a 0x50 0x46 0x00 0x55 0x50 0x41 0x00 0xce 0x4f 0x42 0x00 0x0e 0x50 '  (PM  OK >PG JPF UPA  OB  P'
 
-// ================================================
-// 0xdfd3: WORD 'UNK_0xdfd5' codep=0x224c parp=0xdfd5
-// ================================================
-
-void UNK_0xdfd5() // UNK_0xdfd5
+void SC_gt_C() // SC>C
 {
-  Pop();
   switch(Pop()) // SC>C
   {
   case 77:
@@ -1466,6 +1488,15 @@ void UNK_0xdfd5() // UNK_0xdfd5
     break;
 
   }
+}
+
+// ================================================
+// 0xdfd3: WORD 'UNK_0xdfd5' codep=0x224c parp=0xdfd5
+// ================================================
+
+void UNK_0xdfd5() // UNK_0xdfd5
+{
+  SC_gt_C(); // SC>C case
   _ex_COLOR(); // !COLOR
   Push(0x0078);
   Push(0x00a1);
@@ -1492,29 +1523,7 @@ void UNK_0xdfe9() // UNK_0xdfe9
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xda73"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  Pop();
-  switch(Pop()) // PS>C
-  {
-  case 0:
-    GREY2(); // GREY2
-    break;
-  case 1:
-    VIOLET(); // VIOLET
-    break;
-  case 2:
-    BLUE(); // BLUE
-    break;
-  case 3:
-    WHITE(); // WHITE
-    break;
-  case 4:
-    RED(); // RED
-    break;
-  default:
-    ORANGE(); // ORANGE
-    break;
-
-  }
+  PS_gt_C(); // PS>C case
   _ex_COLOR(); // !COLOR
 
   label1:
@@ -1712,26 +1721,9 @@ void UNK_0xe17b() // UNK_0xe17b
 // ================================================
 // 0xe185: WORD 'RADII' codep=0x4b3b parp=0xe18f
 // ================================================
-// 0xe18f: db 0x04 0x00 0xd8 0xd9 0x01 0x00 0xdc 0xd9 0x02 0x00 0xe4 0xd9 0x04 0x00 0xe0 0xd9 0x05 0x00 0xd4 0xd9 '                    '
 
-// ================================================
-// 0xe1a3: WORD 'IVAR' codep=0x4b3b parp=0xe1ac
-// ================================================
-// 0xe1ac: db 0x04 0x00 0xe1 0x64 0x00 0x00 0xb1 0x64 0x01 0x00 0xa1 0x64 0x02 0x00 0x91 0x64 0x04 0x00 0xd1 0x64 '   d   d   d   d   d'
-
-// ================================================
-// 0xe1c0: WORD 'UNK_0xe1c2' codep=0x224c parp=0xe1c2
-// ================================================
-
-void UNK_0xe1c2() // UNK_0xe1c2
+void RADII() // RADII
 {
-  _2DUP(); // 2DUP
-  _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
-  _at_INST_dash_C(); // @INST-C
-  CONTEXT_2(); // CONTEXT_2
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // RADII
   {
   case 1:
@@ -1751,10 +1743,14 @@ void UNK_0xe1c2() // UNK_0xe1c2
     break;
 
   }
-  _gt_R(); // >R
-  _gt_R(); // >R
-  Push(h); // I
-  Pop();
+}
+
+// ================================================
+// 0xe1a3: WORD 'IVAR' codep=0x4b3b parp=0xe1ac
+// ================================================
+
+void IVAR() // IVAR
+{
   switch(Pop()) // IVAR
   {
   case 0:
@@ -1774,6 +1770,25 @@ void UNK_0xe1c2() // UNK_0xe1c2
     break;
 
   }
+}
+
+// ================================================
+// 0xe1c0: WORD 'UNK_0xe1c2' codep=0x224c parp=0xe1c2
+// ================================================
+
+void UNK_0xe1c2() // UNK_0xe1c2
+{
+  _2DUP(); // 2DUP
+  _gt_C_plus_S(); // >C+S
+  _at_INST_dash_S(); // @INST-S
+  _at_INST_dash_C(); // @INST-C
+  CONTEXT_2(); // CONTEXT_2
+  Push(Read16(regsp)); // DUP
+  RADII(); // RADII case
+  _gt_R(); // >R
+  _gt_R(); // >R
+  Push(h); // I
+  IVAR(); // IVAR case
   R_gt_(); // R>
   R_gt_(); // R>
   ICLOSE(); // ICLOSE
@@ -1844,7 +1859,23 @@ void UNK_0xe20a() // UNK_0xe20a
 // ================================================
 // 0xe222: WORD 'XYCASE' codep=0x4b3b parp=0xe22d
 // ================================================
-// 0xe22d: db 0x02 0x00 0x00 0xe2 0x03 0x00 0xfa 0xe1 0x04 0x00 0x0a 0xe2 '            '
+
+void XYCASE() // XYCASE
+{
+  switch(Pop()) // XYCASE
+  {
+  case 3:
+    UNK_0xe1fa(); // UNK_0xe1fa
+    break;
+  case 4:
+    UNK_0xe20a(); // UNK_0xe20a
+    break;
+  default:
+    UNK_0xe200(); // UNK_0xe200
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe239: WORD 'UNK_0xe23b' codep=0x224c parp=0xe23b
@@ -1875,20 +1906,7 @@ void UNK_0xe23b() // UNK_0xe23b
   _gt_1FONT(); // >1FONT
   if (Pop() == 0) goto label1;
   UNK_0xdaca(); // UNK_0xdaca
-  Pop();
-  switch(Pop()) // XYCASE
-  {
-  case 3:
-    UNK_0xe1fa(); // UNK_0xe1fa
-    break;
-  case 4:
-    UNK_0xe20a(); // UNK_0xe20a
-    break;
-  default:
-    UNK_0xe200(); // UNK_0xe200
-    break;
-
-  }
+  XYCASE(); // XYCASE case
   goto label2;
 
   label1:
@@ -2798,7 +2816,23 @@ void UNK_0xe882() // UNK_0xe882
 // ================================================
 // 0xe898: WORD 'CSPEED' codep=0x4b3b parp=0xe8a3
 // ================================================
-// 0xe8a3: db 0x02 0x00 0x96 0xe8 0x03 0x00 0x30 0x0f 0x04 0x00 0x82 0xe8 '      0     '
+
+void CSPEED() // CSPEED
+{
+  switch(Pop()) // CSPEED
+  {
+  case 3:
+    Push(1); // 1
+    break;
+  case 4:
+    UNK_0xe882(); // UNK_0xe882
+    break;
+  default:
+    Push(cc_UNK_0xe896); // UNK_0xe896
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe8af: WORD '#ACC' codep=0x1d29 parp=0xe8b8
@@ -2821,20 +2855,7 @@ void UNK_0xe8c9() // UNK_0xe8c9
   Push(pp__n_ACC); // #ACC size: 2
   _099(); // 099
   UNK_0xdaca(); // UNK_0xdaca
-  Pop();
-  switch(Pop()) // CSPEED
-  {
-  case 3:
-    Push(1); // 1
-    break;
-  case 4:
-    UNK_0xe882(); // UNK_0xe882
-    break;
-  default:
-    Push(cc_UNK_0xe896); // UNK_0xe896
-    break;
-
-  }
+  CSPEED(); // CSPEED case
   Push(0xd9f8);
   _ex__2(); // !_2
 }
@@ -2975,7 +2996,26 @@ void UNK_0xe98d() // UNK_0xe98d
 // ================================================
 // 0xe99d: WORD '?~C' codep=0x4b3b parp=0xe9a5
 // ================================================
-// 0xe9a5: db 0x03 0x00 0x22 0x0f 0x0b 0x00 0x8d 0xe9 0x12 0x00 0x77 0xe9 0x17 0x00 0x77 0xe9 '  "       w   w '
+
+void _ask__t_C() // ?~C
+{
+  switch(Pop()) // ?~C
+  {
+  case 11:
+    UNK_0xe98d(); // UNK_0xe98d
+    break;
+  case 18:
+    UNK_0xe977(); // UNK_0xe977
+    break;
+  case 23:
+    UNK_0xe977(); // UNK_0xe977
+    break;
+  default:
+    Push(0); // 0
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe9b5: WORD 'UNK_0xe9b7' codep=0x224c parp=0xe9b7
@@ -2999,7 +3039,29 @@ void UNK_0xe9b7() // UNK_0xe9b7
 // ================================================
 // 0xe9cf: WORD 'NEST-SE' codep=0x4b3b parp=0xe9db
 // ================================================
-// 0xe9db: db 0x04 0x00 0x48 0x3a 0x01 0x00 0x26 0xdb 0x02 0x00 0xb7 0xe0 0x04 0x00 0x14 0xde 0x05 0x00 0x6e 0xde '  H:  &           n '
+
+void NEST_dash_SE() // NEST-SE
+{
+  switch(Pop()) // NEST-SE
+  {
+  case 1:
+    UNK_0xdb26(); // UNK_0xdb26
+    break;
+  case 2:
+    UNK_0xe0b7(); // UNK_0xe0b7
+    break;
+  case 4:
+    UNK_0xde14(); // UNK_0xde14
+    break;
+  case 5:
+    UNK_0xde6e(); // UNK_0xde6e
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe9ef: WORD 'UNK_0xe9f1' codep=0x224c parp=0xe9f1
@@ -3060,26 +3122,7 @@ void NEST() // NEST
   Push(Read16(regsp)); // DUP
   UNK_0xe9f1(); // UNK_0xe9f1
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // NEST-SE
-  {
-  case 1:
-    UNK_0xdb26(); // UNK_0xdb26
-    break;
-  case 2:
-    UNK_0xe0b7(); // UNK_0xe0b7
-    break;
-  case 4:
-    UNK_0xde14(); // UNK_0xde14
-    break;
-  case 5:
-    UNK_0xde6e(); // UNK_0xde6e
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  NEST_dash_SE(); // NEST-SE case
   Push(Read16(regsp)); // DUP
   Push(0xc994);
   MODULE(); // MODULE
@@ -3308,7 +3351,35 @@ void UNK_0xeba7() // UNK_0xeba7
 // ================================================
 // 0xebb1: WORD 'COLLIDE' codep=0x4b3b parp=0xebbd
 // ================================================
-// 0xebbd: db 0x06 0x00 0xe0 0x0d 0x0b 0x00 0xda 0xea 0x12 0x00 0x26 0xea 0x17 0x00 0x26 0xea 0x2d 0x00 0x7b 0xeb 0x3d 0x00 0xb8 0xea 0x3c 0x00 0xa7 0xeb '          &   & - { =   <   '
+
+void COLLIDE() // COLLIDE
+{
+  switch(Pop()) // COLLIDE
+  {
+  case 11:
+    UNK_0xeada(); // UNK_0xeada
+    break;
+  case 18:
+    NEST(); // NEST
+    break;
+  case 23:
+    NEST(); // NEST
+    break;
+  case 45:
+    UNK_0xeb7b(); // UNK_0xeb7b
+    break;
+  case 61:
+    UNK_0xeab8(); // UNK_0xeab8
+    break;
+  case 60:
+    UNK_0xeba7(); // UNK_0xeba7
+    break;
+  default:
+    Pop(); Pop();// 2DROP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xebd9: WORD 'UNK_0xebdb' codep=0x224c parp=0xebdb
@@ -3378,23 +3449,7 @@ void UNK_0xebdb() // UNK_0xebdb
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label4;
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // ?~C
-  {
-  case 11:
-    UNK_0xe98d(); // UNK_0xe98d
-    break;
-  case 18:
-    UNK_0xe977(); // UNK_0xe977
-    break;
-  case 23:
-    UNK_0xe977(); // UNK_0xe977
-    break;
-  default:
-    Push(0); // 0
-    break;
-
-  }
+  _ask__t_C(); // ?~C case
   if (Pop() == 0) goto label5;
   Push(0x0096);
   Push(0x0fa0);
@@ -3551,7 +3606,29 @@ void UNK_0xed11() // UNK_0xed11
 // ================================================
 // 0xed72: WORD 'UNNEST-' codep=0x4b3b parp=0xed7e
 // ================================================
-// 0xed7e: db 0x04 0x00 0x48 0x3a 0x01 0x00 0x54 0xdb 0x02 0x00 0xd9 0xe0 0x04 0x00 0xae 0xdd 0x05 0x00 0x8a 0xde '  H:  T             '
+
+void UNNEST_dash_() // UNNEST-
+{
+  switch(Pop()) // UNNEST-
+  {
+  case 1:
+    UNK_0xdb54(); // UNK_0xdb54
+    break;
+  case 2:
+    UNK_0xe0d9(); // UNK_0xe0d9
+    break;
+  case 4:
+    UNK_0xddae(); // UNK_0xddae
+    break;
+  case 5:
+    UNK_0xde8a(); // UNK_0xde8a
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xed92: WORD 'UNK_0xed94' codep=0x224c parp=0xed94
@@ -3682,26 +3759,7 @@ void UNNEST() // UNNEST
   Push(0xc94c);
   MODULE(); // MODULE
   Push(h); // I
-  Pop();
-  switch(Pop()) // UNNEST-
-  {
-  case 1:
-    UNK_0xdb54(); // UNK_0xdb54
-    break;
-  case 2:
-    UNK_0xe0d9(); // UNK_0xe0d9
-    break;
-  case 4:
-    UNK_0xddae(); // UNK_0xddae
-    break;
-  case 5:
-    UNK_0xde8a(); // UNK_0xde8a
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  UNNEST_dash_(); // UNNEST- case
   UNK_0xe157(); // UNK_0xe157
   ICLOSE(); // ICLOSE
   CI(); // CI
@@ -3842,32 +3900,7 @@ void UNK_0xef35() // UNK_0xef35
   R_gt_(); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Pop();
-  switch(Pop()) // COLLIDE
-  {
-  case 11:
-    UNK_0xeada(); // UNK_0xeada
-    break;
-  case 18:
-    NEST(); // NEST
-    break;
-  case 23:
-    NEST(); // NEST
-    break;
-  case 45:
-    UNK_0xeb7b(); // UNK_0xeb7b
-    break;
-  case 61:
-    UNK_0xeab8(); // UNK_0xeab8
-    break;
-  case 60:
-    UNK_0xeba7(); // UNK_0xeba7
-    break;
-  default:
-    Pop(); Pop();// 2DROP
-    break;
-
-  }
+  COLLIDE(); // COLLIDE case
 }
 
 
@@ -3951,98 +3984,7 @@ void SET_dash_DES() // SET-DES
   _ex__2(); // !_2
 
   label1:
-  Pop();
-  switch(Pop()) // (XYSCAN
-  {
-  case 327:
-    UNK_0xa45f(); // UNK_0xa45f
-    break;
-  case 328:
-    UNK_0xa467(); // UNK_0xa467
-    break;
-  case 329:
-    UNK_0xa46f(); // UNK_0xa46f
-    break;
-  case 2:
-    UNK_0x9f68(); // UNK_0x9f68
-    break;
-  case 331:
-    UNK_0xa477(); // UNK_0xa477
-    break;
-  case 333:
-    UNK_0xa51e(); // UNK_0xa51e
-    break;
-  case 20:
-    UNK_0xa587(); // UNK_0xa587
-    break;
-  case 335:
-    UNK_0xa52a(); // UNK_0xa52a
-    break;
-  case 336:
-    UNK_0xa532(); // UNK_0xa532
-    break;
-  case 337:
-    UNK_0xa53a(); // UNK_0xa53a
-    break;
-  case 0:
-    UNK_0xa542(); // UNK_0xa542
-    break;
-  case 92:
-    UNK_0xa45f(); // UNK_0xa45f
-    break;
-  case 126:
-    UNK_0xa467(); // UNK_0xa467
-    break;
-  case 124:
-    UNK_0xa477(); // UNK_0xa477
-    break;
-  case 500:
-    UNK_0xa51e(); // UNK_0xa51e
-    break;
-  case 335:
-    UNK_0xa52a(); // UNK_0xa52a
-    break;
-  case 96:
-    UNK_0xa532(); // UNK_0xa532
-    break;
-  case 315:
-    _i_F1(); // 'F1
-    break;
-  case 316:
-    _i_F2(); // 'F2
-    break;
-  case 317:
-    _i_F3(); // 'F3
-    break;
-  case 318:
-    _i_F4(); // 'F4
-    break;
-  case 319:
-    _i_F5(); // 'F5
-    break;
-  case 320:
-    _i_F6(); // 'F6
-    break;
-  case 321:
-    _i_F7(); // 'F7
-    break;
-  case 322:
-    _i_F8(); // 'F8
-    break;
-  case 323:
-    _i_F9(); // 'F9
-    break;
-  case 324:
-    _i_F10(); // 'F10
-    break;
-  case 338:
-    NULL(); // NULL
-    break;
-  default:
-    UNK_0xa548(); // UNK_0xa548
-    break;
-
-  }
+  _ro_XYSCAN(); // (XYSCAN case
   Push(pp_SKEY); // SKEY size: 2
   Push(Read16(Pop())); // @
   Push(0x005b);

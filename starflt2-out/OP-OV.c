@@ -905,7 +905,23 @@ void UNK_0xeb54() // UNK_0xeb54
 // ================================================
 // 0xeb64: WORD '(NOTICES)' codep=0x4b3b parp=0xeb72
 // ================================================
-// 0xeb72: db 0x02 0x00 0x48 0x3a 0x48 0x01 0x54 0xeb 0x20 0x00 0x3a 0xeb '  H:H T   : '
+
+void _ro_NOTICES_rc_() // (NOTICES)
+{
+  switch(Pop()) // (NOTICES)
+  {
+  case 328:
+    UNK_0xeb54(); // UNK_0xeb54
+    break;
+  case 32:
+    UNK_0xeb3a(); // UNK_0xeb3a
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xeb7e: WORD 'UNK_0xeb80' codep=0x224c parp=0xeb80
@@ -981,20 +997,7 @@ void UNK_0xeb80() // UNK_0xeb80
   Pop(); Pop();// 2DROP
   Push(pp_LKEY); // LKEY size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // (NOTICES)
-  {
-  case 328:
-    UNK_0xeb54(); // UNK_0xeb54
-    break;
-  case 32:
-    UNK_0xeb3a(); // UNK_0xeb3a
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro_NOTICES_rc_(); // (NOTICES) case
   Push(pp_LKEY); // LKEY size: 2
   Push(Read16(Pop())); // @
   Push(0x0150);
@@ -1299,7 +1302,41 @@ void UNK_0xeec1() // UNK_0xeec1
 // ================================================
 // 0xeedc: WORD '(BAD-PLAN)' codep=0x4b3b parp=0xeeeb
 // ================================================
-// 0xeeeb: db 0x08 0x00 0x48 0x3a 0x01 0x00 0x26 0xee 0x02 0x00 0x3a 0xee 0x03 0x00 0x4e 0xee 0x04 0x00 0x66 0xee 0x05 0x00 0x7c 0xee 0x06 0x00 0x92 0xee 0x07 0x00 0xa7 0xee 0x08 0x00 0xc1 0xee '  H:  &   :   N   f   |             '
+
+void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
+{
+  switch(Pop()) // (BAD-PLAN)
+  {
+  case 1:
+    UNK_0xee26(); // UNK_0xee26
+    break;
+  case 2:
+    UNK_0xee3a(); // UNK_0xee3a
+    break;
+  case 3:
+    UNK_0xee4e(); // UNK_0xee4e
+    break;
+  case 4:
+    UNK_0xee66(); // UNK_0xee66
+    break;
+  case 5:
+    UNK_0xee7c(); // UNK_0xee7c
+    break;
+  case 6:
+    UNK_0xee92(); // UNK_0xee92
+    break;
+  case 7:
+    UNK_0xeea7(); // UNK_0xeea7
+    break;
+  case 8:
+    UNK_0xeec1(); // UNK_0xeec1
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xef0f: WORD 'UNK_0xef11' codep=0x224c parp=0xef11
@@ -1338,38 +1375,7 @@ void UNK_0xef2d() // UNK_0xef2d
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Pop();
-  switch(Pop()) // (BAD-PLAN)
-  {
-  case 1:
-    UNK_0xee26(); // UNK_0xee26
-    break;
-  case 2:
-    UNK_0xee3a(); // UNK_0xee3a
-    break;
-  case 3:
-    UNK_0xee4e(); // UNK_0xee4e
-    break;
-  case 4:
-    UNK_0xee66(); // UNK_0xee66
-    break;
-  case 5:
-    UNK_0xee7c(); // UNK_0xee7c
-    break;
-  case 6:
-    UNK_0xee92(); // UNK_0xee92
-    break;
-  case 7:
-    UNK_0xeea7(); // UNK_0xeea7
-    break;
-  case 8:
-    UNK_0xeec1(); // UNK_0xeec1
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro_BAD_dash_PLAN_rc_(); // (BAD-PLAN) case
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
@@ -1981,7 +1987,26 @@ void UNK_0xf47a() // UNK_0xf47a
 // ================================================
 // 0xf4da: WORD 'OP-CASE' codep=0x4b3b parp=0xf4e6
 // ================================================
-// 0xf4e6: db 0x03 0x00 0x48 0x3a 0x00 0x00 0x80 0xeb 0x01 0x00 0x7a 0xf4 0x02 0x00 0x09 0x13 '  H:      z     '
+
+void OP_dash_CASE() // OP-CASE
+{
+  switch(Pop()) // OP-CASE
+  {
+  case 0:
+    UNK_0xeb80(); // UNK_0xeb80
+    break;
+  case 1:
+    UNK_0xf47a(); // UNK_0xf47a
+    break;
+  case 2:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4f6: WORD '(U-OP)' codep=0x224c parp=0xf501
@@ -2016,23 +2041,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // OP-CASE
-  {
-  case 0:
-    UNK_0xeb80(); // UNK_0xeb80
-    break;
-  case 1:
-    UNK_0xf47a(); // UNK_0xf47a
-    break;
-  case 2:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  OP_dash_CASE(); // OP-CASE case
 
   label3:
   if (Pop() == 0) goto label1;

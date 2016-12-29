@@ -1185,17 +1185,9 @@ void UNK_0xf4b4() // UNK_0xf4b4
 // ================================================
 // 0xf4c6: WORD '(TERRAIN' codep=0x4b3b parp=0xf4d3
 // ================================================
-// 0xf4d3: db 0x05 0x00 0xb4 0xf4 0x01 0x00 0x8a 0xf3 0x02 0x00 0x8e 0xf4 0x03 0x00 0x09 0xf4 0x04 0x00 0x9c 0xf4 0x05 0x00 0x3a 0xf4 '                      : '
 
-// ================================================
-// 0xf4eb: WORD 'UNK_0xf4ed' codep=0x224c parp=0xf4ed
-// ================================================
-
-void UNK_0xf4ed() // UNK_0xf4ed
+void _ro_TERRAIN() // (TERRAIN
 {
-  LoadData("UNK_0xedaa"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (TERRAIN
   {
   case 1:
@@ -1218,6 +1210,17 @@ void UNK_0xf4ed() // UNK_0xf4ed
     break;
 
   }
+}
+
+// ================================================
+// 0xf4eb: WORD 'UNK_0xf4ed' codep=0x224c parp=0xf4ed
+// ================================================
+
+void UNK_0xf4ed() // UNK_0xf4ed
+{
+  LoadData("UNK_0xedaa"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro_TERRAIN(); // (TERRAIN case
 }
 
 // 0xf4f5: db 0x4c 0x22 0x20 0x0f 0x57 0xaa 0x16 0x6d 0x90 0x16 'L"  W  m  '

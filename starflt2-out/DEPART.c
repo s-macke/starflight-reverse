@@ -83,19 +83,9 @@ void UNK_0xf3ba() // UNK_0xf3ba
 // ================================================
 // 0xf3f0: WORD 'DISPOSAL' codep=0x4b3b parp=0xf3fd
 // ================================================
-// 0xf3fd: db 0x08 0x00 0xd1 0x51 0x44 0x00 0xc5 0x51 0x1a 0x00 0xc5 0x51 0x15 0x00 0xc5 0x51 0x1f 0x00 0xc5 0x51 0x21 0x00 0xc5 0x51 0x1c 0x00 0xae 0xf3 0x29 0x00 0xba 0xf3 0x09 0x00 0xc5 0x51 '   QD  Q   Q   Q   Q!  Q    )      Q'
 
-// ================================================
-// 0xf421: WORD 'UNK_0xf423' codep=0x224c parp=0xf423
-// ================================================
-
-void UNK_0xf423() // UNK_0xf423
+void DISPOSAL() // DISPOSAL
 {
-  _ask_NULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // DISPOSAL
   {
   case 68:
@@ -127,6 +117,19 @@ void UNK_0xf423() // UNK_0xf423
     break;
 
   }
+}
+
+// ================================================
+// 0xf421: WORD 'UNK_0xf423' codep=0x224c parp=0xf423
+// ================================================
+
+void UNK_0xf423() // UNK_0xf423
+{
+  _ask_NULL(); // ?NULL
+  if (Pop() == 0) Push(1); else Push(0); // NOT
+  if (Pop() == 0) goto label1;
+  _at_INST_dash_C(); // @INST-C
+  DISPOSAL(); // DISPOSAL case
   return;
 
   label1:

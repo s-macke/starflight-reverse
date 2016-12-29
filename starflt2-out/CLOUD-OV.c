@@ -231,22 +231,9 @@ void UNK_0xf4ec() // UNK_0xf4ec
 // ================================================
 // 0xf4f4: WORD '(DO-CLOUD)' codep=0x4b3b parp=0xf503
 // ================================================
-// 0xf503: db 0x06 0x00 0xec 0xf4 0x01 0x00 0xe2 0xf4 0x02 0x00 0xd8 0xf4 0x03 0x00 0xd4 0xf4 0x04 0x00 0xca 0xf4 0x05 0x00 0xb2 0xf4 0x06 0x00 0x72 0xf4 '                          r '
 
-// ================================================
-// 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
-// ================================================
-// entry
-
-void DO_dash_CLOUD() // DO-CLOUD
+void _ro_DO_dash_CLOUD_rc_() // (DO-CLOUD)
 {
-  _n_HUMANS(); // #HUMANS
-  if (Pop() == 0) goto label1;
-  _gt_1FONT(); // >1FONT
-  WUP(); // WUP
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  Pop();
   switch(Pop()) // (DO-CLOUD)
   {
   case 1:
@@ -272,6 +259,22 @@ void DO_dash_CLOUD() // DO-CLOUD
     break;
 
   }
+}
+
+// ================================================
+// 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
+// ================================================
+// entry
+
+void DO_dash_CLOUD() // DO-CLOUD
+{
+  _n_HUMANS(); // #HUMANS
+  if (Pop() == 0) goto label1;
+  _gt_1FONT(); // >1FONT
+  WUP(); // WUP
+  SetColor("WHITE");
+  _ex_COLOR(); // !COLOR
+  _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
   return;
 
   label1:

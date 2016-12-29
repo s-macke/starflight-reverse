@@ -872,22 +872,9 @@ void UNK_0xec69() // UNK_0xec69
 // ================================================
 // 0xec7d: WORD 'C>VAL' codep=0x4b3b parp=0xec87
 // ================================================
-// 0xec87: db 0x04 0x00 0x6e 0x3a 0x1c 0x00 0x8e 0xa9 0x1a 0x00 0x6a 0xa9 0x44 0x00 0x16 0xe9 0x09 0x00 0x26 0xe9 '  n:      j D     & '
 
-// ================================================
-// 0xec9b: WORD 'UNK_0xec9d' codep=0x224c parp=0xec9d
-// ================================================
-
-void UNK_0xec9d() // UNK_0xec9d
+void C_gt_VAL() // C>VAL
 {
-  Push(0xa9ce);
-  IFLD_at_(); // IFLD@
-  Push(0x000a);
-  _slash_(); // /
-  Push(0x0064);
-  M_star_(); // M*
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // C>VAL
   {
   case 28:
@@ -907,6 +894,22 @@ void UNK_0xec9d() // UNK_0xec9d
     break;
 
   }
+}
+
+// ================================================
+// 0xec9b: WORD 'UNK_0xec9d' codep=0x224c parp=0xec9d
+// ================================================
+
+void UNK_0xec9d() // UNK_0xec9d
+{
+  Push(0xa9ce);
+  IFLD_at_(); // IFLD@
+  Push(0x000a);
+  _slash_(); // /
+  Push(0x0064);
+  M_star_(); // M*
+  _at_INST_dash_C(); // @INST-C
+  C_gt_VAL(); // C>VAL case
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -988,37 +991,9 @@ void UNK_0xed2d() // UNK_0xed2d
 // ================================================
 // 0xed35: WORD 'T>NAME' codep=0x4b3b parp=0xed40
 // ================================================
-// 0xed40: db 0x04 0x00 0x48 0x3a 0x1c 0x00 0x7c 0xa9 0x44 0x00 0x0e 0xe9 0x09 0x00 0x1e 0xe9 0x1a 0x00 0x58 0xa9 '  H:  | D         X '
 
-// ================================================
-// 0xed54: WORD 'UNK_0xed56' codep=0x2214 parp=0xed56
-// ================================================
-// 0xed56: db 0x10 0x00 '  '
-
-// ================================================
-// 0xed58: WORD 'UNK_0xed5a' codep=0x2214 parp=0xed5a
-// ================================================
-// 0xed5a: db 0x14 0x00 '  '
-
-// ================================================
-// 0xed5c: WORD 'UNK_0xed5e' codep=0x2214 parp=0xed5e
-// ================================================
-// 0xed5e: db 0x18 0x00 '  '
-
-// ================================================
-// 0xed60: WORD 'TLEN' codep=0x4b3b parp=0xed69
-// ================================================
-// 0xed69: db 0x02 0x00 0x5e 0xed 0x1a 0x00 0x56 0xed 0x44 0x00 0x5a 0xed '  ^   V D Z '
-
-// ================================================
-// 0xed75: WORD 'UNK_0xed77' codep=0x224c parp=0xed77
-// ================================================
-
-void UNK_0xed77() // UNK_0xed77
+void T_gt_NAME() // T>NAME
 {
-  _at_INST_dash_C(); // @INST-C
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // T>NAME
   {
   case 28:
@@ -1038,8 +1013,29 @@ void UNK_0xed77() // UNK_0xed77
     break;
 
   }
-  SWAP(); // SWAP
-  Pop();
+}
+
+// ================================================
+// 0xed54: WORD 'UNK_0xed56' codep=0x2214 parp=0xed56
+// ================================================
+// 0xed56: db 0x10 0x00 '  '
+
+// ================================================
+// 0xed58: WORD 'UNK_0xed5a' codep=0x2214 parp=0xed5a
+// ================================================
+// 0xed5a: db 0x14 0x00 '  '
+
+// ================================================
+// 0xed5c: WORD 'UNK_0xed5e' codep=0x2214 parp=0xed5e
+// ================================================
+// 0xed5e: db 0x18 0x00 '  '
+
+// ================================================
+// 0xed60: WORD 'TLEN' codep=0x4b3b parp=0xed69
+// ================================================
+
+void TLEN() // TLEN
+{
   switch(Pop()) // TLEN
   {
   case 26:
@@ -1053,6 +1049,19 @@ void UNK_0xed77() // UNK_0xed77
     break;
 
   }
+}
+
+// ================================================
+// 0xed75: WORD 'UNK_0xed77' codep=0x224c parp=0xed77
+// ================================================
+
+void UNK_0xed77() // UNK_0xed77
+{
+  _at_INST_dash_C(); // @INST-C
+  Push(Read16(regsp)); // DUP
+  T_gt_NAME(); // T>NAME case
+  SWAP(); // SWAP
+  TLEN(); // TLEN case
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
   Push(0x003a);
@@ -1879,21 +1888,9 @@ void UNK_0xf1ae() // UNK_0xf1ae
 // ================================================
 // 0xf1ca: WORD 'ID>#' codep=0x4b3b parp=0xf1d3
 // ================================================
-// 0xf1d3: db 0x04 0x00 0x22 0x0f 0x1c 0x00 0x52 0xf1 0x09 0x00 0xa2 0xf1 0x1a 0x00 0xae 0xf1 0x44 0x00 0xc8 0xf1 '  "   R         D   '
 
-// ================================================
-// 0xf1e7: WORD 'UNK_0xf1e9' codep=0x224c parp=0xf1e9
-// ================================================
-
-void UNK_0xf1e9() // UNK_0xf1e9
+void ID_gt__n_() // ID>#
 {
-  UNK_0xf13c(); // UNK_0xf13c
-  Push(pp_PIC_n_); // PIC# size: 2
-  _099(); // 099
-  Push(pp__ro_THING_rc_); // (THING) size: 4
-  _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // ID>#
   {
   case 28:
@@ -1913,6 +1910,21 @@ void UNK_0xf1e9() // UNK_0xf1e9
     break;
 
   }
+}
+
+// ================================================
+// 0xf1e7: WORD 'UNK_0xf1e9' codep=0x224c parp=0xf1e9
+// ================================================
+
+void UNK_0xf1e9() // UNK_0xf1e9
+{
+  UNK_0xf13c(); // UNK_0xf13c
+  Push(pp_PIC_n_); // PIC# size: 2
+  _099(); // 099
+  Push(pp__ro_THING_rc_); // (THING) size: 4
+  _at__gt_C_plus_S(); // @>C+S
+  _at_INST_dash_C(); // @INST-C
+  ID_gt__n_(); // ID># case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(Pop()-1); // 1-
@@ -2116,20 +2128,9 @@ void UNK_0xf30a() // UNK_0xf30a
 // ================================================
 // 0xf31c: WORD 'P>REPLY' codep=0x4b3b parp=0xf328
 // ================================================
-// 0xf328: db 0x03 0x00 0x48 0x3a 0x00 0x00 0xf2 0xf2 0x01 0x00 0x6e 0xf2 0x02 0x00 0xfe 0xf2 '  H:      n     '
 
-// ================================================
-// 0xf338: WORD 'UNK_0xf33a' codep=0x224c parp=0xf33a
-// ================================================
-
-void UNK_0xf33a() // UNK_0xf33a
+void P_gt_REPLY() // P>REPLY
 {
-  UNK_0xea95(); // UNK_0xea95
-  UNK_0xf2a4(); // UNK_0xf2a4
-  UNK_0xf30a(); // UNK_0xf30a
-  Push(pp_NCRS); // NCRS size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // P>REPLY
   {
   case 0:
@@ -2146,6 +2147,20 @@ void UNK_0xf33a() // UNK_0xf33a
     break;
 
   }
+}
+
+// ================================================
+// 0xf338: WORD 'UNK_0xf33a' codep=0x224c parp=0xf33a
+// ================================================
+
+void UNK_0xf33a() // UNK_0xf33a
+{
+  UNK_0xea95(); // UNK_0xea95
+  UNK_0xf2a4(); // UNK_0xf2a4
+  UNK_0xf30a(); // UNK_0xf30a
+  Push(pp_NCRS); // NCRS size: 2
+  Push(Read16(Pop())); // @
+  P_gt_REPLY(); // P>REPLY case
   UNK_0xe8c4(); // UNK_0xe8c4
 }
 
@@ -2339,7 +2354,26 @@ void UNK_0xf485() // UNK_0xf485
 // ================================================
 // 0xf48d: WORD 'T>ACTION' codep=0x4b3b parp=0xf49a
 // ================================================
-// 0xf49a: db 0x03 0x00 0x48 0x3a 0x00 0x00 0xf8 0xf3 0x01 0x00 0xea 0xf3 0x02 0x00 0x7b 0xf4 '  H:          { '
+
+void T_gt_ACTION() // T>ACTION
+{
+  switch(Pop()) // T>ACTION
+  {
+  case 0:
+    UNK_0xf3f8(); // UNK_0xf3f8
+    break;
+  case 1:
+    UNK_0xf3ea(); // UNK_0xf3ea
+    break;
+  case 2:
+    UNK_0xf47b(); // UNK_0xf47b
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4aa: WORD 'UNK_0xf4ac' codep=0x224c parp=0xf4ac
@@ -2362,23 +2396,7 @@ void UNK_0xf4ac() // UNK_0xf4ac
   UNK_0xf485(); // UNK_0xf485
   Push(pp_NCRS); // NCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // T>ACTION
-  {
-  case 0:
-    UNK_0xf3f8(); // UNK_0xf3f8
-    break;
-  case 1:
-    UNK_0xf3ea(); // UNK_0xf3ea
-    break;
-  case 2:
-    UNK_0xf47b(); // UNK_0xf47b
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  T_gt_ACTION(); // T>ACTION case
   goto label1;
 }
 

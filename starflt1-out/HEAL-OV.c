@@ -601,7 +601,32 @@ void _dot_VITS() // .VITS
 // ================================================
 // 0xf3f1: WORD '>SKILL' codep=0x4a4f parp=0xf3fc
 // ================================================
-// 0xf3fc: db 0x05 0x00 0x27 0x06 0x01 0x00 0x04 0xf1 0x02 0x00 0x09 0xf1 0x03 0x00 0x0e 0xf1 0x04 0x00 0x13 0xf1 0x05 0x00 0x18 0xf1 '  '                     '
+
+void _gt_SKILL() // >SKILL
+{
+  switch(Pop()) // >SKILL
+  {
+  case 1:
+    UNK_0xf104(); // UNK_0xf104
+    break;
+  case 2:
+    UNK_0xf109(); // UNK_0xf109
+    break;
+  case 3:
+    UNK_0xf10e(); // UNK_0xf10e
+    break;
+  case 4:
+    UNK_0xf113(); // UNK_0xf113
+    break;
+  case 5:
+    UNK_0xf118(); // UNK_0xf118
+    break;
+  default:
+    ABORT(); // ABORT
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf414: WORD 'UNK_0xf416' codep=0x224c parp=0xf416
@@ -659,29 +684,7 @@ void UNK_0xf42f() // UNK_0xf42f
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   OVER(); // OVER
-  Pop();
-  switch(Pop()) // >SKILL
-  {
-  case 1:
-    UNK_0xf104(); // UNK_0xf104
-    break;
-  case 2:
-    UNK_0xf109(); // UNK_0xf109
-    break;
-  case 3:
-    UNK_0xf10e(); // UNK_0xf10e
-    break;
-  case 4:
-    UNK_0xf113(); // UNK_0xf113
-    break;
-  case 5:
-    UNK_0xf118(); // UNK_0xf118
-    break;
-  default:
-    ABORT(); // ABORT
-    break;
-
-  }
+  _gt_SKILL(); // >SKILL case
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xf426); // UNK_0xf426 size: 0

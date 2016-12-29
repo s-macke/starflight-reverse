@@ -600,18 +600,9 @@ void UNK_0xefb6() // UNK_0xefb6
 // ================================================
 // 0xefd0: WORD '(.DOOR)' codep=0x4b3b parp=0xefdc
 // ================================================
-// 0xefdc: db 0x07 0x00 0xb6 0xef 0x01 0x00 0x37 0xef 0x02 0x00 0x99 0xef 0x03 0x00 0x61 0xef 0x04 0x00 0x71 0xef 0x05 0x00 0x87 0xef 0x06 0x00 0x48 0xef 0x07 0x00 0xa4 0xef '      7       a   q       H     '
 
-// ================================================
-// 0xeffc: WORD 'UNK_0xeffe' codep=0x224c parp=0xeffe
-// ================================================
-
-void UNK_0xeffe() // UNK_0xeffe
+void _ro__dot_DOOR_rc_() // (.DOOR)
 {
-  _at_CRS(); // @CRS
-  Push(pp_UNK_0xeed0); // UNK_0xeed0 size: 0
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // (.DOOR)
   {
   case 1:
@@ -640,6 +631,18 @@ void UNK_0xeffe() // UNK_0xeffe
     break;
 
   }
+}
+
+// ================================================
+// 0xeffc: WORD 'UNK_0xeffe' codep=0x224c parp=0xeffe
+// ================================================
+
+void UNK_0xeffe() // UNK_0xeffe
+{
+  _at_CRS(); // @CRS
+  Push(pp_UNK_0xeed0); // UNK_0xeed0 size: 0
+  Push(Read16(Pop())); // @
+  _ro__dot_DOOR_rc_(); // (.DOOR) case
   UNK_0xeee5(); // UNK_0xeee5
   _ex_CRS(); // !CRS
 }
@@ -1254,29 +1257,9 @@ void UNK_0xf486() // UNK_0xf486
 // ================================================
 // 0xf492: WORD 'DO-ROOM' codep=0x4b3b parp=0xf49e
 // ================================================
-// 0xf49e: db 0x07 0x00 0x48 0x3a 0x03 0x00 0x18 0xee 0x04 0x00 0x28 0xee 0x06 0x00 0x48 0xee 0x05 0x00 0x58 0xee 0x02 0x00 0x38 0xee 0x01 0x00 0x68 0xee 0x07 0x00 0x98 0xf1 '  H:      (   H   X   8   h     '
 
-// ================================================
-// 0xf4be: WORD 'UNK_0xf4c0' codep=0x224c parp=0xf4c0
-// ================================================
-
-void UNK_0xf4c0() // UNK_0xf4c0
+void DO_dash_ROOM() // DO-ROOM
 {
-  Push(pp_XBLT); // XBLT size: 2
-  Push(Read16(Pop())); // @
-  Push(pp_MANX); // MANX size: 2
-  _ex__2(); // !_2
-  Push(pp_UNK_0xeed0); // UNK_0xeed0 size: 0
-  Push(Read16(Pop())); // @
-  Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label1;
-  Push(pp_HUB); // HUB size: 2
-  _099(); // 099
-  Push(pp_ESC_dash_EN); // ESC-EN size: 2
-  _099(); // 099
-
-  label1:
-  Pop();
   switch(Pop()) // DO-ROOM
   {
   case 3:
@@ -1305,6 +1288,29 @@ void UNK_0xf4c0() // UNK_0xf4c0
     break;
 
   }
+}
+
+// ================================================
+// 0xf4be: WORD 'UNK_0xf4c0' codep=0x224c parp=0xf4c0
+// ================================================
+
+void UNK_0xf4c0() // UNK_0xf4c0
+{
+  Push(pp_XBLT); // XBLT size: 2
+  Push(Read16(Pop())); // @
+  Push(pp_MANX); // MANX size: 2
+  _ex__2(); // !_2
+  Push(pp_UNK_0xeed0); // UNK_0xeed0 size: 0
+  Push(Read16(Pop())); // @
+  Push(Read16(regsp)); // DUP
+  if (Pop() == 0) goto label1;
+  Push(pp_HUB); // HUB size: 2
+  _099(); // 099
+  Push(pp_ESC_dash_EN); // ESC-EN size: 2
+  _099(); // 099
+
+  label1:
+  DO_dash_ROOM(); // DO-ROOM case
   Push(pp_UNK_0xeed0); // UNK_0xeed0 size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1320,7 +1326,23 @@ void UNK_0xf4c0() // UNK_0xf4c0
 // ================================================
 // 0xf4f2: WORD 'XWALK' codep=0x4b3b parp=0xf4fc
 // ================================================
-// 0xf4fc: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x10 0xf4 0xff 0xff 0x1c 0xf4 '  H:        '
+
+void XWALK() // XWALK
+{
+  switch(Pop()) // XWALK
+  {
+  case 1:
+    UNK_0xf410(); // UNK_0xf410
+    break;
+  case 65535:
+    UNK_0xf41c(); // UNK_0xf41c
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf508: WORD 'WALKIES' codep=0x224c parp=0xf514
@@ -1339,20 +1361,7 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  Pop();
-  switch(Pop()) // XWALK
-  {
-  case 1:
-    UNK_0xf410(); // UNK_0xf410
-    break;
-  case 65535:
-    UNK_0xf41c(); // UNK_0xf41c
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  XWALK(); // XWALK case
   Pop(); // DROP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT

@@ -497,18 +497,9 @@ void UNK_0xf021() // UNK_0xf021
 // ================================================
 // 0xf032: WORD '.SHIP-ITEM' codep=0x4b3b parp=0xf041
 // ================================================
-// 0xf041: db 0x07 0x00 0x48 0x3a 0x00 0x00 0xc0 0xef 0x01 0x00 0xcb 0xef 0x02 0x00 0xd9 0xef 0x03 0x00 0xe7 0xef 0x04 0x00 0xfc 0xef 0x05 0x00 0x0a 0xf0 0x06 0x00 0x21 0xf0 '  H:                          ! '
 
-// ================================================
-// 0xf061: WORD 'UNK_0xf063' codep=0x224c parp=0xf063
-// ================================================
-
-void UNK_0xf063() // UNK_0xf063
+void _dot_SHIP_dash_ITEM() // .SHIP-ITEM
 {
-  Push2Words("NULL");
-  CTPOS_dot_(); // CTPOS.
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // .SHIP-ITEM
   {
   case 0:
@@ -537,6 +528,18 @@ void UNK_0xf063() // UNK_0xf063
     break;
 
   }
+}
+
+// ================================================
+// 0xf061: WORD 'UNK_0xf063' codep=0x224c parp=0xf063
+// ================================================
+
+void UNK_0xf063() // UNK_0xf063
+{
+  Push2Words("NULL");
+  CTPOS_dot_(); // CTPOS.
+  Push(Read16(regsp)); // DUP
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
   Push(0x65f2); // IFIELD(UNK_0xecc0)
@@ -800,35 +803,7 @@ void UNK_0xf281() // UNK_0xf281
   label1:
   CTERASE(); // CTERASE
   SWAP(); // SWAP
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(": ", 2); // (.")
   if (Pop() == 0) goto label2;
   PRINT("NO REPAIRS NEEDED.", 18); // (.")
@@ -851,35 +826,7 @@ void UNK_0xf2f0() // UNK_0xf2f0
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(":", 1); // (.")
   CTCR(); // CTCR
   PRINT("ALREADY UNDERGOING REPAIRS.", 27); // (.")
@@ -894,68 +841,12 @@ void UNK_0xf31e() // UNK_0xf31e
 {
   CTERASE(); // CTERASE
   PRINT("CEASE REPAIRS ON ", 17); // (.")
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   CTCR(); // CTCR
   PRINT("AND BEGIN REPAIRS ON ", 21); // (.")
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT("?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xecc5(); // UNK_0xecc5
@@ -973,35 +864,7 @@ void UNK_0xf31e() // UNK_0xf31e
 void UNK_0xf36a() // UNK_0xf36a
 {
   PRINT("CEASING REPAIRS ON ", 19); // (.")
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(".", 1); // (.")
 }
 
@@ -1034,35 +897,7 @@ void UNK_0xf38a() // UNK_0xf38a
 void UNK_0xf3a8() // UNK_0xf3a8
 {
   PRINT("CONTINUING REPAIRS ON ", 22); // (.")
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(".", 1); // (.")
 }
 
@@ -1074,35 +909,7 @@ void UNK_0xf3a8() // UNK_0xf3a8
 void UNK_0xf3cb() // UNK_0xf3cb
 {
   PRINT("BEGINNING REPAIRS ON ", 21); // (.")
-  Pop();
-  switch(Pop()) // .SHIP-ITEM
-  {
-  case 0:
-    UNK_0xefc0(); // UNK_0xefc0
-    break;
-  case 1:
-    UNK_0xefcb(); // UNK_0xefcb
-    break;
-  case 2:
-    UNK_0xefd9(); // UNK_0xefd9
-    break;
-  case 3:
-    UNK_0xefe7(); // UNK_0xefe7
-    break;
-  case 4:
-    UNK_0xeffc(); // UNK_0xeffc
-    break;
-  case 5:
-    UNK_0xf00a(); // UNK_0xf00a
-    break;
-  case 6:
-    UNK_0xf021(); // UNK_0xf021
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(".", 1); // (.")
   Push(pp__ask_REPAIR); // ?REPAIR size: 2
   ON_2(); // ON_2

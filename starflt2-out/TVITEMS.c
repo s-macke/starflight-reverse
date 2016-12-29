@@ -525,7 +525,32 @@ void UNK_0xe845() // UNK_0xe845
 // ================================================
 // 0xe857: WORD 'T.OPTIONS' codep=0x4b3b parp=0xe865
 // ================================================
-// 0xe865: db 0x05 0x00 0x48 0x3a 0x1a 0x00 0x10 0xe8 0x1c 0x00 0x1e 0xe8 0x1b 0x00 0x2c 0xe8 0x44 0x00 0x45 0xe8 0x0b 0x00 0x92 0x16 '  H:          , D E     '
+
+void T_dot_OPTIONS() // T.OPTIONS
+{
+  switch(Pop()) // T.OPTIONS
+  {
+  case 26:
+    UNK_0xe810(); // UNK_0xe810
+    break;
+  case 28:
+    UNK_0xe81e(); // UNK_0xe81e
+    break;
+  case 27:
+    UNK_0xe82c(); // UNK_0xe82c
+    break;
+  case 68:
+    UNK_0xe845(); // UNK_0xe845
+    break;
+  case 11:
+    EXIT(); // EXIT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe87d: WORD 'UNK_0xe87f' codep=0x224c parp=0xe87f
@@ -618,7 +643,29 @@ void UNK_0xe8e2() // UNK_0xe8e2
 // ================================================
 // 0xe8f0: WORD 'P.OPTIONS' codep=0x4b3b parp=0xe8fe
 // ================================================
-// 0xe8fe: db 0x04 0x00 0x48 0x3a 0x1a 0x00 0x7f 0xe8 0x1c 0x00 0x8d 0xe8 0x1b 0x00 0x9b 0xe8 0x44 0x00 0xb4 0xe8 '  H:           D   '
+
+void P_dot_OPTIONS() // P.OPTIONS
+{
+  switch(Pop()) // P.OPTIONS
+  {
+  case 26:
+    UNK_0xe87f(); // UNK_0xe87f
+    break;
+  case 28:
+    UNK_0xe88d(); // UNK_0xe88d
+    break;
+  case 27:
+    UNK_0xe89b(); // UNK_0xe89b
+    break;
+  case 68:
+    UNK_0xe8b4(); // UNK_0xe8b4
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe912: WORD 'UNK_0xe914' codep=0x224c parp=0xe914
@@ -699,7 +746,23 @@ void UNK_0xe95a() // UNK_0xe95a
 // ================================================
 // 0xe968: WORD 'CLASS>VOL' codep=0x4b3b parp=0xe976
 // ================================================
-// 0xe976: db 0x02 0x00 0x5a 0xe9 0x1b 0x00 0x22 0x0f 0x1c 0x00 0x36 0xe9 '  Z   "   6 '
+
+void CLASS_gt_VOL() // CLASS>VOL
+{
+  switch(Pop()) // CLASS>VOL
+  {
+  case 27:
+    Push(0); // 0
+    break;
+  case 28:
+    UNK_0xe936(); // UNK_0xe936
+    break;
+  default:
+    UNK_0xe95a(); // UNK_0xe95a
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe982: WORD 'UNK_0xe984' codep=0x224c parp=0xe984
@@ -741,20 +804,7 @@ void UNK_0xe984() // UNK_0xe984
 void UNK_0xe9d5() // UNK_0xe9d5
 {
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // CLASS>VOL
-  {
-  case 27:
-    Push(0); // 0
-    break;
-  case 28:
-    UNK_0xe936(); // UNK_0xe936
-    break;
-  default:
-    UNK_0xe95a(); // UNK_0xe95a
-    break;
-
-  }
+  CLASS_gt_VOL(); // CLASS>VOL case
   Push(Read16(regsp)); // DUP
   UNK_0xe984(); // UNK_0xe984
 }
@@ -777,20 +827,7 @@ void UNK_0xe9e1() // UNK_0xe9e1
 
   label1:
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // CLASS>VOL
-  {
-  case 27:
-    Push(0); // 0
-    break;
-  case 28:
-    UNK_0xe936(); // UNK_0xe936
-    break;
-  default:
-    UNK_0xe95a(); // UNK_0xe95a
-    break;
-
-  }
+  CLASS_gt_VOL(); // CLASS>VOL case
 
   label2:
   Push(pp_ELEM_dash_AM); // ELEM-AM size: 2
@@ -1156,37 +1193,9 @@ void UNK_0xec7f() // UNK_0xec7f
 // ================================================
 // 0xec83: WORD 'PA.ACT' codep=0x4b3b parp=0xec8e
 // ================================================
-// 0xec8e: db 0x01 0x00 0x48 0x3a 0x01 0x00 0x79 0xec '  H:  y '
 
-// ================================================
-// 0xec96: WORD 'TA.ACT' codep=0x4b3b parp=0xeca1
-// ================================================
-// 0xeca1: db 0x01 0x00 0x48 0x3a 0x01 0x00 0x7f 0xec '  H:   '
-
-// ================================================
-// 0xeca9: WORD 'UNK_0xecab' codep=0x224c parp=0xecab
-// ================================================
-
-void UNK_0xecab() // UNK_0xecab
+void PA_dot_ACT() // PA.ACT
 {
-  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // TA.ACT
-  {
-  case 1:
-    UNK_0xec7f(); // UNK_0xec7f
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
-  return;
-
-  label1:
-  Pop();
   switch(Pop()) // PA.ACT
   {
   case 1:
@@ -1197,6 +1206,40 @@ void UNK_0xecab() // UNK_0xecab
     break;
 
   }
+}
+
+// ================================================
+// 0xec96: WORD 'TA.ACT' codep=0x4b3b parp=0xeca1
+// ================================================
+
+void TA_dot_ACT() // TA.ACT
+{
+  switch(Pop()) // TA.ACT
+  {
+  case 1:
+    UNK_0xec7f(); // UNK_0xec7f
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
+
+// ================================================
+// 0xeca9: WORD 'UNK_0xecab' codep=0x224c parp=0xecab
+// ================================================
+
+void UNK_0xecab() // UNK_0xecab
+{
+  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) goto label1;
+  TA_dot_ACT(); // TA.ACT case
+  return;
+
+  label1:
+  PA_dot_ACT(); // PA.ACT case
 }
 
 
@@ -1290,40 +1333,9 @@ void UNK_0xed17() // UNK_0xed17
 // ================================================
 // 0xed31: WORD 'PM.ACT' codep=0x4b3b parp=0xed3c
 // ================================================
-// 0xed3c: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x0b 0xed 0x02 0x00 0x17 0xed '  H:        '
 
-// ================================================
-// 0xed48: WORD 'TM.ACT' codep=0x4b3b parp=0xed53
-// ================================================
-// 0xed53: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x0b 0xed 0x02 0x00 0x23 0xeb '  H:      # '
-
-// ================================================
-// 0xed5f: WORD 'UNK_0xed61' codep=0x224c parp=0xed61
-// ================================================
-
-void UNK_0xed61() // UNK_0xed61
+void PM_dot_ACT() // PM.ACT
 {
-  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // TM.ACT
-  {
-  case 1:
-    UNK_0xed0b(); // UNK_0xed0b
-    break;
-  case 2:
-    UNK_0xeb23(); // UNK_0xeb23
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
-  return;
-
-  label1:
-  Pop();
   switch(Pop()) // PM.ACT
   {
   case 1:
@@ -1337,6 +1349,43 @@ void UNK_0xed61() // UNK_0xed61
     break;
 
   }
+}
+
+// ================================================
+// 0xed48: WORD 'TM.ACT' codep=0x4b3b parp=0xed53
+// ================================================
+
+void TM_dot_ACT() // TM.ACT
+{
+  switch(Pop()) // TM.ACT
+  {
+  case 1:
+    UNK_0xed0b(); // UNK_0xed0b
+    break;
+  case 2:
+    UNK_0xeb23(); // UNK_0xeb23
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
+
+// ================================================
+// 0xed5f: WORD 'UNK_0xed61' codep=0x224c parp=0xed61
+// ================================================
+
+void UNK_0xed61() // UNK_0xed61
+{
+  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) goto label1;
+  TM_dot_ACT(); // TM.ACT case
+  return;
+
+  label1:
+  PM_dot_ACT(); // PM.ACT case
 }
 
 
@@ -1361,40 +1410,9 @@ void UNK_0xed75() // UNK_0xed75
 // ================================================
 // 0xed8b: WORD 'PL.ACT' codep=0x4b3b parp=0xed96
 // ================================================
-// 0xed96: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x45 0xec 0x02 0x00 0x75 0xed '  H:  E   u '
 
-// ================================================
-// 0xeda2: WORD 'TL.ACT' codep=0x4b3b parp=0xedad
-// ================================================
-// 0xedad: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x23 0xec 0x02 0x00 0x75 0xed '  H:  #   u '
-
-// ================================================
-// 0xedb9: WORD 'UNK_0xedbb' codep=0x224c parp=0xedbb
-// ================================================
-
-void UNK_0xedbb() // UNK_0xedbb
+void PL_dot_ACT() // PL.ACT
 {
-  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // TL.ACT
-  {
-  case 1:
-    UNK_0xec23(); // UNK_0xec23
-    break;
-  case 2:
-    UNK_0xed75(); // UNK_0xed75
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
-  return;
-
-  label1:
-  Pop();
   switch(Pop()) // PL.ACT
   {
   case 1:
@@ -1410,11 +1428,70 @@ void UNK_0xedbb() // UNK_0xedbb
   }
 }
 
+// ================================================
+// 0xeda2: WORD 'TL.ACT' codep=0x4b3b parp=0xedad
+// ================================================
+
+void TL_dot_ACT() // TL.ACT
+{
+  switch(Pop()) // TL.ACT
+  {
+  case 1:
+    UNK_0xec23(); // UNK_0xec23
+    break;
+  case 2:
+    UNK_0xed75(); // UNK_0xed75
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
+
+// ================================================
+// 0xedb9: WORD 'UNK_0xedbb' codep=0x224c parp=0xedbb
+// ================================================
+
+void UNK_0xedbb() // UNK_0xedbb
+{
+  Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) goto label1;
+  TL_dot_ACT(); // TL.ACT case
+  return;
+
+  label1:
+  PL_dot_ACT(); // PL.ACT case
+}
+
 
 // ================================================
 // 0xedcd: WORD 'DISPATCH' codep=0x4b3b parp=0xedda
 // ================================================
-// 0xedda: db 0x04 0x00 0x48 0x3a 0x44 0x00 0xbb 0xed 0x1b 0x00 0x61 0xed 0x1a 0x00 0x2f 0xec 0x1c 0x00 0xab 0xec '  H:D     a   /     '
+
+void DISPATCH() // DISPATCH
+{
+  switch(Pop()) // DISPATCH
+  {
+  case 68:
+    UNK_0xedbb(); // UNK_0xedbb
+    break;
+  case 27:
+    UNK_0xed61(); // UNK_0xed61
+    break;
+  case 26:
+    UNK_0xec2f(); // UNK_0xec2f
+    break;
+  case 28:
+    UNK_0xecab(); // UNK_0xecab
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xedee: WORD 'UNK_0xedf0' codep=0x224c parp=0xedf0
@@ -1711,52 +1788,11 @@ void UNK_0xef94() // UNK_0xef94
   Push(pp_UNK_0xe642); // UNK_0xe642 size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // T.OPTIONS
-  {
-  case 26:
-    UNK_0xe810(); // UNK_0xe810
-    break;
-  case 28:
-    UNK_0xe81e(); // UNK_0xe81e
-    break;
-  case 27:
-    UNK_0xe82c(); // UNK_0xe82c
-    break;
-  case 68:
-    UNK_0xe845(); // UNK_0xe845
-    break;
-  case 11:
-    EXIT(); // EXIT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  T_dot_OPTIONS(); // T.OPTIONS case
   goto label2;
 
   label1:
-  Pop();
-  switch(Pop()) // P.OPTIONS
-  {
-  case 26:
-    UNK_0xe87f(); // UNK_0xe87f
-    break;
-  case 28:
-    UNK_0xe88d(); // UNK_0xe88d
-    break;
-  case 27:
-    UNK_0xe89b(); // UNK_0xe89b
-    break;
-  case 68:
-    UNK_0xe8b4(); // UNK_0xe8b4
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  P_dot_OPTIONS(); // P.OPTIONS case
 
   label2:
   UNK_0xeed2(); // UNK_0xeed2
@@ -1872,26 +1908,7 @@ void UNK_0xf018() // UNK_0xf018
   Push(pp_UNK_0xe63e); // UNK_0xe63e size: 0
   Push(Read16(Pop())); // @
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // DISPATCH
-  {
-  case 68:
-    UNK_0xedbb(); // UNK_0xedbb
-    break;
-  case 27:
-    UNK_0xed61(); // UNK_0xed61
-    break;
-  case 26:
-    UNK_0xec2f(); // UNK_0xec2f
-    break;
-  case 28:
-    UNK_0xecab(); // UNK_0xecab
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  DISPATCH(); // DISPATCH case
   Push(pp_UNK_0xe636); // UNK_0xe636 size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label6;
@@ -2163,21 +2180,9 @@ void UNK_0xf1ce() // UNK_0xf1ce
 // ================================================
 // 0xf20c: WORD 'TD-SCROLL' codep=0x4b3b parp=0xf21a
 // ================================================
-// 0xf21a: db 0x02 0x00 0x48 0x3a 0xff 0xff 0xce 0xf1 0x01 0x00 0x94 0xf1 '  H:        '
 
-// ================================================
-// 0xf226: WORD 'UNK_0xf228' codep=0x224c parp=0xf228
-// ================================================
-
-void UNK_0xf228() // UNK_0xf228
+void TD_dash_SCROLL() // TD-SCROLL
 {
-
-  label4:
-  UNK_0xe684(); // UNK_0xe684
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  Pop();
   switch(Pop()) // TD-SCROLL
   {
   case 65535:
@@ -2191,6 +2196,21 @@ void UNK_0xf228() // UNK_0xf228
     break;
 
   }
+}
+
+// ================================================
+// 0xf226: WORD 'UNK_0xf228' codep=0x224c parp=0xf228
+// ================================================
+
+void UNK_0xf228() // UNK_0xf228
+{
+
+  label4:
+  UNK_0xe684(); // UNK_0xe684
+  XYSCAN(); // XYSCAN
+  if (Pop() == 0) Push(1); else Push(0); // 0=
+  if (Pop() == 0) goto label1;
+  TD_dash_SCROLL(); // TD-SCROLL case
   goto label2;
 
   label1:

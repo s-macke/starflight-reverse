@@ -927,25 +927,9 @@ void UNK_0xf28f() // UNK_0xf28f
 // ================================================
 // 0xf297: WORD 'WPHRASE' codep=0x4b3b parp=0xf2a3
 // ================================================
-// 0xf2a3: db 0x0e 0x00 0x6e 0x3a 0x00 0x00 0x21 0xf2 0x01 0x00 0x17 0xf2 0x02 0x00 0x21 0xf2 0x03 0x00 0x2b 0xf2 0x04 0x00 0x35 0xf2 0x05 0x00 0x3f 0xf2 0x06 0x00 0x49 0xf2 0x07 0x00 0x53 0xf2 0x08 0x00 0x5d 0xf2 0x09 0x00 0x67 0xf2 0x0a 0x00 0x71 0xf2 0x0b 0x00 0x7b 0xf2 0x0c 0x00 0x85 0xf2 0x0d 0x00 0x8f 0xf2 '  n:  !       !   +   5   ?   I   S   ]   g   q   {         '
 
-// ================================================
-// 0xf2df: WORD '(.STORM)' codep=0x224c parp=0xf2ec
-// ================================================
-
-void _ro__dot_STORM_rc_() // (.STORM)
+void WPHRASE() // WPHRASE
 {
-  Push(pp_ATMO); // ATMO size: 2
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  UNK_0xf20d(); // UNK_0xf20d
-  goto label2;
-
-  label1:
-  Push(pp__n_STORM); // #STORM size: 14
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // WPHRASE
   {
   case 0:
@@ -995,6 +979,25 @@ void _ro__dot_STORM_rc_() // (.STORM)
     break;
 
   }
+}
+
+// ================================================
+// 0xf2df: WORD '(.STORM)' codep=0x224c parp=0xf2ec
+// ================================================
+
+void _ro__dot_STORM_rc_() // (.STORM)
+{
+  Push(pp_ATMO); // ATMO size: 2
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) Push(1); else Push(0); // 0=
+  if (Pop() == 0) goto label1;
+  UNK_0xf20d(); // UNK_0xf20d
+  goto label2;
+
+  label1:
+  Push(pp__n_STORM); // #STORM size: 14
+  Push(Read16(Pop())); // @
+  WPHRASE(); // WPHRASE case
 
   label2:
   UNK_0xee72(); // UNK_0xee72
@@ -1115,19 +1118,9 @@ void _dot_CARPET() // .CARPET
 // ================================================
 // 0xf3dd: WORD '/SURF' codep=0x4b3b parp=0xf3e7
 // ================================================
-// 0xf3e7: db 0x05 0x00 0x48 0x3a 0x00 0x00 0x57 0xf3 0x02 0x00 0x34 0xf3 0x03 0x00 0x6a 0xf3 0x04 0x00 0x90 0xf3 0x05 0x00 0x10 0xf3 '  H:  W   4   j         '
 
-// ================================================
-// 0xf3ff: WORD '.SURFACE' codep=0x224c parp=0xf40c
-// ================================================
-
-void _dot_SURFACE() // .SURFACE
+void _slash_SURF() // /SURF
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
-  _at__gt_C_plus_S(); // @>C+S
-  LoadData("UNK_0xecfa"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // /SURF
   {
   case 0:
@@ -1150,6 +1143,19 @@ void _dot_SURFACE() // .SURFACE
     break;
 
   }
+}
+
+// ================================================
+// 0xf3ff: WORD '.SURFACE' codep=0x224c parp=0xf40c
+// ================================================
+
+void _dot_SURFACE() // .SURFACE
+{
+  Push(pp__ro_PLANET); // (PLANET size: 4
+  _at__gt_C_plus_S(); // @>C+S
+  LoadData("UNK_0xecfa"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _slash_SURF(); // /SURF case
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }

@@ -463,16 +463,9 @@ void UNK_0xe107() // UNK_0xe107
 // ================================================
 // 0xe117: WORD 'BIO/ENR' codep=0x4b3b parp=0xe123
 // ================================================
-// 0xe123: db 0x06 0x00 0xff 0xe0 0x14 0x00 0x07 0xe1 0x16 0x00 0xf7 0xe0 0x1b 0x00 0x07 0xe1 0x20 0x00 0xf7 0xe0 0x1d 0x00 0x07 0xe1 0x00 0x00 0xf7 0xe0 '                            '
 
-// ================================================
-// 0xe13f: WORD 'UNK_0xe141' codep=0x224c parp=0xe141
-// ================================================
-
-void UNK_0xe141() // UNK_0xe141
+void BIO_slash_ENR() // BIO/ENR
 {
-  _at_INST_dash_S(); // @INST-S
-  Pop();
   switch(Pop()) // BIO/ENR
   {
   case 20:
@@ -498,6 +491,16 @@ void UNK_0xe141() // UNK_0xe141
     break;
 
   }
+}
+
+// ================================================
+// 0xe13f: WORD 'UNK_0xe141' codep=0x224c parp=0xe141
+// ================================================
+
+void UNK_0xe141() // UNK_0xe141
+{
+  _at_INST_dash_S(); // @INST-S
+  BIO_slash_ENR(); // BIO/ENR case
   Push(pp_UNK_0xdfb3); // UNK_0xdfb3 size: 0
   _ex__2(); // !_2
   Push(pp_UNK_0xdfaf); // UNK_0xdfaf size: 0
@@ -2800,7 +2803,26 @@ void UNK_0xf0e6() // UNK_0xf0e6
 // ================================================
 // 0xf12c: WORD '.READINGS' codep=0x4b3b parp=0xf13a
 // ================================================
-// 0xf13a: db 0x03 0x00 0x06 0xe9 0x19 0x00 0xe6 0xf0 0x20 0x00 0xb2 0xef 0x3c 0x00 0x92 0xed '            <   '
+
+void _dot_READINGS() // .READINGS
+{
+  switch(Pop()) // .READINGS
+  {
+  case 25:
+    UNK_0xf0e6(); // UNK_0xf0e6
+    break;
+  case 32:
+    UNK_0xefb2(); // UNK_0xefb2
+    break;
+  case 60:
+    UNK_0xed92(); // UNK_0xed92
+    break;
+  default:
+    UNK_0xe906(); // UNK_0xe906
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf14a: WORD '(/SENSORS)' codep=0x224c parp=0xf159
@@ -2866,23 +2888,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // .READINGS
-  {
-  case 25:
-    UNK_0xf0e6(); // UNK_0xf0e6
-    break;
-  case 32:
-    UNK_0xefb2(); // UNK_0xefb2
-    break;
-  case 60:
-    UNK_0xed92(); // UNK_0xed92
-    break;
-  default:
-    UNK_0xe906(); // UNK_0xe906
-    break;
-
-  }
+  _dot_READINGS(); // .READINGS case
   ICLOSE(); // ICLOSE
   goto label5;
 
@@ -3113,7 +3119,23 @@ void UNK_0xf32a() // UNK_0xf32a
 // ================================================
 // 0xf330: WORD 'CTXT>I' codep=0x4b3b parp=0xf33b
 // ================================================
-// 0xf33b: db 0x02 0x00 0x2a 0xf3 0x03 0x00 0x30 0x53 0x04 0x00 0x60 0xf2 '  *   0S  ` '
+
+void CTXT_gt_I() // CTXT>I
+{
+  switch(Pop()) // CTXT>I
+  {
+  case 3:
+    _star_SHIP(); // *SHIP
+    break;
+  case 4:
+    UNK_0xf260(); // UNK_0xf260
+    break;
+  default:
+    UNK_0xf32a(); // UNK_0xf32a
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf347: WORD 'UNK_0xf349' codep=0x224c parp=0xf349
@@ -3230,20 +3252,7 @@ void UNK_0xf3c1() // UNK_0xf3c1
 {
   Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // CTXT>I
-  {
-  case 3:
-    _star_SHIP(); // *SHIP
-    break;
-  case 4:
-    UNK_0xf260(); // UNK_0xf260
-    break;
-  default:
-    UNK_0xf32a(); // UNK_0xf32a
-    break;
-
-  }
+  CTXT_gt_I(); // CTXT>I case
   _gt_C_plus_S(); // >C+S
   Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @

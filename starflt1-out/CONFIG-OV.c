@@ -553,16 +553,9 @@ void UNK_0xebe9() // UNK_0xebe9
 // ================================================
 // 0xec53: WORD '(PARTADDR)' codep=0x4a4f parp=0xec62
 // ================================================
-// 0xec62: db 0x04 0x00 0xf8 0xe9 0x01 0x00 0xdf 0xe9 0x02 0x00 0xee 0xe9 0x03 0x00 0xda 0xe9 0x04 0x00 0xf3 0xe9 '                    '
 
-// ================================================
-// 0xec76: WORD 'UNK_0xec78' codep=0x224c parp=0xec78
-// ================================================
-
-void UNK_0xec78() // UNK_0xec78
+void _ro_PARTADDR_rc_() // (PARTADDR)
 {
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // (PARTADDR)
   {
   case 1:
@@ -584,19 +577,23 @@ void UNK_0xec78() // UNK_0xec78
   }
 }
 
+// ================================================
+// 0xec76: WORD 'UNK_0xec78' codep=0x224c parp=0xec78
+// ================================================
+
+void UNK_0xec78() // UNK_0xec78
+{
+  Push(Read16(regsp)); // DUP
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
+}
+
 
 // ================================================
 // 0xec7e: WORD '(PTS)' codep=0x4a4f parp=0xec88
 // ================================================
-// 0xec88: db 0x02 0x00 0x22 0x0f 0x02 0x00 0x07 0xea 0x03 0x00 0x0c 0xea '  "         '
 
-// ================================================
-// 0xec94: WORD 'UNK_0xec96' codep=0x224c parp=0xec96
-// ================================================
-
-void UNK_0xec96() // UNK_0xec96
+void _ro_PTS_rc_() // (PTS)
 {
-  Pop();
   switch(Pop()) // (PTS)
   {
   case 2:
@@ -610,6 +607,15 @@ void UNK_0xec96() // UNK_0xec96
     break;
 
   }
+}
+
+// ================================================
+// 0xec94: WORD 'UNK_0xec96' codep=0x224c parp=0xec96
+// ================================================
+
+void UNK_0xec96() // UNK_0xec96
+{
+  _ro_PTS_rc_(); // (PTS) case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   _ex__3(); // !_3
@@ -1288,26 +1294,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
 {
   _gt_R(); // >R
   Push(h); // I
-  Pop();
-  switch(Pop()) // (PARTADDR)
-  {
-  case 1:
-    UNK_0xe9df(); // UNK_0xe9df
-    break;
-  case 2:
-    UNK_0xe9ee(); // UNK_0xe9ee
-    break;
-  case 3:
-    UNK_0xe9da(); // UNK_0xe9da
-    break;
-  case 4:
-    UNK_0xe9f3(); // UNK_0xe9f3
-    break;
-  default:
-    UNK_0xe9f8(); // UNK_0xe9f8
-    break;
-
-  }
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xea27(); // UNK_0xea27
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1325,26 +1312,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   Push(Read16(Pop())); // @
   Push(0x0064);
   Push(h); // I
-  Pop();
-  switch(Pop()) // (PARTADDR)
-  {
-  case 1:
-    UNK_0xe9df(); // UNK_0xe9df
-    break;
-  case 2:
-    UNK_0xe9ee(); // UNK_0xe9ee
-    break;
-  case 3:
-    UNK_0xe9da(); // UNK_0xe9da
-    break;
-  case 4:
-    UNK_0xe9f3(); // UNK_0xe9f3
-    break;
-  default:
-    UNK_0xe9f8(); // UNK_0xe9f8
-    break;
-
-  }
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xea1b(); // UNK_0xea1b
   _dash_(); // -
   Push(0x0069);
@@ -1672,7 +1640,32 @@ void UNK_0xf477() // UNK_0xf477
 // ================================================
 // 0xf47f: WORD 'CONFIG-FUNCTION' codep=0x4a4f parp=0xf493
 // ================================================
-// 0xf493: db 0x05 0x00 0x48 0x3a 0x00 0x00 0x6d 0xf4 0x01 0x00 0x77 0xf4 0x02 0x00 0x46 0xf3 0x03 0x00 0xfd 0xf3 0x04 0x00 0x09 0x13 '  H:  m   w   F         '
+
+void CONFIG_dash_FUNCTION() // CONFIG-FUNCTION
+{
+  switch(Pop()) // CONFIG-FUNCTION
+  {
+  case 0:
+    UNK_0xf46d(); // UNK_0xf46d
+    break;
+  case 1:
+    UNK_0xf477(); // UNK_0xf477
+    break;
+  case 2:
+    UNK_0xf346(); // UNK_0xf346
+    break;
+  case 3:
+    UNK_0xf3fd(); // UNK_0xf3fd
+    break;
+  case 4:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4ab: WORD '(U-CONFIG)' codep=0x224c parp=0xf4ba
@@ -1717,29 +1710,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // CONFIG-FUNCTION
-  {
-  case 0:
-    UNK_0xf46d(); // UNK_0xf46d
-    break;
-  case 1:
-    UNK_0xf477(); // UNK_0xf477
-    break;
-  case 2:
-    UNK_0xf346(); // UNK_0xf346
-    break;
-  case 3:
-    UNK_0xf3fd(); // UNK_0xf3fd
-    break;
-  case 4:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
   goto label2;
 
   label1:

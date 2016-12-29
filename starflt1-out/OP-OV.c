@@ -854,7 +854,23 @@ void UNK_0xe9fc() // UNK_0xe9fc
 // ================================================
 // 0xea0c: WORD '(NOTICES)' codep=0x4a4f parp=0xea1a
 // ================================================
-// 0xea1a: db 0x02 0x00 0x48 0x3a 0x01 0x00 0xfc 0xe9 0xff 0xff 0xe2 0xe9 '  H:        '
+
+void _ro_NOTICES_rc_() // (NOTICES)
+{
+  switch(Pop()) // (NOTICES)
+  {
+  case 1:
+    UNK_0xe9fc(); // UNK_0xe9fc
+    break;
+  case 65535:
+    UNK_0xe9e2(); // UNK_0xe9e2
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xea26: WORD 'UNK_0xea28' codep=0x224c parp=0xea28
@@ -925,20 +941,7 @@ void UNK_0xea28() // UNK_0xea28
   label8:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Pop();
-  switch(Pop()) // (NOTICES)
-  {
-  case 1:
-    UNK_0xe9fc(); // UNK_0xe9fc
-    break;
-  case 65535:
-    UNK_0xe9e2(); // UNK_0xe9e2
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro_NOTICES_rc_(); // (NOTICES) case
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label7;
   UNK_0xe735(); // UNK_0xe735
@@ -1151,7 +1154,35 @@ void UNK_0xeccc() // UNK_0xeccc
 // ================================================
 // 0xecdf: WORD '(BAD-PLAN)' codep=0x4a4f parp=0xecee
 // ================================================
-// 0xecee: db 0x06 0x00 0x48 0x3a 0x01 0x00 0x60 0xec 0x02 0x00 0x74 0xec 0x03 0x00 0x88 0xec 0x04 0x00 0xa0 0xec 0x05 0x00 0xb6 0xec 0x06 0x00 0xcc 0xec '  H:  `   t                 '
+
+void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
+{
+  switch(Pop()) // (BAD-PLAN)
+  {
+  case 1:
+    UNK_0xec60(); // UNK_0xec60
+    break;
+  case 2:
+    UNK_0xec74(); // UNK_0xec74
+    break;
+  case 3:
+    UNK_0xec88(); // UNK_0xec88
+    break;
+  case 4:
+    UNK_0xeca0(); // UNK_0xeca0
+    break;
+  case 5:
+    UNK_0xecb6(); // UNK_0xecb6
+    break;
+  case 6:
+    UNK_0xeccc(); // UNK_0xeccc
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xed0a: WORD 'UNK_0xed0c' codep=0x224c parp=0xed0c
@@ -1178,32 +1209,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Pop();
-  switch(Pop()) // (BAD-PLAN)
-  {
-  case 1:
-    UNK_0xec60(); // UNK_0xec60
-    break;
-  case 2:
-    UNK_0xec74(); // UNK_0xec74
-    break;
-  case 3:
-    UNK_0xec88(); // UNK_0xec88
-    break;
-  case 4:
-    UNK_0xeca0(); // UNK_0xeca0
-    break;
-  case 5:
-    UNK_0xecb6(); // UNK_0xecb6
-    break;
-  case 6:
-    UNK_0xeccc(); // UNK_0xeccc
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro_BAD_dash_PLAN_rc_(); // (BAD-PLAN) case
   Push(i); // I
   Push(Pop()+1); // 1+
   BIT(); // BIT
@@ -1613,7 +1619,26 @@ void UNK_0xf47a() // UNK_0xf47a
 // ================================================
 // 0xf4d4: WORD 'OP-CASE' codep=0x4a4f parp=0xf4e0
 // ================================================
-// 0xf4e0: db 0x03 0x00 0x48 0x3a 0x00 0x00 0x28 0xea 0x01 0x00 0x7a 0xf4 0x02 0x00 0x09 0x13 '  H:  (   z     '
+
+void OP_dash_CASE() // OP-CASE
+{
+  switch(Pop()) // OP-CASE
+  {
+  case 0:
+    UNK_0xea28(); // UNK_0xea28
+    break;
+  case 1:
+    UNK_0xf47a(); // UNK_0xf47a
+    break;
+  case 2:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4f0: WORD '(U-OP)' codep=0x224c parp=0xf4fb
@@ -1648,23 +1673,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
   if (Pop() == 0) goto label3;
   Push(pp_NCRS); // NCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // OP-CASE
-  {
-  case 0:
-    UNK_0xea28(); // UNK_0xea28
-    break;
-  case 1:
-    UNK_0xf47a(); // UNK_0xf47a
-    break;
-  case 2:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  OP_dash_CASE(); // OP-CASE case
 
   label3:
   if (Pop() == 0) goto label1;

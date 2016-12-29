@@ -1031,7 +1031,23 @@ void UNK_0xece5() // UNK_0xece5
 // ================================================
 // 0xed01: WORD 'TD-SCROLL' codep=0x4b3b parp=0xed0f
 // ================================================
-// 0xed0f: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x97 0xec 0xff 0xff 0xe5 0xec '  H:        '
+
+void TD_dash_SCROLL() // TD-SCROLL
+{
+  switch(Pop()) // TD-SCROLL
+  {
+  case 1:
+    UNK_0xec97(); // UNK_0xec97
+    break;
+  case 65535:
+    UNK_0xece5(); // UNK_0xece5
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xed1b: WORD 'UNK_0xed1d' codep=0x224c parp=0xed1d
@@ -1654,7 +1670,26 @@ void UNK_0xf174() // UNK_0xf174
 // ================================================
 // 0xf1ba: WORD 'SELL-WHAT' codep=0x4b3b parp=0xf1c8
 // ================================================
-// 0xf1c8: db 0x03 0x00 0x7e 0xef 0x0b 0x00 0x22 0x0f 0x1c 0x00 0xea 0xef 0x1a 0x00 0x98 0xef '  ~   "         '
+
+void SELL_dash_WHAT() // SELL-WHAT
+{
+  switch(Pop()) // SELL-WHAT
+  {
+  case 11:
+    Push(0); // 0
+    break;
+  case 28:
+    UNK_0xefea(); // UNK_0xefea
+    break;
+  case 26:
+    UNK_0xef98(); // UNK_0xef98
+    break;
+  default:
+    UNK_0xef7e(); // UNK_0xef7e
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf1d8: WORD 'SELL-IT' codep=0x224c parp=0xf1e4
@@ -1676,23 +1711,7 @@ void SELL_dash_IT() // SELL-IT
   _gt_C_plus_(); // >C+
   SET_dash_CUR(); // SET-CUR
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // SELL-WHAT
-  {
-  case 11:
-    Push(0); // 0
-    break;
-  case 28:
-    UNK_0xefea(); // UNK_0xefea
-    break;
-  case 26:
-    UNK_0xef98(); // UNK_0xef98
-    break;
-  default:
-    UNK_0xef7e(); // UNK_0xef7e
-    break;
-
-  }
+  SELL_dash_WHAT(); // SELL-WHAT case
   _gt_R(); // >R
   Push(h); // I
   Push(cc__dash_1); // -1
@@ -1796,20 +1815,7 @@ void UNK_0xf25a() // UNK_0xf25a
   label6:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Pop();
-  switch(Pop()) // TD-SCROLL
-  {
-  case 1:
-    UNK_0xec97(); // UNK_0xec97
-    break;
-  case 65535:
-    UNK_0xece5(); // UNK_0xece5
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  TD_dash_SCROLL(); // TD-SCROLL case
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label5;
   UNK_0xf228(); // UNK_0xf228
@@ -1978,7 +1984,23 @@ void UNK_0xf35c() // UNK_0xf35c
 // ================================================
 // 0xf3f2: WORD 'BUY-WHAT' codep=0x4b3b parp=0xf3ff
 // ================================================
-// 0xf3ff: db 0x02 0x00 0x22 0x0f 0x1c 0x00 0x12 0xf3 0x1a 0x00 0x5c 0xf3 '  "       \ '
+
+void BUY_dash_WHAT() // BUY-WHAT
+{
+  switch(Pop()) // BUY-WHAT
+  {
+  case 28:
+    UNK_0xf312(); // UNK_0xf312
+    break;
+  case 26:
+    UNK_0xf35c(); // UNK_0xf35c
+    break;
+  default:
+    Push(0); // 0
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf40b: WORD 'UNK_0xf40d' codep=0x224c parp=0xf40d
@@ -1999,20 +2021,7 @@ void UNK_0xf40d() // UNK_0xf40d
   _gt_C_plus_(); // >C+
   SET_dash_CUR(); // SET-CUR
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // BUY-WHAT
-  {
-  case 28:
-    UNK_0xf312(); // UNK_0xf312
-    break;
-  case 26:
-    UNK_0xf35c(); // UNK_0xf35c
-    break;
-  default:
-    Push(0); // 0
-    break;
-
-  }
+  BUY_dash_WHAT(); // BUY-WHAT case
   _gt_R(); // >R
   Push(h); // I
   Push(-Pop()); // NEGATE
@@ -2071,20 +2080,7 @@ void UNK_0xf451() // UNK_0xf451
   label2:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Pop();
-  switch(Pop()) // TD-SCROLL
-  {
-  case 1:
-    UNK_0xec97(); // UNK_0xec97
-    break;
-  case 65535:
-    UNK_0xece5(); // UNK_0xece5
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  TD_dash_SCROLL(); // TD-SCROLL case
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label1;
   UNK_0xf40d(); // UNK_0xf40d
@@ -2103,7 +2099,26 @@ void UNK_0xf451() // UNK_0xf451
 // ================================================
 // 0xf4ab: WORD 'DEPOT-FUNCTION' codep=0x4b3b parp=0xf4be
 // ================================================
-// 0xf4be: db 0x03 0x00 0x48 0x3a 0x00 0x00 0x51 0xf4 0x01 0x00 0x5a 0xf2 0x02 0x00 0x09 0x13 '  H:  Q   Z     '
+
+void DEPOT_dash_FUNCTION() // DEPOT-FUNCTION
+{
+  switch(Pop()) // DEPOT-FUNCTION
+  {
+  case 0:
+    UNK_0xf451(); // UNK_0xf451
+    break;
+  case 1:
+    UNK_0xf25a(); // UNK_0xf25a
+    break;
+  case 2:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4ce: WORD '(U-DEPOT)' codep=0x224c parp=0xf4dc
@@ -2144,23 +2159,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(0); // 0
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // DEPOT-FUNCTION
-  {
-  case 0:
-    UNK_0xf451(); // UNK_0xf451
-    break;
-  case 1:
-    UNK_0xf25a(); // UNK_0xf25a
-    break;
-  case 2:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  DEPOT_dash_FUNCTION(); // DEPOT-FUNCTION case
   _gt_R(); // >R
   Push(cc__dash_1); // -1
   SetColor("GREY2");

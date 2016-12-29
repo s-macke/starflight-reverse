@@ -857,21 +857,9 @@ void UNK_0xebcb() // UNK_0xebcb
 // ================================================
 // 0xec19: WORD '#>.' codep=0x4b3b parp=0xec21
 // ================================================
-// 0xec21: db 0x03 0x00 0x87 0xeb 0x00 0x00 0x45 0xeb 0x06 0x00 0x5b 0xeb 0x07 0x00 0x71 0xeb '      E   [   q '
 
-// ================================================
-// 0xec31: WORD 'UNK_0xec33' codep=0x224c parp=0xec33
-// ================================================
-
-void UNK_0xec33() // UNK_0xec33
+void _n__gt__dot_() // #>.
 {
-  _gt_R(); // >R
-  _at_CRS(); // @CRS
-  R_gt_(); // R>
-  CTINIT(); // CTINIT
-  UNK_0xebcb(); // UNK_0xebcb
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // #>.
   {
   case 0:
@@ -888,6 +876,21 @@ void UNK_0xec33() // UNK_0xec33
     break;
 
   }
+}
+
+// ================================================
+// 0xec31: WORD 'UNK_0xec33' codep=0x224c parp=0xec33
+// ================================================
+
+void UNK_0xec33() // UNK_0xec33
+{
+  _gt_R(); // >R
+  _at_CRS(); // @CRS
+  R_gt_(); // R>
+  CTINIT(); // CTINIT
+  UNK_0xebcb(); // UNK_0xebcb
+  Push(Read16(regsp)); // DUP
+  _n__gt__dot_(); // #>. case
   _ex_CRS(); // !CRS
 }
 
@@ -895,16 +898,9 @@ void UNK_0xec33() // UNK_0xec33
 // ================================================
 // 0xec45: WORD '(PARTADDR)' codep=0x4b3b parp=0xec54
 // ================================================
-// 0xec54: db 0x04 0x00 0x78 0xe7 0x01 0x00 0x5f 0xe7 0x02 0x00 0x6e 0xe7 0x03 0x00 0x5a 0xe7 0x04 0x00 0x73 0xe7 '  x   _   n   Z   s '
 
-// ================================================
-// 0xec68: WORD 'UNK_0xec6a' codep=0x224c parp=0xec6a
-// ================================================
-
-void UNK_0xec6a() // UNK_0xec6a
+void _ro_PARTADDR_rc_() // (PARTADDR)
 {
-  Push(Read16(regsp)); // DUP
-  Pop();
   switch(Pop()) // (PARTADDR)
   {
   case 1:
@@ -926,19 +922,23 @@ void UNK_0xec6a() // UNK_0xec6a
   }
 }
 
+// ================================================
+// 0xec68: WORD 'UNK_0xec6a' codep=0x224c parp=0xec6a
+// ================================================
+
+void UNK_0xec6a() // UNK_0xec6a
+{
+  Push(Read16(regsp)); // DUP
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
+}
+
 
 // ================================================
 // 0xec70: WORD '(PTS)' codep=0x4b3b parp=0xec7a
 // ================================================
-// 0xec7a: db 0x02 0x00 0x22 0x0f 0x02 0x00 0x87 0xe7 0x03 0x00 0x8c 0xe7 '  "         '
 
-// ================================================
-// 0xec86: WORD 'UNK_0xec88' codep=0x224c parp=0xec88
-// ================================================
-
-void UNK_0xec88() // UNK_0xec88
+void _ro_PTS_rc_() // (PTS)
 {
-  Pop();
   switch(Pop()) // (PTS)
   {
   case 2:
@@ -952,6 +952,15 @@ void UNK_0xec88() // UNK_0xec88
     break;
 
   }
+}
+
+// ================================================
+// 0xec86: WORD 'UNK_0xec88' codep=0x224c parp=0xec88
+// ================================================
+
+void UNK_0xec88() // UNK_0xec88
+{
+  _ro_PTS_rc_(); // (PTS) case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   _ex__2(); // !_2
@@ -1102,7 +1111,26 @@ void UNK_0xed74() // UNK_0xed74
 // ================================================
 // 0xed94: WORD '#>VALUE' codep=0x4b3b parp=0xeda0
 // ================================================
-// 0xeda0: db 0x03 0x00 0xa2 0xec 0x00 0x00 0x22 0xed 0x06 0x00 0x46 0xed 0x07 0x00 0x74 0xed '      "   F   t '
+
+void _n__gt_VALUE() // #>VALUE
+{
+  switch(Pop()) // #>VALUE
+  {
+  case 0:
+    UNK_0xed22(); // UNK_0xed22
+    break;
+  case 6:
+    UNK_0xed46(); // UNK_0xed46
+    break;
+  case 7:
+    UNK_0xed74(); // UNK_0xed74
+    break;
+  default:
+    UNK_0xeca2(); // UNK_0xeca2
+    break;
+
+  }
+}
 
 // ================================================
 // 0xedb0: WORD 'UNK_0xedb2' codep=0x224c parp=0xedb2
@@ -1121,23 +1149,7 @@ void UNK_0xedb2() // UNK_0xedb2
   Push(pp_XBLT); // XBLT size: 2
   _ex__2(); // !_2
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // #>VALUE
-  {
-  case 0:
-    UNK_0xed22(); // UNK_0xed22
-    break;
-  case 6:
-    UNK_0xed46(); // UNK_0xed46
-    break;
-  case 7:
-    UNK_0xed74(); // UNK_0xed74
-    break;
-  default:
-    UNK_0xeca2(); // UNK_0xeca2
-    break;
-
-  }
+  _n__gt_VALUE(); // #>VALUE case
   _ex_CRS(); // !CRS
 }
 
@@ -1231,7 +1243,26 @@ void UNK_0xedde() // UNK_0xedde
 // ================================================
 // 0xee78: WORD '#>BUY' codep=0x4b3b parp=0xee82
 // ================================================
-// 0xee82: db 0x03 0x00 0x48 0x3a 0x00 0x00 0xde 0xed 0x06 0x00 0x26 0xe9 0x07 0x00 0xaa 0xe9 '  H:      &     '
+
+void _n__gt_BUY() // #>BUY
+{
+  switch(Pop()) // #>BUY
+  {
+  case 0:
+    UNK_0xedde(); // UNK_0xedde
+    break;
+  case 6:
+    UNK_0xe926(); // UNK_0xe926
+    break;
+  case 7:
+    UNK_0xe9aa(); // UNK_0xe9aa
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xee92: WORD 'UNK_0xee94' codep=0x224c parp=0xee94
@@ -1455,23 +1486,7 @@ void UNK_0xefcc() // UNK_0xefcc
   return;
 
   label1:
-  Pop();
-  switch(Pop()) // #>BUY
-  {
-  case 0:
-    UNK_0xedde(); // UNK_0xedde
-    break;
-  case 6:
-    UNK_0xe926(); // UNK_0xe926
-    break;
-  case 7:
-    UNK_0xe9aa(); // UNK_0xe9aa
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _n__gt_BUY(); // #>BUY case
 }
 
 
@@ -1551,7 +1566,26 @@ void UNK_0xf047() // UNK_0xf047
 // ================================================
 // 0xf0de: WORD '#>SELL' codep=0x4b3b parp=0xf0e9
 // ================================================
-// 0xf0e9: db 0x03 0x00 0x48 0x3a 0x00 0x00 0x47 0xf0 0x06 0x00 0x2e 0xea 0x07 0x00 0x52 0xea '  H:  G   .   R '
+
+void _n__gt_SELL() // #>SELL
+{
+  switch(Pop()) // #>SELL
+  {
+  case 0:
+    UNK_0xf047(); // UNK_0xf047
+    break;
+  case 6:
+    UNK_0xea2e(); // UNK_0xea2e
+    break;
+  case 7:
+    UNK_0xea52(); // UNK_0xea52
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf0f9: WORD 'UNK_0xf0fb' codep=0x224c parp=0xf0fb
@@ -1611,23 +1645,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
   return;
 
   label1:
-  Pop();
-  switch(Pop()) // #>SELL
-  {
-  case 0:
-    UNK_0xf047(); // UNK_0xf047
-    break;
-  case 6:
-    UNK_0xea2e(); // UNK_0xea2e
-    break;
-  case 7:
-    UNK_0xea52(); // UNK_0xea52
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _n__gt_SELL(); // #>SELL case
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
   UNK_0xedb2(); // UNK_0xedb2
@@ -1728,26 +1746,7 @@ void UNK_0xf1fd() // UNK_0xf1fd
 {
   _gt_R(); // >R
   Push(h); // I
-  Pop();
-  switch(Pop()) // (PARTADDR)
-  {
-  case 1:
-    UNK_0xe75f(); // UNK_0xe75f
-    break;
-  case 2:
-    UNK_0xe76e(); // UNK_0xe76e
-    break;
-  case 3:
-    UNK_0xe75a(); // UNK_0xe75a
-    break;
-  case 4:
-    UNK_0xe773(); // UNK_0xe773
-    break;
-  default:
-    UNK_0xe778(); // UNK_0xe778
-    break;
-
-  }
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xe7f0(); // UNK_0xe7f0
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1765,26 +1764,7 @@ void UNK_0xf1fd() // UNK_0xf1fd
   Push(Read16(Pop())); // @
   Push(0x0064);
   Push(h); // I
-  Pop();
-  switch(Pop()) // (PARTADDR)
-  {
-  case 1:
-    UNK_0xe75f(); // UNK_0xe75f
-    break;
-  case 2:
-    UNK_0xe76e(); // UNK_0xe76e
-    break;
-  case 3:
-    UNK_0xe75a(); // UNK_0xe75a
-    break;
-  case 4:
-    UNK_0xe773(); // UNK_0xe773
-    break;
-  default:
-    UNK_0xe778(); // UNK_0xe778
-    break;
-
-  }
+  _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xe7d4(); // UNK_0xe7d4
   _dash_(); // -
   Push(0x0019);
@@ -2112,7 +2092,32 @@ void UNK_0xf49e() // UNK_0xf49e
 // ================================================
 // 0xf4a6: WORD 'CONFIG-FUNCTION' codep=0x4b3b parp=0xf4ba
 // ================================================
-// 0xf4ba: db 0x05 0x00 0x48 0x3a 0x00 0x00 0x94 0xf4 0x01 0x00 0x9e 0xf4 0x02 0x00 0x6d 0xf3 0x03 0x00 0x24 0xf4 0x04 0x00 0x09 0x13 '  H:          m   $     '
+
+void CONFIG_dash_FUNCTION() // CONFIG-FUNCTION
+{
+  switch(Pop()) // CONFIG-FUNCTION
+  {
+  case 0:
+    UNK_0xf494(); // UNK_0xf494
+    break;
+  case 1:
+    UNK_0xf49e(); // UNK_0xf49e
+    break;
+  case 2:
+    UNK_0xf36d(); // UNK_0xf36d
+    break;
+  case 3:
+    UNK_0xf424(); // UNK_0xf424
+    break;
+  case 4:
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4d2: WORD '(U-CONFIG)' codep=0x224c parp=0xf4e1
@@ -2159,29 +2164,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push(0); // 0
   Push(pp_OCRS); // OCRS size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // CONFIG-FUNCTION
-  {
-  case 0:
-    UNK_0xf494(); // UNK_0xf494
-    break;
-  case 1:
-    UNK_0xf49e(); // UNK_0xf49e
-    break;
-  case 2:
-    UNK_0xf36d(); // UNK_0xf36d
-    break;
-  case 3:
-    UNK_0xf424(); // UNK_0xf424
-    break;
-  case 4:
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
   goto label2;
 
   label1:

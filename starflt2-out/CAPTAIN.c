@@ -608,7 +608,23 @@ void UNK_0xe6cd() // UNK_0xe6cd
 // ================================================
 // 0xe6e3: WORD 'TD-SCROLL' codep=0x4b3b parp=0xe6f1
 // ================================================
-// 0xe6f1: db 0x02 0x00 0x48 0x3a 0x01 0x00 0xbb 0xe6 0xff 0xff 0xcd 0xe6 '  H:        '
+
+void TD_dash_SCROLL() // TD-SCROLL
+{
+  switch(Pop()) // TD-SCROLL
+  {
+  case 1:
+    UNK_0xe6bb(); // UNK_0xe6bb
+    break;
+  case 65535:
+    UNK_0xe6cd(); // UNK_0xe6cd
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe6fd: WORD 'UNK_0xe6ff' codep=0x224c parp=0xe6ff
@@ -1467,7 +1483,32 @@ void UNK_0xed77() // UNK_0xed77
 // ================================================
 // 0xed93: WORD '1STOPTION' codep=0x4b3b parp=0xeda1
 // ================================================
-// 0xeda1: db 0x05 0x00 0x61 0xed 0x1c 0x00 0x61 0xed 0x1b 0x00 0x3b 0xec 0x1a 0x00 0x77 0xed 0x44 0x00 0x61 0xed 0x09 0x00 0x61 0xed '  a   a   ;   w D a   a '
+
+void _1STOPTION() // 1STOPTION
+{
+  switch(Pop()) // 1STOPTION
+  {
+  case 28:
+    UNK_0xed61(); // UNK_0xed61
+    break;
+  case 27:
+    UNK_0xec3b(); // UNK_0xec3b
+    break;
+  case 26:
+    UNK_0xed77(); // UNK_0xed77
+    break;
+  case 68:
+    UNK_0xed61(); // UNK_0xed61
+    break;
+  case 9:
+    UNK_0xed61(); // UNK_0xed61
+    break;
+  default:
+    UNK_0xed61(); // UNK_0xed61
+    break;
+
+  }
+}
 
 // ================================================
 // 0xedb9: WORD 'UNK_0xedbb' codep=0x1d29 parp=0xedbb
@@ -1493,29 +1534,7 @@ void DO_dash_OPTION() // DO-OPTION
 
   label1:
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // 1STOPTION
-  {
-  case 28:
-    UNK_0xed61(); // UNK_0xed61
-    break;
-  case 27:
-    UNK_0xec3b(); // UNK_0xec3b
-    break;
-  case 26:
-    UNK_0xed77(); // UNK_0xed77
-    break;
-  case 68:
-    UNK_0xed61(); // UNK_0xed61
-    break;
-  case 9:
-    UNK_0xed61(); // UNK_0xed61
-    break;
-  default:
-    UNK_0xed61(); // UNK_0xed61
-    break;
-
-  }
+  _1STOPTION(); // 1STOPTION case
 
   label2:
   Push(1); // 1
@@ -1569,24 +1588,9 @@ void UNK_0xee16() // UNK_0xee16
 // ================================================
 // 0xee3a: WORD 'ITEM-OPTIONS' codep=0x4b3b parp=0xee4b
 // ================================================
-// 0xee4b: db 0x04 0x00 0xe7 0xed 0x1c 0x00 0xe7 0xed 0x1b 0x00 0xf9 0xed 0x44 0x00 0xe7 0xed 0x1a 0x00 0x16 0xee '            D       '
 
-// ================================================
-// 0xee5f: WORD 'UNK_0xee61' codep=0x224c parp=0xee61
-// ================================================
-
-void UNK_0xee61() // UNK_0xee61
+void ITEM_dash_OPTIONS() // ITEM-OPTIONS
 {
-  Push(pp_WLEFT); // WLEFT size: 2
-  Push(Read16(Pop())); // @
-  Push(pp_WTOP); // WTOP size: 2
-  Push(Read16(Pop())); // @
-  Push(cc__7); // 7
-  _dash_(); // -
-  POS_dot_(); // POS.
-  CTINIT(); // CTINIT
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // ITEM-OPTIONS
   {
   case 28:
@@ -1606,6 +1610,24 @@ void UNK_0xee61() // UNK_0xee61
     break;
 
   }
+}
+
+// ================================================
+// 0xee5f: WORD 'UNK_0xee61' codep=0x224c parp=0xee61
+// ================================================
+
+void UNK_0xee61() // UNK_0xee61
+{
+  Push(pp_WLEFT); // WLEFT size: 2
+  Push(Read16(Pop())); // @
+  Push(pp_WTOP); // WTOP size: 2
+  Push(Read16(Pop())); // @
+  Push(cc__7); // 7
+  _dash_(); // -
+  POS_dot_(); // POS.
+  CTINIT(); // CTINIT
+  _at_INST_dash_C(); // @INST-C
+  ITEM_dash_OPTIONS(); // ITEM-OPTIONS case
   Push(pp_UNK_0xedbf); // UNK_0xedbf size: 0
   _ex__2(); // !_2
   Push(pp_UNK_0xedbb); // UNK_0xedbb size: 0
@@ -1781,20 +1803,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Pop();
-  switch(Pop()) // TD-SCROLL
-  {
-  case 1:
-    UNK_0xe6bb(); // UNK_0xe6bb
-    break;
-  case 65535:
-    UNK_0xe6cd(); // UNK_0xe6cd
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  TD_dash_SCROLL(); // TD-SCROLL case
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label3;
   UNK_0xeeb4(); // UNK_0xeeb4

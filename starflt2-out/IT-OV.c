@@ -564,28 +564,9 @@ void UNK_0xf1d4() // UNK_0xf1d4
 // ================================================
 // 0xf1ea: WORD 'IDENT-IT' codep=0x4b3b parp=0xf1f7
 // ================================================
-// 0xf1f7: db 0x06 0x00 0x6e 0x3a 0x0b 0x00 0x2d 0xf0 0x09 0x00 0xd4 0xf1 0x1a 0x00 0x06 0xf1 0x1b 0x00 0x9a 0xf1 0x1c 0x00 0xa8 0xf1 0x44 0x00 0xd2 0xf0 '  n:  -                 D   '
 
-// ================================================
-// 0xf213: WORD 'ITEM>PAD' codep=0x224c parp=0xf220
-// ================================================
-
-void ITEM_gt_PAD() // ITEM>PAD
+void IDENT_dash_IT() // IDENT-IT
 {
-  UNK_0xeefc(); // UNK_0xeefc
-  UNK_0xeeea(); // UNK_0xeeea
-  PAD(); // PAD
-  Push(0x001e);
-  Push(Pop() + Pop()); // +
-  OVER(); // OVER
-  _dash_(); // -
-  Push(0x002e);
-  FILL_2(); // FILL_2
-  Push(0x0026);
-  PAD(); // PAD
-  C_ex__2(); // C!_2
-  _at_INST_dash_C(); // @INST-C
-  Pop();
   switch(Pop()) // IDENT-IT
   {
   case 11:
@@ -611,6 +592,28 @@ void ITEM_gt_PAD() // ITEM>PAD
     break;
 
   }
+}
+
+// ================================================
+// 0xf213: WORD 'ITEM>PAD' codep=0x224c parp=0xf220
+// ================================================
+
+void ITEM_gt_PAD() // ITEM>PAD
+{
+  UNK_0xeefc(); // UNK_0xeefc
+  UNK_0xeeea(); // UNK_0xeeea
+  PAD(); // PAD
+  Push(0x001e);
+  Push(Pop() + Pop()); // +
+  OVER(); // OVER
+  _dash_(); // -
+  Push(0x002e);
+  FILL_2(); // FILL_2
+  Push(0x0026);
+  PAD(); // PAD
+  C_ex__2(); // C!_2
+  _at_INST_dash_C(); // @INST-C
+  IDENT_dash_IT(); // IDENT-IT case
 }
 
 
@@ -825,15 +828,9 @@ void DELETE_dash_S() // DELETE-S
 // ================================================
 // 0xf3b0: WORD 'CLASS>BO' codep=0x4b3b parp=0xf3bd
 // ================================================
-// 0xf3bd: db 0x06 0x00 0x6e 0x3a 0x09 0x00 0xce 0xee 0x1a 0x00 0xb6 0xee 0x1c 0x00 0xea 0xf0 0x29 0x00 0xc6 0xee 0x1b 0x00 0xbe 0xee 0x44 0x00 0xc2 0xee '  n:            )       D   '
 
-// ================================================
-// 0xf3d9: WORD 'UNK_0xf3db' codep=0x224c parp=0xf3db
-// ================================================
-
-void UNK_0xf3db() // UNK_0xf3db
+void CLASS_gt_BO() // CLASS>BO
 {
-  Pop();
   switch(Pop()) // CLASS>BO
   {
   case 9:
@@ -859,6 +856,15 @@ void UNK_0xf3db() // UNK_0xf3db
     break;
 
   }
+}
+
+// ================================================
+// 0xf3d9: WORD 'UNK_0xf3db' codep=0x224c parp=0xf3db
+// ================================================
+
+void UNK_0xf3db() // UNK_0xf3db
+{
+  CLASS_gt_BO(); // CLASS>BO case
   Push(0x000b);
   SWAP(); // SWAP
   Push(1); // 1
@@ -872,32 +878,7 @@ void UNK_0xf3db() // UNK_0xf3db
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
-  Pop();
-  switch(Pop()) // CLASS>BO
-  {
-  case 9:
-    Push(cc_UNK_0xeece); // UNK_0xeece
-    break;
-  case 26:
-    Push(cc_UNK_0xeeb6); // UNK_0xeeb6
-    break;
-  case 28:
-    UNK_0xf0ea(); // UNK_0xf0ea
-    break;
-  case 41:
-    Push(cc_UNK_0xeec6); // UNK_0xeec6
-    break;
-  case 27:
-    Push(cc_UNK_0xeebe); // UNK_0xeebe
-    break;
-  case 68:
-    Push(cc_UNK_0xeec2); // UNK_0xeec2
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  CLASS_gt_BO(); // CLASS>BO case
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
@@ -949,32 +930,7 @@ void _gt_BOX() // >BOX
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
   Push(h); // I
-  Pop();
-  switch(Pop()) // CLASS>BO
-  {
-  case 9:
-    Push(cc_UNK_0xeece); // UNK_0xeece
-    break;
-  case 26:
-    Push(cc_UNK_0xeeb6); // UNK_0xeeb6
-    break;
-  case 28:
-    UNK_0xf0ea(); // UNK_0xf0ea
-    break;
-  case 41:
-    Push(cc_UNK_0xeec6); // UNK_0xeec6
-    break;
-  case 27:
-    Push(cc_UNK_0xeebe); // UNK_0xeebe
-    break;
-  case 68:
-    Push(cc_UNK_0xeec2); // UNK_0xeec2
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  CLASS_gt_BO(); // CLASS>BO case
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND

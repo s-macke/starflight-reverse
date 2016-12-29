@@ -475,23 +475,9 @@ void UNK_0xf2c0() // UNK_0xf2c0
 // ================================================
 // 0xf2cc: WORD '.ERR' codep=0x4a4f parp=0xf2d5
 // ================================================
-// 0xf2d5: db 0x06 0x00 0x6e 0x3a 0x01 0x00 0x6b 0xf2 0x02 0x00 0x79 0xf2 0x03 0x00 0x96 0xf2 0x04 0x00 0xa3 0xf2 0x05 0x00 0xb2 0xf2 0x06 0x00 0xc0 0xf2 '  n:  k   y                 '
 
-// ================================================
-// 0xf2f1: WORD 'EINDE' codep=0x4a4f parp=0xf2fb
-// ================================================
-// 0xf2fb: db 0x06 0x00 0x6e 0x3a 0x01 0x00 0x3f 0x0f 0x02 0x00 0x75 0x3b 0x03 0x00 0x8d 0x3b 0x04 0x00 0x85 0x3b 0x05 0x00 0x30 0x0f 0x06 0x00 0x7d 0x3b '  n:  ?   u;   ;   ;  0   };'
-
-// ================================================
-// 0xf317: WORD 'UNK_0xf319' codep=0x224c parp=0xf319
-// ================================================
-
-void UNK_0xf319() // UNK_0xf319
+void _dot_ERR() // .ERR
 {
-  SetColor("BLACK");
-  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
-  CTINIT(); // CTINIT
-  Pop();
   switch(Pop()) // .ERR
   {
   case 1:
@@ -517,6 +503,51 @@ void UNK_0xf319() // UNK_0xf319
     break;
 
   }
+}
+
+// ================================================
+// 0xf2f1: WORD 'EINDE' codep=0x4a4f parp=0xf2fb
+// ================================================
+
+void EINDE() // EINDE
+{
+  switch(Pop()) // EINDE
+  {
+  case 1:
+    Push(2); // 2
+    break;
+  case 2:
+    Push(cc__3); // 3
+    break;
+  case 3:
+    Push(cc__6); // 6
+    break;
+  case 4:
+    Push(cc__5); // 5
+    break;
+  case 5:
+    Push(1); // 1
+    break;
+  case 6:
+    Push(cc__4); // 4
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
+  }
+}
+
+// ================================================
+// 0xf317: WORD 'UNK_0xf319' codep=0x224c parp=0xf319
+// ================================================
+
+void UNK_0xf319() // UNK_0xf319
+{
+  SetColor("BLACK");
+  ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
+  CTINIT(); // CTINIT
+  _dot_ERR(); // .ERR case
   Push(0x0079);
   OVER(); // OVER
   Push(Pop()*2); // 2*
@@ -566,32 +597,7 @@ void UNK_0xf319() // UNK_0xf319
 
 void UNK_0xf383() // UNK_0xf383
 {
-  Pop();
-  switch(Pop()) // EINDE
-  {
-  case 1:
-    Push(2); // 2
-    break;
-  case 2:
-    Push(cc__3); // 3
-    break;
-  case 3:
-    Push(cc__6); // 6
-    break;
-  case 4:
-    Push(cc__5); // 5
-    break;
-  case 5:
-    Push(1); // 1
-    break;
-  case 6:
-    Push(cc__4); // 4
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  EINDE(); // EINDE case
   Push(Pop()*2); // 2*
   Push(0x6400); // IFIELD(UNK_0xefd6)
   Push(Pop() + Pop()); // +
@@ -612,32 +618,7 @@ void UNK_0xf383() // UNK_0xf383
 void UNK_0xf39f() // UNK_0xf39f
 {
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // EINDE
-  {
-  case 1:
-    Push(2); // 2
-    break;
-  case 2:
-    Push(cc__3); // 3
-    break;
-  case 3:
-    Push(cc__6); // 6
-    break;
-  case 4:
-    Push(cc__5); // 5
-    break;
-  case 5:
-    Push(1); // 1
-    break;
-  case 6:
-    Push(cc__4); // 4
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  EINDE(); // EINDE case
   Push(Pop()*2); // 2*
   Push(0x6400); // IFIELD(UNK_0xefd6)
   Push(Pop() + Pop()); // +
@@ -674,32 +655,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   Push(h); // I
-  Pop();
-  switch(Pop()) // EINDE
-  {
-  case 1:
-    Push(2); // 2
-    break;
-  case 2:
-    Push(cc__3); // 3
-    break;
-  case 3:
-    Push(cc__6); // 6
-    break;
-  case 4:
-    Push(cc__5); // 5
-    break;
-  case 5:
-    Push(1); // 1
-    break;
-  case 6:
-    Push(cc__4); // 4
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  EINDE(); // EINDE case
   Push(Pop()*2); // 2*
   Push(0x6400); // IFIELD(UNK_0xefd6)
   Push(Pop() + Pop()); // +
@@ -711,32 +667,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(h); // I
-  Pop();
-  switch(Pop()) // .ERR
-  {
-  case 1:
-    UNK_0xf26b(); // UNK_0xf26b
-    break;
-  case 2:
-    UNK_0xf279(); // UNK_0xf279
-    break;
-  case 3:
-    UNK_0xf296(); // UNK_0xf296
-    break;
-  case 4:
-    UNK_0xf2a3(); // UNK_0xf2a3
-    break;
-  case 5:
-    UNK_0xf2b2(); // UNK_0xf2b2
-    break;
-  case 6:
-    UNK_0xf2c0(); // UNK_0xf2c0
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _dot_ERR(); // .ERR case
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0); // 0
@@ -754,32 +685,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
   Push(h); // I
-  Pop();
-  switch(Pop()) // .ERR
-  {
-  case 1:
-    UNK_0xf26b(); // UNK_0xf26b
-    break;
-  case 2:
-    UNK_0xf279(); // UNK_0xf279
-    break;
-  case 3:
-    UNK_0xf296(); // UNK_0xf296
-    break;
-  case 4:
-    UNK_0xf2a3(); // UNK_0xf2a3
-    break;
-  case 5:
-    UNK_0xf2b2(); // UNK_0xf2b2
-    break;
-  case 6:
-    UNK_0xf2c0(); // UNK_0xf2c0
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _dot_ERR(); // .ERR case
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 

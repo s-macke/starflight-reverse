@@ -266,7 +266,41 @@ void UNK_0xe779() // UNK_0xe779
 // ================================================
 // 0xe7af: WORD 'DISPOSAL' codep=0x4b3b parp=0xe7bc
 // ================================================
-// 0xe7bc: db 0x08 0x00 0xd1 0x51 0x44 0x00 0xc5 0x51 0x1a 0x00 0xc5 0x51 0x15 0x00 0xc5 0x51 0x1f 0x00 0xc5 0x51 0x21 0x00 0xc5 0x51 0x1c 0x00 0x6d 0xe7 0x29 0x00 0x79 0xe7 0x09 0x00 0xc5 0x51 '   QD  Q   Q   Q   Q!  Q  m ) y    Q'
+
+void DISPOSAL() // DISPOSAL
+{
+  switch(Pop()) // DISPOSAL
+  {
+  case 68:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 26:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 21:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 31:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 33:
+    Push(cc_TRUE); // TRUE
+    break;
+  case 28:
+    UNK_0xe76d(); // UNK_0xe76d
+    break;
+  case 41:
+    UNK_0xe779(); // UNK_0xe779
+    break;
+  case 9:
+    Push(cc_TRUE); // TRUE
+    break;
+  default:
+    Push(cc_FALSE); // FALSE
+    break;
+
+  }
+}
 
 // ================================================
 // 0xe7e0: WORD 'UNK_0xe7e2' codep=0x224c parp=0xe7e2
@@ -925,38 +959,7 @@ void UNK_0xeca1() // UNK_0xeca1
 {
   _ask_LAST(); // ?LAST
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // DISPOSAL
-  {
-  case 68:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 26:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 21:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 31:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 33:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 28:
-    UNK_0xe76d(); // UNK_0xe76d
-    break;
-  case 41:
-    UNK_0xe779(); // UNK_0xe779
-    break;
-  case 9:
-    Push(cc_TRUE); // TRUE
-    break;
-  default:
-    Push(cc_FALSE); // FALSE
-    break;
-
-  }
+  DISPOSAL(); // DISPOSAL case
   Push(cc_FALSE); // FALSE
   _eq_(); // =
   Push(Pop() & Pop()); // AND
@@ -975,38 +978,7 @@ void UNK_0xeca1() // UNK_0xeca1
 void UNK_0xecd8() // UNK_0xecd8
 {
   _at_INST_dash_C(); // @INST-C
-  Pop();
-  switch(Pop()) // DISPOSAL
-  {
-  case 68:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 26:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 21:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 31:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 33:
-    Push(cc_TRUE); // TRUE
-    break;
-  case 28:
-    UNK_0xe76d(); // UNK_0xe76d
-    break;
-  case 41:
-    UNK_0xe779(); // UNK_0xe779
-    break;
-  case 9:
-    Push(cc_TRUE); // TRUE
-    break;
-  default:
-    Push(cc_FALSE); // FALSE
-    break;
-
-  }
+  DISPOSAL(); // DISPOSAL case
   if (Pop() == 0) goto label1;
   _dash_ICON(); // -ICON
   IDELETE(); // IDELETE

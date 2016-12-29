@@ -2055,7 +2055,23 @@ void UNK_0xf402() // UNK_0xf402
 // ================================================
 // 0xf40a: WORD '.READINGS' codep=0x4a4f parp=0xf418
 // ================================================
-// 0xf418: db 0x02 0x00 0x02 0xf4 0x19 0x00 0x9c 0xf3 0x20 0x00 0xdc 0xf2 '            '
+
+void _dot_READINGS() // .READINGS
+{
+  switch(Pop()) // .READINGS
+  {
+  case 25:
+    UNK_0xf39c(); // UNK_0xf39c
+    break;
+  case 32:
+    UNK_0xf2dc(); // UNK_0xf2dc
+    break;
+  default:
+    UNK_0xf402(); // UNK_0xf402
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf424: WORD '(/SENSORS)' codep=0x224c parp=0xf433
@@ -2121,20 +2137,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   if (Pop() == 0) goto label4;
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
-  switch(Pop()) // .READINGS
-  {
-  case 25:
-    UNK_0xf39c(); // UNK_0xf39c
-    break;
-  case 32:
-    UNK_0xf2dc(); // UNK_0xf2dc
-    break;
-  default:
-    UNK_0xf402(); // UNK_0xf402
-    break;
-
-  }
+  _dot_READINGS(); // .READINGS case
   ICLOSE(); // ICLOSE
   goto label5;
 

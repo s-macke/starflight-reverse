@@ -881,18 +881,9 @@ void UNK_0xede1() // UNK_0xede1
 // ================================================
 // 0xedfb: WORD '(.DOOR)' codep=0x4a4f parp=0xee07
 // ================================================
-// 0xee07: db 0x07 0x00 0xe1 0xed 0x01 0x00 0x62 0xed 0x02 0x00 0x72 0xed 0x03 0x00 0x88 0xed 0x04 0x00 0xa1 0xed 0x05 0x00 0xb3 0xed 0x06 0x00 0xbe 0xed 0x07 0x00 0xcf 0xed '      b   r                     '
 
-// ================================================
-// 0xee27: WORD 'UNK_0xee29' codep=0x224c parp=0xee29
-// ================================================
-
-void UNK_0xee29() // UNK_0xee29
+void _ro__dot_DOOR_rc_() // (.DOOR)
 {
-  _at_CRS(); // @CRS
-  Push(pp_UNK_0xeced); // UNK_0xeced size: 0
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // (.DOOR)
   {
   case 1:
@@ -921,6 +912,18 @@ void UNK_0xee29() // UNK_0xee29
     break;
 
   }
+}
+
+// ================================================
+// 0xee27: WORD 'UNK_0xee29' codep=0x224c parp=0xee29
+// ================================================
+
+void UNK_0xee29() // UNK_0xee29
+{
+  _at_CRS(); // @CRS
+  Push(pp_UNK_0xeced); // UNK_0xeced size: 0
+  Push(Read16(Pop())); // @
+  _ro__dot_DOOR_rc_(); // (.DOOR) case
   UNK_0xed10(); // UNK_0xed10
   _ex_CRS(); // !CRS
 }
@@ -1774,25 +1777,9 @@ void PORT_dash_PIC() // PORT-PIC
 // ================================================
 // 0xf45a: WORD 'DO-ROOM' codep=0x4a4f parp=0xf466
 // ================================================
-// 0xf466: db 0x07 0x00 0x48 0x3a 0x01 0x00 0x91 0xea 0x02 0x00 0xa1 0xea 0x03 0x00 0xc1 0xea 0x04 0x00 0xd1 0xea 0x05 0x00 0xb1 0xea 0x06 0x00 0xe1 0xea 0x07 0x00 0xa2 0xeb '  H:                            '
 
-// ================================================
-// 0xf486: WORD 'UNK_0xf488' codep=0x224c parp=0xf488
-// ================================================
-
-void UNK_0xf488() // UNK_0xf488
+void DO_dash_ROOM() // DO-ROOM
 {
-  Push(pp_XBLT); // XBLT size: 2
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xea6b); // UNK_0xea6b size: 0
-  _ex__3(); // !_3
-  Push(pp_YBLT); // YBLT size: 2
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xea6f); // UNK_0xea6f size: 0
-  _ex__3(); // !_3
-  Push(pp_UNK_0xeced); // UNK_0xeced size: 0
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // DO-ROOM
   {
   case 1:
@@ -1821,6 +1808,25 @@ void UNK_0xf488() // UNK_0xf488
     break;
 
   }
+}
+
+// ================================================
+// 0xf486: WORD 'UNK_0xf488' codep=0x224c parp=0xf488
+// ================================================
+
+void UNK_0xf488() // UNK_0xf488
+{
+  Push(pp_XBLT); // XBLT size: 2
+  Push(Read16(Pop())); // @
+  Push(pp_UNK_0xea6b); // UNK_0xea6b size: 0
+  _ex__3(); // !_3
+  Push(pp_YBLT); // YBLT size: 2
+  Push(Read16(Pop())); // @
+  Push(pp_UNK_0xea6f); // UNK_0xea6f size: 0
+  _ex__3(); // !_3
+  Push(pp_UNK_0xeced); // UNK_0xeced size: 0
+  Push(Read16(Pop())); // @
+  DO_dash_ROOM(); // DO-ROOM case
   Push(pp_UNK_0xeced); // UNK_0xeced size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1832,12 +1838,44 @@ void UNK_0xf488() // UNK_0xf488
 // ================================================
 // 0xf4ac: WORD 'XWALK' codep=0x4a4f parp=0xf4b6
 // ================================================
-// 0xf4b6: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x4b 0xf3 0xff 0xff 0x61 0xf3 '  H:  K   a '
+
+void XWALK() // XWALK
+{
+  switch(Pop()) // XWALK
+  {
+  case 1:
+    UNK_0xf34b(); // UNK_0xf34b
+    break;
+  case 65535:
+    UNK_0xf361(); // UNK_0xf361
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4c2: WORD 'YWALK' codep=0x4a4f parp=0xf4cc
 // ================================================
-// 0xf4cc: db 0x02 0x00 0x48 0x3a 0x01 0x00 0x79 0xf3 0xff 0xff 0x91 0xf3 '  H:  y     '
+
+void YWALK() // YWALK
+{
+  switch(Pop()) // YWALK
+  {
+  case 1:
+    UNK_0xf379(); // UNK_0xf379
+    break;
+  case 65535:
+    UNK_0xf391(); // UNK_0xf391
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4d8: WORD 'WALKIES' codep=0x224c parp=0xf4e4
@@ -1852,34 +1890,8 @@ void WALKIES() // WALKIES
   label3:
   XYSCAN(); // XYSCAN
   _2DUP(); // 2DUP
-  Pop();
-  switch(Pop()) // XWALK
-  {
-  case 1:
-    UNK_0xf34b(); // UNK_0xf34b
-    break;
-  case 65535:
-    UNK_0xf361(); // UNK_0xf361
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
-  Pop();
-  switch(Pop()) // YWALK
-  {
-  case 1:
-    UNK_0xf379(); // UNK_0xf379
-    break;
-  case 65535:
-    UNK_0xf391(); // UNK_0xf391
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  XWALK(); // XWALK case
+  YWALK(); // YWALK case
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;

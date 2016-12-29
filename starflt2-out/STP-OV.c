@@ -402,7 +402,38 @@ void UNK_0xf1f8() // UNK_0xf1f8
 // ================================================
 // 0xf248: WORD 'COLORS' codep=0x4b3b parp=0xf253
 // ================================================
-// 0xf253: db 0x07 0x00 0x6e 0x3a 0x04 0x00 0x99 0xf0 0x06 0x00 0xa3 0xf0 0x0e 0x00 0xb0 0xf0 0x0f 0x00 0xbd 0xf0 0x0a 0x00 0x39 0xf1 0x0b 0x00 0x55 0xf1 0x09 0x00 0x45 0xf1 '  n:                  9   U   E '
+
+void COLORS() // COLORS
+{
+  switch(Pop()) // COLORS
+  {
+  case 4:
+    UNK_0xf099(); // UNK_0xf099
+    break;
+  case 6:
+    UNK_0xf0a3(); // UNK_0xf0a3
+    break;
+  case 14:
+    UNK_0xf0b0(); // UNK_0xf0b0
+    break;
+  case 15:
+    UNK_0xf0bd(); // UNK_0xf0bd
+    break;
+  case 10:
+    UNK_0xf139(); // UNK_0xf139
+    break;
+  case 11:
+    UNK_0xf155(); // UNK_0xf155
+    break;
+  case 9:
+    UNK_0xf145(); // UNK_0xf145
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf273: WORD '#>A' codep=0x1d29 parp=0xf27b
@@ -608,68 +639,12 @@ void UNK_0xf38f() // UNK_0xf38f
   _dot_TTY(); // .TTY
   Push(pp_UNK_0xf180); // UNK_0xf180 size: 0
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // COLORS
-  {
-  case 4:
-    UNK_0xf099(); // UNK_0xf099
-    break;
-  case 6:
-    UNK_0xf0a3(); // UNK_0xf0a3
-    break;
-  case 14:
-    UNK_0xf0b0(); // UNK_0xf0b0
-    break;
-  case 15:
-    UNK_0xf0bd(); // UNK_0xf0bd
-    break;
-  case 10:
-    UNK_0xf139(); // UNK_0xf139
-    break;
-  case 11:
-    UNK_0xf155(); // UNK_0xf155
-    break;
-  case 9:
-    UNK_0xf145(); // UNK_0xf145
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  COLORS(); // COLORS case
   Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("AND ", 4); // (.")
   Push(pp_UNK_0xf184); // UNK_0xf184 size: 0
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // COLORS
-  {
-  case 4:
-    UNK_0xf099(); // UNK_0xf099
-    break;
-  case 6:
-    UNK_0xf0a3(); // UNK_0xf0a3
-    break;
-  case 14:
-    UNK_0xf0b0(); // UNK_0xf0b0
-    break;
-  case 15:
-    UNK_0xf0bd(); // UNK_0xf0bd
-    break;
-  case 10:
-    UNK_0xf139(); // UNK_0xf139
-    break;
-  case 11:
-    UNK_0xf155(); // UNK_0xf155
-    break;
-  case 9:
-    UNK_0xf145(); // UNK_0xf145
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  COLORS(); // COLORS case
   PRINT(" STARS?", 7); // (.")
 }
 

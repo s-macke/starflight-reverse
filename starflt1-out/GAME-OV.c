@@ -2781,7 +2781,26 @@ void UNK_0xf4b9() // UNK_0xf4b9
 // ================================================
 // 0xf4bf: WORD 'GAMEOPCASE' codep=0x4a4f parp=0xf4ca
 // ================================================
-// 0xf4ca: db 0x03 0x00 0xd9 0x8f 0x31 0x00 0x39 0xee 0x32 0x00 0xb9 0xf4 0x33 0x00 0x5a 0xef '    1 9 2   3 Z '
+
+void GAMEOPCASE() // GAMEOPCASE
+{
+  switch(Pop()) // GAMEOPCASE
+  {
+  case 49:
+    SAVEGAME(); // SAVEGAME
+    break;
+  case 50:
+    UNK_0xf4b9(); // UNK_0xf4b9
+    break;
+  case 51:
+    SET_dot_DISPLAY_dot_MODE(); // SET.DISPLAY.MODE
+    break;
+  default:
+    BYE(); // BYE
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf4da: WORD '>GAMEOPTIONS' codep=0x224c parp=0xf4dc
@@ -2810,23 +2829,7 @@ void GAMEOPTIONS() // GAMEOPTIONS
   label1:
   _dot_GAMEOPS(); // .GAMEOPS
   GET_dash_OPTION_n_(); // GET-OPTION#
-  Pop();
-  switch(Pop()) // GAMEOPCASE
-  {
-  case 49:
-    SAVEGAME(); // SAVEGAME
-    break;
-  case 50:
-    UNK_0xf4b9(); // UNK_0xf4b9
-    break;
-  case 51:
-    SET_dot_DISPLAY_dot_MODE(); // SET.DISPLAY.MODE
-    break;
-  default:
-    BYE(); // BYE
-    break;
-
-  }
+  GAMEOPCASE(); // GAMEOPCASE case
   Push(pp_RESUME); // RESUME size: 0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;

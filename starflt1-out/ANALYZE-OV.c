@@ -298,16 +298,9 @@ void UNK_0xec89() // UNK_0xec89
 // ================================================
 // 0xec96: WORD '(.VESSEL)' codep=0x4a4f parp=0xeca4
 // ================================================
-// 0xeca4: db 0x03 0x00 0x6f 0xec 0x16 0x00 0x89 0xec 0x18 0x00 0x7c 0xec 0x14 0x00 0x62 0xec '  o       |   b '
 
-// ================================================
-// 0xecb4: WORD 'UNK_0xecb6' codep=0x224c parp=0xecb6
-// ================================================
-
-void UNK_0xecb6() // UNK_0xecb6
+void _ro__dot_VESSEL_rc_() // (.VESSEL)
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Pop();
   switch(Pop()) // (.VESSEL)
   {
   case 22:
@@ -324,6 +317,16 @@ void UNK_0xecb6() // UNK_0xecb6
     break;
 
   }
+}
+
+// ================================================
+// 0xecb4: WORD 'UNK_0xecb6' codep=0x224c parp=0xecb6
+// ================================================
+
+void UNK_0xecb6() // UNK_0xecb6
+{
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  _ro__dot_VESSEL_rc_(); // (.VESSEL) case
 }
 
 
@@ -363,25 +366,9 @@ void UNK_0xecd8() // UNK_0xecd8
 // ================================================
 // 0xecf5: WORD '(.OBJECT)' codep=0x4a4f parp=0xed03
 // ================================================
-// 0xed03: db 0x04 0x00 0x62 0xec 0x19 0x00 0xb6 0xec 0x18 0x00 0xbe 0xec 0x20 0x00 0xcb 0xec 0x17 0x00 0xd8 0xec '  b                 '
 
-// ================================================
-// 0xed17: WORD '.OBJECT' codep=0x224c parp=0xed19
-// ================================================
-
-void _dot_OBJECT() // .OBJECT
+void _ro__dot_OBJECT_rc_() // (.OBJECT)
 {
-  SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
-  if (Pop() == 0) goto label1;
-  PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
-  CTCR(); // CTCR
-  PRINT(" OBJECT: ", 9); // (.")
-
-  label1:
-  CTINIT(); // CTINIT
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
   switch(Pop()) // (.OBJECT)
   {
   case 25:
@@ -401,6 +388,25 @@ void _dot_OBJECT() // .OBJECT
     break;
 
   }
+}
+
+// ================================================
+// 0xed17: WORD '.OBJECT' codep=0x224c parp=0xed19
+// ================================================
+
+void _dot_OBJECT() // .OBJECT
+{
+  SetColor("BLUE");
+  _ex_COLOR(); // !COLOR
+  if (Pop() == 0) goto label1;
+  PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
+  CTCR(); // CTCR
+  PRINT(" OBJECT: ", 9); // (.")
+
+  label1:
+  CTINIT(); // CTINIT
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  _ro__dot_OBJECT_rc_(); // (.OBJECT) case
 }
 
 
@@ -535,21 +541,9 @@ void UNK_0xee31() // UNK_0xee31
 // ================================================
 // 0xee3d: WORD '(.TYPE)' codep=0x4a4f parp=0xee49
 // ================================================
-// 0xee49: db 0x03 0x00 0x62 0xec 0x01 0x00 0x15 0xee 0x02 0x00 0x25 0xee 0x03 0x00 0x31 0xee '  b       %   1 '
 
-// ================================================
-// 0xee59: WORD '.TYPE' codep=0x224c parp=0xee5b
-// ================================================
-
-void _dot_TYPE() // .TYPE
+void _ro__dot_TYPE_rc_() // (.TYPE)
 {
-  HEADER(); // HEADER
-  PRINT("TYPE: ", 6); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
-  if (Pop() == 0) return;
-  LoadData("UNK_0xeb9a"); // from 'VESSEL      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.TYPE)
   {
   case 1:
@@ -566,6 +560,21 @@ void _dot_TYPE() // .TYPE
     break;
 
   }
+}
+
+// ================================================
+// 0xee59: WORD '.TYPE' codep=0x224c parp=0xee5b
+// ================================================
+
+void _dot_TYPE() // .TYPE
+{
+  HEADER(); // HEADER
+  PRINT("TYPE: ", 6); // (.")
+  _ask__dot_CERTAIN(); // ?.CERTAIN
+  if (Pop() == 0) return;
+  LoadData("UNK_0xeb9a"); // from 'VESSEL      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_TYPE_rc_(); // (.TYPE) case
 }
 
 
@@ -810,7 +819,35 @@ void UNK_0xf033() // UNK_0xf033
 // ================================================
 // 0xf03f: WORD '.TDESC' codep=0x4a4f parp=0xf04a
 // ================================================
-// 0xf04a: db 0x06 0x00 0x48 0x3a 0x00 0x00 0xf9 0xef 0x01 0x00 0xec 0xef 0x02 0x00 0x06 0xf0 0x03 0x00 0x16 0xf0 0x04 0x00 0x25 0xf0 0x05 0x00 0x33 0xf0 '  H:                  %   3 '
+
+void _dot_TDESC() // .TDESC
+{
+  switch(Pop()) // .TDESC
+  {
+  case 0:
+    UNK_0xeff9(); // UNK_0xeff9
+    break;
+  case 1:
+    UNK_0xefec(); // UNK_0xefec
+    break;
+  case 2:
+    UNK_0xf006(); // UNK_0xf006
+    break;
+  case 3:
+    UNK_0xf016(); // UNK_0xf016
+    break;
+  case 4:
+    UNK_0xf025(); // UNK_0xf025
+    break;
+  case 5:
+    UNK_0xf033(); // UNK_0xf033
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf066: WORD 'UNK_0xf068' codep=0x224c parp=0xf068
@@ -827,32 +864,7 @@ void UNK_0xf068() // UNK_0xf068
   LoadData("UNK_0xebef"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Pop();
-  switch(Pop()) // .TDESC
-  {
-  case 0:
-    UNK_0xeff9(); // UNK_0xeff9
-    break;
-  case 1:
-    UNK_0xefec(); // UNK_0xefec
-    break;
-  case 2:
-    UNK_0xf006(); // UNK_0xf006
-    break;
-  case 3:
-    UNK_0xf016(); // UNK_0xf016
-    break;
-  case 4:
-    UNK_0xf025(); // UNK_0xf025
-    break;
-  case 5:
-    UNK_0xf033(); // UNK_0xf033
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_TDESC(); // .TDESC case
   OVER(); // OVER
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -861,32 +873,7 @@ void UNK_0xf068() // UNK_0xf068
 
   label1:
   PRINT(" TO ", 4); // (.")
-  Pop();
-  switch(Pop()) // .TDESC
-  {
-  case 0:
-    UNK_0xeff9(); // UNK_0xeff9
-    break;
-  case 1:
-    UNK_0xefec(); // UNK_0xefec
-    break;
-  case 2:
-    UNK_0xf006(); // UNK_0xf006
-    break;
-  case 3:
-    UNK_0xf016(); // UNK_0xf016
-    break;
-  case 4:
-    UNK_0xf025(); // UNK_0xf025
-    break;
-  case 5:
-    UNK_0xf033(); // UNK_0xf033
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _dot_TDESC(); // .TDESC case
 }
 
 
@@ -943,21 +930,9 @@ void UNK_0xf0d6() // UNK_0xf0d6
 // ================================================
 // 0xf0e1: WORD '(.SURF)' codep=0x4a4f parp=0xf0ed
 // ================================================
-// 0xf0ed: db 0x05 0x00 0x62 0xec 0x01 0x00 0xa7 0xf0 0x02 0x00 0xb1 0xf0 0x03 0x00 0xbe 0xf0 0x05 0x00 0xcb 0xf0 0x04 0x00 0xd6 0xf0 '  b                     '
 
-// ================================================
-// 0xf105: WORD '.SURF' codep=0x224c parp=0xf107
-// ================================================
-
-void _dot_SURF() // .SURF
+void _ro__dot_SURF_rc_() // (.SURF)
 {
-  HEADER(); // HEADER
-  PRINT("PREDOMINANT SURFACE: ", 21); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
-  if (Pop() == 0) return;
-  LoadData("UNK_0xebc7"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.SURF)
   {
   case 1:
@@ -980,6 +955,21 @@ void _dot_SURF() // .SURF
     break;
 
   }
+}
+
+// ================================================
+// 0xf105: WORD '.SURF' codep=0x224c parp=0xf107
+// ================================================
+
+void _dot_SURF() // .SURF
+{
+  HEADER(); // HEADER
+  PRINT("PREDOMINANT SURFACE: ", 21); // (.")
+  _ask__dot_CERTAIN(); // ?.CERTAIN
+  if (Pop() == 0) return;
+  LoadData("UNK_0xebc7"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_SURF_rc_(); // (.SURF) case
 }
 
 
@@ -1081,21 +1071,9 @@ void UNK_0xf1c7() // UNK_0xf1c7
 // ================================================
 // 0xf1d3: WORD '(.ATMO)' codep=0x4a4f parp=0xf1df
 // ================================================
-// 0xf1df: db 0x05 0x00 0x76 0xee 0x01 0x00 0x9e 0xf1 0x02 0x00 0x93 0xf1 0x03 0x00 0xac 0xf1 0x04 0x00 0xbb 0xf1 0x05 0x00 0xc7 0xf1 '  v                     '
 
-// ================================================
-// 0xf1f7: WORD 'UNK_0xf1f9' codep=0x224c parp=0xf1f9
-// ================================================
-
-void UNK_0xf1f9() // UNK_0xf1f9
+void _ro__dot_ATMO_rc_() // (.ATMO)
 {
-  HEADER(); // HEADER
-  PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
-  if (Pop() == 0) return;
-  LoadData("UNK_0xebe7"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // (.ATMO)
   {
   case 1:
@@ -1118,6 +1096,21 @@ void UNK_0xf1f9() // UNK_0xf1f9
     break;
 
   }
+}
+
+// ================================================
+// 0xf1f7: WORD 'UNK_0xf1f9' codep=0x224c parp=0xf1f9
+// ================================================
+
+void UNK_0xf1f9() // UNK_0xf1f9
+{
+  HEADER(); // HEADER
+  PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
+  _ask__dot_CERTAIN(); // ?.CERTAIN
+  if (Pop() == 0) return;
+  LoadData("UNK_0xebe7"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _ro__dot_ATMO_rc_(); // (.ATMO) case
 }
 
 
@@ -1165,21 +1158,9 @@ void UNK_0xf24b() // UNK_0xf24b
 // ================================================
 // 0xf257: WORD '(.WEATH)' codep=0x4a4f parp=0xf264
 // ================================================
-// 0xf264: db 0x04 0x00 0x76 0xee 0x01 0x00 0x23 0xf2 0x02 0x00 0x2e 0xf2 0x03 0x00 0x3d 0xf2 0x04 0x00 0x4b 0xf2 '  v   #   .   =   K '
 
-// ================================================
-// 0xf278: WORD '.WEATH' codep=0x224c parp=0xf27a
-// ================================================
-
-void _dot_WEATH() // .WEATH
+void _ro__dot_WEATH_rc_() // (.WEATH)
 {
-  HEADER(); // HEADER
-  PRINT("GLOBAL WEATHER: ", 16); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
-  if (Pop() == 0) return;
-  LoadData("ATMO.ACTIVITY"); // from 'PLANET      '
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // (.WEATH)
   {
   case 1:
@@ -1199,6 +1180,21 @@ void _dot_WEATH() // .WEATH
     break;
 
   }
+}
+
+// ================================================
+// 0xf278: WORD '.WEATH' codep=0x224c parp=0xf27a
+// ================================================
+
+void _dot_WEATH() // .WEATH
+{
+  HEADER(); // HEADER
+  PRINT("GLOBAL WEATHER: ", 16); // (.")
+  _ask__dot_CERTAIN(); // ?.CERTAIN
+  if (Pop() == 0) return;
+  LoadData("ATMO.ACTIVITY"); // from 'PLANET      '
+  Push(Read16(Pop())); // @
+  _ro__dot_WEATH_rc_(); // (.WEATH) case
 }
 
 
@@ -1373,16 +1369,9 @@ void UNK_0xf3f7() // UNK_0xf3f7
 // ================================================
 // 0xf401: WORD '(.V/P-OBJ)' codep=0x4a4f parp=0xf410
 // ================================================
-// 0xf410: db 0x02 0x00 0xf7 0xf3 0x16 0x00 0xeb 0xf3 0x18 0x00 0xf1 0xf3 '            '
 
-// ================================================
-// 0xf41c: WORD 'UNK_0xf41e' codep=0x224c parp=0xf41e
-// ================================================
-
-void UNK_0xf41e() // UNK_0xf41e
+void _ro__dot_V_slash_P_dash_OBJ_rc_() // (.V/P-OBJ)
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Pop();
   switch(Pop()) // (.V/P-OBJ)
   {
   case 22:
@@ -1396,6 +1385,16 @@ void UNK_0xf41e() // UNK_0xf41e
     break;
 
   }
+}
+
+// ================================================
+// 0xf41c: WORD 'UNK_0xf41e' codep=0x224c parp=0xf41e
+// ================================================
+
+void UNK_0xf41e() // UNK_0xf41e
+{
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  _ro__dot_V_slash_P_dash_OBJ_rc_(); // (.V/P-OBJ) case
 }
 
 
@@ -1433,7 +1432,26 @@ void UNK_0xf436() // UNK_0xf436
 // ================================================
 // 0xf448: WORD '(.ANALYSIS)' codep=0x4a4f parp=0xf458
 // ================================================
-// 0xf458: db 0x03 0x00 0x6e 0x3a 0x20 0x00 0x26 0xf4 0x17 0x00 0x36 0xf4 0x19 0x00 0x1e 0xf4 '  n:  &   6     '
+
+void _ro__dot_ANALYSIS_rc_() // (.ANALYSIS)
+{
+  switch(Pop()) // (.ANALYSIS)
+  {
+  case 32:
+    UNK_0xf426(); // UNK_0xf426
+    break;
+  case 23:
+    UNK_0xf436(); // UNK_0xf436
+    break;
+  case 25:
+    UNK_0xf41e(); // UNK_0xf41e
+    break;
+  default:
+    UNRAVEL(); // UNRAVEL
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf468: WORD '(/ANALYSIS)' codep=0x224c parp=0xf478
@@ -1454,23 +1472,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   _gt_C_plus_S(); // >C+S
   _dot_OBJECT(); // .OBJECT
   _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
-  switch(Pop()) // (.ANALYSIS)
-  {
-  case 32:
-    UNK_0xf426(); // UNK_0xf426
-    break;
-  case 23:
-    UNK_0xf436(); // UNK_0xf436
-    break;
-  case 25:
-    UNK_0xf41e(); // UNK_0xf41e
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS) case
   ICLOSE(); // ICLOSE
   Push(0x1b58); Push(0x0000);
   goto label2;

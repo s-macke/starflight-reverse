@@ -4159,17 +4159,9 @@ void UNK_0xf3cb() // UNK_0xf3cb
 // ================================================
 // 0xf3f1: WORD 'SKYCASE' codep=0x4a4f parp=0xf3fd
 // ================================================
-// 0xf3fd: db 0x04 0x00 0x8b 0x4f 0x00 0x00 0x0c 0x4f 0x07 0x00 0xad 0x4f 0x0c 0x00 0xad 0x4f 0x13 0x00 0xad 0x4f '   O   O   O   O   O'
 
-// ================================================
-// 0xf411: WORD 'UNK_0xf413' codep=0x224c parp=0xf413
-// ================================================
-
-void UNK_0xf413() // UNK_0xf413
+void SKYCASE() // SKYCASE
 {
-  Push(pp_ATMO); // ATMO size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // SKYCASE
   {
   case 0:
@@ -4189,6 +4181,17 @@ void UNK_0xf413() // UNK_0xf413
     break;
 
   }
+}
+
+// ================================================
+// 0xf411: WORD 'UNK_0xf413' codep=0x224c parp=0xf413
+// ================================================
+
+void UNK_0xf413() // UNK_0xf413
+{
+  Push(pp_ATMO); // ATMO size: 2
+  Push(Read16(Pop())); // @
+  SKYCASE(); // SKYCASE case
   Push(pp_UNK_0xdba0); // UNK_0xdba0 size: 0
   _ex__3(); // !_3
 }

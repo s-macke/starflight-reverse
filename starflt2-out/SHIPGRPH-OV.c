@@ -154,7 +154,32 @@ void UNK_0xecfb() // UNK_0xecfb
 // ================================================
 // 0xed09: WORD 'A>TEXT' codep=0x4b3b parp=0xed14
 // ================================================
-// 0xed14: db 0x05 0x00 0x48 0x3a 0x01 0x00 0xc6 0xec 0x02 0x00 0xd6 0xec 0x03 0x00 0xe1 0xec 0x04 0x00 0xf0 0xec 0x05 0x00 0xfb 0xec '  H:                    '
+
+void A_gt_TEXT() // A>TEXT
+{
+  switch(Pop()) // A>TEXT
+  {
+  case 1:
+    UNK_0xecc6(); // UNK_0xecc6
+    break;
+  case 2:
+    UNK_0xecd6(); // UNK_0xecd6
+    break;
+  case 3:
+    UNK_0xece1(); // UNK_0xece1
+    break;
+  case 4:
+    UNK_0xecf0(); // UNK_0xecf0
+    break;
+  case 5:
+    UNK_0xecfb(); // UNK_0xecfb
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xed2c: WORD 'UNK_0xed2e' codep=0x7420 parp=0xed2e
@@ -350,29 +375,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   POS_dot_PXT(); // POS.PXT
   Push(0x6606); // IFIELD(UNK_0xed4c)
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // A>TEXT
-  {
-  case 1:
-    UNK_0xecc6(); // UNK_0xecc6
-    break;
-  case 2:
-    UNK_0xecd6(); // UNK_0xecd6
-    break;
-  case 3:
-    UNK_0xece1(); // UNK_0xece1
-    break;
-  case 4:
-    UNK_0xecf0(); // UNK_0xecf0
-    break;
-  case 5:
-    UNK_0xecfb(); // UNK_0xecfb
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  A_gt_TEXT(); // A>TEXT case
   _ex_CRS(); // !CRS
 }
 

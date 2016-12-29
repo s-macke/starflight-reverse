@@ -1739,59 +1739,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
   Pop(); Pop();// 2DROP
   Push(pp_SKEY); // SKEY size: 2
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // (XYSCAN
-  {
-  case 327:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 328:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 329:
-    UNK_0xa99d(); // UNK_0xa99d
-    break;
-  case 331:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 333:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 336:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  case 337:
-    UNK_0xa9cd(); // UNK_0xa9cd
-    break;
-  case 0:
-    UNK_0xa9d5(); // UNK_0xa9d5
-    break;
-  case 92:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 126:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 124:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 500:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 96:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  default:
-    UNK_0xa9db(); // UNK_0xa9db
-    break;
-
-  }
+  _ro_XYSCAN(); // (XYSCAN case
 }
 
 
@@ -1922,59 +1870,7 @@ void UNK_0xf397() // UNK_0xf397
 
 void UNK_0xf3a7() // UNK_0xf3a7
 {
-  Pop();
-  switch(Pop()) // (XYSCAN
-  {
-  case 327:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 328:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 329:
-    UNK_0xa99d(); // UNK_0xa99d
-    break;
-  case 331:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 333:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 336:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  case 337:
-    UNK_0xa9cd(); // UNK_0xa9cd
-    break;
-  case 0:
-    UNK_0xa9d5(); // UNK_0xa9d5
-    break;
-  case 92:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 126:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 124:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 500:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 96:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  default:
-    UNK_0xa9db(); // UNK_0xa9db
-    break;
-
-  }
+  _ro_XYSCAN(); // (XYSCAN case
   UNK_0xf397(); // UNK_0xf397
   if (Pop() == 0) goto label1;
   UNK_0xf2b8(); // UNK_0xf2b8

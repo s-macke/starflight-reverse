@@ -19131,26 +19131,9 @@ void UNK_0x7cc3() // UNK_0x7cc3
 // ================================================
 // 0x7cd3: WORD 'FLD@' codep=0x4b3b parp=0x7cdc
 // ================================================
-// 0x7cdc: db 0x03 0x00 0xb0 0x0b 0x01 0x00 0x94 0x0c 0x02 0x00 0xb0 0x0b 0x03 0x00 0x85 0x4a '               J'
 
-// ================================================
-// 0x7cec: WORD 'FLD!' codep=0x4b3b parp=0x7cf5
-// ================================================
-// 0x7cf5: db 0x03 0x00 0x18 0x6d 0x01 0x00 0x0c 0x6d 0x02 0x00 0x18 0x6d 0x03 0x00 0x34 0x6d '   m   m   m  4m'
-
-// ================================================
-// 0x7d05: WORD 'IFLD@' codep=0x224c parp=0x7d0f
-// ================================================
-
-void IFLD_at_() // IFLD@
+void FLD_at_() // FLD@
 {
-  Push(Read16(regsp)); // DUP
-  Push(Pop()+2); // 2+
-  Push(Read8(Pop())&0xFF); // C@
-  SWAP(); // SWAP
-  EXECUTE(); // EXECUTE
-  SWAP(); // SWAP
-  Pop();
   switch(Pop()) // FLD@
   {
   case 1:
@@ -19169,20 +19152,12 @@ void IFLD_at_() // IFLD@
   }
 }
 
-
 // ================================================
-// 0x7d1f: WORD 'IFLD!' codep=0x224c parp=0x7d29
+// 0x7cec: WORD 'FLD!' codep=0x4b3b parp=0x7cf5
 // ================================================
 
-void IFLD_ex_() // IFLD!
+void FLD_ex_() // FLD!
 {
-  Push(Read16(regsp)); // DUP
-  Push(Pop()+2); // 2+
-  Push(Read8(Pop())&0xFF); // C@
-  SWAP(); // SWAP
-  EXECUTE(); // EXECUTE
-  SWAP(); // SWAP
-  Pop();
   switch(Pop()) // FLD!
   {
   case 1:
@@ -19199,6 +19174,37 @@ void IFLD_ex_() // IFLD!
     break;
 
   }
+}
+
+// ================================================
+// 0x7d05: WORD 'IFLD@' codep=0x224c parp=0x7d0f
+// ================================================
+
+void IFLD_at_() // IFLD@
+{
+  Push(Read16(regsp)); // DUP
+  Push(Pop()+2); // 2+
+  Push(Read8(Pop())&0xFF); // C@
+  SWAP(); // SWAP
+  EXECUTE(); // EXECUTE
+  SWAP(); // SWAP
+  FLD_at_(); // FLD@ case
+}
+
+
+// ================================================
+// 0x7d1f: WORD 'IFLD!' codep=0x224c parp=0x7d29
+// ================================================
+
+void IFLD_ex_() // IFLD!
+{
+  Push(Read16(regsp)); // DUP
+  Push(Pop()+2); // 2+
+  Push(Read8(Pop())&0xFF); // C@
+  SWAP(); // SWAP
+  EXECUTE(); // EXECUTE
+  SWAP(); // SWAP
+  FLD_ex_(); // FLD! case
 }
 
 // 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
@@ -19821,52 +19827,9 @@ void UNK_0x80c7() // UNK_0x80c7
 // ================================================
 // 0x8109: WORD 'SET?REU' codep=0x4b3b parp=0x8115
 // ================================================
-// 0x8115: db 0x10 0x00 0x12 0x4d 0x0b 0x00 0x1d 0x4d 0x29 0x00 0x1d 0x4d 0x0e 0x00 0x1d 0x4d 0x1a 0x00 0x1d 0x4d 0x44 0x00 0x1d 0x4d 0x1c 0x00 0x1d 0x4d 0x38 0x00 0x1d 0x4d 0x24 0x00 0x1d 0x4d 0x18 0x00 0x1d 0x4d 0x19 0x00 0x1d 0x4d 0x43 0x00 0x1d 0x4d 0x15 0x00 0x1d 0x4d 0x09 0x00 0x1d 0x4d 0x1f 0x00 0x1d 0x4d 0x21 0x00 0x1d 0x4d 0x1d 0x00 0x1d 0x4d '   M   M)  M   M   MD  M   M8  M$  M   M   MC  M   M   M   M!  M   M'
 
-// ================================================
-// 0x8159: WORD 'VICREAT' codep=0x224c parp=0x8165
-// ================================================
-
-void VICREAT() // VICREAT
+void SET_ask_REU() // SET?REU
 {
-  Push(pp_UNK_0x5efa); // UNK_0x5efa size: 0
-  OFF_2(); // OFF_2
-  Push(Read16(regsp)); // DUP
-  Push(0x00fe);
-  _gt_(); // >
-  _ask_UNRAVEL(); // ?UNRAVEL
-  Push(Pop()+1); // 1+
-  UNK_0x80c7(); // UNK_0x80c7
-  Push(Pop()-1); // 1-
-  CI(); // CI
-  VA_gt_BUF(); // VA>BUF
-  _gt_R(); // >R
-  Push(h); // I
-  Push(0x000b);
-  Push(Pop() + Pop()); // +
-  C_ex__2(); // C!_2
-  Push(0x0030);
-  R_gt_(); // R>
-  Push(cc__9); // 9
-  Push(Pop() + Pop()); // +
-  C_ex__2(); // C!_2
-  SET_dash_CUR(); // SET-CUR
-  NULLPOI(); // NULLPOI
-  CI(); // CI
-  ICLOSE(); // ICLOSE
-}
-
-
-// ================================================
-// 0x819f: WORD 'ICREATE' codep=0x224c parp=0x81ab
-// ================================================
-
-void ICREATE() // ICREATE
-{
-  Push(pp_UNK_0x5efa); // UNK_0x5efa size: 0
-  Push(cc__3); // 3
-  PICK(); // PICK
-  Pop();
   switch(Pop()) // SET?REU
   {
   case 11:
@@ -19922,6 +19885,52 @@ void ICREATE() // ICREATE
     break;
 
   }
+}
+
+// ================================================
+// 0x8159: WORD 'VICREAT' codep=0x224c parp=0x8165
+// ================================================
+
+void VICREAT() // VICREAT
+{
+  Push(pp_UNK_0x5efa); // UNK_0x5efa size: 0
+  OFF_2(); // OFF_2
+  Push(Read16(regsp)); // DUP
+  Push(0x00fe);
+  _gt_(); // >
+  _ask_UNRAVEL(); // ?UNRAVEL
+  Push(Pop()+1); // 1+
+  UNK_0x80c7(); // UNK_0x80c7
+  Push(Pop()-1); // 1-
+  CI(); // CI
+  VA_gt_BUF(); // VA>BUF
+  _gt_R(); // >R
+  Push(h); // I
+  Push(0x000b);
+  Push(Pop() + Pop()); // +
+  C_ex__2(); // C!_2
+  Push(0x0030);
+  R_gt_(); // R>
+  Push(cc__9); // 9
+  Push(Pop() + Pop()); // +
+  C_ex__2(); // C!_2
+  SET_dash_CUR(); // SET-CUR
+  NULLPOI(); // NULLPOI
+  CI(); // CI
+  ICLOSE(); // ICLOSE
+}
+
+
+// ================================================
+// 0x819f: WORD 'ICREATE' codep=0x224c parp=0x81ab
+// ================================================
+
+void ICREATE() // ICREATE
+{
+  Push(pp_UNK_0x5efa); // UNK_0x5efa size: 0
+  Push(cc__3); // 3
+  PICK(); // PICK
+  SET_ask_REU(); // SET?REU case
   OVER(); // OVER
   Func6("FILE-SL");
   Push(Read8(Pop())&0xFF); // C@
@@ -20748,19 +20757,9 @@ void UNK_0x875b() // UNK_0x875b
 // ================================================
 // 0x876d: WORD 'MON>MEM' codep=0x4b3b parp=0x8779
 // ================================================
-// 0x8779: db 0x03 0x00 0x47 0x87 0x04 0x00 0x21 0x87 0x08 0x00 0x33 0x87 0x06 0x00 0x5b 0x87 '  G   !   3   [ '
 
-// ================================================
-// 0x8789: WORD 'SETDBUF' codep=0x224c parp=0x8795
-// ================================================
-
-void SETDBUF() // SETDBUF
+void MON_gt_MEM() // MON>MEM
 {
-  Push(pp_REMSEG); // REMSEG size: 2
-  Push(Read16(Pop())); // @
-  Push(0x010a);
-  L_at_(); // L@
-  Pop();
   switch(Pop()) // MON>MEM
   {
   case 4:
@@ -20777,6 +20776,19 @@ void SETDBUF() // SETDBUF
     break;
 
   }
+}
+
+// ================================================
+// 0x8789: WORD 'SETDBUF' codep=0x224c parp=0x8795
+// ================================================
+
+void SETDBUF() // SETDBUF
+{
+  Push(pp_REMSEG); // REMSEG size: 2
+  Push(Read16(Pop())); // @
+  Push(0x010a);
+  L_at_(); // L@
+  MON_gt_MEM(); // MON>MEM case
   Push(0x51b8);
   D_ex_(); // D!
   Push(pp_DBUF_dash_SE); // DBUF-SE size: 2
@@ -22883,7 +22895,29 @@ void _dot_CIRCLE_2() // .CIRCLE_2
 // ================================================
 // 0x9624: WORD 'SYSCASE' codep=0x4b3b parp=0x9630
 // ================================================
-// 0x9630: db 0x04 0x00 0xef 0x5c 0x04 0x00 0x09 0x5d 0x06 0x00 0x09 0x5d 0x0f 0x00 0xfc 0x5c 0x0e 0x00 0xfc 0x5c '   \   ]   ]   \   \'
+
+void SYSCASE() // SYSCASE
+{
+  switch(Pop()) // SYSCASE
+  {
+  case 4:
+    Push(pp_SSYSEG); // SSYSEG size: 2
+    break;
+  case 6:
+    Push(pp_SSYSEG); // SSYSEG size: 2
+    break;
+  case 15:
+    Push(pp_MSYSEG); // MSYSEG size: 2
+    break;
+  case 14:
+    Push(pp_MSYSEG); // MSYSEG size: 2
+    break;
+  default:
+    Push(pp_LSYSEG); // LSYSEG size: 2
+    break;
+
+  }
+}
 
 // ================================================
 // 0x9644: WORD 'UNK_0x9646' codep=0x224c parp=0x9646
@@ -22921,26 +22955,7 @@ void UNK_0x9646() // UNK_0x9646
 void UNK_0x9668() // UNK_0x9668
 {
   _at_IC(); // @IC
-  Pop();
-  switch(Pop()) // SYSCASE
-  {
-  case 4:
-    Push(pp_SSYSEG); // SSYSEG size: 2
-    break;
-  case 6:
-    Push(pp_SSYSEG); // SSYSEG size: 2
-    break;
-  case 15:
-    Push(pp_MSYSEG); // MSYSEG size: 2
-    break;
-  case 14:
-    Push(pp_MSYSEG); // MSYSEG size: 2
-    break;
-  default:
-    Push(pp_LSYSEG); // LSYSEG size: 2
-    break;
-
-  }
+  SYSCASE(); // SYSCASE case
   Push(Read16(Pop())); // @
   Push(0); // 0
   _at_DS(); // @DS
@@ -22984,7 +22999,29 @@ void UNK_0x9668() // UNK_0x9668
 // ================================================
 // 0x96ba: WORD '.ICONCA' codep=0x4b3b parp=0x96c6
 // ================================================
-// 0x96c6: db 0x04 0x00 0xf4 0x95 0xfd 0x00 0x68 0x96 0x32 0x00 0x46 0x96 0xff 0x00 0xe2 0x95 0xfe 0x00 0x48 0x3a '      h 2 F       H:'
+
+void _dot_ICONCA() // .ICONCA
+{
+  switch(Pop()) // .ICONCA
+  {
+  case 253:
+    UNK_0x9668(); // UNK_0x9668
+    break;
+  case 50:
+    UNK_0x9646(); // UNK_0x9646
+    break;
+  case 255:
+    UNK_0x95e2(); // UNK_0x95e2
+    break;
+  case 254:
+    NOP(); // NOP
+    break;
+  default:
+    _dot_CIRCLE_2(); // .CIRCLE_2
+    break;
+
+  }
+}
 
 // ================================================
 // 0x96da: WORD 'POINT>I' codep=0x224c parp=0x96e6
@@ -23026,26 +23063,7 @@ void _dot_ICON() // .ICON
 
   label1:
   _at_ID(); // @ID
-  Pop();
-  switch(Pop()) // .ICONCA
-  {
-  case 253:
-    UNK_0x9668(); // UNK_0x9668
-    break;
-  case 50:
-    UNK_0x9646(); // UNK_0x9646
-    break;
-  case 255:
-    UNK_0x95e2(); // UNK_0x95e2
-    break;
-  case 254:
-    NOP(); // NOP
-    break;
-  default:
-    _dot_CIRCLE_2(); // .CIRCLE_2
-    break;
-
-  }
+  _dot_ICONCA(); // .ICONCA case
 }
 
 
@@ -25237,20 +25255,9 @@ void UNK_0xa587() // UNK_0xa587
 // ================================================
 // 0xa58d: WORD '(XYSCAN' codep=0x4b3b parp=0xa599
 // ================================================
-// 0xa599: db 0x1c 0x00 0x48 0xa5 0x47 0x01 0x5f 0xa4 0x48 0x01 0x67 0xa4 0x49 0x01 0x6f 0xa4 0x02 0x00 0x68 0x9f 0x4b 0x01 0x77 0xa4 0x4d 0x01 0x1e 0xa5 0x14 0x00 0x87 0xa5 0x4f 0x01 0x2a 0xa5 0x50 0x01 0x32 0xa5 0x51 0x01 0x3a 0xa5 0x00 0x00 0x42 0xa5 0x5c 0x00 0x5f 0xa4 0x7e 0x00 0x67 0xa4 0x7c 0x00 0x77 0xa4 0xf4 0x01 0x1e 0xa5 0x4f 0x01 0x2a 0xa5 0x60 0x00 0x32 0xa5 0x3b 0x01 0xbf 0xa4 0x3c 0x01 0xc9 0xa4 0x3d 0x01 0xd3 0xa4 0x3e 0x01 0xdd 0xa4 0x3f 0x01 0xe7 0xa4 0x40 0x01 0xf1 0xa4 0x41 0x01 0xfb 0xa4 0x42 0x01 0x05 0xa5 0x43 0x01 0x0f 0xa5 0x44 0x01 0x1a 0xa5 0x52 0x01 0xa8 0x49 '  H G _ H g I o   h K w M       O * P 2 Q :   B \ _ ~ g | w     O * ` 2 ;   <   =   >   ?   @   A   B   C   D   R  I'
 
-// ================================================
-// 0xa60d: WORD 'XYSCAN' codep=0x224c parp=0xa618
-// ================================================
-
-void XYSCAN() // XYSCAN
+void _ro_XYSCAN() // (XYSCAN
 {
-  Push(pp_FQUIT); // FQUIT size: 2
-  _099(); // 099
-  Push(pp_FTRIG); // FTRIG size: 2
-  _099(); // 099
-  _i_KEY(); // 'KEY
-  Pop();
   switch(Pop()) // (XYSCAN
   {
   case 327:
@@ -25342,6 +25349,20 @@ void XYSCAN() // XYSCAN
     break;
 
   }
+}
+
+// ================================================
+// 0xa60d: WORD 'XYSCAN' codep=0x224c parp=0xa618
+// ================================================
+
+void XYSCAN() // XYSCAN
+{
+  Push(pp_FQUIT); // FQUIT size: 2
+  _099(); // 099
+  Push(pp_FTRIG); // FTRIG size: 2
+  _099(); // 099
+  _i_KEY(); // 'KEY
+  _ro_XYSCAN(); // (XYSCAN case
 }
 
 
@@ -27690,19 +27711,9 @@ void SETABLT() // SETABLT
 // ================================================
 // 0xb670: WORD '+ORG' codep=0x4b3b parp=0xb679
 // ================================================
-// 0xb679: db 0x06 0x00 0xba 0x3b 0x12 0x00 0x22 0x0f 0x13 0x00 0x30 0x0f 0x15 0x00 0x3f 0x0f 0x16 0x00 0x81 0x3b 0x17 0x00 0x89 0x3b 0x18 0x00 0x91 0x3b '   ;  "   0   ?    ;   ;   ;'
 
-// ================================================
-// 0xb695: WORD 'ORGIA' codep=0x224c parp=0xb69f
-// ================================================
-
-void ORGIA() // ORGIA
+void _plus_ORG() // +ORG
 {
-  Push(Read16(regsp)); // DUP
-  Push(0x000c);
-  MIN(); // MIN
-  SWAP(); // SWAP
-  Pop();
   switch(Pop()) // +ORG
   {
   case 18:
@@ -27728,6 +27739,19 @@ void ORGIA() // ORGIA
     break;
 
   }
+}
+
+// ================================================
+// 0xb695: WORD 'ORGIA' codep=0x224c parp=0xb69f
+// ================================================
+
+void ORGIA() // ORGIA
+{
+  Push(Read16(regsp)); // DUP
+  Push(0x000c);
+  MIN(); // MIN
+  SWAP(); // SWAP
+  _plus_ORG(); // +ORG case
   Push(Pop() + Pop()); // +
   Push(cc__3); // 3
   Push(Pop() * Pop()); // *

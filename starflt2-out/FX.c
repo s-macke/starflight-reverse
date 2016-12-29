@@ -100,17 +100,9 @@ void UNK_0xf090() // UNK_0xf090
 // ================================================
 // 0xf09a: WORD 'N>STAT' codep=0x4b3b parp=0xf0a5
 // ================================================
-// 0xf0a5: db 0x04 0x00 0x30 0x0f 0x04 0x00 0x3f 0x0f 0x08 0x00 0x81 0x3b 0x10 0x00 0x89 0x3b 0x01 0x00 0x89 0x3b '  0   ?    ;   ;   ;'
 
-// ================================================
-// 0xf0b9: WORD 'UNK_0xf0bb' codep=0x224c parp=0xf0bb
-// ================================================
-
-void UNK_0xf0bb() // UNK_0xf0bb
+void N_gt_STAT() // N>STAT
 {
-  Push(pp_A_dash_POSTU); // A-POSTU size: 2
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // N>STAT
   {
   case 4:
@@ -130,6 +122,17 @@ void UNK_0xf0bb() // UNK_0xf0bb
     break;
 
   }
+}
+
+// ================================================
+// 0xf0b9: WORD 'UNK_0xf0bb' codep=0x224c parp=0xf0bb
+// ================================================
+
+void UNK_0xf0bb() // UNK_0xf0bb
+{
+  Push(pp_A_dash_POSTU); // A-POSTU size: 2
+  Push(Read8(Pop())&0xFF); // C@
+  N_gt_STAT(); // N>STAT case
 }
 
 
@@ -303,7 +306,29 @@ void UNK_0xf18c() // UNK_0xf18c
 // ================================================
 // 0xf19b: WORD '#>.COL' codep=0x4b3b parp=0xf1a6
 // ================================================
-// 0xf1a6: db 0x04 0x00 0x48 0x3a 0x01 0x00 0x63 0xf1 0x02 0x00 0x71 0xf1 0x03 0x00 0x80 0xf1 0x04 0x00 0x8c 0xf1 '  H:  c   q         '
+
+void _n__gt__dot_COL() // #>.COL
+{
+  switch(Pop()) // #>.COL
+  {
+  case 1:
+    UNK_0xf163(); // UNK_0xf163
+    break;
+  case 2:
+    UNK_0xf171(); // UNK_0xf171
+    break;
+  case 3:
+    UNK_0xf180(); // UNK_0xf180
+    break;
+  case 4:
+    UNK_0xf18c(); // UNK_0xf18c
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf1ba: WORD 'UNK_0xf1bc' codep=0x224c parp=0xf1bc
@@ -404,26 +429,7 @@ void PSYCH() // PSYCH
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
   _dot_TTY(); // .TTY
-  Pop();
-  switch(Pop()) // #>.COL
-  {
-  case 1:
-    UNK_0xf163(); // UNK_0xf163
-    break;
-  case 2:
-    UNK_0xf171(); // UNK_0xf171
-    break;
-  case 3:
-    UNK_0xf180(); // UNK_0xf180
-    break;
-  case 4:
-    UNK_0xf18c(); // UNK_0xf18c
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _n__gt__dot_COL(); // #>.COL case
   PRINT(".", 1); // (.")
 
   label2:

@@ -309,59 +309,7 @@ void UNK_0xee28() // UNK_0xee28
   _i_KEY(); // 'KEY
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // (XYSCAN
-  {
-  case 327:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 328:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 329:
-    UNK_0xa99d(); // UNK_0xa99d
-    break;
-  case 331:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 333:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 336:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  case 337:
-    UNK_0xa9cd(); // UNK_0xa9cd
-    break;
-  case 0:
-    UNK_0xa9d5(); // UNK_0xa9d5
-    break;
-  case 92:
-    UNK_0xa98d(); // UNK_0xa98d
-    break;
-  case 126:
-    UNK_0xa995(); // UNK_0xa995
-    break;
-  case 124:
-    UNK_0xa9a5(); // UNK_0xa9a5
-    break;
-  case 500:
-    UNK_0xa9b1(); // UNK_0xa9b1
-    break;
-  case 335:
-    UNK_0xa9bd(); // UNK_0xa9bd
-    break;
-  case 96:
-    UNK_0xa9c5(); // UNK_0xa9c5
-    break;
-  default:
-    UNK_0xa9db(); // UNK_0xa9db
-    break;
-
-  }
+  _ro_XYSCAN(); // (XYSCAN case
   Pop(); Pop();// 2DROP
 }
 
@@ -1030,25 +978,9 @@ void UNK_0xf2a1() // UNK_0xf2a1
 // ================================================
 // 0xf2a9: WORD 'WPHRASE' codep=0x4a4f parp=0xf2b5
 // ================================================
-// 0xf2b5: db 0x0e 0x00 0x6e 0x3a 0x00 0x00 0x33 0xf2 0x01 0x00 0x29 0xf2 0x02 0x00 0x33 0xf2 0x03 0x00 0x3d 0xf2 0x04 0x00 0x47 0xf2 0x05 0x00 0x51 0xf2 0x06 0x00 0x5b 0xf2 0x07 0x00 0x65 0xf2 0x08 0x00 0x6f 0xf2 0x09 0x00 0x79 0xf2 0x0a 0x00 0x83 0xf2 0x0b 0x00 0x8d 0xf2 0x0c 0x00 0x97 0xf2 0x0d 0x00 0xa1 0xf2 '  n:  3   )   3   =   G   Q   [   e   o   y                 '
 
-// ================================================
-// 0xf2f1: WORD '(.STORM)' codep=0x224c parp=0xf2fe
-// ================================================
-
-void _ro__dot_STORM_rc_() // (.STORM)
+void WPHRASE() // WPHRASE
 {
-  Push(pp_ATMO); // ATMO size: 2
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  UNK_0xf21f(); // UNK_0xf21f
-  goto label2;
-
-  label1:
-  Push(pp__n_STORM); // #STORM size: 14
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // WPHRASE
   {
   case 0:
@@ -1098,6 +1030,25 @@ void _ro__dot_STORM_rc_() // (.STORM)
     break;
 
   }
+}
+
+// ================================================
+// 0xf2f1: WORD '(.STORM)' codep=0x224c parp=0xf2fe
+// ================================================
+
+void _ro__dot_STORM_rc_() // (.STORM)
+{
+  Push(pp_ATMO); // ATMO size: 2
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) Push(1); else Push(0); // 0=
+  if (Pop() == 0) goto label1;
+  UNK_0xf21f(); // UNK_0xf21f
+  goto label2;
+
+  label1:
+  Push(pp__n_STORM); // #STORM size: 14
+  Push(Read16(Pop())); // @
+  WPHRASE(); // WPHRASE case
 
   label2:
   UNK_0xee86(); // UNK_0xee86
@@ -1218,19 +1169,9 @@ void _dot_CARPET() // .CARPET
 // ================================================
 // 0xf3ef: WORD '/SURF' codep=0x4a4f parp=0xf3f9
 // ================================================
-// 0xf3f9: db 0x05 0x00 0x48 0x3a 0x00 0x00 0x69 0xf3 0x02 0x00 0x46 0xf3 0x03 0x00 0x7c 0xf3 0x04 0x00 0xa2 0xf3 0x05 0x00 0x22 0xf3 '  H:  i   F   |       " '
 
-// ================================================
-// 0xf411: WORD '.SURFACE' codep=0x224c parp=0xf41e
-// ================================================
-
-void _dot_SURFACE() // .SURFACE
+void _slash_SURF() // /SURF
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
-  _at__gt_C_plus_S(); // @>C+S
-  LoadData("UNK_0xecba"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // /SURF
   {
   case 0:
@@ -1253,6 +1194,19 @@ void _dot_SURFACE() // .SURFACE
     break;
 
   }
+}
+
+// ================================================
+// 0xf411: WORD '.SURFACE' codep=0x224c parp=0xf41e
+// ================================================
+
+void _dot_SURFACE() // .SURFACE
+{
+  Push(pp__ro_PLANET); // (PLANET size: 4
+  _at__gt_C_plus_S(); // @>C+S
+  LoadData("UNK_0xecba"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  _slash_SURF(); // /SURF case
   _dot_CARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }

@@ -858,30 +858,9 @@ void UNK_0xef00() // UNK_0xef00
 // ================================================
 // 0xef0a: WORD '#>?FIEL' codep=0x4a4f parp=0xef16
 // ================================================
-// 0xef16: db 0x08 0x00 0x8b 0x12 0x01 0x00 0x8e 0xee 0x02 0x00 0xaa 0xee 0x03 0x00 0xba 0xee 0x04 0x00 0xca 0xee 0x05 0x00 0xda 0xee 0x06 0x00 0xea 0xee 0x07 0x00 0x00 0xef 0x08 0x00 0xfa 0xee '                                    '
 
-// ================================================
-// 0xef3a: WORD 'UNK_0xef3c' codep=0x224c parp=0xef3c
-// ================================================
-
-void UNK_0xef3c() // UNK_0xef3c
+void _n__gt__ask_FIEL() // #>?FIEL
 {
-  Push(pp_RSRC); // RSRC size: 301
-  Push(cc__9); // 9
-  Push(0); // 0
-  FILL_1(); // FILL_1
-  Push(pp_UNK_0xebd6); // UNK_0xebd6 size: 0
-  OFF(); // OFF
-  Push(0); // 0
-  Push(cc__9); // 9
-  Push(1); // 1
-
-  signed short int i = Pop();
-  signed short int imax = Pop();
-  do // (DO)
-  {
-  Push(i); // I
-  Pop();
   switch(Pop()) // #>?FIEL
   {
   case 1:
@@ -913,6 +892,30 @@ void UNK_0xef3c() // UNK_0xef3c
     break;
 
   }
+}
+
+// ================================================
+// 0xef3a: WORD 'UNK_0xef3c' codep=0x224c parp=0xef3c
+// ================================================
+
+void UNK_0xef3c() // UNK_0xef3c
+{
+  Push(pp_RSRC); // RSRC size: 301
+  Push(cc__9); // 9
+  Push(0); // 0
+  FILL_1(); // FILL_1
+  Push(pp_UNK_0xebd6); // UNK_0xebd6 size: 0
+  OFF(); // OFF
+  Push(0); // 0
+  Push(cc__9); // 9
+  Push(1); // 1
+
+  signed short int i = Pop();
+  signed short int imax = Pop();
+  do // (DO)
+  {
+  Push(i); // I
+  _n__gt__ask_FIEL(); // #>?FIEL case
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
   Push(i); // I
@@ -1504,7 +1507,41 @@ void UNK_0xf31e() // UNK_0xf31e
 // ================================================
 // 0xf326: WORD '#>DAMAG' codep=0x4a4f parp=0xf332
 // ================================================
-// 0xf332: db 0x08 0x00 0x34 0x0e 0x01 0x00 0xa2 0xf2 0x02 0x00 0xac 0xf2 0x03 0x00 0xe8 0xf2 0x04 0x00 0xf2 0xf2 0x05 0x00 0xfc 0xf2 0x06 0x00 0x1e 0xf3 0x07 0x00 0xe0 0xf0 0x08 0x00 0x06 0xf3 '  4                                 '
+
+void _n__gt_DAMAG() // #>DAMAG
+{
+  switch(Pop()) // #>DAMAG
+  {
+  case 1:
+    UNK_0xf2a2(); // UNK_0xf2a2
+    break;
+  case 2:
+    UNK_0xf2ac(); // UNK_0xf2ac
+    break;
+  case 3:
+    UNK_0xf2e8(); // UNK_0xf2e8
+    break;
+  case 4:
+    UNK_0xf2f2(); // UNK_0xf2f2
+    break;
+  case 5:
+    UNK_0xf2fc(); // UNK_0xf2fc
+    break;
+  case 6:
+    UNK_0xf31e(); // UNK_0xf31e
+    break;
+  case 7:
+    UNK_0xf0e0(); // UNK_0xf0e0
+    break;
+  case 8:
+    UNK_0xf306(); // UNK_0xf306
+    break;
+  default:
+    Pop(); // DROP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf356: WORD 'UNK_0xf358' codep=0x224c parp=0xf358
@@ -1552,38 +1589,7 @@ void UNK_0xf378() // UNK_0xf378
   Push(Read8(Pop())&0xFF); // C@
   _star__slash_(); // */
   UNK_0xef76(); // UNK_0xef76
-  Pop();
-  switch(Pop()) // #>DAMAG
-  {
-  case 1:
-    UNK_0xf2a2(); // UNK_0xf2a2
-    break;
-  case 2:
-    UNK_0xf2ac(); // UNK_0xf2ac
-    break;
-  case 3:
-    UNK_0xf2e8(); // UNK_0xf2e8
-    break;
-  case 4:
-    UNK_0xf2f2(); // UNK_0xf2f2
-    break;
-  case 5:
-    UNK_0xf2fc(); // UNK_0xf2fc
-    break;
-  case 6:
-    UNK_0xf31e(); // UNK_0xf31e
-    break;
-  case 7:
-    UNK_0xf0e0(); // UNK_0xf0e0
-    break;
-  case 8:
-    UNK_0xf306(); // UNK_0xf306
-    break;
-  default:
-    Pop(); // DROP
-    break;
-
-  }
+  _n__gt_DAMAG(); // #>DAMAG case
 }
 
 

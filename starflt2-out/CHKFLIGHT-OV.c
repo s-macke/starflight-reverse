@@ -232,7 +232,26 @@ void UNK_0xf2fb() // UNK_0xf2fb
 // ================================================
 // 0xf311: WORD '(.CS)' codep=0x4b3b parp=0xf31b
 // ================================================
-// 0xf31b: db 0x03 0x00 0x48 0x3a 0x01 0x00 0xd0 0xf2 0x06 0x00 0xe4 0xf2 0x07 0x00 0xfb 0xf2 '  H:            '
+
+void _ro__dot_CS_rc_() // (.CS)
+{
+  switch(Pop()) // (.CS)
+  {
+  case 1:
+    UNK_0xf2d0(); // UNK_0xf2d0
+    break;
+  case 6:
+    UNK_0xf2e4(); // UNK_0xf2e4
+    break;
+  case 7:
+    UNK_0xf2fb(); // UNK_0xf2fb
+    break;
+  default:
+    NOP(); // NOP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf32b: WORD 'UNK_0xf32d' codep=0x1d29 parp=0xf32d
@@ -257,42 +276,10 @@ void UNK_0xf331() // UNK_0xf331
   Push(Read16(regsp)); // DUP
   Push(1); // 1
   Push(Pop() & Pop()); // AND
-  Pop();
-  switch(Pop()) // (.CS)
-  {
-  case 1:
-    UNK_0xf2d0(); // UNK_0xf2d0
-    break;
-  case 6:
-    UNK_0xf2e4(); // UNK_0xf2e4
-    break;
-  case 7:
-    UNK_0xf2fb(); // UNK_0xf2fb
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro__dot_CS_rc_(); // (.CS) case
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
-  Pop();
-  switch(Pop()) // (.CS)
-  {
-  case 1:
-    UNK_0xf2d0(); // UNK_0xf2d0
-    break;
-  case 6:
-    UNK_0xf2e4(); // UNK_0xf2e4
-    break;
-  case 7:
-    UNK_0xf2fb(); // UNK_0xf2fb
-    break;
-  default:
-    NOP(); // NOP
-    break;
-
-  }
+  _ro__dot_CS_rc_(); // (.CS) case
 }
 
 

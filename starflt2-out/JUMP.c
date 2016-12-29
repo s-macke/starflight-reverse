@@ -466,19 +466,9 @@ void UNK_0xef31() // UNK_0xef31
 // ================================================
 // 0xef37: WORD '(GET-AU' codep=0x4b3b parp=0xef43
 // ================================================
-// 0xef43: db 0x07 0x00 0x31 0xef 0x01 0x00 0xf7 0xed 0x02 0x00 0xf7 0xed 0x03 0x00 0x01 0xee 0x04 0x00 0x0b 0xee 0x05 0x00 0x1d 0xcb 0x06 0x00 0x1d 0xcb 0x08 0x00 0x0b 0xee '  1                             '
 
-// ================================================
-// 0xef63: WORD 'UNK_0xef65' codep=0x224c parp=0xef65
-// ================================================
-
-void UNK_0xef65() // UNK_0xef65
+void _ro_GET_dash_AU() // (GET-AU
 {
-  SetColor("BLACK");
-  _ro_SHIP_dash_C(); // (SHIP-C
-  Push(pp__n_AUX); // #AUX size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // (GET-AU
   {
   case 1:
@@ -507,6 +497,19 @@ void UNK_0xef65() // UNK_0xef65
     break;
 
   }
+}
+
+// ================================================
+// 0xef63: WORD 'UNK_0xef65' codep=0x224c parp=0xef65
+// ================================================
+
+void UNK_0xef65() // UNK_0xef65
+{
+  SetColor("BLACK");
+  _ro_SHIP_dash_C(); // (SHIP-C
+  Push(pp__n_AUX); // #AUX size: 2
+  Push(Read16(Pop())); // @
+  _ro_GET_dash_AU(); // (GET-AU case
   Push(pp_BTN_dash_REC); // BTN-REC size: 2
   Push(Read16(Pop())); // @
   UNK_0xeee3(); // UNK_0xeee3

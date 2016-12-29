@@ -407,7 +407,23 @@ void UNK_0xf348() // UNK_0xf348
 // ================================================
 // 0xf35a: WORD 'NPCREW' codep=0x4a4f parp=0xf365
 // ================================================
-// 0xf365: db 0x02 0x00 0x22 0x0f 0x01 0x00 0x34 0xf3 0xff 0xff 0x48 0xf3 '  "   4   H '
+
+void NPCREW() // NPCREW
+{
+  switch(Pop()) // NPCREW
+  {
+  case 1:
+    UNK_0xf334(); // UNK_0xf334
+    break;
+  case 65535:
+    UNK_0xf348(); // UNK_0xf348
+    break;
+  default:
+    Push(0); // 0
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf371: WORD 'UNK_0xf373' codep=0x224c parp=0xf373
@@ -454,20 +470,7 @@ void UNK_0xf373() // UNK_0xf373
   label4:
   XYSCAN(); // XYSCAN
   Pop(); // DROP
-  Pop();
-  switch(Pop()) // NPCREW
-  {
-  case 1:
-    UNK_0xf334(); // UNK_0xf334
-    break;
-  case 65535:
-    UNK_0xf348(); // UNK_0xf348
-    break;
-  default:
-    Push(0); // 0
-    break;
-
-  }
+  NPCREW(); // NPCREW case
   if (Pop() == 0) goto label3;
   Push(0x000b);
   Push(2); // 2

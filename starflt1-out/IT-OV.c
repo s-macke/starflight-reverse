@@ -514,28 +514,9 @@ void UNK_0xf0de() // UNK_0xf0de
 // ================================================
 // 0xf0f4: WORD 'IDENT-ITEM$' codep=0x4a4f parp=0xf104
 // ================================================
-// 0xf104: db 0x07 0x00 0x6e 0x3a 0x0b 0x00 0x51 0xef 0x1a 0x00 0xe9 0xef 0x1b 0x00 0x74 0xf0 0x1c 0x00 0x96 0xf0 0x28 0x00 0xc6 0xf0 0x44 0x00 0x61 0xef 0x2b 0x00 0xde 0xf0 '  n:  Q       t     (   D a +   '
 
-// ================================================
-// 0xf124: WORD 'ITEM>PAD' codep=0x224c parp=0xf131
-// ================================================
-
-void ITEM_gt_PAD() // ITEM>PAD
+void IDENT_dash_ITEM_do_() // IDENT-ITEM$
 {
-  UNK_0xee0a(); // UNK_0xee0a
-  UNK_0xee1a(); // UNK_0xee1a
-  PAD(); // PAD
-  Push(0x001e);
-  Push(Pop() + Pop()); // +
-  OVER(); // OVER
-  _dash_(); // -
-  Push(0x002e);
-  FILL_1(); // FILL_1
-  Push(0x0026);
-  PAD(); // PAD
-  C_ex_(); // C!
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
   switch(Pop()) // IDENT-ITEM$
   {
   case 11:
@@ -564,6 +545,28 @@ void ITEM_gt_PAD() // ITEM>PAD
     break;
 
   }
+}
+
+// ================================================
+// 0xf124: WORD 'ITEM>PAD' codep=0x224c parp=0xf131
+// ================================================
+
+void ITEM_gt_PAD() // ITEM>PAD
+{
+  UNK_0xee0a(); // UNK_0xee0a
+  UNK_0xee1a(); // UNK_0xee1a
+  PAD(); // PAD
+  Push(0x001e);
+  Push(Pop() + Pop()); // +
+  OVER(); // OVER
+  _dash_(); // -
+  Push(0x002e);
+  FILL_1(); // FILL_1
+  Push(0x0026);
+  PAD(); // PAD
+  C_ex_(); // C!
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  IDENT_dash_ITEM_do_(); // IDENT-ITEM$ case
 }
 
 
@@ -731,15 +734,9 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 // ================================================
 // 0xf29a: WORD 'CLASS>BOX-SPEC' codep=0x4a4f parp=0xf2ad
 // ================================================
-// 0xf2ad: db 0x07 0x00 0x6e 0x3a 0x1a 0x00 0xee 0xed 0x1c 0x00 0xf2 0xed 0x28 0x00 0xf6 0xed 0x29 0x00 0x06 0xee 0x2b 0x00 0x02 0xee 0x1b 0x00 0xfa 0xed 0x44 0x00 0xfe 0xed '  n:        (   )   +       D   '
 
-// ================================================
-// 0xf2cd: WORD 'UNK_0xf2cf' codep=0x224c parp=0xf2cf
-// ================================================
-
-void UNK_0xf2cf() // UNK_0xf2cf
+void CLASS_gt_BOX_dash_SPEC() // CLASS>BOX-SPEC
 {
-  Pop();
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
@@ -768,6 +765,15 @@ void UNK_0xf2cf() // UNK_0xf2cf
     break;
 
   }
+}
+
+// ================================================
+// 0xf2cd: WORD 'UNK_0xf2cf' codep=0x224c parp=0xf2cf
+// ================================================
+
+void UNK_0xf2cf() // UNK_0xf2cf
+{
+  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   Push(0x000b);
   SWAP(); // SWAP
   Push(1); // 1
@@ -781,35 +787,7 @@ void UNK_0xf2cf() // UNK_0xf2cf
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
-  Pop();
-  switch(Pop()) // CLASS>BOX-SPEC
-  {
-  case 26:
-    Push(cc_UNK_0xedee); // UNK_0xedee
-    break;
-  case 28:
-    Push(cc_UNK_0xedf2); // UNK_0xedf2
-    break;
-  case 40:
-    Push(cc_UNK_0xedf6); // UNK_0xedf6
-    break;
-  case 41:
-    Push(cc_UNK_0xee06); // UNK_0xee06
-    break;
-  case 43:
-    Push(cc_UNK_0xee02); // UNK_0xee02
-    break;
-  case 27:
-    Push(cc_UNK_0xedfa); // UNK_0xedfa
-    break;
-  case 68:
-    Push(cc_UNK_0xedfe); // UNK_0xedfe
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
@@ -831,35 +809,7 @@ void _gt_BOX() // >BOX
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(h); // I
-  Pop();
-  switch(Pop()) // CLASS>BOX-SPEC
-  {
-  case 26:
-    Push(cc_UNK_0xedee); // UNK_0xedee
-    break;
-  case 28:
-    Push(cc_UNK_0xedf2); // UNK_0xedf2
-    break;
-  case 40:
-    Push(cc_UNK_0xedf6); // UNK_0xedf6
-    break;
-  case 41:
-    Push(cc_UNK_0xee06); // UNK_0xee06
-    break;
-  case 43:
-    Push(cc_UNK_0xee02); // UNK_0xee02
-    break;
-  case 27:
-    Push(cc_UNK_0xedfa); // UNK_0xedfa
-    break;
-  case 68:
-    Push(cc_UNK_0xedfe); // UNK_0xedfe
-    break;
-  default:
-    UNRAVEL(); // UNRAVEL
-    break;
-
-  }
+  CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;

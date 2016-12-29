@@ -805,20 +805,9 @@ void UNK_0xef2d() // UNK_0xef2d
 // ================================================
 // 0xef4d: WORD 'TD-SCRO' codep=0x4b3b parp=0xef59
 // ================================================
-// 0xef59: db 0x02 0x00 0xa1 0xee 0xff 0xff 0x2d 0xef 0x01 0x00 0x15 0xef '      -     '
 
-// ================================================
-// 0xef65: WORD 'UNK_0xef67' codep=0x224c parp=0xef67
-// ================================================
-
-void UNK_0xef67() // UNK_0xef67
+void TD_dash_SCRO() // TD-SCRO
 {
-
-  label3:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  Pop();
   switch(Pop()) // TD-SCRO
   {
   case 65535:
@@ -832,6 +821,20 @@ void UNK_0xef67() // UNK_0xef67
     break;
 
   }
+}
+
+// ================================================
+// 0xef65: WORD 'UNK_0xef67' codep=0x224c parp=0xef67
+// ================================================
+
+void UNK_0xef67() // UNK_0xef67
+{
+
+  label3:
+  XYSCAN(); // XYSCAN
+  if (Pop() == 0) Push(1); else Push(0); // 0=
+  if (Pop() == 0) goto label1;
+  TD_dash_SCRO(); // TD-SCRO case
   goto label2;
 
   label1:
@@ -1029,20 +1032,9 @@ void UNK_0xf062() // UNK_0xf062
 // ================================================
 // 0xf078: WORD 'ACT-SCR' codep=0x4b3b parp=0xf084
 // ================================================
-// 0xf084: db 0x02 0x00 0x48 0x3a 0xff 0xff 0x4a 0xf0 0x01 0x00 0x62 0xf0 '  H:  J   b '
 
-// ================================================
-// 0xf090: WORD 'UNK_0xf092' codep=0x224c parp=0xf092
-// ================================================
-
-void UNK_0xf092() // UNK_0xf092
+void ACT_dash_SCR() // ACT-SCR
 {
-
-  label3:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  Pop();
   switch(Pop()) // ACT-SCR
   {
   case 65535:
@@ -1056,6 +1048,20 @@ void UNK_0xf092() // UNK_0xf092
     break;
 
   }
+}
+
+// ================================================
+// 0xf090: WORD 'UNK_0xf092' codep=0x224c parp=0xf092
+// ================================================
+
+void UNK_0xf092() // UNK_0xf092
+{
+
+  label3:
+  XYSCAN(); // XYSCAN
+  if (Pop() == 0) Push(1); else Push(0); // 0=
+  if (Pop() == 0) goto label1;
+  ACT_dash_SCR(); // ACT-SCR case
   goto label2;
 
   label1:
@@ -1101,7 +1107,26 @@ void UNK_0xf0c4() // UNK_0xf0c4
 // ================================================
 // 0xf0c8: WORD '#>ACTIO' codep=0x4b3b parp=0xf0d4
 // ================================================
-// 0xf0d4: db 0x03 0x00 0x6b 0x26 0x01 0x00 0xbe 0xf0 0x02 0x00 0xad 0xef 0x03 0x00 0xc4 0xf0 '  k&            '
+
+void _n__gt_ACTIO() // #>ACTIO
+{
+  switch(Pop()) // #>ACTIO
+  {
+  case 1:
+    UNK_0xf0be(); // UNK_0xf0be
+    break;
+  case 2:
+    UNK_0xefad(); // UNK_0xefad
+    break;
+  case 3:
+    UNK_0xf0c4(); // UNK_0xf0c4
+    break;
+  default:
+    BEEP(); // BEEP
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf0e4: WORD 'UNK_0xf0e6' codep=0x1d29 parp=0xf0e6
@@ -1769,23 +1794,7 @@ void DRONE() // DRONE
   ACTION_ask_(); // ACTION?
   Push(pp_ACT_n_); // ACT# size: 140
   Push(Read16(Pop())); // @
-  Pop();
-  switch(Pop()) // #>ACTIO
-  {
-  case 1:
-    UNK_0xf0be(); // UNK_0xf0be
-    break;
-  case 2:
-    UNK_0xefad(); // UNK_0xefad
-    break;
-  case 3:
-    UNK_0xf0c4(); // UNK_0xf0c4
-    break;
-  default:
-    BEEP(); // BEEP
-    break;
-
-  }
+  _n__gt_ACTIO(); // #>ACTIO case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label3;
   Push(pp_ESC_dash_EN); // ESC-EN size: 2

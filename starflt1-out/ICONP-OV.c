@@ -202,17 +202,9 @@ void UNK_0xf2a1() // UNK_0xf2a1
 // ================================================
 // 0xf2bd: WORD 'STAR-ID-CASES' codep=0x4a4f parp=0xf2cf
 // ================================================
-// 0xf2cf: db 0x01 0x00 0x67 0xf2 0x02 0x00 0x6b 0xf2 '  g   k '
 
-// ================================================
-// 0xf2d7: WORD 'UNK_0xf2d9' codep=0x224c parp=0xf2d9
-// ================================================
-
-void UNK_0xf2d9() // UNK_0xf2d9
+void STAR_dash_ID_dash_CASES() // STAR-ID-CASES
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // STAR-ID-CASES
   {
   case 2:
@@ -225,21 +217,24 @@ void UNK_0xf2d9() // UNK_0xf2d9
   }
 }
 
+// ================================================
+// 0xf2d7: WORD 'UNK_0xf2d9' codep=0x224c parp=0xf2d9
+// ================================================
+
+void UNK_0xf2d9() // UNK_0xf2d9
+{
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
+  Push(Read16(Pop())); // @
+  STAR_dash_ID_dash_CASES(); // STAR-ID-CASES case
+}
+
 
 // ================================================
 // 0xf2e1: WORD 'PLANET-ID-CASES' codep=0x4a4f parp=0xf2f5
 // ================================================
-// 0xf2f5: db 0x01 0x00 0x6f 0xf2 0x02 0x00 0x73 0xf2 '  o   s '
 
-// ================================================
-// 0xf2fd: WORD 'UNK_0xf2ff' codep=0x224c parp=0xf2ff
-// ================================================
-
-void UNK_0xf2ff() // UNK_0xf2ff
+void PLANET_dash_ID_dash_CASES() // PLANET-ID-CASES
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
-  Push(Read16(Pop())); // @
-  Pop();
   switch(Pop()) // PLANET-ID-CASES
   {
   case 2:
@@ -250,6 +245,17 @@ void UNK_0xf2ff() // UNK_0xf2ff
     break;
 
   }
+}
+
+// ================================================
+// 0xf2fd: WORD 'UNK_0xf2ff' codep=0x224c parp=0xf2ff
+// ================================================
+
+void UNK_0xf2ff() // UNK_0xf2ff
+{
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
+  Push(Read16(Pop())); // @
+  PLANET_dash_ID_dash_CASES(); // PLANET-ID-CASES case
 }
 
 
@@ -268,17 +274,9 @@ void UNK_0xf309() // UNK_0xf309
 // ================================================
 // 0xf313: WORD 'BOX-ID' codep=0x4a4f parp=0xf31e
 // ================================================
-// 0xf31e: db 0x02 0x00 0xec 0x50 0x18 0x00 0xd9 0xf2 0x20 0x00 0xff 0xf2 '   P        '
 
-// ================================================
-// 0xf32a: WORD 'UNK_0xf32c' codep=0x224c parp=0xf32c
-// ================================================
-
-void UNK_0xf32c() // UNK_0xf32c
+void BOX_dash_ID() // BOX-ID
 {
-  IOPEN(); // IOPEN
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
   switch(Pop()) // BOX-ID
   {
   case 24:
@@ -292,6 +290,17 @@ void UNK_0xf32c() // UNK_0xf32c
     break;
 
   }
+}
+
+// ================================================
+// 0xf32a: WORD 'UNK_0xf32c' codep=0x224c parp=0xf32c
+// ================================================
+
+void UNK_0xf32c() // UNK_0xf32c
+{
+  IOPEN(); // IOPEN
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  BOX_dash_ID(); // BOX-ID case
   ICLOSE(); // ICLOSE
 }
 
@@ -299,21 +308,48 @@ void UNK_0xf32c() // UNK_0xf32c
 // ================================================
 // 0xf336: WORD 'SPACE-ID' codep=0x4a4f parp=0xf343
 // ================================================
-// 0xf343: db 0x08 0x00 0xec 0x50 0x0b 0x00 0x2c 0xf3 0x14 0x00 0x93 0xf2 0x17 0x00 0xde 0x50 0x18 0x00 0xd9 0xf2 0x19 0x00 0xa1 0xf2 0x20 0x00 0xff 0xf2 0x2d 0x00 0xfa 0x50 0x2e 0x00 0x09 0xf3 '   P  ,        P            -  P.   '
+
+void SPACE_dash_ID() // SPACE-ID
+{
+  switch(Pop()) // SPACE-ID
+  {
+  case 11:
+    UNK_0xf32c(); // UNK_0xf32c
+    break;
+  case 20:
+    UNK_0xf293(); // UNK_0xf293
+    break;
+  case 23:
+    Push(cc_SYS_dash_ICO); // SYS-ICO
+    break;
+  case 24:
+    UNK_0xf2d9(); // UNK_0xf2d9
+    break;
+  case 25:
+    UNK_0xf2a1(); // UNK_0xf2a1
+    break;
+  case 32:
+    UNK_0xf2ff(); // UNK_0xf2ff
+    break;
+  case 45:
+    Push(cc_FLUX_dash_IC); // FLUX-IC
+    break;
+  case 46:
+    UNK_0xf309(); // UNK_0xf309
+    break;
+  default:
+    Push(cc_INVIS_dash_I); // INVIS-I
+    break;
+
+  }
+}
 
 // ================================================
 // 0xf367: WORD 'RUIN-ID-CASES' codep=0x4a4f parp=0xf379
 // ================================================
-// 0xf379: db 0x02 0x00 0x83 0xf2 0x02 0x00 0x87 0xf2 0x04 0x00 0x87 0xf2 '            '
 
-// ================================================
-// 0xf385: WORD 'UNK_0xf387' codep=0x224c parp=0xf387
-// ================================================
-
-void UNK_0xf387() // UNK_0xf387
+void RUIN_dash_ID_dash_CASES() // RUIN-ID-CASES
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Pop();
   switch(Pop()) // RUIN-ID-CASES
   {
   case 2:
@@ -327,6 +363,16 @@ void UNK_0xf387() // UNK_0xf387
     break;
 
   }
+}
+
+// ================================================
+// 0xf385: WORD 'UNK_0xf387' codep=0x224c parp=0xf387
+// ================================================
+
+void UNK_0xf387() // UNK_0xf387
+{
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  RUIN_dash_ID_dash_CASES(); // RUIN-ID-CASES case
 }
 
 
@@ -371,54 +417,9 @@ void UNK_0xf3ab() // UNK_0xf3ab
 // ================================================
 // 0xf3c1: WORD 'PLANET-ID' codep=0x4a4f parp=0xf3cf
 // ================================================
-// 0xf3cf: db 0x07 0x00 0x6e 0x3a 0x28 0x00 0x77 0xf2 0x29 0x00 0x87 0xf3 0x2a 0x00 0x8f 0xf2 0x44 0x00 0x8f 0xf3 0x14 0x00 0x8b 0xf2 0x1a 0x00 0xab 0xf3 0x1c 0x00 0x7f 0xf2 '  n:( w )   *   D              '
 
-// ================================================
-// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1
-// ================================================
-
-void UNK_0xf3f1() // UNK_0xf3f1
+void PLANET_dash_ID() // PLANET-ID
 {
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
-  Pop();
-  switch(Pop()) // SPACE-ID
-  {
-  case 11:
-    UNK_0xf32c(); // UNK_0xf32c
-    break;
-  case 20:
-    UNK_0xf293(); // UNK_0xf293
-    break;
-  case 23:
-    Push(cc_SYS_dash_ICO); // SYS-ICO
-    break;
-  case 24:
-    UNK_0xf2d9(); // UNK_0xf2d9
-    break;
-  case 25:
-    UNK_0xf2a1(); // UNK_0xf2a1
-    break;
-  case 32:
-    UNK_0xf2ff(); // UNK_0xf2ff
-    break;
-  case 45:
-    Push(cc_FLUX_dash_IC); // FLUX-IC
-    break;
-  case 46:
-    UNK_0xf309(); // UNK_0xf309
-    break;
-  default:
-    Push(cc_INVIS_dash_I); // INVIS-I
-    break;
-
-  }
-  return;
-
-  label1:
-  Pop();
   switch(Pop()) // PLANET-ID
   {
   case 40:
@@ -449,20 +450,30 @@ void UNK_0xf3f1() // UNK_0xf3f1
   }
 }
 
+// ================================================
+// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1
+// ================================================
+
+void UNK_0xf3f1() // UNK_0xf3f1
+{
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
+  Push(Read16(Pop())); // @
+  if (Pop() == 0) goto label1;
+  SPACE_dash_ID(); // SPACE-ID case
+  return;
+
+  label1:
+  PLANET_dash_ID(); // PLANET-ID case
+}
+
 
 // ================================================
 // 0xf405: WORD 'STAR-IC-CASES' codep=0x4a4f parp=0xf417
 // ================================================
-// 0xf417: db 0x06 0x00 0x8b 0x4f 0x4d 0x00 0x3a 0x4f 0x4b 0x00 0xa1 0x4f 0x47 0x00 0xad 0x4f 0x46 0x00 0xb8 0x4f 0x41 0x00 0x31 0x4f 0x42 0x00 0x71 0x4f '   OM :OK  OG  OF  OA 1OB qO'
 
-// ================================================
-// 0xf433: WORD 'UNK_0xf435' codep=0x224c parp=0xf435
-// ================================================
-
-void UNK_0xf435() // UNK_0xf435
+void STAR_dash_IC_dash_CASES() // STAR-IC-CASES
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Pop();
   switch(Pop()) // STAR-IC-CASES
   {
   case 77:
@@ -490,6 +501,16 @@ void UNK_0xf435() // UNK_0xf435
   }
 }
 
+// ================================================
+// 0xf433: WORD 'UNK_0xf435' codep=0x224c parp=0xf435
+// ================================================
+
+void UNK_0xf435() // UNK_0xf435
+{
+  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  STAR_dash_IC_dash_CASES(); // STAR-IC-CASES case
+}
+
 
 // ================================================
 // 0xf43b: WORD 'UNK_0xf43d' codep=0x224c parp=0xf43d
@@ -511,17 +532,9 @@ void UNK_0xf43d() // UNK_0xf43d
 // ================================================
 // 0xf44f: WORD 'PLAN-IC-CASES' codep=0x4a4f parp=0xf461
 // ================================================
-// 0xf461: db 0x05 0x00 0x51 0x4f 0x00 0x00 0x5c 0x4f 0x01 0x00 0x46 0x4f 0x02 0x00 0x71 0x4f 0x03 0x00 0xb8 0x4f 0x04 0x00 0xa1 0x4f '  QO  \O  FO  qO   O   O'
 
-// ================================================
-// 0xf479: WORD 'UNK_0xf47b' codep=0x224c parp=0xf47b
-// ================================================
-
-void UNK_0xf47b() // UNK_0xf47b
+void PLAN_dash_IC_dash_CASES() // PLAN-IC-CASES
 {
-  LoadData("UNK_0xf25a"); // from 'PLANET      '
-  Push(Read8(Pop())&0xFF); // C@
-  Pop();
   switch(Pop()) // PLAN-IC-CASES
   {
   case 0:
@@ -546,6 +559,17 @@ void UNK_0xf47b() // UNK_0xf47b
   }
 }
 
+// ================================================
+// 0xf479: WORD 'UNK_0xf47b' codep=0x224c parp=0xf47b
+// ================================================
+
+void UNK_0xf47b() // UNK_0xf47b
+{
+  LoadData("UNK_0xf25a"); // from 'PLANET      '
+  Push(Read8(Pop())&0xFF); // C@
+  PLAN_dash_IC_dash_CASES(); // PLAN-IC-CASES case
+}
+
 
 // ================================================
 // 0xf483: WORD 'UNK_0xf485' codep=0x224c parp=0xf485
@@ -566,17 +590,9 @@ void UNK_0xf485() // UNK_0xf485
 // ================================================
 // 0xf495: WORD 'BOX-IC' codep=0x4a4f parp=0xf4a0
 // ================================================
-// 0xf4a0: db 0x02 0x00 0x16 0x51 0x18 0x00 0x35 0xf4 0x20 0x00 0x7b 0xf4 '   Q  5   { '
 
-// ================================================
-// 0xf4ac: WORD 'UNK_0xf4ae' codep=0x224c parp=0xf4ae
-// ================================================
-
-void UNK_0xf4ae() // UNK_0xf4ae
+void BOX_dash_IC() // BOX-IC
 {
-  IOPEN(); // IOPEN
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
   switch(Pop()) // BOX-IC
   {
   case 24:
@@ -590,6 +606,17 @@ void UNK_0xf4ae() // UNK_0xf4ae
     break;
 
   }
+}
+
+// ================================================
+// 0xf4ac: WORD 'UNK_0xf4ae' codep=0x224c parp=0xf4ae
+// ================================================
+
+void UNK_0xf4ae() // UNK_0xf4ae
+{
+  IOPEN(); // IOPEN
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  BOX_dash_IC(); // BOX-IC case
   ICLOSE(); // ICLOSE
 }
 
@@ -597,16 +624,9 @@ void UNK_0xf4ae() // UNK_0xf4ae
 // ================================================
 // 0xf4b8: WORD '#IC-CASES' codep=0x4a4f parp=0xf4c6
 // ================================================
-// 0xf4c6: db 0x07 0x00 0x16 0x51 0x0b 0x00 0xae 0xf4 0x17 0x00 0x35 0xf4 0x20 0x00 0x7b 0xf4 0x18 0x00 0x35 0xf4 0x44 0x00 0x3d 0xf4 0x2d 0x00 0x85 0xf4 0x2e 0x00 0x26 0x4f '   Q      5   {   5 D = -   . &O'
 
-// ================================================
-// 0xf4e6: WORD 'UNK_0xf4e8' codep=0x224c parp=0xf4e8
-// ================================================
-
-void UNK_0xf4e8() // UNK_0xf4e8
+void _n_IC_dash_CASES() // #IC-CASES
 {
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Pop();
   switch(Pop()) // #IC-CASES
   {
   case 11:
@@ -635,6 +655,16 @@ void UNK_0xf4e8() // UNK_0xf4e8
     break;
 
   }
+}
+
+// ================================================
+// 0xf4e6: WORD 'UNK_0xf4e8' codep=0x224c parp=0xf4e8
+// ================================================
+
+void UNK_0xf4e8() // UNK_0xf4e8
+{
+  _at_INST_dash_CLASS(); // @INST-CLASS
+  _n_IC_dash_CASES(); // #IC-CASES case
 }
 
 
