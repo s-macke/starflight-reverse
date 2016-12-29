@@ -281,11 +281,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
             int codep1 = Read16(Read16(ofs-4));
             int codep2 = Read16(Read16(ofs-8));
             int codep3 = Read16(Read16(ofs-12));
-            if ((codep1 != CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT))
-            {
-                fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
-                exit(1);
-            } else
+            if ((codep1 == CODELIT) && (codep2 == CODELIT) && (codep3 == CODELIT))
             {
                 int c1 = Read16(ofs-2);
                 int c2 = Read16(ofs-6);
@@ -295,6 +291,23 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
                 if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), currentovidx);
                 if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), currentovidx);
                 snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
+            } else
+            if ((codep1 == CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT)) // for DOTASKS in SHIPBUTTONS
+            {
+                int c1 = Read16(ofs-2);
+                int c3 = Read16(ofs-8);
+                int c4 = Read16(ofs-12);
+                int c5 = Read16(ofs-16);
+
+                char* s1 = GetDictWord(c1, currentovidx);
+                char* s3 = GetDictWord(c3, currentovidx);
+                char* s4 = GetDictWord(c4, currentovidx);
+                char* s5 = GetDictWord(c5, currentovidx);
+                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s, %s);\n", s1, s3, s4, s5);
+            } else
+            {
+                fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
+                exit(1);
             }
             ofs += 2;
         } else
@@ -395,10 +408,7 @@ void ParsePartFunction(int ofs, LineDesc *l, int minaddr, int maxaddr, DICTENTRY
         } else
         if (e->codep == CODECALL) // call
         {
-            if ((par >= minaddr) && (par <= maxaddr))
-            {
-                DICTENTRY *dcall = GetDictEntry(par, currentovidx);
-            }
+            DICTENTRY *dcall = GetDictEntry(par, currentovidx);
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
             ofs += 2;
         } else
