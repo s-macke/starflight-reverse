@@ -788,7 +788,7 @@ void UNK_0xf019() // UNK_0xf019
   Push(2); // 2
   SetColor("GREY2");
   Push(0x003d);
-  Push(i); // I
+  Push(h); // I
   Push(Pop() + Pop()); // +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT

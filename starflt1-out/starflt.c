@@ -26500,7 +26500,7 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
   _gt_R(); // >R
-  Push(i); // I'
+  Push(h); // I'
   Push(Pop()+1); // 1+
   _at_EXECUTE(); // @EXECUTE
   R_gt_(); // R>

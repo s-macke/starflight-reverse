@@ -304,7 +304,7 @@ void _dot_HYBRID() // .HYBRID
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
   Push(i); // I
-  Push(i); // I'
+  Push(imax); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA

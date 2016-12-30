@@ -2068,12 +2068,12 @@ void _ask_TALK() // ?TALK
 
   label3:
   ICLOSE(); // ICLOSE
-  Push(i); // I'
+  Push(imax); // I'
   Push(1); // 1
   _gt_(); // >
   Push(i); // I
   Push(Pop()+1); // 1+
-  Push(i); // I'
+  Push(imax); // I'
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND

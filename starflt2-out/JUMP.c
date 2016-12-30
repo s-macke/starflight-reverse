@@ -143,7 +143,7 @@ void UNK_0xed5e() // UNK_0xed5e
   UNK_0xed54(); // UNK_0xed54
   SWAP(); // SWAP
   UNK_0xed4a(); // UNK_0xed4a
-  Push(g); // J
+  Push(h); // J
   UNK_0xed4a(); // UNK_0xed4a
   OVER(); // OVER
   LLINE(); // LLINE
@@ -160,17 +160,17 @@ void UNK_0xed5e() // UNK_0xed5e
   UNK_0xed4a(); // UNK_0xed4a
   Push(h); // I'
   UNK_0xed54(); // UNK_0xed54
-  Push(g); // J
+  Push(h); // J
   UNK_0xed54(); // UNK_0xed54
   Push(h); // I'
   UNK_0xed54(); // UNK_0xed54
   LLINE(); // LLINE
-  Push(g); // J
+  Push(h); // J
   UNK_0xed54(); // UNK_0xed54
   Push(h); // I'
   UNK_0xed54(); // UNK_0xed54
   ROT(); // ROT
-  Push(g); // J
+  Push(h); // J
   UNK_0xed4a(); // UNK_0xed4a
   SWAP(); // SWAP
   UNK_0xed4a(); // UNK_0xed4a

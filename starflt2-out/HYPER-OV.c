@@ -2166,7 +2166,7 @@ void UNK_0xe466() // UNK_0xe466
   Push(Read16(Pop())); // @
   _eq_(); // =
   Push(Pop() & Pop()); // AND
-  Push(g); // J
+  Push(h); // J
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _eq_(); // =

@@ -1250,7 +1250,7 @@ void UNK_0xec39() // UNK_0xec39
   Push(2); // 2
   SetColor("GREY1");
   Push(0x003d);
-  Push(i); // I
+  Push(h); // I
   Push(Pop() + Pop()); // +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT

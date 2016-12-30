@@ -2220,7 +2220,7 @@ void UNK_0xec7a() // UNK_0xec7a
   i++;
   } while(i<imax); // (LOOP) 0xffb0
 
-  Push(i); // I
+  Push(h); // I
   if (Pop() == 0) goto label2;
   SAVE_dash_BU(); // SAVE-BU
 

@@ -2141,7 +2141,7 @@ void UNK_0xe4ba() // UNK_0xe4ba
   Push(Read16(Pop())); // @
   _eq_(); // =
   Push(Pop() & Pop()); // AND
-  Push(g); // J
+  Push(h); // J
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   _eq_(); // =

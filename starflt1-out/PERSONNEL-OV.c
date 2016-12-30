@@ -1032,7 +1032,7 @@ void UNK_0xec5d() // UNK_0xec5d
   Push(2); // 2
   SetColor("GREY2");
   Push(0x003d);
-  Push(i); // I
+  Push(h); // I
   Push(Pop() + Pop()); // +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT

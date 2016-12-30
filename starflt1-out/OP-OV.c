@@ -514,7 +514,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   _eq_(); // =
   Push(i); // I
   Push(Pop()+1); // 1+
-  Push(i); // I'
+  Push(imax); // I'
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;

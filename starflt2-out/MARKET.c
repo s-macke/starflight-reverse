@@ -165,7 +165,7 @@ void UNK_0xe826() // UNK_0xe826
   Push(Read16(regsp)); // DUP
   Push(h); // I
   SWAP(); // SWAP
-  Push(g); // J
+  Push(h); // J
   OVER(); // OVER
   LLINE(); // LLINE
   Push(h); // I
@@ -175,13 +175,13 @@ void UNK_0xe826() // UNK_0xe826
   LLINE(); // LLINE
   Push(h); // I
   Push(h); // I'
-  Push(g); // J
+  Push(h); // J
   Push(h); // I'
   LLINE(); // LLINE
-  Push(g); // J
+  Push(h); // J
   Push(h); // I'
   ROT(); // ROT
-  Push(g); // J
+  Push(h); // J
   SWAP(); // SWAP
   LLINE(); // LLINE
   R_gt_(); // R>

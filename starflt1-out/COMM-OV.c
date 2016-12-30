@@ -1863,7 +1863,7 @@ void UNK_0xe160() // UNK_0xe160
 
   _gt_R(); // >R
   SWAP(); // SWAP
-  Push(i); // I
+  Push(h); // I
   _dash_(); // -
   Push(Pop() + Pop()); // +
   R_gt_(); // R>
@@ -1897,7 +1897,7 @@ void UNK_0xe190() // UNK_0xe190
   _eq_(); // =
   Push(i); // I
   Push(Pop()+1); // 1+
-  Push(i); // I'
+  Push(imax); // I'
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;

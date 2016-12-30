@@ -1981,7 +1981,7 @@ void _v_DISK() // |DISK
   i++;
   } while(i<imax); // (LOOP) 0xffb0
 
-  Push(i); // I
+  Push(h); // I
   if (Pop() == 0) goto label2;
   SAVE_dash_BUFFERS(); // SAVE-BUFFERS
 

@@ -562,11 +562,11 @@ void UNK_0xeff3() // UNK_0xeff3
 
   label2:
   Push(j); // I
-  Push(j); // I'
+  Push(jmax); // I'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
   Push(j); // I
-  Push(j); // I'
+  Push(jmax); // I'
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
@@ -577,7 +577,7 @@ void UNK_0xeff3() // UNK_0xeff3
   goto label5;
 
   label4:
-  Push(j); // I'
+  Push(jmax); // I'
 
   label5:
   Push(pp_XORMODE); // XORMODE
