@@ -326,7 +326,7 @@ void UNK_0xed49() // UNK_0xed49
 
 void UNK_0xed5b() // UNK_0xed5b
 {
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   SWAP(); // SWAP
   Push(pp_XCON); // XCON size: 2
@@ -742,7 +742,7 @@ void UNK_0xf001() // UNK_0xf001
 
 void UNK_0xf00b() // UNK_0xf00b
 {
-  Push(0xef55);
+  Push(0xef55); // probable 'UNK_0xef55'
 
   label2:
   Push(Read16(regsp)); // DUP
@@ -793,7 +793,7 @@ void UNK_0xf02b() // UNK_0xf02b
   UNK_0xefc5(); // UNK_0xefc5
 
   label1:
-  Push(0xcd40);
+  Push(0xcd40); // probable 'OTHER-PAR'
   MODULE(); // MODULE
   OVER(); // OVER
   Push(pp_RECORD_n_); // RECORD# size: 2
@@ -949,7 +949,7 @@ void UNK_0xf143() // UNK_0xf143
   if (Pop() == 0) return;
   Push(pp_THIS_dash_RE); // THIS-RE size: 4
   _1_dot_5_at_(); // 1.5@
-  Push(0x5239);
+  Push(0x5239); // probable '*SP'
   _2_ex_(); // 2!
 }
 

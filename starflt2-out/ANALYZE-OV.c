@@ -1254,7 +1254,7 @@ void UNK_0xf414() // UNK_0xf414
   Pop(); // DROP
   IOPEN(); // IOPEN
   CTINIT(); // CTINIT
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE

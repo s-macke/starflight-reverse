@@ -191,7 +191,7 @@ void MP_i_ER() // MP'ER
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
-  Push(0xcb0c);
+  Push(0xcb0c); // probable '>NEST'
   MODULE(); // MODULE
   Push(pp__ask_AUTO); // ?AUTO size: 2
   Push(Read16(Pop())); // @
@@ -662,7 +662,7 @@ void UNK_0xf3bc() // UNK_0xf3bc
   Push(pp__dash_AIN); // -AIN size: 2
   _ex__2(); // !_2
   Push(0x000a);
-  Push(0xb6fd);
+  Push(0xb6fd); // probable 'OV#IN$'
   MODULE(); // MODULE
   Push2Words("NULL");
   ROT(); // ROT

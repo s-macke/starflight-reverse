@@ -104,7 +104,7 @@ void SIC_i_EM() // SIC'EM
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
-  Push(0xcc1a);
+  Push(0xcc1a); // probable '>NEST'
   MODULE(); // MODULE
   Push(pp__ask_AUTO); // ?AUTO size: 2
   Push(Read16(Pop())); // @
@@ -252,7 +252,7 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(pp__dash_AIN); // -AIN size: 2
   _ex__3(); // !_3
   Push(0x000a);
-  Push(0xbd5b);
+  Push(0xbd5b); // probable 'OV#IN$'
   MODULE(); // MODULE
   Push2Words("NULL");
   ROT(); // ROT

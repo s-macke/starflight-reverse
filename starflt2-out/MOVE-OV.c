@@ -278,7 +278,7 @@ void UNK_0xeb09() // UNK_0xeb09
 
 void UNK_0xeb23() // UNK_0xeb23
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   Push(pp_XABS); // XABS size: 2
   Push(Read16(Pop())); // @
@@ -331,7 +331,7 @@ void SET_dash_SPE() // SET-SPE
 
 void _dot_STATS() // .STATS
 {
-  Push(0xcf2b);
+  Push(0xcf2b); // probable '.ST'
   MODULE(); // MODULE
 }
 
@@ -342,7 +342,7 @@ void _dot_STATS() // .STATS
 
 void _dot_DISTAN() // .DISTAN
 {
-  Push(0xcf71);
+  Push(0xcf71); // probable '.DI'
   MODULE(); // MODULE
 }
 
@@ -353,7 +353,7 @@ void _dot_DISTAN() // .DISTAN
 
 void _dot_WHERE() // .WHERE
 {
-  Push(0xcf39);
+  Push(0xcf39); // probable '.WH'
   MODULE(); // MODULE
 }
 
@@ -364,7 +364,7 @@ void _dot_WHERE() // .WHERE
 
 void _dot_ENERGY() // .ENERGY
 {
-  Push(0xcf55);
+  Push(0xcf55); // probable '.EN'
   MODULE(); // MODULE
 }
 
@@ -537,7 +537,7 @@ void UNK_0xec32() // UNK_0xec32
 
 void UNK_0xecfa() // UNK_0xecfa
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   UNK_0xebd7(); // UNK_0xebd7
   Push(0x0016);
@@ -629,7 +629,7 @@ void UNK_0xed8a() // UNK_0xed8a
 
 void _dot_STARDA() // .STARDA
 {
-  Push(0xcf47);
+  Push(0xcf47); // probable '.DA'
   MODULE(); // MODULE
 }
 
@@ -820,7 +820,7 @@ void UNK_0xee5b() // UNK_0xee5b
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Push(0xbad2);
+  Push(0xbad2); // probable 'SCRLC'
   MODULE(); // MODULE
 }
 
@@ -1150,7 +1150,7 @@ void _ask_POPULA() // ?POPULA
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
 
   label2:
-  Push(0xcfa8);
+  Push(0xcfa8); // probable 'POPU'
   MODULE(); // MODULE
   UNK_0xef57(); // UNK_0xef57
   Push(2); // 2
@@ -1353,7 +1353,7 @@ void UNK_0xf231() // UNK_0xf231
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
   Push(pp__i_INJURE); // 'INJURE size: 2
   Push(Read16(Pop())); // @
@@ -1416,7 +1416,7 @@ void UNK_0xf295() // UNK_0xf295
   Push(0x03e8);
   MS(); // MS
   BEEPOFF(); // BEEPOFF
-  Push(0xcff8);
+  Push(0xcff8); // probable '>DEBRIS'
   MODULE(); // MODULE
   Push(pp__ask_TV); // ?TV size: 2
   OFF_2(); // OFF_2
@@ -1466,7 +1466,7 @@ void UNK_0xf295() // UNK_0xf295
 void UNK_0xf30d() // UNK_0xf30d
 {
   Push(0x000c);
-  Push(0xb78d);
+  Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA size: 2
   Push(Read16(Pop())); // @
@@ -1500,7 +1500,7 @@ void UNK_0xf30d() // UNK_0xf30d
   UNK_0xedc8(); // UNK_0xedc8
   UNK_0xeef1(); // UNK_0xeef1
   UNK_0xed2a(); // UNK_0xed2a
-  Push(0xbab2);
+  Push(0xbab2); // probable 'NEWCO'
   MODULE(); // MODULE
 
   label2:
@@ -1516,7 +1516,7 @@ void UNK_0xf30d() // UNK_0xf30d
   CTINIT(); // CTINIT
 
   label3:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 }
 
@@ -1633,17 +1633,17 @@ void UNK_0xf417() // UNK_0xf417
   Push(0xf1bd);
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xcf1b);
+  Push(0xcf1b); // probable 'DO-STORM'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _st__ex__gt_(); // <!>
-  Push(0xeb92);
+  Push(0xeb92); // probable '.STATS'
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _st__ex__gt_(); // <!>
   Push(pp__i_SIMULA); // 'SIMULA size: 2
   Push(Read16(Pop())); // @
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _st__ex__gt_(); // <!>
-  Push(0xeda6);
+  Push(0xeda6); // probable '.STARDA'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _st__ex__gt_(); // <!>
   Push(pp_TIME_dash_PA); // TIME-PA size: 2

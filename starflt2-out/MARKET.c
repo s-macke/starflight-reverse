@@ -224,7 +224,7 @@ void UNK_0xe87a() // UNK_0xe87a
 {
   UNK_0xe866(); // UNK_0xe866
   Push(1); // 1
-  Push(0xb822);
+  Push(0xb822); // probable 'PSYCH'
   MODULE(); // MODULE
   UNK_0xe870(); // UNK_0xe870
 }
@@ -238,7 +238,7 @@ void UNK_0xe88a() // UNK_0xe88a
 {
   UNK_0xe866(); // UNK_0xe866
   Push(0); // 0
-  Push(0xb822);
+  Push(0xb822); // probable 'PSYCH'
   MODULE(); // MODULE
   UNK_0xe870(); // UNK_0xe870
 }
@@ -354,7 +354,7 @@ void UNK_0xe8c4() // UNK_0xe8c4
 void UNK_0xe92e() // UNK_0xe92e
 {
   UNK_0xe8ae(); // UNK_0xe8ae
-  Push(0xa9ce);
+  Push(0xa9ce); // probable 'ASKING'
   IFLD_at_(); // IFLD@
   ICLOSE(); // ICLOSE
 }
@@ -718,7 +718,7 @@ void UNK_0xeb7a() // UNK_0xeb7a
   PRINT("BALANCE: ", 9); // (.")
   UNK_0xe942(); // UNK_0xe942
   _ex_COLOR(); // !COLOR
-  Push(0xc285);
+  Push(0xc285); // probable 'OVD@BAL'
   MODULE(); // MODULE
   D_dot_(); // D.
   UNK_0xe96e(); // UNK_0xe96e
@@ -824,7 +824,7 @@ void UNK_0xec27() // UNK_0xec27
   Push(pp__dash_AIN); // -AIN size: 2
   _ex__2(); // !_2
   Push(cc__5); // 5
-  Push(0xb6fd);
+  Push(0xb6fd); // probable 'OV#IN$'
   MODULE(); // MODULE
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -902,7 +902,7 @@ void C_gt_VAL() // C>VAL
 
 void UNK_0xec9d() // UNK_0xec9d
 {
-  Push(0xa9ce);
+  Push(0xa9ce); // probable 'ASKING'
   IFLD_at_(); // IFLD@
   Push(0x000a);
   _slash_(); // /
@@ -1928,7 +1928,7 @@ void UNK_0xf1e9() // UNK_0xf1e9
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
   Push(Pop()-1); // 1-
-  Push(0xb9d8);
+  Push(0xb9d8); // probable '.TPIC'
   MODULE(); // MODULE
 
   label1:
@@ -1956,7 +1956,7 @@ void UNK_0xf20b() // UNK_0xf20b
 void UNK_0xf217() // UNK_0xf217
 {
   UNK_0xf20b(); // UNK_0xf20b
-  Push(0xb9e8);
+  Push(0xb9e8); // probable '.APIC'
   MODULE(); // MODULE
 }
 
@@ -2001,7 +2001,7 @@ void UNK_0xf223() // UNK_0xf223
 
 void UNK_0xf26e() // UNK_0xf26e
 {
-  Push(0xc472);
+  Push(0xc472); // probable 'L>P'
   MODULE(); // MODULE
   Push(pp__1ST); // 1ST size: 2
   Push(Read16(Pop())); // @
@@ -2024,7 +2024,7 @@ void UNK_0xf26e() // UNK_0xf26e
 
   label2:
   Push(2); // 2
-  Push(0xc462);
+  Push(0xc462); // probable '!PFLAGS'
   MODULE(); // MODULE
 }
 
@@ -2093,7 +2093,7 @@ void UNK_0xf2d4() // UNK_0xf2d4
 void UNK_0xf2f2() // UNK_0xf2f2
 {
   Push(1); // 1
-  Push(0xc462);
+  Push(0xc462); // probable '!PFLAGS'
   MODULE(); // MODULE
 }
 
@@ -2105,7 +2105,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
 void UNK_0xf2fe() // UNK_0xf2fe
 {
   Push(0); // 0
-  Push(0xc462);
+  Push(0xc462); // probable '!PFLAGS'
   MODULE(); // MODULE
 }
 
@@ -2192,7 +2192,7 @@ void UNK_0xf360() // UNK_0xf360
   Push(pp_BARTERI); // BARTERI size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xc44e);
+  Push(0xc44e); // probable 'DOBARTE'
   MODULE(); // MODULE
   UNK_0xe88a(); // UNK_0xe88a
   Push(pp_BARTERI); // BARTERI size: 2
@@ -2221,7 +2221,7 @@ void UNK_0xf38a() // UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Push(0xc43a);
+  Push(0xc43a); // probable 'DOOPEN'
   MODULE(); // MODULE
   UNK_0xe88a(); // UNK_0xe88a
   Push(pp__ask_REPLY); // ?REPLY size: 2
@@ -2407,13 +2407,13 @@ void UNK_0xf4ac() // UNK_0xf4ac
 
 void UNK_0xf4d2() // UNK_0xf4d2
 {
-  Push(0xc261);
+  Push(0xc261); // probable 'OVINIT-_1'
   MODULE(); // MODULE
   UNK_0xe9ef(); // UNK_0xe9ef
   UNK_0xe97a(); // UNK_0xe97a
-  Push(0xba0a);
+  Push(0xba0a); // probable 'LDAPIC'
   MODULE(); // MODULE
-  Push(0xc427);
+  Push(0xc427); // probable 'DOENTER'
   MODULE(); // MODULE
   Push(pp_TERMINA); // TERMINA size: 2
   Push(Read16(Pop())); // @
@@ -2425,7 +2425,7 @@ void UNK_0xf4d2() // UNK_0xf4d2
   UNK_0xf4ac(); // UNK_0xf4ac
   UNK_0xe8c4(); // UNK_0xe8c4
   Push(cc__7); // 7
-  Push(0xc273);
+  Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
 }
 
@@ -2446,7 +2446,7 @@ void TRADE() // TRADE
   Push(cc__6); // 6
   Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
   _ex__2(); // !_2
-  Push(0xc024);
+  Push(0xc024); // probable 'SET-C'
   MODULE(); // MODULE
   Push2Words("NULL");
   Push(pp__ro_THING_rc_); // (THING) size: 4
@@ -2461,7 +2461,7 @@ void TRADE() // TRADE
   Push(pp__pe_VAL); // %VAL size: 2
   _ex__2(); // !_2
   UNK_0xf134(); // UNK_0xf134
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
 }
 

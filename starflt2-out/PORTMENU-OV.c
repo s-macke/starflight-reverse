@@ -316,7 +316,7 @@ void UNK_0xee18() // UNK_0xee18
 {
   UNK_0xee06(); // UNK_0xee06
   if (Pop() == 0) return;
-  Push(0xcbcf);
+  Push(0xcbcf); // probable 'U-PF'
   MODULE(); // MODULE
 }
 
@@ -329,7 +329,7 @@ void UNK_0xee28() // UNK_0xee28
 {
   UNK_0xee06(); // UNK_0xee06
   if (Pop() == 0) return;
-  Push(0xcb98);
+  Push(0xcb98); // probable 'U-A'
   MODULE(); // MODULE
 }
 
@@ -342,7 +342,7 @@ void UNK_0xee38() // UNK_0xee38
 {
   UNK_0xee06(); // UNK_0xee06
   if (Pop() == 0) return;
-  Push(0xc2db);
+  Push(0xc2db); // probable 'U-B'
   MODULE(); // MODULE
 }
 
@@ -355,7 +355,7 @@ void UNK_0xee48() // UNK_0xee48
 {
   UNK_0xee06(); // UNK_0xee06
   if (Pop() == 0) return;
-  Push(0xcca7);
+  Push(0xcca7); // probable 'U-SC'
   MODULE(); // MODULE
 }
 
@@ -368,7 +368,7 @@ void UNK_0xee58() // UNK_0xee58
 {
   UNK_0xee06(); // UNK_0xee06
   if (Pop() == 0) return;
-  Push(0xcce1);
+  Push(0xcce1); // probable 'U-TD'
   MODULE(); // MODULE
 }
 
@@ -379,7 +379,7 @@ void UNK_0xee58() // UNK_0xee58
 
 void UNK_0xee68() // UNK_0xee68
 {
-  Push(0xcd3b);
+  Push(0xcd3b); // probable 'U-OP'
   MODULE(); // MODULE
 }
 
@@ -746,10 +746,10 @@ void UNK_0xf091() // UNK_0xf091
 void UNK_0xf0a1() // UNK_0xf0a1
 {
   CTINIT(); // CTINIT
-  Push(0xaa3b);
+  Push(0xaa3b); // probable '<CTASKM'
   Push(pp_ASKMOUN); // ASKMOUN size: 2
   _ex__2(); // !_2
-  Push(0xaa1d);
+  Push(0xaa1d); // probable '<CTVERS'
   Push(pp__i_VERSIO); // 'VERSIO size: 2
   _ex__2(); // !_2
 }
@@ -791,7 +791,7 @@ void UNK_0xf0b7() // UNK_0xf0b7
 
   label3:
   DARK(); // DARK
-  Push(0xb9f9);
+  Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
   Push(0); // 0
   Push(0x0096);
@@ -820,28 +820,28 @@ void UNK_0xf11c() // UNK_0xf11c
 {
   Push(pp_ESC_dash_EN); // ESC-EN size: 2
   ON_2(); // ON_2
-  Push(0xc1f8);
+  Push(0xc1f8); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _ex__2(); // !_2
-  Push(0xc1c7);
+  Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _ex__2(); // !_2
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _ex__2(); // !_2
-  Push(0xc39d);
+  Push(0xc39d); // probable '?SHIP-R'
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _ex__2(); // !_2
-  Push(0xc0f9);
+  Push(0xc0f9); // probable '.SORD'
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _ex__2(); // !_2
-  Push(0xc3cf);
+  Push(0xc3cf); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _ex__2(); // !_2
-  Push(0xc0e7);
+  Push(0xc0e7); // probable '/STARD'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _ex__2(); // !_2
-  Push(0xca0d);
+  Push(0xca0d); // probable '!'EXT'
   MODULE(); // MODULE
   Push(0x0032);
   Push(pp__pe_VAL); // %VAL size: 2
@@ -877,16 +877,16 @@ void UNK_0xf11c() // UNK_0xf11c
 
 void UNK_0xf198() // UNK_0xf198
 {
-  Push(0xd4cc);
+  Push(0xd4cc); // probable '?FLIG'
   MODULE(); // MODULE
   if (Pop() == 0) return;
   UNK_0xf11c(); // UNK_0xf11c
-  Push(0xc8c3);
+  Push(0xc8c3); // probable '?FRE'
   MODULE(); // MODULE
-  Push(0xd491);
+  Push(0xd491); // probable 'OVFLT'
   MODULE(); // MODULE
   UNK_0xf091(); // UNK_0xf091
-  Push(0xc2cd);
+  Push(0xc2cd); // probable 'I-TRANS'
   MODULE(); // MODULE
   UNK_0xed90(); // UNK_0xed90
 }

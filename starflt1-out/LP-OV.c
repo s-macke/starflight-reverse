@@ -1048,16 +1048,16 @@ void UNK_0xecf9() // UNK_0xecf9
 void UNK_0xed37() // UNK_0xed37
 {
   Push(0xe3e6);
-  Push(0xe33e);
+  Push(0xe33e); // probable 'UNK_0xe33e'
   UNK_0xecf9(); // UNK_0xecf9
   Push(0xe416);
-  Push(0xe32e);
+  Push(0xe32e); // probable 'UNK_0xe32e'
   UNK_0xecf9(); // UNK_0xecf9
   Push(0xe446);
-  Push(0xe34e);
+  Push(0xe34e); // probable 'UNK_0xe34e'
   UNK_0xecf9(); // UNK_0xecf9
   Push(0xe476);
-  Push(0xe35e);
+  Push(0xe35e); // probable 'UNK_0xe35e'
   UNK_0xecf9(); // UNK_0xecf9
 }
 
@@ -1135,8 +1135,8 @@ void UNK_0xedaf() // UNK_0xedaf
   Push2Words("0.");
   LoadData("UNK_0xe496"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
-  Push(0xe496);
-  Push(0xe48e);
+  Push(0xe496); // probable 'UNK_0xe496'
+  Push(0xe48e); // probable 'UNK_0xe48e'
   R_gt_(); // R>
   Push(pp_RECORD_n_); // RECORD# size: 2
   _ex__3(); // !_3
@@ -1401,22 +1401,22 @@ void UNK_0xefdb() // UNK_0xefdb
   Push(0xe436);
   Push(0xe42e);
   Push(0xe426);
-  Push(0xe34e);
+  Push(0xe34e); // probable 'UNK_0xe34e'
   UNK_0xef99(); // UNK_0xef99
   Push(0xe466);
   Push(0xe45e);
   Push(0xe456);
-  Push(0xe35e);
+  Push(0xe35e); // probable 'UNK_0xe35e'
   UNK_0xef99(); // UNK_0xef99
   Push(0xe3d6);
   Push(0xe3ce);
   Push(0xe3c6);
-  Push(0xe33e);
+  Push(0xe33e); // probable 'UNK_0xe33e'
   UNK_0xef99(); // UNK_0xef99
   Push(0xe406);
   Push(0xe3fe);
   Push(0xe3f6);
-  Push(0xe32e);
+  Push(0xe32e); // probable 'UNK_0xe32e'
   UNK_0xef99(); // UNK_0xef99
 }
 
@@ -1523,16 +1523,16 @@ void UNK_0xf0fa() // UNK_0xf0fa
 void UNK_0xf11e() // UNK_0xf11e
 {
   Push(0xe47e);
-  Push(0xe35e);
+  Push(0xe35e); // probable 'UNK_0xe35e'
   UNK_0xf0fa(); // UNK_0xf0fa
   Push(0xe44e);
-  Push(0xe34e);
+  Push(0xe34e); // probable 'UNK_0xe34e'
   UNK_0xf0fa(); // UNK_0xf0fa
   Push(0xe3ee);
-  Push(0xe33e);
+  Push(0xe33e); // probable 'UNK_0xe33e'
   UNK_0xf0fa(); // UNK_0xf0fa
   Push(0xe41e);
-  Push(0xe32e);
+  Push(0xe32e); // probable 'UNK_0xe32e'
   UNK_0xf0fa(); // UNK_0xf0fa
 }
 

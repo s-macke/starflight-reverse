@@ -286,7 +286,7 @@ void DEPART() // DEPART
 {
   Push(pp__ask_CRITIC); // ?CRITIC size: 2
   _099(); // 099
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__2(); // !_2
   Push(pp__ask_LANDED); // ?LANDED size: 2

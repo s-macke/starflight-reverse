@@ -725,7 +725,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
   ON_2(); // ON_2
   Push(pp_SIGNEXT); // SIGNEXT size: 2
   ON_2(); // ON_2
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   Push(0); // 0
   Push(0); // 0
@@ -756,7 +756,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
 
 void UNK_0xe801() // UNK_0xe801
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   Push(cc_UNK_0xe364); // UNK_0xe364
   UNK_0xe770(); // UNK_0xe770
@@ -783,7 +783,7 @@ void UNK_0xe80f() // UNK_0xe80f
   _ex__2(); // !_2
   Push(pp_SPHEREW); // SPHEREW size: 2
   ON_2(); // ON_2
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   Push(cc__4); // 4
   Push(0); // 0
@@ -1136,7 +1136,7 @@ void UNK_0xe985() // UNK_0xe985
 void UNK_0xea21() // UNK_0xea21
 {
   UNK_0xe80f(); // UNK_0xe80f
-  Push(0x6a6e);
+  Push(0x6a6e); // probable 'CONANCH'
   SETLARR(); // SETLARR
   UNK_0xe8a1(); // UNK_0xe8a1
   UNK_0xe8f7(); // UNK_0xe8f7
@@ -1205,7 +1205,7 @@ void UNK_0xea97() // UNK_0xea97
   _099(); // 099
   Push(pp_SIGNEXT); // SIGNEXT size: 2
   ON_2(); // ON_2
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   Push(pp_UNK_0xe356); // UNK_0xe356 size: 0
   ON_2(); // ON_2
@@ -2280,7 +2280,7 @@ void SCRLCON() // SCRLCON
   if (Pop() == 0) return;
   Push(pp_SPHEREW); // SPHEREW size: 2
   _099(); // 099
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   UNK_0xf049(); // UNK_0xf049
   UNK_0xf08b(); // UNK_0xf08b

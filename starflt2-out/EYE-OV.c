@@ -159,7 +159,7 @@ void UNK_0xebdf() // UNK_0xebdf
 void UNK_0xebe7() // UNK_0xebe7
 {
   Push(0x0036);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp_PAST); // PAST size: 2
   Push(Read16(Pop())); // @
@@ -747,7 +747,7 @@ void UNK_0xf078() // UNK_0xf078
   _slash_(); // /
 
   label1:
-  Push(0xc6a5);
+  Push(0xc6a5); // probable '>DAM'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
 }
@@ -1048,7 +1048,7 @@ void UNK_0xf265() // UNK_0xf265
 void UNK_0xf297() // UNK_0xf297
 {
   UNK_0xebdf(); // UNK_0xebdf
-  Push(0xc6a5);
+  Push(0xc6a5); // probable '>DAM'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   TIME(); // TIME
@@ -1283,7 +1283,7 @@ void DO_dash_EYE() // DO-EYE
   UNK_0xee25(); // UNK_0xee25
   UNK_0xf3f9(); // UNK_0xf3f9
   UNK_0xec65(); // UNK_0xec65
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
 
   label2:
@@ -1308,7 +1308,7 @@ void DO_dash_EYE() // DO-EYE
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xf45f(); // UNK_0xf45f
   UNK_0xf441(); // UNK_0xf441
-  Push(0xc6ba);
+  Push(0xc6ba); // probable '.AUX'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   Push(pp_ESC_dash_EN); // ESC-EN size: 2

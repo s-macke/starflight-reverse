@@ -1263,7 +1263,7 @@ void UNK_0xea52() // UNK_0xea52
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(0xb834);
+  Push(0xb834); // probable '.TMAP'
   MODULE(); // MODULE
 
   label1:
@@ -1560,12 +1560,12 @@ void NOMAP() // NOMAP
 void UNK_0xec84() // UNK_0xec84
 {
   Push(cc__9); // 9
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4ab); // UNK_0xe4ab size: 0
   _ex__2(); // !_2
   Push(0x000a);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4af); // UNK_0xe4af size: 0
   _ex__2(); // !_2

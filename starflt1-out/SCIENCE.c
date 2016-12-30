@@ -1569,11 +1569,11 @@ void UNK_0xf043() // UNK_0xf043
   Push(pp__ask_EGA); // ?EGA size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xbeb2);
+  Push(0xbeb2); // probable '.EGARUNBIT'
   goto label2;
 
   label1:
-  Push(0xbe8a);
+  Push(0xbe8a); // probable '.RUNBIT'
 
   label2:
   MODULE(); // MODULE
@@ -2081,7 +2081,7 @@ void _dot_READINGS() // .READINGS
 void _ro__slash_SENSORS_rc_() // (/SENSORS)
 {
   Push(1); // 1
-  Push(0xbdef);
+  Push(0xbdef); // probable 'OV?.EQUIP-OK'
   MODULE(); // MODULE
   Push(pp_IGLOBAL); // IGLOBAL size: 2
   Push(Read16(Pop())); // @

@@ -245,7 +245,7 @@ void UNK_0xf151() // UNK_0xf151
   label2:
   _gt_DISPLA(); // >DISPLA
   SetColor("YELLOW");
-  Push(0x4fa9);
+  Push(0x4fa9); // probable 'BLACK'
   _ex__2(); // !_2
   CTERASE(); // CTERASE
   SetColor("RED");

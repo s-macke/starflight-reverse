@@ -262,7 +262,7 @@ void UNK_0xe10c() // UNK_0xe10c
 
 void UNK_0xe114() // UNK_0xe114
 {
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
@@ -849,7 +849,7 @@ void UNK_0xe508() // UNK_0xe508
 
 void UNK_0xe516() // UNK_0xe516
 {
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   UNK_0xe100(); // UNK_0xe100
   Push(pp_XCON); // XCON size: 2
@@ -1233,7 +1233,7 @@ void REDUCE_dash_HIT() // REDUCE-HIT
 void UNK_0xe75c() // UNK_0xe75c
 {
   _dash_ICON(); // -ICON
-  Push(0xc437);
+  Push(0xc437); // probable 'ICON-PARM'
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
   UNK_0xe5fc(); // UNK_0xe5fc
@@ -1761,7 +1761,7 @@ void UNK_0xebf8() // UNK_0xebf8
   Push(pp_WEAPON_dash_); // WEAPON- size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xeb07);
+  Push(0xeb07); // probable '?REDUCE-PO'
   DISTRACT(); // DISTRACT
   Rule(?REDUCE-PO);
   Pop(); // DROP
@@ -1770,30 +1770,30 @@ void UNK_0xebf8() // UNK_0xebf8
   Push(0x6400); // IFIELD(HITS)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label2;
-  Push(0xea3a);
+  Push(0xea3a); // probable 'AGGR-MODIF'
   DISTRACT(); // DISTRACT
   Rule(AGGR-MODIF);
   Pop(); // DROP
 
   label2:
-  Push(0xea80);
+  Push(0xea80); // probable 'VS.PLAYER'
   DISTRACT(); // DISTRACT
   Rule(VS.PLAYER);
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
-  Push(0xeac4);
+  Push(0xeac4); // probable 'LIFE-SIM'
   DISTRACT(); // DISTRACT
   Rule(LIFE-SIM);
   Pop(); // DROP
 
   label3:
   UNK_0xeb2b(); // UNK_0xeb2b
-  Push(0xeb4a);
+  Push(0xeb4a); // probable 'EFFECT-LIF'
   DISTRACT(); // DISTRACT
   Rule(EFFECT-LIF);
   Pop(); // DROP
   UNK_0xeb69(); // UNK_0xeb69
-  Push(0xeb86);
+  Push(0xeb86); // probable 'GROUND>AIR'
   DISTRACT(); // DISTRACT
   Rule(GROUND>AIR);
   Pop(); // DROP
@@ -1931,7 +1931,7 @@ void _ask__dot_STORM() // ?.STORM
   UNK_0xe0e4(); // UNK_0xe0e4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  Push(0xcdd8);
+  Push(0xcdd8); // probable '.STOR'
   MODULE(); // MODULE
 }
 
@@ -1980,7 +1980,7 @@ void _ask_STORM() // ?STORM
   RRND(); // RRND
   Push(pp__n_STORM); // #STORM size: 14
   _ex__3(); // !_3
-  Push(0xcdd8);
+  Push(0xcdd8); // probable '.STOR'
   MODULE(); // MODULE
   Push(1); // 1
   LoadData("ATMO.ACTIV"); // from 'PLANET      '
@@ -2214,7 +2214,7 @@ void UNK_0xef8a() // UNK_0xef8a
 
 void MAPS() // MAPS
 {
-  Push(0xcdc8);
+  Push(0xcdc8); // probable 'MAPS'
   MODULE(); // MODULE
 }
 
@@ -2225,7 +2225,7 @@ void MAPS() // MAPS
 
 void WALK_and_TALK() // WALK&TALK
 {
-  Push(0xd05c);
+  Push(0xd05c); // probable '(TALK)'
   MODULE(); // MODULE
 }
 
@@ -2236,7 +2236,7 @@ void WALK_and_TALK() // WALK&TALK
 
 void TVMOVE() // TVMOVE
 {
-  Push(0xcf50);
+  Push(0xcf50); // probable 'TVMOVE'
   MODULE(); // MODULE
   Push(pp_TIME_dash_PASSING); // TIME-PASSING size: 2
   ON_3(); // ON_3
@@ -2256,7 +2256,7 @@ void DO_dot_WEAPONS() // DO.WEAPONS
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
   if (Pop() == 0) return;
-  Push(0xd04b);
+  Push(0xd04b); // probable '(WEAPONS)'
   MODULE(); // MODULE
 }
 
@@ -2267,7 +2267,7 @@ void DO_dot_WEAPONS() // DO.WEAPONS
 
 void _slash_ITEMS() // /ITEMS
 {
-  Push(0xcefe);
+  Push(0xcefe); // probable '/ITEMS'
   MODULE(); // MODULE
 }
 
@@ -2278,9 +2278,9 @@ void _slash_ITEMS() // /ITEMS
 
 void ICONS() // ICONS
 {
-  Push(0xcec0);
+  Push(0xcec0); // probable 'ICONS'
   MODULE(); // MODULE
-  Push(0xd013);
+  Push(0xd013); // probable '(TVSET)'
   MODULE(); // MODULE
   UNK_0xecb7(); // UNK_0xecb7
   Push(pp_UNK_0xef9e); // UNK_0xef9e size: 0
@@ -2755,39 +2755,39 @@ void TV_dash_TASKS() // TV-TASKS
   Push(0xf3b5);
   Push(pp__i_VEHICLE_dash_CYCLE); // 'VEHICLE-CYCLE size: 2
   _st__ex__gt_(); // <!>
-  Push(0xed75);
+  Push(0xed75); // probable '?STORM'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _st__ex__gt_(); // <!>
-  Push(0xf399);
+  Push(0xf399); // probable '.STATS'
   Push(pp__i__dot_VEHICLE_dash_STATUS); // '.VEHICLE-STATUS size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc04e);
+  Push(0xc04e); // probable 'OBIT'
   Push(pp__i_DEATH); // 'DEATH size: 2
   _st__ex__gt_(); // <!>
-  Push(0xec5b);
+  Push(0xec5b); // probable 'SIMULATE'
   Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
   _st__ex__gt_(); // <!>
-  Push(0x3a6e);
+  Push(0x3a6e); // probable 'UNRAVEL'
   Push(pp__i_ENDING); // 'ENDING size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc081);
+  Push(0xc081); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _st__ex__gt_(); // <!>
   Push2Words("0.");
   Push(pp_LASTAP); // LASTAP size: 4
   _st_D_ex__gt_(); // <D!>
-  Push(0xc070);
+  Push(0xc070); // probable '.VIT'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc05f);
+  Push(0xc05f); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _st__ex__gt_(); // <!>
-  Push(0xecb7);
+  Push(0xecb7); // probable 'UNK_0xecb7'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _st__ex__gt_(); // <!>
   Push(pp_TIME_dash_PASSING); // TIME-PASSING size: 2
   ON_2(); // ON_2
-  Push(0xd06e);
+  Push(0xd06e); // probable 'HEAVEHO'
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__3(); // !_3
 }
@@ -2799,41 +2799,41 @@ void TV_dash_TASKS() // TV-TASKS
 
 void UNK_0xf436() // UNK_0xf436
 {
-  Push(0xbf98);
+  Push(0xbf98); // probable '?VCYCLE'
   Push(pp__i_VEHICLE_dash_CYCLE); // 'VEHICLE-CYCLE size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc136);
+  Push(0xc136); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _st__ex__gt_(); // <!>
-  Push(0xbf68);
+  Push(0xbf68); // probable '.SORD'
   Push(pp__i__dot_VEHICLE_dash_STATUS); // '.VEHICLE-STATUS size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc04e);
+  Push(0xc04e); // probable 'OBIT'
   Push(pp__i_DEATH); // 'DEATH size: 2
   _st__ex__gt_(); // <!>
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc081);
+  Push(0xc081); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _st__ex__gt_(); // <!>
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc05f);
+  Push(0xc05f); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _st__ex__gt_(); // <!>
-  Push(0xbf56);
+  Push(0xbf56); // probable '/STARDATE'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _st__ex__gt_(); // <!>
   Push(pp__ask_CRITIC); // ?CRITIC size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xd06e);
+  Push(0xd06e); // probable 'HEAVEHO'
   goto label2;
 
   label1:
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
 
   label2:
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
@@ -2847,7 +2847,7 @@ void UNK_0xf436() // UNK_0xf436
 
 void UNK_0xf49a() // UNK_0xf49a
 {
-  Push(0xd025);
+  Push(0xd025); // probable '(CLEAN)'
   MODULE(); // MODULE
   UNK_0xf436(); // UNK_0xf436
 }
@@ -2859,7 +2859,7 @@ void UNK_0xf49a() // UNK_0xf49a
 
 void UNK_0xf4a6() // UNK_0xf4a6
 {
-  Push(0xc03f);
+  Push(0xc03f); // probable '(ROL'
   MODULE(); // MODULE
 }
 
@@ -2874,14 +2874,14 @@ void UNK_0xf4b0() // UNK_0xf4b0
   OFF(); // OFF
   Push(pp_STORM); // STORM size: 2
   OFF(); // OFF
-  Push(0xd06e);
+  Push(0xd06e); // probable 'HEAVEHO'
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__3(); // !_3
-  Push(0xd001);
+  Push(0xd001); // probable 'TV-DISP'
   MODULE(); // MODULE
   UNK_0xecb7(); // UNK_0xecb7
   UNK_0xf4a6(); // UNK_0xf4a6
-  Push(0xcf71);
+  Push(0xcf71); // probable '!E/M'
   MODULE(); // MODULE
   _dot_STATS(); // .STATS
   _dot_VIT(); // .VIT

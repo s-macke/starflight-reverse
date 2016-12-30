@@ -105,7 +105,7 @@ const unsigned short int pp_UNK_0xf148 = 0xf148; // UNK_0xf148 size: 2
 
 void UNK_0xe976() // UNK_0xe976
 {
-  Push(0xc52d);
+  Push(0xc52d); // probable 'OVINIT-BALANCE'
   MODULE(); // MODULE
 }
 
@@ -116,7 +116,7 @@ void UNK_0xe976() // UNK_0xe976
 
 void UNK_0xe980() // UNK_0xe980
 {
-  Push(0xc542);
+  Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
 }
 
@@ -128,7 +128,7 @@ void UNK_0xe980() // UNK_0xe980
 
 void UNK_0xe994() // UNK_0xe994
 {
-  Push(0xc583);
+  Push(0xc583); // probable 'OV?BALANCE'
   MODULE(); // MODULE
 }
 
@@ -139,7 +139,7 @@ void UNK_0xe994() // UNK_0xe994
 
 void UNK_0xe99e() // UNK_0xe99e
 {
-  Push(0xc5ca);
+  Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
 }
 
@@ -150,7 +150,7 @@ void UNK_0xe99e() // UNK_0xe99e
 
 void UNK_0xe9a8() // UNK_0xe9a8
 {
-  Push(0xbd5b);
+  Push(0xbd5b); // probable 'OV#IN$'
   MODULE(); // MODULE
 }
 
@@ -161,7 +161,7 @@ void UNK_0xe9a8() // UNK_0xe9a8
 
 void UNK_0xe9b2() // UNK_0xe9b2
 {
-  Push(0xbd70);
+  Push(0xbd70); // probable 'OVQUITMESS'
   MODULE(); // MODULE
 }
 
@@ -172,7 +172,7 @@ void UNK_0xe9b2() // UNK_0xe9b2
 
 void UNK_0xe9bc() // UNK_0xe9bc
 {
-  Push(0xbd82);
+  Push(0xbd82); // probable 'OV.0$$$'
   MODULE(); // MODULE
 }
 
@@ -183,7 +183,7 @@ void UNK_0xe9bc() // UNK_0xe9bc
 
 void UNK_0xe9c6() // UNK_0xe9c6
 {
-  Push(0xbd97);
+  Push(0xbd97); // probable 'OV0$$$MESS'
   MODULE(); // MODULE
 }
 
@@ -194,7 +194,7 @@ void UNK_0xe9c6() // UNK_0xe9c6
 
 void UNK_0xe9d0() // UNK_0xe9d0
 {
-  Push(0xc6e4);
+  Push(0xc6e4); // probable 'OVBALANCEMESS'
   MODULE(); // MODULE
 }
 
@@ -348,9 +348,9 @@ void UNK_0xeaa9() // UNK_0xeaa9
   Push(2); // 2
   _dot_R(); // .R
   _ex_CRS(); // !CRS
-  Push(0xc697);
+  Push(0xc697); // probable 'OV.MASS'
   MODULE(); // MODULE
-  Push(0xc6a8);
+  Push(0xc6a8); // probable 'OV.ACC'
   MODULE(); // MODULE
 }
 
@@ -778,7 +778,7 @@ void UNK_0xed6a() // UNK_0xed6a
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  Push(0xc6ba);
+  Push(0xc6ba); // probable 'OV.PODS'
   MODULE(); // MODULE
   UNK_0xeaa9(); // UNK_0xeaa9
   return;
@@ -921,7 +921,7 @@ void UNK_0xee20() // UNK_0xee20
   label2:
   R_gt_(); // R>
   UNK_0xec96(); // UNK_0xec96
-  Push(0xc6cc);
+  Push(0xc6cc); // probable 'OV.SHIP'
   MODULE(); // MODULE
   UNK_0xeadd(); // UNK_0xeadd
   UNK_0xe9d0(); // UNK_0xe9d0
@@ -1105,7 +1105,7 @@ void UNK_0xf041() // UNK_0xf041
   _plus__ex_(); // +!
   Push(0x01f4); Push(0x0000);
   UNK_0xe99e(); // UNK_0xe99e
-  Push(0xc6ba);
+  Push(0xc6ba); // probable 'OV.PODS'
   MODULE(); // MODULE
   UNK_0xeaa9(); // UNK_0xeaa9
   UNK_0xe9d0(); // UNK_0xe9d0
@@ -1177,7 +1177,7 @@ void UNK_0xf0da() // UNK_0xf0da
   Push(pp_UNK_0xecaa); // UNK_0xecaa size: 0
   _2_at_(); // 2@
   UNK_0xe99e(); // UNK_0xe99e
-  Push(0xc6cc);
+  Push(0xc6cc); // probable 'OV.SHIP'
   MODULE(); // MODULE
   UNK_0xeadd(); // UNK_0xeadd
   UNK_0xe9d0(); // UNK_0xe9d0
@@ -1689,7 +1689,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   OFF(); // OFF
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(0xc6f8);
+  Push(0xc6f8); // probable 'OV.CONFIG'
   MODULE(); // MODULE
   UNK_0xeadd(); // UNK_0xeadd
   Push(pp_UNK_0xea33); // UNK_0xea33 size: 0

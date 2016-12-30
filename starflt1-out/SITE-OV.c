@@ -863,7 +863,7 @@ void UNK_0xf389() // UNK_0xf389
 
 void UNK_0xf405() // UNK_0xf405
 {
-  Push(0xbdd8);
+  Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID# size: 2
   Push(Read16(Pop())); // @
@@ -979,10 +979,10 @@ void _dot_MERCATOR() // .MERCATOR
   Push(0x0090);
   Push(pp_YLLDEST); // YLLDEST size: 2
   _ex__3(); // !_3
-  Push(0x9880);
+  Push(0x9880); // probable '.1X2CELL'
   Push(pp__i__dot_CELL); // '.CELL size: 2
   _ex__3(); // !_3
-  Push(0x6a99);
+  Push(0x6a99); // probable 'MERCATOR'
   SETLARRAY(); // SETLARRAY
   FULLARRAY(); // FULLARRAY
   SETREGION(); // SETREGION

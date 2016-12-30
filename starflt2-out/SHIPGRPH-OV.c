@@ -798,7 +798,7 @@ void _ro_BALANC() // (BALANC
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
   PRINT("YOUR ACCOUNT BALANCE IS: ", 25); // (.")
-  Push(0xc285);
+  Push(0xc285); // probable 'OVD@BAL'
   MODULE(); // MODULE
   D_dot_(); // D.
   PRINT("SP", 2); // (.")

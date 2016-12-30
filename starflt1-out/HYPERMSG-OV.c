@@ -336,7 +336,7 @@ void UNK_0xe602() // UNK_0xe602
   Push(pp__ask_CALLING); // ?CALLING size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  Push(0xc437);
+  Push(0xc437); // probable 'ICON-PARM'
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
 }
@@ -560,9 +560,9 @@ void _ask_PRL() // ?PRL
   if (Pop() == 0) return;
   Pop(); // DROP
   Push(0x000d);
-  Push(0xbdd8);
+  Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
-  Push(0xbf42);
+  Push(0xbf42); // probable '?HEAVY'
   MODULE(); // MODULE
   Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP
@@ -679,7 +679,7 @@ void UNK_0xe84b() // UNK_0xe84b
   Push(cc_UNK_0xe584); // UNK_0xe584
   UNK_0xe81b(); // UNK_0xe81b
   ORGLIST(); // ORGLIST
-  Push(0xc92a);
+  Push(0xc92a); // probable 'CSC'
   MODULE(); // MODULE
 }
 
@@ -714,7 +714,7 @@ void UNK_0xe89d() // UNK_0xe89d
   INIT_dash_ICONLIST(); // INIT-ICONLIST
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0xc437);
+  Push(0xc437); // probable 'ICON-PARM'
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
   ICLOSE(); // ICLOSE
@@ -1335,11 +1335,11 @@ void UNK_0xed0b() // UNK_0xed0b
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbe4b);
+  Push(0xbe4b); // probable 'OVDBA'
   goto label2;
 
   label1:
-  Push(0xbe2b);
+  Push(0xbe2b); // probable 'OV/DA'
 
   label2:
   MODULE(); // MODULE
@@ -1400,7 +1400,7 @@ void UNK_0xed94() // UNK_0xed94
   SWAP(); // SWAP
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
-  Push(0xbe2b);
+  Push(0xbe2b); // probable 'OV/DA'
   MODULE(); // MODULE
 }
 
@@ -1482,7 +1482,7 @@ void UNK_0xee3b() // UNK_0xee3b
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   SetColor("YELLOW");
-  Push(0x4f0c);
+  Push(0x4f0c); // probable 'BLACK'
   _ex__3(); // !_3
   CTERASE(); // CTERASE
 
@@ -1651,9 +1651,9 @@ void OSET() // OSET
   Push(Read16(regsp)); // DUP
   Push(pp_GLOBALSEED); // GLOBALSEED size: 2
   _ex__3(); // !_3
-  Push(0xc834);
+  Push(0xc834); // probable 'SET-PLANET'
   MODULE(); // MODULE
-  Push(0xc380);
+  Push(0xc380); // probable 'INIT-ORBIT'
   MODULE(); // MODULE
   MROTATE(); // MROTATE
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -1661,13 +1661,13 @@ void OSET() // OSET
   _eq_(); // =
   if (Pop() == 0) goto label4;
   Push(1); // 1
-  Push(0xbdd8);
+  Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
   if (Pop() == 0) goto label5;
 
   UNK_0x3f3b("THE CRYSTAL ORB IS GLOWING");
   _dot_TTY(); // .TTY
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   goto label6;
 
   label5:
@@ -1681,7 +1681,7 @@ void OSET() // OSET
   goto label7;
 
   label4:
-  Push(0xc3f3);
+  Push(0xc3f3); // probable 'MROTATE'
 
   label7:
   Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
@@ -1726,7 +1726,7 @@ void UNK_0xefeb() // UNK_0xefeb
 
 void UNK_0xf001() // UNK_0xf001
 {
-  Push(0xc4e5);
+  Push(0xc4e5); // probable 'OVFLU'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 
@@ -1750,7 +1750,7 @@ void UNK_0xf022() // UNK_0xf022
   UNK_0xea9b(); // UNK_0xea9b
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TERMINATED", 11); // (.")
-  Push(0xbef3);
+  Push(0xbef3); // probable 'OV/STATUS'
   MODULE(); // MODULE
   Push(pp_SKIP2NEST); // SKIP2NEST size: 2
   Push(Read16(Pop())); // @
@@ -2547,7 +2547,7 @@ void UNK_0xf4de() // UNK_0xf4de
 
 void UNK_0xf4e6() // UNK_0xf4e6
 {
-  Push(0xafa3);
+  Push(0xafa3); // probable 'CEX+WAX'
 }
 
 
@@ -2593,7 +2593,7 @@ void _ro__ex__i_EXT_rc_() // (!'EXT)
   Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
   _ex__3(); // !_3
   Push(0x000d);
-  Push(0xbdd8);
+  Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
   Push(pp__ask_12); // ?12 size: 2
   _ex__3(); // !_3

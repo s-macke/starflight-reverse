@@ -614,7 +614,7 @@ void UNK_0xddee() // UNK_0xddee
 {
   Push(pp_SPHEREWRAP); // SPHEREWRAP size: 2
   OFF(); // OFF
-  Push(0x6b31);
+  Push(0x6b31); // probable 'GVERTEX>GRIDCOLOR'
   SETLARRAY(); // SETLARRAY
   Push(cc__6); // 6
   Push(0); // 0
@@ -665,7 +665,7 @@ void UNK_0xde3c() // UNK_0xde3c
 {
   Push(pp_SPHEREWRAP); // SPHEREWRAP size: 2
   OFF(); // OFF
-  Push(0x6b31);
+  Push(0x6b31); // probable 'GVERTEX>GRIDCOLOR'
   SETLARRAY(); // SETLARRAY
   Push(cc__9); // 9
   Push(0); // 0
@@ -722,7 +722,7 @@ void UNK_0xde8c() // UNK_0xde8c
   Push(0x004b);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6b43);
+  Push(0x6b43); // probable 'GPOLY'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -744,7 +744,7 @@ void UNK_0xdeb0() // UNK_0xdeb0
   Push(0x004c);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6afa);
+  Push(0x6afa); // probable 'FACET'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -766,7 +766,7 @@ void UNK_0xded4() // UNK_0xded4
   Push(0x004d);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6ae8);
+  Push(0x6ae8); // probable 'VERTEX'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -1590,7 +1590,7 @@ void UNK_0xe410() // UNK_0xe410
   Push(0x0086);
   Push(pp__n_IN); // #IN size: 2
   _ex__3(); // !_3
-  Push(0x6ba6);
+  Push(0x6ba6); // probable 'XFORMVERT'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -1599,7 +1599,7 @@ void UNK_0xe410() // UNK_0xe410
   Push(0); // 0
   Push(pp_VOUT); // VOUT size: 2
   _ex__3(); // !_3
-  Push(0x6ae8);
+  Push(0x6ae8); // probable 'VERTEX'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2155,7 +2155,7 @@ void UNK_0xe7a7() // UNK_0xe7a7
   ON_3(); // ON_3
   Push(pp_SPHEREWRAP); // SPHEREWRAP size: 2
   OFF(); // OFF
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   Push(cc__9); // 9
   Push(0); // 0
@@ -2380,7 +2380,7 @@ void UNK_0xe8e5() // UNK_0xe8e5
   Push(0x0075);
   Push(pp__n_IN); // #IN size: 2
   _ex__3(); // !_3
-  Push(0x6ba6);
+  Push(0x6ba6); // probable 'XFORMVERT'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2389,7 +2389,7 @@ void UNK_0xe8e5() // UNK_0xe8e5
   Push(0); // 0
   Push(pp_VOUT); // VOUT size: 2
   _ex__3(); // !_3
-  Push(0x6b6a);
+  Push(0x6b6a); // probable 'G1VERT'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2399,7 +2399,7 @@ void UNK_0xe8e5() // UNK_0xe8e5
   Push(Pop()<<4); // 16*
   Push(pp_VIN_i_); // VIN' size: 2
   _ex__3(); // !_3
-  Push(0x6b31);
+  Push(0x6b31); // probable 'GVERTEX>GRIDCOLOR'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -3277,7 +3277,7 @@ void UNK_0xedfb() // UNK_0xedfb
   ON_3(); // ON_3
   Push(pp_SIGNEXTEND); // SIGNEXTEND size: 2
   ON_3(); // ON_3
-  Push(0x6a99);
+  Push(0x6a99); // probable 'MERCATOR'
   SETLARRAY(); // SETLARRAY
   Push(cc__6); // 6
   Push(0); // 0
@@ -3866,7 +3866,7 @@ void DESCEND() // DESCEND
   _dot_TTY(); // .TTY
   UNK_0xef33(); // UNK_0xef33
   UNK_0xef6f(); // UNK_0xef6f
-  Push(0xc317);
+  Push(0xc317); // probable 'NEWCONTOUR'
   MODULE(); // MODULE
   UNK_0xe7a7(); // UNK_0xe7a7
   UNK_0xe80d(); // UNK_0xe80d
@@ -4213,7 +4213,7 @@ void INIT_dash_ORBIT() // INIT-ORBIT
   UNK_0xf413(); // UNK_0xf413
   UNK_0xf0bb(); // UNK_0xf0bb
   if (Pop() == 0) goto label1;
-  Push(0x6a99);
+  Push(0x6a99); // probable 'MERCATOR'
   SETLARRAY(); // SETLARRAY
   FULLARRAY(); // FULLARRAY
   SETREGION(); // SETREGION
@@ -4224,7 +4224,7 @@ void INIT_dash_ORBIT() // INIT-ORBIT
   label1:
   UNK_0xf0c7(); // UNK_0xf0c7
   if (Pop() == 0) goto label3;
-  Push(0x6a99);
+  Push(0x6a99); // probable 'MERCATOR'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -4235,11 +4235,11 @@ void INIT_dash_ORBIT() // INIT-ORBIT
   label3:
   Push(pp_GLOBALSEED); // GLOBALSEED size: 2
   Push(Read16(Pop())); // @
-  Push(0xc302);
+  Push(0xc302); // probable 'MERCATOR-GEN'
   MODULE(); // MODULE
 
   label2:
-  Push(0xc32c);
+  Push(0xc32c); // probable 'MAKE-GLOBE'
   MODULE(); // MODULE
   UNK_0xf391(); // UNK_0xf391
   UNK_0xf39f(); // UNK_0xf39f

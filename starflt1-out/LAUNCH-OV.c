@@ -393,7 +393,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
 {
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0xd125);
+  Push(0xd125); // probable 'SECURE'
 }
 
 
@@ -563,7 +563,7 @@ void _and_LAUNCH() // &LAUNCH
   label1:
   LAUNCH(); // LAUNCH
   if (Pop() == 0) return;
-  Push(0xcc0a);
+  Push(0xcc0a); // probable 'UNNEST'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 

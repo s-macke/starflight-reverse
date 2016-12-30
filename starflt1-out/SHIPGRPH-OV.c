@@ -632,7 +632,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
   PRINT("YOUR ACCOUNT BALANCE IS: ", 25); // (.")
-  Push(0xc558);
+  Push(0xc558); // probable 'OVD@BALANCE'
   MODULE(); // MODULE
   D_dot_(); // D.
   PRINT("MU", 2); // (.")

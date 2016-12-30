@@ -377,11 +377,11 @@ void INJURE_dash_PL() // INJURE-PL
   ON_2(); // ON_2
   Push(0x01f4);
   MS(); // MS
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
-  Push(0xc19a);
+  Push(0xc19a); // probable '(.VI'
   MODULE(); // MODULE
 }
 
@@ -542,7 +542,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
-  Push(0xcdc0);
+  Push(0xcdc0); // probable '.STOR'
   MODULE(); // MODULE
 
   label3:

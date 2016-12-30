@@ -265,7 +265,7 @@ void UNK_0xe43a() // UNK_0xe43a
 
 void UNK_0xe4a2() // UNK_0xe4a2
 {
-  Push(0xb6fd);
+  Push(0xb6fd); // probable 'OV#IN$'
   MODULE(); // MODULE
 }
 
@@ -277,7 +277,7 @@ void UNK_0xe4a2() // UNK_0xe4a2
 
 void UNK_0xe4ca() // UNK_0xe4ca
 {
-  Push(0xb752);
+  Push(0xb752); // probable 'OVTRIM_1'
   MODULE(); // MODULE
 }
 
@@ -316,7 +316,7 @@ void UNK_0xe4e0() // UNK_0xe4e0
 
 void UNK_0xe4ec() // UNK_0xe4ec
 {
-  Push(0xc261);
+  Push(0xc261); // probable 'OVINIT-_1'
   MODULE(); // MODULE
 }
 
@@ -327,7 +327,7 @@ void UNK_0xe4ec() // UNK_0xe4ec
 
 void UNK_0xe4f6() // UNK_0xe4f6
 {
-  Push(0xc273);
+  Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
 }
 
@@ -338,7 +338,7 @@ void UNK_0xe4f6() // UNK_0xe4f6
 
 void UNK_0xe500() // UNK_0xe500
 {
-  Push(0xc285);
+  Push(0xc285); // probable 'OVD@BAL'
   MODULE(); // MODULE
 }
 
@@ -349,7 +349,7 @@ void UNK_0xe500() // UNK_0xe500
 
 void UNK_0xe50a() // UNK_0xe50a
 {
-  Push(0xc2a9);
+  Push(0xc2a9); // probable 'OV?BALA'
   MODULE(); // MODULE
 }
 
@@ -1968,7 +1968,7 @@ void UNK_0xf2c4() // UNK_0xf2c4
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
   DNEGATE(); // DNEGATE
-  Push(0xc2ed);
+  Push(0xc2ed); // probable 'T+BALAN'
   MODULE(); // MODULE
   goto label4;
 

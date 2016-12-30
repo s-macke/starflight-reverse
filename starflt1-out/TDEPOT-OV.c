@@ -138,7 +138,7 @@ const unsigned short int pp_UNK_0xe4b4 = 0xe4b4; // UNK_0xe4b4 size: 17
 
 void UNK_0xe2cc() // UNK_0xe2cc
 {
-  Push(0xc542);
+  Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
 }
 
@@ -150,7 +150,7 @@ void UNK_0xe2cc() // UNK_0xe2cc
 
 void UNK_0xe2e0() // UNK_0xe2e0
 {
-  Push(0xc5ca);
+  Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
 }
 
@@ -194,7 +194,7 @@ void UNK_0xe2fa() // UNK_0xe2fa
 
 void UNK_0xe318() // UNK_0xe318
 {
-  Push(0xbd82);
+  Push(0xbd82); // probable 'OV.0$$$'
   MODULE(); // MODULE
 }
 
@@ -472,7 +472,7 @@ void UNK_0xe4c7() // UNK_0xe4c7
   SetColor("BLUE");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
-  Push(0xc558);
+  Push(0xc558); // probable 'OVD@BALANCE'
   MODULE(); // MODULE
   Push(cc__7); // 7
   D_dot_R(); // D.R
@@ -1211,7 +1211,7 @@ void UNK_0xea98() // UNK_0xea98
 {
   SAVE_dash_SCR(); // SAVE-SCR
   Push(0); // 0
-  Push(0xc583);
+  Push(0xc583); // probable 'OV?BALANCE'
   MODULE(); // MODULE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1259,7 +1259,7 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(pp__dash_AIN); // -AIN size: 2
   _ex__3(); // !_3
   Push(cc__6); // 6
-  Push(0xbd5b);
+  Push(0xbd5b); // probable 'OV#IN$'
   MODULE(); // MODULE
   Push(0); // 0
   SWAP(); // SWAP
@@ -1357,7 +1357,7 @@ void UNK_0xeb74() // UNK_0xeb74
   return;
 
   label1:
-  Push(0xc558);
+  Push(0xc558); // probable 'OVD@BALANCE'
   MODULE(); // MODULE
   _2DUP(); // 2DUP
   UNK_0xeb66(); // UNK_0xeb66

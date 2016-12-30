@@ -99,7 +99,7 @@ const unsigned short int pp_UNK_0xf4a8 = 0xf4a8; // UNK_0xf4a8 size: 3
 
 void UNK_0xe556() // UNK_0xe556
 {
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
 }
 
@@ -111,7 +111,7 @@ void UNK_0xe556() // UNK_0xe556
 
 void UNK_0xe580() // UNK_0xe580
 {
-  Push(0xbf4a);
+  Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
 }
 
@@ -200,7 +200,7 @@ void UNK_0xe5e2() // UNK_0xe5e2
 
 void UNK_0xe5f4() // UNK_0xe5f4
 {
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
 }
 
@@ -428,7 +428,7 @@ void UNK_0xea51() // UNK_0xea51
 {
   UNK_0xe935(); // UNK_0xe935
   INEXT(); // INEXT
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   UNK_0xe5f4(); // UNK_0xe5f4
   WUP(); // WUP
@@ -481,7 +481,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   UNK_0xe58a(); // UNK_0xe58a
   IOPEN(); // IOPEN
   UNK_0xe935(); // UNK_0xe935
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   Push(0x5d96); Push(0x0002);
   UNK_0xe5e2(); // UNK_0xe5e2
@@ -693,7 +693,7 @@ void UNK_0xf1d2() // UNK_0xf1d2
   CI(); // CI
   _2SWAP(); // 2SWAP
   _gt_C_plus_S(); // >C+S
-  Push(0xbe55);
+  Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   Push(0x1f40); Push(0x0000);
@@ -728,9 +728,9 @@ void UNK_0xf204() // UNK_0xf204
   UNK_0xf1d2(); // UNK_0xf1d2
   UNK_0xf190(); // UNK_0xf190
   _gt_C_plus_S(); // >C+S
-  Push(0xc1e9);
+  Push(0xc1e9); // probable 'KILL'
   MODULE(); // MODULE
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT

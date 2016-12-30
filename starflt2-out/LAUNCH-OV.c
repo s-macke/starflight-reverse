@@ -356,7 +356,7 @@ void UNK_0xf306() // UNK_0xf306
 {
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0xd216);
+  Push(0xd216); // probable 'SECUR'
 }
 
 
@@ -526,7 +526,7 @@ void _and_LAUNCH() // &LAUNCH
   label1:
   UNK_0xf14e(); // UNK_0xf14e
   if (Pop() == 0) return;
-  Push(0xcafc);
+  Push(0xcafc); // probable 'UNNEST'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 

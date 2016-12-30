@@ -65,7 +65,7 @@
 
 void UNK_0xf22a() // UNK_0xf22a
 {
-  Push(0xbdef);
+  Push(0xbdef); // probable 'OV?.EQUIP-OK'
   MODULE(); // MODULE
 }
 

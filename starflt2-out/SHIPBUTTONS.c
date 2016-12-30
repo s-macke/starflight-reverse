@@ -133,7 +133,7 @@ const unsigned short int pp_UNK_0xebf6 = 0xebf6; // UNK_0xebf6 size: 2
 
 void UNK_0xec16() // UNK_0xec16
 {
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
   MODULE(); // MODULE
 }
 
@@ -144,7 +144,7 @@ void UNK_0xec16() // UNK_0xec16
 
 void UNK_0xec20() // UNK_0xec20
 {
-  Push(0xbc98);
+  Push(0xbc98); // probable 'OV/DA'
   MODULE(); // MODULE
 }
 
@@ -155,7 +155,7 @@ void UNK_0xec20() // UNK_0xec20
 
 void UNK_0xec2a() // UNK_0xec2a
 {
-  Push(0xc4ef);
+  Push(0xc4ef); // probable '(.MERC)'
   MODULE(); // MODULE
 }
 
@@ -174,7 +174,7 @@ void UNK_0xec34() // UNK_0xec34
   Push(cc__8); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Push(0xc636);
+  Push(0xc636); // probable 'OV-SH'
   MODULE(); // MODULE
   Push(0x02ee);
   MS(); // MS
@@ -183,7 +183,7 @@ void UNK_0xec34() // UNK_0xec34
   Push(cc__3); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(0xc64e);
+  Push(0xc64e); // probable 'OV-AR'
   MODULE(); // MODULE
   Push(0x02ee);
   MS(); // MS
@@ -387,7 +387,7 @@ void UNK_0xed86() // UNK_0xed86
 void UNK_0xedba() // UNK_0xedba
 {
   Push(0x0037);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp__ask_3); // ?3 size: 2
   Push(Read16(Pop())); // @
@@ -576,7 +576,7 @@ void UNK_0xeeac() // UNK_0xeeac
 {
   SetColor("BLACK");
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(0xcb2e);
+  Push(0xcb2e); // probable 'OV.MVS'
   MODULE(); // MODULE
   Push(pp__n_AUX); // #AUX size: 2
   Push(Read16(Pop())); // @
@@ -605,7 +605,7 @@ void UNK_0xeece() // UNK_0xeece
   UNK_0xec2a(); // UNK_0xec2a
 
   label1:
-  Push(0xc505);
+  Push(0xc505); // probable '(GETSITE)'
   MODULE(); // MODULE
 }
 
@@ -617,16 +617,16 @@ void UNK_0xeece() // UNK_0xeece
 void UNK_0xeee6() // UNK_0xeee6
 {
   Push(cc__5); // 5
-  Push(0xb77c);
+  Push(0xb77c); // probable 'OV?.EQ'
   MODULE(); // MODULE
   if (Pop() == 0) return;
-  Push(0xd444);
+  Push(0xd444); // probable 'TRY-L_2'
   MODULE(); // MODULE
   Push(pp_GWF); // GWF size: 2
   Push(Read16(Pop())); // @
   _0_st_(); // 0<
   if (Pop() == 0) return;
-  Push(0xd2f2);
+  Push(0xd2f2); // probable 'OV>DE'
   MODULE(); // MODULE
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -695,22 +695,22 @@ void UNK_0xef3d() // UNK_0xef3d
   if (Pop() == 0) goto label2;
   Push(pp__ask_LANDED); // ?LANDED size: 2
   ON_2(); // ON_2
-  Push(0xcd74);
+  Push(0xcd74); // probable 'DIO'
   MODULE(); // MODULE
-  Push(0xbcf9);
+  Push(0xbcf9); // probable 'SET-PLAN'
   MODULE(); // MODULE
 
   label2:
-  Push(0xd196);
+  Push(0xd196); // probable 'TV'
   MODULE(); // MODULE
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   _i_KEY(); // 'KEY
   Pop(); // DROP
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA size: 2
   _099(); // 099
   UNK_0xeeac(); // UNK_0xeeac
-  Push(0xbd8b);
+  Push(0xbd8b); // probable 'SEEGR'
   MODULE(); // MODULE
   goto label3;
 
@@ -781,9 +781,9 @@ void UNK_0xf038() // UNK_0xf038
   return;
 
   label1:
-  Push(0xd2e2);
+  Push(0xd2e2); // probable 'OV/LA'
   MODULE(); // MODULE
-  Push(0xc0e7);
+  Push(0xc0e7); // probable '/STARD'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _ex__2(); // !_2
   if (Pop() == 0) goto label2;
@@ -791,7 +791,7 @@ void UNK_0xf038() // UNK_0xf038
   UNK_0xec2a(); // UNK_0xec2a
   Push(0xed86);
   Push(0xee3a);
-  Push(0xef1b);
+  Push(0xef1b); // probable '1.1BTN.XEQ'
   Push(cc__7); // 7
   Push(0xede6);
   DOTASKS(UNK_0xede6, 1.1BTN.XEQ, UNK_0xee3a, UNK_0xed86);
@@ -809,7 +809,7 @@ void UNK_0xf038() // UNK_0xf038
 
 void UNK_0xf082() // UNK_0xf082
 {
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   Push(pp_UNK_0xebf6); // UNK_0xebf6 size: 0
   ON_2(); // ON_2
@@ -825,7 +825,7 @@ void UNK_0xf082() // UNK_0xf082
 
 void UNK_0xf096() // UNK_0xf096
 {
-  Push(0xd2d2);
+  Push(0xd2d2); // probable 'OV/IT'
   MODULE(); // MODULE
 }
 
@@ -836,7 +836,7 @@ void UNK_0xf096() // UNK_0xf096
 
 void UNK_0xf0a0() // UNK_0xf0a0
 {
-  Push(0xd302);
+  Push(0xd302); // probable 'OV/LO'
   MODULE(); // MODULE
 }
 
@@ -860,7 +860,7 @@ void UNK_0xf0aa() // UNK_0xf0aa
   if (Pop() == 0) goto label1;
   Push(pp_FORCEPT); // FORCEPT size: 2
   ON_2(); // ON_2
-  Push(0xc8f1);
+  Push(0xc8f1); // probable 'BOLT'
   MODULE(); // MODULE
   return;
 
@@ -945,7 +945,7 @@ void UNK_0xf11e() // UNK_0xf11e
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(0xbdda);
+  Push(0xbdda); // probable '.CULT'
   MODULE(); // MODULE
   goto label3;
 
@@ -970,7 +970,7 @@ void UNK_0xf11e() // UNK_0xf11e
 void UNK_0xf172() // UNK_0xf172
 {
   UNK_0xec92(); // UNK_0xec92
-  Push(0xc0c5);
+  Push(0xc0c5); // probable 'OV/SEN'
   MODULE(); // MODULE
 }
 
@@ -982,7 +982,7 @@ void UNK_0xf172() // UNK_0xf172
 void UNK_0xf17e() // UNK_0xf17e
 {
   Push(1); // 1
-  Push(0xd38a);
+  Push(0xd38a); // probable 'OV/AN'
   MODULE(); // MODULE
 }
 
@@ -1031,7 +1031,7 @@ void _2BTN_dot_XEQ() // 2BTN.XEQ
 
 void UNK_0xf1b3() // UNK_0xf1b3
 {
-  Push(0xcaa2);
+  Push(0xcaa2); // probable 'MAN'
   MODULE(); // MODULE
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -1044,7 +1044,7 @@ void UNK_0xf1b3() // UNK_0xf1b3
 
 void UNK_0xf1c1() // UNK_0xf1c1
 {
-  Push(0xd3c5);
+  Push(0xd3c5); // probable 'OV/ST'
   MODULE(); // MODULE
   if (Pop() == 0) return;
   UNK_0xeeac(); // UNK_0xeeac
@@ -1057,7 +1057,7 @@ void UNK_0xf1c1() // UNK_0xf1c1
 
 void UNK_0xf1d1() // UNK_0xf1d1
 {
-  Push(0xc626);
+  Push(0xc626); // probable 'OV/(U'
   MODULE(); // MODULE
 }
 
@@ -1068,7 +1068,7 @@ void UNK_0xf1d1() // UNK_0xf1d1
 
 void UNK_0xf1db() // UNK_0xf1db
 {
-  Push(0xc616);
+  Push(0xc616); // probable 'OV/(D'
   MODULE(); // MODULE
   Push(cc__3); // 3
   Push(cc__3); // 3
@@ -1140,7 +1140,7 @@ void UNK_0xf222() // UNK_0xf222
 void UNK_0xf22a() // UNK_0xf22a
 {
   UNK_0xec92(); // UNK_0xec92
-  Push(0xbca8);
+  Push(0xbca8); // probable 'OV/RE'
   MODULE(); // MODULE
 }
 
@@ -1151,7 +1151,7 @@ void UNK_0xf22a() // UNK_0xf22a
 
 void UNK_0xf236() // UNK_0xf236
 {
-  Push(0xd408);
+  Push(0xd408); // probable 'JUMP'
   MODULE(); // MODULE
 }
 
@@ -1208,7 +1208,7 @@ void UNK_0xf277() // UNK_0xf277
   Push(0x0060);
   UNK_0xf25d(); // UNK_0xf25d
   CTINIT(); // CTINIT
-  Push(0xbe55);
+  Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
 }
 
@@ -1219,7 +1219,7 @@ void UNK_0xf277() // UNK_0xf277
 
 void UNK_0xf289() // UNK_0xf289
 {
-  Push(0xd33f);
+  Push(0xd33f); // probable 'OV/EX'
   MODULE(); // MODULE
 }
 
@@ -1230,7 +1230,7 @@ void UNK_0xf289() // UNK_0xf289
 
 void UNK_0xf293() // UNK_0xf293
 {
-  Push(0xd34f);
+  Push(0xd34f); // probable 'OV/TR'
   MODULE(); // MODULE
 }
 
@@ -1262,11 +1262,11 @@ void _6BTN_dot_XEQ() // 6BTN.XEQ
 
 void UNK_0xf2b6() // UNK_0xf2b6
 {
-  Push(0xed86);
-  Push(0xee3a);
-  Push(0xf0e3);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
+  Push(0xf0e3); // probable '1BTN.XEQ'
   Push(1); // 1
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, 1BTN.XEQ, UNK_0xee3a, UNK_0xed86);
   Push(pp_UNK_0xebf6); // UNK_0xebf6 size: 0
   _099(); // 099
@@ -1279,11 +1279,11 @@ void UNK_0xf2b6() // UNK_0xf2b6
 
 void UNK_0xf2d2() // UNK_0xf2d2
 {
-  Push(0xed86);
-  Push(0xee3a);
-  Push(0xf19d);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
+  Push(0xf19d); // probable '2BTN.XEQ'
   Push(2); // 2
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, 2BTN.XEQ, UNK_0xee3a, UNK_0xed86);
 }
 
@@ -1294,11 +1294,11 @@ void UNK_0xf2d2() // UNK_0xf2d2
 
 void UNK_0xf2ea() // UNK_0xf2ea
 {
-  Push(0xed86);
-  Push(0xee3a);
-  Push(0xf208);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
+  Push(0xf208); // probable '3BTN.XEQ'
   Push(cc__3); // 3
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, 3BTN.XEQ, UNK_0xee3a, UNK_0xed86);
 }
 
@@ -1309,11 +1309,11 @@ void UNK_0xf2ea() // UNK_0xf2ea
 
 void UNK_0xf302() // UNK_0xf302
 {
-  Push(0xed86);
-  Push(0xee3a);
-  Push(0xf24b);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
+  Push(0xf24b); // probable '4BTN.XEQ'
   Push(cc__4); // 4
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, 4BTN.XEQ, UNK_0xee3a, UNK_0xed86);
 }
 
@@ -1326,7 +1326,7 @@ void UNK_0xf31a() // UNK_0xf31a
 {
   Push(cc__5); // 5
   UNK_0xecec(); // UNK_0xecec
-  Push(0xbef2);
+  Push(0xbef2); // probable 'U-COMM'
   MODULE(); // MODULE
   UNK_0xed3a(); // UNK_0xed3a
 }
@@ -1338,11 +1338,11 @@ void UNK_0xf31a() // UNK_0xf31a
 
 void UNK_0xf32a() // UNK_0xf32a
 {
-  Push(0xed86);
-  Push(0xee3a);
-  Push(0xf2a8);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
+  Push(0xf2a8); // probable '6BTN.XEQ'
   Push(cc__6); // 6
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, 6BTN.XEQ, UNK_0xee3a, UNK_0xed86);
 }
 
@@ -1384,7 +1384,7 @@ void _bo_0BTN_dot_XEQ_bc_() // [0BTN.XEQ]
 void UNK_0xf369() // UNK_0xf369
 {
   Push(0x002b);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   Push(pp__pe_SLUG); // %SLUG size: 2
@@ -1506,10 +1506,10 @@ void UNK_0xf452() // UNK_0xf452
 void UNK_0xf460() // UNK_0xf460
 {
   Push(0xf452);
-  Push(0xee3a);
+  Push(0xee3a); // probable 'UNK_0xee3a'
   Push(0xf3b3);
   Push(0); // 0
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS(UNK_0xede6, UNK_0xf3b3, UNK_0xee3a, UNK_0xf452);
   Push(pp_UNK_0xebf6); // UNK_0xebf6 size: 0
   _099(); // 099
@@ -1527,7 +1527,7 @@ void UNK_0xf47c() // UNK_0xf47c
 
   UNK_0x3f09("SHIP COMPUTER ACTIVATED");
   _dot_TTY(); // .TTY
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 
@@ -1553,7 +1553,7 @@ void UNK_0xf47c() // UNK_0xf47c
 
 void UNK_0xf502() // UNK_0xf502
 {
-  Push(0xd296);
+  Push(0xd296); // probable '.AIRL'
   MODULE(); // MODULE
   V_gt_DISPL(); // V>DISPL
   UNK_0xf47c(); // UNK_0xf47c

@@ -243,7 +243,7 @@ void UNK_0xeddd() // UNK_0xeddd
 
 void UNK_0xedf7() // UNK_0xedf7
 {
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
   MODULE(); // MODULE
 }
 
@@ -254,7 +254,7 @@ void UNK_0xedf7() // UNK_0xedf7
 
 void UNK_0xee01() // UNK_0xee01
 {
-  Push(0xbc98);
+  Push(0xbc98); // probable 'OV/DA'
   MODULE(); // MODULE
 }
 
@@ -265,7 +265,7 @@ void UNK_0xee01() // UNK_0xee01
 
 void UNK_0xee0b() // UNK_0xee0b
 {
-  Push(0xc4ef);
+  Push(0xc4ef); // probable '(.MERC)'
   MODULE(); // MODULE
 }
 
@@ -1087,7 +1087,7 @@ void UNK_0xf26a() // UNK_0xf26a
   UNK_0xf250(); // UNK_0xf250
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
-  Push(0xc976);
+  Push(0xc976); // probable '.EX'
   MODULE(); // MODULE
   return;
 
@@ -1107,7 +1107,7 @@ void UNK_0xf26a() // UNK_0xf26a
   UNK_0xf250(); // UNK_0xf250
   if (Pop() == 0) goto label2;
   Push(2); // 2
-  Push(0xc976);
+  Push(0xc976); // probable '.EX'
   MODULE(); // MODULE
   return;
 
@@ -1119,12 +1119,12 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(pp__ask_AUTO); // ?AUTO size: 2
   ON_2(); // ON_2
   Push(1); // 1
-  Push(0xc976);
+  Push(0xc976); // probable '.EX'
   MODULE(); // MODULE
   Push(pp__ask_SUP); // ?SUP size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  Push(0xc636);
+  Push(0xc636); // probable 'OV-SH'
   MODULE(); // MODULE
 }
 
@@ -1400,7 +1400,7 @@ void JUMP() // JUMP
   UNK_0xf398(); // UNK_0xf398
   if (Pop() == 0) return;
   UNK_0xf440(); // UNK_0xf440
-  Push(0xd3c5);
+  Push(0xd3c5); // probable 'OV/ST'
   MODULE(); // MODULE
   if (Pop() == 0) return;
   UNK_0xef65(); // UNK_0xef65
@@ -1422,12 +1422,12 @@ void JUMP() // JUMP
   _2_at_(); // 2@
   UNK_0xf380(); // UNK_0xf380
   UNK_0xee43(); // UNK_0xee43
-  Push(0xc558);
+  Push(0xc558); // probable 'JUMPF'
   MODULE(); // MODULE
-  Push(0xcaeb);
+  Push(0xcaeb); // probable 'JMPSHP'
   MODULE(); // MODULE
   UNK_0xf3be(); // UNK_0xf3be
-  Push(0xcb2e);
+  Push(0xcb2e); // probable 'OV.MVS'
   MODULE(); // MODULE
   UNK_0xf40a(); // UNK_0xf40a
   UNK_0xf3f6(); // UNK_0xf3f6
@@ -1438,7 +1438,7 @@ void JUMP() // JUMP
 
   UNK_0x3f09("CANCELLED");
   _dot_TTY(); // .TTY
-  Push(0xcb2e);
+  Push(0xcb2e); // probable 'OV.MVS'
   MODULE(); // MODULE
 }
 

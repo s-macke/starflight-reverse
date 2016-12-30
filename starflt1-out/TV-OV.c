@@ -1124,7 +1124,7 @@ void UNK_0xeeab() // UNK_0xeeab
   Push(pp_TVEHICLE); // TVEHICLE size: 4
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xed9c(); // UNK_0xed9c
-  Push(0xc437);
+  Push(0xc437); // probable 'ICON-PARM'
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
   IOPEN(); // IOPEN
@@ -1153,7 +1153,7 @@ void UNK_0xeeab() // UNK_0xeeab
   Push(Pop()+1); // 1+
   Push(0x63fe); // IFIELD(INST-Y)
   _ex__3(); // !_3
-  Push(0xc437);
+  Push(0xc437); // probable 'ICON-PARM'
   MODULE(); // MODULE
   _plus_ICON(); // +ICON
   ICLOSE(); // ICLOSE
@@ -1361,7 +1361,7 @@ void UNK_0xf0a5() // UNK_0xf0a5
   _gt_1ICONFONT(); // >1ICONFONT
   Push(pp_MOVED); // MOVED size: 2
   OFF(); // OFF
-  Push(0xce3c);
+  Push(0xce3c); // probable '8X8CO'
   Push(pp__i__dot_BACKG); // '.BACKG size: 2
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
@@ -1628,7 +1628,7 @@ void UNK_0xf24e() // UNK_0xf24e
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_AT(); // ?ICONS-AT
   UNK_0xea67(); // UNK_0xea67
-  Push(0xcd7c);
+  Push(0xcd7c); // probable '?TALK'
   MODULE(); // MODULE
   _ex_CRS(); // !CRS
 }
@@ -1740,7 +1740,7 @@ void TV_dash_DISP() // TV-DISP
   Push2Words("0.");
   Push(pp_THIS_dash_RE); // THIS-RE size: 4
   _1_dot_5_ex_(); // 1.5!
-  Push(0xcf62);
+  Push(0xcf62); // probable '?POPULA'
   MODULE(); // MODULE
   UNK_0xeeab(); // UNK_0xeeab
   Push(0xec78);

@@ -112,7 +112,7 @@ const unsigned short int cc_UNK_0xe54c = 0x0004; // UNK_0xe54c
 
 void UNK_0xe516() // UNK_0xe516
 {
-  Push(0xbd5b);
+  Push(0xbd5b); // probable 'OV#IN$'
   MODULE(); // MODULE
 }
 
@@ -124,7 +124,7 @@ void UNK_0xe516() // UNK_0xe516
 
 void UNK_0xe53e() // UNK_0xe53e
 {
-  Push(0xbdba);
+  Push(0xbdba); // probable 'OVTRIMS'
   MODULE(); // MODULE
 }
 
@@ -158,7 +158,7 @@ void UNK_0xe550() // UNK_0xe550
 
 void UNK_0xe55c() // UNK_0xe55c
 {
-  Push(0xc52d);
+  Push(0xc52d); // probable 'OVINIT-BALANCE'
   MODULE(); // MODULE
 }
 
@@ -169,7 +169,7 @@ void UNK_0xe55c() // UNK_0xe55c
 
 void UNK_0xe566() // UNK_0xe566
 {
-  Push(0xc542);
+  Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
 }
 
@@ -180,7 +180,7 @@ void UNK_0xe566() // UNK_0xe566
 
 void UNK_0xe570() // UNK_0xe570
 {
-  Push(0xc558);
+  Push(0xc558); // probable 'OVD@BALANCE'
   MODULE(); // MODULE
 }
 
@@ -191,7 +191,7 @@ void UNK_0xe570() // UNK_0xe570
 
 void UNK_0xe57a() // UNK_0xe57a
 {
-  Push(0xc583);
+  Push(0xc583); // probable 'OV?BALANCE'
   MODULE(); // MODULE
 }
 
@@ -869,11 +869,11 @@ void UNK_0xeb45() // UNK_0xeb45
   Push(pp__ask_EGA); // ?EGA size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xbeb2);
+  Push(0xbeb2); // probable '.EGARUNBIT'
   goto label2;
 
   label1:
-  Push(0xbe8a);
+  Push(0xbe8a); // probable '.RUNBIT'
 
   label2:
   MODULE(); // MODULE
@@ -1729,7 +1729,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
   DNEGATE(); // DNEGATE
-  Push(0xc5ca);
+  Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
   goto label4;
 

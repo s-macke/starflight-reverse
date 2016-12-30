@@ -1012,7 +1012,7 @@ void UNK_0xf320() // UNK_0xf320
 {
   Push(pp_SYSK); // SYSK size: 2
   Push(Read16(Pop())); // @
-  Push(0x0160);
+  Push(0x0160); // probable '(!OLD)'
   _st_(); // <
   if (Pop() == 0) return;
   PRINT("384k memory minimum needed!", 27); // (.")
@@ -1196,7 +1196,7 @@ void UNK_0xf430() // UNK_0xf430
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
-  Push(0x53a9);
+  Push(0x53a9); // probable 'MPS'
   _ex__2(); // !_2
 }
 

@@ -138,7 +138,7 @@ void UNK_0xf008() // UNK_0xf008
   Push(0x00bf);
   POS_dot_(); // POS.
   Push(0x003c);
-  Push(0xbe9d);
+  Push(0xbe9d); // probable '@.HYBRID'
   MODULE(); // MODULE
 }
 
@@ -168,7 +168,7 @@ void UNK_0xf026() // UNK_0xf026
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR size: 2
   _ex__3(); // !_3
-  Push(0xc216);
+  Push(0xc216); // probable 'P>CT'
   MODULE(); // MODULE
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -251,13 +251,13 @@ void UNK_0xf09c() // UNK_0xf09c
   SONG(); // SONG
   UNK_0xf08e(); // UNK_0xf08e
   UNK_0xf020(); // UNK_0xf020
-  Push(0xc52d);
+  Push(0xc52d); // probable 'OVINIT-BALANCE'
   MODULE(); // MODULE
   Push(0xa120); Push(0x0007);
-  Push(0xc5ca);
+  Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
   Push(cc__3); // 3
-  Push(0xc542);
+  Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
   Push(pp_TIME_dash_PASSING); // TIME-PASSING size: 2
   ON_3(); // ON_3
@@ -754,7 +754,7 @@ void DEPART() // DEPART
 {
   Push(pp__ask_CRITIC); // ?CRITIC size: 2
   OFF(); // OFF
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__3(); // !_3
   Push(pp__ask_LANDED); // ?LANDED size: 2

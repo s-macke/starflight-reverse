@@ -418,7 +418,7 @@ void UNK_0xe802() // UNK_0xe802
 
 void UNK_0xe85e() // UNK_0xe85e
 {
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   Push(pp_XABS); // XABS size: 2
   Push(Read16(Pop())); // @
@@ -631,7 +631,7 @@ void UNK_0xe921() // UNK_0xe921
 
 void UNK_0xe9e5() // UNK_0xe9e5
 {
-  Push(0x6ac1);
+  Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   UNK_0xe8c6(); // UNK_0xe8c6
   Push(0x0016);
@@ -824,7 +824,7 @@ void UNK_0xec00() // UNK_0xec00
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Push(0xc33e);
+  Push(0xc33e); // probable 'SCRLCON'
   MODULE(); // MODULE
 }
 
@@ -1146,7 +1146,7 @@ void _ask_POPULA() // ?POPULA
   PRINT("SCANNING NEW TERRAIN ", 21); // (.")
 
   label2:
-  Push(0xce7c);
+  Push(0xce7c); // probable 'POPULA'
   MODULE(); // MODULE
   UNK_0xecf2(); // UNK_0xecf2
   CDROP(); // CDROP
@@ -1490,7 +1490,7 @@ void UNK_0xf122() // UNK_0xf122
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(0xc03f);
+  Push(0xc03f); // probable '(ROL'
   MODULE(); // MODULE
   _gt_DISPLAY(); // >DISPLAY
   Push(pp__i_INJURE); // 'INJURE size: 2
@@ -1526,7 +1526,7 @@ void UNK_0xf16e() // UNK_0xf16e
   Push(0x03e8);
   MS(); // MS
   BEEPOFF(); // BEEPOFF
-  Push(0xcf10);
+  Push(0xcf10); // probable '>DEBRIS'
   MODULE(); // MODULE
   Push(pp__ask_TV); // ?TV size: 2
   OFF_2(); // OFF_2
@@ -1777,7 +1777,7 @@ void UNK_0xf31d() // UNK_0xf31d
   Push(Read16(Pop())); // @
   Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS size: 2
   _st__ex__gt_(); // <!>
-  Push(0x266b);
+  Push(0x266b); // probable 'BEEP'
   Push(pp__i_ENDING); // 'ENDING size: 2
   _st__ex__gt_(); // <!>
   Push(0xeb06);
@@ -1962,22 +1962,22 @@ void APPROACH() // APPROACH
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(0xc302);
+  Push(0xc302); // probable 'MERCATOR-GEN'
   MODULE(); // MODULE
   SHIP_dash_CONSOLE(); // SHIP-CONSOLE
-  Push(0xc48c);
+  Push(0xc48c); // probable '(.MERC)'
   MODULE(); // MODULE
   _dot_REGION_plus_(); // .REGION+
-  Push(0xc4a2);
+  Push(0xc4a2); // probable '(GETSITE)'
   MODULE(); // MODULE
   Push(pp__n_CLRMAP); // #CLRMAP size: 2
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
-  Push(0xc380);
+  Push(0xc380); // probable 'INIT-ORBIT'
   MODULE(); // MODULE
-  Push(0xc395);
+  Push(0xc395); // probable 'SHOWSITE'
   MODULE(); // MODULE
-  Push(0xc3a7);
+  Push(0xc3a7); // probable 'DESCEND'
   MODULE(); // MODULE
   _gt_DISPLAY(); // >DISPLAY
   SetColor("WHITE");

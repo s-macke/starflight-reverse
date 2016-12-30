@@ -1767,7 +1767,7 @@ void UNK_0xf2a6() // UNK_0xf2a6
 void SYSCAN() // SYSCAN
 {
   Push(cc__8); // 8
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp_NOF); // NOF size: 2
   Push(Read16(Pop())); // @
@@ -1819,7 +1819,7 @@ void SYSCAN() // SYSCAN
   Push(cc__5); // 5
   _st_(); // <
   if (Pop() == 0) goto label4;
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label4:
@@ -1992,7 +1992,7 @@ void UNK_0xf461() // UNK_0xf461
 
 void UNK_0xf46f() // UNK_0xf46f
 {
-  Push(0xbdda);
+  Push(0xbdda); // probable '.CULT'
   MODULE(); // MODULE
 }
 
@@ -2003,7 +2003,7 @@ void UNK_0xf46f() // UNK_0xf46f
 
 void UNK_0xf479() // UNK_0xf479
 {
-  Push(0xbdda);
+  Push(0xbdda); // probable '.CULT'
   MODULE(); // MODULE
 }
 

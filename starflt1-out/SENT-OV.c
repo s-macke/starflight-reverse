@@ -308,14 +308,14 @@ void UNK_0xe435() // UNK_0xe435
   _ex__3(); // !_3
   Push(0xe431);
   CFA(); // CFA
-  Push(0x2790);
+  Push(0x2790); // probable '-TRAILING'
   Push(0x000e);
   Push(Pop() + Pop()); // +
   _ex__3(); // !_3
   _dash_TRAILING(); // -TRAILING
-  Push(0x099a);
+  Push(0x099a); // probable 'BL'
   CFA(); // CFA
-  Push(0x2790);
+  Push(0x2790); // probable '-TRAILING'
   Push(0x000e);
   Push(Pop() + Pop()); // +
   _ex__3(); // !_3

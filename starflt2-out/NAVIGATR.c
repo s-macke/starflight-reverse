@@ -72,7 +72,7 @@
 
 void UNK_0xf1ba() // UNK_0xf1ba
 {
-  Push(0xb77c);
+  Push(0xb77c); // probable 'OV?.EQ'
   MODULE(); // MODULE
 }
 

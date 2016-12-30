@@ -65,7 +65,7 @@ const unsigned short int cc_UNK_0xefb0 = 0x0004; // UNK_0xefb0
 
 void UNK_0xef96() // UNK_0xef96
 {
-  Push(0xb752);
+  Push(0xb752); // probable 'OVTRIM_1'
   MODULE(); // MODULE
 }
 

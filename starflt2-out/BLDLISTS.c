@@ -580,7 +580,7 @@ void UNK_0xee06() // UNK_0xee06
 {
   _gt_C_plus_S(); // >C+S
   Push(0x0010);
-  Push(0xed68);
+  Push(0xed68); // probable 'UNK_0xed68'
   IFLD_ex_(); // IFLD!
   Push(0); // 0
   LoadData("UNK_0xed68"); // from 'STIS        '
@@ -1316,7 +1316,7 @@ void APOST_gt_PO() // APOST>PO
 
 void UNK_0xf3e8() // UNK_0xf3e8
 {
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -1374,7 +1374,7 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(pp_EDL); // EDL size: 2
   _st__ex__gt_(); // <!>
   ICLOSE(); // ICLOSE
-  Push(0xbfda);
+  Push(0xbfda); // probable 'EDL>P'
   MODULE(); // MODULE
   Push(pp_A_dash_POSTU); // A-POSTU size: 2
   Push(Read8(Pop())&0xFF); // C@

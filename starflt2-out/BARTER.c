@@ -1340,7 +1340,7 @@ void UNK_0xe492() // UNK_0xe492
 void UNK_0xe55a() // UNK_0xe55a
 {
   UNK_0xe15c(); // UNK_0xe15c
-  Push(0xa9ce);
+  Push(0xa9ce); // probable 'ASKING'
   IFLD_at_(); // IFLD@
   ICLOSE(); // ICLOSE
 }
@@ -1429,7 +1429,7 @@ void UNK_0xe5ae() // UNK_0xe5ae
 void UNK_0xe5b8() // UNK_0xe5b8
 {
   UNK_0xe164(); // UNK_0xe164
-  Push(0xe552);
+  Push(0xe552); // probable 'TRADE.EDL'
   IFLD_at_(); // IFLD@
   ICLOSE(); // ICLOSE
 }
@@ -1442,7 +1442,7 @@ void UNK_0xe5b8() // UNK_0xe5b8
 void UNK_0xe5c6() // UNK_0xe5c6
 {
   UNK_0xe164(); // UNK_0xe164
-  Push(0xe552);
+  Push(0xe552); // probable 'TRADE.EDL'
   IFLD_ex_(); // IFLD!
   ICLOSE(); // ICLOSE
 }
@@ -1455,11 +1455,11 @@ void UNK_0xe5c6() // UNK_0xe5c6
 void UNK_0xe5d4() // UNK_0xe5d4
 {
   UNK_0xe15c(); // UNK_0xe15c
-  Push(0xa9ce);
+  Push(0xa9ce); // probable 'ASKING'
   IFLD_ex_(); // IFLD!
   ICLOSE(); // ICLOSE
   UNK_0xe568(); // UNK_0xe568
-  Push(0xc024);
+  Push(0xc024); // probable 'SET-C'
   MODULE(); // MODULE
 }
 
@@ -1471,7 +1471,7 @@ void UNK_0xe5d4() // UNK_0xe5d4
 void UNK_0xe5ea() // UNK_0xe5ea
 {
   UNK_0xe15c(); // UNK_0xe15c
-  Push(0xa91b);
+  Push(0xa91b); // probable 'INST-VA'
   IFLD_at_(); // IFLD@
   ICLOSE(); // ICLOSE
 }
@@ -1694,7 +1694,7 @@ void DO_dash_ENTER() // DO-ENTER
 {
   UNK_0xe67a(); // UNK_0xe67a
   UNK_0xe640(); // UNK_0xe640
-  Push(0xe717);
+  Push(0xe717); // probable 'ENTER-TRADE'
   DISTRAC(); // DISTRAC
   UNK_0xe18a(); // UNK_0xe18a
 
@@ -1918,7 +1918,7 @@ void UNK_0xe82f() // UNK_0xe82f
 void UNK_0xe849() // UNK_0xe849
 {
   UNK_0xe82f(); // UNK_0xe82f
-  Push(0xb71f);
+  Push(0xb71f); // probable 'OV.0$$'
   MODULE(); // MODULE
   Push(0x07d0);
   MS(); // MS
@@ -1954,7 +1954,7 @@ void UNK_0xe87e() // UNK_0xe87e
   return;
 
   label1:
-  Push(0xc285);
+  Push(0xc285); // probable 'OVD@BAL'
   MODULE(); // MODULE
   _2SWAP(); // 2SWAP
   D_gt_(); // D>
@@ -2194,7 +2194,7 @@ void UNK_0xe9c2() // UNK_0xe9c2
 
 void UNK_0xe9ce() // UNK_0xe9ce
 {
-  Push(0xc285);
+  Push(0xc285); // probable 'OVD@BAL'
   MODULE(); // MODULE
   UNK_0xe55a(); // UNK_0xe55a
   Push(0); // 0
@@ -2218,7 +2218,7 @@ void UNK_0xe9ce() // UNK_0xe9ce
   D_dash_(); // D-
 
   label3:
-  Push(0xc297);
+  Push(0xc297); // probable 'OVD!BAL'
   MODULE(); // MODULE
 }
 
@@ -2422,7 +2422,7 @@ void UNK_0xeb45() // UNK_0xeb45
   UNK_0xea9d(); // UNK_0xea9d
   if (Pop() == 0) goto label1;
   _at_INST_dash_S(); // @INST-S
-  Push(0xc052);
+  Push(0xc052); // probable '@TAMT'
   MODULE(); // MODULE
   _2DUP(); // 2DUP
   _gt_(); // >
@@ -2449,13 +2449,13 @@ void UNK_0xeb6d() // UNK_0xeb6d
   UNK_0xea9d(); // UNK_0xea9d
   if (Pop() == 0) goto label1;
   _at_INST_dash_S(); // @INST-S
-  Push(0xc052);
+  Push(0xc052); // probable '@TAMT'
   MODULE(); // MODULE
   Push(pp_ELEM_dash_AM); // ELEM-AM size: 2
   Push(Read16(Pop())); // @
   _dash_(); // -
   _at_INST_dash_S(); // @INST-S
-  Push(0xc042);
+  Push(0xc042); // probable '!TAMT'
   MODULE(); // MODULE
 
   label1:
@@ -2714,7 +2714,7 @@ void UNK_0xecfe() // UNK_0xecfe
 
   label2:
   ICLOSE(); // ICLOSE
-  Push(0xc024);
+  Push(0xc024); // probable 'SET-C'
   MODULE(); // MODULE
 }
 
@@ -2768,7 +2768,7 @@ void UNK_0xed3e() // UNK_0xed3e
   UNK_0xe920(); // UNK_0xe920
   UNK_0xeb6d(); // UNK_0xeb6d
   UNK_0xecfe(); // UNK_0xecfe
-  Push(0xc2bb);
+  Push(0xc2bb); // probable 'OV!TFLA'
   MODULE(); // MODULE
   goto label3;
 
@@ -2793,12 +2793,12 @@ void UNK_0xed3e() // UNK_0xed3e
 void UNK_0xed9a() // UNK_0xed9a
 {
   UNK_0xe164(); // UNK_0xe164
-  Push(0xe552);
+  Push(0xe552); // probable 'TRADE.EDL'
   IFLD_at_(); // IFLD@
   Push(Pop() + Pop()); // +
   Push(cc__9); // 9
   MIN(); // MIN
-  Push(0xe552);
+  Push(0xe552); // probable 'TRADE.EDL'
   IFLD_ex_(); // IFLD!
   ICLOSE(); // ICLOSE
 }
@@ -3142,7 +3142,7 @@ void UNK_0xef46() // UNK_0xef46
   UNK_0xea9d(); // UNK_0xea9d
   if (Pop() == 0) goto label1;
   _at_INST_dash_S(); // @INST-S
-  Push(0xc052);
+  Push(0xc052); // probable '@TAMT'
   MODULE(); // MODULE
   _0_gt_(); // 0>
   goto label2;
@@ -3166,7 +3166,7 @@ void UNK_0xef46() // UNK_0xef46
 
 void DO_dash_OPEN_1() // DO-OPEN_1
 {
-  Push(0xef70);
+  Push(0xef70); // probable 'OPEN-EXPERT'
   DISTRAC(); // DISTRAC
   UNK_0xe18a(); // UNK_0xe18a
 
@@ -3931,7 +3931,7 @@ void DO_dash_BARTER() // DO-BARTER
 
   label1:
   UNK_0xe18a(); // UNK_0xe18a
-  Push(0xf3ce);
+  Push(0xf3ce); // probable '(DO-BARTER)'
   DISTRAC(); // DISTRAC
   Rule((DO-BARTER));
   Pop(); // DROP

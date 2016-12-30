@@ -578,7 +578,7 @@ void UNK_0xdfbb() // UNK_0xdfbb
   Push(0x004b);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6b04);
+  Push(0x6b04); // probable 'GPOLY'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -600,7 +600,7 @@ void UNK_0xdfdf() // UNK_0xdfdf
   Push(0x004c);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6abb);
+  Push(0x6abb); // probable 'FACET'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -622,7 +622,7 @@ void UNK_0xe003() // UNK_0xe003
   Push(0x004d);
   FILE_st_(); // FILE<
   Push(0); // 0
-  Push(0x6aa9);
+  Push(0x6aa9); // probable 'VERTEX'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -659,7 +659,7 @@ void UNK_0xe081() // UNK_0xe081
   Push(0); // 0
   Push(0x060d);
   LCMOVE(); // LCMOVE
-  Push(0xb603);
+  Push(0xb603); // probable 'SETABLT'
   MODULE(); // MODULE
   _gt_R(); // >R
   Push(0x0012);
@@ -1526,7 +1526,7 @@ void UNK_0xe7c1() // UNK_0xe7c1
   Push(0x000e);
   _gt_(); // >
   if (Pop() == 0) goto label2;
-  Push(0xba0a);
+  Push(0xba0a); // probable 'LDAPIC'
   MODULE(); // MODULE
 
   label2:
@@ -1540,7 +1540,7 @@ void UNK_0xe7c1() // UNK_0xe7c1
   R_at_(); // R@
   Push(0x000f);
   _dash_(); // -
-  Push(0xb9e8);
+  Push(0xb9e8); // probable '.APIC'
   MODULE(); // MODULE
   goto label1;
 
@@ -1551,7 +1551,7 @@ void UNK_0xe7c1() // UNK_0xe7c1
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   R_at_(); // R@
-  Push(0xb9c8);
+  Push(0xb9c8); // probable '@.HYBR'
   MODULE(); // MODULE
 
   label1:
@@ -1655,10 +1655,10 @@ void UNK_0xe8c3() // UNK_0xe8c3
 void UNK_0xe90c() // UNK_0xe90c
 {
   CTINIT(); // CTINIT
-  Push(0xaa3b);
+  Push(0xaa3b); // probable '<CTASKM'
   Push(pp_ASKMOUN); // ASKMOUN size: 2
   _ex__2(); // !_2
-  Push(0xaa1d);
+  Push(0xaa1d); // probable '<CTVERS'
   Push(pp__i_VERSIO); // 'VERSIO size: 2
   _ex__2(); // !_2
 }
@@ -1720,7 +1720,7 @@ void UNK_0xe95b() // UNK_0xe95b
   Push(0x0032);
   Push(Pop() + Pop()); // +
   LCMOVE(); // LCMOVE
-  Push(0xb603);
+  Push(0xb603); // probable 'SETABLT'
   MODULE(); // MODULE
   Push(0); // 0
   Push(0x00c7);
@@ -1738,7 +1738,7 @@ void UNK_0xe95b() // UNK_0xe95b
   Push(0x0032);
   Push(Pop() + Pop()); // +
   LCMOVE(); // LCMOVE
-  Push(0xb603);
+  Push(0xb603); // probable 'SETABLT'
   MODULE(); // MODULE
   Push(0); // 0
   Push(0x0063);
@@ -1763,7 +1763,7 @@ void UNK_0xe9d5() // UNK_0xe9d5
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   MOUNTB(); // MOUNTB
-  Push(0xd516);
+  Push(0xd516); // probable 'PPIC'
   MODULE(); // MODULE
   UNK_0xe90c(); // UNK_0xe90c
   goto label2;
@@ -2816,7 +2816,7 @@ void UNK_0xefdd() // UNK_0xefdd
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
-  Push(0x53a9);
+  Push(0x53a9); // probable 'MPS'
   _ex__2(); // !_2
 }
 
@@ -3251,7 +3251,7 @@ void UNK_0xf429() // UNK_0xf429
   UNK_0xea1f(); // UNK_0xea1f
   FLUSH_2(); // FLUSH_2
   MOUNTA(); // MOUNTA
-  Push(0xb5e0);
+  Push(0xb5e0); // probable 'HIMUS'
   MODULE(); // MODULE
   SET_dash_CUR(); // SET-CUR
 }
@@ -3358,10 +3358,10 @@ void START() // START
   label1:
   FLUSH_2(); // FLUSH_2
   MOUNTA(); // MOUNTA
-  Push(0x9021);
+  Push(0x9021); // probable '(BYE)'
   Push(pp__i_BYE); // 'BYE size: 2
   _ex__2(); // !_2
-  Push(0xb5d0);
+  Push(0xb5d0); // probable 'INTROS'
   MODULE(); // MODULE
   UNK_0xe0e1(); // UNK_0xe0e1
   UNK_0xdf59(); // UNK_0xdf59

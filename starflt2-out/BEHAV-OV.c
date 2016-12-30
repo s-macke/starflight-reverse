@@ -278,7 +278,7 @@ void UNK_0xe514() // UNK_0xe514
 
 void UNK_0xe552() // UNK_0xe552
 {
-  Push(0xcf2b);
+  Push(0xcf2b); // probable '.ST'
   MODULE(); // MODULE
 }
 
@@ -289,7 +289,7 @@ void UNK_0xe552() // UNK_0xe552
 
 void UNK_0xe55c() // UNK_0xe55c
 {
-  Push(0xcf47);
+  Push(0xcf47); // probable '.DA'
   MODULE(); // MODULE
 }
 
@@ -300,7 +300,7 @@ void UNK_0xe55c() // UNK_0xe55c
 
 void UNK_0xe566() // UNK_0xe566
 {
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
 }
 
@@ -697,7 +697,7 @@ void UNK_0xe72e() // UNK_0xe72e
 void UNK_0xe74a() // UNK_0xe74a
 {
   _dash_ICON(); // -ICON
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
 }
@@ -863,7 +863,7 @@ void _gt_WEAP() // >WEAP
 void UNK_0xe861() // UNK_0xe861
 {
   Push(0); // 0
-  Push(0xe5e4);
+  Push(0xe5e4); // probable 'UNK_0xe5e4'
   IFLD_ex_(); // IFLD!
   UNK_0xe758(); // UNK_0xe758
 }
@@ -876,7 +876,7 @@ void UNK_0xe861() // UNK_0xe861
 void UNK_0xe86f() // UNK_0xe86f
 {
   Push(0); // 0
-  Push(0xe5ca);
+  Push(0xe5ca); // probable 'UNK_0xe5ca'
   IFLD_ex_(); // IFLD!
   UNK_0xe758(); // UNK_0xe758
 }
@@ -1020,7 +1020,7 @@ void UNK_0xe927() // UNK_0xe927
 
 void UNK_0xe93b() // UNK_0xe93b
 {
-  Push(0xe5c5);
+  Push(0xe5c5); // probable 'UNK_0xe5c5'
   UNK_0xe927(); // UNK_0xe927
   UNK_0xe758(); // UNK_0xe758
 }
@@ -1090,7 +1090,7 @@ void UNK_0xe999() // UNK_0xe999
   Push(0xe575);
   IFLD_at_(); // IFLD@
   _slash_(); // /
-  Push(0xe57d);
+  Push(0xe57d); // probable 'UNK_0xe57d'
   IFLD_at_(); // IFLD@
   SWAP(); // SWAP
   _dash_(); // -
@@ -1098,9 +1098,9 @@ void UNK_0xe999() // UNK_0xe999
   MAX(); // MAX
   Push(0x0064);
   MIN(); // MIN
-  Push(0xe57d);
+  Push(0xe57d); // probable 'UNK_0xe57d'
   IFLD_ex_(); // IFLD!
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
   UNK_0xe566(); // UNK_0xe566
   Push(pp__ask_HEAL); // ?HEAL size: 2
@@ -1181,7 +1181,7 @@ void UNK_0xea45() // UNK_0xea45
   ICLOSE(); // ICLOSE
   Push(0x03e8);
   MS(); // MS
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
   UNK_0xe566(); // UNK_0xe566
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
@@ -1354,7 +1354,7 @@ void UNK_0xeb5f() // UNK_0xeb5f
   if (Pop() == 0) goto label2;
   UNK_0xeb57(); // UNK_0xeb57
   UNK_0xeb33(); // UNK_0xeb33
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
   UNK_0xe566(); // UNK_0xe566
   _dot_VIT(); // .VIT
@@ -1534,7 +1534,7 @@ void UNK_0xed66() // UNK_0xed66
 void CIRCLES() // CIRCLES
 {
   Push(0x000b);
-  Push(0xb78d);
+  Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA size: 2
@@ -1580,7 +1580,7 @@ void CIRCLES() // CIRCLES
   UNK_0xed40(); // UNK_0xed40
   UNK_0xe72e(); // UNK_0xe72e
   UNK_0xe6ba(); // UNK_0xe6ba
-  Push(0xcf55);
+  Push(0xcf55); // probable '.EN'
   MODULE(); // MODULE
   _gt_DISPLA(); // >DISPLA
   R_gt_(); // R>
@@ -1602,7 +1602,7 @@ void CIRCLES() // CIRCLES
   goto label4;
 
   label1:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label4:
@@ -1620,11 +1620,11 @@ void UNK_0xee2a() // UNK_0xee2a
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  Push(0xebd6);
+  Push(0xebd6); // probable 'P2SENT'
   DISTRAC(); // DISTRAC
   Rule(P2SENT);
   Pop(); // DROP
-  Push(0xeb9a);
+  Push(0xeb9a); // probable 'SENT2P'
   DISTRAC(); // DISTRAC
   Rule(SENT2P);
   Pop(); // DROP
@@ -1637,11 +1637,11 @@ void UNK_0xee2a() // UNK_0xee2a
 
 void UNK_0xee4c() // UNK_0xee4c
 {
-  Push(0xec67);
+  Push(0xec67); // probable 'P2CRIT'
   DISTRAC(); // DISTRAC
   Rule(P2CRIT);
   Pop(); // DROP
-  Push(0xec17);
+  Push(0xec17); // probable 'CRIT2P'
   DISTRAC(); // DISTRAC
   Rule(CRIT2P);
   Pop(); // DROP
@@ -1789,7 +1789,7 @@ void _1SIMULATE() // 1SIMULATE
 
 void UNK_0xef24() // UNK_0xef24
 {
-  Push(0xd0f9);
+  Push(0xd0f9); // probable '(TVSE'
   MODULE(); // MODULE
   UNK_0xe55c(); // UNK_0xe55c
   UNK_0xe552(); // UNK_0xe552
@@ -1898,7 +1898,7 @@ void UNK_0xefd0() // UNK_0xefd0
   Push(pp_OCRS); // OCRS size: 7
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(0xc4ac);
+  Push(0xc4ac); // probable 'TRADE'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4 size: 0
   ON_2(); // ON_2
@@ -2005,7 +2005,7 @@ void UNK_0xf079() // UNK_0xf079
 
 void MAPS() // MAPS
 {
-  Push(0xcdb0);
+  Push(0xcdb0); // probable 'MAPS'
   MODULE(); // MODULE
 }
 
@@ -2016,7 +2016,7 @@ void MAPS() // MAPS
 
 void WALK_and_TALK() // WALK&TALK
 {
-  Push(0xd139);
+  Push(0xd139); // probable '(TALK'
   MODULE(); // MODULE
 }
 
@@ -2029,7 +2029,7 @@ void TVMOVE() // TVMOVE
 {
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4 size: 0
   _099(); // 099
-  Push(0xd072);
+  Push(0xd072); // probable 'TVMO'
   MODULE(); // MODULE
   Push(pp_TIME_dash_PA); // TIME-PA size: 2
   ON_2(); // ON_2
@@ -2049,7 +2049,7 @@ void DO_dot_WEAPONS() // DO.WEAPONS
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
   if (Pop() == 0) return;
-  Push(0xd129);
+  Push(0xd129); // probable '(WEAP'
   MODULE(); // MODULE
 }
 
@@ -2060,7 +2060,7 @@ void DO_dot_WEAPONS() // DO.WEAPONS
 
 void _slash_ITEMS() // /ITEMS
 {
-  Push(0xcfe6);
+  Push(0xcfe6); // probable '/ITEMS'
   MODULE(); // MODULE
 }
 
@@ -2071,7 +2071,7 @@ void _slash_ITEMS() // /ITEMS
 
 void ICONS() // ICONS
 {
-  Push(0xd034);
+  Push(0xd034); // probable 'ICONS'
   MODULE(); // MODULE
   UNK_0xef24(); // UNK_0xef24
 }
@@ -2143,7 +2143,7 @@ void _ask_FUNC() // ?FUNC
   _eq_(); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
-  Push(0xd0ae);
+  Push(0xd0ae); // probable 'TELE_2'
   MODULE(); // MODULE
   Push(1); // 1
   return;
@@ -2269,7 +2269,7 @@ void TV_dash_KEY() // TV-KEY
   label5:
   UNK_0xf19a(); // UNK_0xf19a
   if (Pop() == 0) goto label7;
-  Push(0xc8b4);
+  Push(0xc8b4); // probable 'HALL'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4 size: 0
   ON_2(); // ON_2
@@ -2335,7 +2335,7 @@ void UNK_0xf289() // UNK_0xf289
   Push(pp_TVEHICL); // TVEHICL size: 4
   _at__gt_C_plus_S(); // @>C+S
   _dash_ICON(); // -ICON
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   ICLOSE(); // ICLOSE
@@ -2431,10 +2431,10 @@ void UNK_0xf354() // UNK_0xf354
   _gt_R(); // >R
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
-  Push(0xbe55);
+  Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
   Push(0x1f40); Push(0x0000);
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
   Push(0x0010);
   Push(0x6601); // IFIELD(UNK_0xe582)
@@ -2442,19 +2442,19 @@ void UNK_0xf354() // UNK_0xf354
   Push(0); // 0
   Push(0x6600); // IFIELD(UNK_0xe57d)
   C_ex__2(); // C!_2
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
   _dot_VIT(); // .VIT
   CTINIT(); // CTINIT
   Push(0); // 0
   Push(0x6601); // IFIELD(UNK_0xe582)
   _ex__2(); // !_2
-  Push(0xbe55);
+  Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
   Push(0x1f40); Push(0x0000);
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   R_gt_(); // R>
@@ -2503,25 +2503,25 @@ void TV_dash_TASKS() // TV-TASKS
   Push(0xf3e6);
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xcf1b);
+  Push(0xcf1b); // probable 'DO-STORM'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _st__ex__gt_(); // <!>
   Push(0xe552);
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _st__ex__gt_(); // <!>
-  Push(0xeee0);
+  Push(0xeee0); // probable '1SIMULATE'
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc1f8);
+  Push(0xc1f8); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _st__ex__gt_(); // <!>
   Push2Words("0.");
   Push(pp_LASTAP); // LASTAP size: 4
   _st_D_ex__gt_(); // <D!>
-  Push(0xc1d8);
+  Push(0xc1d8); // probable '.VIT'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc1c7);
+  Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _st__ex__gt_(); // <!>
   Push(0xe55c);
@@ -2529,7 +2529,7 @@ void TV_dash_TASKS() // TV-TASKS
   _st__ex__gt_(); // <!>
   Push(pp_TIME_dash_PA); // TIME-PA size: 2
   ON_1(); // ON_1
-  Push(0xce24);
+  Push(0xce24); // probable '8X8CO'
   Push(pp__i__dot_BACKG); // '.BACKG size: 2
   _ex__2(); // !_2
 }
@@ -2541,38 +2541,38 @@ void TV_dash_TASKS() // TV-TASKS
 
 void UNK_0xf48e() // UNK_0xf48e
 {
-  Push(0xb033);
+  Push(0xb033); // probable '?VCYCLE'
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc3cf);
+  Push(0xc3cf); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc0f9);
+  Push(0xc0f9); // probable '.SORD'
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _st__ex__gt_(); // <!>
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc1f8);
+  Push(0xc1f8); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _st__ex__gt_(); // <!>
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc1c7);
+  Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _st__ex__gt_(); // <!>
-  Push(0xc0e7);
+  Push(0xc0e7); // probable '/STARD'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _st__ex__gt_(); // <!>
   Push(pp__ask_CRITIC); // ?CRITIC size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0xd149);
+  Push(0xd149); // probable 'HEAVE'
   goto label2;
 
   label1:
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
 
   label2:
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
@@ -2590,7 +2590,7 @@ void UNK_0xf48e() // UNK_0xf48e
 
 void UNK_0xf4f2() // UNK_0xf4f2
 {
-  Push(0xd109);
+  Push(0xd109); // probable '(CLEA'
   MODULE(); // MODULE
   UNK_0xf48e(); // UNK_0xf48e
   _gt_SSCT(); // >SSCT
@@ -2611,14 +2611,14 @@ void UNK_0xf500() // UNK_0xf500
   _099(); // 099
   Push(pp_SMART); // SMART size: 2
   _099(); // 099
-  Push(0xd149);
+  Push(0xd149); // probable 'HEAVE'
   Push(pp__i_THROW_dash_); // 'THROW- size: 2
   _ex__2(); // !_2
-  Push(0xd0e9);
+  Push(0xd0e9); // probable 'TV-DI'
   MODULE(); // MODULE
   UNK_0xe55c(); // UNK_0xe55c
   UNK_0xe566(); // UNK_0xe566
-  Push(0xd090);
+  Push(0xd090); // probable '!E/M'
   MODULE(); // MODULE
   UNK_0xe552(); // UNK_0xe552
   _dot_VIT(); // .VIT
@@ -2640,7 +2640,7 @@ void UNK_0xf500() // UNK_0xf500
 void TV() // TV
 {
   Push(0xf4f2);
-  Push(0xf1ff);
+  Push(0xf1ff); // probable 'TV-KEY'
   Push(0xf500);
   DOTASKS(UNK_0xf500, TV-KEY, UNK_0xf4f2);
   Push(pp_TIME_dash_PA); // TIME-PA size: 2

@@ -328,7 +328,7 @@ void UNK_0xe7e2() // UNK_0xe7e2
 void UNK_0xe7fc() // UNK_0xe7fc
 {
   _dash_ICON(); // -ICON
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
 }
@@ -386,7 +386,7 @@ void UNK_0xe824() // UNK_0xe824
 
 void UNK_0xe852() // UNK_0xe852
 {
-  Push(0xcf39);
+  Push(0xcf39); // probable '.WH'
   MODULE(); // MODULE
 }
 
@@ -1012,11 +1012,11 @@ void UNK_0xecee() // UNK_0xecee
   label1:
   Push(0x000a);
   _at_INST_dash_S(); // @INST-S
-  Push(0xc032);
+  Push(0xc032); // probable 'T>O'
   MODULE(); // MODULE
   if (Pop() == 0) goto label2;
   Push(0x0064);
-  Push(0xbf4a);
+  Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
 
   label2:
@@ -1301,7 +1301,7 @@ void UNK_0xeea1() // UNK_0xeea1
 void UNK_0xeec9() // UNK_0xeec9
 {
   Push(Read16(regsp)); // DUP
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -1325,10 +1325,10 @@ void UNK_0xeec9() // UNK_0xeec9
 void UNK_0xeeef() // UNK_0xeeef
 {
   Push(0x002a);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(0x002a);
-  Push(0xb78d);
+  Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
   Push(Pop() | Pop()); // OR
   Push(pp__ask_FLAT); // ?FLAT size: 2
@@ -1352,7 +1352,7 @@ void UNK_0xeeef() // UNK_0xeeef
   UNK_0xeec9(); // UNK_0xeec9
 
   label1:
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
@@ -1368,7 +1368,7 @@ void UNK_0xef49() // UNK_0xef49
   Push(pp_TVEHICL); // TVEHICL size: 4
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xee38(); // UNK_0xee38
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   IOPEN(); // IOPEN
@@ -1395,7 +1395,7 @@ void UNK_0xef49() // UNK_0xef49
   Push(Pop()+1); // 1+
   Push(0x65f0); // IFIELD(INST-Y)
   _ex__2(); // !_2
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   ICLOSE(); // ICLOSE
@@ -1582,7 +1582,7 @@ void UNK_0xf113() // UNK_0xf113
   _gt_1ICONF(); // >1ICONF
   Push(pp_MOVED); // MOVED size: 2
   _099(); // 099
-  Push(0xce24);
+  Push(0xce24); // probable '8X8CO'
   Push(pp__i__dot_BACKG); // '.BACKG size: 2
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
@@ -1815,7 +1815,7 @@ void WALK_and_TALK() // WALK&TALK
   Push(Read16(Pop())); // @
   _ask_ICONS_dash__2(); // ?ICONS-_2
   UNK_0xea6a(); // UNK_0xea6a
-  Push(0xbe25);
+  Push(0xbe25); // probable 'DO-LO'
   MODULE(); // MODULE
   _ex_CRS(); // !CRS
   BLT(); // BLT
@@ -1954,7 +1954,7 @@ void TV_dash_DISP() // TV-DISP
   Push2Words("0.");
   Push(pp_THIS_dash_RE); // THIS-RE size: 4
   _1_dot_5_ex__2(); // 1.5!_2
-  Push(0xd081);
+  Push(0xd081); // probable '?POP'
   MODULE(); // MODULE
   UNK_0xef49(); // UNK_0xef49
   UNK_0xf33a(); // UNK_0xf33a

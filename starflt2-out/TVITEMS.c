@@ -365,7 +365,7 @@ void UNK_0xe762() // UNK_0xe762
 void UNK_0xe774() // UNK_0xe774
 {
   Push(0x4e20); Push(0x0000);
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
 }
 
@@ -928,7 +928,7 @@ void UNK_0xea69() // UNK_0xea69
 
 void UNK_0xea75() // UNK_0xea75
 {
-  Push(0xcf63);
+  Push(0xcf63); // probable '.CA'
   MODULE(); // MODULE
 }
 
@@ -1086,7 +1086,7 @@ void UNK_0xebf1() // UNK_0xebf1
   UNK_0xeb57(); // UNK_0xeb57
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   UNK_0xe73e(); // UNK_0xe73e
@@ -1259,7 +1259,7 @@ void UNK_0xecbf() // UNK_0xecbf
   ICLOSE(); // ICLOSE
   Push(pp_LSCAN); // LSCAN size: 400
   COUNT(); // COUNT
-  Push(0xbf6f);
+  Push(0xbf6f); // probable 'P>CT'
   MODULE(); // MODULE
   UNK_0xe774(); // UNK_0xe774
 }
@@ -1280,7 +1280,7 @@ void UNK_0xecdf() // UNK_0xecdf
   IOPEN(); // IOPEN
 
   label2:
-  Push(0xbf80);
+  Push(0xbf80); // probable 'CTUP'
   MODULE(); // MODULE
   UNK_0xecbf(); // UNK_0xecbf
   INEXT(); // INEXT
@@ -1289,7 +1289,7 @@ void UNK_0xecdf() // UNK_0xecdf
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(0xbf80);
+  Push(0xbf80); // probable 'CTUP'
   MODULE(); // MODULE
 }
 
@@ -1402,7 +1402,7 @@ void UNK_0xed75() // UNK_0xed75
   Push(pp_UNK_0xe63a); // UNK_0xe63a size: 0
   _st__ex__gt_(); // <!>
   _at_INST_dash_C(); // @INST-C
-  Push(0xbe35);
+  Push(0xbe35); // probable '.LIFE'
   MODULE(); // MODULE
 }
 

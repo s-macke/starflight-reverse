@@ -350,7 +350,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
 void UNK_0xf406() // UNK_0xf406
 {
   Push(0x003b);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
 }
 

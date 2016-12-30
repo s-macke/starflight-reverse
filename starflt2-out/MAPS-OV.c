@@ -406,9 +406,9 @@ void UNK_0xef06() // UNK_0xef06
 
 void _2X2CONTOUR() // 2X2CONTOUR
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
-  Push(0x91ff);
+  Push(0x91ff); // probable '.2X2CEL'
   Push(pp__i__dot_CELL); // '.CELL size: 2
   _st__ex__gt_(); // <!>
   Push(1); // 1
@@ -437,9 +437,9 @@ void _2X2CONTOUR() // 2X2CONTOUR
 
 void _4X4CONTOUR() // 4X4CONTOUR
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
-  Push(0x9223);
+  Push(0x9223); // probable '.4X4CEL'
   Push(pp__i__dot_CELL); // '.CELL size: 2
   _st__ex__gt_(); // <!>
   Push(2); // 2
@@ -612,9 +612,9 @@ void UNK_0xeff3() // UNK_0xeff3
 
 void _8X8CONTOUR() // 8X8CONTOUR
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
-  Push(0x9241);
+  Push(0x9241); // probable '.8X8CEL'
   Push(pp__i__dot_CELL); // '.CELL size: 2
   _st__ex__gt_(); // <!>
   Push2Words("0.");

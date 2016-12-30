@@ -1391,11 +1391,11 @@ void UNK_0xe262() // UNK_0xe262
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xc0a1);
+  Push(0xc0a1); // probable 'OV/STX'
   return;
 
   label1:
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
 }
 
 
@@ -1410,11 +1410,11 @@ void UNK_0xe27e() // UNK_0xe27e
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbcb8);
+  Push(0xbcb8); // probable 'OVDBA'
   return;
 
   label1:
-  Push(0xbc98);
+  Push(0xbc98); // probable 'OV/DA'
 }
 
 
@@ -2373,7 +2373,7 @@ void UNK_0xe7a8() // UNK_0xe7a8
   Push(0x6602); // IFIELD(UNK_0xe2e5)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  Push(0xc694);
+  Push(0xc694); // probable 'DO-DA'
   MODULE(); // MODULE
   UNK_0xe754(); // UNK_0xe754
   i++;
@@ -2569,7 +2569,7 @@ void UNK_0xe8c0() // UNK_0xe8c0
 void UNK_0xe8ec() // UNK_0xe8ec
 {
   UNK_0xe4c0(); // UNK_0xe4c0
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
   UNK_0xe516(); // UNK_0xe516
 }
@@ -2910,7 +2910,7 @@ void UNK_0xeae4() // UNK_0xeae4
   _2_at_(); // 2@
   UNK_0xde5d(); // UNK_0xde5d
   _slash_(); // /
-  Push(0xc6ca);
+  Push(0xc6ca); // probable 'CREWD'
   MODULE(); // MODULE
   goto label2;
 
@@ -3070,7 +3070,7 @@ void UNK_0xebdd() // UNK_0xebdd
   _dot_(); // .
   Push(cc_UNK_0xe2ba); // UNK_0xe2ba
   Push(0); // 0
-  Push(0xc694);
+  Push(0xc694); // probable 'DO-DA'
   MODULE(); // MODULE
   Push(cc__3); // 3
   Push(0x65f2); // IFIELD(UNK_0xddbb)
@@ -3230,7 +3230,7 @@ void UNK_0xecaa() // UNK_0xecaa
 
 void UNK_0xecda() // UNK_0xecda
 {
-  Push(0xc746);
+  Push(0xc746); // probable 'GNL'
   MODULE(); // MODULE
 }
 
@@ -3265,13 +3265,13 @@ void _ask_J() // ?J
   UNK_0xe884(); // UNK_0xe884
   UNK_0xe884(); // UNK_0xe884
   UNK_0xe9a2(); // UNK_0xe9a2
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   goto label2;
 
   label1:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label2:
@@ -3525,7 +3525,7 @@ void UNK_0xef7d() // UNK_0xef7d
 {
   Push(pp_SMART); // SMART size: 2
   _099(); // 099
-  Push(0xed2e);
+  Push(0xed2e); // probable '<COMBAT>'
   DISTRAC(); // DISTRAC
   Rule(<COMBAT>);
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -3585,7 +3585,7 @@ void UNK_0xefb1() // UNK_0xefb1
 
 void UNK_0xefdb() // UNK_0xefdb
 {
-  Push(0xc7dc);
+  Push(0xc7dc); // probable '@NF'
   MODULE(); // MODULE
   Pop(); // DROP
   Push(0x0016);
@@ -3604,7 +3604,7 @@ void UNK_0xefdb() // UNK_0xefdb
 void COMBAT() // COMBAT
 {
   UNK_0xee11(); // UNK_0xee11
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
   TIME(); // TIME
   _2_at_(); // 2@
@@ -3657,7 +3657,7 @@ void COMBAT() // COMBAT
 
 void UNK_0xf074() // UNK_0xf074
 {
-  Push(0xc7dc);
+  Push(0xc7dc); // probable '@NF'
   MODULE(); // MODULE
   Push(Pop() + Pop()); // +
   Push(Pop()>>1); // 2/
@@ -3987,7 +3987,7 @@ void UNK_0xf250() // UNK_0xf250
 void UNK_0xf262() // UNK_0xf262
 {
   Push(1); // 1
-  Push(0x5184);
+  Push(0x5184); // probable '?FIRED-'
   _ex__2(); // !_2
 }
 
@@ -4032,7 +4032,7 @@ void UNK_0xf28a() // UNK_0xf28a
   _2_at_(); // 2@
   Push(cc_UNK_0xe2b6); // UNK_0xe2b6
   Push(0); // 0
-  Push(0xc694);
+  Push(0xc694); // probable 'DO-DA'
   MODULE(); // MODULE
   Push(1); // 1
   UNK_0xf102(); // UNK_0xf102
@@ -4126,19 +4126,19 @@ void UNK_0xf2b6() // UNK_0xf2b6
 
 void UNK_0xf34e() // UNK_0xf34e
 {
-  Push(0xc39d);
+  Push(0xc39d); // probable '?SHIP-R'
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _ex__2(); // !_2
-  Push(0xc3cf);
+  Push(0xc3cf); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _ex__2(); // !_2
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _ex__2(); // !_2
   Push(0xf344);
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _ex__2(); // !_2
-  Push(0xc1f8);
+  Push(0xc1f8); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _ex__2(); // !_2
   Push2Words("0.");
@@ -4146,15 +4146,15 @@ void UNK_0xf34e() // UNK_0xf34e
   _2_ex__2(); // 2!_2
   Push(pp__ask_HEAL); // ?HEAL size: 2
   ON_2(); // ON_2
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _ex__2(); // !_2
-  Push(0xc1c7);
+  Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _ex__2(); // !_2
   Push(pp__ask_HEAL); // ?HEAL size: 2
   ON_2(); // ON_2
-  Push(0xe414);
+  Push(0xe414); // probable 'UNK_0xe414'
   Push(pp__i__dot_BACKG); // '.BACKG size: 2
   _ex__2(); // !_2
   Push(pp__ask_COMBAT); // ?COMBAT size: 2
@@ -4183,13 +4183,13 @@ void UNK_0xf3a8() // UNK_0xf3a8
 
 void UNK_0xf3b6() // UNK_0xf3b6
 {
-  Push(0xc39d);
+  Push(0xc39d); // probable '?SHIP-R'
   Push(pp__i_VEHICL); // 'VEHICL size: 2
   _ex__2(); // !_2
-  Push(0xc3cf);
+  Push(0xc3cf); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _ex__2(); // !_2
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VEHIC); // '.VEHIC size: 2
   _ex__2(); // !_2
   Push(pp__n_AUX); // #AUX size: 2
@@ -4207,19 +4207,19 @@ void UNK_0xf3b6() // UNK_0xf3b6
   _ex_CRS(); // !CRS
 
   label1:
-  Push(0xae81);
+  Push(0xae81); // probable 'CEX+WAX'
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _ex__2(); // !_2
-  Push(0xc1f8);
+  Push(0xc1f8); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _ex__2(); // !_2
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _ex__2(); // !_2
-  Push(0xc1c7);
+  Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _ex__2(); // !_2
-  Push(0xc0e7);
+  Push(0xc0e7); // probable '/STARD'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _ex__2(); // !_2
   UNK_0xf134(); // UNK_0xf134
@@ -4264,7 +4264,7 @@ void UNK_0xf43a() // UNK_0xf43a
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xe9a2(); // UNK_0xe9a2
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
   Push(0x0fa0);
   Push(cc_MPS); // MPS
@@ -4318,7 +4318,7 @@ void UNK_0xf4a8() // UNK_0xf4a8
   UNK_0xde37(); // UNK_0xde37
   _dot_TTY(); // .TTY
   UNK_0xef07(); // UNK_0xef07
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
   UNK_0xf34e(); // UNK_0xf34e
   UNK_0xe0de(); // UNK_0xe0de
@@ -4373,12 +4373,12 @@ void CLEAR_dash_CO() // CLEAR-CO
   _2_ex__2(); // 2!_2
   Push(pp_NLR); // NLR size: 2
   _099(); // 099
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
   Push(0); // 0
   UNK_0xe152(); // UNK_0xe152
   Push(0x0035);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp_UNK_0xdd20); // UNK_0xdd20 size: 0
   _ex__2(); // !_2

@@ -428,7 +428,7 @@ void UNK_0xe788() // UNK_0xe788
   Push(pp__ask_CALLIN); // ?CALLIN size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
 }
@@ -474,14 +474,14 @@ void UNK_0xe7cc() // UNK_0xe7cc
   Push(0x0016);
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) goto label1;
-  Push(0xc900);
+  Push(0xc900); // probable 'IUHL'
   MODULE(); // MODULE
   Push(pp__i_ENDING); // 'ENDING size: 2
   Push(Read16(Pop())); // @
   goto label2;
 
   label1:
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
 
   label2:
   Push(pp__i_UHL); // 'UHL size: 2
@@ -495,7 +495,7 @@ void UNK_0xe7cc() // UNK_0xe7cc
 
 void UNK_0xe7f0() // UNK_0xe7f0
 {
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
@@ -640,7 +640,7 @@ void UNK_0xe93a() // UNK_0xe93a
   Push(cc_UNK_0xe684); // UNK_0xe684
   UNK_0xe90a(); // UNK_0xe90a
   ORGLIST(); // ORGLIST
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
 }
 
@@ -672,7 +672,7 @@ void UNK_0xe976() // UNK_0xe976
   INIT_dash_IC(); // INIT-IC
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   ICLOSE(); // ICLOSE
@@ -795,7 +795,7 @@ void UNK_0xea19() // UNK_0xea19
   IFIND(); // IFIND
   Pop(); // DROP
   IOPEN(); // IOPEN
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
@@ -1282,18 +1282,18 @@ void OSET() // OSET
   Push(Read16(regsp)); // DUP
   Push(pp_GLOBALS); // GLOBALS size: 2
   _ex__2(); // !_2
-  Push(0xbcf9);
+  Push(0xbcf9); // probable 'SET-PLAN'
   MODULE(); // MODULE
-  Push(0xbd33);
+  Push(0xbd33); // probable 'INIT-'
   MODULE(); // MODULE
   MROTA(); // MROTA
-  Push(0xbd9b);
+  Push(0xbd9b); // probable 'MROTA'
   Push(pp__i_EXTERN); // 'EXTERN size: 2
   _ex__2(); // !_2
   Push(cc__dash_1); // -1
   Push(pp_PLHI); // PLHI size: 2
   _ex__2(); // !_2
-  Push(0xc014);
+  Push(0xc014); // probable 'BLDLI_2'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   Push(cc__6); // 6
@@ -1330,7 +1330,7 @@ void UNK_0xedd2() // UNK_0xedd2
 
 void UNK_0xede8() // UNK_0xede8
 {
-  Push(0xc548);
+  Push(0xc548); // probable 'OVFLU'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
 
@@ -1354,7 +1354,7 @@ void UNK_0xee09() // UNK_0xee09
   UNK_0xeaa2(); // UNK_0xeaa2
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   PRINT(" TERMINATED", 11); // (.")
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
   MODULE(); // MODULE
   Push(pp_SKIP2NE); // SKIP2NE size: 2
   Push(Read16(Pop())); // @
@@ -2231,7 +2231,7 @@ void UNK_0xf331() // UNK_0xf331
 
 void UNK_0xf33d() // UNK_0xf33d
 {
-  Push(0xae81);
+  Push(0xae81); // probable 'CEX+WAX'
 }
 
 

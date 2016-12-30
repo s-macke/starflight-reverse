@@ -79,7 +79,7 @@ const unsigned short int cc_UNK_0xea94 = 0x0004; // UNK_0xea94
 
 void UNK_0xea86() // UNK_0xea86
 {
-  Push(0xbdba);
+  Push(0xbdba); // probable 'OVTRIMS'
   MODULE(); // MODULE
 }
 

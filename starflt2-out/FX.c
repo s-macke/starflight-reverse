@@ -367,11 +367,11 @@ void UNK_0xf1ee() // UNK_0xf1ee
   Push(0x000e);
   UNK_0xf090(); // UNK_0xf090
   if (Pop() == 0) goto label1;
-  Push(0xb78d);
+  Push(0xb78d); // probable 'TV?ART'
   goto label2;
 
   label1:
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
 
   label2:
   MODULE(); // MODULE

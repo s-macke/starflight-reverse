@@ -139,7 +139,7 @@ void UNK_0xf239() // UNK_0xf239
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   SetColor("YELLOW");
-  Push(0x4fa9);
+  Push(0x4fa9); // probable 'BLACK'
   _ex__2(); // !_2
   CTERASE(); // CTERASE
 }
@@ -157,7 +157,7 @@ void UNK_0xf24b() // UNK_0xf24b
   Pop(); // DROP
   Push(pp_UNK_0xf1b3); // UNK_0xf1b3 size: 0
   _099(); // 099
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
 }
 
@@ -379,7 +379,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   Push(pp_GWF); // GWF size: 2
   _ex__2(); // !_2
   UNK_0xf24b(); // UNK_0xf24b
-  Push(0xbd55);
+  Push(0xbd55); // probable 'DESCE'
   MODULE(); // MODULE
   Push(pp__ask_FUEL_dash_D); // ?FUEL-D size: 2
   Push(Read16(Pop())); // @

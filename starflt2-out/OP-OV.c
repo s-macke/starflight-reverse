@@ -1116,7 +1116,7 @@ void UNK_0xed1f() // UNK_0xed1f
 
 void UNK_0xed8e() // UNK_0xed8e
 {
-  Push(0xc261);
+  Push(0xc261); // probable 'OVINIT-_1'
   MODULE(); // MODULE
   Push(0x65eb); // IFIELD(UNK_0xe5ac)
   Push(Read8(Pop())&0xFF); // C@
@@ -1130,13 +1130,13 @@ void UNK_0xed8e() // UNK_0xed8e
   DNEGATE(); // DNEGATE
 
   label1:
-  Push(0xc2ed);
+  Push(0xc2ed); // probable 'T+BALAN'
   MODULE(); // MODULE
   Push(0x65f5); // IFIELD(UNK_0xe5c0)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   _3_star_(); // 3*
-  Push(0xc273);
+  Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
 }
 
@@ -1612,12 +1612,12 @@ void UNK_0xf214() // UNK_0xf214
 
 void UNK_0xf226() // UNK_0xf226
 {
-  Push(0xc261);
+  Push(0xc261); // probable 'OVINIT-_1'
   MODULE(); // MODULE
-  Push(0xc2ed);
+  Push(0xc2ed); // probable 'T+BALAN'
   MODULE(); // MODULE
   Push(0); // 0
-  Push(0xc273);
+  Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
   UNK_0xf214(); // UNK_0xf214
 }
@@ -1731,7 +1731,7 @@ void UNK_0xf2bc() // UNK_0xf2bc
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
 
   label1:
@@ -1773,12 +1773,12 @@ void UNK_0xf339() // UNK_0xf339
   _star_CLOSE(); // *CLOSE
   _gt_INACTI(); // >INACTI
   Push(0x86a0); Push(0x0001);
-  Push(0xc261);
+  Push(0xc261); // probable 'OVINIT-_1'
   MODULE(); // MODULE
-  Push(0xc2ed);
+  Push(0xc2ed); // probable 'T+BALAN'
   MODULE(); // MODULE
   Push(cc__3); // 3
-  Push(0xc273);
+  Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
   UNK_0xf214(); // UNK_0xf214
 }
@@ -1819,7 +1819,7 @@ void UNK_0xf3b4() // UNK_0xf3b4
   if (Pop() == 0) goto label2;
   IDELETE(); // IDELETE
   Push(cc_TRUE); // TRUE
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   goto label3;
 
@@ -1884,7 +1884,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
 void UNK_0xf438() // UNK_0xf438
 {
   Push(0x0037);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   Push(pp__ask_3); // ?3 size: 2
   Push(Read16(Pop())); // @

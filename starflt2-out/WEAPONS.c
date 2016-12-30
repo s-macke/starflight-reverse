@@ -700,7 +700,7 @@ void UNK_0xef86() // UNK_0xef86
   _at_INST_dash_C(); // @INST-C
   Push(0x0014);
   _eq_(); // =
-  Push(0xc6d9);
+  Push(0xc6d9); // probable 'BLST'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
 }
@@ -1028,7 +1028,7 @@ void UNK_0xf158() // UNK_0xf158
   UNK_0xeee0(); // UNK_0xeee0
   _dot_SORD(); // .SORD
   Push(0x0064);
-  Push(0xbf4a);
+  Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
 }
 
@@ -1167,7 +1167,7 @@ void UNK_0xf20c() // UNK_0xf20c
 
 void UNK_0xf24a() // UNK_0xf24a
 {
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
 }
 
@@ -1371,7 +1371,7 @@ void GNUNK_gt_NUL() // GNUNK>NUL
   Push(pp__ask_SUP); // ?SUP size: 2
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  Push(0xc636);
+  Push(0xc636); // probable 'OV-SH'
   MODULE(); // MODULE
 }
 
@@ -1393,7 +1393,7 @@ void UNK_0xf374() // UNK_0xf374
   Push(pp_NLR); // NLR size: 2
   _ex__2(); // !_2
   Push(0x0032);
-  Push(0xbf4a);
+  Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
   Push(1); // 1
   SONG(); // SONG
@@ -1459,9 +1459,9 @@ void UNK_0xf3f0() // UNK_0xf3f0
   BEEPON_2(); // BEEPON_2
   Push(0x0064);
   TONE(); // TONE
-  Push(0x504a);
+  Push(0x504a); // probable 'YELLOW'
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x4fa9);
+  Push(0x4fa9); // probable 'BLACK'
   C_ex__2(); // C!_2
   CTERASE(); // CTERASE
   SetColor("RED");
@@ -1532,7 +1532,7 @@ void DONULL() // DONULL
   Push(pp_NOF); // NOF size: 2
   ON_2(); // ON_2
   Push(0x000d);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) goto label2;
   UNK_0xf3bc(); // UNK_0xf3bc
@@ -1572,14 +1572,14 @@ void DONULL() // DONULL
   goto label9;
 
   label2:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label9:
   goto label10;
 
   label1:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label10:
@@ -1613,7 +1613,7 @@ void TARG() // TARG
   goto label2;
 
   label1:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
 
   label2:

@@ -150,7 +150,7 @@ void _ask_ETIME() // ?ETIME
   D_plus_(); // D+
   D_gt_(); // D>
   if (Pop() == 0) return;
-  Push(0xceb6);
+  Push(0xceb6); // probable 'RECAL'
   MODULE(); // MODULE
 }
 
@@ -220,7 +220,7 @@ void UNK_0xee58() // UNK_0xee58
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
-  Push(0xc014);
+  Push(0xc014); // probable 'BLDLI_2'
   MODULE(); // MODULE
 
   label2:
@@ -278,7 +278,7 @@ void _ask__dot_STORM() // ?.STORM
   UNK_0xed9e(); // UNK_0xed9e
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  Push(0xcdc0);
+  Push(0xcdc0); // probable '.STOR'
   MODULE(); // MODULE
 }
 
@@ -352,7 +352,7 @@ void DO_dash_STORM() // DO-STORM
   RRND(); // RRND
   Push(pp__n_STORM); // #STORM size: 14
   _ex__2(); // !_2
-  Push(0xcdc0);
+  Push(0xcdc0); // probable '.STOR'
   MODULE(); // MODULE
   UNK_0xeefe(); // UNK_0xeefe
 
@@ -458,7 +458,7 @@ void UNK_0xefd1() // UNK_0xefd1
 
 void UNK_0xf003() // UNK_0xf003
 {
-  Push(0xc5da);
+  Push(0xc5da); // probable 'DO-CLOU'
   MODULE(); // MODULE
 }
 
@@ -529,7 +529,7 @@ void FADE() // FADE
 {
   _gt_TVCT(); // >TVCT
   Push(cc__6); // 6
-  Push(0xc5da);
+  Push(0xc5da); // probable 'DO-CLOU'
   MODULE(); // MODULE
   Push2Words("NULL");
   Push(pp_HAZE); // HAZE size: 4

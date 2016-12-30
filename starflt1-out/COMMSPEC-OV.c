@@ -62,7 +62,7 @@ const unsigned short int pp_UNK_0xf47f = 0xf47f; // UNK_0xf47f size: 5
 
 void UNK_0xea84() // UNK_0xea84
 {
-  Push(0xc205);
+  Push(0xc205); // probable 'OV+!EDL'
   MODULE(); // MODULE
 }
 

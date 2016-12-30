@@ -1438,12 +1438,12 @@ void UNK_0xeff8() // UNK_0xeff8
 
 void UNK_0xf02b() // UNK_0xf02b
 {
-  Push(0xc52d);
+  Push(0xc52d); // probable 'OVINIT-BALANCE'
   MODULE(); // MODULE
-  Push(0xc5ca);
+  Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
   Push(0); // 0
-  Push(0xc542);
+  Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
   UNK_0xeff8(); // UNK_0xeff8
 }

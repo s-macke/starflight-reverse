@@ -1316,7 +1316,7 @@ void UNK_0xf1a9() // UNK_0xf1a9
 
 void UNK_0xf223() // UNK_0xf223
 {
-  Push(0xf1dd);
+  Push(0xf1dd); // probable '(TIMER)'
   DISTRAC(); // DISTRAC
   Rule((TIMER));
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1448,7 +1448,7 @@ void UNK_0xf2ed() // UNK_0xf2ed
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS size: 2
   Push(Read16(Pop())); // @
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   SWAP(); // SWAP
   Push(pp_XCON); // XCON size: 2
@@ -1685,7 +1685,7 @@ void UNK_0xf3f9() // UNK_0xf3f9
   Push(Pop()-1); // 1-
   Push(0x65f0); // IFIELD(INST-Y)
   _ex__2(); // !_2
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
 
@@ -1770,7 +1770,7 @@ void DRONE() // DRONE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0034);
-  Push(0xb78d);
+  Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
   Push(Pop() & Pop()); // AND
   Push(pp_NOF); // NOF size: 2
@@ -1830,7 +1830,7 @@ void DRONE() // DRONE
   goto label7;
 
   label1:
-  Push(0xb7e7);
+  Push(0xb7e7); // probable '.NOFUN'
   MODULE(); // MODULE
   Push(0x07d0);
   MS(); // MS

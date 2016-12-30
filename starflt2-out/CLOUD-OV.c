@@ -168,7 +168,7 @@ void UNK_0xf4b2() // UNK_0xf4b2
   Push(0x005e);
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf47c(); // UNK_0xf47c
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
   Push(0x0bb8);
   MS(); // MS

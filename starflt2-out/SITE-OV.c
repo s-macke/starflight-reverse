@@ -563,10 +563,10 @@ void _dot_MERCATOR() // .MERCATOR
   Push(0x0090);
   Push(pp_YLLDEST); // YLLDEST size: 2
   _ex__2(); // !_2
-  Push(0x9199);
+  Push(0x9199); // probable '.1X2CEL'
   Push(pp__i__dot_CELL); // '.CELL size: 2
   _ex__2(); // !_2
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI

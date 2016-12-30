@@ -402,9 +402,9 @@ void UNK_0xe93a() // UNK_0xe93a
 void UNK_0xe940() // UNK_0xe940
 {
   WUP(); // WUP
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
 }
 
@@ -594,7 +594,7 @@ void UNK_0xea10() // UNK_0xea10
   _099(); // 099
   SAVE_dash_OV(); // SAVE-OV
   Push(1); // 1
-  Push(0xbed7);
+  Push(0xbed7); // probable 'OVINIT-_2'
   MODULE(); // MODULE
   TIME(); // TIME
   _2_at_(); // 2@
@@ -952,11 +952,11 @@ void UNK_0xec1a() // UNK_0xec1a
   _dash_(); // -
   Push(0x65f0); // IFIELD(INST-Y)
   _ex__2(); // !_2
-  Push(0xba55);
+  Push(0xba55); // probable 'ICON-'
   MODULE(); // MODULE
   _plus_ICON_2(); // +ICON_2
   ICLOSE(); // ICLOSE
-  Push(0xec78);
+  Push(0xec78); // probable 'UNK_0xec78'
   Push(Read16(regsp)); // DUP
   Push(pp_ANCHOR); // ANCHOR size: 4
   D_ex_(); // D!
@@ -967,7 +967,7 @@ void UNK_0xec1a() // UNK_0xec1a
   Push(1); // 1
   Push(pp__n_VESS); // #VESS size: 2
   _plus__ex__2(); // +!_2
-  Push(0xc7ce);
+  Push(0xc7ce); // probable 'CSCALE'
   MODULE(); // MODULE
   UNK_0xebb0(); // UNK_0xebb0
   UNK_0xea10(); // UNK_0xea10
@@ -1083,7 +1083,7 @@ void UNK_0xed33() // UNK_0xed33
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   MOUNTB(); // MOUNTB
-  Push(0xb9f9);
+  Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
   R_gt_(); // R>
   BMPAL(); // BMPAL
@@ -1101,7 +1101,7 @@ void UNK_0xed33() // UNK_0xed33
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   MOUNTB(); // MOUNTB
-  Push(0xb9f9);
+  Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
   UNK_0xed1f(); // UNK_0xed1f
   Push(0); // 0
@@ -1235,11 +1235,11 @@ void UNK_0xedfd() // UNK_0xedfd
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
   Push(0x0035);
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) return;
-  Push(0x49a8);
-  Push(0xa50f);
+  Push(0x49a8); // probable 'NULL'
+  Push(0xa50f); // probable ''F9'
   _ex__2(); // !_2
   UNK_0xedcb(); // UNK_0xedcb
 }
@@ -1315,7 +1315,7 @@ void UNK_0xee81() // UNK_0xee81
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push(0x000a);
-  Push(0xc6ca);
+  Push(0xc6ca); // probable 'CREWD'
   MODULE(); // MODULE
 
   label1:
@@ -1491,11 +1491,11 @@ void UNK_0xefab() // UNK_0xefab
   UNK_0xef5d(); // UNK_0xef5d
   Push(pp_LSCAN); // LSCAN size: 400
   COUNT(); // COUNT
-  Push(0xbf6f);
+  Push(0xbf6f); // probable 'P>CT'
   MODULE(); // MODULE
   INEXT(); // INEXT
   Push(0x4e20); Push(0x0000);
-  Push(0xbe96);
+  Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
 }
 
@@ -1514,7 +1514,7 @@ void UNK_0xefdb() // UNK_0xefdb
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
   Push(0x000d);
-  Push(0xb9c8);
+  Push(0xb9c8); // probable '@.HYBR'
   MODULE(); // MODULE
   Push(0x00cd);
   UNK_0xe83c(); // UNK_0xe83c
@@ -1653,7 +1653,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
 void UNK_0xf0da() // UNK_0xf0da
 {
   _gt_R(); // >R
-  Push(0xb9f9);
+  Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
   Push2Words("NULL");
   BMWIDE(); // BMWIDE
@@ -1830,7 +1830,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
   Push(pp_UNK_0xe806); // UNK_0xe806 size: 0
   _099(); // 099
   Push(cc__5); // 5
-  Push(0xc5da);
+  Push(0xc5da); // probable 'DO-CLOU'
   MODULE(); // MODULE
   Push(pp__ask_AF); // ?AF size: 2
   _099(); // 099
@@ -2099,7 +2099,7 @@ void UNK_0xf33e() // UNK_0xf33e
   UNK_0xe92e(); // UNK_0xe92e
   CTINIT(); // CTINIT
   WUP(); // WUP
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   goto label2;
 
@@ -2200,7 +2200,7 @@ void BOLT() // BOLT
   Push(0x07d0);
   MS(); // MS
   Push(0x0064);
-  Push(0xbf4a);
+  Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
 
   label2:
@@ -2261,7 +2261,7 @@ void UNK_0xf49f() // UNK_0xf49f
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
-  Push(0xb6ec);
+  Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
 }
@@ -2274,7 +2274,7 @@ void UNK_0xf49f() // UNK_0xf49f
 void UNK_0xf4c7() // UNK_0xf4c7
 {
   Push(Read16(regsp)); // DUP
-  Push(0xb76b);
+  Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -2334,7 +2334,7 @@ void UNK_0xf4f5() // UNK_0xf4f5
 void DO_dash_HALLS() // DO-HALLS
 {
   Push(0x000c);
-  Push(0xb9c8);
+  Push(0xb9c8); // probable '@.HYBR'
   MODULE(); // MODULE
   UNK_0xf479(); // UNK_0xf479
   UNK_0xf4e1(); // UNK_0xf4e1

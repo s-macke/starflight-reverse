@@ -608,7 +608,7 @@ void UNK_0xdd9e() // UNK_0xdd9e
 {
   Push(pp_SPHEREW); // SPHEREW size: 2
   _099(); // 099
-  Push(0x6af2);
+  Push(0x6af2); // probable 'GVERTEX'
   SETLARR(); // SETLARR
   Push(cc__6); // 6
   Push(0); // 0
@@ -659,7 +659,7 @@ void UNK_0xddec() // UNK_0xddec
 {
   Push(pp_SPHEREW); // SPHEREW size: 2
   _099(); // 099
-  Push(0x6af2);
+  Push(0x6af2); // probable 'GVERTEX'
   SETLARR(); // SETLARR
   Push(cc__9); // 9
   Push(0); // 0
@@ -1518,7 +1518,7 @@ void UNK_0xe354() // UNK_0xe354
   Push(0x0086);
   Push(pp__n_IN); // #IN size: 2
   _ex__2(); // !_2
-  Push(0x6b67);
+  Push(0x6b67); // probable 'XFORMVE'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -1527,7 +1527,7 @@ void UNK_0xe354() // UNK_0xe354
   Push(0); // 0
   Push(pp_VOUT); // VOUT size: 2
   _ex__2(); // !_2
-  Push(0x6aa9);
+  Push(0x6aa9); // probable 'VERTEX'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2083,7 +2083,7 @@ void UNK_0xe6eb() // UNK_0xe6eb
   ON_2(); // ON_2
   Push(pp_SPHEREW); // SPHEREW size: 2
   _099(); // 099
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   Push(cc__9); // 9
   Push(0); // 0
@@ -2308,7 +2308,7 @@ void UNK_0xe829() // UNK_0xe829
   Push(0x0075);
   Push(pp__n_IN); // #IN size: 2
   _ex__2(); // !_2
-  Push(0x6b67);
+  Push(0x6b67); // probable 'XFORMVE'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2317,7 +2317,7 @@ void UNK_0xe829() // UNK_0xe829
   Push(0); // 0
   Push(pp_VOUT); // VOUT size: 2
   _ex__2(); // !_2
-  Push(0x6b2b);
+  Push(0x6b2b); // probable 'G1VERT'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2327,7 +2327,7 @@ void UNK_0xe829() // UNK_0xe829
   Push(Pop()<<4); // 16*
   Push(pp_VIN_i_); // VIN' size: 2
   _ex__2(); // !_2
-  Push(0x6af2);
+  Push(0x6af2); // probable 'GVERTEX'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -2422,7 +2422,7 @@ void UNK_0xe8e3() // UNK_0xe8e3
   Push(0x3e80);
   Push(0x3e80);
   Push(cc_UNK_0xdb36); // UNK_0xdb36
-  Push(0xc180);
+  Push(0xc180); // probable 'HEAL-O'
   SETCLIP(); // SETCLIP
 }
 
@@ -3204,7 +3204,7 @@ void UNK_0xed3d() // UNK_0xed3d
   ON_2(); // ON_2
   Push(pp_SIGNEXT); // SIGNEXT size: 2
   ON_2(); // ON_2
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   Push(cc__6); // 6
   Push(0); // 0
@@ -3754,7 +3754,7 @@ void DESCEND() // DESCEND
   _dot_TTY(); // .TTY
   UNK_0xee75(); // UNK_0xee75
   UNK_0xeeb1(); // UNK_0xeeb1
-  Push(0xbab2);
+  Push(0xbab2); // probable 'NEWCO'
   MODULE(); // MODULE
   UNK_0xe6eb(); // UNK_0xe6eb
   UNK_0xe751(); // UNK_0xe751
@@ -4098,9 +4098,9 @@ void INIT_dash_ORBIT() // INIT-ORBIT
   UNK_0xf331(); // UNK_0xf331
   Push(pp_GLOBALS); // GLOBALS size: 2
   Push(Read16(Pop())); // @
-  Push(0xbaa2);
+  Push(0xbaa2); // probable 'MERCA'
   MODULE(); // MODULE
-  Push(0xbac2);
+  Push(0xbac2); // probable 'MAKE-'
   MODULE(); // MODULE
   UNK_0xf2b5(); // UNK_0xf2b5
   UNK_0xf2bd(); // UNK_0xf2bd

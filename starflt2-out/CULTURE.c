@@ -871,7 +871,7 @@ void UNK_0xf444() // UNK_0xf444
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x0044);
   Push(0); // 0
-  Push(0x7d51);
+  Push(0x7d51); // probable '?CLASS/'
   Push(0xf430);
   EACH(); // EACH
   Pop(); Pop();// 2DROP

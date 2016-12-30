@@ -419,7 +419,7 @@ void UNK_0xedc6() // UNK_0xedc6
 
 void UNK_0xedd8() // UNK_0xedd8
 {
-  Push(0x6a82);
+  Push(0x6a82); // probable 'CONTOUR'
   SETLARR(); // SETLARR
   SWAP(); // SWAP
   Push(pp_XCON); // XCON size: 2

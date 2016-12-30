@@ -3628,7 +3628,7 @@ void AUTO_dash_LIMIT() // AUTO-LIMIT
   UMIN(); // UMIN
 
   label1:
-  Push(0x09e2);
+  Push(0x09e2); // probable 'LIMIT'
   _ex_(); // !
   Push(cc_LIMIT); // LIMIT
   _dash_(); // -
@@ -4057,7 +4057,7 @@ void FREEZE() // FREEZE
   Push(0x0701);
   Push(0x0074);
   CMOVE_2(); // CMOVE_2
-  Push(0x081a);
+  Push(0x081a); // probable 'FORTH'
   Push(0x0004);
   Push(Pop() + Pop()); // +
   Push(0x0775);
@@ -9886,7 +9886,7 @@ void _st_MOUNT_gt_() // <MOUNT>
 
 void DR0() // DR0
 {
-  Push(0x3344);
+  Push(0x3344); // probable '[DIRECT]'
   Push(0); // 0
   Push(0); // 0
   Push(pp_DIRNAME); // DIRNAME size: 11
@@ -9904,7 +9904,7 @@ void DR0() // DR0
 
 void DR1() // DR1
 {
-  Push(0x3344);
+  Push(0x3344); // probable '[DIRECT]'
   Push(0x0168);
   Push(0); // 0
   Push(pp_DIRNAME); // DIRNAME size: 11
@@ -11285,7 +11285,7 @@ void _i__1() // '_1
   Push(Read16(regsp)); // DUP
   Push(Pop()-2); // 2-
   Push(Read16(Pop())); // @
-  Push(0x3c92);
+  Push(0x3c92); // probable 'HEAD:'
   Push(0x000e);
   Push(Pop() + Pop()); // +
   _eq_(); // =
@@ -11899,7 +11899,7 @@ void CLRFCB() // CLRFCB
 
 void SYSTEM() // SYSTEM
 {
-  Push(0x2d97);
+  Push(0x2d97); // probable 'FCB'
   Push(cc__7); // 7
   Push(Pop() + Pop()); // +
   Push(pp__i_FCB); // 'FCB size: 2
@@ -11913,7 +11913,7 @@ void SYSTEM() // SYSTEM
 
 void SYSUTIL() // SYSUTIL
 {
-  Push(0x2d97);
+  Push(0x2d97); // probable 'FCB'
   Push(0x0033);
   Push(Pop() + Pop()); // +
   Push(pp__i_FCB); // 'FCB size: 2
@@ -12635,7 +12635,7 @@ void DOSUNMOUNT() // DOSUNMOUNT
 
 void DR2() // DR2
 {
-  Push(0x4425);
+  Push(0x4425); // probable '[FILE]'
   Push(0x02d0);
   SYSTEM(); // SYSTEM
   Push(pp__i_FCB); // 'FCB size: 2
@@ -12656,7 +12656,7 @@ void DR2() // DR2
 
 void DR3() // DR3
 {
-  Push(0x4425);
+  Push(0x4425); // probable '[FILE]'
   Push(0x05dc);
   SYSUTIL(); // SYSUTIL
   Push(pp__i_FCB); // 'FCB size: 2
@@ -13575,17 +13575,17 @@ void SETLARRAY() // SETLARRAY
   Push(0x4d5c);
   Push(pp_UNK_0x4cdc); // UNK_0x4cdc size: 0
   _ex_(); // !
-  Push(0x2ee5);
+  Push(0x2ee5); // probable 'LC!'
   Push(pp_UNK_0x4ce0); // UNK_0x4ce0 size: 0
   _ex_(); // !
   Push(pp_SIGNEXTEND); // SIGNEXTEND size: 14
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(0x49f0);
+  Push(0x49f0); // probable 'L+-@'
   goto label2;
 
   label1:
-  Push(0x2ecd);
+  Push(0x2ecd); // probable 'LC@'
 
   label2:
   Push(pp_UNK_0x4ce4); // UNK_0x4ce4 size: 0
@@ -18615,10 +18615,10 @@ void SELECT_dash_() // SELECT-
 {
   Push(pp_UNK_0x5532); // UNK_0x5532 size: 0
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x7db2);
+  Push(0x7db2); // probable '?>FIRST'
   Push(pp__i__ask_EXIT); // '?EXIT size: 6
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x7a86);
+  Push(0x7a86); // probable 'INEXT'
   Push(pp__i_TRAVER); // 'TRAVER size: 2
   UNK_0x7d5f(); // UNK_0x7d5f
   SELECT(); // SELECT
@@ -18652,7 +18652,7 @@ void UNK_0x7e02() // UNK_0x7e02
 
 void IFIND() // IFIND
 {
-  Push(0x7d17);
+  Push(0x7d17); // probable '?CLASS/'
   SELECT_dash_(); // SELECT-
 }
 
@@ -18724,7 +18724,7 @@ void UNK_0x7e70() // UNK_0x7e70
   _ask_CHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
-  Push(0x749c);
+  Push(0x749c); // probable 'INST-SP'
   SWAP(); // SWAP
   UNK_0x7e02(); // UNK_0x7e02
   if (Pop() == 0) goto label2;
@@ -18780,10 +18780,10 @@ void IDELETE() // IDELETE
   Push(0x7eca);
   Push(pp__i_MAP); // 'MAP size: 2
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x75f3);
+  Push(0x75f3); // probable '?NULL'
   Push(pp__i__ask_EXIT); // '?EXIT size: 6
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i_TRAVER); // 'TRAVER size: 2
   UNK_0x7d5f(); // UNK_0x7d5f
   UNK_0x7e1e(); // UNK_0x7e1e
@@ -18844,9 +18844,9 @@ void UNK_0x7f08() // UNK_0x7f08
 void ALL() // ALL
 {
   _gt_R(); // >R
-  Push(0x7604);
-  Push(0x7db2);
-  Push(0x7a86);
+  Push(0x7604); // probable '?-NULL'
+  Push(0x7db2); // probable '?>FIRST'
+  Push(0x7a86); // probable 'INEXT'
   R_gt_(); // R>
   UNK_0x7f08(); // UNK_0x7f08
 }
@@ -18859,8 +18859,8 @@ void ALL() // ALL
 void EACH() // EACH
 {
   _gt_R(); // >R
-  Push(0x7db2);
-  Push(0x7a86);
+  Push(0x7db2); // probable '?>FIRST'
+  Push(0x7a86); // probable 'INEXT'
   R_gt_(); // R>
   UNK_0x7f08(); // UNK_0x7f08
 }
@@ -18921,7 +18921,7 @@ void UNK_0x7fb1() // UNK_0x7fb1
   _ask_CHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
-  Push(0x749c);
+  Push(0x749c); // probable 'INST-SP'
   OVER(); // OVER
   UNK_0x7e02(); // UNK_0x7e02
   if (Pop() == 0) goto label2;
@@ -19313,10 +19313,10 @@ void _dot_TREE() // .TREE
   Push(0x824a);
   Push(pp__i_MAP); // 'MAP size: 2
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x7a62);
+  Push(0x7a62); // probable '?FIRST'
   Push(pp__i__ask_EXIT); // '?EXIT size: 6
   UNK_0x7d5f(); // UNK_0x7d5f
-  Push(0x7a86);
+  Push(0x7a86); // probable 'INEXT'
   Push(pp__i_TRAVER); // 'TRAVER size: 2
   UNK_0x7d5f(); // UNK_0x7d5f
   UNK_0x7e38(); // UNK_0x7e38
@@ -19367,7 +19367,7 @@ void OV_dash_CANCEL() // OV-CANCEL
   label1:
   Push(pp_OV_n_); // OV# size: 2
   OFF_2(); // OFF_2
-  Push(0x081a);
+  Push(0x081a); // probable 'FORTH'
   Push(Read16(regsp)); // DUP
   Push(tt_CURRENT); // CURRENT
   _st__ex__gt_(); // <!>
@@ -21103,21 +21103,21 @@ void BYE() // BYE
 
 void DEF_dash_SEG() // DEF-SEG
 {
-  Push(0x9002);
-  Push(0x9017);
-  Push(0x902b);
-  Push(0x903f);
-  Push(0x9055);
-  Push(0x906b);
-  Push(0x9081);
-  Push(0x9097);
-  Push(0x90ad);
-  Push(0x90c3);
-  Push(0x90d9);
-  Push(0x90eb);
-  Push(0x90f9);
-  Push(0x910f);
-  Push(0x9125);
+  Push(0x9002); // probable 'LPLOT'
+  Push(0x9017); // probable 'LXPLOT'
+  Push(0x902b); // probable '{BLT}'
+  Push(0x903f); // probable 'LLINE'
+  Push(0x9055); // probable 'LFILLPOLY'
+  Push(0x906b); // probable 'LCOPYBLK'
+  Push(0x9081); // probable 'TILEFILL'
+  Push(0x9097); // probable 'SQLPLOT'
+  Push(0x90ad); // probable 'V>DISPLAY'
+  Push(0x90c3); // probable 'EEXTENT'
+  Push(0x90d9); // probable '{.ELLIP'
+  Push(0x90eb); // probable '{SCANEL'
+  Push(0x90f9); // probable 'ARC'
+  Push(0x910f); // probable 'L@PIXEL'
+  Push(0x9125); // probable '(FVLINE'
   Push(pp_REMSEG); // REMSEG size: 2
   Push(Read16(Pop())); // @
   Push(0x001e);
@@ -21149,21 +21149,21 @@ void DEF_dash_SEG() // DEF-SEG
 void UNK_0x91eb() // UNK_0x91eb
 {
   _gt_R(); // >R
-  Push(0x9002);
-  Push(0x9017);
-  Push(0x902b);
-  Push(0x903f);
-  Push(0x9055);
-  Push(0x906b);
-  Push(0x9081);
-  Push(0x9097);
-  Push(0x90ad);
-  Push(0x90c3);
-  Push(0x90d9);
-  Push(0x90eb);
-  Push(0x90f9);
-  Push(0x910f);
-  Push(0x9125);
+  Push(0x9002); // probable 'LPLOT'
+  Push(0x9017); // probable 'LXPLOT'
+  Push(0x902b); // probable '{BLT}'
+  Push(0x903f); // probable 'LLINE'
+  Push(0x9055); // probable 'LFILLPOLY'
+  Push(0x906b); // probable 'LCOPYBLK'
+  Push(0x9081); // probable 'TILEFILL'
+  Push(0x9097); // probable 'SQLPLOT'
+  Push(0x90ad); // probable 'V>DISPLAY'
+  Push(0x90c3); // probable 'EEXTENT'
+  Push(0x90d9); // probable '{.ELLIP'
+  Push(0x90eb); // probable '{SCANEL'
+  Push(0x90f9); // probable 'ARC'
+  Push(0x910f); // probable 'L@PIXEL'
+  Push(0x9125); // probable '(FVLINE'
   R_gt_(); // R>
   Push(0); // 0
   Push(0x001c);
@@ -21415,10 +21415,10 @@ void BLT() // BLT
 void _gt_1FONT() // >1FONT
 {
   Push(0x93fa);
-  Push(0x066d);
+  Push(0x066d); // probable 'EMIT'
   EXECUTES(); // EXECUTES
   Push(0x9460);
-  Push(0x06e8);
+  Push(0x06e8); // probable 'TYPE'
   EXECUTES(); // EXECUTES
 }
 
@@ -21429,14 +21429,14 @@ void _gt_1FONT() // >1FONT
 
 void _gt_0FONT() // >0FONT
 {
-  Push(0x2731);
-  Push(0x066d);
+  Push(0x2731); // probable '(EMIT)'
+  Push(0x066d); // probable 'EMIT'
   EXECUTES(); // EXECUTES
-  Push(0x2690);
-  Push(0x06e8);
+  Push(0x2690); // probable '(TYPE)'
+  Push(0x06e8); // probable 'TYPE'
   EXECUTES(); // EXECUTES
-  Push(0x26ee);
-  Push(0x0644);
+  Push(0x26ee); // probable '(CR)'
+  Push(0x0644); // probable 'CR'
   EXECUTES(); // EXECUTES
 }
 
@@ -21492,11 +21492,11 @@ void _co_2FONT_cc_() // {2FONT}
 
 void _gt_2FONT() // >2FONT
 {
-  Push(0x94d0);
-  Push(0x066d);
+  Push(0x94d0); // probable '{2FONT}'
+  Push(0x066d); // probable 'EMIT'
   EXECUTES(); // EXECUTES
   Push(0x9460);
-  Push(0x06e8);
+  Push(0x06e8); // probable 'TYPE'
   EXECUTES(); // EXECUTES
 }
 
@@ -21509,10 +21509,10 @@ void _gt_2FONT() // >2FONT
 void _gt_3FONT() // >3FONT
 {
   Push(0x953f);
-  Push(0x066d);
+  Push(0x066d); // probable 'EMIT'
   EXECUTES(); // EXECUTES
   Push(0x9460);
-  Push(0x06e8);
+  Push(0x06e8); // probable 'TYPE'
   EXECUTES(); // EXECUTES
 }
 
@@ -21599,7 +21599,7 @@ void _dot_ELLIPSE() // .ELLIPSE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(0x90d9);
+  Push(0x90d9); // probable '{.ELLIP'
   Push(Pop()+1); // 1+
   Push(Read16(Pop())); // @
   Push(pp__st_ARC1_gt_); // <ARC1> size: 2
@@ -21653,7 +21653,7 @@ void FILLELLIP() // FILLELLIP
   MAX(); // MAX
   Push(pp_YMIN); // YMIN size: 2
   _ex__3(); // !_3
-  Push(0x90eb);
+  Push(0x90eb); // probable '{SCANEL'
   Push(Pop()+1); // 1+
   Push(Read16(Pop())); // @
   Push(pp__st_ARC1_gt_); // <ARC1> size: 2
@@ -23883,7 +23883,7 @@ void CTINIT() // CTINIT
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0xa513);
-  Push(0x0644);
+  Push(0x0644); // probable 'CR'
   EXECUTES(); // EXECUTES
 }
 
@@ -25333,14 +25333,14 @@ void _dash_XTRAILING() // -XTRAILING
   _ex__3(); // !_3
   Push(0xaf5b);
   CFA(); // CFA
-  Push(0x2790);
+  Push(0x2790); // probable '-TRAILING'
   Push(0x000e);
   Push(Pop() + Pop()); // +
   _ex__3(); // !_3
   _dash_TRAILING(); // -TRAILING
-  Push(0x099a);
+  Push(0x099a); // probable 'BL'
   CFA(); // CFA
-  Push(0x2790);
+  Push(0x2790); // probable '-TRAILING'
   Push(0x000e);
   Push(Pop() + Pop()); // +
   _ex__3(); // !_3
@@ -25722,7 +25722,7 @@ void SETDBUF() // SETDBUF
   Push(cc__16K); // 16K
 
   label2:
-  Push(0x50c2);
+  Push(0x50c2); // probable 'DBUF-SIZE'
   _ex__3(); // !_3
   Push(pp_DBUF_dash_SEG); // DBUF-SEG size: 2
   _ex__3(); // !_3
@@ -25913,11 +25913,11 @@ void UNK_0xb309() // UNK_0xb309
   i++;
   } while(i<imax); // (LOOP) 0xfff8
 
-  Push(0x6b1d);
+  Push(0x6b1d); // probable 'PPOLY'
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  Push(0x5144);
+  Push(0x5144); // probable 'POLYSEG'
   _ex__3(); // !_3
 }
 
@@ -25928,7 +25928,7 @@ void UNK_0xb309() // UNK_0xb309
 
 void UNK_0xb32f() // UNK_0xb32f
 {
-  Push(0x5071);
+  Push(0x5071); // probable 'MUSSEG'
   Push(0x0032);
   Push(pp_REMSEG); // REMSEG size: 2
   Push(0x00e1);
@@ -26060,7 +26060,7 @@ void INSTALLXKEY() // INSTALLXKEY
   Push(pp__bo_KEYINT_bc_); // [KEYINT] size: 2
   ON_3(); // ON_3
   _at_DS(); // @DS
-  Push(0xb40e);
+  Push(0xb40e); // probable 'XKEYINT'
   Push(cc__9); // 9
   _ro__ex_SET_rc_(); // (!SET)
 }
@@ -26385,34 +26385,34 @@ void _gt_EXPERT() // >EXPERT
 {
   _gt_R(); // >R
   Push(h); // I
-  Push(0xb6c0);
+  Push(0xb6c0); // probable 'RULELIM'
   _ex__3(); // !_3
   Push(h); // I
   Push(Pop()+1); // 1+
-  Push(0xb6ce);
+  Push(0xb6ce); // probable 'CONDLIM'
   _ex__3(); // !_3
   Push(h); // I
   Push(Pop()+2); // 2+
-  Push(0xb6dc);
+  Push(0xb6dc); // probable 'RULECNT'
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
-  Push(0xb6ea);
+  Push(0xb6ea); // probable 'RULEARR'
   _ex__3(); // !_3
   Push(cc_RULELIM); // RULELIM
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(cc_RULEARR); // RULEARR
   Push(Pop() + Pop()); // +
-  Push(0xb6f8);
+  Push(0xb6f8); // probable 'CONDARR'
   _ex__3(); // !_3
   Push(cc_CONDLIM); // CONDLIM
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(cc_CONDARR); // CONDARR
   Push(Pop() + Pop()); // +
-  Push(0xb706);
+  Push(0xb706); // probable 'CFLGARR'
   _ex__3(); // !_3
 }
 
@@ -26651,7 +26651,7 @@ void CONDITION() // CONDITION
   _dash__dash__gt_(); // -->
   _gt_R(); // >R
   Push(h); // I
-  Push(0xb8ce);
+  Push(0xb8ce); // probable '-->'
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -26708,7 +26708,7 @@ void RULE_c_() // RULE:
   HERE(); // HERE
   Push(0); // 0
   C_co_(); // C,
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   _co_(); // ,
 
   label2:
@@ -26719,10 +26719,10 @@ void RULE_c_() // RULE:
   if (Pop() == 0) goto label1;
   _i__1(); // '_1
   Push(Read16(regsp)); // DUP
-  Push(0xb698);
+  Push(0xb698); // probable 'TRUE'
   _eq_(); // =
   OVER(); // OVER
-  Push(0xb6a4);
+  Push(0xb6a4); // probable 'FALSE'
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -27319,7 +27319,7 @@ void _ask_HEAVY() // ?HEAVY
 
 void _slash_STARDATE() // /STARDATE
 {
-  Push(0xbf1a);
+  Push(0xbf1a); // probable 'OVSTARDATE'
   MODULE(); // MODULE
 }
 
@@ -27336,14 +27336,14 @@ void _dot_SORD() // .SORD
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbf05);
+  Push(0xbf05); // probable 'OV/STXT'
   MODULE(); // MODULE
 
   label1:
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) return;
-  Push(0xbe4b);
+  Push(0xbe4b); // probable 'OVDBA'
   MODULE(); // MODULE
 }
 
@@ -27437,7 +27437,7 @@ void _ro_ROL() // (ROL
 
 void OBIT() // OBIT
 {
-  Push(0xc012);
+  Push(0xc012); // probable '(OBI'
   MODULE(); // MODULE
 }
 
@@ -27448,7 +27448,7 @@ void OBIT() // OBIT
 
 void HEAL() // HEAL
 {
-  Push(0xc030);
+  Push(0xc030); // probable '(HEA'
   MODULE(); // MODULE
 }
 
@@ -27459,7 +27459,7 @@ void HEAL() // HEAL
 
 void _dot_VIT() // .VIT
 {
-  Push(0xc021);
+  Push(0xc021); // probable '(.VI'
   MODULE(); // MODULE
 }
 
@@ -27556,14 +27556,14 @@ void MREPAIR() // MREPAIR
 {
   _ask_SHIP_dash_REPAIR(); // ?SHIP-REPAIR
   if (Pop() == 0) return;
-  Push(0xc0e8);
+  Push(0xc0e8); // probable 'DO-REPA'
   MODULE(); // MODULE
   Push(pp__n_AUX); // #AUX size: 2
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) return;
-  Push(0xbe4b);
+  Push(0xbe4b); // probable 'OVDBA'
   MODULE(); // MODULE
 }
 
@@ -27702,7 +27702,7 @@ void OVEDL_plus_AUX() // OVEDL+AUX
 
 void MCOMM_dash_EXPERTS() // MCOMM-EXPERTS
 {
-  Push(0xc1c1);
+  Push(0xc1c1); // probable 'COMM-EXPERTS'
   MODULE(); // MODULE
 }
 
@@ -27713,7 +27713,7 @@ void MCOMM_dash_EXPERTS() // MCOMM-EXPERTS
 
 void MEDL_plus_AUX() // MEDL+AUX
 {
-  Push(0xc23b);
+  Push(0xc23b); // probable 'OVEDL+AUX'
   MODULE(); // MODULE
 }
 
@@ -27891,7 +27891,7 @@ void SEEGRID() // SEEGRID
 
 void MROTATE() // MROTATE
 {
-  Push(0xc3cd);
+  Push(0xc3cd); // probable 'ROTATE'
   MODULE(); // MODULE
 }
 
@@ -28456,7 +28456,7 @@ void C_and_C() // C&C
 
 void COM() // COM
 {
-  Push(0xc914);
+  Push(0xc914); // probable '(CO'
   MODULE(); // MODULE
 }
 
@@ -28467,7 +28467,7 @@ void COM() // COM
 
 void WAR() // WAR
 {
-  Push(0xc904);
+  Push(0xc904); // probable '(WA'
   MODULE(); // MODULE
 }
 
@@ -28603,7 +28603,7 @@ void OSET() // OSET
 
 void ORBUP() // ORBUP
 {
-  Push(0xca2f);
+  Push(0xca2f); // probable 'OSET'
   MODULE(); // MODULE
 }
 
@@ -28668,7 +28668,7 @@ void _ro_CTXT_rc_() // (CTXT)
 
 void CONTEXT_dash_CASES() // CONTEXT-CASES
 {
-  Push(0xca9d);
+  Push(0xca9d); // probable '(CTXT)'
   MODULE(); // MODULE
 }
 
@@ -28690,7 +28690,7 @@ void _plus_A_dash_VESS() // +A-VESS
 
 void MTRAK_dash_ENCS() // MTRAK-ENCS
 {
-  Push(0xca55);
+  Push(0xca55); // probable 'TRAK-ENCS'
   MODULE(); // MODULE
 }
 
@@ -28701,7 +28701,7 @@ void MTRAK_dash_ENCS() // MTRAK-ENCS
 
 void MHEAT() // MHEAT
 {
-  Push(0xca7c);
+  Push(0xca7c); // probable 'HEAT'
   MODULE(); // MODULE
 }
 
@@ -28797,7 +28797,7 @@ void FLY() // FLY
 void MANEUVER() // MANEUVER
 {
   LoadOverlay("SHPMOV-OV");
-  Push(0xca20);
+  Push(0xca20); // probable '?PRL'
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   JMPSHP(); // Overlay HYPER-OV
@@ -28814,9 +28814,9 @@ void MANEUVER() // MANEUVER
   goto label3;
 
   label4:
-  Push(0xf0ab);
-  Push(0xef37);
-  Push(0xf003);
+  Push(0xf0ab); // probable 'CLEANUP-MOV'
+  Push(0xef37); // probable 'SET-DESTINATION'
+  Push(0xf003); // probable 'SETUP-MOV'
   DOTASKS(SETUP-MOV, SET-DESTINATION, CLEANUP-MOV);
 
   label3:
@@ -28902,7 +28902,7 @@ void USE_dash_E() // USE-E
 
 void MUSE_dash_E() // MUSE-E
 {
-  Push(0xcc61);
+  Push(0xcc61); // probable 'USE-E'
   MODULE(); // MODULE
 }
 
@@ -28956,7 +28956,7 @@ void C_plus_OPARMS() // C+OPARMS
 void BIO() // BIO
 {
   DIO(); // DIO
-  Push(0xc843);
+  Push(0xc843); // probable 'SETC'
   MODULE(); // MODULE
   C_plus_OPARMS(); // C+OPARMS
 }
@@ -29064,7 +29064,7 @@ void _ro_2X2_rc_() // (2X2)
 
 void _2X2CO() // 2X2CO
 {
-  Push(0xcde8);
+  Push(0xcde8); // probable '(2X2)'
   MODULE(); // MODULE
 }
 
@@ -29086,7 +29086,7 @@ void _ro_4X4_rc_() // (4X4)
 
 void _4X4CO() // 4X4CO
 {
-  Push(0xce0a);
+  Push(0xce0a); // probable '(4X4)'
   MODULE(); // MODULE
 }
 
@@ -29108,7 +29108,7 @@ void _ro_8X8_rc_() // (8X8)
 
 void _8X8CO() // 8X8CO
 {
-  Push(0xce2c);
+  Push(0xce2c); // probable '(8X8)'
   MODULE(); // MODULE
 }
 
@@ -29344,7 +29344,7 @@ void _ro_TALK_rc_() // (TALK)
 
 void HEAVEHO() // HEAVEHO
 {
-  Push(0xd037);
+  Push(0xd037); // probable '(HEAVE)'
   MODULE(); // MODULE
 }
 
@@ -29398,7 +29398,7 @@ void _ro_SIMULA_rc_() // (SIMULA)
 
 void SIMULATE() // SIMULATE
 {
-  Push(0xd0d2);
+  Push(0xd0d2); // probable '(SIMULA)'
   MODULE(); // MODULE
 }
 
@@ -29767,7 +29767,7 @@ void GAMEOP_1() // GAMEOP_1
 
 void GAMEOP_2() // GAMEOP_2
 {
-  Push(0xd463);
+  Push(0xd463); // probable 'GAMEOP_1'
   MODULE(); // MODULE
 }
 

@@ -566,11 +566,11 @@ void UNK_0xe952() // UNK_0xe952
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xc0a1);
+  Push(0xc0a1); // probable 'OV/STX'
   return;
 
   label1:
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
 }
 
 
@@ -585,11 +585,11 @@ void UNK_0xe96e() // UNK_0xe96e
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbcb8);
+  Push(0xbcb8); // probable 'OVDBA'
   return;
 
   label1:
-  Push(0xbc98);
+  Push(0xbc98); // probable 'OV/DA'
 }
 
 
@@ -826,7 +826,7 @@ void UNK_0xead4() // UNK_0xead4
 void UNK_0xeae2() // UNK_0xeae2
 {
   SetColor("YELLOW");
-  Push(0x4fa9);
+  Push(0x4fa9); // probable 'BLACK'
   _ex__2(); // !_2
   CTERASE(); // CTERASE
   Push(0); // 0
@@ -1349,7 +1349,7 @@ void UNK_0xee67() // UNK_0xee67
   OVER(); // OVER
   _dash_(); // -
   _gt_R(); // >R
-  Push(0xe7a0);
+  Push(0xe7a0); // probable 'UNK_0xe7a0'
   UNK_0xe8a4(); // UNK_0xe8a4
   R_gt_(); // R>
   Push(Read16(regsp)); // DUP
@@ -1366,7 +1366,7 @@ void UNK_0xee67() // UNK_0xee67
   label2:
   UNK_0xead4(); // UNK_0xead4
   if (Pop() == 0) goto label4;
-  Push(0xbfc8);
+  Push(0xbfc8); // probable 'DA-STR'
   MODULE(); // MODULE
 
   label4:
@@ -1595,7 +1595,7 @@ void UNK_0xf013() // UNK_0xf013
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(0xbc98);
+  Push(0xbc98); // probable 'OV/DA'
   MODULE(); // MODULE
   Push(cc__3); // 3
   Push(pp__n_AUX); // #AUX size: 2
@@ -1631,7 +1631,7 @@ void UNK_0xf059() // UNK_0xf059
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
-  Push(0xb77c);
+  Push(0xb77c); // probable 'OV?.EQ'
   MODULE(); // MODULE
   Pop(); // DROP
 
@@ -1691,7 +1691,7 @@ void UNK_0xf0b3() // UNK_0xf0b3
   SHIELD_dash_(); // SHIELD-
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(0xc636);
+  Push(0xc636); // probable 'OV-SH'
   MODULE(); // MODULE
 }
 
@@ -1816,9 +1816,9 @@ void DO_dash_ADAM() // DO-ADAM
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label3;
   UNK_0xed68(); // UNK_0xed68
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
 
   label3:
@@ -2079,9 +2079,9 @@ void CDAM() // CDAM
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xed68(); // UNK_0xed68
-  Push(0xc18b);
+  Push(0xc18b); // probable '(OBI'
   MODULE(); // MODULE
-  Push(0xc1b8);
+  Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
 
   label1:
@@ -2355,11 +2355,11 @@ void UNK_0xf4a9() // UNK_0xf4a9
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
-  Push(0xc090);
+  Push(0xc090); // probable 'OV/STA'
   goto label3;
 
   label2:
-  Push(0xc0a1);
+  Push(0xc0a1); // probable 'OV/STX'
 
   label3:
   MODULE(); // MODULE

@@ -703,7 +703,7 @@ void _plus_ICP() // +ICP
 
 void _plus_ICONBOX() // +ICONBOX
 {
-  Push(0xf515);
+  Push(0xf515); // probable '+ICP'
   ALL(); // ALL
 }
 

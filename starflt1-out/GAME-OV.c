@@ -1372,10 +1372,10 @@ void nomaster() // nomaster
 
 void GDE() // GDE
 {
-  Push(0xae85);
+  Push(0xae85); // probable '<CTASKMOUNT>'
   Push(pp_ASKMOUNT); // ASKMOUNT size: 2
   _ex__3(); // !_3
-  Push(0xae67);
+  Push(0xae67); // probable '<CTVERSIONERROR>'
   Push(pp__i_VERSIONERR); // 'VERSIONERR size: 2
   _ex__3(); // !_3
 }
@@ -2641,7 +2641,7 @@ void UNK_0xf069() // UNK_0xf069
   _slash_(); // /
   Push(1); // 1
   MAX(); // MAX
-  Push(0x5245);
+  Push(0x5245); // probable 'MPS'
   _ex__3(); // !_3
 }
 
@@ -2890,7 +2890,7 @@ void START_dot_GAME() // START.GAME
   nomaster(); // nomaster
 
   label1:
-  Push(0xb5aa);
+  Push(0xb5aa); // probable 'HIMUS'
   MODULE(); // MODULE
   POLICE_dot_WARNING(); // POLICE.WARNING
   _ask_GAME_dot_IN_dot_PROGRESS(); // ?GAME.IN.PROGRESS

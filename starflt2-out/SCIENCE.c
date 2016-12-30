@@ -377,7 +377,7 @@ void UNK_0xdfb7() // UNK_0xdfb7
 
 void UNK_0xe0ab() // UNK_0xe0ab
 {
-  Push(0x6a5a);
+  Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
@@ -691,9 +691,9 @@ void UNK_0xe277() // UNK_0xe277
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
-  Push(0xc014);
+  Push(0xc014); // probable 'BLDLI_2'
   MODULE(); // MODULE
-  Push(0xbfda);
+  Push(0xbfda); // probable 'EDL>P'
   MODULE(); // MODULE
 
   label2:
@@ -1498,7 +1498,7 @@ void UNK_0xe82a() // UNK_0xe82a
   Pop(); // DROP
   IOPEN(); // IOPEN
   CTINIT(); // CTINIT
-  Push(0xbe45);
+  Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
   Push(cc__3); // 3
   _star_CLOSE(); // *CLOSE
@@ -2832,7 +2832,7 @@ void _dot_READINGS() // .READINGS
 void _ro__slash_SENSORS_rc_() // (/SENSORS)
 {
   Push(1); // 1
-  Push(0xb77c);
+  Push(0xb77c); // probable 'OV?.EQ'
   MODULE(); // MODULE
   Push(pp_IGLOBAL); // IGLOBAL size: 2
   Push(Read16(Pop())); // @

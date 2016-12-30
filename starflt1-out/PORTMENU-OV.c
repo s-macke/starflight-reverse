@@ -388,7 +388,7 @@ void UNK_0xea91() // UNK_0xea91
 {
   UNK_0xea7f(); // UNK_0xea7f
   if (Pop() == 0) return;
-  Push(0xc650);
+  Push(0xc650); // probable 'U-PF'
   MODULE(); // MODULE
 }
 
@@ -401,7 +401,7 @@ void UNK_0xeaa1() // UNK_0xeaa1
 {
   UNK_0xea7f(); // UNK_0xea7f
   if (Pop() == 0) return;
-  Push(0xc610);
+  Push(0xc610); // probable 'U-AC'
   MODULE(); // MODULE
 }
 
@@ -414,7 +414,7 @@ void UNK_0xeab1() // UNK_0xeab1
 {
   UNK_0xea7f(); // UNK_0xea7f
   if (Pop() == 0) return;
-  Push(0xc5b6);
+  Push(0xc5b6); // probable 'U-B'
   MODULE(); // MODULE
 }
 
@@ -427,7 +427,7 @@ void UNK_0xeac1() // UNK_0xeac1
 {
   UNK_0xea7f(); // UNK_0xea7f
   if (Pop() == 0) return;
-  Push(0xc73a);
+  Push(0xc73a); // probable 'U-SC'
   MODULE(); // MODULE
 }
 
@@ -440,7 +440,7 @@ void UNK_0xead1() // UNK_0xead1
 {
   UNK_0xea7f(); // UNK_0xea7f
   if (Pop() == 0) return;
-  Push(0xc785);
+  Push(0xc785); // probable 'U-TD'
   MODULE(); // MODULE
 }
 
@@ -451,7 +451,7 @@ void UNK_0xead1() // UNK_0xead1
 
 void UNK_0xeae1() // UNK_0xeae1
 {
-  Push(0xc7f3);
+  Push(0xc7f3); // probable 'U-OP'
   MODULE(); // MODULE
 }
 
@@ -467,28 +467,28 @@ void UNK_0xeae1() // UNK_0xeae1
 
 void UNK_0xeaf0() // UNK_0xeaf0
 {
-  Push(0xc081);
+  Push(0xc081); // probable '?APP'
   Push(pp__i_CREW_dash_C); // 'CREW-C size: 2
   _ex__3(); // !_3
-  Push(0xc05f);
+  Push(0xc05f); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM size: 2
   _ex__3(); // !_3
-  Push(0x3a48);
+  Push(0x3a48); // probable 'NOP'
   Push(pp__i__dot_VITAL); // '.VITAL size: 2
   _ex__3(); // !_3
-  Push(0xc104);
+  Push(0xc104); // probable '?SHIP-REPAIR'
   Push(pp__i_VEHICLE_dash_CYCLE); // 'VEHICLE-CYCLE size: 2
   _ex__3(); // !_3
-  Push(0xbf68);
+  Push(0xbf68); // probable '.SORD'
   Push(pp__i__dot_VEHICLE_dash_STATUS); // '.VEHICLE-STATUS size: 2
   _ex__3(); // !_3
-  Push(0xc136);
+  Push(0xc136); // probable 'MREPAIR'
   Push(pp__i_REPAIR); // 'REPAIR size: 2
   _ex__3(); // !_3
-  Push(0xbf56);
+  Push(0xbf56); // probable '/STARDATE'
   Push(pp__i__dot_DATE); // '.DATE size: 2
   _ex__3(); // !_3
-  Push(0xca8c);
+  Push(0xca8c); // probable '!'EXT'
   MODULE(); // MODULE
   Push(pp_LSYSEG); // LSYSEG size: 2
   Push(Read16(Pop())); // @
@@ -522,7 +522,7 @@ void UNK_0xeaf0() // UNK_0xeaf0
   U_star_(); // U*
   Push(pp__10_star_CARGO); // 10*CARGO size: 4
   D_ex_(); // D!
-  Push(0xc776);
+  Push(0xc776); // probable '<TDART'
   MODULE(); // MODULE
   Push(pp__ask_TV); // ?TV size: 2
   ON_3(); // ON_3
@@ -531,7 +531,7 @@ void UNK_0xeaf0() // UNK_0xeaf0
   Push(pp_E_dash_USE); // E-USE size: 2
   Push(Read16(Pop())); // @
   Push(cc__7); // 7
-  Push(0xbdd8);
+  Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
   if (Pop() == 0) goto label1;
   Push(Pop()>>1); // 2/
@@ -549,13 +549,13 @@ void UNK_0xeaf0() // UNK_0xeaf0
 
 void UNK_0xeba2() // UNK_0xeba2
 {
-  Push(0xd3dc);
+  Push(0xd3dc); // probable '?FLIGHT-OK'
   MODULE(); // MODULE
   if (Pop() == 0) return;
   UNK_0xeaf0(); // UNK_0xeaf0
-  Push(0xd394);
+  Push(0xd394); // probable 'OVFLT'
   MODULE(); // MODULE
-  Push(0xc5a8);
+  Push(0xc5a8); // probable 'I-TRANS'
   MODULE(); // MODULE
   UNK_0xea0b(); // UNK_0xea0b
   Push(pp_STARDATE); // STARDATE size: 2
@@ -1747,13 +1747,13 @@ void PORT_dash_PIC() // PORT-PIC
   Push(0x00c7);
   POS_dot_(); // POS.
   Push(0x002c);
-  Push(0xbe9d);
+  Push(0xbe9d); // probable '@.HYBRID'
   MODULE(); // MODULE
   Push(0); // 0
   Push(0x0063);
   POS_dot_(); // POS.
   Push(0x0031);
-  Push(0xbe9d);
+  Push(0xbe9d); // probable '@.HYBRID'
   MODULE(); // MODULE
   Push(pp__ask_EGA); // ?EGA size: 2
   Push(Read16(Pop())); // @

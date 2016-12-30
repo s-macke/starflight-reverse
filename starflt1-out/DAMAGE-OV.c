@@ -500,11 +500,11 @@ void UNK_0xeca0() // UNK_0xeca0
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbf05);
+  Push(0xbf05); // probable 'OV/STXT'
   return;
 
   label1:
-  Push(0xbef3);
+  Push(0xbef3); // probable 'OV/STATUS'
 }
 
 
@@ -519,11 +519,11 @@ void UNK_0xecbc() // UNK_0xecbc
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  Push(0xbe4b);
+  Push(0xbe4b); // probable 'OVDBA'
   return;
 
   label1:
-  Push(0xbe2b);
+  Push(0xbe2b); // probable 'OV/DA'
 }
 
 
@@ -730,7 +730,7 @@ void UNK_0xede0() // UNK_0xede0
 void UNK_0xedf2() // UNK_0xedf2
 {
   SetColor("YELLOW");
-  Push(0x4f0c);
+  Push(0x4f0c); // probable 'BLACK'
   _ex__3(); // !_3
   CTERASE(); // CTERASE
   Push(0); // 0
@@ -1107,7 +1107,7 @@ void UNK_0xf08a() // UNK_0xf08a
   Push(cc__7); // 7
   CMOVE(); // CMOVE
   UNK_0xec6a(); // UNK_0xec6a
-  Push(0xc27d);
+  Push(0xc27d); // probable 'DA-STR'
   MODULE(); // MODULE
 }
 
@@ -1220,7 +1220,7 @@ void UNK_0xf162() // UNK_0xf162
   goto label2;
 
   label1:
-  Push(0xeb40);
+  Push(0xeb40); // probable 'UNK_0xeb40'
   UNK_0xec30(); // UNK_0xec30
 
   label2:
@@ -1392,7 +1392,7 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(0xbe2b);
+  Push(0xbe2b); // probable 'OV/DA'
   MODULE(); // MODULE
   Push(cc__3); // 3
   Push(pp__n_AUX); // #AUX size: 2
@@ -1427,7 +1427,7 @@ void UNK_0xf2ac() // UNK_0xf2ac
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5
-  Push(0xbdef);
+  Push(0xbdef); // probable 'OV?.EQUIP-OK'
   MODULE(); // MODULE
   Pop(); // DROP
 
@@ -1614,9 +1614,9 @@ void UNK_0xf3a4() // UNK_0xf3a4
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label3;
   UNK_0xf02e(); // UNK_0xf02e
-  Push(0xc012);
+  Push(0xc012); // probable '(OBI'
   MODULE(); // MODULE
-  Push(0xc03f);
+  Push(0xc03f); // probable '(ROL'
   MODULE(); // MODULE
 
   label3:
