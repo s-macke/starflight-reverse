@@ -14,7 +14,6 @@ typedef struct DICTENTRY
 
 // Helper for parsing
     int nlabel; // current label identifier
-    int nloop; // current loop identifier
     int isentry;
 } DICTENTRY;
 

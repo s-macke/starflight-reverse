@@ -11,6 +11,48 @@
 
 LineDesc pline[0x10000];
 
+// -----------------------------------------
+
+Variables GetEmptyVariables()
+{
+    Variables vars;
+    memset(&vars, 0, sizeof(Variables));
+    return vars;
+}
+
+void AddLoopVariables(Variables *vars)
+{
+    vars->name[vars->nvars+0][0] = 'i' + vars->nloopvars;
+    strcpy(&vars->name[vars->nvars+0][1], "max");
+    vars->name[vars->nvars+1][0] = 'i' + vars->nloopvars;
+    vars->name[vars->nvars+1][1] = 0;
+    vars->nvars += 2;
+    vars->nloopvars++;
+}
+
+void RemoveLoopVariables(Variables *vars)
+{
+    if (vars->nvars < 2)
+    {
+        fprintf(stderr, "Error: no loop variables found\n");
+        exit(1);
+    }
+    vars->nvars -= 2;
+}
+
+char* GetVariable(Variables *vars, int idx)
+{
+    static char *def = "h";
+    if ((vars->nvars - 1 - idx) < 0)
+    {
+        return def;
+    }
+    return &vars->name[vars->nvars - 1 - idx][0];
+}
+
+// -----------------------------------------
+
+
 int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
 {
     ret[0] = 0;
@@ -310,17 +352,6 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
     return result2;
 }
 
-unsigned short int FindLoopID(unsigned short int addr, DICTENTRY *e)
-{
-    int i;
-    for(i=addr; i >= e->parp; i--)
-    {
-        if (pline[i].loopid != 0) return pline[i].loopid;
-    }
-    //fprintf(stderr, "Warning: search for loop index without loop in function '%s'\n", GetWordName(e));
-    return e->nloop;
-}
-
 // TODO: Analysis of EXECUTE-RULE and EXPERT
 void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
@@ -465,7 +496,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     strcat(pline[ofs].str, "\n  }\n}\n");
 }
 
-void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx, Variables vars)
 {
     if (d == NULL) {
         d = FindClosestFunction(ofs, currentovidx);
@@ -704,8 +735,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx);
-            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
+            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -725,17 +756,16 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx);
-            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx);
+            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
+            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
             ofs += 4;
         } else
         if (strcmp(s, "(DO)") == 0)
         {
-            d->nloop++;
-            pline[ofs].loopid = d->nloop;
-            snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %c = Pop();\n  signed short int %cmax = Pop();\n  do // (DO)\n  {\n",
-                'h'+d->nloop,
-                'h'+d->nloop);
+            AddLoopVariables(&vars);
+            snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %s = Pop();\n  signed short int %s = Pop();\n  do // (DO)\n  {\n",
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 1));
             ofs += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -744,18 +774,14 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
-            int loopid = pline[addr].loopid;
-            if (loopid == 0)
-            {
-                fprintf(stderr, "no do found from 0x%04x to 0x%04x\n", ofs, addr);
-            }
             snprintf(pline[ofs].str, STRINGLEN,
-                "  %c += Pop();\n"
-                "  } while(%c<%cmax); // (/LOOP) 0x%04x\n\n",
-                'h' + loopid,
-                'h' + loopid,
-                'h' + loopid,
+                "  %s += Pop();\n"
+                "  } while(%s<%s); // (/LOOP) 0x%04x\n\n",
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 1),
                 par);
+            RemoveLoopVariables(&vars);
             ofs += 4;
         } else
         if (strcmp(s, "(LOOP)") == 0)
@@ -764,17 +790,12 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
-            int loopid = pline[addr].loopid;
-            if (loopid == 0)
-            {
-                fprintf(stderr, "no do found from 0x%04x to 0x%04x\n", ofs, addr);
-            }
-
-            snprintf(pline[ofs].str, STRINGLEN, "  %c++;\n  } while(%c<%cmax); // (LOOP) 0x%04x\n\n",
-                'h' + loopid,
-                'h' + loopid,
-                'h' + loopid,
+            snprintf(pline[ofs].str, STRINGLEN, "  %s++;\n  } while(%s<%s); // (LOOP) 0x%04x\n\n",
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 1),
                 par);
+            RemoveLoopVariables(&vars);
             ofs += 4;
         } else
         if (strcmp(s, "(+LOOP)") == 0)
@@ -783,38 +804,31 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
-            int loopid = pline[addr].loopid;
-            if (loopid == 0)
-            {
-                fprintf(stderr, "no do found from 0x%04x to 0x%04x\n", ofs, addr);
-            }
             snprintf(pline[ofs].str, STRINGLEN,
-                "  int step = Pop();\n  %c += step;\n"
-                "  } while(((step>=0) && (%c<%cmax)) || ((step<0) && (%c>%cmax))); // (+LOOP) 0x%04x\n\n",
-                'h' + loopid,
-                'h' + loopid,
-                'h' + loopid,
-                'h' + loopid,
-                'h' + loopid,
+                "  int step = Pop();\n  %s += step;\n"
+                "  } while(((step>=0) && (%s<%s)) || ((step<0) && (%s>%s))); // (+LOOP) 0x%04x\n\n",
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 1),
+                GetVariable(&vars, 0),
+                GetVariable(&vars, 1),
                 par);
+            RemoveLoopVariables(&vars);
             ofs += 4;
         } else
         if (strcmp(s, "I") == 0)
         {
-            int id = FindLoopID(ofs, d);
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // I\n", 'h'+id);
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(%s); // I\n", GetVariable(&vars, 0));
             ofs += 2;
         } else
         if (strcmp(s, "I'") == 0)
         {
-            int id = FindLoopID(ofs, d);
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // I'\n", 'h'+id);
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(%s); // I'\n", GetVariable(&vars, 1));
             ofs += 2;
         } else
         if (strcmp(s, "J") == 0)
         {
-            int id = FindLoopID(ofs, d);
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(%c); // J\n", 'h'+id-1);
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(%s); // J\n", GetVariable(&vars, 2));
             ofs += 2;
         } else
         {
@@ -843,7 +857,6 @@ void InitParser()
     }
     for(i=0; i<ndict; i++)
     {
-        dict[i].nloop = 0;
         dict[i].nlabel = 0;
     }
 }
@@ -856,7 +869,8 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep == CODECALL)
         {
-            ParsePartFunction(dict[i].parp, minaddr, maxaddr, &dict[i], dict[i].ovidx);
+            Variables vars = GetEmptyVariables();
+            ParsePartFunction(dict[i].parp, minaddr, maxaddr, &dict[i], dict[i].ovidx, vars);
         }
         if (dict[i].codep == CODECASE)
         {
@@ -878,7 +892,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (Read16(i+1) == CODECALL)
         {
             DICTENTRY *e = GetDictEntry(i+3, ovidx);
-            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx);
+            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, 0);
         }
     }
 */
@@ -968,7 +982,6 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
             if ((Read8(i) >= 0x20) && (Read8(i) < 128))
             {
                 str[nstr-1] = Read8(i);
-                //fprintf(fp, "'%c' ", Read8(i));
             }
         }
     }

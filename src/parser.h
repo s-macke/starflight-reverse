@@ -14,9 +14,18 @@ typedef struct
 extern LineDesc pline[0x10000];
 
 
+typedef struct
+{
+    char name[10][10];
+    int nvars;
+    int nloopvars;
+} Variables;
+
+Variables GetEmptyVariables();
+
 void InitParser();
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
-void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx);
+void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx, Variables vars);
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);
 
 #endif
