@@ -691,25 +691,25 @@ void STAR_dash_IC_dash_CASE() // STAR-IC-CASE
   switch(Pop()) // STAR-IC-CASE
   {
   case 77:
-    RED(); // RED
+    SetColor("RED");
     break;
   case 75:
-    ORANGE(); // ORANGE
+    SetColor("ORANGE");
     break;
   case 71:
-    YELLOW(); // YELLOW
+    SetColor("YELLOW");
     break;
   case 70:
-    WHITE(); // WHITE
+    SetColor("WHITE");
     break;
   case 65:
-    GREEN(); // GREEN
+    SetColor("GREEN");
     break;
   case 66:
-    BLUE(); // BLUE
+    SetColor("BLUE");
     break;
   default:
-    LT_dash_BLUE(); // LT-BLUE
+    SetColor("LT-BLUE");
     break;
 
   }
@@ -794,22 +794,22 @@ void PLAN_dash_IC_dash_CASE() // PLAN-IC-CASE
   switch(Pop()) // PLAN-IC-CASE
   {
   case 0:
-    GREY1(); // GREY1
+    SetColor("GREY1");
     break;
   case 1:
-    VIOLET(); // VIOLET
+    SetColor("VIOLET");
     break;
   case 2:
-    BLUE(); // BLUE
+    SetColor("BLUE");
     break;
   case 3:
-    WHITE(); // WHITE
+    SetColor("WHITE");
     break;
   case 4:
     UNK_0xf3e6(); // UNK_0xf3e6
     break;
   default:
-    BROWN(); // BROWN
+    SetColor("BROWN");
     break;
 
   }

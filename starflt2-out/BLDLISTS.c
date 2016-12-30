@@ -523,16 +523,16 @@ void _ro_GETUSE_rc_() // (GETUSE)
   switch(Pop()) // (GETUSE)
   {
   case 68:
-    UNK_0xed50(); // UNK_0xed50
+    LoadData("UNK_0xed50"); // from 'CREATURE    '
     break;
   case 28:
-    UNK_0xed38(); // UNK_0xed38
+    LoadData("UNK_0xed38"); // from 'ARTIFACT    '
     break;
   case 26:
-    UNK_0xed58(); // UNK_0xed58
+    LoadData("UNK_0xed58"); // from 'ELEMENT     '
     break;
   case 9:
-    UNK_0xed68(); // UNK_0xed68
+    LoadData("UNK_0xed68"); // from 'STIS        '
     break;
   default:
     UNRAVEL(); // UNRAVEL

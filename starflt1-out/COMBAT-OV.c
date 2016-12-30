@@ -708,13 +708,13 @@ void KEY_gt_ORIEN() // KEY>ORIEN
   switch(Pop()) // KEY>ORIEN
   {
   case 65535:
-    X_eq__dash_1(); // X=-1
+    X_eq__dash_1(); // X=-1 case
     break;
   case 0:
-    X_eq_0(); // X=0
+    X_eq_0(); // X=0 case
     break;
   case 1:
-    X_eq_1(); // X=1
+    X_eq_1(); // X=1 case
     break;
   default:
     UNRAVEL(); // UNRAVEL

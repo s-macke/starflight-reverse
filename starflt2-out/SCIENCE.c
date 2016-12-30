@@ -3125,7 +3125,7 @@ void CTXT_gt_I() // CTXT>I
   switch(Pop()) // CTXT>I
   {
   case 3:
-    _star_SHIP(); // *SHIP
+    Push2Words("*SHIP");
     break;
   case 4:
     UNK_0xf260(); // UNK_0xf260

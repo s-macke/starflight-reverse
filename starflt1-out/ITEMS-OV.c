@@ -2534,7 +2534,7 @@ void DISPATCH() // DISPATCH
     UNK_0xebf9(); // UNK_0xebf9
     break;
   case 43:
-    DO_dot_BIO(); // DO.BIO
+    DO_dot_BIO(); // DO.BIO case
     break;
   default:
     NOP(); // NOP

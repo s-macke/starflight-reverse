@@ -19094,46 +19094,46 @@ void SET_ask_REU() // SET?REU
   switch(Pop()) // SET?REU
   {
   case 11:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 41:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 14:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 26:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 68:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 28:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 56:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 36:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 40:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 43:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 24:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 25:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 67:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   default:
-    _st_OFF_gt_(); // <OFF>
+    Func9("<OFF>");
     break;
 
   }

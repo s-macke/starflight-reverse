@@ -1033,16 +1033,16 @@ void T_gt_NAME() // T>NAME
   switch(Pop()) // T>NAME
   {
   case 28:
-    ART_dash_NAM(); // ART-NAM
+    LoadData("ART-NAM"); // from 'ARTIFACT    '
     break;
   case 68:
-    UNK_0xe11a(); // UNK_0xe11a
+    LoadData("UNK_0xe11a"); // from 'CREATURE    '
     break;
   case 9:
-    UNK_0xe14a(); // UNK_0xe14a
+    LoadData("UNK_0xe14a"); // from 'STIS        '
     break;
   case 26:
-    ELEM_dash_NA(); // ELEM-NA
+    LoadData("ELEM-NA"); // from 'ELEMENT     '
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -1713,16 +1713,16 @@ void _ro_GETUSE_rc_() // (GETUSE)
   switch(Pop()) // (GETUSE)
   {
   case 68:
-    UNK_0xe12a(); // UNK_0xe12a
+    LoadData("UNK_0xe12a"); // from 'CREATURE    '
     break;
   case 28:
-    UNK_0xe112(); // UNK_0xe112
+    LoadData("UNK_0xe112"); // from 'ARTIFACT    '
     break;
   case 26:
-    UNK_0xe132(); // UNK_0xe132
+    LoadData("UNK_0xe132"); // from 'ELEMENT     '
     break;
   case 9:
-    UNK_0xe142(); // UNK_0xe142
+    LoadData("UNK_0xe142"); // from 'STIS        '
     break;
   default:
     UNRAVEL(); // UNRAVEL

@@ -792,13 +792,13 @@ void KEY_gt_ORIENT() // KEY>ORIENT
   switch(Pop()) // KEY>ORIENT
   {
   case 65535:
-    X_eq__dash_1(); // X=-1
+    X_eq__dash_1(); // X=-1 case
     break;
   case 0:
-    X_eq_0(); // X=0
+    X_eq_0(); // X=0 case
     break;
   case 1:
-    X_eq_1(); // X=1
+    X_eq_1(); // X=1 case
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -1568,13 +1568,13 @@ void C_gt_C() // C>C
   switch(Pop()) // C>C
   {
   case 6:
-    WHITE(); // WHITE
+    SetColor("WHITE");
     break;
   case 7:
-    VIOLET(); // VIOLET
+    SetColor("VIOLET");
     break;
   case 10:
-    PINK(); // PINK
+    SetColor("PINK");
     break;
   default:
     UNK_0xe31d(); // UNK_0xe31d

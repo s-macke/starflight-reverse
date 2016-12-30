@@ -338,16 +338,16 @@ void GET_dash_VES() // GET-VES
   switch(Pop()) // GET-VES
   {
   case 0:
-    UNK_0xe6d7(); // UNK_0xe6d7
+    Push(0x65fa); // IFIELD(UNK_0xe6d7)
     break;
   case 1:
-    UNK_0xe6d2(); // UNK_0xe6d2
+    Push(0x65f9); // IFIELD(UNK_0xe6d2)
     break;
   case 2:
-    UNK_0xe6cd(); // UNK_0xe6cd
+    Push(0x65f8); // IFIELD(UNK_0xe6cd)
     break;
   default:
-    UNK_0xe6c8(); // UNK_0xe6c8
+    Push(0x65f7); // IFIELD(UNK_0xe6c8)
     break;
 
   }

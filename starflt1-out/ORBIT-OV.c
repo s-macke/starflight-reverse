@@ -4165,19 +4165,19 @@ void SKYCASE() // SKYCASE
   switch(Pop()) // SKYCASE
   {
   case 0:
-    BLACK(); // BLACK
+    SetColor("BLACK");
     break;
   case 7:
-    YELLOW(); // YELLOW
+    SetColor("YELLOW");
     break;
   case 12:
-    YELLOW(); // YELLOW
+    SetColor("YELLOW");
     break;
   case 19:
-    YELLOW(); // YELLOW
+    SetColor("YELLOW");
     break;
   default:
-    LT_dash_BLUE(); // LT-BLUE
+    SetColor("LT-BLUE");
     break;
 
   }

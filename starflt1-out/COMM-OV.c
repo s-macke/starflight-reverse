@@ -978,13 +978,13 @@ void P_gt_AFIELD() // P>AFIELD
   switch(Pop()) // P>AFIELD
   {
   case 2:
-    UNK_0xd998(); // UNK_0xd998
+    Push(0x6406); // IFIELD(UNK_0xd998)
     break;
   case 8:
-    UNK_0xd99d(); // UNK_0xd99d
+    Push(0x6407); // IFIELD(UNK_0xd99d)
     break;
   default:
-    UNK_0xd993(); // UNK_0xd993
+    Push(0x6405); // IFIELD(UNK_0xd993)
     break;
 
   }
@@ -1080,19 +1080,19 @@ void _n_PHR() // #PHR
   switch(Pop()) // #PHR
   {
   case 1:
-    UNK_0xdc0b(); // UNK_0xdc0b
+    Push2Words("UNK_0xdc0b");
     break;
   case 2:
-    UNK_0xdc11(); // UNK_0xdc11
+    Push2Words("UNK_0xdc11");
     break;
   case 4:
-    UNK_0xdc17(); // UNK_0xdc17
+    Push2Words("UNK_0xdc17");
     break;
   case 8:
-    UNK_0xdc1d(); // UNK_0xdc1d
+    Push2Words("UNK_0xdc1d");
     break;
   default:
-    NULL(); // NULL
+    Push2Words("NULL");
     break;
 
   }

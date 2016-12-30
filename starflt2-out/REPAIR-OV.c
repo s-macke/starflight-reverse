@@ -165,25 +165,25 @@ void _gt_FIELD() // >FIELD
   switch(Pop()) // >FIELD
   {
   case 0:
-    UNK_0xeefa(); // UNK_0xeefa
+    Push(0x65f2); // IFIELD(UNK_0xeefa)
     break;
   case 1:
-    UNK_0xef04(); // UNK_0xef04
+    Push(0x65f4); // IFIELD(UNK_0xef04)
     break;
   case 2:
-    UNK_0xef09(); // UNK_0xef09
+    Push(0x65f6); // IFIELD(UNK_0xef09)
     break;
   case 3:
-    UNK_0xef0e(); // UNK_0xef0e
+    Push(0x65f8); // IFIELD(UNK_0xef0e)
     break;
   case 4:
-    UNK_0xef13(); // UNK_0xef13
+    Push(0x65fa); // IFIELD(UNK_0xef13)
     break;
   case 5:
-    UNK_0xef18(); // UNK_0xef18
+    Push(0x65fc); // IFIELD(UNK_0xef18)
     break;
   case 6:
-    UNK_0xef1d(); // UNK_0xef1d
+    Push(0x65fe); // IFIELD(UNK_0xef1d)
     break;
   default:
     UNRAVEL(); // UNRAVEL

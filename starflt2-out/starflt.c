@@ -19833,55 +19833,55 @@ void SET_ask_REU() // SET?REU
   switch(Pop()) // SET?REU
   {
   case 11:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 41:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 14:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 26:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 68:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 28:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 56:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 36:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 24:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 25:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 67:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 21:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 9:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 31:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 33:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   case 29:
-    _st_ON_gt_(); // <ON>
+    Func9("<ON>");
     break;
   default:
-    _st_OFF_gt_(); // <OFF>
+    Func9("<OFF>");
     break;
 
   }
@@ -25312,37 +25312,37 @@ void _ro_XYSCAN() // (XYSCAN
     UNK_0xa532(); // UNK_0xa532
     break;
   case 315:
-    _i_F1(); // 'F1
+    Func12("'F1");
     break;
   case 316:
-    _i_F2(); // 'F2
+    Func12("'F2");
     break;
   case 317:
-    _i_F3(); // 'F3
+    Func12("'F3");
     break;
   case 318:
-    _i_F4(); // 'F4
+    Func12("'F4");
     break;
   case 319:
-    _i_F5(); // 'F5
+    Func12("'F5");
     break;
   case 320:
-    _i_F6(); // 'F6
+    Func12("'F6");
     break;
   case 321:
-    _i_F7(); // 'F7
+    Func12("'F7");
     break;
   case 322:
-    _i_F8(); // 'F8
+    Func12("'F8");
     break;
   case 323:
-    _i_F9(); // 'F9
+    Func12("'F9");
     break;
   case 324:
-    _i_F10(); // 'F10
+    Func12("'F10");
     break;
   case 338:
-    NULL(); // NULL
+    Push2Words("NULL");
     break;
   default:
     UNK_0xa548(); // UNK_0xa548

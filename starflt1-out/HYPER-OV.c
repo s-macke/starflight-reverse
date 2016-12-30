@@ -929,22 +929,22 @@ void PS_gt_C() // PS>C
   switch(Pop()) // PS>C
   {
   case 0:
-    GREY2(); // GREY2
+    SetColor("GREY2");
     break;
   case 1:
-    VIOLET(); // VIOLET
+    SetColor("VIOLET");
     break;
   case 2:
-    BLUE(); // BLUE
+    SetColor("BLUE");
     break;
   case 3:
-    WHITE(); // WHITE
+    SetColor("WHITE");
     break;
   case 4:
-    ORANGE(); // ORANGE
+    SetColor("ORANGE");
     break;
   default:
-    BROWN(); // BROWN
+    SetColor("BROWN");
     break;
 
   }
@@ -1440,25 +1440,25 @@ void SC_gt_C() // SC>C
   switch(Pop()) // SC>C
   {
   case 77:
-    RED(); // RED
+    SetColor("RED");
     break;
   case 75:
-    ORANGE(); // ORANGE
+    SetColor("ORANGE");
     break;
   case 71:
-    YELLOW(); // YELLOW
+    SetColor("YELLOW");
     break;
   case 70:
-    WHITE(); // WHITE
+    SetColor("WHITE");
     break;
   case 65:
-    GREEN(); // GREEN
+    SetColor("GREEN");
     break;
   case 66:
-    LT_dash_BLUE(); // LT-BLUE
+    SetColor("LT-BLUE");
     break;
   default:
-    BLUE(); // BLUE
+    SetColor("BLUE");
     break;
 
   }

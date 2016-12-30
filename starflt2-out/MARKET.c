@@ -878,16 +878,16 @@ void C_gt_VAL() // C>VAL
   switch(Pop()) // C>VAL
   {
   case 28:
-    ART_dash_VAL(); // ART-VAL
+    LoadData("ART-VAL"); // from 'ARTIFACT    '
     break;
   case 26:
-    ELEM_dash_VA(); // ELEM-VA
+    LoadData("ELEM-VA"); // from 'ELEMENT     '
     break;
   case 68:
-    UNK_0xe916(); // UNK_0xe916
+    LoadData("UNK_0xe916"); // from 'CREATURE    '
     break;
   case 9:
-    UNK_0xe926(); // UNK_0xe926
+    LoadData("UNK_0xe926"); // from 'STIS        '
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -997,16 +997,16 @@ void T_gt_NAME() // T>NAME
   switch(Pop()) // T>NAME
   {
   case 28:
-    ART_dash_NAM(); // ART-NAM
+    LoadData("ART-NAM"); // from 'ARTIFACT    '
     break;
   case 68:
-    UNK_0xe90e(); // UNK_0xe90e
+    LoadData("UNK_0xe90e"); // from 'CREATURE    '
     break;
   case 9:
-    UNK_0xe91e(); // UNK_0xe91e
+    LoadData("UNK_0xe91e"); // from 'STIS        '
     break;
   case 26:
-    ELEM_dash_NA(); // ELEM-NA
+    LoadData("ELEM-NA"); // from 'ELEMENT     '
     break;
   default:
     NOP(); // NOP

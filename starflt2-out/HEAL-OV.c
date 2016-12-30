@@ -599,22 +599,22 @@ void _gt_SKILL() // >SKILL
   switch(Pop()) // >SKILL
   {
   case 1:
-    UNK_0xf0d2(); // UNK_0xf0d2
+    Push(0x65fb); // IFIELD(UNK_0xf0d2)
     break;
   case 2:
-    UNK_0xf0d7(); // UNK_0xf0d7
+    Push(0x65fc); // IFIELD(UNK_0xf0d7)
     break;
   case 3:
-    UNK_0xf0dc(); // UNK_0xf0dc
+    Push(0x65fd); // IFIELD(UNK_0xf0dc)
     break;
   case 4:
-    UNK_0xf0e1(); // UNK_0xf0e1
+    Push(0x65fe); // IFIELD(UNK_0xf0e1)
     break;
   case 5:
-    UNK_0xf0e6(); // UNK_0xf0e6
+    Push(0x65ff); // IFIELD(UNK_0xf0e6)
     break;
   default:
-    ABORT(); // ABORT
+    Exec(ABORT); // call of word 0x1c45 '(ABORT)'
     break;
 
   }

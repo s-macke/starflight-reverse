@@ -559,19 +559,19 @@ void _ro_PARTADDR_rc_() // (PARTADDR)
   switch(Pop()) // (PARTADDR)
   {
   case 1:
-    UNK_0xe9df(); // UNK_0xe9df
+    Push(0x6402); // IFIELD(UNK_0xe9df)
     break;
   case 2:
-    UNK_0xe9ee(); // UNK_0xe9ee
+    Push(0x6408); // IFIELD(UNK_0xe9ee)
     break;
   case 3:
-    UNK_0xe9da(); // UNK_0xe9da
+    Push(0x6400); // IFIELD(UNK_0xe9da)
     break;
   case 4:
-    UNK_0xe9f3(); // UNK_0xe9f3
+    Push(0x640a); // IFIELD(UNK_0xe9f3)
     break;
   default:
-    UNK_0xe9f8(); // UNK_0xe9f8
+    Push(0x640c); // IFIELD(UNK_0xe9f8)
     break;
 
   }
@@ -597,10 +597,10 @@ void _ro_PTS_rc_() // (PTS)
   switch(Pop()) // (PTS)
   {
   case 2:
-    UNK_0xea07(); // UNK_0xea07
+    Push(0x641f); // IFIELD(UNK_0xea07)
     break;
   case 3:
-    UNK_0xea0c(); // UNK_0xea0c
+    Push(0x6421); // IFIELD(UNK_0xea0c)
     break;
   default:
     Push(0); // 0
