@@ -42,7 +42,7 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s size: %i\n", Forth2CString(s), s, e->size);
+        snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s\n", Forth2CString(s), s);
         return 2;
     }
     if (e->codep == CODECONSTANT)
