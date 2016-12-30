@@ -386,7 +386,21 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             par = Read16(ofs + 2);
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
-            snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x);\n", par);
+            int i=0;
+            pline[ofs].str[0] = 0;
+            for(i=0; i<ndict; i++)
+            {
+                if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
+                if (dict[i].parp == par)
+                {
+                    snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x); // probable '%s'\n", par, GetWordName(&dict[i]));
+                    break;
+                }
+            }
+            if (pline[ofs].str[0] == 0)
+            {
+                snprintf(pline[ofs].str, STRINGLEN, "  Push(0x%04x);\n", par);
+            }
             ofs += 4;
         } else
         if (e->codep == CODE2LIT) // constant number
