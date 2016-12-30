@@ -384,12 +384,27 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     {
         unsigned short rulep = Read16(RULEARRp + i*2);
         unsigned char n = Read8(rulep + 0);
-        unsigned int p = Read16(rulep + 1);
-        //printf("n=%i p=0x%04x\n", n, p);
+        unsigned short p = Read16(rulep + 1);
         GetDictEntry(p, currentovidx);
         for(j=0; j<n; j++)
         {
-            unsigned char x = Read8(rulep + 3 + j) & 0x7F;
+            unsigned char x = Read8(rulep + 3 + j)&0x7F;
+            p = CFLGARRp + x;
+
+            if (Read8(p) != 0xFF)
+            {
+                p = CONDARRp + x*2;
+                //DICTENTRY *e = GetDictEntry(Read16(p), currentovidx);
+                //if (e == NULL) continue;
+                /*
+                int dofs = PutEasyMacro(p, e, ret, e->ovidx);
+                if (dofs != 2) {
+                    fprintf(stderr, "Error: no additional data is allowed for this word");
+                    exit(1);
+                }
+                */
+
+            }
         }
     }
 
@@ -401,6 +416,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         //int dofs = PutEasyMacro(CONDARRp + i*2, e, ret, e->ovidx);
         //snprintf(pline[d->parp+i+1].str, STRINGLEN, "%s", ret);
     }
+
 }
 
 
