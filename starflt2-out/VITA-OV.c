@@ -89,7 +89,7 @@ const unsigned short int cc_UNK_0xf18a = 0x0043; // UNK_0xf18a
 
 void UNK_0xf3aa() // UNK_0xf3aa
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -164,7 +164,7 @@ void UNK_0xf418() // UNK_0xf418
 void UNK_0xf440() // UNK_0xf440
 {
   Push(cc_UNK_0xf18a); // UNK_0xf18a
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
   Push(cc__6); // 6
   Push(0); // 0
@@ -174,7 +174,7 @@ void UNK_0xf440() // UNK_0xf440
   do // (DO)
   {
   Push(i); // I
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
   UNK_0xf418(); // UNK_0xf418
   i++;
@@ -190,7 +190,7 @@ void UNK_0xf440() // UNK_0xf440
 
 void UNK_0xf45e() // UNK_0xf45e
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -213,7 +213,7 @@ void UNK_0xf474() // UNK_0xf474
   Push(0x002e);
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   Push(0x000b);
@@ -228,11 +228,11 @@ void UNK_0xf474() // UNK_0xf474
 
   label1:
   CI(); // CI
-  Push(pp_SUPER_dash_B); // SUPER-B size: 4
+  Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_ex__2(); // 1.5!_2
   IOPEN(); // IOPEN
   CI(); // CI
-  Push(pp__ro_SURFAC); // (SURFAC size: 4
+  Push(pp__ro_SURFAC); // (SURFAC
   _1_dot_5_ex__2(); // 1.5!_2
   Push(0); // 0
   LoadData("UNK_0xf1b2"); // from 'BOX         '
@@ -250,9 +250,9 @@ void UNK_0xf474() // UNK_0xf474
 
 void DIO() // DIO
 {
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   _099(); // 099
-  Push(pp_FSTUN); // FSTUN size: 2
+  Push(pp_FSTUN); // FSTUN
   _099(); // 099
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -268,7 +268,7 @@ void DIO() // DIO
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   ON_2(); // ON_2
   goto label1;
 
@@ -278,7 +278,7 @@ void DIO() // DIO
   _dot_TTY(); // .TTY
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
-  Push(pp__n_SHOTS); // #SHOTS size: 2
+  Push(pp__n_SHOTS); // #SHOTS
   _099(); // 099
 }
 

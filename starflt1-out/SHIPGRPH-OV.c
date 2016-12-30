@@ -304,7 +304,7 @@ void UNK_0xef1a() // UNK_0xef1a
   PRINT("M", 1); // (.")
   Push(cc__3); // 3
   Push(Read16(regsp)); // DUP
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   _dot_(); // .
   _ex_CRS(); // !CRS
@@ -319,52 +319,52 @@ void UNK_0xef90() // UNK_0xef90
 {
   SetColor("DK-BLUE");
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x0011);
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(0x0020);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x0055);
   Push(0x006a);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xed6f); // UNK_0xed6f size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xed6f); // UNK_0xed6f
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
   Push(0x0055);
   Push(0x004f);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xedb5); // UNK_0xedb5 size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xedb5); // UNK_0xedb5
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
   Push(0x000a);
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(0x0028);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x0065);
   Push(0x0059);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xedfb); // UNK_0xedfb size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xedfb); // UNK_0xedfb
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
   Push(0x0016);
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(0x000c);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x008d);
   Push(0x005f);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xee2f); // UNK_0xee2f size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xee2f); // UNK_0xee2f
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
 }
@@ -403,7 +403,7 @@ void UNK_0xf026() // UNK_0xf026
   SetColor("RED");
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x0053);
   Push(0x003c);
@@ -439,7 +439,7 @@ void UNK_0xf026() // UNK_0xf026
 void UNK_0xf098() // UNK_0xf098
 {
   Push(Pop() + Pop()); // +
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _ex__3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(0x640e); // IFIELD(UNK_0xed4f)
@@ -464,18 +464,18 @@ void _ro__dot_PODS_rc_() // (.PODS)
 {
   _at_CRS(); // @CRS
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
   Push(2); // 2
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(2); // 2
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
-  Push(pp_UNK_0xee53); // UNK_0xee53 size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xee53); // UNK_0xee53
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(1); // 1
   Push(cc__8); // 8
@@ -490,7 +490,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(Pop() * Pop()); // *
   Push(0x0076);
   Push(Pop() + Pop()); // +
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   Push(0x0050);
   Push(i); // I
@@ -537,26 +537,26 @@ void UNK_0xf132() // UNK_0xf132
   SetColor("LT-BLUE");
   Push(Pop() * Pop()); // *
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(cc__3); // 3
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(cc__9); // 9
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x0060);
   Push(0x006b);
   POS_dot_(); // POS.
-  Push(pp_UNK_0xf11c); // UNK_0xf11c size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xf11c); // UNK_0xf11c
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
   Push(0x0040);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _ex__3(); // !_3
-  Push(pp_UNK_0xf122); // UNK_0xf122 size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xf122); // UNK_0xf122
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
 }
@@ -579,16 +579,16 @@ void UNK_0xf174() // UNK_0xf174
 
   label2:
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
-  Push(pp_UNK_0xf128); // UNK_0xf128 size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xf128); // UNK_0xf128
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   Push(0x006b);
   Push(0x0058);
@@ -606,7 +606,7 @@ void _ro__dot_SHIP_rc_() // (.SHIP)
 {
   _at_CRS(); // @CRS
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
   UNK_0xef90(); // UNK_0xef90
   UNK_0xf026(); // UNK_0xf026
@@ -720,7 +720,7 @@ void UNK_0xf21d() // UNK_0xf21d
   POS_dot_(); // POS.
   PRINT("SHIP", 4); // (.")
   Push(cc__6); // 6
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("CONFIGURATION", 13); // (.")
 }
@@ -738,7 +738,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("CARGO PODS..", 12); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("CARGO PODS:", 11); // (.")
   Push(cc__7); // 7
@@ -746,7 +746,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("ENGINES", 7); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("ENGINES :", 9); // (.")
   Push(cc__7); // 7
@@ -754,7 +754,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("SHIELDING", 9); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("SHIELDS :", 9); // (.")
   Push(cc__7); // 7
@@ -762,7 +762,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("ARMOR", 5); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("ARMOR   :", 9); // (.")
   Push(cc__7); // 7
@@ -770,7 +770,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("MISSILE LAUNCHER", 16); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("MISSILES:", 9); // (.")
   Push(cc__7); // 7
@@ -778,7 +778,7 @@ void UNK_0xf310() // UNK_0xf310
   POS_dot_(); // POS.
   PRINT("LASER CANNON", 12); // (.")
   Push(0x0056);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("LASERS  :", 9); // (.")
 }

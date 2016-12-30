@@ -77,10 +77,10 @@ void UNK_0xf22a() // UNK_0xf22a
 void UNK_0xf234() // UNK_0xf234
 {
   Push(0x003a);
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
   Push(cc__3); // 3
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
 }
 
@@ -147,7 +147,7 @@ void UNK_0xf272() // UNK_0xf272
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(pp__ask_NEB); // ?NEB size: 2
+  Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
 
@@ -175,7 +175,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
   UNK_0x3f3b("SHIELDS ARE DOWN");
   _dot_TTY(); // .TTY
-  Push(pp_BTN_dash_REC); // BTN-REC size: 2
+  Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _eq_(); // =
@@ -185,7 +185,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   _dot_ABTN(); // .ABTN
 
   label2:
-  Push(pp__ask_SUP); // ?SUP size: 2
+  Push(pp__ask_SUP); // ?SUP
   OFF(); // OFF
 }
 
@@ -217,7 +217,7 @@ void UNK_0xf359() // UNK_0xf359
   Push(cc__3); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
-  Push(pp__ask_SUP); // ?SUP size: 2
+  Push(pp__ask_SUP); // ?SUP
   ON_3(); // ON_3
 }
 
@@ -370,9 +370,9 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   goto label2;
 
   label1:
-  Push(pp__ask_NEB); // ?NEB size: 2
+  Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
-  Push(pp__10_star_END); // 10*END size: 4
+  Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR

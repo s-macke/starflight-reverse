@@ -118,7 +118,7 @@ void UNK_0xf456() // UNK_0xf456
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_UNK_0xf3a6); // UNK_0xf3a6 size: 0
+  Push(pp_UNK_0xf3a6); // UNK_0xf3a6
   Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3f0(); // UNK_0xf3f0
@@ -136,7 +136,7 @@ void UNK_0xf456() // UNK_0xf456
 
 void UNK_0xf470() // UNK_0xf470
 {
-  Push(pp_UNK_0xf3a6); // UNK_0xf3a6 size: 0
+  Push(pp_UNK_0xf3a6); // UNK_0xf3a6
   Push(Pop() + Pop()); // +
   _gt_R(); // >R
   Push(h); // I
@@ -187,7 +187,7 @@ void UNK_0xf470() // UNK_0xf470
 
 void UNK_0xf4d0() // UNK_0xf4d0
 {
-  Push(pp_UNK_0xf3da); // UNK_0xf3da size: 0
+  Push(pp_UNK_0xf3da); // UNK_0xf3da
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   DARK(); // DARK
@@ -223,7 +223,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
 void FLUX() // FLUX
 {
   _gt_MAINVIEW(); // >MAINVIEW
-  Push(pp_UNK_0xf3da); // UNK_0xf3da size: 0
+  Push(pp_UNK_0xf3da); // UNK_0xf3da
   ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
   SetColor("GREY1");

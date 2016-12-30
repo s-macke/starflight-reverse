@@ -124,7 +124,7 @@ void UNK_0xeadc() // UNK_0xeadc
 
 void UNK_0xeb20() // UNK_0xeb20
 {
-  Push(pp_UNK_0xead8); // UNK_0xead8 size: 0
+  Push(pp_UNK_0xead8); // UNK_0xead8
   Push(Read16(Pop())); // @
   Push(1); // 1
   _gt_(); // >
@@ -215,7 +215,7 @@ void UNK_0xeb49() // UNK_0xeb49
 
 void UNK_0xebad() // UNK_0xebad
 {
-  Push(pp__ask_EGA); // ?EGA size: 2
+  Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   SetColor("BLUE");
@@ -249,7 +249,7 @@ void UNK_0xebc1() // UNK_0xebc1
   UNK_0xebad(); // UNK_0xebad
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(2); // 2
   Push(0); // 0
@@ -353,10 +353,10 @@ void UNK_0xecbf() // UNK_0xecbf
 {
   _gt_R(); // >R
   Push(h); // I
-  Push(pp_UNK_0xecb3); // UNK_0xecb3 size: 0
+  Push(pp_UNK_0xecb3); // UNK_0xecb3
   _ex__2(); // !_2
   _gt_1FONT(); // >1FONT
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(0x000a);
   Push(0x0029);
@@ -369,7 +369,7 @@ void UNK_0xecbf() // UNK_0xecbf
   UNK_0xecb7(); // UNK_0xecb7
   PRINT("SCIENCE       :", 15); // (.")
   Push(0x0061);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   PRINT("RACE:", 5); // (.")
   Push(0x000f);
@@ -383,7 +383,7 @@ void UNK_0xecbf() // UNK_0xecbf
   UNK_0xecb7(); // UNK_0xecb7
   PRINT("ENGINEERING   :", 15); // (.")
   Push(0x0061);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   PRINT("DURABILITY:", 11); // (.")
   Push(0x000f);
@@ -397,7 +397,7 @@ void UNK_0xecbf() // UNK_0xecbf
   UNK_0xecb7(); // UNK_0xecb7
   PRINT("MEDICINE      :", 15); // (.")
   Push(0x0061);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   PRINT("LRN RATE  :", 11); // (.")
   Push(0x0057);
@@ -513,7 +513,7 @@ void UNK_0xee31() // UNK_0xee31
   POS_dot_(); // POS.
   PRINT("CREW", 4); // (.")
   Push(0x000a);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   PRINT("ASSIGNMENT", 10); // (.")
   Push(2); // 2
@@ -581,7 +581,7 @@ void UNK_0xee31() // UNK_0xee31
 
 void UNK_0xef80() // UNK_0xef80
 {
-  Push(pp_UNK_0xecb3); // UNK_0xecb3 size: 0
+  Push(pp_UNK_0xecb3); // UNK_0xecb3
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000a);
@@ -606,7 +606,7 @@ void UNK_0xef80() // UNK_0xef80
 
   label2:
   Push(0x007a);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   Push(0x6600); // IFIELD(UNK_0xeb99)
   Push(Read8(Pop())&0xFF); // C@
@@ -621,7 +621,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(cc__3); // 3
   _dot_R(); // .R
   Push(0x0077);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   LoadData("UNK_0xeb63"); // from 'CREWMEMBER  '
   _do__dot_(); // $.
@@ -642,7 +642,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(cc__3); // 3
   _dot_R(); // .R
   Push(0x008d);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   LoadData("UNK_0xeb73"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
@@ -665,7 +665,7 @@ void UNK_0xef80() // UNK_0xef80
   Push(cc__3); // 3
   _dot_R(); // .R
   Push(0x008d);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   LoadData("UNK_0xeb6b"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
@@ -684,7 +684,7 @@ void UNK_0xf052() // UNK_0xf052
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
-  Push(pp_UNK_0xecb3); // UNK_0xecb3 size: 0
+  Push(pp_UNK_0xecb3); // UNK_0xecb3
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(0x000e);
@@ -779,7 +779,7 @@ void UNK_0xf052() // UNK_0xf052
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   Push(Pop() & Pop()); // AND
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   if (Pop() == 0) goto label2;
   SetColor("RED");
@@ -790,14 +790,14 @@ void UNK_0xf052() // UNK_0xf052
 
   label3:
   _ex_COLOR(); // !COLOR
-  Push(pp_UNK_0xecb3); // UNK_0xecb3 size: 0
+  Push(pp_UNK_0xecb3); // UNK_0xecb3
   Push(Read16(Pop())); // @
   Push(0x0033);
   Push(Pop() + Pop()); // +
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _ex__2(); // !_2
   Push(0x0041);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   _gt_3FONT(); // >3FONT
   PRINT("DEAD", 4); // (.")
@@ -933,9 +933,9 @@ void UNK_0xf225() // UNK_0xf225
 void UNK_0xf271() // UNK_0xf271
 {
   CURSORS(); // CURSORS
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _ex__2(); // !_2
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
   BLT(); // BLT
   Push(Read16(regsp)); // DUP
@@ -944,7 +944,7 @@ void UNK_0xf271() // UNK_0xf271
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
   Push(0x0012);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   SetColor("BLACK");
   UNK_0xf225(); // UNK_0xf225
@@ -965,7 +965,7 @@ void UNK_0xf271() // UNK_0xf271
   Push(0x00a9);
   SWAP(); // SWAP
   _dash_(); // -
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _ex__2(); // !_2
   BLT(); // BLT
 }
@@ -1104,7 +1104,7 @@ void UNK_0xf3ce() // UNK_0xf3ce
 
 void UNK_0xf410() // UNK_0xf410
 {
-  Push(pp_UNK_0xead8); // UNK_0xead8 size: 0
+  Push(pp_UNK_0xead8); // UNK_0xead8
   _099(); // 099
   IFIRST(); // IFIRST
   Push(0); // 0
@@ -1124,7 +1124,7 @@ void UNK_0xf410() // UNK_0xf410
   Push(2); // 2
   _eq_(); // =
   Push(Read16(regsp)); // DUP
-  Push(pp_UNK_0xead8); // UNK_0xead8 size: 0
+  Push(pp_UNK_0xead8); // UNK_0xead8
   _plus__ex__2(); // +!_2
   Push(Pop() | Pop()); // OR
   INEXT(); // INEXT
@@ -1196,18 +1196,18 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   UNK_0xf410(); // UNK_0xf410
   if (Pop() == 0) goto label1;
   UNK_0xf1cb(); // UNK_0xf1cb
-  Push(pp_NCRS); // NCRS size: 2
+  Push(pp_NCRS); // NCRS
   _099(); // 099
-  Push(pp_OCRS); // OCRS size: 2
+  Push(pp_OCRS); // OCRS
   _099(); // 099
   CURSORS(); // CURSORS
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _ex__2(); // !_2
   Push(cc__9); // 9
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
   Push(0x0090);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   Push(cc__8); // 8
   Push(0x00a9);
@@ -1217,7 +1217,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
   SetColor("DK-GREE");
   _ask_MRC(); // ?MRC
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
   BLT(); // BLT
   SetColor("WHITE");

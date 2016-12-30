@@ -130,27 +130,27 @@ void _dot_PARMS() // .PARMS
 {
   Exec(CR); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
-  Push(pp_X2); // X2 size: 2
+  Push(pp_X2); // X2
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("x1= ", 4); // (.")
-  Push(pp_X1); // X1 size: 2
+  Push(pp_X1); // X1
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("st ", 3); // (.")
-  Push(pp_XSTART); // XSTART size: 2
+  Push(pp_XSTART); // XSTART
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("en ", 3); // (.")
-  Push(pp_XEND); // XEND size: 2
+  Push(pp_XEND); // XEND
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
   PRINT("y ", 2); // (.")
-  Push(pp_YLINE); // YLINE size: 2
+  Push(pp_YLINE); // YLINE
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dot_R(); // .R
@@ -269,21 +269,21 @@ void _dot_PARMS() // .PARMS
 void _dot_HYBRID() // .HYBRID
 {
   Push(Read16(regsp)); // DUP
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
   _gt_R(); // >R
   Push(cc__5); // 5
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   Push(h); // I
   Push(2); // 2
   LC_at_(); // LC@
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(h); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   R_gt_(); // R>
   Push(cc__4); // 4
@@ -294,21 +294,21 @@ void _dot_HYBRID() // .HYBRID
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(cc__4); // 4
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
   Push(i); // I
   Push(i); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
-  Push(pp_COLOR); // COLOR size: 2
+  Push(pp_COLOR); // COLOR
   _ex__3(); // !_3
   R_gt_(); // R>
   R_gt_(); // R>
@@ -316,11 +316,11 @@ void _dot_HYBRID() // .HYBRID
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
   if (Pop() == 0) goto label1;
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
-  Push(pp__ask_EGA); // ?EGA size: 2
+  Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   _dot_EGARUNBIT(); // .EGARUNBIT
@@ -336,16 +336,16 @@ void _dot_HYBRID() // .HYBRID
   _co_BLT_cc_(); // {BLT}
 
   label4:
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _dash_(); // -
   L_at_(); // L@
   Push(cc__4); // 4
   _dash_(); // -
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
   i++;
   } while(i<imax); // (LOOP) 0xff9c

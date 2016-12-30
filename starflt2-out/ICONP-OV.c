@@ -261,7 +261,7 @@ const unsigned short int cc_UNK_0xf166 = 0x0062; // UNK_0xf166
 
 void UNK_0xf16a() // UNK_0xf16a
 {
-  Push(pp__ro_TRADER); // (TRADER size: 4
+  Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
 }
 
@@ -354,7 +354,7 @@ void STAR_dash_ID_dash_CASE() // STAR-ID-CASE
 
 void UNK_0xf1e9() // UNK_0xf1e9
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   STAR_dash_ID_dash_CASE(); // STAR-ID-CASE case
 }
@@ -384,7 +384,7 @@ void PLANET_dash_ID_dash_CA() // PLANET-ID-CA
 
 void UNK_0xf20c() // UNK_0xf20c
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   PLANET_dash_ID_dash_CA(); // PLANET-ID-CA case
 }
@@ -442,7 +442,7 @@ void UNK_0xf239() // UNK_0xf239
 
 void UNK_0xf245() // UNK_0xf245
 {
-  Push(pp_PAST); // PAST size: 2
+  Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(cc_UNK_0xf14a); // UNK_0xf14a
@@ -501,7 +501,7 @@ void SPACE_dash_ID() // SPACE-ID
 
 void UNK_0xf28e() // UNK_0xf28e
 {
-  Push(pp_PAST); // PAST size: 2
+  Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   Push(0x0031);
@@ -671,7 +671,7 @@ void PLANET_dash_ID() // PLANET-ID
 void UNK_0xf365() // UNK_0xf365
 {
   _at_INST_dash_C(); // @INST-C
-  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   SPACE_dash_ID(); // SPACE-ID case
@@ -886,7 +886,7 @@ void UNK_0xf460() // UNK_0xf460
   Push(0x65ed); // IFIELD(UNK_0xf104)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
-  Push(pp_FSTUN); // FSTUN size: 2
+  Push(pp_FSTUN); // FSTUN
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   Push(cc__4); // 4

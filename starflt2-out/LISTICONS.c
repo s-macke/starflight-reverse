@@ -38,12 +38,12 @@ void UNK_0xf2c6() // UNK_0xf2c6
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_CMAP); // CMAP size: 64
+  Push(pp_CMAP); // CMAP
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_dash_PT); // TILE-PT size: 2
+  Push(pp_TILE_dash_PT); // TILE-PT
   _ex__2(); // !_2
   Push(0x0020);
   Push(i); // I
@@ -93,17 +93,17 @@ void UNK_0xf2c6() // UNK_0xf2c6
 void UNK_0xf36f() // UNK_0xf36f
 {
   Push(0x00be);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0037);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__plus__ex__gt_(); // <+!>
   PRINT("KEY", 3); // (.")
   Push(0x000a);
@@ -157,7 +157,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   label1:
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
   i++;
@@ -174,10 +174,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0x000a);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x001b);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -215,18 +215,18 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x000a);
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  Push(pp_ICON_h_); // ICON^ size: 2
+  Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
   Push(i); // I
   Push(0x0012);
@@ -238,12 +238,12 @@ void UNK_0xf45e() // UNK_0xf45e
   PAD_v_16(); // PAD|16
   UNK_0xf3e6(); // UNK_0xf3e6
   Push(0x000c);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
@@ -259,7 +259,7 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x001b);
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
   } while(i<imax); // (LOOP) 0xff8c
@@ -275,14 +275,14 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void ICONS() // ICONS
 {
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(pp_ESC_dash_EN); // ESC-EN size: 2
+  Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
-  Push(pp_NOF); // NOF size: 2
+  Push(pp_NOF); // NOF
   ON_2(); // ON_2
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   _ex__2(); // !_2
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
@@ -311,9 +311,9 @@ void ICONS() // ICONS
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf2c6(); // UNK_0xf2c6
   UNK_0xf418(); // UNK_0xf418
-  Push(pp_ESC_dash_EN); // ESC-EN size: 2
+  Push(pp_ESC_dash_EN); // ESC-EN
   ON_2(); // ON_2
-  Push(pp_NOF); // NOF size: 2
+  Push(pp_NOF); // NOF
   _099(); // 099
 }
 

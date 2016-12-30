@@ -75,9 +75,9 @@ void UNK_0xea8e() // UNK_0xea8e
 {
   _gt_C_plus_S(); // >C+S
   Push(0x63fa); // IFIELD(PHRASE$)
-  Push(pp_LSCAN); // LSCAN size: 400
+  Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
-  Push(pp_LSCAN); // LSCAN size: 400
+  Push(pp_LSCAN); // LSCAN
   COUNT(); // COUNT
   ICLOSE(); // ICLOSE
 }
@@ -90,13 +90,13 @@ void UNK_0xea8e() // UNK_0xea8e
 
 void UNK_0xeaee() // UNK_0xeaee
 {
-  Push(pp_THIS_dash_BU); // THIS-BU size: 2
+  Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   Push(2); // 2
   _st_(); // <
   if (Pop() == 0) goto label1;
   SetColor("BLUE");
-  Push(pp_THIS_dash_BU); // THIS-BU size: 2
+  Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
   CTINIT(); // CTINIT
@@ -124,7 +124,7 @@ void UNK_0xeaee() // UNK_0xeaee
 
   label4:
   SetColor("BLACK");
-  Push(pp_THIS_dash_BU); // THIS-BU size: 2
+  Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   _dot_ON(); // .ON
 }
@@ -196,29 +196,29 @@ void XY_slash_N() // XY/N
   _2_at_(); // 2@
   Push(0xea60); Push(0x0000);
   D_plus_(); // D+
-  Push(pp_TIRED_dash_T); // TIRED-T size: 4
+  Push(pp_TIRED_dash_T); // TIRED-T
   D_ex_(); // D!
 
   label1:
   UNK_0xeb7b(); // UNK_0xeb7b
-  Push(pp_FTRIG); // FTRIG size: 2
+  Push(pp_FTRIG); // FTRIG
   Push(Read16(Pop())); // @
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp_TIRED_dash_T); // TIRED-T size: 4
+  Push(pp_TIRED_dash_T); // TIRED-T
   _2_at_(); // 2@
   D_gt_(); // D>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(pp_THIS_dash_BU); // THIS-BU size: 2
+  Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(2); // 2
   _eq_(); // =
-  Push(pp_FTRIG); // FTRIG size: 2
+  Push(pp_FTRIG); // FTRIG
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
-  Push(pp__ro_STOP_dash_C); // (STOP-C size: 2
+  Push(pp__ro_STOP_dash_C); // (STOP-C
   _ex__3(); // !_3
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -283,7 +283,7 @@ void UNK_0xf486() // UNK_0xf486
 {
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(pp_UNK_0xecca); // UNK_0xecca size: 0
+  Push(pp_UNK_0xecca); // UNK_0xecca
   OFF(); // OFF
   COUNT(); // COUNT
   Push(Pop()*2); // 2*
@@ -297,7 +297,7 @@ void UNK_0xf486() // UNK_0xf486
   {
   Push(i); // I
   _at_EXECUTE(); // @EXECUTE
-  Push(pp_UNK_0xecca); // UNK_0xecca size: 0
+  Push(pp_UNK_0xecca); // UNK_0xecca
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   LEAVE(); // LEAVE
@@ -321,22 +321,22 @@ void SA_dash_CASE() // SA-CASE
   switch(Pop()) // SA-CASE
   {
   case 1:
-    Push(pp_UNK_0xf454); // UNK_0xf454 size: 9
+    Push(pp_UNK_0xf454); // UNK_0xf454
     break;
   case 7:
-    Push(pp_UNK_0xf45f); // UNK_0xf45f size: 11
+    Push(pp_UNK_0xf45f); // UNK_0xf45f
     break;
   case 8:
-    Push(pp_UNK_0xf46c); // UNK_0xf46c size: 7
+    Push(pp_UNK_0xf46c); // UNK_0xf46c
     break;
   case 3:
-    Push(pp_UNK_0xf475); // UNK_0xf475 size: 3
+    Push(pp_UNK_0xf475); // UNK_0xf475
     break;
   case 10:
-    Push(pp_UNK_0xf47a); // UNK_0xf47a size: 3
+    Push(pp_UNK_0xf47a); // UNK_0xf47a
     break;
   case 21:
-    Push(pp_UNK_0xf47f); // UNK_0xf47f size: 5
+    Push(pp_UNK_0xf47f); // UNK_0xf47f
     break;
   default:
     Push(0); // 0
@@ -355,7 +355,7 @@ void UNK_0xf4de() // UNK_0xf4de
   label1:
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(pp_OK_dash_TALK); // OK-TALK size: 4
+  Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
   Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
@@ -372,7 +372,7 @@ void UNK_0xf4de() // UNK_0xf4de
 void _ro_XCOMM_rc_() // (XCOMM)
 {
   UNK_0xf4de(); // UNK_0xf4de
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR size: 4
+  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE

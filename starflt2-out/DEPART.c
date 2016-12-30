@@ -158,7 +158,7 @@ void UNK_0xf439() // UNK_0xf439
 
 void UNK_0xf447() // UNK_0xf447
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -203,11 +203,11 @@ void UNK_0xf447() // UNK_0xf447
 
 void UNK_0xf48d() // UNK_0xf48d
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_SUPER_dash_B); // SUPER-B size: 4
+  Push(pp_SUPER_dash_B); // SUPER-B
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -237,9 +237,9 @@ void UNK_0xf48d() // UNK_0xf48d
 
 void UNK_0xf4bc() // UNK_0xf4bc
 {
-  Push(pp__ro_AORIGI); // (AORIGI size: 4
+  Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
-  Push(pp_EDL); // EDL size: 2
+  Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
   Push(Read8(Pop())&0xFF); // C@
@@ -284,12 +284,12 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 void DEPART() // DEPART
 {
-  Push(pp__ask_CRITIC); // ?CRITIC size: 2
+  Push(pp__ask_CRITIC); // ?CRITIC
   _099(); // 099
   Push(0x3a48); // probable 'NOP'
-  Push(pp__i_THROW_dash_); // 'THROW- size: 2
+  Push(pp__i_THROW_dash_); // 'THROW-
   _ex__2(); // !_2
-  Push(pp__ask_LANDED); // ?LANDED size: 2
+  Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf447(); // UNK_0xf447
@@ -297,11 +297,11 @@ void DEPART() // DEPART
 
   label1:
   Push(cc__dash_1); // -1
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   _ex__2(); // !_2
-  Push(pp__ask_LANDED); // ?LANDED size: 2
+  Push(pp__ask_LANDED); // ?LANDED
   _099(); // 099
-  Push(pp__ro_AORIGI); // (AORIGI size: 4
+  Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
@@ -309,9 +309,9 @@ void DEPART() // DEPART
 
   label2:
   Push2Words("NULL");
-  Push(pp__ro_AORIGI); // (AORIGI size: 4
+  Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_ex__2(); // 1.5!_2
-  Push(pp__ro_TRADER); // (TRADER size: 4
+  Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   Push(0); // 0
   _ex_INST_dash_S(); // !INST-S

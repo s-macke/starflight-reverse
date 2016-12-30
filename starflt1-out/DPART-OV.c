@@ -163,10 +163,10 @@ void UNK_0xf026() // UNK_0xf026
   Push(Pop()+1); // 1+
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
-  Push(pp_LSCAN); // LSCAN size: 400
+  Push(pp_LSCAN); // LSCAN
   COUNT(); // COUNT
   SetColor("WHITE");
-  Push(pp_CTCOLOR); // CTCOLOR size: 2
+  Push(pp_CTCOLOR); // CTCOLOR
   _ex__3(); // !_3
   Push(0xc216); // probable 'P>CT'
   MODULE(); // MODULE
@@ -230,7 +230,7 @@ void UNK_0xf064() // UNK_0xf064
 void UNK_0xf08e() // UNK_0xf08e
 {
   CTINIT(); // CTINIT
-  Push(pp__ro_AWARD_rc_); // (AWARD) size: 4
+  Push(pp__ro_AWARD_rc_); // (AWARD)
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf064(); // UNK_0xf064
   ICLOSE(); // ICLOSE
@@ -243,7 +243,7 @@ void UNK_0xf08e() // UNK_0xf08e
 
 void UNK_0xf09c() // UNK_0xf09c
 {
-  Push(pp_TIME_dash_PASSING); // TIME-PASSING size: 2
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   OFF(); // OFF
   UNK_0xef73(); // UNK_0xef73
   UNK_0xf008(); // UNK_0xf008
@@ -259,11 +259,11 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(cc__3); // 3
   Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
-  Push(pp_TIME_dash_PASSING); // TIME-PASSING size: 2
+  Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_3(); // ON_3
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(pp__ask_WIN); // ?WIN size: 2
+  Push(pp__ask_WIN); // ?WIN
   _ex__3(); // !_3
 }
 
@@ -316,7 +316,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__3); // 3
   _eq_(); // =
-  Push(pp__ask_WIN); // ?WIN size: 2
+  Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
@@ -357,7 +357,7 @@ void UNK_0xf158() // UNK_0xf158
 
 void UNK_0xf166() // UNK_0xf166
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -402,11 +402,11 @@ void UNK_0xf166() // UNK_0xf166
 
 void UNK_0xf1ac() // UNK_0xf1ac
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp_SUPER_dash_BOX); // SUPER-BOX size: 4
+  Push(pp_SUPER_dash_BOX); // SUPER-BOX
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
@@ -529,7 +529,7 @@ void UNK_0xf25e() // UNK_0xf25e
 
 void UNK_0xf29e() // UNK_0xf29e
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
@@ -544,7 +544,7 @@ void UNK_0xf29e() // UNK_0xf29e
 
 void UNK_0xf2b0() // UNK_0xf2b0
 {
-  Push(pp__ro_BOMB_rc_); // (BOMB) size: 4
+  Push(pp__ro_BOMB_rc_); // (BOMB)
   _at__gt_C_plus_S(); // @>C+S
   _ask__dash_NULL(); // ?-NULL
   if (Pop() == 0) goto label1;
@@ -582,13 +582,13 @@ void UNK_0xf2b0() // UNK_0xf2b0
 
 void UNK_0xf2eb() // UNK_0xf2eb
 {
-  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
+  Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
-  Push(pp__ro_SYSTEM); // (SYSTEM size: 4
+  Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6400); // IFIELD(UNK_0xf2e6)
   Push(Read8(Pop())&0xFF); // C@
@@ -695,7 +695,7 @@ void UNK_0xf39d() // UNK_0xf39d
 
 void UNK_0xf426() // UNK_0xf426
 {
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   D_eq_(); // D=
 }
@@ -710,14 +710,14 @@ void UNK_0xf430() // UNK_0xf430
   Push2Words("*SPHEXI");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() == 0) goto label1;
-  Push(pp__ask_SPHEXI); // ?SPHEXI size: 2
+  Push(pp__ask_SPHEXI); // ?SPHEXI
   OFF(); // OFF
 
   label1:
   Push2Words("*ELAN");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() == 0) goto label2;
-  Push(pp__ask_ELAN); // ?ELAN size: 2
+  Push(pp__ask_ELAN); // ?ELAN
   OFF(); // OFF
   UNK_0xf331(); // UNK_0xf331
 
@@ -729,11 +729,11 @@ void UNK_0xf430() // UNK_0xf430
 
   label3:
   UNK_0xf2eb(); // UNK_0xf2eb
-  Push(pp__ro_SYSTEM); // (SYSTEM size: 4
+  Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
-  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
+  Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   CDROP(); // CDROP
@@ -752,15 +752,15 @@ void UNK_0xf430() // UNK_0xf430
 
 void DEPART() // DEPART
 {
-  Push(pp__ask_CRITIC); // ?CRITIC size: 2
+  Push(pp__ask_CRITIC); // ?CRITIC
   OFF(); // OFF
   Push(0x3a48); // probable 'NOP'
-  Push(pp__i_THROW_dash_); // 'THROW- size: 2
+  Push(pp__i_THROW_dash_); // 'THROW-
   _ex__3(); // !_3
-  Push(pp__ask_LANDED); // ?LANDED size: 2
+  Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(pp__ask_BOMB); // ?BOMB size: 2
+  Push(pp__ask_BOMB); // ?BOMB
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   UNK_0xf1d6(); // UNK_0xf1d6
@@ -771,7 +771,7 @@ void DEPART() // DEPART
   if (Pop() == 0) goto label4;
   UNK_0xf430(); // UNK_0xf430
   UNK_0xf09c(); // UNK_0xf09c
-  Push(pp_WMSG); // WMSG size: 2
+  Push(pp_WMSG); // WMSG
   ON_3(); // ON_3
   goto label5;
 
@@ -795,9 +795,9 @@ void DEPART() // DEPART
 
   label6:
   Push2Words("NULL");
-  Push(pp__ro_BOMB_rc_); // (BOMB) size: 4
+  Push(pp__ro_BOMB_rc_); // (BOMB)
   _1_dot_5_ex_(); // 1.5!
-  Push(pp__ask_BOMB); // ?BOMB size: 2
+  Push(pp__ask_BOMB); // ?BOMB
   OFF(); // OFF
   goto label1;
 
@@ -807,9 +807,9 @@ void DEPART() // DEPART
 
   label1:
   Push(cc__dash_1); // -1
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   _ex__3(); // !_3
-  Push(pp__ask_LANDED); // ?LANDED size: 2
+  Push(pp__ask_LANDED); // ?LANDED
   OFF(); // OFF
 }
 

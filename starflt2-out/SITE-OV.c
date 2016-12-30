@@ -92,7 +92,7 @@ void UNK_0xf17e() // UNK_0xf17e
   POS_dot_(); // POS.
   PRINT("LAT", 3); // (.")
   Push(0x007d);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
   PRINT("LONG", 4); // (.")
   Push(0x00c1);
@@ -118,15 +118,15 @@ void UNK_0xf1e1() // UNK_0xf1e1
 {
   _at_CRS(); // @CRS
   CURSORS(); // CURSORS
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _ex__2(); // !_2
   Push(cc__4); // 4
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   Push(cc__6); // 6
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(cc__8); // 8
   Push(0); // 0
@@ -135,7 +135,7 @@ void UNK_0xf1e1() // UNK_0xf1e1
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_CMAP); // CMAP size: 64
+  Push(pp_CMAP); // CMAP
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
@@ -173,14 +173,14 @@ void UNK_0xf1e1() // UNK_0xf1e1
 
 void UNK_0xf233() // UNK_0xf233
 {
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(0x0480);
   _dash_(); // -
   Push(0x000a);
   Push(0x0040);
   _star__slash_(); // */
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(0x007c);
   Push(0x0083);
@@ -231,14 +231,14 @@ void UNK_0xf233() // UNK_0xf233
 
 void UNK_0xf2a7() // UNK_0xf2a7
 {
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(0x01e0);
   _dash_(); // -
   Push(0x000a);
   Push(0x0035);
   _star__slash_(); // */
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(0x0066);
   Push(0x0083);
@@ -289,26 +289,26 @@ void UNK_0xf2a7() // UNK_0xf2a7
 
 void UNK_0xf31b() // UNK_0xf31b
 {
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
   _eq_(); // =
   if (Pop() == 0) goto label1;
   Push(0x01e0);
-  Push(pp_UNK_0xf22f); // UNK_0xf22f size: 0
+  Push(pp_UNK_0xf22f); // UNK_0xf22f
   _ex__2(); // !_2
   Push(0x0480);
-  Push(pp_UNK_0xf22b); // UNK_0xf22b size: 0
+  Push(pp_UNK_0xf22b); // UNK_0xf22b
   _ex__2(); // !_2
 
   label1:
-  Push(pp_UNK_0xf22b); // UNK_0xf22b size: 0
+  Push(pp_UNK_0xf22b); // UNK_0xf22b
   Push(Read16(Pop())); // @
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   _ex__2(); // !_2
-  Push(pp_UNK_0xf22f); // UNK_0xf22f size: 0
+  Push(pp_UNK_0xf22f); // UNK_0xf22f
   Push(Read16(Pop())); // @
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   _ex__2(); // !_2
   SAVE_dash_OV(); // SAVE-OV
 }
@@ -354,7 +354,7 @@ void UNK_0xf34d() // UNK_0xf34d
 void UNK_0xf38d() // UNK_0xf38d
 {
   Push(0x0060);
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(0x0028);
   _slash_(); // /
@@ -363,10 +363,10 @@ void UNK_0xf38d() // UNK_0xf38d
   Push(Pop() + Pop()); // +
   POS_dot_(); // POS.
   Push(0x0030);
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   Push(2); // 2
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
 }
 
@@ -377,7 +377,7 @@ void UNK_0xf38d() // UNK_0xf38d
 
 void UNK_0xf3b7() // UNK_0xf3b7
 {
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(0x0030);
   _slash_(); // /
@@ -386,10 +386,10 @@ void UNK_0xf3b7() // UNK_0xf3b7
   Push(0x00bf);
   POS_dot_(); // POS.
   Push(1); // 1
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   Push(0x0032);
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
 }
 
@@ -402,14 +402,14 @@ void UNK_0xf3df() // UNK_0xf3df
 {
   UNK_0xf176(); // UNK_0xf176
   UNK_0xf3b7(); // UNK_0xf3b7
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
   Push(0x00c1);
   OVER(); // OVER
   Push(0x008f);
   LLINE(); // LLINE
   UNK_0xf38d(); // UNK_0xf38d
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   _gt_R(); // >R
@@ -460,9 +460,9 @@ void UNK_0xf42f() // UNK_0xf42f
 void GETSITE_1() // GETSITE_1
 {
   Push(cc__8); // 8
-  Push(pp__n_AUX); // #AUX size: 2
+  Push(pp__n_AUX); // #AUX
   _ex__2(); // !_2
-  Push(pp_ESC_dash_EN); // ESC-EN size: 2
+  Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
   _gt_DISPLA(); // >DISPLA
   UNK_0xf31b(); // UNK_0xf31b
@@ -475,9 +475,9 @@ void GETSITE_1() // GETSITE_1
   label3:
   XYSCAN(); // XYSCAN
   Push(0x1388);
-  Push(pp_KEYTIME); // KEYTIME size: 4
+  Push(pp_KEYTIME); // KEYTIME
   _2_at_(); // 2@
-  Push(pp_LKEYTIM); // LKEYTIM size: 4
+  Push(pp_LKEYTIM); // LKEYTIM
   _2_at_(); // 2@
   D_dash_(); // D-
   Pop(); // DROP
@@ -500,23 +500,23 @@ void GETSITE_1() // GETSITE_1
   UNK_0xf2a7(); // UNK_0xf2a7
   UNK_0xf233(); // UNK_0xf233
   UNK_0xf42f(); // UNK_0xf42f
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
   Push(0x03bf);
   MIN(); // MIN
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   _ex__2(); // !_2
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(0); // 0
   MAX(); // MAX
   Push(0x08ff);
   MIN(); // MIN
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   _ex__2(); // !_2
   UNK_0xf425(); // UNK_0xf425
   UNK_0xf176(); // UNK_0xf176
@@ -530,15 +530,15 @@ void GETSITE_1() // GETSITE_1
   label2:
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label3;
-  Push(pp_XABS); // XABS size: 2
+  Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  Push(pp_UNK_0xf22b); // UNK_0xf22b size: 0
+  Push(pp_UNK_0xf22b); // UNK_0xf22b
   _ex__2(); // !_2
-  Push(pp_YABS); // YABS size: 2
+  Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  Push(pp_UNK_0xf22f); // UNK_0xf22f size: 0
+  Push(pp_UNK_0xf22f); // UNK_0xf22f
   _ex__2(); // !_2
-  Push(pp_ESC_dash_EN); // ESC-EN size: 2
+  Push(pp_ESC_dash_EN); // ESC-EN
   ON_2(); // ON_2
 }
 
@@ -551,27 +551,27 @@ void GETSITE_1() // GETSITE_1
 void _dot_MERCATOR() // .MERCATOR
 {
   Push(cc__4); // 4
-  Push(pp__n_AUX); // #AUX size: 2
+  Push(pp__n_AUX); // #AUX
   _ex__2(); // !_2
   UNK_0xf31b(); // UNK_0xf31b
   _gt_DISPLA(); // >DISPLA
   UNK_0xf17e(); // UNK_0xf17e
   UNK_0xf1e1(); // UNK_0xf1e1
   Push(0x0060);
-  Push(pp_XLLDEST); // XLLDEST size: 2
+  Push(pp_XLLDEST); // XLLDEST
   _ex__2(); // !_2
   Push(0x0090);
-  Push(pp_YLLDEST); // YLLDEST size: 2
+  Push(pp_YLLDEST); // YLLDEST
   _ex__2(); // !_2
   Push(0x9199); // probable '.1X2CEL'
-  Push(pp__i__dot_CELL); // '.CELL size: 2
+  Push(pp__i__dot_CELL); // '.CELL
   _ex__2(); // !_2
   Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   _dot_REGION(); // .REGION
-  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -591,7 +591,7 @@ void _dot_MERCATOR() // .MERCATOR
 
 void GETSITE_2() // GETSITE_2
 {
-  Push(pp__n_AUX); // #AUX size: 2
+  Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _eq_(); // =

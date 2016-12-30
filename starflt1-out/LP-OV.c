@@ -143,9 +143,9 @@ void UNK_0xe0e6() // UNK_0xe0e6
 
 void UNK_0xe0f4() // UNK_0xe0f4
 {
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   Push(Read16(Pop())); // @
 }
 
@@ -156,9 +156,9 @@ void UNK_0xe0f4() // UNK_0xe0f4
 
 void UNK_0xe100() // UNK_0xe100
 {
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
 }
 
@@ -555,9 +555,9 @@ void UNK_0xe4b6() // UNK_0xe4b6
 {
   Push(cc_UNK_0xe0da); // UNK_0xe0da
   Push(Read16(regsp)); // DUP
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   _at_RECORD(); // @RECORD
   Pop(); // DROP
@@ -808,10 +808,10 @@ void UNK_0xeb97() // UNK_0xeb97
 
 void UNK_0xebb3() // UNK_0xebb3
 {
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   _gt_R(); // >R
-  Push(pp__ro_PLANET); // (PLANET size: 4
+  Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData("UNK_0xe2ee"); // from 'PLANET      '
@@ -825,7 +825,7 @@ void UNK_0xebb3() // UNK_0xebb3
   _gt_PROP(); // >PROP
   _1_dot_5_at_(); // 1.5@
   R_gt_(); // R>
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   LoadData("UNK_0xe3be"); // from 'CREATURE    '
@@ -888,7 +888,7 @@ void UNK_0xec3f() // UNK_0xec3f
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
-  Push(pp_PEAK); // PEAK size: 36
+  Push(pp_PEAK); // PEAK
   _ex__3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData("UNK_0xe3a6"); // from 'CREATURE    '
@@ -903,7 +903,7 @@ void UNK_0xec3f() // UNK_0xec3f
 void UNK_0xec57() // UNK_0xec57
 {
   Push(0); // 0
-  Push(pp_PEAK); // PEAK size: 36
+  Push(pp_PEAK); // PEAK
   _ex__3(); // !_3
   Push(0); // 0
   Push(0x0055);
@@ -1115,7 +1115,7 @@ void UNK_0xed63() // UNK_0xed63
 
 void UNK_0xedaf() // UNK_0xedaf
 {
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   LoadData("UNK_0xe316"); // from 'CREATURE    '
@@ -1138,7 +1138,7 @@ void UNK_0xedaf() // UNK_0xedaf
   Push(0xe496); // probable 'UNK_0xe496'
   Push(0xe48e); // probable 'UNK_0xe48e'
   R_gt_(); // R>
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   _2SWAP(); // 2SWAP
@@ -1547,7 +1547,7 @@ void UNK_0xf14a() // UNK_0xf14a
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
-  Push(pp_PEAK); // PEAK size: 36
+  Push(pp_PEAK); // PEAK
   _ex__3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData("UNK_0xe39e"); // from 'CREATURE    '
@@ -1583,28 +1583,28 @@ void UNK_0xf17a() // UNK_0xf17a
   UNK_0xe285(); // UNK_0xe285
   LoadData("UNK_0xe33e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  Push(pp_ADDITIONS); // ADDITIONS size: 1330
+  Push(pp_ADDITIONS); // ADDITIONS
   UNK_0xe5fe(); // UNK_0xe5fe
   LoadData("UNK_0xe3de"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   UNK_0xe285(); // UNK_0xe285
   LoadData("UNK_0xe32e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  Push(pp_ADDITIONS); // ADDITIONS size: 1330
+  Push(pp_ADDITIONS); // ADDITIONS
   UNK_0xe5fe(); // UNK_0xe5fe
   LoadData("UNK_0xe40e"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   UNK_0xe285(); // UNK_0xe285
   LoadData("UNK_0xe35e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  Push(pp_ADDITIONS); // ADDITIONS size: 1330
+  Push(pp_ADDITIONS); // ADDITIONS
   UNK_0xe5fe(); // UNK_0xe5fe
   LoadData("UNK_0xe46e"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   UNK_0xe285(); // UNK_0xe285
   LoadData("UNK_0xe34e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  Push(pp_ADDITIONS); // ADDITIONS size: 1330
+  Push(pp_ADDITIONS); // ADDITIONS
   UNK_0xe5fe(); // UNK_0xe5fe
   LoadData("UNK_0xe43e"); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
@@ -1979,9 +1979,9 @@ void UNK_0xf4cc() // UNK_0xf4cc
 void SPEC_dot_PARM() // SPEC.PARM
 {
   UNK_0xe4b6(); // UNK_0xe4b6
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  Push(pp_SEED); // SEED size: 2
+  Push(pp_SEED); // SEED
   _st__ex__gt_(); // <!>
   UNK_0xf162(); // UNK_0xf162
   UNK_0xebb3(); // UNK_0xebb3

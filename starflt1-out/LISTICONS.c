@@ -60,12 +60,12 @@ void altitude() // altitude
   signed short int imax = Pop();
   do // (DO)
   {
-  Push(pp_CMAP); // CMAP size: 64
+  Push(pp_CMAP); // CMAP
   Push(i); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(pp_TILE_dash_PTR); // TILE-PTR size: 2
+  Push(pp_TILE_dash_PTR); // TILE-PTR
   _ex__3(); // !_3
   Push(0x0021);
   Push(i); // I
@@ -93,17 +93,17 @@ void altitude() // altitude
 void ICON_dash_KEY() // ICON-KEY
 {
   Push(0x00be);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0037);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__plus__ex__gt_(); // <+!>
   PRINT("KEY", 3); // (.")
   Push(0x000a);
@@ -150,10 +150,10 @@ void _dot_BLT() // .BLT
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   _ask__gt_EGA(); // ?>EGA
-  Push(pp_COLOR); // COLOR size: 2
+  Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
   Push(Pop()+1); // 1+
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_ABLT); // ABLT
   _st__ex__gt_(); // <!>
   BLT(); // BLT
   i++;
@@ -170,10 +170,10 @@ void _dot_BLT() // .BLT
 void PAUSE_dash_PAGE() // PAUSE-PAGE
 {
   Push(0x000a);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x001b);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
@@ -198,28 +198,28 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(0x000a);
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__ex__gt_(); // <!>
   Push(0x0014);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
   Push(cc__8); // 8
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(0x003e);
   Push(i); // I
   _at_RECORD(); // @RECORD
   _dot_BLT(); // .BLT
   Push(0x000c);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(cc__dash_2); // -2
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
   Push(i); // I
@@ -227,7 +227,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(0x001b);
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
   } while(i<imax); // (LOOP) 0xffae
@@ -256,10 +256,10 @@ void title() // title
 
 void ICONS() // ICONS
 {
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   _at_DS(); // @DS
-  Push(pp_BLTSEG); // BLTSEG size: 2
+  Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
   title(); // title
   Push(0x00b4);

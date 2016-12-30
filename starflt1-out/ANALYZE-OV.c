@@ -201,13 +201,13 @@ const unsigned short int pp_UNK_0xf2bf = 0xf2bf; // UNK_0xf2bf size: 7
 
 void UNK_0xec04() // UNK_0xec04
 {
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x63fa); // IFIELD(UNK_0xebff)
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp__ask_WIN); // ?WIN size: 2
+  Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -483,7 +483,7 @@ void _ask__dot_CERTAIN() // ?.CERTAIN
   _gt_(); // >
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -682,10 +682,10 @@ void _dot_DELEM() // .DELEM
   Push(cc__6); // 6
 
   label3:
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   Push(0x001a);
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
   LoadData("UNK_0xeb85"); // from 'ELEMENT     '
   Push(0x0010);
@@ -729,7 +729,7 @@ void _dot_CONSTIT() // .CONSTIT
 
 void UNK_0xefb7() // UNK_0xefb7
 {
-  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
+  Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
@@ -983,7 +983,7 @@ void _dot_GRAV() // .GRAV
   PRINT("GRAVITY: ", 9); // (.")
   _ask__dot_CERTAIN(); // ?.CERTAIN
   Push(Read16(regsp)); // DUP
-  Push(pp__ask_G_dash_AWARE); // ?G-AWARE size: 2
+  Push(pp__ask_G_dash_AWARE); // ?G-AWARE
   _ex__3(); // !_3
   if (Pop() == 0) return;
   LoadData("UNK_0xebcf"); // from 'PLANET      '
@@ -1233,7 +1233,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   do // (DO)
   {
   Push(Pop()+1); // 1+
-  Push(pp_UNK_0xf2bf); // UNK_0xf2bf size: 0
+  Push(pp_UNK_0xf2bf); // UNK_0xf2bf
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -1284,7 +1284,7 @@ void UNK_0xf31e() // UNK_0xf31e
   if (Pop() == 0) return;
   Push(0x63fa); // IFIELD(UNK_0xebff)
   Push(Read16(Pop())); // @
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(Read16(regsp)); // DUP
@@ -1293,7 +1293,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(0x018f);
   WITHIN(); // WITHIN
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp__ask_WIN); // ?WIN size: 2
+  Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
@@ -1422,7 +1422,7 @@ void UNK_0xf436() // UNK_0xf436
   UNK_0xf29f(); // UNK_0xf29f
   UNK_0xf2f2(); // UNK_0xf2f2
   UNK_0xec26(); // UNK_0xec26
-  Push(pp__ask_FANLYZ); // ?FANLYZ size: 2
+  Push(pp__ask_FANLYZ); // ?FANLYZ
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   UNK_0xf31e(); // UNK_0xf31e
@@ -1462,7 +1462,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR size: 4
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   DABS(); // DABS
@@ -1494,10 +1494,10 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(pp_OK_dash_TALK); // OK-TALK size: 4
+  Push(pp_OK_dash_TALK); // OK-TALK
   D_ex_(); // D!
   Push2Words("NULL");
-  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR size: 4
+  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
 }
 

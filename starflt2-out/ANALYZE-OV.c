@@ -405,7 +405,7 @@ void UNK_0xee5b() // UNK_0xee5b
   _gt_(); // >
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(pp_PLHI); // PLHI size: 2
+  Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -516,7 +516,7 @@ void UNK_0xef08() // UNK_0xef08
 
 void UNK_0xef13() // UNK_0xef13
 {
-  Push(pp__ask_NEB); // ?NEB size: 2
+  Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   _at_INST_dash_S(); // @INST-S
@@ -559,7 +559,7 @@ void UNK_0xef53() // UNK_0xef53
   if (Pop() == 0) goto label1;
   Push(0x001d);
   _eq_SPECIE(); // =SPECIE
-  Push(pp__ask_AF); // ?AF size: 2
+  Push(pp__ask_AF); // ?AF
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -578,7 +578,7 @@ void UNK_0xef53() // UNK_0xef53
 
   label3:
   Push(cc__ask_A_dash_SHIE); // ?A-SHIE
-  Push(pp_NLR); // NLR size: 2
+  Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
   Push(1); // 1
   _eq_(); // =
@@ -646,10 +646,10 @@ void UNK_0xf02c() // UNK_0xf02c
   Push(cc__6); // 6
 
   label3:
-  Push(pp_RECORD_n_); // RECORD# size: 2
+  Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
   Push(0x001a);
-  Push(pp_FILE_n_); // FILE# size: 2
+  Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
   LoadData("UNK_0xec75"); // from 'ELEMENT     '
   Push(0x0010);
@@ -693,7 +693,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf0a7() // UNK_0xf0a7
 {
-  Push(pp__ro_ORBIT_rc_); // (ORBIT) size: 4
+  Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
@@ -947,7 +947,7 @@ void UNK_0xf221() // UNK_0xf221
   PRINT("GRAVITY: ", 9); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   Push(Read16(regsp)); // DUP
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR size: 2
+  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
   _ex__2(); // !_2
   if (Pop() == 0) return;
   LoadData("UNK_0xecbf"); // from 'PLANET      '
@@ -1197,7 +1197,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   do // (DO)
   {
   Push(Pop()+1); // 1+
-  Push(pp_UNK_0xf3af); // UNK_0xf3af size: 0
+  Push(pp_UNK_0xf3af); // UNK_0xf3af
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -1400,7 +1400,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(pp_SENSE_dash_A); // SENSE-A size: 4
+  Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   DABS(); // DABS
@@ -1432,10 +1432,10 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(pp_OK_dash_TALK); // OK-TALK size: 4
+  Push(pp_OK_dash_TALK); // OK-TALK
   D_ex_(); // D!
   Push2Words("NULL");
-  Push(pp_SENSE_dash_A); // SENSE-A size: 4
+  Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_ex__2(); // 1.5!_2
 }
 

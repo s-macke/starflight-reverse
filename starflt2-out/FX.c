@@ -71,7 +71,7 @@ const unsigned short int pp_UNK_0xf08c = 0xf08c; // UNK_0xf08c size: 2
 
 void UNK_0xf07e() // UNK_0xf07e
 {
-  Push(pp__ro_TRADER); // (TRADER size: 4
+  Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf076"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
@@ -90,7 +90,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf090() // UNK_0xf090
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3 size: 2
+  Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
   _eq_(); // =
@@ -130,7 +130,7 @@ void N_gt_STAT() // N>STAT
 
 void UNK_0xf0bb() // UNK_0xf0bb
 {
-  Push(pp_A_dash_POSTU); // A-POSTU size: 2
+  Push(pp_A_dash_POSTU); // A-POSTU
   Push(Read8(Pop())&0xFF); // C@
   N_gt_STAT(); // N>STAT case
 }
@@ -142,7 +142,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 
 void UNK_0xf0c5() // UNK_0xf0c5
 {
-  Push(pp_PATIENC); // PATIENC size: 2
+  Push(pp_PATIENC); // PATIENC
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _gt_(); // >
@@ -171,7 +171,7 @@ void UNK_0xf0d9() // UNK_0xf0d9
 
 void UNK_0xf0e3() // UNK_0xf0e3
 {
-  Push(pp_PATIENC); // PATIENC size: 2
+  Push(pp_PATIENC); // PATIENC
   Push(Read16(Pop())); // @
   Push(2); // 2
   _gt_(); // >
@@ -187,7 +187,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
 
 void UNK_0xf0f5() // UNK_0xf0f5
 {
-  Push(pp_PATIENC); // PATIENC size: 2
+  Push(pp_PATIENC); // PATIENC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
   _st_(); // <
@@ -255,7 +255,7 @@ void UNK_0xf14f() // UNK_0xf14f
 {
   PRINT("GLOWING", 7); // (.")
   Push(cc__4); // 4
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
 }
 
@@ -384,7 +384,7 @@ void UNK_0xf1ee() // UNK_0xf1ee
 
 void UNK_0xf20a() // UNK_0xf20a
 {
-  Push(pp__ro_AORIGI); // (AORIGI size: 4
+  Push(pp__ro_AORIGI); // (AORIGI
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0013);
   _eq_SPECIE(); // =SPECIE
@@ -414,7 +414,7 @@ void PSYCH() // PSYCH
   if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
   UNK_0xf13d(); // UNK_0xf13d
-  Push(pp_UNK_0xf08c); // UNK_0xf08c size: 0
+  Push(pp_UNK_0xf08c); // UNK_0xf08c
   Push(Read16(Pop())); // @
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -424,7 +424,7 @@ void PSYCH() // PSYCH
   _ex_COLOR(); // !COLOR
   UNK_0xf13d(); // UNK_0xf13d
   Push(Read16(regsp)); // DUP
-  Push(pp_UNK_0xf08c); // UNK_0xf08c size: 0
+  Push(pp_UNK_0xf08c); // UNK_0xf08c
   _ex__2(); // !_2
 
   UNK_0x3f09("THE PSYCHIC PROBE IS ");
@@ -549,7 +549,7 @@ void UNK_0xf316() // UNK_0xf316
 
 void UNK_0xf322() // UNK_0xf322
 {
-  Push(pp_LSCAN); // LSCAN size: 400
+  Push(pp_LSCAN); // LSCAN
   Push(Pop() + Pop()); // +
 }
 
@@ -580,33 +580,33 @@ void UNK_0xf32a() // UNK_0xf32a
   UNK_0xf322(); // UNK_0xf322
   _ex__2(); // !_2
   Push(2); // 2
-  Push(pp__n_IN); // #IN size: 2
+  Push(pp__n_IN); // #IN
   _ex__2(); // !_2
   Push(0); // 0
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_VIN); // VIN size: 2
+  Push(pp_VIN); // VIN
   _ex__2(); // !_2
   Push(0x0014);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_VOUT); // VOUT size: 2
+  Push(pp_VOUT); // VOUT
   _ex__2(); // !_2
   Push(0x0028);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_OIN); // OIN size: 2
+  Push(pp_OIN); // OIN
   _ex__2(); // !_2
   Push(0x003c);
   UNK_0xf322(); // UNK_0xf322
-  Push(pp_OOUT); // OOUT size: 2
+  Push(pp_OOUT); // OOUT
   _ex__2(); // !_2
-  Push(pp__ask_OPEN); // ?OPEN size: 2
+  Push(pp__ask_OPEN); // ?OPEN
   ON_2(); // ON_2
   CLIPPER(); // CLIPPER
-  Push(pp__n_IN); // #IN size: 2
+  Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
-  Push(pp__ask_OPEN); // ?OPEN size: 2
+  Push(pp__ask_OPEN); // ?OPEN
   _099(); // 099
   if (Pop() == 0) goto label2;
-  Push(pp_VIN); // VIN size: 2
+  Push(pp_VIN); // VIN
   Push(Read16(Pop())); // @
   _gt_R(); // >R
   Push(h); // I
@@ -766,13 +766,13 @@ void UNK_0xf48c() // UNK_0xf48c
   _gt_R(); // >R
   _gt_R(); // >R
   _at_CRS(); // @CRS
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
   _dash_(); // -
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
   Push(2); // 2
   _dash_(); // -
@@ -877,9 +877,9 @@ void UNK_0xf4ec() // UNK_0xf4ec
 
 void _dot_TMAP() // .TMAP
 {
-  Push(pp_TMAP); // TMAP size: 4
+  Push(pp_TMAP); // TMAP
   _at__gt_C_plus_S(); // @>C+S
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   _099(); // 099
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR

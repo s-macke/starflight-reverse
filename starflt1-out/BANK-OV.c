@@ -252,7 +252,7 @@ void TRANSACT() // TRANSACT
   ILAST(); // ILAST
   COVER(); // COVER
   SET_dash_CURRENT(); // SET-CURRENT
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x63fa); // IFIELD(UNK_0xefa4)
   _2_at_(); // 2@
@@ -294,9 +294,9 @@ void INT_pe_() // INT%
   Push(0x000c);
   Push(0x0064);
   M_star__slash_(); // M*/
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(pp_PORTDAT); // PORTDAT size: 2
+  Push(pp_PORTDAT); // PORTDAT
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(0x012c);
@@ -314,9 +314,9 @@ void INT_pe_() // INT%
   _ex_TFLAG(); // !TFLAG
   Push(cc__5); // 5
   TRANSACT(); // TRANSACT
-  Push(pp_STARDATE); // STARDATE size: 2
+  Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(pp_PORTDAT); // PORTDAT size: 2
+  Push(pp_PORTDAT); // PORTDAT
   _ex__3(); // !_3
 }
 
@@ -333,22 +333,22 @@ void INT_pe_() // INT%
 void UNK_0xf128() // UNK_0xf128
 {
   Push(0xfffc);
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
   _dash_(); // -
-  Push(pp_WBLT); // WBLT size: 2
+  Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(1); // 1
-  Push(pp_LBLT); // LBLT size: 2
+  Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(pp_UNK_0xf112); // UNK_0xf112 size: 0
-  Push(pp_ABLT); // ABLT size: 2
+  Push(pp_UNK_0xf112); // UNK_0xf112
+  Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
   Push(cc__4); // 4
-  Push(pp_YBLT); // YBLT size: 2
+  Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
 }
 
@@ -494,7 +494,7 @@ void UNK_0xf1e2() // UNK_0xf1e2
 void UNK_0xf26f() // UNK_0xf26f
 {
   _ex_COLOR(); // !COLOR
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   Push(cc__3); // 3
   Push(0); // 0
@@ -629,11 +629,11 @@ void UNK_0xf3ab() // UNK_0xf3ab
   POS_dot_(); // POS.
   PRINT("DATE", 4); // (.")
   Push(0x003e);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("TRANSACTIONS", 12); // (.")
   Push(0x0085);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("AMT", 3); // (.")
   Push(0x0013);
@@ -687,7 +687,7 @@ void UNK_0xf464() // UNK_0xf464
 
 void UNK_0xf472() // UNK_0xf472
 {
-  Push(pp_XORMODE); // XORMODE size: 2
+  Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -700,13 +700,13 @@ void UNK_0xf472() // UNK_0xf472
   _gt_1FONT(); // >1FONT
   UNK_0xf152(); // UNK_0xf152
   Push(0x0032);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   UNK_0xf1da(); // UNK_0xf1da
   Push(0x007c);
   UNK_0xf128(); // UNK_0xf128
   Push(0x007d);
-  Push(pp_XBLT); // XBLT size: 2
+  Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   UNK_0xf196(); // UNK_0xf196
 }
