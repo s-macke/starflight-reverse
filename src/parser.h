@@ -14,7 +14,7 @@ typedef struct
 extern LineDesc pline[0x10000];
 
 
-void InitOutput();
+void InitParser();
 void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
 void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx);
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);

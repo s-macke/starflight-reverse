@@ -160,7 +160,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     fprintf(fpc, "#include\"../emul/starflt2.h\"\n\n");
 #endif
 
-    InitOutput();
+    InitParser();
 
     SortDictionary();
     // write header file
@@ -227,7 +227,7 @@ void DisasStarflt(FILE *fp)
     const int ovidx = -1;
     int minaddr = 0x100;
     int maxaddr = FILESTAR0SIZE+0x100;
-    InitOutput();
+    InitParser();
     WriteHeader(ovidx);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
