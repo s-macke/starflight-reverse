@@ -116,7 +116,7 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODECONSTANT)
     {
-        snprintf(ret, STRINGLEN, "  Push(cc_%s); // %s\n", Forth2CString(s), s); // TODO: check
+        snprintf(ret, STRINGLEN, "  Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s); // TODO: check
         if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
@@ -1055,7 +1055,7 @@ void WriteVariables(FILE *fp, int ovidx)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp), GetWordName(&dict[i]));
+        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), dict[i].parp, GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
     for(i=0; i<ndict; i++)
