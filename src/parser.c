@@ -244,6 +244,11 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         snprintf(ret, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
         return 2;
     }
+    if (strcmp(s, "=") == 0)
+    {
+        snprintf(ret, STRINGLEN, "  Push((Pop()==Pop())?1:0); // =\n");
+        return 2;
+    }
     if (strcmp(s, "+") == 0)
     {
         snprintf(ret, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
