@@ -825,6 +825,11 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(%s)); // R@\n", GetVariable(&vars, 0));
             ofs += 2;
         } else
+        if (strcmp(s, "LEAVE") == 0)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  %s = %s; // LEAVE\n", GetVariable(&vars, 1), GetVariable(&vars, 0));
+            ofs += 2;
+        } else
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
