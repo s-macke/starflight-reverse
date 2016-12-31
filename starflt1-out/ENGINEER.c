@@ -258,20 +258,20 @@ void UNK_0xed5c() // UNK_0xed5c
   _ex__3(); // !_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _slash_(); // /
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x0072);
   Push(0x00b2);
   ROT(); // ROT
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -330,7 +330,7 @@ void DBARS() // DBARS
   signed short int i, imax;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
 
   i = Pop();
@@ -376,7 +376,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xec89(); // UNK_0xec89
   UNK_0xece5(); // UNK_0xece5
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(pp__n_AUX); // #AUX
   _ex__3(); // !_3
   DBARS(); // DBARS
@@ -395,7 +395,7 @@ void UNK_0xee68() // UNK_0xee68
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
 
   i = Pop();
@@ -710,7 +710,7 @@ void UNK_0xf0cb() // UNK_0xf0cb
   Push(0x1c1b);
   Push(0x5559);
   _star__slash_(); // */
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(Pop() + Pop()); // +
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -727,7 +727,7 @@ void UNK_0xf0ff() // UNK_0xf0ff
   Push(0x003c);
   _st_(); // <
   if (Pop() == 0) goto label1;
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
   Push(2); // 2
@@ -1031,7 +1031,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
   Push(0x0054);
   Push(0x00b3);
   ROT(); // ROT
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -1041,7 +1041,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
   Push(0x001d);
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   SetColor("LT-BLUE");
@@ -1087,11 +1087,11 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dash_(); // -
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   MOD(); // MOD
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_NCRS); // NCRS

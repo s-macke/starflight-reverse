@@ -245,7 +245,7 @@ const unsigned short int pp_UNK_0xedb4 = 0xedb4; // UNK_0xedb4 size: 6
 // {0x3a, 0x20, 0x14, 0x22, 0xd0, 0x07}
 
 
-const unsigned short int cc_UNK_0xedbc = 0x47d0; // UNK_0xedbc
+const unsigned short int cc_UNK_0xedbc = 0xedbc; // UNK_0xedbc
 
 
 // 0xea32: db 0xb4 0x00 '  '
@@ -348,13 +348,13 @@ void S_gt_CM() // S>CM
   switch(Pop()) // S>CM
   {
   case 4:
-    Push(cc__4); // 4
+    Push(Read16(cc__4)); // 4
     break;
   case 1:
-    Push(cc__5); // 5
+    Push(Read16(cc__5)); // 5
     break;
   case 3:
-    Push(cc__3); // 3
+    Push(Read16(cc__3)); // 3
     break;
   default:
     UNK_0xeaa0(); // UNK_0xeaa0
@@ -463,7 +463,7 @@ void SET_dash_SPE() // SET-SPE
   goto label2;
 
   label1:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(2); // 2
   _star__slash_(); // */
   Push(-Pop()); // NEGATE
@@ -581,7 +581,7 @@ void UNK_0xec32() // UNK_0xec32
   imax = Pop();
   do // (DO)
   {
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   j = Pop();
@@ -663,8 +663,8 @@ void UNK_0xec32() // UNK_0xec32
   _099(); // 099
   _ex_COLOR(); // !COLOR
   _2DUP(); // 2DUP
-  Push(cc__3); // 3
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__3)); // 3
   BUFFERX(); // BUFFERX
   Push(Pop()-1); // 1-
   CBLTP(); // CBLTP
@@ -702,7 +702,7 @@ void UNK_0xecfa() // UNK_0xecfa
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(0x000e);
@@ -1507,7 +1507,7 @@ void UNK_0xf231() // UNK_0xf231
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
   Push(0); // 0
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -1543,7 +1543,7 @@ void UNK_0xf25f() // UNK_0xf25f
   I_gt_C(); // I>C
   UNK_0xeb09(); // UNK_0xeb09
   Push(i); // I
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _slash_(); // /
   Push(0x0064);
   Push(Pop() + Pop()); // +
@@ -1691,7 +1691,7 @@ void UNK_0xf383() // UNK_0xf383
   UNK_0xea36(); // UNK_0xea36
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-  Push(cc_UNK_0xedbc); // UNK_0xedbc
+  Push(Read16(cc_UNK_0xedbc)); // UNK_0xedbc
   _gt_(); // >
   a = Pop(); // >R
   Push(pp_E_slash_M); // E/M
@@ -1705,7 +1705,7 @@ void UNK_0xf383() // UNK_0xf383
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  Push(cc_UNK_0xedbc); // UNK_0xedbc
+  Push(Read16(cc_UNK_0xedbc)); // UNK_0xedbc
   _st_(); // <
   Push(a); // R>
   Push(Pop() & Pop()); // AND
@@ -1714,7 +1714,7 @@ void UNK_0xf383() // UNK_0xf383
   Push(0x69e0); Push(0x0002);
   UNK_0xed8a(); // UNK_0xed8a
   _dot_TTY(); // .TTY
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
 }
@@ -1825,7 +1825,7 @@ void UNK_0xf447() // UNK_0xf447
   SetColor("GREEN");
   Push(pp_LCOLOR); // LCOLOR
   _ex__2(); // !_2
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
 }

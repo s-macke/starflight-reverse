@@ -123,17 +123,17 @@ void UNK_0xf195() // UNK_0xf195
   Push(0x0017);
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  Push(cc_TRUE); // TRUE
+  Push(Read16(cc_TRUE)); // TRUE
   goto label3;
 
   label2:
-  Push(cc_FALSE); // FALSE
+  Push(Read16(cc_FALSE)); // FALSE
 
   label3:
   return;
 
   label1:
-  Push(cc_FALSE); // FALSE
+  Push(Read16(cc_FALSE)); // FALSE
 }
 
 
@@ -182,11 +182,11 @@ void UNK_0xf1cb() // UNK_0xf1cb
   Push(Pop()+2); // 2+
   OVER(); // OVER
   LLINE(); // LLINE
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   PRINT("FLIGHT", 6); // (.")
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   PRINT("CHECK", 5); // (.")
@@ -203,7 +203,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
 
 void UNK_0xf25e() // UNK_0xf25e
 {
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(0x0014);
@@ -324,7 +324,7 @@ void UNK_0xf331() // UNK_0xf331
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
 }
@@ -368,13 +368,13 @@ void UNK_0xf3a9() // UNK_0xf3a9
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   UNK_0xf331(); // UNK_0xf331
 
   label3:
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
   UNK_0xf378(); // UNK_0xf378
@@ -472,12 +472,12 @@ void UNK_0xf462() // UNK_0xf462
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6601); // IFIELD(UNK_0xf186)
   Push(Read16(Pop())); // @
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -506,7 +506,7 @@ void UNK_0xf492() // UNK_0xf492
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf32d); // UNK_0xf32d
   _ex__2(); // !_2
@@ -530,7 +530,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
   Push(0x65ec); // IFIELD(INST-QT)
@@ -571,11 +571,11 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(Pop()*2); // 2*
   Push(Pop() | Pop()); // OR
   UNK_0xf492(); // UNK_0xf492
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   UNK_0xf4bc(); // UNK_0xf4bc
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

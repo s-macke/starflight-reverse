@@ -128,8 +128,8 @@ const unsigned short int pp_UNK_0xf068 = 0xf068; // UNK_0xf068 size: 17
 // {0x3a, 0x20, 0x05, 0x41, 0x4c, 0x4c, 0x4f, 0x54, 0x20, 0x29, 0x92, 0x0c, 0xdb, 0x23, 0x5d, 0x17, 0x20}
 
 
-const unsigned short int cc_ESTA = 0xf399; // ESTA
-const unsigned short int cc_VSTA = 0xf3af; // VSTA
+const unsigned short int cc_ESTA = 0xf396; // ESTA
+const unsigned short int cc_VSTA = 0xf3ac; // VSTA
 
 
 // 0xeff2: db 0x57 0x00 'W '
@@ -194,10 +194,10 @@ void UNK_0xf07b() // UNK_0xf07b
   signed short int j, jmax;
   Push(pp_UNK_0xf068); // UNK_0xf068
   Push(0x000f);
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   FILL_2(); // FILL_2
   Push(pp_UNK_0xf068); // UNK_0xf068
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   i = Pop();
@@ -210,7 +210,7 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
@@ -230,7 +230,7 @@ void UNK_0xf07b() // UNK_0xf07b
   OVER(); // OVER
   C_ex__2(); // C!_2
   Push(Pop()+1); // 1+
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0); // 0
 
   j = Pop();
@@ -243,7 +243,7 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
@@ -424,7 +424,7 @@ void UNK_0xf200() // UNK_0xf200
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   L_at_(); // L@
   BMWIDE(); // BMWIDE
   _ex__2(); // !_2
@@ -630,7 +630,7 @@ void UNK_0xf30a() // UNK_0xf30a
   do // (DO)
   {
   _gt_PLANES(); // >PLANES
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(pp_SRC); // SRC
   _plus__ex__2(); // +!_2
   Push(1); // 1
@@ -759,11 +759,11 @@ void LDSY() // LDSY
 {
   _ask_VGA(); // ?VGA
   if (Pop() == 0) goto label1;
-  Push(cc_VSTA); // VSTA
+  Push(Read16(cc_VSTA)); // VSTA
   goto label2;
 
   label1:
-  Push(cc_ESTA); // ESTA
+  Push(Read16(cc_ESTA)); // ESTA
 
   label2:
   Push(pp_SSYSEG); // SSYSEG
@@ -827,7 +827,7 @@ void _at__dot_HY() // @.HY
   SETB(); // SETB
   Push(a); // R>
   UNK_0xf111(); // UNK_0xf111
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00bf);
   _dot_RAW(); // .RAW
   Push(0); // 0
@@ -858,7 +858,7 @@ void _dot_TPI() // .TPI
   UNK_0x3f09("strpics.raw");
   UNK_0xf145(); // UNK_0xf145
   SETB(); // SETB
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00c5);
   _dot_RAW(); // .RAW
   Push(pp_CANSKIP); // CANSKIP
@@ -894,7 +894,7 @@ void _dot_API() // .API
   SETB(); // SETB
   Push(a); // R>
   UNK_0xf12b(); // UNK_0xf12b
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00c5);
   _dot_RAW(); // .RAW
   Push(0); // 0

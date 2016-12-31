@@ -70,7 +70,7 @@ void CI(); // CI
 // =========== VARIABLES ===========
 // =================================
 
-const unsigned short int cc_UNK_0xf18a = 0x0043; // UNK_0xf18a
+const unsigned short int cc_UNK_0xf18a = 0xf18a; // UNK_0xf18a
 
 
 // 0xf182: db 0x3e 0x00 0x14 0x22 0x20 0x00 '>  "  '
@@ -134,7 +134,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(cc_UNK_0xf18a); // UNK_0xf18a
+  Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(0); // 0
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -151,7 +151,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   imax = Pop();
   do // (DO)
   {
-  Push(cc_UNK_0xf18a); // UNK_0xf18a
+  Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(i); // I
   Push(1); // 1
   _star_CREATE(); // *CREATE
@@ -181,15 +181,15 @@ void UNK_0xf418() // UNK_0xf418
   Push(0x65ec); // IFIELD(UNK_0xf272)
   _ex__2(); // !_2
   LoadData("UNK_0xf222"); // from 'REGIONS     '
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0); // 0
   FILL_2(); // FILL_2
   LoadData("UNK_0xf21a"); // from 'REGIONS     '
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
   FILL_2(); // FILL_2
   LoadData("UNK_0xf262"); // from 'REGIONS     '
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
   FILL_2(); // FILL_2
   Push(0); // 0
@@ -205,10 +205,10 @@ void UNK_0xf418() // UNK_0xf418
 void UNK_0xf440() // UNK_0xf440
 {
   signed short int i, imax;
-  Push(cc_UNK_0xf18a); // UNK_0xf18a
+  Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0); // 0
 
   i = Pop();

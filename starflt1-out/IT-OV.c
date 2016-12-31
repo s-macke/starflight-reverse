@@ -140,13 +140,13 @@ const unsigned short int pp_UNK_0xee6c = 0xee6c; // UNK_0xee6c size: 2
 // {0x3a, 0x20}
 
 
-const unsigned short int cc_UNK_0xedee = 0x000a; // UNK_0xedee
-const unsigned short int cc_UNK_0xedf2 = 0x000f; // UNK_0xedf2
-const unsigned short int cc_UNK_0xedf6 = 0x000e; // UNK_0xedf6
-const unsigned short int cc_UNK_0xedfa = 0x0011; // UNK_0xedfa
-const unsigned short int cc_UNK_0xedfe = 0x000b; // UNK_0xedfe
-const unsigned short int cc_UNK_0xee02 = 0x0026; // UNK_0xee02
-const unsigned short int cc_UNK_0xee06 = 0x0010; // UNK_0xee06
+const unsigned short int cc_UNK_0xedee = 0xedee; // UNK_0xedee
+const unsigned short int cc_UNK_0xedf2 = 0xedf2; // UNK_0xedf2
+const unsigned short int cc_UNK_0xedf6 = 0xedf6; // UNK_0xedf6
+const unsigned short int cc_UNK_0xedfa = 0xedfa; // UNK_0xedfa
+const unsigned short int cc_UNK_0xedfe = 0xedfe; // UNK_0xedfe
+const unsigned short int cc_UNK_0xee02 = 0xee02; // UNK_0xee02
+const unsigned short int cc_UNK_0xee06 = 0xee06; // UNK_0xee06
 
 
 // 0xede2: db 0x65 0x00 'e '
@@ -200,7 +200,7 @@ void UNK_0xee0a() // UNK_0xee0a
   PAD(); // PAD
   Push(Pop()+1); // 1+
   Push(0x0026);
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   FILL_1(); // FILL_1
 }
 
@@ -241,9 +241,9 @@ void UNK_0xee2c() // UNK_0xee2c
 
   label2:
   _ex_COLOR(); // !COLOR
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   _dash_(); // -
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   SWAP(); // SWAP
   POS_dot_(); // POS.
 }
@@ -259,7 +259,7 @@ void UNK_0xee54() // UNK_0xee54
   OVER(); // OVER
   _dash_(); // -
   Push(Pop()*2); // 2*
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
@@ -284,7 +284,7 @@ void UNK_0xee70() // UNK_0xee70
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   UNK_0xee2c(); // UNK_0xee2c
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0); // 0
 
   i = Pop();
@@ -292,7 +292,7 @@ void UNK_0xee70() // UNK_0xee70
   do // (DO)
   {
   PRINT("ATTENTION", 9); // (.")
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   SPACES(); // SPACES
   i++;
   } while(i<imax); // (LOOP) 0xffee
@@ -461,7 +461,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 {
 
   UNK_0x3f3b("00-00-");
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -471,9 +471,9 @@ void DATE_do__gt_ADR() // DATE$>ADR
   Push(0x120c);
   Push(Pop() + Pop()); // +
   U_gt__do_(); // U>$
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   PICK(); // PICK
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -481,9 +481,9 @@ void DATE_do__gt_ADR() // DATE$>ADR
   _slash_MOD(); // /MOD
   Push(Pop()+1); // 1+
   U_gt__do_(); // U>$
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   PICK(); // PICK
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(Pop()-1); // 1-
@@ -525,7 +525,7 @@ void UNK_0xf082() // UNK_0xf082
   PAD(); // PAD
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x003f);
   FILL_1(); // FILL_1
 }
@@ -662,9 +662,9 @@ void ITEM_gt_PAD() // ITEM>PAD
 void UNK_0xf157() // UNK_0xf157
 {
   UNK_0xef27(); // UNK_0xef27
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
@@ -825,25 +825,25 @@ void CLASS_gt_BOX_dash_SPEC() // CLASS>BOX-SPEC
   switch(Pop()) // CLASS>BOX-SPEC
   {
   case 26:
-    Push(cc_UNK_0xedee); // UNK_0xedee
+    Push(Read16(cc_UNK_0xedee)); // UNK_0xedee
     break;
   case 28:
-    Push(cc_UNK_0xedf2); // UNK_0xedf2
+    Push(Read16(cc_UNK_0xedf2)); // UNK_0xedf2
     break;
   case 40:
-    Push(cc_UNK_0xedf6); // UNK_0xedf6
+    Push(Read16(cc_UNK_0xedf6)); // UNK_0xedf6
     break;
   case 41:
-    Push(cc_UNK_0xee06); // UNK_0xee06
+    Push(Read16(cc_UNK_0xee06)); // UNK_0xee06
     break;
   case 43:
-    Push(cc_UNK_0xee02); // UNK_0xee02
+    Push(Read16(cc_UNK_0xee02)); // UNK_0xee02
     break;
   case 27:
-    Push(cc_UNK_0xedfa); // UNK_0xedfa
+    Push(Read16(cc_UNK_0xedfa)); // UNK_0xedfa
     break;
   case 68:
-    Push(cc_UNK_0xedfe); // UNK_0xedfe
+    Push(Read16(cc_UNK_0xedfe)); // UNK_0xedfe
     break;
   default:
     UNRAVEL(); // UNRAVEL

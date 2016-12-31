@@ -282,7 +282,7 @@ void XY_slash_N() // XY/N
   label3:
   Push(Read16(regsp)); // DUP
   UNK_0xeaee(); // UNK_0xeaee
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   _dot_BTN_dash_TE(); // .BTN-TE
 }
 

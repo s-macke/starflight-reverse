@@ -304,7 +304,7 @@ void UNK_0xec26() // UNK_0xec26
   _at_INST_dash_CLASS(); // @INST-CLASS
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000b);
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -516,7 +516,7 @@ void _dot_SIZE() // .SIZE
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
   Push(0); // 0
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
@@ -685,7 +685,7 @@ void _dot_SHIELDS() // .SHIELDS
   _slash_(); // /
   _dot_(); // .
   PRINT("EQUIVALENT ", 11); // (.")
-  Push(cc__ask_A_dash_SHIE); // ?A-SHIE
+  Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
   if (Pop() == 0) goto label3;
   PRINT("RAISED", 6); // (.")
   goto label4;
@@ -719,7 +719,7 @@ void _dot_WEAP() // .WEAP
   PRINT("WEAPON STATUS: ", 15); // (.")
   _ask__dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
-  Push(cc__ask_A_dash_WEAP); // ?A-WEAP
+  Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   PRINT("NOT ", 4); // (.")
@@ -737,7 +737,7 @@ void _dot_DELEM() // .DELEM
 {
   Push(Read16(regsp)); // DUP
   Push(0x6401); // IFIELD(UNK_0xeb95)
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -751,7 +751,7 @@ void _dot_DELEM() // .DELEM
   goto label3;
 
   label2:
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
@@ -790,7 +790,7 @@ void _dot_CONSTIT() // .CONSTIT
   _dot_DELEM(); // .DELEM
   Push(2); // 2
   _dot_DELEM(); // .DELEM
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dot_DELEM(); // .DELEM
 }
 
@@ -1299,7 +1299,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   signed short int i, imax;
   a = Pop(); // >R
   Push(2); // 2
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
 
   i = Pop();
@@ -1340,7 +1340,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
   Push(Pop()-2); // 2-
   _dot_(); // .
   PRINT("- ", 2); // (.")
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   MIN(); // MIN
   _dot_(); // .
 }

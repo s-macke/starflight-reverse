@@ -191,19 +191,19 @@ const unsigned short int pp_PAUSEOFF = 0xe90c; // PAUSEOFF size: 26
 // {0x58, 0x02, 0xf4, 0x01, 0x90, 0x01, 0x5e, 0x01, 0x2c, 0x01, 0xfa, 0x00, 0xc8, 0x00, 0x96, 0x00, 0x64, 0x00, 0x4b, 0x00, 0x32, 0x00, 0x23, 0x00, 0x19, 0x00}
 
 
-const unsigned short int cc_OLDINT = 0x0000; // OLDINT
-const unsigned short int cc__ask_MUSIC = 0x0002; // ?MUSIC
-const unsigned short int cc_MUSINT = 0x000e; // MUSINT
-const unsigned short int cc_PHRASE0 = 0x0003; // PHRASE0
-const unsigned short int cc_CURRPHR = 0x0005; // CURRPHR
-const unsigned short int cc_CURNOTE = 0x0007; // CURNOTE
-const unsigned short int cc_REPEATS = 0x0009; // REPEATS
-const unsigned short int cc_COUNTER = 0x000a; // COUNTER
-const unsigned short int cc_DURATION = 0x000b; // DURATION
-const unsigned short int cc_RESTVALUE = 0x000c; // RESTVALUE
-const unsigned short int cc_TONESTATE = 0x000d; // TONESTATE
-const unsigned short int cc_SONGS = 0x0010; // SONGS
-const unsigned short int cc_SCALE = 0x0024; // SCALE
+const unsigned short int cc_OLDINT = 0xe21f; // OLDINT
+const unsigned short int cc__ask_MUSIC = 0xe22c; // ?MUSIC
+const unsigned short int cc_MUSINT = 0xe239; // MUSINT
+const unsigned short int cc_PHRASE0 = 0xe247; // PHRASE0
+const unsigned short int cc_CURRPHR = 0xe255; // CURRPHR
+const unsigned short int cc_CURNOTE = 0xe263; // CURNOTE
+const unsigned short int cc_REPEATS = 0xe271; // REPEATS
+const unsigned short int cc_COUNTER = 0xe27f; // COUNTER
+const unsigned short int cc_DURATION = 0xe28e; // DURATION
+const unsigned short int cc_RESTVALUE = 0xe29e; // RESTVALUE
+const unsigned short int cc_TONESTATE = 0xe2ae; // TONESTATE
+const unsigned short int cc_SONGS = 0xe2ba; // SONGS
+const unsigned short int cc_SCALE = 0xe2c6; // SCALE
 
 
 // 0xe212: db 0x7f 0x00 ' '
@@ -284,7 +284,7 @@ const unsigned short int cc_SCALE = 0x0024; // SCALE
 
 void UNK_0xe2ce() // UNK_0xe2ce
 {
-  Push(cc_MUSSEG); // MUSSEG
+  Push(Read16(cc_MUSSEG)); // MUSSEG
   SWAP(); // SWAP
 }
 
@@ -360,7 +360,7 @@ void UNK_0xe2ee() // UNK_0xe2ee
 
 void R_co_() // R,
 {
-  Push(cc_MUSSEG); // MUSSEG
+  Push(Read16(cc_MUSSEG)); // MUSSEG
   SEG_gt_ADDR(); // SEG>ADDR
   _dash_(); // -
   _co_(); // ,
@@ -382,15 +382,15 @@ void INITMUS() // INITMUS
   Push(0x001c);
   _ro__ex_OLD_rc_(); // (!OLD)
   Push(Read16(regsp)); // DUP
-  Push(cc_MUSINT); // MUSINT
+  Push(Read16(cc_MUSINT)); // MUSINT
   UNK_0xe2de(); // UNK_0xe2de
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(0); // 0
-  Push(cc__ask_MUSIC); // ?MUSIC
+  Push(Read16(cc__ask_MUSIC)); // ?MUSIC
   UNK_0xe2ee(); // UNK_0xe2ee
-  Push(cc_OLDINT); // OLDINT
+  Push(Read16(cc_OLDINT)); // OLDINT
   UNK_0xe2de(); // UNK_0xe2de
   a = Pop(); // >R
   Push(a); // I
@@ -398,8 +398,8 @@ void INITMUS() // INITMUS
   Push(a); // R>
   Push(Pop()+2); // 2+
   UNK_0xe2d6(); // UNK_0xe2d6
-  Push(cc_MUSSEG); // MUSSEG
-  Push(cc_MUSINT); // MUSINT
+  Push(Read16(cc_MUSSEG)); // MUSSEG
+  Push(Read16(cc_MUSINT)); // MUSINT
   UNK_0xe2de(); // UNK_0xe2de
   Push(0x001c);
   _ro__ex_SET_rc_(); // (!SET)
@@ -419,7 +419,7 @@ void HIMUS() // HIMUS
   _at_DS(); // @DS
   Push(pp_UNK_0xe2ca); // UNK_0xe2ca
   Push(Read16(Pop())); // @
-  Push(cc_MUSSEG); // MUSSEG
+  Push(Read16(cc_MUSSEG)); // MUSSEG
   Push(0); // 0
   Push(0x0320);
   LCMOVE(); // LCMOVE
@@ -441,7 +441,7 @@ void CSCR_gt_EGA() // CSCR>EGA
   FILE_st_(); // FILE<
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(0x00c8);
   Push(0); // 0
 
@@ -664,7 +664,7 @@ void BRMOVE() // BRMOVE
   signed short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
@@ -851,7 +851,7 @@ void UNK_0xe82b() // UNK_0xe82b
   UNK_0xe7cd(); // UNK_0xe7cd
   CFIGARRAYS(); // CFIGARRAYS
   Push(0); // 0
-  Push(cc_MUSSEG); // MUSSEG
+  Push(Read16(cc_MUSSEG)); // MUSSEG
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
@@ -922,7 +922,7 @@ void INCREASE() // INCREASE
 void UNK_0xe928() // UNK_0xe928
 {
   signed short int i, imax;
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   REDUCE(); // REDUCE
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
@@ -963,7 +963,7 @@ void UNK_0xe928() // UNK_0xe928
   i++;
   } while(i<imax); // (LOOP) 0xffd8
 
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   INCREASE(); // INCREASE
 }
 
@@ -1004,7 +1004,7 @@ void INTROS() // INTROS
   UNK_0xe680(); // UNK_0xe680
   CFIGARRAYS(); // CFIGARRAYS
   Push(0); // 0
-  Push(cc_MUSSEG); // MUSSEG
+  Push(Read16(cc_MUSSEG)); // MUSSEG
   Push(2); // 2
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF

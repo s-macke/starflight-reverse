@@ -363,7 +363,7 @@ void UNK_0xea27() // UNK_0xea27
 {
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() & Pop()); // AND
 }
 
@@ -384,7 +384,7 @@ void UNK_0xea27() // UNK_0xea27
 
 void UNK_0xea65() // UNK_0xea65
 {
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   SetColor("BLACK");
   ROT(); // ROT
   Push(0x000a);
@@ -397,7 +397,7 @@ void UNK_0xea65() // UNK_0xea65
   POS_dot_(); // POS.
   POS_dot_PXT(); // POS.PXT
   CTINIT(); // CTINIT
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() & Pop()); // AND
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
@@ -450,12 +450,12 @@ void UNK_0xeadd() // UNK_0xeadd
   Push(0x6402); // IFIELD(UNK_0xe9df)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   UNK_0xea65(); // UNK_0xea65
   Push(0x6408); // IFIELD(UNK_0xe9ee)
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   UNK_0xea65(); // UNK_0xea65
   Push(0x6400); // IFIELD(UNK_0xe9da)
   Push(Pop()+1); // 1+
@@ -547,14 +547,14 @@ void UNK_0xeb5b() // UNK_0xeb5b
 void UNK_0xebb5() // UNK_0xebb5
 {
   signed short int i, imax;
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0); // 0
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0); // 0
   Push(0x0036);
   Push(i); // I
@@ -566,7 +566,7 @@ void UNK_0xebb5() // UNK_0xebb5
   i++;
   } while(i<imax); // (LOOP) 0xffe6
 
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   SetColor("BLACK");
   Push(0x00ae);
   Push(0x0037);
@@ -599,9 +599,9 @@ void UNK_0xebe9() // UNK_0xebe9
 
   label1:
   Push(Pop()-1); // 1-
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(Pop() * Pop()); // *
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -612,7 +612,7 @@ void UNK_0xebe9() // UNK_0xebe9
   {
   Push(0x0037);
   Push(i); // I
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   MOD(); // MOD
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -626,7 +626,7 @@ void UNK_0xebe9() // UNK_0xebe9
   Push(Read16(Pop())); // @
   Push(0x0064);
   M_star_(); // M*
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   D_dot_R(); // D.R
   i++;
   } while(i<imax); // (LOOP) 0xffd2
@@ -728,7 +728,7 @@ void UNK_0xecb0() // UNK_0xecb0
   UNK_0xea27(); // UNK_0xea27
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   SWAP(); // SWAP
   _dash_(); // -
   Push(0x000a);
@@ -743,7 +743,7 @@ void UNK_0xecb0() // UNK_0xecb0
   Push(Pop() * Pop()); // *
   OVER(); // OVER
   UNK_0xea27(); // UNK_0xea27
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   SWAP(); // SWAP
   _dash_(); // -
   Push(Pop()*2); // 2*
@@ -762,7 +762,7 @@ void UNK_0xecb0() // UNK_0xecb0
   _2DUP(); // 2DUP
   Push(pp_UNK_0xecaa); // UNK_0xecaa
   D_ex_(); // D!
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   D_dot_R(); // D.R
   return;
 
@@ -804,7 +804,7 @@ void UNK_0xed20() // UNK_0xed20
   _plus_BIT(); // +BIT
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _dot_R(); // .R
 
   label2:
@@ -924,7 +924,7 @@ void UNK_0xee20() // UNK_0xee20
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   _dash_(); // -
@@ -962,7 +962,7 @@ void UNK_0xee20() // UNK_0xee20
   Push(Read16(Pop())); // @
   a = Pop(); // >R
   Push(a); // I
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(0x6421); // IFIELD(UNK_0xea0c)
@@ -1038,7 +1038,7 @@ void UNK_0xef52() // UNK_0xef52
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(Pop() * Pop()); // *
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -1051,7 +1051,7 @@ void UNK_0xef52() // UNK_0xef52
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
   Push(0); // 0
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -1190,7 +1190,7 @@ void UNK_0xf041() // UNK_0xf041
   if (Pop() == 0) goto label2;
   Push(i); // I
   BIT(); // BIT
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(Pop() * Pop()); // *
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   _plus__ex_(); // +!
@@ -1206,7 +1206,7 @@ void UNK_0xf041() // UNK_0xf041
   _plus__ex_(); // +!
 
   label2:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -1256,7 +1256,7 @@ void UNK_0xf0da() // UNK_0xf0da
   Pop(); // DROP
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push((Pop()==Pop())?1:0); // =
   Push(0x00fa);
   Push(Pop() * Pop()); // *
@@ -1327,7 +1327,7 @@ void UNK_0xf14c() // UNK_0xf14c
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(Pop() * Pop()); // *
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
@@ -1431,7 +1431,7 @@ void UNK_0xf226() // UNK_0xf226
 {
   signed short int i, imax;
   Push2Words("NULL");
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(1); // 1
 
   i = Pop();
@@ -1444,7 +1444,7 @@ void UNK_0xf226() // UNK_0xf226
   i++;
   } while(i<imax); // (LOOP) 0xfff8
 
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   UNK_0xf1d6(); // UNK_0xf1d6
   D_dash_(); // D-
   Push(0x0064);
@@ -1474,7 +1474,7 @@ void UNK_0xf226() // UNK_0xf226
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   U_star_(); // U*
   D_plus_(); // D+
 }
@@ -1529,7 +1529,7 @@ void UNK_0xf2fa() // UNK_0xf2fa
   DNEGATE(); // DNEGATE
   UNK_0xe99e(); // UNK_0xe99e
   Push(0x6418); // IFIELD(UNK_0xea02)
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
   FILL_1(); // FILL_1
   Push(pp__ask_REPAIR); // ?REPAIR

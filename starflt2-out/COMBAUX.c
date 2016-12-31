@@ -174,7 +174,7 @@ void UNK_0xf336() // UNK_0xf336
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
@@ -263,7 +263,7 @@ void UNK_0xf3da() // UNK_0xf3da
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
@@ -384,7 +384,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(0x002c);
   WITHIN(); // WITHIN
   _at_ID(); // @ID
-  Push(cc_INVIS_dash_I); // INVIS-I
+  Push(Read16(cc_INVIS_dash_I)); // INVIS-I
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   _at_ID(); // @ID
@@ -458,7 +458,7 @@ void SET_dash_SC() // SET-SC
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _st_(); // <
   if (Pop() == 0) goto label3;
   Pop(); // DROP
@@ -466,8 +466,8 @@ void SET_dash_SC() // SET-SC
   return;
 
   label3:
-  Push(cc__5); // 5
-  Push(cc__8); // 8
+  Push(Read16(cc__5)); // 5
+  Push(Read16(cc__8)); // 8
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label4;
   UNK_0xf336(); // UNK_0xf336

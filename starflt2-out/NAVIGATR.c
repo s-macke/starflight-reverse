@@ -126,7 +126,7 @@ void UNK_0xf1c4() // UNK_0xf1c4
   Push(0x003a);
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
 }
@@ -153,12 +153,12 @@ void UNK_0xf1e0() // UNK_0xf1e0
   Push(0x003c);
   Push(0x03e8);
   Push(0x000f);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   Push(0x003c);
   Push(0x01f4);
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _gt_SND(); // >SND
 }
 
@@ -170,11 +170,11 @@ void UNK_0xf1e0() // UNK_0xf1e0
 void UNK_0xf202() // UNK_0xf202
 {
   Push(0x0064);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x003c);
   Push(0x01f4);
   Push(0x000f);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   Push(0x003c);
@@ -182,7 +182,7 @@ void UNK_0xf202() // UNK_0xf202
   _2OVER(); // 2OVER
   Push(0x003c);
   Push(0x01f4);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   _gt_SND(); // >SND
 }
 
@@ -236,10 +236,10 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   _dot_TTY(); // .TTY
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
 
@@ -270,12 +270,12 @@ void UNK_0xf301() // UNK_0xf301
 
 void UNK_0xf311() // UNK_0xf311
 {
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -297,7 +297,7 @@ void UNK_0xf311() // UNK_0xf311
 
   UNK_0x3f09("SHIELDS ARE NOW UP");
   _dot_TTY(); // .TTY
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(2); // 2
   _dot_ABTN(); // .ABTN
   Push(pp__ask_SUP); // ?SUP
@@ -307,7 +307,7 @@ void UNK_0xf311() // UNK_0xf311
   label1:
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
@@ -360,7 +360,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   if (Pop() == 0) goto label2;
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   UNK_0xf1ba(); // UNK_0xf1ba
   goto label3;
 
@@ -386,7 +386,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
   label4:
   SWAP(); // SWAP
   if (Pop() == 0) goto label6;
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   UNK_0xf1ba(); // UNK_0xf1ba
   goto label7;
 
@@ -439,7 +439,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   _gt_C_plus_S(); // >C+S
   Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read16(Pop())); // @
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _gt_DISARM(); // >DISARM
@@ -466,7 +466,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   _gt_C_plus_S(); // >C+S
   Push(0x6626); // IFIELD(UNK_0xf1a5)
   Push(Read16(Pop())); // @
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD

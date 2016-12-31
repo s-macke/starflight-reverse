@@ -174,7 +174,7 @@ void UNK_0xf47c() // UNK_0xf47c
 
   label1:
   ICLOSE(); // ICLOSE
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;

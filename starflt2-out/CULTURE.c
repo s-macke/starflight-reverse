@@ -430,7 +430,7 @@ void UNK_0xf0dc() // UNK_0xf0dc
   Push(0); // 0
   IFIND(); // IFIND
   Push(Pop() | Pop()); // OR
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _star_CLOSE(); // *CLOSE
 }
 

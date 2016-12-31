@@ -442,7 +442,7 @@ void UNK_0xe5f7() // UNK_0xe5f7
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x000d);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("NOTICES", 7); // (.")
   Push(0x0042);
@@ -549,7 +549,7 @@ void UNK_0xe735() // UNK_0xe735
   UNK_0xe44a(); // UNK_0xe44a
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   _gt_2FONT(); // >2FONT
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x00c3);
   POS_dot_(); // POS.
   SetColor("BLACK");
@@ -582,13 +582,13 @@ void UNK_0xe78b() // UNK_0xe78b
   SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   Push(0x00c5);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x000c);
   Push(0x009c);
   UNK_0xe44a(); // UNK_0xe44a
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   _gt_2FONT(); // >2FONT
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x00c3);
   POS_dot_(); // POS.
   SetColor("BLACK");
@@ -624,7 +624,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   {
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   Push((Pop()==Pop())?1:0); // =
   Push(i); // I
   Push(Pop()+1); // 1+
@@ -634,7 +634,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   Push(i); // I
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   _dash_(); // -
   imax = i; // LEAVE
@@ -644,12 +644,12 @@ void UNK_0xe7ca() // UNK_0xe7ca
   } while(i<imax); // (LOOP) 0xffdc
 
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   PICK(); // PICK
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   ROT(); // ROT
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   _dash_(); // -
   Push(Pop()-1); // 1-
@@ -669,13 +669,13 @@ void UNK_0xe81c() // UNK_0xe81c
   Push(pp_CTX); // CTX
   _ex__3(); // !_3
   SWAP(); // SWAP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() * Pop()); // *
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   Push(0x00b4);
   ROT(); // ROT
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -723,7 +723,7 @@ void UNK_0xe856() // UNK_0xe856
 void UNK_0xe866() // UNK_0xe866
 {
   signed short int i, imax;
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
 
   i = Pop();
@@ -797,7 +797,7 @@ void UNK_0xe8b6() // UNK_0xe8b6
 
 void UNK_0xe8d4() // UNK_0xe8d4
 {
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(0x0015);
   UNK_0xe81c(); // UNK_0xe81c
@@ -1046,7 +1046,7 @@ void UNK_0xea28() // UNK_0xea28
   IPREV(); // IPREV
 
   UNK_0x3f3b("***REPEATING LAST NOTICE***");
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   UNK_0xe8d4(); // UNK_0xe8d4
 
   label5:
@@ -1081,13 +1081,13 @@ void UNK_0xea28() // UNK_0xea28
 
 void UNK_0xeb09() // UNK_0xeb09
 {
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00ac);
   POS_dot_(); // POS.
   PRINT("RECOMMENDATION: ", 16); // (.")
   Push(0x6400); // IFIELD(UNK_0xe466)
   _ask_(); // ?
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00a4);
   POS_dot_(); // POS.
   PRINT("DATE: ", 6); // (.")
@@ -1098,37 +1098,37 @@ void UNK_0xeb09() // UNK_0xeb09
   PAD(); // PAD
   Push(0x000a);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x009c);
   POS_dot_(); // POS.
   PRINT("SYSTEM: ", 8); // (.")
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCALE); // *MAPSCALE
+  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCALE); // *MAPSCALE
+  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   _dot_(); // .
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x0094);
   POS_dot_(); // POS.
   PRINT("ORBIT: ", 7); // (.")
   Push(0x6402); // IFIELD(UNK_0xe46b)
   Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x008c);
   POS_dot_(); // POS.
   PRINT("NAME: ", 6); // (.")
   Push(0x6404); // IFIELD(UNK_0xe475)
   Push(0x000f);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x007a);
   POS_dot_(); // POS.
   PRINT("EVALUATION:", 11); // (.")
@@ -1149,7 +1149,7 @@ void UNK_0xebc1() // UNK_0xebc1
   a = Pop(); // >R
   Push(0x0022);
   Push(a); // I
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() * Pop()); // *
   _dash_(); // -
   Push(0x0064);
@@ -1313,7 +1313,7 @@ void UNK_0xed0c() // UNK_0xed0c
 
   UNK_0x3f3b("DUE TO");
   UNK_0xec30(); // UNK_0xec30
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(1); // 1
 
   i = Pop();
@@ -1464,7 +1464,7 @@ void UNK_0xeee3() // UNK_0xeee3
   Push(1); // 1
   OVER(); // OVER
   Push(0x07d0);
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   _gt_SND(); // >SND
 }
 
@@ -1504,7 +1504,7 @@ void UNK_0xef37() // UNK_0xef37
   PRINT("PRESS SPACEBAR FOR NEXT EVALUATION", 34); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   CMESS(); // CMESS
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
@@ -1520,11 +1520,11 @@ void UNK_0xef37() // UNK_0xef37
 void UNK_0xefbc() // UNK_0xefbc
 {
   UNK_0xe78b(); // UNK_0xe78b
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00ac);
   POS_dot_(); // POS.
   PRINT("SUPPLEMENTAL EVALUATION", 23); // (.")
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00a4);
   POS_dot_(); // POS.
   PRINT("SUBJECT: ", 9); // (.")
@@ -1575,7 +1575,7 @@ void UNK_0xf045() // UNK_0xf045
   UNK_0xefbc(); // UNK_0xefbc
   PRINT("LOSS OF TERRAIN VEHICLE", 23); // (.")
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
   UNK_0x3f3b("DUE TO YOUR NEGLIGENCE, YOUR SHIP IS NO LONGER EQUIPPED WITH A TERRAIN VEHICLE. A NEW TERRAIN VEHICLE IS CURRENTLY BEING INSTALLED. CONSEQUENTLY, YOU HAVE BEEN FINED 10,000 MU.");
@@ -1596,7 +1596,7 @@ void UNK_0xf12c() // UNK_0xf12c
   UNK_0xefbc(); // UNK_0xefbc
   PRINT("TOWING CHARGES", 14); // (.")
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
   UNK_0x3f3b("I.S. CORP. REG. 12A-7312 EMERGENCY DISTRESS CALLS: CAPTAIN AND CREW OF ANY VESSEL INVOKING AN EMERGENCY DISTRESS CALL SHALL BE LIABLE FOR ALL COSTS INCURRED BY INTERSTEL CORP. AS A RESULT OF RESCUE OPERATIONS INITIATED ON BEHALF OF SAID CREW.");
@@ -1628,7 +1628,7 @@ void UNK_0xf274() // UNK_0xf274
   UNK_0xefbc(); // UNK_0xefbc
   PRINT("COMPLETION OF MISSION", 21); // (.")
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   UNK_0xe81c(); // UNK_0xe81c
 
   UNK_0x3f3b("CONGRATULATIONS! AS A RESULT OF YOUR EFFORTS, OUR SUN IS ONCE AGAIN STABLE. ALL OF ARTH, AND INDEED THE ENTIRE GALAXY OWES YOU A DEBT WHICH CAN NEVER BE FULLY REPAID. YOUR HEROIC EXPLOITS WILL SURELY BECOME INTER-GALACTIC LEGEND.");

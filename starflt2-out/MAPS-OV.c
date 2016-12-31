@@ -192,7 +192,7 @@ const unsigned short int pp__i_8X8 = 0xf11f; // '8X8 size: 2
 // {0x24, 0xce}
 
 
-const unsigned short int cc_UNK_0xed42 = 0x001e; // UNK_0xed42
+const unsigned short int cc_UNK_0xed42 = 0xed42; // UNK_0xed42
 
 
 // 0xecf2: db 0x87 0x00 0x14 0x22 0x20 0x00 '   "  '
@@ -552,7 +552,7 @@ void _4X4CONTOUR() // 4X4CONTOUR
   Push(0x000f);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
@@ -608,7 +608,7 @@ void UNK_0xeff3() // UNK_0xeff3
   imax = Pop();
   do // (DO)
   {
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   j = Pop();
@@ -690,8 +690,8 @@ void UNK_0xeff3() // UNK_0xeff3
   _099(); // 099
   _ex_COLOR(); // !COLOR
   _2DUP(); // 2DUP
-  Push(cc__3); // 3
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__3)); // 3
   BUFFERX(); // BUFFERX
   Push(Pop()-1); // 1-
   CBLTP(); // CBLTP
@@ -736,7 +736,7 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(0x000e);
@@ -771,7 +771,7 @@ void UNK_0xf123() // UNK_0xf123
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   _gt_2ICONF(); // >2ICONF
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
@@ -859,7 +859,7 @@ void UNK_0xf1bd() // UNK_0xf1bd
   Push(Read16(Pop())); // @
   Push(pp__i__dot_BACKG); // '.BACKG
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
@@ -1297,7 +1297,7 @@ void UNK_0xf42e() // UNK_0xf42e
 {
   Push(pp_RECORD_n_); // RECORD#
   _st__ex__gt_(); // <!>
-  Push(cc_UNK_0xed42); // UNK_0xed42
+  Push(Read16(cc_UNK_0xed42)); // UNK_0xed42
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   LoadData("UNK_0xed46"); // from 'COMPOUNDS   '
@@ -1409,7 +1409,7 @@ void UNK_0xf4b5() // UNK_0xf4b5
 void UNK_0xf4e2() // UNK_0xf4e2
 {
   UNK_0xf473(); // UNK_0xf473
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
   UNK_0xf4a0(); // UNK_0xf4a0

@@ -75,7 +75,7 @@ void BLT(); // BLT
 void UNK_0xf2c6() // UNK_0xf2c6
 {
   signed short int i, imax;
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   i = Pop();
@@ -84,7 +84,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   {
   Push(pp_CMAP); // CMAP
   Push(i); // I
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PT); // TILE-PT
@@ -189,7 +189,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   {
   Push(Read16(regsp)); // DUP
   Push(i); // I
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
@@ -266,10 +266,10 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x0014);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(pp_ICON_h_); // ICON^
@@ -288,7 +288,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(cc__dash_2); // -2
+  Push(Read16(cc__dash_2)); // -2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);

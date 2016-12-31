@@ -160,7 +160,7 @@ void _ro_TRIM() // (TRIM
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xefe5); // UNK_0xefe5
   Push(Pop() + Pop()); // +
@@ -325,7 +325,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(0x005b);
   WITHIN(); // WITHIN
   Push(b); // I
-  Push(cc_BL); // BL
+  Push(Read16(cc_BL)); // BL
   Push((Pop()==Pop())?1:0); // =
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -357,7 +357,7 @@ void _ro__n_IN_do_() // (#IN$
 
   label2:
   Push(b); // I
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   UNK_0xf035(); // UNK_0xf035
@@ -504,7 +504,7 @@ void UNK_0xf279() // UNK_0xf279
 {
   TTY_dash_SCR(); // TTY-SCR
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   CTPOS_dot_(); // CTPOS.
 
   UNK_0x3f3b("COMMUNICATIONS");
@@ -600,19 +600,19 @@ void EINDE() // EINDE
     Push(2); // 2
     break;
   case 2:
-    Push(cc__3); // 3
+    Push(Read16(cc__3)); // 3
     break;
   case 3:
-    Push(cc__6); // 6
+    Push(Read16(cc__6)); // 6
     break;
   case 4:
-    Push(cc__5); // 5
+    Push(Read16(cc__5)); // 5
     break;
   case 5:
     Push(1); // 1
     break;
   case 6:
-    Push(cc__4); // 4
+    Push(Read16(cc__4)); // 4
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -645,7 +645,7 @@ void UNK_0xf319() // UNK_0xf319
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON(); // BEEPON
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(0); // 0
 
   i = Pop();
@@ -669,7 +669,7 @@ void UNK_0xf319() // UNK_0xf319
   } while(i<imax); // (LOOP) 0xffd0
 
   BEEPOFF(); // BEEPOFF
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(pp__n_AUX); // #AUX
   _ex__3(); // !_3
 }
@@ -852,7 +852,7 @@ void _eq_CARG() // =CARG
 
   label4:
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);

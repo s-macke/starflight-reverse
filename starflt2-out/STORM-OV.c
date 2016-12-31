@@ -126,7 +126,7 @@ void UNK_0xf134() // UNK_0xf134
   signed short int i, imax;
   unsigned short int a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(Pop() * Pop()); // *
   Push(Read16(regsp)); // DUP
   _co_(); // ,
@@ -139,11 +139,11 @@ void UNK_0xf134() // UNK_0xf134
   CODE(); // (;CODE) inlined assembler code
 // 0xf14c: call   1649
   Push(0); // 0
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   ROLL(); // ROLL
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   ROLL(); // ROLL
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   ROLL(); // ROLL
   UNK_0xf126(); // UNK_0xf126
 
@@ -153,18 +153,18 @@ void UNK_0xf134() // UNK_0xf134
   {
   Push(i); // I
   _2_at_(); // 2@
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
   a = Pop(); // >R
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   ROLL(); // ROLL
   Pop(); // DROP
   ROT(); // ROT
@@ -172,7 +172,7 @@ void UNK_0xf134() // UNK_0xf134
   imax = i; // LEAVE
 
   label1:
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -181,7 +181,7 @@ void UNK_0xf134() // UNK_0xf134
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   return;
@@ -318,9 +318,9 @@ void UNK_0xf318() // UNK_0xf318
   _gt_C_plus_S(); // >C+S
   Push(0x65f2); // IFIELD(UNK_0xf301)
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   RRND(); // RRND
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _1_dot_5_at_(); // 1.5@
@@ -336,7 +336,7 @@ void UNK_0xf332() // UNK_0xf332
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
@@ -472,7 +472,7 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   Push(0x0074);
@@ -493,10 +493,10 @@ void UNK_0xf468() // UNK_0xf468
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _gt_(); // >
   if (Pop() == 0) goto label1;
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label2;
@@ -528,7 +528,7 @@ void UNK_0xf468() // UNK_0xf468
 
 void UNK_0xf4a6() // UNK_0xf4a6
 {
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   SWAP(); // SWAP
   _dash_(); // -
   _3_star_(); // 3*

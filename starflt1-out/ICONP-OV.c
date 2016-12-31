@@ -82,17 +82,17 @@ void CI(); // CI
 // =========== VARIABLES ===========
 // =================================
 
-const unsigned short int cc_UNK_0xf267 = 0x0034; // UNK_0xf267
-const unsigned short int cc_UNK_0xf26b = 0x0034; // UNK_0xf26b
-const unsigned short int cc_UNK_0xf26f = 0x0033; // UNK_0xf26f
-const unsigned short int cc_UNK_0xf273 = 0x0033; // UNK_0xf273
-const unsigned short int cc_UNK_0xf277 = 0x0014; // UNK_0xf277
-const unsigned short int cc_UNK_0xf27b = 0x0015; // UNK_0xf27b
-const unsigned short int cc_UNK_0xf27f = 0x0016; // UNK_0xf27f
-const unsigned short int cc_UNK_0xf283 = 0x0017; // UNK_0xf283
-const unsigned short int cc_UNK_0xf287 = 0x0018; // UNK_0xf287
-const unsigned short int cc_UNK_0xf28b = 0x0019; // UNK_0xf28b
-const unsigned short int cc_UNK_0xf28f = 0x001a; // UNK_0xf28f
+const unsigned short int cc_UNK_0xf267 = 0xf267; // UNK_0xf267
+const unsigned short int cc_UNK_0xf26b = 0xf26b; // UNK_0xf26b
+const unsigned short int cc_UNK_0xf26f = 0xf26f; // UNK_0xf26f
+const unsigned short int cc_UNK_0xf273 = 0xf273; // UNK_0xf273
+const unsigned short int cc_UNK_0xf277 = 0xf277; // UNK_0xf277
+const unsigned short int cc_UNK_0xf27b = 0xf27b; // UNK_0xf27b
+const unsigned short int cc_UNK_0xf27f = 0xf27f; // UNK_0xf27f
+const unsigned short int cc_UNK_0xf283 = 0xf283; // UNK_0xf283
+const unsigned short int cc_UNK_0xf287 = 0xf287; // UNK_0xf287
+const unsigned short int cc_UNK_0xf28b = 0xf28b; // UNK_0xf28b
+const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 
 
 // 0xf232: db 0x32 0x00 '2 '
@@ -229,10 +229,10 @@ void STAR_dash_ID_dash_CASES() // STAR-ID-CASES
   switch(Pop()) // STAR-ID-CASES
   {
   case 2:
-    Push(cc_UNK_0xf26b); // UNK_0xf26b
+    Push(Read16(cc_UNK_0xf26b)); // UNK_0xf26b
     break;
   default:
-    Push(cc_UNK_0xf267); // UNK_0xf267
+    Push(Read16(cc_UNK_0xf267)); // UNK_0xf267
     break;
 
   }
@@ -259,10 +259,10 @@ void PLANET_dash_ID_dash_CASES() // PLANET-ID-CASES
   switch(Pop()) // PLANET-ID-CASES
   {
   case 2:
-    Push(cc_UNK_0xf273); // UNK_0xf273
+    Push(Read16(cc_UNK_0xf273)); // UNK_0xf273
     break;
   default:
-    Push(cc_UNK_0xf26f); // UNK_0xf26f
+    Push(Read16(cc_UNK_0xf26f)); // UNK_0xf26f
     break;
 
   }
@@ -307,7 +307,7 @@ void BOX_dash_ID() // BOX-ID
     UNK_0xf2ff(); // UNK_0xf2ff
     break;
   default:
-    Push(cc_INVIS_dash_I); // INVIS-I
+    Push(Read16(cc_INVIS_dash_I)); // INVIS-I
     break;
 
   }
@@ -341,7 +341,7 @@ void SPACE_dash_ID() // SPACE-ID
     UNK_0xf293(); // UNK_0xf293
     break;
   case 23:
-    Push(cc_SYS_dash_ICO); // SYS-ICO
+    Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
     break;
   case 24:
     UNK_0xf2d9(); // UNK_0xf2d9
@@ -353,13 +353,13 @@ void SPACE_dash_ID() // SPACE-ID
     UNK_0xf2ff(); // UNK_0xf2ff
     break;
   case 45:
-    Push(cc_FLUX_dash_IC); // FLUX-IC
+    Push(Read16(cc_FLUX_dash_IC)); // FLUX-IC
     break;
   case 46:
     UNK_0xf309(); // UNK_0xf309
     break;
   default:
-    Push(cc_INVIS_dash_I); // INVIS-I
+    Push(Read16(cc_INVIS_dash_I)); // INVIS-I
     break;
 
   }
@@ -374,13 +374,13 @@ void RUIN_dash_ID_dash_CASES() // RUIN-ID-CASES
   switch(Pop()) // RUIN-ID-CASES
   {
   case 2:
-    Push(cc_UNK_0xf287); // UNK_0xf287
+    Push(Read16(cc_UNK_0xf287)); // UNK_0xf287
     break;
   case 4:
-    Push(cc_UNK_0xf287); // UNK_0xf287
+    Push(Read16(cc_UNK_0xf287)); // UNK_0xf287
     break;
   default:
-    Push(cc_UNK_0xf283); // UNK_0xf283
+    Push(Read16(cc_UNK_0xf283)); // UNK_0xf283
     break;
 
   }
@@ -424,14 +424,14 @@ void UNK_0xf38f() // UNK_0xf38f
 void UNK_0xf3ab() // UNK_0xf3ab
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x002c);
   return;
 
   label1:
-  Push(cc_UNK_0xf27b); // UNK_0xf27b
+  Push(Read16(cc_UNK_0xf27b)); // UNK_0xf27b
 }
 
 
@@ -444,25 +444,25 @@ void PLANET_dash_ID() // PLANET-ID
   switch(Pop()) // PLANET-ID
   {
   case 40:
-    Push(cc_UNK_0xf277); // UNK_0xf277
+    Push(Read16(cc_UNK_0xf277)); // UNK_0xf277
     break;
   case 41:
     UNK_0xf387(); // UNK_0xf387
     break;
   case 42:
-    Push(cc_UNK_0xf28f); // UNK_0xf28f
+    Push(Read16(cc_UNK_0xf28f)); // UNK_0xf28f
     break;
   case 68:
     UNK_0xf38f(); // UNK_0xf38f
     break;
   case 20:
-    Push(cc_UNK_0xf28b); // UNK_0xf28b
+    Push(Read16(cc_UNK_0xf28b)); // UNK_0xf28b
     break;
   case 26:
     UNK_0xf3ab(); // UNK_0xf3ab
     break;
   case 28:
-    Push(cc_UNK_0xf27f); // UNK_0xf27f
+    Push(Read16(cc_UNK_0xf27f)); // UNK_0xf27f
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -542,11 +542,11 @@ void UNK_0xf43d() // UNK_0xf43d
   Push(0x6400); // IFIELD(UNK_0xf255)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
-  Push(cc_DEFAULT); // DEFAULT
+  Push(Read16(cc_DEFAULT)); // DEFAULT
   return;
 
   label1:
-  Push(cc_DEAD_dash_IC); // DEAD-IC
+  Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 
 
@@ -600,11 +600,11 @@ void UNK_0xf485() // UNK_0xf485
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   if (Pop() == 0) goto label1;
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   return;
 
   label1:
-  Push(cc_DEFAULT); // DEFAULT
+  Push(Read16(cc_DEFAULT)); // DEFAULT
 }
 
 
@@ -623,7 +623,7 @@ void BOX_dash_IC() // BOX-IC
     UNK_0xf47b(); // UNK_0xf47b
     break;
   default:
-    Push(cc_DEFAULT); // DEFAULT
+    Push(Read16(cc_DEFAULT)); // DEFAULT
     break;
 
   }
@@ -672,7 +672,7 @@ void _n_IC_dash_CASES() // #IC-CASES
     SetColor("DK-GREEN");
     break;
   default:
-    Push(cc_DEFAULT); // DEFAULT
+    Push(Read16(cc_DEFAULT)); // DEFAULT
     break;
 
   }

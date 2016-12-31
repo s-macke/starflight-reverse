@@ -130,7 +130,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0); // 0
 
   i = Pop();
@@ -139,7 +139,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   {
   Push(0x6400); // IFIELD(UNK_0xf08d)
   Push(i); // I
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
@@ -321,7 +321,7 @@ void UNK_0xf26f() // UNK_0xf26f
   UNK_0xf244(); // UNK_0xf244
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() | Pop()); // OR
   Push(0x640f); // IFIELD(UNK_0xf088)
   _ex__3(); // !_3
@@ -400,7 +400,7 @@ void UNK_0xf31e() // UNK_0xf31e
   UNK_0xf2f1(); // UNK_0xf2f1
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() | Pop()); // OR
   Push(0x640f); // IFIELD(UNK_0xf088)
   _ex__3(); // !_3
@@ -419,7 +419,7 @@ void UNK_0xf334() // UNK_0xf334
   INEXT(); // INEXT
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -437,7 +437,7 @@ void UNK_0xf348() // UNK_0xf348
   IPREV(); // IPREV
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -483,7 +483,7 @@ void UNK_0xf373() // UNK_0xf373
   label2:
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -567,7 +567,7 @@ void UNK_0xf421() // UNK_0xf421
   CTCR(); // CTCR
   Push(0x640f); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(0x63fa); // IFIELD(UNK_0xf07e)
@@ -604,7 +604,7 @@ void _ro__slash_EXAMINE_rc_() // (/EXAMINE)
 void _ro__slash_TREAT_rc_() // (/TREAT)
 {
   CTERASE(); // CTERASE
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   UNK_0xf0a6(); // UNK_0xf0a6
   if (Pop() == 0) goto label1;
   _2DUP(); // 2DUP

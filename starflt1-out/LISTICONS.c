@@ -89,7 +89,7 @@ void altitude() // altitude
   Push(0x001f);
   Push(0x002e);
   LLINE(); // LLINE
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   i = Pop();
@@ -98,7 +98,7 @@ void altitude() // altitude
   {
   Push(pp_CMAP); // CMAP
   Push(i); // I
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PTR); // TILE-PTR
@@ -181,7 +181,7 @@ void _dot_BLT() // .BLT
   {
   Push(Read16(regsp)); // DUP
   Push(i); // I
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
@@ -241,10 +241,10 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(0x0014);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(0x003e);
@@ -256,7 +256,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(cc__dash_2); // -2
+  Push(Read16(cc__dash_2)); // -2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);

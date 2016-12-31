@@ -228,7 +228,7 @@ void UNK_0xe59e() // UNK_0xe59e
   if (Pop() == 0) return;
   BEEPON_2(); // BEEPON_2
   Push(0x00c8);
-  Push(cc_MPS); // MPS
+  Push(Read16(cc_MPS)); // MPS
   Push(Pop()-1); // 1-
   Push(Pop() * Pop()); // *
   Push(0x01f4);
@@ -244,7 +244,7 @@ void UNK_0xe59e() // UNK_0xe59e
   Push(i); // I
   TONE(); // TONE
   Push(0x000a);
-  Push(cc_MPS); // MPS
+  Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0); // 0
 
@@ -472,7 +472,7 @@ void UNK_0xe84f() // UNK_0xe84f
   label3:
   Push(Read16(regsp)); // DUP
   UNK_0xe658(); // UNK_0xe658
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   _dot_BTN_dash_TE(); // .BTN-TE
 }
 
@@ -526,7 +526,7 @@ void UNK_0xea51() // UNK_0xea51
 
 void UNK_0xea63() // UNK_0xea63
 {
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0x003a);
   Push(1); // 1
   _at_RECORD(); // @RECORD
@@ -610,7 +610,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   _dot_TTY(); // .TTY
 
   label2:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _star_CLOSE(); // *CLOSE
 }
 
@@ -627,7 +627,7 @@ void UNK_0xec70() // UNK_0xec70
   INEXT(); // INEXT
   Push(0x6601); // IFIELD(UNK_0xe634)
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -645,7 +645,7 @@ void UNK_0xec84() // UNK_0xec84
   IPREV(); // IPREV
   Push(0x6601); // IFIELD(UNK_0xe634)
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(1); // 1
@@ -681,13 +681,13 @@ void NPCREW() // NPCREW
 void UNK_0xee17() // UNK_0xee17
 {
   signed short int i, imax;
-  Push(cc_TRUE); // TRUE
+  Push(Read16(cc_TRUE)); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0); // 0
 
   i = Pop();
@@ -699,7 +699,7 @@ void UNK_0xee17() // UNK_0xee17
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   _eq_SPECIE(); // =SPECIE
   Push(0x6600); // IFIELD(UNK_0xea9c)
   Push(Read8(Pop())&0xFF); // C@
@@ -748,7 +748,7 @@ void UNK_0xf190() // UNK_0xf190
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   a = Pop(); // >R
@@ -759,7 +759,7 @@ void UNK_0xf190() // UNK_0xf190
 
   label1:
   ICLOSE(); // ICLOSE
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;

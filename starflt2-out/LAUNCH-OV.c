@@ -209,7 +209,7 @@ void UNK_0xf11a() // UNK_0xf11a
   Push(0x2710);
   TONE(); // TONE
   Push(1); // 1
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
 
   i = Pop();
   imax = Pop();
@@ -228,7 +228,7 @@ void UNK_0xf11a() // UNK_0xf11a
   V_gt_DISPL(); // V>DISPL
   Push(0x0190);
   MS(); // MS
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -283,7 +283,7 @@ void UNK_0xf192() // UNK_0xf192
 
 void UNK_0xf1a6() // UNK_0xf1a6
 {
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   SWAP(); // SWAP
   Push(0x004b);
   OVER(); // OVER
@@ -327,11 +327,11 @@ void UNK_0xf1e4() // UNK_0xf1e4
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00be);
   Push(0x004c);
   Push(a); // I
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00bf);
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
@@ -347,11 +347,11 @@ void UNK_0xf202() // UNK_0xf202
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(a); // I
   Push(0x004c);
   Push(0x0049);
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(a); // I
   Push(Pop()-1); // 1-
   LCOPYBL(); // LCOPYBL
@@ -387,15 +387,15 @@ void _dot_AIRLOCK() // .AIRLOCK
   POS_dot_(); // POS.
   PRINT("CAUTION", 7); // (.")
   _gt_1FONT(); // >1FONT
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0x005d);
   POS_dot_(); // POS.
   PRINT("PRESSURIZED AREA", 16); // (.")
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0x001e);
   POS_dot_(); // POS.
   PRINT("STANDARD AIRLOCK", 16); // (.")
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0x0014);
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
@@ -468,20 +468,20 @@ void UNK_0xf32a() // UNK_0xf32a
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf312(); // UNK_0xf312
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00bf);
   Push(0x004c);
   Push(0x00bf);
   Push(a); // I
   _dash_(); // -
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00be);
   goto label2;
 
   label1:
   Push(0x0048);
   UNK_0xf312(); // UNK_0xf312
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x0048);
   Push(a); // I
   Push(Pop() + Pop()); // +
@@ -500,7 +500,7 @@ void UNK_0xf32a() // UNK_0xf32a
   UNK_0xf320(); // UNK_0xf320
   Push(pp_DBUF_dash_SE); // DBUF-SE
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
   Push(0x0024);
@@ -534,7 +534,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
-  Push(cc_TRUE); // TRUE
+  Push(Read16(cc_TRUE)); // TRUE
   if (Pop() == 0) goto label1;
   Push(0x003b);
   Push(0); // 0
@@ -584,7 +584,7 @@ void _and_LAUNCH() // &LAUNCH
 {
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
@@ -619,7 +619,7 @@ void _and_RETURN() // &RETURN
   signed short int j, jmax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0x0012);
   RRND(); // RRND
   Push(0); // 0
@@ -653,7 +653,7 @@ void _and_RETURN() // &RETURN
   _dot_AIRLOCK(); // .AIRLOCK
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
-  Push(cc_FALSE); // FALSE
+  Push(Read16(cc_FALSE)); // FALSE
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf1a6(); // UNK_0xf1a6

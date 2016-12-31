@@ -149,7 +149,7 @@ void UNK_0xf177() // UNK_0xf177
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   IFIND(); // IFIND
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
@@ -280,14 +280,14 @@ void UNK_0xf258() // UNK_0xf258
   _at__gt_C_plus_S(); // @>C+S
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCALE); // *MAPSCALE
+  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
-  Push(cc__star_MAPSCALE); // *MAPSCALE
+  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   Push(0); // 0
   _dot_R(); // .R
@@ -298,7 +298,7 @@ void UNK_0xf258() // UNK_0xf258
   TTY_dash_SCR(); // TTY-SCR
   TTY_dash_SCR(); // TTY-SCR
   Push(0x1388);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0x0032);
   Push(0x03e8);
   Push(2); // 2
@@ -426,7 +426,7 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf32c(); // UNK_0xf32c
   Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   _ex__3(); // !_3
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_GWF); // GWF
   _ex__3(); // !_3
   UNK_0xf1db(); // UNK_0xf1db

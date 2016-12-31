@@ -117,7 +117,7 @@ void _dot_NOFUN() // .NOFUN
 {
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _st_(); // <
   if (Pop() == 0) goto label1;
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
@@ -211,12 +211,12 @@ void UNK_0xf436() // UNK_0xf436
   UNK_0xf3f6(); // UNK_0xf3f6
   Push(pp__dash_END); // -END
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _star__slash_(); // */
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
   LoadData("ELEM-VA"); // from 'ELEMENT     '
@@ -253,7 +253,7 @@ void UNK_0xf47a() // UNK_0xf47a
   Push(Read16(regsp)); // DUP
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -322,13 +322,13 @@ void TOW_dash_US() // TOW-US
   if (Pop() == 0) goto label1;
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push((Pop()==Pop())?1:0); // =
   Push(pp__n_VESS); // #VESS
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  Push(cc__ask_CALLED); // ?CALLED
+  Push(Read16(cc__ask_CALLED)); // ?CALLED
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;

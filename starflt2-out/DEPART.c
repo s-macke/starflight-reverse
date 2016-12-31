@@ -104,7 +104,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
 void UNK_0xf3ba() // UNK_0xf3ba
 {
   _at_INST_dash_S(); // @INST-S
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _st_(); // <
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
@@ -120,8 +120,8 @@ void UNK_0xf3ba() // UNK_0xf3ba
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   _at_INST_dash_S(); // @INST-S
-  Push(cc__3); // 3
-  Push(cc__5); // 5
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__5)); // 5
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
   Push(Pop() | Pop()); // OR
@@ -139,19 +139,19 @@ void DISPOSAL() // DISPOSAL
   switch(Pop()) // DISPOSAL
   {
   case 68:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   case 26:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   case 21:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   case 31:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   case 33:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   case 28:
     UNK_0xf3ae(); // UNK_0xf3ae
@@ -160,10 +160,10 @@ void DISPOSAL() // DISPOSAL
     UNK_0xf3ba(); // UNK_0xf3ba
     break;
   case 9:
-    Push(cc_TRUE); // TRUE
+    Push(Read16(cc_TRUE)); // TRUE
     break;
   default:
-    Push(cc_FALSE); // FALSE
+    Push(Read16(cc_FALSE)); // FALSE
     break;
 
   }
@@ -183,7 +183,7 @@ void UNK_0xf423() // UNK_0xf423
   return;
 
   label1:
-  Push(cc_FALSE); // FALSE
+  Push(Read16(cc_FALSE)); // FALSE
 }
 
 
@@ -303,9 +303,9 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(Pop()-1); // 1-
   SWAP(); // SWAP
   ABS(); // ABS
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _slash_(); // /
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   MAX(); // MAX
   Push(Pop() * Pop()); // *
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
@@ -346,7 +346,7 @@ void DEPART() // DEPART
   UNK_0xf48d(); // UNK_0xf48d
 
   label1:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_PLHI); // PLHI
   _ex__2(); // !_2
   Push(pp__ask_LANDED); // ?LANDED

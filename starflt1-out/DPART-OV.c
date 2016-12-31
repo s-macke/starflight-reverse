@@ -132,8 +132,8 @@ void V_gt_DISPLAY(); // V>DISPLAY
 // =========== VARIABLES ===========
 // =================================
 
-const unsigned short int cc_UNK_0xef66 = 0x03e8; // UNK_0xef66
-const unsigned short int cc_UNK_0xef6a = 0x0fa0; // UNK_0xef6a
+const unsigned short int cc_UNK_0xef66 = 0xef66; // UNK_0xef66
+const unsigned short int cc_UNK_0xef6a = 0xef6a; // UNK_0xef6a
 
 
 // 0xef62: db 0x5e 0x00 '^ '
@@ -162,14 +162,14 @@ void UNK_0xef73() // UNK_0xef73
   signed short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   _gt_2FONT(); // >2FONT
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0); // 0
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(cc_UNK_0xef66); // UNK_0xef66
+  Push(Read16(cc_UNK_0xef66)); // UNK_0xef66
   TONE(); // TONE
   BEEPON(); // BEEPON
   SetColor("DK-BLUE");
@@ -207,7 +207,7 @@ void UNK_0xef73() // UNK_0xef73
 
   UNK_0x3f3b("MESSAGE");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(cc_UNK_0xef6a); // UNK_0xef6a
+  Push(Read16(cc_UNK_0xef6a)); // UNK_0xef6a
   TONE(); // TONE
   V_gt_DISPLAY(); // V>DISPLAY
   Push(0x01f4);
@@ -226,7 +226,7 @@ void UNK_0xef73() // UNK_0xef73
 void UNK_0xf008() // UNK_0xf008
 {
   _gt_DISPLAY(); // >DISPLAY
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0x00bf);
   POS_dot_(); // POS.
   Push(0x003c);
@@ -349,7 +349,7 @@ void UNK_0xf09c() // UNK_0xf09c
   Push(0xa120); Push(0x0007);
   Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
@@ -385,7 +385,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label2;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _st_(); // <
   Push(Pop() & Pop()); // AND
 
@@ -408,7 +408,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label4;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push((Pop()==Pop())?1:0); // =
   Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
@@ -537,7 +537,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   UNK_0x3f3b("THE BLACK EGG... ");
   _dot_TTY(); // .TTY
   Push(1); // 1
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
 
   i = Pop();
   imax = Pop();
@@ -551,7 +551,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   _dot_TTY(); // .TTY
   Push(0x03e8);
   MS(); // MS
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -584,8 +584,8 @@ void UNK_0xf25e() // UNK_0xf25e
 
   UNK_0x3f3b("BOOM!");
   _dot_TTY(); // .TTY
-  Push(cc__3); // 3
-  Push(cc_MPS); // MPS
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0); // 0
 
@@ -763,7 +763,7 @@ void UNK_0xf39d() // UNK_0xf39d
   Push(0x003d);
   Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -904,7 +904,7 @@ void DEPART() // DEPART
   UNK_0xf1ac(); // UNK_0xf1ac
 
   label1:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_PLHI); // PLHI
   _ex__3(); // !_3
   Push(pp__ask_LANDED); // ?LANDED

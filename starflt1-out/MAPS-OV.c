@@ -203,7 +203,7 @@ const unsigned short int pp__i_8X8 = 0xf12f; // '8X8 size: 2
 // {0x3c, 0xce}
 
 
-const unsigned short int cc_UNK_0xed02 = 0x0082; // UNK_0xed02
+const unsigned short int cc_UNK_0xed02 = 0xed02; // UNK_0xed02
 
 
 // 0xecb2: db 0x8c 0x00 0x14 0x22 0x20 0x00 '   "  '
@@ -430,11 +430,11 @@ void UNK_0xee28() // UNK_0xee28
 void UNK_0xee3e() // UNK_0xee3e
 {
   Push(0x0040);
-  Push(cc__3); // 3
-  Push(cc__7); // 7
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__7)); // 7
   Push(0x0026);
   WINDOW(); // WINDOW
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_WBOTTOM); // WBOTTOM
   _st__plus__ex__gt_(); // <+!>
   _gt_TVCT(); // >TVCT
@@ -613,7 +613,7 @@ void _4X4CONTOUR() // 4X4CONTOUR
   Push(0x000f);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
@@ -669,7 +669,7 @@ void UNK_0xf007() // UNK_0xf007
   imax = Pop();
   do // (DO)
   {
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   j = Pop();
@@ -750,8 +750,8 @@ void UNK_0xf007() // UNK_0xf007
   Push(pp_COLOR); // COLOR
   _ex__3(); // !_3
   _2DUP(); // 2DUP
-  Push(cc__3); // 3
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__3)); // 3
   BUFFERXY(); // BUFFERXY
   CBLTP(); // CBLTP
   BLT(); // BLT
@@ -795,7 +795,7 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(0x000e);
@@ -833,7 +833,7 @@ void UNK_0xf133() // UNK_0xf133
   DARK(); // DARK
   _gt_2ICONF(); // >2ICONF
   VCLIPSET(); // VCLIPSET
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XPIX); // XWLD:XPIX
   _st__ex__gt_(); // <!>
@@ -920,7 +920,7 @@ void UNK_0xf1cf() // UNK_0xf1cf
   Push(Read16(Pop())); // @
   Push(pp__i__dot_BACKG); // '.BACKG
   _st__ex__gt_(); // <!>
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XPIX); // XWLD:XPIX
   _st__ex__gt_(); // <!>
@@ -1357,7 +1357,7 @@ void UNK_0xf440() // UNK_0xf440
 {
   Push(pp_RECORD_n_); // RECORD#
   _st__ex__gt_(); // <!>
-  Push(cc_UNK_0xed02); // UNK_0xed02
+  Push(Read16(cc_UNK_0xed02)); // UNK_0xed02
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   LoadData("UNK_0xed06"); // from 'COMPOUNDS   '
@@ -1469,7 +1469,7 @@ void UNK_0xf4c7() // UNK_0xf4c7
 void UNK_0xf4f4() // UNK_0xf4f4
 {
   UNK_0xf485(); // UNK_0xf485
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
   UNK_0xf4b2(); // UNK_0xf4b2

@@ -328,11 +328,11 @@ const unsigned short int pp_UNK_0xef9e = 0xef9e; // UNK_0xef9e size: 2
 void UNK_0xe0b6() // UNK_0xe0b6
 {
   Push(0x0040);
-  Push(cc__3); // 3
-  Push(cc__7); // 7
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__7)); // 7
   Push(0x0026);
   WINDOW(); // WINDOW
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex_(); // +!
 }
@@ -536,7 +536,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   _st_(); // <
   a = Pop(); // >R
   Push(pp_WEAPXY); // WEAPXY
@@ -544,7 +544,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   _st_(); // <
   Push(a); // R>
   Push(Pop() & Pop()); // AND
@@ -744,7 +744,7 @@ void UNK_0xe398() // UNK_0xe398
 {
   LoadData("UNK_0xe16d"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   UNK_0xe0e4(); // UNK_0xe0e4
 }
@@ -758,7 +758,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
 {
   LoadData("UNK_0xe16d"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() & Pop()); // AND
   UNK_0xe0e4(); // UNK_0xe0e4
   UNK_0xe398(); // UNK_0xe398
@@ -807,7 +807,7 @@ void UNK_0xe40e() // UNK_0xe40e
 
 void UNK_0xe41a() // UNK_0xe41a
 {
-  Push(cc_FALSE); // FALSE
+  Push(Read16(cc_FALSE)); // FALSE
 }
 
 // 0xe41e: db 0x4c 0x22 0xc6 0xe1 0x92 0x0c 0x9b 0x3b 0xf5 0x12 0xe2 0xe0 0x90 0x16 'L"     ;      '
@@ -1054,8 +1054,8 @@ void UNK_0xe564() // UNK_0xe564
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  Push(cc__dash_1); // -1
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
+  Push(Read16(cc__dash_1)); // -1
   return;
 
   label1:
@@ -1294,7 +1294,7 @@ void UNK_0xe6bc() // UNK_0xe6bc
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xe6b0(); // UNK_0xe6b0
-  Push(cc_DEAD_dash_IC); // DEAD-IC
+  Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
   _ex_IC(); // !IC
 }
 
@@ -1317,12 +1317,12 @@ void UNK_0xe6d0() // UNK_0xe6d0
   Push(Read16(Pop())); // @
   Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(2); // 2
   RRND(); // RRND
   Push(0x63fc); // IFIELD(INST-X)
   _plus__ex_(); // +!
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(2); // 2
   RRND(); // RRND
   Push(0x63fe); // IFIELD(INST-Y)
@@ -1600,7 +1600,7 @@ void UNK_0xe86f() // UNK_0xe86f
   return;
 
   label2:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
 }
 
 
@@ -1614,9 +1614,9 @@ void UNK_0xe89b() // UNK_0xe89b
   _gt_C_plus_S(); // >C+S
   Push(0x6400); // IFIELD(UNK_0xe865)
   Push(0); // 0
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   RRND(); // RRND
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _1_dot_5_at_(); // 1.5@
@@ -1670,7 +1670,7 @@ void UNK_0xe8e4() // UNK_0xe8e4
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _slash_(); // /
 }
 
@@ -1707,7 +1707,7 @@ void UNK_0xe91a() // UNK_0xe91a
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0x000b);
   WITHIN(); // WITHIN
   if (Pop() == 0) return;
@@ -1735,7 +1735,7 @@ void UNK_0xe946() // UNK_0xe946
   Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _dash_(); // -
   POS_dot_(); // POS.
   SetColor("WHITE");
@@ -1983,7 +1983,7 @@ void SIMULATE() // SIMULATE
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label3;
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   SWAP(); // SWAP
   _st__plus__ex__gt_(); // <+!>
   goto label2;
@@ -2075,7 +2075,7 @@ void _ask__dot_STORM() // ?.STORM
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _gt_(); // >
   Push(pp_STORM); // STORM
   Push(Read16(Pop())); // @
@@ -2099,7 +2099,7 @@ void _ask_STORM() // ?STORM
   Push(pp_STORM); // STORM
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_STORM); // STORM
   _plus__ex_(); // +!
   _ask__dot_STORM(); // ?.STORM
@@ -2127,7 +2127,7 @@ void _ask_STORM() // ?STORM
 
   label4:
   Push(1); // 1
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   RRND(); // RRND
   Push(pp__n_STORM); // #STORM
   _ex__3(); // !_3
@@ -2136,7 +2136,7 @@ void _ask_STORM() // ?STORM
   Push(1); // 1
   LoadData("ATMO.ACTIV"); // from 'PLANET      '
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   SWAP(); // SWAP
   _dash_(); // -
   _3_star_(); // 3*
@@ -2206,7 +2206,7 @@ void angle_gt_text() // angle>text
 
   label3:
   Push(1); // 1
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() == 0) goto label4;
@@ -2216,7 +2216,7 @@ void angle_gt_text() // angle>text
 
   label4:
   Push(0); // 0
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() == 0) goto label5;
@@ -2225,8 +2225,8 @@ void angle_gt_text() // angle>text
   return;
 
   label5:
-  Push(cc__dash_1); // -1
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
+  Push(Read16(cc__dash_1)); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() == 0) goto label6;
@@ -2235,7 +2235,7 @@ void angle_gt_text() // angle>text
   return;
 
   label6:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -2245,7 +2245,7 @@ void angle_gt_text() // angle>text
   return;
 
   label7:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(1); // 1
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -2510,12 +2510,12 @@ void UNK_0xf077() // UNK_0xf077
 
   label1:
   Push(0); // 0
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() == 0) goto label3;
   Pop(); Pop();// 2DROP
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   UNK_0xf06b(); // UNK_0xf06b
   goto label2;
 
@@ -2536,7 +2536,7 @@ void UNK_0xf077() // UNK_0xf077
   _ask_EMBARK(); // ?EMBARK
   if (Pop() == 0) return;
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(Read16(regsp)); // DUP
   Push(pp_YVIS); // YVIS
   _st__plus__ex__gt_(); // <+!>
@@ -2546,7 +2546,7 @@ void UNK_0xf077() // UNK_0xf077
   OFF(); // OFF
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(0x63fe); // IFIELD(INST-Y)
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
@@ -2572,7 +2572,7 @@ void _dash_STORM() // -STORM
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _st_(); // <
   SWAP(); // SWAP
   Push(0x000b);
@@ -2609,7 +2609,7 @@ void _dot_DISTANCE() // .DISTANCE
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
@@ -2619,7 +2619,7 @@ void _dot_DISTANCE() // .DISTANCE
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   UNK_0xef37(); // UNK_0xef37
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _dot_R(); // .R
   PRINT("KM.", 3); // (.")
   goto label2;
@@ -2662,7 +2662,7 @@ void _dot_CARGO() // .CARGO
   Push(0x0074);
   Push(0x009d);
   POS_dot_(); // POS.
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
@@ -2671,15 +2671,15 @@ void _dot_CARGO() // .CARGO
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   MAX(); // MAX
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   _slash_(); // /
 
   label1:
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dot_R(); // .R
   PRINT("% FULL", 6); // (.")
   ICLOSE(); // ICLOSE
@@ -2696,7 +2696,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0074);
   Push(0x00ab);
   POS_dot_(); // POS.
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TVEHICLE); // TVEHICLE
@@ -2736,7 +2736,7 @@ void _dot_ENERGY() // .ENERGY
   goto label3;
 
   label2:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dot_R(); // .R
   PRINT("%", 1); // (.")
 
@@ -2744,7 +2744,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0074);
   Push(0x00a4);
   POS_dot_(); // POS.
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp__pe_EFF); // %EFF
@@ -2752,13 +2752,13 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0064);
   Push(pp_E_slash_M); // E/M
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() * Pop()); // *
   Push(-Pop()); // NEGATE
   _star__slash_(); // */
   Push(0x0063);
   MIN(); // MIN
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dot_R(); // .R
   PRINT("%", 1); // (.")
 }
@@ -2857,7 +2857,7 @@ void _dot_WHERE() // .WHERE
   Push(-Pop()); // NEGATE
 
   label1:
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _dot_R(); // .R
   UNK_0xf319(); // UNK_0xf319
   PRINT(" * ", 3); // (.")

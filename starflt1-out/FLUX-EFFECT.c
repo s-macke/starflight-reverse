@@ -89,7 +89,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0x0014);
   RRND(); // RRND
   Push(a); // I
@@ -123,7 +123,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(0x003b);
   MIN(); // MIN
   Push(a); // R>
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() + Pop()); // +
   _ex__3(); // !_3
 }
@@ -147,7 +147,7 @@ void UNK_0xf456() // UNK_0xf456
   Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3f0(); // UNK_0xf3f0
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -167,7 +167,7 @@ void UNK_0xf470() // UNK_0xf470
   Push(Pop() + Pop()); // +
   a = Pop(); // >R
   Push(a); // I
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(a); // I
@@ -234,7 +234,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
   Push(0x0028);
   RRND(); // RRND
   TONE(); // TONE
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;

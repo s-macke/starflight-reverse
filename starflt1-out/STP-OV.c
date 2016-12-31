@@ -300,7 +300,7 @@ void UNK_0xf34b() // UNK_0xf34b
 
   UNK_0x3f3b("CODE: ");
   _dot_TTY(); // .TTY
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp__dash_AIN); // -AIN
   _ex__3(); // !_3
   Push(0x000a);
@@ -360,7 +360,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(pp_UNK_0xf036); // UNK_0xf036
   _ex__3(); // !_3
   Push(0); // 0
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   RRND(); // RRND
   Push(pp_UNK_0xf03a); // UNK_0xf03a
   _ex__3(); // !_3
@@ -495,7 +495,7 @@ void STP() // STP
   if (Pop() == 0) return;
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
   _ex__3(); // !_3

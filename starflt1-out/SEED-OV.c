@@ -172,9 +172,9 @@ const unsigned short int pp_UNK_0xec36 = 0xec36; // UNK_0xec36 size: 2
 // {0x01, 0x00}
 
 
-const unsigned short int cc_UNK_0xec1a = 0x0043; // UNK_0xec1a
-const unsigned short int cc_UNK_0xec1e = 0x0044; // UNK_0xec1e
-const unsigned short int cc_UNK_0xec22 = 0x001c; // UNK_0xec22
+const unsigned short int cc_UNK_0xec1a = 0xec1a; // UNK_0xec1a
+const unsigned short int cc_UNK_0xec1e = 0xec1e; // UNK_0xec1e
+const unsigned short int cc_UNK_0xec22 = 0xec22; // UNK_0xec22
 
 
 // 0xec12: db 0x93 0x00 0x14 0x22 0x20 0x00 '   "  '
@@ -561,8 +561,8 @@ void UNK_0xee4d() // UNK_0xee4d
   IOPEN(); // IOPEN
   c = Pop(); // >R
   d = Pop(); // >R
-  Push(cc_UNK_0xec1e); // UNK_0xec1e
-  Push(cc__3); // 3
+  Push(Read16(cc_UNK_0xec1e)); // UNK_0xec1e
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   Push(1); // 1
   _star_CREATE(); // *CREATE
@@ -589,7 +589,7 @@ void UNK_0xee91() // UNK_0xee91
 {
   signed short int i, imax;
   unsigned short int a;
-  Push(cc_UNK_0xec1e); // UNK_0xec1e
+  Push(Read16(cc_UNK_0xec1e)); // UNK_0xec1e
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   Push(0); // 0
@@ -606,7 +606,7 @@ void UNK_0xee91() // UNK_0xee91
   _st__ex__gt_(); // <!>
   LoadData("UNK_0xec67"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
@@ -713,7 +713,7 @@ void UNK_0xee91() // UNK_0xee91
 
 void UNK_0xef75() // UNK_0xef75
 {
-  Push(cc_UNK_0xec1e); // UNK_0xec1e
+  Push(Read16(cc_UNK_0xec1e)); // UNK_0xec1e
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
@@ -823,7 +823,7 @@ void UNK_0xf00b() // UNK_0xf00b
   IFLD_at_(); // IFLD@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(pp_RECORD_n_); // RECORD#
   _st__plus__ex__gt_(); // <+!>
   UNK_0xef75(); // UNK_0xef75
@@ -897,7 +897,7 @@ void UNK_0xf079() // UNK_0xf079
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   _st__ex__gt_(); // <!>
-  Push(cc_UNK_0xec1a); // UNK_0xec1a
+  Push(Read16(cc_UNK_0xec1a)); // UNK_0xec1a
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -948,7 +948,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
 {
   LoadData("UNK_0xec3a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -958,7 +958,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   Push(0x0017);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
@@ -968,7 +968,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   return;
 
   label1:
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
 }
 
 
@@ -1065,7 +1065,7 @@ void UNK_0xf189() // UNK_0xf189
 {
 
   label1:
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push(2); // 2
   RRND(); // RRND
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1090,7 +1090,7 @@ void UNK_0xf19b() // UNK_0xf19b
   SWAP(); // SWAP
   UNK_0xf189(); // UNK_0xf189
   SWAP(); // SWAP
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   UNK_0xf163(); // UNK_0xf163
   ICLOSE(); // ICLOSE
   return;
@@ -1225,7 +1225,7 @@ void UNK_0xf26b() // UNK_0xf26b
   Push(0x001e);
   _st_(); // <
   if (Pop() == 0) return;
-  Push(cc_UNK_0xec22); // UNK_0xec22
+  Push(Read16(cc_UNK_0xec22)); // UNK_0xec22
   UNK_0xf245(); // UNK_0xf245
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
@@ -1356,11 +1356,11 @@ void UNK_0xf327() // UNK_0xf327
   Push(0x001c);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   goto label2;
 
   label1:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
 
   label2:
   Push(0x0029);
@@ -1408,7 +1408,7 @@ void _ask_EXIST() // ?EXIST
   if (Pop() == 0) goto label3;
   UNK_0xed31(); // UNK_0xed31
   Push(0x0029);
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _ask_CLASS_slash_(); // ?CLASS/
   c = Pop(); // >R
   Pop(); Pop();// 2DROP

@@ -145,11 +145,11 @@ void UNK_0xf1c5() // UNK_0xf1c5
   Push(Pop()+2); // 2+
   OVER(); // OVER
   LLINE(); // LLINE
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("FLIGHT", 6); // (.")
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("CHECK", 5); // (.")
@@ -166,7 +166,7 @@ void UNK_0xf1c5() // UNK_0xf1c5
 
 void UNK_0xf258() // UNK_0xf258
 {
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(0x0014);
@@ -287,7 +287,7 @@ void UNK_0xf32b() // UNK_0xf32b
   Push(1); // 1
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
 }
@@ -332,13 +332,13 @@ void UNK_0xf3ad() // UNK_0xf3ad
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   UNK_0xf32b(); // UNK_0xf32b
 
   label3:
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
   UNK_0xf372(); // UNK_0xf372
@@ -420,12 +420,12 @@ void UNK_0xf450() // UNK_0xf450
   _at__gt_C_plus_S(); // @>C+S
   Push(0x640f); // IFIELD(UNK_0xf1b6)
   Push(Read16(Pop())); // @
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -454,7 +454,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf327); // UNK_0xf327
   _ex__3(); // !_3
@@ -478,7 +478,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
   Push(0x63fa); // IFIELD(INST-QTY)
@@ -519,11 +519,11 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(Pop()*2); // 2*
   Push(Pop() | Pop()); // OR
   UNK_0xf480(); // UNK_0xf480
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   UNK_0xf4aa(); // UNK_0xf4aa
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

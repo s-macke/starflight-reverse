@@ -108,27 +108,27 @@ void CI(); // CI
 // =========== VARIABLES ===========
 // =================================
 
-const unsigned short int cc_UNK_0xf116 = 0x0032; // UNK_0xf116
-const unsigned short int cc_UNK_0xf11a = 0x0034; // UNK_0xf11a
-const unsigned short int cc_UNK_0xf11e = 0x0034; // UNK_0xf11e
-const unsigned short int cc_UNK_0xf122 = 0x0033; // UNK_0xf122
-const unsigned short int cc_UNK_0xf126 = 0x0033; // UNK_0xf126
-const unsigned short int cc_UNK_0xf12a = 0x0015; // UNK_0xf12a
-const unsigned short int cc_UNK_0xf12e = 0x0016; // UNK_0xf12e
-const unsigned short int cc_UNK_0xf132 = 0x0017; // UNK_0xf132
-const unsigned short int cc_UNK_0xf136 = 0x0018; // UNK_0xf136
-const unsigned short int cc_UNK_0xf13a = 0x0019; // UNK_0xf13a
-const unsigned short int cc_UNK_0xf13e = 0x001a; // UNK_0xf13e
-const unsigned short int cc_UNK_0xf142 = 0x00fe; // UNK_0xf142
-const unsigned short int cc_UNK_0xf146 = 0x0014; // UNK_0xf146
-const unsigned short int cc_UNK_0xf14a = 0x002c; // UNK_0xf14a
-const unsigned short int cc_UNK_0xf14e = 0x002d; // UNK_0xf14e
-const unsigned short int cc_UNK_0xf152 = 0x002e; // UNK_0xf152
-const unsigned short int cc_UNK_0xf156 = 0x002f; // UNK_0xf156
-const unsigned short int cc_UNK_0xf15a = 0x0030; // UNK_0xf15a
-const unsigned short int cc_UNK_0xf15e = 0x005f; // UNK_0xf15e
-const unsigned short int cc_UNK_0xf162 = 0x0060; // UNK_0xf162
-const unsigned short int cc_UNK_0xf166 = 0x0062; // UNK_0xf166
+const unsigned short int cc_UNK_0xf116 = 0xf116; // UNK_0xf116
+const unsigned short int cc_UNK_0xf11a = 0xf11a; // UNK_0xf11a
+const unsigned short int cc_UNK_0xf11e = 0xf11e; // UNK_0xf11e
+const unsigned short int cc_UNK_0xf122 = 0xf122; // UNK_0xf122
+const unsigned short int cc_UNK_0xf126 = 0xf126; // UNK_0xf126
+const unsigned short int cc_UNK_0xf12a = 0xf12a; // UNK_0xf12a
+const unsigned short int cc_UNK_0xf12e = 0xf12e; // UNK_0xf12e
+const unsigned short int cc_UNK_0xf132 = 0xf132; // UNK_0xf132
+const unsigned short int cc_UNK_0xf136 = 0xf136; // UNK_0xf136
+const unsigned short int cc_UNK_0xf13a = 0xf13a; // UNK_0xf13a
+const unsigned short int cc_UNK_0xf13e = 0xf13e; // UNK_0xf13e
+const unsigned short int cc_UNK_0xf142 = 0xf142; // UNK_0xf142
+const unsigned short int cc_UNK_0xf146 = 0xf146; // UNK_0xf146
+const unsigned short int cc_UNK_0xf14a = 0xf14a; // UNK_0xf14a
+const unsigned short int cc_UNK_0xf14e = 0xf14e; // UNK_0xf14e
+const unsigned short int cc_UNK_0xf152 = 0xf152; // UNK_0xf152
+const unsigned short int cc_UNK_0xf156 = 0xf156; // UNK_0xf156
+const unsigned short int cc_UNK_0xf15a = 0xf15a; // UNK_0xf15a
+const unsigned short int cc_UNK_0xf15e = 0xf15e; // UNK_0xf15e
+const unsigned short int cc_UNK_0xf162 = 0xf162; // UNK_0xf162
+const unsigned short int cc_UNK_0xf166 = 0xf166; // UNK_0xf166
 
 
 // 0xf0c2: db 0x49 0x00 0x20 0x74 0x2e 0x11 0x01 'I  t.  '
@@ -334,14 +334,14 @@ void UNK_0xf192() // UNK_0xf192
   Push(0x0014);
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) goto label2;
-  Push(cc_UNK_0xf162); // UNK_0xf162
+  Push(Read16(cc_UNK_0xf162)); // UNK_0xf162
   goto label3;
 
   label2:
   Push(0x001d);
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) goto label4;
-  Push(cc_UNK_0xf166); // UNK_0xf166
+  Push(Read16(cc_UNK_0xf166)); // UNK_0xf166
   goto label3;
 
   label4:
@@ -367,10 +367,10 @@ void STAR_dash_ID_dash_CASE() // STAR-ID-CASE
   switch(Pop()) // STAR-ID-CASE
   {
   case 2:
-    Push(cc_UNK_0xf11e); // UNK_0xf11e
+    Push(Read16(cc_UNK_0xf11e)); // UNK_0xf11e
     break;
   default:
-    Push(cc_UNK_0xf11a); // UNK_0xf11a
+    Push(Read16(cc_UNK_0xf11a)); // UNK_0xf11a
     break;
 
   }
@@ -397,10 +397,10 @@ void PLANET_dash_ID_dash_CA() // PLANET-ID-CA
   switch(Pop()) // PLANET-ID-CA
   {
   case 2:
-    Push(cc_UNK_0xf126); // UNK_0xf126
+    Push(Read16(cc_UNK_0xf126)); // UNK_0xf126
     break;
   default:
-    Push(cc_UNK_0xf122); // UNK_0xf122
+    Push(Read16(cc_UNK_0xf122)); // UNK_0xf122
     break;
 
   }
@@ -445,7 +445,7 @@ void BOX_dash_ID() // BOX-ID
     UNK_0xf20c(); // UNK_0xf20c
     break;
   default:
-    Push(cc_INVIS_dash_I); // INVIS-I
+    Push(Read16(cc_INVIS_dash_I)); // INVIS-I
     break;
 
   }
@@ -473,11 +473,11 @@ void UNK_0xf245() // UNK_0xf245
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  Push(cc_UNK_0xf14a); // UNK_0xf14a
+  Push(Read16(cc_UNK_0xf14a)); // UNK_0xf14a
   return;
 
   label1:
-  Push(cc_UNK_0xf132); // UNK_0xf132
+  Push(Read16(cc_UNK_0xf132)); // UNK_0xf132
 }
 
 
@@ -496,7 +496,7 @@ void SPACE_dash_ID() // SPACE-ID
     UNK_0xf184(); // UNK_0xf184
     break;
   case 23:
-    Push(cc_SYS_dash_ICO); // SYS-ICO
+    Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
     break;
   case 24:
     UNK_0xf1e9(); // UNK_0xf1e9
@@ -508,16 +508,16 @@ void SPACE_dash_ID() // SPACE-ID
     UNK_0xf20c(); // UNK_0xf20c
     break;
   case 45:
-    Push(cc_FLUX_dash_IC); // FLUX-IC
+    Push(Read16(cc_FLUX_dash_IC)); // FLUX-IC
     break;
   case 46:
     UNK_0xf216(); // UNK_0xf216
     break;
   case 60:
-    Push(cc_UNK_0xf116); // UNK_0xf116
+    Push(Read16(cc_UNK_0xf116)); // UNK_0xf116
     break;
   default:
-    Push(cc_INVIS_dash_I); // INVIS-I
+    Push(Read16(cc_INVIS_dash_I)); // INVIS-I
     break;
 
   }
@@ -549,16 +549,16 @@ void RUIN_dash_ID_dash_CASE() // RUIN-ID-CASE
   switch(Pop()) // RUIN-ID-CASE
   {
   case 2:
-    Push(cc_UNK_0xf136); // UNK_0xf136
+    Push(Read16(cc_UNK_0xf136)); // UNK_0xf136
     break;
   case 4:
-    Push(cc_UNK_0xf136); // UNK_0xf136
+    Push(Read16(cc_UNK_0xf136)); // UNK_0xf136
     break;
   case 5:
     UNK_0xf28e(); // UNK_0xf28e
     break;
   case 6:
-    Push(cc_UNK_0xf15e); // UNK_0xf15e
+    Push(Read16(cc_UNK_0xf15e)); // UNK_0xf15e
     break;
   default:
     UNK_0xf245(); // UNK_0xf245
@@ -576,14 +576,14 @@ void UNK_0xf2cb() // UNK_0xf2cb
   UNK_0xf16a(); // UNK_0xf16a
   LoadData("UNK_0xf0fc"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _st_(); // <
   if (Pop() == 0) goto label1;
-  Push(cc_UNK_0xf156); // UNK_0xf156
+  Push(Read16(cc_UNK_0xf156)); // UNK_0xf156
   goto label2;
 
   label1:
-  Push(cc_UNK_0xf15a); // UNK_0xf15a
+  Push(Read16(cc_UNK_0xf15a)); // UNK_0xf15a
 
   label2:
   ICLOSE(); // ICLOSE
@@ -611,10 +611,10 @@ void UNK_0xf2ef() // UNK_0xf2ef
   _at_INST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(a); // I
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  Push(cc_UNK_0xf14e); // UNK_0xf14e
+  Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
   goto label2;
 
   label1:
@@ -622,11 +622,11 @@ void UNK_0xf2ef() // UNK_0xf2ef
   Push(0x0017);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
-  Push(cc_UNK_0xf146); // UNK_0xf146
+  Push(Read16(cc_UNK_0xf146)); // UNK_0xf146
   goto label2;
 
   label3:
-  Push(cc_UNK_0xf12a); // UNK_0xf12a
+  Push(Read16(cc_UNK_0xf12a)); // UNK_0xf12a
 
   label2:
   Push(a); // R>
@@ -657,34 +657,34 @@ void PLANET_dash_ID() // PLANET-ID
     UNK_0xf31f(); // UNK_0xf31f
     break;
   case 42:
-    Push(cc_UNK_0xf13e); // UNK_0xf13e
+    Push(Read16(cc_UNK_0xf13e)); // UNK_0xf13e
     break;
   case 68:
     UNK_0xf2e7(); // UNK_0xf2e7
     break;
   case 20:
-    Push(cc_UNK_0xf13a); // UNK_0xf13a
+    Push(Read16(cc_UNK_0xf13a)); // UNK_0xf13a
     break;
   case 26:
     UNK_0xf2ef(); // UNK_0xf2ef
     break;
   case 28:
-    Push(cc_UNK_0xf12e); // UNK_0xf12e
+    Push(Read16(cc_UNK_0xf12e)); // UNK_0xf12e
     break;
   case 31:
     UNK_0xf172(); // UNK_0xf172
     break;
   case 33:
-    Push(cc_UNK_0xf152); // UNK_0xf152
+    Push(Read16(cc_UNK_0xf152)); // UNK_0xf152
     break;
   case 21:
     UNK_0xf2cb(); // UNK_0xf2cb
     break;
   case 27:
-    Push(cc_UNK_0xf142); // UNK_0xf142
+    Push(Read16(cc_UNK_0xf142)); // UNK_0xf142
     break;
   case 48:
-    Push(cc_UNK_0xf142); // UNK_0xf142
+    Push(Read16(cc_UNK_0xf142)); // UNK_0xf142
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -784,17 +784,17 @@ void UNK_0xf3c2() // UNK_0xf3c2
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
-  Push(cc_DEFAULT); // DEFAULT
+  Push(Read16(cc_DEFAULT)); // DEFAULT
   goto label3;
 
   label2:
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
 
   label3:
   return;
 
   label1:
-  Push(cc_DEAD_dash_IC); // DEAD-IC
+  Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 
 
@@ -864,11 +864,11 @@ void UNK_0xf42b() // UNK_0xf42b
 {
   _at_INST_dash_S(); // @INST-S
   if (Pop() == 0) goto label1;
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   return;
 
   label1:
-  Push(cc_DEFAULT); // DEFAULT
+  Push(Read16(cc_DEFAULT)); // DEFAULT
 }
 
 
@@ -887,7 +887,7 @@ void BOX_dash_IC() // BOX-IC
     UNK_0xf421(); // UNK_0xf421
     break;
   default:
-    Push(cc_DEFAULT); // DEFAULT
+    Push(Read16(cc_DEFAULT)); // DEFAULT
     break;
 
   }
@@ -918,17 +918,17 @@ void UNK_0xf460() // UNK_0xf460
   Push(pp_FSTUN); // FSTUN
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   goto label3;
 
   label2:
-  Push(cc_DEFAULT); // DEFAULT
+  Push(Read16(cc_DEFAULT)); // DEFAULT
 
   label3:
   return;
 
   label1:
-  Push(cc_DEAD_dash_IC); // DEAD-IC
+  Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 
 
@@ -965,7 +965,7 @@ void _n_IC_dash_CASES() // #IC-CASES
     UNK_0xf460(); // UNK_0xf460
     break;
   default:
-    Push(cc_DEFAULT); // DEFAULT
+    Push(Read16(cc_DEFAULT)); // DEFAULT
     break;
 
   }

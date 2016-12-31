@@ -176,7 +176,7 @@ void UNK_0xed63() // UNK_0xed63
 {
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(Pop() & Pop()); // AND
 }
 
@@ -225,7 +225,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   UNK_0xed63(); // UNK_0xed63
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x640e); // IFIELD(UNK_0xed4f)
@@ -245,14 +245,14 @@ void _ro__dot_MASS_rc_() // (.MASS)
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x6416); // IFIELD(UNK_0xed59)
   _ex__3(); // !_3
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   SetColor("BLACK");
   Push(0x0069);
   Push(0x0036);
@@ -262,7 +262,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   POS_dot_PXT(); // POS.PXT
   Push(0x6416); // IFIELD(UNK_0xed59)
   Push(Read16(Pop())); // @
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   _dot_R(); // .R
   _ex_CRS(); // !CRS
 }
@@ -310,7 +310,7 @@ void UNK_0xef1a() // UNK_0xef1a
 {
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   SetColor("BLACK");
   Push(0x007e);
   Push(0x0022);
@@ -327,7 +327,7 @@ void UNK_0xef1a() // UNK_0xef1a
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
   Push(0x63fa); // IFIELD(INST-QTY)
@@ -349,13 +349,13 @@ void UNK_0xef1a() // UNK_0xef1a
   ICLOSE(); // ICLOSE
   Push(0x000a);
   _slash_MOD(); // /MOD
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dot_R(); // .R
   PRINT(".", 1); // (.")
   Push(0); // 0
   _dot_R(); // .R
   PRINT("M", 1); // (.")
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Read16(regsp)); // DUP
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
@@ -533,7 +533,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(1); // 1
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(0); // 0
 
   i = Pop();
@@ -541,7 +541,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   do // (DO)
   {
   Push(i); // I
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(0x0076);
   Push(Pop() + Pop()); // +
@@ -594,10 +594,10 @@ void UNK_0xf132() // UNK_0xf132
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(cc__9); // 9
+  Push(Read16(cc__9)); // 9
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(0x0060);
@@ -636,10 +636,10 @@ void UNK_0xf174() // UNK_0xf174
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(pp_UNK_0xf128); // UNK_0xf128
@@ -682,7 +682,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
   _at_CRS(); // @CRS
   Push(0); // 0
   _0MESS(); // 0MESS
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0x0017);
   POS_dot_(); // POS.
   CTINIT(); // CTINIT
@@ -774,7 +774,7 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(0x00c2);
   POS_dot_(); // POS.
   PRINT("SHIP", 4); // (.")
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("CONFIGURATION", 13); // (.")
@@ -788,7 +788,7 @@ void UNK_0xf21d() // UNK_0xf21d
 void UNK_0xf310() // UNK_0xf310
 {
   CTINIT(); // CTINIT
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x00ae);
   POS_dot_(); // POS.
   PRINT("CARGO PODS..", 12); // (.")
@@ -796,7 +796,7 @@ void UNK_0xf310() // UNK_0xf310
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("CARGO PODS:", 11); // (.")
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x009f);
   POS_dot_(); // POS.
   PRINT("ENGINES", 7); // (.")
@@ -804,7 +804,7 @@ void UNK_0xf310() // UNK_0xf310
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("ENGINES :", 9); // (.")
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x0095);
   POS_dot_(); // POS.
   PRINT("SHIELDING", 9); // (.")
@@ -812,7 +812,7 @@ void UNK_0xf310() // UNK_0xf310
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("SHIELDS :", 9); // (.")
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x008b);
   POS_dot_(); // POS.
   PRINT("ARMOR", 5); // (.")
@@ -820,7 +820,7 @@ void UNK_0xf310() // UNK_0xf310
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("ARMOR   :", 9); // (.")
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x0081);
   POS_dot_(); // POS.
   PRINT("MISSILE LAUNCHER", 16); // (.")
@@ -828,7 +828,7 @@ void UNK_0xf310() // UNK_0xf310
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   PRINT("MISSILES:", 9); // (.")
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0x0077);
   POS_dot_(); // POS.
   PRINT("LASER CANNON", 12); // (.")
@@ -847,7 +847,7 @@ void UNK_0xf40f() // UNK_0xf40f
 {
   signed short int i, imax;
   UNK_0xf310(); // UNK_0xf310
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0); // 0
 
   i = Pop();
@@ -862,7 +862,7 @@ void UNK_0xf40f() // UNK_0xf40f
   Push(Pop() + Pop()); // +
   POS_dot_(); // POS.
   PRINT("CLASS ", 6); // (.")
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(i); // I
   _dash_(); // -
   Push(0); // 0
@@ -871,24 +871,24 @@ void UNK_0xf40f() // UNK_0xf40f
   i++;
   } while(i<imax); // (LOOP) 0xffd1
 
-  Push(cc__6); // 6
-  Push(cc__8); // 8
+  Push(Read16(cc__6)); // 6
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("BUY", 3); // (.")
   Push(0x0020);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("SELL", 4); // (.")
   Push(0x0044);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("REPAIR", 6); // (.")
   Push(0x006a);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("NAME", 4); // (.")
   Push(0x0087);
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   POS_dot_(); // POS.
   PRINT("EXIT", 4); // (.")
   Push(0x0056);

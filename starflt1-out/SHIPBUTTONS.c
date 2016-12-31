@@ -236,7 +236,7 @@ void UNK_0xedec() // UNK_0xedec
   Push(0x6434); // IFIELD(UNK_0xedba)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(0xcb4e); // probable 'OV-SH'
@@ -245,7 +245,7 @@ void UNK_0xedec() // UNK_0xedec
   MS(); // MS
 
   label1:
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(0xcb66); // probable 'OV-AR'
@@ -298,11 +298,11 @@ void UNK_0xee4a() // UNK_0xee4a
 {
   Push(0x0064);
   Push(0x01f4);
-  Push(cc__5); // 5
-  Push(cc__3); // 3
+  Push(Read16(cc__5)); // 5
+  Push(Read16(cc__3)); // 3
   Push(0x0064);
   Push(0x01f4);
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _gt_SND(); // >SND
   Push(0x0096);
   MS(); // MS
@@ -336,7 +336,7 @@ void UNK_0xee6c() // UNK_0xee6c
   UNK_0xee30(); // UNK_0xee30
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() * Pop()); // *
   Push(0x6400); // IFIELD(UNK_0xedc4)
   Push(Pop() + Pop()); // +
@@ -377,7 +377,7 @@ void UNK_0xeee2() // UNK_0xeee2
 {
   Push(Read16(regsp)); // DUP
   Push(0); // 0
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   Push(Read16(regsp)); // DUP
@@ -575,7 +575,7 @@ void UNK_0xefe4() // UNK_0xefe4
 {
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xede2(); // UNK_0xede2
@@ -592,7 +592,7 @@ void UNK_0xefe4() // UNK_0xefe4
 
 void UNK_0xeffc() // UNK_0xeffc
 {
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push(0xbdef); // probable 'OV?.EQUIP-OK'
   MODULE(); // MODULE
   if (Pop() == 0) return;
@@ -690,7 +690,7 @@ void UNK_0xf095() // UNK_0xf095
   _dot_TTY(); // .TTY
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
-  Push(cc__dash_1); // -1
+  Push(Read16(cc__dash_1)); // -1
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp__ask_LANDED); // ?LANDED
@@ -776,7 +776,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(Pop() | Pop()); // OR
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -795,7 +795,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(0xef06);
   Push(0xef68);
   Push(0xf031); // probable '1.1BTN.XEQ'
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0xef50);
   DOTASKS(UNK_0xef50, 1.1BTN.XEQ, UNK_0xef68, UNK_0xef06);
 
@@ -989,8 +989,8 @@ void UNK_0xf29e() // UNK_0xf29e
 {
   Push(0xcb2e); // probable 'OV/(D'
   MODULE(); // MODULE
-  Push(cc__3); // 3
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
+  Push(Read16(cc__3)); // 3
   _dot_ABTN(); // .ABTN
 }
 
@@ -1169,7 +1169,7 @@ void UNK_0xf373() // UNK_0xf373
   Push(0xef06); // probable 'UNK_0xef06'
   Push(0xef68); // probable 'UNK_0xef68'
   Push(0xf2cb); // probable '3BTN.XEQ'
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(0xef50); // probable 'UNK_0xef50'
   DOTASKS(UNK_0xef50, 3BTN.XEQ, UNK_0xef68, UNK_0xef06);
 }
@@ -1184,7 +1184,7 @@ void UNK_0xf38b() // UNK_0xf38b
   Push(0xef06); // probable 'UNK_0xef06'
   Push(0xef68); // probable 'UNK_0xef68'
   Push(0xf304); // probable '4BTN.XEQ'
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   Push(0xef50); // probable 'UNK_0xef50'
   DOTASKS(UNK_0xef50, 4BTN.XEQ, UNK_0xef68, UNK_0xef06);
 }
@@ -1196,7 +1196,7 @@ void UNK_0xf38b() // UNK_0xf38b
 
 void UNK_0xf3a3() // UNK_0xf3a3
 {
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   UNK_0xee6c(); // UNK_0xee6c
   Push(0xc1a8); // probable 'U-COMM'
   MODULE(); // MODULE
@@ -1213,7 +1213,7 @@ void UNK_0xf3b3() // UNK_0xf3b3
   Push(0xef06); // probable 'UNK_0xef06'
   Push(0xef68); // probable 'UNK_0xef68'
   Push(0xf331); // probable '6BTN.XEQ'
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(0xef50); // probable 'UNK_0xef50'
   DOTASKS(UNK_0xef50, 6BTN.XEQ, UNK_0xef68, UNK_0xef06);
 }
@@ -1334,7 +1334,7 @@ void _gt_FLT() // >FLT
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '
@@ -1359,7 +1359,7 @@ void _gt_FLT() // >FLT
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
-  Push(cc__5); // 5
+  Push(Read16(cc__5)); // 5
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf4a0(); // UNK_0xf4a0
@@ -1371,7 +1371,7 @@ void _gt_FLT() // >FLT
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   LoadData("ELEM-VAL"); // from 'ELEMENT     '

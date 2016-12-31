@@ -437,7 +437,7 @@ void UNK_0xee04() // UNK_0xee04
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
   Push(0); // 0
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   PICK(); // PICK
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
@@ -595,7 +595,7 @@ void UNK_0xef13() // UNK_0xef13
   a = Pop(); // >R
   Push(Read16(a)); // R@
   Push(2); // 2
-  Push(cc__4); // 4
+  Push(Read16(cc__4)); // 4
   WITHIN(); // WITHIN
   Push(Read16(a)); // R@
   Push(0x000e);
@@ -649,7 +649,7 @@ void UNK_0xef53() // UNK_0xef53
   PRINT("EQUIVALENT", 10); // (.")
 
   label3:
-  Push(cc__ask_A_dash_SHIE); // ?A-SHIE
+  Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
   Push(1); // 1
@@ -683,7 +683,7 @@ void UNK_0xeff7() // UNK_0xeff7
   PRINT("WEAPON STATUS: ", 15); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  Push(cc__ask_A_dash_WEAP); // ?A-WEAP
+  Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   PRINT("NOT ", 4); // (.")
@@ -701,7 +701,7 @@ void UNK_0xf02c() // UNK_0xf02c
 {
   Push(Read16(regsp)); // DUP
   Push(0x65f3); // IFIELD(UNK_0xec85)
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -715,7 +715,7 @@ void UNK_0xf02c() // UNK_0xf02c
   goto label3;
 
   label2:
-  Push(cc__6); // 6
+  Push(Read16(cc__6)); // 6
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
@@ -754,7 +754,7 @@ void UNK_0xf07e() // UNK_0xf07e
   UNK_0xf02c(); // UNK_0xf02c
   Push(2); // 2
   UNK_0xf02c(); // UNK_0xf02c
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   UNK_0xf02c(); // UNK_0xf02c
 }
 
@@ -1263,7 +1263,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   signed short int i, imax;
   a = Pop(); // >R
   Push(2); // 2
-  Push(cc__7); // 7
+  Push(Read16(cc__7)); // 7
   Push(0); // 0
 
   i = Pop();
@@ -1301,13 +1301,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   UNK_0xf3b8(); // UNK_0xf3b8
   Push(Read16(regsp)); // DUP
   CTINIT(); // CTINIT
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _dash_(); // -
   Push(1); // 1
   MAX(); // MAX
   _dot_(); // .
   PRINT("- ", 2); // (.")
-  Push(cc__8); // 8
+  Push(Read16(cc__8)); // 8
   MIN(); // MIN
   _dot_(); // .
 }
@@ -1330,7 +1330,7 @@ void UNK_0xf414() // UNK_0xf414
   CTINIT(); // CTINIT
   Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
-  Push(cc__3); // 3
+  Push(Read16(cc__3)); // 3
   _star_CLOSE(); // *CLOSE
 }
 
