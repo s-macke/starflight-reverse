@@ -3,7 +3,7 @@
 // overlay size   = 0x0ab0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -206,7 +206,7 @@ void UNK_0xeb20() // UNK_0xeb20
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) return;
-  PRINT("PAGE THROUGH FILES: ^\", 22); // (.")
+  PRINT("PAGE THROUGH FILES: ^\\", 22); // (.")
 }
 
 

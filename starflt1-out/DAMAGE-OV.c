@@ -65,7 +65,8 @@
 //      UNK_0xedf2  codep:0x224c parp:0xedf2 size:0x0010 C-string:'UNK_0xedf2'
 //      UNK_0xee04  codep:0x224c parp:0xee04 size:0x0021 C-string:'UNK_0xee04'
 //      UNK_0xee27  codep:0x224c parp:0xee27 size:0x001d C-string:'UNK_0xee27'
-//      UNK_0xee46  codep:0x224c parp:0xee46 size:0x0046 C-string:'UNK_0xee46'
+//      UNK_0xee46  codep:0x224c parp:0xee46 size:0x001d C-string:'UNK_0xee46'
+//      UNK_0xee65  codep:0x224c parp:0xee65 size:0x0027 C-string:'UNK_0xee65'
 //      UNK_0xee8e  codep:0x224c parp:0xee8e size:0x0010 C-string:'UNK_0xee8e'
 //         ENGINE-  codep:0xee6d parp:0xeeaa size:0x0004 C-string:'ENGINE_dash_'
 //         SENSOR-  codep:0xee6d parp:0xeeba size:0x0004 C-string:'SENSOR_dash_'
@@ -142,6 +143,7 @@ void COUNT(); // COUNT
 void _star__slash_(); // */
 void MAX(); // MAX
 void MIN(); // MIN
+void _co_(); // ,
 void _dash_TRAILING(); // -TRAILING
 void _dot_(); // .
 void WITHIN(); // WITHIN
@@ -879,7 +881,6 @@ void UNK_0xee27() // UNK_0xee27
 
 void UNK_0xee46() // UNK_0xee46
 {
-  unsigned short int a;
   UNK_0xedf2(); // UNK_0xedf2
 
   UNK_0x3f3b("!!CREW  DECEASED!!");
@@ -887,7 +888,18 @@ void UNK_0xee46() // UNK_0xee46
   UNK_0xee04(); // UNK_0xee04
 }
 
-// 0xee63: db 0x4c 0x22 0x4f 0x06 0x93 0x1f 0x93 0x1f 0xfa 0x1b 'L"O       '
+
+// ================================================
+// 0xee63: WORD 'UNK_0xee65' codep=0x224c parp=0xee65
+// ================================================
+
+void UNK_0xee65() // UNK_0xee65
+{
+  unsigned short int a;
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
+  _co_(); // ,
+  _co_(); // ,
+  CODE(); // (;CODE) inlined assembler code
 // 0xee6d: call   1649
   _2_at_(); // 2@
   IFLD_at_(); // IFLD@

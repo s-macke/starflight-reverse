@@ -1960,7 +1960,7 @@ void UNK_0xe9aa() // UNK_0xe9aa
   GCR(); // GCR
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
-  PRINT("ARM THIS DEVICE? NO [  ] YES ", 29); // (.")
+  PRINT("ARM THIS DEVICE\? NO [  ] YES ", 29); // (.")
   Y_slash_N(); // Y/N
   if (Pop() == 0) goto label1;
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
@@ -2742,7 +2742,7 @@ void UNK_0xee00() // UNK_0xee00
   Push(Read16(Pop())); // @
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
-  PRINT("SCROLL ITEMS: ^\   QUIT: []", 27); // (.")
+  PRINT("SCROLL ITEMS: ^\\   QUIT: []", 27); // (.")
   Push(Read16(cc__7)); // 7
   Push(pp_WBOTTOM); // WBOTTOM
   _st__plus__ex__gt_(); // <+!>
@@ -3227,7 +3227,7 @@ void UNK_0xf0de() // UNK_0xf0de
   Push(0x005b);
   Push(0x0015);
   POS_dot_(); // POS.
-  PRINT("\", 1); // (.")
+  PRINT("\\", 1); // (.")
   _ex_COLOR(); // !COLOR
 }
 

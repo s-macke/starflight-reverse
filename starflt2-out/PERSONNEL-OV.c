@@ -3,7 +3,7 @@
 // overlay size   = 0x1190
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -622,7 +622,7 @@ void UNK_0xe5eb() // UNK_0xe5eb
 
 void UNK_0xe604() // UNK_0xe604
 {
-  PRINT("PAGE THROUGH FILES ^\", 21); // (.")
+  PRINT("PAGE THROUGH FILES ^\\", 21); // (.")
 }
 
 
@@ -1626,7 +1626,7 @@ void UNK_0xee3d() // UNK_0xee3d
   Push(Read16(Pop())); // @
   Push(0); // 0
   _dot_R(); // .R
-  PRINT(")? ", 3); // (.")
+  PRINT(")\? ", 3); // (.")
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
   Push(Read16(cc__dash_1)); // -1
@@ -1881,7 +1881,7 @@ void UNK_0xf082() // UNK_0xf082
   Push(0x0020);
   CMESS(); // CMESS
   CTINIT(); // CTINIT
-  PRINT("SELECT RACE ^\ ", 15); // (.")
+  PRINT("SELECT RACE ^\\ ", 15); // (.")
   UNK_0xe5eb(); // UNK_0xe5eb
   _ex_CRS(); // !CRS
   Push(pp_XORMODE); // XORMODE
@@ -1929,7 +1929,7 @@ void UNK_0xf149() // UNK_0xf149
   Push(0); // 0
   Push(0x0010);
   CMESS(); // CMESS
-  PRINT("SELECT SKILL ^\", 15); // (.")
+  PRINT("SELECT SKILL ^\\", 15); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(0x0012);
@@ -2248,7 +2248,7 @@ void UNK_0xf3f8() // UNK_0xf3f8
   Push(0); // 0
   Push(0x0017);
   CMESS(); // CMESS
-  PRINT("DELETE THIS CREWMEMBER?", 23); // (.")
+  PRINT("DELETE THIS CREWMEMBER\?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(Read16(cc__7)); // 7

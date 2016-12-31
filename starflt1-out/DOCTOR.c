@@ -257,7 +257,7 @@ void UNK_0xf1af() // UNK_0xf1af
   CTCR(); // CTCR
   PRINT("TO ", 3); // (.")
   UNK_0xf191(); // UNK_0xf191
-  PRINT(" SOMEONE ELSE?", 14); // (.")
+  PRINT(" SOMEONE ELSE\?", 14); // (.")
   CTCR(); // CTCR
   UNK_0xf092(); // UNK_0xf092
   Y_slash_N(); // Y/N
@@ -475,7 +475,7 @@ void UNK_0xf373() // UNK_0xf373
   CTERASE(); // CTERASE
   PRINT("WHO SHOULD I ", 13); // (.")
   UNK_0xf191(); // UNK_0xf191
-  PRINT("?", 1); // (.")
+  PRINT("\?", 1); // (.")
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -494,7 +494,7 @@ void UNK_0xf373() // UNK_0xf373
   Push(1); // 1
   Push(0x0015);
   CMESS(); // CMESS
-  PRINT("CHOOSE CREWMEMBER ^\", 20); // (.")
+  PRINT("CHOOSE CREWMEMBER ^\\", 20); // (.")
   _ex_CRS(); // !CRS
   Push(2); // 2
   Push(0x0012);

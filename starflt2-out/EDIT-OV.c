@@ -3,7 +3,7 @@
 // overlay size   = 0x07a0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -86,6 +86,7 @@ extern const unsigned short int cc__6; // 6
 extern const unsigned short int cc__9; // 9
 extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp_FILENAMES; // FILENAMES
+extern const unsigned short int user_SCR; // SCR
 void MAX(); // MAX
 void MIN(); // MIN
 void PAD(); // PAD
@@ -351,7 +352,7 @@ void UNK_0xef44() // UNK_0xef44
 {
   Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
   Push(Pop() * Pop()); // *
-  Push(tt_SCR); // SCR
+  Push(user_SCR); // SCR
   Push(Read16(Pop())); // @
   BLOCK_2(); // BLOCK_2
   Push(Pop() + Pop()); // +
@@ -480,7 +481,7 @@ void UNK_0xef96() // UNK_0xef96
 
 void UNK_0xefc0() // UNK_0xefc0
 {
-  Push(tt_SCR); // SCR
+  Push(user_SCR); // SCR
   _plus__ex__2(); // +!_2
   UNK_0xeea0(); // UNK_0xeea0
   UNK_0xeea8(); // UNK_0xeea8
@@ -493,7 +494,7 @@ void UNK_0xefc0() // UNK_0xefc0
   Push(1); // 1
   Push(Read16(cc__5)); // 5
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
-  Push(tt_SCR); // SCR
+  Push(user_SCR); // SCR
   Push(Read16(Pop())); // @
   _dot_(); // .
 }
@@ -1138,7 +1139,7 @@ void _gt_STAMP() // >STAMP
   if (Pop() == 0) goto label1;
   SET_dash_USER(); // SET-USER
   Push(pp_UNK_0xedd6); // UNK_0xedd6
-  Push(tt_SCR); // SCR
+  Push(user_SCR); // SCR
   Push(Read16(Pop())); // @
   BLOCK_2(); // BLOCK_2
   a = Pop(); // >R

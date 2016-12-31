@@ -24,7 +24,8 @@
 //      UNK_0xec7a  codep:0x73ea parp:0xec7a size:0x0006 C-string:'UNK_0xec7a'
 //      UNK_0xec82  codep:0x73ea parp:0xec82 size:0x0006 C-string:'UNK_0xec82'
 //      UNK_0xec8a  codep:0x73ea parp:0xec8a size:0x0006 C-string:'UNK_0xec8a'
-//      UNK_0xec92  codep:0x73ea parp:0xec92 size:0x001d C-string:'UNK_0xec92'
+//      UNK_0xec92  codep:0x73ea parp:0xec92 size:0x0006 C-string:'UNK_0xec92'
+//      UNK_0xec9a  codep:0x224c parp:0xec9a size:0x0015 C-string:'UNK_0xec9a'
 //      UNK_0xecb1  codep:0x224c parp:0xecb1 size:0x000a C-string:'UNK_0xecb1'
 //      UNK_0xecbd  codep:0x224c parp:0xecbd size:0x000a C-string:'UNK_0xecbd'
 //      UNK_0xecc9  codep:0x224c parp:0xecc9 size:0x0014 C-string:'UNK_0xecc9'
@@ -113,6 +114,7 @@ void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
+void _co_(); // ,
 void PICK(); // PICK
 void D_eq_(); // D=
 void WITHIN(); // WITHIN
@@ -268,7 +270,18 @@ const unsigned short int cc_UNK_0xec16 = 0xec16; // UNK_0xec16
 // ================================================
 // 0xec90: WORD 'UNK_0xec92' codep=0x73ea parp=0xec92
 // ================================================
-// 0xec92: db 0x43 0x07 0x08 0x1c 0xcd 0x69 0x4c 0x22 0x4f 0x06 0x20 0x0f 0x93 0x1f 0xfa 0x1b 'C    iL"O       '
+// 0xec92: db 0x43 0x07 0x08 0x1c 0xcd 0x69 'C    i'
+
+// ================================================
+// 0xec98: WORD 'UNK_0xec9a' codep=0x224c parp=0xec9a
+// ================================================
+
+void UNK_0xec9a() // UNK_0xec9a
+{
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
+  Push(0); // 0
+  _co_(); // ,
+  CODE(); // (;CODE) inlined assembler code
 // 0xeca2: call   1649
   OVER(); // OVER
   Push(Pop() + Pop()); // +

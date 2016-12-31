@@ -3,7 +3,7 @@
 // overlay size   = 0x0f40
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1662,7 +1662,7 @@ void UNK_0xedf0() // UNK_0xedf0
   Push(Read16(Pop())); // @
   SetColor("LT-BLUE");
   _ex_COLOR(); // !COLOR
-  PRINT("SCROLL ITEMS: ^\   QUIT: []", 27); // (.")
+  PRINT("SCROLL ITEMS: ^\\   QUIT: []", 27); // (.")
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
   Push(Read16(cc__5)); // 5
@@ -2147,7 +2147,7 @@ void UNK_0xf0cc() // UNK_0xf0cc
   Push(0x0057);
   Push(0x0015);
   POS_dot_(); // POS.
-  PRINT("\", 1); // (.")
+  PRINT("\\", 1); // (.")
   _ex_COLOR(); // !COLOR
 }
 

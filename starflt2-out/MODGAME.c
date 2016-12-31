@@ -3,7 +3,7 @@
 // overlay size   = 0x1870
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -222,6 +222,9 @@ extern const unsigned short int pp__ask_EGA; // ?EGA
 extern const unsigned short int pp__3DSEG; // 3DSEG
 extern const unsigned short int pp_DERROR; // DERROR
 extern const unsigned short int pp__i_VERSIO; // 'VERSIO
+extern const unsigned short int user_TIB; // TIB
+extern const unsigned short int user_ROW; // ROW
+extern const unsigned short int user_COL; // COL
 void _ro_RESTORE_rc_(); // (RESTORE)
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void _ro_SETUP_rc_(); // (SETUP)
@@ -2143,7 +2146,7 @@ void UNK_0xeaad() // UNK_0xeaad
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(VECTORS);
+  GetTableEntry("VECTORS");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -2167,7 +2170,7 @@ void UNK_0xead7() // UNK_0xead7
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(VECTORS);
+  GetTableEntry("VECTORS");
   _ex__2(); // !_2
   Push(Read16(cc__dash_1)); // -1
   int step = Pop();
@@ -2737,7 +2740,7 @@ void UNK_0xee50() // UNK_0xee50
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(HOST);
+  GetTableEntry("HOST");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -2762,7 +2765,7 @@ void UNK_0xee66() // UNK_0xee66
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(HOST);
+  GetTableEntry("HOST");
   _ex__2(); // !_2
   Push(Read16(cc__dash_1)); // -1
   int step = Pop();
@@ -2858,10 +2861,10 @@ void UNK_0xef1e() // UNK_0xef1e
 {
   Push(0x00ba);
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
-  Push(tt_ROW); // ROW
+  Push(user_ROW); // ROW
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
-  Push(tt_COL); // COL
+  Push(user_COL); // COL
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
@@ -3199,7 +3202,7 @@ void NEW_dot_G() // NEW.G
   UNK_0xe90c(); // UNK_0xe90c
   UNK_0xe6a4(); // UNK_0xe6a4
   UNK_0xea1f(); // UNK_0xea1f
-  Push(tt_TIB); // TIB
+  Push(user_TIB); // TIB
   Push(Read16(Pop())); // @
   Push(0x0050);
   Push(0); // 0

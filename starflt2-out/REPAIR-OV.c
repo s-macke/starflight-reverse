@@ -3,7 +3,7 @@
 // overlay size   = 0x0680
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -772,7 +772,7 @@ void UNK_0xf204() // UNK_0xf204
 void UNK_0xf228() // UNK_0xf228
 {
 
-  UNK_0x3f09("SHALL I TAKE THIS FROM CARGO?");
+  UNK_0x3f09("SHALL I TAKE THIS FROM CARGO\?");
   _dot_TTY(); // .TTY
   Push(0x01f4);
   MS(); // MS

@@ -691,7 +691,7 @@ void UNK_0xe537() // UNK_0xe537
   Push(0x001b);
   Push(0x0064);
   POS_dot_(); // POS.
-  PRINT("HOW MAY WE HELP YOU TODAY?", 26); // (.")
+  PRINT("HOW MAY WE HELP YOU TODAY\?", 26); // (.")
 }
 
 
@@ -777,7 +777,7 @@ void UNK_0xe693() // UNK_0xe693
   Push(0); // 0
   Push(0x001a);
   CMESS(); // CMESS
-  PRINT("^ SCROLL INVENTORY LIST \", 25); // (.")
+  PRINT("^ SCROLL INVENTORY LIST \\", 25); // (.")
   _ex_CRS(); // !CRS
 }
 
@@ -1609,7 +1609,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   PRINT("JETTISON", 8); // (.")
 
   label4:
-  PRINT(" HOW MANY CUBIC METERS?", 23); // (.")
+  PRINT(" HOW MANY CUBIC METERS\?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(0x0016);
@@ -1793,7 +1793,7 @@ void UNK_0xedb9() // UNK_0xedb9
   Push(1); // 1
   Push(0x001c);
   CMESS(); // CMESS
-  PRINT("ANALYZE THIS ARTIFACT? [N Y]", 28); // (.")
+  PRINT("ANALYZE THIS ARTIFACT\? [N Y]", 28); // (.")
   _ex_CRS(); // !CRS
   Y_slash_N(); // Y/N
   goto label4;

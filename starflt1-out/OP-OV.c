@@ -498,7 +498,7 @@ void UNK_0xe665() // UNK_0xe665
   CMESS(); // CMESS
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  PRINT("\ NEXT MESSAGE  PREVIOUS MESSAGE ^", 34); // (.")
+  PRINT("\\ NEXT MESSAGE  PREVIOUS MESSAGE ^", 34); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(0x0025);
@@ -1031,7 +1031,7 @@ void UNK_0xea28() // UNK_0xea28
   CMESS(); // CMESS
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  PRINT("REPEAT LAST NOTICE? [N Y]", 25); // (.")
+  PRINT("REPEAT LAST NOTICE\? [N Y]", 25); // (.")
   _ex_CRS(); // !CRS
   Y_slash_N(); // Y/N
   Push(Read16(regsp)); // DUP

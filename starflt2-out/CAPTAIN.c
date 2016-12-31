@@ -3,7 +3,7 @@
 // overlay size   = 0x1140
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1349,7 +1349,7 @@ void UNK_0xea70() // UNK_0xea70
   Push(Read16(cc__5)); // 5
   Push(Read16(cc__6)); // 6
   CTPOS_dot_(); // CTPOS.
-  PRINT("SCROLL ITEMS: ^\  QUIT: []", 26); // (.")
+  PRINT("SCROLL ITEMS: ^\\  QUIT: []", 26); // (.")
 }
 
 
@@ -1804,7 +1804,7 @@ void UNK_0xee61() // UNK_0xee61
   Push(Read16(cc__4)); // 4
   Push(Read16(cc__6)); // 6
   CTPOS_dot_(); // CTPOS.
-  PRINT("^\ SELECT OPTION OR [ QUIT ]", 28); // (.")
+  PRINT("^\\ SELECT OPTION OR [ QUIT ]", 28); // (.")
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(Read16(cc__6)); // 6
@@ -2610,7 +2610,7 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   if (Pop() == 0) goto label4;
   PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
   CTCR(); // CTCR
-  PRINT("COLONIZATION? [N Y]", 19); // (.")
+  PRINT("COLONIZATION\? [N Y]", 19); // (.")
   Y_slash_N(); // Y/N
   CTCR(); // CTCR
   if (Pop() == 0) goto label5;

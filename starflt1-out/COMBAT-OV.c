@@ -4048,7 +4048,7 @@ void WAR() // WAR
   Push(0xf352);
   Push(0xf3bc);
   Push(0xf414);
-  DOTASKS(UNK_0xf414, UNK_0xf3bc, UNK_0xf352);
+  DOTASKS(UNK_0xf414, UNK_0xf414, UNK_0xf414);
   return;
 
   label1:

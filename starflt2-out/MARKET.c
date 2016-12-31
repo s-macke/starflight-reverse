@@ -3,7 +3,7 @@
 // overlay size   = 0x0d50
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1480,7 +1480,7 @@ void UNK_0xeee3() // UNK_0xeee3
   _gt_BOTT(); // >BOTT
   UNK_0xe96e(); // UNK_0xe96e
   _ex_COLOR(); // !COLOR
-  PRINT(" SCROLL CURSOR: ^\          QUIT: []", 36); // (.")
+  PRINT(" SCROLL CURSOR: ^\\          QUIT: []", 36); // (.")
 }
 
 

@@ -1512,7 +1512,7 @@ void UNK_0xf2c5() // UNK_0xf2c5
   Push(1); // 1
   Push(0x0021);
   CMESS(); // CMESS
-  PRINT("SHALL WE REPAIR THE SHIP?  [N Y]", 32); // (.")
+  PRINT("SHALL WE REPAIR THE SHIP\?  [N Y]", 32); // (.")
   _ex_CRS(); // !CRS
   Y_slash_N(); // Y/N
 }

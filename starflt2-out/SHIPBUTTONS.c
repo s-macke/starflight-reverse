@@ -3,7 +3,7 @@
 // overlay size   = 0x0980
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -898,7 +898,7 @@ void UNK_0xf038() // UNK_0xf038
   Push(0xef1b); // probable '1.1BTN.XEQ'
   Push(Read16(cc__7)); // 7
   Push(0xede6);
-  DOTASKS(UNK_0xede6, 1.1BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 
   label2:
   Push(1); // 1
@@ -1371,7 +1371,7 @@ void UNK_0xf2b6() // UNK_0xf2b6
   Push(0xf0e3); // probable '1BTN.XEQ'
   Push(1); // 1
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, 1BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
   Push(pp_UNK_0xebf6); // UNK_0xebf6
   _099(); // 099
 }
@@ -1388,7 +1388,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   Push(0xf19d); // probable '2BTN.XEQ'
   Push(2); // 2
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, 2BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 }
 
 
@@ -1403,7 +1403,7 @@ void UNK_0xf2ea() // UNK_0xf2ea
   Push(0xf208); // probable '3BTN.XEQ'
   Push(Read16(cc__3)); // 3
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, 3BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 }
 
 
@@ -1418,7 +1418,7 @@ void UNK_0xf302() // UNK_0xf302
   Push(0xf24b); // probable '4BTN.XEQ'
   Push(Read16(cc__4)); // 4
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, 4BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 }
 
 
@@ -1447,7 +1447,7 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(0xf2a8); // probable '6BTN.XEQ'
   Push(Read16(cc__6)); // 6
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, 6BTN.XEQ, UNK_0xee3a, UNK_0xed86);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 }
 
 
@@ -1614,7 +1614,7 @@ void UNK_0xf460() // UNK_0xf460
   Push(0xf3b3);
   Push(0); // 0
   Push(0xede6); // probable 'UNK_0xede6'
-  DOTASKS(UNK_0xede6, UNK_0xf3b3, UNK_0xee3a, UNK_0xf452);
+  DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
   Push(pp_UNK_0xebf6); // UNK_0xebf6
   _099(); // 099
 }

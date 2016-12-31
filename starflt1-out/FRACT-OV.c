@@ -896,7 +896,7 @@ void UNK_0xe80f() // UNK_0xe80f
   Push(Pop() * Pop()); // *
   Push(i); // J
   Push(Pop()*2); // 2*
-  ReadArray(Read16(0x6aad+6), 0x003f); // CONANCHOR
+  ReadArray(Read16(0x6aad + 6), 0x003f); // CONANCHOR
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffdc
@@ -1205,7 +1205,7 @@ void UNK_0xe985() // UNK_0xe985
   OVER(); // OVER
   Push(i); // J
   Push(Pop() + Pop()); // +
-  ReadArray(Read16(0x6aad+6), 0x003f); // CONANCHOR
+  ReadArray(Read16(0x6aad + 6), 0x003f); // CONANCHOR
   LC_at_(); // LC@
   Push(j); // I
   Push(0x000c);
@@ -1213,7 +1213,7 @@ void UNK_0xe985() // UNK_0xe985
   Push(i); // J
   Push(0x0014);
   Push(Pop() * Pop()); // *
-  ReadArray(Read16(0x6ac1+6), 0x1811); // CONTOUR
+  ReadArray(Read16(0x6ac1 + 6), 0x1811); // CONTOUR
   LC_ex_(); // LC!
   j++;
   } while(j<jmax); // (LOOP) 0xffda
@@ -1597,7 +1597,7 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb06(); // UNK_0xeb06
   UNK_0xeb20(); // UNK_0xeb20
   Push(Pop()-1); // 1-
-  ReadArray(Read16(0x6a99+6), 0x0480); // MERCATOR
+  ReadArray(Read16(0x6a99 + 6), 0x0480); // MERCATOR
   L_plus__dash__at_(); // L+-@
   COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
@@ -1619,7 +1619,7 @@ void UNK_0xebfc() // UNK_0xebfc
   {
   Push(j); // I
   Push(i); // J
-  ReadArray(Read16(0x6a99+6), 0x0480); // MERCATOR
+  ReadArray(Read16(0x6a99 + 6), 0x0480); // MERCATOR
   L_plus__dash__at_(); // L+-@
   COLORMAP(); // COLORMAP
   Push(pp_COLOR); // COLOR
@@ -1754,14 +1754,14 @@ void UNK_0xecc6() // UNK_0xecc6
   Push(Read16(Pop())); // @
   Push(0); // 0
   Push(i); // I
-  ReadArray(Read16(0x6b0b+6), 0x00d8); // FACE
+  ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
   L_ex_(); // L!
   POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
   Push(pp_UNK_0xeb84); // UNK_0xeb84
   Push(Read16(Pop())); // @
   Push(2); // 2
   Push(i); // I
-  ReadArray(Read16(0x6b0b+6), 0x00d8); // FACE
+  ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
   LC_ex_(); // LC!
   i++;
   } while(i<imax); // (LOOP) 0xffa8
@@ -2078,7 +2078,7 @@ void UNK_0xeefa() // UNK_0xeefa
   signed short int j, jmax;
   Push(0); // 0
   OVER(); // OVER
-  ReadArray(Read16(0x6b0b+6), 0x00d8); // FACE
+  ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
   OVER(); // OVER
   OVER(); // OVER
   L_at_(); // L@
@@ -2142,7 +2142,7 @@ void UNK_0xeefa() // UNK_0xeefa
 
   Push(0); // 0
   SWAP(); // SWAP
-  ReadArray(Read16(0x6b0b+6), 0x00d8); // FACE
+  ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
   OVER(); // OVER
   OVER(); // OVER
   Push(pp_UNK_0xed85); // UNK_0xed85

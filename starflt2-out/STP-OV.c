@@ -3,7 +3,7 @@
 // overlay size   = 0x04f0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -717,7 +717,7 @@ void UNK_0xf38f() // UNK_0xf38f
   Push(pp_UNK_0xf184); // UNK_0xf184
   Push(Read16(Pop())); // @
   COLORS(); // COLORS case
-  PRINT(" STARS?", 7); // (.")
+  PRINT(" STARS\?", 7); // (.")
 }
 
 

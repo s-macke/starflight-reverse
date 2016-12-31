@@ -362,7 +362,7 @@ void UNK_0xe5e2() // UNK_0xe5e2
 
 void UNK_0xe5fb() // UNK_0xe5fb
 {
-  PRINT("PAGE THROUGH FILES ^\", 21); // (.")
+  PRINT("PAGE THROUGH FILES ^\\", 21); // (.")
 }
 
 
@@ -1394,7 +1394,7 @@ void UNK_0xee65() // UNK_0xee65
   Push(Read16(Pop())); // @
   Push(0); // 0
   _dot_R(); // .R
-  PRINT(")? ", 3); // (.")
+  PRINT(")\? ", 3); // (.")
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
   Push(Read16(cc__dash_1)); // -1
@@ -1641,7 +1641,7 @@ void UNK_0xf09d() // UNK_0xf09d
   Push(0x0020);
   CMESS(); // CMESS
   CTINIT(); // CTINIT
-  PRINT("SELECT RACE ^\ ", 15); // (.")
+  PRINT("SELECT RACE ^\\ ", 15); // (.")
   UNK_0xe5e2(); // UNK_0xe5e2
   _ex_CRS(); // !CRS
   Push(pp_XORMODE); // XORMODE
@@ -1689,7 +1689,7 @@ void UNK_0xf164() // UNK_0xf164
   Push(0); // 0
   Push(0x0010);
   CMESS(); // CMESS
-  PRINT("SELECT SKILL ^\", 15); // (.")
+  PRINT("SELECT SKILL ^\\", 15); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(0x0012);
@@ -1988,7 +1988,7 @@ void UNK_0xf3f9() // UNK_0xf3f9
   Push(0); // 0
   Push(0x0017);
   CMESS(); // CMESS
-  PRINT("DELETE THIS CREWMEMBER?", 23); // (.")
+  PRINT("DELETE THIS CREWMEMBER\?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(Read16(cc__7)); // 7

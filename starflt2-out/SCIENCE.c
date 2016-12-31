@@ -3,7 +3,7 @@
 // overlay size   = 0x15d0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -973,7 +973,7 @@ void UNK_0xe2ea() // UNK_0xe2ea
   goto label1;
 
   label2:
-  PRINT("??-??-???", 9); // (.")
+  PRINT("\?\?-\?\?-\?\?\?", 9); // (.")
 
   label1:
   UNK_0xdfb7(); // UNK_0xdfb7

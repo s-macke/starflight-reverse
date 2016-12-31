@@ -3,7 +3,7 @@
 // overlay size   = 0x0e80
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1967,7 +1967,7 @@ void UNK_0xf2ec() // UNK_0xf2ec
   Push(1); // 1
   Push(0x0021);
   CMESS(); // CMESS
-  PRINT("SHALL WE REPAIR THE SHIP?  [N Y]", 32); // (.")
+  PRINT("SHALL WE REPAIR THE SHIP\?  [N Y]", 32); // (.")
   _ex_CRS(); // !CRS
   Y_slash_N(); // Y/N
 }

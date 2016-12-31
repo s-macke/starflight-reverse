@@ -3,7 +3,7 @@
 // overlay size   = 0x03f0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -16,7 +16,13 @@
 //      UNK_0xf222  codep:0x7394 parp:0xf222 size:0x003e C-string:'UNK_0xf222'
 //      UNK_0xf262  codep:0x7394 parp:0xf262 size:0x0006 C-string:'UNK_0xf262'
 //      UNK_0xf26a  codep:0x7394 parp:0xf26a size:0x0006 C-string:'UNK_0xf26a'
-//      UNK_0xf272  codep:0x7420 parp:0xf272 size:0x0136 C-string:'UNK_0xf272'
+//      UNK_0xf272  codep:0x7420 parp:0xf272 size:0x0003 C-string:'UNK_0xf272'
+//      UNK_0xf277  codep:0x224c parp:0xf277 size:0x0006 C-string:'UNK_0xf277'
+//      UNK_0xf27f  codep:0x224c parp:0xf27f size:0x000a C-string:'UNK_0xf27f'
+//      UNK_0xf28b  codep:0x224c parp:0xf28b size:0x0008 C-string:'UNK_0xf28b'
+//      UNK_0xf295  codep:0x224c parp:0xf295 size:0x000a C-string:'UNK_0xf295'
+//      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x0014 C-string:'UNK_0xf2a1'
+//      UNK_0xf2b7  codep:0x224c parp:0xf2b7 size:0x00f1 C-string:'UNK_0xf2b7'
 //      UNK_0xf3aa  codep:0x224c parp:0xf3aa size:0x0036 C-string:'UNK_0xf3aa'
 //        A.DENSIT  codep:0xf2bf parp:0xf3ed size:0x000e C-string:'A_dot_DENSIT'
 //        PLANET.G  codep:0xf2bf parp:0xf408 size:0x000e C-string:'PLANET_dot_G'
@@ -40,6 +46,9 @@ extern const unsigned short int pp_FSTUN; // FSTUN
 extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_SURFAC; // (SURFAC
+void _star__slash_(); // */
+void _co_(); // ,
+void RRND(); // RRND
 void C_ex__2(); // C!_2
 void _ex__2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
@@ -62,6 +71,7 @@ void _dot_TTY(); // .TTY
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
+void _dash_(); // -
 void _1_dot_5_at_(); // 1.5@
 void CI(); // CI
 
@@ -113,7 +123,83 @@ const unsigned short int cc_UNK_0xf18a = 0xf18a; // UNK_0xf18a
 // ================================================
 // 0xf270: WORD 'UNK_0xf272' codep=0x7420 parp=0xf272
 // ================================================
-// 0xf272: db 0x43 0x0b 0x02 0x4c 0x22 0xf0 0x0d 0x4c 0x7e 0x90 0x16 0x4c 0x22 0x20 0x0f 0x5d 0x17 0x00 0x01 0xc4 0x4b 0x90 0x16 0x4c 0x22 0x20 0x0f 0x3d 0x0f 0xc4 0x4b 0x90 0x16 0x4c 0x22 0x2e 0x0f 0x5d 0x17 0x64 0x00 0xc4 0x4b 0x90 0x16 0x4c 0x22 0xb4 0x0d 0xe7 0x0f 0x7f 0x0e 0x92 0x0f 0x90 0x0e 0x5d 0x17 0x00 0x01 0xc4 0x0f 0x72 0x0f 0x90 0x16 0x4c 0x22 0x4f 0x06 0x20 0x0f 0x93 0x1f 0xfa 0x1b 'C  L"  L~  L"  ]    K  L"  =  K  L". ] d  K  L"         ]     r   L"O       '
+// 0xf272: db 0x43 0x0b 0x02 'C  '
+
+// ================================================
+// 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277
+// ================================================
+
+void UNK_0xf277() // UNK_0xf277
+{
+  _2DUP(); // 2DUP
+  IFIND(); // IFIND
+}
+
+
+// ================================================
+// 0xf27d: WORD 'UNK_0xf27f' codep=0x224c parp=0xf27f
+// ================================================
+
+void UNK_0xf27f() // UNK_0xf27f
+{
+  Push(0); // 0
+  Push(0x0100);
+  RRND(); // RRND
+}
+
+
+// ================================================
+// 0xf289: WORD 'UNK_0xf28b' codep=0x224c parp=0xf28b
+// ================================================
+
+void UNK_0xf28b() // UNK_0xf28b
+{
+  Push(0); // 0
+  Push(2); // 2
+  RRND(); // RRND
+}
+
+
+// ================================================
+// 0xf293: WORD 'UNK_0xf295' codep=0x224c parp=0xf295
+// ================================================
+
+void UNK_0xf295() // UNK_0xf295
+{
+  Push(1); // 1
+  Push(0x0064);
+  RRND(); // RRND
+}
+
+
+// ================================================
+// 0xf29f: WORD 'UNK_0xf2a1' codep=0x224c parp=0xf2a1
+// ================================================
+
+void UNK_0xf2a1() // UNK_0xf2a1
+{
+  unsigned short int a;
+  a = Pop(); // >R
+  Push(Pop()+1); // 1+
+  OVER(); // OVER
+  _dash_(); // -
+  Push(a); // R>
+  Push(0x0100);
+  _star__slash_(); // */
+  Push(Pop() + Pop()); // +
+}
+
+
+// ================================================
+// 0xf2b5: WORD 'UNK_0xf2b7' codep=0x224c parp=0xf2b7
+// ================================================
+
+void UNK_0xf2b7() // UNK_0xf2b7
+{
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
+  Push(0); // 0
+  _co_(); // ,
+  CODE(); // (;CODE) inlined assembler code
 // 0xf2bf: call   1649
   OVER(); // OVER
   Push(Pop() + Pop()); // +

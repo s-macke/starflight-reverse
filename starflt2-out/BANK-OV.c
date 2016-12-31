@@ -3,7 +3,7 @@
 // overlay size   = 0x05e0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -61,6 +61,7 @@ extern const unsigned short int pp_WBLT; // WBLT
 extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_PORTDAT; // PORTDAT
 extern const unsigned short int pp_STARDAT; // STARDAT
+extern const unsigned short int user_CONTEXT_1; // CONTEXT_1
 void DABS(); // DABS
 void M_star__slash_(); // M*/
 void D_st_(); // D<
@@ -836,7 +837,7 @@ void UNK_0xf4d4() // UNK_0xf4d4
 void _ro_U_dash_BANK_rc_() // (U-BANK)
 {
   Push(Read16(cc__dash_1)); // -1
-  Push(tt_CONTEXT_1); // CONTEXT_1
+  Push(user_CONTEXT_1); // CONTEXT_1
   _ex__2(); // !_2
   _gt_HIDDEN(); // >HIDDEN
   UNK_0xf474(); // UNK_0xf474
@@ -855,7 +856,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label1;
   Push(Read16(cc__5)); // 5
-  Push(tt_CONTEXT_1); // CONTEXT_1
+  Push(user_CONTEXT_1); // CONTEXT_1
   _ex__2(); // !_2
 }
 

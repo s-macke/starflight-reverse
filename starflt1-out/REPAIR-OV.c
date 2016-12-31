@@ -772,7 +772,7 @@ void UNK_0xf1e4() // UNK_0xf1e4
 void UNK_0xf208() // UNK_0xf208
 {
 
-  UNK_0x3f3b("SHALL I TAKE THIS FROM CARGO?");
+  UNK_0x3f3b("SHALL I TAKE THIS FROM CARGO\?");
   _dot_TTY(); // .TTY
   Push(0x01f4);
   MS(); // MS

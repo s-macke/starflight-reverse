@@ -922,7 +922,7 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
-  PRINT("?", 1); // (.")
+  PRINT("\?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xec75(); // UNK_0xec75
   Y_slash_N(); // Y/N

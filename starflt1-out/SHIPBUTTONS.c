@@ -797,7 +797,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(0xf031); // probable '1.1BTN.XEQ'
   Push(Read16(cc__7)); // 7
   Push(0xef50);
-  DOTASKS(UNK_0xef50, 1.1BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
 
   label2:
   Push(1); // 1
@@ -1139,7 +1139,7 @@ void UNK_0xf33f() // UNK_0xf33f
   Push(0xf21f); // probable '1BTN.XEQ'
   Push(1); // 1
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 1BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
 }
@@ -1156,7 +1156,7 @@ void UNK_0xf35b() // UNK_0xf35b
   Push(0xf264); // probable '2BTN.XEQ'
   Push(2); // 2
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 2BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
 }
 
 
@@ -1171,7 +1171,7 @@ void UNK_0xf373() // UNK_0xf373
   Push(0xf2cb); // probable '3BTN.XEQ'
   Push(Read16(cc__3)); // 3
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 3BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
 }
 
 
@@ -1186,7 +1186,7 @@ void UNK_0xf38b() // UNK_0xf38b
   Push(0xf304); // probable '4BTN.XEQ'
   Push(Read16(cc__4)); // 4
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 4BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
 }
 
 
@@ -1215,7 +1215,7 @@ void UNK_0xf3b3() // UNK_0xf3b3
   Push(0xf331); // probable '6BTN.XEQ'
   Push(Read16(cc__6)); // 6
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 6BTN.XEQ, UNK_0xef68, UNK_0xef06);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
 }
 
 
@@ -1274,7 +1274,7 @@ void UNK_0xf3fe() // UNK_0xf3fe
   Push(0xf3d6); // probable '0BTN.XEQ'
   Push(0); // 0
   Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS(UNK_0xef50, 0BTN.XEQ, UNK_0xef68, UNK_0xf3f0);
+  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
 }

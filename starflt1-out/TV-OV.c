@@ -2010,7 +2010,7 @@ void UNK_0xf3b5() // UNK_0xf3b5
   Push(Read16(cc__5)); // 5
   Push(Read16(cc__6)); // 6
   UNK_0xe9b3(); // UNK_0xe9b3
-  PRINT("CHOOSE WEAPON ^\  RETURN= AIM", 29); // (.")
+  PRINT("CHOOSE WEAPON ^\\  RETURN= AIM", 29); // (.")
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(Read16(cc__7)); // 7

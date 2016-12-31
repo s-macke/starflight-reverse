@@ -3,7 +3,7 @@
 // overlay size   = 0x0b40
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1977,7 +1977,7 @@ void TV_dash_MOVE() // TV-MOVE
   Push(0xf46d);
   Push(0xf499);
   Push(0xf447);
-  DOTASKS(UNK_0xf447, UNK_0xf499, UNK_0xf46d);
+  DOTASKS(UNK_0xf447, UNK_0xf447, UNK_0xf447);
   Push(pp__i_SIMULA); // 'SIMULA
   _at_EXECUTE(); // @EXECUTE
   Push(pp_TIME_dash_PA); // TIME-PA

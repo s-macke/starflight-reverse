@@ -3,7 +3,7 @@
 // overlay size   = 0x08c0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -922,7 +922,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
-  PRINT("?", 1); // (.")
+  PRINT("\?", 1); // (.")
   CTCR(); // CTCR
   UNK_0xecc5(); // UNK_0xecc5
   Y_slash_N(); // Y/N

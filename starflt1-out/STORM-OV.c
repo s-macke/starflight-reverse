@@ -9,7 +9,8 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-//      UNK_0xf0a6  codep:0x224c parp:0xf0a6 size:0x00a4 C-string:'UNK_0xf0a6'
+//      UNK_0xf0a6  codep:0x224c parp:0xf0a6 size:0x000c C-string:'UNK_0xf0a6'
+//      UNK_0xf0b4  codep:0x224c parp:0xf0b4 size:0x0096 C-string:'UNK_0xf0b4'
 //      UNK_0xf14c  codep:0x224c parp:0xf14c size:0x0026 C-string:'UNK_0xf14c'
 //      UNK_0xf174  codep:0x224c parp:0xf174 size:0x000c C-string:'UNK_0xf174'
 //          STORMS  codep:0xf0cc parp:0xf18b size:0x00b6 C-string:'STORMS'
@@ -61,6 +62,9 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 void ABS(); // ABS
 void MAX(); // MAX
 void MIN(); // MIN
+void _co_(); // ,
+void ALLOT(); // ALLOT
+void HERE(); // HERE
 void QUIT(); // QUIT
 void MS(); // MS
 void UNRAVEL(); // UNRAVEL
@@ -72,6 +76,7 @@ void _3_star_(); // 3*
 void RRND(); // RRND
 void C_ex_(); // C!
 void ON_3(); // ON_3
+void FILL_1(); // FILL_1
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
@@ -121,7 +126,27 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(Pop()+2); // 2+
 }
 
-// 0xf0b2: db 0x4c 0x22 0x4f 0x06 0x8b 0x3b 0xb3 0x0f 0x41 0x0e 0x93 0x1f 0xed 0x22 0x7f 0x0e 0x8c 0x21 0xf2 0x0e 0x20 0x0f 0xfd 0x6d 0xfa 0x1b 'L"O  ;  A    "  !     m  '
+
+// ================================================
+// 0xf0b2: WORD 'UNK_0xf0b4' codep=0x224c parp=0xf0b4
+// ================================================
+
+void UNK_0xf0b4() // UNK_0xf0b4
+{
+  signed short int i, imax;
+  unsigned short int a;
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
+  Push(Read16(cc__6)); // 6
+  Push(Pop() * Pop()); // *
+  Push(Read16(regsp)); // DUP
+  _co_(); // ,
+  HERE(); // HERE
+  OVER(); // OVER
+  ALLOT(); // ALLOT
+  SWAP(); // SWAP
+  Push(0); // 0
+  FILL_1(); // FILL_1
+  CODE(); // (;CODE) inlined assembler code
 // 0xf0cc: call   1649
   Push(0); // 0
   Push(Read16(cc__4)); // 4

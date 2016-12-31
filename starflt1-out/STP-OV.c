@@ -438,7 +438,7 @@ void UNK_0xf45a() // UNK_0xf45a
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
 
-  UNK_0x3f3b("ARE YOU SURE? BETTER DOUBLE CHECK!");
+  UNK_0x3f3b("ARE YOU SURE\? BETTER DOUBLE CHECK!");
   _dot_TTY(); // .TTY
   Push(0x07d0);
   MS(); // MS

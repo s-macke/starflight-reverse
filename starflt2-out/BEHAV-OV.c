@@ -3,7 +3,7 @@
 // overlay size   = 0x10f0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -2040,7 +2040,7 @@ void UNK_0xef4c() // UNK_0xef4c
 void UNK_0xef9a() // UNK_0xef9a
 {
   UNK_0xe9f7(); // UNK_0xe9f7
-  PRINT("DO YOU WANT TO TRADE?   [ NO YES ] ", 35); // (.")
+  PRINT("DO YOU WANT TO TRADE\?   [ NO YES ] ", 35); // (.")
   Y_slash_N(); // Y/N
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -2816,7 +2816,7 @@ void TV() // TV
   Push(0xf4f2);
   Push(0xf1ff); // probable 'TV-KEY'
   Push(0xf500);
-  DOTASKS(UNK_0xf500, TV-KEY, UNK_0xf4f2);
+  DOTASKS(UNK_0xf500, UNK_0xf500, UNK_0xf500);
   Push(pp_TIME_dash_PA); // TIME-PA
   ON_2(); // ON_2
 }

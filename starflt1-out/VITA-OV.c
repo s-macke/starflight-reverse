@@ -36,7 +36,8 @@
 //      UNK_0xe8e1  codep:0x224c parp:0xe8e1 size:0x000a C-string:'UNK_0xe8e1'
 //      UNK_0xe8ed  codep:0x224c parp:0xe8ed size:0x0014 C-string:'UNK_0xe8ed'
 //      UNK_0xe903  codep:0x224c parp:0xe903 size:0x0015 C-string:'UNK_0xe903'
-//      UNK_0xe91a  codep:0x224c parp:0xe91a size:0x00da C-string:'UNK_0xe91a'
+//      UNK_0xe91a  codep:0x224c parp:0xe91a size:0x000c C-string:'UNK_0xe91a'
+//      UNK_0xe928  codep:0x224c parp:0xe928 size:0x00cc C-string:'UNK_0xe928'
 //      UNK_0xe9f6  codep:0x224c parp:0xe9f6 size:0x0012 C-string:'UNK_0xe9f6'
 //      UNK_0xea0a  codep:0x224c parp:0xea0a size:0x0036 C-string:'UNK_0xea0a'
 //        A.DENSIT  codep:0xe90b parp:0xea4d size:0x000e C-string:'A_dot_DENSIT'
@@ -107,6 +108,8 @@ void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
 void _co_(); // ,
+void ALLOT(); // ALLOT
+void HERE(); // HERE
 void QUIT(); // QUIT
 void MS(); // MS
 void UNRAVEL(); // UNRAVEL
@@ -353,8 +356,6 @@ void UNK_0xe8ed() // UNK_0xe8ed
 
 void UNK_0xe903() // UNK_0xe903
 {
-  signed short int i, imax;
-  unsigned short int a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(0); // 0
   _co_(); // ,
@@ -380,7 +381,27 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(Pop()+2); // 2+
 }
 
-// 0xe926: db 0x4c 0x22 0x4f 0x06 0x8b 0x3b 0xb3 0x0f 0x41 0x0e 0x93 0x1f 0xed 0x22 0x7f 0x0e 0x8c 0x21 0xf2 0x0e 0x20 0x0f 0xfd 0x6d 0xfa 0x1b 'L"O  ;  A    "  !     m  '
+
+// ================================================
+// 0xe926: WORD 'UNK_0xe928' codep=0x224c parp=0xe928
+// ================================================
+
+void UNK_0xe928() // UNK_0xe928
+{
+  signed short int i, imax;
+  unsigned short int a;
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
+  Push(Read16(cc__6)); // 6
+  Push(Pop() * Pop()); // *
+  Push(Read16(regsp)); // DUP
+  _co_(); // ,
+  HERE(); // HERE
+  OVER(); // OVER
+  ALLOT(); // ALLOT
+  SWAP(); // SWAP
+  Push(0); // 0
+  FILL_1(); // FILL_1
+  CODE(); // (;CODE) inlined assembler code
 // 0xe940: call   1649
   Push(0); // 0
   Push(Read16(cc__4)); // 4
@@ -1050,7 +1071,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
   UNK_0x3f3b("#SPECIES OVERFLOW ");
   _dot_TTY(); // .TTY
 
-  UNK_0x3f3b("SO SORRY- WHERE WERE YOU, ANYWAY?");
+  UNK_0x3f3b("SO SORRY- WHERE WERE YOU, ANYWAY\?");
   _dot_TTY(); // .TTY
 
   label1:

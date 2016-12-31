@@ -3,7 +3,7 @@
 // overlay size   = 0x09b0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1168,7 +1168,7 @@ void UNK_0xf2ad() // UNK_0xf2ad
   UNK_0x3f09("BE ABLE TO BACK OUT. SHALL WE ATTEMPT ");
   UNK_0xeeff(); // UNK_0xeeff
 
-  UNK_0x3f09("TO ESCAPE?");
+  UNK_0x3f09("TO ESCAPE\?");
   UNK_0xeeff(); // UNK_0xeeff
 
   UNK_0x3f09("              [NO   YES] ");

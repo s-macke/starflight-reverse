@@ -3,7 +3,7 @@
 // overlay size   = 0x1860
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -4564,7 +4564,7 @@ void WAR() // WAR
   Push(0xf3b6);
   Push(0xf43a);
   Push(0xf4a8);
-  DOTASKS(UNK_0xf4a8, UNK_0xf43a, UNK_0xf3b6);
+  DOTASKS(UNK_0xf4a8, UNK_0xf4a8, UNK_0xf4a8);
   return;
 
   label1:

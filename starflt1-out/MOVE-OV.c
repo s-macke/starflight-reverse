@@ -2093,7 +2093,7 @@ void TV_dash_MOVE() // TV-MOVE
   Push(0xf37b);
   Push(0xf3a7);
   Push(0xf355);
-  DOTASKS(UNK_0xf355, UNK_0xf3a7, UNK_0xf37b);
+  DOTASKS(UNK_0xf355, UNK_0xf355, UNK_0xf355);
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_3(); // ON_3
 }

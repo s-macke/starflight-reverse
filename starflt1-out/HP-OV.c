@@ -1719,7 +1719,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   return;
 
   label5:
-  ABORT("something wrong in ?move ", 25);// (ABORT")
+  ABORT("something wrong in \?move ", 25);// (ABORT")
   Pop(); // DROP
 }
 

@@ -3,7 +3,7 @@
 // overlay size   = 0x15a0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -2443,7 +2443,7 @@ void UNK_0xea6a() // UNK_0xea6a
   POLY_dash_ER(); // POLY-ER
   Push(0x00fa);
   MS(); // MS
-  PRINT("^\", 2); // (.")
+  PRINT("^\\", 2); // (.")
   Push(0x00fa);
   MS(); // MS
   i++;
@@ -2658,7 +2658,7 @@ void UNK_0xebdf() // UNK_0xebdf
   POLY_dash_ER(); // POLY-ER
   UNK_0xe192(); // UNK_0xe192
   _ex_COLOR(); // !COLOR
-  PRINT("SELL ALL?  [N Y]", 16); // (.")
+  PRINT("SELL ALL\?  [N Y]", 16); // (.")
   Y_slash_N(); // Y/N
 }
 

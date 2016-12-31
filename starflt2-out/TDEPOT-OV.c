@@ -3,7 +3,7 @@
 // overlay size   = 0x0f90
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -649,7 +649,7 @@ void UNK_0xe851() // UNK_0xe851
   Push(0x001b);
   Push(0x0064);
   POS_dot_(); // POS.
-  PRINT("HOW MAY WE HELP YOU TODAY?", 26); // (.")
+  PRINT("HOW MAY WE HELP YOU TODAY\?", 26); // (.")
 }
 
 
@@ -724,7 +724,7 @@ void UNK_0xe98e() // UNK_0xe98e
   Push(0); // 0
   Push(0x001a);
   CMESS(); // CMESS
-  PRINT("^ SCROLL INVENTORY LIST \", 25); // (.")
+  PRINT("^ SCROLL INVENTORY LIST \\", 25); // (.")
   _ex_CRS(); // !CRS
 }
 
@@ -1452,7 +1452,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label5;
-  PRINT(" HOW MANY CUBIC METERS?", 23); // (.")
+  PRINT(" HOW MANY CUBIC METERS\?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
   Push(0x0016);

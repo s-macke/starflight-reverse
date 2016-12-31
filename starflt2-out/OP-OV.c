@@ -3,7 +3,7 @@
 // overlay size   = 0x0fe0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -1101,7 +1101,7 @@ void UNK_0xeb80() // UNK_0xeb80
   CMESS(); // CMESS
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  PRINT("REPEAT LAST NOTICE? [N Y]", 25); // (.")
+  PRINT("REPEAT LAST NOTICE\? [N Y]", 25); // (.")
   _ex_CRS(); // !CRS
   Y_slash_N(); // Y/N
   Push(Read16(regsp)); // DUP

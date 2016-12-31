@@ -3,7 +3,7 @@
 // overlay size   = 0x0810
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -717,7 +717,7 @@ void _dot_STARDATE() // .STARDATE
   goto label4;
 
   label1:
-  PRINT(" ????", 5); // (.")
+  PRINT(" \?\?\?\?", 5); // (.")
 
   label4:
   Push(pp_XORMODE); // XORMODE

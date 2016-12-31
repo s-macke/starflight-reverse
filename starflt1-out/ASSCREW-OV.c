@@ -236,7 +236,7 @@ void UNK_0xeae0() // UNK_0xeae0
   Push(1); // 1
   _gt_(); // >
   if (Pop() == 0) return;
-  PRINT("PAGE THROUGH FILES: ^\", 22); // (.")
+  PRINT("PAGE THROUGH FILES: ^\\", 22); // (.")
 }
 
 

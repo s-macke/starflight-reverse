@@ -192,6 +192,9 @@ extern const unsigned short int pp__3DSEG; // 3DSEG
 extern const unsigned short int pp_DERROR; // DERROR
 extern const unsigned short int pp__i_VERSIONERR; // 'VERSIONERR
 extern const unsigned short int pp__ask_TANDRG; // ?TANDRG
+extern const unsigned short int user_TIB; // TIB
+extern const unsigned short int user_ROW; // ROW
+extern const unsigned short int user_COL; // COL
 void _ro_RESTORE_rc_(); // (RESTORE)
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void _ro_SETUP_rc_(); // (SETUP)
@@ -1854,7 +1857,7 @@ void PUSHVECT() // PUSHVECT
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(VECTORERRORS);
+  GetTableEntry("VECTORERRORS");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -1878,7 +1881,7 @@ void POPVECT() // POPVECT
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(VECTORERRORS);
+  GetTableEntry("VECTORERRORS");
   _ex__3(); // !_3
   Push(Read16(cc__dash_1)); // -1
   int step = Pop();
@@ -2435,7 +2438,7 @@ void UNK_0xeda2() // UNK_0xeda2
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(HOST);
+  GetTableEntry("HOST");
   Push(Read16(Pop())); // @
   i++;
   } while(i<imax); // (LOOP) 0xfff8
@@ -2460,7 +2463,7 @@ void UNK_0xedb8() // UNK_0xedb8
   do // (DO)
   {
   Push(i); // I
-  GetTableEntry(HOST);
+  GetTableEntry("HOST");
   _ex__3(); // !_3
   Push(Read16(cc__dash_1)); // -1
   int step = Pop();
@@ -2585,10 +2588,10 @@ void UNK_0xee7b() // UNK_0xee7b
 {
   Push(0x00ba);
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
-  Push(tt_ROW); // ROW
+  Push(user_ROW); // ROW
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
-  Push(tt_COL); // COL
+  Push(user_COL); // COL
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
@@ -2895,7 +2898,7 @@ void NEW_dot_GA() // NEW.GA
   GDE(); // GDE
   UNK_0xe66f(); // UNK_0xe66f
   ESCENABLE(); // ESCENABLE
-  Push(tt_TIB); // TIB
+  Push(user_TIB); // TIB
   Push(Read16(Pop())); // @
   Push(0x0050);
   Push(0); // 0

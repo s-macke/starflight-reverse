@@ -3,7 +3,7 @@
 // overlay size   = 0x06e0
 
 #include"../emul/cpu.h"
-#include"../emul/starflt2.h"
+#include"../emul/starflt1.h"
 
 
 // =================================
@@ -409,7 +409,7 @@ void UNK_0xf049() // UNK_0xf049
   SWAP(); // SWAP
   Pop(); // DROP
 
-  UNK_0x3f09("??-??-????");
+  UNK_0x3f09("\?\?-\?\?-\?\?\?\?");
   Pop(); // DROP
   Push(Pop()-1); // 1-
   SWAP(); // SWAP
