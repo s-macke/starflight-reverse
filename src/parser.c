@@ -116,13 +116,14 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODECONSTANT)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s); // TODO: check
+        snprintf(ret, STRINGLEN, "  Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s);
         if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
-    if (e->codep == CODEDI) // load from fixed table?
+    if (e->codep == CODEDI) // User data
     {
-        snprintf(ret, STRINGLEN, "  Push(tt_%s); // %s\n", Forth2CString(s), s); // TODO: check4
+        snprintf(ret, STRINGLEN, "  Push(user_%s); // %s\n", Forth2CString(s), s);
+        if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODELOADDATA)
@@ -1012,6 +1013,13 @@ void WriteExtern(FILE *fp, int ovidx)
     }
     for(i=0; i<ndict; i++)
     {
+        if (dict[i].codep != CODEDI) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = 0;
+    }
+    for(i=0; i<ndict; i++)
+    {
         if (dict[i].codep != CODECALL) continue;
         if (!dict[i].doextern) continue;
         fprintf(fp, "void %s(); // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
@@ -1062,7 +1070,7 @@ void WriteVariables(FILE *fp, int ovidx)
     {
         if (dict[i].ovidx != ovidx) continue;
         if (dict[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int %s = 0x%04x; // %s // accessed via di (in WORD OPERATOR)\n", Forth2CString(GetWordName(&dict[i])), Read16(Read16(dict[i].parp)+REGDI), GetWordName(&dict[i]));
+        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp)+REGDI, GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
     /*
