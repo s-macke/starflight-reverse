@@ -192,6 +192,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     SortDictionary();
     WriteHeader(ovidx);
     WriteDict(mem, fpc, ovidx);
+    WriteExtern(fpc, ovidx);
     WriteVariables(fpc, ovidx);
     WriteParsedFunctions(minaddr, maxaddr, fpc);
 }

@@ -111,11 +111,13 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
         snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s\n", Forth2CString(s), s);
+        if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODECONSTANT)
     {
         snprintf(ret, STRINGLEN, "  Push(cc_%s); // %s\n", Forth2CString(s), s); // TODO: check
+        if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODEDI) // load from fixed table?
@@ -178,6 +180,7 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     if (e->codep == CODECASE)
     {
         snprintf(ret, STRINGLEN, "  %s(); // %s case\n", Forth2CString(s), s);
+        if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODEARRAY)
@@ -199,13 +202,13 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODERULE)
     {
-        snprintf(ret, STRINGLEN, "  Rule(%s);\n", s);
+        snprintf(ret, STRINGLEN, "  Rule(\"%s\");\n", s);
         return 2;
     }
     if (e->codep == CODEEXEC)
     {
         int par = Read16(Read16(e->parp)+REGDI);
-        snprintf(ret, STRINGLEN, "  Exec(%s); // call of word 0x%04x '%s'\n",
+        snprintf(ret, STRINGLEN, "  Exec(\"%s\"); // call of word 0x%04x '%s'\n",
             s, par, GetDictWord(par, currentovidx));
         return 2;
     }
@@ -346,6 +349,8 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
 
     snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
+    if (e->ovidx == -1) e->doextern = 1;
+    if (e->codep > (0x100+FILESTAR0SIZE)) e->doextern = 1;
     return 2;
 }
 
@@ -542,7 +547,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
     if (ofs == d->parp)
     {
         char *s = GetWordName(d);
-        snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+        snprintf(pline[d->parp-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
         AddNamedVariable(&vars, d, "callp1");
         AddNamedVariable(&vars, d, "callp0");
     }
@@ -612,7 +617,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
-            snprintf(pline[ofs].str, STRINGLEN, "  %s();\n// inlined assembler code\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "  CODE(); // %s inlined assembler code\n", s);
             ofs += 2;
             return;
         } else
@@ -709,6 +714,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         {
             DICTENTRY *dcall = GetDictEntry(par, currentovidx);
             snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
+            if (e->ovidx == -1) e->doextern = 1;
             ofs += 2;
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
@@ -811,7 +817,10 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            snprintf(pline[ofs].str, STRINGLEN, "  unsigned short int %s = Pop(); // >R\n", GetVariable(&vars, 0));
+            strcat(pline[d->parp-1].initvarstr, "  unsigned short int ");
+            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
+            strcat(pline[d->parp-1].initvarstr, ";\n");
+            snprintf(pline[ofs].str, STRINGLEN, "  %s = Pop(); // >R\n", GetVariable(&vars, 0));
             ofs += 2;
         } else
         if (strcmp(s, "R>") == 0)
@@ -833,7 +842,13 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
-            snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %s = Pop();\n  signed short int %s = Pop();\n  do // (DO)\n  {\n",
+            strcat(pline[d->parp-1].initvarstr, "  signed short int ");
+            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
+            strcat(pline[d->parp-1].initvarstr, ", ");
+            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 1));
+            strcat(pline[d->parp-1].initvarstr, ";\n");
+
+            snprintf(pline[ofs].str, STRINGLEN, "\n  %s = Pop();\n  %s = Pop();\n  do // (DO)\n  {\n",
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 1));
             ofs += 2;
@@ -876,7 +891,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + par)&0xFFFF;
             snprintf(pline[ofs].str, STRINGLEN,
                 "  int step = Pop();\n  %s += step;\n"
-                "  } while(((step>=0) && (%s<%s)) || ((step<0) && (%s>%s))); // (+LOOP) 0x%04x\n\n",
+                "  if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n"
+                "  } while(1); // (+LOOP) 0x%04x\n\n",
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 1),
@@ -930,6 +946,7 @@ void InitParser()
         dict[i].nlabel = 0;
         dict[i].nloopvars = 0;
         dict[i].nstackvariables = 0;
+        dict[i].doextern = 0;
     }
 }
 
@@ -969,6 +986,47 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     }
 */
 }
+
+void WriteExtern(FILE *fp, int ovidx)
+{
+    int i = 0;
+    int j = 0;
+
+    fprintf(fp, "\n// =================================\n");
+    fprintf(fp, "// ============= EXTERN ============\n");
+    fprintf(fp, "// =================================\n");
+
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODECONSTANT) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = 0;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODEPOINTER) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern const unsigned short int pp_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = 0;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODECALL) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "void %s(); // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = 0;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "void %s(); // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = 0;
+    }
+    fprintf(fp, "\n");
+}
+
+
 
 void WriteVariables(FILE *fp, int ovidx)
 {
@@ -1041,6 +1099,12 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].str);
+            dbmode = 0;
+        }
+        if (pline[i].initvarstr[0] != 0)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            fprintf(fp, "%s", pline[i].initvarstr);
             dbmode = 0;
         }
         if (!pline[i].done)

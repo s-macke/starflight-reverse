@@ -17,6 +17,7 @@ typedef struct DICTENTRY
     int isentry;
     int nloopvars;
     int nstackvariables;
+    int doextern;
 } DICTENTRY;
 
 extern int ndict;
@@ -28,6 +29,5 @@ DICTENTRY* GetDictEntry(unsigned short addr, int ovidx);
 char* GetDictWord(unsigned short addr, int ovidx);
 char* GetWordName(DICTENTRY *dict);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
-void WriteVariables(FILE *fp, int ovidx);
 
 #endif
