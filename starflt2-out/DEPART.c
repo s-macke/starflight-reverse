@@ -43,7 +43,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
   LoadData("UNK_0xf3a6"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 

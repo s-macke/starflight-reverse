@@ -342,7 +342,7 @@ void UNK_0xeccc() // UNK_0xeccc
   Push(Read16(a)); // R@
   LoadData("UNK_0xebe6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0xec46);
   goto label2;
@@ -351,7 +351,7 @@ void UNK_0xeccc() // UNK_0xeccc
   Push(Read16(a)); // R@
   LoadData("UNK_0xebf6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(0xec4e);
   goto label2;
@@ -949,7 +949,7 @@ void UNK_0xefad() // UNK_0xefad
   _st_(); // <
   Push(i); // I
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
   Push(cc_UNK_0xeb92); // UNK_0xeb92
@@ -1272,7 +1272,7 @@ void TRADE_gt_OR() // TRADE>OR
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -1361,7 +1361,7 @@ void UNK_0xf41e() // UNK_0xf41e
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(0x0023);
   goto label3;
@@ -1389,7 +1389,7 @@ void UNK_0xf41e() // UNK_0xf41e
   LoadData("UNK_0xebae"); // from 'TRADERS     '
   C_ex__2(); // C!_2
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   Push(0x000a);
   goto label6;

@@ -237,7 +237,7 @@ void UNK_0xedea() // UNK_0xedea
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0018);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
@@ -531,7 +531,7 @@ void UNK_0xeff3() // UNK_0xeff3
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(a); // I
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(a); // R>
@@ -553,7 +553,7 @@ void UNK_0xeff3() // UNK_0xeff3
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(c); // I
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Push(c); // R>
@@ -567,7 +567,7 @@ void UNK_0xeff3() // UNK_0xeff3
   if (Pop() == 0) goto label3;
   Push(d); // I
   Push(b); // I'
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
   Push(d); // I

@@ -1192,7 +1192,7 @@ void UNK_0xf116() // UNK_0xf116
   Push(pp_UNK_0xf0e6); // UNK_0xf0e6
   Push(Read16(Pop())); // @
   UNK_0xf0f2(); // UNK_0xf0f2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -1205,7 +1205,7 @@ void UNK_0xf122() // UNK_0xf122
   Push(pp_UNK_0xf0e6); // UNK_0xf0e6
   Push(Read16(Pop())); // @
   UNK_0xf0fe(); // UNK_0xf0fe
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -1218,7 +1218,7 @@ void UNK_0xf12e() // UNK_0xf12e
   Push(pp_UNK_0xf0e6); // UNK_0xf0e6
   Push(Read16(Pop())); // @
   UNK_0xf10a(); // UNK_0xf10a
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -1802,7 +1802,7 @@ void DRONE() // DRONE
   Push(pp_NOF); // NOF
   _099(); // 099
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   UNK_0xf289(); // UNK_0xf289
   UNK_0xf3c9(); // UNK_0xf3c9

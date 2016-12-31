@@ -698,7 +698,7 @@ void _v_REGION() // |REGION
   Push(pp_BUF_dash_SEG); // BUF-SEG
   Push(Read16(Pop())); // @
   Push(0xa000);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   _v_EGA(); // |EGA
   goto label3;
@@ -989,7 +989,7 @@ void UNK_0xee6f() // UNK_0xee6f
   Push(pp_UNK_0xeced); // UNK_0xeced
   _ex__3(); // !_3
   UNK_0xee29(); // UNK_0xee29
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -1067,7 +1067,7 @@ void UNK_0xef65() // UNK_0xef65
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -1690,7 +1690,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf0b5); // UNK_0xf0b5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(0x05dc);

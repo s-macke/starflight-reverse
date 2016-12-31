@@ -232,7 +232,7 @@ void UNK_0xdfb7() // UNK_0xdfb7
   Push(pp__pe_SLUG); // %SLUG
   Push(Read16(Pop())); // @
   Push(0x0064);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -688,7 +688,7 @@ void UNK_0xe277() // UNK_0xe277
   Push(0x000a);
   _slash_(); // /
   Push(Pop() + Pop()); // +
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Push(0xc014); // probable 'BLDLI_2'
@@ -742,7 +742,7 @@ void UNK_0xe2ea() // UNK_0xe2ea
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(0x0068);
@@ -2216,7 +2216,7 @@ void UNK_0xeceb() // UNK_0xeceb
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp_UNK_0xdfaf); // UNK_0xdfaf
   ON_2(); // ON_2
@@ -2939,7 +2939,7 @@ void UNK_0xf20e() // UNK_0xf20e
   Pop(); // DROP
   Push(cc_TRUE); // TRUE
   SWAP(); // SWAP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   ICLOSE(); // ICLOSE
@@ -3007,7 +3007,7 @@ void UNK_0xf268() // UNK_0xf268
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   CI(); // CI
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   ICLOSE(); // ICLOSE
@@ -3046,7 +3046,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf260(); // UNK_0xf260
   _gt_C_plus_S(); // >C+S
@@ -3071,7 +3071,7 @@ void UNK_0xf2d6() // UNK_0xf2d6
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   UNK_0xf2b4(); // UNK_0xf2b4

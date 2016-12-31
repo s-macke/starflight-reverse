@@ -332,11 +332,11 @@ void UNK_0xe91a() // UNK_0xe91a
   _2_at_(); // 2@
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -346,7 +346,7 @@ void UNK_0xe91a() // UNK_0xe91a
   Pop(); // DROP
   ROT(); // ROT
   ROT(); // ROT
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   Push(cc__6); // 6
@@ -809,7 +809,7 @@ void UNK_0xf0e9() // UNK_0xf0e9
 {
   Push(Read16(regsp)); // DUP
   Push(pp_PLANTS); // PLANTS
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xe852"); // from 'REGIONS     '
   return;
@@ -866,7 +866,7 @@ void UNK_0xf119() // UNK_0xf119
   UNK_0xeaec(); // UNK_0xeaec
   UNK_0xe9f6(); // UNK_0xe9f6
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   UNK_0xef47(); // UNK_0xef47
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1084,7 +1084,7 @@ void UNK_0xf286() // UNK_0xf286
   label1:
   UNK_0xf093(); // UNK_0xf093
   UNK_0xe8af(); // UNK_0xe8af
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label3:
   UNK_0xf1d3(); // UNK_0xf1d3
@@ -1132,7 +1132,7 @@ void UNK_0xf2da() // UNK_0xf2da
   goto label2;
 
   label1:
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   UNK_0xf1d3(); // UNK_0xf1d3

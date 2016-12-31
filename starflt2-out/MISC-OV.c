@@ -515,7 +515,7 @@ void UNK_0xf0c0() // UNK_0xf0c0
   Push(Read16(regsp)); // DUP
   Push(pp__dash_AIN); // -AIN
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   SWAP(); // SWAP
   Push(0x0030);
   Push(0x003a);
@@ -563,7 +563,7 @@ void _ro__n_IN_do_() // (#IN$
   WITHIN(); // WITHIN
   Push(b); // I
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
@@ -595,7 +595,7 @@ void _ro__n_IN_do_() // (#IN$
   label2:
   Push(b); // I
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   UNK_0xf042(); // UNK_0xf042
   goto label3;
@@ -603,7 +603,7 @@ void _ro__n_IN_do_() // (#IN$
   label5:
   Push(b); // I
   Push(0x000d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(b); // I
   _0_gt_(); // 0>
@@ -614,7 +614,7 @@ void _ro__n_IN_do_() // (#IN$
   label3:
   Push(b); // R>
   Push(0x000d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
@@ -690,7 +690,7 @@ void UNK_0xf208() // UNK_0xf208
   if (Pop() == 0) return;
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xefae(); // UNK_0xefae
   return;
@@ -995,15 +995,15 @@ void _eq_CARG() // =CARG
   label5:
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_S(); // @INST-S
   Push(0x0011);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   _at_INST_dash_S(); // @INST-S
   Push(0x0030);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -1012,10 +1012,10 @@ void _eq_CARG() // =CARG
   label4:
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_C(); // @INST-C
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   Push(0x65ec); // IFIELD(INST-QT)

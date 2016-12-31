@@ -550,11 +550,11 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(i); // I
   Push(Pop()+1); // 1+
   Push(imax); // I'
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); // DROP
@@ -562,7 +562,7 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(cc__3); // 3
   PICK(); // PICK
   _dash_(); // -
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;
@@ -1001,7 +1001,7 @@ void UNK_0xeb80() // UNK_0xeb80
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
   Push(0x0150);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label7;
   UNK_0xe890(); // UNK_0xe890
   UNK_0xea6c(); // UNK_0xea6c

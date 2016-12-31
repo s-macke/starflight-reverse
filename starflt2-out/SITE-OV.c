@@ -292,7 +292,7 @@ void UNK_0xf31b() // UNK_0xf31b
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x01e0);
   Push(pp_UNK_0xf22f); // UNK_0xf22f
@@ -594,7 +594,7 @@ void GETSITE_2() // GETSITE_2
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _dot_MERCATOR(); // .MERCATOR

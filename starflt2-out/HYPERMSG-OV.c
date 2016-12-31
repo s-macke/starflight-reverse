@@ -1383,7 +1383,7 @@ void UNK_0xee09() // UNK_0xee09
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
   Push(0xea60); Push(0x0000);
@@ -1699,7 +1699,7 @@ void DMSG() // DMSG
   POINT_gt_I(); // POINT>I
   _at_ID(); // @ID
   Push(0x002b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   _at_IL(); // @IL
   _at_IH(); // @IH
@@ -1744,7 +1744,7 @@ void UNK_0xf04d() // UNK_0xf04d
 void UNK_0xf055() // UNK_0xf055
 {
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(1); // 1
   return;
@@ -1969,7 +1969,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
   Push(cc__4); // 4
@@ -2036,7 +2036,7 @@ void UNK_0xf200() // UNK_0xf200
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x003d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x65f2); // IFIELD(UNK_0xf167)
   _plus__dash__at_(); // +-@
@@ -2052,7 +2052,7 @@ void UNK_0xf200() // UNK_0xf200
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(0x65fc); // IFIELD(UNK_0xf171)
   Push(Read8(Pop())&0xFF); // C@
@@ -2145,7 +2145,7 @@ void TRAK_dash_E() // TRAK-E
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(pp_IGLOBAL); // IGLOBAL
   goto label2;
@@ -2166,7 +2166,7 @@ void TRAK_dash_E() // TRAK-E
   POINT_gt_I(); // POINT>I
   _at_ID(); // @ID
   Push(0x00fe);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   _at_IL(); // @IL
   _at_IH(); // @IH
@@ -2435,10 +2435,10 @@ void UNK_0xf506() // UNK_0xf506
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_S(); // @INST-S
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf4b2(); // UNK_0xf4b2

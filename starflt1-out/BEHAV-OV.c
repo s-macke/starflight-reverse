@@ -371,7 +371,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
   Push(0x6400); // IFIELD(TV-WEAPON)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
 }
@@ -455,7 +455,7 @@ void _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
   Push(0x6400); // IFIELD(TV-WEAPON)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP

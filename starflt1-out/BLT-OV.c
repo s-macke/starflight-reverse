@@ -156,7 +156,7 @@ void _dot_PARMS() // .PARMS
   _dot_R(); // .R
   KEY_2(); // KEY_2
   Push(0x000d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   QUIT(); // QUIT
 }

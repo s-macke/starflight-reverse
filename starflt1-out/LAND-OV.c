@@ -441,7 +441,7 @@ void _ask_LAND() // ?LAND
   Push(Read16(Pop())); // @
   Push(pp__i_HEAT); // 'HEAT
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE

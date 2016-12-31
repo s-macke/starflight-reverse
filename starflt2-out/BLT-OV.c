@@ -135,10 +135,10 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label2;
 
   label1:
@@ -168,10 +168,10 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
-  LEAVE(); // LEAVE
+  jmax = j; // LEAVE
   goto label4;
 
   label3:

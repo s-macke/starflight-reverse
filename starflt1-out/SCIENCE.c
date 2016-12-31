@@ -399,7 +399,7 @@ void _dot_STARDATE() // .STARDATE
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   Push(0x0068);
@@ -1494,7 +1494,7 @@ void UNK_0xefe9() // UNK_0xefe9
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp_UNK_0xefe1); // UNK_0xefe1
   ON_3(); // ON_3
@@ -1808,7 +1808,7 @@ void UNK_0xf239() // UNK_0xf239
   PRINT("ENERGY", 6); // (.")
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0018);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xe606); // UNK_0xe606
   OFF(); // OFF

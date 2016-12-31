@@ -210,7 +210,7 @@ void UNK_0xf147() // UNK_0xf147
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label2;
 
   label1:
@@ -224,7 +224,7 @@ void UNK_0xf147() // UNK_0xf147
   Push(i); // I
   UNK_0xf12f(); // UNK_0xf12f
   _st_1_dot_5_ex__gt_(); // <1.5!>
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -352,7 +352,7 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Push(a); // J
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   goto label2;
 
   label1:

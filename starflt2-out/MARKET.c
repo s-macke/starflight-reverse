@@ -960,7 +960,7 @@ void UNK_0xed01() // UNK_0xed01
   UNK_0xecc5(); // UNK_0xecc5
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   _at_COLOR(); // @COLOR
@@ -1402,7 +1402,7 @@ void UNK_0xef58() // UNK_0xef58
   UNK_0xeb60(); // UNK_0xeb60
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   CI(); // CI
   Push(Pop() | Pop()); // OR
@@ -1450,7 +1450,7 @@ void UNK_0xef90() // UNK_0xef90
   Push(pp_UNK_0xee83); // UNK_0xee83
   Push(Read16(Pop())); // @
   Push(0x000f);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -1552,7 +1552,7 @@ void UNK_0xeff2() // UNK_0xeff2
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
 }
 
@@ -1870,7 +1870,7 @@ void UNK_0xf1ae() // UNK_0xf1ae
 {
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x0047);
   return;

@@ -94,11 +94,11 @@ void UNK_0xf134() // UNK_0xf134
   _2_at_(); // 2@
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -108,7 +108,7 @@ void UNK_0xf134() // UNK_0xf134
   Pop(); // DROP
   ROT(); // ROT
   ROT(); // ROT
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   Push(cc__6); // 6
@@ -144,7 +144,7 @@ void UNK_0xf1cc() // UNK_0xf1cc
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(0x0064);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   unsigned short int a = Pop(); // >R
   _gt_(); // >
@@ -539,7 +539,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(a); // R>
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
   Push(0xcdc0); // probable '.STOR'

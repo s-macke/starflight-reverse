@@ -237,7 +237,7 @@ void TRANSACT() // TRANSACT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label2;
   Push(Pop()+1); // 1+
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;

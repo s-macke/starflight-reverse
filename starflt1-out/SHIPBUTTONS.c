@@ -495,7 +495,7 @@ void UNK_0xefe4() // UNK_0xefe4
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xede2(); // UNK_0xede2
 
@@ -610,7 +610,7 @@ void UNK_0xf095() // UNK_0xf095
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp__ask_LANDED); // ?LANDED
   ON_3(); // ON_3
@@ -696,7 +696,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf03f(); // UNK_0xf03f
@@ -1279,7 +1279,7 @@ void _gt_FLT() // >FLT
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf4a0(); // UNK_0xf4a0
 

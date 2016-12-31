@@ -728,7 +728,7 @@ void UNK_0xf052() // UNK_0xf052
   Push(2); // 2
   Push(i); // I
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(cc__5); // 5
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -743,7 +743,7 @@ void UNK_0xf052() // UNK_0xf052
   Push(0x008d);
   Push(i); // I
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(0xffea);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -940,7 +940,7 @@ void UNK_0xf271() // UNK_0xf271
   BLT(); // BLT
   Push(Read16(regsp)); // DUP
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
   Push(0x0012);
@@ -1122,7 +1122,7 @@ void UNK_0xf410() // UNK_0xf410
   Push(cc__3); // 3
   Push(Pop() ^ Pop()); // XOR
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xead8); // UNK_0xead8
   _plus__ex__2(); // +!_2

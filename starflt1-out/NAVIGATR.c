@@ -178,7 +178,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(cc__3); // 3
   Push(2); // 2

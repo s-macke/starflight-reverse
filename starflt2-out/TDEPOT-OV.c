@@ -1155,7 +1155,7 @@ void UNK_0xed96() // UNK_0xed96
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
@@ -1182,7 +1182,7 @@ void UNK_0xed96() // UNK_0xed96
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label5;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label5:
   i++;
@@ -1596,12 +1596,12 @@ void UNK_0xf148() // UNK_0xf148
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   Push(a); // R>
   _at_INST_dash_S(); // @INST-S
   Push(0x000f);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
 }
 
@@ -1661,7 +1661,7 @@ void UNK_0xf174() // UNK_0xf174
   _at_INST_dash_C(); // @INST-C
   ICLOSE(); // ICLOSE
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   UNK_0xf07e(); // UNK_0xf07e
 }

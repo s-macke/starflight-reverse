@@ -584,7 +584,7 @@ void UNK_0xf157() // UNK_0xf157
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
@@ -632,7 +632,7 @@ void BOX_gt_LIST() // BOX>LIST
   label2:
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x0035);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
@@ -640,7 +640,7 @@ void BOX_gt_LIST() // BOX>LIST
   _st_(); // <
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -826,7 +826,7 @@ void _gt_BOX() // >BOX
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   OVER(); // OVER
   IOPEN(); // IOPEN
@@ -839,7 +839,7 @@ void _gt_BOX() // >BOX
   Push(Read16(regsp)); // DUP
   INEXT(); // INEXT
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
@@ -879,7 +879,7 @@ void _ask_ELEMENT() // ?ELEMENT
 {
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -946,7 +946,7 @@ void BOX_gt_() // BOX>
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
 

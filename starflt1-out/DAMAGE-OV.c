@@ -498,7 +498,7 @@ void UNK_0xeca0() // UNK_0xeca0
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0xbf05); // probable 'OV/STXT'
   return;
@@ -517,7 +517,7 @@ void UNK_0xecbc() // UNK_0xecbc
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0xbe4b); // probable 'OVDBA'
   return;
@@ -682,24 +682,24 @@ void UNK_0xed9e() // UNK_0xed9e
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label2;
 
   label1:
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00ff);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(i); // I
   C_ex_(); // C!
   Push(1); // 1
   Push(pp_UNK_0xed9a); // UNK_0xed9a
   _st__plus__ex__gt_(); // <+!>
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -1159,7 +1159,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
 
   label1:
   Pop(); Pop();// 2DROP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label4:
   Push(cc__3); // 3
@@ -1241,10 +1241,10 @@ void UNK_0xf19a() // UNK_0xf19a
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0018);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1716,7 +1716,7 @@ void UNK_0xf43c() // UNK_0xf43c
   UNK_0xebe4(); // UNK_0xebe4
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
 
@@ -1766,7 +1766,7 @@ void UNK_0xf47f() // UNK_0xf47f
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   LoadData("UNK_0xeb29"); // from 'VESSEL      '

@@ -113,7 +113,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   unsigned short int b = Pop(); // >R
   CI(); // CI
   Push(b); // R>
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   ICLOSE(); // ICLOSE
@@ -291,7 +291,7 @@ void UNK_0xf26f() // UNK_0xf26f
   Push(0x640e); // IFIELD(UNK_0xf083)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0064);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   UNK_0xf1fa(); // UNK_0xf1fa
   goto label2;

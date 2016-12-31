@@ -205,7 +205,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(Pop() | Pop()); // OR
   Push(a); // R>
   Push(0x0020);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   return;
@@ -455,7 +455,7 @@ void UNK_0xe8a4() // UNK_0xe8a4
   Push(Pop() & Pop()); // AND
   _at_INST_dash_C(); // @INST-C
   Push(0x0019);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   CTINIT(); // CTINIT
@@ -549,7 +549,7 @@ void UNK_0xe930() // UNK_0xe930
   Push(0x65fb); // IFIELD(UNK_0xe7e5)
   UNK_0xe85a(); // UNK_0xe85a
   Push(cc__7); // 7
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
 }
@@ -564,7 +564,7 @@ void UNK_0xe952() // UNK_0xe952
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0xc0a1); // probable 'OV/STX'
   return;
@@ -583,7 +583,7 @@ void UNK_0xe96e() // UNK_0xe96e
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0xbcb8); // probable 'OVDBA'
   return;
@@ -779,24 +779,24 @@ void UNK_0xea92() // UNK_0xea92
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label2;
 
   label1:
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00ff);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(i); // I
   C_ex__2(); // C!_2
   Push(1); // 1
   Push(pp__n_WOUNDE); // #WOUNDE
   _st__plus__ex__gt_(); // <+!>
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -1091,7 +1091,7 @@ void UNK_0xec90() // UNK_0xec90
   UNK_0xe726(); // UNK_0xe726
   OVER(); // OVER
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   Push(Read16(regsp)); // DUP
@@ -1308,7 +1308,7 @@ void UNK_0xee11() // UNK_0xee11
 
   label1:
   Pop(); Pop();// 2DROP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label4:
   Push(cc__3); // 3
@@ -1336,7 +1336,7 @@ void UNK_0xee67() // UNK_0xee67
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(0xe79b);
@@ -1438,7 +1438,7 @@ void UNK_0xef1f() // UNK_0xef1f
   _eq_SPECIE(); // =SPECIE
   _at_INST_dash_C(); // @INST-C
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   OVER(); // OVER
@@ -1511,7 +1511,7 @@ void UNK_0xef73() // UNK_0xef73
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   LoadData("UNK_0xe776"); // from 'VESSEL      '
@@ -1872,7 +1872,7 @@ void UNK_0xf1b5() // UNK_0xf1b5
 {
   UNK_0xe84c(); // UNK_0xe84c
   Push(cc__7); // 7
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _gt_MAINVI(); // >MAINVI
@@ -2034,7 +2034,7 @@ void UNK_0xf283() // UNK_0xf283
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   LoadData("UNK_0xe776"); // from 'VESSEL      '
@@ -2345,14 +2345,14 @@ void UNK_0xf4a9() // UNK_0xf4a9
   UNK_0xf25f(); // UNK_0xf25f
   UNK_0xe84c(); // UNK_0xe84c
   Push(cc__7); // 7
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x0064);
   UNK_0xf437(); // UNK_0xf437
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Push(0xc090); // probable 'OV/STA'

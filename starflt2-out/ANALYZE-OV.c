@@ -315,7 +315,7 @@ void UNK_0xed9f() // UNK_0xed9f
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x003c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   SetColor("BLUE");
@@ -537,7 +537,7 @@ void UNK_0xef13() // UNK_0xef13
   Push(Pop() | Pop()); // OR
   Push(a); // R>
   Push(0x0020);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
 }
@@ -581,7 +581,7 @@ void UNK_0xef53() // UNK_0xef53
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   UNK_0xef13(); // UNK_0xef13
@@ -830,7 +830,7 @@ void UNK_0xf158() // UNK_0xf158
   Push(Read16(regsp)); // DUP
   _dot_TDESC(); // .TDESC case
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   return;
@@ -1202,9 +1202,9 @@ void UNK_0xf3b8() // UNK_0xf3b8
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // J
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;

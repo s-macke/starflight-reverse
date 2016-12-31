@@ -181,7 +181,7 @@ void UNK_0xed5c() // UNK_0xed5c
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // I
   Push(0x6400); // IFIELD(UNK_0xec70)
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   CURSORSPACE(); // CURSORSPACE
@@ -342,7 +342,7 @@ void UNK_0xee68() // UNK_0xee68
   Push(Pop()+1); // 1+
   Push(i); // I
   SWAP(); // SWAP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;
@@ -550,7 +550,7 @@ void UNK_0xf013() // UNK_0xf013
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // I
   Push(0x6400); // IFIELD(UNK_0xec70)
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(a); // I
@@ -1043,7 +1043,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _0_gt_(); // 0>
   Push(a); // R>
   Push(0x6400); // IFIELD(UNK_0xec70)
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -1059,7 +1059,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(b); // I
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Push(b); // I
   UNK_0xf2a0(); // UNK_0xf2a0

@@ -138,7 +138,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   SetColor("RED");
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
   Push(Pop()-1); // 1-
@@ -226,7 +226,7 @@ void UNK_0xe76d() // UNK_0xe76d
   LoadData("UNK_0xe760"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -342,7 +342,7 @@ void UNK_0xe80a() // UNK_0xe80a
 {
   _at_ID(); // @ID
   Push(0x0011);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   Push(0); // 0
@@ -368,7 +368,7 @@ void UNK_0xe824() // UNK_0xe824
   label1:
   _at_ID(); // @ID
   Push(0x0011);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   UNK_0xe7e2(); // UNK_0xe7e2
@@ -961,7 +961,7 @@ void UNK_0xeca1() // UNK_0xeca1
   _at_INST_dash_C(); // @INST-C
   DISPOSAL(); // DISPOSAL case
   Push(cc_FALSE); // FALSE
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
 }
 
@@ -2125,7 +2125,7 @@ void UNK_0xf472() // UNK_0xf472
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x0044);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_UNK_0xf3d9); // UNK_0xf3d9
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT

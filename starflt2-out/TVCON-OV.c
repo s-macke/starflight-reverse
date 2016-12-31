@@ -217,7 +217,7 @@ void UNK_0xee58() // UNK_0xee58
   Push(0x000a);
   _slash_(); // /
   Push(Pop() + Pop()); // +
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Push(0xc014); // probable 'BLDLI_2'

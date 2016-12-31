@@ -357,7 +357,7 @@ void UNK_0xf3e4() // UNK_0xf3e4
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -414,7 +414,7 @@ void UNK_0xf48f() // UNK_0xf48f
   Push(0x0133);
   U_slash_MOD(); // U/MOD
   Pop(); // DROP
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__ask_SECURE); // ?SECURE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -464,7 +464,7 @@ void _2NDS() // 2NDS
   Push(0x0133);
   U_slash_MOD(); // U/MOD
   Pop(); // DROP
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp__ask_SECURE); // ?SECURE
   OFF(); // OFF

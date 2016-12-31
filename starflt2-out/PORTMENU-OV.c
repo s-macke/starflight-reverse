@@ -697,7 +697,7 @@ void UNK_0xf02e() // UNK_0xf02e
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   _ex__2(); // !_2
   UNK_0xeffe(); // UNK_0xeffe
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -1195,7 +1195,7 @@ void UNK_0xf42a() // UNK_0xf42a
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf1d4); // UNK_0xf1d4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0); // 0
   Push(0x05dc);

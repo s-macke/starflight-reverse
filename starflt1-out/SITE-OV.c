@@ -322,7 +322,7 @@ void UNK_0xf014() // UNK_0xf014
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x01e0);
   Push(pp_UNK_0xef9c); // UNK_0xef9c
@@ -733,7 +733,7 @@ void UNK_0xf311() // UNK_0xf311
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp_UNK_0xf28c); // UNK_0xf28c
   Push(pp_ABLT); // ABLT
@@ -801,7 +801,7 @@ void UNK_0xf389() // UNK_0xf389
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   _ask_CHILD(); // ?CHILD
   Push(Pop() & Pop()); // AND
@@ -843,7 +843,7 @@ void UNK_0xf389() // UNK_0xf389
   Push(pp_UNK_0xf261); // UNK_0xf261
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
   CDROP(); // CDROP
@@ -868,7 +868,7 @@ void UNK_0xf405() // UNK_0xf405
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
 }
 
@@ -1022,7 +1022,7 @@ void GETSITE_2() // GETSITE_2
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _dot_MERCATOR(); // .MERCATOR

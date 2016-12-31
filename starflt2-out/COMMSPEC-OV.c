@@ -362,7 +362,7 @@ void UNK_0xe84f() // UNK_0xe84f
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_FTRIG); // FTRIG
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
@@ -623,7 +623,7 @@ void UNK_0xee17() // UNK_0xee17
   SWAP(); // SWAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   SWAP(); // SWAP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   ICLOSE(); // ICLOSE
@@ -661,13 +661,13 @@ void UNK_0xf190() // UNK_0xf190
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
   CI(); // CI
   Push(a); // R>
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   ICLOSE(); // ICLOSE
@@ -878,7 +878,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push(pp_UNK_0xe63e); // UNK_0xe63e
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   _dot_SORD(); // .SORD

@@ -443,7 +443,7 @@ void UNK_0xde7e() // UNK_0xde7e
   Push(pp_UNK_0xde7a); // UNK_0xde7a
   _ex__2(); // !_2
   if (Pop() == 0) goto label2;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -472,7 +472,7 @@ void UNK_0xde7e() // UNK_0xde7e
   Push(pp_UNK_0xde7a); // UNK_0xde7a
   _ex__2(); // !_2
   if (Pop() == 0) goto label5;
-  LEAVE(); // LEAVE
+  jmax = j; // LEAVE
   goto label6;
 
   label5:
@@ -953,7 +953,7 @@ void UNK_0xe287() // UNK_0xe287
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   Push(Pop()-1); // 1-
@@ -1945,7 +1945,7 @@ void UNK_0xeaad() // UNK_0xeaad
   Push(Read16(Pop())); // @
   Push(pp_DBUF_dash_SE); // DBUF-SE
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   UNK_0xea79(); // UNK_0xea79
@@ -2606,7 +2606,7 @@ void UNK_0xee82() // UNK_0xee82
   Push(Read16(Pop())); // @
   Func3(":CKSUM");
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xeb4b(); // UNK_0xeb4b
   return;
@@ -2907,7 +2907,7 @@ void UNK_0xf194() // UNK_0xf194
   Pop(); // DROP
   OPEN(); // OPEN
   Push(0x00ff);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(0x0013);
   FCBCALL(); // FCBCALL
@@ -3034,7 +3034,7 @@ void UNK_0xf259() // UNK_0xf259
   Push(pp_OPTIO); // OPTIO
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   ON_2(); // ON_2
   goto label3;
@@ -3321,7 +3321,7 @@ void BOSS() // BOSS
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
   Push(0x000d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   Exec(CR); // call of word 0x26ee '(CR)'
@@ -3333,7 +3333,7 @@ void BOSS() // BOSS
 
   label2:
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   _gt_LORES(); // >LORES
   DARK(); // DARK

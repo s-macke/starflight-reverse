@@ -281,13 +281,13 @@ void UNK_0xf0d6() // UNK_0xf0d6
   unsigned short int a = Pop(); // >R
   Push(a); // I
   Push(0x0044);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // I
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // I
   Push(0x0029);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label2;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -298,7 +298,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   label2:
   Push(a); // I
   Push(0x001c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -310,12 +310,12 @@ void UNK_0xf0d6() // UNK_0xf0d6
   label3:
   Push(a); // I
   Push(0x001c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label4;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
@@ -534,7 +534,7 @@ void UNK_0xf29e() // UNK_0xf29e
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -663,10 +663,10 @@ void UNK_0xf39d() // UNK_0xf39d
   if (Pop() == 0) goto label1;
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x003d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__9); // 9
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(0); // 0

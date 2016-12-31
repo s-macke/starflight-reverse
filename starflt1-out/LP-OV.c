@@ -214,7 +214,7 @@ void UNK_0xe121() // UNK_0xe121
   Pop(); Pop();// 2DROP
   Push2Words("0.");
   Push(i); // I
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   Push(cc__3); // 3
@@ -615,11 +615,11 @@ void UNK_0xe4d8() // UNK_0xe4d8
   _2_at_(); // 2@
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -629,7 +629,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
   Pop(); // DROP
   ROT(); // ROT
   ROT(); // ROT
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   Push(cc__6); // 6
@@ -665,7 +665,7 @@ void UNK_0xe570() // UNK_0xe570
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(0x0064);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   unsigned short int a = Pop(); // >R
   _gt_(); // >
@@ -715,11 +715,11 @@ void UNK_0xe5a6() // UNK_0xe5a6
   _2_at_(); // 2@
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -729,7 +729,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
   Pop(); // DROP
   ROT(); // ROT
   ROT(); // ROT
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   Push(cc__6); // 6
@@ -759,7 +759,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
   UNK_0xe5a6(); // UNK_0xe5a6
   Push(Read16(regsp)); // DUP
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
   Push(0); // 0
@@ -794,7 +794,7 @@ void UNK_0xeb97() // UNK_0xeb97
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__7); // 7
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>
@@ -843,7 +843,7 @@ void UNK_0xebe7() // UNK_0xebe7
 {
   Push(0x0002);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   Push(1); // 1
@@ -853,7 +853,7 @@ void UNK_0xebe7() // UNK_0xebe7
   label1:
   Push(0x0004);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   Push(1); // 1
@@ -863,7 +863,7 @@ void UNK_0xebe7() // UNK_0xebe7
   label2:
   Push(0x0006);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
   Push(1); // 1
@@ -1259,7 +1259,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   label1:
   Push(1); // 1
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   Push(cc__8); // 8
@@ -1268,7 +1268,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   label4:
   Push(2); // 2
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   Pop(); // DROP
   Push(cc__9); // 9
@@ -1277,7 +1277,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   label5:
   Push(cc__3); // 3
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label6;
   Pop(); // DROP
   Push(0x000a);
@@ -1286,7 +1286,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
   label6:
   Push(cc__4); // 4
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label7;
   Pop(); // DROP
   Push(0x000a);
@@ -1645,7 +1645,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
   LoadData("UNK_0xe356"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
@@ -1894,10 +1894,10 @@ void UNK_0xf384() // UNK_0xf384
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   SWAP(); // SWAP
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(a); // R>
   Push(Pop() & Pop()); // AND

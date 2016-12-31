@@ -302,7 +302,7 @@ void UNK_0xecf8() // UNK_0xecf8
   label2:
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(cc_UNK_0xec16); // UNK_0xec16
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
 
@@ -352,10 +352,10 @@ void UNK_0xed2e() // UNK_0xed2e
   Push(cc__3); // 3
   PICK(); // PICK
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(i); // I
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label3:
   SWAP(); // SWAP
@@ -470,7 +470,7 @@ void UNK_0xee28() // UNK_0xee28
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   goto label2;
@@ -509,7 +509,7 @@ void UNK_0xee46() // UNK_0xee46
   C_ex_(); // C!
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(cc__6); // 6
   Push(Read16(regsp)); // DUP
@@ -579,7 +579,7 @@ void UNK_0xeee8() // UNK_0xeee8
 {
   Push(0x004d);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   Push(1); // 1
@@ -588,7 +588,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label1:
   Push(0x004b);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   Push(2); // 2
@@ -597,7 +597,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label2:
   Push(0x0047);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
   Push(cc__3); // 3
@@ -606,7 +606,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label3:
   Push(0x0046);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   Push(cc__4); // 4
@@ -615,7 +615,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label4:
   Push(0x0041);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   Pop(); // DROP
   Push(cc__5); // 5
@@ -624,7 +624,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label5:
   Push(0x0042);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label6;
   Pop(); // DROP
   Push(cc__6); // 6
@@ -633,7 +633,7 @@ void UNK_0xeee8() // UNK_0xeee8
   label6:
   Push(0x004f);
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label7;
   Pop(); // DROP
   Push(cc__7); // 7
@@ -667,7 +667,7 @@ void UNK_0xef8a() // UNK_0xef8a
 {
   Push(cc__dash_2); // -2
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   Push(cc__4); // 4
@@ -676,7 +676,7 @@ void UNK_0xef8a() // UNK_0xef8a
   label1:
   Push(cc__dash_1); // -1
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   Push(cc__3); // 3
@@ -685,7 +685,7 @@ void UNK_0xef8a() // UNK_0xef8a
   label2:
   Push(0); // 0
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Pop(); // DROP
   Push(2); // 2
@@ -694,7 +694,7 @@ void UNK_0xef8a() // UNK_0xef8a
   label3:
   Push(1); // 1
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   Push(1); // 1
@@ -912,7 +912,7 @@ void UNK_0xf128() // UNK_0xf128
 
   label1:
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__7); // 7
@@ -941,7 +941,7 @@ void UNK_0xf162() // UNK_0xf162
   LoadData("UNK_0xec5a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   unsigned short int a = Pop(); // >R
 
@@ -981,7 +981,7 @@ void UNK_0xf18e() // UNK_0xf18e
 
   label1:
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__7); // 7
@@ -1035,10 +1035,10 @@ void UNK_0xf1e6() // UNK_0xf1e6
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(regsp)); // DUP
   Push(0x0012);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   SWAP(); // SWAP
   Push(0x0022);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(cc__5); // 5

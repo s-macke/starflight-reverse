@@ -881,10 +881,10 @@ void UNK_0xea70() // UNK_0xea70
   POINT_gt_ICON(); // POINT>ICON
   _at_ID(); // @ID
   Push(0x00ff);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_IC(); // @IC
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _at_IL(); // @IL
@@ -1320,7 +1320,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(pp_BVIS); // BVIS
@@ -1400,7 +1400,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   UNK_0xecac(); // UNK_0xecac
   Push(0); // 0

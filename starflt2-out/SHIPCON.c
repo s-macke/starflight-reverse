@@ -196,7 +196,7 @@ void UNK_0xf47a() // UNK_0xf47a
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(0x52d5); Push(0x0002);
@@ -265,7 +265,7 @@ void TOW_dash_US() // TOW-US
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__n_VESS); // #VESS
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>

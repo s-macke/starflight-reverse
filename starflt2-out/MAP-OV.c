@@ -990,7 +990,7 @@ void UNK_0xe89c() // UNK_0xe89c
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x002e);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -1043,7 +1043,7 @@ void UNK_0xe8e6() // UNK_0xe8e6
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -1211,10 +1211,10 @@ void UNK_0xea04() // UNK_0xea04
   POINT_gt_I(); // POINT>I
   _at_ID(); // @ID
   Push(0x00ff);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_IC(); // @IC
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   _at_IL(); // @IL
@@ -1863,7 +1863,7 @@ void UNK_0xee51() // UNK_0xee51
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x002d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
   Push(pp_IINDEX); // IINDEX
@@ -2321,7 +2321,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf131(); // UNK_0xf131
@@ -2406,7 +2406,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   NOMAP(); // NOMAP
   Push(0); // 0

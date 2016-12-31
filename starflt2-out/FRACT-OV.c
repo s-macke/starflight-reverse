@@ -1165,7 +1165,7 @@ void UNK_0xea37() // UNK_0xea37
   ACELLAD(); // ACELLAD
   A_at_(); // A@
   Push(cc_UNK_0xe364); // UNK_0xe364
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   unsigned short int a = Pop(); // >R
   OVER(); // OVER
   Push(0x000b);
@@ -1176,7 +1176,7 @@ void UNK_0xea37() // UNK_0xea37
   ACELLAD(); // ACELLAD
   A_at_(); // A@
   Push(cc_UNK_0xe364); // UNK_0xe364
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -1523,12 +1523,12 @@ void UNK_0xebfc() // UNK_0xebfc
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   UNK_0xeb38(); // UNK_0xeb38
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(0x03e7);
   UNK_0xeb54(); // UNK_0xeb54
-  LEAVE(); // LEAVE
+  jmax = j; // LEAVE
 
   label1:
   j++;
@@ -1536,9 +1536,9 @@ void UNK_0xebfc() // UNK_0xebfc
 
   UNK_0xeb38(); // UNK_0xeb38
   Push(0x03e7);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -1546,7 +1546,7 @@ void UNK_0xebfc() // UNK_0xebfc
 
   UNK_0xeb38(); // UNK_0xeb38
   Push(0x03e7);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
 
@@ -1763,11 +1763,11 @@ void UNK_0xed8d() // UNK_0xed8d
   Push(i); // I
   Push(Pop()+1); // 1+
   UNK_0xed62(); // UNK_0xed62
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label2;
 
   label1:
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(i); // I
   Push(Pop()+1); // 1+
@@ -1776,7 +1776,7 @@ void UNK_0xed8d() // UNK_0xed8d
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   UNK_0xed62(); // UNK_0xed62
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   Pop(); // DROP
 
   label2:
@@ -1851,7 +1851,7 @@ void UNK_0xedd9() // UNK_0xedd9
   Pop(); // DROP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
-  LEAVE(); // LEAVE
+  jmax = j; // LEAVE
 
   label2:
   Push(2); // 2

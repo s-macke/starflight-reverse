@@ -652,10 +652,10 @@ void UNK_0xf048() // UNK_0xf048
 {
   Push(Read16(regsp)); // DUP
   Push(0x0017);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   SWAP(); // SWAP
   Push(0x003c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
 }
 

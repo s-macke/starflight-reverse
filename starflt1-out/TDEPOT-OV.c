@@ -1275,7 +1275,7 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(i); // I
   Push(Pop()+1); // 1+
@@ -1302,7 +1302,7 @@ void UNK_0xeacc() // UNK_0xeacc
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label5;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label5:
   i++;
@@ -1492,7 +1492,7 @@ void UNK_0xecd0() // UNK_0xecd0
   INEXT(); // INEXT
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000f);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   BOX_gt_LIS(); // BOX>LIS
 
@@ -1613,7 +1613,7 @@ void UNK_0xedb9() // UNK_0xedb9
   UNK_0xe86b(); // UNK_0xe86b
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   SAVE_dash_SCR(); // SAVE-SCR
   LoadData("UNK_0xe393"); // from 'ARTIFACT    '
@@ -2018,7 +2018,7 @@ void UNK_0xf0aa() // UNK_0xf0aa
   _at_INST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   UNK_0xefe0(); // UNK_0xefe0
 }
@@ -2193,11 +2193,11 @@ void UNK_0xf1d8() // UNK_0xf1d8
   if (Pop() == 0) Push(1); else Push(0); // NOT
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0011);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   IPREV(); // IPREV
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x001b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -2208,11 +2208,11 @@ void UNK_0xf1d8() // UNK_0xf1d8
   label3:
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0011);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   BOX_gt_LIS(); // BOX>LIS

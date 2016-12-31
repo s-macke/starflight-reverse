@@ -93,7 +93,7 @@ void UNK_0xf090() // UNK_0xf090
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -416,7 +416,7 @@ void PSYCH() // PSYCH
   UNK_0xf13d(); // UNK_0xf13d
   Push(pp_UNK_0xf08c); // UNK_0xf08c
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;

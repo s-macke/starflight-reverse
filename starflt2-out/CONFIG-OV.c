@@ -520,7 +520,7 @@ void UNK_0xe926() // UNK_0xe926
   _0MESS(); // 0MESS
   UNK_0xe80a(); // UNK_0xe80a
   Push(0x0010);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Push(1); // 1
   Push(0x001b);
@@ -578,7 +578,7 @@ void UNK_0xe9aa() // UNK_0xe9aa
   _0MESS(); // 0MESS
   UNK_0xe80a(); // UNK_0xe80a
   Push(0x0010);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Push(1); // 1
   Push(0x001b);
@@ -668,7 +668,7 @@ void UNK_0xeaaa() // UNK_0xeaaa
   if (Pop() == 0) goto label1;
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   PRINT("PLASMA", 6); // (.")
   Pop(); // DROP
@@ -1202,7 +1202,7 @@ void UNK_0xedde() // UNK_0xedde
   Push(0x01f4);
   Push(0x6624); // IFIELD(UNK_0xe791)
   _plus__ex__2(); // +!_2
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label3;
 
   label2:
@@ -1222,7 +1222,7 @@ void UNK_0xedde() // UNK_0xedde
   _0MESS(); // 0MESS
   UNK_0xe80a(); // UNK_0xe80a
   Push(0x0010);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Push(1); // 1
   Push(0x001b);
@@ -1316,7 +1316,7 @@ void UNK_0xee94() // UNK_0xee94
   unsigned short int a = Pop(); // >R
   Push(a); // I
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(0x6613); // IFIELD(UNK_0xe78c)
   Push(Read16(Pop())); // @
@@ -1378,7 +1378,7 @@ void UNK_0xef52() // UNK_0xef52
   Push(Read16(Pop())); // @
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
@@ -1534,7 +1534,7 @@ void UNK_0xf047() // UNK_0xf047
   MODULE(); // MODULE
   UNK_0xe888(); // UNK_0xe888
   UNK_0xe750(); // UNK_0xe750
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   Push(0xfe0c);
   Push(0x6624); // IFIELD(UNK_0xe791)
   _plus__ex__2(); // +!_2
@@ -1607,7 +1607,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
   UNK_0xec6a(); // UNK_0xec6a
   Push(Read16(regsp)); // DUP
   Push(0x65f2); // IFIELD(UNK_0xe75a)
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   OVER(); // OVER
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
@@ -1617,7 +1617,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(cc__3); // 3
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(0x00fa);
   Push(Pop() * Pop()); // *
   Push(0x6613); // IFIELD(UNK_0xe78c)

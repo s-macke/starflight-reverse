@@ -339,11 +339,11 @@ void UNK_0xf480() // UNK_0xf480
   WITHIN(); // WITHIN
   _at_ID(); // @ID
   Push(cc_INVIS_dash_I); // INVIS-I
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   _at_ID(); // @ID
   Push(0x0060);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   UNK_0xf438(); // UNK_0xf438

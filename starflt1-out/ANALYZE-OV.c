@@ -605,7 +605,7 @@ void _dot_SHIELDS() // .SHIELDS
   LoadData("UNK_0xeb8d"); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   PRINT("CLASS ", 6); // (.")
@@ -866,7 +866,7 @@ void UNK_0xf068() // UNK_0xf068
   Push(Read16(regsp)); // DUP
   _dot_TDESC(); // .TDESC case
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   return;
@@ -1238,9 +1238,9 @@ void UNK_0xf2c8() // UNK_0xf2c8
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // J
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;

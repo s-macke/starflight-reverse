@@ -306,7 +306,7 @@ void UNK_0xf03d() // UNK_0xf03d
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -450,7 +450,7 @@ void DATE_do__gt_AD() // DATE$>AD
 {
   OVER(); // OVER
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf049(); // UNK_0xf049
   return;
@@ -626,7 +626,7 @@ void UNK_0xf246() // UNK_0xf246
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
 
@@ -638,7 +638,7 @@ void UNK_0xf246() // UNK_0xf246
 void UNK_0xf254() // UNK_0xf254
 {
   _at_INST_dash_C(); // @INST-C
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -684,7 +684,7 @@ void UNK_0xf28e() // UNK_0xf28e
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
@@ -737,7 +737,7 @@ void BOX_gt_LIST() // BOX>LIST
   _st_(); // <
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -894,7 +894,7 @@ void _ask_ELEMENT() // ?ELEMENT
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x001c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xee9e"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
@@ -904,7 +904,7 @@ void _ask_ELEMENT() // ?ELEMENT
   label1:
   _at_INST_dash_C(); // @INST-C
   Push(0x001b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(cc_FALSE); // FALSE
   return;
@@ -960,7 +960,7 @@ void _gt_BOX() // >BOX
   Push(Read16(regsp)); // DUP
   INEXT(); // INEXT
   _at_INST_dash_S(); // @INST-S
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   Pop(); // DROP
   _gt_C_plus_S(); // >C+S
@@ -1053,11 +1053,11 @@ void BOX_gt_() // BOX>
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x001a);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
   _at_INST_dash_S(); // @INST-S
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
 

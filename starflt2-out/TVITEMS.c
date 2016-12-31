@@ -242,7 +242,7 @@ void UNK_0xe684() // UNK_0xe684
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0018);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
@@ -1681,7 +1681,7 @@ void UNK_0xef10() // UNK_0xef10
   UNK_0xeec2(); // UNK_0xeec2
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   ICLOSE(); // ICLOSE
 }
@@ -2025,12 +2025,12 @@ void UNK_0xf122() // UNK_0xf122
   UNK_0xeec2(); // UNK_0xeec2
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   _at_INST_dash_S(); // @INST-S
   Push(Read16(regsp)); // DUP
   Push(0x0028);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   Push(1); // 1
@@ -2038,7 +2038,7 @@ void UNK_0xf122() // UNK_0xf122
 
   label2:
   Push(0x002c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   Push(cc__dash_1); // -1
   goto label3;
@@ -2359,7 +2359,7 @@ void UNK_0xf322() // UNK_0xf322
 {
   _at_INST_dash_C(); // @INST-C
   Push(0x001b);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -2441,15 +2441,15 @@ void UNK_0xf37e() // UNK_0xf37e
   Push(Pop() | Pop()); // OR
   Push(Read16(a)); // R@
   Push(0x00fe);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(a); // R>
   Push(0x002d);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   _at_IC(); // @IC
   Push(cc_DEAD_dash_IC); // DEAD-IC
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;

@@ -378,7 +378,7 @@ void UNK_0xedb5() // UNK_0xedb5
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -699,7 +699,7 @@ void UNK_0xef86() // UNK_0xef86
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
   Push(0x0014);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(0xc6d9); // probable 'BLST'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
@@ -1145,12 +1145,12 @@ void UNK_0xf20c() // UNK_0xf20c
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   SWAP(); // SWAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   SWAP(); // SWAP
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;
@@ -1523,7 +1523,7 @@ void DONULL() // DONULL
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_NOF); // NOF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1599,7 +1599,7 @@ void TARG() // TARG
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_NOF); // NOF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=

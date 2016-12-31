@@ -399,12 +399,12 @@ void UNK_0xeffc() // UNK_0xeffc
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   Push(i); // I
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
   goto label1;
 
   label2:
   UNK_0xeff0(); // UNK_0xeff0
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;
@@ -1131,7 +1131,7 @@ void UNK_0xf4bd() // UNK_0xf4bd
   Push(pp__ask_REPAIR); // ?REPAIR
   Push(Read16(Pop())); // @
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   UNK_0xeffc(); // UNK_0xeffc
   Pop(); // DROP
@@ -1166,7 +1166,7 @@ void DO_dash_REPA() // DO-REPA
   if (Pop() == 0) goto label3;
   UNK_0xf4a9(); // UNK_0xf4a9
   Push(0x0064);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label4;
   UNK_0xf324(); // UNK_0xf324
   UNK_0xf2da(); // UNK_0xf2da

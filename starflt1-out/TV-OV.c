@@ -1616,7 +1616,7 @@ void UNK_0xf24e() // UNK_0xf24e
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf1d2(); // UNK_0xf1d2
 

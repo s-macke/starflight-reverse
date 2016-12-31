@@ -534,7 +534,7 @@ void UNK_0xee91() // UNK_0xee91
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__3); // 3
   PICK(); // PICK
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(i); // I
   SWAP(); // SWAP
@@ -870,7 +870,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   LoadData("UNK_0xec3a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
 
@@ -880,7 +880,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Pop(); // DROP
   goto label3;
@@ -1268,7 +1268,7 @@ void UNK_0xf31b() // UNK_0xf31b
 void UNK_0xf327() // UNK_0xf327
 {
   Push(0x001c);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(cc__3); // 3
   goto label2;
@@ -1336,7 +1336,7 @@ void _ask_EXIST() // ?EXIST
   IINSERT(); // IINSERT
   Push(a); // I'
   Push(0x0029);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   unsigned short int d = Pop(); // >R
   UNK_0xf207(); // UNK_0xf207

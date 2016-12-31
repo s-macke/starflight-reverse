@@ -394,7 +394,7 @@ void UNK_0xe012() // UNK_0xe012
   Push(0xc000);
   LC_at_(); // LC@
   Push(0x0021);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -506,7 +506,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
   Push(Read16(regsp)); // DUP
   Push(0x000e);
   UNK_0xe0a6(); // UNK_0xe0a6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(0); // 0
@@ -564,7 +564,7 @@ void _ask_HUB() // ?HUB
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   ON_3(); // ON_3
   return;
@@ -718,7 +718,7 @@ void _ask_BL_st__dash_() // ?BL<-
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   Push(Pop()-1); // 1-
@@ -1691,7 +1691,7 @@ void PUSHVECT() // PUSHVECT
   Push(Read16(Pop())); // @
   Push(pp_DBUF_dash_SEG); // DBUF-SEG
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   UNK_0xe9f3(); // UNK_0xe9f3
@@ -2343,7 +2343,7 @@ void DATALOAD() // DATALOAD
   Push(Read16(Pop())); // @
   Func3(":CKSUM");
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xeac7(); // UNK_0xeac7
   return;
@@ -2533,7 +2533,7 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
   ON_3(); // ON_3
   Push(Read16(regsp)); // DUP
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(Pop()+1); // 1+
 
@@ -2542,7 +2542,7 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
   OFF(); // OFF
   Push(Read16(regsp)); // DUP
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(Pop()-2); // 2-
   Push(pp__ask_EGA); // ?EGA
@@ -2759,7 +2759,7 @@ void GET_dash_OPTION_n_() // GET-OPTION#
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
   Push(0x0039);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Push(pp_LKEY); // LKEY

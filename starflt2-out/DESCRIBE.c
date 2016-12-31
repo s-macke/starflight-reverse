@@ -331,13 +331,13 @@ void UNK_0xe797() // UNK_0xe797
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
   goto label2;
 
   label1:
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label2:
   i++;
@@ -377,11 +377,11 @@ void UNK_0xe7df() // UNK_0xe7df
   Push(i); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(cc_BL); // BL
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(i); // I
   Push(Pop()+1); // 1+
   Push(imax); // I'
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); // DROP
@@ -389,7 +389,7 @@ void UNK_0xe7df() // UNK_0xe7df
   Push(cc__3); // 3
   PICK(); // PICK
   _dash_(); // -
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;
@@ -463,7 +463,7 @@ void UNK_0xe853() // UNK_0xe853
   OVER(); // OVER
   Push(Read8(Pop())&0xFF); // C@
   Push(0x002e);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_CTX); // CTX
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -645,7 +645,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   unsigned short int a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_HAZE); // HAZE
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR
@@ -1777,7 +1777,7 @@ void SYSCAN() // SYSCAN
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp_NOF); // NOF
   ON_2(); // ON_2
@@ -2098,7 +2098,7 @@ void DESCRIBE() // DESCRIBE
   Push(i); // I
   Push(Pop()+1); // 1+
   Push(imax); // I'
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;

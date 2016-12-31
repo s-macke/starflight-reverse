@@ -404,7 +404,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__6); // 6
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x002c);
   return;

@@ -1938,7 +1938,7 @@ void UNK_0xf264() // UNK_0xf264
   UNK_0xf1ac(); // UNK_0xf1ac
   Push(j); // I
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(0x002c);

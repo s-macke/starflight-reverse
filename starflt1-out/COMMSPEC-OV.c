@@ -214,7 +214,7 @@ void XY_slash_N() // XY/N
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(2); // 2
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp_FTRIG); // FTRIG
   Push(Read16(Pop())); // @
   Push(Pop() * Pop()); // *
@@ -300,7 +300,7 @@ void UNK_0xf486() // UNK_0xf486
   Push(pp_UNK_0xecca); // UNK_0xecca
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   _dot_SORD(); // .SORD

@@ -374,7 +374,7 @@ void UNK_0xf1f8() // UNK_0xf1f8
   label1:
   Push(Read16(a)); // R@
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
   Push(0); // 0
   Push(cc__5); // 5
@@ -473,7 +473,7 @@ void UNK_0xf29d() // UNK_0xf29d
   Push(pp_UNK_0xf180); // UNK_0xf180
   Push(Read16(Pop())); // @
   OVER(); // OVER
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   goto label2;
@@ -556,15 +556,15 @@ void UNK_0xf2f5() // UNK_0xf2f5
   _at_IC(); // @IC
   Push(pp_UNK_0xf180); // UNK_0xf180
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   _at_IC(); // @IC
   Push(pp_UNK_0xf184); // UNK_0xf184
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   _at_ID(); // @ID
   Push(cc_SYS_dash_ICO); // SYS-ICO
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label2;
@@ -784,7 +784,7 @@ void UNK_0xf464() // UNK_0xf464
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
   Push(1); // 1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
 }
 
 
@@ -807,7 +807,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf190); // UNK_0xf190
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__ask_SECURE); // ?SECURE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -852,7 +852,7 @@ void _2N() // 2N
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf190); // UNK_0xf190
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(pp__ask_SECURE); // ?SECURE
   _099(); // 099

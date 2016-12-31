@@ -322,7 +322,7 @@ void INITMUS() // INITMUS
   Push(Read16(regsp)); // DUP
   Push(cc_MUSINT); // MUSINT
   UNK_0xe2de(); // UNK_0xe2de
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(0); // 0
@@ -704,7 +704,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
-  LEAVE(); // LEAVE
+  imax = i; // LEAVE
 
   label1:
   i++;

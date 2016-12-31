@@ -600,7 +600,7 @@ void UNK_0xeece() // UNK_0xeece
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
   Push(cc__8); // 8
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xec2a(); // UNK_0xec2a
 
@@ -691,7 +691,7 @@ void UNK_0xef3d() // UNK_0xef3d
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(cc__dash_1); // -1
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label2;
   Push(pp__ask_LANDED); // ?LANDED
   ON_2(); // ON_2
@@ -774,7 +774,7 @@ void UNK_0xf038() // UNK_0xf038
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xecb4(); // UNK_0xecb4
@@ -850,7 +850,7 @@ void UNK_0xf0aa() // UNK_0xf0aa
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__ro_ENCOUN); // (ENCOUN
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0016);
@@ -1583,7 +1583,7 @@ void _gt_FLT() // >FLT
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(cc__5); // 5
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   UNK_0xf502(); // UNK_0xf502
 

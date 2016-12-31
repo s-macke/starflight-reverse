@@ -271,7 +271,7 @@ void UNK_0xedde() // UNK_0xedde
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
   Push(0x0018);
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(pp_STAR_dash_HR); // STAR-HR
   OFF(); // OFF
@@ -284,7 +284,7 @@ void UNK_0xedde() // UNK_0xedde
   Push(Read16(Pop())); // @
   Push(pp__ro_FLARE_rc_); // (FLARE)
   Push(Read16(Pop())); // @
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -583,7 +583,7 @@ void UNK_0xf007() // UNK_0xf007
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(a); // I
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   Push(a); // R>
@@ -605,7 +605,7 @@ void UNK_0xf007() // UNK_0xf007
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   Push(c); // I
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
   Push(c); // R>
@@ -619,7 +619,7 @@ void UNK_0xf007() // UNK_0xf007
   if (Pop() == 0) goto label3;
   Push(d); // I
   Push(b); // I'
-  _eq_(); // =
+  Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
   Push(d); // I
