@@ -182,7 +182,7 @@ void UNK_0xee1a() // UNK_0xee1a
   _slash_(); // /
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -191,7 +191,7 @@ void UNK_0xee1a() // UNK_0xee1a
   _slash_(); // /
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -1101,7 +1101,7 @@ void _dot_STATS() // .STATS
 {
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(pp_HAZE); // HAZE
@@ -1117,7 +1117,7 @@ void _dot_STATS() // .STATS
   _dot_ENERGY(); // .ENERGY
   _dot_CARGO(); // .CARGO
   _dot_DISTANCE(); // .DISTANCE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_XORMODE); // XORMODE
   _ex__2(); // !_2
 }

@@ -384,9 +384,9 @@ void UNK_0xe616() // UNK_0xe616
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
   RRND(); // RRND
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   RRND(); // RRND
-  R_gt_(); // R>
+  Push(b); // R>
 
   label3:
   Push(pp__ask_CALLING); // ?CALLING
@@ -402,9 +402,9 @@ void UNK_0xe616() // UNK_0xe616
   Push(Read16(Pop())); // @
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -507,7 +507,7 @@ void _plus_A_dash_VESS() // +A-VESS
 
 void UNK_0xe73a() // UNK_0xe73a
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0); // 0
   Push(0x000f);
 
@@ -522,14 +522,14 @@ void UNK_0xe73a() // UNK_0xe73a
   _ex_COLOR(); // !COLOR
   Push(0x0028);
   Push(0x0082);
-  Push(h); // J
+  Push(a); // J
   _dot_CIRCLE(); // .CIRCLE
   Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
   } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffe6
 
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -2304,9 +2304,9 @@ void UNK_0xf333() // UNK_0xf333
   Push(Read16(regsp)); // DUP
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0x63fc); // IFIELD(INST-X)
   _2_at_(); // 2@
   SWAP(); // SWAP
@@ -2319,8 +2319,8 @@ void UNK_0xf333() // UNK_0xf333
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
   Push(Read16(regsp)); // DUP
-  Push(h); // I
-  Push(h); // I'
+  Push(b); // I
+  Push(a); // I'
   UNK_0xf31b(); // UNK_0xf31b
 
   label3:
@@ -2333,16 +2333,16 @@ void UNK_0xf333() // UNK_0xf333
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label4;
   Push(Read16(regsp)); // DUP
-  Push(h); // I
-  Push(h); // I'
+  Push(b); // I
+  Push(a); // I'
   UNK_0xf31b(); // UNK_0xf31b
 
   label4:
   Push(pp_UNK_0xf283); // UNK_0xf283
   _ex__3(); // !_3
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Pop(); Pop();// 2DROP
   UNK_0xf28b(); // UNK_0xf28b
 }

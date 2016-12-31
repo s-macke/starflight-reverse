@@ -223,10 +223,10 @@ const unsigned short int cc_UNK_0xdfe1 = 0x0039; // UNK_0xdfe1
 
 void UNK_0xdecd() // UNK_0xdecd
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
-  R_gt_(); // R>
+  Push(a); // R>
   POS_dot_(); // POS.
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
@@ -905,11 +905,11 @@ void _ask_VOLUME() // ?VOLUME
   label1:
   Push(0x001b);
   _eq_(); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label5;
   Push(0); // 0
   goto label2;
 
-  label3:
+  label5:
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
 
@@ -923,7 +923,7 @@ void _ask_VOLUME() // ?VOLUME
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   _gt_(); // >
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Pop(); // DROP
   Push2Words("0.");
   UNK_0xe044(); // UNK_0xe044
@@ -933,12 +933,12 @@ void _ask_VOLUME() // ?VOLUME
   PRINT("NOT ENOUGH ROOM IN CARGO HOLD ", 30); // (.")
   Push(0x05dc);
   MS(); // MS
-  goto label5;
+  goto label4;
 
-  label4:
+  label3:
   Push(1); // 1
 
-  label5:
+  label4:
   ICLOSE(); // ICLOSE
 }
 
@@ -954,11 +954,11 @@ void _ro_EXTRACT_rc_() // (EXTRACT)
   CI(); // CI
   _2SWAP(); // 2SWAP
   _at_INST_dash_CLASS(); // @INST-CLASS
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   ICLOSE(); // ICLOSE
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  R_gt_(); // R>
+  Push(a); // R>
   BOX_gt_TOC(); // BOX>TOC
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -1185,9 +1185,9 @@ void _do_setup() // $setup
   Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   CMOVE(); // CMOVE
-  R_gt_(); // R>
+  Push(a); // R>
   ICLOSE(); // ICLOSE
 }
 
@@ -1473,7 +1473,7 @@ void UNK_0xe75b() // UNK_0xe75b
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xe61c(); // UNK_0xe61c
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) goto label2;
   _dash_ICON(); // -ICON
   UNK_0xe072(); // UNK_0xe072
@@ -1484,7 +1484,7 @@ void UNK_0xe75b() // UNK_0xe75b
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
   UNK_0xe67c(); // UNK_0xe67c
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x63fa); // IFIELD(INST-QTY)
   _ex__3(); // !_3
   C_gt_(); // C>
@@ -1508,7 +1508,7 @@ void UNK_0xe75b() // UNK_0xe75b
   ICLOSE(); // ICLOSE
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xe38a(); // UNK_0xe38a
   goto label4;
 
@@ -1869,16 +1869,16 @@ void UNK_0xea76() // UNK_0xea76
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
   Push(0x000b);
-  Push(h); // I
+  Push(a); // I
   CLASS_gt_B(); // CLASS>B
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(h); // I
+  Push(a); // I
   CLASS_gt_B(); // CLASS>B
   Push(0x000b);
   SWAP(); // SWAP
@@ -1886,7 +1886,7 @@ void UNK_0xea76() // UNK_0xea76
   _star_CREATE(); // *CREATE
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   BOX_gt_TOC(); // BOX>TOC
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
@@ -1935,13 +1935,13 @@ void UNK_0xeac0() // UNK_0xeac0
   _at_IL(); // @IL
   _at_IH(); // @IH
   _gt_C_plus_S(); // >C+S
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_INST_dash_CLASS(); // @INST-CLASS
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(pp_UNK_0xeaba); // UNK_0xeaba
   _2_at_(); // 2@
   D_eq_(); // D=
-  R_gt_(); // R>
+  Push(a); // R>
   SWAP(); // SWAP
   if (Pop() == 0) goto label2;
   Pop(); // DROP
@@ -2924,7 +2924,7 @@ void UNK_0xf028() // UNK_0xf028
   Push(pp_FQUIT); // FQUIT
   OFF(); // OFF
 
-  label7:
+  label4:
   _ask_QUIT(); // ?QUIT
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -2944,34 +2944,34 @@ void UNK_0xf028() // UNK_0xf028
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xef32(); // UNK_0xef32
   goto label3;
 
-  label4:
+  label5:
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label6;
   Push(pp_UNK_0xdec9); // UNK_0xdec9
   Push(Read16(Pop())); // @
   _at_INST_dash_CLASS(); // @INST-CLASS
   DISPATCH(); // DISPATCH case
   Push(pp_revision); // revision
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label7;
   UNK_0xef8e(); // UNK_0xef8e
 
-  label6:
+  label7:
   Push(pp_FQUIT); // FQUIT
   ON_3(); // ON_3
 
-  label5:
+  label6:
   Pop(); // DROP
 
   label3:
-  goto label7;
+  goto label4;
 
   label1:
   CDROP(); // CDROP
@@ -3089,20 +3089,20 @@ void UNK_0xf134() // UNK_0xf134
   label2:
   Push(0x002c);
   _eq_(); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   Push(cc__dash_1); // -1
   goto label3;
 
-  label4:
+  label5:
   Push(0); // 0
 
   label3:
-  goto label5;
+  goto label4;
 
   label1:
   Push(0); // 0
 
-  label5:
+  label4:
   ICLOSE(); // ICLOSE
 }
 
@@ -3463,19 +3463,19 @@ void UNK_0xf36a() // UNK_0xf36a
   POINT_gt_ICON(); // POINT>ICON
   _at_ID(); // @ID
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0011);
   _st_(); // <
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0014);
   Push(0x0017);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x00fe);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x002c);
   _eq_(); // =
   Push(Pop() | Pop()); // OR

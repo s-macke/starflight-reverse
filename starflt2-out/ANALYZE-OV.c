@@ -520,22 +520,22 @@ void UNK_0xef13() // UNK_0xef13
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   _at_INST_dash_S(); // @INST-S
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(2); // 2
   Push(cc__4); // 4
   WITHIN(); // WITHIN
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000e);
   Push(0x0014);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0017);
   Push(0x001f);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0020);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -1187,7 +1187,7 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3b8() // UNK_0xf3b8
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(2); // 2
   Push(cc__7); // 7
   Push(0); // 0
@@ -1201,7 +1201,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(h); // J
+  Push(a); // J
   _eq_(); // =
   if (Pop() == 0) goto label1;
   LEAVE(); // LEAVE
@@ -1210,7 +1210,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

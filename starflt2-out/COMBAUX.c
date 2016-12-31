@@ -366,12 +366,12 @@ void UNK_0xf4c6() // UNK_0xf4c6
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   SQRT(); // SQRT

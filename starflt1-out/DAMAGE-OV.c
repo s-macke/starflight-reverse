@@ -394,12 +394,12 @@ void UNK_0xec12() // UNK_0xec12
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -412,14 +412,14 @@ void UNK_0xec12() // UNK_0xec12
 
 void UNK_0xec30() // UNK_0xec30
 {
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
 
@@ -430,20 +430,20 @@ void UNK_0xec30() // UNK_0xec30
 
 void UNK_0xec46() // UNK_0xec46
 {
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
   Push(Read16(regsp)); // DUP
   Push(0x0080);
   Push(Pop() & Pop()); // AND
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
 
@@ -569,13 +569,13 @@ void UNK_0xecf2() // UNK_0xecf2
 
 void UNK_0xed12() // UNK_0xed12
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xead5(); // UNK_0xead5
   UNK_0xec12(); // UNK_0xec12
   Push(0x000a);
   SWAP(); // SWAP
   _dash_(); // -
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_at_(); // IFLD@
   Push(Pop()*2); // 2*
   Push(pp_LDAMAGE); // LDAMAGE
@@ -788,12 +788,12 @@ void UNK_0xee46() // UNK_0xee46
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
   UNK_0xeac1(); // UNK_0xeac1
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   IFLD_at_(); // IFLD@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   UNK_0xeac1(); // UNK_0xeac1
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -963,7 +963,7 @@ void UNK_0xef8e() // UNK_0xef8e
   Push(0x640e); // IFIELD(UNK_0xebb2)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
 
@@ -971,7 +971,7 @@ void UNK_0xef8e() // UNK_0xef8e
   goto label2;
 
   label1:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
@@ -981,7 +981,7 @@ void UNK_0xef8e() // UNK_0xef8e
   goto label4;
 
   label3:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
@@ -991,7 +991,7 @@ void UNK_0xef8e() // UNK_0xef8e
   goto label4;
 
   label5:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
@@ -1011,7 +1011,7 @@ void UNK_0xef8e() // UNK_0xef8e
 
   label2:
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1292,13 +1292,13 @@ void UNK_0xf19a() // UNK_0xf19a
 void UNK_0xf1ec() // UNK_0xf1ec
 {
   UNK_0xed4e(); // UNK_0xed4e
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_AT(); // ?ICONS-AT
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   SWAP(); // SWAP
   Push(0); // 0
 
@@ -1319,7 +1319,7 @@ void UNK_0xf1ec() // UNK_0xf1ec
   Pop(); // DROP
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1557,11 +1557,11 @@ void UNK_0xf358() // UNK_0xf358
   Push(0x000a);
   MAX(); // MAX
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -1744,13 +1744,13 @@ void UNK_0xf47f() // UNK_0xf47f
   UNK_0xf404(); // UNK_0xf404
   UNK_0xec0a(); // UNK_0xec0a
   UNK_0xf23a(); // UNK_0xf23a
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_AT(); // ?ICONS-AT
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   SWAP(); // SWAP
   Push(0); // 0
 
@@ -1793,7 +1793,7 @@ void UNK_0xf47f() // UNK_0xf47f
   Pop(); // DROP
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 }

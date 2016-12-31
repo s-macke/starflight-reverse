@@ -329,7 +329,7 @@ void ROLE_dash_C() // ROLE-C
 
 void UNK_0xf23c() // UNK_0xf23c
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(1); // 1
   Push(pp_ROSTER); // ROSTER
   Push(cc__6); // 6
@@ -351,7 +351,7 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(0x640e); // IFIELD(UNK_0xf11d)
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Push(h); // J
+  Push(a); // J
   _eq_(); // =
   goto label2;
 
@@ -366,7 +366,7 @@ void UNK_0xf23c() // UNK_0xf23c
   i++;
   } while(i<imax); // (LOOP) 0xffd2
 
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); Pop();// 2DROP
 }
 
@@ -515,12 +515,12 @@ void _dot_VITS() // .VITS
 {
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf0a6(); // UNK_0xf0a6
@@ -590,9 +590,9 @@ void _dot_VITS() // .VITS
   i++;
   } while(i<imax); // (LOOP) 0xff9c
 
-  R_gt_(); // R>
+  Push(b); // R>
   _ex_COLOR(); // !COLOR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_XORMODE); // XORMODE
   _ex__3(); // !_3
 }

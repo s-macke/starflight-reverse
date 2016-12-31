@@ -358,8 +358,8 @@ void UNK_0xf1f8() // UNK_0xf1f8
   Push(0); // 0
   Push(cc__3); // 3
   RRND(); // RRND
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   UNK_0xf1d4(); // UNK_0xf1d4
@@ -372,7 +372,7 @@ void UNK_0xf1f8() // UNK_0xf1f8
   goto label2;
 
   label1:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(1); // 1
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -394,7 +394,7 @@ void UNK_0xf1f8() // UNK_0xf1f8
   UNK_0xf1e6(); // UNK_0xf1e6
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

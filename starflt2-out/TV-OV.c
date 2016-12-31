@@ -434,12 +434,12 @@ void UNK_0xe86e() // UNK_0xe86e
 
 void UNK_0xe896() // UNK_0xe896
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x00c5);
   Push(0x000c);
   Push(0x00c1);
   Push(0x0044);
-  R_gt_(); // R>
+  Push(a); // R>
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -1275,8 +1275,8 @@ void UNK_0xeea1() // UNK_0xeea1
 {
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2
   IEXTRAC(); // IEXTRAC
@@ -1284,11 +1284,11 @@ void UNK_0xeea1() // UNK_0xeea1
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   _gt_BOX(); // >BOX
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x65f2); // IFIELD(UNK_0xe73f)
   _plus__ex__2(); // +!_2
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(-Pop()); // NEGATE
   UNK_0xee81(); // UNK_0xee81
 }
@@ -1661,11 +1661,11 @@ void UNK_0xf199() // UNK_0xf199
   Push(pp_XVIS); // XVIS
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0016);
   Push(Pop() + Pop()); // +
   MIN(); // MIN
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x000e);
   Push(Pop() + Pop()); // +
   MAX(); // MAX
@@ -1677,11 +1677,11 @@ void UNK_0xf199() // UNK_0xf199
   Push(pp_YVIS); // YVIS
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0x0024);
   Push(Pop() + Pop()); // +
   MIN(); // MIN
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0x0016);
   Push(Pop() + Pop()); // +
   MAX(); // MAX
@@ -1863,7 +1863,7 @@ void UNK_0xf2f8() // UNK_0xf2f8
 {
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _ex_COLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   UNK_0xe9fa(); // UNK_0xe9fa
@@ -1878,7 +1878,7 @@ void UNK_0xf2f8() // UNK_0xf2f8
   _1PIX(); // 1PIX
   LLINE(); // LLINE
   _2PIX(); // 2PIX
-  R_gt_(); // R>
+  Push(a); // R>
   _ex_COLOR(); // !COLOR
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
@@ -2099,7 +2099,7 @@ void UNK_0xf472() // UNK_0xf472
   if (Pop() == 0) goto label1;
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0); // 0
 
   signed short int i = Pop();
@@ -2145,7 +2145,7 @@ void UNK_0xf472() // UNK_0xf472
   i++;
   } while(i<imax); // (LOOP) 0xffb0
 
-  R_gt_(); // R>
+  Push(a); // R>
   POINT_gt_I(); // POINT>I
   Push(pp_UNK_0xf46e); // UNK_0xf46e
   Push(Read16(Pop())); // @
@@ -2176,8 +2176,8 @@ void DO_dot_WEAPON() // DO.WEAPON
   _at__gt_C_plus_S(); // @>C+S
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(0x65f2); // IFIELD(UNK_0xe73a)
   C_ex__2(); // C!_2
   Push(Pop()+1); // 1+
@@ -2193,7 +2193,7 @@ void DO_dot_WEAPON() // DO.WEAPON
   _st_D_ex__gt_(); // <D!>
   UNK_0xf328(); // UNK_0xf328
   UNK_0xf2bd(); // UNK_0xf2bd
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xecee(); // UNK_0xecee
   goto label2;
 

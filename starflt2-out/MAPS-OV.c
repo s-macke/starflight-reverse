@@ -521,7 +521,7 @@ void UNK_0xeff3() // UNK_0xeff3
   CELLCOL(); // CELLCOL
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
@@ -530,13 +530,13 @@ void UNK_0xeff3() // UNK_0xeff3
   CELLCOL(); // CELLCOL
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  Push(j); // I
+  Push(a); // I
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
 
   label1:
   _2DUP(); // 2DUP
@@ -544,7 +544,7 @@ void UNK_0xeff3() // UNK_0xeff3
   CELLCOL(); // CELLCOL
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   _2DUP(); // 2DUP
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
@@ -552,32 +552,32 @@ void UNK_0xeff3() // UNK_0xeff3
   CELLCOL(); // CELLCOL
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  Push(j); // I
+  Push(c); // I
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
-  R_gt_(); // R>
+  Push(c); // R>
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int d = Pop(); // >R
 
   label2:
-  Push(j); // I
-  Push(jmax); // I'
+  Push(d); // I
+  Push(b); // I'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
-  Push(j); // I
-  Push(jmax); // I'
+  Push(d); // I
+  Push(b); // I'
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label3;
-  Push(j); // I
+  Push(d); // I
   _0_gt_(); // 0>
   if (Pop() == 0) goto label4;
-  Push(j); // I
+  Push(d); // I
   goto label5;
 
   label4:
-  Push(jmax); // I'
+  Push(b); // I'
 
   label5:
   Push(pp_XORMODE); // XORMODE
@@ -592,8 +592,8 @@ void UNK_0xeff3() // UNK_0xeff3
   BLT(); // BLT
 
   label3:
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(d); // R>
+  Push(b); // R>
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   j++;

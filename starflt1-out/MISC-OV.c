@@ -83,17 +83,17 @@ void _ro_TRIM() // (TRIM
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xefe5); // UNK_0xefe5
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(h); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+2); // 2+
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
@@ -215,16 +215,16 @@ void UNK_0xf0b9() // UNK_0xf0b9
 
 void _ro__n_IN_do_() // (#IN$
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   PAD(); // PAD
-  Push(h); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   Push(0); // 0
   FILL_1(); // FILL_1
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
 
-  label5:
+  label4:
   UNK_0xf08f(); // UNK_0xf08f
   _i_KEY(); // 'KEY
   Push(Read16(regsp)); // DUP
@@ -236,12 +236,12 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
 
   label1:
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int b = Pop(); // >R
+  Push(b); // I
   Push(0x0021);
   Push(0x005b);
   WITHIN(); // WITHIN
-  Push(h); // I
+  Push(b); // I
   Push(cc_BL); // BL
   _eq_(); // =
   PAD(); // PAD
@@ -249,18 +249,18 @@ void _ro__n_IN_do_() // (#IN$
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   Push(Pop() | Pop()); // OR
-  Push(h); // I
+  Push(b); // I
   UNK_0xf0b9(); // UNK_0xf0b9
   Push(Pop() & Pop()); // AND
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
-  Push(h); // I'
+  Push(a); // I'
   _st_(); // <
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(h); // I
+  Push(b); // I
   Exec(EMIT); // call of word 0x2731 '(EMIT)'
-  Push(h); // I
+  Push(b); // I
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
@@ -273,34 +273,34 @@ void _ro__n_IN_do_() // (#IN$
   goto label3;
 
   label2:
-  Push(h); // I
+  Push(b); // I
   Push(cc__8); // 8
   _eq_(); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   UNK_0xf035(); // UNK_0xf035
   goto label3;
 
-  label4:
-  Push(h); // I
+  label5:
+  Push(b); // I
   Push(0x000d);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(h); // I
+  Push(b); // I
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   BEEP(); // BEEP
 
   label3:
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0x000d);
   _eq_(); // =
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label5;
-  R_gt_(); // R>
+  if (Pop() == 0) goto label4;
+  Push(a); // R>
   Pop(); // DROP
   PAD(); // PAD
 }
@@ -650,11 +650,11 @@ void UNK_0xf39f() // UNK_0xf39f
 
 void _ro__ask__dot_EQ() // (?.EQ
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
-  Push(h); // I
+  Push(a); // I
   EINDE(); // EINDE case
   Push(Pop()*2); // 2*
   Push(0x6400); // IFIELD(UNK_0xefd6)
@@ -666,7 +666,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(0x0080);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(h); // I
+  Push(a); // I
   _dot_ERR(); // .ERR case
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
@@ -674,7 +674,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   goto label3;
 
   label2:
-  Push(h); // I
+  Push(a); // I
   UNK_0xf39f(); // UNK_0xf39f
 
   label3:
@@ -684,13 +684,13 @@ void _ro__ask__dot_EQ() // (?.EQ
 
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
-  Push(h); // I
+  Push(a); // I
   _dot_ERR(); // .ERR case
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 
   label4:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 }

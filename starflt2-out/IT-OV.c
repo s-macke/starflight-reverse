@@ -926,21 +926,21 @@ void _gt_BOX() // >BOX
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
-  Push(h); // I
+  Push(a); // I
   CLASS_gt_BO(); // CLASS>BO case
   Push(0x000b);
   SWAP(); // SWAP
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
-  Push(h); // I
+  Push(a); // I
   UNK_0xf3db(); // UNK_0xf3db
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   BOX_gt_TOCS(); // BOX>TOCS
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S

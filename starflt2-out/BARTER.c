@@ -769,12 +769,12 @@ void UNK_0xe1b8() // UNK_0xe1b8
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   SWAP(); // SWAP
-  Push(h); // I
+  Push(a); // I
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   SWAP(); // SWAP
 }
 
@@ -1210,7 +1210,7 @@ void UNK_0xe454() // UNK_0xe454
   OVER(); // OVER
   Push(Read8(Pop())&0xFF); // C@
   _at_COLOR(); // @COLOR
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   SPL(); // SPL case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
@@ -1218,7 +1218,7 @@ void UNK_0xe454() // UNK_0xe454
   UNK_0xe254(); // UNK_0xe254
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   _ex_COLOR(); // !COLOR
 }
 
@@ -2131,13 +2131,13 @@ void UNK_0xe960() // UNK_0xe960
 void UNK_0xe97c() // UNK_0xe97c
 {
   _at_INST_dash_C(); // @INST-C
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   CI(); // CI
   Push(pp_ITEM); // ITEM
   _1_dot_5_ex__2(); // 1.5!_2
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  R_gt_(); // R>
+  Push(a); // R>
   BOX_gt_TOC(); // BOX>TOC
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -3703,7 +3703,7 @@ void UNK_0xf276() // UNK_0xf276
   MIN(); // MIN
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   UNK_0xe5ea(); // UNK_0xe5ea
   Push(pp_SELLING); // SELLING
@@ -3713,7 +3713,7 @@ void UNK_0xf276() // UNK_0xf276
   MAX(); // MAX
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+1); // 1+
   WITHIN(); // WITHIN
   UNK_0xf048(); // UNK_0xf048
@@ -3826,23 +3826,23 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
   D_st_(); // D<
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x006b);
   UNK_0xe59a(); // UNK_0xe59a
   D_st_(); // D<
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   goto label3;
 
   label2:
   D_gt_(); // D>
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0x006b);
   UNK_0xe59a(); // UNK_0xe59a
   D_gt_(); // D>
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() & Pop()); // AND
 
   label3:

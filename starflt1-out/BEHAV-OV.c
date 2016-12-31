@@ -390,7 +390,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
   ABS(); // ABS
   Push(cc__6); // 6
   _st_(); // <
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_WEAPXY); // WEAPXY
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
@@ -398,7 +398,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
   ABS(); // ABS
   Push(cc__6); // 6
   _st_(); // <
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -562,12 +562,12 @@ void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -920,7 +920,7 @@ void UNK_0xe564() // UNK_0xe564
   _slash_(); // /
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -929,7 +929,7 @@ void UNK_0xe564() // UNK_0xe564
   _slash_(); // /
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -2731,14 +2731,14 @@ void _dot_STATS() // .STATS
 {
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   _dot_WHERE(); // .WHERE
   _dot_ENERGY(); // .ENERGY
   _dot_CARGO(); // .CARGO
   _dot_DISTANCE(); // .DISTANCE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_XORMODE); // XORMODE
   _ex__3(); // !_3
 }

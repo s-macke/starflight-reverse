@@ -332,7 +332,7 @@ void UNK_0xefe0() // UNK_0xefe0
 {
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00bf);
   Push(Pop() & Pop()); // AND
@@ -340,7 +340,7 @@ void UNK_0xefe0() // UNK_0xefe0
   Push(0x0040);
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   C_ex__2(); // C!_2
 }
 
@@ -435,7 +435,7 @@ void UNK_0xf05e() // UNK_0xf05e
   Push(0x65fd); // IFIELD(UNK_0xef36)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(0x0064);
   ROT(); // ROT
@@ -449,7 +449,7 @@ void UNK_0xf05e() // UNK_0xf05e
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__6); // 6
   _slash_(); // /
   Push(0x000a);
@@ -929,7 +929,7 @@ void UNK_0xf3b1() // UNK_0xf3b1
 {
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xf1e0(); // UNK_0xf1e0
   SWAP(); // SWAP
   UNK_0xf1a2(); // UNK_0xf1a2
@@ -951,7 +951,7 @@ void UNK_0xf3b1() // UNK_0xf3b1
   CDROP(); // CDROP
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex__2(); // !_2
   UNK_0xf000(); // UNK_0xf000

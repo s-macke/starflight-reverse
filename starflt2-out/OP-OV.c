@@ -1089,16 +1089,16 @@ void UNK_0xed1f() // UNK_0xed1f
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0022);
-  Push(h); // I
+  Push(a); // I
   Push(cc__8); // 8
   Push(Pop() * Pop()); // *
   _dash_(); // -
   Push(0x0064);
   POS_dot_(); // POS.
   PRINT("YOU HAVE NOT FILED ANY", 22); // (.")
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) goto label1;
   PRINT(" NEW", 4); // (.")
 

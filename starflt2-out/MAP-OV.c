@@ -1144,17 +1144,17 @@ void UNK_0xe952() // UNK_0xe952
   if (Pop() == 0) goto label2;
   Push(pp_VIN); // VIN
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
-  Push(h); // I
+  Push(a); // I
   Push(Read16(Pop())); // @
-  Push(h); // I
+  Push(a); // I
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
@@ -1590,13 +1590,13 @@ void UNK_0xecaa() // UNK_0xecaa
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   _gt_(); // >
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_UNK_0xe382); // UNK_0xe382
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xe36e); // UNK_0xe36e
   _dash_(); // -
   _gt_(); // >
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
@@ -1606,13 +1606,13 @@ void UNK_0xecaa() // UNK_0xecaa
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   _gt_(); // >
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(pp_UNK_0xe386); // UNK_0xe386
   Push(Read16(Pop())); // @
   Push(cc_UNK_0xe36e); // UNK_0xe36e
   _dash_(); // -
   _gt_(); // >
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() & Pop()); // AND
   Push(Pop() & Pop()); // AND
 }

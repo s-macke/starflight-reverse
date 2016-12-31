@@ -449,12 +449,12 @@ void UNK_0xe626() // UNK_0xe626
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -636,7 +636,7 @@ void UNK_0xe6cc() // UNK_0xe6cc
   _slash_(); // /
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -645,7 +645,7 @@ void UNK_0xe6cc() // UNK_0xe6cc
   _slash_(); // /
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -740,9 +740,9 @@ void UNK_0xe762() // UNK_0xe762
 
 void UNK_0xe786() // UNK_0xe786
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xe4ec(); // UNK_0xe4ec
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_at_(); // IFLD@
   _gt_C_plus_S(); // >C+S
   UNK_0xe4ec(); // UNK_0xe4ec
@@ -1003,13 +1003,13 @@ void UNK_0xe8fb() // UNK_0xe8fb
 
 void UNK_0xe927() // UNK_0xe927
 {
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   IFLD_at_(); // IFLD@
   Push(Pop()-1); // 1-
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
 
@@ -1340,7 +1340,7 @@ void UNK_0xeb5f() // UNK_0xeb5f
   UNK_0xe4d8(); // UNK_0xe4d8
   UNK_0xe4a8(); // UNK_0xe4a8
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) goto label1;
   UNK_0xe500(); // UNK_0xe500
   SWAP(); // SWAP
@@ -1349,7 +1349,7 @@ void UNK_0xeb5f() // UNK_0xeb5f
 
   label1:
   UNK_0xeac4(); // UNK_0xeac4
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
   UNK_0xeb57(); // UNK_0xeb57
@@ -1543,7 +1543,7 @@ void CIRCLES() // CIRCLES
   Push(pp_XORMODE); // XORMODE
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _099(); // 099
   BEEPON_2(); // BEEPON_2
   _gt_MAINVI(); // >MAINVI
@@ -1583,7 +1583,7 @@ void CIRCLES() // CIRCLES
   Push(0xcf55); // probable '.EN'
   MODULE(); // MODULE
   _gt_DISPLA(); // >DISPLA
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_XORMODE); // XORMODE
   _ex__2(); // !_2
   goto label3;
@@ -1891,24 +1891,24 @@ void UNK_0xef9a() // UNK_0xef9a
 void UNK_0xefd0() // UNK_0xefd0
 {
   DEPTH(); // DEPTH
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   Push(0xc4ac); // probable 'TRADE'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
   ON_2(); // ON_2
-  R_gt_(); // R>
+  Push(c); // R>
   Push(pp_OCRS); // OCRS
   _ex__2(); // !_2
-  R_gt_(); // R>
+  Push(b); // R>
   Push(pp_NCRS); // NCRS
   _ex__2(); // !_2
-  R_gt_(); // R>
+  Push(a); // R>
   _ask_ENOUGH(); // ?ENOUGH
   UNK_0xef24(); // UNK_0xef24
   UNK_0xe6ba(); // UNK_0xe6ba
@@ -2236,39 +2236,39 @@ void TV_dash_KEY() // TV-KEY
   Push(cc__dash_1); // -1
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label6;
   Pop(); Pop();// 2DROP
   Push(cc__dash_1); // -1
   UNK_0xf079(); // UNK_0xf079
   goto label2;
 
-  label3:
+  label6:
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label7;
   UNK_0xf012(); // UNK_0xf012
   Push(pp_NCRS); // NCRS
   Push(Read16(Pop())); // @
   _gt_BUTTONS(); // >BUTTONS case
   UNK_0xe6ba(); // UNK_0xe6ba
 
-  label4:
+  label7:
   _1SIMULATE(); // 1SIMULATE
   Pop(); // DROP
 
   label2:
   UNK_0xef4c(); // UNK_0xef4c
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label3;
   UNK_0xef9a(); // UNK_0xef9a
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label4;
   UNK_0xefd0(); // UNK_0xefd0
 
-  label6:
+  label4:
   UNK_0xe9f7(); // UNK_0xe9f7
 
-  label5:
+  label3:
   UNK_0xf19a(); // UNK_0xf19a
-  if (Pop() == 0) goto label7;
+  if (Pop() == 0) goto label5;
   Push(0xc8b4); // probable 'HALL'
   MODULE(); // MODULE
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
@@ -2276,7 +2276,7 @@ void TV_dash_KEY() // TV-KEY
   UNK_0xe6ba(); // UNK_0xe6ba
   UNK_0xe9f7(); // UNK_0xe9f7
 
-  label7:
+  label5:
   UNK_0xf002(); // UNK_0xf002
   if (Pop() == 0) return;
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -2315,18 +2315,18 @@ void UNK_0xf289() // UNK_0xf289
   SetColor("LT-BLUE");
 
   label2:
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
   UNK_0xf275(); // UNK_0xf275
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
   Push(0x0043);
   Push(Pop() + Pop()); // +
   UNK_0xf275(); // UNK_0xf275
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
   Push(0x0086);
@@ -2391,10 +2391,10 @@ void UNK_0xf312() // UNK_0xf312
   Push(cc__6); // 6
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
   CI(); // CI
-  R_gt_(); // R>
+  Push(a); // R>
   LEAVE(); // LEAVE
 
   label1:
@@ -2428,7 +2428,7 @@ void UNK_0xf354() // UNK_0xf354
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
   _at_COLOR(); // @COLOR
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
   Push(0xbe55); // probable '.AHUF'
@@ -2457,7 +2457,7 @@ void UNK_0xf354() // UNK_0xf354
   Push(0xbe96); // probable 'CPAUS'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   _ex_COLOR(); // !COLOR
 }
 

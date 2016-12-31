@@ -542,14 +542,14 @@ void UNK_0xf181() // UNK_0xf181
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x005f);
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
   Push(0x0090);
   SWAP(); // SWAP
   LLINE(); // LLINE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+1); // 1+
   Push(0x005f);
   SWAP(); // SWAP
@@ -903,11 +903,11 @@ void GETSITE_1() // GETSITE_1
   MAX(); // MAX
   Push(0x00c8);
   MIN(); // MIN
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(Pop() * Pop()); // *
   SWAP(); // SWAP
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() * Pop()); // *
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR

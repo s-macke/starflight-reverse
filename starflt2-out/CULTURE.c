@@ -82,11 +82,11 @@ void UNK_0xef56() // UNK_0xef56
 {
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int b = Pop(); // >R
+  Push(b); // I
   if (Pop() == 0) goto label1;
   SetColor("PINK");
   goto label2;
@@ -101,7 +101,7 @@ void UNK_0xef56() // UNK_0xef56
   label3:
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label3;
-  R_gt_(); // R>
+  Push(b); // R>
   if (Pop() == 0) goto label4;
   SetColor("RED");
   goto label5;
@@ -112,7 +112,7 @@ void UNK_0xef56() // UNK_0xef56
   label5:
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
-  R_gt_(); // R>
+  Push(a); // R>
   _ex_COLOR(); // !COLOR
 }
 

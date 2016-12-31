@@ -338,8 +338,8 @@ void UNK_0xec92() // UNK_0xec92
 void UNK_0xeccc() // UNK_0xeccc
 {
   UNK_0xec7a(); // UNK_0xec7a
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   LoadData("UNK_0xebe6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   _eq_(); // =
@@ -348,7 +348,7 @@ void UNK_0xeccc() // UNK_0xeccc
   goto label2;
 
   label1:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   LoadData("UNK_0xebf6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   _eq_(); // =
@@ -360,7 +360,7 @@ void UNK_0xeccc() // UNK_0xeccc
   Push(0xec56);
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1440,19 +1440,19 @@ void UNK_0xf4b7() // UNK_0xf4b7
   LoadData("UNK_0xebb6"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   _gt_FLAG(); // >FLAG
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  R_gt_(); // R>
+  Push(a); // R>
   SWAP(); // SWAP
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   UNK_0xf33b(); // UNK_0xf33b
   UNK_0xec7a(); // UNK_0xec7a
-  R_at_(); // R@
+  Push(Read16(b)); // R@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
   Pop(); // DROP
@@ -1460,12 +1460,12 @@ void UNK_0xf4b7() // UNK_0xf4b7
 
   label1:
   _ex_INST_dash_S(); // !INST-S
-  R_at_(); // R@
+  Push(Read16(b)); // R@
   if (Pop() == 0) goto label2;
   UNK_0xf41e(); // UNK_0xf41e
 
   label2:
-  R_gt_(); // R>
+  Push(b); // R>
   ICLOSE(); // ICLOSE
 }
 

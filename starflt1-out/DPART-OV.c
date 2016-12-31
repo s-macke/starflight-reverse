@@ -278,14 +278,14 @@ void UNK_0xf0d6() // UNK_0xf0d6
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   _at_INST_dash_CLASS(); // @INST-CLASS
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(0x0044);
   _eq_(); // =
-  Push(h); // I
+  Push(a); // I
   Push(0x001a);
   _eq_(); // =
-  Push(h); // I
+  Push(a); // I
   Push(0x0029);
   _eq_(); // =
   Push(Read16(regsp)); // DUP
@@ -296,7 +296,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(Pop() & Pop()); // AND
 
   label2:
-  Push(h); // I
+  Push(a); // I
   Push(0x001c);
   _eq_(); // =
   Push(Read16(regsp)); // DUP
@@ -308,7 +308,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(Pop() & Pop()); // AND
 
   label3:
-  Push(h); // I
+  Push(a); // I
   Push(0x001c);
   _eq_(); // =
   Push(Read16(regsp)); // DUP
@@ -327,7 +327,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(Pop() | Pop()); // OR
   Push(Pop() | Pop()); // OR
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   return;
 

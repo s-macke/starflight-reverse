@@ -139,14 +139,14 @@ const unsigned short int cc_UNK_0xee6e = 0x000f; // UNK_0xee6e
 
 void UNK_0xee7e() // UNK_0xee7e
 {
-  _gt_R(); // >R
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
+  unsigned short int c = Pop(); // >R
   _at_DS(); // @DS
-  R_gt_(); // R>
+  Push(c); // R>
   OVER(); // OVER
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   _st_LCMOVE(); // <LCMOVE
 }
 
@@ -870,8 +870,8 @@ void PUT() // PUT
   _ask_VISIBLE(); // ?VISIBLE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(i); // R>
+  Push(imax); // R>
   Pop(); Pop();// 2DROP
   Exec(BELL); // call of word 0x266b 'BEEP'
   return;
@@ -1086,8 +1086,8 @@ void _gt_STAMP() // >STAMP
   Push(tt_SCR); // SCR
   Push(Read16(Pop())); // @
   BLOCK_2(); // BLOCK_2
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(0x0032);
   Push(Pop() + Pop()); // +
   Push(0x000e);
@@ -1095,13 +1095,13 @@ void _gt_STAMP() // >STAMP
   Push(pp_FILENAMES); // FILENAMES
   Push(0x0016);
   Push(Pop() + Pop()); // +
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0026);
   Push(Pop() + Pop()); // +
   Push(0x000b);
   CMOVE_2(); // CMOVE_2
   Push(0x205c);
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0024);
   Push(Pop() + Pop()); // +
   _ex__2(); // !_2

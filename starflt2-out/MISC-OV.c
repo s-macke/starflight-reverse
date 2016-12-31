@@ -403,17 +403,17 @@ void _ro_TRIM() // (TRIM
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xeff2); // UNK_0xeff2
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
-  Push(h); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+2); // 2+
   Push(pp_ABLT); // ABLT
   _ex__2(); // !_2
@@ -535,16 +535,16 @@ void UNK_0xf0c0() // UNK_0xf0c0
 
 void _ro__n_IN_do_() // (#IN$
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   PAD(); // PAD
-  Push(h); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   Push(0); // 0
   FILL_2(); // FILL_2
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
 
-  label5:
+  label4:
   UNK_0xf09a(); // UNK_0xf09a
   _i_KEY(); // 'KEY
   Push(Read16(regsp)); // DUP
@@ -556,12 +556,12 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
 
   label1:
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int b = Pop(); // >R
+  Push(b); // I
   Push(0x0021);
   Push(0x005b);
   WITHIN(); // WITHIN
-  Push(h); // I
+  Push(b); // I
   Push(cc_BL); // BL
   _eq_(); // =
   PAD(); // PAD
@@ -569,18 +569,18 @@ void _ro__n_IN_do_() // (#IN$
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   Push(Pop() | Pop()); // OR
-  Push(h); // I
+  Push(b); // I
   UNK_0xf0c0(); // UNK_0xf0c0
   Push(Pop() & Pop()); // AND
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
-  Push(h); // I'
+  Push(a); // I'
   _st_(); // <
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(h); // I
+  Push(b); // I
   Exec(EMIT); // call of word 0x2731 '(EMIT)'
-  Push(h); // I
+  Push(b); // I
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
@@ -593,34 +593,34 @@ void _ro__n_IN_do_() // (#IN$
   goto label3;
 
   label2:
-  Push(h); // I
+  Push(b); // I
   Push(cc__8); // 8
   _eq_(); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label5;
   UNK_0xf042(); // UNK_0xf042
   goto label3;
 
-  label4:
-  Push(h); // I
+  label5:
+  Push(b); // I
   Push(0x000d);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(h); // I
+  Push(b); // I
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   BEEP(); // BEEP
 
   label3:
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0x000d);
   _eq_(); // =
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label5;
-  R_gt_(); // R>
+  if (Pop() == 0) goto label4;
+  Push(a); // R>
   Pop(); // DROP
   PAD(); // PAD
 }
@@ -633,15 +633,15 @@ void _ro__n_IN_do_() // (#IN$
 
 void _ro__ask_ART() // (?ART
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x000b);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0028);
   _st_(); // <
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(cc__8); // 8
   Push(0x000f);
   WITHIN(); // WITHIN
@@ -661,14 +661,14 @@ void _ro__ask_ART() // (?ART
   Pop(); // DROP
   IOPEN(); // IOPEN
   Push(0x001c);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   IFIND(); // IFIND
   CDROP(); // CDROP
 
   label3:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -893,11 +893,11 @@ void UNK_0xf35b() // UNK_0xf35b
 
 void _ro__ask__dot_EQ() // (?.EQ
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
-  Push(h); // I
+  Push(a); // I
   EINDE(); // EINDE case
   Push(Pop()*2); // 2*
   Push(0x65f2); // IFIELD(UNK_0xef16)
@@ -909,7 +909,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(0x0080);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  Push(h); // I
+  Push(a); // I
   _dot_ERR(); // .ERR case
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
@@ -917,7 +917,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   goto label3;
 
   label2:
-  Push(h); // I
+  Push(a); // I
   UNK_0xf208(); // UNK_0xf208
   UNK_0xf35b(); // UNK_0xf35b
 
@@ -928,13 +928,13 @@ void _ro__ask__dot_EQ() // (?.EQ
 
   UNK_0x3f09("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
-  Push(h); // I
+  Push(a); // I
   _dot_ERR(); // .ERR case
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 
   label4:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 }
@@ -1068,15 +1068,15 @@ void _eq_CARG() // =CARG
 
 void TV_ask_AR() // TV?AR
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x000b);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0028);
   _st_(); // <
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(cc__8); // 8
   Push(0x000f);
   WITHIN(); // WITHIN
@@ -1096,14 +1096,14 @@ void TV_ask_AR() // TV?AR
   Pop(); // DROP
   IOPEN(); // IOPEN
   Push(0x001c);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   IFIND(); // IFIND
   ICLOSE(); // ICLOSE
 
   label3:
   Push(2); // 2
   _star_CLOSE(); // *CLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

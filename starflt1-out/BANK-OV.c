@@ -415,11 +415,11 @@ void UNK_0xf196() // UNK_0xf196
   Push(0x000d);
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() * Pop()); // *
   Push(0x0020);
   Push(Pop() + Pop()); // +

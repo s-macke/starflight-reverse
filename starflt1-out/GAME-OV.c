@@ -514,10 +514,10 @@ void UNK_0xe0b6() // UNK_0xe0b6
   UNK_0xe0ae(); // UNK_0xe0ae
   Push(0); // 0
   UNK_0xe0a6(); // UNK_0xe0a6
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   UNK_0xe09e(); // UNK_0xe09e
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+2); // 2+
   UNK_0xe09e(); // UNK_0xe09e
   Push(cc_MUSSEG); // MUSSEG
@@ -1922,7 +1922,7 @@ void UNK_0xeb21() // UNK_0xeb21
 
 void _v_DISK() // |DISK
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(0); // 0
   Push(0x0400);
@@ -1956,7 +1956,7 @@ void _v_DISK() // |DISK
   BLOCK_2(); // BLOCK_2
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
-  Push(h); // J
+  Push(a); // J
   if (Pop() == 0) Push(1); else Push(0); // NOT
   UNK_0xe8b0(); // UNK_0xe8b0
   Push(cc__9); // 9
@@ -1964,7 +1964,7 @@ void _v_DISK() // |DISK
   Push(cc_UNK_0xde7a); // UNK_0xde7a
   UMIN(); // UMIN
   LCMOVE(); // LCMOVE
-  Push(h); // J
+  Push(a); // J
   if (Pop() == 0) goto label3;
   UPDATE(); // UPDATE
 
@@ -1981,12 +1981,12 @@ void _v_DISK() // |DISK
   i++;
   } while(i<imax); // (LOOP) 0xffb0
 
-  Push(h); // I
+  Push(a); // I
   if (Pop() == 0) goto label2;
   SAVE_dash_BUFFERS(); // SAVE-BUFFERS
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
@@ -2464,13 +2464,13 @@ void UNK_0xee99() // UNK_0xee99
 
 void BOX() // BOX
 {
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   _2DUP(); // 2DUP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  Push(h); // I'
+  Push(a); // I'
   UNK_0xee63(); // UNK_0xee63
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0); // 0
 
   signed short int i = Pop();
@@ -2482,7 +2482,7 @@ void BOX() // BOX
   SWAP(); // SWAP
   _2DUP(); // 2DUP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  Push(h); // J
+  Push(a); // J
   UNK_0xee7b(); // UNK_0xee7b
   i++;
   } while(i<imax); // (LOOP) 0xfff0
@@ -2491,7 +2491,7 @@ void BOX() // BOX
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xee99(); // UNK_0xee99
 }
 

@@ -188,8 +188,8 @@ void UNK_0xe10c() // UNK_0xe10c
 void UNK_0xe121() // UNK_0xe121
 {
   UNK_0xe0f4(); // UNK_0xe0f4
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(Read8(Pop())&0xFF); // C@
   _3_star_(); // 3*
@@ -222,7 +222,7 @@ void UNK_0xe121() // UNK_0xe121
   i += step;
   } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffdc
 
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   UNK_0xe0e6(); // UNK_0xe0e6
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
@@ -233,18 +233,18 @@ void UNK_0xe121() // UNK_0xe121
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
   PRINT(" not in ", 8); // (.")
-  R_gt_(); // R>
+  Push(c); // R>
   NFA(); // NFA
   ID_dot_(); // ID.
   UNRAVEL(); // UNRAVEL
   QUIT(); // QUIT
 
   label2:
-  R_gt_(); // R>
+  Push(b); // R>
   Push(cc__3); // 3
   _slash_(); // /
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(a); // R>
+  Push(callp0); // R>
   UNK_0xe100(); // UNK_0xe100
 }
 
@@ -311,11 +311,11 @@ void UNK_0xe291() // UNK_0xe291
 
 void UNK_0xe29d() // UNK_0xe29d
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop()+1); // 1+
   OVER(); // OVER
   _dash_(); // -
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0100);
   _star__slash_(); // */
   Push(Pop() + Pop()); // +
@@ -616,11 +616,11 @@ void UNK_0xe4d8() // UNK_0xe4d8
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
@@ -667,9 +667,9 @@ void UNK_0xe570() // UNK_0xe570
   Push(0x0064);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _gt_(); // >
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(Pop()+1); // 1+
@@ -716,11 +716,11 @@ void UNK_0xe5a6() // UNK_0xe5a6
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
@@ -788,16 +788,16 @@ void UNK_0xe5fe() // UNK_0xe5fe
 void UNK_0xeb97() // UNK_0xeb97
 {
   UNK_0xe0f4(); // UNK_0xe0f4
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(cc__7); // 7
   _eq_(); // =
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   UNK_0xe100(); // UNK_0xe100
 }
 
@@ -810,7 +810,7 @@ void UNK_0xebb3() // UNK_0xebb3
 {
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -824,7 +824,7 @@ void UNK_0xebb3() // UNK_0xebb3
   Push(Read16(regsp)); // DUP
   _gt_PROP(); // >PROP
   _1_dot_5_at_(); // 1.5@
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
@@ -1013,15 +1013,15 @@ void UNK_0xec95() // UNK_0xec95
 void UNK_0xecf9() // UNK_0xecf9
 {
   IFLD_at_(); // IFLD@
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0); // 0
   Push(Read16(regsp)); // DUP
-  Push(h); // I
-  Push(h); // I'
+  Push(b); // I
+  Push(a); // I'
   D_eq_(); // D=
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Push(0xdf48); Push(0x0001);
   D_eq_(); // D=
   Push(Pop() | Pop()); // OR
@@ -1069,9 +1069,9 @@ void UNK_0xed37() // UNK_0xed37
 void UNK_0xed63() // UNK_0xed63
 {
   UNK_0xeb97(); // UNK_0xeb97
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) goto label1;
   UNK_0xe27b(); // UNK_0xe27b
   if (Pop() == 0) goto label2;
@@ -1117,7 +1117,7 @@ void UNK_0xedaf() // UNK_0xedaf
 {
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   LoadData("UNK_0xe316"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xe31e"); // from 'CREATURE    '
@@ -1137,7 +1137,7 @@ void UNK_0xedaf() // UNK_0xedaf
   _1_dot_5_ex_(); // 1.5!
   Push(0xe496); // probable 'UNK_0xe496'
   Push(0xe48e); // probable 'UNK_0xe48e'
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
@@ -1310,11 +1310,11 @@ void UNK_0xef31() // UNK_0xef31
   _2DUP(); // 2DUP
   Push(0xddc9); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _2DUP(); // 2DUP
   Push(0xddb3); Push(0x0001);
   D_eq_(); // D=
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -1325,10 +1325,10 @@ void UNK_0xef31() // UNK_0xef31
   _2DUP(); // 2DUP
   Push(0xdd87); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0xdd9d); Push(0x0001);
   D_eq_(); // D=
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
   UNK_0xee1d(); // UNK_0xee1d
@@ -1463,7 +1463,7 @@ void UNK_0xf0b0() // UNK_0xf0b0
   SHORTEST(); // SHORTEST
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) goto label3;
   STALKER(); // STALKER
   goto label4;
@@ -1472,7 +1472,7 @@ void UNK_0xf0b0() // UNK_0xf0b0
   TALLEST(); // TALLEST
 
   label4:
-  R_gt_(); // R>
+  Push(a); // R>
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   RRND(); // RRND
@@ -1641,12 +1641,12 @@ void UNK_0xf1b6() // UNK_0xf1b6
   _1_dot_5_at_(); // 1.5@
   Push(0xcbcb); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   LoadData("UNK_0xe356"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
   _eq_(); // =
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
   Push(0xc591); Push(0x0001);
@@ -1657,12 +1657,12 @@ void UNK_0xf1b6() // UNK_0xf1b6
   _1_dot_5_at_(); // 1.5@
   Push(0xcd62); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   LoadData("UNK_0xe366"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__5); // 5
   _gt_(); // >
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label5;
   Push(0xc748); Push(0x0001);
@@ -1693,26 +1693,26 @@ void UNK_0xf256() // UNK_0xf256
   D_eq_(); // D=
   LoadData("UNK_0xe2fe"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  _gt_R(); // >R
-  _gt_R(); // >R
-  Push(h); // I'
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
+  Push(a); // I'
+  Push(b); // I
   Push(0xcf93); Push(0x0001);
   D_eq_(); // D=
-  Push(h); // I'
-  Push(h); // I
+  Push(a); // I'
+  Push(b); // I
   Push(0xd220); Push(0x0001);
   D_eq_(); // D=
-  Push(h); // I'
-  Push(h); // I
+  Push(a); // I'
+  Push(b); // I
   Push(0xd0aa); Push(0x0001);
   D_eq_(); // D=
-  Push(h); // I'
-  Push(h); // I
+  Push(a); // I'
+  Push(b); // I
   Push(0xd0f3); Push(0x0001);
   D_eq_(); // D=
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Push(0xd166); Push(0x0001);
   D_eq_(); // D=
   Push(Pop() | Pop()); // OR
@@ -1765,12 +1765,12 @@ void UNK_0xf256() // UNK_0xf256
   _1_dot_5_at_(); // 1.5@
   Push(0xcd17); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   LoadData("UNK_0xe366"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(cc__4); // 4
   _gt_(); // >
-  R_gt_(); // R>
+  Push(c); // R>
   Push(Pop() & Pop()); // AND
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
@@ -1782,12 +1782,12 @@ void UNK_0xf256() // UNK_0xf256
   _1_dot_5_at_(); // 1.5@
   Push(0xcd17); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int d = Pop(); // >R
   LoadData("UNK_0xe33e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xcd8b); Push(0x0001);
   D_eq_(); // D=
-  R_gt_(); // R>
+  Push(d); // R>
   Push(Pop() & Pop()); // AND
   LoadData("UNK_0xe2f6"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
@@ -1889,7 +1889,7 @@ void UNK_0xf384() // UNK_0xf384
   _1_dot_5_at_(); // 1.5@
   Push(0xcd17); Push(0x0001);
   D_eq_(); // D=
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   LoadData("UNK_0xe366"); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
@@ -1899,7 +1899,7 @@ void UNK_0xf384() // UNK_0xf384
   Push(cc__4); // 4
   _eq_(); // =
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label12;
   LoadData("UNK_0xe3be"); // from 'CREATURE    '

@@ -1223,7 +1223,7 @@ void UNK_0xf29f() // UNK_0xf29f
 
 void UNK_0xf2c8() // UNK_0xf2c8
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(2); // 2
   Push(cc__7); // 7
   Push(0); // 0
@@ -1237,7 +1237,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   Push(i); // I
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(h); // J
+  Push(a); // J
   _eq_(); // =
   if (Pop() == 0) goto label1;
   LEAVE(); // LEAVE
@@ -1246,7 +1246,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1288,7 +1288,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(1); // 1
   Push(0x018f);
   WITHIN(); // WITHIN
@@ -1306,7 +1306,7 @@ void UNK_0xf31e() // UNK_0xf31e
   goto label3;
 
   label1:
-  Push(h); // I
+  Push(a); // I
   Push(0x003c);
   _gt_(); // >
   if (Pop() == 0) goto label4;
@@ -1323,12 +1323,12 @@ void UNK_0xf31e() // UNK_0xf31e
   CTCR(); // CTCR
   Push(2); // 2
   SPACES(); // SPACES
-  Push(h); // I
+  Push(a); // I
   _dot_(); // .
   PRINT("ARTH DAYS.", 10); // (.")
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

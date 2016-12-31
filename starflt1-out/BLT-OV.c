@@ -271,21 +271,21 @@ void _dot_HYBRID() // .HYBRID
   Push(Read16(regsp)); // DUP
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__5); // 5
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
-  Push(h); // I
+  Push(a); // I
   Push(2); // 2
   LC_at_(); // LC@
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(h); // I
+  Push(a); // I
   Push(cc__3); // 3
   LC_at_(); // LC@
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__4); // 4
   LC_at_(); // LC@
   Push(0); // 0
@@ -296,22 +296,22 @@ void _dot_HYBRID() // .HYBRID
   {
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   Push(cc__4); // 4
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
-  Push(i); // I
-  Push(imax); // I'
+  Push(c); // I
+  Push(b); // I'
   Push(Pop()+2); // 2+
   LC_at_(); // LC@
   _ask__gt_EGA(); // ?>EGA
   Push(pp_COLOR); // COLOR
   _ex__3(); // !_3
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(c); // R>
+  Push(b); // R>
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@

@@ -495,9 +495,9 @@ void UNK_0xebb5() // UNK_0xebb5
 
 void UNK_0xebe9() // UNK_0xebe9
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
-  R_gt_(); // R>
+  Push(a); // R>
   CTINIT(); // CTINIT
   UNK_0xebb5(); // UNK_0xebb5
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -693,9 +693,9 @@ void UNK_0xecb0() // UNK_0xecb0
 
 void UNK_0xed20() // UNK_0xed20
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
-  R_gt_(); // R>
+  Push(a); // R>
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -870,8 +870,8 @@ void UNK_0xee20() // UNK_0xee20
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xeb7d); // UNK_0xeb7d
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(cc__3); // 3
   _eq_(); // =
   if (Pop() == 0) goto label2;
@@ -919,7 +919,7 @@ void UNK_0xee20() // UNK_0xee20
   C_ex_(); // C!
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xec96(); // UNK_0xec96
   Push(0xc6cc); // probable 'OV.SHIP'
   MODULE(); // MODULE
@@ -1292,8 +1292,8 @@ void UNK_0xf14c() // UNK_0xf14c
 
 void UNK_0xf1d6() // UNK_0xf1d6
 {
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xea27(); // UNK_0xea27
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1304,14 +1304,14 @@ void UNK_0xf1d6() // UNK_0xf1d6
   _dash_(); // -
   Push(pp_UNK_0xeb81); // UNK_0xeb81
   Push(Pop() + Pop()); // +
-  Push(h); // I
+  Push(a); // I
   Push(Pop()-1); // 1-
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(0x0064);
-  Push(h); // I
+  Push(a); // I
   _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xea1b(); // UNK_0xea1b
   _dash_(); // -
@@ -1325,7 +1325,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   Push2Words("NULL");
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1392,14 +1392,14 @@ void UNK_0xf226() // UNK_0xf226
 
 void UNK_0xf288() // UNK_0xf288
 {
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0); // 0
   Push(0x0026);
   CMESS(); // CMESS
   PRINT("COST TO REPAIR ENTIRE SHIP: ", 28); // (.")
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   D_dot_(); // D.
   PRINT(" MU", 3); // (.")
   _ex_CRS(); // !CRS
@@ -1446,14 +1446,14 @@ void UNK_0xf2fa() // UNK_0xf2fa
   Push(0x6400); // IFIELD(UNK_0xe9da)
   Push(i); // I
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
-  Push(i); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   UNK_0xea27(); // UNK_0xea27
-  Push(i); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   C_ex_(); // C!
   Push(0x0064);
-  R_gt_(); // R>
+  Push(a); // R>
   C_ex_(); // C!
   Push(2); // 2
   int step = Pop();

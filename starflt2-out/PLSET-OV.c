@@ -320,9 +320,9 @@ void UNK_0xee44() // UNK_0xee44
   } while(i<imax); // (LOOP) 0xffdc
 
   Pop(); // DROP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
-  R_gt_(); // R>
+  Push(a); // R>
   ICLOSE(); // ICLOSE
   return;
 
@@ -430,9 +430,9 @@ void UNK_0xef3e() // UNK_0xef3e
   goto label2;
 
   label1:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -849,12 +849,12 @@ void UNK_0xf21b() // UNK_0xf21b
   Push(2); // 2
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
 
   label2:
   UNK_0xf1e1(); // UNK_0xf1e1
   Push(Read16(regsp)); // DUP
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -862,7 +862,7 @@ void UNK_0xf21b() // UNK_0xf21b
   goto label2;
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   Push(pp_HYDRO); // HYDRO
   _ex__2(); // !_2

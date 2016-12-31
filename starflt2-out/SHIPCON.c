@@ -135,11 +135,11 @@ void UNK_0xf3f6() // UNK_0xf3f6
   Push(0x0118);
   _dash_(); // -
   ABS(); // ABS
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0248);
   _dash_(); // -
   ABS(); // ABS
-  R_gt_(); // R>
+  Push(a); // R>
   MAX(); // MAX
 }
 

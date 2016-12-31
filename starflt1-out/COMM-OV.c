@@ -1306,8 +1306,8 @@ void UNK_0xdd69() // UNK_0xdd69
 
 void UNK_0xdd7d() // UNK_0xdd7d
 {
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(0x000a);
   Push(0x000c);
   WITHIN(); // WITHIN
@@ -1317,7 +1317,7 @@ void UNK_0xdd7d() // UNK_0xdd7d
   RRND(); // RRND
   Push(0x0014);
   _st_(); // <
-  Push(h); // I
+  Push(a); // I
   BIT(); // BIT
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xdad7); // UNK_0xdad7
@@ -1327,7 +1327,7 @@ void UNK_0xdd7d() // UNK_0xdd7d
   _ex__3(); // !_3
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   BIT(); // BIT
   Push(pp_UNK_0xdad7); // UNK_0xdad7
   Push(Read16(Pop())); // @
@@ -1669,10 +1669,10 @@ void UNK_0xe068() // UNK_0xe068
   ORIGINATOR_gt_C(); // ORIGINATOR>C
   Push(0x6408); // IFIELD(UNK_0xd9a2)
   Push(Read8(Pop())&0xFF); // C@
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
-  R_gt_(); // R>
+  Push(a); // R>
   MOD(); // MOD
   Push(Pop()+2); // 2+
   Push(1); // 1
@@ -1861,12 +1861,12 @@ void UNK_0xe160() // UNK_0xe160
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   SWAP(); // SWAP
-  Push(h); // I
+  Push(a); // I
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   SWAP(); // SWAP
 }
 
@@ -1947,8 +1947,8 @@ void UNK_0xe1f0() // UNK_0xe1f0
 {
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   if (Pop() == 0) goto label1;
   SetColor("PINK");
   goto label2;
@@ -1973,7 +1973,7 @@ void UNK_0xe1f0() // UNK_0xe1f0
   _eq_(); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label3;
-  Push(h); // I
+  Push(a); // I
   if (Pop() == 0) goto label4;
   SetColor("RED");
   goto label5;
@@ -1988,7 +1988,7 @@ void UNK_0xe1f0() // UNK_0xe1f0
   Push(Read16(Pop())); // @
   _ex_COLOR(); // !COLOR
   Pop(); Pop();// 2DROP
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -4126,11 +4126,11 @@ void UNK_0xef2d() // UNK_0xef2d
   Push(0x03e8);
   _dash_(); // -
   ABS(); // ABS
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0320);
   _dash_(); // -
   ABS(); // ABS
-  R_gt_(); // R>
+  Push(a); // R>
   MAX(); // MAX
 }
 
@@ -4583,21 +4583,21 @@ void UNK_0xf27a() // UNK_0xf27a
   UNK_0xf228(); // UNK_0xf228
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_UNK_0xda71); // UNK_0xda71
   _ex__3(); // !_3
   _ask_CHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
-  Push(h); // I
+  Push(a); // I
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
   _0_gt_(); // 0>
-  Push(h); // I
+  Push(a); // I
   _plus_BIT(); // +BIT
   Push(1); // 1
   _eq_(); // =
   Push(Pop() & Pop()); // AND
-  Push(h); // I
+  Push(a); // I
   Push(cc__6); // 6
   Push(cc__9); // 9
   WITHIN(); // WITHIN
@@ -4646,7 +4646,7 @@ void UNK_0xf27a() // UNK_0xf27a
   ON_3(); // ON_3
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
   UNK_0xe7e0(); // UNK_0xe7e0

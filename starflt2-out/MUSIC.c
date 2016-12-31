@@ -445,10 +445,10 @@ void INITMUS() // INITMUS
   UNK_0xebce(); // UNK_0xebce
   Push(cc_UNK_0xeb76); // UNK_0xeb76
   UNK_0xebbe(); // UNK_0xebbe
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   UNK_0xebb6(); // UNK_0xebb6
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+2); // 2+
   UNK_0xebb6(); // UNK_0xebb6
   Push(cc_MUSSEG); // MUSSEG
@@ -515,10 +515,10 @@ void UNK_0xefe3() // UNK_0xefe3
   Push(pp_P_slash_B); // P/B
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   _slash_(); // /
   Push(Read16(regsp)); // DUP
   BMBYTES(); // BMBYTES
@@ -716,10 +716,10 @@ void UNK_0xf0d5() // UNK_0xf0d5
   UNK_0xf0b7(); // UNK_0xf0b7
   Push(0x0040);
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xf0b7(); // UNK_0xf0b7
   Push(Pop()<<4); // 16*
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(Pop()-1); // 1-
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
@@ -727,20 +727,20 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Pop()>>4); // 16/
   UNK_0xf0b7(); // UNK_0xf0b7
   _4_star_(); // 4*
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   UNK_0xf0b7(); // UNK_0xf0b7
   goto label2;
 
   label1:
   Push2Words("NULL");
-  _gt_R(); // >R
+  unsigned short int d = Pop(); // >R
 
   label2:
-  R_gt_(); // R>
+  Push(c); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() | Pop()); // OR
   BMSEG(); // BMSEG
   Push(Read16(Pop())); // @

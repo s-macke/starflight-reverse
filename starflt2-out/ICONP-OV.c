@@ -580,8 +580,8 @@ void UNK_0xf2e7() // UNK_0xf2e7
 void UNK_0xf2ef() // UNK_0xf2ef
 {
   _at_INST_dash_S(); // @INST-S
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(cc__6); // 6
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -589,7 +589,7 @@ void UNK_0xf2ef() // UNK_0xf2ef
   goto label2;
 
   label1:
-  Push(h); // I
+  Push(a); // I
   Push(0x0017);
   _eq_(); // =
   if (Pop() == 0) goto label3;
@@ -600,7 +600,7 @@ void UNK_0xf2ef() // UNK_0xf2ef
   Push(cc_UNK_0xf12a); // UNK_0xf12a
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

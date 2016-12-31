@@ -815,17 +815,17 @@ void UNK_0xe9be() // UNK_0xe9be
   if (Pop() == 0) goto label2;
   Push(pp_VIN); // VIN
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
-  Push(h); // I
+  Push(a); // I
   Push(Read16(Pop())); // @
-  Push(h); // I
+  Push(a); // I
   Push(cc__6); // 6
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__4); // 4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @

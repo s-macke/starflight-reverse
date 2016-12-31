@@ -188,22 +188,22 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   _at_INST_dash_S(); // @INST-S
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(2); // 2
   Push(cc__4); // 4
   WITHIN(); // WITHIN
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000e);
   Push(0x0014);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0017);
   Push(0x001f);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0020);
   _eq_(); // =
   Push(Pop() | Pop()); // OR
@@ -429,12 +429,12 @@ void UNK_0xe886() // UNK_0xe886
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -472,14 +472,14 @@ void UNK_0xe8a4() // UNK_0xe8a4
   _ask_(); // ?
 
   label1:
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
 
@@ -490,20 +490,20 @@ void UNK_0xe8a4() // UNK_0xe8a4
 
 void UNK_0xe8ec() // UNK_0xe8ec
 {
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
   Push(Read16(regsp)); // DUP
   Push(0x0080);
   Push(Pop() & Pop()); // AND
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   SWAP(); // SWAP
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
 
@@ -624,7 +624,7 @@ void UNK_0xe98a() // UNK_0xe98a
 
 void UNK_0xe9ca() // UNK_0xe9ca
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xe73a(); // UNK_0xe73a
   UNK_0xe886(); // UNK_0xe886
   Push(0x000a);
@@ -632,7 +632,7 @@ void UNK_0xe9ca() // UNK_0xe9ca
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
   IFLD_at_(); // IFLD@
   Push(Pop()*2); // 2*
   Push(pp_LDAMAGE); // LDAMAGE
@@ -921,12 +921,12 @@ void UNK_0xeb7f() // UNK_0xeb7f
   Push(cc__7); // 7
   Push(Pop() & Pop()); // AND
   UNK_0xe726(); // UNK_0xe726
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   IFLD_at_(); // IFLD@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   UNK_0xe726(); // UNK_0xe726
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -1114,7 +1114,7 @@ void UNK_0xecc8() // UNK_0xecc8
   Push(0x6600); // IFIELD(UNK_0xe821)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
 
@@ -1122,7 +1122,7 @@ void UNK_0xecc8() // UNK_0xecc8
   goto label2;
 
   label1:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
@@ -1132,7 +1132,7 @@ void UNK_0xecc8() // UNK_0xecc8
   goto label4;
 
   label3:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
@@ -1142,7 +1142,7 @@ void UNK_0xecc8() // UNK_0xecc8
   goto label4;
 
   label5:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
@@ -1162,7 +1162,7 @@ void UNK_0xecc8() // UNK_0xecc8
 
   label2:
   Exec(TYPE); // call of word 0x2690 '(TYPE)'
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1348,28 +1348,28 @@ void UNK_0xee67() // UNK_0xee67
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dash_(); // -
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0xe7a0); // probable 'UNK_0xe7a0'
   UNK_0xe8a4(); // UNK_0xe8a4
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   ABS(); // ABS
-  Push(0xe79b);
+  Push(0xe79b); // probable 'UNK_0xe79b'
   UNK_0xe8a4(); // UNK_0xe8a4
   goto label2;
 
-  label3:
+  label4:
   Pop(); // DROP
 
   label2:
   UNK_0xead4(); // UNK_0xead4
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(0xbfc8); // probable 'DA-STR'
   MODULE(); // MODULE
 
-  label4:
+  label3:
   Push(0x65f3); // IFIELD(UNK_0xe79b)
   Push(Read16(Pop())); // @
   _0_gt_(); // 0>
@@ -1489,13 +1489,13 @@ void UNK_0xef1f() // UNK_0xef1f
 void UNK_0xef73() // UNK_0xef73
 {
   UNK_0xe9fe(); // UNK_0xe9fe
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash__2(); // ?ICONS-_2
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   SWAP(); // SWAP
   Push(0); // 0
 
@@ -1536,7 +1536,7 @@ void UNK_0xef73() // UNK_0xef73
   Pop(); // DROP
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -1760,11 +1760,11 @@ void UNK_0xf105() // UNK_0xf105
   Push(0x000a);
   MAX(); // MAX
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(0); // 0
   MAX(); // MAX
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -2012,13 +2012,13 @@ void UNK_0xf283() // UNK_0xf283
   UNK_0xf1b5(); // UNK_0xf1b5
   UNK_0xe87e(); // UNK_0xe87e
   UNK_0xeff1(); // UNK_0xeff1
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash__2(); // ?ICONS-_2
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   SWAP(); // SWAP
   Push(0); // 0
 
@@ -2061,7 +2061,7 @@ void UNK_0xf283() // UNK_0xf283
   Pop(); // DROP
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
 }
@@ -2104,10 +2104,10 @@ void UNK_0xf316() // UNK_0xf316
   PICK(); // PICK
   _2SWAP(); // 2SWAP
   D_st_(); // D<
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   D_st_(); // D<
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -2278,7 +2278,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
 
 void UNK_0xf437() // UNK_0xf437
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=
@@ -2286,7 +2286,7 @@ void UNK_0xf437() // UNK_0xf437
   if (Pop() == 0) goto label1;
   Push(pp__dash_END); // -END
   Push(Read16(Pop())); // @
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(pp__dash_END); // -END
   _ex__2(); // !_2
   UNK_0xf3a9(); // UNK_0xf3a9
@@ -2312,7 +2312,7 @@ void UNK_0xf437() // UNK_0xf437
   if (Pop() == 0) goto label3;
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000a);
   _slash_(); // /
   _dash_(); // -
@@ -2329,7 +2329,7 @@ void UNK_0xf437() // UNK_0xf437
   ICLOSE(); // ICLOSE
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

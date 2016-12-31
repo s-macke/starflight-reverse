@@ -645,7 +645,7 @@ void UNK_0xea56() // UNK_0xea56
   _slash_(); // /
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -654,7 +654,7 @@ void UNK_0xea56() // UNK_0xea56
   _slash_(); // /
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -668,12 +668,12 @@ void UNK_0xea92() // UNK_0xea92
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -711,11 +711,11 @@ void UNK_0xea92() // UNK_0xea92
 
 void UNK_0xeace() // UNK_0xeace
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0); // 0
   SWAP(); // SWAP
   Push(1); // 1
-  R_gt_(); // R>
+  Push(a); // R>
   M_star__slash_(); // M*/
 }
 
@@ -757,14 +757,14 @@ void UNK_0xeafe() // UNK_0xeafe
   _ex__2(); // !_2
   UNK_0xe9ec(); // UNK_0xe9ec
   Push(Pop()+1); // 1+
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop()+1); // 1+
   Push(pp_UNK_0xeabc); // UNK_0xeabc
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   ABS(); // ABS
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_UNK_0xeab6); // UNK_0xeab6
   Push(Read16(Pop())); // @
   _dash_(); // -
@@ -772,12 +772,12 @@ void UNK_0xeafe() // UNK_0xeafe
   ABS(); // ABS
   ROT(); // ROT
   MAX(); // MAX
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int b = Pop(); // >R
+  Push(Read16(b)); // R@
   UNK_0xeace(); // UNK_0xeace
   Push(pp_UNK_0xeac2); // UNK_0xeac2
   D_ex_(); // D!
-  R_gt_(); // R>
+  Push(b); // R>
   UNK_0xeace(); // UNK_0xeace
   Push(pp_UNK_0xeac8); // UNK_0xeac8
   D_ex_(); // D!
@@ -1078,14 +1078,14 @@ void UNK_0xed1f() // UNK_0xed1f
 void UNK_0xed33() // UNK_0xed33
 {
   UNK_0xed07(); // UNK_0xed07
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   MOUNTB(); // MOUNTB
   Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
-  R_gt_(); // R>
+  Push(a); // R>
   BMPAL(); // BMPAL
   C_ex__2(); // C!_2
   DARK(); // DARK
@@ -1257,9 +1257,9 @@ void UNK_0xee43() // UNK_0xee43
   UNK_0xea56(); // UNK_0xea56
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xe862(); // UNK_0xe862
   _2DUP(); // 2DUP
   Push(0x65f0); // IFIELD(INST-Y)
@@ -1447,9 +1447,9 @@ void UNK_0xef5d() // UNK_0xef5d
   Push(Pop()-1); // 1-
   LC_at_(); // LC@
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   LCMOVE(); // LCMOVE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_LSCAN); // LSCAN
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
@@ -1652,7 +1652,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
 
 void UNK_0xf0da() // UNK_0xf0da
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0xb9f9); // probable 'SETBLT'
   MODULE(); // MODULE
   Push2Words("NULL");
@@ -1662,7 +1662,7 @@ void UNK_0xf0da() // UNK_0xf0da
   Push(0x000e);
   BMOFF(); // BMOFF
   _ex__2(); // !_2
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   BMSEG(); // BMSEG
   _ex__2(); // !_2
   Push(pp_BMAP); // BMAP
@@ -1671,7 +1671,7 @@ void UNK_0xf0da() // UNK_0xf0da
   _099(); // 099
   _at_DS(); // @DS
   Push(pp_BMAP); // BMAP
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0); // 0
   Push(0x000e);
   LCMOVE(); // LCMOVE
@@ -1688,7 +1688,7 @@ void UNK_0xf0da() // UNK_0xf0da
   Push(0x000d);
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x000e);
   Push(0x01e0);
   LCMOVE(); // LCMOVE
@@ -1701,10 +1701,10 @@ void UNK_0xf0da() // UNK_0xf0da
 
 void UNK_0xf138() // UNK_0xf138
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x018d);
   Push(Pop() * Pop()); // *
   Push(pp_XBUF_dash_SE); // XBUF-SE
@@ -1712,7 +1712,7 @@ void UNK_0xf138() // UNK_0xf138
   Push(0); // 0
   Push(0x018d);
   LCMOVE(); // LCMOVE
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf0ca(); // UNK_0xf0ca
   UNK_0xf0da(); // UNK_0xf0da
 }

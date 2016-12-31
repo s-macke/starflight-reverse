@@ -180,12 +180,12 @@ void UNK_0xe83b() // UNK_0xe83b
 
 void UNK_0xe873() // UNK_0xe873
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x00c5);
   Push(0x000c);
   Push(0x00c1);
   Push(0x0044);
-  R_gt_(); // R>
+  Push(a); // R>
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -1442,11 +1442,11 @@ void UNK_0xf138() // UNK_0xf138
   Push(pp_XVIS); // XVIS
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0016);
   Push(Pop() + Pop()); // +
   MIN(); // MIN
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x000e);
   Push(Pop() + Pop()); // +
   MAX(); // MAX
@@ -1458,11 +1458,11 @@ void UNK_0xf138() // UNK_0xf138
   Push(pp_YVIS); // YVIS
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0x0024);
   Push(Pop() + Pop()); // +
   MIN(); // MIN
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0x0016);
   Push(Pop() + Pop()); // +
   MAX(); // MAX
@@ -1660,7 +1660,7 @@ void UNK_0xf296() // UNK_0xf296
 {
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _ex_COLOR(); // !COLOR
   UNK_0xe9d3(); // UNK_0xe9d3
   WLD_gt_SCR(); // WLD>SCR
@@ -1680,7 +1680,7 @@ void UNK_0xf296() // UNK_0xf296
   Push(0x0049);
   Push(Pop() + Pop()); // +
   LLINE(); // LLINE
-  R_gt_(); // R>
+  Push(a); // R>
   _ex_COLOR(); // !COLOR
 }
 
@@ -1775,10 +1775,10 @@ void TV_dash_CLEANU() // TV-CLEANU
 
 void UNK_0xf37b() // UNK_0xf37b
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
-  R_gt_(); // R>
+  Push(a); // R>
   POS_dot_(); // POS.
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
@@ -1908,10 +1908,10 @@ void DO_dot_WEAPON() // DO.WEAPON
   _st__ex__gt_(); // <!>
   Push(pp_EYEXY); // EYEXY
   _2_at_(); // 2@
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
 
-  label4:
+  label3:
   XYSCAN(); // XYSCAN
   Push(1); // 1
   Push(0); // 0
@@ -1928,19 +1928,19 @@ void DO_dot_WEAPON() // DO.WEAPON
   Push(0); // 0
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label4;
   Pop(); Pop();// 2DROP
   Push(1); // 1
   UNK_0xf44d(); // UNK_0xf44d
   goto label2;
 
-  label3:
+  label4:
   Pop(); // DROP
   Pop(); // DROP
 
   label2:
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   Push(pp_UNK_0xf435); // UNK_0xf435
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
@@ -1963,8 +1963,8 @@ void DO_dot_WEAPON() // DO.WEAPON
   _st_D_ex__gt_(); // <D!>
   UNK_0xf2ce(); // UNK_0xf2ce
   UNK_0xf439(); // UNK_0xf439
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Push(pp_EYEXY); // EYEXY
   _st_D_ex__gt_(); // <D!>
 }

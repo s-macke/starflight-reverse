@@ -352,10 +352,10 @@ void UNK_0xed1f() // UNK_0xed1f
 
 void UNK_0xed31() // UNK_0xed31
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
-  R_gt_(); // R>
+  Push(a); // R>
   POS_dot_(); // POS.
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT

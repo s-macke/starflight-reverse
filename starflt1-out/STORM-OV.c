@@ -77,11 +77,11 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   _eq_(); // =
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
@@ -128,9 +128,9 @@ void UNK_0xf14c() // UNK_0xf14c
   Push(0x0064);
   _eq_(); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _gt_(); // >
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(Pop()+1); // 1+
@@ -550,7 +550,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf24d"); // from 'PLANET      '
@@ -566,7 +566,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   label2:
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
   _eq_(); // =

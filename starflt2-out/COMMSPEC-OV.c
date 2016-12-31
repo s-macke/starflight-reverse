@@ -663,10 +663,10 @@ void UNK_0xf190() // UNK_0xf190
   Push(cc__6); // 6
   _eq_(); // =
   if (Pop() == 0) goto label1;
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Pop(); Pop();// 2DROP
   CI(); // CI
-  R_gt_(); // R>
+  Push(a); // R>
   LEAVE(); // LEAVE
 
   label1:

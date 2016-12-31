@@ -239,7 +239,7 @@ void UNK_0xed90() // UNK_0xed90
   _dash_(); // -
   Push(0x0014);
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -257,7 +257,7 @@ void UNK_0xed90() // UNK_0xed90
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Push(h); // I
+  Push(a); // I
   Push(0x6600); // IFIELD(UNK_0xed00)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
@@ -272,7 +272,7 @@ void UNK_0xed90() // UNK_0xed90
   if (Pop() == 0) goto label2;
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   Push(pp_STARDAT); // STARDAT
   Push(Read16(Pop())); // @
@@ -659,12 +659,12 @@ void UNK_0xf00e() // UNK_0xf00e
   Push(pp_UNK_0xeed4); // UNK_0xeed4
   Push(Pop()+1); // 1+
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
-  Push(h); // I
+  Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   WITHIN(); // WITHIN
@@ -1136,16 +1136,16 @@ void UNK_0xf3d0() // UNK_0xf3d0
   Push(cc__4); // 4
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
-  Push(i); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   _plus__dash__at_(); // +-@
-  Push(i); // I
+  Push(a); // I
   Push(Pop()+1); // 1+
   _plus__dash__at_(); // +-@
-  Push(i); // I
+  Push(a); // I
   Push(Pop()+2); // 2+
   _plus__dash__at_(); // +-@
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@

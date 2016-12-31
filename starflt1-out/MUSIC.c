@@ -330,10 +330,10 @@ void INITMUS() // INITMUS
   UNK_0xe2ee(); // UNK_0xe2ee
   Push(cc_OLDINT); // OLDINT
   UNK_0xe2de(); // UNK_0xe2de
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   UNK_0xe2d6(); // UNK_0xe2d6
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop()+2); // 2+
   UNK_0xe2d6(); // UNK_0xe2d6
   Push(cc_MUSSEG); // MUSSEG
@@ -798,14 +798,14 @@ void UNK_0xe82b() // UNK_0xe82b
 
 void REDUCE() // REDUCE
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   FLUSH_2(); // FLUSH_2
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(-Pop()); // NEGATE
   Push(pp__n_CACHE); // #CACHE
   _plus__ex_(); // +!
   AUTO_dash_CACHE(); // AUTO-CACHE
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0040);
   Push(Pop() * Pop()); // *
   Push(-Pop()); // NEGATE

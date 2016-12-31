@@ -522,16 +522,16 @@ void UNK_0xdf59() // UNK_0xdf59
 {
   Push(pp_ICON_h_); // ICON^
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(0x003e);
   FILE_st_(); // FILE<
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x0043);
   Push(Pop() + Pop()); // +
   Push(0x003f);
   FILE_st_(); // FILE<
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0086);
   Push(Pop() + Pop()); // +
   Push(0x0040);
@@ -661,11 +661,11 @@ void UNK_0xe081() // UNK_0xe081
   LCMOVE(); // LCMOVE
   Push(0xb603); // probable 'SETABLT'
   MODULE(); // MODULE
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0012);
   BMOFF(); // BMOFF
   _ex__2(); // !_2
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   BMSEG(); // BMSEG
   _ex__2(); // !_2
   Push(0); // 0
@@ -674,7 +674,7 @@ void UNK_0xe081() // UNK_0xe081
   _ex__2(); // !_2
   _at_DS(); // @DS
   Push(pp_BMAP); // BMAP
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0); // 0
   Push(0x000e);
   LCMOVE(); // LCMOVE
@@ -691,7 +691,7 @@ void UNK_0xe081() // UNK_0xe081
   Push(0x000d);
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0012);
   Push(0x078a);
   LCMOVE(); // LCMOVE
@@ -1519,10 +1519,10 @@ void UNK_0xe7c1() // UNK_0xe7c1
 {
   Push(pp_PIC_n_); // PIC#
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000e);
   _gt_(); // >
   if (Pop() == 0) goto label2;
@@ -1532,12 +1532,12 @@ void UNK_0xe7c1() // UNK_0xe7c1
   label2:
   _ask_VGA(); // ?VGA
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000f);
   Push(0x0022);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label3;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0x000f);
   _dash_(); // -
   Push(0xb9e8); // probable '.APIC'
@@ -1545,17 +1545,17 @@ void UNK_0xe7c1() // UNK_0xe7c1
   goto label1;
 
   label3:
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0); // 0
   Push(0x000f);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0xb9c8); // probable '@.HYBR'
   MODULE(); // MODULE
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -2161,7 +2161,7 @@ void UNK_0xeb72() // UNK_0xeb72
 
 void UNK_0xec7a() // UNK_0xec7a
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(0); // 0
   Push(0x0400);
@@ -2195,7 +2195,7 @@ void UNK_0xec7a() // UNK_0xec7a
   BLOCK_2(); // BLOCK_2
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
-  Push(h); // J
+  Push(a); // J
   if (Pop() == 0) Push(1); else Push(0); // NOT
   UNK_0xe951(); // UNK_0xe951
   Push(cc__9); // 9
@@ -2203,7 +2203,7 @@ void UNK_0xec7a() // UNK_0xec7a
   Push(cc_UNK_0xdd26); // UNK_0xdd26
   UMIN(); // UMIN
   LCMOVE(); // LCMOVE
-  Push(h); // J
+  Push(a); // J
   if (Pop() == 0) goto label3;
   UPDATE(); // UPDATE
 
@@ -2220,12 +2220,12 @@ void UNK_0xec7a() // UNK_0xec7a
   i++;
   } while(i<imax); // (LOOP) 0xffb0
 
-  Push(h); // I
+  Push(a); // I
   if (Pop() == 0) goto label2;
   SAVE_dash_BU(); // SAVE-BU
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
@@ -2702,13 +2702,13 @@ void UNK_0xef3c() // UNK_0xef3c
 
 void UNK_0xef54() // UNK_0xef54
 {
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   _2DUP(); // 2DUP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  Push(h); // I'
+  Push(a); // I'
   UNK_0xef06(); // UNK_0xef06
-  R_gt_(); // R>
+  Push(b); // R>
   Push(0); // 0
 
   signed short int i = Pop();
@@ -2720,7 +2720,7 @@ void UNK_0xef54() // UNK_0xef54
   SWAP(); // SWAP
   _2DUP(); // 2DUP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  Push(h); // J
+  Push(a); // J
   UNK_0xef1e(); // UNK_0xef1e
   i++;
   } while(i<imax); // (LOOP) 0xfff0
@@ -2729,7 +2729,7 @@ void UNK_0xef54() // UNK_0xef54
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Exec(POSITION); // call of word 0x2767 '(POSITION)'
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xef3c(); // UNK_0xef3c
 }
 

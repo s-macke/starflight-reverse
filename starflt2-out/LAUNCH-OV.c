@@ -256,15 +256,15 @@ void UNK_0xf1b6() // UNK_0xf1b6
 
 void UNK_0xf1e4() // UNK_0xf1e4
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__4); // 4
   Push(0x00be);
   Push(0x004c);
-  Push(h); // I
+  Push(a); // I
   Push(cc__4); // 4
   Push(0x00bf);
   LCOPYBL(); // LCOPYBL
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf1b6(); // UNK_0xf1b6
 }
 
@@ -275,16 +275,16 @@ void UNK_0xf1e4() // UNK_0xf1e4
 
 void UNK_0xf202() // UNK_0xf202
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__4); // 4
-  Push(h); // I
+  Push(a); // I
   Push(0x004c);
   Push(0x0049);
   Push(cc__4); // 4
-  Push(h); // I
+  Push(a); // I
   Push(Pop()-1); // 1-
   LCOPYBL(); // LCOPYBL
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf1b6(); // UNK_0xf1b6
 }
 
@@ -392,7 +392,7 @@ void UNK_0xf320() // UNK_0xf320
 
 void UNK_0xf32a() // UNK_0xf32a
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf312(); // UNK_0xf312
@@ -400,7 +400,7 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(0x00bf);
   Push(0x004c);
   Push(0x00bf);
-  Push(h); // I
+  Push(a); // I
   _dash_(); // -
   Push(cc__4); // 4
   Push(0x00be);
@@ -411,7 +411,7 @@ void UNK_0xf32a() // UNK_0xf32a
   UNK_0xf312(); // UNK_0xf312
   Push(cc__4); // 4
   Push(0x0048);
-  Push(h); // I
+  Push(a); // I
   Push(Pop() + Pop()); // +
   Push(0x004c);
   Push(0x0048);
@@ -420,7 +420,7 @@ void UNK_0xf32a() // UNK_0xf32a
 
   label2:
   LCOPYBL(); // LCOPYBL
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   Push(pp_HBUF_dash_SE); // HBUF-SE
   Push(Read16(Pop())); // @

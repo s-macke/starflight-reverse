@@ -562,12 +562,12 @@ void UNK_0xde5d() // UNK_0xde5d
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0); // 0
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   SQRT(); // SQRT
@@ -667,7 +667,7 @@ void UNK_0xdecf() // UNK_0xdecf
   _slash_(); // /
 
   label2:
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -676,7 +676,7 @@ void UNK_0xdecf() // UNK_0xdecf
   _slash_(); // /
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -1127,20 +1127,20 @@ void UNK_0xe0ea() // UNK_0xe0ea
 
 void UNK_0xe0fc() // UNK_0xe0fc
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xdd64(); // UNK_0xdd64
   UNK_0xdd4c(); // UNK_0xdd4c
   ROT(); // ROT
   _dash_(); // -
   ABS(); // ABS
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   _st_(); // <
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   _dash_(); // -
   ABS(); // ABS
-  R_gt_(); // R>
+  Push(b); // R>
   SWAP(); // SWAP
-  R_gt_(); // R>
+  Push(a); // R>
   _st_(); // <
   Push(Pop() & Pop()); // AND
 }
@@ -1751,11 +1751,11 @@ void UNK_0xe424() // UNK_0xe424
 
 void UNK_0xe442() // UNK_0xe442
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0); // 0
   SWAP(); // SWAP
   Push(1); // 1
-  R_gt_(); // R>
+  Push(a); // R>
   M_star__slash_(); // M*/
 }
 
@@ -1782,12 +1782,12 @@ void UNK_0xe452() // UNK_0xe452
   ABS(); // ABS
   ROT(); // ROT
   MAX(); // MAX
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   UNK_0xe442(); // UNK_0xe442
   Push(0x65fc); // IFIELD(UNK_0xe2db)
   _2_ex__2(); // 2!_2
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xe442(); // UNK_0xe442
   Push(0x65f8); // IFIELD(UNK_0xe2d6)
   _2_ex__2(); // 2!_2
@@ -1810,7 +1810,7 @@ void UNK_0xe49a() // UNK_0xe49a
 {
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1829,7 +1829,7 @@ void UNK_0xe49a() // UNK_0xe49a
 
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   POINT_gt_I(); // POINT>I
 }
 
@@ -2030,7 +2030,7 @@ void UNK_0xe5be() // UNK_0xe5be
 {
   UNK_0xe1fc(); // UNK_0xe1fc
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x001d);
   SWAP(); // SWAP
   ICREATE(); // ICREATE
@@ -2051,7 +2051,7 @@ void UNK_0xe5be() // UNK_0xe5be
   UNK_0xe452(); // UNK_0xe452
   Push(0x6603); // IFIELD(UNK_0xe2ea)
   _099(); // 099
-  R_gt_(); // R>
+  Push(a); // R>
   Push(cc__7); // 7
   _eq_(); // =
   if (Pop() == 0) goto label1;
@@ -2095,7 +2095,7 @@ void UNK_0xe61a() // UNK_0xe61a
   if (Pop() == 0) return;
   Push(0); // 0
   OVER(); // OVER
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   SWAP(); // SWAP
   Push(0); // 0
 
@@ -2126,7 +2126,7 @@ void UNK_0xe61a() // UNK_0xe61a
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  R_gt_(); // R>
+  Push(a); // R>
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
 }
@@ -2466,11 +2466,11 @@ void UNK_0xe852() // UNK_0xe852
   Push(Read16(Pop())); // @
   Push(cc__4); // 4
   _slash_(); // /
-  _gt_R(); // >R
-  R_at_(); // R@
+  unsigned short int a = Pop(); // >R
+  Push(Read16(a)); // R@
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 }
@@ -2518,7 +2518,7 @@ void UNK_0xe89a() // UNK_0xe89a
 {
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*SHIP");
   _ask_ICON_eq_I(); // ?ICON=I
   Pop(); // DROP
@@ -2528,7 +2528,7 @@ void UNK_0xe89a() // UNK_0xe89a
   Push(0x001b);
   Push(Pop() + Pop()); // +
   _ex_ID(); // !ID
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_IINDEX); // IINDEX
   _st__ex__gt_(); // <!>
   UNK_0xe516(); // UNK_0xe516
@@ -2655,15 +2655,15 @@ void UNK_0xe966() // UNK_0xe966
 {
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
   _gt_MAINVI(); // >MAINVI
   UNK_0xe4f0(); // UNK_0xe4f0
   UNK_0xe414(); // UNK_0xe414
   UNK_0xe852(); // UNK_0xe852
   _2SWAP(); // 2SWAP
   UNK_0xe852(); // UNK_0xe852
-  R_gt_(); // R>
+  Push(b); // R>
   _ex_COLOR(); // !COLOR
   _1PIX(); // 1PIX
   _2OVER(); // 2OVER
@@ -2680,7 +2680,7 @@ void UNK_0xe966() // UNK_0xe966
   UNK_0xe572(); // UNK_0xe572
 
   label1:
-  R_gt_(); // R>
+  Push(a); // R>
   POINT_gt_I(); // POINT>I
 }
 
@@ -2753,12 +2753,12 @@ void UNK_0xe9d4() // UNK_0xe9d4
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   UNK_0xde5d(); // UNK_0xde5d
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xdecf(); // UNK_0xdecf
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(Pop() * Pop()); // *
   SWAP(); // SWAP
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() * Pop()); // *
   SWAP(); // SWAP
   UNK_0xe9a2(); // UNK_0xe9a2
@@ -3174,13 +3174,13 @@ void UNK_0xec7a() // UNK_0xec7a
   Push(1); // 1
   UNK_0xec45(); // UNK_0xec45
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
   Push(0x65ee); // IFIELD(INST-X)
   _ex__2(); // !_2
   Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xec45(); // UNK_0xec45
   Push(Pop() + Pop()); // +
   Push(0x65f0); // IFIELD(INST-Y)
@@ -3667,13 +3667,13 @@ void UNK_0xf074() // UNK_0xf074
   Push(pp_UNK_0xf052); // UNK_0xf052
   Push(Pop() + Pop()); // +
   _2_at_(); // 2@
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   OVER(); // OVER
   Push(Pop() * Pop()); // *
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   ROT(); // ROT
   Push(Pop() * Pop()); // *
   Push(pp_YABS); // YABS
@@ -3756,7 +3756,7 @@ void UNK_0xf0ea() // UNK_0xf0ea
 void UNK_0xf102() // UNK_0xf102
 {
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   ROT(); // ROT
@@ -3768,7 +3768,7 @@ void UNK_0xf102() // UNK_0xf102
   _2_ex__2(); // 2!_2
   Push(pp__10_star_CARG); // 10*CARG
   _2_at_(); // 2@
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0); // 0
   D_plus_(); // D+
   Push(pp__10_star_CARG); // 10*CARG
@@ -3854,10 +3854,10 @@ void UNK_0xf186() // UNK_0xf186
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65fc); // IFIELD(UNK_0xde32)
   Push(Read8(Pop())&0xFF); // C@
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_UNK_0xde53); // UNK_0xde53
   _2_at_(); // 2@
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   UNK_0xf15e(); // UNK_0xf15e
   Push(Read16(regsp)); // DUP
   ABS(); // ABS
@@ -3865,7 +3865,7 @@ void UNK_0xf186() // UNK_0xf186
   _st__ex__gt_(); // <!>
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf15e(); // UNK_0xf15e
   Push(Read16(regsp)); // DUP
   ABS(); // ABS
@@ -4074,17 +4074,17 @@ void UNK_0xf2b6() // UNK_0xf2b6
 
   label4:
   UNK_0xe178(); // UNK_0xe178
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label8;
   UNK_0xf26e(); // UNK_0xf26e
   goto label5;
 
-  label6:
+  label8:
   UNK_0xe19c(); // UNK_0xe19c
-  if (Pop() == 0) goto label7;
+  if (Pop() == 0) goto label9;
   UNK_0xf28a(); // UNK_0xf28a
   goto label5;
 
-  label7:
+  label9:
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(0x668d); Push(0x0002);
@@ -4092,13 +4092,13 @@ void UNK_0xf2b6() // UNK_0xf2b6
   _dot_TTY(); // .TTY
 
   label5:
-  goto label8;
+  goto label6;
 
   label3:
   UNK_0xf250(); // UNK_0xf250
 
-  label8:
-  goto label9;
+  label6:
+  goto label7;
 
   label2:
   SetColor("WHITE");
@@ -4107,7 +4107,7 @@ void UNK_0xf2b6() // UNK_0xf2b6
   UNK_0xde37(); // UNK_0xde37
   _dot_TTY(); // .TTY
 
-  label9:
+  label7:
   return;
 
   label1:

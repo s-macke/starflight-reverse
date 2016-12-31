@@ -240,7 +240,7 @@ void UNK_0xf145() // UNK_0xf145
   USING(); // USING
   Push(pp_SKIPPED); // SKIPPED
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   RELREC(); // RELREC
   _ex__2(); // !_2
   RELREC(); // RELREC
@@ -255,7 +255,7 @@ void UNK_0xf145() // UNK_0xf145
   Push(0x000f);
   _gt_TIB(); // >TIB
   USING(); // USING
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_SKIPPED); // SKIPPED
   _ex__2(); // !_2
 }
@@ -322,10 +322,10 @@ void UNK_0xf1d8() // UNK_0xf1d8
   Push(pp_P_slash_B); // P/B
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
   _slash_(); // /
   Push(Read16(regsp)); // DUP
   BMBYTES(); // BMBYTES
@@ -470,10 +470,10 @@ void UNK_0xf280() // UNK_0xf280
   UNK_0xf25a(); // UNK_0xf25a
   Push(0x0040);
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xf25a(); // UNK_0xf25a
   Push(Pop()<<4); // 16*
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(Pop()-1); // 1-
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
@@ -481,20 +481,20 @@ void UNK_0xf280() // UNK_0xf280
   Push(Pop()>>4); // 16/
   UNK_0xf25a(); // UNK_0xf25a
   _4_star_(); // 4*
-  _gt_R(); // >R
+  unsigned short int c = Pop(); // >R
   UNK_0xf25a(); // UNK_0xf25a
   goto label2;
 
   label1:
   Push2Words("NULL");
-  _gt_R(); // >R
+  unsigned short int d = Pop(); // >R
 
   label2:
-  R_gt_(); // R>
+  Push(c); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(b); // R>
   Push(Pop() | Pop()); // OR
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() | Pop()); // OR
   BMSEG(); // BMSEG
   Push(Read16(Pop())); // @
@@ -627,11 +627,11 @@ void UNK_0xf3bb() // UNK_0xf3bb
   Push(0x060d);
   LCMOVE(); // LCMOVE
   SETB(); // SETB
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x0012);
   BMOFF(); // BMOFF
   _ex__2(); // !_2
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   BMSEG(); // BMSEG
   _ex__2(); // !_2
   Push(0); // 0
@@ -640,7 +640,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
   _ex__2(); // !_2
   _at_DS(); // @DS
   Push(pp_BMAP); // BMAP
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(0); // 0
   Push(0x000e);
   LCMOVE(); // LCMOVE
@@ -657,7 +657,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
   Push(0x000d);
 
   label2:
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x0012);
   Push(0x078a);
   LCMOVE(); // LCMOVE
@@ -722,7 +722,7 @@ void _at__dot_HY() // @.HY
   _ex__2(); // !_2
   Push(Pop()-1); // 1-
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x21cd);
   SWAP(); // SWAP
   _ask_VGA(); // ?VGA
@@ -738,7 +738,7 @@ void _at__dot_HY() // @.HY
   label2:
   UNK_0xf145(); // UNK_0xf145
   SETB(); // SETB
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf111(); // UNK_0xf111
   Push(cc__4); // 4
   Push(0x00bf);
@@ -794,7 +794,7 @@ void _dot_API() // .API
   Push(Pop() + Pop()); // +
   Push(pp_PIC_n_); // PIC#
   _ex__2(); // !_2
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_PIC_h_); // PIC^
   Push(Read16(Pop())); // @
   Push(0); // 0
@@ -804,7 +804,7 @@ void _dot_API() // .API
   Push(0x0c1c);
   LCMOVE(); // LCMOVE
   SETB(); // SETB
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf12b(); // UNK_0xf12b
   Push(cc__4); // 4
   Push(0x00c5);

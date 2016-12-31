@@ -395,9 +395,9 @@ void UNK_0xe716() // UNK_0xe716
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
   RRND(); // RRND
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   RRND(); // RRND
-  R_gt_(); // R>
+  Push(b); // R>
 
   label3:
   Push(pp__ask_CALLIN); // ?CALLIN
@@ -413,9 +413,9 @@ void UNK_0xe716() // UNK_0xe716
   Push(Read16(Pop())); // @
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  R_gt_(); // R>
+  Push(a); // R>
 }
 
 
@@ -1984,9 +1984,9 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(Read16(regsp)); // DUP
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   Push(0x65ee); // IFIELD(INST-X)
   _2_at_(); // 2@
   SWAP(); // SWAP
@@ -1999,8 +1999,8 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
   Push(Read16(regsp)); // DUP
-  Push(h); // I
-  Push(h); // I'
+  Push(b); // I
+  Push(a); // I'
   UNK_0xf176(); // UNK_0xf176
 
   label3:
@@ -2013,16 +2013,16 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label4;
   Push(Read16(regsp)); // DUP
-  Push(h); // I
-  Push(h); // I'
+  Push(b); // I
+  Push(a); // I'
   UNK_0xf176(); // UNK_0xf176
 
   label4:
   Push(pp_UNK_0xf0de); // UNK_0xf0de
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Pop(); Pop();// 2DROP
   UNK_0xf0e6(); // UNK_0xf0e6
 }

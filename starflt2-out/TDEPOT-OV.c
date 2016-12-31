@@ -212,12 +212,12 @@ void UNK_0xe668() // UNK_0xe668
   Push(Read16(Pop())); // @
   SetColor("GREY2");
   Push(Pop() * Pop()); // *
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0); // 0
-  Push(h); // I
+  Push(a); // I
   X0MESS(); // X0MESS
   Push(1); // 1
-  R_gt_(); // R>
+  Push(a); // R>
   X0MESS(); // X0MESS
 }
 
@@ -810,10 +810,10 @@ void UNK_0xeb35() // UNK_0xeb35
 
 void UNK_0xebb3() // UNK_0xebb3
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
-  R_gt_(); // R>
+  Push(a); // R>
   POS_dot_(); // POS.
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
@@ -902,12 +902,12 @@ void UNK_0xec21() // UNK_0xec21
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label1;
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _gt_1FONT(); // >1FONT
   Push(0x0096);
   Push(cc__4); // 4
   Push(0x0010);
-  R_gt_(); // R>
+  Push(a); // R>
   MIN(); // MIN
   Push(0x0026);
   WINDOW(); // WINDOW
@@ -967,10 +967,10 @@ void UNK_0xec97() // UNK_0xec97
   _gt_C_plus_S(); // >C+S
   _ask_LAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) return;
   UNK_0xec63(); // UNK_0xec63
 }
@@ -1019,10 +1019,10 @@ void UNK_0xece5() // UNK_0xece5
   _gt_C_plus_S(); // >C+S
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
-  R_gt_(); // R>
+  Push(a); // R>
   if (Pop() == 0) return;
   UNK_0xecb5(); // UNK_0xecb5
 }
@@ -1291,11 +1291,11 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   _2_at_(); // 2@
   Push(0xffff); Push(0xffff);
   D_eq_(); // D=
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label6;
   PRINT("PICK UP", 7); // (.")
   goto label4;
 
-  label5:
+  label6:
   PRINT("JETTISON", 8); // (.")
 
   label4:
@@ -1304,7 +1304,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   Push(0xffff); Push(0xffff);
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label6;
+  if (Pop() == 0) goto label5;
   PRINT(" HOW MANY CUBIC METERS?", 23); // (.")
   _ex_CRS(); // !CRS
   Push(1); // 1
@@ -1328,7 +1328,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
   UNK_0xe668(); // UNK_0xe668
   return;
 
-  label6:
+  label5:
   _ex_CRS(); // !CRS
 }
 
@@ -1430,7 +1430,7 @@ void UNK_0xefea() // UNK_0xefea
   label1:
   UNK_0xefde(); // UNK_0xefde
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() == 0) goto label8;
   Push(0); // 0
   Push(0x0015);
   CMESS(); // CMESS
@@ -1439,22 +1439,22 @@ void UNK_0xefea() // UNK_0xefea
   Y_slash_N(); // Y/N
   goto label2;
 
-  label3:
+  label8:
   Push(cc_TRUE); // TRUE
 
   label2:
-  if (Pop() == 0) goto label4;
+  if (Pop() == 0) goto label3;
   UNK_0xefde(); // UNK_0xefde
-  if (Pop() == 0) goto label5;
+  if (Pop() == 0) goto label4;
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-  goto label6;
+  goto label5;
 
-  label5:
+  label4:
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
 
-  label6:
+  label5:
   Push(Read16(regsp)); // DUP
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _ex__2(); // !_2
@@ -1464,21 +1464,21 @@ void UNK_0xefea() // UNK_0xefea
   BOX_gt_(); // BOX>
   Push(pp__ask_TD); // ?TD
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label7;
+  if (Pop() == 0) goto label6;
   Push2Words("*ITEMS-");
   _gt_C_plus_S(); // >C+S
   _gt_BOX(); // >BOX
   ICLOSE(); // ICLOSE
-  goto label8;
+  goto label7;
 
-  label7:
+  label6:
   _gt_INACTI(); // >INACTI
 
-  label8:
+  label7:
   Push(Pop()+1); // 1+
   return;
 
-  label4:
+  label3:
   Push(0); // 0
 }
 
@@ -1597,8 +1597,8 @@ void UNK_0xf148() // UNK_0xf148
   _at_INST_dash_C(); // @INST-C
   Push(0x000b);
   _eq_(); // =
-  _gt_R(); // >R
-  R_gt_(); // R>
+  unsigned short int a = Pop(); // >R
+  Push(a); // R>
   _at_INST_dash_S(); // @INST-S
   Push(0x000f);
   _eq_(); // =
@@ -1712,8 +1712,8 @@ void SELL_dash_IT() // SELL-IT
   SET_dash_CUR(); // SET-CUR
   _at_INST_dash_C(); // @INST-C
   SELL_dash_WHAT(); // SELL-WHAT case
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(cc__dash_1); // -1
   Push(Pop() * Pop()); // *
   Push(pp_SCROLL_dash_); // SCROLL-
@@ -1729,7 +1729,7 @@ void SELL_dash_IT() // SELL-IT
 
   label1:
   Pop(); // DROP
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
 }
@@ -1935,7 +1935,7 @@ void UNK_0xf35c() // UNK_0xf35c
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   LoadData("ELEM-VA"); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
@@ -1943,22 +1943,22 @@ void UNK_0xf35c() // UNK_0xf35c
   Push(pp__pe_VAL); // %VAL
   Push(Read16(Pop())); // @
   UNK_0xe716(); // UNK_0xe716
-  Push(h); // I
+  Push(a); // I
   U_star_(); // U*
   DNEGATE(); // DNEGATE
   UNK_0xe62a(); // UNK_0xe62a
   UNK_0xe6d4(); // UNK_0xe6d4
-  Push(h); // I
+  Push(a); // I
   _dash_(); // -
   UNK_0xe6e0(); // UNK_0xe6e0
-  Push(h); // I
+  Push(a); // I
   Push(0x65ec); // IFIELD(INST-QT)
   _plus__ex__2(); // +!_2
   Push(0x001a);
   _at_INST_dash_S(); // @INST-S
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
-  R_gt_(); // R>
+  Push(a); // R>
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2
   CI(); // CI
@@ -2022,8 +2022,8 @@ void UNK_0xf40d() // UNK_0xf40d
   SET_dash_CUR(); // SET-CUR
   _at_INST_dash_C(); // @INST-C
   BUY_dash_WHAT(); // BUY-WHAT case
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   Push(-Pop()); // NEGATE
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex__2(); // +!_2
@@ -2038,7 +2038,7 @@ void UNK_0xf40d() // UNK_0xf40d
 
   label1:
   Pop(); // DROP
-  R_gt_(); // R>
+  Push(a); // R>
   UNK_0xf174(); // UNK_0xf174
   UNK_0xe98e(); // UNK_0xe98e
   UNK_0xea30(); // UNK_0xea30
@@ -2160,13 +2160,13 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   DEPOT_dash_FUNCTION(); // DEPOT-FUNCTION case
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(cc__dash_1); // -1
   SetColor("GREY2");
   X0MESS(); // X0MESS
   UNK_0xe668(); // UNK_0xe668
   _ex_CRS(); // !CRS
-  R_gt_(); // R>
+  Push(a); // R>
   goto label2;
 
   label1:

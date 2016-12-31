@@ -135,50 +135,50 @@ void UNK_0xed54() // UNK_0xed54
 
 void UNK_0xed5e() // UNK_0xed5e
 {
-  _gt_R(); // >R
-  _gt_R(); // >R
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
+  unsigned short int b = Pop(); // >R
+  unsigned short int c = Pop(); // >R
   Push(Read16(regsp)); // DUP
-  Push(h); // I
+  Push(c); // I
   UNK_0xed54(); // UNK_0xed54
   SWAP(); // SWAP
   UNK_0xed4a(); // UNK_0xed4a
-  Push(h); // J
+  Push(a); // J
   UNK_0xed4a(); // UNK_0xed4a
   OVER(); // OVER
   LLINE(); // LLINE
-  Push(h); // I
+  Push(c); // I
   UNK_0xed54(); // UNK_0xed54
   OVER(); // OVER
   UNK_0xed4a(); // UNK_0xed4a
-  Push(h); // I
+  Push(c); // I
   UNK_0xed4a(); // UNK_0xed4a
-  Push(h); // I'
+  Push(b); // I'
   UNK_0xed54(); // UNK_0xed54
   LLINE(); // LLINE
-  Push(h); // I
+  Push(c); // I
   UNK_0xed4a(); // UNK_0xed4a
-  Push(h); // I'
+  Push(b); // I'
   UNK_0xed54(); // UNK_0xed54
-  Push(h); // J
+  Push(a); // J
   UNK_0xed54(); // UNK_0xed54
-  Push(h); // I'
+  Push(b); // I'
   UNK_0xed54(); // UNK_0xed54
   LLINE(); // LLINE
-  Push(h); // J
+  Push(a); // J
   UNK_0xed54(); // UNK_0xed54
-  Push(h); // I'
+  Push(b); // I'
   UNK_0xed54(); // UNK_0xed54
   ROT(); // ROT
-  Push(h); // J
+  Push(a); // J
   UNK_0xed4a(); // UNK_0xed4a
   SWAP(); // SWAP
   UNK_0xed4a(); // UNK_0xed4a
   LLINE(); // LLINE
-  R_gt_(); // R>
+  Push(c); // R>
   Pop(); // DROP
-  R_gt_(); // R>
-  R_gt_(); // R>
+  Push(b); // R>
+  Push(a); // R>
   Pop(); Pop();// 2DROP
 }
 
@@ -329,12 +329,12 @@ void UNK_0xee43() // UNK_0xee43
   ROT(); // ROT
   _dash_(); // -
   ABS(); // ABS
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x65f0); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
-  R_gt_(); // R>
+  Push(a); // R>
   MAX(); // MAX
   ICLOSE(); // ICLOSE
   Push(cc__star_MAPSCA); // *MAPSCA
@@ -434,18 +434,18 @@ void UNK_0xeee3() // UNK_0xeee3
 
 void UNK_0xef07() // UNK_0xef07
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x003b);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   _dash_(); // -
   Push(0x0023);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   _dash_(); // -
   Push(0x003c);
-  R_at_(); // R@
+  Push(Read16(a)); // R@
   Push(Pop() + Pop()); // +
   Push(0x0024);
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() + Pop()); // +
   DISPLAY(); // DISPLAY
   UNK_0xed5e(); // UNK_0xed5e
@@ -736,9 +736,9 @@ void UNK_0xf094() // UNK_0xf094
 
 void UNK_0xf0b0() // UNK_0xf0b0
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _dash_(); // -
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xedd9); // UNK_0xedd9
   _plus__ex__2(); // +!_2
@@ -984,11 +984,11 @@ void UNK_0xf1fe() // UNK_0xf1fe
   SWAP(); // SWAP
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xee1f(); // UNK_0xee1f
   SWAP(); // SWAP
   Push(0x00b4);
-  R_gt_(); // R>
+  Push(a); // R>
   _dash_(); // -
   UNK_0xee1f(); // UNK_0xee1f
 }
@@ -1010,10 +1010,10 @@ void UNK_0xf222() // UNK_0xf222
   UNK_0xf1fe(); // UNK_0xf1fe
   _2DUP(); // 2DUP
   UNK_0xf12e(); // UNK_0xf12e
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   UNK_0xf1e4(); // UNK_0xf1e4
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -1037,10 +1037,10 @@ void UNK_0xf250() // UNK_0xf250
   PICK(); // PICK
   _2SWAP(); // 2SWAP
   D_st_(); // D<
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   D_st_(); // D<
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  R_gt_(); // R>
+  Push(a); // R>
   Push(Pop() & Pop()); // AND
 }
 
@@ -1355,7 +1355,7 @@ void UNK_0xf482() // UNK_0xf482
   _099(); // 099
   Push(pp_BEEPTONE); // BEEPTONE
   Push(Read16(Pop())); // @
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(0x01f4);
   Push(pp_BEEPTONE); // BEEPTONE
   _ex__2(); // !_2
@@ -1382,7 +1382,7 @@ void UNK_0xf482() // UNK_0xf482
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
-  R_gt_(); // R>
+  Push(a); // R>
   Push(pp_BEEPTONE); // BEEPTONE
   _ex__2(); // !_2
 }

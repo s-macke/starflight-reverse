@@ -87,7 +87,7 @@ void UNK_0xf092() // UNK_0xf092
 
 void UNK_0xf0a6() // UNK_0xf0a6
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
@@ -106,13 +106,13 @@ void UNK_0xf0a6() // UNK_0xf0a6
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6601); // IFIELD(UNK_0xf088)
   Push(Read16(Pop())); // @
-  Push(h); // J
+  Push(a); // J
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
-  _gt_R(); // >R
+  unsigned short int b = Pop(); // >R
   CI(); // CI
-  R_gt_(); // R>
+  Push(b); // R>
   LEAVE(); // LEAVE
 
   label1:
@@ -121,7 +121,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   } while(i<imax); // (LOOP) 0xffda
 
   ICLOSE(); // ICLOSE
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 
@@ -142,15 +142,15 @@ void UNK_0xf0e6() // UNK_0xf0e6
   return;
 
   label1:
-  _gt_R(); // >R
-  Push(h); // I
+  unsigned short int a = Pop(); // >R
+  Push(a); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label2;
   PRINT("DEAD", 4); // (.")
   goto label3;
 
   label2:
-  Push(h); // I
+  Push(a); // I
   Push(1); // 1
   Push(0x0015);
   WITHIN(); // WITHIN
@@ -159,7 +159,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
   goto label5;
 
   label4:
-  Push(h); // I
+  Push(a); // I
   Push(0x0015);
   Push(0x0033);
   WITHIN(); // WITHIN
@@ -168,7 +168,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
   goto label5;
 
   label6:
-  Push(h); // I
+  Push(a); // I
   Push(0x0033);
   Push(0x0051);
   WITHIN(); // WITHIN
@@ -177,7 +177,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
   goto label5;
 
   label7:
-  Push(h); // I
+  Push(a); // I
   Push(0x0051);
   Push(0x0064);
   WITHIN(); // WITHIN
@@ -192,7 +192,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
   PRINT(" WOUNDED", 8); // (.")
 
   label3:
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
 }
 

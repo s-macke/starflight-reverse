@@ -463,10 +463,10 @@ void UNK_0xe607() // UNK_0xe607
 
 void UNK_0xe617() // UNK_0xe617
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
-  R_gt_(); // R>
+  Push(a); // R>
   POS_dot_(); // POS.
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
@@ -555,12 +555,12 @@ void UNK_0xe683() // UNK_0xe683
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label1;
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   _gt_1FONT(); // >1FONT
   Push(0x002b);
   Push(cc__3); // 3
   Push(cc__5); // 5
-  R_gt_(); // R>
+  Push(a); // R>
   MIN(); // MIN
   Push(0x0026);
   WINDOW(); // WINDOW
@@ -723,7 +723,7 @@ void UNK_0xe758() // UNK_0xe758
 void UNK_0xe79c() // UNK_0xe79c
 {
   _at_INST_dash_S(); // @INST-S
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -733,7 +733,7 @@ void UNK_0xe79c() // UNK_0xe79c
   Push(0x65ef); // IFIELD(TEXT-IN)
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
-  Push(h); // I
+  Push(a); // I
   _eq_(); // =
   _at_INST_dash_C(); // @INST-C
   Push(0x001a);
@@ -759,7 +759,7 @@ void UNK_0xe79c() // UNK_0xe79c
   _ask_FIRST(); // ?FIRST
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label2;
-  R_gt_(); // R>
+  Push(a); // R>
   Pop(); // DROP
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -1155,7 +1155,7 @@ void UNK_0xe98c() // UNK_0xe98c
 
 void UNK_0xea52() // UNK_0xea52
 {
-  _gt_R(); // >R
+  unsigned short int a = Pop(); // >R
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(cc__6); // 6
@@ -1166,7 +1166,7 @@ void UNK_0xea52() // UNK_0xea52
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  R_gt_(); // R>
+  Push(a); // R>
   POLY_dash_WI(); // POLY-WI
 }
 
