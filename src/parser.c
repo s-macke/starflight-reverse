@@ -134,7 +134,7 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODETABLE)
     {
-        snprintf(ret, STRINGLEN, "  GetTableEntry(%s);\n", s);
+        snprintf(ret, STRINGLEN, "  GetTableEntry(\"%s\");\n", s);
         return 2;
     }
     if (e->codep == CODESETCOLOR)
@@ -193,7 +193,7 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         Push(ds);
         Push(dx);
         */
-        snprintf(ret, STRINGLEN, "  ReadArray(Read16(0x%04x+6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
+        snprintf(ret, STRINGLEN, "  ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
         return 2;
     }
     if (e->codep == CODEFUNC12)
@@ -595,10 +595,11 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), currentovidx);
                 if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), currentovidx);
                 if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), currentovidx);
-                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", s1, s2, s3);
+                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
             } else
             if ((codep1 == CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT)) // for DOTASKS in SHIPBUTTONS
             {
+                // TODO: a number is missing here: Look at SHIPBUTTONS.c
                 int c1 = Read16(ofs-2);
                 int c3 = Read16(ofs-8);
                 int c4 = Read16(ofs-12);
@@ -608,7 +609,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 char* s3 = GetDictWord(c3, currentovidx);
                 char* s4 = GetDictWord(c4, currentovidx);
                 char* s5 = GetDictWord(c5, currentovidx);
-                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS(%s, %s, %s, %s);\n", s1, s3, s4, s5);
+                snprintf(pline[ofs].str, STRINGLEN, "  DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
             } else
             {
                 fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
@@ -652,7 +653,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                     pline[ofs].done = 1;
                     ofs++;
                 }
-                snprintf(pline[ofstemp].str, STRINGLEN, "  ABORT(\"%s\", %i);// (ABORT\")\n", str, length);
+                snprintf(pline[ofstemp].str, STRINGLEN, "  ABORT(\"%s\", %i);// (ABORT\")\n", Escape(str), length);
             }
         } else
         if (strcmp(s, "(.\")") == 0) // print string
@@ -684,7 +685,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                     pline[ofs].done = 1;
                     ofs++;
                 }
-                snprintf(pline[ofstemp].str, STRINGLEN, "  PRINT(\"%s\", %i); // (.\")\n", str, length);
+                snprintf(pline[ofstemp].str, STRINGLEN, "  PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
             }
 
         } else
@@ -705,7 +706,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 pline[ofs].done = 1;
                 ofs++;
             }
-            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par, str);
+            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par, Escape(str));
             /*
             snprintf(pline[ofs].str, STRINGLEN, "\n  dw3f39() string %i\n", length);
             ofs += length;

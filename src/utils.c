@@ -4,6 +4,29 @@
 
 #include"utils.h"
 
+char* Escape(char* pStr)
+{
+    static char ret[1024];
+    ret[0] = 0;
+    if (pStr == NULL) return ret;
+
+    char *retp = &ret[0];
+    while (*pStr != 0)
+    {
+        switch (*pStr)
+        {
+            case '?' : *retp++='\\'; *retp++='?'; break;
+            case '\\' : *retp++='\\'; *retp++='\\'; break;
+            case '"' : *retp++='\\'; *retp++='"'; break;
+            default  : *retp++ = *pStr; break;
+        }
+        pStr++;
+    }
+    *retp = 0;
+    return ret;
+}
+
+
 char* Forth2CString(char *in)
 {
     static char out[1024];

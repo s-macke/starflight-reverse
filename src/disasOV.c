@@ -155,11 +155,7 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
     fprintf(fpc, "// overlay size   = 0x%04x\n", head.ovlsize);
     fprintf(fpc, "\n#include\"../emul/cpu.h\"\n");
 
-#ifdef STARFLT1
     fprintf(fpc, "#include\"../emul/starflt1.h\"\n\n");
-#else
-    fprintf(fpc, "#include\"../emul/starflt2.h\"\n\n");
-#endif
 
     InitParser();
 
@@ -288,9 +284,30 @@ int main()
     for(i=0; overlays[i].name != NULL; i++)
     {
         LoadOverlayDict(i);
+#ifdef STARFLT1
+        switch(i)
+        {
+            case 0x0F:
+                GetDictEntry(0xe928, 0x0F); // VITA-OV
+                break;
+            case 0x30:
+                GetDictEntry(0xee65, 0x30); // DAMAGE-OV
+                break;
+            case 0x2D:
+                GetDictEntry(0xf0b4, 0x2D); // STORM-OV
+                break;
+            case 0x2B:
+                GetDictEntry(0xec9a, 0x2B); // PLSET-OV
+                break;
+        }
+#else
+        if (i == 0x13) GetDictEntry(0xf277, 0x13); // VITA-OV
+#endif
     }
 
 // ---------------------
+// ---------------------
+
 
     LoadSTARFLT();
     fpc = fopen(OUTDIR"/starflt.c", "w");
