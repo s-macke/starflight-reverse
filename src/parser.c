@@ -20,14 +20,14 @@ Variables GetEmptyVariables()
     return vars;
 }
 
-void AddLoopVariables(Variables *vars)
+void AddLoopVariables(Variables *vars, DICTENTRY *e)
 {
-    vars->name[vars->nvars+0][0] = 'i' + vars->nloopvars;
+    vars->name[vars->nvars+0][0] = 'i' + e->nloopvars;
     strcpy(&vars->name[vars->nvars+0][1], "max");
-    vars->name[vars->nvars+1][0] = 'i' + vars->nloopvars;
+    vars->name[vars->nvars+1][0] = 'i' + e->nloopvars;
     vars->name[vars->nvars+1][1] = 0;
     vars->nvars += 2;
-    vars->nloopvars++;
+    e->nloopvars++;
 }
 
 void RemoveLoopVariables(Variables *vars)
@@ -39,6 +39,32 @@ void RemoveLoopVariables(Variables *vars)
     }
     vars->nvars -= 2;
 }
+
+void AddVariable(Variables *vars, DICTENTRY *e)
+{
+    vars->name[vars->nvars][0] = 'a' + e->nstackvariables;
+    vars->name[vars->nvars][1] = 0;
+    vars->nvars++;
+    e->nstackvariables++;
+}
+
+void AddNamedVariable(Variables *vars, DICTENTRY *e, const char* name)
+{
+    strcpy(&vars->name[vars->nvars][0], name);
+    vars->nvars++;
+}
+
+void RemoveVariable(Variables *vars)
+{
+    if (vars->nvars < 1)
+    {
+        fprintf(stderr, "Error: no variables found\n");
+        //exit(1);
+        return;
+    }
+    vars->nvars--;
+}
+
 
 char* GetVariable(Variables *vars, int idx)
 {
@@ -500,6 +526,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 {
     if (d == NULL) {
         d = FindClosestFunction(ofs, currentovidx);
+        AddNamedVariable(&vars, d, "unknown");
     }
 
     if (d->codep != CODECALL) {
@@ -511,8 +538,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
     {
         char *s = GetWordName(d);
         snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+        AddNamedVariable(&vars, d, "callp1");
+        AddNamedVariable(&vars, d, "callp0");
     }
-
     while(1)
     {
         if (ofs < minaddr) return;
@@ -735,8 +763,23 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
             }
-            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
+
+            if (!pline[ofs+4].done && !pline[ofs+4].labelid)
+            {
+                DICTENTRY *next = GetDictEntry(Read16(ofs+4)+2, currentovidx);
+                if (strcmp(next->r, "EXIT") == 0)
+                {
+                    pline[ofs+4].done = 1;
+                    pline[ofs+5].done = 1;
+                    snprintf(pline[ofs+4].str, STRINGLEN, "}\n\n");
+                } else
+                {
+                    fprintf(stderr, "Error: unexpected continuance of function after branch");
+                    exit(1);
+                }
+            }
+            return;
             ofs += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
@@ -760,9 +803,26 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
             ofs += 4;
         } else
+        if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
+        {
+            AddVariable(&vars, d);
+            snprintf(pline[ofs].str, STRINGLEN, "  unsigned short int %s = Pop(); // >R\n", GetVariable(&vars, 0));
+            ofs += 2;
+        } else
+        if (strcmp(s, "R>") == 0)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(%s); // R>\n", GetVariable(&vars, 0));
+            RemoveVariable(&vars);
+            ofs += 2;
+        } else
+        if (strcmp(s, "R@") == 0)
+        {
+            snprintf(pline[ofs].str, STRINGLEN, "  Push(Read16(%s)); // R@\n", GetVariable(&vars, 0));
+            ofs += 2;
+        } else
         if (strcmp(s, "(DO)") == 0)
         {
-            AddLoopVariables(&vars);
+            AddLoopVariables(&vars, d);
             snprintf(pline[ofs].str, STRINGLEN, "\n  signed short int %s = Pop();\n  signed short int %s = Pop();\n  do // (DO)\n  {\n",
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 1));
@@ -858,6 +918,8 @@ void InitParser()
     for(i=0; i<ndict; i++)
     {
         dict[i].nlabel = 0;
+        dict[i].nloopvars = 0;
+        dict[i].nstackvariables = 0;
     }
 }
 

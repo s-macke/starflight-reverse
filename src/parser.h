@@ -18,7 +18,6 @@ typedef struct
 {
     char name[10][10];
     int nvars;
-    int nloopvars;
 } Variables;
 
 Variables GetEmptyVariables();
