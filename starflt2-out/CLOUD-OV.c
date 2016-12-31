@@ -27,6 +27,29 @@
 //        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
+void MS(); // MS
+void _ex__2(); // !_2
+void _at_INST_dash_S(); // @INST-S
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void ALL(); // ALL
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void _gt_1FONT(); // >1FONT
+void WUP(); // WUP
+void SWAP(); // SWAP
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -126,13 +149,14 @@ void UNK_0xf472() // UNK_0xf472
 
 void UNK_0xf47c() // UNK_0xf47c
 {
+  signed short int i, imax;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x0012);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x65f2); // IFIELD(UNK_0xf3c6)
@@ -153,7 +177,8 @@ void UNK_0xf47c() // UNK_0xf47c
   Push(cc__3); // 3
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffde
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffde
 
   ICLOSE(); // ICLOSE
 }

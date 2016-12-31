@@ -58,6 +58,95 @@
 //            BOX>  codep:0x224c parp:0xf512 size:0x0000 C-string:'BOX_gt_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc_BL; // BL
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp__pe_VAL; // %VAL
+extern const unsigned short int pp_SCROLL_dash_; // SCROLL-
+extern const unsigned short int pp_TIME_dash_PA; // TIME-PA
+extern const unsigned short int pp_ITEM; // ITEM
+extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
+extern const unsigned short int pp__ro_SCROLL_2; // (SCROLL_2
+extern const unsigned short int pp_CTTOP; // CTTOP
+void MAX(); // MAX
+void PAD(); // PAD
+void SPACES(); // SPACES
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void PICK(); // PICK
+void D0_eq_(); // D0=
+void D_eq_(); // D=
+void KEY_2(); // KEY_2
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void ON_2(); // ON_2
+void _099(); // 099
+void CMOVE_2(); // CMOVE_2
+void FILL_2(); // FILL_2
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void _eq_SPECIE(); // =SPECIE
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void _gt_C_plus_(); // >C+
+void INEXT(); // INEXT
+void IINSERT(); // IINSERT
+void IEXTRAC(); // IEXTRAC
+void IFIND(); // IFIND
+void _gt_INACTI(); // >INACTI
+void IDELETE(); // IDELETE
+void ICREATE(); // ICREATE
+void _star_CREATE(); // *CREATE
+void SAVE_dash_OV(); // SAVE-OV
+void _ex_COLOR(); // !COLOR
+void _gt_1FONT(); // >1FONT
+void POS_dot_(); // POS.
+void CTERASE(); // CTERASE
+void _at_CRS(); // @CRS
+void _ex_CRS(); // !CRS
+void GCR(); // GCR
+void _i_KEY(); // 'KEY
+void _do__ex_(); // $!
+void SUBROOT(); // SUBROOT
+void SRDEPTH(); // SRDEPTH
+void NEXT_dash_NO(); // NEXT-NO
+void U_gt__do_(); // U>$
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void U_star_(); // U*
+void U_slash_MOD(); // U/MOD
+void _gt_(); // >
+void _st_(); // <
+void _1_dot_5_at_(); // 1.5@
+void _gt_C(); // >C
+void C_gt_(); // C>
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xef46 = 0xef46; // UNK_0xef46 size: 2
@@ -204,7 +293,7 @@ void UNK_0xef2e() // UNK_0xef2e
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -219,6 +308,7 @@ void UNK_0xef2e() // UNK_0xef2e
 
 void UNK_0xef4a() // UNK_0xef4a
 {
+  signed short int i, imax;
   _at_CRS(); // @CRS
   CTERASE(); // CTERASE
   _gt_1FONT(); // >1FONT
@@ -226,8 +316,8 @@ void UNK_0xef4a() // UNK_0xef4a
   Push(cc__3); // 3
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   PRINT("ATTENTION", 9); // (.")
@@ -920,13 +1010,14 @@ void _ask_ELEMENT() // ?ELEMENT
 
 void _gt_BOX() // >BOX
 {
+  unsigned short int a;
   _2DUP(); // 2DUP
   Push(pp_ITEM); // ITEM
   _1_dot_5_ex__2(); // 1.5!_2
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
   Push(a); // I

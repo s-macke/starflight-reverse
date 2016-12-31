@@ -44,6 +44,78 @@
 //        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_PORTDAT; // PORTDAT
+extern const unsigned short int pp_STARDAT; // STARDAT
+void DABS(); // DABS
+void M_star__slash_(); // M*/
+void D_st_(); // D<
+void _n_(); // #
+void _n__gt_(); // #>
+void _st__n_(); // <#
+void _dot_(); // .
+void D_dot_R(); // D.R
+void D_dash_(); // D-
+void D0_eq_(); // D0=
+void D_gt_(); // D>
+void DMIN(); // DMIN
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void COVER(); // COVER
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void INEXT(); // INEXT
+void IFIRST(); // IFIRST
+void ILAST(); // ILAST
+void IDELETE(); // IDELETE
+void _star_CREATE(); // *CREATE
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void DARK(); // DARK
+void LLINE(); // LLINE
+void _gt_1FONT(); // >1FONT
+void _gt_3FONT(); // >3FONT
+void _gt_DISPLA(); // >DISPLA
+void _gt_HIDDEN(); // >HIDDEN
+void SCR_dash_RES(); // SCR-RES
+void POS_dot_(); // POS.
+void _dot_1LOGO(); // .1LOGO
+void _do__dot_(); // $.
+void CTINIT(); // CTINIT
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void SWAP(); // SWAP
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void LPLOT(); // LPLOT
+void BLT(); // BLT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf122 = 0xf122; // UNK_0xf122 size: 20
@@ -215,6 +287,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 void TRANSACT() // TRANSACT
 {
+  signed short int i, imax;
   UNK_0xefd5(); // UNK_0xefd5
   Push(0x65f4); // IFIELD(UNK_0xefbe)
   Push(Read8(Pop())&0xFF); // C@
@@ -229,8 +302,8 @@ void TRANSACT() // TRANSACT
   Push(cc__9); // 9
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   INEXT(); // INEXT
@@ -376,14 +449,14 @@ void UNK_0xf162() // UNK_0xf162
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   Push(0); // 0
   _st__n_(); // <#
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
   _dot_(); // .
 }
@@ -395,6 +468,7 @@ void UNK_0xf162() // UNK_0xf162
 
 void UNK_0xf1a6() // UNK_0xf1a6
 {
+  unsigned short int a;
   Push(0x65ec); // IFIELD(UNK_0xefcb)
   _2_at_(); // 2@
   _2DUP(); // 2DUP
@@ -415,7 +489,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   Push(0x000d);
 
   label2:
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -423,7 +497,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   Push(Pop() * Pop()); // *
   Push(0x0020);
   Push(Pop() + Pop()); // +
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -493,14 +567,15 @@ void UNK_0xf1f2() // UNK_0xf1f2
 
 void UNK_0xf27f() // UNK_0xf27f
 {
+  signed short int i, imax;
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
   Push(cc__3); // 3
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(1); // 1

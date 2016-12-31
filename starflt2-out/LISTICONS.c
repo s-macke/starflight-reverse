@@ -18,6 +18,49 @@
 //           ICONS  codep:0x224c parp:0xf4e6 size:0x0000 C-string:'ICONS'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_2; // -2
+extern const unsigned short int pp_ICON_h_; // ICON^
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp_TILE_dash_PT; // TILE-PT
+extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
+extern const unsigned short int pp_CMAP; // CMAP
+extern const unsigned short int pp_NOF; // NOF
+void KEY_2(); // KEY_2
+void _gt_FLAG(); // >FLAG
+void I_gt_C(); // I>C
+void _ex__2(); // !_2
+void ON_2(); // ON_2
+void _099(); // 099
+void _at_RECORD(); // @RECORD
+void PAD_v_16(); // PAD|16
+void _ask_CGA(); // ?CGA
+void _ex_COLOR(); // !COLOR
+void LLINE(); // LLINE
+void _gt_1FONT(); // >1FONT
+void _gt_3FONT(); // >3FONT
+void TILEFIL(); // TILEFIL
+void SFILL(); // SFILL
+void POS_dot_(); // POS.
+void _dash_(); // -
+void _gt_(); // >
+void LCMOVE(); // LCMOVE
+void _at_DS(); // @DS
+void _st__ex__gt_(); // <!>
+void _st__plus__ex__gt_(); // <+!>
+void BLT(); // BLT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -31,11 +74,12 @@
 
 void UNK_0xf2c6() // UNK_0xf2c6
 {
+  signed short int i, imax;
   Push(cc__8); // 8
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_CMAP); // CMAP
@@ -135,11 +179,12 @@ void UNK_0xf36f() // UNK_0xf36f
 
 void UNK_0xf3e6() // UNK_0xf3e6
 {
+  signed short int i, imax;
   Push(2); // 2
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Read16(regsp)); // DUP
@@ -206,10 +251,11 @@ void UNK_0xf452() // UNK_0xf452
 
 void UNK_0xf45e() // UNK_0xf45e
 {
+  signed short int i, imax;
   _gt_1FONT(); // >1FONT
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x000a);
@@ -257,7 +303,7 @@ void UNK_0xf45e() // UNK_0xf45e
   label1:
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>

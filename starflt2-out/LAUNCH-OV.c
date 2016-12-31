@@ -33,6 +33,72 @@
 //         &RETURN  codep:0x224c parp:0xf471 size:0x0000 C-string:'_and_RETURN'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int pp_HBUF_dash_SE; // HBUF-SE
+extern const unsigned short int pp_DBUF_dash_SE; // DBUF-SE
+extern const unsigned short int pp_YTABL; // YTABL
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp_GWF; // GWF
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp_STIME; // STIME
+void D_st_(); // D<
+void _dot_(); // .
+void MS(); // MS
+void ROLL(); // ROLL
+void _2OVER(); // 2OVER
+void D_dash_(); // D-
+void RRND(); // RRND
+void _ex__2(); // !_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void BFILL(); // BFILL
+void DARK(); // DARK
+void LLINE(); // LLINE
+void _gt_1FONT(); // >1FONT
+void _gt_2FONT(); // >2FONT
+void _gt_MAINVI(); // >MAINVI
+void _gt_DISPLA(); // >DISPLA
+void V_gt_DISPL(); // V>DISPL
+void LCOPYBL(); // LCOPYBL
+void POS_dot_(); // POS.
+void CTERASE(); // CTERASE
+void BEEPON_2(); // BEEPON_2
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _dash_(); // -
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void TIME(); // TIME
+void LCMOVE(); // LCMOVE
+void _at_DS(); // @DS
+void LPLOT(); // LPLOT
+void BLT(); // BLT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf220 = 0xf220; // UNK_0xf220 size: 50
@@ -63,11 +129,12 @@ void UNK_0xf0a6() // UNK_0xf0a6
 
 void UNK_0xf0b4() // UNK_0xf0b4
 {
+  signed short int i, imax;
   Push(0x0010);
   Push(0x000b);
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -138,13 +205,14 @@ void UNK_0xf10c() // UNK_0xf10c
 
 void UNK_0xf11a() // UNK_0xf11a
 {
+  signed short int i, imax;
   Push(0x2710);
   TONE(); // TONE
   Push(1); // 1
   Push(cc__3); // 3
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   V_gt_DISPL(); // V>DISPL
@@ -163,7 +231,8 @@ void UNK_0xf11a() // UNK_0xf11a
   Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffde
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffde
 
 }
 
@@ -256,7 +325,8 @@ void UNK_0xf1b6() // UNK_0xf1b6
 
 void UNK_0xf1e4() // UNK_0xf1e4
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(cc__4); // 4
   Push(0x00be);
   Push(0x004c);
@@ -275,7 +345,8 @@ void UNK_0xf1e4() // UNK_0xf1e4
 
 void UNK_0xf202() // UNK_0xf202
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(cc__4); // 4
   Push(a); // I
   Push(0x004c);
@@ -392,7 +463,8 @@ void UNK_0xf320() // UNK_0xf320
 
 void UNK_0xf32a() // UNK_0xf32a
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf312(); // UNK_0xf312
@@ -444,7 +516,7 @@ void UNK_0xf390() // UNK_0xf390
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT(" DOCKING BAY DOORS", 18); // (.")
   Push(0x7148);
   TONE(); // TONE
@@ -458,6 +530,7 @@ void UNK_0xf390() // UNK_0xf390
 
 void UNK_0xf3b7() // UNK_0xf3b7
 {
+  signed short int i, imax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
@@ -466,8 +539,8 @@ void UNK_0xf3b7() // UNK_0xf3b7
   Push(0x003b);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0084);
@@ -542,6 +615,8 @@ void _and_LAUNCH() // &LAUNCH
 
 void _and_RETURN() // &RETURN
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   Push(cc__6); // 6
@@ -549,8 +624,8 @@ void _and_RETURN() // &RETURN
   RRND(); // RRND
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(1); // 1
@@ -590,8 +665,8 @@ void _and_RETURN() // &RETURN
   Push(0x003b);
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(0x003c);

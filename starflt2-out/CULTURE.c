@@ -67,6 +67,50 @@
 //        .CULTURE  codep:0x224c parp:0xf4f1 size:0x0000 C-string:'_dot_CULTURE'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_CTCOLOR; // CTCOLOR
+extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp_WLINES; // WLINES
+extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp_LINE_dash_CO; // LINE-CO
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp__ro_TRADER; // (TRADER
+void _dash_TRAILING(); // -TRAILING
+void NOP(); // NOP
+void _gt_FLAG(); // >FLAG
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void _099(); // 099
+void _at_RECORD(); // @RECORD
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void EACH(); // EACH
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void WUP(); // WUP
+void _gt_BOTT(); // >BOTT
+void _dot_TTY(); // .TTY
+void TXT_dash_WIN(); // TXT-WIN
+void _i_KEY(); // 'KEY
+void _dash_XTRAIL(); // -XTRAIL
+void SWAP(); // SWAP
+void _gt_(); // >
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -80,12 +124,14 @@
 
 void UNK_0xef56() // UNK_0xef56
 {
+  unsigned short int a;
+  unsigned short int b;
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
-  unsigned short int b = Pop(); // >R
+  b = Pop(); // >R
   Push(b); // I
   if (Pop() == 0) goto label1;
   SetColor("PINK");
@@ -313,7 +359,7 @@ void UNK_0xf082() // UNK_0xf082
 void UNK_0xf0a2() // UNK_0xf0a2
 {
   UNK_0xf00b(); // UNK_0xf00b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -355,7 +401,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 

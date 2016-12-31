@@ -77,6 +77,34 @@
 //        +ICONBOX  codep:0x224c parp:0xf533 size:0x0000 C-string:'_plus_ICONBOX'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
+extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
+extern const unsigned short int cc_FLUX_dash_IC; // FLUX-IC
+extern const unsigned short int cc_DEAD_dash_IC; // DEAD-IC
+extern const unsigned short int cc_DEFAULT; // DEFAULT
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp_FSTUN; // FSTUN
+extern const unsigned short int pp__ro_TRADER; // (TRADER
+void UNRAVEL(); // UNRAVEL
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void _eq_SPECIE(); // =SPECIE
+void ICLOSE(); // ICLOSE
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void ALL(); // ALL
+void _ask_CGA(); // ?CGA
+void _st_(); // <
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -579,8 +607,9 @@ void UNK_0xf2e7() // UNK_0xf2e7
 
 void UNK_0xf2ef() // UNK_0xf2ef
 {
+  unsigned short int a;
   _at_INST_dash_S(); // @INST-S
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(cc__6); // 6
   Push((Pop()==Pop())?1:0); // =

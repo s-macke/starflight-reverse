@@ -85,6 +85,71 @@
 //             DIO  codep:0x224c parp:0xf49c size:0x0000 C-string:'DIO'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_SEED; // SEED
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp_PLANTS; // PLANTS
+extern const unsigned short int pp_ANIMALS; // ANIMALS
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_SURFACE_rc_; // (SURFACE)
+void _star__slash_(); // */
+void MAX(); // MAX
+void MOD(); // MOD
+void _co_(); // ,
+void QUIT(); // QUIT
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void RANGE(); // RANGE
+void PICK(); // PICK
+void ROLL(); // ROLL
+void RRND(); // RRND
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void _1_dot_5_ex_(); // 1.5!
+void OFF(); // OFF
+void FILL_1(); // FILL_1
+void _at_RECORD(); // @RECORD
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void SET_dash_CURRENT(); // SET-CURRENT
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void IOPEN(); // IOPEN
+void IINSERT(); // IINSERT
+void IFLD_at_(); // IFLD@
+void IFIND(); // IFIND
+void EACH(); // EACH
+void ICREATE(); // ICREATE
+void _star_CREATE(); // *CREATE
+void _ex_COLOR(); // !COLOR
+void _dot_TTY(); // .TTY
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xef37 = 0xef37; // UNK_0xef37 size: 2
@@ -270,7 +335,8 @@ void UNK_0xe8e1() // UNK_0xe8e1
 
 void UNK_0xe8ed() // UNK_0xe8ed
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(Pop()+1); // 1+
   OVER(); // OVER
   _dash_(); // -
@@ -287,11 +353,12 @@ void UNK_0xe8ed() // UNK_0xe8ed
 
 void UNK_0xe903() // UNK_0xe903
 {
-  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  signed short int i, imax;
+  unsigned short int a;
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(0); // 0
   _co_(); // ,
-  (;CODE)();
-// inlined assembler code
+  CODE(); // (;CODE) inlined assembler code
 // 0xe90b: call   1649
   OVER(); // OVER
   Push(Pop() + Pop()); // +
@@ -324,8 +391,8 @@ void UNK_0xe91a() // UNK_0xe91a
   ROLL(); // ROLL
   UNK_0xe91a(); // UNK_0xe91a
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -333,7 +400,7 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
@@ -352,7 +419,8 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(cc__6); // 6
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffd4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffd4
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -393,6 +461,7 @@ void UNK_0xe9f6() // UNK_0xe9f6
 
 void UNK_0xea0a() // UNK_0xea0a
 {
+  signed short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -410,8 +479,8 @@ void UNK_0xea0a() // UNK_0xea0a
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(cc_UNK_0xe79a); // UNK_0xe79a
@@ -467,14 +536,15 @@ void UNK_0xea78() // UNK_0xea78
 
 void UNK_0xeaa0() // UNK_0xeaa0
 {
+  signed short int i, imax;
   Push(cc_UNK_0xe79a); // UNK_0xe79a
   Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -583,7 +653,8 @@ void UNK_0xeed1() // UNK_0xeed1
 
 void UNK_0xeee7() // UNK_0xeee7
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -993,6 +1064,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
 
 void UNK_0xf23c() // UNK_0xf23c
 {
+  signed short int i, imax;
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xef53); // UNK_0xef53
@@ -1009,8 +1081,8 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(Pop()+1); // 1+
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1043,13 +1115,14 @@ void UNK_0xf23c() // UNK_0xf23c
 
 void UNK_0xf286() // UNK_0xf286
 {
+  signed short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xf1b5(); // UNK_0xf1b5
@@ -1100,10 +1173,11 @@ void UNK_0xf286() // UNK_0xf286
 
 void UNK_0xf2da() // UNK_0xf2da
 {
+  signed short int i, imax;
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xf1b5(); // UNK_0xf1b5
@@ -1213,6 +1287,7 @@ void UNK_0xf334() // UNK_0xf334
 
 void UNK_0xf382() // UNK_0xf382
 {
+  signed short int i, imax;
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -1241,8 +1316,8 @@ void UNK_0xf382() // UNK_0xf382
   _dash_(); // -
   if (Pop() == 0) goto label2;
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1305,6 +1380,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
 
 void UNK_0xf40c() // UNK_0xf40c
 {
+  signed short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -1312,8 +1388,8 @@ void UNK_0xf40c() // UNK_0xf40c
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(cc_UNK_0xe79a); // UNK_0xe79a

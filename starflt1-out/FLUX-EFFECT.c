@@ -19,6 +19,29 @@
 //            FLUX  codep:0x224c parp:0xf505 size:0x0000 C-string:'FLUX'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__5; // 5
+void MAX(); // MAX
+void MIN(); // MIN
+void RRND(); // RRND
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void ON_3(); // ON_3
+void _ex_COLOR(); // !COLOR
+void _gt_MAINVIEW(); // >MAINVIEW
+void _gt_DISPLAY(); // >DISPLAY
+void DARK(); // DARK
+void BEEPON(); // BEEPON
+void _slash_(); // /
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void LPLOT(); // LPLOT
+void V_gt_DISPLAY(); // V>DISPLAY
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf3a6 = 0xf3a6; // UNK_0xf3a6 size: 50
@@ -64,7 +87,8 @@ void UNK_0xf3de() // UNK_0xf3de
 
 void UNK_0xf3f0() // UNK_0xf3f0
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(cc__5); // 5
   Push(0x0014);
   RRND(); // RRND
@@ -111,11 +135,12 @@ void UNK_0xf3f0() // UNK_0xf3f0
 
 void UNK_0xf456() // UNK_0xf456
 {
+  signed short int i, imax;
   Push(0x0032);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_UNK_0xf3a6); // UNK_0xf3a6
@@ -125,7 +150,8 @@ void UNK_0xf456() // UNK_0xf456
   Push(cc__5); // 5
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff4
 
 }
 
@@ -136,9 +162,10 @@ void UNK_0xf456() // UNK_0xf456
 
 void UNK_0xf470() // UNK_0xf470
 {
+  unsigned short int a;
   Push(pp_UNK_0xf3a6); // UNK_0xf3a6
   Push(Pop() + Pop()); // +
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
@@ -187,6 +214,7 @@ void UNK_0xf470() // UNK_0xf470
 
 void UNK_0xf4d0() // UNK_0xf4d0
 {
+  signed short int i, imax;
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -196,8 +224,8 @@ void UNK_0xf4d0() // UNK_0xf4d0
   Push(0x0032);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -209,7 +237,8 @@ void UNK_0xf4d0() // UNK_0xf4d0
   Push(cc__5); // 5
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffec
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffec
 
   V_gt_DISPLAY(); // V>DISPLAY
 }
@@ -222,6 +251,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
 
 void FLUX() // FLUX
 {
+  signed short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   ON_3(); // ON_3
@@ -234,8 +264,8 @@ void FLUX() // FLUX
   Push(0x0096);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xf4d0(); // UNK_0xf4d0

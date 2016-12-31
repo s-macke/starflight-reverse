@@ -36,6 +36,66 @@
 //       (DO.STORM  codep:0x224c parp:0xf502 size:0x0000 C-string:'_ro_DO_dot_STORM'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int pp_LCOLOR; // LCOLOR
+extern const unsigned short int pp_FORCED; // FORCED
+extern const unsigned short int pp__pe_EFF; // %EFF
+extern const unsigned short int pp_STORM; // STORM
+extern const unsigned short int pp_E_slash_M; // E/M
+extern const unsigned short int pp__n_STORM; // #STORM
+extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+void ABS(); // ABS
+void MAX(); // MAX
+void MIN(); // MIN
+void _co_(); // ,
+void ALLOT(); // ALLOT
+void HERE(); // HERE
+void QUIT(); // QUIT
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void RANGE(); // RANGE
+void PICK(); // PICK
+void ROLL(); // ROLL
+void WITHIN(); // WITHIN
+void _3_star_(); // 3*
+void RRND(); // RRND
+void C_ex__2(); // C!_2
+void ON_2(); // ON_2
+void FILL_2(); // FILL_2
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void MODULE(); // MODULE
+void POS_dot_(); // POS.
+void POLY_dash_WI(); // POLY-WI
+void _gt_TVCT(); // >TVCT
+void CTERASE(); // CTERASE
+void _do__dot_(); // $.
+void POLY_dash_ER(); // POLY-ER
+void CTINIT(); // CTINIT
+void _2_at_(); // 2@
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+void ON_1(); // ON_1
+void _1_dot_5_at_(); // 1.5@
+void _st__ex__gt_(); // <!>
+void STORMS(); // STORMS
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -63,7 +123,9 @@ void UNK_0xf126() // UNK_0xf126
 
 void UNK_0xf134() // UNK_0xf134
 {
-  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  signed short int i, imax;
+  unsigned short int a;
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(cc__6); // 6
   Push(Pop() * Pop()); // *
   Push(Read16(regsp)); // DUP
@@ -74,8 +136,7 @@ void UNK_0xf134() // UNK_0xf134
   SWAP(); // SWAP
   Push(0); // 0
   FILL_2(); // FILL_2
-  (;CODE)();
-// inlined assembler code
+  CODE(); // (;CODE) inlined assembler code
 // 0xf14c: call   1649
   Push(0); // 0
   Push(cc__4); // 4
@@ -86,8 +147,8 @@ void UNK_0xf134() // UNK_0xf134
   ROLL(); // ROLL
   UNK_0xf126(); // UNK_0xf126
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -95,7 +156,7 @@ void UNK_0xf134() // UNK_0xf134
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
@@ -114,7 +175,8 @@ void UNK_0xf134() // UNK_0xf134
   Push(cc__6); // 6
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffd4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffd4
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -137,6 +199,7 @@ void UNK_0xf134() // UNK_0xf134
 
 void UNK_0xf1cc() // UNK_0xf1cc
 {
+  unsigned short int a;
 
   label1:
   OVER(); // OVER
@@ -146,7 +209,7 @@ void UNK_0xf1cc() // UNK_0xf1cc
   Push(0x0064);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _gt_(); // >
   Push(a); // R>
   Push(Pop() & Pop()); // AND
@@ -518,9 +581,10 @@ void UNK_0xf4e2() // UNK_0xf4e2
 
 void _ro_DO_dot_STORM() // (DO.STORM
 {
+  unsigned short int a;
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf2cd"); // from 'PLANET      '

@@ -39,6 +39,86 @@
 //           =CARG  codep:0x224c parp:0xf482 size:0x0000 C-string:'_eq_CARG'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc_BL; // BL
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp__dash_AIN; // -AIN
+extern const unsigned short int pp__n_AUX; // #AUX
+extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
+extern const unsigned short int pp__10_star_END; // 10*END
+void ABS(); // ABS
+void MOD(); // MOD
+void PAD(); // PAD
+void BEEP(); // BEEP
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void _2OVER(); // 2OVER
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void RRND(); // RRND
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void D_ex_(); // D!
+void ON_3(); // ON_3
+void OFF(); // OFF
+void FILL_1(); // FILL_1
+void _at_INST_dash_CLASS(); // @INST-CLASS
+void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void CDROP(); // CDROP
+void _ask__dash_NULL(); // ?-NULL
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void INEXT(); // INEXT
+void IFIND(); // IFIND
+void _ex_COLOR(); // !COLOR
+void BLT(); // BLT
+void _gt_2FONT(); // >2FONT
+void POS_dot_(); // POS.
+void CTPOS_dot_(); // CTPOS.
+void BEEPON(); // BEEPON
+void _at_CRS(); // @CRS
+void _ex_CRS(); // !CRS
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
+void _i_KEY(); // 'KEY
+void CMESS(); // CMESS
+void _0MESS(); // 0MESS
+void _2_at_(); // 2@
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _dash_(); // -
+void D_plus_(); // D+
+void U_star_(); // U*
+void _gt_(); // >
+void _st_(); // <
+void _0_gt_(); // 0>
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void TIME(); // TIME
+void _at_DS(); // @DS
+void _plus_BIT(); // +BIT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xefe5 = 0xefe5; // UNK_0xefe5 size: 20
@@ -76,6 +156,7 @@ const unsigned short int pp_UNK_0xefe5 = 0xefe5; // UNK_0xefe5 size: 20
 
 void _ro_TRIM() // (TRIM
 {
+  unsigned short int a;
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
@@ -83,7 +164,7 @@ void _ro_TRIM() // (TRIM
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xefe5); // UNK_0xefe5
   Push(Pop() + Pop()); // +
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_LBLT); // LBLT
@@ -119,7 +200,7 @@ void UNK_0xf035() // UNK_0xf035
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(0xfffc);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -151,7 +232,7 @@ void UNK_0xf06d() // UNK_0xf06d
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -215,7 +296,9 @@ void UNK_0xf0b9() // UNK_0xf0b9
 
 void _ro__n_IN_do_() // (#IN$
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  unsigned short int b;
+  a = Pop(); // >R
   PAD(); // PAD
   Push(a); // I
   Push(Pop()+1); // 1+
@@ -236,7 +319,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
 
   label1:
-  unsigned short int b = Pop(); // >R
+  b = Pop(); // >R
   Push(b); // I
   Push(0x0021);
   Push(0x005b);
@@ -259,7 +342,7 @@ void _ro__n_IN_do_() // (#IN$
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(b); // I
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(b); // I
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
@@ -394,7 +477,7 @@ void _ro_0_do__do__do_() // (0$$$
   _2_at_(); // 2@
   _2OVER(); // 2OVER
   D_gt_(); // D>
-  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
@@ -544,6 +627,7 @@ void EINDE() // EINDE
 
 void UNK_0xf319() // UNK_0xf319
 {
+  signed short int i, imax;
   SetColor("BLACK");
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT
@@ -554,7 +638,7 @@ void UNK_0xf319() // UNK_0xf319
   _dash_(); // -
   Push(0x00b4);
   POS_dot_(); // POS.
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   SetColor("PINK");
@@ -564,8 +648,8 @@ void UNK_0xf319() // UNK_0xf319
   Push(cc__9); // 9
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -650,7 +734,8 @@ void UNK_0xf39f() // UNK_0xf39f
 
 void _ro__ask__dot_EQ() // (?.EQ
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
@@ -686,7 +771,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _dot_TTY(); // .TTY
   Push(a); // I
   _dot_ERR(); // .ERR case
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0); // 0
 
   label4:

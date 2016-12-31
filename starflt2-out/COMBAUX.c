@@ -26,6 +26,51 @@
 //             @NF  codep:0x224c parp:0xf53b size:0x0000 C-string:'_at_NF'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
+extern const unsigned short int pp__ask_UF; // ?UF
+extern const unsigned short int pp_XVIS; // XVIS
+extern const unsigned short int pp_YVIS; // YVIS
+extern const unsigned short int pp_XLLDEST; // XLLDEST
+extern const unsigned short int pp_YLLDEST; // YLLDEST
+extern const unsigned short int pp_IGLOBAL; // IGLOBAL
+extern const unsigned short int pp_XABS; // XABS
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
+extern const unsigned short int pp_YWLD_c_YP; // YWLD:YP
+extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+void ABS(); // ABS
+void MAX(); // MAX
+void MIN(); // MIN
+void WITHIN(); // WITHIN
+void SQRT(); // SQRT
+void _099(); // 099
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void _ex_VISWIN(); // !VISWIN
+void _gt_1ICONF(); // >1ICONF
+void _gt_2ICONF(); // >2ICONF
+void _gt_3ICONF(); // >3ICONF
+void _at_IX(); // @IX
+void _at_IY(); // @IY
+void _at_ID(); // @ID
+void POINT_gt_I(); // POINT>I
+void ROT(); // ROT
+void _dash_(); // -
+void D_plus_(); // D+
+void _st_(); // <
+void _st__ex__gt_(); // <!>
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf430 = 0xf430; // UNK_0xf430 size: 2
@@ -318,6 +363,7 @@ void UNK_0xf45c() // UNK_0xf45c
 
 void UNK_0xf480() // UNK_0xf480
 {
+  signed short int i, imax;
   Push(pp_UNK_0xf430); // UNK_0xf430
   _099(); // 099
   Push(0x03e8);
@@ -327,8 +373,8 @@ void UNK_0xf480() // UNK_0xf480
   Push(Read16(Pop())); // @
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -362,11 +408,12 @@ void UNK_0xf480() // UNK_0xf480
 
 void UNK_0xf4c6() // UNK_0xf4c6
 {
+  unsigned short int a;
   ROT(); // ROT
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *

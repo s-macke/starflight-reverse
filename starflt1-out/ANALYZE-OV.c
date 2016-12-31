@@ -100,6 +100,78 @@
 //     (/ANALYSIS)  codep:0x224c parp:0xf478 size:0x0000 C-string:'_ro__slash_ANALYSIS_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__ask_WIN; // ?WIN
+extern const unsigned short int pp__ask_G_dash_AWARE; // ?G-AWARE
+extern const unsigned short int pp_STARDATE; // STARDATE
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_SENSE_dash_ADDR; // SENSE-ADDR
+extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
+extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern const unsigned short int pp__ask_FANLYZ; // ?FANLYZ
+void DABS(); // DABS
+void MIN(); // MIN
+void _dot_(); // .
+void _dot_R(); // .R
+void SPACE(); // SPACE
+void SPACES(); // SPACES
+void NOP(); // NOP
+void UNRAVEL(); // UNRAVEL
+void PICK(); // PICK
+void D_eq_(); // D=
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void RRND(); // RRND
+void SQRT(); // SQRT
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _1_dot_5_ex_(); // 1.5!
+void D_ex_(); // D!
+void _at_INST_dash_CLASS(); // @INST-CLASS
+void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void CDROP(); // CDROP
+void SET_dash_CURRENT(); // SET-CURRENT
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void INEXT(); // INEXT
+void IFIND(); // IFIND
+void _ex_COLOR(); // !COLOR
+void CTPOS_dot_(); // CTPOS.
+void CTERASE(); // CTERASE
+void CTCR(); // CTCR
+void CTINIT(); // CTINIT
+void _dash_XTRAILING(); // -XTRAILING
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void U_slash_MOD(); // U/MOD
+void _gt_(); // >
+void _st_(); // <
+void _0_st_(); // 0<
+void _0_gt_(); // 0>
+void TIME(); // TIME
+void _1_dot_5_at_(); // 1.5@
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf2bf = 0xf2bf; // UNK_0xf2bf size: 7
@@ -691,7 +763,7 @@ void _dot_DELEM() // .DELEM
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAILING(); // -XTRAILING
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   SET_dash_CURRENT(); // SET-CURRENT
   CTCR(); // CTCR
   Push(0x000f);
@@ -1208,7 +1280,7 @@ void UNK_0xf29f() // UNK_0xf29f
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -1223,13 +1295,15 @@ void UNK_0xf29f() // UNK_0xf29f
 
 void UNK_0xf2c8() // UNK_0xf2c8
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  signed short int i, imax;
+  a = Pop(); // >R
   Push(2); // 2
   Push(cc__7); // 7
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Pop()+1); // 1+
@@ -1278,6 +1352,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
 
 void UNK_0xf31e() // UNK_0xf31e
 {
+  unsigned short int a;
   HEADER(); // HEADER
   PRINT(" STATE: ", 8); // (.")
   _ask__dot_CERTAIN(); // ?.CERTAIN
@@ -1288,7 +1363,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(1); // 1
   Push(0x018f);
   WITHIN(); // WITHIN

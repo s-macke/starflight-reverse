@@ -37,6 +37,70 @@
 //       (DO.STORM  codep:0x224c parp:0xf4c8 size:0x0000 C-string:'_ro_DO_dot_STORM'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_LCOLOR; // LCOLOR
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_FORCED; // FORCED
+extern const unsigned short int pp__pe_EFF; // %EFF
+extern const unsigned short int pp_STORM; // STORM
+extern const unsigned short int pp_E_slash_M; // E/M
+extern const unsigned short int pp__n_STORM; // #STORM
+extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_WTOP; // WTOP
+extern const unsigned short int pp_WBOTTOM; // WBOTTOM
+extern const unsigned short int pp_WRIGHT; // WRIGHT
+extern const unsigned short int pp_WLEFT; // WLEFT
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+void ABS(); // ABS
+void MAX(); // MAX
+void MIN(); // MIN
+void QUIT(); // QUIT
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void RANGE(); // RANGE
+void PICK(); // PICK
+void ROLL(); // ROLL
+void WITHIN(); // WITHIN
+void _3_star_(); // 3*
+void RRND(); // RRND
+void C_ex_(); // C!
+void ON_3(); // ON_3
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void POS_dot_(); // POS.
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void _gt_TVCT(); // >TVCT
+void _do__dot_(); // $.
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void WINDOW(); // WINDOW
+void OBIT(); // OBIT
+void _2_at_(); // 2@
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+void ON_2(); // ON_2
+void _1_dot_5_at_(); // 1.5@
+void _st__ex__gt_(); // <!>
+void _st__plus__ex__gt_(); // <+!>
+void STORMS(); // STORMS
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -68,8 +132,8 @@ void UNK_0xf0a6() // UNK_0xf0a6
   ROLL(); // ROLL
   UNK_0xf0a6(); // UNK_0xf0a6
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -77,7 +141,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(cc__3); // 3
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
@@ -96,7 +160,8 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(cc__6); // 6
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffd4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffd4
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -119,6 +184,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 
 void UNK_0xf14c() // UNK_0xf14c
 {
+  unsigned short int a;
 
   label1:
   OVER(); // OVER
@@ -128,7 +194,7 @@ void UNK_0xf14c() // UNK_0xf14c
   Push(0x0064);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _gt_(); // >
   Push(a); // R>
   Push(Pop() & Pop()); // AND
@@ -548,9 +614,10 @@ void UNK_0xf4a8() // UNK_0xf4a8
 
 void _ro_DO_dot_STORM() // (DO.STORM
 {
+  unsigned short int a;
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xf24d"); // from 'PLANET      '

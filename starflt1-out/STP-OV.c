@@ -32,6 +32,57 @@
 //            2NDS  codep:0x224c parp:0xf4f4 size:0x0000 C-string:'_2NDS'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp__ask_AUTO; // ?AUTO
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp_GLOBALSEED; // GLOBALSEED
+extern const unsigned short int pp__dash_AIN; // -AIN
+extern const unsigned short int pp_XABS; // XABS
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_STARDATE; // STARDATE
+extern const unsigned short int pp__ask_SECURE; // ?SECURE
+void COUNT(); // COUNT
+void MOD(); // MOD
+void BEEP(); // BEEP
+void D_dot_(); // D.
+void MS(); // MS
+void RRND(); // RRND
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void D_ex_(); // D!
+void OFF(); // OFF
+void SET_dash_CURRENT(); // SET-CURRENT
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void MODULE(); // MODULE
+void CTERASE(); // CTERASE
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _dash_XTRAILING(); // -XTRAILING
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _dash_(); // -
+void D_plus_(); // D+
+void U_star_(); // U*
+void U_slash_MOD(); // U/MOD
+void _st_(); // <
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xefdb = 0xefdb; // UNK_0xefdb size: 2
@@ -245,6 +296,7 @@ void UNK_0xf32d() // UNK_0xf32d
 
 void UNK_0xf34b() // UNK_0xf34b
 {
+  signed short int i, imax;
 
   UNK_0x3f3b("CODE: ");
   _dot_TTY(); // .TTY
@@ -261,8 +313,8 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   SWAP(); // SWAP

@@ -96,6 +96,77 @@
 //     (/ANALYSIS)  codep:0x224c parp:0xf4c7 size:0x0000 C-string:'_ro__slash_ANALYSIS_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
+extern const unsigned short int pp__ask_AF; // ?AF
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_NLR; // NLR
+extern const unsigned short int pp_SENSE_dash_A; // SENSE-A
+extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
+extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+void DABS(); // DABS
+void MAX(); // MAX
+void MIN(); // MIN
+void _dot_(); // .
+void _dot_R(); // .R
+void SPACE(); // SPACE
+void SPACES(); // SPACES
+void NOP(); // NOP
+void UNRAVEL(); // UNRAVEL
+void PICK(); // PICK
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void RRND(); // RRND
+void SQRT(); // SQRT
+void _ex__2(); // !_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void D_ex_(); // D!
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void _eq_SPECIE(); // =SPECIE
+void CDROP(); // CDROP
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void CTPOS_dot_(); // CTPOS.
+void CTERASE(); // CTERASE
+void CTCR(); // CTCR
+void CTINIT(); // CTINIT
+void _dash_XTRAIL(); // -XTRAIL
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void U_slash_MOD(); // U/MOD
+void _gt_(); // >
+void _0_st_(); // 0<
+void _0_gt_(); // 0>
+void TIME(); // TIME
+void _1_dot_5_at_(); // 1.5@
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf3af = 0xf3af; // UNK_0xf3af size: 7
@@ -516,11 +587,12 @@ void UNK_0xef08() // UNK_0xef08
 
 void UNK_0xef13() // UNK_0xef13
 {
+  unsigned short int a;
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   _at_INST_dash_S(); // @INST-S
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Read16(a)); // R@
   Push(2); // 2
   Push(cc__4); // 4
@@ -655,7 +727,7 @@ void UNK_0xf02c() // UNK_0xf02c
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   SET_dash_CUR(); // SET-CUR
   CTCR(); // CTCR
   Push(0x000f);
@@ -1172,7 +1244,7 @@ void UNK_0xf38f() // UNK_0xf38f
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
   _at_INST_dash_S(); // @INST-S
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -1187,13 +1259,15 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3b8() // UNK_0xf3b8
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  signed short int i, imax;
+  a = Pop(); // >R
   Push(2); // 2
   Push(cc__7); // 7
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Pop()+1); // 1+

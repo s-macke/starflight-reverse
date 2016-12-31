@@ -78,6 +78,69 @@
 //        PLAN-RUL  codep:0x224c parp:0xf528 size:0x0000 C-string:'PLAN_dash_RUL'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc__dash_2; // -2
+extern const unsigned short int pp_P_dash_COLOR; // P-COLOR
+extern const unsigned short int pp_P_dash_PHRAS; // P-PHRAS
+extern const unsigned short int pp_P_dash_CARP; // P-CARP
+extern const unsigned short int pp_O_dash_COLOR; // O-COLOR
+extern const unsigned short int pp_HYDRO; // HYDRO
+extern const unsigned short int pp_ATMO; // ATMO
+extern const unsigned short int pp__ro_ELIST_rc_; // (ELIST)
+extern const unsigned short int pp_GLOBALS; // GLOBALS
+extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+void MAX(); // MAX
+void MOD(); // MOD
+void MIN(); // MIN
+void _co_(); // ,
+void PICK(); // PICK
+void D_eq_(); // D=
+void WITHIN(); // WITHIN
+void RRND(); // RRND
+void SQRT(); // SQRT
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void INEXT(); // INEXT
+void IFIRST(); // IFIRST
+void IFIND(); // IFIND
+void ALL(); // ALL
+void _ex_XYSEED(); // !XYSEED
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void D_plus_(); // D+
+void _gt_(); // >
+void _st_(); // <
+void _0_st_(); // 0<
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+void LO_dash_MASS(); // LO-MASS
+void HI_dash_MASS(); // HI-MASS
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_SUBHYDRO = 0xf167; // SUBHYDRO size: 5
@@ -195,11 +258,10 @@ const unsigned short int cc_UNK_0xed66 = 0x0020; // UNK_0xed66
 
 void UNK_0xedda() // UNK_0xedda
 {
-  Exec(CREATE); // call of word 0x1cbb '(CREATE)'
+  Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(0); // 0
   _co_(); // ,
-  (;CODE)();
-// inlined assembler code
+  CODE(); // (;CODE) inlined assembler code
 // 0xede2: call   1649
   OVER(); // OVER
   Push(Pop() + Pop()); // +
@@ -278,6 +340,8 @@ void UNK_0xee0e() // UNK_0xee0e
 
 void UNK_0xee44() // UNK_0xee44
 {
+  signed short int i, imax;
+  unsigned short int a;
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
@@ -293,8 +357,8 @@ void UNK_0xee44() // UNK_0xee44
   Push(cc__9); // 9
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Read16(regsp)); // DUP
@@ -320,7 +384,7 @@ void UNK_0xee44() // UNK_0xee44
   } while(i<imax); // (LOOP) 0xffdc
 
   Pop(); // DROP
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Pop(); Pop();// 2DROP
   Push(a); // R>
   ICLOSE(); // ICLOSE
@@ -418,6 +482,7 @@ void UNK_0xef0e() // UNK_0xef0e
 
 void UNK_0xef3e() // UNK_0xef3e
 {
+  unsigned short int a;
 
   label2:
   _2DUP(); // 2DUP
@@ -430,7 +495,7 @@ void UNK_0xef3e() // UNK_0xef3e
   goto label2;
 
   label1:
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Pop(); Pop();// 2DROP
   Push(a); // R>
 }
@@ -844,12 +909,13 @@ void UNK_0xf1e1() // UNK_0xf1e1
 
 void UNK_0xf21b() // UNK_0xf21b
 {
+  unsigned short int a;
   LoadData("UNK_0xedaa"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(2); // 2
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
 
   label2:
   UNK_0xf1e1(); // UNK_0xf1e1

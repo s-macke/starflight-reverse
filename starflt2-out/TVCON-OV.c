@@ -53,6 +53,91 @@
 //          .STATS  codep:0x224c parp:0xf52d size:0x0000 C-string:'_dot_STATS'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp__i_INJURE; // 'INJURE
+extern const unsigned short int pp_ATMO; // ATMO
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp__pe_EFF; // %EFF
+extern const unsigned short int pp_STORM; // STORM
+extern const unsigned short int pp__i_STORM; // 'STORM
+extern const unsigned short int pp_E_slash_M; // E/M
+extern const unsigned short int pp__n_STORM; // #STORM
+extern const unsigned short int pp_STAR_dash_HR; // STAR-HR
+extern const unsigned short int pp_STARDAT; // STARDAT
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp_HAZE; // HAZE
+extern const unsigned short int pp_STAGES; // STAGES
+extern const unsigned short int pp_ETIME; // ETIME
+extern const unsigned short int pp_TVEHICL; // TVEHICL
+extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern const unsigned short int pp__n_ETIME; // #ETIME
+void _star__slash_(); // */
+void ABS(); // ABS
+void M_star_(); // M*
+void MAX(); // MAX
+void MOD(); // MOD
+void MIN(); // MIN
+void D_st_(); // D<
+void _dot_R(); // .R
+void MS(); // MS
+void _2OVER(); // 2OVER
+void D_dash_(); // D-
+void D_eq_(); // D=
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void _3_star_(); // 3*
+void RRND(); // RRND
+void SQRT(); // SQRT
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void _at_INST_dash_S(); // @INST-S
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void ALL(); // ALL
+void SAVE_dash_OV(); // SAVE-OV
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void POS_dot_(); // POS.
+void _gt_TVCT(); // >TVCT
+void POLY_dash_ER(); // POLY-ER
+void _dot_VIT(); // .VIT
+void _2_at_(); // 2@
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void U_star_(); // U*
+void _gt_(); // >
+void _st_(); // <
+void _0_st_(); // 0<
+void _0_gt_(); // 0>
+void TIME(); // TIME
+void _st__ex__gt_(); // <!>
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp__pe_STORM = 0xeecf; // %STORM size: 5
@@ -161,6 +246,7 @@ void _ask_ETIME() // ?ETIME
 
 void UNK_0xee1a() // UNK_0xee1a
 {
+  unsigned short int a;
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -182,7 +268,7 @@ void UNK_0xee1a() // UNK_0xee1a
   _slash_(); // /
 
   label2:
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -1099,9 +1185,10 @@ void _dot_DISTANCE() // .DISTANCE
 
 void _dot_STATS() // .STATS
 {
+  unsigned short int a;
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(pp_HAZE); // HAZE

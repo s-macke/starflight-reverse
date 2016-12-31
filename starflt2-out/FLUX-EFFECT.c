@@ -22,6 +22,31 @@
 //          JUMPFX  codep:0x224c parp:0xf514 size:0x0000 C-string:'JUMPFX'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+void MAX(); // MAX
+void MIN(); // MIN
+void RRND(); // RRND
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void ON_2(); // ON_2
+void _ex_COLOR(); // !COLOR
+void RNDCLR(); // RNDCLR
+void DARK(); // DARK
+void _gt_MAINVI(); // >MAINVI
+void _gt_DISPLA(); // >DISPLA
+void V_gt_DISPL(); // V>DISPL
+void BEEPON_2(); // BEEPON_2
+void _slash_(); // /
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void LPLOT(); // LPLOT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf356 = 0xf356; // UNK_0xf356 size: 50
@@ -80,7 +105,8 @@ void UNK_0xf38e() // UNK_0xf38e
 
 void UNK_0xf3a0() // UNK_0xf3a0
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(cc__5); // 5
   Push(0x0014);
   RRND(); // RRND
@@ -127,11 +153,12 @@ void UNK_0xf3a0() // UNK_0xf3a0
 
 void UNK_0xf406() // UNK_0xf406
 {
+  signed short int i, imax;
   Push(0x0032);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_UNK_0xf356); // UNK_0xf356
@@ -141,7 +168,8 @@ void UNK_0xf406() // UNK_0xf406
   Push(cc__5); // 5
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff4
 
 }
 
@@ -152,9 +180,10 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf420() // UNK_0xf420
 {
+  unsigned short int a;
   Push(pp_UNK_0xf356); // UNK_0xf356
   Push(Pop() + Pop()); // +
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(cc__3); // 3
   Push(Pop() + Pop()); // +
@@ -203,6 +232,7 @@ void UNK_0xf420() // UNK_0xf420
 
 void HYPER_dash_FRAME() // HYPER-FRAME
 {
+  signed short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -212,8 +242,8 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   Push(0x0032);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -222,7 +252,8 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   Push(cc__5); // 5
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff6
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff6
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -235,6 +266,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
 
 void FLUX() // FLUX
 {
+  signed short int i, imax;
   _gt_MAINVI(); // >MAINVI
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   ON_2(); // ON_2
@@ -247,8 +279,8 @@ void FLUX() // FLUX
   Push(0x0096);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   HYPER_dash_FRAME(); // HYPER-FRAME
@@ -268,6 +300,7 @@ void FLUX() // FLUX
 
 void UNK_0xf4e5() // UNK_0xf4e5
 {
+  signed short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
@@ -277,8 +310,8 @@ void UNK_0xf4e5() // UNK_0xf4e5
   Push(0x0032);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   RNDCLR(); // RNDCLR
@@ -288,7 +321,8 @@ void UNK_0xf4e5() // UNK_0xf4e5
   Push(cc__5); // 5
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff4
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff4
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -301,6 +335,7 @@ void UNK_0xf4e5() // UNK_0xf4e5
 
 void JUMPFX() // JUMPFX
 {
+  signed short int i, imax;
   _gt_MAINVI(); // >MAINVI
   UNK_0xf406(); // UNK_0xf406
   Push(0); // 0
@@ -309,8 +344,8 @@ void JUMPFX() // JUMPFX
   Push(Pop()*2); // 2*
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xf4e5(); // UNK_0xf4e5

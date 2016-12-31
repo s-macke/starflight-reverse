@@ -36,6 +36,42 @@
 //        (/TREAT)  codep:0x224c parp:0xf4ee size:0x0000 C-string:'_ro__slash_TREAT_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int pp_XBLT; // XBLT
+void _dot_R(); // .R
+void MS(); // MS
+void WITHIN(); // WITHIN
+void _ex__3(); // !_3
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void INEXT(); // INEXT
+void IPREV(); // IPREV
+void _gt_1FONT(); // >1FONT
+void CTPOS_dot_(); // CTPOS.
+void CTERASE(); // CTERASE
+void _ex_CRS(); // !CRS
+void _do__dot_(); // $.
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void CTCR(); // CTCR
+void CTINIT(); // CTINIT
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void Y_slash_N(); // Y/N
+void CMESS(); // CMESS
+void _2DUP(); // 2DUP
+void ROT(); // ROT
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -87,15 +123,18 @@ void UNK_0xf092() // UNK_0xf092
 
 void UNK_0xf0a6() // UNK_0xf0a6
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  signed short int i, imax;
+  unsigned short int b;
+  a = Pop(); // >R
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x6400); // IFIELD(UNK_0xf08d)
@@ -110,7 +149,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(Pop()+1); // 1+
-  unsigned short int b = Pop(); // >R
+  b = Pop(); // >R
   CI(); // CI
   Push(b); // R>
   imax = i; // LEAVE
@@ -132,7 +171,8 @@ void UNK_0xf0a6() // UNK_0xf0a6
 
 void UNK_0xf0e6() // UNK_0xf0e6
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(a); // I
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;

@@ -76,6 +76,87 @@
 //            >FLT  codep:0x224c parp:0xf4b5 size:0x0000 C-string:'_gt_FLT'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_TRAK_dash_HR; // TRAK-HR
+extern const unsigned short int pp__ask_TV; // ?TV
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__ask__ask__ask_IT; // ???IT
+extern const unsigned short int pp__ask_LANDED; // ?LANDED
+extern const unsigned short int pp_GWF; // GWF
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern const unsigned short int pp_FORCEPTASK; // FORCEPTASK
+extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
+extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp__i_BUTTON; // 'BUTTON
+extern const unsigned short int pp_BTN_dash_REC; // BTN-REC
+extern const unsigned short int pp__ask__gt_OP; // ?>OP
+extern const unsigned short int pp__n_AUX; // #AUX
+extern const unsigned short int pp__i_COMBAT; // 'COMBAT
+extern const unsigned short int pp_STAR_dash_HR; // STAR-HR
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp__i__dot_DATE; // '.DATE
+extern const unsigned short int pp_ENC_dash_TIME; // ENC-TIME
+extern const unsigned short int pp_NAV_dash_TIME; // NAV-TIME
+void MS(); // MS
+void WITHIN(); // WITHIN
+void _ex__3(); // !_3
+void D_ex_(); // D!
+void ON_3(); // ON_3
+void OFF(); // OFF
+void CDROP(); // CDROP
+void SET_dash_CURRENT(); // SET-CURRENT
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void _gt_1FONT(); // >1FONT
+void POS_dot_(); // POS.
+void CTERASE(); // CTERASE
+void CLICK(); // CLICK
+void _gt_SND(); // >SND
+void _do__dot_(); // $.
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
+void _dot_HIGHLI(); // .HIGHLI
+void _dot_ON(); // .ON
+void CLR_dash_BUT(); // CLR-BUT
+void INIT_dash_BU(); // INIT-BU
+void _ro_SHIP_dash_C(); // (SHIP-C
+void _i_KEY(); // 'KEY
+void _ask_TRIG(); // ?TRIG
+void _dot_ABTN(); // .ABTN
+void _dot_BTN_dash_TE(); // .BTN-TE
+void NEW_dash_BUT(); // NEW-BUT
+void CFIGARRAYS(); // CFIGARRAYS
+void GET_dash_HAUX(); // GET-HAUX
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void SWAP(); // SWAP
+void _0_st_(); // 0<
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+void _gt_V(); // >V
+void V_gt_(); // V>
+void V_gt_DISPLAY(); // V>DISPLAY
+void _ro_XYSCAN(); // (XYSCAN
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 2
@@ -249,7 +330,7 @@ void UNK_0xee6c() // UNK_0xee6c
   LoadData("1BTN"); // from 'BUTTONS     '
   Push(Pop() + Pop()); // +
   Push(0x000c);
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x0010);
   Push(0x003b);
   UNK_0xee30(); // UNK_0xee30

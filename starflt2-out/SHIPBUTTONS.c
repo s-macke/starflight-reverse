@@ -87,6 +87,110 @@
 //            >FLT  codep:0x224c parp:0xf517 size:0x0000 C-string:'_gt_FLT'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int pp_TRAK_dash_HR; // TRAK-HR
+extern const unsigned short int pp__ask_TV; // ?TV
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__ask_LANDED; // ?LANDED
+extern const unsigned short int pp__ask_3; // ?3
+extern const unsigned short int pp_GWF; // GWF
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp_FORCEPT; // FORCEPT
+extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
+extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp__i_BUTTON; // 'BUTTON
+extern const unsigned short int pp_BTN_dash_REC; // BTN-REC
+extern const unsigned short int pp__ask__gt_OP; // ?>OP
+extern const unsigned short int pp__n_AUX; // #AUX
+extern const unsigned short int pp__i_COMBAT; // 'COMBAT
+extern const unsigned short int pp_STAR_dash_HR; // STAR-HR
+extern const unsigned short int pp_STARDAT; // STARDAT
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp__i__dot_DATE; // '.DATE
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp_HAZE; // HAZE
+extern const unsigned short int pp__pe_SLUG; // %SLUG
+extern const unsigned short int pp_ENC_dash_TIM; // ENC-TIM
+extern const unsigned short int pp_NAV_dash_TIM; // NAV-TIM
+extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+void MIN(); // MIN
+void BEEP(); // BEEP
+void MS(); // MS
+void D_dash_(); // D-
+void D_eq_(); // D=
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void _3_star_(); // 3*
+void RRND(); // RRND
+void _ex__2(); // !_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void _at_INST_dash_S(); // @INST-S
+void _eq_SPECIE(); // =SPECIE
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void _gt_1FONT(); // >1FONT
+void V_gt_DISPL(); // V>DISPL
+void POS_dot_(); // POS.
+void CTERASE(); // CTERASE
+void CLICK(); // CLICK
+void _gt_SND(); // >SND
+void _do__dot_(); // $.
+void POLY_dash_ER(); // POLY-ER
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void ERASE_dash_A(); // ERASE-A
+void _dot_HIGHLI(); // .HIGHLI
+void _dot_ON(); // .ON
+void CLR_dash_BUT(); // CLR-BUT
+void INIT_dash_BU(); // INIT-BU
+void _ro_SHIP_dash_C(); // (SHIP-C
+void _i_KEY(); // 'KEY
+void _ask_TRIG(); // ?TRIG
+void _dot_ABTN(); // .ABTN
+void _dot_BTN_dash_TE(); // .BTN-TE
+void NEW_dash_BUT(); // NEW-BUT
+void GET_dash_HA(); // GET-HA
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _st_(); // <
+void _0_st_(); // 0<
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+void _gt_V(); // >V
+void V_gt_(); // V>
+void _ro_XYSCAN(); // (XYSCAN
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xebf6 = 0xebf6; // UNK_0xebf6 size: 2
@@ -282,7 +386,7 @@ void UNK_0xecec() // UNK_0xecec
   LoadData("1BTN"); // from 'ANALYZE-TEXT'
   Push(Pop() + Pop()); // +
   Push(0x000c);
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x0010);
   Push(0x003b);
   UNK_0xec78(); // UNK_0xec78

@@ -46,6 +46,74 @@
 //            HEAL  codep:0x224c parp:0xf524 size:0x0000 C-string:'HEAL'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_WTOP; // WTOP
+extern const unsigned short int pp_WBOTTOM; // WBOTTOM
+extern const unsigned short int pp_WRIGHT; // WRIGHT
+extern const unsigned short int pp_WLEFT; // WLEFT
+extern const unsigned short int pp_WCHARS; // WCHARS
+extern const unsigned short int pp_HEALTI; // HEALTI
+extern const unsigned short int pp_ROSTER; // ROSTER
+void COUNT(); // COUNT
+void MIN(); // MIN
+void _dot_R(); // .R
+void MS(); // MS
+void PICK(); // PICK
+void _2OVER(); // 2OVER
+void D_eq_(); // D=
+void KEY_2(); // KEY_2
+void _3_star_(); // 3*
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void _1_dot_5_ex_(); // 1.5!
+void OFF(); // OFF
+void FILL_1(); // FILL_1
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void SET_dash_CURRENT(); // SET-CURRENT
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void _ex_COLOR(); // !COLOR
+void _gt_DISPLAY(); // >DISPLAY
+void BYE(); // BYE
+void POS_dot_(); // POS.
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void _do__dot_(); // $.
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void WINDOW(); // WINDOW
+void GCR(); // GCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+void _0_gt_(); // 0>
+void _1_dot_5_at_(); // 1.5@
+void _st__ex__gt_(); // <!>
+void _st_1_dot_5_ex__gt_(); // <1.5!>
+void _gt_C(); // >C
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf426 = 0xf426; // UNK_0xf426 size: 2
@@ -197,11 +265,12 @@ void UNK_0xf139() // UNK_0xf139
 
 void UNK_0xf147() // UNK_0xf147
 {
+  signed short int i, imax;
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -288,6 +357,7 @@ void UNK_0xf183() // UNK_0xf183
 
 void ROLE_dash_C() // ROLE-C
 {
+  signed short int i, imax;
   UNK_0xf139(); // UNK_0xf139
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
@@ -297,8 +367,8 @@ void ROLE_dash_C() // ROLE-C
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -329,14 +399,16 @@ void ROLE_dash_C() // ROLE-C
 
 void UNK_0xf23c() // UNK_0xf23c
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  signed short int i, imax;
+  a = Pop(); // >R
   Push(1); // 1
   Push(pp_ROSTER); // ROSTER
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -428,6 +500,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
 
 void UNK_0xf2cd() // UNK_0xf2cd
 {
+  signed short int i, imax;
   ROLE_dash_C(); // ROLE-C
   UNK_0xf280(); // UNK_0xf280
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -435,8 +508,8 @@ void UNK_0xf2cd() // UNK_0xf2cd
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -513,14 +586,18 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 void _dot_VITS() // .VITS
 {
+  unsigned short int a;
+  unsigned short int b;
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  unsigned short int b = Pop(); // >R
+  b = Pop(); // >R
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf0a6(); // UNK_0xf0a6
@@ -530,8 +607,8 @@ void _dot_VITS() // .VITS
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   GCR(); // GCR
@@ -559,8 +636,8 @@ void _dot_VITS() // .VITS
   if (Pop() == 0) goto label2;
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   PRINT(".", 1); // (.")
@@ -622,7 +699,7 @@ void _gt_SKILL() // >SKILL
     Push(0x640d); // IFIELD(UNK_0xf118)
     break;
   default:
-    Exec(ABORT); // call of word 0x1c45 '(ABORT)'
+    Exec("ABORT"); // call of word 0x1c45 '(ABORT)'
     break;
 
   }
@@ -659,6 +736,7 @@ void UNK_0xf416() // UNK_0xf416
 
 void UNK_0xf42f() // UNK_0xf42f
 {
+  signed short int i, imax;
   Push(0); // 0
   Push(pp_UNK_0xf426); // UNK_0xf426
   _ex__3(); // !_3
@@ -674,8 +752,8 @@ void UNK_0xf42f() // UNK_0xf42f
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -760,6 +838,7 @@ void UNK_0xf497() // UNK_0xf497
 
 void UNK_0xf4c1() // UNK_0xf4c1
 {
+  signed short int i, imax;
   Push2Words("*ASSIGN-CREW");
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
@@ -767,8 +846,8 @@ void UNK_0xf4c1() // UNK_0xf4c1
   Push(cc__6); // 6
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I

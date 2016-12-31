@@ -80,6 +80,117 @@
 //            TARG  codep:0x224c parp:0xf520 size:0x0000 C-string:'TARG'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_MPS; // MPS
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_ILOCAL; // ILOCAL
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp__i_WAX; // 'WAX
+extern const unsigned short int pp_WEAPON_dash_; // WEAPON-
+extern const unsigned short int pp__ask_SUP; // ?SUP
+extern const unsigned short int pp_NLR; // NLR
+extern const unsigned short int pp_EYEXY; // EYEXY
+extern const unsigned short int pp_KEYTIME; // KEYTIME
+extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
+extern const unsigned short int pp_LSCAN; // LSCAN
+extern const unsigned short int pp_NTIME; // NTIME
+extern const unsigned short int pp_NOF; // NOF
+extern const unsigned short int pp__n_MISS; // #MISS
+void COUNT(); // COUNT
+void ABS(); // ABS
+void M_star__slash_(); // M*/
+void MAX(); // MAX
+void _dot_(); // .
+void SPACE(); // SPACE
+void MS(); // MS
+void D_dash_(); // D-
+void D_eq_(); // D=
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void KEY_2(); // KEY_2
+void _3_star_(); // 3*
+void RRND(); // RRND
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void CDROP(); // CDROP
+void _ask_NULL(); // ?NULL
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void IDELETE(); // IDELETE
+void MODULE(); // MODULE
+void NBCLR(); // NBCLR
+void _ex_COLOR(); // !COLOR
+void BFILL(); // BFILL
+void _dot_CIRCLE_1(); // .CIRCLE_1
+void FILLCIR(); // FILLCIR
+void _gt_1FONT(); // >1FONT
+void _gt_2FONT(); // >2FONT
+void VCLIPSE(); // VCLIPSE
+void DCLIPSE(); // DCLIPSE
+void _gt_MAINVI(); // >MAINVI
+void _gt_DISPLA(); // >DISPLA
+void V_gt_DISPL(); // V>DISPL
+void BYE_2(); // BYE_2
+void _at_ID(); // @ID
+void _at_IL(); // @IL
+void _at_IH(); // @IH
+void POINT_gt_I(); // POINT>I
+void _dot_LOCAL_dash_(); // .LOCAL-
+void _ask_ICONS_dash__1(); // ?ICONS-_1
+void POS_dot_(); // POS.
+void CTERASE(); // CTERASE
+void BEEPON_2(); // BEEPON_2
+void SONG(); // SONG
+void POLY_dash_ER(); // POLY-ER
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void Y_slash_N(); // Y/N
+void _do__ex_(); // $!
+void _dot_SORD(); // .SORD
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void D_plus_(); // D+
+void _gt_(); // >
+void _0_st_(); // 0<
+void _0_gt_(); // 0>
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+void CI(); // CI
+void LXPLOT(); // LXPLOT
+void DISPLAY(); // DISPLAY
+void _ask_INVIS(); // ?INVIS
+void WLD_gt_SCR(); // WLD>SCR
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xed5d = 0xed5d; // UNK_0xed5d size: 2
@@ -309,13 +420,15 @@ void UNK_0xed47() // UNK_0xed47
 
 void UNK_0xed61() // UNK_0xed61
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(pp_UNK_0xed5d); // UNK_0xed5d
   _099(); // 099
   Push(0x000e);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_EYEXY); // EYEXY
@@ -328,8 +441,8 @@ void UNK_0xed61() // UNK_0xed61
   if (Pop() == 0) goto label1;
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -426,6 +539,7 @@ void UNK_0xede5() // UNK_0xede5
 
 void UNK_0xedf7() // UNK_0xedf7
 {
+  unsigned short int a;
   Push(0x003b);
   Push(0x0028);
   POS_dot_(); // POS.
@@ -435,7 +549,7 @@ void UNK_0xedf7() // UNK_0xedf7
   UNK_0xed61(); // UNK_0xed61
   Push(pp_UNK_0xed5d); // UNK_0xed5d
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Read16(a)); // R@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -476,7 +590,7 @@ void UNK_0xedf7() // UNK_0xedf7
   Pop(); // DROP
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -486,14 +600,15 @@ void UNK_0xedf7() // UNK_0xedf7
 
 void UNK_0xee5f() // UNK_0xee5f
 {
+  signed short int i, imax;
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   Push(cc__3); // 3
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   CTERASE(); // CTERASE
@@ -533,7 +648,7 @@ void UNK_0xeeac() // UNK_0xeeac
   ICLOSE(); // ICLOSE
   Push(0x6356); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x6378); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
   _dot_TTY(); // .TTY
@@ -621,12 +736,13 @@ void UNK_0xef24() // UNK_0xef24
 
 void UNK_0xef2c() // UNK_0xef2c
 {
+  unsigned short int a;
   _2DUP(); // 2DUP
   Push(pp_EYEXY); // EYEXY
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp_EYEXY); // EYEXY
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -655,14 +771,15 @@ void UNK_0xef48() // UNK_0xef48
 
 void UNK_0xef54() // UNK_0xef54
 {
+  signed short int i, imax;
   UNK_0xecab(); // UNK_0xecab
   Push(1); // 1
   Push(cc__8); // 8
   UNK_0xec4c(); // UNK_0xec4c
   Push(Pop() * Pop()); // *
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xef24(); // UNK_0xef24
@@ -681,7 +798,8 @@ void UNK_0xef54() // UNK_0xef54
   Push(Pop()*2); // 2*
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffe2
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffe2
 
   UNK_0xecb3(); // UNK_0xecb3
 }
@@ -712,12 +830,14 @@ void UNK_0xef86() // UNK_0xef86
 
 void UNK_0xefa4() // UNK_0xefa4
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   CTERASE(); // CTERASE
   Push(0x000e);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_EYEXY); // EYEXY
@@ -730,8 +850,8 @@ void UNK_0xefa4() // UNK_0xefa4
   if (Pop() == 0) goto label1;
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -753,6 +873,7 @@ void UNK_0xefa4() // UNK_0xefa4
 
 void UNK_0xefd4() // UNK_0xefd4
 {
+  signed short int i, imax;
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   V_gt_DISPL(); // V>DISPL
@@ -761,8 +882,8 @@ void UNK_0xefd4() // UNK_0xefd4
   _slash_(); // /
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0); // 0
@@ -783,6 +904,7 @@ void UNK_0xefd4() // UNK_0xefd4
 
 void UNK_0xeffc() // UNK_0xeffc
 {
+  signed short int i, imax;
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
   SetColor("WHITE");
@@ -790,8 +912,8 @@ void UNK_0xeffc() // UNK_0xeffc
   Push(0x001e);
   Push(2); // 2
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_EYEXY); // EYEXY
@@ -855,7 +977,8 @@ void UNK_0xeffc() // UNK_0xeffc
 
 void UNK_0xf064() // UNK_0xf064
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(0); // 0
   SWAP(); // SWAP
   Push(1); // 1
@@ -893,6 +1016,7 @@ void UNK_0xf074() // UNK_0xf074
 
 void UNK_0xf094() // UNK_0xf094
 {
+  unsigned short int a;
   UNK_0xec54(); // UNK_0xec54
   Push(pp_UNK_0xf04c); // UNK_0xf04c
   _ex__2(); // !_2
@@ -915,7 +1039,7 @@ void UNK_0xf094() // UNK_0xf094
   ABS(); // ABS
   ROT(); // ROT
   MAX(); // MAX
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Read16(a)); // R@
   UNK_0xf064(); // UNK_0xf064
   Push(pp_UNK_0xf058); // UNK_0xf058
@@ -1124,6 +1248,7 @@ void UNK_0xf172() // UNK_0xf172
 
 void UNK_0xf20c() // UNK_0xf20c
 {
+  signed short int i, imax;
   Push(cc_TRUE); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -1133,8 +1258,8 @@ void UNK_0xf20c() // UNK_0xf20c
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1317,6 +1442,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
 
 void UNK_0xf306() // UNK_0xf306
 {
+  signed short int i, imax;
   Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x65f0); // IFIELD(INST-Y)
@@ -1325,8 +1451,8 @@ void UNK_0xf306() // UNK_0xf306
   Push(cc__5); // 5
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   SetColor("VIOLET");
@@ -1468,7 +1594,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   _ex_COLOR(); // !COLOR
   Push(0x653c); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   KEY_2(); // KEY_2
   Pop(); // DROP
   BYE_2(); // BYE_2
@@ -1508,7 +1634,7 @@ void UNK_0xf476() // UNK_0xf476
   CTINIT(); // CTINIT
   Push(0x65ed); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 

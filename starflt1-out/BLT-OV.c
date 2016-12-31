@@ -20,6 +20,49 @@
 //           SETUP  codep:0x224c parp:0xf530 size:0x0000 C-string:'SETUP'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_X1; // X1
+extern const unsigned short int pp_X2; // X2
+extern const unsigned short int pp_XSTART; // XSTART
+extern const unsigned short int pp_XEND; // XEND
+extern const unsigned short int pp_YLINE; // YLINE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp__ask_EGA; // ?EGA
+void PAD(); // PAD
+void QUIT(); // QUIT
+void _dot_R(); // .R
+void NODRIVES(); // NODRIVES
+void KEY_2(); // KEY_2
+void _ask__gt_EGA(); // ?>EGA
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void MOUNTA(); // MOUNTA
+void MOUNTB(); // MOUNTB
+void FILE_st_(); // FILE<
+void _gt_MONO(); // >MONO
+void _gt_A(); // >A
+void _gt_LORES(); // >LORES
+void DARK(); // DARK
+void POS_dot_(); // POS.
+void ADDR_gt_SEG(); // ADDR>SEG
+void SWAP(); // SWAP
+void _dash_(); // -
+void L_at_(); // L@
+void LC_at_(); // LC@
+void _co_BLT_cc_(); // {BLT}
+void _dot_RUNBIT(); // .RUNBIT
+void _dot_EGARUNBIT(); // .EGARUNBIT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_BRIGHT = 0xf35c; // BRIGHT size: 2
@@ -128,7 +171,7 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 
 void _dot_PARMS() // .PARMS
 {
-  Exec(CR); // call of word 0x26ee '(CR)'
+  Exec("CR"); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
   Push(pp_X2); // X2
   Push(Read16(Pop())); // @
@@ -268,10 +311,14 @@ void _dot_PARMS() // .PARMS
 
 void _dot_HYBRID() // .HYBRID
 {
+  unsigned short int a;
+  signed short int i, imax;
+  unsigned short int b;
+  unsigned short int c;
   Push(Read16(regsp)); // DUP
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(cc__5); // 5
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
@@ -290,16 +337,16 @@ void _dot_HYBRID() // .HYBRID
   LC_at_(); // LC@
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
-  unsigned short int b = Pop(); // >R
+  b = Pop(); // >R
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
-  unsigned short int c = Pop(); // >R
+  c = Pop(); // >R
   Push(cc__4); // 4
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!

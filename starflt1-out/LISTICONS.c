@@ -18,6 +18,41 @@
 //           ICONS  codep:0x224c parp:0xf49e size:0x0000 C-string:'ICONS'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_2; // -2
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp_TILE_dash_PTR; // TILE-PTR
+extern const unsigned short int pp_CMAP; // CMAP
+void KEY_2(); // KEY_2
+void _ask__gt_EGA(); // ?>EGA
+void _ex__3(); // !_3
+void OFF(); // OFF
+void _at_RECORD(); // @RECORD
+void _ex_COLOR(); // !COLOR
+void BLT(); // BLT
+void _gt_1FONT(); // >1FONT
+void _gt_3FONT(); // >3FONT
+void POS_dot_(); // POS.
+void SFILL(); // SFILL
+void _dash_(); // -
+void _at_DS(); // @DS
+void _st__ex__gt_(); // <!>
+void _st__plus__ex__gt_(); // <+!>
+void LLINE(); // LLINE
+void TILEFILL(); // TILEFILL
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -31,6 +66,7 @@
 
 void altitude() // altitude
 {
+  signed short int i, imax;
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x001f);
@@ -56,8 +92,8 @@ void altitude() // altitude
   Push(cc__8); // 8
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_CMAP); // CMAP
@@ -135,11 +171,12 @@ void ICON_dash_KEY() // ICON-KEY
 
 void _dot_BLT() // .BLT
 {
+  signed short int i, imax;
   Push(2); // 2
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Read16(regsp)); // DUP
@@ -189,10 +226,11 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
 
 void SEE_dash_BLTS() // SEE-BLTS
 {
+  signed short int i, imax;
   _gt_1FONT(); // >1FONT
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x000a);
@@ -225,7 +263,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(i); // I
   _at_RECORD(); // @RECORD
   Push(0x001b);
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(2); // 2
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>

@@ -43,6 +43,92 @@
 //       GETSITE_2  codep:0x224c parp:0xf537 size:0x0000 C-string:'GETSITE_2'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_HBUF_dash_SEG; // HBUF-SEG
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp_XLLDEST; // XLLDEST
+extern const unsigned short int pp_YLLDEST; // YLLDEST
+extern const unsigned short int pp__i__dot_CELL; // '.CELL
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern const unsigned short int pp__n_AUX; // #AUX
+extern const unsigned short int pp__ask_EGA; // ?EGA
+extern const unsigned short int pp_XABS; // XABS
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_KEYTIME; // KEYTIME
+extern const unsigned short int pp_LKEYTIM; // LKEYTIM
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp_CMAP; // CMAP
+void COUNT(); // COUNT
+void _star__slash_(); // */
+void MAX(); // MAX
+void MIN(); // MIN
+void _dot_(); // .
+void D_dot_R(); // D.R
+void MS(); // MS
+void D_dash_(); // D-
+void D0_eq_(); // D0=
+void WITHIN(); // WITHIN
+void SETLARRAY(); // SETLARRAY
+void FULLARRAY(); // FULLARRAY
+void SETREGION(); // SETREGION
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void D_ex_(); // D!
+void OFF(); // OFF
+void FILL_1(); // FILL_1
+void _at_INST_dash_CLASS(); // @INST-CLASS
+void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void CDROP(); // CDROP
+void _ask_CHILD(); // ?CHILD
+void ICLOSE(); // ICLOSE
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void INEXT(); // INEXT
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void _gt_DISPLAY(); // >DISPLAY
+void BLT(); // BLT
+void _dot_REGION_plus_(); // .REGION+
+void POS_dot_(); // POS.
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void _at_CRS(); // @CRS
+void _ex_CRS(); // !CRS
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void CURSORSPACE(); // CURSORSPACE
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _st_(); // <
+void _0_st_(); // 0<
+void _at_DS(); // @DS
+void LPLOT(); // LPLOT
+void LLINE(); // LLINE
+void _ro__v_REGION_rc_(); // (|REGION)
+void _v_EGA(); // |EGA
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_WLON = 0xee1d; // WLON size: 4
@@ -146,6 +232,7 @@ void _dot_LATFRAME() // .LATFRAME
 
 void UNK_0xeed3() // UNK_0xeed3
 {
+  signed short int i, imax;
   _at_CRS(); // @CRS
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
@@ -161,8 +248,8 @@ void UNK_0xeed3() // UNK_0xeed3
   Push(cc__8); // 8
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_CMAP); // CMAP
@@ -531,6 +618,7 @@ void UNK_0xf159() // UNK_0xf159
 
 void UNK_0xf181() // UNK_0xf181
 {
+  unsigned short int a;
   UNK_0xf159(); // UNK_0xf159
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
@@ -542,7 +630,7 @@ void UNK_0xf181() // UNK_0xf181
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(0x005f);
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
@@ -660,6 +748,9 @@ void UNK_0xf239() // UNK_0xf239
 
 void UNK_0xf290() // UNK_0xf290
 {
+  signed short int i, imax;
+  signed short int j, jmax;
+  signed short int k, kmax;
   CTINIT(); // CTINIT
 
   UNK_0x3f3b("THE RED CYLINDER IS FLASHING");
@@ -667,15 +758,15 @@ void UNK_0xf290() // UNK_0xf290
   Push(0x0050);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0010);
   Push(0x000c);
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(j); // I
@@ -695,8 +786,8 @@ void UNK_0xf290() // UNK_0xf290
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
-  signed short int k = Pop();
-  signed short int kmax = Pop();
+  k = Pop();
+  kmax = Pop();
   do // (DO)
   {
   Push(k); // I
@@ -708,7 +799,8 @@ void UNK_0xf290() // UNK_0xf290
   Push(cc__4); // 4
   int step = Pop();
   k += step;
-  } while(((step>=0) && (k<kmax)) || ((step<0) && (k>kmax))); // (+LOOP) 0xfff0
+  if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
+  } while(1); // (+LOOP) 0xfff0
 
   Push(cc__5); // 5
   MS(); // MS
@@ -729,6 +821,8 @@ void UNK_0xf290() // UNK_0xf290
 
 void UNK_0xf311() // UNK_0xf311
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -757,15 +851,15 @@ void UNK_0xf311() // UNK_0xf311
   Push(0x0050);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0010);
   Push(0x000c);
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(j); // I
@@ -879,6 +973,7 @@ void UNK_0xf405() // UNK_0xf405
 
 void GETSITE_1() // GETSITE_1
 {
+  unsigned short int a;
   Push(cc__8); // 8
   Push(pp__n_AUX); // #AUX
   _ex__3(); // !_3
@@ -903,7 +998,7 @@ void GETSITE_1() // GETSITE_1
   MAX(); // MAX
   Push(0x00c8);
   MIN(); // MIN
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(Pop() * Pop()); // *
   SWAP(); // SWAP

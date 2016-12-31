@@ -22,6 +22,56 @@
 //          DEPART  codep:0x224c parp:0xf511 size:0x0000 C-string:'DEPART'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp_EDL; // EDL
+extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
+extern const unsigned short int pp__ask_LANDED; // ?LANDED
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_AORIGI; // (AORIGI
+extern const unsigned short int pp__ro_TRADER; // (TRADER
+void ABS(); // ABS
+void MAX(); // MAX
+void MIN(); // MIN
+void WITHIN(); // WITHIN
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void _099(); // 099
+void _ex_INST_dash_S(); // !INST-S
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void _ask_NULL(); // ?NULL
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void _ask_LAST(); // ?LAST
+void INEXT(); // INEXT
+void IPREV(); // IPREV
+void IFIRST(); // IFIRST
+void IFIND(); // IFIND
+void IDELETE(); // IDELETE
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _st_(); // <
+void _0_gt_(); // 0>
+void _1_dot_5_at_(); // 1.5@
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 

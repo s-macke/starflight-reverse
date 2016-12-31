@@ -28,6 +28,49 @@
 //         (XCOMM)  codep:0x224c parp:0xf4fe size:0x0000 C-string:'_ro_XCOMM_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
+extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
+extern const unsigned short int pp_FTRIG; // FTRIG
+extern const unsigned short int pp_TIRED_dash_T; // TIRED-T
+extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
+extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
+extern const unsigned short int pp_LSCAN; // LSCAN
+void COUNT(); // COUNT
+void MS(); // MS
+void D_gt_(); // D>
+void _ex__3(); // !_3
+void D_ex_(); // D!
+void OFF(); // OFF
+void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void MODULE(); // MODULE
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _dot_ON(); // .ON
+void INIT_dash_BU(); // INIT-BU
+void _i_KEY(); // 'KEY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _dot_BTN_dash_TE(); // .BTN-TE
+void NEW_dash_BUT(); // NEW-BUT
+void _do__ex_(); // $!
+void _dot_SORD(); // .SORD
+void _2_at_(); // 2@
+void OVER(); // OVER
+void SWAP(); // SWAP
+void D_plus_(); // D+
+void _st_(); // <
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xecca = 0xecca; // UNK_0xecca size: 483
@@ -281,6 +324,7 @@ void XY_slash_N() // XY/N
 
 void UNK_0xf486() // UNK_0xf486
 {
+  signed short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xecca); // UNK_0xecca
@@ -291,8 +335,8 @@ void UNK_0xf486() // UNK_0xf486
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -307,7 +351,8 @@ void UNK_0xf486() // UNK_0xf486
   Push(2); // 2
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffec
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffec
 
 }
 
@@ -358,7 +403,7 @@ void UNK_0xf4de() // UNK_0xf4de
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

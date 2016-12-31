@@ -76,6 +76,60 @@
 //         DO-REPA  codep:0x224c parp:0xf505 size:0x0000 C-string:'DO_dash_REPA'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp_REPAIRT; // REPAIRT
+extern const unsigned short int pp__ask_REPAIR; // ?REPAIR
+extern const unsigned short int pp_REAL_dash_MS; // REAL-MS
+void _star__slash_(); // */
+void M_slash_(); // M/
+void MAX(); // MAX
+void MIN(); // MIN
+void BEEP(); // BEEP
+void _dot_(); // .
+void MS(); // MS
+void UNRAVEL(); // UNRAVEL
+void RRND(); // RRND
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void ON_2(); // ON_2
+void _099(); // 099
+void CDROP(); // CDROP
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void _ex_COLOR(); // !COLOR
+void CTERASE(); // CTERASE
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void Y_slash_N(); // Y/N
+void _dash_XTRAIL(); // -XTRAIL
+void _ro_BOX_gt__rc_(); // (BOX>)
+void _2_at_(); // 2@
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+void _0_st_(); // 0<
+void OFF_2(); // OFF_2
+void _st__ex__gt_(); // <!>
+void _gt_C(); // >C
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xef66 = 0xef66; // UNK_0xef66 size: 2
@@ -330,9 +384,10 @@ void UNK_0xefca() // UNK_0xefca
 
 void UNK_0xefe0() // UNK_0xefe0
 {
+  unsigned short int a;
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Read8(Pop())&0xFF); // C@
   Push(0x00bf);
   Push(Pop() & Pop()); // AND
@@ -379,12 +434,13 @@ void UNK_0xf010() // UNK_0xf010
 
 void UNK_0xf01c() // UNK_0xf01c
 {
+  signed short int i, imax;
   Push(cc__dash_1); // -1
   Push(cc__7); // 7
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -427,6 +483,7 @@ void UNK_0xf01c() // UNK_0xf01c
 
 void UNK_0xf05e() // UNK_0xf05e
 {
+  unsigned short int a;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65fb); // IFIELD(UNK_0xef31)
@@ -435,7 +492,7 @@ void UNK_0xf05e() // UNK_0xf05e
   Push(0x65fd); // IFIELD(UNK_0xef36)
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _dash_(); // -
   Push(0x0064);
   ROT(); // ROT
@@ -746,7 +803,7 @@ void UNK_0xf278() // UNK_0xf278
 {
 
   UNK_0x3f09(" FOR REPAIRS.");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -762,7 +819,7 @@ void UNK_0xf28e() // UNK_0xf28e
   _dot_(); // .
 
   UNK_0x3f09("CUBIC METER");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   UNK_0xef7e(); // UNK_0xef7e
   Push(0x000a);
   _dash_(); // -
@@ -927,9 +984,10 @@ void UNK_0xf37d() // UNK_0xf37d
 
 void UNK_0xf3b1() // UNK_0xf3b1
 {
+  unsigned short int a;
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   UNK_0xf1e0(); // UNK_0xf1e0
   SWAP(); // SWAP
   UNK_0xf1a2(); // UNK_0xf1a2

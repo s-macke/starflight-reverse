@@ -27,6 +27,46 @@
 //             DIO  codep:0x224c parp:0xf4c8 size:0x0000 C-string:'DIO'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int pp__n_SHOTS; // #SHOTS
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp_PLHI; // PLHI
+extern const unsigned short int pp_FSTUN; // FSTUN
+extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_SURFAC; // (SURFAC
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void ON_2(); // ON_2
+void _099(); // 099
+void FILL_2(); // FILL_2
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void IOPEN(); // IOPEN
+void IINSERT(); // IINSERT
+void IFLD_at_(); // IFLD@
+void IFIND(); // IFIND
+void ICREATE(); // ICREATE
+void _star_CREATE(); // *CREATE
+void _ex_COLOR(); // !COLOR
+void _dot_TTY(); // .TTY
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -89,6 +129,7 @@ const unsigned short int cc_UNK_0xf18a = 0x0043; // UNK_0xf18a
 
 void UNK_0xf3aa() // UNK_0xf3aa
 {
+  signed short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -106,8 +147,8 @@ void UNK_0xf3aa() // UNK_0xf3aa
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(cc_UNK_0xf18a); // UNK_0xf18a
@@ -163,14 +204,15 @@ void UNK_0xf418() // UNK_0xf418
 
 void UNK_0xf440() // UNK_0xf440
 {
+  signed short int i, imax;
   Push(cc_UNK_0xf18a); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I

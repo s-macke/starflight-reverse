@@ -112,6 +112,163 @@
 //     (/LOG-PLAN)  codep:0x224c parp:0xf451 size:0x0000 C-string:'_ro__slash_LOG_dash_PLAN_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc_BL; // BL
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
+extern const unsigned short int pp_HYDRO; // HYDRO
+extern const unsigned short int pp_ATMO; // ATMO
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__ask_EVAL; // ?EVAL
+extern const unsigned short int pp_CTCOLOR; // CTCOLOR
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_ILOCAL; // ILOCAL
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp_PORTDAT; // PORTDAT
+extern const unsigned short int pp__ask_PORT; // ?PORT
+extern const unsigned short int pp_WTOP; // WTOP
+extern const unsigned short int pp_WBOTTOM; // WBOTTOM
+extern const unsigned short int pp_WRIGHT; // WRIGHT
+extern const unsigned short int pp_WLEFT; // WLEFT
+extern const unsigned short int pp_WLINES; // WLINES
+extern const unsigned short int pp__dash_AIN; // -AIN
+extern const unsigned short int pp__i_LAUNCH; // 'LAUNCH
+extern const unsigned short int pp_FQUIT; // FQUIT
+extern const unsigned short int pp_SCROLL_dash_; // SCROLL-
+extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
+extern const unsigned short int pp_LINE_dash_CO; // LINE-CO
+extern const unsigned short int pp_STARDAT; // STARDAT
+extern const unsigned short int pp__i_EXTERN; // 'EXTERN
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp__10_star_CARG; // 10*CARG
+extern const unsigned short int pp_STIME; // STIME
+extern const unsigned short int pp_ETIME; // ETIME
+extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
+extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
+extern const unsigned short int pp_LSCAN; // LSCAN
+extern const unsigned short int pp_CTTOP; // CTTOP
+void COUNT(); // COUNT
+void M_star_(); // M*
+void MAX(); // MAX
+void MIN(); // MIN
+void D_st_(); // D<
+void PAD(); // PAD
+void BEEP(); // BEEP
+void D_dot_R(); // D.R
+void MS(); // MS
+void NOP(); // NOP
+void D0_eq_(); // D0=
+void D_eq_(); // D=
+void WITHIN(); // WITHIN
+void BIT(); // BIT
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void _1_dot_5_ex__2(); // 1.5!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void CMOVE_2(); // CMOVE_2
+void FILL_2(); // FILL_2
+void _ex_INST_dash_S(); // !INST-S
+void _at_INST_dash_C(); // @INST-C
+void _at_INST_dash_S(); // @INST-S
+void CDROP(); // CDROP
+void CI_i_(); // CI'
+void _ask_CHILD(); // ?CHILD
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void _ask_FIRST(); // ?FIRST
+void _gt_C_plus_(); // >C+
+void INEXT(); // INEXT
+void IPREV(); // IPREV
+void IFIRST(); // IFIRST
+void _st_INSERT(); // <INSERT
+void _gt_INSERT(); // >INSERT
+void IFIND(); // IFIND
+void IDELETE(); // IDELETE
+void ICREATE(); // ICREATE
+void _star_CREATE(); // *CREATE
+void SAVE_dash_OV(); // SAVE-OV
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void _gt_1FONT(); // >1FONT
+void _at_ID(); // @ID
+void _at_IL(); // @IL
+void _at_IH(); // @IH
+void POINT_gt_I(); // POINT>I
+void _ask_ICONS_dash__2(); // ?ICONS-_2
+void POS_dot_(); // POS.
+void WINDOW(); // WINDOW
+void POLY_dash_WI(); // POLY-WI
+void _gt_SSCT(); // >SSCT
+void CTPOS_dot_(); // CTPOS.
+void CTERASE(); // CTERASE
+void _at_CRS(); // @CRS
+void _ex_CRS(); // !CRS
+void _do__dot_(); // $.
+void POLY_dash_ER(); // POLY-ER
+void WLINE_dash_U(); // WLINE-U
+void WLINE_dash_D(); // WLINE-D
+void GCR(); // GCR
+void CTCR(); // CTCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _ask_QUIT(); // ?QUIT
+void Y_slash_N(); // Y/N
+void CURSORS(); // CURSORS
+void SUBROOT(); // SUBROOT
+void U_gt__do_(); // U>$
+void TEXT_gt_PA(); // TEXT>PA
+void BOX_gt_LIS(); // BOX>LIS
+void GET_dash_BOX(); // GET-BOX
+void MAKE_dash_SC(); // MAKE-SC
+void DELETE_dash_(); // DELETE-
+void _gt_BOX(); // >BOX
+void ITEM_gt_PA(); // ITEM>PA
+void HUFF_gt_(); // HUFF>
+void _dot_SORD(); // .SORD
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void _gt_(); // >
+void _st_(); // <
+void _0_gt_(); // 0>
+void _1_dot_5_at_(); // 1.5@
+void CI(); // CI
+void BLT(); // BLT
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xe436 = 0xe436; // UNK_0xe436 size: 2
@@ -463,7 +620,8 @@ void UNK_0xe607() // UNK_0xe607
 
 void UNK_0xe617() // UNK_0xe617
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(cc__3); // 3
   Push(a); // R>
@@ -508,13 +666,14 @@ void UNK_0xe64b() // UNK_0xe64b
 
 void UNK_0xe657() // UNK_0xe657
 {
+  signed short int i, imax;
   CTINIT(); // CTINIT
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(pp_WLEFT); // WLEFT
@@ -542,6 +701,7 @@ void UNK_0xe657() // UNK_0xe657
 
 void UNK_0xe683() // UNK_0xe683
 {
+  unsigned short int a;
   Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -555,7 +715,7 @@ void UNK_0xe683() // UNK_0xe683
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label1;
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _gt_1FONT(); // >1FONT
   Push(0x002b);
   Push(cc__3); // 3
@@ -722,8 +882,9 @@ void UNK_0xe758() // UNK_0xe758
 
 void UNK_0xe79c() // UNK_0xe79c
 {
+  unsigned short int a;
   _at_INST_dash_S(); // @INST-S
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -857,6 +1018,7 @@ void UNK_0xe848() // UNK_0xe848
 
 void UNK_0xe872() // UNK_0xe872
 {
+  signed short int i, imax;
   Push(pp_UNK_0xe436); // UNK_0xe436
   _099(); // 099
   Push(pp_CONTEXT_3); // CONTEXT_3
@@ -867,8 +1029,8 @@ void UNK_0xe872() // UNK_0xe872
   UNK_0xe832(); // UNK_0xe832
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -922,11 +1084,13 @@ void UNK_0xe8a4() // UNK_0xe8a4
 
 void UNK_0xe8d0() // UNK_0xe8d0
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   UNK_0xe832(); // UNK_0xe832
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -966,8 +1130,8 @@ void UNK_0xe8d0() // UNK_0xe8d0
   Push(cc__3); // 3
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(0x65f3); // IFIELD(UNK_0xe4ec)
@@ -1042,6 +1206,8 @@ void UNK_0xe960() // UNK_0xe960
 
 void UNK_0xe98c() // UNK_0xe98c
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1057,8 +1223,8 @@ void UNK_0xe98c() // UNK_0xe98c
   UNK_0xe832(); // UNK_0xe832
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -1070,8 +1236,8 @@ void UNK_0xe98c() // UNK_0xe98c
   Push(cc__4); // 4
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(0x65f3); // IFIELD(UNK_0xe4ec)
@@ -1155,7 +1321,8 @@ void UNK_0xe98c() // UNK_0xe98c
 
 void UNK_0xea52() // UNK_0xea52
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  a = Pop(); // >R
   Push(pp_WTOP); // WTOP
   Push(Read16(Pop())); // @
   Push(cc__6); // 6

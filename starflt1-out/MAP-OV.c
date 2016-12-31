@@ -57,6 +57,119 @@
 //      (/STARMAP)  codep:0x224c parp:0xed6f size:0x0000 C-string:'_ro__slash_STARMAP_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__star_MAPSCALE; // *MAPSCALE
+extern const unsigned short int cc_NULL_dash_IC; // NULL-IC
+extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
+extern const unsigned short int pp_CLIP_dash_TA; // CLIP-TA
+extern const unsigned short int pp__dash_END; // -END
+extern const unsigned short int pp__n_IN; // #IN
+extern const unsigned short int pp_VIN; // VIN
+extern const unsigned short int pp_VOUT; // VOUT
+extern const unsigned short int pp_OIN; // OIN
+extern const unsigned short int pp_OOUT; // OOUT
+extern const unsigned short int pp__ask_OPEN; // ?OPEN
+extern const unsigned short int pp_ILEFT; // ILEFT
+extern const unsigned short int pp_IRIGHT; // IRIGHT
+extern const unsigned short int pp_IBELOW; // IBELOW
+extern const unsigned short int pp_IABOVE; // IABOVE
+extern const unsigned short int pp_LOCRADIUS; // LOCRADIUS
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_LBLT; // LBLT
+extern const unsigned short int pp_WBLT; // WBLT
+extern const unsigned short int pp_ABLT; // ABLT
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp_XLLDEST; // XLLDEST
+extern const unsigned short int pp_YLLDEST; // YLLDEST
+extern const unsigned short int pp_ILOCAL; // ILOCAL
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern const unsigned short int pp_BVIS; // BVIS
+extern const unsigned short int pp_LVIS; // LVIS
+extern const unsigned short int pp_XABS; // XABS
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_NAV_dash_TIME; // NAV-TIME
+extern const unsigned short int pp_KEYTIME; // KEYTIME
+extern const unsigned short int pp_LKEYTIM; // LKEYTIM
+extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
+extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
+extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
+extern const unsigned short int pp_LSCAN; // LSCAN
+void _star__slash_(); // */
+void ABS(); // ABS
+void MAX(); // MAX
+void MIN(); // MIN
+void D_st_(); // D<
+void _n_(); // #
+void _n__gt_(); // #>
+void _st__n_(); // <#
+void _dot_R(); // .R
+void MS(); // MS
+void _2OVER(); // 2OVER
+void D_dash_(); // D-
+void D0_eq_(); // D0=
+void D_gt_(); // D>
+void SQRT(); // SQRT
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void _2_ex_(); // 2!
+void D_ex_(); // D!
+void ON_3(); // ON_3
+void OFF(); // OFF
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _ex_COLOR(); // !COLOR
+void DCLIPSET(); // DCLIPSET
+void _gt_DISPLAY(); // >DISPLAY
+void DARK(); // DARK
+void BLT(); // BLT
+void _gt_1FONT(); // >1FONT
+void FILLCIRC(); // FILLCIRC
+void _ex_VISWINDOW(); // !VISWINDOW
+void _gt_1ICONFONT(); // >1ICONFONT
+void _at_IX(); // @IX
+void _at_IY(); // @IY
+void _at_ID(); // @ID
+void _at_IC(); // @IC
+void _at_IL(); // @IL
+void _at_IH(); // @IH
+void POINT_gt_ICON(); // POINT>ICON
+void _ask_ICONSI(); // ?ICONSI
+void ORGLIST(); // ORGLIST
+void POS_dot_(); // POS.
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void CLICK(); // CLICK
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void _dot_TTY(); // .TTY
+void _ask_MRC(); // ?MRC
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void D_plus_(); // D+
+void TIME(); // TIME
+void _at_DS(); // @DS
+void CLIPPER(); // CLIPPER
+void LPLOT(); // LPLOT
+void LLINE(); // LLINE
+void _ask_INVIS(); // ?INVIS
+void WLD_gt_SCR(); // WLD>SCR
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xe536 = 0xe536; // UNK_0xe536 size: 2
@@ -319,6 +432,10 @@ void UNK_0xe673() // UNK_0xe673
 
 void UNK_0xe687() // UNK_0xe687
 {
+  signed short int i, imax;
+  signed short int j, jmax;
+  signed short int k, kmax;
+  signed short int l, lmax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(0x0011);
@@ -329,8 +446,8 @@ void UNK_0xe687() // UNK_0xe687
   Push(0x00c7);
   Push(0x002b);
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0012);
@@ -339,13 +456,14 @@ void UNK_0xe687() // UNK_0xe687
   Push(0x000a);
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff2
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff2
 
   Push(0x00c7);
   Push(0x0053);
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(0x0013);
@@ -354,7 +472,8 @@ void UNK_0xe687() // UNK_0xe687
   Push(0x0032);
   int step = Pop();
   j += step;
-  } while(((step>=0) && (j<jmax)) || ((step<0) && (j>jmax))); // (+LOOP) 0xfff2
+  if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
+  } while(1); // (+LOOP) 0xfff2
 
   Push(0x009c);
   Push(0x001d);
@@ -364,8 +483,8 @@ void UNK_0xe687() // UNK_0xe687
   Push(0x009c);
   Push(0x0019);
 
-  signed short int k = Pop();
-  signed short int kmax = Pop();
+  k = Pop();
+  kmax = Pop();
   do // (DO)
   {
   Push(k); // I
@@ -376,13 +495,14 @@ void UNK_0xe687() // UNK_0xe687
   Push(cc__5); // 5
   int step = Pop();
   k += step;
-  } while(((step>=0) && (k<kmax)) || ((step<0) && (k>kmax))); // (+LOOP) 0xffee
+  if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
+  } while(1); // (+LOOP) 0xffee
 
   Push(0x009c);
   Push(0x002d);
 
-  signed short int l = Pop();
-  signed short int lmax = Pop();
+  l = Pop();
+  lmax = Pop();
   do // (DO)
   {
   Push(l); // I
@@ -391,7 +511,8 @@ void UNK_0xe687() // UNK_0xe687
   Push(0x0019);
   int step = Pop();
   l += step;
-  } while(((step>=0) && (l<lmax)) || ((step<0) && (l>lmax))); // (+LOOP) 0xfff2
+  if (((step>=0) && (l>=lmax)) || ((step<0) && (l<=lmax))) break;
+  } while(1); // (+LOOP) 0xfff2
 
 }
 
@@ -581,14 +702,15 @@ void UNK_0xe85c() // UNK_0xe85c
 
 void UNK_0xe8a8() // UNK_0xe8a8
 {
+  signed short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x009c);
   Push(0x0028);
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -611,11 +733,12 @@ void UNK_0xe8a8() // UNK_0xe8a8
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x0019);
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffcc
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffcc
 
 }
 
@@ -626,14 +749,15 @@ void UNK_0xe8a8() // UNK_0xe8a8
 
 void UNK_0xe8f2() // UNK_0xe8f2
 {
+  signed short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x00c7);
   Push(0x0055);
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(cc__4); // 4
@@ -660,11 +784,12 @@ void UNK_0xe8f2() // UNK_0xe8f2
   _n_(); // #
   _n_(); // #
   _n__gt_(); // #>
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x0032);
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffc6
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffc6
 
 }
 
@@ -675,6 +800,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
 
 void UNK_0xe942() // UNK_0xe942
 {
+  signed short int i, imax;
   Push(cc_NULL_dash_IC); // NULL-IC
   Push(cc_SYS_dash_ICO); // SYS-ICO
   Push(pp_ILOCAL); // ILOCAL
@@ -684,8 +810,8 @@ void UNK_0xe942() // UNK_0xe942
   if (Pop() == 0) return;
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_ICON(); // POINT>ICON
@@ -716,6 +842,7 @@ void UNK_0xe942() // UNK_0xe942
 
 void UNK_0xe97e() // UNK_0xe97e
 {
+  signed short int i, imax;
   Push(cc_SYS_dash_ICO); // SYS-ICO
   Push(Pop()-1); // 1-
   Push(cc_SYS_dash_ICO); // SYS-ICO
@@ -727,8 +854,8 @@ void UNK_0xe97e() // UNK_0xe97e
   if (Pop() == 0) return;
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_ICON(); // POINT>ICON
@@ -767,6 +894,7 @@ void UNK_0xe9b6() // UNK_0xe9b6
 
 void UNK_0xe9be() // UNK_0xe9be
 {
+  unsigned short int a;
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   D_st_(); // D<
@@ -815,7 +943,7 @@ void UNK_0xe9be() // UNK_0xe9be
   if (Pop() == 0) goto label2;
   Push(pp_VIN); // VIN
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
@@ -867,14 +995,15 @@ void UNK_0xea4c() // UNK_0xea4c
 
 void UNK_0xea70() // UNK_0xea70
 {
+  signed short int i, imax;
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1289,11 +1418,12 @@ void UNK_0xecc0() // UNK_0xecc0
 
 void UNK_0xed4c() // UNK_0xed4c
 {
+  signed short int i, imax;
   Push(cc__7); // 7
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   UNK_0xe818(); // UNK_0xe818

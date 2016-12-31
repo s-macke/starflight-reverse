@@ -58,6 +58,27 @@
 //        +ICONBOX  codep:0x224c parp:0xf528 size:0x0000 C-string:'_plus_ICONBOX'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
+extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
+extern const unsigned short int cc_FLUX_dash_IC; // FLUX-IC
+extern const unsigned short int cc_DEAD_dash_IC; // DEAD-IC
+extern const unsigned short int cc_DEFAULT; // DEFAULT
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+void UNRAVEL(); // UNRAVEL
+void _at_INST_dash_CLASS(); // @INST-CLASS
+void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void ICLOSE(); // ICLOSE
+void IOPEN(); // IOPEN
+void ALL(); // ALL
+void _plus_ICON(); // +ICON
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 

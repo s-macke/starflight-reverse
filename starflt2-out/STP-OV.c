@@ -54,6 +54,76 @@
 //              2N  codep:0x224c parp:0xf4f8 size:0x0000 C-string:'_2N'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc__star_MAPSCA; // *MAPSCA
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
+extern const unsigned short int pp__ask_AUTO; // ?AUTO
+extern const unsigned short int pp_GLOBALS; // GLOBALS
+extern const unsigned short int pp__star_GLOBAL; // *GLOBAL
+extern const unsigned short int pp__dash_AIN; // -AIN
+extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
+extern const unsigned short int pp_XABS; // XABS
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp__ask_SECURE; // ?SECURE
+extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+extern const unsigned short int pp_LSCAN; // LSCAN
+void COUNT(); // COUNT
+void BEEP(); // BEEP
+void _ask_(); // ?
+void UNRAVEL(); // UNRAVEL
+void D0_eq_(); // D0=
+void _gt_FLAG(); // >FLAG
+void RRND(); // RRND
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void IOPEN(); // IOPEN
+void SAVE_dash_OV(); // SAVE-OV
+void MODULE(); // MODULE
+void _at_ID(); // @ID
+void _at_IC(); // @IC
+void _at_IL(); // @IL
+void _at_IH(); // @IH
+void INIT_dash_IC(); // INIT-IC
+void POINT_gt_I(); // POINT>I
+void _ask_ICONS_dash__1(); // ?ICONS-_1
+void _plus_ICONBO(); // +ICONBO
+void CTERASE(); // CTERASE
+void CLICK(); // CLICK
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _do__ex_(); // $!
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _dash_(); // -
+void D_plus_(); // D+
+void U_star_(); // U*
+void _st_(); // <
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+void _1_dot_5_at_(); // 1.5@
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf08b = 0xf08b; // UNK_0xf08b size: 2
@@ -355,10 +425,11 @@ void UNK_0xf1e6() // UNK_0xf1e6
 
 void UNK_0xf1f8() // UNK_0xf1f8
 {
+  unsigned short int a;
   Push(0); // 0
   Push(cc__3); // 3
   RRND(); // RRND
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(Read16(a)); // R@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -536,6 +607,7 @@ void UNK_0xf2db() // UNK_0xf2db
 
 void UNK_0xf2f5() // UNK_0xf2f5
 {
+  signed short int i, imax;
   INIT_dash_IC(); // INIT-IC
   Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
@@ -548,8 +620,8 @@ void UNK_0xf2f5() // UNK_0xf2f5
   _099(); // 099
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   POINT_gt_I(); // POINT>I
@@ -640,7 +712,7 @@ void UNK_0xf38f() // UNK_0xf38f
   Push(pp_UNK_0xf180); // UNK_0xf180
   Push(Read16(Pop())); // @
   COLORS(); // COLORS case
-  Exec(CR); // call of word 0x26ee '(CR)'
+  Exec("CR"); // call of word 0x26ee '(CR)'
   PRINT("AND ", 4); // (.")
   Push(pp_UNK_0xf184); // UNK_0xf184
   Push(Read16(Pop())); // @
@@ -655,6 +727,7 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3bc() // UNK_0xf3bc
 {
+  signed short int i, imax;
   Push(0x6a6a); Push(0x0002);
   UNK_0xf166(); // UNK_0xf166
   _dot_TTY(); // .TTY
@@ -671,8 +744,8 @@ void UNK_0xf3bc() // UNK_0xf3bc
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   SWAP(); // SWAP

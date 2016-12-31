@@ -154,6 +154,146 @@
 //      START.GAME  codep:0x224c parp:0xf538 size:0x0000 C-string:'START_dot_GAME'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc_BL; // BL
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_MUSSEG; // MUSSEG
+extern const unsigned short int pp__n_CACHE; // #CACHE
+extern const unsigned short int pp_DTA; // DTA
+extern const unsigned short int pp_SYSK; // SYSK
+extern const unsigned short int pp_OVA; // OVA
+extern const unsigned short int pp_ASKMOUNT; // ASKMOUNT
+extern const unsigned short int pp_XBUF_dash_SE; // XBUF-SE
+extern const unsigned short int pp_TIMESTAMP; // TIMESTAMP
+extern const unsigned short int pp_HBUF_dash_SEG; // HBUF-SEG
+extern const unsigned short int pp_DBUF_dash_SEG; // DBUF-SEG
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp_BUF_dash_SEG; // BUF-SEG
+extern const unsigned short int pp_MONITOR; // MONITOR
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern const unsigned short int pp_LFSEG; // LFSEG
+extern const unsigned short int pp_LKEY; // LKEY
+extern const unsigned short int pp__bo__n_CACHE_bc_; // [#CACHE]
+extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
+extern const unsigned short int pp__ask_EGA; // ?EGA
+extern const unsigned short int pp__3DSEG; // 3DSEG
+extern const unsigned short int pp_DERROR; // DERROR
+extern const unsigned short int pp__i_VERSIONERR; // 'VERSIONERR
+extern const unsigned short int pp__ask_TANDRG; // ?TANDRG
+void _ro_RESTORE_rc_(); // (RESTORE)
+void AUTO_dash_CACHE(); // AUTO-CACHE
+void _ro_SETUP_rc_(); // (SETUP)
+void MAX(); // MAX
+void UMIN(); // UMIN
+void PAD(); // PAD
+void BEEP(); // BEEP
+void SPACES(); // SPACES
+void MS(); // MS
+void UPDATE(); // UPDATE
+void UNMOUNT(); // UNMOUNT
+void EMITS(); // EMITS
+void EMPTY_dash_BUFFERS(); // EMPTY-BUFFERS
+void NOP(); // NOP
+void PICK(); // PICK
+void _2OVER(); // 2OVER
+void D_dash_(); // D-
+void D_gt_(); // D>
+void WITHIN(); // WITHIN
+void RECSIZE(); // RECSIZE
+void RELREC(); // RELREC
+void INIT(); // INIT
+void DOS_dash_DTA(); // DOS-DTA
+void READ_dash_RANDOM(); // READ-RANDOM
+void WRITE_dash_RANDOM(); // WRITE-RANDOM
+void KEY_2(); // KEY_2
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void _2_ex_(); // 2!
+void ON_3(); // ON_3
+void OFF(); // OFF
+void CMOVE(); // CMOVE
+void FILL_1(); // FILL_1
+void BLOCK_2(); // BLOCK_2
+void MOUNTA(); // MOUNTA
+void MOUNTB(); // MOUNTB
+void SET_dash_CURRENT(); // SET-CURRENT
+void SAVE_dash_BUFFERS(); // SAVE-BUFFERS
+void FLUSH_2(); // FLUSH_2
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void BLD_dash_DIS(); // BLD-DIS
+void BLD_dash_MV(); // BLD-MV
+void _gt_DISPLAY(); // >DISPLAY
+void _gt_HIDDEN(); // >HIDDEN
+void _gt_ALPHA(); // >ALPHA
+void _v_DISPLAY(); // |DISPLAY
+void _gt_LORES(); // >LORES
+void SCR_dash_RES(); // SCR-RES
+void DARK(); // DARK
+void BYE(); // BYE
+void LOAD_dash_CO(); // LOAD-CO
+void _gt_0FONT(); // >0FONT
+void _gt_2FONT(); // >2FONT
+void _gt_3FONT(); // >3FONT
+void POS_dot_(); // POS.
+void _dot_1LOGO(); // .1LOGO
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void SETDBUF(); // SETDBUF
+void CFIGARRAYS(); // CFIGARRAYS
+void PORTM(); // PORTM
+void _ro__ex_SET_rc_(); // (!SET)
+void _ro__ex_OLD_rc_(); // (!OLD)
+void _2_at_(); // 2@
+void P_ex_(); // P!
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void D_plus_(); // D+
+void U_slash_MOD(); // U/MOD
+void _gt_(); // >
+void U_st_(); // U<
+void BEEPOFF(); // BEEPOFF
+void TIME(); // TIME
+void L_at_(); // L@
+void L_ex_(); // L!
+void LC_at_(); // LC@
+void LC_ex_(); // LC!
+void LCMOVE(); // LCMOVE
+void _at_DS(); // @DS
+void _st__ex__gt_(); // <!>
+void C_gt_EGA(); // C>EGA
+void E_gt_CGA(); // E>CGA
+void LLINE(); // LLINE
+void L_at_PIXEL(); // L@PIXEL
+void PLOT(); // PLOT
+void SETCOLO(); // SETCOLO
+void PRMSAV(); // PRMSAV
+void PRMLOD(); // PRMLOD
+void RETSAV(); // RETSAV
+void RETJMP(); // RETJMP
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_RESUME = 0xde82; // RESUME size: 2
@@ -404,11 +544,12 @@ void UNK_0xe012() // UNK_0xe012
 
 void UNK_0xe026() // UNK_0xe026
 {
+  signed short int i, imax;
   Push(0x0010);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0010);
@@ -501,6 +642,7 @@ void UNK_0xe0ae() // UNK_0xe0ae
 
 void UNK_0xe0b6() // UNK_0xe0b6
 {
+  unsigned short int a;
   Push(0x001c);
   _ro__ex_OLD_rc_(); // (!OLD)
   Push(Read16(regsp)); // DUP
@@ -514,7 +656,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
   UNK_0xe0ae(); // UNK_0xe0ae
   Push(0); // 0
   UNK_0xe0a6(); // UNK_0xe0a6
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(a); // I
   UNK_0xe09e(); // UNK_0xe09e
   Push(a); // R>
@@ -605,19 +747,21 @@ void SETDIS() // SETDIS
 
 void SCR_gt_CG() // SCR>CG
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(cc__dash_1); // -1
   Push(0x00c8);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0050);
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(Pop()+1); // 1+
@@ -814,7 +958,7 @@ void _n_XBLT() // #XBLT
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Push(Read16(Pop())); // @
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_YBLT); // YBLT
   _ex__3(); // !_3
   Push(pp_UNK_0xdf72); // UNK_0xdf72
@@ -844,7 +988,7 @@ void _dot_SUB() // .SUB
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Push(Read16(Pop())); // @
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -1178,7 +1322,7 @@ void UNK_0xe5e9() // UNK_0xe5e9
   _gt_0FONT(); // >0FONT
   KEY_2(); // KEY_2
   Pop(); // DROP
-  Exec(PAGE); // call of word 0x274c '(PAGE)'
+  Exec("PAGE"); // call of word 0x274c '(PAGE)'
   BYE(); // BYE
 }
 
@@ -1412,6 +1556,8 @@ void UNK_0xe8b0() // UNK_0xe8b0
 
 void SCR_gt_EG() // SCR>EG
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(pp_XORMODE); // XORMODE
@@ -1422,15 +1568,15 @@ void SCR_gt_EG() // SCR>EG
   Push(0x00c8);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x0050);
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   Push(Pop()+1); // 1+
@@ -1594,10 +1740,11 @@ void ONCACHE() // ONCACHE
 
 void CHECKSUM() // CHECKSUM
 {
+  signed short int i, imax;
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(Read16(regsp)); // DUP
@@ -1687,6 +1834,7 @@ void UNK_0xea11() // UNK_0xea11
 
 void PUSHVECT() // PUSHVECT
 {
+  signed short int i, imax;
   Push(pp_BUF_dash_SEG); // BUF-SEG
   Push(Read16(Pop())); // @
   Push(pp_DBUF_dash_SEG); // DBUF-SEG
@@ -1701,8 +1849,8 @@ void PUSHVECT() // PUSHVECT
   Push(cc_UNK_0xdfae); // UNK_0xdfae
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1720,12 +1868,13 @@ void PUSHVECT() // PUSHVECT
 
 void POPVECT() // POPVECT
 {
+  signed short int i, imax;
   Push(0); // 0
   Push(cc_UNK_0xdfae); // UNK_0xdfae
   Push(Pop()-1); // 1-
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -1734,7 +1883,8 @@ void POPVECT() // POPVECT
   Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff6
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff6
 
   UNK_0xea11(); // UNK_0xea11
   Push(pp__3DSEG); // 3DSEG
@@ -1922,7 +2072,9 @@ void UNK_0xeb21() // UNK_0xeb21
 
 void _v_DISK() // |DISK
 {
-  unsigned short int a = Pop(); // >R
+  unsigned short int a;
+  signed short int i, imax;
+  a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(0); // 0
   Push(0x0400);
@@ -1936,8 +2088,8 @@ void _v_DISK() // |DISK
   if (Pop() == 0) goto label2;
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(cc__4); // 4
@@ -2274,11 +2426,12 @@ void UNK_0xed92() // UNK_0xed92
 
 void UNK_0xeda2() // UNK_0xeda2
 {
+  signed short int i, imax;
   Push(cc_UNK_0xdfaa); // UNK_0xdfaa
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -2297,12 +2450,13 @@ void UNK_0xeda2() // UNK_0xeda2
 
 void UNK_0xedb8() // UNK_0xedb8
 {
+  signed short int i, imax;
   Push(0); // 0
   Push(cc_UNK_0xdfaa); // UNK_0xdfaa
   Push(Pop()-1); // 1-
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -2311,7 +2465,8 @@ void UNK_0xedb8() // UNK_0xedb8
   Push(cc__dash_1); // -1
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xfff6
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xfff6
 
   CFIGARRAYS(); // CFIGARRAYS
   _ro_SETUP_rc_(); // (SETUP)
@@ -2413,12 +2568,12 @@ void SAVEGAME() // SAVEGAME
 void UNK_0xee63() // UNK_0xee63
 {
   Push(0x00c9);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bb);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2429,16 +2584,16 @@ void UNK_0xee63() // UNK_0xee63
 void UNK_0xee7b() // UNK_0xee7b
 {
   Push(0x00ba);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(tt_ROW); // ROW
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   Push(tt_COL); // COL
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(0x00ba);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2449,12 +2604,12 @@ void UNK_0xee7b() // UNK_0xee7b
 void UNK_0xee99() // UNK_0xee99
 {
   Push(0x00c8);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(0x00cd);
   SWAP(); // SWAP
   EMITS(); // EMITS
   Push(0x00bc);
-  Exec(EMIT); // call of word 0x2731 '(EMIT)'
+  Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
 
@@ -2464,24 +2619,27 @@ void UNK_0xee99() // UNK_0xee99
 
 void BOX() // BOX
 {
-  unsigned short int a = Pop(); // >R
-  unsigned short int b = Pop(); // >R
+  unsigned short int a;
+  unsigned short int b;
+  signed short int i, imax;
+  a = Pop(); // >R
+  b = Pop(); // >R
   _2DUP(); // 2DUP
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(a); // I'
   UNK_0xee63(); // UNK_0xee63
   Push(b); // R>
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   _2DUP(); // 2DUP
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(a); // J
   UNK_0xee7b(); // UNK_0xee7b
   i++;
@@ -2490,7 +2648,7 @@ void BOX() // BOX
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(a); // R>
   UNK_0xee99(); // UNK_0xee99
 }
@@ -2506,15 +2664,15 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
   label1:
   Push(0x0016);
   Push(0x0028);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(2); // 2
   SPACES(); // SPACES
   Push(0x0016);
   Push(0x0028);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PAD(); // PAD
   Push(2); // 2
-  Exec(EXPECT); // call of word 0x1d3e '(EXPECT)'
+  Exec("EXPECT"); // call of word 0x1d3e '(EXPECT)'
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0031);
@@ -2557,7 +2715,7 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
 void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
 {
   _gt_ALPHA(); // >ALPHA
-  Exec(PAGE); // call of word 0x274c '(PAGE)'
+  Exec("PAGE"); // call of word 0x274c '(PAGE)'
   Push(cc__6); // 6
   Push(0x0015);
   Push(0x000b);
@@ -2565,31 +2723,31 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
   BOX(); // BOX
   Push(cc__8); // 8
   Push(0x001c);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("1. Black/white", 14); // (.")
   Push(0x000a);
   Push(0x001c);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("2. RGB", 6); // (.")
   Push(0x000c);
   Push(0x001c);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("3. Color TV or Composite", 24); // (.")
   Push(0x000e);
   Push(0x001c);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("4. Hercules (monochrome)", 24); // (.")
   Push(0x0010);
   Push(0x001c);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("5. EGA", 6); // (.")
   Push(0x0013);
   Push(0x0016);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("S E L E C T   D I S P L A Y   M O D E", 37); // (.")
   Push(0x0014);
   Push(0x001a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("A N D  P R E S S  R E T U R N", 29); // (.")
   SET_dot_DISPLAY_dot_VECTORS(); // SET.DISPLAY.VECTORS
   Push(pp_MONITOR); // MONITOR
@@ -2609,21 +2767,23 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
 
 void UNK_0xf069() // UNK_0xf069
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@
   Push(0x0064);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(0x03e8);
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   NOP(); // NOP
@@ -2654,7 +2814,7 @@ void POLICE_dot_WARNING() // POLICE.WARNING
 {
   _gt_ALPHA(); // >ALPHA
   _gt_0FONT(); // >0FONT
-  Exec(PAGE); // call of word 0x274c '(PAGE)'
+  Exec("PAGE"); // call of word 0x274c '(PAGE)'
   Push(1); // 1
   Push(cc__7); // 7
   Push(0x0012);
@@ -2662,64 +2822,64 @@ void POLICE_dot_WARNING() // POLICE.WARNING
   BOX(); // BOX
   Push(2); // 2
   Push(0x000f);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("I N T E R S T E L   P O L I C E   W A R N I N G", 47); // (.")
   Push(cc__4); // 4
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("As provided by the Galactic Treaty of 4410, this  computer", 58); // (.")
   Push(cc__5); // 5
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("software  product  is  hereby  declared  the  Intellectual", 58); // (.")
   Push(cc__6); // 6
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Property of the Human authors, Binary Systems.  All rights", 58); // (.")
   Push(cc__7); // 7
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("are  henceforth  reserved  in  space and time.", 46); // (.")
   Push(cc__9); // 9
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Provision for the protection of  Intellectual Property  is", 58); // (.")
   Push(0x000a);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("covered under Section 8.9.1A-F of the  Intangible Property", 58); // (.")
   Push(0x000b);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Act of 4506,  ratified by all beings except the Gazurtoid.", 58); // (.")
   Push(0x000d);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Included  in   Section  8.9.1A-C   is  the  provision  for", 58); // (.")
   Push(0x000e);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Interstel Corporate Police to enforce the Law.", 46); // (.")
   Push(0x0010);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("WARNING:  Any  being  caught with an unauthorized  copy or", 58); // (.")
   Push(0x0011);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("version  of  this  Software  Product  will  be punished by", 58); // (.")
   Push(0x0012);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("Interstel Corporate Police.  Punishment  may  include  the", 58); // (.")
   Push(0x0013);
   Push(0x000a);
-  Exec(POSITION); // call of word 0x2767 '(POSITION)'
+  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("destruction of the offending being.", 35); // (.")
   UNK_0xf069(); // UNK_0xf069
   Push(0x9c40); Push(0x0000);
   UNK_0xe61d(); // UNK_0xe61d
-  Exec(PAGE); // call of word 0x274c '(PAGE)'
+  Exec("PAGE"); // call of word 0x274c '(PAGE)'
   SET_dot_COLORS(); // SET.COLORS
   _gt_LORES(); // >LORES
   DARK(); // DARK

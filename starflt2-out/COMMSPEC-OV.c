@@ -56,6 +56,89 @@
 //         (XCOMM)  codep:0x224c parp:0xf53d size:0x0000 C-string:'_ro_XCOMM_rc_'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__9; // 9
+extern const unsigned short int cc_TRUE; // TRUE
+extern const unsigned short int cc_MPS; // MPS
+extern const unsigned short int pp__at__co_0_star_1_sc_; // @,0*1;
+extern const unsigned short int pp_CTCOLOR; // CTCOLOR
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
+extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
+extern const unsigned short int pp_FTRIG; // FTRIG
+extern const unsigned short int pp__ask_5_c__ro_; // ?5:(
+extern const unsigned short int pp_TERMINA; // TERMINA
+extern const unsigned short int pp_TIRED_dash_T; // TIRED-T
+extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
+extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+extern const unsigned short int pp__ro_AORIGI; // (AORIGI
+extern const unsigned short int pp_LSCAN; // LSCAN
+void COUNT(); // COUNT
+void MAX(); // MAX
+void MIN(); // MIN
+void MS(); // MS
+void UPDATE(); // UPDATE
+void NOP(); // NOP
+void D_gt_(); // D>
+void _3_star_(); // 3*
+void _gt_FLAG(); // >FLAG
+void I_gt_C(); // I>C
+void C_ex__2(); // C!_2
+void _ex__2(); // !_2
+void _plus__ex__2(); // +!_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void CMOVE_2(); // CMOVE_2
+void _at_RECORD(); // @RECORD
+void _at_INST_dash_S(); // @INST-S
+void _eq_SPECIE(); // =SPECIE
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _star_CLOSE(); // *CLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void INEXT(); // INEXT
+void IPREV(); // IPREV
+void SAVE_dash_BU(); // SAVE-BU
+void IFIND(); // IFIND
+void MODULE(); // MODULE
+void _ask_CGA(); // ?CGA
+void _ex_COLOR(); // !COLOR
+void _dash_ICON(); // -ICON
+void BEEPON_2(); // BEEPON_2
+void WUP(); // WUP
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _dot_ON(); // .ON
+void INIT_dash_BU(); // INIT-BU
+void _i_KEY(); // 'KEY
+void XYSCAN(); // XYSCAN
+void _ask_TRIG(); // ?TRIG
+void _dot_BTN_dash_TE(); // .BTN-TE
+void NEW_dash_BUT(); // NEW-BUT
+void _do__ex_(); // $!
+void _dot_SORD(); // .SORD
+void _2_at_(); // 2@
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void SWAP(); // SWAP
+void D_plus_(); // D+
+void _st_(); // <
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void TIME(); // TIME
+void _at_EXECUTE(); // @EXECUTE
+void CI(); // CI
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xe63e = 0xe63e; // UNK_0xe63e size: 2
@@ -138,6 +221,8 @@ void UNK_0xe58a() // UNK_0xe58a
 
 void UNK_0xe59e() // UNK_0xe59e
 {
+  signed short int i, imax;
+  signed short int j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -152,8 +237,8 @@ void UNK_0xe59e() // UNK_0xe59e
   MIN(); // MIN
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -163,8 +248,8 @@ void UNK_0xe59e() // UNK_0xe59e
   Push(Pop() * Pop()); // *
   Push(0); // 0
 
-  signed short int j = Pop();
-  signed short int jmax = Pop();
+  j = Pop();
+  jmax = Pop();
   do // (DO)
   {
   NOP(); // NOP
@@ -595,6 +680,7 @@ void NPCREW() // NPCREW
 
 void UNK_0xee17() // UNK_0xee17
 {
+  signed short int i, imax;
   Push(cc_TRUE); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -604,8 +690,8 @@ void UNK_0xee17() // UNK_0xee17
   Push(cc__6); // 6
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -642,6 +728,8 @@ void UNK_0xee17() // UNK_0xee17
 
 void UNK_0xf190() // UNK_0xf190
 {
+  signed short int i, imax;
+  unsigned short int a;
   Push2Words("NULL");
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -651,8 +739,8 @@ void UNK_0xf190() // UNK_0xf190
   Push(0x0012);
   Push(0); // 0
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -663,7 +751,7 @@ void UNK_0xf190() // UNK_0xf190
   Push(cc__6); // 6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Pop(); Pop();// 2DROP
   CI(); // CI
   Push(a); // R>
@@ -674,7 +762,8 @@ void UNK_0xf190() // UNK_0xf190
   Push(cc__3); // 3
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffde
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffde
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -859,6 +948,7 @@ void _n__gt_PRO() // #>PRO
 
 void UNK_0xf4ad() // UNK_0xf4ad
 {
+  signed short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xe63e); // UNK_0xe63e
@@ -869,8 +959,8 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -885,7 +975,8 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push(2); // 2
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffec
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffec
 
 }
 
@@ -949,7 +1040,7 @@ void UNK_0xf51d() // UNK_0xf51d
   Push(pp_OK_dash_TALK); // OK-TALK
   _2_at_(); // 2@
   D_gt_(); // D>
-  Exec(?TERMINAL); // call of word 0x25bc '(?TERMINAL)'
+  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
 }

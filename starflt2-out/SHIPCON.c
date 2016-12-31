@@ -23,6 +23,63 @@
 //          TOW-US  codep:0x224c parp:0xf4d7 size:0x0000 C-string:'TOW_dash_US'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__ask_CALLED; // ?CALLED
+extern const unsigned short int pp_FILE_n_; // FILE#
+extern const unsigned short int pp_RECORD_n_; // RECORD#
+extern const unsigned short int pp__dash_END; // -END
+extern const unsigned short int pp__n_VESS; // #VESS
+extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp__i_YANK; // 'YANK
+extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp_PAST; // PAST
+extern const unsigned short int pp_TOWFINE; // TOWFINE
+extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+extern const unsigned short int pp_LSCAN; // LSCAN
+void COUNT(); // COUNT
+void _star__slash_(); // */
+void ABS(); // ABS
+void MAX(); // MAX
+void BEEP(); // BEEP
+void MS(); // MS
+void D0_eq_(); // D0=
+void DMAX(); // DMAX
+void _ex__2(); // !_2
+void D_ex_(); // D!
+void ON_2(); // ON_2
+void _099(); // 099
+void SET_dash_CUR(); // SET-CUR
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void MODULE(); // MODULE
+void _gt_SSCT(); // >SSCT
+void _gt_TVCT(); // >TVCT
+void CTERASE(); // CTERASE
+void CTCR(); // CTCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _dot_ON(); // .ON
+void Y_slash_N(); // Y/N
+void _do__ex_(); // $!
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _slash_(); // /
+void _dash_(); // -
+void U_star_(); // U*
+void _st_(); // <
+void _0_gt_(); // 0>
+void _1_dot_5_at_(); // 1.5@
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 
@@ -113,6 +170,7 @@ void UNK_0xf3c8() // UNK_0xf3c8
 
 void UNK_0xf3f6() // UNK_0xf3f6
 {
+  unsigned short int a;
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
@@ -135,7 +193,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
   Push(0x0118);
   _dash_(); // -
   ABS(); // ABS
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(0x0248);
   _dash_(); // -
   ABS(); // ABS
@@ -218,7 +276,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   CTERASE(); // CTERASE
   Push(0x52f5); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
@@ -257,7 +315,7 @@ void TOW_dash_US() // TOW-US
   CTCR(); // CTCR
   Push(0x5373); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
   UNK_0xf47a(); // UNK_0xf47a
   UNK_0xf3c8(); // UNK_0xf3c8
@@ -301,7 +359,7 @@ void TOW_dash_US() // TOW-US
   CTERASE(); // CTERASE
   Push(0x538e); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 
   label4:
   SetColor("BLACK");

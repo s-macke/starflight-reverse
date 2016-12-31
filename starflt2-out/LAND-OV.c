@@ -30,6 +30,55 @@
 //         ?LAUNCH  codep:0x224c parp:0xf532 size:0x0000 C-string:'_ask_LAUNCH'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc__star_MAPSCA; // *MAPSCA
+extern const unsigned short int pp__ask_FUEL_dash_D; // ?FUEL-D
+extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp_GWF; // GWF
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
+extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+void COUNT(); // COUNT
+void MAX(); // MAX
+void MIN(); // MIN
+void BEEP(); // BEEP
+void _dot_R(); // .R
+void _ask_(); // ?
+void KEY_2(); // KEY_2
+void SQRT(); // SQRT
+void _ex__2(); // !_2
+void ON_2(); // ON_2
+void _099(); // 099
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void BYE_2(); // BYE_2
+void CTERASE(); // CTERASE
+void _gt_SND(); // >SND
+void CTCR(); // CTCR
+void TTY_dash_SCR(); // TTY-SCR
+void CTINIT(); // CTINIT
+void _dot_TTY(); // .TTY
+void _i_KEY(); // 'KEY
+void OVER(); // OVER
+void SWAP(); // SWAP
+void _slash_(); // /
+void _dash_(); // -
+void _gt_(); // >
+void _st_(); // <
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf1b3 = 0xf1b3; // UNK_0xf1b3 size: 2
@@ -172,11 +221,11 @@ void UNK_0xf261() // UNK_0xf261
   UNK_0xf239(); // UNK_0xf239
 
   UNK_0x3f09("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
 
   UNK_0x3f09("EXTREME GRAVITY. THE ...");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x1388);
   Push(0x03e8);
   Push(1); // 1
@@ -213,7 +262,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
   _dot_TTY(); // .TTY
   Push(0x6615); // IFIELD(UNK_0xf1a6)
   COUNT(); // COUNT
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 
   UNK_0x3f09(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
@@ -287,7 +336,7 @@ void UNK_0xf3b2() // UNK_0xf3b2
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR SAFE LANDING");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 
@@ -327,7 +376,7 @@ void UNK_0xf40d() // UNK_0xf40d
   CTERASE(); // CTERASE
 
   UNK_0x3f09("INSUFFICIENT FUEL FOR RE-LAUNCHING");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 
@@ -357,11 +406,11 @@ void UNK_0xf452() // UNK_0xf452
   CTERASE(); // CTERASE
 
   UNK_0x3f09("THIS PLANET'S GRAVITY WILL CRUSH THE");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
 
   UNK_0x3f09("SHIP'S HULL.");
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
 

@@ -31,6 +31,50 @@
 //      ?CAN-LEAVE  codep:0x224c parp:0xf501 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int pp__ask_TV; // ?TV
+extern const unsigned short int pp__ask_EVAL; // ?EVAL
+extern const unsigned short int pp_YBLT; // YBLT
+extern const unsigned short int pp_XBLT; // XBLT
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp__10_star_END; // 10*END
+void M_star_(); // M*
+void MIN(); // MIN
+void NOP(); // NOP
+void KEY_2(); // KEY_2
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void D_ex_(); // D!
+void OFF(); // OFF
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIND(); // IFIND
+void IDELETE(); // IDELETE
+void _ex_COLOR(); // !COLOR
+void _gt_2FONT(); // >2FONT
+void _gt_3FONT(); // >3FONT
+void POS_dot_(); // POS.
+void _dot_1LOGO(); // .1LOGO
+void SFILL(); // SFILL
+void _ex_CRS(); // !CRS
+void CMESS(); // CMESS
+void OVER(); // OVER
+void _dash_(); // -
+void CI(); // CI
+void LLINE(); // LLINE
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xf327 = 0xf327; // UNK_0xf327 size: 2
@@ -359,6 +403,7 @@ void UNK_0xf40a() // UNK_0xf40a
 
 void UNK_0xf450() // UNK_0xf450
 {
+  signed short int i, imax;
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0); // 0
@@ -367,8 +412,8 @@ void UNK_0xf450() // UNK_0xf450
   Push(Pop() + Pop()); // +
   Push(0x6400); // IFIELD(UNK_0xf1bb)
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   Push(i); // I
@@ -383,7 +428,8 @@ void UNK_0xf450() // UNK_0xf450
   Push(cc__6); // 6
   int step = Pop();
   i += step;
-  } while(((step>=0) && (i<imax)) || ((step<0) && (i>imax))); // (+LOOP) 0xffea
+  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP) 0xffea
 
   ICLOSE(); // ICLOSE
 }

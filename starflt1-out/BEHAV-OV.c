@@ -158,6 +158,153 @@
 //              TV  codep:0x224c parp:0xf4e5 size:0x0000 C-string:'TV'
 
 // =================================
+// ============= EXTERN ============
+// =================================
+extern const unsigned short int cc__3; // 3
+extern const unsigned short int cc__4; // 4
+extern const unsigned short int cc__5; // 5
+extern const unsigned short int cc__6; // 6
+extern const unsigned short int cc__7; // 7
+extern const unsigned short int cc__8; // 8
+extern const unsigned short int cc__dash_1; // -1
+extern const unsigned short int cc_DEAD_dash_IC; // DEAD-IC
+extern const unsigned short int cc_FALSE; // FALSE
+extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp__i_INJURE; // 'INJURE
+extern const unsigned short int pp_ATMO; // ATMO
+extern const unsigned short int pp_LCOLOR; // LCOLOR
+extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
+extern const unsigned short int pp_COLOR; // COLOR
+extern const unsigned short int pp__ask_NEW; // ?NEW
+extern const unsigned short int pp_XORMODE; // XORMODE
+extern const unsigned short int pp_XCON; // XCON
+extern const unsigned short int pp_YCON; // YCON
+extern const unsigned short int pp_YVIS; // YVIS
+extern const unsigned short int pp_ILOCAL; // ILOCAL
+extern const unsigned short int pp__pe_EFF; // %EFF
+extern const unsigned short int pp_STORM; // STORM
+extern const unsigned short int pp__i_STORM; // 'STORM
+extern const unsigned short int pp_E_slash_M; // E/M
+extern const unsigned short int pp__n_STORM; // #STORM
+extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_NCRS; // NCRS
+extern const unsigned short int pp_WTOP; // WTOP
+extern const unsigned short int pp_WBOTTOM; // WBOTTOM
+extern const unsigned short int pp_WRIGHT; // WRIGHT
+extern const unsigned short int pp_WLEFT; // WLEFT
+extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_STARDATE; // STARDATE
+extern const unsigned short int pp_TIME_dash_PASSING; // TIME-PASSING
+extern const unsigned short int pp__i_DEATH; // 'DEATH
+extern const unsigned short int pp__i_ENDING; // 'ENDING
+extern const unsigned short int pp__i__dot_VITAL; // '.VITAL
+extern const unsigned short int pp__i__dot_DATE; // '.DATE
+extern const unsigned short int pp__i__dot_VEHICLE_dash_STATUS; // '.VEHICLE-STATUS
+extern const unsigned short int pp__i_VEHICLE_dash_CYCLE; // 'VEHICLE-CYCLE
+extern const unsigned short int pp__i_CREW_dash_C; // 'CREW-C
+extern const unsigned short int pp__i_EXTERNAL_dash_EVENTS; // 'EXTERNAL-EVENTS
+extern const unsigned short int pp__i_REPAIR; // 'REPAIR
+extern const unsigned short int pp__i_TREATM; // 'TREATM
+extern const unsigned short int pp_WEAPON_dash_; // WEAPON-
+extern const unsigned short int pp__h_CRIT; // ^CRIT
+extern const unsigned short int pp__ask_FLAT; // ?FLAT
+extern const unsigned short int pp_WEAPXY; // WEAPXY
+extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
+extern const unsigned short int pp_TVEHICLE; // TVEHICLE
+extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
+extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp_LASTAP; // LASTAP
+void _star__slash_(); // */
+void ABS(); // ABS
+void MAX(); // MAX
+void MOD(); // MOD
+void MIN(); // MIN
+void _dot_R(); // .R
+void MS(); // MS
+void NOP(); // NOP
+void _2OVER(); // 2OVER
+void D_eq_(); // D=
+void WITHIN(); // WITHIN
+void _3_star_(); // 3*
+void RRND(); // RRND
+void SQRT(); // SQRT
+void ACELLADDR(); // ACELLADDR
+void A_at_(); // A@
+void SETLARRAY(); // SETLARRAY
+void C_ex_(); // C!
+void _ex__3(); // !_3
+void _plus__ex_(); // +!
+void _2_ex_(); // 2!
+void ON_3(); // ON_3
+void OFF(); // OFF
+void CDROP(); // CDROP
+void ICLOSE(); // ICLOSE
+void _gt_C_plus_S(); // >C+S
+void _at__gt_C_plus_S(); // @>C+S
+void IDELETE(); // IDELETE
+void MODULE(); // MODULE
+void _ex_COLOR(); // !COLOR
+void VCLIPSET(); // VCLIPSET
+void DCLIPSET(); // DCLIPSET
+void _gt_MAINVIEW(); // >MAINVIEW
+void _gt_DISPLAY(); // >DISPLAY
+void _at_IX(); // @IX
+void _at_IY(); // @IY
+void _at_ID(); // @ID
+void _at_IL(); // @IL
+void _at_IH(); // @IH
+void _ex_IX(); // !IX
+void _ex_IY(); // !IY
+void _ex_ID(); // !ID
+void _ex_IC(); // !IC
+void _dot_BACKGR(); // .BACKGR
+void POINT_gt_ICON(); // POINT>ICON
+void _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+void _ask_ICON_eq_I(); // ?ICON=I
+void _dash_ICON(); // -ICON
+void _plus_ICON(); // +ICON
+void ORGLIST(); // ORGLIST
+void POS_dot_(); // POS.
+void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
+void CLICK(); // CLICK
+void BEEPON(); // BEEPON
+void _do__dot_(); // $.
+void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
+void WINDOW(); // WINDOW
+void _ask_TRIG(); // ?TRIG
+void SET_dash_CRS(); // SET-CRS
+void DISTRACT(); // DISTRACT
+void _dot_VIT(); // .VIT
+void _2_at_(); // 2@
+void _2DUP(); // 2DUP
+void _2SWAP(); // 2SWAP
+void OVER(); // OVER
+void ROT(); // ROT
+void SWAP(); // SWAP
+void _slash_(); // /
+void _slash_MOD(); // /MOD
+void _dash_(); // -
+void D_plus_(); // D+
+void U_star_(); // U*
+void _gt_(); // >
+void _st_(); // <
+void _0_st_(); // 0<
+void _0_gt_(); // 0>
+void TONE(); // TONE
+void BEEPOFF(); // BEEPOFF
+void _at_EXECUTE(); // @EXECUTE
+void ON_2(); // ON_2
+void OFF_2(); // OFF_2
+void _1_dot_5_at_(); // 1.5@
+void _st__ex__gt_(); // <!>
+void _st__plus__ex__gt_(); // <+!>
+void _st_D_ex__gt_(); // <D!>
+void CI(); // CI
+void V_gt_DISPLAY(); // V>DISPLAY
+void _ro_XYSCAN(); // (XYSCAN
+
+
+// =================================
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp__pe_STORM = 0xed38; // %STORM size: 10
@@ -383,6 +530,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
 
 void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
 {
+  unsigned short int a;
   UNK_0xe10c(); // UNK_0xe10c
   Push(pp_WEAPXY); // WEAPXY
   Push(Read16(Pop())); // @
@@ -390,7 +538,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
   ABS(); // ABS
   Push(cc__6); // 6
   _st_(); // <
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp_WEAPXY); // WEAPXY
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
@@ -555,6 +703,7 @@ void _ask_NOTICE_dash_PL() // ?NOTICE-PL
 
 void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
 {
+  unsigned short int a;
   UNK_0xe0ec(); // UNK_0xe0ec
   UNK_0xe10c(); // UNK_0xe10c
   ROT(); // ROT
@@ -562,7 +711,7 @@ void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
   ABS(); // ABS
   Push(2); // 2
   _st_(); // <
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _dash_(); // -
   ABS(); // ABS
   Push(2); // 2
@@ -899,6 +1048,7 @@ void UNK_0xe556() // UNK_0xe556
 
 void UNK_0xe564() // UNK_0xe564
 {
+  unsigned short int a;
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -920,7 +1070,7 @@ void UNK_0xe564() // UNK_0xe564
   _slash_(); // /
 
   label2:
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label3;
@@ -1606,7 +1756,7 @@ void UNK_0xe946() // UNK_0xe946
   Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(0x63fa); // IFIELD(PHR-CNT)
   Push(Read8(Pop())&0xFF); // C@
-  Exec(TYPE); // call of word 0x2690 '(TYPE)'
+  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   PRINT(" LIFEFORM ATTACKS ", 18); // (.")
@@ -1629,6 +1779,7 @@ void UNK_0xe946() // UNK_0xe946
 
 void UNK_0xe9b4() // UNK_0xe9b4
 {
+  signed short int i, imax;
   Push(0x640a); // IFIELD(BEHAVE)
   Push(Read8(Pop())&0xFF); // C@
   Push(1); // 1
@@ -1639,8 +1790,8 @@ void UNK_0xe9b4() // UNK_0xe9b4
   UNK_0xe86f(); // UNK_0xe86f
   Push(1); // 1
 
-  signed short int i = Pop();
-  signed short int imax = Pop();
+  i = Pop();
+  imax = Pop();
   do // (DO)
   {
   CI(); // CI
@@ -1763,7 +1914,7 @@ void UNK_0xebf8() // UNK_0xebf8
   if (Pop() == 0) goto label1;
   Push(0xeb07); // probable '?REDUCE-PO'
   DISTRACT(); // DISTRACT
-  Rule(?REDUCE-PO);
+  Rule("?REDUCE-PO");
   Pop(); // DROP
 
   label1:
@@ -1772,30 +1923,30 @@ void UNK_0xebf8() // UNK_0xebf8
   if (Pop() == 0) goto label2;
   Push(0xea3a); // probable 'AGGR-MODIF'
   DISTRACT(); // DISTRACT
-  Rule(AGGR-MODIF);
+  Rule("AGGR-MODIF");
   Pop(); // DROP
 
   label2:
   Push(0xea80); // probable 'VS.PLAYER'
   DISTRACT(); // DISTRACT
-  Rule(VS.PLAYER);
+  Rule("VS.PLAYER");
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   Push(0xeac4); // probable 'LIFE-SIM'
   DISTRACT(); // DISTRACT
-  Rule(LIFE-SIM);
+  Rule("LIFE-SIM");
   Pop(); // DROP
 
   label3:
   UNK_0xeb2b(); // UNK_0xeb2b
   Push(0xeb4a); // probable 'EFFECT-LIF'
   DISTRACT(); // DISTRACT
-  Rule(EFFECT-LIF);
+  Rule("EFFECT-LIF");
   Pop(); // DROP
   UNK_0xeb69(); // UNK_0xeb69
   Push(0xeb86); // probable 'GROUND>AIR'
   DISTRACT(); // DISTRACT
-  Rule(GROUND>AIR);
+  Rule("GROUND>AIR");
   Pop(); // DROP
 }
 
@@ -2729,9 +2880,10 @@ void _dot_WHERE() // .WHERE
 
 void _dot_STATS() // .STATS
 {
+  unsigned short int a;
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
-  unsigned short int a = Pop(); // >R
+  a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   _dot_WHERE(); // .WHERE
