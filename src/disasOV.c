@@ -153,10 +153,8 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     fprintf(fpc, "// store offset = 0x%04x\n", head.storeofs);
     fprintf(fpc, "// overlay size   = 0x%04x\n", head.ovlsize);
-    fprintf(fpc, "\n#include\"../emul/cpu.h\"\n");
-
-    fprintf(fpc, "#include\"../emul/starflt1.h\"\n\n");
-
+    fprintf(fpc, "\n#include\"../../emul/cpu.h\"\n");
+    fprintf(fpc, "#include\"../../emul/starflt1.h\"\n\n");
     InitParser();
 
     SortDictionary();

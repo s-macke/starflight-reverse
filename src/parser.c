@@ -620,6 +620,15 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             continue;
         }
 
+        if (strcmp(s, "MODULE") == 0)
+        {
+            if (Read16(Read16(ofs-4)) == CODELIT)
+            {
+                char *s = GetDictWord(Read16(ofs-2), currentovidx);
+            }
+            snprintf(pline[ofs].str, STRINGLEN, "  MODULE(); // MODULE\n");
+            ofs += 2;
+        } else
         if (strcmp(s, "DOTASKS") == 0)
         {
             int codep1 = Read16(Read16(ofs-4));

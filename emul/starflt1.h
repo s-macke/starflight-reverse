@@ -21,6 +21,7 @@ typedef void (*WordCallDef)();
     void ReadArray(unsigned short a, unsigned short b);
     void ABORT(char *s, int n);
     void CODE();
+    void MODULE();
 
     // for starfight2
     void UNK_0x3f09(char *s);
