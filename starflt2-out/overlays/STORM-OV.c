@@ -2,8 +2,8 @@
 // store offset = 0xf110
 // overlay size   = 0x0450
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -73,7 +73,6 @@ void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void _at__gt_C_plus_S(); // @>C+S
-void MODULE(); // MODULE
 void POS_dot_(); // POS.
 void POLY_dash_WI(); // POLY-WI
 void _gt_TVCT(); // >TVCT

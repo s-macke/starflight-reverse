@@ -2,8 +2,8 @@
 // store offset = 0xea30
 // overlay size   = 0x0b30
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -48,7 +48,6 @@ void _at_INST_dash_SPECIES(); // @INST-SPECIES
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void _at__gt_C_plus_S(); // @>C+S
-void MODULE(); // MODULE
 void TTY_dash_SCR(); // TTY-SCR
 void CTINIT(); // CTINIT
 void _dot_TTY(); // .TTY

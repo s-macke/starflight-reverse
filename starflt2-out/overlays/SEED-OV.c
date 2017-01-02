@@ -2,8 +2,8 @@
 // store offset = 0xec10
 // overlay size   = 0x0950
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================

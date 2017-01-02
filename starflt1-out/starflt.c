@@ -1647,7 +1647,18 @@
 //       CONDITION  codep:0x224c parp:0xb91d size:0x0063 C-string:'CONDITION'
 //           RULE:  codep:0x224c parp:0xb98a size:0x0095 C-string:'RULE_c_'
 //          IT-VOC  codep:0x1ab5 parp:0xba2a size:0x0014 C-string:'IT_dash_VOC'
-//           IT-OV  codep:0x83f8 parp:0xba48 size:0x0070 C-string:'IT_dash_OV'
+//           IT-OV  codep:0x83f8 parp:0xba48 size:0x0002 C-string:'IT_dash_OV'
+//      UNK_0xba4c  codep:0x224c parp:0xba4c size:0x0008 C-string:'UNK_0xba4c'
+//      UNK_0xba56  codep:0x224c parp:0xba56 size:0x0008 C-string:'UNK_0xba56'
+//      UNK_0xba60  codep:0x224c parp:0xba60 size:0x0008 C-string:'UNK_0xba60'
+//      UNK_0xba6a  codep:0x224c parp:0xba6a size:0x0008 C-string:'UNK_0xba6a'
+//      UNK_0xba74  codep:0x224c parp:0xba74 size:0x0008 C-string:'UNK_0xba74'
+//      UNK_0xba7e  codep:0x224c parp:0xba7e size:0x0008 C-string:'UNK_0xba7e'
+//      UNK_0xba88  codep:0x224c parp:0xba88 size:0x0008 C-string:'UNK_0xba88'
+//      UNK_0xba92  codep:0x224c parp:0xba92 size:0x0008 C-string:'UNK_0xba92'
+//      UNK_0xba9c  codep:0x224c parp:0xba9c size:0x0008 C-string:'UNK_0xba9c'
+//      UNK_0xbaa6  codep:0x224c parp:0xbaa6 size:0x0008 C-string:'UNK_0xbaa6'
+//      UNK_0xbab0  codep:0x224c parp:0xbab0 size:0x0008 C-string:'UNK_0xbab0'
 //       DATE$>ADR  codep:0x224c parp:0xbac4 size:0x0008 C-string:'DATE_do__gt_ADR'
 //         BOX>LIS  codep:0x224c parp:0xbad8 size:0x0008 C-string:'BOX_gt_LIS'
 //         GET-BOX  codep:0x224c parp:0xbaec size:0x0008 C-string:'GET_dash_BOX'
@@ -26919,7 +26930,139 @@ void RULE_c_() // RULE:
 // ================================================
 // 0xba3e: WORD 'IT-OV' codep=0x83f8 parp=0xba48
 // ================================================
-// 0xba48: db 0xb3 0x93 0x4c 0x22 0x46 0xba 0x13 0xf0 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xbe 0xf1 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0x10 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0x38 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0x7e 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xe8 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xff 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xe2 0xf3 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xa1 0xf3 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0xab 0xf2 0xa4 0x82 0x90 0x16 0x4c 0x22 0x46 0xba 0x2f 0xf1 0xa4 0x82 0x90 0x16 '  L"F       L"F       L"F       L"F 8     L"F ~     L"F       L"F       L"F       L"F       L"F       L"F /     '
+// 0xba48: db 0xb3 0x93 '  '
+
+// ================================================
+// 0xba4a: WORD 'UNK_0xba4c' codep=0x224c parp=0xba4c
+// ================================================
+
+void UNK_0xba4c() // UNK_0xba4c
+{
+  LoadOverlay("IT-OV");
+  DATE$>ADR(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba54: WORD 'UNK_0xba56' codep=0x224c parp=0xba56
+// ================================================
+
+void UNK_0xba56() // UNK_0xba56
+{
+  LoadOverlay("IT-OV");
+  BOX>LIST(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba5e: WORD 'UNK_0xba60' codep=0x224c parp=0xba60
+// ================================================
+
+void UNK_0xba60() // UNK_0xba60
+{
+  LoadOverlay("IT-OV");
+  GET-BOXES(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba68: WORD 'UNK_0xba6a' codep=0x224c parp=0xba6a
+// ================================================
+
+void UNK_0xba6a() // UNK_0xba6a
+{
+  LoadOverlay("IT-OV");
+  MAKE-SCROLL-BOX(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba72: WORD 'UNK_0xba74' codep=0x224c parp=0xba74
+// ================================================
+
+void UNK_0xba74() // UNK_0xba74
+{
+  LoadOverlay("IT-OV");
+  DELETE-SCROLL-BOX(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba7c: WORD 'UNK_0xba7e' codep=0x224c parp=0xba7e
+// ================================================
+
+void UNK_0xba7e() // UNK_0xba7e
+{
+  LoadOverlay("IT-OV");
+  BOX>TOCS(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba86: WORD 'UNK_0xba88' codep=0x224c parp=0xba88
+// ================================================
+
+void UNK_0xba88() // UNK_0xba88
+{
+  LoadOverlay("IT-OV");
+  >BOX(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba90: WORD 'UNK_0xba92' codep=0x224c parp=0xba92
+// ================================================
+
+void UNK_0xba92() // UNK_0xba92
+{
+  LoadOverlay("IT-OV");
+  BOX>(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xba9a: WORD 'UNK_0xba9c' codep=0x224c parp=0xba9c
+// ================================================
+
+void UNK_0xba9c() // UNK_0xba9c
+{
+  LoadOverlay("IT-OV");
+  (BOX>)(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xbaa4: WORD 'UNK_0xbaa6' codep=0x224c parp=0xbaa6
+// ================================================
+
+void UNK_0xbaa6() // UNK_0xbaa6
+{
+  LoadOverlay("IT-OV");
+  CLASS>BOX-SPEC(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
+
+// ================================================
+// 0xbaae: WORD 'UNK_0xbab0' codep=0x224c parp=0xbab0
+// ================================================
+
+void UNK_0xbab0() // UNK_0xbab0
+{
+  LoadOverlay("IT-OV");
+  ITEM>PAD(); // Overlay IT-OV
+  OV_dash_CANCEL(); // OV-CANCEL
+}
+
 
 // ================================================
 // 0xbab8: WORD 'DATE$>ADR' codep=0x224c parp=0xbac4

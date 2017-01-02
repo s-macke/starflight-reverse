@@ -2,8 +2,8 @@
 // store offset = 0xee80
 // overlay size   = 0x06e0
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -535,6 +535,7 @@ void UNK_0xf106() // UNK_0xf106
 // ================================================
 // 0xf11e: WORD 'DATE$>AD' codep=0x224c parp=0xf12b
 // ================================================
+// entry
 
 void DATE_do__gt_AD() // DATE$>AD
 {
@@ -687,6 +688,7 @@ void IDENT_dash_IT() // IDENT-IT
 // ================================================
 // 0xf213: WORD 'ITEM>PAD' codep=0x224c parp=0xf220
 // ================================================
+// entry
 
 void ITEM_gt_PAD() // ITEM>PAD
 {
@@ -813,6 +815,7 @@ void UNK_0xf28e() // UNK_0xf28e
 // ================================================
 // 0xf2e8: WORD 'BOX>LIST' codep=0x224c parp=0xf2f5
 // ================================================
+// entry
 
 void BOX_gt_LIST() // BOX>LIST
 {
@@ -851,6 +854,7 @@ void BOX_gt_LIST() // BOX>LIST
 // ================================================
 // 0xf331: WORD 'GET-BOXE' codep=0x224c parp=0xf33e
 // ================================================
+// entry
 
 void GET_dash_BOXE() // GET-BOXE
 {
@@ -871,6 +875,7 @@ void GET_dash_BOXE() // GET-BOXE
 // ================================================
 // 0xf354: WORD 'MAKE-SCR' codep=0x224c parp=0xf361
 // ================================================
+// entry
 
 void MAKE_dash_SCR() // MAKE-SCR
 {
@@ -899,6 +904,7 @@ void MAKE_dash_SCR() // MAKE-SCR
 // ================================================
 // 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a
 // ================================================
+// entry
 
 void DELETE_dash_S() // DELETE-S
 {
@@ -918,6 +924,7 @@ void DELETE_dash_S() // DELETE-S
 // ================================================
 // 0xf3b0: WORD 'CLASS>BO' codep=0x4b3b parp=0xf3bd
 // ================================================
+// entry
 
 void CLASS_gt_BO() // CLASS>BO
 {
@@ -965,6 +972,7 @@ void UNK_0xf3db() // UNK_0xf3db
 // ================================================
 // 0xf3e9: WORD 'BOX>TOCS' codep=0x224c parp=0xf3f6
 // ================================================
+// entry
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
@@ -1007,6 +1015,7 @@ void _ask_ELEMENT() // ?ELEMENT
 // ================================================
 // 0xf43d: WORD '>BOX' codep=0x224c parp=0xf446
 // ================================================
+// entry
 
 void _gt_BOX() // >BOX
 {
@@ -1086,6 +1095,7 @@ void _gt_BOX() // >BOX
 // ================================================
 // 0xf4c8: WORD '(BOX>)' codep=0x224c parp=0xf4d3
 // ================================================
+// entry
 
 void _ro_BOX_gt__rc_() // (BOX>)
 {
@@ -1121,6 +1131,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 // ================================================
 // 0xf509: WORD 'BOX>' codep=0x224c parp=0xf512
 // ================================================
+// entry
 
 void BOX_gt_() // BOX>
 {

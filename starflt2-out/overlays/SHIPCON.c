@@ -2,8 +2,8 @@
 // store offset = 0xf360
 // overlay size   = 0x0200
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -59,7 +59,6 @@ void _099(); // 099
 void SET_dash_CUR(); // SET-CUR
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void MODULE(); // MODULE
 void _gt_SSCT(); // >SSCT
 void _gt_TVCT(); // >TVCT
 void CTERASE(); // CTERASE

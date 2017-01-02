@@ -2,8 +2,8 @@
 // store offset = 0xdcf0
 // overlay size   = 0x1870
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -284,7 +284,6 @@ void FILE_st_(); // FILE<
 void SET_dash_CUR(); // SET-CUR
 void SAVE_dash_BU(); // SAVE-BU
 void FLUSH_2(); // FLUSH_2
-void MODULE(); // MODULE
 void PAD_v_16(); // PAD|16
 void PAD_gt_SEG(); // PAD>SEG
 void _at_MODE(); // @MODE

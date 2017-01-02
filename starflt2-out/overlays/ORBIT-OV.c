@@ -2,8 +2,8 @@
 // store offset = 0xdb20
 // overlay size   = 0x1a40
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -231,7 +231,6 @@ void _099(); // 099
 void FILL_2(); // FILL_2
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void MODULE(); // MODULE
 void _1PIX(); // 1PIX
 void _2PIX(); // 2PIX
 void NBCLR(); // NBCLR

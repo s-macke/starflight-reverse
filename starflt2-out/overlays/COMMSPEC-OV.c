@@ -2,8 +2,8 @@
 // store offset = 0xe540
 // overlay size   = 0x1020
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -107,7 +107,6 @@ void INEXT(); // INEXT
 void IPREV(); // IPREV
 void SAVE_dash_BU(); // SAVE-BU
 void IFIND(); // IFIND
-void MODULE(); // MODULE
 void _ask_CGA(); // ?CGA
 void _ex_COLOR(); // !COLOR
 void _dash_ICON(); // -ICON

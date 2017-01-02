@@ -2,8 +2,8 @@
 // store offset = 0xedd0
 // overlay size   = 0x0790
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -456,6 +456,7 @@ void UNK_0xefe9() // UNK_0xefe9
 // ================================================
 // 0xf007: WORD 'DATE$>ADR' codep=0x224c parp=0xf015
 // ================================================
+// entry
 
 void DATE_do__gt_ADR() // DATE$>ADR
 {
@@ -635,6 +636,7 @@ void IDENT_dash_ITEM_do_() // IDENT-ITEM$
 // ================================================
 // 0xf124: WORD 'ITEM>PAD' codep=0x224c parp=0xf131
 // ================================================
+// entry
 
 void ITEM_gt_PAD() // ITEM>PAD
 {
@@ -708,6 +710,7 @@ void UNK_0xf157() // UNK_0xf157
 // ================================================
 // 0xf1b3: WORD 'BOX>LIST' codep=0x224c parp=0xf1c0
 // ================================================
+// entry
 
 void BOX_gt_LIST() // BOX>LIST
 {
@@ -749,6 +752,7 @@ void BOX_gt_LIST() // BOX>LIST
 // ================================================
 // 0xf204: WORD 'GET-BOXES' codep=0x224c parp=0xf212
 // ================================================
+// entry
 
 void GET_dash_BOXES() // GET-BOXES
 {
@@ -768,6 +772,7 @@ void GET_dash_BOXES() // GET-BOXES
 // ================================================
 // 0xf226: WORD 'MAKE-SCROLL-BOX' codep=0x224c parp=0xf23a
 // ================================================
+// entry
 
 void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 {
@@ -798,6 +803,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 // ================================================
 // 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280
 // ================================================
+// entry
 
 void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 {
@@ -819,6 +825,7 @@ void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 // ================================================
 // 0xf29a: WORD 'CLASS>BOX-SPEC' codep=0x4a4f parp=0xf2ad
 // ================================================
+// entry
 
 void CLASS_gt_BOX_dash_SPEC() // CLASS>BOX-SPEC
 {
@@ -869,6 +876,7 @@ void UNK_0xf2cf() // UNK_0xf2cf
 // ================================================
 // 0xf2dd: WORD 'BOX>TOCS' codep=0x224c parp=0xf2ea
 // ================================================
+// entry
 
 void BOX_gt_TOCS() // BOX>TOCS
 {
@@ -883,6 +891,7 @@ void BOX_gt_TOCS() // BOX>TOCS
 // ================================================
 // 0xf2f8: WORD '>BOX' codep=0x224c parp=0xf301
 // ================================================
+// entry
 
 void _gt_BOX() // >BOX
 {
@@ -972,6 +981,7 @@ void _ask_ELEMENT() // ?ELEMENT
 // ================================================
 // 0xf398: WORD '(BOX>)' codep=0x224c parp=0xf3a3
 // ================================================
+// entry
 
 void _ro_BOX_gt__rc_() // (BOX>)
 {
@@ -1007,6 +1017,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 // ================================================
 // 0xf3db: WORD 'BOX>' codep=0x224c parp=0xf3e4
 // ================================================
+// entry
 
 void BOX_gt_() // BOX>
 {

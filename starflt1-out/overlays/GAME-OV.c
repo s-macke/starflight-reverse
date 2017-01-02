@@ -2,8 +2,8 @@
 // store offset = 0xde40
 // overlay size   = 0x1720
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -235,7 +235,6 @@ void MOUNTB(); // MOUNTB
 void SET_dash_CURRENT(); // SET-CURRENT
 void SAVE_dash_BUFFERS(); // SAVE-BUFFERS
 void FLUSH_2(); // FLUSH_2
-void MODULE(); // MODULE
 void _ex_COLOR(); // !COLOR
 void BLD_dash_DIS(); // BLD-DIS
 void BLD_dash_MV(); // BLD-MV

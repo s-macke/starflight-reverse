@@ -2,8 +2,8 @@
 // store offset = 0xe930
 // overlay size   = 0x0c30
 
-#include"../emul/cpu.h"
-#include"../emul/starflt1.h"
+#include"../../emul/cpu.h"
+#include"../../emul/starflt1.h"
 
 
 // =================================
@@ -160,7 +160,6 @@ void _gt_C_plus_S(); // >C+S
 void IOPEN(); // IOPEN
 void _ask_FIRST(); // ?FIRST
 void INEXT(); // INEXT
-void MODULE(); // MODULE
 void _ex_COLOR(); // !COLOR
 void _gt_DISPLAY(); // >DISPLAY
 void _gt_HIDDEN(); // >HIDDEN
