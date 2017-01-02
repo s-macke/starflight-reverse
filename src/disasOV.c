@@ -325,7 +325,7 @@ int main()
         //reset memory
         LoadSTARFLT();
 
-        sprintf(filename, OUTDIR"/%s.c", overlays[i].name);
+        sprintf(filename, OUTDIR"/overlays/%s.c", overlays[i].name);
         printf("Generate %s\n", filename);
         fpc = fopen(filename, "w");
         if (fpc == NULL)
@@ -333,7 +333,7 @@ int main()
             fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
             exit(1);
         }
-        sprintf(filename, OUTDIR"/%s.h", overlays[i].name);
+        sprintf(filename, OUTDIR"/overlays/%s.h", overlays[i].name);
         fph = fopen(filename, "w");
         if (fph == NULL)
         {
