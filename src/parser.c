@@ -203,7 +203,8 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     }
     if (e->codep == CODERULE)
     {
-        snprintf(ret, STRINGLEN, "  Rule(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "  %s(); // %s rule\n", Forth2CString(s), s);
+        if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODEEXEC)
@@ -390,6 +391,7 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
 }
 
 // TODO: Analysis of EXECUTE-RULE and EXPERT
+// Execute ruls uses a kind of cache which can be reset with the function DISTRACT
 void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     int i = 0;
@@ -399,7 +401,16 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     unsigned char RULECNT = Read8(d->parp+2);
     unsigned short RULEARRp = d->parp+3;
     unsigned short CONDARRp = RULEARRp + 2*RULEIM;
+
+    // following array has size of CONDLIM
+    // flag array, seems to act as a cache for the function results
+    // Set by the function DISTRACT
     unsigned short CFLGARRp = CONDARRp + 2*CONDLIM;
+
+    pline[d->parp+0].done = 1;
+    pline[d->parp+1].done = 1;
+    pline[d->parp+2].done = 1;
+    snprintf(pline[d->parp+0].str, STRINGLEN, "\nvoid %s() // %s rule\n{\n  int b;\n\n", Forth2CString(GetWordName(d)), GetWordName(d));
 
     /*
     0xeab7: WORD 'LIFE-SIM' codep=0xb869 parp=0xeac4
@@ -409,16 +420,19 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 
     0xeac7  0xd2 0xea  RULEARRp
 
-    0xeac9  0x88 0xe3
+    0xeac9  0x88 0xe3  CONDARRp
     0xeacb  0x82 0xe4
     0xeacd  0x08 0xe3
 
-    0xeacf  0xe9 0x5b 0xae
+    0xeacf  0xe9 0x5b 0xae  CFLGARRp
 
     0xead2  0x03
     0xead3  0xd0 0xe6
-    0xead5  0x80 0x01 0x82
+    0xead5  0x80
+            0x01
+            0x82
     */
+
     /*
     0xeaf8: WORD '?REDUCE-PO' codep=0xb869 parp=0xeb07
     0xeb07  0x03
@@ -430,19 +444,23 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 
             0x52 0x52
 
-    0xeb10  0xa5 0xe2
+    0xeb10  0xa5 0xe2  CONDARRp
             0x2e 0xe4
             0xee 0xe2
             0x38 0xe4
             0x31 0x38
 
     0xeb1a  0x34 0x30 0x3b 0xac 0x3b
+
     0xeb1f  0x02
             0x3e 0xe7
-            0x80 0x81
+            0x80
+            0x81
+
     0xeb24  0x02
             0x79 0xe7
-            0x82 0x83
+            0x82
+            0x83
 
     */
 
@@ -451,40 +469,61 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     for(i=0; i<RULECNT; i++)
     {
         unsigned short rulep = Read16(RULEARRp + i*2);
+        pline[RULEARRp + i*2+0].done = 1;
+        pline[RULEARRp + i*2+1].done = 1;
         unsigned char n = Read8(rulep + 0);
         unsigned short p = Read16(rulep + 1);
-        GetDictEntry(p, currentovidx);
+        pline[rulep+0].done = 1;
+        pline[rulep+1].done = 1;
+        pline[rulep+2].done = 1;
+
+        DICTENTRY *e = GetDictEntry(p, currentovidx);
+        if (e == NULL)
+        {
+            fprintf(stderr, "Error: No invalid dict entry allowed here");
+            exit(1);
+        }
+        char ifthen[STRINGLEN*2];
+        char func[STRINGLEN*2];
+
+        PutEasyMacro(e->parp, e, func, e->ovidx);
+        if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n  %s  }\n\n", func);
+        else sprintf(ifthen, "  if (b)\n  {\n  %s  }\n}\n\n", func);
+
+        char try[8192];
+        try[0] = 0;
+
         for(j=0; j<n; j++)
         {
             unsigned char x = Read8(rulep + 3 + j)&0x7F;
-            p = CFLGARRp + x;
+            unsigned char flag = Read8(rulep + 3 + j)&0x80;
+            pline[rulep + 3 + j].done = 1;
 
-            if (Read8(p) != 0xFF)
+            pline[CFLGARRp + x].done = 1;
+            //if (Read8(CFLGARRp + x) != 0xFF) //look in cache 0xFF is "UNKNOWN"
+
+            p = CONDARRp + x*2;
+            pline[p+0].done = 1;
+            pline[p+1].done = 1;
+            DICTENTRY *e = GetDictEntry(Read16(p), currentovidx);
+            if (e == NULL)
             {
-                p = CONDARRp + x*2;
-                //DICTENTRY *e = GetDictEntry(Read16(p), currentovidx);
-                //if (e == NULL) continue;
-                /*
-                int dofs = PutEasyMacro(p, e, ret, e->ovidx);
-                if (dofs != 2) {
-                    fprintf(stderr, "Error: no additional data is allowed for this word");
-                    exit(1);
-                }
-                */
-
+                fprintf(stderr, "Error: No invalid dict entry allowed here");
+                exit(1);
             }
+            func[0] = 0;
+            int dofs = PutEasyMacro(p, e, func, e->ovidx);
+            if (dofs != 2) {
+                fprintf(stderr, "Error: no additional data is allowed for this word");
+                exit(1);
+            }
+            strcat(try, func);
+            // TODO, might be the exchanged
+            if (flag) strcat(try, "  b = b && Pop();\n"); else strcat(try, "  b = b && !Pop();\n");
         }
+        pline[RULEARRp + i*2].str = malloc(strlen(try)+STRINGLEN);
+        sprintf(pline[RULEARRp + i*2].str, "  b = 1;\n%s%s", try, ifthen);
     }
-
-    char ret[STRINGLEN];
-    for(i=0; i<CONDLIM; i++)
-    {
-        DICTENTRY *e = GetDictEntry(Read16(CONDARRp + i*2), currentovidx);
-        //if (e == NULL) continue;
-        //int dofs = PutEasyMacro(CONDARRp + i*2, e, ret, e->ovidx);
-        //snprintf(pline[d->parp+i+1].str, STRINGLEN, "%s", ret);
-    }
-
 }
 
 
@@ -1114,6 +1153,11 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].initvarstr);
+            dbmode = 0;
+        }
+        if (pline[i].done)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             dbmode = 0;
         }
         if (!pline[i].done)
