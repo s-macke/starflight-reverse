@@ -220,6 +220,13 @@ void _st__ex__gt_(); // <!>
 void CI(); // CI
 void BLT(); // BLT
 void WLD_gt_SCR(); // WLD>SCR
+void _10_ex_TIME(); // 10!TIME
+void _20_ex_TIME(); // 20!TIME
+void _30_ex_TIME(); // 30!TIME
+void _5_ex_TIME(); // 5!TIME
+void _7_ex_TIME(); // 7!TIME
+void _13_ex_TIME(); // 13!TIME
+void _3_ex_TIME(); // 3!TIME
 
 
 // =================================
@@ -1427,7 +1434,96 @@ void UNK_0xf1a9() // UNK_0xf1a9
 // ================================================
 // 0xf1d1: WORD '(TIMER)' codep=0xaccc parp=0xf1dd
 // ================================================
-// 0xf1dd: db 0x07 0x03 0x07 0xf7 0xf1 0xfd 0xf1 0x03 0xf2 0x09 0xf2 0x0f 0xf2 0x15 0xf2 0x1b 0xf2 0x16 0xf1 0x22 0xf1 0x2e 0xf1 0xca 0xf1 0xe7 0x03 0xa6 0xf1 0x80 0x81 0x82 0x03 0x81 0xf1 0x80 0x81 0x02 0x03 0x9a 0xf1 0x00 0x81 0x82 0x03 0x8d 0xf1 0x80 0x01 0x82 0x03 0x5b 0xf1 0x80 0x01 0x02 0x03 0x68 0xf1 0x00 0x81 0x02 0x03 0x75 0xf1 0x00 0x01 0x82 '                   " .                             [     h     u    '
+
+void _ro_TIMER_rc_() // (TIMER) rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && Pop();
+  if (b)
+  {
+    _3_ex_TIME(); // 3!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && !Pop();
+  if (b)
+  {
+    _5_ex_TIME(); // 5!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && !Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && Pop();
+  if (b)
+  {
+    _13_ex_TIME(); // 13!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && !Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && Pop();
+  if (b)
+  {
+    _7_ex_TIME(); // 7!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && !Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && !Pop();
+  if (b)
+  {
+    _10_ex_TIME(); // 10!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && !Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && !Pop();
+  if (b)
+  {
+    _20_ex_TIME(); // 20!TIME
+  }
+
+  b = 1;
+  UNK_0xf116(); // UNK_0xf116
+  b = b && !Pop();
+  UNK_0xf122(); // UNK_0xf122
+  b = b && !Pop();
+  UNK_0xf12e(); // UNK_0xf12e
+  b = b && Pop();
+  if (b)
+  {
+    _30_ex_TIME(); // 30!TIME
+  }
+}
+
 
 // ================================================
 // 0xf221: WORD 'UNK_0xf223' codep=0x224c parp=0xf223
@@ -1437,7 +1533,7 @@ void UNK_0xf223() // UNK_0xf223
 {
   Push(0xf1dd); // probable '(TIMER)'
   DISTRAC(); // DISTRAC
-  Rule("(TIMER)");
+  _ro_TIMER_rc_(); // (TIMER) rule
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xf1a9(); // UNK_0xf1a9

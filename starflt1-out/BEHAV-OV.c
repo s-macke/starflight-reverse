@@ -1842,27 +1842,190 @@ void UNK_0xe9b4() // UNK_0xe9b4
 // ================================================
 // 0xea2b: WORD 'AGGR-MODIF' codep=0xb869 parp=0xea3a
 // ================================================
-// 0xea3a: db 0x03 0x09 0x03 0x5e 0xea 0x66 0xea 0x6c 0xea 0x0d 0xe2 0x32 0xe2 0x65 0xe2 0x73 0xe2 0x8c 0xe2 0xa5 0xe2 0xd5 0xe2 0xee 0xe2 0xae 0x0b 0xe7 0x0f 0x0a 0x4f 0xee 0xa0 0x20 0x0f 0x20 0x05 0x49 0xe6 0x80 0x81 0x82 0x03 0x84 0x03 0x70 0xe6 0x85 0x83 0x86 0x03 0x70 0xe6 0x87 0x83 0x86 '   ^ f l   2 e s              O      I       p     p    '
+
+void AGGR_dash_MODIF() // AGGR-MODIF rule
+{
+  int b;
+
+  b = 1;
+  _ask_PLAYER_dash_FI(); // ?PLAYER-FI
+  b = b && Pop();
+  _ask_ALIEN_dash_CLO(); // ?ALIEN-CLO
+  b = b && Pop();
+  _ask_ALIEN_dash_SMA(); // ?ALIEN-SMA
+  b = b && Pop();
+  UNK_0xe273(); // UNK_0xe273
+  b = b && !Pop();
+  _ask_RANDOM_dash_SC(); // ?RANDOM-SC
+  b = b && Pop();
+  if (b)
+  {
+    REDUCE_dash_AGG(); // REDUCE-AGG
+  }
+
+  b = 1;
+  _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
+  b = b && Pop();
+  UNK_0xe273(); // UNK_0xe273
+  b = b && Pop();
+  UNK_0xe2d5(); // UNK_0xe2d5
+  b = b && Pop();
+  if (b)
+  {
+    INCREASES_dash_(); // INCREASES-
+  }
+
+  b = 1;
+  _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
+  b = b && Pop();
+  UNK_0xe273(); // UNK_0xe273
+  b = b && Pop();
+  UNK_0xe2d5(); // UNK_0xe2d5
+  b = b && Pop();
+  if (b)
+  {
+    INCREASES_dash_(); // INCREASES-
+  }
+}
+
+// 0xea53: db 0xae 0x0b '  '
+// 0xea5d: db 0x20 ' '
 
 // ================================================
 // 0xea72: WORD 'VS.PLAYER' codep=0xb869 parp=0xea80
 // ================================================
-// 0xea80: db 0x03 0x07 0x03 0x9e 0xea 0xa7 0xea 0xaf 0xea 0x08 0xe3 0x88 0xe3 0x82 0xe4 0x1f 0xe3 0x48 0xe5 0x68 0xe3 0x56 0xe5 0xe9 0x5b 0xae 0x0b 0x25 0x10 0x50 0x06 0x8c 0xe6 0x80 0x81 0x02 0x83 0x84 0x05 0x05 0xb4 0xe9 0x81 0x02 0x83 0x84 0x85 0x05 0xa4 0xe6 0x80 0x83 0x81 0x02 0x86 '                 H h V  [  % P                         '
+
+void VS_dot_PLAYER() // VS.PLAYER rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xe308(); // UNK_0xe308
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  b = b && Pop();
+  UNK_0xe548(); // UNK_0xe548
+  b = b && Pop();
+  _ask_NEXT_dash_TO_dash_P(); // ?NEXT-TO-P
+  b = b && !Pop();
+  if (b)
+  {
+    UNK_0xe68c(); // UNK_0xe68c
+  }
+
+  b = 1;
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  b = b && Pop();
+  UNK_0xe548(); // UNK_0xe548
+  b = b && Pop();
+  _ask_NEXT_dash_TO_dash_P(); // ?NEXT-TO-P
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe9b4(); // UNK_0xe9b4
+  }
+
+  b = 1;
+  UNK_0xe308(); // UNK_0xe308
+  b = b && Pop();
+  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  UNK_0xe556(); // UNK_0xe556
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe6a4(); // UNK_0xe6a4
+  }
+}
+
 
 // ================================================
 // 0xeab7: WORD 'LIFE-SIM' codep=0xb869 parp=0xeac4
 // ================================================
-// 0xeac4: db 0x01 0x03 0x01 0xd2 0xea 0x88 0xe3 0x82 0xe4 0x08 0xe3 0xe9 0x5b 0xae 0x03 0xd0 0xe6 0x80 0x01 0x82 '            [       '
+
+void LIFE_dash_SIM() // LIFE-SIM rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  UNK_0xe308(); // UNK_0xe308
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe6d0(); // UNK_0xe6d0
+  }
+}
+
 
 // ================================================
 // 0xead8: WORD 'ERASE-LIFE' codep=0xb869 parp=0xeae7
 // ================================================
-// 0xeae7: db 0x02 0x02 0x01 0xf4 0xea 0x5b 0xae 0x1a 0xe4 0x0f 0xdd 0x5b 0xae 0x01 0x27 0xe7 0x80 '     [     [  '  '
+
+void ERASE_dash_LIFE() // ERASE-LIFE rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xe41a(); // UNK_0xe41a
+  b = b && Pop();
+  if (b)
+  {
+    ERASE_dash_LIFEFORM_dash_FROM_dash_ARRAY(); // ERASE-LIFEFORM-FROM-ARRAY
+  }
+}
+
+// 0xeaec: db 0x5b 0xae '[ '
+// 0xeaf0: db 0x0f 0xdd '  '
+// 0xeaf3: db 0xae ' '
 
 // ================================================
 // 0xeaf8: WORD '?REDUCE-PO' codep=0xb869 parp=0xeb07
 // ================================================
-// 0xeb07: db 0x03 0x05 0x02 0x1f 0xeb 0x24 0xeb 0x52 0x52 0xa5 0xe2 0x2e 0xe4 0xee 0xe2 0x38 0xe4 0x31 0x38 0x34 0x30 0x3b 0xac 0x3b 0x02 0x3e 0xe7 0x80 0x81 0x02 0x79 0xe7 0x82 0x83 '     $ RR  .   8 1840; ; >    y   '
+
+void _ask_REDUCE_dash_PO() // ?REDUCE-PO rule
+{
+  int b;
+
+  b = 1;
+  _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
+  b = b && Pop();
+  UNK_0xe42e(); // UNK_0xe42e
+  b = b && Pop();
+  if (b)
+  {
+    REDUCE_dash_HIT(); // REDUCE-HIT
+  }
+
+  b = 1;
+  _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
+  b = b && Pop();
+  UNK_0xe438(); // UNK_0xe438
+  b = b && Pop();
+  if (b)
+  {
+    REDUCE_dash_STU(); // REDUCE-STU
+  }
+}
+
+// 0xeb0e: db 0x52 0x52 'RR'
+// 0xeb18: db 0x31 0x38 '18'
+// 0xeb1e: db 0x3b ';'
 
 // ================================================
 // 0xeb29: WORD 'UNK_0xeb2b' codep=0x224c parp=0xeb2b
@@ -1882,7 +2045,32 @@ void UNK_0xeb2b() // UNK_0xeb2b
 // ================================================
 // 0xeb3b: WORD 'EFFECT-LIF' codep=0xb869 parp=0xeb4a
 // ================================================
-// 0xeb4a: db 0x02 0x04 0x02 0x5d 0xeb 0x62 0xeb 0x88 0xe4 0x88 0xe3 0x38 0xe4 0x82 0xe4 0x20 0x20 0x3a 0x20 0x02 0x1f 0xe8 0x80 0x81 0x02 0xc0 0xe7 0x02 0x03 '   ] b     8     :           '
+
+void EFFECT_dash_LIF() // EFFECT-LIF rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xe488(); // UNK_0xe488
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  if (b)
+  {
+    DIE(); // DIE
+  }
+
+  b = 1;
+  UNK_0xe438(); // UNK_0xe438
+  b = b && !Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  if (b)
+  {
+    UNK_0xe7c0(); // UNK_0xe7c0
+  }
+}
+
 
 // ================================================
 // 0xeb67: WORD 'UNK_0xeb69' codep=0x224c parp=0xeb69
@@ -1901,7 +2089,120 @@ void UNK_0xeb69() // UNK_0xeb69
 // ================================================
 // 0xeb77: WORD 'GROUND>AIR' codep=0xb869 parp=0xeb86
 // ================================================
-// 0xeb86: db 0x07 0x0e 0x07 0xc1 0xeb 0xca 0xeb 0xd3 0xeb 0xdd 0xeb 0xe3 0xeb 0xe9 0xeb 0xf0 0xeb 0x92 0xe4 0xa2 0xe4 0xac 0xe4 0x88 0xe3 0x82 0xe4 0xd9 0xe4 0xbc 0xe4 0xba 0xe3 0xf2 0xe4 0x16 0xe5 0x08 0xe5 0xf8 0xe4 0x0e 0xe4 0xb6 0x4f 0x17 0x85 0x5d 0x17 0x31 0x38 0x34 0x33 0x11 0x4c 0x20 0x0f 0x20 0x0f 0x06 0xef 0xe7 0x80 0x81 0x82 0x83 0x04 0x85 0x06 0xfd 0xe7 0x80 0x81 0x86 0x83 0x04 0x87 0x07 0xfd 0xe7 0x80 0x81 0x86 0x07 0x88 0x83 0x04 0x03 0x0b 0xe8 0x03 0x01 0x89 0x03 0x0b 0xe8 0x84 0x01 0x89 0x04 0x0b 0xe8 0x01 0x8a 0x8b 0x89 0x03 0x0b 0xe8 0x01 0x8c 0x89 '                                            O  ] 1843 L                                                         '
+
+void GROUND_gt_AIR() // GROUND>AIR rule
+{
+  int b;
+
+  b = 1;
+  UNK_0xe492(); // UNK_0xe492
+  b = b && Pop();
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && Pop();
+  UNK_0xe4ac(); // UNK_0xe4ac
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  _ask_WANTS_dash_TO_dash_FLY(); // ?WANTS-TO-FLY
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe7ef(); // UNK_0xe7ef
+  }
+
+  b = 1;
+  UNK_0xe492(); // UNK_0xe492
+  b = b && Pop();
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && Pop();
+  UNK_0xe4bc(); // UNK_0xe4bc
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  UNK_0xe3ba(); // UNK_0xe3ba
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe7fd(); // UNK_0xe7fd
+  }
+
+  b = 1;
+  UNK_0xe492(); // UNK_0xe492
+  b = b && Pop();
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && Pop();
+  UNK_0xe4bc(); // UNK_0xe4bc
+  b = b && Pop();
+  UNK_0xe3ba(); // UNK_0xe3ba
+  b = b && !Pop();
+  _ask_WANTS_dash_TO_dash_FLOAT(); // ?WANTS-TO-FLOAT
+  b = b && Pop();
+  UNK_0xe388(); // UNK_0xe388
+  b = b && Pop();
+  _ask_STUNNED(); // ?STUNNED
+  b = b && !Pop();
+  if (b)
+  {
+    UNK_0xe7fd(); // UNK_0xe7fd
+  }
+
+  b = 1;
+  UNK_0xe388(); // UNK_0xe388
+  b = b && !Pop();
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && !Pop();
+  UNK_0xe516(); // UNK_0xe516
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe80b(); // UNK_0xe80b
+  }
+
+  b = 1;
+  _ask_STUNNED(); // ?STUNNED
+  b = b && Pop();
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && !Pop();
+  UNK_0xe516(); // UNK_0xe516
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe80b(); // UNK_0xe80b
+  }
+
+  b = 1;
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && !Pop();
+  UNK_0xe508(); // UNK_0xe508
+  b = b && Pop();
+  UNK_0xe4f8(); // UNK_0xe4f8
+  b = b && Pop();
+  UNK_0xe516(); // UNK_0xe516
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe80b(); // UNK_0xe80b
+  }
+
+  b = 1;
+  UNK_0xe4a2(); // UNK_0xe4a2
+  b = b && !Pop();
+  UNK_0xe40e(); // UNK_0xe40e
+  b = b && Pop();
+  UNK_0xe516(); // UNK_0xe516
+  b = b && Pop();
+  if (b)
+  {
+    UNK_0xe80b(); // UNK_0xe80b
+  }
+}
+
+// 0xebb1: db 0xb6 0x4f ' O'
+// 0xebc0: db 0x0f ' '
 
 // ================================================
 // 0xebf6: WORD 'UNK_0xebf8' codep=0x224c parp=0xebf8
@@ -1914,7 +2215,7 @@ void UNK_0xebf8() // UNK_0xebf8
   if (Pop() == 0) goto label1;
   Push(0xeb07); // probable '?REDUCE-PO'
   DISTRACT(); // DISTRACT
-  Rule("?REDUCE-PO");
+  _ask_REDUCE_dash_PO(); // ?REDUCE-PO rule
   Pop(); // DROP
 
   label1:
@@ -1923,30 +2224,30 @@ void UNK_0xebf8() // UNK_0xebf8
   if (Pop() == 0) goto label2;
   Push(0xea3a); // probable 'AGGR-MODIF'
   DISTRACT(); // DISTRACT
-  Rule("AGGR-MODIF");
+  AGGR_dash_MODIF(); // AGGR-MODIF rule
   Pop(); // DROP
 
   label2:
   Push(0xea80); // probable 'VS.PLAYER'
   DISTRACT(); // DISTRACT
-  Rule("VS.PLAYER");
+  VS_dot_PLAYER(); // VS.PLAYER rule
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label3;
   Push(0xeac4); // probable 'LIFE-SIM'
   DISTRACT(); // DISTRACT
-  Rule("LIFE-SIM");
+  LIFE_dash_SIM(); // LIFE-SIM rule
   Pop(); // DROP
 
   label3:
   UNK_0xeb2b(); // UNK_0xeb2b
   Push(0xeb4a); // probable 'EFFECT-LIF'
   DISTRACT(); // DISTRACT
-  Rule("EFFECT-LIF");
+  EFFECT_dash_LIF(); // EFFECT-LIF rule
   Pop(); // DROP
   UNK_0xeb69(); // UNK_0xeb69
   Push(0xeb86); // probable 'GROUND>AIR'
   DISTRACT(); // DISTRACT
-  Rule("GROUND>AIR");
+  GROUND_gt_AIR(); // GROUND>AIR rule
   Pop(); // DROP
 }
 
