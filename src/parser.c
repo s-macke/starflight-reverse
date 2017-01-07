@@ -867,6 +867,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
+            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = malloc(STRINGLEN*2);
             strcat(pline[d->parp-1].initvarstr, "  unsigned short int ");
             strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
             strcat(pline[d->parp-1].initvarstr, ";\n");
@@ -892,6 +893,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
+            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = malloc(STRINGLEN*2);
             strcat(pline[d->parp-1].initvarstr, "  signed short int ");
             strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
             strcat(pline[d->parp-1].initvarstr, ", ");
@@ -990,6 +992,7 @@ void InitParser()
     {
         pline[i].str = malloc(STRINGLEN);
         pline[i].str[0] = 0;
+        pline[i].initvarstr = NULL;
     }
     for(i=0; i<ndict; i++)
     {
@@ -1158,7 +1161,7 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
             fprintf(fp, "%s", pline[i].str);
             dbmode = 0;
         }
-        if (pline[i].initvarstr[0] != 0)
+        if (pline[i].initvarstr != NULL)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].initvarstr);

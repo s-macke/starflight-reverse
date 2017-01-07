@@ -6,7 +6,7 @@
 typedef struct
 {
     char *str;
-    char initvarstr[STRINGLEN*2];
+    char *initvarstr;
     int labelid; // != 0 is a label for a goto
     int done; // this line has been processed
 } LineDesc;
