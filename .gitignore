@@ -1,0 +1,9 @@
+*.o
+*.exe
+*.out
+*.lib
+*.a
+*.dll
+*.so
+*.so.*
+*.stackdump
