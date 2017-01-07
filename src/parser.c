@@ -7,6 +7,7 @@
 #include"extract.h"
 #include"utils.h"
 #include"../emul/cpu.h"
+#include"disasm/debugger.h"
 
 
 LineDesc pline[0x10000];
@@ -78,6 +79,67 @@ char* GetVariable(Variables *vars, int idx)
 
 // -----------------------------------------
 
+int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
+{
+    char buffer[0x80];
+    int i;
+    if (pline[offset].done) return 0;
+    //fprintf(stderr, "disasm start 0x%04x\n", offset);
+    while (size > 0)
+    {
+
+        //fprintf(stderr, "Disasm %04x\n", offset);
+        if ((offset < minaddr) || (offset >= maxaddr)) return 0;
+        if (offset > 0xFFFF)
+        {
+           fprintf(stderr, "Warning: outside of segment\n");
+           exit(1);
+        }
+
+        if (pline[offset].done) return 0;
+
+        buffer[0] = 0x0;
+        int currentoffset = offset;
+        int newoffset = disasm(0x0, (unsigned)offset, mem, buffer);
+        int len = newoffset-offset;
+        pline[currentoffset].isasm = TRUE;
+        for(i=0; i<len; i++)
+        {
+            pline[offset].done = TRUE;
+            size--;
+            offset++;
+        }
+
+        if (Read8(currentoffset) == 0xc3) return 0; // ret
+
+        if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump
+        {
+            unsigned short addr = (offset+(short int)((char)Read8(currentoffset+1)));
+            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr);
+        }
+
+        if (strcmp(buffer, "jmp    word ptr [bx]") == 0) // jmp
+        {
+            return 0;
+        }
+
+        if (Read8(currentoffset) == 0xe8) // 16 bit call
+        {
+            //fprintf(stderr, "call from 0x%04x\n", currentoffset);
+            unsigned short addr = (offset+(short int)Read16(currentoffset+1));
+            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr);
+            if (addr == 0x1649)
+            {
+                Variables vars = GetEmptyVariables();
+                ParsePartFunction(newoffset, 0x0, 0x10000, NULL, ovidx, vars);
+                return 0;
+            }
+        }
+    }
+    return 0;
+}
+
+// -----------------------------------------
 
 int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
 {
@@ -1040,152 +1102,13 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 */
 }
 
-void WriteExtern(FILE *fp, int ovidx)
+void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
 {
-    int i = 0;
-    int j = 0;
-
-    fprintf(fp, "\n// =================================\n");
-    fprintf(fp, "// ============= EXTERN ============\n");
-    fprintf(fp, "// =================================\n");
-
+    int i;
     for(i=0; i<ndict; i++)
     {
-        if (dict[i].codep != CODECONSTANT) continue;
-        if (!dict[i].doextern) continue;
-        fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = 0;
+        if ((dict[i].ovidx != ovidx) && (ovidx != -1)) continue;
+        //printf("disasm dict entry %i\n", i);
+        DisasmRange(dict[i].codep, 0x100000, ovidx, minaddr, maxaddr);
     }
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].codep != CODEPOINTER) continue;
-        if (!dict[i].doextern) continue;
-        fprintf(fp, "extern const unsigned short int pp_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = 0;
-    }
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].codep != CODEDI) continue;
-        if (!dict[i].doextern) continue;
-        fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = 0;
-    }
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].codep != CODECALL) continue;
-        if (!dict[i].doextern) continue;
-        fprintf(fp, "void %s(); // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = 0;
-    }
-    for(i=0; i<ndict; i++)
-    {
-        if (!dict[i].doextern) continue;
-        fprintf(fp, "void %s(); // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = 0;
-    }
-    fprintf(fp, "\n");
 }
-
-
-
-void WriteVariables(FILE *fp, int ovidx)
-{
-    int i = 0;
-    int j = 0;
-
-    fprintf(fp, "\n// =================================\n");
-    fprintf(fp, "// =========== VARIABLES ===========\n");
-    fprintf(fp, "// =================================\n");
-
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODEPOINTER) continue;
-        fprintf(fp, "const unsigned short int pp_%s = 0x%04x; // %s size: %i\n// {", 
-            Forth2CString(GetWordName(&dict[i])),
-            dict[i].parp,
-            GetWordName(&dict[i]),
-            dict[i].size
-        );
-        for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
-        fprintf(fp, "0x%02x}\n\n", Read8(dict[i].parp+j));
-    }
-    fprintf(fp, "\n");
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), dict[i].parp, GetWordName(&dict[i]));
-    }
-    fprintf(fp, "\n");
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp)+REGDI, GetWordName(&dict[i]));
-    }
-    fprintf(fp, "\n");
-    /*
-    for(i=startidx; i<endidx; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODELOADDATA) continue;
-        fprintf(fp, "const unsigned short int %s = { 0x%04x, 0x%04x, addr: 0x%04x } // struct to load data from directory\n",
-            dict[i].r,
-            Read16(dict[i].parp+0),
-            Read16(dict[i].parp+2),
-            Read16(dict[i].parp+4));
-    }
-    fprintf(fp, "\n");
-*/
-}
-
-void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
-{
-    int i = 0;
-
-    int dbmode = 0; // bool
-    char str[0x10000];
-    int nstr = 0;
-    for(i=minaddr; i<=maxaddr; i++)
-    {
-        if (pline[i].labelid)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "\n  label%i:\n", pline[i].labelid);
-            dbmode = 0;
-        }
-        if (pline[i].str[0] != 0)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].str);
-            dbmode = 0;
-        }
-        if (pline[i].initvarstr != NULL)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].initvarstr);
-            dbmode = 0;
-        }
-        if (pline[i].done)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            dbmode = 0;
-        }
-        if (!pline[i].done)
-        {
-            if (!dbmode) fprintf(fp, "// 0x%04x: db ", i);
-            dbmode = 1;
-            fprintf(fp, "0x%02x ", Read8(i));
-            str[nstr+0] = 0x20;
-            str[nstr+1] = 0x0;
-            nstr++;
-            if ((Read8(i) >= 0x20) && (Read8(i) < 128))
-            {
-                str[nstr-1] = Read8(i);
-            }
-        }
-    }
-    if (dbmode) fprintf(fp, "'%s'\n  ", str);
-}
-

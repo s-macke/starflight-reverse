@@ -9,10 +9,10 @@ typedef struct
     char *initvarstr;
     int labelid; // != 0 is a label for a goto
     int done; // this line has been processed
+    int isasm;
 } LineDesc;
 
 extern LineDesc pline[0x10000];
-
 
 typedef struct
 {
@@ -23,10 +23,8 @@ typedef struct
 Variables GetEmptyVariables();
 
 void InitParser();
-void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
 void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx, Variables vars);
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);
-void WriteVariables(FILE *fp, int ovidx);
-void WriteExtern(FILE *fp, int ovidx);
+void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr);
 
 #endif

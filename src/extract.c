@@ -147,4 +147,14 @@ unsigned short GetStartAddress(int diridx)
     return dir[diridx].start;
 }
 
+void LoadOverlay(int ovidx, OVLHeader *head, unsigned char *mem)
+{
+    head->size = 0;
+    head->buf = (unsigned char*)Extract(overlays[ovidx].id, &head->size);
+
+    head->storeofs = head->buf[0x4] | (head->buf[0x5]<<8);
+    head->ovlsize = (head->buf[0x2] | (head->buf[0x3]<<8))*16;
+
+    memcpy(&mem[head->storeofs], head->buf, head->ovlsize);
+}
 

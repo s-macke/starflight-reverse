@@ -2,6 +2,8 @@
 #define GLOBAL_H
 
 #define STRINGLEN 300
+#define FALSE 0
+#define TRUE (!(FALSE))
 
 // ----------------------------------------------
 typedef struct

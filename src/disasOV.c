@@ -4,108 +4,18 @@
 #include"global.h"
 #include"dictionary.h"
 #include"parser.h"
+#include"transpile2C.h"
 #include"extract.h"
 #include"utils.h"
 #include"../emul/cpu.h"
 
-
-#include"disasm/debugger.h"
-
 // ---------------------------------
 
-int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr, FILE *fp)
-{
-    char buffer[0x80];
-    int i;
-    if (pline[offset].done) return 0;
-    //fprintf(stderr, "disasm start 0x%04x\n", offset);
-    while (size > 0)
-    {
-
-        //fprintf(stderr, "Disasm %04x\n", offset);
-        if ((offset < minaddr) || (offset >= maxaddr)) return 0;
-        if (offset > 0xFFFF)
-        {
-           fprintf(stderr, "Warning: outside of segment\n");
-           exit(1);
-        }
-
-        if (pline[offset].done)
-        {
-            return 0;
-        }
-
-        buffer[0] = 0x0;
-        int currentoffset = offset;
-        int newoffset = disasm(0x0, (unsigned)offset, mem, buffer);
-        int len = newoffset-offset;
-        //fprintf(stderr, "Disasm done %04x\n", offset);
-        snprintf(pline[currentoffset].str, STRINGLEN, "// 0x%04x: %s\n", currentoffset, buffer);
-        for(i=0; i<len; i++)
-        {
-            pline[offset].done = 1;
-            size--;
-            offset++;
-        }
-
-        if (Read8(currentoffset) == 0xc3) // ret
-        {
-            strcat(pline[currentoffset].str, "\n");
-            return 0;
-        }
-
-        if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump
-        {
-            unsigned short addr = (offset+(short int)((char)Read8(currentoffset+1)));
-            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr, fp);
-        }
-
-        if (strcmp(buffer, "jmp    word ptr [bx]") == 0) // jmp
-        {
-            return 0;
-        }
-
-        if (Read8(currentoffset) == 0xe8) // 16 bit call
-        {
-            //fprintf(stderr, "call from 0x%04x\n", currentoffset);
-            unsigned short addr = (offset+(short int)Read16(currentoffset+1));
-            DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr, fp);
-            if (addr == 0x1649)
-            {
-                Variables vars = GetEmptyVariables();
-                ParsePartFunction(newoffset, 0x0, 0x10000, NULL, ovidx, vars);
-                return 0;
-            }
-        }
-    }
-    return 0;
-}
-
-// ---------------------------------
-
-typedef struct
-{
-    int storeofs;
-    int ovlsize;
-    int size;
-    unsigned char *buf;
-} OVLHeader;
-
-void LoadOverlay(int ovidx, OVLHeader *head)
-{
-    head->size = 0;
-    head->buf = (unsigned char*)Extract(overlays[ovidx].id, &head->size);
-
-    head->storeofs = head->buf[0x4] | (head->buf[0x5]<<8);
-    head->ovlsize = (head->buf[0x2] | (head->buf[0x3]<<8))*16;
-
-    memcpy(&mem[head->storeofs], head->buf, head->ovlsize);
-}
 
 void LoadOverlayDict(int ovidx)
 {
     OVLHeader head;
-    LoadOverlay(ovidx, &head);
+    LoadOverlay(ovidx, &head, mem);
     int i;
     for(i=0; i<8; i+=2)
     {
@@ -132,42 +42,20 @@ void WriteHeader(int ovidx)
     }
 }
 
-
-void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
+void ParseOverlay(int ovidx)
 {
     int i, j;
     // first two byte contain offset in file and then two bytes with size of overlay
 
     OVLHeader head;
-    LoadOverlay(ovidx, &head);
+    LoadOverlay(ovidx, &head, mem);
     int namep = (head.buf[0x6] | (head.buf[0x7]<<8));
     int minaddr = head.storeofs+0x8+0xa;
     int maxaddr = head.storeofs+head.ovlsize;
 
-
-    fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
-
-    fprintf(fph, "// ====== OVERLAY '%s' ======\n\n", overlays[ovidx].name);
-    fprintf(fph, "#ifndef %s_H\n", overlays[ovidx].name);
-    fprintf(fph, "#define %s_H\n\n", overlays[ovidx].name);
-
-    fprintf(fpc, "// store offset = 0x%04x\n", head.storeofs);
-    fprintf(fpc, "// overlay size   = 0x%04x\n", head.ovlsize);
-    fprintf(fpc, "\n#include\"../../emul/cpu.h\"\n");
-    fprintf(fpc, "#include\"../../emul/starflt1.h\"\n\n");
     InitParser();
 
     SortDictionary();
-    // write header file
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (!dict[i].isentry) continue;
-        char *s = GetWordName(&dict[i]);
-        fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
-    }
-
-    fprintf(fph, "\n#endif\n");
 
     WriteHeader(ovidx);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
@@ -175,20 +63,14 @@ void ParseOverlay(int ovidx, FILE *fpc, FILE *fph)
 
     WriteHeader(ovidx);
 
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        //printf("disasm dict entry %i\n", i);
-        DisasmRange(dict[i].codep, 0x100000, ovidx, minaddr, maxaddr, fpc);
-    }
+    ParseAsmFunctions(ovidx, minaddr, maxaddr);
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
+
     WriteHeader(ovidx);
-    WriteDict(mem, fpc, ovidx);
-    WriteExtern(fpc, ovidx);
-    WriteVariables(fpc, ovidx);
-    WriteParsedFunctions(minaddr, maxaddr, fpc);
+
+    Transpile(&head, ovidx, minaddr, maxaddr);
 }
 
 void LoadSTARFLT()
@@ -217,7 +99,7 @@ void ParseStarFltDict()
     dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
 }
 
-void DisasStarflt(FILE *fp)
+void DisasStarflt()
 {
     int i, j;
     const int ovidx = -1;
@@ -232,17 +114,12 @@ void DisasStarflt(FILE *fp)
 
     WriteHeader(ovidx);
 
-    for(i=0; i<ndict; i++)
-    {
-        DisasmRange(dict[i].codep, /*dict[i].size*/0x100000, ovidx, minaddr, maxaddr, fp);
-    }
+    ParseAsmFunctions(ovidx, minaddr, maxaddr);
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
     WriteHeader(ovidx);
-    WriteDict(mem, fp, -1);
-    WriteVariables(fp, ovidx);
-    WriteParsedFunctions(minaddr, maxaddr, fp);
+    Transpile(NULL, ovidx, minaddr, maxaddr);
 }
 
 void OutputDirectory()
@@ -321,39 +198,14 @@ int main()
 
 
     LoadSTARFLT();
-    fpc = fopen(OUTDIR"/starflt.c", "w");
-    if (fpc == NULL)
-    {
-        fprintf(stderr, "Error: Cannot create file\n");
-        exit(1);
-    }
-    DisasStarflt(fpc);
-    fclose(fpc);
+    DisasStarflt();
 
-    char filename[512];
     for(i=0; overlays[i].name != NULL; i++)
     {
         //reset memory
         LoadSTARFLT();
-
-        sprintf(filename, OUTDIR"/overlays/%s.c", overlays[i].name);
-        printf("Generate %s\n", filename);
-        fpc = fopen(filename, "w");
-        if (fpc == NULL)
-        {
-            fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
-            exit(1);
-        }
-        sprintf(filename, OUTDIR"/overlays/%s.h", overlays[i].name);
-        fph = fopen(filename, "w");
-        if (fph == NULL)
-        {
-            fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
-            exit(1);
-        }
-        ParseOverlay(i, fpc, fph);
-        fclose(fpc);
-        fclose(fph);
+        printf("Generate %s\n", overlays[i].name);
+        ParseOverlay(i);
     }
 
     return 0;

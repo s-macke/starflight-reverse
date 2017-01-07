@@ -14,9 +14,18 @@ typedef struct DIRENTRY
 extern DIRENTRY dir[512];
 extern int ndir;
 
+typedef struct
+{
+    int storeofs;
+    int ovlsize;
+    int size;
+    unsigned char *buf;
+} OVLHeader;
+
 char* Extract(int diridx, int *size);
 void LoadDir(FILE *fp);
 unsigned short GetStartAddress(int diridx);
 char* FindDirEntry(int startaddr);
+void LoadOverlay(int ovidx, OVLHeader *head, unsigned char *mem);
 
 #endif
