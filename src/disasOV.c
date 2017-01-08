@@ -40,12 +40,9 @@ void ParseOverlay(int ovidx)
     InitParser();
 
     SortDictionary();
-
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
-
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
 
@@ -171,15 +168,15 @@ int main()
 // ---------------------
 // ---------------------
 
-
     LoadSTARFLT();
     DisasStarflt();
 
     for(i=0; overlays[i].name != NULL; i++)
     {
+        printf("Generate %s\n", overlays[i].name);
+
         //reset memory
         LoadSTARFLT();
-        printf("Generate %s\n", overlays[i].name);
         ParseOverlay(i);
     }
 

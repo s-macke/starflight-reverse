@@ -405,13 +405,12 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         exit(1);
     }
 
-    if (ofs == d->parp)
+    if (ofs == d->parp) // is head of function
     {
-        char *s = GetWordName(d);
-        snprintf(pline[d->parp-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
         AddNamedVariable(&vars, d, "callp1");
         AddNamedVariable(&vars, d, "callp0");
     }
+
     while(1)
     {
         if (ofs < minaddr) return;

@@ -506,12 +506,14 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             if (e == NULL) {
                 exit(1);
             }
+            char *s = GetWordName(e);
             fprintf(fp,
             "\n// ================================================\n"
             "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
             "// ================================================\n",
-            e->addr, GetWordName(e), e->codep, e->parp);
+            e->addr, s, e->codep, e->parp);
             if (e->isentry) fprintf(fp, "// entry\n");
+            if (e->codep == CODECALL) fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
         }
         if (pline[i].labelid)
         {
