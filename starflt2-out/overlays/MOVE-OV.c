@@ -1948,7 +1948,7 @@ void TELE() // TELE
 {
   Push(pp__i_KEY_dash_CA); // 'KEY-CA
   Push(Read16(Pop())); // @
-  Push(0xf499);
+  Push(0xf499); // probable 'UNK_0xf499'
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1973,9 +1973,9 @@ void TELE() // TELE
 
 void TV_dash_MOVE() // TV-MOVE
 {
-  Push(0xf46d);
-  Push(0xf499);
-  Push(0xf447);
+  Push(0xf46d); // probable 'UNK_0xf46d'
+  Push(0xf499); // probable 'UNK_0xf499'
+  Push(0xf447); // probable 'UNK_0xf447'
   DOTASKS(UNK_0xf447, UNK_0xf447, UNK_0xf447);
   Push(pp__i_SIMULA); // 'SIMULA
   _at_EXECUTE(); // @EXECUTE

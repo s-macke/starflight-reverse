@@ -1042,7 +1042,7 @@ void A_gt_ORIGINATOR() // A>ORIGINATOR
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xda3f); // UNK_0xda3f
   _ex__3(); // !_3
-  Push(0xda5d);
+  Push(0xda5d); // probable 'UNK_0xda5d'
   ON_3(); // ON_3
 }
 
@@ -4825,7 +4825,7 @@ void COMM_dash_EXPERTS() // COMM-EXPERTS
   Pop(); // DROP
 
   label1:
-  Push(0xda5d);
+  Push(0xda5d); // probable 'UNK_0xda5d'
   OFF(); // OFF
 }
 

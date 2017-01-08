@@ -1247,7 +1247,7 @@ void A_gt_ORIGINATO() // A>ORIGINATO
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xd917); // UNK_0xd917
   _ex__2(); // !_2
-  Push(0xd935);
+  Push(0xd935); // probable 'UNK_0xd935'
   ON_2(); // ON_2
 }
 
@@ -5397,7 +5397,7 @@ void COMM_dash_EXPERT() // COMM-EXPERT
   MODULE(); // MODULE
 
   label1:
-  Push(0xd935);
+  Push(0xd935); // probable 'UNK_0xd935'
   _099(); // 099
 }
 

@@ -324,7 +324,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
   Push(Pop()-1); // 1-
-  Push(0xe6e6);
+  Push(0xe6e6); // probable 'UNK_0xe6e6'
   _ex__2(); // !_2
   if (Pop() == 0) goto label1;
   SWAP(); // SWAP

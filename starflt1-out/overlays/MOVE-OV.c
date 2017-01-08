@@ -1937,7 +1937,7 @@ void UNK_0xf31d() // UNK_0xf31d
   Push(0xea6e);
   Push(pp__i_REPAIR); // 'REPAIR
   _st__ex__gt_(); // <!>
-  Push(0xf292);
+  Push(0xf292); // probable 'UNK_0xf292'
   Push(pp__i__dot_VEHICLE_dash_STATUS); // '.VEHICLE-STATUS
   _st__ex__gt_(); // <!>
   Push(pp__i_SIMULA); // 'SIMULA
@@ -2089,9 +2089,9 @@ void UNK_0xf3a7() // UNK_0xf3a7
 
 void TV_dash_MOVE() // TV-MOVE
 {
-  Push(0xf37b);
-  Push(0xf3a7);
-  Push(0xf355);
+  Push(0xf37b); // probable 'UNK_0xf37b'
+  Push(0xf3a7); // probable 'UNK_0xf3a7'
+  Push(0xf355); // probable 'UNK_0xf355'
   DOTASKS(UNK_0xf355, UNK_0xf355, UNK_0xf355);
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_3(); // ON_3

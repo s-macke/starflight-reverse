@@ -493,10 +493,10 @@ void UNK_0xea0a() // UNK_0xea0a
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   ICLOSE(); // ICLOSE
-  Push(0xe7f2);
+  Push(0xe7f2); // probable 'UNK_0xe7f2'
   IFLD_at_(); // IFLD@
   Push(Pop()+1); // 1+
-  Push(0xe7ea);
+  Push(0xe7ea); // probable 'UNK_0xe7ea'
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
 
@@ -612,7 +612,7 @@ void UNK_0xec19() // UNK_0xec19
   _ex__3(); // !_3
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xebd3);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -628,7 +628,7 @@ void UNK_0xed13() // UNK_0xed13
 {
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xeccb);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -644,7 +644,7 @@ void UNK_0xeead() // UNK_0xeead
 {
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xee9d);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -661,7 +661,7 @@ void UNK_0xeed1() // UNK_0xeed1
   Push(0); // 0
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xeec1);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -768,7 +768,7 @@ void UNK_0xef95() // UNK_0xef95
 {
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xef57);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -784,7 +784,7 @@ void UNK_0xefe1() // UNK_0xefe1
 {
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xefc5);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -800,7 +800,7 @@ void UNK_0xf041() // UNK_0xf041
 {
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xeff5);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -880,7 +880,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   Push(0); // 0
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xf09f);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
@@ -1042,7 +1042,7 @@ void UNK_0xf1b5() // UNK_0xf1b5
   Push(0); // 0
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0); // 0
-  Push(0xe8c3);
+  Push(0xe8c3); // probable 'UNK_0xe8c3'
   Push(0xf199);
   EACH(); // EACH
   Pop(); Pop();// 2DROP

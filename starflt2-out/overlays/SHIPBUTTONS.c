@@ -892,11 +892,11 @@ void UNK_0xf038() // UNK_0xf038
   if (Pop() == 0) goto label2;
   UNK_0xec92(); // UNK_0xec92
   UNK_0xec2a(); // UNK_0xec2a
-  Push(0xed86);
-  Push(0xee3a);
+  Push(0xed86); // probable 'UNK_0xed86'
+  Push(0xee3a); // probable 'UNK_0xee3a'
   Push(0xef1b); // probable '1.1BTN.XEQ'
   Push(Read16(cc__7)); // 7
-  Push(0xede6);
+  Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);
 
   label2:
@@ -1608,9 +1608,9 @@ void UNK_0xf452() // UNK_0xf452
 
 void UNK_0xf460() // UNK_0xf460
 {
-  Push(0xf452);
+  Push(0xf452); // probable 'UNK_0xf452'
   Push(0xee3a); // probable 'UNK_0xee3a'
-  Push(0xf3b3);
+  Push(0xf3b3); // probable 'UNK_0xf3b3'
   Push(0); // 0
   Push(0xede6); // probable 'UNK_0xede6'
   DOTASKS2(UNK_0xede6, UNK_0xede6, UNK_0xede6, UNK_0xede6);

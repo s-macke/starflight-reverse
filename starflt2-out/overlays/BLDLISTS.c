@@ -416,7 +416,7 @@ void UNK_0xeccc() // UNK_0xeccc
   Push(Read8(Pop())&0xFF); // C@
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  Push(0xec46);
+  Push(0xec46); // probable 'UNK_0xec46'
   goto label2;
 
   label1:
@@ -425,11 +425,11 @@ void UNK_0xeccc() // UNK_0xeccc
   Push(Read8(Pop())&0xFF); // C@
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label3;
-  Push(0xec4e);
+  Push(0xec4e); // probable 'UNK_0xec4e'
   goto label2;
 
   label3:
-  Push(0xec56);
+  Push(0xec56); // probable 'UNK_0xec56'
 
   label2:
   Push(a); // R>

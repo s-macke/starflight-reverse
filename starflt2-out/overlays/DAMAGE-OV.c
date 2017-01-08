@@ -1425,7 +1425,7 @@ void UNK_0xee11() // UNK_0xee11
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
   UNK_0xea2c(); // UNK_0xea2c
-  Push(0xe821);
+  Push(0xe821); // probable 'UNK_0xe821'
   UNK_0xe8a4(); // UNK_0xe8a4
   ICLOSE(); // ICLOSE
   Push(i); // I
@@ -1477,7 +1477,7 @@ void UNK_0xee67() // UNK_0xee67
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(0xe79b);
+  Push(0xe79b); // probable 'UNK_0xe79b'
   UNK_0xe8a4(); // UNK_0xe8a4
   goto label2;
 

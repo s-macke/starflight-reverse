@@ -921,7 +921,7 @@ void UNK_0xee65() // UNK_0xee65
 
 void UNK_0xee8e() // UNK_0xee8e
 {
-  Push(0xeb53);
+  Push(0xeb53); // probable 'UNK_0xeb53'
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -1261,7 +1261,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
   if (Pop() == 0) goto label2;
   _gt_C_plus_S(); // >C+S
   UNK_0xed6a(); // UNK_0xed6a
-  Push(0xebb2);
+  Push(0xebb2); // probable 'UNK_0xebb2'
   UNK_0xec30(); // UNK_0xec30
   ICLOSE(); // ICLOSE
   Push(i); // I
@@ -1337,7 +1337,7 @@ void UNK_0xf162() // UNK_0xf162
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(0xeb3b);
+  Push(0xeb3b); // probable 'UNK_0xeb3b'
   UNK_0xec30(); // UNK_0xec30
   goto label2;
 
@@ -1531,7 +1531,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 void UNK_0xf2a2() // UNK_0xf2a2
 {
-  Push(0xeb53);
+  Push(0xeb53); // probable 'UNK_0xeb53'
   UNK_0xec46(); // UNK_0xec46
 }
 
@@ -1747,7 +1747,7 @@ void UNK_0xf3a4() // UNK_0xf3a4
 
   label3:
   UNK_0xecf2(); // UNK_0xecf2
-  Push(0xeb53);
+  Push(0xeb53); // probable 'UNK_0xeb53'
   IFLD_at_(); // IFLD@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label4;

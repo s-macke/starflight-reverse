@@ -1934,7 +1934,7 @@ void UNK_0xe660() // UNK_0xe660
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
   Push(Pop()-1); // 1-
-  Push(0xe65c);
+  Push(0xe65c); // probable 'UNK_0xe65c'
   _ex__3(); // !_3
   if (Pop() == 0) goto label1;
   SWAP(); // SWAP
@@ -4204,9 +4204,9 @@ void WAR() // WAR
   Push(Read16(cc__4)); // 4
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
-  Push(0xf352);
-  Push(0xf3bc);
-  Push(0xf414);
+  Push(0xf352); // probable 'UNK_0xf352'
+  Push(0xf3bc); // probable 'UNK_0xf3bc'
+  Push(0xf414); // probable 'UNK_0xf414'
   DOTASKS(UNK_0xf414, UNK_0xf414, UNK_0xf414);
   return;
 

@@ -3351,9 +3351,9 @@ void UNK_0xf4b0() // UNK_0xf4b0
 
 void TV() // TV
 {
-  Push(0xf49a);
-  Push(0xf077);
-  Push(0xf4b0);
+  Push(0xf49a); // probable 'UNK_0xf49a'
+  Push(0xf077); // probable 'UNK_0xf077'
+  Push(0xf4b0); // probable 'UNK_0xf4b0'
   DOTASKS(UNK_0xf4b0, UNK_0xf4b0, UNK_0xf4b0);
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_3(); // ON_3

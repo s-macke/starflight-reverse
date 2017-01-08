@@ -13645,7 +13645,7 @@ void SETLARRAY() // SETLARRAY
 {
   Push(pp__i_ARRAY); // 'ARRAY
   _ex_(); // !
-  Push(0x4d5c);
+  Push(0x4d5c); // probable 'UNK_0x4d5c'
   Push(pp_UNK_0x4cdc); // UNK_0x4cdc
   _ex_(); // !
   Push(0x2ee5); // probable 'LC!'
@@ -24014,7 +24014,7 @@ void CTINIT() // CTINIT
   OFF(); // OFF
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(0xa513);
+  Push(0xa513); // probable 'UNK_0xa513'
   Push(0x0644); // probable 'CR'
   EXECUTES(); // EXECUTES
 }
@@ -27070,7 +27070,7 @@ void UNK_0xbab0() // UNK_0xbab0
 
 void DATE_do__gt_ADR() // DATE$>ADR
 {
-  Push(0xba4c);
+  Push(0xba4c); // probable 'UNK_0xba4c'
   MODULE(); // MODULE
 }
 
@@ -27081,7 +27081,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 
 void BOX_gt_LIS() // BOX>LIS
 {
-  Push(0xba56);
+  Push(0xba56); // probable 'UNK_0xba56'
   MODULE(); // MODULE
 }
 
@@ -27092,7 +27092,7 @@ void BOX_gt_LIS() // BOX>LIS
 
 void GET_dash_BOX() // GET-BOX
 {
-  Push(0xba60);
+  Push(0xba60); // probable 'UNK_0xba60'
   MODULE(); // MODULE
 }
 
@@ -27103,7 +27103,7 @@ void GET_dash_BOX() // GET-BOX
 
 void MAKE_dash_SC() // MAKE-SC
 {
-  Push(0xba6a);
+  Push(0xba6a); // probable 'UNK_0xba6a'
   MODULE(); // MODULE
 }
 
@@ -27114,7 +27114,7 @@ void MAKE_dash_SC() // MAKE-SC
 
 void delete_dash_scroll_dash_box() // delete-scroll-box
 {
-  Push(0xba74);
+  Push(0xba74); // probable 'UNK_0xba74'
   MODULE(); // MODULE
 }
 
@@ -27125,7 +27125,7 @@ void delete_dash_scroll_dash_box() // delete-scroll-box
 
 void BOX_gt_TOC() // BOX>TOC
 {
-  Push(0xba7e);
+  Push(0xba7e); // probable 'UNK_0xba7e'
   MODULE(); // MODULE
 }
 
@@ -27136,7 +27136,7 @@ void BOX_gt_TOC() // BOX>TOC
 
 void _gt_BOX() // >BOX
 {
-  Push(0xba88);
+  Push(0xba88); // probable 'UNK_0xba88'
   MODULE(); // MODULE
 }
 
@@ -27147,7 +27147,7 @@ void _gt_BOX() // >BOX
 
 void BOX_gt_() // BOX>
 {
-  Push(0xba92);
+  Push(0xba92); // probable 'UNK_0xba92'
   MODULE(); // MODULE
 }
 
@@ -27158,7 +27158,7 @@ void BOX_gt_() // BOX>
 
 void _ro_BOX_gt__rc_() // (BOX>)
 {
-  Push(0xba9c);
+  Push(0xba9c); // probable 'UNK_0xba9c'
   MODULE(); // MODULE
 }
 
@@ -27169,7 +27169,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 
 void CLASS_gt_B() // CLASS>B
 {
-  Push(0xbaa6);
+  Push(0xbaa6); // probable 'UNK_0xbaa6'
   MODULE(); // MODULE
 }
 
@@ -27180,7 +27180,7 @@ void CLASS_gt_B() // CLASS>B
 
 void ITEM_gt_PA() // ITEM>PA
 {
-  Push(0xbab0);
+  Push(0xbab0); // probable 'UNK_0xbab0'
   MODULE(); // MODULE
 }
 

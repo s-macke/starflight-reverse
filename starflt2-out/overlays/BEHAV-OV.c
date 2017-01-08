@@ -2912,7 +2912,7 @@ void TV_dash_TASKS() // TV-TASKS
   Push(0xcf1b); // probable 'DO-STORM'
   Push(pp__i_REPAIR); // 'REPAIR
   _st__ex__gt_(); // <!>
-  Push(0xe552);
+  Push(0xe552); // probable 'UNK_0xe552'
   Push(pp__i__dot_VEHIC); // '.VEHIC
   _st__ex__gt_(); // <!>
   Push(0xeee0); // probable '1SIMULATE'
@@ -2930,7 +2930,7 @@ void TV_dash_TASKS() // TV-TASKS
   Push(0xc1c7); // probable 'HEAL'
   Push(pp__i_TREATM); // 'TREATM
   _st__ex__gt_(); // <!>
-  Push(0xe55c);
+  Push(0xe55c); // probable 'UNK_0xe55c'
   Push(pp__i__dot_DATE); // '.DATE
   _st__ex__gt_(); // <!>
   Push(pp_TIME_dash_PA); // TIME-PA
@@ -3045,9 +3045,9 @@ void UNK_0xf500() // UNK_0xf500
 
 void TV() // TV
 {
-  Push(0xf4f2);
+  Push(0xf4f2); // probable 'UNK_0xf4f2'
   Push(0xf1ff); // probable 'TV-KEY'
-  Push(0xf500);
+  Push(0xf500); // probable 'UNK_0xf500'
   DOTASKS(UNK_0xf500, UNK_0xf500, UNK_0xf500);
   Push(pp_TIME_dash_PA); // TIME-PA
   ON_2(); // ON_2
