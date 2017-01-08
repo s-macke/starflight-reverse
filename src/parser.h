@@ -12,6 +12,7 @@ typedef struct
     int isasm;
     int istrivialword;
     int ovidx;
+    int wordheader;
 } LineDesc;
 
 extern LineDesc pline[0x10000];

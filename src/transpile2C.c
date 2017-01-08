@@ -9,7 +9,7 @@
 
 void WriteExtern(FILE *fp, int ovidx);
 void WriteVariables(FILE *fp, int ovidx);
-void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp);
+void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr);
 void WriteHeaderFile(FILE *fph, int ovidx);
 
 void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
@@ -58,7 +58,7 @@ void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
     WriteDict(mem, fpc, ovidx);
     if (ovidx != -1) WriteExtern(fpc, ovidx);
     WriteVariables(fpc, ovidx);
-    WriteParsedFunctions(minaddr, maxaddr, fpc);
+    WriteParsedFunctions(fpc, ovidx, minaddr, maxaddr);
 
     if (fpc != NULL) fclose(fpc);
 }
@@ -489,7 +489,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     return;
 }
 
-void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
+void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
     int i = 0;
 
@@ -498,6 +498,21 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
     int nstr = 0;
     for(i=minaddr; i<=maxaddr; i++)
     {
+        if (pline[i].wordheader)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            dbmode = 0;
+            DICTENTRY *e = GetDictEntry(i+2, ovidx);
+            if (e == NULL) {
+                exit(1);
+            }
+            fprintf(fp,
+            "\n// ================================================\n"
+            "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
+            "// ================================================\n",
+            e->addr, GetWordName(e), e->codep, e->parp);
+            if (e->isentry) fprintf(fp, "// entry\n");
+        }
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
@@ -510,7 +525,7 @@ void WriteParsedFunctions(int minaddr, int maxaddr, FILE *fp)
             DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
             GetMacro(i, e, func, pline[i].ovidx);
             fprintf(fp, "%s", func);
-        } else
+        }
         if (pline[i].str[0] != 0)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}

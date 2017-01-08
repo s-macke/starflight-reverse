@@ -142,9 +142,8 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 
 // -----------------------------------------
 
-int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
+int GetWordLength(DICTENTRY *e, int currentovidx)
 {
-    ret[0] = 0;
     char *s = GetWordName(e);
 
     if (e->codep == CODELIT) // constant number
@@ -317,7 +316,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         char ifthen[STRINGLEN*2];
         char func[STRINGLEN*2];
 
-        PutEasyMacro(e->parp, e, func, e->ovidx);
+        GetWordLength(e, e->ovidx);
         GetMacro(e->parp, e, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n  %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n  %s  }\n}\n\n", func);
@@ -343,7 +342,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
                 exit(1);
             }
-            PutEasyMacro(p, e, func, e->ovidx);
+            GetWordLength(e, e->ovidx);
             GetMacro(p, e, func, e->ovidx);
             strcat(try, func);
             // TODO, might be the exchanged
@@ -375,7 +374,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        PutEasyMacro(par + i*4 + 6, e, ret, currentovidx);
+        GetWordLength(e, currentovidx);
         GetMacro(par + i*4 + 6, e, ret, currentovidx);
         sprintf(temp, "  case %i:\n  %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
@@ -387,7 +386,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    PutEasyMacro(par + 2, e, ret, currentovidx);
+    GetWordLength(e, currentovidx);
     GetMacro(par + 2, e, ret, currentovidx);
     sprintf(temp, "  default:\n  %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
@@ -792,16 +791,11 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             ofs += 2;
         } else
         {
-            char ret[STRINGLEN];
             pline[ofs].istrivialword = TRUE;
             pline[ofs].ovidx = currentovidx;
-            int dofs = PutEasyMacro(ofs, e, ret, currentovidx);
+            int dofs = GetWordLength(e, currentovidx);
             int i;
-            for(i=0; i<dofs; i++)
-            {
-                pline[ofs+i].done = 1;
-            }
-            snprintf(pline[ofs].str, STRINGLEN, "%s", ret);
+            for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
             ofs += dofs;
         }
 
@@ -827,9 +821,21 @@ void InitParser()
     }
 }
 
+void SetWordHeader(int ovidx)
+{
+    int i, j;
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].ovidx != ovidx) continue;
+        for(j=dict[i].addr; j<dict[i].parp; j++) pline[j].done = 1;
+        pline[dict[i].parp-2].wordheader = TRUE;
+    }
+}
+
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 {
     int i;
+    SetWordHeader(ovidx);
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
@@ -847,7 +853,6 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
             ParseRuleFunction(minaddr, maxaddr, &dict[i], dict[i].ovidx);
         }
     }
-
 /* Find orphaned functions */
 /*
     for(int i=minaddr; i<maxaddr-3; i++)
@@ -862,6 +867,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         }
     }
 */
+    SetWordHeader(ovidx);
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)

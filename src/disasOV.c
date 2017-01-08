@@ -26,22 +26,6 @@ void LoadOverlayDict(int ovidx)
     SortDictionary();
 }
 
-void WriteHeader(int ovidx)
-{
-    int i, j;
-    for(i=0; i<ndict; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        snprintf(pline[dict[i].addr].str, STRINGLEN,
-        "\n// ================================================\n"
-        "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-        "// ================================================\n",
-        dict[i].addr, GetWordName(&dict[i]), dict[i].codep, dict[i].parp);
-        if (dict[i].isentry) strcat(pline[dict[i].addr].str, "// entry\n");
-        for(j=dict[i].addr; j<dict[i].parp; j++) pline[j].done = 1;
-    }
-}
-
 void ParseOverlay(int ovidx)
 {
     int i, j;
@@ -57,18 +41,13 @@ void ParseOverlay(int ovidx)
 
     SortDictionary();
 
-    WriteHeader(ovidx);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-
-    WriteHeader(ovidx);
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-
-    WriteHeader(ovidx);
 
     Transpile(&head, ovidx, minaddr, maxaddr);
 }
@@ -106,19 +85,15 @@ void DisasStarflt()
     int minaddr = 0x100;
     int maxaddr = FILESTAR0SIZE+0x100;
     InitParser();
-    WriteHeader(ovidx);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
     SortDictionary();
     dict[ndict-1].size = maxaddr-dict[ndict-1].parp;
 
-    WriteHeader(ovidx);
-
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-    WriteHeader(ovidx);
     Transpile(NULL, ovidx, minaddr, maxaddr);
 }
 
