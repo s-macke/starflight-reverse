@@ -142,10 +142,22 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 
 // -----------------------------------------
 
-int GetWordLength(DICTENTRY *e, int currentovidx)
+int GetWordLength(int addr, DICTENTRY *e, int currentovidx)
 {
     char *s = GetWordName(e);
 
+    if (strcmp(s, "(ABORT\")") == 0)
+    {
+        return Read8(addr+2) + 3;
+    }
+    if (strcmp(s, "(.\")") == 0)
+    {
+        return Read8(addr+2) + 3;
+    }
+    if (e->parp == PARPRINT)
+    {
+        return Read8(addr+2) + 3;
+    }
     if (e->codep == CODELIT) // constant number
     {
         return 4;
@@ -180,7 +192,6 @@ int GetWordLength(DICTENTRY *e, int currentovidx)
         GetDictWord(par, currentovidx);
         return 2;
     }
-
     if (e->ovidx == -1) e->doextern = 1;
     if (e->codep > (0x100+FILESTAR0SIZE)) e->doextern = 1;
     return 2;
@@ -316,7 +327,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         char ifthen[STRINGLEN*2];
         char func[STRINGLEN*2];
 
-        GetWordLength(e, e->ovidx);
+        GetWordLength(rulep + 1, e, e->ovidx);
         GetMacro(e->parp, e, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n  %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n  %s  }\n}\n\n", func);
@@ -342,7 +353,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
                 exit(1);
             }
-            GetWordLength(e, e->ovidx);
+            GetWordLength(p, e, e->ovidx);
             GetMacro(p, e, func, e->ovidx);
             strcat(try, func);
             // TODO, might be the exchanged
@@ -374,7 +385,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        GetWordLength(e, currentovidx);
+        GetWordLength(par + i*4 + 6, e, currentovidx);
         GetMacro(par + i*4 + 6, e, ret, currentovidx);
         sprintf(temp, "  case %i:\n  %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
@@ -386,7 +397,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    GetWordLength(e, currentovidx);
+    GetWordLength(par + 2, e, currentovidx);
     GetMacro(par + 2, e, ret, currentovidx);
     sprintf(temp, "  default:\n  %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
@@ -498,94 +509,6 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+3].done = 1;
             ofs += 4;
             //return;
-        } else
-        if (strcmp(s, "(ABORT\")") == 0)
-        {
-            int ofstemp = ofs;
-            int length = Read8(ofs+2);
-            char str[0x100];
-            memset(str, 0, 0x100);
-            int ll = 0;
-
-            if (length >= 128)
-            {
-                ofs += 2;
-                snprintf(pline[ofstemp].str, STRINGLEN, "\n  (ABORT\") // string %i\n", length);
-            } else
-            {
-                pline[ofs+2].done = 1;
-                ofs += 3;
-                for(ll=0; ll<length; ll++)
-                {
-                    str[ll] = Read8(ofs);
-                    pline[ofs].done = 1;
-                    ofs++;
-                }
-                snprintf(pline[ofstemp].str, STRINGLEN, "  ABORT(\"%s\", %i);// (ABORT\")\n", Escape(str), length);
-            }
-        } else
-        if (strcmp(s, "(.\")") == 0) // print string
-        {
-            int ofstemp = ofs;
-            int length = Read8(ofs+2);
-
-            char str[0x100];
-            memset(str, 0, 0x100);
-            int ll = 0;
-/*
-            if ((length == 253) || (length == 141))
-            {
-                ofs += 2;
-                snprintf(pline[ofstemp].str, STRINGLEN, "\n  (.\\\") string %i\n", length);
-            } else
-*/
-            if (length >= 128)
-            {
-                ofs += 2;
-                snprintf(pline[ofstemp].str, STRINGLEN, "  (.\") // string %i\n", length);
-            } else
-            {
-                pline[ofs+2].done = 1;
-                ofs += 3;
-                for(ll=0; ll<length; ll++)
-                {
-                    str[ll] = Read8(ofs);
-                    pline[ofs].done = 1;
-                    ofs++;
-                }
-                snprintf(pline[ofstemp].str, STRINGLEN, "  PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
-            }
-
-        } else
-        if (par == PARPRINT) // a call, but gets a string as input? , TODO for STARFLIGHT2?
-        {
-            int ofstemp = ofs;
-            pline[ofs+2].done = 1;
-            int length = Read8(ofs+2);
-
-            char str[0x200];
-            memset(str, 0, 0x200);
-            int ll = 0;
-
-            ofs += 3;
-            for(ll=0; ll<length; ll++)
-            {
-                str[ll] = Read8(ofs);
-                pline[ofs].done = 1;
-                ofs++;
-            }
-            snprintf(pline[ofstemp].str, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", par, Escape(str));
-            /*
-            snprintf(pline[ofs].str, STRINGLEN, "\n  dw3f39() string %i\n", length);
-            ofs += length;
-            */
-        } else
-        if (e->codep == CODECALL) // call
-        {
-            DICTENTRY *dcall = GetDictEntry(par, currentovidx);
-            snprintf(pline[ofs].str, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
-            if (e->ovidx == -1) e->doextern = 1;
-            ofs += 2;
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
         {
@@ -792,7 +715,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         {
             pline[ofs].istrivialword = TRUE;
             pline[ofs].ovidx = currentovidx;
-            int dofs = GetWordLength(e, currentovidx);
+            int dofs = GetWordLength(ofs, e, currentovidx);
             int i;
             for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
             ofs += dofs;

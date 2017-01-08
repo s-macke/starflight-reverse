@@ -484,6 +484,45 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         snprintf(ret, STRINGLEN, "  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
         return;
     }
+    if (strcmp(s, "(ABORT\")") == 0)
+    {
+        int length = Read8(addr+2);
+        char str[0x100];
+        memset(str, 0, 0x100);
+        int ll = 0;
+        for(ll=0; ll<length; ll++)
+        {
+            str[ll] = Read8(addr+3+ll);
+        }
+        snprintf(ret, STRINGLEN, "  ABORT(\"%s\", %i);// (ABORT\")\n", Escape(str), length);
+        return;
+    }
+    if (strcmp(s, "(.\")") == 0)
+    {
+        int length = Read8(addr+2);
+        char str[0x100];
+        memset(str, 0, 0x100);
+        int ll = 0;
+        for(ll=0; ll<length; ll++)
+        {
+            str[ll] = Read8(addr+3+ll);
+        }
+        snprintf(ret, STRINGLEN, "  PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
+        return;
+    }
+    if (e->parp == PARPRINT)
+    {
+        int length = Read8(addr+2);
+        char str[0x100];
+        memset(str, 0, 0x100);
+        int ll = 0;
+        for(ll=0; ll<length; ll++)
+        {
+            str[ll] = Read8(addr+3+ll);
+        }
+        snprintf(ret, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", PARPRINT, Escape(str));
+        return;
+    }
 
     snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
     return;
