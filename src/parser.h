@@ -10,6 +10,8 @@ typedef struct
     int labelid; // != 0 is a label for a goto
     int done; // this line has been processed
     int isasm;
+    int istrivialword;
+    int ovidx;
 } LineDesc;
 
 extern LineDesc pline[0x10000];

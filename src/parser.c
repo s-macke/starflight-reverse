@@ -8,6 +8,7 @@
 #include"utils.h"
 #include"../emul/cpu.h"
 #include"disasm/debugger.h"
+#include"transpile2C.h"
 
 
 LineDesc pline[0x10000];
@@ -148,271 +149,39 @@ int PutEasyMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
 
     if (e->codep == CODELIT) // constant number
     {
-        int value = Read16(addr + 2);
-        int i=0;
-        for(i=0; i<ndict; i++)
-        {
-            if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
-            if (dict[i].parp == value)
-            {
-                snprintf(ret, STRINGLEN, "  Push(0x%04x); // probable '%s'\n", value, GetWordName(&dict[i]));
-                break;
-            }
-        }
-        if (ret[0] == 0)
-        {
-            snprintf(ret, STRINGLEN, "  Push(0x%04x);\n", value);
-        }
         return 4;
     }
     if (e->codep == CODE2LIT) // constant number
     {
-        snprintf(ret, STRINGLEN, "  Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
         return 6;
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s\n", Forth2CString(s), s);
         if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODECONSTANT)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s);
         if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODEDI) // User data
     {
-        snprintf(ret, STRINGLEN, "  Push(user_%s); // %s\n", Forth2CString(s), s);
         if (e->ovidx == -1) e->doextern = 1;
-        return 2;
-    }
-    if (e->codep == CODELOADDATA)
-    {
-        int addr = Read16(e->parp+4);
-        snprintf(ret, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
-        return 2;
-    }
-    if (e->codep == CODETABLE)
-    {
-        snprintf(ret, STRINGLEN, "  GetTableEntry(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODESETCOLOR)
-    {
-        snprintf(ret, STRINGLEN, "  SetColor(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODEFUNC3)
-    {
-        snprintf(ret, STRINGLEN, "  Func3(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODEPUSH2WORDS)
-    {
-        snprintf(ret, STRINGLEN, "  Push2Words(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODEFUNC5)
-    {
-        snprintf(ret, STRINGLEN, "  Func5(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODEFUNC6)
-    {
-        snprintf(ret, STRINGLEN, "  Func6(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODESETVOCABULARY)
-    {
-        snprintf(ret, STRINGLEN, "  SetVocabulary(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODEIFIELD)
-    {
-        snprintf(ret, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(e->parp+1), s);
-        //snprintf(pline[ofs].str, STRINGLEN, "  IFIELD(%s);\n", s);
-        return 2;
-    }
-    if (e->codep == CODEFUNC9)
-    {
-        snprintf(ret, STRINGLEN, "  Func9(\"%s\");\n", s);
-        return 2;
-    }
-    if (e->codep == CODECASE)
-    {
-        snprintf(ret, STRINGLEN, "  %s(); // %s case\n", Forth2CString(s), s);
-        if (e->ovidx == -1) e->doextern = 1;
-        return 2;
-    }
-    if (e->codep == CODEARRAY)
-    {/*
-        unsigned short ds = Read16(par + 6);
-        unsigned short bx = Read16(par + 4);
-        unsigned short bx = bx + (Pop()<<1);
-        unsigned short cx = Read16(ds, bx) + Pop();
-        Push(ds);
-        Push(dx);
-        */
-        snprintf(ret, STRINGLEN, "  ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
-        return 2;
-    }
-    if (e->codep == CODEFUNC12)
-    {
-        snprintf(ret, STRINGLEN, "  Func12(\"%s\");\n", s);
         return 2;
     }
     if (e->codep == CODERULE)
     {
-        snprintf(ret, STRINGLEN, "  %s(); // %s rule\n", Forth2CString(s), s);
         if (e->ovidx == -1) e->doextern = 1;
         return 2;
     }
     if (e->codep == CODEEXEC)
     {
         int par = Read16(Read16(e->parp)+REGDI);
-        snprintf(ret, STRINGLEN, "  Exec(\"%s\"); // call of word 0x%04x '%s'\n",
-            s, par, GetDictWord(par, currentovidx));
-        return 2;
-    }
-    if (strcmp(s, "0") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(0); // 0\n");
-        return 2;
-    }
-    if (strcmp(s, "1") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(1); // 1\n");
-        return 2;
-    }
-    if (strcmp(s, "2") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(2); // 2\n");
-        return 2;
-    }
-    if (strcmp(s, "0=") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
-        return 2;
-    }
-    if (strcmp(s, "OR") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop() | Pop()); // OR\n");
-        return 2;
-    }
-    if (strcmp(s, "AND") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop() & Pop()); // AND\n");
-        return 2;
-    }
-    if (strcmp(s, "XOR") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
-        return 2;
-    }
-    if (strcmp(s, "=") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push((Pop()==Pop())?1:0); // =\n");
-        return 2;
-    }
-    if (strcmp(s, "+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
-        return 2;
-    }
-    if (strcmp(s, "*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop() * Pop()); // *\n");
-        return 2;
-    }
-    if (strcmp(s, "NEGATE") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(-Pop()); // NEGATE\n");
-        return 2;
-    }
-    if (strcmp(s, "NOT") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
-        return 2;
-    }
-    if (strcmp(s, "DROP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Pop(); // DROP\n");
-        return 2;
-    }
-    if (strcmp(s, "2DROP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Pop(); Pop();// 2DROP\n");
-        return 2;
-    }
-    if (strcmp(s, "2*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()*2); // 2*\n");
-        return 2;
-    }
-    if (strcmp(s, "3+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+3); // 3+\n");
-        return 2;
-    }
-    if (strcmp(s, "1+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+1); // 1+\n");
-        return 2;
-    }
-    if (strcmp(s, "2+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+2); // 2+\n");
-        return 2;
-    }
-    if (strcmp(s, "1-") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()-1); // 1-\n");
-        return 2;
-    }
-    if (strcmp(s, "2-") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()-2); // 2-\n");
-        return 2;
-    }
-    if (strcmp(s, "16/") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()>>4); // 16/\n"); // TODO check for signed and unsigned
-        return 2;
-    }
-    if (strcmp(s, "2/") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()>>1); // 2/\n");
-        return 2;
-    }
-    if (strcmp(s, "16*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Pop()<<4); // 16*\n");
-        return 2;
-    }
-    if (strcmp(s, "@") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Read16(Pop())); // @\n");
-        return 2;
-    }
-    if (strcmp(s, "C@") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
-        return 2;
-    }
-    if (strcmp(s, "DUP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  Push(Read16(regsp)); // DUP\n");
-        return 2;
-    }
-    if (strcmp(s, "?DUP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
+        GetDictWord(par, currentovidx);
         return 2;
     }
 
-    snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
     if (e->ovidx == -1) e->doextern = 1;
     if (e->codep > (0x100+FILESTAR0SIZE)) e->doextern = 1;
     return 2;
@@ -549,6 +318,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         char func[STRINGLEN*2];
 
         PutEasyMacro(e->parp, e, func, e->ovidx);
+        GetMacro(e->parp, e, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n  %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n  %s  }\n}\n\n", func);
 
@@ -573,12 +343,8 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
                 exit(1);
             }
-            func[0] = 0;
-            int dofs = PutEasyMacro(p, e, func, e->ovidx);
-            if (dofs != 2) {
-                fprintf(stderr, "Error: no additional data is allowed for this word");
-                exit(1);
-            }
+            PutEasyMacro(p, e, func, e->ovidx);
+            GetMacro(p, e, func, e->ovidx);
             strcat(try, func);
             // TODO, might be the exchanged
             if (flag) strcat(try, "  b = b && Pop();\n"); else strcat(try, "  b = b && !Pop();\n");
@@ -609,11 +375,8 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        int dofs = PutEasyMacro(par + i*4 + 6, e, ret, currentovidx);
-        if (dofs != 2) {
-            fprintf(stderr, "Error: no additional data is allowed for this word");
-            exit(1);
-        }
+        PutEasyMacro(par + i*4 + 6, e, ret, currentovidx);
+        GetMacro(par + i*4 + 6, e, ret, currentovidx);
         sprintf(temp, "  case %i:\n  %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
         pline[par + i*4 + 5].done = 1;
@@ -624,11 +387,8 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    int dofs = PutEasyMacro(par + 2, e, ret, currentovidx);
-    if (dofs != 2) {
-        fprintf(stderr, "Error: no additional data is allowed for this word");
-        exit(1);
-    }
+    PutEasyMacro(par + 2, e, ret, currentovidx);
+    GetMacro(par + 2, e, ret, currentovidx);
     sprintf(temp, "  default:\n  %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
     strcat(pline[ofs].str, "\n  }\n}\n");
@@ -1033,6 +793,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         {
             char ret[STRINGLEN];
+            pline[ofs].istrivialword = TRUE;
+            pline[ofs].ovidx = currentovidx;
             int dofs = PutEasyMacro(ofs, e, ret, currentovidx);
             int i;
             for(i=0; i<dofs; i++)
