@@ -20,9 +20,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__8; // 8
-extern const unsigned short int cc__9; // 9
-extern const unsigned short int cc__dash_2; // -2
 extern const unsigned short int pp_ICON_h_; // ICON^
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XBLT; // XBLT
@@ -75,8 +72,8 @@ void BLT(); // BLT
 void UNK_0xf2c6() // UNK_0xf2c6
 {
   signed short int i, imax;
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -84,7 +81,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   {
   Push(pp_CMAP); // CMAP
   Push(i); // I
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PT); // TILE-PT
@@ -180,8 +177,8 @@ void UNK_0xf36f() // UNK_0xf36f
 void UNK_0xf3e6() // UNK_0xf3e6
 {
   signed short int i, imax;
-  Push(2); // 2
-  Push(0); // 0
+  Push(2);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -189,7 +186,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   {
   Push(Read16(regsp)); // DUP
   Push(i); // I
-  Push(Read16(cc__9)); // 9
+  Push(9);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
@@ -266,10 +263,10 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(0x0014);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(pp_ICON_h_); // ICON^
@@ -288,7 +285,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(Read16(cc__dash_2)); // -2
+  Push(-2);
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
@@ -304,7 +301,7 @@ void UNK_0xf45e() // UNK_0xf45e
   _at_RECORD(); // @RECORD
   Push(0x001b);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(2); // 2
+  Push(2);
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
@@ -333,7 +330,7 @@ void ICONS() // ICONS
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
   Push(0x000f);
-  Push(0); // 0
+  Push(0);
   UNK_0xf45e(); // UNK_0xf45e
   UNK_0xf418(); // UNK_0xf418
   UNK_0xf452(); // UNK_0xf452

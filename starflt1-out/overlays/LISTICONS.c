@@ -20,9 +20,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__8; // 8
-extern const unsigned short int cc__9; // 9
-extern const unsigned short int cc__dash_2; // -2
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XBLT; // XBLT
@@ -89,8 +86,8 @@ void altitude() // altitude
   Push(0x001f);
   Push(0x002e);
   LLINE(); // LLINE
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -98,7 +95,7 @@ void altitude() // altitude
   {
   Push(pp_CMAP); // CMAP
   Push(i); // I
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_TILE_dash_PTR); // TILE-PTR
@@ -172,8 +169,8 @@ void ICON_dash_KEY() // ICON-KEY
 void _dot_BLT() // .BLT
 {
   signed short int i, imax;
-  Push(2); // 2
-  Push(0); // 0
+  Push(2);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -181,7 +178,7 @@ void _dot_BLT() // .BLT
   {
   Push(Read16(regsp)); // DUP
   Push(i); // I
-  Push(Read16(cc__9)); // 9
+  Push(9);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
@@ -241,10 +238,10 @@ void SEE_dash_BLTS() // SEE-BLTS
   Push(0x0014);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(pp_LBLT); // LBLT
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
   Push(0x003e);
@@ -256,7 +253,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   _st__plus__ex__gt_(); // <+!>
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
-  Push(Read16(cc__dash_2)); // -2
+  Push(-2);
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   Push(0x0041);
@@ -264,7 +261,7 @@ void SEE_dash_BLTS() // SEE-BLTS
   _at_RECORD(); // @RECORD
   Push(0x001b);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(2); // 2
+  Push(2);
   Push(pp_YBLT); // YBLT
   _st__plus__ex__gt_(); // <+!>
   i++;
@@ -302,7 +299,7 @@ void ICONS() // ICONS
   title(); // title
   Push(0x00b4);
   Push(0x000f);
-  Push(0); // 0
+  Push(0);
   SEE_dash_BLTS(); // SEE-BLTS
   PAUSE_dash_PAGE(); // PAUSE-PAGE
   title(); // title

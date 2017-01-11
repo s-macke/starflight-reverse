@@ -22,9 +22,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_X1; // X1
 extern const unsigned short int pp_X2; // X2
@@ -175,27 +172,27 @@ void _dot_PARMS() // .PARMS
   PRINT("x2= ", 4); // (.")
   Push(pp_X2); // X2
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dot_R(); // .R
   PRINT("x1= ", 4); // (.")
   Push(pp_X1); // X1
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dot_R(); // .R
   PRINT("st ", 3); // (.")
   Push(pp_XSTART); // XSTART
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dot_R(); // .R
   PRINT("en ", 3); // (.")
   Push(pp_XEND); // XEND
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dot_R(); // .R
   PRINT("y ", 2); // (.")
   Push(pp_YLINE); // YLINE
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dot_R(); // .R
   KEY_2(); // KEY_2
   Push(0x000d);
@@ -319,23 +316,23 @@ void _dot_HYBRID() // .HYBRID
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
   a = Pop(); // >R
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   Push(a); // I
-  Push(2); // 2
+  Push(2);
   LC_at_(); // LC@
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
   Push(a); // I
-  Push(Read16(cc__3)); // 3
+  Push(3);
   LC_at_(); // LC@
   Push(pp_WBLT); // WBLT
   _ex__3(); // !_3
   Push(a); // R>
-  Push(Read16(cc__4)); // 4
+  Push(4);
   LC_at_(); // LC@
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -347,7 +344,7 @@ void _dot_HYBRID() // .HYBRID
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   c = Pop(); // >R
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
   Push(c); // I
@@ -359,7 +356,7 @@ void _dot_HYBRID() // .HYBRID
   _ex__3(); // !_3
   Push(c); // R>
   Push(b); // R>
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
   if (Pop() == 0) goto label1;
@@ -387,10 +384,10 @@ void _dot_HYBRID() // .HYBRID
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dash_(); // -
   L_at_(); // L@
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dash_(); // -
   Push(pp_ABLT); // ABLT
   _plus__ex_(); // +!
@@ -437,7 +434,7 @@ void SETUP() // SETUP
   _gt_MONO(); // >MONO
   _gt_A(); // >A
   DARK(); // DARK
-  Push(0); // 0
+  Push(0);
   Push(0x00c7);
   POS_dot_(); // POS.
   NODRIVES(); // NODRIVES

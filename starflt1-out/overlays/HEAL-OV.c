@@ -48,11 +48,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
@@ -135,7 +130,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 {
   Push(0x0083);
   Push(0x0053);
-  Push(0x0009);
+  Push(9);
   Push(0x0012);
   WINDOW(); // WINDOW
 }
@@ -148,8 +143,8 @@ void UNK_0xf0a6() // UNK_0xf0a6
 void UNK_0xf0bc() // UNK_0xf0bc
 {
   Push(0x0040);
-  Push(Read16(cc__3)); // 3
-  Push(Read16(cc__7)); // 7
+  Push(3);
+  Push(7);
   Push(0x0026);
   WINDOW(); // WINDOW
 }
@@ -162,7 +157,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
 void UNK_0xf0ce() // UNK_0xf0ce
 {
   SWAP(); // SWAP
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() * Pop()); // *
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -172,7 +167,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   ROT(); // ROT
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -254,7 +249,7 @@ void UNK_0xf139() // UNK_0xf139
 {
   Push(pp_ROSTER); // ROSTER
   Push(0x0012);
-  Push(0); // 0
+  Push(0);
   FILL_1(); // FILL_1
 }
 
@@ -266,8 +261,8 @@ void UNK_0xf139() // UNK_0xf139
 void UNK_0xf147() // UNK_0xf147
 {
   signed short int i, imax;
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -334,8 +329,8 @@ void UNK_0xf183() // UNK_0xf183
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("RED");
   _ex_COLOR(); // !COLOR
-  Push(1); // 1
-  Push(1); // 1
+  Push(1);
+  Push(1);
   UNK_0xf0ce(); // UNK_0xf0ce
   GCR(); // GCR
   PRINT("!!CREW DECEASED!! ", 18); // (.")
@@ -364,8 +359,8 @@ void ROLE_dash_C() // ROLE-C
   Push(0x63ef); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -402,10 +397,10 @@ void UNK_0xf23c() // UNK_0xf23c
   unsigned short int a;
   signed short int i, imax;
   a = Pop(); // >R
-  Push(1); // 1
+  Push(1);
   Push(pp_ROSTER); // ROSTER
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -429,7 +424,7 @@ void UNK_0xf23c() // UNK_0xf23c
 
   label1:
   Pop(); Pop();// 2DROP
-  Push(1); // 1
+  Push(1);
 
   label2:
   ROT(); // ROT
@@ -505,8 +500,8 @@ void UNK_0xf2cd() // UNK_0xf2cd
   UNK_0xf280(); // UNK_0xf280
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -525,7 +520,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   if (Pop() == 0) goto label3;
   Push(0x640f); // IFIELD(UNK_0xf122)
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -601,11 +596,11 @@ void _dot_VITS() // .VITS
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   UNK_0xf0a6(); // UNK_0xf0a6
-  Push(0); // 0
-  Push(1); // 1
+  Push(0);
+  Push(1);
   UNK_0xf0ce(); // UNK_0xf0ce
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -623,7 +618,7 @@ void _dot_VITS() // .VITS
   _gt_C_plus_S(); // >C+S
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Push(1); // 1
+  Push(1);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   Push(0x63fa); // IFIELD(UNK_0xf0ff)
@@ -634,7 +629,7 @@ void _dot_VITS() // .VITS
   _dash_(); // -
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
-  Push(0); // 0
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -648,17 +643,17 @@ void _dot_VITS() // .VITS
   label2:
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
-  Push(Read16(cc__4)); // 4
+  Push(4);
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
   Push(0x640e); // IFIELD(UNK_0xf11d)
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _dot_R(); // .R
   PRINT("%", 1); // (.")
 
@@ -713,7 +708,7 @@ void UNK_0xf416() // UNK_0xf416
 {
   Push(0x640f); // IFIELD(UNK_0xf122)
   Push(Read16(Pop())); // @
-  Push(2); // 2
+  Push(2);
   Push(Pop() | Pop()); // OR
   Push(0x640f); // IFIELD(UNK_0xf122)
   _ex__3(); // !_3
@@ -737,7 +732,7 @@ void UNK_0xf416() // UNK_0xf416
 void UNK_0xf42f() // UNK_0xf42f
 {
   signed short int i, imax;
-  Push(0); // 0
+  Push(0);
   Push(pp_UNK_0xf426); // UNK_0xf426
   _ex__3(); // !_3
   Push2Words("*ASSIGN-CREW");
@@ -749,8 +744,8 @@ void UNK_0xf42f() // UNK_0xf42f
   Push(0x63ef); // IFIELD(INST-SI)
   Push(0x0011);
   Push(Pop() + Pop()); // +
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -796,8 +791,8 @@ void UNK_0xf42f() // UNK_0xf42f
 void UNK_0xf489() // UNK_0xf489
 {
   Push(0x6409); // IFIELD(UNK_0xf104)
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
   FILL_1(); // FILL_1
   UNK_0xf416(); // UNK_0xf416
 }
@@ -843,8 +838,8 @@ void UNK_0xf4c1() // UNK_0xf4c1
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
   Push(0x6400); // IFIELD(UNK_0xf0f0)
-  Push(Read16(cc__6)); // 6
-  Push(1); // 1
+  Push(6);
+  Push(1);
 
   i = Pop();
   imax = Pop();
@@ -867,7 +862,7 @@ void UNK_0xf4c1() // UNK_0xf4c1
   _1_dot_5_at_(); // 1.5@
   Push(i); // I
   _3_star_(); // 3*
-  Push(Read16(cc__4)); // 4
+  Push(4);
   PICK(); // PICK
   Push(Pop() + Pop()); // +
   _1_dot_5_ex_(); // 1.5!

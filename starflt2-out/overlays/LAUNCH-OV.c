@@ -35,11 +35,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int cc_TRUE; // TRUE
 extern const unsigned short int cc_FALSE; // FALSE
 extern const unsigned short int pp_HBUF_dash_SE; // HBUF-SE
@@ -207,8 +202,8 @@ void UNK_0xf11a() // UNK_0xf11a
   signed short int i, imax;
   Push(0x2710);
   TONE(); // TONE
-  Push(1); // 1
-  Push(Read16(cc__3)); // 3
+  Push(1);
+  Push(3);
 
   i = Pop();
   imax = Pop();
@@ -227,7 +222,7 @@ void UNK_0xf11a() // UNK_0xf11a
   V_gt_DISPL(); // V>DISPL
   Push(0x0190);
   MS(); // MS
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -251,7 +246,7 @@ void UNK_0xf14e() // UNK_0xf14e
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(1); // 1
+  Push(1);
   Push(pp_CONTEXT_3); // CONTEXT_3
   _ex__2(); // !_2
   Push(pp__ask_G_dash_AWAR); // ?G-AWAR
@@ -282,7 +277,7 @@ void UNK_0xf192() // UNK_0xf192
 
 void UNK_0xf1a6() // UNK_0xf1a6
 {
-  Push(Read16(cc__4)); // 4
+  Push(4);
   SWAP(); // SWAP
   Push(0x004b);
   OVER(); // OVER
@@ -300,7 +295,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
   _ex_COLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
-  Push(0); // 0
+  Push(0);
   Push(0x000a);
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -326,11 +321,11 @@ void UNK_0xf1e4() // UNK_0xf1e4
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00be);
   Push(0x004c);
   Push(a); // I
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00bf);
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
@@ -346,11 +341,11 @@ void UNK_0xf202() // UNK_0xf202
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(a); // I
   Push(0x004c);
   Push(0x0049);
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(a); // I
   Push(Pop()-1); // 1-
   LCOPYBL(); // LCOPYBL
@@ -386,15 +381,15 @@ void _dot_AIRLOCK() // .AIRLOCK
   POS_dot_(); // POS.
   PRINT("CAUTION", 7); // (.")
   _gt_1FONT(); // >1FONT
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x005d);
   POS_dot_(); // POS.
   PRINT("PRESSURIZED AREA", 16); // (.")
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x001e);
   POS_dot_(); // POS.
   PRINT("STANDARD AIRLOCK", 16); // (.")
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x0014);
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
@@ -467,20 +462,20 @@ void UNK_0xf32a() // UNK_0xf32a
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf312(); // UNK_0xf312
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00bf);
   Push(0x004c);
   Push(0x00bf);
   Push(a); // I
   _dash_(); // -
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00be);
   goto label2;
 
   label1:
   Push(0x0048);
   UNK_0xf312(); // UNK_0xf312
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x0048);
   Push(a); // I
   Push(Pop() + Pop()); // +
@@ -499,7 +494,7 @@ void UNK_0xf32a() // UNK_0xf32a
   UNK_0xf320(); // UNK_0xf320
   Push(pp_DBUF_dash_SE); // DBUF-SE
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
   Push(0x0024);
@@ -536,7 +531,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
   Push(Read16(cc_TRUE)); // TRUE
   if (Pop() == 0) goto label1;
   Push(0x003b);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -583,7 +578,7 @@ void _and_LAUNCH() // &LAUNCH
 {
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
@@ -618,26 +613,26 @@ void _and_RETURN() // &RETURN
   signed short int j, jmax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(0x0012);
   RRND(); // RRND
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(1); // 1
+  Push(1);
   Push(0x0010);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
-  Push(0); // 0
+  Push(0);
   Push(0x0048);
   RRND(); // RRND
-  Push(0); // 0
+  Push(0);
   Push(0x0078);
   RRND(); // RRND
   LPLOT(); // LPLOT
@@ -662,7 +657,7 @@ void _and_RETURN() // &RETURN
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
   Push(0x003b);
-  Push(0); // 0
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -671,13 +666,13 @@ void _and_RETURN() // &RETURN
   Push(0x003c);
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Push(1); // 1
+  Push(1);
   Push(j); // I
   UNK_0xf32a(); // UNK_0xf32a
   Push(0x003c);
   Push(j); // I
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   Push(j); // I
   UNK_0xf32a(); // UNK_0xf32a
   Push(0x7148);

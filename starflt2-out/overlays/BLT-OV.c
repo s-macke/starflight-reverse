@@ -42,9 +42,6 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_BL; // BL
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int pp_DTA_1; // DTA_1
 extern const unsigned short int pp_SKIPPED; // SKIPPED
 extern const unsigned short int pp_CANSKIP; // CANSKIP
@@ -172,7 +169,7 @@ void UNK_0xf058() // UNK_0xf058
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(pp_DTA_1); // DTA_1
   D_ex_(); // D!
   DOS_dash_DTA(); // DOS-DTA
@@ -197,8 +194,8 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Read16(cc_BL)); // BL
   FILL_2(); // FILL_2
   Push(pp_UNK_0xf068); // UNK_0xf068
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -230,8 +227,8 @@ void UNK_0xf07b() // UNK_0xf07b
   OVER(); // OVER
   C_ex__2(); // C!_2
   Push(Pop()+1); // 1+
-  Push(Read16(cc__3)); // 3
-  Push(0); // 0
+  Push(3);
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -377,10 +374,10 @@ void LDAP() // LDAP
   UNK_0xf145(); // UNK_0xf145
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(pp_PIC_h_); // PIC^
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(0x0c1c);
   LCMOVE(); // LCMOVE
   UNK_0xf179(); // UNK_0xf179
@@ -424,7 +421,7 @@ void UNK_0xf200() // UNK_0xf200
 {
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(Read16(cc__3)); // 3
+  Push(3);
   L_at_(); // L@
   BMWIDE(); // BMWIDE
   _ex__2(); // !_2
@@ -461,7 +458,7 @@ void UNK_0xf222() // UNK_0xf222
   Push(0x000d);
   Push(pp_SRC); // SRC
   _ex__2(); // !_2
-  Push(2); // 2
+  Push(2);
   Push(Read16(regsp)); // DUP
   Push(pp_DST); // DST
   _ex__2(); // !_2
@@ -472,7 +469,7 @@ void UNK_0xf222() // UNK_0xf222
   _ex__2(); // !_2
 
   label1:
-  Push(0); // 0
+  Push(0);
   Push(pp_BMAP); // BMAP
   Push(0x000c);
   Push(Pop() + Pop()); // +
@@ -506,7 +503,7 @@ void UNK_0xf26a() // UNK_0xf26a
   Push(Read16(Pop())); // @
   LC_at_(); // LC@
   Push(Read16(regsp)); // DUP
-  Push(1); // 1
+  Push(1);
   Push(pp_SRC); // SRC
   _plus__ex__2(); // +!_2
 }
@@ -539,7 +536,7 @@ void UNK_0xf280() // UNK_0xf280
   C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -584,11 +581,11 @@ void UNK_0xf280() // UNK_0xf280
   Push(pp_DST); // DST
   Push(Read16(Pop())); // @
   LC_ex_(); // LC!
-  Push(1); // 1
+  Push(1);
   Push(pp_DST); // DST
   _plus__ex__2(); // +!_2
   Push(Pop()-1); // 1-
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -610,7 +607,7 @@ void UNK_0xf30a() // UNK_0xf30a
   signed short int j, jmax;
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -623,17 +620,17 @@ void UNK_0xf30a() // UNK_0xf30a
   BMBYTES(); // BMBYTES
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
 
   j = Pop();
   jmax = Pop();
   do // (DO)
   {
   _gt_PLANES(); // >PLANES
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(pp_SRC); // SRC
   _plus__ex__2(); // +!_2
-  Push(1); // 1
+  Push(1);
   Push(pp_DST); // DST
   _plus__ex__2(); // +!_2
   j++;
@@ -667,7 +664,7 @@ void SETB() // SETB
   if (Pop() == 0) goto label1;
   UNK_0xf30a(); // UNK_0xf30a
   UNK_0xf046(); // UNK_0xf046
-  Push(2); // 2
+  Push(2);
   goto label2;
 
   label1:
@@ -709,7 +706,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
   unsigned short int a;
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(0x060d);
   LCMOVE(); // LCMOVE
   SETB(); // SETB
@@ -720,21 +717,21 @@ void UNK_0xf3bb() // UNK_0xf3bb
   Push(Read16(a)); // R@
   BMSEG(); // BMSEG
   _ex__2(); // !_2
-  Push(0); // 0
+  Push(0);
   BMPAL(); // BMPAL
   Push(Pop()-1); // 1-
   _ex__2(); // !_2
   _at_DS(); // @DS
   Push(pp_BMAP); // BMAP
   Push(Read16(a)); // R@
-  Push(0); // 0
+  Push(0);
   Push(0x000e);
   LCMOVE(); // LCMOVE
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label1;
   UNK_0xf046(); // UNK_0xf046
-  Push(2); // 2
+  Push(2);
   goto label2;
 
   label1:
@@ -785,7 +782,7 @@ void LDSY() // LDSY
   Push(pp_SSYSEG); // SSYSEG
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
   UNK_0xf3bb(); // UNK_0xf3bb
 }
 
@@ -827,10 +824,10 @@ void _at__dot_HY() // @.HY
   SETB(); // SETB
   Push(a); // R>
   UNK_0xf111(); // UNK_0xf111
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00bf);
   _dot_RAW(); // .RAW
-  Push(0); // 0
+  Push(0);
   BMPAL(); // BMPAL
   C_ex__2(); // C!_2
   Push(pp_CANSKIP); // CANSKIP
@@ -858,7 +855,7 @@ void _dot_TPI() // .TPI
   UNK_0x3f09("strpics.raw");
   UNK_0xf145(); // UNK_0xf145
   SETB(); // SETB
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00c5);
   _dot_RAW(); // .RAW
   Push(pp_CANSKIP); // CANSKIP
@@ -885,19 +882,19 @@ void _dot_API() // .API
   a = Pop(); // >R
   Push(pp_PIC_h_); // PIC^
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(0x0c1c);
   LCMOVE(); // LCMOVE
   SETB(); // SETB
   Push(a); // R>
   UNK_0xf12b(); // UNK_0xf12b
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00c5);
   _dot_RAW(); // .RAW
-  Push(0); // 0
+  Push(0);
   BMPAL(); // BMPAL
   C_ex__2(); // C!_2
 }

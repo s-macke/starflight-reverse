@@ -98,11 +98,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
 extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
 extern const unsigned short int pp__ask_AF; // ?AF
@@ -413,7 +408,7 @@ void UNK_0xedee() // UNK_0xedee
   OVER(); // OVER
   _slash_MOD(); // /MOD
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   _0_gt_(); // 0>
 }
@@ -435,12 +430,12 @@ void UNK_0xee04() // UNK_0xee04
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
-  Push(0); // 0
-  Push(Read16(cc__3)); // 3
+  Push(0);
+  Push(3);
   PICK(); // PICK
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -469,7 +464,7 @@ void UNK_0xee5b() // UNK_0xee5b
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65fb); // IFIELD(UNK_0xec70)
   Push(Read8(Pop())&0xFF); // C@
-  Push(0); // 0
+  Push(0);
   Push(0x00c8);
   RRND(); // RRND
   _gt_(); // >
@@ -593,8 +588,8 @@ void UNK_0xef13() // UNK_0xef13
   _at_INST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(Read16(a)); // R@
-  Push(2); // 2
-  Push(Read16(cc__4)); // 4
+  Push(2);
+  Push(4);
   WITHIN(); // WITHIN
   Push(Read16(a)); // R@
   Push(0x000e);
@@ -642,7 +637,7 @@ void UNK_0xef53() // UNK_0xef53
   PRINT("CLASS ", 6); // (.")
   Push(0x015e);
   _slash_(); // /
-  Push(1); // 1
+  Push(1);
   MAX(); // MAX
   _dot_(); // .
   PRINT("EQUIVALENT", 10); // (.")
@@ -651,7 +646,7 @@ void UNK_0xef53() // UNK_0xef53
   Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
-  Push(1); // 1
+  Push(1);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -700,7 +695,7 @@ void UNK_0xf02c() // UNK_0xf02c
 {
   Push(Read16(regsp)); // DUP
   Push(0x65f3); // IFIELD(UNK_0xec85)
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -714,7 +709,7 @@ void UNK_0xf02c() // UNK_0xf02c
   goto label3;
 
   label2:
-  Push(Read16(cc__6)); // 6
+  Push(6);
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
@@ -747,13 +742,13 @@ void UNK_0xf07e() // UNK_0xf07e
   UNK_0xee9b(); // UNK_0xee9b
   PRINT("CONSTITUENTS: ", 14); // (.")
   CTINIT(); // CTINIT
-  Push(0); // 0
+  Push(0);
   UNK_0xf02c(); // UNK_0xf02c
-  Push(1); // 1
+  Push(1);
   UNK_0xf02c(); // UNK_0xf02c
-  Push(2); // 2
+  Push(2);
   UNK_0xf02c(); // UNK_0xf02c
-  Push(Read16(cc__3)); // 3
+  Push(3);
   UNK_0xf02c(); // UNK_0xf02c
 }
 
@@ -779,7 +774,7 @@ void UNK_0xf0a7() // UNK_0xf0a7
 void UNK_0xf0b5() // UNK_0xf0b5
 {
   Push(0x0014);
-  Push(1); // 1
+  Push(1);
   CTPOS_dot_(); // CTPOS.
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
@@ -1029,7 +1024,7 @@ void UNK_0xf221() // UNK_0xf221
   if (Pop() == 0) goto label1;
   Push(0x0320);
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   SQRT(); // SQRT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -1039,12 +1034,12 @@ void UNK_0xf221() // UNK_0xf221
   label1:
   Push(0x0064);
   _slash_MOD(); // /MOD
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   _dot_(); // .
   PRINT("G", 1); // (.")
@@ -1261,9 +1256,9 @@ void UNK_0xf3b8() // UNK_0xf3b8
   unsigned short int a;
   signed short int i, imax;
   a = Pop(); // >R
-  Push(2); // 2
-  Push(Read16(cc__7)); // 7
-  Push(0); // 0
+  Push(2);
+  Push(7);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -1300,13 +1295,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   UNK_0xf3b8(); // UNK_0xf3b8
   Push(Read16(regsp)); // DUP
   CTINIT(); // CTINIT
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _dash_(); // -
-  Push(1); // 1
+  Push(1);
   MAX(); // MAX
   _dot_(); // .
   PRINT("- ", 2); // (.")
-  Push(Read16(cc__8)); // 8
+  Push(8);
   MIN(); // MIN
   _dot_(); // .
 }
@@ -1329,7 +1324,7 @@ void UNK_0xf414() // UNK_0xf414
   CTINIT(); // CTINIT
   Push(0xbe45); // probable '.HUFF'
   MODULE(); // MODULE
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _star_CLOSE(); // *CLOSE
 }
 

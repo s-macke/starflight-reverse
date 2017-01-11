@@ -79,9 +79,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__6; // 6
 extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
 extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
 extern const unsigned short int cc_FLUX_dash_IC; // FLUX-IC
@@ -576,7 +573,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
   UNK_0xf16a(); // UNK_0xf16a
   LoadData("UNK_0xf0fc"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _st_(); // <
   if (Pop() == 0) goto label1;
   Push(Read16(cc_UNK_0xf156)); // UNK_0xf156
@@ -611,7 +608,7 @@ void UNK_0xf2ef() // UNK_0xf2ef
   _at_INST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(a); // I
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
@@ -788,7 +785,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
   goto label3;
 
   label2:
-  Push(Read16(cc__4)); // 4
+  Push(4);
 
   label3:
   return;
@@ -864,7 +861,7 @@ void UNK_0xf42b() // UNK_0xf42b
 {
   _at_INST_dash_S(); // @INST-S
   if (Pop() == 0) goto label1;
-  Push(Read16(cc__3)); // 3
+  Push(3);
   return;
 
   label1:
@@ -918,7 +915,7 @@ void UNK_0xf460() // UNK_0xf460
   Push(pp_FSTUN); // FSTUN
   Push(Read16(Pop())); // @
   if (Pop() == 0) goto label2;
-  Push(Read16(cc__4)); // 4
+  Push(4);
   goto label3;
 
   label2:

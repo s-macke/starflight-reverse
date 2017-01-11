@@ -51,9 +51,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__7; // 7
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
@@ -258,20 +255,20 @@ void UNK_0xedac() // UNK_0xedac
   _ex__2(); // !_2
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
   Push(a); // I
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
-  Push(Read16(cc__5)); // 5
+  Push(5);
   _slash_(); // /
   Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
   Push(0x0072);
   Push(0x00b2);
   ROT(); // ROT
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -330,8 +327,8 @@ void DBARS() // DBARS
   signed short int i, imax;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(Read16(cc__7)); // 7
-  Push(0); // 0
+  Push(7);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -376,7 +373,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
   ERASE_dash_A(); // ERASE-A
   UNK_0xecd9(); // UNK_0xecd9
   UNK_0xed35(); // UNK_0xed35
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(pp__n_AUX); // #AUX
   _ex__2(); // !_2
   DBARS(); // DBARS
@@ -394,9 +391,9 @@ void UNK_0xeeb8() // UNK_0xeeb8
   a = Pop(); // >R
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0); // 0
-  Push(Read16(cc__7)); // 7
-  Push(0); // 0
+  Push(0);
+  Push(7);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -442,7 +439,7 @@ void UNK_0xeef0() // UNK_0xeef0
 
   label1:
   Push(a); // I
-  Push(1); // 1
+  Push(1);
   Push(0x0014);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label3;
@@ -637,7 +634,7 @@ void UNK_0xf063() // UNK_0xf063
 
   label1:
   PRINT("NONE", 4); // (.")
-  Push(0); // 0
+  Push(0);
 
   label2:
   Push(a); // R>
@@ -657,7 +654,7 @@ void UNK_0xf0ab() // UNK_0xf0ab
   Push(0x65f2); // IFIELD(UNK_0xecc0)
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   PRINT("%", 1); // (.")
 }
@@ -710,7 +707,7 @@ void UNK_0xf11b() // UNK_0xf11b
   Push(0x1c1b);
   Push(0x5559);
   _star__slash_(); // */
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(Pop() + Pop()); // +
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -727,10 +724,10 @@ void UNK_0xf14f() // UNK_0xf14f
   Push(0x003c);
   _st_(); // <
   if (Pop() == 0) goto label1;
-  Push(Read16(cc__5)); // 5
+  Push(5);
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
-  Push(2); // 2
+  Push(2);
   _gt_(); // >
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
@@ -766,7 +763,7 @@ void UNK_0xf14f() // UNK_0xf14f
   PRINT("DAY", 3); // (.")
 
   label2:
-  Push(1); // 1
+  Push(1);
   _gt_(); // >
   if (Pop() == 0) goto label3;
   Push(0x0053);
@@ -867,12 +864,12 @@ void UNK_0xf281() // UNK_0xf281
   Push(0x007f);
   Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP
-  Push(1); // 1
+  Push(1);
   Push(0x0064);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
   Pop(); Pop();// 2DROP
-  Push(0); // 0
+  Push(0);
   return;
 
   label1:
@@ -889,7 +886,7 @@ void UNK_0xf281() // UNK_0xf281
   PRINT("DAMAGED BEYOND REPAIR.", 22); // (.")
 
   label3:
-  Push(1); // 1
+  Push(1);
 }
 
 
@@ -1031,7 +1028,7 @@ void UNK_0xf415() // UNK_0xf415
   Push(0x0054);
   Push(0x00b3);
   ROT(); // ROT
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() * Pop()); // *
   _dash_(); // -
   POS_dot_(); // POS.
@@ -1041,7 +1038,7 @@ void UNK_0xf415() // UNK_0xf415
   Push(0x001d);
   Push(pp_WBLT); // WBLT
   _ex__2(); // !_2
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(pp_LBLT); // LBLT
   _ex__2(); // !_2
   SetColor("LT-BLUE");
@@ -1068,9 +1065,9 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   _ro__slash_DAMAGE_rc_(); // (/DAMAGE)
   Push(pp_NCRS); // NCRS
   _099(); // 099
-  Push(0); // 0
+  Push(0);
   UNK_0xf415(); // UNK_0xf415
-  Push(0); // 0
+  Push(0);
   UNK_0xf255(); // UNK_0xf255
   CTINIT(); // CTINIT
   Push(pp_FTRIG); // FTRIG
@@ -1087,11 +1084,11 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Read16(Pop())); // @
   OVER(); // OVER
   _dash_(); // -
-  Push(Read16(cc__7)); // 7
+  Push(7);
   MOD(); // MOD
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(pp_NCRS); // NCRS

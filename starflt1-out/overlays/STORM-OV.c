@@ -40,12 +40,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp_LCOLOR; // LCOLOR
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_FORCED; // FORCED
@@ -135,7 +129,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   signed short int i, imax;
   unsigned short int a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(Pop() * Pop()); // *
   Push(Read16(regsp)); // DUP
   _co_(); // ,
@@ -143,16 +137,16 @@ void UNK_0xf0b4() // UNK_0xf0b4
   OVER(); // OVER
   ALLOT(); // ALLOT
   SWAP(); // SWAP
-  Push(0); // 0
+  Push(0);
   FILL_1(); // FILL_1
   CODE(); // (;CODE) inlined assembler code
 // 0xf0cc: call   1649
-  Push(0); // 0
-  Push(Read16(cc__4)); // 4
+  Push(0);
+  Push(4);
   ROLL(); // ROLL
-  Push(Read16(cc__4)); // 4
+  Push(4);
   ROLL(); // ROLL
-  Push(Read16(cc__4)); // 4
+  Push(4);
   ROLL(); // ROLL
   UNK_0xf0a6(); // UNK_0xf0a6
 
@@ -162,18 +156,18 @@ void UNK_0xf0b4() // UNK_0xf0b4
   {
   Push(i); // I
   _2_at_(); // 2@
-  Push(Read16(cc__3)); // 3
+  Push(3);
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
   a = Pop(); // >R
-  Push(Read16(cc__3)); // 3
+  Push(3);
   PICK(); // PICK
   Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   Push(i); // I
-  Push(Read16(cc__4)); // 4
+  Push(4);
   ROLL(); // ROLL
   Pop(); // DROP
   ROT(); // ROT
@@ -181,7 +175,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   imax = i; // LEAVE
 
   label1:
-  Push(Read16(cc__6)); // 6
+  Push(6);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -190,7 +184,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   return;
@@ -326,10 +320,10 @@ void UNK_0xf298() // UNK_0xf298
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x6400); // IFIELD(UNK_0xf281)
-  Push(0); // 0
-  Push(Read16(cc__6)); // 6
+  Push(0);
+  Push(6);
   RRND(); // RRND
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   _1_dot_5_at_(); // 1.5@
@@ -345,11 +339,11 @@ void UNK_0xf2b2() // UNK_0xf2b2
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label1;
-  Push(1); // 1
+  Push(1);
   Push(0x0064);
   RRND(); // RRND
   Push(0x001e);
@@ -357,7 +351,7 @@ void UNK_0xf2b2() // UNK_0xf2b2
   return;
 
   label1:
-  Push(0); // 0
+  Push(0);
 }
 
 
@@ -367,12 +361,12 @@ void UNK_0xf2b2() // UNK_0xf2b2
 
 void UNK_0xf2da() // UNK_0xf2da
 {
-  Push(1); // 1
+  Push(1);
   Push(pp_E_slash_M); // E/M
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
   _3_star_(); // 3*
-  Push(2); // 2
+  Push(2);
   MAX(); // MAX
   Push(0x001e);
   MIN(); // MIN
@@ -387,11 +381,11 @@ void UNK_0xf2da() // UNK_0xf2da
 void UNK_0xf2f4() // UNK_0xf2f4
 {
   Push(0x0040);
-  Push(Read16(cc__3)); // 3
-  Push(Read16(cc__7)); // 7
+  Push(3);
+  Push(7);
   Push(0x0026);
   WINDOW(); // WINDOW
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(pp_WBOTTOM); // WBOTTOM
   _st__plus__ex__gt_(); // <+!>
   _gt_TVCT(); // >TVCT
@@ -470,7 +464,7 @@ void INJURE_dash_PL() // INJURE-PL
   LoadData("UNK_0xf290"); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
-  Push(1); // 1
+  Push(1);
   MAX(); // MAX
   Push(pp_E_slash_M); // E/M
   Push(Read16(Pop())); // @
@@ -479,14 +473,14 @@ void INJURE_dash_PL() // INJURE-PL
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
   _slash_(); // /
-  Push(1); // 1
+  Push(1);
   MAX(); // MAX
   Push(Pop() * Pop()); // *
   Push(0x640e); // IFIELD(UNK_0xf286)
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(0x0064);
   MIN(); // MIN
@@ -529,13 +523,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0074);
   Push(0x0096);
   POS_dot_(); // POS.
-  Push(Read16(cc__7)); // 7
+  Push(7);
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
-  Push(0x0009);
+  Push(9);
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 }
@@ -550,10 +544,10 @@ void UNK_0xf42e() // UNK_0xf42e
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _gt_(); // >
   if (Pop() == 0) goto label1;
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label2;
@@ -585,27 +579,27 @@ void UNK_0xf42e() // UNK_0xf42e
 
 void UNK_0xf46c() // UNK_0xf46c
 {
-  Push(Read16(cc__5)); // 5
+  Push(5);
   SWAP(); // SWAP
   _dash_(); // -
   _3_star_(); // 3*
-  Push(1); // 1
+  Push(1);
   SWAP(); // SWAP
   RRND(); // RRND
   Push(0x000c);
   MIN(); // MIN
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(pp_STORM); // STORM
   _st__ex__gt_(); // <!>
-  Push(1); // 1
+  Push(1);
   Push(0x0064);
   RRND(); // RRND
   LoadData("UNK_0xf255"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop()+1); // 1+
-  Push(0); // 0
+  Push(0);
   STORMS(); // STORMS
   UNK_0xf174(); // UNK_0xf174
   Pop(); // DROP
@@ -620,11 +614,11 @@ void UNK_0xf46c() // UNK_0xf46c
 
 void UNK_0xf4a8() // UNK_0xf4a8
 {
-  Push(1); // 1
+  Push(1);
   Push(pp_STORM); // STORM
   _st__ex__gt_(); // <!>
-  Push(0); // 0
-  Push(0); // 0
+  Push(0);
+  Push(0);
   RRND(); // RRND
   Push(pp__n_STORM); // #STORM
   _st__ex__gt_(); // <!>

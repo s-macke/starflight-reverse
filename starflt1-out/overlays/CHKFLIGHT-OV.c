@@ -33,11 +33,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int pp__ask_TV; // ?TV
 extern const unsigned short int pp__ask_EVAL; // ?EVAL
 extern const unsigned short int pp_YBLT; // YBLT
@@ -113,25 +108,25 @@ void UNK_0xf1c5() // UNK_0xf1c5
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(2); // 2
-  Push(1); // 1
+  Push(2);
+  Push(1);
   Push(0x009d);
-  Push(1); // 1
+  Push(1);
   LLINE(); // LLINE
-  Push(2); // 2
+  Push(2);
   Push(0x00b9);
   Push(0x009d);
   Push(0x00b9);
   LLINE(); // LLINE
-  Push(1); // 1
+  Push(1);
   Push(0x00b9);
-  Push(1); // 1
-  Push(1); // 1
+  Push(1);
+  Push(1);
   LLINE(); // LLINE
   Push(0x009e);
   Push(0x00b9);
   Push(0x009e);
-  Push(1); // 1
+  Push(1);
   LLINE(); // LLINE
   _gt_3FONT(); // >3FONT
   Push(0x0013);
@@ -145,15 +140,15 @@ void UNK_0xf1c5() // UNK_0xf1c5
   Push(Pop()+2); // 2+
   OVER(); // OVER
   LLINE(); // LLINE
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("FLIGHT", 6); // (.")
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
   PRINT("CHECK", 5); // (.")
-  Push(2); // 2
+  Push(2);
   Push(0x00c5);
   SetColor("BLACK");
   _dot_1LOGO(); // .1LOGO
@@ -166,7 +161,7 @@ void UNK_0xf1c5() // UNK_0xf1c5
 
 void UNK_0xf258() // UNK_0xf258
 {
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(0x0014);
@@ -284,10 +279,10 @@ void UNK_0xf32b() // UNK_0xf32b
   Push(pp_UNK_0xf327); // UNK_0xf327
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  Push(1); // 1
+  Push(1);
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() & Pop()); // AND
   _ro__dot_CS_rc_(); // (.CS) case
 }
@@ -318,33 +313,33 @@ void UNK_0xf3ad() // UNK_0xf3ad
   UNK_0xf1c5(); // UNK_0xf1c5
   _gt_2FONT(); // >2FONT
   Push(Read16(regsp)); // DUP
-  Push(1); // 1
+  Push(1);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
   UNK_0xf270(); // UNK_0xf270
 
   label1:
   Push(Read16(regsp)); // DUP
-  Push(2); // 2
+  Push(2);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf2a8(); // UNK_0xf2a8
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label3;
   UNK_0xf32b(); // UNK_0xf32b
 
   label3:
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label4;
   UNK_0xf372(); // UNK_0xf372
 
   label4:
-  Push(1); // 1
+  Push(1);
   Push(0x0016);
   CMESS(); // CMESS
   SetColor("BLACK");
@@ -406,7 +401,7 @@ void UNK_0xf450() // UNK_0xf450
   signed short int i, imax;
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0); // 0
+  Push(0);
   Push(0x6400); // IFIELD(UNK_0xf1bb)
   Push(0x0012);
   Push(Pop() + Pop()); // +
@@ -420,12 +415,12 @@ void UNK_0xf450() // UNK_0xf450
   _at__gt_C_plus_S(); // @>C+S
   Push(0x640f); // IFIELD(UNK_0xf1b6)
   Push(Read16(Pop())); // @
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
-  Push(Read16(cc__6)); // 6
+  Push(6);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -454,7 +449,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(Pop() + Pop()); // +
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf327); // UNK_0xf327
   _ex__3(); // !_3
@@ -478,7 +473,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(Read16(cc__6)); // 6
+  Push(6);
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
   Push(0x63fa); // IFIELD(INST-QTY)
@@ -492,14 +487,14 @@ void UNK_0xf4aa() // UNK_0xf4aa
   goto label3;
 
   label2:
-  Push(1); // 1
+  Push(1);
 
   label3:
   CDROP(); // CDROP
   goto label4;
 
   label1:
-  Push(1); // 1
+  Push(1);
 
   label4:
   CDROP(); // CDROP
@@ -519,11 +514,11 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(Pop()*2); // 2*
   Push(Pop() | Pop()); // OR
   UNK_0xf480(); // UNK_0xf480
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   UNK_0xf4aa(); // UNK_0xf4aa
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -531,11 +526,11 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   UNK_0xf3ad(); // UNK_0xf3ad
   KEY_2(); // KEY_2
   Pop(); // DROP
-  Push(0); // 0
+  Push(0);
   return;
 
   label1:
-  Push(1); // 1
+  Push(1);
 }
 
 // 0xf52f: db 0x43 0x48 0x4b 0x46 0x4c 0x54 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x6f 0x72 0x20 0x43 0x48 0x4b 0x46 0x4c 0x49 0x47 0x48 0x54 0x2d 0x4f 0x56 0x20 0x2d 0x00 'CHKFLT-VOC______________________or CHKFLIGHT-OV - '

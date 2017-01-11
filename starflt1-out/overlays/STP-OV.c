@@ -67,9 +67,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__9; // 9
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp__ask_AUTO; // ?AUTO
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
@@ -694,7 +691,7 @@ void UNK_0xf34b() // UNK_0xf34b
 
   UNK_0x3f3b("CODE: ");
   _dot_TTY(); // .TTY
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(pp__dash_AIN); // -AIN
   _ex__3(); // !_3
   Push(0x000a);
@@ -722,7 +719,7 @@ void UNK_0xf34b() // UNK_0xf34b
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   D_plus_(); // D+
   i++;
   } while(i<imax); // (LOOP) 0xffde
@@ -743,18 +740,18 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(Read16(Pop())); // @
   Push(pp_GLOBALSEED); // GLOBALSEED
   _ex__3(); // !_3
-  Push(0); // 0
+  Push(0);
   Push(0x0018);
   RRND(); // RRND
   Push(pp_UNK_0xf032); // UNK_0xf032
   _ex__3(); // !_3
-  Push(0); // 0
+  Push(0);
   Push(0x0018);
   RRND(); // RRND
   Push(pp_UNK_0xf036); // UNK_0xf036
   _ex__3(); // !_3
-  Push(0); // 0
-  Push(Read16(cc__9)); // 9
+  Push(0);
+  Push(9);
   RRND(); // RRND
   Push(pp_UNK_0xf03a); // UNK_0xf03a
   _ex__3(); // !_3
@@ -802,7 +799,7 @@ void UNK_0xf3e4() // UNK_0xf3e4
   Pop(); // DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) goto label2;
-  Push(1); // 1
+  Push(1);
   Push((Pop()==Pop())?1:0); // =
 }
 
@@ -889,7 +886,7 @@ void STP() // STP
   if (Pop() == 0) return;
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
   _ex__3(); // !_3

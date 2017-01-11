@@ -60,8 +60,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__6; // 6
 extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
 extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
 extern const unsigned short int cc_FLUX_dash_IC; // FLUX-IC
@@ -424,7 +422,7 @@ void UNK_0xf38f() // UNK_0xf38f
 void UNK_0xf3ab() // UNK_0xf3ab
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label1;
   Push(0x002c);
@@ -600,7 +598,7 @@ void UNK_0xf485() // UNK_0xf485
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   if (Pop() == 0) goto label1;
-  Push(Read16(cc__3)); // 3
+  Push(3);
   return;
 
   label1:

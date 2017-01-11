@@ -69,9 +69,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int cc_MUSSEG; // MUSSEG
 extern const unsigned short int pp__n_CACHE; // #CACHE
 extern const unsigned short int pp_XBUF_dash_SE; // XBUF-SE
@@ -387,7 +384,7 @@ void INITMUS() // INITMUS
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  Push(0); // 0
+  Push(0);
   Push(Read16(cc__ask_MUSIC)); // ?MUSIC
   UNK_0xe2ee(); // UNK_0xe2ee
   Push(Read16(cc_OLDINT)); // OLDINT
@@ -420,7 +417,7 @@ void HIMUS() // HIMUS
   Push(pp_UNK_0xe2ca); // UNK_0xe2ca
   Push(Read16(Pop())); // @
   Push(Read16(cc_MUSSEG)); // MUSSEG
-  Push(0); // 0
+  Push(0);
   Push(0x0320);
   LCMOVE(); // LCMOVE
   INITMUS(); // INITMUS
@@ -441,16 +438,16 @@ void CSCR_gt_EGA() // CSCR>EGA
   FILE_st_(); // FILE<
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(0x00c8);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
   Push(0x0050);
-  Push(0); // 0
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -664,7 +661,7 @@ void BRMOVE() // BRMOVE
   signed short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
@@ -684,10 +681,10 @@ void BRMOVE() // BRMOVE
   SWAP(); // SWAP
   Push(pp_HBUF_dash_SEG); // HBUF-SEG
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -755,7 +752,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
 
   label2:
   Push(0x000b);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -796,7 +793,7 @@ void UNK_0xe813() // UNK_0xe813
 {
   signed short int i, imax;
   Push(0x000b);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -836,7 +833,7 @@ void UNK_0xe82b() // UNK_0xe82b
   Push(pp_UNK_0xe6cc); // UNK_0xe6cc
   _ex__3(); // !_3
   UNK_0xe813(); // UNK_0xe813
-  Push(0); // 0
+  Push(0);
   SONG(); // SONG
   _at_DS(); // @DS
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
@@ -850,9 +847,9 @@ void UNK_0xe82b() // UNK_0xe82b
   BRMOVE(); // BRMOVE
   UNK_0xe7cd(); // UNK_0xe7cd
   CFIGARRAYS(); // CFIGARRAYS
-  Push(0); // 0
+  Push(0);
   Push(Read16(cc_MUSSEG)); // MUSSEG
-  Push(2); // 2
+  Push(2);
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
   _gt_DISPLAY(); // >DISPLAY
@@ -922,7 +919,7 @@ void INCREASE() // INCREASE
 void UNK_0xe928() // UNK_0xe928
 {
   signed short int i, imax;
-  Push(Read16(cc__7)); // 7
+  Push(7);
   REDUCE(); // REDUCE
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
@@ -935,7 +932,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   OFF(); // OFF
   Push(0x000d);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -963,7 +960,7 @@ void UNK_0xe928() // UNK_0xe928
   i++;
   } while(i<imax); // (LOOP) 0xffd8
 
-  Push(Read16(cc__7)); // 7
+  Push(7);
   INCREASE(); // INCREASE
 }
 
@@ -994,7 +991,7 @@ void INTROS() // INTROS
   if (Pop() == 0) goto label1;
   Push(0x008d);
   CSCR_gt_EGA(); // CSCR>EGA
-  Push(0); // 0
+  Push(0);
   SONG(); // SONG
   Push(0x2ee0); Push(0x0000);
   UNK_0xe680(); // UNK_0xe680
@@ -1003,9 +1000,9 @@ void INTROS() // INTROS
   Push(0x4e20); Push(0x0000);
   UNK_0xe680(); // UNK_0xe680
   CFIGARRAYS(); // CFIGARRAYS
-  Push(0); // 0
+  Push(0);
   Push(Read16(cc_MUSSEG)); // MUSSEG
-  Push(2); // 2
+  Push(2);
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
   _gt_DISPLAY(); // >DISPLAY

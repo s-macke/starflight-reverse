@@ -24,9 +24,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
 void MAX(); // MAX
 void MIN(); // MIN
 void RRND(); // RRND
@@ -90,8 +87,8 @@ void UNK_0xf346() // UNK_0xf346
 void UNK_0xf38e() // UNK_0xf38e
 {
   Push(Pop() * Pop()); // *
-  Push(0); // 0
-  Push(2); // 2
+  Push(0);
+  Push(2);
   RRND(); // RRND
   Push(Pop()*2); // 2*
   Push(Pop()-1); // 1-
@@ -107,13 +104,13 @@ void UNK_0xf3a0() // UNK_0xf3a0
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x0014);
   RRND(); // RRND
   Push(a); // I
   C_ex__2(); // C!_2
-  Push(0); // 0
-  Push(2); // 2
+  Push(0);
+  Push(2);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -141,7 +138,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(0x003b);
   MIN(); // MIN
   Push(a); // R>
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() + Pop()); // +
   _ex__2(); // !_2
 }
@@ -155,7 +152,7 @@ void UNK_0xf406() // UNK_0xf406
 {
   signed short int i, imax;
   Push(0x0032);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -165,7 +162,7 @@ void UNK_0xf406() // UNK_0xf406
   Push(i); // I
   Push(Pop() + Pop()); // +
   UNK_0xf3a0(); // UNK_0xf3a0
-  Push(Read16(cc__5)); // 5
+  Push(5);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -185,7 +182,7 @@ void UNK_0xf420() // UNK_0xf420
   Push(Pop() + Pop()); // +
   a = Pop(); // >R
   Push(a); // I
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(a); // I
@@ -193,7 +190,7 @@ void UNK_0xf420() // UNK_0xf420
   _slash_(); // /
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(0x0047);
   MIN(); // MIN
@@ -205,7 +202,7 @@ void UNK_0xf420() // UNK_0xf420
   _slash_(); // /
   Push(0x003c);
   Push(Pop() + Pop()); // +
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(0x0077);
   MIN(); // MIN
@@ -240,7 +237,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
 
   label1:
   Push(0x0032);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -249,7 +246,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   Push(i); // I
   UNK_0xf420(); // UNK_0xf420
   UNK_0xf346(); // UNK_0xf346
-  Push(Read16(cc__5)); // 5
+  Push(5);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -273,11 +270,11 @@ void FLUX() // FLUX
   UNK_0xf406(); // UNK_0xf406
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
-  Push(0); // 0
+  Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
   Push(0x0096);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -308,7 +305,7 @@ void UNK_0xf4e5() // UNK_0xf4e5
 
   label1:
   Push(0x0032);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -318,7 +315,7 @@ void UNK_0xf4e5() // UNK_0xf4e5
   Push(i); // I
   UNK_0xf420(); // UNK_0xf420
   UNK_0xf346(); // UNK_0xf346
-  Push(Read16(cc__5)); // 5
+  Push(5);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -338,19 +335,19 @@ void JUMPFX() // JUMPFX
   signed short int i, imax;
   _gt_MAINVI(); // >MAINVI
   UNK_0xf406(); // UNK_0xf406
-  Push(0); // 0
+  Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
   Push(Pop()*2); // 2*
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
   UNK_0xf4e5(); // UNK_0xf4e5
-  Push(0); // 0
-  Push(Read16(cc__6)); // 6
+  Push(0);
+  Push(6);
   RRND(); // RRND
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   _ex__2(); // !_2

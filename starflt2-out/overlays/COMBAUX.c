@@ -28,9 +28,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
 extern const unsigned short int pp__ask_UF; // ?UF
 extern const unsigned short int pp_XVIS; // XVIS
@@ -126,7 +123,7 @@ void UNK_0xf2d8() // UNK_0xf2d8
   Push(Read16(Pop())); // @
 
   label2:
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -168,19 +165,19 @@ void UNK_0xf308() // UNK_0xf308
 void UNK_0xf336() // UNK_0xf336
 {
   _gt_2ICONF(); // >2ICONF
-  Push(2); // 2
+  Push(2);
   Push(Read16(regsp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
-  Push(1); // 1
+  Push(1);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
@@ -215,19 +212,19 @@ void UNK_0xf336() // UNK_0xf336
 void UNK_0xf38e() // UNK_0xf38e
 {
   _gt_3ICONF(); // >3ICONF
-  Push(1); // 1
+  Push(1);
   Push(Read16(regsp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(2); // 2
+  Push(2);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
-  Push(1); // 1
+  Push(1);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
@@ -263,13 +260,13 @@ void UNK_0xf3da() // UNK_0xf3da
   _st__ex__gt_(); // <!>
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   _st__ex__gt_(); // <!>
   Push(pp_YWLD_c_YP); // YWLD:YP
   _st__ex__gt_(); // <!>
-  Push(1); // 1
+  Push(1);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XP); // XWLD:XP
   Push(Pop()+2); // 2+
@@ -371,7 +368,7 @@ void UNK_0xf480() // UNK_0xf480
   _st__ex__gt_(); // <!>
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -417,9 +414,9 @@ void UNK_0xf4c6() // UNK_0xf4c6
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  Push(0); // 0
+  Push(0);
   Push(a); // R>
-  Push(0); // 0
+  Push(0);
   D_plus_(); // D+
   SQRT(); // SQRT
 }
@@ -458,7 +455,7 @@ void SET_dash_SC() // SET-SC
 
   label2:
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc__5)); // 5
+  Push(5);
   _st_(); // <
   if (Pop() == 0) goto label3;
   Pop(); // DROP
@@ -466,8 +463,8 @@ void SET_dash_SC() // SET-SC
   return;
 
   label3:
-  Push(Read16(cc__5)); // 5
-  Push(Read16(cc__8)); // 8
+  Push(5);
+  Push(8);
   WITHIN(); // WITHIN
   if (Pop() == 0) goto label4;
   UNK_0xf336(); // UNK_0xf336

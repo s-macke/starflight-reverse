@@ -35,10 +35,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp_HBUF_dash_SEG; // HBUF-SEG
 extern const unsigned short int pp_DBUF_dash_SEG; // DBUF-SEG
 extern const unsigned short int pp_YTABL; // YTABL
@@ -208,8 +204,8 @@ void COUNTDOWN() // COUNTDOWN
   signed short int i, imax;
   Push(0x2710);
   TONE(); // TONE
-  Push(1); // 1
-  Push(Read16(cc__5)); // 5
+  Push(1);
+  Push(5);
 
   i = Pop();
   imax = Pop();
@@ -228,7 +224,7 @@ void COUNTDOWN() // COUNTDOWN
   V_gt_DISPLAY(); // V>DISPLAY
   Push(0x0190);
   MS(); // MS
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -252,7 +248,7 @@ void LAUNCH() // LAUNCH
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(1); // 1
+  Push(1);
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   _ex__3(); // !_3
   Push(pp__ask_G_dash_AWARE); // ?G-AWARE
@@ -280,7 +276,7 @@ void UNK_0xf112() // UNK_0xf112
   if (Pop() == 0) return;
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() + Pop()); // +
   Push(pp__ask_SECURE); // ?SECURE
   _ex__3(); // !_3
@@ -288,7 +284,7 @@ void UNK_0xf112() // UNK_0xf112
   Push(0x2710);
   Push(0x01f4);
   Push(0x03e8);
-  Push(2); // 2
+  Push(2);
   _gt_SND(); // >SND
 }
 
@@ -299,7 +295,7 @@ void UNK_0xf112() // UNK_0xf112
 
 void UNK_0xf152() // UNK_0xf152
 {
-  Push(Read16(cc__4)); // 4
+  Push(4);
   SWAP(); // SWAP
   Push(0x004b);
   OVER(); // OVER
@@ -317,7 +313,7 @@ void UNK_0xf162() // UNK_0xf162
   _ex_COLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf152(); // UNK_0xf152
-  Push(0); // 0
+  Push(0);
   Push(0x000a);
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -327,14 +323,14 @@ void UNK_0xf162() // UNK_0xf162
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  Push(1); // 1
+  Push(1);
   Push(0x0010);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x004c);
   RRND(); // RRND
   SWAP(); // SWAP
@@ -343,7 +339,7 @@ void UNK_0xf162() // UNK_0xf162
   Push(0x0048);
   _dash_(); // -
   SWAP(); // SWAP
-  Push(Read16(cc__4)); // 4
+  Push(4);
   _dash_(); // -
   SWAP(); // SWAP
   _gt_MAINVIEW(); // >MAINVIEW
@@ -364,11 +360,11 @@ void UNK_0xf1c0() // UNK_0xf1c0
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00be);
   Push(0x004c);
   Push(a); // I
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00bf);
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
@@ -384,11 +380,11 @@ void UNK_0xf1de() // UNK_0xf1de
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(a); // I
   Push(0x004c);
   Push(0x0049);
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(a); // I
   Push(Pop()-1); // 1-
   LCOPYBLK(); // LCOPYBLK
@@ -424,15 +420,15 @@ void _dot_AIRLOCK() // .AIRLOCK
   POS_dot_(); // POS.
   PRINT("CAUTION", 7); // (.")
   _gt_1FONT(); // >1FONT
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x005d);
   POS_dot_(); // POS.
   PRINT("PRESSURIZED AREA", 16); // (.")
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x001e);
   POS_dot_(); // POS.
   PRINT("STANDARD AIRLOCK", 16); // (.")
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push(0x0014);
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
@@ -505,20 +501,20 @@ void UNK_0xf306() // UNK_0xf306
   if (Pop() == 0) goto label1;
   Push(0x00bf);
   UNK_0xf2ee(); // UNK_0xf2ee
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00bf);
   Push(0x004c);
   Push(0x00bf);
   Push(a); // I
   _dash_(); // -
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x00be);
   goto label2;
 
   label1:
   Push(0x0048);
   UNK_0xf2ee(); // UNK_0xf2ee
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(0x0048);
   Push(a); // I
   Push(Pop() + Pop()); // +
@@ -537,7 +533,7 @@ void UNK_0xf306() // UNK_0xf306
   UNK_0xf2fc(); // UNK_0xf2fc
   Push(pp_DBUF_dash_SEG); // DBUF-SEG
   Push(Read16(Pop())); // @
-  Push(Read16(cc__4)); // 4
+  Push(4);
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
   Push(0x0024);
@@ -581,7 +577,7 @@ void UNK_0xf393() // UNK_0xf393
 
   label1:
   Push(0x003b);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -621,7 +617,7 @@ void _and_LAUNCH() // &LAUNCH
 {
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
-  Push(Read16(cc__5)); // 5
+  Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) goto label1;
@@ -656,26 +652,26 @@ void _and_RETURN() // &RETURN
   signed short int j, jmax;
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(0x0012);
   RRND(); // RRND
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(1); // 1
+  Push(1);
   Push(0x0010);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(Pop()<<4); // 16*
   Push(Pop() + Pop()); // +
   _ex_COLOR(); // !COLOR
-  Push(0); // 0
+  Push(0);
   Push(0x0048);
   RRND(); // RRND
-  Push(0); // 0
+  Push(0);
   Push(0x0078);
   RRND(); // RRND
   LPLOT(); // LPLOT
@@ -702,7 +698,7 @@ void _and_RETURN() // &RETURN
   TONE(); // TONE
   BEEPON(); // BEEPON
   Push(0x003b);
-  Push(0); // 0
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -711,13 +707,13 @@ void _and_RETURN() // &RETURN
   Push(0x003c);
   Push(j); // I
   Push(Pop() + Pop()); // +
-  Push(1); // 1
+  Push(1);
   Push(j); // I
   UNK_0xf306(); // UNK_0xf306
   Push(0x003c);
   Push(j); // I
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   Push(j); // I
   UNK_0xf306(); // UNK_0xf306
   Push(0x7148);

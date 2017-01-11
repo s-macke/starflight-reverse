@@ -102,11 +102,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
 extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
 extern const unsigned short int pp_FILE_n_; // FILE#
@@ -304,15 +299,15 @@ void UNK_0xec26() // UNK_0xec26
   _at_INST_dash_CLASS(); // @INST-CLASS
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000b);
-  Push(Read16(cc__4)); // 4
+  Push(4);
   D_eq_(); // D=
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x0020);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) goto label2;
-  Push(0); // 0
+  Push(0);
   LoadData("UNK_0xebd7"); // from 'PLANET      '
   C_ex_(); // C!
 
@@ -493,7 +488,7 @@ void UNK_0xed5c() // UNK_0xed5c
   OVER(); // OVER
   _slash_MOD(); // /MOD
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   _0_gt_(); // 0>
 }
@@ -515,12 +510,12 @@ void _dot_SIZE() // .SIZE
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
-  Push(0); // 0
-  Push(Read16(cc__3)); // 3
+  Push(0);
+  Push(3);
   PICK(); // PICK
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -549,7 +544,7 @@ void _ask__dot_CERTAIN() // ?.CERTAIN
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6409); // IFIELD(UNK_0xeb80)
   Push(Read8(Pop())&0xFF); // C@
-  Push(0); // 0
+  Push(0);
   Push(0x00c8);
   RRND(); // RRND
   _gt_(); // >
@@ -676,7 +671,7 @@ void _dot_SHIELDS() // .SHIELDS
   if (Pop() == 0) goto label1;
   LoadData("UNK_0xeb8d"); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
-  Push(2); // 2
+  Push(2);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label2;
@@ -737,7 +732,7 @@ void _dot_DELEM() // .DELEM
 {
   Push(Read16(regsp)); // DUP
   Push(0x6401); // IFIELD(UNK_0xeb95)
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
@@ -751,7 +746,7 @@ void _dot_DELEM() // .DELEM
   goto label3;
 
   label2:
-  Push(Read16(cc__6)); // 6
+  Push(6);
 
   label3:
   Push(pp_RECORD_n_); // RECORD#
@@ -784,13 +779,13 @@ void _dot_CONSTIT() // .CONSTIT
   HEADER(); // HEADER
   PRINT("CONSTITUENTS: ", 14); // (.")
   CTINIT(); // CTINIT
-  Push(0); // 0
+  Push(0);
   _dot_DELEM(); // .DELEM
-  Push(1); // 1
+  Push(1);
   _dot_DELEM(); // .DELEM
-  Push(2); // 2
+  Push(2);
   _dot_DELEM(); // .DELEM
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _dot_DELEM(); // .DELEM
 }
 
@@ -816,7 +811,7 @@ void UNK_0xefb7() // UNK_0xefb7
 void _dot_ORBIT() // .ORBIT
 {
   Push(0x0014);
-  Push(1); // 1
+  Push(1);
   CTPOS_dot_(); // CTPOS.
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
@@ -1066,7 +1061,7 @@ void _dot_GRAV() // .GRAV
   if (Pop() == 0) goto label1;
   Push(0x0320);
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   SQRT(); // SQRT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -1076,12 +1071,12 @@ void _dot_GRAV() // .GRAV
   label1:
   Push(0x0064);
   _slash_MOD(); // /MOD
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   _dot_(); // .
   PRINT("G", 1); // (.")
@@ -1298,9 +1293,9 @@ void UNK_0xf2c8() // UNK_0xf2c8
   unsigned short int a;
   signed short int i, imax;
   a = Pop(); // >R
-  Push(2); // 2
-  Push(Read16(cc__7)); // 7
-  Push(0); // 0
+  Push(2);
+  Push(7);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -1340,7 +1335,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
   Push(Pop()-2); // 2-
   _dot_(); // .
   PRINT("- ", 2); // (.")
-  Push(Read16(cc__8)); // 8
+  Push(8);
   MIN(); // MIN
   _dot_(); // .
 }
@@ -1364,7 +1359,7 @@ void UNK_0xf31e() // UNK_0xf31e
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
-  Push(1); // 1
+  Push(1);
   Push(0x018f);
   WITHIN(); // WITHIN
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1396,7 +1391,7 @@ void UNK_0xf31e() // UNK_0xf31e
   CTCR(); // CTCR
   PRINT("  UNSTABLE - ESTIMATED TIME TO FLARE:", 37); // (.")
   CTCR(); // CTCR
-  Push(2); // 2
+  Push(2);
   SPACES(); // SPACES
   Push(a); // I
   _dot_(); // .

@@ -53,11 +53,6 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_BL; // BL
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
 extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
 extern const unsigned short int pp__ask__ask__ask_IT; // ???IT
 extern const unsigned short int pp_XBLT; // XBLT
@@ -212,7 +207,7 @@ void UNK_0xee0a() // UNK_0xee0a
 void UNK_0xee1a() // UNK_0xee1a
 {
   SRDEPTH(); // SRDEPTH
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(Pop()*2); // 2*
   PAD(); // PAD
@@ -241,9 +236,9 @@ void UNK_0xee2c() // UNK_0xee2c
 
   label2:
   _ex_COLOR(); // !COLOR
-  Push(Read16(cc__7)); // 7
+  Push(7);
   _dash_(); // -
-  Push(Read16(cc__7)); // 7
+  Push(7);
   SWAP(); // SWAP
   POS_dot_(); // POS.
 }
@@ -259,7 +254,7 @@ void UNK_0xee54() // UNK_0xee54
   OVER(); // OVER
   _dash_(); // -
   Push(Pop()*2); // 2*
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
@@ -284,15 +279,15 @@ void UNK_0xee70() // UNK_0xee70
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   UNK_0xee2c(); // UNK_0xee2c
-  Push(Read16(cc__3)); // 3
-  Push(0); // 0
+  Push(3);
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
   PRINT("ATTENTION", 9); // (.")
-  Push(Read16(cc__5)); // 5
+  Push(5);
   SPACES(); // SPACES
   i++;
   } while(i<imax); // (LOOP) 0xffee
@@ -462,7 +457,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 {
 
   UNK_0x3f3b("00-00-");
-  Push(Read16(cc__3)); // 3
+  Push(3);
   PICK(); // PICK
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -472,9 +467,9 @@ void DATE_do__gt_ADR() // DATE$>ADR
   Push(0x120c);
   Push(Pop() + Pop()); // +
   U_gt__do_(); // U>$
-  Push(Read16(cc__4)); // 4
+  Push(4);
   PICK(); // PICK
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -482,9 +477,9 @@ void DATE_do__gt_ADR() // DATE$>ADR
   _slash_MOD(); // /MOD
   Push(Pop()+1); // 1+
   U_gt__do_(); // U>$
-  Push(Read16(cc__4)); // 4
+  Push(4);
   PICK(); // PICK
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(Pop()-1); // 1-
@@ -526,7 +521,7 @@ void UNK_0xf082() // UNK_0xf082
   PAD(); // PAD
   Push(0x0024);
   Push(Pop() + Pop()); // +
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(0x003f);
   FILL_1(); // FILL_1
 }
@@ -664,9 +659,9 @@ void ITEM_gt_PAD() // ITEM>PAD
 void UNK_0xf157() // UNK_0xf157
 {
   UNK_0xef27(); // UNK_0xef27
-  Push(Read16(cc__3)); // 3
+  Push(3);
   PICK(); // PICK
-  Push(Read16(cc__3)); // 3
+  Push(3);
   PICK(); // PICK
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_CLASS(); // @INST-CLASS
@@ -683,8 +678,8 @@ void UNK_0xf157() // UNK_0xf157
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x0038);
-  Push(0); // 0
-  Push(1); // 1
+  Push(0);
+  Push(1);
   _star_CREATE(); // *CREATE
   Push(0x6400); // IFIELD(TEXT-TE)
   Push(0x0026);
@@ -694,7 +689,7 @@ void UNK_0xf157() // UNK_0xf157
   Push(0x63fa); // IFIELD(TEXT-CO)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
-  Push(1); // 1
+  Push(1);
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
@@ -785,7 +780,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
   IOPEN(); // IOPEN
   Push(0x000b);
   Push(0x0038);
-  Push(1); // 1
+  Push(1);
   _star_CREATE(); // *CREATE
   CI(); // CI
   Push(pp__ro_SCROLL_1); // (SCROLL_1
@@ -868,7 +863,7 @@ void UNK_0xf2cf() // UNK_0xf2cf
   CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   Push(0x000b);
   SWAP(); // SWAP
-  Push(1); // 1
+  Push(1);
   _star_CREATE(); // *CREATE
 }
 
@@ -1033,7 +1028,7 @@ void BOX_gt_() // BOX>
   ICLOSE(); // ICLOSE
 
   label2:
-  Push(1); // 1
+  Push(1);
   goto label3;
 
   label1:

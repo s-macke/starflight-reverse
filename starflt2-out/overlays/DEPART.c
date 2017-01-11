@@ -24,9 +24,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int cc_TRUE; // TRUE
 extern const unsigned short int cc_FALSE; // FALSE
 extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
@@ -92,7 +89,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
 {
   LoadData("UNK_0xf3a6"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(2); // 2
+  Push(2);
   Push((Pop()==Pop())?1:0); // =
 }
 
@@ -104,28 +101,28 @@ void UNK_0xf3ae() // UNK_0xf3ae
 void UNK_0xf3ba() // UNK_0xf3ba
 {
   _at_INST_dash_S(); // @INST-S
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _st_(); // <
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x001b);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   IFIRST(); // IFIRST
   Push(0x001c);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   _at_INST_dash_S(); // @INST-S
-  Push(Read16(cc__3)); // 3
-  Push(Read16(cc__5)); // 5
+  Push(3);
+  Push(5);
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
   Push(Pop() | Pop()); // OR
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -264,7 +261,7 @@ void UNK_0xf48d() // UNK_0xf48d
 
   label2:
   Push(0x0043);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
   IDELETE(); // IDELETE
@@ -303,9 +300,9 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(Pop()-1); // 1-
   SWAP(); // SWAP
   ABS(); // ABS
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _slash_(); // /
-  Push(Read16(cc__5)); // 5
+  Push(5);
   MAX(); // MAX
   Push(Pop() * Pop()); // *
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
@@ -313,7 +310,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(Pop() + Pop()); // +
   Push(0x0064);
   MIN(); // MIN
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(0x65f3); // IFIELD(UNK_0xf4b7)
   C_ex__2(); // C!_2
@@ -346,7 +343,7 @@ void DEPART() // DEPART
   UNK_0xf48d(); // UNK_0xf48d
 
   label1:
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(pp_PLHI); // PLHI
   _ex__2(); // !_2
   Push(pp__ask_LANDED); // ?LANDED
@@ -363,7 +360,7 @@ void DEPART() // DEPART
   _1_dot_5_ex__2(); // 1.5!_2
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
-  Push(0); // 0
+  Push(0);
   _ex_INST_dash_S(); // !INST-S
   ICLOSE(); // ICLOSE
 }

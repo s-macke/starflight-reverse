@@ -29,7 +29,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
 extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
 void MS(); // MS
 void _ex__2(); // !_2
@@ -87,10 +86,10 @@ void _n_HUMANS() // #HUMANS
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(0); // 0
+  Push(0);
   Push(0xf3e2);
   ALL(); // ALL
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -109,7 +108,7 @@ void UNK_0xf444() // UNK_0xf444
   IFIND(); // IFIND
   Pop(); // DROP
   CI(); // CI
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -126,7 +125,7 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(pp__i__dot_HUFF); // '.HUFF
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -152,7 +151,7 @@ void UNK_0xf47c() // UNK_0xf47c
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x0012);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -173,7 +172,7 @@ void UNK_0xf47c() // UNK_0xf47c
 
   label1:
   ICLOSE(); // ICLOSE
-  Push(Read16(cc__3)); // 3
+  Push(3);
   int step = Pop();
   i += step;
   if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;

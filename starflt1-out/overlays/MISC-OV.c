@@ -42,13 +42,6 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_BL; // BL
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__7; // 7
-extern const unsigned short int cc__8; // 8
-extern const unsigned short int cc__9; // 9
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_LBLT; // LBLT
@@ -160,7 +153,7 @@ void _ro_TRIM() // (TRIM
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
-  Push(Read16(cc__4)); // 4
+  Push(4);
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xefe5); // UNK_0xefe5
   Push(Pop() + Pop()); // +
@@ -302,7 +295,7 @@ void _ro__n_IN_do_() // (#IN$
   PAD(); // PAD
   Push(a); // I
   Push(Pop()+1); // 1+
-  Push(0); // 0
+  Push(0);
   FILL_1(); // FILL_1
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
@@ -357,7 +350,7 @@ void _ro__n_IN_do_() // (#IN$
 
   label2:
   Push(b); // I
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) goto label5;
   UNK_0xf035(); // UNK_0xf035
@@ -412,7 +405,7 @@ void _ro__ask_ART() // (?ART
 
   label1:
   Pop(); // DROP
-  Push(0); // 0
+  Push(0);
 
   label2:
   CDROP(); // CDROP
@@ -427,7 +420,7 @@ void _ro__ask_ART() // (?ART
 
 void _ro_QUIT() // (QUIT
 {
-  Push(1); // 1
+  Push(1);
   _0MESS(); // 0MESS
   _at_CRS(); // @CRS
   CTINIT(); // CTINIT
@@ -458,11 +451,11 @@ void _ro__dot_0_do__do_() // (.0$$
 
 void _ro_0_do__do__do_() // (0$$$
 {
-  Push(1); // 1
+  Push(1);
   _0MESS(); // 0MESS
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(1); // 1
+  Push(1);
   Push(0x0012);
   CMESS(); // CMESS
   _ro__dot_0_do__do_(); // (.0$$
@@ -503,8 +496,8 @@ void UNK_0xf26b() // UNK_0xf26b
 void UNK_0xf279() // UNK_0xf279
 {
   TTY_dash_SCR(); // TTY-SCR
-  Push(0); // 0
-  Push(Read16(cc__6)); // 6
+  Push(0);
+  Push(6);
   CTPOS_dot_(); // CTPOS.
 
   UNK_0x3f3b("COMMUNICATIONS");
@@ -597,22 +590,22 @@ void EINDE() // EINDE
   switch(Pop()) // EINDE
   {
   case 1:
-    Push(2); // 2
+    Push(2);
     break;
   case 2:
-    Push(Read16(cc__3)); // 3
+    Push(3);
     break;
   case 3:
-    Push(Read16(cc__6)); // 6
+    Push(6);
     break;
   case 4:
-    Push(Read16(cc__5)); // 5
+    Push(5);
     break;
   case 5:
-    Push(1); // 1
+    Push(1);
     break;
   case 6:
-    Push(Read16(cc__4)); // 4
+    Push(4);
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -645,15 +638,15 @@ void UNK_0xf319() // UNK_0xf319
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON(); // BEEPON
-  Push(Read16(cc__9)); // 9
-  Push(0); // 0
+  Push(9);
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
   Push(i); // I
-  Push(2); // 2
+  Push(2);
   MOD(); // MOD
   Push(Pop()+2); // 2+
   Push(0x03e8);
@@ -669,7 +662,7 @@ void UNK_0xf319() // UNK_0xf319
   } while(i<imax); // (LOOP) 0xffd0
 
   BEEPOFF(); // BEEPOFF
-  Push(Read16(cc__7)); // 7
+  Push(7);
   Push(pp__n_AUX); // #AUX
   _ex__3(); // !_3
 }
@@ -710,7 +703,7 @@ void UNK_0xf39f() // UNK_0xf39f
   Push(0x0064);
   _dash_(); // -
   ABS(); // ABS
-  Push(0); // 0
+  Push(0);
   Push(0x0064);
   RRND(); // RRND
   _gt_(); // >
@@ -718,12 +711,12 @@ void UNK_0xf39f() // UNK_0xf39f
   Push(Read16(regsp)); // DUP
   UNK_0xf383(); // UNK_0xf383
   UNK_0xf319(); // UNK_0xf319
-  Push(0); // 0
+  Push(0);
   return;
 
   label1:
   Pop(); // DROP
-  Push(1); // 1
+  Push(1);
 }
 
 
@@ -755,7 +748,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _dot_ERR(); // .ERR case
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
-  Push(0); // 0
+  Push(0);
   goto label3;
 
   label2:
@@ -772,7 +765,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(a); // I
   _dot_ERR(); // .ERR case
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(0); // 0
+  Push(0);
 
   label4:
   Push(a); // R>
@@ -787,7 +780,7 @@ void _ro__ask__dot_EQ() // (?.EQ
 
 void UNK_0xf458() // UNK_0xf458
 {
-  Push(0); // 0
+  Push(0);
 
   label3:
   _ask__dash_NULL(); // ?-NULL
@@ -801,7 +794,7 @@ void UNK_0xf458() // UNK_0xf458
   goto label2;
 
   label1:
-  Push(1); // 1
+  Push(1);
 
   label2:
   if (Pop() == 0) goto label3;
@@ -831,7 +824,7 @@ void _eq_CARG() // =CARG
   IOPEN(); // IOPEN
   UNK_0xf458(); // UNK_0xf458
   if (Pop() == 0) goto label1;
-  Push(0); // 0
+  Push(0);
 
   label5:
   _at_INST_dash_CLASS(); // @INST-CLASS
@@ -852,7 +845,7 @@ void _eq_CARG() // =CARG
 
   label4:
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(Read16(cc__6)); // 6
+  Push(6);
   Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);
@@ -885,7 +878,7 @@ void _eq_CARG() // =CARG
   goto label6;
 
   label1:
-  Push(0); // 0
+  Push(0);
 
   label6:
   ICLOSE(); // ICLOSE

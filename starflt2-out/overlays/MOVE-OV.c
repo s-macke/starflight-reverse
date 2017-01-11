@@ -87,11 +87,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__5; // 5
-extern const unsigned short int cc__8; // 8
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int pp__at__co_0_star_1_sc_; // @,0*1;
 extern const unsigned short int pp_XLL; // XLL
 extern const unsigned short int pp_YLL; // YLL
@@ -283,7 +278,7 @@ void UNK_0xea46() // UNK_0xea46
   _2_at_(); // 2@
   Push(pp_LAST_dash_UP); // LAST-UP
   D_ex_(); // D!
-  Push(1); // 1
+  Push(1);
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
   Push(pp_STAR_dash_HR); // STAR-HR
@@ -293,7 +288,7 @@ void UNK_0xea46() // UNK_0xea46
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
-  Push(1); // 1
+  Push(1);
   Push(pp_STARDAT); // STARDAT
   _plus__ex__2(); // +!_2
 }
@@ -309,8 +304,8 @@ void UNK_0xea76() // UNK_0xea76
   CTERASE(); // CTERASE
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  Push(0); // 0
-  Push(0); // 0
+  Push(0);
+  Push(0);
   CTPOS_dot_(); // CTPOS.
 }
 
@@ -330,11 +325,11 @@ void UNK_0xeaa0() // UNK_0xeaa0
   LoadData("UNK_0xea98"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) goto label1;
-  Push(1); // 1
+  Push(1);
   return;
 
   label1:
-  Push(2); // 2
+  Push(2);
 }
 
 
@@ -347,13 +342,13 @@ void S_gt_CM() // S>CM
   switch(Pop()) // S>CM
   {
   case 4:
-    Push(Read16(cc__4)); // 4
+    Push(4);
     break;
   case 1:
-    Push(Read16(cc__5)); // 5
+    Push(5);
     break;
   case 3:
-    Push(Read16(cc__3)); // 3
+    Push(3);
     break;
   default:
     UNK_0xeaa0(); // UNK_0xeaa0
@@ -462,8 +457,8 @@ void SET_dash_SPE() // SET-SPE
   goto label2;
 
   label1:
-  Push(Read16(cc__3)); // 3
-  Push(2); // 2
+  Push(3);
+  Push(2);
   _star__slash_(); // */
   Push(-Pop()); // NEGATE
 
@@ -574,14 +569,14 @@ void UNK_0xec32() // UNK_0xec32
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(0x000e);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
 
   j = Pop();
   jmax = Pop();
@@ -662,8 +657,8 @@ void UNK_0xec32() // UNK_0xec32
   _099(); // 099
   _ex_COLOR(); // !COLOR
   _2DUP(); // 2DUP
-  Push(Read16(cc__3)); // 3
-  Push(Read16(cc__3)); // 3
+  Push(3);
+  Push(3);
   BUFFERX(); // BUFFERX
   Push(Pop()-1); // 1-
   CBLTP(); // CBLTP
@@ -701,7 +696,7 @@ void UNK_0xecfa() // UNK_0xecfa
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(Read16(cc__8)); // 8
+  Push(8);
   Push(Pop() + Pop()); // +
   OVER(); // OVER
   Push(0x000e);
@@ -825,7 +820,7 @@ void UNK_0xedc8() // UNK_0xedc8
 
 void _n_BOXES() // #BOXES
 {
-  Push(0); // 0
+  Push(0);
   UNK_0xea3e(); // UNK_0xea3e
   IOPEN(); // IOPEN
 
@@ -839,7 +834,7 @@ void _n_BOXES() // #BOXES
   goto label2;
 
   label1:
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -851,7 +846,7 @@ void _n_BOXES() // #BOXES
 void UNK_0xee07() // UNK_0xee07
 {
   _n_BOXES(); // #BOXES
-  Push(0x0006);
+  Push(6);
   _gt_(); // >
   if (Pop() == 0) return;
   Push(pp__i_THROW_dash_); // 'THROW-
@@ -939,7 +934,7 @@ void UNK_0xee5b() // UNK_0xee5b
   goto label2;
 
   label6:
-  Push(0); // 0
+  Push(0);
 
   label2:
   UNK_0xee3f(); // UNK_0xee3f
@@ -964,7 +959,7 @@ void UNK_0xee5b() // UNK_0xee5b
   goto label4;
 
   label5:
-  Push(0); // 0
+  Push(0);
 
   label4:
   UNK_0xee4d(); // UNK_0xee4d
@@ -1117,7 +1112,7 @@ void UNK_0xefb1() // UNK_0xefb1
   _gt_C_plus_S(); // >C+S
   UNK_0xefa7(); // UNK_0xefa7
   UNK_0xef99(); // UNK_0xef99
-  Push(0); // 0
+  Push(0);
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
@@ -1141,18 +1136,18 @@ void UNK_0xefdf() // UNK_0xefdf
   UNK_0xeadb(); // UNK_0xeadb
   D_eq_(); // D=
   if (Pop() == 0) goto label2;
-  Push(0); // 0
+  Push(0);
   goto label3;
 
   label2:
-  Push(1); // 1
+  Push(1);
 
   label3:
   ICLOSE(); // ICLOSE
   return;
 
   label1:
-  Push(1); // 1
+  Push(1);
 }
 
 
@@ -1206,7 +1201,7 @@ void UNK_0xf00d() // UNK_0xf00d
   Pop(); Pop();// 2DROP
   Push(b); // R>
   Push(a); // R>
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -1259,7 +1254,7 @@ void UNK_0xf095() // UNK_0xf095
   Pop(); // DROP
 
   label2:
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -1309,7 +1304,7 @@ void _ask_POPULA() // ?POPULA
   Push(0xcfa8); // probable 'POPU'
   MODULE(); // MODULE
   UNK_0xef57(); // UNK_0xef57
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
   UNK_0xf0b9(); // UNK_0xf0b9
   if (Pop() == 0) goto label3;
@@ -1505,8 +1500,8 @@ void UNK_0xf231() // UNK_0xf231
   _dot_LOCAL_dash_(); // .LOCAL-
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
-  Push(0); // 0
-  Push(Read16(cc__5)); // 5
+  Push(0);
+  Push(5);
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -1530,19 +1525,19 @@ void UNK_0xf25f() // UNK_0xf25f
   if (Pop() == 0) return;
   BEEPON_2(); // BEEPON_2
   Push(0x07d0);
-  Push(0); // 0
+  Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(0); // 0
+  Push(0);
   Push(0x0010);
   RRND(); // RRND
   I_gt_C(); // I>C
   UNK_0xeb09(); // UNK_0xeb09
   Push(i); // I
-  Push(Read16(cc__5)); // 5
+  Push(5);
   _slash_(); // /
   Push(0x0064);
   Push(Pop() + Pop()); // +
@@ -1565,7 +1560,7 @@ void UNK_0xf295() // UNK_0xf295
   UNK_0xed8a(); // UNK_0xed8a
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   GCR(); // GCR
-  Push(1); // 1
+  Push(1);
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   Push(0x6993); Push(0x0002);
@@ -1713,7 +1708,7 @@ void UNK_0xf383() // UNK_0xf383
   Push(0x69e0); Push(0x0002);
   UNK_0xed8a(); // UNK_0xed8a
   _dot_TTY(); // .TTY
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
 }
@@ -1824,7 +1819,7 @@ void UNK_0xf447() // UNK_0xf447
   SetColor("GREEN");
   Push(pp_LCOLOR); // LCOLOR
   _ex__2(); // !_2
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
 }
@@ -1933,7 +1928,7 @@ void UNK_0xf499() // UNK_0xf499
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) return;
   Pop(); // DROP
-  Push(0); // 0
+  Push(0);
   Push(pp_TIME_dash_PA); // TIME-PA
   _099(); // 099
 }

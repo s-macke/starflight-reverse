@@ -35,9 +35,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__4; // 4
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__8; // 8
 extern const unsigned short int pp__n_SHOTS; // #SHOTS
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
@@ -142,7 +139,7 @@ void UNK_0xf277() // UNK_0xf277
 
 void UNK_0xf27f() // UNK_0xf27f
 {
-  Push(0); // 0
+  Push(0);
   Push(0x0100);
   RRND(); // RRND
 }
@@ -154,8 +151,8 @@ void UNK_0xf27f() // UNK_0xf27f
 
 void UNK_0xf28b() // UNK_0xf28b
 {
-  Push(0); // 0
-  Push(2); // 2
+  Push(0);
+  Push(2);
   RRND(); // RRND
 }
 
@@ -166,7 +163,7 @@ void UNK_0xf28b() // UNK_0xf28b
 
 void UNK_0xf295() // UNK_0xf295
 {
-  Push(1); // 1
+  Push(1);
   Push(0x0064);
   RRND(); // RRND
 }
@@ -197,7 +194,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
 void UNK_0xf2b7() // UNK_0xf2b7
 {
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
-  Push(0); // 0
+  Push(0);
   _co_(); // ,
   CODE(); // (;CODE) inlined assembler code
 // 0xf2bf: call   1649
@@ -221,7 +218,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -239,7 +236,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   {
   Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(i); // I
-  Push(1); // 1
+  Push(1);
   _star_CREATE(); // *CREATE
   i++;
   } while(i<imax); // (LOOP) 0xfff6
@@ -263,22 +260,22 @@ void UNK_0xf3aa() // UNK_0xf3aa
 
 void UNK_0xf418() // UNK_0xf418
 {
-  Push(0); // 0
+  Push(0);
   Push(0x65ec); // IFIELD(UNK_0xf272)
   _ex__2(); // !_2
   LoadData("UNK_0xf222"); // from 'REGIONS     '
-  Push(Read16(cc__4)); // 4
-  Push(0); // 0
+  Push(4);
+  Push(0);
   FILL_2(); // FILL_2
   LoadData("UNK_0xf21a"); // from 'REGIONS     '
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
   FILL_2(); // FILL_2
   LoadData("UNK_0xf262"); // from 'REGIONS     '
-  Push(Read16(cc__8)); // 8
-  Push(0); // 0
+  Push(8);
+  Push(0);
   FILL_2(); // FILL_2
-  Push(0); // 0
+  Push(0);
   LoadData("UNK_0xf26a"); // from 'REGIONS     '
   C_ex__2(); // C!_2
 }
@@ -294,8 +291,8 @@ void UNK_0xf440() // UNK_0xf440
   Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
-  Push(Read16(cc__6)); // 6
-  Push(0); // 0
+  Push(6);
+  Push(0);
 
   i = Pop();
   imax = Pop();
@@ -362,7 +359,7 @@ void UNK_0xf474() // UNK_0xf474
   CI(); // CI
   Push(pp__ro_SURFAC); // (SURFAC
   _1_dot_5_ex__2(); // 1.5!_2
-  Push(0); // 0
+  Push(0);
   LoadData("UNK_0xf1b2"); // from 'BOX         '
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE

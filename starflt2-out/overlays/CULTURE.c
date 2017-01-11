@@ -69,7 +69,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_CTCOLOR; // CTCOLOR
 extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
@@ -335,7 +334,7 @@ void _gt_ECO() // >ECO
 
 void UNK_0xf082() // UNK_0xf082
 {
-  Push(1); // 1
+  Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   _plus__ex__2(); // +!_2
   Push(pp_LINE_dash_CO); // LINE-CO
@@ -415,21 +414,21 @@ void UNK_0xf0dc() // UNK_0xf0dc
   Push(Read8(Pop())&0xFF); // C@
   LoadData("UNK_0xefa0"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  Push(2); // 2
+  Push(2);
   _gt_(); // >
   Push(Pop() | Pop()); // OR
   Push2Words("*2BUY");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   Push(Pop() | Pop()); // OR
   Push(0x0044);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   Push(Pop() | Pop()); // OR
-  Push(Read16(cc__3)); // 3
+  Push(3);
   _star_CLOSE(); // *CLOSE
 }
 
@@ -500,7 +499,7 @@ void UNK_0xf199() // UNK_0xf199
   Push(pp__i__dot_HUFF); // '.HUFF
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
   UNK_0xef56(); // UNK_0xef56
 }
@@ -871,7 +870,7 @@ void UNK_0xf3d0() // UNK_0xf3d0
 
   label2:
   _dot_TTY(); // .TTY
-  Push(1); // 1
+  Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   _plus__ex__2(); // +!_2
   _dot_RACE(); // .RACE
@@ -910,19 +909,19 @@ void UNK_0xf444() // UNK_0xf444
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0x0044);
-  Push(0); // 0
+  Push(0);
   IFIND(); // IFIND
   if (Pop() == 0) goto label1;
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x0044);
-  Push(0); // 0
+  Push(0);
   Push(0x7d51); // probable '?CLASS/'
   Push(0xf430);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
 
   label1:
-  Push(2); // 2
+  Push(2);
   _star_CLOSE(); // *CLOSE
 }
 

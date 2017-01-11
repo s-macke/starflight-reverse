@@ -32,9 +32,6 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__3; // 3
-extern const unsigned short int cc__6; // 6
-extern const unsigned short int cc__dash_1; // -1
 extern const unsigned short int cc__star_MAPSCALE; // *MAPSCALE
 extern const unsigned short int pp__i_HEAT; // 'HEAT
 extern const unsigned short int pp__ask_FUEL_dash_DIE; // ?FUEL-DIE
@@ -121,7 +118,7 @@ void UNK_0xf147() // UNK_0xf147
   if (Pop() == 0) goto label1;
   Push(0x0320);
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   SQRT(); // SQRT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -148,7 +145,7 @@ void UNK_0xf177() // UNK_0xf177
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   Push(0x001a);
-  Push(Read16(cc__6)); // 6
+  Push(6);
   IFIND(); // IFIND
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
@@ -162,7 +159,7 @@ void UNK_0xf177() // UNK_0xf177
   SWAP(); // SWAP
   OVER(); // OVER
   _dash_(); // -
-  Push(0); // 0
+  Push(0);
   MAX(); // MAX
   Push(0x63fa); // IFIELD(INST-QTY)
   _ex__3(); // !_3
@@ -172,7 +169,7 @@ void UNK_0xf177() // UNK_0xf177
   goto label3;
 
   label1:
-  Push(0); // 0
+  Push(0);
 
   label3:
   CDROP(); // CDROP
@@ -229,7 +226,7 @@ void UNK_0xf1f1() // UNK_0xf1f1
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x1388);
   Push(0x03e8);
-  Push(1); // 1
+  Push(1);
   _gt_SND(); // >SND
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -281,14 +278,14 @@ void UNK_0xf258() // UNK_0xf258
   Push(Read16(Pop())); // @
   Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   PRINT(",", 1); // (.")
   Push(0x63fe); // IFIELD(INST-Y)
   Push(Read16(Pop())); // @
   Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
-  Push(0); // 0
+  Push(0);
   _dot_R(); // .R
   ICLOSE(); // ICLOSE
 
@@ -297,10 +294,10 @@ void UNK_0xf258() // UNK_0xf258
   TTY_dash_SCR(); // TTY-SCR
   TTY_dash_SCR(); // TTY-SCR
   Push(0x1388);
-  Push(Read16(cc__3)); // 3
+  Push(3);
   Push(0x0032);
   Push(0x03e8);
-  Push(2); // 2
+  Push(2);
   _gt_SND(); // >SND
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label1;
@@ -425,7 +422,7 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf32c(); // UNK_0xf32c
   Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   _ex__3(); // !_3
-  Push(Read16(cc__dash_1)); // -1
+  Push(-1);
   Push(pp_GWF); // GWF
   _ex__3(); // !_3
   UNK_0xf1db(); // UNK_0xf1db
