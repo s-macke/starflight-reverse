@@ -63,6 +63,29 @@ void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
     if (fpc != NULL) fclose(fpc);
 }
 
+unsigned int IsPushNumber(int addr, DICTENTRY *e)
+{
+    if (e->codep == CODELIT) return Read16(addr + 2);
+    if (e->codep == CODECONSTANT)
+    {
+        if (strcmp(e->r, "3") == 0) return 3;
+        if (strcmp(e->r, "4") == 0) return 4;
+        if (strcmp(e->r, "5") == 0) return 5;
+        if (strcmp(e->r, "6") == 0) return 6;
+        if (strcmp(e->r, "7") == 0) return 7;
+        if (strcmp(e->r, "8") == 0) return 8;
+        if (strcmp(e->r, "9") == 0) return 9;
+        if (strcmp(e->r, "-1") == 0) return -1;
+        if (strcmp(e->r, "-2") == 0) return -2;
+    }
+
+    if (strcmp(e->r, "0") == 0) return 0;
+    if (strcmp(e->r, "1") == 0) return 1;
+    if (strcmp(e->r, "2") == 0) return 2;
+    return 0x10000; // Invalid
+}
+
+
 void WriteHeaderFile(FILE *fph, int ovidx)
 {
     int i = 0;
@@ -82,16 +105,29 @@ void WriteHeaderFile(FILE *fph, int ovidx)
     fprintf(fph, "\n#endif\n");
 }
 
+const char* ignorewordlist[] =
+{
+    "0","1","2","3","4","5","6","7","8","9",
+    "-1","-2","0=","OR","AND","XOR",
+    "=","+","*","NEGATE","NOT","DROP",
+    "2DROP","2*","3+","1+","2+","1-",
+    "2-","16/","2/","16*","@","C@","DUP",
+    "?DUP",NULL
+};
+
+int IgnoreWord(char *s)
+{
+    int j = 0;
+    while(ignorewordlist[j] != NULL)
+    {
+        if (strcmp(ignorewordlist[j], s) == 0) return TRUE;
+        j++;
+    }
+    return FALSE;
+}
+
 void WriteExtern(FILE *fp, int ovidx)
 {
-    const char* ignorewords[] =
-    {
-        "0","1","2","0=","OR","AND","XOR",
-        "=","+","*","NEGATE","NOT","DROP",
-        "2DROP","2*","3+","1+","2+","1-",
-        "2-","16/","2/","16*","@","C@","DUP",
-        "?DUP",NULL
-    };
 
     int i = 0;
     int j = 0;
@@ -127,7 +163,7 @@ void WriteExtern(FILE *fp, int ovidx)
     {
         if (dict[i].codep != CODECONSTANT) continue;
         if (!dict[i].doextern) continue;
-        fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        if (!IgnoreWord(dict[i].r)) fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].doextern = FALSE;
     }
     for(i=0; i<ndict; i++)
@@ -149,20 +185,14 @@ void WriteExtern(FILE *fp, int ovidx)
         if (dict[i].codep != CODECALL) continue;
         if (!dict[i].doextern) continue;
         char *s = GetWordName(&dict[i]);
-        fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
+        if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
         dict[i].doextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (!dict[i].doextern) continue;
         char *s = GetWordName(&dict[i]);
-        j = 0;
-        while(ignorewords[j] != NULL)
-        {
-            if (strcmp(ignorewords[j], s) == 0) break;
-            j++;
-        }
-        if (ignorewords[j] == NULL) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
+        if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
         dict[i].doextern = FALSE;
     }
     fprintf(fp, "\n");
@@ -225,22 +255,27 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     ret[0] = 0;
     char *s = GetWordName(e);
 
-    if (e->codep == CODELIT) // constant number
+    int value = IsPushNumber(addr, e); // check if this is just a push of a number
+    if (value != 0x10000)
     {
-        int value = Read16(addr + 2);
-        int i=0;
+        char numberstring[16];
+        if (value < 10) sprintf(numberstring, "%i", value);
+        else if (value > 0xfffc) sprintf(numberstring, "%i", (short signed int)value);
+        else sprintf(numberstring, "0x%04x", value);
+
+        int i = 0;
         for(i=0; i<ndict; i++)
         {
             if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
             if (dict[i].parp == value)
             {
-                snprintf(ret, STRINGLEN, "  Push(0x%04x); // probable '%s'\n", value, GetWordName(&dict[i]));
+                snprintf(ret, STRINGLEN, "  Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
                 break;
             }
         }
         if (ret[0] == 0)
         {
-            snprintf(ret, STRINGLEN, "  Push(0x%04x);\n", value);
+            snprintf(ret, STRINGLEN, "  Push(%s);\n", numberstring, value);
         }
         return;
     }
@@ -537,7 +572,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
     int nstr = 0;
     for(i=minaddr; i<=maxaddr; i++)
     {
-        if (pline[i].wordheader)
+        if (pline[i].iswordheader)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             dbmode = 0;

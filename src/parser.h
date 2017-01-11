@@ -8,11 +8,14 @@ typedef struct
     char *str;
     char *initvarstr;
     int labelid; // != 0 is a label for a goto
+    int gotoid; // != 0 is a goto to a label. can be conditional or unconditional
     int done; // this line has been processed
     int isasm;
     int istrivialword;
+    int iswordheader;
+    int isword;
     int ovidx;
-    int wordheader;
+    int isfuncend;
 } LineDesc;
 
 extern LineDesc pline[0x10000];

@@ -88,7 +88,6 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
     //fprintf(stderr, "disasm start 0x%04x\n", offset);
     while (size > 0)
     {
-
         //fprintf(stderr, "Disasm %04x\n", offset);
         if ((offset < minaddr) || (offset >= maxaddr)) return 0;
         if (offset > 0xFFFF)
@@ -428,6 +427,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (ofs > maxaddr) return;
         if (pline[ofs].done) return;
 
+        pline[ofs].isword = TRUE;
         int par = Read16(ofs)+2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
@@ -543,6 +543,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             } else
             {
                 snprintf(pline[ofs].str, STRINGLEN, "}\n\n");
+                pline[ofs].isfuncend = TRUE;
             }
             ofs += 2;
 
@@ -557,6 +558,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             if (Read16(Read16(addr)) == CODEEXIT)
             {
                 snprintf(pline[ofs].str, STRINGLEN, "  return;\n");
+                pline[ofs].gotoid = -1;
             } else
             {
                 if (pline[addr].labelid == 0)
@@ -566,6 +568,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 }
 
                 snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
+                pline[ofs].gotoid = pline[addr].labelid;
             }
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
 
@@ -576,6 +579,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 {
                     pline[ofs+4].done = 1;
                     pline[ofs+5].done = 1;
+                    pline[ofs+4].isword = TRUE;
+                    pline[ofs+4].isfuncend = TRUE;
                     snprintf(pline[ofs+4].str, STRINGLEN, "}\n\n");
                 } else
                 {
@@ -595,6 +600,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             if (Read16(Read16(addr)) == CODEEXIT)
             {
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) return;\n");
+                pline[ofs].gotoid = -1;
             } else
             {
                 if (pline[addr].labelid == 0)
@@ -602,6 +608,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                     pline[addr].labelid = ++d->nlabel;
                 }
                 snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
+                pline[ofs].gotoid = pline[addr].labelid;
             }
             ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
@@ -750,7 +757,7 @@ void SetWordHeader(int ovidx)
     {
         if (dict[i].ovidx != ovidx) continue;
         for(j=dict[i].addr; j<dict[i].parp; j++) pline[j].done = 1;
-        pline[dict[i].parp-2].wordheader = TRUE;
+        pline[dict[i].parp-2].iswordheader = TRUE;
     }
 }
 

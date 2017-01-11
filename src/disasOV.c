@@ -11,7 +11,6 @@
 
 // ---------------------------------
 
-
 void LoadOverlayDict(int ovidx)
 {
     OVLHeader head;
