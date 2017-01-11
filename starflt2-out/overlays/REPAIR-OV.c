@@ -1085,7 +1085,6 @@ void UNK_0xf429() // UNK_0xf429
   ON_2(); // ON_2
   return;
 
-
   label3:
   goto label4;
 

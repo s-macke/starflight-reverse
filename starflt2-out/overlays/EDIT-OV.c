@@ -926,7 +926,6 @@ void PUT() // PUT
   Exec("BELL"); // call of word 0x266b 'BEEP'
   return;
 
-
   label1:
   Pop(); // DROP
   i++;
