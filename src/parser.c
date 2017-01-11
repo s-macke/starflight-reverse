@@ -517,14 +517,13 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 fprintf(stderr, "Error: Change of overlay inside overlay\n");
                 exit(1);
             }
-            //int codep = Read16(par-2);
+
             unsigned short startaddress = Read16(par);
             int i=0;
             //fprintf(stderr, "LoadOverlay(\"%s\");\n", s);
             for(i=0; overlays[i].name != NULL; i++)
             {
                 if (overlays[i].startaddress != startaddress) continue;
-                //fprintf(stderr, "0x%04x\n", i);
                 currentovidx = i;
             }
             if (currentovidx == -1)
@@ -537,16 +536,12 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         if (strcmp(s, "EXIT") == 0)
         {
-            if (pline[ofs+2].labelid)
+            pline[ofs].flow = FUNCEND;
+            if (pline[ofs+2].labelid != 0)
             {
-                snprintf(pline[ofs].str, STRINGLEN, "  return;\n\n");
-            } else
-            {
-                snprintf(pline[ofs].str, STRINGLEN, "}\n\n");
-                pline[ofs].isfuncend = TRUE;
+                pline[ofs].flow = EXIT;
             }
             ofs += 2;
-
             return;
         } else
         if (strcmp(s, "BRANCH") == 0)
@@ -557,18 +552,16 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                snprintf(pline[ofs].str, STRINGLEN, "  return;\n");
                 pline[ofs].gotoid = -1;
+                pline[ofs].flow = EXIT;
             } else
             {
                 if (pline[addr].labelid == 0)
                 {
-                    //fprintf(stderr, "jump at 0x%04x to 0x%04x\n", ofs, addr);
                     pline[addr].labelid = ++d->nlabel;
                 }
-
-                snprintf(pline[ofs].str, STRINGLEN, "  goto label%i;\n", pline[addr].labelid);
                 pline[ofs].gotoid = pline[addr].labelid;
+                pline[ofs].flow = GOTO;
             }
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
 
@@ -580,8 +573,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                     pline[ofs+4].done = 1;
                     pline[ofs+5].done = 1;
                     pline[ofs+4].isword = TRUE;
-                    pline[ofs+4].isfuncend = TRUE;
-                    snprintf(pline[ofs+4].str, STRINGLEN, "}\n\n");
+                    pline[ofs+4].flow = FUNCEND;
                 } else
                 {
                     fprintf(stderr, "Error: unexpected continuance of function after branch");
@@ -599,16 +591,16 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) return;\n");
                 pline[ofs].gotoid = -1;
+                pline[ofs].flow = IFEXIT;
             } else
             {
                 if (pline[addr].labelid == 0)
                 {
                     pline[addr].labelid = ++d->nlabel;
                 }
-                snprintf(pline[ofs].str, STRINGLEN, "  if (Pop() == 0) goto label%i;\n", pline[addr].labelid);
                 pline[ofs].gotoid = pline[addr].labelid;
+                pline[ofs].flow = IFGOTO;
             }
             ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
@@ -653,6 +645,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             snprintf(pline[ofs].str, STRINGLEN, "\n  %s = Pop();\n  %s = Pop();\n  do // (DO)\n  {\n",
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 1));
+            pline[ofs].flow = DO;
             ofs += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -669,6 +662,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 GetVariable(&vars, 1),
                 par);
             RemoveLoopVariables(&vars);
+            pline[ofs].flow = LOOP;
             ofs += 4;
         } else
         if (strcmp(s, "(LOOP)") == 0)
@@ -683,6 +677,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 GetVariable(&vars, 1),
                 par);
             RemoveLoopVariables(&vars);
+            pline[ofs].flow = LOOP;
             ofs += 4;
         } else
         if (strcmp(s, "(+LOOP)") == 0)
@@ -702,6 +697,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 GetVariable(&vars, 1),
                 par);
             RemoveLoopVariables(&vars);
+            pline[ofs].flow = LOOP;
             ofs += 4;
         } else
         if (strcmp(s, "I") == 0)
@@ -727,7 +723,6 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
             ofs += dofs;
         }
-
     }
 }
 

@@ -595,6 +595,29 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             fprintf(fp, "\n  label%i:\n", pline[i].labelid);
             dbmode = 0;
         }
+
+        switch(pline[i].flow)
+        {
+            case IFGOTO:
+                fprintf(fp, "  if (Pop() == 0) goto label%i;\n", pline[i].gotoid);
+                break;
+
+            case IFEXIT:
+                fprintf(fp, "  if (Pop() == 0) return;\n");
+                break;
+
+            case GOTO:
+                fprintf(fp, "  goto label%i;\n", pline[i].gotoid);
+                break;
+
+            case FUNCEND:
+                fprintf(fp, "}\n\n");
+                break;
+
+            case EXIT:
+                fprintf(fp, "  return;\n");
+                break;
+        }
         if (pline[i].istrivialword)
         {
             char func[STRINGLEN*2];
