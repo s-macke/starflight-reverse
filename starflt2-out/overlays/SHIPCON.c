@@ -115,24 +115,23 @@ void _dot_NOFUN() // .NOFUN
   Push(Read16(Pop())); // @
   Push(5);
   _st_(); // <
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _gt_TVCT(); // >TVCT
-  goto label3;
-
-  label2:
+  } else
+  {
   _gt_SSCT(); // >SSCT
-
-  label3:
+  }
   CTINIT(); // CTINIT
   Push(0x5242); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
   _dot_TTY(); // .TTY
   return;
-
-  label1:
+  }
   BEEP(); // BEEP
 }
 
@@ -171,17 +170,19 @@ void UNK_0xf3f6() // UNK_0xf3f6
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); Pop();// 2DROP
   Push(pp__ro_ENCOUN); // (ENCOUN
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); Pop();// 2DROP
   Push2Words("*SHIP");
-
-  label1:
+  }
+  }
   _gt_C_plus_S(); // >C+S
   Push(0x65ee); // IFIELD(INST-X)
   _2_at_(); // 2@
@@ -315,7 +316,8 @@ void TOW_dash_US() // TOW-US
   Y_slash_N(); // Y/N
   UNK_0xf47a(); // UNK_0xf47a
   UNK_0xf3c8(); // UNK_0xf3c8
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(4);
@@ -327,11 +329,11 @@ void TOW_dash_US() // TOW-US
   Push(Read16(cc__ask_CALLED)); // ?CALLED
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf4b2(); // UNK_0xf4b2
-  goto label3;
-
-  label2:
+  } else
+  {
   UNK_0xf4c0(); // UNK_0xf4c0
   UNK_0xf436(); // UNK_0xf436
   Push(0x09c4);
@@ -347,17 +349,14 @@ void TOW_dash_US() // TOW-US
   ON_2(); // ON_2
   Push(pp__ask_NEB); // ?NEB
   _099(); // 099
-
-  label3:
-  goto label4;
-
-  label1:
+  }
+  } else
+  {
   CTERASE(); // CTERASE
   Push(0x538e); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-
-  label4:
+  }
   SetColor("BLACK");
   Push(1);
   _dot_ON(); // .ON

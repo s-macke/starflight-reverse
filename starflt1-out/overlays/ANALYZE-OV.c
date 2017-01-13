@@ -301,20 +301,20 @@ void UNK_0xec26() // UNK_0xec26
   Push(0x000b);
   Push(4);
   D_eq_(); // D=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x0020);
   Push(0);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0);
   LoadData("UNK_0xebd7"); // from 'PLANET      '
   C_ex_(); // C!
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
-
-  label1:
+  }
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   if (Pop() == 0) goto label3;
@@ -465,12 +465,12 @@ void _dot_OBJECT() // .OBJECT
 {
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
   CTCR(); // CTCR
   PRINT(" OBJECT: ", 9); // (.")
-
-  label1:
+  }
   CTINIT(); // CTINIT
   _at_INST_dash_CLASS(); // @INST-CLASS
   _ro__dot_OBJECT_rc_(); // (.OBJECT) case
@@ -668,37 +668,35 @@ void _dot_SHIELDS() // .SHIELDS
   LoadData("UNK_0xebb2"); // from 'VESSEL      '
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   LoadData("UNK_0xeb8d"); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   PRINT("CLASS ", 6); // (.")
   Push(0x00c8);
   _slash_(); // /
   _dot_(); // .
   PRINT("EQUIVALENT ", 11); // (.")
   Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   PRINT("RAISED", 6); // (.")
-  goto label4;
-
-  label3:
+  } else
+  {
   PRINT("LOWERED", 7); // (.")
-
-  label4:
-  goto label5;
-
-  label2:
+  }
+  } else
+  {
   Pop(); // DROP
   UNK_0xec62(); // UNK_0xec62
-
-  label5:
+  }
   return;
-
-  label1:
+  }
   UNK_0xee76(); // UNK_0xee76
   PRINT(" APPARENT", 9); // (.")
 }
@@ -716,10 +714,10 @@ void _dot_WEAP() // .WEAP
   if (Pop() == 0) return;
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT("NOT ", 4); // (.")
-
-  label1:
+  }
   PRINT("ARMED", 5); // (.")
 }
 
@@ -736,19 +734,19 @@ void _dot_DELEM() // .DELEM
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x6401); // IFIELD(UNK_0xeb95)
   Push(Pop()-1); // 1-
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(6);
-
-  label3:
+  }
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   Push(0x001a);
@@ -764,8 +762,7 @@ void _dot_DELEM() // .DELEM
   Push(0x000f);
   SPACES(); // SPACES
   return;
-
-  label1:
+  }
   Pop(); // DROP
 }
 
@@ -934,11 +931,11 @@ void UNK_0xf068() // UNK_0xf068
   _dot_TDESC(); // .TDESC case
   OVER(); // OVER
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); // DROP
   return;
-
-  label1:
+  }
   PRINT(" TO ", 4); // (.")
   _dot_TDESC(); // .TDESC case
 }
@@ -1058,7 +1055,8 @@ void _dot_GRAV() // .GRAV
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0320);
   _dash_(); // -
   Push(0);
@@ -1067,8 +1065,7 @@ void _dot_GRAV() // .GRAV
   Push(Pop() * Pop()); // *
   Push(0x0320);
   Push(Pop() + Pop()); // +
-
-  label1:
+  }
   Push(0x0064);
   _slash_MOD(); // /MOD
   Push(0);
@@ -1308,10 +1305,10 @@ void UNK_0xf2c8() // UNK_0xf2c8
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // J
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   imax = i; // LEAVE
-
-  label1:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
@@ -1366,26 +1363,26 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(pp__ask_WIN); // ?WIN
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT("STABLE ", 7); // (.")
   UNK_0xec04(); // UNK_0xec04
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   PRINT("(POST-FLARE)", 12); // (.")
-
-  label2:
-  goto label3;
-
-  label1:
+  }
+  } else
+  {
   Push(a); // I
   Push(0x003c);
   _gt_(); // >
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
   PRINT("SLIGHTLY UNSTABLE", 17); // (.")
-  goto label3;
-
-  label4:
+  } else
+  {
   SetColor("PINK");
   _ex_COLOR(); // !COLOR
   CTCR(); // CTCR
@@ -1396,8 +1393,8 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(a); // I
   _dot_(); // .
   PRINT("ARTH DAYS.", 10); // (.")
-
-  label3:
+  }
+  }
   Push(a); // R>
   Pop(); // DROP
 }
@@ -1538,29 +1535,27 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   DABS(); // DABS
   Push(0x0002); Push(0x0000);
   D_gt_(); // D>
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _gt_C_plus_S(); // >C+S
   _dot_OBJECT(); // .OBJECT
   _at_INST_dash_CLASS(); // @INST-CLASS
   _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS) case
   ICLOSE(); // ICLOSE
   Push(0x1b58); Push(0x0000);
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   PRINT("I SAID THERE'S NOTHING THERE!", 29); // (.")
-  goto label4;
-
-  label3:
+  } else
+  {
   PRINT("I NEED A CURRENT SENSOR READING.", 32); // (.")
-
-  label4:
+  }
   Pop(); // DROP
   Push(0x05dc); Push(0x0000);
-
-  label2:
+  }
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+

@@ -212,12 +212,12 @@ void UNK_0xf420() // UNK_0xf420
   Push(Pop()-1); // 1-
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(a); // R>
   UNK_0xf3a0(); // UNK_0xf3a0
   return;
-
-  label1:
+  }
   Push(a); // R>
   C_ex__2(); // C!_2
 }
@@ -232,10 +232,10 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   signed short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   DARK(); // DARK
-
-  label1:
+  }
   Push(0x0032);
   Push(0);
 
@@ -300,10 +300,10 @@ void UNK_0xf4e5() // UNK_0xf4e5
   signed short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   DARK(); // DARK
-
-  label1:
+  }
   Push(0x0032);
   Push(0);
 

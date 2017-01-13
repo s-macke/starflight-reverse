@@ -327,30 +327,30 @@ void UNK_0xf192() // UNK_0xf192
 {
   LoadData("UNK_0xf0d0"); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0014);
   _eq_SPECIE(); // =SPECIE
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf162)); // UNK_0xf162
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(0x001d);
   _eq_SPECIE(); // =SPECIE
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf166)); // UNK_0xf166
-  goto label3;
-
-  label4:
+  } else
+  {
   Push(0x65ec); // IFIELD(UNK_0xf0d8)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0023);
   Push(Pop() + Pop()); // +
-
-  label3:
+  }
+  }
   return;
-
-  label1:
+  }
   Push(0x002b);
 }
 
@@ -469,11 +469,11 @@ void UNK_0xf245() // UNK_0xf245
 {
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf14a)); // UNK_0xf14a
   return;
-
-  label1:
+  }
   Push(Read16(cc_UNK_0xf132)); // UNK_0xf132
 }
 
@@ -528,11 +528,11 @@ void UNK_0xf28e() // UNK_0xf28e
 {
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0031);
   return;
-
-  label1:
+  }
   Push(0x0061);
 }
 
@@ -575,14 +575,13 @@ void UNK_0xf2cb() // UNK_0xf2cb
   Push(Read8(Pop())&0xFF); // C@
   Push(3);
   _st_(); // <
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf156)); // UNK_0xf156
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(Read16(cc_UNK_0xf15a)); // UNK_0xf15a
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -610,22 +609,22 @@ void UNK_0xf2ef() // UNK_0xf2ef
   Push(a); // I
   Push(6);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(a); // I
   Push(0x0017);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xf146)); // UNK_0xf146
-  goto label2;
-
-  label3:
+  } else
+  {
   Push(Read16(cc_UNK_0xf12a)); // UNK_0xf12a
-
-  label2:
+  }
+  }
   Push(a); // R>
   Pop(); // DROP
 }
@@ -699,11 +698,11 @@ void UNK_0xf365() // UNK_0xf365
   _at_INST_dash_C(); // @INST-C
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SPACE_dash_ID(); // SPACE-ID case
   return;
-
-  label1:
+  }
   PLANET_dash_ID(); // PLANET-ID case
 }
 
@@ -759,11 +758,11 @@ void UNK_0xf3a8() // UNK_0xf3a8
 void UNK_0xf3b0() // UNK_0xf3b0
 {
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SetColor("RED");
   return;
-
-  label1:
+  }
   SetColor("DK-GREE");
 }
 
@@ -776,21 +775,20 @@ void UNK_0xf3c2() // UNK_0xf3c2
 {
   Push(0x65fa); // IFIELD(UNK_0xf0e5)
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x65f9); // IFIELD(UNK_0xf0ea)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_DEFAULT)); // DEFAULT
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(4);
-
-  label3:
+  }
   return;
-
-  label1:
+  }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 
@@ -802,11 +800,11 @@ void UNK_0xf3c2() // UNK_0xf3c2
 void UNK_0xf3e6() // UNK_0xf3e6
 {
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SetColor("BROWN");
   return;
-
-  label1:
+  }
   SetColor("RED");
 }
 
@@ -860,11 +858,11 @@ void UNK_0xf421() // UNK_0xf421
 void UNK_0xf42b() // UNK_0xf42b
 {
   _at_INST_dash_S(); // @INST-S
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(3);
   return;
-
-  label1:
+  }
   Push(Read16(cc_DEFAULT)); // DEFAULT
 }
 
@@ -911,20 +909,19 @@ void UNK_0xf460() // UNK_0xf460
 {
   Push(0x65ed); // IFIELD(UNK_0xf104)
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_FSTUN); // FSTUN
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(4);
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(Read16(cc_DEFAULT)); // DEFAULT
-
-  label3:
+  }
   return;
-
-  label1:
+  }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 

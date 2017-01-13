@@ -1271,7 +1271,8 @@ void UNK_0xea37() // UNK_0xea37
   Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   OVER(); // OVER
   Push(0x000c);
   Push(Pop() + Pop()); // +
@@ -1281,8 +1282,7 @@ void UNK_0xea37() // UNK_0xea37
   SETREGI(); // SETREGI
   UNK_0xe78c(); // UNK_0xe78c
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
 }
 
@@ -1622,22 +1622,22 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb38(); // UNK_0xeb38
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x03e7);
   UNK_0xeb54(); // UNK_0xeb54
   jmax = j; // LEAVE
-
-  label1:
+  }
   j++;
   } while(j<jmax); // (LOOP) 0xffde
 
   UNK_0xeb38(); // UNK_0xeb38
   Push(0x03e7);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   imax = i; // LEAVE
-
-  label2:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xffc6
 
@@ -1656,11 +1656,11 @@ void POLYGON_dash_EXTRACT() // POLYGON-EXTRACT
 {
   UNK_0xead1(); // UNK_0xead1
   UNK_0xebfc(); // UNK_0xebfc
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xeb90(); // UNK_0xeb90
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xeb5e(); // UNK_0xeb5e
   Push(0);
   Push(0);
@@ -1694,8 +1694,7 @@ void POLYGON_dash_EXTRACT() // POLYGON-EXTRACT
   UNK_0xeb0e(); // UNK_0xeb0e
   UNK_0xeb28(); // UNK_0xeb28
   POLYGON_dash_EXTRACT(); // POLYGON-EXTRACT
-
-  label2:
+  }
   UNK_0xeadc(); // UNK_0xeadc
 }
 
@@ -1854,7 +1853,8 @@ void UNK_0xed8d() // UNK_0xed8d
   UNK_0xed50(); // UNK_0xed50
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); Pop();// 2DROP
   Push(i); // I
   UNK_0xed62(); // UNK_0xed62
@@ -1863,11 +1863,11 @@ void UNK_0xed8d() // UNK_0xed8d
   Push(Pop()+1); // 1+
   UNK_0xed62(); // UNK_0xed62
   imax = i; // LEAVE
-  goto label2;
-
-  label1:
+  } else
+  {
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(i); // I
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
@@ -1877,8 +1877,8 @@ void UNK_0xed8d() // UNK_0xed8d
   UNK_0xed62(); // UNK_0xed62
   imax = i; // LEAVE
   Pop(); // DROP
-
-  label2:
+  }
+  }
   Push(2);
   int step = Pop();
   i += step;
@@ -1945,20 +1945,21 @@ void UNK_0xedd9() // UNK_0xedd9
   Push(0x0021);
   UNK_0xed50(); // UNK_0xed50
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0021);
   UNK_0xed62(); // UNK_0xed62
   Push(0x0020);
   UNK_0xed62(); // UNK_0xed62
-  goto label2;
-
-  label1:
+  } else
+  {
   Pop(); // DROP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   jmax = j; // LEAVE
-
-  label2:
+  }
+  }
   Push(2);
   int step = Pop();
   j += step;
@@ -2121,17 +2122,16 @@ void UNK_0xeefa() // UNK_0xeefa
   do // (DO)
   {
   UNK_0xeecc(); // UNK_0xeecc
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xeec2(); // UNK_0xeec2
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xee96(); // UNK_0xee96
   Push(1);
   Push(pp_UNK_0xed89); // UNK_0xed89
   _plus__ex__2(); // +!_2
-
-  label2:
+  }
   j++;
   } while(j<jmax); // (LOOP) 0xffea
 
@@ -2318,23 +2318,22 @@ void UNK_0xf049() // UNK_0xf049
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ABS(); // ABS
   UNK_0xeffb(); // UNK_0xeffb
   Push(0);
   Push(0);
   Push(0x000b);
   Push(0x0064);
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xf023(); // UNK_0xf023
   Push(0x0031);
   Push(0);
   Push(0x003c);
   Push(0x0064);
-
-  label2:
+  }
   SETREGI(); // SETREGI
   Push(Read16(cc_UNK_0xe364)); // UNK_0xe364
   FILLREG(); // FILLREG
@@ -2354,23 +2353,22 @@ void UNK_0xf08b() // UNK_0xf08b
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ABS(); // ABS
   UNK_0xefb5(); // UNK_0xefb5
   Push(0);
   Push(0);
   Push(0x003c);
   Push(0x0013);
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xefd9(); // UNK_0xefd9
   Push(0);
   Push(0x0051);
   Push(0x003c);
   Push(0x0064);
-
-  label2:
+  }
   SETREGI(); // SETREGI
   Push(Read16(cc_UNK_0xe364)); // UNK_0xe364
   FILLREG(); // FILLREG

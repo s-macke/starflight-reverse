@@ -256,15 +256,14 @@ void UNK_0xef0c() // UNK_0xef0c
 {
   Push(pp_TIME_dash_PA); // TIME-PA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_CTTOP); // CTTOP
   Push(Read16(Pop())); // @
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x0096);
-
-  label2:
+  }
   Push(7);
   _dash_(); // -
   Push(7);
@@ -441,12 +440,12 @@ void UNK_0xf066() // UNK_0xf066
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   UNK_0xf03d(); // UNK_0xf03d
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); // DROP
   Push(0x65f4); // IFIELD(ASKING)
   Push(Read16(Pop())); // @
-
-  label1:
+  }
   Push(pp__pe_VAL); // %VAL
   Push(Read16(Pop())); // @
   U_star_(); // U*
@@ -495,14 +494,13 @@ void UNK_0xf0ea() // UNK_0xf0ea
   LoadData("UNK_0xee9e"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xeeca)); // UNK_0xeeca
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(Read16(cc_UNK_0xeeba)); // UNK_0xeeba
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -536,11 +534,11 @@ void DATE_do__gt_AD() // DATE$>AD
   OVER(); // OVER
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf049(); // UNK_0xf049
   return;
-
-  label1:
+  }
 
   UNK_0x3f09("00-00-");
   Push(3);
@@ -614,16 +612,15 @@ void UNK_0xf1a8() // UNK_0xf1a8
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   LoadData("ART-VOL"); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-
-  label2:
+  }
   UNK_0xf066(); // UNK_0xf066
 }
 
@@ -736,15 +733,15 @@ void UNK_0xf25c() // UNK_0xf25c
 {
   Push(0x000b);
   UNK_0xf254(); // UNK_0xf254
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_UNK_0xeebe)); // UNK_0xeebe
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   UNK_0xf246(); // UNK_0xf246
   Push(Pop() | Pop()); // OR
   return;
-
-  label1:
+  }
   Push(0x001b);
   UNK_0xf254(); // UNK_0xf254
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -777,7 +774,8 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(0x0032);
   _st_(); // <
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -798,8 +796,7 @@ void UNK_0xf28e() // UNK_0xf28e
   _plus__ex__2(); // +!_2
   ICLOSE(); // ICLOSE
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   Pop(); // DROP
@@ -827,15 +824,15 @@ void BOX_gt_LIST() // BOX>LIST
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   CI_i_(); // CI'
   CI(); // CI
   ITEM_gt_PAD(); // ITEM>PAD
   PAD(); // PAD
   Push(Pop()+1); // 1+
   UNK_0xf28e(); // UNK_0xf28e
-
-  label1:
+  }
   NEXT_dash_NO(); // NEXT-NO
   _2DUP(); // 2DUP
   CI(); // CI
@@ -987,21 +984,21 @@ void _ask_ELEMENT() // ?ELEMENT
   _at_INST_dash_C(); // @INST-C
   Push(0x001c);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   LoadData("UNK_0xee9e"); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   return;
-
-  label1:
+  }
   _at_INST_dash_C(); // @INST-C
   Push(0x001b);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_FALSE)); // FALSE
   return;
-
-  label2:
+  }
   Push(Read16(cc_TRUE)); // TRUE
 }
 
@@ -1029,11 +1026,11 @@ void _gt_BOX() // >BOX
   SWAP(); // SWAP
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(a); // I
   UNK_0xf3db(); // UNK_0xf3db
-
-  label1:
+  }
   Push(a); // R>
   BOX_gt_TOCS(); // BOX>TOCS
   _2DUP(); // 2DUP
@@ -1100,7 +1097,8 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(Read16(Pop())); // @
   _gt_(); // >
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
@@ -1116,8 +1114,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   _ex__2(); // !_2
   C_gt_(); // C>
   return;
-
-  label1:
+  }
   IEXTRAC(); // IEXTRAC
 }
 
@@ -1132,19 +1129,19 @@ void BOX_gt_() // BOX>
   _ro_BOX_gt__rc_(); // (BOX>)
   CI(); // CI
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
   CI(); // CI
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   ICLOSE(); // ICLOSE
-
-  label2:
+  }
   Push(1);
-  goto label3;
-
-  label1:
+  } else
+  {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_C(); // @INST-C
@@ -1156,8 +1153,7 @@ void BOX_gt_() // BOX>
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-
-  label3:
+  }
   ROT(); // ROT
   ROT(); // ROT
 }

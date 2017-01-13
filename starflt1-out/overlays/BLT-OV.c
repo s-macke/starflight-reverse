@@ -359,27 +359,25 @@ void _dot_HYBRID() // .HYBRID
   Push(3);
   Push(Pop() + Pop()); // +
   LC_at_(); // LC@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _dot_EGARUNBIT(); // .EGARUNBIT
-  goto label3;
-
-  label2:
+  } else
+  {
   _dot_RUNBIT(); // .RUNBIT
-
-  label3:
-  goto label4;
-
-  label1:
+  }
+  } else
+  {
   _co_BLT_cc_(); // {BLT}
-
-  label4:
+  }
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(pp_ABLT); // ABLT

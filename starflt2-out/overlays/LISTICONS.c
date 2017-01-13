@@ -193,10 +193,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ask_CGA(); // ?CGA
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _gt_FLAG(); // >FLAG
-
-  label1:
+  }
   _ex_COLOR(); // !COLOR
   Push(Pop()+1); // 1+
   Push(pp_ABLT); // ABLT
@@ -293,11 +293,11 @@ void UNK_0xf45e() // UNK_0xf45e
   Push(Read16(regsp)); // DUP
   Push(0x002b);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0011);
   _dash_(); // -
-
-  label1:
+  }
   _at_RECORD(); // @RECORD
   Push(0x001b);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'

@@ -283,7 +283,8 @@ void TRANSACT() // TRANSACT
   SET_dash_BANK(); // SET-BANK
   Push(0x6402); // IFIELD(UNK_0xefae)
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x000e);
   SWAP(); // SWAP
@@ -300,20 +301,20 @@ void TRANSACT() // TRANSACT
   {
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Pop()+1); // 1+
   imax = i; // LEAVE
-
-  label2:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xfff2
 
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   IFIRST(); // IFIRST
   IDELETE(); // IDELETE
-
-  label3:
+  }
   ILAST(); // ILAST
   COVER(); // COVER
   SET_dash_CURRENT(); // SET-CURRENT
@@ -337,12 +338,10 @@ void TRANSACT() // TRANSACT
   Push(0);
   Push(0x6402); // IFIELD(UNK_0xefae)
   C_ex_(); // C!
-  goto label4;
-
-  label1:
+  } else
+  {
   Pop(); // DROP
-
-  label4:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -368,11 +367,11 @@ void INT_pe_() // INT%
   M_star__slash_(); // M*/
   _2DUP(); // 2DUP
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); Pop();// 2DROP
   return;
-
-  label1:
+  }
   D_at_BALANCE(); // D@BALANCE
   D_plus_(); // D+
   D_ex_BALANCE(); // D!BALANCE
@@ -473,14 +472,13 @@ void UNK_0xf196() // UNK_0xf196
   Push(0);
   Push(0);
   D_st_(); // D<
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x000b);
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x000d);
-
-  label2:
+  }
   a = Pop(); // >R
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // NOT

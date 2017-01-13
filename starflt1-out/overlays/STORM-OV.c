@@ -165,7 +165,8 @@ void UNK_0xf0b4() // UNK_0xf0b4
   Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(i); // I
   Push(4);
   ROLL(); // ROLL
@@ -173,8 +174,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   ROT(); // ROT
   ROT(); // ROT
   imax = i; // LEAVE
-
-  label1:
+  }
   Push(6);
   int step = Pop();
   i += step;
@@ -183,13 +183,13 @@ void UNK_0xf0b4() // UNK_0xf0b4
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(4);
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   return;
-
-  label2:
+  }
   PRINT("INDEX NOT IN PROBABILITY ARRAY! ", 32); // (.")
   UNRAVEL(); // UNRAVEL
   QUIT(); // QUIT
@@ -342,15 +342,15 @@ void UNK_0xf2b2() // UNK_0xf2b2
   Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(1);
   Push(0x0064);
   RRND(); // RRND
   Push(0x001e);
   _st_(); // <
   return;
-
-  label1:
+  }
   Push(0);
 }
 
@@ -437,14 +437,13 @@ void UNK_0xf33c() // UNK_0xf33c
   PRINT(" IS ", 4); // (.")
   Push(0x640e); // IFIELD(UNK_0xf286)
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT("INJURED", 7); // (.")
-  goto label2;
-
-  label1:
+  } else
+  {
   PRINT("KILLED", 6); // (.")
-
-  label2:
+  }
   PRINT(".", 1); // (.")
 }
 
@@ -546,25 +545,23 @@ void UNK_0xf42e() // UNK_0xf42e
   Push(Read16(regsp)); // DUP
   Push(3);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x0032);
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(0x004b);
-
-  label3:
-  goto label4;
-
-  label1:
+  }
+  } else
+  {
   Pop(); // DROP
   Push(0x0064);
-
-  label4:
+  }
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
   Push(pp_FORCED); // FORCED
@@ -641,14 +638,13 @@ void _ro_DO_dot_STORM() // (DO.STORM
   LoadData("UNK_0xf24d"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf46c(); // UNK_0xf46c
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xf4a8(); // UNK_0xf4a8
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
   Push(a); // R>
@@ -656,11 +652,11 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(0xcdd8); // probable '.STOR'
   MODULE(); // MODULE
-
-  label3:
+  }
   UNK_0xf2b2(); // UNK_0xf2b2
   if (Pop() == 0) return;
   INJURE_dash_PL(); // INJURE-PL

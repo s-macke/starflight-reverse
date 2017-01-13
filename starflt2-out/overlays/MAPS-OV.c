@@ -236,7 +236,8 @@ void UNK_0xed4e() // UNK_0xed4e
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0320);
   _dash_(); // -
   Push(0);
@@ -245,16 +246,15 @@ void UNK_0xed4e() // UNK_0xed4e
   Push(Pop() * Pop()); // *
   Push(0x0320);
   Push(Pop() + Pop()); // +
-
-  label1:
+  }
   Push(0x0064);
   _slash_MOD(); // /MOD
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0);
   _dot_R(); // .R
-
-  label2:
+  }
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
@@ -295,12 +295,12 @@ void UNK_0xedb8() // UNK_0xedb8
   Push(Read16(regsp)); // DUP
   Push(0x01e0);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x03c0);
   SWAP(); // SWAP
   _dash_(); // -
-
-  label1:
+  }
   Push(0x01e0);
   UNK_0xeda0(); // UNK_0xeda0
   ROT(); // ROT
@@ -634,12 +634,12 @@ void UNK_0xeff3() // UNK_0xeff3
   Push(a); // I
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(a); // R>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   b = Pop(); // >R
-
-  label1:
+  }
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
   CELLCOL(); // CELLCOL
@@ -656,31 +656,32 @@ void UNK_0xeff3() // UNK_0xeff3
   Push(c); // I
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(c); // R>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   d = Pop(); // >R
-
-  label2:
+  }
   Push(d); // I
   Push(b); // I'
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(d); // I
   Push(b); // I'
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(d); // I
   _0_gt_(); // 0>
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   Push(d); // I
-  goto label5;
-
-  label4:
+  } else
+  {
   Push(b); // I'
-
-  label5:
+  }
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   _ex_COLOR(); // !COLOR
@@ -691,8 +692,8 @@ void UNK_0xeff3() // UNK_0xeff3
   Push(Pop()-1); // 1-
   CBLTP(); // CBLTP
   BLT(); // BLT
-
-  label3:
+  }
+  }
   Push(d); // R>
   Push(b); // R>
   Pop(); Pop();// 2DROP
@@ -1091,16 +1092,15 @@ void _ro__dot_STORM_rc_() // (.STORM)
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf20d(); // UNK_0xf20d
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
   WPHRASE(); // WPHRASE case
-
-  label2:
+  }
   UNK_0xee72(); // UNK_0xee72
 }
 
@@ -1113,13 +1113,13 @@ void _dot_ROCK() // .ROCK
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_P_dash_COLOR); // P-COLOR
   _1_dot_5_at_(); // 1.5@
   UNK_0xee72(); // UNK_0xee72
   SPACE(); // SPACE
-
-  label1:
+  }
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_at_(); // 1.5@
   UNK_0xee72(); // UNK_0xee72
@@ -1199,7 +1199,8 @@ void _dot_CARPET() // .CARPET
   _1_dot_5_at_(); // 1.5@
   UNK_0xee82(); // UNK_0xee82
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT(", ", 2); // (.")
   GCR(); // GCR
   Push(0x4de8); Push(0x0002);
@@ -1209,8 +1210,7 @@ void _dot_CARPET() // .CARPET
   SPACE(); // SPACE
   Push(0x4dcd); Push(0x0002);
   UNK_0xee72(); // UNK_0xee72
-
-  label1:
+  }
   PRINT(".", 1); // (.")
   GCR(); // GCR
 }
@@ -1431,15 +1431,17 @@ void MAPS() // MAPS
   ON_2(); // ON_2
   UNK_0xf123(); // UNK_0xf123
   UNK_0xee66(); // UNK_0xee66
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf175(); // UNK_0xf175
   UNK_0xee66(); // UNK_0xee66
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf123(); // UNK_0xf123
   UNK_0xee4e(); // UNK_0xee4e
   Pop(); // DROP
-
-  label1:
+  }
+  }
   UNK_0xf1bd(); // UNK_0xf1bd
   Push(pp_ESC_dash_EN); // ESC-EN
   ON_1(); // ON_1

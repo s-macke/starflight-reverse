@@ -113,7 +113,8 @@ void UNK_0xf1b7() // UNK_0xf1b7
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0320);
   _dash_(); // -
   Push(0);
@@ -122,8 +123,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
   Push(Pop() * Pop()); // *
   Push(0x0320);
   Push(Pop() + Pop()); // +
-
-  label1:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -140,7 +140,8 @@ void UNK_0xf1e7() // UNK_0xf1e7
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(6);
@@ -150,7 +151,8 @@ void UNK_0xf1e7() // UNK_0xf1e7
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf1b3); // UNK_0xf1b3
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf1b7(); // UNK_0xf1b7
   Push(0x0028);
   _slash_(); // /
@@ -161,15 +163,12 @@ void UNK_0xf1e7() // UNK_0xf1e7
   MAX(); // MAX
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2
-
-  label2:
+  }
   CDROP(); // CDROP
-  goto label3;
-
-  label1:
+  } else
+  {
   Push(0);
-
-  label3:
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -428,11 +427,11 @@ void UNK_0xf4a0() // UNK_0xf4a0
   MODULE(); // MODULE
   Push(pp__ask_FUEL_dash_D); // ?FUEL-D
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf2c8(); // UNK_0xf2c8
   return;
-
-  label1:
+  }
   UNK_0xf446(); // UNK_0xf446
   if (Pop() == 0) return;
   UNK_0xf261(); // UNK_0xf261
@@ -451,24 +450,24 @@ void UNK_0xf4ce() // UNK_0xf4ce
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   UNK_0xf452(); // UNK_0xf452
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_GWF); // GWF
   ON_2(); // ON_2
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xf3b2(); // UNK_0xf3b2
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(pp_GWF); // GWF
   ON_2(); // ON_2
-  goto label2;
-
-  label3:
+  } else
+  {
   UNK_0xf40d(); // UNK_0xf40d
   Push(pp_GWF); // GWF
   _ex__2(); // !_2
-
-  label2:
+  }
+  }
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -484,15 +483,15 @@ void _ask_LAND() // ?LAND
 {
   Push(pp__ask_G_dash_AWAR); // ?G-AWAR
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf4ce(); // UNK_0xf4ce
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf4a0(); // UNK_0xf4a0
-
-  label2:
+  }
   return;
-
-  label1:
+  }
   UNK_0xf4a0(); // UNK_0xf4a0
 }
 

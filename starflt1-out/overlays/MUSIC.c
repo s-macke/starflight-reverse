@@ -383,7 +383,8 @@ void INITMUS() // INITMUS
   UNK_0xe2de(); // UNK_0xe2de
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0);
   Push(Read16(cc__ask_MUSIC)); // ?MUSIC
   UNK_0xe2ee(); // UNK_0xe2ee
@@ -401,8 +402,7 @@ void INITMUS() // INITMUS
   Push(0x001c);
   _ro__ex_SET_rc_(); // (!SET)
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
 }
 
@@ -464,20 +464,21 @@ void CSCR_gt_EGA() // CSCR>EGA
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
   Push(j); // I
   Push(Pop()*2); // 2*
   Push(i); // J
   PLOT(); // PLOT
-
-  label1:
+  }
   Push(0x000f);
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
   Push(j); // I
@@ -485,8 +486,7 @@ void CSCR_gt_EGA() // CSCR>EGA
   Push(Pop()+1); // 1+
   Push(i); // J
   PLOT(); // PLOT
-
-  label2:
+  }
   j++;
   } while(j<jmax); // (LOOP) 0xffba
 
@@ -643,11 +643,11 @@ void UNK_0xe716() // UNK_0xe716
 {
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
   _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ON_3(); // ON_3
   return;
-
-  label1:
+  }
   OFF(); // OFF
 }
 
@@ -766,10 +766,10 @@ void UNK_0xe7cd() // UNK_0xe7cd
   UNK_0xe716(); // UNK_0xe716
   Push(pp_UNK_0xe6d8); // UNK_0xe6d8
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   imax = i; // LEAVE
-
-  label1:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xffe8
 
@@ -988,7 +988,8 @@ void INTROS() // INTROS
   HIMUS(); // HIMUS
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x008d);
   CSCR_gt_EGA(); // CSCR>EGA
   Push(0);
@@ -1007,8 +1008,7 @@ void INTROS() // INTROS
   BEEPOFF(); // BEEPOFF
   _gt_DISPLAY(); // >DISPLAY
   return;
-
-  label1:
+  }
   CREDIT_dot_SCREEN(); // CREDIT.SCREEN
   UNK_0xe82b(); // UNK_0xe82b
   DARK(); // DARK

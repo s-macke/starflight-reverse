@@ -322,7 +322,8 @@ void UNK_0xf162() // UNK_0xf162
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(1);
   Push(0x0010);
   RRND(); // RRND
@@ -346,8 +347,7 @@ void UNK_0xf162() // UNK_0xf162
   LPLOT(); // LPLOT
   _gt_DISPLAY(); // >DISPLAY
   return;
-
-  label1:
+  }
   Pop(); // DROP
 }
 
@@ -498,7 +498,8 @@ void UNK_0xf306() // UNK_0xf306
 {
   unsigned short int a;
   a = Pop(); // >R
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00bf);
   UNK_0xf2ee(); // UNK_0xf2ee
   Push(4);
@@ -509,9 +510,8 @@ void UNK_0xf306() // UNK_0xf306
   _dash_(); // -
   Push(4);
   Push(0x00be);
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x0048);
   UNK_0xf2ee(); // UNK_0xf2ee
   Push(4);
@@ -522,8 +522,7 @@ void UNK_0xf306() // UNK_0xf306
   Push(0x0048);
   _2OVER(); // 2OVER
   Push(Pop()+1); // 1+
-
-  label2:
+  }
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
   Pop(); // DROP
@@ -569,13 +568,13 @@ void UNK_0xf393() // UNK_0xf393
   _gt_DISPLAY(); // >DISPLAY
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x05dc);
   MS(); // MS
   V_gt_DISPLAY(); // V>DISPLAY
   return;
-
-  label1:
+  }
   Push(0x003b);
   Push(0);
 
@@ -620,7 +619,8 @@ void _and_LAUNCH() // &LAUNCH
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf2e2(); // UNK_0xf2e2
   UNK_0xf026(); // UNK_0xf026
   UNK_0xf112(); // UNK_0xf112
@@ -628,8 +628,7 @@ void _and_LAUNCH() // &LAUNCH
   UNK_0x3f3b("OPENING");
   PORTLEAVE(); // PORTLEAVE
   UNK_0xf393(); // UNK_0xf393
-
-  label1:
+  }
   LAUNCH(); // LAUNCH
   if (Pop() == 0) return;
   Push(0xcc0a); // probable 'UNNEST'
@@ -689,7 +688,8 @@ void _and_RETURN() // &RETURN
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00bf);
   UNK_0xf152(); // UNK_0xf152
   Push(0x0048);
@@ -723,14 +723,12 @@ void _and_RETURN() // &RETURN
   j++;
   } while(j<jmax); // (LOOP) 0xffd6
 
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x05dc);
   MS(); // MS
   _dot_AIRLOCK(); // .AIRLOCK
-
-  label2:
+  }
   V_gt_DISPLAY(); // V>DISPLAY
   BEEPOFF(); // BEEPOFF
 }

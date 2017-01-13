@@ -420,7 +420,8 @@ void UNK_0xe928() // UNK_0xe928
   Push((Pop()==Pop())?1:0); // =
   Push(a); // R>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(i); // I
   Push(4);
   ROLL(); // ROLL
@@ -428,8 +429,7 @@ void UNK_0xe928() // UNK_0xe928
   ROT(); // ROT
   ROT(); // ROT
   imax = i; // LEAVE
-
-  label1:
+  }
   Push(6);
   int step = Pop();
   i += step;
@@ -438,13 +438,13 @@ void UNK_0xe928() // UNK_0xe928
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(4);
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   return;
-
-  label2:
+  }
   PRINT("INDEX NOT IN PROBABILITY ARRAY! ", 32); // (.")
   UNRAVEL(); // UNRAVEL
   QUIT(); // QUIT
@@ -460,11 +460,11 @@ void UNK_0xe9f6() // UNK_0xe9f6
 {
   Push(4);
   MOD(); // MOD
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_PLANTS); // PLANTS
   return;
-
-  label1:
+  }
   Push(pp_ANIMALS); // ANIMALS
 }
 
@@ -671,16 +671,17 @@ void UNK_0xeee7() // UNK_0xeee7
   a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(a)); // R@
   Push(0x0050);
   _gt_(); // >
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(2);
   Push(5);
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(Read16(a)); // R@
   Push(0x000f);
   _slash_(); // /
@@ -688,13 +689,11 @@ void UNK_0xeee7() // UNK_0xeee7
   MAX(); // MAX
   Push(1);
   SWAP(); // SWAP
-
-  label3:
+  }
   RRND(); // RRND
   OVER(); // OVER
   _ex__3(); // !_3
-
-  label1:
+  }
   Pop(); // DROP
   Push(a); // R>
   Pop(); // DROP
@@ -895,11 +894,11 @@ void UNK_0xf0e9() // UNK_0xf0e9
   Push(Read16(regsp)); // DUP
   Push(pp_PLANTS); // PLANTS
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   LoadData("UNK_0xe852"); // from 'REGIONS     '
   return;
-
-  label1:
+  }
   LoadData("UNK_0xe862"); // from 'REGIONS     '
 }
 
@@ -1106,10 +1105,10 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(i); // I
   Push(1);
   _dash_(); // -
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf067(); // UNK_0xf067
-
-  label1:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
@@ -1140,7 +1139,8 @@ void UNK_0xf286() // UNK_0xf286
   do // (DO)
   {
   UNK_0xf1b5(); // UNK_0xf1b5
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(i); // I
   UNK_0xf081(); // UNK_0xf081
   UNK_0xf155(); // UNK_0xf155
@@ -1153,10 +1153,10 @@ void UNK_0xf286() // UNK_0xf286
   Push(i); // I
   Push(1);
   _dash_(); // -
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf067(); // UNK_0xf067
-
-  label2:
+  }
   UNK_0xeaec(); // UNK_0xeaec
   LoadData("UNK_0xe8a7"); // from 'CREATURE    '
   C_ex_(); // C!
@@ -1166,14 +1166,12 @@ void UNK_0xf286() // UNK_0xf286
   LoadData("UNK_0xe89f"); // from 'CREATURE    '
   _ex__3(); // !_3
   UNK_0xf23c(); // UNK_0xf23c
-  goto label3;
-
-  label1:
+  } else
+  {
   UNK_0xf093(); // UNK_0xf093
   UNK_0xe8af(); // UNK_0xe8af
   imax = i; // LEAVE
-
-  label3:
+  }
   UNK_0xf1d3(); // UNK_0xf1d3
   i++;
   } while(i<imax); // (LOOP) 0xffbc
@@ -1195,7 +1193,8 @@ void UNK_0xf2da() // UNK_0xf2da
   do // (DO)
   {
   UNK_0xf1b5(); // UNK_0xf1b5
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(i); // I
   UNK_0xf081(); // UNK_0xf081
   UNK_0xf093(); // UNK_0xf093
@@ -1217,12 +1216,10 @@ void UNK_0xf2da() // UNK_0xf2da
   Push(Read16(Pop())); // @
   LoadData("UNK_0xe887"); // from 'CREATURE    '
   _ex__3(); // !_3
-  goto label2;
-
-  label1:
+  } else
+  {
   imax = i; // LEAVE
-
-  label2:
+  }
   UNK_0xf1d3(); // UNK_0xf1d3
   i++;
   } while(i<imax); // (LOOP) 0xffc6
@@ -1275,7 +1272,8 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf2da(); // UNK_0xf2da
   Push(pp_UNK_0xef53); // UNK_0xef53
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(1);
   Push(pp_UNK_0xef53); // UNK_0xef53
   _plus__ex_(); // +!
@@ -1283,8 +1281,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xe8af(); // UNK_0xe8af
   UNK_0xf189(); // UNK_0xf189
   UNK_0xf179(); // UNK_0xf179
-
-  label1:
+  }
   UNK_0xf093(); // UNK_0xf093
   UNK_0xf320(); // UNK_0xf320
   UNK_0xf2da(); // UNK_0xf2da
@@ -1328,7 +1325,8 @@ void UNK_0xf382() // UNK_0xf382
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
   _dash_(); // -
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
 
   i = Pop();
   imax = Pop();
@@ -1347,12 +1345,10 @@ void UNK_0xf382() // UNK_0xf382
   i++;
   } while(i<imax); // (LOOP) 0xffea
 
-  goto label3;
-
-  label2:
+  } else
+  {
   Pop(); Pop();// 2DROP
-
-  label3:
+  }
   Pop(); Pop();// 2DROP
   Push(1);
   Push(pp_RECORD_n_); // RECORD#
@@ -1373,7 +1369,8 @@ void UNK_0xf3ea() // UNK_0xf3ea
   Push(0x63fa); // IFIELD(UNK_0xe87a)
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(0x000a);
@@ -1381,8 +1378,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   _slash_(); // /
   Push(2);
   MAX(); // MAX
-
-  label1:
+  }
   LoadData("UNK_0xe872"); // from 'REGIONS     '
   C_ex_(); // C!
 }
@@ -1409,10 +1405,10 @@ void UNK_0xf40c() // UNK_0xf40c
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(i); // I
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf3ea(); // UNK_0xf3ea
-
-  label1:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xfff2
 
@@ -1445,7 +1441,8 @@ void UNK_0xf448() // UNK_0xf448
 {
   UNK_0xf432(); // UNK_0xf432
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x000b);
   Push(0x002e);
   ICREATE(); // ICREATE
@@ -1462,8 +1459,7 @@ void UNK_0xf448() // UNK_0xf448
   ICLOSE(); // ICLOSE
   UNK_0xf432(); // UNK_0xf432
   Pop(); // DROP
-
-  label1:
+  }
   CI(); // CI
   Push(pp_SUPER_dash_BOX); // SUPER-BOX
   _1_dot_5_ex_(); // 1.5!
@@ -1502,18 +1498,17 @@ void DIO() // DIO
   LoadData("UNK_0xe7da"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf055(); // UNK_0xf055
   UNK_0xf334(); // UNK_0xf334
   UNK_0xf382(); // UNK_0xf382
   UNK_0xf40c(); // UNK_0xf40c
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x1388);
   MS(); // MS
-
-  label2:
+  }
 
   UNK_0x3f3b("INITIATING HULL INTEGRITY CHECK");
   _dot_TTY(); // .TTY

@@ -393,12 +393,12 @@ void UNK_0xea65() // UNK_0xea65
   Push(7);
   Push(Pop() & Pop()); // AND
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   PRINT("CLASS ", 6); // (.")
   _dot_(); // .
   return;
-
-  label1:
+  }
   PRINT("NONE", 4); // (.")
 }
 
@@ -582,15 +582,15 @@ void UNK_0xebe9() // UNK_0xebe9
   UNK_0xebb5(); // UNK_0xebb5
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x003b);
   Push(0x00ae);
   POS_dot_(); // POS.
   Push(0x01f4);
   _dot_(); // .
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(Pop()-1); // 1-
   Push(5);
   Push(Pop() * Pop()); // *
@@ -624,8 +624,7 @@ void UNK_0xebe9() // UNK_0xebe9
   i++;
   } while(i<imax); // (LOOP) 0xffd2
 
-
-  label2:
+  }
   _ex_CRS(); // !CRS
 }
 
@@ -697,11 +696,11 @@ void UNK_0xec96() // UNK_0xec96
 {
   _ro_PTS_rc_(); // (PTS) case
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _ex__3(); // !_3
   return;
-
-  label1:
+  }
   Pop(); // DROP
 }
 
@@ -720,7 +719,8 @@ void UNK_0xecb0() // UNK_0xecb0
   Push(Read16(regsp)); // DUP
   UNK_0xea27(); // UNK_0xea27
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(5);
   SWAP(); // SWAP
   _dash_(); // -
@@ -758,8 +758,7 @@ void UNK_0xecb0() // UNK_0xecb0
   Push(6);
   D_dot_R(); // D.R
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
   Push2Words("NULL");
   Push(pp_UNK_0xecaa); // UNK_0xecaa
@@ -786,28 +785,27 @@ void UNK_0xed20() // UNK_0xed20
   _ex__3(); // !_3
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00ae);
   Push(pp_YBLT); // YBLT
   _ex__3(); // !_3
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _plus_BIT(); // +BIT
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   Push(4);
   _dot_R(); // .R
-
-  label2:
-  goto label3;
-
-  label1:
+  }
+  } else
+  {
   UNK_0xec78(); // UNK_0xec78
   UNK_0xecb0(); // UNK_0xecb0
-
-  label3:
+  }
   _ex_CRS(); // !CRS
 }
 
@@ -827,7 +825,8 @@ void UNK_0xed6a() // UNK_0xed6a
   Push(0x01f4); Push(0x0000);
   UNK_0xe994(); // UNK_0xe994
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0xfe0c); Push(0xffff);
   UNK_0xe99e(); // UNK_0xe99e
   UNK_0xe9d0(); // UNK_0xe9d0
@@ -844,19 +843,18 @@ void UNK_0xed6a() // UNK_0xed6a
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   _plus__ex_(); // +!
   Push(0x01f4);
   Push(0x6432); // IFIELD(UNK_0xea11)
   _plus__ex_(); // +!
   imax = i; // LEAVE
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(Pop()*2); // 2*
-
-  label3:
+  }
   i++;
   } while(i<imax); // (LOOP) 0xffdc
 
@@ -864,8 +862,7 @@ void UNK_0xed6a() // UNK_0xed6a
   MODULE(); // MODULE
   UNK_0xeaa9(); // UNK_0xeaa9
   return;
-
-  label1:
+  }
   Push(1);
   _0MESS(); // 0MESS
   Push(0x640e); // IFIELD(UNK_0xe9fd)
@@ -873,18 +870,17 @@ void UNK_0xed6a() // UNK_0xed6a
   _plus_BIT(); // +BIT
   Push(0x0010);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   Push(1);
   Push(0x001b);
   CMESS(); // CMESS
   PRINT("NO CARGO POD BAYS AVAILABLE", 27); // (.")
   _ex_CRS(); // !CRS
-  goto label5;
-
-  label4:
+  } else
+  {
   UNK_0xe9c6(); // UNK_0xe9c6
-
-  label5:
+  }
   UNK_0xeb5b(); // UNK_0xeb5b
   UNK_0xe9b2(); // UNK_0xe9b2
 }
@@ -928,7 +924,8 @@ void UNK_0xee20() // UNK_0xee20
   Push(0x0064);
   U_star_(); // U*
   UNK_0xe994(); // UNK_0xe994
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0064);
   U_star_(); // U*
   DNEGATE(); // DNEGATE
@@ -957,12 +954,14 @@ void UNK_0xee20() // UNK_0xee20
   Push(a); // I
   Push(3);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x6421); // IFIELD(UNK_0xea0c)
   Push(Read16(Pop())); // @
   Push(0x00fa);
   _st_(); // <
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(0);
   _0MESS(); // 0MESS
   Push(1);
@@ -983,8 +982,7 @@ void UNK_0xee20() // UNK_0xee20
   _0MESS(); // 0MESS
   Push(1);
   _0MESS(); // 0MESS
-
-  label3:
+  }
   Push(Pop()>>1); // 2/
   Push(0x6421); // IFIELD(UNK_0xea0c)
   Push(Read16(Pop())); // @
@@ -1000,8 +998,7 @@ void UNK_0xee20() // UNK_0xee20
   Push(0x6400); // IFIELD(UNK_0xe9da)
   Push(Pop()+1); // 1+
   C_ex_(); // C!
-
-  label2:
+  }
   Push(a); // R>
   UNK_0xec96(); // UNK_0xec96
   Push(0xc6cc); // probable 'OV.SHIP'
@@ -1010,8 +1007,7 @@ void UNK_0xee20() // UNK_0xee20
   UNK_0xe9d0(); // UNK_0xe9d0
   Push(1);
   return;
-
-  label1:
+  }
   Pop(); // DROP
   UNK_0xe9c6(); // UNK_0xe9c6
   Push(pp_XORMODE); // XORMODE
@@ -1030,7 +1026,8 @@ void UNK_0xef52() // UNK_0xef52
   label6:
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(-1);
   Push(Pop() * Pop()); // *
   Push(pp_NCRS); // NCRS
@@ -1047,7 +1044,8 @@ void UNK_0xef52() // UNK_0xef52
   Push(5);
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   BLT(); // BLT
   Push(0x0060);
   Push(pp_NCRS); // NCRS
@@ -1061,29 +1059,25 @@ void UNK_0xef52() // UNK_0xef52
   Push(pp_YBLT); // YBLT
   _ex__3(); // !_3
   BLT(); // BLT
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(pp_NCRS); // NCRS
   _ex__3(); // !_3
-
-  label3:
+  }
   Push(0);
-  goto label4;
-
-  label1:
+  } else
+  {
   Pop(); // DROP
   Push(1);
-
-  label4:
+  }
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label5;
+  if (Pop() != 0)
+  {
   Pop(); // DROP
   UNK_0xee20(); // UNK_0xee20
-
-  label5:
+  }
   if (Pop() == 0) goto label6;
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
@@ -1101,12 +1095,14 @@ void UNK_0xefcc() // UNK_0xefcc
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xeb7d); // UNK_0xeb7d
   _ex__3(); // !_3
   UNK_0xee14(); // UNK_0xee14
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(1);
   _0MESS(); // 0MESS
   Push(1);
@@ -1116,9 +1112,8 @@ void UNK_0xefcc() // UNK_0xefcc
   _ex_CRS(); // !CRS
   UNK_0xeb5b(); // UNK_0xeb5b
   UNK_0xe9b2(); // UNK_0xe9b2
-  goto label3;
-
-  label2:
+  } else
+  {
   _at_CRS(); // @CRS
   Push(0x000e);
   Push(0x0060);
@@ -1139,11 +1134,9 @@ void UNK_0xefcc() // UNK_0xefcc
   UNK_0xef52(); // UNK_0xef52
   BLT(); // BLT
   _ex_CRS(); // !CRS
-
-  label3:
+  }
   return;
-
-  label1:
+  }
   UNK_0xed6a(); // UNK_0xed6a
 }
 
@@ -1162,7 +1155,8 @@ void UNK_0xf041() // UNK_0xf041
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(1);
   Push(0x0010);
 
@@ -1180,7 +1174,8 @@ void UNK_0xf041() // UNK_0xf041
   Push(0x01f3);
   _gt_(); // >
   Push(Pop() * Pop()); // *
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(i); // I
   BIT(); // BIT
   Push(-1);
@@ -1197,8 +1192,7 @@ void UNK_0xf041() // UNK_0xf041
   Push(0xfe0c);
   Push(0x6432); // IFIELD(UNK_0xea11)
   _plus__ex_(); // +!
-
-  label2:
+  }
   Push(-1);
   int step = Pop();
   i += step;
@@ -1206,8 +1200,7 @@ void UNK_0xf041() // UNK_0xf041
   } while(1); // (+LOOP) 0xffba
 
   return;
-
-  label1:
+  }
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1232,11 +1225,13 @@ void UNK_0xf0da() // UNK_0xf0da
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_UNK_0xecaa); // UNK_0xecaa
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xec78(); // UNK_0xec78
   Push(Read16(regsp)); // DUP
   Push(0x6400); // IFIELD(UNK_0xe9da)
@@ -1269,15 +1264,12 @@ void UNK_0xf0da() // UNK_0xf0da
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   UNK_0xed20(); // UNK_0xed20
-  goto label3;
-
-  label2:
+  } else
+  {
   Pop(); // DROP
-
-  label3:
+  }
   return;
-
-  label1:
+  }
   UNK_0xf041(); // UNK_0xf041
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
@@ -1309,54 +1301,56 @@ void UNK_0xf14c() // UNK_0xf14c
   Push(0);
   Push(pp_UNK_0xf148); // UNK_0xf148
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xebe9(); // UNK_0xebe9
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xed20(); // UNK_0xed20
+  }
 
   label2:
   XYSCAN(); // XYSCAN
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(-1);
   Push(Pop() * Pop()); // *
   Push(pp_NCRS); // NCRS
   _plus__ex_(); // +!
   Push(pp_UNK_0xea4a); // UNK_0xea4a
   SET_dash_CRS(); // SET-CRS
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf148); // UNK_0xf148
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label5;
+  if (Pop() != 0)
+  {
   UNK_0xebe9(); // UNK_0xebe9
-  goto label4;
-
-  label5:
+  } else
+  {
   UNK_0xed20(); // UNK_0xed20
-
-  label4:
+  }
+  }
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label6;
+  if (Pop() != 0)
+  {
   Push(pp_UNK_0xf148); // UNK_0xf148
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label7;
+  if (Pop() != 0)
+  {
   UNK_0xefcc(); // UNK_0xefcc
-  goto label6;
-
-  label7:
+  } else
+  {
   UNK_0xf0da(); // UNK_0xf0da
-
-  label6:
-  goto label8;
-
-  label3:
+  }
+  }
+  } else
+  {
   Pop(); // DROP
-
-  label8:
+  }
   _ask_QUIT(); // ?QUIT
   if (Pop() == 0) goto label2;
   _gt_1FONT(); // >1FONT
@@ -1383,7 +1377,8 @@ void UNK_0xf1d6() // UNK_0xf1d6
   _ro_PARTADDR_rc_(); // (PARTADDR) case
   UNK_0xea27(); // UNK_0xea27
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x000a);
   SWAP(); // SWAP
   Push(Pop()*2); // 2*
@@ -1405,12 +1400,10 @@ void UNK_0xf1d6() // UNK_0xf1d6
   Push(0x0064);
   _star__slash_(); // */
   U_star_(); // U*
-  goto label2;
-
-  label1:
+  } else
+  {
   Push2Words("NULL");
-
-  label2:
+  }
   Push(a); // R>
   Pop(); // DROP
 }
@@ -1575,23 +1568,23 @@ void UNK_0xf346() // UNK_0xf346
   UNK_0xf226(); // UNK_0xf226
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _2DUP(); // 2DUP
   UNK_0xe994(); // UNK_0xe994
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _2DUP(); // 2DUP
   UNK_0xf2c5(); // UNK_0xf2c5
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf2fa(); // UNK_0xf2fa
-  goto label4;
-
-  label3:
+  } else
+  {
   Pop(); Pop();// 2DROP
-
-  label4:
-  goto label5;
-
-  label2:
+  }
+  } else
+  {
   UNK_0xf288(); // UNK_0xf288
   Push(1);
   Push(0x0012);
@@ -1599,11 +1592,9 @@ void UNK_0xf346() // UNK_0xf346
   UNK_0xe9bc(); // UNK_0xe9bc
   _ex_CRS(); // !CRS
   UNK_0xeb5b(); // UNK_0xeb5b
-
-  label5:
-  goto label6;
-
-  label1:
+  }
+  } else
+  {
   Pop(); Pop();// 2DROP
   Push(0);
   Push(0x0015);
@@ -1611,8 +1602,7 @@ void UNK_0xf346() // UNK_0xf346
   PRINT("NO REPAIRS ARE NEEDED", 21); // (.")
   _ex_CRS(); // !CRS
   UNK_0xeb5b(); // UNK_0xeb5b
-
-  label6:
+  }
   Push(1);
   _0MESS(); // 0MESS
   UNK_0xe9d0(); // UNK_0xe9d0
@@ -1662,7 +1652,8 @@ void UNK_0xf3fd() // UNK_0xf3fd
   Push(0x6423); // IFIELD(%NAME)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0013);
   Push(Pop() + Pop()); // +
   UNK_0xf3d7(); // UNK_0xf3d7
@@ -1671,16 +1662,14 @@ void UNK_0xf3fd() // UNK_0xf3fd
   CMESS(); // CMESS
 
   UNK_0x3f3b(" NEW ");
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0);
   Push(0x0022);
   CMESS(); // CMESS
 
   UNK_0x3f3b(" ");
-
-  label2:
+  }
   UNK_0xf3b8(); // UNK_0xf3b8
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
@@ -1798,17 +1787,16 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   SET_dash_CRS(); // SET-CRS
   Pop(); // DROP
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0);
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0);
-
-  label2:
+  }
   if (Pop() == 0) goto label3;
   Push(1);
   UNK_0xe980(); // UNK_0xe980

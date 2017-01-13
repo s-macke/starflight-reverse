@@ -446,27 +446,25 @@ void UNK_0xef3a() // UNK_0xef3a
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(6);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(0);
-
-  label3:
+  }
   ICLOSE(); // ICLOSE
-  goto label4;
-
-  label1:
+  } else
+  {
   Push(0);
-
-  label4:
+  }
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(0x000a);
@@ -782,14 +780,13 @@ void UNK_0xf1d4() // UNK_0xf1d4
 {
   Push(0x65fe); // IFIELD(UNK_0xed42)
   UNK_0xed65(); // UNK_0xed65
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SetColor("LT-BLUE");
-  goto label2;
-
-  label1:
+  } else
+  {
   SetColor("DK-BLUE");
-
-  label2:
+  }
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099

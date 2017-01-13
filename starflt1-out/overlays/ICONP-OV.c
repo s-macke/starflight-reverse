@@ -206,14 +206,14 @@ void UNK_0xf2a1() // UNK_0xf2a1
 {
   LoadData("UNK_0xf23b"); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x63fa); // IFIELD(UNK_0xf243)
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0023);
   Push(Pop() + Pop()); // +
   return;
-
-  label1:
+  }
   Push(0x002b);
 }
 
@@ -404,12 +404,12 @@ void UNK_0xf38f() // UNK_0xf38f
   Push(0x6404); // IFIELD(UNK_0xf250)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0010);
   Push(Pop() + Pop()); // +
   return;
-
-  label1:
+  }
   LoadData("UNK_0xf248"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
 }
@@ -424,11 +424,11 @@ void UNK_0xf3ab() // UNK_0xf3ab
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(6);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x002c);
   return;
-
-  label1:
+  }
   Push(Read16(cc_UNK_0xf27b)); // UNK_0xf27b
 }
 
@@ -478,11 +478,11 @@ void UNK_0xf3f1() // UNK_0xf3f1
   _at_INST_dash_CLASS(); // @INST-CLASS
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SPACE_dash_ID(); // SPACE-ID case
   return;
-
-  label1:
+  }
   PLANET_dash_ID(); // PLANET-ID case
 }
 
@@ -539,11 +539,11 @@ void UNK_0xf43d() // UNK_0xf43d
 {
   Push(0x6400); // IFIELD(UNK_0xf255)
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_DEFAULT)); // DEFAULT
   return;
-
-  label1:
+  }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
 
@@ -597,11 +597,11 @@ void UNK_0xf47b() // UNK_0xf47b
 void UNK_0xf485() // UNK_0xf485
 {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(3);
   return;
-
-  label1:
+  }
   Push(Read16(cc_DEFAULT)); // DEFAULT
 }
 

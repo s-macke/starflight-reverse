@@ -333,7 +333,8 @@ void UNK_0xf474() // UNK_0xf474
 {
   UNK_0xf45e(); // UNK_0xf45e
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x000b);
   Push(0x002e);
   ICREATE(); // ICREATE
@@ -350,8 +351,7 @@ void UNK_0xf474() // UNK_0xf474
   ICLOSE(); // ICLOSE
   UNK_0xf45e(); // UNK_0xf45e
   Pop(); // DROP
-
-  label1:
+  }
   CI(); // CI
   Push(pp_SUPER_dash_B); // SUPER-B
   _1_dot_5_ex__2(); // 1.5!_2

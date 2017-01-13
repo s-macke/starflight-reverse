@@ -224,17 +224,16 @@ void UNK_0xee2c() // UNK_0xee2c
 {
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_CTTOP); // CTTOP
   Push(Read16(Pop())); // @
   SetColor("WHITE");
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x0096);
   SetColor("GREY1");
-
-  label2:
+  }
   _ex_COLOR(); // !COLOR
   Push(7);
   _dash_(); // -
@@ -362,12 +361,12 @@ void UNK_0xef61() // UNK_0xef61
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); Pop();// 2DROP
   LoadData("SHAPE"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-
-  label1:
+  }
   _gt_C_plus_S(); // >C+S
   Push(0x63fb); // IFIELD(PHRASE-MEM)
   Push(0x63fa); // IFIELD(PHR-CNT)
@@ -673,7 +672,8 @@ void UNK_0xf157() // UNK_0xf157
   Push(0x004b);
   _st_(); // <
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp__ro_SCROLL_1); // (SCROLL_1
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -694,8 +694,7 @@ void UNK_0xf157() // UNK_0xf157
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
   Pop(); Pop();// 2DROP
   Pop(); // DROP
@@ -726,15 +725,15 @@ void BOX_gt_LIST() // BOX>LIST
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   CI_i_(); // CI'
   CI(); // CI
   ITEM_gt_PAD(); // ITEM>PAD
   PAD(); // PAD
   Push(Pop()+1); // 1+
   UNK_0xf157(); // UNK_0xf157
-
-  label1:
+  }
   NEXT_dash_NO(); // NEXT-NO
   _2DUP(); // 2DUP
   CI(); // CI
@@ -902,11 +901,11 @@ void _gt_BOX() // >BOX
   CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(a); // I
   UNK_0xf2cf(); // UNK_0xf2cf
-
-  label1:
+  }
   Push(a); // R>
   BOX_gt_TOCS(); // BOX>TOCS
   _2DUP(); // 2DUP
@@ -987,7 +986,8 @@ void _ro_BOX_gt__rc_() // (BOX>)
   Push(Read16(Pop())); // @
   _gt_(); // >
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
   Push(-Pop()); // NEGATE
@@ -1003,8 +1003,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   _ex__3(); // !_3
   C_gt_(); // C>
   return;
-
-  label1:
+  }
   IEXTRACT(); // IEXTRACT
 }
 
@@ -1019,19 +1018,19 @@ void BOX_gt_() // BOX>
   _ro_BOX_gt__rc_(); // (BOX>)
   CI(); // CI
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
   CI(); // CI
   D0_eq_(); // D0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   ICLOSE(); // ICLOSE
-
-  label2:
+  }
   Push(1);
-  goto label3;
-
-  label1:
+  } else
+  {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _ask_ELEMENT(); // ?ELEMENT
@@ -1041,8 +1040,7 @@ void BOX_gt_() // BOX>
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-
-  label3:
+  }
   ROT(); // ROT
   ROT(); // ROT
 }

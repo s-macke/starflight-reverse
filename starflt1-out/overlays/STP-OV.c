@@ -226,16 +226,15 @@ void UNK_0xf048() // UNK_0xf048
   Push(Read16(Pop())); // @
   _2DUP(); // 2DUP
   _st_(); // <
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _dash_(); // -
   Push(0x0018);
   Push(Pop() + Pop()); // +
-  goto label2;
-
-  label1:
+  } else
+  {
   _dash_(); // -
-
-  label2:
+  }
   Push(Read16(regsp)); // DUP
   Push(Pop()+1); // 1+
   Push(Pop() * Pop()); // *
@@ -791,10 +790,10 @@ void UNK_0xf3e4() // UNK_0xf3e4
   label2:
   XYSCAN(); // XYSCAN
   _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   BEEP(); // BEEP
-
-  label1:
+  }
   SWAP(); // SWAP
   Pop(); // DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

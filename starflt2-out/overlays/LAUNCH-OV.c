@@ -304,11 +304,11 @@ void UNK_0xf1b6() // UNK_0xf1b6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Pop(); // DROP
   return;
-
-  label1:
+  }
   Pop(); // DROP
 }
 
@@ -459,7 +459,8 @@ void UNK_0xf32a() // UNK_0xf32a
 {
   unsigned short int a;
   a = Pop(); // >R
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00bf);
   UNK_0xf312(); // UNK_0xf312
   Push(4);
@@ -470,9 +471,8 @@ void UNK_0xf32a() // UNK_0xf32a
   _dash_(); // -
   Push(4);
   Push(0x00be);
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x0048);
   UNK_0xf312(); // UNK_0xf312
   Push(4);
@@ -483,8 +483,7 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(0x0048);
   _2OVER(); // 2OVER
   Push(Pop()+1); // 1+
-
-  label2:
+  }
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
   Pop(); // DROP
@@ -529,7 +528,8 @@ void UNK_0xf3b7() // UNK_0xf3b7
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
   Push(Read16(cc_TRUE)); // TRUE
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x003b);
   Push(0);
 
@@ -555,14 +555,12 @@ void UNK_0xf3b7() // UNK_0xf3b7
   BEEPOFF(); // BEEPOFF
   Push(0x00fa);
   MS(); // MS
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x05dc);
   MS(); // MS
   V_gt_DISPL(); // V>DISPL
-
-  label2:
+  }
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
@@ -581,7 +579,8 @@ void _and_LAUNCH() // &LAUNCH
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf306(); // UNK_0xf306
   UNK_0xf0a6(); // UNK_0xf0a6
   UNK_0xf192(); // UNK_0xf192
@@ -589,8 +588,7 @@ void _and_LAUNCH() // &LAUNCH
   UNK_0x3f09("OPENING");
   UNK_0xf390(); // UNK_0xf390
   UNK_0xf3b7(); // UNK_0xf3b7
-
-  label1:
+  }
   UNK_0xf14e(); // UNK_0xf14e
   if (Pop() == 0) return;
   Push(0xcafc); // probable 'UNNEST'
@@ -648,7 +646,8 @@ void _and_RETURN() // &RETURN
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(Read16(cc_FALSE)); // FALSE
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00bf);
   UNK_0xf1a6(); // UNK_0xf1a6
   Push(0x0048);
@@ -682,14 +681,12 @@ void _and_RETURN() // &RETURN
   j++;
   } while(j<jmax); // (LOOP) 0xffd6
 
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0x05dc);
   MS(); // MS
   _dot_AIRLOCK(); // .AIRLOCK
-
-  label2:
+  }
   V_gt_DISPL(); // V>DISPL
   BEEPOFF(); // BEEPOFF
 }

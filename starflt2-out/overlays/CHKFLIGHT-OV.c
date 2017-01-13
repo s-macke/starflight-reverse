@@ -111,22 +111,21 @@ void UNK_0xf195() // UNK_0xf195
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(0x0017);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Read16(cc_TRUE)); // TRUE
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(Read16(cc_FALSE)); // FALSE
-
-  label3:
+  }
   return;
-
-  label1:
+  }
   Push(Read16(cc_FALSE)); // FALSE
 }
 
@@ -350,30 +349,30 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(Read16(regsp)); // DUP
   Push(1);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf276(); // UNK_0xf276
-
-  label1:
+  }
   Push(Read16(regsp)); // DUP
   Push(2);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf2ae(); // UNK_0xf2ae
-
-  label2:
+  }
   Push(Read16(regsp)); // DUP
   Push(4);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf331(); // UNK_0xf331
-
-  label3:
+  }
   Push(8);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   UNK_0xf378(); // UNK_0xf378
-
-  label4:
+  }
   Push(1);
   Push(0x0016);
   CMESS(); // CMESS
@@ -521,12 +520,14 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(6);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x65ec); // IFIELD(INST-QT)
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -535,19 +536,15 @@ void UNK_0xf4bc() // UNK_0xf4bc
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(1);
-
-  label3:
+  }
   CDROP(); // CDROP
-  goto label4;
-
-  label1:
+  } else
+  {
   Push(1);
-
-  label4:
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -573,14 +570,14 @@ void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
   Push(Pop() * Pop()); // *
   Push(Pop() | Pop()); // OR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf3a9(); // UNK_0xf3a9
   KEY_2(); // KEY_2
   Pop(); // DROP
   Push(0);
   return;
-
-  label1:
+  }
   Push(1);
 }
 

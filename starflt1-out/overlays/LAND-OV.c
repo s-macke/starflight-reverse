@@ -115,7 +115,8 @@ void UNK_0xf147() // UNK_0xf147
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0320);
   _dash_(); // -
   Push(0);
@@ -124,8 +125,7 @@ void UNK_0xf147() // UNK_0xf147
   Push(Pop() * Pop()); // *
   Push(0x0320);
   Push(Pop() + Pop()); // +
-
-  label1:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -142,7 +142,8 @@ void UNK_0xf177() // UNK_0xf177
   Push(0x000b);
   Push(0x000a);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001a);
   Push(6);
@@ -152,7 +153,8 @@ void UNK_0xf177() // UNK_0xf177
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xf143); // UNK_0xf143
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf147(); // UNK_0xf147
   Push(0x0028);
   _slash_(); // /
@@ -163,15 +165,12 @@ void UNK_0xf177() // UNK_0xf177
   MAX(); // MAX
   Push(0x63fa); // IFIELD(INST-QTY)
   _ex__3(); // !_3
-
-  label2:
+  }
   CDROP(); // CDROP
-  goto label3;
-
-  label1:
+  } else
+  {
   Push(0);
-
-  label3:
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -430,11 +429,11 @@ void UNK_0xf430() // UNK_0xf430
   MODULE(); // MODULE
   Push(pp__ask_FUEL_dash_DIE); // ?FUEL-DIE
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf258(); // UNK_0xf258
   return;
-
-  label1:
+  }
   UNK_0xf3d6(); // UNK_0xf3d6
   if (Pop() == 0) return;
   UNK_0xf1f1(); // UNK_0xf1f1
@@ -453,24 +452,24 @@ void UNK_0xf45e() // UNK_0xf45e
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   UNK_0xf3e2(); // UNK_0xf3e2
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_GWF); // GWF
   ON_3(); // ON_3
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xf342(); // UNK_0xf342
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(pp_GWF); // GWF
   ON_3(); // ON_3
-  goto label2;
-
-  label3:
+  } else
+  {
   UNK_0xf39d(); // UNK_0xf39d
   Push(pp_GWF); // GWF
   _ex__3(); // !_3
-
-  label2:
+  }
+  }
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -489,25 +488,25 @@ void _ask_LAND() // ?LAND
   Push(pp__i_HEAT); // 'HEAT
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   PRINT("COMPUTER NOT RESPONDING!", 24); // (.")
   BEEP(); // BEEP
   return;
-
-  label1:
+  }
   Push(pp__ask_G_dash_AWARE); // ?G-AWARE
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf45e(); // UNK_0xf45e
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf430(); // UNK_0xf430
-
-  label3:
+  }
   return;
-
-  label2:
+  }
   UNK_0xf430(); // UNK_0xf430
 }
 

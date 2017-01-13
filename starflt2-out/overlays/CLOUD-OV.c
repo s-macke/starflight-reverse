@@ -162,15 +162,15 @@ void UNK_0xf47c() // UNK_0xf47c
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
   UNK_0xf3da(); // UNK_0xf3da
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x6601); // IFIELD(UNK_0xf3d5)
   Push(Read16(Pop())); // @
   Push(0x0010);
   Push(Pop() | Pop()); // OR
   Push(0x6601); // IFIELD(UNK_0xf3d5)
   _ex__2(); // !_2
-
-  label1:
+  }
   ICLOSE(); // ICLOSE
   Push(3);
   int step = Pop();
@@ -292,15 +292,15 @@ void _ro_DO_dash_CLOUD_rc_() // (DO-CLOUD)
 void DO_dash_CLOUD() // DO-CLOUD
 {
   _n_HUMANS(); // #HUMANS
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _gt_1FONT(); // >1FONT
   WUP(); // WUP
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
   return;
-
-  label1:
+  }
   Pop(); // DROP
 }
 

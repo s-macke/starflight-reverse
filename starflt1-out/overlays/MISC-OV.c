@@ -184,7 +184,8 @@ void UNK_0xf035() // UNK_0xf035
 {
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0xfffc);
   Push(pp_XBLT); // XBLT
   _plus__ex_(); // +!
@@ -203,8 +204,7 @@ void UNK_0xf035() // UNK_0xf035
   PAD(); // PAD
   C_ex_(); // C!
   return;
-
-  label1:
+  }
   BEEP(); // BEEP
 }
 
@@ -265,7 +265,8 @@ void UNK_0xf0b9() // UNK_0xf0b9
 {
   Push(pp__dash_AIN); // -AIN
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(regsp)); // DUP
   Push(pp__dash_AIN); // -AIN
   Push(Read16(Pop())); // @
@@ -276,8 +277,7 @@ void UNK_0xf0b9() // UNK_0xf0b9
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
   return;
-
-  label1:
+  }
   _0_gt_(); // 0>
 }
 
@@ -307,11 +307,11 @@ void _ro__n_IN_do_() // (#IN$
   Push(0x005a);
   Push(0x0080);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x00df);
   Push(Pop() & Pop()); // AND
-
-  label1:
+  }
   b = Pop(); // >R
   Push(b); // I
   Push(0x0021);
@@ -333,7 +333,8 @@ void _ro__n_IN_do_() // (#IN$
   Push(a); // I'
   _st_(); // <
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(b); // I
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   Push(b); // I
@@ -346,17 +347,16 @@ void _ro__n_IN_do_() // (#IN$
   PAD(); // PAD
   Push(Pop() + Pop()); // +
   C_ex_(); // C!
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(b); // I
   Push(8);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label5;
+  if (Pop() != 0)
+  {
   UNK_0xf035(); // UNK_0xf035
-  goto label3;
-
-  label5:
+  } else
+  {
   Push(b); // I
   Push(0x000d);
   Push((Pop()==Pop())?1:0); // =
@@ -364,10 +364,12 @@ void _ro__n_IN_do_() // (#IN$
   Push(b); // I
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   BEEP(); // BEEP
-
-  label3:
+  }
+  }
+  }
   Push(b); // R>
   Push(0x000d);
   Push((Pop()==Pop())?1:0); // =
@@ -395,19 +397,18 @@ void _ro__ask_ART() // (?ART
   Push(0x000b);
   Push(0x000f);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   Push(0x001c);
   SWAP(); // SWAP
   IFIND(); // IFIND
   CDROP(); // CDROP
-  goto label2;
-
-  label1:
+  } else
+  {
   Pop(); // DROP
   Push(0);
-
-  label2:
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -707,14 +708,14 @@ void UNK_0xf39f() // UNK_0xf39f
   Push(0x0064);
   RRND(); // RRND
   _gt_(); // >
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(regsp)); // DUP
   UNK_0xf383(); // UNK_0xf383
   UNK_0xf319(); // UNK_0xf319
   Push(0);
   return;
-
-  label1:
+  }
   Pop(); // DROP
   Push(1);
 }
@@ -740,25 +741,24 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x0080);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(a); // I
   _dot_ERR(); // .ERR case
   _dot_TTY(); // .TTY
   PRINT(": INOPERATIVE", 13); // (.")
   Push(0);
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(a); // I
   UNK_0xf39f(); // UNK_0xf39f
-
-  label3:
-  goto label4;
-
-  label1:
+  }
+  } else
+  {
 
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
   _dot_TTY(); // .TTY
@@ -766,8 +766,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   _dot_ERR(); // .ERR case
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0);
-
-  label4:
+  }
   Push(a); // R>
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -784,19 +783,18 @@ void UNK_0xf458() // UNK_0xf458
 
   label3:
   _ask__dash_NULL(); // ?-NULL
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IOPEN(); // IOPEN
   _ask__dash_NULL(); // ?-NULL
   Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(1);
-
-  label2:
+  }
   if (Pop() == 0) goto label3;
 }
 
@@ -851,15 +849,15 @@ void _eq_CARG() // =CARG
   Push(0x001a);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(0x000a);
   U_star_(); // U*
   Push(pp__10_star_END); // 10*END
   D_ex_(); // D!
-
-  label3:
+  }
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +

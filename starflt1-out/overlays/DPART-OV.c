@@ -364,7 +364,8 @@ void UNK_0xf0d6() // UNK_0xf0d6
   unsigned short int a;
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _at_INST_dash_CLASS(); // @INST-CLASS
   a = Pop(); // >R
   Push(a); // I
@@ -377,30 +378,31 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(0x0029);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(3);
   _st_(); // <
   Push(Pop() & Pop()); // AND
-
-  label2:
+  }
   Push(a); // I
   Push(0x001c);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0010);
   Push(0x0033);
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
-
-  label3:
+  }
   Push(a); // I
   Push(0x001c);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(3);
   Push((Pop()==Pop())?1:0); // =
@@ -409,8 +411,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
   Push(Pop() & Pop()); // AND
-
-  label4:
+  }
   Push(Pop() | Pop()); // OR
   Push(Pop() | Pop()); // OR
   Push(Pop() | Pop()); // OR
@@ -418,8 +419,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
   Push(a); // R>
   Pop(); // DROP
   return;
-
-  label1:
+  }
   Push(0);
 }
 
@@ -430,11 +430,11 @@ void UNK_0xf0d6() // UNK_0xf0d6
 
 void UNK_0xf158() // UNK_0xf158
 {
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   IDELETE(); // IDELETE
   IPREV(); // IPREV
-
-  label1:
+  }
   INEXT(); // INEXT
 }
 
@@ -469,10 +469,10 @@ void UNK_0xf166() // UNK_0xf166
 
   label2:
   UNK_0xf0d6(); // UNK_0xf0d6
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   IDELETE(); // IDELETE
-
-  label4:
+  }
   _ask_NULL(); // ?NULL
   ICLOSE(); // ICLOSE
   UNK_0xf158(); // UNK_0xf158
@@ -639,7 +639,8 @@ void UNK_0xf2b0() // UNK_0xf2b0
   Push(pp__ro_BOMB_rc_); // (BOMB)
   _at__gt_C_plus_S(); // @>C+S
   _ask__dash_NULL(); // ?-NULL
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x63fc); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x05a0);
@@ -653,12 +654,10 @@ void UNK_0xf2b0() // UNK_0xf2b0
   Push(Pop() + Pop()); // +
   Push(0x000a);
   _st_(); // <
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(0);
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -760,12 +759,12 @@ void UNK_0xf39d() // UNK_0xf39d
   Push(9);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0);
   Push(0x640a); // IFIELD(UNK_0xef6e)
   C_ex_(); // C!
-
-  label2:
+  }
   goto label3;
 
   label1:
@@ -801,25 +800,25 @@ void UNK_0xf430() // UNK_0xf430
 {
   Push2Words("*SPHEXI");
   UNK_0xf426(); // UNK_0xf426
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp__ask_SPHEXI); // ?SPHEXI
   OFF(); // OFF
-
-  label1:
+  }
   Push2Words("*ELAN");
   UNK_0xf426(); // UNK_0xf426
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(pp__ask_ELAN); // ?ELAN
   OFF(); // OFF
   UNK_0xf331(); // UNK_0xf331
-
-  label2:
+  }
   Push2Words("*BRAIN");
   UNK_0xf426(); // UNK_0xf426
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf39d(); // UNK_0xf39d
-
-  label3:
+  }
   UNK_0xf2eb(); // UNK_0xf2eb
   Push(pp__ro_SYSTEM); // (SYSTEM
   _at__gt_C_plus_S(); // @>C+S
@@ -851,23 +850,26 @@ void DEPART() // DEPART
   _ex__3(); // !_3
   Push(pp__ask_LANDED); // ?LANDED
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp__ask_BOMB); // ?BOMB
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf1d6(); // UNK_0xf1d6
   UNK_0xf25e(); // UNK_0xf25e
   UNK_0xf29e(); // UNK_0xf29e
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf2b0(); // UNK_0xf2b0
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   UNK_0xf430(); // UNK_0xf430
   UNK_0xf09c(); // UNK_0xf09c
   Push(pp_WMSG); // WMSG
   ON_3(); // ON_3
-  goto label5;
-
-  label4:
+  } else
+  {
   CTINIT(); // CTINIT
 
   UNK_0x3f3b("CRYSTAL PLANET DAMAGED");
@@ -878,26 +880,22 @@ void DEPART() // DEPART
   Push(0x1388);
   MS(); // MS
   UNK_0xf1ac(); // UNK_0xf1ac
-
-  label5:
-  goto label6;
-
-  label3:
+  }
+  } else
+  {
   UNK_0xf430(); // UNK_0xf430
-
-  label6:
+  }
   Push2Words("NULL");
   Push(pp__ro_BOMB_rc_); // (BOMB)
   _1_dot_5_ex_(); // 1.5!
   Push(pp__ask_BOMB); // ?BOMB
   OFF(); // OFF
-  goto label1;
-
-  label2:
+  } else
+  {
   UNK_0xf166(); // UNK_0xf166
   UNK_0xf1ac(); // UNK_0xf1ac
-
-  label1:
+  }
+  }
   Push(-1);
   Push(pp_PLHI); // PLHI
   _ex__3(); // !_3

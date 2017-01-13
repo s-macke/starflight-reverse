@@ -644,7 +644,8 @@ void UNK_0xe0b6() // UNK_0xe0b6
   UNK_0xe0a6(); // UNK_0xe0a6
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0);
   Push(2);
   UNK_0xe0ae(); // UNK_0xe0ae
@@ -662,8 +663,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
   Push(0x001c);
   _ro__ex_SET_rc_(); // (!SET)
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
 }
 
@@ -701,11 +701,11 @@ void _ask_HUB() // ?HUB
   Push(Read16(Pop())); // @
   Push(5);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   ON_3(); // ON_3
   return;
-
-  label1:
+  }
   OFF(); // OFF
 }
 
@@ -1391,10 +1391,10 @@ void UNK_0xe659() // UNK_0xe659
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(2);
-
-  label1:
+  }
   UNK_0xe63f(); // UNK_0xe63f
 }
 
@@ -1584,7 +1584,8 @@ void SCR_gt_EG() // SCR>EG
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
   SETCOLO(); // SETCOLO
@@ -1592,13 +1593,13 @@ void SCR_gt_EG() // SCR>EG
   Push(Pop()*2); // 2*
   Push(i); // J
   PLOT(); // PLOT
-
-  label1:
+  }
   Push(0x000f);
   Push(Pop() & Pop()); // AND
   C_gt_EGA(); // C>EGA
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(pp_COLOR); // COLOR
   _st__ex__gt_(); // <!>
   SETCOLO(); // SETCOLO
@@ -1607,8 +1608,7 @@ void SCR_gt_EG() // SCR>EG
   Push(Pop()+1); // 1+
   Push(i); // J
   PLOT(); // PLOT
-
-  label2:
+  }
   j++;
   } while(j<jmax); // (LOOP) 0xffb6
 
@@ -1629,7 +1629,8 @@ void RESTOREDISPLAY() // RESTOREDISPLAY
 {
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SETDIS(); // SETDIS
   SCR_gt_EG(); // SCR>EG
   SCR_dash_RES(); // SCR-RES
@@ -1637,14 +1638,13 @@ void RESTOREDISPLAY() // RESTOREDISPLAY
   _ask_HUB(); // ?HUB
   Push(pp_UNK_0xe10a); // UNK_0xe10a
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   SETHID(); // SETHID
   SCR_gt_EG(); // SCR>EG
-
-  label2:
+  }
   return;
-
-  label1:
+  }
   OUTERSPACE(); // OUTERSPACE
   Push(1);
   _v_DISPLAY(); // |DISPLAY
@@ -1659,21 +1659,21 @@ void PRESERVEDISPLAY() // PRESERVEDISPLAY
 {
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SETDIS(); // SETDIS
   SCR_gt_CG(); // SCR>CG
   _ask_HUB(); // ?HUB
   Push(pp_UNK_0xe10a); // UNK_0xe10a
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   _gt_HIDDEN(); // >HIDDEN
   SETHID(); // SETHID
   SCR_gt_CG(); // SCR>CG
-
-  label2:
+  }
   return;
-
-  label1:
+  }
   OUTERSPACE(); // OUTERSPACE
   Push(0);
   _v_DISPLAY(); // |DISPLAY
@@ -1790,13 +1790,13 @@ void UNK_0xe9f3() // UNK_0xe9f3
 {
   Push(Read16(regsp)); // DUP
   _ask_INNERSPACE(); // ?INNERSPACE
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _at_DS(); // @DS
   _dash_(); // -
   Push(1);
   return;
-
-  label1:
+  }
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
   _dash_(); // -
@@ -1810,12 +1810,12 @@ void UNK_0xe9f3() // UNK_0xe9f3
 
 void UNK_0xea11() // UNK_0xea11
 {
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _at_DS(); // @DS
   Push(Pop() + Pop()); // +
   return;
-
-  label1:
+  }
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -1886,14 +1886,13 @@ void POPVECT() // POPVECT
   UNK_0xea11(); // UNK_0xea11
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_DBUF_dash_SEG); // DBUF-SEG
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(pp_HBUF_dash_SEG); // HBUF-SEG
-
-  label2:
+  }
   Push(Read16(Pop())); // @
   Push(pp_BUF_dash_SEG); // BUF-SEG
   _ex__3(); // !_3
@@ -2074,12 +2073,13 @@ void _v_DISK() // |DISK
   Push(0x0400);
   U_slash_MOD(); // U/MOD
   SWAP(); // SWAP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Pop()+1); // 1+
-
-  label1:
+  }
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0);
 
   i = Pop();
@@ -2111,10 +2111,10 @@ void _v_DISK() // |DISK
   UMIN(); // UMIN
   LCMOVE(); // LCMOVE
   Push(a); // J
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UPDATE(); // UPDATE
-
-  label3:
+  }
   Push(5);
   PICK(); // PICK
   Push(Read16(cc_UNK_0xde7a)); // UNK_0xde7a
@@ -2128,10 +2128,11 @@ void _v_DISK() // |DISK
   } while(i<imax); // (LOOP) 0xffb0
 
   Push(a); // I
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   SAVE_dash_BUFFERS(); // SAVE-BUFFERS
-
-  label2:
+  }
+  }
   Push(a); // R>
   Pop(); // DROP
   Pop(); Pop();// 2DROP
@@ -2493,11 +2494,11 @@ void DATALOAD() // DATALOAD
   Func3(":CKSUM");
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xeac7(); // UNK_0xeac7
   return;
-
-  label1:
+  }
   UNK_0xe78c(); // UNK_0xe78c
 }
 
@@ -2680,16 +2681,18 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
   Push(pp__ask_TANDRG); // ?TANDRG
   OFF(); // OFF
   UNK_0xe012(); // UNK_0xe012
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(pp__ask_TANDRG); // ?TANDRG
   ON_3(); // ON_3
   Push(Read16(regsp)); // DUP
   Push(2);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(Pop()+1); // 1+
-
-  label2:
+  }
+  }
   Push(pp__ask_EGA); // ?EGA
   OFF(); // OFF
   Push(Read16(regsp)); // DUP
@@ -3040,19 +3043,19 @@ void START_dot_GAME() // START.GAME
   SET_dot_DISPLAY_dot_MODE(); // SET.DISPLAY.MODE
   GDE(); // GDE
   _ask__dash_writeable(); // ?-writeable
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   nomaster(); // nomaster
-
-  label1:
+  }
   Push(0xb5aa); // probable 'HIMUS'
   MODULE(); // MODULE
   POLICE_dot_WARNING(); // POLICE.WARNING
   _ask_GAME_dot_IN_dot_PROGRESS(); // ?GAME.IN.PROGRESS
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   LOAD_dot_GAME(); // LOAD.GAME
   return;
-
-  label2:
+  }
   NEW_dot_GA(); // NEW.GA
 }
 

@@ -131,14 +131,13 @@ void UNK_0xef56() // UNK_0xef56
   Push(Read16(Pop())); // @
   b = Pop(); // >R
   Push(b); // I
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SetColor("PINK");
-  goto label2;
-
-  label1:
+  } else
+  {
   SetColor("BLUE");
-
-  label2:
+  }
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
 
@@ -146,14 +145,13 @@ void UNK_0xef56() // UNK_0xef56
   _i_KEY(); // 'KEY
   if (Pop() == 0) goto label3;
   Push(b); // R>
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   SetColor("RED");
-  goto label5;
-
-  label4:
+  } else
+  {
   SetColor("DK-BLUE");
-
-  label5:
+  }
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   Push(a); // R>
@@ -442,13 +440,13 @@ void UNK_0xf10e() // UNK_0xf10e
   UNK_0xf023(); // UNK_0xf023
   LoadData("UNK_0xefd3"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf0b4(); // UNK_0xf0b4
   UNK_0xf017(); // UNK_0xf017
   PRINT("WILL SELL (AT TRADING CENTER)", 29); // (.")
   UNK_0xf00b(); // UNK_0xf00b
-
-  label1:
+  }
   LoadData("UNK_0xefd3"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
@@ -459,22 +457,22 @@ void UNK_0xf10e() // UNK_0xf10e
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   UNK_0xf0dc(); // UNK_0xf0dc
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf0b4(); // UNK_0xf0b4
   UNK_0xf017(); // UNK_0xf017
   PRINT("WILL BUY (AT TRADING CENTER)", 28); // (.")
   UNK_0xf00b(); // UNK_0xf00b
-
-  label2:
+  }
   LoadData("UNK_0xefeb"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
   LoadData("UNK_0xeff3"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   PRINT("*", 1); // (.")
-
-  label3:
+  }
   LoadData("UNK_0xeffb"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf0bc(); // UNK_0xf0bc
@@ -859,16 +857,15 @@ void UNK_0xf3d0() // UNK_0xf3d0
   Push(pp__ask_ON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
 
   UNK_0x3f09("INHABITED BY ");
-  goto label2;
-
-  label1:
+  } else
+  {
 
   UNK_0x3f09(" ");
-
-  label2:
+  }
   _dot_TTY(); // .TTY
   Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
@@ -911,7 +908,8 @@ void UNK_0xf444() // UNK_0xf444
   Push(0x0044);
   Push(0);
   IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x0044);
   Push(0);
@@ -919,8 +917,7 @@ void UNK_0xf444() // UNK_0xf444
   Push(0xf430);
   EACH(); // EACH
   Pop(); Pop();// 2DROP
-
-  label1:
+  }
   Push(2);
   _star_CLOSE(); // *CLOSE
 }
@@ -954,7 +951,8 @@ void _dot_CULTURE() // .CULTURE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
   UNK_0xf3d0(); // UNK_0xf3d0
@@ -968,14 +966,13 @@ void _dot_CULTURE() // .CULTURE
   LoadData("ATTITUDE"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf10e(); // UNK_0xf10e
   UNK_0xf444(); // UNK_0xf444
-
-  label2:
+  }
   return;
-
-  label1:
+  }
   _dot_RACE(); // .RACE
 }
 

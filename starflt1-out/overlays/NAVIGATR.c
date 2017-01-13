@@ -179,15 +179,15 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
 
   UNK_0x3f3b("MAGNETIC DISTURBANCES IN NEBULA");
   _dot_TTY(); // .TTY
 
   UNK_0x3f3b("CAUSING ENERGY FLUCTUATIONS");
   _dot_TTY(); // .TTY
-
-  label1:
+  }
   UNK_0xf234(); // UNK_0xf234
 
   UNK_0x3f3b("RAISE SHIELD");
@@ -209,12 +209,12 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(Read16(Pop())); // @
   Push(3);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(3);
   Push(2);
   _dot_ABTN(); // .ABTN
-
-  label2:
+  }
   Push(pp__ask_SUP); // ?SUP
   OFF(); // OFF
 }
@@ -293,44 +293,44 @@ void UNK_0xf3fb() // UNK_0xf3fb
   Push(Read8(Pop())&0xFF); // C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
+  if (Pop() != 0)
+  {
   Push(4);
   UNK_0xf22a(); // UNK_0xf22a
-  goto label3;
-
-  label2:
+  } else
+  {
   Push(0);
-
-  label3:
+  }
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label4;
+  if (Pop() != 0)
+  {
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f3b("ARMING MISSILES");
   _dot_TTY(); // .TTY
-
-  label4:
+  }
   SWAP(); // SWAP
-  if (Pop() == 0) goto label5;
+  if (Pop() != 0)
+  {
   Push(3);
   UNK_0xf22a(); // UNK_0xf22a
-  goto label6;
-
-  label5:
+  } else
+  {
   Push(0);
-
-  label6:
+  }
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label7;
+  if (Pop() != 0)
+  {
   UNK_0xf272(); // UNK_0xf272
 
   UNK_0x3f3b("ARMING LASERS");
   _dot_TTY(); // .TTY
-
-  label7:
+  }
   Push(Pop() + Pop()); // +
-  if (Pop() == 0) goto label8;
+  if (Pop() != 0)
+  {
   Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read16(Pop())); // @
   Push(0x0023);
@@ -342,11 +342,9 @@ void UNK_0xf3fb() // UNK_0xf3fb
   UNK_0x3f3b("DISARM    ");
   LoadData("UNK_0xf222"); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
-
-  label8:
+  }
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
 
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH WEAPONS");
@@ -368,14 +366,13 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   Push(Read16(Pop())); // @
   Push(3);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _gt_DISARM(); // >DISARM
-  goto label2;
-
-  label1:
+  } else
+  {
   UNK_0xf3fb(); // UNK_0xf3fb
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }
@@ -395,28 +392,28 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   Push(Read16(Pop())); // @
   Push(8);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD
-  goto label2;
-
-  label1:
+  } else
+  {
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   D0_eq_(); // D0=
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
 
   UNK_0x3f3b("SHIELDS CAN'T BE RAISED");
   _dot_TTY(); // .TTY
   BEEP(); // BEEP
-  goto label2;
-
-  label3:
+  } else
+  {
   UNK_0xf359(); // UNK_0xf359
-
-  label2:
+  }
+  }
   ICLOSE(); // ICLOSE
   _dot_SORD(); // .SORD
 }

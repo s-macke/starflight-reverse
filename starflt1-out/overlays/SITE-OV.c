@@ -292,7 +292,8 @@ void _dot_LON() // .LON
   POS_dot_(); // POS.
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(-Pop()); // NEGATE
   Push(0);
   Push(3);
@@ -305,18 +306,17 @@ void _dot_LON() // .LON
   _ex__3(); // !_3
   BLT(); // BLT
   return;
-
-  label1:
+  }
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x0082);
   Push(0x0083);
   POS_dot_(); // POS.
   _dot_(); // .
   return;
-
-  label2:
+  }
   Push(0);
   Push(3);
   D_dot_R(); // D.R
@@ -355,7 +355,8 @@ void UNK_0xefa0() // UNK_0xefa0
   POS_dot_(); // POS.
   Push(Read16(regsp)); // DUP
   _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(-Pop()); // NEGATE
   Push(0);
   Push(2);
@@ -368,18 +369,17 @@ void UNK_0xefa0() // UNK_0xefa0
   _ex__3(); // !_3
   BLT(); // BLT
   return;
-
-  label1:
+  }
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x006a);
   Push(0x0083);
   POS_dot_(); // POS.
   _dot_(); // .
   return;
-
-  label2:
+  }
   Push(0);
   Push(2);
   D_dot_R(); // D.R
@@ -403,15 +403,15 @@ void UNK_0xf014() // UNK_0xf014
   Push(Read16(Pop())); // @
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0x01e0);
   Push(pp_UNK_0xef9c); // UNK_0xef9c
   _ex__3(); // !_3
   Push(0x0480);
   Push(pp_UNK_0xef1d); // UNK_0xef1d
   _ex__3(); // !_3
-
-  label1:
+  }
   Push(pp_UNK_0xef1d); // UNK_0xef1d
   Push(Read16(Pop())); // @
   Push(pp_XABS); // XABS
@@ -523,13 +523,13 @@ void _v_REGION() // |REGION
 {
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SWAP(); // SWAP
   Pop(); // DROP
   _v_EGA(); // |EGA
   return;
-
-  label1:
+  }
   _ro__v_REGION_rc_(); // (|REGION)
 }
 
@@ -659,13 +659,13 @@ void _gt_XHAIR() // >XHAIR
   _ex__3(); // !_3
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0);
   _v_EGA(); // |EGA
   UNK_0xf181(); // UNK_0xf181
   return;
-
-  label1:
+  }
   UNK_0xf12f(); // UNK_0xf12f
   UNK_0xf119(); // UNK_0xf119
   Push(0);
@@ -687,12 +687,12 @@ void _st_XHAIR() // <XHAIR
 {
   Push(pp__ask_EGA); // ?EGA
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(1);
   _v_EGA(); // |EGA
   return;
-
-  label1:
+  }
   UNK_0xf159(); // UNK_0xf159
   UNK_0xf121(); // UNK_0xf121
   Push(1);
@@ -909,7 +909,8 @@ void UNK_0xf389() // UNK_0xf389
   D0_eq_(); // D0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0x63fc); // IFIELD(INST-X)
   _2_at_(); // 2@
   SWAP(); // SWAP
@@ -923,8 +924,7 @@ void UNK_0xf389() // UNK_0xf389
   Push(1);
   Push(pp_UNK_0xf261); // UNK_0xf261
   _plus__ex_(); // +!
-
-  label2:
+  }
   INEXT(); // INEXT
   _ask_FIRST(); // ?FIRST
   Push(pp_UNK_0xf261); // UNK_0xf261
@@ -936,8 +936,10 @@ void UNK_0xf389() // UNK_0xf389
   CDROP(); // CDROP
   Push(pp_UNK_0xf261); // UNK_0xf261
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf290(); // UNK_0xf290
+  }
 
   label1:
   ICLOSE(); // ICLOSE
@@ -999,7 +1001,8 @@ void GETSITE_1() // GETSITE_1
   Push(Pop() * Pop()); // *
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   UNK_0xefa0(); // UNK_0xefa0
@@ -1028,12 +1031,10 @@ void GETSITE_1() // GETSITE_1
   _ex_COLOR(); // !COLOR
   UNK_0xefa0(); // UNK_0xefa0
   _dot_LON(); // .LON
-  goto label2;
-
-  label1:
+  } else
+  {
   Pop(); Pop();// 2DROP
-
-  label2:
+  }
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) goto label3;
   Push(pp_XABS); // XABS
@@ -1078,24 +1079,24 @@ void _dot_MERCATOR() // .MERCATOR
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   CTINIT(); // CTINIT
   UNK_0xefa0(); // UNK_0xefa0
   _dot_LON(); // .LON
-
-  label1:
+  }
   Push(0x000b);
   UNK_0xf405(); // UNK_0xf405
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xf389(); // UNK_0xf389
-
-  label2:
+  }
   Push(2);
   UNK_0xf405(); // UNK_0xf405
-  if (Pop() == 0) goto label3;
+  if (Pop() != 0)
+  {
   UNK_0xf311(); // UNK_0xf311
-
-  label3:
+  }
   CTINIT(); // CTINIT
 }
 
@@ -1112,10 +1113,10 @@ void GETSITE_2() // GETSITE_2
   Push(4);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   _dot_MERCATOR(); // .MERCATOR
-
-  label1:
+  }
   GETSITE_1(); // GETSITE_1
 }
 

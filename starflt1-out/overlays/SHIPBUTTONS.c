@@ -230,22 +230,22 @@ void UNK_0xedec() // UNK_0xedec
   Push(Read16(regsp)); // DUP
   Push(8);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(0xcb4e); // probable 'OV-SH'
   MODULE(); // MODULE
   Push(0x02ee);
   MS(); // MS
-
-  label1:
+  }
   Push(3);
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(0xcb66); // probable 'OV-AR'
   MODULE(); // MODULE
   Push(0x02ee);
   MS(); // MS
-
-  label2:
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -371,18 +371,19 @@ void UNK_0xeee2() // UNK_0xeee2
   Push(0);
   Push(7);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xeeba(); // UNK_0xeeba
-  goto label1;
-
-  label2:
+  } else
+  {
   Push(Read16(regsp)); // DUP
   UNK_0xee6c(); // UNK_0xee6c
-
-  label1:
+  }
+  }
   _dot_BTN_dash_TE(); // .BTN-TE
 }
 
@@ -408,14 +409,14 @@ void UNK_0xef06() // UNK_0xef06
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xeee2(); // UNK_0xeee2
   SetColor("BLUE");
   SWAP(); // SWAP
   _dot_HIGHLI(); // .HIGHLI
   return;
-
-  label1:
+  }
   Pop(); Pop();// 2DROP
 }
 
@@ -473,10 +474,10 @@ void UNK_0xef68() // UNK_0xef68
   _ro_XYSCAN(); // (XYSCAN case
   Pop(); // DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   NEW_dash_BUT(); // NEW-BUT
-
-  label1:
+  }
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) return;
   SetColor("BLUE");
@@ -569,10 +570,10 @@ void UNK_0xefe4() // UNK_0xefe4
   Push(Read16(Pop())); // @
   Push(8);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xede2(); // UNK_0xede2
-
-  label1:
+  }
   Push(0xc4a2); // probable '(GETSITE)'
   MODULE(); // MODULE
 }
@@ -651,10 +652,10 @@ void UNK_0xf077() // UNK_0xf077
   Push(pp__ask_RECALL); // ?RECALL
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf03f(); // UNK_0xf03f
-
-  label1:
+  }
   if (Pop() == 0) Push(1); else Push(0); // NOT
   SWAP(); // SWAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -669,7 +670,8 @@ void UNK_0xf095() // UNK_0xf095
 {
   Push(pp__ask_TV); // ?TV
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   Push(pp__ask__ask__ask_IT); // ???IT
@@ -684,13 +686,13 @@ void UNK_0xf095() // UNK_0xf095
   Push(Read16(Pop())); // @
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   Push(pp__ask_LANDED); // ?LANDED
   ON_3(); // ON_3
   Push(0xccfa); // probable 'BIO'
   MODULE(); // MODULE
-
-  label2:
+  }
   Push(0xd0bf); // probable 'TV'
   MODULE(); // MODULE
   Push(0xbd4a); // probable '=CARGO'
@@ -702,9 +704,8 @@ void UNK_0xf095() // UNK_0xf095
   UNK_0xefc2(); // UNK_0xefc2
   Push(0xc3e1); // probable 'SEEGRID'
   MODULE(); // MODULE
-  goto label3;
-
-  label1:
+  } else
+  {
   CTINIT(); // CTINIT
 
   UNK_0x3f3b("THE SHIP IS NO LONGER EQUIPPED");
@@ -712,8 +713,7 @@ void UNK_0xf095() // UNK_0xf095
 
   UNK_0x3f3b("WITH A TERRAIN VEHICLE");
   _dot_TTY(); // .TTY
-
-  label3:
+  }
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
 }
@@ -771,17 +771,18 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf03f(); // UNK_0xf03f
   return;
-
-  label1:
+  }
   Push(0xd204); // probable 'OV/LA'
   MODULE(); // MODULE
   Push(0xbf56); // probable '/STARDATE'
   Push(pp__i__dot_DATE); // '.DATE
   _ex__3(); // !_3
-  if (Pop() == 0) goto label2;
+  if (Pop() != 0)
+  {
   UNK_0xee4a(); // UNK_0xee4a
   UNK_0xede2(); // UNK_0xede2
   Push(0xef06); // probable 'UNK_0xef06'
@@ -790,8 +791,7 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(7);
   Push(0xef50); // probable 'UNK_0xef50'
   DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
-
-  label2:
+  }
   Push(1);
   Push(0);
   _dot_ABTN(); // .ABTN
@@ -1353,10 +1353,10 @@ void _gt_FLT() // >FLT
   Push(Read16(Pop())); // @
   Push(5);
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   UNK_0xf4a0(); // UNK_0xf4a0
-
-  label1:
+  }
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
   UNK_0xf3fe(); // UNK_0xf3fe

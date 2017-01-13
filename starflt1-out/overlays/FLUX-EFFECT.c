@@ -195,12 +195,12 @@ void UNK_0xf470() // UNK_0xf470
   Push(Pop()-1); // 1-
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   Push(a); // R>
   UNK_0xf3f0(); // UNK_0xf3f0
   return;
-
-  label1:
+  }
   Push(a); // R>
   C_ex_(); // C!
 }
@@ -215,10 +215,10 @@ void UNK_0xf4d0() // UNK_0xf4d0
   signed short int i, imax;
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
   DARK(); // DARK
-
-  label1:
+  }
   Push(0x0032);
   Push(0);
 
