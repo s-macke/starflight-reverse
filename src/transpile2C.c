@@ -563,6 +563,131 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
     return;
 }
 
+// ----------------------------------------------------
+
+int IsLabelStillInUse(DICTENTRY *e, int labelid)
+{
+    int addr = e->parp;
+    while(pline[addr].flow != FUNCEND)
+    {
+        if ((pline[addr].flow == IFGOTO) || (pline[addr].flow == GOTO))
+        {
+            if (pline[addr].gotoid == labelid) return TRUE;
+        }
+        addr++;
+    }
+    return FALSE;
+}
+
+void AddFlow(controlflowenum *oldflow, controlflowenum newflow)
+{
+    if ((*oldflow == IFCLOSE) && (newflow == IFCLOSE))
+    {
+        *oldflow = IFCLOSE2;
+        return;
+    }
+    if ((*oldflow == IFCLOSE2) && (newflow == IFCLOSE))
+    {
+        *oldflow = IFCLOSE3;
+        return;
+    }
+    if ((*oldflow == IFCLOSE3) && (newflow == IFCLOSE))
+    {
+        *oldflow = IFCLOSE4;
+        return;
+    }
+    if ((*oldflow == IFCLOSE4) && (newflow == IFCLOSE))
+    {
+        fprintf(stderr, "Error: Too much closing brackets");
+        exit(1);
+    }
+    *oldflow = newflow;
+}
+
+void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
+{
+    int addr = ifgotoaddr;
+    int labelid = pline[ifgotoaddr].gotoid;
+    addr++;
+    while(pline[addr].flow != FUNCEND)
+    {
+        if (pline[addr].labelid == labelid)
+        {
+            AddFlow(&pline[ifgotoaddr].flow, IFNOT);
+            AddFlow(&pline[addr-1].flow, IFCLOSE);
+            if (!IsLabelStillInUse(e, labelid)) pline[addr].labelid = 0;
+            return;
+        }
+        controlflowenum flow = pline[addr].flow;
+        if (flow == DO) addr = pline[addr].loopaddr;
+        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return;
+        addr++;
+    }
+}
+
+void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
+{
+    int addr = ifgotoaddr;
+    int labelid = pline[ifgotoaddr].gotoid;
+
+    int elsegotoaddr = 0;
+    int elselabelid = 0;
+
+    addr++;
+    while(pline[addr].flow != FUNCEND)
+    {
+        controlflowenum flow = pline[addr].flow;
+        if (elsegotoaddr == 0)
+        {
+            if ((flow == GOTO) && (pline[addr+4].labelid == labelid))
+            {
+                elsegotoaddr = addr;
+                elselabelid = pline[addr].gotoid;
+                addr += 4;
+                if (pline[addr].flow != NONE) return;
+                addr++;
+                flow = pline[addr].flow;
+            }
+        } else
+        {
+            if (pline[addr].labelid == elselabelid)
+            {
+                AddFlow(&pline[ifgotoaddr].flow, IFNOT);
+                AddFlow(&pline[elsegotoaddr].flow, IFELSE);
+                AddFlow(&pline[addr-1].flow, IFCLOSE);
+                if (!IsLabelStillInUse(e, elselabelid)) pline[addr].labelid = 0;
+                if (IsLabelStillInUse(e, labelid))
+                {
+                    fprintf(stderr, "Error: label still in use\n");
+                    exit(1);
+                }
+                pline[elsegotoaddr+4].labelid = 0;
+                return;
+            }
+        }
+        if (flow == DO) addr = pline[addr].loopaddr;
+        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return;
+        addr++;
+    }
+}
+
+
+void RemoveGotos(DICTENTRY *e)
+{
+    int addr = e->parp;
+    while(pline[addr].flow != FUNCEND)
+    {
+        if (pline[addr].flow == IFGOTO)
+        {
+            TreatIfGoto(e, addr);
+            TreatIfElseGoto(e, addr);
+        }
+        addr++;
+    }
+}
+
+// ----------------------------------------------------
+
 void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
     int i = 0;
@@ -587,8 +712,22 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             "// ================================================\n",
             e->addr, s, e->codep, e->parp);
             if (e->isentry) fprintf(fp, "// entry\n");
-            if (e->codep == CODECALL) fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+            if (e->codep == CODECALL) {
+                fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+                RemoveGotos(e);
+                RemoveGotos(e);
+                RemoveGotos(e);
+                RemoveGotos(e);
+                //RemoveGotos(e);
+            }
         }
+        if (pline[i].initvarstr != NULL)
+        {
+            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            fprintf(fp, "%s", pline[i].initvarstr);
+            dbmode = 0;
+        }
+
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
@@ -617,7 +756,32 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             case EXIT:
                 fprintf(fp, "  return;\n");
                 break;
+
+            case IFNOT:
+                fprintf(fp, "  if (Pop() != 0)\n  {\n", pline[i].gotoid);
+                break;
+
+            case IFELSE:
+                fprintf(fp, "  } else\n  {\n");
+                break;
+
+            case IFCLOSE:
+                fprintf(fp, "  }\n");
+                break;
+
+            case IFCLOSE2:
+                fprintf(fp, "  }\n  }\n");
+                break;
+
+            case IFCLOSE3:
+                fprintf(fp, "  }\n  }\n  }\n");
+                break;
+
+            case IFCLOSE4:
+                fprintf(fp, "  }\n  }\n  }\n  }\n");
+                break;
         }
+
         if (pline[i].istrivialword)
         {
             char func[STRINGLEN*2];
@@ -629,12 +793,6 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             fprintf(fp, "%s", pline[i].str);
-            dbmode = 0;
-        }
-        if (pline[i].initvarstr != NULL)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].initvarstr);
             dbmode = 0;
         }
 

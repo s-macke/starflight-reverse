@@ -3,7 +3,9 @@
 
 #include"dictionary.h"
 
-typedef enum { NONE=0, DO, LOOP, GOTO, IFGOTO, IFEXIT, EXIT, FUNCEND } controlflowenum;
+typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEND=7,
+                IFNOT=8, IFELSE=9, IFCLOSE=10, IFCLOSE2=11, IFCLOSE3=12, IFCLOSE4=13
+             } controlflowenum;
 
 typedef struct
 {
@@ -13,6 +15,7 @@ typedef struct
     // control flow
     int labelid; // != 0 is a label for a goto
     int gotoid; // != 0 is a goto to a label. can be conditional or unconditional
+    int loopaddr;
     controlflowenum flow;
 
     int done; // this line has been processed

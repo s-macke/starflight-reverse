@@ -654,6 +654,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
+            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            pline[addr].loopaddr = ofs;
             snprintf(pline[ofs].str, STRINGLEN,
                 "  %s += Pop();\n"
                 "  } while(%s<%s); // (/LOOP) 0x%04x\n\n",
@@ -671,6 +673,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
+            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            pline[addr].loopaddr = ofs;
             snprintf(pline[ofs].str, STRINGLEN, "  %s++;\n  } while(%s<%s); // (LOOP) 0x%04x\n\n",
                 GetVariable(&vars, 0),
                 GetVariable(&vars, 0),
@@ -686,6 +690,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
             int addr = (ofs + par)&0xFFFF;
+            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            pline[addr].loopaddr = ofs;
             snprintf(pline[ofs].str, STRINGLEN,
                 "  int step = Pop();\n  %s += step;\n"
                 "  if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n"
