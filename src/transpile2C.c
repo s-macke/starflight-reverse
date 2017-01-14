@@ -249,7 +249,21 @@ void WriteVariables(FILE *fp, int ovidx)
 */
 }
 
-void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
+char* GetVariableName(DICTENTRY *efunc, int varidx)
+{
+    static char *def = "h";
+    static char *default1 = "unknown";
+    static char *default2 = "callp1";
+    static char *default3 = "callp0";
+    if (varidx >= 0) return &efunc->vars[varidx][0];
+
+    if (varidx == -1) return default1;
+    if (varidx == -2) return default2;
+    if (varidx == -3) return default3;
+}
+
+
+void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, int currentovidx)
 {
     ret[0] = 0;
     char *s = GetWordName(e);
@@ -381,6 +395,43 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         int par = Read16(Read16(e->parp)+REGDI);
         snprintf(ret, STRINGLEN, "Exec(\"%s\"); // call of word 0x%04x '%s'\n",
             s, par, GetDictWord(par, currentovidx));
+        return;
+    }
+    if (strcmp(s, ">R") == 0)
+    {
+        snprintf(ret, STRINGLEN, "%s = Pop(); // >R\n", GetVariableName(efunc, pline[addr].variableidx));
+        return;
+    }
+    if (strcmp(s, "R>") == 0)
+    {
+        snprintf(ret, STRINGLEN, "Push(%s); // R>\n", GetVariableName(efunc, pline[addr].variableidx));
+        return;
+    }
+    if (strcmp(s, "R@") == 0)
+    {
+        snprintf(ret, STRINGLEN, "Push(Read16(%s)); // R@\n", GetVariableName(efunc, pline[addr].variableidx));
+        return;
+    }
+    if (strcmp(s, "LEAVE") == 0) // TODO: Check if assignment is vice versa
+    {
+        snprintf(ret, STRINGLEN, "%s = %s; // LEAVE\n",
+        GetVariableName(efunc, pline[addr].variableidx+1),
+        GetVariableName(efunc, pline[addr].variableidx+0));
+        return;
+    }
+    if (strcmp(s, "I") == 0)
+    {
+        snprintf(ret, STRINGLEN, "Push(%s); // I\n", GetVariableName(efunc, pline[addr].variableidx));
+        return;
+    }
+    if (strcmp(s, "I'") == 0)
+    {
+        snprintf(ret, STRINGLEN, "Push(%s); // I'\n", GetVariableName(efunc, pline[addr].variableidx));
+        return;
+    }
+    if (strcmp(s, "J") == 0)
+    {
+        snprintf(ret, STRINGLEN, "Push(%s); // J\n", GetVariableName(efunc, pline[addr].variableidx));
         return;
     }
     if (strcmp(s, "0") == 0)
@@ -670,7 +721,6 @@ void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
     }
 }
 
-
 void RemoveGotos(DICTENTRY *e)
 {
     int addr = e->parp;
@@ -740,7 +790,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
     int nstr = 0;
     int nspc = 0;
 
-    DICTENTRY *e = NULL;
+    DICTENTRY *efunc = NULL;
 
     for(i=minaddr; i<=maxaddr; i++)
     {
@@ -748,9 +798,9 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             dbmode = 0;
-            e = GetDictEntry(i+2, ovidx);
-            WriteWordHeader(fp, e);
-            if (e->codep == CODECALL) nspc = 1;
+            efunc = GetDictEntry(i+2, ovidx);
+            WriteWordHeader(fp, efunc);
+            if (efunc->codep == CODECALL) nspc = 1;
         }
 
         if (pline[i].labelid)
@@ -767,9 +817,9 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             case DO:
                 fprintf(fp, "\n");
                 Spc(fp, nspc);
-                fprintf(fp, "%s = Pop();\n", e->vars[pline[i].variableidx+0]);
+                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[i].variableidx+0));
                 Spc(fp, nspc);
-                fprintf(fp, "%s = Pop();\n", e->vars[pline[i].variableidx+1]);
+                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[i].variableidx+1));
                 Spc(fp, nspc);
                 fprintf(fp, "do // (DO)\n");
                 Spc(fp, nspc);
@@ -778,9 +828,49 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
                 break;
 
             case LOOP:
-                nspc--;
+            {
+                DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
+                if (strcmp(e->r, "(/LOOP)") == 0)
+                {
+                    Spc(fp, nspc);
+                    fprintf(fp,"%s += Pop();\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "} while(%s<%s); // (/LOOP)\n\n",
+                    GetVariableName(efunc, pline[i].variableidx+0),
+                    GetVariableName(efunc, pline[i].variableidx+1));
+                } else
+                if (strcmp(e->r, "(LOOP)") == 0)
+                {
+                    Spc(fp, nspc);
+                    fprintf(fp, "%s++;\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "} while(%s<%s); // (LOOP)\n\n",
+                    GetVariableName(efunc, pline[i].variableidx+0),
+                    GetVariableName(efunc, pline[i].variableidx+1));
+                } else
+                if (strcmp(e->r, "(+LOOP)") == 0)
+                {
+                    Spc(fp, nspc);
+                    fprintf(fp, "int step = Pop();\n");
+                    Spc(fp, nspc);
+                    fprintf(fp, "%s += step;\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    Spc(fp, nspc);
+                    fprintf(fp, "if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n",
+                    GetVariableName(efunc, pline[i].variableidx+0),
+                    GetVariableName(efunc, pline[i].variableidx+1),
+                    GetVariableName(efunc, pline[i].variableidx+0),
+                    GetVariableName(efunc, pline[i].variableidx+1));
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "} while(1); // (+LOOP)\n\n");
+                } else
+                {
+                    exit(1);
+                }
                 break;
-
+            }
             case IFGOTO:
                 Spc(fp, nspc);
                 fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[i].gotoid);
@@ -860,11 +950,11 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             char func[STRINGLEN*2];
             DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
-            GetMacro(i, e, func, pline[i].ovidx);
+            GetMacro(i, e, efunc, func, pline[i].ovidx);
             Spc(fp, nspc);
             fprintf(fp, "%s", func);
         }
-        if (pline[i].str[0] != 0)
+        if ((pline[i].str != NULL) && (pline[i].str[0] != 0))
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             Spc(fp, nspc);

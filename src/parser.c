@@ -266,6 +266,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[d->parp+0].done = 1;
     pline[d->parp+1].done = 1;
     pline[d->parp+2].done = 1;
+    pline[d->parp+0].str = malloc(STRINGLEN);
     snprintf(pline[d->parp+0].str, STRINGLEN, "\nvoid %s() // %s rule\n{\n  int b;\n\n", Forth2CString(GetWordName(d)), GetWordName(d));
 
     /*
@@ -343,7 +344,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         char func[STRINGLEN*2];
 
         GetWordLength(rulep + 1, e, e->ovidx);
-        GetMacro(e->parp, e, func, e->ovidx);
+        GetMacro(e->parp, e, d, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n    %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n    %s  }\n}\n\n", func);
 
@@ -369,7 +370,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
                 exit(1);
             }
             GetWordLength(p, e, e->ovidx);
-            GetMacro(p, e, func, e->ovidx);
+            GetMacro(p, e, d, func, e->ovidx);
             strcat(try, "  ");
             strcat(try, func);
             // TODO, might be the exchanged
@@ -393,6 +394,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[ofs+1].done = 1;
     int i;
     char temp[256];
+    pline[ofs-1].str = malloc(STRINGLEN);
     snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
     sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
     for(i=0; i<n; i++) {
@@ -402,7 +404,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 
         char ret[STRINGLEN];
         GetWordLength(par + i*4 + 6, e, currentovidx);
-        GetMacro(par + i*4 + 6, e, ret, currentovidx);
+        GetMacro(par + i*4 + 6, e, d, ret, currentovidx);
         sprintf(temp, "  case %i:\n    %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
         pline[par + i*4 + 5].done = 1;
@@ -414,7 +416,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 
     char ret[STRINGLEN];
     GetWordLength(par + 2, e, currentovidx);
-    GetMacro(par + 2, e, ret, currentovidx);
+    GetMacro(par + 2, e, d, ret, currentovidx);
     sprintf(temp, "  default:\n    %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
     strcat(pline[ofs].str, "\n  }\n}\n");
@@ -451,6 +453,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         DICTENTRY *e = GetDictEntry(par, currentovidx);
         if (e == NULL)
         {
+            pline[ofs].str = malloc(STRINGLEN);
             sprintf(pline[ofs].str, "UNK_0x%04x(); // Unknown overlay function\n", par);
             ofs += 2;
             continue;
@@ -463,6 +466,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (par >= maxaddr)
         {
             e->isentry = 1;
+            pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", s, overlays[currentovidx].name);
             ofs += 2;
             continue;
@@ -474,6 +478,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             {
                 char *s = GetDictWord(Read16(ofs-2), currentovidx);
             }
+            pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "MODULE(); // MODULE\n");
             ofs += 2;
         } else
@@ -491,6 +496,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), currentovidx);
                 if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), currentovidx);
                 if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), currentovidx);
+                pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
             } else
             if ((codep1 == CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT)) // for DOTASKS in SHIPBUTTONS
@@ -505,6 +511,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 char* s3 = GetDictWord(c3, currentovidx);
                 char* s4 = GetDictWord(c4, currentovidx);
                 char* s5 = GetDictWord(c5, currentovidx);
+                pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
             } else
             {
@@ -515,12 +522,14 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
+            pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "CODE(); // %s inlined assembler code\n", s);
             ofs += 2;
             return;
         } else
         if (strcmp(s, "COMPILE") == 0) // maybe inlined code
         {
+            pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "%s(0x%04x); // compile?\n", s, Read16(ofs+2));
             pline[ofs+2].done = 1;
             pline[ofs+3].done = 1;
@@ -548,6 +557,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 fprintf(stderr, "Error: Cannot find overlay\n");
                 exit(1);
             }
+            pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "LoadOverlay(\"%s\");\n", s);
             ofs += 2;
         } else
@@ -626,23 +636,27 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            snprintf(pline[ofs].str, STRINGLEN, "%s = Pop(); // >R\n", GetVariable(&vars, d, 0));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         if (strcmp(s, "R>") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // R>\n", GetVariable(&vars, d, 0));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[ofs].istrivialword = TRUE;
             RemoveVariable(&vars);
             ofs += 2;
         } else
         if (strcmp(s, "R@") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(Read16(%s)); // R@\n", GetVariable(&vars, d, 0));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         if (strcmp(s, "LEAVE") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "%s = %s; // LEAVE\n", GetVariable(&vars, d, 1), GetVariable(&vars, d, 0));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         if (strcmp(s, "(DO)") == 0)
@@ -660,13 +674,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
             pline[addr].loopaddr = ofs;
-            snprintf(pline[ofs].str, STRINGLEN,
-                "%s += Pop();\n"
-                "} while(%s<%s); // (/LOOP) 0x%04x\n\n",
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 1),
-                par);
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
             ofs += 4;
@@ -679,11 +687,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
             pline[addr].loopaddr = ofs;
-            snprintf(pline[ofs].str, STRINGLEN, "%s++;\n  } while(%s<%s); // (LOOP) 0x%04x\n\n",
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 1),
-                par);
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
             ofs += 4;
@@ -696,33 +700,27 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
             pline[addr].loopaddr = ofs;
-            snprintf(pline[ofs].str, STRINGLEN,
-                "int step = Pop();\n  %s += step;\n"
-                "if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n"
-                "} while(1); // (+LOOP) 0x%04x\n\n",
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 1),
-                GetVariable(&vars, d, 0),
-                GetVariable(&vars, d, 1),
-                par);
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
             ofs += 4;
         } else
         if (strcmp(s, "I") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I\n", GetVariable(&vars, d, 0));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         if (strcmp(s, "I'") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I'\n", GetVariable(&vars, d, 1));
+            pline[ofs].variableidx = vars.stack[vars.nstack-2];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         if (strcmp(s, "J") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // J\n", GetVariable(&vars, d, 2));
+            pline[ofs].variableidx = vars.stack[vars.nstack-3];
+            pline[ofs].istrivialword = TRUE;
             ofs += 2;
         } else
         {
@@ -740,17 +738,6 @@ void InitParser()
 {
     int i;
     memset(pline, 0, 0x10000*sizeof(LineDesc));
-    for(i=0; i<0x10000; i++)
-    {
-        if (pline[i].str == NULL)
-        {
-            pline[i].str = malloc(STRINGLEN);
-            pline[i].str[0] = 0;
-        } else
-        {
-            memset(pline[i].str, 0, STRINGLEN);
-        }
-    }
     for(i=0; i<ndict; i++)
     {
         dict[i].nlabel = 0;
