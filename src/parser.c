@@ -610,7 +610,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = malloc(STRINGLEN*2);
+            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = calloc(STRINGLEN*2, 1);
             strcat(pline[d->parp-1].initvarstr, "  unsigned short int ");
             strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
             strcat(pline[d->parp-1].initvarstr, ";\n");
@@ -636,7 +636,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
-            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = malloc(STRINGLEN*2);
+            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = calloc(STRINGLEN*2, 1);
             strcat(pline[d->parp-1].initvarstr, "  signed short int ");
             strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
             strcat(pline[d->parp-1].initvarstr, ", ");
@@ -739,8 +739,14 @@ void InitParser()
     memset(pline, 0, 0x10000*sizeof(LineDesc));
     for(i=0; i<0x10000; i++)
     {
-        pline[i].str = malloc(STRINGLEN);
-        pline[i].str[0] = 0;
+        if (pline[i].str == NULL)
+        {
+            pline[i].str = malloc(STRINGLEN);
+            pline[i].str[0] = 0;
+        } else
+        {
+            memset(pline[i].str, 0, STRINGLEN);
+        }
         pline[i].initvarstr = NULL;
     }
     for(i=0; i<ndict; i++)

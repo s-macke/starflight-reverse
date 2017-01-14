@@ -15,7 +15,7 @@ typedef struct
     // control flow
     int labelid; // != 0 is a label for a goto
     int gotoid; // != 0 is a goto to a label. can be conditional or unconditional
-    int loopaddr;
+    int loopaddr; // for flow = DO it contains the address of the coressponding loop
     controlflowenum flow;
 
     int done; // this line has been processed
