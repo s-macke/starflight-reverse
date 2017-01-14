@@ -1790,11 +1790,11 @@ void UNK_0xeee2() // UNK_0xeee2
   {
     ABS(); // ABS
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       SetColor("BLACK");
       WSHORTE(); // WSHORTE
     i++;
@@ -1952,7 +1952,7 @@ void UNK_0xefc4() // UNK_0xefc4
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2565,7 +2565,7 @@ void UNK_0xf37e() // UNK_0xf37e
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

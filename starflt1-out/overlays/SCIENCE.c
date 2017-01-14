@@ -445,7 +445,7 @@ void UNK_0xe760() // UNK_0xe760
   Push2Words("NULL");
   Push(0x000e);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -724,7 +724,7 @@ void UNK_0xe950() // UNK_0xe950
   Push(0x0088);
   Push(Pop() + Pop()); // +
   Push(0x0088);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -756,7 +756,7 @@ void UNK_0xe974() // UNK_0xe974
   SWAP(); // SWAP
   _dash_(); // -
   Push(0x00a3);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -870,7 +870,7 @@ void UNK_0xea40() // UNK_0xea40
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1313,7 +1313,7 @@ void UNK_0xedd0() // UNK_0xedd0
   BEEPON(); // BEEPON
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1373,11 +1373,11 @@ void UNK_0xedd0() // UNK_0xedd0
   if (Pop() != 0)
   {
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       POINT_gt_ICON(); // POINT>ICON
       _at_IL(); // @IL
       _at_IH(); // @IH
@@ -1804,7 +1804,7 @@ void UNK_0xf0de() // UNK_0xf0de
   UNK_0xf0bd(); // UNK_0xf0bd
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1890,7 +1890,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
   }
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2071,11 +2071,11 @@ void UNK_0xf2dc() // UNK_0xf2dc
     Push(0x0096);
     MAX(); // MAX
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(pp_UNK_0xefd3); // UNK_0xefd3
       UNK_0xefe9(); // UNK_0xefe9
       Push(pp_UNK_0xefda); // UNK_0xefda
@@ -2138,7 +2138,7 @@ void UNK_0xf39c() // UNK_0xf39c
   Push(0x0064);
   _star__slash_(); // */
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2147,11 +2147,11 @@ void UNK_0xf39c() // UNK_0xf39c
     Push(0x002a);
     Push(Pop() + Pop()); // +
     LoadData("UNK_0xe63c"); // from 'VESSEL      '
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       UNK_0xefe9(); // UNK_0xefe9
       Push(6);

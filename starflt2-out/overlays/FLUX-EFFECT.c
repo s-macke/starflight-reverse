@@ -153,7 +153,7 @@ void UNK_0xf406() // UNK_0xf406
   unsigned short int i, imax;
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -238,7 +238,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   }
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -275,7 +275,7 @@ void FLUX() // FLUX
   BEEPON_2(); // BEEPON_2
   Push(0x0096);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -306,7 +306,7 @@ void UNK_0xf4e5() // UNK_0xf4e5
   }
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -340,7 +340,7 @@ void JUMPFX() // JUMPFX
   BEEPON_2(); // BEEPON_2
   Push(Pop()*2); // 2*
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

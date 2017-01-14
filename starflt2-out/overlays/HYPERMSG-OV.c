@@ -637,7 +637,7 @@ void UNK_0xe7f0() // UNK_0xe7f0
   Push(Pop()+1); // 1+
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -647,11 +647,11 @@ void UNK_0xe7f0() // UNK_0xe7f0
     Push(Pop()+1); // 1+
     Push(pp_XLL); // XLL
     Push(Read16(Pop())); // @
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(i); // J
       ACELLAD(); // ACELLAD
@@ -1797,7 +1797,7 @@ void DMSG() // DMSG
   Push(Read16(Pop())); // @
   _ask_ICONS_dash__2(); // ?ICONS-_2
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2262,7 +2262,7 @@ void TRAK_dash_E() // TRAK-E
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2423,7 +2423,7 @@ void _plus_A_dash_VESS() // +A-VESS
   Push(pp__n_VESS); // #VESS
   _plus__ex__2(); // +!_2
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

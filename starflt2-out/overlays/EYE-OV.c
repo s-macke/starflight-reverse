@@ -525,7 +525,7 @@ void UNK_0xee25() // UNK_0xee25
   unsigned short int i, imax;
   Push(0x003c);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -625,7 +625,7 @@ void UNK_0xeebd() // UNK_0xeebd
   RNDCLR(); // RNDCLR
   Push(0x003c);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -837,7 +837,7 @@ void UNK_0xf098() // UNK_0xf098
   unsigned short int i, imax;
   Push(0x0020);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -886,7 +886,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
   BEEPON_2(); // BEEPON_2
   Push(0x001e);
   Push(0x0168);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

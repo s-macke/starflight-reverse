@@ -230,7 +230,7 @@ void UNK_0xe59e() // UNK_0xe59e
   Push(0x05dc);
   MIN(); // MIN
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -241,11 +241,11 @@ void UNK_0xe59e() // UNK_0xe59e
     Push(Read16(cc_MPS)); // MPS
     Push(Pop() * Pop()); // *
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -676,7 +676,7 @@ void UNK_0xee17() // UNK_0xee17
   Push(Pop() + Pop()); // +
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -724,7 +724,7 @@ void UNK_0xf190() // UNK_0xf190
   Push(Pop() + Pop()); // +
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -944,7 +944,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

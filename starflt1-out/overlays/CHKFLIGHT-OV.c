@@ -406,7 +406,7 @@ void UNK_0xf450() // UNK_0xf450
   Push(0x0012);
   Push(Pop() + Pop()); // +
   Push(0x6400); // IFIELD(UNK_0xf1bb)
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

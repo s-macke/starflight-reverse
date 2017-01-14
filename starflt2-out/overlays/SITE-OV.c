@@ -198,7 +198,7 @@ void UNK_0xf1e1() // UNK_0xf1e1
   _099(); // 099
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

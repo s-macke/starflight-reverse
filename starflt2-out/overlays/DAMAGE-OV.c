@@ -893,7 +893,7 @@ void UNK_0xea92() // UNK_0xea92
   Push(6);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1163,7 +1163,7 @@ void UNK_0xec56() // UNK_0xec56
   Push(0);
   Push(9);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1297,11 +1297,11 @@ void UNK_0xed68() // UNK_0xed68
   {
     CTINIT(); // CTINIT
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp_WOUNDED); // WOUNDED
       Push(Pop() + Pop()); // +
@@ -1391,7 +1391,7 @@ void UNK_0xee11() // UNK_0xee11
   Push(0x0012);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1514,7 +1514,7 @@ void UNK_0xeed5() // UNK_0xeed5
   Push(0x03e8);
   MIN(); // MIN
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1529,11 +1529,11 @@ void UNK_0xeed5() // UNK_0xeed5
     Push(Read16(cc_MPS)); // MPS
     Push(Pop() * Pop()); // *
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -1576,11 +1576,11 @@ void UNK_0xef1f() // UNK_0xef1f
       Push(0x01f4);
       MAX(); // MAX
       Push(0);
-        
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
         Push(0);
         Push(i); // I
         RRND(); // RRND
@@ -1617,11 +1617,11 @@ void UNK_0xef73() // UNK_0xef73
     Push(Read16(a)); // R@
     SWAP(); // SWAP
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       ROT(); // ROT
       POINT_gt_I(); // POINT>I
@@ -2011,11 +2011,11 @@ void UNK_0xf1b5() // UNK_0xf1b5
     Push(6);
     MIN(); // MIN
     Push(2);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       _2DUP(); // 2DUP
       Push(i); // I
       _dot_CIRCLE_1(); // .CIRCLE_1
@@ -2140,11 +2140,11 @@ void UNK_0xf283() // UNK_0xf283
     Push(Read16(a)); // R@
     SWAP(); // SWAP
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       ROT(); // ROT
       POINT_gt_I(); // POINT>I

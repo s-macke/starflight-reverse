@@ -581,7 +581,7 @@ void _plus_A_dash_VESS() // +A-VESS
   Push(pp__n_VESS); // #VESS
   _plus__ex_(); // +!
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -643,7 +643,7 @@ void UNK_0xe73a() // UNK_0xe73a
   a = Pop(); // >R
   Push(0);
   Push(0x000f);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -708,7 +708,7 @@ void _ask_PRL() // ?PRL
   _at_CRS(); // @CRS
   Push(1);
   Push(0x0010);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1001,7 +1001,7 @@ void DO_dash_FLARE() // DO-FLARE
   BEEPOFF(); // BEEPOFF
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1582,7 +1582,7 @@ void UNK_0xee3b() // UNK_0xee3b
   BEEPON(); // BEEPON
   Push(0x9c40);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2144,7 +2144,7 @@ void DMSG() // DMSG
   Push(Read16(Pop())); // @
   _ask_ICONS_dash_AT(); // ?ICONS-AT
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2581,7 +2581,7 @@ void TRAK_dash_E() // TRAK-E
   Push(Read16(Pop())); // @
   Push(Pop()-1); // 1-
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

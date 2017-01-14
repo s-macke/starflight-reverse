@@ -279,7 +279,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
   unsigned short int i, imax;
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -863,18 +863,18 @@ void UNK_0xe80f() // UNK_0xe80f
   SETLARR(); // SETLARR
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(3);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(pp_X2); // X2
       Push(Read16(Pop())); // @
@@ -943,18 +943,18 @@ void UNK_0xe8a1() // UNK_0xe8a1
   unsigned short int i, imax, j, jmax;
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(2);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(4);
       Push(Pop() * Pop()); // *
@@ -1004,18 +1004,18 @@ void UNK_0xe8f7() // UNK_0xe8f7
   unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(3);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(4);
       Push(Pop() * Pop()); // *
@@ -1043,18 +1043,18 @@ void UNK_0xe921() // UNK_0xe921
   unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(2);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(4);
       Push(Pop() * Pop()); // *
@@ -1084,18 +1084,18 @@ void UNK_0xe94f() // UNK_0xe94f
   unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(4);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(Pop()*2); // 2*
       Push(Pop()+1); // 1+
@@ -1173,18 +1173,18 @@ void UNK_0xe985() // UNK_0xe985
   UNK_0xe979(); // UNK_0xe979
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(6);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       OVER(); // OVER
       Push(j); // I
       Push(Pop() + Pop()); // +
@@ -1298,18 +1298,18 @@ void UNK_0xea97() // UNK_0xea97
   UNK_0xe39a(); // UNK_0xe39a
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(5);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(i); // J
       UNK_0xea37(); // UNK_0xea37
@@ -1589,18 +1589,18 @@ void UNK_0xebfc() // UNK_0xebfc
   UNK_0xeb54(); // UNK_0xeb54
   UNK_0xeb20(); // UNK_0xeb20
   UNK_0xeb28(); // UNK_0xeb28
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     UNK_0xeb0e(); // UNK_0xeb0e
     UNK_0xeb06(); // UNK_0xeb06
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(i); // J
       ReadArray(Read16(0x6a5a + 6), 0x0480); // MERCATO
@@ -1699,7 +1699,7 @@ void UNK_0xecc6() // UNK_0xecc6
   _099(); // 099
   Push(0x0048);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1832,7 +1832,7 @@ void UNK_0xed8d() // UNK_0xed8d
   unsigned short int i, imax;
   Push(0x0020);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1898,7 +1898,7 @@ void UNK_0xedd9() // UNK_0xedd9
   Push(b); // R>
   Push(a); // R>
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1916,7 +1916,7 @@ void UNK_0xedd9() // UNK_0xedd9
   Pop(); // DROP
   Push(0x0020);
   Push(0);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -2074,7 +2074,7 @@ void UNK_0xeefa() // UNK_0xeefa
   _ex__2(); // !_2
   Push(a); // I
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2099,7 +2099,7 @@ void UNK_0xeefa() // UNK_0xeefa
   UNK_0xee96(); // UNK_0xee96
   Push(a); // R>
   Push(0);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -2149,7 +2149,7 @@ void UNK_0xef86() // UNK_0xef86
   _ex__2(); // !_2
   Push(0x0048);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2232,7 +2232,7 @@ void UNK_0xeffb() // UNK_0xeffb
   unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2265,7 +2265,7 @@ void UNK_0xf023() // UNK_0xf023
   unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

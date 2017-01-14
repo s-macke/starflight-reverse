@@ -417,7 +417,7 @@ void UNK_0xed61() // UNK_0xed61
   _099(); // 099
   Push(0x000e);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -432,11 +432,11 @@ void UNK_0xed61() // UNK_0xed61
     if (Pop() != 0)
     {
       Push(0);
-        
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+      j = Pop();
+      jmax = Pop();
+      do // (DO)
+      {
         POINT_gt_I(); // POINT>I
         _at_ID(); // @ID
         Push(0x001b);
@@ -597,7 +597,7 @@ void UNK_0xee5f() // UNK_0xee5f
   _gt_2FONT(); // >2FONT
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -766,7 +766,7 @@ void UNK_0xef54() // UNK_0xef54
   Push(8);
   UNK_0xec4c(); // UNK_0xec4c
   Push(Pop() * Pop()); // *
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -823,7 +823,7 @@ void UNK_0xefa4() // UNK_0xefa4
   CTERASE(); // CTERASE
   Push(0x000e);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -838,11 +838,11 @@ void UNK_0xefa4() // UNK_0xefa4
     if (Pop() != 0)
     {
       Push(0);
-        
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+      j = Pop();
+      jmax = Pop();
+      do // (DO)
+      {
         POINT_gt_I(); // POINT>I
         UNK_0xef86(); // UNK_0xef86
       j++;
@@ -869,7 +869,7 @@ void UNK_0xefd4() // UNK_0xefd4
   Push(Read16(cc_MPS)); // MPS
   _slash_(); // /
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -899,7 +899,7 @@ void UNK_0xeffc() // UNK_0xeffc
   _ex_COLOR(); // !COLOR
   Push(0x001e);
   Push(2);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1242,7 +1242,7 @@ void UNK_0xf20c() // UNK_0xf20c
   Push(Pop() + Pop()); // +
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1433,7 +1433,7 @@ void UNK_0xf306() // UNK_0xf306
   UNK_0xecab(); // UNK_0xecab
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

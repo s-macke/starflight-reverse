@@ -447,7 +447,7 @@ void UNK_0xe797() // UNK_0xe797
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -493,7 +493,7 @@ void UNK_0xe7df() // UNK_0xe7df
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1286,7 +1286,7 @@ void UNK_0xecbd() // UNK_0xecbd
   Push(5);
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1339,7 +1339,7 @@ void UNK_0xed17() // UNK_0xed17
   Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2204,7 +2204,7 @@ void DESCRIBE() // DESCRIBE
   a = Pop(); // >R
   CTINIT(); // CTINIT
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

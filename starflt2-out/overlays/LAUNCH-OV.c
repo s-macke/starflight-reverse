@@ -126,7 +126,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   unsigned short int i, imax;
   Push(0x0010);
   Push(0x000b);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -204,7 +204,7 @@ void UNK_0xf11a() // UNK_0xf11a
   TONE(); // TONE
   Push(1);
   Push(3);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -532,11 +532,11 @@ void UNK_0xf3b7() // UNK_0xf3b7
   {
     Push(0x003b);
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(0x0084);
       Push(i); // I
       _dash_(); // -
@@ -612,7 +612,7 @@ void _and_RETURN() // &RETURN
   Push(0x0012);
   RRND(); // RRND
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -653,11 +653,11 @@ void _and_RETURN() // &RETURN
     BEEPON_2(); // BEEPON_2
     Push(0x003b);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(0x003c);
       Push(j); // I
       Push(Pop() + Pop()); // +

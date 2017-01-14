@@ -1123,7 +1123,7 @@ void UNK_0xe921() // UNK_0xe921
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1414,7 +1414,7 @@ void UNK_0xeacc() // UNK_0xeacc
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1671,7 +1671,7 @@ void UNK_0xecfc() // UNK_0xecfc
   POS_dot_(); // POS.
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2127,11 +2127,11 @@ void UNK_0xf0aa() // UNK_0xf0aa
     SAVE_dash_SCR(); // SAVE-SCR
     _gt_HIDDEN(); // >HIDDEN
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xe83f(); // UNK_0xe83f
       UNK_0xe859(); // UNK_0xe859
       _gt_C_plus_S(); // >C+S

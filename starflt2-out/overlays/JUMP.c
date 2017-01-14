@@ -789,7 +789,7 @@ void UNK_0xf070() // UNK_0xf070
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -939,11 +939,11 @@ void UNK_0xf12e() // UNK_0xf12e
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xf05e(); // UNK_0xf05e
       UNK_0xf048(); // UNK_0xf048
       if (Pop() != 0)
@@ -1009,7 +1009,7 @@ void UNK_0xf18c() // UNK_0xf18c
   Push(pp_UNK_0xedd9); // UNK_0xedd9
   Push(Read16(Pop())); // @
   Push(0x0064);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1470,7 +1470,7 @@ void UNK_0xf482() // UNK_0xf482
   _ex__2(); // !_2
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

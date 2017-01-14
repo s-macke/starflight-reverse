@@ -1779,7 +1779,7 @@ void UNK_0xe9b4() // UNK_0xe9b4
   UNK_0xe80b(); // UNK_0xe80b
   UNK_0xe86f(); // UNK_0xe86f
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -126,7 +126,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   Push(0);
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

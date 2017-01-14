@@ -255,7 +255,7 @@ void UNK_0xe121() // UNK_0xe121
   _3_star_(); // 3*
   Push(Pop()+3); // 3+
   Push(3);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -667,7 +667,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
   Push(4);
   ROLL(); // ROLL
   UNK_0xe4ca(); // UNK_0xe4ca
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -770,7 +770,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
   Push(4);
   ROLL(); // ROLL
   UNK_0xe4ca(); // UNK_0xe4ca
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

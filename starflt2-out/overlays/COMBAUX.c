@@ -367,7 +367,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

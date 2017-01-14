@@ -347,11 +347,11 @@ void UNK_0xee44() // UNK_0xee44
     Push(Read8(Pop())&0xFF); // C@
     Push(9);
     Push(1);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       Push(2);
       MOD(); // MOD

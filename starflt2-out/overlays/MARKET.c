@@ -1327,7 +1327,7 @@ void UNK_0xee4b() // UNK_0xee4b
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1348,7 +1348,7 @@ void UNK_0xee5b() // UNK_0xee5b
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1491,7 +1491,7 @@ void UNK_0xef14() // UNK_0xef14
   Push(Read16(Pop())); // @
   MIN(); // MIN
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

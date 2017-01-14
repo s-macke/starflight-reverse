@@ -344,7 +344,7 @@ void UNK_0xe9c9() // UNK_0xe9c9
   OFF(); // OFF
   Push(0x1388);
   Push(0x7530);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -362,7 +362,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
   Push(0x04e2);
   Push(0x0064);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -1071,11 +1071,11 @@ void UNK_0xee6f() // UNK_0xee6f
     Push(pp_UNK_0xecf1); // UNK_0xecf1
     Push(Read8(Pop())&0xFF); // C@
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       UNK_0xee39(); // UNK_0xee39
       if (Pop() != 0)
@@ -1534,7 +1534,7 @@ void UNK_0xf239() // UNK_0xf239
   Push(7);
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1674,7 +1674,7 @@ void UNK_0xf30b() // UNK_0xf30b
   Push(pp_UNK_0xf09f); // UNK_0xf09f
   _ex__3(); // !_3
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1805,11 +1805,11 @@ void UNK_0xf3a9() // UNK_0xf3a9
     {
       Push(4);
       Push(0);
-        
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
         UNK_0xf18b(); // UNK_0xf18b
         DISPLAY(); // DISPLAY
         UNK_0xf293(); // UNK_0xf293

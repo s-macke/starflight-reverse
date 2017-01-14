@@ -961,7 +961,7 @@ void UNK_0xd963() // UNK_0xd963
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1942,7 +1942,7 @@ void UNK_0xdebe() // UNK_0xdebe
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1979,7 +1979,7 @@ void UNK_0xdf4e() // UNK_0xdf4e
   IOPEN(); // IOPEN
   Push(0x0010);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2063,7 +2063,7 @@ void UNK_0xdfbd() // UNK_0xdfbd
   MOD(); // MOD
   Push(Pop()+2); // 2+
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2302,7 +2302,7 @@ void UNK_0xe13d() // UNK_0xe13d
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2347,7 +2347,7 @@ void UNK_0xe16d() // UNK_0xe16d
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -5944,7 +5944,7 @@ void UNK_0xf3ce() // UNK_0xf3ce
   Push(0);
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

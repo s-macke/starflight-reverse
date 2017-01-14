@@ -308,7 +308,7 @@ void UNK_0xef4a() // UNK_0xef4a
   UNK_0xef0c(); // UNK_0xef0c
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

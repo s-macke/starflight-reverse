@@ -152,7 +152,7 @@ void UNK_0xf47c() // UNK_0xf47c
   _gt_C_plus_S(); // >C+S
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

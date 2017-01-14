@@ -1714,7 +1714,7 @@ void UNK_0xdf14() // UNK_0xdf14
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1751,7 +1751,7 @@ void UNK_0xe014() // UNK_0xe014
   IOPEN(); // IOPEN
   Push(0x0020);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1818,7 +1818,7 @@ void UNK_0xe068() // UNK_0xe068
   MOD(); // MOD
   Push(Pop()+2); // 2+
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1984,7 +1984,7 @@ void UNK_0xe160() // UNK_0xe160
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2029,7 +2029,7 @@ void UNK_0xe190() // UNK_0xe190
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2173,7 +2173,7 @@ void CTSCROLL() // CTSCROLL
   }
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -5448,7 +5448,7 @@ void UNK_0xf330() // UNK_0xf330
   Push(0);
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -5655,11 +5655,11 @@ void UNK_0xf4c6() // UNK_0xf4c6
     Push(5);
     Push(Pop() + Pop()); // +
     Push(0x6409); // IFIELD(UNK_0xd9bb)
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(Read8(Pop())&0xFF); // C@
       Push(Pop() + Pop()); // +

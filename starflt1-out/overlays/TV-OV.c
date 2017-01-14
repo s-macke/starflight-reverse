@@ -669,7 +669,7 @@ void UNK_0xea67() // UNK_0xea67
   _dash_(); // -
   Push(Pop() + Pop()); // +
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -693,7 +693,7 @@ void UNK_0xea91() // UNK_0xea91
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1664,7 +1664,7 @@ void UNK_0xf1ba() // UNK_0xf1ba
   unsigned short int i, imax;
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1689,7 +1689,7 @@ void UNK_0xf1d2() // UNK_0xf1d2
   Push(0x0064);
   Push(Read16(regsp)); // DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

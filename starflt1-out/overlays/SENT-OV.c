@@ -575,7 +575,7 @@ void UNK_0xe867() // UNK_0xe867
   Push(pp_LINE_dash_COUNT); // LINE-COUNT
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -743,7 +743,7 @@ void UNK_0xe94b() // UNK_0xe94b
   Push(4);
   ROLL(); // ROLL
   UNK_0xe93d(); // UNK_0xe93d
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2142,11 +2142,11 @@ void _ask_TALK() // ?TALK
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_ICON(); // POINT>ICON
       _at_IL(); // @IL
       _at_IH(); // @IH

@@ -668,7 +668,7 @@ void UNK_0xf34b() // UNK_0xf34b
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

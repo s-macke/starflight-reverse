@@ -1289,7 +1289,7 @@ void UNK_0xe523() // UNK_0xe523
   Push(3);
   PICK(); // PICK
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1376,7 +1376,7 @@ void _do_match() // $match
   _st__ex__gt_(); // <!>
   Push(0x0040);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2091,7 +2091,7 @@ void UNK_0xeac0() // UNK_0xeac0
   Push(0);
   SWAP(); // SWAP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2186,7 +2186,7 @@ void UNK_0xeb62() // UNK_0xeb62
   unsigned short int i, imax;
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2858,11 +2858,11 @@ void UNK_0xeee4() // UNK_0xeee4
   {
     ABS(); // ABS
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       SetColor("BLACK");
       WSHORTE(); // WSHORTE
     i++;
@@ -3025,7 +3025,7 @@ void UNK_0xefd4() // UNK_0xefd4
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -3622,7 +3622,7 @@ void UNK_0xf36a() // UNK_0xf36a
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

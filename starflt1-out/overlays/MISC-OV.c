@@ -634,7 +634,7 @@ void UNK_0xf319() // UNK_0xf319
   BEEPON(); // BEEPON
   Push(9);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

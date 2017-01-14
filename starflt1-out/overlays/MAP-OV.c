@@ -435,7 +435,7 @@ void UNK_0xe687() // UNK_0xe687
   LLINE(); // LLINE
   Push(0x00c7);
   Push(0x002b);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -451,7 +451,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
   Push(0x00c7);
   Push(0x0053);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -472,7 +472,7 @@ if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
   LLINE(); // LLINE
   Push(0x009c);
   Push(0x0019);
-    
+
   k = Pop();
   kmax = Pop();
   do // (DO)
@@ -490,7 +490,7 @@ if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
 
   Push(0x009c);
   Push(0x002d);
-    
+
   l = Pop();
   lmax = Pop();
   do // (DO)
@@ -698,7 +698,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
   _gt_1FONT(); // >1FONT
   Push(0x009c);
   Push(0x0028);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -745,7 +745,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
   _gt_1FONT(); // >1FONT
   Push(0x00c7);
   Push(0x0055);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -799,7 +799,7 @@ void UNK_0xe942() // UNK_0xe942
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -843,7 +843,7 @@ void UNK_0xe97e() // UNK_0xe97e
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -991,7 +991,7 @@ void UNK_0xea70() // UNK_0xea70
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1409,7 +1409,7 @@ void UNK_0xed4c() // UNK_0xed4c
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

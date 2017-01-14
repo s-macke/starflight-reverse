@@ -611,11 +611,11 @@ void UNK_0xf2f5() // UNK_0xf2f5
     Push(pp_UNK_0xf188); // UNK_0xf188
     _099(); // 099
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       _at_IC(); // @IC
       Push(pp_UNK_0xf180); // UNK_0xf180
@@ -734,7 +734,7 @@ void UNK_0xf3bc() // UNK_0xf3bc
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

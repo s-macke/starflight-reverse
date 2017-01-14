@@ -662,7 +662,7 @@ void UNK_0xe657() // UNK_0xe657
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1019,11 +1019,11 @@ void UNK_0xe872() // UNK_0xe872
   {
     UNK_0xe832(); // UNK_0xe832
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       UNK_0xe848(); // UNK_0xe848
       Push(pp_UNK_0xe436); // UNK_0xe436
@@ -1077,7 +1077,7 @@ void UNK_0xe8d0() // UNK_0xe8d0
   unsigned short int i, imax, j, jmax;
   UNK_0xe832(); // UNK_0xe832
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1119,11 +1119,11 @@ void UNK_0xe8d0() // UNK_0xe8d0
       {
         Push(3);
         Push(0);
-          
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+        j = Pop();
+        jmax = Pop();
+        do // (DO)
+        {
           Push(0x65f3); // IFIELD(UNK_0xe4ec)
           Push(j); // I
           Push(Pop() + Pop()); // +
@@ -1209,7 +1209,7 @@ void UNK_0xe98c() // UNK_0xe98c
   ICLOSE(); // ICLOSE
   UNK_0xe832(); // UNK_0xe832
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1223,11 +1223,11 @@ void UNK_0xe98c() // UNK_0xe98c
       _gt_C_plus_S(); // >C+S
       Push(4);
       Push(0);
-        
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+      j = Pop();
+      jmax = Pop();
+      do // (DO)
+      {
         Push(0x65f3); // IFIELD(UNK_0xe4ec)
         Push(3);
         Push(Pop() + Pop()); // +

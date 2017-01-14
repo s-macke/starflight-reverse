@@ -6650,7 +6650,7 @@ void _ro_FORGET_rc_() // (FORGET)
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -7267,7 +7267,7 @@ void _ro_EXPECT_rc_() // (EXPECT)
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   OVER(); // OVER
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -7480,7 +7480,7 @@ void _ro_WHERE_rc_() // (WHERE)
   SPACES(); // SPACES
   Push(a); // R>
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -8684,7 +8684,7 @@ void _dash_TRAILING() // -TRAILING
   unsigned short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -8816,7 +8816,7 @@ void CURFWD() // CURFWD
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -8901,7 +8901,7 @@ void ID_dot_() // ID.
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -8944,7 +8944,7 @@ void LIST() // LIST
   _dot_(); // .
   Push(0x0010);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -9011,7 +9011,7 @@ void SPACES() // SPACES
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -9817,11 +9817,11 @@ void MTCACHE() // MTCACHE
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp__i_CACHE); // 'CACHE
       _ex__1(); // !_1
@@ -9875,11 +9875,11 @@ void INITCACHE() // INITCACHE
     Push(pp__n_CACHE); // #CACHE
     Push(Read16(Pop())); // @
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(0x0041);
       Push(Pop() * Pop()); // *
@@ -10349,7 +10349,7 @@ void NOFILES() // NOFILES
   EMPTY_dash_BUFFERS(); // EMPTY-BUFFERS
   Push(Read16(cc__n_FILES)); // #FILES
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -10384,11 +10384,11 @@ void EMITS() // EMITS
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       Exec("EMIT"); // call of word 0x2731 '(EMIT)'
     i++;
@@ -10414,7 +10414,7 @@ void FILES() // FILES
   EMITS(); // EMITS
   Push(Read16(cc__n_FILES)); // #FILES
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -10890,11 +10890,11 @@ void SAVE_dash_BUFFERS() // SAVE-BUFFERS
     Push(Read16(Pop())); // @
     BUF_gt_CACHE(); // BUF>CACHE
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp__i_CACHE); // 'CACHE
       _ex__1(); // !_1
@@ -10969,11 +10969,11 @@ void BLOCKS() // BLOCKS
   {
     Push(a); // R>
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       OVER(); // OVER
       Push(i); // I
       Push(Pop() + Pop()); // +
@@ -10989,11 +10989,11 @@ void BLOCKS() // BLOCKS
     Push(0);
     Push(a); // R>
     Push(Pop()-1); // 1-
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       OVER(); // OVER
       Push(j); // I
       Push(Pop() + Pop()); // +
@@ -11342,7 +11342,7 @@ void THRU_1() // THRU_1
   }
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -11621,7 +11621,7 @@ void DISPOSE() // DISPOSE
   if (Pop() == 0) goto label1;
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -12594,7 +12594,7 @@ void _4TH_gt_DOS() // 4TH>DOS
   _ex__1(); // !_1
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -12713,7 +12713,7 @@ void SETMAXD() // SETMAXD
   Push(pp_MAXDRV); // MAXDRV
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -14125,7 +14125,7 @@ void FILLREG() // FILLREG
   Push(Pop()+1); // 1+
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -14135,11 +14135,11 @@ void FILLREG() // FILLREG
     Push(Pop()+1); // 1+
     Push(pp_XLL); // XLL
     Push(Read16(Pop())); // @
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       Push(j); // I
       Push(i); // J
@@ -16980,7 +16980,7 @@ void _dash_TEXT() // -TEXT
   Push(0);
   ROT(); // ROT
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -17096,7 +17096,7 @@ void THRU_2() // THRU_2
   }
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -17583,7 +17583,7 @@ void FILE_c_() // FILE:
   Push(-1);
   Push(0x00a3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -18738,7 +18738,7 @@ void _star_CLOSE() // *CLOSE
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -20016,7 +20016,7 @@ void _star_CREATE() // *CREATE
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -20058,11 +20058,11 @@ void _dot_C() // .C
     Push(3);
     Push(Pop() + Pop()); // +
     Push(Read16(cc_UNK_0x50fa)); // UNK_0x50fa
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       _1_dot_5_at_(); // 1.5@
       Push(2);
@@ -21521,7 +21521,7 @@ void UNK_0x8cbb() // UNK_0x8cbb
   Push(Read16(cc__n_VECTOR)); // #VECTOR
   Push(Pop()*2); // 2*
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -21554,7 +21554,7 @@ void UNK_0x8cdf() // UNK_0x8cdf
   Push(Read16(cc__n_VECTOR)); // #VECTOR
   Push(Pop()*2); // 2*
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -21983,7 +21983,7 @@ void UNK_0x8fcd() // UNK_0x8fcd
   unsigned short int i, imax;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -22069,7 +22069,7 @@ void UNK_0x9049() // UNK_0x9049
   unsigned short int i, imax;
   Push(0x003c);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -22365,7 +22365,7 @@ void _dot_REGION() // .REGION
   Push(Pop()+1); // 1+
   Push(pp_YLL); // YLL
   Push(Read16(Pop())); // @
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -22375,11 +22375,11 @@ void _dot_REGION() // .REGION
     Push(Pop()+1); // 1+
     Push(pp_XLL); // XLL
     Push(Read16(Pop())); // @
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(i); // J
       UNK_0x9187(); // UNK_0x9187
@@ -22829,7 +22829,7 @@ void UNK_0x9548() // UNK_0x9548
   _ex__2(); // !_2
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -22983,7 +22983,7 @@ void UNK_0x9646() // UNK_0x9646
   WLD_gt_SCR(); // WLD>SCR
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -23131,7 +23131,7 @@ void _dot_LOCAL_dash_() // .LOCAL-
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -23324,7 +23324,7 @@ void UNK_0x9895() // UNK_0x9895
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -23562,7 +23562,7 @@ void ORGLIST() // ORGLIST
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -23922,11 +23922,11 @@ void _gt_SND() // >SND
     Push(1);
     TONE(); // TONE
     BEEPON_1(); // BEEPON_1
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       TONE(); // TONE
       MS(); // MS
     i++;
@@ -23935,7 +23935,7 @@ void _gt_SND() // >SND
     BEEPOFF(); // BEEPOFF
     return;
   }
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -24261,7 +24261,7 @@ void WUP() // WUP
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24295,7 +24295,7 @@ void WDN() // WDN
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24503,7 +24503,7 @@ void VIEWSCR() // VIEWSCR
   unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24526,7 +24526,7 @@ void VIEWSCR() // VIEWSCR
 
   Push(4);
   Push(0);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -24585,7 +24585,7 @@ void TXT_dash_WIN() // TXT-WIN
   _gt_V(); // >V
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24634,7 +24634,7 @@ void AUXSCRE() // AUXSCRE
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24678,7 +24678,7 @@ void BTN_dash_WIN() // BTN-WIN
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24736,7 +24736,7 @@ void _dot_BUTTON() // .BUTTON
   _ex__2(); // !_2
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -24952,7 +24952,7 @@ void CLR_dash_BUT() // CLR-BUT
   unsigned short int i, imax;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -25598,7 +25598,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   Push(0x000c);
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -25940,7 +25940,7 @@ void UNK_0xa9e5() // UNK_0xa9e5
   unsigned short int i, imax;
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -25963,7 +25963,7 @@ void UNK_0xa9fb() // UNK_0xa9fb
   unsigned short int i, imax;
   Push(0);
   Push(0x000a);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -26286,7 +26286,7 @@ void UNK_0xac0d() // UNK_0xac0d
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -26394,7 +26394,7 @@ void EXPERT() // EXPERT
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -26465,7 +26465,7 @@ void UNK_0xad3f() // UNK_0xad3f
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -26954,7 +26954,7 @@ void _gt_XOR() // >XOR
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -27037,7 +27037,7 @@ void UNK_0xb0ff() // UNK_0xb0ff
   unsigned short int i, imax;
   Push(0x000f);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -27125,7 +27125,7 @@ void UNK_0xb141() // UNK_0xb141
   Push(0x0136);
   Push(0x0016);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -27596,7 +27596,7 @@ void UNK_0xb4d9() // UNK_0xb4d9
   UNK_0xb459(); // UNK_0xb459
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -27695,7 +27695,7 @@ void UNK_0xb56d() // UNK_0xb56d
 {
   unsigned short int i, imax;
   Push(Pop()-2); // 2-
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -27939,7 +27939,7 @@ void OVTRIM_1() // OVTRIM_1
   unsigned short int i, imax;
   LoadOverlay("MISC-_2");
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

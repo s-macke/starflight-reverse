@@ -887,7 +887,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
   _ex_COLOR(); // !COLOR
   UNK_0xf2d8(); // UNK_0xf2d8
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

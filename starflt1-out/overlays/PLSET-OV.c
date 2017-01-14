@@ -410,11 +410,11 @@ void UNK_0xed2e() // UNK_0xed2e
     Push(Read8(Pop())&0xFF); // C@
     Push(9);
     Push(1);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       Push(2);
       MOD(); // MOD
@@ -1214,7 +1214,7 @@ void UNK_0xf280() // UNK_0xf280
   Push(8);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

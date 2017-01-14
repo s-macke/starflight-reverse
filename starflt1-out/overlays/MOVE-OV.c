@@ -667,18 +667,18 @@ void UNK_0xe921() // UNK_0xe921
   Push(Read16(Pop())); // @
   Push(0x000e);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(8);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(pp_XLL); // XLL
       Push(Read16(Pop())); // @
       Push(j); // I

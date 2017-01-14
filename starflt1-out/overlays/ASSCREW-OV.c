@@ -353,7 +353,7 @@ void UNK_0xeb81() // UNK_0xeb81
   OFF(); // OFF
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -624,7 +624,7 @@ void UNK_0xedf8() // UNK_0xedf8
   PRINT("ASSIGNMENT", 10); // (.")
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -816,7 +816,7 @@ void UNK_0xf019() // UNK_0xf019
   _ex_COLOR(); // !COLOR
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -958,7 +958,7 @@ void UNK_0xf192() // UNK_0xf192
   _gt_C_plus_S(); // >C+S
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1221,7 +1221,7 @@ void UNK_0xf3d7() // UNK_0xf3d7
   Push(0);
   Push(0x0019);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1270,7 +1270,7 @@ void UNK_0xf409() // UNK_0xf409
   ICLOSE(); // ICLOSE
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1341,11 +1341,11 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
     _gt_C_plus_S(); // >C+S
     Push(6);
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(0x6400); // IFIELD(UNK_0xeb68)
       Push(i); // I
       Push(3);

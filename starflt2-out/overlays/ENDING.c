@@ -395,7 +395,7 @@ void UNK_0xe86a() // UNK_0xe86a
   Push(0x09c4);
   MIN(); // MIN
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -406,11 +406,11 @@ void UNK_0xe86a() // UNK_0xe86a
     Push(Read16(cc_MPS)); // MPS
     Push(Pop() * Pop()); // *
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -1263,7 +1263,7 @@ void UNK_0xed8d() // UNK_0xed8d
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1274,11 +1274,11 @@ void UNK_0xed8d() // UNK_0xed8d
     TONE(); // TONE
     Push(Read16(cc_MPS)); // MPS
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -1298,7 +1298,7 @@ void UNK_0xedb9() // UNK_0xedb9
   unsigned short int i, imax;
   BEEPON_2(); // BEEPON_2
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1567,7 +1567,7 @@ void UNK_0xef5d() // UNK_0xef5d
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1660,7 +1660,7 @@ void UNK_0xefdb() // UNK_0xefdb
   INEXT(); // INEXT
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1877,7 +1877,7 @@ void UNK_0xf15c() // UNK_0xf15c
   MOUNTB(); // MOUNTB
   Push(0x000a);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2059,7 +2059,7 @@ void UNK_0xf264() // UNK_0xf264
   BEEPON_2(); // BEEPON_2
   Push(4);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2070,7 +2070,7 @@ void UNK_0xf264() // UNK_0xf264
 
   Push(9);
   Push(4);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -2128,7 +2128,7 @@ void UNK_0xf2b0() // UNK_0xf2b0
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2164,11 +2164,11 @@ void UNK_0xf2fa() // UNK_0xf2fa
     Push(4);
     RRND(); // RRND
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xf24e(); // UNK_0xf24e
       V_gt_DISPL(); // V>DISPL
       DARK(); // DARK
@@ -2218,7 +2218,7 @@ void UNK_0xf33e() // UNK_0xf33e
   ILAST(); // ILAST
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

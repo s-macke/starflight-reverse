@@ -388,7 +388,7 @@ void UNK_0xef6e() // UNK_0xef6e
   SAVE_dash_OV(); // SAVE-OV
   Push(7);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -798,7 +798,7 @@ void RSTE() // RSTE
   UNK_0xefa6(); // UNK_0xefa6
   Push(7);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -906,7 +906,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
   BEEPON_2(); // BEEPON_2
   Push(9);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

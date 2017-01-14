@@ -400,7 +400,7 @@ void UNK_0xeec1() // UNK_0xeec1
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -424,7 +424,7 @@ void UNK_0xeed7() // UNK_0xeed7
   if (Pop() == 0) return;
   Push(0);
   Push(0x03e8);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -454,7 +454,7 @@ void UNK_0xeef9() // UNK_0xeef9
   BEEPON_2(); // BEEPON_2
   Push(0x07d0);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -489,7 +489,7 @@ void UNK_0xef2b() // UNK_0xef2b
   if (Pop() == 0) return;
   Push(0x03e8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -704,7 +704,7 @@ void UNK_0xf071() // UNK_0xf071
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -717,11 +717,11 @@ void UNK_0xf071() // UNK_0xf071
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       _gt_PLANES(); // >PLANES
       Push(4);
       Push(pp_SRC); // SRC
@@ -800,7 +800,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
   BMHIGH(); // BMHIGH
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1267,18 +1267,18 @@ void UNK_0xf430() // UNK_0xf430
   _2_at_(); // 2@
   Push(0x0064);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(0x03e8);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc

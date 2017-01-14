@@ -280,7 +280,7 @@ void UNK_0xee70() // UNK_0xee70
   UNK_0xee2c(); // UNK_0xee2c
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

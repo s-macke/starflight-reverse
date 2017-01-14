@@ -1770,7 +1770,7 @@ void _dot_AUXSYS() // .AUXSYS
   IOPEN(); // IOPEN
   Push(9);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2157,7 +2157,7 @@ void UNK_0xe2d7() // UNK_0xe2d7
   Push(0x0018);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2268,7 +2268,7 @@ void UNK_0xe37b() // UNK_0xe37b
   Push(0x0021);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -3451,7 +3451,7 @@ void UNK_0xeb1a() // UNK_0xeb1a
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -3594,11 +3594,11 @@ void UNK_0xebdb() // UNK_0xebdb
     Push(pp_UNK_0xda14); // UNK_0xda14
     _1_dot_5_ex__2(); // 1.5!_2
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       _at_IL(); // @IL
       _at_IH(); // @IH
@@ -3880,11 +3880,11 @@ void UNK_0xedb8() // UNK_0xedb8
     if (Pop() != 0)
     {
       Push(0);
-        
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
         Pop(); // DROP
       i++;
   } while(i<imax); // (LOOP) 0xfffc

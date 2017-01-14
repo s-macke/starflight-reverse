@@ -320,7 +320,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   {
     SWAP(); // SWAP
   }
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -335,11 +335,11 @@ void UNK_0xe6ea() // UNK_0xe6ea
     Push(Read16(cc_MPS)); // MPS
     Push(Pop() * Pop()); // *
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -845,7 +845,7 @@ void UNK_0xea6a() // UNK_0xea6a
   _dash_(); // -
   Push(Pop() + Pop()); // +
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -869,7 +869,7 @@ void UNK_0xea94() // UNK_0xea94
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1912,7 +1912,7 @@ void UNK_0xf21b() // UNK_0xf21b
   unsigned short int i, imax;
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2280,11 +2280,11 @@ void UNK_0xf472() // UNK_0xf472
     Push(Read16(Pop())); // @
     a = Pop(); // >R
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       _at_ID(); // @ID
       Push(Read16(regsp)); // DUP

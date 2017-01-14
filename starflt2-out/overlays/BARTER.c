@@ -862,7 +862,7 @@ void UNK_0xe1b8() // UNK_0xe1b8
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -926,7 +926,7 @@ void UNK_0xe200() // UNK_0xe200
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2438,7 +2438,7 @@ void UNK_0xea6a() // UNK_0xea6a
   Push(Read16(Pop())); // @
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

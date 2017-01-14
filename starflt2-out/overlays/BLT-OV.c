@@ -195,7 +195,7 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(pp_UNK_0xf068); // UNK_0xf068
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -227,7 +227,7 @@ void UNK_0xf07b() // UNK_0xf07b
   Push(Pop()+1); // 1+
   Push(3);
   Push(0);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -527,7 +527,7 @@ void UNK_0xf280() // UNK_0xf280
   BMHIGH(); // BMHIGH
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -596,7 +596,7 @@ void UNK_0xf30a() // UNK_0xf30a
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -609,11 +609,11 @@ void UNK_0xf30a() // UNK_0xf30a
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       _gt_PLANES(); // >PLANES
       Push(4);
       Push(pp_SRC); // SRC

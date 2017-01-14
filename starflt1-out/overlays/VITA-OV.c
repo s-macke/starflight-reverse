@@ -403,7 +403,7 @@ void UNK_0xe928() // UNK_0xe928
   Push(4);
   ROLL(); // ROLL
   UNK_0xe91a(); // UNK_0xe91a
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -491,7 +491,7 @@ void UNK_0xea0a() // UNK_0xea0a
   Push(0xe7ea); // probable 'UNK_0xe7ea'
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -555,7 +555,7 @@ void UNK_0xeaa0() // UNK_0xeaa0
   _ex__3(); // !_3
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1089,7 +1089,7 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1129,7 +1129,7 @@ void UNK_0xf286() // UNK_0xf286
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1183,7 +1183,7 @@ void UNK_0xf2da() // UNK_0xf2da
 {
   unsigned short int i, imax;
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1323,11 +1323,11 @@ void UNK_0xf382() // UNK_0xf382
   _dash_(); // -
   if (Pop() != 0)
   {
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp_RECORD_n_); // RECORD#
       _ex__3(); // !_3
@@ -1393,7 +1393,7 @@ void UNK_0xf40c() // UNK_0xf40c
   IOPEN(); // IOPEN
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

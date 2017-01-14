@@ -1340,7 +1340,7 @@ void UNK_0xea86() // UNK_0xea86
   unsigned short int i, imax, j, jmax;
   Push(0x03e8);
   Push(0x0064);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1355,11 +1355,11 @@ void UNK_0xea86() // UNK_0xea86
     Push(Read16(cc_MPS)); // MPS
     Push(Pop() * Pop()); // *
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       NOP(); // NOP
     j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -1779,7 +1779,7 @@ void UNK_0xeca4() // UNK_0xeca4
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1821,11 +1821,11 @@ void UNK_0xece0() // UNK_0xece0
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       _at_IL(); // @IL
       _at_IH(); // @IH
@@ -1933,11 +1933,11 @@ void CIRCLES() // CIRCLES
       UNK_0xe6ba(); // UNK_0xe6ba
       Push(0x0064);
       Push(0);
-        
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
         RNDCLR(); // RNDCLR
         _gt_MAINVI(); // >MAINVI
         Push(0x0023);
@@ -2227,11 +2227,11 @@ void UNK_0xef4c() // UNK_0xef4c
         Push(0);
         SWAP(); // SWAP
         Push(0);
-          
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+        i = Pop();
+        imax = Pop();
+        do // (DO)
+        {
           SWAP(); // SWAP
           POINT_gt_I(); // POINT>I
           _at_ID(); // @ID
@@ -2576,11 +2576,11 @@ void UNK_0xf19a() // UNK_0xf19a
         Push(0);
         SWAP(); // SWAP
         Push(0);
-          
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+        i = Pop();
+        imax = Pop();
+        do // (DO)
+        {
           SWAP(); // SWAP
           POINT_gt_I(); // POINT>I
           _at_ID(); // @ID
@@ -2766,7 +2766,7 @@ void UNK_0xf312() // UNK_0xf312
   Push(Pop() + Pop()); // +
   Push(0x0012);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -391,7 +391,7 @@ void UNK_0xeca2() // UNK_0xeca2
   UNK_0xec90(); // UNK_0xec90
   Push(7);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -425,7 +425,7 @@ void UNK_0xecf1() // UNK_0xecf1
   UNK_0xec90(); // UNK_0xec90
   Push(0);
   Push(5);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -706,7 +706,7 @@ void UNK_0xee2f() // UNK_0xee2f
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1578,11 +1578,11 @@ void UNK_0xf289() // UNK_0xf289
   if (Pop() != 0)
   {
     UNK_0xec16(); // UNK_0xec16
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(1);
       Push(i); // I
       UNK_0xf271(); // UNK_0xf271
@@ -1592,11 +1592,11 @@ void UNK_0xf289() // UNK_0xf289
   } else
   {
     UNK_0xec16(); // UNK_0xec16
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       INEXT(); // INEXT
       Push(0x65ec); // IFIELD(TEXT-CO)
       Push(Read16(Pop())); // @
@@ -1619,7 +1619,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
 {
   unsigned short int i, imax;
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1679,7 +1679,7 @@ void UNK_0xf31d() // UNK_0xf31d
   unsigned short int i, imax;
   UNK_0xf2ed(); // UNK_0xf2ed
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1732,7 +1732,7 @@ void UNK_0xf351() // UNK_0xf351
   _star__slash_(); // */
   _dash_(); // -
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1759,7 +1759,7 @@ void UNK_0xf385() // UNK_0xf385
 {
   unsigned short int i, imax;
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1797,7 +1797,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   unsigned short int i, imax;
   Push(0);
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1856,7 +1856,7 @@ void UNK_0xf3f9() // UNK_0xf3f9
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   UNK_0xec16(); // UNK_0xec16
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

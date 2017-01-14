@@ -587,7 +587,7 @@ void UNK_0xee91() // UNK_0xee91
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -894,7 +894,7 @@ void UNK_0xf079() // UNK_0xf079
   Push(Read8(Pop())&0xFF); // C@
   SWAP(); // SWAP
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -909,11 +909,11 @@ void UNK_0xf079() // UNK_0xf079
       UNK_0xf02b(); // UNK_0xf02b
       Push(b); // R>
       Push(0);
-        
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+      j = Pop();
+      jmax = Pop();
+      do // (DO)
+      {
         UNK_0xee4d(); // UNK_0xee4d
       j++;
   } while(j<jmax); // (LOOP) 0xfffc
@@ -1108,11 +1108,11 @@ void UNK_0xf1c1() // UNK_0xf1c1
     SWAP(); // SWAP
     RRND(); // RRND
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xecdd(); // UNK_0xecdd
       UNK_0xecfb(); // UNK_0xecfb
       UNK_0xed9d(); // UNK_0xed9d

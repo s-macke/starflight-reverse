@@ -564,18 +564,18 @@ void UNK_0xec32() // UNK_0xec32
   Push(Read16(Pop())); // @
   Push(0x000e);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(8);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(pp_XLL); // XLL
       Push(Read16(Pop())); // @
       Push(j); // I
@@ -1518,7 +1518,7 @@ void UNK_0xf25f() // UNK_0xf25f
   BEEPON_2(); // BEEPON_2
   Push(0x07d0);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -255,7 +255,7 @@ void UNK_0xf115() // UNK_0xf115
   unsigned short int i, imax;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -349,7 +349,7 @@ void ROLE_dash_C() // ROLE-C
   Push(Pop() + Pop()); // +
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -396,7 +396,7 @@ void UNK_0xf212() // UNK_0xf212
   Push(pp_ROSTER); // ROSTER
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -496,7 +496,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   if (Pop() == 0) goto label1;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -589,7 +589,7 @@ void _dot_VITS() // .VITS
   UNK_0xf09c(); // UNK_0xf09c
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -620,11 +620,11 @@ void _dot_VITS() // .VITS
       if (Pop() != 0)
       {
         Push(0);
-          
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+        j = Pop();
+        jmax = Pop();
+        do // (DO)
+        {
           PRINT(".", 1); // (.")
         j++;
   } while(j<jmax); // (LOOP) 0xfffa
@@ -756,7 +756,7 @@ void UNK_0xf429() // UNK_0xf429
   Push(Pop() + Pop()); // +
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -865,7 +865,7 @@ void UNK_0xf4d3() // UNK_0xf4d3
   Push(0x65f2); // IFIELD(UNK_0xf0be)
   Push(6);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

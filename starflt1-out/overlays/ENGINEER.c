@@ -328,7 +328,7 @@ void DBARS() // DBARS
   _gt_C_plus_S(); // >C+S
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -391,7 +391,7 @@ void UNK_0xee68() // UNK_0xee68
   Push(0);
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

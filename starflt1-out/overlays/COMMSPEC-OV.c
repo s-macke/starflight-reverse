@@ -721,7 +721,7 @@ void UNK_0xecce() // UNK_0xecce
   Push(1);
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1633,7 +1633,7 @@ void UNK_0xf312() // UNK_0xf312
   Push(0x000a);
   RRND(); // RRND
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1798,7 +1798,7 @@ void UNK_0xf486() // UNK_0xf486
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

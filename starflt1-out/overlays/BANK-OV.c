@@ -294,11 +294,11 @@ void TRANSACT() // TRANSACT
     Push(0);
     Push(9);
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       INEXT(); // INEXT
       _ask_FIRST(); // ?FIRST
       if (Pop() != 0)
@@ -563,7 +563,7 @@ void UNK_0xf26f() // UNK_0xf26f
   ON_3(); // ON_3
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

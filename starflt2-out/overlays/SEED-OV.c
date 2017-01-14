@@ -746,7 +746,7 @@ void UNK_0xef94() // UNK_0xef94
   UNK_0xeeee(); // UNK_0xeeee
   Push(0x005b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -975,11 +975,11 @@ void UNK_0xf0da() // UNK_0xf0da
     SWAP(); // SWAP
     RRND(); // RRND
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xed52(); // UNK_0xed52
       UNK_0xed70(); // UNK_0xed70
       UNK_0xee1a(); // UNK_0xee1a
@@ -1564,7 +1564,7 @@ void UNK_0xf41e() // UNK_0xf41e
   UNK_0xed8e(); // UNK_0xed8e
   ROT(); // ROT
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1686,11 +1686,11 @@ void UNK_0xf4c0() // UNK_0xf4c0
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xed8e(); // UNK_0xed8e
       UNK_0xf3b8(); // UNK_0xf3b8
       if (Pop() != 0)

@@ -240,7 +240,7 @@ void UNK_0xeed3() // UNK_0xeed3
   OFF(); // OFF
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -747,18 +747,18 @@ void UNK_0xf290() // UNK_0xf290
   _dot_TTY(); // .TTY
   Push(0x0050);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(0x0010);
     Push(0x000c);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(Pop()<<4); // 16*
       Push(j); // I
@@ -775,11 +775,11 @@ void UNK_0xf290() // UNK_0xf290
       OVER(); // OVER
       Push(Pop() + Pop()); // +
       SWAP(); // SWAP
-        
-  k = Pop();
-  kmax = Pop();
-  do // (DO)
-  {
+
+      k = Pop();
+      kmax = Pop();
+      do // (DO)
+      {
         Push(k); // I
         _2_at_(); // 2@
         _2DUP(); // 2DUP
@@ -839,18 +839,18 @@ void UNK_0xf311() // UNK_0xf311
   POS_dot_(); // POS.
   Push(0x0050);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(0x0010);
     Push(0x000c);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(j); // I
       Push(Pop()<<4); // 16*
       Push(j); // I

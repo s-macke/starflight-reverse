@@ -88,7 +88,7 @@ void altitude() // altitude
   LLINE(); // LLINE
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -171,7 +171,7 @@ void _dot_BLT() // .BLT
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -225,7 +225,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 {
   unsigned short int i, imax;
   _gt_1FONT(); // >1FONT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

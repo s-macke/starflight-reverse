@@ -716,7 +716,7 @@ void UNK_0xe585() // UNK_0xe585
   LLINE(); // LLINE
   Push(0x00c7);
   Push(0x002b);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -732,7 +732,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
   Push(0x00c7);
   Push(0x0053);
-    
+
   j = Pop();
   jmax = Pop();
   do // (DO)
@@ -753,7 +753,7 @@ if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
   LLINE(); // LLINE
   Push(0x009c);
   Push(0x0019);
-    
+
   k = Pop();
   kmax = Pop();
   do // (DO)
@@ -771,7 +771,7 @@ if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
 
   Push(0x009c);
   Push(0x002d);
-    
+
   l = Pop();
   lmax = Pop();
   do // (DO)
@@ -981,7 +981,7 @@ void UNK_0xe7b4() // UNK_0xe7b4
   _gt_1FONT(); // >1FONT
   Push(0x009c);
   Push(0x0028);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1028,7 +1028,7 @@ void UNK_0xe7fe() // UNK_0xe7fe
   _gt_1FONT(); // >1FONT
   Push(0x00c7);
   Push(0x0055);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1133,7 +1133,7 @@ void UNK_0xe89c() // UNK_0xe89c
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1187,11 +1187,11 @@ void UNK_0xe8e6() // UNK_0xe8e6
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_I(); // POINT>I
       _at_IL(); // @IL
       _at_IH(); // @IH
@@ -1359,7 +1359,7 @@ void UNK_0xea04() // UNK_0xea04
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2008,7 +2008,7 @@ void UNK_0xee51() // UNK_0xee51
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2426,7 +2426,7 @@ void UNK_0xf11b() // UNK_0xf11b
   unsigned short int i, imax;
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

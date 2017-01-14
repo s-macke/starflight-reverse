@@ -445,7 +445,7 @@ void UNK_0xde7e() // UNK_0xde7e
   a = Pop(); // >R
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -489,7 +489,7 @@ void UNK_0xdebc() // UNK_0xdebc
   unsigned short int i, imax;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -567,7 +567,7 @@ void UNK_0xdf3e() // UNK_0xdf3e
   unsigned short int i, imax;
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -645,7 +645,7 @@ void UNK_0xdfb6() // UNK_0xdfb6
   _gt_DISPLAY(); // >DISPLAY
   Push(0x000a);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -879,7 +879,7 @@ void UNK_0xe0f9() // UNK_0xe0f9
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1518,7 +1518,7 @@ void UNK_0xe4ee() // UNK_0xe4ee
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1875,11 +1875,11 @@ void UNK_0xe709() // UNK_0xe709
   {
     UNK_0xe6c9(); // UNK_0xe6c9
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       POINT_gt_ICON(); // POINT>ICON
       UNK_0xe6df(); // UNK_0xe6df
       Push(pp_UNK_0xde36); // UNK_0xde36
@@ -1933,7 +1933,7 @@ void UNK_0xe767() // UNK_0xe767
   unsigned short int i, imax, j, jmax;
   UNK_0xe6c9(); // UNK_0xe6c9
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1975,11 +1975,11 @@ void UNK_0xe767() // UNK_0xe767
       {
         Push(3);
         Push(0);
-          
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+        j = Pop();
+        jmax = Pop();
+        do // (DO)
+        {
           Push(0x6401); // IFIELD(UNK_0xe081)
           Push(j); // I
           Push(Pop() + Pop()); // +
@@ -2065,7 +2065,7 @@ void UNK_0xe823() // UNK_0xe823
   ICLOSE(); // ICLOSE
   UNK_0xe6c9(); // UNK_0xe6c9
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -2079,11 +2079,11 @@ void UNK_0xe823() // UNK_0xe823
       _gt_C_plus_S(); // >C+S
       Push(4);
       Push(0);
-        
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+      j = Pop();
+      jmax = Pop();
+      do // (DO)
+      {
         Push(0x6401); // IFIELD(UNK_0xe081)
         Push(3);
         Push(Pop() + Pop()); // +
@@ -2298,11 +2298,11 @@ void UNK_0xe9e2() // UNK_0xe9e2
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xe462(); // UNK_0xe462
       UNK_0xe47c(); // UNK_0xe47c
       _gt_C_plus_S(); // >C+S
@@ -2380,11 +2380,11 @@ void UNK_0xea62() // UNK_0xea62
     CTPOS_dot_(); // CTPOS.
     Push(0x00be);
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       LoadData("UNK_0xe04c"); // from 'ANALYZE-TEXT'
       Push(i); // I
       Push(Pop() + Pop()); // +

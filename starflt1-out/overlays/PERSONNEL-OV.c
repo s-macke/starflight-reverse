@@ -497,7 +497,7 @@ void UNK_0xe6c5() // UNK_0xe6c5
   OFF(); // OFF
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1082,7 +1082,7 @@ void UNK_0xec5d() // UNK_0xec5d
   _ex_COLOR(); // !COLOR
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1395,7 +1395,7 @@ void UNK_0xee65() // UNK_0xee65
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1487,7 +1487,7 @@ void UNK_0xefff() // UNK_0xefff
   Push(1);
   Push(0x0019);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -992,7 +992,7 @@ void UNK_0xebeb() // UNK_0xebeb
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1283,7 +1283,7 @@ void UNK_0xed96() // UNK_0xed96
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1765,11 +1765,11 @@ void UNK_0xf174() // UNK_0xf174
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xeb09(); // UNK_0xeb09
       UNK_0xeb23(); // UNK_0xeb23
       _gt_C_plus_S(); // >C+S

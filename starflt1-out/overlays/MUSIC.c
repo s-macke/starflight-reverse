@@ -440,18 +440,18 @@ void CSCR_gt_EGA() // CSCR>EGA
   Push(-1);
   Push(0x00c8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(0x0050);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       Push(Pop()+1); // 1+
       Push(pp_XBUF_dash_SE); // XBUF-SE
       Push(Read16(Pop())); // @
@@ -684,7 +684,7 @@ void BRMOVE() // BRMOVE
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
   Push(Read16(Pop())); // @
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -752,7 +752,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
   label2:
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -793,7 +793,7 @@ void UNK_0xe813() // UNK_0xe813
   unsigned short int i, imax;
   Push(0x000b);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -932,7 +932,7 @@ void UNK_0xe928() // UNK_0xe928
   OFF(); // OFF
   Push(0x000d);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

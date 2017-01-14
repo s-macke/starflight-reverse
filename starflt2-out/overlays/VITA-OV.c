@@ -229,7 +229,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
   Push(0xf1da);
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -293,7 +293,7 @@ void UNK_0xf440() // UNK_0xf440
   _ex__2(); // !_2
   Push(6);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

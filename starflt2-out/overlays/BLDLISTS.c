@@ -783,7 +783,7 @@ void UNK_0xee99() // UNK_0xee99
   Push2Words("*4SALE");
   UNK_0xee57(); // UNK_0xee57
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -874,7 +874,7 @@ void UNK_0xef03() // UNK_0xef03
   ICLOSE(); // ICLOSE
   Push(0x0018);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1003,7 +1003,7 @@ void UNK_0xefad() // UNK_0xefad
     Push(Pop()+1); // 1+
   }
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

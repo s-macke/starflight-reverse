@@ -148,7 +148,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   Push(4);
   ROLL(); // ROLL
   UNK_0xf0a6(); // UNK_0xf0a6
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

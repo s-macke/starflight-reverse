@@ -136,7 +136,7 @@ void UNK_0xf456() // UNK_0xf456
   unsigned short int i, imax;
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -221,7 +221,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
   }
   Push(0x0032);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -261,7 +261,7 @@ void FLUX() // FLUX
   BEEPON(); // BEEPON
   Push(0x0096);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

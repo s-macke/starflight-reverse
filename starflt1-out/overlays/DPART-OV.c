@@ -158,7 +158,7 @@ void UNK_0xef73() // UNK_0xef73
   _gt_2FONT(); // >2FONT
   Push(3);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -294,7 +294,7 @@ void UNK_0xf064() // UNK_0xf064
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -525,7 +525,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
   _dot_TTY(); // .TTY
   Push(1);
   Push(5);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -573,7 +573,7 @@ void UNK_0xf25e() // UNK_0xf25e
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -590,11 +590,11 @@ void UNK_0xf25e() // UNK_0xf25e
     SetColor("WHITE");
     Push(0x000a);
     Push(0);
-      
-  j = Pop();
-  jmax = Pop();
-  do // (DO)
-  {
+
+    j = Pop();
+    jmax = Pop();
+    do // (DO)
+    {
       UNK_0xf252(); // UNK_0xf252
     j++;
   } while(j<jmax); // (LOOP) 0xfffc

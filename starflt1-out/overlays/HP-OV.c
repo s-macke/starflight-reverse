@@ -630,7 +630,7 @@ void UNK_0xe53d() // UNK_0xe53d
   Push(4);
   ROLL(); // ROLL
   UNK_0xe52f(); // UNK_0xe52f
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -857,11 +857,11 @@ void UNK_0xe762() // UNK_0xe762
   _dash_(); // -
   if (Pop() != 0)
   {
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp_RECORD_n_); // RECORD#
       _ex__3(); // !_3

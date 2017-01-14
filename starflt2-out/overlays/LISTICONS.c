@@ -74,7 +74,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   unsigned short int i, imax;
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -179,7 +179,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   unsigned short int i, imax;
   Push(2);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -250,7 +250,7 @@ void UNK_0xf45e() // UNK_0xf45e
 {
   unsigned short int i, imax;
   _gt_1FONT(); // >1FONT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

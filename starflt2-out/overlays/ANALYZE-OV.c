@@ -1255,7 +1255,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
   Push(2);
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

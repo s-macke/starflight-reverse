@@ -448,7 +448,7 @@ void UNK_0xef96() // UNK_0xef96
     Push(Pop()+1); // 1+
   }
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -538,7 +538,7 @@ void UNK_0xf00c() // UNK_0xf00c
   UNK_0xeea8(); // UNK_0xeea8
   UNK_0xef70(); // UNK_0xef70
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -668,7 +668,7 @@ void _ro_DUPL_rc_() // (DUPL)
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -744,11 +744,11 @@ void XL() // XL
   if (Pop() != 0)
   {
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       UNK_0xeea8(); // UNK_0xeea8
       Push(i); // I
       Push(Pop() + Pop()); // +
@@ -905,7 +905,7 @@ void PUT() // PUT
   unsigned short int i, imax;
   Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

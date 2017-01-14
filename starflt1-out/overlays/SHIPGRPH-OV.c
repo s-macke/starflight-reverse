@@ -421,7 +421,7 @@ void UNK_0xf014() // UNK_0xf014
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -525,7 +525,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(1);
   Push(8);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -838,7 +838,7 @@ void UNK_0xf40f() // UNK_0xf40f
   UNK_0xf310(); // UNK_0xf310
   Push(5);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

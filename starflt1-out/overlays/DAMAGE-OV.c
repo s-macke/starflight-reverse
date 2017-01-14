@@ -771,7 +771,7 @@ void UNK_0xed9e() // UNK_0xed9e
   Push(6);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1016,7 +1016,7 @@ void UNK_0xef3c() // UNK_0xef3c
   Push(0);
   Push(9);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1132,11 +1132,11 @@ void UNK_0xf02e() // UNK_0xf02e
   {
     CTINIT(); // CTINIT
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(i); // I
       Push(pp_WOUNDED); // WOUNDED
       Push(Pop() + Pop()); // +
@@ -1228,7 +1228,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
   Push(0x0012);
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1362,11 +1362,11 @@ void UNK_0xf19a() // UNK_0xf19a
       Push(0x01f4);
       MAX(); // MAX
       Push(0);
-        
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
         Push(0);
         Push(i); // I
         RRND(); // RRND
@@ -1403,11 +1403,11 @@ void UNK_0xf1ec() // UNK_0xf1ec
     Push(Read16(a)); // R@
     SWAP(); // SWAP
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       ROT(); // ROT
       POINT_gt_ICON(); // POINT>ICON
@@ -1788,7 +1788,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(6);
   MIN(); // MIN
   Push(2);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1857,11 +1857,11 @@ void UNK_0xf47f() // UNK_0xf47f
     Push(Read16(a)); // R@
     SWAP(); // SWAP
     Push(0);
-      
-  i = Pop();
-  imax = Pop();
-  do // (DO)
-  {
+
+    i = Pop();
+    imax = Pop();
+    do // (DO)
+    {
       Push(Read16(regsp)); // DUP
       ROT(); // ROT
       POINT_gt_ICON(); // POINT>ICON

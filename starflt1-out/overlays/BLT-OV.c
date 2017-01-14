@@ -330,7 +330,7 @@ void _dot_HYBRID() // .HYBRID
   Push(4);
   LC_at_(); // LC@
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -313,7 +313,7 @@ void UNK_0xe5ec() // UNK_0xe5ec
 {
   unsigned short int i, imax;
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -369,7 +369,7 @@ void UNK_0xe672() // UNK_0xe672
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -665,7 +665,7 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -785,7 +785,7 @@ void UNK_0xe9c0() // UNK_0xe9c0
   unsigned short int i, imax;
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
@@ -1475,7 +1475,7 @@ void UNK_0xef2d() // UNK_0xef2d
   UNK_0xedc8(); // UNK_0xedc8
   Push(9);
   Push(1);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)

@@ -434,7 +434,7 @@ void UNK_0xeffc() // UNK_0xeffc
   Push(-1);
   Push(7);
   Push(0);
-    
+
   i = Pop();
   imax = Pop();
   do // (DO)
