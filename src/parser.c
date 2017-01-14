@@ -610,10 +610,10 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = calloc(STRINGLEN*2, 1);
-            strcat(pline[d->parp-1].initvarstr, "  unsigned short int ");
-            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
-            strcat(pline[d->parp-1].initvarstr, ";\n");
+            if (pline[d->parp-2].initvarstr == NULL) pline[d->parp-2].initvarstr = calloc(STRINGLEN*2, 1);
+            strcat(pline[d->parp-2].initvarstr, "  unsigned short int ");
+            strcat(pline[d->parp-2].initvarstr, GetVariable(&vars, 0));
+            strcat(pline[d->parp-2].initvarstr, ";\n");
             snprintf(pline[ofs].str, STRINGLEN, "%s = Pop(); // >R\n", GetVariable(&vars, 0));
             ofs += 2;
         } else
@@ -636,12 +636,12 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
-            if (pline[d->parp-1].initvarstr == NULL) pline[d->parp-1].initvarstr = calloc(STRINGLEN*2, 1);
-            strcat(pline[d->parp-1].initvarstr, "  signed short int ");
-            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 0));
-            strcat(pline[d->parp-1].initvarstr, ", ");
-            strcat(pline[d->parp-1].initvarstr, GetVariable(&vars, 1));
-            strcat(pline[d->parp-1].initvarstr, ";\n");
+            if (pline[d->parp-2].initvarstr == NULL) pline[d->parp-2].initvarstr = calloc(STRINGLEN*2, 1);
+            strcat(pline[d->parp-2].initvarstr, "  signed short int ");
+            strcat(pline[d->parp-2].initvarstr, GetVariable(&vars, 0));
+            strcat(pline[d->parp-2].initvarstr, ", ");
+            strcat(pline[d->parp-2].initvarstr, GetVariable(&vars, 1));
+            strcat(pline[d->parp-2].initvarstr, ";\n");
 
             snprintf(pline[ofs].str, STRINGLEN, "\n  %s = Pop();\n  %s = Pop();\n  do // (DO)\n  {\n",
                 GetVariable(&vars, 0),

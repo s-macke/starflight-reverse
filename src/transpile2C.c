@@ -696,9 +696,37 @@ void Spc(FILE *fp, int spc)
     }
 }
 
+void WriteWordHeader(FILE *fp, DICTENTRY *e)
+{
+    if (e == NULL)
+    {
+        fprintf(stderr, "Error: No dictentry found");
+        exit(1);
+    }
+    char *s = GetWordName(e);
+    fprintf(fp,
+    "\n// ================================================\n"
+    "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
+    "// ================================================\n",
+    e->addr, s, e->codep, e->parp);
+    if (e->isentry) fprintf(fp, "// entry\n");
+    if (e->codep == CODECALL)
+    {
+        fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+        RemoveGotos(e);
+        RemoveGotos(e);
+        RemoveGotos(e);
+        RemoveGotos(e);
+        //RemoveGotos(e);
+        if (pline[e->parp-2].initvarstr != NULL) fprintf(fp, "%s", pline[e->parp-2].initvarstr);
+    }
+}
+
+
 void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
     int i = 0;
+    int j = 0;
 
     int dbmode = 0; // bool
     char str[0x10000];
@@ -712,42 +740,17 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             dbmode = 0;
             DICTENTRY *e = GetDictEntry(i+2, ovidx);
-            if (e == NULL) {
-                exit(1);
-            }
-            char *s = GetWordName(e);
-            fprintf(fp,
-            "\n// ================================================\n"
-            "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-            "// ================================================\n",
-            e->addr, s, e->codep, e->parp);
-            if (e->isentry) fprintf(fp, "// entry\n");
-            if (e->codep == CODECALL)
-            {
-                fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-                RemoveGotos(e);
-                RemoveGotos(e);
-                RemoveGotos(e);
-                RemoveGotos(e);
-                //RemoveGotos(e);
-                nspc = 1;
-            }
-        }
-        if (pline[i].initvarstr != NULL)
-        {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "%s", pline[i].initvarstr);
-            dbmode = 0;
+            WriteWordHeader(fp, e);
+            if (e->codep == CODECALL) nspc = 1;
         }
 
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            
+            dbmode = 0;
             fprintf(fp, "\n");
             Spc(fp, nspc);
             fprintf(fp, "label%i:\n", pline[i].labelid);
-            dbmode = 0;
         }
 
         switch(pline[i].flow)
@@ -809,41 +812,31 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
                 break;
 
             case IFCLOSE2:
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
+                for(j=0; j<2; j++)
+                {
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "}\n");
+                }
                 break;
 
             case IFCLOSE3:
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
+                for(j=0; j<3; j++)
+                {
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "}\n");
+                }
                 break;
 
             case IFCLOSE4:
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                break;
-        }
+                for(j=0; j<4; j++)
+                {
+                    nspc--;
+                    Spc(fp, nspc);
+                    fprintf(fp, "}\n");
+                }
+                break;        }
 
         if (pline[i].istrivialword)
         {
