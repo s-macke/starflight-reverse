@@ -128,7 +128,6 @@ int IgnoreWord(char *s)
 
 void WriteExtern(FILE *fp, int ovidx)
 {
-
     int i = 0;
     int j = 0;
 
@@ -741,13 +740,15 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
     int nstr = 0;
     int nspc = 0;
 
+    DICTENTRY *e = NULL;
+
     for(i=minaddr; i<=maxaddr; i++)
     {
         if (pline[i].iswordheader)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             dbmode = 0;
-            DICTENTRY *e = GetDictEntry(i+2, ovidx);
+            e = GetDictEntry(i+2, ovidx);
             WriteWordHeader(fp, e);
             if (e->codep == CODECALL) nspc = 1;
         }
@@ -764,6 +765,15 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
         switch(pline[i].flow)
         {
             case DO:
+                fprintf(fp, "\n");
+                Spc(fp, nspc);
+                fprintf(fp, "%s = Pop();\n", e->vars[pline[i].variableidx+0]);
+                Spc(fp, nspc);
+                fprintf(fp, "%s = Pop();\n", e->vars[pline[i].variableidx+1]);
+                Spc(fp, nspc);
+                fprintf(fp, "do // (DO)\n");
+                Spc(fp, nspc);
+                fprintf(fp, "{\n");
                 nspc++;
                 break;
 

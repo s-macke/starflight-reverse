@@ -23,14 +23,16 @@ typedef struct
     int iswordheader;
     int isword;
     int ovidx;
+
+    int variableidx;
 } LineDesc;
 
 extern LineDesc pline[0x10000];
 
 typedef struct
 {
-    char name[20][10];
-    int nvars;
+    int stack[20]; // variable currently on (call/variable) stack
+    int nstack;
 } Variables;
 
 Variables GetEmptyVariables();

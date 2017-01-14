@@ -22,60 +22,76 @@ Variables GetEmptyVariables()
     return vars;
 }
 
+char* GetVariable(Variables *vars, DICTENTRY *e, int stackidxfromtop)
+{
+    static char *def = "h";
+    static char *default1 = "unknown";
+    static char *default2 = "callp1";
+    static char *default3 = "callp0";
+    int varidx;
+    int stackidx = vars->nstack - 1 - stackidxfromtop;
+    if (stackidx < 0)
+    {
+        return def;
+    }
+    varidx = vars->stack[stackidx];
+    if (varidx >= 0) return &e->vars[varidx][0];
+
+    if (varidx == -1) return default1;
+    if (varidx == -2) return default2;
+    if (varidx == -3) return default3;
+}
+
 void AddLoopVariables(Variables *vars, DICTENTRY *e)
 {
-    vars->name[vars->nvars+0][0] = 'i' + e->nloopvars;
-    strcpy(&vars->name[vars->nvars+0][1], "max");
-    vars->name[vars->nvars+1][0] = 'i' + e->nloopvars;
-    vars->name[vars->nvars+1][1] = 0;
-    vars->nvars += 2;
+    e->vars[e->nvars+0][0] = 'i' + e->nloopvars;
+    e->vars[e->nvars+1][0] = 'i' + e->nloopvars;
+    strcpy(&e->vars[e->nvars+1][1], "max");
     e->nloopvars++;
+
+    vars->stack[vars->nstack+0] = e->nvars+1;
+    vars->stack[vars->nstack+1] = e->nvars+0;
+    vars->nstack += 2;
+
+    e->nvars += 2;
 }
 
 void RemoveLoopVariables(Variables *vars)
 {
-    if (vars->nvars < 2)
+    if (vars->nstack < 2)
     {
         fprintf(stderr, "Error: no loop variables found\n");
         exit(1);
     }
-    vars->nvars -= 2;
+    vars->nstack -= 2;
 }
 
 void AddVariable(Variables *vars, DICTENTRY *e)
 {
-    vars->name[vars->nvars][0] = 'a' + e->nstackvariables;
-    vars->name[vars->nvars][1] = 0;
-    vars->nvars++;
+    e->vars[e->nvars][0] = 'a' + e->nstackvariables;
     e->nstackvariables++;
+
+    vars->stack[vars->nstack] = e->nvars;
+    vars->nstack++;
+
+    e->nvars++;
 }
 
-void AddNamedVariable(Variables *vars, DICTENTRY *e, const char* name)
+void AddUnnamedVariable(Variables *vars, DICTENTRY *e, int idx)
 {
-    strcpy(&vars->name[vars->nvars][0], name);
-    vars->nvars++;
+    vars->stack[vars->nstack] = idx;
+    vars->nstack++;
 }
 
 void RemoveVariable(Variables *vars)
 {
-    if (vars->nvars < 1)
+    if (vars->nstack < 1)
     {
         fprintf(stderr, "Error: no variables found\n");
-        //exit(1);
+        exit(1);
         return;
     }
-    vars->nvars--;
-}
-
-
-char* GetVariable(Variables *vars, int idx)
-{
-    static char *def = "h";
-    if ((vars->nvars - 1 - idx) < 0)
-    {
-        return def;
-    }
-    return &vars->name[vars->nvars - 1 - idx][0];
+    vars->nstack--;
 }
 
 // -----------------------------------------
@@ -408,7 +424,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 {
     if (d == NULL) {
         d = FindClosestFunction(ofs, currentovidx);
-        AddNamedVariable(&vars, d, "unknown");
+        AddUnnamedVariable(&vars, d, -1);
     }
 
     if (d->codep != CODECALL) {
@@ -418,8 +434,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 
     if (ofs == d->parp) // is head of function
     {
-        AddNamedVariable(&vars, d, "callp1");
-        AddNamedVariable(&vars, d, "callp0");
+        AddUnnamedVariable(&vars, d, -2);
+        AddUnnamedVariable(&vars, d, -3);
     }
 
     while(1)
@@ -610,38 +626,29 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            strcpy(d->vars[d->nvars], GetVariable(&vars, 0));
-            d->nvars++;
-            snprintf(pline[ofs].str, STRINGLEN, "%s = Pop(); // >R\n", GetVariable(&vars, 0));
+            snprintf(pline[ofs].str, STRINGLEN, "%s = Pop(); // >R\n", GetVariable(&vars, d, 0));
             ofs += 2;
         } else
         if (strcmp(s, "R>") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // R>\n", GetVariable(&vars, 0));
+            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // R>\n", GetVariable(&vars, d, 0));
             RemoveVariable(&vars);
             ofs += 2;
         } else
         if (strcmp(s, "R@") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(Read16(%s)); // R@\n", GetVariable(&vars, 0));
+            snprintf(pline[ofs].str, STRINGLEN, "Push(Read16(%s)); // R@\n", GetVariable(&vars, d, 0));
             ofs += 2;
         } else
         if (strcmp(s, "LEAVE") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "%s = %s; // LEAVE\n", GetVariable(&vars, 1), GetVariable(&vars, 0));
+            snprintf(pline[ofs].str, STRINGLEN, "%s = %s; // LEAVE\n", GetVariable(&vars, d, 1), GetVariable(&vars, d, 0));
             ofs += 2;
         } else
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
-            strcpy(d->vars[d->nvars], GetVariable(&vars, 0));
-            d->nvars++;
-            strcpy(d->vars[d->nvars], GetVariable(&vars, 1));
-            d->nvars++;
-
-            snprintf(pline[ofs].str, STRINGLEN, "\n  %s = Pop();\n  %s = Pop();\n  do // (DO)\n  {\n",
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 1));
+            pline[ofs].variableidx = vars.stack[vars.nstack-1];
             pline[ofs].flow = DO;
             ofs += 2;
         } else
@@ -656,9 +663,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             snprintf(pline[ofs].str, STRINGLEN,
                 "%s += Pop();\n"
                 "} while(%s<%s); // (/LOOP) 0x%04x\n\n",
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 1),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 1),
                 par);
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
@@ -673,9 +680,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
             pline[addr].loopaddr = ofs;
             snprintf(pline[ofs].str, STRINGLEN, "%s++;\n  } while(%s<%s); // (LOOP) 0x%04x\n\n",
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 1),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 1),
                 par);
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
@@ -693,11 +700,11 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 "int step = Pop();\n  %s += step;\n"
                 "if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n"
                 "} while(1); // (+LOOP) 0x%04x\n\n",
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 1),
-                GetVariable(&vars, 0),
-                GetVariable(&vars, 1),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 1),
+                GetVariable(&vars, d, 0),
+                GetVariable(&vars, d, 1),
                 par);
             RemoveLoopVariables(&vars);
             pline[ofs].flow = LOOP;
@@ -705,17 +712,17 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         if (strcmp(s, "I") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I\n", GetVariable(&vars, 0));
+            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I\n", GetVariable(&vars, d, 0));
             ofs += 2;
         } else
         if (strcmp(s, "I'") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I'\n", GetVariable(&vars, 1));
+            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // I'\n", GetVariable(&vars, d, 1));
             ofs += 2;
         } else
         if (strcmp(s, "J") == 0)
         {
-            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // J\n", GetVariable(&vars, 2));
+            snprintf(pline[ofs].str, STRINGLEN, "Push(%s); // J\n", GetVariable(&vars, d, 2));
             ofs += 2;
         } else
         {

@@ -21,7 +21,7 @@ typedef struct DICTENTRY
 
     // variables for functions
     int nvars;
-    char vars[30][5];
+    char vars[20][5];
 } DICTENTRY;
 
 extern int ndict;
