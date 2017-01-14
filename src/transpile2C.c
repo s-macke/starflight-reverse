@@ -615,14 +615,14 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
 
 // ----------------------------------------------------
 
-int IsLabelStillInUse(DICTENTRY *e, int labelid)
+int IsLabelStillInUse(DICTENTRY *e, int labeladdr)
 {
     int addr = e->parp;
     while(pline[addr].flow != FUNCEND)
     {
         if ((pline[addr].flow == IFGOTO) || (pline[addr].flow == GOTO))
         {
-            if (pline[addr].gotoid == labelid) return TRUE;
+            if (pline[addr].gotoaddr == labeladdr) return TRUE;
         }
         addr++;
     }
@@ -654,71 +654,53 @@ void AddFlow(controlflowenum *oldflow, controlflowenum newflow)
     *oldflow = newflow;
 }
 
-void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
+int ContainsFlow(int startaddr, int endaddr)
 {
-    int addr = ifgotoaddr;
-    int labelid = pline[ifgotoaddr].gotoid;
-    addr++;
-    while(pline[addr].flow != FUNCEND)
+    int addr;
+    for(addr = startaddr; addr < endaddr; addr++)
     {
-        if (pline[addr].labelid == labelid)
-        {
-            AddFlow(&pline[ifgotoaddr].flow, IFNOT);
-            AddFlow(&pline[addr-1].flow, IFCLOSE);
-            if (!IsLabelStillInUse(e, labelid)) pline[addr].labelid = 0;
-            return;
-        }
         controlflowenum flow = pline[addr].flow;
         if (flow == DO) addr = pline[addr].loopaddr;
-        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return;
-        addr++;
+        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return TRUE;
     }
+    return FALSE;
+}
+
+void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
+{
+    int labeladdr = pline[ifgotoaddr].gotoaddr;
+    if (labeladdr < ifgotoaddr) return;
+    if (ContainsFlow(ifgotoaddr+1, labeladdr)) return;
+
+    AddFlow(&pline[ifgotoaddr].flow, IFNOT);
+    AddFlow(&pline[labeladdr-1].flow, IFCLOSE);
+    if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
 void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
 {
-    int addr = ifgotoaddr;
-    int labelid = pline[ifgotoaddr].gotoid;
+    int labeladdr = pline[ifgotoaddr].gotoaddr;
 
-    int elsegotoaddr = 0;
-    int elselabelid = 0;
+    if (labeladdr < ifgotoaddr) return;
+    int elsegotoaddr = labeladdr-4;
+    if (pline[elsegotoaddr].flow != GOTO) return;
+    if (ContainsFlow(ifgotoaddr+1, elsegotoaddr)) return;
+    int elselabeladdr = pline[elsegotoaddr].gotoaddr;
+    if (elselabeladdr == labeladdr) return;
+    if (elselabeladdr < elsegotoaddr) return;
+    if (pline[labeladdr].flow != NONE) return;
+    if (ContainsFlow(labeladdr+1, elselabeladdr)) return;
 
-    addr++;
-    while(pline[addr].flow != FUNCEND)
+    AddFlow(&pline[ifgotoaddr].flow, IFNOT);
+    AddFlow(&pline[elsegotoaddr].flow, IFELSE);
+    AddFlow(&pline[elselabeladdr-1].flow, IFCLOSE);
+    if (!IsLabelStillInUse(e, elselabeladdr)) pline[elselabeladdr].labelid = 0;
+    if (IsLabelStillInUse(e, labeladdr))
     {
-        controlflowenum flow = pline[addr].flow;
-        if (elsegotoaddr == 0)
-        {
-            if ((flow == GOTO) && (pline[addr+4].labelid == labelid))
-            {
-                elsegotoaddr = addr;
-                elselabelid = pline[addr].gotoid;
-                addr += 4;
-                if (pline[addr].flow != NONE) return;
-                addr++;
-                flow = pline[addr].flow;
-            }
-        } else
-        {
-            if (pline[addr].labelid == elselabelid)
-            {
-                AddFlow(&pline[ifgotoaddr].flow, IFNOT);
-                AddFlow(&pline[elsegotoaddr].flow, IFELSE);
-                AddFlow(&pline[addr-1].flow, IFCLOSE);
-                if (!IsLabelStillInUse(e, elselabelid)) pline[addr].labelid = 0;
-                if (IsLabelStillInUse(e, labelid))
-                {
-                    fprintf(stderr, "Error: label still in use\n");
-                    exit(1);
-                }
-                pline[elsegotoaddr+4].labelid = 0;
-                return;
-            }
-        }
-        if (flow == DO) addr = pline[addr].loopaddr;
-        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return;
-        addr++;
+        fprintf(stderr, "Error: label still in use\n");
+        //exit(1);
     }
+    pline[labeladdr].labelid = 0;
 }
 
 void RemoveGotos(DICTENTRY *e)
@@ -873,7 +855,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             }
             case IFGOTO:
                 Spc(fp, nspc);
-                fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[i].gotoid);
+                fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[pline[i].gotoaddr].labelid);
                 break;
 
             case IFEXIT:
@@ -883,7 +865,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
             case GOTO:
                 Spc(fp, nspc);
-                fprintf(fp, "goto label%i;\n", pline[i].gotoid);
+                fprintf(fp, "goto label%i;\n", pline[pline[i].gotoaddr].labelid);
                 break;
 
             case FUNCEND:
@@ -898,7 +880,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
             case IFNOT:
                 Spc(fp, nspc);
-                fprintf(fp, "if (Pop() != 0)\n", pline[i].gotoid);
+                fprintf(fp, "if (Pop() != 0)\n", pline[pline[i].gotoaddr].labelid);
                 Spc(fp, nspc);
                 fprintf(fp, "{\n");
                 nspc++;

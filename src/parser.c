@@ -579,7 +579,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                pline[ofs].gotoid = -1;
+                pline[ofs].gotoaddr = -1;
                 pline[ofs].flow = EXIT;
             } else
             {
@@ -587,7 +587,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 {
                     pline[addr].labelid = ++d->nlabel;
                 }
-                pline[ofs].gotoid = pline[addr].labelid;
+                pline[ofs].gotoaddr = addr;
                 pline[ofs].flow = GOTO;
             }
             ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
@@ -618,7 +618,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             int addr = (ofs + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                pline[ofs].gotoid = -1;
+                pline[ofs].gotoaddr = -1;
                 pline[ofs].flow = IFEXIT;
             } else
             {
@@ -626,7 +626,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 {
                     pline[addr].labelid = ++d->nlabel;
                 }
-                pline[ofs].gotoid = pline[addr].labelid;
+                pline[ofs].gotoaddr = addr;
                 pline[ofs].flow = IFGOTO;
             }
             ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
