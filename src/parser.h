@@ -10,7 +10,6 @@ typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEN
 typedef struct
 {
     char *str;
-    char *initvarstr;
 
     // control flow
     int labelid; // != 0 is a label for a goto

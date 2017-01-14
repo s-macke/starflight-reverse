@@ -698,6 +698,7 @@ void Spc(FILE *fp, int spc)
 
 void WriteWordHeader(FILE *fp, DICTENTRY *e)
 {
+    int i = 0;
     if (e == NULL)
     {
         fprintf(stderr, "Error: No dictentry found");
@@ -718,10 +719,17 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
         RemoveGotos(e);
         RemoveGotos(e);
         //RemoveGotos(e);
-        if (pline[e->parp-2].initvarstr != NULL) fprintf(fp, "%s", pline[e->parp-2].initvarstr);
+        if (e->nvars > 0)
+        {
+            fprintf(fp, "  unsigned short int ");
+            for(i=0; i<e->nvars-1; i++)
+            {
+                fprintf(fp, "%s, ", e->vars[i]);
+            }
+            fprintf(fp, "%s;\n", e->vars[e->nvars-1]);
+        }
     }
 }
-
 
 void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
