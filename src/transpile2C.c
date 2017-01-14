@@ -651,6 +651,11 @@ void AddFlow(controlflowenum *oldflow, controlflowenum newflow)
         fprintf(stderr, "Error: Too much closing brackets");
         exit(1);
     }
+    if ((*oldflow == DOSIMPLE) && (newflow == DOSIMPLE))
+    {
+        fprintf(stderr, "Error: flow already full");
+        exit(1);
+    }
     *oldflow = newflow;
 }
 
@@ -677,6 +682,31 @@ void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
+void TreatLoop(DICTENTRY *e, int ifgotoaddr)
+{
+    int labeladdr = pline[ifgotoaddr].gotoaddr;
+    if (labeladdr > ifgotoaddr) return;
+    if (pline[labeladdr].flow != NONE) return;
+    if (ContainsFlow(labeladdr+1, ifgotoaddr)) return;
+
+    AddFlow(&pline[labeladdr].flow, DOSIMPLE);
+    AddFlow(&pline[ifgotoaddr].flow, LOOPTEST);
+    if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
+}
+
+void TreatEndlessLoop(DICTENTRY *e, int gotoaddr)
+{
+    int labeladdr = pline[gotoaddr].gotoaddr;
+    if (labeladdr > gotoaddr) return;
+    if (pline[labeladdr].flow != NONE) return;
+    if (ContainsFlow(labeladdr+1, gotoaddr)) return;
+
+    AddFlow(&pline[labeladdr].flow, DOSIMPLE);
+    AddFlow(&pline[gotoaddr].flow, LOOPENDLESS);
+    if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
+}
+
+
 void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
@@ -698,7 +728,7 @@ void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
     if (IsLabelStillInUse(e, labeladdr))
     {
         fprintf(stderr, "Error: label still in use\n");
-        //exit(1);
+        exit(1);
     }
     pline[labeladdr].labelid = 0;
 }
@@ -712,6 +742,11 @@ void RemoveGotos(DICTENTRY *e)
         {
             TreatIfGoto(e, addr);
             TreatIfElseGoto(e, addr);
+            TreatLoop(e, addr);
+        }
+        if (pline[addr].flow == GOTO)
+        {
+            TreatEndlessLoop(e, addr);
         }
         addr++;
     }
@@ -807,6 +842,26 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
                 Spc(fp, nspc);
                 fprintf(fp, "{\n");
                 nspc++;
+                break;
+
+            case DOSIMPLE:
+                Spc(fp, nspc);
+                fprintf(fp, "do\n");
+                Spc(fp, nspc);
+                fprintf(fp, "{\n");
+                nspc++;
+                break;
+
+            case LOOPTEST:
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "} while(Pop() == 0);\n");
+                break;
+
+            case LOOPENDLESS:
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "} while(1);\n");
                 break;
 
             case LOOP:
