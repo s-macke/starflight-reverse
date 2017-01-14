@@ -218,8 +218,8 @@ void UNK_0xf1e1() // UNK_0xf1e1
     Push(Pop() + Pop()); // +
     POS_dot_(); // POS.
     BLT(); // BLT
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   _ex_CRS(); // !CRS
 }

@@ -316,8 +316,8 @@ void UNK_0xef4a() // UNK_0xef4a
     PRINT("ATTENTION", 9); // (.")
     Push(5);
     SPACES(); // SPACES
-  i++;
-  } while(i<imax); // (LOOP) 0xffee
+    i++;
+  } while(i<imax); // (LOOP)
 
   GCR(); // GCR
   UNK_0x3f09("THE MANIFEST-COMPUTER CAPACITY HAS");

@@ -752,11 +752,11 @@ void UNK_0xf007() // UNK_0xf007
       Push(b); // R>
       Pop(); Pop();// 2DROP
       Pop(); Pop();// 2DROP
-    j++;
-  } while(j<jmax); // (LOOP) 0xff5c
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xff52
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

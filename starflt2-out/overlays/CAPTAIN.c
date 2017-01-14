@@ -680,8 +680,8 @@ void UNK_0xe657() // UNK_0xe657
     PAD(); // PAD
     _do__dot_(); // $.
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1028,8 +1028,8 @@ void UNK_0xe872() // UNK_0xe872
       UNK_0xe848(); // UNK_0xe848
       Push(pp_UNK_0xe436); // UNK_0xe436
       _plus__ex__2(); // +!_2
-    i++;
-  } while(i<imax); // (LOOP) 0xfff6
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   Push(pp_UNK_0xe436); // UNK_0xe436
@@ -1147,14 +1147,14 @@ void UNK_0xe8d0() // UNK_0xe8d0
             C_ex__2(); // C!_2
             jmax = j; // LEAVE
           }
-        j++;
-  } while(j<jmax); // (LOOP) 0xffd2
+          j++;
+        } while(j<jmax); // (LOOP)
 
       }
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xff7c
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1262,8 +1262,8 @@ void UNK_0xe98c() // UNK_0xe98c
           _gt_BOX(); // >BOX
           ICLOSE(); // ICLOSE
         }
-      j++;
-  } while(j<jmax); // (LOOP) 0xffbc
+        j++;
+      } while(j<jmax); // (LOOP)
 
       Push(0x65f3); // IFIELD(UNK_0xe4ec)
       Push(7);
@@ -1271,8 +1271,8 @@ void UNK_0xe98c() // UNK_0xe98c
       FILL_2(); // FILL_2
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xff9a
+    i++;
+  } while(i<imax); // (LOOP)
 
   IOPEN(); // IOPEN
   Push(0x000b);

@@ -386,8 +386,8 @@ void _dot_HYBRID() // .HYBRID
     _dash_(); // -
     Push(pp_ABLT); // ABLT
     _plus__ex_(); // +!
-  i++;
-  } while(i<imax); // (LOOP) 0xff9c
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

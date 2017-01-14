@@ -430,10 +430,10 @@ void UNK_0xe928() // UNK_0xe928
       imax = i; // LEAVE
     }
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffd4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -500,8 +500,8 @@ void UNK_0xea0a() // UNK_0xea0a
     Push(i); // I
     Push(1);
     _star_CREATE(); // *CREATE
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -564,8 +564,8 @@ void UNK_0xeaa0() // UNK_0xeaa0
     Push(pp_RECORD_n_); // RECORD#
     _ex__3(); // !_3
     UNK_0xea78(); // UNK_0xea78
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
   SET_dash_CURRENT(); // SET-CURRENT
 }
@@ -1105,8 +1105,8 @@ void UNK_0xf23c() // UNK_0xf23c
     {
       UNK_0xf067(); // UNK_0xf067
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
@@ -1169,8 +1169,8 @@ void UNK_0xf286() // UNK_0xf286
       imax = i; // LEAVE
     }
     UNK_0xf1d3(); // UNK_0xf1d3
-  i++;
-  } while(i<imax); // (LOOP) 0xffbc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1217,8 +1217,8 @@ void UNK_0xf2da() // UNK_0xf2da
       imax = i; // LEAVE
     }
     UNK_0xf1d3(); // UNK_0xf1d3
-  i++;
-  } while(i<imax); // (LOOP) 0xffc6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1338,8 +1338,8 @@ void UNK_0xf382() // UNK_0xf382
       OVER(); // OVER
       LoadData("UNK_0xe8a7"); // from 'CREATURE    '
       C_ex_(); // C!
-    i++;
-  } while(i<imax); // (LOOP) 0xffea
+      i++;
+    } while(i<imax); // (LOOP)
 
   } else
   {
@@ -1405,8 +1405,8 @@ void UNK_0xf40c() // UNK_0xf40c
     {
       UNK_0xf3ea(); // UNK_0xf3ea
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xfff2
+    i++;
+  } while(i<imax); // (LOOP)
 
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE

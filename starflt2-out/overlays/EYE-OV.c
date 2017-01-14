@@ -535,10 +535,10 @@ void UNK_0xee25() // UNK_0xee25
     Push(Pop() + Pop()); // +
     UNK_0xedb5(); // UNK_0xedb5
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -633,10 +633,10 @@ void UNK_0xeebd() // UNK_0xeebd
     Push(i); // I
     UNK_0xee3f(); // UNK_0xee3f
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff8
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -845,8 +845,8 @@ void UNK_0xf098() // UNK_0xf098
     RNDCLR(); // RNDCLR
     BFILL(); // BFILL
     V_gt_DISPL(); // V>DISPL
-  i++;
-  } while(i<imax); // (LOOP) 0xfff8
+    i++;
+  } while(i<imax); // (LOOP)
 
   DARK(); // DARK
   V_gt_DISPL(); // V>DISPL
@@ -898,10 +898,10 @@ void UNK_0xf0ca() // UNK_0xf0ca
     _ex__2(); // !_2
     UNK_0xeebd(); // UNK_0xeebd
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff0
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x00fa);
   MS(); // MS

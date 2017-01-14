@@ -922,8 +922,8 @@ void UNK_0xf4ec() // UNK_0xf4ec
     {
       Pop(); // DROP
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffc4
+    i++;
+  } while(i<imax); // (LOOP)
 
   DCLIPSE(); // DCLIPSE
 }

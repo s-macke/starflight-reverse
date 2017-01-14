@@ -95,8 +95,8 @@ void UNK_0xf2c6() // UNK_0xf2c6
     Push(0x000f);
     Push(0x000c);
     TILEFIL(); // TILEFIL
-  i++;
-  } while(i<imax); // (LOOP) 0xffd4
+    i++;
+  } while(i<imax); // (LOOP)
 
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
@@ -202,8 +202,8 @@ void UNK_0xf3e6() // UNK_0xf3e6
     Push(pp_ABLT); // ABLT
     _st__ex__gt_(); // <!>
     BLT(); // BLT
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -304,8 +304,8 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(2);
     Push(pp_YBLT); // YBLT
     _st__plus__ex__gt_(); // <+!>
-  i++;
-  } while(i<imax); // (LOOP) 0xff8c
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }

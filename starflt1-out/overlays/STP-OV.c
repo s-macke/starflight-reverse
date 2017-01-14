@@ -686,8 +686,8 @@ void UNK_0xf34b() // UNK_0xf34b
     _dash_(); // -
     Push(0);
     D_plus_(); // D+
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xf042); // UNK_0xf042
   D_ex_(); // D!

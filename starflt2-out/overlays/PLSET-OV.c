@@ -371,8 +371,8 @@ void UNK_0xee44() // UNK_0xee44
         SWAP(); // SWAP
       }
       Push(Pop()>>1); // 2/
-    i++;
-  } while(i<imax); // (LOOP) 0xffdc
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
     a = Pop(); // >R

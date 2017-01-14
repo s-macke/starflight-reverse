@@ -650,8 +650,8 @@ void UNK_0xf2f5() // UNK_0xf2f5
         Push(pp_UNK_0xf188); // UNK_0xf188
         _plus__ex__2(); // +!_2
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffbc
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   Push(2);
@@ -752,8 +752,8 @@ void UNK_0xf3bc() // UNK_0xf3bc
     _dash_(); // -
     Push(0);
     D_plus_(); // D+
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   Push(pp_UNK_0xf190); // UNK_0xf190

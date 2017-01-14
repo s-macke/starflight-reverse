@@ -1010,8 +1010,8 @@ void UNK_0xebeb() // UNK_0xebeb
     PAD(); // PAD
     _do__dot_(); // $.
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1322,8 +1322,8 @@ void UNK_0xed96() // UNK_0xed96
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffb6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
   Push(Read16(Pop())); // @
@@ -1786,8 +1786,8 @@ void UNK_0xf174() // UNK_0xf174
         SetColor("GREY2");
         WSHORTE(); // WSHORTE
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffe0
+      i++;
+    } while(i<imax); // (LOOP)
 
     UNK_0xec97(); // UNK_0xec97
     return;

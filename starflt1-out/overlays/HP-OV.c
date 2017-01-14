@@ -657,10 +657,10 @@ void UNK_0xe53d() // UNK_0xe53d
       imax = i; // LEAVE
     }
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffd4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -872,8 +872,8 @@ void UNK_0xe762() // UNK_0xe762
       _2OVER(); // 2OVER
       LoadData("UNK_0xe467"); // from 'CREATURE    '
       _1_dot_5_ex_(); // 1.5!
-    i++;
-  } while(i<imax); // (LOOP) 0xffea
+      i++;
+    } while(i<imax); // (LOOP)
 
   } else
   {

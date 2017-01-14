@@ -460,8 +460,8 @@ void UNK_0xf01c() // UNK_0xf01c
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xef6a); // UNK_0xef6a

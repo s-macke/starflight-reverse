@@ -557,8 +557,8 @@ void UNK_0xe026() // UNK_0xe026
     Push(Read8(Pop())&0xFF); // C@
     Push(0x03de);
     P_ex_(); // P!
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   Push(3);
@@ -780,11 +780,11 @@ void SCR_gt_CG() // SCR>CG
       Push(Read16(Pop())); // @
       ROT(); // ROT
       LC_ex_(); // LC!
-    j++;
-  } while(j<jmax); // (LOOP) 0xffcc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffc0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1602,11 +1602,11 @@ void SCR_gt_EG() // SCR>EG
         Push(i); // J
         PLOT(); // PLOT
       }
-    j++;
-  } while(j<jmax); // (LOOP) 0xffb6
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffaa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   Push(pp_XORMODE); // XORMODE
@@ -1741,8 +1741,8 @@ void CHECKSUM() // CHECKSUM
     Push(pp_CKSUM); // CKSUM
     _plus__ex_(); // +!
     Push(1);
-  i += Pop();
-} while(i<imax); // (/LOOP) 0xfff0
+    i += Pop();
+  } while(i<imax); // (/LOOP)
 
   Pop(); // DROP
 }
@@ -1843,8 +1843,8 @@ void PUSHVECT() // PUSHVECT
     Push(i); // I
     GetTableEntry("VECTORERRORS");
     Push(Read16(Pop())); // @
-  i++;
-  } while(i<imax); // (LOOP) 0xfff8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1868,10 +1868,10 @@ void POPVECT() // POPVECT
     GetTableEntry("VECTORERRORS");
     _ex__3(); // !_3
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   UNK_0xea11(); // UNK_0xea11
   Push(pp__3DSEG); // 3DSEG
@@ -2112,8 +2112,8 @@ void _v_DISK() // |DISK
       Pop(); Pop();// 2DROP
       Push(0x0400);
       _dash_(); // -
-    i++;
-  } while(i<imax); // (LOOP) 0xffb0
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(a); // I
     if (Pop() != 0)
@@ -2420,8 +2420,8 @@ void UNK_0xeda2() // UNK_0xeda2
     Push(i); // I
     GetTableEntry("HOST");
     Push(Read16(Pop())); // @
-  i++;
-  } while(i<imax); // (LOOP) 0xfff8
+    i++;
+  } while(i<imax); // (LOOP)
 
   _ro_RESTORE_rc_(); // (RESTORE)
 }
@@ -2446,10 +2446,10 @@ void UNK_0xedb8() // UNK_0xedb8
     GetTableEntry("HOST");
     _ex__3(); // !_3
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   CFIGARRAYS(); // CFIGARRAYS
   _ro_SETUP_rc_(); // (SETUP)
@@ -2623,8 +2623,8 @@ void BOX() // BOX
     Exec("POSITION"); // call of word 0x2767 '(POSITION)'
     Push(a); // J
     UNK_0xee7b(); // UNK_0xee7b
-  i++;
-  } while(i<imax); // (LOOP) 0xfff0
+    i++;
+  } while(i<imax); // (LOOP)
 
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
@@ -2769,11 +2769,11 @@ void UNK_0xf069() // UNK_0xf069
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xfff0
+    i++;
+  } while(i<imax); // (LOOP)
 
   TIME(); // TIME
   _2_at_(); // 2@

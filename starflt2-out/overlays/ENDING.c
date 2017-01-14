@@ -412,11 +412,11 @@ void UNK_0xe86a() // UNK_0xe86a
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -1280,11 +1280,11 @@ void UNK_0xed8d() // UNK_0xed8d
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1304,8 +1304,8 @@ void UNK_0xedb9() // UNK_0xedb9
   do // (DO)
   {
     UNK_0xed8d(); // UNK_0xed8d
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -1602,10 +1602,10 @@ void UNK_0xef5d() // UNK_0xef5d
     Push(pp_LSCAN); // LSCAN
     C_ex__2(); // C!_2
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffc2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); // DROP
 }
@@ -1666,8 +1666,8 @@ void UNK_0xefdb() // UNK_0xefdb
   do // (DO)
   {
     UNK_0xefab(); // UNK_0xefab
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   KEY_2(); // KEY_2
   Pop(); // DROP
@@ -1884,8 +1884,8 @@ void UNK_0xf15c() // UNK_0xf15c
   {
     Push(i); // I
     UNK_0xf138(); // UNK_0xf138
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -2065,8 +2065,8 @@ void UNK_0xf264() // UNK_0xf264
   do // (DO)
   {
     UNK_0xed8d(); // UNK_0xed8d
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(9);
   Push(4);
@@ -2092,8 +2092,8 @@ void UNK_0xf264() // UNK_0xf264
     }
     V_gt_DISPL(); // V>DISPL
     UNK_0xed8d(); // UNK_0xed8d
-  j++;
-  } while(j<jmax); // (LOOP) 0xffda
+    j++;
+  } while(j<jmax); // (LOOP)
 
   Push(3);
   UNK_0xedb9(); // UNK_0xedb9
@@ -2137,8 +2137,8 @@ void UNK_0xf2b0() // UNK_0xf2b0
     OVER(); // OVER
     RRND(); // RRND
     TONE(); // TONE
-  i++;
-  } while(i<imax); // (LOOP) 0xfff4
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   Pop(); // DROP
@@ -2180,8 +2180,8 @@ void UNK_0xf2fa() // UNK_0xf2fa
       }
       Push(0x000f);
       MS(); // MS
-    i++;
-  } while(i<imax); // (LOOP) 0xffe8
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   UNK_0xf246(); // UNK_0xf246
@@ -2252,8 +2252,8 @@ void UNK_0xf33e() // UNK_0xf33e
       Pop(); // DROP
     }
     IPREV(); // IPREV
-  i++;
-  } while(i<imax); // (LOOP) 0xffc2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(3);
   _star_CLOSE(); // *CLOSE

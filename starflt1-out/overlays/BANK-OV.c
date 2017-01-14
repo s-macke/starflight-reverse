@@ -306,8 +306,8 @@ void TRANSACT() // TRANSACT
         Push(Pop()+1); // 1+
         imax = i; // LEAVE
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xfff2
+      i++;
+    } while(i<imax); // (LOOP)
 
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
@@ -604,8 +604,8 @@ void UNK_0xf26f() // UNK_0xf26f
     Push(i); // I
     Push(Pop() + Pop()); // +
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xffa6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(5);
   Push(0x00c2);

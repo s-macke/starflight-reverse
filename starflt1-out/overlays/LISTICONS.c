@@ -109,8 +109,8 @@ void altitude() // altitude
     Push(0x0010);
     Push(0x000c);
     TILEFILL(); // TILEFILL
-  i++;
-  } while(i<imax); // (LOOP) 0xffd4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x0023);
   Push(0x0019);
@@ -190,8 +190,8 @@ void _dot_BLT() // .BLT
     Push(pp_ABLT); // ABLT
     _st__ex__gt_(); // <!>
     BLT(); // BLT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -264,8 +264,8 @@ void SEE_dash_BLTS() // SEE-BLTS
     Push(2);
     Push(pp_YBLT); // YBLT
     _st__plus__ex__gt_(); // <+!>
-  i++;
-  } while(i<imax); // (LOOP) 0xffae
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }

@@ -173,10 +173,10 @@ void UNK_0xf47c() // UNK_0xf47c
     }
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffde
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   ICLOSE(); // ICLOSE
 }

@@ -804,8 +804,8 @@ void UNK_0xf070() // UNK_0xf070
       _plus__ex__2(); // +!_2
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -952,8 +952,8 @@ void UNK_0xf12e() // UNK_0xf12e
         ON_2(); // ON_2
       }
       ICLOSE(); // ICLOSE
-    i++;
-  } while(i<imax); // (LOOP) 0xfff0
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   Push(pp_UNK_0xf12a); // UNK_0xf12a
@@ -1028,10 +1028,10 @@ void UNK_0xf18c() // UNK_0xf18c
     Push(0x0028);
     MS(); // MS
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffdc
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -1488,8 +1488,8 @@ void UNK_0xf482() // UNK_0xf482
     BEEP(); // BEEP
     Push(0x01f4);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(a); // R>
   Push(pp_BEEPTONE); // BEEPTONE

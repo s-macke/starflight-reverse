@@ -664,11 +664,11 @@ void UNK_0xec32() // UNK_0xec32
       Push(b); // R>
       Pop(); Pop();// 2DROP
       Pop(); Pop();// 2DROP
-    j++;
-  } while(j<jmax); // (LOOP) 0xff58
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xff4e
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_BLTSEG); // BLTSEG
   _ex__2(); // !_2
@@ -1534,8 +1534,8 @@ void UNK_0xf25f() // UNK_0xf25f
     Push(0x0064);
     Push(Pop() + Pop()); // +
     TONE(); // TONE
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }

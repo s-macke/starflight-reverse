@@ -368,8 +368,8 @@ void UNK_0xebc1() // UNK_0xebc1
     OVER(); // OVER
     Push(0x0049);
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xff96
+    i++;
+  } while(i<imax); // (LOOP)
 
   _gt_1FONT(); // >1FONT
   Push(0x000a);
@@ -622,8 +622,8 @@ void UNK_0xee31() // UNK_0xee31
     Push(3);
     OVER(); // OVER
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xffb6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(2);
   Push(0x00c6);
@@ -821,8 +821,8 @@ void UNK_0xf052() // UNK_0xf052
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
     POS_dot_PXT(); // POS.PXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffb4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(2);
   SetColor("GREY2");
@@ -950,8 +950,8 @@ void UNK_0xf1cb() // UNK_0xf1cb
       }
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffd8
+    i++;
+  } while(i<imax); // (LOOP)
 
   ICLOSE(); // ICLOSE
 }
@@ -1205,8 +1205,8 @@ void UNK_0xf410() // UNK_0xf410
     _plus__ex__2(); // +!_2
     Push(Pop() | Pop()); // OR
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1253,10 +1253,10 @@ void UNK_0xf442() // UNK_0xf442
     C_ex__2(); // C!_2
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffe6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -1352,8 +1352,8 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
       Push(i); // I
       UNK_0xf3ce(); // UNK_0xf3ce
       ICLOSE(); // ICLOSE
-    i++;
-  } while(i<imax); // (LOOP) 0xffb2
+      i++;
+    } while(i<imax); // (LOOP)
 
     UNK_0xf442(); // UNK_0xf442
     ICLOSE(); // ICLOSE

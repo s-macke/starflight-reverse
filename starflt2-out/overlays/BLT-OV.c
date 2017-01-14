@@ -218,8 +218,8 @@ void UNK_0xf07b() // UNK_0xf07b
       C_ex__2(); // C!_2
       Push(Pop()+1); // 1+
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x002e);
   OVER(); // OVER
@@ -250,8 +250,8 @@ void UNK_0xf07b() // UNK_0xf07b
       C_ex__2(); // C!_2
       Push(Pop()+1); // 1+
     }
-  j++;
-  } while(j<jmax); // (LOOP) 0xffdc
+    j++;
+  } while(j<jmax); // (LOOP)
 
   Pop(); // DROP
   SAVE_dash_OV(); // SAVE-OV
@@ -579,8 +579,8 @@ void UNK_0xf280() // UNK_0xf280
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() == 0) goto label3;
-  i++;
-  } while(i<imax); // (LOOP) 0xffa2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -621,8 +621,8 @@ void UNK_0xf30a() // UNK_0xf30a
       Push(1);
       Push(pp_DST); // DST
       _plus__ex__2(); // +!_2
-    j++;
-  } while(j<jmax); // (LOOP) 0xfff0
+      j++;
+    } while(j<jmax); // (LOOP)
 
     Push(Pop() + Pop()); // +
     Push(pp_DST); // DST
@@ -633,8 +633,8 @@ void UNK_0xf30a() // UNK_0xf30a
     Push(Pop() + Pop()); // +
     Push(pp_SRC); // SRC
     _ex__2(); // !_2
-  i++;
-  } while(i<imax); // (LOOP) 0xffc8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

@@ -444,10 +444,10 @@ void UNK_0xe687() // UNK_0xe687
     Push(i); // I
     LPLOT(); // LPLOT
     Push(0x000a);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x00c7);
   Push(0x0053);
@@ -460,10 +460,10 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
     Push(j); // I
     LPLOT(); // LPLOT
     Push(0x0032);
-  int step = Pop();
-  j += step;
-if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
-} while(1); // (+LOOP) 0xfff2
+    int step = Pop();
+    j += step;
+    if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x009c);
   Push(0x001d);
@@ -483,10 +483,10 @@ if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
     Push(0x001f);
     LLINE(); // LLINE
     Push(5);
-  int step = Pop();
-  k += step;
-if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
-} while(1); // (+LOOP) 0xffee
+    int step = Pop();
+    k += step;
+    if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x009c);
   Push(0x002d);
@@ -499,10 +499,10 @@ if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
     Push(0x0020);
     LPLOT(); // LPLOT
     Push(0x0019);
-  int step = Pop();
-  l += step;
-if (((step>=0) && (l>=lmax)) || ((step<0) && (l<=lmax))) break;
-} while(1); // (+LOOP) 0xfff2
+    int step = Pop();
+    l += step;
+    if (((step>=0) && (l>=lmax)) || ((step<0) && (l<=lmax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -725,10 +725,10 @@ void UNK_0xe8a8() // UNK_0xe8a8
     _n__gt_(); // #>
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x0019);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffcc
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -776,10 +776,10 @@ void UNK_0xe8f2() // UNK_0xe8f2
     _n__gt_(); // #>
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x0032);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffc6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -820,8 +820,8 @@ void UNK_0xe942() // UNK_0xe942
     SWAP(); // SWAP
     _star__slash_(); // */
     FILLCIRC(); // FILLCIRC
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -861,8 +861,8 @@ void UNK_0xe97e() // UNK_0xe97e
       WLD_gt_SCR(); // WLD>SCR
       LPLOT(); // LPLOT
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1011,8 +1011,8 @@ void UNK_0xea70() // UNK_0xea70
       _at_IH(); // @IH
       UNK_0xea4c(); // UNK_0xea4c
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1417,8 +1417,8 @@ void UNK_0xed4c() // UNK_0xed4c
     UNK_0xe818(); // UNK_0xe818
     Push(0x00c8);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

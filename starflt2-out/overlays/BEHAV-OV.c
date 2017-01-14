@@ -1361,11 +1361,11 @@ void UNK_0xea86() // UNK_0xea86
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -1796,8 +1796,8 @@ void UNK_0xeca4() // UNK_0xeca4
       UNK_0xe758(); // UNK_0xe758
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1854,8 +1854,8 @@ void UNK_0xece0() // UNK_0xece0
         }
       }
       ICLOSE(); // ICLOSE
-    i++;
-  } while(i<imax); // (LOOP) 0xffc6
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   UNK_0xe72e(); // UNK_0xe72e
@@ -1954,10 +1954,10 @@ void CIRCLES() // CIRCLES
         Push(Pop() + Pop()); // +
         TONE(); // TONE
         Push(5);
-      int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffd6
+        int step = Pop();
+        i += step;
+        if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+      } while(1); // (+LOOP)
 
       BEEPOFF(); // BEEPOFF
       UNK_0xed66(); // UNK_0xed66
@@ -2242,8 +2242,8 @@ void UNK_0xef4c() // UNK_0xef4c
             Pop(); // DROP
             Push(1);
           }
-        i++;
-  } while(i<imax); // (LOOP) 0xffea
+          i++;
+        } while(i<imax); // (LOOP)
 
       }
     }
@@ -2591,8 +2591,8 @@ void UNK_0xf19a() // UNK_0xf19a
             Pop(); // DROP
             Push(1);
           }
-        i++;
-  } while(i<imax); // (LOOP) 0xffea
+          i++;
+        } while(i<imax); // (LOOP)
 
       }
     }
@@ -2788,10 +2788,10 @@ void UNK_0xf312() // UNK_0xf312
     }
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffde
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE

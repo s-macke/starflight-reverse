@@ -610,8 +610,8 @@ void UNK_0xe867() // UNK_0xe867
     Push(1);
     Push(pp_UNK_0xe6c5); // UNK_0xe6c5
     _plus__ex_(); // +!
-  i++;
-  } while(i<imax); // (LOOP) 0xffc4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -770,10 +770,10 @@ void UNK_0xe94b() // UNK_0xe94b
       imax = i; // LEAVE
     }
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffd4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -2180,8 +2180,8 @@ void _ask_TALK() // ?TALK
         UNK_0xec53(); // UNK_0xec53
         UNK_0xec53(); // UNK_0xec53
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffbe
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   Push(a); // R>

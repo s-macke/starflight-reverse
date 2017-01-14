@@ -765,11 +765,11 @@ void UNK_0xe921() // UNK_0xe921
       Push(b); // R>
       Pop(); Pop();// 2DROP
       Pop(); Pop();// 2DROP
-    j++;
-  } while(j<jmax); // (LOOP) 0xff5c
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xff52
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3

@@ -1141,8 +1141,8 @@ void UNK_0xe921() // UNK_0xe921
     PAD(); // PAD
     _do__dot_(); // $.
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1453,8 +1453,8 @@ void UNK_0xeacc() // UNK_0xeacc
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffb6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xe2be); // UNK_0xe2be
   Push(Read16(Pop())); // @
@@ -1698,8 +1698,8 @@ void UNK_0xecfc() // UNK_0xecfc
     SPACES(); // SPACES
     _do__dot_(); // $.
     GCR(); // GCR
-  i++;
-  } while(i<imax); // (LOOP) 0xffca
+    i++;
+  } while(i<imax); // (LOOP)
 
   GCR(); // GCR
   GCR(); // GCR
@@ -2150,8 +2150,8 @@ void UNK_0xf0aa() // UNK_0xf0aa
       }
       UNK_0xe9eb(); // UNK_0xe9eb
       UNK_0xe999(); // UNK_0xe999
-    i++;
-  } while(i<imax); // (LOOP) 0xffdc
+      i++;
+    } while(i<imax); // (LOOP)
 
     _gt_DISPLAY(); // >DISPLAY
     SCR_dash_RES(); // SCR-RES

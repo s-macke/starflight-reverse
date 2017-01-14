@@ -463,8 +463,8 @@ void UNK_0xe797() // UNK_0xe797
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   a = Pop(); // >R
   SWAP(); // SWAP
@@ -516,8 +516,8 @@ void UNK_0xe7df() // UNK_0xe7df
       _dash_(); // -
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -1307,8 +1307,8 @@ void UNK_0xecbd() // UNK_0xecbd
     }
     Push(a); // R>
     Pop(); // DROP
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1357,8 +1357,8 @@ void UNK_0xed17() // UNK_0xed17
     POS_dot_(); // POS.
     UNK_0xed0f(); // UNK_0xed0f
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -2233,8 +2233,8 @@ void DESCRIBE() // DESCRIBE
       UNK_0xef45(); // UNK_0xef45
       UNK_0xef45(); // UNK_0xef45
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffce
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(a); // R>
   _ex_COLOR(); // !COLOR

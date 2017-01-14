@@ -922,8 +922,8 @@ void UNK_0xea92() // UNK_0xea92
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1184,8 +1184,8 @@ void UNK_0xec56() // UNK_0xec56
       _st__plus__ex__gt_(); // <+!>
     }
     Push(Pop() | Pop()); // OR
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1326,8 +1326,8 @@ void UNK_0xed68() // UNK_0xed68
       {
         Pop(); Pop();// 2DROP
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffcb
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(pp__ask_HEAL); // ?HEAL
     ON_2(); // ON_2
@@ -1426,10 +1426,10 @@ void UNK_0xee11() // UNK_0xee11
       imax = i; // LEAVE
     }
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffc4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -1535,11 +1535,11 @@ void UNK_0xeed5() // UNK_0xeed5
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -1585,8 +1585,8 @@ void UNK_0xef1f() // UNK_0xef1f
         Push(i); // I
         RRND(); // RRND
         TONE(); // TONE
-      i++;
-  } while(i<imax); // (LOOP) 0xfff6
+        i++;
+      } while(i<imax); // (LOOP)
 
       BEEPOFF(); // BEEPOFF
     }
@@ -1648,8 +1648,8 @@ void UNK_0xef73() // UNK_0xef73
       {
         ICLOSE(); // ICLOSE
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffcc
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
   }
@@ -2020,10 +2020,10 @@ void UNK_0xf1b5() // UNK_0xf1b5
       Push(i); // I
       _dot_CIRCLE_1(); // .CIRCLE_1
       Push(2);
-    int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff6
+      int step = Pop();
+      i += step;
+      if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+    } while(1); // (+LOOP)
 
     Pop(); Pop();// 2DROP
     V_gt_DISPL(); // V>DISPL
@@ -2172,8 +2172,8 @@ void UNK_0xf283() // UNK_0xf283
         Pop(); // DROP
         ICLOSE(); // ICLOSE
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffca
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
   }

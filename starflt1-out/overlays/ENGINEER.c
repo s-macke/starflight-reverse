@@ -335,8 +335,8 @@ void DBARS() // DBARS
   {
     Push(i); // I
     UNK_0xed5c(); // UNK_0xed5c
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x6400); // IFIELD(UNK_0xec70)
   Push(Read8(Pop())&0xFF); // C@
@@ -411,8 +411,8 @@ void UNK_0xee68() // UNK_0xee68
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(a); // R>
   Pop(); // DROP

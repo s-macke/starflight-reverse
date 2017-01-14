@@ -448,12 +448,12 @@ void UNK_0xed61() // UNK_0xed61
           Push(pp_UNK_0xed5d); // UNK_0xed5d
           _plus__ex__2(); // +!_2
         }
-      j++;
-  } while(j<jmax); // (LOOP) 0xffe4
+        j++;
+      } while(j<jmax); // (LOOP)
 
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffca
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -608,8 +608,8 @@ void UNK_0xee5f() // UNK_0xee5f
     PRINT("TARGETING", 9); // (.")
     Push(0x00fa);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffe4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -785,10 +785,10 @@ void UNK_0xef54() // UNK_0xef54
     UNK_0xec4c(); // UNK_0xec4c
     Push(-Pop()); // NEGATE
     Push(Pop()*2); // 2*
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffe2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   UNK_0xecb3(); // UNK_0xecb3
 }
@@ -845,12 +845,12 @@ void UNK_0xefa4() // UNK_0xefa4
       {
         POINT_gt_I(); // POINT>I
         UNK_0xef86(); // UNK_0xef86
-      j++;
-  } while(j<jmax); // (LOOP) 0xfffa
+        j++;
+      } while(j<jmax); // (LOOP)
 
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -880,8 +880,8 @@ void UNK_0xefd4() // UNK_0xefd4
     _slash_(); // /
     RRND(); // RRND
     TONE(); // TONE
-  i++;
-  } while(i<imax); // (LOOP) 0xfff0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -913,8 +913,8 @@ void UNK_0xeffc() // UNK_0xeffc
     _dot_CIRCLE_1(); // .CIRCLE_1
     DISPLAY(); // DISPLAY
     V_gt_DISPL(); // V>DISPL
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPON_2(); // BEEPON_2
   SetColor("WHITE");
@@ -1263,8 +1263,8 @@ void UNK_0xf20c() // UNK_0xf20c
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -1454,8 +1454,8 @@ void UNK_0xf306() // UNK_0xf306
     V_gt_DISPL(); // V>DISPL
     Push(0x0020);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffda
+    i++;
+  } while(i<imax); // (LOOP)
 
   UNK_0xecb3(); // UNK_0xecb3
   Pop(); Pop();// 2DROP

@@ -618,8 +618,8 @@ void _plus_A_dash_VESS() // +A-VESS
     D_ex_(); // D!
     UNK_0xe602(); // UNK_0xe602
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffbe
+    i++;
+  } while(i<imax); // (LOOP)
 
   ICLOSE(); // ICLOSE
   Push(pp__ask_CALLING); // ?CALLING
@@ -658,10 +658,10 @@ void UNK_0xe73a() // UNK_0xe73a
     Push(a); // J
     _dot_CIRCLE(); // .CIRCLE
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffe6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Push(a); // R>
 }
@@ -716,10 +716,10 @@ void _ask_PRL() // ?PRL
     Push(i); // I
     UNK_0xe73a(); // UNK_0xe73a
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff8
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   _ex_CRS(); // !CRS
 
@@ -1014,8 +1014,8 @@ void DO_dash_FLARE() // DO-FLARE
     Push(Pop() + Pop()); // +
     _ex_COLOR(); // !COLOR
     BFILL(); // BFILL
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   DARK(); // DARK
   CTINIT(); // CTINIT
@@ -1592,8 +1592,8 @@ void UNK_0xee3b() // UNK_0xee3b
     RRND(); // RRND
     TONE(); // TONE
     Push(1);
-  i += Pop();
-} while(i<imax); // (/LOOP) 0xfff2
+    i += Pop();
+  } while(i<imax); // (/LOOP)
 
   BEEPOFF(); // BEEPOFF
   SetColor("BLACK");
@@ -2168,8 +2168,8 @@ void DMSG() // DMSG
         ON_3(); // ON_3
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffda
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xf1b1); // UNK_0xf1b1
   Push(Read16(Pop())); // @
@@ -2619,8 +2619,8 @@ void TRAK_dash_E() // TRAK-E
         ON_3(); // ON_3
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffc0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @

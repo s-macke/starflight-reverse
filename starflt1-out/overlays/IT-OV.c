@@ -288,8 +288,8 @@ void UNK_0xee70() // UNK_0xee70
     PRINT("ATTENTION", 9); // (.")
     Push(5);
     SPACES(); // SPACES
-  i++;
-  } while(i<imax); // (LOOP) 0xffee
+    i++;
+  } while(i<imax); // (LOOP)
 
   GCR(); // GCR
   UNK_0x3f3b("THE MANIFEST-COMPUTER CAPACITY HAS");

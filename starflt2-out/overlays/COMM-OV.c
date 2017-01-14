@@ -996,10 +996,10 @@ void UNK_0xd963() // UNK_0xd963
     Push(pp_LSCAN); // LSCAN
     C_ex__2(); // C!_2
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffc2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); // DROP
 }
@@ -1951,8 +1951,8 @@ void UNK_0xdebe() // UNK_0xdebe
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop() + Pop()); // +
     Push(1);
-  i += Pop();
-} while(i<imax); // (/LOOP) 0xfff6
+    i += Pop();
+  } while(i<imax); // (/LOOP)
 
 }
 
@@ -1999,8 +1999,8 @@ void UNK_0xdf4e() // UNK_0xdf4e
     Push(Pop()+1); // 1+
     CMOVE_2(); // CMOVE_2
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(3);
   _star_CLOSE(); // *CLOSE
@@ -2076,8 +2076,8 @@ void UNK_0xdfbd() // UNK_0xdfbd
     MOD(); // MOD
     UNK_0xdf92(); // UNK_0xdf92
     UNK_0xde9e(); // UNK_0xde9e
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
   PAD(); // PAD
@@ -2318,8 +2318,8 @@ void UNK_0xe13d() // UNK_0xe13d
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   a = Pop(); // >R
   SWAP(); // SWAP
@@ -2370,8 +2370,8 @@ void UNK_0xe16d() // UNK_0xe16d
       _dash_(); // -
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -5959,10 +5959,10 @@ void UNK_0xf3ce() // UNK_0xf3ce
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffea
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   ICLOSE(); // ICLOSE
   Push(pp_P_dash_RACES); // P-RACES

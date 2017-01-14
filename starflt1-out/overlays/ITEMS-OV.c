@@ -1311,8 +1311,8 @@ void UNK_0xe523() // UNK_0xe523
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1390,8 +1390,8 @@ void _do_match() // $match
       Push(i); // I
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffee
+    i++;
+  } while(i<imax); // (LOOP)
 
   SWAP(); // SWAP
   Pop(); // DROP
@@ -2124,8 +2124,8 @@ void UNK_0xeac0() // UNK_0xeac0
       SWAP(); // SWAP
       Pop(); // DROP
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffca
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -2199,8 +2199,8 @@ void UNK_0xeb62() // UNK_0xeb62
     Push(0x0026);
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     GCR(); // GCR
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -2865,8 +2865,8 @@ void UNK_0xeee4() // UNK_0xeee4
     {
       SetColor("BLACK");
       WSHORTE(); // WSHORTE
-    i++;
-  } while(i<imax); // (LOOP) 0xfffa
+      i++;
+    } while(i<imax); // (LOOP)
 
     return;
   }
@@ -3044,8 +3044,8 @@ void UNK_0xefd4() // UNK_0xefd4
     PAD(); // PAD
     _do__dot_(); // $.
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -3662,8 +3662,8 @@ void UNK_0xf36a() // UNK_0xf36a
       }
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffb2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x000a);
   Push(pp_ELEM_dash_AM); // ELEM-AM

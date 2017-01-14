@@ -247,11 +247,11 @@ void UNK_0xe59e() // UNK_0xe59e
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -700,8 +700,8 @@ void UNK_0xee17() // UNK_0xee17
       imax = i; // LEAVE
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffda
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -746,10 +746,10 @@ void UNK_0xf190() // UNK_0xf190
     }
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffde
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -959,10 +959,10 @@ void UNK_0xf4ad() // UNK_0xf4ad
     }
     _dot_SORD(); // .SORD
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffec
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 

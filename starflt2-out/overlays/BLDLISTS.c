@@ -798,8 +798,8 @@ void UNK_0xee99() // UNK_0xee99
       UNK_0xee89(); // UNK_0xee89
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }
@@ -901,8 +901,8 @@ void UNK_0xef03() // UNK_0xef03
       UNK_0xee06(); // UNK_0xee06
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1031,8 +1031,8 @@ void UNK_0xefad() // UNK_0xefad
       IINSERT(); // IINSERT
       UNK_0xeef3(); // UNK_0xeef3
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffce
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE

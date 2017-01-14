@@ -289,8 +289,8 @@ void UNK_0xe3fe() // UNK_0xe3fe
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -356,13 +356,13 @@ void UNK_0xe43a() // UNK_0xe43a
         _ex__2(); // !_2
         HLINE(); // HLINE
         Push(Pop()+2); // 2+
-      j++;
-  } while(j<jmax); // (LOOP) 0xffda
+        j++;
+      } while(j<jmax); // (LOOP)
 
     }
     Push(Pop()+1); // 1+
-  i++;
-  } while(i<imax); // (LOOP) 0xffba
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -797,8 +797,8 @@ void UNK_0xe6c9() // UNK_0xe6c9
     OVER(); // OVER
     Push(0x00c3);
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xff8e
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x004e);
   Push(0x00c5);
@@ -1355,8 +1355,8 @@ void UNK_0xec39() // UNK_0xec39
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
     POS_dot_PXT(); // POS.PXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffb4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(2);
   SetColor("GREY1");
@@ -1639,8 +1639,8 @@ void UNK_0xee3d() // UNK_0xee3d
     Push(0x0030);
     _dash_(); // -
     Push(Pop() + Pop()); // +
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xee39); // UNK_0xee39
   Push(Read16(Pop())); // @
@@ -1736,8 +1736,8 @@ void UNK_0xefd8() // UNK_0xefd8
     {
       INEXT(); // INEXT
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
   ICLOSE(); // ICLOSE
 }

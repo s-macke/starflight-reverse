@@ -202,8 +202,8 @@ void UNK_0xef73() // UNK_0xef73
     V_gt_DISPLAY(); // V>DISPLAY
     Push(0x01f4);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xff7d
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
 }
@@ -300,8 +300,8 @@ void UNK_0xf064() // UNK_0xf064
   do // (DO)
   {
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -539,10 +539,10 @@ void UNK_0xf1d6() // UNK_0xf1d6
     Push(0x03e8);
     MS(); // MS
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffea
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -596,11 +596,11 @@ void UNK_0xf25e() // UNK_0xf25e
     do // (DO)
     {
       UNK_0xf252(); // UNK_0xf252
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   _gt_DISPLAY(); // >DISPLAY
 }

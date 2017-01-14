@@ -793,8 +793,8 @@ void UNK_0xecce() // UNK_0xecce
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xff74
+    i++;
+  } while(i<imax); // (LOOP)
 
   SetColor("BLUE");
   _ex_COLOR(); // !COLOR
@@ -1639,8 +1639,8 @@ void UNK_0xf312() // UNK_0xf312
   do // (DO)
   {
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000f);
@@ -1813,10 +1813,10 @@ void UNK_0xf486() // UNK_0xf486
     }
     _dot_SORD(); // .SORD
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffec
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 

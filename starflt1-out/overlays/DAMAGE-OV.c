@@ -800,8 +800,8 @@ void UNK_0xed9e() // UNK_0xed9e
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1037,8 +1037,8 @@ void UNK_0xef3c() // UNK_0xef3c
       _st__plus__ex__gt_(); // <+!>
     }
     Push(Pop() | Pop()); // OR
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1161,8 +1161,8 @@ void UNK_0xf02e() // UNK_0xf02e
       {
         Pop(); Pop();// 2DROP
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffcb
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(pp__ask_HEAL); // ?HEAL
     ON_3(); // ON_3
@@ -1263,10 +1263,10 @@ void UNK_0xf0e0() // UNK_0xf0e0
       imax = i; // LEAVE
     }
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffc4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -1371,8 +1371,8 @@ void UNK_0xf19a() // UNK_0xf19a
         Push(i); // I
         RRND(); // RRND
         TONE(); // TONE
-      i++;
-  } while(i<imax); // (LOOP) 0xfff6
+        i++;
+      } while(i<imax); // (LOOP)
 
       BEEPOFF(); // BEEPOFF
     }
@@ -1415,8 +1415,8 @@ void UNK_0xf1ec() // UNK_0xf1ec
       _at_IH(); // @IH
       _gt_C_plus_S(); // >C+S
       UNK_0xf19a(); // UNK_0xf19a
-    i++;
-  } while(i<imax); // (LOOP) 0xfff0
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
   }
@@ -1797,10 +1797,10 @@ void UNK_0xf404() // UNK_0xf404
     Push(i); // I
     _dot_CIRCLE(); // .CIRCLE
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Pop(); Pop();// 2DROP
   V_gt_DISPLAY(); // V>DISPLAY
@@ -1889,8 +1889,8 @@ void UNK_0xf47f() // UNK_0xf47f
         Pop(); // DROP
         ICLOSE(); // ICLOSE
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffca
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
   }

@@ -434,8 +434,8 @@ void UNK_0xed2e() // UNK_0xed2e
         SWAP(); // SWAP
       }
       Push(Pop()>>1); // 2/
-    i++;
-  } while(i<imax); // (LOOP) 0xffdc
+      i++;
+    } while(i<imax); // (LOOP)
 
     Pop(); // DROP
     a = Pop(); // >R
@@ -1224,8 +1224,8 @@ void UNK_0xf280() // UNK_0xf280
     Push(1);
     Push(Pop() & Pop()); // AND
     Push(Pop() | Pop()); // OR
-  i++;
-  } while(i<imax); // (LOOP) 0xfff4
+    i++;
+  } while(i<imax); // (LOOP)
 
   SET_dash_CURRENT(); // SET-CURRENT
 }

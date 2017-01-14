@@ -391,8 +391,8 @@ void UNK_0xf480() // UNK_0xf480
       UNK_0xf438(); // UNK_0xf438
       UNK_0xf45c(); // UNK_0xf45c
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

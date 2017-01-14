@@ -1797,8 +1797,8 @@ void UNK_0xeee2() // UNK_0xeee2
     {
       SetColor("BLACK");
       WSHORTE(); // WSHORTE
-    i++;
-  } while(i<imax); // (LOOP) 0xfffa
+      i++;
+    } while(i<imax); // (LOOP)
 
     return;
   }
@@ -1971,8 +1971,8 @@ void UNK_0xefc4() // UNK_0xefc4
     PAD(); // PAD
     _do__dot_(); // $.
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -2610,8 +2610,8 @@ void UNK_0xf37e() // UNK_0xf37e
       }
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffa8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

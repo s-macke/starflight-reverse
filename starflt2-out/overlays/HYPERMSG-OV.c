@@ -666,11 +666,11 @@ void UNK_0xe7f0() // UNK_0xe7f0
         Push(0);
       }
       Push(Pop() + Pop()); // +
-    j++;
-  } while(j<jmax); // (LOOP) 0xffe2
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffd2
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1821,8 +1821,8 @@ void DMSG() // DMSG
         ON_2(); // ON_2
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffda
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xefda); // UNK_0xefda
   Push(Read16(Pop())); // @
@@ -2300,8 +2300,8 @@ void TRAK_dash_E() // TRAK-E
         ON_2(); // ON_2
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffc0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_STAR_dash_HR); // STAR-HR
   Push(Read16(Pop())); // @
@@ -2439,8 +2439,8 @@ void _plus_A_dash_VESS() // +A-VESS
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() == 0) goto label1;
     UNK_0xe79c(); // UNK_0xe79c
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
   UNK_0xe7cc(); // UNK_0xe7cc
   ICLOSE(); // ICLOSE

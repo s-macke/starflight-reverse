@@ -150,8 +150,8 @@ void UNK_0xf0a6() // UNK_0xf0a6
       imax = i; // LEAVE
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffda
+    i++;
+  } while(i<imax); // (LOOP)
 
   ICLOSE(); // ICLOSE
   Push(a); // R>

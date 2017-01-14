@@ -558,8 +558,8 @@ void UNK_0xf034() // UNK_0xf034
   {
     _2OVER(); // 2OVER
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }
@@ -663,8 +663,8 @@ void UNK_0xf106() // UNK_0xf106
   do // (DO)
   {
     UNK_0xf0e0(); // UNK_0xf0e0
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1030,8 +1030,8 @@ void UNK_0xf478() // UNK_0xf478
     Push(0);
     _dot_R(); // .R
     PRINT("...", 3); // (.")
-  i++;
-  } while(i<imax); // (LOOP) 0xffd1
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(6);
   Push(8);

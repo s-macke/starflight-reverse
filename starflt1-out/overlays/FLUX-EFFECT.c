@@ -146,10 +146,10 @@ void UNK_0xf456() // UNK_0xf456
     Push(Pop() + Pop()); // +
     UNK_0xf3f0(); // UNK_0xf3f0
     Push(5);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -233,10 +233,10 @@ void UNK_0xf4d0() // UNK_0xf4d0
     RRND(); // RRND
     TONE(); // TONE
     Push(5);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffec
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   V_gt_DISPLAY(); // V>DISPLAY
 }
@@ -267,8 +267,8 @@ void FLUX() // FLUX
   do // (DO)
   {
     UNK_0xf4d0(); // UNK_0xf4d0
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   DARK(); // DARK

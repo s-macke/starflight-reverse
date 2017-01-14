@@ -486,11 +486,11 @@ void CSCR_gt_EGA() // CSCR>EGA
         Push(i); // J
         PLOT(); // PLOT
       }
-    j++;
-  } while(j<jmax); // (LOOP) 0xffba
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xffae
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   SCR_dash_RES(); // SCR-RES
@@ -715,8 +715,8 @@ void BRMOVE() // BRMOVE
     Push(pp_UNK_0xe6c4); // UNK_0xe6c4
     Push(Read16(Pop())); // @
     LCMOVE(); // LCMOVE
-  i++;
-  } while(i<imax); // (LOOP) 0xffc8
+    i++;
+  } while(i<imax); // (LOOP)
 
   DISPLAY(); // DISPLAY
   SCR_dash_RES(); // SCR-RES
@@ -769,8 +769,8 @@ void UNK_0xe7cd() // UNK_0xe7cd
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
   _2DUP(); // 2DUP
   TIME(); // TIME
@@ -802,8 +802,8 @@ void UNK_0xe813() // UNK_0xe813
     UNK_0xe700(); // UNK_0xe700
     BLOCK_2(); // BLOCK_2
     Pop(); Pop();// 2DROP
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -956,8 +956,8 @@ void UNK_0xe928() // UNK_0xe928
     Push(pp_UNK_0xe6e0); // UNK_0xe6e0
     Push(Read16(Pop())); // @
     BRMOVE(); // BRMOVE
-  i++;
-  } while(i<imax); // (LOOP) 0xffd8
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(7);
   INCREASE(); // INCREASE

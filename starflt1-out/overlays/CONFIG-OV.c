@@ -556,8 +556,8 @@ void UNK_0xebb5() // UNK_0xebb5
     Push(Pop() + Pop()); // +
     Push(0x0036);
     POS_dot_PXT(); // POS.PXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(4);
   SetColor("BLACK");
@@ -620,8 +620,8 @@ void UNK_0xebe9() // UNK_0xebe9
       M_star_(); // M*
       Push(6);
       D_dot_R(); // D.R
-    i++;
-  } while(i<imax); // (LOOP) 0xffd2
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   _ex_CRS(); // !CRS
@@ -854,8 +854,8 @@ void UNK_0xed6a() // UNK_0xed6a
       {
         Push(Pop()*2); // 2*
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffdc
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(0xc6ba); // probable 'OV.PODS'
     MODULE(); // MODULE
@@ -1193,10 +1193,10 @@ void UNK_0xf041() // UNK_0xf041
         _plus__ex_(); // +!
       }
       Push(-1);
-    int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffba
+      int step = Pop();
+      i += step;
+      if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+    } while(1); // (+LOOP)
 
     return;
   }
@@ -1426,8 +1426,8 @@ void UNK_0xf226() // UNK_0xf226
     Push(i); // I
     UNK_0xf1d6(); // UNK_0xf1d6
     D_plus_(); // D+
-  i++;
-  } while(i<imax); // (LOOP) 0xfff8
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(3);
   UNK_0xf1d6(); // UNK_0xf1d6
@@ -1537,10 +1537,10 @@ void UNK_0xf2fa() // UNK_0xf2fa
     Push(a); // R>
     C_ex_(); // C!
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffe2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x6400); // IFIELD(UNK_0xe9da)
   UNK_0xea27(); // UNK_0xea27

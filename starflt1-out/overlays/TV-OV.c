@@ -676,8 +676,8 @@ void UNK_0xea67() // UNK_0xea67
   {
     PAD(); // PAD
     WLINE_dash_UP(); // WLINE-UP
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xea3b); // UNK_0xea3b
   OFF(); // OFF
@@ -724,8 +724,8 @@ void UNK_0xea91() // UNK_0xea91
     Push(Read16(Pop())); // @
     Push(Pop()+2); // 2+
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xffca
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -1672,8 +1672,8 @@ void UNK_0xf1ba() // UNK_0xf1ba
     BLT(); // BLT
     Push(0x0032);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1702,8 +1702,8 @@ void UNK_0xf1d2() // UNK_0xf1d2
     TONE(); // TONE
     Push(2);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   BEEPOFF(); // BEEPOFF

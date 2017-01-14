@@ -1333,8 +1333,8 @@ void UNK_0xee4b() // UNK_0xee4b
   do // (DO)
   {
     UNK_0xee19(); // UNK_0xee19
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1354,8 +1354,8 @@ void UNK_0xee5b() // UNK_0xee5b
   do // (DO)
   {
     UNK_0xee33(); // UNK_0xee33
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1502,8 +1502,8 @@ void UNK_0xef14() // UNK_0xef14
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     GCR(); // GCR
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xfff2
+    i++;
+  } while(i<imax); // (LOOP)
 
   IFIRST(); // IFIRST
   CI(); // CI

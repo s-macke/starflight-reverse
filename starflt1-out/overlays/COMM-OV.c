@@ -1723,8 +1723,8 @@ void UNK_0xdf14() // UNK_0xdf14
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop() + Pop()); // +
     Push(1);
-  i += Pop();
-} while(i<imax); // (/LOOP) 0xfff6
+    i += Pop();
+  } while(i<imax); // (/LOOP)
 
 }
 
@@ -1771,8 +1771,8 @@ void UNK_0xe014() // UNK_0xe014
     Push(Pop()+1); // 1+
     CMOVE(); // CMOVE
     INEXT(); // INEXT
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
   CDROP(); // CDROP
   CDROP(); // CDROP
@@ -1831,8 +1831,8 @@ void UNK_0xe068() // UNK_0xe068
     MOD(); // MOD
     UNK_0xe05a(); // UNK_0xe05a
     UNK_0xdef4(); // UNK_0xdef4
-  i++;
-  } while(i<imax); // (LOOP) 0xffec
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
   PAD(); // PAD
@@ -2000,8 +2000,8 @@ void UNK_0xe160() // UNK_0xe160
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   a = Pop(); // >R
   SWAP(); // SWAP
@@ -2052,8 +2052,8 @@ void UNK_0xe190() // UNK_0xe190
       _dash_(); // -
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -2189,8 +2189,8 @@ void CTSCROLL() // CTSCROLL
     Push(pp_CTTOP); // CTTOP
     Push(Read16(Pop())); // @
     LCOPYBLK(); // LCOPYBLK
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -5463,10 +5463,10 @@ void UNK_0xf330() // UNK_0xf330
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
     Push(3);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffea
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   ICLOSE(); // ICLOSE
   Push(pp_P_dash_RACES); // P-RACES
@@ -5663,8 +5663,8 @@ void UNK_0xf4c6() // UNK_0xf4c6
       Push(i); // I
       Push(Read8(Pop())&0xFF); // C@
       Push(Pop() + Pop()); // +
-    i++;
-  } while(i<imax); // (LOOP) 0xfff8
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(0x0226);
     _dash_(); // -

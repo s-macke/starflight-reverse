@@ -284,8 +284,8 @@ void UNK_0xf115() // UNK_0xf115
         imax = i; // LEAVE
       }
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }
@@ -375,8 +375,8 @@ void ROLE_dash_C() // ROLE-C
       UNK_0xf115(); // UNK_0xf115
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffd4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE
@@ -424,8 +424,8 @@ void UNK_0xf212() // UNK_0xf212
     ROT(); // ROT
     Push(Pop() & Pop()); // AND
     SWAP(); // SWAP
-  i++;
-  } while(i<imax); // (LOOP) 0xffd2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(a); // R>
   Pop(); Pop();// 2DROP
@@ -554,8 +554,8 @@ void UNK_0xf2a3() // UNK_0xf2a3
     {
       Pop(); Pop();// 2DROP
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xff96
+    i++;
+  } while(i<imax); // (LOOP)
 
 
   label1:
@@ -626,8 +626,8 @@ void _dot_VITS() // .VITS
         do // (DO)
         {
           PRINT(".", 1); // (.")
-        j++;
-  } while(j<jmax); // (LOOP) 0xfffa
+          j++;
+        } while(j<jmax); // (LOOP)
 
       }
       Push(pp_XBLT); // XBLT
@@ -647,8 +647,8 @@ void _dot_VITS() // .VITS
       PRINT("%", 1); // (.")
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xff9c
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(b); // R>
   _ex_COLOR(); // !COLOR
@@ -785,8 +785,8 @@ void UNK_0xf429() // UNK_0xf429
       Pop(); // DROP
     }
     ICLOSE(); // ICLOSE
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
   ICLOSE(); // ICLOSE
@@ -901,8 +901,8 @@ void UNK_0xf4d3() // UNK_0xf4d3
     {
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffc4
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   ICLOSE(); // ICLOSE

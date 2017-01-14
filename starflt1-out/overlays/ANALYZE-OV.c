@@ -1308,8 +1308,8 @@ void UNK_0xf2c8() // UNK_0xf2c8
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(a); // R>
   Pop(); // DROP

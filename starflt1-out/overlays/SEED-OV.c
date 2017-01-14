@@ -609,8 +609,8 @@ void UNK_0xee91() // UNK_0xee91
       Push(a); // R>
       Push(Pop()+1); // 1+
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   SWAP(); // SWAP
   Pop(); // DROP
@@ -915,14 +915,14 @@ void UNK_0xf079() // UNK_0xf079
       do // (DO)
       {
         UNK_0xee4d(); // UNK_0xee4d
-      j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+        j++;
+      } while(j<jmax); // (LOOP)
 
     }
     SWAP(); // SWAP
     Pop(); // DROP
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1129,8 +1129,8 @@ void UNK_0xf1c1() // UNK_0xf1c1
       {
         Pop(); Pop();// 2DROP
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffe0
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   ICLOSE(); // ICLOSE

@@ -652,8 +652,8 @@ void UNK_0xf319() // UNK_0xf319
     PRINT("MALFUNCTION", 11); // (.")
     Push(0x00fa);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   Push(7);

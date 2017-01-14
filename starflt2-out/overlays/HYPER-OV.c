@@ -1794,8 +1794,8 @@ void _dot_AUXSYS() // .AUXSYS
       _dot_ELLIPS(); // .ELLIPS
       UNK_0xdfe9(); // UNK_0xdfe9
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffd6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   IFIRST(); // IFIRST
@@ -2174,10 +2174,10 @@ void UNK_0xe2d7() // UNK_0xe2d7
     Push(Pop()+1); // 1+
     C_ex__2(); // C!_2
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffe6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -2280,10 +2280,10 @@ void UNK_0xe37b() // UNK_0xe37b
     Push(Read8(Pop())&0xFF); // C@
     UNK_0xe327(); // UNK_0xe327
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff0
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -3471,8 +3471,8 @@ void UNK_0xeb1a() // UNK_0xeb1a
       _ex_INST_dash_S(); // !INST-S
       ICLOSE(); // ICLOSE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -3628,8 +3628,8 @@ void UNK_0xebdb() // UNK_0xebdb
         Push(pp_UNK_0xda14); // UNK_0xda14
         _1_dot_5_ex__2(); // 1.5!_2
       }
-    i++;
-  } while(i<imax); // (LOOP) 0xffc2
+      i++;
+    } while(i<imax); // (LOOP)
 
     Push(pp_UNK_0xda14); // UNK_0xda14
     _1_dot_5_at_(); // 1.5@
@@ -3886,8 +3886,8 @@ void UNK_0xedb8() // UNK_0xedb8
       do // (DO)
       {
         Pop(); // DROP
-      i++;
-  } while(i<imax); // (LOOP) 0xfffc
+        i++;
+      } while(i<imax); // (LOOP)
 
     }
     Push(a); // R>

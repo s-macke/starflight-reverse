@@ -1817,8 +1817,8 @@ void UNK_0xe9b4() // UNK_0xe9b4
     _gt_C_plus_S(); // >C+S
     Push(0x01f4);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffab
+    i++;
+  } while(i<imax); // (LOOP)
 
   UNK_0xe5b4(); // UNK_0xe5b4
   Push(pp__i_DEATH); // 'DEATH

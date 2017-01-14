@@ -471,10 +471,10 @@ void UNK_0xf462() // UNK_0xf462
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
     Push(6);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffea
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   ICLOSE(); // ICLOSE
 }

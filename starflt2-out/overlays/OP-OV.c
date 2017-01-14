@@ -320,8 +320,8 @@ void UNK_0xe5ec() // UNK_0xe5ec
   {
     _2OVER(); // 2OVER
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }
@@ -380,10 +380,10 @@ void UNK_0xe672() // UNK_0xe672
     Push(Pop()+1); // 1+
     Push(Read8(Pop())&0xFF); // C@
     Push(2);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff2
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   Push(0x001c);
   UNK_0xe5ec(); // UNK_0xe5ec
@@ -688,8 +688,8 @@ void UNK_0xe91a() // UNK_0xe91a
       _dash_(); // -
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -797,8 +797,8 @@ void UNK_0xe9c0() // UNK_0xe9c0
     Push(0);
     Push(0x00b5);
     LCOPYBL(); // LCOPYBL
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -1508,8 +1508,8 @@ void UNK_0xef2d() // UNK_0xef2d
       }
       UNK_0xedc8(); // UNK_0xedc8
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffc6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   UNK_0x3f09("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");

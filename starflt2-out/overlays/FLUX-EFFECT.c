@@ -163,10 +163,10 @@ void UNK_0xf406() // UNK_0xf406
     Push(Pop() + Pop()); // +
     UNK_0xf3a0(); // UNK_0xf3a0
     Push(5);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -247,10 +247,10 @@ void HYPER_dash_FRAME() // HYPER-FRAME
     UNK_0xf420(); // UNK_0xf420
     UNK_0xf346(); // UNK_0xf346
     Push(5);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff6
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -281,8 +281,8 @@ void FLUX() // FLUX
   do // (DO)
   {
     HYPER_dash_FRAME(); // HYPER-FRAME
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   DARK(); // DARK
@@ -316,10 +316,10 @@ void UNK_0xf4e5() // UNK_0xf4e5
     UNK_0xf420(); // UNK_0xf420
     UNK_0xf346(); // UNK_0xf346
     Push(5);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -351,8 +351,8 @@ void JUMPFX() // JUMPFX
     RRND(); // RRND
     Push(pp_UNK_0xf38a); // UNK_0xf38a
     _ex__2(); // !_2
-  i++;
-  } while(i<imax); // (LOOP) 0xfff2
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   DARK(); // DARK

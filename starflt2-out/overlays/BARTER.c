@@ -878,8 +878,8 @@ void UNK_0xe1b8() // UNK_0xe1b8
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffea
+    i++;
+  } while(i<imax); // (LOOP)
 
   a = Pop(); // >R
   SWAP(); // SWAP
@@ -949,8 +949,8 @@ void UNK_0xe200() // UNK_0xe200
       _dash_(); // -
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -2453,8 +2453,8 @@ void UNK_0xea6a() // UNK_0xea6a
     PRINT("^\\", 2); // (.")
     Push(0x00fa);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffe3
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }

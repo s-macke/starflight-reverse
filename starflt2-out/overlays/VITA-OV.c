@@ -238,8 +238,8 @@ void UNK_0xf3aa() // UNK_0xf3aa
     Push(i); // I
     Push(1);
     _star_CREATE(); // *CREATE
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -302,8 +302,8 @@ void UNK_0xf440() // UNK_0xf440
     Push(pp_RECORD_n_); // RECORD#
     _ex__2(); // !_2
     UNK_0xf418(); // UNK_0xf418
-  i++;
-  } while(i<imax); // (LOOP) 0xfff6
+    i++;
+  } while(i<imax); // (LOOP)
 
   SET_dash_CUR(); // SET-CUR
 }

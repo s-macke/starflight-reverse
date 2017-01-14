@@ -395,8 +395,8 @@ void UNK_0xef6e() // UNK_0xef6e
   {
     Push(i); // I
     UNK_0xef36(); // UNK_0xef36
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -805,8 +805,8 @@ void RSTE() // RSTE
   {
     Push(i); // I
     UNK_0xef52(); // UNK_0xef52
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xee46); // UNK_0xee46
@@ -924,8 +924,8 @@ void UNK_0xf2f1() // UNK_0xf2f1
     PRINT("MALFUNCTION", 11); // (.")
     Push(0x00fa);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
   Push(7);

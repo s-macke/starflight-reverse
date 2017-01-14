@@ -461,8 +461,8 @@ void UNK_0xef96() // UNK_0xef96
     Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(Pop()+1); // 1+
-  i++;
-  } while(i<imax); // (LOOP) 0xffee
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -546,8 +546,8 @@ void UNK_0xf00c() // UNK_0xf00c
     Push(Pop()+1); // 1+
     Push(Read16(regsp)); // DUP
     UNK_0xefe4(); // UNK_0xefe4
-  i++;
-  } while(i<imax); // (LOOP) 0xfff8
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -677,8 +677,8 @@ void _ro_DUPL_rc_() // (DUPL)
     Push(i); // I
     _dash_(); // -
     MLDN(); // MLDN
-  i++;
-  } while(i<imax); // (LOOP) 0xfff4
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -754,8 +754,8 @@ void XL() // XL
       Push(Pop() + Pop()); // +
       Push(Pop()+1); // 1+
       MLUP(); // MLUP
-    i++;
-  } while(i<imax); // (LOOP) 0xfff4
+      i++;
+    } while(i<imax); // (LOOP)
 
   }
   Push(Read16(cc_UNK_0xee6e)); // UNK_0xee6e
@@ -925,8 +925,8 @@ void PUT() // PUT
       return;
     }
     Pop(); // DROP
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Push(Read16(Pop())); // @

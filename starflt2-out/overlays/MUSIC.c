@@ -406,8 +406,8 @@ void UNK_0xeec1() // UNK_0xeec1
   do // (DO)
   {
     NOP(); // NOP
-  i++;
-  } while(i<imax); // (LOOP) 0xfffc
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -433,10 +433,10 @@ void UNK_0xeed7() // UNK_0xeed7
     TONE(); // TONE
     UNK_0xeec1(); // UNK_0xeec1
     Push(0xffec);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xfff4
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -471,8 +471,8 @@ void UNK_0xeef9() // UNK_0xeef9
     Push(0x0064);
     Push(Pop() + Pop()); // +
     TONE(); // TONE
-  i++;
-  } while(i<imax); // (LOOP) 0xffe6
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -504,8 +504,8 @@ void UNK_0xef2b() // UNK_0xef2b
     {
       imax = i; // LEAVE
     }
-  i++;
-  } while(i<imax); // (LOOP) 0xffe8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -729,8 +729,8 @@ void UNK_0xf071() // UNK_0xf071
       Push(1);
       Push(pp_DST); // DST
       _plus__ex__2(); // +!_2
-    j++;
-  } while(j<jmax); // (LOOP) 0xfff0
+      j++;
+    } while(j<jmax); // (LOOP)
 
     Push(Pop() + Pop()); // +
     Push(pp_DST); // DST
@@ -741,8 +741,8 @@ void UNK_0xf071() // UNK_0xf071
     Push(Pop() + Pop()); // +
     Push(pp_SRC); // SRC
     _ex__2(); // !_2
-  i++;
-  } while(i<imax); // (LOOP) 0xffc8
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -852,8 +852,8 @@ void UNK_0xf0d5() // UNK_0xf0d5
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() == 0) goto label3;
-  i++;
-  } while(i<imax); // (LOOP) 0xffa2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -1280,11 +1280,11 @@ void UNK_0xf430() // UNK_0xf430
     do // (DO)
     {
       NOP(); // NOP
-    j++;
-  } while(j<jmax); // (LOOP) 0xfffc
+      j++;
+    } while(j<jmax); // (LOOP)
 
-  i++;
-  } while(i<imax); // (LOOP) 0xfff0
+    i++;
+  } while(i<imax); // (LOOP)
 
   TIME(); // TIME
   _2_at_(); // 2@

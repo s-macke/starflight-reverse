@@ -146,8 +146,8 @@ void UNK_0xf034() // UNK_0xf034
     _ex__3(); // !_3
     Push(0x0027);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffe2
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
 }
@@ -225,10 +225,10 @@ void COUNTDOWN() // COUNTDOWN
     Push(0x0190);
     MS(); // MS
     Push(-1);
-  int step = Pop();
-  i += step;
-if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-} while(1); // (+LOOP) 0xffde
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
 
 }
 
@@ -594,8 +594,8 @@ void UNK_0xf393() // UNK_0xf393
     TONE(); // TONE
     Push(0x001e);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffde
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(0x00bf);
   UNK_0xf162(); // UNK_0xf162
@@ -671,8 +671,8 @@ void _and_RETURN() // &RETURN
     Push(0x0078);
     RRND(); // RRND
     LPLOT(); // LPLOT
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
@@ -716,8 +716,8 @@ void _and_RETURN() // &RETURN
       TONE(); // TONE
       Push(0x001e);
       MS(); // MS
-    j++;
-  } while(j<jmax); // (LOOP) 0xffd6
+      j++;
+    } while(j<jmax); // (LOOP)
 
   } else
   {

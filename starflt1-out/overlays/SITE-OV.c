@@ -260,8 +260,8 @@ void UNK_0xeed3() // UNK_0xeed3
     Push(Pop() + Pop()); // +
     POS_dot_(); // POS.
     BLT(); // BLT
-  i++;
-  } while(i<imax); // (LOOP) 0xffdc
+    i++;
+  } while(i<imax); // (LOOP)
 
   _ex_CRS(); // !CRS
 }
@@ -787,20 +787,20 @@ void UNK_0xf290() // UNK_0xf290
         Push(Pop()-1); // 1-
         LPLOT(); // LPLOT
         Push(4);
-      int step = Pop();
-  k += step;
-if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
-} while(1); // (+LOOP) 0xfff0
+        int step = Pop();
+        k += step;
+        if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
+      } while(1); // (+LOOP)
 
       Push(5);
       MS(); // MS
-    j++;
-  } while(j<jmax); // (LOOP) 0xffc4
+      j++;
+    } while(j<jmax); // (LOOP)
 
     Push(0x0014);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffb0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 
@@ -863,13 +863,13 @@ void UNK_0xf311() // UNK_0xf311
       BLT(); // BLT
       Push(5);
       MS(); // MS
-    j++;
-  } while(j<jmax); // (LOOP) 0xffe4
+      j++;
+    } while(j<jmax); // (LOOP)
 
     Push(0x0014);
     MS(); // MS
-  i++;
-  } while(i<imax); // (LOOP) 0xffd0
+    i++;
+  } while(i<imax); // (LOOP)
 
 }
 

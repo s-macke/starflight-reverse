@@ -428,8 +428,8 @@ void UNK_0xf014() // UNK_0xf014
   {
     _2OVER(); // 2OVER
     LLINE(); // LLINE
-  i++;
-  } while(i<imax); // (LOOP) 0xfffa
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); Pop();// 2DROP
 }
@@ -547,8 +547,8 @@ void _ro__dot_PODS_rc_() // (.PODS)
     Push(2);
     _st_(); // <
     UNK_0xf098(); // UNK_0xf098
-  i++;
-  } while(i<imax); // (LOOP) 0xffd6
+    i++;
+  } while(i<imax); // (LOOP)
 
   Pop(); // DROP
   _ex_CRS(); // !CRS
@@ -857,8 +857,8 @@ void UNK_0xf40f() // UNK_0xf40f
     Push(0);
     _dot_R(); // .R
     PRINT("...", 3); // (.")
-  i++;
-  } while(i<imax); // (LOOP) 0xffd1
+    i++;
+  } while(i<imax); // (LOOP)
 
   Push(6);
   Push(8);
