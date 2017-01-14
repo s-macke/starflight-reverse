@@ -425,10 +425,7 @@ void UNK_0xe673() // UNK_0xe673
 
 void UNK_0xe687() // UNK_0xe687
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  signed short int k, kmax;
-  signed short int l, lmax;
+  unsigned short int i, imax, j, jmax, k, kmax, l, lmax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(0x0011);
@@ -695,7 +692,7 @@ void UNK_0xe85c() // UNK_0xe85c
 
 void UNK_0xe8a8() // UNK_0xe8a8
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
@@ -742,7 +739,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xe8f2() // UNK_0xe8f2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
@@ -793,7 +790,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xe942() // UNK_0xe942
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_NULL_dash_IC)); // NULL-IC
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
   Push(pp_ILOCAL); // ILOCAL
@@ -835,7 +832,7 @@ void UNK_0xe942() // UNK_0xe942
 
 void UNK_0xe97e() // UNK_0xe97e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
   Push(Pop()-1); // 1-
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
@@ -988,7 +985,7 @@ void UNK_0xea4c() // UNK_0xea4c
 
 void UNK_0xea70() // UNK_0xea70
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   Push(pp_ILOCAL); // ILOCAL
@@ -1409,7 +1406,7 @@ void UNK_0xecc0() // UNK_0xecc0
 
 void UNK_0xed4c() // UNK_0xed4c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   Push(0);
     

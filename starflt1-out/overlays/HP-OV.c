@@ -254,8 +254,7 @@ void UNK_0xe2d7() // UNK_0xe2d7
 
 void UNK_0xe344() // UNK_0xe344
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
@@ -286,8 +285,7 @@ void UNK_0xe344() // UNK_0xe344
 
 void UNK_0xe374() // UNK_0xe374
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
@@ -309,8 +307,7 @@ void UNK_0xe374() // UNK_0xe374
 
 void UNK_0xe390() // UNK_0xe390
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
@@ -611,8 +608,7 @@ void UNK_0xe52f() // UNK_0xe52f
 
 void UNK_0xe53d() // UNK_0xe53d
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(6);
   Push(Pop() * Pop()); // *
@@ -773,8 +769,7 @@ void UNK_0xe6f8() // UNK_0xe6f8
 
 void UNK_0xe70e() // UNK_0xe70e
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
 
@@ -832,7 +827,7 @@ void UNK_0xe740() // UNK_0xe740
 
 void UNK_0xe762() // UNK_0xe762
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -979,8 +974,7 @@ void UNK_0xede0() // UNK_0xede0
 
 void UNK_0xee38() // UNK_0xee38
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1136,8 +1130,7 @@ void UNK_0xef3b() // UNK_0xef3b
 
 void UNK_0xef75() // UNK_0xef75
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1323,9 +1316,7 @@ void UNK_0xf0b8() // UNK_0xf0b8
 
 void UNK_0xf0c6() // UNK_0xf0c6
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   a = Pop(); // >R
@@ -1787,9 +1778,7 @@ void UNK_0xf404() // UNK_0xf404
 
 void UNK_0xf430() // UNK_0xf430
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   LoadData("UNK_0xe4cf"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   a = Pop(); // >R

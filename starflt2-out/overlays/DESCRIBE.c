@@ -336,8 +336,7 @@ void UNK_0xe606() // UNK_0xe606
 
 void APAUSE() // APAUSE
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
   _at_COLOR(); // @COLOR
@@ -445,8 +444,7 @@ void UNK_0xe78f() // UNK_0xe78f
 
 void UNK_0xe797() // UNK_0xe797
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
     
@@ -485,7 +483,7 @@ void UNK_0xe797() // UNK_0xe797
 
 void UNK_0xe7df() // UNK_0xe7df
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe797(); // UNK_0xe797
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
@@ -1269,8 +1267,7 @@ void UNK_0xec89() // UNK_0xec89
 
 void UNK_0xecbd() // UNK_0xecbd
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   MAKE_dash_SC(); // MAKE-SC
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
@@ -1333,7 +1330,7 @@ void UNK_0xed0f() // UNK_0xed0f
 
 void UNK_0xed17() // UNK_0xed17
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_WLINES); // WLINES
@@ -2199,8 +2196,7 @@ void CLASS_gt_TY() // CLASS>TY
 
 void DESCRIBE() // DESCRIBE
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_COLOR); // COLOR

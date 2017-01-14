@@ -609,8 +609,7 @@ void UNK_0xe8a4() // UNK_0xe8a4
 
 void UNK_0xe8ec() // UNK_0xe8ec
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
@@ -888,7 +887,7 @@ void UNK_0xea80() // UNK_0xea80
 
 void UNK_0xea92() // UNK_0xea92
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_WOUNDED); // WOUNDED
   Push(Read16(regsp)); // DUP
   Push(6);
@@ -1154,7 +1153,7 @@ void _n__gt__ask_FIEL() // #>?FIEL
 
 void UNK_0xec56() // UNK_0xec56
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xe833); // UNK_0xe833
   Push(9);
   Push(0);
@@ -1290,7 +1289,7 @@ void UNK_0xecc8() // UNK_0xecc8
 
 void UNK_0xed68() // UNK_0xed68
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__n_WOUNDE); // #WOUNDE
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1383,7 +1382,7 @@ void UNK_0xedc4() // UNK_0xedc4
 
 void UNK_0xee11() // UNK_0xee11
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xea1c); // UNK_0xea1c
   _st__ex__gt_(); // <!>
   UNK_0xea80(); // UNK_0xea80
@@ -1502,8 +1501,7 @@ void UNK_0xee67() // UNK_0xee67
 
 void UNK_0xeed5() // UNK_0xeed5
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -1553,7 +1551,7 @@ void UNK_0xeed5() // UNK_0xeed5
 
 void UNK_0xef1f() // UNK_0xef1f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   _eq_SPECIE(); // =SPECIE
   _at_INST_dash_C(); // @INST-C
@@ -1607,8 +1605,7 @@ void UNK_0xef1f() // UNK_0xef1f
 
 void UNK_0xef73() // UNK_0xef73
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xe9fe(); // UNK_0xe9fe
   a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
@@ -1991,7 +1988,7 @@ void UNK_0xf1a9() // UNK_0xf1a9
 
 void UNK_0xf1b5() // UNK_0xf1b5
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe84c(); // UNK_0xe84c
   Push(7);
   Push((Pop()==Pop())?1:0); // =
@@ -2126,8 +2123,7 @@ void UNK_0xf25f() // UNK_0xf25f
 
 void UNK_0xf283() // UNK_0xf283
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xf1a9(); // UNK_0xf1a9
   UNK_0xe75a(); // UNK_0xe75a
   SetColor("LT-BLUE");

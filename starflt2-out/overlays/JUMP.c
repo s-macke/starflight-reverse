@@ -232,9 +232,7 @@ void UNK_0xed54() // UNK_0xed54
 
 void UNK_0xed5e() // UNK_0xed5e
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
@@ -787,7 +785,7 @@ void UNK_0xf05e() // UNK_0xf05e
 
 void UNK_0xf070() // UNK_0xf070
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
@@ -931,7 +929,7 @@ void UNK_0xf0d4() // UNK_0xf0d4
 
 void UNK_0xf12e() // UNK_0xf12e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf12a); // UNK_0xf12a
   _099(); // 099
   Push(pp__star_GLOBAL); // *GLOBAL
@@ -1004,7 +1002,7 @@ void UNK_0xf166() // UNK_0xf166
 
 void UNK_0xf18c() // UNK_0xf18c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xef81(); // UNK_0xef81
   BEEPON_2(); // BEEPON_2
   UNK_0xf166(); // UNK_0xf166
@@ -1461,8 +1459,7 @@ void UNK_0xf464() // UNK_0xf464
 
 void UNK_0xf482() // UNK_0xf482
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(pp_BEEPTONE); // BEEPTONE

@@ -303,7 +303,7 @@ void UNK_0xed54() // UNK_0xed54
 
 void UNK_0xed62() // UNK_0xed62
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -779,7 +779,7 @@ void UNK_0xf00e() // UNK_0xf00e
 
 void UNK_0xf02e() // UNK_0xf02e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xeed0); // UNK_0xeed0
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -1220,8 +1220,7 @@ void UNK_0xf37e() // UNK_0xf37e
 
 void UNK_0xf3d0() // UNK_0xf3d0
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   UNK_0xef23(); // UNK_0xef23
   Push(pp_UNK_0xf1be); // UNK_0xf1be
   _ex__2(); // !_2
@@ -1292,7 +1291,7 @@ void UNK_0xf41c() // UNK_0xf41c
 
 void UNK_0xf42a() // UNK_0xf42a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   Push(pp_ABLT); // ABLT

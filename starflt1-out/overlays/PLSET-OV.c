@@ -394,8 +394,7 @@ void UNK_0xecf8() // UNK_0xecf8
 
 void UNK_0xed2e() // UNK_0xed2e
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
@@ -1202,7 +1201,7 @@ void UNK_0xf24e() // UNK_0xf24e
 
 void UNK_0xf280() // UNK_0xf280
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xf24e(); // UNK_0xf24e
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3

@@ -308,10 +308,7 @@ void _dot_PARMS() // .PARMS
 
 void _dot_HYBRID() // .HYBRID
 {
-  unsigned short int a;
-  signed short int i, imax;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, i, imax, b, c;
   Push(Read16(regsp)); // DUP
   Push(pp_BLTSEG); // BLTSEG
   _ex__3(); // !_3

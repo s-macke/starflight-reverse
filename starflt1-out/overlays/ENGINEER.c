@@ -323,7 +323,7 @@ void UNK_0xed5c() // UNK_0xed5c
 
 void DBARS() // DBARS
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(7);
@@ -384,8 +384,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 
 void UNK_0xee68() // UNK_0xee68
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -1060,8 +1059,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
 
 void _ro__slash_REPAIR_rc_() // (/REPAIR)
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   _ro__slash_DAMAGE_rc_(); // (/DAMAGE)
   Push(pp_NCRS); // NCRS
   OFF(); // OFF

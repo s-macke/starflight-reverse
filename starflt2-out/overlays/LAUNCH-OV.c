@@ -123,7 +123,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 
 void UNK_0xf0b4() // UNK_0xf0b4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0010);
   Push(0x000b);
     
@@ -199,7 +199,7 @@ void UNK_0xf10c() // UNK_0xf10c
 
 void UNK_0xf11a() // UNK_0xf11a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x2710);
   TONE(); // TONE
   Push(1);
@@ -523,7 +523,7 @@ void UNK_0xf390() // UNK_0xf390
 
 void UNK_0xf3b7() // UNK_0xf3b7
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   _gt_DISPLA(); // >DISPLA
@@ -605,8 +605,7 @@ void _and_LAUNCH() // &LAUNCH
 
 void _and_RETURN() // &RETURN
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   Push(6);

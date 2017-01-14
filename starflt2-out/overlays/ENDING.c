@@ -381,8 +381,7 @@ void UNK_0xe862() // UNK_0xe862
 
 void UNK_0xe86a() // UNK_0xe86a
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -882,8 +881,7 @@ void UNK_0xeade() // UNK_0xeade
 
 void UNK_0xeafe() // UNK_0xeafe
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe862(); // UNK_0xe862
   UNK_0xe9e0(); // UNK_0xe9e0
   Push(pp_UNK_0xeab6); // UNK_0xeab6
@@ -1260,8 +1258,7 @@ void UNK_0xed33() // UNK_0xed33
 
 void UNK_0xed8d() // UNK_0xed8d
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x012c);
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
@@ -1298,7 +1295,7 @@ void UNK_0xed8d() // UNK_0xed8d
 
 void UNK_0xedb9() // UNK_0xedb9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   BEEPON_2(); // BEEPON_2
   Push(0);
     
@@ -1566,8 +1563,7 @@ void UNK_0xef4f() // UNK_0xef4f
 
 void UNK_0xef5d() // UNK_0xef5d
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
   Push(0);
@@ -1648,7 +1644,7 @@ void UNK_0xefab() // UNK_0xefab
 
 void UNK_0xefdb() // UNK_0xefdb
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x1388);
   MS(); // MS
   Push(0x00cd);
@@ -1868,7 +1864,7 @@ void UNK_0xf138() // UNK_0xf138
 
 void UNK_0xf15c() // UNK_0xf15c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   TIME(); // TIME
   _2_at_(); // 2@
   SAVE_dash_BU(); // SAVE-BU
@@ -2055,8 +2051,7 @@ void UNK_0xf24e() // UNK_0xf24e
 
 void UNK_0xf264() // UNK_0xf264
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   UNK_0xf24e(); // UNK_0xf24e
@@ -2111,7 +2106,7 @@ void UNK_0xf264() // UNK_0xf264
 
 void UNK_0xf2b0() // UNK_0xf2b0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   BEEPON_2(); // BEEPON_2
   TIME(); // TIME
   _2_at_(); // 2@
@@ -2156,7 +2151,7 @@ void UNK_0xf2b0() // UNK_0xf2b0
 
 void UNK_0xf2fa() // UNK_0xf2fa
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   Push(0);
@@ -2203,7 +2198,7 @@ void UNK_0xf2fa() // UNK_0xf2fa
 
 void UNK_0xf33e() // UNK_0xf33e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe970(); // UNK_0xe970
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_UNK_0xe964); // UNK_0xe964

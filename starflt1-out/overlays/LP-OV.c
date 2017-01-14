@@ -246,10 +246,7 @@ void UNK_0xe10c() // UNK_0xe10c
 
 void UNK_0xe121() // UNK_0xe121
 {
-  unsigned short int a;
-  unsigned short int b;
-  signed short int i, imax;
-  unsigned short int c;
+  unsigned short int a, b, i, imax, c;
   UNK_0xe0f4(); // UNK_0xe0f4
   a = Pop(); // >R
   b = Pop(); // >R
@@ -648,8 +645,7 @@ void UNK_0xe4ca() // UNK_0xe4ca
 
 void UNK_0xe4d8() // UNK_0xe4d8
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(6);
   Push(Pop() * Pop()); // *
@@ -765,8 +761,7 @@ void UNK_0xe598() // UNK_0xe598
 
 void UNK_0xe5a6() // UNK_0xe5a6
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(0);
   Push(4);
   ROLL(); // ROLL
@@ -857,8 +852,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
 
 void UNK_0xeb97() // UNK_0xeb97
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe0f4(); // UNK_0xe0f4
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1081,8 +1075,7 @@ void UNK_0xec95() // UNK_0xec95
 
 void UNK_0xecf9() // UNK_0xecf9
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   IFLD_at_(); // IFLD@
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1376,8 +1369,7 @@ void UNK_0xeeb1() // UNK_0xeeb1
 
 void UNK_0xef31() // UNK_0xef31
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   LoadData("UNK_0xe2f6"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
@@ -1689,8 +1681,7 @@ void UNK_0xf17a() // UNK_0xf17a
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   LoadData("UNK_0xe35e"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xdec4); Push(0x0001);
@@ -1760,10 +1751,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
 
 void UNK_0xf256() // UNK_0xf256
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int a, b, c, d;
   LoadData("UNK_0xe2f6"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xdd9d); Push(0x0001);

@@ -715,7 +715,7 @@ void UNK_0xecba() // UNK_0xecba
 
 void UNK_0xecce() // UNK_0xecce
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _i_KEY(); // 'KEY
   Pop(); // DROP
   Push(1);
@@ -1618,7 +1618,7 @@ void UNK_0xf2aa() // UNK_0xf2aa
 
 void UNK_0xf312() // UNK_0xf312
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xea70(); // UNK_0xea70
   UNK_0xea7a(); // UNK_0xea7a
   Push2Words("*STARSHIP-HOLD");
@@ -1788,7 +1788,7 @@ void UNK_0xf414() // UNK_0xf414
 
 void UNK_0xf486() // UNK_0xf486
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xecca); // UNK_0xecca

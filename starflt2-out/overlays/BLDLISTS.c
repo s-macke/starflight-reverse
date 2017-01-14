@@ -777,7 +777,7 @@ void UNK_0xee89() // UNK_0xee89
 
 void UNK_0xee99() // UNK_0xee99
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xee51(); // UNK_0xee51
   UNK_0xee31(); // UNK_0xee31
   Push2Words("*4SALE");
@@ -864,7 +864,7 @@ void UNK_0xeef3() // UNK_0xeef3
 
 void UNK_0xef03() // UNK_0xef03
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
   LoadData("UNK_0xebc6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
@@ -987,7 +987,7 @@ void UNK_0xef93() // UNK_0xef93
 
 void UNK_0xefad() // UNK_0xefad
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
   LoadData("UNK_0xebc6"); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
@@ -1502,8 +1502,7 @@ void SET_dash_CARG() // SET-CARG
 
 void UNK_0xf4b7() // UNK_0xf4b7
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xebb6"); // from 'PLANET      '

@@ -331,7 +331,7 @@ void UNK_0xeb6d() // UNK_0xeb6d
 
 void UNK_0xeb81() // UNK_0xeb81
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0049);
   Push(1);
   Push(8);
@@ -579,7 +579,7 @@ void UNK_0xedc4() // UNK_0xedc4
 
 void UNK_0xedf8() // UNK_0xedf8
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(0x001c);
@@ -786,8 +786,7 @@ void UNK_0xef47() // UNK_0xef47
 
 void UNK_0xf019() // UNK_0xf019
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
@@ -953,7 +952,7 @@ void UNK_0xf128() // UNK_0xf128
 
 void UNK_0xf192() // UNK_0xf192
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTINIT(); // CTINIT
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
@@ -1215,7 +1214,7 @@ void UNK_0xf395() // UNK_0xf395
 
 void UNK_0xf3d7() // UNK_0xf3d7
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xea98); // UNK_0xea98
   OFF(); // OFF
   IFIRST(); // IFIRST
@@ -1252,7 +1251,7 @@ void UNK_0xf3d7() // UNK_0xf3d7
 
 void UNK_0xf409() // UNK_0xf409
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1303,7 +1302,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xedf8(); // UNK_0xedf8
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S

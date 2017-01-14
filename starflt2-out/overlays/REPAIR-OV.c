@@ -430,7 +430,7 @@ void UNK_0xf010() // UNK_0xf010
 
 void UNK_0xf01c() // UNK_0xf01c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(-1);
   Push(7);
   Push(0);

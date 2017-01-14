@@ -982,7 +982,7 @@ void UNK_0xebe1() // UNK_0xebe1
 
 void UNK_0xebeb() // UNK_0xebeb
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe6ab(); // UNK_0xe6ab
   SetColor("BLACK");
   SetColor("GREY1");
@@ -1258,7 +1258,7 @@ void UNK_0xed62() // UNK_0xed62
 
 void UNK_0xed96() // UNK_0xed96
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ask_TD); // ?TD
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -1760,7 +1760,7 @@ void UNK_0xf162() // UNK_0xf162
 
 void UNK_0xf174() // UNK_0xf174
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {

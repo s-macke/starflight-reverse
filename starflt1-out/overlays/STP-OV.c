@@ -653,7 +653,7 @@ void UNK_0xf32d() // UNK_0xf32d
 
 void UNK_0xf34b() // UNK_0xf34b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0x3f3b("CODE: ");
   _dot_TTY(); // .TTY
   Push(-1);

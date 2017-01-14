@@ -1113,7 +1113,7 @@ void UNK_0xe917() // UNK_0xe917
 
 void UNK_0xe921() // UNK_0xe921
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe36f(); // UNK_0xe36f
   SetColor("BLACK");
   SetColor("GREY1");
@@ -1389,7 +1389,7 @@ void UNK_0xea98() // UNK_0xea98
 
 void UNK_0xeacc() // UNK_0xeacc
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ask_TD); // ?TD
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -1655,7 +1655,7 @@ void UNK_0xecd0() // UNK_0xecd0
 
 void UNK_0xecfc() // UNK_0xecfc
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe87b(); // UNK_0xe87b
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
@@ -2120,7 +2120,7 @@ void UNK_0xf054() // UNK_0xf054
 
 void UNK_0xf0aa() // UNK_0xf0aa
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {

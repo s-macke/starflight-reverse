@@ -368,7 +368,7 @@ void UNK_0xef52() // UNK_0xef52
 
 void UNK_0xef6e() // UNK_0xef6e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*PLIST");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -613,8 +613,7 @@ void UNK_0xf0c0() // UNK_0xf0c0
 
 void _ro__n_IN_do_() // (#IN$
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   PAD(); // PAD
   Push(a); // I
@@ -795,7 +794,7 @@ void UNK_0xf208() // UNK_0xf208
 
 void RSTE() // RSTE
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xefa6(); // UNK_0xefa6
   Push(7);
   Push(1);
@@ -887,7 +886,7 @@ void _ro_0_do__do__do_() // (0$$$
 
 void UNK_0xf2f1() // UNK_0xf2f1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BLACK");
   ERASE_dash_A(); // ERASE-A
   CTINIT(); // CTINIT

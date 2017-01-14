@@ -537,10 +537,7 @@ void UNK_0xee15() // UNK_0xee15
 
 void UNK_0xee4d() // UNK_0xee4d
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int a, b, c, d;
   UNK_0xecdd(); // UNK_0xecdd
   UNK_0xecfb(); // UNK_0xecfb
   UNK_0xed79(); // UNK_0xed79
@@ -582,8 +579,7 @@ void UNK_0xee4d() // UNK_0xee4d
 
 void UNK_0xee91() // UNK_0xee91
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(Read16(cc_UNK_0xec1e)); // UNK_0xec1e
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
@@ -881,10 +877,7 @@ void UNK_0xf02b() // UNK_0xf02b
 
 void UNK_0xf079() // UNK_0xf079
 {
-  unsigned short int a;
-  signed short int i, imax;
-  unsigned short int b;
-  signed short int j, jmax;
+  unsigned short int a, i, imax, b, j, jmax;
   UNK_0xedaf(); // UNK_0xedaf
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
@@ -1101,8 +1094,7 @@ void UNK_0xf19b() // UNK_0xf19b
 
 void UNK_0xf1c1() // UNK_0xf1c1
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xec52"); // from 'PLANET      '
@@ -1151,8 +1143,7 @@ void UNK_0xf1c1() // UNK_0xf1c1
 
 void UNK_0xf207() // UNK_0xf207
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -1374,10 +1365,7 @@ void UNK_0xf327() // UNK_0xf327
 
 void _ask_EXIST() // ?EXIST
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int a, b, c, d;
   a = Pop(); // >R
   Push(1);
   Push(pp__ro_PLANET); // (PLANET

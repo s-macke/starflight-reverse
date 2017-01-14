@@ -691,8 +691,7 @@ const unsigned short int cc_UNK_0xdb8e = 0xdb8e; // UNK_0xdb8e
 
 void UNK_0xddc6() // UNK_0xddc6
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   Push(Pop()-1); // 1-
@@ -734,8 +733,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xddee() // UNK_0xddee
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6b31); // probable 'GVERTEX>GRIDCOLOR'
@@ -787,8 +785,7 @@ void UNK_0xddee() // UNK_0xddee
 
 void UNK_0xde3c() // UNK_0xde3c
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_SPHEREWRAP); // SPHEREWRAP
   OFF(); // OFF
   Push(0x6b31); // probable 'GVERTEX>GRIDCOLOR'
@@ -1810,8 +1807,7 @@ void UNK_0xe462() // UNK_0xe462
 
 void UNK_0xe4b4() // UNK_0xe4b4
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(Read16(cc_POLYSEG)); // POLYSEG
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1913,8 +1909,7 @@ void UNK_0xe550() // UNK_0xe550
 
 void UNK_0xe564() // UNK_0xe564
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(0);
   SWAP(); // SWAP
   ReadArray(Read16(0x6afa + 6), 0x0120); // FACET
@@ -1950,8 +1945,7 @@ void UNK_0xe564() // UNK_0xe564
 
 void UNK_0xe59c() // UNK_0xe59c
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__ask_NEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -2016,8 +2010,7 @@ void UNK_0xe59c() // UNK_0xe59c
 
 void UNK_0xe5fe() // UNK_0xe5fe
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0xe3c0(); // UNK_0xe3c0
   UNK_0xe410(); // UNK_0xe410
   Push(pp_UNK_0xe5fa); // UNK_0xe5fa
@@ -2097,7 +2090,7 @@ void UNK_0xe654() // UNK_0xe654
 
 void UNK_0xe670() // UNK_0xe670
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -2288,8 +2281,7 @@ void UNK_0xe769() // UNK_0xe769
 
 void UNK_0xe7a7() // UNK_0xe7a7
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_SIGNEXTEND); // SIGNEXTEND
   ON_3(); // ON_3
   Push(pp_SPHEREWRAP); // SPHEREWRAP
@@ -2357,8 +2349,7 @@ void UNK_0xe7a7() // UNK_0xe7a7
 
 void UNK_0xe80d() // UNK_0xe80d
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(3);
@@ -2420,8 +2411,7 @@ void UNK_0xe80d() // UNK_0xe80d
 
 void UNK_0xe865() // UNK_0xe865
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(4);
   Push(0);
     
@@ -2469,8 +2459,7 @@ void UNK_0xe865() // UNK_0xe865
 
 void UNK_0xe8a1() // UNK_0xe8a1
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(4);
   Push(0);
     
@@ -2572,8 +2561,7 @@ void UNK_0xe8e5() // UNK_0xe8e5
 
 void UNK_0xe947() // UNK_0xe947
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(0);
   Push(4);
@@ -2652,8 +2640,7 @@ void UNK_0xe99f() // UNK_0xe99f
 
 void UNK_0xe9b3() // UNK_0xe9b3
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(4);
   Push(0);
     
@@ -2695,8 +2682,7 @@ void UNK_0xe9b3() // UNK_0xe9b3
 
 void UNK_0xe9ed() // UNK_0xe9ed
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(4);
   Push(0);
     
@@ -2740,7 +2726,7 @@ void UNK_0xe9ed() // UNK_0xe9ed
 
 void UNK_0xea2b() // UNK_0xea2b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(0);
@@ -2776,7 +2762,7 @@ void UNK_0xea2b() // UNK_0xea2b
 
 void UNK_0xea59() // UNK_0xea59
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(0);
@@ -2813,7 +2799,7 @@ void UNK_0xea59() // UNK_0xea59
 
 void UNK_0xea89() // UNK_0xea89
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(0);
@@ -2849,8 +2835,7 @@ void UNK_0xea89() // UNK_0xea89
 
 void UNK_0xeab7() // UNK_0xeab7
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
   Push(0);
@@ -2962,8 +2947,7 @@ void UNK_0xeb45() // UNK_0xeb45
 
 void UNK_0xeb61() // UNK_0xeb61
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(pp_VIN); // VIN
@@ -3032,7 +3016,7 @@ void UNK_0xeb61() // UNK_0xeb61
 
 void UNK_0xebd1() // UNK_0xebd1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe13b(); // UNK_0xe13b
   UNK_0xe8e5(); // UNK_0xe8e5
   Push(0x0059);
@@ -3137,7 +3121,7 @@ void SEEGRID() // SEEGRID
 
 void UNK_0xec7d() // UNK_0xec7d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0075);
   Push(0);
     
@@ -3162,8 +3146,7 @@ void UNK_0xec7d() // UNK_0xec7d
 
 void UNK_0xec97() // UNK_0xec97
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
@@ -3211,8 +3194,7 @@ void UNK_0xec97() // UNK_0xec97
 
 void UNK_0xecd5() // UNK_0xecd5
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0);
   COLORMAP(); // COLORMAP
   Push(0x0059);
@@ -3262,10 +3244,7 @@ void UNK_0xecd5() // UNK_0xecd5
 
 void UNK_0xed17() // UNK_0xed17
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  signed short int k, kmax;
-  signed short int l, lmax;
+  unsigned short int i, imax, j, jmax, k, kmax, l, lmax;
   Push(5);
   Push(0);
     
@@ -3366,7 +3345,7 @@ void UNK_0xed17() // UNK_0xed17
 
 void UNK_0xedb1() // UNK_0xedb1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0075);
   Push(0x0024);
     
@@ -3392,8 +3371,7 @@ void UNK_0xedb1() // UNK_0xedb1
 
 void UNK_0xedcf() // UNK_0xedcf
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0);
   Push(9);
   Push(0);
@@ -3432,8 +3410,7 @@ void UNK_0xedcf() // UNK_0xedcf
 
 void UNK_0xedfb() // UNK_0xedfb
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
@@ -3502,8 +3479,7 @@ void UNK_0xedfb() // UNK_0xedfb
 
 void UNK_0xee65() // UNK_0xee65
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(9);
   Push(0);
     
@@ -3547,8 +3523,7 @@ void UNK_0xee65() // UNK_0xee65
 
 void UNK_0xee9b() // UNK_0xee9b
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(9);
   Push(0);
     
@@ -3592,7 +3567,7 @@ void UNK_0xee9b() // UNK_0xee9b
 
 void UNK_0xeed1() // UNK_0xeed1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xedfb(); // UNK_0xedfb
   UNK_0xedcf(); // UNK_0xedcf
   UNK_0xed17(); // UNK_0xed17
@@ -3708,8 +3683,7 @@ void UNK_0xef6f() // UNK_0xef6f
 
 void UNK_0xef97() // UNK_0xef97
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x0014);
   _dash_(); // -
   Push(6);
@@ -4137,7 +4111,7 @@ void UNK_0xf246() // UNK_0xf246
 
 void UNK_0xf2b4() // UNK_0xf2b4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xedfb(); // UNK_0xedfb
   UNK_0xee65(); // UNK_0xee65
   UNK_0xed17(); // UNK_0xed17

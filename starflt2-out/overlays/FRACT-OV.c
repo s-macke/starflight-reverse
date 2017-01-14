@@ -276,7 +276,7 @@ void UNK_0xe39a() // UNK_0xe39a
 
 void UNK_0xe3a6() // UNK_0xe3a6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(4);
   Push(0);
     
@@ -844,8 +844,7 @@ void UNK_0xe801() // UNK_0xe801
 
 void UNK_0xe80f() // UNK_0xe80f
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_YCON); // YCON
   Push(Read16(Pop())); // @
   Push(0x0028);
@@ -908,9 +907,7 @@ void UNK_0xe80f() // UNK_0xe80f
 
 void UNK_0xe86f() // UNK_0xe86f
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   _2OVER(); // 2OVER
   ACELLAD(); // ACELLAD
   A_at_(); // A@
@@ -943,8 +940,7 @@ void UNK_0xe86f() // UNK_0xe86f
 
 void UNK_0xe8a1() // UNK_0xe8a1
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(4);
   Push(0);
     
@@ -1005,8 +1001,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
 
 void UNK_0xe8f7() // UNK_0xe8f7
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
     
@@ -1045,8 +1040,7 @@ void UNK_0xe8f7() // UNK_0xe8f7
 
 void UNK_0xe921() // UNK_0xe921
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
     
@@ -1087,8 +1081,7 @@ void UNK_0xe921() // UNK_0xe921
 
 void UNK_0xe94f() // UNK_0xe94f
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(3);
   Push(0);
     
@@ -1140,9 +1133,7 @@ void UNK_0xe979() // UNK_0xe979
 
 void UNK_0xe985() // UNK_0xe985
 {
-  unsigned short int a;
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int a, i, imax, j, jmax;
   Push(pp_XCON); // XCON
   Push(Read16(Pop())); // @
   Push(0x0030);
@@ -1293,8 +1284,7 @@ void UNK_0xea37() // UNK_0xea37
 
 void UNK_0xea97() // UNK_0xea97
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_SPHEREW); // SPHEREW
   _099(); // 099
   Push(pp_SIGNEXT); // SIGNEXT
@@ -1587,8 +1577,7 @@ void UNK_0xeb90() // UNK_0xeb90
 
 void UNK_0xebfc() // UNK_0xebfc
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0xeb06(); // UNK_0xeb06
   UNK_0xeb20(); // UNK_0xeb20
   Push(Pop()-1); // 1-
@@ -1705,7 +1694,7 @@ void POLYGON_dash_EXTRACT() // POLYGON-EXTRACT
 
 void UNK_0xecc6() // UNK_0xecc6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_POLYPTR); // POLYPTR
   _099(); // 099
   Push(0x0048);
@@ -1840,7 +1829,7 @@ void UNK_0xecc6() // UNK_0xecc6
 
 void UNK_0xed8d() // UNK_0xed8d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0020);
   Push(0);
     
@@ -1894,11 +1883,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xedd9() // UNK_0xedd9
 {
-  unsigned short int a;
-  unsigned short int b;
-  signed short int i, imax;
-  signed short int j, jmax;
-  unsigned short int c;
+  unsigned short int a, b, i, imax, j, jmax, c;
   a = Pop(); // >R
   b = Pop(); // >R
   Push(0x0022);
@@ -2069,9 +2054,7 @@ if (((step>=0) && (j>=jmax)) || ((step<0) && (j<=jmax))) break;
 
 void UNK_0xeefa() // UNK_0xeefa
 {
-  unsigned short int a;
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int a, i, imax, j, jmax;
   Push(0);
   OVER(); // OVER
   ReadArray(Read16(0x6acc + 6), 0x00d8); // FACE
@@ -2160,7 +2143,7 @@ void UNK_0xeefa() // UNK_0xeefa
 
 void UNK_0xef86() // UNK_0xef86
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(pp_FADDR); // FADDR
   _ex__2(); // !_2
@@ -2246,7 +2229,7 @@ void UNK_0xefd9() // UNK_0xefd9
 
 void UNK_0xeffb() // UNK_0xeffb
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
   Push(0);
     
@@ -2279,7 +2262,7 @@ void UNK_0xeffb() // UNK_0xeffb
 
 void UNK_0xf023() // UNK_0xf023
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
   Push(0);
     

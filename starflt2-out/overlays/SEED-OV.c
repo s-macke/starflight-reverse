@@ -574,8 +574,7 @@ void UNK_0xee7e() // UNK_0xee7e
 
 void UNK_0xee92() // UNK_0xee92
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(Read16(cc_TRUE)); // TRUE
   a = Pop(); // >R
   CI_i_(); // CI'
@@ -608,8 +607,7 @@ void UNK_0xee92() // UNK_0xee92
 
 void UNK_0xeec0() // UNK_0xeec0
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xedf6(); // UNK_0xedf6
   a = Pop(); // >R
   UNK_0xedc6(); // UNK_0xedc6
@@ -744,8 +742,7 @@ void UNK_0xef4e() // UNK_0xef4e
 
 void UNK_0xef94() // UNK_0xef94
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   UNK_0xeeee(); // UNK_0xeeee
   Push(0x005b);
   Push(0);
@@ -964,8 +961,7 @@ void UNK_0xf0b2() // UNK_0xf0b2
 
 void UNK_0xf0da() // UNK_0xf0da
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   LoadData("UNK_0xec4a"); // from 'PLANET      '
@@ -1014,8 +1010,7 @@ void UNK_0xf0da() // UNK_0xf0da
 
 void UNK_0xf120() // UNK_0xf120
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
@@ -1199,10 +1194,7 @@ void UNK_0xf1f4() // UNK_0xf1f4
 
 void UNK_0xf21c() // UNK_0xf21c
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int a, b, c, d;
   a = Pop(); // >R
   Push(1);
   Push(pp__ro_PLANET); // (PLANET
@@ -1566,7 +1558,7 @@ void UNK_0xf3fa() // UNK_0xf3fa
 
 void UNK_0xf41e() // UNK_0xf41e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xec42); // UNK_0xec42
   _099(); // 099
   UNK_0xed8e(); // UNK_0xed8e
@@ -1593,8 +1585,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void UNK_0xf43a() // UNK_0xf43a
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xecf8(); // UNK_0xecf8
   Push(0x003c);
   _st_(); // <
@@ -1681,7 +1672,7 @@ void UNK_0xf48e() // UNK_0xf48e
 
 void UNK_0xf4c0() // UNK_0xf4c0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   UNK_0xed46(); // UNK_0xed46
   _3_star_(); // 3*

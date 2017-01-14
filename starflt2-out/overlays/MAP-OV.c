@@ -699,10 +699,7 @@ void UNK_0xe549() // UNK_0xe549
 
 void UNK_0xe585() // UNK_0xe585
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  signed short int k, kmax;
-  signed short int l, lmax;
+  unsigned short int i, imax, j, jmax, k, kmax, l, lmax;
   _ask_CGA(); // ?CGA
   if (Pop() != 0)
   {
@@ -978,7 +975,7 @@ void UNK_0xe766() // UNK_0xe766
 
 void UNK_0xe7b4() // UNK_0xe7b4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
@@ -1025,7 +1022,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xe7fe() // UNK_0xe7fe
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY2");
   _ex_COLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
@@ -1127,7 +1124,7 @@ void UNK_0xe864() // UNK_0xe864
 
 void UNK_0xe89c() // UNK_0xe89c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_NULL_dash_IC)); // NULL-IC
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
   Push(pp_ILOCAL); // ILOCAL
@@ -1177,7 +1174,7 @@ void UNK_0xe89c() // UNK_0xe89c
 
 void UNK_0xe8e6() // UNK_0xe8e6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _1PIX(); // 1PIX
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
   Push(Pop()-1); // 1-
@@ -1355,7 +1352,7 @@ void UNK_0xe9e0() // UNK_0xe9e0
 
 void UNK_0xea04() // UNK_0xea04
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   _1PIX(); // 1PIX
@@ -1740,8 +1737,7 @@ void UNK_0xec84() // UNK_0xec84
 
 void UNK_0xecaa() // UNK_0xecaa
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe382); // UNK_0xe382
@@ -1990,7 +1986,7 @@ void UNK_0xee3f() // UNK_0xee3f
 
 void UNK_0xee51() // UNK_0xee51
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xe4b3); // UNK_0xe4b3
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -2427,7 +2423,7 @@ void UNK_0xf085() // UNK_0xf085
 
 void UNK_0xf11b() // UNK_0xf11b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(3);
   Push(0);
     

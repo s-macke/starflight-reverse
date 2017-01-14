@@ -479,8 +479,7 @@ void UNK_0xe602() // UNK_0xe602
 
 void UNK_0xe616() // UNK_0xe616
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(Read16(cc_UNK_0xe584)); // UNK_0xe584
   Push(pp__ask_CALLING); // ?CALLING
   Push(Read16(Pop())); // @
@@ -547,7 +546,7 @@ void UNK_0xe616() // UNK_0xe616
 
 void _plus_A_dash_VESS() // +A-VESS
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_ENCOUNTER); // (ENCOUNTER
   _at__gt_C_plus_S(); // @>C+S
   Push(0x6404); // IFIELD(UNK_0xe5c3)
@@ -640,8 +639,7 @@ void _plus_A_dash_VESS() // +A-VESS
 
 void UNK_0xe73a() // UNK_0xe73a
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(0);
   Push(0x000f);
@@ -676,7 +674,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void _ask_PRL() // ?PRL
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(4);
@@ -998,7 +996,7 @@ void UNK_0xe951() // UNK_0xe951
 
 void DO_dash_FLARE() // DO-FLARE
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_DISPLAY(); // >DISPLAY
   BEEPOFF(); // BEEPOFF
   Push(0x0032);
@@ -1578,7 +1576,7 @@ void UNK_0xee25() // UNK_0xee25
 
 void UNK_0xee3b() // UNK_0xee3b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xedd2(); // UNK_0xedd2
   PRINT("IS ... AHHHHHH!", 15); // (.")
   BEEPON(); // BEEPON
@@ -2135,7 +2133,7 @@ void _dot_EX() // .EX
 
 void DMSG() // DMSG
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf1b1); // UNK_0xf1b1
   OFF(); // OFF
   Push(pp_XABS); // XABS
@@ -2388,8 +2386,7 @@ void UNK_0xf31b() // UNK_0xf31b
 
 void UNK_0xf333() // UNK_0xf333
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   Push(2);
@@ -2555,7 +2552,7 @@ void UNK_0xf425() // UNK_0xf425
 
 void TRAK_dash_E() // TRAK-E
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf43d); // UNK_0xf43d
   OFF(); // OFF
   Push2Words("*ASSIGN-CREW");

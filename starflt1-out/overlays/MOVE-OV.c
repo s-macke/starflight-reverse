@@ -662,12 +662,7 @@ void UNK_0xe8c6() // UNK_0xe8c6
 
 void UNK_0xe921() // UNK_0xe921
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int i, imax, j, jmax, a, b, c, d;
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(0x000e);
@@ -1168,8 +1163,7 @@ void UNK_0xed7a() // UNK_0xed7a
 
 void UNK_0xeda8() // UNK_0xeda8
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe7b8(); // UNK_0xe7b8
   UNK_0xed14(); // UNK_0xed14
   Push2Words("NULL");

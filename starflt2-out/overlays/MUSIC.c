@@ -395,7 +395,7 @@ void UNK_0xeea9() // UNK_0xeea9
 
 void UNK_0xeec1() // UNK_0xeec1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x001e);
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
@@ -418,7 +418,7 @@ void UNK_0xeec1() // UNK_0xeec1
 
 void UNK_0xeed7() // UNK_0xeed7
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -447,7 +447,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xeef9() // UNK_0xeef9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -483,7 +483,7 @@ void UNK_0xeef9() // UNK_0xeef9
 
 void UNK_0xef2b() // UNK_0xef2b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -700,8 +700,7 @@ void UNK_0xf033() // UNK_0xf033
 
 void UNK_0xf071() // UNK_0xf071
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
@@ -783,11 +782,7 @@ void UNK_0xf0bf() // UNK_0xf0bf
 
 void UNK_0xf0d5() // UNK_0xf0d5
 {
-  signed short int i, imax;
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int i, imax, a, b, c, d;
   BMOFF(); // BMOFF
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -1266,8 +1261,7 @@ void UNK_0xf40e() // UNK_0xf40e
 
 void UNK_0xf430() // UNK_0xf430
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@

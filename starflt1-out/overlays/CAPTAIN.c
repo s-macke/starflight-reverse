@@ -440,10 +440,7 @@ void UNK_0xde74() // UNK_0xde74
 
 void UNK_0xde7e() // UNK_0xde7e
 {
-  unsigned short int a;
-  signed short int i, imax;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, i, imax, b, c;
   _ex_COLOR(); // !COLOR
   a = Pop(); // >R
   Push(6);
@@ -489,7 +486,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xdebc() // UNK_0xdebc
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(6);
   Push(0);
     
@@ -567,7 +564,7 @@ void UNK_0xdebc() // UNK_0xdebc
 
 void UNK_0xdf3e() // UNK_0xdf3e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(6);
   Push(0);
     
@@ -640,7 +637,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xdfb6() // UNK_0xdfb6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xdf3e(); // UNK_0xdf3e
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
@@ -873,7 +870,7 @@ void UNK_0xe0e7() // UNK_0xe0e7
 
 void UNK_0xe0f9() // UNK_0xe0f9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1516,7 +1513,7 @@ void UNK_0xe4e2() // UNK_0xe4e2
 
 void UNK_0xe4ee() // UNK_0xe4ee
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTINIT(); // CTINIT
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -1867,7 +1864,7 @@ void UNK_0xe6df() // UNK_0xe6df
 
 void UNK_0xe709() // UNK_0xe709
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xde36); // UNK_0xde36
   OFF(); // OFF
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
@@ -1933,8 +1930,7 @@ void UNK_0xe73b() // UNK_0xe73b
 
 void UNK_0xe767() // UNK_0xe767
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0xe6c9(); // UNK_0xe6c9
   Push(0);
     
@@ -2054,8 +2050,7 @@ void UNK_0xe7f7() // UNK_0xe7f7
 
 void UNK_0xe823() // UNK_0xe823
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push2Words("*STARSHIP-HOLD");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -2298,7 +2293,7 @@ void UNK_0xe9ba() // UNK_0xe9ba
 
 void UNK_0xe9e2() // UNK_0xe9e2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -2365,7 +2360,7 @@ void UNK_0xea14() // UNK_0xea14
 
 void UNK_0xea62() // UNK_0xea62
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BLACK");
   UNK_0xe8e9(); // UNK_0xe8e9
   CTINIT(); // CTINIT

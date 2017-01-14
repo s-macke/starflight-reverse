@@ -380,7 +380,7 @@ void UNK_0xec90() // UNK_0xec90
 
 void UNK_0xeca2() // UNK_0xeca2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
   UNK_0x3f09("(F2) OR LAUNCH TO RECALL DRONE");
@@ -416,7 +416,7 @@ void UNK_0xeca2() // UNK_0xeca2
 
 void UNK_0xecf1() // UNK_0xecf1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -701,7 +701,7 @@ void UNK_0xee25() // UNK_0xee25
 
 void UNK_0xee2f() // UNK_0xee2f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xee19(); // UNK_0xee19
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -1565,8 +1565,7 @@ void UNK_0xf27d() // UNK_0xf27d
 
 void UNK_0xf289() // UNK_0xf289
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_TIMES); // TIMES
   UNK_0xec16(); // UNK_0xec16
   Pop(); // DROP
@@ -1618,7 +1617,7 @@ void UNK_0xf289() // UNK_0xf289
 
 void UNK_0xf2cb() // UNK_0xf2cb
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xec16(); // UNK_0xec16
     
   i = Pop();
@@ -1677,7 +1676,7 @@ void UNK_0xf2ed() // UNK_0xf2ed
 
 void UNK_0xf31d() // UNK_0xf31d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xf2ed(); // UNK_0xf2ed
   UNK_0xec16(); // UNK_0xec16
     
@@ -1722,7 +1721,7 @@ void UNK_0xf33d() // UNK_0xf33d
 
 void UNK_0xf351() // UNK_0xf351
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0065);
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
@@ -1758,7 +1757,7 @@ void UNK_0xf351() // UNK_0xf351
 
 void UNK_0xf385() // UNK_0xf385
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xec16(); // UNK_0xec16
     
   i = Pop();
@@ -1795,7 +1794,7 @@ void UNK_0xf39f() // UNK_0xf39f
 
 void UNK_0xf3a9() // UNK_0xf3a9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   UNK_0xec16(); // UNK_0xec16
     
@@ -1852,7 +1851,7 @@ void UNK_0xf3c9() // UNK_0xf3c9
 
 void UNK_0xf3f9() // UNK_0xf3f9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_THIS_dash_RE); // THIS-RE
   _at__gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN

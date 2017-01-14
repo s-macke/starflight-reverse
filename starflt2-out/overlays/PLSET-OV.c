@@ -331,8 +331,7 @@ void UNK_0xee0e() // UNK_0xee0e
 
 void UNK_0xee44() // UNK_0xee44
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP

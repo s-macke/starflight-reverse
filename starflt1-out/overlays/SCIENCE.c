@@ -441,7 +441,7 @@ void UNK_0xe754() // UNK_0xe754
 
 void UNK_0xe760() // UNK_0xe760
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("NULL");
   Push(0x000e);
   Push(0);
@@ -719,7 +719,7 @@ void UNK_0xe90e() // UNK_0xe90e
 
 void UNK_0xe950() // UNK_0xe950
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SWAP(); // SWAP
   Push(0x0088);
   Push(Pop() + Pop()); // +
@@ -748,7 +748,7 @@ void UNK_0xe950() // UNK_0xe950
 
 void UNK_0xe974() // UNK_0xe974
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SWAP(); // SWAP
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
@@ -868,7 +868,7 @@ void UNK_0xea26() // UNK_0xea26
 
 void UNK_0xea40() // UNK_0xea40
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -1225,8 +1225,7 @@ void UNK_0xecb4() // UNK_0xecb4
 
 void UNK_0xed30() // UNK_0xed30
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   SetColor("DK-GREEN");
   _ex_COLOR(); // !COLOR
   Push(0x0054);
@@ -1301,8 +1300,7 @@ void UNK_0xed30() // UNK_0xed30
 
 void UNK_0xedd0() // UNK_0xedd0
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push2Words("NULL");
   Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
@@ -1508,8 +1506,7 @@ void UNK_0xef17() // UNK_0xef17
 
 void UNK_0xef31() // UNK_0xef31
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   Push(a); // I
   Push(Pop()+1); // 1+
@@ -1766,7 +1763,7 @@ void UNK_0xf0ce() // UNK_0xf0ce
 
 void UNK_0xf0de() // UNK_0xf0de
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
   UNK_0x3f3b("ATMOSPHERE");
@@ -1873,7 +1870,7 @@ void UNK_0xf16b() // UNK_0xf16b
 
 void UNK_0xf1d3() // UNK_0xf1d3
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   LoadData("UNK_0xe64c"); // from 'VESSEL      '
   _2_at_(); // 2@
   D0_eq_(); // D0=
@@ -2004,8 +2001,7 @@ void UNK_0xf2ca() // UNK_0xf2ca
 
 void UNK_0xf2dc() // UNK_0xf2dc
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   Push(0x00b6);
   Push(0x006f);
   Push(0x007e);
@@ -2113,8 +2109,7 @@ void UNK_0xf390() // UNK_0xf390
 
 void UNK_0xf39c() // UNK_0xf39c
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_UNK_0xefe1); // UNK_0xefe1
   OFF(); // OFF
   Push(pp_UNK_0xefe5); // UNK_0xefe5

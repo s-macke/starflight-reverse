@@ -1283,7 +1283,7 @@ void valuate() // valuate
 
 void UNK_0xe523() // UNK_0xe523
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(1);
   LoadData("SPEC-NAME"); // from 'SPECIMEN    '
   Push(3);
@@ -1369,7 +1369,7 @@ void _do_setup() // $setup
 
 void _do_match() // $match
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _do_setup(); // $setup
   Push(0x0028);
   Push(pp_FILE_n_); // FILE#
@@ -2079,8 +2079,7 @@ void UNK_0xea76() // UNK_0xea76
 
 void UNK_0xeac0() // UNK_0xeac0
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp_UNK_0xeaba); // UNK_0xeaba
   _2_ex_(); // 2!
   UNK_0xe5c1(); // UNK_0xe5c1
@@ -2184,7 +2183,7 @@ void UNK_0xeb16() // UNK_0xeb16
 
 void UNK_0xeb62() // UNK_0xeb62
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(5);
   Push(0);
     
@@ -2848,7 +2847,7 @@ void UNK_0xeed4() // UNK_0xeed4
 
 void UNK_0xeee4() // UNK_0xeee4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
   Push(6);
@@ -3021,7 +3020,7 @@ void UNK_0xefa6() // UNK_0xefa6
 
 void UNK_0xefd4() // UNK_0xefd4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xee00(); // UNK_0xee00
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -3616,8 +3615,7 @@ void UNK_0xf348() // UNK_0xf348
 
 void UNK_0xf36a() // UNK_0xf36a
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(0x7d00);
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _st__ex__gt_(); // <!>

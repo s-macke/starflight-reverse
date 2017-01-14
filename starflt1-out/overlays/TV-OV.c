@@ -657,7 +657,7 @@ void UNK_0xea3f() // UNK_0xea3f
 
 void UNK_0xea67() // UNK_0xea67
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x2001);
   PAD(); // PAD
   _st__ex__gt_(); // <!>
@@ -690,7 +690,7 @@ void UNK_0xea67() // UNK_0xea67
 
 void UNK_0xea91() // UNK_0xea91
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(2);
   Push(0);
     
@@ -1586,8 +1586,7 @@ void UNK_0xf0f9() // UNK_0xf0f9
 
 void UNK_0xf138() // UNK_0xf138
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_EYEXY); // EYEXY
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
@@ -1662,7 +1661,7 @@ void UNK_0xf184() // UNK_0xf184
 
 void UNK_0xf1ba() // UNK_0xf1ba
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x000b);
   Push(0);
     
@@ -1685,7 +1684,7 @@ void UNK_0xf1ba() // UNK_0xf1ba
 
 void UNK_0xf1d2() // UNK_0xf1d2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   BEEPON(); // BEEPON
   Push(0x0064);
   Push(Read16(regsp)); // DUP
@@ -2054,8 +2053,7 @@ void UNK_0xf44d() // UNK_0xf44d
 
 void DO_dot_WEAPON() // DO.WEAPON
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xf3b5(); // UNK_0xf3b5
   Push(1);
   Push(pp_UNK_0xf435); // UNK_0xf435

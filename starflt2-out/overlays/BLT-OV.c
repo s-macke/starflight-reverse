@@ -187,8 +187,7 @@ void UNK_0xf058() // UNK_0xf058
 
 void UNK_0xf07b() // UNK_0xf07b
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_UNK_0xf068); // UNK_0xf068
   Push(0x000f);
   Push(Read16(cc_BL)); // BL
@@ -510,11 +509,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 void UNK_0xf280() // UNK_0xf280
 {
-  signed short int i, imax;
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int i, imax, a, b, c, d;
   BMOFF(); // BMOFF
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -597,8 +592,7 @@ void UNK_0xf280() // UNK_0xf280
 
 void UNK_0xf30a() // UNK_0xf30a
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   BMHIGH(); // BMHIGH
   Push(Read8(Pop())&0xFF); // C@
   Push(0);

@@ -153,7 +153,7 @@ const unsigned short int cc_UNK_0xef6a = 0xef6a; // UNK_0xef6a
 
 void UNK_0xef73() // UNK_0xef73
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   _gt_2FONT(); // >2FONT
   Push(3);
@@ -277,7 +277,7 @@ void UNK_0xf026() // UNK_0xf026
 
 void UNK_0xf064() // UNK_0xf064
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CDEPTH(); // CDEPTH
 
   label2:
@@ -515,7 +515,7 @@ void UNK_0xf1ac() // UNK_0xf1ac
 
 void UNK_0xf1d6() // UNK_0xf1d6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTINIT(); // CTINIT
   UNK_0x3f3b("CAPTAIN, WE ARE RECEIVING A ");
   _dot_TTY(); // .TTY
@@ -566,8 +566,7 @@ void UNK_0xf252() // UNK_0xf252
 
 void UNK_0xf25e() // UNK_0xf25e
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0x3f3b("BOOM!");
   _dot_TTY(); // .TTY
   Push(3);

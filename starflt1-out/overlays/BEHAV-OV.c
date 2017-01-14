@@ -1769,7 +1769,7 @@ void UNK_0xe946() // UNK_0xe946
 
 void UNK_0xe9b4() // UNK_0xe9b4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x640a); // IFIELD(BEHAVE)
   Push(Read8(Pop())&0xFF); // C@
   Push(1);

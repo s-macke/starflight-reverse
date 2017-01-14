@@ -1303,8 +1303,7 @@ void UNK_0xe0ea() // UNK_0xe0ea
 
 void UNK_0xe0fc() // UNK_0xe0fc
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   UNK_0xdd64(); // UNK_0xdd64
   UNK_0xdd4c(); // UNK_0xdd4c
@@ -1986,8 +1985,7 @@ void UNK_0xe452() // UNK_0xe452
 
 void UNK_0xe49a() // UNK_0xe49a
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
   a = Pop(); // >R
@@ -2106,8 +2104,7 @@ void UNK_0xe516() // UNK_0xe516
 
 void UNK_0xe536() // UNK_0xe536
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -2156,8 +2153,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void UNK_0xe572() // UNK_0xe572
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x0064);
   Push(0x03e8);
   Push(pp_COLOR); // COLOR
@@ -2272,8 +2268,7 @@ void UNK_0xe612() // UNK_0xe612
 
 void UNK_0xe61a() // UNK_0xe61a
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xe357(); // UNK_0xe357
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
@@ -2533,7 +2528,7 @@ void UNK_0xe764() // UNK_0xe764
 
 void UNK_0xe7a8() // UNK_0xe7a8
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xdd16(); // UNK_0xdd16
   _ask_NULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -2843,8 +2838,7 @@ void UNK_0xe93e() // UNK_0xe93e
 
 void UNK_0xe966() // UNK_0xe966
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
   a = Pop(); // >R
@@ -2997,7 +2991,7 @@ void UNK_0xea32() // UNK_0xea32
 
 void UNK_0xea5e() // UNK_0xea5e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xdd2e(); // UNK_0xdd2e
   UNK_0xdd64(); // UNK_0xdd64
   Push(pp_UNK_0xea2c); // UNK_0xea2c
@@ -3035,7 +3029,7 @@ void UNK_0xea5e() // UNK_0xea5e
 
 void UNK_0xea90() // UNK_0xea90
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_IINDEX); // IINDEX
   Push(Read16(Pop())); // @
   _gt_MAINVI(); // >MAINVI
@@ -3137,8 +3131,7 @@ void UNK_0xeb27() // UNK_0xeb27
 
 void UNK_0xeb45() // UNK_0xeb45
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -3794,7 +3787,7 @@ void UNK_0xee6f() // UNK_0xee6f
 
 void UNK_0xee8f() // UNK_0xee8f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_ENCOUN); // (ENCOUN
   _at__gt_C_plus_S(); // @>C+S
   Push(0x0017);
@@ -4330,7 +4323,7 @@ void UNK_0xf186() // UNK_0xf186
 
 void UNK_0xf1ca() // UNK_0xf1ca
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x2710);
   Push(pp_UNK_0xde4f); // UNK_0xde4f
   _ex__2(); // !_2

@@ -212,7 +212,7 @@ void UNK_0xf2b7() // UNK_0xf2b7
 
 void UNK_0xf3aa() // UNK_0xf3aa
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -287,7 +287,7 @@ void UNK_0xf418() // UNK_0xf418
 
 void UNK_0xf440() // UNK_0xf440
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2

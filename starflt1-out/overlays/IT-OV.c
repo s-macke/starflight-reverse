@@ -272,7 +272,7 @@ void UNK_0xee54() // UNK_0xee54
 
 void UNK_0xee70() // UNK_0xee70
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_CRS(); // @CRS
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE

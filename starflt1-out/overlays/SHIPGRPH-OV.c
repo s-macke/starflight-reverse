@@ -419,7 +419,7 @@ void UNK_0xef90() // UNK_0xef90
 
 void UNK_0xf014() // UNK_0xf014
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -506,7 +506,7 @@ void UNK_0xf098() // UNK_0xf098
 
 void _ro__dot_PODS_rc_() // (.PODS)
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_CRS(); // @CRS
   _at_DS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
@@ -834,7 +834,7 @@ void UNK_0xf310() // UNK_0xf310
 
 void UNK_0xf40f() // UNK_0xf40f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xf310(); // UNK_0xf310
   Push(5);
   Push(0);

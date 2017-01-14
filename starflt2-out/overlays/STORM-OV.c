@@ -117,8 +117,7 @@ void UNK_0xf126() // UNK_0xf126
 
 void UNK_0xf134() // UNK_0xf134
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(6);
   Push(Pop() * Pop()); // *

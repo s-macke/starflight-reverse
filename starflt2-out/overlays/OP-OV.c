@@ -311,7 +311,7 @@ void UNK_0xe5d4() // UNK_0xe5d4
 
 void UNK_0xe5ec() // UNK_0xe5ec
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -361,7 +361,7 @@ void UNK_0xe625() // UNK_0xe625
 
 void UNK_0xe672() // UNK_0xe672
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BROWN");
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xe636); // UNK_0xe636
@@ -656,7 +656,7 @@ void UNK_0xe8e6() // UNK_0xe8e6
 
 void UNK_0xe91a() // UNK_0xe91a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
   OVER(); // OVER
@@ -782,7 +782,7 @@ void UNK_0xe9b0() // UNK_0xe9b0
 
 void UNK_0xe9c0() // UNK_0xe9c0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   Push(0);
     
@@ -1467,7 +1467,7 @@ void UNK_0xef11() // UNK_0xef11
 
 void UNK_0xef2d() // UNK_0xef2d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(0x000b);
   UNK_0xe96c(); // UNK_0xe96c

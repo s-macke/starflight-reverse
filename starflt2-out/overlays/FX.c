@@ -821,8 +821,7 @@ void UNK_0xf3de() // UNK_0xf3de
 
 void UNK_0xf48c() // UNK_0xf48c
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   b = Pop(); // >R
   _at_CRS(); // @CRS
@@ -882,7 +881,7 @@ void UNK_0xf4be() // UNK_0xf4be
 
 void UNK_0xf4ec() // UNK_0xf4ec
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xf28a(); // UNK_0xf28a
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR

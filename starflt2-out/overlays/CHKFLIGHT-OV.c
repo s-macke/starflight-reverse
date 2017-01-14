@@ -448,7 +448,7 @@ void UNK_0xf414() // UNK_0xf414
 
 void UNK_0xf462() // UNK_0xf462
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0);

@@ -598,7 +598,7 @@ void UNK_0xf2db() // UNK_0xf2db
 
 void UNK_0xf2f5() // UNK_0xf2f5
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   INIT_dash_IC(); // INIT-IC
   Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
@@ -718,7 +718,7 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3bc() // UNK_0xf3bc
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x6a6a); Push(0x0002);
   UNK_0xf166(); // UNK_0xf166
   _dot_TTY(); // .TTY

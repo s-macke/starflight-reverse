@@ -279,7 +279,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 void TRANSACT() // TRANSACT
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SET_dash_BANK(); // SET-BANK
   Push(0x6402); // IFIELD(UNK_0xefae)
   Push(Read8(Pop())&0xFF); // C@
@@ -557,7 +557,7 @@ void UNK_0xf1e2() // UNK_0xf1e2
 
 void UNK_0xf26f() // UNK_0xf26f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3

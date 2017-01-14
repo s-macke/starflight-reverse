@@ -581,8 +581,7 @@ void UNK_0xde2c() // UNK_0xde2c
 
 void UNK_0xde7e() // UNK_0xde7e
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   USING(); // USING
   DOS(); // DOS
   Push(Read16(regsp)); // DUP
@@ -976,8 +975,7 @@ void UNK_0xe1a5() // UNK_0xe1a5
 
 void UNK_0xe1af() // UNK_0xe1af
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   PAD(); // PAD
   Push(0x000e);
   Push(0);
@@ -2016,7 +2014,7 @@ void UNK_0xea31() // UNK_0xea31
 
 void UNK_0xea3f() // UNK_0xea3f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -2110,7 +2108,7 @@ void UNK_0xea97() // UNK_0xea97
 
 void UNK_0xeaad() // UNK_0xeaad
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_BUF_dash_SEG); // BUF-SEG
   Push(Read16(Pop())); // @
   Push(pp_DBUF_dash_SE); // DBUF-SE
@@ -2144,7 +2142,7 @@ void UNK_0xeaad() // UNK_0xeaad
 
 void UNK_0xead7() // UNK_0xead7
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(Read16(cc_UNK_0xdf25)); // UNK_0xdf25
   Push(Pop()-1); // 1-
@@ -2329,8 +2327,7 @@ void UNK_0xeb72() // UNK_0xeb72
 
 void UNK_0xec7a() // UNK_0xec7a
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(0);
@@ -2713,7 +2710,7 @@ void UNK_0xee40() // UNK_0xee40
 
 void UNK_0xee50() // UNK_0xee50
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_UNK_0xdefa)); // UNK_0xdefa
   Push(0);
     
@@ -2737,7 +2734,7 @@ void UNK_0xee50() // UNK_0xee50
 
 void UNK_0xee66() // UNK_0xee66
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(Read16(cc_UNK_0xdefa)); // UNK_0xdefa
   Push(Pop()-1); // 1-
@@ -2877,9 +2874,7 @@ void UNK_0xef3c() // UNK_0xef3c
 
 void UNK_0xef54() // UNK_0xef54
 {
-  unsigned short int a;
-  unsigned short int b;
-  signed short int i, imax;
+  unsigned short int a, b, i, imax;
   a = Pop(); // >R
   b = Pop(); // >R
   _2DUP(); // 2DUP
@@ -2962,8 +2957,7 @@ void UNK_0xef9c() // UNK_0xef9c
 
 void UNK_0xefdd() // UNK_0xefdd
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@

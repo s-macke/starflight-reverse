@@ -122,8 +122,7 @@ void CI(); // CI
 
 void UNK_0xef56() // UNK_0xef56
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   a = Pop(); // >R

@@ -953,8 +953,7 @@ void UNK_0xd955() // UNK_0xd955
 
 void UNK_0xd963() // UNK_0xd963
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp_LSCAN); // LSCAN
   Push(0x0190);
   Push(Read16(cc_BL)); // BL
@@ -1936,7 +1935,7 @@ void UNK_0xde9e() // UNK_0xde9e
 
 void UNK_0xdebe() // UNK_0xdebe
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   ROT(); // ROT
   ROT(); // ROT
@@ -1969,7 +1968,7 @@ void UNK_0xdebe() // UNK_0xdebe
 
 void UNK_0xdf4e() // UNK_0xdf4e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xdedc); // UNK_0xdedc
   Push(0x0070);
   Push(Read16(cc_BL)); // BL
@@ -2046,8 +2045,7 @@ void _1SYL() // 1SYL
 
 void UNK_0xdfbd() // UNK_0xdfbd
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   PAD(); // PAD
   Push(0x0040);
   Push(Read16(cc_BL)); // BL
@@ -2301,8 +2299,7 @@ void UNK_0xe107() // UNK_0xe107
 
 void UNK_0xe13d() // UNK_0xe13d
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
     
@@ -2340,7 +2337,7 @@ void UNK_0xe13d() // UNK_0xe13d
 
 void UNK_0xe16d() // UNK_0xe16d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe13d(); // UNK_0xe13d
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
@@ -2956,8 +2953,7 @@ void UNK_0xe49f() // UNK_0xe49f
 
 void UNK_0xe4c9() // UNK_0xe4c9
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push2Words("*MESS");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -5906,7 +5902,7 @@ void UNK_0xf328() // UNK_0xf328
 
 void UNK_0xf3ce() // UNK_0xf3ce
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xda61); // UNK_0xda61
   _099(); // 099
   Push(0xda5d); // probable 'UNK_0xda5d'

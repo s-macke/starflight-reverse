@@ -71,7 +71,7 @@ void BLT(); // BLT
 
 void UNK_0xf2c6() // UNK_0xf2c6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(8);
   Push(0);
     
@@ -176,7 +176,7 @@ void UNK_0xf36f() // UNK_0xf36f
 
 void UNK_0xf3e6() // UNK_0xf3e6
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(2);
   Push(0);
     
@@ -248,7 +248,7 @@ void UNK_0xf452() // UNK_0xf452
 
 void UNK_0xf45e() // UNK_0xf45e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_1FONT(); // >1FONT
     
   i = Pop();

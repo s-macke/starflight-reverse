@@ -1750,7 +1750,7 @@ void UNK_0xdfe9() // UNK_0xdfe9
 
 void _dot_AUXSYS() // .AUXSYS
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2);
@@ -1962,8 +1962,7 @@ void IVAR() // IVAR
 
 void UNK_0xe1c2() // UNK_0xe1c2
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_S(); // @INST-S
@@ -2153,7 +2152,7 @@ void UNK_0xe23b() // UNK_0xe23b
 
 void UNK_0xe2d7() // UNK_0xe2d7
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
   Push(0x0018);
   Push(Pop() + Pop()); // +
@@ -2262,7 +2261,7 @@ void UNK_0xe327() // UNK_0xe327
 
 void UNK_0xe37b() // UNK_0xe37b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("GREY1");
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
@@ -2344,9 +2343,7 @@ void _dot_MVS() // .MVS
 
 void UNK_0xe466() // UNK_0xe466
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
@@ -2631,8 +2628,7 @@ void UNK_0xe626() // UNK_0xe626
 
 void UNK_0xe63a() // UNK_0xe63a
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe626(); // UNK_0xe626
   a = Pop(); // >R
   b = Pop(); // >R
@@ -2654,8 +2650,7 @@ void UNK_0xe63a() // UNK_0xe63a
 
 void UNK_0xe656() // UNK_0xe656
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   UNK_0xe626(); // UNK_0xe626
   Push(a); // I
@@ -3266,8 +3261,7 @@ void NEST_dash_SE() // NEST-SE
 
 void UNK_0xe9f1() // UNK_0xe9f1
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(1);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -3450,7 +3444,7 @@ void UNK_0xeafe() // UNK_0xeafe
 
 void UNK_0xeb1a() // UNK_0xeb1a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_IGLOBAL); // IGLOBAL
   Push(Read16(Pop())); // @
   _ask_ICONS_dash__2(); // ?ICONS-_2
@@ -3587,7 +3581,7 @@ void COLLIDE() // COLLIDE
 
 void UNK_0xebdb() // UNK_0xebdb
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xdac0(); // UNK_0xdac0
   Push(Read16(cc_UNK_0xd9d0)); // UNK_0xd9d0
   Push(pp_ILOCAL); // ILOCAL
@@ -3859,8 +3853,7 @@ void UNK_0xed94() // UNK_0xed94
 
 void UNK_0xedb8() // UNK_0xedb8
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xdb1c(); // UNK_0xdb1c
   Push(pp__ask_AF); // ?AF
   Push(Read16(Pop())); // @
@@ -4084,8 +4077,7 @@ void UNK_0xef03() // UNK_0xef03
 
 void UNK_0xef35() // UNK_0xef35
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xedb8(); // UNK_0xedb8
   UNK_0xee14(); // UNK_0xee14
   Push(Pop() | Pop()); // OR

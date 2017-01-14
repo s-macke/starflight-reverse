@@ -1779,7 +1779,7 @@ void UNK_0xeed2() // UNK_0xeed2
 
 void UNK_0xeee2() // UNK_0xeee2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_SCROLL_dash_); // SCROLL-
   Push(Read16(Pop())); // @
   Push(7);
@@ -1947,7 +1947,7 @@ void UNK_0xef94() // UNK_0xef94
 
 void UNK_0xefc4() // UNK_0xefc4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xedf0(); // UNK_0xedf0
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -2561,8 +2561,7 @@ void UNK_0xf35c() // UNK_0xf35c
 
 void UNK_0xf37e() // UNK_0xf37e
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
   Push(0);

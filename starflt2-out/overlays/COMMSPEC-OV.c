@@ -216,8 +216,7 @@ void UNK_0xe58a() // UNK_0xe58a
 
 void UNK_0xe59e() // UNK_0xe59e
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
@@ -668,7 +667,7 @@ void NPCREW() // NPCREW
 
 void UNK_0xee17() // UNK_0xee17
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_TRUE)); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -716,8 +715,7 @@ void UNK_0xee17() // UNK_0xee17
 
 void UNK_0xf190() // UNK_0xf190
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push2Words("NULL");
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -936,7 +934,7 @@ void _n__gt_PRO() // #>PRO
 
 void UNK_0xf4ad() // UNK_0xf4ad
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(pp_UNK_0xe63e); // UNK_0xe63e

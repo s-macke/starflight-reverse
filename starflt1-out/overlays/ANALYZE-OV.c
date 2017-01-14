@@ -1287,8 +1287,7 @@ void UNK_0xf29f() // UNK_0xf29f
 
 void UNK_0xf2c8() // UNK_0xf2c8
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(2);
   Push(7);

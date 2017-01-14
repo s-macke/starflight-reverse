@@ -475,7 +475,7 @@ void UNK_0xe63e() // UNK_0xe63e
 
 void UNK_0xe6c5() // UNK_0xe6c5
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x00c3);
   Push(1);
   Push(0x001c);
@@ -1050,8 +1050,7 @@ void UNK_0xebcd() // UNK_0xebcd
 
 void UNK_0xec5d() // UNK_0xec5d
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   SAVE_dash_SCR(); // SAVE-SCR
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
@@ -1333,8 +1332,7 @@ void UNK_0xee3f() // UNK_0xee3f
 
 void UNK_0xee65() // UNK_0xee65
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   LoadData("UNK_0xe668"); // from 'CREWMEMBER  '
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
@@ -1483,7 +1481,7 @@ void UNK_0xef53() // UNK_0xef53
 
 void UNK_0xefff() // UNK_0xefff
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CI(); // CI
   _gt_C(); // >C
   Push(1);

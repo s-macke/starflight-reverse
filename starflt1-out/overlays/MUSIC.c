@@ -430,8 +430,7 @@ void HIMUS() // HIMUS
 
 void CSCR_gt_EGA() // CSCR>EGA
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
@@ -658,7 +657,7 @@ void UNK_0xe716() // UNK_0xe716
 
 void BRMOVE() // BRMOVE
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
   Push(6);
@@ -744,7 +743,7 @@ void BRMOVE() // BRMOVE
 
 void UNK_0xe7cd() // UNK_0xe7cd
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   TIME(); // TIME
   _2_at_(); // 2@
   Push(0xafc8); Push(0x0000);
@@ -791,7 +790,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
 
 void UNK_0xe813() // UNK_0xe813
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x000b);
   Push(0);
     
@@ -918,7 +917,7 @@ void INCREASE() // INCREASE
 
 void UNK_0xe928() // UNK_0xe928
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   REDUCE(); // REDUCE
   Push(pp_LFSEG); // LFSEG

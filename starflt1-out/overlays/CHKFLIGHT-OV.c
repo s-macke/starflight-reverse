@@ -398,7 +398,7 @@ void UNK_0xf40a() // UNK_0xf40a
 
 void UNK_0xf450() // UNK_0xf450
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0);

@@ -524,8 +524,7 @@ void UNK_0xec30() // UNK_0xec30
 
 void UNK_0xec46() // UNK_0xec46
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   Push(Read16(a)); // R@
   IFLD_at_(); // IFLD@
@@ -766,7 +765,7 @@ void UNK_0xed6a() // UNK_0xed6a
 
 void UNK_0xed9e() // UNK_0xed9e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_WOUNDED); // WOUNDED
   Push(Read16(regsp)); // DUP
   Push(6);
@@ -1007,7 +1006,7 @@ void _n__gt__ask_FIEL() // #>?FIEL
 
 void UNK_0xef3c() // UNK_0xef3c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_RSRC); // RSRC
   Push(9);
   Push(0);
@@ -1125,7 +1124,7 @@ void UNK_0xef8e() // UNK_0xef8e
 
 void UNK_0xf02e() // UNK_0xf02e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xed9a); // UNK_0xed9a
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1220,7 +1219,7 @@ void UNK_0xf08a() // UNK_0xf08a
 
 void UNK_0xf0e0() // UNK_0xf0e0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xed5a); // UNK_0xed5a
   _st__ex__gt_(); // <!>
   UNK_0xede0(); // UNK_0xede0
@@ -1340,7 +1339,7 @@ void UNK_0xf162() // UNK_0xf162
 
 void UNK_0xf19a() // UNK_0xf19a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0018);
   Push((Pop()==Pop())?1:0); // =
@@ -1392,8 +1391,7 @@ void UNK_0xf19a() // UNK_0xf19a
 
 void UNK_0xf1ec() // UNK_0xf1ec
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xed4e(); // UNK_0xed4e
   a = Pop(); // >R
   Push(pp_ILOCAL); // ILOCAL
@@ -1772,7 +1770,7 @@ void UNK_0xf3f8() // UNK_0xf3f8
 
 void UNK_0xf404() // UNK_0xf404
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   _ex_COLOR(); // !COLOR
   VCLIPSET(); // VCLIPSET
@@ -1842,8 +1840,7 @@ void UNK_0xf43c() // UNK_0xf43c
 
 void UNK_0xf47f() // UNK_0xf47f
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   UNK_0xf3f8(); // UNK_0xf3f8
   UNK_0xeaf5(); // UNK_0xeaf5
   SetColor("LT-BLUE");

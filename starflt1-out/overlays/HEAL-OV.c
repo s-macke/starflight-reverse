@@ -260,7 +260,7 @@ void UNK_0xf139() // UNK_0xf139
 
 void UNK_0xf147() // UNK_0xf147
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(6);
   Push(0);
     
@@ -353,7 +353,7 @@ void UNK_0xf183() // UNK_0xf183
 
 void ROLE_dash_C() // ROLE-C
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xf139(); // UNK_0xf139
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
@@ -395,8 +395,7 @@ void ROLE_dash_C() // ROLE-C
 
 void UNK_0xf23c() // UNK_0xf23c
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(1);
   Push(pp_ROSTER); // ROSTER
@@ -495,7 +494,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
 
 void UNK_0xf2cd() // UNK_0xf2cd
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   ROLE_dash_C(); // ROLE-C
   UNK_0xf280(); // UNK_0xf280
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -579,10 +578,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 void _dot_VITS() // .VITS
 {
-  unsigned short int a;
-  unsigned short int b;
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int a, b, i, imax, j, jmax;
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
   a = Pop(); // >R
@@ -729,7 +725,7 @@ void UNK_0xf416() // UNK_0xf416
 
 void UNK_0xf42f() // UNK_0xf42f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(pp_UNK_0xf426); // UNK_0xf426
   _ex__3(); // !_3
@@ -830,7 +826,7 @@ void UNK_0xf497() // UNK_0xf497
 
 void UNK_0xf4c1() // UNK_0xf4c1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*ASSIGN-CREW");
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT

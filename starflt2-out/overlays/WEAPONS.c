@@ -412,8 +412,7 @@ void UNK_0xed47() // UNK_0xed47
 
 void UNK_0xed61() // UNK_0xed61
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp_UNK_0xed5d); // UNK_0xed5d
   _099(); // 099
   Push(0x000e);
@@ -592,7 +591,7 @@ void UNK_0xedf7() // UNK_0xedf7
 
 void UNK_0xee5f() // UNK_0xee5f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -761,7 +760,7 @@ void UNK_0xef48() // UNK_0xef48
 
 void UNK_0xef54() // UNK_0xef54
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xecab(); // UNK_0xecab
   Push(1);
   Push(8);
@@ -820,8 +819,7 @@ void UNK_0xef86() // UNK_0xef86
 
 void UNK_0xefa4() // UNK_0xefa4
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   CTERASE(); // CTERASE
   Push(0x000e);
   Push(0);
@@ -863,7 +861,7 @@ void UNK_0xefa4() // UNK_0xefa4
 
 void UNK_0xefd4() // UNK_0xefd4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _ex_COLOR(); // !COLOR
   BFILL(); // BFILL
   V_gt_DISPL(); // V>DISPL
@@ -894,7 +892,7 @@ void UNK_0xefd4() // UNK_0xefd4
 
 void UNK_0xeffc() // UNK_0xeffc
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
   SetColor("WHITE");
@@ -1235,7 +1233,7 @@ void UNK_0xf172() // UNK_0xf172
 
 void UNK_0xf20c() // UNK_0xf20c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_TRUE)); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -1427,7 +1425,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
 
 void UNK_0xf306() // UNK_0xf306
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x65ee); // IFIELD(INST-X)
   Push(Read16(Pop())); // @
   Push(0x65f0); // IFIELD(INST-Y)

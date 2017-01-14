@@ -225,7 +225,7 @@ void _dot_LATFRAME() // .LATFRAME
 
 void UNK_0xeed3() // UNK_0xeed3
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_CRS(); // @CRS
   CURSORSPACE(); // CURSORSPACE
   Push(pp_ABLT); // ABLT
@@ -741,9 +741,7 @@ void UNK_0xf239() // UNK_0xf239
 
 void UNK_0xf290() // UNK_0xf290
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  signed short int k, kmax;
+  unsigned short int i, imax, j, jmax, k, kmax;
   CTINIT(); // CTINIT
   UNK_0x3f3b("THE RED CYLINDER IS FLASHING");
   _dot_TTY(); // .TTY
@@ -813,8 +811,7 @@ if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
 
 void UNK_0xf311() // UNK_0xf311
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_SPECIES(); // @INST-SPECIES

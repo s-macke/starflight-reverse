@@ -119,9 +119,7 @@ void UNK_0xf092() // UNK_0xf092
 
 void UNK_0xf0a6() // UNK_0xf0a6
 {
-  unsigned short int a;
-  signed short int i, imax;
-  unsigned short int b;
+  unsigned short int a, i, imax, b;
   a = Pop(); // >R
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S

@@ -537,8 +537,7 @@ void UNK_0xdfb7() // UNK_0xdfb7
 
 void UNK_0xe0ab() // UNK_0xe0ab
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
@@ -767,7 +766,7 @@ void UNK_0xe207() // UNK_0xe207
 
 void UNK_0xe213() // UNK_0xe213
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("NULL");
   Push(0x000e);
   Push(0);
@@ -1090,7 +1089,7 @@ void UNK_0xe408() // UNK_0xe408
 
 void UNK_0xe448() // UNK_0xe448
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SWAP(); // SWAP
   Push(0x008f);
   Push(Pop() + Pop()); // +
@@ -1119,7 +1118,7 @@ void UNK_0xe448() // UNK_0xe448
 
 void UNK_0xe46c() // UNK_0xe46c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SWAP(); // SWAP
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
@@ -1285,7 +1284,7 @@ void UNK_0xe573() // UNK_0xe573
 
 void UNK_0xe58d() // UNK_0xe58d
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -1543,7 +1542,7 @@ void UNK_0xe780() // UNK_0xe780
 
 void UNK_0xe79e() // UNK_0xe79e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe780(); // UNK_0xe780
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -1569,7 +1568,7 @@ void UNK_0xe79e() // UNK_0xe79e
 
 void UNK_0xe7ba() // UNK_0xe7ba
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x6600); // IFIELD(UNK_0xe017)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
@@ -1599,7 +1598,7 @@ void UNK_0xe7ba() // UNK_0xe7ba
 
 void UNK_0xe7de() // UNK_0xe7de
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x6637); // IFIELD(UNK_0xe030)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1630,7 +1629,7 @@ void UNK_0xe7de() // UNK_0xe7de
 
 void UNK_0xe804() // UNK_0xe804
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x6638); // IFIELD(UNK_0xe035)
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1683,8 +1682,7 @@ void UNK_0xe82a() // UNK_0xe82a
 
 void UNK_0xe84c() // UNK_0xe84c
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _at_COLOR(); // @COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -1768,7 +1766,7 @@ void UNK_0xe8b4() // UNK_0xe8b4
 
 void UNK_0xe8c0() // UNK_0xe8c0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
   _at_INST_dash_S(); // @INST-S
@@ -1983,8 +1981,7 @@ void UNK_0xe9a0() // UNK_0xe9a0
 
 void UNK_0xea1c() // UNK_0xea1c
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   SetColor("DK-GREE");
   _ex_COLOR(); // !COLOR
   Push(0x0054);
@@ -2059,8 +2056,7 @@ void UNK_0xea1c() // UNK_0xea1c
 
 void UNK_0xeabc() // UNK_0xeabc
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0xe906(); // UNK_0xe906
   Push(pp_UNK_0xe914); // UNK_0xe914
   Push(Read16(Pop())); // @
@@ -2268,8 +2264,7 @@ void UNK_0xec0b() // UNK_0xec0b
 
 void UNK_0xec25() // UNK_0xec25
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   Push(a); // I
   Push(Pop()+1); // 1+
@@ -2522,7 +2517,7 @@ void UNK_0xed9e() // UNK_0xed9e
 
 void UNK_0xedae() // UNK_0xedae
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
   UNK_0x3f09("ATMOSPHERE");
@@ -2623,7 +2618,7 @@ void UNK_0xee3b() // UNK_0xee3b
 
 void UNK_0xee8f() // UNK_0xee8f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   LoadData("UNK_0xe054"); // from 'VESSEL      '
   _2_at_(); // 2@
   D0_eq_(); // D0=
@@ -2767,8 +2762,7 @@ void UNK_0xefa0() // UNK_0xefa0
 
 void UNK_0xefb2() // UNK_0xefb2
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   Push(0x00b6);
   Push(0x006f);
   Push(0x007e);
@@ -3087,7 +3081,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
 
 void UNK_0xf20e() // UNK_0xf20e
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_FALSE)); // FALSE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -3160,7 +3154,7 @@ void UNK_0xf260() // UNK_0xf260
 
 void UNK_0xf268() // UNK_0xf268
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1); // IFIELD(INST-SI)
@@ -3600,8 +3594,7 @@ void UNK_0xf4c9() // UNK_0xf4c9
 
 void UNK_0xf4e7() // UNK_0xf4e7
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(pp__ask_COMBAT); // ?COMBAT
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;

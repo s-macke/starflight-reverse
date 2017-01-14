@@ -859,8 +859,7 @@ void UNK_0xe1aa() // UNK_0xe1aa
 
 void UNK_0xe1b8() // UNK_0xe1b8
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   _2DUP(); // 2DUP
   Push(0);
     
@@ -917,7 +916,7 @@ void UNK_0xe1e8() // UNK_0xe1e8
 
 void UNK_0xe200() // UNK_0xe200
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xe1b8(); // UNK_0xe1b8
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
@@ -2432,7 +2431,7 @@ void UNK_0xea3c() // UNK_0xea3c
 
 void UNK_0xea6a() // UNK_0xea6a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_XBLT); // XBLT
   Push(Read16(Pop())); // @
   Push(pp_YBLT); // YBLT
@@ -4001,8 +4000,7 @@ void UNK_0xf2ea() // UNK_0xf2ea
 
 void UNK_0xf32a() // UNK_0xf32a
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp__1ST); // 1ST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=

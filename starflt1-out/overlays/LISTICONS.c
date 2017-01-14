@@ -63,7 +63,7 @@ void TILEFILL(); // TILEFILL
 
 void altitude() // altitude
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BLACK");
   _ex_COLOR(); // !COLOR
   Push(0x001f);
@@ -168,7 +168,7 @@ void ICON_dash_KEY() // ICON-KEY
 
 void _dot_BLT() // .BLT
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(2);
   Push(0);
     
@@ -223,7 +223,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
 
 void SEE_dash_BLTS() // SEE-BLTS
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_1FONT(); // >1FONT
     
   i = Pop();

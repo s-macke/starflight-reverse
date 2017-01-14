@@ -150,7 +150,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
 
 void UNK_0xf406() // UNK_0xf406
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0032);
   Push(0);
     
@@ -229,7 +229,7 @@ void UNK_0xf420() // UNK_0xf420
 
 void HYPER_dash_FRAME() // HYPER-FRAME
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -263,7 +263,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void FLUX() // FLUX
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVI(); // >MAINVI
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   ON_2(); // ON_2
@@ -297,7 +297,7 @@ void FLUX() // FLUX
 
 void UNK_0xf4e5() // UNK_0xf4e5
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -332,7 +332,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void JUMPFX() // JUMPFX
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVI(); // >MAINVI
   UNK_0xf406(); // UNK_0xf406
   Push(0);

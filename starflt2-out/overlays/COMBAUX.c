@@ -358,7 +358,7 @@ void UNK_0xf45c() // UNK_0xf45c
 
 void UNK_0xf480() // UNK_0xf480
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf430); // UNK_0xf430
   _099(); // 099
   Push(0x03e8);

@@ -539,7 +539,7 @@ void UNK_0xeb5b() // UNK_0xeb5b
 
 void UNK_0xebb5() // UNK_0xebb5
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(5);
   Push(0);
     
@@ -573,8 +573,7 @@ void UNK_0xebb5() // UNK_0xebb5
 
 void UNK_0xebe9() // UNK_0xebe9
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   _at_CRS(); // @CRS
   Push(a); // R>
@@ -816,7 +815,7 @@ void UNK_0xed20() // UNK_0xed20
 
 void UNK_0xed6a() // UNK_0xed6a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x640e); // IFIELD(UNK_0xe9fd)
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
@@ -1147,7 +1146,7 @@ void UNK_0xefcc() // UNK_0xefcc
 
 void UNK_0xf041() // UNK_0xf041
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x6432); // IFIELD(UNK_0xea11)
   Push(Read16(Pop())); // @
   Push(0x01f3);
@@ -1415,7 +1414,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
 
 void UNK_0xf226() // UNK_0xf226
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push2Words("NULL");
   Push(6);
   Push(1);
@@ -1472,8 +1471,7 @@ void UNK_0xf226() // UNK_0xf226
 
 void UNK_0xf288() // UNK_0xf288
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   b = Pop(); // >R
   Push(0);
@@ -1510,8 +1508,7 @@ void UNK_0xf2c5() // UNK_0xf2c5
 
 void UNK_0xf2fa() // UNK_0xf2fa
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   DNEGATE(); // DNEGATE
   UNK_0xe99e(); // UNK_0xe99e
   Push(0x6418); // IFIELD(UNK_0xea02)

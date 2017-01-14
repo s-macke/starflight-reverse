@@ -657,7 +657,7 @@ void UNK_0xe64b() // UNK_0xe64b
 
 void UNK_0xe657() // UNK_0xe657
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CTINIT(); // CTINIT
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -1008,7 +1008,7 @@ void UNK_0xe848() // UNK_0xe848
 
 void UNK_0xe872() // UNK_0xe872
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xe436); // UNK_0xe436
   _099(); // 099
   Push(pp_CONTEXT_3); // CONTEXT_3
@@ -1074,8 +1074,7 @@ void UNK_0xe8a4() // UNK_0xe8a4
 
 void UNK_0xe8d0() // UNK_0xe8d0
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   UNK_0xe832(); // UNK_0xe832
   Push(0);
     
@@ -1195,8 +1194,7 @@ void UNK_0xe960() // UNK_0xe960
 
 void UNK_0xe98c() // UNK_0xe98c
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN

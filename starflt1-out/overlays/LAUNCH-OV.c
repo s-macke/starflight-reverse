@@ -125,7 +125,7 @@ void UNK_0xf026() // UNK_0xf026
 
 void UNK_0xf034() // UNK_0xf034
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0010);
   Push(0x000b);
     
@@ -201,7 +201,7 @@ void UNK_0xf08c() // UNK_0xf08c
 
 void COUNTDOWN() // COUNTDOWN
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x2710);
   TONE(); // TONE
   Push(1);
@@ -562,7 +562,7 @@ void PORTLEAVE() // PORTLEAVE
 
 void UNK_0xf393() // UNK_0xf393
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
   _gt_DISPLAY(); // >DISPLAY
@@ -645,8 +645,7 @@ void _and_LAUNCH() // &LAUNCH
 
 void _and_RETURN() // &RETURN
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
   Push(6);

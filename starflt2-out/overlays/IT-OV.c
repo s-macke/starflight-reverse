@@ -301,7 +301,7 @@ void UNK_0xef2e() // UNK_0xef2e
 
 void UNK_0xef4a() // UNK_0xef4a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_CRS(); // @CRS
   CTERASE(); // CTERASE
   _gt_1FONT(); // >1FONT

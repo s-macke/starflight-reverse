@@ -278,7 +278,7 @@ void UNK_0xe484() // UNK_0xe484
 
 void UNK_0xe494() // UNK_0xe494
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -305,7 +305,7 @@ void UNK_0xe494() // UNK_0xe494
 
 void UNK_0xe4e2() // UNK_0xe4e2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BROWN");
   _ex_COLOR(); // !COLOR
   Push(pp_UNK_0xe4a6); // UNK_0xe4a6
@@ -601,7 +601,7 @@ void UNK_0xe78b() // UNK_0xe78b
 
 void UNK_0xe7ca() // UNK_0xe7ca
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _2DUP(); // 2DUP
   Push(Pop()+1); // 1+
   OVER(); // OVER
@@ -715,7 +715,7 @@ void UNK_0xe856() // UNK_0xe856
 
 void UNK_0xe866() // UNK_0xe866
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   Push(0);
     
@@ -1288,7 +1288,7 @@ void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
 
 void UNK_0xed0c() // UNK_0xed0c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c

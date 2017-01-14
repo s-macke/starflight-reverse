@@ -289,8 +289,7 @@ void UNK_0xf0b9() // UNK_0xf0b9
 
 void _ro__n_IN_do_() // (#IN$
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   a = Pop(); // >R
   PAD(); // PAD
   Push(a); // I
@@ -615,7 +614,7 @@ void EINDE() // EINDE
 
 void UNK_0xf319() // UNK_0xf319
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   SetColor("BLACK");
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT

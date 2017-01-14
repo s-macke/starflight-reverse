@@ -181,9 +181,7 @@ const unsigned short int cc_UNK_0xee6e = 0xee6e; // UNK_0xee6e
 
 void UNK_0xee7e() // UNK_0xee7e
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
@@ -441,7 +439,7 @@ void UNK_0xef8c() // UNK_0xef8c
 
 void UNK_0xef96() // UNK_0xef96
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xeea8(); // UNK_0xeea8
   UNK_0xef70(); // UNK_0xef70
   Push(Read16(regsp)); // DUP
@@ -535,7 +533,7 @@ void UNK_0xeffc() // UNK_0xeffc
 
 void UNK_0xf00c() // UNK_0xf00c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xeffc(); // UNK_0xeffc
   UNK_0xeea8(); // UNK_0xeea8
   UNK_0xef70(); // UNK_0xef70
@@ -665,7 +663,7 @@ void LHOLD() // LHOLD
 
 void _ro_DUPL_rc_() // (DUPL)
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   UNK_0xef70(); // UNK_0xef70
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -739,7 +737,7 @@ void SPLIT() // SPLIT
 
 void XL() // XL
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   LHOLD(); // LHOLD
   UNK_0xef70(); // UNK_0xef70
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -904,7 +902,7 @@ void EOL() // EOL
 
 void PUT() // PUT
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
   Push(0);
     

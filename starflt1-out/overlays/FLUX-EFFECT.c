@@ -133,7 +133,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
 
 void UNK_0xf456() // UNK_0xf456
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0032);
   Push(0);
     
@@ -212,7 +212,7 @@ void UNK_0xf470() // UNK_0xf470
 
 void UNK_0xf4d0() // UNK_0xf4d0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -249,7 +249,7 @@ if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
 
 void FLUX() // FLUX
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   ON_3(); // ON_3

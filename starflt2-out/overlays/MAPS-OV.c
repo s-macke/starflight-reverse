@@ -590,12 +590,7 @@ void _4X4CONTOUR() // 4X4CONTOUR
 
 void UNK_0xeff3() // UNK_0xeff3
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int i, imax, j, jmax, a, b, c, d;
   Push(0x000e);
   Push(0);
     

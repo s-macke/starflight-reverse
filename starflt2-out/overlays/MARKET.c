@@ -280,9 +280,7 @@ const unsigned short int cc_UNK_0xf1c8 = 0xf1c8; // UNK_0xf1c8
 
 void UNK_0xe826() // UNK_0xe826
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
@@ -1326,7 +1324,7 @@ void UNK_0xee33() // UNK_0xee33
 
 void UNK_0xee4b() // UNK_0xee4b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   Push(0);
     
@@ -1347,7 +1345,7 @@ void UNK_0xee4b() // UNK_0xee4b
 
 void UNK_0xee5b() // UNK_0xee5b
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(7);
   Push(0);
     
@@ -1479,7 +1477,7 @@ void UNK_0xeee3() // UNK_0xeee3
 
 void UNK_0xef14() // UNK_0xef14
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   UNK_0xee11(); // UNK_0xee11

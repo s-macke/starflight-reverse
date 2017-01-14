@@ -183,7 +183,7 @@ void UNK_0xf17e() // UNK_0xf17e
 
 void UNK_0xf1e1() // UNK_0xf1e1
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   _at_CRS(); // @CRS
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT

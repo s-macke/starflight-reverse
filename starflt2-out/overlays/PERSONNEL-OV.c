@@ -260,7 +260,7 @@ void UNK_0xe3ee() // UNK_0xe3ee
 
 void UNK_0xe3fe() // UNK_0xe3fe
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_TRUE)); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
@@ -303,8 +303,7 @@ void UNK_0xe3fe() // UNK_0xe3fe
 
 void UNK_0xe43a() // UNK_0xe43a
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _at_COLOR(); // @COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -730,7 +729,7 @@ void UNK_0xe647() // UNK_0xe647
 
 void UNK_0xe6c9() // UNK_0xe6c9
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x00c3);
   Push(1);
   Push(0x001c);
@@ -1285,8 +1284,7 @@ void UNK_0xeba9() // UNK_0xeba9
 
 void UNK_0xec39() // UNK_0xec39
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   SAVE_dash_SC(); // SAVE-SC
   _gt_HIDDEN(); // >HIDDEN
   _at_CRS(); // @CRS
@@ -1566,8 +1564,7 @@ void UNK_0xee17() // UNK_0xee17
 
 void UNK_0xee3d() // UNK_0xee3d
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   LoadData("UNK_0xe671"); // from 'CREWMEMBER  '
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
@@ -1716,7 +1713,7 @@ void UNK_0xef2b() // UNK_0xef2b
 
 void UNK_0xefd8() // UNK_0xefd8
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   CI(); // CI
   _gt_C(); // >C
   Push(1);
@@ -2330,8 +2327,7 @@ void PFILE_dash_FUNCTI() // PFILE-FUNCTI
 
 void _ro_U_dash_PFILE_rc_() // (U-PFILE)
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xe3fe(); // UNK_0xe3fe
   a = Pop(); // >R
   UNK_0xe4ec(); // UNK_0xe4ec

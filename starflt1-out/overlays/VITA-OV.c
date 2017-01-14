@@ -381,8 +381,7 @@ void UNK_0xe91a() // UNK_0xe91a
 
 void UNK_0xe928() // UNK_0xe928
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(6);
   Push(Pop() * Pop()); // *
@@ -475,7 +474,7 @@ void UNK_0xe9f6() // UNK_0xe9f6
 
 void UNK_0xea0a() // UNK_0xea0a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -550,7 +549,7 @@ void UNK_0xea78() // UNK_0xea78
 
 void UNK_0xeaa0() // UNK_0xeaa0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
@@ -1074,7 +1073,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
 
 void UNK_0xf23c() // UNK_0xf23c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xef53); // UNK_0xef53
@@ -1125,7 +1124,7 @@ void UNK_0xf23c() // UNK_0xf23c
 
 void UNK_0xf286() // UNK_0xf286
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -1182,7 +1181,7 @@ void UNK_0xf286() // UNK_0xf286
 
 void UNK_0xf2da() // UNK_0xf2da
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(1);
     
   i = Pop();
@@ -1295,7 +1294,7 @@ void UNK_0xf334() // UNK_0xf334
 
 void UNK_0xf382() // UNK_0xf382
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_PLHI); // PLHI
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -1387,7 +1386,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
 
 void UNK_0xf40c() // UNK_0xf40c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S

@@ -559,12 +559,7 @@ void UNK_0xebd7() // UNK_0xebd7
 
 void UNK_0xec32() // UNK_0xec32
 {
-  signed short int i, imax;
-  signed short int j, jmax;
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
-  unsigned short int d;
+  unsigned short int i, imax, j, jmax, a, b, c, d;
   Push(pp_BLTSEG); // BLTSEG
   Push(Read16(Pop())); // @
   Push(0x000e);
@@ -1156,8 +1151,7 @@ void UNK_0xefdf() // UNK_0xefdf
 
 void UNK_0xf00d() // UNK_0xf00d
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   UNK_0xeafd(); // UNK_0xeafd
   UNK_0xef79(); // UNK_0xef79
   Push2Words("NULL");
@@ -1517,7 +1511,7 @@ void UNK_0xf231() // UNK_0xf231
 
 void UNK_0xf25f() // UNK_0xf25f
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__at__co_0_star_1_sc_); // @,0*1;
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;

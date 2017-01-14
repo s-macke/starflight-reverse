@@ -538,7 +538,7 @@ void UNK_0xe012() // UNK_0xe012
 
 void UNK_0xe026() // UNK_0xe026
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0x0010);
   Push(0);
     
@@ -741,8 +741,7 @@ void SETDIS() // SETDIS
 
 void SCR_gt_CG() // SCR>CG
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(-1);
   Push(0x00c8);
   Push(0);
@@ -1545,8 +1544,7 @@ void UNK_0xe8b0() // UNK_0xe8b0
 
 void SCR_gt_EG() // SCR>EG
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(pp_XORMODE); // XORMODE
@@ -1729,7 +1727,7 @@ void ONCACHE() // ONCACHE
 
 void CHECKSUM() // CHECKSUM
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
     
   i = Pop();
@@ -1823,7 +1821,7 @@ void UNK_0xea11() // UNK_0xea11
 
 void PUSHVECT() // PUSHVECT
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_BUF_dash_SEG); // BUF-SEG
   Push(Read16(Pop())); // @
   Push(pp_DBUF_dash_SEG); // DBUF-SEG
@@ -1857,7 +1855,7 @@ void PUSHVECT() // PUSHVECT
 
 void POPVECT() // POPVECT
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(Read16(cc_UNK_0xdfae)); // UNK_0xdfae
   Push(Pop()-1); // 1-
@@ -2056,8 +2054,7 @@ void UNK_0xeb21() // UNK_0xeb21
 
 void _v_DISK() // |DISK
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(Read16(regsp)); // DUP
   Push(0);
@@ -2412,7 +2409,7 @@ void UNK_0xed92() // UNK_0xed92
 
 void UNK_0xeda2() // UNK_0xeda2
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(Read16(cc_UNK_0xdfaa)); // UNK_0xdfaa
   Push(0);
     
@@ -2436,7 +2433,7 @@ void UNK_0xeda2() // UNK_0xeda2
 
 void UNK_0xedb8() // UNK_0xedb8
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(0);
   Push(Read16(cc_UNK_0xdfaa)); // UNK_0xdfaa
   Push(Pop()-1); // 1-
@@ -2605,9 +2602,7 @@ void UNK_0xee99() // UNK_0xee99
 
 void BOX() // BOX
 {
-  unsigned short int a;
-  unsigned short int b;
-  signed short int i, imax;
+  unsigned short int a, b, i, imax;
   a = Pop(); // >R
   b = Pop(); // >R
   _2DUP(); // 2DUP
@@ -2755,8 +2750,7 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
 
 void UNK_0xf069() // UNK_0xf069
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@

@@ -1337,8 +1337,7 @@ void UNK_0xea45() // UNK_0xea45
 
 void UNK_0xea86() // UNK_0xea86
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x03e8);
   Push(0x0064);
     
@@ -1768,7 +1767,7 @@ void P2CRIT() // P2CRIT rule
 
 void UNK_0xeca4() // UNK_0xeca4
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
@@ -1809,7 +1808,7 @@ void UNK_0xeca4() // UNK_0xeca4
 
 void UNK_0xece0() // UNK_0xece0
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
@@ -1914,8 +1913,7 @@ void UNK_0xed66() // UNK_0xed66
 
 void CIRCLES() // CIRCLES
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   Push(0x000b);
   Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
@@ -2207,7 +2205,7 @@ void UNK_0xef38() // UNK_0xef38
 
 void UNK_0xef4c() // UNK_0xef4c
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -2277,9 +2275,7 @@ void UNK_0xef9a() // UNK_0xef9a
 
 void UNK_0xefd0() // UNK_0xefd0
 {
-  unsigned short int a;
-  unsigned short int b;
-  unsigned short int c;
+  unsigned short int a, b, c;
   DEPTH(); // DEPTH
   a = Pop(); // >R
   Push(pp_NCRS); // NCRS
@@ -2551,7 +2547,7 @@ void _ask_FUNC() // ?FUNC
 
 void UNK_0xf19a() // UNK_0xf19a
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
@@ -2761,8 +2757,7 @@ void UNK_0xf2d5() // UNK_0xf2d5
 
 void UNK_0xf312() // UNK_0xf312
 {
-  signed short int i, imax;
-  unsigned short int a;
+  unsigned short int i, imax, a;
   Push2Words("NULL");
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S

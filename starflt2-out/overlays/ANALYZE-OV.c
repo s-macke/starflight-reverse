@@ -1250,8 +1250,7 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3b8() // UNK_0xf3b8
 {
-  unsigned short int a;
-  signed short int i, imax;
+  unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(2);
   Push(7);

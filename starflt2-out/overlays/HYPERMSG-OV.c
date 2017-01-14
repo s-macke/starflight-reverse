@@ -491,8 +491,7 @@ void GET_dash_VES() // GET-VES
 
 void UNK_0xe716() // UNK_0xe716
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(Read16(cc_UNK_0xe684)); // UNK_0xe684
   Push(pp__ask_CALLIN); // ?CALLIN
   Push(Read16(Pop())); // @
@@ -627,8 +626,7 @@ void UNK_0xe7cc() // UNK_0xe7cc
 
 void UNK_0xe7f0() // UNK_0xe7f0
 {
-  signed short int i, imax;
-  signed short int j, jmax;
+  unsigned short int i, imax, j, jmax;
   Push(0x6a5a); // probable 'MERCATO'
   SETLARR(); // SETLARR
   FULLARR(); // FULLARR
@@ -1788,7 +1786,7 @@ void UNK_0xefbb() // UNK_0xefbb
 
 void DMSG() // DMSG
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xefda); // UNK_0xefda
   _099(); // 099
   Push(pp_XABS); // XABS
@@ -2073,8 +2071,7 @@ void UNK_0xf176() // UNK_0xf176
 
 void UNK_0xf18e() // UNK_0xf18e
 {
-  unsigned short int a;
-  unsigned short int b;
+  unsigned short int a, b;
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   Push(2);
@@ -2236,7 +2233,7 @@ void UNK_0xf278() // UNK_0xf278
 
 void TRAK_dash_E() // TRAK-E
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp_UNK_0xf290); // UNK_0xf290
   _099(); // 099
   Push2Words("*ASSIGN");
@@ -2391,7 +2388,7 @@ void _ro__ex__i_EXT_rc_() // (!'EXT)
 
 void _plus_A_dash_VESS() // +A-VESS
 {
-  signed short int i, imax;
+  unsigned short int i, imax;
   Push(pp__ro_ENCOUN); // (ENCOUN
   _at__gt_C_plus_S(); // @>C+S
   Push(0x65f6); // IFIELD(UNK_0xe6c3)
