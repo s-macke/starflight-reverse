@@ -208,11 +208,11 @@ void UNK_0xf2a1() // UNK_0xf2a1
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  Push(0x63fa); // IFIELD(UNK_0xf243)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x0023);
-  Push(Pop() + Pop()); // +
-  return;
+    Push(0x63fa); // IFIELD(UNK_0xf243)
+    Push(Read8(Pop())&0xFF); // C@
+    Push(0x0023);
+    Push(Pop() + Pop()); // +
+    return;
   }
   Push(0x002b);
 }
@@ -406,9 +406,9 @@ void UNK_0xf38f() // UNK_0xf38f
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  Push(0x0010);
-  Push(Pop() + Pop()); // +
-  return;
+    Push(0x0010);
+    Push(Pop() + Pop()); // +
+    return;
   }
   LoadData("UNK_0xf248"); // from 'CREATURE    '
   Push(Read16(Pop())); // @
@@ -426,8 +426,8 @@ void UNK_0xf3ab() // UNK_0xf3ab
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  Push(0x002c);
-  return;
+    Push(0x002c);
+    return;
   }
   Push(Read16(cc_UNK_0xf27b)); // UNK_0xf27b
 }
@@ -480,8 +480,8 @@ void UNK_0xf3f1() // UNK_0xf3f1
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  SPACE_dash_ID(); // SPACE-ID case
-  return;
+    SPACE_dash_ID(); // SPACE-ID case
+    return;
   }
   PLANET_dash_ID(); // PLANET-ID case
 }
@@ -541,8 +541,8 @@ void UNK_0xf43d() // UNK_0xf43d
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  Push(Read16(cc_DEFAULT)); // DEFAULT
-  return;
+    Push(Read16(cc_DEFAULT)); // DEFAULT
+    return;
   }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
@@ -599,8 +599,8 @@ void UNK_0xf485() // UNK_0xf485
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   if (Pop() != 0)
   {
-  Push(3);
-  return;
+    Push(3);
+    return;
   }
   Push(Read16(cc_DEFAULT)); // DEFAULT
 }

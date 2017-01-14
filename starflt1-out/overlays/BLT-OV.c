@@ -333,62 +333,62 @@ void _dot_HYBRID() // .HYBRID
   Push(4);
   LC_at_(); // LC@
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(pp_ABLT); // ABLT
-  Push(Read16(Pop())); // @
-  b = Pop(); // >R
-  Push(pp_BLTSEG); // BLTSEG
-  Push(Read16(Pop())); // @
-  c = Pop(); // >R
-  Push(4);
-  Push(pp_ABLT); // ABLT
-  _plus__ex_(); // +!
-  Push(c); // I
-  Push(b); // I'
-  Push(Pop()+2); // 2+
-  LC_at_(); // LC@
-  _ask__gt_EGA(); // ?>EGA
-  Push(pp_COLOR); // COLOR
-  _ex__3(); // !_3
-  Push(c); // R>
-  Push(b); // R>
-  Push(3);
-  Push(Pop() + Pop()); // +
-  LC_at_(); // LC@
-  if (Pop() != 0)
-  {
-  Push(pp_BLTSEG); // BLTSEG
-  Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT
-  Push(Read16(Pop())); // @
-  Push(pp__ask_EGA); // ?EGA
-  Push(Read16(Pop())); // @
-  if (Pop() != 0)
-  {
-  _dot_EGARUNBIT(); // .EGARUNBIT
-  } else
-  {
-  _dot_RUNBIT(); // .RUNBIT
-  }
-  } else
-  {
-  _co_BLT_cc_(); // {BLT}
-  }
-  Push(pp_BLTSEG); // BLTSEG
-  Push(Read16(Pop())); // @
-  Push(pp_ABLT); // ABLT
-  Push(Read16(Pop())); // @
-  Push(4);
-  _dash_(); // -
-  L_at_(); // L@
-  Push(4);
-  _dash_(); // -
-  Push(pp_ABLT); // ABLT
-  _plus__ex_(); // +!
+    Push(pp_ABLT); // ABLT
+    Push(Read16(Pop())); // @
+    b = Pop(); // >R
+    Push(pp_BLTSEG); // BLTSEG
+    Push(Read16(Pop())); // @
+    c = Pop(); // >R
+    Push(4);
+    Push(pp_ABLT); // ABLT
+    _plus__ex_(); // +!
+    Push(c); // I
+    Push(b); // I'
+    Push(Pop()+2); // 2+
+    LC_at_(); // LC@
+    _ask__gt_EGA(); // ?>EGA
+    Push(pp_COLOR); // COLOR
+    _ex__3(); // !_3
+    Push(c); // R>
+    Push(b); // R>
+    Push(3);
+    Push(Pop() + Pop()); // +
+    LC_at_(); // LC@
+    if (Pop() != 0)
+    {
+      Push(pp_BLTSEG); // BLTSEG
+      Push(Read16(Pop())); // @
+      Push(pp_ABLT); // ABLT
+      Push(Read16(Pop())); // @
+      Push(pp__ask_EGA); // ?EGA
+      Push(Read16(Pop())); // @
+      if (Pop() != 0)
+      {
+        _dot_EGARUNBIT(); // .EGARUNBIT
+      } else
+      {
+        _dot_RUNBIT(); // .RUNBIT
+      }
+    } else
+    {
+      _co_BLT_cc_(); // {BLT}
+    }
+    Push(pp_BLTSEG); // BLTSEG
+    Push(Read16(Pop())); // @
+    Push(pp_ABLT); // ABLT
+    Push(Read16(Pop())); // @
+    Push(4);
+    _dash_(); // -
+    L_at_(); // L@
+    Push(4);
+    _dash_(); // -
+    Push(pp_ABLT); // ABLT
+    _plus__ex_(); // +!
   i++;
   } while(i<imax); // (LOOP) 0xff9c
 

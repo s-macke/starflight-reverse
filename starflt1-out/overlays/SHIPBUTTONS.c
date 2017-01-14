@@ -232,19 +232,19 @@ void UNK_0xedec() // UNK_0xedec
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-  Push(0xcb4e); // probable 'OV-SH'
-  MODULE(); // MODULE
-  Push(0x02ee);
-  MS(); // MS
+    Push(0xcb4e); // probable 'OV-SH'
+    MODULE(); // MODULE
+    Push(0x02ee);
+    MS(); // MS
   }
   Push(3);
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-  Push(0xcb66); // probable 'OV-AR'
-  MODULE(); // MODULE
-  Push(0x02ee);
-  MS(); // MS
+    Push(0xcb66); // probable 'OV-AR'
+    MODULE(); // MODULE
+    Push(0x02ee);
+    MS(); // MS
   }
   ICLOSE(); // ICLOSE
 }
@@ -373,16 +373,16 @@ void UNK_0xeee2() // UNK_0xeee2
   WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-  Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
-  {
-  UNK_0xeeba(); // UNK_0xeeba
-  } else
-  {
-  Push(Read16(regsp)); // DUP
-  UNK_0xee6c(); // UNK_0xee6c
-  }
+    Push(Read16(regsp)); // DUP
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      UNK_0xeeba(); // UNK_0xeeba
+    } else
+    {
+      Push(Read16(regsp)); // DUP
+      UNK_0xee6c(); // UNK_0xee6c
+    }
   }
   _dot_BTN_dash_TE(); // .BTN-TE
 }
@@ -411,11 +411,11 @@ void UNK_0xef06() // UNK_0xef06
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-  UNK_0xeee2(); // UNK_0xeee2
-  SetColor("BLUE");
-  SWAP(); // SWAP
-  _dot_HIGHLI(); // .HIGHLI
-  return;
+    UNK_0xeee2(); // UNK_0xeee2
+    SetColor("BLUE");
+    SWAP(); // SWAP
+    _dot_HIGHLI(); // .HIGHLI
+    return;
   }
   Pop(); Pop();// 2DROP
 }
@@ -476,7 +476,7 @@ void UNK_0xef68() // UNK_0xef68
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  NEW_dash_BUT(); // NEW-BUT
+    NEW_dash_BUT(); // NEW-BUT
   }
   _ask_TRIG(); // ?TRIG
   if (Pop() == 0) return;
@@ -572,7 +572,7 @@ void UNK_0xefe4() // UNK_0xefe4
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  UNK_0xede2(); // UNK_0xede2
+    UNK_0xede2(); // UNK_0xede2
   }
   Push(0xc4a2); // probable '(GETSITE)'
   MODULE(); // MODULE
@@ -629,7 +629,6 @@ void _1_dot_1BTN_dot_XEQ() // 1.1BTN.XEQ
 void UNK_0xf03f() // UNK_0xf03f
 {
   CTINIT(); // CTINIT
-
   UNK_0x3f3b("REPORT TO OPERATIONS FOR EVALUATION");
   _dot_TTY(); // .TTY
   Push(0x07d0);
@@ -654,7 +653,7 @@ void UNK_0xf077() // UNK_0xf077
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-  UNK_0xf03f(); // UNK_0xf03f
+    UNK_0xf03f(); // UNK_0xf03f
   }
   if (Pop() == 0) Push(1); else Push(0); // NOT
   SWAP(); // SWAP
@@ -672,47 +671,44 @@ void UNK_0xf095() // UNK_0xf095
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  CTINIT(); // CTINIT
-  CTERASE(); // CTERASE
-  Push(pp__ask__ask__ask_IT); // ???IT
-  OFF(); // OFF
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
-  ON_3(); // ON_3
-  UNK_0xedec(); // UNK_0xedec
-
-  UNK_0x3f3b("STANDBY...SCANNING PLANET.");
-  _dot_TTY(); // .TTY
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() != 0)
-  {
-  Push(pp__ask_LANDED); // ?LANDED
-  ON_3(); // ON_3
-  Push(0xccfa); // probable 'BIO'
-  MODULE(); // MODULE
-  }
-  Push(0xd0bf); // probable 'TV'
-  MODULE(); // MODULE
-  Push(0xbd4a); // probable '=CARGO'
-  MODULE(); // MODULE
-  _i_KEY(); // 'KEY
-  Pop(); // DROP
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
-  OFF(); // OFF
-  UNK_0xefc2(); // UNK_0xefc2
-  Push(0xc3e1); // probable 'SEEGRID'
-  MODULE(); // MODULE
+    CTINIT(); // CTINIT
+    CTERASE(); // CTERASE
+    Push(pp__ask__ask__ask_IT); // ???IT
+    OFF(); // OFF
+    Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+    ON_3(); // ON_3
+    UNK_0xedec(); // UNK_0xedec
+    UNK_0x3f3b("STANDBY...SCANNING PLANET.");
+    _dot_TTY(); // .TTY
+    Push(pp_PLHI); // PLHI
+    Push(Read16(Pop())); // @
+    Push(-1);
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() != 0)
+    {
+      Push(pp__ask_LANDED); // ?LANDED
+      ON_3(); // ON_3
+      Push(0xccfa); // probable 'BIO'
+      MODULE(); // MODULE
+    }
+    Push(0xd0bf); // probable 'TV'
+    MODULE(); // MODULE
+    Push(0xbd4a); // probable '=CARGO'
+    MODULE(); // MODULE
+    _i_KEY(); // 'KEY
+    Pop(); // DROP
+    Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+    OFF(); // OFF
+    UNK_0xefc2(); // UNK_0xefc2
+    Push(0xc3e1); // probable 'SEEGRID'
+    MODULE(); // MODULE
   } else
   {
-  CTINIT(); // CTINIT
-
-  UNK_0x3f3b("THE SHIP IS NO LONGER EQUIPPED");
-  _dot_TTY(); // .TTY
-
-  UNK_0x3f3b("WITH A TERRAIN VEHICLE");
-  _dot_TTY(); // .TTY
+    CTINIT(); // CTINIT
+    UNK_0x3f3b("THE SHIP IS NO LONGER EQUIPPED");
+    _dot_TTY(); // .TTY
+    UNK_0x3f3b("WITH A TERRAIN VEHICLE");
+    _dot_TTY(); // .TTY
   }
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF
@@ -773,8 +769,8 @@ void UNK_0xf18e() // UNK_0xf18e
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-  UNK_0xf03f(); // UNK_0xf03f
-  return;
+    UNK_0xf03f(); // UNK_0xf03f
+    return;
   }
   Push(0xd204); // probable 'OV/LA'
   MODULE(); // MODULE
@@ -783,14 +779,14 @@ void UNK_0xf18e() // UNK_0xf18e
   _ex__3(); // !_3
   if (Pop() != 0)
   {
-  UNK_0xee4a(); // UNK_0xee4a
-  UNK_0xede2(); // UNK_0xede2
-  Push(0xef06); // probable 'UNK_0xef06'
-  Push(0xef68); // probable 'UNK_0xef68'
-  Push(0xf031); // probable '1.1BTN.XEQ'
-  Push(7);
-  Push(0xef50); // probable 'UNK_0xef50'
-  DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
+    UNK_0xee4a(); // UNK_0xee4a
+    UNK_0xede2(); // UNK_0xede2
+    Push(0xef06); // probable 'UNK_0xef06'
+    Push(0xef68); // probable 'UNK_0xef68'
+    Push(0xf031); // probable '1.1BTN.XEQ'
+    Push(7);
+    Push(0xef50); // probable 'UNK_0xef50'
+    DOTASKS2(UNK_0xef50, UNK_0xef50, UNK_0xef50, UNK_0xef50);
   }
   Push(1);
   Push(0);
@@ -1280,18 +1276,15 @@ void UNK_0xf41a() // UNK_0xf41a
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-
   UNK_0x3f3b("SHIP COMPUTER ACTIVATED");
   _dot_TTY(); // .TTY
   Push(0xbef3); // probable 'OV/STATUS'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
-
   UNK_0x3f3b("PRE-LAUNCH PROCEDURES COMPLETE");
   _dot_TTY(); // .TTY
   Push(0x00fa);
   MS(); // MS
-
   UNK_0x3f3b("STANDING BY TO INITIATE LAUNCH");
   _dot_TTY(); // .TTY
   Push(0x00fa);
@@ -1355,7 +1348,7 @@ void _gt_FLT() // >FLT
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  UNK_0xf4a0(); // UNK_0xf4a0
+    UNK_0xf4a0(); // UNK_0xf4a0
   }
   Push(pp_UNK_0xedb6); // UNK_0xedb6
   OFF(); // OFF

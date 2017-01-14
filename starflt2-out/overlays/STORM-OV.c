@@ -140,46 +140,46 @@ void UNK_0xf134() // UNK_0xf134
   Push(4);
   ROLL(); // ROLL
   UNK_0xf126(); // UNK_0xf126
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  _2_at_(); // 2@
-  Push(3);
-  PICK(); // PICK
-  Push((Pop()==Pop())?1:0); // =
-  a = Pop(); // >R
-  Push(3);
-  PICK(); // PICK
-  Push((Pop()==Pop())?1:0); // =
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
-  {
-  Push(i); // I
-  Push(4);
-  ROLL(); // ROLL
-  Pop(); // DROP
-  ROT(); // ROT
-  ROT(); // ROT
-  imax = i; // LEAVE
-  }
-  Push(6);
+    Push(i); // I
+    _2_at_(); // 2@
+    Push(3);
+    PICK(); // PICK
+    Push((Pop()==Pop())?1:0); // =
+    a = Pop(); // >R
+    Push(3);
+    PICK(); // PICK
+    Push((Pop()==Pop())?1:0); // =
+    Push(a); // R>
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      Push(i); // I
+      Push(4);
+      ROLL(); // ROLL
+      Pop(); // DROP
+      ROT(); // ROT
+      ROT(); // ROT
+      imax = i; // LEAVE
+    }
+    Push(6);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xffd4
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xffd4
 
   Pop(); Pop();// 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  Push(4);
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
-  return;
+    Push(4);
+    Push(Pop() + Pop()); // +
+    Push(Read16(Pop())); // @
+    return;
   }
   PRINT("INDEX NOT IN PROBABILITY ARRAY! ", 32); // (.")
   UNRAVEL(); // UNRAVEL
@@ -335,12 +335,12 @@ void UNK_0xf332() // UNK_0xf332
   WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-  Push(1);
-  Push(0x0064);
-  RRND(); // RRND
-  Push(0x001e);
-  _st_(); // <
-  return;
+    Push(1);
+    Push(0x0064);
+    RRND(); // RRND
+    Push(0x001e);
+    _st_(); // <
+    return;
   }
   Push(0);
 }
@@ -381,10 +381,10 @@ void UNK_0xf374() // UNK_0xf374
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  PRINT("INJURED", 7); // (.")
+    PRINT("INJURED", 7); // (.")
   } else
   {
-  PRINT("KILLED", 6); // (.")
+    PRINT("KILLED", 6); // (.")
   }
   PRINT(".", 1); // (.")
 }
@@ -490,20 +490,20 @@ void UNK_0xf468() // UNK_0xf468
   _gt_(); // >
   if (Pop() != 0)
   {
-  Push(6);
-  Push(0x000b);
-  WITHIN(); // WITHIN
-  if (Pop() != 0)
-  {
-  Push(0x0032);
+    Push(6);
+    Push(0x000b);
+    WITHIN(); // WITHIN
+    if (Pop() != 0)
+    {
+      Push(0x0032);
+    } else
+    {
+      Push(0x004b);
+    }
   } else
   {
-  Push(0x004b);
-  }
-  } else
-  {
-  Pop(); // DROP
-  Push(0x0064);
+    Pop(); // DROP
+    Push(0x0064);
   }
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
@@ -583,10 +583,10 @@ void _ro_DO_dot_STORM() // (DO.STORM
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  UNK_0xf4a6(); // UNK_0xf4a6
+    UNK_0xf4a6(); // UNK_0xf4a6
   } else
   {
-  UNK_0xf4e2(); // UNK_0xf4e2
+    UNK_0xf4e2(); // UNK_0xf4e2
   }
   ICLOSE(); // ICLOSE
   UNK_0xf468(); // UNK_0xf468
@@ -597,8 +597,8 @@ void _ro_DO_dot_STORM() // (DO.STORM
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-  Push(0xcdc0); // probable '.STOR'
-  MODULE(); // MODULE
+    Push(0xcdc0); // probable '.STOR'
+    MODULE(); // MODULE
   }
   UNK_0xf332(); // UNK_0xf332
   if (Pop() == 0) return;

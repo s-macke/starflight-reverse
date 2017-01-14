@@ -286,62 +286,62 @@ void TRANSACT() // TRANSACT
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  IOPEN(); // IOPEN
-  Push(0x000e);
-  SWAP(); // SWAP
-  Push(1);
-  _star_CREATE(); // *CREATE
-  IFIRST(); // IFIRST
-  Push(0);
-  Push(9);
-  Push(0);
-
+    IOPEN(); // IOPEN
+    Push(0x000e);
+    SWAP(); // SWAP
+    Push(1);
+    _star_CREATE(); // *CREATE
+    IFIRST(); // IFIRST
+    Push(0);
+    Push(9);
+    Push(0);
+      
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() != 0)
-  {
-  Push(Pop()+1); // 1+
-  imax = i; // LEAVE
-  }
-  i++;
+      INEXT(); // INEXT
+      _ask_FIRST(); // ?FIRST
+      if (Pop() != 0)
+      {
+        Push(Pop()+1); // 1+
+        imax = i; // LEAVE
+      }
+    i++;
   } while(i<imax); // (LOOP) 0xfff2
 
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
-  {
-  IFIRST(); // IFIRST
-  IDELETE(); // IDELETE
-  }
-  ILAST(); // ILAST
-  COVER(); // COVER
-  SET_dash_CUR(); // SET-CUR
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
-  Push(0x65ec); // IFIELD(UNK_0xefb4)
-  _2_at_(); // 2@
-  Push(0x65f0); // IFIELD(UNK_0xefb9)
-  _2_at_(); // 2@
-  D_dash_(); // D-
-  ICLOSE(); // ICLOSE
-  Push(0x65ec); // IFIELD(UNK_0xefcb)
-  D_ex_(); // D!
-  Push(0x65f0); // IFIELD(UNK_0xefd0)
-  _ex__2(); // !_2
-  ICLOSE(); // ICLOSE
-  Push(0x65f0); // IFIELD(UNK_0xefb9)
-  _2_at_(); // 2@
-  Push(0x65ec); // IFIELD(UNK_0xefb4)
-  D_ex_(); // D!
-  Push(0);
-  Push(0x65f4); // IFIELD(UNK_0xefbe)
-  C_ex__2(); // C!_2
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      IFIRST(); // IFIRST
+      IDELETE(); // IDELETE
+    }
+    ILAST(); // ILAST
+    COVER(); // COVER
+    SET_dash_CUR(); // SET-CUR
+    Push(pp_STARDAT); // STARDAT
+    Push(Read16(Pop())); // @
+    Push(0x65ec); // IFIELD(UNK_0xefb4)
+    _2_at_(); // 2@
+    Push(0x65f0); // IFIELD(UNK_0xefb9)
+    _2_at_(); // 2@
+    D_dash_(); // D-
+    ICLOSE(); // ICLOSE
+    Push(0x65ec); // IFIELD(UNK_0xefcb)
+    D_ex_(); // D!
+    Push(0x65f0); // IFIELD(UNK_0xefd0)
+    _ex__2(); // !_2
+    ICLOSE(); // ICLOSE
+    Push(0x65f0); // IFIELD(UNK_0xefb9)
+    _2_at_(); // 2@
+    Push(0x65ec); // IFIELD(UNK_0xefb4)
+    D_ex_(); // D!
+    Push(0);
+    Push(0x65f4); // IFIELD(UNK_0xefbe)
+    C_ex__2(); // C!_2
   } else
   {
-  Pop(); // DROP
+    Pop(); // DROP
   }
   ICLOSE(); // ICLOSE
 }
@@ -370,8 +370,8 @@ void INT_pe_() // INT%
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
-  Pop(); Pop();// 2DROP
-  return;
+    Pop(); Pop();// 2DROP
+    return;
   }
   D_at_BALANCE(); // D@BALANCE
   D_plus_(); // D+
@@ -475,10 +475,10 @@ void UNK_0xf1a6() // UNK_0xf1a6
   D_st_(); // D<
   if (Pop() != 0)
   {
-  Push(0x000b);
+    Push(0x000b);
   } else
   {
-  Push(0x000d);
+    Push(0x000d);
   }
   a = Pop(); // >R
   Push(Pop() | Pop()); // OR
@@ -564,47 +564,47 @@ void UNK_0xf27f() // UNK_0xf27f
   ON_2(); // ON_2
   Push(3);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(1);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(0x00c4);
-  Push(1);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(3);
-  LLINE(); // LLINE
-  Push(0x009c);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(0x00c4);
-  Push(0x009c);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(3);
-  LLINE(); // LLINE
-  Push(0x009c);
-  Push(1);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(3);
-  Push(1);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  LLINE(); // LLINE
-  Push(0x009c);
-  Push(0x00c4);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  Push(3);
-  Push(0x00c4);
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  LLINE(); // LLINE
+    Push(1);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(0x00c4);
+    Push(1);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(3);
+    LLINE(); // LLINE
+    Push(0x009c);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(0x00c4);
+    Push(0x009c);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(3);
+    LLINE(); // LLINE
+    Push(0x009c);
+    Push(1);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(3);
+    Push(1);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    LLINE(); // LLINE
+    Push(0x009c);
+    Push(0x00c4);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    Push(3);
+    Push(0x00c4);
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    LLINE(); // LLINE
   i++;
   } while(i<imax); // (LOOP) 0xffa6
 

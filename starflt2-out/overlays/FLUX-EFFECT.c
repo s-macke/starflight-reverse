@@ -153,20 +153,20 @@ void UNK_0xf406() // UNK_0xf406
   signed short int i, imax;
   Push(0x0032);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(pp_UNK_0xf356); // UNK_0xf356
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  UNK_0xf3a0(); // UNK_0xf3a0
-  Push(5);
+    Push(pp_UNK_0xf356); // UNK_0xf356
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    UNK_0xf3a0(); // UNK_0xf3a0
+    Push(5);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff4
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff4
 
 }
 
@@ -214,9 +214,9 @@ void UNK_0xf420() // UNK_0xf420
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-  Push(a); // R>
-  UNK_0xf3a0(); // UNK_0xf3a0
-  return;
+    Push(a); // R>
+    UNK_0xf3a0(); // UNK_0xf3a0
+    return;
   }
   Push(a); // R>
   C_ex__2(); // C!_2
@@ -234,23 +234,23 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  DARK(); // DARK
+    DARK(); // DARK
   }
   Push(0x0032);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  UNK_0xf420(); // UNK_0xf420
-  UNK_0xf346(); // UNK_0xf346
-  Push(5);
+    Push(i); // I
+    UNK_0xf420(); // UNK_0xf420
+    UNK_0xf346(); // UNK_0xf346
+    Push(5);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff6
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff6
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -275,12 +275,12 @@ void FLUX() // FLUX
   BEEPON_2(); // BEEPON_2
   Push(0x0096);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  HYPER_dash_FRAME(); // HYPER-FRAME
+    HYPER_dash_FRAME(); // HYPER-FRAME
   i++;
   } while(i<imax); // (LOOP) 0xfffc
 
@@ -302,24 +302,24 @@ void UNK_0xf4e5() // UNK_0xf4e5
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  DARK(); // DARK
+    DARK(); // DARK
   }
   Push(0x0032);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  RNDCLR(); // RNDCLR
-  Push(i); // I
-  UNK_0xf420(); // UNK_0xf420
-  UNK_0xf346(); // UNK_0xf346
-  Push(5);
+    RNDCLR(); // RNDCLR
+    Push(i); // I
+    UNK_0xf420(); // UNK_0xf420
+    UNK_0xf346(); // UNK_0xf346
+    Push(5);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff4
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff4
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -340,17 +340,17 @@ void JUMPFX() // JUMPFX
   BEEPON_2(); // BEEPON_2
   Push(Pop()*2); // 2*
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  UNK_0xf4e5(); // UNK_0xf4e5
-  Push(0);
-  Push(6);
-  RRND(); // RRND
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
-  _ex__2(); // !_2
+    UNK_0xf4e5(); // UNK_0xf4e5
+    Push(0);
+    Push(6);
+    RRND(); // RRND
+    Push(pp_UNK_0xf38a); // UNK_0xf38a
+    _ex__2(); // !_2
   i++;
   } while(i<imax); // (LOOP) 0xfff2
 

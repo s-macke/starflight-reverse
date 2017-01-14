@@ -253,10 +253,8 @@ void UNK_0xebe7() // UNK_0xebe7
 void UNK_0xebfd() // UNK_0xebfd
 {
   CTINIT(); // CTINIT
-
   UNK_0x3f09("PRESENCE OF UHL WEAPON IS PREVENTING");
   _dot_TTY(); // .TTY
-
   UNK_0x3f09("OUR ENTRY INTO THE ANOMALY");
   _dot_TTY(); // .TTY
 }
@@ -415,12 +413,10 @@ void UNK_0xecf5() // UNK_0xecf5
   _ex__2(); // !_2
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-
   UNK_0x3f09("GAME OVER - NO FUEL");
   _dot_TTY(); // .TTY
   Push(0x1388);
   MS(); // MS
-
   UNK_0x3f09("WARP ENGINES ABOUT TO... ");
   _dot_TTY(); // .TTY
   BEEPON_2(); // BEEPON_2
@@ -529,20 +525,20 @@ void UNK_0xee25() // UNK_0xee25
   signed short int i, imax;
   Push(0x003c);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(pp_UNK_0xed5d); // UNK_0xed5d
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  UNK_0xedb5(); // UNK_0xedb5
-  Push(6);
+    Push(pp_UNK_0xed5d); // UNK_0xed5d
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    UNK_0xedb5(); // UNK_0xedb5
+    Push(6);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff4
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff4
 
 }
 
@@ -602,10 +598,10 @@ void UNK_0xee3f() // UNK_0xee3f
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  Pop(); // DROP
-  Push(a); // R>
-  UNK_0xedb5(); // UNK_0xedb5
-  return;
+    Pop(); // DROP
+    Push(a); // R>
+    UNK_0xedb5(); // UNK_0xedb5
+    return;
   }
   Push(a); // R>
   C_ex__2(); // C!_2
@@ -624,23 +620,23 @@ void UNK_0xeebd() // UNK_0xeebd
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-  DARK(); // DARK
+    DARK(); // DARK
   }
   RNDCLR(); // RNDCLR
   Push(0x003c);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  UNK_0xee3f(); // UNK_0xee3f
-  Push(6);
+    Push(i); // I
+    UNK_0xee3f(); // UNK_0xee3f
+    Push(6);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff8
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff8
 
   V_gt_DISPL(); // V>DISPL
 }
@@ -778,10 +774,8 @@ void UNK_0xef25() // UNK_0xef25
 
 void UNK_0xef93() // UNK_0xef93
 {
-
   UNK_0x3f09("COMMANDER, WE ARE ONCE AGAIN IN OUR");
   _dot_TTY(); // .TTY
-
   UNK_0x3f09("OWN TIME PERIOD.");
   _dot_TTY(); // .TTY
 }
@@ -793,16 +787,12 @@ void UNK_0xef93() // UNK_0xef93
 
 void UNK_0xefd4() // UNK_0xefd4
 {
-
   UNK_0x3f09("COMMANDER, FROM OUR ANALYSIS OF THE");
   _dot_TTY(); // .TTY
-
   UNK_0x3f09("LOCAL STELLAR FORMATIONS, WE HAVE");
   _dot_TTY(); // .TTY
-
   UNK_0x3f09("DETERMINED THAT WE HAVE SOMEHOW");
   _dot_TTY(); // .TTY
-
   UNK_0x3f09("TRAVELLED BACK IN TIME.");
   _dot_TTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
@@ -829,8 +819,8 @@ void UNK_0xf078() // UNK_0xf078
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-  Push(5);
-  _slash_(); // /
+    Push(5);
+    _slash_(); // /
   }
   Push(0xc6a5); // probable '>DAM'
   MODULE(); // MODULE
@@ -847,14 +837,14 @@ void UNK_0xf098() // UNK_0xf098
   signed short int i, imax;
   Push(0x0020);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  RNDCLR(); // RNDCLR
-  BFILL(); // BFILL
-  V_gt_DISPL(); // V>DISPL
+    RNDCLR(); // RNDCLR
+    BFILL(); // BFILL
+    V_gt_DISPL(); // V>DISPL
   i++;
   } while(i<imax); // (LOOP) 0xfff8
 
@@ -874,10 +864,10 @@ void UNK_0xf0b2() // UNK_0xf0b2
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  UNK_0xefd4(); // UNK_0xefd4
+    UNK_0xefd4(); // UNK_0xefd4
   } else
   {
-  UNK_0xef93(); // UNK_0xef93
+    UNK_0xef93(); // UNK_0xef93
   }
   _slash_STARD(); // /STARD
 }
@@ -896,22 +886,22 @@ void UNK_0xf0ca() // UNK_0xf0ca
   BEEPON_2(); // BEEPON_2
   Push(0x001e);
   Push(0x0168);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  Push(6);
-  _slash_(); // /
-  Push(pp_UNK_0xed9f); // UNK_0xed9f
-  _ex__2(); // !_2
-  UNK_0xeebd(); // UNK_0xeebd
-  Push(-1);
+    Push(i); // I
+    Push(6);
+    _slash_(); // /
+    Push(pp_UNK_0xed9f); // UNK_0xed9f
+    _ex__2(); // !_2
+    UNK_0xeebd(); // UNK_0xeebd
+    Push(-1);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xfff0
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xfff0
 
   Push(0x00fa);
   MS(); // MS
@@ -947,8 +937,8 @@ void UNK_0xf0fe() // UNK_0xf0fe
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-  Push(5);
-  _slash_(); // /
+    Push(5);
+    _slash_(); // /
   }
   UNK_0xef25(); // UNK_0xef25
   Push(pp__10_star_END); // 10*END
@@ -957,7 +947,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-  UNK_0xecf5(); // UNK_0xecf5
+    UNK_0xecf5(); // UNK_0xecf5
   }
   Push(pp_FTRIG); // FTRIG
   ON_2(); // ON_2
@@ -974,14 +964,14 @@ void UNK_0xf146() // UNK_0xf146
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  _0_gt_(); // 0>
-  if (Pop() != 0)
-  {
-  UNK_0xf0fe(); // UNK_0xf0fe
-  }
-  Push(pp_FTRIG); // FTRIG
-  ON_2(); // ON_2
-  return;
+    _0_gt_(); // 0>
+    if (Pop() != 0)
+    {
+      UNK_0xf0fe(); // UNK_0xf0fe
+    }
+    Push(pp_FTRIG); // FTRIG
+    ON_2(); // ON_2
+    return;
   }
   Push(pp_UNK_0xec61); // UNK_0xec61
   _099(); // 099
@@ -1069,25 +1059,18 @@ void UNK_0xf1b6() // UNK_0xf1b6
 {
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-
   UNK_0x3f09(" ");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("WARNING        WARNING         WARNING");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09(" ");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("WE ARE PROCEEDING THROUGH THE ANOMALY.");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("PLEASE CONFIRM:");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09(" ");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("      [BACK OUT      GO THROUGH]      ");
   UNK_0xeeff(); // UNK_0xeeff
 }
@@ -1104,23 +1087,23 @@ void UNK_0xf265() // UNK_0xf265
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-  _0_st_(); // 0<
-  if (Pop() != 0)
-  {
-  BEEP(); // BEEP
-  Push(pp_UNK_0xec5d); // UNK_0xec5d
-  _099(); // 099
-  UNK_0xebe7(); // UNK_0xebe7
-  if (Pop() != 0)
-  {
-  UNK_0xebfd(); // UNK_0xebfd
-  UNK_0xf1a6(); // UNK_0xf1a6
-  }
-  } else
-  {
-  UNK_0xf1a6(); // UNK_0xf1a6
-  }
-  return;
+    _0_st_(); // 0<
+    if (Pop() != 0)
+    {
+      BEEP(); // BEEP
+      Push(pp_UNK_0xec5d); // UNK_0xec5d
+      _099(); // 099
+      UNK_0xebe7(); // UNK_0xebe7
+      if (Pop() != 0)
+      {
+        UNK_0xebfd(); // UNK_0xebfd
+        UNK_0xf1a6(); // UNK_0xf1a6
+      }
+    } else
+    {
+      UNK_0xf1a6(); // UNK_0xf1a6
+    }
+    return;
   }
   Push(pp_UNK_0xec59); // UNK_0xec59
   _099(); // 099
@@ -1152,16 +1135,12 @@ void UNK_0xf2ad() // UNK_0xf2ad
 {
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-
   UNK_0x3f09("IF WE APPLY FULL REVERSE THRUST WE MAY");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("BE ABLE TO BACK OUT. SHALL WE ATTEMPT ");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("TO ESCAPE\?");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("              [NO   YES] ");
   UNK_0xeeff(); // UNK_0xeeff
 }
@@ -1175,19 +1154,14 @@ void UNK_0xf338() // UNK_0xf338
 {
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-
   UNK_0x3f09("COMMANDER, THE SHIP'S HULL IS UNDER");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("TERRIFIC PRESSURE AND WE ARE IN DANGER");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("OF SUSTAINING MAJOR DAMAGE. OUR ENERGY");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("STORES ARE ALSO BEING DRAINED AT AN");
   UNK_0xeeff(); // UNK_0xeeff
-
   UNK_0x3f09("ALARMING RATE.");
   UNK_0xeeff(); // UNK_0xeeff
 }
@@ -1228,8 +1202,8 @@ void UNK_0xf40b() // UNK_0xf40b
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {
-  OVER(); // OVER
-  ON_2(); // ON_2
+    OVER(); // OVER
+    ON_2(); // ON_2
   }
   SWAP(); // SWAP
   Pop(); // DROP
@@ -1324,29 +1298,29 @@ void UNK_0xf4a5() // UNK_0xf4a5
   UNK_0xf40b(); // UNK_0xf40b
   if (Pop() != 0)
   {
-  UNK_0xf338(); // UNK_0xf338
+    UNK_0xf338(); // UNK_0xf338
   }
   Push(pp_UNK_0xec55); // UNK_0xec55
   Push(0x2ee0); Push(0x0000);
   UNK_0xf40b(); // UNK_0xf40b
   if (Pop() != 0)
   {
-  UNK_0xf2ad(); // UNK_0xf2ad
+    UNK_0xf2ad(); // UNK_0xf2ad
   }
   Push(pp_UNK_0xec59); // UNK_0xec59
   Push(0x32c8); Push(0x0000);
   UNK_0xf40b(); // UNK_0xf40b
   if (Pop() != 0)
   {
-  UNK_0xf164(); // UNK_0xf164
-  UNK_0xf265(); // UNK_0xf265
+    UNK_0xf164(); // UNK_0xf164
+    UNK_0xf265(); // UNK_0xf265
   }
   Push(pp_UNK_0xec5d); // UNK_0xec5d
   Push(0x36b0); Push(0x0000);
   UNK_0xf40b(); // UNK_0xf40b
   if (Pop() != 0)
   {
-  UNK_0xf1b6(); // UNK_0xf1b6
+    UNK_0xf1b6(); // UNK_0xf1b6
   }
   Push(pp_UNK_0xec61); // UNK_0xec61
   Push(0x3a98); Push(0x0000);
@@ -1381,10 +1355,10 @@ void DO_dash_EYE() // DO-EYE
   UNK_0xec83(); // UNK_0xec83
   if (Pop() != 0)
   {
-  Push(0x0014);
-  UNK_0xf297(); // UNK_0xf297
-  Push(0x0032);
-  UNK_0xef25(); // UNK_0xef25
+    Push(0x0014);
+    UNK_0xf297(); // UNK_0xf297
+    Push(0x0032);
+    UNK_0xef25(); // UNK_0xef25
   }
   UNK_0xf4a5(); // UNK_0xf4a5
   Push(pp_LKEY); // LKEY

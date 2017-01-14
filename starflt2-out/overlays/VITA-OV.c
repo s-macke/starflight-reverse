@@ -229,15 +229,15 @@ void UNK_0xf3aa() // UNK_0xf3aa
   Push(0xf1da);
   IFLD_at_(); // IFLD@
   IOPEN(); // IOPEN
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
-  Push(i); // I
-  Push(1);
-  _star_CREATE(); // *CREATE
+    Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
+    Push(i); // I
+    Push(1);
+    _star_CREATE(); // *CREATE
   i++;
   } while(i<imax); // (LOOP) 0xfff6
 
@@ -293,15 +293,15 @@ void UNK_0xf440() // UNK_0xf440
   _ex__2(); // !_2
   Push(6);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  Push(pp_RECORD_n_); // RECORD#
-  _ex__2(); // !_2
-  UNK_0xf418(); // UNK_0xf418
+    Push(i); // I
+    Push(pp_RECORD_n_); // RECORD#
+    _ex__2(); // !_2
+    UNK_0xf418(); // UNK_0xf418
   i++;
   } while(i<imax); // (LOOP) 0xfff6
 
@@ -335,22 +335,22 @@ void UNK_0xf474() // UNK_0xf474
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-  Push(0x000b);
-  Push(0x002e);
-  ICREATE(); // ICREATE
-  _2DUP(); // 2DUP
-  Push(pp__ro_PLANET); // (PLANET
-  _1_dot_5_at_(); // 1.5@
-  IINSERT(); // IINSERT
-  Push(0x000b);
-  Push(0x002c);
-  ICREATE(); // ICREATE
-  _2SWAP(); // 2SWAP
-  IINSERT(); // IINSERT
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
-  UNK_0xf45e(); // UNK_0xf45e
-  Pop(); // DROP
+    Push(0x000b);
+    Push(0x002e);
+    ICREATE(); // ICREATE
+    _2DUP(); // 2DUP
+    Push(pp__ro_PLANET); // (PLANET
+    _1_dot_5_at_(); // 1.5@
+    IINSERT(); // IINSERT
+    Push(0x000b);
+    Push(0x002c);
+    ICREATE(); // ICREATE
+    _2SWAP(); // 2SWAP
+    IINSERT(); // IINSERT
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
+    UNK_0xf45e(); // UNK_0xf45e
+    Pop(); // DROP
   }
   CI(); // CI
   Push(pp_SUPER_dash_B); // SUPER-B
@@ -381,7 +381,6 @@ void DIO() // DIO
   _099(); // 099
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-
   UNK_0x3f09("AUTO SAMPLING DEVICES ACTIVATED");
   _dot_TTY(); // .TTY
   UNK_0xf3aa(); // UNK_0xf3aa
@@ -398,7 +397,6 @@ void DIO() // DIO
   goto label1;
 
   label1:
-
   UNK_0x3f09("PERFORMING HULL INTEGRITY CHECK");
   _dot_TTY(); // .TTY
   ICLOSE(); // ICLOSE

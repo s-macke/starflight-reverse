@@ -176,9 +176,9 @@ void UNK_0xf423() // UNK_0xf423
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-  _at_INST_dash_C(); // @INST-C
-  DISPOSAL(); // DISPOSAL case
-  return;
+    _at_INST_dash_C(); // @INST-C
+    DISPOSAL(); // DISPOSAL case
+    return;
   }
   Push(Read16(cc_FALSE)); // FALSE
 }
@@ -192,8 +192,8 @@ void UNK_0xf439() // UNK_0xf439
 {
   if (Pop() != 0)
   {
-  IDELETE(); // IDELETE
-  IPREV(); // IPREV
+    IDELETE(); // IDELETE
+    IPREV(); // IPREV
   }
   INEXT(); // INEXT
 }
@@ -231,7 +231,7 @@ void UNK_0xf447() // UNK_0xf447
   UNK_0xf423(); // UNK_0xf423
   if (Pop() != 0)
   {
-  IDELETE(); // IDELETE
+    IDELETE(); // IDELETE
   }
   _ask_NULL(); // ?NULL
   ICLOSE(); // ICLOSE
@@ -295,29 +295,29 @@ void UNK_0xf4bc() // UNK_0xf4bc
   _0_gt_(); // 0>
   if (Pop() != 0)
   {
-  Push(Read16(regsp)); // DUP
-  _0_gt_(); // 0>
-  Push(Pop()*2); // 2*
-  Push(Pop()-1); // 1-
-  SWAP(); // SWAP
-  ABS(); // ABS
-  Push(3);
-  _slash_(); // /
-  Push(5);
-  MAX(); // MAX
-  Push(Pop() * Pop()); // *
-  Push(0x65f3); // IFIELD(UNK_0xf4b7)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop() + Pop()); // +
-  Push(0x0064);
-  MIN(); // MIN
-  Push(0);
-  MAX(); // MAX
-  Push(0x65f3); // IFIELD(UNK_0xf4b7)
-  C_ex__2(); // C!_2
+    Push(Read16(regsp)); // DUP
+    _0_gt_(); // 0>
+    Push(Pop()*2); // 2*
+    Push(Pop()-1); // 1-
+    SWAP(); // SWAP
+    ABS(); // ABS
+    Push(3);
+    _slash_(); // /
+    Push(5);
+    MAX(); // MAX
+    Push(Pop() * Pop()); // *
+    Push(0x65f3); // IFIELD(UNK_0xf4b7)
+    Push(Read8(Pop())&0xFF); // C@
+    Push(Pop() + Pop()); // +
+    Push(0x0064);
+    MIN(); // MIN
+    Push(0);
+    MAX(); // MAX
+    Push(0x65f3); // IFIELD(UNK_0xf4b7)
+    C_ex__2(); // C!_2
   } else
   {
-  Pop(); // DROP
+    Pop(); // DROP
   }
   ICLOSE(); // ICLOSE
 }
@@ -339,8 +339,8 @@ void DEPART() // DEPART
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  UNK_0xf447(); // UNK_0xf447
-  UNK_0xf48d(); // UNK_0xf48d
+    UNK_0xf447(); // UNK_0xf447
+    UNK_0xf48d(); // UNK_0xf48d
   }
   Push(-1);
   Push(pp_PLHI); // PLHI
@@ -352,7 +352,7 @@ void DEPART() // DEPART
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-  UNK_0xf4bc(); // UNK_0xf4bc
+    UNK_0xf4bc(); // UNK_0xf4bc
   }
   Push2Words("NULL");
   Push(pp__ro_AORIGI); // (AORIGI

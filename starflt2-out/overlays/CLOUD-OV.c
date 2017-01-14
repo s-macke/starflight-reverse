@@ -152,31 +152,31 @@ void UNK_0xf47c() // UNK_0xf47c
   _gt_C_plus_S(); // >C+S
   Push(0x0012);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(0x65f2); // IFIELD(UNK_0xf3c6)
-  Push(i); // I
-  Push(Pop() + Pop()); // +
-  _at__gt_C_plus_S(); // @>C+S
-  UNK_0xf3da(); // UNK_0xf3da
-  if (Pop() != 0)
-  {
-  Push(0x6601); // IFIELD(UNK_0xf3d5)
-  Push(Read16(Pop())); // @
-  Push(0x0010);
-  Push(Pop() | Pop()); // OR
-  Push(0x6601); // IFIELD(UNK_0xf3d5)
-  _ex__2(); // !_2
-  }
-  ICLOSE(); // ICLOSE
-  Push(3);
+    Push(0x65f2); // IFIELD(UNK_0xf3c6)
+    Push(i); // I
+    Push(Pop() + Pop()); // +
+    _at__gt_C_plus_S(); // @>C+S
+    UNK_0xf3da(); // UNK_0xf3da
+    if (Pop() != 0)
+    {
+      Push(0x6601); // IFIELD(UNK_0xf3d5)
+      Push(Read16(Pop())); // @
+      Push(0x0010);
+      Push(Pop() | Pop()); // OR
+      Push(0x6601); // IFIELD(UNK_0xf3d5)
+      _ex__2(); // !_2
+    }
+    ICLOSE(); // ICLOSE
+    Push(3);
   int step = Pop();
   i += step;
-  if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
-  } while(1); // (+LOOP) 0xffde
+if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+} while(1); // (+LOOP) 0xffde
 
   ICLOSE(); // ICLOSE
 }
@@ -294,12 +294,12 @@ void DO_dash_CLOUD() // DO-CLOUD
   _n_HUMANS(); // #HUMANS
   if (Pop() != 0)
   {
-  _gt_1FONT(); // >1FONT
-  WUP(); // WUP
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
-  return;
+    _gt_1FONT(); // >1FONT
+    WUP(); // WUP
+    SetColor("WHITE");
+    _ex_COLOR(); // !COLOR
+    _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
+    return;
   }
   Pop(); // DROP
 }

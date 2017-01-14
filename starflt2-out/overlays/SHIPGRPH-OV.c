@@ -448,22 +448,22 @@ void UNK_0xef3a() // UNK_0xef3a
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-  IOPEN(); // IOPEN
-  Push(0x001a);
-  Push(6);
-  IFIND(); // IFIND
-  if (Pop() != 0)
-  {
-  Push(0x65ec); // IFIELD(INST-QT)
-  Push(Read16(Pop())); // @
+    IOPEN(); // IOPEN
+    Push(0x001a);
+    Push(6);
+    IFIND(); // IFIND
+    if (Pop() != 0)
+    {
+      Push(0x65ec); // IFIELD(INST-QT)
+      Push(Read16(Pop())); // @
+    } else
+    {
+      Push(0);
+    }
+    ICLOSE(); // ICLOSE
   } else
   {
-  Push(0);
-  }
-  ICLOSE(); // ICLOSE
-  } else
-  {
-  Push(0);
+    Push(0);
   }
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -551,13 +551,13 @@ void UNK_0xf034() // UNK_0xf034
 {
   signed short int i, imax;
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  _2OVER(); // 2OVER
-  LLINE(); // LLINE
+    _2OVER(); // 2OVER
+    LLINE(); // LLINE
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
@@ -657,12 +657,12 @@ void UNK_0xf106() // UNK_0xf106
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  UNK_0xf0e0(); // UNK_0xf0e0
+    UNK_0xf0e0(); // UNK_0xf0e0
   i++;
   } while(i<imax); // (LOOP) 0xfffc
 
@@ -782,10 +782,10 @@ void UNK_0xf1d4() // UNK_0xf1d4
   UNK_0xed65(); // UNK_0xed65
   if (Pop() != 0)
   {
-  SetColor("LT-BLUE");
+    SetColor("LT-BLUE");
   } else
   {
-  SetColor("DK-BLUE");
+    SetColor("DK-BLUE");
   }
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1011,25 +1011,25 @@ void UNK_0xf478() // UNK_0xf478
   UNK_0xf376(); // UNK_0xf376
   Push(5);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(0x000f);
-  Push(i); // I
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
-  Push(0x002c);
-  Push(Pop() + Pop()); // +
-  POS_dot_(); // POS.
-  PRINT("CLASS ", 6); // (.")
-  Push(5);
-  Push(i); // I
-  _dash_(); // -
-  Push(0);
-  _dot_R(); // .R
-  PRINT("...", 3); // (.")
+    Push(0x000f);
+    Push(i); // I
+    Push(0x000a);
+    Push(Pop() * Pop()); // *
+    Push(0x002c);
+    Push(Pop() + Pop()); // +
+    POS_dot_(); // POS.
+    PRINT("CLASS ", 6); // (.")
+    Push(5);
+    Push(i); // I
+    _dash_(); // -
+    Push(0);
+    _dot_R(); // .R
+    PRINT("...", 3); // (.")
   i++;
   } while(i<imax); // (LOOP) 0xffd1
 

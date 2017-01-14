@@ -117,14 +117,14 @@ void UNK_0xf147() // UNK_0xf147
   _gt_(); // >
   if (Pop() != 0)
   {
-  Push(0x0320);
-  _dash_(); // -
-  Push(0);
-  SQRT(); // SQRT
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
-  Push(0x0320);
-  Push(Pop() + Pop()); // +
+    Push(0x0320);
+    _dash_(); // -
+    Push(0);
+    SQRT(); // SQRT
+    Push(0x000a);
+    Push(Pop() * Pop()); // *
+    Push(0x0320);
+    Push(Pop() + Pop()); // +
   }
   ICLOSE(); // ICLOSE
 }
@@ -144,32 +144,32 @@ void UNK_0xf177() // UNK_0xf177
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-  IOPEN(); // IOPEN
-  Push(0x001a);
-  Push(6);
-  IFIND(); // IFIND
-  Push(0x63fa); // IFIELD(INST-QTY)
-  Push(Read16(Pop())); // @
-  Push(Pop() * Pop()); // *
-  Push(pp_UNK_0xf143); // UNK_0xf143
-  Push(Read16(Pop())); // @
-  if (Pop() != 0)
-  {
-  UNK_0xf147(); // UNK_0xf147
-  Push(0x0028);
-  _slash_(); // /
-  SWAP(); // SWAP
-  OVER(); // OVER
-  _dash_(); // -
-  Push(0);
-  MAX(); // MAX
-  Push(0x63fa); // IFIELD(INST-QTY)
-  _ex__3(); // !_3
-  }
-  CDROP(); // CDROP
+    IOPEN(); // IOPEN
+    Push(0x001a);
+    Push(6);
+    IFIND(); // IFIND
+    Push(0x63fa); // IFIELD(INST-QTY)
+    Push(Read16(Pop())); // @
+    Push(Pop() * Pop()); // *
+    Push(pp_UNK_0xf143); // UNK_0xf143
+    Push(Read16(Pop())); // @
+    if (Pop() != 0)
+    {
+      UNK_0xf147(); // UNK_0xf147
+      Push(0x0028);
+      _slash_(); // /
+      SWAP(); // SWAP
+      OVER(); // OVER
+      _dash_(); // -
+      Push(0);
+      MAX(); // MAX
+      Push(0x63fa); // IFIELD(INST-QTY)
+      _ex__3(); // !_3
+    }
+    CDROP(); // CDROP
   } else
   {
-  Push(0);
+    Push(0);
   }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -216,11 +216,9 @@ void UNK_0xf1f1() // UNK_0xf1f1
 {
   CTINIT(); // CTINIT
   UNK_0xf1c9(); // UNK_0xf1c9
-
   UNK_0x3f3b("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
-
   UNK_0x3f3b("EXTREME GRAVITY. THE ...");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x1388);
@@ -251,16 +249,13 @@ void UNK_0xf258() // UNK_0xf258
   label1:
   TTY_dash_SCR(); // TTY-SCR
   TTY_dash_SCR(); // TTY-SCR
-
   UNK_0x3f3b("EMERGENCY LOCATOR TRANSMISSION:");
   _dot_TTY(); // .TTY
-
   UNK_0x3f3b(" STARSHIP ISS ");
   _dot_TTY(); // .TTY
   Push(0x6423); // IFIELD(UNK_0xf136)
   COUNT(); // COUNT
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-
   UNK_0x3f3b(" CRASHED ON PLANET ");
   _dot_TTY(); // .TTY
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
@@ -268,7 +263,6 @@ void UNK_0xf258() // UNK_0xf258
   Push(0x63fa); // IFIELD(INST-QTY)
   _ask_(); // ?
   ICLOSE(); // ICLOSE
-
   UNK_0x3f3b(" IN SYSTEM ");
   _dot_TTY(); // .TTY
   Push(pp__ro_SYSTEM); // (SYSTEM
@@ -287,7 +281,6 @@ void UNK_0xf258() // UNK_0xf258
   Push(0);
   _dot_R(); // .R
   ICLOSE(); // ICLOSE
-
   UNK_0x3f3b("NO SURVIVORS");
   _dot_TTY(); // .TTY
   TTY_dash_SCR(); // TTY-SCR
@@ -331,7 +324,6 @@ void UNK_0xf342() // UNK_0xf342
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-
   UNK_0x3f3b("INSUFFICIENT FUEL FOR SAFE LANDING");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
@@ -371,7 +363,6 @@ void UNK_0xf39d() // UNK_0xf39d
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-
   UNK_0x3f3b("INSUFFICIENT FUEL FOR RE-LAUNCHING");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
@@ -401,11 +392,9 @@ void UNK_0xf3e2() // UNK_0xf3e2
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-
   UNK_0x3f3b("THIS PLANET'S GRAVITY WILL CRUSH THE");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
-
   UNK_0x3f3b("SHIP'S HULL.");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
@@ -431,8 +420,8 @@ void UNK_0xf430() // UNK_0xf430
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  UNK_0xf258(); // UNK_0xf258
-  return;
+    UNK_0xf258(); // UNK_0xf258
+    return;
   }
   UNK_0xf3d6(); // UNK_0xf3d6
   if (Pop() == 0) return;
@@ -454,21 +443,21 @@ void UNK_0xf45e() // UNK_0xf45e
   UNK_0xf3e2(); // UNK_0xf3e2
   if (Pop() != 0)
   {
-  Push(pp_GWF); // GWF
-  ON_3(); // ON_3
+    Push(pp_GWF); // GWF
+    ON_3(); // ON_3
   } else
   {
-  UNK_0xf342(); // UNK_0xf342
-  if (Pop() != 0)
-  {
-  Push(pp_GWF); // GWF
-  ON_3(); // ON_3
-  } else
-  {
-  UNK_0xf39d(); // UNK_0xf39d
-  Push(pp_GWF); // GWF
-  _ex__3(); // !_3
-  }
+    UNK_0xf342(); // UNK_0xf342
+    if (Pop() != 0)
+    {
+      Push(pp_GWF); // GWF
+      ON_3(); // ON_3
+    } else
+    {
+      UNK_0xf39d(); // UNK_0xf39d
+      Push(pp_GWF); // GWF
+      _ex__3(); // !_3
+    }
   }
   Push(pp_GWF); // GWF
   Push(Read16(Pop())); // @
@@ -490,22 +479,22 @@ void _ask_LAND() // ?LAND
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  CTINIT(); // CTINIT
-  CTERASE(); // CTERASE
-  PRINT("COMPUTER NOT RESPONDING!", 24); // (.")
-  BEEP(); // BEEP
-  return;
+    CTINIT(); // CTINIT
+    CTERASE(); // CTERASE
+    PRINT("COMPUTER NOT RESPONDING!", 24); // (.")
+    BEEP(); // BEEP
+    return;
   }
   Push(pp__ask_G_dash_AWARE); // ?G-AWARE
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  UNK_0xf45e(); // UNK_0xf45e
-  if (Pop() != 0)
-  {
-  UNK_0xf430(); // UNK_0xf430
-  }
-  return;
+    UNK_0xf45e(); // UNK_0xf45e
+    if (Pop() != 0)
+    {
+      UNK_0xf430(); // UNK_0xf430
+    }
+    return;
   }
   UNK_0xf430(); // UNK_0xf430
 }

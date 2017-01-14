@@ -329,27 +329,27 @@ void UNK_0xf192() // UNK_0xf192
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  Push(0x0014);
-  _eq_SPECIE(); // =SPECIE
-  if (Pop() != 0)
-  {
-  Push(Read16(cc_UNK_0xf162)); // UNK_0xf162
-  } else
-  {
-  Push(0x001d);
-  _eq_SPECIE(); // =SPECIE
-  if (Pop() != 0)
-  {
-  Push(Read16(cc_UNK_0xf166)); // UNK_0xf166
-  } else
-  {
-  Push(0x65ec); // IFIELD(UNK_0xf0d8)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x0023);
-  Push(Pop() + Pop()); // +
-  }
-  }
-  return;
+    Push(0x0014);
+    _eq_SPECIE(); // =SPECIE
+    if (Pop() != 0)
+    {
+      Push(Read16(cc_UNK_0xf162)); // UNK_0xf162
+    } else
+    {
+      Push(0x001d);
+      _eq_SPECIE(); // =SPECIE
+      if (Pop() != 0)
+      {
+        Push(Read16(cc_UNK_0xf166)); // UNK_0xf166
+      } else
+      {
+        Push(0x65ec); // IFIELD(UNK_0xf0d8)
+        Push(Read8(Pop())&0xFF); // C@
+        Push(0x0023);
+        Push(Pop() + Pop()); // +
+      }
+    }
+    return;
   }
   Push(0x002b);
 }
@@ -471,8 +471,8 @@ void UNK_0xf245() // UNK_0xf245
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  Push(Read16(cc_UNK_0xf14a)); // UNK_0xf14a
-  return;
+    Push(Read16(cc_UNK_0xf14a)); // UNK_0xf14a
+    return;
   }
   Push(Read16(cc_UNK_0xf132)); // UNK_0xf132
 }
@@ -530,8 +530,8 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  Push(0x0031);
-  return;
+    Push(0x0031);
+    return;
   }
   Push(0x0061);
 }
@@ -577,10 +577,10 @@ void UNK_0xf2cb() // UNK_0xf2cb
   _st_(); // <
   if (Pop() != 0)
   {
-  Push(Read16(cc_UNK_0xf156)); // UNK_0xf156
+    Push(Read16(cc_UNK_0xf156)); // UNK_0xf156
   } else
   {
-  Push(Read16(cc_UNK_0xf15a)); // UNK_0xf15a
+    Push(Read16(cc_UNK_0xf15a)); // UNK_0xf15a
   }
   ICLOSE(); // ICLOSE
 }
@@ -611,19 +611,19 @@ void UNK_0xf2ef() // UNK_0xf2ef
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-  Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
+    Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
   } else
   {
-  Push(a); // I
-  Push(0x0017);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() != 0)
-  {
-  Push(Read16(cc_UNK_0xf146)); // UNK_0xf146
-  } else
-  {
-  Push(Read16(cc_UNK_0xf12a)); // UNK_0xf12a
-  }
+    Push(a); // I
+    Push(0x0017);
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() != 0)
+    {
+      Push(Read16(cc_UNK_0xf146)); // UNK_0xf146
+    } else
+    {
+      Push(Read16(cc_UNK_0xf12a)); // UNK_0xf12a
+    }
   }
   Push(a); // R>
   Pop(); // DROP
@@ -700,8 +700,8 @@ void UNK_0xf365() // UNK_0xf365
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-  SPACE_dash_ID(); // SPACE-ID case
-  return;
+    SPACE_dash_ID(); // SPACE-ID case
+    return;
   }
   PLANET_dash_ID(); // PLANET-ID case
 }
@@ -760,8 +760,8 @@ void UNK_0xf3b0() // UNK_0xf3b0
   _ask_CGA(); // ?CGA
   if (Pop() != 0)
   {
-  SetColor("RED");
-  return;
+    SetColor("RED");
+    return;
   }
   SetColor("DK-GREE");
 }
@@ -777,17 +777,17 @@ void UNK_0xf3c2() // UNK_0xf3c2
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  Push(0x65f9); // IFIELD(UNK_0xf0ea)
-  Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
-  {
-  Push(Read16(cc_DEFAULT)); // DEFAULT
-  } else
-  {
-  Push(4);
-  }
-  return;
+    Push(0x65f9); // IFIELD(UNK_0xf0ea)
+    Push(Read8(Pop())&0xFF); // C@
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      Push(Read16(cc_DEFAULT)); // DEFAULT
+    } else
+    {
+      Push(4);
+    }
+    return;
   }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }
@@ -802,8 +802,8 @@ void UNK_0xf3e6() // UNK_0xf3e6
   _ask_CGA(); // ?CGA
   if (Pop() != 0)
   {
-  SetColor("BROWN");
-  return;
+    SetColor("BROWN");
+    return;
   }
   SetColor("RED");
 }
@@ -860,8 +860,8 @@ void UNK_0xf42b() // UNK_0xf42b
   _at_INST_dash_S(); // @INST-S
   if (Pop() != 0)
   {
-  Push(3);
-  return;
+    Push(3);
+    return;
   }
   Push(Read16(cc_DEFAULT)); // DEFAULT
 }
@@ -911,16 +911,16 @@ void UNK_0xf460() // UNK_0xf460
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-  Push(pp_FSTUN); // FSTUN
-  Push(Read16(Pop())); // @
-  if (Pop() != 0)
-  {
-  Push(4);
-  } else
-  {
-  Push(Read16(cc_DEFAULT)); // DEFAULT
-  }
-  return;
+    Push(pp_FSTUN); // FSTUN
+    Push(Read16(Pop())); // @
+    if (Pop() != 0)
+    {
+      Push(4);
+    } else
+    {
+      Push(Read16(cc_DEFAULT)); // DEFAULT
+    }
+    return;
   }
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
 }

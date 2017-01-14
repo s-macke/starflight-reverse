@@ -318,22 +318,22 @@ void UNK_0xef1a() // UNK_0xef1a
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-  IOPEN(); // IOPEN
-  Push(0x001a);
-  Push(6);
-  IFIND(); // IFIND
-  if (Pop() != 0)
-  {
-  Push(0x63fa); // IFIELD(INST-QTY)
-  Push(Read16(Pop())); // @
+    IOPEN(); // IOPEN
+    Push(0x001a);
+    Push(6);
+    IFIND(); // IFIND
+    if (Pop() != 0)
+    {
+      Push(0x63fa); // IFIELD(INST-QTY)
+      Push(Read16(Pop())); // @
+    } else
+    {
+      Push(0);
+    }
+    ICLOSE(); // ICLOSE
   } else
   {
-  Push(0);
-  }
-  ICLOSE(); // ICLOSE
-  } else
-  {
-  Push(0);
+    Push(0);
   }
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -421,13 +421,13 @@ void UNK_0xf014() // UNK_0xf014
 {
   signed short int i, imax;
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  _2OVER(); // 2OVER
-  LLINE(); // LLINE
+    _2OVER(); // 2OVER
+    LLINE(); // LLINE
   i++;
   } while(i<imax); // (LOOP) 0xfffa
 
@@ -525,28 +525,28 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(1);
   Push(8);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(i); // I
-  Push(3);
-  Push(Pop() * Pop()); // *
-  Push(0x0076);
-  Push(Pop() + Pop()); // +
-  Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
-  Push(0x0050);
-  Push(i); // I
-  Push(1);
-  _gt_(); // >
-  UNK_0xf098(); // UNK_0xf098
-  Push(0x0059);
-  Push(i); // I
-  Push(2);
-  _st_(); // <
-  UNK_0xf098(); // UNK_0xf098
+    Push(i); // I
+    Push(3);
+    Push(Pop() * Pop()); // *
+    Push(0x0076);
+    Push(Pop() + Pop()); // +
+    Push(pp_XBLT); // XBLT
+    _ex__3(); // !_3
+    Push(0x0050);
+    Push(i); // I
+    Push(1);
+    _gt_(); // >
+    UNK_0xf098(); // UNK_0xf098
+    Push(0x0059);
+    Push(i); // I
+    Push(2);
+    _st_(); // <
+    UNK_0xf098(); // UNK_0xf098
   i++;
   } while(i<imax); // (LOOP) 0xffd6
 
@@ -617,10 +617,10 @@ void UNK_0xf174() // UNK_0xf174
   UNK_0xed63(); // UNK_0xed63
   if (Pop() != 0)
   {
-  SetColor("LT-BLUE");
+    SetColor("LT-BLUE");
   } else
   {
-  SetColor("DK-BLUE");
+    SetColor("DK-BLUE");
   }
   _ex_COLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -838,25 +838,25 @@ void UNK_0xf40f() // UNK_0xf40f
   UNK_0xf310(); // UNK_0xf310
   Push(5);
   Push(0);
-
+    
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-  Push(0x000f);
-  Push(i); // I
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
-  Push(0x0036);
-  Push(Pop() + Pop()); // +
-  POS_dot_(); // POS.
-  PRINT("CLASS ", 6); // (.")
-  Push(5);
-  Push(i); // I
-  _dash_(); // -
-  Push(0);
-  _dot_R(); // .R
-  PRINT("...", 3); // (.")
+    Push(0x000f);
+    Push(i); // I
+    Push(0x000a);
+    Push(Pop() * Pop()); // *
+    Push(0x0036);
+    Push(Pop() + Pop()); // +
+    POS_dot_(); // POS.
+    PRINT("CLASS ", 6); // (.")
+    Push(5);
+    Push(i); // I
+    _dash_(); // -
+    Push(0);
+    _dot_R(); // .R
+    PRINT("...", 3); // (.")
   i++;
   } while(i<imax); // (LOOP) 0xffd1
 
