@@ -269,90 +269,90 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
             if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
             if (dict[i].parp == value)
             {
-                snprintf(ret, STRINGLEN, "  Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
+                snprintf(ret, STRINGLEN, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
                 break;
             }
         }
         if (ret[0] == 0)
         {
-            snprintf(ret, STRINGLEN, "  Push(%s);\n", numberstring, value);
+            snprintf(ret, STRINGLEN, "Push(%s);\n", numberstring, value);
         }
         return;
     }
     if (e->codep == CODE2LIT) // constant number
     {
-        snprintf(ret, STRINGLEN, "  Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
+        snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
         return;
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        snprintf(ret, STRINGLEN, "  Push(pp_%s); // %s\n", Forth2CString(s), s);
+        snprintf(ret, STRINGLEN, "Push(pp_%s); // %s\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODECONSTANT)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s);
+        snprintf(ret, STRINGLEN, "Push(Read16(cc_%s)); // %s\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODEDI) // User data
     {
-        snprintf(ret, STRINGLEN, "  Push(user_%s); // %s\n", Forth2CString(s), s);
+        snprintf(ret, STRINGLEN, "Push(user_%s); // %s\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODELOADDATA)
     {
         int addr = Read16(e->parp+4);
-        snprintf(ret, STRINGLEN, "  LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
+        snprintf(ret, STRINGLEN, "LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
         return;
     }
     if (e->codep == CODETABLE)
     {
-        snprintf(ret, STRINGLEN, "  GetTableEntry(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "GetTableEntry(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODESETCOLOR)
     {
-        snprintf(ret, STRINGLEN, "  SetColor(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "SetColor(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEFUNC3)
     {
-        snprintf(ret, STRINGLEN, "  Func3(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Func3(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEPUSH2WORDS)
     {
-        snprintf(ret, STRINGLEN, "  Push2Words(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Push2Words(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEFUNC5)
     {
-        snprintf(ret, STRINGLEN, "  Func5(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Func5(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEFUNC6)
     {
-        snprintf(ret, STRINGLEN, "  Func6(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Func6(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODESETVOCABULARY)
     {
-        snprintf(ret, STRINGLEN, "  SetVocabulary(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "SetVocabulary(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEIFIELD)
     {
-        snprintf(ret, STRINGLEN, "  Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(e->parp+1), s);
+        snprintf(ret, STRINGLEN, "Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(e->parp+1), s);
         return;
     }
     if (e->codep == CODEFUNC9)
     {
-        snprintf(ret, STRINGLEN, "  Func9(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Func9(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODECASE)
     {
-        snprintf(ret, STRINGLEN, "  %s(); // %s case\n", Forth2CString(s), s);
+        snprintf(ret, STRINGLEN, "%s(); // %s case\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODEARRAY)
@@ -364,159 +364,159 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         Push(ds);
         Push(dx);
         */
-        snprintf(ret, STRINGLEN, "  ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
+        snprintf(ret, STRINGLEN, "ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
         return;
     }
     if (e->codep == CODEFUNC12)
     {
-        snprintf(ret, STRINGLEN, "  Func12(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Func12(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODERULE)
     {
-        snprintf(ret, STRINGLEN, "  %s(); // %s rule\n", Forth2CString(s), s);
+        snprintf(ret, STRINGLEN, "%s(); // %s rule\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODEEXEC)
     {
         int par = Read16(Read16(e->parp)+REGDI);
-        snprintf(ret, STRINGLEN, "  Exec(\"%s\"); // call of word 0x%04x '%s'\n",
+        snprintf(ret, STRINGLEN, "Exec(\"%s\"); // call of word 0x%04x '%s'\n",
             s, par, GetDictWord(par, currentovidx));
         return;
     }
     if (strcmp(s, "0") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(0); // 0\n");
+        snprintf(ret, STRINGLEN, "Push(0); // 0\n");
         return;
     }
     if (strcmp(s, "1") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(1); // 1\n");
+        snprintf(ret, STRINGLEN, "Push(1); // 1\n");
         return;
     }
     if (strcmp(s, "2") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(2); // 2\n");
+        snprintf(ret, STRINGLEN, "Push(2); // 2\n");
         return;
     }
     if (strcmp(s, "0=") == 0)
     {
-        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // 0=\n");
+        snprintf(ret, STRINGLEN, "if (Pop() == 0) Push(1); else Push(0); // 0=\n");
         return ;
     }
     if (strcmp(s, "OR") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop() | Pop()); // OR\n");
+        snprintf(ret, STRINGLEN, "Push(Pop() | Pop()); // OR\n");
         return;
     }
     if (strcmp(s, "AND") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop() & Pop()); // AND\n");
+        snprintf(ret, STRINGLEN, "Push(Pop() & Pop()); // AND\n");
         return;
     }
     if (strcmp(s, "XOR") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop() ^ Pop()); // XOR\n");
+        snprintf(ret, STRINGLEN, "Push(Pop() ^ Pop()); // XOR\n");
         return;
     }
     if (strcmp(s, "=") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push((Pop()==Pop())?1:0); // =\n");
+        snprintf(ret, STRINGLEN, "Push((Pop()==Pop())?1:0); // =\n");
         return;
     }
     if (strcmp(s, "+") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop() + Pop()); // +\n");
+        snprintf(ret, STRINGLEN, "Push(Pop() + Pop()); // +\n");
         return;
     }
     if (strcmp(s, "*") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop() * Pop()); // *\n");
+        snprintf(ret, STRINGLEN, "Push(Pop() * Pop()); // *\n");
         return;
     }
     if (strcmp(s, "NEGATE") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(-Pop()); // NEGATE\n");
+        snprintf(ret, STRINGLEN, "Push(-Pop()); // NEGATE\n");
         return;
     }
     if (strcmp(s, "NOT") == 0)
     {
-        snprintf(ret, STRINGLEN, "  if (Pop() == 0) Push(1); else Push(0); // NOT\n");
+        snprintf(ret, STRINGLEN, "if (Pop() == 0) Push(1); else Push(0); // NOT\n");
         return;
     }
     if (strcmp(s, "DROP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Pop(); // DROP\n");
+        snprintf(ret, STRINGLEN, "Pop(); // DROP\n");
         return;
     }
     if (strcmp(s, "2DROP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Pop(); Pop();// 2DROP\n");
+        snprintf(ret, STRINGLEN, "Pop(); Pop();// 2DROP\n");
         return;
     }
     if (strcmp(s, "2*") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()*2); // 2*\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()*2); // 2*\n");
         return;
     }
     if (strcmp(s, "3+") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+3); // 3+\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()+3); // 3+\n");
         return;
     }
     if (strcmp(s, "1+") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+1); // 1+\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()+1); // 1+\n");
         return;
     }
     if (strcmp(s, "2+") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()+2); // 2+\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()+2); // 2+\n");
         return;
     }
     if (strcmp(s, "1-") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()-1); // 1-\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()-1); // 1-\n");
         return;
     }
     if (strcmp(s, "2-") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()-2); // 2-\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()-2); // 2-\n");
         return;
     }
     if (strcmp(s, "16/") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()>>4); // 16/\n"); // TODO check for signed and unsigned
+        snprintf(ret, STRINGLEN, "Push(Pop()>>4); // 16/\n"); // TODO check for signed and unsigned
         return;
     }
     if (strcmp(s, "2/") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()>>1); // 2/\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()>>1); // 2/\n");
         return;
     }
     if (strcmp(s, "16*") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Pop()<<4); // 16*\n");
+        snprintf(ret, STRINGLEN, "Push(Pop()<<4); // 16*\n");
         return;
     }
     if (strcmp(s, "@") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(Pop())); // @\n");
+        snprintf(ret, STRINGLEN, "Push(Read16(Pop())); // @\n");
         return;
     }
     if (strcmp(s, "C@") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read8(Pop())&0xFF); // C@\n");
+        snprintf(ret, STRINGLEN, "Push(Read8(Pop())&0xFF); // C@\n");
         return;
     }
     if (strcmp(s, "DUP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  Push(Read16(regsp)); // DUP\n");
+        snprintf(ret, STRINGLEN, "Push(Read16(regsp)); // DUP\n");
         return;
     }
     if (strcmp(s, "?DUP") == 0)
     {
-        snprintf(ret, STRINGLEN, "  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
+        snprintf(ret, STRINGLEN, "if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
         return;
     }
     if (strcmp(s, "(ABORT\")") == 0)
@@ -529,7 +529,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         {
             str[ll] = Read8(addr+3+ll);
         }
-        snprintf(ret, STRINGLEN, "  ABORT(\"%s\", %i);// (ABORT\")\n", Escape(str), length);
+        snprintf(ret, STRINGLEN, "ABORT(\"%s\", %i);// (ABORT\")\n", Escape(str), length);
         return;
     }
     if (strcmp(s, "(.\")") == 0)
@@ -542,7 +542,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         {
             str[ll] = Read8(addr+3+ll);
         }
-        snprintf(ret, STRINGLEN, "  PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
+        snprintf(ret, STRINGLEN, "PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
         return;
     }
     if (e->parp == PARPRINT)
@@ -555,11 +555,11 @@ void GetMacro(unsigned short addr, DICTENTRY *e, char *ret, int currentovidx)
         {
             str[ll] = Read8(addr+3+ll);
         }
-        snprintf(ret, STRINGLEN, "\n  UNK_0x%04x(\"%s\");\n", PARPRINT, Escape(str));
+        snprintf(ret, STRINGLEN, "UNK_0x%04x(\"%s\");\n", PARPRINT, Escape(str));
         return;
     }
 
-    snprintf(ret, STRINGLEN, "  %s(); // %s\n", Forth2CString(s), s);
+    snprintf(ret, STRINGLEN, "%s(); // %s\n", Forth2CString(s), s);
     return;
 }
 
@@ -687,6 +687,14 @@ void RemoveGotos(DICTENTRY *e)
 }
 
 // ----------------------------------------------------
+void Spc(FILE *fp, int spc)
+{
+    int i;
+    for(i=0; i<spc; i++)
+    {
+        fprintf(fp, "  ");
+    }
+}
 
 void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
@@ -695,6 +703,8 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
     int dbmode = 0; // bool
     char str[0x10000];
     int nstr = 0;
+    int nspc = 0;
+
     for(i=minaddr; i<=maxaddr; i++)
     {
         if (pline[i].iswordheader)
@@ -712,13 +722,15 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             "// ================================================\n",
             e->addr, s, e->codep, e->parp);
             if (e->isentry) fprintf(fp, "// entry\n");
-            if (e->codep == CODECALL) {
+            if (e->codep == CODECALL)
+            {
                 fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
                 RemoveGotos(e);
                 RemoveGotos(e);
                 RemoveGotos(e);
                 RemoveGotos(e);
                 //RemoveGotos(e);
+                nspc = 1;
             }
         }
         if (pline[i].initvarstr != NULL)
@@ -731,54 +743,105 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
         if (pline[i].labelid)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            fprintf(fp, "\n  label%i:\n", pline[i].labelid);
+            
+            fprintf(fp, "\n");
+            Spc(fp, nspc);
+            fprintf(fp, "label%i:\n", pline[i].labelid);
             dbmode = 0;
         }
 
         switch(pline[i].flow)
         {
+            case DO:
+                nspc++;
+                break;
+
+            case LOOP:
+                nspc--;
+                break;
+
             case IFGOTO:
-                fprintf(fp, "  if (Pop() == 0) goto label%i;\n", pline[i].gotoid);
+                Spc(fp, nspc);
+                fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[i].gotoid);
                 break;
 
             case IFEXIT:
-                fprintf(fp, "  if (Pop() == 0) return;\n");
+                Spc(fp, nspc);
+                fprintf(fp, "if (Pop() == 0) return;\n");
                 break;
 
             case GOTO:
-                fprintf(fp, "  goto label%i;\n", pline[i].gotoid);
+                Spc(fp, nspc);
+                fprintf(fp, "goto label%i;\n", pline[i].gotoid);
                 break;
 
             case FUNCEND:
                 fprintf(fp, "}\n\n");
+                nspc = 0;
                 break;
 
             case EXIT:
-                fprintf(fp, "  return;\n");
+                Spc(fp, nspc);
+                fprintf(fp, "return;\n");
                 break;
 
             case IFNOT:
-                fprintf(fp, "  if (Pop() != 0)\n  {\n", pline[i].gotoid);
+                Spc(fp, nspc);
+                fprintf(fp, "if (Pop() != 0)\n", pline[i].gotoid);
+                Spc(fp, nspc);
+                fprintf(fp, "{\n");
+                nspc++;
                 break;
 
             case IFELSE:
-                fprintf(fp, "  } else\n  {\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "} else\n");
+                Spc(fp, nspc);
+                fprintf(fp, "{\n");
+                nspc++;
                 break;
 
             case IFCLOSE:
-                fprintf(fp, "  }\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
                 break;
 
             case IFCLOSE2:
-                fprintf(fp, "  }\n  }\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
                 break;
 
             case IFCLOSE3:
-                fprintf(fp, "  }\n  }\n  }\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
                 break;
 
             case IFCLOSE4:
-                fprintf(fp, "  }\n  }\n  }\n  }\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
+                nspc--;
+                Spc(fp, nspc);
+                fprintf(fp, "}\n");
                 break;
         }
 
@@ -787,11 +850,13 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             char func[STRINGLEN*2];
             DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
             GetMacro(i, e, func, pline[i].ovidx);
+            Spc(fp, nspc);
             fprintf(fp, "%s", func);
         }
         if (pline[i].str[0] != 0)
         {
             if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
+            Spc(fp, nspc);
             fprintf(fp, "%s", pline[i].str);
             dbmode = 0;
         }
