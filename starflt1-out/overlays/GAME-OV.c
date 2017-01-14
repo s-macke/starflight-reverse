@@ -850,16 +850,16 @@ void _n_LPS() // #LPS
 
 void _ask_BL_st__dash_() // ?BL<-
 {
-
-  label1:
-  Push(Read16(regsp)); // DUP
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc_BL)); // BL
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) return;
-  Push(Pop()-1); // 1-
-  goto label1;
+  do
+  {
+    Push(Read16(regsp)); // DUP
+    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(cc_BL)); // BL
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() == 0) return;
+    Push(Pop()-1); // 1-
+  } while(1);
 }
 
 
@@ -1329,18 +1329,18 @@ void UNK_0xe61d() // UNK_0xe61d
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-
-  label1:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  _2OVER(); // 2OVER
-  D_gt_(); // D>
-  _i_KEY(); // 'KEY
-  Push(Read16(regsp)); // DUP
-  Push(pp_UNK_0xdfa6); // UNK_0xdfa6
-  _ex__3(); // !_3
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    _2OVER(); // 2OVER
+    D_gt_(); // D>
+    _i_KEY(); // 'KEY
+    Push(Read16(regsp)); // DUP
+    Push(pp_UNK_0xdfa6); // UNK_0xdfa6
+    _ex__3(); // !_3
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 
@@ -2641,25 +2641,25 @@ void BOX() // BOX
 
 void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
 {
-
-  label1:
-  Push(0x0016);
-  Push(0x0028);
-  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
-  Push(2);
-  SPACES(); // SPACES
-  Push(0x0016);
-  Push(0x0028);
-  Exec("POSITION"); // call of word 0x2767 '(POSITION)'
-  PAD(); // PAD
-  Push(2);
-  Exec("EXPECT"); // call of word 0x1d3e '(EXPECT)'
-  PAD(); // PAD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x0031);
-  Push(0x0036);
-  WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(0x0016);
+    Push(0x0028);
+    Exec("POSITION"); // call of word 0x2767 '(POSITION)'
+    Push(2);
+    SPACES(); // SPACES
+    Push(0x0016);
+    Push(0x0028);
+    Exec("POSITION"); // call of word 0x2767 '(POSITION)'
+    PAD(); // PAD
+    Push(2);
+    Exec("EXPECT"); // call of word 0x1d3e '(EXPECT)'
+    PAD(); // PAD
+    Push(Read8(Pop())&0xFF); // C@
+    Push(0x0031);
+    Push(0x0036);
+    WITHIN(); // WITHIN
+  } while(Pop() == 0);
   PAD(); // PAD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
@@ -2892,18 +2892,18 @@ void NEW_dot_GA() // NEW.GA
 
 void GET_dash_OPTION_n_() // GET-OPTION#
 {
-
-  label1:
-  _i_KEY(); // 'KEY
-  Push(0x0031);
-  Push(0x0034);
-  WITHIN(); // WITHIN
-  Push(pp_LKEY); // LKEY
-  Push(Read16(Pop())); // @
-  Push(0x0039);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    _i_KEY(); // 'KEY
+    Push(0x0031);
+    Push(0x0034);
+    WITHIN(); // WITHIN
+    Push(pp_LKEY); // LKEY
+    Push(Read16(Pop())); // @
+    Push(0x0039);
+    Push((Pop()==Pop())?1:0); // =
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Push(pp_LKEY); // LKEY
   Push(Read16(Pop())); // @
 }
@@ -2967,14 +2967,14 @@ void GAMEOPTIONS() // GAMEOPTIONS
 {
   Push(pp_RESUME); // RESUME
   OFF(); // OFF
-
-  label1:
-  _dot_GAMEOPS(); // .GAMEOPS
-  GET_dash_OPTION_n_(); // GET-OPTION#
-  GAMEOPCASE(); // GAMEOPCASE case
-  Push(pp_RESUME); // RESUME
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label1;
+  do
+  {
+    _dot_GAMEOPS(); // .GAMEOPS
+    GET_dash_OPTION_n_(); // GET-OPTION#
+    GAMEOPCASE(); // GAMEOPCASE case
+    Push(pp_RESUME); // RESUME
+    Push(Read16(Pop())); // @
+  } while(Pop() == 0);
   _dot_RESUMING(); // .RESUMING
 }
 

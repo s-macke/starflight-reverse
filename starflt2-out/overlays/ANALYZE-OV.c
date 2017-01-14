@@ -438,14 +438,14 @@ void UNK_0xee04() // UNK_0xee04
   Push(0);
   _dot_R(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  PRINT(".", 1); // (.")
-
-  label2:
-  UNK_0xedee(); // UNK_0xedee
-  if (Pop() == 0) goto label2;
-
-  label1:
+  if (Pop() != 0)
+  {
+    PRINT(".", 1); // (.")
+    do
+    {
+      UNK_0xedee(); // UNK_0xedee
+    } while(Pop() == 0);
+  }
   Pop(); Pop();// 2DROP
   PRINT(" TIMES THE SIZE OF OUR SHIP.", 28); // (.")
 }

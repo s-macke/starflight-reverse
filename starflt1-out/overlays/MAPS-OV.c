@@ -405,14 +405,14 @@ void UNK_0xedde() // UNK_0xedde
 
 void UNK_0xee28() // UNK_0xee28
 {
-
-  label1:
-  UNK_0xedde(); // UNK_0xedde
-  Push(pp__i_SIMULA); // 'SIMULA
-  _at_EXECUTE(); // @EXECUTE
-  _i_KEY(); // 'KEY
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xedde(); // UNK_0xedde
+    Push(pp__i_SIMULA); // 'SIMULA
+    _at_EXECUTE(); // @EXECUTE
+    _i_KEY(); // 'KEY
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  } while(Pop() == 0);
   _ro_XYSCAN(); // (XYSCAN case
   Pop(); Pop();// 2DROP
 }

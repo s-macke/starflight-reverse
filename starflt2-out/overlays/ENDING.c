@@ -2371,16 +2371,16 @@ void UNK_0xf479() // UNK_0xf479
   Push(0x00ff);
   UNK_0xe83c(); // UNK_0xe83c
   ILAST(); // ILAST
-
-  label1:
-  _gt_TVCT(); // >TVCT
-  CTINIT(); // CTINIT
-  Push(0x9c40); Push(0x0000);
-  UNK_0xe940(); // UNK_0xe940
-  IPREV(); // IPREV
-  _ask_LAST(); // ?LAST
-  WUP(); // WUP
-  if (Pop() == 0) goto label1;
+  do
+  {
+    _gt_TVCT(); // >TVCT
+    CTINIT(); // CTINIT
+    Push(0x9c40); Push(0x0000);
+    UNK_0xe940(); // UNK_0xe940
+    IPREV(); // IPREV
+    _ask_LAST(); // ?LAST
+    WUP(); // WUP
+  } while(Pop() == 0);
   Push(3);
   _star_CLOSE(); // *CLOSE
 }

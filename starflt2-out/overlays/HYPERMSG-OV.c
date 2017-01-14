@@ -2429,15 +2429,15 @@ void _plus_A_dash_VESS() // +A-VESS
   do // (DO)
   {
     Push(0x0019);
-
-    label1:
-    Push(0);
-    Push(4);
-    RRND(); // RRND
-    GET_dash_VES(); // GET-VES case
-    Push(Read8(Pop())&0xFF); // C@
-    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-    if (Pop() == 0) goto label1;
+    do
+    {
+      Push(0);
+      Push(4);
+      RRND(); // RRND
+      GET_dash_VES(); // GET-VES case
+      Push(Read8(Pop())&0xFF); // C@
+      if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    } while(Pop() == 0);
     UNK_0xe79c(); // UNK_0xe79c
     i++;
   } while(i<imax); // (LOOP)

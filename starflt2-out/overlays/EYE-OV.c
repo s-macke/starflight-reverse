@@ -423,11 +423,11 @@ void UNK_0xecf5() // UNK_0xecf5
   Push(0x1388);
   MS(); // MS
   BEEPOFF(); // BEEPOFF
-
-  label1:
-  UNK_0xecbd(); // UNK_0xecbd
-  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xecbd(); // UNK_0xecbd
+    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+  } while(Pop() == 0);
   BYE_2(); // BYE_2
 }
 
@@ -1345,26 +1345,26 @@ void DO_dash_EYE() // DO-EYE
   UNK_0xec65(); // UNK_0xec65
   Push(0xc1b8); // probable '(ROL'
   MODULE(); // MODULE
-
-  label2:
-  XYSCAN(); // XYSCAN
-  Pop(); Pop();// 2DROP
-  Push(pp_FTRIG); // FTRIG
-  _099(); // 099
-  UNK_0xeee3(); // UNK_0xeee3
-  UNK_0xec83(); // UNK_0xec83
-  if (Pop() != 0)
+  do
   {
-    Push(0x0014);
-    UNK_0xf297(); // UNK_0xf297
-    Push(0x0032);
-    UNK_0xef25(); // UNK_0xef25
-  }
-  UNK_0xf4a5(); // UNK_0xf4a5
-  Push(pp_LKEY); // LKEY
-  _099(); // 099
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label2;
+    XYSCAN(); // XYSCAN
+    Pop(); Pop();// 2DROP
+    Push(pp_FTRIG); // FTRIG
+    _099(); // 099
+    UNK_0xeee3(); // UNK_0xeee3
+    UNK_0xec83(); // UNK_0xec83
+    if (Pop() != 0)
+    {
+      Push(0x0014);
+      UNK_0xf297(); // UNK_0xf297
+      Push(0x0032);
+      UNK_0xef25(); // UNK_0xef25
+    }
+    UNK_0xf4a5(); // UNK_0xf4a5
+    Push(pp_LKEY); // LKEY
+    _099(); // 099
+    _ask_TRIG(); // ?TRIG
+  } while(Pop() == 0);
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xf45f(); // UNK_0xf45f
   UNK_0xf441(); // UNK_0xf441

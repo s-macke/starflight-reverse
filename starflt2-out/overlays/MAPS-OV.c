@@ -380,16 +380,16 @@ void UNK_0xee22() // UNK_0xee22
 
 void UNK_0xee4e() // UNK_0xee4e
 {
-
-  label1:
-  _i_KEY(); // 'KEY
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) return;
-  UNK_0xedea(); // UNK_0xedea
-  Push(pp__i_SIMULA); // 'SIMULA
-  _at_EXECUTE(); // @EXECUTE
-  goto label1;
+  do
+  {
+    _i_KEY(); // 'KEY
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() == 0) return;
+    UNK_0xedea(); // UNK_0xedea
+    Push(pp__i_SIMULA); // 'SIMULA
+    _at_EXECUTE(); // @EXECUTE
+  } while(1);
 }
 
 

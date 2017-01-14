@@ -245,54 +245,54 @@ void UNK_0xf258() // UNK_0xf258
   _gt_C_plus_S(); // >C+S
   _i_KEY(); // 'KEY
   Pop(); // DROP
-
-  label1:
-  TTY_dash_SCR(); // TTY-SCR
-  TTY_dash_SCR(); // TTY-SCR
-  UNK_0x3f3b("EMERGENCY LOCATOR TRANSMISSION:");
-  _dot_TTY(); // .TTY
-  UNK_0x3f3b(" STARSHIP ISS ");
-  _dot_TTY(); // .TTY
-  Push(0x6423); // IFIELD(UNK_0xf136)
-  COUNT(); // COUNT
-  Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  UNK_0x3f3b(" CRASHED ON PLANET ");
-  _dot_TTY(); // .TTY
-  Push(pp__ro_ORBIT_rc_); // (ORBIT)
-  _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
-  _ask_(); // ?
-  ICLOSE(); // ICLOSE
-  UNK_0x3f3b(" IN SYSTEM ");
-  _dot_TTY(); // .TTY
-  Push(pp__ro_SYSTEM); // (SYSTEM
-  _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fc); // IFIELD(INST-X)
-  Push(Read16(Pop())); // @
-  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
-  _slash_(); // /
-  Push(0);
-  _dot_R(); // .R
-  PRINT(",", 1); // (.")
-  Push(0x63fe); // IFIELD(INST-Y)
-  Push(Read16(Pop())); // @
-  Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
-  _slash_(); // /
-  Push(0);
-  _dot_R(); // .R
-  ICLOSE(); // ICLOSE
-  UNK_0x3f3b("NO SURVIVORS");
-  _dot_TTY(); // .TTY
-  TTY_dash_SCR(); // TTY-SCR
-  TTY_dash_SCR(); // TTY-SCR
-  Push(0x1388);
-  Push(3);
-  Push(0x0032);
-  Push(0x03e8);
-  Push(2);
-  _gt_SND(); // >SND
-  _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TTY_dash_SCR(); // TTY-SCR
+    TTY_dash_SCR(); // TTY-SCR
+    UNK_0x3f3b("EMERGENCY LOCATOR TRANSMISSION:");
+    _dot_TTY(); // .TTY
+    UNK_0x3f3b(" STARSHIP ISS ");
+    _dot_TTY(); // .TTY
+    Push(0x6423); // IFIELD(UNK_0xf136)
+    COUNT(); // COUNT
+    Exec("TYPE"); // call of word 0x2690 '(TYPE)'
+    UNK_0x3f3b(" CRASHED ON PLANET ");
+    _dot_TTY(); // .TTY
+    Push(pp__ro_ORBIT_rc_); // (ORBIT)
+    _at__gt_C_plus_S(); // @>C+S
+    Push(0x63fa); // IFIELD(INST-QTY)
+    _ask_(); // ?
+    ICLOSE(); // ICLOSE
+    UNK_0x3f3b(" IN SYSTEM ");
+    _dot_TTY(); // .TTY
+    Push(pp__ro_SYSTEM); // (SYSTEM
+    _at__gt_C_plus_S(); // @>C+S
+    Push(0x63fc); // IFIELD(INST-X)
+    Push(Read16(Pop())); // @
+    Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
+    _slash_(); // /
+    Push(0);
+    _dot_R(); // .R
+    PRINT(",", 1); // (.")
+    Push(0x63fe); // IFIELD(INST-Y)
+    Push(Read16(Pop())); // @
+    Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
+    _slash_(); // /
+    Push(0);
+    _dot_R(); // .R
+    ICLOSE(); // ICLOSE
+    UNK_0x3f3b("NO SURVIVORS");
+    _dot_TTY(); // .TTY
+    TTY_dash_SCR(); // TTY-SCR
+    TTY_dash_SCR(); // TTY-SCR
+    Push(0x1388);
+    Push(3);
+    Push(0x0032);
+    Push(0x03e8);
+    Push(2);
+    _gt_SND(); // >SND
+    _i_KEY(); // 'KEY
+  } while(Pop() == 0);
   BYE(); // BYE
 }
 

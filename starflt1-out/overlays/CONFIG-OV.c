@@ -508,17 +508,17 @@ void UNK_0xeb5b() // UNK_0xeb5b
 {
   TIME(); // TIME
   _2_at_(); // 2@
-
-  label1:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  _2OVER(); // 2OVER
-  D_dash_(); // D-
-  Push(0x09c4); Push(0x0000);
-  D_gt_(); // D>
-  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    _2OVER(); // 2OVER
+    D_dash_(); // D-
+    Push(0x09c4); Push(0x0000);
+    D_gt_(); // D>
+    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 
@@ -1021,63 +1021,63 @@ void UNK_0xee20() // UNK_0xee20
 
 void UNK_0xef52() // UNK_0xef52
 {
-
-  label6:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    Push(-1);
-    Push(Pop() * Pop()); // *
-    Push(pp_NCRS); // NCRS
-    _plus__ex_(); // +!
-    Push(pp_NCRS); // NCRS
-    Push(Read16(Pop())); // @
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    Push(pp_NCRS); // NCRS
-    Push(Read16(Pop())); // @
-    Push(0);
-    Push(5);
-    WITHIN(); // WITHIN
-    Push(Pop() & Pop()); // AND
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
     {
-      BLT(); // BLT
-      Push(0x0060);
+      Push(-1);
+      Push(Pop() * Pop()); // *
+      Push(pp_NCRS); // NCRS
+      _plus__ex_(); // +!
       Push(pp_NCRS); // NCRS
       Push(Read16(Pop())); // @
-      Push(Read16(regsp)); // DUP
       Push(pp_OCRS); // OCRS
-      _ex__3(); // !_3
-      Push(0x000a);
-      Push(Pop() * Pop()); // *
-      _dash_(); // -
-      Push(pp_YBLT); // YBLT
-      _ex__3(); // !_3
-      BLT(); // BLT
+      Push(Read16(Pop())); // @
+      Push((Pop()==Pop())?1:0); // =
+      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(pp_NCRS); // NCRS
+      Push(Read16(Pop())); // @
+      Push(0);
+      Push(5);
+      WITHIN(); // WITHIN
+      Push(Pop() & Pop()); // AND
+      if (Pop() != 0)
+      {
+        BLT(); // BLT
+        Push(0x0060);
+        Push(pp_NCRS); // NCRS
+        Push(Read16(Pop())); // @
+        Push(Read16(regsp)); // DUP
+        Push(pp_OCRS); // OCRS
+        _ex__3(); // !_3
+        Push(0x000a);
+        Push(Pop() * Pop()); // *
+        _dash_(); // -
+        Push(pp_YBLT); // YBLT
+        _ex__3(); // !_3
+        BLT(); // BLT
+      } else
+      {
+        Push(pp_OCRS); // OCRS
+        Push(Read16(Pop())); // @
+        Push(pp_NCRS); // NCRS
+        _ex__3(); // !_3
+      }
+      Push(0);
     } else
     {
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
-      Push(pp_NCRS); // NCRS
-      _ex__3(); // !_3
+      Pop(); // DROP
+      Push(1);
     }
-    Push(0);
-  } else
-  {
-    Pop(); // DROP
-    Push(1);
-  }
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
-  {
-    Pop(); // DROP
-    UNK_0xee20(); // UNK_0xee20
-  }
-  if (Pop() == 0) goto label6;
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      Pop(); // DROP
+      UNK_0xee20(); // UNK_0xee20
+    }
+  } while(Pop() == 0);
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   Push(pp_FQUIT); // FQUIT
@@ -1307,51 +1307,51 @@ void UNK_0xf14c() // UNK_0xf14c
   {
     UNK_0xed20(); // UNK_0xed20
   }
-
-  label2:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    Push(-1);
-    Push(Pop() * Pop()); // *
-    Push(pp_NCRS); // NCRS
-    _plus__ex_(); // +!
-    Push(pp_UNK_0xea4a); // UNK_0xea4a
-    SET_dash_CRS(); // SET-CRS
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
     {
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
-      Push(pp_UNK_0xf148); // UNK_0xf148
-      Push(Read16(Pop())); // @
+      Push(-1);
+      Push(Pop() * Pop()); // *
+      Push(pp_NCRS); // NCRS
+      _plus__ex_(); // +!
+      Push(pp_UNK_0xea4a); // UNK_0xea4a
+      SET_dash_CRS(); // SET-CRS
       if (Pop() != 0)
       {
-        UNK_0xebe9(); // UNK_0xebe9
-      } else
-      {
-        UNK_0xed20(); // UNK_0xed20
+        Push(pp_OCRS); // OCRS
+        Push(Read16(Pop())); // @
+        Push(pp_UNK_0xf148); // UNK_0xf148
+        Push(Read16(Pop())); // @
+        if (Pop() != 0)
+        {
+          UNK_0xebe9(); // UNK_0xebe9
+        } else
+        {
+          UNK_0xed20(); // UNK_0xed20
+        }
       }
-    }
-    _ask_TRIG(); // ?TRIG
-    if (Pop() != 0)
+      _ask_TRIG(); // ?TRIG
+      if (Pop() != 0)
+      {
+        Push(pp_UNK_0xf148); // UNK_0xf148
+        Push(Read16(Pop())); // @
+        if (Pop() != 0)
+        {
+          UNK_0xefcc(); // UNK_0xefcc
+        } else
+        {
+          UNK_0xf0da(); // UNK_0xf0da
+        }
+      }
+    } else
     {
-      Push(pp_UNK_0xf148); // UNK_0xf148
-      Push(Read16(Pop())); // @
-      if (Pop() != 0)
-      {
-        UNK_0xefcc(); // UNK_0xefcc
-      } else
-      {
-        UNK_0xf0da(); // UNK_0xf0da
-      }
+      Pop(); // DROP
     }
-  } else
-  {
-    Pop(); // DROP
-  }
-  _ask_QUIT(); // ?QUIT
-  if (Pop() == 0) goto label2;
+    _ask_QUIT(); // ?QUIT
+  } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xebb5(); // UNK_0xebb5
   SetColor("BLACK");
@@ -1772,27 +1772,27 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   BLD_dash_CRS(); // BLD-CRS
   _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
-
-  label3:
-  XYSCAN(); // XYSCAN
-  Push(pp_NCRS); // NCRS
-  _plus__ex_(); // +!
-  Pop(); // DROP
-  Push(pp_UNK_0xea33); // UNK_0xea33
-  SET_dash_CRS(); // SET-CRS
-  Pop(); // DROP
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
+  do
   {
-    Push(0);
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
-  } else
-  {
-    Push(0);
-  }
-  if (Pop() == 0) goto label3;
+    XYSCAN(); // XYSCAN
+    Push(pp_NCRS); // NCRS
+    _plus__ex_(); // +!
+    Pop(); // DROP
+    Push(pp_UNK_0xea33); // UNK_0xea33
+    SET_dash_CRS(); // SET-CRS
+    Pop(); // DROP
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      Push(0);
+      Push(pp_OCRS); // OCRS
+      Push(Read16(Pop())); // @
+      CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
+    } else
+    {
+      Push(0);
+    }
+  } while(Pop() == 0);
   Push(1);
   UNK_0xe980(); // UNK_0xe980
   ICLOSE(); // ICLOSE

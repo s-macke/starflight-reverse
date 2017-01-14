@@ -305,23 +305,23 @@ void UNK_0xee0e() // UNK_0xee0e
   IFIND(); // IFIND
   Pop(); // DROP
   Push(0);
-
-  label2:
-  _at_INST_dash_C(); // @INST-C
-  Push(Read16(cc_UNK_0xed66)); // UNK_0xed66
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() != 0)
+  do
   {
-    Push(Pop()+1); // 1+
-  }
-  Push(pp__ro_PLANET); // (PLANET
-  _1_dot_5_at_(); // 1.5@
-  CI(); // CI
-  D_eq_(); // D=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) return;
-  INEXT(); // INEXT
-  goto label2;
+    _at_INST_dash_C(); // @INST-C
+    Push(Read16(cc_UNK_0xed66)); // UNK_0xed66
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() != 0)
+    {
+      Push(Pop()+1); // 1+
+    }
+    Push(pp__ro_PLANET); // (PLANET
+    _1_dot_5_at_(); // 1.5@
+    CI(); // CI
+    D_eq_(); // D=
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() == 0) return;
+    INEXT(); // INEXT
+  } while(1);
 }
 
 
@@ -973,18 +973,17 @@ void UNK_0xf283() // UNK_0xf283
 {
   LoadData("UNK_0xedd2"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
-
-  label2:
-  UNK_0xf247(); // UNK_0xf247
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
-  goto label3;
-
-  label1:
-  Push(0);
-
-  label3:
+  if (Pop() != 0)
+  {
+    do
+    {
+      UNK_0xf247(); // UNK_0xf247
+      if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    } while(Pop() == 0);
+  } else
+  {
+    Push(0);
+  }
   Push(pp_ATMO); // ATMO
   _ex__2(); // !_2
 }

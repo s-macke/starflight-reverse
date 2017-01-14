@@ -405,10 +405,10 @@ void UNK_0xe3ec() // UNK_0xe3ec
 
 void UNK_0xe3f4() // UNK_0xe3f4
 {
-
-  label1:
-  UNK_0xe3ec(); // UNK_0xe3ec
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xe3ec(); // UNK_0xe3ec
+  } while(Pop() == 0);
   UNK_0xe3d6(); // UNK_0xe3d6
 }
 
@@ -684,23 +684,23 @@ void UNK_0xe53d() // UNK_0xe53d
 void UNK_0xe5d5() // UNK_0xe5d5
 {
   unsigned short int a;
-
-  label1:
-  OVER(); // OVER
-  OVER(); // OVER
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(regsp)); // DUP
-  Push(0x0064);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  a = Pop(); // >R
-  _gt_(); // >
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) return;
-  Push(Pop()+1); // 1+
-  Push(Pop()+3); // 3+
-  goto label1;
+  do
+  {
+    OVER(); // OVER
+    OVER(); // OVER
+    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(regsp)); // DUP
+    Push(0x0064);
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    a = Pop(); // >R
+    _gt_(); // >
+    Push(a); // R>
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) return;
+    Push(Pop()+1); // 1+
+    Push(Pop()+3); // 3+
+  } while(1);
 }
 
 
@@ -772,24 +772,24 @@ void UNK_0xe70e() // UNK_0xe70e
   unsigned short int a, b;
   LoadData("UNK_0xe467"); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-
-  label2:
-  _2DUP(); // 2DUP
-  UNK_0xe3c2(); // UNK_0xe3c2
-  ROT(); // ROT
-  ROT(); // ROT
-  EPIDERM(); // EPIDERM
-  UNK_0xe5fd(); // UNK_0xe5fd
-  OVER(); // OVER
-  Push(Pop()+1); // 1+
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    Pop(); // DROP
+    _2DUP(); // 2DUP
+    UNK_0xe3c2(); // UNK_0xe3c2
+    ROT(); // ROT
+    ROT(); // ROT
+    EPIDERM(); // EPIDERM
+    UNK_0xe5fd(); // UNK_0xe5fd
+    OVER(); // OVER
     Push(Pop()+1); // 1+
-  }
-  if (Pop() == 0) goto label2;
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      Pop(); // DROP
+      Push(Pop()+1); // 1+
+    }
+  } while(Pop() == 0);
   a = Pop(); // >R
   b = Pop(); // >R
   Pop(); Pop();// 2DROP

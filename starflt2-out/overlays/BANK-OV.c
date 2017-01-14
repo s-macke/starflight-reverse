@@ -804,14 +804,14 @@ void UNK_0xf4d4() // UNK_0xf4d4
   UNK_0xefd5(); // UNK_0xefd5
   IOPEN(); // IOPEN
   Push(0);
-
-  label1:
-  Push(Read16(regsp)); // DUP
-  UNK_0xf482(); // UNK_0xf482
-  Push(Pop()+1); // 1+
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(Read16(regsp)); // DUP
+    UNK_0xf482(); // UNK_0xf482
+    Push(Pop()+1); // 1+
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   Pop(); // DROP
   ICLOSE(); // ICLOSE
   UNK_0xf4bc(); // UNK_0xf4bc
@@ -839,12 +839,12 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   _gt_DISPLA(); // >DISPLA
   SCR_dash_RES(); // SCR-RES
-
-  label1:
-  XYSCAN(); // XYSCAN
-  Pop(); Pop();// 2DROP
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1;
+  do
+  {
+    XYSCAN(); // XYSCAN
+    Pop(); Pop();// 2DROP
+    _ask_TRIG(); // ?TRIG
+  } while(Pop() == 0);
   Push(5);
   Push(user_CONTEXT_1); // CONTEXT_1
   _ex__2(); // !_2

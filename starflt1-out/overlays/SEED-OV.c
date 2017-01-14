@@ -1051,13 +1051,13 @@ void UNK_0xf163() // UNK_0xf163
 
 void UNK_0xf189() // UNK_0xf189
 {
-
-  label1:
-  Push(-1);
-  Push(2);
-  RRND(); // RRND
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(-1);
+    Push(2);
+    RRND(); // RRND
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  } while(Pop() == 0);
   Push(Pop() + Pop()); // +
 }
 
@@ -1235,20 +1235,20 @@ void UNK_0xf26b() // UNK_0xf26b
 void UNK_0xf29f() // UNK_0xf29f
 {
   unsigned short int a;
-
-  label2:
-  UNK_0xecdd(); // UNK_0xecdd
-  UNK_0xecfb(); // UNK_0xecfb
-  UNK_0xed49(); // UNK_0xed49
-  Push(Read16(regsp)); // DUP
-  a = Pop(); // >R
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    Pop(); Pop();// 2DROP
-  }
-  Push(a); // R>
-  if (Pop() == 0) goto label2;
+    UNK_0xecdd(); // UNK_0xecdd
+    UNK_0xecfb(); // UNK_0xecfb
+    UNK_0xed49(); // UNK_0xed49
+    Push(Read16(regsp)); // DUP
+    a = Pop(); // >R
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      Pop(); Pop();// 2DROP
+    }
+    Push(a); // R>
+  } while(Pop() == 0);
 }
 
 

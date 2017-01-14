@@ -2479,22 +2479,22 @@ void UNK_0xecd3() // UNK_0xecd3
   _ex__3(); // !_3
   UNK_0xecb9(); // UNK_0xecb9
   _ask_CHILD(); // ?CHILD
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-
-  label2:
-  Push(0xc227); // probable 'CTUP'
-  MODULE(); // MODULE
-  UNK_0xe084(); // UNK_0xe084
-  KEY_2(); // KEY_2
-  Pop(); // DROP
-  UNK_0xecb9(); // UNK_0xecb9
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
-  ICLOSE(); // ICLOSE
-
-  label1:
+  if (Pop() != 0)
+  {
+    IOPEN(); // IOPEN
+    do
+    {
+      Push(0xc227); // probable 'CTUP'
+      MODULE(); // MODULE
+      UNK_0xe084(); // UNK_0xe084
+      KEY_2(); // KEY_2
+      Pop(); // DROP
+      UNK_0xecb9(); // UNK_0xecb9
+      INEXT(); // INEXT
+      _ask_FIRST(); // ?FIRST
+    } while(Pop() == 0);
+    ICLOSE(); // ICLOSE
+  }
   Push(0xc227); // probable 'CTUP'
   MODULE(); // MODULE
   UNK_0xe084(); // UNK_0xe084
@@ -3063,12 +3063,12 @@ void UNK_0xf002() // UNK_0xf002
   Push(pp_UNK_0xee93); // UNK_0xee93
   _1_dot_5_ex_(); // 1.5!
   Push(0);
-
-  label1:
-  Push(Pop()+1); // 1+
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(Pop()+1); // 1+
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xefd4(); // UNK_0xefd4
   IPREV(); // IPREV
@@ -3408,31 +3408,31 @@ void TD_dash_SCROLL() // TD-SCROLL
 
 void UNK_0xf222() // UNK_0xf222
 {
-
-  label4:
-  UNK_0xdf0b(); // UNK_0xdf0b
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    TD_dash_SCROLL(); // TD-SCROLL case
-  } else
-  {
-    Pop(); // DROP
-  }
-  _ask_TRIG(); // ?TRIG
-  UNK_0xef20(); // UNK_0xef20
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
-  {
-    UNK_0xefa6(); // UNK_0xefa6
+    UNK_0xdf0b(); // UNK_0xdf0b
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      TD_dash_SCROLL(); // TD-SCROLL case
+    } else
+    {
+      Pop(); // DROP
+    }
+    _ask_TRIG(); // ?TRIG
+    UNK_0xef20(); // UNK_0xef20
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      UNK_0xefa6(); // UNK_0xefa6
+      Push(pp_FQUIT); // FQUIT
+      OFF(); // OFF
+      UNK_0xf028(); // UNK_0xf028
+    }
     Push(pp_FQUIT); // FQUIT
-    OFF(); // OFF
-    UNK_0xf028(); // UNK_0xf028
-  }
-  Push(pp_FQUIT); // FQUIT
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+    Push(Read16(Pop())); // @
+  } while(Pop() == 0);
 }
 
 
@@ -3492,35 +3492,35 @@ void UNK_0xf252() // UNK_0xf252
 void UNK_0xf29c() // UNK_0xf29c
 {
   Push2Words("0.");
-
-  label3:
-  _2DUP(); // 2DUP
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  _ask_LAST(); // ?LAST
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) return;
-  Push(0x000b);
-  Push(0);
-  IFIND(); // IFIND
-  if (Pop() != 0)
+  do
   {
-    CI(); // CI
-    CJ(); // CJ
-    _gt_C_plus_S(); // >C+S
-    UNK_0xf252(); // UNK_0xf252
-    ICLOSE(); // ICLOSE
     _2DUP(); // 2DUP
     Push(Pop() | Pop()); // OR
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    _ask_LAST(); // ?LAST
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) return;
+    Push(0x000b);
+    Push(0);
+    IFIND(); // IFIND
     if (Pop() != 0)
     {
-      _2SWAP(); // 2SWAP
+      CI(); // CI
+      CJ(); // CJ
+      _gt_C_plus_S(); // >C+S
+      UNK_0xf252(); // UNK_0xf252
+      ICLOSE(); // ICLOSE
+      _2DUP(); // 2DUP
+      Push(Pop() | Pop()); // OR
+      if (Pop() != 0)
+      {
+        _2SWAP(); // 2SWAP
+      }
+      Pop(); Pop();// 2DROP
     }
-    Pop(); Pop();// 2DROP
-  }
-  INEXT(); // INEXT
-  goto label3;
+    INEXT(); // INEXT
+  } while(1);
 }
 
 // 0xf2d8: db 0x4c 0x22 0xf1 0x75 0xfa 0x15 0x0c 0x00 0xc9 0x79 0xda 0x7e 0x9c 0x7a 0x58 0x51 0xf2 0x79 0x90 0x16 'L" u     y ~ zXQ y  '
@@ -3825,56 +3825,56 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
-
-  label3:
-  UNK_0xe044(); // UNK_0xe044
-  UNK_0xe0b5(); // UNK_0xe0b5
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
-  _1_dot_5_at_(); // 1.5@
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    MAKE_dash_SC(); // MAKE-SC
-    UNK_0xf36a(); // UNK_0xf36a
-    Push(pp_SUPER_dash_BOX); // SUPER-BOX
-    _1_dot_5_at_(); // 1.5@
-    GET_dash_BOX(); // GET-BOX
+    do
+    {
+      UNK_0xe044(); // UNK_0xe044
+      UNK_0xe0b5(); // UNK_0xe0b5
+      Push(pp__ro_SCROLL_1); // (SCROLL_1
+      _1_dot_5_at_(); // 1.5@
+      Push(Pop() | Pop()); // OR
+      if (Pop() == 0) Push(1); else Push(0); // 0=
+      if (Pop() != 0)
+      {
+        MAKE_dash_SC(); // MAKE-SC
+        UNK_0xf36a(); // UNK_0xf36a
+        Push(pp_SUPER_dash_BOX); // SUPER-BOX
+        _1_dot_5_at_(); // 1.5@
+        GET_dash_BOX(); // GET-BOX
+      }
+      Push(pp_XORMODE); // XORMODE
+      OFF(); // OFF
+      SetColor("WHITE");
+      _ex_COLOR(); // !COLOR
+      UNK_0xeee4(); // UNK_0xeee4
+      SetColor("WHITE");
+      _ex_COLOR(); // !COLOR
+      UNK_0xf002(); // UNK_0xf002
+      UNK_0xef62(); // UNK_0xef62
+      UNK_0xf222(); // UNK_0xf222
+      _ask_QUIT(); // ?QUIT
+    } while(Pop() == 0);
+    SetColor("GREEN");
+    qtbtn(); // qtbtn
+    delete_dash_scroll_dash_box(); // delete-scroll-box
+    Push2Words("0.");
+    Push(pp__ro_SCROLL_1); // (SCROLL_1
+    _1_dot_5_ex_(); // 1.5!
+    return_dash_items(); // return-items
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
+    full_dash_text(); // full-text
+    Push(7);
+    Push(pp_UNK_0xddfa); // UNK_0xddfa
+    _st__ex__gt_(); // <!>
+    SetColor("LT-BLUE");
+    qtbtn(); // qtbtn
+    UNK_0xdf01(); // UNK_0xdf01
+    UNK_0xe0b5(); // UNK_0xe0b5
+    UNK_0xf480(); // UNK_0xf480
+    return;
   }
-  Push(pp_XORMODE); // XORMODE
-  OFF(); // OFF
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  UNK_0xeee4(); // UNK_0xeee4
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  UNK_0xf002(); // UNK_0xf002
-  UNK_0xef62(); // UNK_0xef62
-  UNK_0xf222(); // UNK_0xf222
-  _ask_QUIT(); // ?QUIT
-  if (Pop() == 0) goto label3;
-  SetColor("GREEN");
-  qtbtn(); // qtbtn
-  delete_dash_scroll_dash_box(); // delete-scroll-box
-  Push2Words("0.");
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
-  _1_dot_5_ex_(); // 1.5!
-  return_dash_items(); // return-items
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
-  full_dash_text(); // full-text
-  Push(7);
-  Push(pp_UNK_0xddfa); // UNK_0xddfa
-  _st__ex__gt_(); // <!>
-  SetColor("LT-BLUE");
-  qtbtn(); // qtbtn
-  UNK_0xdf01(); // UNK_0xdf01
-  UNK_0xe0b5(); // UNK_0xe0b5
-  UNK_0xf480(); // UNK_0xf480
-  return;
-
-  label1:
   UNK_0xe044(); // UNK_0xe044
   UNK_0xe0b5(); // UNK_0xe0b5
   Push(6);

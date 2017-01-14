@@ -363,18 +363,18 @@ void APAUSE() // APAUSE
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-
-  label4:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  _2OVER(); // 2OVER
-  D_gt_(); // D>
-  _i_KEY(); // 'KEY
-  Push(Read16(regsp)); // DUP
-  _ro_XYSCAN(); // (XYSCAN case
-  Pop(); Pop();// 2DROP
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label4;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    _2OVER(); // 2OVER
+    D_gt_(); // D>
+    _i_KEY(); // 'KEY
+    Push(Read16(regsp)); // DUP
+    _ro_XYSCAN(); // (XYSCAN case
+    Pop(); Pop();// 2DROP
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Push(b); // I
   if (Pop() != 0)
   {
@@ -798,17 +798,17 @@ void UNK_0xea33() // UNK_0xea33
 {
   _gt_BOTT(); // >BOTT
   UNK_0xe78f(); // UNK_0xe78f
-
-  label1:
-  UNK_0xe7df(); // UNK_0xe7df
-  UNK_0xe9fb(); // UNK_0xe9fb
-  UNK_0xe853(); // UNK_0xe853
-  Push(1);
-  Push(pp_CTX); // CTX
-  _plus__ex__2(); // +!_2
-  Push(Read16(regsp)); // DUP
-  _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xe7df(); // UNK_0xe7df
+    UNK_0xe9fb(); // UNK_0xe9fb
+    UNK_0xe853(); // UNK_0xe853
+    Push(1);
+    Push(pp_CTX); // CTX
+    _plus__ex__2(); // +!_2
+    Push(Read16(regsp)); // DUP
+    _0_st_(); // 0<
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 
@@ -1527,19 +1527,19 @@ void UNK_0xee0e() // UNK_0xee0e
   if (Pop() == 0) goto label1;
   UNK_0xed75(); // UNK_0xed75
   UNK_0xebf2(); // UNK_0xebf2
-
-  label4:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    RACE_dash_SCR(); // RACE-SCR case
-  } else
-  {
-    Pop(); // DROP
-  }
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label4;
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      RACE_dash_SCR(); // RACE-SCR case
+    } else
+    {
+      Pop(); // DROP
+    }
+    _ask_TRIG(); // ?TRIG
+  } while(Pop() == 0);
   UNK_0xebea(); // UNK_0xebea
   _gt_C_plus_S(); // >C+S
   _at_INST_dash_S(); // @INST-S

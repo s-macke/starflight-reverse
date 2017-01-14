@@ -340,10 +340,10 @@ void UNK_0xecdf() // UNK_0xecdf
 
 void UNK_0xece7() // UNK_0xece7
 {
-
-  label1:
-  UNK_0xecdf(); // UNK_0xecdf
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xecdf(); // UNK_0xecdf
+  } while(Pop() == 0);
   UNK_0xecc9(); // UNK_0xecc9
 }
 
@@ -368,23 +368,23 @@ void UNK_0xecf8() // UNK_0xecf8
   IFIND(); // IFIND
   Pop(); // DROP
   Push(0);
-
-  label2:
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  Push(Read16(cc_UNK_0xec16)); // UNK_0xec16
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() != 0)
+  do
   {
-    Push(Pop()+1); // 1+
-  }
-  Push(pp__ro_PLANET); // (PLANET
-  _1_dot_5_at_(); // 1.5@
-  CI(); // CI
-  D_eq_(); // D=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) return;
-  INEXT(); // INEXT
-  goto label2;
+    _at_INST_dash_CLASS(); // @INST-CLASS
+    Push(Read16(cc_UNK_0xec16)); // UNK_0xec16
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() != 0)
+    {
+      Push(Pop()+1); // 1+
+    }
+    Push(pp__ro_PLANET); // (PLANET
+    _1_dot_5_at_(); // 1.5@
+    CI(); // CI
+    D_eq_(); // D=
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() == 0) return;
+    INEXT(); // INEXT
+  } while(1);
 }
 
 
@@ -1084,18 +1084,17 @@ void UNK_0xf1c8() // UNK_0xf1c8
 {
   LoadData("UNK_0xec7a"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label1;
-
-  label2:
-  UNK_0xf18e(); // UNK_0xf18e
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
-  goto label3;
-
-  label1:
-  Push(0);
-
-  label3:
+  if (Pop() != 0)
+  {
+    do
+    {
+      UNK_0xf18e(); // UNK_0xf18e
+      if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    } while(Pop() == 0);
+  } else
+  {
+    Push(0);
+  }
   Push(pp_ATMO); // ATMO
   _ex__3(); // !_3
 }
@@ -1127,19 +1126,19 @@ void UNK_0xf1e6() // UNK_0xf1e6
   }
   LoadData("UNK_0xec52"); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) goto label2;
-  Push(5);
-  Push(pp_HYDRO); // HYDRO
-  _ex__3(); // !_3
-
-  label3:
-  UNK_0xf1c8(); // UNK_0xf1c8
-  Push(pp_ATMO); // ATMO
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label3;
-  return;
-
-  label2:
+  if (Pop() != 0)
+  {
+    Push(5);
+    Push(pp_HYDRO); // HYDRO
+    _ex__3(); // !_3
+    do
+    {
+      UNK_0xf1c8(); // UNK_0xf1c8
+      Push(pp_ATMO); // ATMO
+      Push(Read16(Pop())); // @
+    } while(Pop() == 0);
+    return;
+  }
   UNK_0xf162(); // UNK_0xf162
   UNK_0xf1c8(); // UNK_0xf1c8
 }

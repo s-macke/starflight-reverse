@@ -580,21 +580,21 @@ void UNK_0xee92() // UNK_0xee92
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-
-  label2:
-  _2DUP(); // 2DUP
-  UNK_0xedae(); // UNK_0xedae
-  D_eq_(); // D=
-  if (Pop() != 0)
+  do
   {
-    Push(a); // R>
-    Pop(); // DROP
-    Push(Read16(cc_FALSE)); // FALSE
-    b = Pop(); // >R
-  }
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
+    _2DUP(); // 2DUP
+    UNK_0xedae(); // UNK_0xedae
+    D_eq_(); // D=
+    if (Pop() != 0)
+    {
+      Push(a); // R>
+      Pop(); // DROP
+      Push(Read16(cc_FALSE)); // FALSE
+      b = Pop(); // >R
+    }
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   Push(2);
   _star_CLOSE(); // *CLOSE
   Push(b); // R>

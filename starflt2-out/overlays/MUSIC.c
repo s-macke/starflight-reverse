@@ -806,52 +806,52 @@ void UNK_0xf0d5() // UNK_0xf0d5
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-
-    label3:
-    UNK_0xf0bf(); // UNK_0xf0bf
-    Push(Pop()>>4); // 16/
-    UNK_0xf0b7(); // UNK_0xf0b7
-    Push(0x0040);
-    Push(Pop() * Pop()); // *
-    a = Pop(); // >R
-    UNK_0xf0b7(); // UNK_0xf0b7
-    Push(Pop()<<4); // 16*
-    b = Pop(); // >R
-    Push(Pop()-1); // 1-
-    Push(Read16(regsp)); // DUP
-    if (Pop() != 0)
+    do
     {
       UNK_0xf0bf(); // UNK_0xf0bf
       Push(Pop()>>4); // 16/
       UNK_0xf0b7(); // UNK_0xf0b7
-      _4_star_(); // 4*
-      c = Pop(); // >R
+      Push(0x0040);
+      Push(Pop() * Pop()); // *
+      a = Pop(); // >R
       UNK_0xf0b7(); // UNK_0xf0b7
-    } else
-    {
-      Push2Words("NULL");
-      d = Pop(); // >R
-    }
-    Push(c); // R>
-    Push(Pop() | Pop()); // OR
-    Push(b); // R>
-    Push(Pop() | Pop()); // OR
-    Push(a); // R>
-    Push(Pop() | Pop()); // OR
-    BMSEG(); // BMSEG
-    Push(Read16(Pop())); // @
-    Push(pp_DST); // DST
-    Push(Read16(Pop())); // @
-    LC_ex_(); // LC!
-    Push(1);
-    Push(pp_DST); // DST
-    _plus__ex__2(); // +!_2
-    Push(Pop()-1); // 1-
-    Push(0);
-    MAX(); // MAX
-    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-    if (Pop() == 0) Push(1); else Push(0); // 0=
-    if (Pop() == 0) goto label3;
+      Push(Pop()<<4); // 16*
+      b = Pop(); // >R
+      Push(Pop()-1); // 1-
+      Push(Read16(regsp)); // DUP
+      if (Pop() != 0)
+      {
+        UNK_0xf0bf(); // UNK_0xf0bf
+        Push(Pop()>>4); // 16/
+        UNK_0xf0b7(); // UNK_0xf0b7
+        _4_star_(); // 4*
+        c = Pop(); // >R
+        UNK_0xf0b7(); // UNK_0xf0b7
+      } else
+      {
+        Push2Words("NULL");
+        d = Pop(); // >R
+      }
+      Push(c); // R>
+      Push(Pop() | Pop()); // OR
+      Push(b); // R>
+      Push(Pop() | Pop()); // OR
+      Push(a); // R>
+      Push(Pop() | Pop()); // OR
+      BMSEG(); // BMSEG
+      Push(Read16(Pop())); // @
+      Push(pp_DST); // DST
+      Push(Read16(Pop())); // @
+      LC_ex_(); // LC!
+      Push(1);
+      Push(pp_DST); // DST
+      _plus__ex__2(); // +!_2
+      Push(Pop()-1); // 1-
+      Push(0);
+      MAX(); // MAX
+      if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+      if (Pop() == 0) Push(1); else Push(0); // 0=
+    } while(Pop() == 0);
     i++;
   } while(i<imax); // (LOOP)
 
@@ -1218,15 +1218,15 @@ void UNK_0xf3f2() // UNK_0xf3f2
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-
-  label1:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  _2OVER(); // 2OVER
-  D_gt_(); // D>
-  _i_KEY(); // 'KEY
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    _2OVER(); // 2OVER
+    D_gt_(); // D>
+    _i_KEY(); // 'KEY
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 

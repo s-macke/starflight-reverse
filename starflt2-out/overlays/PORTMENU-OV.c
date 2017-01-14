@@ -352,33 +352,33 @@ void UNK_0xed90() // UNK_0xed90
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-
-  label2:
-  Push(0x6601); // IFIELD(UNK_0xecfb)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(regsp)); // DUP
-  Push(8);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  SWAP(); // SWAP
-  Push(2);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
+  do
   {
-    Push(a); // I
-    Push(0x6600); // IFIELD(UNK_0xed00)
+    Push(0x6601); // IFIELD(UNK_0xecfb)
     Push(Read8(Pop())&0xFF); // C@
-    Push(Pop() + Pop()); // +
-    Push(0x0064);
-    MIN(); // MIN
-    Push(0x6600); // IFIELD(UNK_0xed00)
-    C_ex__2(); // C!_2
-  }
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
+    Push(Read16(regsp)); // DUP
+    Push(8);
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    SWAP(); // SWAP
+    Push(2);
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      Push(a); // I
+      Push(0x6600); // IFIELD(UNK_0xed00)
+      Push(Read8(Pop())&0xFF); // C@
+      Push(Pop() + Pop()); // +
+      Push(0x0064);
+      MIN(); // MIN
+      Push(0x6600); // IFIELD(UNK_0xed00)
+      C_ex__2(); // C!_2
+    }
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(a); // R>
@@ -1459,26 +1459,26 @@ void WALKIES() // WALKIES
   UNK_0xf091(); // UNK_0xf091
   UNK_0xef23(); // UNK_0xef23
   UNK_0xf486(); // UNK_0xf486
-
-  label3:
-  XYSCAN(); // XYSCAN
-  _2DUP(); // 2DUP
-  XWALK(); // XWALK case
-  Pop(); // DROP
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() != 0)
+  do
   {
-    UNK_0xf42a(); // UNK_0xf42a
-  }
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
-  {
-    UNK_0xf4c0(); // UNK_0xf4c0
-    _i_KEY(); // 'KEY
+    XYSCAN(); // XYSCAN
+    _2DUP(); // 2DUP
+    XWALK(); // XWALK case
     Pop(); // DROP
-  }
-  goto label3;
+    Push(Pop() | Pop()); // OR
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() != 0)
+    {
+      UNK_0xf42a(); // UNK_0xf42a
+    }
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      UNK_0xf4c0(); // UNK_0xf4c0
+      _i_KEY(); // 'KEY
+      Pop(); // DROP
+    }
+  } while(1);
 }
 
 

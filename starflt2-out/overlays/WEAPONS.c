@@ -1152,74 +1152,72 @@ void UNK_0xf158() // UNK_0xf158
 void UNK_0xf172() // UNK_0xf172
 {
   UNK_0xeef6(); // UNK_0xeef6
-  if (Pop() == 0) goto label1;
-  UNK_0xef02(); // UNK_0xef02
-  UNK_0xeeac(); // UNK_0xeeac
-  Y_slash_N(); // Y/N
-  if (Pop() == 0) goto label2;
-  UNK_0xee5f(); // UNK_0xee5f
-
-  label6:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  Push(pp_KEYTIME); // KEYTIME
-  _2_at_(); // 2@
-  D_dash_(); // D-
-  Push(0x1388); Push(0x0000);
-  D_gt_(); // D>
   if (Pop() != 0)
   {
-    Push(pp__i_WAX); // 'WAX
-    _at_EXECUTE(); // @EXECUTE
-  }
-  XYSCAN(); // XYSCAN
-  UNK_0xef2c(); // UNK_0xef2c
-  if (Pop() != 0)
-  {
-    Push(pp_EYEXY); // EYEXY
-    Push(Pop()+2); // 2+
-    _plus__ex__2(); // +!_2
-    Push(pp_EYEXY); // EYEXY
-    _plus__ex__2(); // +!_2
+    UNK_0xef02(); // UNK_0xef02
+    UNK_0xeeac(); // UNK_0xeeac
+    Y_slash_N(); // Y/N
+    if (Pop() != 0)
+    {
+      UNK_0xee5f(); // UNK_0xee5f
+      do
+      {
+        TIME(); // TIME
+        _2_at_(); // 2@
+        Push(pp_KEYTIME); // KEYTIME
+        _2_at_(); // 2@
+        D_dash_(); // D-
+        Push(0x1388); Push(0x0000);
+        D_gt_(); // D>
+        if (Pop() != 0)
+        {
+          Push(pp__i_WAX); // 'WAX
+          _at_EXECUTE(); // @EXECUTE
+        }
+        XYSCAN(); // XYSCAN
+        UNK_0xef2c(); // UNK_0xef2c
+        if (Pop() != 0)
+        {
+          Push(pp_EYEXY); // EYEXY
+          Push(Pop()+2); // 2+
+          _plus__ex__2(); // +!_2
+          Push(pp_EYEXY); // EYEXY
+          _plus__ex__2(); // +!_2
+        } else
+        {
+          Pop(); Pop();// 2DROP
+        }
+        UNK_0xef54(); // UNK_0xef54
+        UNK_0xedf7(); // UNK_0xedf7
+        _ask_TRIG(); // ?TRIG
+      } while(Pop() == 0);
+      UNK_0xede5(); // UNK_0xede5
+      if (Pop() == 0) Push(1); else Push(0); // NOT
+      if (Pop() != 0)
+      {
+        UNK_0xf158(); // UNK_0xf158
+        Push(pp_WEAPON_dash_); // WEAPON-
+        ON_2(); // ON_2
+      } else
+      {
+        UNK_0xed47(); // UNK_0xed47
+      }
+      Push(0x03e8);
+      MS(); // MS
+      CTERASE(); // CTERASE
+    } else
+    {
+      UNK_0x3f09("CANCELLED");
+      _dot_TTY(); // .TTY
+    }
   } else
   {
-    Pop(); Pop();// 2DROP
+    CTINIT(); // CTINIT
+    CTERASE(); // CTERASE
+    Push(0x63a8); Push(0x0002);
+    UNK_0xec7b(); // UNK_0xec7b
+    _dot_TTY(); // .TTY
   }
-  UNK_0xef54(); // UNK_0xef54
-  UNK_0xedf7(); // UNK_0xedf7
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label6;
-  UNK_0xede5(); // UNK_0xede5
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() != 0)
-  {
-    UNK_0xf158(); // UNK_0xf158
-    Push(pp_WEAPON_dash_); // WEAPON-
-    ON_2(); // ON_2
-  } else
-  {
-    UNK_0xed47(); // UNK_0xed47
-  }
-  Push(0x03e8);
-  MS(); // MS
-  CTERASE(); // CTERASE
-  goto label9;
-
-  label2:
-  UNK_0x3f09("CANCELLED");
-  _dot_TTY(); // .TTY
-
-  label9:
-  goto label10;
-
-  label1:
-  CTINIT(); // CTINIT
-  CTERASE(); // CTERASE
-  Push(0x63a8); Push(0x0002);
-  UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
-
-  label10:
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
   V_gt_DISPL(); // V>DISPL

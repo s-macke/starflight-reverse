@@ -1254,19 +1254,19 @@ void EDIT() // EDIT
   Exec("PAGE"); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
-
-  label3:
-  UNK_0xeec0(); // UNK_0xeec0
-  KEY_2(); // KEY_2
-  _ask_VISIBLE(); // ?VISIBLE
-  if (Pop() != 0)
+  do
   {
-    INSERT(); // INSERT
-  } else
-  {
-    EDIT_dash_KEYS(); // EDIT-KEYS case
-  }
-  goto label3;
+    UNK_0xeec0(); // UNK_0xeec0
+    KEY_2(); // KEY_2
+    _ask_VISIBLE(); // ?VISIBLE
+    if (Pop() != 0)
+    {
+      INSERT(); // INSERT
+    } else
+    {
+      EDIT_dash_KEYS(); // EDIT-KEYS case
+    }
+  } while(1);
 }
 
 
@@ -1304,17 +1304,17 @@ void VIEW() // VIEW
   Exec("PAGE"); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
-
-  label2:
-  UNK_0xeec0(); // UNK_0xeec0
-  KEY_2(); // KEY_2
-  _ask_VISIBLE(); // ?VISIBLE
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() != 0)
+  do
   {
-    VIEW_dash_KEYS(); // VIEW-KEYS case
-  }
-  goto label2;
+    UNK_0xeec0(); // UNK_0xeec0
+    KEY_2(); // KEY_2
+    _ask_VISIBLE(); // ?VISIBLE
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() != 0)
+    {
+      VIEW_dash_KEYS(); // VIEW-KEYS case
+    }
+  } while(1);
 }
 
 // 0xf557: db 0x2b 0x45 0x44 0x49 0x54 0x5f 0x5f 0x5f 0x5f 0x00 '+EDIT____ '

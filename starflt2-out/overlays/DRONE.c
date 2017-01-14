@@ -947,20 +947,20 @@ void TD_dash_SCRO() // TD-SCRO
 
 void UNK_0xef67() // UNK_0xef67
 {
-
-  label3:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    TD_dash_SCRO(); // TD-SCRO case
-  } else
-  {
-    Pop(); // DROP
-  }
-  Push(pp_FQUIT); // FQUIT
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label3;
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      TD_dash_SCRO(); // TD-SCRO case
+    } else
+    {
+      Pop(); // DROP
+    }
+    Push(pp_FQUIT); // FQUIT
+    Push(Read16(Pop())); // @
+  } while(Pop() == 0);
   Push(0);
 }
 
@@ -1173,19 +1173,19 @@ void ACT_dash_SCR() // ACT-SCR
 
 void UNK_0xf092() // UNK_0xf092
 {
-
-  label3:
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    ACT_dash_SCR(); // ACT-SCR case
-  } else
-  {
-    Pop(); // DROP
-  }
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label3;
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      ACT_dash_SCR(); // ACT-SCR case
+    } else
+    {
+      Pop(); // DROP
+    }
+    _ask_TRIG(); // ?TRIG
+  } while(Pop() == 0);
 }
 
 
@@ -1987,64 +1987,62 @@ void DRONE() // DRONE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
-  Push(pp_ETIME); // ETIME
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label2;
-  Push(pp_NOF); // NOF
-  ON_2(); // ON_2
-  Push(0);
-  Push(0);
-  UNK_0xec60(); // UNK_0xec60
-  Push(pp_ESC_dash_EN); // ESC-EN
-  _099(); // 099
-
-  label3:
-  ACTION_ask_(); // ACTION?
-  Push(pp_ACT_n_); // ACT#
-  Push(Read16(Pop())); // @
-  _n__gt_ACTIO(); // #>ACTIO case
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label3;
-  Push(pp_ESC_dash_EN); // ESC-EN
-  ON_2(); // ON_2
-  Push(pp_NOF); // NOF
-  _099(); // 099
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    UNK_0xf289(); // UNK_0xf289
-    UNK_0xf3c9(); // UNK_0xf3c9
-    UNK_0xeca2(); // UNK_0xeca2
-    TIME(); // TIME
-    _2_at_(); // 2@
-    Push(pp__n_ETIME); // #ETIME
-    D_ex_(); // D!
+    Push(pp_ETIME); // ETIME
+    Push(Read16(Pop())); // @
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() != 0)
+    {
+      Push(pp_NOF); // NOF
+      ON_2(); // ON_2
+      Push(0);
+      Push(0);
+      UNK_0xec60(); // UNK_0xec60
+      Push(pp_ESC_dash_EN); // ESC-EN
+      _099(); // 099
+      do
+      {
+        ACTION_ask_(); // ACTION?
+        Push(pp_ACT_n_); // ACT#
+        Push(Read16(Pop())); // @
+        _n__gt_ACTIO(); // #>ACTIO case
+        if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+      } while(Pop() == 0);
+      Push(pp_ESC_dash_EN); // ESC-EN
+      ON_2(); // ON_2
+      Push(pp_NOF); // NOF
+      _099(); // 099
+      Push(1);
+      Push((Pop()==Pop())?1:0); // =
+      if (Pop() != 0)
+      {
+        UNK_0xf289(); // UNK_0xf289
+        UNK_0xf3c9(); // UNK_0xf3c9
+        UNK_0xeca2(); // UNK_0xeca2
+        TIME(); // TIME
+        _2_at_(); // 2@
+        Push(pp__n_ETIME); // #ETIME
+        D_ex_(); // D!
+      } else
+      {
+        UNK_0xec4e(); // UNK_0xec4e
+      }
+    } else
+    {
+      UNK_0xf46f(); // UNK_0xf46f
+      RECALL(); // RECALL
+    }
+    Push(pp_NOF); // NOF
+    _099(); // 099
+    CTERASE(); // CTERASE
   } else
   {
-    UNK_0xec4e(); // UNK_0xec4e
+    Push(0xb7e7); // probable '.NOFUN'
+    MODULE(); // MODULE
+    Push(0x07d0);
+    MS(); // MS
   }
-  goto label6;
-
-  label2:
-  UNK_0xf46f(); // UNK_0xf46f
-  RECALL(); // RECALL
-
-  label6:
-  Push(pp_NOF); // NOF
-  _099(); // 099
-  CTERASE(); // CTERASE
-  goto label7;
-
-  label1:
-  Push(0xb7e7); // probable '.NOFUN'
-  MODULE(); // MODULE
-  Push(0x07d0);
-  MS(); // MS
-
-  label7:
   Push2Words("NULL");
 }
 

@@ -139,10 +139,10 @@ void UNK_0xef56() // UNK_0xef56
   }
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
-
-  label3:
-  _i_KEY(); // 'KEY
-  if (Pop() == 0) goto label3;
+  do
+  {
+    _i_KEY(); // 'KEY
+  } while(Pop() == 0);
   Push(b); // R>
   if (Pop() != 0)
   {

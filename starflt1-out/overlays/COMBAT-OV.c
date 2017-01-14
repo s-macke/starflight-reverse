@@ -708,13 +708,13 @@ void UNK_0xde81() // UNK_0xde81
 
 void UNK_0xde9b() // UNK_0xde9b
 {
-
-  label1:
-  Push(-1);
-  Push(2);
-  RRND(); // RRND
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(-1);
+    Push(2);
+    RRND(); // RRND
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  } while(Pop() == 0);
 }
 
 

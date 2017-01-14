@@ -421,18 +421,18 @@ void UNK_0xe84f() // UNK_0xe84f
   D_plus_(); // D+
   Push(pp_TIRED_dash_T); // TIRED-T
   D_ex_(); // D!
-
-  label1:
-  UNK_0xe6cc(); // UNK_0xe6cc
-  Push(pp_FTRIG); // FTRIG
-  Push(Read16(Pop())); // @
-  TIME(); // TIME
-  _2_at_(); // 2@
-  Push(pp_TIRED_dash_T); // TIRED-T
-  _2_at_(); // 2@
-  D_gt_(); // D>
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xe6cc(); // UNK_0xe6cc
+    Push(pp_FTRIG); // FTRIG
+    Push(Read16(Pop())); // @
+    TIME(); // TIME
+    _2_at_(); // 2@
+    Push(pp_TIRED_dash_T); // TIRED-T
+    _2_at_(); // 2@
+    D_gt_(); // D>
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -609,14 +609,14 @@ void GORZEK_gt_UHL() // GORZEK>UHL
 
 void UNK_0xec70() // UNK_0xec70
 {
-
-  label1:
-  INEXT(); // INEXT
-  Push(0x6601); // IFIELD(UNK_0xe634)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(8);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  do
+  {
+    INEXT(); // INEXT
+    Push(0x6601); // IFIELD(UNK_0xe634)
+    Push(Read8(Pop())&0xFF); // C@
+    Push(8);
+    Push(Pop() & Pop()); // AND
+  } while(Pop() == 0);
   Push(1);
 }
 
@@ -627,14 +627,14 @@ void UNK_0xec70() // UNK_0xec70
 
 void UNK_0xec84() // UNK_0xec84
 {
-
-  label1:
-  IPREV(); // IPREV
-  Push(0x6601); // IFIELD(UNK_0xe634)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(8);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
+  do
+  {
+    IPREV(); // IPREV
+    Push(0x6601); // IFIELD(UNK_0xe634)
+    Push(Read8(Pop())&0xFF); // C@
+    Push(8);
+    Push(Pop() & Pop()); // AND
+  } while(Pop() == 0);
   Push(1);
 }
 
@@ -1019,16 +1019,16 @@ void SA_dash_CASE() // SA-CASE
 
 void UNK_0xf51d() // UNK_0xf51d
 {
-
-  label1:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  Push(pp_OK_dash_TALK); // OK-TALK
-  _2_at_(); // 2@
-  D_gt_(); // D>
-  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    Push(pp_OK_dash_TALK); // OK-TALK
+    _2_at_(); // 2@
+    D_gt_(); // D>
+    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
 }
 
 

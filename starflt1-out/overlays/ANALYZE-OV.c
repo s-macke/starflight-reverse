@@ -294,30 +294,30 @@ void UNK_0xec26() // UNK_0xec26
   UNK_0xec04(); // UNK_0xec04
   if (Pop() == 0) return;
   IOPEN(); // IOPEN
-
-  label3:
-  _at_INST_dash_CLASS(); // @INST-CLASS
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  Push(0x000b);
-  Push(4);
-  D_eq_(); // D=
-  if (Pop() != 0)
+  do
   {
-    IOPEN(); // IOPEN
-    Push(0x0020);
-    Push(0);
-    IFIND(); // IFIND
+    _at_INST_dash_CLASS(); // @INST-CLASS
+    _at_INST_dash_SPECIES(); // @INST-SPECIES
+    Push(0x000b);
+    Push(4);
+    D_eq_(); // D=
     if (Pop() != 0)
     {
+      IOPEN(); // IOPEN
+      Push(0x0020);
       Push(0);
-      LoadData("UNK_0xebd7"); // from 'PLANET      '
-      C_ex_(); // C!
+      IFIND(); // IFIND
+      if (Pop() != 0)
+      {
+        Push(0);
+        LoadData("UNK_0xebd7"); // from 'PLANET      '
+        C_ex_(); // C!
+      }
+      ICLOSE(); // ICLOSE
     }
-    ICLOSE(); // ICLOSE
-  }
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label3;
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   ICLOSE(); // ICLOSE
 }
 
@@ -518,14 +518,14 @@ void _dot_SIZE() // .SIZE
   Push(0);
   _dot_R(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) goto label1;
-  PRINT(".", 1); // (.")
-
-  label2:
-  UNK_0xed5c(); // UNK_0xed5c
-  if (Pop() == 0) goto label2;
-
-  label1:
+  if (Pop() != 0)
+  {
+    PRINT(".", 1); // (.")
+    do
+    {
+      UNK_0xed5c(); // UNK_0xed5c
+    } while(Pop() == 0);
+  }
   Pop(); Pop();// 2DROP
   PRINT(" TIMES THE SIZE OF OUR SHIP.", 28); // (.")
 }

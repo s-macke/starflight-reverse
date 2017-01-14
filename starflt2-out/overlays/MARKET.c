@@ -2503,23 +2503,23 @@ void T_gt_ACTION() // T>ACTION
 
 void UNK_0xf4ac() // UNK_0xf4ac
 {
-
-  label1:
-  Push2Words("0.");
-  Push(pp__ro_THING_rc_); // (THING)
-  _1_dot_5_ex__2(); // 1.5!_2
-  UNK_0xedaf(); // UNK_0xedaf
-  Push(pp_TERMINA); // TERMINA
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) return;
-  Push(pp_TBOX); // TBOX
-  _099(); // 099
-  UNK_0xf485(); // UNK_0xf485
-  Push(pp_NCRS); // NCRS
-  Push(Read16(Pop())); // @
-  T_gt_ACTION(); // T>ACTION case
-  goto label1;
+  do
+  {
+    Push2Words("0.");
+    Push(pp__ro_THING_rc_); // (THING)
+    _1_dot_5_ex__2(); // 1.5!_2
+    UNK_0xedaf(); // UNK_0xedaf
+    Push(pp_TERMINA); // TERMINA
+    Push(Read16(Pop())); // @
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() == 0) return;
+    Push(pp_TBOX); // TBOX
+    _099(); // 099
+    UNK_0xf485(); // UNK_0xf485
+    Push(pp_NCRS); // NCRS
+    Push(Read16(Pop())); // @
+    T_gt_ACTION(); // T>ACTION case
+  } while(1);
 }
 
 

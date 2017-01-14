@@ -202,23 +202,23 @@ void UNK_0xf0b4() // UNK_0xf0b4
 void UNK_0xf14c() // UNK_0xf14c
 {
   unsigned short int a;
-
-  label1:
-  OVER(); // OVER
-  OVER(); // OVER
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(regsp)); // DUP
-  Push(0x0064);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  a = Pop(); // >R
-  _gt_(); // >
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) return;
-  Push(Pop()+1); // 1+
-  Push(Pop()+3); // 3+
-  goto label1;
+  do
+  {
+    OVER(); // OVER
+    OVER(); // OVER
+    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(regsp)); // DUP
+    Push(0x0064);
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    a = Pop(); // >R
+    _gt_(); // >
+    Push(a); // R>
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) return;
+    Push(Pop()+1); // 1+
+    Push(Pop()+3); // 3+
+  } while(1);
 }
 
 

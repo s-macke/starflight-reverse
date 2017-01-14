@@ -798,13 +798,13 @@ void UNK_0xf42a() // UNK_0xf42a
   Push(Read16(Pop())); // @
   Push(pp_GLOBALS); // GLOBALS
   _ex__2(); // !_2
-
-  label2:
-  UNK_0xf29d(); // UNK_0xf29d
-  UNK_0xf2f5(); // UNK_0xf2f5
-  UNK_0xf365(); // UNK_0xf365
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label2;
+  do
+  {
+    UNK_0xf29d(); // UNK_0xf29d
+    UNK_0xf2f5(); // UNK_0xf2f5
+    UNK_0xf365(); // UNK_0xf365
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+  } while(Pop() == 0);
   SAVE_dash_OV(); // SAVE-OV
   CTINIT(); // CTINIT
   UNK_0xf194(); // UNK_0xf194
@@ -835,18 +835,18 @@ void UNK_0xf464() // UNK_0xf464
   _dot_TTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
-
-  label2:
-  XYSCAN(); // XYSCAN
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
+  do
   {
-    BEEP(); // BEEP
-  }
-  SWAP(); // SWAP
-  Pop(); // DROP
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+    XYSCAN(); // XYSCAN
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      BEEP(); // BEEP
+    }
+    SWAP(); // SWAP
+    Pop(); // DROP
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  } while(Pop() == 0);
   Push(1);
   Push((Pop()==Pop())?1:0); // =
 }

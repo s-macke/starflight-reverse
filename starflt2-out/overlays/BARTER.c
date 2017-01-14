@@ -1339,17 +1339,17 @@ void UNK_0xe474() // UNK_0xe474
 {
   UNK_0xe198(); // UNK_0xe198
   WUP(); // WUP
-
-  label1:
-  UNK_0xe200(); // UNK_0xe200
-  UNK_0xe454(); // UNK_0xe454
-  UNK_0xe28c(); // UNK_0xe28c
-  Push(1);
-  Push(pp_UNK_0xdfd6); // UNK_0xdfd6
-  _plus__ex__2(); // +!_2
-  Push(Read16(regsp)); // DUP
-  _0_st_(); // 0<
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xe200(); // UNK_0xe200
+    UNK_0xe454(); // UNK_0xe454
+    UNK_0xe28c(); // UNK_0xe28c
+    Push(1);
+    Push(pp_UNK_0xdfd6); // UNK_0xdfd6
+    _plus__ex__2(); // +!_2
+    Push(Read16(regsp)); // DUP
+    _0_st_(); // 0<
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 
@@ -1840,10 +1840,10 @@ void DO_dash_ENTER() // DO-ENTER
   Push(0xe717); // probable 'ENTER-TRADE'
   DISTRAC(); // DISTRAC
   UNK_0xe18a(); // UNK_0xe18a
-
-  label1:
-  ENTER_dash_TRADE(); // ENTER-TRADE rule
-  if (Pop() == 0) goto label1;
+  do
+  {
+    ENTER_dash_TRADE(); // ENTER-TRADE rule
+  } while(Pop() == 0);
 }
 
 
@@ -3365,10 +3365,10 @@ void DO_dash_OPEN_1() // DO-OPEN_1
   Push(0xef70); // probable 'OPEN-EXPERT'
   DISTRAC(); // DISTRAC
   UNK_0xe18a(); // UNK_0xe18a
-
-  label1:
-  OPEN_dash_EXPERT(); // OPEN-EXPERT rule
-  if (Pop() == 0) goto label1;
+  do
+  {
+    OPEN_dash_EXPERT(); // OPEN-EXPERT rule
+  } while(Pop() == 0);
 }
 
 

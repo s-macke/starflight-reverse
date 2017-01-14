@@ -401,10 +401,10 @@ void UNK_0xe2b3() // UNK_0xe2b3
 
 void UNK_0xe2bb() // UNK_0xe2bb
 {
-
-  label1:
-  UNK_0xe2b3(); // UNK_0xe2b3
-  if (Pop() == 0) goto label1;
+  do
+  {
+    UNK_0xe2b3(); // UNK_0xe2b3
+  } while(Pop() == 0);
   UNK_0xe29d(); // UNK_0xe29d
 }
 
@@ -721,23 +721,23 @@ void UNK_0xe4d8() // UNK_0xe4d8
 void UNK_0xe570() // UNK_0xe570
 {
   unsigned short int a;
-
-  label1:
-  OVER(); // OVER
-  OVER(); // OVER
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(regsp)); // DUP
-  Push(0x0064);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  a = Pop(); // >R
-  _gt_(); // >
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) return;
-  Push(Pop()+1); // 1+
-  Push(Pop()+3); // 3+
-  goto label1;
+  do
+  {
+    OVER(); // OVER
+    OVER(); // OVER
+    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(regsp)); // DUP
+    Push(0x0064);
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    a = Pop(); // >R
+    _gt_(); // >
+    Push(a); // R>
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) return;
+    Push(Pop()+1); // 1+
+    Push(Pop()+3); // 3+
+  } while(1);
 }
 
 

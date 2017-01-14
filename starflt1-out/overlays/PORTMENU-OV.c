@@ -400,33 +400,33 @@ void UNK_0xea0b() // UNK_0xea0b
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-
-  label2:
-  Push(0x640f); // IFIELD(UNK_0xe94b)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(regsp)); // DUP
-  Push(8);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  SWAP(); // SWAP
-  Push(2);
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
+  do
   {
-    Push(a); // I
-    Push(0x640e); // IFIELD(UNK_0xe950)
+    Push(0x640f); // IFIELD(UNK_0xe94b)
     Push(Read8(Pop())&0xFF); // C@
-    Push(Pop() + Pop()); // +
-    Push(0x0064);
-    MIN(); // MIN
-    Push(0x640e); // IFIELD(UNK_0xe950)
-    C_ex_(); // C!
-  }
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
+    Push(Read16(regsp)); // DUP
+    Push(8);
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    SWAP(); // SWAP
+    Push(2);
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      Push(a); // I
+      Push(0x640e); // IFIELD(UNK_0xe950)
+      Push(Read8(Pop())&0xFF); // C@
+      Push(Pop() + Pop()); // +
+      Push(0x0064);
+      MIN(); // MIN
+      Push(0x640e); // IFIELD(UNK_0xe950)
+      C_ex_(); // C!
+    }
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(a); // R>
@@ -1988,26 +1988,26 @@ void WALKIES() // WALKIES
 {
   UNK_0xed4e(); // UNK_0xed4e
   PORT_dash_PIC(); // PORT-PIC
-
-  label3:
-  XYSCAN(); // XYSCAN
-  _2DUP(); // 2DUP
-  XWALK(); // XWALK case
-  YWALK(); // YWALK case
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() != 0)
+  do
   {
-    UNK_0xf3a9(); // UNK_0xf3a9
-  }
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
-  {
-    UNK_0xf488(); // UNK_0xf488
-    _i_KEY(); // 'KEY
-    Pop(); // DROP
-  }
-  goto label3;
+    XYSCAN(); // XYSCAN
+    _2DUP(); // 2DUP
+    XWALK(); // XWALK case
+    YWALK(); // YWALK case
+    Push(Pop() | Pop()); // OR
+    if (Pop() == 0) Push(1); else Push(0); // NOT
+    if (Pop() != 0)
+    {
+      UNK_0xf3a9(); // UNK_0xf3a9
+    }
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      UNK_0xf488(); // UNK_0xf488
+      _i_KEY(); // 'KEY
+      Pop(); // DROP
+    }
+  } while(1);
 }
 
 // 0xf50c: db 0x50 0x4d 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x66 0x6f 0x72 0x20 0x50 0x4f 0x52 0x54 0x4d 0x45 0x4e 0x55 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x20 0x29 0x5f 0x32 0x31 0x39 0x30 0x72 0x20 0x43 0x48 0x4b 0x46 0x4c 0x49 0x47 0x48 0x54 0x2d 0x4f 0x56 0x20 0x2d 0x00 'PM-VOC__________________________for PORTMENU----------------- )_2190r CHKFLIGHT-OV - '

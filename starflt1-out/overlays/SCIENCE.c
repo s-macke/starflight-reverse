@@ -2232,33 +2232,32 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   Push(Read16(Pop())); // @
   Push(2);
   _st_(); // <
-  if (Pop() == 0) goto label1;
-  Push(pp__ro_PLANET); // (PLANET
-  _1_dot_5_at_(); // 1.5@
-  _2DUP(); // 2DUP
-  Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
-  _1_dot_5_ex_(); // 1.5!
-  goto label2;
-
-  label1:
-  Push(0x0023);
-  Push(0x003b);
-  SetColor("RED");
-  UNK_0xec36(); // UNK_0xec36
-
-  label5:
-  UNK_0xecb4(); // UNK_0xecb4
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label5;
-  UNK_0xedd0(); // UNK_0xedd0
-  Push(pp_UNK_0xec28); // UNK_0xec28
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xec24); // UNK_0xec24
-  Push(Read16(Pop())); // @
-  SetColor("RED");
-  UNK_0xec36(); // UNK_0xec36
-
-  label2:
+  if (Pop() != 0)
+  {
+    Push(pp__ro_PLANET); // (PLANET
+    _1_dot_5_at_(); // 1.5@
+    _2DUP(); // 2DUP
+    Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
+    _1_dot_5_ex_(); // 1.5!
+  } else
+  {
+    Push(0x0023);
+    Push(0x003b);
+    SetColor("RED");
+    UNK_0xec36(); // UNK_0xec36
+    do
+    {
+      UNK_0xecb4(); // UNK_0xecb4
+      _ask_TRIG(); // ?TRIG
+    } while(Pop() == 0);
+    UNK_0xedd0(); // UNK_0xedd0
+    Push(pp_UNK_0xec28); // UNK_0xec28
+    Push(Read16(Pop())); // @
+    Push(pp_UNK_0xec24); // UNK_0xec24
+    Push(Read16(Pop())); // @
+    SetColor("RED");
+    UNK_0xec36(); // UNK_0xec36
+  }
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)

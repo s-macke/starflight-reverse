@@ -803,14 +803,14 @@ void _dot_BANK() // .BANK
   SET_dash_BANK(); // SET-BANK
   IOPEN(); // IOPEN
   Push(0);
-
-  label1:
-  Push(Read16(regsp)); // DUP
-  UNK_0xf472(); // UNK_0xf472
-  Push(Pop()+1); // 1+
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(Read16(regsp)); // DUP
+    UNK_0xf472(); // UNK_0xf472
+    Push(Pop()+1); // 1+
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   Pop(); // DROP
   ICLOSE(); // ICLOSE
   _dot_BALANCE(); // .BALANCE
@@ -835,12 +835,12 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES
-
-  label1:
-  XYSCAN(); // XYSCAN
-  Pop(); Pop();// 2DROP
-  _ask_TRIG(); // ?TRIG
-  if (Pop() == 0) goto label1;
+  do
+  {
+    XYSCAN(); // XYSCAN
+    Pop(); Pop();// 2DROP
+    _ask_TRIG(); // ?TRIG
+  } while(Pop() == 0);
 }
 
 // 0xf52a: db 0x42 0x41 0x4e 0x4b 0x2d 0x56 0x4f 0x43 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x66 0x6f 0x72 0x20 0x42 0x41 0x4e 0x4b 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x00 'BANK-VOC________________________for BANK-------------- '

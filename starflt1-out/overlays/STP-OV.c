@@ -748,18 +748,18 @@ void UNK_0xf3e4() // UNK_0xf3e4
   _dot_TTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
-
-  label2:
-  XYSCAN(); // XYSCAN
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
+  do
   {
-    BEEP(); // BEEP
-  }
-  SWAP(); // SWAP
-  Pop(); // DROP
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) goto label2;
+    XYSCAN(); // XYSCAN
+    _ask_TRIG(); // ?TRIG
+    if (Pop() != 0)
+    {
+      BEEP(); // BEEP
+    }
+    SWAP(); // SWAP
+    Pop(); // DROP
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  } while(Pop() == 0);
   Push(1);
   Push((Pop()==Pop())?1:0); // =
 }

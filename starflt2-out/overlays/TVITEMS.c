@@ -1420,19 +1420,19 @@ void UNK_0xecdf() // UNK_0xecdf
   _ex__2(); // !_2
   UNK_0xecbf(); // UNK_0xecbf
   _ask_CHILD(); // ?CHILD
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-
-  label2:
-  Push(0xbf80); // probable 'CTUP'
-  MODULE(); // MODULE
-  UNK_0xecbf(); // UNK_0xecbf
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label2;
-  ICLOSE(); // ICLOSE
-
-  label1:
+  if (Pop() != 0)
+  {
+    IOPEN(); // IOPEN
+    do
+    {
+      Push(0xbf80); // probable 'CTUP'
+      MODULE(); // MODULE
+      UNK_0xecbf(); // UNK_0xecbf
+      INEXT(); // INEXT
+      _ask_FIRST(); // ?FIRST
+    } while(Pop() == 0);
+    ICLOSE(); // ICLOSE
+  }
   Push(0xbf80); // probable 'CTUP'
   MODULE(); // MODULE
 }
@@ -1990,12 +1990,12 @@ void UNK_0xeff2() // UNK_0xeff2
   Push(pp_UNK_0xee91); // UNK_0xee91
   _1_dot_5_ex__2(); // 1.5!_2
   Push(0);
-
-  label1:
-  Push(Pop()+1); // 1+
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(Pop()+1); // 1+
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xefc4(); // UNK_0xefc4
   IPREV(); // IPREV
@@ -2346,31 +2346,31 @@ void TD_dash_SCROLL() // TD-SCROLL
 
 void UNK_0xf228() // UNK_0xf228
 {
-
-  label4:
-  UNK_0xe684(); // UNK_0xe684
-  XYSCAN(); // XYSCAN
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() != 0)
+  do
   {
-    TD_dash_SCROLL(); // TD-SCROLL case
-  } else
-  {
-    Pop(); // DROP
-  }
-  _ask_TRIG(); // ?TRIG
-  UNK_0xef10(); // UNK_0xef10
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
-  {
-    UNK_0xef94(); // UNK_0xef94
+    UNK_0xe684(); // UNK_0xe684
+    XYSCAN(); // XYSCAN
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    if (Pop() != 0)
+    {
+      TD_dash_SCROLL(); // TD-SCROLL case
+    } else
+    {
+      Pop(); // DROP
+    }
+    _ask_TRIG(); // ?TRIG
+    UNK_0xef10(); // UNK_0xef10
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      UNK_0xef94(); // UNK_0xef94
+      Push(pp_FQUIT); // FQUIT
+      _099(); // 099
+      UNK_0xf018(); // UNK_0xf018
+    }
     Push(pp_FQUIT); // FQUIT
-    _099(); // 099
-    UNK_0xf018(); // UNK_0xf018
-  }
-  Push(pp_FQUIT); // FQUIT
-  Push(Read16(Pop())); // @
-  if (Pop() == 0) goto label4;
+    Push(Read16(Pop())); // @
+  } while(Pop() == 0);
 }
 
 
@@ -2430,35 +2430,35 @@ void UNK_0xf258() // UNK_0xf258
 void UNK_0xf2a2() // UNK_0xf2a2
 {
   Push2Words("0.");
-
-  label3:
-  _2DUP(); // 2DUP
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  _ask_LAST(); // ?LAST
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) return;
-  Push(0x000b);
-  Push(0);
-  IFIND(); // IFIND
-  if (Pop() != 0)
+  do
   {
-    CI(); // CI
-    CJ(); // CJ
-    _gt_C_plus_S(); // >C+S
-    UNK_0xf258(); // UNK_0xf258
-    ICLOSE(); // ICLOSE
     _2DUP(); // 2DUP
     Push(Pop() | Pop()); // OR
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    _ask_LAST(); // ?LAST
+    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) return;
+    Push(0x000b);
+    Push(0);
+    IFIND(); // IFIND
     if (Pop() != 0)
     {
-      _2SWAP(); // 2SWAP
+      CI(); // CI
+      CJ(); // CJ
+      _gt_C_plus_S(); // >C+S
+      UNK_0xf258(); // UNK_0xf258
+      ICLOSE(); // ICLOSE
+      _2DUP(); // 2DUP
+      Push(Pop() | Pop()); // OR
+      if (Pop() != 0)
+      {
+        _2SWAP(); // 2SWAP
+      }
+      Pop(); Pop();// 2DROP
     }
-    Pop(); Pop();// 2DROP
-  }
-  INEXT(); // INEXT
-  goto label3;
+    INEXT(); // INEXT
+  } while(1);
 }
 
 // 0xf2de: db 0x4c 0x22 0x07 0x76 0xfa 0x15 0x0c 0x00 0xdf 0x79 0x1e 0x7f 0xc9 0x7a 0xc4 0x52 0x1f 0x7a 0x90 0x16 'L" v     y  z R z  '
@@ -2772,69 +2772,68 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) goto label1;
-  Push(pp_NOF); // NOF
-  ON_2(); // ON_2
-
-  label3:
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
-  _1_dot_5_at_(); // 1.5@
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    MAKE_dash_SC(); // MAKE-SC
+    Push(pp_NOF); // NOF
+    ON_2(); // ON_2
+    do
+    {
+      Push(pp__ro_SCROLL_1); // (SCROLL_1
+      _1_dot_5_at_(); // 1.5@
+      Push(Pop() | Pop()); // OR
+      if (Pop() == 0) Push(1); else Push(0); // 0=
+      if (Pop() != 0)
+      {
+        MAKE_dash_SC(); // MAKE-SC
+        Push(pp_ESC_dash_EN); // ESC-EN
+        _099(); // 099
+        UNK_0xf37e(); // UNK_0xf37e
+        Push(pp_SUPER_dash_B); // SUPER-B
+        _1_dot_5_at_(); // 1.5@
+        GET_dash_BOX(); // GET-BOX
+      }
+      Push(pp_XORMODE); // XORMODE
+      _099(); // 099
+      UNK_0xeee2(); // UNK_0xeee2
+      SetColor("WHITE");
+      _ex_COLOR(); // !COLOR
+      UNK_0xeff2(); // UNK_0xeff2
+      UNK_0xef52(); // UNK_0xef52
+      UNK_0xf228(); // UNK_0xf228
+      _ask_QUIT(); // ?QUIT
+    } while(Pop() == 0);
+    SetColor("GREEN");
+    UNK_0xf0f6(); // UNK_0xf0f6
+    DELETE_dash_(); // DELETE-
+    Push2Words("0.");
+    Push(pp__ro_SCROLL_1); // (SCROLL_1
+    _1_dot_5_ex__2(); // 1.5!_2
     Push(pp_ESC_dash_EN); // ESC-EN
+    ON_2(); // ON_2
+    UNK_0xf448(); // UNK_0xf448
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
+    UNK_0xef0a(); // UNK_0xef0a
+    Push(7);
+    Push(pp_UNK_0xe63a); // UNK_0xe63a
+    _st__ex__gt_(); // <!>
+    SetColor("LT-BLUE");
+    UNK_0xf0f6(); // UNK_0xf0f6
+    UNK_0xe67a(); // UNK_0xe67a
+    UNK_0xe784(); // UNK_0xe784
+    UNK_0xf490(); // UNK_0xf490
+    Push(pp_NOF); // NOF
     _099(); // 099
-    UNK_0xf37e(); // UNK_0xf37e
-    Push(pp_SUPER_dash_B); // SUPER-B
-    _1_dot_5_at_(); // 1.5@
-    GET_dash_BOX(); // GET-BOX
+  } else
+  {
+    Push(6);
+    Push(0);
+    UNK_0xe6b4(); // UNK_0xe6b4
+    PRINT("NOT ENOUGH STORAGE FOR FUNCTION", 31); // (.")
+    Push(0x0fa0);
+    MS(); // MS
+    UNK_0xe784(); // UNK_0xe784
   }
-  Push(pp_XORMODE); // XORMODE
-  _099(); // 099
-  UNK_0xeee2(); // UNK_0xeee2
-  SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
-  UNK_0xeff2(); // UNK_0xeff2
-  UNK_0xef52(); // UNK_0xef52
-  UNK_0xf228(); // UNK_0xf228
-  _ask_QUIT(); // ?QUIT
-  if (Pop() == 0) goto label3;
-  SetColor("GREEN");
-  UNK_0xf0f6(); // UNK_0xf0f6
-  DELETE_dash_(); // DELETE-
-  Push2Words("0.");
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
-  _1_dot_5_ex__2(); // 1.5!_2
-  Push(pp_ESC_dash_EN); // ESC-EN
-  ON_2(); // ON_2
-  UNK_0xf448(); // UNK_0xf448
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
-  UNK_0xef0a(); // UNK_0xef0a
-  Push(7);
-  Push(pp_UNK_0xe63a); // UNK_0xe63a
-  _st__ex__gt_(); // <!>
-  SetColor("LT-BLUE");
-  UNK_0xf0f6(); // UNK_0xf0f6
-  UNK_0xe67a(); // UNK_0xe67a
-  UNK_0xe784(); // UNK_0xe784
-  UNK_0xf490(); // UNK_0xf490
-  Push(pp_NOF); // NOF
-  _099(); // 099
-  goto label4;
-
-  label1:
-  Push(6);
-  Push(0);
-  UNK_0xe6b4(); // UNK_0xe6b4
-  PRINT("NOT ENOUGH STORAGE FOR FUNCTION", 31); // (.")
-  Push(0x0fa0);
-  MS(); // MS
-  UNK_0xe784(); // UNK_0xe784
-
-  label4:
   UNK_0xef0a(); // UNK_0xef0a
 }
 

@@ -178,15 +178,15 @@ void UNK_0xea9c() // UNK_0xea9c
   TIME(); // TIME
   _2_at_(); // 2@
   D_plus_(); // D+
-
-  label1:
-  TIME(); // TIME
-  _2_at_(); // 2@
-  _2OVER(); // 2OVER
-  D_gt_(); // D>
-  _i_KEY(); // 'KEY
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
+  do
+  {
+    TIME(); // TIME
+    _2_at_(); // 2@
+    _2OVER(); // 2OVER
+    D_gt_(); // D>
+    _i_KEY(); // 'KEY
+    Push(Pop() | Pop()); // OR
+  } while(Pop() == 0);
   Pop(); Pop();// 2DROP
 }
 
@@ -1172,37 +1172,37 @@ void UNK_0xf395() // UNK_0xf395
 {
   unsigned short int a;
   a = Pop(); // >R
-
-  label5:
-  XYSCAN(); // XYSCAN
-  Pop(); // DROP
-  UNK_0xf2a3(); // UNK_0xf2a3
-  _ask_TRIG(); // ?TRIG
-  if (Pop() != 0)
+  do
   {
-    Push(0x640f); // IFIELD(UNK_0xeb5e)
-    Push(Read8(Pop())&0xFF); // C@
-    Push(3);
-    Push(Pop() & Pop()); // AND
-    Push(1);
-    Push(Pop() ^ Pop()); // XOR
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    XYSCAN(); // XYSCAN
+    Pop(); // DROP
+    UNK_0xf2a3(); // UNK_0xf2a3
+    _ask_TRIG(); // ?TRIG
     if (Pop() != 0)
     {
-      Push(a); // I
-      UNK_0xf238(); // UNK_0xf238
-      Push(a); // I
-      UNK_0xf1ce(); // UNK_0xf1ce
+      Push(0x640f); // IFIELD(UNK_0xeb5e)
+      Push(Read8(Pop())&0xFF); // C@
+      Push(3);
+      Push(Pop() & Pop()); // AND
       Push(1);
+      Push(Pop() ^ Pop()); // XOR
+      if (Pop() == 0) Push(1); else Push(0); // 0=
+      if (Pop() != 0)
+      {
+        Push(a); // I
+        UNK_0xf238(); // UNK_0xf238
+        Push(a); // I
+        UNK_0xf1ce(); // UNK_0xf1ce
+        Push(1);
+      } else
+      {
+        UNK_0xf2b1(); // UNK_0xf2b1
+      }
     } else
     {
-      UNK_0xf2b1(); // UNK_0xf2b1
+      Push(0);
     }
-  } else
-  {
-    Push(0);
-  }
-  if (Pop() == 0) goto label5;
+  } while(Pop() == 0);
   Push(a); // R>
   Pop(); // DROP
 }
@@ -1255,17 +1255,17 @@ void UNK_0xf409() // UNK_0xf409
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-
-  label1:
-  Push(0x640f); // IFIELD(UNK_0xeb5e)
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x00f7);
-  Push(Pop() & Pop()); // AND
-  Push(0x640f); // IFIELD(UNK_0xeb5e)
-  C_ex_(); // C!
-  INEXT(); // INEXT
-  _ask_FIRST(); // ?FIRST
-  if (Pop() == 0) goto label1;
+  do
+  {
+    Push(0x640f); // IFIELD(UNK_0xeb5e)
+    Push(Read8(Pop())&0xFF); // C@
+    Push(0x00f7);
+    Push(Pop() & Pop()); // AND
+    Push(0x640f); // IFIELD(UNK_0xeb5e)
+    C_ex_(); // C!
+    INEXT(); // INEXT
+    _ask_FIRST(); // ?FIRST
+  } while(Pop() == 0);
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(0x0012);
