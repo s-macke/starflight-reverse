@@ -1044,7 +1044,6 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             int nstr = 0;
             fprintf(fp, "// 0x%04x: db ", addr);
-            printf("%i %i\n", addr, maxaddr);
             while((!pline[addr].done) && (addr <= maxaddr))
             {
                 fprintf(fp, "0x%02x ", Read8(addr));
