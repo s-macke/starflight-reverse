@@ -6153,6 +6153,8 @@ void USER() // USER
 // 0x1799: lodsw
 // 0x179a: mov    bx,ax
 // 0x179c: jmp    word ptr [bx]
+}
+
 
 // ================================================
 // 0x179e: WORD 'USEREXECUTOR' codep=0x224c parp=0x17af
@@ -6171,6 +6173,8 @@ void USEREXECUTOR() // USEREXECUTOR
 // 0x17bd: dec    bx
 // 0x17be: dec    bx
 // 0x17bf: jmp    word ptr [bx]
+}
+
 
 // ================================================
 // 0x17c1: WORD '+FIND' codep=0x224c parp=0x17cb
@@ -6924,6 +6928,8 @@ void _ro_CREATE_rc_() // (CREATE)
 // 0x1d2c: lodsw
 // 0x1d2d: mov    bx,ax
 // 0x1d2f: jmp    word ptr [bx]
+}
+
 
 // ================================================
 // 0x1d31: WORD '(EXPECT)' codep=0x224c parp=0x1d3e
@@ -7543,6 +7549,8 @@ void CONSTANT() // CONSTANT
 // 0x2218: lodsw
 // 0x2219: mov    bx,ax
 // 0x221b: jmp    word ptr [bx]
+}
+
 
 // ================================================
 // 0x221d: WORD 'DO' codep=0x224c parp=0x2224
@@ -7582,6 +7590,8 @@ void _c_() // :
 // 0x2255: lodsw
 // 0x2256: mov    bx,ax
 // 0x2258: jmp    word ptr [bx]
+}
+
 
 // ================================================
 // 0x225a: WORD 'DOES>' codep=0x224c parp=0x2264
@@ -10869,8 +10879,18 @@ void SYN() // SYN
   if (Pop() != 0)
   {
     CODE(); // (;CODE) inlined assembler code
-// 0x3adf: db 0xe8 0x67 0xdb 0xae 0x0b 0x73 0x16 0x60 0x16 0x1b   }
-0x00 ' g   s `   '
+// db 0xe8
+// db 0x67
+// db 0xdb
+// db 0xae
+// db 0x0b
+// db 0x73
+// db 0x16
+// db 0x60
+// db 0x16
+// db 0x1b
+// db 0x00
+  }
   CODE(); // (;CODE) inlined assembler code
 // 0x3aec: call   1649
   Push(user_STATE); // STATE
@@ -11118,7 +11138,33 @@ void HEAD_c_() // HEAD:
   IMMEDIATE(); // IMMEDIATE
   RESIDENT(); // RESIDENT
   CODE(); // (;CODE) inlined assembler code
-// 0x3ca0: db 0xe8 0xa6 0xd9 0xae 0x0b 0x9c 0x05 0xae 0x0b 0xfa 0x15 0x08 0x00 0x93 0x1f 0x60 0x16 0x06 0x00 0x15 0x10 0x82 0x16 0x90 0x16 '               `         '
+// db 0xe8
+// db 0xa6
+// db 0xd9
+// db 0xae
+// db 0x0b
+// db 0x9c
+// db 0x05
+// db 0xae
+// db 0x0b
+// db 0xfa
+// db 0x15
+// db 0x08
+// db 0x00
+// db 0x93
+// db 0x1f
+// db 0x60
+// db 0x16
+// db 0x06
+// db 0x00
+// db 0x15
+// db 0x10
+// db 0x82
+// db 0x16
+// db 0x90
+// db 0x16
+}
+
 
 // ================================================
 // 0x3cb9: WORD 'T:' codep=0x224c parp=0x3cc0
@@ -30009,4 +30055,4 @@ void LET_dash_THERE_dash_BE_dash_STARFLIGHT() // LET-THERE-BE-STARFLIGHT
 }
 
 // 0xd4a7: db 0x00 ' '
-  
+
