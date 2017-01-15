@@ -154,6 +154,7 @@ extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void ABS(); // ABS
 void MAX(); // MAX
 void MIN(); // MIN
@@ -383,7 +384,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
 // ================================================
 // 0xe75e: WORD 'UNK_0xe760' codep=0x7394 parp=0xe760
 // ================================================
-// 0xe760: db 0x1c 0x1e 0x01 0x20 0xcd 0x6b '     k'
+LoadDataType UNK_0xe760 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xe766: WORD 'UNK_0xe768' codep=0x7420 parp=0xe768
@@ -396,7 +397,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
 
 void UNK_0xe76d() // UNK_0xe76d
 {
-  LoadData("UNK_0xe760"); // from 'ARTIFACT    '
+  LoadData(UNK_0xe760); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =
@@ -1452,7 +1453,7 @@ void UNK_0xee8f() // UNK_0xee8f
 void UNK_0xeea1() // UNK_0xeea1
 {
   unsigned short int a;
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   a = Pop(); // >R
   Push(Read16(a)); // R@

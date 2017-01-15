@@ -512,27 +512,27 @@ void UNK_0xdd78() // UNK_0xdd78
 // ================================================
 // 0xdd8e: WORD 'UNK_0xdd90' codep=0x73ea parp=0xdd90
 // ================================================
-// 0xdd90: db 0x19 0x0b 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xdd90 = {0x19, 0x0b, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xdd96: WORD 'UNK_0xdd98' codep=0x73ea parp=0xdd98
 // ================================================
-// 0xdd98: db 0x19 0x0e 0x02 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xdd98 = {0x19, 0x0e, 0x02, 0x49, 0x6491};
 
 // ================================================
 // 0xdd9e: WORD 'UNK_0xdda0' codep=0x73ea parp=0xdda0
 // ================================================
-// 0xdda0: db 0x19 0x13 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xdda0 = {0x19, 0x13, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xdda6: WORD 'UNK_0xdda8' codep=0x73ea parp=0xdda8
 // ================================================
-// 0xdda8: db 0x19 0x12 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xdda8 = {0x19, 0x12, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xddae: WORD 'UNK_0xddb0' codep=0x73ea parp=0xddb0
 // ================================================
-// 0xddb0: db 0x19 0x14 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xddb0 = {0x19, 0x14, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xddb6: WORD 'UNK_0xddb8' codep=0x744d parp=0xddb8
@@ -939,7 +939,7 @@ void UNK_0xdf96() // UNK_0xdf96
 void UNK_0xdfa4() // UNK_0xdfa4
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xdda8"); // from 'VESSEL      '
+  LoadData(UNK_0xdda8); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xdd46(); // UNK_0xdd46
   Push(Pop() & Pop()); // AND
@@ -953,7 +953,7 @@ void UNK_0xdfa4() // UNK_0xdfa4
 void UNK_0xdfb2() // UNK_0xdfb2
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xddb0"); // from 'VESSEL      '
+  LoadData(UNK_0xddb0); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xdd46(); // UNK_0xdd46
   Push(Pop() & Pop()); // AND
@@ -967,7 +967,7 @@ void UNK_0xdfb2() // UNK_0xdfb2
 void UNK_0xdfc0() // UNK_0xdfc0
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xdda0"); // from 'VESSEL      '
+  LoadData(UNK_0xdda0); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xdd46(); // UNK_0xdd46
   UNK_0xdfb2(); // UNK_0xdfb2
@@ -982,7 +982,7 @@ void UNK_0xdfc0() // UNK_0xdfc0
 
 void UNK_0xdfd2() // UNK_0xdfd2
 {
-  LoadData("UNK_0xdd90"); // from 'VESSEL      '
+  LoadData(UNK_0xdd90); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
@@ -1004,7 +1004,7 @@ void UNK_0xdfd2() // UNK_0xdfd2
 
 void UNK_0xdff4() // UNK_0xdff4
 {
-  LoadData("UNK_0xdd90"); // from 'VESSEL      '
+  LoadData(UNK_0xdd90); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
@@ -2965,7 +2965,7 @@ void UNK_0xec95() // UNK_0xec95
     Push(6);
   } else
   {
-    LoadData("UNK_0xdda0"); // from 'VESSEL      '
+    LoadData(UNK_0xdda0); // from 'VESSEL      '
     Push(Read8(Pop())&0xFF); // C@
   }
   UNK_0xe6e4(); // UNK_0xe6e4
@@ -3028,7 +3028,7 @@ void UNK_0xecea() // UNK_0xecea
     {
       UNK_0x3f3b("LASER CLASS ");
       _dot_TTY(); // .TTY
-      LoadData("UNK_0xdda8"); // from 'VESSEL      '
+      LoadData(UNK_0xdda8); // from 'VESSEL      '
       Push(Read8(Pop())&0xFF); // C@
       _dot_(); // .
     }
@@ -3391,12 +3391,12 @@ void UNK_0xef08() // UNK_0xef08
 {
   Push(0x6403); // IFIELD(UNK_0xddc2)
   Push(Read16(Pop())); // @
-  LoadData("UNK_0xdd98"); // from 'VESSEL      '
+  LoadData(UNK_0xdd98); // from 'VESSEL      '
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) return;
   Push(5);
-  LoadData("UNK_0xdd98"); // from 'VESSEL      '
+  LoadData(UNK_0xdd98); // from 'VESSEL      '
   _plus__ex_(); // +!
 }
 

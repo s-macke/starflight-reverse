@@ -93,7 +93,7 @@ const unsigned short int pp_UNK_0xf1b3 = 0xf1b3; // UNK_0xf1b3 size: 2
 // ================================================
 // 0xf1a9: WORD 'UNK_0xf1ab' codep=0x7394 parp=0xf1ab
 // ================================================
-// 0xf1ab: db 0x20 0x02 0x02 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xf1ab = {0x20, 0x02, 0x02, 0x17, 0x6c49};
 
 // ================================================
 // 0xf1b1: WORD 'UNK_0xf1b3' codep=0x1d29 parp=0xf1b3
@@ -108,7 +108,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
 {
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  LoadData("UNK_0xf1ab"); // from 'PLANET      '
+  LoadData(UNK_0xf1ab); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(0x0320);

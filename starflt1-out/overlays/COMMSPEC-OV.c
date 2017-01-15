@@ -107,6 +107,9 @@ extern const unsigned short int pp_TIRED_dash_T; // TIRED-T
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern LoadDataType ART_dash_NAME; // ART-NAME
+extern LoadDataType ART_dash_VAL; // ART-VAL
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void MAX(); // MAX
@@ -1295,7 +1298,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
         Push(0x000f);
         ICREATE(); // ICREATE
         _gt_C_plus_S(); // >C+S
-        LoadData("ART-VOL"); // from 'ARTIFACT    '
+        LoadData(ART_dash_VOL); // from 'ARTIFACT    '
         Push(Read16(Pop())); // @
         Push(0x63fa); // IFIELD(INST-QTY)
         _ex__3(); // !_3
@@ -1524,7 +1527,7 @@ void UNK_0xf24e() // UNK_0xf24e
 
 void UNK_0xf25a() // UNK_0xf25a
 {
-  LoadData("ART-NAME"); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
   Push(Read16(regsp)); // DUP
   PAD(); // PAD
   Push(0x0018);
@@ -1565,7 +1568,7 @@ void UNK_0xf25a() // UNK_0xf25a
 
 void UNK_0xf2aa() // UNK_0xf2aa
 {
-  LoadData("ART-VAL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0);
   Push(0x0021);

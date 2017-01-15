@@ -116,6 +116,7 @@ extern const unsigned short int pp_LINE_dash_CO; // LINE-CO
 extern const unsigned short int pp_STARDAT; // STARDAT
 extern const unsigned short int pp_TOWFINE; // TOWFINE
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void COUNT(); // COUNT
 void M_star_(); // M*
 void MAX(); // MAX
@@ -1960,7 +1961,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   Push(0x0035);
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2

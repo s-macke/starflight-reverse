@@ -135,6 +135,7 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_NOF; // NOF
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -314,7 +315,7 @@ void UNK_0xea76() // UNK_0xea76
 // ================================================
 // 0xea96: WORD 'UNK_0xea98' codep=0x7394 parp=0xea98
 // ================================================
-// 0xea98: db 0x20 0x04 0x01 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xea98 = {0x20, 0x04, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xea9e: WORD 'UNK_0xeaa0' codep=0x224c parp=0xeaa0
@@ -322,7 +323,7 @@ void UNK_0xea76() // UNK_0xea76
 
 void UNK_0xeaa0() // UNK_0xeaa0
 {
-  LoadData("UNK_0xea98"); // from 'PLANET      '
+  LoadData(UNK_0xea98); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -1404,7 +1405,7 @@ void UNK_0xf197() // UNK_0xf197
   _gt_C_plus_S(); // >C+S
   UNK_0xeafd(); // UNK_0xeafd
   UNK_0xeaf1(); // UNK_0xeaf1
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2

@@ -246,6 +246,7 @@ extern const unsigned short int pp__ro_SHIPBOX; // (SHIPBOX
 extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_YTABLE; // YTABLE
 extern const unsigned short int pp__ask_CALLING; // ?CALLING
+extern LoadDataType _1BTN; // 1BTN
 void _star__slash_(); // */
 void ABS(); // ABS
 void M_star_(); // M*
@@ -732,7 +733,8 @@ void UNK_0xd9a8() // UNK_0xd9a8
 // ================================================
 // 0xda63: WORD 'UNK_0xda65' codep=0x73ea parp=0xda65
 // ================================================
-// 0xda65: db 0x20 0x01 0x01 0x16 0x8f 0x65 0x4d 0x74 0x34 0x14 0x01 '     eMt4  '
+LoadDataType UNK_0xda65 = {0x20, 0x01, 0x01, 0x16, 0x658f};
+// 0xda6b: db 0x4d 0x74 0x34 0x14 0x01 'Mt4  '
 
 // ================================================
 // 0xda70: WORD 'UNK_0xda72' codep=0x224c parp=0xda72
@@ -1678,7 +1680,7 @@ void UNK_0xe033() // UNK_0xe033
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      LoadData("UNK_0xda65"); // from 'PLANET      '
+      LoadData(UNK_0xda65); // from 'PLANET      '
       Push(Read8(Pop())&0xFF); // C@
       PS_gt_C(); // PS>C case
       _ex_COLOR(); // !COLOR
@@ -3635,7 +3637,7 @@ void _ask_STARPORT() // ?STARPORT
     Push(pp_RECORD_n_); // RECORD#
     _ex__3(); // !_3
     UNK_0x3f3b("LAUNCH");
-    LoadData("1BTN"); // from 'BUTTONS     '
+    LoadData(_1BTN); // from 'BUTTONS     '
     SWAP(); // SWAP
     CMOVE(); // CMOVE
     SET_dash_CURRENT(); // SET-CURRENT
@@ -4299,7 +4301,7 @@ void UNK_0xf1b5() // UNK_0xf1b5
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0x3f3b("LAUNCH");
-  LoadData("1BTN"); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS     '
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   SET_dash_CURRENT(); // SET-CURRENT

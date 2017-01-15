@@ -82,12 +82,12 @@ void SWAP(); // SWAP
 // ================================================
 // 0xf218: WORD 'UNK_0xf21a' codep=0x73ea parp=0xf21a
 // ================================================
-// 0xf21a: db 0x3a 0x18 0x0c 0x49 0x58 0x68 ':  IXh'
+LoadDataType UNK_0xf21a = {0x3a, 0x18, 0x0c, 0x49, 0x6858};
 
 // ================================================
 // 0xf220: WORD 'UNK_0xf222' codep=0x73ea parp=0xf222
 // ================================================
-// 0xf222: db 0x3a 0x24 0x0c 0x49 0x58 0x68 ':$ IXh'
+LoadDataType UNK_0xf222 = {0x3a, 0x24, 0x0c, 0x49, 0x6858};
 
 // ================================================
 // 0xf228: WORD 'UNK_0xf22a' codep=0x224c parp=0xf22a
@@ -188,7 +188,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   }
   UNK_0xf234(); // UNK_0xf234
   UNK_0x3f3b("RAISE SHIELD");
-  LoadData("UNK_0xf21a"); // from 'BUTTONS     '
+  LoadData(UNK_0xf21a); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
@@ -227,7 +227,7 @@ void UNK_0xf359() // UNK_0xf359
   if (Pop() == 0) return;
   UNK_0xf234(); // UNK_0xf234
   UNK_0x3f3b("DROP SHIELD ");
-  LoadData("UNK_0xf21a"); // from 'BUTTONS     '
+  LoadData(UNK_0xf21a); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
@@ -255,7 +255,7 @@ void _gt_DISARM() // >DISARM
 {
   UNK_0xf234(); // UNK_0xf234
   UNK_0x3f3b("ARM WEAPON");
-  LoadData("UNK_0xf222"); // from 'BUTTONS     '
+  LoadData(UNK_0xf222); // from 'BUTTONS     '
   UNK_0xf246(); // UNK_0xf246
   Push(0x6434); // IFIELD(UNK_0xf215)
   Push(Read8(Pop())&0xFF); // C@
@@ -329,7 +329,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
       _ex__3(); // !_3
       UNK_0xf234(); // UNK_0xf234
       UNK_0x3f3b("DISARM    ");
-      LoadData("UNK_0xf222"); // from 'BUTTONS     '
+      LoadData(UNK_0xf222); // from 'BUTTONS     '
       UNK_0xf246(); // UNK_0xf246
     }
     return;

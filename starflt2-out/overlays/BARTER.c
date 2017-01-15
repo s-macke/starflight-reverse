@@ -253,6 +253,9 @@ extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern const unsigned short int pp__ro_THING_rc_; // (THING)
+extern LoadDataType ELEM_dash_NA; // ELEM-NA
+extern LoadDataType ART_dash_NAM; // ART-NAM
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -707,37 +710,39 @@ void UNK_0xe0f0() // UNK_0xe0f0
 // ================================================
 // 0xe108: WORD 'UNK_0xe10a' codep=0x7394 parp=0xe10a
 // ================================================
-// 0xe10a: db 0x1c 0x1e 0x01 0x20 0xcd 0x6b '     k'
+LoadDataType UNK_0xe10a = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xe110: WORD 'UNK_0xe112' codep=0x7394 parp=0xe112
 // ================================================
-// 0xe112: db 0x1c 0x1f 0x01 0x20 0xcd 0x6b '     k'
+LoadDataType UNK_0xe112 = {0x1c, 0x1f, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xe118: WORD 'UNK_0xe11a' codep=0x7394 parp=0xe11a
 // ================================================
-// 0xe11a: db 0x44 0x00 0x14 0x22 0x07 0x6f 0x94 0x73 0x44 0x14 0x02 0x22 0x07 0x6f 'D  " o sD  " o'
+LoadDataType UNK_0xe11a = {0x44, 0x00, 0x14, 0x22, 0x6f07};
+// 0xe120: db 0x94 0x73 0x44 0x14 0x02 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
 // 0xe128: WORD 'UNK_0xe12a' codep=0x7394 parp=0xe12a
 // ================================================
-// 0xe12a: db 0x44 0x16 0x01 0x22 0x07 0x6f 'D  " o'
+LoadDataType UNK_0xe12a = {0x44, 0x16, 0x01, 0x22, 0x6f07};
 
 // ================================================
 // 0xe130: WORD 'UNK_0xe132' codep=0x7394 parp=0xe132
 // ================================================
-// 0xe132: db 0x1a 0x16 0x01 0x17 0xa9 0x6b 0x94 0x73 0x09 0x18 0x02 0x1b 0x54 0x6a '     k s    Tj'
+LoadDataType UNK_0xe132 = {0x1a, 0x16, 0x01, 0x17, 0x6ba9};
+// 0xe138: db 0x94 0x73 0x09 0x18 0x02 0x1b 0x54 0x6a ' s    Tj'
 
 // ================================================
 // 0xe140: WORD 'UNK_0xe142' codep=0x7394 parp=0xe142
 // ================================================
-// 0xe142: db 0x09 0x1a 0x01 0x1b 0x54 0x6a '    Tj'
+LoadDataType UNK_0xe142 = {0x09, 0x1a, 0x01, 0x1b, 0x6a54};
 
 // ================================================
 // 0xe148: WORD 'UNK_0xe14a' codep=0x7394 parp=0xe14a
 // ================================================
-// 0xe14a: db 0x09 0x00 0x20 0x1b 0x54 0x6a '    Tj'
+LoadDataType UNK_0xe14a = {0x09, 0x00, 0x20, 0x1b, 0x6a54};
 
 // ================================================
 // 0xe150: WORD 'UNK_0xe152' codep=0x7420 parp=0xe152
@@ -1140,16 +1145,16 @@ void T_gt_NAME() // T>NAME
   switch(Pop()) // T>NAME
   {
   case 28:
-    LoadData("ART-NAM"); // from 'ARTIFACT    '
+    LoadData(ART_dash_NAM); // from 'ARTIFACT    '
     break;
   case 68:
-    LoadData("UNK_0xe11a"); // from 'CREATURE    '
+    LoadData(UNK_0xe11a); // from 'CREATURE    '
     break;
   case 9:
-    LoadData("UNK_0xe14a"); // from 'STIS        '
+    LoadData(UNK_0xe14a); // from 'STIS        '
     break;
   case 26:
-    LoadData("ELEM-NA"); // from 'ELEMENT     '
+    LoadData(ELEM_dash_NA); // from 'ELEMENT     '
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -1409,37 +1414,39 @@ void UNK_0xe492() // UNK_0xe492
 // ================================================
 // 0xe4e4: WORD 'UNK_0xe4e6' codep=0x7394 parp=0xe4e6
 // ================================================
-// 0xe4e6: db 0x15 0x1a 0x03 0x32 0xd1 0x6a '   2 j'
+LoadDataType UNK_0xe4e6 = {0x15, 0x1a, 0x03, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe4ec: WORD 'UNK_0xe4ee' codep=0x7394 parp=0xe4ee
 // ================================================
-// 0xe4ee: db 0x15 0x1d 0x01 0x32 0xd1 0x6a '   2 j'
+LoadDataType UNK_0xe4ee = {0x15, 0x1d, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe4f4: WORD 'UNK_0xe4f6' codep=0x7394 parp=0xe4f6
 // ================================================
-// 0xe4f6: db 0x15 0x1e 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x1f 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x20 0x01 0x32 0xd1 0x6a '   2 j s   2 j s   2 j'
+LoadDataType UNK_0xe4f6 = {0x15, 0x1e, 0x01, 0x32, 0x6ad1};
+// 0xe4fc: db 0x94 0x73 0x15 0x1f 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x20 0x01 0x32 0xd1 0x6a ' s   2 j s   2 j'
 
 // ================================================
 // 0xe50c: WORD 'UNK_0xe50e' codep=0x7394 parp=0xe50e
 // ================================================
-// 0xe50e: db 0x15 0x21 0x01 0x32 0xd1 0x6a ' ! 2 j'
+LoadDataType UNK_0xe50e = {0x15, 0x21, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe514: WORD 'UNK_0xe516' codep=0x7394 parp=0xe516
 // ================================================
-// 0xe516: db 0x15 0x22 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x23 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x24 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x25 0x02 0x32 0xd1 0x6a 0x94 0x73 0x15 0x27 0x02 0x32 0xd1 0x6a ' " 2 j s # 2 j s $ 2 j s % 2 j s ' 2 j'
+LoadDataType UNK_0xe516 = {0x15, 0x22, 0x01, 0x32, 0x6ad1};
+// 0xe51c: db 0x94 0x73 0x15 0x23 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x24 0x01 0x32 0xd1 0x6a 0x94 0x73 0x15 0x25 0x02 0x32 0xd1 0x6a 0x94 0x73 0x15 0x27 0x02 0x32 0xd1 0x6a ' s # 2 j s $ 2 j s % 2 j s ' 2 j'
 
 // ================================================
 // 0xe53c: WORD 'UNK_0xe53e' codep=0x7394 parp=0xe53e
 // ================================================
-// 0xe53e: db 0x15 0x29 0x01 0x32 0xd1 0x6a ' ) 2 j'
+LoadDataType UNK_0xe53e = {0x15, 0x29, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe544: WORD 'TRADE.EDL' codep=0x7394 parp=0xe552
 // ================================================
-// 0xe552: db 0x15 0x2a 0x01 0x32 0xd1 0x6a ' * 2 j'
+LoadDataType TRADE_dot_EDL = {0x15, 0x2a, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe558: WORD 'UNK_0xe55a' codep=0x224c parp=0xe55a
@@ -1657,7 +1664,7 @@ void UNK_0xe640() // UNK_0xe640
   UNK_0xe5b8(); // UNK_0xe5b8
   MAX(); // MAX
   UNK_0xe5c6(); // UNK_0xe5c6
-  LoadData("UNK_0xe53e"); // from 'TRADERS     '
+  LoadData(UNK_0xe53e); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(1);
@@ -1765,7 +1772,7 @@ void UNK_0xe6d0() // UNK_0xe6d0
   Push(Read16(cc_TRUE)); // TRUE
   UNK_0xe6c0(); // UNK_0xe6c0
   UNK_0xe164(); // UNK_0xe164
-  LoadData("UNK_0xe4e6"); // from 'TRADERS     '
+  LoadData(UNK_0xe4e6); // from 'TRADERS     '
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   UNK_0xe5f8(); // UNK_0xe5f8
@@ -1856,16 +1863,16 @@ void _ro_GETUSE_rc_() // (GETUSE)
   switch(Pop()) // (GETUSE)
   {
   case 68:
-    LoadData("UNK_0xe12a"); // from 'CREATURE    '
+    LoadData(UNK_0xe12a); // from 'CREATURE    '
     break;
   case 28:
-    LoadData("UNK_0xe112"); // from 'ARTIFACT    '
+    LoadData(UNK_0xe112); // from 'ARTIFACT    '
     break;
   case 26:
-    LoadData("UNK_0xe132"); // from 'ELEMENT     '
+    LoadData(UNK_0xe132); // from 'ELEMENT     '
     break;
   case 9:
-    LoadData("UNK_0xe142"); // from 'STIS        '
+    LoadData(UNK_0xe142); // from 'STIS        '
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -2141,7 +2148,7 @@ void UNK_0xe8c4() // UNK_0xe8c4
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    LoadData("UNK_0xe10a"); // from 'ARTIFACT    '
+    LoadData(UNK_0xe10a); // from 'ARTIFACT    '
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop()-1); // 1-
     if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -2168,7 +2175,7 @@ void UNK_0xe8e6() // UNK_0xe8e6
     if (Pop() != 0)
     {
       UNK_0xe15c(); // UNK_0xe15c
-      LoadData("ART-VOL"); // from 'ARTIFACT    '
+      LoadData(ART_dash_VOL); // from 'ARTIFACT    '
       Push(Read16(Pop())); // @
       ICLOSE(); // ICLOSE
       UNK_0xe89c(); // UNK_0xe89c
@@ -2472,7 +2479,7 @@ void UNK_0xea9d() // UNK_0xea9d
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    LoadData("UNK_0xe10a"); // from 'ARTIFACT    '
+    LoadData(UNK_0xe10a); // from 'ARTIFACT    '
     Push(Read8(Pop())&0xFF); // C@
     Push(2);
     Push((Pop()==Pop())?1:0); // =
@@ -2775,13 +2782,13 @@ void UNK_0xeca0() // UNK_0xeca0
   _at_INST_dash_S(); // @INST-S
   ICLOSE(); // ICLOSE
   UNK_0xe164(); // UNK_0xe164
-  LoadData("UNK_0xe50e"); // from 'TRADERS     '
+  LoadData(UNK_0xe50e); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    LoadData("UNK_0xe516"); // from 'TRADERS     '
+    LoadData(UNK_0xe516); // from 'TRADERS     '
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() != 0)
     {
@@ -2859,7 +2866,7 @@ void UNK_0xed22() // UNK_0xed22
   if (Pop() != 0)
   {
     UNK_0xe15c(); // UNK_0xe15c
-    LoadData("ART-VOL"); // from 'ARTIFACT    '
+    LoadData(ART_dash_VOL); // from 'ARTIFACT    '
     Push(Read16(Pop())); // @
     ICLOSE(); // ICLOSE
     Push(pp_ELEM_dash_AM); // ELEM-AM
@@ -2962,7 +2969,7 @@ void UNK_0xedbc() // UNK_0xedbc
 void UNK_0xedc4() // UNK_0xedc4
 {
   UNK_0xe164(); // UNK_0xe164
-  LoadData("TRADE.EDL"); // from 'TRADERS     '
+  LoadData(TRADE_dot_EDL); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
   Push(4);
@@ -2999,17 +3006,17 @@ void UNK_0xede6() // UNK_0xede6
   Push((Pop()==Pop())?1:0); // =
   _at_INST_dash_S(); // @INST-S
   UNK_0xe164(); // UNK_0xe164
-  LoadData("UNK_0xe4ee"); // from 'TRADERS     '
+  LoadData(UNK_0xe4ee); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    LoadData("UNK_0xe4f6"); // from 'TRADERS     '
+    LoadData(UNK_0xe4f6); // from 'TRADERS     '
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() != 0)
     {
-      LoadData("TRADE.EDL"); // from 'TRADERS     '
+      LoadData(TRADE_dot_EDL); // from 'TRADERS     '
       Push(Read8(Pop())&0xFF); // C@
       Push(4);
       _st_(); // <

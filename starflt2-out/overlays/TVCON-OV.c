@@ -195,7 +195,7 @@ void UNK_0xedba() // UNK_0xedba
 // ================================================
 // 0xedc7: WORD 'UNK_0xedc9' codep=0x7394 parp=0xedc9
 // ================================================
-// 0xedc9: db 0x20 0x11 0x01 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xedc9 = {0x20, 0x11, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xedcf: WORD 'UNK_0xedd1' codep=0x7420 parp=0xedd1
@@ -367,7 +367,7 @@ void _ask__dot_STORM() // ?.STORM
 void UNK_0xeefe() // UNK_0xeefe
 {
   Push(1);
-  LoadData("UNK_0xedc9"); // from 'PLANET      '
+  LoadData(UNK_0xedc9); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(5);
   SWAP(); // SWAP
@@ -409,7 +409,7 @@ void DO_dash_STORM() // DO-STORM
     {
       Push(pp__ro_PLANET); // (PLANET
       _at__gt_C_plus_S(); // @>C+S
-      LoadData("UNK_0xedc9"); // from 'PLANET      '
+      LoadData(UNK_0xedc9); // from 'PLANET      '
       Push(Read16(Pop())); // @
       Push(pp__pe_STORM); // %STORM
       Push(Pop() + Pop()); // +

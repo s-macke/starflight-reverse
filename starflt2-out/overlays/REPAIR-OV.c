@@ -84,6 +84,7 @@ extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_REPAIRT; // REPAIRT
 extern const unsigned short int pp__ask_REPAIR; // ?REPAIR
 extern const unsigned short int pp_REAL_dash_MS; // REAL-MS
+extern LoadDataType ELEM_dash_NA; // ELEM-NA
 void _star__slash_(); // */
 void M_slash_(); // M/
 void MAX(); // MAX
@@ -750,7 +751,7 @@ void UNK_0xf204() // UNK_0xf204
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   _ex__2(); // !_2
-  LoadData("ELEM-NA"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_NA); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL

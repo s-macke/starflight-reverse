@@ -103,7 +103,7 @@ const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 // ================================================
 // 0xf239: WORD 'UNK_0xf23b' codep=0x73ea parp=0xf23b
 // ================================================
-// 0xf23b: db 0x19 0x1c 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xf23b = {0x19, 0x1c, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xf241: WORD 'UNK_0xf243' codep=0x744d parp=0xf243
@@ -113,7 +113,7 @@ const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 // ================================================
 // 0xf246: WORD 'UNK_0xf248' codep=0x73ea parp=0xf248
 // ================================================
-// 0xf248: db 0x44 0x90 0x02 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xf248 = {0x44, 0x90, 0x02, 0x9c, 0x69d8};
 
 // ================================================
 // 0xf24e: WORD 'UNK_0xf250' codep=0x744d parp=0xf250
@@ -128,7 +128,8 @@ const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 // ================================================
 // 0xf258: WORD 'UNK_0xf25a' codep=0x73ea parp=0xf25a
 // ================================================
-// 0xf25a: db 0x20 0x01 0x01 0x16 0x8f 0x65 0x4d 0x74 0x3d 0x1b 0x01 '     eMt=  '
+LoadDataType UNK_0xf25a = {0x20, 0x01, 0x01, 0x16, 0x658f};
+// 0xf260: db 0x4d 0x74 0x3d 0x1b 0x01 'Mt=  '
 
 // ================================================
 // 0xf265: WORD 'UNK_0xf267' codep=0x2214 parp=0xf267
@@ -204,7 +205,7 @@ void UNK_0xf293() // UNK_0xf293
 
 void UNK_0xf2a1() // UNK_0xf2a1
 {
-  LoadData("UNK_0xf23b"); // from 'VESSEL      '
+  LoadData(UNK_0xf23b); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -410,7 +411,7 @@ void UNK_0xf38f() // UNK_0xf38f
     Push(Pop() + Pop()); // +
     return;
   }
-  LoadData("UNK_0xf248"); // from 'CREATURE    '
+  LoadData(UNK_0xf248); // from 'CREATURE    '
   Push(Read16(Pop())); // @
 }
 
@@ -584,7 +585,7 @@ void PLAN_dash_IC_dash_CASES() // PLAN-IC-CASES
 
 void UNK_0xf47b() // UNK_0xf47b
 {
-  LoadData("UNK_0xf25a"); // from 'PLANET      '
+  LoadData(UNK_0xf25a); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   PLAN_dash_IC_dash_CASES(); // PLAN-IC-CASES case
 }

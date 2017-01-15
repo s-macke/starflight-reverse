@@ -246,17 +246,17 @@ void UNK_0xeb09() // UNK_0xeb09
 // ================================================
 // 0xeb21: WORD 'UNK_0xeb23' codep=0x73ea parp=0xeb23
 // ================================================
-// 0xeb23: db 0x10 0x00 0x08 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xeb23 = {0x10, 0x00, 0x08, 0x14, 0x6489};
 
 // ================================================
 // 0xeb29: WORD 'UNK_0xeb2b' codep=0x73ea parp=0xeb2b
 // ================================================
-// 0xeb2b: db 0x10 0x12 0x01 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xeb2b = {0x10, 0x12, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xeb31: WORD 'UNK_0xeb33' codep=0x73ea parp=0xeb33
 // ================================================
-// 0xeb33: db 0x10 0x13 0x01 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xeb33 = {0x10, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xeb39: WORD 'UNK_0xeb3b' codep=0x744d parp=0xeb3b
@@ -729,7 +729,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x0077);
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
-  LoadData("UNK_0xeb23"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb23); // from 'CREWMEMBER  '
   _do__dot_(); // $.
   Push(0x004a);
   Push(0x001b);
@@ -750,7 +750,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
-  LoadData("UNK_0xeb33"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb33); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   _dot_R(); // .R
@@ -773,7 +773,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
-  LoadData("UNK_0xeb2b"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb2b); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   _dot_R(); // .R

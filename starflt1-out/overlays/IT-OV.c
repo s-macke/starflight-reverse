@@ -64,6 +64,16 @@ extern const unsigned short int pp_TIME_dash_PASSING; // TIME-PASSING
 extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
 extern const unsigned short int pp__ro_SCROLL_2; // (SCROLL_2
 extern const unsigned short int pp_CTTOP; // CTTOP
+extern LoadDataType SHAPE; // SHAPE
+extern LoadDataType RESEMBLES; // RESEMBLES
+extern LoadDataType BOX_dash_NAME; // BOX-NAME
+extern LoadDataType SPEC_dash_NAME; // SPEC-NAME
+extern LoadDataType BD_dash_NAME; // BD-NAME
+extern LoadDataType ELEM_dash_NAME; // ELEM-NAME
+extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
+extern LoadDataType ART_dash_NAME; // ART-NAME
+extern LoadDataType ART_dash_VAL; // ART-VAL
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void MAX(); // MAX
 void PAD(); // PAD
 void SPACES(); // SPACES
@@ -149,7 +159,7 @@ const unsigned short int cc_UNK_0xee06 = 0xee06; // UNK_0xee06
 // ================================================
 // 0xede4: WORD 'UNK_0xede6' codep=0x73ea parp=0xede6
 // ================================================
-// 0xede6: db 0x1c 0x1d 0x01 0x1e 0x2c 0x65 '    ,e'
+LoadDataType UNK_0xede6 = {0x1c, 0x1d, 0x01, 0x1e, 0x652c};
 
 // ================================================
 // 0xedec: WORD 'UNK_0xedee' codep=0x2214 parp=0xedee
@@ -339,7 +349,7 @@ void UNK_0xef27() // UNK_0xef27
 void UNK_0xef51() // UNK_0xef51
 {
   UNK_0xee0a(); // UNK_0xee0a
-  LoadData("BOX-NAME"); // from 'BOX         '
+  LoadData(BOX_dash_NAME); // from 'BOX         '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
@@ -352,7 +362,7 @@ void UNK_0xef51() // UNK_0xef51
 
 void UNK_0xef61() // UNK_0xef61
 {
-  LoadData("RESEMBLES"); // from 'CREATURE    '
+  LoadData(RESEMBLES); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -360,7 +370,7 @@ void UNK_0xef61() // UNK_0xef61
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    LoadData("SHAPE"); // from 'CREATURE    '
+    LoadData(SHAPE); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
   }
   _gt_C_plus_S(); // >C+S
@@ -428,13 +438,13 @@ void UNK_0xef89() // UNK_0xef89
 
 void UNK_0xefe9() // UNK_0xefe9
 {
-  LoadData("ELEM-NAME"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_NAME); // from 'ELEMENT     '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
   Push(0x63fa); // IFIELD(INST-QTY)
   Push(Read16(Pop())); // @
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -527,22 +537,22 @@ void UNK_0xf082() // UNK_0xf082
 
 void UNK_0xf096() // UNK_0xf096
 {
-  LoadData("ART-NAME"); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0018);
   CMOVE(); // CMOVE
-  LoadData("UNK_0xede6"); // from 'ARTIFACT    '
+  LoadData(UNK_0xede6); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(pp__ask__ask__ask_IT); // ???IT
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  LoadData("ART-VAL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   OVER(); // OVER
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() * Pop()); // *
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   UNK_0xef89(); // UNK_0xef89
   if (Pop() == 0) return;
@@ -556,7 +566,7 @@ void UNK_0xf096() // UNK_0xf096
 
 void UNK_0xf0c6() // UNK_0xf0c6
 {
-  LoadData("SPEC-NAME"); // from 'SPECIMEN    '
+  LoadData(SPEC_dash_NAME); // from 'SPECIMEN    '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
@@ -574,7 +584,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
 
 void UNK_0xf0de() // UNK_0xf0de
 {
-  LoadData("BD-NAME"); // from 'SPECIMEN    '
+  LoadData(BD_dash_NAME); // from 'SPECIMEN    '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE

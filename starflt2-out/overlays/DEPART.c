@@ -79,7 +79,7 @@ void _1_dot_5_at_(); // 1.5@
 // ================================================
 // 0xf3a4: WORD 'UNK_0xf3a6' codep=0x7394 parp=0xf3a6
 // ================================================
-// 0xf3a6: db 0x1c 0x1e 0x01 0x20 0xcd 0x6b '     k'
+LoadDataType UNK_0xf3a6 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xf3ac: WORD 'UNK_0xf3ae' codep=0x224c parp=0xf3ae
@@ -87,7 +87,7 @@ void _1_dot_5_at_(); // 1.5@
 
 void UNK_0xf3ae() // UNK_0xf3ae
 {
-  LoadData("UNK_0xf3a6"); // from 'ARTIFACT    '
+  LoadData(UNK_0xf3a6); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =

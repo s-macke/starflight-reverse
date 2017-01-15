@@ -207,6 +207,8 @@ extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_LASTAP; // LASTAP
+extern LoadDataType SHAPE; // SHAPE
+extern LoadDataType RESEMBLES; // RESEMBLES
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -425,32 +427,32 @@ void UNK_0xe114() // UNK_0xe114
 // ================================================
 // 0xe13e: WORD 'UNK_0xe140' codep=0x73ea parp=0xe140
 // ================================================
-// 0xe140: db 0x44 0x36 0x01 0x9c 0xd8 0x69 'D6   i'
+LoadDataType UNK_0xe140 = {0x44, 0x36, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe146: WORD 'UNK_0xe148' codep=0x73ea parp=0xe148
 // ================================================
-// 0xe148: db 0x44 0x37 0x01 0x9c 0xd8 0x69 'D7   i'
+LoadDataType UNK_0xe148 = {0x44, 0x37, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe14e: WORD 'UNK_0xe150' codep=0x73ea parp=0xe150
 // ================================================
-// 0xe150: db 0x44 0x30 0x01 0x9c 0xd8 0x69 'D0   i'
+LoadDataType UNK_0xe150 = {0x44, 0x30, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe156: WORD 'STUN.EFFEC' codep=0x73ea parp=0xe165
 // ================================================
-// 0xe165: db 0x44 0x33 0x01 0x9c 0xd8 0x69 'D3   i'
+LoadDataType STUN_dot_EFFEC = {0x44, 0x33, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe16b: WORD 'UNK_0xe16d' codep=0x73ea parp=0xe16d
 // ================================================
-// 0xe16d: db 0x44 0x0c 0x01 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe16d = {0x44, 0x0c, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe173: WORD 'UNK_0xe175' codep=0x73ea parp=0xe175
 // ================================================
-// 0xe175: db 0x44 0x29 0x03 0x9c 0xd8 0x69 'D)   i'
+LoadDataType UNK_0xe175 = {0x44, 0x29, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe17b: WORD 'HITS' codep=0x744d parp=0xe184
@@ -465,7 +467,8 @@ void UNK_0xe114() // UNK_0xe114
 // ================================================
 // 0xe194: WORD 'HIT.POINTS' codep=0x73ea parp=0xe1a3
 // ================================================
-// 0xe1a3: db 0x44 0x34 0x01 0x9c 0xd8 0x69 0x4d 0x74 0x44 0x18 0x03 0x4d 0x74 0x44 0x17 0x01 'D4   iMtD  MtD  '
+LoadDataType HIT_dot_POINTS = {0x44, 0x34, 0x01, 0x9c, 0x69d8};
+// 0xe1a9: db 0x4d 0x74 0x44 0x18 0x03 0x4d 0x74 0x44 0x17 0x01 'MtD  MtD  '
 
 // ================================================
 // 0xe1b3: WORD 'UNK_0xe1b5' codep=0x744d parp=0xe1b5
@@ -495,7 +498,7 @@ void UNK_0xe114() // UNK_0xe114
 // ================================================
 // 0xe1e9: WORD 'ATMO.ACTIV' codep=0x73ea parp=0xe1f8
 // ================================================
-// 0xe1f8: db 0x20 0x11 0x01 0x16 0x8f 0x65 '     e'
+LoadDataType ATMO_dot_ACTIV = {0x20, 0x11, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xe1fe: WORD '?PLAYER-FI' codep=0x224c parp=0xe20d
@@ -549,7 +552,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
 
 void _ask_ALIEN_dash_SMA() // ?ALIEN-SMA
 {
-  LoadData("UNK_0xe140"); // from 'CREATURE    '
+  LoadData(UNK_0xe140); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0045);
   _gt_(); // >
@@ -647,7 +650,7 @@ void _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER() // ?ALIEN-HIT-WITH-STUNNER
 
 void UNK_0xe308() // UNK_0xe308
 {
-  LoadData("UNK_0xe150"); // from 'CREATURE    '
+  LoadData(UNK_0xe150); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe0e4(); // UNK_0xe0e4
 }
@@ -733,7 +736,7 @@ void UNK_0xe388() // UNK_0xe388
 
 void UNK_0xe398() // UNK_0xe398
 {
-  LoadData("UNK_0xe16d"); // from 'CREATURE    '
+  LoadData(UNK_0xe16d); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(8);
   Push(Pop() & Pop()); // AND
@@ -747,7 +750,7 @@ void UNK_0xe398() // UNK_0xe398
 
 void UNK_0xe3a6() // UNK_0xe3a6
 {
-  LoadData("UNK_0xe16d"); // from 'CREATURE    '
+  LoadData(UNK_0xe16d); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(4);
   Push(Pop() & Pop()); // AND
@@ -764,7 +767,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
 
 void UNK_0xe3ba() // UNK_0xe3ba
 {
-  LoadData("UNK_0xe16d"); // from 'CREATURE    '
+  LoadData(UNK_0xe16d); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push(Pop() & Pop()); // AND
@@ -853,7 +856,7 @@ void _ask_STUNS_st_STU() // ?STUNS<STU
 {
   Push(0x6401); // IFIELD(STUNS)
   Push(Read8(Pop())&0xFF); // C@
-  LoadData("STUN.EFFEC"); // from 'CREATURE    '
+  LoadData(STUN_dot_EFFEC); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   _st_(); // <
 }
@@ -913,7 +916,7 @@ void UNK_0xe4a2() // UNK_0xe4a2
 
 void UNK_0xe4ac() // UNK_0xe4ac
 {
-  LoadData("UNK_0xe175"); // from 'CREATURE    '
+  LoadData(UNK_0xe175); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xe1e8); Push(0x0001);
   D_eq_(); // D=
@@ -926,7 +929,7 @@ void UNK_0xe4ac() // UNK_0xe4ac
 
 void UNK_0xe4bc() // UNK_0xe4bc
 {
-  LoadData("UNK_0xe175"); // from 'CREATURE    '
+  LoadData(UNK_0xe175); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xe1fb); Push(0x0001);
   D_eq_(); // D=
@@ -1197,7 +1200,7 @@ void UNK_0xe622() // UNK_0xe622
 
 void REDUCE_dash_AGG() // REDUCE-AGG
 {
-  LoadData("UNK_0xe148"); // from 'CREATURE    '
+  LoadData(UNK_0xe148); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(0x0033);
@@ -1205,7 +1208,7 @@ void REDUCE_dash_AGG() // REDUCE-AGG
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  LoadData("UNK_0xe148"); // from 'CREATURE    '
+  LoadData(UNK_0xe148); // from 'CREATURE    '
   C_ex_(); // C!
 }
 
@@ -1216,7 +1219,7 @@ void REDUCE_dash_AGG() // REDUCE-AGG
 
 void INCREASES_dash_() // INCREASES-
 {
-  LoadData("UNK_0xe148"); // from 'CREATURE    '
+  LoadData(UNK_0xe148); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(0x0015);
@@ -1224,7 +1227,7 @@ void INCREASES_dash_() // INCREASES-
   Push(Pop() + Pop()); // +
   Push(0x0064);
   MIN(); // MIN
-  LoadData("UNK_0xe148"); // from 'CREATURE    '
+  LoadData(UNK_0xe148); // from 'CREATURE    '
   C_ex_(); // C!
 }
 
@@ -1439,7 +1442,7 @@ void INCREMENT_dash_() // INCREMENT-
   Push(0x6401); // IFIELD(STUNS)
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
-  LoadData("STUN.EFFEC"); // from 'CREATURE    '
+  LoadData(STUN_dot_EFFEC); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   MIN(); // MIN
   Push(0x6401); // IFIELD(STUNS)
@@ -1450,7 +1453,7 @@ void INCREMENT_dash_() // INCREMENT-
 // ================================================
 // 0xe7e5: WORD 'UNK_0xe7e7' codep=0x73ea parp=0xe7e7
 // ================================================
-// 0xe7e7: db 0x44 0x90 0x02 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe7e7 = {0x44, 0x90, 0x02, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe7ed: WORD 'UNK_0xe7ef' codep=0x224c parp=0xe7ef
@@ -1507,7 +1510,7 @@ void DIE() // DIE
   Push(0x6401); // IFIELD(STUNS)
   C_ex_(); // C!
   UNK_0xe6b0(); // UNK_0xe6b0
-  LoadData("UNK_0xe7e7"); // from 'CREATURE    '
+  LoadData(UNK_0xe7e7); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   _ex_ID(); // !ID
   UNK_0xe80b(); // UNK_0xe80b
@@ -1622,7 +1625,7 @@ void UNK_0xe89b() // UNK_0xe89b
 // ================================================
 // 0xe8b8: WORD 'UNK_0xe8ba' codep=0x73ea parp=0xe8ba
 // ================================================
-// 0xe8ba: db 0x10 0x13 0x01 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xe8ba = {0x10, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xe8c0: WORD 'UNK_0xe8c2' codep=0x224c parp=0xe8c2
@@ -1640,7 +1643,7 @@ void UNK_0xe8c2() // UNK_0xe8c2
   }
   Push(0x6402); // IFIELD(UNK_0xe1ba)
   Push(Read8(Pop())&0xFF); // C@
-  LoadData("UNK_0xe140"); // from 'CREATURE    '
+  LoadData(UNK_0xe140); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(Pop()>>1); // 2/
@@ -1656,7 +1659,7 @@ void UNK_0xe8e4() // UNK_0xe8e4
 {
   Push(0x6402); // IFIELD(UNK_0xe1ba)
   Push(Read8(Pop())&0xFF); // C@
-  LoadData("HIT.POINTS"); // from 'CREATURE    '
+  LoadData(HIT_dot_POINTS); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
@@ -1731,7 +1734,7 @@ void UNK_0xe946() // UNK_0xe946
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
   PRINT("THE ", 4); // (.")
-  LoadData("RESEMBLES"); // from 'CREATURE    '
+  LoadData(RESEMBLES); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -1739,7 +1742,7 @@ void UNK_0xe946() // UNK_0xe946
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    LoadData("SHAPE"); // from 'CREATURE    '
+    LoadData(SHAPE); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
   }
   _gt_C_plus_S(); // >C+S
@@ -1792,7 +1795,7 @@ void UNK_0xe9b4() // UNK_0xe9b4
     SWAP(); // SWAP
     if (Pop() != 0)
     {
-      LoadData("UNK_0xe8ba"); // from 'CREWMEMBER  '
+      LoadData(UNK_0xe8ba); // from 'CREWMEMBER  '
       Push(Read8(Pop())&0xFF); // C@
       _slash_(); // /
       Push(0x640e); // IFIELD(UNK_0xe86a)
@@ -2400,7 +2403,7 @@ void _ask_STORM() // ?STORM
     {
       Push(pp__ro_PLANET); // (PLANET
       _at__gt_C_plus_S(); // @>C+S
-      LoadData("ATMO.ACTIV"); // from 'PLANET      '
+      LoadData(ATMO_dot_ACTIV); // from 'PLANET      '
       Push(Read16(Pop())); // @
       Push(pp__pe_STORM); // %STORM
       OVER(); // OVER
@@ -2426,7 +2429,7 @@ void _ask_STORM() // ?STORM
         Push(0xcdd8); // probable '.STOR'
         MODULE(); // MODULE
         Push(1);
-        LoadData("ATMO.ACTIV"); // from 'PLANET      '
+        LoadData(ATMO_dot_ACTIV); // from 'PLANET      '
         Push(Read16(Pop())); // @
         Push(5);
         SWAP(); // SWAP

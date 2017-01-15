@@ -78,7 +78,7 @@ void CI(); // CI
 // ================================================
 // 0xf074: WORD 'UNK_0xf076' codep=0x7394 parp=0xf076
 // ================================================
-// 0xf076: db 0x10 0x13 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xf076 = {0x10, 0x13, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xf07c: WORD 'UNK_0xf07e' codep=0x7420 parp=0xf07e
@@ -564,7 +564,7 @@ void UNK_0xf440() // UNK_0xf440
     PRINT(" AND A", 6); // (.")
     CTCR(); // CTCR
     PRINT("DURABILITY OF ", 14); // (.")
-    LoadData("UNK_0xf076"); // from 'CREWMEMBER  '
+    LoadData(UNK_0xf076); // from 'CREWMEMBER  '
     Push(Read8(Pop())&0xFF); // C@
     Push(0);
     _dot_R(); // .R

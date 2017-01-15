@@ -18600,7 +18600,7 @@ void UNK_0x7892() // UNK_0x7892
 // ================================================
 // 0x78ae: WORD '1BTN' codep=0x7394 parp=0x78b7
 // ================================================
-// 0x78b7: db 0x3a 0x00 0x0c 0x49 0x57 0x6e ':  IWn'
+LoadDataType _1BTN = {0x3a, 0x00, 0x0c, 0x49, 0x6e57};
 
 // ================================================
 // 0x78bd: WORD 'AFIELD:' codep=0x224c parp=0x78c9
@@ -18650,7 +18650,7 @@ void IFIELD_c_() // IFIELD:
 // ================================================
 // 0x7911: WORD '#BTN' codep=0x7394 parp=0x791a
 // ================================================
-// 0x791a: db 0x3a 0x48 0x01 0x49 0x57 0x6e ':H IWn'
+LoadDataType _n_BTN = {0x3a, 0x48, 0x01, 0x49, 0x6e57};
 
 // ================================================
 // 0x7920: WORD 'UNK_0x7922' codep=0x224c parp=0x7922
@@ -20052,7 +20052,7 @@ void ICREATE() // ICREATE
 // ================================================
 // 0x81f3: WORD 'BOX-NAM' codep=0x7394 parp=0x81ff
 // ================================================
-// 0x81ff: db 0x0b 0x00 0x10 0x10 0x7d 0x6a '    }j'
+LoadDataType BOX_dash_NAM = {0x0b, 0x00, 0x10, 0x10, 0x6a7d};
 
 // ================================================
 // 0x8205: WORD '*CREATE' codep=0x224c parp=0x8211
@@ -25583,7 +25583,7 @@ void _dot_ABTN() // .ABTN
   POLY_dash_WI(); // POLY-WI
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  LoadData("1BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'ANALYZE-TEXT'
   Push(a); // R>
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25639,7 +25639,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   Push(0x0077);
   POS_dot_(); // POS.
   _gt_2FONT(); // >2FONT
-  LoadData("#BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_n_BTN); // from 'ANALYZE-TEXT'
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25651,7 +25651,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   {
     Push(i); // I
     UNK_0xa6f0(); // UNK_0xa6f0
-    LoadData("1BTN"); // from 'ANALYZE-TEXT'
+    LoadData(_1BTN); // from 'ANALYZE-TEXT'
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(0x000c);
@@ -25686,7 +25686,7 @@ void NEW_dash_BUT() // NEW-BUT
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(0);
-  LoadData("#BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_n_BTN); // from 'ANALYZE-TEXT'
   Push(Read8(Pop())&0xFF); // C@
   WITHIN(); // WITHIN
   if (Pop() != 0)
@@ -25922,32 +25922,32 @@ void NEXT_dash_NO() // NEXT-NO
 // ================================================
 // 0xa93a: WORD 'ORIG-NA' codep=0x7394 parp=0xa946
 // ================================================
-// 0xa946: db 0x1b 0x00 0x10 0x00 0x00 0x00 '      '
+LoadDataType ORIG_dash_NA = {0x1b, 0x00, 0x10, 0x00, 0x0000};
 
 // ================================================
 // 0xa94c: WORD 'ELEM-NA' codep=0x7394 parp=0xa958
 // ================================================
-// 0xa958: db 0x1a 0x00 0x10 0x17 0xa9 0x6b '     k'
+LoadDataType ELEM_dash_NA = {0x1a, 0x00, 0x10, 0x17, 0x6ba9};
 
 // ================================================
 // 0xa95e: WORD 'ELEM-VA' codep=0x7394 parp=0xa96a
 // ================================================
-// 0xa96a: db 0x1a 0x10 0x02 0x17 0xa9 0x6b '     k'
+LoadDataType ELEM_dash_VA = {0x1a, 0x10, 0x02, 0x17, 0x6ba9};
 
 // ================================================
 // 0xa970: WORD 'ART-NAM' codep=0x7394 parp=0xa97c
 // ================================================
-// 0xa97c: db 0x1c 0x00 0x18 0x20 0xcd 0x6b '     k'
+LoadDataType ART_dash_NAM = {0x1c, 0x00, 0x18, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa982: WORD 'ART-VAL' codep=0x7394 parp=0xa98e
 // ================================================
-// 0xa98e: db 0x1c 0x1b 0x02 0x20 0xcd 0x6b '     k'
+LoadDataType ART_dash_VAL = {0x1c, 0x1b, 0x02, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa994: WORD 'ART-VOL' codep=0x7394 parp=0xa9a0
 // ================================================
-// 0xa9a0: db 0x1c 0x19 0x02 0x20 0xcd 0x6b '     k'
+LoadDataType ART_dash_VOL = {0x1c, 0x19, 0x02, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa9a6: WORD 'PHR-CNT' codep=0x7420 parp=0xa9b2

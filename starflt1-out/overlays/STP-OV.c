@@ -76,6 +76,7 @@ extern const unsigned short int pp_XABS; // XABS
 extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp__ask_SECURE; // ?SECURE
+extern LoadDataType ART_dash_NAME; // ART-NAME
 void COUNT(); // COUNT
 void MOD(); // MOD
 void BEEP(); // BEEP
@@ -619,7 +620,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
   _ex__3(); // !_3
-  LoadData("ART-NAME"); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAILING(); // -XTRAILING

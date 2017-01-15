@@ -477,12 +477,13 @@ void UNK_0xe566() // UNK_0xe566
 // ================================================
 // 0xe59c: WORD 'UNK_0xe59e' codep=0x7394 parp=0xe59e
 // ================================================
-// 0xe59e: db 0x15 0x00 0x10 0x32 0xd1 0x6a '   2 j'
+LoadDataType UNK_0xe59e = {0x15, 0x00, 0x10, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe5a4: WORD 'UNK_0xe5a6' codep=0x7394 parp=0xe5a6
 // ================================================
-// 0xe5a6: db 0x44 0x1b 0x01 0x22 0x07 0x6f 0x94 0x73 0x44 0x1d 0x02 0x22 0x07 0x6f 'D  " o sD  " o'
+LoadDataType UNK_0xe5a6 = {0x44, 0x1b, 0x01, 0x22, 0x6f07};
+// 0xe5ac: db 0x94 0x73 0x44 0x1d 0x02 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
 // 0xe5b4: WORD 'UNK_0xe5b6' codep=0x7420 parp=0xe5b6
@@ -512,7 +513,7 @@ void UNK_0xe566() // UNK_0xe566
 // ================================================
 // 0xe5d5: WORD 'UNK_0xe5d7' codep=0x7394 parp=0xe5d7
 // ================================================
-// 0xe5d7: db 0x15 0x13 0x01 0x32 0xd1 0x6a '   2 j'
+LoadDataType UNK_0xe5d7 = {0x15, 0x13, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe5dd: WORD 'UNK_0xe5df' codep=0x7420 parp=0xe5df
@@ -572,7 +573,7 @@ void UNK_0xe606() // UNK_0xe606
 
 void UNK_0xe618() // UNK_0xe618
 {
-  LoadData("UNK_0xe5a6"); // from 'CREATURE    '
+  LoadData(UNK_0xe5a6); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push(Pop() & Pop()); // AND
@@ -623,7 +624,7 @@ void UNK_0xe646() // UNK_0xe646
 
 void UNK_0xe654() // UNK_0xe654
 {
-  LoadData("UNK_0xe5a6"); // from 'CREATURE    '
+  LoadData(UNK_0xe5a6); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() & Pop()); // AND
@@ -1415,7 +1416,7 @@ void UNK_0xeae0() // UNK_0xeae0
   PRINT("COMMANDER, WE HAVE BEEN HIT WITH", 32); // (.")
   GCR(); // GCR
   UNK_0xe514(); // UNK_0xe514
-  LoadData("UNK_0xe5d7"); // from 'TRADERS     '
+  LoadData(UNK_0xe5d7); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   _gt_WEAP(); // >WEAP case
@@ -1423,7 +1424,7 @@ void UNK_0xeae0() // UNK_0xeae0
   GCR(); // GCR
   PRINT("BY THE ", 7); // (.")
   UNK_0xe514(); // UNK_0xe514
-  LoadData("UNK_0xe59e"); // from 'TRADERS     '
+  LoadData(UNK_0xe59e); // from 'TRADERS     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
@@ -1439,7 +1440,7 @@ void UNK_0xeae0() // UNK_0xeae0
 void UNK_0xeb33() // UNK_0xeb33
 {
   UNK_0xe514(); // UNK_0xe514
-  LoadData("UNK_0xe5d7"); // from 'TRADERS     '
+  LoadData(UNK_0xe5d7); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0019);
   Push(Pop() * Pop()); // *

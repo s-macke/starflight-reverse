@@ -358,6 +358,7 @@ extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_SMART; // SMART
+extern LoadDataType _1BTN; // 1BTN
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -779,12 +780,12 @@ void UNK_0xd80e() // UNK_0xd80e
 // ================================================
 // 0xd8be: WORD 'UNK_0xd8c0' codep=0x7394 parp=0xd8c0
 // ================================================
-// 0xd8c0: db 0x19 0x0c 0x04 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xd8c0 = {0x19, 0x0c, 0x04, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8c6: WORD 'UNK_0xd8c8' codep=0x7394 parp=0xd8c8
 // ================================================
-// 0xd8c8: db 0x19 0x12 0x03 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xd8c8 = {0x19, 0x12, 0x03, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8ce: WORD 'UNK_0xd8d0' codep=0x7420 parp=0xd8d0
@@ -794,7 +795,7 @@ void UNK_0xd80e() // UNK_0xd80e
 // ================================================
 // 0xd8d3: WORD 'UNK_0xd8d5' codep=0x7394 parp=0xd8d5
 // ================================================
-// 0xd8d5: db 0x19 0x05 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xd8d5 = {0x19, 0x05, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8db: WORD 'UNK_0xd8dd' codep=0x1d29 parp=0xd8dd
@@ -1859,7 +1860,7 @@ void UNK_0xde43() // UNK_0xde43
 
 void UNK_0xde55() // UNK_0xde55
 {
-  LoadData("1BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'ANALYZE-TEXT'
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR
@@ -6015,7 +6016,7 @@ void IAPWR() // IAPWR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xd90f)); // UNK_0xd90f
-      LoadData("UNK_0xd8c0"); // from 'VESSEL      '
+      LoadData(UNK_0xd8c0); // from 'VESSEL      '
       Push(Pop()+2); // 2+
       Push(Read16(Pop())); // @
       _gt_FLAG(); // >FLAG
@@ -6023,19 +6024,19 @@ void IAPWR() // IAPWR
       Push(0xd90f); // probable 'UNK_0xd90f'
       _ex__2(); // !_2
       Push(Read16(cc_UNK_0xd913)); // UNK_0xd913
-      LoadData("UNK_0xd8c8"); // from 'VESSEL      '
+      LoadData(UNK_0xd8c8); // from 'VESSEL      '
       _1_dot_5_at_(); // 1.5@
       D0_eq_(); // D0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
       Push(Pop() | Pop()); // OR
       Push(0xd913); // probable 'UNK_0xd913'
       _ex__2(); // !_2
-      LoadData("UNK_0xd8d5"); // from 'VESSEL      '
+      LoadData(UNK_0xd8d5); // from 'VESSEL      '
       Push(Read8(Pop())&0xFF); // C@
       Push(0x65f3); // IFIELD(UNK_0xd8d0)
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
-      LoadData("UNK_0xd8c0"); // from 'VESSEL      '
+      LoadData(UNK_0xd8c0); // from 'VESSEL      '
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
       _star__slash_(); // */

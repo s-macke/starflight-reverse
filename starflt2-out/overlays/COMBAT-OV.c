@@ -579,27 +579,27 @@ void UNK_0xdd70() // UNK_0xdd70
 // ================================================
 // 0xdd82: WORD 'UNK_0xdd84' codep=0x7394 parp=0xdd84
 // ================================================
-// 0xdd84: db 0x19 0x0b 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xdd84 = {0x19, 0x0b, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xdd8a: WORD 'UNK_0xdd8c' codep=0x7394 parp=0xdd8c
 // ================================================
-// 0xdd8c: db 0x19 0x0e 0x02 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xdd8c = {0x19, 0x0e, 0x02, 0x24, 0x6b5d};
 
 // ================================================
 // 0xdd92: WORD 'UNK_0xdd94' codep=0x7394 parp=0xdd94
 // ================================================
-// 0xdd94: db 0x19 0x13 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xdd94 = {0x19, 0x13, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xdd9a: WORD 'UNK_0xdd9c' codep=0x7394 parp=0xdd9c
 // ================================================
-// 0xdd9c: db 0x19 0x12 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xdd9c = {0x19, 0x12, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xdda2: WORD 'UNK_0xdda4' codep=0x7394 parp=0xdda4
 // ================================================
-// 0xdda4: db 0x19 0x14 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xdda4 = {0x19, 0x14, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xddaa: WORD 'UNK_0xddac' codep=0x7420 parp=0xddac
@@ -1066,7 +1066,7 @@ void UNK_0xdfd3() // UNK_0xdfd3
 void UNK_0xdfe5() // UNK_0xdfe5
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xdd9c"); // from 'VESSEL      '
+  LoadData(UNK_0xdd9c); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -1080,7 +1080,7 @@ void UNK_0xdfe5() // UNK_0xdfe5
 void UNK_0xdff3() // UNK_0xdff3
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xdda4"); // from 'VESSEL      '
+  LoadData(UNK_0xdda4); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -1094,7 +1094,7 @@ void UNK_0xdff3() // UNK_0xdff3
 void UNK_0xe001() // UNK_0xe001
 {
   Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
-  LoadData("UNK_0xdd94"); // from 'VESSEL      '
+  LoadData(UNK_0xdd94); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -1119,7 +1119,7 @@ void UNK_0xe00f() // UNK_0xe00f
 
 void UNK_0xe019() // UNK_0xe019
 {
-  LoadData("UNK_0xdd84"); // from 'VESSEL      '
+  LoadData(UNK_0xdd84); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe00f(); // UNK_0xe00f
   Push(Read16(regsp)); // DUP
@@ -1139,7 +1139,7 @@ void UNK_0xe019() // UNK_0xe019
 
 void UNK_0xe037() // UNK_0xe037
 {
-  LoadData("UNK_0xdd84"); // from 'VESSEL      '
+  LoadData(UNK_0xdd84); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe00f(); // UNK_0xe00f
   Push(Read16(regsp)); // DUP
@@ -3200,7 +3200,7 @@ void UNK_0xeb99() // UNK_0xeb99
   UNK_0xdd4c(); // UNK_0xdd4c
   UNK_0xe71c(); // UNK_0xe71c
   Push(Read16(cc_UNK_0xe2ba)); // UNK_0xe2ba
-  LoadData("UNK_0xdd94"); // from 'VESSEL      '
+  LoadData(UNK_0xdd94); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe5be(); // UNK_0xe5be
   Push(3);
@@ -3223,7 +3223,7 @@ void UNK_0xebb9() // UNK_0xebb9
   UNK_0xdd4c(); // UNK_0xdd4c
   UNK_0xe71c(); // UNK_0xe71c
   Push(Read16(cc_UNK_0xe2ba)); // UNK_0xe2ba
-  LoadData("UNK_0xdda4"); // from 'VESSEL      '
+  LoadData(UNK_0xdda4); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(5);
   Push(Pop() + Pop()); // +
@@ -3253,7 +3253,7 @@ void UNK_0xebdd() // UNK_0xebdd
   Push(0x6638); Push(0x0002);
   UNK_0xde37(); // UNK_0xde37
   _dot_TTY(); // .TTY
-  LoadData("UNK_0xdd9c"); // from 'VESSEL      '
+  LoadData(UNK_0xdd9c); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
   Push(Read16(cc_UNK_0xe2ba)); // UNK_0xe2ba
@@ -3974,12 +3974,12 @@ void UNK_0xef99() // UNK_0xef99
 {
   Push(0x65f5); // IFIELD(UNK_0xddb6)
   Push(Read16(Pop())); // @
-  LoadData("UNK_0xdd8c"); // from 'VESSEL      '
+  LoadData(UNK_0xdd8c); // from 'VESSEL      '
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) return;
   Push(5);
-  LoadData("UNK_0xdd8c"); // from 'VESSEL      '
+  LoadData(UNK_0xdd8c); // from 'VESSEL      '
   _plus__ex__2(); // +!_2
 }
 

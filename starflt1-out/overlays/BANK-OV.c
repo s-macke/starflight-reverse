@@ -177,7 +177,7 @@ void UNK_0xef86() // UNK_0xef86
 // ================================================
 // 0xefb1: WORD 'UNK_0xefb3' codep=0x73ea parp=0xefb3
 // ================================================
-// 0xefb3: db 0x0e 0x00 0x13 0x13 0x80 0x64 '     d'
+LoadDataType UNK_0xefb3 = {0x0e, 0x00, 0x13, 0x13, 0x6480};
 
 // ================================================
 // 0xefb9: WORD 'UNK_0xefbb' codep=0x744d parp=0xefbb
@@ -497,7 +497,7 @@ void UNK_0xf196() // UNK_0xf196
 
 void UNK_0xf1da() // UNK_0xf1da
 {
-  LoadData("UNK_0xefb3"); // from 'BANK-TRANS  '
+  LoadData(UNK_0xefb3); // from 'BANK-TRANS  '
   _do__dot_(); // $.
 }
 

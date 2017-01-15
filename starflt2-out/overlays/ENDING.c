@@ -150,6 +150,7 @@ extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__n_ETIME; // #ETIME
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void COUNT(); // COUNT
 void ABS(); // ABS
 void M_star_(); // M*
@@ -328,7 +329,7 @@ const unsigned short int cc_ANIM = 0xf0bc; // ANIM
 // ================================================
 // 0xe821: WORD 'UNK_0xe823' codep=0x7394 parp=0xe823
 // ================================================
-// 0xe823: db 0x19 0x10 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xe823 = {0x19, 0x10, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe829: WORD 'UNK_0xe82b' codep=0x7420 parp=0xe82b
@@ -2285,7 +2286,7 @@ void UNK_0xf3b4() // UNK_0xf3b4
   IFIND(); // IFIND
   Pop(); // DROP
   Push(-1);
-  LoadData("UNK_0xe823"); // from 'VESSEL      '
+  LoadData(UNK_0xe823); // from 'VESSEL      '
   _ex__2(); // !_2
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -2397,7 +2398,7 @@ void UNK_0xf49f() // UNK_0xf49f
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x65ec); // IFIELD(INST-QT)
   _ex__2(); // !_2

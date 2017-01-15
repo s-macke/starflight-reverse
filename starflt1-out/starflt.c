@@ -17886,7 +17886,7 @@ void UNK_0x787c() // UNK_0x787c
 // ================================================
 // 0x7898: WORD '1BTN' codep=0x73ea parp=0x78a1
 // ================================================
-// 0x78a1: db 0x3a 0x00 0x0c 0x49 0x58 0x68 ':  IXh'
+LoadDataType _1BTN = {0x3a, 0x00, 0x0c, 0x49, 0x6858};
 
 // ================================================
 // 0x78a7: WORD 'AFIELD:' codep=0x224c parp=0x78b3
@@ -17936,7 +17936,7 @@ void IFIELD_c_() // IFIELD:
 // ================================================
 // 0x78fb: WORD '#BTN' codep=0x73ea parp=0x7904
 // ================================================
-// 0x7904: db 0x3a 0x48 0x01 0x49 0x58 0x68 ':H IXh'
+LoadDataType _n_BTN = {0x3a, 0x48, 0x01, 0x49, 0x6858};
 
 // ================================================
 // 0x790a: WORD 'UNK_0x790c' codep=0x224c parp=0x790c
@@ -24874,7 +24874,7 @@ void _dot_ABTN() // .ABTN
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  LoadData("1BTN"); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS     '
   Push(a); // R>
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -24908,7 +24908,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   _gt_2FONT(); // >2FONT
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  LoadData("#BTN"); // from 'BUTTONS     '
+  LoadData(_n_BTN); // from 'BUTTONS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -24918,7 +24918,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   imax = Pop();
   do // (DO)
   {
-    LoadData("1BTN"); // from 'BUTTONS     '
+    LoadData(_1BTN); // from 'BUTTONS     '
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(0x000c);
@@ -24953,7 +24953,7 @@ void NEW_dash_BUT() // NEW-BUT
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(0);
-  LoadData("#BTN"); // from 'BUTTONS     '
+  LoadData(_n_BTN); // from 'BUTTONS     '
   Push(Read8(Pop())&0xFF); // C@
   WITHIN(); // WITHIN
   if (Pop() != 0)
@@ -25179,7 +25179,7 @@ void NEXT_dash_NO() // NEXT-NO
 // ================================================
 // 0xad1e: WORD 'SHAPE' codep=0x73ea parp=0xad28
 // ================================================
-// 0xad28: db 0x44 0x04 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType SHAPE = {0x44, 0x04, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xad2e: WORD 'INST-DATE' codep=0x744d parp=0xad3a
@@ -25189,12 +25189,12 @@ void NEXT_dash_NO() // NEXT-NO
 // ================================================
 // 0xad3d: WORD 'RESEMBLES' codep=0x73ea parp=0xad49
 // ================================================
-// 0xad49: db 0x44 0x92 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType RESEMBLES = {0x44, 0x92, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xad4f: WORD 'BOX-NAME' codep=0x73ea parp=0xad5b
 // ================================================
-// 0xad5b: db 0x0b 0x00 0x10 0x10 0x40 0x64 '    @d'
+LoadDataType BOX_dash_NAME = {0x0b, 0x00, 0x10, 0x10, 0x6440};
 
 // ================================================
 // 0xad61: WORD '%NAME' codep=0x744d parp=0xad6b
@@ -25204,42 +25204,42 @@ void NEXT_dash_NO() // NEXT-NO
 // ================================================
 // 0xad6e: WORD 'ORIG-NAME' codep=0x73ea parp=0xad7a
 // ================================================
-// 0xad7a: db 0x1b 0x00 0x10 0x00 0x00 0x00 '      '
+LoadDataType ORIG_dash_NAME = {0x1b, 0x00, 0x10, 0x00, 0x0000};
 
 // ================================================
 // 0xad80: WORD 'SPEC-NAME' codep=0x73ea parp=0xad8c
 // ================================================
-// 0xad8c: db 0x28 0x00 0x10 0x10 0xe4 0x65 '(    e'
+LoadDataType SPEC_dash_NAME = {0x28, 0x00, 0x10, 0x10, 0x65e4};
 
 // ================================================
 // 0xad92: WORD 'BD-NAME' codep=0x73ea parp=0xad9e
 // ================================================
-// 0xad9e: db 0x2b 0x00 0x10 0x10 0xe4 0x65 '+    e'
+LoadDataType BD_dash_NAME = {0x2b, 0x00, 0x10, 0x10, 0x65e4};
 
 // ================================================
 // 0xada4: WORD 'ELEM-NAME' codep=0x73ea parp=0xadb0
 // ================================================
-// 0xadb0: db 0x1a 0x00 0x10 0x17 0x0a 0x65 '     e'
+LoadDataType ELEM_dash_NAME = {0x1a, 0x00, 0x10, 0x17, 0x650a};
 
 // ================================================
 // 0xadb6: WORD 'ELEM-VAL' codep=0x73ea parp=0xadc2
 // ================================================
-// 0xadc2: db 0x1a 0x10 0x02 0x17 0x0a 0x65 '     e'
+LoadDataType ELEM_dash_VAL = {0x1a, 0x10, 0x02, 0x17, 0x650a};
 
 // ================================================
 // 0xadc8: WORD 'ART-NAME' codep=0x73ea parp=0xadd4
 // ================================================
-// 0xadd4: db 0x1c 0x00 0x18 0x1e 0x2c 0x65 '    ,e'
+LoadDataType ART_dash_NAME = {0x1c, 0x00, 0x18, 0x1e, 0x652c};
 
 // ================================================
 // 0xadda: WORD 'ART-VAL' codep=0x73ea parp=0xade6
 // ================================================
-// 0xade6: db 0x1c 0x1b 0x02 0x1e 0x2c 0x65 '    ,e'
+LoadDataType ART_dash_VAL = {0x1c, 0x1b, 0x02, 0x1e, 0x652c};
 
 // ================================================
 // 0xadec: WORD 'ART-VOL' codep=0x73ea parp=0xadf8
 // ================================================
-// 0xadf8: db 0x1c 0x19 0x02 0x1e 0x2c 0x65 '    ,e'
+LoadDataType ART_dash_VOL = {0x1c, 0x19, 0x02, 0x1e, 0x652c};
 
 // ================================================
 // 0xadfe: WORD 'PHR-CNT' codep=0x744d parp=0xae0a

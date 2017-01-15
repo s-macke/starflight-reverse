@@ -646,27 +646,27 @@ void UNK_0xe647() // UNK_0xe647
 // ================================================
 // 0xe65f: WORD 'UNK_0xe661' codep=0x7394 parp=0xe661
 // ================================================
-// 0xe661: db 0x10 0x00 0x08 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe661 = {0x10, 0x00, 0x08, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe667: WORD 'UNK_0xe669' codep=0x7394 parp=0xe669
 // ================================================
-// 0xe669: db 0x10 0x08 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe669 = {0x10, 0x08, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe66f: WORD 'UNK_0xe671' codep=0x7394 parp=0xe671
 // ================================================
-// 0xe671: db 0x10 0x0d 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe671 = {0x10, 0x0d, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe677: WORD 'UNK_0xe679' codep=0x7394 parp=0xe679
 // ================================================
-// 0xe679: db 0x10 0x12 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe679 = {0x10, 0x12, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe67f: WORD 'UNK_0xe681' codep=0x7394 parp=0xe681
 // ================================================
-// 0xe681: db 0x10 0x13 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe681 = {0x10, 0x13, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe687: WORD 'UNK_0xe689' codep=0x7420 parp=0xe689
@@ -711,17 +711,17 @@ void UNK_0xe647() // UNK_0xe647
 // ================================================
 // 0xe6af: WORD 'UNK_0xe6b1' codep=0x7394 parp=0xe6b1
 // ================================================
-// 0xe6b1: db 0x87 0x00 0x09 0x0b 0xd6 0x90 '      '
+LoadDataType UNK_0xe6b1 = {0x87, 0x00, 0x09, 0x0b, 0x90d6};
 
 // ================================================
 // 0xe6b7: WORD 'UNK_0xe6b9' codep=0x7394 parp=0xe6b9
 // ================================================
-// 0xe6b9: db 0x87 0x09 0x01 0x0b 0xd6 0x90 '      '
+LoadDataType UNK_0xe6b9 = {0x87, 0x09, 0x01, 0x0b, 0x90d6};
 
 // ================================================
 // 0xe6bf: WORD 'UNK_0xe6c1' codep=0x7394 parp=0xe6c1
 // ================================================
-// 0xe6c1: db 0x87 0x0a 0x01 0x0b 0xd6 0x90 '      '
+LoadDataType UNK_0xe6c1 = {0x87, 0x0a, 0x01, 0x0b, 0x90d6};
 
 // ================================================
 // 0xe6c7: WORD 'UNK_0xe6c9' codep=0x224c parp=0xe6c9
@@ -1136,7 +1136,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x0077);
   Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
-  LoadData("UNK_0xe661"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe661); // from 'CREWMEMBER  '
   _do__dot_(); // $.
   Push(0x004a);
   Push(0x001b);
@@ -1157,7 +1157,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
-  LoadData("UNK_0xe681"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe681); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   _dot_R(); // .R
@@ -1180,7 +1180,7 @@ void UNK_0xea83() // UNK_0xea83
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   _ex__2(); // !_2
-  LoadData("UNK_0xe679"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe679); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   _dot_R(); // .R
@@ -1249,14 +1249,14 @@ void UNK_0xeba9() // UNK_0xeba9
   Push(0x005c);
   POS_dot_(); // POS.
   PRINT("TYPE    : ", 10); // (.")
-  LoadData("UNK_0xe6b1"); // from 'PSTATS      '
+  LoadData(UNK_0xe6b1); // from 'PSTATS      '
   Push(9);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
   Push(0x0050);
   POS_dot_(); // POS.
   PRINT("AVG. HT.: ", 10); // (.")
-  LoadData("UNK_0xe6b9"); // from 'PSTATS      '
+  LoadData(UNK_0xe6b9); // from 'PSTATS      '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   _slash_MOD(); // /MOD
@@ -1269,7 +1269,7 @@ void UNK_0xeba9() // UNK_0xeba9
   Push(0x0044);
   POS_dot_(); // POS.
   PRINT("AVG. WT.: ", 10); // (.")
-  LoadData("UNK_0xe6c1"); // from 'PSTATS      '
+  LoadData(UNK_0xe6c1); // from 'PSTATS      '
   Push(Read8(Pop())&0xFF); // C@
   _dot_(); // .
   PRINT("KG", 2); // (.")
@@ -1456,7 +1456,7 @@ void UNK_0xed4b() // UNK_0xed4b
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
-  LoadData("UNK_0xe669"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe669); // from 'CREWMEMBER  '
   Push(0x65fb); // IFIELD(UNK_0xe68e)
   Push(5);
   CMOVE_2(); // CMOVE_2
@@ -1473,7 +1473,7 @@ void UNK_0xed4b() // UNK_0xed4b
     BLT(); // BLT
   }
   UNK_0xec39(); // UNK_0xec39
-  LoadData("UNK_0xe661"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe661); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   Push(4);
   Push(Pop() * Pop()); // *
@@ -1565,7 +1565,7 @@ void UNK_0xee17() // UNK_0xee17
 void UNK_0xee3d() // UNK_0xee3d
 {
   unsigned short int a, i, imax;
-  LoadData("UNK_0xe671"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe671); // from 'CREWMEMBER  '
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -1576,7 +1576,7 @@ void UNK_0xee3d() // UNK_0xee3d
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
-  LoadData("UNK_0xe679"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe679); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   _slash_MOD(); // /MOD
   SWAP(); // SWAP
@@ -1980,7 +1980,7 @@ void UNK_0xf1dc() // UNK_0xf1dc
 
 void UNK_0xf217() // UNK_0xf217
 {
-  LoadData("UNK_0xe671"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe671); // from 'CREWMEMBER  '
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
@@ -2088,7 +2088,7 @@ void UNK_0xf2c4() // UNK_0xf2c4
     Push(Read16(Pop())); // @
     Push(Pop() + Pop()); // +
     Push(Read8(Pop())&0xFF); // C@
-    LoadData("UNK_0xe679"); // from 'CREWMEMBER  '
+    LoadData(UNK_0xe679); // from 'CREWMEMBER  '
     Push(Read8(Pop())&0xFF); // C@
     Push(0x6601); // IFIELD(UNK_0xe514)
     Push(Read8(Pop())&0xFF); // C@
@@ -2103,7 +2103,7 @@ void UNK_0xf2c4() // UNK_0xf2c4
     Push(Read16(Pop())); // @
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
-    LoadData("UNK_0xe671"); // from 'CREWMEMBER  '
+    LoadData(UNK_0xe671); // from 'CREWMEMBER  '
     Push(pp_OCRS); // OCRS
     Push(Read16(Pop())); // @
     Push(Pop() + Pop()); // +

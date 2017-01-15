@@ -384,7 +384,7 @@ void UNK_0xe68c() // UNK_0xe68c
 // ================================================
 // 0xe69f: WORD 'UNK_0xe6a1' codep=0x7394 parp=0xe6a1
 // ================================================
-// 0xe6a1: db 0x19 0x05 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xe6a1 = {0x19, 0x05, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe6a7: WORD 'UNK_0xe6a9' codep=0x7420 parp=0xe6a9
@@ -394,12 +394,12 @@ void UNK_0xe68c() // UNK_0xe68c
 // ================================================
 // 0xe6ac: WORD 'UNK_0xe6ae' codep=0x7394 parp=0xe6ae
 // ================================================
-// 0xe6ae: db 0x19 0x06 0x01 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xe6ae = {0x19, 0x06, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe6b4: WORD 'UNK_0xe6b6' codep=0x7394 parp=0xe6b6
 // ================================================
-// 0xe6b6: db 0x19 0x0c 0x04 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xe6b6 = {0x19, 0x0c, 0x04, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe6bc: WORD 'UNK_0xe6be' codep=0x7420 parp=0xe6be
@@ -535,7 +535,7 @@ void UNK_0xe716() // UNK_0xe716
   Push(pp__ask_CALLIN); // ?CALLIN
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  LoadData("UNK_0xe6a1"); // from 'VESSEL      '
+  LoadData(UNK_0xe6a1); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_A_dash_STREN); // A-STREN
   _plus__ex__2(); // +!_2
@@ -584,11 +584,11 @@ void UNK_0xe79c() // UNK_0xe79c
   RRND(); // RRND
   Push(0x65ec); // IFIELD(UNK_0xe69c)
   C_ex__2(); // C!_2
-  LoadData("UNK_0xe6ae"); // from 'VESSEL      '
+  LoadData(UNK_0xe6ae); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x65ed); // IFIELD(UNK_0xe6a9)
   C_ex__2(); // C!_2
-  LoadData("UNK_0xe6b6"); // from 'VESSEL      '
+  LoadData(UNK_0xe6b6); // from 'VESSEL      '
   _2_at_(); // 2@
   Push(0x65f3); // IFIELD(UNK_0xe6be)
   D_ex_(); // D!
@@ -1291,17 +1291,17 @@ void NS_dash_MESS() // NS-MESS
 // ================================================
 // 0xed04: WORD 'UNK_0xed06' codep=0x7394 parp=0xed06
 // ================================================
-// 0xed06: db 0x20 0x07 0x02 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xed06 = {0x20, 0x07, 0x02, 0x17, 0x6c49};
 
 // ================================================
 // 0xed0c: WORD 'P-LSEED' codep=0x7394 parp=0xed18
 // ================================================
-// 0xed18: db 0x20 0x04 0x01 0x17 0x49 0x6c '    Il'
+LoadDataType P_dash_LSEED = {0x20, 0x04, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xed1e: WORD 'UNK_0xed20' codep=0x7394 parp=0xed20
 // ================================================
-// 0xed20: db 0x20 0x01 0x01 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xed20 = {0x20, 0x01, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xed26: WORD 'UNK_0xed28' codep=0x7420 parp=0xed28
@@ -1319,7 +1319,7 @@ void NS_dash_MESS() // NS-MESS
 
 void UNK_0xed32() // UNK_0xed32
 {
-  LoadData("P-LSEED"); // from 'PLANET      '
+  LoadData(P_dash_LSEED); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -1360,7 +1360,7 @@ void S_gt_CM() // S>CM
 
 void UNK_0xed5f() // UNK_0xed5f
 {
-  LoadData("UNK_0xed20"); // from 'PLANET      '
+  LoadData(UNK_0xed20); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   S_gt_CM(); // S>CM case
 }
@@ -1390,7 +1390,7 @@ void OSET() // OSET
     Pop(); // DROP
   } else
   {
-    LoadData("UNK_0xed06"); // from 'PLANET      '
+    LoadData(UNK_0xed06); // from 'PLANET      '
     Push(Read16(Pop())); // @
   }
   Push(Read16(regsp)); // DUP

@@ -127,6 +127,7 @@ extern const unsigned short int pp_E_dash_USE; // E-USE
 extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
 extern const unsigned short int pp_STIME; // STIME
 extern const unsigned short int pp__ask_FANLYZ; // ?FANLYZ
+extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -680,7 +681,7 @@ void UNK_0xeba2() // UNK_0xeba2
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   _ex__3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
 }

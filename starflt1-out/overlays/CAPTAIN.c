@@ -198,6 +198,7 @@ extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern LoadDataType _1BTN; // 1BTN
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void M_star_(); // M*
@@ -720,17 +721,17 @@ void UNK_0xe003() // UNK_0xe003
 // ================================================
 // 0xe03a: WORD 'UNK_0xe03c' codep=0x73ea parp=0xe03c
 // ================================================
-// 0xe03c: db 0x1c 0x18 0x01 0x1e 0x2c 0x65 '    ,e'
+LoadDataType UNK_0xe03c = {0x1c, 0x18, 0x01, 0x1e, 0x652c};
 
 // ================================================
 // 0xe042: WORD 'UNK_0xe044' codep=0x73ea parp=0xe044
 // ================================================
-// 0xe044: db 0x1c 0x1d 0x01 0x1e 0x2c 0x65 '    ,e'
+LoadDataType UNK_0xe044 = {0x1c, 0x1d, 0x01, 0x1e, 0x652c};
 
 // ================================================
 // 0xe04a: WORD 'UNK_0xe04c' codep=0x73ea parp=0xe04c
 // ================================================
-// 0xe04c: db 0x39 0x00 0xbe 0xbe 0x90 0x67 '9    g'
+LoadDataType UNK_0xe04c = {0x39, 0x00, 0xbe, 0xbe, 0x6790};
 
 // ================================================
 // 0xe052: WORD 'UNK_0xe054' codep=0x744d parp=0xe054
@@ -740,22 +741,22 @@ void UNK_0xe003() // UNK_0xe003
 // ================================================
 // 0xe05f: WORD 'UNK_0xe061' codep=0x73ea parp=0xe061
 // ================================================
-// 0xe061: db 0x20 0x02 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe061 = {0x20, 0x02, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xe067: WORD 'UNK_0xe069' codep=0x73ea parp=0xe069
 // ================================================
-// 0xe069: db 0x20 0x11 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe069 = {0x20, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xe06f: WORD 'UNK_0xe071' codep=0x73ea parp=0xe071
 // ================================================
-// 0xe071: db 0x20 0x04 0x01 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe071 = {0x20, 0x04, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xe077: WORD 'UNK_0xe079' codep=0x73ea parp=0xe079
 // ================================================
-// 0xe079: db 0x20 0x09 0x01 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe079 = {0x20, 0x09, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xe07f: WORD 'UNK_0xe081' codep=0x744d parp=0xe081
@@ -765,12 +766,12 @@ void UNK_0xe003() // UNK_0xe003
 // ================================================
 // 0xe084: WORD 'UNK_0xe086' codep=0x73ea parp=0xe086
 // ================================================
-// 0xe086: db 0x20 0x0f 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe086 = {0x20, 0x0f, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xe08c: WORD 'UNK_0xe08e' codep=0x73ea parp=0xe08e
 // ================================================
-// 0xe08e: db 0x20 0x10 0x01 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe08e = {0x20, 0x10, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xe094: WORD 'UNK_0xe096' codep=0x744d parp=0xe096
@@ -2364,11 +2365,11 @@ void UNK_0xea62() // UNK_0xea62
   SetColor("BLACK");
   UNK_0xe8e9(); // UNK_0xe8e9
   CTINIT(); // CTINIT
-  LoadData("UNK_0xe044"); // from 'ARTIFACT    '
+  LoadData(UNK_0xe044); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-    LoadData("UNK_0xe03c"); // from 'ARTIFACT    '
+    LoadData(UNK_0xe03c); // from 'ARTIFACT    '
     Push(Read8(Pop())&0xFF); // C@
     Push(0x0039);
     Push(pp_FILE_n_); // FILE#
@@ -2385,7 +2386,7 @@ void UNK_0xea62() // UNK_0xea62
     imax = Pop();
     do // (DO)
     {
-      LoadData("UNK_0xe04c"); // from 'ANALYZE-TEXT'
+      LoadData(UNK_0xe04c); // from 'ANALYZE-TEXT'
       Push(i); // I
       Push(Pop() + Pop()); // +
       PAD(); // PAD
@@ -3140,7 +3141,7 @@ void _gt_DESCEND() // >DESCEND
 {
   UNK_0xefad(); // UNK_0xefad
   UNK_0x3f3b("LAUNCH");
-  LoadData("1BTN"); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS     '
   UNK_0xefbf(); // UNK_0xefbf
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   OFF(); // OFF
@@ -3209,7 +3210,7 @@ void UNK_0xf007() // UNK_0xf007
     {
       UNK_0xefad(); // UNK_0xefad
       UNK_0x3f3b("LAND  ");
-      LoadData("1BTN"); // from 'BUTTONS     '
+      LoadData(_1BTN); // from 'BUTTONS     '
       UNK_0xefbf(); // UNK_0xefbf
     }
     Push(pp_STIME); // STIME
@@ -3350,7 +3351,7 @@ void UNK_0xf191() // UNK_0xf191
 
 void UNK_0xf199() // UNK_0xf199
 {
-  LoadData("UNK_0xe08e"); // from 'PLANET      '
+  LoadData(UNK_0xe08e); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   _st_(); // <
@@ -3366,7 +3367,7 @@ void UNK_0xf199() // UNK_0xf199
 
 void UNK_0xf1ab() // UNK_0xf1ab
 {
-  LoadData("UNK_0xe086"); // from 'PLANET      '
+  LoadData(UNK_0xe086); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(3);
   _gt_(); // >
@@ -3382,7 +3383,7 @@ void UNK_0xf1ab() // UNK_0xf1ab
 
 void UNK_0xf1bd() // UNK_0xf1bd
 {
-  LoadData("UNK_0xe061"); // from 'PLANET      '
+  LoadData(UNK_0xe061); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(0x0045);
@@ -3403,7 +3404,7 @@ void UNK_0xf1bd() // UNK_0xf1bd
 
 void UNK_0xf1df() // UNK_0xf1df
 {
-  LoadData("UNK_0xe069"); // from 'PLANET      '
+  LoadData(UNK_0xe069); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(4);
@@ -3463,7 +3464,7 @@ void UNK_0xf219() // UNK_0xf219
 
 void UNK_0xf233() // UNK_0xf233
 {
-  LoadData("UNK_0xe071"); // from 'PLANET      '
+  LoadData(UNK_0xe071); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   UNK_0xf191(); // UNK_0xf191
@@ -3476,7 +3477,7 @@ void UNK_0xf233() // UNK_0xf233
 
 void UNK_0xf23f() // UNK_0xf23f
 {
-  LoadData("UNK_0xe079"); // from 'PLANET      '
+  LoadData(UNK_0xe079); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   _0_gt_(); // 0>

@@ -254,12 +254,13 @@ void UNK_0xf174() // UNK_0xf174
 // ================================================
 // 0xf24b: WORD 'UNK_0xf24d' codep=0x73ea parp=0xf24d
 // ================================================
-// 0xf24d: db 0x20 0x11 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xf24d = {0x20, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xf253: WORD 'UNK_0xf255' codep=0x73ea parp=0xf255
 // ================================================
-// 0xf255: db 0x20 0x01 0x01 0x16 0x8f 0x65 0x29 0x1d 0x3a 0x20 '     e) : '
+LoadDataType UNK_0xf255 = {0x20, 0x01, 0x01, 0x16, 0x658f};
+// 0xf25b: db 0x29 0x1d 0x3a 0x20 ') : '
 
 // ================================================
 // 0xf25f: WORD 'UNK_0xf261' codep=0x224c parp=0xf261
@@ -308,7 +309,7 @@ void UNK_0xf275() // UNK_0xf275
 // ================================================
 // 0xf28e: WORD 'UNK_0xf290' codep=0x73ea parp=0xf290
 // ================================================
-// 0xf290: db 0x10 0x13 0x01 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xf290 = {0x10, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xf296: WORD 'UNK_0xf298' codep=0x224c parp=0xf298
@@ -459,7 +460,7 @@ void INJURE_dash_PL() // INJURE-PL
   UNK_0xf2da(); // UNK_0xf2da
   UNK_0xf298(); // UNK_0xf298
   _gt_C_plus_S(); // >C+S
-  LoadData("UNK_0xf290"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xf290); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(1);
@@ -591,7 +592,7 @@ void UNK_0xf46c() // UNK_0xf46c
   Push(1);
   Push(0x0064);
   RRND(); // RRND
-  LoadData("UNK_0xf255"); // from 'PLANET      '
+  LoadData(UNK_0xf255); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop()+1); // 1+
@@ -634,7 +635,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _at__gt_C_plus_S(); // @>C+S
-  LoadData("UNK_0xf24d"); // from 'PLANET      '
+  LoadData(UNK_0xf24d); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)

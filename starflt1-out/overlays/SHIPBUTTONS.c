@@ -100,6 +100,8 @@ extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp__i__dot_DATE; // '.DATE
 extern const unsigned short int pp_ENC_dash_TIME; // ENC-TIME
 extern const unsigned short int pp_NAV_dash_TIME; // NAV-TIME
+extern LoadDataType _1BTN; // 1BTN
+extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 void MS(); // MS
 void WITHIN(); // WITHIN
 void _ex__3(); // !_3
@@ -319,7 +321,7 @@ void UNK_0xee6c() // UNK_0xee6c
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData("1BTN"); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS     '
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1322,10 +1324,10 @@ void _gt_FLT() // >FLT
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   _ex__3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
   TIME(); // TIME
@@ -1359,10 +1361,10 @@ void _gt_FLT() // >FLT
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   _ex__3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
 }

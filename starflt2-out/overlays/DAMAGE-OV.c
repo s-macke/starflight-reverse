@@ -398,12 +398,13 @@ void UNK_0xe75a() // UNK_0xe75a
 // ================================================
 // 0xe774: WORD 'UNK_0xe776' codep=0x7394 parp=0xe776
 // ================================================
-// 0xe776: db 0x19 0x10 0x01 0x24 0x5d 0x6b 0x94 0x73 0x19 0x12 0x01 0x24 0x5d 0x6b 0x94 0x73 0x19 0x13 0x01 0x24 0x5d 0x6b '   $]k s   $]k s   $]k'
+LoadDataType UNK_0xe776 = {0x19, 0x10, 0x01, 0x24, 0x6b5d};
+// 0xe77c: db 0x94 0x73 0x19 0x12 0x01 0x24 0x5d 0x6b 0x94 0x73 0x19 0x13 0x01 0x24 0x5d 0x6b ' s   $]k s   $]k'
 
 // ================================================
 // 0xe78c: WORD 'UNK_0xe78e' codep=0x7394 parp=0xe78e
 // ================================================
-// 0xe78e: db 0x19 0x15 0x07 0x24 0x5d 0x6b '   $]k'
+LoadDataType UNK_0xe78e = {0x19, 0x15, 0x07, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe794: WORD 'UNK_0xe796' codep=0x7420 parp=0xe796
@@ -473,7 +474,7 @@ void UNK_0xe75a() // UNK_0xe75a
 // ================================================
 // 0xe824: WORD 'UNK_0xe826' codep=0x7394 parp=0xe826
 // ================================================
-// 0xe826: db 0x10 0x13 0x01 0x14 0xc8 0x6a '     j'
+LoadDataType UNK_0xe826 = {0x10, 0x13, 0x01, 0x14, 0x6ac8};
 
 // ================================================
 // 0xe82c: WORD 'UNK_0xe82e' codep=0x7420 parp=0xe82e
@@ -828,7 +829,7 @@ void UNK_0xea2c() // UNK_0xea2c
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   RRND(); // RRND
-  LoadData("UNK_0xe826"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xe826); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x000a);
@@ -1362,7 +1363,7 @@ void UNK_0xedc4() // UNK_0xedc4
   C_ex__2(); // C!_2
   UNK_0xea4a(); // UNK_0xea4a
   UNK_0xeb55(); // UNK_0xeb55
-  LoadData("UNK_0xe78e"); // from 'VESSEL      '
+  LoadData(UNK_0xe78e); // from 'VESSEL      '
   Push(pp_UNK_0xedbb); // UNK_0xedbb
   Push(7);
   CMOVE_2(); // CMOVE_2
@@ -1634,7 +1635,7 @@ void UNK_0xef73() // UNK_0xef73
       if (Pop() == 0) Push(1); else Push(0); // NOT
       if (Pop() != 0)
       {
-        LoadData("UNK_0xe776"); // from 'VESSEL      '
+        LoadData(UNK_0xe776); // from 'VESSEL      '
         Push(Pop()+1); // 1+
         Push(Read8(Pop())&0xFF); // C@
         if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -2157,7 +2158,7 @@ void UNK_0xf283() // UNK_0xf283
       if (Pop() == 0) Push(1); else Push(0); // NOT
       if (Pop() != 0)
       {
-        LoadData("UNK_0xe776"); // from 'VESSEL      '
+        LoadData(UNK_0xe776); // from 'VESSEL      '
         Push(Read8(Pop())&0xFF); // C@
         if (Pop() != 0)
         {
@@ -2546,7 +2547,7 @@ void DOBLAST() // DOBLAST
     DO_dash_ADAM(); // DO-ADAM
     return;
   }
-  LoadData("UNK_0xe776"); // from 'VESSEL      '
+  LoadData(UNK_0xe776); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
   _eq_SPECIE(); // =SPECIE

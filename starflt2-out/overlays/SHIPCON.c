@@ -41,6 +41,7 @@ extern const unsigned short int pp_TOWFINE; // TOWFINE
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern LoadDataType ELEM_dash_VA; // ELEM-VA
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -216,7 +217,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
-  LoadData("ELEM-VA"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /

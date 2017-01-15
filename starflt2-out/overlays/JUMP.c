@@ -95,6 +95,7 @@ extern const unsigned short int pp_EYEXY; // EYEXY
 extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_NAV_dash_TIM; // NAV-TIM
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern LoadDataType _1BTN; // 1BTN
 void COUNT(); // COUNT
 void ABS(); // ABS
 void M_star_(); // M*
@@ -459,7 +460,7 @@ void UNK_0xee6d() // UNK_0xee6d
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData("1BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'ANALYZE-TEXT'
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'

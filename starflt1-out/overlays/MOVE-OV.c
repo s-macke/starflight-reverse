@@ -140,6 +140,7 @@ extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
+extern LoadDataType ART_dash_VOL; // ART-VOL
 void _star__slash_(); // */
 void ABS(); // ABS
 void MIN(); // MIN
@@ -1413,7 +1414,7 @@ void UNK_0xef48() // UNK_0xef48
   UNK_0xe7ac(); // UNK_0xe7ac
   Push(0x0bb8);
   Push(Read16(regsp)); // DUP
-  LoadData("ART-VOL"); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   _ex__3(); // !_3
   Push(0x63fa); // IFIELD(INST-QTY)
   _ex__3(); // !_3
@@ -2086,7 +2087,7 @@ void TV_dash_MOVE() // TV-MOVE
 // ================================================
 // 0xf415: WORD 'plan-tseed' codep=0x73ea parp=0xf417
 // ================================================
-// 0xf417: db 0x20 0x07 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType plan_dash_tseed = {0x20, 0x07, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xf41d: WORD 'APPROACH' codep=0x224c parp=0xf42a
@@ -2109,7 +2110,7 @@ void APPROACH() // APPROACH
     Pop(); // DROP
   } else
   {
-    LoadData("plan-tseed"); // from 'PLANET      '
+    LoadData(plan_dash_tseed); // from 'PLANET      '
     Push(Read16(Pop())); // @
   }
   Push(Read16(regsp)); // DUP

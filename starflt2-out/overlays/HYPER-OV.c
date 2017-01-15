@@ -263,6 +263,7 @@ extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_SHIPBO; // (SHIPBO
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_NTIME; // NTIME
+extern LoadDataType _1BTN; // 1BTN
 void _star__slash_(); // */
 void ABS(); // ABS
 void M_star_(); // M*
@@ -724,7 +725,8 @@ void UNK_0xd9c8() // UNK_0xd9c8
 // ================================================
 // 0xda71: WORD 'UNK_0xda73' codep=0x7394 parp=0xda73
 // ================================================
-// 0xda73: db 0x20 0x01 0x01 0x17 0x49 0x6c 0x20 0x74 0x34 0x14 0x01 '    Il t4  '
+LoadDataType UNK_0xda73 = {0x20, 0x01, 0x01, 0x17, 0x6c49};
+// 0xda79: db 0x20 0x74 0x34 0x14 0x01 ' t4  '
 
 // ================================================
 // 0xda7e: WORD 'UNK_0xda80' codep=0x7420 parp=0xda80
@@ -1706,7 +1708,7 @@ void UNK_0xdfe9() // UNK_0xdfe9
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      LoadData("UNK_0xda73"); // from 'PLANET      '
+      LoadData(UNK_0xda73); // from 'PLANET      '
       Push(Read8(Pop())&0xFF); // C@
       PS_gt_C(); // PS>C case
       _ex_COLOR(); // !COLOR
@@ -3786,7 +3788,7 @@ void UNK_0xed11() // UNK_0xed11
     Push(pp_RECORD_n_); // RECORD#
     _ex__2(); // !_2
     UNK_0x3f09("LAUNCH");
-    LoadData("1BTN"); // from 'ANALYZE-TEXT'
+    LoadData(_1BTN); // from 'ANALYZE-TEXT'
     SWAP(); // SWAP
     CMOVE_2(); // CMOVE_2
     SET_dash_CUR(); // SET-CUR
@@ -4469,7 +4471,7 @@ void UNK_0xf219() // UNK_0xf219
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
   UNK_0x3f09("LAUNCH");
-  LoadData("1BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'ANALYZE-TEXT'
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR

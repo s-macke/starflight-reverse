@@ -464,112 +464,115 @@ void UNK_0xe418() // UNK_0xe418
 // ================================================
 // 0xe435: WORD 'UNK_0xe437' codep=0x73ea parp=0xe437
 // ================================================
-// 0xe437: db 0x20 0x13 0x01 0x16 0x8f 0x65 0xea 0x73 0x20 0x14 0x03 0x16 0x8f 0x65 0xea 0x73 0x20 0x15 0x02 0x16 0x8f 0x65 '     e s     e s     e'
+LoadDataType UNK_0xe437 = {0x20, 0x13, 0x01, 0x16, 0x658f};
+// 0xe43d: db 0xea 0x73 0x20 0x14 0x03 0x16 0x8f 0x65 0xea 0x73 0x20 0x15 0x02 0x16 0x8f 0x65 ' s     e s     e'
 
 // ================================================
 // 0xe44d: WORD 'UNK_0xe44f' codep=0x73ea parp=0xe44f
 // ================================================
-// 0xe44f: db 0x20 0x02 0x02 0x16 0x8f 0x65 '     e'
+LoadDataType UNK_0xe44f = {0x20, 0x02, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xe455: WORD 'UNK_0xe457' codep=0x73ea parp=0xe457
 // ================================================
-// 0xe457: db 0x44 0x00 0x02 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe457 = {0x44, 0x00, 0x02, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe45d: WORD 'UNK_0xe45f' codep=0x73ea parp=0xe45f
 // ================================================
-// 0xe45f: db 0x44 0x02 0x02 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe45f = {0x44, 0x02, 0x02, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe465: WORD 'UNK_0xe467' codep=0x73ea parp=0xe467
 // ================================================
-// 0xe467: db 0x44 0x04 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe467 = {0x44, 0x04, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe46d: WORD 'UNK_0xe46f' codep=0x73ea parp=0xe46f
 // ================================================
-// 0xe46f: db 0x44 0x07 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe46f = {0x44, 0x07, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe475: WORD 'UNK_0xe477' codep=0x73ea parp=0xe477
 // ================================================
-// 0xe477: db 0x44 0x0b 0x01 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe477 = {0x44, 0x0b, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe47d: WORD 'UNK_0xe47f' codep=0x73ea parp=0xe47f
 // ================================================
-// 0xe47f: db 0x44 0x0c 0x01 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe47f = {0x44, 0x0c, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe485: WORD 'UNK_0xe487' codep=0x73ea parp=0xe487
 // ================================================
-// 0xe487: db 0x44 0x0d 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe487 = {0x44, 0x0d, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe48d: WORD 'UNK_0xe48f' codep=0x73ea parp=0xe48f
 // ================================================
-// 0xe48f: db 0x44 0x10 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe48f = {0x44, 0x10, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe495: WORD 'UNK_0xe497' codep=0x73ea parp=0xe497
 // ================================================
-// 0xe497: db 0x44 0x13 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe497 = {0x44, 0x13, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe49d: WORD 'UNK_0xe49f' codep=0x73ea parp=0xe49f
 // ================================================
-// 0xe49f: db 0x44 0x16 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe49f = {0x44, 0x16, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4a5: WORD 'UNK_0xe4a7' codep=0x73ea parp=0xe4a7
 // ================================================
-// 0xe4a7: db 0x44 0x19 0x01 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe4a7 = {0x44, 0x19, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4ad: WORD 'UNK_0xe4af' codep=0x73ea parp=0xe4af
 // ================================================
-// 0xe4af: db 0x44 0x1a 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe4af = {0x44, 0x1a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4b5: WORD 'UNK_0xe4b7' codep=0x73ea parp=0xe4b7
 // ================================================
-// 0xe4b7: db 0x44 0x1d 0x01 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe4b7 = {0x44, 0x1d, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4bd: WORD 'UNK_0xe4bf' codep=0x73ea parp=0xe4bf
 // ================================================
-// 0xe4bf: db 0x44 0x1e 0x03 0x9c 0xd8 0x69 'D    i'
+LoadDataType UNK_0xe4bf = {0x44, 0x1e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4c5: WORD 'UNK_0xe4c7' codep=0x73ea parp=0xe4c7
 // ================================================
-// 0xe4c7: db 0x44 0x21 0x01 0x9c 0xd8 0x69 'D!   i'
+LoadDataType UNK_0xe4c7 = {0x44, 0x21, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4cd: WORD 'UNK_0xe4cf' codep=0x73ea parp=0xe4cf
 // ================================================
-// 0xe4cf: db 0x44 0x22 0x03 0x9c 0xd8 0x69 'D"   i'
+LoadDataType UNK_0xe4cf = {0x44, 0x22, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4d5: WORD 'UNK_0xe4d7' codep=0x73ea parp=0xe4d7
 // ================================================
-// 0xe4d7: db 0x44 0x25 0x01 0x9c 0xd8 0x69 'D%   i'
+LoadDataType UNK_0xe4d7 = {0x44, 0x25, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4dd: WORD 'UNK_0xe4df' codep=0x73ea parp=0xe4df
 // ================================================
-// 0xe4df: db 0x44 0x26 0x03 0x9c 0xd8 0x69 'D&   i'
+LoadDataType UNK_0xe4df = {0x44, 0x26, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe4e5: WORD 'UNK_0xe4e7' codep=0x73ea parp=0xe4e7
 // ================================================
-// 0xe4e7: db 0x44 0x29 0x03 0x9c 0xd8 0x69 0xea 0x73 0x44 0x2c 0x02 0x9c 0xd8 0x69 'D)   i sD,   i'
+LoadDataType UNK_0xe4e7 = {0x44, 0x29, 0x03, 0x9c, 0x69d8};
+// 0xe4ed: db 0xea 0x73 0x44 0x2c 0x02 0x9c 0xd8 0x69 ' sD,   i'
 
 // ================================================
 // 0xe4f5: WORD 'UNK_0xe4f7' codep=0x73ea parp=0xe4f7
 // ================================================
-// 0xe4f7: db 0x44 0x2e 0x02 0x9c 0xd8 0x69 0x4c 0x22 0x41 0x0e 0xb4 0x0d 0xae 0x3f 0x90 0x0e 0xae 0x3f 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 'D.   iL"A    ?   ?  L"  >         '
+LoadDataType UNK_0xe4f7 = {0x44, 0x2e, 0x02, 0x9c, 0x69d8};
+// 0xe4fd: db 0x4c 0x22 0x41 0x0e 0xb4 0x0d 0xae 0x3f 0x90 0x0e 0xae 0x3f 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 'L"A    ?   ?  L"  >         '
 
 // ================================================
 // 0xe519: WORD 'UNK_0xe51b' codep=0x224c parp=0xe51b
@@ -752,13 +755,13 @@ void UNK_0xe60b() // UNK_0xe60b
 void UNK_0xe6f8() // UNK_0xe6f8
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0);
   SHAPES(); // SHAPES
   UNK_0xe5fd(); // UNK_0xe5fd
-  LoadData("UNK_0xe467"); // from 'CREATURE    '
+  LoadData(UNK_0xe467); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -770,7 +773,7 @@ void UNK_0xe6f8() // UNK_0xe6f8
 void UNK_0xe70e() // UNK_0xe70e
 {
   unsigned short int a, b;
-  LoadData("UNK_0xe467"); // from 'CREATURE    '
+  LoadData(UNK_0xe467); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   do
   {
@@ -804,7 +807,7 @@ void UNK_0xe70e() // UNK_0xe70e
 
 void UNK_0xe740() // UNK_0xe740
 {
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -816,7 +819,7 @@ void UNK_0xe740() // UNK_0xe740
   {
     Push(0xdd55); Push(0x0001);
   }
-  LoadData("UNK_0xe46f"); // from 'CREATURE    '
+  LoadData(UNK_0xe46f); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -843,14 +846,14 @@ void UNK_0xe762() // UNK_0xe762
   if (Pop() == 0) goto label1;
   UNK_0xe6f8(); // UNK_0xe6f8
   UNK_0xe740(); // UNK_0xe740
-  LoadData("UNK_0xe467"); // from 'CREATURE    '
+  LoadData(UNK_0xe467); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  LoadData("UNK_0xe46f"); // from 'CREATURE    '
+  LoadData(UNK_0xe46f); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
-  LoadData("UNK_0xe45f"); // from 'CREATURE    '
+  LoadData(UNK_0xe45f); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  LoadData("UNK_0xe457"); // from 'CREATURE    '
+  LoadData(UNK_0xe457); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _2DUP(); // 2DUP
@@ -867,10 +870,10 @@ void UNK_0xe762() // UNK_0xe762
       _ex__3(); // !_3
       UNK_0xe51b(); // UNK_0xe51b
       _2DUP(); // 2DUP
-      LoadData("UNK_0xe46f"); // from 'CREATURE    '
+      LoadData(UNK_0xe46f); // from 'CREATURE    '
       _1_dot_5_ex_(); // 1.5!
       _2OVER(); // 2OVER
-      LoadData("UNK_0xe467"); // from 'CREATURE    '
+      LoadData(UNK_0xe467); // from 'CREATURE    '
       _1_dot_5_ex_(); // 1.5!
       i++;
     } while(i<imax); // (LOOP)
@@ -934,7 +937,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  LoadData("UNK_0xe44f"); // from 'PLANET      '
+  LoadData(UNK_0xe44f); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -963,7 +966,7 @@ void UNK_0xede0() // UNK_0xede0
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe477"); // from 'CREATURE    '
+  LoadData(UNK_0xe477); // from 'CREATURE    '
   C_ex_(); // C!
 }
 
@@ -1077,7 +1080,7 @@ void UNK_0xef05() // UNK_0xef05
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe487"); // from 'CREATURE    '
+  LoadData(UNK_0xe487); // from 'CREATURE    '
   C_ex_(); // C!
   SWAP(); // SWAP
   Push(Pop()+1); // 1+
@@ -1088,7 +1091,7 @@ void UNK_0xef05() // UNK_0xef05
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe48f"); // from 'CREATURE    '
+  LoadData(UNK_0xe48f); // from 'CREATURE    '
   C_ex_(); // C!
   Pop(); // DROP
 }
@@ -1134,7 +1137,7 @@ void UNK_0xef75() // UNK_0xef75
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1171,7 +1174,7 @@ void UNK_0xef75() // UNK_0xef75
 void UNK_0xefd1() // UNK_0xefd1
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0);
@@ -1200,9 +1203,9 @@ void UNK_0xefd1() // UNK_0xefd1
   {
     Push(Read16(regsp)); // DUP
   }
-  LoadData("UNK_0xe4a7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4a7); // from 'CREATURE    '
   C_ex_(); // C!
-  LoadData("UNK_0xe49f"); // from 'CREATURE    '
+  LoadData(UNK_0xe49f); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1214,13 +1217,13 @@ void UNK_0xefd1() // UNK_0xefd1
 void UNK_0xf015() // UNK_0xf015
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(0);
   DECORATIONS(); // DECORATIONS
   UNK_0xe5fd(); // UNK_0xe5fd
-  LoadData("UNK_0xe4af"); // from 'CREATURE    '
+  LoadData(UNK_0xe4af); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1231,7 +1234,7 @@ void UNK_0xf015() // UNK_0xf015
 
 void UNK_0xf02b() // UNK_0xf02b
 {
-  LoadData("UNK_0xe4af"); // from 'CREATURE    '
+  LoadData(UNK_0xe4af); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -1248,7 +1251,7 @@ void UNK_0xf02b() // UNK_0xf02b
       if (Pop() != 0)
       {
         UNK_0xe3c2(); // UNK_0xe3c2
-        LoadData("UNK_0xe467"); // from 'CREATURE    '
+        LoadData(UNK_0xe467); // from 'CREATURE    '
         _1_dot_5_at_(); // 1.5@
         _n_LEGS(); // #LEGS
         UNK_0xe5fd(); // UNK_0xe5fd
@@ -1270,7 +1273,7 @@ void UNK_0xf02b() // UNK_0xf02b
   {
     Push(0);
   }
-  LoadData("UNK_0xe4b7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4b7); // from 'CREATURE    '
   C_ex_(); // C!
   Pop(); Pop(); // 2DROP
 }
@@ -1323,7 +1326,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  LoadData("UNK_0xe44f"); // from 'PLANET      '
+  LoadData(UNK_0xe44f); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -1333,7 +1336,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   Push(Read16(regsp)); // DUP
   b = Pop(); // >R
   GROUNDED(); // GROUNDED
-  LoadData("UNK_0xe437"); // from 'PLANET      '
+  LoadData(UNK_0xe437); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
@@ -1365,7 +1368,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
 
 void UNK_0xf11c() // UNK_0xf11c
 {
-  LoadData("UNK_0xe477"); // from 'CREATURE    '
+  LoadData(UNK_0xe477); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_UNK_0xf0b4); // UNK_0xf0b4
   Push(Read16(Pop())); // @
@@ -1401,7 +1404,7 @@ void UNK_0xf136() // UNK_0xf136
   _ex__3(); // !_3
   Push(pp_UNK_0xf0b0); // UNK_0xf0b0
   _ex__3(); // !_3
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1466,11 +1469,11 @@ void UNK_0xf136() // UNK_0xf136
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe4c7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4c7); // from 'CREATURE    '
   C_ex_(); // C!
-  LoadData("UNK_0xe4e7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4e7); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
-  LoadData("UNK_0xe4bf"); // from 'CREATURE    '
+  LoadData(UNK_0xe4bf); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1511,7 +1514,7 @@ void UNK_0xf210() // UNK_0xf210
   UNK_0xf1ea(); // UNK_0xf1ea
   Push(pp_UNK_0xf1e6); // UNK_0xf1e6
   _ex__3(); // !_3
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_PLANTS); // PLANTS
@@ -1520,7 +1523,7 @@ void UNK_0xf210() // UNK_0xf210
   {
     Push(pp_UNK_0xf1e6); // UNK_0xf1e6
     Push(Read16(Pop())); // @
-    LoadData("UNK_0xe47f"); // from 'CREATURE    '
+    LoadData(UNK_0xe47f); // from 'CREATURE    '
     Push(Read8(Pop())&0xFF); // C@
     Push(2);
     Push((Pop()==Pop())?1:0); // =
@@ -1544,7 +1547,7 @@ void UNK_0xf210() // UNK_0xf210
   {
     Push(0xe225); Push(0x0001);
   }
-  LoadData("UNK_0xe4df"); // from 'CREATURE    '
+  LoadData(UNK_0xe4df); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1556,7 +1559,7 @@ void UNK_0xf210() // UNK_0xf210
 void UNK_0xf26a() // UNK_0xf26a
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  LoadData("UNK_0xe467"); // from 'CREATURE    '
+  LoadData(UNK_0xe467); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   ANIMAL_dot_APPENDAGE(); // ANIMAL.APPENDAGE
   UNK_0xe5fd(); // UNK_0xe5fd
@@ -1569,7 +1572,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 void UNK_0xf278() // UNK_0xf278
 {
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1579,7 +1582,7 @@ void UNK_0xf278() // UNK_0xf278
     UNK_0xf26a(); // UNK_0xf26a
   } else
   {
-    LoadData("UNK_0xe4df"); // from 'CREATURE    '
+    LoadData(UNK_0xe4df); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
     Push(0xe225); Push(0x0001);
     D_eq_(); // D=
@@ -1591,7 +1594,7 @@ void UNK_0xf278() // UNK_0xf278
       if (Pop() != 0)
       {
         Push(0xe238); Push(0x0001);
-        LoadData("UNK_0xe4df"); // from 'CREATURE    '
+        LoadData(UNK_0xe4df); // from 'CREATURE    '
         _1_dot_5_ex_(); // 1.5!
         Push(0);
         Push(0);
@@ -1606,7 +1609,7 @@ void UNK_0xf278() // UNK_0xf278
     }
   }
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
+  LoadData(UNK_0xe4cf); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1654,7 +1657,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
     Push(pp__ro_PLANET); // (PLANET
     _1_dot_5_at_(); // 1.5@
     _gt_C_plus_S(); // >C+S
-    LoadData("UNK_0xe44f"); // from 'PLANET      '
+    LoadData(UNK_0xe44f); // from 'PLANET      '
     Push(Read16(Pop())); // @
     Push(0x0064);
     _slash_(); // /
@@ -1674,7 +1677,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    LoadData("UNK_0xe467"); // from 'CREATURE    '
+    LoadData(UNK_0xe467); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     Push(0xddb3); Push(0x0001);
@@ -1708,7 +1711,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
 
 void UNK_0xf3c2() // UNK_0xf3c2
 {
-  LoadData("UNK_0xe4d7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4d7); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
@@ -1716,7 +1719,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
     Push(0xe185); Push(0x0001);
     return;
   }
-  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
+  LoadData(UNK_0xe4cf); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   UNK_0xf2d2(); // UNK_0xf2d2
 }
@@ -1728,7 +1731,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
 
 void UNK_0xf3e0() // UNK_0xf3e0
 {
-  LoadData("UNK_0xe4df"); // from 'CREATURE    '
+  LoadData(UNK_0xe4df); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   Push(0xe225); Push(0x0001);
   D_eq_(); // D=
@@ -1751,7 +1754,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
   a = Pop(); // >R
-  LoadData("UNK_0xe47f"); // from 'CREATURE    '
+  LoadData(UNK_0xe47f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xe60b(); // UNK_0xe60b
   Push(pp_ANIMALS); // ANIMALS
@@ -1767,7 +1770,7 @@ void UNK_0xf404() // UNK_0xf404
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
   UNK_0xe51b(); // UNK_0xe51b
-  LoadData("UNK_0xe4df"); // from 'CREATURE    '
+  LoadData(UNK_0xe4df); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1779,7 +1782,7 @@ void UNK_0xf404() // UNK_0xf404
 void UNK_0xf430() // UNK_0xf430
 {
   unsigned short int a, b, c;
-  LoadData("UNK_0xe4cf"); // from 'CREATURE    '
+  LoadData(UNK_0xe4cf); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1801,7 +1804,7 @@ void UNK_0xf430() // UNK_0xf430
       } else
       {
         UNK_0xe3c2(); // UNK_0xe3c2
-        LoadData("UNK_0xe467"); // from 'CREATURE    '
+        LoadData(UNK_0xe467); // from 'CREATURE    '
         _1_dot_5_at_(); // 1.5@
         _n_LEGS(); // #LEGS
         UNK_0xe5fd(); // UNK_0xe5fd
@@ -1815,14 +1818,14 @@ void UNK_0xf430() // UNK_0xf430
     Pop(); Pop(); // 2DROP
     Push(c); // R>
     Push(Read16(regsp)); // DUP
-    LoadData("UNK_0xe4d7"); // from 'CREATURE    '
+    LoadData(UNK_0xe4d7); // from 'CREATURE    '
     C_ex_(); // C!
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
     {
       Push(0);
       Push(0);
-      LoadData("UNK_0xe4cf"); // from 'CREATURE    '
+      LoadData(UNK_0xe4cf); // from 'CREATURE    '
       _1_dot_5_ex_(); // 1.5!
     }
   }
@@ -1839,11 +1842,11 @@ void UNK_0xf430() // UNK_0xf430
 void UNK_0xf494() // UNK_0xf494
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  LoadData("UNK_0xe46f"); // from 'CREATURE    '
+  LoadData(UNK_0xe46f); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
   APPEARANCE(); // APPEARANCE
   UNK_0xe5fd(); // UNK_0xe5fd
-  LoadData("UNK_0xe497"); // from 'CREATURE    '
+  LoadData(UNK_0xe497); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1888,7 +1891,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
   _st_(); // <
   if (Pop() == 0) goto label1;
   UNK_0xf4a6(); // UNK_0xf4a6
-  LoadData("UNK_0xe4f7"); // from 'CREATURE    '
+  LoadData(UNK_0xe4f7); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   Push(pp_RECORD_n_); // RECORD#

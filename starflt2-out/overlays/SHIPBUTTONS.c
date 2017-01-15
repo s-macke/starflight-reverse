@@ -120,6 +120,7 @@ extern const unsigned short int pp_NAV_dash_TIM; // NAV-TIM
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+extern LoadDataType _1BTN; // 1BTN
 void MIN(); // MIN
 void BEEP(); // BEEP
 void MS(); // MS
@@ -221,7 +222,7 @@ const unsigned short int pp_UNK_0xebf6 = 0xebf6; // UNK_0xebf6 size: 2
 // ================================================
 // 0xec0c: WORD 'UNK_0xec0e' codep=0x7394 parp=0xec0e
 // ================================================
-// 0xec0e: db 0x20 0x16 0x01 0x17 0x49 0x6c '    Il'
+LoadDataType UNK_0xec0e = {0x20, 0x16, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xec14: WORD 'UNK_0xec16' codep=0x224c parp=0xec16
@@ -374,7 +375,7 @@ void UNK_0xecec() // UNK_0xecec
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData("1BTN"); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'ANALYZE-TEXT'
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1019,7 +1020,7 @@ void UNK_0xf11e() // UNK_0xf11e
     Push(Read16(Pop())); // @
     Push(2);
     _st_(); // <
-    LoadData("UNK_0xec0e"); // from 'PLANET      '
+    LoadData(UNK_0xec0e); // from 'PLANET      '
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() == 0) Push(1); else Push(0); // NOT

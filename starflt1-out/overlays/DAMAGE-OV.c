@@ -314,22 +314,23 @@ void UNK_0xeaf5() // UNK_0xeaf5
 // ================================================
 // 0xeaff: WORD 'UNK_0xeb01' codep=0x73ea parp=0xeb01
 // ================================================
-// 0xeb01: db 0x19 0x0c 0x04 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xeb01 = {0x19, 0x0c, 0x04, 0x49, 0x6491};
 
 // ================================================
 // 0xeb07: WORD 'UNK_0xeb09' codep=0x73ea parp=0xeb09
 // ================================================
-// 0xeb09: db 0x19 0x05 0x01 0x49 0x91 0x64 0xea 0x73 0x19 0x13 0x01 0x49 0x91 0x64 0xea 0x73 0x19 0x12 0x01 0x49 0x91 0x64 '   I d s   I d s   I d'
+LoadDataType UNK_0xeb09 = {0x19, 0x05, 0x01, 0x49, 0x6491};
+// 0xeb0f: db 0xea 0x73 0x19 0x13 0x01 0x49 0x91 0x64 0xea 0x73 0x19 0x12 0x01 0x49 0x91 0x64 ' s   I d s   I d'
 
 // ================================================
 // 0xeb1f: WORD 'UNK_0xeb21' codep=0x73ea parp=0xeb21
 // ================================================
-// 0xeb21: db 0x19 0x15 0x07 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xeb21 = {0x19, 0x15, 0x07, 0x49, 0x6491};
 
 // ================================================
 // 0xeb27: WORD 'UNK_0xeb29' codep=0x73ea parp=0xeb29
 // ================================================
-// 0xeb29: db 0x19 0x10 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xeb29 = {0x19, 0x10, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xeb2f: WORD 'UNK_0xeb31' codep=0x744d parp=0xeb31
@@ -399,7 +400,7 @@ void UNK_0xeaf5() // UNK_0xeaf5
 // ================================================
 // 0xebb5: WORD 'UNK_0xebb7' codep=0x73ea parp=0xebb7
 // ================================================
-// 0xebb7: db 0x10 0x13 0x01 0x14 0x89 0x64 '     d'
+LoadDataType UNK_0xebb7 = {0x10, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xebbd: WORD 'UNK_0xebbf' codep=0x744d parp=0xebbf
@@ -739,7 +740,7 @@ void UNK_0xed6a() // UNK_0xed6a
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   RRND(); // RRND
-  LoadData("UNK_0xebb7"); // from 'CREWMEMBER  '
+  LoadData(UNK_0xebb7); // from 'CREWMEMBER  '
   Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(0x000a);
@@ -1196,7 +1197,7 @@ void UNK_0xf08a() // UNK_0xf08a
   Push(0);
   Push(0x63fb); // IFIELD(UNK_0xeb31)
   C_ex_(); // C!
-  LoadData("UNK_0xeb21"); // from 'VESSEL      '
+  LoadData(UNK_0xeb21); // from 'VESSEL      '
   Push(pp_UNK_0xf081); // UNK_0xf081
   Push(7);
   CMOVE(); // CMOVE
@@ -1277,7 +1278,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
 
 void UNK_0xf136() // UNK_0xf136
 {
-  LoadData("UNK_0xeb09"); // from 'VESSEL      '
+  LoadData(UNK_0xeb09); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(-Pop()); // NEGATE
@@ -1286,7 +1287,7 @@ void UNK_0xf136() // UNK_0xf136
   Push(0x6401); // IFIELD(UNK_0xeb3b)
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
-  LoadData("UNK_0xeb01"); // from 'VESSEL      '
+  LoadData(UNK_0xeb01); // from 'VESSEL      '
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
   _star__slash_(); // */
@@ -1874,7 +1875,7 @@ void UNK_0xf47f() // UNK_0xf47f
       if (Pop() == 0) Push(1); else Push(0); // NOT
       if (Pop() != 0)
       {
-        LoadData("UNK_0xeb29"); // from 'VESSEL      '
+        LoadData(UNK_0xeb29); // from 'VESSEL      '
         Push(Read8(Pop())&0xFF); // C@
         if (Pop() != 0)
         {

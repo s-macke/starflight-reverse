@@ -122,7 +122,7 @@ const unsigned short int pp_UNK_0xf08c = 0xf08c; // UNK_0xf08c size: 2
 // ================================================
 // 0xf074: WORD 'UNK_0xf076' codep=0x7394 parp=0xf076
 // ================================================
-// 0xf076: db 0x15 0x2a 0x01 0x32 0xd1 0x6a ' * 2 j'
+LoadDataType UNK_0xf076 = {0x15, 0x2a, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xf07c: WORD 'UNK_0xf07e' codep=0x224c parp=0xf07e
@@ -132,7 +132,7 @@ void UNK_0xf07e() // UNK_0xf07e
 {
   Push(pp__ro_TRADER); // (TRADER
   _at__gt_C_plus_S(); // @>C+S
-  LoadData("UNK_0xf076"); // from 'TRADERS     '
+  LoadData(UNK_0xf076); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
 }

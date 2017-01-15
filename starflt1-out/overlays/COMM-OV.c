@@ -332,6 +332,8 @@ extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_CTTOP; // CTTOP
 extern const unsigned short int pp_CTBOT; // CTBOT
+extern LoadDataType _1BTN; // 1BTN
+extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -718,12 +720,12 @@ void UNK_0xd93b() // UNK_0xd93b
 // ================================================
 // 0xd9e6: WORD 'UNK_0xd9e8' codep=0x73ea parp=0xd9e8
 // ================================================
-// 0xd9e8: db 0x19 0x0c 0x04 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xd9e8 = {0x19, 0x0c, 0x04, 0x49, 0x6491};
 
 // ================================================
 // 0xd9ee: WORD 'UNK_0xd9f0' codep=0x73ea parp=0xd9f0
 // ================================================
-// 0xd9f0: db 0x19 0x12 0x03 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xd9f0 = {0x19, 0x12, 0x03, 0x49, 0x6491};
 
 // ================================================
 // 0xd9f6: WORD 'UNK_0xd9f8' codep=0x744d parp=0xd9f8
@@ -733,7 +735,7 @@ void UNK_0xd93b() // UNK_0xd93b
 // ================================================
 // 0xd9fb: WORD 'UNK_0xd9fd' codep=0x73ea parp=0xd9fd
 // ================================================
-// 0xd9fd: db 0x19 0x05 0x01 0x49 0x91 0x64 '   I d'
+LoadDataType UNK_0xd9fd = {0x19, 0x05, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xda03: WORD 'UNK_0xda05' codep=0x1d29 parp=0xda05
@@ -1646,7 +1648,7 @@ void UNK_0xdea9() // UNK_0xdea9
 
 void UNK_0xdebb() // UNK_0xdebb
 {
-  LoadData("1BTN"); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS     '
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   SET_dash_CURRENT(); // SET-CURRENT
@@ -4887,7 +4889,7 @@ void UNK_0xef6d() // UNK_0xef6d
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   _ex__3(); // !_3
-  LoadData("ELEM-VAL"); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   U_star_(); // U*
   SET_dash_CURRENT(); // SET-CURRENT
@@ -5564,7 +5566,7 @@ void IAPWR() // IAPWR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xda37)); // UNK_0xda37
-      LoadData("UNK_0xd9e8"); // from 'VESSEL      '
+      LoadData(UNK_0xd9e8); // from 'VESSEL      '
       Push(Pop()+2); // 2+
       Push(Read16(Pop())); // @
       if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -5573,19 +5575,19 @@ void IAPWR() // IAPWR
       Push(0xda37); // probable 'UNK_0xda37'
       _ex__3(); // !_3
       Push(Read16(cc_UNK_0xda3b)); // UNK_0xda3b
-      LoadData("UNK_0xd9f0"); // from 'VESSEL      '
+      LoadData(UNK_0xd9f0); // from 'VESSEL      '
       _1_dot_5_at_(); // 1.5@
       D0_eq_(); // D0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
       Push(Pop() | Pop()); // OR
       Push(0xda3b); // probable 'UNK_0xda3b'
       _ex__3(); // !_3
-      LoadData("UNK_0xd9fd"); // from 'VESSEL      '
+      LoadData(UNK_0xd9fd); // from 'VESSEL      '
       Push(Read8(Pop())&0xFF); // C@
       Push(0x6401); // IFIELD(UNK_0xd9f8)
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
-      LoadData("UNK_0xd9e8"); // from 'VESSEL      '
+      LoadData(UNK_0xd9e8); // from 'VESSEL      '
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
       _star__slash_(); // */
