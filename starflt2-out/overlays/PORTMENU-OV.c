@@ -1351,7 +1351,7 @@ void UNK_0xf486() // UNK_0xf486
   UNK_0xf0b7(); // UNK_0xf0b7
   UNK_0xf308(); // UNK_0xf308
   UNK_0xefb6(); // UNK_0xefb6
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xeffe(); // UNK_0xeffe
 }
 

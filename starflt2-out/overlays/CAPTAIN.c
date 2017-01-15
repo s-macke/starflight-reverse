@@ -1487,7 +1487,7 @@ void UNK_0xeba3() // UNK_0xeba3
     UNK_0xeae3(); // UNK_0xeae3
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
@@ -1605,7 +1605,7 @@ void UNK_0xed61() // UNK_0xed61
   UNK_0xe44c(); // UNK_0xe44c
   Push(0xccf0); // probable 'TOSS'
   MODULE(); // MODULE
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(0xb6ec); // probable '=CARGO'
   MODULE(); // MODULE
   _dot_SORD(); // .SORD

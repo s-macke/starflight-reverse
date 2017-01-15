@@ -801,7 +801,7 @@ void UNK_0xee99() // UNK_0xee99
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

@@ -920,7 +920,7 @@ void PUT() // PUT
     {
       Push(i); // R>
       Push(imax); // R>
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Exec("BELL"); // call of word 0x266b 'BEEP'
       return;
     }

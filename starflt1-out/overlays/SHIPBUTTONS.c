@@ -417,7 +417,7 @@ void UNK_0xef06() // UNK_0xef06
     _dot_HIGHLI(); // .HIGHLI
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1247,7 +1247,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   V_gt_(); // V>
   V_gt_(); // V>
   Pop(); // DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

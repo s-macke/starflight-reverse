@@ -808,7 +808,7 @@ void UNK_0xf3de() // UNK_0xf3de
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(a); // R>
   Pop(); // DROP

@@ -187,7 +187,7 @@ void UNK_0xea9c() // UNK_0xea9c
     _i_KEY(); // 'KEY
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

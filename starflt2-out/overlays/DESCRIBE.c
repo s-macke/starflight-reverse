@@ -372,7 +372,7 @@ void APAUSE() // APAUSE
     _i_KEY(); // 'KEY
     Push(Read16(regsp)); // DUP
     _ro_XYSCAN(); // (XYSCAN case
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Push(b); // I
@@ -385,7 +385,7 @@ void APAUSE() // APAUSE
   }
   _ex_COLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(b); // R>
   Pop(); // DROP
   Push(pp_ESC_dash_EN); // ESC-EN
@@ -809,7 +809,7 @@ void UNK_0xea33() // UNK_0xea33
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

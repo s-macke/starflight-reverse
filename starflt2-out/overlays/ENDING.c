@@ -760,7 +760,7 @@ void UNK_0xea56() // UNK_0xea56
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push2Words("0.");
     return;
   }

@@ -1348,7 +1348,7 @@ void DO_dash_EYE() // DO-EYE
   do
   {
     XYSCAN(); // XYSCAN
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(pp_FTRIG); // FTRIG
     _099(); // 099
     UNK_0xeee3(); // UNK_0xeee3

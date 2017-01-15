@@ -500,7 +500,7 @@ void UNK_0xe866() // UNK_0xe866
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1110,7 +1110,7 @@ void UNK_0xeca2() // UNK_0xeca2
     return;
   }
   Pop(); // DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push2Words("NULL");
   Push(pp_UNK_0xec9c); // UNK_0xec9c
   D_ex_(); // D!
@@ -2030,7 +2030,7 @@ void UNK_0xf36d() // UNK_0xf36d
         UNK_0xf321(); // UNK_0xf321
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
     } else
     {
@@ -2044,7 +2044,7 @@ void UNK_0xf36d() // UNK_0xf36d
     }
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     Push(0x0015);
     CMESS(); // CMESS

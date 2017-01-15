@@ -519,7 +519,7 @@ void UNK_0xeb5b() // UNK_0xeb5b
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -758,7 +758,7 @@ void UNK_0xecb0() // UNK_0xecb0
     D_dot_R(); // D.R
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push2Words("NULL");
   Push(pp_UNK_0xecaa); // UNK_0xecaa
   D_ex_(); // D!
@@ -1578,7 +1578,7 @@ void UNK_0xf346() // UNK_0xf346
         UNK_0xf2fa(); // UNK_0xf2fa
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
     } else
     {
@@ -1592,7 +1592,7 @@ void UNK_0xf346() // UNK_0xf346
     }
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     Push(0x0015);
     CMESS(); // CMESS

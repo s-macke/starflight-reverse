@@ -791,8 +791,8 @@ void UNK_0xf28e() // UNK_0xf28e
     ICLOSE(); // ICLOSE
     return;
   }
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
   Pop(); // DROP
 }
 
@@ -832,7 +832,7 @@ void BOX_gt_LIST() // BOX>LIST
     CI(); // CI
     D_eq_(); // D=
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1067,7 +1067,7 @@ void _gt_BOX() // >BOX
     }
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI(); // CI
     IINSERT(); // IINSERT
   }

@@ -1549,7 +1549,7 @@ void UNK_0xee17() // UNK_0xee17
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2081,7 +2081,7 @@ void UNK_0xf2c4() // UNK_0xf2c4
       MODULE(); // MODULE
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     Push(0x65fb); // IFIELD(UNK_0xe68e)
     Push(pp_OCRS); // OCRS

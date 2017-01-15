@@ -1317,7 +1317,7 @@ void UNK_0xee3f() // UNK_0xee3f
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1826,7 +1826,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
       MODULE(); // MODULE
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     Push(0x6409); // IFIELD(UNK_0xe685)
     Push(pp_OCRS); // OCRS

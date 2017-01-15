@@ -593,7 +593,7 @@ void GETSITE_1() // GETSITE_1
       UNK_0xf233(); // UNK_0xf233
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     _ask_TRIG(); // ?TRIG
   } while(Pop() == 0);

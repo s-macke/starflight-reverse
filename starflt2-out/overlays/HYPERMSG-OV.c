@@ -2128,7 +2128,7 @@ void UNK_0xf18e() // UNK_0xf18e
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xf0e6(); // UNK_0xf0e6
 }
 

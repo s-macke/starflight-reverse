@@ -880,7 +880,7 @@ void UNK_0xea40() // UNK_0xea40
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1208,11 +1208,11 @@ void UNK_0xecb4() // UNK_0xecb4
       MS(); // MS
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(a); // R>
   Pop(); // DROP
@@ -1272,7 +1272,7 @@ void UNK_0xed30() // UNK_0xed30
   goto label2;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(a); // R>
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
@@ -1336,7 +1336,7 @@ void UNK_0xedd0() // UNK_0xedd0
   } while(i<imax); // (LOOP)
 
   BEEPOFF(); // BEEPOFF
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xec28); // UNK_0xec28
@@ -1655,7 +1655,7 @@ void UNK_0xefe9() // UNK_0xefe9
       BEEPOFF(); // BEEPOFF
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     return;
   }
@@ -2268,7 +2268,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
     ICLOSE(); // ICLOSE
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_at_(); // 1.5@

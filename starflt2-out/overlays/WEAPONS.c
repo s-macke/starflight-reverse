@@ -1185,7 +1185,7 @@ void UNK_0xf172() // UNK_0xf172
           _plus__ex__2(); // +!_2
         } else
         {
-          Pop(); Pop();// 2DROP
+          Pop(); Pop(); // 2DROP
         }
         UNK_0xef54(); // UNK_0xef54
         UNK_0xedf7(); // UNK_0xedf7
@@ -1332,7 +1332,7 @@ void UNK_0xf26c() // UNK_0xf26c
     ICLOSE(); // ICLOSE
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
   }
   CDROP(); // CDROP
@@ -1456,7 +1456,7 @@ void UNK_0xf306() // UNK_0xf306
   } while(i<imax); // (LOOP)
 
   UNK_0xecb3(); // UNK_0xecb3
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

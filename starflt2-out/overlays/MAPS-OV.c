@@ -691,8 +691,8 @@ void UNK_0xeff3() // UNK_0xeff3
       }
       Push(d); // R>
       Push(b); // R>
-      Pop(); Pop();// 2DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
+      Pop(); Pop(); // 2DROP
       j++;
     } while(j<jmax); // (LOOP)
 

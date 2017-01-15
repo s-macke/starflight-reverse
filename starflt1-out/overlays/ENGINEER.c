@@ -869,7 +869,7 @@ void UNK_0xf231() // UNK_0xf231
   WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     return;
   }

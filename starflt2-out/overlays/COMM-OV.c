@@ -2079,7 +2079,7 @@ void UNK_0xdfbd() // UNK_0xdfbd
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   PAD(); // PAD
   COUNT(); // COUNT
   _dash_TRAILING(); // -TRAILING
@@ -2221,7 +2221,7 @@ void UNK_0xe081() // UNK_0xe081
   Push(pp_CTCOLOR); // CTCOLOR
   Push(Read16(Pop())); // @
   _ex_COLOR(); // !COLOR
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_ESC_dash_EN); // ESC-EN
   ON_2(); // ON_2
 }
@@ -2600,7 +2600,7 @@ void UNK_0xe2e3() // UNK_0xe2e3
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       UNK_0xe2c3(); // UNK_0xe2c3
       Push2Words("NULL");
     }
@@ -2854,7 +2854,7 @@ void _ro_PHRASE_gt_CT_rc_() // (PHRASE>CT)
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

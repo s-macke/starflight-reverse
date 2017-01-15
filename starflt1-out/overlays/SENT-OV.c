@@ -775,7 +775,7 @@ void UNK_0xe94b() // UNK_0xe94b
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -1135,7 +1135,7 @@ void UNK_0xebdb() // UNK_0xebdb
   UNK_0xea3d(); // UNK_0xea3d
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     U_gt__do_(); // U>$
     UNK_0xe8c7(); // UNK_0xe8c7
   } else
@@ -1157,7 +1157,7 @@ void UNK_0xebdb() // UNK_0xebdb
         ICLOSE(); // ICLOSE
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
     } else
     {
@@ -1234,7 +1234,7 @@ void UNK_0xec79() // UNK_0xec79
   if (Pop() != 0)
   {
     UNK_0xec3b(); // UNK_0xec3b
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xe2e6(); // UNK_0xe2e6
     a = Pop(); // >R
     b = Pop(); // >R
@@ -1245,8 +1245,8 @@ void UNK_0xec79() // UNK_0xec79
     UNK_0xe2f2(); // UNK_0xe2f2
     return;
   }
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1299,7 +1299,7 @@ void UNK_0xecc5() // UNK_0xecc5
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
   }
   Push2Words("UNK_0xe6bf");
@@ -1361,7 +1361,7 @@ void UNK_0xed2b() // UNK_0xed2b
     return;
   }
   Pop(); // DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1584,7 +1584,7 @@ void UNK_0xeecb() // UNK_0xeecb
     _2OVER(); // 2OVER
     UNK_0xeb6f(); // UNK_0xeb6f
     a = Pop(); // >R
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(a); // R>
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
@@ -1738,10 +1738,10 @@ void UNK_0xefec() // UNK_0xefec
     h = Pop(); // >R
     i = Pop(); // >R
     j = Pop(); // >R
-    Pop(); Pop();// 2DROP
-    Pop(); Pop();// 2DROP
-    Pop(); Pop();// 2DROP
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
+    Pop(); Pop(); // 2DROP
+    Pop(); Pop(); // 2DROP
+    Pop(); Pop(); // 2DROP
     Pop(); // DROP
     Push(j); // R>
     Push(i); // R>

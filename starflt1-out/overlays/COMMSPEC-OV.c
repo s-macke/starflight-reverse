@@ -571,7 +571,7 @@ void UNK_0xebe6() // UNK_0xebe6
     ICLOSE(); // ICLOSE
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
   }
   CDROP(); // CDROP
@@ -1660,7 +1660,7 @@ void UNK_0xf312() // UNK_0xf312
       if (Pop() != 0)
       {
         UNK_0xf24e(); // UNK_0xf24e
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
         UNK_0xf25a(); // UNK_0xf25a
         UNK_0xf2aa(); // UNK_0xf2aa
         Push(pp_LSCAN); // LSCAN

@@ -1346,7 +1346,7 @@ void _do_setup() // $setup
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     LoadData("SHAPE"); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
   }
@@ -1676,7 +1676,7 @@ void UNK_0xe75b() // UNK_0xe75b
       _gt_INACTIVE(); // >INACTIVE
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       ICLOSE(); // ICLOSE
     }
     Push(a); // R>
@@ -2023,7 +2023,7 @@ void UNK_0xea6c() // UNK_0xea6c
 {
   tvextract(); // tvextract
   _dash_ICON(); // -ICON
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2061,7 +2061,7 @@ void UNK_0xea76() // UNK_0xea76
   _at_INST_dash_CLASS(); // @INST-CLASS
   _at_INST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   CI(); // CI
   IINSERT(); // IINSERT
   ICLOSE(); // ICLOSE
@@ -3102,7 +3102,7 @@ void UNK_0xf028() // UNK_0xf028
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(-1);
     UNK_0xef32(); // UNK_0xef32
   } else
@@ -3113,7 +3113,7 @@ void UNK_0xf028() // UNK_0xf028
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(1);
       UNK_0xef32(); // UNK_0xef32
     } else
@@ -3463,7 +3463,7 @@ void UNK_0xf252() // UNK_0xf252
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI_i_(); // CI'
   }
   INEXT(); // INEXT
@@ -3475,7 +3475,7 @@ void UNK_0xf252() // UNK_0xf252
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI_i_(); // CI'
   }
 
@@ -3517,7 +3517,7 @@ void UNK_0xf29c() // UNK_0xf29c
       {
         _2SWAP(); // 2SWAP
       }
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     INEXT(); // INEXT
   } while(1);
@@ -3539,7 +3539,7 @@ void UNK_0xf2ee() // UNK_0xf2ee
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(pp__ro_PLANET); // (PLANET
     _at__gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN

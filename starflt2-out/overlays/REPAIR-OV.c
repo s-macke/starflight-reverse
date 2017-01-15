@@ -991,7 +991,7 @@ void UNK_0xf3b1() // UNK_0xf3b1
   _plus__ex__2(); // +!_2
   ICLOSE(); // ICLOSE
   _ro_BOX_gt__rc_(); // (BOX>)
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   CDROP(); // CDROP
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE

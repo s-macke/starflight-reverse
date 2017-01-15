@@ -323,7 +323,7 @@ void UNK_0xe5ec() // UNK_0xe5ec
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -874,7 +874,7 @@ void UNK_0xea2e() // UNK_0xea2e
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xe9c0(); // UNK_0xe9c0
 }
 
@@ -944,14 +944,14 @@ void UNK_0xea6c() // UNK_0xea6c
       _2OVER(); // 2OVER
       D_gt_(); // D>
       XYSCAN(); // XYSCAN
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       _ask_TRIG(); // ?TRIG
       Push(Pop() | Pop()); // OR
       Push(pp_FQUIT); // FQUIT
       Push(Read16(Pop())); // @
       Push(Pop() | Pop()); // OR
     } while(Pop() == 0);
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_QUIT(); // ?QUIT
     if (Pop() != 0)
     {
@@ -1115,7 +1115,7 @@ void UNK_0xeb80() // UNK_0xeb80
     do
     {
       XYSCAN(); // XYSCAN
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(pp_LKEY); // LKEY
       Push(Read16(Pop())); // @
       _ro_NOTICES_rc_(); // (NOTICES) case
@@ -1291,7 +1291,7 @@ void UNK_0xedc8() // UNK_0xedc8
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2007,7 +2007,7 @@ void UNK_0xf44e() // UNK_0xf44e
     do
     {
       XYSCAN(); // XYSCAN
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       _ask_TRIG(); // ?TRIG
       _ask_LAST(); // ?LAST
       Push(Pop() | Pop()); // OR

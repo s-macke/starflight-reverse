@@ -706,7 +706,7 @@ void UNK_0xe606() // UNK_0xe606
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1716,7 +1716,7 @@ void UNK_0xecfc() // UNK_0xecfc
   do
   {
     XYSCAN(); // XYSCAN
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_QUIT(); // ?QUIT
   } while(Pop() == 0);
 }
@@ -1811,7 +1811,7 @@ void UNK_0xedb9() // UNK_0xedb9
         UNK_0xe2e0(); // UNK_0xe2e0
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
       _at_CRS(); // @CRS
       UNK_0xed89(); // UNK_0xed89
@@ -2699,7 +2699,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
     _plus__ex_(); // +!
     Push(pp_UNK_0xe4b4); // UNK_0xe4b4
     SET_dash_CRS(); // SET-CRS
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_TRIG(); // ?TRIG
     if (Pop() != 0)
     {

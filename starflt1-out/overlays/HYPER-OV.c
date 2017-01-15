@@ -2225,7 +2225,7 @@ void UNK_0xe375() // UNK_0xe375
     LPLOT(); // LPLOT
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2343,7 +2343,7 @@ void UNK_0xe4ba() // UNK_0xe4ba
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Pop(); // DROP
   Push(0);
 }
@@ -2390,7 +2390,7 @@ void UNK_0xe4fa() // UNK_0xe4fa
     _ex_VISWINDOW(); // !VISWINDOW
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   UNK_0xdafa(); // UNK_0xdafa
   if (Pop() != 0)
@@ -2561,7 +2561,7 @@ void UNK_0xe5ee() // UNK_0xe5ee
     Push(Pop() + Pop()); // +
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_HEADING); // HEADING
   Push(Read16(Pop())); // @
 }
@@ -3214,7 +3214,7 @@ void UNK_0xea5a() // UNK_0xea5a
     NEST(); // NEST
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -3368,7 +3368,7 @@ void COLLIDE() // COLLIDE
     UNK_0xea5a(); // UNK_0xea5a
     break;
   default:
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     break;
 
   }

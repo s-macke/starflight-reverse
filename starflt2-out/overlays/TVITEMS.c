@@ -2029,7 +2029,7 @@ void UNK_0xf018() // UNK_0xf018
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(-1);
     UNK_0xef22(); // UNK_0xef22
   } else
@@ -2040,7 +2040,7 @@ void UNK_0xf018() // UNK_0xf018
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(1);
       UNK_0xef22(); // UNK_0xef22
     } else
@@ -2401,7 +2401,7 @@ void UNK_0xf258() // UNK_0xf258
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI_i_(); // CI'
   }
   INEXT(); // INEXT
@@ -2413,7 +2413,7 @@ void UNK_0xf258() // UNK_0xf258
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI_i_(); // CI'
   }
 
@@ -2455,7 +2455,7 @@ void UNK_0xf2a2() // UNK_0xf2a2
       {
         _2SWAP(); // 2SWAP
       }
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     INEXT(); // INEXT
   } while(1);
@@ -2477,7 +2477,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(pp__ro_PLANET); // (PLANET
     _at__gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN

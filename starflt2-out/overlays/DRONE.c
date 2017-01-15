@@ -406,7 +406,7 @@ void UNK_0xeca2() // UNK_0xeca2
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -443,7 +443,7 @@ void UNK_0xecf1() // UNK_0xecf1
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1962,7 +1962,7 @@ void RECALL() // RECALL
     Push(pp_ETIME); // ETIME
     _099(); // 099
     Func12("'F2");
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(pp_NOF); // NOF
   _099(); // 099

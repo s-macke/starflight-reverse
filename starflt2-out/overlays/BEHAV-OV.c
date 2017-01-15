@@ -766,7 +766,7 @@ void UNK_0xe6cc() // UNK_0xe6cc
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     Push(0);
     return;
@@ -1068,7 +1068,7 @@ void UNK_0xe893() // UNK_0xe893
     _ex__2(); // !_2
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   UNK_0xe70a(); // UNK_0xe70a
 }
@@ -2220,7 +2220,7 @@ void UNK_0xef4c() // UNK_0xef4c
       Push((Pop()==Pop())?1:0); // =
       if (Pop() != 0)
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
         Push(0);
       } else
       {
@@ -2569,7 +2569,7 @@ void UNK_0xf19a() // UNK_0xf19a
       Push((Pop()==Pop())?1:0); // =
       if (Pop() != 0)
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
         Push(0);
       } else
       {
@@ -2615,7 +2615,7 @@ void TV_dash_KEY() // TV-KEY
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(1);
     UNK_0xf079(); // UNK_0xf079
   } else
@@ -2626,7 +2626,7 @@ void TV_dash_KEY() // TV-KEY
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(-1);
       UNK_0xf079(); // UNK_0xf079
     } else
@@ -2781,7 +2781,7 @@ void UNK_0xf312() // UNK_0xf312
     if (Pop() != 0)
     {
       a = Pop(); // >R
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       CI(); // CI
       Push(a); // R>
       imax = i; // LEAVE
@@ -2874,11 +2874,11 @@ void GNUNK_dash_CHEC() // GNUNK-CHEC
       UNK_0xf354(); // UNK_0xf354
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

@@ -446,7 +446,7 @@ void UNK_0xee04() // UNK_0xee04
       UNK_0xedee(); // UNK_0xedee
     } while(Pop() == 0);
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   PRINT(" TIMES THE SIZE OF OUR SHIP.", 28); // (.")
 }
 

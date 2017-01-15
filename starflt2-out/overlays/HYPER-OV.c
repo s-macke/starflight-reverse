@@ -2251,7 +2251,7 @@ void UNK_0xe327() // UNK_0xe327
     LPLOT(); // LPLOT
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2370,7 +2370,7 @@ void UNK_0xe466() // UNK_0xe466
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Pop(); // DROP
   Push(0);
 }
@@ -2423,7 +2423,7 @@ void UNK_0xe4a6() // UNK_0xe4a6
     _ex_VISWIN(); // !VISWIN
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   UNK_0xdb1c(); // UNK_0xdb1c
   if (Pop() != 0)
@@ -2594,7 +2594,7 @@ void UNK_0xe5a4() // UNK_0xe5a4
     Push(Pop() + Pop()); // +
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_HEADING); // HEADING
   Push(Read16(Pop())); // @
 }
@@ -3390,7 +3390,7 @@ void UNK_0xeab8() // UNK_0xeab8
     NEST(); // NEST
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -3536,7 +3536,7 @@ void UNK_0xeb7b() // UNK_0xeb7b
 
 void UNK_0xeba7() // UNK_0xeba7
 {
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(0xc78f); // probable 'AI'
   MODULE(); // MODULE
 }
@@ -3569,7 +3569,7 @@ void COLLIDE() // COLLIDE
     UNK_0xeba7(); // UNK_0xeba7
     break;
   default:
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     break;
 
   }

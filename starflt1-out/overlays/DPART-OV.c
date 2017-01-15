@@ -267,7 +267,7 @@ void UNK_0xf026() // UNK_0xf026
     _i_KEY(); // 'KEY
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -702,7 +702,7 @@ void UNK_0xf30b() // UNK_0xf30b
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

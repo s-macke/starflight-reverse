@@ -963,7 +963,7 @@ void UNK_0xe766() // UNK_0xe766
     ON_2(); // ON_2
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   UNK_0xe549(); // UNK_0xe549
 }
@@ -1906,7 +1906,7 @@ void UNK_0xede9() // UNK_0xede9
     LXPLOT(); // LXPLOT
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(pp_XORMODE); // XORMODE
   _099(); // 099

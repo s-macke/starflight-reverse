@@ -554,7 +554,7 @@ void INITMUS() // INITMUS
     _ro__ex_SET_rc_(); // (!SET)
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   SAVE_dash_OV(); // SAVE-OV
 }
@@ -579,7 +579,7 @@ void HIMUS() // HIMUS
     LCMOVE(); // LCMOVE
     INITMUS(); // INITMUS
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1142,7 +1142,7 @@ void UNK_0xf358() // UNK_0xf358
   _dash_(); // -
   _at_DS(); // @DS
   SETBLOC(); // SETBLOC
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xf30c(); // UNK_0xf30c
 }
 
@@ -1227,7 +1227,7 @@ void UNK_0xf3f2() // UNK_0xf3f2
     _i_KEY(); // 'KEY
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

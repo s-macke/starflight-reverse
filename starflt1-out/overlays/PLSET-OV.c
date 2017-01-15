@@ -402,7 +402,7 @@ void UNK_0xed2e() // UNK_0xed2e
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xecf8(); // UNK_0xecf8
     Push(0);
     ICLOSE(); // ICLOSE
@@ -439,7 +439,7 @@ void UNK_0xed2e() // UNK_0xed2e
 
     Pop(); // DROP
     a = Pop(); // >R
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(a); // R>
     ICLOSE(); // ICLOSE
     return;
@@ -549,7 +549,7 @@ void UNK_0xee28() // UNK_0xee28
 
   label1:
   a = Pop(); // >R
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(a); // R>
 }
 

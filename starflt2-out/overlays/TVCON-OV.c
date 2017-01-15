@@ -244,7 +244,7 @@ void UNK_0xee1a() // UNK_0xee1a
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     Push(0);
     return;
@@ -776,7 +776,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTH", 5); // (.")
     return;
   }
@@ -786,7 +786,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHEAST", 9); // (.")
     return;
   }
@@ -796,7 +796,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("EAST", 4); // (.")
     return;
   }
@@ -806,7 +806,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHEAST", 9); // (.")
     return;
   }
@@ -816,7 +816,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTH", 5); // (.")
     return;
   }
@@ -826,7 +826,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHWEST", 9); // (.")
     return;
   }
@@ -836,7 +836,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("WEST", 4); // (.")
     return;
   }
@@ -846,7 +846,7 @@ void UNK_0xf1e8() // UNK_0xf1e8
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHWEST", 9); // (.")
     return;
   }
@@ -930,7 +930,7 @@ void UNK_0xf32c() // UNK_0xf32c
   ICLOSE(); // ICLOSE
   UNK_0xee1a(); // UNK_0xee1a
   _2SWAP(); // 2SWAP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xf1e8(); // UNK_0xf1e8
 }
 

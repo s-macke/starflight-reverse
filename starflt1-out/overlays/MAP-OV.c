@@ -682,7 +682,7 @@ void UNK_0xe85c() // UNK_0xe85c
     ON_3(); // ON_3
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

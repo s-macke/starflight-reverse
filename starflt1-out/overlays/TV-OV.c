@@ -1065,7 +1065,7 @@ void UNK_0xed12() // UNK_0xed12
   goto label4;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
 }
@@ -1752,7 +1752,7 @@ void UNK_0xf1fc() // UNK_0xf1fc
       BLT(); // BLT
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     _ask_TRIG(); // ?TRIG
   } while(Pop() == 0);
@@ -2071,7 +2071,7 @@ void DO_dot_WEAPON() // DO.WEAPON
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(-1);
       UNK_0xf44d(); // UNK_0xf44d
     } else
@@ -2082,7 +2082,7 @@ void DO_dot_WEAPON() // DO.WEAPON
       D_eq_(); // D=
       if (Pop() != 0)
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
         Push(1);
         UNK_0xf44d(); // UNK_0xf44d
       } else

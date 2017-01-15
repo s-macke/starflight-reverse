@@ -897,7 +897,7 @@ void UNK_0xf444() // UNK_0xf444
     Push(0x7d51); // probable '?CLASS/'
     Push(0xf430);
     EACH(); // EACH
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(2);
   _star_CLOSE(); // *CLOSE

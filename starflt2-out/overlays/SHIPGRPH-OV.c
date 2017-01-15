@@ -561,7 +561,7 @@ void UNK_0xf034() // UNK_0xf034
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

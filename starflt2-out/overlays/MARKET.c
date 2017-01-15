@@ -310,7 +310,7 @@ void UNK_0xe826() // UNK_0xe826
   Pop(); // DROP
   Push(b); // R>
   Push(a); // R>
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1804,7 +1804,7 @@ void UNK_0xf078() // UNK_0xf078
   goto label4;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   _ask_QUIT(); // ?QUIT
   if (Pop() != 0)
   {
@@ -2182,7 +2182,7 @@ void UNK_0xf2a4() // UNK_0xf2a4
   goto label2;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

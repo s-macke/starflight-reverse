@@ -664,7 +664,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
     _ro__ex_SET_rc_(); // (!SET)
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1341,7 +1341,7 @@ void UNK_0xe61d() // UNK_0xe61d
     _ex__3(); // !_3
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1474,7 +1474,7 @@ void _ask__dash_writeable() // ?-writeable
   _ex__3(); // !_3
   READ_dash_RANDOM(); // READ-RANDOM
   WRITE_dash_RANDOM(); // WRITE-RANDOM
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   INIT(); // INIT
   Push(pp_DERROR); // DERROR
   Push(Read16(Pop())); // @
@@ -2109,7 +2109,7 @@ void _v_DISK() // |DISK
       UMIN(); // UMIN
       CHECKSUM(); // CHECKSUM
       Pop(); // DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(0x0400);
       _dash_(); // -
       i++;
@@ -2123,8 +2123,8 @@ void _v_DISK() // |DISK
   }
   Push(a); // R>
   Pop(); // DROP
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

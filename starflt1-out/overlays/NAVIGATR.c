@@ -334,7 +334,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
     }
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH WEAPONS");
   _dot_TTY(); // .TTY
 }

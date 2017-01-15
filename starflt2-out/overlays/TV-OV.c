@@ -1345,7 +1345,7 @@ void UNK_0xeda8() // UNK_0xeda8
   goto label4;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(2);
   _star_CLOSE(); // *CLOSE
   SAVE_dash_OV(); // SAVE-OV
@@ -1970,7 +1970,7 @@ void UNK_0xf233() // UNK_0xf233
       BLT(); // BLT
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     _ask_TRIG(); // ?TRIG
   } while(Pop() == 0);

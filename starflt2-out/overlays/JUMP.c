@@ -277,7 +277,7 @@ void UNK_0xed5e() // UNK_0xed5e
   Pop(); // DROP
   Push(b); // R>
   Push(a); // R>
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1123,12 +1123,12 @@ void UNK_0xf222() // UNK_0xf222
   Push(a); // R>
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) goto label1;
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   goto label2;
 
   label1:
   _2SWAP(); // 2SWAP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

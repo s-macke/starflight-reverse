@@ -664,7 +664,7 @@ void UNK_0xe920() // UNK_0xe920
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2288,7 +2288,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
     _plus__ex__2(); // +!_2
     Push(pp_UNK_0xe7d2); // UNK_0xe7d2
     SET_dash_CRS(); // SET-CRS
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_TRIG(); // ?TRIG
     if (Pop() != 0)
     {

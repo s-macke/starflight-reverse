@@ -290,7 +290,7 @@ void UNK_0xe494() // UNK_0xe494
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -807,7 +807,7 @@ void UNK_0xe8d4() // UNK_0xe8d4
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xe866(); // UNK_0xe866
 }
 
@@ -877,14 +877,14 @@ void UNK_0xe912() // UNK_0xe912
       _2OVER(); // 2OVER
       D_gt_(); // D>
       XYSCAN(); // XYSCAN
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       _ask_TRIG(); // ?TRIG
       Push(Pop() | Pop()); // OR
       Push(pp_FQUIT); // FQUIT
       Push(Read16(Pop())); // @
       Push(Pop() | Pop()); // OR
     } while(Pop() == 0);
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_QUIT(); // ?QUIT
     if (Pop() != 0)
     {
@@ -1185,7 +1185,7 @@ void UNK_0xec30() // UNK_0xec30
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1624,7 +1624,7 @@ void UNK_0xf450() // UNK_0xf450
     do
     {
       XYSCAN(); // XYSCAN
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       _ask_TRIG(); // ?TRIG
       Push(pp_FQUIT); // FQUIT
       Push(Read16(Pop())); // @

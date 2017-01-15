@@ -1601,7 +1601,7 @@ void UNK_0xe652() // UNK_0xe652
     _ex__2(); // !_2
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1792,7 +1792,7 @@ void UNK_0xe88d() // UNK_0xe88d
   _ex__2(); // !_2
   READ_dash_RA(); // READ-RA
   WRITE_dash_R(); // WRITE-R
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   INIT(); // INIT
   Push(pp_DERROR); // DERROR
   Push(Read16(Pop())); // @
@@ -2382,7 +2382,7 @@ void UNK_0xec7a() // UNK_0xec7a
       UMIN(); // UMIN
       UNK_0xea3f(); // UNK_0xea3f
       Pop(); // DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(0x0400);
       _dash_(); // -
       i++;
@@ -2396,8 +2396,8 @@ void UNK_0xec7a() // UNK_0xec7a
   }
   Push(a); // R>
   Pop(); // DROP
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

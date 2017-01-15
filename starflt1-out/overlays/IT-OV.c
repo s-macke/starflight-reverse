@@ -359,7 +359,7 @@ void UNK_0xef61() // UNK_0xef61
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     LoadData("SHAPE"); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
   }
@@ -690,8 +690,8 @@ void UNK_0xf157() // UNK_0xf157
     ICLOSE(); // ICLOSE
     return;
   }
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
   Pop(); // DROP
 }
 
@@ -734,7 +734,7 @@ void BOX_gt_LIST() // BOX>LIST
     CI(); // CI
     D_eq_(); // D=
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -945,7 +945,7 @@ void _gt_BOX() // >BOX
     }
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     CI(); // CI
     IINSERT(); // IINSERT
   }

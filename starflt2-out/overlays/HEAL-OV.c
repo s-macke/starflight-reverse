@@ -287,7 +287,7 @@ void UNK_0xf115() // UNK_0xf115
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -418,7 +418,7 @@ void UNK_0xf212() // UNK_0xf212
       Push((Pop()==Pop())?1:0); // =
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(1);
     }
     ROT(); // ROT
@@ -428,7 +428,7 @@ void UNK_0xf212() // UNK_0xf212
   } while(i<imax); // (LOOP)
 
   Push(a); // R>
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -552,7 +552,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
       ICLOSE(); // ICLOSE
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     i++;
   } while(i<imax); // (LOOP)
@@ -788,7 +788,7 @@ void UNK_0xf429() // UNK_0xf429
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   ICLOSE(); // ICLOSE
 }
 

@@ -739,7 +739,7 @@ void UNK_0xf190() // UNK_0xf190
     if (Pop() != 0)
     {
       a = Pop(); // >R
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       CI(); // CI
       Push(a); // R>
       imax = i; // LEAVE

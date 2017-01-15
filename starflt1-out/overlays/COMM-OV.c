@@ -1834,7 +1834,7 @@ void UNK_0xe068() // UNK_0xe068
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   PAD(); // PAD
   COUNT(); // COUNT
 }
@@ -2129,7 +2129,7 @@ void UNK_0xe1f0() // UNK_0xe1f0
   Push(pp_CTCOLOR); // CTCOLOR
   Push(Read16(Pop())); // @
   _ex_COLOR(); // !COLOR
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(a); // R>
   Pop(); // DROP
 }
@@ -2333,7 +2333,7 @@ void UNK_0xe34b() // UNK_0xe34b
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xe329(); // UNK_0xe329
     Push2Words("NULL");
   }
@@ -2536,7 +2536,7 @@ void _ro_PHRASE_gt_CT_rc_() // (PHRASE>CT)
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -4843,14 +4843,14 @@ void UNK_0xef2d() // UNK_0xef2d
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(pp__ro_ENCOUNTER); // (ENCOUNTER
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     D0_eq_(); // D0=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push2Words("*SHIP");
     }
   }

@@ -272,7 +272,7 @@ void UNK_0xe121() // UNK_0xe121
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push2Words("0.");
       Push(i); // I
       imax = i; // LEAVE
@@ -699,7 +699,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -802,7 +802,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -827,7 +827,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0);
     Push(0);
     return;
@@ -1036,7 +1036,7 @@ void UNK_0xec95() // UNK_0xec95
       UNK_0xe121(); // UNK_0xe121
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(0);
     }
   } else
@@ -1135,7 +1135,7 @@ void UNK_0xed63() // UNK_0xed63
   unsigned short int a;
   UNK_0xeb97(); // UNK_0xeb97
   a = Pop(); // >R
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(a); // R>
   if (Pop() != 0)
   {
@@ -1165,12 +1165,12 @@ void UNK_0xed63() // UNK_0xed63
         IFLD_ex_(); // IFLD!
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
     }
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1383,7 +1383,7 @@ void UNK_0xef31() // UNK_0xef31
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xedef(); // UNK_0xedef
   } else
   {

@@ -526,7 +526,7 @@ void _dot_SIZE() // .SIZE
       UNK_0xed5c(); // UNK_0xed5c
     } while(Pop() == 0);
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   PRINT(" TIMES THE SIZE OF OUR SHIP.", 28); // (.")
 }
 

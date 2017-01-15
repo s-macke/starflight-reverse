@@ -554,7 +554,7 @@ void UNK_0xdebc() // UNK_0xdebc
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1286,7 +1286,7 @@ void UNK_0xe394() // UNK_0xe394
     Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2350,7 +2350,7 @@ void UNK_0xea14() // UNK_0xea14
     _i_KEY(); // 'KEY
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2493,7 +2493,7 @@ void UNK_0xeb14() // UNK_0xeb14
     UNK_0xe970(); // UNK_0xe970
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   Push(0xbd4a); // probable '=CARGO'
   MODULE(); // MODULE

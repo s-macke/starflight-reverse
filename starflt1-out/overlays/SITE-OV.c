@@ -1029,7 +1029,7 @@ void GETSITE_1() // GETSITE_1
       _dot_LON(); // .LON
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
     }
     _ask_TRIG(); // ?TRIG
   } while(Pop() == 0);

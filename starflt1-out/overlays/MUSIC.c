@@ -403,7 +403,7 @@ void INITMUS() // INITMUS
     _ro__ex_SET_rc_(); // (!SET)
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -516,7 +516,7 @@ void UNK_0xe680() // UNK_0xe680
     _i_KEY(); // 'KEY
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -720,8 +720,8 @@ void BRMOVE() // BRMOVE
 
   DISPLAY(); // DISPLAY
   SCR_dash_RES(); // SCR-RES
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
@@ -780,7 +780,7 @@ void UNK_0xe7cd() // UNK_0xe7cd
     Push(Read16(Pop())); // @
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -801,7 +801,7 @@ void UNK_0xe813() // UNK_0xe813
     Push(i); // I
     UNK_0xe700(); // UNK_0xe700
     BLOCK_2(); // BLOCK_2
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     i++;
   } while(i<imax); // (LOOP)
 

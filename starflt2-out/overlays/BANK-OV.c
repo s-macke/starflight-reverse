@@ -370,7 +370,7 @@ void INT_pe_() // INT%
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     return;
   }
   D_at_BALANCE(); // D@BALANCE
@@ -842,7 +842,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   do
   {
     XYSCAN(); // XYSCAN
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _ask_TRIG(); // ?TRIG
   } while(Pop() == 0);
   Push(5);

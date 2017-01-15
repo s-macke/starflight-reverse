@@ -662,7 +662,7 @@ void UNK_0xe53d() // UNK_0xe53d
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -792,7 +792,7 @@ void UNK_0xe70e() // UNK_0xe70e
   } while(Pop() == 0);
   a = Pop(); // >R
   b = Pop(); // >R
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(b); // R>
   Push(a); // R>
 }
@@ -877,10 +877,10 @@ void UNK_0xe762() // UNK_0xe762
 
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
   Push(1);
   Push(pp_RECORD_n_); // RECORD#
   _plus__ex_(); // +!
@@ -1272,7 +1272,7 @@ void UNK_0xf02b() // UNK_0xf02b
   }
   LoadData("UNK_0xe4b7"); // from 'CREATURE    '
   C_ex_(); // C!
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1622,7 +1622,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0xe15c); Push(0x0001);
     return;
   }
@@ -1631,7 +1631,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0xe11d); Push(0x0001);
     return;
   }
@@ -1640,7 +1640,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0xe130); Push(0x0001);
     return;
   }
@@ -1649,7 +1649,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xe3c2(); // UNK_0xe3c2
     Push(pp__ro_PLANET); // (PLANET
     _1_dot_5_at_(); // 1.5@
@@ -1673,7 +1673,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     LoadData("UNK_0xe467"); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
@@ -1681,7 +1681,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(0xe171); Push(0x0001);
     } else
     {
@@ -1812,7 +1812,7 @@ void UNK_0xf430() // UNK_0xf430
       Push(0x00ff);
     }
     c = Pop(); // >R
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(c); // R>
     Push(Read16(regsp)); // DUP
     LoadData("UNK_0xe4d7"); // from 'CREATURE    '
@@ -1828,7 +1828,7 @@ void UNK_0xf430() // UNK_0xf430
   }
   Push(b); // R>
   Push(a); // R>
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 

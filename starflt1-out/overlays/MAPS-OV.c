@@ -414,7 +414,7 @@ void UNK_0xee28() // UNK_0xee28
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   } while(Pop() == 0);
   _ro_XYSCAN(); // (XYSCAN case
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -750,8 +750,8 @@ void UNK_0xf007() // UNK_0xf007
       }
       Push(d); // R>
       Push(b); // R>
-      Pop(); Pop();// 2DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
+      Pop(); Pop(); // 2DROP
       j++;
     } while(j<jmax); // (LOOP)
 

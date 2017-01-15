@@ -1121,7 +1121,7 @@ void UNK_0xef2f() // UNK_0xef2f
     _star__slash_(); // */
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(0);
 }
 
@@ -1865,7 +1865,7 @@ void PORT_dash_PIC() // PORT-PIC
     UNK_0xf1e9(); // UNK_0xf1e9
   }
   UNK_0xede1(); // UNK_0xede1
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xee29(); // UNK_0xee29
   _gt_DISPLAY(); // >DISPLAY
   SCR_dash_RES(); // SCR-RES

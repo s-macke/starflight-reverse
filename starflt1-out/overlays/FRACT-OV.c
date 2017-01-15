@@ -1207,7 +1207,7 @@ void UNK_0xe985() // UNK_0xe985
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1274,7 +1274,7 @@ void UNK_0xea37() // UNK_0xea37
     UNK_0xe78c(); // UNK_0xe78c
     return;
   }
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -1844,7 +1844,7 @@ void UNK_0xed8d() // UNK_0xed8d
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(i); // I
       UNK_0xed62(); // UNK_0xed62
       Push(1);

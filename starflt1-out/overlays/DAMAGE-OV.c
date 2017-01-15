@@ -1159,7 +1159,7 @@ void UNK_0xf02e() // UNK_0xf02e
         ICLOSE(); // ICLOSE
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
       i++;
     } while(i<imax); // (LOOP)
@@ -1255,11 +1255,11 @@ void UNK_0xf0e0() // UNK_0xf0e0
         UNK_0xed9e(); // UNK_0xed9e
       } else
       {
-        Pop(); Pop();// 2DROP
+        Pop(); Pop(); // 2DROP
       }
     } else
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       imax = i; // LEAVE
     }
     Push(3);
@@ -1802,7 +1802,7 @@ void UNK_0xf404() // UNK_0xf404
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   V_gt_DISPLAY(); // V>DISPLAY
 }
 

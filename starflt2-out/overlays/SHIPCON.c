@@ -172,14 +172,14 @@ void UNK_0xf3f6() // UNK_0xf3f6
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(pp__ro_ENCOUN); // (ENCOUN
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     D0_eq_(); // D0=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push2Words("*SHIP");
     }
   }

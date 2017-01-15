@@ -1045,7 +1045,7 @@ void UNK_0xe564() // UNK_0xe564
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(-1);
     Push(-1);
     return;
@@ -1327,7 +1327,7 @@ void UNK_0xe6d0() // UNK_0xe6d0
     _ex__3(); // !_3
   } else
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
   }
   UNK_0xe5c8(); // UNK_0xe5c8
   UNK_0xe5a2(); // UNK_0xe5a2
@@ -1738,7 +1738,7 @@ void UNK_0xe946() // UNK_0xe946
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     LoadData("SHAPE"); // from 'CREATURE    '
     _1_dot_5_at_(); // 1.5@
   }
@@ -2470,7 +2470,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTH", 5); // (.")
     return;
   }
@@ -2480,7 +2480,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHEAST", 9); // (.")
     return;
   }
@@ -2490,7 +2490,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("EAST", 4); // (.")
     return;
   }
@@ -2500,7 +2500,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHEAST", 9); // (.")
     return;
   }
@@ -2510,7 +2510,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTH", 5); // (.")
     return;
   }
@@ -2520,7 +2520,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHWEST", 9); // (.")
     return;
   }
@@ -2530,7 +2530,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("WEST", 4); // (.")
     return;
   }
@@ -2540,7 +2540,7 @@ void angle_gt_text() // angle>text
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHWEST", 9); // (.")
     return;
   }
@@ -2793,7 +2793,7 @@ void UNK_0xf077() // UNK_0xf077
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(1);
     UNK_0xf06b(); // UNK_0xf06b
   } else
@@ -2804,7 +2804,7 @@ void UNK_0xf077() // UNK_0xf077
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
       Push(-1);
       UNK_0xf06b(); // UNK_0xf06b
     } else
@@ -2936,7 +2936,7 @@ void _dot_DISTANCE() // .DISTANCE
   ICLOSE(); // ICLOSE
   UNK_0xe564(); // UNK_0xe564
   _2SWAP(); // 2SWAP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   angle_gt_text(); // angle>text
 }
 

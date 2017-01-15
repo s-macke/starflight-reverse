@@ -1350,7 +1350,7 @@ void UNK_0xe474() // UNK_0xe474
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
   } while(Pop() == 0);
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2091,7 +2091,7 @@ void UNK_0xe87e() // UNK_0xe87e
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(Read16(cc_TRUE)); // TRUE
     return;
   }
@@ -2456,7 +2456,7 @@ void UNK_0xea6a() // UNK_0xea6a
     i++;
   } while(i<imax); // (LOOP)
 
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 }
 
 
@@ -2733,7 +2733,7 @@ void UNK_0xec2e() // UNK_0xec2e
   goto label6;
 
   label4:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   return;
 
   label3:

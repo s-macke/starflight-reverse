@@ -763,8 +763,8 @@ void UNK_0xe921() // UNK_0xe921
       }
       Push(d); // R>
       Push(b); // R>
-      Pop(); Pop();// 2DROP
-      Pop(); Pop();// 2DROP
+      Pop(); Pop(); // 2DROP
+      Pop(); Pop(); // 2DROP
       j++;
     } while(j<jmax); // (LOOP)
 
@@ -928,7 +928,7 @@ void UNK_0xec00() // UNK_0xec00
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0xfff4);
   } else
   {
@@ -953,7 +953,7 @@ void UNK_0xec00() // UNK_0xec00
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     Push(0xffec);
   } else
   {
@@ -1188,7 +1188,7 @@ void UNK_0xeda8() // UNK_0xeda8
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     _2DUP(); // 2DUP
     UNK_0xe794(); // UNK_0xe794
     D_eq_(); // D=
@@ -1206,7 +1206,7 @@ void UNK_0xeda8() // UNK_0xeda8
   label1:
   a = Pop(); // >R
   b = Pop(); // >R
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(b); // R>
   Push(a); // R>
   CDROP(); // CDROP
@@ -1284,7 +1284,7 @@ void _ask_POPULA() // ?POPULA
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     UNK_0xed4c(); // UNK_0xed4c
     Push(pp__ro_PLANET); // (PLANET
     _at__gt_C_plus_S(); // @>C+S
@@ -1433,7 +1433,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTH", 5); // (.")
     return;
   }
@@ -1443,7 +1443,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHEAST", 9); // (.")
     return;
   }
@@ -1453,7 +1453,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("EAST", 4); // (.")
     return;
   }
@@ -1463,7 +1463,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHEAST", 9); // (.")
     return;
   }
@@ -1473,7 +1473,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTH", 5); // (.")
     return;
   }
@@ -1483,7 +1483,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("SOUTHWEST", 9); // (.")
     return;
   }
@@ -1493,7 +1493,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("WEST", 4); // (.")
     return;
   }
@@ -1503,7 +1503,7 @@ void UNK_0xef74() // UNK_0xef74
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop();// 2DROP
+    Pop(); Pop(); // 2DROP
     PRINT("NORTHWEST", 9); // (.")
     return;
   }
@@ -1611,7 +1611,7 @@ void UNK_0xf0c0() // UNK_0xf0c0
   ICLOSE(); // ICLOSE
   UNK_0xef1e(); // UNK_0xef1e
   _2SWAP(); // 2SWAP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xef74(); // UNK_0xef74
 }
 
@@ -1702,13 +1702,13 @@ void UNK_0xf16e() // UNK_0xf16e
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   UNK_0xf122(); // UNK_0xf122
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   goto label2;
 
   label1:
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
   _dash_ICON(); // -ICON
@@ -1886,7 +1886,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
   if (Pop() == 0) return;
   Push(pp_FTRIG); // FTRIG
   OFF(); // OFF
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   Push(pp_SKEY); // SKEY
   Push(Read16(Pop())); // @
   _ro_XYSCAN(); // (XYSCAN case
@@ -1903,7 +1903,7 @@ void UNK_0xf308() // UNK_0xf308
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
   PRINT("NONE", 4); // (.")
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xf16e(); // UNK_0xf16e
 }
 
@@ -2043,7 +2043,7 @@ void UNK_0xf3a7() // UNK_0xf3a7
   goto label6;
 
   label5:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
   UNK_0xf2b8(); // UNK_0xf2b8
   if (Pop() != 0)
   {
@@ -2055,7 +2055,7 @@ void UNK_0xf3a7() // UNK_0xf3a7
   goto label4;
 
   label1:
-  Pop(); Pop();// 2DROP
+  Pop(); Pop(); // 2DROP
 
   label4:
   _ask_TRIG(); // ?TRIG
