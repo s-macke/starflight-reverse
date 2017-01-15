@@ -811,9 +811,8 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 /*
     for(int i=minaddr; i<maxaddr-3; i++)
     {
-        if (pline[i+0].done)
-        if (!pline[i+1].done)
-        if (!pline[i+2].done)
+        if ((!pline[i+0].done) || (pline[i+1].done) || (pline[i+2].done)) continue;
+
         if (Read16(i+1) == CODECALL)
         {
             DICTENTRY *e = GetDictEntry(i+3, ovidx);
