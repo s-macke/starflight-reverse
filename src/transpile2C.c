@@ -140,7 +140,6 @@ void WriteExtern(FILE *fp, int ovidx)
         if (!dict[i].doextern) continue;
         if
         (
-        (dict[i].codep == CODELOADDATA) ||
         (dict[i].codep == CODELOADOVERLAY) ||
         (dict[i].codep == CODETABLE) ||
         (dict[i].codep == CODESETCOLOR) ||
@@ -177,6 +176,13 @@ void WriteExtern(FILE *fp, int ovidx)
         if (dict[i].codep != CODEDI) continue;
         if (!dict[i].doextern) continue;
         fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = FALSE;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODELOADDATA) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].doextern = FALSE;
     }
     for(i=0; i<ndict; i++)
@@ -234,19 +240,6 @@ void WriteVariables(FILE *fp, int ovidx)
         fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp)+REGDI, GetWordName(&dict[i]));
     }
     fprintf(fp, "\n");
-    /*
-    for(i=startidx; i<endidx; i++)
-    {
-        if (dict[i].ovidx != ovidx) continue;
-        if (dict[i].codep != CODELOADDATA) continue;
-        fprintf(fp, "const unsigned short int %s = { 0x%04x, 0x%04x, addr: 0x%04x } // struct to load data from directory\n",
-            dict[i].r,
-            Read16(dict[i].parp+0),
-            Read16(dict[i].parp+2),
-            Read16(dict[i].parp+4));
-    }
-    fprintf(fp, "\n");
-*/
 }
 
 char* GetVariableName(DICTENTRY *efunc, int varidx)
@@ -359,7 +352,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     if (e->codep == CODELOADDATA)
     {
         int addr = Read16(e->parp+4);
-        snprintf(ret, STRINGLEN, "LoadData(\"%s\"); // from '%s'\n", s, FindDirEntry(addr));
+        snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), FindDirEntry(addr));
         return;
     }
     if (e->codep == CODETABLE)
@@ -949,10 +942,26 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             efunc = GetDictEntry(addr+2, ovidx);
             WriteWordHeader(fp, efunc);
+            char *s = GetWordName(efunc);
             if (efunc->codep == CODECALL)
             {
                 addr = WriteParsedFunction(fp, efunc, ovidx)-1;
                 continue;
+            }
+
+            switch(efunc->codep)
+            {
+                case CODELOADDATA:
+                    fprintf(fp, "LoadDataType %s = {0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%04x};\n",
+                    Forth2CString(s),
+                    Read8(efunc->parp+0),
+                    Read8(efunc->parp+1),
+                    Read8(efunc->parp+2),
+                    Read8(efunc->parp+3),
+                    Read16(efunc->parp+4));
+
+                    addr = efunc->parp+6-1;
+                    continue;
             }
         }
         if (pline[addr].isasm)

@@ -1,6 +1,16 @@
 #ifndef STARFLT_H
 #define STARFLT_H
 
+typedef struct
+{
+    // FILE-RL
+    // FILE-START
+
+    unsigned char fileidx;
+    unsigned char dummy2, dummy3, dummy4;
+    unsigned short addr;
+} LoadDataType; // Also called AFIELD
+
 typedef void (*WordCallDef)();
 
     void Func3(char *s);
@@ -11,7 +21,7 @@ typedef void (*WordCallDef)();
     void Push2Words(char *s);
     void SetColor(char *s);
     void GetTableEntry(char *s);
-    void LoadData(char *s);
+    void LoadData(LoadDataType dt);
     void UNK_0x3f3b(char *s);
     void Exec(char *s);
     void DOTASKS(WordCallDef a, WordCallDef b, WordCallDef c);

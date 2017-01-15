@@ -381,7 +381,6 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     }
 }
 
-
 void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
 {
     int par = d->parp;
@@ -758,10 +757,31 @@ void SetWordHeader(int ovidx)
     }
 }
 
+void SetStructDone(int ovidx)
+{
+    int i;
+    for(i=0; i<ndict; i++)
+    {
+        int parp = dict[i].parp;
+        if (dict[i].ovidx != ovidx) continue;
+        if (dict[i].codep == CODELOADDATA)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+            pline[parp+2].done = TRUE;
+            pline[parp+3].done = TRUE;
+            pline[parp+4].done = TRUE;
+            pline[parp+5].done = TRUE;
+        }
+    }
+}
+
+
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 {
     int i;
     SetWordHeader(ovidx);
+    SetStructDone(ovidx);
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
@@ -794,6 +814,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     }
 */
     SetWordHeader(ovidx);
+    SetStructDone(ovidx);
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
