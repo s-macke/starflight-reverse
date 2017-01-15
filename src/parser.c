@@ -773,6 +773,11 @@ void SetStructDone(int ovidx)
             pline[parp+4].done = TRUE;
             pline[parp+5].done = TRUE;
         }
+        if (dict[i].codep == CODECONSTANT)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+        }
     }
 }
 
@@ -799,7 +804,10 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
             ParseRuleFunction(minaddr, maxaddr, &dict[i], dict[i].ovidx);
         }
     }
-/* Find orphaned functions */
+    SetWordHeader(ovidx);
+    SetStructDone(ovidx);
+
+/* Find orphaned words */
 /*
     for(int i=minaddr; i<maxaddr-3; i++)
     {
@@ -809,7 +817,20 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (Read16(i+1) == CODECALL)
         {
             DICTENTRY *e = GetDictEntry(i+3, ovidx);
-            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, 0);
+            Variables vars = GetEmptyVariables();
+            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+        }
+        if (Read16(i+1) == CODELOADDATA)
+        {
+            DICTENTRY *e = GetDictEntry(i+3, ovidx);
+        }
+        if (Read16(i+1) == CODEPOINTER)
+        {
+            DICTENTRY *e = GetDictEntry(i+3, ovidx);
+        }
+        if (Read16(i+1) == CODECONSTANT)
+        {
+            DICTENTRY *e = GetDictEntry(i+3, ovidx);
         }
     }
 */

@@ -962,6 +962,11 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
                     addr = efunc->parp+6-1;
                     continue;
+
+                case CODECONSTANT:
+                    fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
+                    addr = efunc->parp+2-1;
+                    continue;
             }
         }
         if (pline[addr].isasm)
