@@ -9,7 +9,7 @@
 
 void WriteExtern(FILE *fp, int ovidx);
 void WriteVariables(FILE *fp, int ovidx);
-void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr);
+void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr);
 void WriteHeaderFile(FILE *fph, int ovidx);
 
 void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
@@ -58,7 +58,7 @@ void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
     WriteDict(mem, fpc, ovidx);
     if (ovidx != -1) WriteExtern(fpc, ovidx);
     WriteVariables(fpc, ovidx);
-    WriteParsedFunctions(fpc, ovidx, minaddr, maxaddr);
+    WriteParsedFile(fpc, ovidx, minaddr, maxaddr);
 
     if (fpc != NULL) fclose(fpc);
 }
@@ -753,6 +753,7 @@ void RemoveGotos(DICTENTRY *e)
 }
 
 // ----------------------------------------------------
+
 void Spc(FILE *fp, int spc)
 {
     int i;
@@ -761,6 +762,8 @@ void Spc(FILE *fp, int spc)
         fprintf(fp, "  ");
     }
 }
+
+// ----------------------------------------------------
 
 void WriteWordHeader(FILE *fp, DICTENTRY *e)
 {
@@ -777,66 +780,57 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
     "// ================================================\n",
     e->addr, s, e->codep, e->parp);
     if (e->isentry) fprintf(fp, "// entry\n");
-    if (e->codep == CODECALL)
-    {
-        fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-        RemoveGotos(e);
-        RemoveGotos(e);
-        RemoveGotos(e);
-        RemoveGotos(e);
-        //RemoveGotos(e);
-        if (e->nvars > 0)
-        {
-            fprintf(fp, "  unsigned short int ");
-            for(i=0; i<e->nvars-1; i++)
-            {
-                fprintf(fp, "%s, ", e->vars[i]);
-            }
-            fprintf(fp, "%s;\n", e->vars[e->nvars-1]);
-        }
-    }
 }
 
-void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
+int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
 {
-    int i = 0;
-    int j = 0;
-
-    int dbmode = 0; // bool
-    char str[0x10000];
-    int nstr = 0;
-    int nspc = 0;
-
-    DICTENTRY *efunc = NULL;
-
-    for(i=minaddr; i<=maxaddr; i++)
+    int j;
+    int addr = efunc->parp;
+    char *s = GetWordName(efunc);
+    fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
+    RemoveGotos(efunc);
+    RemoveGotos(efunc);
+    RemoveGotos(efunc);
+    RemoveGotos(efunc);
+    //RemoveGotos(e);
+    if (efunc->nvars > 0)
     {
-        if (pline[i].iswordheader)
+        fprintf(fp, "  unsigned short int ");
+        for(j=0; j<efunc->nvars-1; j++)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            dbmode = 0;
-            efunc = GetDictEntry(i+2, ovidx);
-            WriteWordHeader(fp, efunc);
-            if (efunc->codep == CODECALL) nspc = 1;
+            fprintf(fp, "%s, ", efunc->vars[j]);
+        }
+        fprintf(fp, "%s;\n", efunc->vars[efunc->nvars-1]);
+    }
+
+    int nspc = 1;
+    while(1)
+    {
+        if (pline[addr].done == FALSE)
+        {
+            fprintf(fp, "// db 0x%02x\n", Read8(addr));
+        }
+        if (pline[addr].iswordheader)
+        {
+            fprintf(fp, "}\n\n");
+            return addr;
         }
 
-        if (pline[i].labelid)
+        if (pline[addr].labelid)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            dbmode = 0;
             fprintf(fp, "\n");
             Spc(fp, nspc);
-            fprintf(fp, "label%i:\n", pline[i].labelid);
+            fprintf(fp, "label%i:\n", pline[addr].labelid);
         }
 
-        switch(pline[i].flow)
+        switch(pline[addr].flow)
         {
             case DO:
                 fprintf(fp, "\n");
                 Spc(fp, nspc);
-                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[i].variableidx+0));
+                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[addr].variableidx+0));
                 Spc(fp, nspc);
-                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[i].variableidx+1));
+                fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[addr].variableidx+1));
                 Spc(fp, nspc);
                 fprintf(fp, "do // (DO)\n");
                 Spc(fp, nspc);
@@ -866,39 +860,39 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
             case LOOP:
             {
-                DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
+                DICTENTRY *e = GetDictEntry(Read16(addr)+2, pline[addr].ovidx);
                 if (strcmp(e->r, "(/LOOP)") == 0)
                 {
                     Spc(fp, nspc);
-                    fprintf(fp,"%s += Pop();\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    fprintf(fp,"%s += Pop();\n", GetVariableName(efunc, pline[addr].variableidx+0));
                     nspc--;
                     Spc(fp, nspc);
                     fprintf(fp, "} while(%s<%s); // (/LOOP)\n\n",
-                    GetVariableName(efunc, pline[i].variableidx+0),
-                    GetVariableName(efunc, pline[i].variableidx+1));
+                    GetVariableName(efunc, pline[addr].variableidx+0),
+                    GetVariableName(efunc, pline[addr].variableidx+1));
                 } else
                 if (strcmp(e->r, "(LOOP)") == 0)
                 {
                     Spc(fp, nspc);
-                    fprintf(fp, "%s++;\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    fprintf(fp, "%s++;\n", GetVariableName(efunc, pline[addr].variableidx+0));
                     nspc--;
                     Spc(fp, nspc);
                     fprintf(fp, "} while(%s<%s); // (LOOP)\n\n",
-                    GetVariableName(efunc, pline[i].variableidx+0),
-                    GetVariableName(efunc, pline[i].variableidx+1));
+                    GetVariableName(efunc, pline[addr].variableidx+0),
+                    GetVariableName(efunc, pline[addr].variableidx+1));
                 } else
                 if (strcmp(e->r, "(+LOOP)") == 0)
                 {
                     Spc(fp, nspc);
                     fprintf(fp, "int step = Pop();\n");
                     Spc(fp, nspc);
-                    fprintf(fp, "%s += step;\n", GetVariableName(efunc, pline[i].variableidx+0));
+                    fprintf(fp, "%s += step;\n", GetVariableName(efunc, pline[addr].variableidx+0));
                     Spc(fp, nspc);
                     fprintf(fp, "if (((step>=0) && (%s>=%s)) || ((step<0) && (%s<=%s))) break;\n",
-                    GetVariableName(efunc, pline[i].variableidx+0),
-                    GetVariableName(efunc, pline[i].variableidx+1),
-                    GetVariableName(efunc, pline[i].variableidx+0),
-                    GetVariableName(efunc, pline[i].variableidx+1));
+                    GetVariableName(efunc, pline[addr].variableidx+0),
+                    GetVariableName(efunc, pline[addr].variableidx+1),
+                    GetVariableName(efunc, pline[addr].variableidx+0),
+                    GetVariableName(efunc, pline[addr].variableidx+1));
                     nspc--;
                     Spc(fp, nspc);
                     fprintf(fp, "} while(1); // (+LOOP)\n\n");
@@ -910,7 +904,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
             }
             case IFGOTO:
                 Spc(fp, nspc);
-                fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[pline[i].gotoaddr].labelid);
+                fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[pline[addr].gotoaddr].labelid);
                 break;
 
             case IFEXIT:
@@ -920,12 +914,12 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
             case GOTO:
                 Spc(fp, nspc);
-                fprintf(fp, "goto label%i;\n", pline[pline[i].gotoaddr].labelid);
+                fprintf(fp, "goto label%i;\n", pline[pline[addr].gotoaddr].labelid);
                 break;
 
             case FUNCEND:
                 fprintf(fp, "}\n\n");
-                nspc = 0;
+                return addr;
                 break;
 
             case EXIT:
@@ -935,7 +929,7 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
             case IFNOT:
                 Spc(fp, nspc);
-                fprintf(fp, "if (Pop() != 0)\n", pline[pline[i].gotoaddr].labelid);
+                fprintf(fp, "if (Pop() != 0)\n", pline[pline[addr].gotoaddr].labelid);
                 Spc(fp, nspc);
                 fprintf(fp, "{\n");
                 nspc++;
@@ -981,55 +975,92 @@ void WriteParsedFunctions(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     Spc(fp, nspc);
                     fprintf(fp, "}\n");
                 }
-                break;        }
+                break;
+        }
 
-        if (pline[i].istrivialword)
+        if (pline[addr].istrivialword)
         {
             char func[STRINGLEN*2];
-            DICTENTRY *e = GetDictEntry(Read16(i)+2, pline[i].ovidx);
-            GetMacro(i, e, efunc, func, pline[i].ovidx);
+            DICTENTRY *e = GetDictEntry(Read16(addr)+2, pline[addr].ovidx);
+            GetMacro(addr, e, efunc, func, pline[addr].ovidx);
             Spc(fp, nspc);
             fprintf(fp, "%s", func);
         }
-        if ((pline[i].str != NULL) && (pline[i].str[0] != 0))
+        if ((pline[addr].str != NULL) && (pline[addr].str[0] != 0))
         {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
             Spc(fp, nspc);
-            fprintf(fp, "%s", pline[i].str);
-            dbmode = 0;
+            fprintf(fp, "%s", pline[addr].str);
         }
-
-        if (pline[i].isasm)
+        if (pline[addr].isasm)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            dbmode = 0;
             char buffer[0x80];
-            disasm(0x0, (unsigned)i, mem, buffer);
-            fprintf(fp, "// 0x%04x: %s\n", i, buffer);
-            if (Read8(i) == 0xc3) // ret
+            disasm(0x0, (unsigned)addr, mem, buffer);
+            fprintf(fp, "// 0x%04x: %s\n", addr, buffer);
+            if (Read8(addr) == 0xc3) // ret
             {
                 fprintf(fp, "\n");
             }
         }
+        addr++;
+    }
 
-        if (pline[i].done)
+    return addr;
+}
+
+void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
+{
+    int addr = 0;
+    int j = 0;
+    char str[0x10000];
+    DICTENTRY *efunc = NULL;
+
+    for(addr=minaddr; addr<=maxaddr; addr++)
+    {
+        if (pline[addr].iswordheader)
         {
-            if (dbmode) {fprintf(fp, "'%s'\n", str); nstr = 0;}
-            dbmode = 0;
-        }
-        if (!pline[i].done)
-        {
-            if (!dbmode) fprintf(fp, "// 0x%04x: db ", i);
-            dbmode = 1;
-            fprintf(fp, "0x%02x ", Read8(i));
-            str[nstr+0] = 0x20;
-            str[nstr+1] = 0x0;
-            nstr++;
-            if ((Read8(i) >= 0x20) && (Read8(i) < 128))
+            efunc = GetDictEntry(addr+2, ovidx);
+            WriteWordHeader(fp, efunc);
+            if (efunc->codep == CODECALL)
             {
-                str[nstr-1] = Read8(i);
+                addr = WriteParsedFunction(fp, efunc, ovidx)-1;
+                continue;
             }
         }
+        if (pline[addr].isasm)
+        {
+            char buffer[0x80];
+            disasm(0x0, (unsigned)addr, mem, buffer);
+            fprintf(fp, "// 0x%04x: %s\n", addr, buffer);
+            if (Read8(addr) == 0xc3) // ret
+            {
+                fprintf(fp, "\n");
+            }
+        }
+        if ((pline[addr].str != NULL) && (pline[addr].str[0] != 0))
+        {
+            fprintf(fp, "%s", pline[addr].str);
+        }
+        if (!pline[addr].done)
+        {
+            int nstr = 0;
+            fprintf(fp, "// 0x%04x: db ", addr);
+            printf("%i %i\n", addr, maxaddr);
+            while((!pline[addr].done) && (addr <= maxaddr))
+            {
+                fprintf(fp, "0x%02x ", Read8(addr));
+
+                str[nstr+0] = 0x20;
+                str[nstr+1] = 0x0;
+                nstr++;
+                if ((Read8(addr) >= 0x20) && (Read8(addr) < 128))
+                {
+                    str[nstr-1] = Read8(addr);
+                }
+                addr++;
+            }
+            fprintf(fp, "'%s'\n", str);
+            addr--;
+        }
     }
-    if (dbmode) fprintf(fp, "'%s'\n  ", str);
+    fprintf(fp, "\n");
 }
