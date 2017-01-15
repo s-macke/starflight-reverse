@@ -263,8 +263,40 @@ char* GetVariableName(DICTENTRY *efunc, int varidx)
 }
 
 
+typedef struct
+{
+    char *word;
+    char *text;
+} BasicWords;
+
+BasicWords basicwords[] =
+{
+    {"OR",     "Push(Pop() | Pop())"},
+    {"AND",    "Push(Pop() & Pop())"},
+    {"XOR",    "Push(Pop() ^ Pop())"},
+    {"+",      "Push(Pop() + Pop())"},
+    {"*",      "Push(Pop() * Pop())"},
+    {"NEGATE", "Push(-Pop())"},
+    {"2*",     "Push(Pop()*2)"},
+    {"1+",     "Push(Pop()+1)"},
+    {"2+",     "Push(Pop()+2)"},
+    {"3+",     "Push(Pop()+3)"},
+    {"1-",     "Push(Pop()-1)"},
+    {"2-",     "Push(Pop()-2)"},
+    {"16/",    "Push(Pop()>>4)"}, // TODO check for signed and unsigned
+    {"2/",     "Push(Pop()>>1)"},
+    {"16*",    "Push(Pop()<<4)"},
+    {"@",      "Push(Read16(Pop()))"},
+    {"C@",     "Push(Read8(Pop())&0xFF)"},
+    {"DROP",   "Pop()"},
+    {"2DROP",  "Pop(); Pop()"},
+    {"DUP",    "Push(Read16(regsp))"},
+    {NULL, NULL}
+};
+
 void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, int currentovidx)
 {
+    int i=0;
     ret[0] = 0;
     char *s = GetWordName(e);
 
@@ -292,6 +324,18 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         }
         return;
     }
+    
+    BasicWords *word = &basicwords[0];
+    while(word->word != NULL)
+    {
+        if (strcmp(s, word->word) == 0)
+        {
+            snprintf(ret, STRINGLEN, "%s; // %s\n", word->text, word->word);
+            return;
+        }
+        word++;
+    }
+    
     if (e->codep == CODE2LIT) // constant number
     {
         snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
@@ -434,134 +478,19 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         snprintf(ret, STRINGLEN, "Push(%s); // J\n", GetVariableName(efunc, pline[addr].variableidx));
         return;
     }
-    if (strcmp(s, "0") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(0); // 0\n");
-        return;
-    }
-    if (strcmp(s, "1") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(1); // 1\n");
-        return;
-    }
-    if (strcmp(s, "2") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(2); // 2\n");
-        return;
-    }
     if (strcmp(s, "0=") == 0)
     {
         snprintf(ret, STRINGLEN, "if (Pop() == 0) Push(1); else Push(0); // 0=\n");
         return ;
-    }
-    if (strcmp(s, "OR") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop() | Pop()); // OR\n");
-        return;
-    }
-    if (strcmp(s, "AND") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop() & Pop()); // AND\n");
-        return;
-    }
-    if (strcmp(s, "XOR") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop() ^ Pop()); // XOR\n");
-        return;
     }
     if (strcmp(s, "=") == 0)
     {
         snprintf(ret, STRINGLEN, "Push((Pop()==Pop())?1:0); // =\n");
         return;
     }
-    if (strcmp(s, "+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop() + Pop()); // +\n");
-        return;
-    }
-    if (strcmp(s, "*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop() * Pop()); // *\n");
-        return;
-    }
-    if (strcmp(s, "NEGATE") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(-Pop()); // NEGATE\n");
-        return;
-    }
     if (strcmp(s, "NOT") == 0)
     {
         snprintf(ret, STRINGLEN, "if (Pop() == 0) Push(1); else Push(0); // NOT\n");
-        return;
-    }
-    if (strcmp(s, "DROP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Pop(); // DROP\n");
-        return;
-    }
-    if (strcmp(s, "2DROP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Pop(); Pop();// 2DROP\n");
-        return;
-    }
-    if (strcmp(s, "2*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()*2); // 2*\n");
-        return;
-    }
-    if (strcmp(s, "3+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()+3); // 3+\n");
-        return;
-    }
-    if (strcmp(s, "1+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()+1); // 1+\n");
-        return;
-    }
-    if (strcmp(s, "2+") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()+2); // 2+\n");
-        return;
-    }
-    if (strcmp(s, "1-") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()-1); // 1-\n");
-        return;
-    }
-    if (strcmp(s, "2-") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()-2); // 2-\n");
-        return;
-    }
-    if (strcmp(s, "16/") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()>>4); // 16/\n"); // TODO check for signed and unsigned
-        return;
-    }
-    if (strcmp(s, "2/") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()>>1); // 2/\n");
-        return;
-    }
-    if (strcmp(s, "16*") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Pop()<<4); // 16*\n");
-        return;
-    }
-    if (strcmp(s, "@") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Read16(Pop())); // @\n");
-        return;
-    }
-    if (strcmp(s, "C@") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Read8(Pop())&0xFF); // C@\n");
-        return;
-    }
-    if (strcmp(s, "DUP") == 0)
-    {
-        snprintf(ret, STRINGLEN, "Push(Read16(regsp)); // DUP\n");
         return;
     }
     if (strcmp(s, "?DUP") == 0)
