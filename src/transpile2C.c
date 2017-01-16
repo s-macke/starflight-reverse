@@ -967,6 +967,11 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
                     addr = efunc->parp+2-1;
                     continue;
+
+                case CODEPUSH2WORDS:
+                    fprintf(fp, "// 0x%04x: dw 0x%04x 0x%04x\n", efunc->parp, Read16(efunc->parp+0), Read16(efunc->parp+2));
+                    addr = efunc->parp+4-1;
+                    continue;
             }
         }
         if (pline[addr].isasm)

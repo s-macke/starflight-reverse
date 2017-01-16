@@ -778,6 +778,13 @@ void SetStructDone(int ovidx)
             pline[parp+0].done = TRUE;
             pline[parp+1].done = TRUE;
         }
+        if (dict[i].codep == CODEPUSH2WORDS)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+            pline[parp+2].done = TRUE;
+            pline[parp+3].done = TRUE;
+        }
     }
 }
 
