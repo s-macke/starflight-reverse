@@ -251,7 +251,7 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // ================================================
 // 0xe37e: WORD 'UNK_0xe380' codep=0x3b68 parp=0xe380
 // ================================================
-// 0xe380: db 0xff 0x7f 0x92 0x51 '  Q'
+// 0xe380: dw 0x7fff 0x5192
 
 // ================================================
 // 0xe384: WORD 'UNK_0xe386' codep=0x2214 parp=0xe386
@@ -820,7 +820,7 @@ void MERCATOR_dash_GEN() // MERCATOR-GEN
 // ================================================
 // 0xe7f5: WORD 'UNK_0xe7f7' codep=0x3b68 parp=0xe7f7
 // ================================================
-// 0xe7f7: db 0xff 0x7f 0x92 0x51 '  Q'
+// 0xe7f7: dw 0x7fff 0x5192
 
 // ================================================
 // 0xe7fb: WORD 'UNK_0xe7fd' codep=0x2214 parp=0xe7fd
