@@ -6,8 +6,8 @@
 void LDAP(); // LDAP
 void SETB(); // SETB
 void LDSY(); // LDSY
-void _at__dot_HY(); // @.HY
-void _dot_TPI(); // .TPI
-void _dot_API(); // .API
+void Get_dot_HY(); // @.HY
+void DrawTPI(); // .TPI
+void DrawAPI(); // .API
 
 #endif

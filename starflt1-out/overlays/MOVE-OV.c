@@ -54,7 +54,7 @@
 //      UNK_0xeda8  codep:0x224c parp:0xeda8 size:0x005c C-string:'UNK_0xeda8'
 //      UNK_0xee06  codep:0x224c parp:0xee06 size:0x002c C-string:'UNK_0xee06'
 //      UNK_0xee34  codep:0x224c parp:0xee34 size:0x0024 C-string:'UNK_0xee34'
-//         ?POPULA  codep:0x224c parp:0xee64 size:0x0068 C-string:'_ask_POPULA'
+//         ?POPULA  codep:0x224c parp:0xee64 size:0x0068 C-string:'IsPOPULA'
 //      UNK_0xeece  codep:0x224c parp:0xeece size:0x004e C-string:'UNK_0xeece'
 //      UNK_0xef1e  codep:0x224c parp:0xef1e size:0x0028 C-string:'UNK_0xef1e'
 //      UNK_0xef48  codep:0x224c parp:0xef48 size:0x002a C-string:'UNK_0xef48'
@@ -94,10 +94,10 @@ extern const unsigned short int pp__i_INJURE; // 'INJURE
 extern const unsigned short int pp_LCOLOR; // LCOLOR
 extern const unsigned short int pp__i_FLARE; // 'FLARE
 extern const unsigned short int pp__ro_FLARE_rc_; // (FLARE)
-extern const unsigned short int pp__ask_TV; // ?TV
+extern const unsigned short int pp_IsTV; // ?TV
 extern const unsigned short int pp_COLOR; // COLOR
-extern const unsigned short int pp__ask_WIN; // ?WIN
-extern const unsigned short int pp__ask_NEW; // ?NEW
+extern const unsigned short int pp_IsWIN; // ?WIN
+extern const unsigned short int pp_IsNEW; // ?NEW
 extern const unsigned short int pp_MOVED; // MOVED
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
@@ -147,7 +147,7 @@ extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
 void ABS(); // ABS
 void MIN(); // MIN
-void _dot_R(); // .R
+void DrawR(); // .R
 void MS(); // MS
 void NOP(); // NOP
 void _2OVER(); // 2OVER
@@ -158,28 +158,28 @@ void ACELLADDR(); // ACELLADDR
 void A_at_(); // A@
 void SETLARRAY(); // SETLARRAY
 void SETREGION(); // SETREGION
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _1_dot_5_ex_(); // 1.5!
 void _2_ex_(); // 2!
-void D_ex_(); // D!
+void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
-void _ask_NULL(); // ?NULL
+void IsNULL(); // ?NULL
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_LAST(); // ?LAST
+void IsLAST(); // ?LAST
 void INEXT(); // INEXT
 void IINSERT(); // IINSERT
 void ALL(); // ALL
 void ICREATE(); // ICREATE
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void VCLIPSET(); // VCLIPSET
 void DCLIPSET(); // DCLIPSET
 void _gt_MAINVIEW(); // >MAINVIEW
@@ -188,14 +188,14 @@ void _gt_LORES(); // >LORES
 void DARK(); // DARK
 void BLT(); // BLT
 void CELLCOLOR(); // CELLCOLOR
-void _ex_XYSEED(); // !XYSEED
-void _dot_REGION_plus_(); // .REGION+
-void _ex_VISWINDOW(); // !VISWINDOW
-void _ex_IX(); // !IX
-void _ex_IY(); // !IY
+void StoreXYSEED(); // !XYSEED
+void DrawREGION_plus_(); // .REGION+
+void StoreVISWINDOW(); // !VISWINDOW
+void StoreIX(); // !IX
+void StoreIY(); // !IY
 void POINT_gt_ICON(); // POINT>ICON
-void _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
-void _ask_ICON_eq_I(); // ?ICON=I
+void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
+void IsICON_eq_I(); // ?ICON=I
 void _dash_ICON(); // -ICON
 void ORGLIST(); // ORGLIST
 void POS_dot_(); // POS.
@@ -207,8 +207,8 @@ void WINDOW(); // WINDOW
 void GCR(); // GCR
 void SHIP_dash_CONSOLE(); // SHIP-CONSOLE
 void XYSCAN(); // XYSCAN
-void _ask_TRIG(); // ?TRIG
-void _ask_NEW_dash_HO(); // ?NEW-HO
+void IsTRIG(); // ?TRIG
+void IsNEW_dash_HO(); // ?NEW-HO
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -226,7 +226,7 @@ void _0_gt_(); // 0>
 void TONE(); // TONE
 void BEEPOFF(); // BEEPOFF
 void TIME(); // TIME
-void _at_EXECUTE(); // @EXECUTE
+void GetEXECUTE(); // @EXECUTE
 void ON_2(); // ON_2
 void OFF_2(); // OFF_2
 void _1_dot_5_at_(); // 1.5@
@@ -267,12 +267,12 @@ const unsigned short int cc_UNK_0xeba4 = 0xeba4; // UNK_0xeba4
 
 void UNK_0xe696() // UNK_0xe696
 {
-  _ask_NEW_dash_HO(); // ?NEW-HO
+  IsNEW_dash_HO(); // ?NEW-HO
   if (Pop() == 0) return;
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_LAST_dash_UPDATE); // LAST-UPDATE
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(1);
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex_(); // +!
@@ -327,7 +327,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(Pop()+1); // 1+
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -340,7 +340,7 @@ void UNK_0xe702() // UNK_0xe702
   UNK_0xe6c6(); // UNK_0xe6c6
   UNK_0xe6e0(); // UNK_0xe6e0
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -439,7 +439,7 @@ void UNK_0xe794() // UNK_0xe794
 void UNK_0xe7a0() // UNK_0xe7a0
 {
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   UNK_0xe794(); // UNK_0xe794
   ICLOSE(); // ICLOSE
 }
@@ -452,9 +452,9 @@ void UNK_0xe7a0() // UNK_0xe7a0
 void UNK_0xe7ac() // UNK_0xe7ac
 {
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x63ef+INST_dash_X.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -490,7 +490,7 @@ void UNK_0xe7ce() // UNK_0xe7ce
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xe7c4.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xe7c9.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
@@ -536,7 +536,7 @@ void UNK_0xe802() // UNK_0xe802
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xe7a0(); // UNK_0xe7a0
   UNK_0xe724(); // UNK_0xe724
   Push(0x0010);
@@ -550,7 +550,7 @@ void UNK_0xe802() // UNK_0xe802
     Push(-Pop()); // NEGATE
   }
   Push(4);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xe770(); // UNK_0xe770
   PRINT(" * ", 3); // (.")
   Push(Read16(regsp)); // DUP
@@ -561,7 +561,7 @@ void UNK_0xe802() // UNK_0xe802
     Push(-Pop()); // NEGATE
   }
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xe74c(); // UNK_0xe74c
 }
 
@@ -614,7 +614,7 @@ void SET_dash_SPEED() // SET-SPEED
     Push(-Pop()); // NEGATE
   }
   Push(pp_E_slash_M); // E/M
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -776,7 +776,7 @@ void UNK_0xe921() // UNK_0xe921
   } while(i<imax); // (LOOP)
 
   Push(pp_BLTSEG); // BLTSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -802,7 +802,7 @@ void UNK_0xe9e5() // UNK_0xe9e5
   Push(0x000e);
   Push(Pop() + Pop()); // +
   SETREGION(); // SETREGION
-  _dot_REGION_plus_(); // .REGION+
+  DrawREGION_plus_(); // .REGION+
   UNK_0xe921(); // UNK_0xe921
 }
 
@@ -824,13 +824,13 @@ void UNK_0xeb7e() // UNK_0xeb7e
   Push(pp__ro_FLARE_rc_); // (FLARE)
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
-  Push(pp__ask_WIN); // ?WIN
+  Push(pp_IsWIN); // ?WIN
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
-  _at_EXECUTE(); // @EXECUTE
+  GetEXECUTE(); // @EXECUTE
 }
 
 
@@ -857,7 +857,7 @@ void UNK_0xeb7e() // UNK_0xeb7e
 void UNK_0xebb0() // UNK_0xebb0
 {
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
   Push(pp_YABS); // YABS
@@ -1022,13 +1022,13 @@ void UNK_0xeca6() // UNK_0xeca6
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
   CI(); // CI
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   if (Pop() != 0)
   {
     POINT_gt_ICON(); // POINT>ICON
     UNK_0xe794(); // UNK_0xe794
-    _ex_IY(); // !IY
-    _ex_IX(); // !IX
+    StoreIY(); // !IY
+    StoreIX(); // !IX
   }
   ICLOSE(); // ICLOSE
 }
@@ -1042,7 +1042,7 @@ void UNK_0xeca6() // UNK_0xeca6
 void UNK_0xecf2() // UNK_0xecf2
 {
   IOPEN(); // IOPEN
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -1087,7 +1087,7 @@ void UNK_0xed34() // UNK_0xed34
   Push(Read16(Pop())); // @
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
-  _ex_XYSEED(); // !XYSEED
+  StoreXYSEED(); // !XYSEED
 }
 
 
@@ -1126,7 +1126,7 @@ void UNK_0xed4c() // UNK_0xed4c
   UNK_0xed34(); // UNK_0xed34
   Push(0);
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   ICLOSE(); // ICLOSE
 }
 
@@ -1173,21 +1173,21 @@ void UNK_0xeda8() // UNK_0xeda8
   UNK_0xed14(); // UNK_0xed14
   Push2Words("NULL");
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
   label4:
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  _ask_LAST(); // ?LAST
+  IsLAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   Push((Pop()==Pop())?1:0); // =
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x000b);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
@@ -1241,7 +1241,7 @@ void UNK_0xee06() // UNK_0xee06
   Push(Read16(Pop())); // @
   Push(0x0029);
   Push(Pop() + Pop()); // +
-  _ex_VISWINDOW(); // !VISWINDOW
+  StoreVISWINDOW(); // !VISWINDOW
 }
 
 
@@ -1256,7 +1256,7 @@ void UNK_0xee34() // UNK_0xee34
   SET_dash_CURRENT(); // SET-CURRENT
   IOPEN(); // IOPEN
   CI(); // CI
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
@@ -1277,11 +1277,11 @@ void UNK_0xee34() // UNK_0xee34
 // ================================================
 // entry
 
-void _ask_POPULA() // ?POPULA
+void IsPOPULA() // ?POPULA
 {
   UNK_0xed7a(); // UNK_0xed7a
   if (Pop() == 0) return;
-  Push(pp__ask_NEW); // ?NEW
+  Push(pp_IsNEW); // ?NEW
   ON_3(); // ON_3
   UNK_0xeda8(); // UNK_0xeda8
   _2DUP(); // 2DUP
@@ -1292,7 +1292,7 @@ void _ask_POPULA() // ?POPULA
     Pop(); Pop(); // 2DROP
     UNK_0xed4c(); // UNK_0xed4c
     Push(pp__ro_PLANET); // (PLANET
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     CDROP(); // CDROP
     _gt_C_plus_S(); // >C+S
@@ -1331,7 +1331,7 @@ void UNK_0xeece() // UNK_0xeece
   SetColor("PINK");
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
-  Push(pp__ask_NEW); // ?NEW
+  Push(pp_IsNEW); // ?NEW
   ON_3(); // ON_3
   Push(pp_MOVED); // MOVED
   ON_3(); // ON_3
@@ -1347,7 +1347,7 @@ void UNK_0xeece() // UNK_0xeece
   _st__plus__ex__gt_(); // <+!>
   UNK_0xebc4(); // UNK_0xebc4
   UNK_0xec00(); // UNK_0xec00
-  _ask_POPULA(); // ?POPULA
+  IsPOPULA(); // ?POPULA
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
   UNK_0xee06(); // UNK_0xee06
@@ -1357,7 +1357,7 @@ void UNK_0xeece() // UNK_0xeece
   UNK_0xeca6(); // UNK_0xeca6
   UNK_0xec96(); // UNK_0xec96
   UNK_0xe9e5(); // UNK_0xe9e5
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
@@ -1419,9 +1419,9 @@ void UNK_0xef48() // UNK_0xef48
   Push(0x0bb8);
   Push(Read16(regsp)); // DUP
   LoadData(ART_dash_VOL); // from 'ARTIFACT    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   ICLOSE(); // ICLOSE
 }
 
@@ -1589,13 +1589,13 @@ void UNK_0xf0c0() // UNK_0xf0c0
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf0b6(); // UNK_0xf0b6
   if (Pop() != 0)
   {
     UNK_0xf05a(); // UNK_0xf05a
     Push(5);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("KM.", 3); // (.")
   } else
   {
@@ -1608,7 +1608,7 @@ void UNK_0xf0c0() // UNK_0xf0c0
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf0b6(); // UNK_0xf0b6
   if (Pop() == 0) return;
   UNK_0xe7b8(); // UNK_0xe7b8
@@ -1660,7 +1660,7 @@ void UNK_0xf122() // UNK_0xf122
   NOP(); // NOP
   UNK_0xec96(); // UNK_0xec96
   UNK_0xe9e5(); // UNK_0xe9e5
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   DCLIPSET(); // DCLIPSET
 }
@@ -1684,7 +1684,7 @@ void UNK_0xf16e() // UNK_0xf16e
   BEEPOFF(); // BEEPOFF
   Push(0xcf10); // probable '>DEBRIS'
   MODULE(); // MODULE
-  Push(pp__ask_TV); // ?TV
+  Push(pp_IsTV); // ?TV
   OFF_2(); // OFF_2
   UNK_0xef48(); // UNK_0xef48
   Push(pp_LCOLOR); // LCOLOR
@@ -1715,7 +1715,7 @@ void UNK_0xf16e() // UNK_0xf16e
   Pop(); Pop(); // 2DROP
   Pop(); Pop(); // 2DROP
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   _dash_ICON(); // -ICON
   ICLOSE(); // ICLOSE
   Push(pp_FTRIG); // FTRIG
@@ -1748,12 +1748,12 @@ void UNK_0xf212() // UNK_0xf212
 {
   UNK_0xf1fe(); // UNK_0xf1fe
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(Read16(cc_UNK_0xeba4)); // UNK_0xeba4
   _dash_(); // -
   Push(0x0064);
@@ -1768,13 +1768,13 @@ void UNK_0xf212() // UNK_0xf212
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
     SetColor("PINK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
   } else
   {
     Push(3);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("%", 1); // (.")
   }
   Push(0x0074);
@@ -1795,7 +1795,7 @@ void UNK_0xf212() // UNK_0xf212
   Push(0x0063);
   MIN(); // MIN
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("%", 1); // (.")
 }
 
@@ -1825,7 +1825,7 @@ void UNK_0xf29c() // UNK_0xf29c
   Push(Read16(Pop())); // @
   _star__slash_(); // */
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
@@ -1839,7 +1839,7 @@ void UNK_0xf29c() // UNK_0xf29c
 void UNK_0xf2b8() // UNK_0xf2b8
 {
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -1906,7 +1906,7 @@ void UNK_0xf308() // UNK_0xf308
 {
   UNK_0xf1fe(); // UNK_0xf1fe
   SetColor("YELLOW");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("NONE", 4); // (.")
   Pop(); Pop(); // 2DROP
   UNK_0xf16e(); // UNK_0xf16e
@@ -1949,13 +1949,13 @@ void UNK_0xf31d() // UNK_0xf31d
 
 void UNK_0xf355() // UNK_0xf355
 {
-  _ask_TRIG(); // ?TRIG
+  IsTRIG(); // ?TRIG
   Pop(); // DROP
   UNK_0xf2ca(); // UNK_0xf2ca
   UNK_0xf31d(); // UNK_0xf31d
   SetColor("GREEN");
   Push(pp_LCOLOR); // LCOLOR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(-1);
   TONE(); // TONE
   BEEPON(); // BEEPON
@@ -1986,7 +1986,7 @@ void UNK_0xf37b() // UNK_0xf37b
   UNK_0xf2d8(); // UNK_0xf2d8
   SetColor("BLACK");
   Push(pp_LCOLOR); // LCOLOR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BEEPOFF(); // BEEPOFF
 }
 
@@ -2063,7 +2063,7 @@ void UNK_0xf3a7() // UNK_0xf3a7
   Pop(); Pop(); // 2DROP
 
   label4:
-  _ask_TRIG(); // ?TRIG
+  IsTRIG(); // ?TRIG
   if (Pop() == 0) return;
   Pop(); // DROP
   Push(0);
@@ -2105,7 +2105,7 @@ void APPROACH() // APPROACH
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0012);
   _st_(); // <
   if (Pop() != 0)
@@ -2123,7 +2123,7 @@ void APPROACH() // APPROACH
   SHIP_dash_CONSOLE(); // SHIP-CONSOLE
   Push(0xc48c); // probable '(.MERC)'
   MODULE(); // MODULE
-  _dot_REGION_plus_(); // .REGION+
+  DrawREGION_plus_(); // .REGION+
   Push(0xc4a2); // probable '(GETSITE)'
   MODULE(); // MODULE
   Push(pp__n_CLRMAP); // #CLRMAP
@@ -2137,7 +2137,7 @@ void APPROACH() // APPROACH
   MODULE(); // MODULE
   _gt_DISPLAY(); // >DISPLAY
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   DCLIPSET(); // DCLIPSET
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   OFF(); // OFF

@@ -3,8 +3,8 @@
 #ifndef HYPER-OV_H
 #define HYPER-OV_H
 
-void _dot_AUXSYS(); // .AUXSYS
-void _dot_MVS(); // .MVS
+void DrawAUXSYS(); // .AUXSYS
+void DrawMVS(); // .MVS
 void USE_dash_E(); // USE-E
 void JMPSHP(); // JMPSHP
 void UNNEST(); // UNNEST

@@ -3,10 +3,10 @@
 #ifndef BANK-OV_H
 #define BANK-OV_H
 
-void _ex_TFLAG(); // !TFLAG
-void D_at_BALANCE(); // D@BALANCE
-void D_ex_BALANCE(); // D!BALANCE
-void _ask_BALANCE(); // ?BALANCE
+void StoreTFLAG(); // !TFLAG
+void GetDBALANCE(); // D@BALANCE
+void StoreDBALANCE(); // D!BALANCE
+void IsBALANCE(); // ?BALANCE
 void INIT_dash_BALANCE(); // INIT-BALANCE
 void TRANSACT(); // TRANSACT
 void INT_pe_(); // INT%

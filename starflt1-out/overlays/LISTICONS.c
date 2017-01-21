@@ -11,7 +11,7 @@
 // =================================
 //        altitude  codep:0x224c parp:0xf2a6 size:0x00a7 C-string:'altitude'
 //        ICON-KEY  codep:0x224c parp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'
-//            .BLT  codep:0x224c parp:0xf3c6 size:0x002a C-string:'_dot_BLT'
+//            .BLT  codep:0x224c parp:0xf3c6 size:0x002a C-string:'DrawBLT'
 //      PAUSE-PAGE  codep:0x224c parp:0xf3f2 size:0x0038 C-string:'PAUSE_dash_PAGE'
 //        SEE-BLTS  codep:0x224c parp:0xf42c size:0x005c C-string:'SEE_dash_BLTS'
 //           title  codep:0x224c parp:0xf48a size:0x000a C-string:'title'
@@ -31,18 +31,18 @@ extern const unsigned short int pp_BLTSEG; // BLTSEG
 extern const unsigned short int pp_TILE_dash_PTR; // TILE-PTR
 extern const unsigned short int pp_CMAP; // CMAP
 void KEY_2(); // KEY_2
-void _ask__gt_EGA(); // ?>EGA
-void _ex__3(); // !_3
+void Is_gt_EGA(); // ?>EGA
+void Store_3(); // !_3
 void OFF(); // OFF
-void _at_RECORD(); // @RECORD
-void _ex_COLOR(); // !COLOR
+void GetRECORD(); // @RECORD
+void StoreCOLOR(); // !COLOR
 void BLT(); // BLT
 void _gt_1FONT(); // >1FONT
 void _gt_3FONT(); // >3FONT
 void POS_dot_(); // POS.
 void SFILL(); // SFILL
 void _dash_(); // -
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void _st__ex__gt_(); // <!>
 void _st__plus__ex__gt_(); // <+!>
 void LLINE(); // LLINE
@@ -65,7 +65,7 @@ void altitude() // altitude
 {
   unsigned short int i, imax;
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
   Push(0x0080);
@@ -99,7 +99,7 @@ void altitude() // altitude
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
     Push(pp_TILE_dash_PTR); // TILE-PTR
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(0x0021);
     Push(i); // I
     Push(0x000c);
@@ -132,7 +132,7 @@ void ICON_dash_KEY() // ICON-KEY
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
@@ -166,7 +166,7 @@ void ICON_dash_KEY() // ICON-KEY
 // 0xf3c4: WORD '.BLT' codep=0x224c parp=0xf3c6
 // ================================================
 
-void _dot_BLT() // .BLT
+void DrawBLT() // .BLT
 {
   unsigned short int i, imax;
   Push(2);
@@ -183,7 +183,7 @@ void _dot_BLT() // .BLT
     Push(Pop() + Pop()); // +
     Push(Read16(regsp)); // DUP
     Push(Read8(Pop())&0xFF); // C@
-    _ask__gt_EGA(); // ?>EGA
+    Is_gt_EGA(); // ?>EGA
     Push(pp_COLOR); // COLOR
     _st__ex__gt_(); // <!>
     Push(Pop()+1); // 1+
@@ -210,7 +210,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY_2(); // KEY_2
   Pop(); // DROP
@@ -246,19 +246,19 @@ void SEE_dash_BLTS() // SEE-BLTS
     _st__ex__gt_(); // <!>
     Push(0x003e);
     Push(i); // I
-    _at_RECORD(); // @RECORD
-    _dot_BLT(); // .BLT
+    GetRECORD(); // @RECORD
+    DrawBLT(); // .BLT
     Push(0x000c);
     Push(pp_XBLT); // XBLT
     _st__plus__ex__gt_(); // <+!>
     SetColor("BLACK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(-2);
     Push(pp_YBLT); // YBLT
     _st__plus__ex__gt_(); // <+!>
     Push(0x0041);
     Push(i); // I
-    _at_RECORD(); // @RECORD
+    GetRECORD(); // @RECORD
     Push(0x001b);
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(2);
@@ -278,7 +278,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 void title() // title
 {
   SetColor("GREY1");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   ICON_dash_KEY(); // ICON-KEY
 }
@@ -293,9 +293,9 @@ void ICONS() // ICONS
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   title(); // title
   Push(0x00b4);
   Push(0x000f);

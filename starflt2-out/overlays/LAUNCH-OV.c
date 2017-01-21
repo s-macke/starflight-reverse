@@ -22,7 +22,7 @@
 //      UNK_0xf1e4  codep:0x224c parp:0xf1e4 size:0x001c C-string:'UNK_0xf1e4'
 //      UNK_0xf202  codep:0x224c parp:0xf202 size:0x001c C-string:'UNK_0xf202'
 //      UNK_0xf220  codep:0x1d29 parp:0xf220 size:0x0032 C-string:'UNK_0xf220'
-//        .AIRLOCK  codep:0x224c parp:0xf25f size:0x00a5 C-string:'_dot_AIRLOCK'
+//        .AIRLOCK  codep:0x224c parp:0xf25f size:0x00a5 C-string:'DrawAIRLOCK'
 //      UNK_0xf306  codep:0x224c parp:0xf306 size:0x000a C-string:'UNK_0xf306'
 //      UNK_0xf312  codep:0x224c parp:0xf312 size:0x000c C-string:'UNK_0xf312'
 //      UNK_0xf320  codep:0x224c parp:0xf320 size:0x0008 C-string:'UNK_0xf320'
@@ -45,22 +45,22 @@ extern const unsigned short int pp_LBLT; // LBLT
 extern const unsigned short int pp_WBLT; // WBLT
 extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_BLTSEG; // BLTSEG
-extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp_IsG_dash_AWAR; // ?G-AWAR
 extern const unsigned short int pp_GWF; // GWF
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp_STIME; // STIME
 void D_st_(); // D<
-void _dot_(); // .
+void Draw(); // .
 void MS(); // MS
 void ROLL(); // ROLL
 void _2OVER(); // 2OVER
 void D_dash_(); // D-
 void RRND(); // RRND
-void _ex__2(); // !_2
-void D_ex_(); // D!
+void Store_2(); // !_2
+void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void BFILL(); // BFILL
 void DARK(); // DARK
 void LLINE(); // LLINE
@@ -74,8 +74,8 @@ void POS_dot_(); // POS.
 void CTERASE(); // CTERASE
 void BEEPON_2(); // BEEPON_2
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
-void _ask_MRC(); // ?MRC
+void DrawTTY(); // .TTY
+void IsMRC(); // ?MRC
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -87,7 +87,7 @@ void TONE(); // TONE
 void BEEPOFF(); // BEEPOFF
 void TIME(); // TIME
 void LCMOVE(); // LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void LPLOT(); // LPLOT
 void BLT(); // BLT
 
@@ -135,13 +135,13 @@ void UNK_0xf0b4() // UNK_0xf0b4
     Push(Pop()<<4); // 16*
     Push(i); // I
     Push(Pop() + Pop()); // +
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(pp_XBLT); // XBLT
     Push(Read16(Pop())); // @
     OVER(); // OVER
-    _dot_(); // .
+    Draw(); // .
     Push(pp_XBLT); // XBLT
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(0x0027);
     MS(); // MS
     i++;
@@ -248,8 +248,8 @@ void UNK_0xf14e() // UNK_0xf14e
   if (Pop() == 0) return;
   Push(1);
   Push(pp_CONTEXT_3); // CONTEXT_3
-  _ex__2(); // !_2
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
+  Store_2(); // !_2
+  Push(pp_IsG_dash_AWAR); // ?G-AWAR
   ON_2(); // ON_2
   Push(pp_GWF); // GWF
   _099(); // 099
@@ -264,7 +264,7 @@ void UNK_0xf192() // UNK_0xf192
 {
   _2DUP(); // 2DUP
   Push(pp_STIME); // STIME
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(0x03e8); Push(0x0000);
   D_st_(); // D<
   Pop(); // DROP
@@ -292,7 +292,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 void UNK_0xf1b6() // UNK_0xf1b6
 {
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
   Push(0);
@@ -364,17 +364,17 @@ void UNK_0xf202() // UNK_0xf202
 // ================================================
 // entry
 
-void _dot_AIRLOCK() // .AIRLOCK
+void DrawAIRLOCK() // .AIRLOCK
 {
   _gt_MAINVI(); // >MAINVI
   SetColor("GREY2");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
   SetColor("BLACK");
   SetColor("BLACK");
   SetColor("YELLOW");
-  _ask_MRC(); // ?MRC
-  _ex_COLOR(); // !COLOR
+  IsMRC(); // ?MRC
+  StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   Push(0x0011);
   Push(0x006d);
@@ -393,21 +393,21 @@ void _dot_AIRLOCK() // .AIRLOCK
   Push(0x0014);
   POS_dot_(); // POS.
   PRINT("PROCEDURES APPLY", 16); // (.")
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x001a);
   Push(0x0045);
   POS_dot_(); // POS.
   Push(0x0014);
   Push(Read16(regsp)); // DUP
   Push(pp_WBLT); // WBLT
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_LBLT); // LBLT
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_UNK_0xf220); // UNK_0xf220
   Push(pp_ABLT); // ABLT
-  _ex__2(); // !_2
+  Store_2(); // !_2
   BLT(); // BLT
   _gt_DISPLA(); // >DISPLA
 }
@@ -594,7 +594,7 @@ void _and_LAUNCH() // &LAUNCH
   MODULE(); // MODULE
   CTINIT(); // CTINIT
   UNK_0x3f09("STANDING BY TO MANEUVER");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -623,7 +623,7 @@ void _and_RETURN() // &RETURN
     Push(Read16(regsp)); // DUP
     Push(Pop()<<4); // 16*
     Push(Pop() + Pop()); // +
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(0);
     Push(0x0048);
     RRND(); // RRND
@@ -638,9 +638,9 @@ void _and_RETURN() // &RETURN
   _gt_DISPLA(); // >DISPLA
   UNK_0x3f09("CLOSING");
   UNK_0xf390(); // UNK_0xf390
-  _dot_AIRLOCK(); // .AIRLOCK
+  DrawAIRLOCK(); // .AIRLOCK
   SetColor("GREY2");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(Read16(cc_FALSE)); // FALSE
   if (Pop() != 0)
   {
@@ -681,7 +681,7 @@ void _and_RETURN() // &RETURN
   {
     Push(0x05dc);
     MS(); // MS
-    _dot_AIRLOCK(); // .AIRLOCK
+    DrawAIRLOCK(); // .AIRLOCK
   }
   V_gt_DISPL(); // V>DISPL
   BEEPOFF(); // BEEPOFF

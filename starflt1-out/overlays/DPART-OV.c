@@ -41,13 +41,13 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_MPS; // MPS
-extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp_IsCRITIC; // ?CRITIC
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
-extern const unsigned short int pp__ask_BOMB; // ?BOMB
-extern const unsigned short int pp__ask_LANDED; // ?LANDED
-extern const unsigned short int pp__ask_ELAN; // ?ELAN
-extern const unsigned short int pp__ask_SPHEXI; // ?SPHEXI
-extern const unsigned short int pp__ask_WIN; // ?WIN
+extern const unsigned short int pp_IsBOMB; // ?BOMB
+extern const unsigned short int pp_IsLANDED; // ?LANDED
+extern const unsigned short int pp_IsELAN; // ?ELAN
+extern const unsigned short int pp_IsSPHEXI; // ?SPHEXI
+extern const unsigned short int pp_IsWIN; // ?WIN
 extern const unsigned short int pp_CTCOLOR; // CTCOLOR
 extern const unsigned short int pp_WMSG; // WMSG
 extern const unsigned short int pp_STARDATE; // STARDATE
@@ -77,27 +77,27 @@ void D_gt_(); // D>
 void WITHIN(); // WITHIN
 void BIT(); // BIT
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
-void _ask_NULL(); // ?NULL
-void _ask__dash_NULL(); // ?-NULL
-void _ask_CHILD(); // ?CHILD
+void IsNULL(); // ?NULL
+void Is_dash_NULL(); // ?-NULL
+void IsCHILD(); // ?CHILD
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_LAST(); // ?LAST
+void IsLAST(); // ?LAST
 void INEXT(); // INEXT
 void IPREV(); // IPREV
 void IFIRST(); // IFIRST
 void IFIND(); // IFIND
 void IDELETE(); // IDELETE
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void _gt_MAINVIEW(); // >MAINVIEW
 void _gt_DISPLAY(); // >DISPLAY
 void _gt_2FONT(); // >2FONT
@@ -105,7 +105,7 @@ void POS_dot_(); // POS.
 void BEEPON(); // BEEPON
 void SONG(); // SONG
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void SUBROOT(); // SUBROOT
 void NEXT_dash_NO(); // NEXT-NO
@@ -171,16 +171,16 @@ void UNK_0xef73() // UNK_0xef73
     TONE(); // TONE
     BEEPON(); // BEEPON
     SetColor("DK-BLUE");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
     V_gt_DISPLAY(); // V>DISPLAY
     Push(0x00c8);
     MS(); // MS
     SetColor("LT-BLUE");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
     SetColor("BLACK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(0x000c);
     Push(0x0064);
     POS_dot_(); // POS.
@@ -253,7 +253,7 @@ void UNK_0xf026() // UNK_0xf026
   COUNT(); // COUNT
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0xc216); // probable 'P>CT'
   MODULE(); // MODULE
   _i_KEY(); // 'KEY
@@ -286,7 +286,7 @@ void UNK_0xf064() // UNK_0xf064
 
   label2:
   UNK_0xf026(); // UNK_0xf026
-  _ask_CHILD(); // ?CHILD
+  IsCHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
   goto label2;
@@ -318,7 +318,7 @@ void UNK_0xf08e() // UNK_0xf08e
 {
   CTINIT(); // CTINIT
   Push(pp__ro_AWARD_rc_); // (AWARD)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   UNK_0xf064(); // UNK_0xf064
   ICLOSE(); // ICLOSE
 }
@@ -350,8 +350,8 @@ void UNK_0xf09c() // UNK_0xf09c
   ON_3(); // ON_3
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
-  Push(pp__ask_WIN); // ?WIN
-  _ex__3(); // !_3
+  Push(pp_IsWIN); // ?WIN
+  Store_3(); // !_3
 }
 
 
@@ -362,11 +362,11 @@ void UNK_0xf09c() // UNK_0xf09c
 void UNK_0xf0d6() // UNK_0xf0d6
 {
   unsigned short int a;
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    _at_INST_dash_CLASS(); // @INST-CLASS
+    GetINST_dash_CLASS(); // @INST-CLASS
     a = Pop(); // >R
     Push(a); // I
     Push(0x0044);
@@ -380,7 +380,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      _at_INST_dash_SPECIES(); // @INST-SPECIES
+      GetINST_dash_SPECIES(); // @INST-SPECIES
       Push(3);
       _st_(); // <
       Push(Pop() & Pop()); // AND
@@ -391,7 +391,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      _at_INST_dash_SPECIES(); // @INST-SPECIES
+      GetINST_dash_SPECIES(); // @INST-SPECIES
       Push(0x0010);
       Push(0x0033);
       WITHIN(); // WITHIN
@@ -403,10 +403,10 @@ void UNK_0xf0d6() // UNK_0xf0d6
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      _at_INST_dash_SPECIES(); // @INST-SPECIES
+      GetINST_dash_SPECIES(); // @INST-SPECIES
       Push(3);
       Push((Pop()==Pop())?1:0); // =
-      Push(pp__ask_WIN); // ?WIN
+      Push(pp_IsWIN); // ?WIN
       Push(Read16(Pop())); // @
       _0_gt_(); // 0>
       Push(Pop() & Pop()); // AND
@@ -446,7 +446,7 @@ void UNK_0xf158() // UNK_0xf158
 void UNK_0xf166() // UNK_0xf166
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
   label5:
@@ -457,9 +457,9 @@ void UNK_0xf166() // UNK_0xf166
   IOPEN(); // IOPEN
 
   label3:
-  _ask_LAST(); // ?LAST
+  IsLAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -473,7 +473,7 @@ void UNK_0xf166() // UNK_0xf166
   {
     IDELETE(); // IDELETE
   }
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   ICLOSE(); // ICLOSE
   UNK_0xf158(); // UNK_0xf158
   goto label5;
@@ -491,11 +491,11 @@ void UNK_0xf166() // UNK_0xf166
 void UNK_0xf1ac() // UNK_0xf1ac
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
   Push(pp_SUPER_dash_BOX); // SUPER-BOX
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
 
@@ -522,11 +522,11 @@ void UNK_0xf1d6() // UNK_0xf1d6
   unsigned short int i, imax;
   CTINIT(); // CTINIT
   UNK_0x3f3b("CAPTAIN, WE ARE RECEIVING A ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("COUNTDOWN TRANSMISSION FROM ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("THE BLACK EGG... ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(1);
   Push(5);
 
@@ -539,7 +539,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
     _st__n_(); // <#
     _n_S(); // #S
     _n__gt_(); // #>
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     Push(0x03e8);
     MS(); // MS
     Push(-1);
@@ -557,7 +557,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
 
 void UNK_0xf252() // UNK_0xf252
 {
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_MAINVIEW(); // >MAINVIEW
   BFILL(); // BFILL
   V_gt_DISPLAY(); // V>DISPLAY
@@ -572,7 +572,7 @@ void UNK_0xf25e() // UNK_0xf25e
 {
   unsigned short int i, imax, j, jmax;
   UNK_0x3f3b("BOOM!");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(3);
   Push(Read16(cc_MPS)); // MPS
   Push(Pop() * Pop()); // *
@@ -617,8 +617,8 @@ void UNK_0xf25e() // UNK_0xf25e
 void UNK_0xf29e() // UNK_0xf29e
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  Get_gt_C_plus_S(); // @>C+S
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
   Push(0x0017);
   Push((Pop()==Pop())?1:0); // =
@@ -632,8 +632,8 @@ void UNK_0xf29e() // UNK_0xf29e
 void UNK_0xf2b0() // UNK_0xf2b0
 {
   Push(pp__ro_BOMB_rc_); // (BOMB)
-  _at__gt_C_plus_S(); // @>C+S
-  _ask__dash_NULL(); // ?-NULL
+  Get_gt_C_plus_S(); // @>C+S
+  Is_dash_NULL(); // ?-NULL
   if (Pop() != 0)
   {
     Push(0x63ef+INST_dash_X.offset); // IFIELD
@@ -669,13 +669,13 @@ IFieldType UNK_0xf2e6 = {0x17, 0x11, 0x01};
 void UNK_0xf2eb() // UNK_0xf2eb
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
   Push(pp__ro_SYSTEM); // (SYSTEM
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xf2e6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() ^ Pop()); // XOR
@@ -718,11 +718,11 @@ void UNK_0xf331() // UNK_0xf331
 {
   CTINIT(); // CTINIT
   UNK_0x3f3b("CAPTAIN, I FELT A TREMOR AS IF");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("MILLIONS OF VOICES CRIED OUT AND WERE");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("SUDDENLY SILENCED.");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
 
@@ -744,10 +744,10 @@ void UNK_0xf39d() // UNK_0xf39d
   D_eq_(); // D=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   Push(0x003d);
   Push((Pop()==Pop())?1:0); // =
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(9);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
@@ -763,9 +763,9 @@ void UNK_0xf39d() // UNK_0xf39d
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
   UNK_0x3f3b("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("THE LOCAL VICINITY HAVE CEASED!");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
 
@@ -792,14 +792,14 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf426(); // UNK_0xf426
   if (Pop() != 0)
   {
-    Push(pp__ask_SPHEXI); // ?SPHEXI
+    Push(pp_IsSPHEXI); // ?SPHEXI
     OFF(); // OFF
   }
   Push2Words("*ELAN");
   UNK_0xf426(); // UNK_0xf426
   if (Pop() != 0)
   {
-    Push(pp__ask_ELAN); // ?ELAN
+    Push(pp_IsELAN); // ?ELAN
     OFF(); // OFF
     UNK_0xf331(); // UNK_0xf331
   }
@@ -811,17 +811,17 @@ void UNK_0xf430() // UNK_0xf430
   }
   UNK_0xf2eb(); // UNK_0xf2eb
   Push(pp__ro_SYSTEM); // (SYSTEM
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
   UNK_0x3f3b("PLANET OBLITERATED");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -832,16 +832,16 @@ void UNK_0xf430() // UNK_0xf430
 
 void DEPART() // DEPART
 {
-  Push(pp__ask_CRITIC); // ?CRITIC
+  Push(pp_IsCRITIC); // ?CRITIC
   OFF(); // OFF
   Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex__3(); // !_3
-  Push(pp__ask_LANDED); // ?LANDED
+  Store_3(); // !_3
+  Push(pp_IsLANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    Push(pp__ask_BOMB); // ?BOMB
+    Push(pp_IsBOMB); // ?BOMB
     Push(Read16(Pop())); // @
     if (Pop() != 0)
     {
@@ -861,9 +861,9 @@ void DEPART() // DEPART
         {
           CTINIT(); // CTINIT
           UNK_0x3f3b("CRYSTAL PLANET DAMAGED");
-          _dot_TTY(); // .TTY
+          DrawTTY(); // .TTY
           UNK_0x3f3b("BUT NOT DESTROYED");
-          _dot_TTY(); // .TTY
+          DrawTTY(); // .TTY
           Push(0x1388);
           MS(); // MS
           UNK_0xf1ac(); // UNK_0xf1ac
@@ -875,7 +875,7 @@ void DEPART() // DEPART
       Push2Words("NULL");
       Push(pp__ro_BOMB_rc_); // (BOMB)
       _1_dot_5_ex_(); // 1.5!
-      Push(pp__ask_BOMB); // ?BOMB
+      Push(pp_IsBOMB); // ?BOMB
       OFF(); // OFF
     } else
     {
@@ -885,8 +885,8 @@ void DEPART() // DEPART
   }
   Push(-1);
   Push(pp_PLHI); // PLHI
-  _ex__3(); // !_3
-  Push(pp__ask_LANDED); // ?LANDED
+  Store_3(); // !_3
+  Push(pp_IsLANDED); // ?LANDED
   OFF(); // OFF
 }
 

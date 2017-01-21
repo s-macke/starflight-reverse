@@ -39,27 +39,27 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int pp_XBLT; // XBLT
-void _dot_R(); // .R
+void DrawR(); // .R
 void MS(); // MS
 void WITHIN(); // WITHIN
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void INEXT(); // INEXT
 void IPREV(); // IPREV
 void _gt_1FONT(); // >1FONT
 void CTPOS_dot_(); // CTPOS.
 void CTERASE(); // CTERASE
-void _ex_CRS(); // !CRS
+void StoreCRS(); // !CRS
 void _do__dot_(); // $.
 void POLY_dash_ER(); // POLY-ER
 void CTCR(); // CTCR
 void CTINIT(); // CTINIT
 void XYSCAN(); // XYSCAN
-void _ask_TRIG(); // ?TRIG
+void IsTRIG(); // ?TRIG
 void Y_slash_N(); // Y/N
 void CMESS(); // CMESS
 void _2DUP(); // 2DUP
@@ -108,7 +108,7 @@ void UNK_0xf092() // UNK_0xf092
 {
   Push(0x0040);
   Push(pp_XBLT); // XBLT
-  _ex__2(); // !_2
+  Store_2(); // !_2
   PRINT("[N Y]", 5); // (.")
 }
 
@@ -136,7 +136,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
     Push(3);
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+UNK_0xf088.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(a); // J
@@ -331,7 +331,7 @@ void UNK_0xf28e() // UNK_0xf28e
     Push(4);
     Push(Pop() | Pop()); // OR
     Push(0x65e1+UNK_0xf088.offset); // IFIELD
-    _ex__2(); // !_2
+    Store_2(); // !_2
   } else
   {
     Push(0x65e1+UNK_0xf083.offset); // IFIELD
@@ -377,7 +377,7 @@ void UNK_0xf2f8() // UNK_0xf2f8
   Push(0xfffb);
   Push(Pop() & Pop()); // AND
   Push(0x65e1+UNK_0xf088.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -409,7 +409,7 @@ void UNK_0xf33d() // UNK_0xf33d
   Push(4);
   Push(Pop() | Pop()); // OR
   Push(0x65e1+UNK_0xf088.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -501,12 +501,12 @@ void UNK_0xf392() // UNK_0xf392
   Push(0x0015);
   CMESS(); // CMESS
   PRINT("CHOOSE CREWMEMBER ^\\", 20); // (.")
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
   Push(2);
   Push(0x0012);
   CMESS(); // CMESS
   PRINT("AND PRESS SPACEBAR", 18); // (.")
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
   Push(0x000b);
   Push(2);
   CTPOS_dot_(); // CTPOS.
@@ -528,7 +528,7 @@ void UNK_0xf392() // UNK_0xf392
       Push(0x65e1+UNK_0xf07e.offset); // IFIELD
       _do__dot_(); // $.
     }
-    _ask_TRIG(); // ?TRIG
+    IsTRIG(); // ?TRIG
   } while(Pop() == 0);
   CI(); // CI
   CDROP(); // CDROP
@@ -560,14 +560,14 @@ void UNK_0xf440() // UNK_0xf440
     Push(0x65e1+UNK_0xf083.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT(" AND A", 6); // (.")
     CTCR(); // CTCR
     PRINT("DURABILITY OF ", 14); // (.")
     LoadData(UNK_0xf076); // from 'CREWMEMBER  '
     Push(Read8(Pop())&0xFF); // C@
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
   }
   PRINT(".", 1); // (.")
   CTCR(); // CTCR

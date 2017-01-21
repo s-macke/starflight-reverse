@@ -47,7 +47,7 @@ void _star__slash_(); // */
 void _co_(); // ,
 void RRND(); // RRND
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
 void ON_2(); // ON_2
 void _099(); // 099
@@ -63,8 +63,8 @@ void IFLD_at_(); // IFLD@
 void IFIND(); // IFIND
 void ICREATE(); // ICREATE
 void _star_CREATE(); // *CREATE
-void _ex_COLOR(); // !COLOR
-void _dot_TTY(); // .TTY
+void StoreCOLOR(); // !COLOR
+void DrawTTY(); // .TTY
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
@@ -266,7 +266,7 @@ void UNK_0xf418() // UNK_0xf418
 {
   Push(0);
   Push(0x65e1+UNK_0xf272.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   LoadData(UNK_0xf222); // from 'REGIONS     '
   Push(4);
   Push(0);
@@ -294,7 +294,7 @@ void UNK_0xf440() // UNK_0xf440
   unsigned short int i, imax;
   Push(Read16(cc_UNK_0xf18a)); // UNK_0xf18a
   Push(pp_FILE_n_); // FILE#
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(6);
   Push(0);
 
@@ -304,7 +304,7 @@ void UNK_0xf440() // UNK_0xf440
   {
     Push(i); // I
     Push(pp_RECORD_n_); // RECORD#
-    _ex__2(); // !_2
+    Store_2(); // !_2
     UNK_0xf418(); // UNK_0xf418
     i++;
   } while(i<imax); // (LOOP)
@@ -365,7 +365,7 @@ void UNK_0xf474() // UNK_0xf474
   _1_dot_5_ex__2(); // 1.5!_2
   Push(0);
   LoadData(UNK_0xf1b2); // from 'BOX         '
-  _ex__2(); // !_2
+  Store_2(); // !_2
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -384,9 +384,9 @@ void DIO() // DIO
   Push(pp_FSTUN); // FSTUN
   _099(); // 099
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f09("AUTO SAMPLING DEVICES ACTIVATED");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xf3aa(); // UNK_0xf3aa
   UNK_0xf440(); // UNK_0xf440
   UNK_0xf474(); // UNK_0xf474
@@ -402,7 +402,7 @@ void DIO() // DIO
 
   label1:
   UNK_0x3f09("PERFORMING HULL INTEGRITY CHECK");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(pp__n_SHOTS); // #SHOTS

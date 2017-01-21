@@ -33,7 +33,7 @@
 //      UNK_0xf292  codep:0x224c parp:0xf292 size:0x0020 C-string:'UNK_0xf292'
 //      UNK_0xf2b4  codep:0x224c parp:0xf2b4 size:0x0017 C-string:'UNK_0xf2b4'
 //      UNK_0xf2cd  codep:0x224c parp:0xf2cd size:0x0086 C-string:'UNK_0xf2cd'
-//           .VITS  codep:0x224c parp:0xf35d size:0x0094 C-string:'_dot_VITS'
+//           .VITS  codep:0x224c parp:0xf35d size:0x0094 C-string:'DrawVITS'
 //          >SKILL  codep:0x4a4f parp:0xf3fc size:0x0018 C-string:'_gt_SKILL'
 //      UNK_0xf416  codep:0x224c parp:0xf416 size:0x000e C-string:'UNK_0xf416'
 //      UNK_0xf426  codep:0x1d29 parp:0xf426 size:0x0002 C-string:'UNK_0xf426'
@@ -52,7 +52,7 @@ extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
-extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp_WTOP; // WTOP
 extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WRIGHT; // WRIGHT
@@ -63,7 +63,7 @@ extern const unsigned short int pp_ROSTER; // ROSTER
 extern IFieldType INST_dash_SI; // INST-SI
 void COUNT(); // COUNT
 void MIN(); // MIN
-void _dot_R(); // .R
+void DrawR(); // .R
 void MS(); // MS
 void PICK(); // PICK
 void _2OVER(); // 2OVER
@@ -71,7 +71,7 @@ void D_eq_(); // D=
 void KEY_2(); // KEY_2
 void _3_star_(); // 3*
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _1_dot_5_ex_(); // 1.5!
 void OFF(); // OFF
@@ -81,8 +81,8 @@ void CI_i_(); // CI'
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
-void _ex_COLOR(); // !COLOR
+void Get_gt_C_plus_S(); // @>C+S
+void StoreCOLOR(); // !COLOR
 void _gt_DISPLAY(); // >DISPLAY
 void BYE(); // BYE
 void POS_dot_(); // POS.
@@ -92,7 +92,7 @@ void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 void WINDOW(); // WINDOW
 void GCR(); // GCR
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -331,7 +331,7 @@ void UNK_0xf183() // UNK_0xf183
   SetColor("YELLOW");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor("RED");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(1);
   Push(1);
   UNK_0xf0ce(); // UNK_0xf0ce
@@ -373,7 +373,7 @@ void ROLE_dash_C() // ROLE-C
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x63ef+UNK_0xf11d.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() != 0)
@@ -449,8 +449,8 @@ void UNK_0xf280() // UNK_0xf280
   UNK_0xf23c(); // UNK_0xf23c
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp__ask_HEAL); // ?HEAL
-  _ex__3(); // !_3
+  Push(pp_IsHEAL); // ?HEAL
+  Store_3(); // !_3
 }
 
 
@@ -464,7 +464,7 @@ void UNK_0xf292() // UNK_0xf292
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
   Push(0x63ef+UNK_0xf0fa.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x0104);
   Push(0x63ef+UNK_0xf118.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -485,7 +485,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
   CTINIT(); // CTINIT
   Push(0x63ef+UNK_0xf0ff.offset); // IFIELD
   COUNT(); // COUNT
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   PRINT(" IS HEALED", 10); // (.")
 }
 
@@ -569,7 +569,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
   label1:
   UNK_0xf292(); // UNK_0xf292
   Push(pp_HEALTI); // HEALTI
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -578,7 +578,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 // ================================================
 // entry
 
-void _dot_VITS() // .VITS
+void DrawVITS() // .VITS
 {
   unsigned short int a, b, i, imax, j, jmax;
   Push(pp_XORMODE); // XORMODE
@@ -590,7 +590,7 @@ void _dot_VITS() // .VITS
   Push(Read16(Pop())); // @
   b = Pop(); // >R
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf0a6(); // UNK_0xf0a6
   Push(0);
   Push(1);
@@ -647,11 +647,11 @@ void _dot_VITS() // .VITS
       SetColor("BLACK");
       POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
       Push(pp_XBLT); // XBLT
-      _ex__3(); // !_3
+      Store_3(); // !_3
       Push(0x63ef+UNK_0xf11d.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(3);
-      _dot_R(); // .R
+      DrawR(); // .R
       PRINT("%", 1); // (.")
     }
     ICLOSE(); // ICLOSE
@@ -659,10 +659,10 @@ void _dot_VITS() // .VITS
   } while(i<imax); // (LOOP)
 
   Push(b); // R>
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(a); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -707,7 +707,7 @@ void UNK_0xf416() // UNK_0xf416
   Push(2);
   Push(Pop() | Pop()); // OR
   Push(0x63ef+UNK_0xf122.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -730,7 +730,7 @@ void UNK_0xf42f() // UNK_0xf42f
   unsigned short int i, imax;
   Push(0);
   Push(pp_UNK_0xf426); // UNK_0xf426
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xf0f0.offset); // IFIELD
@@ -751,7 +751,7 @@ void UNK_0xf42f() // UNK_0xf42f
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     OVER(); // OVER
     _gt_SKILL(); // >SKILL case
     Push(Read8(Pop())&0xFF); // C@
@@ -802,7 +802,7 @@ void UNK_0xf497() // UNK_0xf497
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xf0f0.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xf11d.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -844,7 +844,7 @@ void UNK_0xf4c1() // UNK_0xf4c1
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x63ef+UNK_0xf11d.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() == 0) Push(1); else Push(0); // 0=

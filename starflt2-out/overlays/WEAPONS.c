@@ -87,10 +87,10 @@ extern const unsigned short int cc_MPS; // MPS
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_ILOCAL; // ILOCAL
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
-extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp_IsNEB; // ?NEB
 extern const unsigned short int pp__i_WAX; // 'WAX
 extern const unsigned short int pp_WEAPON_dash_; // WEAPON-
-extern const unsigned short int pp__ask_SUP; // ?SUP
+extern const unsigned short int pp_IsSUP; // ?SUP
 extern const unsigned short int pp_NLR; // NLR
 extern const unsigned short int pp_EYEXY; // EYEXY
 extern const unsigned short int pp_KEYTIME; // KEYTIME
@@ -108,7 +108,7 @@ void COUNT(); // COUNT
 void ABS(); // ABS
 void M_star__slash_(); // M*/
 void MAX(); // MAX
-void _dot_(); // .
+void Draw(); // .
 void SPACE(); // SPACE
 void MS(); // MS
 void D_dash_(); // D-
@@ -119,26 +119,26 @@ void KEY_2(); // KEY_2
 void _3_star_(); // 3*
 void RRND(); // RRND
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
-void D_ex_(); // D!
+void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void CDROP(); // CDROP
-void _ask_NULL(); // ?NULL
+void IsNULL(); // ?NULL
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
 void IDELETE(); // IDELETE
 void NBCLR(); // NBCLR
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void BFILL(); // BFILL
-void _dot_CIRCLE_1(); // .CIRCLE_1
+void DrawCIRCLE_1(); // .CIRCLE_1
 void FILLCIR(); // FILLCIR
 void _gt_1FONT(); // >1FONT
 void _gt_2FONT(); // >2FONT
@@ -148,24 +148,24 @@ void _gt_MAINVI(); // >MAINVI
 void _gt_DISPLA(); // >DISPLA
 void V_gt_DISPL(); // V>DISPL
 void BYE_2(); // BYE_2
-void _at_ID(); // @ID
-void _at_IL(); // @IL
-void _at_IH(); // @IH
+void GetID(); // @ID
+void GetIL(); // @IL
+void GetIH(); // @IH
 void POINT_gt_I(); // POINT>I
-void _dot_LOCAL_dash_(); // .LOCAL-
-void _ask_ICONS_dash__1(); // ?ICONS-_1
+void DrawLOCAL_dash_(); // .LOCAL-
+void IsICONS_dash__1(); // ?ICONS-_1
 void POS_dot_(); // POS.
 void CTERASE(); // CTERASE
 void BEEPON_2(); // BEEPON_2
 void SONG(); // SONG
 void POLY_dash_ER(); // POLY-ER
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void XYSCAN(); // XYSCAN
-void _ask_TRIG(); // ?TRIG
+void IsTRIG(); // ?TRIG
 void Y_slash_N(); // Y/N
 void _do__ex_(); // $!
-void _dot_SORD(); // .SORD
+void DrawSORD(); // .SORD
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -180,11 +180,11 @@ void _0_gt_(); // 0>
 void TONE(); // TONE
 void BEEPOFF(); // BEEPOFF
 void TIME(); // TIME
-void _at_EXECUTE(); // @EXECUTE
+void GetEXECUTE(); // @EXECUTE
 void CI(); // CI
 void LXPLOT(); // LXPLOT
 void DISPLAY(); // DISPLAY
-void _ask_INVIS(); // ?INVIS
+void IsINVIS(); // ?INVIS
 void WLD_gt_SCR(); // WLD>SCR
 
 
@@ -328,7 +328,7 @@ void UNK_0xecb3() // UNK_0xecb3
 void UNK_0xecbb() // UNK_0xecbb
 {
   UNK_0x3f09(" ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 // 0xecc3: db 0x4c 0x22 0xdb 0x3f 0xdb 0x3f 0x07 0x40 0xfa 0x15 0x0a 0x00 0xde 0x0d 0xc4 0x52 0x60 0x16 0x28 0x00 0xdb 0x3f 0xb3 0x0e 0xf2 0x0e 0x92 0x0f 0x41 0x0e 0xfa 0x15 0x08 0x00 0x41 0x0e 0x58 0x10 0x4c 0x0f 0xb4 0x0d 0x92 0x0f 0x41 0x0e 0xfa 0x15 0x08 0x00 0x41 0x0e 0x58 0x10 0x4c 0x0f 0x90 0x0e 0x90 0x16 'L" ? ? @       R` (  ?      A     A X L     A     A X L     '
@@ -402,7 +402,7 @@ void UNK_0xed47() // UNK_0xed47
   CTERASE(); // CTERASE
   Push(0x6326); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
 }
@@ -434,7 +434,7 @@ void UNK_0xed61() // UNK_0xed61
     Push(i); // I
     Push(pp_ILOCAL); // ILOCAL
     Push(Read16(Pop())); // @
-    _ask_ICONS_dash__1(); // ?ICONS-_1
+    IsICONS_dash__1(); // ?ICONS-_1
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
@@ -445,7 +445,7 @@ void UNK_0xed61() // UNK_0xed61
       do // (DO)
       {
         POINT_gt_I(); // POINT>I
-        _at_ID(); // @ID
+        GetID(); // @ID
         Push(0x001b);
         Push(0x0023);
         WITHIN(); // WITHIN
@@ -484,7 +484,7 @@ void UNK_0xeda9() // UNK_0xeda9
 
 void UNK_0xedb5() // UNK_0xedb5
 {
-  Push(pp__ask_SUP); // ?SUP
+  Push(pp_IsSUP); // ?SUP
   Push(Read16(Pop())); // @
   Push(pp_NLR); // NLR
   Push(Read16(Pop())); // @
@@ -586,7 +586,7 @@ void UNK_0xedf7() // UNK_0xedf7
   }
   Push(a); // R>
   Pop(); // DROP
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -600,7 +600,7 @@ void UNK_0xee5f() // UNK_0xee5f
 {
   unsigned short int i, imax;
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   Push(3);
   Push(0);
@@ -636,11 +636,11 @@ void UNK_0xeeac() // UNK_0xeeac
 {
   CTINIT(); // CTINIT
   UNK_0x3f09("YOU HAVE ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xec44(); // UNK_0xec44
   Push(0x65e1+UNK_0xec76.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
-  _dot_(); // .
+  Draw(); // .
   SPACE(); // SPACE
   ICLOSE(); // ICLOSE
   Push(0x6356); Push(0x0002);
@@ -648,7 +648,7 @@ void UNK_0xeeac() // UNK_0xeeac
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x6378); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -691,7 +691,7 @@ void UNK_0xef02() // UNK_0xef02
 {
   UNK_0xec54(); // UNK_0xec54
   Push(pp_EYEXY); // EYEXY
-  D_ex_(); // D!
+  StoreD(); // D!
 }
 
 
@@ -701,7 +701,7 @@ void UNK_0xef02() // UNK_0xef02
 
 void UNK_0xef0c() // UNK_0xef0c
 {
-  Push(pp__ask_NEB); // ?NEB
+  Push(pp_IsNEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -710,7 +710,7 @@ void UNK_0xef0c() // UNK_0xef0c
   {
     SetColor("BLACK");
   }
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
 }
 
@@ -722,7 +722,7 @@ void UNK_0xef0c() // UNK_0xef0c
 void UNK_0xef24() // UNK_0xef24
 {
   UNK_0xef0c(); // UNK_0xef0c
-  _dot_LOCAL_dash_(); // .LOCAL-
+  DrawLOCAL_dash_(); // .LOCAL-
 }
 
 
@@ -744,7 +744,7 @@ void UNK_0xef2c() // UNK_0xef2c
   Push(Pop() + Pop()); // +
   Push(a); // R>
   SWAP(); // SWAP
-  _ask_INVIS(); // ?INVIS
+  IsINVIS(); // ?INVIS
 }
 
 
@@ -780,14 +780,14 @@ void UNK_0xef54() // UNK_0xef54
   {
     UNK_0xef24(); // UNK_0xef24
     SetColor("WHITE");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(pp_EYEXY); // EYEXY
     _2_at_(); // 2@
     WLD_gt_SCR(); // WLD>SCR
     UNK_0xef48(); // UNK_0xef48
     UNK_0xef48(); // UNK_0xef48
     Push(i); // I
-    _dot_CIRCLE_1(); // .CIRCLE_1
+    DrawCIRCLE_1(); // .CIRCLE_1
     V_gt_DISPL(); // V>DISPL
     UNK_0xec4c(); // UNK_0xec4c
     Push(-Pop()); // NEGATE
@@ -808,10 +808,10 @@ void UNK_0xef54() // UNK_0xef54
 void UNK_0xef86() // UNK_0xef86
 {
   Push(0x012c);
-  _at_IL(); // @IL
-  _at_IH(); // @IH
+  GetIL(); // @IL
+  GetIH(); // @IH
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   Push(0x0014);
   Push((Pop()==Pop())?1:0); // =
   Push(0xc6d9); // probable 'BLST'
@@ -840,7 +840,7 @@ void UNK_0xefa4() // UNK_0xefa4
     Push(i); // I
     Push(pp_ILOCAL); // ILOCAL
     Push(Read16(Pop())); // @
-    _ask_ICONS_dash__1(); // ?ICONS-_1
+    IsICONS_dash__1(); // ?ICONS-_1
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
@@ -869,7 +869,7 @@ void UNK_0xefa4() // UNK_0xefa4
 void UNK_0xefd4() // UNK_0xefd4
 {
   unsigned short int i, imax;
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
   V_gt_DISPL(); // V>DISPL
   Push(0x2710);
@@ -903,7 +903,7 @@ void UNK_0xeffc() // UNK_0xeffc
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x001e);
   Push(2);
 
@@ -917,7 +917,7 @@ void UNK_0xeffc() // UNK_0xeffc
     UNK_0xef48(); // UNK_0xef48
     UNK_0xef48(); // UNK_0xef48
     Push(i); // I
-    _dot_CIRCLE_1(); // .CIRCLE_1
+    DrawCIRCLE_1(); // .CIRCLE_1
     DISPLAY(); // DISPLAY
     V_gt_DISPL(); // V>DISPL
     i++;
@@ -994,14 +994,14 @@ void UNK_0xf074() // UNK_0xf074
   _2_at_(); // 2@
   D_plus_(); // D+
   Push(pp_UNK_0xf04c); // UNK_0xf04c
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(pp_UNK_0xf052); // UNK_0xf052
   _2_at_(); // 2@
   Push(pp_UNK_0xf05e); // UNK_0xf05e
   _2_at_(); // 2@
   D_plus_(); // D+
   Push(pp_UNK_0xf052); // UNK_0xf052
-  D_ex_(); // D!
+  StoreD(); // D!
 }
 
 
@@ -1014,9 +1014,9 @@ void UNK_0xf094() // UNK_0xf094
   unsigned short int a;
   UNK_0xec54(); // UNK_0xec54
   Push(pp_UNK_0xf04c); // UNK_0xf04c
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_UNK_0xf052); // UNK_0xf052
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_EYEXY); // EYEXY
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
@@ -1038,19 +1038,19 @@ void UNK_0xf094() // UNK_0xf094
   Push(Read16(a)); // R@
   UNK_0xf064(); // UNK_0xf064
   Push(pp_UNK_0xf058); // UNK_0xf058
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(a); // R>
   UNK_0xf064(); // UNK_0xf064
   Push(pp_UNK_0xf05e); // UNK_0xf05e
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(0x8000);
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xf052); // UNK_0xf052
   Push(Pop()+2); // 2+
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_UNK_0xf04c); // UNK_0xf04c
   Push(Pop()+2); // 2+
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1075,7 +1075,7 @@ void UNK_0xf0f4() // UNK_0xf0f4
 {
   UNK_0xec54(); // UNK_0xec54
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xecab(); // UNK_0xecab
   WLD_gt_SCR(); // WLD>SCR
   LXPLOT(); // LXPLOT
@@ -1084,7 +1084,7 @@ void UNK_0xf0f4() // UNK_0xf0f4
   label2:
   UNK_0xf0e8(); // UNK_0xf0e8
   Push(pp_UNK_0xf046); // UNK_0xf046
-  D_ex_(); // D!
+  StoreD(); // D!
   UNK_0xf0e8(); // UNK_0xf0e8
   Push(pp_EYEXY); // EYEXY
   _2_at_(); // 2@
@@ -1120,7 +1120,7 @@ void UNK_0xf138() // UNK_0xf138
   IOPEN(); // IOPEN
 
   label2:
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   IDELETE(); // IDELETE
@@ -1145,7 +1145,7 @@ void UNK_0xf158() // UNK_0xf158
   UNK_0xefa4(); // UNK_0xefa4
   UNK_0xf138(); // UNK_0xf138
   UNK_0xeee0(); // UNK_0xeee0
-  _dot_SORD(); // .SORD
+  DrawSORD(); // .SORD
   Push(0x0064);
   Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
@@ -1179,7 +1179,7 @@ void UNK_0xf172() // UNK_0xf172
         if (Pop() != 0)
         {
           Push(pp__i_WAX); // 'WAX
-          _at_EXECUTE(); // @EXECUTE
+          GetEXECUTE(); // @EXECUTE
         }
         XYSCAN(); // XYSCAN
         UNK_0xef2c(); // UNK_0xef2c
@@ -1196,7 +1196,7 @@ void UNK_0xf172() // UNK_0xf172
         }
         UNK_0xef54(); // UNK_0xef54
         UNK_0xedf7(); // UNK_0xedf7
-        _ask_TRIG(); // ?TRIG
+        IsTRIG(); // ?TRIG
       } while(Pop() == 0);
       UNK_0xede5(); // UNK_0xede5
       if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1215,7 +1215,7 @@ void UNK_0xf172() // UNK_0xf172
     } else
     {
       UNK_0x3f09("CANCELLED");
-      _dot_TTY(); // .TTY
+      DrawTTY(); // .TTY
     }
   } else
   {
@@ -1223,7 +1223,7 @@ void UNK_0xf172() // UNK_0xf172
     CTERASE(); // CTERASE
     Push(0x63a8); Push(0x0002);
     UNK_0xec7b(); // UNK_0xec7b
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
   }
   UNK_0xecab(); // UNK_0xecab
   UNK_0xef24(); // UNK_0xef24
@@ -1256,8 +1256,8 @@ void UNK_0xf20c() // UNK_0xf20c
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
-    _at_INST_dash_S(); // @INST-S
+    Get_gt_C_plus_S(); // @>C+S
+    GetINST_dash_S(); // @INST-S
     ICLOSE(); // ICLOSE
     Push(6);
     Push((Pop()==Pop())?1:0); // =
@@ -1326,7 +1326,7 @@ void UNK_0xf26c() // UNK_0xf26c
       Push(Read16(Pop())); // @
       Push(Read16(regsp)); // DUP
       Push(pp_UNK_0xf254); // UNK_0xf254
-      _ex__2(); // !_2
+      Store_2(); // !_2
       SWAP(); // SWAP
       _dash_(); // -
       _0_st_(); // 0<
@@ -1404,7 +1404,7 @@ void UNK_0xf2d4() // UNK_0xf2d4
   }
   UNK_0xf2bc(); // UNK_0xf2bc
   UNK_0xf24a(); // UNK_0xf24a
-  _dot_SORD(); // .SORD
+  DrawSORD(); // .SORD
 }
 
 
@@ -1418,7 +1418,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
   UNK_0xef48(); // UNK_0xef48
   UNK_0xef48(); // UNK_0xef48
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xec4c(); // UNK_0xec4c
   FILLCIR(); // FILLCIR
 }
@@ -1444,17 +1444,17 @@ void UNK_0xf306() // UNK_0xf306
   do // (DO)
   {
     SetColor("VIOLET");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
     _2DUP(); // 2DUP
     UNK_0xf2f4(); // UNK_0xf2f4
-    _dot_LOCAL_dash_(); // .LOCAL-
+    DrawLOCAL_dash_(); // .LOCAL-
     DISPLAY(); // DISPLAY
     V_gt_DISPL(); // V>DISPL
     Push(0x0020);
     MS(); // MS
     UNK_0xef0c(); // UNK_0xef0c
-    _dot_LOCAL_dash_(); // .LOCAL-
+    DrawLOCAL_dash_(); // .LOCAL-
     DISPLAY(); // DISPLAY
     V_gt_DISPL(); // V>DISPL
     Push(0x0020);
@@ -1477,12 +1477,12 @@ void GNUNK_gt_NUL() // GNUNK>NUL
   UNK_0xf306(); // UNK_0xf306
   Push(-1);
   Push(pp_NLR); // NLR
-  _ex__2(); // !_2
+  Store_2(); // !_2
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_NTIME); // NTIME
-  D_ex_(); // D!
-  Push(pp__ask_SUP); // ?SUP
+  StoreD(); // D!
+  Push(pp_IsSUP); // ?SUP
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   Push(0xc636); // probable 'OV-SH'
@@ -1505,7 +1505,7 @@ void UNK_0xf374() // UNK_0xf374
   UNK_0xf2d4(); // UNK_0xf2d4
   Push(1);
   Push(pp_NLR); // NLR
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0032);
   Push(0xbf4a); // probable 'OV+!EDL'
   MODULE(); // MODULE
@@ -1514,15 +1514,15 @@ void UNK_0xf374() // UNK_0xf374
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_NTIME); // NTIME
-  D_ex_(); // D!
+  StoreD(); // D!
   SetColor("YELLOW");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x63c8); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x6400); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -1533,20 +1533,20 @@ void UNK_0xf374() // UNK_0xf374
 void UNK_0xf3bc() // UNK_0xf3bc
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xecbb(); // UNK_0xecbb
   Push(0x6421); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x644f); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x647f); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x649f); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Y_slash_N(); // Y/N
 }
 
@@ -1559,15 +1559,15 @@ void UNK_0xf3f0() // UNK_0xf3f0
 {
   Push(0x64bf); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x64ef); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
   Push(0x651c); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x0bb8);
   MS(); // MS
   BEEPON_2(); // BEEPON_2
@@ -1579,7 +1579,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   C_ex__2(); // C!_2
   CTERASE(); // CTERASE
   SetColor("RED");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x653c); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1599,13 +1599,13 @@ void UNK_0xf448() // UNK_0xf448
   UNK_0xecbb(); // UNK_0xecbb
   Push(0x6562); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x6594); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x65bf); Push(0x0002);
   UNK_0xec7b(); // UNK_0xec7b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Y_slash_N(); // Y/N
   if (Pop() == 0) return;
   UNK_0xf3f0(); // UNK_0xf3f0
@@ -1678,7 +1678,7 @@ void DONULL() // DONULL
     } else
     {
       UNK_0x3f09("CANCELLED");
-      _dot_TTY(); // .TTY
+      DrawTTY(); // .TTY
     }
   } else
   {

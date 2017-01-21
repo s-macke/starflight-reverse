@@ -17,12 +17,12 @@
 //      UNK_0xedc9  codep:0x7394 parp:0xedc9 size:0x0006 C-string:'UNK_0xedc9'
 //      UNK_0xedd1  codep:0x7420 parp:0xedd1 size:0x0003 C-string:'UNK_0xedd1'
 //      UNK_0xedd6  codep:0x7420 parp:0xedd6 size:0x000d C-string:'UNK_0xedd6'
-//          ?ETIME  codep:0x224c parp:0xedee size:0x002a C-string:'_ask_ETIME'
+//          ?ETIME  codep:0x224c parp:0xedee size:0x002a C-string:'IsETIME'
 //      UNK_0xee1a  codep:0x224c parp:0xee1a size:0x003c C-string:'UNK_0xee1a'
 //      UNK_0xee58  codep:0x224c parp:0xee58 size:0x0040 C-string:'UNK_0xee58'
 //      UNK_0xee9a  codep:0x224c parp:0xee9a size:0x002a C-string:'UNK_0xee9a'
 //          %STORM  codep:0x1d29 parp:0xeecf size:0x0005 C-string:'_pe_STORM'
-//         ?.STORM  codep:0x224c parp:0xeee0 size:0x001c C-string:'_ask__dot_STORM'
+//         ?.STORM  codep:0x224c parp:0xeee0 size:0x001c C-string:'Is_dot_STORM'
 //      UNK_0xeefe  codep:0x224c parp:0xeefe size:0x0028 C-string:'UNK_0xeefe'
 //        DO-STORM  codep:0x224c parp:0xef33 size:0x006e C-string:'DO_dash_STORM'
 //      UNK_0xefa3  codep:0x224c parp:0xefa3 size:0x0004 C-string:'UNK_0xefa3'
@@ -35,7 +35,7 @@
 //      UNK_0xf06f  codep:0x224c parp:0xf06f size:0x003e C-string:'UNK_0xf06f'
 //            FADE  codep:0x224c parp:0xf0b6 size:0x002a C-string:'FADE'
 //      UNK_0xf0e2  codep:0x224c parp:0xf0e2 size:0x002a C-string:'UNK_0xf0e2'
-//       .STARDATE  codep:0x224c parp:0xf11a size:0x0090 C-string:'_dot_STARDATE'
+//       .STARDATE  codep:0x224c parp:0xf11a size:0x0090 C-string:'DrawSTARDATE'
 //      UNK_0xf1ac  codep:0x224c parp:0xf1ac size:0x0016 C-string:'UNK_0xf1ac'
 //      UNK_0xf1c4  codep:0x224c parp:0xf1c4 size:0x0018 C-string:'UNK_0xf1c4'
 //      UNK_0xf1de  codep:0x224c parp:0xf1de size:0x0008 C-string:'UNK_0xf1de'
@@ -43,14 +43,14 @@
 //      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x0026 C-string:'UNK_0xf2ce'
 //      UNK_0xf2f6  codep:0x224c parp:0xf2f6 size:0x0034 C-string:'UNK_0xf2f6'
 //      UNK_0xf32c  codep:0x224c parp:0xf32c size:0x002c C-string:'UNK_0xf32c'
-//         .ENERGY  codep:0x224c parp:0xf364 size:0x00a5 C-string:'_dot_ENERGY'
-//          .CARGO  codep:0x224c parp:0xf414 size:0x003b C-string:'_dot_CARGO'
+//         .ENERGY  codep:0x224c parp:0xf364 size:0x00a5 C-string:'DrawENERGY'
+//          .CARGO  codep:0x224c parp:0xf414 size:0x003b C-string:'DrawCARGO'
 //      UNK_0xf451  codep:0x224c parp:0xf451 size:0x0026 C-string:'UNK_0xf451'
 //      UNK_0xf479  codep:0x224c parp:0xf479 size:0x0022 C-string:'UNK_0xf479'
 //      UNK_0xf49d  codep:0x224c parp:0xf49d size:0x0022 C-string:'UNK_0xf49d'
-//          .WHERE  codep:0x224c parp:0xf4ca size:0x0044 C-string:'_dot_WHERE'
-//       .DISTANCE  codep:0x224c parp:0xf51c size:0x0006 C-string:'_dot_DISTANCE'
-//          .STATS  codep:0x224c parp:0xf52d size:0x0000 C-string:'_dot_STATS'
+//          .WHERE  codep:0x224c parp:0xf4ca size:0x0044 C-string:'DrawWHERE'
+//       .DISTANCE  codep:0x224c parp:0xf51c size:0x0006 C-string:'DrawDISTANCE'
+//          .STATS  codep:0x224c parp:0xf52d size:0x0000 C-string:'DrawSTATS'
 
 // =================================
 // ============= EXTERN ============
@@ -85,7 +85,7 @@ void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
 void D_st_(); // D<
-void _dot_R(); // .R
+void DrawR(); // .R
 void MS(); // MS
 void _2OVER(); // 2OVER
 void D_dash_(); // D-
@@ -95,25 +95,25 @@ void WITHIN(); // WITHIN
 void _3_star_(); // 3*
 void RRND(); // RRND
 void SQRT(); // SQRT
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
-void D_ex_(); // D!
+void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
-void _at_INST_dash_S(); // @INST-S
+void GetINST_dash_S(); // @INST-S
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void ALL(); // ALL
 void SAVE_dash_OV(); // SAVE-OV
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void POS_dot_(); // POS.
 void _gt_TVCT(); // >TVCT
 void POLY_dash_ER(); // POLY-ER
-void _dot_VIT(); // .VIT
+void DrawVIT(); // .VIT
 void _2_at_(); // 2@
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
@@ -161,7 +161,7 @@ void UNK_0xed9e() // UNK_0xed9e
 void UNK_0xeda6() // UNK_0xeda6
 {
   Push(pp_TVEHICL); // TVEHICL
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
 }
 
 
@@ -215,7 +215,7 @@ IFieldType UNK_0xedd6 = {0x10, 0x1b, 0x01};
 // 0xede3: WORD '?ETIME' codep=0x224c parp=0xedee
 // ================================================
 
-void _ask_ETIME() // ?ETIME
+void IsETIME() // ?ETIME
 {
   Push(pp_ETIME); // ETIME
   Push(Read16(Pop())); // @
@@ -284,8 +284,8 @@ void UNK_0xee1a() // UNK_0xee1a
 void UNK_0xee58() // UNK_0xee58
 {
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_S(); // @INST-S
+  Get_gt_C_plus_S(); // @>C+S
+  GetINST_dash_S(); // @INST-S
   Push(Read16(regsp)); // DUP
   Push(7);
   Push(0x000a);
@@ -348,7 +348,7 @@ void UNK_0xee9a() // UNK_0xee9a
 // 0xeed4: WORD '?.STORM' codep=0x224c parp=0xeee0
 // ================================================
 
-void _ask__dot_STORM() // ?.STORM
+void Is_dot_STORM() // ?.STORM
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
@@ -383,7 +383,7 @@ void UNK_0xeefe() // UNK_0xeefe
   Push(0);
   MAX(); // MAX
   Push(pp_STORM); // STORM
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0064);
   Push(pp__pe_EFF); // %EFF
   _st__ex__gt_(); // <!>
@@ -408,11 +408,11 @@ void DO_dash_STORM() // DO-STORM
       Push(-1);
       Push(pp_STORM); // STORM
       _plus__ex__2(); // +!_2
-      _ask__dot_STORM(); // ?.STORM
+      Is_dot_STORM(); // ?.STORM
     } else
     {
       Push(pp__ro_PLANET); // (PLANET
-      _at__gt_C_plus_S(); // @>C+S
+      Get_gt_C_plus_S(); // @>C+S
       LoadData(UNK_0xedc9); // from 'PLANET      '
       Push(Read16(Pop())); // @
       Push(pp__pe_STORM); // %STORM
@@ -433,7 +433,7 @@ void DO_dash_STORM() // DO-STORM
         Push(4);
         RRND(); // RRND
         Push(pp__n_STORM); // #STORM
-        _ex__2(); // !_2
+        Store_2(); // !_2
         Push(0xcdc0); // probable '.STOR'
         MODULE(); // MODULE
         UNK_0xeefe(); // UNK_0xeefe
@@ -612,7 +612,7 @@ void FADE() // FADE
   MODULE(); // MODULE
   Push2Words("NULL");
   Push(pp_HAZE); // HAZE
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(0x0fa0);
   MS(); // MS
   Push2Words("*PERSON");
@@ -622,7 +622,7 @@ void FADE() // FADE
   ALL(); // ALL
   Push(2);
   _star_CLOSE(); // *CLOSE
-  _dot_VIT(); // .VIT
+  DrawVIT(); // .VIT
 }
 
 
@@ -655,7 +655,7 @@ void UNK_0xf0e2() // UNK_0xf0e2
 // ================================================
 // entry
 
-void _dot_STARDATE() // .STARDATE
+void DrawSTARDATE() // .STARDATE
 {
   Push(pp_XORMODE); // XORMODE
   Push(Read16(Pop())); // @
@@ -668,7 +668,7 @@ void _dot_STARDATE() // .STARDATE
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -694,7 +694,7 @@ void _dot_STARDATE() // .STARDATE
       PRINT("0", 1); // (.")
     }
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("-", 1); // (.")
     Push(Read16(regsp)); // DUP
     Push(0x000a);
@@ -704,10 +704,10 @@ void _dot_STARDATE() // .STARDATE
       PRINT("0", 1); // (.")
     }
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("-", 1); // (.")
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
   } else
   {
     PRINT(" \?\?\?\?", 5); // (.")
@@ -715,7 +715,7 @@ void _dot_STARDATE() // .STARDATE
   Push(pp_XORMODE); // XORMODE
   _st__ex__gt_(); // <!>
   UNK_0xee58(); // UNK_0xee58
-  _ask_ETIME(); // ?ETIME
+  IsETIME(); // ?ETIME
 }
 
 
@@ -746,7 +746,7 @@ void UNK_0xf1c4() // UNK_0xf1c4
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1+UNK_0xedd1.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+UNK_0xedd6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
@@ -899,13 +899,13 @@ void UNK_0xf2f6() // UNK_0xf2f6
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() != 0)
   {
     UNK_0xf2ce(); // UNK_0xf2ce
     Push(5);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("KM.", 3); // (.")
     return;
   }
@@ -926,7 +926,7 @@ void UNK_0xf32c() // UNK_0xf32c
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
   UNK_0xedba(); // UNK_0xedba
@@ -944,7 +944,7 @@ void UNK_0xf32c() // UNK_0xf32c
 // ================================================
 // entry
 
-void _dot_ENERGY() // .ENERGY
+void DrawENERGY() // .ENERGY
 {
   Push(0x0074);
   Push(0x00ab);
@@ -962,12 +962,12 @@ void _dot_ENERGY() // .ENERGY
   if (Pop() != 0)
   {
     SetColor("YELLOW");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     PRINT("NONE", 4); // (.")
     return;
   }
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x07d0);
   _dash_(); // -
   Push(0x0064);
@@ -982,13 +982,13 @@ void _dot_ENERGY() // .ENERGY
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
     SetColor("PINK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
   } else
   {
     Push(3);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("%", 1); // (.")
   }
   Push(0x0074);
@@ -1009,7 +1009,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0063);
   MIN(); // MIN
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("%", 1); // (.")
 }
 
@@ -1019,7 +1019,7 @@ void _dot_ENERGY() // .ENERGY
 // ================================================
 // entry
 
-void _dot_CARGO() // .CARGO
+void DrawCARGO() // .CARGO
 {
   Push(0x0074);
   Push(0x009d);
@@ -1028,7 +1028,7 @@ void _dot_CARGO() // .CARGO
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+UNK_0xedc4.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -1040,9 +1040,9 @@ void _dot_CARGO() // .CARGO
     _slash_(); // /
   }
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("% FULL", 6); // (.")
   ICLOSE(); // ICLOSE
 }
@@ -1120,12 +1120,12 @@ void UNK_0xf49d() // UNK_0xf49d
 // ================================================
 // entry
 
-void _dot_WHERE() // .WHERE
+void DrawWHERE() // .WHERE
 {
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x0010);
   Push(0x00c5);
   POS_dot_(); // POS.
@@ -1139,7 +1139,7 @@ void _dot_WHERE() // .WHERE
     Push(-Pop()); // NEGATE
   }
   Push(4);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xf49d(); // UNK_0xf49d
   PRINT(" * ", 3); // (.")
   Push(Read16(regsp)); // DUP
@@ -1150,7 +1150,7 @@ void _dot_WHERE() // .WHERE
     Push(-Pop()); // NEGATE
   }
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xf479(); // UNK_0xf479
 }
 
@@ -1160,7 +1160,7 @@ void _dot_WHERE() // .WHERE
 // ================================================
 // entry
 
-void _dot_DISTANCE() // .DISTANCE
+void DrawDISTANCE() // .DISTANCE
 {
   UNK_0xf2f6(); // UNK_0xf2f6
   UNK_0xf32c(); // UNK_0xf32c
@@ -1172,7 +1172,7 @@ void _dot_DISTANCE() // .DISTANCE
 // ================================================
 // entry
 
-void _dot_STATS() // .STATS
+void DrawSTATS() // .STATS
 {
   unsigned short int a;
   Push(pp_XORMODE); // XORMODE
@@ -1188,14 +1188,14 @@ void _dot_STATS() // .STATS
     UNK_0xf0e2(); // UNK_0xf0e2
     UNK_0xf00d(); // UNK_0xf00d
   }
-  _dot_STARDATE(); // .STARDATE
-  _dot_WHERE(); // .WHERE
-  _dot_ENERGY(); // .ENERGY
-  _dot_CARGO(); // .CARGO
-  _dot_DISTANCE(); // .DISTANCE
+  DrawSTARDATE(); // .STARDATE
+  DrawWHERE(); // .WHERE
+  DrawENERGY(); // .ENERGY
+  DrawCARGO(); // .CARGO
+  DrawDISTANCE(); // .DISTANCE
   Push(a); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 // 0xf557: db 0x54 0x56 0x43 0x4f 0x4e 0x2d 0x56 0x5f 0x5f 0x00 'TVCON-V__ '

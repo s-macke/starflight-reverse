@@ -4,6 +4,6 @@
 #define COMBAUX_H
 
 void SET_dash_SC(); // SET-SC
-void _at_NF(); // @NF
+void GetNF(); // @NF
 
 #endif

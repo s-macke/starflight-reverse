@@ -40,7 +40,7 @@
 //      UNK_0xefe4  codep:0x224c parp:0xefe4 size:0x0016 C-string:'UNK_0xefe4'
 //      UNK_0xeffc  codep:0x224c parp:0xeffc size:0x000e C-string:'UNK_0xeffc'
 //      UNK_0xf00c  codep:0x224c parp:0xf00c size:0x0018 C-string:'UNK_0xf00c'
-//           .MODE  codep:0x224c parp:0xf02e size:0x002c C-string:'_dot_MODE'
+//           .MODE  codep:0x224c parp:0xf02e size:0x002c C-string:'DrawMODE'
 //      DISPLAYKEY  codep:0x224c parp:0xf069 size:0x0057 C-string:'DISPLAYKEY'
 //           CLEAR  codep:0x224c parp:0xf0ca size:0x0018 C-string:'CLEAR'
 //              ML  codep:0x224c parp:0xf0e9 size:0x0010 C-string:'ML'
@@ -56,7 +56,7 @@
 //          INSERT  codep:0x224c parp:0xf205 size:0x003c C-string:'INSERT'
 //          DELETE  codep:0x224c parp:0xf24c size:0x001c C-string:'DELETE'
 //           #>MON  codep:0x4b82 parp:0xf272 size:0x001c C-string:'_n__gt_MON'
-//        ?VISIBLE  codep:0x224c parp:0xf29b size:0x0016 C-string:'_ask_VISIBLE'
+//        ?VISIBLE  codep:0x224c parp:0xf29b size:0x0016 C-string:'IsVISIBLE'
 //             EOL  codep:0x224c parp:0xf2b9 size:0x001c C-string:'EOL'
 //             PUT  codep:0x224c parp:0xf2dd size:0x0058 C-string:'PUT'
 //        SET-USER  codep:0x224c parp:0xf342 size:0x0098 C-string:'SET_dash_USER'
@@ -87,7 +87,7 @@ void MIN(); // MIN
 void PAD(); // PAD
 void QUIT(); // QUIT
 void _dash_TRAILING(); // -TRAILING
-void _dot_(); // .
+void Draw(); // .
 void LIST(); // LIST
 void SPACE(); // SPACE
 void SPACES(); // SPACES
@@ -97,7 +97,7 @@ void NOP(); // NOP
 void DOSCALL(); // DOSCALL
 void KEY_2(); // KEY_2
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void CMOVE_2(); // CMOVE_2
 void FILL_2(); // FILL_2
@@ -112,7 +112,7 @@ void _dash_(); // -
 void _gt_(); // >
 void _st_(); // <
 void _st_LCMOVE(); // <LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 
 
 // =================================
@@ -185,7 +185,7 @@ void UNK_0xee7e() // UNK_0xee7e
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(c); // R>
   OVER(); // OVER
   Push(b); // R>
@@ -253,7 +253,7 @@ void UNK_0xeec0() // UNK_0xeec0
   Push(5);
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   UNK_0xeea0(); // UNK_0xeea0
-  _dot_(); // .
+  Draw(); // .
   UNK_0xeea0(); // UNK_0xeea0
   UNK_0xeea8(); // UNK_0xeea8
   UNK_0xeeb0(); // UNK_0xeeb0
@@ -268,10 +268,10 @@ void UNK_0xeed4() // UNK_0xeed4
 {
   Push(0);
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0);
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -286,7 +286,7 @@ void UNK_0xeee4() // UNK_0xeee4
   Push(Read16(cc_UNK_0xee6e)); // UNK_0xee6e
   MIN(); // MIN
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -301,7 +301,7 @@ void UNK_0xeef4() // UNK_0xeef4
   Push(0);
   MAX(); // MAX
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -317,7 +317,7 @@ void UNK_0xef04() // UNK_0xef04
   Push(Pop()-1); // 1-
   MIN(); // MIN
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -332,7 +332,7 @@ void UNK_0xef16() // UNK_0xef16
   Push(0);
   MAX(); // MAX
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 // 0xef24: db 0x4c 0x22 0xfd 0x04 0x92 0x0c 0xe3 0x04 0x92 0x0c 0x92 0x0f 0x90 0x16 0x4c 0x22 0x20 0x0f 0x89 0x11 0x24 0xef 0xad 0x11 0xc9 0x04 0x0a 0x6d 0x90 0x16 'L"            L"    $      m  '
@@ -481,15 +481,15 @@ void UNK_0xefc0() // UNK_0xefc0
   UNK_0xeed4(); // UNK_0xeed4
   UNK_0xef96(); // UNK_0xef96
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(1);
   Push(5);
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(user_SCR); // SCR
   Push(Read16(Pop())); // @
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -557,7 +557,7 @@ void UNK_0xf00c() // UNK_0xf00c
 // 0xf024: WORD '.MODE' codep=0x224c parp=0xf02e
 // ================================================
 
-void _dot_MODE() // .MODE
+void DrawMODE() // .MODE
 {
   Push(0x0018);
   Push(0x0048);
@@ -584,7 +584,7 @@ void DISPLAYKEY() // DISPLAYKEY
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   PRINT("1:SV-BUF 2:RCL  3:IL  4:XL  5:DUP  6:SPLIT  7:>L  ", 50); // (.")
   PRINT("8:>S  9:HOLD 10:PUT", 19); // (.")
-  _dot_MODE(); // .MODE
+  DrawMODE(); // .MODE
 }
 
 
@@ -727,7 +727,7 @@ void SPLIT() // SPLIT
   UNK_0xeee4(); // UNK_0xeee4
   UNK_0xef96(); // UNK_0xef96
   Push(pp_UNK_0xee72); // UNK_0xee72
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -861,7 +861,7 @@ void DELETE() // DELETE
 // 0xf28e: WORD '?VISIBLE' codep=0x224c parp=0xf29b
 // ================================================
 
-void _ask_VISIBLE() // ?VISIBLE
+void IsVISIBLE() // ?VISIBLE
 {
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
@@ -891,7 +891,7 @@ void EOL() // EOL
   Push(0x003f);
   MIN(); // MIN
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Pop(); // DROP
 }
 
@@ -914,7 +914,7 @@ void PUT() // PUT
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(Read8(Pop())&0xFF); // C@
-    _ask_VISIBLE(); // ?VISIBLE
+    IsVISIBLE(); // ?VISIBLE
     if (Pop() == 0) Push(1); else Push(0); // NOT
     if (Pop() != 0)
     {
@@ -948,11 +948,11 @@ void PUT() // PUT
   UNK_0xeea0(); // UNK_0xeea0
   Push(0);
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xeec0(); // UNK_0xeec0
   UNK_0xef8c(); // UNK_0xef8c
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1038,7 +1038,7 @@ void UNK_0xf3dc() // UNK_0xf3dc
 {
   Push(0);
   Push(pp_UNK_0xee76); // UNK_0xee76
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xeee4(); // UNK_0xeee4
 }
 
@@ -1111,8 +1111,8 @@ void UNK_0xf416() // UNK_0xf416
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_UNK_0xee7a); // UNK_0xee7a
-  _ex__2(); // !_2
-  _dot_MODE(); // .MODE
+  Store_2(); // !_2
+  DrawMODE(); // .MODE
 }
 
 
@@ -1150,7 +1150,7 @@ void _gt_STAMP() // >STAMP
     Push(a); // R>
     Push(0x0024);
     Push(Pop() + Pop()); // +
-    _ex__2(); // !_2
+    Store_2(); // !_2
   }
   SAVE_dash_BU(); // SAVE-BU
 }
@@ -1258,7 +1258,7 @@ void EDIT() // EDIT
   {
     UNK_0xeec0(); // UNK_0xeec0
     KEY_2(); // KEY_2
-    _ask_VISIBLE(); // ?VISIBLE
+    IsVISIBLE(); // ?VISIBLE
     if (Pop() != 0)
     {
       INSERT(); // INSERT
@@ -1308,7 +1308,7 @@ void VIEW() // VIEW
   {
     UNK_0xeec0(); // UNK_0xeec0
     KEY_2(); // KEY_2
-    _ask_VISIBLE(); // ?VISIBLE
+    IsVISIBLE(); // ?VISIBLE
     if (Pop() == 0) Push(1); else Push(0); // NOT
     if (Pop() != 0)
     {

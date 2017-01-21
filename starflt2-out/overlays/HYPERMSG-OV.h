@@ -9,7 +9,7 @@ void NS_dash_MESS(); // NS-MESS
 void OSET(); // OSET
 void UF_dash_MESS(); // UF-MESS
 void US_dash_MESS(); // US-MESS
-void _dot_EX(); // .EX
+void DrawEX(); // .EX
 void DMSG(); // DMSG
 void _ro_CTXT_rc_(); // (CTXT)
 void TRAK_dash_E(); // TRAK-E

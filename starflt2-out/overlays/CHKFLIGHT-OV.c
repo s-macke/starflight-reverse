@@ -30,19 +30,19 @@
 //      UNK_0xf462  codep:0x224c parp:0xf462 size:0x002e C-string:'UNK_0xf462'
 //      UNK_0xf492  codep:0x224c parp:0xf492 size:0x0028 C-string:'UNK_0xf492'
 //      UNK_0xf4bc  codep:0x224c parp:0xf4bc size:0x0048 C-string:'UNK_0xf4bc'
-//      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x0000 C-string:'_ask_CAN_dash_LEAVE'
+//      ?CAN-LEAVE  codep:0x224c parp:0xf513 size:0x0000 C-string:'IsCAN_dash_LEAVE'
 
 // =================================
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_TRUE; // TRUE
 extern const unsigned short int cc_FALSE; // FALSE
-extern const unsigned short int pp__ask_TV; // ?TV
-extern const unsigned short int pp__ask_EVAL; // ?EVAL
+extern const unsigned short int pp_IsTV; // ?TV
+extern const unsigned short int pp_IsEVAL; // ?EVAL
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
-extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp_IsRECALL; // ?RECALL
 extern const unsigned short int pp__10_star_END; // 10*END
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType _pe_NAME; // %NAME
@@ -50,25 +50,25 @@ void M_star_(); // M*
 void MIN(); // MIN
 void NOP(); // NOP
 void KEY_2(); // KEY_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
-void D_ex_(); // D!
+void StoreD(); // D!
 void _099(); // 099
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
 void IDELETE(); // IDELETE
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void LLINE(); // LLINE
 void _gt_2FONT(); // >2FONT
 void _gt_3FONT(); // >3FONT
 void SFILL(); // SFILL
 void POS_dot_(); // POS.
-void _dot_1LOGO(); // .1LOGO
-void _ex_CRS(); // !CRS
+void Draw1LOGO(); // .1LOGO
+void StoreCRS(); // !CRS
 void CMESS(); // CMESS
 void OVER(); // OVER
 void _dash_(); // -
@@ -139,10 +139,10 @@ void UNK_0xf195() // UNK_0xf195
 void UNK_0xf1cb() // UNK_0xf1cb
 {
   SetColor("GREY1");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(2);
@@ -188,7 +188,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   Push(2);
   Push(0x00c5);
   SetColor("BLACK");
-  _dot_1LOGO(); // .1LOGO
+  Draw1LOGO(); // .1LOGO
 }
 
 
@@ -379,9 +379,9 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(0x0016);
   CMESS(); // CMESS
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -403,7 +403,7 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf414() // UNK_0xf414
 {
-  Push(pp__ask_EVAL); // ?EVAL
+  Push(pp_IsEVAL); // ?EVAL
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -430,11 +430,11 @@ void UNK_0xf414() // UNK_0xf414
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(pp__ask_TV); // ?TV
+  Push(pp_IsTV); // ?TV
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
-  Push(pp__ask_RECALL); // ?RECALL
+  Push(pp_IsRECALL); // ?RECALL
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   UNK_0xf406(); // UNK_0xf406
@@ -464,7 +464,7 @@ void UNK_0xf462() // UNK_0xf462
   do // (DO)
   {
     Push(i); // I
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+UNK_0xf186.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(8);
@@ -504,7 +504,7 @@ void UNK_0xf492() // UNK_0xf492
   Push(4);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf32d); // UNK_0xf32d
-  _ex__2(); // !_2
+  Store_2(); // !_2
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -536,7 +536,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
       Push(0x000a);
       M_star_(); // M*
       Push(pp__10_star_END); // 10*END
-      D_ex_(); // D!
+      StoreD(); // D!
       if (Pop() == 0) Push(1); else Push(0); // 0=
     } else
     {
@@ -557,7 +557,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 // ================================================
 // entry
 
-void _ask_CAN_dash_LEAVE() // ?CAN-LEAVE
+void IsCAN_dash_LEAVE() // ?CAN-LEAVE
 {
   UNK_0xf414(); // UNK_0xf414
   UNK_0xf462(); // UNK_0xf462

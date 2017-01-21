@@ -115,17 +115,17 @@ void WITHIN(); // WITHIN
 void RRND(); // RRND
 void SQRT(); // SQRT
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _1_dot_5_ex_(); // 1.5!
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void IOPEN(); // IOPEN
 void INEXT(); // INEXT
 void IFIND(); // IFIND
-void _ex_XYSEED(); // !XYSEED
+void StoreXYSEED(); // !XYSEED
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -374,7 +374,7 @@ void UNK_0xecf8() // UNK_0xecf8
   Push(0);
   do
   {
-    _at_INST_dash_CLASS(); // @INST-CLASS
+    GetINST_dash_CLASS(); // @INST-CLASS
     Push(Read16(cc_UNK_0xec16)); // UNK_0xec16
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -463,7 +463,7 @@ void UNK_0xed8e() // UNK_0xed8e
 {
   UNK_0xed2e(); // UNK_0xed2e
   Push(pp_GLOBALSEED); // GLOBALSEED
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -472,7 +472,7 @@ void UNK_0xed8e() // UNK_0xed8e
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  _ex_XYSEED(); // !XYSEED
+  StoreXYSEED(); // !XYSEED
 }
 
 
@@ -500,7 +500,7 @@ void UNK_0xede2() // UNK_0xede2
   HI_dash_MASS(); // HI-MASS
   RRND(); // RRND
   LoadData(UNK_0xec4a); // from 'PLANET      '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -583,7 +583,7 @@ void UNK_0xee46() // UNK_0xee46
   UNK_0xee28(); // UNK_0xee28
   LoadData(UNK_0xec32); // from 'PLANET      '
   C_ex_(); // C!
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
@@ -733,7 +733,7 @@ void UNK_0xef7a() // UNK_0xef7a
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   UNK_0xeee8(); // UNK_0xeee8
   ICLOSE(); // ICLOSE
 }
@@ -889,7 +889,7 @@ void UNK_0xf06e() // UNK_0xf06e
 {
   Push(0x001e);
   Push(pp_PEAK); // PEAK
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   Push(0x00ff);
   UNK_0xece7(); // UNK_0xece7
@@ -1038,7 +1038,7 @@ void UNK_0xf162() // UNK_0xf162
   Push(a); // R>
   Pop(); // DROP
   Push(pp_HYDRO); // HYDRO
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1100,7 +1100,7 @@ void UNK_0xf1c8() // UNK_0xf1c8
     Push(0);
   }
   Push(pp_ATMO); // ATMO
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1110,7 +1110,7 @@ void UNK_0xf1c8() // UNK_0xf1c8
 
 void UNK_0xf1e6() // UNK_0xf1e6
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(Read16(regsp)); // DUP
   Push(0x0012);
   Push((Pop()==Pop())?1:0); // =
@@ -1122,10 +1122,10 @@ void UNK_0xf1e6() // UNK_0xf1e6
   {
     Push(5);
     Push(pp_HYDRO); // HYDRO
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(0x000f);
     Push(pp_ATMO); // ATMO
-    _ex__3(); // !_3
+    Store_3(); // !_3
     return;
   }
   LoadData(UNK_0xec52); // from 'PLANET      '
@@ -1134,7 +1134,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
   {
     Push(5);
     Push(pp_HYDRO); // HYDRO
-    _ex__3(); // !_3
+    Store_3(); // !_3
     do
     {
       UNK_0xf1c8(); // UNK_0xf1c8
@@ -1207,10 +1207,10 @@ void UNK_0xf280() // UNK_0xf280
   unsigned short int i, imax;
   UNK_0xf24e(); // UNK_0xf24e
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   LoadData(UNK_0xec92); // from 'REGIONS     '
   Push(Read16(regsp)); // DUP
@@ -1485,7 +1485,7 @@ void PLAN_dash_RUL() // PLAN-RUL
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0011);
   _gt_(); // >
   if (Pop() != 0)

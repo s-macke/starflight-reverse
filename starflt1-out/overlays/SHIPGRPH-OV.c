@@ -54,24 +54,24 @@ extern const unsigned short int pp_WBLT; // WBLT
 extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_BLTSEG; // BLTSEG
 extern IFieldType INST_dash_QTY; // INST-QTY
-void _dot_(); // .
-void _dot_R(); // .R
+void Draw(); // .
+void DrawR(); // .R
 void D_dot_(); // D.
 void _2OVER(); // 2OVER
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void OFF(); // OFF
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void BLT(); // BLT
 void _gt_3FONT(); // >3FONT
 void POS_dot_(); // POS.
-void _dot_1LOGO(); // .1LOGO
-void _at_CRS(); // @CRS
-void _ex_CRS(); // !CRS
+void Draw1LOGO(); // .1LOGO
+void GetCRS(); // @CRS
+void StoreCRS(); // !CRS
 void POS_dot_PXT(); // POS.PXT
 void CTINIT(); // CTINIT
 void _0MESS(); // 0MESS
@@ -84,7 +84,7 @@ void _dash_(); // -
 void _gt_(); // >
 void _st_(); // <
 void _0_gt_(); // 0>
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void _plus_BIT(); // +BIT
 void LLINE(); // LLINE
 
@@ -243,8 +243,8 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x63ef+UNK_0xed59.offset); // IFIELD
-  _ex__3(); // !_3
-  _at_CRS(); // @CRS
+  Store_3(); // !_3
+  GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(4);
   SetColor("BLACK");
@@ -257,8 +257,8 @@ void _ro__dot_MASS_rc_() // (.MASS)
   Push(0x63ef+UNK_0xed59.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(4);
-  _dot_R(); // .R
-  _ex_CRS(); // !CRS
+  DrawR(); // .R
+  StoreCRS(); // !CRS
 }
 
 
@@ -277,8 +277,8 @@ void _ro__dot_ACC_rc_() // (.ACC)
   Push(Read16(Pop())); // @
   _slash_(); // /
   Push(0x63ef+UNK_0xed54.offset); // IFIELD
-  _ex__3(); // !_3
-  _at_CRS(); // @CRS
+  Store_3(); // !_3
+  GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(2);
   SetColor("BLACK");
@@ -291,8 +291,8 @@ void _ro__dot_ACC_rc_() // (.ACC)
   Push(0x63ef+UNK_0xed54.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(2);
-  _dot_R(); // .R
-  _ex_CRS(); // !CRS
+  DrawR(); // .R
+  StoreCRS(); // !CRS
 }
 
 
@@ -302,7 +302,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
 
 void UNK_0xef1a() // UNK_0xef1a
 {
-  _at_CRS(); // @CRS
+  GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(6);
   SetColor("BLACK");
@@ -342,17 +342,17 @@ void UNK_0xef1a() // UNK_0xef1a
   Push(0x000a);
   _slash_MOD(); // /MOD
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT(".", 1); // (.")
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("M", 1); // (.")
   Push(3);
   Push(Read16(regsp)); // DUP
   Push(pp_YBLT); // YBLT
   _plus__ex_(); // +!
-  _dot_(); // .
-  _ex_CRS(); // !CRS
+  Draw(); // .
+  StoreCRS(); // !CRS
 }
 
 
@@ -363,54 +363,54 @@ void UNK_0xef1a() // UNK_0xef1a
 void UNK_0xef90() // UNK_0xef90
 {
   SetColor("DK-BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x0011);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0020);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0055);
   Push(0x006a);
   POS_dot_(); // POS.
   Push(pp_UNK_0xed6f); // UNK_0xed6f
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
   Push(0x0055);
   Push(0x004f);
   POS_dot_(); // POS.
   Push(pp_UNK_0xedb5); // UNK_0xedb5
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
   Push(0x000a);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0028);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0065);
   Push(0x0059);
   POS_dot_(); // POS.
   Push(pp_UNK_0xedfb); // UNK_0xedfb
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
   Push(0x0016);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x000c);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x008d);
   Push(0x005f);
   POS_dot_(); // POS.
   Push(pp_UNK_0xee2f); // UNK_0xee2f
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
 }
 
@@ -448,7 +448,7 @@ void UNK_0xf026() // UNK_0xf026
   _0_gt_(); // 0>
   SetColor("RED");
   Push(Pop() * Pop()); // *
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x0053);
@@ -486,7 +486,7 @@ void UNK_0xf098() // UNK_0xf098
 {
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(0x63ef+UNK_0xed4f.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -495,7 +495,7 @@ void UNK_0xf098() // UNK_0xf098
   if (Pop() == 0) Push(1); else Push(0); // 0=
   SetColor("GREY1");
   Push(Pop() * Pop()); // *
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   BLT(); // BLT
   Push(Pop()*2); // 2*
 }
@@ -509,19 +509,19 @@ void UNK_0xf098() // UNK_0xf098
 void _ro__dot_PODS_rc_() // (.PODS)
 {
   unsigned short int i, imax;
-  _at_CRS(); // @CRS
-  _at_DS(); // @DS
+  GetCRS(); // @CRS
+  GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(2);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(2);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_UNK_0xee53); // UNK_0xee53
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(1);
@@ -538,7 +538,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
     Push(0x0076);
     Push(Pop() + Pop()); // +
     Push(pp_XBLT); // XBLT
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(0x0050);
     Push(i); // I
     Push(1);
@@ -553,7 +553,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   } while(i<imax); // (LOOP)
 
   Pop(); // DROP
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -583,28 +583,28 @@ void UNK_0xf132() // UNK_0xf132
   _0_gt_(); // 0>
   SetColor("LT-BLUE");
   Push(Pop() * Pop()); // *
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(3);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(9);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0060);
   Push(0x006b);
   POS_dot_(); // POS.
   Push(pp_UNK_0xf11c); // UNK_0xf11c
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
   Push(0x0040);
   Push(pp_YBLT); // YBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_UNK_0xf122); // UNK_0xf122
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
 }
 
@@ -624,18 +624,18 @@ void UNK_0xf174() // UNK_0xf174
   {
     SetColor("DK-BLUE");
   }
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(8);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(8);
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_UNK_0xf128); // UNK_0xf128
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x006b);
   Push(0x0058);
   POS_dot_(); // POS.
@@ -650,16 +650,16 @@ void UNK_0xf174() // UNK_0xf174
 
 void _ro__dot_SHIP_rc_() // (.SHIP)
 {
-  _at_CRS(); // @CRS
-  _at_DS(); // @DS
+  GetCRS(); // @CRS
+  GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xef90(); // UNK_0xef90
   UNK_0xf026(); // UNK_0xf026
   UNK_0xf174(); // UNK_0xf174
   UNK_0xf132(); // UNK_0xf132
   _ro__dot_PODS_rc_(); // (.PODS)
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -670,7 +670,7 @@ void _ro__dot_SHIP_rc_() // (.SHIP)
 
 void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
 {
-  _at_CRS(); // @CRS
+  GetCRS(); // @CRS
   Push(0);
   _0MESS(); // 0MESS
   Push(5);
@@ -682,7 +682,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
   MODULE(); // MODULE
   D_dot_(); // D.
   PRINT("MU", 2); // (.")
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -693,7 +693,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
 void UNK_0xf21d() // UNK_0xf21d
 {
   SetColor("DK-BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x009d);
   Push(1);
   Push(2);
@@ -757,9 +757,9 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(0x0015);
   Push(0x00c3);
   SetColor("DK-BLUE");
-  _dot_1LOGO(); // .1LOGO
+  Draw1LOGO(); // .1LOGO
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   Push(0x0027);
   Push(0x00c2);
@@ -785,7 +785,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("CARGO PODS..", 12); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("CARGO PODS:", 11); // (.")
   Push(7);
   Push(0x009f);
@@ -793,7 +793,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("ENGINES", 7); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("ENGINES :", 9); // (.")
   Push(7);
   Push(0x0095);
@@ -801,7 +801,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("SHIELDING", 9); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("SHIELDS :", 9); // (.")
   Push(7);
   Push(0x008b);
@@ -809,7 +809,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("ARMOR", 5); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("ARMOR   :", 9); // (.")
   Push(7);
   Push(0x0081);
@@ -817,7 +817,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("MISSILE LAUNCHER", 16); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("MISSILES:", 9); // (.")
   Push(7);
   Push(0x0077);
@@ -825,7 +825,7 @@ void UNK_0xf310() // UNK_0xf310
   PRINT("LASER CANNON", 12); // (.")
   Push(0x0056);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("LASERS  :", 9); // (.")
 }
 
@@ -857,7 +857,7 @@ void UNK_0xf40f() // UNK_0xf40f
     Push(i); // I
     _dash_(); // -
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("...", 3); // (.")
     i++;
   } while(i<imax); // (LOOP)

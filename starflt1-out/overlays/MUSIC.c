@@ -10,7 +10,7 @@
 // =========== DICTIONARY ==========
 // =================================
 //          OLDINT  codep:0x2214 parp:0xe21f size:0x0002 C-string:'OLDINT'
-//          ?MUSIC  codep:0x2214 parp:0xe22c size:0x0002 C-string:'_ask_MUSIC'
+//          ?MUSIC  codep:0x2214 parp:0xe22c size:0x0002 C-string:'IsMUSIC'
 //          MUSINT  codep:0x2214 parp:0xe239 size:0x0002 C-string:'MUSINT'
 //         PHRASE0  codep:0x2214 parp:0xe247 size:0x0002 C-string:'PHRASE0'
 //         CURRPHR  codep:0x2214 parp:0xe255 size:0x0002 C-string:'CURRPHR'
@@ -76,14 +76,14 @@ extern const unsigned short int pp_HBUF_dash_SEG; // HBUF-SEG
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_LFSEG; // LFSEG
 extern const unsigned short int pp__bo__n_CACHE_bc_; // [#CACHE]
-extern const unsigned short int pp__ask_EGA; // ?EGA
+extern const unsigned short int pp_IsEGA; // ?EGA
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void D_st_(); // D<
 void _co_(); // ,
 void MS(); // MS
 void _2OVER(); // 2OVER
 void D_gt_(); // D>
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -117,7 +117,7 @@ void L_ex_(); // L!
 void LC_at_(); // LC@
 void LC_ex_(); // LC!
 void LCMOVE(); // LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void _st__ex__gt_(); // <!>
 void C_gt_EGA(); // C>EGA
 void DISPLAY(); // DISPLAY
@@ -189,7 +189,7 @@ const unsigned short int pp_PAUSEOFF = 0xe90c; // PAUSEOFF size: 26
 
 
 const unsigned short int cc_OLDINT = 0xe21f; // OLDINT
-const unsigned short int cc__ask_MUSIC = 0xe22c; // ?MUSIC
+const unsigned short int cc_IsMUSIC = 0xe22c; // ?MUSIC
 const unsigned short int cc_MUSINT = 0xe239; // MUSINT
 const unsigned short int cc_PHRASE0 = 0xe247; // PHRASE0
 const unsigned short int cc_CURRPHR = 0xe255; // CURRPHR
@@ -386,7 +386,7 @@ void INITMUS() // INITMUS
   if (Pop() != 0)
   {
     Push(0);
-    Push(Read16(cc__ask_MUSIC)); // ?MUSIC
+    Push(Read16(cc_IsMUSIC)); // ?MUSIC
     UNK_0xe2ee(); // UNK_0xe2ee
     Push(Read16(cc_OLDINT)); // OLDINT
     UNK_0xe2de(); // UNK_0xe2de
@@ -413,7 +413,7 @@ void INITMUS() // INITMUS
 
 void HIMUS() // HIMUS
 {
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(pp_UNK_0xe2ca); // UNK_0xe2ca
   Push(Read16(Pop())); // @
   Push(Read16(cc_MUSSEG)); // MUSSEG
@@ -666,14 +666,14 @@ void BRMOVE() // BRMOVE
   SWAP(); // SWAP
   LC_at_(); // LC@
   Push(pp_UNK_0xe6c4); // UNK_0xe6c4
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x000a);
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
   SWAP(); // SWAP
   LC_at_(); // LC@
   Push(pp_UNK_0xe6c0); // UNK_0xe6c0
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0010);
   Push(Pop() + Pop()); // +
   UNK_0xe6e4(); // UNK_0xe6e4
@@ -817,26 +817,26 @@ void UNK_0xe82b() // UNK_0xe82b
   UNK_0xe6ec(); // UNK_0xe6ec
   Push(0x0067);
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x000b);
   Push(pp_UNK_0xe6d4); // UNK_0xe6d4
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x01f4);
   Push(pp_UNK_0xe6bc); // UNK_0xe6bc
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0045);
   Func6("FILE-START");
   Push(Read16(Pop())); // @
   Push(0x0040);
   _slash_(); // /
   Push(pp_UNK_0xe6cc); // UNK_0xe6cc
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe813(); // UNK_0xe813
   Push(0);
   SONG(); // SONG
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
-  _ex__3(); // !_3
+  Store_3(); // !_3
   _gt_LORES(); // >LORES
   DARK(); // DARK
   Push(0x000a);
@@ -878,7 +878,7 @@ void REDUCE() // REDUCE
   Push(pp_LFSEG); // LFSEG
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -892,7 +892,7 @@ void INCREASE() // INCREASE
   Push(pp__bo__n_CACHE_bc_); // [#CACHE]
   Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
-  _ex__3(); // !_3
+  Store_3(); // !_3
   AUTO_dash_CACHE(); // AUTO-CACHE
   Push(0x0040);
   Push(Pop() * Pop()); // *
@@ -926,7 +926,7 @@ void UNK_0xe928() // UNK_0xe928
   FILE_st_(); // FILE<
   Push(0x0046);
   Push(pp_UNK_0xe6d0); // UNK_0xe6d0
-  _ex__3(); // !_3
+  Store_3(); // !_3
   _gt_DISPLAY(); // >DISPLAY
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
   OFF(); // OFF
@@ -944,7 +944,7 @@ void UNK_0xe928() // UNK_0xe928
     Push(Pop() + Pop()); // +
     Push(Read16(Pop())); // @
     Push(pp_UNK_0xe6d4); // UNK_0xe6d4
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(i); // I
     Push(pp_PAUSEOFF); // PAUSEOFF
     Push(i); // I
@@ -952,7 +952,7 @@ void UNK_0xe928() // UNK_0xe928
     Push(Pop() + Pop()); // +
     Push(Read16(Pop())); // @
     Push(pp_UNK_0xe6bc); // UNK_0xe6bc
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(pp_UNK_0xe6e0); // UNK_0xe6e0
     Push(Read16(Pop())); // @
     BRMOVE(); // BRMOVE
@@ -985,7 +985,7 @@ void CREDIT_dot_SCREEN() // CREDIT.SCREEN
 void INTROS() // INTROS
 {
   HIMUS(); // HIMUS
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {

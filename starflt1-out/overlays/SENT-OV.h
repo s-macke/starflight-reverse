@@ -4,6 +4,6 @@
 #define SENT-OV_H
 
 void CLASS_gt_DE(); // CLASS>DE
-void _ask_TALK(); // ?TALK
+void IsTALK(); // ?TALK
 
 #endif

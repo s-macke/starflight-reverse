@@ -35,13 +35,13 @@ extern const unsigned short int pp_NOF; // NOF
 void KEY_2(); // KEY_2
 void _gt_FLAG(); // >FLAG
 void I_gt_C(); // I>C
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void ON_2(); // ON_2
 void _099(); // 099
-void _at_RECORD(); // @RECORD
+void GetRECORD(); // @RECORD
 void PAD_v_16(); // PAD|16
-void _ask_CGA(); // ?CGA
-void _ex_COLOR(); // !COLOR
+void IsCGA(); // ?CGA
+void StoreCOLOR(); // !COLOR
 void LLINE(); // LLINE
 void _gt_1FONT(); // >1FONT
 void _gt_3FONT(); // >3FONT
@@ -51,7 +51,7 @@ void POS_dot_(); // POS.
 void _dash_(); // -
 void _gt_(); // >
 void LCMOVE(); // LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void _st__ex__gt_(); // <!>
 void _st__plus__ex__gt_(); // <+!>
 void BLT(); // BLT
@@ -85,7 +85,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
     Push(pp_TILE_dash_PT); // TILE-PT
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(0x0020);
     Push(i); // I
     Push(0x000c);
@@ -99,7 +99,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
   } while(i<imax); // (LOOP)
 
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
   Push(0x0080);
@@ -140,7 +140,7 @@ void UNK_0xf36f() // UNK_0xf36f
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
   Push(0x000a);
@@ -192,12 +192,12 @@ void UNK_0xf3e6() // UNK_0xf3e6
     Push(Read16(regsp)); // DUP
     Push(Read8(Pop())&0xFF); // C@
     I_gt_C(); // I>C
-    _ask_CGA(); // ?CGA
+    IsCGA(); // ?CGA
     if (Pop() != 0)
     {
       _gt_FLAG(); // >FLAG
     }
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(Pop()+1); // 1+
     Push(pp_ABLT); // ABLT
     _st__ex__gt_(); // <!>
@@ -222,7 +222,7 @@ void UNK_0xf418() // UNK_0xf418
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY_2(); // KEY_2
   Pop(); // DROP
@@ -236,7 +236,7 @@ void UNK_0xf418() // UNK_0xf418
 void UNK_0xf452() // UNK_0xf452
 {
   SetColor("GREY1");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   UNK_0xf36f(); // UNK_0xf36f
 }
@@ -274,7 +274,7 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(i); // I
     Push(0x0012);
     Push(Pop() * Pop()); // *
-    _at_DS(); // @DS
+    GetDS(); // @DS
     PAD_v_16(); // PAD|16
     Push(0x0012);
     LCMOVE(); // LCMOVE
@@ -284,7 +284,7 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(pp_XBLT); // XBLT
     _st__plus__ex__gt_(); // <+!>
     SetColor("BLACK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     Push(-2);
     Push(pp_YBLT); // YBLT
     _st__plus__ex__gt_(); // <+!>
@@ -298,7 +298,7 @@ void UNK_0xf45e() // UNK_0xf45e
       Push(0x0011);
       _dash_(); // -
     }
-    _at_RECORD(); // @RECORD
+    GetRECORD(); // @RECORD
     Push(0x001b);
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(2);
@@ -324,9 +324,9 @@ void ICONS() // ICONS
   _099(); // 099
   Push(pp_NOF); // NOF
   ON_2(); // ON_2
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xf452(); // UNK_0xf452
   Push(0x00b4);
   Push(0x000f);

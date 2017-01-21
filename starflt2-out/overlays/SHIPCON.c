@@ -11,7 +11,7 @@
 // =================================
 //      UNK_0xf376  codep:0x7420 parp:0xf376 size:0x0003 C-string:'UNK_0xf376'
 //      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0010 C-string:'UNK_0xf37b'
-//          .NOFUN  codep:0x224c parp:0xf396 size:0x0030 C-string:'_dot_NOFUN'
+//          .NOFUN  codep:0x224c parp:0xf396 size:0x0030 C-string:'DrawNOFUN'
 //      UNK_0xf3c8  codep:0x224c parp:0xf3c8 size:0x002c C-string:'UNK_0xf3c8'
 //      UNK_0xf3f6  codep:0x224c parp:0xf3f6 size:0x003e C-string:'UNK_0xf3f6'
 //      UNK_0xf436  codep:0x224c parp:0xf436 size:0x0034 C-string:'UNK_0xf436'
@@ -25,17 +25,17 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__ask_CALLED; // ?CALLED
+extern const unsigned short int cc_IsCALLED; // ?CALLED
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp__dash_END; // -END
 extern const unsigned short int pp__n_VESS; // #VESS
 extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
-extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
-extern const unsigned short int pp__ask_RECALL; // ?RECALL
+extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp_IsRECALL; // ?RECALL
 extern const unsigned short int pp__i_YANK; // 'YANK
-extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp_IsNEB; // ?NEB
 extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp_TOWFINE; // TOWFINE
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
@@ -51,8 +51,8 @@ void BEEP(); // BEEP
 void MS(); // MS
 void D0_eq_(); // D0=
 void DMAX(); // DMAX
-void _ex__2(); // !_2
-void D_ex_(); // D!
+void Store_2(); // !_2
+void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
 void SET_dash_CUR(); // SET-CUR
@@ -63,8 +63,8 @@ void _gt_TVCT(); // >TVCT
 void CTERASE(); // CTERASE
 void CTCR(); // CTCR
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
-void _dot_ON(); // .ON
+void DrawTTY(); // .TTY
+void DrawON(); // .ON
 void Y_slash_N(); // Y/N
 void _do__ex_(); // $!
 void _2_at_(); // 2@
@@ -111,7 +111,7 @@ void UNK_0xf37b() // UNK_0xf37b
 // ================================================
 // entry
 
-void _dot_NOFUN() // .NOFUN
+void DrawNOFUN() // .NOFUN
 {
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
@@ -119,7 +119,7 @@ void _dot_NOFUN() // .NOFUN
   _st_(); // <
   if (Pop() != 0)
   {
-    Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+    Push(pp_IsON_dash_PLA); // ?ON-PLA
     Push(Read16(Pop())); // @
     if (Pop() != 0)
     {
@@ -131,7 +131,7 @@ void _dot_NOFUN() // .NOFUN
     CTINIT(); // CTINIT
     Push(0x5242); Push(0x0002);
     UNK_0xf37b(); // UNK_0xf37b
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     return;
   }
   BEEP(); // BEEP
@@ -151,10 +151,10 @@ void UNK_0xf3c8() // UNK_0xf3c8
   if (Pop() == 0) return;
   Push(0x5265); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x528c); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -214,10 +214,10 @@ void UNK_0xf436() // UNK_0xf436
   _star__slash_(); // */
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
-  _ex__2(); // !_2
+  Store_2(); // !_2
   LoadData(ELEM_dash_VA); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
   Push(0x000a);
@@ -227,7 +227,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(0x3a98); Push(0x0000);
   DMAX(); // DMAX
   Push(pp_TOWFINE); // TOWFINE
-  D_ex_(); // D!
+  StoreD(); // D!
 }
 
 
@@ -239,7 +239,7 @@ void UNK_0xf46c() // UNK_0xf46c
 {
   Push(0x52a8); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -258,7 +258,7 @@ void UNK_0xf47a() // UNK_0xf47a
   if (Pop() == 0) return;
   Push(0x52d5); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -287,7 +287,7 @@ void UNK_0xf4b2() // UNK_0xf4b2
 {
   Push(0x5322); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -299,7 +299,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 {
   Push(0x534b); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -328,7 +328,7 @@ void TOW_dash_US() // TOW-US
     Push(Read16(Pop())); // @
     _0_gt_(); // 0>
     Push(Pop() & Pop()); // AND
-    Push(Read16(cc__ask_CALLED)); // ?CALLED
+    Push(Read16(cc_IsCALLED)); // ?CALLED
     if (Pop() == 0) Push(1); else Push(0); // NOT
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
@@ -347,9 +347,9 @@ void TOW_dash_US() // TOW-US
       UNK_0xf46c(); // UNK_0xf46c
       Push(pp__ro_STOP_dash_C); // (STOP-C
       ON_2(); // ON_2
-      Push(pp__ask_RECALL); // ?RECALL
+      Push(pp_IsRECALL); // ?RECALL
       ON_2(); // ON_2
-      Push(pp__ask_NEB); // ?NEB
+      Push(pp_IsNEB); // ?NEB
       _099(); // 099
     }
   } else
@@ -361,7 +361,7 @@ void TOW_dash_US() // TOW-US
   }
   SetColor("BLACK");
   Push(1);
-  _dot_ON(); // .ON
+  DrawON(); // .ON
 }
 
 // 0xf547: db 0x53 0x43 0x4f 0x4e 0x2d 0x56 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'SCON-V___________________ '

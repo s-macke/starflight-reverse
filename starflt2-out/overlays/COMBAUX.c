@@ -23,13 +23,13 @@
 //      UNK_0xf4c6  codep:0x224c parp:0xf4c6 size:0x001c C-string:'UNK_0xf4c6'
 //      UNK_0xf4e4  codep:0x224c parp:0xf4e4 size:0x0008 C-string:'UNK_0xf4e4'
 //          SET-SC  codep:0x224c parp:0xf4f7 size:0x003c C-string:'SET_dash_SC'
-//             @NF  codep:0x224c parp:0xf53b size:0x0000 C-string:'_at_NF'
+//             @NF  codep:0x224c parp:0xf53b size:0x0000 C-string:'GetNF'
 
 // =================================
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_INVIS_dash_I; // INVIS-I
-extern const unsigned short int pp__ask_UF; // ?UF
+extern const unsigned short int pp_IsUF; // ?UF
 extern const unsigned short int pp_XVIS; // XVIS
 extern const unsigned short int pp_YVIS; // YVIS
 extern const unsigned short int pp_XLLDEST; // XLLDEST
@@ -51,16 +51,16 @@ void _099(); // 099
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_VISWIN(); // !VISWIN
+void StoreVISWIN(); // !VISWIN
 void _gt_1ICONF(); // >1ICONF
 void _gt_2ICONF(); // >2ICONF
 void _gt_3ICONF(); // >3ICONF
-void _at_IX(); // @IX
-void _at_IY(); // @IY
-void _at_ID(); // @ID
+void GetIX(); // @IX
+void GetIY(); // @IY
+void GetID(); // @ID
 void POINT_gt_I(); // POINT>I
 void ROT(); // ROT
 void _dash_(); // -
@@ -106,7 +106,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
 void UNK_0xf2d8() // UNK_0xf2d8
 {
   Push(pp__ro_ENCOUN); // (ENCOUN
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x0019);
   Push(0x001d);
@@ -135,7 +135,7 @@ void UNK_0xf2d8() // UNK_0xf2d8
 
 void UNK_0xf308() // UNK_0xf308
 {
-  Push(pp__ask_UF); // ?UF
+  Push(pp_IsUF); // ?UF
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -201,7 +201,7 @@ void UNK_0xf336() // UNK_0xf336
   Push(Read16(Pop())); // @
   Push(0x002b);
   Push(Pop() + Pop()); // +
-  _ex_VISWIN(); // !VISWIN
+  StoreVISWIN(); // !VISWIN
 }
 
 
@@ -244,7 +244,7 @@ void UNK_0xf38e() // UNK_0xf38e
   Push(Read16(Pop())); // @
   Push(0x003a);
   Push(Pop() + Pop()); // +
-  _ex_VISWIN(); // !VISWIN
+  StoreVISWIN(); // !VISWIN
 }
 
 
@@ -290,7 +290,7 @@ void UNK_0xf3da() // UNK_0xf3da
   Push(Read16(Pop())); // @
   Push(0x002a);
   Push(Pop() + Pop()); // +
-  _ex_VISWIN(); // !VISWIN
+  StoreVISWIN(); // !VISWIN
 }
 
 
@@ -312,12 +312,12 @@ void UNK_0xf438() // UNK_0xf438
 {
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  _at_IX(); // @IX
+  GetIX(); // @IX
   _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  _at_IY(); // @IY
+  GetIY(); // @IY
   _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
@@ -337,12 +337,12 @@ void UNK_0xf45c() // UNK_0xf45c
 {
   Push(pp_XABS); // XABS
   Push(Read16(Pop())); // @
-  _at_IX(); // @IX
+  GetIX(); // @IX
   _dash_(); // -
   ABS(); // ABS
   Push(pp_YABS); // YABS
   Push(Read16(Pop())); // @
-  _at_IY(); // @IY
+  GetIY(); // @IY
   _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
@@ -376,15 +376,15 @@ void UNK_0xf480() // UNK_0xf480
   {
     Push(i); // I
     POINT_gt_I(); // POINT>I
-    _at_ID(); // @ID
+    GetID(); // @ID
     Push(0x0023);
     Push(0x002c);
     WITHIN(); // WITHIN
-    _at_ID(); // @ID
+    GetID(); // @ID
     Push(Read16(cc_INVIS_dash_I)); // INVIS-I
     Push((Pop()==Pop())?1:0); // =
     Push(Pop() | Pop()); // OR
-    _at_ID(); // @ID
+    GetID(); // @ID
     Push(0x0060);
     Push((Pop()==Pop())?1:0); // =
     Push(Pop() | Pop()); // OR
@@ -442,7 +442,7 @@ void UNK_0xf4e4() // UNK_0xf4e4
 void SET_dash_SC() // SET-SC
 {
   UNK_0xf308(); // UNK_0xf308
-  Push(pp__ask_UF); // ?UF
+  Push(pp_IsUF); // ?UF
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -479,7 +479,7 @@ void SET_dash_SC() // SET-SC
 // ================================================
 // entry
 
-void _at_NF() // @NF
+void GetNF() // @NF
 {
   UNK_0xf480(); // UNK_0xf480
   Push(pp_UNK_0xf434); // UNK_0xf434

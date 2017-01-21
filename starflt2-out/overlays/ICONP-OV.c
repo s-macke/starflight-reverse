@@ -91,14 +91,14 @@ extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void UNRAVEL(); // UNRAVEL
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void _eq_SPECIE(); // =SPECIE
 void ICLOSE(); // ICLOSE
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void ALL(); // ALL
-void _ask_CGA(); // ?CGA
+void IsCGA(); // ?CGA
 void _st_(); // <
 void CI(); // CI
 
@@ -291,7 +291,7 @@ IFieldType UNK_0xf104 = {0x15, 0x0c, 0x01};
 void UNK_0xf16a() // UNK_0xf16a
 {
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
 }
 
 
@@ -425,7 +425,7 @@ void UNK_0xf20c() // UNK_0xf20c
 
 void UNK_0xf216() // UNK_0xf216
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   Push(0x0032);
   Push(Pop() + Pop()); // +
 }
@@ -459,7 +459,7 @@ void BOX_dash_ID() // BOX-ID
 void UNK_0xf239() // UNK_0xf239
 {
   IOPEN(); // IOPEN
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   BOX_dash_ID(); // BOX-ID case
   ICLOSE(); // ICLOSE
 }
@@ -608,7 +608,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
 void UNK_0xf2ef() // UNK_0xf2ef
 {
   unsigned short int a;
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(a); // I
   Push(6);
@@ -640,7 +640,7 @@ void UNK_0xf2ef() // UNK_0xf2ef
 
 void UNK_0xf31f() // UNK_0xf31f
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   RUIN_dash_ID_dash_CASE(); // RUIN-ID-CASE case
 }
 
@@ -699,7 +699,7 @@ void PLANET_dash_ID() // PLANET-ID
 
 void UNK_0xf365() // UNK_0xf365
 {
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   Push(pp_CONTEXT_3); // CONTEXT_3
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -750,7 +750,7 @@ void STAR_dash_IC_dash_CASE() // STAR-IC-CASE
 
 void UNK_0xf3a8() // UNK_0xf3a8
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   STAR_dash_IC_dash_CASE(); // STAR-IC-CASE case
 }
 
@@ -761,7 +761,7 @@ void UNK_0xf3a8() // UNK_0xf3a8
 
 void UNK_0xf3b0() // UNK_0xf3b0
 {
-  _ask_CGA(); // ?CGA
+  IsCGA(); // ?CGA
   if (Pop() != 0)
   {
     SetColor("RED");
@@ -803,7 +803,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
 
 void UNK_0xf3e6() // UNK_0xf3e6
 {
-  _ask_CGA(); // ?CGA
+  IsCGA(); // ?CGA
   if (Pop() != 0)
   {
     SetColor("BROWN");
@@ -861,7 +861,7 @@ void UNK_0xf421() // UNK_0xf421
 
 void UNK_0xf42b() // UNK_0xf42b
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   if (Pop() != 0)
   {
     Push(3);
@@ -899,7 +899,7 @@ void BOX_dash_IC() // BOX-IC
 void UNK_0xf454() // UNK_0xf454
 {
   IOPEN(); // IOPEN
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   BOX_dash_IC(); // BOX-IC case
   ICLOSE(); // ICLOSE
 }
@@ -975,7 +975,7 @@ void _n_IC_dash_CASES() // #IC-CASES
 
 void UNK_0xf4b4() // UNK_0xf4b4
 {
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   _n_IC_dash_CASES(); // #IC-CASES case
 }
 

@@ -42,7 +42,7 @@
 //      UNK_0xf1d9  codep:0x224c parp:0xf1d9 size:0x0012 C-string:'UNK_0xf1d9'
 //      UNK_0xf1ed  codep:0x224c parp:0xf1ed size:0x000f C-string:'UNK_0xf1ed'
 //          >EXTRA  codep:0x4b3b parp:0xf207 size:0x000c C-string:'_gt_EXTRA'
-//           .RACE  codep:0x224c parp:0xf21d size:0x001e C-string:'_dot_RACE'
+//           .RACE  codep:0x224c parp:0xf21d size:0x001e C-string:'DrawRACE'
 //      UNK_0xf23d  codep:0x224c parp:0xf23d size:0x000b C-string:'UNK_0xf23d'
 //      UNK_0xf24a  codep:0x224c parp:0xf24a size:0x000d C-string:'UNK_0xf24a'
 //      UNK_0xf259  codep:0x224c parp:0xf259 size:0x000a C-string:'UNK_0xf259'
@@ -64,7 +64,7 @@
 //      UNK_0xf3d0  codep:0x224c parp:0xf3d0 size:0x0040 C-string:'UNK_0xf3d0'
 //      UNK_0xf412  codep:0x224c parp:0xf412 size:0x0030 C-string:'UNK_0xf412'
 //      UNK_0xf444  codep:0x224c parp:0xf444 size:0x00a0 C-string:'UNK_0xf444'
-//        .CULTURE  codep:0x224c parp:0xf4f1 size:0x0000 C-string:'_dot_CULTURE'
+//        .CULTURE  codep:0x224c parp:0xf4f1 size:0x0000 C-string:'DrawCULTURE'
 
 // =================================
 // ============= EXTERN ============
@@ -75,30 +75,30 @@ extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp_WLINES; // WLINES
-extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
 extern const unsigned short int pp_LINE_dash_CO; // LINE-CO
 extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 void _dash_TRAILING(); // -TRAILING
 void NOP(); // NOP
 void _gt_FLAG(); // >FLAG
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void _099(); // 099
-void _at_RECORD(); // @RECORD
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void GetRECORD(); // @RECORD
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
 void EACH(); // EACH
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void WUP(); // WUP
 void _gt_BOTT(); // >BOTT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void TXT_dash_WIN(); // TXT-WIN
 void _i_KEY(); // 'KEY
 void _dash_XTRAIL(); // -XTRAIL
@@ -126,7 +126,7 @@ void UNK_0xef56() // UNK_0xef56
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   a = Pop(); // >R
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+  Push(pp_IsON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   b = Pop(); // >R
   Push(b); // I
@@ -137,7 +137,7 @@ void UNK_0xef56() // UNK_0xef56
   {
     SetColor("BLUE");
   }
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   do
   {
@@ -151,10 +151,10 @@ void UNK_0xef56() // UNK_0xef56
   {
     SetColor("DK-BLUE");
   }
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
   Push(a); // R>
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 // 0xef92: db 0x14 0x22 0x15 0x00 ' "  '
@@ -229,7 +229,7 @@ void UNK_0xf00b() // UNK_0xf00b
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -242,7 +242,7 @@ void UNK_0xf017() // UNK_0xf017
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   SetColor("LT-BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -253,7 +253,7 @@ void UNK_0xf017() // UNK_0xf017
 void UNK_0xf023() // UNK_0xf023
 {
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
 }
 
 // 0xf029: db 0x94 0x73 0x44 0x00 0x14 0x22 0x07 0x6f ' sD  " o'
@@ -389,7 +389,7 @@ void UNK_0xf0bc() // UNK_0xf0bc
   UNK_0xf0aa(); // UNK_0xf0aa
   Push(0x001c);
   SWAP(); // SWAP
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
@@ -484,9 +484,9 @@ void UNK_0xf199() // UNK_0xf199
 {
   UNK_0xf00b(); // UNK_0xf00b
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xefcb); // from 'TRADERS     '
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   CI(); // CI
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
@@ -562,7 +562,7 @@ void _gt_EXTRA() // >EXTRA
 // ================================================
 // entry
 
-void _dot_RACE() // .RACE
+void DrawRACE() // .RACE
 {
   UNK_0xf023(); // UNK_0xf023
   LoadData(UNK_0xef98); // from 'TRADERS     '
@@ -574,7 +574,7 @@ void _dot_RACE() // .RACE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   _gt_EXTRA(); // >EXTRA case
 }
 
@@ -838,7 +838,7 @@ void UNK_0xf3ac() // UNK_0xf3ac
 void UNK_0xf3d0() // UNK_0xf3d0
 {
   UNK_0xf0aa(); // UNK_0xf0aa
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+  Push(pp_IsON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
@@ -848,11 +848,11 @@ void UNK_0xf3d0() // UNK_0xf3d0
   {
     UNK_0x3f09(" ");
   }
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   _plus__ex__2(); // +!_2
-  _dot_RACE(); // .RACE
+  DrawRACE(); // .RACE
   UNK_0xf0aa(); // UNK_0xf0aa
   UNK_0xf326(); // UNK_0xf326
   UNK_0xf0aa(); // UNK_0xf0aa
@@ -911,7 +911,7 @@ void UNK_0xf444() // UNK_0xf444
 // ================================================
 // entry
 
-void _dot_CULTURE() // .CULTURE
+void DrawCULTURE() // .CULTURE
 {
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -919,7 +919,7 @@ void _dot_CULTURE() // .CULTURE
   if (Pop() == 0) return;
   SetColor("WHITE");
   Push(pp_CTCOLOR); // CTCOLOR
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_LINE_dash_CO); // LINE-CO
   _099(); // 099
   UNK_0xf0aa(); // UNK_0xf0aa
@@ -928,7 +928,7 @@ void _dot_CULTURE() // .CULTURE
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   _gt_FLAG(); // >FLAG
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -955,7 +955,7 @@ void _dot_CULTURE() // .CULTURE
     }
     return;
   }
-  _dot_RACE(); // .RACE
+  DrawRACE(); // .RACE
 }
 
 // 0xf549: db 0x43 0x55 0x4c 0x54 0x55 0x52 0x45 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'CULTURE________________ '

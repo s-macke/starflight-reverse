@@ -47,7 +47,7 @@
 //      UNK_0xf0b7  codep:0x224c parp:0xf0b7 size:0x0006 C-string:'UNK_0xf0b7'
 //      UNK_0xf0bf  codep:0x224c parp:0xf0bf size:0x0014 C-string:'UNK_0xf0bf'
 //      UNK_0xf0d5  codep:0x224c parp:0xf0d5 size:0x0088 C-string:'UNK_0xf0d5'
-//           !VPAL  codep:0x224c parp:0xf167 size:0x001e C-string:'_ex_VPAL'
+//           !VPAL  codep:0x224c parp:0xf167 size:0x001e C-string:'StoreVPAL'
 //         SETABLT  codep:0x224c parp:0xf191 size:0x002e C-string:'SETABLT'
 //            EGAT  codep:0x2214 parp:0xf1c8 size:0x0010 C-string:'EGAT'
 //            EGAB  codep:0x2214 parp:0xf1e1 size:0x0010 C-string:'EGAB'
@@ -59,8 +59,8 @@
 //      UNK_0xf261  codep:0x1d29 parp:0xf261 size:0x000a C-string:'UNK_0xf261'
 //           PARAS  codep:0x1d29 parp:0xf275 size:0x0008 C-string:'PARAS'
 //      UNK_0xf27f  codep:0x224c parp:0xf27f size:0x0012 C-string:'UNK_0xf27f'
-//              @K  codep:0xf298 parp:0xf298 size:0x0008 C-string:'_at_K'
-//        ?ALREADY  codep:0xf2ad parp:0xf2ad size:0x0012 C-string:'_ask_ALREADY'
+//              @K  codep:0xf298 parp:0xf298 size:0x0008 C-string:'GetK'
+//        ?ALREADY  codep:0xf2ad parp:0xf2ad size:0x0012 C-string:'IsALREADY'
 //      UNK_0xf2c1  codep:0x224c parp:0xf2c1 size:0x0023 C-string:'UNK_0xf2c1'
 //      UNK_0xf2e6  codep:0x224c parp:0xf2e6 size:0x000c C-string:'UNK_0xf2e6'
 //      UNK_0xf2f4  codep:0x224c parp:0xf2f4 size:0x0016 C-string:'UNK_0xf2f4'
@@ -90,7 +90,7 @@ extern const unsigned short int pp_BMAP; // BMAP
 extern const unsigned short int pp_P_slash_B; // P/B
 extern const unsigned short int pp_FONTSEG; // FONTSEG
 extern const unsigned short int pp_XBUF_dash_SE; // XBUF-SE
-extern const unsigned short int pp__ask_EGA; // ?EGA
+extern const unsigned short int pp_IsEGA; // ?EGA
 extern const unsigned short int pp_SRC; // SRC
 extern const unsigned short int pp_DST; // DST
 extern const unsigned short int pp_SEGME; // SEGME
@@ -98,14 +98,14 @@ extern const unsigned short int pp_PLZ; // PLZ
 void MAX(); // MAX
 void _co_(); // ,
 void QUIT(); // QUIT
-void _ask_(); // ?
+void Is(); // ?
 void NOP(); // NOP
 void _2OVER(); // 2OVER
 void D_dash_(); // D-
 void D_gt_(); // D>
 void DOSCALL(); // DOSCALL
 void SETBLOC(); // SETBLOC
-void _ask_ERR(); // ?ERR
+void IsERR(); // ?ERR
 void _ro_LDS_rc_(); // (LDS)
 void KEY_2(); // KEY_2
 void RRND(); // RRND
@@ -116,7 +116,7 @@ void BMBYTES(); // BMBYTES
 void BMHIGH(); // BMHIGH
 void BMPAL(); // BMPAL
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void ON_2(); // ON_2
 void _099(); // 099
@@ -124,12 +124,12 @@ void FILE_st_(); // FILE<
 void SAVE_dash_OV(); // SAVE-OV
 void PAD_v_16(); // PAD|16
 void PAD_gt_SEG(); // PAD>SEG
-void _ask_VGA(); // ?VGA
-void _ask_CGA(); // ?CGA
+void IsVGA(); // ?VGA
+void IsCGA(); // ?CGA
 void DARK(); // DARK
 void _gt_DISPLA(); // >DISPLA
 void _gt_HIDDEN(); // >HIDDEN
-void _dot_RAW(); // .RAW
+void DrawRAW(); // .RAW
 void _gt_LORES(); // >LORES
 void SCR_dash_RES(); // SCR-RES
 void BYE_2(); // BYE_2
@@ -158,11 +158,11 @@ void L_ex_(); // L!
 void LC_at_(); // LC@
 void LC_ex_(); // LC!
 void LCMOVE(); // LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void GRCALL(); // GRCALL
 void _gt_PLANES(); // >PLANES
-void _at_K(); // @K
-void _ask_ALREADY(); // ?ALREADY
+void GetK(); // @K
+void IsALREADY(); // ?ALREADY
 
 
 // =================================
@@ -571,7 +571,7 @@ void HIMUS() // HIMUS
   UNK_0xef59(); // UNK_0xef59
   if (Pop() != 0)
   {
-    _at_DS(); // @DS
+    GetDS(); // @DS
     Push(pp_UNK_0xebaa); // UNK_0xebaa
     Push(Read16(Pop())); // @
     Push(Read16(cc_MUSSEG)); // MUSSEG
@@ -623,7 +623,7 @@ void UNK_0xefe3() // UNK_0xefe3
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() * Pop()); // *
   Push(pp_PLZ); // PLZ
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -638,7 +638,7 @@ void UNK_0xf00b() // UNK_0xf00b
   Push(3);
   L_at_(); // L@
   BMWIDE(); // BMWIDE
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -667,31 +667,31 @@ void UNK_0xf033() // UNK_0xf033
   UNK_0xf00b(); // UNK_0xf00b
   UNK_0xf01b(); // UNK_0xf01b
   UNK_0xefe3(); // UNK_0xefe3
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
     Push(0x000d);
     Push(pp_SRC); // SRC
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(2);
     Push(Read16(regsp)); // DUP
     Push(pp_DST); // DST
-    _ex__2(); // !_2
+    Store_2(); // !_2
     BMOFF(); // BMOFF
-    _ex__2(); // !_2
+    Store_2(); // !_2
     UNK_0xefd1(); // UNK_0xefd1
     Push(pp_SEGME); // SEGME
-    _ex__2(); // !_2
+    Store_2(); // !_2
     UNK_0xefd1(); // UNK_0xefd1
     BMSEG(); // BMSEG
-    _ex__2(); // !_2
+    Store_2(); // !_2
   }
   Push(0);
   Push(pp_BMAP); // BMAP
   Push(0x000c);
   Push(Pop() + Pop()); // +
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -735,13 +735,13 @@ void UNK_0xf071() // UNK_0xf071
 
     Push(Pop() + Pop()); // +
     Push(pp_DST); // DST
-    _ex__2(); // !_2
+    Store_2(); // !_2
     BMWIDE(); // BMWIDE
     Push(Read16(Pop())); // @
     Push(Pop()>>1); // 2/
     Push(Pop() + Pop()); // +
     Push(pp_SRC); // SRC
-    _ex__2(); // !_2
+    Store_2(); // !_2
     i++;
   } while(i<imax); // (LOOP)
 
@@ -788,9 +788,9 @@ void UNK_0xf0d5() // UNK_0xf0d5
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(pp_DST); // DST
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_SRC); // SRC
-  _ex__2(); // !_2
+  Store_2(); // !_2
   BMBYTES(); // BMBYTES
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
@@ -864,20 +864,20 @@ void UNK_0xf0d5() // UNK_0xf0d5
 // 0xf15d: WORD '!VPAL' codep=0x224c parp=0xf167
 // ================================================
 
-void _ex_VPAL() // !VPAL
+void StoreVPAL() // !VPAL
 {
   PAD_gt_SEG(); // PAD>SEG
   Push(0x0036);
   FILE_st_(); // FILE<
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(Read16(cc_DS)); // DS
-  _ex__2(); // !_2
+  Store_2(); // !_2
   PAD_v_16(); // PAD|16
   Push(Read16(cc_BX)); // BX
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(9);
   Push(Read16(cc_AX)); // AX
-  _ex__2(); // !_2
+  Store_2(); // !_2
   GRCALL(); // GRCALL
 }
 
@@ -890,7 +890,7 @@ void _ex_VPAL() // !VPAL
 void SETABLT() // SETABLT
 {
   UNK_0xf033(); // UNK_0xf033
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -904,10 +904,10 @@ void SETABLT() // SETABLT
     Push(0x000d);
   }
   BMOFF(); // BMOFF
-  _ex__2(); // !_2
+  Store_2(); // !_2
   BMSEG(); // BMSEG
-  _ex__2(); // !_2
-  _ask_CGA(); // ?CGA
+  Store_2(); // !_2
+  IsCGA(); // ?CGA
   if (Pop() == 0) return;
   UNK_0xf0d5(); // UNK_0xf0d5
 }
@@ -937,7 +937,7 @@ void SETABLT() // SETABLT
 
 void UNK_0xf209() // UNK_0xf209
 {
-  _ask_VGA(); // ?VGA
+  IsVGA(); // ?VGA
   if (Pop() != 0)
   {
     Push(Read16(cc_VGAS)); // VGAS
@@ -959,7 +959,7 @@ void UNK_0xf21d() // UNK_0xf21d
   Push(Read16(Pop())); // @
   _ro_LDS_rc_(); // (LDS)
   SETABLT(); // SETABLT
-  _ask_VGA(); // ?VGA
+  IsVGA(); // ?VGA
   if (Pop() != 0)
   {
     Push(1);
@@ -969,8 +969,8 @@ void UNK_0xf21d() // UNK_0xf21d
   DARK(); // DARK
   Push(0);
   Push(0x00c7);
-  _dot_RAW(); // .RAW
-  _ask_VGA(); // ?VGA
+  DrawRAW(); // .RAW
+  IsVGA(); // ?VGA
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   Push(pp_XBUF_dash_SE); // XBUF-SE
@@ -979,7 +979,7 @@ void UNK_0xf21d() // UNK_0xf21d
   SETABLT(); // SETABLT
   Push(0);
   Push(0x0064);
-  _dot_RAW(); // .RAW
+  DrawRAW(); // .RAW
 }
 
 
@@ -1045,10 +1045,10 @@ void UNK_0xf27f() // UNK_0xf27f
 
 void UNK_0xf2c1() // UNK_0xf2c1
 {
-  _ask_ERR(); // ?ERR
+  IsERR(); // ?ERR
   if (Pop() == 0) return;
   Push(Read16(cc_AX)); // AX
-  _ask_(); // ?
+  Is(); // ?
   PRINT("DOS call error !", 16); // (.")
   KEY_2(); // KEY_2
   QUIT(); // QUIT
@@ -1065,7 +1065,7 @@ void UNK_0xf2e6() // UNK_0xf2e6
   Push(Pop()*2); // 2*
   Push(Pop()>>4); // 16/
   Push(pp_UNK_0xf25d); // UNK_0xf25d
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1083,7 +1083,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xf259); // UNK_0xf259
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1094,7 +1094,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
 void UNK_0xf30c() // UNK_0xf30c
 {
   Push(Read16(cc_BX)); // BX
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0048);
   DOSCALL(); // DOSCALL
   UNK_0xf2c1(); // UNK_0xf2c1
@@ -1135,16 +1135,16 @@ void UNK_0xf358() // UNK_0xf358
   OVER(); // OVER
   _dash_(); // -
   Push(pp_UNK_0xf261); // UNK_0xf261
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0xc350);
-  _at_DS(); // @DS
+  GetDS(); // @DS
   SETBLOC(); // SETBLOC
   Pop(); // DROP
   OVER(); // OVER
   _dash_(); // -
   Push(1);
   _dash_(); // -
-  _at_DS(); // @DS
+  GetDS(); // @DS
   SETBLOC(); // SETBLOC
   Pop(); Pop(); // 2DROP
   UNK_0xf30c(); // UNK_0xf30c
@@ -1185,16 +1185,16 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
   UNK_0xf27f(); // UNK_0xf27f
   if (Pop() != 0)
   {
-    _at_K(); // @K
+    GetK(); // @K
     Push(Read16(regsp)); // DUP
     Push(pp_SYSK); // SYSK
-    _ex__2(); // !_2
+    Store_2(); // !_2
     UNK_0xf320(); // UNK_0xf320
     Push(0x0280);
     _st_(); // <
     if (Pop() != 0)
     {
-      _ask_ALREADY(); // ?ALREADY
+      IsALREADY(); // ?ALREADY
       UNK_0xf2f4(); // UNK_0xf2f4
       UNK_0xf2e6(); // UNK_0xf2e6
       UNK_0xf388(); // UNK_0xf388
@@ -1209,7 +1209,7 @@ void TANDY_dash_ALLOC() // TANDY-ALLOC
   }
   Push(0x0010);
   Push(pp_TANDY); // TANDY
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1241,7 +1241,7 @@ void UNK_0xf3f2() // UNK_0xf3f2
 
 void UNK_0xf40e() // UNK_0xf40e
 {
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -1252,7 +1252,7 @@ void UNK_0xf40e() // UNK_0xf40e
   }
   DARK(); // DARK
   UNK_0xf21d(); // UNK_0xf21d
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   SCR_dash_RES(); // SCR-RES
@@ -1299,7 +1299,7 @@ void UNK_0xf430() // UNK_0xf430
   Push(1);
   MAX(); // MAX
   Push(0x53a9); // probable 'MPS'
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1313,10 +1313,10 @@ void SPLASH_dot_SCREEN() // SPLASH.SCREEN
   _gt_LORES(); // >LORES
   DARK(); // DARK
   CTINIT(); // CTINIT
-  _ask_VGA(); // ?VGA
+  IsVGA(); // ?VGA
   if (Pop() != 0)
   {
-    _ex_VPAL(); // !VPAL
+    StoreVPAL(); // !VPAL
   }
   UNK_0xeea9(); // UNK_0xeea9
   if (Pop() == 0) Push(1); else Push(0); // NOT

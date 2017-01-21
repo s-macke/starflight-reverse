@@ -56,7 +56,7 @@
 //      UNK_0xf106  codep:0x224c parp:0xf106 size:0x000d C-string:'UNK_0xf106'
 //      UNK_0xf115  codep:0x224c parp:0xf115 size:0x000c C-string:'UNK_0xf115'
 //      UNK_0xf123  codep:0x224c parp:0xf123 size:0x000c C-string:'UNK_0xf123'
-//          .TDESC  codep:0x4b3b parp:0xf13a size:0x001c C-string:'_dot_TDESC'
+//          .TDESC  codep:0x4b3b parp:0xf13a size:0x001c C-string:'DrawTDESC'
 //      UNK_0xf158  codep:0x224c parp:0xf158 size:0x003d C-string:'UNK_0xf158'
 //      UNK_0xf197  codep:0x224c parp:0xf197 size:0x0008 C-string:'UNK_0xf197'
 //      UNK_0xf1a1  codep:0x224c parp:0xf1a1 size:0x000b C-string:'UNK_0xf1a1'
@@ -98,13 +98,13 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
-extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
-extern const unsigned short int pp__ask_AF; // ?AF
+extern const unsigned short int cc_IsA_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc_IsA_dash_WEAP; // ?A-WEAP
+extern const unsigned short int pp_IsAF; // ?AF
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
-extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
-extern const unsigned short int pp__ask_NEB; // ?NEB
+extern const unsigned short int pp_IsG_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp_IsNEB; // ?NEB
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_NLR; // NLR
 extern const unsigned short int pp_SENSE_dash_A; // SENSE-A
@@ -114,8 +114,8 @@ extern IFieldType INST_dash_QT; // INST-QT
 void DABS(); // DABS
 void MAX(); // MAX
 void MIN(); // MIN
-void _dot_(); // .
-void _dot_R(); // .R
+void Draw(); // .
+void DrawR(); // .R
 void SPACE(); // SPACE
 void SPACES(); // SPACES
 void NOP(); // NOP
@@ -125,21 +125,21 @@ void D_gt_(); // D>
 void WITHIN(); // WITHIN
 void RRND(); // RRND
 void SQRT(); // SQRT
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
-void D_ex_(); // D!
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void StoreD(); // D!
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void _eq_SPECIE(); // =SPECIE
 void CDROP(); // CDROP
 void SET_dash_CUR(); // SET-CUR
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void CTPOS_dot_(); // CTPOS.
 void CTERASE(); // CTERASE
 void CTCR(); // CTCR
@@ -309,7 +309,7 @@ void _ro__dot_VESSEL_rc_() // (.VESSEL)
 
 void UNK_0xed38() // UNK_0xed38
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   _ro__dot_VESSEL_rc_(); // (.VESSEL) case
 }
 
@@ -341,7 +341,7 @@ void UNK_0xed4d() // UNK_0xed4d
 void UNK_0xed5a() // UNK_0xed5a
 {
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
 }
@@ -383,13 +383,13 @@ void _ro__dot_OBJECT_rc_() // (.OBJECT)
 
 void UNK_0xed9f() // UNK_0xed9f
 {
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   Push(0x003c);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
     PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
@@ -397,7 +397,7 @@ void UNK_0xed9f() // UNK_0xed9f
     PRINT(" OBJECT: ", 9); // (.")
   }
   CTINIT(); // CTINIT
-  _at_INST_dash_C(); // @INST-C
+  GetINST_dash_C(); // @INST-C
   _ro__dot_OBJECT_rc_(); // (.OBJECT) case
 }
 
@@ -414,7 +414,7 @@ void UNK_0xedee() // UNK_0xedee
   _slash_MOD(); // /MOD
   Push(Read16(regsp)); // DUP
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   _0_gt_(); // 0>
 }
 
@@ -441,7 +441,7 @@ void UNK_0xee04() // UNK_0xee04
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
@@ -466,7 +466,7 @@ void UNK_0xee5b() // UNK_0xee5b
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1+UNK_0xec6b.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+UNK_0xec70.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
@@ -496,7 +496,7 @@ void UNK_0xee9b() // UNK_0xee9b
   CTCR(); // CTCR
   SPACE(); // SPACE
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -587,10 +587,10 @@ void UNK_0xef08() // UNK_0xef08
 void UNK_0xef13() // UNK_0xef13
 {
   unsigned short int a;
-  Push(pp__ask_NEB); // ?NEB
+  Push(pp_IsNEB); // ?NEB
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(Read16(a)); // R@
   Push(2);
@@ -631,7 +631,7 @@ void UNK_0xef53() // UNK_0xef53
   {
     Push(0x001d);
     _eq_SPECIE(); // =SPECIE
-    Push(pp__ask_AF); // ?AF
+    Push(pp_IsAF); // ?AF
     if (Pop() == 0) Push(1); else Push(0); // 0=
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
@@ -645,10 +645,10 @@ void UNK_0xef53() // UNK_0xef53
       _slash_(); // /
       Push(1);
       MAX(); // MAX
-      _dot_(); // .
+      Draw(); // .
       PRINT("EQUIVALENT", 10); // (.")
     }
-    Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
+    Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
     Push(pp_NLR); // NLR
     Push(Read16(Pop())); // @
     Push(1);
@@ -680,7 +680,7 @@ void UNK_0xeff7() // UNK_0xeff7
   PRINT("WEAPON STATUS: ", 15); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
+  Push(Read16(cc_IsA_dash_WEAP)); // ?A-WEAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -716,10 +716,10 @@ void UNK_0xf02c() // UNK_0xf02c
       Push(6);
     }
     Push(pp_RECORD_n_); // RECORD#
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(0x001a);
     Push(pp_FILE_n_); // FILE#
-    _ex__2(); // !_2
+    Store_2(); // !_2
     LoadData(UNK_0xec75); // from 'ELEMENT     '
     Push(0x0010);
     Push(0x002e);
@@ -762,7 +762,7 @@ void UNK_0xf07e() // UNK_0xf07e
 void UNK_0xf0a7() // UNK_0xf0a7
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -779,11 +779,11 @@ void UNK_0xf0b5() // UNK_0xf0b5
   Push(1);
   CTPOS_dot_(); // CTPOS.
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT
   UNK_0xf0a7(); // UNK_0xf0a7
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -852,7 +852,7 @@ void UNK_0xf123() // UNK_0xf123
 // 0xf12f: WORD '.TDESC' codep=0x4b3b parp=0xf13a
 // ================================================
 
-void _dot_TDESC() // .TDESC
+void DrawTDESC() // .TDESC
 {
   switch(Pop()) // .TDESC
   {
@@ -896,7 +896,7 @@ void UNK_0xf158() // UNK_0xf158
   LoadData(UNK_0xecdf); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _dot_TDESC(); // .TDESC case
+  DrawTDESC(); // .TDESC case
   OVER(); // OVER
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -905,7 +905,7 @@ void UNK_0xf158() // UNK_0xf158
     return;
   }
   PRINT(" TO ", 4); // (.")
-  _dot_TDESC(); // .TDESC case
+  DrawTDESC(); // .TDESC case
 }
 
 
@@ -1015,8 +1015,8 @@ void UNK_0xf221() // UNK_0xf221
   PRINT("GRAVITY: ", 9); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   Push(Read16(regsp)); // DUP
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
-  _ex__2(); // !_2
+  Push(pp_IsG_dash_AWAR); // ?G-AWAR
+  Store_2(); // !_2
   if (Pop() == 0) return;
   LoadData(UNK_0xecbf); // from 'PLANET      '
   Push(Read16(Pop())); // @
@@ -1037,13 +1037,13 @@ void UNK_0xf221() // UNK_0xf221
   Push(0x0064);
   _slash_MOD(); // /MOD
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
   Push(0);
-  _dot_R(); // .R
-  _dot_(); // .
+  DrawR(); // .R
+  Draw(); // .
   PRINT("G", 1); // (.")
 }
 
@@ -1239,7 +1239,7 @@ void UNK_0xf38f() // UNK_0xf38f
   UNK_0xee9b(); // UNK_0xee9b
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
@@ -1292,7 +1292,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 {
   UNK_0xee9b(); // UNK_0xee9b
   PRINT(" ECOSPHERE: ", 12); // (.")
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   UNK_0xf3b8(); // UNK_0xf3b8
   Push(Read16(regsp)); // DUP
   CTINIT(); // CTINIT
@@ -1300,11 +1300,11 @@ void UNK_0xf3e2() // UNK_0xf3e2
   _dash_(); // -
   Push(1);
   MAX(); // MAX
-  _dot_(); // .
+  Draw(); // .
   PRINT("- ", 2); // (.")
   Push(8);
   MIN(); // MIN
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -1402,7 +1402,7 @@ void _ro__dot_V_slash_P_dash_OBJ_rc_() // (.V/P-OBJ)
 
 void UNK_0xf475() // UNK_0xf475
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   _ro__dot_V_slash_P_dash_OBJ_rc_(); // (.V/P-OBJ) case
 }
 
@@ -1479,7 +1479,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   {
     _gt_C_plus_S(); // >C+S
     UNK_0xed9f(); // UNK_0xed9f
-    _at_INST_dash_C(); // @INST-C
+    GetINST_dash_C(); // @INST-C
     _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS) case
     ICLOSE(); // ICLOSE
     Push(0x1b58); Push(0x0000);
@@ -1500,7 +1500,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   _2_at_(); // 2@
   D_plus_(); // D+
   Push(pp_OK_dash_TALK); // OK-TALK
-  D_ex_(); // D!
+  StoreD(); // D!
   Push2Words("NULL");
   Push(pp_SENSE_dash_A); // SENSE-A
   _1_dot_5_ex__2(); // 1.5!_2

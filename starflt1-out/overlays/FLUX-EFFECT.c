@@ -25,9 +25,9 @@ void MAX(); // MAX
 void MIN(); // MIN
 void RRND(); // RRND
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void ON_3(); // ON_3
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void _gt_MAINVIEW(); // >MAINVIEW
 void _gt_DISPLAY(); // >DISPLAY
 void DARK(); // DARK
@@ -109,7 +109,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   MIN(); // MIN
   Push(a); // I
   Push(Pop()+1); // 1+
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0078);
   UNK_0xf3de(); // UNK_0xf3de
   Push(0xffc4);
@@ -123,7 +123,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(a); // R>
   Push(3);
   Push(Pop() + Pop()); // +
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -255,7 +255,7 @@ void FLUX() // FLUX
   ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
   SetColor("GREY1");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0);
   TONE(); // TONE
   BEEPON(); // BEEPON

@@ -4,6 +4,6 @@
 #define FX_H
 
 void PSYCH(); // PSYCH
-void _dot_TMAP(); // .TMAP
+void DrawTMAP(); // .TMAP
 
 #endif

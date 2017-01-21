@@ -82,7 +82,7 @@ extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_REPAIRT; // REPAIRT
-extern const unsigned short int pp__ask_REPAIR; // ?REPAIR
+extern const unsigned short int pp_IsREPAIR; // ?REPAIR
 extern const unsigned short int pp_REAL_dash_MS; // REAL-MS
 extern LoadDataType ELEM_dash_NAME; // ELEM-NAME
 extern IFieldType INST_dash_QTY; // INST-QTY
@@ -91,12 +91,12 @@ void M_slash_(); // M/
 void MAX(); // MAX
 void MIN(); // MIN
 void BEEP(); // BEEP
-void _dot_(); // .
+void Draw(); // .
 void MS(); // MS
 void UNRAVEL(); // UNRAVEL
 void RRND(); // RRND
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -104,12 +104,12 @@ void CDROP(); // CDROP
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void CTERASE(); // CTERASE
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void Y_slash_N(); // Y/N
 void _dash_XTRAILING(); // -XTRAILING
@@ -421,7 +421,7 @@ void UNK_0xefe0() // UNK_0xefe0
 
 void UNK_0xeff0() // UNK_0xeff0
 {
-  Push(pp__ask_REPAIR); // ?REPAIR
+  Push(pp_IsREPAIR); // ?REPAIR
   OFF_2(); // OFF_2
   Push(pp_UNK_0xef46); // UNK_0xef46
   OFF_2(); // OFF_2
@@ -469,7 +469,7 @@ void UNK_0xeffc() // UNK_0xeffc
 
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xef4a); // UNK_0xef4a
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -488,7 +488,7 @@ void UNK_0xf03e() // UNK_0xf03e
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xef11.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x00fb);
   Push(0x63ef+UNK_0xef16.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -513,7 +513,7 @@ void UNK_0xf03e() // UNK_0xf03e
   Push(0x000a);
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xf03a); // UNK_0xf03a
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -573,7 +573,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xef4e); // UNK_0xef4e
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -750,15 +750,15 @@ void UNK_0xf1e4() // UNK_0xf1e4
   Push(pp_UNK_0xef4e); // UNK_0xef4e
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(ELEM_dash_NAME); // from 'ELEMENT     '
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAILING(); // -XTRAILING
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   SET_dash_CURRENT(); // SET-CURRENT
 }
 
@@ -770,7 +770,7 @@ void UNK_0xf1e4() // UNK_0xf1e4
 void UNK_0xf208() // UNK_0xf208
 {
   UNK_0x3f3b("SHALL I TAKE THIS FROM CARGO\?");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x01f4);
   MS(); // MS
   _i_KEY(); // 'KEY
@@ -787,7 +787,7 @@ void UNK_0xf238() // UNK_0xf238
   BEEP(); // BEEP
   CTERASE(); // CTERASE
   UNK_0x3f3b("CAPTAIN, WE NEED ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -811,7 +811,7 @@ void UNK_0xf26c() // UNK_0xf26c
   UNK_0xef5e(); // UNK_0xef5e
   Push(0x000a);
   _slash_(); // /
-  _dot_(); // .
+  Draw(); // .
   UNK_0x3f3b("CUBIC METER");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   UNK_0xef5e(); // UNK_0xef5e
@@ -832,7 +832,7 @@ void UNK_0xf26c() // UNK_0xf26c
 void UNK_0xf2a0() // UNK_0xf2a0
 {
   UNK_0x3f3b("             [NO YES]");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -843,7 +843,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
 void UNK_0xf2be() // UNK_0xf2be
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf238(); // UNK_0xf238
   UNK_0xf26c(); // UNK_0xf26c
   UNK_0xf1e4(); // UNK_0xf1e4
@@ -860,7 +860,7 @@ void UNK_0xf2be() // UNK_0xf2be
 void UNK_0xf2d2() // UNK_0xf2d2
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -888,8 +888,8 @@ void UNK_0xf2da() // UNK_0xf2da
 void UNK_0xf2f0() // UNK_0xf2f0
 {
   UNK_0x3f3b("CEASING REPAIR ");
-  _dot_TTY(); // .TTY
-  Push(pp__ask_REPAIR); // ?REPAIR
+  DrawTTY(); // .TTY
+  Push(pp_IsREPAIR); // ?REPAIR
   OFF(); // OFF
   Push(pp_UNK_0xef46); // UNK_0xef46
   OFF(); // OFF
@@ -920,7 +920,7 @@ void UNK_0xf324() // UNK_0xf324
 {
   UNK_0xf2d2(); // UNK_0xf2d2
   UNK_0x3f3b("REPAIR COMPLETED ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -931,7 +931,7 @@ void UNK_0xf324() // UNK_0xf324
 void UNK_0xf340() // UNK_0xf340
 {
   UNK_0x3f3b("CONTINUING REPAIR ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -988,7 +988,7 @@ void UNK_0xf38f() // UNK_0xf38f
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
   Push(pp_ELEM_dash_AM); // ELEM-AM
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xef0c.offset); // IFIELD
@@ -1001,7 +1001,7 @@ void UNK_0xf38f() // UNK_0xf38f
   ICLOSE(); // ICLOSE
   Push(a); // R>
   Push(pp_ELEM_dash_AM); // ELEM-AM
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xefe0(); // UNK_0xefe0
 }
 
@@ -1085,7 +1085,7 @@ void UNK_0xf407() // UNK_0xf407
     UNK_0xef56(); // UNK_0xef56
     Push(Read16(regsp)); // DUP
     Push(pp_UNK_0xef4e); // UNK_0xef4e
-    _ex__3(); // !_3
+    Store_3(); // !_3
     UNK_0xf3f5(); // UNK_0xf3f5
   }
   Push(pp_UNK_0xef46); // UNK_0xef46
@@ -1143,9 +1143,9 @@ void UNK_0xf45f() // UNK_0xf45f
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f3b("ITEM OPERATIONAL ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -1171,7 +1171,7 @@ void UNK_0xf4a9() // UNK_0xf4a9
 
 void UNK_0xf4bd() // UNK_0xf4bd
 {
-  Push(pp__ask_REPAIR); // ?REPAIR
+  Push(pp_IsREPAIR); // ?REPAIR
   Push(Read16(Pop())); // @
   Push(1);
   Push((Pop()==Pop())?1:0); // =
@@ -1180,8 +1180,8 @@ void UNK_0xf4bd() // UNK_0xf4bd
   Pop(); // DROP
   UNK_0xf086(); // UNK_0xf086
   Push(-1);
-  Push(pp__ask_REPAIR); // ?REPAIR
-  _ex__3(); // !_3
+  Push(pp_IsREPAIR); // ?REPAIR
+  Store_3(); // !_3
 }
 
 

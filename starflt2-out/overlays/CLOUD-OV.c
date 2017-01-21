@@ -31,16 +31,16 @@
 // =================================
 extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
 void MS(); // MS
-void _ex__2(); // !_2
-void _at_INST_dash_S(); // @INST-S
+void Store_2(); // !_2
+void GetINST_dash_S(); // @INST-S
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
 void ALL(); // ALL
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void _gt_1FONT(); // >1FONT
 void WUP(); // WUP
 void SWAP(); // SWAP
@@ -72,7 +72,7 @@ IFieldType UNK_0xf3d5 = {0x10, 0x20, 0x02};
 
 void UNK_0xf3da() // UNK_0xf3da
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
 
@@ -161,7 +161,7 @@ void UNK_0xf47c() // UNK_0xf47c
     Push(0x65e1+UNK_0xf3c6.offset); // IFIELD
     Push(i); // I
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     UNK_0xf3da(); // UNK_0xf3da
     if (Pop() != 0)
     {
@@ -170,7 +170,7 @@ void UNK_0xf47c() // UNK_0xf47c
       Push(0x0010);
       Push(Pop() | Pop()); // OR
       Push(0x65e1+UNK_0xf3d5.offset); // IFIELD
-      _ex__2(); // !_2
+      Store_2(); // !_2
     }
     ICLOSE(); // ICLOSE
     Push(3);
@@ -298,7 +298,7 @@ void DO_dash_CLOUD() // DO-CLOUD
     _gt_1FONT(); // >1FONT
     WUP(); // WUP
     SetColor("WHITE");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
     return;
   }

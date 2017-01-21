@@ -6,7 +6,7 @@
 void FREEB(); // FREEB
 void BOLT(); // BOLT
 void DO_dash_HALLS(); // DO-HALLS
-void _ex_INIT(); // !INIT
+void StoreINIT(); // !INIT
 void DUHL(); // DUHL
 
 #endif

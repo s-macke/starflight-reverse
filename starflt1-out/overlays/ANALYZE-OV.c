@@ -38,30 +38,30 @@
 //      UNK_0xeccb  codep:0x224c parp:0xeccb size:0x000b C-string:'UNK_0xeccb'
 //      UNK_0xecd8  codep:0x224c parp:0xecd8 size:0x001d C-string:'UNK_0xecd8'
 //       (.OBJECT)  codep:0x4a4f parp:0xed03 size:0x0014 C-string:'_ro__dot_OBJECT_rc_'
-//         .OBJECT  codep:0x224c parp:0xed19 size:0x0041 C-string:'_dot_OBJECT'
+//         .OBJECT  codep:0x224c parp:0xed19 size:0x0041 C-string:'DrawOBJECT'
 //      UNK_0xed5c  codep:0x224c parp:0xed5c size:0x0014 C-string:'UNK_0xed5c'
-//           .SIZE  codep:0x224c parp:0xed72 size:0x0055 C-string:'_dot_SIZE'
-//       ?.CERTAIN  codep:0x224c parp:0xedc9 size:0x003e C-string:'_ask__dot_CERTAIN'
+//           .SIZE  codep:0x224c parp:0xed72 size:0x0055 C-string:'DrawSIZE'
+//       ?.CERTAIN  codep:0x224c parp:0xedc9 size:0x003e C-string:'Is_dot_CERTAIN'
 //          HEADER  codep:0x224c parp:0xee09 size:0x000a C-string:'HEADER'
 //      UNK_0xee15  codep:0x224c parp:0xee15 size:0x000e C-string:'UNK_0xee15'
 //      UNK_0xee25  codep:0x224c parp:0xee25 size:0x000a C-string:'UNK_0xee25'
 //      UNK_0xee31  codep:0x224c parp:0xee31 size:0x000c C-string:'UNK_0xee31'
 //         (.TYPE)  codep:0x4a4f parp:0xee49 size:0x0010 C-string:'_ro__dot_TYPE_rc_'
-//           .TYPE  codep:0x224c parp:0xee5b size:0x0019 C-string:'_dot_TYPE'
+//           .TYPE  codep:0x224c parp:0xee5b size:0x0019 C-string:'DrawTYPE'
 //      UNK_0xee76  codep:0x224c parp:0xee76 size:0x0009 C-string:'UNK_0xee76'
-//        .SHIELDS  codep:0x224c parp:0xee81 size:0x0084 C-string:'_dot_SHIELDS'
-//           .WEAP  codep:0x224c parp:0xef07 size:0x0033 C-string:'_dot_WEAP'
-//          .DELEM  codep:0x224c parp:0xef3c size:0x0050 C-string:'_dot_DELEM'
-//        .CONSTIT  codep:0x224c parp:0xef8e size:0x0027 C-string:'_dot_CONSTIT'
+//        .SHIELDS  codep:0x224c parp:0xee81 size:0x0084 C-string:'DrawSHIELDS'
+//           .WEAP  codep:0x224c parp:0xef07 size:0x0033 C-string:'DrawWEAP'
+//          .DELEM  codep:0x224c parp:0xef3c size:0x0050 C-string:'DrawDELEM'
+//        .CONSTIT  codep:0x224c parp:0xef8e size:0x0027 C-string:'DrawCONSTIT'
 //      UNK_0xefb7  codep:0x224c parp:0xefb7 size:0x000c C-string:'UNK_0xefb7'
-//          .ORBIT  codep:0x224c parp:0xefc5 size:0x0025 C-string:'_dot_ORBIT'
+//          .ORBIT  codep:0x224c parp:0xefc5 size:0x0025 C-string:'DrawORBIT'
 //      UNK_0xefec  codep:0x224c parp:0xefec size:0x000b C-string:'UNK_0xefec'
 //      UNK_0xeff9  codep:0x224c parp:0xeff9 size:0x000b C-string:'UNK_0xeff9'
 //      UNK_0xf006  codep:0x224c parp:0xf006 size:0x000e C-string:'UNK_0xf006'
 //      UNK_0xf016  codep:0x224c parp:0xf016 size:0x000d C-string:'UNK_0xf016'
 //      UNK_0xf025  codep:0x224c parp:0xf025 size:0x000c C-string:'UNK_0xf025'
 //      UNK_0xf033  codep:0x224c parp:0xf033 size:0x000c C-string:'UNK_0xf033'
-//          .TDESC  codep:0x4a4f parp:0xf04a size:0x001c C-string:'_dot_TDESC'
+//          .TDESC  codep:0x4a4f parp:0xf04a size:0x001c C-string:'DrawTDESC'
 //      UNK_0xf068  codep:0x224c parp:0xf068 size:0x003d C-string:'UNK_0xf068'
 //      UNK_0xf0a7  codep:0x224c parp:0xf0a7 size:0x0008 C-string:'UNK_0xf0a7'
 //      UNK_0xf0b1  codep:0x224c parp:0xf0b1 size:0x000b C-string:'UNK_0xf0b1'
@@ -69,8 +69,8 @@
 //      UNK_0xf0cb  codep:0x224c parp:0xf0cb size:0x0009 C-string:'UNK_0xf0cb'
 //      UNK_0xf0d6  codep:0x224c parp:0xf0d6 size:0x000b C-string:'UNK_0xf0d6'
 //         (.SURF)  codep:0x4a4f parp:0xf0ed size:0x0018 C-string:'_ro__dot_SURF_rc_'
-//           .SURF  codep:0x224c parp:0xf107 size:0x0028 C-string:'_dot_SURF'
-//           .GRAV  codep:0x224c parp:0xf131 size:0x0060 C-string:'_dot_GRAV'
+//           .SURF  codep:0x224c parp:0xf107 size:0x0028 C-string:'DrawSURF'
+//           .GRAV  codep:0x224c parp:0xf131 size:0x0060 C-string:'DrawGRAV'
 //      UNK_0xf193  codep:0x224c parp:0xf193 size:0x0009 C-string:'UNK_0xf193'
 //      UNK_0xf19e  codep:0x224c parp:0xf19e size:0x000c C-string:'UNK_0xf19e'
 //      UNK_0xf1ac  codep:0x224c parp:0xf1ac size:0x000d C-string:'UNK_0xf1ac'
@@ -83,7 +83,7 @@
 //      UNK_0xf23d  codep:0x224c parp:0xf23d size:0x000c C-string:'UNK_0xf23d'
 //      UNK_0xf24b  codep:0x224c parp:0xf24b size:0x000c C-string:'UNK_0xf24b'
 //        (.WEATH)  codep:0x4a4f parp:0xf264 size:0x0014 C-string:'_ro__dot_WEATH_rc_'
-//          .WEATH  codep:0x224c parp:0xf27a size:0x0023 C-string:'_dot_WEATH'
+//          .WEATH  codep:0x224c parp:0xf27a size:0x0023 C-string:'DrawWEATH'
 //      UNK_0xf29f  codep:0x224c parp:0xf29f size:0x001e C-string:'UNK_0xf29f'
 //      UNK_0xf2bf  codep:0x1d29 parp:0xf2bf size:0x0007 C-string:'UNK_0xf2bf'
 //      UNK_0xf2c8  codep:0x224c parp:0xf2c8 size:0x0028 C-string:'UNK_0xf2c8'
@@ -102,23 +102,23 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc__ask_A_dash_SHIE; // ?A-SHIE
-extern const unsigned short int cc__ask_A_dash_WEAP; // ?A-WEAP
+extern const unsigned short int cc_IsA_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc_IsA_dash_WEAP; // ?A-WEAP
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
-extern const unsigned short int pp__ask_WIN; // ?WIN
-extern const unsigned short int pp__ask_G_dash_AWARE; // ?G-AWARE
+extern const unsigned short int pp_IsWIN; // ?WIN
+extern const unsigned short int pp_IsG_dash_AWARE; // ?G-AWARE
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_SENSE_dash_ADDR; // SENSE-ADDR
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ask_FANLYZ; // ?FANLYZ
+extern const unsigned short int pp_IsFANLYZ; // ?FANLYZ
 extern IFieldType INST_dash_QTY; // INST-QTY
 void DABS(); // DABS
 void MIN(); // MIN
-void _dot_(); // .
-void _dot_R(); // .R
+void Draw(); // .
+void DrawR(); // .R
 void SPACE(); // SPACE
 void SPACES(); // SPACES
 void NOP(); // NOP
@@ -130,21 +130,21 @@ void WITHIN(); // WITHIN
 void RRND(); // RRND
 void SQRT(); // SQRT
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _1_dot_5_ex_(); // 1.5!
-void D_ex_(); // D!
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void StoreD(); // D!
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_FIRST(); // ?FIRST
+void IsFIRST(); // ?FIRST
 void INEXT(); // INEXT
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void CTPOS_dot_(); // CTPOS.
 void CTERASE(); // CTERASE
 void CTCR(); // CTCR
@@ -277,7 +277,7 @@ void UNK_0xec04() // UNK_0xec04
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp__ask_WIN); // ?WIN
+  Push(pp_IsWIN); // ?WIN
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -299,8 +299,8 @@ void UNK_0xec26() // UNK_0xec26
   IOPEN(); // IOPEN
   do
   {
-    _at_INST_dash_CLASS(); // @INST-CLASS
-    _at_INST_dash_SPECIES(); // @INST-SPECIES
+    GetINST_dash_CLASS(); // @INST-CLASS
+    GetINST_dash_SPECIES(); // @INST-SPECIES
     Push(0x000b);
     Push(4);
     D_eq_(); // D=
@@ -319,7 +319,7 @@ void UNK_0xec26() // UNK_0xec26
       ICLOSE(); // ICLOSE
     }
     INEXT(); // INEXT
-    _ask_FIRST(); // ?FIRST
+    IsFIRST(); // ?FIRST
   } while(Pop() == 0);
   ICLOSE(); // ICLOSE
 }
@@ -395,7 +395,7 @@ void _ro__dot_VESSEL_rc_() // (.VESSEL)
 
 void UNK_0xecb6() // UNK_0xecb6
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   _ro__dot_VESSEL_rc_(); // (.VESSEL) case
 }
 
@@ -427,7 +427,7 @@ void UNK_0xeccb() // UNK_0xeccb
 void UNK_0xecd8() // UNK_0xecd8
 {
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
 }
@@ -464,10 +464,10 @@ void _ro__dot_OBJECT_rc_() // (.OBJECT)
 // 0xed17: WORD '.OBJECT' codep=0x224c parp=0xed19
 // ================================================
 
-void _dot_OBJECT() // .OBJECT
+void DrawOBJECT() // .OBJECT
 {
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
     PRINT("ANALYSIS OF LAST SENSOR READING:", 32); // (.")
@@ -475,7 +475,7 @@ void _dot_OBJECT() // .OBJECT
     PRINT(" OBJECT: ", 9); // (.")
   }
   CTINIT(); // CTINIT
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   _ro__dot_OBJECT_rc_(); // (.OBJECT) case
 }
 
@@ -492,7 +492,7 @@ void UNK_0xed5c() // UNK_0xed5c
   _slash_MOD(); // /MOD
   Push(Read16(regsp)); // DUP
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   _0_gt_(); // 0>
 }
 
@@ -501,7 +501,7 @@ void UNK_0xed5c() // UNK_0xed5c
 // 0xed70: WORD '.SIZE' codep=0x224c parp=0xed72
 // ================================================
 
-void _dot_SIZE() // .SIZE
+void DrawSIZE() // .SIZE
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
@@ -519,7 +519,7 @@ void _dot_SIZE() // .SIZE
   U_slash_MOD(); // U/MOD
   Push(Read16(regsp)); // DUP
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
@@ -538,13 +538,13 @@ void _dot_SIZE() // .SIZE
 // 0xedc7: WORD '?.CERTAIN' codep=0x224c parp=0xedc9
 // ================================================
 
-void _ask__dot_CERTAIN() // ?.CERTAIN
+void Is_dot_CERTAIN() // ?.CERTAIN
 {
   CTINIT(); // CTINIT
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xeb7b.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xeb80.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
@@ -574,7 +574,7 @@ void HEADER() // HEADER
   CTCR(); // CTCR
   SPACE(); // SPACE
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -636,11 +636,11 @@ void _ro__dot_TYPE_rc_() // (.TYPE)
 // 0xee59: WORD '.TYPE' codep=0x224c parp=0xee5b
 // ================================================
 
-void _dot_TYPE() // .TYPE
+void DrawTYPE() // .TYPE
 {
   HEADER(); // HEADER
   PRINT("TYPE: ", 6); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xeb9a); // from 'VESSEL      '
   Push(Read8(Pop())&0xFF); // C@
@@ -662,11 +662,11 @@ void UNK_0xee76() // UNK_0xee76
 // 0xee7f: WORD '.SHIELDS' codep=0x224c parp=0xee81
 // ================================================
 
-void _dot_SHIELDS() // .SHIELDS
+void DrawSHIELDS() // .SHIELDS
 {
   HEADER(); // HEADER
   PRINT("SHIELDS: ", 9); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebb2); // from 'VESSEL      '
   Push(Read16(Pop())); // @
@@ -683,9 +683,9 @@ void _dot_SHIELDS() // .SHIELDS
       PRINT("CLASS ", 6); // (.")
       Push(0x00c8);
       _slash_(); // /
-      _dot_(); // .
+      Draw(); // .
       PRINT("EQUIVALENT ", 11); // (.")
-      Push(Read16(cc__ask_A_dash_SHIE)); // ?A-SHIE
+      Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
       if (Pop() != 0)
       {
         PRINT("RAISED", 6); // (.")
@@ -709,13 +709,13 @@ void _dot_SHIELDS() // .SHIELDS
 // 0xef05: WORD '.WEAP' codep=0x224c parp=0xef07
 // ================================================
 
-void _dot_WEAP() // .WEAP
+void DrawWEAP() // .WEAP
 {
   HEADER(); // HEADER
   PRINT("WEAPON STATUS: ", 15); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
-  Push(Read16(cc__ask_A_dash_WEAP)); // ?A-WEAP
+  Push(Read16(cc_IsA_dash_WEAP)); // ?A-WEAP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -729,7 +729,7 @@ void _dot_WEAP() // .WEAP
 // 0xef3a: WORD '.DELEM' codep=0x224c parp=0xef3c
 // ================================================
 
-void _dot_DELEM() // .DELEM
+void DrawDELEM() // .DELEM
 {
   Push(Read16(regsp)); // DUP
   Push(0x63ef+UNK_0xeb95.offset); // IFIELD
@@ -751,10 +751,10 @@ void _dot_DELEM() // .DELEM
       Push(6);
     }
     Push(pp_RECORD_n_); // RECORD#
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(0x001a);
     Push(pp_FILE_n_); // FILE#
-    _ex__3(); // !_3
+    Store_3(); // !_3
     LoadData(UNK_0xeb85); // from 'ELEMENT     '
     Push(0x0010);
     Push(0x002e);
@@ -774,19 +774,19 @@ void _dot_DELEM() // .DELEM
 // 0xef8c: WORD '.CONSTIT' codep=0x224c parp=0xef8e
 // ================================================
 
-void _dot_CONSTIT() // .CONSTIT
+void DrawCONSTIT() // .CONSTIT
 {
   HEADER(); // HEADER
   PRINT("CONSTITUENTS: ", 14); // (.")
   CTINIT(); // CTINIT
   Push(0);
-  _dot_DELEM(); // .DELEM
+  DrawDELEM(); // .DELEM
   Push(1);
-  _dot_DELEM(); // .DELEM
+  DrawDELEM(); // .DELEM
   Push(2);
-  _dot_DELEM(); // .DELEM
+  DrawDELEM(); // .DELEM
   Push(3);
-  _dot_DELEM(); // .DELEM
+  DrawDELEM(); // .DELEM
 }
 
 
@@ -797,7 +797,7 @@ void _dot_CONSTIT() // .CONSTIT
 void UNK_0xefb7() // UNK_0xefb7
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -808,17 +808,17 @@ void UNK_0xefb7() // UNK_0xefb7
 // 0xefc3: WORD '.ORBIT' codep=0x224c parp=0xefc5
 // ================================================
 
-void _dot_ORBIT() // .ORBIT
+void DrawORBIT() // .ORBIT
 {
   Push(0x0014);
   Push(1);
   CTPOS_dot_(); // CTPOS.
   SetColor("BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT
   UNK_0xefb7(); // UNK_0xefb7
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -887,7 +887,7 @@ void UNK_0xf033() // UNK_0xf033
 // 0xf03f: WORD '.TDESC' codep=0x4a4f parp=0xf04a
 // ================================================
 
-void _dot_TDESC() // .TDESC
+void DrawTDESC() // .TDESC
 {
   switch(Pop()) // .TDESC
   {
@@ -924,14 +924,14 @@ void UNK_0xf068() // UNK_0xf068
 {
   HEADER(); // HEADER
   PRINT("TEMPERATURE: ", 13); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebf7); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   LoadData(UNK_0xebef); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
-  _dot_TDESC(); // .TDESC case
+  DrawTDESC(); // .TDESC case
   OVER(); // OVER
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -940,7 +940,7 @@ void UNK_0xf068() // UNK_0xf068
     return;
   }
   PRINT(" TO ", 4); // (.")
-  _dot_TDESC(); // .TDESC case
+  DrawTDESC(); // .TDESC case
 }
 
 
@@ -1028,11 +1028,11 @@ void _ro__dot_SURF_rc_() // (.SURF)
 // 0xf105: WORD '.SURF' codep=0x224c parp=0xf107
 // ================================================
 
-void _dot_SURF() // .SURF
+void DrawSURF() // .SURF
 {
   HEADER(); // HEADER
   PRINT("PREDOMINANT SURFACE: ", 21); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebc7); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
@@ -1044,14 +1044,14 @@ void _dot_SURF() // .SURF
 // 0xf12f: WORD '.GRAV' codep=0x224c parp=0xf131
 // ================================================
 
-void _dot_GRAV() // .GRAV
+void DrawGRAV() // .GRAV
 {
   HEADER(); // HEADER
   PRINT("GRAVITY: ", 9); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   Push(Read16(regsp)); // DUP
-  Push(pp__ask_G_dash_AWARE); // ?G-AWARE
-  _ex__3(); // !_3
+  Push(pp_IsG_dash_AWARE); // ?G-AWARE
+  Store_3(); // !_3
   if (Pop() == 0) return;
   LoadData(UNK_0xebcf); // from 'PLANET      '
   Push(Read16(Pop())); // @
@@ -1072,13 +1072,13 @@ void _dot_GRAV() // .GRAV
   Push(0x0064);
   _slash_MOD(); // /MOD
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
   Push(0);
-  _dot_R(); // .R
-  _dot_(); // .
+  DrawR(); // .R
+  Draw(); // .
   PRINT("G", 1); // (.")
 }
 
@@ -1173,7 +1173,7 @@ void UNK_0xf1f9() // UNK_0xf1f9
 {
   HEADER(); // HEADER
   PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebe7); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
@@ -1253,11 +1253,11 @@ void _ro__dot_WEATH_rc_() // (.WEATH)
 // 0xf278: WORD '.WEATH' codep=0x224c parp=0xf27a
 // ================================================
 
-void _dot_WEATH() // .WEATH
+void DrawWEATH() // .WEATH
 {
   HEADER(); // HEADER
   PRINT("GLOBAL WEATHER: ", 16); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(ATMO_dot_ACTIVITY); // from 'PLANET      '
   Push(Read16(Pop())); // @
@@ -1274,7 +1274,7 @@ void UNK_0xf29f() // UNK_0xf29f
   HEADER(); // HEADER
   PRINT(" SPECTRAL CLASS: ", 17); // (.")
   CTINIT(); // CTINIT
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
@@ -1327,16 +1327,16 @@ void UNK_0xf2f2() // UNK_0xf2f2
 {
   HEADER(); // HEADER
   PRINT(" ECOSPHERE: ", 12); // (.")
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   UNK_0xf2c8(); // UNK_0xf2c8
   Push(Read16(regsp)); // DUP
   CTINIT(); // CTINIT
   Push(Pop()-2); // 2-
-  _dot_(); // .
+  Draw(); // .
   PRINT("- ", 2); // (.")
   Push(8);
   MIN(); // MIN
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -1349,7 +1349,7 @@ void UNK_0xf31e() // UNK_0xf31e
   unsigned short int a;
   HEADER(); // HEADER
   PRINT(" STATE: ", 8); // (.")
-  _ask__dot_CERTAIN(); // ?.CERTAIN
+  Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   Push(0x63ef+UNK_0xebff.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -1362,7 +1362,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(0x018f);
   WITHIN(); // WITHIN
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp__ask_WIN); // ?WIN
+  Push(pp_IsWIN); // ?WIN
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -1381,19 +1381,19 @@ void UNK_0xf31e() // UNK_0xf31e
     if (Pop() != 0)
     {
       SetColor("YELLOW");
-      _ex_COLOR(); // !COLOR
+      StoreCOLOR(); // !COLOR
       PRINT("SLIGHTLY UNSTABLE", 17); // (.")
     } else
     {
       SetColor("PINK");
-      _ex_COLOR(); // !COLOR
+      StoreCOLOR(); // !COLOR
       CTCR(); // CTCR
       PRINT("  UNSTABLE - ESTIMATED TIME TO FLARE:", 37); // (.")
       CTCR(); // CTCR
       Push(2);
       SPACES(); // SPACES
       Push(a); // I
-      _dot_(); // .
+      Draw(); // .
       PRINT("ARTH DAYS.", 10); // (.")
     }
   }
@@ -1408,7 +1408,7 @@ void UNK_0xf31e() // UNK_0xf31e
 
 void UNK_0xf3eb() // UNK_0xf3eb
 {
-  _dot_SIZE(); // .SIZE
+  DrawSIZE(); // .SIZE
 }
 
 
@@ -1418,7 +1418,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
 
 void UNK_0xf3f1() // UNK_0xf3f1
 {
-  _dot_CONSTIT(); // .CONSTIT
+  DrawCONSTIT(); // .CONSTIT
 }
 
 
@@ -1428,10 +1428,10 @@ void UNK_0xf3f1() // UNK_0xf3f1
 
 void UNK_0xf3f7() // UNK_0xf3f7
 {
-  _dot_TYPE(); // .TYPE
-  _dot_SIZE(); // .SIZE
-  _dot_SHIELDS(); // .SHIELDS
-  _dot_WEAP(); // .WEAP
+  DrawTYPE(); // .TYPE
+  DrawSIZE(); // .SIZE
+  DrawSHIELDS(); // .SHIELDS
+  DrawWEAP(); // .WEAP
 }
 
 
@@ -1462,7 +1462,7 @@ void _ro__dot_V_slash_P_dash_OBJ_rc_() // (.V/P-OBJ)
 
 void UNK_0xf41e() // UNK_0xf41e
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   _ro__dot_V_slash_P_dash_OBJ_rc_(); // (.V/P-OBJ) case
 }
 
@@ -1473,12 +1473,12 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void UNK_0xf426() // UNK_0xf426
 {
-  _dot_ORBIT(); // .ORBIT
-  _dot_SURF(); // .SURF
-  _dot_GRAV(); // .GRAV
+  DrawORBIT(); // .ORBIT
+  DrawSURF(); // .SURF
+  DrawGRAV(); // .GRAV
   UNK_0xf1f9(); // UNK_0xf1f9
   UNK_0xf068(); // UNK_0xf068
-  _dot_WEATH(); // .WEATH
+  DrawWEATH(); // .WEATH
 }
 
 
@@ -1491,7 +1491,7 @@ void UNK_0xf436() // UNK_0xf436
   UNK_0xf29f(); // UNK_0xf29f
   UNK_0xf2f2(); // UNK_0xf2f2
   UNK_0xec26(); // UNK_0xec26
-  Push(pp__ask_FANLYZ); // ?FANLYZ
+  Push(pp_IsFANLYZ); // ?FANLYZ
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   UNK_0xf31e(); // UNK_0xf31e
@@ -1540,8 +1540,8 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   if (Pop() != 0)
   {
     _gt_C_plus_S(); // >C+S
-    _dot_OBJECT(); // .OBJECT
-    _at_INST_dash_CLASS(); // @INST-CLASS
+    DrawOBJECT(); // .OBJECT
+    GetINST_dash_CLASS(); // @INST-CLASS
     _ro__dot_ANALYSIS_rc_(); // (.ANALYSIS) case
     ICLOSE(); // ICLOSE
     Push(0x1b58); Push(0x0000);
@@ -1562,7 +1562,7 @@ void _ro__slash_ANALYSIS_rc_() // (/ANALYSIS)
   _2_at_(); // 2@
   D_plus_(); // D+
   Push(pp_OK_dash_TALK); // OK-TALK
-  D_ex_(); // D!
+  StoreD(); // D!
   Push2Words("NULL");
   Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!

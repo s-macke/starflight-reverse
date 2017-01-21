@@ -44,7 +44,7 @@ extern const unsigned short int pp__pe_EFF; // %EFF
 extern const unsigned short int pp_STORM; // STORM
 extern const unsigned short int pp_E_slash_M; // E/M
 extern const unsigned short int pp__n_STORM; // #STORM
-extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 void ABS(); // ABS
 void MAX(); // MAX
@@ -67,7 +67,7 @@ void FILL_2(); // FILL_2
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void POS_dot_(); // POS.
 void POLY_dash_WI(); // POLY-WI
 void _gt_TVCT(); // >TVCT
@@ -262,7 +262,7 @@ void UNK_0xf2e1() // UNK_0xf2e1
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1+UNK_0xf2c8.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+UNK_0xf2c3.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
@@ -429,7 +429,7 @@ void INJURE_dash_PL() // INJURE-PL
   C_ex__2(); // C!_2
   UNK_0xf374(); // UNK_0xf374
   ICLOSE(); // ICLOSE
-  Push(pp__ask_HEAL); // ?HEAL
+  Push(pp_IsHEAL); // ?HEAL
   ON_2(); // ON_2
   Push(0x01f4);
   MS(); // MS
@@ -577,7 +577,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(Read16(Pop())); // @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf2cd); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

@@ -111,12 +111,12 @@ void PICK(); // PICK
 void ROLL(); // ROLL
 void RRND(); // RRND
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _1_dot_5_ex_(); // 1.5!
 void OFF(); // OFF
 void FILL_1(); // FILL_1
-void _at_RECORD(); // @RECORD
+void GetRECORD(); // @RECORD
 void CDROP(); // CDROP
 void CI_i_(); // CI'
 void SET_dash_CURRENT(); // SET-CURRENT
@@ -129,8 +129,8 @@ void IFIND(); // IFIND
 void EACH(); // EACH
 void ICREATE(); // ICREATE
 void _star_CREATE(); // *CREATE
-void _ex_COLOR(); // !COLOR
-void _dot_TTY(); // .TTY
+void StoreCOLOR(); // !COLOR
+void DrawTTY(); // .TTY
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -275,10 +275,10 @@ void UNK_0xe8af() // UNK_0xe8af
   Push(Read16(cc_UNK_0xe79e)); // UNK_0xe79e
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Pop(); // DROP
 }
 
@@ -529,7 +529,7 @@ void UNK_0xea78() // UNK_0xea78
 {
   Push(0);
   Push(0x63ef+UNK_0xe87a.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(UNK_0xe82a); // from 'REGIONS     '
   Push(4);
   Push(0);
@@ -557,7 +557,7 @@ void UNK_0xeaa0() // UNK_0xeaa0
   unsigned short int i, imax;
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(6);
   Push(0);
 
@@ -567,7 +567,7 @@ void UNK_0xeaa0() // UNK_0xeaa0
   {
     Push(i); // I
     Push(pp_RECORD_n_); // RECORD#
-    _ex__3(); // !_3
+    Store_3(); // !_3
     UNK_0xea78(); // UNK_0xea78
     i++;
   } while(i<imax); // (LOOP)
@@ -606,7 +606,7 @@ void UNK_0xec19() // UNK_0xec19
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(pp_SEED); // SEED
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(Read16(cc_UNK_0xe79a)); // UNK_0xe79a
   Push(0);
   Push(0xe8c3); // probable 'UNK_0xe8c3'
@@ -696,7 +696,7 @@ void UNK_0xeee7() // UNK_0xeee7
     }
     RRND(); // RRND
     OVER(); // OVER
-    _ex__3(); // !_3
+    Store_3(); // !_3
   }
   Pop(); // DROP
   Push(a); // R>
@@ -829,7 +829,7 @@ void UNK_0xf067() // UNK_0xf067
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Push(0x0044);
   Func6("FILE-RL");
   Push(Read8(Pop())&0xFF); // C@
@@ -862,7 +862,7 @@ void UNK_0xf093() // UNK_0xf093
   Push(pp_UNK_0xef53); // UNK_0xef53
   Push(Read16(Pop())); // @
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 // 0xf09d: db 0x4c 0x22 0x7b 0x3b 0xae 0x3f 0x12 0x58 0x5f 0x12 0xfa 0x15 0x0a 0x00 0x5d 0x17 0x32 0xe8 0x60 0x16 0x06 0x00 0x5d 0x17 0x42 0xe8 0xd3 0x7c 0x7b 0x3b 0xcd 0x3f 0x72 0x0f 0xb3 0x0e 0xb3 0x0e 0x90 0x16 'L"{; ? X_     ] 2 `   ] B  |{; ?r       '
@@ -885,7 +885,7 @@ void UNK_0xf0c7() // UNK_0xf0c7
   _slash_(); // /
   Push(Pop()+1); // 1+
   SWAP(); // SWAP
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -949,7 +949,7 @@ void UNK_0xf119() // UNK_0xf119
       Push(7);
       RRND(); // RRND
       Push(pp_UNK_0xef37); // UNK_0xef37
-      _ex__3(); // !_3
+      Store_3(); // !_3
       UNK_0xef3b(); // UNK_0xef3b
       Push(Read8(Pop())&0xFF); // C@
       UNK_0xeaec(); // UNK_0xeaec
@@ -991,7 +991,7 @@ void UNK_0xf155() // UNK_0xf155
     RRND(); // RRND
     ICLOSE(); // ICLOSE
     Push(pp_RECORD_n_); // RECORD#
-    _ex__3(); // !_3
+    Store_3(); // !_3
     UNK_0xf119(); // UNK_0xf119
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   } while(Pop() == 0);
@@ -1006,10 +1006,10 @@ void UNK_0xf179() // UNK_0xf179
 {
   Push(0);
   LoadData(UNK_0xe897); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   LoadData(UNK_0xe88f); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1021,10 +1021,10 @@ void UNK_0xf189() // UNK_0xf189
 {
   Push(0);
   LoadData(UNK_0xe87f); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   LoadData(UNK_0xe887); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 // 0xf197: db 0x4c 0x22 0x7b 0x3b 0xae 0x3f 0xe7 0xf0 0xf2 0x0e 0x32 0x0e 0x92 0x0c 0xb4 0x0d 0xb3 0x0e 0x90 0x0e 0x72 0x0f 0xb3 0x0e 0xb3 0x0e 0x90 0x16 'L"{; ?    2         r       '
@@ -1061,11 +1061,11 @@ void UNK_0xf1d3() // UNK_0xf1d3
   _gt_(); // >
   if (Pop() == 0) return;
   UNK_0x3f3b("PROGRAMMER ERROR ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("#SPECIES OVERFLOW ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("SO SORRY- WHERE WERE YOU, ANYWAY\?");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 
   label1:
   goto label1;
@@ -1084,12 +1084,12 @@ void UNK_0xf23c() // UNK_0xf23c
   Push(pp_UNK_0xef53); // UNK_0xef53
   Push(Read16(Pop())); // @
   LoadData(UNK_0xe88f); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(UNK_0xe89f); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   SET_dash_CURRENT(); // SET-CURRENT
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(UNK_0xe872); // from 'REGIONS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
@@ -1114,12 +1114,12 @@ void UNK_0xf23c() // UNK_0xf23c
   } while(i<imax); // (LOOP)
 
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_UNK_0xef53); // UNK_0xef53
   Push(Read16(Pop())); // @
   UNK_0xf1d3(); // UNK_0xf1d3
   LoadData(UNK_0xe897); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1165,7 +1165,7 @@ void UNK_0xf286() // UNK_0xf286
       UNK_0xe8af(); // UNK_0xe8af
       SWAP(); // SWAP
       LoadData(UNK_0xe89f); // from 'CREATURE    '
-      _ex__3(); // !_3
+      Store_3(); // !_3
       UNK_0xf23c(); // UNK_0xf23c
     } else
     {
@@ -1204,19 +1204,19 @@ void UNK_0xf2da() // UNK_0xf2da
       Push(pp_UNK_0xef53); // UNK_0xef53
       Push(Read16(Pop())); // @
       LoadData(UNK_0xe87f); // from 'CREATURE    '
-      _ex__3(); // !_3
+      Store_3(); // !_3
       Push(pp_RECORD_n_); // RECORD#
       Push(Read16(Pop())); // @
       SWAP(); // SWAP
       UNK_0xf286(); // UNK_0xf286
       SWAP(); // SWAP
       Push(pp_RECORD_n_); // RECORD#
-      _ex__3(); // !_3
+      Store_3(); // !_3
       UNK_0xe8af(); // UNK_0xe8af
       Push(pp_UNK_0xef53); // UNK_0xef53
       Push(Read16(Pop())); // @
       LoadData(UNK_0xe887); // from 'CREATURE    '
-      _ex__3(); // !_3
+      Store_3(); // !_3
     } else
     {
       imax = i; // LEAVE
@@ -1238,10 +1238,10 @@ void UNK_0xf320() // UNK_0xf320
   Push(Read16(cc_UNK_0xe79e)); // UNK_0xe79e
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Pop(); // DROP
 }
 
@@ -1266,7 +1266,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf0c7(); // UNK_0xf0c7
   Push(0);
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe8af(); // UNK_0xe8af
   UNK_0xf189(); // UNK_0xf189
   UNK_0xf179(); // UNK_0xf179
@@ -1289,7 +1289,7 @@ void UNK_0xf334() // UNK_0xf334
   Push(pp_UNK_0xef53); // UNK_0xef53
   Push(Read16(Pop())); // @
   Push(pp_PLHI); // PLHI
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1305,7 +1305,7 @@ void UNK_0xf382() // UNK_0xf382
   Push(Pop()+1); // 1+
   Push(0);
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
 
   label4:
   UNK_0xe8af(); // UNK_0xe8af
@@ -1335,7 +1335,7 @@ void UNK_0xf382() // UNK_0xf382
     {
       Push(i); // I
       Push(pp_RECORD_n_); // RECORD#
-      _ex__3(); // !_3
+      Store_3(); // !_3
       UNK_0xe8af(); // UNK_0xe8af
       Push(Read16(regsp)); // DUP
       LoadData(UNK_0xe89f); // from 'CREATURE    '
@@ -1470,7 +1470,7 @@ void UNK_0xf448() // UNK_0xf448
   _1_dot_5_ex_(); // 1.5!
   Push(0);
   LoadData(UNK_0xe7c2); // from 'BOX         '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
@@ -1487,9 +1487,9 @@ void DIO() // DIO
   Push(pp_PLHI); // PLHI
   OFF(); // OFF
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f3b("AUTO SAMPLING DEVICES ACTIVATED");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xea0a(); // UNK_0xea0a
   UNK_0xeaa0(); // UNK_0xeaa0
   UNK_0xf448(); // UNK_0xf448
@@ -1510,7 +1510,7 @@ void DIO() // DIO
     MS(); // MS
   }
   UNK_0x3f3b("INITIATING HULL INTEGRITY CHECK");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }

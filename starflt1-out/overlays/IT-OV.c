@@ -45,7 +45,7 @@
 //      UNK_0xf2cf  codep:0x224c parp:0xf2cf size:0x000e C-string:'UNK_0xf2cf'
 //        BOX>TOCS  codep:0x224c parp:0xf2ea size:0x000e C-string:'BOX_gt_TOCS'
 //            >BOX  codep:0x224c parp:0xf301 size:0x0080 C-string:'_gt_BOX'
-//        ?ELEMENT  codep:0x224c parp:0xf38e size:0x000a C-string:'_ask_ELEMENT'
+//        ?ELEMENT  codep:0x224c parp:0xf38e size:0x000a C-string:'IsELEMENT'
 //          (BOX>)  codep:0x224c parp:0xf3a3 size:0x0038 C-string:'_ro_BOX_gt__rc_'
 //            BOX>  codep:0x224c parp:0xf3e4 size:0x0000 C-string:'BOX_gt_'
 
@@ -54,7 +54,7 @@
 // =================================
 extern const unsigned short int cc_BL; // BL
 extern const unsigned short int pp_ELEM_dash_AM; // ELEM-AM
-extern const unsigned short int pp__ask__ask__ask_IT; // ???IT
+extern const unsigned short int pp_Is_ask__ask_IT; // ???IT
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp__pe_VAL; // %VAL
@@ -92,23 +92,23 @@ void D0_eq_(); // D0=
 void D_eq_(); // D=
 void KEY_2(); // KEY_2
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
 void CMOVE(); // CMOVE
 void FILL_1(); // FILL_1
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
 void CI_i_(); // CI'
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_FIRST(); // ?FIRST
+void IsFIRST(); // ?FIRST
 void _gt_C_plus_(); // >C+
 void INEXT(); // INEXT
 void IINSERT(); // IINSERT
@@ -119,11 +119,11 @@ void IDELETE(); // IDELETE
 void ICREATE(); // ICREATE
 void _star_CREATE(); // *CREATE
 void SAVE_dash_OVERLAY(); // SAVE-OVERLAY
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void _gt_1FONT(); // >1FONT
 void POS_dot_(); // POS.
-void _at_CRS(); // @CRS
-void _ex_CRS(); // !CRS
+void GetCRS(); // @CRS
+void StoreCRS(); // !CRS
 void GCR(); // GCR
 void _i_KEY(); // 'KEY
 void SUBROOT(); // SUBROOT
@@ -252,7 +252,7 @@ void UNK_0xee2c() // UNK_0xee2c
     Push(0x0096);
     SetColor("GREY1");
   }
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(7);
   _dash_(); // -
   Push(7);
@@ -274,7 +274,7 @@ void UNK_0xee54() // UNK_0xee54
   Push(7);
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
@@ -291,7 +291,7 @@ void UNK_0xee54() // UNK_0xee54
 void UNK_0xee70() // UNK_0xee70
 {
   unsigned short int i, imax;
-  _at_CRS(); // @CRS
+  GetCRS(); // @CRS
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
@@ -321,7 +321,7 @@ void UNK_0xee70() // UNK_0xee70
   GCR(); // GCR
   UNK_0x3f3b("PRESS SPACEBAR TO CONTINUE");
   UNK_0xee54(); // UNK_0xee54
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -551,7 +551,7 @@ void UNK_0xf096() // UNK_0xf096
   CMOVE(); // CMOVE
   LoadData(UNK_0xede6); // from 'ARTIFACT    '
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp__ask__ask__ask_IT); // ???IT
+  Push(pp_Is_ask__ask_IT); // ???IT
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -659,7 +659,7 @@ void ITEM_gt_PAD() // ITEM>PAD
   Push(0x0026);
   PAD(); // PAD
   C_ex_(); // C!
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   IDENT_dash_ITEM_do_(); // IDENT-ITEM$ case
 }
 
@@ -676,7 +676,7 @@ void UNK_0xf157() // UNK_0xf157
   Push(3);
   PICK(); // PICK
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   Push(0x000b);
   Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
@@ -688,7 +688,7 @@ void UNK_0xf157() // UNK_0xf157
   if (Pop() != 0)
   {
     Push(pp__ro_SCROLL_1); // (SCROLL_1
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     Push(0x0038);
     Push(0);
@@ -725,7 +725,7 @@ void BOX_gt_LIST() // BOX>LIST
   CI(); // CI
   do
   {
-    _at_INST_dash_CLASS(); // @INST-CLASS
+    GetINST_dash_CLASS(); // @INST-CLASS
     Push(0x0035);
     Push((Pop()==Pop())?1:0); // =
     if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -733,7 +733,7 @@ void BOX_gt_LIST() // BOX>LIST
     Push(Read16(Pop())); // @
     Push(0x004b);
     _st_(); // <
-    _at_INST_dash_CLASS(); // @INST-CLASS
+    GetINST_dash_CLASS(); // @INST-CLASS
     Push(0x000b);
     Push((Pop()==Pop())?1:0); // =
     Push(Pop() | Pop()); // OR
@@ -769,7 +769,7 @@ void GET_dash_BOXES() // GET-BOXES
   {
     BOX_gt_LIST(); // BOX>LIST
     INEXT(); // INEXT
-    _ask_FIRST(); // ?FIRST
+    IsFIRST(); // ?FIRST
   } while(Pop() == 0);
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -905,7 +905,7 @@ void _gt_BOX() // >BOX
   unsigned short int a;
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   a = Pop(); // >R
   ICLOSE(); // ICLOSE
   IOPEN(); // IOPEN
@@ -923,8 +923,8 @@ void _gt_BOX() // >BOX
   BOX_gt_TOCS(); // BOX>TOCS
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
   Push(0x001a);
@@ -942,7 +942,7 @@ void _gt_BOX() // >BOX
       {
         Push(Read16(regsp)); // DUP
         INEXT(); // INEXT
-        _at_INST_dash_SPECIES(); // @INST-SPECIES
+        GetINST_dash_SPECIES(); // @INST-SPECIES
         Push((Pop()==Pop())?1:0); // =
       } while(Pop() == 0);
       Pop(); // DROP
@@ -975,9 +975,9 @@ void _gt_BOX() // >BOX
 // 0xf381: WORD '?ELEMENT' codep=0x224c parp=0xf38e
 // ================================================
 
-void _ask_ELEMENT() // ?ELEMENT
+void IsELEMENT() // ?ELEMENT
 {
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   Push(0x001a);
   Push((Pop()==Pop())?1:0); // =
 }
@@ -990,7 +990,7 @@ void _ask_ELEMENT() // ?ELEMENT
 
 void _ro_BOX_gt__rc_() // (BOX>)
 {
-  _ask_ELEMENT(); // ?ELEMENT
+  IsELEMENT(); // ?ELEMENT
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
@@ -1005,13 +1005,13 @@ void _ro_BOX_gt__rc_() // (BOX>)
     Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     _plus__ex_(); // +!
     Push(0x001a);
-    _at_INST_dash_SPECIES(); // @INST-SPECIES
+    GetINST_dash_SPECIES(); // @INST-SPECIES
     ICREATE(); // ICREATE
     _gt_C_plus_S(); // >C+S
     Push(pp_ELEM_dash_AM); // ELEM-AM
     Push(Read16(Pop())); // @
     Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-    _ex__3(); // !_3
+    Store_3(); // !_3
     C_gt_(); // C>
     return;
   }
@@ -1044,10 +1044,10 @@ void BOX_gt_() // BOX>
   {
     _2DUP(); // 2DUP
     _gt_C_plus_S(); // >C+S
-    _ask_ELEMENT(); // ?ELEMENT
-    _at_INST_dash_SPECIES(); // @INST-SPECIES
+    IsELEMENT(); // ?ELEMENT
+    GetINST_dash_SPECIES(); // @INST-SPECIES
     ICLOSE(); // ICLOSE
-    _at_INST_dash_SPECIES(); // @INST-SPECIES
+    GetINST_dash_SPECIES(); // @INST-SPECIES
     Push((Pop()==Pop())?1:0); // =
     if (Pop() == 0) Push(1); else Push(0); // NOT
     Push(Pop() & Pop()); // AND

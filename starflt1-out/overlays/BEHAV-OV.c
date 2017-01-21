@@ -31,17 +31,17 @@
 //       TV-WEAPON  codep:0x744d parp:0xe1e1 size:0x0003 C-string:'TV_dash_WEAPON'
 //      UNK_0xe1e6  codep:0x744d parp:0xe1e6 size:0x0003 C-string:'UNK_0xe1e6'
 //      ATMO.ACTIV  codep:0x73ea parp:0xe1f8 size:0x0006 C-string:'ATMO_dot_ACTIV'
-//      ?PLAYER-FI  codep:0x224c parp:0xe20d size:0x0016 C-string:'_ask_PLAYER_dash_FI'
-//      ?ALIEN-CLO  codep:0x224c parp:0xe232 size:0x0024 C-string:'_ask_ALIEN_dash_CLO'
-//      ?ALIEN-SMA  codep:0x224c parp:0xe265 size:0x000c C-string:'_ask_ALIEN_dash_SMA'
+//      ?PLAYER-FI  codep:0x224c parp:0xe20d size:0x0016 C-string:'IsPLAYER_dash_FI'
+//      ?ALIEN-CLO  codep:0x224c parp:0xe232 size:0x0024 C-string:'IsALIEN_dash_CLO'
+//      ?ALIEN-SMA  codep:0x224c parp:0xe265 size:0x000c C-string:'IsALIEN_dash_SMA'
 //      UNK_0xe273  codep:0x224c parp:0xe273 size:0x000a C-string:'UNK_0xe273'
-//      ?RANDOM-SC  codep:0x224c parp:0xe28c size:0x000a C-string:'_ask_RANDOM_dash_SC'
-// ?ALIEN-HIT-WITH-LASER  codep:0x224c parp:0xe2a5 size:0x002e C-string:'_ask_ALIEN_dash_HIT_dash_WITH_dash_LASER'
+//      ?RANDOM-SC  codep:0x224c parp:0xe28c size:0x000a C-string:'IsRANDOM_dash_SC'
+// ?ALIEN-HIT-WITH-LASER  codep:0x224c parp:0xe2a5 size:0x002e C-string:'IsALIEN_dash_HIT_dash_WITH_dash_LASER'
 //      UNK_0xe2d5  codep:0x224c parp:0xe2d5 size:0x000a C-string:'UNK_0xe2d5'
-// ?ALIEN-HIT-WITH-STUNNER  codep:0x224c parp:0xe2ee size:0x0018 C-string:'_ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER'
+// ?ALIEN-HIT-WITH-STUNNER  codep:0x224c parp:0xe2ee size:0x0018 C-string:'IsALIEN_dash_HIT_dash_WITH_dash_STUNNER'
 //      UNK_0xe308  codep:0x224c parp:0xe308 size:0x0008 C-string:'UNK_0xe308'
-//      ?NOTICE-PL  codep:0x224c parp:0xe31f size:0x003a C-string:'_ask_NOTICE_dash_PL'
-//      ?NEXT-TO-P  codep:0x224c parp:0xe368 size:0x001e C-string:'_ask_NEXT_dash_TO_dash_P'
+//      ?NOTICE-PL  codep:0x224c parp:0xe31f size:0x003a C-string:'IsNOTICE_dash_PL'
+//      ?NEXT-TO-P  codep:0x224c parp:0xe368 size:0x001e C-string:'IsNEXT_dash_TO_dash_P'
 //      UNK_0xe388  codep:0x224c parp:0xe388 size:0x000e C-string:'UNK_0xe388'
 //      UNK_0xe398  codep:0x224c parp:0xe398 size:0x000c C-string:'UNK_0xe398'
 //      UNK_0xe3a6  codep:0x224c parp:0xe3a6 size:0x0012 C-string:'UNK_0xe3a6'
@@ -51,15 +51,15 @@
 //      UNK_0xe42e  codep:0x224c parp:0xe42e size:0x0008 C-string:'UNK_0xe42e'
 //      UNK_0xe438  codep:0x224c parp:0xe438 size:0x0014 C-string:'UNK_0xe438'
 //      UNK_0xe44e  codep:0x224c parp:0xe44e size:0x000c C-string:'UNK_0xe44e'
-//      ?STUNS<STU  codep:0x224c parp:0xe469 size:0x000c C-string:'_ask_STUNS_st_STU'
-//        ?STUNNED  codep:0x224c parp:0xe482 size:0x0004 C-string:'_ask_STUNNED'
+//      ?STUNS<STU  codep:0x224c parp:0xe469 size:0x000c C-string:'IsSTUNS_st_STU'
+//        ?STUNNED  codep:0x224c parp:0xe482 size:0x0004 C-string:'IsSTUNNED'
 //      UNK_0xe488  codep:0x224c parp:0xe488 size:0x0008 C-string:'UNK_0xe488'
 //      UNK_0xe492  codep:0x224c parp:0xe492 size:0x000e C-string:'UNK_0xe492'
 //      UNK_0xe4a2  codep:0x224c parp:0xe4a2 size:0x0008 C-string:'UNK_0xe4a2'
 //      UNK_0xe4ac  codep:0x224c parp:0xe4ac size:0x000e C-string:'UNK_0xe4ac'
 //      UNK_0xe4bc  codep:0x224c parp:0xe4bc size:0x000e C-string:'UNK_0xe4bc'
-//   ?WANTS-TO-FLY  codep:0x224c parp:0xe4d9 size:0x000a C-string:'_ask_WANTS_dash_TO_dash_FLY'
-// ?WANTS-TO-FLOAT  codep:0x224c parp:0xe4f2 size:0x0004 C-string:'_ask_WANTS_dash_TO_dash_FLOAT'
+//   ?WANTS-TO-FLY  codep:0x224c parp:0xe4d9 size:0x000a C-string:'IsWANTS_dash_TO_dash_FLY'
+// ?WANTS-TO-FLOAT  codep:0x224c parp:0xe4f2 size:0x0004 C-string:'IsWANTS_dash_TO_dash_FLOAT'
 //      UNK_0xe4f8  codep:0x224c parp:0xe4f8 size:0x000e C-string:'UNK_0xe4f8'
 //      UNK_0xe508  codep:0x224c parp:0xe508 size:0x000c C-string:'UNK_0xe508'
 //      UNK_0xe516  codep:0x224c parp:0xe516 size:0x0030 C-string:'UNK_0xe516'
@@ -110,7 +110,7 @@
 //       VS.PLAYER  codep:0xb869 parp:0xea80 size:0x0037 C-string:'VS_dot_PLAYER'
 //        LIFE-SIM  codep:0xb869 parp:0xeac4 size:0x0014 C-string:'LIFE_dash_SIM'
 //      ERASE-LIFE  codep:0xb869 parp:0xeae7 size:0x0011 C-string:'ERASE_dash_LIFE'
-//      ?REDUCE-PO  codep:0xb869 parp:0xeb07 size:0x0022 C-string:'_ask_REDUCE_dash_PO'
+//      ?REDUCE-PO  codep:0xb869 parp:0xeb07 size:0x0022 C-string:'IsREDUCE_dash_PO'
 //      UNK_0xeb2b  codep:0x224c parp:0xeb2b size:0x0010 C-string:'UNK_0xeb2b'
 //      EFFECT-LIF  codep:0xb869 parp:0xeb4a size:0x001d C-string:'EFFECT_dash_LIF'
 //      UNK_0xeb69  codep:0x224c parp:0xeb69 size:0x000e C-string:'UNK_0xeb69'
@@ -119,11 +119,11 @@
 //        SIMULATE  codep:0x224c parp:0xec5b size:0x005a C-string:'SIMULATE'
 //      UNK_0xecb7  codep:0x224c parp:0xecb7 size:0x0076 C-string:'UNK_0xecb7'
 //          %STORM  codep:0x1d29 parp:0xed38 size:0x000a C-string:'_pe_STORM'
-//         ?.STORM  codep:0x224c parp:0xed4e size:0x001c C-string:'_ask__dot_STORM'
-//          ?STORM  codep:0x224c parp:0xed75 size:0x0096 C-string:'_ask_STORM'
+//         ?.STORM  codep:0x224c parp:0xed4e size:0x001c C-string:'Is_dot_STORM'
+//          ?STORM  codep:0x224c parp:0xed75 size:0x0096 C-string:'IsSTORM'
 //      angle>text  codep:0x224c parp:0xee0d size:0x00e4 C-string:'angle_gt_text'
 //      UNK_0xeef3  codep:0x224c parp:0xeef3 size:0x0014 C-string:'UNK_0xeef3'
-//         ?EMBARK  codep:0x224c parp:0xef13 size:0x000e C-string:'_ask_EMBARK'
+//         ?EMBARK  codep:0x224c parp:0xef13 size:0x000e C-string:'IsEMBARK'
 //      UNK_0xef23  codep:0x224c parp:0xef23 size:0x0012 C-string:'UNK_0xef23'
 //      UNK_0xef37  codep:0x224c parp:0xef37 size:0x0026 C-string:'UNK_0xef37'
 //       FUNCTIONS  codep:0x1d29 parp:0xef6b size:0x001d C-string:'FUNCTIONS'
@@ -141,15 +141,15 @@
 //           NAVIG  codep:0x744d parp:0xf0e9 size:0x0003 C-string:'NAVIG'
 //            ^NAV  codep:0x744d parp:0xf0f5 size:0x0003 C-string:'_h_NAV'
 //          -STORM  codep:0x224c parp:0xf103 size:0x0016 C-string:'_dash_STORM'
-//            ?NAV  codep:0x224c parp:0xf122 size:0x0018 C-string:'_ask_NAV'
-//       .DISTANCE  codep:0x224c parp:0xf148 size:0x006c C-string:'_dot_DISTANCE'
-//          .CARGO  codep:0x224c parp:0xf1bf size:0x0057 C-string:'_dot_CARGO'
-//         .ENERGY  codep:0x224c parp:0xf222 size:0x00a9 C-string:'_dot_ENERGY'
+//            ?NAV  codep:0x224c parp:0xf122 size:0x0018 C-string:'IsNAV'
+//       .DISTANCE  codep:0x224c parp:0xf148 size:0x006c C-string:'DrawDISTANCE'
+//          .CARGO  codep:0x224c parp:0xf1bf size:0x0057 C-string:'DrawCARGO'
+//         .ENERGY  codep:0x224c parp:0xf222 size:0x00a9 C-string:'DrawENERGY'
 //      UNK_0xf2cd  codep:0x224c parp:0xf2cd size:0x0026 C-string:'UNK_0xf2cd'
 //      UNK_0xf2f5  codep:0x224c parp:0xf2f5 size:0x0022 C-string:'UNK_0xf2f5'
 //      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0022 C-string:'UNK_0xf319'
-//          .WHERE  codep:0x224c parp:0xf346 size:0x0048 C-string:'_dot_WHERE'
-//          .STATS  codep:0x224c parp:0xf399 size:0x002a C-string:'_dot_STATS'
+//          .WHERE  codep:0x224c parp:0xf346 size:0x0048 C-string:'DrawWHERE'
+//          .STATS  codep:0x224c parp:0xf399 size:0x002a C-string:'DrawSTATS'
 //        TV-TASKS  codep:0x224c parp:0xf3d0 size:0x0064 C-string:'TV_dash_TASKS'
 //      UNK_0xf436  codep:0x224c parp:0xf436 size:0x0062 C-string:'UNK_0xf436'
 //      UNK_0xf49a  codep:0x224c parp:0xf49a size:0x000a C-string:'UNK_0xf49a'
@@ -162,13 +162,13 @@
 // =================================
 extern const unsigned short int cc_DEAD_dash_IC; // DEAD-IC
 extern const unsigned short int cc_FALSE; // FALSE
-extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp_IsCRITIC; // ?CRITIC
 extern const unsigned short int pp__i_INJURE; // 'INJURE
 extern const unsigned short int pp_ATMO; // ATMO
 extern const unsigned short int pp_LCOLOR; // LCOLOR
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
 extern const unsigned short int pp_COLOR; // COLOR
-extern const unsigned short int pp__ask_NEW; // ?NEW
+extern const unsigned short int pp_IsNEW; // ?NEW
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_XCON; // XCON
 extern const unsigned short int pp_YCON; // YCON
@@ -179,7 +179,7 @@ extern const unsigned short int pp_STORM; // STORM
 extern const unsigned short int pp__i_STORM; // 'STORM
 extern const unsigned short int pp_E_slash_M; // E/M
 extern const unsigned short int pp__n_STORM; // #STORM
-extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp_NCRS; // NCRS
 extern const unsigned short int pp_WTOP; // WTOP
 extern const unsigned short int pp_WBOTTOM; // WBOTTOM
@@ -200,7 +200,7 @@ extern const unsigned short int pp__i_REPAIR; // 'REPAIR
 extern const unsigned short int pp__i_TREATM; // 'TREATM
 extern const unsigned short int pp_WEAPON_dash_; // WEAPON-
 extern const unsigned short int pp__h_CRIT; // ^CRIT
-extern const unsigned short int pp__ask_FLAT; // ?FLAT
+extern const unsigned short int pp_IsFLAT; // ?FLAT
 extern const unsigned short int pp_WEAPXY; // WEAPXY
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
@@ -219,7 +219,7 @@ void ABS(); // ABS
 void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
-void _dot_R(); // .R
+void DrawR(); // .R
 void MS(); // MS
 void NOP(); // NOP
 void _2OVER(); // 2OVER
@@ -232,7 +232,7 @@ void ACELLADDR(); // ACELLADDR
 void A_at_(); // A@
 void SETLARRAY(); // SETLARRAY
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _2_ex_(); // 2!
 void ON_3(); // ON_3
@@ -240,26 +240,26 @@ void OFF(); // OFF
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IDELETE(); // IDELETE
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void VCLIPSET(); // VCLIPSET
 void DCLIPSET(); // DCLIPSET
 void _gt_MAINVIEW(); // >MAINVIEW
 void _gt_DISPLAY(); // >DISPLAY
-void _at_IX(); // @IX
-void _at_IY(); // @IY
-void _at_ID(); // @ID
-void _at_IL(); // @IL
-void _at_IH(); // @IH
-void _ex_IX(); // !IX
-void _ex_IY(); // !IY
-void _ex_ID(); // !ID
-void _ex_IC(); // !IC
-void _dot_BACKGR(); // .BACKGR
+void GetIX(); // @IX
+void GetIY(); // @IY
+void GetID(); // @ID
+void GetIL(); // @IL
+void GetIH(); // @IH
+void StoreIX(); // !IX
+void StoreIY(); // !IY
+void StoreID(); // !ID
+void StoreIC(); // !IC
+void DrawBACKGR(); // .BACKGR
 void POINT_gt_ICON(); // POINT>ICON
-void _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
-void _ask_ICON_eq_I(); // ?ICON=I
+void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
+void IsICON_eq_I(); // ?ICON=I
 void _dash_ICON(); // -ICON
 void _plus_ICON(); // +ICON
 void ORGLIST(); // ORGLIST
@@ -270,10 +270,10 @@ void BEEPON(); // BEEPON
 void _do__dot_(); // $.
 void POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 void WINDOW(); // WINDOW
-void _ask_TRIG(); // ?TRIG
+void IsTRIG(); // ?TRIG
 void SET_dash_CRS(); // SET-CRS
 void DISTRACT(); // DISTRACT
-void _dot_VIT(); // .VIT
+void DrawVIT(); // .VIT
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -291,7 +291,7 @@ void _0_st_(); // 0<
 void _0_gt_(); // 0>
 void TONE(); // TONE
 void BEEPOFF(); // BEEPOFF
-void _at_EXECUTE(); // @EXECUTE
+void GetEXECUTE(); // @EXECUTE
 void ON_2(); // ON_2
 void OFF_2(); // OFF_2
 void _1_dot_5_at_(); // 1.5@
@@ -397,8 +397,8 @@ void UNK_0xe100() // UNK_0xe100
 
 void UNK_0xe10c() // UNK_0xe10c
 {
-  _at_IX(); // @IX
-  _at_IY(); // @IY
+  GetIX(); // @IX
+  GetIY(); // @IY
 }
 
 
@@ -510,12 +510,12 @@ LoadDataType ATMO_dot_ACTIV = {0x20, 0x11, 0x01, 0x16, 0x658f};
 // 0xe1fe: WORD '?PLAYER-FI' codep=0x224c parp=0xe20d
 // ================================================
 
-void _ask_PLAYER_dash_FI() // ?PLAYER-FI
+void IsPLAYER_dash_FI() // ?PLAYER-FI
 {
   Push(pp_WEAPON_dash_); // WEAPON-
   Push(Read16(Pop())); // @
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
@@ -529,7 +529,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
 // 0xe223: WORD '?ALIEN-CLO' codep=0x224c parp=0xe232
 // ================================================
 
-void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
+void IsALIEN_dash_CLO() // ?ALIEN-CLO
 {
   unsigned short int a;
   UNK_0xe10c(); // UNK_0xe10c
@@ -556,7 +556,7 @@ void _ask_ALIEN_dash_CLO() // ?ALIEN-CLO
 // 0xe256: WORD '?ALIEN-SMA' codep=0x224c parp=0xe265
 // ================================================
 
-void _ask_ALIEN_dash_SMA() // ?ALIEN-SMA
+void IsALIEN_dash_SMA() // ?ALIEN-SMA
 {
   LoadData(UNK_0xe140); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -581,7 +581,7 @@ void UNK_0xe273() // UNK_0xe273
 // 0xe27d: WORD '?RANDOM-SC' codep=0x224c parp=0xe28c
 // ================================================
 
-void _ask_RANDOM_dash_SC() // ?RANDOM-SC
+void IsRANDOM_dash_SC() // ?RANDOM-SC
 {
   UNK_0xe0d8(); // UNK_0xe0d8
   Push(0x000a);
@@ -593,14 +593,14 @@ void _ask_RANDOM_dash_SC() // ?RANDOM-SC
 // 0xe296: WORD '?ALIEN-HIT-WITH-LASER' codep=0x224c parp=0xe2a5
 // ================================================
 
-void _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
+void IsALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
 {
   UNK_0xe10c(); // UNK_0xe10c
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
@@ -634,14 +634,14 @@ void UNK_0xe2d5() // UNK_0xe2d5
 // 0xe2df: WORD '?ALIEN-HIT-WITH-STUNNER' codep=0x224c parp=0xe2ee
 // ================================================
 
-void _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER() // ?ALIEN-HIT-WITH-STUNNER
+void IsALIEN_dash_HIT_dash_WITH_dash_STUNNER() // ?ALIEN-HIT-WITH-STUNNER
 {
   UNK_0xe10c(); // UNK_0xe10c
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -666,7 +666,7 @@ void UNK_0xe308() // UNK_0xe308
 // 0xe310: WORD '?NOTICE-PL' codep=0x224c parp=0xe31f
 // ================================================
 
-void _ask_NOTICE_dash_PL() // ?NOTICE-PL
+void IsNOTICE_dash_PL() // ?NOTICE-PL
 {
   Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -701,7 +701,7 @@ void _ask_NOTICE_dash_PL() // ?NOTICE-PL
 // 0xe359: WORD '?NEXT-TO-P' codep=0x224c parp=0xe368
 // ================================================
 
-void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
+void IsNEXT_dash_TO_dash_P() // ?NEXT-TO-P
 {
   unsigned short int a;
   UNK_0xe0ec(); // UNK_0xe0ec
@@ -858,7 +858,7 @@ void UNK_0xe44e() // UNK_0xe44e
 // 0xe45a: WORD '?STUNS<STU' codep=0x224c parp=0xe469
 // ================================================
 
-void _ask_STUNS_st_STU() // ?STUNS<STU
+void IsSTUNS_st_STU() // ?STUNS<STU
 {
   Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -872,9 +872,9 @@ void _ask_STUNS_st_STU() // ?STUNS<STU
 // 0xe475: WORD '?STUNNED' codep=0x224c parp=0xe482
 // ================================================
 
-void _ask_STUNNED() // ?STUNNED
+void IsSTUNNED() // ?STUNNED
 {
-  _ask_STUNS_st_STU(); // ?STUNS<STU
+  IsSTUNS_st_STU(); // ?STUNS<STU
 }
 
 
@@ -946,7 +946,7 @@ void UNK_0xe4bc() // UNK_0xe4bc
 // 0xe4ca: WORD '?WANTS-TO-FLY' codep=0x224c parp=0xe4d9
 // ================================================
 
-void _ask_WANTS_dash_TO_dash_FLY() // ?WANTS-TO-FLY
+void IsWANTS_dash_TO_dash_FLY() // ?WANTS-TO-FLY
 {
   UNK_0xe0d8(); // UNK_0xe0d8
   Push(0x0046);
@@ -958,9 +958,9 @@ void _ask_WANTS_dash_TO_dash_FLY() // ?WANTS-TO-FLY
 // 0xe4e3: WORD '?WANTS-TO-FLOAT' codep=0x224c parp=0xe4f2
 // ================================================
 
-void _ask_WANTS_dash_TO_dash_FLOAT() // ?WANTS-TO-FLOAT
+void IsWANTS_dash_TO_dash_FLOAT() // ?WANTS-TO-FLOAT
 {
-  _ask_WANTS_dash_TO_dash_FLY(); // ?WANTS-TO-FLY
+  IsWANTS_dash_TO_dash_FLY(); // ?WANTS-TO-FLY
 }
 
 
@@ -1125,7 +1125,7 @@ void UNK_0xe5c8() // UNK_0xe5c8
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   CI(); // CI
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   if (Pop() != 0)
   {
     POINT_gt_ICON(); // POINT>ICON
@@ -1133,18 +1133,18 @@ void UNK_0xe5c8() // UNK_0xe5c8
     Push(Read16(Pop())); // @
     Push(0x63ef+INST_dash_Y.offset); // IFIELD
     Push(Read16(Pop())); // @
-    _ex_IY(); // !IY
-    _ex_IX(); // !IX
+    StoreIY(); // !IY
+    StoreIX(); // !IX
   }
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  _dot_BACKGR(); // .BACKGR
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawBACKGR(); // .BACKGR
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
   Push(pp_XORMODE); // XORMODE
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1172,10 +1172,10 @@ void UNK_0xe60c() // UNK_0xe60c
   ROT(); // ROT
   Push(Pop() + Pop()); // +
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(Pop() + Pop()); // +
   Push(0x63ef+INST_dash_X.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe5c8(); // UNK_0xe5c8
 }
 
@@ -1191,11 +1191,11 @@ void UNK_0xe622() // UNK_0xe622
   ROT(); // ROT
   Push(Pop() + Pop()); // +
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(-Pop()); // NEGATE
   Push(Pop() + Pop()); // +
   Push(0x63ef+INST_dash_X.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe5c8(); // UNK_0xe5c8
 }
 
@@ -1277,7 +1277,7 @@ void UNK_0xe6a4() // UNK_0xe6a4
 void UNK_0xe6b0() // UNK_0xe6b0
 {
   CI(); // CI
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   Pop(); // DROP
   POINT_gt_ICON(); // POINT>ICON
 }
@@ -1295,7 +1295,7 @@ void UNK_0xe6bc() // UNK_0xe6bc
   if (Pop() == 0) return;
   UNK_0xe6b0(); // UNK_0xe6b0
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC
-  _ex_IC(); // !IC
+  StoreIC(); // !IC
 }
 
 
@@ -1331,9 +1331,9 @@ void UNK_0xe6d0() // UNK_0xe6d0
   if (Pop() != 0)
   {
     Push(0x63ef+INST_dash_Y.offset); // IFIELD
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(0x63ef+INST_dash_X.offset); // IFIELD
-    _ex__3(); // !_3
+    Store_3(); // !_3
   } else
   {
     Pop(); Pop(); // 2DROP
@@ -1518,7 +1518,7 @@ void DIE() // DIE
   UNK_0xe6b0(); // UNK_0xe6b0
   LoadData(UNK_0xe7e7); // from 'CREATURE    '
   Push(Read16(Pop())); // @
-  _ex_ID(); // !ID
+  StoreID(); // !ID
   UNK_0xe80b(); // UNK_0xe80b
   UNK_0xe6bc(); // UNK_0xe6bc
 }
@@ -1533,8 +1533,8 @@ void UNK_0xe83b() // UNK_0xe83b
   Push(pp__h_CRIT); // ^CRIT
   Push(Read16(Pop())); // @
   POINT_gt_ICON(); // POINT>ICON
-  _at_IL(); // @IL
-  _at_IH(); // @IH
+  GetIL(); // @IL
+  GetIH(); // @IH
   _gt_C_plus_S(); // >C+S
 }
 
@@ -1558,7 +1558,7 @@ void UNK_0xe84b() // UNK_0xe84b
 void UNK_0xe855() // UNK_0xe855
 {
   Push2Words("*SHIP");
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   Pop(); // DROP
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
@@ -1640,7 +1640,7 @@ LoadDataType UNK_0xe8ba = {0x10, 0x13, 0x01, 0x14, 0x6489};
 void UNK_0xe8c2() // UNK_0xe8c2
 {
   UNK_0xe0d8(); // UNK_0xe0d8
-  Push(pp__ask_FLAT); // ?FLAT
+  Push(pp_IsFLAT); // ?FLAT
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -1694,7 +1694,7 @@ void UNK_0xe8f8() // UNK_0xe8f8
   Push(Pop()+1); // 1+
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -1738,7 +1738,7 @@ void UNK_0xe946() // UNK_0xe946
   _dash_(); // -
   POS_dot_(); // POS.
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   PRINT("THE ", 4); // (.")
   LoadData(RESEMBLES); // from 'CREATURE    '
   _1_dot_5_at_(); // 1.5@
@@ -1814,7 +1814,7 @@ void UNK_0xe9b4() // UNK_0xe9b4
       MIN(); // MIN
       Push(0x63ef+UNK_0xe86a.offset); // IFIELD
       C_ex_(); // C!
-      Push(pp__ask_HEAL); // ?HEAL
+      Push(pp_IsHEAL); // ?HEAL
       ON_3(); // ON_3
     } else
     {
@@ -1831,9 +1831,9 @@ void UNK_0xe9b4() // UNK_0xe9b4
 
   UNK_0xe5b4(); // UNK_0xe5b4
   Push(pp__i_DEATH); // 'DEATH
-  _at_EXECUTE(); // @EXECUTE
+  GetEXECUTE(); // @EXECUTE
   Push(pp__i__dot_VITAL); // '.VITAL
-  _at_EXECUTE(); // @EXECUTE
+  GetEXECUTE(); // @EXECUTE
 }
 
 
@@ -1846,15 +1846,15 @@ void AGGR_dash_MODIF() // AGGR-MODIF rule
   int b;
 
   b = 1;
-  _ask_PLAYER_dash_FI(); // ?PLAYER-FI
+  IsPLAYER_dash_FI(); // ?PLAYER-FI
   b = b && Pop();
-  _ask_ALIEN_dash_CLO(); // ?ALIEN-CLO
+  IsALIEN_dash_CLO(); // ?ALIEN-CLO
   b = b && Pop();
-  _ask_ALIEN_dash_SMA(); // ?ALIEN-SMA
+  IsALIEN_dash_SMA(); // ?ALIEN-SMA
   b = b && Pop();
   UNK_0xe273(); // UNK_0xe273
   b = b && !Pop();
-  _ask_RANDOM_dash_SC(); // ?RANDOM-SC
+  IsRANDOM_dash_SC(); // ?RANDOM-SC
   b = b && Pop();
   if (b)
   {
@@ -1862,7 +1862,7 @@ void AGGR_dash_MODIF() // AGGR-MODIF rule
   }
 
   b = 1;
-  _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
+  IsALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
   b = b && Pop();
   UNK_0xe273(); // UNK_0xe273
   b = b && Pop();
@@ -1874,7 +1874,7 @@ void AGGR_dash_MODIF() // AGGR-MODIF rule
   }
 
   b = 1;
-  _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
+  IsALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
   b = b && Pop();
   UNK_0xe273(); // UNK_0xe273
   b = b && Pop();
@@ -1902,13 +1902,13 @@ void VS_dot_PLAYER() // VS.PLAYER rule
   b = b && Pop();
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
-  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  IsNOTICE_dash_PL(); // ?NOTICE-PL
   b = b && Pop();
   UNK_0xe548(); // UNK_0xe548
   b = b && Pop();
-  _ask_NEXT_dash_TO_dash_P(); // ?NEXT-TO-P
+  IsNEXT_dash_TO_dash_P(); // ?NEXT-TO-P
   b = b && !Pop();
   if (b)
   {
@@ -1918,13 +1918,13 @@ void VS_dot_PLAYER() // VS.PLAYER rule
   b = 1;
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
-  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  IsNOTICE_dash_PL(); // ?NOTICE-PL
   b = b && Pop();
   UNK_0xe548(); // UNK_0xe548
   b = b && Pop();
-  _ask_NEXT_dash_TO_dash_P(); // ?NEXT-TO-P
+  IsNEXT_dash_TO_dash_P(); // ?NEXT-TO-P
   b = b && Pop();
   if (b)
   {
@@ -1934,11 +1934,11 @@ void VS_dot_PLAYER() // VS.PLAYER rule
   b = 1;
   UNK_0xe308(); // UNK_0xe308
   b = b && Pop();
-  _ask_NOTICE_dash_PL(); // ?NOTICE-PL
+  IsNOTICE_dash_PL(); // ?NOTICE-PL
   b = b && Pop();
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
   UNK_0xe556(); // UNK_0xe556
   b = b && Pop();
@@ -1960,7 +1960,7 @@ void LIFE_dash_SIM() // LIFE-SIM rule
   b = 1;
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
   UNK_0xe308(); // UNK_0xe308
   b = b && Pop();
@@ -1996,12 +1996,12 @@ void ERASE_dash_LIFE() // ERASE-LIFE rule
 // 0xeaf8: WORD '?REDUCE-PO' codep=0xb869 parp=0xeb07
 // ================================================
 
-void _ask_REDUCE_dash_PO() // ?REDUCE-PO rule
+void IsREDUCE_dash_PO() // ?REDUCE-PO rule
 {
   int b;
 
   b = 1;
-  _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
+  IsALIEN_dash_HIT_dash_WITH_dash_LASER(); // ?ALIEN-HIT-WITH-LASER
   b = b && Pop();
   UNK_0xe42e(); // UNK_0xe42e
   b = b && Pop();
@@ -2011,7 +2011,7 @@ void _ask_REDUCE_dash_PO() // ?REDUCE-PO rule
   }
 
   b = 1;
-  _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
+  IsALIEN_dash_HIT_dash_WITH_dash_STUNNER(); // ?ALIEN-HIT-WITH-STUNNER
   b = b && Pop();
   UNK_0xe438(); // UNK_0xe438
   b = b && Pop();
@@ -2061,7 +2061,7 @@ void EFFECT_dash_LIF() // EFFECT-LIF rule
   b = 1;
   UNK_0xe438(); // UNK_0xe438
   b = b && !Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
   if (b)
   {
@@ -2077,7 +2077,7 @@ void EFFECT_dash_LIF() // EFFECT-LIF rule
 void UNK_0xeb69() // UNK_0xeb69
 {
   UNK_0xe388(); // UNK_0xe388
-  _ask_STUNS_st_STU(); // ?STUNS<STU
+  IsSTUNS_st_STU(); // ?STUNS<STU
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   INCREMENT_dash_(); // INCREMENT-
@@ -2101,9 +2101,9 @@ void GROUND_gt_AIR() // GROUND>AIR rule
   b = b && Pop();
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
-  _ask_WANTS_dash_TO_dash_FLY(); // ?WANTS-TO-FLY
+  IsWANTS_dash_TO_dash_FLY(); // ?WANTS-TO-FLY
   b = b && Pop();
   if (b)
   {
@@ -2119,7 +2119,7 @@ void GROUND_gt_AIR() // GROUND>AIR rule
   b = b && Pop();
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
   UNK_0xe3ba(); // UNK_0xe3ba
   b = b && Pop();
@@ -2137,11 +2137,11 @@ void GROUND_gt_AIR() // GROUND>AIR rule
   b = b && Pop();
   UNK_0xe3ba(); // UNK_0xe3ba
   b = b && !Pop();
-  _ask_WANTS_dash_TO_dash_FLOAT(); // ?WANTS-TO-FLOAT
+  IsWANTS_dash_TO_dash_FLOAT(); // ?WANTS-TO-FLOAT
   b = b && Pop();
   UNK_0xe388(); // UNK_0xe388
   b = b && Pop();
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && !Pop();
   if (b)
   {
@@ -2161,7 +2161,7 @@ void GROUND_gt_AIR() // GROUND>AIR rule
   }
 
   b = 1;
-  _ask_STUNNED(); // ?STUNNED
+  IsSTUNNED(); // ?STUNNED
   b = b && Pop();
   UNK_0xe4a2(); // UNK_0xe4a2
   b = b && !Pop();
@@ -2214,7 +2214,7 @@ void UNK_0xebf8() // UNK_0xebf8
   {
     Push(0xeb07); // probable '?REDUCE-PO'
     DISTRACT(); // DISTRACT
-    _ask_REDUCE_dash_PO(); // ?REDUCE-PO rule
+    IsREDUCE_dash_PO(); // ?REDUCE-PO rule
     Pop(); // DROP
   }
   Push(0x63ef+HITS.offset); // IFIELD
@@ -2257,12 +2257,12 @@ void UNK_0xebf8() // UNK_0xebf8
 
 void SIMULATE() // SIMULATE
 {
-  Push(pp__ask_NEW); // ?NEW
+  Push(pp_IsNEW); // ?NEW
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
     UNK_0xe84b(); // UNK_0xe84b
-    Push(pp__ask_NEW); // ?NEW
+    Push(pp_IsNEW); // ?NEW
     OFF_2(); // OFF_2
   }
   Push(pp_ILOCAL); // ILOCAL
@@ -2273,7 +2273,7 @@ void SIMULATE() // SIMULATE
   _gt_(); // >
   if (Pop() == 0) return;
   UNK_0xe83b(); // UNK_0xe83b
-  _at_ID(); // @ID
+  GetID(); // @ID
   Push(0x0013);
   _st_(); // <
   if (Pop() != 0)
@@ -2322,7 +2322,7 @@ void UNK_0xecb7() // UNK_0xecb7
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(0x012c);
@@ -2343,7 +2343,7 @@ void UNK_0xecb7() // UNK_0xecb7
     PRINT("0", 1); // (.")
   }
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("-", 1); // (.")
   Push(Read16(regsp)); // DUP
   Push(0x000a);
@@ -2353,10 +2353,10 @@ void UNK_0xecb7() // UNK_0xecb7
     PRINT("0", 1); // (.")
   }
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("-", 1); // (.")
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   Push(pp_XORMODE); // XORMODE
   _st__ex__gt_(); // <!>
 }
@@ -2371,7 +2371,7 @@ void UNK_0xecb7() // UNK_0xecb7
 // 0xed42: WORD '?.STORM' codep=0x224c parp=0xed4e
 // ================================================
 
-void _ask__dot_STORM() // ?.STORM
+void Is_dot_STORM() // ?.STORM
 {
   Push(pp__n_STORM); // #STORM
   Push(Read16(Pop())); // @
@@ -2391,7 +2391,7 @@ void _ask__dot_STORM() // ?.STORM
 // 0xed6a: WORD '?STORM' codep=0x224c parp=0xed75
 // ================================================
 
-void _ask_STORM() // ?STORM
+void IsSTORM() // ?STORM
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
@@ -2404,11 +2404,11 @@ void _ask_STORM() // ?STORM
       Push(-1);
       Push(pp_STORM); // STORM
       _plus__ex_(); // +!
-      _ask__dot_STORM(); // ?.STORM
+      Is_dot_STORM(); // ?.STORM
     } else
     {
       Push(pp__ro_PLANET); // (PLANET
-      _at__gt_C_plus_S(); // @>C+S
+      Get_gt_C_plus_S(); // @>C+S
       LoadData(ATMO_dot_ACTIV); // from 'PLANET      '
       Push(Read16(Pop())); // @
       Push(pp__pe_STORM); // %STORM
@@ -2431,7 +2431,7 @@ void _ask_STORM() // ?STORM
         Push(4);
         RRND(); // RRND
         Push(pp__n_STORM); // #STORM
-        _ex__3(); // !_3
+        Store_3(); // !_3
         Push(0xcdd8); // probable '.STOR'
         MODULE(); // MODULE
         Push(1);
@@ -2447,7 +2447,7 @@ void _ask_STORM() // ?STORM
         Push(0);
         MAX(); // MAX
         Push(pp_STORM); // STORM
-        _ex__3(); // !_3
+        Store_3(); // !_3
         Push(0x0064);
         Push(pp__pe_EFF); // %EFF
         _st__ex__gt_(); // <!>
@@ -2568,8 +2568,8 @@ void UNK_0xeef3() // UNK_0xeef3
   OFF(); // OFF
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  _dot_BACKGR(); // .BACKGR
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawBACKGR(); // .BACKGR
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
@@ -2580,7 +2580,7 @@ void UNK_0xeef3() // UNK_0xeef3
 // 0xef07: WORD '?EMBARK' codep=0x224c parp=0xef13
 // ================================================
 
-void _ask_EMBARK() // ?EMBARK
+void IsEMBARK() // ?EMBARK
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -2699,7 +2699,7 @@ void TVMOVE() // TVMOVE
 void DO_dot_WEAPONS() // DO.WEAPONS
 {
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -2733,7 +2733,7 @@ void ICONS() // ICONS
   MODULE(); // MODULE
   UNK_0xecb7(); // UNK_0xecb7
   Push(pp_UNK_0xef9e); // UNK_0xef9e
-  _at_EXECUTE(); // @EXECUTE
+  GetEXECUTE(); // @EXECUTE
   Push(pp__i__dot_VITAL); // '.VITAL
   Push(Read16(Pop())); // @
   MODULE(); // MODULE
@@ -2819,7 +2819,7 @@ void UNK_0xf077() // UNK_0xf077
     } else
     {
       Pop(); // DROP
-      _ask_TRIG(); // ?TRIG
+      IsTRIG(); // ?TRIG
       if (Pop() != 0)
       {
         UNK_0xef23(); // UNK_0xef23
@@ -2831,7 +2831,7 @@ void UNK_0xf077() // UNK_0xf077
       Pop(); // DROP
     }
   }
-  _ask_EMBARK(); // ?EMBARK
+  IsEMBARK(); // ?EMBARK
   if (Pop() == 0) return;
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(-1);
@@ -2883,12 +2883,12 @@ void _dash_STORM() // -STORM
 // 0xf119: WORD '?NAV' codep=0x224c parp=0xf122
 // ================================================
 
-void _ask_NAV() // ?NAV
+void IsNAV() // ?NAV
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+NAVIG.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+_h_NAV.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
@@ -2902,7 +2902,7 @@ void _ask_NAV() // ?NAV
 // 0xf13a: WORD '.DISTANCE' codep=0x224c parp=0xf148
 // ================================================
 
-void _dot_DISTANCE() // .DISTANCE
+void DrawDISTANCE() // .DISTANCE
 {
   Push(0x0074);
   Push(0x0096);
@@ -2911,15 +2911,15 @@ void _dot_DISTANCE() // .DISTANCE
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _dash_STORM(); // -STORM
-  _ask_NAV(); // ?NAV
+  IsNAV(); // ?NAV
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
     UNK_0xef37(); // UNK_0xef37
     Push(5);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("KM.", 3); // (.")
   } else
   {
@@ -2932,9 +2932,9 @@ void _dot_DISTANCE() // .DISTANCE
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _dash_STORM(); // -STORM
-  _ask_NAV(); // ?NAV
+  IsNAV(); // ?NAV
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   UNK_0xe0ec(); // UNK_0xe0ec
@@ -2954,7 +2954,7 @@ void _dot_DISTANCE() // .DISTANCE
 // 0xf1b4: WORD '.CARGO' codep=0x224c parp=0xf1bf
 // ================================================
 
-void _dot_CARGO() // .CARGO
+void DrawCARGO() // .CARGO
 {
   Push(0x0074);
   Push(0x009d);
@@ -2963,7 +2963,7 @@ void _dot_CARGO() // .CARGO
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xe1e6.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -2975,9 +2975,9 @@ void _dot_CARGO() // .CARGO
     _slash_(); // /
   }
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("% FULL", 6); // (.")
   ICLOSE(); // ICLOSE
 }
@@ -2988,7 +2988,7 @@ void _dot_CARGO() // .CARGO
 // 0xf216: WORD '.ENERGY' codep=0x224c parp=0xf222
 // ================================================
 
-void _dot_ENERGY() // .ENERGY
+void DrawENERGY() // .ENERGY
 {
   Push(0x0074);
   Push(0x00ab);
@@ -2997,7 +2997,7 @@ void _dot_ENERGY() // .ENERGY
   SetColor("BLACK");
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TVEHICLE); // TVEHICLE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -3008,12 +3008,12 @@ void _dot_ENERGY() // .ENERGY
   {
     Pop(); // DROP
     SetColor("YELLOW");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     PRINT("NONE", 4); // (.")
     return;
   }
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x07d0);
   _dash_(); // -
   Push(0x0064);
@@ -3028,13 +3028,13 @@ void _dot_ENERGY() // .ENERGY
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
     SetColor("PINK");
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
-    _ex_COLOR(); // !COLOR
+    StoreCOLOR(); // !COLOR
   } else
   {
     Push(3);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT("%", 1); // (.")
   }
   Push(0x0074);
@@ -3055,7 +3055,7 @@ void _dot_ENERGY() // .ENERGY
   Push(0x0063);
   MIN(); // MIN
   Push(3);
-  _dot_R(); // .R
+  DrawR(); // .R
   PRINT("%", 1); // (.")
 }
 
@@ -3131,14 +3131,14 @@ void UNK_0xf319() // UNK_0xf319
 // 0xf33b: WORD '.WHERE' codep=0x224c parp=0xf346
 // ================================================
 
-void _dot_WHERE() // .WHERE
+void DrawWHERE() // .WHERE
 {
   _dash_STORM(); // -STORM
-  _ask_NAV(); // ?NAV
+  IsNAV(); // ?NAV
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xe0ec(); // UNK_0xe0ec
   UNK_0xf2cd(); // UNK_0xf2cd
   Push(0x0010);
@@ -3152,7 +3152,7 @@ void _dot_WHERE() // .WHERE
     Push(-Pop()); // NEGATE
   }
   Push(4);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xf319(); // UNK_0xf319
   PRINT(" * ", 3); // (.")
   Push(Read16(regsp)); // DUP
@@ -3163,7 +3163,7 @@ void _dot_WHERE() // .WHERE
     Push(-Pop()); // NEGATE
   }
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   UNK_0xf2f5(); // UNK_0xf2f5
 }
 
@@ -3172,7 +3172,7 @@ void _dot_WHERE() // .WHERE
 // 0xf38e: WORD '.STATS' codep=0x224c parp=0xf399
 // ================================================
 
-void _dot_STATS() // .STATS
+void DrawSTATS() // .STATS
 {
   unsigned short int a;
   Push(pp_XORMODE); // XORMODE
@@ -3180,13 +3180,13 @@ void _dot_STATS() // .STATS
   a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  _dot_WHERE(); // .WHERE
-  _dot_ENERGY(); // .ENERGY
-  _dot_CARGO(); // .CARGO
-  _dot_DISTANCE(); // .DISTANCE
+  DrawWHERE(); // .WHERE
+  DrawENERGY(); // .ENERGY
+  DrawCARGO(); // .CARGO
+  DrawDISTANCE(); // .DISTANCE
   Push(a); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 // 0xf3b3: db 0x4c 0x22 0xfa 0xf1 0x8e 0x57 0xae 0x0b 0x3e 0x13 0x8e 0x57 0xc5 0x6d 0x90 0x16 'L"   W  >  W m  '
@@ -3235,7 +3235,7 @@ void TV_dash_TASKS() // TV-TASKS
   ON_2(); // ON_2
   Push(0xd06e); // probable 'HEAVEHO'
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -3272,7 +3272,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(0xbf56); // probable '/STARDATE'
   Push(pp__i__dot_DATE); // '.DATE
   _st__ex__gt_(); // <!>
-  Push(pp__ask_CRITIC); // ?CRITIC
+  Push(pp_IsCRITIC); // ?CRITIC
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -3321,19 +3321,19 @@ void UNK_0xf4b0() // UNK_0xf4b0
   OFF(); // OFF
   Push(0xd06e); // probable 'HEAVEHO'
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0xd001); // probable 'TV-DISP'
   MODULE(); // MODULE
   UNK_0xecb7(); // UNK_0xecb7
   UNK_0xf4a6(); // UNK_0xf4a6
   Push(0xcf71); // probable '!E/M'
   MODULE(); // MODULE
-  _dot_STATS(); // .STATS
-  _dot_VIT(); // .VIT
+  DrawSTATS(); // .STATS
+  DrawVIT(); // .VIT
   TV_dash_TASKS(); // TV-TASKS
   SetColor("BLACK");
   Push(pp_LCOLOR); // LCOLOR
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 

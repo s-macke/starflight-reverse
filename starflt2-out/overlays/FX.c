@@ -47,7 +47,7 @@
 //      UNK_0xf48c  codep:0x224c parp:0xf48c size:0x0030 C-string:'UNK_0xf48c'
 //      UNK_0xf4be  codep:0x224c parp:0xf4be size:0x002c C-string:'UNK_0xf4be'
 //      UNK_0xf4ec  codep:0x224c parp:0xf4ec size:0x004e C-string:'UNK_0xf4ec'
-//           .TMAP  codep:0x224c parp:0xf544 size:0x0000 C-string:'_dot_TMAP'
+//           .TMAP  codep:0x224c parp:0xf544 size:0x0000 C-string:'DrawTMAP'
 
 // =================================
 // ============= EXTERN ============
@@ -58,7 +58,7 @@ extern const unsigned short int pp_VIN; // VIN
 extern const unsigned short int pp_VOUT; // VOUT
 extern const unsigned short int pp_OIN; // OIN
 extern const unsigned short int pp_OOUT; // OOUT
-extern const unsigned short int pp__ask_OPEN; // ?OPEN
+extern const unsigned short int pp_IsOPEN; // ?OPEN
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
@@ -72,27 +72,27 @@ void D_st_(); // D<
 void _dash_TRAILING(); // -TRAILING
 void NOP(); // NOP
 void _2OVER(); // 2OVER
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void ON_2(); // ON_2
 void _099(); // 099
-void _at_RECORD(); // @RECORD
-void _at_INST_dash_S(); // @INST-S
+void GetRECORD(); // @RECORD
+void GetINST_dash_S(); // @INST-S
 void _eq_SPECIE(); // =SPECIE
 void ICLOSE(); // ICLOSE
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void _1PIX(); // 1PIX
 void _2PIX(); // 2PIX
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void LLINE(); // LLINE
 void SETCLIP(); // SETCLIP
 void DCLIPSE(); // DCLIPSE
 void POS_dot_(); // POS.
 void POLY_dash_WI(); // POLY-WI
-void _at_CRS(); // @CRS
-void _ex_CRS(); // !CRS
+void GetCRS(); // @CRS
+void StoreCRS(); // !CRS
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _dash_XTRAIL(); // -XTRAIL
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
@@ -131,7 +131,7 @@ LoadDataType UNK_0xf076 = {0x15, 0x2a, 0x01, 0x32, 0x6ad1};
 void UNK_0xf07e() // UNK_0xf07e
 {
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf076); // from 'TRADERS     '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
@@ -444,7 +444,7 @@ void UNK_0xf1ee() // UNK_0xf1ee
 void UNK_0xf20a() // UNK_0xf20a
 {
   Push(pp__ro_AORIGI); // (AORIGI
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x0013);
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -482,13 +482,13 @@ void PSYCH() // PSYCH
     if (Pop() != 0)
     {
       SetColor("WHITE");
-      _ex_COLOR(); // !COLOR
+      StoreCOLOR(); // !COLOR
       UNK_0xf13d(); // UNK_0xf13d
       Push(Read16(regsp)); // DUP
       Push(pp_UNK_0xf08c); // UNK_0xf08c
-      _ex__2(); // !_2
+      Store_2(); // !_2
       UNK_0x3f09("THE PSYCHIC PROBE IS ");
-      _dot_TTY(); // .TTY
+      DrawTTY(); // .TTY
       _n__gt__dot_COL(); // #>.COL case
       PRINT(".", 1); // (.")
     }
@@ -519,12 +519,12 @@ void UNK_0xf28a() // UNK_0xf28a
 
 void UNK_0xf2c4() // UNK_0xf2c4
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   Push(0x002e);
   _dash_(); // -
   Push(0x0028);
   SWAP(); // SWAP
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
 }
 
 
@@ -628,41 +628,41 @@ void UNK_0xf32a() // UNK_0xf32a
   }
   Push(0);
   UNK_0xf322(); // UNK_0xf322
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(2);
   UNK_0xf322(); // UNK_0xf322
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(4);
   UNK_0xf322(); // UNK_0xf322
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(6);
   UNK_0xf322(); // UNK_0xf322
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(2);
   Push(pp__n_IN); // #IN
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_VIN); // VIN
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0014);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_VOUT); // VOUT
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0028);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_OIN); // OIN
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x003c);
   UNK_0xf322(); // UNK_0xf322
   Push(pp_OOUT); // OOUT
-  _ex__2(); // !_2
-  Push(pp__ask_OPEN); // ?OPEN
+  Store_2(); // !_2
+  Push(pp_IsOPEN); // ?OPEN
   ON_2(); // ON_2
   CLIPPER(); // CLIPPER
   Push(pp__n_IN); // #IN
   Push(Read16(Pop())); // @
-  Push(pp__ask_OPEN); // ?OPEN
+  Push(pp_IsOPEN); // ?OPEN
   _099(); // 099
   if (Pop() != 0)
   {
@@ -716,7 +716,7 @@ void UNK_0xf3ce() // UNK_0xf3ce
 {
   Push(0x0015);
   SWAP(); // SWAP
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Push(0x0010);
 }
 
@@ -797,7 +797,7 @@ void UNK_0xf3de() // UNK_0xf3de
     Push(Read8(Pop())&0xFF); // C@
     Push(0x001c);
     SWAP(); // SWAP
-    _at_RECORD(); // @RECORD
+    GetRECORD(); // @RECORD
     Push(0x0018);
     Push(0x002e);
     _dash_XTRAIL(); // -XTRAIL
@@ -824,7 +824,7 @@ void UNK_0xf48c() // UNK_0xf48c
   unsigned short int a, b;
   a = Pop(); // >R
   b = Pop(); // >R
-  _at_CRS(); // @CRS
+  GetCRS(); // @CRS
   Push(pp_YBLT); // YBLT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
@@ -844,7 +844,7 @@ void UNK_0xf48c() // UNK_0xf48c
   Push(Pop()+2); // 2+
   Push(a); // R>
   POLY_dash_WI(); // POLY-WI
-  _ex_CRS(); // !CRS
+  StoreCRS(); // !CRS
 }
 
 
@@ -870,7 +870,7 @@ void UNK_0xf4be() // UNK_0xf4be
   SetColor("BLACK");
   UNK_0xf48c(); // UNK_0xf48c
   SetColor("YELLOW");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
@@ -884,7 +884,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
   unsigned short int i, imax;
   UNK_0xf28a(); // UNK_0xf28a
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf2d8(); // UNK_0xf2d8
   Push(0);
 
@@ -934,14 +934,14 @@ void UNK_0xf4ec() // UNK_0xf4ec
 // ================================================
 // entry
 
-void _dot_TMAP() // .TMAP
+void DrawTMAP() // .TMAP
 {
   Push(pp_TMAP); // TMAP
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf4ec(); // UNK_0xf4ec
   UNK_0xf4be(); // UNK_0xf4be
   ICLOSE(); // ICLOSE

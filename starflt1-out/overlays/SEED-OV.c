@@ -85,7 +85,7 @@
 //      UNK_0xf30d  codep:0x224c parp:0xf30d size:0x000c C-string:'UNK_0xf30d'
 //      UNK_0xf31b  codep:0x224c parp:0xf31b size:0x000a C-string:'UNK_0xf31b'
 //      UNK_0xf327  codep:0x224c parp:0xf327 size:0x002a C-string:'UNK_0xf327'
-//          ?EXIST  codep:0x224c parp:0xf35c size:0x0084 C-string:'_ask_EXIST'
+//          ?EXIST  codep:0x224c parp:0xf35c size:0x0084 C-string:'IsEXIST'
 //      UNK_0xf3e2  codep:0x224c parp:0xf3e2 size:0x0008 C-string:'UNK_0xf3e2'
 //      UNK_0xf3ec  codep:0x224c parp:0xf3ec size:0x0008 C-string:'UNK_0xf3ec'
 //      UNK_0xf3f6  codep:0x224c parp:0xf3f6 size:0x0008 C-string:'UNK_0xf3f6'
@@ -100,7 +100,7 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp_IsCRITIC; // ?CRITIC
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_MOVED; // MOVED
@@ -125,27 +125,27 @@ void ACELLADDR(); // ACELLADDR
 void A_at_(); // A@
 void SETLARRAY(); // SETLARRAY
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _1_dot_5_ex_(); // 1.5!
 void _2_ex_(); // 2!
 void OFF(); // OFF
-void _at_RECORD(); // @RECORD
+void GetRECORD(); // @RECORD
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_LAST(); // ?LAST
+void IsLAST(); // ?LAST
 void INEXT(); // INEXT
 void IPREV(); // IPREV
 void ILAST(); // ILAST
 void IINSERT(); // IINSERT
 void IEXTRACT(); // IEXTRACT
-void _at_NEWSPACE(); // @NEWSPACE
+void GetNEWSPACE(); // @NEWSPACE
 void MAXSPACE(); // MAXSPACE
 void IFLD_at_(); // IFLD@
-void _ask_CLASS_slash_(); // ?CLASS/
+void IsCLASS_slash_(); // ?CLASS/
 void IFIND(); // IFIND
 void ALL(); // ALL
 void ICREATE(); // ICREATE
@@ -162,7 +162,7 @@ void _st_(); // <
 void _1_dot_5_at_(); // 1.5@
 void _st__ex__gt_(); // <!>
 void _st__plus__ex__gt_(); // <+!>
-void _ask_INVIS(); // ?INVIS
+void IsINVIS(); // ?INVIS
 
 
 // =================================
@@ -336,7 +336,7 @@ void UNK_0xecfb() // UNK_0xecfb
 void UNK_0xed19() // UNK_0xed19
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xec26); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   LoadData(UNK_0xec2e); // from 'PLANET      '
@@ -368,9 +368,9 @@ void UNK_0xed31() // UNK_0xed31
 void UNK_0xed3d() // UNK_0xed3d
 {
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x63ef+INST_dash_X.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -381,7 +381,7 @@ void UNK_0xed3d() // UNK_0xed3d
 void UNK_0xed49() // UNK_0xed49
 {
   _2DUP(); // 2DUP
-  _ask_INVIS(); // ?INVIS
+  IsINVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(pp_MOVED); // MOVED
   Push(Read16(Pop())); // @
@@ -494,7 +494,7 @@ void UNK_0xedaf() // UNK_0xedaf
 void UNK_0xee01() // UNK_0xee01
 {
   Push(pp_THIS_dash_RE); // THIS-RE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xede1);
   ALL(); // ALL
@@ -519,7 +519,7 @@ void UNK_0xee15() // UNK_0xee15
   LoadData(UNK_0xeca0); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(UNK_0xec98); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x63ef+UNK_0xec93.offset); // IFIELD
@@ -718,7 +718,7 @@ void UNK_0xef75() // UNK_0xef75
   _st__ex__gt_(); // <!>
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Pop(); // DROP
 }
 
@@ -1018,7 +1018,7 @@ void UNK_0xf143() // UNK_0xf143
   unsigned short int a;
   Push(0x001c);
   Push(1);
-  _ask_CLASS_slash_(); // ?CLASS/
+  IsCLASS_slash_(); // ?CLASS/
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
@@ -1049,7 +1049,7 @@ void UNK_0xf163() // UNK_0xf163
   Push(0x0064);
   RRND(); // RRND
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1104,7 +1104,7 @@ void UNK_0xf1c1() // UNK_0xf1c1
 {
   unsigned short int i, imax, a;
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xec52); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1153,7 +1153,7 @@ void UNK_0xf207() // UNK_0xf207
 {
   unsigned short int a, b;
   Push(pp_THIS_dash_RE); // THIS-RE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0);
   a = Pop(); // >R
@@ -1231,7 +1231,7 @@ void UNK_0xf26b() // UNK_0xf26b
   LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  _ex__3(); // !_3
+  Store_3(); // !_3
   ICLOSE(); // ICLOSE
 }
 
@@ -1319,7 +1319,7 @@ void UNK_0xf2ed() // UNK_0xf2ed
 void UNK_0xf30d() // UNK_0xf30d
 {
   Push(pp_THIS_dash_RE); // THIS-RE
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   UNK_0xed31(); // UNK_0xed31
   UNK_0xf2ed(); // UNK_0xf2ed
   ICLOSE(); // ICLOSE
@@ -1371,17 +1371,17 @@ void UNK_0xf327() // UNK_0xf327
 // 0xf351: WORD '?EXIST' codep=0x224c parp=0xf35c
 // ================================================
 
-void _ask_EXIST() // ?EXIST
+void IsEXIST() // ?EXIST
 {
   unsigned short int a, b, c, d;
   a = Pop(); // >R
   Push(1);
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
   label6:
-  _ask_LAST(); // ?LAST
+  IsLAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -1399,7 +1399,7 @@ void _ask_EXIST() // ?EXIST
       UNK_0xed31(); // UNK_0xed31
       Push(0x0029);
       Push(4);
-      _ask_CLASS_slash_(); // ?CLASS/
+      IsCLASS_slash_(); // ?CLASS/
       c = Pop(); // >R
       Pop(); Pop(); // 2DROP
       Push(c); // R>
@@ -1453,7 +1453,7 @@ void _ask_EXIST() // ?EXIST
 void UNK_0xf3e2() // UNK_0xf3e2
 {
   Push(0x001b);
-  _ask_EXIST(); // ?EXIST
+  IsEXIST(); // ?EXIST
 }
 
 
@@ -1464,7 +1464,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 void UNK_0xf3ec() // UNK_0xf3ec
 {
   Push(0x001c);
-  _ask_EXIST(); // ?EXIST
+  IsEXIST(); // ?EXIST
 }
 
 
@@ -1475,7 +1475,7 @@ void UNK_0xf3ec() // UNK_0xf3ec
 void UNK_0xf3f6() // UNK_0xf3f6
 {
   Push(0x0029);
-  _ask_EXIST(); // ?EXIST
+  IsEXIST(); // ?EXIST
 }
 
 
@@ -1486,7 +1486,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
 void UNK_0xf400() // UNK_0xf400
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
   label2:
@@ -1593,7 +1593,7 @@ void UNK_0xf468() // UNK_0xf468
 void UNK_0xf492() // UNK_0xf492
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0xef65);
   UNK_0xf468(); // UNK_0xf468
   if (Pop() != 0)
@@ -1632,12 +1632,12 @@ void POPULA() // POPULA
 {
   MAXSPACE(); // MAXSPACE
   _1_dot_5_at_(); // 1.5@
-  _at_NEWSPACE(); // @NEWSPACE
+  GetNEWSPACE(); // @NEWSPACE
   Push(0x017c);
   Push(0);
   D_plus_(); // D+
   D_st_(); // D<
-  Push(pp__ask_CRITIC); // ?CRITIC
+  Push(pp_IsCRITIC); // ?CRITIC
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1656,12 +1656,12 @@ void POPULA() // POPULA
   UNK_0xf3e2(); // UNK_0xf3e2
   MAXSPACE(); // MAXSPACE
   _1_dot_5_at_(); // 1.5@
-  _at_NEWSPACE(); // @NEWSPACE
+  GetNEWSPACE(); // @NEWSPACE
   Push(0x017c);
   Push(0);
   D_plus_(); // D+
   D_st_(); // D<
-  Push(pp__ask_CRITIC); // ?CRITIC
+  Push(pp_IsCRITIC); // ?CRITIC
   Push(Read16(Pop())); // @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT

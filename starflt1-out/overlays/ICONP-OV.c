@@ -69,8 +69,8 @@ extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void UNRAVEL(); // UNRAVEL
-void _at_INST_dash_CLASS(); // @INST-CLASS
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetINST_dash_CLASS(); // @INST-CLASS
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void ICLOSE(); // ICLOSE
 void IOPEN(); // IOPEN
 void ALL(); // ALL
@@ -287,7 +287,7 @@ void UNK_0xf2ff() // UNK_0xf2ff
 
 void UNK_0xf309() // UNK_0xf309
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0032);
   Push(Pop() + Pop()); // +
 }
@@ -321,7 +321,7 @@ void BOX_dash_ID() // BOX-ID
 void UNK_0xf32c() // UNK_0xf32c
 {
   IOPEN(); // IOPEN
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   BOX_dash_ID(); // BOX-ID case
   ICLOSE(); // ICLOSE
 }
@@ -393,7 +393,7 @@ void RUIN_dash_ID_dash_CASES() // RUIN-ID-CASES
 
 void UNK_0xf387() // UNK_0xf387
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   RUIN_dash_ID_dash_CASES(); // RUIN-ID-CASES case
 }
 
@@ -424,7 +424,7 @@ void UNK_0xf38f() // UNK_0xf38f
 
 void UNK_0xf3ab() // UNK_0xf3ab
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(6);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -478,7 +478,7 @@ void PLANET_dash_ID() // PLANET-ID
 
 void UNK_0xf3f1() // UNK_0xf3f1
 {
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @
   if (Pop() != 0)
@@ -529,7 +529,7 @@ void STAR_dash_IC_dash_CASES() // STAR-IC-CASES
 
 void UNK_0xf435() // UNK_0xf435
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   STAR_dash_IC_dash_CASES(); // STAR-IC-CASES case
 }
 
@@ -599,7 +599,7 @@ void UNK_0xf47b() // UNK_0xf47b
 
 void UNK_0xf485() // UNK_0xf485
 {
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   if (Pop() != 0)
   {
     Push(3);
@@ -637,7 +637,7 @@ void BOX_dash_IC() // BOX-IC
 void UNK_0xf4ae() // UNK_0xf4ae
 {
   IOPEN(); // IOPEN
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   BOX_dash_IC(); // BOX-IC case
   ICLOSE(); // ICLOSE
 }
@@ -685,7 +685,7 @@ void _n_IC_dash_CASES() // #IC-CASES
 
 void UNK_0xf4e8() // UNK_0xf4e8
 {
-  _at_INST_dash_CLASS(); // @INST-CLASS
+  GetINST_dash_CLASS(); // @INST-CLASS
   _n_IC_dash_CASES(); // #IC-CASES case
 }
 

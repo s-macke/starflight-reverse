@@ -26,15 +26,15 @@
 //      UNK_0xf452  codep:0x224c parp:0xf452 size:0x004c C-string:'UNK_0xf452'
 //      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x002c C-string:'UNK_0xf4a0'
 //      UNK_0xf4ce  codep:0x224c parp:0xf4ce size:0x0036 C-string:'UNK_0xf4ce'
-//           ?LAND  codep:0x224c parp:0xf50e size:0x0018 C-string:'_ask_LAND'
-//         ?LAUNCH  codep:0x224c parp:0xf532 size:0x0000 C-string:'_ask_LAUNCH'
+//           ?LAND  codep:0x224c parp:0xf50e size:0x0018 C-string:'IsLAND'
+//         ?LAUNCH  codep:0x224c parp:0xf532 size:0x0000 C-string:'IsLAUNCH'
 
 // =================================
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc__star_MAPSCA; // *MAPSCA
-extern const unsigned short int pp__ask_FUEL_dash_D; // ?FUEL-D
-extern const unsigned short int pp__ask_G_dash_AWAR; // ?G-AWAR
+extern const unsigned short int pp_IsFUEL_dash_D; // ?FUEL-D
+extern const unsigned short int pp_IsG_dash_AWAR; // ?G-AWAR
 extern const unsigned short int pp_GWF; // GWF
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
@@ -47,27 +47,27 @@ void COUNT(); // COUNT
 void MAX(); // MAX
 void MIN(); // MIN
 void BEEP(); // BEEP
-void _dot_R(); // .R
-void _ask_(); // ?
+void DrawR(); // .R
+void Is(); // ?
 void KEY_2(); // KEY_2
 void SQRT(); // SQRT
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void ON_2(); // ON_2
 void _099(); // 099
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void BYE_2(); // BYE_2
 void CTERASE(); // CTERASE
 void _gt_SND(); // >SND
 void CTCR(); // CTCR
 void TTY_dash_SCR(); // TTY-SCR
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void OVER(); // OVER
 void SWAP(); // SWAP
@@ -110,7 +110,7 @@ LoadDataType UNK_0xf1ab = {0x20, 0x02, 0x02, 0x17, 0x6c49};
 void UNK_0xf1b7() // UNK_0xf1b7
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf1ab); // from 'PLANET      '
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
@@ -165,7 +165,7 @@ void UNK_0xf1e7() // UNK_0xf1e7
       Push(0);
       MAX(); // MAX
       Push(0x65e1+INST_dash_QT.offset); // IFIELD
-      _ex__2(); // !_2
+      Store_2(); // !_2
     }
     CDROP(); // CDROP
   } else
@@ -184,10 +184,10 @@ void UNK_0xf1e7() // UNK_0xf1e7
 void UNK_0xf239() // UNK_0xf239
 {
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   SetColor("YELLOW");
   Push(0x4fa9); // probable 'BLACK'
-  _ex__2(); // !_2
+  Store_2(); // !_2
   CTERASE(); // CTERASE
 }
 
@@ -251,39 +251,39 @@ void UNK_0xf2c8() // UNK_0xf2c8
     TTY_dash_SCR(); // TTY-SCR
     TTY_dash_SCR(); // TTY-SCR
     UNK_0x3f09("EMERGENCY LOCATOR TRANSMISSION:");
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     UNK_0x3f09(" STARSHIP ISS ");
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     Push(0x65e1+UNK_0xf1a6.offset); // IFIELD
     COUNT(); // COUNT
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     UNK_0x3f09(" CRASHED ON PLANET ");
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     Push(pp__ro_ORBIT_rc_); // (ORBIT)
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+INST_dash_QT.offset); // IFIELD
-    _ask_(); // ?
+    Is(); // ?
     ICLOSE(); // ICLOSE
     UNK_0x3f09(" IN SYSTEM ");
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     Push(pp__ro_SYSTEM); // (SYSTEM
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+INST_dash_X.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Read16(cc__star_MAPSCA)); // *MAPSCA
     _slash_(); // /
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     PRINT(",", 1); // (.")
     Push(0x65e1+INST_dash_Y.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Read16(cc__star_MAPSCA)); // *MAPSCA
     _slash_(); // /
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
     ICLOSE(); // ICLOSE
     UNK_0x3f09("NO SURVIVORS");
-    _dot_TTY(); // .TTY
+    DrawTTY(); // .TTY
     TTY_dash_SCR(); // TTY-SCR
     TTY_dash_SCR(); // TTY-SCR
     Push(0x1388);
@@ -409,15 +409,15 @@ void UNK_0xf452() // UNK_0xf452
 void UNK_0xf4a0() // UNK_0xf4a0
 {
   UNK_0xf39c(); // UNK_0xf39c
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
-  _ex__2(); // !_2
+  Push(pp_IsFUEL_dash_D); // ?FUEL-D
+  Store_2(); // !_2
   Push(-1);
   Push(pp_GWF); // GWF
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xf24b(); // UNK_0xf24b
   Push(0xbd55); // probable 'DESCE'
   MODULE(); // MODULE
-  Push(pp__ask_FUEL_dash_D); // ?FUEL-D
+  Push(pp_IsFUEL_dash_D); // ?FUEL-D
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -457,7 +457,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
     {
       UNK_0xf40d(); // UNK_0xf40d
       Push(pp_GWF); // GWF
-      _ex__2(); // !_2
+      Store_2(); // !_2
     }
   }
   Push(pp_GWF); // GWF
@@ -471,9 +471,9 @@ void UNK_0xf4ce() // UNK_0xf4ce
 // ================================================
 // entry
 
-void _ask_LAND() // ?LAND
+void IsLAND() // ?LAND
 {
-  Push(pp__ask_G_dash_AWAR); // ?G-AWAR
+  Push(pp_IsG_dash_AWAR); // ?G-AWAR
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -493,7 +493,7 @@ void _ask_LAND() // ?LAND
 // ================================================
 // entry
 
-void _ask_LAUNCH() // ?LAUNCH
+void IsLAUNCH() // ?LAUNCH
 {
   UNK_0xf40d(); // UNK_0xf40d
   if (Pop() == 0) Push(1); else Push(0); // NOT

@@ -51,28 +51,28 @@
 //      OUTERSPACE  codep:0x224c parp:0xe0fa size:0x000a C-string:'OUTERSPACE'
 //      UNK_0xe106  codep:0x1d29 parp:0xe106 size:0x0002 C-string:'UNK_0xe106'
 //      UNK_0xe10a  codep:0x1d29 parp:0xe10a size:0x0002 C-string:'UNK_0xe10a'
-//            ?HUB  codep:0x224c parp:0xe115 size:0x0018 C-string:'_ask_HUB'
+//            ?HUB  codep:0x224c parp:0xe115 size:0x0018 C-string:'IsHUB'
 //          SETHID  codep:0x224c parp:0xe138 size:0x000a C-string:'SETHID'
 //          SETDIS  codep:0x224c parp:0xe14d size:0x0008 C-string:'SETDIS'
 //          SCR>CG  codep:0x224c parp:0xe160 size:0x0050 C-string:'SCR_gt_CG'
-//              !$  codep:0x224c parp:0xe1b2 size:0x000a C-string:'_ex__do_'
+//              !$  codep:0x224c parp:0xe1b2 size:0x000a C-string:'Store_do_'
 //            #CPL  codep:0x224c parp:0xe1be size:0x0016 C-string:'_n_CPL'
 //            #LPS  codep:0x224c parp:0xe1d6 size:0x001c C-string:'_n_LPS'
-//           ?BL<-  codep:0x224c parp:0xe1f4 size:0x0016 C-string:'_ask_BL_st__dash_'
+//           ?BL<-  codep:0x224c parp:0xe1f4 size:0x0016 C-string:'IsBL_st__dash_'
 //         ##LINES  codep:0x224c parp:0xe20c size:0x0040 C-string:'_n__n_LINES'
 //           #YBLT  codep:0x224c parp:0xe24e size:0x0028 C-string:'_n_YBLT'
 //           #XBLT  codep:0x224c parp:0xe278 size:0x003c C-string:'_n_XBLT'
-//            .SUB  codep:0x224c parp:0xe2b6 size:0x000e C-string:'_dot_SUB'
-//         .#LINES  codep:0x224c parp:0xe2c6 size:0x006c C-string:'_dot__n_LINES'
+//            .SUB  codep:0x224c parp:0xe2b6 size:0x000e C-string:'DrawSUB'
+//         .#LINES  codep:0x224c parp:0xe2c6 size:0x006c C-string:'Draw_n_LINES'
 //      UNK_0xe334  codep:0x224c parp:0xe334 size:0x000a C-string:'UNK_0xe334'
 //    BORDERMARGIN  codep:0x224c parp:0xe340 size:0x0034 C-string:'BORDERMARGIN'
 //       ERASEWIND  codep:0x224c parp:0xe376 size:0x001c C-string:'ERASEWIND'
 //      UNK_0xe394  codep:0x224c parp:0xe394 size:0x001a C-string:'UNK_0xe394'
-//           .PAGE  codep:0x224c parp:0xe3b0 size:0x000a C-string:'_dot_PAGE'
+//           .PAGE  codep:0x224c parp:0xe3b0 size:0x000a C-string:'DrawPAGE'
 //          BORDER  codep:0x224c parp:0xe3bc size:0x0112 C-string:'BORDER'
-//        .GAMEOPS  codep:0x224c parp:0xe4d0 size:0x00c7 C-string:'_dot_GAMEOPS'
-//       .SAVEHEAD  codep:0x224c parp:0xe599 size:0x0026 C-string:'_dot_SAVEHEAD'
-//       .LOADHEAD  codep:0x224c parp:0xe5c1 size:0x0026 C-string:'_dot_LOADHEAD'
+//        .GAMEOPS  codep:0x224c parp:0xe4d0 size:0x00c7 C-string:'DrawGAMEOPS'
+//       .SAVEHEAD  codep:0x224c parp:0xe599 size:0x0026 C-string:'DrawSAVEHEAD'
+//       .LOADHEAD  codep:0x224c parp:0xe5c1 size:0x0026 C-string:'DrawLOADHEAD'
 //      UNK_0xe5e9  codep:0x224c parp:0xe5e9 size:0x0032 C-string:'UNK_0xe5e9'
 //      UNK_0xe61d  codep:0x224c parp:0xe61d size:0x0020 C-string:'UNK_0xe61d'
 //      UNK_0xe63f  codep:0x224c parp:0xe63f size:0x0006 C-string:'UNK_0xe63f'
@@ -82,10 +82,10 @@
 //      UNK_0xe66f  codep:0x224c parp:0xe66f size:0x011b C-string:'UNK_0xe66f'
 //      UNK_0xe78c  codep:0x224c parp:0xe78c size:0x0028 C-string:'UNK_0xe78c'
 //      UNK_0xe7b6  codep:0x224c parp:0xe7b6 size:0x0036 C-string:'UNK_0xe7b6'
-//     ?-writeable  codep:0x224c parp:0xe7ee size:0x0034 C-string:'_ask__dash_writeable'
+//     ?-writeable  codep:0x224c parp:0xe7ee size:0x0034 C-string:'Is_dash_writeable'
 //        nomaster  codep:0x224c parp:0xe824 size:0x0047 C-string:'nomaster'
 //             GDE  codep:0x224c parp:0xe86d size:0x0012 C-string:'GDE'
-//       .RESUMING  codep:0x224c parp:0xe881 size:0x002d C-string:'_dot_RESUMING'
+//       .RESUMING  codep:0x224c parp:0xe881 size:0x002d C-string:'DrawRESUMING'
 //      UNK_0xe8b0  codep:0x224c parp:0xe8b0 size:0x0008 C-string:'UNK_0xe8b0'
 //          SCR>EG  codep:0x224c parp:0xe8c3 size:0x0076 C-string:'SCR_gt_EG'
 //  RESTOREDISPLAY  codep:0x224c parp:0xe93b size:0x002a C-string:'RESTOREDISPLAY'
@@ -96,7 +96,7 @@
 //         ONCACHE  codep:0x224c parp:0xe9ab size:0x000c C-string:'ONCACHE'
 //        CHECKSUM  codep:0x224c parp:0xe9b9 size:0x001a C-string:'CHECKSUM'
 //      NEWDOSMSGS  codep:0x224c parp:0xe9d5 size:0x0012 C-string:'NEWDOSMSGS'
-//     ?INNERSPACE  codep:0x224c parp:0xe9e9 size:0x0008 C-string:'_ask_INNERSPACE'
+//     ?INNERSPACE  codep:0x224c parp:0xe9e9 size:0x0008 C-string:'IsINNERSPACE'
 //      UNK_0xe9f3  codep:0x224c parp:0xe9f3 size:0x001c C-string:'UNK_0xe9f3'
 //      UNK_0xea11  codep:0x224c parp:0xea11 size:0x0014 C-string:'UNK_0xea11'
 //        PUSHVECT  codep:0x224c parp:0xea27 size:0x0028 C-string:'PUSHVECT'
@@ -150,7 +150,7 @@
 //     GAMEOPTIONS  codep:0x224c parp:0xf4ec size:0x0016 C-string:'GAMEOPTIONS'
 //    <GAMEOPTIONS  codep:0x224c parp:0xf504 size:0x000e C-string:'_st_GAMEOPTIONS'
 //         GAMEOPS  codep:0x224c parp:0xf51d size:0x0008 C-string:'GAMEOPS'
-// ?GAME.IN.PROGRESS  codep:0x224c parp:0xf527 size:0x0006 C-string:'_ask_GAME_dot_IN_dot_PROGRESS'
+// ?GAME.IN.PROGRESS  codep:0x224c parp:0xf527 size:0x0006 C-string:'IsGAME_dot_IN_dot_PROGRESS'
 //      START.GAME  codep:0x224c parp:0xf538 size:0x0000 C-string:'START_dot_GAME'
 
 // =================================
@@ -179,11 +179,11 @@ extern const unsigned short int pp_LFSEG; // LFSEG
 extern const unsigned short int pp_LKEY; // LKEY
 extern const unsigned short int pp__bo__n_CACHE_bc_; // [#CACHE]
 extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
-extern const unsigned short int pp__ask_EGA; // ?EGA
+extern const unsigned short int pp_IsEGA; // ?EGA
 extern const unsigned short int pp__3DSEG; // 3DSEG
 extern const unsigned short int pp_DERROR; // DERROR
 extern const unsigned short int pp__i_VERSIONERR; // 'VERSIONERR
-extern const unsigned short int pp__ask_TANDRG; // ?TANDRG
+extern const unsigned short int pp_IsTANDRG; // ?TANDRG
 extern const unsigned short int user_TIB; // TIB
 extern const unsigned short int user_ROW; // ROW
 extern const unsigned short int user_COL; // COL
@@ -214,7 +214,7 @@ void READ_dash_RANDOM(); // READ-RANDOM
 void WRITE_dash_RANDOM(); // WRITE-RANDOM
 void KEY_2(); // KEY_2
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
 void _2_ex_(); // 2!
 void ON_3(); // ON_3
@@ -227,7 +227,7 @@ void MOUNTB(); // MOUNTB
 void SET_dash_CURRENT(); // SET-CURRENT
 void SAVE_dash_BUFFERS(); // SAVE-BUFFERS
 void FLUSH_2(); // FLUSH_2
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void BLD_dash_DIS(); // BLD-DIS
 void BLD_dash_MV(); // BLD-MV
 void _gt_DISPLAY(); // >DISPLAY
@@ -243,10 +243,10 @@ void _gt_0FONT(); // >0FONT
 void _gt_2FONT(); // >2FONT
 void _gt_3FONT(); // >3FONT
 void POS_dot_(); // POS.
-void _dot_1LOGO(); // .1LOGO
+void Draw1LOGO(); // .1LOGO
 void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void SETDBUF(); // SETDBUF
 void CFIGARRAYS(); // CFIGARRAYS
@@ -273,7 +273,7 @@ void L_ex_(); // L!
 void LC_at_(); // LC@
 void LC_ex_(); // LC!
 void LCMOVE(); // LCMOVE
-void _at_DS(); // @DS
+void GetDS(); // @DS
 void _st__ex__gt_(); // <!>
 void C_gt_EGA(); // C>EGA
 void E_gt_CGA(); // E>CGA
@@ -675,7 +675,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
 
 void OUTERSPACE() // OUTERSPACE
 {
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(0x1000);
   Push(Pop() + Pop()); // +
 }
@@ -695,7 +695,7 @@ void OUTERSPACE() // OUTERSPACE
 // 0xe10c: WORD '?HUB' codep=0x224c parp=0xe115
 // ================================================
 
-void _ask_HUB() // ?HUB
+void IsHUB() // ?HUB
 {
   Push(pp_UNK_0xe10a); // UNK_0xe10a
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
@@ -720,7 +720,7 @@ void SETHID() // SETHID
   Push(pp_XBUF_dash_SE); // XBUF-SE
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe106); // UNK_0xe106
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -732,7 +732,7 @@ void SETDIS() // SETDIS
 {
   OUTERSPACE(); // OUTERSPACE
   Push(pp_UNK_0xe106); // UNK_0xe106
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -795,12 +795,12 @@ void SCR_gt_CG() // SCR>CG
 // 0xe1b0: WORD '!$' codep=0x224c parp=0xe1b2
 // ================================================
 
-void _ex__do_() // !$
+void Store_do_() // !$
 {
   Push(pp__do_LEN); // $LEN
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp__do_ADDR); // $ADDR
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -819,7 +819,7 @@ void _n_CPL() // #CPL
   Push(Read16(Pop())); // @
   _slash_(); // /
   Push(pp_UNK_0xdf8a); // UNK_0xdf8a
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -841,7 +841,7 @@ void _n_LPS() // #LPS
   Push(Pop() + Pop()); // +
   _slash_(); // /
   Push(pp_UNK_0xdf8e); // UNK_0xdf8e
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -849,7 +849,7 @@ void _n_LPS() // #LPS
 // 0xe1f2: WORD '?BL<-' codep=0x224c parp=0xe1f4
 // ================================================
 
-void _ask_BL_st__dash_() // ?BL<-
+void IsBL_st__dash_() // ?BL<-
 {
   do
   {
@@ -873,10 +873,10 @@ void _n__n_LINES() // ##LINES
   Push(pp__do_ADDR); // $ADDR
   Push(Read16(Pop())); // @
   Push(pp_SUB_do_ADDR); // SUB$ADDR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(1);
   Push(pp_UNK_0xdf9a); // UNK_0xdf9a
-  _ex__3(); // !_3
+  Store_3(); // !_3
 
   label2:
   Push(pp_SUB_do_ADDR); // SUB$ADDR
@@ -892,10 +892,10 @@ void _n__n_LINES() // ##LINES
   Push(Pop() + Pop()); // +
   U_st_(); // U<
   if (Pop() == 0) goto label1;
-  _ask_BL_st__dash_(); // ?BL<-
+  IsBL_st__dash_(); // ?BL<-
   Push(Pop()+1); // 1+
   Push(pp_SUB_do_ADDR); // SUB$ADDR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(1);
   Push(pp_UNK_0xdf9a); // UNK_0xdf9a
   _plus__ex_(); // +!
@@ -930,7 +930,7 @@ void _n_YBLT() // #YBLT
   Push(Read16(Pop())); // @
   Push(Pop() + Pop()); // +
   Push(pp_YBLT); // YBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -944,17 +944,17 @@ void _n_XBLT() // #XBLT
   Push(Read16(Pop())); // @
   Push(0x0384);
   Push(pp_YBLT); // YBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_SUB_do_ADDR); // SUB$ADDR
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Push(Read16(Pop())); // @
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_YBLT); // YBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_UNK_0xdf72); // UNK_0xdf72
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdf6e); // UNK_0xdf6e
@@ -967,7 +967,7 @@ void _n_XBLT() // #XBLT
   Push(-Pop()); // NEGATE
   Push(Pop() + Pop()); // +
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -975,7 +975,7 @@ void _n_XBLT() // #XBLT
 // 0xe2b4: WORD '.SUB' codep=0x224c parp=0xe2b6
 // ================================================
 
-void _dot_SUB() // .SUB
+void DrawSUB() // .SUB
 {
   _n_XBLT(); // #XBLT
   Push(pp_SUB_do_ADDR); // SUB$ADDR
@@ -990,13 +990,13 @@ void _dot_SUB() // .SUB
 // 0xe2c4: WORD '.#LINES' codep=0x224c parp=0xe2c6
 // ================================================
 
-void _dot__n_LINES() // .#LINES
+void Draw_n_LINES() // .#LINES
 {
   _n_YBLT(); // #YBLT
   Push(pp__do_ADDR); // $ADDR
   Push(Read16(Pop())); // @
   Push(pp_SUB_do_ADDR); // SUB$ADDR
-  _ex__3(); // !_3
+  Store_3(); // !_3
 
   label2:
   Push(pp_SUB_do_ADDR); // SUB$ADDR
@@ -1012,13 +1012,13 @@ void _dot__n_LINES() // .#LINES
   Push(Pop() + Pop()); // +
   U_st_(); // U<
   if (Pop() == 0) goto label1;
-  _ask_BL_st__dash_(); // ?BL<-
+  IsBL_st__dash_(); // ?BL<-
   Push(pp_SUB_do_ADDR); // SUB$ADDR
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
-  _ex__3(); // !_3
-  _dot_SUB(); // .SUB
+  Store_3(); // !_3
+  DrawSUB(); // .SUB
   Push(pp_UNK_0xdf7e); // UNK_0xdf7e
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xdf86); // UNK_0xdf86
@@ -1045,8 +1045,8 @@ void _dot__n_LINES() // .#LINES
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
-  _ex__3(); // !_3
-  _dot_SUB(); // .SUB
+  Store_3(); // !_3
+  DrawSUB(); // .SUB
 }
 
 
@@ -1056,10 +1056,10 @@ void _dot__n_LINES() // .#LINES
 
 void UNK_0xe334() // UNK_0xe334
 {
-  _ex__do_(); // !$
+  Store_do_(); // !$
   _n_CPL(); // #CPL
   _n_LPS(); // #LPS
-  _dot__n_LINES(); // .#LINES
+  Draw_n_LINES(); // .#LINES
 }
 
 
@@ -1071,25 +1071,25 @@ void BORDERMARGIN() // BORDERMARGIN
 {
   Push(0x0014);
   Push(pp_UNK_0xdf6e); // UNK_0xdf6e
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x008c);
   Push(pp_UNK_0xdf72); // UNK_0xdf72
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0028);
   Push(pp_UNK_0xdf7a); // UNK_0xdf7a
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0096);
   Push(pp_UNK_0xdf76); // UNK_0xdf76
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(3);
   Push(pp_UNK_0xdf86); // UNK_0xdf86
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(9);
   Push(pp_UNK_0xdf7e); // UNK_0xdf7e
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(6);
   Push(pp_UNK_0xdf82); // UNK_0xdf82
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1107,7 +1107,7 @@ void ERASEWIND() // ERASEWIND
   Push(0x0096);
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -1125,7 +1125,7 @@ void UNK_0xe394() // UNK_0xe394
   Push(0x009f);
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -1133,7 +1133,7 @@ void UNK_0xe394() // UNK_0xe394
 // 0xe3ae: WORD '.PAGE' codep=0x224c parp=0xe3b0
 // ================================================
 
-void _dot_PAGE() // .PAGE
+void DrawPAGE() // .PAGE
 {
   BORDERMARGIN(); // BORDERMARGIN
   ERASEWIND(); // ERASEWIND
@@ -1149,7 +1149,7 @@ void _dot_PAGE() // .PAGE
 void BORDER() // BORDER
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(5);
   Push(0x009b);
   Push(0x000a);
@@ -1214,7 +1214,7 @@ void BORDER() // BORDER
   Push(0x001d);
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  _dot_1LOGO(); // .1LOGO
+  Draw1LOGO(); // .1LOGO
 }
 
 // 0xe49a: db 0x4c 0x22 0x25 0x95 0x5d 0x17 0x14 0x00 0x5d 0x17 0x11 0x00 0x2b 0xa0 0x92 0xe3 0xdc 0x1b 0x19 0x50 0x52 0x45 0x53 0x53 0x20 0x41 0x4e 0x59 0x20 0x4b 0x45 0x59 0x20 0x54 0x4f 0x20 0x43 0x4f 0x4e 0x54 0x49 0x4e 0x55 0x45 0xa2 0x94 0xa9 0x48 0x32 0x0e 0x90 0x16 'L"% ]   ]   +      PRESS ANY KEY TO CONTINUE   H2   '
@@ -1223,7 +1223,7 @@ void BORDER() // BORDER
 // 0xe4ce: WORD '.GAMEOPS' codep=0x224c parp=0xe4d0
 // ================================================
 
-void _dot_GAMEOPS() // .GAMEOPS
+void DrawGAMEOPS() // .GAMEOPS
 {
   _gt_DISPLAY(); // >DISPLAY
   DARK(); // DARK
@@ -1267,7 +1267,7 @@ void _dot_GAMEOPS() // .GAMEOPS
 // 0xe597: WORD '.SAVEHEAD' codep=0x224c parp=0xe599
 // ================================================
 
-void _dot_SAVEHEAD() // .SAVEHEAD
+void DrawSAVEHEAD() // .SAVEHEAD
 {
   _gt_3FONT(); // >3FONT
   Push(0x0035);
@@ -1286,7 +1286,7 @@ void _dot_SAVEHEAD() // .SAVEHEAD
 // 0xe5bf: WORD '.LOADHEAD' codep=0x224c parp=0xe5c1
 // ================================================
 
-void _dot_LOADHEAD() // .LOADHEAD
+void DrawLOADHEAD() // .LOADHEAD
 {
   _gt_3FONT(); // >3FONT
   Push(0x0035);
@@ -1339,7 +1339,7 @@ void UNK_0xe61d() // UNK_0xe61d
     _i_KEY(); // 'KEY
     Push(Read16(regsp)); // DUP
     Push(pp_UNK_0xdfa6); // UNK_0xdfa6
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Pop(); Pop(); // 2DROP
@@ -1353,7 +1353,7 @@ void UNK_0xe61d() // UNK_0xe61d
 void UNK_0xe63f() // UNK_0xe63f
 {
   Push(pp_TIMESTAMP); // TIMESTAMP
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1376,7 +1376,7 @@ void UNK_0xe64f() // UNK_0xe64f
 {
   Push(Read16(regsp)); // DUP
   Func3(":TIMESTAMP");
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1428,7 +1428,7 @@ void UNK_0xe78c() // UNK_0xe78c
   UNK_0xe394(); // UNK_0xe394
   BEEP(); // BEEP
   UNK_0x3f3b("SAVED GAME INTEGRITY ERROR.");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }
 
@@ -1446,7 +1446,7 @@ void UNK_0xe7b6() // UNK_0xe7b6
   UNK_0xe394(); // UNK_0xe394
   BEEP(); // BEEP
   UNK_0x3f3b("GAME IN PROGRESS BUT NOT SAVED.");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }
 
@@ -1455,12 +1455,12 @@ void UNK_0xe7b6() // UNK_0xe7b6
 // 0xe7ec: WORD '?-writeable' codep=0x224c parp=0xe7ee
 // ================================================
 
-void _ask__dash_writeable() // ?-writeable
+void Is_dash_writeable() // ?-writeable
 {
   Push(0x00ff);
   Push(pp_DERROR); // DERROR
-  _ex__3(); // !_3
-  _at_DS(); // @DS
+  Store_3(); // !_3
+  GetDS(); // @DS
   PAD(); // PAD
   Push(0x0032);
   Push(Pop() + Pop()); // +
@@ -1469,10 +1469,10 @@ void _ask__dash_writeable() // ?-writeable
   DOS_dash_DTA(); // DOS-DTA
   Push(0);
   RELREC(); // RELREC
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(1);
   RECSIZE(); // RECSIZE
-  _ex__3(); // !_3
+  Store_3(); // !_3
   READ_dash_RANDOM(); // READ-RANDOM
   WRITE_dash_RANDOM(); // WRITE-RANDOM
   Pop(); Pop(); // 2DROP
@@ -1491,9 +1491,9 @@ void nomaster() // nomaster
 {
   CTINIT(); // CTINIT
   UNK_0x3f3b("MUST PLAY ON A WRITABLE COPY.");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f3b("PRESS ANY KEY TO EXIT.");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   KEY_2(); // KEY_2
   Pop(); // DROP
   BYE(); // BYE
@@ -1508,10 +1508,10 @@ void GDE() // GDE
 {
   Push(0xae85); // probable '<CTASKMOUNT>'
   Push(pp_ASKMOUNT); // ASKMOUNT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0xae67); // probable '<CTVERSIONERROR>'
   Push(pp__i_VERSIONERR); // 'VERSIONERR
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1519,10 +1519,10 @@ void GDE() // GDE
 // 0xe87f: WORD '.RESUMING' codep=0x224c parp=0xe881
 // ================================================
 
-void _dot_RESUMING() // .RESUMING
+void DrawRESUMING() // .RESUMING
 {
   UNK_0x3f3b("RESUMING THE GAME IN PROGRESS...");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   Push(0x03e8);
   MS(); // MS
 }
@@ -1611,7 +1611,7 @@ void SCR_gt_EG() // SCR>EG
 
   Pop(); // DROP
   Push(pp_XORMODE); // XORMODE
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1621,7 +1621,7 @@ void SCR_gt_EG() // SCR>EG
 
 void RESTOREDISPLAY() // RESTOREDISPLAY
 {
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -1629,7 +1629,7 @@ void RESTOREDISPLAY() // RESTOREDISPLAY
     SCR_gt_EG(); // SCR>EG
     SCR_dash_RES(); // SCR-RES
     _gt_DISPLAY(); // >DISPLAY
-    _ask_HUB(); // ?HUB
+    IsHUB(); // ?HUB
     Push(pp_UNK_0xe10a); // UNK_0xe10a
     Push(Read16(Pop())); // @
     if (Pop() != 0)
@@ -1651,13 +1651,13 @@ void RESTOREDISPLAY() // RESTOREDISPLAY
 
 void PRESERVEDISPLAY() // PRESERVEDISPLAY
 {
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
     SETDIS(); // SETDIS
     SCR_gt_CG(); // SCR>CG
-    _ask_HUB(); // ?HUB
+    IsHUB(); // ?HUB
     Push(pp_UNK_0xe10a); // UNK_0xe10a
     Push(Read16(Pop())); // @
     if (Pop() != 0)
@@ -1717,7 +1717,7 @@ void ONCACHE() // ONCACHE
   Push(pp__bo__n_CACHE_bc_); // [#CACHE]
   Push(Read16(Pop())); // @
   Push(pp__n_CACHE); // #CACHE
-  _ex__3(); // !_3
+  Store_3(); // !_3
   AUTO_dash_CACHE(); // AUTO-CACHE
 }
 
@@ -1757,10 +1757,10 @@ void NEWDOSMSGS() // NEWDOSMSGS
 {
   Push(0xe695);
   Push(pp_ASKMOUNT); // ASKMOUNT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0xe73b);
   Push(pp__i_VERSIONERR); // 'VERSIONERR
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1768,7 +1768,7 @@ void NEWDOSMSGS() // NEWDOSMSGS
 // 0xe9e7: WORD '?INNERSPACE' codep=0x224c parp=0xe9e9
 // ================================================
 
-void _ask_INNERSPACE() // ?INNERSPACE
+void IsINNERSPACE() // ?INNERSPACE
 {
   OUTERSPACE(); // OUTERSPACE
   _gt_(); // >
@@ -1783,10 +1783,10 @@ void _ask_INNERSPACE() // ?INNERSPACE
 void UNK_0xe9f3() // UNK_0xe9f3
 {
   Push(Read16(regsp)); // DUP
-  _ask_INNERSPACE(); // ?INNERSPACE
+  IsINNERSPACE(); // ?INNERSPACE
   if (Pop() != 0)
   {
-    _at_DS(); // @DS
+    GetDS(); // @DS
     _dash_(); // -
     Push(1);
     return;
@@ -1806,7 +1806,7 @@ void UNK_0xea11() // UNK_0xea11
 {
   if (Pop() != 0)
   {
-    _at_DS(); // @DS
+    GetDS(); // @DS
     Push(Pop() + Pop()); // +
     return;
   }
@@ -1867,7 +1867,7 @@ void POPVECT() // POPVECT
   {
     Push(i); // I
     GetTableEntry("VECTORERRORS");
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(-1);
     int step = Pop();
     i += step;
@@ -1876,10 +1876,10 @@ void POPVECT() // POPVECT
 
   UNK_0xea11(); // UNK_0xea11
   Push(pp__3DSEG); // 3DSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xea11(); // UNK_0xea11
   Push(pp_BLTSEG); // BLTSEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   if (Pop() != 0)
   {
     Push(pp_DBUF_dash_SEG); // DBUF-SEG
@@ -1889,7 +1889,7 @@ void POPVECT() // POPVECT
   }
   Push(Read16(Pop())); // @
   Push(pp_BUF_dash_SEG); // BUF-SEG
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1901,7 +1901,7 @@ void UNK_0xea87() // UNK_0xea87
 {
   UNK_0xe394(); // UNK_0xe394
   UNK_0x3f3b("LOADING GAME IN PROGRESS...");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   Push(0x0037);
   Push(0x0011);
   POS_dot_(); // POS.
@@ -1918,7 +1918,7 @@ void UNK_0xeac7() // UNK_0xeac7
 {
   UNK_0xe394(); // UNK_0xe394
   UNK_0x3f3b("...GAME LOAD COMPLETE.");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   Push(0x05dc);
   MS(); // MS
 }
@@ -1932,7 +1932,7 @@ void UNK_0xeaee() // UNK_0xeaee
 {
   UNK_0xe394(); // UNK_0xe394
   UNK_0x3f3b("SAVING GAME...");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   Push(0x0037);
   Push(0x0011);
   POS_dot_(); // POS.
@@ -1949,7 +1949,7 @@ void UNK_0xeb21() // UNK_0xeb21
 {
   UNK_0xe394(); // UNK_0xe394
   UNK_0x3f3b("GAME SAVE COMPLETE.");
-  _dot_PAGE(); // .PAGE
+  DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }
 
@@ -2083,7 +2083,7 @@ void _v_DISK() // |DISK
       Push(Pop() + Pop()); // +
       Push(4);
       PICK(); // PICK
-      _at_DS(); // @DS
+      GetDS(); // @DS
       Push(5);
       PICK(); // PICK
       Push(i); // I
@@ -2257,7 +2257,7 @@ void UNK_0xecee() // UNK_0xecee
 
 void UNK_0xecfa() // UNK_0xecfa
 {
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(Read16(cc_UNK_0xde7e)); // UNK_0xde7e
   Push(Read16(cc_UNK_0xde5a)); // UNK_0xde5a
   UNK_0xecee(); // UNK_0xecee
@@ -2271,7 +2271,7 @@ void UNK_0xecfa() // UNK_0xecfa
 
 void UNK_0xed08() // UNK_0xed08
 {
-  _at_DS(); // @DS
+  GetDS(); // @DS
   Push(Read16(cc_UNK_0xde7e)); // UNK_0xde7e
   Push(Read16(cc_UNK_0xde5a)); // UNK_0xde5a
   UNK_0xecee(); // UNK_0xecee
@@ -2349,7 +2349,7 @@ void UNK_0xed48() // UNK_0xed48
   Push(pp_CKSUM); // CKSUM
   Push(Read16(Pop())); // @
   Func3(":CKSUM");
-  _ex__3(); // !_3
+  Store_3(); // !_3
   _ro_SETUP_rc_(); // (SETUP)
   SAVE_dash_BUFFERS(); // SAVE-BUFFERS
 }
@@ -2362,7 +2362,7 @@ void UNK_0xed48() // UNK_0xed48
 void UNK_0xed6a() // UNK_0xed6a
 {
   Func3(":SAVE");
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -2445,7 +2445,7 @@ void UNK_0xedb8() // UNK_0xedb8
   {
     Push(i); // I
     GetTableEntry("HOST");
-    _ex__3(); // !_3
+    Store_3(); // !_3
     Push(-1);
     int step = Pop();
     i += step;
@@ -2502,7 +2502,7 @@ void LOAD_dot_GAME() // LOAD.GAME
   _gt_DISPLAY(); // >DISPLAY
   DARK(); // DARK
   BORDER(); // BORDER
-  _dot_LOADHEAD(); // .LOADHEAD
+  DrawLOADHEAD(); // .LOADHEAD
   EMPTY_dash_BUFFERS(); // EMPTY-BUFFERS
   OFFCACHE(); // OFFCACHE
   UNK_0xe7b6(); // UNK_0xe7b6
@@ -2526,7 +2526,7 @@ void SAVEGAME() // SAVEGAME
   _gt_DISPLAY(); // >DISPLAY
   DARK(); // DARK
   BORDER(); // BORDER
-  _dot_SAVEHEAD(); // .SAVEHEAD
+  DrawSAVEHEAD(); // .SAVEHEAD
   SETSAVE(); // SETSAVE
   UNK_0xed48(); // UNK_0xed48
   Push(3);
@@ -2665,12 +2665,12 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0030);
   _dash_(); // -
-  Push(pp__ask_TANDRG); // ?TANDRG
+  Push(pp_IsTANDRG); // ?TANDRG
   OFF(); // OFF
   UNK_0xe012(); // UNK_0xe012
   if (Pop() != 0)
   {
-    Push(pp__ask_TANDRG); // ?TANDRG
+    Push(pp_IsTANDRG); // ?TANDRG
     ON_3(); // ON_3
     Push(Read16(regsp)); // DUP
     Push(2);
@@ -2680,14 +2680,14 @@ void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
       Push(Pop()+1); // 1+
     }
   }
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   OFF(); // OFF
   Push(Read16(regsp)); // DUP
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   Push(Pop()-2); // 2-
-  Push(pp__ask_EGA); // ?EGA
+  Push(pp_IsEGA); // ?EGA
   ON_3(); // ON_3
 }
 
@@ -2735,7 +2735,7 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
   PRINT("A N D  P R E S S  R E T U R N", 29); // (.")
   SET_dot_DISPLAY_dot_VECTORS(); // SET.DISPLAY.VECTORS
   Push(pp_MONITOR); // MONITOR
-  _ex__3(); // !_3
+  Store_3(); // !_3
   SET_dot_COLORS(); // SET.COLORS
   LOAD_dash_CO(); // LOAD-CO
   SETDBUF(); // SETDBUF
@@ -2785,7 +2785,7 @@ void UNK_0xf069() // UNK_0xf069
   Push(1);
   MAX(); // MAX
   Push(0x5245); // probable 'MPS'
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -2970,13 +2970,13 @@ void GAMEOPTIONS() // GAMEOPTIONS
   OFF(); // OFF
   do
   {
-    _dot_GAMEOPS(); // .GAMEOPS
+    DrawGAMEOPS(); // .GAMEOPS
     GET_dash_OPTION_n_(); // GET-OPTION#
     GAMEOPCASE(); // GAMEOPCASE case
     Push(pp_RESUME); // RESUME
     Push(Read16(Pop())); // @
   } while(Pop() == 0);
-  _dot_RESUMING(); // .RESUMING
+  DrawRESUMING(); // .RESUMING
 }
 
 
@@ -3012,7 +3012,7 @@ void GAMEOPS() // GAMEOPS
 // 0xf525: WORD '?GAME.IN.PROGRESS' codep=0x224c parp=0xf527
 // ================================================
 
-void _ask_GAME_dot_IN_dot_PROGRESS() // ?GAME.IN.PROGRESS
+void IsGAME_dot_IN_dot_PROGRESS() // ?GAME.IN.PROGRESS
 {
   Func3(":TIMESTAMP");
   Push(Read16(Pop())); // @
@@ -3028,7 +3028,7 @@ void START_dot_GAME() // START.GAME
 {
   SET_dot_DISPLAY_dot_MODE(); // SET.DISPLAY.MODE
   GDE(); // GDE
-  _ask__dash_writeable(); // ?-writeable
+  Is_dash_writeable(); // ?-writeable
   if (Pop() != 0)
   {
     nomaster(); // nomaster
@@ -3036,7 +3036,7 @@ void START_dot_GAME() // START.GAME
   Push(0xb5aa); // probable 'HIMUS'
   MODULE(); // MODULE
   POLICE_dot_WARNING(); // POLICE.WARNING
-  _ask_GAME_dot_IN_dot_PROGRESS(); // ?GAME.IN.PROGRESS
+  IsGAME_dot_IN_dot_PROGRESS(); // ?GAME.IN.PROGRESS
   if (Pop() != 0)
   {
     LOAD_dot_GAME(); // LOAD.GAME

@@ -56,14 +56,14 @@
 //      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x0008 C-string:'UNK_0xf2a1'
 //         WPHRASE  codep:0x4a4f parp:0xf2b5 size:0x003c C-string:'WPHRASE'
 //        (.STORM)  codep:0x224c parp:0xf2fe size:0x001a C-string:'_ro__dot_STORM_rc_'
-//           .ROCK  codep:0x224c parp:0xf322 size:0x0018 C-string:'_dot_ROCK'
-//         .LIQUID  codep:0x224c parp:0xf346 size:0x0016 C-string:'_dot_LIQUID'
-//        .CRYSTAL  codep:0x224c parp:0xf369 size:0x000a C-string:'_dot_CRYSTAL'
-//            .ICE  codep:0x224c parp:0xf37c size:0x001a C-string:'_dot_ICE'
-//         .MOLTEN  codep:0x224c parp:0xf3a2 size:0x0010 C-string:'_dot_MOLTEN'
-//         .CARPET  codep:0x224c parp:0xf3be size:0x0031 C-string:'_dot_CARPET'
+//           .ROCK  codep:0x224c parp:0xf322 size:0x0018 C-string:'DrawROCK'
+//         .LIQUID  codep:0x224c parp:0xf346 size:0x0016 C-string:'DrawLIQUID'
+//        .CRYSTAL  codep:0x224c parp:0xf369 size:0x000a C-string:'DrawCRYSTAL'
+//            .ICE  codep:0x224c parp:0xf37c size:0x001a C-string:'DrawICE'
+//         .MOLTEN  codep:0x224c parp:0xf3a2 size:0x0010 C-string:'DrawMOLTEN'
+//         .CARPET  codep:0x224c parp:0xf3be size:0x0031 C-string:'DrawCARPET'
 //           /SURF  codep:0x4a4f parp:0xf3f9 size:0x0018 C-string:'_slash_SURF'
-//        .SURFACE  codep:0x224c parp:0xf41e size:0x0010 C-string:'_dot_SURFACE'
+//        .SURFACE  codep:0x224c parp:0xf41e size:0x0010 C-string:'DrawSURFACE'
 //      UNK_0xf430  codep:0x224c parp:0xf430 size:0x0006 C-string:'UNK_0xf430'
 //      UNK_0xf438  codep:0x224c parp:0xf438 size:0x0006 C-string:'UNK_0xf438'
 //      UNK_0xf440  codep:0x224c parp:0xf440 size:0x0012 C-string:'UNK_0xf440'
@@ -76,7 +76,7 @@
 //      UNK_0xf4f4  codep:0x224c parp:0xf4f4 size:0x0014 C-string:'UNK_0xf4f4'
 //      UNK_0xf50a  codep:0x224c parp:0xf50a size:0x0008 C-string:'UNK_0xf50a'
 //            MAPS  codep:0x224c parp:0xf51b size:0x0026 C-string:'MAPS'
-//          .STORM  codep:0x224c parp:0xf54c size:0x0000 C-string:'_dot_STORM'
+//          .STORM  codep:0x224c parp:0xf54c size:0x0000 C-string:'DrawSTORM'
 
 // =================================
 // ============= EXTERN ============
@@ -94,7 +94,7 @@ extern const unsigned short int pp__ro_FLARE_rc_; // (FLARE)
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_COLOR; // COLOR
-extern const unsigned short int pp__ask_WIN; // ?WIN
+extern const unsigned short int pp_IsWIN; // ?WIN
 extern const unsigned short int pp_YBLT; // YBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_XCON; // XCON
@@ -122,7 +122,7 @@ extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern IFieldType PHR_dash_CNT; // PHR-CNT
 extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
-void _dot_R(); // .R
+void DrawR(); // .R
 void SPACE(); // SPACE
 void SPACES(); // SPACES
 void NOP(); // NOP
@@ -130,34 +130,34 @@ void UNRAVEL(); // UNRAVEL
 void SQRT(); // SQRT
 void SETLARRAY(); // SETLARRAY
 void SETREGION(); // SETREGION
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
-void D_ex_(); // D!
+void StoreD(); // D!
 void OFF(); // OFF
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
-void _ex_COLOR(); // !COLOR
+void Get_gt_C_plus_S(); // @>C+S
+void StoreCOLOR(); // !COLOR
 void VCLIPSET(); // VCLIPSET
 void DCLIPSET(); // DCLIPSET
 void _gt_MAINVIEW(); // >MAINVIEW
 void DARK(); // DARK
 void BLT(); // BLT
 void CELLCOLOR(); // CELLCOLOR
-void _dot_REGION_plus_(); // .REGION+
-void _ex_VISWINDOW(); // !VISWINDOW
+void DrawREGION_plus_(); // .REGION+
+void StoreVISWINDOW(); // !VISWINDOW
 void _gt_1ICONFONT(); // >1ICONFONT
 void _gt_2ICONF(); // >2ICONF
 void _gt_3ICONF(); // >3ICONF
-void _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
 void POS_dot_(); // POS.
 void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 void _gt_TVCT(); // >TVCT
 void WINDOW(); // WINDOW
 void GCR(); // GCR
 void _i_KEY(); // 'KEY
-void _ask_QUIT(); // ?QUIT
-void _ask_NEW_dash_HO(); // ?NEW-HO
+void IsQUIT(); // ?QUIT
+void IsNEW_dash_HO(); // ?NEW-HO
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -169,7 +169,7 @@ void _dash_(); // -
 void _gt_(); // >
 void _0_gt_(); // 0>
 void TIME(); // TIME
-void _at_EXECUTE(); // @EXECUTE
+void GetEXECUTE(); // @EXECUTE
 void ON_2(); // ON_2
 void OFF_2(); // OFF_2
 void _1_dot_5_at_(); // 1.5@
@@ -242,7 +242,7 @@ LoadDataType UNK_0xed06 = {0x82, 0x00, 0x03, 0x07, 0x93a8};
 void UNK_0xed0e() // UNK_0xed0e
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xecf2); // from 'PLANET      '
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
@@ -266,15 +266,15 @@ void UNK_0xed0e() // UNK_0xed0e
   if (Pop() != 0)
   {
     Push(0);
-    _dot_R(); // .R
+    DrawR(); // .R
   }
   PRINT(".", 1); // (.")
   Push(0x000a);
   _slash_MOD(); // /MOD
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
   Push(0);
-  _dot_R(); // .R
+  DrawR(); // .R
 }
 
 
@@ -285,7 +285,7 @@ void UNK_0xed0e() // UNK_0xed0e
 void UNK_0xed60() // UNK_0xed60
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xece2); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   LoadData(UNK_0xecea); // from 'PLANET      '
@@ -340,12 +340,12 @@ void UNK_0xedb2() // UNK_0xedb2
 {
   UNK_0xed78(); // UNK_0xed78
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   LoadData(UNK_0xedaa); // from 'REGIONS     '
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
@@ -365,13 +365,13 @@ void UNK_0xedb2() // UNK_0xedb2
 
 void UNK_0xedde() // UNK_0xedde
 {
-  _ask_NEW_dash_HO(); // ?NEW-HO
+  IsNEW_dash_HO(); // ?NEW-HO
   if (Pop() != 0)
   {
     TIME(); // TIME
     _2_at_(); // 2@
     Push(pp_LAST_dash_UPDATE); // LAST-UPDATE
-    D_ex_(); // D!
+    StoreD(); // D!
     Push(1);
     Push(pp_STAR_dash_HR); // STAR-HR
     _plus__ex_(); // +!
@@ -393,13 +393,13 @@ void UNK_0xedde() // UNK_0xedde
   Push(pp__ro_FLARE_rc_); // (FLARE)
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
-  Push(pp__ask_WIN); // ?WIN
+  Push(pp_IsWIN); // ?WIN
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
-  _at_EXECUTE(); // @EXECUTE
+  GetEXECUTE(); // @EXECUTE
 }
 
 
@@ -413,7 +413,7 @@ void UNK_0xee28() // UNK_0xee28
   {
     UNK_0xedde(); // UNK_0xedde
     Push(pp__i_SIMULA); // 'SIMULA
-    _at_EXECUTE(); // @EXECUTE
+    GetEXECUTE(); // @EXECUTE
     _i_KEY(); // 'KEY
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   } while(Pop() == 0);
@@ -460,7 +460,7 @@ void UNK_0xee58() // UNK_0xee58
   Push(Pop()+1); // 1+
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
@@ -505,7 +505,7 @@ void UNK_0xee96() // UNK_0xee96
 void UNK_0xeea4() // UNK_0xeea4
 {
   SetColor("BLACK");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   _gt_MAINVIEW(); // >MAINVIEW
   Push(0x001a);
   Push(0x002b);
@@ -585,7 +585,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
   Push(0x003a);
   Push(Pop() + Pop()); // +
   SETREGION(); // SETREGION
-  _dot_REGION_plus_(); // .REGION+
+  DrawREGION_plus_(); // .REGION+
   UNK_0xeea4(); // UNK_0xeea4
 }
 
@@ -622,7 +622,7 @@ void _4X4CONTOUR() // 4X4CONTOUR
   Push(0x001c);
   Push(Pop() + Pop()); // +
   SETREGION(); // SETREGION
-  _dot_REGION_plus_(); // .REGION+
+  DrawREGION_plus_(); // .REGION+
 }
 
 
@@ -743,7 +743,7 @@ void UNK_0xf007() // UNK_0xf007
             Push(b); // I'
           }
           Push(pp_COLOR); // COLOR
-          _ex__3(); // !_3
+          Store_3(); // !_3
           _2DUP(); // 2DUP
           Push(3);
           Push(3);
@@ -796,7 +796,7 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(0x000e);
   Push(Pop() + Pop()); // +
   SETREGION(); // SETREGION
-  _dot_REGION_plus_(); // .REGION+
+  DrawREGION_plus_(); // .REGION+
   UNK_0xf007(); // UNK_0xf007
 }
 
@@ -854,9 +854,9 @@ void UNK_0xf133() // UNK_0xf133
   Push(Read16(Pop())); // @
   Push(0x002b);
   Push(Pop() + Pop()); // +
-  _ex_VISWINDOW(); // !VISWINDOW
+  StoreVISWINDOW(); // !VISWINDOW
   _4X4CONTOUR(); // 4X4CONTOUR
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
 }
 
@@ -875,7 +875,7 @@ void UNK_0xf187() // UNK_0xf187
   Push(pp__i_2X2); // '2X2
   Push(Read16(Pop())); // @
   Push(pp__i__dot_BACKG); // '.BACKG
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(2);
   Push(Read16(regsp)); // DUP
   Push(pp_XWLD_c_XPIX); // XWLD:XPIX
@@ -894,10 +894,10 @@ void UNK_0xf187() // UNK_0xf187
   Push(Read16(Pop())); // @
   Push(0x003a);
   Push(Pop() + Pop()); // +
-  _ex_VISWINDOW(); // !VISWINDOW
+  StoreVISWINDOW(); // !VISWINDOW
   _2X2CONTOUR(); // 2X2CONTOUR
   UNK_0xeea4(); // UNK_0xeea4
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
 }
 
@@ -937,9 +937,9 @@ void UNK_0xf1cf() // UNK_0xf1cf
   Push(Read16(Pop())); // @
   Push(0x0029);
   Push(Pop() + Pop()); // +
-  _ex_VISWINDOW(); // !VISWINDOW
+  StoreVISWINDOW(); // !VISWINDOW
   _8X8CONTOUR(); // 8X8CONTOUR
-  _dot_LOCAL_dash_ICONS(); // .LOCAL-ICONS
+  DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   DCLIPSET(); // DCLIPSET
 }
@@ -1168,7 +1168,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
 // 0xf318: WORD '.ROCK' codep=0x224c parp=0xf322
 // ================================================
 
-void _dot_ROCK() // .ROCK
+void DrawROCK() // .ROCK
 {
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
@@ -1189,7 +1189,7 @@ void _dot_ROCK() // .ROCK
 // 0xf33a: WORD '.LIQUID' codep=0x224c parp=0xf346
 // ================================================
 
-void _dot_LIQUID() // .LIQUID
+void DrawLIQUID() // .LIQUID
 {
   Push(pp_O_dash_COLOR); // O-COLOR
   _1_dot_5_at_(); // 1.5@
@@ -1198,7 +1198,7 @@ void _dot_LIQUID() // .LIQUID
   Push(0xe780); Push(0x0001);
   UNK_0xee86(); // UNK_0xee86
   GCR(); // GCR
-  _dot_ROCK(); // .ROCK
+  DrawROCK(); // .ROCK
 }
 
 
@@ -1206,7 +1206,7 @@ void _dot_LIQUID() // .LIQUID
 // 0xf35c: WORD '.CRYSTAL' codep=0x224c parp=0xf369
 // ================================================
 
-void _dot_CRYSTAL() // .CRYSTAL
+void DrawCRYSTAL() // .CRYSTAL
 {
   Push(0xe797); Push(0x0001);
   UNK_0xee86(); // UNK_0xee86
@@ -1217,7 +1217,7 @@ void _dot_CRYSTAL() // .CRYSTAL
 // 0xf373: WORD '.ICE' codep=0x224c parp=0xf37c
 // ================================================
 
-void _dot_ICE() // .ICE
+void DrawICE() // .ICE
 {
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_at_(); // 1.5@
@@ -1236,7 +1236,7 @@ void _dot_ICE() // .ICE
 // 0xf396: WORD '.MOLTEN' codep=0x224c parp=0xf3a2
 // ================================================
 
-void _dot_MOLTEN() // .MOLTEN
+void DrawMOLTEN() // .MOLTEN
 {
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_at_(); // 1.5@
@@ -1252,7 +1252,7 @@ void _dot_MOLTEN() // .MOLTEN
 // 0xf3b2: WORD '.CARPET' codep=0x224c parp=0xf3be
 // ================================================
 
-void _dot_CARPET() // .CARPET
+void DrawCARPET() // .CARPET
 {
   Push(pp_P_dash_CARP); // P-CARP
   _1_dot_5_at_(); // 1.5@
@@ -1284,19 +1284,19 @@ void _slash_SURF() // /SURF
   switch(Pop()) // /SURF
   {
   case 0:
-    _dot_CRYSTAL(); // .CRYSTAL
+    DrawCRYSTAL(); // .CRYSTAL
     break;
   case 2:
-    _dot_LIQUID(); // .LIQUID
+    DrawLIQUID(); // .LIQUID
     break;
   case 3:
-    _dot_ICE(); // .ICE
+    DrawICE(); // .ICE
     break;
   case 4:
-    _dot_MOLTEN(); // .MOLTEN
+    DrawMOLTEN(); // .MOLTEN
     break;
   case 5:
-    _dot_ROCK(); // .ROCK
+    DrawROCK(); // .ROCK
     break;
   default:
     NOP(); // NOP
@@ -1309,14 +1309,14 @@ void _slash_SURF() // /SURF
 // 0xf411: WORD '.SURFACE' codep=0x224c parp=0xf41e
 // ================================================
 
-void _dot_SURFACE() // .SURFACE
+void DrawSURFACE() // .SURFACE
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xecba); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   _slash_SURF(); // /SURF case
-  _dot_CARPET(); // .CARPET
+  DrawCARPET(); // .CARPET
   ICLOSE(); // ICLOSE
 }
 
@@ -1328,7 +1328,7 @@ void _dot_SURFACE() // .SURFACE
 void UNK_0xf430() // UNK_0xf430
 {
   SetColor("LT-BLUE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -1339,7 +1339,7 @@ void UNK_0xf430() // UNK_0xf430
 void UNK_0xf438() // UNK_0xf438
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
 }
 
 
@@ -1412,7 +1412,7 @@ void UNK_0xf48d() // UNK_0xf48d
   UNK_0xf430(); // UNK_0xf430
   PRINT("TERRAIN:", 8); // (.")
   UNK_0xf438(); // UNK_0xf438
-  _dot_SURFACE(); // .SURFACE
+  DrawSURFACE(); // .SURFACE
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
@@ -1481,7 +1481,7 @@ void UNK_0xf4f4() // UNK_0xf4f4
 void UNK_0xf50a() // UNK_0xf50a
 {
   UNK_0xee28(); // UNK_0xee28
-  _ask_QUIT(); // ?QUIT
+  IsQUIT(); // ?QUIT
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
 
@@ -1521,7 +1521,7 @@ void MAPS() // MAPS
 // ================================================
 // entry
 
-void _dot_STORM() // .STORM
+void DrawSTORM() // .STORM
 {
   UNK_0xf485(); // UNK_0xf485
   UNK_0xf438(); // UNK_0xf438

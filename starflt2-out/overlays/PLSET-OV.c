@@ -105,20 +105,20 @@ void WITHIN(); // WITHIN
 void RRND(); // RRND
 void SQRT(); // SQRT
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
 void INEXT(); // INEXT
 void IFIRST(); // IFIRST
 void IFIND(); // IFIND
 void ALL(); // ALL
-void _ex_XYSEED(); // !XYSEED
+void StoreXYSEED(); // !XYSEED
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -312,7 +312,7 @@ void UNK_0xee0e() // UNK_0xee0e
   Push(0);
   do
   {
-    _at_INST_dash_C(); // @INST-C
+    GetINST_dash_C(); // @INST-C
     Push(Read16(cc_UNK_0xed66)); // UNK_0xed66
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -401,7 +401,7 @@ void UNK_0xeea4() // UNK_0xeea4
 {
   UNK_0xee44(); // UNK_0xee44
   Push(pp_GLOBALS); // GLOBALS
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
@@ -410,7 +410,7 @@ void UNK_0xeea4() // UNK_0xeea4
   Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  _ex_XYSEED(); // !XYSEED
+  StoreXYSEED(); // !XYSEED
 }
 
 
@@ -438,7 +438,7 @@ void UNK_0xeef8() // UNK_0xeef8
   HI_dash_MASS(); // HI-MASS
   RRND(); // RRND
   LoadData(UNK_0xed9a); // from 'PLANET      '
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -658,7 +658,7 @@ void UNK_0xf072() // UNK_0xf072
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   UNK_0xefe0(); // UNK_0xefe0
   ICLOSE(); // ICLOSE
 }
@@ -928,7 +928,7 @@ void UNK_0xf21b() // UNK_0xf21b
   Push(a); // R>
   Pop(); // DROP
   Push(pp_HYDRO); // HYDRO
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -990,7 +990,7 @@ void UNK_0xf283() // UNK_0xf283
     Push(0);
   }
   Push(pp_ATMO); // ATMO
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -1006,10 +1006,10 @@ void UNK_0xf2a1() // UNK_0xf2a1
   {
     Push(5);
     Push(pp_HYDRO); // HYDRO
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(0x000f);
     Push(pp_ATMO); // ATMO
-    _ex__2(); // !_2
+    Store_2(); // !_2
     return;
   }
   LoadData(UNK_0xeda2); // from 'PLANET      '
@@ -1018,10 +1018,10 @@ void UNK_0xf2a1() // UNK_0xf2a1
   {
     Push(5);
     Push(pp_HYDRO); // HYDRO
-    _ex__2(); // !_2
+    Store_2(); // !_2
     Push(0x000f);
     Push(pp_ATMO); // ATMO
-    _ex__2(); // !_2
+    Store_2(); // !_2
     return;
   }
   UNK_0xf21b(); // UNK_0xf21b
@@ -1037,7 +1037,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
 void UNK_0xf329() // UNK_0xf329
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xeda2); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
@@ -1291,14 +1291,14 @@ void UNK_0xf4ed() // UNK_0xf4ed
 void UNK_0xf501() // UNK_0xf501
 {
   Push(pp__ro_ELIST_rc_); // (ELIST)
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xf4f7);
   ALL(); // ALL
   IFIRST(); // IFIRST
   Push(1);
   Push(0x65e1+TEXT_dash_CO.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(2);
   _star_CLOSE(); // *CLOSE
 }
@@ -1314,8 +1314,8 @@ void PLAN_dash_RUL() // PLAN-RUL
   UNK_0xf501(); // UNK_0xf501
   UNK_0xeea4(); // UNK_0xeea4
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
-  _at_INST_dash_S(); // @INST-S
+  Get_gt_C_plus_S(); // @>C+S
+  GetINST_dash_S(); // @INST-S
   Push(0x0011);
   _gt_(); // >
   if (Pop() != 0)

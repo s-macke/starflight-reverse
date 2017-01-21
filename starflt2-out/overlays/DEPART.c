@@ -26,10 +26,10 @@
 // =================================
 extern const unsigned short int cc_TRUE; // TRUE
 extern const unsigned short int cc_FALSE; // FALSE
-extern const unsigned short int pp__ask_CRITIC; // ?CRITIC
+extern const unsigned short int pp_IsCRITIC; // ?CRITIC
 extern const unsigned short int pp_EDL; // EDL
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
-extern const unsigned short int pp__ask_LANDED; // ?LANDED
+extern const unsigned short int pp_IsLANDED; // ?LANDED
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
 extern const unsigned short int pp__ro_PLANET; // (PLANET
@@ -40,21 +40,21 @@ void MAX(); // MAX
 void MIN(); // MIN
 void WITHIN(); // WITHIN
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
 void _099(); // 099
-void _ex_INST_dash_S(); // !INST-S
-void _at_INST_dash_C(); // @INST-C
-void _at_INST_dash_S(); // @INST-S
+void StoreINST_dash_S(); // !INST-S
+void GetINST_dash_C(); // @INST-C
+void GetINST_dash_S(); // @INST-S
 void CDROP(); // CDROP
 void CI_i_(); // CI'
-void _ask_NULL(); // ?NULL
+void IsNULL(); // ?NULL
 void ICLOSE(); // ICLOSE
 void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
+void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
-void _ask_LAST(); // ?LAST
+void IsLAST(); // ?LAST
 void INEXT(); // INEXT
 void IPREV(); // IPREV
 void IFIRST(); // IFIRST
@@ -100,7 +100,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
 
 void UNK_0xf3ba() // UNK_0xf3ba
 {
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   Push(3);
   _st_(); // <
   CI_i_(); // CI'
@@ -116,7 +116,7 @@ void UNK_0xf3ba() // UNK_0xf3ba
   IFIND(); // IFIND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  _at_INST_dash_S(); // @INST-S
+  GetINST_dash_S(); // @INST-S
   Push(3);
   Push(5);
   WITHIN(); // WITHIN
@@ -172,11 +172,11 @@ void DISPOSAL() // DISPOSAL
 
 void UNK_0xf423() // UNK_0xf423
 {
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    _at_INST_dash_C(); // @INST-C
+    GetINST_dash_C(); // @INST-C
     DISPOSAL(); // DISPOSAL case
     return;
   }
@@ -206,7 +206,7 @@ void UNK_0xf439() // UNK_0xf439
 void UNK_0xf447() // UNK_0xf447
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
   label5:
@@ -217,9 +217,9 @@ void UNK_0xf447() // UNK_0xf447
   IOPEN(); // IOPEN
 
   label3:
-  _ask_LAST(); // ?LAST
+  IsLAST(); // ?LAST
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
@@ -233,7 +233,7 @@ void UNK_0xf447() // UNK_0xf447
   {
     IDELETE(); // IDELETE
   }
-  _ask_NULL(); // ?NULL
+  IsNULL(); // ?NULL
   ICLOSE(); // ICLOSE
   UNK_0xf439(); // UNK_0xf439
   goto label5;
@@ -251,11 +251,11 @@ void UNK_0xf447() // UNK_0xf447
 void UNK_0xf48d() // UNK_0xf48d
 {
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
   Push(pp_SUPER_dash_B); // SUPER-B
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
 
@@ -285,7 +285,7 @@ IFieldType UNK_0xf4b7 = {0x34, 0x12, 0x01};
 void UNK_0xf4bc() // UNK_0xf4bc
 {
   Push(pp__ro_AORIGI); // (AORIGI
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
   Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
@@ -330,12 +330,12 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 void DEPART() // DEPART
 {
-  Push(pp__ask_CRITIC); // ?CRITIC
+  Push(pp_IsCRITIC); // ?CRITIC
   _099(); // 099
   Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW-
-  _ex__2(); // !_2
-  Push(pp__ask_LANDED); // ?LANDED
+  Store_2(); // !_2
+  Push(pp_IsLANDED); // ?LANDED
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -344,8 +344,8 @@ void DEPART() // DEPART
   }
   Push(-1);
   Push(pp_PLHI); // PLHI
-  _ex__2(); // !_2
-  Push(pp__ask_LANDED); // ?LANDED
+  Store_2(); // !_2
+  Push(pp_IsLANDED); // ?LANDED
   _099(); // 099
   Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_at_(); // 1.5@
@@ -358,9 +358,9 @@ void DEPART() // DEPART
   Push(pp__ro_AORIGI); // (AORIGI
   _1_dot_5_ex__2(); // 1.5!_2
   Push(pp__ro_TRADER); // (TRADER
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0);
-  _ex_INST_dash_S(); // !INST-S
+  StoreINST_dash_S(); // !INST-S
   ICLOSE(); // ICLOSE
 }
 

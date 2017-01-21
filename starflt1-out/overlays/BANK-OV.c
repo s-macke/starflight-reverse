@@ -22,25 +22,25 @@
 //           T-AMT  codep:0x744d parp:0xefbb size:0x0003 C-string:'T_dash_AMT'
 //          T-DATE  codep:0x744d parp:0xefc0 size:0x0003 C-string:'T_dash_DATE'
 //        SET-BANK  codep:0x224c parp:0xefc5 size:0x0006 C-string:'SET_dash_BANK'
-//          !TFLAG  codep:0x224c parp:0xefd6 size:0x000c C-string:'_ex_TFLAG'
-//       D@BALANCE  codep:0x224c parp:0xeff0 size:0x000a C-string:'D_at_BALANCE'
-//       D!BALANCE  codep:0x224c parp:0xf008 size:0x000a C-string:'D_ex_BALANCE'
-//        ?BALANCE  codep:0x224c parp:0xf01f size:0x0008 C-string:'_ask_BALANCE'
+//          !TFLAG  codep:0x224c parp:0xefd6 size:0x000c C-string:'StoreTFLAG'
+//       D@BALANCE  codep:0x224c parp:0xeff0 size:0x000a C-string:'GetDBALANCE'
+//       D!BALANCE  codep:0x224c parp:0xf008 size:0x000a C-string:'StoreDBALANCE'
+//        ?BALANCE  codep:0x224c parp:0xf01f size:0x0008 C-string:'IsBALANCE'
 //    INIT-BALANCE  codep:0x224c parp:0xf038 size:0x000e C-string:'INIT_dash_BALANCE'
 //        TRANSACT  codep:0x224c parp:0xf053 size:0x0072 C-string:'TRANSACT'
 //            INT%  codep:0x224c parp:0xf0ce size:0x0042 C-string:'INT_pe_'
 //            DOTS  codep:0x1d29 parp:0xf112 size:0x0014 C-string:'DOTS'
-//           .DOTS  codep:0x224c parp:0xf128 size:0x0028 C-string:'_dot_DOTS'
-//          .BDATE  codep:0x224c parp:0xf152 size:0x0042 C-string:'_dot_BDATE'
-//           .$AMT  codep:0x224c parp:0xf196 size:0x0042 C-string:'_dot__do_AMT'
-//          ?.MESS  codep:0x224c parp:0xf1da size:0x0006 C-string:'_ask__dot_MESS'
+//           .DOTS  codep:0x224c parp:0xf128 size:0x0028 C-string:'DrawDOTS'
+//          .BDATE  codep:0x224c parp:0xf152 size:0x0042 C-string:'DrawBDATE'
+//           .$AMT  codep:0x224c parp:0xf196 size:0x0042 C-string:'Draw_do_AMT'
+//          ?.MESS  codep:0x224c parp:0xf1da size:0x0006 C-string:'Is_dot_MESS'
 //          BTITLE  codep:0x224c parp:0xf1e2 size:0x008b C-string:'BTITLE'
 //         BOFRAME  codep:0x224c parp:0xf26f size:0x013a C-string:'BOFRAME'
 //           BINFO  codep:0x224c parp:0xf3ab size:0x00b7 C-string:'BINFO'
 //         BSCREEN  codep:0x224c parp:0xf464 size:0x000c C-string:'BSCREEN'
 //           BMESS  codep:0x224c parp:0xf472 size:0x0038 C-string:'BMESS'
-//        .BALANCE  codep:0x224c parp:0xf4ac size:0x0016 C-string:'_dot_BALANCE'
-//           .BANK  codep:0x224c parp:0xf4c4 size:0x001e C-string:'_dot_BANK'
+//        .BALANCE  codep:0x224c parp:0xf4ac size:0x0016 C-string:'DrawBALANCE'
+//           .BANK  codep:0x224c parp:0xf4c4 size:0x001e C-string:'DrawBANK'
 //        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
@@ -60,16 +60,16 @@ void D_st_(); // D<
 void _n_(); // #
 void _n__gt_(); // #>
 void _st__n_(); // <#
-void _dot_(); // .
+void Draw(); // .
 void D_dot_R(); // D.R
 void D_dash_(); // D-
 void D0_eq_(); // D0=
 void D_gt_(); // D>
 void DMIN(); // DMIN
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _plus__ex_(); // +!
-void D_ex_(); // D!
+void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
 void COVER(); // COVER
@@ -77,13 +77,13 @@ void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void IOPEN(); // IOPEN
-void _ask_FIRST(); // ?FIRST
+void IsFIRST(); // ?FIRST
 void INEXT(); // INEXT
 void IFIRST(); // IFIRST
 void ILAST(); // ILAST
 void IDELETE(); // IDELETE
 void _star_CREATE(); // *CREATE
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void _gt_DISPLAY(); // >DISPLAY
 void _gt_HIDDEN(); // >HIDDEN
 void SCR_dash_RES(); // SCR-RES
@@ -92,11 +92,11 @@ void BLT(); // BLT
 void _gt_1FONT(); // >1FONT
 void _gt_3FONT(); // >3FONT
 void POS_dot_(); // POS.
-void _dot_1LOGO(); // .1LOGO
+void Draw1LOGO(); // .1LOGO
 void _do__dot_(); // $.
 void CTINIT(); // CTINIT
 void XYSCAN(); // XYSCAN
-void _ask_TRIG(); // ?TRIG
+void IsTRIG(); // ?TRIG
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void SWAP(); // SWAP
@@ -205,7 +205,7 @@ void SET_dash_BANK() // SET-BANK
 // ================================================
 // entry
 
-void _ex_TFLAG() // !TFLAG
+void StoreTFLAG() // !TFLAG
 {
   SET_dash_BANK(); // SET-BANK
   Push(1);
@@ -220,7 +220,7 @@ void _ex_TFLAG() // !TFLAG
 // ================================================
 // entry
 
-void D_at_BALANCE() // D@BALANCE
+void GetDBALANCE() // D@BALANCE
 {
   SET_dash_BANK(); // SET-BANK
   Push(0x63ef+BALANCE.offset); // IFIELD
@@ -234,11 +234,11 @@ void D_at_BALANCE() // D@BALANCE
 // ================================================
 // entry
 
-void D_ex_BALANCE() // D!BALANCE
+void StoreDBALANCE() // D!BALANCE
 {
   SET_dash_BANK(); // SET-BANK
   Push(0x63ef+BALANCE.offset); // IFIELD
-  D_ex_(); // D!
+  StoreD(); // D!
   ICLOSE(); // ICLOSE
 }
 
@@ -248,9 +248,9 @@ void D_ex_BALANCE() // D!BALANCE
 // ================================================
 // entry
 
-void _ask_BALANCE() // ?BALANCE
+void IsBALANCE() // ?BALANCE
 {
-  D_at_BALANCE(); // D@BALANCE
+  GetDBALANCE(); // D@BALANCE
   D_gt_(); // D>
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
@@ -267,7 +267,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
   Push(0x63ef+MASTERBALANCE.offset); // IFIELD
   _2_at_(); // 2@
   Push(0x63ef+BALANCE.offset); // IFIELD
-  D_ex_(); // D!
+  StoreD(); // D!
   ICLOSE(); // ICLOSE
 }
 
@@ -300,7 +300,7 @@ void TRANSACT() // TRANSACT
     do // (DO)
     {
       INEXT(); // INEXT
-      _ask_FIRST(); // ?FIRST
+      IsFIRST(); // ?FIRST
       if (Pop() != 0)
       {
         Push(Pop()+1); // 1+
@@ -327,14 +327,14 @@ void TRANSACT() // TRANSACT
     D_dash_(); // D-
     ICLOSE(); // ICLOSE
     Push(0x63ef+T_dash_AMT.offset); // IFIELD
-    D_ex_(); // D!
+    StoreD(); // D!
     Push(0x63ef+T_dash_DATE.offset); // IFIELD
-    _ex__3(); // !_3
+    Store_3(); // !_3
     ICLOSE(); // ICLOSE
     Push(0x63ef+BALANCE.offset); // IFIELD
     _2_at_(); // 2@
     Push(0x63ef+MASTERBALANCE.offset); // IFIELD
-    D_ex_(); // D!
+    StoreD(); // D!
     Push(0);
     Push(0x63ef+TFLAG.offset); // IFIELD
     C_ex_(); // C!
@@ -354,7 +354,7 @@ void TRANSACT() // TRANSACT
 void INT_pe_() // INT%
 {
   INIT_dash_BALANCE(); // INIT-BALANCE
-  D_at_BALANCE(); // D@BALANCE
+  GetDBALANCE(); // D@BALANCE
   Push(0x000c);
   Push(0x0064);
   M_star__slash_(); // M*/
@@ -372,16 +372,16 @@ void INT_pe_() // INT%
     Pop(); Pop(); // 2DROP
     return;
   }
-  D_at_BALANCE(); // D@BALANCE
+  GetDBALANCE(); // D@BALANCE
   D_plus_(); // D+
-  D_ex_BALANCE(); // D!BALANCE
-  _ex_TFLAG(); // !TFLAG
+  StoreDBALANCE(); // D!BALANCE
+  StoreTFLAG(); // !TFLAG
   Push(5);
   TRANSACT(); // TRANSACT
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
   Push(pp_PORTDAT); // PORTDAT
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -394,7 +394,7 @@ void INT_pe_() // INT%
 // 0xf126: WORD '.DOTS' codep=0x224c parp=0xf128
 // ================================================
 
-void _dot_DOTS() // .DOTS
+void DrawDOTS() // .DOTS
 {
   Push(0xfffc);
   Push(pp_YBLT); // YBLT
@@ -403,13 +403,13 @@ void _dot_DOTS() // .DOTS
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(pp_WBLT); // WBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(1);
   Push(pp_LBLT); // LBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_DOTS); // DOTS
   Push(pp_ABLT); // ABLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   BLT(); // BLT
   Push(4);
   Push(pp_YBLT); // YBLT
@@ -421,7 +421,7 @@ void _dot_DOTS() // .DOTS
 // 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152
 // ================================================
 
-void _dot_BDATE() // .BDATE
+void DrawBDATE() // .BDATE
 {
   Push(0x63ef+T_dash_DATE.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -449,7 +449,7 @@ void _dot_BDATE() // .BDATE
   _n__gt_(); // #>
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT("-", 1); // (.")
-  _dot_(); // .
+  Draw(); // .
 }
 
 
@@ -457,7 +457,7 @@ void _dot_BDATE() // .BDATE
 // 0xf194: WORD '.$AMT' codep=0x224c parp=0xf196
 // ================================================
 
-void _dot__do_AMT() // .$AMT
+void Draw_do_AMT() // .$AMT
 {
   unsigned short int a;
   Push(0x63ef+T_dash_AMT.offset); // IFIELD
@@ -495,7 +495,7 @@ void _dot__do_AMT() // .$AMT
 // 0xf1d8: WORD '?.MESS' codep=0x224c parp=0xf1da
 // ================================================
 
-void _ask__dot_MESS() // ?.MESS
+void Is_dot_MESS() // ?.MESS
 {
   LoadData(TRANSTEXT); // from 'BANK-TRANS  '
   _do__dot_(); // $.
@@ -558,7 +558,7 @@ void BTITLE() // BTITLE
 void BOFRAME() // BOFRAME
 {
   unsigned short int i, imax;
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   Push(3);
@@ -678,7 +678,7 @@ void BOFRAME() // BOFRAME
   Push(6);
   Push(0x000f);
   SetColor("DK-BLUE");
-  _dot_1LOGO(); // .1LOGO
+  Draw1LOGO(); // .1LOGO
 }
 
 
@@ -695,11 +695,11 @@ void BINFO() // BINFO
   PRINT("DATE", 4); // (.")
   Push(0x003e);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("TRANSACTIONS", 12); // (.")
   Push(0x0085);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
+  Store_3(); // !_3
   PRINT("AMT", 3); // (.")
   Push(0x0013);
   Push(0x00a1);
@@ -728,7 +728,7 @@ void BINFO() // BINFO
   POS_dot_(); // POS.
   PRINT("BALANCE", 7); // (.")
   Push(0x0077);
-  _dot_DOTS(); // .DOTS
+  DrawDOTS(); // .DOTS
 }
 
 
@@ -763,17 +763,17 @@ void BMESS() // BMESS
   SWAP(); // SWAP
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  _dot_BDATE(); // .BDATE
+  DrawBDATE(); // .BDATE
   Push(0x0032);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
-  _ask__dot_MESS(); // ?.MESS
+  Store_3(); // !_3
+  Is_dot_MESS(); // ?.MESS
   Push(0x007c);
-  _dot_DOTS(); // .DOTS
+  DrawDOTS(); // .DOTS
   Push(0x007d);
   Push(pp_XBLT); // XBLT
-  _ex__3(); // !_3
-  _dot__do_AMT(); // .$AMT
+  Store_3(); // !_3
+  Draw_do_AMT(); // .$AMT
 }
 
 
@@ -781,7 +781,7 @@ void BMESS() // BMESS
 // 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac
 // ================================================
 
-void _dot_BALANCE() // .BALANCE
+void DrawBALANCE() // .BALANCE
 {
   Push(0x0079);
   Push(0x001d);
@@ -798,7 +798,7 @@ void _dot_BALANCE() // .BALANCE
 // 0xf4c2: WORD '.BANK' codep=0x224c parp=0xf4c4
 // ================================================
 
-void _dot_BANK() // .BANK
+void DrawBANK() // .BANK
 {
   SET_dash_BANK(); // SET-BANK
   IOPEN(); // IOPEN
@@ -809,11 +809,11 @@ void _dot_BANK() // .BANK
     BMESS(); // BMESS
     Push(Pop()+1); // 1+
     INEXT(); // INEXT
-    _ask_FIRST(); // ?FIRST
+    IsFIRST(); // ?FIRST
   } while(Pop() == 0);
   Pop(); // DROP
   ICLOSE(); // ICLOSE
-  _dot_BALANCE(); // .BALANCE
+  DrawBALANCE(); // .BALANCE
   ICLOSE(); // ICLOSE
 }
 
@@ -827,7 +827,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
 {
   _gt_HIDDEN(); // >HIDDEN
   BSCREEN(); // BSCREEN
-  _dot_BANK(); // .BANK
+  DrawBANK(); // .BANK
   CTINIT(); // CTINIT
   Push(0x0028);
   Push(0x000e);
@@ -839,7 +839,7 @@ void _ro_U_dash_BANK_rc_() // (U-BANK)
   {
     XYSCAN(); // XYSCAN
     Pop(); Pop(); // 2DROP
-    _ask_TRIG(); // ?TRIG
+    IsTRIG(); // ?TRIG
   } while(Pop() == 0);
 }
 

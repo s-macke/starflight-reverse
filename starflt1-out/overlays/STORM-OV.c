@@ -47,7 +47,7 @@ extern const unsigned short int pp__pe_EFF; // %EFF
 extern const unsigned short int pp_STORM; // STORM
 extern const unsigned short int pp_E_slash_M; // E/M
 extern const unsigned short int pp__n_STORM; // #STORM
-extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp_WTOP; // WTOP
 extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WRIGHT; // WRIGHT
@@ -74,8 +74,8 @@ void FILL_1(); // FILL_1
 void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
-void _ex_COLOR(); // !COLOR
+void Get_gt_C_plus_S(); // @>C+S
+void StoreCOLOR(); // !COLOR
 void POS_dot_(); // POS.
 void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 void _gt_TVCT(); // >TVCT
@@ -271,7 +271,7 @@ void UNK_0xf261() // UNK_0xf261
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xf248.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xf243.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
@@ -412,7 +412,7 @@ void UNK_0xf30e() // UNK_0xf30e
   Push(Pop()+1); // 1+
   SetColor("BLACK");
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
   Push(pp_WTOP); // WTOP
@@ -431,7 +431,7 @@ void UNK_0xf33c() // UNK_0xf33c
   UNK_0xf2f4(); // UNK_0xf2f4
   UNK_0xf30e(); // UNK_0xf30e
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xf28b.offset); // IFIELD
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
@@ -487,7 +487,7 @@ void INJURE_dash_PL() // INJURE-PL
   C_ex_(); // C!
   UNK_0xf33c(); // UNK_0xf33c
   ICLOSE(); // ICLOSE
-  Push(pp__ask_HEAL); // ?HEAL
+  Push(pp_IsHEAL); // ?HEAL
   ON_3(); // ON_3
   Push(0x01f4);
   MS(); // MS
@@ -634,7 +634,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(Read16(Pop())); // @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf24d); // from 'PLANET      '
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

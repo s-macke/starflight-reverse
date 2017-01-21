@@ -17,7 +17,7 @@
 //      UNK_0xe121  codep:0x224c parp:0xe121 size:0x0071 C-string:'UNK_0xe121'
 //           >SIZE  codep:0xe114 parp:0xe19c size:0x001e C-string:'_gt_SIZE'
 //          >MOVER  codep:0xe114 parp:0xe1c5 size:0x0021 C-string:'_gt_MOVER'
-//          ?COLOR  codep:0xe114 parp:0xe1f1 size:0x0054 C-string:'_ask_COLOR'
+//          ?COLOR  codep:0xe114 parp:0xe1f1 size:0x0054 C-string:'IsCOLOR'
 //           >PROP  codep:0xe114 parp:0xe24f size:0x002a C-string:'_gt_PROP'
 //      UNK_0xe27b  codep:0x224c parp:0xe27b size:0x0008 C-string:'UNK_0xe27b'
 //      UNK_0xe285  codep:0x224c parp:0xe285 size:0x000a C-string:'UNK_0xe285'
@@ -135,11 +135,11 @@ void D_eq_(); // D=
 void _3_star_(); // 3*
 void RRND(); // RRND
 void C_ex_(); // C!
-void _ex__3(); // !_3
+void Store_3(); // !_3
 void _1_dot_5_ex_(); // 1.5!
 void FILL_1(); // FILL_1
-void _at_RECORD(); // @RECORD
-void _at_INST_dash_SPECIES(); // @INST-SPECIES
+void GetRECORD(); // @RECORD
+void GetINST_dash_SPECIES(); // @INST-SPECIES
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void IFLD_at_(); // IFLD@
@@ -160,7 +160,7 @@ void _st__ex__gt_(); // <!>
 void _ro_SLIPPE(); // (SLIPPE
 void _gt_SIZE(); // >SIZE
 void _gt_MOVER(); // >MOVER
-void _ask_COLOR(); // ?COLOR
+void IsCOLOR(); // ?COLOR
 void _gt_PROP(); // >PROP
 void LIGHTS(); // LIGHTS
 void TALLEST(); // TALLEST
@@ -220,9 +220,9 @@ void UNK_0xe0f4() // UNK_0xe0f4
 void UNK_0xe100() // UNK_0xe100
 {
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -627,10 +627,10 @@ void UNK_0xe4b6() // UNK_0xe4b6
   Push(Read16(cc_UNK_0xe0da)); // UNK_0xe0da
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
   Push(Read16(Pop())); // @
-  _at_RECORD(); // @RECORD
+  GetRECORD(); // @RECORD
   Pop(); // DROP
 }
 
@@ -868,7 +868,7 @@ void UNK_0xeb97() // UNK_0xeb97
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  _at_INST_dash_SPECIES(); // @INST-SPECIES
+  GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(7);
   Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
@@ -903,12 +903,12 @@ void UNK_0xebb3() // UNK_0xebb3
   _1_dot_5_at_(); // 1.5@
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   LoadData(UNK_0xe3be); // from 'CREATURE    '
   _1_dot_5_ex_(); // 1.5!
   LoadData(UNK_0xe3b6); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -966,7 +966,7 @@ void UNK_0xec3f() // UNK_0xec3f
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
   Push(pp_PEAK); // PEAK
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData(UNK_0xe3a6); // from 'CREATURE    '
   C_ex_(); // C!
@@ -981,7 +981,7 @@ void UNK_0xec57() // UNK_0xec57
 {
   Push(0);
   Push(pp_PEAK); // PEAK
-  _ex__3(); // !_3
+  Store_3(); // !_3
   Push(0);
   Push(0x0055);
   UNK_0xe2bb(); // UNK_0xe2bb
@@ -1200,7 +1200,7 @@ void UNK_0xedaf() // UNK_0xedaf
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()+1); // 1+
   RRND(); // RRND
-  _ask_COLOR(); // ?COLOR
+  IsCOLOR(); // ?COLOR
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   LoadData(UNK_0xe486); // from 'CREATURE    '
@@ -1215,7 +1215,7 @@ void UNK_0xedaf() // UNK_0xedaf
   Push(0xe48e); // probable 'UNK_0xe48e'
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe4b6(); // UNK_0xe4b6
   _2SWAP(); // 2SWAP
   UNK_0xed63(); // UNK_0xed63
@@ -1424,7 +1424,7 @@ void UNK_0xef31() // UNK_0xef31
     }
   }
   LoadData(UNK_0xe49e); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1444,7 +1444,7 @@ void UNK_0xef99() // UNK_0xef99
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop()+1); // 1+
     RRND(); // RRND
-    _ask_COLOR(); // ?COLOR
+    IsCOLOR(); // ?COLOR
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     Push(5);
@@ -1553,14 +1553,14 @@ void UNK_0xf0b0() // UNK_0xf0b0
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   LoadData(UNK_0xe3ae); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
   LoadData(UNK_0xe3b6); // from 'CREATURE    '
   Push(Read16(Pop())); // @
   _slash_(); // /
   Push(1);
   MAX(); // MAX
   LoadData(UNK_0xe3b6); // from 'CREATURE    '
-  _ex__3(); // !_3
+  Store_3(); // !_3
 }
 
 
@@ -1622,7 +1622,7 @@ void UNK_0xf14a() // UNK_0xf14a
   UNK_0xebe7(); // UNK_0xebe7
   Push(0x0080);
   Push(pp_PEAK); // PEAK
-  _ex__3(); // !_3
+  Store_3(); // !_3
   UNK_0xe2bb(); // UNK_0xe2bb
   LoadData(UNK_0xe39e); // from 'CREATURE    '
   C_ex_(); // C!

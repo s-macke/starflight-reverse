@@ -32,7 +32,7 @@
 //      UNK_0xf268  codep:0x224c parp:0xf268 size:0x0020 C-string:'UNK_0xf268'
 //      UNK_0xf28a  codep:0x224c parp:0xf28a size:0x0017 C-string:'UNK_0xf28a'
 //      UNK_0xf2a3  codep:0x224c parp:0xf2a3 size:0x0084 C-string:'UNK_0xf2a3'
-//           .VITS  codep:0x224c parp:0xf331 size:0x0096 C-string:'_dot_VITS'
+//           .VITS  codep:0x224c parp:0xf331 size:0x0096 C-string:'DrawVITS'
 //          >SKILL  codep:0x4b3b parp:0xf3d2 size:0x0018 C-string:'_gt_SKILL'
 //      UNK_0xf3ec  codep:0x224c parp:0xf3ec size:0x001e C-string:'UNK_0xf3ec'
 //      UNK_0xf40c  codep:0x224c parp:0xf40c size:0x0012 C-string:'UNK_0xf40c'
@@ -54,18 +54,18 @@ extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
-extern const unsigned short int pp__ask_HEAL; // ?HEAL
+extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp_WTOP; // WTOP
 extern const unsigned short int pp_WLEFT; // WLEFT
 extern const unsigned short int pp_WCHARS; // WCHARS
-extern const unsigned short int pp__ask_ON_dash_PLA; // ?ON-PLA
-extern const unsigned short int pp__ask_10; // ?10
+extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
+extern const unsigned short int pp_Is10; // ?10
 extern const unsigned short int pp_HEALTI; // HEALTI
 extern const unsigned short int pp_ROSTER; // ROSTER
 extern IFieldType INST_dash_SI; // INST-SI
 void COUNT(); // COUNT
 void MIN(); // MIN
-void _dot_R(); // .R
+void DrawR(); // .R
 void PICK(); // PICK
 void _2OVER(); // 2OVER
 void D_eq_(); // D=
@@ -73,7 +73,7 @@ void KEY_2(); // KEY_2
 void _3_star_(); // 3*
 void _gt_FLAG(); // >FLAG
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void _1_dot_5_ex__2(); // 1.5!_2
 void _099(); // 099
@@ -84,8 +84,8 @@ void CI_i_(); // CI'
 void SET_dash_CUR(); // SET-CUR
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
-void _at__gt_C_plus_S(); // @>C+S
-void _ex_COLOR(); // !COLOR
+void Get_gt_C_plus_S(); // @>C+S
+void StoreCOLOR(); // !COLOR
 void _gt_1FONT(); // >1FONT
 void _gt_DISPLA(); // >DISPLA
 void BYE_2(); // BYE_2
@@ -98,7 +98,7 @@ void _do__dot_(); // $.
 void POLY_dash_ER(); // POLY-ER
 void GCR(); // GCR
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -304,7 +304,7 @@ void UNK_0xf151() // UNK_0xf151
   Push2Words("NULL");
   D_eq_(); // D=
   if (Pop() == 0) return;
-  Push(pp__ask_ON_dash_PLA); // ?ON-PLA
+  Push(pp_IsON_dash_PLA); // ?ON-PLA
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
@@ -316,10 +316,10 @@ void UNK_0xf151() // UNK_0xf151
   _gt_DISPLA(); // >DISPLA
   SetColor("YELLOW");
   Push(0x4fa9); // probable 'BLACK'
-  _ex__2(); // !_2
+  Store_2(); // !_2
   CTERASE(); // CTERASE
   SetColor("RED");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(1);
   Push(1);
   UNK_0xf09c(); // UNK_0xf09c
@@ -360,7 +360,7 @@ void ROLE_dash_C() // ROLE-C
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+UNK_0xf0eb.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -444,8 +444,8 @@ void UNK_0xf256() // UNK_0xf256
   UNK_0xf212(); // UNK_0xf212
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp__ask_HEAL); // ?HEAL
-  _ex__2(); // !_2
+  Push(pp_IsHEAL); // ?HEAL
+  Store_2(); // !_2
 }
 
 
@@ -459,7 +459,7 @@ void UNK_0xf268() // UNK_0xf268
   _gt_C(); // >C
   SET_dash_CUR(); // SET-CUR
   Push(0x65e1+UNK_0xf0c8.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   Push(0x0104);
   Push(0x65e1+UNK_0xf0e6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -480,7 +480,7 @@ void UNK_0xf28a() // UNK_0xf28a
   CTINIT(); // CTINIT
   Push(0x65e1+UNK_0xf0cd.offset); // IFIELD
   COUNT(); // COUNT
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   PRINT(" IS HEALED", 10); // (.")
 }
 
@@ -563,7 +563,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
   label1:
   UNK_0xf268(); // UNK_0xf268
   Push(pp_HEALTI); // HEALTI
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -572,7 +572,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
 // ================================================
 // entry
 
-void _dot_VITS() // .VITS
+void DrawVITS() // .VITS
 {
   unsigned short int a, b, i, imax, j, jmax;
   Push(pp_XORMODE); // XORMODE
@@ -584,7 +584,7 @@ void _dot_VITS() // .VITS
   Push(Read16(Pop())); // @
   b = Pop(); // >R
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0xf086(); // UNK_0xf086
   Push(0);
   Push(1);
@@ -641,11 +641,11 @@ void _dot_VITS() // .VITS
       SetColor("BLACK");
       POLY_dash_ER(); // POLY-ER
       Push(pp_XBLT); // XBLT
-      _ex__2(); // !_2
+      Store_2(); // !_2
       Push(0x65e1+UNK_0xf0eb.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(3);
-      _dot_R(); // .R
+      DrawR(); // .R
       PRINT("%", 1); // (.")
     }
     ICLOSE(); // ICLOSE
@@ -653,10 +653,10 @@ void _dot_VITS() // .VITS
   } while(i<imax); // (LOOP)
 
   Push(b); // R>
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   Push(a); // R>
   Push(pp_XORMODE); // XORMODE
-  _ex__2(); // !_2
+  Store_2(); // !_2
   _gt_TVCT(); // >TVCT
 }
 
@@ -708,7 +708,7 @@ void UNK_0xf3ec() // UNK_0xf3ec
   Push(2);
   Push(Pop() | Pop()); // OR
   Push(0x65e1+UNK_0xf0f0.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -722,8 +722,8 @@ void UNK_0xf40c() // UNK_0xf40c
   _eq_SPECIE(); // =SPECIE
   if (Pop() == 0) return;
   Push(0x000a);
-  Push(pp__ask_10); // ?10
-  _ex__2(); // !_2
+  Push(pp_Is10); // ?10
+  Store_2(); // !_2
 }
 
 
@@ -746,7 +746,7 @@ void UNK_0xf429() // UNK_0xf429
   unsigned short int i, imax;
   Push(0);
   Push(pp_UNK_0xf420); // UNK_0xf420
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1+UNK_0xf0be.offset); // IFIELD
@@ -767,7 +767,7 @@ void UNK_0xf429() // UNK_0xf429
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     OVER(); // OVER
     _gt_SKILL(); // >SKILL case
     Push(Read8(Pop())&0xFF); // C@
@@ -837,7 +837,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0x65e1+UNK_0xf0be.offset); // IFIELD
-  _at__gt_C_plus_S(); // @>C+S
+  Get_gt_C_plus_S(); // @>C+S
   UNK_0xf483(); // UNK_0xf483
   if (Pop() != 0)
   {
@@ -876,7 +876,7 @@ void UNK_0xf4d3() // UNK_0xf4d3
     _3_star_(); // 3*
     OVER(); // OVER
     Push(Pop() + Pop()); // +
-    _at__gt_C_plus_S(); // @>C+S
+    Get_gt_C_plus_S(); // @>C+S
     UNK_0xf483(); // UNK_0xf483
     if (Pop() != 0)
     {

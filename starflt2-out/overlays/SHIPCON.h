@@ -3,7 +3,7 @@
 #ifndef SHIPCON_H
 #define SHIPCON_H
 
-void _dot_NOFUN(); // .NOFUN
+void DrawNOFUN(); // .NOFUN
 void TOW_dash_US(); // TOW-US
 
 #endif

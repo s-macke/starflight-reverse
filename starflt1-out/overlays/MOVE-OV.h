@@ -4,7 +4,7 @@
 #define MOVE-OV_H
 
 void SET_dash_SPEED(); // SET-SPEED
-void _ask_POPULA(); // ?POPULA
+void IsPOPULA(); // ?POPULA
 void TV_dash_MOVE(); // TV-MOVE
 
 #endif

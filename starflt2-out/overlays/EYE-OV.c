@@ -99,10 +99,10 @@ void D_dash_(); // D-
 void DMAX(); // DMAX
 void RRND(); // RRND
 void C_ex__2(); // C!_2
-void _ex__2(); // !_2
+void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void _2_ex__2(); // 2!_2
-void D_ex_(); // D!
+void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
 void ICLOSE(); // ICLOSE
@@ -110,7 +110,7 @@ void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
 void IOPEN(); // IOPEN
 void IFIND(); // IFIND
-void _ex_COLOR(); // !COLOR
+void StoreCOLOR(); // !COLOR
 void RNDCLR(); // RNDCLR
 void BFILL(); // BFILL
 void DARK(); // DARK
@@ -121,20 +121,20 @@ void _gt_DISPLA(); // >DISPLA
 void V_gt_DISPL(); // V>DISPL
 void LCOPYBL(); // LCOPYBL
 void BYE_2(); // BYE_2
-void _ex_VISWIN(); // !VISWIN
-void _ex_IX(); // !IX
-void _ex_IY(); // !IY
+void StoreVISWIN(); // !VISWIN
+void StoreIX(); // !IX
+void StoreIY(); // !IY
 void INIT_dash_IC(); // INIT-IC
 void POINT_gt_I(); // POINT>I
-void _dot_LOCAL_dash_(); // .LOCAL-
-void _ask_ICON_eq_I(); // ?ICON=I
+void DrawLOCAL_dash_(); // .LOCAL-
+void IsICON_eq_I(); // ?ICON=I
 void _plus_ICONBO(); // +ICONBO
 void ORGLIST(); // ORGLIST
 void BEEPON_2(); // BEEPON_2
 void CTINIT(); // CTINIT
-void _dot_TTY(); // .TTY
+void DrawTTY(); // .TTY
 void XYSCAN(); // XYSCAN
-void _ask_TRIG(); // ?TRIG
+void IsTRIG(); // ?TRIG
 void _slash_STARD(); // /STARD
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
@@ -257,9 +257,9 @@ void UNK_0xebfd() // UNK_0xebfd
 {
   CTINIT(); // CTINIT
   UNK_0x3f09("PRESENCE OF UHL WEAPON IS PREVENTING");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f09("OUR ENTRY INTO THE ANOMALY");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -413,15 +413,15 @@ void UNK_0xecf5() // UNK_0xecf5
   Push(Pop()+2); // 2+
   Push(Read16(Pop())); // @
   Push(pp_SEED_3); // SEED_3
-  _ex__2(); // !_2
+  Store_2(); // !_2
   SetColor("YELLOW");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f09("GAME OVER - NO FUEL");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   Push(0x1388);
   MS(); // MS
   UNK_0x3f09("WARP ENGINES ABOUT TO... ");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   BEEPON_2(); // BEEPON_2
   Push(0x1388);
   MS(); // MS
@@ -501,7 +501,7 @@ void UNK_0xedb5() // UNK_0xedb5
   MIN(); // MIN
   Push(a); // I
   Push(Pop()+2); // 2+
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x0078);
   UNK_0xeda3(); // UNK_0xeda3
   Push(0xffc4);
@@ -515,7 +515,7 @@ void UNK_0xedb5() // UNK_0xedb5
   Push(a); // R>
   Push(4);
   Push(Pop() + Pop()); // +
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -654,12 +654,12 @@ void UNK_0xeee3() // UNK_0xeee3
   _gt_MAINVI(); // >MAINVI
   Push(0x0014);
   Push(pp_UNK_0xed9f); // UNK_0xed9f
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0);
   Push(3);
   RRND(); // RRND
   Push(pp_UNK_0xed9b); // UNK_0xed9b
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xeebd(); // UNK_0xeebd
   _gt_DISPLA(); // >DISPLA
 }
@@ -674,8 +674,8 @@ void UNK_0xeeff() // UNK_0xeeff
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   UNK_0xeee3(); // UNK_0xeee3
-  _ex_COLOR(); // !COLOR
-  _dot_TTY(); // .TTY
+  StoreCOLOR(); // !COLOR
+  DrawTTY(); // .TTY
 }
 
 
@@ -697,7 +697,7 @@ void UNK_0xef0d() // UNK_0xef0d
 void UNK_0xef15() // UNK_0xef15
 {
   Push(pp__dash_END); // -END
-  _ex__2(); // !_2
+  Store_2(); // !_2
 }
 
 
@@ -727,7 +727,7 @@ void UNK_0xef25() // UNK_0xef25
   UNK_0xef1d(); // UNK_0xef1d
   D_plus_(); // D+
   Push(pp__10_star_CARG); // 10*CARG
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(pp__10_star_END); // 10*END
   _2_at_(); // 2@
   UNK_0xef1d(); // UNK_0xef1d
@@ -735,7 +735,7 @@ void UNK_0xef25() // UNK_0xef25
   Push2Words("NULL");
   DMAX(); // DMAX
   Push(pp__10_star_END); // 10*END
-  D_ex_(); // D!
+  StoreD(); // D!
   UNK_0xef0d(); // UNK_0xef0d
   Push(0x000a);
   _slash_(); // /
@@ -763,7 +763,7 @@ void UNK_0xef25() // UNK_0xef25
   Push(0);
   MAX(); // MAX
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(4);
   _star_CLOSE(); // *CLOSE
   Push(a); // R>
@@ -778,9 +778,9 @@ void UNK_0xef25() // UNK_0xef25
 void UNK_0xef93() // UNK_0xef93
 {
   UNK_0x3f09("COMMANDER, WE ARE ONCE AGAIN IN OUR");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f09("OWN TIME PERIOD.");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
 }
 
 
@@ -791,20 +791,20 @@ void UNK_0xef93() // UNK_0xef93
 void UNK_0xefd4() // UNK_0xefd4
 {
   UNK_0x3f09("COMMANDER, FROM OUR ANALYSIS OF THE");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f09("LOCAL STELLAR FORMATIONS, WE HAVE");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f09("DETERMINED THAT WE HAVE SOMEHOW");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0x3f09("TRAVELLED BACK IN TIME.");
-  _dot_TTY(); // .TTY
+  DrawTTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
   Push(0x65e1+UNK_0xebcb.offset); // IFIELD
   UNK_0xebd5(); // UNK_0xebd5
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   Push(0x65e1+UNK_0xebd0.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   ICLOSE(); // ICLOSE
 }
 
@@ -898,7 +898,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
     Push(6);
     _slash_(); // /
     Push(pp_UNK_0xed9f); // UNK_0xed9f
-    _ex__2(); // !_2
+    Store_2(); // !_2
     UNK_0xeebd(); // UNK_0xeebd
     Push(-1);
     int step = Pop();
@@ -924,7 +924,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_PAST); // PAST
-  _ex__2(); // !_2
+  Store_2(); // !_2
   INIT_dash_IC(); // INIT-IC
   Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
@@ -1035,7 +1035,7 @@ void UNK_0xf184() // UNK_0xf184
   Push(Read16(cc_UNK_0xf178)); // UNK_0xf178
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  _ex_VISWIN(); // !VISWIN
+  StoreVISWIN(); // !VISWIN
 }
 
 
@@ -1061,7 +1061,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 void UNK_0xf1b6() // UNK_0xf1b6
 {
   SetColor("YELLOW");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f09(" ");
   UNK_0xeeff(); // UNK_0xeeff
   UNK_0x3f09("WARNING        WARNING         WARNING");
@@ -1126,7 +1126,7 @@ void UNK_0xf297() // UNK_0xf297
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp_UNK_0xec7d); // UNK_0xec7d
-  D_ex_(); // D!
+  StoreD(); // D!
 }
 
 
@@ -1137,7 +1137,7 @@ void UNK_0xf297() // UNK_0xf297
 void UNK_0xf2ad() // UNK_0xf2ad
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f09("IF WE APPLY FULL REVERSE THRUST WE MAY");
   UNK_0xeeff(); // UNK_0xeeff
   UNK_0x3f09("BE ABLE TO BACK OUT. SHALL WE ATTEMPT ");
@@ -1156,7 +1156,7 @@ void UNK_0xf2ad() // UNK_0xf2ad
 void UNK_0xf338() // UNK_0xf338
 {
   SetColor("WHITE");
-  _ex_COLOR(); // !COLOR
+  StoreCOLOR(); // !COLOR
   UNK_0x3f09("COMMANDER, THE SHIP'S HULL IS UNDER");
   UNK_0xeeff(); // UNK_0xeeff
   UNK_0x3f09("TERRIFIC PRESSURE AND WE ARE IN DANGER");
@@ -1180,9 +1180,9 @@ void UNK_0xf3f9() // UNK_0xf3f9
   _2_at_(); // 2@
   _2DUP(); // 2DUP
   Push(pp_UNK_0xec4b); // UNK_0xec4b
-  D_ex_(); // D!
+  StoreD(); // D!
   Push(pp_UNK_0xec7d); // UNK_0xec7d
-  D_ex_(); // D!
+  StoreD(); // D!
 }
 
 
@@ -1241,7 +1241,7 @@ void UNK_0xf441() // UNK_0xf441
   Push(pp_ANCHOR); // ANCHOR
   _2_ex__2(); // 2!_2
   ORGLIST(); // ORGLIST
-  _dot_LOCAL_dash_(); // .LOCAL-
+  DrawLOCAL_dash_(); // .LOCAL-
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
   DCLIPSE(); // DCLIPSE
@@ -1268,22 +1268,22 @@ void UNK_0xf45f() // UNK_0xf45f
   Push(Pop() + Pop()); // +
   _2DUP(); // 2DUP
   Push(pp_YABS); // YABS
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(pp_XABS); // XABS
-  _ex__2(); // !_2
+  Store_2(); // !_2
   UNK_0xebdf(); // UNK_0xebdf
   _2DUP(); // 2DUP
   Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   Push(0x65e1+INST_dash_X.offset); // IFIELD
-  _ex__2(); // !_2
+  Store_2(); // !_2
   CI(); // CI
-  _ask_ICON_eq_I(); // ?ICON=I
+  IsICON_eq_I(); // ?ICON=I
   Pop(); // DROP
   POINT_gt_I(); // POINT>I
   _2DUP(); // 2DUP
-  _ex_IY(); // !IY
-  _ex_IX(); // !IX
+  StoreIY(); // !IY
+  StoreIX(); // !IX
   UNK_0xf184(); // UNK_0xf184
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -1366,7 +1366,7 @@ void DO_dash_EYE() // DO-EYE
     UNK_0xf4a5(); // UNK_0xf4a5
     Push(pp_LKEY); // LKEY
     _099(); // 099
-    _ask_TRIG(); // ?TRIG
+    IsTRIG(); // ?TRIG
   } while(Pop() == 0);
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xf45f(); // UNK_0xf45f
