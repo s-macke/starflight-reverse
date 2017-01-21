@@ -3,6 +3,8 @@
 // overlay size   = 0x0d50
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -376,7 +378,7 @@ void UNK_0xe88a() // UNK_0xe88a
 // ================================================
 // 0xe89c: WORD 'UNK_0xe89e' codep=0x7394 parp=0xe89e
 // ================================================
-LoadDataType UNK_0xe89e = {0x15, 0x00, 0x10, 0x32, 0x6ad1};
+LoadDataType UNK_0xe89e = {TRADERSIDX, 0x00, 0x10, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe8a4: WORD 'UNK_0xe8a6' codep=0x224c parp=0xe8a6
@@ -458,22 +460,22 @@ void UNK_0xe8c4() // UNK_0xe8c4
 // ================================================
 // 0xe90c: WORD 'UNK_0xe90e' codep=0x7394 parp=0xe90e
 // ================================================
-LoadDataType UNK_0xe90e = {0x44, 0x00, 0x14, 0x22, 0x6f07};
+LoadDataType UNK_0xe90e = {CREATUREIDX, 0x00, 0x14, 0x22, 0x6f07};
 
 // ================================================
 // 0xe914: WORD 'UNK_0xe916' codep=0x7394 parp=0xe916
 // ================================================
-LoadDataType UNK_0xe916 = {0x44, 0x14, 0x02, 0x22, 0x6f07};
+LoadDataType UNK_0xe916 = {CREATUREIDX, 0x14, 0x02, 0x22, 0x6f07};
 
 // ================================================
 // 0xe91c: WORD 'UNK_0xe91e' codep=0x7394 parp=0xe91e
 // ================================================
-LoadDataType UNK_0xe91e = {0x09, 0x00, 0x18, 0x1b, 0x6a54};
+LoadDataType UNK_0xe91e = {STISIDX, 0x00, 0x18, 0x1b, 0x6a54};
 
 // ================================================
 // 0xe924: WORD 'UNK_0xe926' codep=0x7394 parp=0xe926
 // ================================================
-LoadDataType UNK_0xe926 = {0x09, 0x18, 0x02, 0x1b, 0x6a54};
+LoadDataType UNK_0xe926 = {STISIDX, 0x18, 0x02, 0x1b, 0x6a54};
 
 // ================================================
 // 0xe92c: WORD 'UNK_0xe92e' codep=0x224c parp=0xe92e
@@ -783,7 +785,7 @@ void UNK_0xeada() // UNK_0xeada
 void UNK_0xeb48() // UNK_0xeb48
 {
   UNK_0xe8a6(); // UNK_0xe8a6
-  LoadData(UNK_0xe89e); // from 'TRADERS     '
+  LoadData(UNK_0xe89e); // from 'TRADERS'
   Push(0x0010);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
@@ -1006,16 +1008,16 @@ void C_gt_VAL() // C>VAL
   switch(Pop()) // C>VAL
   {
   case 28:
-    LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+    LoadData(ART_dash_VAL); // from 'ARTIFACT'
     break;
   case 26:
-    LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+    LoadData(ELEM_dash_VA); // from 'ELEMENT'
     break;
   case 68:
-    LoadData(UNK_0xe916); // from 'CREATURE    '
+    LoadData(UNK_0xe916); // from 'CREATURE'
     break;
   case 9:
-    LoadData(UNK_0xe926); // from 'STIS        '
+    LoadData(UNK_0xe926); // from 'STIS'
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -1125,16 +1127,16 @@ void T_gt_NAME() // T>NAME
   switch(Pop()) // T>NAME
   {
   case 28:
-    LoadData(ART_dash_NAM); // from 'ARTIFACT    '
+    LoadData(ART_dash_NAM); // from 'ARTIFACT'
     break;
   case 68:
-    LoadData(UNK_0xe90e); // from 'CREATURE    '
+    LoadData(UNK_0xe90e); // from 'CREATURE'
     break;
   case 9:
-    LoadData(UNK_0xe91e); // from 'STIS        '
+    LoadData(UNK_0xe91e); // from 'STIS'
     break;
   case 26:
-    LoadData(ELEM_dash_NA); // from 'ELEMENT     '
+    LoadData(ELEM_dash_NA); // from 'ELEMENT'
     break;
   default:
     NOP(); // NOP

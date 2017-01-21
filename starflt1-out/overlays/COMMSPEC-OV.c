@@ -3,6 +3,8 @@
 // overlay size   = 0x0b30
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -313,17 +315,17 @@ void UNK_0xea8e() // UNK_0xea8e
 // ================================================
 // 0xea9e: WORD 'UNK_0xeaa0' codep=0x744d parp=0xeaa0
 // ================================================
-IFieldType UNK_0xeaa0 = {0x34, 0x12, 0x01};
+IFieldType UNK_0xeaa0 = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
 // 0xeaa3: WORD 'UNK_0xeaa5' codep=0x744d parp=0xeaa5
 // ================================================
-IFieldType UNK_0xeaa5 = {0x34, 0x13, 0x01};
+IFieldType UNK_0xeaa5 = {ORIGINATORIDX, 0x13, 0x01};
 
 // ================================================
 // 0xeaa8: WORD 'UNK_0xeaaa' codep=0x744d parp=0xeaaa
 // ================================================
-IFieldType UNK_0xeaaa = {0x14, 0x43, 0x02};
+IFieldType UNK_0xeaaa = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xeaad: WORD 'UNK_0xeaaf' codep=0x3b68 parp=0xeaaf
@@ -1301,7 +1303,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
         Push(0x000f);
         ICREATE(); // ICREATE
         _gt_C_plus_S(); // >C+S
-        LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+        LoadData(ART_dash_VOL); // from 'ARTIFACT'
         Push(Read16(Pop())); // @
         Push(0x63ef+INST_dash_QTY.offset); // IFIELD
         Store_3(); // !_3
@@ -1530,7 +1532,7 @@ void UNK_0xf24e() // UNK_0xf24e
 
 void UNK_0xf25a() // UNK_0xf25a
 {
-  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT'
   Push(Read16(regsp)); // DUP
   PAD(); // PAD
   Push(0x0018);
@@ -1571,7 +1573,7 @@ void UNK_0xf25a() // UNK_0xf25a
 
 void UNK_0xf2aa() // UNK_0xf2aa
 {
-  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   Push(0);
   Push(0x0021);

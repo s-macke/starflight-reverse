@@ -3,6 +3,8 @@
 // overlay size   = 0x06e0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -173,17 +175,17 @@ const unsigned short int cc_UNK_0xeece = 0xeece; // UNK_0xeece
 // ================================================
 // 0xee9c: WORD 'UNK_0xee9e' codep=0x7394 parp=0xee9e
 // ================================================
-LoadDataType UNK_0xee9e = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
+LoadDataType UNK_0xee9e = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xeea4: WORD 'UNK_0xeea6' codep=0x7394 parp=0xeea6
 // ================================================
-LoadDataType UNK_0xeea6 = {0x09, 0x00, 0x20, 0x1b, 0x6a54};
+LoadDataType UNK_0xeea6 = {STISIDX, 0x00, 0x20, 0x1b, 0x6a54};
 
 // ================================================
 // 0xeeac: WORD 'UNK_0xeeae' codep=0x7394 parp=0xeeae
 // ================================================
-LoadDataType UNK_0xeeae = {0x09, 0x18, 0x02, 0x1b, 0x6a54};
+LoadDataType UNK_0xeeae = {STISIDX, 0x18, 0x02, 0x1b, 0x6a54};
 
 // ================================================
 // 0xeeb4: WORD 'UNK_0xeeb6' codep=0x2214 parp=0xeeb6
@@ -223,12 +225,12 @@ LoadDataType UNK_0xeeae = {0x09, 0x18, 0x02, 0x1b, 0x6a54};
 // ================================================
 // 0xeed0: WORD 'UNK_0xeed2' codep=0x7394 parp=0xeed2
 // ================================================
-LoadDataType UNK_0xeed2 = {0x44, 0x00, 0x14, 0x22, 0x6f07};
+LoadDataType UNK_0xeed2 = {CREATUREIDX, 0x00, 0x14, 0x22, 0x6f07};
 
 // ================================================
 // 0xeed8: WORD 'UNK_0xeeda' codep=0x7394 parp=0xeeda
 // ================================================
-LoadDataType UNK_0xeeda = {0x44, 0x14, 0x02, 0x22, 0x6f07};
+LoadDataType UNK_0xeeda = {CREATUREIDX, 0x14, 0x02, 0x22, 0x6f07};
 // 0xeee0: db 0x94 0x73 0x44 0x1c 0x01 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
@@ -382,7 +384,7 @@ void UNK_0xefff() // UNK_0xefff
 void UNK_0xf02d() // UNK_0xf02d
 {
   UNK_0xeefc(); // UNK_0xeefc
-  LoadData(BOX_dash_NAM); // from 'BOX         '
+  LoadData(BOX_dash_NAM); // from 'BOX'
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0010);
   CMOVE_2(); // CMOVE_2
@@ -479,11 +481,11 @@ void UNK_0xf066() // UNK_0xf066
 
 void UNK_0xf0d2() // UNK_0xf0d2
 {
-  LoadData(UNK_0xeed2); // from 'CREATURE    '
+  LoadData(UNK_0xeed2); // from 'CREATURE'
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0014);
   CMOVE_2(); // CMOVE_2
-  LoadData(UNK_0xeeda); // from 'CREATURE    '
+  LoadData(UNK_0xeeda); // from 'CREATURE'
   Push(Read16(Pop())); // @
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -499,7 +501,7 @@ void UNK_0xf0ea() // UNK_0xf0ea
 {
   Push(pp_ITEM); // ITEM
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xee9e); // from 'ARTIFACT    '
+  LoadData(UNK_0xee9e); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   if (Pop() != 0)
@@ -519,13 +521,13 @@ void UNK_0xf0ea() // UNK_0xf0ea
 
 void UNK_0xf106() // UNK_0xf106
 {
-  LoadData(ELEM_dash_NA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_NA); // from 'ELEMENT'
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0010);
   CMOVE_2(); // CMOVE_2
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   UNK_0xf066(); // UNK_0xf066
@@ -609,19 +611,19 @@ void UNK_0xf19a() // UNK_0xf19a
 
 void UNK_0xf1a8() // UNK_0xf1a8
 {
-  LoadData(ART_dash_NAM); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAM); // from 'ARTIFACT'
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0018);
   CMOVE_2(); // CMOVE_2
-  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
-  LoadData(UNK_0xee9e); // from 'ARTIFACT    '
+  LoadData(UNK_0xee9e); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+    LoadData(ART_dash_VOL); // from 'ARTIFACT'
     Push(Read16(Pop())); // @
   } else
   {
@@ -638,11 +640,11 @@ void UNK_0xf1a8() // UNK_0xf1a8
 
 void UNK_0xf1d4() // UNK_0xf1d4
 {
-  LoadData(UNK_0xeea6); // from 'STIS        '
+  LoadData(UNK_0xeea6); // from 'STIS'
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0018);
   CMOVE_2(); // CMOVE_2
-  LoadData(UNK_0xeeae); // from 'STIS        '
+  LoadData(UNK_0xeeae); // from 'STIS'
   Push(Read16(Pop())); // @
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -993,7 +995,7 @@ void IsELEMENT() // ?ELEMENT
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    LoadData(UNK_0xee9e); // from 'ARTIFACT    '
+    LoadData(UNK_0xee9e); // from 'ARTIFACT'
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop()-1); // 1-
     return;

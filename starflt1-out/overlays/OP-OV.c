@@ -3,6 +3,8 @@
 // overlay size   = 0x1130
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -223,42 +225,42 @@ void UNK_0xe44a() // UNK_0xe44a
 // ================================================
 // 0xe450: WORD 'UNK_0xe452' codep=0x744d parp=0xe452
 // ================================================
-IFieldType UNK_0xe452 = {0x23, 0x0a, 0x02};
+IFieldType UNK_0xe452 = {NOTICEIDX, 0x0a, 0x02};
 
 // ================================================
 // 0xe455: WORD 'UNK_0xe457' codep=0x744d parp=0xe457
 // ================================================
-IFieldType UNK_0xe457 = {0x30, 0x0b, 0xff};
+IFieldType UNK_0xe457 = {STRINGIDX, 0x0b, 0xff};
 
 // ================================================
 // 0xe45a: WORD 'UNK_0xe45c' codep=0x744d parp=0xe45c
 // ================================================
-IFieldType UNK_0xe45c = {0x24, 0x0a, 0x01};
+IFieldType UNK_0xe45c = {EVALUATIONIDX, 0x0a, 0x01};
 
 // ================================================
 // 0xe45f: WORD 'UNK_0xe461' codep=0x744d parp=0xe461
 // ================================================
-IFieldType UNK_0xe461 = {0x24, 0x0b, 0x02};
+IFieldType UNK_0xe461 = {EVALUATIONIDX, 0x0b, 0x02};
 
 // ================================================
 // 0xe464: WORD 'UNK_0xe466' codep=0x744d parp=0xe466
 // ================================================
-IFieldType UNK_0xe466 = {0x24, 0x11, 0x02};
+IFieldType UNK_0xe466 = {EVALUATIONIDX, 0x11, 0x02};
 
 // ================================================
 // 0xe469: WORD 'UNK_0xe46b' codep=0x744d parp=0xe46b
 // ================================================
-IFieldType UNK_0xe46b = {0x24, 0x13, 0x01};
+IFieldType UNK_0xe46b = {EVALUATIONIDX, 0x13, 0x01};
 
 // ================================================
 // 0xe46e: WORD 'UNK_0xe470' codep=0x744d parp=0xe470
 // ================================================
-IFieldType UNK_0xe470 = {0x24, 0x14, 0x01};
+IFieldType UNK_0xe470 = {EVALUATIONIDX, 0x14, 0x01};
 
 // ================================================
 // 0xe473: WORD 'UNK_0xe475' codep=0x744d parp=0xe475
 // ================================================
-IFieldType UNK_0xe475 = {0x24, 0x15, 0x0f};
+IFieldType UNK_0xe475 = {EVALUATIONIDX, 0x15, 0x0f};
 // 0xe478: db 0x4c 0x22 0x5d 0x17 0x70 0xbd 0xce 0x84 0x90 0x16 'L"] p     '
 
 // ================================================

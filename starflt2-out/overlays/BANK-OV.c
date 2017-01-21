@@ -3,6 +3,8 @@
 // overlay size   = 0x05e0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -163,32 +165,32 @@ void UNK_0xef96() // UNK_0xef96
 // ================================================
 // 0xefb2: WORD 'UNK_0xefb4' codep=0x7420 parp=0xefb4
 // ================================================
-IFieldType UNK_0xefb4 = {0x0d, 0x0b, 0x04};
+IFieldType UNK_0xefb4 = {BANKIDX, 0x0b, 0x04};
 
 // ================================================
 // 0xefb7: WORD 'UNK_0xefb9' codep=0x7420 parp=0xefb9
 // ================================================
-IFieldType UNK_0xefb9 = {0x0d, 0x0f, 0x04};
+IFieldType UNK_0xefb9 = {BANKIDX, 0x0f, 0x04};
 
 // ================================================
 // 0xefbc: WORD 'UNK_0xefbe' codep=0x7420 parp=0xefbe
 // ================================================
-IFieldType UNK_0xefbe = {0x0d, 0x13, 0x01};
+IFieldType UNK_0xefbe = {BANKIDX, 0x13, 0x01};
 
 // ================================================
 // 0xefc1: WORD 'UNK_0xefc3' codep=0x7394 parp=0xefc3
 // ================================================
-LoadDataType UNK_0xefc3 = {0x0e, 0x00, 0x13, 0x13, 0x6abd};
+LoadDataType UNK_0xefc3 = {BANK_TRANSIDX, 0x00, 0x13, 0x13, 0x6abd};
 
 // ================================================
 // 0xefc9: WORD 'UNK_0xefcb' codep=0x7420 parp=0xefcb
 // ================================================
-IFieldType UNK_0xefcb = {0x0e, 0x0b, 0x04};
+IFieldType UNK_0xefcb = {BANK_TRANSIDX, 0x0b, 0x04};
 
 // ================================================
 // 0xefce: WORD 'UNK_0xefd0' codep=0x7420 parp=0xefd0
 // ================================================
-IFieldType UNK_0xefd0 = {0x0e, 0x0f, 0x02};
+IFieldType UNK_0xefd0 = {BANK_TRANSIDX, 0x0f, 0x02};
 
 // ================================================
 // 0xefd3: WORD 'UNK_0xefd5' codep=0x224c parp=0xefd5
@@ -498,7 +500,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1ea() // UNK_0xf1ea
 {
-  LoadData(UNK_0xefc3); // from 'BANK-TRANS  '
+  LoadData(UNK_0xefc3); // from 'BANK_TRANS'
   _do__dot_(); // $.
 }
 

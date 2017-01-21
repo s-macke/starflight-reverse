@@ -3,6 +3,8 @@
 // overlay size   = 0x05a0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -148,7 +150,7 @@ const unsigned short int pp_UNK_0xf2cd = 0xf2cd; // UNK_0xf2cd size: 24
 // ================================================
 // 0xefd4: WORD 'UNK_0xefd6' codep=0x744d parp=0xefd6
 // ================================================
-IFieldType UNK_0xefd6 = {0x14, 0x14, 0x01};
+IFieldType UNK_0xefd6 = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
 // 0xefd9: WORD 'UNK_0xefdb' codep=0x1d29 parp=0xefdb
@@ -621,7 +623,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(0x001c);
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT'
   Push(0x0018);
   Push(0x002e);
   _dash_XTRAILING(); // -XTRAILING

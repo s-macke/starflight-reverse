@@ -3,6 +3,8 @@
 // overlay size   = 0x0c00
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -280,62 +282,62 @@ void UNK_0xe9d0() // UNK_0xe9d0
 // ================================================
 // 0xe9d8: WORD 'UNK_0xe9da' codep=0x744d parp=0xe9da
 // ================================================
-IFieldType UNK_0xe9da = {0x14, 0x11, 0x02};
+IFieldType UNK_0xe9da = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
 // 0xe9dd: WORD 'UNK_0xe9df' codep=0x744d parp=0xe9df
 // ================================================
-IFieldType UNK_0xe9df = {0x14, 0x13, 0x02};
+IFieldType UNK_0xe9df = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
 // 0xe9e2: WORD 'UNK_0xe9e4' codep=0x744d parp=0xe9e4
 // ================================================
-IFieldType UNK_0xe9e4 = {0x14, 0x15, 0x02};
+IFieldType UNK_0xe9e4 = {SHIPIDX, 0x15, 0x02};
 
 // ================================================
 // 0xe9e7: WORD 'UNK_0xe9e9' codep=0x744d parp=0xe9e9
 // ================================================
-IFieldType UNK_0xe9e9 = {0x14, 0x17, 0x02};
+IFieldType UNK_0xe9e9 = {SHIPIDX, 0x17, 0x02};
 
 // ================================================
 // 0xe9ec: WORD 'UNK_0xe9ee' codep=0x744d parp=0xe9ee
 // ================================================
-IFieldType UNK_0xe9ee = {0x14, 0x19, 0x02};
+IFieldType UNK_0xe9ee = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xe9f1: WORD 'UNK_0xe9f3' codep=0x744d parp=0xe9f3
 // ================================================
-IFieldType UNK_0xe9f3 = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xe9f3 = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xe9f6: WORD 'UNK_0xe9f8' codep=0x744d parp=0xe9f8
 // ================================================
-IFieldType UNK_0xe9f8 = {0x14, 0x1d, 0x02};
+IFieldType UNK_0xe9f8 = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
 // 0xe9fb: WORD 'UNK_0xe9fd' codep=0x744d parp=0xe9fd
 // ================================================
-IFieldType UNK_0xe9fd = {0x14, 0x1f, 0x02};
+IFieldType UNK_0xe9fd = {SHIPIDX, 0x1f, 0x02};
 
 // ================================================
 // 0xea00: WORD 'UNK_0xea02' codep=0x744d parp=0xea02
 // ================================================
-IFieldType UNK_0xea02 = {0x14, 0x29, 0x07};
+IFieldType UNK_0xea02 = {SHIPIDX, 0x29, 0x07};
 
 // ================================================
 // 0xea05: WORD 'UNK_0xea07' codep=0x744d parp=0xea07
 // ================================================
-IFieldType UNK_0xea07 = {0x14, 0x30, 0x02};
+IFieldType UNK_0xea07 = {SHIPIDX, 0x30, 0x02};
 
 // ================================================
 // 0xea0a: WORD 'UNK_0xea0c' codep=0x744d parp=0xea0c
 // ================================================
-IFieldType UNK_0xea0c = {0x14, 0x32, 0x02};
+IFieldType UNK_0xea0c = {SHIPIDX, 0x32, 0x02};
 
 // ================================================
 // 0xea0f: WORD 'UNK_0xea11' codep=0x744d parp=0xea11
 // ================================================
-IFieldType UNK_0xea11 = {0x14, 0x43, 0x02};
+IFieldType UNK_0xea11 = {SHIPIDX, 0x43, 0x02};
 // 0xea14: db 0x4d 0x74 0x14 0x45 0x04 'Mt E '
 
 // ================================================

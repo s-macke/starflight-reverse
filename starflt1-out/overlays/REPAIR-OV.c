@@ -3,6 +3,8 @@
 // overlay size   = 0x06a0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -156,59 +158,59 @@ const unsigned short int pp_UNK_0xf0c4 = 0xf0c4; // UNK_0xf0c4 size: 10
 // ================================================
 // 0xeed8: WORD 'UNK_0xeeda' codep=0x744d parp=0xeeda
 // ================================================
-IFieldType UNK_0xeeda = {0x14, 0x11, 0x02};
+IFieldType UNK_0xeeda = {SHIPIDX, 0x11, 0x02};
 // 0xeedd: db 0x4d 0x74 0x14 0x12 0x01 'Mt   '
 
 // ================================================
 // 0xeee2: WORD 'UNK_0xeee4' codep=0x744d parp=0xeee4
 // ================================================
-IFieldType UNK_0xeee4 = {0x14, 0x13, 0x02};
+IFieldType UNK_0xeee4 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
 // 0xeee7: WORD 'UNK_0xeee9' codep=0x744d parp=0xeee9
 // ================================================
-IFieldType UNK_0xeee9 = {0x14, 0x15, 0x02};
+IFieldType UNK_0xeee9 = {SHIPIDX, 0x15, 0x02};
 
 // ================================================
 // 0xeeec: WORD 'UNK_0xeeee' codep=0x744d parp=0xeeee
 // ================================================
-IFieldType UNK_0xeeee = {0x14, 0x17, 0x02};
+IFieldType UNK_0xeeee = {SHIPIDX, 0x17, 0x02};
 
 // ================================================
 // 0xeef1: WORD 'UNK_0xeef3' codep=0x744d parp=0xeef3
 // ================================================
-IFieldType UNK_0xeef3 = {0x14, 0x19, 0x02};
+IFieldType UNK_0xeef3 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xeef6: WORD 'UNK_0xeef8' codep=0x744d parp=0xeef8
 // ================================================
-IFieldType UNK_0xeef8 = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xeef8 = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xeefb: WORD 'UNK_0xeefd' codep=0x744d parp=0xeefd
 // ================================================
-IFieldType UNK_0xeefd = {0x14, 0x1d, 0x02};
+IFieldType UNK_0xeefd = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
 // 0xef00: WORD 'UNK_0xef02' codep=0x744d parp=0xef02
 // ================================================
-IFieldType UNK_0xef02 = {0x14, 0x29, 0x07};
+IFieldType UNK_0xef02 = {SHIPIDX, 0x29, 0x07};
 // 0xef05: db 0x4d 0x74 0x14 0x32 0x02 'Mt 2 '
 
 // ================================================
 // 0xef0a: WORD 'UNK_0xef0c' codep=0x744d parp=0xef0c
 // ================================================
-IFieldType UNK_0xef0c = {0x14, 0x43, 0x02};
+IFieldType UNK_0xef0c = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xef0f: WORD 'UNK_0xef11' codep=0x744d parp=0xef11
 // ================================================
-IFieldType UNK_0xef11 = {0x11, 0x1a, 0x03};
+IFieldType UNK_0xef11 = {ASSIGN_CREWIDX, 0x1a, 0x03};
 
 // ================================================
 // 0xef14: WORD 'UNK_0xef16' codep=0x744d parp=0xef16
 // ================================================
-IFieldType UNK_0xef16 = {0x10, 0x1c, 0x01};
+IFieldType UNK_0xef16 = {CREWMEMBERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xef19: WORD '>FIELD' codep=0x4a4f parp=0xef24
@@ -754,7 +756,7 @@ void UNK_0xf1e4() // UNK_0xf1e4
   Push(0x001a);
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  LoadData(ELEM_dash_NAME); // from 'ELEMENT     '
+  LoadData(ELEM_dash_NAME); // from 'ELEMENT'
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAILING(); // -XTRAILING

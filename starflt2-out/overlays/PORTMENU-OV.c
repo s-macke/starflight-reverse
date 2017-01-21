@@ -3,6 +3,8 @@
 // overlay size   = 0x0880
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -228,22 +230,22 @@ const unsigned short int cc_STPORT = 0xf083; // STPORT
 // ================================================
 // 0xecf4: WORD 'UNK_0xecf6' codep=0x7420 parp=0xecf6
 // ================================================
-IFieldType UNK_0xecf6 = {0x14, 0x14, 0x01};
+IFieldType UNK_0xecf6 = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
 // 0xecf9: WORD 'UNK_0xecfb' codep=0x7420 parp=0xecfb
 // ================================================
-IFieldType UNK_0xecfb = {0x10, 0x20, 0x02};
+IFieldType UNK_0xecfb = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xecfe: WORD 'UNK_0xed00' codep=0x7420 parp=0xed00
 // ================================================
-IFieldType UNK_0xed00 = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xed00 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xed03: WORD 'UNK_0xed05' codep=0x7420 parp=0xed05
 // ================================================
-IFieldType UNK_0xed05 = {0x14, 0x43, 0x02};
+IFieldType UNK_0xed05 = {SHIPIDX, 0x43, 0x02};
 // 0xed08: db 0x29 0x1d 0x3a 0x20 ') : '
 
 // ================================================

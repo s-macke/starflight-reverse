@@ -3,6 +3,8 @@
 // overlay size   = 0x0d70
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -309,37 +311,37 @@ const unsigned short int cc_ANIM = 0xf0bc; // ANIM
 // ================================================
 // 0xe808: WORD 'UNK_0xe80a' codep=0x7420 parp=0xe80a
 // ================================================
-IFieldType UNK_0xe80a = {0x34, 0x0c, 0x01};
+IFieldType UNK_0xe80a = {ORIGINATORIDX, 0x0c, 0x01};
 
 // ================================================
 // 0xe80d: WORD 'UNK_0xe80f' codep=0x7420 parp=0xe80f
 // ================================================
-IFieldType UNK_0xe80f = {0x34, 0x12, 0x01};
+IFieldType UNK_0xe80f = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
 // 0xe812: WORD 'UNK_0xe814' codep=0x7420 parp=0xe814
 // ================================================
-IFieldType UNK_0xe814 = {0x14, 0x19, 0x02};
+IFieldType UNK_0xe814 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xe817: WORD 'UNK_0xe819' codep=0x7420 parp=0xe819
 // ================================================
-IFieldType UNK_0xe819 = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xe819 = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xe81c: WORD 'UNK_0xe81e' codep=0x7420 parp=0xe81e
 // ================================================
-IFieldType UNK_0xe81e = {0x14, 0x30, 0x02};
+IFieldType UNK_0xe81e = {SHIPIDX, 0x30, 0x02};
 
 // ================================================
 // 0xe821: WORD 'UNK_0xe823' codep=0x7394 parp=0xe823
 // ================================================
-LoadDataType UNK_0xe823 = {0x19, 0x10, 0x01, 0x24, 0x6b5d};
+LoadDataType UNK_0xe823 = {VESSELIDX, 0x10, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xe829: WORD 'UNK_0xe82b' codep=0x7420 parp=0xe82b
 // ================================================
-IFieldType UNK_0xe82b = {0x14, 0x14, 0x01};
+IFieldType UNK_0xe82b = {SHIPIDX, 0x14, 0x01};
 // 0xe82e: db 0x4c 0x22 0x98 0x9e 0x2e 0x0f 0xe7 0x5e 0x23 0x6d 0x90 0x16 'L"  .  ^#m  '
 
 // ================================================
@@ -2296,7 +2298,7 @@ void UNK_0xf3b4() // UNK_0xf3b4
   IFIND(); // IFIND
   Pop(); // DROP
   Push(-1);
-  LoadData(UNK_0xe823); // from 'VESSEL      '
+  LoadData(UNK_0xe823); // from 'VESSEL'
   Store_2(); // !_2
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -2408,7 +2410,7 @@ void UNK_0xf49f() // UNK_0xf49f
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Store_2(); // !_2

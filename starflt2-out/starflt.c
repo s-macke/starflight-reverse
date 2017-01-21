@@ -17898,42 +17898,42 @@ void IFIELD() // IFIELD
 // ================================================
 // 0x7458: WORD 'INST-SI' codep=0x7420 parp=0x7464
 // ================================================
-IFieldType INST_dash_SI = {0x00, 0x00, 0x03};
+IFieldType INST_dash_SI = {DIRECTORYIDX, 0x00, 0x03};
 
 // ================================================
 // 0x7467: WORD 'INST-PR' codep=0x7420 parp=0x7473
 // ================================================
-IFieldType INST_dash_PR = {0x00, 0x03, 0x03};
+IFieldType INST_dash_PR = {DIRECTORYIDX, 0x03, 0x03};
 
 // ================================================
 // 0x7476: WORD 'INST-OF' codep=0x7420 parp=0x7482
 // ================================================
-IFieldType INST_dash_OF = {0x00, 0x06, 0x03};
+IFieldType INST_dash_OF = {DIRECTORYIDX, 0x06, 0x03};
 
 // ================================================
 // 0x7485: WORD 'INST-CL' codep=0x7420 parp=0x7491
 // ================================================
-IFieldType INST_dash_CL = {0x00, 0x09, 0x01};
+IFieldType INST_dash_CL = {DIRECTORYIDX, 0x09, 0x01};
 
 // ================================================
 // 0x7494: WORD 'INST-SP' codep=0x7420 parp=0x74a0
 // ================================================
-IFieldType INST_dash_SP = {0x00, 0x0a, 0x01};
+IFieldType INST_dash_SP = {DIRECTORYIDX, 0x0a, 0x01};
 
 // ================================================
 // 0x74a3: WORD 'INST-QT' codep=0x7420 parp=0x74af
 // ================================================
-IFieldType INST_dash_QT = {0x00, 0x0b, 0x02};
+IFieldType INST_dash_QT = {DIRECTORYIDX, 0x0b, 0x02};
 
 // ================================================
 // 0x74b2: WORD 'INST-X' codep=0x7420 parp=0x74bd
 // ================================================
-IFieldType INST_dash_X = {0x00, 0x0d, 0x02};
+IFieldType INST_dash_X = {DIRECTORYIDX, 0x0d, 0x02};
 
 // ================================================
 // 0x74c0: WORD 'INST-Y' codep=0x7420 parp=0x74cb
 // ================================================
-IFieldType INST_dash_Y = {0x00, 0x0f, 0x02};
+IFieldType INST_dash_Y = {DIRECTORYIDX, 0x0f, 0x02};
 
 // ================================================
 // 0x74ce: WORD 'UNK_0x74d0' codep=0x224c parp=0x74d0
@@ -18600,7 +18600,7 @@ void UNK_0x7892() // UNK_0x7892
 // ================================================
 // 0x78ae: WORD '1BTN' codep=0x7394 parp=0x78b7
 // ================================================
-LoadDataType _1BTN = {0x3a, 0x00, 0x0c, 0x49, 0x6e57};
+LoadDataType _1BTN = {BUTTONSIDX, 0x00, 0x0c, 0x49, 0x6e57};
 
 // ================================================
 // 0x78bd: WORD 'AFIELD:' codep=0x224c parp=0x78c9
@@ -18650,7 +18650,7 @@ void IFIELD_c_() // IFIELD:
 // ================================================
 // 0x7911: WORD '#BTN' codep=0x7394 parp=0x791a
 // ================================================
-LoadDataType _n_BTN = {0x3a, 0x48, 0x01, 0x49, 0x6e57};
+LoadDataType _n_BTN = {BUTTONSIDX, 0x48, 0x01, 0x49, 0x6e57};
 
 // ================================================
 // 0x7920: WORD 'UNK_0x7922' codep=0x224c parp=0x7922
@@ -20052,7 +20052,7 @@ void ICREATE() // ICREATE
 // ================================================
 // 0x81f3: WORD 'BOX-NAM' codep=0x7394 parp=0x81ff
 // ================================================
-LoadDataType BOX_dash_NAM = {0x0b, 0x00, 0x10, 0x10, 0x6a7d};
+LoadDataType BOX_dash_NAM = {BOXIDX, 0x00, 0x10, 0x10, 0x6a7d};
 
 // ================================================
 // 0x8205: WORD '*CREATE' codep=0x224c parp=0x8211
@@ -25584,7 +25584,7 @@ void DrawABTN() // .ABTN
   POLY_dash_WI(); // POLY-WI
   SetColor("WHITE");
   StoreCOLOR(); // !COLOR
-  LoadData(_1BTN); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS'
   Push(a); // R>
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25640,7 +25640,7 @@ void DrawBTN_dash_TE() // .BTN-TE
   Push(0x0077);
   POS_dot_(); // POS.
   _gt_2FONT(); // >2FONT
-  LoadData(_n_BTN); // from 'BUTTONS     '
+  LoadData(_n_BTN); // from 'BUTTONS'
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25652,7 +25652,7 @@ void DrawBTN_dash_TE() // .BTN-TE
   {
     Push(i); // I
     UNK_0xa6f0(); // UNK_0xa6f0
-    LoadData(_1BTN); // from 'BUTTONS     '
+    LoadData(_1BTN); // from 'BUTTONS'
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(0x000c);
@@ -25687,7 +25687,7 @@ void NEW_dash_BUT() // NEW-BUT
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(0);
-  LoadData(_n_BTN); // from 'BUTTONS     '
+  LoadData(_n_BTN); // from 'BUTTONS'
   Push(Read8(Pop())&0xFF); // C@
   WITHIN(); // WITHIN
   if (Pop() != 0)
@@ -25908,62 +25908,62 @@ void NEXT_dash_NO() // NEXT-NO
 // ================================================
 // 0xa90f: WORD 'INST-VA' codep=0x7420 parp=0xa91b
 // ================================================
-IFieldType INST_dash_VA = {0x00, 0x11, 0x02};
+IFieldType INST_dash_VA = {DIRECTORYIDX, 0x11, 0x02};
 
 // ================================================
 // 0xa91e: WORD 'INST-DA' codep=0x7420 parp=0xa92a
 // ================================================
-IFieldType INST_dash_DA = {0x00, 0x13, 0x02};
+IFieldType INST_dash_DA = {DIRECTORYIDX, 0x13, 0x02};
 
 // ================================================
 // 0xa92d: WORD '%NAME' codep=0x7420 parp=0xa937
 // ================================================
-IFieldType _pe_NAME = {0x14, 0x34, 0x0f};
+IFieldType _pe_NAME = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
 // 0xa93a: WORD 'ORIG-NA' codep=0x7394 parp=0xa946
 // ================================================
-LoadDataType ORIG_dash_NA = {0x1b, 0x00, 0x10, 0x00, 0x0000};
+LoadDataType ORIG_dash_NA = {MESSAGEIDX, 0x00, 0x10, 0x00, 0x0000};
 
 // ================================================
 // 0xa94c: WORD 'ELEM-NA' codep=0x7394 parp=0xa958
 // ================================================
-LoadDataType ELEM_dash_NA = {0x1a, 0x00, 0x10, 0x17, 0x6ba9};
+LoadDataType ELEM_dash_NA = {ELEMENTIDX, 0x00, 0x10, 0x17, 0x6ba9};
 
 // ================================================
 // 0xa95e: WORD 'ELEM-VA' codep=0x7394 parp=0xa96a
 // ================================================
-LoadDataType ELEM_dash_VA = {0x1a, 0x10, 0x02, 0x17, 0x6ba9};
+LoadDataType ELEM_dash_VA = {ELEMENTIDX, 0x10, 0x02, 0x17, 0x6ba9};
 
 // ================================================
 // 0xa970: WORD 'ART-NAM' codep=0x7394 parp=0xa97c
 // ================================================
-LoadDataType ART_dash_NAM = {0x1c, 0x00, 0x18, 0x20, 0x6bcd};
+LoadDataType ART_dash_NAM = {ARTIFACTIDX, 0x00, 0x18, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa982: WORD 'ART-VAL' codep=0x7394 parp=0xa98e
 // ================================================
-LoadDataType ART_dash_VAL = {0x1c, 0x1b, 0x02, 0x20, 0x6bcd};
+LoadDataType ART_dash_VAL = {ARTIFACTIDX, 0x1b, 0x02, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa994: WORD 'ART-VOL' codep=0x7394 parp=0xa9a0
 // ================================================
-LoadDataType ART_dash_VOL = {0x1c, 0x19, 0x02, 0x20, 0x6bcd};
+LoadDataType ART_dash_VOL = {ARTIFACTIDX, 0x19, 0x02, 0x20, 0x6bcd};
 
 // ================================================
 // 0xa9a6: WORD 'PHR-CNT' codep=0x7420 parp=0xa9b2
 // ================================================
-IFieldType PHR_dash_CNT = {0x30, 0x0b, 0x01};
+IFieldType PHR_dash_CNT = {STRINGIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xa9b5: WORD 'PHRASE' codep=0x7420 parp=0xa9c0
 // ================================================
-IFieldType PHRASE = {0x30, 0x0c, 0xfe};
+IFieldType PHRASE = {STRINGIDX, 0x0c, 0xfe};
 
 // ================================================
 // 0xa9c3: WORD 'ASKING' codep=0x7420 parp=0xa9ce
 // ================================================
-IFieldType ASKING = {0x00, 0x13, 0x02};
+IFieldType ASKING = {DIRECTORYIDX, 0x13, 0x02};
 
 // ================================================
 // 0xa9d1: WORD 'U>$' codep=0x224c parp=0xa9d9
@@ -26066,17 +26066,17 @@ void _st_CTASKM() // <CTASKM
 // ================================================
 // 0xaa4d: WORD 'TEXT-CO' codep=0x7420 parp=0xaa59
 // ================================================
-IFieldType TEXT_dash_CO = {0x38, 0x0b, 0x03};
+IFieldType TEXT_dash_CO = {SCROLL_TEXTIDX, 0x0b, 0x03};
 
 // ================================================
 // 0xaa5c: WORD 'TEXT-IN' codep=0x7420 parp=0xaa68
 // ================================================
-IFieldType TEXT_dash_IN = {0x38, 0x0e, 0x03};
+IFieldType TEXT_dash_IN = {SCROLL_TEXTIDX, 0x0e, 0x03};
 
 // ================================================
 // 0xaa6b: WORD 'TEXT-TE' codep=0x7420 parp=0xaa77
 // ================================================
-IFieldType TEXT_dash_TE = {0x38, 0x11, 0x26};
+IFieldType TEXT_dash_TE = {SCROLL_TEXTIDX, 0x11, 0x26};
 
 // ================================================
 // 0xaa7a: WORD 'TEXT>PA' codep=0x224c parp=0xaa86
@@ -28675,7 +28675,7 @@ void HUFF_gt_() // HUFF>
 // ================================================
 // 0xbbc1: WORD 'PHRASE$' codep=0x7420 parp=0xbbcd
 // ================================================
-IFieldType PHRASE_do_ = {0x30, 0x0b, 0x00};
+IFieldType PHRASE_do_ = {STRINGIDX, 0x0b, 0x00};
 // 0xbbd0: db 0x4c 0x22 0xf7 0x66 0x65 0x6d 0x90 0x16 0x4c 0x22 0xf7 0x66 0x41 0x0e 0x92 0x0c 0x72 0x0f 0xe7 0x0f 0x0a 0x6d 0x2e 0x0f 0xf7 0x66 0x23 0x6d 0x90 0x16 0x4c 0x22 0xcb 0xbb 0xe7 0x0f 0x92 0x0c 0xf7 0x66 0x0a 0x6d 0x90 0x16 0xa1 0x81 0x8b 0x81 0x5e 0x81 0x81 0x45 0x81 0x52 0x81 0x44 0x81 0x56 0x4b 0x81 0x81 0x30 0x81 0x2d 0x81 0x4a 0x36 0x38 0x81 0x20 0x83 0x81 0x81 0x48 0x59 0x43 0x82 0x81 0x4d 0x57 0x81 0x2e 0x81 0x42 0x84 0x81 0x31 0x81 0x5a 0x81 0x34 0x33 0x86 0x81 0x51 0x81 0x81 0x32 0x81 0x25 0x2b 0x81 0x23 0x28 0x81 0x3f 0x39 0x81 0x37 0x2a 0x86 0x81 0x84 0x81 0x54 0x81 0x81 0x4c 0x50 0x46 0x53 0x4f 0x82 0x81 0x4e 0x41 0x49 0x81 0x81 0x55 0x81 0x47 0x2c 0x81 0x81 0x58 0x27 0x81 0x81 0x21 0x35 0x81 0x26 0x81 0x29 0x2f 'L" fem  L" fA   r    m.  f#m  L"       f m      ^  E R D VK  0 - J68     HYC  MW . B  1 Z 43  Q  2 %+ #( ?9 7*    T  LPFSO  NAI  U G,  X'  !5 & )/'
 
 // ================================================

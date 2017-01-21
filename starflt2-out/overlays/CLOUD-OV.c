@@ -3,6 +3,8 @@
 // overlay size   = 0x01b0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -58,13 +60,13 @@ void CI(); // CI
 // ================================================
 // 0xf3c4: WORD 'UNK_0xf3c6' codep=0x7420 parp=0xf3c6
 // ================================================
-IFieldType UNK_0xf3c6 = {0x11, 0x11, 0x12};
+IFieldType UNK_0xf3c6 = {ASSIGN_CREWIDX, 0x11, 0x12};
 // 0xf3c9: db 0x20 0x74 0x10 0x0b 0x0f 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
 
 // ================================================
 // 0xf3d3: WORD 'UNK_0xf3d5' codep=0x7420 parp=0xf3d5
 // ================================================
-IFieldType UNK_0xf3d5 = {0x10, 0x20, 0x02};
+IFieldType UNK_0xf3d5 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xf3d8: WORD 'UNK_0xf3da' codep=0x224c parp=0xf3da

@@ -3,6 +3,8 @@
 // overlay size   = 0x0880
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -197,23 +199,23 @@ const unsigned short int cc_UNK_0xed42 = 0xed42; // UNK_0xed42
 // ================================================
 // 0xecf8: WORD 'UNK_0xecfa' codep=0x7394 parp=0xecfa
 // ================================================
-LoadDataType UNK_0xecfa = {0x20, 0x01, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xecfa = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 // 0xed00: db 0x94 0x73 0x20 0x04 0x01 0x17 0x49 0x6c 0x94 0x73 0x20 0x11 0x02 0x17 0x49 0x6c 0x94 0x73 0x20 0x13 0x01 0x17 0x49 0x6c 0x94 0x73 0x20 0x0c 0x01 0x17 0x49 0x6c ' s    Il s    Il s    Il s    Il'
 
 // ================================================
 // 0xed20: WORD 'UNK_0xed22' codep=0x7394 parp=0xed22
 // ================================================
-LoadDataType UNK_0xed22 = {0x20, 0x0f, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xed22 = {PLANETIDX, 0x0f, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xed28: WORD 'UNK_0xed2a' codep=0x7394 parp=0xed2a
 // ================================================
-LoadDataType UNK_0xed2a = {0x20, 0x10, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xed2a = {PLANETIDX, 0x10, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xed30: WORD 'UNK_0xed32' codep=0x7394 parp=0xed32
 // ================================================
-LoadDataType UNK_0xed32 = {0x20, 0x02, 0x02, 0x17, 0x6c49};
+LoadDataType UNK_0xed32 = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 // 0xed38: db 0x94 0x73 0x43 0x07 0x08 0x1c 0xfc 0x6e ' sC    n'
 
 // ================================================
@@ -224,7 +226,7 @@ LoadDataType UNK_0xed32 = {0x20, 0x02, 0x02, 0x17, 0x6c49};
 // ================================================
 // 0xed44: WORD 'UNK_0xed46' codep=0x7394 parp=0xed46
 // ================================================
-LoadDataType UNK_0xed46 = {0x1e, 0x00, 0x03, 0x07, 0x6c3e};
+LoadDataType UNK_0xed46 = {COMPOUNDSIDX, 0x00, 0x03, 0x07, 0x6c3e};
 
 // ================================================
 // 0xed4c: WORD 'UNK_0xed4e' codep=0x224c parp=0xed4e
@@ -234,7 +236,7 @@ void UNK_0xed4e() // UNK_0xed4e
 {
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xed32); // from 'PLANET      '
+  LoadData(UNK_0xed32); // from 'PLANET'
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
@@ -277,9 +279,9 @@ void UNK_0xeda0() // UNK_0xeda0
 {
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xed22); // from 'PLANET      '
+  LoadData(UNK_0xed22); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
-  LoadData(UNK_0xed2a); // from 'PLANET      '
+  LoadData(UNK_0xed2a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
   _dash_(); // -
@@ -349,7 +351,7 @@ void UNK_0xedea() // UNK_0xedea
 // ================================================
 // 0xee18: WORD 'UNK_0xee1a' codep=0x7394 parp=0xee1a
 // ================================================
-LoadDataType UNK_0xee1a = {0x43, 0x04, 0x03, 0x1c, 0x6efc};
+LoadDataType UNK_0xee1a = {REGIONSIDX, 0x04, 0x03, 0x1c, 0x6efc};
 
 // ================================================
 // 0xee20: WORD 'UNK_0xee22' codep=0x224c parp=0xee22
@@ -363,7 +365,7 @@ void UNK_0xee22() // UNK_0xee22
   Push(0x0043);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  LoadData(UNK_0xee1a); // from 'REGIONS     '
+  LoadData(UNK_0xee1a); // from 'REGIONS'
   Get_gt_C_plus_S(); // @>C+S
   Push(0x65e1+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -1253,7 +1255,7 @@ void DrawSURFACE() // .SURFACE
 {
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xecfa); // from 'PLANET      '
+  LoadData(UNK_0xecfa); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   _slash_SURF(); // /SURF case
   DrawCARPET(); // .CARPET
@@ -1294,7 +1296,7 @@ void UNK_0xf42e() // UNK_0xf42e
   Push(Read16(cc_UNK_0xed42)); // UNK_0xed42
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  LoadData(UNK_0xed46); // from 'COMPOUNDS   '
+  LoadData(UNK_0xed46); // from 'COMPOUNDS'
   _1_dot_5_at_(); // 1.5@
   UNK_0xee72(); // UNK_0xee72
 }

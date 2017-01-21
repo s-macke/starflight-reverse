@@ -3,6 +3,8 @@
 // overlay size   = 0x10f0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -456,81 +458,81 @@ void UNK_0xe566() // UNK_0xe566
 // ================================================
 // 0xe56e: WORD 'UNK_0xe570' codep=0x7420 parp=0xe570
 // ================================================
-IFieldType UNK_0xe570 = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xe570 = {CREWMEMBERIDX, 0x0b, 0x0f};
 // 0xe573: db 0x94 0x73 0x10 0x13 0x01 0x14 0xc8 0x6a ' s     j'
 
 // ================================================
 // 0xe57b: WORD 'UNK_0xe57d' codep=0x7420 parp=0xe57d
 // ================================================
-IFieldType UNK_0xe57d = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xe57d = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xe580: WORD 'UNK_0xe582' codep=0x7420 parp=0xe582
 // ================================================
-IFieldType UNK_0xe582 = {0x10, 0x20, 0x01};
+IFieldType UNK_0xe582 = {CREWMEMBERIDX, 0x20, 0x01};
 
 // ================================================
 // 0xe585: WORD 'UNK_0xe587' codep=0x7420 parp=0xe587
 // ================================================
-IFieldType UNK_0xe587 = {0x2a, 0x11, 0x01};
+IFieldType UNK_0xe587 = {TVEHICLEIDX, 0x11, 0x01};
 // 0xe58a: db 0x20 0x74 0x0b 0x11 0x02 0x94 0x73 0x20 0x11 0x01 0x17 0x49 0x6c ' t    s    Il'
 
 // ================================================
 // 0xe597: WORD 'UNK_0xe599' codep=0x7420 parp=0xe599
 // ================================================
-IFieldType UNK_0xe599 = {0x11, 0x11, 0x03};
+IFieldType UNK_0xe599 = {ASSIGN_CREWIDX, 0x11, 0x03};
 
 // ================================================
 // 0xe59c: WORD 'UNK_0xe59e' codep=0x7394 parp=0xe59e
 // ================================================
-LoadDataType UNK_0xe59e = {0x15, 0x00, 0x10, 0x32, 0x6ad1};
+LoadDataType UNK_0xe59e = {TRADERSIDX, 0x00, 0x10, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe5a4: WORD 'UNK_0xe5a6' codep=0x7394 parp=0xe5a6
 // ================================================
-LoadDataType UNK_0xe5a6 = {0x44, 0x1b, 0x01, 0x22, 0x6f07};
+LoadDataType UNK_0xe5a6 = {CREATUREIDX, 0x1b, 0x01, 0x22, 0x6f07};
 // 0xe5ac: db 0x94 0x73 0x44 0x1d 0x02 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
 // 0xe5b4: WORD 'UNK_0xe5b6' codep=0x7420 parp=0xe5b6
 // ================================================
-IFieldType UNK_0xe5b6 = {0x44, 0x15, 0x01};
+IFieldType UNK_0xe5b6 = {CREATUREIDX, 0x15, 0x01};
 
 // ================================================
 // 0xe5b9: WORD 'UNK_0xe5bb' codep=0x7420 parp=0xe5bb
 // ================================================
-IFieldType UNK_0xe5bb = {0x44, 0x16, 0x01};
+IFieldType UNK_0xe5bb = {CREATUREIDX, 0x16, 0x01};
 
 // ================================================
 // 0xe5be: WORD 'UNK_0xe5c0' codep=0x7420 parp=0xe5c0
 // ================================================
-IFieldType UNK_0xe5c0 = {0x44, 0x17, 0x01};
+IFieldType UNK_0xe5c0 = {CREATUREIDX, 0x17, 0x01};
 
 // ================================================
 // 0xe5c3: WORD 'UNK_0xe5c5' codep=0x7420 parp=0xe5c5
 // ================================================
-IFieldType UNK_0xe5c5 = {0x44, 0x18, 0x01};
+IFieldType UNK_0xe5c5 = {CREATUREIDX, 0x18, 0x01};
 
 // ================================================
 // 0xe5c8: WORD 'UNK_0xe5ca' codep=0x7420 parp=0xe5ca
 // ================================================
-IFieldType UNK_0xe5ca = {0x44, 0x19, 0x01};
+IFieldType UNK_0xe5ca = {CREATUREIDX, 0x19, 0x01};
 // 0xe5cd: db 0x94 0x73 0x15 0x2a 0x01 0x32 0xd1 0x6a ' s * 2 j'
 
 // ================================================
 // 0xe5d5: WORD 'UNK_0xe5d7' codep=0x7394 parp=0xe5d7
 // ================================================
-LoadDataType UNK_0xe5d7 = {0x15, 0x13, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xe5d7 = {TRADERSIDX, 0x13, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xe5dd: WORD 'UNK_0xe5df' codep=0x7420 parp=0xe5df
 // ================================================
-IFieldType UNK_0xe5df = {0x15, 0x0b, 0x01};
+IFieldType UNK_0xe5df = {TRADERSIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xe5e2: WORD 'UNK_0xe5e4' codep=0x7420 parp=0xe5e4
 // ================================================
-IFieldType UNK_0xe5e4 = {0x15, 0x0c, 0x01};
+IFieldType UNK_0xe5e4 = {TRADERSIDX, 0x0c, 0x01};
 // 0xe5e7: db 0x20 0x74 0x15 0x11 0x03 ' t   '
 
 // ================================================
@@ -581,7 +583,7 @@ void UNK_0xe606() // UNK_0xe606
 
 void UNK_0xe618() // UNK_0xe618
 {
-  LoadData(UNK_0xe5a6); // from 'CREATURE    '
+  LoadData(UNK_0xe5a6); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push(Pop() & Pop()); // AND
@@ -632,7 +634,7 @@ void UNK_0xe646() // UNK_0xe646
 
 void UNK_0xe654() // UNK_0xe654
 {
-  LoadData(UNK_0xe5a6); // from 'CREATURE    '
+  LoadData(UNK_0xe5a6); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() & Pop()); // AND
@@ -1424,7 +1426,7 @@ void UNK_0xeae0() // UNK_0xeae0
   PRINT("COMMANDER, WE HAVE BEEN HIT WITH", 32); // (.")
   GCR(); // GCR
   UNK_0xe514(); // UNK_0xe514
-  LoadData(UNK_0xe5d7); // from 'TRADERS     '
+  LoadData(UNK_0xe5d7); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   _gt_WEAP(); // >WEAP case
@@ -1432,7 +1434,7 @@ void UNK_0xeae0() // UNK_0xeae0
   GCR(); // GCR
   PRINT("BY THE ", 7); // (.")
   UNK_0xe514(); // UNK_0xe514
-  LoadData(UNK_0xe59e); // from 'TRADERS     '
+  LoadData(UNK_0xe59e); // from 'TRADERS'
   Push(0x0010);
   Push(0x002e);
   _dash_XTRAIL(); // -XTRAIL
@@ -1448,7 +1450,7 @@ void UNK_0xeae0() // UNK_0xeae0
 void UNK_0xeb33() // UNK_0xeb33
 {
   UNK_0xe514(); // UNK_0xe514
-  LoadData(UNK_0xe5d7); // from 'TRADERS     '
+  LoadData(UNK_0xe5d7); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0019);
   Push(Pop() * Pop()); // *

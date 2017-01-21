@@ -3,6 +3,8 @@
 // overlay size   = 0x03e0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -72,32 +74,32 @@ void SWAP(); // SWAP
 // ================================================
 // 0xf194: WORD 'UNK_0xf196' codep=0x7420 parp=0xf196
 // ================================================
-IFieldType UNK_0xf196 = {0x14, 0x19, 0x02};
+IFieldType UNK_0xf196 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xf199: WORD 'UNK_0xf19b' codep=0x7420 parp=0xf19b
 // ================================================
-IFieldType UNK_0xf19b = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xf19b = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xf19e: WORD 'UNK_0xf1a0' codep=0x7420 parp=0xf1a0
 // ================================================
-IFieldType UNK_0xf1a0 = {0x14, 0x1d, 0x02};
+IFieldType UNK_0xf1a0 = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
 // 0xf1a3: WORD 'UNK_0xf1a5' codep=0x7420 parp=0xf1a5
 // ================================================
-IFieldType UNK_0xf1a5 = {0x14, 0x45, 0x04};
+IFieldType UNK_0xf1a5 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
 // 0xf1a8: WORD 'UNK_0xf1aa' codep=0x7394 parp=0xf1aa
 // ================================================
-LoadDataType UNK_0xf1aa = {0x3a, 0x18, 0x0c, 0x49, 0x6e57};
+LoadDataType UNK_0xf1aa = {BUTTONSIDX, 0x18, 0x0c, 0x49, 0x6e57};
 
 // ================================================
 // 0xf1b0: WORD 'UNK_0xf1b2' codep=0x7394 parp=0xf1b2
 // ================================================
-LoadDataType UNK_0xf1b2 = {0x3a, 0x24, 0x0c, 0x49, 0x6e57};
+LoadDataType UNK_0xf1b2 = {BUTTONSIDX, 0x24, 0x0c, 0x49, 0x6e57};
 
 // ================================================
 // 0xf1b8: WORD 'UNK_0xf1ba' codep=0x224c parp=0xf1ba
@@ -210,7 +212,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   }
   UNK_0xf1c4(); // UNK_0xf1c4
   UNK_0x3f09("RAISE SHIELD");
-  LoadData(UNK_0xf1aa); // from 'BUTTONS     '
+  LoadData(UNK_0xf1aa); // from 'BUTTONS'
   UNK_0xf1d6(); // UNK_0xf1d6
   Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -274,7 +276,7 @@ void UNK_0xf311() // UNK_0xf311
   {
     UNK_0xf1c4(); // UNK_0xf1c4
     UNK_0x3f09("DROP SHIELD ");
-    LoadData(UNK_0xf1aa); // from 'BUTTONS     '
+    LoadData(UNK_0xf1aa); // from 'BUTTONS'
     UNK_0xf1d6(); // UNK_0xf1d6
     Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
@@ -312,7 +314,7 @@ void _gt_DISARM() // >DISARM
 {
   UNK_0xf1c4(); // UNK_0xf1c4
   UNK_0x3f09("ARM WEAPON");
-  LoadData(UNK_0xf1b2); // from 'BUTTONS     '
+  LoadData(UNK_0xf1b2); // from 'BUTTONS'
   UNK_0xf1d6(); // UNK_0xf1d6
   Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -395,7 +397,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
       Store_2(); // !_2
       UNK_0xf1c4(); // UNK_0xf1c4
       UNK_0x3f09("DISARM    ");
-      LoadData(UNK_0xf1b2); // from 'BUTTONS     '
+      LoadData(UNK_0xf1b2); // from 'BUTTONS'
       UNK_0xf1d6(); // UNK_0xf1d6
     }
     return;

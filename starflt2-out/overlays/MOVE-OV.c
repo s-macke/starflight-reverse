@@ -3,6 +3,8 @@
 // overlay size   = 0x0b40
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -319,7 +321,7 @@ void UNK_0xea76() // UNK_0xea76
 // ================================================
 // 0xea96: WORD 'UNK_0xea98' codep=0x7394 parp=0xea98
 // ================================================
-LoadDataType UNK_0xea98 = {0x20, 0x04, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xea98 = {PLANETIDX, 0x04, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xea9e: WORD 'UNK_0xeaa0' codep=0x224c parp=0xeaa0
@@ -327,7 +329,7 @@ LoadDataType UNK_0xea98 = {0x20, 0x04, 0x01, 0x17, 0x6c49};
 
 void UNK_0xeaa0() // UNK_0xeaa0
 {
-  LoadData(UNK_0xea98); // from 'PLANET      '
+  LoadData(UNK_0xea98); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -1410,7 +1412,7 @@ void UNK_0xf197() // UNK_0xf197
   _gt_C_plus_S(); // >C+S
   UNK_0xeafd(); // UNK_0xeafd
   UNK_0xeaf1(); // UNK_0xeaf1
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Store_2(); // !_2

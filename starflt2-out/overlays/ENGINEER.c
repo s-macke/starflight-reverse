@@ -3,6 +3,8 @@
 // overlay size   = 0x08c0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -124,17 +126,17 @@ void BLT(); // BLT
 // ================================================
 // 0xecb4: WORD 'UNK_0xecb6' codep=0x7420 parp=0xecb6
 // ================================================
-IFieldType UNK_0xecb6 = {0x10, 0x1c, 0x01};
+IFieldType UNK_0xecb6 = {CREWMEMBERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xecb9: WORD 'UNK_0xecbb' codep=0x7420 parp=0xecbb
 // ================================================
-IFieldType UNK_0xecbb = {0x11, 0x1a, 0x03};
+IFieldType UNK_0xecbb = {ASSIGN_CREWIDX, 0x1a, 0x03};
 
 // ================================================
 // 0xecbe: WORD 'UNK_0xecc0' codep=0x7420 parp=0xecc0
 // ================================================
-IFieldType UNK_0xecc0 = {0x14, 0x11, 0x02};
+IFieldType UNK_0xecc0 = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
 // 0xecc3: WORD 'UNK_0xecc5' codep=0x224c parp=0xecc5

@@ -3,6 +3,8 @@
 // overlay size   = 0x0fe0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -256,42 +258,42 @@ void UNK_0xe59a() // UNK_0xe59a
 // ================================================
 // 0xe5a0: WORD 'UNK_0xe5a2' codep=0x7420 parp=0xe5a2
 // ================================================
-IFieldType UNK_0xe5a2 = {0x23, 0x0a, 0x02};
+IFieldType UNK_0xe5a2 = {NOTICEIDX, 0x0a, 0x02};
 
 // ================================================
 // 0xe5a5: WORD 'UNK_0xe5a7' codep=0x7420 parp=0xe5a7
 // ================================================
-IFieldType UNK_0xe5a7 = {0x30, 0x0b, 0xff};
+IFieldType UNK_0xe5a7 = {STRINGIDX, 0x0b, 0xff};
 
 // ================================================
 // 0xe5aa: WORD 'UNK_0xe5ac' codep=0x7420 parp=0xe5ac
 // ================================================
-IFieldType UNK_0xe5ac = {0x24, 0x0a, 0x01};
+IFieldType UNK_0xe5ac = {EVALUATIONIDX, 0x0a, 0x01};
 
 // ================================================
 // 0xe5af: WORD 'UNK_0xe5b1' codep=0x7420 parp=0xe5b1
 // ================================================
-IFieldType UNK_0xe5b1 = {0x24, 0x0b, 0x02};
+IFieldType UNK_0xe5b1 = {EVALUATIONIDX, 0x0b, 0x02};
 
 // ================================================
 // 0xe5b4: WORD 'UNK_0xe5b6' codep=0x7420 parp=0xe5b6
 // ================================================
-IFieldType UNK_0xe5b6 = {0x24, 0x11, 0x02};
+IFieldType UNK_0xe5b6 = {EVALUATIONIDX, 0x11, 0x02};
 
 // ================================================
 // 0xe5b9: WORD 'UNK_0xe5bb' codep=0x7420 parp=0xe5bb
 // ================================================
-IFieldType UNK_0xe5bb = {0x24, 0x13, 0x01};
+IFieldType UNK_0xe5bb = {EVALUATIONIDX, 0x13, 0x01};
 
 // ================================================
 // 0xe5be: WORD 'UNK_0xe5c0' codep=0x7420 parp=0xe5c0
 // ================================================
-IFieldType UNK_0xe5c0 = {0x24, 0x14, 0x01};
+IFieldType UNK_0xe5c0 = {EVALUATIONIDX, 0x14, 0x01};
 
 // ================================================
 // 0xe5c3: WORD 'UNK_0xe5c5' codep=0x7420 parp=0xe5c5
 // ================================================
-IFieldType UNK_0xe5c5 = {0x24, 0x15, 0x0f};
+IFieldType UNK_0xe5c5 = {EVALUATIONIDX, 0x15, 0x0f};
 // 0xe5c8: db 0x4c 0x22 0x5d 0x17 0x0e 0xb7 0xd9 0x84 0x90 0x16 'L"]       '
 
 // ================================================
@@ -1966,7 +1968,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   Push(0x0035);
   ICREATE(); // ICREATE
   _gt_C_plus_S(); // >C+S
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Store_2(); // !_2

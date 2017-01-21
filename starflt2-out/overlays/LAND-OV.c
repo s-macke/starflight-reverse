@@ -3,6 +3,8 @@
 // overlay size   = 0x03d0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -91,12 +93,12 @@ const unsigned short int pp_UNK_0xf1b3 = 0xf1b3; // UNK_0xf1b3 size: 2
 // ================================================
 // 0xf1a4: WORD 'UNK_0xf1a6' codep=0x7420 parp=0xf1a6
 // ================================================
-IFieldType UNK_0xf1a6 = {0x14, 0x34, 0x0f};
+IFieldType UNK_0xf1a6 = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
 // 0xf1a9: WORD 'UNK_0xf1ab' codep=0x7394 parp=0xf1ab
 // ================================================
-LoadDataType UNK_0xf1ab = {0x20, 0x02, 0x02, 0x17, 0x6c49};
+LoadDataType UNK_0xf1ab = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 
 // ================================================
 // 0xf1b1: WORD 'UNK_0xf1b3' codep=0x1d29 parp=0xf1b3
@@ -111,7 +113,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
 {
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xf1ab); // from 'PLANET      '
+  LoadData(UNK_0xf1ab); // from 'PLANET'
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(0x0320);

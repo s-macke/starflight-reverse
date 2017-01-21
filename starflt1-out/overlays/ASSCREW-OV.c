@@ -3,6 +3,8 @@
 // overlay size   = 0x0af0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -246,67 +248,67 @@ void UNK_0xeb09() // UNK_0xeb09
 // ================================================
 // 0xeb21: WORD 'UNK_0xeb23' codep=0x73ea parp=0xeb23
 // ================================================
-LoadDataType UNK_0xeb23 = {0x10, 0x00, 0x08, 0x14, 0x6489};
+LoadDataType UNK_0xeb23 = {CREWMEMBERIDX, 0x00, 0x08, 0x14, 0x6489};
 
 // ================================================
 // 0xeb29: WORD 'UNK_0xeb2b' codep=0x73ea parp=0xeb2b
 // ================================================
-LoadDataType UNK_0xeb2b = {0x10, 0x12, 0x01, 0x14, 0x6489};
+LoadDataType UNK_0xeb2b = {CREWMEMBERIDX, 0x12, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xeb31: WORD 'UNK_0xeb33' codep=0x73ea parp=0xeb33
 // ================================================
-LoadDataType UNK_0xeb33 = {0x10, 0x13, 0x01, 0x14, 0x6489};
+LoadDataType UNK_0xeb33 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xeb39: WORD 'UNK_0xeb3b' codep=0x744d parp=0xeb3b
 // ================================================
-IFieldType UNK_0xeb3b = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xeb3b = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xeb3e: WORD 'UNK_0xeb40' codep=0x744d parp=0xeb40
 // ================================================
-IFieldType UNK_0xeb40 = {0x10, 0x1a, 0x01};
+IFieldType UNK_0xeb40 = {CREWMEMBERIDX, 0x1a, 0x01};
 
 // ================================================
 // 0xeb43: WORD 'UNK_0xeb45' codep=0x744d parp=0xeb45
 // ================================================
-IFieldType UNK_0xeb45 = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xeb45 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xeb48: WORD 'UNK_0xeb4a' codep=0x744d parp=0xeb4a
 // ================================================
-IFieldType UNK_0xeb4a = {0x10, 0x1c, 0x01};
+IFieldType UNK_0xeb4a = {CREWMEMBERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xeb4d: WORD 'UNK_0xeb4f' codep=0x744d parp=0xeb4f
 // ================================================
-IFieldType UNK_0xeb4f = {0x10, 0x1d, 0x01};
+IFieldType UNK_0xeb4f = {CREWMEMBERIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xeb52: WORD 'UNK_0xeb54' codep=0x744d parp=0xeb54
 // ================================================
-IFieldType UNK_0xeb54 = {0x10, 0x1e, 0x01};
+IFieldType UNK_0xeb54 = {CREWMEMBERIDX, 0x1e, 0x01};
 
 // ================================================
 // 0xeb57: WORD 'UNK_0xeb59' codep=0x744d parp=0xeb59
 // ================================================
-IFieldType UNK_0xeb59 = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xeb59 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xeb5c: WORD 'UNK_0xeb5e' codep=0x744d parp=0xeb5e
 // ================================================
-IFieldType UNK_0xeb5e = {0x10, 0x20, 0x02};
+IFieldType UNK_0xeb5e = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xeb61: WORD 'UNK_0xeb63' codep=0x744d parp=0xeb63
 // ================================================
-IFieldType UNK_0xeb63 = {0x10, 0x22, 0x01};
+IFieldType UNK_0xeb63 = {CREWMEMBERIDX, 0x22, 0x01};
 
 // ================================================
 // 0xeb66: WORD 'UNK_0xeb68' codep=0x744d parp=0xeb68
 // ================================================
-IFieldType UNK_0xeb68 = {0x11, 0x11, 0x12};
+IFieldType UNK_0xeb68 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
 // 0xeb6b: WORD 'UNK_0xeb6d' codep=0x224c parp=0xeb6d
@@ -729,7 +731,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x0077);
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
-  LoadData(UNK_0xeb23); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb23); // from 'CREWMEMBER'
   _do__dot_(); // $.
   Push(0x004a);
   Push(0x001b);
@@ -750,7 +752,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
-  LoadData(UNK_0xeb33); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb33); // from 'CREWMEMBER'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   DrawR(); // .R
@@ -773,7 +775,7 @@ void UNK_0xef47() // UNK_0xef47
   Push(0x008d);
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
-  LoadData(UNK_0xeb2b); // from 'CREWMEMBER  '
+  LoadData(UNK_0xeb2b); // from 'CREWMEMBER'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   DrawR(); // .R

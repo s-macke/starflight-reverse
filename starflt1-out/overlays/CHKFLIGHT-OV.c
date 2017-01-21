@@ -3,6 +3,8 @@
 // overlay size   = 0x03c0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -85,17 +87,17 @@ const unsigned short int pp_UNK_0xf327 = 0xf327; // UNK_0xf327 size: 2
 // ================================================
 // 0xf1b4: WORD 'UNK_0xf1b6' codep=0x744d parp=0xf1b6
 // ================================================
-IFieldType UNK_0xf1b6 = {0x10, 0x20, 0x02};
+IFieldType UNK_0xf1b6 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xf1b9: WORD 'UNK_0xf1bb' codep=0x744d parp=0xf1bb
 // ================================================
-IFieldType UNK_0xf1bb = {0x11, 0x11, 0x12};
+IFieldType UNK_0xf1bb = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
 // 0xf1be: WORD 'UNK_0xf1c0' codep=0x744d parp=0xf1c0
 // ================================================
-IFieldType UNK_0xf1c0 = {0x14, 0x13, 0x02};
+IFieldType UNK_0xf1c0 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
 // 0xf1c3: WORD 'UNK_0xf1c5' codep=0x224c parp=0xf1c5

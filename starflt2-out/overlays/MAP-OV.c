@@ -3,6 +3,8 @@
 // overlay size   = 0x1220
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -319,22 +321,22 @@ const unsigned short int cc_UNK_0xe36e = 0xe36e; // UNK_0xe36e
 // ================================================
 // 0xe354: WORD 'UNK_0xe356' codep=0x7420 parp=0xe356
 // ================================================
-IFieldType UNK_0xe356 = {0x3d, 0x1b, 0x01};
+IFieldType UNK_0xe356 = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xe359: WORD 'UNK_0xe35b' codep=0x7420 parp=0xe35b
 // ================================================
-IFieldType UNK_0xe35b = {0x3d, 0x1c, 0x01};
+IFieldType UNK_0xe35b = {ENCOUNTERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xe35e: WORD 'UNK_0xe360' codep=0x7420 parp=0xe360
 // ================================================
-IFieldType UNK_0xe360 = {0x3d, 0x1d, 0x01};
+IFieldType UNK_0xe360 = {ENCOUNTERIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xe363: WORD 'UNK_0xe365' codep=0x7420 parp=0xe365
 // ================================================
-IFieldType UNK_0xe365 = {0x3d, 0x1a, 0x01};
+IFieldType UNK_0xe365 = {ENCOUNTERIDX, 0x1a, 0x01};
 
 // ================================================
 // 0xe368: WORD 'UNK_0xe36a' codep=0x1d29 parp=0xe36a
@@ -389,27 +391,27 @@ IFieldType UNK_0xe365 = {0x3d, 0x1a, 0x01};
 // ================================================
 // 0xe390: WORD 'UNK_0xe392' codep=0x7420 parp=0xe392
 // ================================================
-IFieldType UNK_0xe392 = {0x2d, 0x0b, 0x02};
+IFieldType UNK_0xe392 = {FLUX_NODEIDX, 0x0b, 0x02};
 
 // ================================================
 // 0xe395: WORD 'UNK_0xe397' codep=0x7420 parp=0xe397
 // ================================================
-IFieldType UNK_0xe397 = {0x2d, 0x11, 0x02};
+IFieldType UNK_0xe397 = {FLUX_NODEIDX, 0x11, 0x02};
 
 // ================================================
 // 0xe39a: WORD 'UNK_0xe39c' codep=0x7420 parp=0xe39c
 // ================================================
-IFieldType UNK_0xe39c = {0x2e, 0x11, 0x01};
+IFieldType UNK_0xe39c = {NEBULAIDX, 0x11, 0x01};
 
 // ================================================
 // 0xe39f: WORD 'UNK_0xe3a1' codep=0x7420 parp=0xe3a1
 // ================================================
-IFieldType UNK_0xe3a1 = {0x17, 0x0b, 0x01};
+IFieldType UNK_0xe3a1 = {STARSYSTEMIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xe3a4: WORD 'UNK_0xe3a6' codep=0x7420 parp=0xe3a6
 // ================================================
-IFieldType UNK_0xe3a6 = {0x14, 0x13, 0x02};
+IFieldType UNK_0xe3a6 = {SHIPIDX, 0x13, 0x02};
 // 0xe3a9: db 0x94 0x73 0x28 0x14 0x04 0x74 0x54 0x6d ' s(  tTm'
 
 // ================================================

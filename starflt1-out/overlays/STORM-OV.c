@@ -3,6 +3,8 @@
 // overlay size   = 0x04d0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -244,22 +246,22 @@ void UNK_0xf174() // UNK_0xf174
 // ================================================
 // 0xf241: WORD 'UNK_0xf243' codep=0x744d parp=0xf243
 // ================================================
-IFieldType UNK_0xf243 = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xf243 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xf246: WORD 'UNK_0xf248' codep=0x744d parp=0xf248
 // ================================================
-IFieldType UNK_0xf248 = {0x11, 0x17, 0x03};
+IFieldType UNK_0xf248 = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
 // 0xf24b: WORD 'UNK_0xf24d' codep=0x73ea parp=0xf24d
 // ================================================
-LoadDataType UNK_0xf24d = {0x20, 0x11, 0x02, 0x16, 0x658f};
+LoadDataType UNK_0xf24d = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xf253: WORD 'UNK_0xf255' codep=0x73ea parp=0xf255
 // ================================================
-LoadDataType UNK_0xf255 = {0x20, 0x01, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xf255 = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 // 0xf25b: db 0x29 0x1d 0x3a 0x20 ') : '
 
 // ================================================
@@ -294,22 +296,22 @@ void UNK_0xf275() // UNK_0xf275
 // ================================================
 // 0xf27f: WORD 'UNK_0xf281' codep=0x744d parp=0xf281
 // ================================================
-IFieldType UNK_0xf281 = {0x11, 0x11, 0x03};
+IFieldType UNK_0xf281 = {ASSIGN_CREWIDX, 0x11, 0x03};
 
 // ================================================
 // 0xf284: WORD 'UNK_0xf286' codep=0x744d parp=0xf286
 // ================================================
-IFieldType UNK_0xf286 = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xf286 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xf289: WORD 'UNK_0xf28b' codep=0x744d parp=0xf28b
 // ================================================
-IFieldType UNK_0xf28b = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xf28b = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xf28e: WORD 'UNK_0xf290' codep=0x73ea parp=0xf290
 // ================================================
-LoadDataType UNK_0xf290 = {0x10, 0x13, 0x01, 0x14, 0x6489};
+LoadDataType UNK_0xf290 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xf296: WORD 'UNK_0xf298' codep=0x224c parp=0xf298
@@ -460,7 +462,7 @@ void INJURE_dash_PL() // INJURE-PL
   UNK_0xf2da(); // UNK_0xf2da
   UNK_0xf298(); // UNK_0xf298
   _gt_C_plus_S(); // >C+S
-  LoadData(UNK_0xf290); // from 'CREWMEMBER  '
+  LoadData(UNK_0xf290); // from 'CREWMEMBER'
   Push(Read8(Pop())&0xFF); // C@
   _slash_(); // /
   Push(1);
@@ -592,7 +594,7 @@ void UNK_0xf46c() // UNK_0xf46c
   Push(1);
   Push(0x0064);
   RRND(); // RRND
-  LoadData(UNK_0xf255); // from 'PLANET      '
+  LoadData(UNK_0xf255); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()*2); // 2*
   Push(Pop()+1); // 1+
@@ -635,7 +637,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xf24d); // from 'PLANET      '
+  LoadData(UNK_0xf24d); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)

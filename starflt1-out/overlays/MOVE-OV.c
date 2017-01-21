@@ -3,6 +3,8 @@
 // overlay size   = 0x0ee0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -474,12 +476,12 @@ void UNK_0xe7b8() // UNK_0xe7b8
 // ================================================
 // 0xe7c2: WORD 'UNK_0xe7c4' codep=0x744d parp=0xe7c4
 // ================================================
-IFieldType UNK_0xe7c4 = {0x11, 0x17, 0x03};
+IFieldType UNK_0xe7c4 = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
 // 0xe7c7: WORD 'UNK_0xe7c9' codep=0x744d parp=0xe7c9
 // ================================================
-IFieldType UNK_0xe7c9 = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xe7c9 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xe7cc: WORD 'UNK_0xe7ce' codep=0x224c parp=0xe7ce
@@ -1418,7 +1420,7 @@ void UNK_0xef48() // UNK_0xef48
   UNK_0xe7ac(); // UNK_0xe7ac
   Push(0x0bb8);
   Push(Read16(regsp)); // DUP
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Store_3(); // !_3
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Store_3(); // !_3
@@ -2091,7 +2093,7 @@ void TV_dash_MOVE() // TV-MOVE
 // ================================================
 // 0xf415: WORD 'plan-tseed' codep=0x73ea parp=0xf417
 // ================================================
-LoadDataType plan_dash_tseed = {0x20, 0x07, 0x02, 0x16, 0x658f};
+LoadDataType plan_dash_tseed = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xf41d: WORD 'APPROACH' codep=0x224c parp=0xf42a
@@ -2114,7 +2116,7 @@ void APPROACH() // APPROACH
     Pop(); // DROP
   } else
   {
-    LoadData(plan_dash_tseed); // from 'PLANET      '
+    LoadData(plan_dash_tseed); // from 'PLANET'
     Push(Read16(Pop())); // @
   }
   Push(Read16(regsp)); // DUP

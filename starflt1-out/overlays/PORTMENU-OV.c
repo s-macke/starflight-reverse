@@ -3,6 +3,8 @@
 // overlay size   = 0x0c30
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -251,17 +253,17 @@ const unsigned short int pp_UNK_0xf151 = 0xf151; // UNK_0xf151 size: 56
 // ================================================
 // 0xe944: WORD 'UNK_0xe946' codep=0x744d parp=0xe946
 // ================================================
-IFieldType UNK_0xe946 = {0x14, 0x14, 0x01};
+IFieldType UNK_0xe946 = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
 // 0xe949: WORD 'UNK_0xe94b' codep=0x744d parp=0xe94b
 // ================================================
-IFieldType UNK_0xe94b = {0x10, 0x20, 0x02};
+IFieldType UNK_0xe94b = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xe94e: WORD 'UNK_0xe950' codep=0x744d parp=0xe950
 // ================================================
-IFieldType UNK_0xe950 = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xe950 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xe953: WORD 'UNK_0xe955' codep=0x224c parp=0xe955
@@ -560,7 +562,7 @@ void UNK_0xeae1() // UNK_0xeae1
 // ================================================
 // 0xeae9: WORD 'UNK_0xeaeb' codep=0x744d parp=0xeaeb
 // ================================================
-IFieldType UNK_0xeaeb = {0x14, 0x43, 0x02};
+IFieldType UNK_0xeaeb = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xeaee: WORD 'UNK_0xeaf0' codep=0x224c parp=0xeaf0
@@ -681,7 +683,7 @@ void UNK_0xeba2() // UNK_0xeba2
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Store_3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
 }

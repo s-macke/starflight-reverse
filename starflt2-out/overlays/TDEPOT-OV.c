@@ -3,6 +3,8 @@
 // overlay size   = 0x0f90
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -268,7 +270,7 @@ const unsigned short int pp_UNK_0xe7d2 = 0xe7d2; // UNK_0xe7d2 size: 13
 
 void UNK_0xe5f2() // UNK_0xe5f2
 {
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   U_slash_MOD(); // U/MOD
   SWAP(); // SWAP
@@ -396,12 +398,12 @@ void UNK_0xe6ab() // UNK_0xe6ab
 // ================================================
 // 0xe6bd: WORD 'UNK_0xe6bf' codep=0x7420 parp=0xe6bf
 // ================================================
-IFieldType UNK_0xe6bf = {0x14, 0x43, 0x02};
+IFieldType UNK_0xe6bf = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xe6c2: WORD 'UNK_0xe6c4' codep=0x7394 parp=0xe6c4
 // ================================================
-LoadDataType UNK_0xe6c4 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
+LoadDataType UNK_0xe6c4 = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xe6ca: WORD 'UNK_0xe6cc' codep=0x224c parp=0xe6cc
@@ -1508,7 +1510,7 @@ void UNK_0xef98() // UNK_0xef98
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+    LoadData(ELEM_dash_VA); // from 'ELEMENT'
     Push(Read16(Pop())); // @
     Push(0x000a);
     _slash_(); // /
@@ -1545,7 +1547,7 @@ void UNK_0xef98() // UNK_0xef98
 
 void UNK_0xefde() // UNK_0xefde
 {
-  LoadData(UNK_0xe6c4); // from 'ARTIFACT    '
+  LoadData(UNK_0xe6c4); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   _gt_FLAG(); // >FLAG
@@ -1562,7 +1564,7 @@ void UNK_0xefea() // UNK_0xefea
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+    LoadData(ART_dash_VAL); // from 'ARTIFACT'
     Push(Read16(Pop())); // @
     Push(pp__pe_VAL); // %VAL
     Push(Read16(Pop())); // @
@@ -1596,7 +1598,7 @@ void UNK_0xefea() // UNK_0xefea
       Push(Read16(Pop())); // @
     } else
     {
-      LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+      LoadData(ART_dash_VOL); // from 'ARTIFACT'
       Push(Read16(Pop())); // @
     }
     Push(Read16(regsp)); // DUP
@@ -2004,9 +2006,9 @@ void UNK_0xf25a() // UNK_0xf25a
 
 void UNK_0xf312() // UNK_0xf312
 {
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
-  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   Push(pp__pe_VAL); // %VAL
   Push(Read16(Pop())); // @
@@ -2014,7 +2016,7 @@ void UNK_0xf312() // UNK_0xf312
   UNK_0xed62(); // UNK_0xed62
   if (Pop() != 0)
   {
-    LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+    LoadData(ART_dash_VAL); // from 'ARTIFACT'
     Push(Read16(Pop())); // @
     Push(pp__pe_VAL); // %VAL
     Push(Read16(Pop())); // @
@@ -2023,7 +2025,7 @@ void UNK_0xf312() // UNK_0xf312
     DNEGATE(); // DNEGATE
     UNK_0xe62a(); // UNK_0xe62a
     UNK_0xe6d4(); // UNK_0xe6d4
-    LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+    LoadData(ART_dash_VOL); // from 'ARTIFACT'
     Push(Read16(Pop())); // @
     Push(pp__pe_VAL); // %VAL
     Push(Read16(Pop())); // @
@@ -2050,7 +2052,7 @@ void UNK_0xf35c() // UNK_0xf35c
 {
   unsigned short int a;
   Push(1);
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /
@@ -2065,7 +2067,7 @@ void UNK_0xf35c() // UNK_0xf35c
     Push(Read16(Pop())); // @
     Push(Read16(regsp)); // DUP
     Push(Read16(regsp)); // DUP
-    LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+    LoadData(ELEM_dash_VA); // from 'ELEMENT'
     Push(Read16(Pop())); // @
     Push(0x000a);
     _slash_(); // /
@@ -2081,7 +2083,7 @@ void UNK_0xf35c() // UNK_0xf35c
     if (Pop() != 0)
     {
       a = Pop(); // >R
-      LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+      LoadData(ELEM_dash_VA); // from 'ELEMENT'
       Push(Read16(Pop())); // @
       Push(0x000a);
       _slash_(); // /

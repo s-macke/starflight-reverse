@@ -3,6 +3,8 @@
 // overlay size   = 0x0200
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -88,7 +90,7 @@ void _1_dot_5_at_(); // 1.5@
 // ================================================
 // 0xf374: WORD 'UNK_0xf376' codep=0x7420 parp=0xf376
 // ================================================
-IFieldType UNK_0xf376 = {0x30, 0x0b, 0x00};
+IFieldType UNK_0xf376 = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
 // 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b
@@ -218,7 +220,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   Store_2(); // !_2
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /

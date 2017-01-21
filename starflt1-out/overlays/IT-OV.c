@@ -3,6 +3,8 @@
 // overlay size   = 0x0790
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -167,7 +169,7 @@ const unsigned short int cc_UNK_0xee06 = 0xee06; // UNK_0xee06
 // ================================================
 // 0xede4: WORD 'UNK_0xede6' codep=0x73ea parp=0xede6
 // ================================================
-LoadDataType UNK_0xede6 = {0x1c, 0x1d, 0x01, 0x1e, 0x652c};
+LoadDataType UNK_0xede6 = {ARTIFACTIDX, 0x1d, 0x01, 0x1e, 0x652c};
 
 // ================================================
 // 0xedec: WORD 'UNK_0xedee' codep=0x2214 parp=0xedee
@@ -357,7 +359,7 @@ void UNK_0xef27() // UNK_0xef27
 void UNK_0xef51() // UNK_0xef51
 {
   UNK_0xee0a(); // UNK_0xee0a
-  LoadData(BOX_dash_NAME); // from 'BOX         '
+  LoadData(BOX_dash_NAME); // from 'BOX'
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
@@ -370,7 +372,7 @@ void UNK_0xef51() // UNK_0xef51
 
 void UNK_0xef61() // UNK_0xef61
 {
-  LoadData(RESEMBLES); // from 'CREATURE    '
+  LoadData(RESEMBLES); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -378,7 +380,7 @@ void UNK_0xef61() // UNK_0xef61
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    LoadData(SHAPE); // from 'CREATURE    '
+    LoadData(SHAPE); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
   }
   _gt_C_plus_S(); // >C+S
@@ -446,13 +448,13 @@ void UNK_0xef89() // UNK_0xef89
 
 void UNK_0xefe9() // UNK_0xefe9
 {
-  LoadData(ELEM_dash_NAME); // from 'ELEMENT     '
+  LoadData(ELEM_dash_NAME); // from 'ELEMENT'
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -545,22 +547,22 @@ void UNK_0xf082() // UNK_0xf082
 
 void UNK_0xf096() // UNK_0xf096
 {
-  LoadData(ART_dash_NAME); // from 'ARTIFACT    '
+  LoadData(ART_dash_NAME); // from 'ARTIFACT'
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0018);
   CMOVE(); // CMOVE
-  LoadData(UNK_0xede6); // from 'ARTIFACT    '
+  LoadData(UNK_0xede6); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_Is_ask__ask_IT); // ???IT
   Push(Read16(Pop())); // @
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   OVER(); // OVER
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() * Pop()); // *
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   UNK_0xef89(); // UNK_0xef89
   if (Pop() == 0) return;
@@ -574,7 +576,7 @@ void UNK_0xf096() // UNK_0xf096
 
 void UNK_0xf0c6() // UNK_0xf0c6
 {
-  LoadData(SPEC_dash_NAME); // from 'SPECIMEN    '
+  LoadData(SPEC_dash_NAME); // from 'SPECIMEN'
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
@@ -592,7 +594,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
 
 void UNK_0xf0de() // UNK_0xf0de
 {
-  LoadData(BD_dash_NAME); // from 'BIO-DATA    '
+  LoadData(BD_dash_NAME); // from 'BIO_DATA'
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE

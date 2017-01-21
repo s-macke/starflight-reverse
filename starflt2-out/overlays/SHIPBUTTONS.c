@@ -3,6 +3,8 @@
 // overlay size   = 0x0980
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -203,27 +205,27 @@ const unsigned short int pp_UNK_0xebf6 = 0xebf6; // UNK_0xebf6 size: 2
 // ================================================
 // 0xebf8: WORD 'UNK_0xebfa' codep=0x7420 parp=0xebfa
 // ================================================
-IFieldType UNK_0xebfa = {0x14, 0x45, 0x04};
+IFieldType UNK_0xebfa = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
 // 0xebfd: WORD 'UNK_0xebff' codep=0x7420 parp=0xebff
 // ================================================
-IFieldType UNK_0xebff = {0x14, 0x34, 0x0f};
+IFieldType UNK_0xebff = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
 // 0xec02: WORD 'UNK_0xec04' codep=0x7420 parp=0xec04
 // ================================================
-IFieldType UNK_0xec04 = {0x11, 0x11, 0x12};
+IFieldType UNK_0xec04 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
 // 0xec07: WORD 'UNK_0xec09' codep=0x7420 parp=0xec09
 // ================================================
-IFieldType UNK_0xec09 = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xec09 = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xec0c: WORD 'UNK_0xec0e' codep=0x7394 parp=0xec0e
 // ================================================
-LoadDataType UNK_0xec0e = {0x20, 0x16, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xec0e = {PLANETIDX, 0x16, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xec14: WORD 'UNK_0xec16' codep=0x224c parp=0xec16
@@ -376,7 +378,7 @@ void UNK_0xecec() // UNK_0xecec
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData(_1BTN); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS'
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1021,7 +1023,7 @@ void UNK_0xf11e() // UNK_0xf11e
     Push(Read16(Pop())); // @
     Push(2);
     _st_(); // <
-    LoadData(UNK_0xec0e); // from 'PLANET      '
+    LoadData(UNK_0xec0e); // from 'PLANET'
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() == 0) Push(1); else Push(0); // NOT

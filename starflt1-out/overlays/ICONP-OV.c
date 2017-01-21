@@ -3,6 +3,8 @@
 // overlay size   = 0x0340
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -100,37 +102,37 @@ const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 // ================================================
 // 0xf234: WORD 'UNK_0xf236' codep=0x744d parp=0xf236
 // ================================================
-IFieldType UNK_0xf236 = {0x14, 0x49, 0x01};
+IFieldType UNK_0xf236 = {SHIPIDX, 0x49, 0x01};
 
 // ================================================
 // 0xf239: WORD 'UNK_0xf23b' codep=0x73ea parp=0xf23b
 // ================================================
-LoadDataType UNK_0xf23b = {0x19, 0x1c, 0x01, 0x49, 0x6491};
+LoadDataType UNK_0xf23b = {VESSELIDX, 0x1c, 0x01, 0x49, 0x6491};
 
 // ================================================
 // 0xf241: WORD 'UNK_0xf243' codep=0x744d parp=0xf243
 // ================================================
-IFieldType UNK_0xf243 = {0x19, 0x0b, 0x01};
+IFieldType UNK_0xf243 = {VESSELIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xf246: WORD 'UNK_0xf248' codep=0x73ea parp=0xf248
 // ================================================
-LoadDataType UNK_0xf248 = {0x44, 0x90, 0x02, 0x9c, 0x69d8};
+LoadDataType UNK_0xf248 = {CREATUREIDX, 0x90, 0x02, 0x9c, 0x69d8};
 
 // ================================================
 // 0xf24e: WORD 'UNK_0xf250' codep=0x744d parp=0xf250
 // ================================================
-IFieldType UNK_0xf250 = {0x44, 0x15, 0x01};
+IFieldType UNK_0xf250 = {CREATUREIDX, 0x15, 0x01};
 
 // ================================================
 // 0xf253: WORD 'UNK_0xf255' codep=0x744d parp=0xf255
 // ================================================
-IFieldType UNK_0xf255 = {0x44, 0x11, 0x01};
+IFieldType UNK_0xf255 = {CREATUREIDX, 0x11, 0x01};
 
 // ================================================
 // 0xf258: WORD 'UNK_0xf25a' codep=0x73ea parp=0xf25a
 // ================================================
-LoadDataType UNK_0xf25a = {0x20, 0x01, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xf25a = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 // 0xf260: db 0x4d 0x74 0x3d 0x1b 0x01 'Mt=  '
 
 // ================================================
@@ -207,7 +209,7 @@ void UNK_0xf293() // UNK_0xf293
 
 void UNK_0xf2a1() // UNK_0xf2a1
 {
-  LoadData(UNK_0xf23b); // from 'VESSEL      '
+  LoadData(UNK_0xf23b); // from 'VESSEL'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -413,7 +415,7 @@ void UNK_0xf38f() // UNK_0xf38f
     Push(Pop() + Pop()); // +
     return;
   }
-  LoadData(UNK_0xf248); // from 'CREATURE    '
+  LoadData(UNK_0xf248); // from 'CREATURE'
   Push(Read16(Pop())); // @
 }
 
@@ -587,7 +589,7 @@ void PLAN_dash_IC_dash_CASES() // PLAN-IC-CASES
 
 void UNK_0xf47b() // UNK_0xf47b
 {
-  LoadData(UNK_0xf25a); // from 'PLANET      '
+  LoadData(UNK_0xf25a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   PLAN_dash_IC_dash_CASES(); // PLAN-IC-CASES case
 }

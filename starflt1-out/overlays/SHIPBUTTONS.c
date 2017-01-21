@@ -3,6 +3,8 @@
 // overlay size   = 0x07c0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -169,22 +171,22 @@ const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 2
 // ================================================
 // 0xedb8: WORD 'UNK_0xedba' codep=0x744d parp=0xedba
 // ================================================
-IFieldType UNK_0xedba = {0x14, 0x45, 0x04};
+IFieldType UNK_0xedba = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
 // 0xedbd: WORD 'UNK_0xedbf' codep=0x744d parp=0xedbf
 // ================================================
-IFieldType UNK_0xedbf = {0x14, 0x34, 0x0f};
+IFieldType UNK_0xedbf = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
 // 0xedc2: WORD 'UNK_0xedc4' codep=0x744d parp=0xedc4
 // ================================================
-IFieldType UNK_0xedc4 = {0x11, 0x11, 0x12};
+IFieldType UNK_0xedc4 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
 // 0xedc7: WORD 'UNK_0xedc9' codep=0x744d parp=0xedc9
 // ================================================
-IFieldType UNK_0xedc9 = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xedc9 = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xedcc: WORD 'UNK_0xedce' codep=0x224c parp=0xedce
@@ -321,7 +323,7 @@ void UNK_0xee6c() // UNK_0xee6c
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData(_1BTN); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS'
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1324,10 +1326,10 @@ void _gt_FLT() // >FLT
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Store_3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
   TIME(); // TIME
@@ -1361,10 +1363,10 @@ void _gt_FLT() // >FLT
   Push(6);
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(Pop()>>1); // 2/
-  LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Store_3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
 }

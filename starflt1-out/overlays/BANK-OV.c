@@ -3,6 +3,8 @@
 // overlay size   = 0x05f0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -162,32 +164,32 @@ void TRIM() // TRIM
 // ================================================
 // 0xefa2: WORD 'MASTERBALANCE' codep=0x744d parp=0xefa4
 // ================================================
-IFieldType MASTERBALANCE = {0x0d, 0x0b, 0x04};
+IFieldType MASTERBALANCE = {BANKIDX, 0x0b, 0x04};
 
 // ================================================
 // 0xefa7: WORD 'BALANCE' codep=0x744d parp=0xefa9
 // ================================================
-IFieldType BALANCE = {0x0d, 0x0f, 0x04};
+IFieldType BALANCE = {BANKIDX, 0x0f, 0x04};
 
 // ================================================
 // 0xefac: WORD 'TFLAG' codep=0x744d parp=0xefae
 // ================================================
-IFieldType TFLAG = {0x0d, 0x13, 0x01};
+IFieldType TFLAG = {BANKIDX, 0x13, 0x01};
 
 // ================================================
 // 0xefb1: WORD 'TRANSTEXT' codep=0x73ea parp=0xefb3
 // ================================================
-LoadDataType TRANSTEXT = {0x0e, 0x00, 0x13, 0x13, 0x6480};
+LoadDataType TRANSTEXT = {BANK_TRANSIDX, 0x00, 0x13, 0x13, 0x6480};
 
 // ================================================
 // 0xefb9: WORD 'T-AMT' codep=0x744d parp=0xefbb
 // ================================================
-IFieldType T_dash_AMT = {0x0e, 0x0b, 0x04};
+IFieldType T_dash_AMT = {BANK_TRANSIDX, 0x0b, 0x04};
 
 // ================================================
 // 0xefbe: WORD 'T-DATE' codep=0x744d parp=0xefc0
 // ================================================
-IFieldType T_dash_DATE = {0x0e, 0x0f, 0x02};
+IFieldType T_dash_DATE = {BANK_TRANSIDX, 0x0f, 0x02};
 
 // ================================================
 // 0xefc3: WORD 'SET-BANK' codep=0x224c parp=0xefc5
@@ -497,7 +499,7 @@ void Draw_do_AMT() // .$AMT
 
 void Is_dot_MESS() // ?.MESS
 {
-  LoadData(TRANSTEXT); // from 'BANK-TRANS  '
+  LoadData(TRANSTEXT); // from 'BANK_TRANS'
   _do__dot_(); // $.
 }
 

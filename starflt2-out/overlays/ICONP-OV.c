@@ -3,6 +3,8 @@
 // overlay size   = 0x04b0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -135,48 +137,48 @@ const unsigned short int cc_UNK_0xf166 = 0xf166; // UNK_0xf166
 // ================================================
 // 0xf0c9: WORD 'UNK_0xf0cb' codep=0x7420 parp=0xf0cb
 // ================================================
-IFieldType UNK_0xf0cb = {0x14, 0x49, 0x01};
+IFieldType UNK_0xf0cb = {SHIPIDX, 0x49, 0x01};
 
 // ================================================
 // 0xf0ce: WORD 'UNK_0xf0d0' codep=0x7394 parp=0xf0d0
 // ================================================
-LoadDataType UNK_0xf0d0 = {0x19, 0x1c, 0x01, 0x24, 0x6b5d};
+LoadDataType UNK_0xf0d0 = {VESSELIDX, 0x1c, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xf0d6: WORD 'UNK_0xf0d8' codep=0x7420 parp=0xf0d8
 // ================================================
-IFieldType UNK_0xf0d8 = {0x19, 0x0b, 0x01};
+IFieldType UNK_0xf0d8 = {VESSELIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xf0db: WORD 'UNK_0xf0dd' codep=0x7394 parp=0xf0dd
 // ================================================
-LoadDataType UNK_0xf0dd = {0x44, 0x1a, 0x01, 0x22, 0x6f07};
+LoadDataType UNK_0xf0dd = {CREATUREIDX, 0x1a, 0x01, 0x22, 0x6f07};
 
 // ================================================
 // 0xf0e3: WORD 'UNK_0xf0e5' codep=0x7420 parp=0xf0e5
 // ================================================
-IFieldType UNK_0xf0e5 = {0x44, 0x19, 0x01};
+IFieldType UNK_0xf0e5 = {CREATUREIDX, 0x19, 0x01};
 
 // ================================================
 // 0xf0e8: WORD 'UNK_0xf0ea' codep=0x7420 parp=0xf0ea
 // ================================================
-IFieldType UNK_0xf0ea = {0x44, 0x18, 0x01};
+IFieldType UNK_0xf0ea = {CREATUREIDX, 0x18, 0x01};
 
 // ================================================
 // 0xf0ed: WORD 'UNK_0xf0ef' codep=0x7394 parp=0xf0ef
 // ================================================
-LoadDataType UNK_0xf0ef = {0x20, 0x01, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xf0ef = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 // 0xf0f5: db 0x20 0x74 0x3d 0x1b 0x01 ' t=  '
 
 // ================================================
 // 0xf0fa: WORD 'UNK_0xf0fc' codep=0x7394 parp=0xf0fc
 // ================================================
-LoadDataType UNK_0xf0fc = {0x15, 0x13, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xf0fc = {TRADERSIDX, 0x13, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xf102: WORD 'UNK_0xf104' codep=0x7420 parp=0xf104
 // ================================================
-IFieldType UNK_0xf104 = {0x15, 0x0c, 0x01};
+IFieldType UNK_0xf104 = {TRADERSIDX, 0x0c, 0x01};
 // 0xf107: db 0x20 0x74 0x17 0x0b 0x01 0x94 0x73 0x19 0x04 0x01 0x24 0x5d 0x6b ' t    s   $]k'
 
 // ================================================
@@ -302,7 +304,7 @@ void UNK_0xf16a() // UNK_0xf16a
 void UNK_0xf172() // UNK_0xf172
 {
   UNK_0xf16a(); // UNK_0xf16a
-  LoadData(UNK_0xf0fc); // from 'TRADERS     '
+  LoadData(UNK_0xf0fc); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(0x005a);
   Push(Pop() + Pop()); // +
@@ -329,7 +331,7 @@ void UNK_0xf184() // UNK_0xf184
 
 void UNK_0xf192() // UNK_0xf192
 {
-  LoadData(UNK_0xf0d0); // from 'VESSEL      '
+  LoadData(UNK_0xf0d0); // from 'VESSEL'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -575,7 +577,7 @@ void RUIN_dash_ID_dash_CASE() // RUIN-ID-CASE
 void UNK_0xf2cb() // UNK_0xf2cb
 {
   UNK_0xf16a(); // UNK_0xf16a
-  LoadData(UNK_0xf0fc); // from 'TRADERS     '
+  LoadData(UNK_0xf0fc); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(3);
   _st_(); // <
@@ -596,7 +598,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
 
 void UNK_0xf2e7() // UNK_0xf2e7
 {
-  LoadData(UNK_0xf0dd); // from 'CREATURE    '
+  LoadData(UNK_0xf0dd); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
 }
 
@@ -849,7 +851,7 @@ void PLAN_dash_IC_dash_CASE() // PLAN-IC-CASE
 
 void UNK_0xf421() // UNK_0xf421
 {
-  LoadData(UNK_0xf0ef); // from 'PLANET      '
+  LoadData(UNK_0xf0ef); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   PLAN_dash_IC_dash_CASE(); // PLAN-IC-CASE case
 }

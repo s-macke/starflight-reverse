@@ -3,6 +3,8 @@
 // overlay size   = 0x0910
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -124,17 +126,17 @@ void LLINE(); // LLINE
 // ================================================
 // 0xec64: WORD 'UNK_0xec66' codep=0x744d parp=0xec66
 // ================================================
-IFieldType UNK_0xec66 = {0x10, 0x1c, 0x01};
+IFieldType UNK_0xec66 = {CREWMEMBERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xec69: WORD 'UNK_0xec6b' codep=0x744d parp=0xec6b
 // ================================================
-IFieldType UNK_0xec6b = {0x11, 0x1a, 0x03};
+IFieldType UNK_0xec6b = {ASSIGN_CREWIDX, 0x1a, 0x03};
 
 // ================================================
 // 0xec6e: WORD 'UNK_0xec70' codep=0x744d parp=0xec70
 // ================================================
-IFieldType UNK_0xec70 = {0x14, 0x11, 0x02};
+IFieldType UNK_0xec70 = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
 // 0xec73: WORD 'UNK_0xec75' codep=0x224c parp=0xec75

@@ -3,6 +3,8 @@
 // overlay size   = 0x01d0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -79,7 +81,7 @@ void _1_dot_5_at_(); // 1.5@
 // ================================================
 // 0xf3a4: WORD 'UNK_0xf3a6' codep=0x7394 parp=0xf3a6
 // ================================================
-LoadDataType UNK_0xf3a6 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
+LoadDataType UNK_0xf3a6 = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xf3ac: WORD 'UNK_0xf3ae' codep=0x224c parp=0xf3ae
@@ -87,7 +89,7 @@ LoadDataType UNK_0xf3a6 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
 
 void UNK_0xf3ae() // UNK_0xf3ae
 {
-  LoadData(UNK_0xf3a6); // from 'ARTIFACT    '
+  LoadData(UNK_0xf3a6); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =
@@ -276,7 +278,7 @@ void UNK_0xf48d() // UNK_0xf48d
 // ================================================
 // 0xf4b5: WORD 'UNK_0xf4b7' codep=0x7420 parp=0xf4b7
 // ================================================
-IFieldType UNK_0xf4b7 = {0x34, 0x12, 0x01};
+IFieldType UNK_0xf4b7 = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
 // 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc

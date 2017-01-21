@@ -3,6 +3,8 @@
 // overlay size   = 0x1d80
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -639,169 +641,169 @@ void UNK_0xd80e() // UNK_0xd80e
 // ================================================
 // 0xd81e: WORD 'UNK_0xd820' codep=0x7420 parp=0xd820
 // ================================================
-IFieldType UNK_0xd820 = {0x32, 0x0b, 0x01};
+IFieldType UNK_0xd820 = {PHRASECONTRLIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xd823: WORD 'UNK_0xd825' codep=0x7420 parp=0xd825
 // ================================================
-IFieldType UNK_0xd825 = {0x32, 0x0c, 0x01};
+IFieldType UNK_0xd825 = {PHRASECONTRLIDX, 0x0c, 0x01};
 
 // ================================================
 // 0xd828: WORD 'UNK_0xd82a' codep=0x7420 parp=0xd82a
 // ================================================
-IFieldType UNK_0xd82a = {0x32, 0x0d, 0x01};
+IFieldType UNK_0xd82a = {PHRASECONTRLIDX, 0x0d, 0x01};
 
 // ================================================
 // 0xd82d: WORD 'UNK_0xd82f' codep=0x7420 parp=0xd82f
 // ================================================
-IFieldType UNK_0xd82f = {0x32, 0x0e, 0x01};
+IFieldType UNK_0xd82f = {PHRASECONTRLIDX, 0x0e, 0x01};
 
 // ================================================
 // 0xd832: WORD 'UNK_0xd834' codep=0x7420 parp=0xd834
 // ================================================
-IFieldType UNK_0xd834 = {0x32, 0x0f, 0x01};
+IFieldType UNK_0xd834 = {PHRASECONTRLIDX, 0x0f, 0x01};
 
 // ================================================
 // 0xd837: WORD 'UNK_0xd839' codep=0x7420 parp=0xd839
 // ================================================
-IFieldType UNK_0xd839 = {0x32, 0x10, 0x01};
+IFieldType UNK_0xd839 = {PHRASECONTRLIDX, 0x10, 0x01};
 
 // ================================================
 // 0xd83c: WORD 'UNK_0xd83e' codep=0x7420 parp=0xd83e
 // ================================================
-IFieldType UNK_0xd83e = {0x34, 0x0b, 0x01};
+IFieldType UNK_0xd83e = {ORIGINATORIDX, 0x0b, 0x01};
 
 // ================================================
 // 0xd841: WORD 'UNK_0xd843' codep=0x7420 parp=0xd843
 // ================================================
-IFieldType UNK_0xd843 = {0x34, 0x0c, 0x01};
+IFieldType UNK_0xd843 = {ORIGINATORIDX, 0x0c, 0x01};
 
 // ================================================
 // 0xd846: WORD 'UNK_0xd848' codep=0x7420 parp=0xd848
 // ================================================
-IFieldType UNK_0xd848 = {0x34, 0x0d, 0x01};
+IFieldType UNK_0xd848 = {ORIGINATORIDX, 0x0d, 0x01};
 
 // ================================================
 // 0xd84b: WORD 'UNK_0xd84d' codep=0x7420 parp=0xd84d
 // ================================================
-IFieldType UNK_0xd84d = {0x34, 0x12, 0x01};
+IFieldType UNK_0xd84d = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
 // 0xd850: WORD 'UNK_0xd852' codep=0x7420 parp=0xd852
 // ================================================
-IFieldType UNK_0xd852 = {0x34, 0x1d, 0x01};
+IFieldType UNK_0xd852 = {ORIGINATORIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xd855: WORD 'UNK_0xd857' codep=0x7420 parp=0xd857
 // ================================================
-IFieldType UNK_0xd857 = {0x34, 0x13, 0x01};
+IFieldType UNK_0xd857 = {ORIGINATORIDX, 0x13, 0x01};
 
 // ================================================
 // 0xd85a: WORD 'UNK_0xd85c' codep=0x7420 parp=0xd85c
 // ================================================
-IFieldType UNK_0xd85c = {0x34, 0x14, 0x01};
+IFieldType UNK_0xd85c = {ORIGINATORIDX, 0x14, 0x01};
 
 // ================================================
 // 0xd85f: WORD 'UNK_0xd861' codep=0x7420 parp=0xd861
 // ================================================
-IFieldType UNK_0xd861 = {0x34, 0x15, 0x01};
+IFieldType UNK_0xd861 = {ORIGINATORIDX, 0x15, 0x01};
 
 // ================================================
 // 0xd864: WORD 'UNK_0xd866' codep=0x7420 parp=0xd866
 // ================================================
-IFieldType UNK_0xd866 = {0x34, 0x16, 0x01};
+IFieldType UNK_0xd866 = {ORIGINATORIDX, 0x16, 0x01};
 
 // ================================================
 // 0xd869: WORD 'UNK_0xd86b' codep=0x7420 parp=0xd86b
 // ================================================
-IFieldType UNK_0xd86b = {0x34, 0x17, 0x01};
+IFieldType UNK_0xd86b = {ORIGINATORIDX, 0x17, 0x01};
 
 // ================================================
 // 0xd86e: WORD 'UNK_0xd870' codep=0x7420 parp=0xd870
 // ================================================
-IFieldType UNK_0xd870 = {0x34, 0x18, 0x01};
+IFieldType UNK_0xd870 = {ORIGINATORIDX, 0x18, 0x01};
 
 // ================================================
 // 0xd873: WORD 'UNK_0xd875' codep=0x7420 parp=0xd875
 // ================================================
-IFieldType UNK_0xd875 = {0x34, 0x19, 0x01};
+IFieldType UNK_0xd875 = {ORIGINATORIDX, 0x19, 0x01};
 
 // ================================================
 // 0xd878: WORD 'UNK_0xd87a' codep=0x7420 parp=0xd87a
 // ================================================
-IFieldType UNK_0xd87a = {0x34, 0x1a, 0x03};
+IFieldType UNK_0xd87a = {ORIGINATORIDX, 0x1a, 0x03};
 
 // ================================================
 // 0xd87d: WORD 'UNK_0xd87f' codep=0x7420 parp=0xd87f
 // ================================================
-IFieldType UNK_0xd87f = {0x2b, 0x0b, 0x03};
+IFieldType UNK_0xd87f = {COMM_MSGIDX, 0x0b, 0x03};
 
 // ================================================
 // 0xd882: WORD 'UNK_0xd884' codep=0x7420 parp=0xd884
 // ================================================
-IFieldType UNK_0xd884 = {0x10, 0x1d, 0x01};
+IFieldType UNK_0xd884 = {CREWMEMBERIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xd887: WORD 'UNK_0xd889' codep=0x7420 parp=0xd889
 // ================================================
-IFieldType UNK_0xd889 = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xd889 = {CREWMEMBERIDX, 0x0b, 0x0f};
 // 0xd88c: db 0x20 0x74 0x10 0x1b 0x01 0x20 0x74 0x10 0x1a 0x0f ' t    t   '
 
 // ================================================
 // 0xd896: WORD 'UNK_0xd898' codep=0x7420 parp=0xd898
 // ================================================
-IFieldType UNK_0xd898 = {0x11, 0x11, 0x03};
+IFieldType UNK_0xd898 = {ASSIGN_CREWIDX, 0x11, 0x03};
 
 // ================================================
 // 0xd89b: WORD 'UNK_0xd89d' codep=0x7420 parp=0xd89d
 // ================================================
-IFieldType UNK_0xd89d = {0x11, 0x1d, 0x03};
+IFieldType UNK_0xd89d = {ASSIGN_CREWIDX, 0x1d, 0x03};
 
 // ================================================
 // 0xd8a0: WORD 'UNK_0xd8a2' codep=0x7420 parp=0xd8a2
 // ================================================
-IFieldType UNK_0xd8a2 = {0x14, 0x45, 0x04};
+IFieldType UNK_0xd8a2 = {SHIPIDX, 0x45, 0x04};
 // 0xd8a5: db 0x20 0x74 0x14 0x17 0x02 ' t   '
 
 // ================================================
 // 0xd8aa: WORD 'UNK_0xd8ac' codep=0x7420 parp=0xd8ac
 // ================================================
-IFieldType UNK_0xd8ac = {0x14, 0x11, 0x02};
+IFieldType UNK_0xd8ac = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
 // 0xd8af: WORD 'UNK_0xd8b1' codep=0x7420 parp=0xd8b1
 // ================================================
-IFieldType UNK_0xd8b1 = {0x14, 0x19, 0x02};
+IFieldType UNK_0xd8b1 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xd8b4: WORD 'UNK_0xd8b6' codep=0x7420 parp=0xd8b6
 // ================================================
-IFieldType UNK_0xd8b6 = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xd8b6 = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xd8b9: WORD 'UNK_0xd8bb' codep=0x7420 parp=0xd8bb
 // ================================================
-IFieldType UNK_0xd8bb = {0x14, 0x1d, 0x02};
+IFieldType UNK_0xd8bb = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
 // 0xd8be: WORD 'UNK_0xd8c0' codep=0x7394 parp=0xd8c0
 // ================================================
-LoadDataType UNK_0xd8c0 = {0x19, 0x0c, 0x04, 0x24, 0x6b5d};
+LoadDataType UNK_0xd8c0 = {VESSELIDX, 0x0c, 0x04, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8c6: WORD 'UNK_0xd8c8' codep=0x7394 parp=0xd8c8
 // ================================================
-LoadDataType UNK_0xd8c8 = {0x19, 0x12, 0x03, 0x24, 0x6b5d};
+LoadDataType UNK_0xd8c8 = {VESSELIDX, 0x12, 0x03, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8ce: WORD 'UNK_0xd8d0' codep=0x7420 parp=0xd8d0
 // ================================================
-IFieldType UNK_0xd8d0 = {0x19, 0x12, 0x04};
+IFieldType UNK_0xd8d0 = {VESSELIDX, 0x12, 0x04};
 
 // ================================================
 // 0xd8d3: WORD 'UNK_0xd8d5' codep=0x7394 parp=0xd8d5
 // ================================================
-LoadDataType UNK_0xd8d5 = {0x19, 0x05, 0x01, 0x24, 0x6b5d};
+LoadDataType UNK_0xd8d5 = {VESSELIDX, 0x05, 0x01, 0x24, 0x6b5d};
 
 // ================================================
 // 0xd8db: WORD 'UNK_0xd8dd' codep=0x1d29 parp=0xd8dd
@@ -1867,7 +1869,7 @@ void UNK_0xde43() // UNK_0xde43
 
 void UNK_0xde55() // UNK_0xde55
 {
-  LoadData(_1BTN); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS'
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR
@@ -6023,7 +6025,7 @@ void IAPWR() // IAPWR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xd90f)); // UNK_0xd90f
-      LoadData(UNK_0xd8c0); // from 'VESSEL      '
+      LoadData(UNK_0xd8c0); // from 'VESSEL'
       Push(Pop()+2); // 2+
       Push(Read16(Pop())); // @
       _gt_FLAG(); // >FLAG
@@ -6031,19 +6033,19 @@ void IAPWR() // IAPWR
       Push(0xd90f); // probable 'UNK_0xd90f'
       Store_2(); // !_2
       Push(Read16(cc_UNK_0xd913)); // UNK_0xd913
-      LoadData(UNK_0xd8c8); // from 'VESSEL      '
+      LoadData(UNK_0xd8c8); // from 'VESSEL'
       _1_dot_5_at_(); // 1.5@
       D0_eq_(); // D0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
       Push(Pop() | Pop()); // OR
       Push(0xd913); // probable 'UNK_0xd913'
       Store_2(); // !_2
-      LoadData(UNK_0xd8d5); // from 'VESSEL      '
+      LoadData(UNK_0xd8d5); // from 'VESSEL'
       Push(Read8(Pop())&0xFF); // C@
       Push(0x65e1+UNK_0xd8d0.offset); // IFIELD
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
-      LoadData(UNK_0xd8c0); // from 'VESSEL      '
+      LoadData(UNK_0xd8c0); // from 'VESSEL'
       _2_at_(); // 2@
       Push(Pop() + Pop()); // +
       _star__slash_(); // */

@@ -2362,7 +2362,7 @@ IROOT        species:32 size:0
         BOX          species:4 size:8   
           PLANET       species:17 size:10   
             STARPORT     species:0 size:0   
-              BANK         species:0 size:9   
+              BANK         species:0 size:9   0 0 balance:25000 0 0
                 BANK-TRANS   species:6 size:6   0 0 amount:50 0 0
               PERSONNEL    species:0 size:0   
                 CREWMEMBER   species:0 size:24   

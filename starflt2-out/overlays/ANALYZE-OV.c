@@ -3,6 +3,8 @@
 // overlay size   = 0x0910
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -175,76 +177,76 @@ const unsigned short int pp_UNK_0xf3af = 0xf3af; // UNK_0xf3af size: 7
 // ================================================
 // 0xec64: WORD 'UNK_0xec66' codep=0x7420 parp=0xec66
 // ================================================
-IFieldType UNK_0xec66 = {0x14, 0x27, 0x02};
+IFieldType UNK_0xec66 = {SHIPIDX, 0x27, 0x02};
 
 // ================================================
 // 0xec69: WORD 'UNK_0xec6b' codep=0x7420 parp=0xec6b
 // ================================================
-IFieldType UNK_0xec6b = {0x11, 0x14, 0x03};
+IFieldType UNK_0xec6b = {ASSIGN_CREWIDX, 0x14, 0x03};
 
 // ================================================
 // 0xec6e: WORD 'UNK_0xec70' codep=0x7420 parp=0xec70
 // ================================================
-IFieldType UNK_0xec70 = {0x10, 0x1a, 0x02};
+IFieldType UNK_0xec70 = {CREWMEMBERIDX, 0x1a, 0x02};
 
 // ================================================
 // 0xec73: WORD 'UNK_0xec75' codep=0x7394 parp=0xec75
 // ================================================
-LoadDataType UNK_0xec75 = {0x1a, 0x00, 0x10, 0x17, 0x6ba9};
+LoadDataType UNK_0xec75 = {ELEMENTIDX, 0x00, 0x10, 0x17, 0x6ba9};
 // 0xec7b: db 0x94 0x73 0x19 0x00 0x01 0x24 0x5d 0x6b ' s   $]k'
 
 // ================================================
 // 0xec83: WORD 'UNK_0xec85' codep=0x7420 parp=0xec85
 // ================================================
-IFieldType UNK_0xec85 = {0x19, 0x12, 0x07};
+IFieldType UNK_0xec85 = {VESSELIDX, 0x12, 0x07};
 
 // ================================================
 // 0xec88: WORD 'UNK_0xec8a' codep=0x7394 parp=0xec8a
 // ================================================
-LoadDataType UNK_0xec8a = {0x19, 0x04, 0x01, 0x24, 0x6b5d};
+LoadDataType UNK_0xec8a = {VESSELIDX, 0x04, 0x01, 0x24, 0x6b5d};
 // 0xec90: db 0x94 0x73 0x19 0x06 0x01 0x24 0x5d 0x6b ' s   $]k'
 
 // ================================================
 // 0xec98: WORD 'UNK_0xec9a' codep=0x7394 parp=0xec9a
 // ================================================
-LoadDataType UNK_0xec9a = {0x19, 0x07, 0x02, 0x24, 0x6b5d};
+LoadDataType UNK_0xec9a = {VESSELIDX, 0x07, 0x02, 0x24, 0x6b5d};
 
 // ================================================
 // 0xeca0: WORD 'UNK_0xeca2' codep=0x7394 parp=0xeca2
 // ================================================
-LoadDataType UNK_0xeca2 = {0x19, 0x0e, 0x02, 0x24, 0x6b5d};
+LoadDataType UNK_0xeca2 = {VESSELIDX, 0x0e, 0x02, 0x24, 0x6b5d};
 // 0xeca8: db 0x94 0x73 0x19 0x12 0x01 0x24 0x5d 0x6b 0x20 0x74 0x17 0x11 0x01 ' s   $]k t   '
 
 // ================================================
 // 0xecb5: WORD 'UNK_0xecb7' codep=0x7394 parp=0xecb7
 // ================================================
-LoadDataType UNK_0xecb7 = {0x20, 0x01, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xecb7 = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xecbd: WORD 'UNK_0xecbf' codep=0x7394 parp=0xecbf
 // ================================================
-LoadDataType UNK_0xecbf = {0x20, 0x02, 0x02, 0x17, 0x6c49};
+LoadDataType UNK_0xecbf = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 // 0xecc5: db 0x94 0x73 0x20 0x04 0x01 0x17 0x49 0x6c ' s    Il'
 
 // ================================================
 // 0xeccd: WORD 'UNK_0xeccf' codep=0x7394 parp=0xeccf
 // ================================================
-LoadDataType UNK_0xeccf = {0x20, 0x11, 0x02, 0x17, 0x6c49};
+LoadDataType UNK_0xeccf = {PLANETIDX, 0x11, 0x02, 0x17, 0x6c49};
 
 // ================================================
 // 0xecd5: WORD 'UNK_0xecd7' codep=0x7394 parp=0xecd7
 // ================================================
-LoadDataType UNK_0xecd7 = {0x20, 0x13, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xecd7 = {PLANETIDX, 0x13, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xecdd: WORD 'UNK_0xecdf' codep=0x7394 parp=0xecdf
 // ================================================
-LoadDataType UNK_0xecdf = {0x20, 0x0f, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xecdf = {PLANETIDX, 0x0f, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xece5: WORD 'UNK_0xece7' codep=0x7394 parp=0xece7
 // ================================================
-LoadDataType UNK_0xece7 = {0x20, 0x10, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xece7 = {PLANETIDX, 0x10, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xeced: WORD 'UNK_0xecef' codep=0x224c parp=0xecef
@@ -427,7 +429,7 @@ void UNK_0xee04() // UNK_0xee04
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
-  LoadData(UNK_0xec9a); // from 'VESSEL      '
+  LoadData(UNK_0xec9a); // from 'VESSEL'
   Push(Read16(Pop())); // @
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -564,7 +566,7 @@ void UNK_0xeeed() // UNK_0xeeed
   PRINT("TYPE: ", 6); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xec8a); // from 'VESSEL      '
+  LoadData(UNK_0xec8a); // from 'VESSEL'
   Push(Read8(Pop())&0xFF); // C@
   _ro__dot_TYPE_rc_(); // (.TYPE) case
 }
@@ -624,7 +626,7 @@ void UNK_0xef53() // UNK_0xef53
   PRINT("SHIELDS: ", 9); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xeca2); // from 'VESSEL      '
+  LoadData(UNK_0xeca2); // from 'VESSEL'
   Push(Read16(Pop())); // @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
@@ -720,7 +722,7 @@ void UNK_0xf02c() // UNK_0xf02c
     Push(0x001a);
     Push(pp_FILE_n_); // FILE#
     Store_2(); // !_2
-    LoadData(UNK_0xec75); // from 'ELEMENT     '
+    LoadData(UNK_0xec75); // from 'ELEMENT'
     Push(0x0010);
     Push(0x002e);
     _dash_XTRAIL(); // -XTRAIL
@@ -891,9 +893,9 @@ void UNK_0xf158() // UNK_0xf158
   PRINT("TEMPERATURE: ", 13); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xece7); // from 'PLANET      '
+  LoadData(UNK_0xece7); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
-  LoadData(UNK_0xecdf); // from 'PLANET      '
+  LoadData(UNK_0xecdf); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   DrawTDESC(); // .TDESC case
@@ -999,7 +1001,7 @@ void UNK_0xf1f7() // UNK_0xf1f7
   PRINT("PREDOMINANT SURFACE: ", 21); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xecb7); // from 'PLANET      '
+  LoadData(UNK_0xecb7); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   _ro__dot_SURF_rc_(); // (.SURF) case
 }
@@ -1018,7 +1020,7 @@ void UNK_0xf221() // UNK_0xf221
   Push(pp_IsG_dash_AWAR); // ?G-AWAR
   Store_2(); // !_2
   if (Pop() == 0) return;
-  LoadData(UNK_0xecbf); // from 'PLANET      '
+  LoadData(UNK_0xecbf); // from 'PLANET'
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   Push(0x0320);
@@ -1140,7 +1142,7 @@ void UNK_0xf2e9() // UNK_0xf2e9
   PRINT("ATMOSPHERIC DENSITY: ", 21); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xecd7); // from 'PLANET      '
+  LoadData(UNK_0xecd7); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   _ro__dot_ATMO_rc_(); // (.ATMO) case
 }
@@ -1224,7 +1226,7 @@ void UNK_0xf36a() // UNK_0xf36a
   PRINT("GLOBAL WEATHER: ", 16); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  LoadData(UNK_0xeccf); // from 'PLANET      '
+  LoadData(UNK_0xeccf); // from 'PLANET'
   Push(Read16(Pop())); // @
   _ro__dot_WEATH_rc_(); // (.WEATH) case
 }

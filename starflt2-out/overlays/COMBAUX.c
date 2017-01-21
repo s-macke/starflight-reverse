@@ -3,6 +3,8 @@
 // overlay size   = 0x02b0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 

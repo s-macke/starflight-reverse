@@ -3,6 +3,8 @@
 // overlay size   = 0x0960
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -195,77 +197,77 @@ const unsigned short int cc_UNK_0xec16 = 0xec16; // UNK_0xec16
 // ================================================
 // 0xec20: WORD 'UNK_0xec22' codep=0x73ea parp=0xec22
 // ================================================
-LoadDataType UNK_0xec22 = {0x20, 0x0c, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec22 = {PLANETIDX, 0x0c, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec28: WORD 'UNK_0xec2a' codep=0x73ea parp=0xec2a
 // ================================================
-LoadDataType UNK_0xec2a = {0x20, 0x0d, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec2a = {PLANETIDX, 0x0d, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec30: WORD 'UNK_0xec32' codep=0x73ea parp=0xec32
 // ================================================
-LoadDataType UNK_0xec32 = {0x20, 0x0e, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec32 = {PLANETIDX, 0x0e, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec38: WORD 'UNK_0xec3a' codep=0x73ea parp=0xec3a
 // ================================================
-LoadDataType UNK_0xec3a = {0x20, 0x09, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec3a = {PLANETIDX, 0x09, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec40: WORD 'UNK_0xec42' codep=0x73ea parp=0xec42
 // ================================================
-LoadDataType UNK_0xec42 = {0x20, 0x00, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec42 = {PLANETIDX, 0x00, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec48: WORD 'UNK_0xec4a' codep=0x73ea parp=0xec4a
 // ================================================
-LoadDataType UNK_0xec4a = {0x20, 0x02, 0x02, 0x16, 0x658f};
+LoadDataType UNK_0xec4a = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xec50: WORD 'UNK_0xec52' codep=0x73ea parp=0xec52
 // ================================================
-LoadDataType UNK_0xec52 = {0x20, 0x04, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec52 = {PLANETIDX, 0x04, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec58: WORD 'UNK_0xec5a' codep=0x73ea parp=0xec5a
 // ================================================
-LoadDataType UNK_0xec5a = {0x20, 0x01, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec5a = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec60: WORD 'UNK_0xec62' codep=0x73ea parp=0xec62
 // ================================================
-LoadDataType UNK_0xec62 = {0x20, 0x0f, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec62 = {PLANETIDX, 0x0f, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec68: WORD 'UNK_0xec6a' codep=0x73ea parp=0xec6a
 // ================================================
-LoadDataType UNK_0xec6a = {0x20, 0x10, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec6a = {PLANETIDX, 0x10, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec70: WORD 'UNK_0xec72' codep=0x73ea parp=0xec72
 // ================================================
-LoadDataType UNK_0xec72 = {0x20, 0x11, 0x02, 0x16, 0x658f};
+LoadDataType UNK_0xec72 = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xec78: WORD 'UNK_0xec7a' codep=0x73ea parp=0xec7a
 // ================================================
-LoadDataType UNK_0xec7a = {0x20, 0x13, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec7a = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec80: WORD 'UNK_0xec82' codep=0x73ea parp=0xec82
 // ================================================
-LoadDataType UNK_0xec82 = {0x20, 0x14, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec82 = {PLANETIDX, 0x14, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec88: WORD 'UNK_0xec8a' codep=0x73ea parp=0xec8a
 // ================================================
-LoadDataType UNK_0xec8a = {0x20, 0x15, 0x01, 0x16, 0x658f};
+LoadDataType UNK_0xec8a = {PLANETIDX, 0x15, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec90: WORD 'UNK_0xec92' codep=0x73ea parp=0xec92
 // ================================================
-LoadDataType UNK_0xec92 = {0x43, 0x07, 0x08, 0x1c, 0x69cd};
+LoadDataType UNK_0xec92 = {REGIONSIDX, 0x07, 0x08, 0x1c, 0x69cd};
 
 // ================================================
 // 0xec98: WORD 'UNK_0xec9a' codep=0x224c parp=0xec9a
@@ -355,7 +357,7 @@ void UNK_0xece7() // UNK_0xece7
 // ================================================
 // 0xecf1: WORD 'UNK_0xecf3' codep=0x744d parp=0xecf3
 // ================================================
-IFieldType UNK_0xecf3 = {0x17, 0x11, 0x01};
+IFieldType UNK_0xecf3 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
 // 0xecf6: WORD 'UNK_0xecf8' codep=0x224c parp=0xecf8
@@ -492,14 +494,14 @@ void UNK_0xed8e() // UNK_0xed8e
 
 void UNK_0xede2() // UNK_0xede2
 {
-  LoadData(UNK_0xec42); // from 'PLANET      '
+  LoadData(UNK_0xec42); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   LO_dash_MASS(); // LO-MASS
   SWAP(); // SWAP
   HI_dash_MASS(); // HI-MASS
   RRND(); // RRND
-  LoadData(UNK_0xec4a); // from 'PLANET      '
+  LoadData(UNK_0xec4a); // from 'PLANET'
   Store_3(); // !_3
 }
 
@@ -574,14 +576,14 @@ void UNK_0xee46() // UNK_0xee46
   MIN(); // MIN
   _2DUP(); // 2DUP
   UNK_0xee28(); // UNK_0xee28
-  LoadData(UNK_0xec22); // from 'PLANET      '
+  LoadData(UNK_0xec22); // from 'PLANET'
   C_ex_(); // C!
   _2DUP(); // 2DUP
   UNK_0xee28(); // UNK_0xee28
-  LoadData(UNK_0xec2a); // from 'PLANET      '
+  LoadData(UNK_0xec2a); // from 'PLANET'
   C_ex_(); // C!
   UNK_0xee28(); // UNK_0xee28
-  LoadData(UNK_0xec32); // from 'PLANET      '
+  LoadData(UNK_0xec32); // from 'PLANET'
   C_ex_(); // C!
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(0x0017);
@@ -590,11 +592,11 @@ void UNK_0xee46() // UNK_0xee46
   Push(6);
   Push(Read16(regsp)); // DUP
   Push(Read16(regsp)); // DUP
-  LoadData(UNK_0xec22); // from 'PLANET      '
+  LoadData(UNK_0xec22); // from 'PLANET'
   C_ex_(); // C!
-  LoadData(UNK_0xec2a); // from 'PLANET      '
+  LoadData(UNK_0xec2a); // from 'PLANET'
   C_ex_(); // C!
-  LoadData(UNK_0xec32); // from 'PLANET      '
+  LoadData(UNK_0xec32); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -605,7 +607,7 @@ void UNK_0xee46() // UNK_0xee46
 
 void UNK_0xee92() // UNK_0xee92
 {
-  LoadData(UNK_0xec4a); // from 'PLANET      '
+  LoadData(UNK_0xec4a); // from 'PLANET'
   Push(Read16(Pop())); // @
   Push(0x0046);
   _slash_(); // /
@@ -639,14 +641,14 @@ void UNK_0xee92() // UNK_0xee92
       Push(Pop()-1); // 1-
     }
   }
-  LoadData(UNK_0xec52); // from 'PLANET      '
+  LoadData(UNK_0xec52); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
     Push(1);
     MAX(); // MAX
   }
-  LoadData(UNK_0xec7a); // from 'PLANET      '
+  LoadData(UNK_0xec7a); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -807,7 +809,7 @@ void UNK_0xefea() // UNK_0xefea
   _dash_(); // -
   UNK_0xef8a(); // UNK_0xef8a
   SWAP(); // SWAP
-  LoadData(UNK_0xec7a); // from 'PLANET      '
+  LoadData(UNK_0xec7a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
@@ -821,9 +823,9 @@ void UNK_0xefea() // UNK_0xefea
   UNK_0xef7a(); // UNK_0xef7a
   _dash_(); // -
   UNK_0xef8a(); // UNK_0xef8a
-  LoadData(UNK_0xec6a); // from 'PLANET      '
+  LoadData(UNK_0xec6a); // from 'PLANET'
   C_ex_(); // C!
-  LoadData(UNK_0xec62); // from 'PLANET      '
+  LoadData(UNK_0xec62); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -834,7 +836,7 @@ void UNK_0xefea() // UNK_0xefea
 
 void UNK_0xf01c() // UNK_0xf01c
 {
-  LoadData(UNK_0xec7a); // from 'PLANET      '
+  LoadData(UNK_0xec7a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(4);
   MIN(); // MIN
@@ -847,7 +849,7 @@ void UNK_0xf01c() // UNK_0xf01c
   }
   Push(0);
   MAX(); // MAX
-  LoadData(UNK_0xec72); // from 'PLANET      '
+  LoadData(UNK_0xec72); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -858,7 +860,7 @@ void UNK_0xf01c() // UNK_0xf01c
 
 void UNK_0xf03e() // UNK_0xf03e
 {
-  LoadData(UNK_0xec4a); // from 'PLANET      '
+  LoadData(UNK_0xec4a); // from 'PLANET'
   Push(Read16(Pop())); // @
   Push(0x0064);
   _slash_(); // /
@@ -870,13 +872,13 @@ void UNK_0xf03e() // UNK_0xf03e
   SWAP(); // SWAP
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  LoadData(UNK_0xec8a); // from 'PLANET      '
+  LoadData(UNK_0xec8a); // from 'PLANET'
   C_ex_(); // C!
   Push(8);
   Push(Pop() + Pop()); // +
   Push(0x000d);
   MIN(); // MIN
-  LoadData(UNK_0xec82); // from 'PLANET      '
+  LoadData(UNK_0xec82); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -893,7 +895,7 @@ void UNK_0xf06e() // UNK_0xf06e
   Push(0);
   Push(0x00ff);
   UNK_0xece7(); // UNK_0xece7
-  LoadData(UNK_0xec3a); // from 'PLANET      '
+  LoadData(UNK_0xec3a); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -919,7 +921,7 @@ void UNK_0xf086() // UNK_0xf086
 void UNK_0xf094() // UNK_0xf094
 {
   Push(0);
-  LoadData(UNK_0xec52); // from 'PLANET      '
+  LoadData(UNK_0xec52); // from 'PLANET'
   C_ex_(); // C!
   UNK_0xede2(); // UNK_0xede2
   UNK_0xf06e(); // UNK_0xf06e
@@ -963,9 +965,9 @@ void UNK_0xf094() // UNK_0xf094
 
 void UNK_0xf118() // UNK_0xf118
 {
-  LoadData(UNK_0xec6a); // from 'PLANET      '
+  LoadData(UNK_0xec6a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
-  LoadData(UNK_0xec62); // from 'PLANET      '
+  LoadData(UNK_0xec62); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   Push(Pop()>>1); // 2/
@@ -1017,7 +1019,7 @@ void UNK_0xf128() // UNK_0xf128
 void UNK_0xf162() // UNK_0xf162
 {
   unsigned short int a;
-  LoadData(UNK_0xec5a); // from 'PLANET      '
+  LoadData(UNK_0xec5a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =
@@ -1086,7 +1088,7 @@ void UNK_0xf18e() // UNK_0xf18e
 
 void UNK_0xf1c8() // UNK_0xf1c8
 {
-  LoadData(UNK_0xec7a); // from 'PLANET      '
+  LoadData(UNK_0xec7a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -1128,7 +1130,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
     Store_3(); // !_3
     return;
   }
-  LoadData(UNK_0xec52); // from 'PLANET      '
+  LoadData(UNK_0xec52); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -1157,9 +1159,9 @@ void UNK_0xf234() // UNK_0xf234
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  LoadData(UNK_0xec62); // from 'PLANET      '
+  LoadData(UNK_0xec62); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
-  LoadData(UNK_0xec6a); // from 'PLANET      '
+  LoadData(UNK_0xec6a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   OVER(); // OVER
   _dash_(); // -
@@ -1212,7 +1214,7 @@ void UNK_0xf280() // UNK_0xf280
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
   Push(0);
-  LoadData(UNK_0xec92); // from 'REGIONS     '
+  LoadData(UNK_0xec92); // from 'REGIONS'
   Push(Read16(regsp)); // DUP
   Push(8);
   Push(Pop() + Pop()); // +
@@ -1468,7 +1470,7 @@ void _ro_TERRAIN() // (TERRAIN
 
 void UNK_0xf46d() // UNK_0xf46d
 {
-  LoadData(UNK_0xec5a); // from 'PLANET      '
+  LoadData(UNK_0xec5a); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   _ro_TERRAIN(); // (TERRAIN case
 }

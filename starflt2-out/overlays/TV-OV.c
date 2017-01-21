@@ -3,6 +3,8 @@
 // overlay size   = 0x0e90
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -362,38 +364,38 @@ void UNK_0xe6ea() // UNK_0xe6ea
 // ================================================
 // 0xe738: WORD 'UNK_0xe73a' codep=0x7420 parp=0xe73a
 // ================================================
-IFieldType UNK_0xe73a = {0x2a, 0x11, 0x01};
+IFieldType UNK_0xe73a = {TVEHICLEIDX, 0x11, 0x01};
 
 // ================================================
 // 0xe73d: WORD 'UNK_0xe73f' codep=0x7420 parp=0xe73f
 // ================================================
-IFieldType UNK_0xe73f = {0x0b, 0x11, 0x02};
+IFieldType UNK_0xe73f = {BOXIDX, 0x11, 0x02};
 
 // ================================================
 // 0xe742: WORD 'UNK_0xe744' codep=0x7420 parp=0xe744
 // ================================================
-IFieldType UNK_0xe744 = {0x14, 0x43, 0x02};
+IFieldType UNK_0xe744 = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xe747: WORD 'UNK_0xe749' codep=0x7420 parp=0xe749
 // ================================================
-IFieldType UNK_0xe749 = {0x11, 0x17, 0x03};
+IFieldType UNK_0xe749 = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
 // 0xe74c: WORD 'UNK_0xe74e' codep=0x7420 parp=0xe74e
 // ================================================
-IFieldType UNK_0xe74e = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xe74e = {CREWMEMBERIDX, 0x1b, 0x01};
 // 0xe751: db 0x94 0x73 0x15 0x2a 0x01 0x32 0xd1 0x6a 0x20 0x74 0x44 0x17 0x01 ' s * 2 j tD  '
 
 // ================================================
 // 0xe75e: WORD 'UNK_0xe760' codep=0x7394 parp=0xe760
 // ================================================
-LoadDataType UNK_0xe760 = {0x1c, 0x1e, 0x01, 0x20, 0x6bcd};
+LoadDataType UNK_0xe760 = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xe766: WORD 'UNK_0xe768' codep=0x7420 parp=0xe768
 // ================================================
-IFieldType UNK_0xe768 = {0x44, 0x18, 0x01};
+IFieldType UNK_0xe768 = {CREATUREIDX, 0x18, 0x01};
 
 // ================================================
 // 0xe76b: WORD 'UNK_0xe76d' codep=0x224c parp=0xe76d
@@ -401,7 +403,7 @@ IFieldType UNK_0xe768 = {0x44, 0x18, 0x01};
 
 void UNK_0xe76d() // UNK_0xe76d
 {
-  LoadData(UNK_0xe760); // from 'ARTIFACT    '
+  LoadData(UNK_0xe760); // from 'ARTIFACT'
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push((Pop()==Pop())?1:0); // =
@@ -1457,7 +1459,7 @@ void UNK_0xee8f() // UNK_0xee8f
 void UNK_0xeea1() // UNK_0xeea1
 {
   unsigned short int a;
-  LoadData(ART_dash_VOL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VOL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
   a = Pop(); // >R
   Push(Read16(a)); // R@

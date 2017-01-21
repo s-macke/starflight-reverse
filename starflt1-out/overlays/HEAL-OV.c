@@ -3,6 +3,8 @@
 // overlay size   = 0x04d0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -178,57 +180,57 @@ void UNK_0xf0ce() // UNK_0xf0ce
 // ================================================
 // 0xf0ee: WORD 'UNK_0xf0f0' codep=0x744d parp=0xf0f0
 // ================================================
-IFieldType UNK_0xf0f0 = {0x11, 0x11, 0x03};
+IFieldType UNK_0xf0f0 = {ASSIGN_CREWIDX, 0x11, 0x03};
 
 // ================================================
 // 0xf0f3: WORD 'UNK_0xf0f5' codep=0x744d parp=0xf0f5
 // ================================================
-IFieldType UNK_0xf0f5 = {0x11, 0x14, 0x03};
+IFieldType UNK_0xf0f5 = {ASSIGN_CREWIDX, 0x14, 0x03};
 
 // ================================================
 // 0xf0f8: WORD 'UNK_0xf0fa' codep=0x744d parp=0xf0fa
 // ================================================
-IFieldType UNK_0xf0fa = {0x11, 0x20, 0x03};
+IFieldType UNK_0xf0fa = {ASSIGN_CREWIDX, 0x20, 0x03};
 
 // ================================================
 // 0xf0fd: WORD 'UNK_0xf0ff' codep=0x744d parp=0xf0ff
 // ================================================
-IFieldType UNK_0xf0ff = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xf0ff = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xf102: WORD 'UNK_0xf104' codep=0x744d parp=0xf104
 // ================================================
-IFieldType UNK_0xf104 = {0x10, 0x1a, 0x01};
+IFieldType UNK_0xf104 = {CREWMEMBERIDX, 0x1a, 0x01};
 
 // ================================================
 // 0xf107: WORD 'UNK_0xf109' codep=0x744d parp=0xf109
 // ================================================
-IFieldType UNK_0xf109 = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xf109 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xf10c: WORD 'UNK_0xf10e' codep=0x744d parp=0xf10e
 // ================================================
-IFieldType UNK_0xf10e = {0x10, 0x1c, 0x01};
+IFieldType UNK_0xf10e = {CREWMEMBERIDX, 0x1c, 0x01};
 
 // ================================================
 // 0xf111: WORD 'UNK_0xf113' codep=0x744d parp=0xf113
 // ================================================
-IFieldType UNK_0xf113 = {0x10, 0x1d, 0x01};
+IFieldType UNK_0xf113 = {CREWMEMBERIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xf116: WORD 'UNK_0xf118' codep=0x744d parp=0xf118
 // ================================================
-IFieldType UNK_0xf118 = {0x10, 0x1e, 0x01};
+IFieldType UNK_0xf118 = {CREWMEMBERIDX, 0x1e, 0x01};
 
 // ================================================
 // 0xf11b: WORD 'UNK_0xf11d' codep=0x744d parp=0xf11d
 // ================================================
-IFieldType UNK_0xf11d = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xf11d = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xf120: WORD 'UNK_0xf122' codep=0x744d parp=0xf122
 // ================================================
-IFieldType UNK_0xf122 = {0x10, 0x20, 0x02};
+IFieldType UNK_0xf122 = {CREWMEMBERIDX, 0x20, 0x02};
 // 0xf125: db 0xea 0x73 0x10 0x13 0x01 0x14 0x89 0x64 ' s     d'
 
 // ================================================

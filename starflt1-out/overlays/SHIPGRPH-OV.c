@@ -3,6 +3,8 @@
 // overlay size   = 0x0840
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -124,42 +126,42 @@ const unsigned short int pp_UNK_0xf128 = 0xf128; // UNK_0xf128 size: 8
 // ================================================
 // 0xed34: WORD 'UNK_0xed36' codep=0x744d parp=0xed36
 // ================================================
-IFieldType UNK_0xed36 = {0x14, 0x11, 0x02};
+IFieldType UNK_0xed36 = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
 // 0xed39: WORD 'UNK_0xed3b' codep=0x744d parp=0xed3b
 // ================================================
-IFieldType UNK_0xed3b = {0x14, 0x13, 0x02};
+IFieldType UNK_0xed3b = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
 // 0xed3e: WORD 'UNK_0xed40' codep=0x744d parp=0xed40
 // ================================================
-IFieldType UNK_0xed40 = {0x14, 0x19, 0x02};
+IFieldType UNK_0xed40 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xed43: WORD 'UNK_0xed45' codep=0x744d parp=0xed45
 // ================================================
-IFieldType UNK_0xed45 = {0x14, 0x1b, 0x02};
+IFieldType UNK_0xed45 = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xed48: WORD 'UNK_0xed4a' codep=0x744d parp=0xed4a
 // ================================================
-IFieldType UNK_0xed4a = {0x14, 0x1d, 0x02};
+IFieldType UNK_0xed4a = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
 // 0xed4d: WORD 'UNK_0xed4f' codep=0x744d parp=0xed4f
 // ================================================
-IFieldType UNK_0xed4f = {0x14, 0x1f, 0x02};
+IFieldType UNK_0xed4f = {SHIPIDX, 0x1f, 0x02};
 
 // ================================================
 // 0xed52: WORD 'UNK_0xed54' codep=0x744d parp=0xed54
 // ================================================
-IFieldType UNK_0xed54 = {0x14, 0x25, 0x02};
+IFieldType UNK_0xed54 = {SHIPIDX, 0x25, 0x02};
 
 // ================================================
 // 0xed57: WORD 'UNK_0xed59' codep=0x744d parp=0xed59
 // ================================================
-IFieldType UNK_0xed59 = {0x14, 0x27, 0x02};
+IFieldType UNK_0xed59 = {SHIPIDX, 0x27, 0x02};
 // 0xed5c: db 0x4d 0x74 0x14 0x45 0x04 'Mt E '
 
 // ================================================

@@ -3,6 +3,8 @@
 // overlay size   = 0x0830
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -289,27 +291,27 @@ void UNK_0xed5e() // UNK_0xed5e
 // ================================================
 // 0xedba: WORD 'UNK_0xedbc' codep=0x7420 parp=0xedbc
 // ================================================
-IFieldType UNK_0xedbc = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xedbc = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xedbf: WORD 'UNK_0xedc1' codep=0x7420 parp=0xedc1
 // ================================================
-IFieldType UNK_0xedc1 = {0x11, 0x11, 0x12};
+IFieldType UNK_0xedc1 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
 // 0xedc4: WORD 'UNK_0xedc6' codep=0x7420 parp=0xedc6
 // ================================================
-IFieldType UNK_0xedc6 = {0x14, 0x34, 0x0f};
+IFieldType UNK_0xedc6 = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
 // 0xedc9: WORD 'UNK_0xedcb' codep=0x7420 parp=0xedcb
 // ================================================
-IFieldType UNK_0xedcb = {0x14, 0x43, 0x02};
+IFieldType UNK_0xedcb = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
 // 0xedce: WORD 'UNK_0xedd0' codep=0x7420 parp=0xedd0
 // ================================================
-IFieldType UNK_0xedd0 = {0x14, 0x56, 0x01};
+IFieldType UNK_0xedd0 = {SHIPIDX, 0x56, 0x01};
 
 // ================================================
 // 0xedd3: WORD 'UNK_0xedd5' codep=0x1d29 parp=0xedd5
@@ -464,7 +466,7 @@ void UNK_0xee6d() // UNK_0xee6d
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData(_1BTN); // from 'BUTTONS     '
+  LoadData(_1BTN); // from 'BUTTONS'
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'

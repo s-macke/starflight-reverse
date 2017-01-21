@@ -3,6 +3,8 @@
 // overlay size   = 0x0950
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -268,19 +270,19 @@ void UNK_0xec54() // UNK_0xec54
 // ================================================
 // 0xec60: WORD 'UNK_0xec62' codep=0x7420 parp=0xec62
 // ================================================
-IFieldType UNK_0xec62 = {0x14, 0x30, 0x02};
+IFieldType UNK_0xec62 = {SHIPIDX, 0x30, 0x02};
 // 0xec65: db 0x20 0x74 0x14 0x45 0x04 ' t E '
 
 // ================================================
 // 0xec6a: WORD 'UNK_0xec6c' codep=0x7420 parp=0xec6c
 // ================================================
-IFieldType UNK_0xec6c = {0x14, 0x32, 0x02};
+IFieldType UNK_0xec6c = {SHIPIDX, 0x32, 0x02};
 // 0xec6f: db 0x20 0x74 0x14 0x49 0x01 ' t I '
 
 // ================================================
 // 0xec74: WORD 'UNK_0xec76' codep=0x7420 parp=0xec76
 // ================================================
-IFieldType UNK_0xec76 = {0x14, 0x57, 0x01};
+IFieldType UNK_0xec76 = {SHIPIDX, 0x57, 0x01};
 
 // ================================================
 // 0xec79: WORD 'UNK_0xec7b' codep=0x224c parp=0xec7b

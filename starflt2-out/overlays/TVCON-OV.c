@@ -3,6 +3,8 @@
 // overlay size   = 0x0810
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -193,22 +195,22 @@ void UNK_0xedba() // UNK_0xedba
 // ================================================
 // 0xedc2: WORD 'UNK_0xedc4' codep=0x7420 parp=0xedc4
 // ================================================
-IFieldType UNK_0xedc4 = {0x0b, 0x11, 0x02};
+IFieldType UNK_0xedc4 = {BOXIDX, 0x11, 0x02};
 
 // ================================================
 // 0xedc7: WORD 'UNK_0xedc9' codep=0x7394 parp=0xedc9
 // ================================================
-LoadDataType UNK_0xedc9 = {0x20, 0x11, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xedc9 = {PLANETIDX, 0x11, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xedcf: WORD 'UNK_0xedd1' codep=0x7420 parp=0xedd1
 // ================================================
-IFieldType UNK_0xedd1 = {0x11, 0x17, 0x03};
+IFieldType UNK_0xedd1 = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
 // 0xedd4: WORD 'UNK_0xedd6' codep=0x7420 parp=0xedd6
 // ================================================
-IFieldType UNK_0xedd6 = {0x10, 0x1b, 0x01};
+IFieldType UNK_0xedd6 = {CREWMEMBERIDX, 0x1b, 0x01};
 // 0xedd9: db 0x20 0x74 0x10 0x20 0x02 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
 
 // ================================================
@@ -371,7 +373,7 @@ void Is_dot_STORM() // ?.STORM
 void UNK_0xeefe() // UNK_0xeefe
 {
   Push(1);
-  LoadData(UNK_0xedc9); // from 'PLANET      '
+  LoadData(UNK_0xedc9); // from 'PLANET'
   Push(Read16(Pop())); // @
   Push(5);
   SWAP(); // SWAP
@@ -413,7 +415,7 @@ void DO_dash_STORM() // DO-STORM
     {
       Push(pp__ro_PLANET); // (PLANET
       Get_gt_C_plus_S(); // @>C+S
-      LoadData(UNK_0xedc9); // from 'PLANET      '
+      LoadData(UNK_0xedc9); // from 'PLANET'
       Push(Read16(Pop())); // @
       Push(pp__pe_STORM); // %STORM
       Push(Pop() + Pop()); // +

@@ -3,6 +3,8 @@
 // overlay size   = 0x09f0
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -221,116 +223,116 @@ const unsigned short int cc_UNK_0xeb96 = 0xeb96; // UNK_0xeb96
 // ================================================
 // 0xeb98: WORD 'UNK_0xeb9a' codep=0x7420 parp=0xeb9a
 // ================================================
-IFieldType UNK_0xeb9a = {0x14, 0x43, 0x16};
+IFieldType UNK_0xeb9a = {SHIPIDX, 0x43, 0x16};
 
 // ================================================
 // 0xeb9d: WORD 'UNK_0xeb9f' codep=0x7420 parp=0xeb9f
 // ================================================
-IFieldType UNK_0xeb9f = {0x14, 0x1f, 0x02};
+IFieldType UNK_0xeb9f = {SHIPIDX, 0x1f, 0x02};
 
 // ================================================
 // 0xeba2: WORD 'UNK_0xeba4' codep=0x7420 parp=0xeba4
 // ================================================
-IFieldType UNK_0xeba4 = {0x0b, 0x11, 0x02};
+IFieldType UNK_0xeba4 = {BOXIDX, 0x11, 0x02};
 
 // ================================================
 // 0xeba7: WORD 'UNK_0xeba9' codep=0x7420 parp=0xeba9
 // ================================================
-IFieldType UNK_0xeba9 = {0x34, 0x12, 0x01};
+IFieldType UNK_0xeba9 = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
 // 0xebac: WORD 'UNK_0xebae' codep=0x7394 parp=0xebae
 // ================================================
-LoadDataType UNK_0xebae = {0x15, 0x29, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebae = {TRADERSIDX, 0x29, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xebb4: WORD 'UNK_0xebb6' codep=0x7394 parp=0xebb6
 // ================================================
-LoadDataType UNK_0xebb6 = {0x20, 0x16, 0x01, 0x17, 0x6c49};
+LoadDataType UNK_0xebb6 = {PLANETIDX, 0x16, 0x01, 0x17, 0x6c49};
 
 // ================================================
 // 0xebbc: WORD 'UNK_0xebbe' codep=0x7394 parp=0xebbe
 // ================================================
-LoadDataType UNK_0xebbe = {0x15, 0x13, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebbe = {TRADERSIDX, 0x13, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xebc4: WORD 'UNK_0xebc6' codep=0x7394 parp=0xebc6
 // ================================================
-LoadDataType UNK_0xebc6 = {0x15, 0x14, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebc6 = {TRADERSIDX, 0x14, 0x01, 0x32, 0x6ad1};
 // 0xebcc: db 0x94 0x73 0x15 0x15 0x01 0x32 0xd1 0x6a ' s   2 j'
 
 // ================================================
 // 0xebd4: WORD 'UNK_0xebd6' codep=0x7394 parp=0xebd6
 // ================================================
-LoadDataType UNK_0xebd6 = {0x15, 0x16, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebd6 = {TRADERSIDX, 0x16, 0x01, 0x32, 0x6ad1};
 // 0xebdc: db 0x94 0x73 0x15 0x1a 0x03 0x32 0xd1 0x6a ' s   2 j'
 
 // ================================================
 // 0xebe4: WORD 'UNK_0xebe6' codep=0x7394 parp=0xebe6
 // ================================================
-LoadDataType UNK_0xebe6 = {0x15, 0x1d, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebe6 = {TRADERSIDX, 0x1d, 0x01, 0x32, 0x6ad1};
 // 0xebec: db 0x94 0x73 0x15 0x1e 0x01 0x32 0xd1 0x6a ' s   2 j'
 
 // ================================================
 // 0xebf4: WORD 'UNK_0xebf6' codep=0x7394 parp=0xebf6
 // ================================================
-LoadDataType UNK_0xebf6 = {0x15, 0x1f, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebf6 = {TRADERSIDX, 0x1f, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xebfc: WORD 'UNK_0xebfe' codep=0x7394 parp=0xebfe
 // ================================================
-LoadDataType UNK_0xebfe = {0x15, 0x20, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xebfe = {TRADERSIDX, 0x20, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec04: WORD 'UNK_0xec06' codep=0x7394 parp=0xec06
 // ================================================
-LoadDataType UNK_0xec06 = {0x15, 0x21, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec06 = {TRADERSIDX, 0x21, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec0c: WORD 'UNK_0xec0e' codep=0x7394 parp=0xec0e
 // ================================================
-LoadDataType UNK_0xec0e = {0x15, 0x23, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec0e = {TRADERSIDX, 0x23, 0x01, 0x32, 0x6ad1};
 // 0xec14: db 0x94 0x73 0x15 0x25 0x02 0x32 0xd1 0x6a ' s % 2 j'
 
 // ================================================
 // 0xec1c: WORD 'UNK_0xec1e' codep=0x7394 parp=0xec1e
 // ================================================
-LoadDataType UNK_0xec1e = {0x15, 0x2b, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec1e = {TRADERSIDX, 0x2b, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec24: WORD 'UNK_0xec26' codep=0x7394 parp=0xec26
 // ================================================
-LoadDataType UNK_0xec26 = {0x15, 0x2c, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec26 = {TRADERSIDX, 0x2c, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec2c: WORD 'UNK_0xec2e' codep=0x7394 parp=0xec2e
 // ================================================
-LoadDataType UNK_0xec2e = {0x15, 0x2d, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec2e = {TRADERSIDX, 0x2d, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec34: WORD 'UNK_0xec36' codep=0x7394 parp=0xec36
 // ================================================
-LoadDataType UNK_0xec36 = {0x15, 0x31, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec36 = {TRADERSIDX, 0x31, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec3c: WORD 'UNK_0xec3e' codep=0x7394 parp=0xec3e
 // ================================================
-LoadDataType UNK_0xec3e = {0x15, 0x2a, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec3e = {TRADERSIDX, 0x2a, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec44: WORD 'UNK_0xec46' codep=0x7394 parp=0xec46
 // ================================================
-LoadDataType UNK_0xec46 = {0x15, 0x2e, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec46 = {TRADERSIDX, 0x2e, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec4c: WORD 'UNK_0xec4e' codep=0x7394 parp=0xec4e
 // ================================================
-LoadDataType UNK_0xec4e = {0x15, 0x2f, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec4e = {TRADERSIDX, 0x2f, 0x01, 0x32, 0x6ad1};
 
 // ================================================
 // 0xec54: WORD 'UNK_0xec56' codep=0x7394 parp=0xec56
 // ================================================
-LoadDataType UNK_0xec56 = {0x15, 0x30, 0x01, 0x32, 0x6ad1};
+LoadDataType UNK_0xec56 = {TRADERSIDX, 0x30, 0x01, 0x32, 0x6ad1};
 // 0xec5c: db 0x4c 0x22 0x5d 0x17 0xbe 0xeb 0x0d 0x7d 0x87 0x3b 0x5f 0x12 0x90 0x16 'L"]    } ;_   '
 
 // ================================================
@@ -380,28 +382,28 @@ void UNK_0xec92() // UNK_0xec92
 {
   UNK_0xec7a(); // UNK_0xec7a
   UNK_0xec6c(); // UNK_0xec6c
-  LoadData(UNK_0xec36); // from 'TRADERS     '
+  LoadData(UNK_0xec36); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   _gt_(); // >
   if (Pop() != 0)
   {
-    LoadData(UNK_0xebc6); // from 'TRADERS     '
+    LoadData(UNK_0xebc6); // from 'TRADERS'
     Push(Read8(Pop())&0xFF); // C@
     Push(0x0032);
     Push(Pop() * Pop()); // *
     Push(Read16(regsp)); // DUP
     UNK_0xec82(); // UNK_0xec82
-    LoadData(UNK_0xec46); // from 'TRADERS     '
+    LoadData(UNK_0xec46); // from 'TRADERS'
     C_ex__2(); // C!_2
     Push(Read16(regsp)); // DUP
     UNK_0xec82(); // UNK_0xec82
-    LoadData(UNK_0xec4e); // from 'TRADERS     '
+    LoadData(UNK_0xec4e); // from 'TRADERS'
     C_ex__2(); // C!_2
     UNK_0xec82(); // UNK_0xec82
-    LoadData(UNK_0xec56); // from 'TRADERS     '
+    LoadData(UNK_0xec56); // from 'TRADERS'
     C_ex__2(); // C!_2
     UNK_0xec6c(); // UNK_0xec6c
-    LoadData(UNK_0xec36); // from 'TRADERS     '
+    LoadData(UNK_0xec36); // from 'TRADERS'
     C_ex__2(); // C!_2
   }
   ICLOSE(); // ICLOSE
@@ -418,7 +420,7 @@ void UNK_0xeccc() // UNK_0xeccc
   UNK_0xec7a(); // UNK_0xec7a
   a = Pop(); // >R
   Push(Read16(a)); // R@
-  LoadData(UNK_0xebe6); // from 'TRADERS     '
+  LoadData(UNK_0xebe6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -427,7 +429,7 @@ void UNK_0xeccc() // UNK_0xeccc
   } else
   {
     Push(Read16(a)); // R@
-    LoadData(UNK_0xebf6); // from 'TRADERS     '
+    LoadData(UNK_0xebf6); // from 'TRADERS'
     Push(Read8(Pop())&0xFF); // C@
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -478,33 +480,33 @@ void GetTAMT() // @TAMT
 // ================================================
 // 0xed36: WORD 'UNK_0xed38' codep=0x7394 parp=0xed38
 // ================================================
-LoadDataType UNK_0xed38 = {0x1c, 0x1f, 0x01, 0x20, 0x6bcd};
+LoadDataType UNK_0xed38 = {ARTIFACTIDX, 0x1f, 0x01, 0x20, 0x6bcd};
 // 0xed3e: db 0x94 0x73 0x1c 0x1e 0x01 0x20 0xcd 0x6b ' s     k'
 
 // ================================================
 // 0xed46: WORD 'UNK_0xed48' codep=0x7394 parp=0xed48
 // ================================================
-LoadDataType UNK_0xed48 = {0x44, 0x14, 0x02, 0x22, 0x6f07};
+LoadDataType UNK_0xed48 = {CREATUREIDX, 0x14, 0x02, 0x22, 0x6f07};
 
 // ================================================
 // 0xed4e: WORD 'UNK_0xed50' codep=0x7394 parp=0xed50
 // ================================================
-LoadDataType UNK_0xed50 = {0x44, 0x16, 0x01, 0x22, 0x6f07};
+LoadDataType UNK_0xed50 = {CREATUREIDX, 0x16, 0x01, 0x22, 0x6f07};
 
 // ================================================
 // 0xed56: WORD 'UNK_0xed58' codep=0x7394 parp=0xed58
 // ================================================
-LoadDataType UNK_0xed58 = {0x1a, 0x16, 0x01, 0x17, 0x6ba9};
+LoadDataType UNK_0xed58 = {ELEMENTIDX, 0x16, 0x01, 0x17, 0x6ba9};
 
 // ================================================
 // 0xed5e: WORD 'UNK_0xed60' codep=0x7394 parp=0xed60
 // ================================================
-LoadDataType UNK_0xed60 = {0x09, 0x18, 0x02, 0x1b, 0x6a54};
+LoadDataType UNK_0xed60 = {STISIDX, 0x18, 0x02, 0x1b, 0x6a54};
 
 // ================================================
 // 0xed66: WORD 'UNK_0xed68' codep=0x7394 parp=0xed68
 // ================================================
-LoadDataType UNK_0xed68 = {0x09, 0x1a, 0x01, 0x1b, 0x6a54};
+LoadDataType UNK_0xed68 = {STISIDX, 0x1a, 0x01, 0x1b, 0x6a54};
 
 // ================================================
 // 0xed6e: WORD 'UNK_0xed70' codep=0x224c parp=0xed70
@@ -528,7 +530,7 @@ void UNK_0xed70() // UNK_0xed70
 
 void UNK_0xed82() // UNK_0xed82
 {
-  LoadData(ART_dash_VAL); // from 'ARTIFACT    '
+  LoadData(ART_dash_VAL); // from 'ARTIFACT'
   Push(Read16(Pop())); // @
 }
 
@@ -539,7 +541,7 @@ void UNK_0xed82() // UNK_0xed82
 
 void UNK_0xed8a() // UNK_0xed8a
 {
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
 }
 
@@ -550,7 +552,7 @@ void UNK_0xed8a() // UNK_0xed8a
 
 void UNK_0xed92() // UNK_0xed92
 {
-  LoadData(UNK_0xed60); // from 'STIS        '
+  LoadData(UNK_0xed60); // from 'STIS'
   Push(Read16(Pop())); // @
 }
 
@@ -561,7 +563,7 @@ void UNK_0xed92() // UNK_0xed92
 
 void UNK_0xed9a() // UNK_0xed9a
 {
-  LoadData(UNK_0xed48); // from 'CREATURE    '
+  LoadData(UNK_0xed48); // from 'CREATURE'
   Push(Read16(Pop())); // @
 }
 
@@ -602,16 +604,16 @@ void _ro_GETUSE_rc_() // (GETUSE)
   switch(Pop()) // (GETUSE)
   {
   case 68:
-    LoadData(UNK_0xed50); // from 'CREATURE    '
+    LoadData(UNK_0xed50); // from 'CREATURE'
     break;
   case 28:
-    LoadData(UNK_0xed38); // from 'ARTIFACT    '
+    LoadData(UNK_0xed38); // from 'ARTIFACT'
     break;
   case 26:
-    LoadData(UNK_0xed58); // from 'ELEMENT     '
+    LoadData(UNK_0xed58); // from 'ELEMENT'
     break;
   case 9:
-    LoadData(UNK_0xed68); // from 'STIS        '
+    LoadData(UNK_0xed68); // from 'STIS'
     break;
   default:
     UNRAVEL(); // UNRAVEL
@@ -662,7 +664,7 @@ void UNK_0xee06() // UNK_0xee06
   Push(0xed68); // probable 'UNK_0xed68'
   IFLD_ex_(); // IFLD!
   Push(0);
-  LoadData(UNK_0xed68); // from 'STIS        '
+  LoadData(UNK_0xed68); // from 'STIS'
   C_ex__2(); // C!_2
 }
 
@@ -729,7 +731,7 @@ void UNK_0xee51() // UNK_0xee51
 void UNK_0xee57() // UNK_0xee57
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebbe); // from 'TRADERS     '
+  LoadData(UNK_0xebbe); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xee23); // UNK_0xee23
@@ -745,7 +747,7 @@ void UNK_0xee57() // UNK_0xee57
 void UNK_0xee69() // UNK_0xee69
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebc6); // from 'TRADERS     '
+  LoadData(UNK_0xebc6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xee1c); // UNK_0xee1c
@@ -842,13 +844,13 @@ void UNK_0xeec1() // UNK_0xeec1
 void UNK_0xeed9() // UNK_0xeed9
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebe6); // from 'TRADERS     '
+  LoadData(UNK_0xebe6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xeec1(); // UNK_0xeec1
-  LoadData(UNK_0xebf6); // from 'TRADERS     '
+  LoadData(UNK_0xebf6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xeec1(); // UNK_0xeec1
-  LoadData(UNK_0xebfe); // from 'TRADERS     '
+  LoadData(UNK_0xebfe); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xeec1(); // UNK_0xeec1
   ICLOSE(); // ICLOSE
@@ -878,7 +880,7 @@ void UNK_0xef03() // UNK_0xef03
 {
   unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebc6); // from 'TRADERS     '
+  LoadData(UNK_0xebc6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_UNK_0xee2a); // UNK_0xee2a
   Push(Pop() + Pop()); // +
@@ -945,10 +947,10 @@ void UNK_0xef4f() // UNK_0xef4f
 void UNK_0xef67() // UNK_0xef67
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xec06); // from 'TRADERS     '
+  LoadData(UNK_0xec06); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xef4f(); // UNK_0xef4f
-  LoadData(UNK_0xec0e); // from 'TRADERS     '
+  LoadData(UNK_0xec0e); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xef4f(); // UNK_0xef4f
   ICLOSE(); // ICLOSE
@@ -980,13 +982,13 @@ void UNK_0xef7b() // UNK_0xef7b
 void UNK_0xef93() // UNK_0xef93
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xec1e); // from 'TRADERS     '
+  LoadData(UNK_0xec1e); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xef7b(); // UNK_0xef7b
-  LoadData(UNK_0xec26); // from 'TRADERS     '
+  LoadData(UNK_0xec26); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xef7b(); // UNK_0xef7b
-  LoadData(UNK_0xec2e); // from 'TRADERS     '
+  LoadData(UNK_0xec2e); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xef7b(); // UNK_0xef7b
   ICLOSE(); // ICLOSE
@@ -1001,7 +1003,7 @@ void UNK_0xefad() // UNK_0xefad
 {
   unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebc6); // from 'TRADERS     '
+  LoadData(UNK_0xebc6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(pp_UNK_0xee2a); // UNK_0xee2a
   Push(Pop() + Pop()); // +
@@ -1111,9 +1113,9 @@ void UNK_0xf039() // UNK_0xf039
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Store_2(); // !_2
   Push(3);
-  LoadData(UNK_0xed58); // from 'ELEMENT     '
+  LoadData(UNK_0xed58); // from 'ELEMENT'
   C_ex__2(); // C!_2
-  LoadData(ELEM_dash_VA); // from 'ELEMENT     '
+  LoadData(ELEM_dash_VA); // from 'ELEMENT'
   Push(Read16(Pop())); // @
   Push(0x65e1+ASKING.offset); // IFIELD
   Store_2(); // !_2
@@ -1201,7 +1203,7 @@ void UNK_0xf24f() // UNK_0xf24f
 void UNK_0xf25f() // UNK_0xf25f
 {
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebd6); // from 'TRADERS     '
+  LoadData(UNK_0xebd6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   Push2Words("*4SALE");
@@ -1466,7 +1468,7 @@ void UNK_0xf41e() // UNK_0xf41e
     UNK_0xf2bb(); // UNK_0xf2bb
   }
   Push(Read16(regsp)); // DUP
-  LoadData(UNK_0xebae); // from 'TRADERS     '
+  LoadData(UNK_0xebae); // from 'TRADERS'
   C_ex__2(); // C!_2
   Push(4);
   Push((Pop()==Pop())?1:0); // =
@@ -1477,7 +1479,7 @@ void UNK_0xf41e() // UNK_0xf41e
   {
     Push(4);
   }
-  LoadData(UNK_0xec3e); // from 'TRADERS     '
+  LoadData(UNK_0xec3e); // from 'TRADERS'
   C_ex__2(); // C!_2
   ICLOSE(); // ICLOSE
 }
@@ -1517,7 +1519,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
   unsigned short int a, b;
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  LoadData(UNK_0xebb6); // from 'PLANET      '
+  LoadData(UNK_0xebb6); // from 'PLANET'
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
   a = Pop(); // >R
@@ -1562,7 +1564,7 @@ void BLD_dash_LIST() // BLD-LIST
   if (Pop() == 0) return;
   UNK_0xf28d(); // UNK_0xf28d
   UNK_0xec7a(); // UNK_0xec7a
-  LoadData(UNK_0xebd6); // from 'TRADERS     '
+  LoadData(UNK_0xebd6); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   _gt_FLAG(); // >FLAG
   ICLOSE(); // ICLOSE

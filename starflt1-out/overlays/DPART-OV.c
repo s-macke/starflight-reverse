@@ -3,6 +3,8 @@
 // overlay size   = 0x0610
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -149,7 +151,7 @@ const unsigned short int cc_UNK_0xef6a = 0xef6a; // UNK_0xef6a
 // ================================================
 // 0xef6c: WORD 'UNK_0xef6e' codep=0x744d parp=0xef6e
 // ================================================
-IFieldType UNK_0xef6e = {0x3d, 0x1b, 0x01};
+IFieldType UNK_0xef6e = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
 // 0xef71: WORD 'UNK_0xef73' codep=0x224c parp=0xef73
@@ -660,7 +662,7 @@ void UNK_0xf2b0() // UNK_0xf2b0
 // ================================================
 // 0xf2e4: WORD 'UNK_0xf2e6' codep=0x744d parp=0xf2e6
 // ================================================
-IFieldType UNK_0xf2e6 = {0x17, 0x11, 0x01};
+IFieldType UNK_0xf2e6 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
 // 0xf2e9: WORD 'UNK_0xf2eb' codep=0x224c parp=0xf2eb

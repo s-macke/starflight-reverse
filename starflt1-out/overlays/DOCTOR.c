@@ -3,6 +3,8 @@
 // overlay size   = 0x0500
 
 #include"../../emul/cpu.h"
+
+#include"../data.h"
 #include"../../emul/starflt1.h"
 
 
@@ -78,27 +80,27 @@ void CI(); // CI
 // ================================================
 // 0xf074: WORD 'UNK_0xf076' codep=0x73ea parp=0xf076
 // ================================================
-LoadDataType UNK_0xf076 = {0x10, 0x13, 0x01, 0x14, 0x6489};
+LoadDataType UNK_0xf076 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
 // 0xf07c: WORD 'UNK_0xf07e' codep=0x744d parp=0xf07e
 // ================================================
-IFieldType UNK_0xf07e = {0x10, 0x0b, 0x0f};
+IFieldType UNK_0xf07e = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
 // 0xf081: WORD 'UNK_0xf083' codep=0x744d parp=0xf083
 // ================================================
-IFieldType UNK_0xf083 = {0x10, 0x1f, 0x01};
+IFieldType UNK_0xf083 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xf086: WORD 'UNK_0xf088' codep=0x744d parp=0xf088
 // ================================================
-IFieldType UNK_0xf088 = {0x10, 0x20, 0x02};
+IFieldType UNK_0xf088 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
 // 0xf08b: WORD 'UNK_0xf08d' codep=0x744d parp=0xf08d
 // ================================================
-IFieldType UNK_0xf08d = {0x11, 0x11, 0x03};
+IFieldType UNK_0xf08d = {ASSIGN_CREWIDX, 0x11, 0x03};
 
 // ================================================
 // 0xf090: WORD 'UNK_0xf092' codep=0x224c parp=0xf092
@@ -554,7 +556,7 @@ void UNK_0xf421() // UNK_0xf421
     PRINT(" AND A", 6); // (.")
     CTCR(); // CTCR
     PRINT("DURABILITY OF ", 14); // (.")
-    LoadData(UNK_0xf076); // from 'CREWMEMBER  '
+    LoadData(UNK_0xf076); // from 'CREWMEMBER'
     Push(Read8(Pop())&0xFF); // C@
     Push(0);
     DrawR(); // .R
