@@ -375,7 +375,7 @@ void UNK_0xecec() // UNK_0xecec
   Push(Read16(regsp)); // DUP
   Push(0x000c);
   Push(Pop() * Pop()); // *
-  LoadData(_1BTN); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'BUTTONS     '
   Push(Pop() + Pop()); // +
   Push(0x000c);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'

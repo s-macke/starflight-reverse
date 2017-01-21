@@ -3788,7 +3788,7 @@ void UNK_0xed11() // UNK_0xed11
     Push(pp_RECORD_n_); // RECORD#
     _ex__2(); // !_2
     UNK_0x3f09("LAUNCH");
-    LoadData(_1BTN); // from 'ANALYZE-TEXT'
+    LoadData(_1BTN); // from 'BUTTONS     '
     SWAP(); // SWAP
     CMOVE_2(); // CMOVE_2
     SET_dash_CUR(); // SET-CUR
@@ -4471,7 +4471,7 @@ void UNK_0xf219() // UNK_0xf219
   Push(pp_RECORD_n_); // RECORD#
   _ex__2(); // !_2
   UNK_0x3f09("LAUNCH");
-  LoadData(_1BTN); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'BUTTONS     '
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR

@@ -584,7 +584,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
 
 void UNK_0xf0de() // UNK_0xf0de
 {
-  LoadData(BD_dash_NAME); // from 'SPECIMEN    '
+  LoadData(BD_dash_NAME); // from 'BIO-DATA    '
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE

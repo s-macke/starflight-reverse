@@ -15,9 +15,9 @@
 //      UNK_0xef98  codep:0x2214 parp:0xef98 size:0x0002 C-string:'UNK_0xef98'
 //      UNK_0xef9c  codep:0x2214 parp:0xef9c size:0x0002 C-string:'UNK_0xef9c'
 //      UNK_0xefa0  codep:0x2214 parp:0xefa0 size:0x0002 C-string:'UNK_0xefa0'
-//      UNK_0xefa4  codep:0x744d parp:0xefa4 size:0x0003 C-string:'UNK_0xefa4'
-//      UNK_0xefa9  codep:0x744d parp:0xefa9 size:0x0003 C-string:'UNK_0xefa9'
-//      UNK_0xefae  codep:0x744d parp:0xefae size:0x0003 C-string:'UNK_0xefae'
+//   MASTERBALANCE  codep:0x744d parp:0xefa4 size:0x0003 C-string:'MASTERBALANCE'
+//         BALANCE  codep:0x744d parp:0xefa9 size:0x0003 C-string:'BALANCE'
+//           TFLAG  codep:0x744d parp:0xefae size:0x0003 C-string:'TFLAG'
 //      UNK_0xefb3  codep:0x73ea parp:0xefb3 size:0x0006 C-string:'UNK_0xefb3'
 //      UNK_0xefbb  codep:0x744d parp:0xefbb size:0x0003 C-string:'UNK_0xefbb'
 //      UNK_0xefc0  codep:0x744d parp:0xefc0 size:0x0003 C-string:'UNK_0xefc0'
@@ -160,17 +160,17 @@ void UNK_0xef86() // UNK_0xef86
 // 0xefa0: dw 0x0004
 
 // ================================================
-// 0xefa2: WORD 'UNK_0xefa4' codep=0x744d parp=0xefa4
+// 0xefa2: WORD 'MASTERBALANCE' codep=0x744d parp=0xefa4
 // ================================================
 // 0xefa4: db 0x0d 0x0b 0x04 '   '
 
 // ================================================
-// 0xefa7: WORD 'UNK_0xefa9' codep=0x744d parp=0xefa9
+// 0xefa7: WORD 'BALANCE' codep=0x744d parp=0xefa9
 // ================================================
 // 0xefa9: db 0x0d 0x0f 0x04 '   '
 
 // ================================================
-// 0xefac: WORD 'UNK_0xefae' codep=0x744d parp=0xefae
+// 0xefac: WORD 'TFLAG' codep=0x744d parp=0xefae
 // ================================================
 // 0xefae: db 0x0d 0x13 0x01 '   '
 
@@ -209,7 +209,7 @@ void _ex_TFLAG() // !TFLAG
 {
   SET_dash_BANK(); // SET-BANK
   Push(1);
-  Push(0x6402); // IFIELD(UNK_0xefae)
+  Push(0x6402); // IFIELD(TFLAG)
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -223,7 +223,7 @@ void _ex_TFLAG() // !TFLAG
 void D_at_BALANCE() // D@BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fe); // IFIELD(UNK_0xefa9)
+  Push(0x63fe); // IFIELD(BALANCE)
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
 }
@@ -237,7 +237,7 @@ void D_at_BALANCE() // D@BALANCE
 void D_ex_BALANCE() // D!BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fe); // IFIELD(UNK_0xefa9)
+  Push(0x63fe); // IFIELD(BALANCE)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -264,9 +264,9 @@ void _ask_BALANCE() // ?BALANCE
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fa); // IFIELD(UNK_0xefa4)
+  Push(0x63fa); // IFIELD(MASTERBALANCE)
   _2_at_(); // 2@
-  Push(0x63fe); // IFIELD(UNK_0xefa9)
+  Push(0x63fe); // IFIELD(BALANCE)
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -281,7 +281,7 @@ void TRANSACT() // TRANSACT
 {
   unsigned short int i, imax;
   SET_dash_BANK(); // SET-BANK
-  Push(0x6402); // IFIELD(UNK_0xefae)
+  Push(0x6402); // IFIELD(TFLAG)
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -320,9 +320,9 @@ void TRANSACT() // TRANSACT
     SET_dash_CURRENT(); // SET-CURRENT
     Push(pp_STARDATE); // STARDATE
     Push(Read16(Pop())); // @
-    Push(0x63fa); // IFIELD(UNK_0xefa4)
+    Push(0x63fa); // IFIELD(MASTERBALANCE)
     _2_at_(); // 2@
-    Push(0x63fe); // IFIELD(UNK_0xefa9)
+    Push(0x63fe); // IFIELD(BALANCE)
     _2_at_(); // 2@
     D_dash_(); // D-
     ICLOSE(); // ICLOSE
@@ -331,12 +331,12 @@ void TRANSACT() // TRANSACT
     Push(0x63fe); // IFIELD(UNK_0xefc0)
     _ex__3(); // !_3
     ICLOSE(); // ICLOSE
-    Push(0x63fe); // IFIELD(UNK_0xefa9)
+    Push(0x63fe); // IFIELD(BALANCE)
     _2_at_(); // 2@
-    Push(0x63fa); // IFIELD(UNK_0xefa4)
+    Push(0x63fa); // IFIELD(MASTERBALANCE)
     D_ex_(); // D!
     Push(0);
-    Push(0x6402); // IFIELD(UNK_0xefae)
+    Push(0x6402); // IFIELD(TFLAG)
     C_ex_(); // C!
   } else
   {
@@ -787,7 +787,7 @@ void _dot_BALANCE() // .BALANCE
   Push(0x001d);
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  Push(0x63fa); // IFIELD(UNK_0xefa4)
+  Push(0x63fa); // IFIELD(MASTERBALANCE)
   _2_at_(); // 2@
   Push(7);
   D_dot_R(); // D.R

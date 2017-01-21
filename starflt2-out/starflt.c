@@ -25584,7 +25584,7 @@ void _dot_ABTN() // .ABTN
   POLY_dash_WI(); // POLY-WI
   SetColor("WHITE");
   _ex_COLOR(); // !COLOR
-  LoadData(_1BTN); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'BUTTONS     '
   Push(a); // R>
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25640,7 +25640,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   Push(0x0077);
   POS_dot_(); // POS.
   _gt_2FONT(); // >2FONT
-  LoadData(_n_BTN); // from 'ANALYZE-TEXT'
+  LoadData(_n_BTN); // from 'BUTTONS     '
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000c);
   Push(Pop() * Pop()); // *
@@ -25652,7 +25652,7 @@ void _dot_BTN_dash_TE() // .BTN-TE
   {
     Push(i); // I
     UNK_0xa6f0(); // UNK_0xa6f0
-    LoadData(_1BTN); // from 'ANALYZE-TEXT'
+    LoadData(_1BTN); // from 'BUTTONS     '
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(0x000c);
@@ -25687,7 +25687,7 @@ void NEW_dash_BUT() // NEW-BUT
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(0);
-  LoadData(_n_BTN); // from 'ANALYZE-TEXT'
+  LoadData(_n_BTN); // from 'BUTTONS     '
   Push(Read8(Pop())&0xFF); // C@
   WITHIN(); // WITHIN
   if (Pop() != 0)

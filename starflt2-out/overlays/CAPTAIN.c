@@ -1997,7 +1997,7 @@ void _gt_DESCEND() // >DESCEND
 {
   UNK_0xe552(); // UNK_0xe552
   UNK_0x3f09("LAUNCH");
-  LoadData(_1BTN); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'BUTTONS     '
   UNK_0xe564(); // UNK_0xe564
   Push(pp_CONTEXT_3); // CONTEXT_3
   _099(); // 099
@@ -2067,7 +2067,7 @@ void UNK_0xf05f() // UNK_0xf05f
     {
       UNK_0xe552(); // UNK_0xe552
       UNK_0x3f09("LAND  ");
-      LoadData(_1BTN); // from 'ANALYZE-TEXT'
+      LoadData(_1BTN); // from 'BUTTONS     '
       UNK_0xe564(); // UNK_0xe564
     }
     Push(pp_STIME); // STIME

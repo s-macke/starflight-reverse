@@ -1861,7 +1861,7 @@ void UNK_0xde43() // UNK_0xde43
 
 void UNK_0xde55() // UNK_0xde55
 {
-  LoadData(_1BTN); // from 'ANALYZE-TEXT'
+  LoadData(_1BTN); // from 'BUTTONS     '
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
   SET_dash_CUR(); // SET-CUR
