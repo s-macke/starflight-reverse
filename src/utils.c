@@ -41,6 +41,55 @@ char* Forth2CString(char *in)
         out[j++] = '_';
     }
 
+    if (in[0] == '?')
+    {
+        out[j++] = 'I';
+        out[j++] = 's';
+        i++;
+    }
+    if (in[0] == '@')
+    {
+        out[j++] = 'G';
+        out[j++] = 'e';
+        out[j++] = 't';
+        i++;
+    }
+    if (in[0] == '!')
+    {
+        out[j++] = 'S';
+        out[j++] = 't';
+        out[j++] = 'o';
+        out[j++] = 'r';
+        out[j++] = 'e';
+        i++;
+    }
+    if (in[0] == '.')
+    {
+        out[j++] = 'D';
+        out[j++] = 'r';
+        out[j++] = 'a';
+        out[j++] = 'w';
+        i++;
+    }
+    if (in[0] == 'D' && in[1] == '@')
+    {
+        out[j++] = 'G';
+        out[j++] = 'e';
+        out[j++] = 't';
+        out[j++] = 'D';
+        i+=2;
+    }
+    if (in[0] == 'D' && in[1] == '!')
+    {
+        out[j++] = 'S';
+        out[j++] = 't';
+        out[j++] = 'o';
+        out[j++] = 'r';
+        out[j++] = 'e';
+        out[j++] = 'D';
+        i+=2;
+    }
+
     for(; i<n; i++)
     {
         if ((in[i] >= 'a') && (in[i] <= 'z'))
