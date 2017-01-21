@@ -75,6 +75,9 @@ extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern const unsigned short int pp__n_ETIME; // #ETIME
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
 void ABS(); // ABS
 void M_star_(); // M*
@@ -168,9 +171,9 @@ void UNK_0xeda6() // UNK_0xeda6
 
 void UNK_0xedae() // UNK_0xedae
 {
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
 }
 
@@ -190,7 +193,7 @@ void UNK_0xedba() // UNK_0xedba
 // ================================================
 // 0xedc2: WORD 'UNK_0xedc4' codep=0x7420 parp=0xedc4
 // ================================================
-// 0xedc4: db 0x0b 0x11 0x02 '   '
+IFieldType UNK_0xedc4 = {0x0b, 0x11, 0x02};
 
 // ================================================
 // 0xedc7: WORD 'UNK_0xedc9' codep=0x7394 parp=0xedc9
@@ -200,12 +203,13 @@ LoadDataType UNK_0xedc9 = {0x20, 0x11, 0x01, 0x17, 0x6c49};
 // ================================================
 // 0xedcf: WORD 'UNK_0xedd1' codep=0x7420 parp=0xedd1
 // ================================================
-// 0xedd1: db 0x11 0x17 0x03 '   '
+IFieldType UNK_0xedd1 = {0x11, 0x17, 0x03};
 
 // ================================================
 // 0xedd4: WORD 'UNK_0xedd6' codep=0x7420 parp=0xedd6
 // ================================================
-// 0xedd6: db 0x10 0x1b 0x01 0x20 0x74 0x10 0x20 0x02 0x20 0x74 0x10 0x1f 0x01 '    t    t   '
+IFieldType UNK_0xedd6 = {0x10, 0x1b, 0x01};
+// 0xedd9: db 0x20 0x74 0x10 0x20 0x02 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
 
 // ================================================
 // 0xede3: WORD '?ETIME' codep=0x224c parp=0xedee
@@ -741,9 +745,9 @@ void UNK_0xf1c4() // UNK_0xf1c4
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65f8); // IFIELD(UNK_0xedd1)
+  Push(0x65e1+UNK_0xedd1.offset); // IFIELD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65fc); // IFIELD(UNK_0xedd6)
+  Push(0x65e1+UNK_0xedd6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -864,14 +868,14 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xedba(); // UNK_0xedba
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(regsp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -949,7 +953,7 @@ void _dot_ENERGY() // .ENERGY
   SetColor("BLACK");
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -1025,7 +1029,7 @@ void _dot_CARGO() // .CARGO
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65f2); // IFIELD(UNK_0xedc4)
+  Push(0x65e1+UNK_0xedc4.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)

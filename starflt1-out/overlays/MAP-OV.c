@@ -96,6 +96,8 @@ extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -251,17 +253,17 @@ const unsigned short int pp_UNK_0xe577 = 0xe577; // UNK_0xe577 size: 2
 // ================================================
 // 0xe558: WORD 'UNK_0xe55a' codep=0x744d parp=0xe55a
 // ================================================
-// 0xe55a: db 0x2d 0x0b 0x02 '-  '
+IFieldType UNK_0xe55a = {0x2d, 0x0b, 0x02};
 
 // ================================================
 // 0xe55d: WORD 'UNK_0xe55f' codep=0x744d parp=0xe55f
 // ================================================
-// 0xe55f: db 0x2d 0x11 0x02 '-  '
+IFieldType UNK_0xe55f = {0x2d, 0x11, 0x02};
 
 // ================================================
 // 0xe562: WORD 'UNK_0xe564' codep=0x744d parp=0xe564
 // ================================================
-// 0xe564: db 0x14 0x13 0x02 '   '
+IFieldType UNK_0xe564 = {0x14, 0x13, 0x02};
 
 // ================================================
 // 0xe567: WORD 'UNK_0xe569' codep=0x1d29 parp=0xe569
@@ -281,11 +283,11 @@ void UNK_0xe57b() // UNK_0xe57b
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe54a); // UNK_0xe54a
   _ex__3(); // !_3
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xe54e); // UNK_0xe54e
   _ex__3(); // !_3
@@ -962,14 +964,14 @@ void UNK_0xe9be() // UNK_0xe9be
 void UNK_0xea4c() // UNK_0xea4c
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   WLD_gt_SCR(); // WLD>SCR
-  Push(0x63fa); // IFIELD(UNK_0xe55a)
+  Push(0x63ef+UNK_0xe55a.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x6400); // IFIELD(UNK_0xe55f)
+  Push(0x63ef+UNK_0xe55f.offset); // IFIELD
   Push(Read16(Pop())); // @
   WLD_gt_SCR(); // WLD>SCR
   ICLOSE(); // ICLOSE
@@ -1448,12 +1450,12 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
     Push(Read16(Pop())); // @
     Push2Words("*SHIP");
     _gt_C_plus_S(); // >C+S
-    Push(0x6402); // IFIELD(UNK_0xe564)
+    Push(0x63ef+UNK_0xe564.offset); // IFIELD
     Push(Pop()+1); // 1+
     Push(Read8(Pop())&0xFF); // C@
     Push(7);
     Push(Pop() & Pop()); // AND
-    Push(0x6402); // IFIELD(UNK_0xe564)
+    Push(0x63ef+UNK_0xe564.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(0x0064);
     _star__slash_(); // */

@@ -209,6 +209,11 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_LASTAP; // LASTAP
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -365,9 +370,9 @@ void UNK_0xe0ec() // UNK_0xe0ec
   Push(pp_TVEHICLE); // TVEHICLE
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -379,9 +384,9 @@ void UNK_0xe0ec() // UNK_0xe0ec
 
 void UNK_0xe100() // UNK_0xe100
 {
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
 }
 
@@ -405,13 +410,13 @@ void UNK_0xe114() // UNK_0xe114
 {
   Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_XCON); // XCON
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
   _dash_(); // -
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_YCON); // YCON
   Push(Read16(Pop())); // @
@@ -457,12 +462,12 @@ LoadDataType UNK_0xe175 = {0x44, 0x29, 0x03, 0x9c, 0x69d8};
 // ================================================
 // 0xe17b: WORD 'HITS' codep=0x744d parp=0xe184
 // ================================================
-// 0xe184: db 0x44 0x11 0x01 'D  '
+IFieldType HITS = {0x44, 0x11, 0x01};
 
 // ================================================
 // 0xe187: WORD 'STUNS' codep=0x744d parp=0xe191
 // ================================================
-// 0xe191: db 0x44 0x12 0x01 'D  '
+IFieldType STUNS = {0x44, 0x12, 0x01};
 
 // ================================================
 // 0xe194: WORD 'HIT.POINTS' codep=0x73ea parp=0xe1a3
@@ -473,27 +478,28 @@ LoadDataType HIT_dot_POINTS = {0x44, 0x34, 0x01, 0x9c, 0x69d8};
 // ================================================
 // 0xe1b3: WORD 'UNK_0xe1b5' codep=0x744d parp=0xe1b5
 // ================================================
-// 0xe1b5: db 0x44 0x15 0x01 'D  '
+IFieldType UNK_0xe1b5 = {0x44, 0x15, 0x01};
 
 // ================================================
 // 0xe1b8: WORD 'UNK_0xe1ba' codep=0x744d parp=0xe1ba
 // ================================================
-// 0xe1ba: db 0x44 0x13 0x01 'D  '
+IFieldType UNK_0xe1ba = {0x44, 0x13, 0x01};
 
 // ================================================
 // 0xe1bd: WORD 'BEHAVE' codep=0x744d parp=0xe1c8
 // ================================================
-// 0xe1c8: db 0x44 0x1b 0x01 0xea 0x73 0x44 0x0b 0x01 0x9c 0xd8 0x69 'D   sD    i'
+IFieldType BEHAVE = {0x44, 0x1b, 0x01};
+// 0xe1cb: db 0xea 0x73 0x44 0x0b 0x01 0x9c 0xd8 0x69 ' sD    i'
 
 // ================================================
 // 0xe1d3: WORD 'TV-WEAPON' codep=0x744d parp=0xe1e1
 // ================================================
-// 0xe1e1: db 0x2a 0x11 0x01 '*  '
+IFieldType TV_dash_WEAPON = {0x2a, 0x11, 0x01};
 
 // ================================================
 // 0xe1e4: WORD 'UNK_0xe1e6' codep=0x744d parp=0xe1e6
 // ================================================
-// 0xe1e6: db 0x0b 0x11 0x02 '   '
+IFieldType UNK_0xe1e6 = {0x0b, 0x11, 0x02};
 
 // ================================================
 // 0xe1e9: WORD 'ATMO.ACTIV' codep=0x73ea parp=0xe1f8
@@ -510,7 +516,7 @@ void _ask_PLAYER_dash_FI() // ?PLAYER-FI
   Push(Read16(Pop())); // @
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x6400); // IFIELD(TV-WEAPON)
+  Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push((Pop()==Pop())?1:0); // =
@@ -565,7 +571,7 @@ void _ask_ALIEN_dash_SMA() // ?ALIEN-SMA
 
 void UNK_0xe273() // UNK_0xe273
 {
-  Push(0x6402); // IFIELD(UNK_0xe1ba)
+  Push(0x63ef+UNK_0xe1ba.offset); // IFIELD
   Push(0x004f);
   _gt_(); // >
 }
@@ -595,7 +601,7 @@ void _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x6400); // IFIELD(TV-WEAPON)
+  Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push((Pop()==Pop())?1:0); // =
@@ -604,10 +610,10 @@ void _ask_ALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   Push(0x0020);
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() | Pop()); // OR
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -636,7 +642,7 @@ void _ask_ALIEN_dash_HIT_dash_WITH_dash_STUNNER() // ?ALIEN-HIT-WITH-STUNNER
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x6400); // IFIELD(TV-WEAPON)
+  Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
@@ -662,7 +668,7 @@ void UNK_0xe308() // UNK_0xe308
 
 void _ask_NOTICE_dash_PL() // ?NOTICE-PL
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0040);
   Push(Pop() & Pop()); // AND
@@ -674,11 +680,11 @@ void _ask_NOTICE_dash_PL() // ?NOTICE-PL
     _st_(); // <
     if (Pop() != 0)
     {
-      Push(0x640a); // IFIELD(BEHAVE)
+      Push(0x63ef+BEHAVE.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(0x0040);
       Push(Pop() | Pop()); // OR
-      Push(0x640a); // IFIELD(BEHAVE)
+      Push(0x63ef+BEHAVE.offset); // IFIELD
       C_ex_(); // C!
       Push(1);
     } else
@@ -721,9 +727,9 @@ void _ask_NEXT_dash_TO_dash_P() // ?NEXT-TO-P
 
 void UNK_0xe388() // UNK_0xe388
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() | Pop()); // OR
   UNK_0xe0e4(); // UNK_0xe0e4
@@ -788,7 +794,7 @@ void UNK_0xe3ba() // UNK_0xe3ba
 
 void UNK_0xe40e() // UNK_0xe40e
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() & Pop()); // AND
@@ -812,7 +818,7 @@ void UNK_0xe41a() // UNK_0xe41a
 
 void UNK_0xe42e() // UNK_0xe42e
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
 }
@@ -824,7 +830,7 @@ void UNK_0xe42e() // UNK_0xe42e
 
 void UNK_0xe438() // UNK_0xe438
 {
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   _0_gt_(); // 0>
@@ -841,7 +847,7 @@ void UNK_0xe438() // UNK_0xe438
 
 void UNK_0xe44e() // UNK_0xe44e
 {
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0080);
   _gt_(); // >
@@ -854,7 +860,7 @@ void UNK_0xe44e() // UNK_0xe44e
 
 void _ask_STUNS_st_STU() // ?STUNS<STU
 {
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   LoadData(STUN_dot_EFFEC); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -878,7 +884,7 @@ void _ask_STUNNED() // ?STUNNED
 
 void UNK_0xe488() // UNK_0xe488
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
@@ -890,7 +896,7 @@ void UNK_0xe488() // UNK_0xe488
 
 void UNK_0xe492() // UNK_0xe492
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(Pop() & Pop()); // AND
@@ -904,7 +910,7 @@ void UNK_0xe492() // UNK_0xe492
 
 void UNK_0xe4a2() // UNK_0xe4a2
 {
-  Push(0x6404); // IFIELD(UNK_0xe1b5)
+  Push(0x63ef+UNK_0xe1b5.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
 }
@@ -978,7 +984,7 @@ void UNK_0xe4f8() // UNK_0xe4f8
 
 void UNK_0xe508() // UNK_0xe508
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push(Pop() & Pop()); // AND
@@ -1016,7 +1022,7 @@ void UNK_0xe516() // UNK_0xe516
 
 void UNK_0xe548() // UNK_0xe548
 {
-  Push(0x6402); // IFIELD(UNK_0xe1ba)
+  Push(0x63ef+UNK_0xe1ba.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0041);
   _gt_(); // >
@@ -1029,7 +1035,7 @@ void UNK_0xe548() // UNK_0xe548
 
 void UNK_0xe556() // UNK_0xe556
 {
-  Push(0x6402); // IFIELD(UNK_0xe1ba)
+  Push(0x63ef+UNK_0xe1ba.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0032);
   _st_(); // <
@@ -1083,11 +1089,11 @@ void UNK_0xe564() // UNK_0xe564
 
 void UNK_0xe5a2() // UNK_0xe5a2
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(Pop() | Pop()); // OR
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -1098,12 +1104,12 @@ void UNK_0xe5a2() // UNK_0xe5a2
 
 void UNK_0xe5b4() // UNK_0xe5b4
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0010);
   Push(-Pop()); // NEGATE
   Push(Pop() | Pop()); // OR
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -1123,9 +1129,9 @@ void UNK_0xe5c8() // UNK_0xe5c8
   if (Pop() != 0)
   {
     POINT_gt_ICON(); // POINT>ICON
-    Push(0x63fc); // IFIELD(INST-X)
+    Push(0x63ef+INST_dash_X.offset); // IFIELD
     Push(Read16(Pop())); // @
-    Push(0x63fe); // IFIELD(INST-Y)
+    Push(0x63ef+INST_dash_Y.offset); // IFIELD
     Push(Read16(Pop())); // @
     _ex_IY(); // !IY
     _ex_IX(); // !IX
@@ -1165,10 +1171,10 @@ void UNK_0xe60c() // UNK_0xe60c
   UNK_0xe564(); // UNK_0xe564
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   _ex__3(); // !_3
   Push(Pop() + Pop()); // +
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   _ex__3(); // !_3
   UNK_0xe5c8(); // UNK_0xe5c8
 }
@@ -1184,11 +1190,11 @@ void UNK_0xe622() // UNK_0xe622
   Push(-Pop()); // NEGATE
   ROT(); // ROT
   Push(Pop() + Pop()); // +
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   _ex__3(); // !_3
   Push(-Pop()); // NEGATE
   Push(Pop() + Pop()); // +
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   _ex__3(); // !_3
   UNK_0xe5c8(); // UNK_0xe5c8
 }
@@ -1238,11 +1244,11 @@ void INCREASES_dash_() // INCREASES-
 
 void UNK_0xe68c() // UNK_0xe68c
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() | Pop()); // OR
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe100(); // UNK_0xe100
   UNK_0xe0ec(); // UNK_0xe0ec
@@ -1283,7 +1289,7 @@ void UNK_0xe6b0() // UNK_0xe6b0
 
 void UNK_0xe6bc() // UNK_0xe6bc
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -1299,34 +1305,34 @@ void UNK_0xe6bc() // UNK_0xe6bc
 
 void UNK_0xe6d0() // UNK_0xe6d0
 {
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(2);
   Push(Pop() | Pop()); // OR
   Push(0x00fe);
   Push(Pop() & Pop()); // AND
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(-1);
   Push(2);
   RRND(); // RRND
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   _plus__ex_(); // +!
   Push(-1);
   Push(2);
   RRND(); // RRND
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   _plus__ex_(); // +!
   UNK_0xe114(); // UNK_0xe114
   if (Pop() != 0)
   {
-    Push(0x63fe); // IFIELD(INST-Y)
+    Push(0x63ef+INST_dash_Y.offset); // IFIELD
     _ex__3(); // !_3
-    Push(0x63fc); // IFIELD(INST-X)
+    Push(0x63ef+INST_dash_X.offset); // IFIELD
     _ex__3(); // !_3
   } else
   {
@@ -1355,7 +1361,7 @@ void ERASE_dash_LIFEFORM_dash_FROM_dash_ARRAY() // ERASE-LIFEFORM-FROM-ARRAY
 
 void REDUCE_dash_HIT() // REDUCE-HIT
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(0x0033);
@@ -1363,7 +1369,7 @@ void REDUCE_dash_HIT() // REDUCE-HIT
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe6bc(); // UNK_0xe6bc
 }
@@ -1389,13 +1395,13 @@ void UNK_0xe75c() // UNK_0xe75c
 
 void REDUCE_dash_STU() // REDUCE-STU
 {
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x000a);
   Push(0x001f);
   RRND(); // RRND
   _dash_(); // -
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -1406,19 +1412,19 @@ void REDUCE_dash_STU() // REDUCE-STU
 
 void STUN_dash_EFFEC() // STUN-EFFEC
 {
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0100);
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   C_ex_(); // C!
   Push(0);
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -1439,13 +1445,13 @@ void UNK_0xe7c0() // UNK_0xe7c0
 void INCREMENT_dash_() // INCREMENT-
 {
   Push(1);
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop() + Pop()); // +
   LoadData(STUN_dot_EFFEC); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
   MIN(); // MIN
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -1462,7 +1468,7 @@ LoadDataType UNK_0xe7e7 = {0x44, 0x90, 0x02, 0x9c, 0x69d8};
 void UNK_0xe7ef() // UNK_0xe7ef
 {
   Push(1);
-  Push(0x6404); // IFIELD(UNK_0xe1b5)
+  Push(0x63ef+UNK_0xe1b5.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe75c(); // UNK_0xe75c
   UNK_0xe5c8(); // UNK_0xe5c8
@@ -1476,7 +1482,7 @@ void UNK_0xe7ef() // UNK_0xe7ef
 void UNK_0xe7fd() // UNK_0xe7fd
 {
   Push(2);
-  Push(0x6404); // IFIELD(UNK_0xe1b5)
+  Push(0x63ef+UNK_0xe1b5.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe75c(); // UNK_0xe75c
   UNK_0xe5c8(); // UNK_0xe5c8
@@ -1490,7 +1496,7 @@ void UNK_0xe7fd() // UNK_0xe7fd
 void UNK_0xe80b() // UNK_0xe80b
 {
   Push(0);
-  Push(0x6404); // IFIELD(UNK_0xe1b5)
+  Push(0x63ef+UNK_0xe1b5.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe75c(); // UNK_0xe75c
   UNK_0xe5c8(); // UNK_0xe5c8
@@ -1505,9 +1511,9 @@ void DIE() // DIE
 {
   UNK_0xe5b4(); // UNK_0xe5b4
   Push2Words("0.");
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   C_ex_(); // C!
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe6b0(); // UNK_0xe6b0
   LoadData(UNK_0xe7e7); // from 'CREATURE    '
@@ -1563,12 +1569,12 @@ void UNK_0xe855() // UNK_0xe855
 // ================================================
 // 0xe863: WORD 'UNK_0xe865' codep=0x744d parp=0xe865
 // ================================================
-// 0xe865: db 0x11 0x11 0x03 '   '
+IFieldType UNK_0xe865 = {0x11, 0x11, 0x03};
 
 // ================================================
 // 0xe868: WORD 'UNK_0xe86a' codep=0x744d parp=0xe86a
 // ================================================
-// 0xe86a: db 0x10 0x1f 0x01 '   '
+IFieldType UNK_0xe86a = {0x10, 0x1f, 0x01};
 
 // ================================================
 // 0xe86d: WORD 'UNK_0xe86f' codep=0x224c parp=0xe86f
@@ -1605,7 +1611,7 @@ void UNK_0xe89b() // UNK_0xe89b
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x6400); // IFIELD(UNK_0xe865)
+  Push(0x63ef+UNK_0xe865.offset); // IFIELD
   Push(0);
   Push(6);
   RRND(); // RRND
@@ -1620,7 +1626,7 @@ void UNK_0xe89b() // UNK_0xe89b
 // ================================================
 // 0xe8b3: WORD 'UNK_0xe8b5' codep=0x744d parp=0xe8b5
 // ================================================
-// 0xe8b5: db 0x10 0x0b 0x0f '   '
+IFieldType UNK_0xe8b5 = {0x10, 0x0b, 0x0f};
 
 // ================================================
 // 0xe8b8: WORD 'UNK_0xe8ba' codep=0x73ea parp=0xe8ba
@@ -1641,7 +1647,7 @@ void UNK_0xe8c2() // UNK_0xe8c2
     Push(0x000a);
     Push(Pop() * Pop()); // *
   }
-  Push(0x6402); // IFIELD(UNK_0xe1ba)
+  Push(0x63ef+UNK_0xe1ba.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   LoadData(UNK_0xe140); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -1657,7 +1663,7 @@ void UNK_0xe8c2() // UNK_0xe8c2
 
 void UNK_0xe8e4() // UNK_0xe8e4
 {
-  Push(0x6402); // IFIELD(UNK_0xe1ba)
+  Push(0x63ef+UNK_0xe1ba.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   LoadData(HIT_dot_POINTS); // from 'CREATURE    '
   Push(Read8(Pop())&0xFF); // C@
@@ -1746,8 +1752,8 @@ void UNK_0xe946() // UNK_0xe946
     _1_dot_5_at_(); // 1.5@
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CDROP(); // CDROP
@@ -1761,7 +1767,7 @@ void UNK_0xe946() // UNK_0xe946
   _dash_(); // -
   POS_dot_(); // POS.
   _gt_C_plus_S(); // >C+S
-  Push(0x63fa); // IFIELD(UNK_0xe8b5)
+  Push(0x63ef+UNK_0xe8b5.offset); // IFIELD
   _do__dot_(); // $.
 }
 
@@ -1773,11 +1779,11 @@ void UNK_0xe946() // UNK_0xe946
 void UNK_0xe9b4() // UNK_0xe9b4
 {
   unsigned short int i, imax;
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() | Pop()); // OR
-  Push(0x640a); // IFIELD(BEHAVE)
+  Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xe80b(); // UNK_0xe80b
   UNK_0xe86f(); // UNK_0xe86f
@@ -1798,7 +1804,7 @@ void UNK_0xe9b4() // UNK_0xe9b4
       LoadData(UNK_0xe8ba); // from 'CREWMEMBER  '
       Push(Read8(Pop())&0xFF); // C@
       _slash_(); // /
-      Push(0x640e); // IFIELD(UNK_0xe86a)
+      Push(0x63ef+UNK_0xe86a.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       SWAP(); // SWAP
       _dash_(); // -
@@ -1806,7 +1812,7 @@ void UNK_0xe9b4() // UNK_0xe9b4
       MAX(); // MAX
       Push(0x0064);
       MIN(); // MIN
-      Push(0x640e); // IFIELD(UNK_0xe86a)
+      Push(0x63ef+UNK_0xe86a.offset); // IFIELD
       C_ex_(); // C!
       Push(pp__ask_HEAL); // ?HEAL
       ON_3(); // ON_3
@@ -2029,7 +2035,7 @@ void UNK_0xeb2b() // UNK_0xeb2b
   if (Pop() == 0) return;
   STUN_dash_EFFEC(); // STUN-EFFEC
   Push(1);
-  Push(0x6401); // IFIELD(STUNS)
+  Push(0x63ef+STUNS.offset); // IFIELD
   C_ex_(); // C!
 }
 
@@ -2211,7 +2217,7 @@ void UNK_0xebf8() // UNK_0xebf8
     _ask_REDUCE_dash_PO(); // ?REDUCE-PO rule
     Pop(); // DROP
   }
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -2609,14 +2615,14 @@ void UNK_0xef37() // UNK_0xef37
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe0ec(); // UNK_0xe0ec
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(regsp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -2694,7 +2700,7 @@ void DO_dot_WEAPONS() // DO.WEAPONS
 {
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
@@ -2839,7 +2845,7 @@ void UNK_0xf077() // UNK_0xf077
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(-1);
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -2848,12 +2854,12 @@ void UNK_0xf077() // UNK_0xf077
 // ================================================
 // 0xf0df: WORD 'NAVIG' codep=0x744d parp=0xf0e9
 // ================================================
-// 0xf0e9: db 0x11 0x17 0x03 '   '
+IFieldType NAVIG = {0x11, 0x17, 0x03};
 
 // ================================================
 // 0xf0ec: WORD '^NAV' codep=0x744d parp=0xf0f5
 // ================================================
-// 0xf0f5: db 0x10 0x1b 0x01 '   '
+IFieldType _h_NAV = {0x10, 0x1b, 0x01};
 
 // ================================================
 // 0xf0f8: WORD '-STORM' codep=0x224c parp=0xf103
@@ -2881,9 +2887,9 @@ void _ask_NAV() // ?NAV
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x6406); // IFIELD(NAVIG)
+  Push(0x63ef+NAVIG.offset); // IFIELD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x640a); // IFIELD(^NAV)
+  Push(0x63ef+_h_NAV.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -2932,9 +2938,9 @@ void _dot_DISTANCE() // .DISTANCE
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   UNK_0xe0ec(); // UNK_0xe0ec
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   UNK_0xe564(); // UNK_0xe564
@@ -2958,7 +2964,7 @@ void _dot_CARGO() // .CARGO
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x6400); // IFIELD(UNK_0xe1e6)
+  Push(0x63ef+UNK_0xe1e6.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
@@ -2992,7 +2998,7 @@ void _dot_ENERGY() // .ENERGY
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP

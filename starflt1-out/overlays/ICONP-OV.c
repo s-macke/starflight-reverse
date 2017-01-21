@@ -66,6 +66,8 @@ extern const unsigned short int cc_FLUX_dash_IC; // FLUX-IC
 extern const unsigned short int cc_DEAD_dash_IC; // DEAD-IC
 extern const unsigned short int cc_DEFAULT; // DEFAULT
 extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void UNRAVEL(); // UNRAVEL
 void _at_INST_dash_CLASS(); // @INST-CLASS
 void _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -98,7 +100,7 @@ const unsigned short int cc_UNK_0xf28f = 0xf28f; // UNK_0xf28f
 // ================================================
 // 0xf234: WORD 'UNK_0xf236' codep=0x744d parp=0xf236
 // ================================================
-// 0xf236: db 0x14 0x49 0x01 ' I '
+IFieldType UNK_0xf236 = {0x14, 0x49, 0x01};
 
 // ================================================
 // 0xf239: WORD 'UNK_0xf23b' codep=0x73ea parp=0xf23b
@@ -108,7 +110,7 @@ LoadDataType UNK_0xf23b = {0x19, 0x1c, 0x01, 0x49, 0x6491};
 // ================================================
 // 0xf241: WORD 'UNK_0xf243' codep=0x744d parp=0xf243
 // ================================================
-// 0xf243: db 0x19 0x0b 0x01 '   '
+IFieldType UNK_0xf243 = {0x19, 0x0b, 0x01};
 
 // ================================================
 // 0xf246: WORD 'UNK_0xf248' codep=0x73ea parp=0xf248
@@ -118,12 +120,12 @@ LoadDataType UNK_0xf248 = {0x44, 0x90, 0x02, 0x9c, 0x69d8};
 // ================================================
 // 0xf24e: WORD 'UNK_0xf250' codep=0x744d parp=0xf250
 // ================================================
-// 0xf250: db 0x44 0x15 0x01 'D  '
+IFieldType UNK_0xf250 = {0x44, 0x15, 0x01};
 
 // ================================================
 // 0xf253: WORD 'UNK_0xf255' codep=0x744d parp=0xf255
 // ================================================
-// 0xf255: db 0x44 0x11 0x01 'D  '
+IFieldType UNK_0xf255 = {0x44, 0x11, 0x01};
 
 // ================================================
 // 0xf258: WORD 'UNK_0xf25a' codep=0x73ea parp=0xf25a
@@ -192,7 +194,7 @@ LoadDataType UNK_0xf25a = {0x20, 0x01, 0x01, 0x16, 0x658f};
 
 void UNK_0xf293() // UNK_0xf293
 {
-  Push(0x6438); // IFIELD(UNK_0xf236)
+  Push(0x63ef+UNK_0xf236.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x001b);
   Push(Pop() + Pop()); // +
@@ -209,7 +211,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-    Push(0x63fa); // IFIELD(UNK_0xf243)
+    Push(0x63ef+UNK_0xf243.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(0x0023);
     Push(Pop() + Pop()); // +
@@ -402,7 +404,7 @@ void UNK_0xf387() // UNK_0xf387
 
 void UNK_0xf38f() // UNK_0xf38f
 {
-  Push(0x6404); // IFIELD(UNK_0xf250)
+  Push(0x63ef+UNK_0xf250.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
@@ -538,7 +540,7 @@ void UNK_0xf435() // UNK_0xf435
 
 void UNK_0xf43d() // UNK_0xf43d
 {
-  Push(0x6400); // IFIELD(UNK_0xf255)
+  Push(0x63ef+UNK_0xf255.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -695,9 +697,9 @@ void UNK_0xf4e8() // UNK_0xf4e8
 
 void ICON_dash_PARM() // ICON-PARM
 {
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xf3f1(); // UNK_0xf3f1
   UNK_0xf4e8(); // UNK_0xf4e8

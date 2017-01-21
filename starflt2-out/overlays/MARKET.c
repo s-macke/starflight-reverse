@@ -182,6 +182,8 @@ extern LoadDataType ELEM_dash_NA; // ELEM-NA
 extern LoadDataType ELEM_dash_VA; // ELEM-VA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VAL; // ART-VAL
+extern IFieldType TEXT_dash_IN; // TEXT-IN
+extern IFieldType TEXT_dash_TE; // TEXT-TE
 void M_star_(); // M*
 void MAX(); // MAX
 void MIN(); // MIN
@@ -807,7 +809,7 @@ void UNK_0xeb60() // UNK_0xeb60
 {
   UNK_0xeb58(); // UNK_0xeb58
   _gt_C_plus_S(); // >C+S
-  Push(0x65ef); // IFIELD(TEXT-IN)
+  Push(0x65e1+TEXT_dash_IN.offset); // IFIELD
   _1_dot_5_at_(); // 1.5@
   ICLOSE(); // ICLOSE
   _gt_C_plus_S(); // >C+S
@@ -1500,7 +1502,7 @@ void UNK_0xef14() // UNK_0xef14
   imax = Pop();
   do // (DO)
   {
-    Push(0x65f2); // IFIELD(TEXT-TE)
+    Push(0x65e1+TEXT_dash_TE.offset); // IFIELD
     Push(pp_WCHARS); // WCHARS
     Push(Read16(Pop())); // @
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1622,7 +1624,7 @@ void UNK_0xefbe() // UNK_0xefbe
   UNK_0xec69(); // UNK_0xec69
   UNK_0xeb58(); // UNK_0xeb58
   _gt_C_plus_S(); // >C+S
-  Push(0x65f2); // IFIELD(TEXT-TE)
+  Push(0x65e1+TEXT_dash_TE.offset); // IFIELD
   Push(0x0026);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE

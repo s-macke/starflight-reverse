@@ -112,6 +112,8 @@ extern const unsigned short int pp_ANIMALS; // ANIMALS
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
@@ -261,10 +263,10 @@ void UNK_0xe344() // UNK_0xe344
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);

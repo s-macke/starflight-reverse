@@ -69,6 +69,8 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp__ask_SECURE; // ?SECURE
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType PHRASE_do_; // PHRASE$
 void COUNT(); // COUNT
 void BEEP(); // BEEP
 void _ask_(); // ?
@@ -155,7 +157,7 @@ const unsigned short int cc_UNK_0xf18c = 0xf18c; // UNK_0xf18c
 // ================================================
 // 0xf084: WORD 'UNK_0xf086' codep=0x7420 parp=0xf086
 // ================================================
-// 0xf086: db 0x17 0x0b 0x01 '   '
+IFieldType UNK_0xf086 = {0x17, 0x0b, 0x01};
 
 // ================================================
 // 0xf089: WORD 'UNK_0xf08b' codep=0x1d29 parp=0xf08b
@@ -165,12 +167,12 @@ const unsigned short int cc_UNK_0xf18c = 0xf18c; // UNK_0xf18c
 // ================================================
 // 0xf08d: WORD 'UNK_0xf08f' codep=0x7420 parp=0xf08f
 // ================================================
-// 0xf08f: db 0x14 0x14 0x01 '   '
+IFieldType UNK_0xf08f = {0x14, 0x14, 0x01};
 
 // ================================================
 // 0xf092: WORD 'UNK_0xf094' codep=0x7420 parp=0xf094
 // ================================================
-// 0xf094: db 0x14 0x17 0x01 '   '
+IFieldType UNK_0xf094 = {0x14, 0x17, 0x01};
 
 // ================================================
 // 0xf097: WORD 'UNK_0xf099' codep=0x224c parp=0xf099
@@ -221,7 +223,7 @@ void MP_i_ER() // MP'ER
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65f5); // IFIELD(UNK_0xf08f)
+  Push(0x65e1+UNK_0xf08f.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(0x0080);
@@ -230,17 +232,17 @@ void MP_i_ER() // MP'ER
   _ex__2(); // !_2
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  Push(0x65f5); // IFIELD(UNK_0xf08f)
+  Push(0x65e1+UNK_0xf08f.offset); // IFIELD
   C_ex__2(); // C!_2
   Push(0x0064);
-  Push(0x65f8); // IFIELD(UNK_0xf094)
+  Push(0x65e1+UNK_0xf094.offset); // IFIELD
   C_ex__2(); // C!_2
-  Push(0x65f8); // IFIELD(UNK_0xf094)
+  Push(0x65e1+UNK_0xf094.offset); // IFIELD
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  Push(0x65f8); // IFIELD(UNK_0xf094)
+  Push(0x65e1+UNK_0xf094.offset); // IFIELD
   Push(Pop()+1); // 1+
   C_ex__2(); // C!_2
   ICLOSE(); // ICLOSE
@@ -250,7 +252,7 @@ void MP_i_ER() // MP'ER
   Push(Read16(Pop())); // @
   Push2Words("*ARREST");
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
@@ -305,7 +307,7 @@ void UNK_0xf155() // UNK_0xf155
 void UNK_0xf166() // UNK_0xf166
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65ec); // IFIELD(PHRASE$)
+  Push(0x65e1+PHRASE_do_.offset); // IFIELD
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -636,7 +638,7 @@ void UNK_0xf2f5() // UNK_0xf2f5
         _at_IL(); // @IL
         _at_IH(); // @IH
         _gt_C_plus_S(); // >C+S
-        Push(0x65ec); // IFIELD(UNK_0xf086)
+        Push(0x65e1+UNK_0xf086.offset); // IFIELD
         Push(Read8(Pop())&0xFF); // C@
         Push(0x0080);
         Push(Pop() & Pop()); // AND
@@ -926,11 +928,11 @@ void _2N() // 2N
   if (Pop() == 0) return;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65f5); // IFIELD(UNK_0xf08f)
+  Push(0x65e1+UNK_0xf08f.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  Push(0x65f5); // IFIELD(UNK_0xf08f)
+  Push(0x65e1+UNK_0xf08f.offset); // IFIELD
   C_ex__2(); // C!_2
   ICLOSE(); // ICLOSE
 }

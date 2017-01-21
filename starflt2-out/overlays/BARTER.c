@@ -256,6 +256,11 @@ extern const unsigned short int pp__ro_THING_rc_; // (THING)
 extern LoadDataType ELEM_dash_NA; // ELEM-NA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern IFieldType INST_dash_OF; // INST-OF
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_VA; // INST-VA
+extern IFieldType PHRASE; // PHRASE
+extern IFieldType ASKING; // ASKING
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -747,7 +752,8 @@ LoadDataType UNK_0xe14a = {0x09, 0x00, 0x20, 0x1b, 0x6a54};
 // ================================================
 // 0xe150: WORD 'UNK_0xe152' codep=0x7420 parp=0xe152
 // ================================================
-// 0xe152: db 0x0b 0x11 0x02 0x20 0x74 0x34 0x12 0x01 '    t4  '
+IFieldType UNK_0xe152 = {0x0b, 0x11, 0x02};
+// 0xe155: db 0x20 0x74 0x34 0x12 0x01 ' t4  '
 
 // ================================================
 // 0xe15a: WORD 'UNK_0xe15c' codep=0x224c parp=0xe15c
@@ -1262,7 +1268,7 @@ void UNK_0xe402() // UNK_0xe402
 void UNK_0xe410() // UNK_0xe410
 {
   UNK_0xe15c(); // UNK_0xe15c
-  Push(0x65f4); // IFIELD(ASKING)
+  Push(0x65e1+ASKING.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xe1e8(); // UNK_0xe1e8
   ICLOSE(); // ICLOSE
@@ -1367,7 +1373,7 @@ void UNK_0xe492() // UNK_0xe492
 {
   Push(pp_UNK_0xdfd6); // UNK_0xdfd6
   _099(); // 099
-  Push(0x65ed); // IFIELD(PHRASE)
+  Push(0x65e1+PHRASE.offset); // IFIELD
   COUNT(); // COUNT
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
@@ -1478,7 +1484,7 @@ void UNK_0xe568() // UNK_0xe568
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-    Push(0x65f4); // IFIELD(ASKING)
+    Push(0x65e1+ASKING.offset); // IFIELD
     _ex__2(); // !_2
   } else
   {
@@ -1611,7 +1617,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
   CI(); // CI
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  Push(0x65e7); // IFIELD(INST-OF)
+  Push(0x65e1+INST_dash_OF.offset); // IFIELD
   _1_dot_5_ex__2(); // 1.5!_2
   ICLOSE(); // ICLOSE
 }
@@ -2125,9 +2131,9 @@ void UNK_0xe89c() // UNK_0xe89c
   }
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f2); // IFIELD(UNK_0xe152)
+  Push(0x65e1+UNK_0xe152.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   _gt_(); // >
@@ -2215,7 +2221,7 @@ void UNK_0xe920() // UNK_0xe920
     Push2Words("*STARSH");
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x65f2); // IFIELD(UNK_0xe152)
+  Push(0x65e1+UNK_0xe152.offset); // IFIELD
   Push(Read16(Pop())); // @
   SWAP(); // SWAP
   Push(pp_SELLING); // SELLING
@@ -2227,7 +2233,7 @@ void UNK_0xe920() // UNK_0xe920
   {
     Push(Pop() + Pop()); // +
   }
-  Push(0x65f2); // IFIELD(UNK_0xe152)
+  Push(0x65e1+UNK_0xe152.offset); // IFIELD
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
@@ -2260,7 +2266,7 @@ void UNK_0xe960() // UNK_0xe960
   _gt_C_plus_S(); // >C+S
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   _ex__2(); // !_2
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -2383,9 +2389,9 @@ void UNK_0xea04() // UNK_0xea04
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    Push(0x65f2); // IFIELD(INST-VA)
+    Push(0x65e1+INST_dash_VA.offset); // IFIELD
     _ex__2(); // !_2
-    Push(0x65f4); // IFIELD(ASKING)
+    Push(0x65e1+ASKING.offset); // IFIELD
     _ex__2(); // !_2
   } else
   {
@@ -2638,7 +2644,7 @@ void UNK_0xeb93() // UNK_0xeb93
       if (Pop() != 0)
       {
         UNK_0xe15c(); // UNK_0xe15c
-        Push(0x65ec); // IFIELD(INST-QT)
+        Push(0x65e1+INST_dash_QT.offset); // IFIELD
         Push(Read16(Pop())); // @
         ICLOSE(); // ICLOSE
         MIN(); // MIN
@@ -2745,7 +2751,7 @@ void UNK_0xec2e() // UNK_0xec2e
 
   label3:
   UNK_0xe15c(); // UNK_0xe15c
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(pp_ELEM_dash_AM); // ELEM-AM

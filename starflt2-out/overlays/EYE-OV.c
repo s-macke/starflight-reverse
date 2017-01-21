@@ -87,6 +87,9 @@ extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp__10_star_CARG; // 10*CARG
 extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_ANCHOR; // ANCHOR
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void MAX(); // MAX
 void MIN(); // MIN
 void D_st_(); // D<
@@ -195,17 +198,17 @@ const unsigned short int cc_UNK_0xf180 = 0xf180; // UNK_0xf180
 // ================================================
 // 0xebc4: WORD 'UNK_0xebc6' codep=0x7420 parp=0xebc6
 // ================================================
-// 0xebc6: db 0x14 0x43 0x02 ' C '
+IFieldType UNK_0xebc6 = {0x14, 0x43, 0x02};
 
 // ================================================
 // 0xebc9: WORD 'UNK_0xebcb' codep=0x7420 parp=0xebcb
 // ================================================
-// 0xebcb: db 0x14 0x1a 0x01 '   '
+IFieldType UNK_0xebcb = {0x14, 0x1a, 0x01};
 
 // ================================================
 // 0xebce: WORD 'UNK_0xebd0' codep=0x7420 parp=0xebd0
 // ================================================
-// 0xebd0: db 0x14 0x30 0x02 ' 0 '
+IFieldType UNK_0xebd0 = {0x14, 0x30, 0x02};
 
 // ================================================
 // 0xebd3: WORD 'UNK_0xebd5' codep=0x224c parp=0xebd5
@@ -739,7 +742,7 @@ void UNK_0xef25() // UNK_0xef25
   UNK_0xef15(); // UNK_0xef15
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xef0d(); // UNK_0xef0d
-  Push(0x6624); // IFIELD(UNK_0xebc6)
+  Push(0x65e1+UNK_0xebc6.offset); // IFIELD
   _plus__ex__2(); // +!_2
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
@@ -753,13 +756,13 @@ void UNK_0xef25() // UNK_0xef25
   Push(6);
   IFIND(); // IFIND
   Pop(); // DROP
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xef0d(); // UNK_0xef0d
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   _ex__2(); // !_2
   Push(4);
   _star_CLOSE(); // *CLOSE
@@ -796,11 +799,11 @@ void UNK_0xefd4() // UNK_0xefd4
   UNK_0x3f09("TRAVELLED BACK IN TIME.");
   _dot_TTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
-  Push(0x65fb); // IFIELD(UNK_0xebcb)
+  Push(0x65e1+UNK_0xebcb.offset); // IFIELD
   UNK_0xebd5(); // UNK_0xebd5
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(0x6611); // IFIELD(UNK_0xebd0)
+  Push(0x65e1+UNK_0xebd0.offset); // IFIELD
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
@@ -1253,12 +1256,12 @@ void UNK_0xf45f() // UNK_0xf45f
 {
   Push2Words("*EYE");
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(5);
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(5);
   UNK_0xf431(); // UNK_0xf431
@@ -1270,9 +1273,9 @@ void UNK_0xf45f() // UNK_0xf45f
   _ex__2(); // !_2
   UNK_0xebdf(); // UNK_0xebdf
   _2DUP(); // 2DUP
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   _ex__2(); // !_2
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   _ex__2(); // !_2
   CI(); // CI
   _ask_ICON_eq_I(); // ?ICON=I

@@ -114,6 +114,8 @@ extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
 extern const unsigned short int pp_YWLD_c_YP; // YWLD:YP
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_NOF; // NOF
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE; // PHRASE
 void _dot_R(); // .R
 void SPACE(); // SPACE
 void SPACES(); // SPACES
@@ -363,9 +365,9 @@ void UNK_0xee22() // UNK_0xee22
   _st__ex__gt_(); // <!>
   LoadData(UNK_0xee1a); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65ec); // IFIELD(PHR-CNT)
+  Push(0x65e1+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x65ed); // IFIELD(PHRASE)
+  Push(0x65e1+PHRASE.offset); // IFIELD
   OVER(); // OVER
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
@@ -414,8 +416,8 @@ void UNK_0xee66() // UNK_0xee66
 void UNK_0xee72() // UNK_0xee72
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65ed); // IFIELD(PHRASE)
-  Push(0x65ec); // IFIELD(PHR-CNT)
+  Push(0x65e1+PHRASE.offset); // IFIELD
+  Push(0x65e1+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE

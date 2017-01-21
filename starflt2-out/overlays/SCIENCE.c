@@ -200,6 +200,11 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern LoadDataType ELEM_dash_NA; // ELEM-NA
+extern IFieldType INST_dash_SI; // INST-SI
+extern IFieldType INST_dash_OF; // INST-OF
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
+extern IFieldType PHRASE_do_; // PHRASE$
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void M_star_(); // M*
@@ -370,7 +375,7 @@ const unsigned short int pp__i_DO_dash_CLOUD = 0xf401; // 'DO-CLOUD size: 2
 // ================================================
 // 0xdfa8: WORD 'UNK_0xdfaa' codep=0x7420 parp=0xdfaa
 // ================================================
-// 0xdfaa: db 0x34 0x0b 0x01 '4  '
+IFieldType UNK_0xdfaa = {0x34, 0x0b, 0x01};
 
 // ================================================
 // 0xdfad: WORD 'UNK_0xdfaf' codep=0x1d29 parp=0xdfaf
@@ -425,52 +430,54 @@ void UNK_0xdfb7() // UNK_0xdfb7
 // ================================================
 // 0xe001: WORD 'UNK_0xe003' codep=0x7420 parp=0xe003
 // ================================================
-// 0xe003: db 0x14 0x25 0x02 ' % '
+IFieldType UNK_0xe003 = {0x14, 0x25, 0x02};
 
 // ================================================
 // 0xe006: WORD 'UNK_0xe008' codep=0x7420 parp=0xe008
 // ================================================
-// 0xe008: db 0x14 0x11 0x02 '   '
+IFieldType UNK_0xe008 = {0x14, 0x11, 0x02};
 
 // ================================================
 // 0xe00b: WORD 'UNK_0xe00d' codep=0x7420 parp=0xe00d
 // ================================================
-// 0xe00d: db 0x14 0x19 0x02 '   '
+IFieldType UNK_0xe00d = {0x14, 0x19, 0x02};
 
 // ================================================
 // 0xe010: WORD 'UNK_0xe012' codep=0x7420 parp=0xe012
 // ================================================
-// 0xe012: db 0x14 0x30 0x02 ' 0 '
+IFieldType UNK_0xe012 = {0x14, 0x30, 0x02};
 
 // ================================================
 // 0xe015: WORD 'UNK_0xe017' codep=0x7420 parp=0xe017
 // ================================================
-// 0xe017: db 0x14 0x1f 0x02 '   '
+IFieldType UNK_0xe017 = {0x14, 0x1f, 0x02};
 
 // ================================================
 // 0xe01a: WORD 'UNK_0xe01c' codep=0x7420 parp=0xe01c
 // ================================================
-// 0xe01c: db 0x14 0x32 0x02 ' 2 '
+IFieldType UNK_0xe01c = {0x14, 0x32, 0x02};
 
 // ================================================
 // 0xe01f: WORD 'UNK_0xe021' codep=0x7420 parp=0xe021
 // ================================================
-// 0xe021: db 0x14 0x43 0x02 ' C '
+IFieldType UNK_0xe021 = {0x14, 0x43, 0x02};
 
 // ================================================
 // 0xe024: WORD 'UNK_0xe026' codep=0x7420 parp=0xe026
 // ================================================
-// 0xe026: db 0x14 0x45 0x04 0x20 0x74 0x14 0x15 0x02 ' E  t   '
+IFieldType UNK_0xe026 = {0x14, 0x45, 0x04};
+// 0xe029: db 0x20 0x74 0x14 0x15 0x02 ' t   '
 
 // ================================================
 // 0xe02e: WORD 'UNK_0xe030' codep=0x7420 parp=0xe030
 // ================================================
-// 0xe030: db 0x14 0x56 0x01 ' V '
+IFieldType UNK_0xe030 = {0x14, 0x56, 0x01};
 
 // ================================================
 // 0xe033: WORD 'UNK_0xe035' codep=0x7420 parp=0xe035
 // ================================================
-// 0xe035: db 0x14 0x57 0x01 0x20 0x74 0x10 0x1a 0x01 0x20 0x74 0x11 0x14 0x03 ' W  t    t   '
+IFieldType UNK_0xe035 = {0x14, 0x57, 0x01};
+// 0xe038: db 0x20 0x74 0x10 0x1a 0x01 0x20 0x74 0x11 0x14 0x03 ' t    t   '
 
 // ================================================
 // 0xe042: WORD 'UNK_0xe044' codep=0x7394 parp=0xe044
@@ -495,7 +502,7 @@ LoadDataType UNK_0xe05c = {0x19, 0x15, 0x01, 0x24, 0x6b5d};
 // ================================================
 // 0xe062: WORD 'UNK_0xe064' codep=0x7420 parp=0xe064
 // ================================================
-// 0xe064: db 0x19 0x12 0x02 '   '
+IFieldType UNK_0xe064 = {0x19, 0x12, 0x02};
 
 // ================================================
 // 0xe067: WORD 'UNK_0xe069' codep=0x7394 parp=0xe069
@@ -506,7 +513,7 @@ LoadDataType UNK_0xe069 = {0x19, 0x0c, 0x02, 0x24, 0x6b5d};
 // ================================================
 // 0xe07c: WORD 'UNK_0xe07e' codep=0x7420 parp=0xe07e
 // ================================================
-// 0xe07e: db 0x19 0x11 0x07 '   '
+IFieldType UNK_0xe07e = {0x19, 0x11, 0x07};
 
 // ================================================
 // 0xe081: WORD 'UNK_0xe083' codep=0x7394 parp=0xe083
@@ -777,7 +784,7 @@ void UNK_0xe213() // UNK_0xe213
   imax = Pop();
   do // (DO)
   {
-    Push(0x65f2); // IFIELD(UNK_0xe008)
+    Push(0x65e1+UNK_0xe008.offset); // IFIELD
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(Pop()+1); // 1+
@@ -788,7 +795,7 @@ void UNK_0xe213() // UNK_0xe213
     MAX(); // MAX
     Push(Pop() + Pop()); // +
     SWAP(); // SWAP
-    Push(0x65f2); // IFIELD(UNK_0xe008)
+    Push(0x65e1+UNK_0xe008.offset); // IFIELD
     Push(i); // I
     Push(Pop() + Pop()); // +
     Push(Read8(Pop())&0xFF); // C@
@@ -805,7 +812,7 @@ void UNK_0xe213() // UNK_0xe213
   Push(1);
   MAX(); // MAX
   _slash_(); // /
-  Push(0x65f2); // IFIELD(UNK_0xe008)
+  Push(0x65e1+UNK_0xe008.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -983,7 +990,7 @@ void UNK_0xe388() // UNK_0xe388
 {
   Push(4);
   UNK_0xe207(); // UNK_0xe207
-  Push(0x6626); // IFIELD(UNK_0xe026)
+  Push(0x65e1+UNK_0xe026.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(8);
   Push(Pop() & Pop()); // AND
@@ -1059,14 +1066,14 @@ void UNK_0xe408() // UNK_0xe408
   Push(6);
   UNK_0xe207(); // UNK_0xe207
   UNK_0xe2c9(); // UNK_0xe2c9
-  Push(0x6600); // IFIELD(UNK_0xe017)
+  Push(0x65e1+UNK_0xe017.offset); // IFIELD
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
   Push(Read16(regsp)); // DUP
-  Push(0x6624); // IFIELD(UNK_0xe021)
+  Push(0x65e1+UNK_0xe021.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp__10_star_CARG); // 10*CARG
   _2_at_(); // 2@
@@ -1157,7 +1164,7 @@ void UNK_0xe498() // UNK_0xe498
 {
   Push(7);
   UNK_0xe207(); // UNK_0xe207
-  Push(0x6626); // IFIELD(UNK_0xe026)
+  Push(0x65e1+UNK_0xe026.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(3);
   Push(Pop() & Pop()); // AND
@@ -1198,7 +1205,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
 {
   SetColor("YELLOW");
   _ex_COLOR(); // !COLOR
-  Push(0x6613); // IFIELD(UNK_0xe01c)
+  Push(0x65e1+UNK_0xe01c.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x003c);
   _slash_(); // /
@@ -1209,7 +1216,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
     UNK_0xe448(); // UNK_0xe448
   }
   Push(0x0019);
-  Push(0x6613); // IFIELD(UNK_0xe01c)
+  Push(0x65e1+UNK_0xe01c.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x003c);
   _slash_(); // /
@@ -1227,7 +1234,7 @@ void UNK_0xe4dd() // UNK_0xe4dd
 
 void UNK_0xe517() // UNK_0xe517
 {
-  Push(0x65fa); // IFIELD(UNK_0xe00d)
+  Push(0x65e1+UNK_0xe00d.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x00ff);
   Push(Pop() & Pop()); // AND
@@ -1237,7 +1244,7 @@ void UNK_0xe517() // UNK_0xe517
   if (Pop() == 0) return;
   SetColor("RED");
   _ex_COLOR(); // !COLOR
-  Push(0x6611); // IFIELD(UNK_0xe012)
+  Push(0x65e1+UNK_0xe012.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x09c4);
   MIN(); // MIN
@@ -1250,7 +1257,7 @@ void UNK_0xe517() // UNK_0xe517
     UNK_0xe448(); // UNK_0xe448
   }
   Push(0x0019);
-  Push(0x6611); // IFIELD(UNK_0xe012)
+  Push(0x65e1+UNK_0xe012.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x09c4);
   MIN(); // MIN
@@ -1524,13 +1531,13 @@ void UNK_0xe772() // UNK_0xe772
 
 void UNK_0xe780() // UNK_0xe780
 {
-  Push(0x6600); // IFIELD(UNK_0xe017)
+  Push(0x65e1+UNK_0xe017.offset); // IFIELD
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(0x6624); // IFIELD(UNK_0xe021)
+  Push(0x65e1+UNK_0xe021.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   Push(0x01f4);
@@ -1571,7 +1578,7 @@ void UNK_0xe79e() // UNK_0xe79e
 void UNK_0xe7ba() // UNK_0xe7ba
 {
   unsigned short int i, imax;
-  Push(0x6600); // IFIELD(UNK_0xe017)
+  Push(0x65e1+UNK_0xe017.offset); // IFIELD
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   UNK_0xe780(); // UNK_0xe780
@@ -1601,7 +1608,7 @@ void UNK_0xe7ba() // UNK_0xe7ba
 void UNK_0xe7de() // UNK_0xe7de
 {
   unsigned short int i, imax;
-  Push(0x6637); // IFIELD(UNK_0xe030)
+  Push(0x65e1+UNK_0xe030.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -1632,7 +1639,7 @@ void UNK_0xe7de() // UNK_0xe7de
 void UNK_0xe804() // UNK_0xe804
 {
   unsigned short int i, imax;
-  Push(0x6638); // IFIELD(UNK_0xe035)
+  Push(0x65e1+UNK_0xe035.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -2533,7 +2540,7 @@ void UNK_0xedae() // UNK_0xedae
   _ex__2(); // !_2
   LoadData(UNK_0xe0a3); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65ec); // IFIELD(PHRASE$)
+  Push(0x65e1+PHRASE_do_.offset); // IFIELD
   COUNT(); // COUNT
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
@@ -2549,7 +2556,7 @@ void UNK_0xedae() // UNK_0xedae
   _ex__2(); // !_2
   LoadData(UNK_0xe0a3); // from 'COMPOUNDS   '
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65ec); // IFIELD(PHRASE$)
+  Push(0x65e1+PHRASE_do_.offset); // IFIELD
   COUNT(); // COUNT
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
@@ -2652,7 +2659,7 @@ void UNK_0xee8f() // UNK_0xee8f
       _eq_SPECIE(); // =SPECIE
       if (Pop() != 0)
       {
-        Push(0x65f2); // IFIELD(UNK_0xe07e)
+        Push(0x65e1+UNK_0xe07e.offset); // IFIELD
         Push(Pop()+1); // 1+
       } else
       {
@@ -2947,7 +2954,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
     Push(Pop()-1); // 1-
   }
   UNK_0xf06c(); // UNK_0xf06c
-  Push(0x65f3); // IFIELD(UNK_0xe064)
+  Push(0x65e1+UNK_0xe064.offset); // IFIELD
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
   Push(0);
@@ -3086,7 +3093,7 @@ void UNK_0xf20e() // UNK_0xf20e
   Push(Read16(cc_FALSE)); // FALSE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1); // IFIELD(INST-SI)
+  Push(0x65e1+INST_dash_SI.offset); // IFIELD
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(0x0012);
@@ -3132,7 +3139,7 @@ void UNK_0xf24e() // UNK_0xf24e
   CI(); // CI
   CI_i_(); // CI'
   _gt_C_plus_S(); // >C+S
-  Push(0x65e7); // IFIELD(INST-OF)
+  Push(0x65e1+INST_dash_OF.offset); // IFIELD
   _1_dot_5_ex__2(); // 1.5!_2
   ICLOSE(); // ICLOSE
 }
@@ -3158,7 +3165,7 @@ void UNK_0xf268() // UNK_0xf268
   unsigned short int i, imax;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1); // IFIELD(INST-SI)
+  Push(0x65e1+INST_dash_SI.offset); // IFIELD
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(0x0012);
@@ -3200,7 +3207,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
   Push(8);
   ORGIA(); // ORGIA
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65ec); // IFIELD(UNK_0xdfaa)
+  Push(0x65e1+UNK_0xdfaa.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   I_gt_C(); // I>C
   _ex_COLOR(); // !COLOR
@@ -3425,12 +3432,12 @@ void UNK_0xf3c1() // UNK_0xf3c1
   Push(Read16(Pop())); // @
   CTXT_gt_I(); // CTXT>I case
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x02d8);
   Push(0x04e0);
   WITHIN(); // WITHIN
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x02e8);
   Push(0x0640);
@@ -3600,7 +3607,7 @@ void UNK_0xf4e7() // UNK_0xf4e7
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   UNK_0xe2c9(); // UNK_0xe2c9
-  Push(0x6606); // IFIELD(UNK_0xe003)
+  Push(0x65e1+UNK_0xe003.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
   Push(Read16(regsp)); // DUP

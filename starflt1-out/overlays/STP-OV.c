@@ -77,6 +77,7 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp__ask_SECURE; // ?SECURE
 extern LoadDataType ART_dash_NAME; // ART-NAME
+extern IFieldType INST_dash_X; // INST-X
 void COUNT(); // COUNT
 void MOD(); // MOD
 void BEEP(); // BEEP
@@ -147,7 +148,7 @@ const unsigned short int pp_UNK_0xf2cd = 0xf2cd; // UNK_0xf2cd size: 24
 // ================================================
 // 0xefd4: WORD 'UNK_0xefd6' codep=0x744d parp=0xefd6
 // ================================================
-// 0xefd6: db 0x14 0x14 0x01 '   '
+IFieldType UNK_0xefd6 = {0x14, 0x14, 0x01};
 
 // ================================================
 // 0xefd9: WORD 'UNK_0xefdb' codep=0x1d29 parp=0xefdb
@@ -163,7 +164,7 @@ void SIC_i_EM() // SIC'EM
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x6403); // IFIELD(UNK_0xefd6)
+  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(0x0080);
@@ -172,7 +173,7 @@ void SIC_i_EM() // SIC'EM
   _ex__3(); // !_3
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  Push(0x6403); // IFIELD(UNK_0xefd6)
+  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   Push(pp_YABS); // YABS
@@ -181,7 +182,7 @@ void SIC_i_EM() // SIC'EM
   Push(Read16(Pop())); // @
   Push2Words("*ARREST");
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
@@ -877,11 +878,11 @@ void _2NDS() // 2NDS
   if (Pop() == 0) return;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x6403); // IFIELD(UNK_0xefd6)
+  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
-  Push(0x6403); // IFIELD(UNK_0xefd6)
+  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }

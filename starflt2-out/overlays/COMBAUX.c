@@ -40,6 +40,8 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
 extern const unsigned short int pp_YWLD_c_YP; // YWLD:YP
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void ABS(); // ABS
 void MAX(); // MAX
 void MIN(); // MIN
@@ -89,9 +91,9 @@ void UNK_0xf2c6() // UNK_0xf2c6
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -111,9 +113,9 @@ void UNK_0xf2d8() // UNK_0xf2d8
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-    Push(0x65ee); // IFIELD(INST-X)
+    Push(0x65e1+INST_dash_X.offset); // IFIELD
     Push(Read16(Pop())); // @
-    Push(0x65f0); // IFIELD(INST-Y)
+    Push(0x65e1+INST_dash_Y.offset); // IFIELD
     Push(Read16(Pop())); // @
   } else
   {

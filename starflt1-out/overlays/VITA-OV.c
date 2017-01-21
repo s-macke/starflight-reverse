@@ -234,7 +234,7 @@ LoadDataType UNK_0xe872 = {0x43, 0x1b, 0x01, 0x1c, 0x69cd};
 // ================================================
 // 0xe878: WORD 'UNK_0xe87a' codep=0x744d parp=0xe87a
 // ================================================
-// 0xe87a: db 0x43 0x0b 0x02 'C  '
+IFieldType UNK_0xe87a = {0x43, 0x0b, 0x02};
 
 // ================================================
 // 0xe87d: WORD 'UNK_0xe87f' codep=0x73ea parp=0xe87f
@@ -528,7 +528,7 @@ void UNK_0xea0a() // UNK_0xea0a
 void UNK_0xea78() // UNK_0xea78
 {
   Push(0);
-  Push(0x63fa); // IFIELD(UNK_0xe87a)
+  Push(0x63ef+UNK_0xe87a.offset); // IFIELD
   _ex__3(); // !_3
   LoadData(UNK_0xe82a); // from 'REGIONS     '
   Push(4);
@@ -1367,7 +1367,7 @@ void UNK_0xf382() // UNK_0xf382
 
 void UNK_0xf3ea() // UNK_0xf3ea
 {
-  Push(0x63fa); // IFIELD(UNK_0xe87a)
+  Push(0x63ef+UNK_0xe87a.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)

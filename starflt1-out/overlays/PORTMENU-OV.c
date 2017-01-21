@@ -251,17 +251,17 @@ const unsigned short int pp_UNK_0xf151 = 0xf151; // UNK_0xf151 size: 56
 // ================================================
 // 0xe944: WORD 'UNK_0xe946' codep=0x744d parp=0xe946
 // ================================================
-// 0xe946: db 0x14 0x14 0x01 '   '
+IFieldType UNK_0xe946 = {0x14, 0x14, 0x01};
 
 // ================================================
 // 0xe949: WORD 'UNK_0xe94b' codep=0x744d parp=0xe94b
 // ================================================
-// 0xe94b: db 0x10 0x20 0x02 '   '
+IFieldType UNK_0xe94b = {0x10, 0x20, 0x02};
 
 // ================================================
 // 0xe94e: WORD 'UNK_0xe950' codep=0x744d parp=0xe950
 // ================================================
-// 0xe950: db 0x10 0x1f 0x01 '   '
+IFieldType UNK_0xe950 = {0x10, 0x1f, 0x01};
 
 // ================================================
 // 0xe953: WORD 'UNK_0xe955' codep=0x224c parp=0xe955
@@ -403,7 +403,7 @@ void UNK_0xea0b() // UNK_0xea0b
   IOPEN(); // IOPEN
   do
   {
-    Push(0x640f); // IFIELD(UNK_0xe94b)
+    Push(0x63ef+UNK_0xe94b.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
     Push(8);
@@ -417,12 +417,12 @@ void UNK_0xea0b() // UNK_0xea0b
     if (Pop() != 0)
     {
       Push(a); // I
-      Push(0x640e); // IFIELD(UNK_0xe950)
+      Push(0x63ef+UNK_0xe950.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(Pop() + Pop()); // +
       Push(0x0064);
       MIN(); // MIN
-      Push(0x640e); // IFIELD(UNK_0xe950)
+      Push(0x63ef+UNK_0xe950.offset); // IFIELD
       C_ex_(); // C!
     }
     INEXT(); // INEXT
@@ -560,7 +560,7 @@ void UNK_0xeae1() // UNK_0xeae1
 // ================================================
 // 0xeae9: WORD 'UNK_0xeaeb' codep=0x744d parp=0xeaeb
 // ================================================
-// 0xeaeb: db 0x14 0x43 0x02 ' C '
+IFieldType UNK_0xeaeb = {0x14, 0x43, 0x02};
 
 // ================================================
 // 0xeaee: WORD 'UNK_0xeaf0' codep=0x224c parp=0xeaf0
@@ -609,14 +609,14 @@ void UNK_0xeaf0() // UNK_0xeaf0
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(7);
-  Push(0x6403); // IFIELD(UNK_0xe946)
+  Push(0x63ef+UNK_0xe946.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(7);
   Push(Pop() & Pop()); // AND
   _dash_(); // -
   Push(pp_E_dash_USE); // E-USE
   _ex__3(); // !_3
-  Push(0x6432); // IFIELD(UNK_0xeaeb)
+  Push(0x63ef+UNK_0xeaeb.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(0x000a);

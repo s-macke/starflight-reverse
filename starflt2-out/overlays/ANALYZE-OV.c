@@ -110,6 +110,7 @@ extern const unsigned short int pp_NLR; // NLR
 extern const unsigned short int pp_SENSE_dash_A; // SENSE-A
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern IFieldType INST_dash_QT; // INST-QT
 void DABS(); // DABS
 void MAX(); // MAX
 void MIN(); // MIN
@@ -174,17 +175,17 @@ const unsigned short int pp_UNK_0xf3af = 0xf3af; // UNK_0xf3af size: 7
 // ================================================
 // 0xec64: WORD 'UNK_0xec66' codep=0x7420 parp=0xec66
 // ================================================
-// 0xec66: db 0x14 0x27 0x02 ' ' '
+IFieldType UNK_0xec66 = {0x14, 0x27, 0x02};
 
 // ================================================
 // 0xec69: WORD 'UNK_0xec6b' codep=0x7420 parp=0xec6b
 // ================================================
-// 0xec6b: db 0x11 0x14 0x03 '   '
+IFieldType UNK_0xec6b = {0x11, 0x14, 0x03};
 
 // ================================================
 // 0xec6e: WORD 'UNK_0xec70' codep=0x7420 parp=0xec70
 // ================================================
-// 0xec70: db 0x10 0x1a 0x02 '   '
+IFieldType UNK_0xec70 = {0x10, 0x1a, 0x02};
 
 // ================================================
 // 0xec73: WORD 'UNK_0xec75' codep=0x7394 parp=0xec75
@@ -195,7 +196,7 @@ LoadDataType UNK_0xec75 = {0x1a, 0x00, 0x10, 0x17, 0x6ba9};
 // ================================================
 // 0xec83: WORD 'UNK_0xec85' codep=0x7420 parp=0xec85
 // ================================================
-// 0xec85: db 0x19 0x12 0x07 '   '
+IFieldType UNK_0xec85 = {0x19, 0x12, 0x07};
 
 // ================================================
 // 0xec88: WORD 'UNK_0xec8a' codep=0x7394 parp=0xec8a
@@ -430,7 +431,7 @@ void UNK_0xee04() // UNK_0xee04
   Push(Read16(Pop())); // @
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x6608); // IFIELD(UNK_0xec66)
+  Push(0x65e1+UNK_0xec66.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
@@ -464,9 +465,9 @@ void UNK_0xee5b() // UNK_0xee5b
   CTINIT(); // CTINIT
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65f5); // IFIELD(UNK_0xec6b)
+  Push(0x65e1+UNK_0xec6b.offset); // IFIELD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65fb); // IFIELD(UNK_0xec70)
+  Push(0x65e1+UNK_0xec70.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
   Push(0x00c8);
@@ -696,7 +697,7 @@ void UNK_0xeff7() // UNK_0xeff7
 void UNK_0xf02c() // UNK_0xf02c
 {
   Push(Read16(regsp)); // DUP
-  Push(0x65f3); // IFIELD(UNK_0xec85)
+  Push(0x65e1+UNK_0xec85.offset); // IFIELD
   Push(3);
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
@@ -706,7 +707,7 @@ void UNK_0xf02c() // UNK_0xf02c
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0x65f3); // IFIELD(UNK_0xec85)
+      Push(0x65e1+UNK_0xec85.offset); // IFIELD
       Push(Pop()-1); // 1-
       Push(Pop() + Pop()); // +
       Push(Read8(Pop())&0xFF); // C@
@@ -762,7 +763,7 @@ void UNK_0xf0a7() // UNK_0xf0a7
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }

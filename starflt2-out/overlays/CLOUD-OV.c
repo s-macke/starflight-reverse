@@ -58,12 +58,13 @@ void CI(); // CI
 // ================================================
 // 0xf3c4: WORD 'UNK_0xf3c6' codep=0x7420 parp=0xf3c6
 // ================================================
-// 0xf3c6: db 0x11 0x11 0x12 0x20 0x74 0x10 0x0b 0x0f 0x20 0x74 0x10 0x1f 0x01 '    t    t   '
+IFieldType UNK_0xf3c6 = {0x11, 0x11, 0x12};
+// 0xf3c9: db 0x20 0x74 0x10 0x0b 0x0f 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
 
 // ================================================
 // 0xf3d3: WORD 'UNK_0xf3d5' codep=0x7420 parp=0xf3d5
 // ================================================
-// 0xf3d5: db 0x10 0x20 0x02 '   '
+IFieldType UNK_0xf3d5 = {0x10, 0x20, 0x02};
 
 // ================================================
 // 0xf3d8: WORD 'UNK_0xf3da' codep=0x224c parp=0xf3da
@@ -157,18 +158,18 @@ void UNK_0xf47c() // UNK_0xf47c
   imax = Pop();
   do // (DO)
   {
-    Push(0x65f2); // IFIELD(UNK_0xf3c6)
+    Push(0x65e1+UNK_0xf3c6.offset); // IFIELD
     Push(i); // I
     Push(Pop() + Pop()); // +
     _at__gt_C_plus_S(); // @>C+S
     UNK_0xf3da(); // UNK_0xf3da
     if (Pop() != 0)
     {
-      Push(0x6601); // IFIELD(UNK_0xf3d5)
+      Push(0x65e1+UNK_0xf3d5.offset); // IFIELD
       Push(Read16(Pop())); // @
       Push(0x0010);
       Push(Pop() | Pop()); // OR
-      Push(0x6601); // IFIELD(UNK_0xf3d5)
+      Push(0x65e1+UNK_0xf3d5.offset); // IFIELD
       _ex__2(); // !_2
     }
     ICLOSE(); // ICLOSE

@@ -141,6 +141,9 @@ extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
 void ABS(); // ABS
 void MIN(); // MIN
@@ -422,9 +425,9 @@ void UNK_0xe770() // UNK_0xe770
 
 void UNK_0xe794() // UNK_0xe794
 {
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
 }
 
@@ -448,9 +451,9 @@ void UNK_0xe7a0() // UNK_0xe7a0
 
 void UNK_0xe7ac() // UNK_0xe7ac
 {
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   _ex__3(); // !_3
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   _ex__3(); // !_3
 }
 
@@ -471,12 +474,12 @@ void UNK_0xe7b8() // UNK_0xe7b8
 // ================================================
 // 0xe7c2: WORD 'UNK_0xe7c4' codep=0x744d parp=0xe7c4
 // ================================================
-// 0xe7c4: db 0x11 0x17 0x03 '   '
+IFieldType UNK_0xe7c4 = {0x11, 0x17, 0x03};
 
 // ================================================
 // 0xe7c7: WORD 'UNK_0xe7c9' codep=0x744d parp=0xe7c9
 // ================================================
-// 0xe7c9: db 0x10 0x1b 0x01 '   '
+IFieldType UNK_0xe7c9 = {0x10, 0x1b, 0x01};
 
 // ================================================
 // 0xe7cc: WORD 'UNK_0xe7ce' codep=0x224c parp=0xe7ce
@@ -486,9 +489,9 @@ void UNK_0xe7ce() // UNK_0xe7ce
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x6406); // IFIELD(UNK_0xe7c4)
+  Push(0x63ef+UNK_0xe7c4.offset); // IFIELD
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x640a); // IFIELD(UNK_0xe7c9)
+  Push(0x63ef+UNK_0xe7c9.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -1080,9 +1083,9 @@ void UNK_0xed14() // UNK_0xed14
 
 void UNK_0xed34() // UNK_0xed34
 {
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -1122,7 +1125,7 @@ void UNK_0xed4c() // UNK_0xed4c
   UNK_0xed42(); // UNK_0xed42
   UNK_0xed34(); // UNK_0xed34
   Push(0);
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   _ex__3(); // !_3
   ICLOSE(); // ICLOSE
 }
@@ -1417,7 +1420,7 @@ void UNK_0xef48() // UNK_0xef48
   Push(Read16(regsp)); // DUP
   LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   _ex__3(); // !_3
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   _ex__3(); // !_3
   ICLOSE(); // ICLOSE
 }
@@ -1523,14 +1526,14 @@ void UNK_0xf05a() // UNK_0xf05a
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe7b8(); // UNK_0xe7b8
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(regsp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   _dash_(); // -
   ABS(); // ABS
@@ -1746,7 +1749,7 @@ void UNK_0xf212() // UNK_0xf212
   UNK_0xf1fe(); // UNK_0xf1fe
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   SetColor("WHITE");
@@ -1823,7 +1826,7 @@ void UNK_0xf29c() // UNK_0xf29c
   _star__slash_(); // */
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   _plus__ex_(); // +!
   ICLOSE(); // ICLOSE
 }
@@ -1837,7 +1840,7 @@ void UNK_0xf2b8() // UNK_0xf2b8
 {
   Push(pp_TVEHICLE); // TVEHICLE
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>

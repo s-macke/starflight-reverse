@@ -74,6 +74,14 @@ extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 extern LoadDataType ART_dash_NAME; // ART-NAME
 extern LoadDataType ART_dash_VAL; // ART-VAL
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType INST_dash_VAL; // INST-VAL
+extern IFieldType INST_dash_DATE; // INST-DATE
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
+extern IFieldType TEXT_dash_CO; // TEXT-CO
+extern IFieldType TEXT_dash_IN; // TEXT-IN
+extern IFieldType TEXT_dash_TE; // TEXT-TE
 void MAX(); // MAX
 void PAD(); // PAD
 void SPACES(); // SPACES
@@ -374,8 +382,8 @@ void UNK_0xef61() // UNK_0xef61
     _1_dot_5_at_(); // 1.5@
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xee1a(); // UNK_0xee1a
   SWAP(); // SWAP
@@ -442,7 +450,7 @@ void UNK_0xefe9() // UNK_0xefe9
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   LoadData(ELEM_dash_VAL); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
@@ -509,7 +517,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 void UNK_0xf074() // UNK_0xf074
 {
   UNK_0xee0a(); // UNK_0xee0a
-  Push(0x6402); // IFIELD(INST-DATE)
+  Push(0x63ef+INST_dash_DATE.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xee1a(); // UNK_0xee1a
   DATE_do__gt_ADR(); // DATE$>ADR
@@ -570,9 +578,9 @@ void UNK_0xf0c6() // UNK_0xf0c6
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
-  Push(0x6400); // IFIELD(INST-VAL)
+  Push(0x63ef+INST_dash_VAL.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xef89(); // UNK_0xef89
 }
@@ -588,9 +596,9 @@ void UNK_0xf0de() // UNK_0xf0de
   UNK_0xee1a(); // UNK_0xee1a
   Push(0x0010);
   CMOVE(); // CMOVE
-  Push(0x6400); // IFIELD(INST-VAL)
+  Push(0x63ef+INST_dash_VAL.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xef89(); // UNK_0xef89
 }
@@ -686,12 +694,12 @@ void UNK_0xf157() // UNK_0xf157
     Push(0);
     Push(1);
     _star_CREATE(); // *CREATE
-    Push(0x6400); // IFIELD(TEXT-TE)
+    Push(0x63ef+TEXT_dash_TE.offset); // IFIELD
     Push(0x0026);
     CMOVE(); // CMOVE
-    Push(0x63fd); // IFIELD(TEXT-IN)
+    Push(0x63ef+TEXT_dash_IN.offset); // IFIELD
     _1_dot_5_ex_(); // 1.5!
-    Push(0x63fa); // IFIELD(TEXT-CO)
+    Push(0x63ef+TEXT_dash_CO.offset); // IFIELD
     _1_dot_5_ex_(); // 1.5!
     ICLOSE(); // ICLOSE
     Push(1);
@@ -939,12 +947,12 @@ void _gt_BOX() // >BOX
       } while(Pop() == 0);
       Pop(); // DROP
       _gt_C_plus_S(); // >C+S
-      Push(0x63fa); // IFIELD(INST-QTY)
+      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
       Push(Read16(Pop())); // @
       CI(); // CI
       ICLOSE(); // ICLOSE
       _gt_INACTIVE(); // >INACTIVE
-      Push(0x63fa); // IFIELD(INST-QTY)
+      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
       _plus__ex_(); // +!
       ICLOSE(); // ICLOSE
     } else
@@ -983,7 +991,7 @@ void _ask_ELEMENT() // ?ELEMENT
 void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -994,7 +1002,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
     Push(pp_ELEM_dash_AM); // ELEM-AM
     Push(Read16(Pop())); // @
     Push(-Pop()); // NEGATE
-    Push(0x63fa); // IFIELD(INST-QTY)
+    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     _plus__ex_(); // +!
     Push(0x001a);
     _at_INST_dash_SPECIES(); // @INST-SPECIES
@@ -1002,7 +1010,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
     _gt_C_plus_S(); // >C+S
     Push(pp_ELEM_dash_AM); // ELEM-AM
     Push(Read16(Pop())); // @
-    Push(0x63fa); // IFIELD(INST-QTY)
+    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     _ex__3(); // !_3
     C_gt_(); // C>
     return;

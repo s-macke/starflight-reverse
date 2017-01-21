@@ -42,6 +42,7 @@ extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType ELEM_dash_VA; // ELEM-VA
+extern IFieldType INST_dash_X; // INST-X
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -87,7 +88,7 @@ void _1_dot_5_at_(); // 1.5@
 // ================================================
 // 0xf374: WORD 'UNK_0xf376' codep=0x7420 parp=0xf376
 // ================================================
-// 0xf376: db 0x30 0x0b 0x00 '0  '
+IFieldType UNK_0xf376 = {0x30, 0x0b, 0x00};
 
 // ================================================
 // 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b
@@ -96,7 +97,7 @@ void _1_dot_5_at_(); // 1.5@
 void UNK_0xf37b() // UNK_0xf37b
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65ec); // IFIELD(UNK_0xf376)
+  Push(0x65e1+UNK_0xf376.offset); // IFIELD
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -185,7 +186,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
     }
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
   Push(0x0118);

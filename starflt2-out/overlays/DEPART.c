@@ -276,7 +276,7 @@ void UNK_0xf48d() // UNK_0xf48d
 // ================================================
 // 0xf4b5: WORD 'UNK_0xf4b7' codep=0x7420 parp=0xf4b7
 // ================================================
-// 0xf4b7: db 0x34 0x12 0x01 '4  '
+IFieldType UNK_0xf4b7 = {0x34, 0x12, 0x01};
 
 // ================================================
 // 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc
@@ -288,7 +288,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   _at__gt_C_plus_S(); // @>C+S
   Push(pp_EDL); // EDL
   Push(Read16(Pop())); // @
-  Push(0x65f3); // IFIELD(UNK_0xf4b7)
+  Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   Push(Read16(regsp)); // DUP
@@ -306,14 +306,14 @@ void UNK_0xf4bc() // UNK_0xf4bc
     Push(5);
     MAX(); // MAX
     Push(Pop() * Pop()); // *
-    Push(0x65f3); // IFIELD(UNK_0xf4b7)
+    Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(Pop() + Pop()); // +
     Push(0x0064);
     MIN(); // MIN
     Push(0);
     MAX(); // MAX
-    Push(0x65f3); // IFIELD(UNK_0xf4b7)
+    Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
     C_ex__2(); // C!_2
   } else
   {

@@ -124,17 +124,17 @@ void LLINE(); // LLINE
 // ================================================
 // 0xec64: WORD 'UNK_0xec66' codep=0x744d parp=0xec66
 // ================================================
-// 0xec66: db 0x10 0x1c 0x01 '   '
+IFieldType UNK_0xec66 = {0x10, 0x1c, 0x01};
 
 // ================================================
 // 0xec69: WORD 'UNK_0xec6b' codep=0x744d parp=0xec6b
 // ================================================
-// 0xec6b: db 0x11 0x1a 0x03 '   '
+IFieldType UNK_0xec6b = {0x11, 0x1a, 0x03};
 
 // ================================================
 // 0xec6e: WORD 'UNK_0xec70' codep=0x744d parp=0xec70
 // ================================================
-// 0xec70: db 0x14 0x11 0x02 '   '
+IFieldType UNK_0xec70 = {0x14, 0x11, 0x02};
 
 // ================================================
 // 0xec73: WORD 'UNK_0xec75' codep=0x224c parp=0xec75
@@ -239,14 +239,14 @@ void UNK_0xed5c() // UNK_0xed5c
   unsigned short int a;
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   a = Pop(); // >R
   Push(a); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // I
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -338,7 +338,7 @@ void DBARS() // DBARS
     i++;
   } while(i<imax); // (LOOP)
 
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
   Push(Pop() & Pop()); // AND
@@ -396,7 +396,7 @@ void UNK_0xee68() // UNK_0xee68
   imax = Pop();
   do // (DO)
   {
-    Push(0x6400); // IFIELD(UNK_0xec70)
+    Push(0x63ef+UNK_0xec70.offset); // IFIELD
     Push(i); // I
     Push(Pop()*2); // 2*
     Push(Pop() + Pop()); // +
@@ -614,14 +614,14 @@ void UNK_0xf013() // UNK_0xf013
   _dot_SHIP_dash_ITEM(); // .SHIP-ITEM case
   PRINT(": ", 2); // (.")
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   a = Pop(); // >R
   Push(a); // I
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
   Push(a); // I
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -651,7 +651,7 @@ void UNK_0xf05b() // UNK_0xf05b
   CTCR(); // CTCR
   PRINT("EFFICIENCY: ", 12); // (.")
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0);
@@ -671,7 +671,7 @@ void UNK_0xf080() // UNK_0xf080
   CTCR(); // CTCR
   PRINT("CURRENT FUNCTIONALITY: ", 23); // (.")
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
@@ -693,10 +693,10 @@ void UNK_0xf0cb() // UNK_0xf0cb
 {
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x6409); // IFIELD(UNK_0xec6b)
+  Push(0x63ef+UNK_0xec6b.offset); // IFIELD
   _at__gt_C_plus_S(); // @>C+S
   Push(0x00fb);
-  Push(0x640b); // IFIELD(UNK_0xec66)
+  Push(0x63ef+UNK_0xec66.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
   Push(0x0064);
@@ -781,7 +781,7 @@ void UNK_0xf0ff() // UNK_0xf0ff
 void UNK_0xf183() // UNK_0xf183
 {
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
@@ -807,7 +807,7 @@ void UNK_0xf183() // UNK_0xf183
 void UNK_0xf1d1() // UNK_0xf1d1
 {
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
@@ -858,7 +858,7 @@ void UNK_0xf231() // UNK_0xf231
 {
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x007f);
@@ -949,7 +949,7 @@ void UNK_0xf33a() // UNK_0xf33a
   Push(Read16(regsp)); // DUP
   UNK_0xf31a(); // UNK_0xf31a
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
@@ -998,7 +998,7 @@ void UNK_0xf3a1() // UNK_0xf3a1
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
@@ -1107,7 +1107,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(pp_OCRS); // OCRS
   Push(Read16(Pop())); // @
   Push(Pop()*2); // 2*
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push(Pop() + Pop()); // +
   a = Pop(); // >R
   Push(a); // I
@@ -1115,7 +1115,7 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   Push(Read8(Pop())&0xFF); // C@
   _0_gt_(); // 0>
   Push(a); // R>
-  Push(0x6400); // IFIELD(UNK_0xec70)
+  Push(0x63ef+UNK_0xec70.offset); // IFIELD
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND

@@ -124,7 +124,7 @@ LoadDataType UNK_0xf26a = {0x43, 0x1b, 0x01, 0x1c, 0x6efc};
 // ================================================
 // 0xf270: WORD 'UNK_0xf272' codep=0x7420 parp=0xf272
 // ================================================
-// 0xf272: db 0x43 0x0b 0x02 'C  '
+IFieldType UNK_0xf272 = {0x43, 0x0b, 0x02};
 
 // ================================================
 // 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277
@@ -265,7 +265,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0);
-  Push(0x65ec); // IFIELD(UNK_0xf272)
+  Push(0x65e1+UNK_0xf272.offset); // IFIELD
   _ex__2(); // !_2
   LoadData(UNK_0xf222); // from 'REGIONS     '
   Push(4);

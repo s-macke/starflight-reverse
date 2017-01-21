@@ -9,18 +9,18 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-//      UNK_0xef86  codep:0x224c parp:0xef86 size:0x0008 C-string:'UNK_0xef86'
-//      UNK_0xef90  codep:0x2214 parp:0xef90 size:0x0002 C-string:'UNK_0xef90'
-//      UNK_0xef94  codep:0x2214 parp:0xef94 size:0x0002 C-string:'UNK_0xef94'
-//      UNK_0xef98  codep:0x2214 parp:0xef98 size:0x0002 C-string:'UNK_0xef98'
-//      UNK_0xef9c  codep:0x2214 parp:0xef9c size:0x0002 C-string:'UNK_0xef9c'
-//      UNK_0xefa0  codep:0x2214 parp:0xefa0 size:0x0002 C-string:'UNK_0xefa0'
+//            TRIM  codep:0x224c parp:0xef86 size:0x0008 C-string:'TRIM'
+//          3RIGHT  codep:0x2214 parp:0xef90 size:0x0002 C-string:'_3RIGHT'
+//           3LEFT  codep:0x2214 parp:0xef94 size:0x0002 C-string:'_3LEFT'
+//           3PLUS  codep:0x2214 parp:0xef98 size:0x0002 C-string:'_3PLUS'
+//          2RIGHT  codep:0x2214 parp:0xef9c size:0x0002 C-string:'_2RIGHT'
+//           2LEFT  codep:0x2214 parp:0xefa0 size:0x0002 C-string:'_2LEFT'
 //   MASTERBALANCE  codep:0x744d parp:0xefa4 size:0x0003 C-string:'MASTERBALANCE'
 //         BALANCE  codep:0x744d parp:0xefa9 size:0x0003 C-string:'BALANCE'
 //           TFLAG  codep:0x744d parp:0xefae size:0x0003 C-string:'TFLAG'
-//      UNK_0xefb3  codep:0x73ea parp:0xefb3 size:0x0006 C-string:'UNK_0xefb3'
-//      UNK_0xefbb  codep:0x744d parp:0xefbb size:0x0003 C-string:'UNK_0xefbb'
-//      UNK_0xefc0  codep:0x744d parp:0xefc0 size:0x0003 C-string:'UNK_0xefc0'
+//       TRANSTEXT  codep:0x73ea parp:0xefb3 size:0x0006 C-string:'TRANSTEXT'
+//           T-AMT  codep:0x744d parp:0xefbb size:0x0003 C-string:'T_dash_AMT'
+//          T-DATE  codep:0x744d parp:0xefc0 size:0x0003 C-string:'T_dash_DATE'
 //        SET-BANK  codep:0x224c parp:0xefc5 size:0x0006 C-string:'SET_dash_BANK'
 //          !TFLAG  codep:0x224c parp:0xefd6 size:0x000c C-string:'_ex_TFLAG'
 //       D@BALANCE  codep:0x224c parp:0xeff0 size:0x000a C-string:'D_at_BALANCE'
@@ -29,16 +29,16 @@
 //    INIT-BALANCE  codep:0x224c parp:0xf038 size:0x000e C-string:'INIT_dash_BALANCE'
 //        TRANSACT  codep:0x224c parp:0xf053 size:0x0072 C-string:'TRANSACT'
 //            INT%  codep:0x224c parp:0xf0ce size:0x0042 C-string:'INT_pe_'
-//      UNK_0xf112  codep:0x1d29 parp:0xf112 size:0x0014 C-string:'UNK_0xf112'
-//      UNK_0xf128  codep:0x224c parp:0xf128 size:0x0028 C-string:'UNK_0xf128'
-//      UNK_0xf152  codep:0x224c parp:0xf152 size:0x0042 C-string:'UNK_0xf152'
-//      UNK_0xf196  codep:0x224c parp:0xf196 size:0x0042 C-string:'UNK_0xf196'
-//      UNK_0xf1da  codep:0x224c parp:0xf1da size:0x0006 C-string:'UNK_0xf1da'
-//      UNK_0xf1e2  codep:0x224c parp:0xf1e2 size:0x008b C-string:'UNK_0xf1e2'
-//      UNK_0xf26f  codep:0x224c parp:0xf26f size:0x013a C-string:'UNK_0xf26f'
-//      UNK_0xf3ab  codep:0x224c parp:0xf3ab size:0x00b7 C-string:'UNK_0xf3ab'
-//      UNK_0xf464  codep:0x224c parp:0xf464 size:0x000c C-string:'UNK_0xf464'
-//      UNK_0xf472  codep:0x224c parp:0xf472 size:0x0038 C-string:'UNK_0xf472'
+//            DOTS  codep:0x1d29 parp:0xf112 size:0x0014 C-string:'DOTS'
+//           .DOTS  codep:0x224c parp:0xf128 size:0x0028 C-string:'_dot_DOTS'
+//          .BDATE  codep:0x224c parp:0xf152 size:0x0042 C-string:'_dot_BDATE'
+//           .$AMT  codep:0x224c parp:0xf196 size:0x0042 C-string:'_dot__do_AMT'
+//          ?.MESS  codep:0x224c parp:0xf1da size:0x0006 C-string:'_ask__dot_MESS'
+//          BTITLE  codep:0x224c parp:0xf1e2 size:0x008b C-string:'BTITLE'
+//         BOFRAME  codep:0x224c parp:0xf26f size:0x013a C-string:'BOFRAME'
+//           BINFO  codep:0x224c parp:0xf3ab size:0x00b7 C-string:'BINFO'
+//         BSCREEN  codep:0x224c parp:0xf464 size:0x000c C-string:'BSCREEN'
+//           BMESS  codep:0x224c parp:0xf472 size:0x0038 C-string:'BMESS'
 //        .BALANCE  codep:0x224c parp:0xf4ac size:0x0016 C-string:'_dot_BALANCE'
 //           .BANK  codep:0x224c parp:0xf4c4 size:0x001e C-string:'_dot_BANK'
 //        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
@@ -110,24 +110,24 @@ void LLINE(); // LLINE
 // =================================
 // =========== VARIABLES ===========
 // =================================
-const unsigned short int pp_UNK_0xf112 = 0xf112; // UNK_0xf112 size: 20
+const unsigned short int pp_DOTS = 0xf112; // DOTS size: 20
 // {0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44, 0x44}
 
 
-const unsigned short int cc_UNK_0xef90 = 0xef90; // UNK_0xef90
-const unsigned short int cc_UNK_0xef94 = 0xef94; // UNK_0xef94
-const unsigned short int cc_UNK_0xef98 = 0xef98; // UNK_0xef98
-const unsigned short int cc_UNK_0xef9c = 0xef9c; // UNK_0xef9c
-const unsigned short int cc_UNK_0xefa0 = 0xefa0; // UNK_0xefa0
+const unsigned short int cc__3RIGHT = 0xef90; // 3RIGHT
+const unsigned short int cc__3LEFT = 0xef94; // 3LEFT
+const unsigned short int cc__3PLUS = 0xef98; // 3PLUS
+const unsigned short int cc__2RIGHT = 0xef9c; // 2RIGHT
+const unsigned short int cc__2LEFT = 0xefa0; // 2LEFT
 
 
 // 0xef82: db 0x5c 0x00 '\ '
 
 // ================================================
-// 0xef84: WORD 'UNK_0xef86' codep=0x224c parp=0xef86
+// 0xef84: WORD 'TRIM' codep=0x224c parp=0xef86
 // ================================================
 
-void UNK_0xef86() // UNK_0xef86
+void TRIM() // TRIM
 {
   Push(0xbdba); // probable 'OVTRIMS'
   MODULE(); // MODULE
@@ -135,59 +135,59 @@ void UNK_0xef86() // UNK_0xef86
 
 
 // ================================================
-// 0xef8e: WORD 'UNK_0xef90' codep=0x2214 parp=0xef90
+// 0xef8e: WORD '3RIGHT' codep=0x2214 parp=0xef90
 // ================================================
 // 0xef90: dw 0x0000
 
 // ================================================
-// 0xef92: WORD 'UNK_0xef94' codep=0x2214 parp=0xef94
+// 0xef92: WORD '3LEFT' codep=0x2214 parp=0xef94
 // ================================================
 // 0xef94: dw 0x0001
 
 // ================================================
-// 0xef96: WORD 'UNK_0xef98' codep=0x2214 parp=0xef98
+// 0xef96: WORD '3PLUS' codep=0x2214 parp=0xef98
 // ================================================
 // 0xef98: dw 0x0002
 
 // ================================================
-// 0xef9a: WORD 'UNK_0xef9c' codep=0x2214 parp=0xef9c
+// 0xef9a: WORD '2RIGHT' codep=0x2214 parp=0xef9c
 // ================================================
 // 0xef9c: dw 0x0003
 
 // ================================================
-// 0xef9e: WORD 'UNK_0xefa0' codep=0x2214 parp=0xefa0
+// 0xef9e: WORD '2LEFT' codep=0x2214 parp=0xefa0
 // ================================================
 // 0xefa0: dw 0x0004
 
 // ================================================
 // 0xefa2: WORD 'MASTERBALANCE' codep=0x744d parp=0xefa4
 // ================================================
-// 0xefa4: db 0x0d 0x0b 0x04 '   '
+IFieldType MASTERBALANCE = {0x0d, 0x0b, 0x04};
 
 // ================================================
 // 0xefa7: WORD 'BALANCE' codep=0x744d parp=0xefa9
 // ================================================
-// 0xefa9: db 0x0d 0x0f 0x04 '   '
+IFieldType BALANCE = {0x0d, 0x0f, 0x04};
 
 // ================================================
 // 0xefac: WORD 'TFLAG' codep=0x744d parp=0xefae
 // ================================================
-// 0xefae: db 0x0d 0x13 0x01 '   '
+IFieldType TFLAG = {0x0d, 0x13, 0x01};
 
 // ================================================
-// 0xefb1: WORD 'UNK_0xefb3' codep=0x73ea parp=0xefb3
+// 0xefb1: WORD 'TRANSTEXT' codep=0x73ea parp=0xefb3
 // ================================================
-LoadDataType UNK_0xefb3 = {0x0e, 0x00, 0x13, 0x13, 0x6480};
+LoadDataType TRANSTEXT = {0x0e, 0x00, 0x13, 0x13, 0x6480};
 
 // ================================================
-// 0xefb9: WORD 'UNK_0xefbb' codep=0x744d parp=0xefbb
+// 0xefb9: WORD 'T-AMT' codep=0x744d parp=0xefbb
 // ================================================
-// 0xefbb: db 0x0e 0x0b 0x04 '   '
+IFieldType T_dash_AMT = {0x0e, 0x0b, 0x04};
 
 // ================================================
-// 0xefbe: WORD 'UNK_0xefc0' codep=0x744d parp=0xefc0
+// 0xefbe: WORD 'T-DATE' codep=0x744d parp=0xefc0
 // ================================================
-// 0xefc0: db 0x0e 0x0f 0x02 '   '
+IFieldType T_dash_DATE = {0x0e, 0x0f, 0x02};
 
 // ================================================
 // 0xefc3: WORD 'SET-BANK' codep=0x224c parp=0xefc5
@@ -209,7 +209,7 @@ void _ex_TFLAG() // !TFLAG
 {
   SET_dash_BANK(); // SET-BANK
   Push(1);
-  Push(0x6402); // IFIELD(TFLAG)
+  Push(0x63ef+TFLAG.offset); // IFIELD
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -223,7 +223,7 @@ void _ex_TFLAG() // !TFLAG
 void D_at_BALANCE() // D@BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fe); // IFIELD(BALANCE)
+  Push(0x63ef+BALANCE.offset); // IFIELD
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
 }
@@ -237,7 +237,7 @@ void D_at_BALANCE() // D@BALANCE
 void D_ex_BALANCE() // D!BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fe); // IFIELD(BALANCE)
+  Push(0x63ef+BALANCE.offset); // IFIELD
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -264,9 +264,9 @@ void _ask_BALANCE() // ?BALANCE
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63fa); // IFIELD(MASTERBALANCE)
+  Push(0x63ef+MASTERBALANCE.offset); // IFIELD
   _2_at_(); // 2@
-  Push(0x63fe); // IFIELD(BALANCE)
+  Push(0x63ef+BALANCE.offset); // IFIELD
   D_ex_(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -281,7 +281,7 @@ void TRANSACT() // TRANSACT
 {
   unsigned short int i, imax;
   SET_dash_BANK(); // SET-BANK
-  Push(0x6402); // IFIELD(TFLAG)
+  Push(0x63ef+TFLAG.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -320,23 +320,23 @@ void TRANSACT() // TRANSACT
     SET_dash_CURRENT(); // SET-CURRENT
     Push(pp_STARDATE); // STARDATE
     Push(Read16(Pop())); // @
-    Push(0x63fa); // IFIELD(MASTERBALANCE)
+    Push(0x63ef+MASTERBALANCE.offset); // IFIELD
     _2_at_(); // 2@
-    Push(0x63fe); // IFIELD(BALANCE)
+    Push(0x63ef+BALANCE.offset); // IFIELD
     _2_at_(); // 2@
     D_dash_(); // D-
     ICLOSE(); // ICLOSE
-    Push(0x63fa); // IFIELD(UNK_0xefbb)
+    Push(0x63ef+T_dash_AMT.offset); // IFIELD
     D_ex_(); // D!
-    Push(0x63fe); // IFIELD(UNK_0xefc0)
+    Push(0x63ef+T_dash_DATE.offset); // IFIELD
     _ex__3(); // !_3
     ICLOSE(); // ICLOSE
-    Push(0x63fe); // IFIELD(BALANCE)
+    Push(0x63ef+BALANCE.offset); // IFIELD
     _2_at_(); // 2@
-    Push(0x63fa); // IFIELD(MASTERBALANCE)
+    Push(0x63ef+MASTERBALANCE.offset); // IFIELD
     D_ex_(); // D!
     Push(0);
-    Push(0x6402); // IFIELD(TFLAG)
+    Push(0x63ef+TFLAG.offset); // IFIELD
     C_ex_(); // C!
   } else
   {
@@ -386,15 +386,15 @@ void INT_pe_() // INT%
 
 
 // ================================================
-// 0xf110: WORD 'UNK_0xf112' codep=0x1d29 parp=0xf112
+// 0xf110: WORD 'DOTS' codep=0x1d29 parp=0xf112
 // ================================================
 // 0xf112: db 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 'DDDDDDDDDDDDDDDDDDDD'
 
 // ================================================
-// 0xf126: WORD 'UNK_0xf128' codep=0x224c parp=0xf128
+// 0xf126: WORD '.DOTS' codep=0x224c parp=0xf128
 // ================================================
 
-void UNK_0xf128() // UNK_0xf128
+void _dot_DOTS() // .DOTS
 {
   Push(0xfffc);
   Push(pp_YBLT); // YBLT
@@ -407,7 +407,7 @@ void UNK_0xf128() // UNK_0xf128
   Push(1);
   Push(pp_LBLT); // LBLT
   _ex__3(); // !_3
-  Push(pp_UNK_0xf112); // UNK_0xf112
+  Push(pp_DOTS); // DOTS
   Push(pp_ABLT); // ABLT
   _ex__3(); // !_3
   BLT(); // BLT
@@ -418,12 +418,12 @@ void UNK_0xf128() // UNK_0xf128
 
 
 // ================================================
-// 0xf150: WORD 'UNK_0xf152' codep=0x224c parp=0xf152
+// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152
 // ================================================
 
-void UNK_0xf152() // UNK_0xf152
+void _dot_BDATE() // .BDATE
 {
-  Push(0x63fe); // IFIELD(UNK_0xefc0)
+  Push(0x63ef+T_dash_DATE.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x012c);
   _slash_MOD(); // /MOD
@@ -454,13 +454,13 @@ void UNK_0xf152() // UNK_0xf152
 
 
 // ================================================
-// 0xf194: WORD 'UNK_0xf196' codep=0x224c parp=0xf196
+// 0xf194: WORD '.$AMT' codep=0x224c parp=0xf196
 // ================================================
 
-void UNK_0xf196() // UNK_0xf196
+void _dot__do_AMT() // .$AMT
 {
   unsigned short int a;
-  Push(0x63fa); // IFIELD(UNK_0xefbb)
+  Push(0x63ef+T_dash_AMT.offset); // IFIELD
   _2_at_(); // 2@
   _2DUP(); // 2DUP
   _2DUP(); // 2DUP
@@ -492,21 +492,21 @@ void UNK_0xf196() // UNK_0xf196
 
 
 // ================================================
-// 0xf1d8: WORD 'UNK_0xf1da' codep=0x224c parp=0xf1da
+// 0xf1d8: WORD '?.MESS' codep=0x224c parp=0xf1da
 // ================================================
 
-void UNK_0xf1da() // UNK_0xf1da
+void _ask__dot_MESS() // ?.MESS
 {
-  LoadData(UNK_0xefb3); // from 'BANK-TRANS  '
+  LoadData(TRANSTEXT); // from 'BANK-TRANS  '
   _do__dot_(); // $.
 }
 
 
 // ================================================
-// 0xf1e0: WORD 'UNK_0xf1e2' codep=0x224c parp=0xf1e2
+// 0xf1e0: WORD 'BTITLE' codep=0x224c parp=0xf1e2
 // ================================================
 
-void UNK_0xf1e2() // UNK_0xf1e2
+void BTITLE() // BTITLE
 {
   Push(0x0032);
   Push(0x00be);
@@ -530,18 +530,18 @@ void UNK_0xf1e2() // UNK_0xf1e2
   LLINE(); // LLINE
   Push(0x0032);
   Push(0x00c0);
-  Push(Read16(cc_UNK_0xef98)); // UNK_0xef98
+  Push(Read16(cc__3PLUS)); // 3PLUS
   Push(0x0032);
   Push(0x00b2);
-  Push(Read16(cc_UNK_0xef98)); // UNK_0xef98
+  Push(Read16(cc__3PLUS)); // 3PLUS
   Push(0x006d);
   Push(0x00c0);
-  Push(Read16(cc_UNK_0xef98)); // UNK_0xef98
+  Push(Read16(cc__3PLUS)); // 3PLUS
   Push(0x006d);
   Push(0x00b2);
-  Push(Read16(cc_UNK_0xef98)); // UNK_0xef98
+  Push(Read16(cc__3PLUS)); // 3PLUS
   Push(4);
-  UNK_0xef86(); // UNK_0xef86
+  TRIM(); // TRIM
   CTINIT(); // CTINIT
   Push(0x0046);
   Push(0x00bc);
@@ -552,10 +552,10 @@ void UNK_0xf1e2() // UNK_0xf1e2
 
 
 // ================================================
-// 0xf26d: WORD 'UNK_0xf26f' codep=0x224c parp=0xf26f
+// 0xf26d: WORD 'BOFRAME' codep=0x224c parp=0xf26f
 // ================================================
 
-void UNK_0xf26f() // UNK_0xf26f
+void BOFRAME() // BOFRAME
 {
   unsigned short int i, imax;
   _ex_COLOR(); // !COLOR
@@ -639,42 +639,42 @@ void UNK_0xf26f() // UNK_0xf26f
   LLINE(); // LLINE
   Push(2);
   Push(0x00c5);
-  Push(Read16(cc_UNK_0xef94)); // UNK_0xef94
+  Push(Read16(cc__3LEFT)); // 3LEFT
   Push(0x009b);
   Push(0x00c5);
-  Push(Read16(cc_UNK_0xef90)); // UNK_0xef90
+  Push(Read16(cc__3RIGHT)); // 3RIGHT
   Push(2);
   Push(4);
-  Push(Read16(cc_UNK_0xef90)); // UNK_0xef90
+  Push(Read16(cc__3RIGHT)); // 3RIGHT
   Push(0x009b);
   Push(4);
-  Push(Read16(cc_UNK_0xef94)); // UNK_0xef94
+  Push(Read16(cc__3LEFT)); // 3LEFT
   Push(0x0012);
   Push(6);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(5);
   Push(0x0013);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(0x0011);
   Push(0x0012);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(0x0012);
   Push(6);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(0x0099);
   Push(6);
-  Push(Read16(cc_UNK_0xefa0)); // UNK_0xefa0
+  Push(Read16(cc__2LEFT)); // 2LEFT
   Push(0x0012);
   Push(6);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(0x0099);
   Push(0x00c2);
-  Push(Read16(cc_UNK_0xef9c)); // UNK_0xef9c
+  Push(Read16(cc__2RIGHT)); // 2RIGHT
   Push(5);
   Push(0x00c2);
-  Push(Read16(cc_UNK_0xefa0)); // UNK_0xefa0
+  Push(Read16(cc__2LEFT)); // 2LEFT
   Push(0x000c);
-  UNK_0xef86(); // UNK_0xef86
+  TRIM(); // TRIM
   Push(6);
   Push(0x000f);
   SetColor("DK-BLUE");
@@ -683,10 +683,10 @@ void UNK_0xf26f() // UNK_0xf26f
 
 
 // ================================================
-// 0xf3a9: WORD 'UNK_0xf3ab' codep=0x224c parp=0xf3ab
+// 0xf3a9: WORD 'BINFO' codep=0x224c parp=0xf3ab
 // ================================================
 
-void UNK_0xf3ab() // UNK_0xf3ab
+void BINFO() // BINFO
 {
   CTINIT(); // CTINIT
   Push(0x0013);
@@ -728,29 +728,29 @@ void UNK_0xf3ab() // UNK_0xf3ab
   POS_dot_(); // POS.
   PRINT("BALANCE", 7); // (.")
   Push(0x0077);
-  UNK_0xf128(); // UNK_0xf128
+  _dot_DOTS(); // .DOTS
 }
 
 
 // ================================================
-// 0xf462: WORD 'UNK_0xf464' codep=0x224c parp=0xf464
+// 0xf462: WORD 'BSCREEN' codep=0x224c parp=0xf464
 // ================================================
 
-void UNK_0xf464() // UNK_0xf464
+void BSCREEN() // BSCREEN
 {
   DARK(); // DARK
   SetColor("DK-BLUE");
-  UNK_0xf26f(); // UNK_0xf26f
-  UNK_0xf1e2(); // UNK_0xf1e2
-  UNK_0xf3ab(); // UNK_0xf3ab
+  BOFRAME(); // BOFRAME
+  BTITLE(); // BTITLE
+  BINFO(); // BINFO
 }
 
 
 // ================================================
-// 0xf470: WORD 'UNK_0xf472' codep=0x224c parp=0xf472
+// 0xf470: WORD 'BMESS' codep=0x224c parp=0xf472
 // ================================================
 
-void UNK_0xf472() // UNK_0xf472
+void BMESS() // BMESS
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -763,17 +763,17 @@ void UNK_0xf472() // UNK_0xf472
   SWAP(); // SWAP
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  UNK_0xf152(); // UNK_0xf152
+  _dot_BDATE(); // .BDATE
   Push(0x0032);
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
-  UNK_0xf1da(); // UNK_0xf1da
+  _ask__dot_MESS(); // ?.MESS
   Push(0x007c);
-  UNK_0xf128(); // UNK_0xf128
+  _dot_DOTS(); // .DOTS
   Push(0x007d);
   Push(pp_XBLT); // XBLT
   _ex__3(); // !_3
-  UNK_0xf196(); // UNK_0xf196
+  _dot__do_AMT(); // .$AMT
 }
 
 
@@ -787,7 +787,7 @@ void _dot_BALANCE() // .BALANCE
   Push(0x001d);
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  Push(0x63fa); // IFIELD(MASTERBALANCE)
+  Push(0x63ef+MASTERBALANCE.offset); // IFIELD
   _2_at_(); // 2@
   Push(7);
   D_dot_R(); // D.R
@@ -806,7 +806,7 @@ void _dot_BANK() // .BANK
   do
   {
     Push(Read16(regsp)); // DUP
-    UNK_0xf472(); // UNK_0xf472
+    BMESS(); // BMESS
     Push(Pop()+1); // 1+
     INEXT(); // INEXT
     _ask_FIRST(); // ?FIRST
@@ -826,7 +826,7 @@ void _dot_BANK() // .BANK
 void _ro_U_dash_BANK_rc_() // (U-BANK)
 {
   _gt_HIDDEN(); // >HIDDEN
-  UNK_0xf464(); // UNK_0xf464
+  BSCREEN(); // BSCREEN
   _dot_BANK(); // .BANK
   CTINIT(); // CTINIT
   Push(0x0028);

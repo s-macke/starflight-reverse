@@ -169,22 +169,22 @@ const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 2
 // ================================================
 // 0xedb8: WORD 'UNK_0xedba' codep=0x744d parp=0xedba
 // ================================================
-// 0xedba: db 0x14 0x45 0x04 ' E '
+IFieldType UNK_0xedba = {0x14, 0x45, 0x04};
 
 // ================================================
 // 0xedbd: WORD 'UNK_0xedbf' codep=0x744d parp=0xedbf
 // ================================================
-// 0xedbf: db 0x14 0x34 0x0f ' 4 '
+IFieldType UNK_0xedbf = {0x14, 0x34, 0x0f};
 
 // ================================================
 // 0xedc2: WORD 'UNK_0xedc4' codep=0x744d parp=0xedc4
 // ================================================
-// 0xedc4: db 0x11 0x11 0x12 '   '
+IFieldType UNK_0xedc4 = {0x11, 0x11, 0x12};
 
 // ================================================
 // 0xedc7: WORD 'UNK_0xedc9' codep=0x744d parp=0xedc9
 // ================================================
-// 0xedc9: db 0x10 0x0b 0x0f '   '
+IFieldType UNK_0xedc9 = {0x10, 0x0b, 0x0f};
 
 // ================================================
 // 0xedcc: WORD 'UNK_0xedce' codep=0x224c parp=0xedce
@@ -227,7 +227,7 @@ void UNK_0xedec() // UNK_0xedec
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x6434); // IFIELD(UNK_0xedba)
+  Push(0x63ef+UNK_0xedba.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Read16(regsp)); // DUP
   Push(8);
@@ -332,10 +332,10 @@ void UNK_0xee6c() // UNK_0xee6c
   _gt_C_plus_S(); // >C+S
   Push(3);
   Push(Pop() * Pop()); // *
-  Push(0x6400); // IFIELD(UNK_0xedc4)
+  Push(0x63ef+UNK_0xedc4.offset); // IFIELD
   Push(Pop() + Pop()); // +
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(UNK_0xedc9)
+  Push(0x63ef+UNK_0xedc9.offset); // IFIELD
   _do__dot_(); // $.
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -357,7 +357,7 @@ void UNK_0xeeba() // UNK_0xeeba
   UNK_0xee30(); // UNK_0xee30
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x6423); // IFIELD(UNK_0xedbf)
+  Push(0x63ef+UNK_0xedbf.offset); // IFIELD
   _do__dot_(); // $.
   ICLOSE(); // ICLOSE
 }

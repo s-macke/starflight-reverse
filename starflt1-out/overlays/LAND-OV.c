@@ -42,6 +42,9 @@ extern const unsigned short int pp__i_EXTERNAL_dash_EVENTS; // 'EXTERNAL-EVENTS
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void COUNT(); // COUNT
 void MAX(); // MAX
 void MIN(); // MIN
@@ -90,7 +93,7 @@ const unsigned short int pp_UNK_0xf143 = 0xf143; // UNK_0xf143 size: 2
 // ================================================
 // 0xf134: WORD 'UNK_0xf136' codep=0x744d parp=0xf136
 // ================================================
-// 0xf136: db 0x14 0x34 0x0f ' 4 '
+IFieldType UNK_0xf136 = {0x14, 0x34, 0x0f};
 
 // ================================================
 // 0xf139: WORD 'UNK_0xf13b' codep=0x73ea parp=0xf13b
@@ -148,7 +151,7 @@ void UNK_0xf177() // UNK_0xf177
     Push(0x001a);
     Push(6);
     IFIND(); // IFIND
-    Push(0x63fa); // IFIELD(INST-QTY)
+    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Pop() * Pop()); // *
     Push(pp_UNK_0xf143); // UNK_0xf143
@@ -163,7 +166,7 @@ void UNK_0xf177() // UNK_0xf177
       _dash_(); // -
       Push(0);
       MAX(); // MAX
-      Push(0x63fa); // IFIELD(INST-QTY)
+      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
       _ex__3(); // !_3
     }
     CDROP(); // CDROP
@@ -253,28 +256,28 @@ void UNK_0xf258() // UNK_0xf258
     _dot_TTY(); // .TTY
     UNK_0x3f3b(" STARSHIP ISS ");
     _dot_TTY(); // .TTY
-    Push(0x6423); // IFIELD(UNK_0xf136)
+    Push(0x63ef+UNK_0xf136.offset); // IFIELD
     COUNT(); // COUNT
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     UNK_0x3f3b(" CRASHED ON PLANET ");
     _dot_TTY(); // .TTY
     Push(pp__ro_ORBIT_rc_); // (ORBIT)
     _at__gt_C_plus_S(); // @>C+S
-    Push(0x63fa); // IFIELD(INST-QTY)
+    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     _ask_(); // ?
     ICLOSE(); // ICLOSE
     UNK_0x3f3b(" IN SYSTEM ");
     _dot_TTY(); // .TTY
     Push(pp__ro_SYSTEM); // (SYSTEM
     _at__gt_C_plus_S(); // @>C+S
-    Push(0x63fc); // IFIELD(INST-X)
+    Push(0x63ef+INST_dash_X.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
     Push(0);
     _dot_R(); // .R
     PRINT(",", 1); // (.")
-    Push(0x63fe); // IFIELD(INST-Y)
+    Push(0x63ef+INST_dash_Y.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /

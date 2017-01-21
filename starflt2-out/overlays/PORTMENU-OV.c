@@ -228,22 +228,23 @@ const unsigned short int cc_STPORT = 0xf083; // STPORT
 // ================================================
 // 0xecf4: WORD 'UNK_0xecf6' codep=0x7420 parp=0xecf6
 // ================================================
-// 0xecf6: db 0x14 0x14 0x01 '   '
+IFieldType UNK_0xecf6 = {0x14, 0x14, 0x01};
 
 // ================================================
 // 0xecf9: WORD 'UNK_0xecfb' codep=0x7420 parp=0xecfb
 // ================================================
-// 0xecfb: db 0x10 0x20 0x02 '   '
+IFieldType UNK_0xecfb = {0x10, 0x20, 0x02};
 
 // ================================================
 // 0xecfe: WORD 'UNK_0xed00' codep=0x7420 parp=0xed00
 // ================================================
-// 0xed00: db 0x10 0x1f 0x01 '   '
+IFieldType UNK_0xed00 = {0x10, 0x1f, 0x01};
 
 // ================================================
 // 0xed03: WORD 'UNK_0xed05' codep=0x7420 parp=0xed05
 // ================================================
-// 0xed05: db 0x14 0x43 0x02 0x29 0x1d 0x3a 0x20 ' C ) : '
+IFieldType UNK_0xed05 = {0x14, 0x43, 0x02};
+// 0xed08: db 0x29 0x1d 0x3a 0x20 ') : '
 
 // ================================================
 // 0xed0c: WORD 'UNK_0xed0e' codep=0x224c parp=0xed0e
@@ -354,7 +355,7 @@ void UNK_0xed90() // UNK_0xed90
   IOPEN(); // IOPEN
   do
   {
-    Push(0x6601); // IFIELD(UNK_0xecfb)
+    Push(0x65e1+UNK_0xecfb.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
     Push(8);
@@ -368,12 +369,12 @@ void UNK_0xed90() // UNK_0xed90
     if (Pop() != 0)
     {
       Push(a); // I
-      Push(0x6600); // IFIELD(UNK_0xed00)
+      Push(0x65e1+UNK_0xed00.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(Pop() + Pop()); // +
       Push(0x0064);
       MIN(); // MIN
-      Push(0x6600); // IFIELD(UNK_0xed00)
+      Push(0x65e1+UNK_0xed00.offset); // IFIELD
       C_ex__2(); // C!_2
     }
     INEXT(); // INEXT
@@ -950,14 +951,14 @@ void UNK_0xf11c() // UNK_0xf11c
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(7);
-  Push(0x65f5); // IFIELD(UNK_0xecf6)
+  Push(0x65e1+UNK_0xecf6.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(7);
   Push(Pop() & Pop()); // AND
   _dash_(); // -
   Push(pp_E_dash_USE); // E-USE
   _ex__2(); // !_2
-  Push(0x6624); // IFIELD(UNK_0xed05)
+  Push(0x65e1+UNK_0xed05.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(0x000a);

@@ -88,6 +88,8 @@ extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp_FSTUN; // FSTUN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void UNRAVEL(); // UNRAVEL
 void _at_INST_dash_C(); // @INST-C
 void _at_INST_dash_S(); // @INST-S
@@ -133,7 +135,7 @@ const unsigned short int cc_UNK_0xf166 = 0xf166; // UNK_0xf166
 // ================================================
 // 0xf0c9: WORD 'UNK_0xf0cb' codep=0x7420 parp=0xf0cb
 // ================================================
-// 0xf0cb: db 0x14 0x49 0x01 ' I '
+IFieldType UNK_0xf0cb = {0x14, 0x49, 0x01};
 
 // ================================================
 // 0xf0ce: WORD 'UNK_0xf0d0' codep=0x7394 parp=0xf0d0
@@ -143,7 +145,7 @@ LoadDataType UNK_0xf0d0 = {0x19, 0x1c, 0x01, 0x24, 0x6b5d};
 // ================================================
 // 0xf0d6: WORD 'UNK_0xf0d8' codep=0x7420 parp=0xf0d8
 // ================================================
-// 0xf0d8: db 0x19 0x0b 0x01 '   '
+IFieldType UNK_0xf0d8 = {0x19, 0x0b, 0x01};
 
 // ================================================
 // 0xf0db: WORD 'UNK_0xf0dd' codep=0x7394 parp=0xf0dd
@@ -153,12 +155,12 @@ LoadDataType UNK_0xf0dd = {0x44, 0x1a, 0x01, 0x22, 0x6f07};
 // ================================================
 // 0xf0e3: WORD 'UNK_0xf0e5' codep=0x7420 parp=0xf0e5
 // ================================================
-// 0xf0e5: db 0x44 0x19 0x01 'D  '
+IFieldType UNK_0xf0e5 = {0x44, 0x19, 0x01};
 
 // ================================================
 // 0xf0e8: WORD 'UNK_0xf0ea' codep=0x7420 parp=0xf0ea
 // ================================================
-// 0xf0ea: db 0x44 0x18 0x01 'D  '
+IFieldType UNK_0xf0ea = {0x44, 0x18, 0x01};
 
 // ================================================
 // 0xf0ed: WORD 'UNK_0xf0ef' codep=0x7394 parp=0xf0ef
@@ -174,7 +176,8 @@ LoadDataType UNK_0xf0fc = {0x15, 0x13, 0x01, 0x32, 0x6ad1};
 // ================================================
 // 0xf102: WORD 'UNK_0xf104' codep=0x7420 parp=0xf104
 // ================================================
-// 0xf104: db 0x15 0x0c 0x01 0x20 0x74 0x17 0x0b 0x01 0x94 0x73 0x19 0x04 0x01 0x24 0x5d 0x6b '    t    s   $]k'
+IFieldType UNK_0xf104 = {0x15, 0x0c, 0x01};
+// 0xf107: db 0x20 0x74 0x17 0x0b 0x01 0x94 0x73 0x19 0x04 0x01 0x24 0x5d 0x6b ' t    s   $]k'
 
 // ================================================
 // 0xf114: WORD 'UNK_0xf116' codep=0x2214 parp=0xf116
@@ -313,7 +316,7 @@ void UNK_0xf172() // UNK_0xf172
 
 void UNK_0xf184() // UNK_0xf184
 {
-  Push(0x662a); // IFIELD(UNK_0xf0cb)
+  Push(0x65e1+UNK_0xf0cb.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(0x001b);
   Push(Pop() + Pop()); // +
@@ -344,7 +347,7 @@ void UNK_0xf192() // UNK_0xf192
         Push(Read16(cc_UNK_0xf166)); // UNK_0xf166
       } else
       {
-        Push(0x65ec); // IFIELD(UNK_0xf0d8)
+        Push(0x65e1+UNK_0xf0d8.offset); // IFIELD
         Push(Read8(Pop())&0xFF); // C@
         Push(0x0023);
         Push(Pop() + Pop()); // +
@@ -774,11 +777,11 @@ void UNK_0xf3b0() // UNK_0xf3b0
 
 void UNK_0xf3c2() // UNK_0xf3c2
 {
-  Push(0x65fa); // IFIELD(UNK_0xf0e5)
+  Push(0x65e1+UNK_0xf0e5.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-    Push(0x65f9); // IFIELD(UNK_0xf0ea)
+    Push(0x65e1+UNK_0xf0ea.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     if (Pop() == 0) Push(1); else Push(0); // 0=
     if (Pop() != 0)
@@ -908,7 +911,7 @@ void UNK_0xf454() // UNK_0xf454
 
 void UNK_0xf460() // UNK_0xf460
 {
-  Push(0x65ed); // IFIELD(UNK_0xf104)
+  Push(0x65e1+UNK_0xf104.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
@@ -985,9 +988,9 @@ void UNK_0xf4b4() // UNK_0xf4b4
 
 void ICON_dash_PARM() // ICON-PARM
 {
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xf365(); // UNK_0xf365
   UNK_0xf4b4(); // UNK_0xf4b4

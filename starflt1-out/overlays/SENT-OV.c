@@ -133,6 +133,9 @@ extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
 extern LoadDataType SPEC_dash_NAME; // SPEC-NAME
 extern LoadDataType ART_dash_NAME; // ART-NAME
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void COUNT(); // COUNT
 void MAX(); // MAX
 void MOD(); // MOD
@@ -316,10 +319,10 @@ void UNK_0xe39f() // UNK_0xe39f
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0053);
@@ -440,7 +443,8 @@ void UNK_0xe47c() // UNK_0xe47c
 // ================================================
 // 0xe4a5: WORD 'HITS' codep=0x744d parp=0xe4ae
 // ================================================
-// 0xe4ae: db 0x44 0x11 0x01 0x4d 0x74 0x43 0x0b 0x02 'D  MtC  '
+IFieldType HITS = {0x44, 0x11, 0x01};
+// 0xe4b1: db 0x4d 0x74 0x43 0x0b 0x02 'MtC  '
 
 // ================================================
 // 0xe4b6: WORD 'UNK_0xe4b8' codep=0x73ea parp=0xe4b8
@@ -512,17 +516,17 @@ LoadDataType UNK_0xe678 = {0x44, 0x95, 0x03, 0x9c, 0x69d8};
 // ================================================
 // 0xe67e: WORD 'UNK_0xe680' codep=0x744d parp=0xe680
 // ================================================
-// 0xe680: db 0x44 0x12 0x01 'D  '
+IFieldType UNK_0xe680 = {0x44, 0x12, 0x01};
 
 // ================================================
 // 0xe683: WORD 'UNK_0xe685' codep=0x744d parp=0xe685
 // ================================================
-// 0xe685: db 0x44 0x15 0x01 'D  '
+IFieldType UNK_0xe685 = {0x44, 0x15, 0x01};
 
 // ================================================
 // 0xe688: WORD 'UNK_0xe68a' codep=0x744d parp=0xe68a
 // ================================================
-// 0xe68a: db 0x44 0x1b 0x01 'D  '
+IFieldType UNK_0xe68a = {0x44, 0x1b, 0x01};
 
 // ================================================
 // 0xe68d: WORD 'UNK_0xe68f' codep=0x224c parp=0xe68f
@@ -991,7 +995,7 @@ void UNK_0xeafb() // UNK_0xeafb
   {
     _2DUP(); // 2DUP
     _gt_C_plus_S(); // >C+S
-    Push(0x63fb); // IFIELD(PHRASE-MEM)
+    Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     a = Pop(); // >R
     Push(Read16(a)); // R@
@@ -1121,8 +1125,8 @@ void UNK_0xebb1() // UNK_0xebb1
 void UNK_0xebcf() // UNK_0xebcf
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
 }
 
@@ -1468,7 +1472,7 @@ void UNK_0xed95() // UNK_0xed95
 void UNK_0xeded() // UNK_0xeded
 {
   Push2Words("UNK_0xea2f");
-  Push(0x6400); // IFIELD(HITS)
+  Push(0x63ef+HITS.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
@@ -1476,7 +1480,7 @@ void UNK_0xeded() // UNK_0xeded
     Push(0xcaa8); Push(0x0001);
   } else
   {
-    Push(0x6401); // IFIELD(UNK_0xe680)
+    Push(0x63ef+UNK_0xe680.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     LoadData(UNK_0xe568); // from 'CREATURE    '
     Push(Read8(Pop())&0xFF); // C@
@@ -1486,7 +1490,7 @@ void UNK_0xeded() // UNK_0xeded
       Push(0xe262); Push(0x0001);
     } else
     {
-      Push(0x640a); // IFIELD(UNK_0xe68a)
+      Push(0x63ef+UNK_0xe68a.offset); // IFIELD
       Push(Read8(Pop())&0xFF); // C@
       Push(1);
       Push(Pop() & Pop()); // AND
@@ -1495,7 +1499,7 @@ void UNK_0xeded() // UNK_0xeded
         Push(0xe24c); Push(0x0001);
       } else
       {
-        Push(0x6404); // IFIELD(UNK_0xe685)
+        Push(0x63ef+UNK_0xe685.offset); // IFIELD
         Push(Read8(Pop())&0xFF); // C@
         if (Pop() != 0)
         {
@@ -1991,7 +1995,7 @@ void UNK_0xf231() // UNK_0xf231
 void UNK_0xf245() // UNK_0xf245
 {
   UNK_0xf20e(); // UNK_0xf20e
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x000a);
   _slash_(); // /

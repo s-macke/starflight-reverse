@@ -136,6 +136,10 @@ extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_NOF; // NOF
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
+extern IFieldType PHRASE_do_; // PHRASE$
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void ABS(); // ABS
@@ -365,9 +369,9 @@ void S_gt_CM() // S>CM
 
 void UNK_0xeadb() // UNK_0xeadb
 {
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
 }
 
@@ -379,9 +383,9 @@ void UNK_0xeadb() // UNK_0xeadb
 
 void UNK_0xeaf1() // UNK_0xeaf1
 {
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   _ex__2(); // !_2
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   _ex__2(); // !_2
 }
 
@@ -759,7 +763,7 @@ void UNK_0xed2a() // UNK_0xed2a
 void UNK_0xed8a() // UNK_0xed8a
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65ec); // IFIELD(PHRASE$)
+  Push(0x65e1+PHRASE_do_.offset); // IFIELD
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -1068,9 +1072,9 @@ void UNK_0xef79() // UNK_0xef79
 
 void UNK_0xef99() // UNK_0xef99
 {
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   _ex_XYSEED(); // !XYSEED
 }
@@ -1110,7 +1114,7 @@ void UNK_0xefb1() // UNK_0xefb1
   UNK_0xefa7(); // UNK_0xefa7
   UNK_0xef99(); // UNK_0xef99
   Push(0);
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
@@ -1408,7 +1412,7 @@ void UNK_0xf197() // UNK_0xf197
   UNK_0xeaf1(); // UNK_0xeaf1
   LoadData(ART_dash_VOL); // from 'ARTIFACT    '
   Push(Read16(Pop())); // @
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   _ex__2(); // !_2
   ICLOSE(); // ICLOSE
 }
@@ -1677,7 +1681,7 @@ void UNK_0xf383() // UNK_0xf383
 {
   unsigned short int a;
   UNK_0xea36(); // UNK_0xea36
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(Read16(cc_UNK_0xedbc)); // UNK_0xedbc
   _gt_(); // >
@@ -1688,9 +1692,9 @@ void UNK_0xf383() // UNK_0xf383
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
   _star__slash_(); // */
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   _plus__ex__2(); // +!_2
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   Push(Read16(cc_UNK_0xedbc)); // UNK_0xedbc
@@ -1715,7 +1719,7 @@ void UNK_0xf383() // UNK_0xf383
 void UNK_0xf3c9() // UNK_0xf3c9
 {
   UNK_0xea36(); // UNK_0xea36
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>

@@ -120,6 +120,8 @@ extern const unsigned short int pp_LAST_dash_UPDATE; // LAST-UPDATE
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _dot_R(); // .R
 void SPACE(); // SPACE
 void SPACES(); // SPACES
@@ -344,9 +346,9 @@ void UNK_0xedb2() // UNK_0xedb2
   _st__ex__gt_(); // <!>
   LoadData(UNK_0xedaa); // from 'REGIONS     '
   _at__gt_C_plus_S(); // @>C+S
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
   OVER(); // OVER
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
@@ -475,8 +477,8 @@ void UNK_0xee58() // UNK_0xee58
 void UNK_0xee86() // UNK_0xee86
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x63fb); // IFIELD(PHRASE-MEM)
-  Push(0x63fa); // IFIELD(PHR-CNT)
+  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE

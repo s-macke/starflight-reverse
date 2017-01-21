@@ -115,6 +115,8 @@ extern const unsigned short int pp_PEAK; // PEAK
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType PHR_dash_CNT; // PHR-CNT
+extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
@@ -290,8 +292,8 @@ void UNK_0xe121() // UNK_0xe121
   if (Pop() != 0)
   {
     _gt_C_plus_S(); // >C+S
-    Push(0x63fb); // IFIELD(PHRASE-MEM)
-    Push(0x63fa); // IFIELD(PHR-CNT)
+    Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+    Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     ICLOSE(); // ICLOSE

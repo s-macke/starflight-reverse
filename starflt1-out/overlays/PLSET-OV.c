@@ -101,6 +101,9 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType INST_dash_QTY; // INST-QTY
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
@@ -352,7 +355,7 @@ void UNK_0xece7() // UNK_0xece7
 // ================================================
 // 0xecf1: WORD 'UNK_0xecf3' codep=0x744d parp=0xecf3
 // ================================================
-// 0xecf3: db 0x17 0x11 0x01 '   '
+IFieldType UNK_0xecf3 = {0x17, 0x11, 0x01};
 
 // ================================================
 // 0xecf6: WORD 'UNK_0xecf8' codep=0x224c parp=0xecf8
@@ -407,7 +410,7 @@ void UNK_0xed2e() // UNK_0xed2e
     UNK_0xecf8(); // UNK_0xecf8
     Push(0);
     ICLOSE(); // ICLOSE
-    Push(0x6400); // IFIELD(UNK_0xecf3)
+    Push(0x63ef+UNK_0xecf3.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(9);
     Push(1);
@@ -446,7 +449,7 @@ void UNK_0xed2e() // UNK_0xed2e
     return;
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x63fa); // IFIELD(INST-QTY)
+  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -464,9 +467,9 @@ void UNK_0xed8e() // UNK_0xed8e
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
@@ -510,14 +513,14 @@ void UNK_0xedf8() // UNK_0xedf8
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Push(0x63fc); // IFIELD(INST-X)
+  Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x007d);
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0);
-  Push(0x63fe); // IFIELD(INST-Y)
+  Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x0064);
   _dash_(); // -

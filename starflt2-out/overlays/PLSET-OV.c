@@ -91,6 +91,10 @@ extern const unsigned short int pp_GLOBALS; // GLOBALS
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_X; // INST-X
+extern IFieldType INST_dash_Y; // INST-Y
+extern IFieldType TEXT_dash_CO; // TEXT-CO
 void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
@@ -289,7 +293,7 @@ void UNK_0xedfd() // UNK_0xedfd
 // ================================================
 // 0xee07: WORD 'UNK_0xee09' codep=0x7420 parp=0xee09
 // ================================================
-// 0xee09: db 0x17 0x11 0x01 '   '
+IFieldType UNK_0xee09 = {0x17, 0x11, 0x01};
 
 // ================================================
 // 0xee0c: WORD 'UNK_0xee0e' codep=0x224c parp=0xee0e
@@ -344,7 +348,7 @@ void UNK_0xee44() // UNK_0xee44
     UNK_0xee0e(); // UNK_0xee0e
     Push(0);
     ICLOSE(); // ICLOSE
-    Push(0x65f2); // IFIELD(UNK_0xee09)
+    Push(0x65e1+UNK_0xee09.offset); // IFIELD
     Push(Read8(Pop())&0xFF); // C@
     Push(9);
     Push(1);
@@ -383,7 +387,7 @@ void UNK_0xee44() // UNK_0xee44
     return;
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
 }
@@ -401,9 +405,9 @@ void UNK_0xeea4() // UNK_0xeea4
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
   _ex_XYSEED(); // !XYSEED
@@ -447,14 +451,14 @@ void UNK_0xef0e() // UNK_0xef0e
   Push(pp__ro_SYSTEM); // (SYSTEM
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  Push(0x65ee); // IFIELD(INST-X)
+  Push(0x65e1+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x007d);
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(0);
-  Push(0x65f0); // IFIELD(INST-Y)
+  Push(0x65e1+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(0x0064);
   _dash_(); // -
@@ -1293,7 +1297,7 @@ void UNK_0xf501() // UNK_0xf501
   ALL(); // ALL
   IFIRST(); // IFIRST
   Push(1);
-  Push(0x65ec); // IFIELD(TEXT-CO)
+  Push(0x65e1+TEXT_dash_CO.offset); // IFIELD
   _ex__2(); // !_2
   Push(2);
   _star_CLOSE(); // *CLOSE

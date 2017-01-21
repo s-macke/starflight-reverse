@@ -66,6 +66,7 @@ extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_LKEYTIM; // LKEYTIM
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_CMAP; // CMAP
+extern IFieldType INST_dash_X; // INST-X
 void COUNT(); // COUNT
 void _star__slash_(); // */
 void MAX(); // MAX
@@ -901,14 +902,14 @@ void UNK_0xf389() // UNK_0xf389
       Push(0x001b);
       Push(0x001d);
       WITHIN(); // WITHIN
-      Push(0x63fc); // IFIELD(INST-X)
+      Push(0x63ef+INST_dash_X.offset); // IFIELD
       _2_at_(); // 2@
       D0_eq_(); // D0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
       Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
-        Push(0x63fc); // IFIELD(INST-X)
+        Push(0x63ef+INST_dash_X.offset); // IFIELD
         _2_at_(); // 2@
         SWAP(); // SWAP
         UNK_0xf239(); // UNK_0xf239

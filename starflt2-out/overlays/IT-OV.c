@@ -79,6 +79,12 @@ extern LoadDataType ELEM_dash_VA; // ELEM-VA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VAL; // ART-VAL
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern IFieldType INST_dash_QT; // INST-QT
+extern IFieldType INST_dash_DA; // INST-DA
+extern IFieldType ASKING; // ASKING
+extern IFieldType TEXT_dash_CO; // TEXT-CO
+extern IFieldType TEXT_dash_IN; // TEXT-IN
+extern IFieldType TEXT_dash_TE; // TEXT-TE
 void MAX(); // MAX
 void PAD(); // PAD
 void SPACES(); // SPACES
@@ -445,7 +451,7 @@ void UNK_0xf066() // UNK_0xf066
   if (Pop() != 0)
   {
     Pop(); // DROP
-    Push(0x65f4); // IFIELD(ASKING)
+    Push(0x65e1+ASKING.offset); // IFIELD
     Push(Read16(Pop())); // @
   }
   Push(pp__pe_VAL); // %VAL
@@ -479,7 +485,7 @@ void UNK_0xf0d2() // UNK_0xf0d2
   CMOVE_2(); // CMOVE_2
   LoadData(UNK_0xeeda); // from 'CREATURE    '
   Push(Read16(Pop())); // @
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xf066(); // UNK_0xf066
 }
@@ -517,7 +523,7 @@ void UNK_0xf106() // UNK_0xf106
   UNK_0xeeea(); // UNK_0xeeea
   Push(0x0010);
   CMOVE_2(); // CMOVE_2
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   LoadData(ELEM_dash_VA); // from 'ELEMENT     '
   Push(Read16(Pop())); // @
@@ -590,7 +596,7 @@ void DATE_do__gt_AD() // DATE$>AD
 void UNK_0xf19a() // UNK_0xf19a
 {
   UNK_0xeefc(); // UNK_0xeefc
-  Push(0x65f4); // IFIELD(INST-DA)
+  Push(0x65e1+INST_dash_DA.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xeeea(); // UNK_0xeeea
   DATE_do__gt_AD(); // DATE$>AD
@@ -619,7 +625,7 @@ void UNK_0xf1a8() // UNK_0xf1a8
     Push(Read16(Pop())); // @
   } else
   {
-    Push(0x65ec); // IFIELD(INST-QT)
+    Push(0x65e1+INST_dash_QT.offset); // IFIELD
     Push(Read16(Pop())); // @
   }
   UNK_0xf066(); // UNK_0xf066
@@ -638,7 +644,7 @@ void UNK_0xf1d4() // UNK_0xf1d4
   CMOVE_2(); // CMOVE_2
   LoadData(UNK_0xeeae); // from 'STIS        '
   Push(Read16(Pop())); // @
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   UNK_0xf066(); // UNK_0xf066
 }
@@ -784,12 +790,12 @@ void UNK_0xf28e() // UNK_0xf28e
     Push(0);
     Push(1);
     _star_CREATE(); // *CREATE
-    Push(0x65f2); // IFIELD(TEXT-TE)
+    Push(0x65e1+TEXT_dash_TE.offset); // IFIELD
     Push(0x0026);
     CMOVE_2(); // CMOVE_2
-    Push(0x65ef); // IFIELD(TEXT-IN)
+    Push(0x65e1+TEXT_dash_IN.offset); // IFIELD
     _1_dot_5_ex__2(); // 1.5!_2
-    Push(0x65ec); // IFIELD(TEXT-CO)
+    Push(0x65e1+TEXT_dash_CO.offset); // IFIELD
     _1_dot_5_ex__2(); // 1.5!_2
     ICLOSE(); // ICLOSE
     Push(1);
@@ -1058,12 +1064,12 @@ void _gt_BOX() // >BOX
       } while(Pop() == 0);
       Pop(); // DROP
       _gt_C_plus_S(); // >C+S
-      Push(0x65ec); // IFIELD(INST-QT)
+      Push(0x65e1+INST_dash_QT.offset); // IFIELD
       Push(Read16(Pop())); // @
       CI(); // CI
       ICLOSE(); // ICLOSE
       _gt_INACTI(); // >INACTI
-      Push(0x65ec); // IFIELD(INST-QT)
+      Push(0x65e1+INST_dash_QT.offset); // IFIELD
       _plus__ex__2(); // +!_2
       ICLOSE(); // ICLOSE
     } else
@@ -1090,7 +1096,7 @@ void _gt_BOX() // >BOX
 void _ro_BOX_gt__rc_() // (BOX>)
 {
   _ask_ELEMENT(); // ?ELEMENT
-  Push(0x65ec); // IFIELD(INST-QT)
+  Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
   Push(pp_ELEM_dash_AM); // ELEM-AM
   Push(Read16(Pop())); // @
@@ -1101,7 +1107,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
     Push(pp_ELEM_dash_AM); // ELEM-AM
     Push(Read16(Pop())); // @
     Push(-Pop()); // NEGATE
-    Push(0x65ec); // IFIELD(INST-QT)
+    Push(0x65e1+INST_dash_QT.offset); // IFIELD
     _plus__ex__2(); // +!_2
     _at_INST_dash_C(); // @INST-C
     _at_INST_dash_S(); // @INST-S
@@ -1109,7 +1115,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
     _gt_C_plus_S(); // >C+S
     Push(pp_ELEM_dash_AM); // ELEM-AM
     Push(Read16(Pop())); // @
-    Push(0x65ec); // IFIELD(INST-QT)
+    Push(0x65e1+INST_dash_QT.offset); // IFIELD
     _ex__2(); // !_2
     C_gt_(); // C>
     return;
