@@ -772,6 +772,12 @@ void SetStructDone(int ovidx)
             pline[parp+4].done = TRUE;
             pline[parp+5].done = TRUE;
         }
+        if (dict[i].codep == CODEIFIELD)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+            pline[parp+2].done = TRUE;
+        }
         if (dict[i].codep == CODECONSTANT)
         {
             pline[parp+0].done = TRUE;
@@ -786,7 +792,6 @@ void SetStructDone(int ovidx)
         }
     }
 }
-
 
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 {
@@ -834,6 +839,10 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
             DICTENTRY *e = GetDictEntry(i+3, ovidx);
         }
         if (Read16(i+1) == CODECONSTANT)
+        {
+            DICTENTRY *e = GetDictEntry(i+3, ovidx);
+        }
+        if (Read16(i+1) == CODEIFIELD)
         {
             DICTENTRY *e = GetDictEntry(i+3, ovidx);
         }

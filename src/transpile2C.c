@@ -148,7 +148,6 @@ void WriteExtern(FILE *fp, int ovidx)
         (dict[i].codep == CODEFUNC5) ||
         (dict[i].codep == CODEFUNC6) ||
         (dict[i].codep == CODESETVOCABULARY) ||
-        (dict[i].codep == CODEIFIELD) ||
         (dict[i].codep == IFIELDOFFSET) ||
         (dict[i].codep == CODEFUNC9) ||
         (dict[i].codep == CODEARRAY) ||
@@ -183,6 +182,13 @@ void WriteExtern(FILE *fp, int ovidx)
         if (dict[i].codep != CODELOADDATA) continue;
         if (!dict[i].doextern) continue;
         fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = FALSE;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODEIFIELD) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern IFieldType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].doextern = FALSE;
     }
     for(i=0; i<ndict; i++)
@@ -392,7 +398,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     }
     if (e->codep == CODEIFIELD)
     {
-        snprintf(ret, STRINGLEN, "Push(0x%04x); // IFIELD(%s)\n", IFIELDOFFSET + Read8(e->parp+1), s);
+        snprintf(ret, STRINGLEN, "Push(0x%04x+%s.offset); // IFIELD\n", IFIELDOFFSET, Forth2CString(s));
         return;
     }
     if (e->codep == CODEFUNC9)
@@ -961,6 +967,16 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     Read16(efunc->parp+4));
 
                     addr = efunc->parp+6-1;
+                    continue;
+
+                case CODEIFIELD:
+                    fprintf(fp, "IFieldType %s = {0x%02x, 0x%02x, 0x%02x};\n",
+                    Forth2CString(s),
+                    Read8(efunc->parp+0),
+                    Read8(efunc->parp+1),
+                    Read8(efunc->parp+2));
+
+                    addr = efunc->parp+3-1;
                     continue;
 
                 case CODECONSTANT:

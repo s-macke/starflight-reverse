@@ -11,6 +11,13 @@ typedef struct
     unsigned short addr;
 } LoadDataType; // Also called AFIELD
 
+typedef struct
+{
+    unsigned char unknown;
+    unsigned char offset;
+    unsigned char size;
+} IFieldType;
+
 typedef void (*WordCallDef)();
 
     void Func3(char *s);
