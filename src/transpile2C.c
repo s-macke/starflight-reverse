@@ -32,6 +32,7 @@ void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
         fprintf(fpc, "// store offset = 0x%04x\n", head->storeofs);
         fprintf(fpc, "// overlay size   = 0x%04x\n", head->ovlsize);
         fprintf(fpc, "\n#include\"../../emul/cpu.h\"\n");
+        fprintf(fpc, "\n#include\"../data.h\"\n");
         fprintf(fpc, "#include\"../../emul/starflt1.h\"\n\n");
 
         sprintf(filename, OUTDIR"/overlays/%s.h", overlays[ovidx].name);
@@ -84,7 +85,6 @@ unsigned int IsPushNumber(int addr, DICTENTRY *e)
     if (strcmp(e->r, "2") == 0) return 2;
     return 0x10000; // Invalid
 }
-
 
 void WriteHeaderFile(FILE *fph, int ovidx)
 {
@@ -358,7 +358,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     if (e->codep == CODELOADDATA)
     {
         int idx = Read8(e->parp);
-        snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), GetDirByIdx(idx)->name);
+        snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), GetDirNameByIdx(idx));
         return;
     }
     if (e->codep == CODETABLE)
@@ -958,9 +958,9 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
             switch(efunc->codep)
             {
                 case CODELOADDATA:
-                    fprintf(fp, "LoadDataType %s = {0x%02x, 0x%02x, 0x%02x, 0x%02x, 0x%04x};\n",
+                    fprintf(fp, "LoadDataType %s = {%sIDX, 0x%02x, 0x%02x, 0x%02x, 0x%04x};\n",
                     Forth2CString(s),
-                    Read8(efunc->parp+0),
+                    GetDirNameByIdx(Read8(efunc->parp+0)),
                     Read8(efunc->parp+1),
                     Read8(efunc->parp+2),
                     Read8(efunc->parp+3),
@@ -970,9 +970,9 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     continue;
 
                 case CODEIFIELD:
-                    fprintf(fp, "IFieldType %s = {0x%02x, 0x%02x, 0x%02x};\n",
+                    fprintf(fp, "IFieldType %s = {%sIDX, 0x%02x, 0x%02x};\n",
                     Forth2CString(s),
-                    Read8(efunc->parp+0),
+                    GetDirNameByIdx(Read8(efunc->parp+0)),
                     Read8(efunc->parp+1),
                     Read8(efunc->parp+2));
 

@@ -9,14 +9,14 @@ typedef struct
     unsigned char fileidx;
     unsigned char dummy2, blocksize1, blocksize2;
     unsigned short addr;
-} LoadDataType; // Also called AFIELD
+} LoadDataType; // Also called AFIELD, maybe ascii
 
 typedef struct
 {
-    unsigned char unknown;
+    unsigned char fileidx;
     unsigned char offset;
     unsigned char size;
-} IFieldType;
+} IFieldType; // Instance field
 
 typedef void (*WordCallDef)();
 

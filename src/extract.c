@@ -34,6 +34,40 @@ DIRENTRY* GetDirByIdx(int idx)
     return NULL;
 }
 
+char* GetDirNameByIdx(int idx)
+{
+    int i, j;
+    static char ret[13];
+    memset(ret, 0, 13);
+
+#ifdef STARFLT2
+    if (idx == 149) return "MARKET2";
+    if (idx == 89) return "ECOSYSTEM2";
+#endif
+
+    for(i=0; i<ndir; i++)
+    {
+        if (idx == dir[i].idx)
+        {
+            for(j=0; j<12; j++)
+            {
+                if (dir[i].name[j] == ' ') return ret;
+                if
+                (
+                (dir[i].name[j] == '-') ||
+                (dir[i].name[j] == '*') ||
+                (dir[i].name[j] == ':') ||
+                (dir[i].name[j] == '/') ||
+                (dir[i].name[j] == '\'')
+                )
+                ret[j] = '_'; else ret[j] = dir[i].name[j];
+            }
+            return ret;
+        }
+    }
+    return ret;
+}
+
 DIRENTRY* GetDirByAddr(int startaddr)
 {
     int i=0;
@@ -66,7 +100,6 @@ void LoadDir(FILE *fp)
             fread(&de.blocksize, 1, 1, file);
             fread(&de.lsize, 1, 1, file);
             de.idx = ndir;
-
             memcpy((void*)&dir[ndir], (void*)&de, sizeof(DIRENTRY));
             ndir++;
         }
@@ -100,22 +133,13 @@ void LoadDir(FILE *fp)
 
 }
 
-char* Extract(int diridx, int *size)
+char* Extract(int fileidx, int *size)
 {
     int i, j;
-
-    int idx = -1;
-    for(i = 0; i<ndir; i++)
-    {
-        if (dir[i].idx == diridx)
-        {
-            idx = i;
-            break;
-        }
-    }
-    if (idx == -1) exit(1);
+    DIRENTRY *de = GetDirByIdx(fileidx);
+    if (de == NULL) exit(1);
     FILE *file;
-    int start = dir[idx].start*16;
+    int start = de->start*16;
     if (start >= 256000)
     {
         file = fopen(FILESTARB, "rb");
@@ -124,7 +148,7 @@ char* Extract(int diridx, int *size)
     {
         file = fopen(FILESTARA, "rb");
     }
-    int l = ((dir[idx].end - dir[idx].start)+1)*16;
+    int l = ((de->end - de->start)+1)*16;
     *size = l;
 
     char *buf = malloc(l);
@@ -137,6 +161,45 @@ char* Extract(int diridx, int *size)
 
     return buf;
 }
+
+char* ExtractRecord(int fileidx, int recordidx, int *size)
+{
+    int i;
+    static char record[256];
+    memset(record, 0, 256);
+
+    DIRENTRY *de = GetDirByIdx(fileidx);
+    if (de == NULL) exit(1);
+    FILE *file;
+    int start = de->start*16;
+    if (start >= 256000)
+    {
+        file = fopen(FILESTARB, "rb");
+        start -= 256000;
+    } else
+    {
+        file = fopen(FILESTARA, "rb");
+    }
+
+    if ((start&(~1023)) != ((start+de->blocksize)&(~1023)))
+    {
+        start = (start+de->blocksize)&(~1023);
+    }
+    for(i=0; i<recordidx; i++)
+    {
+        start = start+de->blocksize;
+        if ((start&(~1023)) != ((start+de->blocksize)&(~1023)))
+        {
+            start = (start+de->blocksize)&(~1023);
+        }
+    }
+
+    fseek(file, start, SEEK_SET);
+    fread(record, dir->blocksize, 1, file);
+    fclose(file);
+    return record;
+}
+
 
 unsigned short GetStartAddress(int diridx)
 {
@@ -175,14 +238,17 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         {
             fprintf(fp, "%i %i %i %i %i %i %i", buf[a+11], buf[a+12], buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17]);
         }
+        if (class == 0x0d) // bank lsize=9
+        {
+            fprintf(fp, "%i %i balance:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+        }
         if (class == 0x0e) // bank-trans lsize=6
         {
             fprintf(fp, "%i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
         }
         fprintf(fp, "\n");
 
-        if (children != 0)
-            IterSibling(fp, buf, iter+1, children);
+        if (children != 0) IterSibling(fp, buf, iter+1, children);
         addr = next;
         if (next == 0) return;
 
@@ -237,3 +303,61 @@ void ExtractDictionary(const char* filename)
     }
     fclose(fp);
 }
+
+void ExtractBankRecords(FILE *fp, int idx, const char *label)
+{
+    int i;
+    fprintf(fp, "char *%s_STRINGS[] =\n{\n", label);
+    DIRENTRY *de = GetDirByIdx(idx);
+    int size;
+
+    for(int i=0; i<de->nblocks; i++)
+    {
+        char* buf = ExtractRecord(de->idx, i, &size);
+        int n = buf[0];
+        fprintf(fp, "  \"");
+        for(int j=1; j<=n; j++)
+        {
+            fprintf(fp, "%c", buf[j]);
+        }
+        if (i != de->nblocks-1) fprintf(fp, "\",\n"); else fprintf(fp, "\"\n");
+    }
+    fprintf(fp, "};\n\n");
+}
+
+void ExtractDataFile(const char* filename)
+{
+    int idx, j;
+
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot write file %s\n", filename);
+        exit(1);
+    }
+
+    fprintf(fp, "#ifndef DATA_H\n");
+    fprintf(fp, "#define DATA_H\n\n");
+
+    fprintf(fp, "typedef enum\n{\n");
+#ifdef STARFLT1
+    int n = 144;
+#else
+    int n = 155;
+#endif
+    for(idx = 0; idx<n; idx++)
+    {
+        char *name = GetDirNameByIdx(idx);
+        if (name[0] == '<') continue;
+        fprintf(fp, "  ");
+        fprintf(fp, "%s", name);
+        fprintf(fp, "IDX = %i,\n", dir[idx].idx);
+    }
+    fprintf(fp, "} FILEINDEXES;\n\n");
+
+    ExtractBankRecords(fp, 0xe, "BANK");
+
+    fprintf(fp, "#endif\n");
+    fclose(fp);
+}
+

@@ -115,6 +115,7 @@ int main()
     FILE *fph;
 
     ExtractDirectory();
+    ExtractDataFile(OUTDIR"/data.h");
     ExtractInstance(OUTDIR"/data/instance.txt");
 #ifdef STARFLT2
     ExtractDictionary(OUTDIR"/data/dictionary.txt");

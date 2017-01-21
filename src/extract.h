@@ -27,9 +27,11 @@ char* Extract(int diridx, int *size);
 unsigned short GetStartAddress(int diridx);
 DIRENTRY* GetDirByAddr(int startaddr);
 DIRENTRY* GetDirByIdx(int idx);
+char* GetDirNameByIdx(int idx);
 
 void ExtractOverlay(int ovidx, OVLHeader *head, unsigned char *mem);
 void ExtractInstance(const char* filename);
 void ExtractDictionary(const char* filename);
+void ExtractDataFile(const char* filename);
 
 #endif
