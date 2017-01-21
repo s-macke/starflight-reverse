@@ -14,7 +14,7 @@
 void LoadOverlayDict(int ovidx)
 {
     OVLHeader head;
-    LoadOverlay(ovidx, &head, mem);
+    ExtractOverlay(ovidx, &head, mem);
     int i;
     for(i=0; i<8; i+=2)
     {
@@ -31,7 +31,7 @@ void ParseOverlay(int ovidx)
     // first two byte contain offset in file and then two bytes with size of overlay
 
     OVLHeader head;
-    LoadOverlay(ovidx, &head, mem);
+    ExtractOverlay(ovidx, &head, mem);
     int namep = (head.buf[0x6] | (head.buf[0x7]<<8));
     int minaddr = head.storeofs+0x8+0xa;
     int maxaddr = head.storeofs+head.ovlsize;
@@ -93,7 +93,7 @@ void DisasStarflt()
     Transpile(NULL, ovidx, minaddr, maxaddr);
 }
 
-void OutputDirectory()
+void ExtractDirectory()
 {
     FILE *fp;
     fp = fopen(OUTDIR"/directory.txt", "w");
@@ -114,8 +114,11 @@ int main()
     FILE *fpc;
     FILE *fph;
 
-    OutputDirectory();
-
+    ExtractDirectory();
+    ExtractInstance(OUTDIR"/data/instance.txt");
+#ifdef STARFLT2
+    ExtractDictionary(OUTDIR"/data/dictionary.txt");
+#endif
 // ---------------------
 
     for(i=0; overlays[i].name != NULL; i++)

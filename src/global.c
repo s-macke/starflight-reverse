@@ -258,6 +258,9 @@ WORDRENAME renamewords[] =
     {0x08, 0xefc5, "SET-BANK"}, // "UNK_0xefc5" BANK-OV
     {0x08, 0xf4c4, ".BANK"}, // "UNK_0xf4c4" BANK-OV
     {0x08, 0xf4ac, ".BALANCE"}, // "UNK_0xf4ac" BANK-OV
+    {0x08, 0xefa4, "MASTERBALANCE"}, // "UNK_0xefa4" BANK-OV
+    {0x08, 0xefa9, "BALANCE"}, // "UNK_0xefa9" BANK-OV
+    {0x08, 0xefae, "TFLAG"}, // "UNK_0xefae" BANK-OV
     {0x2A, 0xe3bc, "BORDER"}, // "UNK_0xe3bc" GAME-OV
     {0x2A, 0xe5c1, ".LOADHEAD"}, // "UNK_0xe5c1" GAME-OV
     {0x2A, 0xeddc, "DATALOAD"}, // "UNK_0xeddc" GAME-OV

@@ -7,7 +7,7 @@ typedef struct
     // FILE-START
 
     unsigned char fileidx;
-    unsigned char dummy2, dummy3, dummy4;
+    unsigned char dummy2, blocksize1, blocksize2;
     unsigned short addr;
 } LoadDataType; // Also called AFIELD
 

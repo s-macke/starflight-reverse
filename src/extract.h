@@ -22,10 +22,14 @@ typedef struct
     unsigned char *buf;
 } OVLHeader;
 
-char* Extract(int diridx, int *size);
 void LoadDir(FILE *fp);
+char* Extract(int diridx, int *size);
 unsigned short GetStartAddress(int diridx);
-char* FindDirEntry(int startaddr);
-void LoadOverlay(int ovidx, OVLHeader *head, unsigned char *mem);
+DIRENTRY* GetDirByAddr(int startaddr);
+DIRENTRY* GetDirByIdx(int idx);
+
+void ExtractOverlay(int ovidx, OVLHeader *head, unsigned char *mem);
+void ExtractInstance(const char* filename);
+void ExtractDictionary(const char* filename);
 
 #endif

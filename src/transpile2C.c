@@ -351,8 +351,8 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     }
     if (e->codep == CODELOADDATA)
     {
-        int addr = Read16(e->parp+4);
-        snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), FindDirEntry(addr));
+        int idx = Read8(e->parp);
+        snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), GetDirByIdx(idx)->name);
         return;
     }
     if (e->codep == CODETABLE)

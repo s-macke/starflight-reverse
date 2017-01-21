@@ -4,7 +4,6 @@
 #include"global.h"
 #include"extract.h"
 
-
 DIRENTRY dir[512];
 int ndir = 0;
 
@@ -25,27 +24,24 @@ void SortDirectory()
     }
 }
 
-char* FindDirEntry(int startaddr)
+DIRENTRY* GetDirByIdx(int idx)
 {
-    static char str[15];
-    memset(str, 15, 0);
-
     int i=0;
-
     for(i=0; i<ndir; i++)
     {
-        if (startaddr == dir[i].start)
-        {
-            for(int j=0; j<12; j++)
-            {
-                if (dir[i].name[j] < 0x20) return str;
-                str[j] = dir[i].name[j];
-
-            }
-            return str;
-        }
+        if (idx == dir[i].idx) return &dir[i];
     }
-    return str;
+    return NULL;
+}
+
+DIRENTRY* GetDirByAddr(int startaddr)
+{
+    int i=0;
+    for(i=0; i<ndir; i++)
+    {
+        if (startaddr == dir[i].start) return &dir[i];
+    }
+    return NULL;
 }
 
 void LoadDir(FILE *fp)
@@ -107,8 +103,6 @@ void LoadDir(FILE *fp)
 char* Extract(int diridx, int *size)
 {
     int i, j;
-    static char buf[0x100000];
-    memset(buf, 0, 0x100000);
 
     int idx = -1;
     for(i = 0; i<ndir; i++)
@@ -133,6 +127,8 @@ char* Extract(int diridx, int *size)
     int l = ((dir[idx].end - dir[idx].start)+1)*16;
     *size = l;
 
+    char *buf = malloc(l);
+    memset(buf, 0, l);
 
     fseek(file, start, SEEK_SET);
     fread(buf, l, 1, file);
@@ -147,7 +143,7 @@ unsigned short GetStartAddress(int diridx)
     return dir[diridx].start;
 }
 
-void LoadOverlay(int ovidx, OVLHeader *head, unsigned char *mem)
+void ExtractOverlay(int ovidx, OVLHeader *head, unsigned char *mem)
 {
     head->size = 0;
     head->buf = (unsigned char*)Extract(overlays[ovidx].id, &head->size);
@@ -158,3 +154,86 @@ void LoadOverlay(int ovidx, OVLHeader *head, unsigned char *mem)
     memcpy(&mem[head->storeofs], head->buf, head->ovlsize);
 }
 
+void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
+{
+    int addr = first;
+    unsigned int next, previous, children;
+    int i;
+    do
+    {
+        int a = addr - 0x1000;
+        next = ((buf[a+0])<<0) | ((buf[a+1])<<8) | ((buf[a+2])<<16);
+        previous = ((buf[a+3])<<0) | ((buf[a+4])<<8) | ((buf[a+5])<<16);
+        children = ((buf[a+6])<<0) | ((buf[a+7])<<8) | ((buf[a+8])<<16);
+        unsigned int class = buf[a+9];
+        unsigned int species = buf[a+10];
+        DIRENTRY *de = GetDirByIdx(class);
+        for(i=0; i<iter; i++) fprintf(fp, "  ");
+        //fprintf(fp, "0x%06x: 0x%06x 0x%06x 0x%06x 0x%02x 0x%02x %s\n", addr, next, previous, children, class, species, GetDirByIdx(class));
+        fprintf(fp, "%s species:%i size:%i   ", de->name, species, de->lsize);
+        if (class == 0x17) // starsystem lsize=8 for starflt1, lsize=9 for starflt2
+        {
+            fprintf(fp, "%i %i %i %i %i %i %i", buf[a+11], buf[a+12], buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17]);
+        }
+        if (class == 0x0e) // bank-trans lsize=6
+        {
+            fprintf(fp, "%i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+        }
+        fprintf(fp, "\n");
+
+        if (children != 0)
+            IterSibling(fp, buf, iter+1, children);
+        addr = next;
+        if (next == 0) return;
+
+    } while(next != first);
+}
+
+void ExtractInstance(const char* filename)
+{
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot write file %s\n", filename);
+        exit(1);
+    }
+
+    int size;
+    unsigned char* buf = Extract(0x1, &size);
+    IterSibling(fp, buf, 0, 0x1006);
+    fclose(fp);
+}
+
+// only in starflt2
+// code in pp_DICT, Load-DI, >XOR
+void ExtractDictionary(const char* filename)
+{
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot write file %s\n", filename);
+        exit(1);
+    }
+
+    int i;
+    int size;
+    unsigned char* buf = Extract(0x6, &size);
+    for(i=0; i<size; i++)
+    {
+        buf[i] = buf[i] ^ 0x7F;
+    }
+
+    int addr = 0x10;
+    for(i=0; i<4597; i++)
+    {
+        int n = buf[addr+2];
+        fprintf(fp, "0x%04x: '", addr);
+        for(int j=0; j<n; j++)
+        {
+            fprintf(fp, "%c", buf[addr+j+3]);
+        }
+        fprintf(fp, "' 0x%04x\n", buf[addr+0]|(buf[addr+1]<<8));
+        addr += n+3;
+    }
+    fclose(fp);
+}
