@@ -1,6 +1,8 @@
 #ifndef STARFLT_H
 #define STARFLT_H
 
+typedef void ForthFunctionType(void);
+
 typedef struct
 {
     // FILE-RL
@@ -18,9 +20,19 @@ typedef struct
     unsigned char size;
 } IFieldType; // Instance field
 
+
+typedef struct
+{
+    unsigned short int width;
+    unsigned short int height;
+    unsigned short bx;
+    unsigned short ds;
+} ArrayType;
+
+
 typedef void (*WordCallDef)();
 
-    void Func3(char *s);
+    void SIGFLD(char *s);
     void Func6(char *s);
     void Func8(char *s);
     void Func14(char *s);
@@ -35,7 +47,7 @@ typedef void (*WordCallDef)();
     void DOTASKS2(WordCallDef a, WordCallDef b, WordCallDef c, WordCallDef d);
 
     void Rule(char *s);
-    void ReadArray(unsigned short a, unsigned short b);
+    void ReadArray(ArrayType a);
     void ABORT(char *s, int n);
     void CODE();
     void MODULE();

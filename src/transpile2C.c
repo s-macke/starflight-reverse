@@ -143,14 +143,13 @@ void WriteExtern(FILE *fp, int ovidx)
         (dict[i].codep == CODELOADOVERLAY) ||
         (dict[i].codep == CODETABLE) ||
         (dict[i].codep == CODESETCOLOR) ||
-        (dict[i].codep == CODEFUNC3) ||
+        (dict[i].codep == CODESIGFLD) ||
         (dict[i].codep == CODEPUSH2WORDS) ||
         (dict[i].codep == CODEFUNC5) ||
         (dict[i].codep == CODEFUNC6) ||
         (dict[i].codep == CODESETVOCABULARY) ||
         (dict[i].codep == IFIELDOFFSET) ||
         (dict[i].codep == CODEFUNC9) ||
-        (dict[i].codep == CODEARRAY) ||
         (dict[i].codep == CODEFUNC12) ||
         (dict[i].codep == CODEEXEC)
         ) dict[i].doextern = FALSE;
@@ -189,6 +188,13 @@ void WriteExtern(FILE *fp, int ovidx)
         if (dict[i].codep != CODEIFIELD) continue;
         if (!dict[i].doextern) continue;
         fprintf(fp, "extern IFieldType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].doextern = FALSE;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODE2DARRAY) continue;
+        if (!dict[i].doextern) continue;
+        fprintf(fp, "extern ArrayType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].doextern = FALSE;
     }
     for(i=0; i<ndict; i++)
@@ -371,9 +377,9 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         snprintf(ret, STRINGLEN, "SetColor(\"%s\");\n", s);
         return;
     }
-    if (e->codep == CODEFUNC3)
+    if (e->codep == CODESIGFLD)
     {
-        snprintf(ret, STRINGLEN, "Func3(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "SIGFLD(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEPUSH2WORDS)
@@ -411,7 +417,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         snprintf(ret, STRINGLEN, "%s(); // %s case\n", Forth2CString(s), s);
         return;
     }
-    if (e->codep == CODEARRAY)
+    if (e->codep == CODE2DARRAY)
     {/*
         unsigned short ds = Read16(par + 6);
         unsigned short bx = Read16(par + 4);
@@ -420,7 +426,8 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         Push(ds);
         Push(dx);
         */
-        snprintf(ret, STRINGLEN, "ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
+        //snprintf(ret, STRINGLEN, "ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
+        snprintf(ret, STRINGLEN, "ReadArray(%s); // %s\n", Forth2CString(s), s);
         return;
     }
     if (e->codep == CODEFUNC12)
@@ -437,7 +444,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     {
         int par = Read16(Read16(e->parp)+REGDI);
         snprintf(ret, STRINGLEN, "Exec(\"%s\"); // call of word 0x%04x '%s'\n",
-            s, par, GetDictWord(par, currentovidx));
+            Forth2CString(s), par, GetDictWord(par, currentovidx));
         return;
     }
     if (strcmp(s, ">R") == 0)
@@ -984,11 +991,26 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     addr = efunc->parp+2-1;
                     continue;
 
+                case CODELOADOVERLAY:
+                    fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
+                    addr = efunc->parp+2-1;
+                    continue;
+
                 case CODEPUSH2WORDS:
                     fprintf(fp, "// 0x%04x: dw 0x%04x 0x%04x\n", efunc->parp, Read16(efunc->parp+0), Read16(efunc->parp+2));
                     addr = efunc->parp+4-1;
                     continue;
-            }
+
+                case CODE2DARRAY:
+                    fprintf(fp, "ArrayType %s = {0x%04x, 0x%04x, 0x%04x, 0x%04x};\n",
+                    Forth2CString(s),
+                    Read16(efunc->parp+0),
+                    Read16(efunc->parp+2),
+                    Read16(efunc->parp+4),
+                    Read16(efunc->parp+6));
+                    addr = efunc->parp+8-1;
+                    continue;
+          }
         }
         if (pline[addr].isasm)
         {

@@ -55,7 +55,7 @@ extern WORDRENAME renamewords[];
     #define CODELOADOVERLAY   0x83F8
     #define CODETABLE         0x5275 // "OVT" "IARRAYS"
     #define CODESETCOLOR      0x4ef5 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
-    #define CODEFUNC3         0x6ec1 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
+    #define CODESIGFLD        0x6ec1 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
     #define CODEPUSH2WORDS    0x3b68 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
     #define CODEFUNC5         0x4a96 // "CCASE" (in CASE:)
     #define CODEFUNC6         0x7227 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
@@ -64,7 +64,7 @@ extern WORDRENAME renamewords[];
     #define IFIELDOFFSET      0x63ef
     #define CODEFUNC9         0x3aec // <ON> <OFF> <BLOCK> V= C=
     #define CODECASE          0x4a4f // switch cases
-    #define CODEARRAY         0x4e00 // Arrays
+    #define CODE2DARRAY       0x4e00 // Arrays
     #define CODEFUNC12        0x0000 //
     #define CODERULE          0xb869 //
     #define CODEEXEC          0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
@@ -97,7 +97,7 @@ extern WORDRENAME renamewords[];
     #define CODELOADOVERLAY   0x83DD
     #define CODETABLE         0x53f7 // "OVT" "IARRAYS"
     #define CODESETCOLOR      0x4f96 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
-    #define CODEFUNC3         0x6e67 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
+    #define CODESIGFLD        0x6e67 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
     #define CODEPUSH2WORDS    0x3b74 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
     #define CODEFUNC5         0x4b82 // "CCASE"
     #define CODEFUNC6         0x71d1 // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
@@ -106,7 +106,7 @@ extern WORDRENAME renamewords[];
     #define IFIELDOFFSET      0x65e1
     #define CODEFUNC9         0x3af8 // <ON> <OFF> <BLOCK> V= C=
     #define CODECASE          0x4b3b // switch cases
-    #define CODEARRAY         0x4e6f // global arrays
+    #define CODE2DARRAY       0x4e6f // global arrays
     #define CODEFUNC12        0xa49a // 'F1 'F2 'F3 'F4
     #define CODERULE          0xaccc //
     #define CODEEXEC          0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....

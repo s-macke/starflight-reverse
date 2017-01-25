@@ -783,12 +783,28 @@ void SetStructDone(int ovidx)
             pline[parp+0].done = TRUE;
             pline[parp+1].done = TRUE;
         }
+        if (dict[i].codep == CODELOADOVERLAY)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+        }
         if (dict[i].codep == CODEPUSH2WORDS)
         {
             pline[parp+0].done = TRUE;
             pline[parp+1].done = TRUE;
             pline[parp+2].done = TRUE;
             pline[parp+3].done = TRUE;
+        }
+        if (dict[i].codep == CODE2DARRAY)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+            pline[parp+2].done = TRUE;
+            pline[parp+3].done = TRUE;
+            pline[parp+4].done = TRUE;
+            pline[parp+5].done = TRUE;
+            pline[parp+6].done = TRUE;
+            pline[parp+7].done = TRUE;
         }
     }
 }
@@ -820,36 +836,43 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
 /* Find orphaned words */
 /*
-    for(int i=minaddr; i<maxaddr-3; i++)
+    for(int j=0; j<2; j++)
     {
-        if ((!pline[i+0].done) || (pline[i+1].done) || (pline[i+2].done)) continue;
+        for(int i=minaddr; i<maxaddr-3; i++)
+        {
+            if ((!pline[i+0].done) || (pline[i+1].done) || (pline[i+2].done)) continue;
 
-        if (Read16(i+1) == CODECALL)
-        {
-            DICTENTRY *e = GetDictEntry(i+3, ovidx);
-            Variables vars = GetEmptyVariables();
-            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+            if (Read16(i+1) == CODECALL)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                Variables vars = GetEmptyVariables();
+                ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+            }
+            if (Read16(i+1) == CODELOADDATA)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
+            if (Read16(i+1) == CODEPOINTER)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
+            if (Read16(i+1) == CODECONSTANT)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
+            if (Read16(i+1) == CODEIFIELD)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
+            if (Read16(i+1) == CODE2DARRAY)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
         }
-        if (Read16(i+1) == CODELOADDATA)
-        {
-            DICTENTRY *e = GetDictEntry(i+3, ovidx);
-        }
-        if (Read16(i+1) == CODEPOINTER)
-        {
-            DICTENTRY *e = GetDictEntry(i+3, ovidx);
-        }
-        if (Read16(i+1) == CODECONSTANT)
-        {
-            DICTENTRY *e = GetDictEntry(i+3, ovidx);
-        }
-        if (Read16(i+1) == CODEIFIELD)
-        {
-            DICTENTRY *e = GetDictEntry(i+3, ovidx);
-        }
+        SetWordHeader(ovidx);
+        SetStructDone(ovidx);
     }
 */
-    SetWordHeader(ovidx);
-    SetStructDone(ovidx);
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
