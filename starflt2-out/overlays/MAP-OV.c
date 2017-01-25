@@ -2153,7 +2153,7 @@ void UNK_0xef29() // UNK_0xef29
       UNK_0xedd5(); // UNK_0xedd5
     }
     IsLAST(); // ?LAST
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Push(2);

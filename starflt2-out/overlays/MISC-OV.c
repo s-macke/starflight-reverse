@@ -554,7 +554,7 @@ void UNK_0xf078() // UNK_0xf078
     _2_at_(); // 2@
     _2OVER(); // 2OVER
     D_gt_(); // D>
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Pop(); Pop(); // 2DROP
@@ -877,7 +877,7 @@ void _ro_0_do__do__do_() // (0$$$
     _2_at_(); // 2@
     _2OVER(); // 2OVER
     D_gt_(); // D>
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Pop(); Pop(); // 2DROP

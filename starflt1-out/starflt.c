@@ -6415,7 +6415,7 @@ void _st_NAME_gt_() // <NAME>
 void IsFIND() // ?FIND
 {
   _st_NAME_gt_(); // <NAME>
-  Exec("-FIND"); // call of word 0x17e1 '(-FIND)'
+  Exec("_dash_FIND"); // call of word 0x17e1 '(-FIND)'
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ABORT("Not found", 9);// (ABORT")
   Pop(); // DROP
@@ -6476,7 +6476,7 @@ void EMPTY() // EMPTY
 void FIND() // FIND
 {
   _st_NAME_gt_(); // <NAME>
-  Exec("-FIND"); // call of word 0x17e1 '(-FIND)'
+  Exec("_dash_FIND"); // call of word 0x17e1 '(-FIND)'
   if (Pop() != 0)
   {
     Pop(); // DROP
@@ -6500,7 +6500,7 @@ void FORGET() // FORGET
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Exec("-FIND"); // call of word 0x17e1 '(-FIND)'
+    Exec("_dash_FIND"); // call of word 0x17e1 '(-FIND)'
     if (Pop() == 0) Push(1); else Push(0); // 0=
     UNK_0x0b5d(); // UNK_0x0b5d
   } else
@@ -6573,7 +6573,7 @@ void VOCABULARY() // VOCABULARY
   _co_(); // ,
   Push(0);
   _co_(); // ,
-  Exec("LINKS>"); // call of word 0x1a5c 'UNK_0x1a5c'
+  Exec("LINKS_gt_"); // call of word 0x1a5c 'UNK_0x1a5c'
   CODE(); // (;CODE) inlined assembler code
 // 0x1ab5: call   1649
   Push(user_CONTEXT_2); // CONTEXT_2
@@ -7022,7 +7022,7 @@ void _ro_INTERPRET_rc_() // (INTERPRET)
   do
   {
     _st_NAME_gt_(); // <NAME>
-    Exec("-FIND"); // call of word 0x17e1 '(-FIND)'
+    Exec("_dash_FIND"); // call of word 0x17e1 '(-FIND)'
     if (Pop() != 0)
     {
       Push(user_STATE); // STATE
@@ -7384,7 +7384,7 @@ void UNK_0x20c6() // UNK_0x20c6
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      Exec("-FIND"); // call of word 0x17e1 '(-FIND)'
+      Exec("_dash_FIND"); // call of word 0x17e1 '(-FIND)'
     } else
     {
       Push(0);
@@ -8636,7 +8636,7 @@ void LIST() // LIST
     Push(user_SCR); // SCR
     Push(Read16(Pop())); // @
     DrawLINE(); // .LINE
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     if (Pop() != 0)
     {
       imax = i; // LEAVE
@@ -10308,7 +10308,7 @@ void UNK_0x3715() // UNK_0x3715
   Push(8);
   Push(a); // I'
   Push(1);
-  Exec("R/W"); // call of word 0x36d7 'UNK_0x36d7'
+  Exec("R_slash_W"); // call of word 0x36d7 'UNK_0x36d7'
   Push(b); // I
   Push(b); // I
   Push(6);
@@ -10347,7 +10347,7 @@ void UNK_0x3753() // UNK_0x3753
     Push(8);
     SWAP(); // SWAP
     Push(0);
-    Exec("R/W"); // call of word 0x36d7 'UNK_0x36d7'
+    Exec("R_slash_W"); // call of word 0x36d7 'UNK_0x36d7'
     Push(0);
     SWAP(); // SWAP
     Push(2);
@@ -10500,7 +10500,7 @@ void UNK_0x3849() // UNK_0x3849
   UNK_0x3715(); // UNK_0x3715
   _ro_BUFFER_rc_(); // (BUFFER)
   Pop(); // DROP
-  Exec("DISKERROR?"); // call of word 0x3648 '(DISKERROR?)'
+  Exec("DISKERROR_ask_"); // call of word 0x3648 '(DISKERROR?)'
 }
 
 
@@ -15908,77 +15908,77 @@ void COLORCA() // COLORCA
 // ================================================
 // 0x6a8d: WORD 'MERCATOR' codep=0x4e00 parp=0x6a99
 // ================================================
-// 0x6a99: db 0x30 0x00 0x18 0x00 0x80 0x04 0x91 0x93 '0       '
+ArrayType MERCATOR = {0x0030, 0x0018, 0x0480, 0x9391};
 
 // ================================================
 // 0x6aa1: WORD 'CONANCHOR' codep=0x4e00 parp=0x6aad
 // ================================================
-// 0x6aad: db 0x09 0x00 0x07 0x00 0x3f 0x00 0x8c 0x93 '    ?   '
+ArrayType CONANCHOR = {0x0009, 0x0007, 0x003f, 0x938c};
 
 // ================================================
 // 0x6ab5: WORD 'CONTOUR' codep=0x4e00 parp=0x6ac1
 // ================================================
-// 0x6ac1: db 0x3d 0x00 0x65 0x00 0x11 0x18 0xfe 0x91 '= e     '
+ArrayType CONTOUR = {0x003d, 0x0065, 0x1811, 0x91fe};
 
 // ================================================
 // 0x6ac9: WORD 'ICONIMA' codep=0x4e00 parp=0x6ad5
 // ================================================
-// 0x6ad5: db 0x12 0x00 0x40 0x00 0x80 0x04 0xb2 0x94 '  @     '
+ArrayType ICONIMA = {0x0012, 0x0040, 0x0480, 0x94b2};
 
 // ================================================
 // 0x6add: WORD 'VERTEX' codep=0x4e00 parp=0x6ae8
 // ================================================
-// 0x6ae8: db 0x03 0x00 0x86 0x00 0x92 0x01 0x95 0x96 '        '
+ArrayType VERTEX = {0x0003, 0x0086, 0x0192, 0x9695};
 
 // ================================================
 // 0x6af0: WORD 'FACET' codep=0x4e00 parp=0x6afa
 // ================================================
-// 0x6afa: db 0x04 0x00 0x48 0x00 0x20 0x01 0x79 0x96 '  H   y '
+ArrayType FACET = {0x0004, 0x0048, 0x0120, 0x9679};
 
 // ================================================
 // 0x6b02: WORD 'FACE' codep=0x4e00 parp=0x6b0b
 // ================================================
-// 0x6b0b: db 0x03 0x00 0x48 0x00 0xd8 0x00 0x62 0x96 '  H   b '
+ArrayType FACE = {0x0003, 0x0048, 0x00d8, 0x9662};
 
 // ================================================
 // 0x6b13: WORD 'PPOLY' codep=0x4e00 parp=0x6b1d
 // ================================================
-// 0x6b1d: db 0x05 0x00 0x20 0x03 0xa0 0x0f 0x03 0x95 '        '
+ArrayType PPOLY = {0x0005, 0x0320, 0x0fa0, 0x9503};
 
 // ================================================
 // 0x6b25: WORD 'GVERTEX>GRIDCOLOR' codep=0x4e00 parp=0x6b31
 // ================================================
-// 0x6b31: db 0x03 0x00 0x75 0x00 0x5f 0x01 0x8d 0x94 '  u _   '
+ArrayType GVERTEX_gt_GRIDCOLOR = {0x0003, 0x0075, 0x015f, 0x948d};
 
 // ================================================
 // 0x6b39: WORD 'GPOLY' codep=0x4e00 parp=0x6b43
 // ================================================
-// 0x6b43: db 0x04 0x00 0x59 0x00 0x64 0x01 0x6b 0x94 '  Y d k '
+ArrayType GPOLY = {0x0004, 0x0059, 0x0164, 0x946b};
 
 // ================================================
 // 0x6b4b: WORD 'GRIDCOLOR' codep=0x4e00 parp=0x6b57
 // ================================================
-// 0x6b57: db 0x02 0x00 0x59 0x00 0xb2 0x00 0x54 0x94 '  Y   T '
+ArrayType GRIDCOLOR = {0x0002, 0x0059, 0x00b2, 0x9454};
 
 // ================================================
 // 0x6b5f: WORD 'G1VERT' codep=0x4e00 parp=0x6b6a
 // ================================================
-// 0x6b6a: db 0x03 0x00 0x75 0x00 0x5f 0x01 0x2f 0x94 '  u _ / '
+ArrayType G1VERT = {0x0003, 0x0075, 0x015f, 0x942f};
 
 // ================================================
 // 0x6b72: WORD '9X9COARSE' codep=0x4e00 parp=0x6b7e
 // ================================================
-// 0x6b7e: db 0x09 0x00 0x09 0x00 0x51 0x00 0x28 0x94 '    Q ( '
+ArrayType _9X9COARSE = {0x0009, 0x0009, 0x0051, 0x9428};
 
 // ================================================
 // 0x6b86: WORD '9X9FINE>GVERTEX' codep=0x4e00 parp=0x6b92
 // ================================================
-// 0x6b92: db 0x09 0x00 0x09 0x00 0x51 0x00 0x21 0x94 '    Q ! '
+ArrayType _9X9FINE_gt_GVERTEX = {0x0009, 0x0009, 0x0051, 0x9421};
 
 // ================================================
 // 0x6b9a: WORD 'XFORMVERT' codep=0x4e00 parp=0x6ba6
 // ================================================
-// 0x6ba6: db 0x06 0x00 0x86 0x00 0x24 0x03 0xdd 0x93 '    $   '
+ArrayType XFORMVERT = {0x0006, 0x0086, 0x0324, 0x93dd};
 
 // ================================================
 // 0x6bae: WORD 'IARRAYS' codep=0x5275 parp=0x6bba
@@ -16505,7 +16505,7 @@ void VA_gt_BUF() // VA>BUF
 
 void UNK_0x6f77() // UNK_0x6f77
 {
-  Func3(":SIGNATURE");
+  SIGFLD(":SIGNATURE");
   _2_at_(); // 2@
   SWAP(); // SWAP
 }
@@ -16530,7 +16530,7 @@ void UNK_0x6f81() // UNK_0x6f81
 
 void UNK_0x6f8f() // UNK_0x6f8f
 {
-  Func3(":TIMESTAMP");
+  SIGFLD(":TIMESTAMP");
   Push(Read16(Pop())); // @
   Push(pp_TIMESTAMP); // TIMESTAMP
   Push(Read16(Pop())); // @
@@ -22201,7 +22201,7 @@ void UNK_0x99e8() // UNK_0x99e8
     GetRECORD(); // @RECORD
     Push(0);
     Push(i); // I
-    ReadArray(Read16(0x6ad5 + 6), 0x0480); // ICONIMA
+    ReadArray(ICONIMA); // ICONIMA
     Push(0x0012);
     LCMOVE(); // LCMOVE
     i++;
@@ -22501,7 +22501,7 @@ void UNK_0x9bb6() // UNK_0x9bb6
   unsigned short int i, imax;
   Push(0);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6ad5 + 6), 0x0480); // ICONIMA
+  ReadArray(ICONIMA); // ICONIMA
   Push(pp_ABLT); // ABLT
   Store_3(); // !_3
   Push(pp_BLTSEG); // BLTSEG
@@ -24534,7 +24534,7 @@ void SHIP_dash_CONSOLE() // SHIP-CONSOLE
 
 void _i_KEY() // 'KEY
 {
-  Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+  Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   if (Pop() != 0)
   {
     Push(pp_LKEY); // LKEY
@@ -25768,7 +25768,7 @@ void DOTASKS() // DOTASKS
   Push(1);
   do
   {
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(pp_FORCEKEY); // FORCEKEY
     Push(Read16(Pop())); // @
     Push(Pop() | Pop()); // OR
@@ -26328,7 +26328,7 @@ void DOS() // DOS
 // ================================================
 // 0xb591: WORD 'MUSIC-OV' codep=0x83f8 parp=0xb59e
 // ================================================
-// 0xb59e: db 0x86 0x2d ' -'
+// 0xb59e: dw 0x2d86
 
 // ================================================
 // 0xb5a0: WORD 'HIMUS' codep=0x224c parp=0xb5aa
@@ -26892,7 +26892,7 @@ void RULE_c_() // RULE:
 // ================================================
 // 0xba3e: WORD 'IT-OV' codep=0x83f8 parp=0xba48
 // ================================================
-// 0xba48: db 0xb3 0x93 '  '
+// 0xba48: dw 0x93b3
 
 // ================================================
 // 0xba4a: WORD 'UNK_0xba4c' codep=0x224c parp=0xba4c
@@ -27312,7 +27312,7 @@ IFieldType PHRASE_do_ = {STRINGIDX, 0x0b, 0x00};
 // ================================================
 // 0xbd33: WORD 'MISC-_2' codep=0x83f8 parp=0xbd3d
 // ================================================
-// 0xbd3d: db 0x82 0x71 ' q'
+// 0xbd3d: dw 0x7182
 
 // ================================================
 // 0xbd3f: WORD '=CARGO' codep=0x224c parp=0xbd4a
@@ -27431,7 +27431,7 @@ void OV_ask__dot_EQUIP_dash_OK() // OV?.EQUIP-OK
 // ================================================
 // 0xbe15: WORD 'ENG-O' codep=0x83f8 parp=0xbe1f
 // ================================================
-// 0xbe1f: db 0xa5 0x80 '  '
+// 0xbe1f: dw 0x80a5
 
 // ================================================
 // 0xbe21: WORD 'OV/DA' codep=0x224c parp=0xbe2b
@@ -27474,7 +27474,7 @@ void OVDBA() // OVDBA
 // ================================================
 // 0xbe71: WORD 'BLT-OV' codep=0x83f8 parp=0xbe7c
 // ================================================
-// 0xbe7c: db 0x4c 0x71 'Lq'
+// 0xbe7c: dw 0x714c
 
 // ================================================
 // 0xbe7e: WORD '.RUNBIT' codep=0x224c parp=0xbe8a
@@ -27517,7 +27517,7 @@ void DrawEGARUNBIT() // .EGARUNBIT
 // ================================================
 // 0xbed8: WORD 'SCI-OV' codep=0x83f8 parp=0xbee3
 // ================================================
-// 0xbee3: db 0x99 0x84 '  '
+// 0xbee3: dw 0x8499
 
 // ================================================
 // 0xbee5: WORD 'OV/STATUS' codep=0x224c parp=0xbef3
@@ -27647,7 +27647,7 @@ void IsVCYCLE() // ?VCYCLE
 // ================================================
 // 0xbffc: WORD 'HEAL-O' codep=0x83f8 parp=0xc007
 // ================================================
-// 0xc007: db 0xba 0x8e '  '
+// 0xc007: dw 0x8eba
 
 // ================================================
 // 0xc009: WORD '(OBI' codep=0x224c parp=0xc012
@@ -27765,7 +27765,7 @@ void IsAPP() // ?APP
 // ================================================
 // 0xc0ce: WORD 'REPAIR-' codep=0x83f8 parp=0xc0da
 // ================================================
-// 0xc0da: db 0x07 0x8f '  '
+// 0xc0da: dw 0x8f07
 
 // ================================================
 // 0xc0dc: WORD 'DO-REPA' codep=0x224c parp=0xc0e8
@@ -27838,7 +27838,7 @@ void MREPAIR() // MREPAIR
 // ================================================
 // 0xc177: WORD 'COMM-OV' codep=0x83f8 parp=0xc183
 // ================================================
-// 0xc183: db 0x7d 0x7c '}|'
+// 0xc183: dw 0x7c7d
 
 // ================================================
 // 0xc185: WORD 'OVINIT-COMM' codep=0x224c parp=0xc195
@@ -28000,7 +28000,7 @@ void DA_dash_STR() // DA-STR
 // ================================================
 // 0xc2a6: WORD 'XCOM-OV' codep=0x83f8 parp=0xc2b2
 // ================================================
-// 0xc2b2: db 0x41 0x7e 'A~'
+// 0xc2b2: dw 0x7e41
 
 // ================================================
 // 0xc2b4: WORD 'XCOMM' codep=0x224c parp=0xc2be
@@ -28021,7 +28021,7 @@ void XCOMM() // XCOMM
 // ================================================
 // 0xc2e2: WORD 'FRACT-OV' codep=0x83f8 parp=0xc2ef
 // ================================================
-// 0xc2ef: db 0x3c 0x6e '<n'
+// 0xc2ef: dw 0x6e3c
 
 // ================================================
 // 0xc2f1: WORD 'MERCATOR-GEN' codep=0x224c parp=0xc302
@@ -28075,7 +28075,7 @@ void SCRLCON() // SCRLCON
 // ================================================
 // 0xc362: WORD 'ORBIT-OV' codep=0x83f8 parp=0xc36f
 // ================================================
-// 0xc36f: db 0x86 0x81 '  '
+// 0xc36f: dw 0x8186
 
 // ================================================
 // 0xc371: WORD 'INIT-ORBIT' codep=0x224c parp=0xc380
@@ -28166,7 +28166,7 @@ void MROTATE() // MROTATE
 // ================================================
 // 0xc41a: WORD 'ICONP-OV' codep=0x83f8 parp=0xc427
 // ================================================
-// 0xc427: db 0x5e 0x6f '^o'
+// 0xc427: dw 0x6f5e
 
 // ================================================
 // 0xc429: WORD 'ICON-PARM' codep=0x224c parp=0xc437
@@ -28198,7 +28198,7 @@ void _plus_ICONBXOV() // +ICONBXOV
 // ================================================
 // 0xc472: WORD 'SITE-OV' codep=0x83f8 parp=0xc47e
 // ================================================
-// 0xc47e: db 0x92 0x6f ' o'
+// 0xc47e: dw 0x6f92
 
 // ================================================
 // 0xc480: WORD '(.MERC)' codep=0x224c parp=0xc48c
@@ -28233,7 +28233,7 @@ void _ro_GETSITE_rc_() // (GETSITE)
 // ================================================
 // 0xc4cd: WORD 'FLUX-OV' codep=0x83f8 parp=0xc4d9
 // ================================================
-// 0xc4d9: db 0xfc 0x89 '  '
+// 0xc4d9: dw 0x89fc
 
 // ================================================
 // 0xc4db: WORD 'OVFLU' codep=0x224c parp=0xc4e5
@@ -28254,7 +28254,7 @@ void OVFLU() // OVFLU
 // ================================================
 // 0xc50c: WORD 'BANK-OV' codep=0x83f8 parp=0xc518
 // ================================================
-// 0xc518: db 0xdc 0x71 ' q'
+// 0xc518: dw 0x71dc
 
 // ================================================
 // 0xc51a: WORD 'OVINIT-BALANCE' codep=0x224c parp=0xc52d
@@ -28366,7 +28366,7 @@ void T_plus_BALANCE() // T+BALANCE
 // ================================================
 // 0xc5f8: WORD 'ACREW-OV' codep=0x83f8 parp=0xc605
 // ================================================
-// 0xc605: db 0x3b 0x72 ';r'
+// 0xc605: dw 0x723b
 
 // ================================================
 // 0xc607: WORD 'U-AC' codep=0x224c parp=0xc610
@@ -28387,7 +28387,7 @@ void U_dash_AC() // U-AC
 // ================================================
 // 0xc638: WORD 'PFILE-OV' codep=0x83f8 parp=0xc645
 // ================================================
-// 0xc645: db 0xea 0x72 ' r'
+// 0xc645: dw 0x72ea
 
 // ================================================
 // 0xc647: WORD 'U-PF' codep=0x224c parp=0xc650
@@ -28408,7 +28408,7 @@ void U_dash_PF() // U-PF
 // ================================================
 // 0xc67a: WORD 'SHIP-GR-OV' codep=0x83f8 parp=0xc689
 // ================================================
-// 0xc689: db 0xf0 0x73 ' s'
+// 0xc689: dw 0x73f0
 
 // ================================================
 // 0xc68b: WORD 'OV.MASS' codep=0x224c parp=0xc697
@@ -28484,7 +28484,7 @@ void OV_dot_CONFIG() // OV.CONFIG
 // ================================================
 // 0xc721: WORD 'CONFIG-OV' codep=0x83f8 parp=0xc72f
 // ================================================
-// 0xc72f: db 0x74 0x74 'tt'
+// 0xc72f: dw 0x7474
 
 // ================================================
 // 0xc731: WORD 'U-SC' codep=0x224c parp=0xc73a
@@ -28505,7 +28505,7 @@ void U_dash_SC() // U-SC
 // ================================================
 // 0xc75f: WORD 'TD-OV' codep=0x83f8 parp=0xc769
 // ================================================
-// 0xc769: db 0x34 0x75 '4u'
+// 0xc769: dw 0x7534
 
 // ================================================
 // 0xc76b: WORD '<TDART' codep=0x224c parp=0xc776
@@ -28564,7 +28564,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 // ================================================
 // 0xc7de: WORD 'OP-OV' codep=0x83f8 parp=0xc7e8
 // ================================================
-// 0xc7e8: db 0x19 0x8a '  '
+// 0xc7e8: dw 0x8a19
 
 // ================================================
 // 0xc7ea: WORD 'U-OP' codep=0x224c parp=0xc7f3
@@ -28585,7 +28585,7 @@ void U_dash_OP() // U-OP
 // ================================================
 // 0xc818: WORD 'PLSET-OV' codep=0x83f8 parp=0xc825
 // ================================================
-// 0xc825: db 0xe3 0x90 '  '
+// 0xc825: dw 0x90e3
 
 // ================================================
 // 0xc827: WORD 'SET-PLANET' codep=0x224c parp=0xc834
@@ -28617,7 +28617,7 @@ void SETC() // SETC
 // ================================================
 // 0xc86b: WORD 'DPART-OV' codep=0x83f8 parp=0xc878
 // ================================================
-// 0xc878: db 0x6c 0x69 'li'
+// 0xc878: dw 0x696c
 
 // ================================================
 // 0xc87a: WORD 'DEPART' codep=0x224c parp=0xc885
@@ -28638,7 +28638,7 @@ void DEPART() // DEPART
 // ================================================
 // 0xc8ab: WORD 'DAMAGE_2' codep=0x83f8 parp=0xc8b7
 // ================================================
-// 0xc8b7: db 0xaf 0x95 '  '
+// 0xc8b7: dw 0x95af
 
 // ================================================
 // 0xc8b9: WORD 'DO-DA' codep=0x224c parp=0xc8c3
@@ -28660,7 +28660,7 @@ void DO_dash_DA() // DO-DA
 // ================================================
 // 0xc8ed: WORD 'COMBAT-O' codep=0x83f8 parp=0xc8fa
 // ================================================
-// 0xc8fa: db 0x2c 0x94 ', '
+// 0xc8fa: dw 0x942c
 
 // ================================================
 // 0xc8fc: WORD '(WA' codep=0x224c parp=0xc904
@@ -28747,7 +28747,7 @@ void WAR() // WAR
 // ================================================
 // 0xc991: WORD 'HMISC-OV' codep=0x83f8 parp=0xc99e
 // ================================================
-// 0xc99e: db 0x08 0x70 ' p'
+// 0xc99e: dw 0x7008
 
 // ================================================
 // 0xc9a0: WORD 'UFM' codep=0x224c parp=0xc9a8
@@ -28976,7 +28976,7 @@ void MHEAT() // MHEAT
 // ================================================
 // 0xcb18: WORD 'NAV-O' codep=0x83f8 parp=0xcb22
 // ================================================
-// 0xcb22: db 0x90 0x85 '  '
+// 0xcb22: dw 0x8590
 
 // ================================================
 // 0xcb24: WORD 'OV/(D' codep=0x224c parp=0xcb2e
@@ -29038,7 +29038,7 @@ void OV_dash_AR() // OV-AR
 // ================================================
 // 0xcb94: WORD 'SHPMOV-OV' codep=0x83f8 parp=0xcba0
 // ================================================
-// 0xcba0: db 0x47 0x87 'G '
+// 0xcba0: dw 0x8747
 
 // ================================================
 // 0xcba2: WORD 'FLY' codep=0x224c parp=0xcbaa
@@ -29177,7 +29177,7 @@ void MUSE_dash_E() // MUSE-E
 // ================================================
 // 0xcc97: WORD 'VITA-OV' codep=0x83f8 parp=0xcca3
 // ================================================
-// 0xcca3: db 0x23 0x77 '#w'
+// 0xcca3: dw 0x7723
 
 // ================================================
 // 0xcca5: WORD 'DIO' codep=0x224c parp=0xccad
@@ -29198,7 +29198,7 @@ void DIO() // DIO
 // ================================================
 // 0xccd3: WORD 'HP-OV' codep=0x83f8 parp=0xccdd
 // ================================================
-// 0xccdd: db 0x01 0x78 ' x'
+// 0xccdd: dw 0x7801
 
 // ================================================
 // 0xccdf: WORD 'C+OPARMS' codep=0x224c parp=0xccec
@@ -29232,7 +29232,7 @@ void BIO() // BIO
 // ================================================
 // 0xcd26: WORD 'LP-OV' codep=0x83f8 parp=0xcd30
 // ================================================
-// 0xcd30: db 0x2f 0x79 '/y'
+// 0xcd30: dw 0x792f
 
 // ================================================
 // 0xcd32: WORD 'OTHER-PAR' codep=0x224c parp=0xcd40
@@ -29253,7 +29253,7 @@ void OTHER_dash_PAR() // OTHER-PAR
 // ================================================
 // 0xcd64: WORD 'SENT-OV' codep=0x83f8 parp=0xcd70
 // ================================================
-// 0xcd70: db 0x79 0x7a 'yz'
+// 0xcd70: dw 0x7a79
 
 // ================================================
 // 0xcd72: WORD '?TALK' codep=0x224c parp=0xcd7c
@@ -29285,7 +29285,7 @@ void SAYIT() // SAYIT
 // ================================================
 // 0xcdb3: WORD 'MAPS-' codep=0x83f8 parp=0xcdbd
 // ================================================
-// 0xcdbd: db 0x79 0x91 'y '
+// 0xcdbd: dw 0x9179
 
 // ================================================
 // 0xcdbf: WORD 'MAPS' codep=0x224c parp=0xcdc8
@@ -29383,7 +29383,7 @@ void _8X8CO() // 8X8CO
 // ================================================
 // 0xce63: WORD 'SEED-OV' codep=0x83f8 parp=0xce6f
 // ================================================
-// 0xce6f: db 0xf4 0x7e ' ~'
+// 0xce6f: dw 0x7ef4
 
 // ================================================
 // 0xce71: WORD 'POPULA' codep=0x224c parp=0xce7c
@@ -29404,7 +29404,7 @@ void POPULA() // POPULA
 // ================================================
 // 0xcea3: WORD 'LISTICONS-OV' codep=0x83f8 parp=0xceb4
 // ================================================
-// 0xceb4: db 0x8a 0x7f ' '
+// 0xceb4: dw 0x7f8a
 
 // ================================================
 // 0xceb6: WORD 'ICONS' codep=0x224c parp=0xcec0
@@ -29425,7 +29425,7 @@ void ICONS() // ICONS
 // ================================================
 // 0xcee4: WORD 'ITEMS-OV' codep=0x83f8 parp=0xcef1
 // ================================================
-// 0xcef1: db 0x2c 0x8b ', '
+// 0xcef1: dw 0x8b2c
 
 // ================================================
 // 0xcef3: WORD '/ITEMS' codep=0x224c parp=0xcefe
@@ -29457,7 +29457,7 @@ void _gt_DEBRIS() // >DEBRIS
 // ================================================
 // 0xcf37: WORD 'MOVE-OV' codep=0x83f8 parp=0xcf43
 // ================================================
-// 0xcf43: db 0xb7 0x7f ' '
+// 0xcf43: dw 0x7fb7
 
 // ================================================
 // 0xcf45: WORD 'TVMOVE' codep=0x224c parp=0xcf50
@@ -29500,7 +29500,7 @@ void StoreE_slash_M() // !E/M
 // ================================================
 // 0xcf99: WORD 'STORM-OV' codep=0x83f8 parp=0xcfa6
 // ================================================
-// 0xcfa6: db 0x5b 0x93 '[ '
+// 0xcfa6: dw 0x935b
 
 // ================================================
 // 0xcfa8: WORD 'DO.STORM' codep=0x224c parp=0xcfb5
@@ -29532,7 +29532,7 @@ void INJURE() // INJURE
 // ================================================
 // 0xcfe9: WORD 'TV-OV' codep=0x83f8 parp=0xcff3
 // ================================================
-// 0xcff3: db 0xa4 0x7b ' {'
+// 0xcff3: dw 0x7ba4
 
 // ================================================
 // 0xcff5: WORD 'TV-DISP' codep=0x224c parp=0xd001
@@ -29619,7 +29619,7 @@ void HEAVEHO() // HEAVEHO
 // ================================================
 // 0xd096: WORD 'BEHAVE-OV' codep=0x83f8 parp=0xd0a4
 // ================================================
-// 0xd0a4: db 0xfa 0x8c '  '
+// 0xd0a4: dw 0x8cfa
 
 // ================================================
 // 0xd0a6: WORD 'TVTASKS' codep=0x224c parp=0xd0b2
@@ -29673,7 +29673,7 @@ void SIMULATE() // SIMULATE
 // ================================================
 // 0xd10d: WORD 'STP-OV' codep=0x83f8 parp=0xd118
 // ================================================
-// 0xd118: db 0xa3 0x96 '  '
+// 0xd118: dw 0x96a3
 
 // ================================================
 // 0xd11a: WORD 'SECURE' codep=0x224c parp=0xd125
@@ -29716,7 +29716,7 @@ void _2NDS() // 2NDS
 // ================================================
 // 0xd16e: WORD 'LAUNC' codep=0x83f8 parp=0xd178
 // ================================================
-// 0xd178: db 0xa7 0x89 '  '
+// 0xd178: dw 0x89a7
 
 // ================================================
 // 0xd17a: WORD 'OVCOU' codep=0x224c parp=0xd184
@@ -29761,7 +29761,7 @@ void DrawAIRL() // .AIRL
 // ================================================
 // 0xd1ce: WORD 'CAP-O' codep=0x83f8 parp=0xd1d8
 // ================================================
-// 0xd1d8: db 0x25 0x83 '% '
+// 0xd1d8: dw 0x8325
 
 // ================================================
 // 0xd1da: WORD 'OV/IT' codep=0x224c parp=0xd1e4
@@ -29826,7 +29826,7 @@ void OV_slash_LO() // OV/LO
 // ================================================
 // 0xd24a: WORD 'DOC-OV' codep=0x83f8 parp=0xd255
 // ================================================
-// 0xd255: db 0x36 0x81 '6 '
+// 0xd255: dw 0x8136
 
 // ================================================
 // 0xd257: WORD 'OV/EXAMINE' codep=0x224c parp=0xd266
@@ -29858,7 +29858,7 @@ void OV_slash_TREAT() // OV/TREAT
 // ================================================
 // 0xd29e: WORD 'AN-OV' codep=0x83f8 parp=0xd2a8
 // ================================================
-// 0xd2a8: db 0x07 0x89 '  '
+// 0xd2a8: dw 0x8907
 
 // ================================================
 // 0xd2aa: WORD 'OV/ANALYSIS' codep=0x224c parp=0xd2ba
@@ -29879,7 +29879,7 @@ void OV_slash_ANALYSIS() // OV/ANALYSIS
 // ================================================
 // 0xd2dd: WORD '*MAP-OV' codep=0x83f8 parp=0xd2e9
 // ================================================
-// 0xd2e9: db 0x43 0x86 'C '
+// 0xd2e9: dw 0x8643
 
 // ================================================
 // 0xd2eb: WORD 'OV/STARMAP' codep=0x224c parp=0xd2fa
@@ -29903,7 +29903,7 @@ void OV_slash_STARMAP() // OV/STARMAP
 // ================================================
 // 0xd327: WORD 'LAND-OV' codep=0x83f8 parp=0xd333
 // ================================================
-// 0xd333: db 0x5b 0x96 '[ '
+// 0xd333: dw 0x965b
 
 // ================================================
 // 0xd335: WORD 'TRY-LAND' codep=0x224c parp=0xd342
@@ -29935,7 +29935,7 @@ void TRY_dash_LAUNCH() // TRY-LAUNCH
 // ================================================
 // 0xd37d: WORD 'BTN-OV' codep=0x83f8 parp=0xd388
 // ================================================
-// 0xd388: db 0xc7 0x85 '  '
+// 0xd388: dw 0x85c7
 
 // ================================================
 // 0xd38a: WORD 'OVFLT' codep=0x224c parp=0xd394
@@ -29956,7 +29956,7 @@ void OVFLT() // OVFLT
 // ================================================
 // 0xd3bd: WORD 'CHKFLT-OV' codep=0x83f8 parp=0xd3cb
 // ================================================
-// 0xd3cb: db 0x00 0x6e ' n'
+// 0xd3cb: dw 0x6e00
 
 // ================================================
 // 0xd3cd: WORD '?FLIGHT-OK' codep=0x224c parp=0xd3dc
@@ -29977,7 +29977,7 @@ void IsFLIGHT_dash_OK() // ?FLIGHT-OK
 // ================================================
 // 0xd401: WORD 'PM-OV' codep=0x83f8 parp=0xd40b
 // ================================================
-// 0xd40b: db 0x60 0x76 '`v'
+// 0xd40b: dw 0x7660
 
 // ================================================
 // 0xd40d: WORD 'PORTM' codep=0x224c parp=0xd417
@@ -29998,7 +29998,7 @@ void PORTM() // PORTM
 // ================================================
 // 0xd43a: WORD 'GAME-O' codep=0x83f8 parp=0xd445
 // ================================================
-// 0xd445: db 0x71 0x8f 'q '
+// 0xd445: dw 0x8f71
 
 // ================================================
 // 0xd447: WORD 'STARTGAME' codep=0x224c parp=0xd452
@@ -30047,7 +30047,7 @@ void LET_dash_THERE_dash_BE_dash_STARFLIGHT() // LET-THERE-BE-STARFLIGHT
   ON_3(); // ON_3
   MOUNTA(); // MOUNTA
   LDFONTS(); // LDFONTS
-  Func3(":TIMESTAMP");
+  SIGFLD(":TIMESTAMP");
   Push(Read16(Pop())); // @
   Push(pp_TIMESTAMP); // TIMESTAMP
   Store_3(); // !_3

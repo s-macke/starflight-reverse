@@ -1639,7 +1639,7 @@ void UNK_0xe67c() // UNK_0xe67c
 void UNK_0xe684() // UNK_0xe684
 {
   Push(Read16(regsp)); // DUP
-  Func3(":TIMEST");
+  SIGFLD(":TIMEST");
   Store_2(); // !_2
 }
 
@@ -1758,7 +1758,7 @@ void UNK_0xe825() // UNK_0xe825
 
 void UNK_0xe84f() // UNK_0xe84f
 {
-  Func3(":SAVE");
+  SIGFLD(":SAVE");
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -2524,7 +2524,7 @@ void UNK_0xed5e() // UNK_0xed5e
 
 void UNK_0xed74() // UNK_0xed74
 {
-  Func3(":SAVE");
+  SIGFLD(":SAVE");
   Store_2(); // !_2
 }
 
@@ -2686,7 +2686,7 @@ void UNK_0xee1c() // UNK_0xee1c
   UNK_0xedea(); // UNK_0xedea
   Push(pp_UNK_0xde16); // UNK_0xde16
   Push(Read16(Pop())); // @
-  Func3(":CKSUM");
+  SIGFLD(":CKSUM");
   Store_2(); // !_2
   UNK_0xed7c(); // UNK_0xed7c
   _ro_SETUP_rc_(); // (SETUP)
@@ -2781,7 +2781,7 @@ void UNK_0xee82() // UNK_0xee82
   UNK_0xedf6(); // UNK_0xedf6
   Push(pp_UNK_0xde16); // UNK_0xde16
   Push(Read16(Pop())); // @
-  Func3(":CKSUM");
+  SIGFLD(":CKSUM");
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -3367,7 +3367,7 @@ void UNK_0xf3d2() // UNK_0xf3d2
 
 void UNK_0xf3e2() // UNK_0xf3e2
 {
-  Func3(":TIMEST");
+  SIGFLD(":TIMEST");
   Push(Read16(Pop())); // @
 }
 

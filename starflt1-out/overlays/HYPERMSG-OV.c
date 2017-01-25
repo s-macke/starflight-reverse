@@ -1068,7 +1068,7 @@ void DO_dash_FLARE() // DO-FLARE
   Pop(); // DROP
   do
   {
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   } while(Pop() == 0);
   BYE(); // BYE
 }

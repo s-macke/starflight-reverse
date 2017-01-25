@@ -1295,7 +1295,7 @@ void UNK_0xe394() // UNK_0xe394
     _2_at_(); // 2@
     _2OVER(); // 2OVER
     D_gt_(); // D>
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Pop(); Pop(); // 2DROP

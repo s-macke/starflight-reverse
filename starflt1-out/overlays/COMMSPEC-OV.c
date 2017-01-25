@@ -1875,7 +1875,7 @@ void UNK_0xf4de() // UNK_0xf4de
     Push(pp_OK_dash_TALK); // OK-TALK
     _2_at_(); // 2@
     D_gt_(); // D>
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
 }

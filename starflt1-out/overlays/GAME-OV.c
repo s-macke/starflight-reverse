@@ -1377,7 +1377,7 @@ void UNK_0xe647() // UNK_0xe647
 void UNK_0xe64f() // UNK_0xe64f
 {
   Push(Read16(regsp)); // DUP
-  Func3(":TIMESTAMP");
+  SIGFLD(":TIMESTAMP");
   Store_3(); // !_3
 }
 
@@ -1441,7 +1441,7 @@ void UNK_0xe78c() // UNK_0xe78c
 
 void UNK_0xe7b6() // UNK_0xe7b6
 {
-  Func3(":SAVE");
+  SIGFLD(":SAVE");
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -2350,7 +2350,7 @@ void UNK_0xed48() // UNK_0xed48
   UNK_0xed16(); // UNK_0xed16
   Push(pp_CKSUM); // CKSUM
   Push(Read16(Pop())); // @
-  Func3(":CKSUM");
+  SIGFLD(":CKSUM");
   Store_3(); // !_3
   _ro_SETUP_rc_(); // (SETUP)
   SAVE_dash_BUFFERS(); // SAVE-BUFFERS
@@ -2363,7 +2363,7 @@ void UNK_0xed48() // UNK_0xed48
 
 void UNK_0xed6a() // UNK_0xed6a
 {
-  Func3(":SAVE");
+  SIGFLD(":SAVE");
   Store_3(); // !_3
 }
 
@@ -2482,7 +2482,7 @@ void DATALOAD() // DATALOAD
   UNK_0xed22(); // UNK_0xed22
   Push(pp_CKSUM); // CKSUM
   Push(Read16(Pop())); // @
-  Func3(":CKSUM");
+  SIGFLD(":CKSUM");
   Push(Read16(Pop())); // @
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -3016,7 +3016,7 @@ void GAMEOPS() // GAMEOPS
 
 void IsGAME_dot_IN_dot_PROGRESS() // ?GAME.IN.PROGRESS
 {
-  Func3(":TIMESTAMP");
+  SIGFLD(":TIMESTAMP");
   Push(Read16(Pop())); // @
 }
 

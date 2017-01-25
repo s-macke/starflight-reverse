@@ -520,7 +520,7 @@ void UNK_0xeb5b() // UNK_0xeb5b
     D_dash_(); // D-
     Push(0x09c4); Push(0x0000);
     D_gt_(); // D>
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
   Pop(); Pop(); // 2DROP

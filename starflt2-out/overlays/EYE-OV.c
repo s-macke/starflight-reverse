@@ -431,7 +431,7 @@ void UNK_0xecf5() // UNK_0xecf5
   do
   {
     UNK_0xecbd(); // UNK_0xecbd
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
   } while(Pop() == 0);
   BYE_2(); // BYE_2
 }

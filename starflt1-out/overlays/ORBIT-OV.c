@@ -208,6 +208,15 @@ extern const unsigned short int pp_YSCREEN; // YSCREEN
 extern const unsigned short int pp_XSCREEN; // XSCREEN
 extern const unsigned short int pp__n_CLRMAP; // #CLRMAP
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern ArrayType CONTOUR; // CONTOUR
+extern ArrayType FACET; // FACET
+extern ArrayType FACE; // FACE
+extern ArrayType GVERTEX_gt_GRIDCOLOR; // GVERTEX>GRIDCOLOR
+extern ArrayType GPOLY; // GPOLY
+extern ArrayType GRIDCOLOR; // GRIDCOLOR
+extern ArrayType _9X9COARSE; // 9X9COARSE
+extern ArrayType _9X9FINE_gt_GVERTEX; // 9X9FINE>GVERTEX
+extern ArrayType XFORMVERT; // XFORMVERT
 void _star__slash_(); // */
 void ABS(); // ABS
 void M_star_(); // M*
@@ -1762,18 +1771,18 @@ void UNK_0xe462() // UNK_0xe462
   a = Pop(); // >R
   Push(0);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6afa + 6), 0x0120); // FACET
+  ReadArray(FACET); // FACET
   LC_at_(); // LC@
   Push(4);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+  ReadArray(XFORMVERT); // XFORMVERT
   L_at_(); // L@
   Push(a); // R>
   Push(0x003e);
   Push(Pop() + Pop()); // +
   Push(4);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+  ReadArray(XFORMVERT); // XFORMVERT
   L_at_(); // L@
   _gt_(); // >
 }
@@ -1897,11 +1906,11 @@ void UNK_0xe550() // UNK_0xe550
 {
   Push(0);
   OVER(); // OVER
-  ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+  ReadArray(XFORMVERT); // XFORMVERT
   L_at_(); // L@
   Push(2);
   ROT(); // ROT
-  ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+  ReadArray(XFORMVERT); // XFORMVERT
   L_at_(); // L@
 }
 
@@ -1915,7 +1924,7 @@ void UNK_0xe564() // UNK_0xe564
   unsigned short int a, b;
   Push(0);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6afa + 6), 0x0120); // FACET
+  ReadArray(FACET); // FACET
   a = Pop(); // >R
   b = Pop(); // >R
   Push(b); // I
@@ -2033,11 +2042,11 @@ void UNK_0xe5fe() // UNK_0xe5fe
       UNK_0xe564(); // UNK_0xe564
       Push(0);
       Push(i); // I
-      ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
+      ReadArray(FACE); // FACE
       L_at_(); // L@
       Push(2);
       Push(i); // I
-      ReadArray(Read16(0x6b0b + 6), 0x00d8); // FACE
+      ReadArray(FACE); // FACE
       LC_at_(); // LC@
       Push(0);
 
@@ -2055,7 +2064,7 @@ void UNK_0xe5fe() // UNK_0xe5fe
       Pop(); // DROP
       UNK_0xe4aa(); // UNK_0xe4aa
     }
-    Exec("?TERMINAL"); // call of word 0x25bc '(?TERMINAL)'
+    Exec("IsTERMINAL"); // call of word 0x25bc '(?TERMINAL)'
     if (Pop() != 0)
     {
       Push(pp_UNK_0xe5fa); // UNK_0xe5fa
@@ -2335,7 +2344,7 @@ void UNK_0xe7a7() // UNK_0xe7a7
       UNK_0xe769(); // UNK_0xe769
       Push(j); // I
       Push(i); // J
-      ReadArray(Read16(0x6b7e + 6), 0x0051); // 9X9COARSE
+      ReadArray(_9X9COARSE); // 9X9COARSE
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -2393,11 +2402,11 @@ void UNK_0xe80d() // UNK_0xe80d
       Push(Read16(Pop())); // @
       Push(i); // J
       _dash_(); // -
-      ReadArray(Read16(0x6ac1 + 6), 0x1811); // CONTOUR
+      ReadArray(CONTOUR); // CONTOUR
       LC_at_(); // LC@
       Push(j); // I
       Push(i); // J
-      ReadArray(Read16(0x6b92 + 6), 0x0051); // 9X9FINE>GVERTEX
+      ReadArray(_9X9FINE_gt_GVERTEX); // 9X9FINE>GVERTEX
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -2424,7 +2433,7 @@ void UNK_0xe865() // UNK_0xe865
   {
     Push(i); // I
     OVER(); // OVER
-    ReadArray(Read16(0x6b43 + 6), 0x0164); // GPOLY
+    ReadArray(GPOLY); // GPOLY
     LC_at_(); // LC@
     Push(3);
     Push(0);
@@ -2435,7 +2444,7 @@ void UNK_0xe865() // UNK_0xe865
     {
       Push(j); // I
       OVER(); // OVER
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_at_(); // LC@
       Push(i); // J
       Push(3);
@@ -2472,7 +2481,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
   {
     Push(i); // I
     OVER(); // OVER
-    ReadArray(Read16(0x6b43 + 6), 0x0164); // GPOLY
+    ReadArray(GPOLY); // GPOLY
     LC_at_(); // LC@
     Push(2);
     Push(0);
@@ -2484,7 +2493,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
       Push(j); // I
       Push(Pop()*2); // 2*
       OVER(); // OVER
-      ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+      ReadArray(XFORMVERT); // XFORMVERT
       L_at_(); // L@
       Push(i); // J
       Push(4);
@@ -2576,11 +2585,11 @@ void UNK_0xe947() // UNK_0xe947
   {
     Push(i); // I
     Push(a); // J
-    ReadArray(Read16(0x6b43 + 6), 0x0164); // GPOLY
+    ReadArray(GPOLY); // GPOLY
     LC_at_(); // LC@
     Push(4);
     SWAP(); // SWAP
-    ReadArray(Read16(0x6ba6 + 6), 0x0324); // XFORMVERT
+    ReadArray(XFORMVERT); // XFORMVERT
     L_at_(); // L@
     Push(Read16(cc_UNK_0xdb86)); // UNK_0xdb86
     _dash_(); // -
@@ -2931,7 +2940,7 @@ void UNK_0xeb45() // UNK_0xeb45
 {
   Push(0);
   SWAP(); // SWAP
-  ReadArray(Read16(0x6b57 + 6), 0x00b2); // GRIDCOLOR
+  ReadArray(GRIDCOLOR); // GRIDCOLOR
   OVER(); // OVER
   OVER(); // OVER
   LC_at_(); // LC@
@@ -3135,7 +3144,7 @@ void UNK_0xec7d() // UNK_0xec7d
     Push(0);
     Push(1);
     Push(i); // I
-    ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+    ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
     LC_ex_(); // LC!
     i++;
   } while(i<imax); // (LOOP)
@@ -3180,7 +3189,7 @@ void UNK_0xec97() // UNK_0xec97
       Push(Pop() + Pop()); // +
       Push(j); // I
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -3209,7 +3218,7 @@ void UNK_0xecd5() // UNK_0xecd5
   {
     Push(0);
     Push(i); // I
-    ReadArray(Read16(0x6b57 + 6), 0x00b2); // GRIDCOLOR
+    ReadArray(GRIDCOLOR); // GRIDCOLOR
     LC_at_(); // LC@
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
@@ -3227,9 +3236,9 @@ void UNK_0xecd5() // UNK_0xecd5
         Push(1);
         Push(j); // I
         Push(i); // J
-        ReadArray(Read16(0x6b43 + 6), 0x0164); // GPOLY
+        ReadArray(GPOLY); // GPOLY
         LC_at_(); // LC@
-        ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+        ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
         LC_ex_(); // LC!
         j++;
       } while(j<jmax); // (LOOP)
@@ -3268,7 +3277,7 @@ void UNK_0xed17() // UNK_0xed17
       Push(Pop() * Pop()); // *
       Push(j); // I
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       L_plus__dash__at_(); // L+-@
       COLORMAP(); // COLORMAP
       Push(pp_COLOR); // COLOR
@@ -3283,7 +3292,7 @@ void UNK_0xed17() // UNK_0xed17
       Push(Pop() * Pop()); // *
       Push(j); // I
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b57 + 6), 0x00b2); // GRIDCOLOR
+      ReadArray(GRIDCOLOR); // GRIDCOLOR
       L_ex_(); // L!
       j++;
     } while(j<jmax); // (LOOP)
@@ -3313,7 +3322,7 @@ void UNK_0xed17() // UNK_0xed17
       Push(Pop() + Pop()); // +
       Push(0x0024);
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       L_plus__dash__at_(); // L+-@
       COLORMAP(); // COLORMAP
       Push(pp_COLOR); // COLOR
@@ -3330,7 +3339,7 @@ void UNK_0xed17() // UNK_0xed17
       Push(Pop() + Pop()); // +
       Push(0x0019);
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b57 + 6), 0x00b2); // GRIDCOLOR
+      ReadArray(GRIDCOLOR); // GRIDCOLOR
       L_ex_(); // L!
       l++;
     } while(l<lmax); // (LOOP)
@@ -3359,7 +3368,7 @@ void UNK_0xedb1() // UNK_0xedb1
     Push(Read16(regsp)); // DUP
     Push(1);
     Push(i); // I
-    ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+    ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
     LC_ex_(); // LC!
     i++;
   } while(i<imax); // (LOOP)
@@ -3392,7 +3401,7 @@ void UNK_0xedcf() // UNK_0xedcf
     {
       Push(j); // I
       Push(i); // J
-      ReadArray(Read16(0x6b7e + 6), 0x0051); // 9X9COARSE
+      ReadArray(_9X9COARSE); // 9X9COARSE
       L_plus__dash__at_(); // L+-@
       Push(Pop() + Pop()); // +
       j++;
@@ -3465,7 +3474,7 @@ void UNK_0xedfb() // UNK_0xedfb
       Push(Pop() * Pop()); // *
       Push(j); // I
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -3499,7 +3508,7 @@ void UNK_0xee65() // UNK_0xee65
     {
       Push(j); // I
       Push(i); // J
-      ReadArray(Read16(0x6b7e + 6), 0x0051); // 9X9COARSE
+      ReadArray(_9X9COARSE); // 9X9COARSE
       LC_at_(); // LC@
       Push(1);
       Push(i); // J
@@ -3509,7 +3518,7 @@ void UNK_0xee65() // UNK_0xee65
       Push(Pop() + Pop()); // +
       Push(0x0024);
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -3543,7 +3552,7 @@ void UNK_0xee9b() // UNK_0xee9b
     {
       Push(j); // I
       Push(i); // J
-      ReadArray(Read16(0x6b92 + 6), 0x0051); // 9X9FINE>GVERTEX
+      ReadArray(_9X9FINE_gt_GVERTEX); // 9X9FINE>GVERTEX
       LC_at_(); // LC@
       Push(1);
       Push(i); // J
@@ -3553,7 +3562,7 @@ void UNK_0xee9b() // UNK_0xee9b
       Push(Pop() + Pop()); // +
       Push(0x0024);
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -3711,7 +3720,7 @@ void UNK_0xef97() // UNK_0xef97
       Push(j); // I
       Push(Pop() + Pop()); // +
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_at_(); // LC@
       Push(1);
       Push(i); // J
@@ -3719,7 +3728,7 @@ void UNK_0xef97() // UNK_0xef97
       Push(Pop() * Pop()); // *
       Push(j); // I
       Push(Pop() + Pop()); // +
-      ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+      ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
       LC_ex_(); // LC!
       j++;
     } while(j<jmax); // (LOOP)
@@ -4143,7 +4152,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
   UNK_0xedfb(); // UNK_0xedfb
   Push(1);
   Push(0x000e);
-  ReadArray(Read16(0x6b31 + 6), 0x015f); // GVERTEX>GRIDCOLOR
+  ReadArray(GVERTEX_gt_GRIDCOLOR); // GVERTEX>GRIDCOLOR
   LC_at_(); // LC@
   UNK_0xedb1(); // UNK_0xedb1
   UNK_0xed17(); // UNK_0xed17
