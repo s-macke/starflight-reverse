@@ -359,8 +359,8 @@ WORDRENAME renamewords[] =
     {0xff, 0x0be1, "!"}, // "!"
     {0xff, 0x6b78, "!_2"}, // "!"
     {0xff, 0x6d78, "!_3" }, // "!"
-    {0xff, 0xbd1f, "MISC-_1"}, // "MISC"
-    {0xff, 0xbd3d, "MISC-_2"}, // "MISC"
+    {0xff, 0xbd1f, "MISC-VOC"}, // "MISC"
+    {0xff, 0xbd3d, "MISC-OV"}, // "MISC"
     {0xff, 0x965e, ".CIRCLE"}, // ".CIRCLE"
     {0xff, 0x9c34, ".CIRCLE_2"}, // ".CIRCLE"
     {0xff, 0x6d94, "1.5!"}, // "1.5!"
@@ -464,8 +464,8 @@ WORDRENAME renamewords[] =
     {0x39, 0xf558, "DO-OPEN_2" }, // DO-OPEN
     {0xff, 0xd09f, "TELE_1" }, // TELE
     {0xff, 0xd0ae, "TELE_2" }, // TELE
-    {0xff, 0xcba7, "PFIL_1" }, // PFIL
-    {0xff, 0xcbc4, "PFIL_2" }, // PFIL
+    {0xff, 0xcba7, "PFIL-VOC" }, // PFIL
+    {0xff, 0xcbc4, "PFIL-OV" }, // PFIL
     {0xff, 0x3bce, "THRU_1" }, // THRU
     {0xff, 0x6ec0, "THRU_2" }, // THRU
     {0xff, 0x2638, "BEEPON_1" }, // BEEPON
@@ -479,11 +479,11 @@ WORDRENAME renamewords[] =
     {0xff, 0x6d8c, "CMOVE_2" }, // CMOVE
     {0xff, 0x06a2, "LOAD_1" }, // LOAD
     {0xff, 0x6de1, "LOAD_2" }, // LOAD
-    {0xff, 0xcf9d, "SEED_1" }, // SEED
-    {0xff, 0xcf80, "SEED_2" }, // SEED
+    {0xff, 0xcf9d, "SEED-OV" }, // SEED
+    {0xff, 0xcf80, "SEED-VOC" }, // SEED
     {0xff, 0x4b9c, "SEED_3" }, // SEED
-    {0xff, 0xcb72, "ACR_1" }, // ACR
-    {0xff, 0xcb8e, "ACR_2" }, // ACR
+    {0xff, 0xcb72, "ACR-VOC" }, // ACR
+    {0xff, 0xcb8e, "ACR-OV" }, // ACR
     {0xff, 0x97c4, "?ICONS-_1" }, // ?ICONS-
     {0xff, 0x97d8, "?ICONS-_2" }, // ?ICONS-
     {0xff, 0x90af, "COLORMA_1" }, // COLORMA
@@ -501,17 +501,17 @@ WORDRENAME renamewords[] =
     {0xff, 0x05ac, "CONTEXT_1" }, // CONTEXT
     {0xff, 0xca30, "CONTEXT_2" }, // CONTEXT
     {0xff, 0x5c2c, "CONTEXT_3" }, // CONTEXT
-    {0xff, 0xce34, "STO_1" }, // STO
-    {0xff, 0xce50, "STO_2" }, // STO
+    {0xff, 0xce34, "STO-VOC" }, // STO
+    {0xff, 0xce50, "STO-OV" }, // STO
     {0xff, 0xc261, "OVINIT-_1" }, // OVINIT-
     {0xff, 0xbed7, "OVINIT-_2" }, // OVINIT-
-    {0xff, 0xc008, "BLDLI_1" }, // BLDLI
-    {0xff, 0xc014, "BLDLI_2" }, // BLDLI
-    {0xff, 0xbfea, "BLDLI_3" }, // BLDLI
+    {0xff, 0xc008, "BLDLI-OV" }, // BLDLI
+    {0xff, 0xc014, "BLDLI" }, // BLDLI
+    {0xff, 0xbfea, "BLDLI-VOC" }, // BLDLI
     {0xff, 0xba65, "+ICON_1" }, // +ICON
     {0xff, 0x9952, "+ICON_2" }, // +ICON
-    {0xff, 0xb6c1, "MISC-_1" }, // MISC-
-    {0xff, 0xb6df, "MISC-_2" }, // MISC-
+    {0xff, 0xb6c1, "MISC-VOC" }, // MISC-
+    {0xff, 0xb6df, "MISC-OV" }, // MISC-
     {0xff, 0x8974, ".CIRCLE_1" }, // .CIRCLE
     {0xff, 0x95f4, ".CIRCLE_2" }, // .CIRCLE
     {0xff, 0x6c80, ">0FONT_1" }, // >0FONT
@@ -530,14 +530,14 @@ WORDRENAME renamewords[] =
     {0xff, 0x9041, "BYE_2" }, // BYE
     {0xff, 0xd454, "TRY-L_1" }, // TRY-L
     {0xff, 0xd444, "TRY-L_2" }, // TRY-L
-    {0xff, 0xcbe1, "SHIP-GR_1" }, // SHIP-GR
-    {0xff, 0xcc01, "SHIP-GR_2" }, // SHIP-GR
-    {0xff, 0xc7a2, "COMBAU_1" }, // COMBAU
-    {0xff, 0xc7c1, "COMBAU_2" }, // COMBAU
+    {0xff, 0xcbe1, "SHIP-GR-VOC" }, // SHIP-GR
+    {0xff, 0xcc01, "SHIP-GR-OV" }, // SHIP-GR
+    {0xff, 0xc7a2, "COMBAU-VOC" }, // COMBAU
+    {0xff, 0xc7c1, "COMBAU-OV" }, // COMBAU
     {0xff, 0xc754, "DNL_1" }, // DNL
     {0xff, 0xc738, "DNL_2" }, // DNL
-    {0xff, 0xc668, "DAMAGE-_1" }, // DAMAGE-
-    {0xff, 0xc688, "DAMAGE-_2" }, // DAMAGE-
+    {0xff, 0xc668, "DAMAGE-VOC" }, // DAMAGE-
+    {0xff, 0xc688, "DAMAGE-OV" }, // DAMAGE-
     {0xff, 0xbd27, "ORBIT_1" }, // ORBIT
     {0xff, 0xbd09, "ORBIT_2" }, // ORBIT
     {0xff, 0xb752, "OVTRIM_1" }, // OVTRIM

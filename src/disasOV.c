@@ -28,6 +28,7 @@ void LoadOverlayDict(int ovidx)
 void ParseOverlay(int ovidx)
 {
     int i, j;
+    char filename[512];
     // first two byte contain offset in file and then two bytes with size of overlay
 
     OVLHeader head;
@@ -44,8 +45,9 @@ void ParseOverlay(int ovidx)
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
+    sprintf(filename, OUTDIR"/overlays/%s", overlays[ovidx].name);
 
-    Transpile(&head, ovidx, minaddr, maxaddr);
+    Transpile(filename, &head, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_HEADER | WRITE_EXTERN | WRITE_VARIABLES);
 }
 
 void LoadSTARFLT()
@@ -77,6 +79,7 @@ void ParseStarFltDict()
 void DisasStarflt()
 {
     int i, j;
+    char filename[512];
     const int ovidx = -1;
     int minaddr = 0x100;
     int maxaddr = FILESTAR0SIZE+0x100;
@@ -87,10 +90,27 @@ void DisasStarflt()
     dict[ndict-1].size = maxaddr-dict[ndict-1].parp;
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
-
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
-    Transpile(NULL, ovidx, minaddr, maxaddr);
+    Transpile(OUTDIR"/starflt", NULL, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_VARIABLES);
+
+#ifdef STARFLT1
+    Transpile(OUTDIR"/common/main",     NULL, ovidx, 0xd47e, FILESTAR0SIZE+0x100, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/overlay",  NULL, ovidx, 0xba1f, 0xd47e - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/rule",     NULL, ovidx, 0xb680, 0xba1f - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/instance", NULL, ovidx, 0x7980, 0x81a3 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/dos",      NULL, ovidx, 0x40c6, 0x4864 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+#endif
+
+#ifdef STARFLT2
+    Transpile(OUTDIR"/common/main",     NULL, ovidx, 0xd5c0, FILESTAR0SIZE+0x100, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/overlay",  NULL, ovidx, 0xb3e7, 0xd5c0 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/rule",     NULL, ovidx, 0xab55, 0xae75 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/instance", NULL, ovidx, 0x79d6, 0x81f3 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+    Transpile(OUTDIR"/common/dos",      NULL, ovidx, 0x4094, 0x4952 - 1, WRITE_EXTERN | WRITE_VARIABLES);
+#endif
+
+
 }
 
 void ExtractDirectory()
@@ -176,7 +196,6 @@ int main()
     for(i=0; overlays[i].name != NULL; i++)
     {
         printf("Generate %s\n", overlays[i].name);
-
         //reset memory
         LoadSTARFLT();
         ParseOverlay(i);

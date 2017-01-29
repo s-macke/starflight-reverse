@@ -182,22 +182,22 @@ int GetWordLength(int addr, DICTENTRY *e, int currentovidx)
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        if (e->ovidx == -1) e->doextern = 1;
+        if (e->ovidx == -1) e->isextern = 1;
         return 2;
     }
     if (e->codep == CODECONSTANT)
     {
-        if (e->ovidx == -1) e->doextern = 1;
+        if (e->ovidx == -1) e->isextern = 1;
         return 2;
     }
     if (e->codep == CODEDI) // User data
     {
-        if (e->ovidx == -1) e->doextern = 1;
+        if (e->ovidx == -1) e->isextern = 1;
         return 2;
     }
     if (e->codep == CODERULE)
     {
-        if (e->ovidx == -1) e->doextern = 1;
+        if (e->ovidx == -1) e->isextern = 1;
         return 2;
     }
     if (e->codep == CODEEXEC)
@@ -206,8 +206,8 @@ int GetWordLength(int addr, DICTENTRY *e, int currentovidx)
         GetDictWord(par, currentovidx);
         return 2;
     }
-    if (e->ovidx == -1) e->doextern = 1;
-    if (e->codep > (0x100+FILESTAR0SIZE)) e->doextern = 1;
+    if (e->ovidx == -1) e->isextern = 1;
+    if (e->codep > (0x100+FILESTAR0SIZE)) e->isextern = 1;
     return 2;
 }
 
@@ -332,6 +332,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         pline[rulep+0].done = 1;
         pline[rulep+1].done = 1;
         pline[rulep+2].done = 1;
+        pline[rulep+1].word = Read16(rulep + 1);
 
         DICTENTRY *e = GetDictEntry(p, currentovidx);
         if (e == NULL)
@@ -362,6 +363,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
             p = CONDARRp + x*2;
             pline[p+0].done = 1;
             pline[p+1].done = 1;
+            pline[p+0].word = Read16(p);
             DICTENTRY *e = GetDictEntry(Read16(p), currentovidx);
             if (e == NULL)
             {
@@ -395,8 +397,10 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     pline[ofs-1].str = malloc(STRINGLEN);
     snprintf(pline[ofs-1].str, STRINGLEN, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
     sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
-    for(i=0; i<n; i++) {
+    for(i=0; i<n; i++)
+    {
         DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), currentovidx);
+        pline[par + i*4 + 6].word = Read16(par + i*4 + 6);
         pline[par + i*4 + 6].done = 1;
         pline[par + i*4 + 7].done = 1;
 
@@ -409,6 +413,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         strcat(pline[ofs].str, temp);
     }
     DICTENTRY *e = GetDictEntry(Read16(par + 2), currentovidx);
+    pline[par + 2].word = Read16(par + 2);
     pline[par + 2].done = 1;
     pline[par + 3].done = 1;
 
@@ -444,7 +449,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         if (ofs > maxaddr) return;
         if (pline[ofs].done) return;
 
-        pline[ofs].isword = TRUE;
+        pline[ofs].word = Read16(ofs)+2;
         int par = Read16(ofs)+2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
@@ -465,7 +470,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         {
             e->isentry = 1;
             pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", s, overlays[currentovidx].name);
+            snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", Forth2CString(s), overlays[currentovidx].name);
             ofs += 2;
             continue;
         }
@@ -597,7 +602,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 {
                     pline[ofs+4].done = 1;
                     pline[ofs+5].done = 1;
-                    pline[ofs+4].isword = TRUE;
+                    pline[ofs+4].word = Read16(ofs+4)+2;
                     pline[ofs+4].flow = FUNCEND;
                 } else
                 {
@@ -741,7 +746,7 @@ void InitParser()
         dict[i].nlabel = 0;
         dict[i].nloopvars = 0;
         dict[i].nstackvariables = 0;
-        dict[i].doextern = 0;
+        dict[i].isextern = 0;
     }
 }
 
@@ -884,4 +889,5 @@ void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
         //printf("disasm dict entry %i\n", i);
         DisasmRange(dict[i].codep, 0x100000, ovidx, minaddr, maxaddr);
     }
+    if (ovidx == -1) DisasmRange(0x100, 0x100000, ovidx, minaddr, maxaddr);
 }

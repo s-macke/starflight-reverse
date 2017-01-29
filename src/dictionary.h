@@ -12,12 +12,12 @@ typedef struct DICTENTRY
     int size; // probable size of the word
     int ovidx; // overlay index
 
-    // Helper for parsing
+    // Helper for the parser and the transpiler
     int nlabel; // current label identifier
     int isentry;
     int nloopvars;
     int nstackvariables;
-    int doextern;
+    int isextern;
 
     // variables for functions
     int nvars;

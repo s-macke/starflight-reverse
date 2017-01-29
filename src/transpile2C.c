@@ -7,58 +7,65 @@
 #include"../emul/cpu.h"
 #include"disasm/debugger.h"
 
+void SetExtern(int ovidx, int minaddr, int maxaddr);
 void WriteExtern(FILE *fp, int ovidx);
-void WriteVariables(FILE *fp, int ovidx);
+void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr);
 void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr);
 void WriteHeaderFile(FILE *fph, int ovidx);
 
-void Transpile(OVLHeader *head, int ovidx, int minaddr, int maxaddr)
+void Transpile(const char *_filename, OVLHeader *head, int ovidx, int minaddr, int maxaddr, int outputflag)
 {
+    int i;
     char filename[512];
     FILE *fpc = NULL;
     FILE *fph = NULL;
 
-    if (ovidx != -1)
+    if (outputflag & WRITE_HEADER)
     {
-        sprintf(filename, OUTDIR"/overlays/%s.c", overlays[ovidx].name);
-        fpc = fopen(filename, "w");
-        if (fpc == NULL)
-        {
-            fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
-            exit(1);
-        }
-
-        fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
-        fprintf(fpc, "// store offset = 0x%04x\n", head->storeofs);
-        fprintf(fpc, "// overlay size   = 0x%04x\n", head->ovlsize);
-        fprintf(fpc, "\n#include\"../../emul/cpu.h\"\n");
-        fprintf(fpc, "\n#include\"../data.h\"\n");
-        fprintf(fpc, "#include\"../../emul/starflt1.h\"\n\n");
-
-        sprintf(filename, OUTDIR"/overlays/%s.h", overlays[ovidx].name);
+        sprintf(filename, "%s.h", _filename);
         fph = fopen(filename, "w");
         if (fph == NULL)
         {
             fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
             exit(1);
         }
-
         WriteHeaderFile(fph, ovidx);
         fclose(fph);
     }
-    else
+
+    sprintf(filename, "%s.c", _filename);
+    fpc = fopen(filename, "w");
+    if (fpc == NULL)
     {
-        fpc = fopen(OUTDIR"/starflt.c", "w");
-        if (fpc == NULL)
-        {
-            fprintf(stderr, "Error: Cannot create file\n");
-            exit(1);
-        }
+        fprintf(stderr, "Error: Cannot create file '%s'\n", filename);
+        exit(1);
     }
 
-    WriteDict(mem, fpc, ovidx);
-    if (ovidx != -1) WriteExtern(fpc, ovidx);
-    WriteVariables(fpc, ovidx);
+    if (ovidx != -1)
+    {
+        fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
+        fprintf(fpc, "// store offset = 0x%04x\n", head->storeofs);
+        fprintf(fpc, "// overlay size   = 0x%04x\n", head->ovlsize);
+    }
+    fprintf(fpc, "\n#include\"../../emul/cpu.h\"\n");
+    fprintf(fpc, "\n#include\"../data.h\"\n");
+    fprintf(fpc, "#include\"../../emul/starflt1.h\"\n\n");
+    if (ovidx == -1)
+    {
+        i=0;
+        while(overlays[i].name != NULL)
+        {
+            fprintf(fpc, "#include\"../overlays/%s.h\"\n", overlays[i].name);
+            i++;
+        }
+    }
+    if (outputflag & WRITE_DICT) WriteDict(mem, fpc, ovidx);
+    if (outputflag & WRITE_EXTERN)
+    {
+        SetExtern(ovidx, minaddr, maxaddr);
+        WriteExtern(fpc, ovidx);
+    }
+    if (outputflag & WRITE_VARIABLES) WriteVariables(fpc, ovidx, minaddr, maxaddr);
     WriteParsedFile(fpc, ovidx, minaddr, maxaddr);
 
     if (fpc != NULL) fclose(fpc);
@@ -90,8 +97,8 @@ void WriteHeaderFile(FILE *fph, int ovidx)
 {
     int i = 0;
     fprintf(fph, "// ====== OVERLAY '%s' ======\n\n", overlays[ovidx].name);
-    fprintf(fph, "#ifndef %s_H\n", overlays[ovidx].name);
-    fprintf(fph, "#define %s_H\n\n", overlays[ovidx].name);
+    fprintf(fph, "#ifndef %s_H\n", Forth2CString(overlays[ovidx].name));
+    fprintf(fph, "#define %s_H\n\n", Forth2CString(overlays[ovidx].name));
 
     // write header file
     for(i=0; i<ndict; i++)
@@ -112,7 +119,11 @@ const char* ignorewordlist[] =
     "=","+","*","NEGATE","NOT","DROP",
     "2DROP","2*","3+","1+","2+","1-",
     "2-","16/","2/","16*","@","C@","DUP",
-    "?DUP",NULL
+    "?DUP","(;CODE)",">R","R>","R@","I","I'",
+    "J","MODULE","(.\")","(ABORT\")","LEAVE",
+    "DOTASKS","(DO)", "(LOOP)","0BRANCH",
+    "BRANCH","EXIT","(+LOOP)","(/LOOP)",
+    NULL
 };
 
 int IgnoreWord(char *s)
@@ -126,6 +137,27 @@ int IgnoreWord(char *s)
     return FALSE;
 }
 
+void SetExtern(int ovidx, int minaddr, int maxaddr)
+{
+    int addr;
+    int i;
+    DICTENTRY *efunc = NULL;
+    for(i=0; i<ndict; i++) dict[i].isextern = FALSE;
+
+    for(addr=minaddr; addr<=maxaddr; addr++)
+    {
+        if (!pline[addr].word) continue;
+        efunc = GetDictEntry(pline[addr].word, ovidx);
+        if (efunc == NULL) continue;
+        if (efunc->codep == CODELIT) continue;
+        if (efunc->codep == CODE2LIT) continue;
+        if (efunc->parp == PARPRINT) continue;
+        if ((efunc->codep >= minaddr) && (efunc->codep <= maxaddr)) efunc->isextern = TRUE;
+        if ((efunc->parp >= minaddr) && (efunc->parp <= maxaddr)) continue;
+        efunc->isextern = TRUE;
+    }
+}
+
 void WriteExtern(FILE *fp, int ovidx)
 {
     int i = 0;
@@ -137,7 +169,7 @@ void WriteExtern(FILE *fp, int ovidx)
 
     for(i=0; i<ndict; i++)
     {
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         if
         (
         (dict[i].codep == CODELOADOVERLAY) ||
@@ -152,70 +184,70 @@ void WriteExtern(FILE *fp, int ovidx)
         (dict[i].codep == CODEFUNC9) ||
         (dict[i].codep == CODEFUNC12) ||
         (dict[i].codep == CODEEXEC)
-        ) dict[i].doextern = FALSE;
+        ) dict[i].isextern = FALSE;
     }
 
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODECONSTANT) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         if (!IgnoreWord(dict[i].r)) fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODEPOINTER) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         fprintf(fp, "extern const unsigned short int pp_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODEDI) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODELOADDATA) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODEIFIELD) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         fprintf(fp, "extern IFieldType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODE2DARRAY) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         fprintf(fp, "extern ArrayType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
         if (dict[i].codep != CODECALL) continue;
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         char *s = GetWordName(&dict[i]);
         if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
     {
-        if (!dict[i].doextern) continue;
+        if (!dict[i].isextern) continue;
         char *s = GetWordName(&dict[i]);
         if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
-        dict[i].doextern = FALSE;
+        dict[i].isextern = FALSE;
     }
     fprintf(fp, "\n");
 }
 
-void WriteVariables(FILE *fp, int ovidx)
+void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
 {
     int i = 0;
     int j = 0;
@@ -227,6 +259,7 @@ void WriteVariables(FILE *fp, int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
+        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
         if (dict[i].codep != CODEPOINTER) continue;
         fprintf(fp, "const unsigned short int pp_%s = 0x%04x; // %s size: %i\n// {",
             Forth2CString(GetWordName(&dict[i])),
@@ -241,6 +274,7 @@ void WriteVariables(FILE *fp, int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
+        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
         if (dict[i].codep != CODECONSTANT) continue;
         fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), dict[i].parp, GetWordName(&dict[i]));
     }
@@ -248,6 +282,7 @@ void WriteVariables(FILE *fp, int ovidx)
     for(i=0; i<ndict; i++)
     {
         if (dict[i].ovidx != ovidx) continue;
+        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
         if (dict[i].codep != CODEDI) continue;
         fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp)+REGDI, GetWordName(&dict[i]));
     }
@@ -502,6 +537,11 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     if (strcmp(s, "?DUP") == 0)
     {
         snprintf(ret, STRINGLEN, "if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP\n");
+        return;
+    }
+    if (strcmp(s, "EXIT") == 0)
+    {
+        snprintf(ret, STRINGLEN, "return; // EXIT\n");
         return;
     }
     if (strcmp(s, "(ABORT\")") == 0)
@@ -833,6 +873,7 @@ int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
                     fprintf(fp, "} while(1); // (+LOOP)\n\n");
                 } else
                 {
+                    fprintf(stderr, "Error: Unknown loop\n");
                     exit(1);
                 }
                 break;

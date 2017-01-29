@@ -22,7 +22,7 @@ typedef struct
     int isasm;
     int istrivialword;
     int iswordheader;
-    int isword;
+    int word;
     int ovidx;
 
     int variableidx;

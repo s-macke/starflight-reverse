@@ -35,6 +35,7 @@ typedef void (*WordCallDef)();
     void SIGFLD(char *s);
     void Func6(char *s);
     void Func8(char *s);
+    void Func9(char *s);
     void Func14(char *s);
     void PRINT(char *s, int n);
     void Push2Words(char *s);
@@ -43,6 +44,7 @@ typedef void (*WordCallDef)();
     void LoadData(LoadDataType dt);
     void UNK_0x3f3b(char *s);
     void Exec(char *s);
+    void LoadOverlay(char *s);
     void DOTASKS(WordCallDef a, WordCallDef b, WordCallDef c);
     void DOTASKS2(WordCallDef a, WordCallDef b, WordCallDef c, WordCallDef d);
 
