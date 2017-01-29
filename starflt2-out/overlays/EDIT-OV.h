@@ -1,7 +1,7 @@
 // ====== OVERLAY 'EDIT-OV' ======
 
-#ifndef EDIT-OV_H
-#define EDIT-OV_H
+#ifndef EDIT_dash_OV_H
+#define EDIT_dash_OV_H
 
 void EDIT(); // EDIT
 

@@ -871,7 +871,7 @@ void UNK_0xe277() // UNK_0xe277
     if (Pop() == 0) Push(1); else Push(0); // NOT
     if (Pop() != 0)
     {
-      Push(0xc014); // probable 'BLDLI_2'
+      Push(0xc014); // probable 'BLDLI'
       MODULE(); // MODULE
       Push(0xbfda); // probable 'EDL>P'
       MODULE(); // MODULE

@@ -1,7 +1,7 @@
 // ====== OVERLAY 'DPART-OV' ======
 
-#ifndef DPART-OV_H
-#define DPART-OV_H
+#ifndef DPART_dash_OV_H
+#define DPART_dash_OV_H
 
 void DEPART(); // DEPART
 

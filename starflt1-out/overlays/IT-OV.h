@@ -1,7 +1,7 @@
 // ====== OVERLAY 'IT-OV' ======
 
-#ifndef IT-OV_H
-#define IT-OV_H
+#ifndef IT_dash_OV_H
+#define IT_dash_OV_H
 
 void DATE_do__gt_ADR(); // DATE$>ADR
 void ITEM_gt_PAD(); // ITEM>PAD

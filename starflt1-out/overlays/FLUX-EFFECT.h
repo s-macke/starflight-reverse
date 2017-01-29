@@ -1,7 +1,7 @@
 // ====== OVERLAY 'FLUX-EFFECT' ======
 
-#ifndef FLUX-EFFECT_H
-#define FLUX-EFFECT_H
+#ifndef FLUX_dash_EFFECT_H
+#define FLUX_dash_EFFECT_H
 
 void FLUX(); // FLUX
 

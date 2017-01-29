@@ -1,7 +1,7 @@
 // ====== OVERLAY 'ORBIT-OV' ======
 
-#ifndef ORBIT-OV_H
-#define ORBIT-OV_H
+#ifndef ORBIT_dash_OV_H
+#define ORBIT_dash_OV_H
 
 void SHOWSITE(); // SHOWSITE
 void SEEGRID(); // SEEGRID

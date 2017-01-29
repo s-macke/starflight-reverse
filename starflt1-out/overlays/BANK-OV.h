@@ -1,7 +1,7 @@
 // ====== OVERLAY 'BANK-OV' ======
 
-#ifndef BANK-OV_H
-#define BANK-OV_H
+#ifndef BANK_dash_OV_H
+#define BANK_dash_OV_H
 
 void StoreTFLAG(); // !TFLAG
 void GetDBALANCE(); // D@BALANCE

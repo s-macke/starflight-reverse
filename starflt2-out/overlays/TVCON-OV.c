@@ -306,7 +306,7 @@ void UNK_0xee58() // UNK_0xee58
     if (Pop() == 0) Push(1); else Push(0); // NOT
     if (Pop() != 0)
     {
-      Push(0xc014); // probable 'BLDLI_2'
+      Push(0xc014); // probable 'BLDLI'
       MODULE(); // MODULE
     }
   } else

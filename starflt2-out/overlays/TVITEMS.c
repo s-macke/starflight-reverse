@@ -279,7 +279,6 @@ void _gt_(); // >
 void _st_(); // <
 void _0_st_(); // 0<
 void _0_gt_(); // 0>
-void EXIT(); // EXIT
 void TIME(); // TIME
 void OFF_2(); // OFF_2
 void _1_dot_5_at_(); // 1.5@
@@ -703,7 +702,7 @@ void T_dot_OPTIONS() // T.OPTIONS
     UNK_0xe845(); // UNK_0xe845
     break;
   case 11:
-    EXIT(); // EXIT
+    return; // EXIT
     break;
   default:
     NOP(); // NOP

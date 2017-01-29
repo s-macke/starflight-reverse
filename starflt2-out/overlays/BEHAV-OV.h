@@ -1,7 +1,7 @@
 // ====== OVERLAY 'BEHAV-OV' ======
 
-#ifndef BEHAV-OV_H
-#define BEHAV-OV_H
+#ifndef BEHAV_dash_OV_H
+#define BEHAV_dash_OV_H
 
 void CIRCLES(); // CIRCLES
 void _1SIMULATE(); // 1SIMULATE

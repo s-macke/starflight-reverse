@@ -1,7 +1,7 @@
 // ====== OVERLAY 'TV-OV' ======
 
-#ifndef TV-OV_H
-#define TV-OV_H
+#ifndef TV_dash_OV_H
+#define TV_dash_OV_H
 
 void HEAVEHO(); // HEAVEHO
 void TV_dash_SETUP(); // TV-SETUP

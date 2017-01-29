@@ -1,7 +1,7 @@
 // ====== OVERLAY 'HYPER-OV' ======
 
-#ifndef HYPER-OV_H
-#define HYPER-OV_H
+#ifndef HYPER_dash_OV_H
+#define HYPER_dash_OV_H
 
 void DrawAUXSYS(); // .AUXSYS
 void DrawMVS(); // .MVS

@@ -1,7 +1,7 @@
 // ====== OVERLAY 'VITA-OV' ======
 
-#ifndef VITA-OV_H
-#define VITA-OV_H
+#ifndef VITA_dash_OV_H
+#define VITA_dash_OV_H
 
 void DIO(); // DIO
 

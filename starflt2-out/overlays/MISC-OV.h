@@ -1,7 +1,7 @@
 // ====== OVERLAY 'MISC-OV' ======
 
-#ifndef MISC-OV_H
-#define MISC-OV_H
+#ifndef MISC_dash_OV_H
+#define MISC_dash_OV_H
 
 void _ro_TRIM(); // (TRIM
 void _ro__n_IN_do_(); // (#IN$

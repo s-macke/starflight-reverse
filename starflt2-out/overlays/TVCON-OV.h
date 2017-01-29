@@ -1,7 +1,7 @@
 // ====== OVERLAY 'TVCON-OV' ======
 
-#ifndef TVCON-OV_H
-#define TVCON-OV_H
+#ifndef TVCON_dash_OV_H
+#define TVCON_dash_OV_H
 
 void DO_dash_STORM(); // DO-STORM
 void DrawSTARDATE(); // .STARDATE

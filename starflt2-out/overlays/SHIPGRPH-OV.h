@@ -1,7 +1,7 @@
 // ====== OVERLAY 'SHIPGRPH-OV' ======
 
-#ifndef SHIPGRPH-OV_H
-#define SHIPGRPH-OV_H
+#ifndef SHIPGRPH_dash_OV_H
+#define SHIPGRPH_dash_OV_H
 
 void _ro__dot_MASS_rc_(); // (.MASS)
 void _ro__dot_ACC_rc_(); // (.ACC)

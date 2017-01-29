@@ -1,7 +1,7 @@
 // ====== OVERLAY 'COMM-OV' ======
 
-#ifndef COMM-OV_H
-#define COMM-OV_H
+#ifndef COMM_dash_OV_H
+#define COMM_dash_OV_H
 
 void ORIGINATOR_gt_C(); // ORIGINATOR>C
 void A_gt_ORIGINATOR(); // A>ORIGINATOR

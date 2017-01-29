@@ -1,7 +1,7 @@
 // ====== OVERLAY 'COMMSPEC-OV' ======
 
-#ifndef COMMSPEC-OV_H
-#define COMMSPEC-OV_H
+#ifndef COMMSPEC_dash_OV_H
+#define COMMSPEC_dash_OV_H
 
 void _ro_XCOMM_rc_(); // (XCOMM)
 

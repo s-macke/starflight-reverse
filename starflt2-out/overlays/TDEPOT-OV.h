@@ -1,7 +1,7 @@
 // ====== OVERLAY 'TDEPOT-OV' ======
 
-#ifndef TDEPOT-OV_H
-#define TDEPOT-OV_H
+#ifndef TDEPOT_dash_OV_H
+#define TDEPOT_dash_OV_H
 
 void KEY_dash_ELEM_dash_AMT(); // KEY-ELEM-AMT
 void SELL_dash_IT(); // SELL-IT

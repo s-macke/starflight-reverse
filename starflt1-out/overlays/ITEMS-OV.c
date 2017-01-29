@@ -341,7 +341,6 @@ void _gt_(); // >
 void _st_(); // <
 void _0_st_(); // 0<
 void _0_gt_(); // 0>
-void EXIT(); // EXIT
 void TIME(); // TIME
 void GetEXECUTE(); // @EXECUTE
 void OFF_2(); // OFF_2
@@ -879,7 +878,7 @@ void T_dot_OPTIONS() // T.OPTIONS
     UNK_0xe238(); // UNK_0xe238
     break;
   case 11:
-    EXIT(); // EXIT
+    return; // EXIT
     break;
   default:
     NOP(); // NOP

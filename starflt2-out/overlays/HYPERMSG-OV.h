@@ -1,7 +1,7 @@
 // ====== OVERLAY 'HYPERMSG-OV' ======
 
-#ifndef HYPERMSG-OV_H
-#define HYPERMSG-OV_H
+#ifndef HYPERMSG_dash_OV_H
+#define HYPERMSG_dash_OV_H
 
 void DISP_dash_SETUP(); // DISP-SETUP
 void NF_dash_MESS(); // NF-MESS

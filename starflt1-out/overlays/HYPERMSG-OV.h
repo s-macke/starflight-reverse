@@ -1,7 +1,7 @@
 // ====== OVERLAY 'HYPERMSG-OV' ======
 
-#ifndef HYPERMSG-OV_H
-#define HYPERMSG-OV_H
+#ifndef HYPERMSG_dash_OV_H
+#define HYPERMSG_dash_OV_H
 
 void _plus_A_dash_VESS(); // +A-VESS
 void IsPRL(); // ?PRL

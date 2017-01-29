@@ -1,7 +1,7 @@
 // ====== OVERLAY 'LP-OV' ======
 
-#ifndef LP-OV_H
-#define LP-OV_H
+#ifndef LP_dash_OV_H
+#define LP_dash_OV_H
 
 void SPEC_dot_PARM(); // SPEC.PARM
 

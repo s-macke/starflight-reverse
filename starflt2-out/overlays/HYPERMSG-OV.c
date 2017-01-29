@@ -1411,7 +1411,7 @@ void OSET() // OSET
   Push(-1);
   Push(pp_PLHI); // PLHI
   Store_2(); // !_2
-  Push(0xc014); // probable 'BLDLI_2'
+  Push(0xc014); // probable 'BLDLI'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
   Push(6);

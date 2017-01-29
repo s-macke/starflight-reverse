@@ -1,7 +1,7 @@
 // ====== OVERLAY 'DAMAGE-OV' ======
 
-#ifndef DAMAGE-OV_H
-#define DAMAGE-OV_H
+#ifndef DAMAGE_dash_OV_H
+#define DAMAGE_dash_OV_H
 
 void REFRESH(); // REFRESH
 void _n_WOUNDE(); // #WOUNDE
