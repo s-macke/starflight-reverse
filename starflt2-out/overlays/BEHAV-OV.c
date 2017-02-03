@@ -195,6 +195,11 @@ extern const unsigned short int pp_TVEHICL; // TVEHICL
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern const unsigned short int pp_SMART; // SMART
 extern const unsigned short int pp_LASTAP; // LASTAP
+extern Color BLACK; // BLACK
+extern Color RED; // RED
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_SI; // INST-SI
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
@@ -352,7 +357,7 @@ void UNK_0xe4c6() // UNK_0xe4c6
   Push(0);
   Push(0);
   CTPOS_dot_(); // CTPOS.
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1406,7 +1411,7 @@ void UNK_0xeac4() // UNK_0xeac4
   UNK_0xeab6(); // UNK_0xeab6
   UNK_0xe4ec(); // UNK_0xe4ec
   UNK_0xeab6(); // UNK_0xeab6
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   _1PIX(); // 1PIX
   LLINE(); // LLINE
@@ -2709,10 +2714,10 @@ void UNK_0xf289() // UNK_0xf289
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    SetColor("PINK");
+    SetColor(PINK);
   } else
   {
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
   }
   a = Pop(); // >R
   Push(Read16(a)); // R@
@@ -2830,7 +2835,7 @@ void UNK_0xf354() // UNK_0xf354
   _star_CLOSE(); // *CLOSE
   GetCOLOR(); // @COLOR
   a = Pop(); // >R
-  SetColor("PINK");
+  SetColor(PINK);
   StoreCOLOR(); // !COLOR
   Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
@@ -3022,7 +3027,7 @@ void UNK_0xf500() // UNK_0xf500
   UNK_0xe552(); // UNK_0xe552
   DrawVIT(); // .VIT
   TV_dash_TASKS(); // TV-TASKS
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   UNK_0xf2d5(); // UNK_0xf2d5

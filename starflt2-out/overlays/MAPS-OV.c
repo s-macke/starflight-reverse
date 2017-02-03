@@ -116,6 +116,9 @@ extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
 extern const unsigned short int pp_YWLD_c_YP; // YWLD:YP
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_NOF; // NOF
+extern Color BLACK; // BLACK
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 extern IFieldType PHR_dash_CNT; // PHR-CNT
 extern IFieldType PHRASE; // PHRASE
 void DrawR(); // .R
@@ -445,7 +448,7 @@ void UNK_0xee82() // UNK_0xee82
 
 void UNK_0xee90() // UNK_0xee90
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   Push(0x001a);
@@ -1269,7 +1272,7 @@ void DrawSURFACE() // .SURFACE
 
 void UNK_0xf41e() // UNK_0xf41e
 {
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1280,7 +1283,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void UNK_0xf426() // UNK_0xf426
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 

@@ -42,6 +42,8 @@ extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern Color BLACK; // BLACK
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -185,9 +187,9 @@ void UNK_0xf1e7() // UNK_0xf1e7
 
 void UNK_0xf239() // UNK_0xf239
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4fa9); // probable 'BLACK'
   Store_2(); // !_2
   CTERASE(); // CTERASE

@@ -68,6 +68,9 @@ extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_LKEYTIM; // LKEYTIM
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_CMAP; // CMAP
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_X; // INST-X
 void COUNT(); // COUNT
 void _star__slash_(); // */
@@ -194,10 +197,10 @@ void DrawLATFRAME() // .LATFRAME
   Push(0x0053);
   Push(0x007e);
   Push(0x009c);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   CTINIT(); // CTINIT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0066);
   Push(0x008a);
@@ -211,13 +214,13 @@ void DrawLATFRAME() // .LATFRAME
   Push(0x005f);
   Push(0x008e);
   Push(0x0090);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x00c1);
   Push(0x0093);
   Push(0x008e);
   Push(0x0098);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -652,7 +655,7 @@ void _gt_XHAIR() // >XHAIR
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
@@ -1002,7 +1005,7 @@ void GETSITE_1() // GETSITE_1
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
       StoreCOLOR(); // !COLOR
       UNK_0xefa0(); // UNK_0xefa0
       DrawLON(); // .LON
@@ -1026,7 +1029,7 @@ void GETSITE_1() // GETSITE_1
       Push(pp_XABS); // XABS
       Store_3(); // !_3
       _gt_XHAIR(); // >XHAIR
-      SetColor("WHITE");
+      SetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xefa0(); // UNK_0xefa0
       DrawLON(); // .LON

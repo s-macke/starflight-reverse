@@ -158,6 +158,10 @@ extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_ROSTER; // ROSTER
+extern Color RED; // RED
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -958,7 +962,7 @@ void UNK_0xead4() // UNK_0xead4
 
 void UNK_0xeae2() // UNK_0xeae2
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4fa9); // probable 'BLACK'
   Store_2(); // !_2
   CTERASE(); // CTERASE
@@ -2136,7 +2140,7 @@ void UNK_0xf283() // UNK_0xf283
   unsigned short int a, i, imax;
   UNK_0xf1a9(); // UNK_0xf1a9
   UNK_0xe75a(); // UNK_0xe75a
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xf1b5(); // UNK_0xf1b5
   UNK_0xe87e(); // UNK_0xe87e
   UNK_0xeff1(); // UNK_0xeff1
@@ -2267,7 +2271,7 @@ void UNK_0xf338() // UNK_0xf338
 
 void UNK_0xf340() // UNK_0xf340
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   UNK_0xf330(); // UNK_0xf330
   PRINT("FUEL SUPPLY LOW", 15); // (.")
   UNK_0xf338(); // UNK_0xf338
@@ -2280,7 +2284,7 @@ void UNK_0xf340() // UNK_0xf340
 
 void UNK_0xf35c() // UNK_0xf35c
 {
-  SetColor("PINK");
+  SetColor(PINK);
   UNK_0xf330(); // UNK_0xf330
   UNK_0x3f09("FUEL SUPPLY CRITICAL");
   UNK_0xf338(); // UNK_0xf338
@@ -2293,7 +2297,7 @@ void UNK_0xf35c() // UNK_0xf35c
 
 void UNK_0xf37d() // UNK_0xf37d
 {
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xf330(); // UNK_0xf330
   UNK_0x3f09("OUT OF FUEL");
   UNK_0xf338(); // UNK_0xf338
@@ -2467,7 +2471,7 @@ void UNK_0xf437() // UNK_0xf437
 void UNK_0xf4a9() // UNK_0xf4a9
 {
   UNK_0xf1a9(); // UNK_0xf1a9
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xf25f(); // UNK_0xf25f
   UNK_0xe84c(); // UNK_0xe84c
   Push(7);

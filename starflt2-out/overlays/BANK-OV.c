@@ -57,6 +57,7 @@ extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_PORTDAT; // PORTDAT
 extern const unsigned short int pp_STARDAT; // STARDAT
 extern const unsigned short int user_CONTEXT_1; // CONTEXT_1
+extern Color DK_dash_BLUE; // DK-BLUE
 void DABS(); // DABS
 void M_star__slash_(); // M*/
 void D_st_(); // D<
@@ -680,7 +681,7 @@ void UNK_0xf27f() // UNK_0xf27f
   UNK_0xef96(); // UNK_0xef96
   Push(6);
   Push(0x000f);
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -742,7 +743,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
 void UNK_0xf474() // UNK_0xf474
 {
   DARK(); // DARK
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   UNK_0xf27f(); // UNK_0xf27f
   UNK_0xf1f2(); // UNK_0xf1f2
   UNK_0xf3bb(); // UNK_0xf3bb

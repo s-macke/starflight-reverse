@@ -56,6 +56,9 @@ extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_LKEYTIM; // LKEYTIM
 extern const unsigned short int pp_CMAP; // CMAP
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void MAX(); // MAX
 void MIN(); // MIN
@@ -126,7 +129,7 @@ const unsigned short int pp_UNK_0xf22f = 0xf22f; // UNK_0xf22f size: 2
 
 void UNK_0xf16e() // UNK_0xf16e
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -137,7 +140,7 @@ void UNK_0xf16e() // UNK_0xf16e
 
 void UNK_0xf176() // UNK_0xf176
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
 }
 
@@ -152,7 +155,7 @@ void UNK_0xf17e() // UNK_0xf17e
   Push(0x0053);
   Push(0x007e);
   Push(0x009c);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_WI(); // POLY-WI
   CTINIT(); // CTINIT
   UNK_0xf176(); // UNK_0xf176
@@ -168,13 +171,13 @@ void UNK_0xf17e() // UNK_0xf17e
   Push(0x005f);
   Push(0x008e);
   Push(0x0090);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   Push(0x00c1);
   Push(0x0093);
   Push(0x008e);
   Push(0x0098);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -256,7 +259,7 @@ void UNK_0xf233() // UNK_0xf233
   Push(0x0083);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_ER(); // POLY-ER
   IsCGA(); // ?CGA
   if (Pop() != 0)
@@ -313,7 +316,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
   Push(0x0083);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_ER(); // POLY-ER
   IsCGA(); // ?CGA
   if (Pop() != 0)
@@ -566,7 +569,7 @@ void GETSITE_1() // GETSITE_1
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
       StoreCOLOR(); // !COLOR
       UNK_0xf2a7(); // UNK_0xf2a7
       UNK_0xf233(); // UNK_0xf233

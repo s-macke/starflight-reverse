@@ -62,6 +62,13 @@ extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -172,16 +179,16 @@ void UNK_0xef73() // UNK_0xef73
     Push(Read16(cc_UNK_0xef66)); // UNK_0xef66
     TONE(); // TONE
     BEEPON(); // BEEPON
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
     StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
     V_gt_DISPLAY(); // V>DISPLAY
     Push(0x00c8);
     MS(); // MS
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
-    SetColor("BLACK");
+    SetColor(BLACK);
     StoreCOLOR(); // !COLOR
     Push(0x000c);
     Push(0x0064);
@@ -253,7 +260,7 @@ void UNK_0xf026() // UNK_0xf026
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
   COUNT(); // COUNT
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_3(); // !_3
   Push(0xc216); // probable 'P>CT'
@@ -584,16 +591,16 @@ void UNK_0xf25e() // UNK_0xf25e
   imax = Pop();
   do // (DO)
   {
-    SetColor("BLACK");
-    SetColor("ORANGE");
-    SetColor("RED");
-    SetColor("ORANGE");
-    SetColor("YELLOW");
-    SetColor("ORANGE");
-    SetColor("YELLOW");
-    SetColor("WHITE");
-    SetColor("YELLOW");
-    SetColor("WHITE");
+    SetColor(BLACK);
+    SetColor(ORANGE);
+    SetColor(RED);
+    SetColor(ORANGE);
+    SetColor(YELLOW);
+    SetColor(ORANGE);
+    SetColor(YELLOW);
+    SetColor(WHITE);
+    SetColor(YELLOW);
+    SetColor(WHITE);
     Push(0x000a);
     Push(0);
 

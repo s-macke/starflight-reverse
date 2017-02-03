@@ -116,6 +116,9 @@ extern const unsigned short int pp_E_dash_USE; // E-USE
 extern const unsigned short int pp__10_star_CARG; // 10*CARG
 extern const unsigned short int pp_STIME; // STIME
 extern const unsigned short int pp__i_VERSIO; // 'VERSIO
+extern Color BLACK; // BLACK
+extern Color GREY2; // GREY2
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -307,7 +310,7 @@ void UNK_0xed54() // UNK_0xed54
 void UNK_0xed62() // UNK_0xed62
 {
   unsigned short int i, imax;
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -694,7 +697,7 @@ void UNK_0xefb6() // UNK_0xefb6
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   Push(0);
   Push(0);
@@ -1176,7 +1179,7 @@ void UNK_0xf360() // UNK_0xf360
 
 void UNK_0xf37e() // UNK_0xf37e
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x000e);
   Push(Pop() * Pop()); // *
@@ -1296,7 +1299,7 @@ void UNK_0xf41c() // UNK_0xf41c
 void UNK_0xf42a() // UNK_0xf42a
 {
   unsigned short int i, imax;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @

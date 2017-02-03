@@ -66,6 +66,14 @@ extern const unsigned short int pp_FTRIG; // FTRIG
 extern const unsigned short int pp_FQUIT; // FQUIT
 extern const unsigned short int pp__n_AUX; // #AUX
 extern const unsigned short int pp_VSTIME; // VSTIME
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color DK_dash_GREE; // DK-GREE
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void MOD(); // MOD
 void Draw(); // .
@@ -157,7 +165,7 @@ void UNK_0xecc5() // UNK_0xecc5
 
 void UNK_0xecd9() // UNK_0xecd9
 {
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x009a);
   Push(0x00b4);
@@ -204,14 +212,14 @@ void UNK_0xed21() // UNK_0xed21
 void UNK_0xed35() // UNK_0xed35
 {
   _gt_2FONT(); // >2FONT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0067);
   Push(0x00c2);
   POS_dot_(); // POS.
   PRINT("DAMAGE", 6); // (.")
   _gt_1FONT(); // >1FONT
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x0055);
   Push(0x00b2);
@@ -275,9 +283,9 @@ void UNK_0xedac() // UNK_0xedac
     Push(Pop() * Pop()); // *
     _dash_(); // -
     POS_dot_(); // POS.
-    SetColor("WHITE");
-    SetColor("BLUE");
-    SetColor("DK-GREE");
+    SetColor(WHITE);
+    SetColor(BLUE);
+    SetColor(DK_dash_GREE);
     IsMRC(); // ?MRC
     StoreCOLOR(); // !COLOR
     Push(pp_WBLT); // WBLT
@@ -298,9 +306,9 @@ void UNK_0xedac() // UNK_0xedac
     _dash_(); // -
     Push(pp_WBLT); // WBLT
     Store_2(); // !_2
-    SetColor("GREY1");
-    SetColor("RED");
-    SetColor("RED");
+    SetColor(GREY1);
+    SetColor(RED);
+    SetColor(RED);
     IsMRC(); // ?MRC
     StoreCOLOR(); // !COLOR
     Push(pp_WBLT); // WBLT
@@ -369,7 +377,7 @@ void DBARS() // DBARS
 
 void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
   UNK_0xecd9(); // UNK_0xecd9
   UNK_0xed35(); // UNK_0xed35
@@ -1042,7 +1050,7 @@ void UNK_0xf415() // UNK_0xf415
   Push(7);
   Push(pp_LBLT); // LBLT
   Store_2(); // !_2
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2

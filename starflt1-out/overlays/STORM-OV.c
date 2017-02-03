@@ -55,6 +55,8 @@ extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WRIGHT; // WRIGHT
 extern const unsigned short int pp_WLEFT; // WLEFT
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern Color BLACK; // BLACK
+extern Color WHITE; // WHITE
 void ABS(); // ABS
 void MAX(); // MAX
 void MIN(); // MIN
@@ -412,7 +414,7 @@ void UNK_0xf30e() // UNK_0xf30e
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
@@ -432,7 +434,7 @@ void UNK_0xf33c() // UNK_0xf33c
 {
   UNK_0xf2f4(); // UNK_0xf2f4
   UNK_0xf30e(); // UNK_0xf30e
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xf28b.offset); // IFIELD
   _do__dot_(); // $.
@@ -525,13 +527,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0096);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 }
 

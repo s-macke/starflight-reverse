@@ -125,6 +125,19 @@ extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern LoadDataType ELEM_dash_NAME; // ELEM-NAME
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color DK_dash_GREEN; // DK-GREEN
+extern Color GREEN; // GREEN
+extern Color RED; // RED
+extern Color VIOLET; // VIOLET
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color LT_dash_GREEN; // LT-GREEN
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType PHRASE_do_; // PHRASE$
 void COUNT(); // COUNT
 void _star__slash_(); // */
@@ -423,7 +436,7 @@ void UNK_0xe742() // UNK_0xe742
   Push(0x0028);
   _st_(); // <
   if (Pop() == 0) return;
-  SetColor("PINK");
+  SetColor(PINK);
   StoreCOLOR(); // !COLOR
 }
 
@@ -434,9 +447,9 @@ void UNK_0xe742() // UNK_0xe742
 
 void UNK_0xe754() // UNK_0xe754
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -644,7 +657,7 @@ void UNK_0xe8b4() // UNK_0xe8b4
   D_gt_(); // D>
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  SetColor("PINK");
+  SetColor(PINK);
   StoreCOLOR(); // !COLOR
 }
 
@@ -756,7 +769,7 @@ void UNK_0xe974() // UNK_0xe974
 {
   unsigned short int i, imax;
   SWAP(); // SWAP
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x00a4);
   SWAP(); // SWAP
@@ -789,7 +802,7 @@ void UNK_0xe974() // UNK_0xe974
 
 void UNK_0xe9a0() // UNK_0xe9a0
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xe61e.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -827,7 +840,7 @@ void UNK_0xe9da() // UNK_0xe9da
   Push(0x0065);
   WITHIN(); // WITHIN
   if (Pop() == 0) return;
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xe614.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -896,7 +909,7 @@ void UNK_0xea40() // UNK_0xea40
 
 void UNK_0xea52() // UNK_0xea52
 {
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(0x0055);
   Push(0x0087);
@@ -931,7 +944,7 @@ void UNK_0xea52() // UNK_0xea52
   Push(0x0085);
   POS_dot_(); // POS.
   PRINT("A", 1); // (.")
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xea2e); // UNK_0xea2e
   Push(pp_ABLT); // ABLT
@@ -968,9 +981,9 @@ void DrawSTAT_dash_TEXT() // .STAT-TEXT
   POS_dot_(); // POS.
   PRINT("STATUS", 6); // (.")
   _gt_1FONT(); // >1FONT
-  SetColor("WHITE");
-  SetColor("WHITE");
-  SetColor("LT-GREEN");
+  SetColor(WHITE);
+  SetColor(WHITE);
+  SetColor(LT_dash_GREEN);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x0055);
@@ -1048,7 +1061,7 @@ void DrawSTAT_dash_TEXT() // .STAT-TEXT
 
 void UNK_0xec00() // UNK_0xec00
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xea52(); // UNK_0xea52
   DrawSTAT_dash_TEXT(); // .STAT-TEXT
@@ -1129,7 +1142,7 @@ void UNK_0xec70() // UNK_0xec70
   Push(Read16(Pop())); // @
   Push(pp_UNK_0xec24); // UNK_0xec24
   Push(Read16(Pop())); // @
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xec36(); // UNK_0xec36
   Push(pp_UNK_0xec28); // UNK_0xec28
   Push(Read16(Pop())); // @
@@ -1152,7 +1165,7 @@ void UNK_0xec70() // UNK_0xec70
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xec24); // UNK_0xec24
   Store_3(); // !_3
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xec36(); // UNK_0xec36
   CLICK(); // CLICK
 }
@@ -1232,7 +1245,7 @@ void UNK_0xecb4() // UNK_0xecb4
 void UNK_0xed30() // UNK_0xed30
 {
   unsigned short int a, b;
-  SetColor("DK-GREEN");
+  SetColor(DK_dash_GREEN);
   StoreCOLOR(); // !COLOR
   Push(0x0054);
   Push(0x00b4);
@@ -1329,12 +1342,12 @@ void UNK_0xedd0() // UNK_0xedd0
     RRND(); // RRND
     TONE(); // TONE
     _2DUP(); // 2DUP
-    SetColor("GREEN");
+    SetColor(GREEN);
     UNK_0xec36(); // UNK_0xec36
     Push(5);
     MS(); // MS
     _2DUP(); // 2DUP
-    SetColor("RED");
+    SetColor(RED);
     UNK_0xec36(); // UNK_0xec36
     Push(5);
     MS(); // MS
@@ -1416,16 +1429,16 @@ void UNK_0xee86() // UNK_0xee86
   Push(0x006f);
   Push(0x007e);
   Push(0x009b);
-  SetColor("GREY1");
-  SetColor("GREY1");
-  SetColor("VIOLET");
+  SetColor(GREY1);
+  SetColor(GREY1);
+  SetColor(VIOLET);
   IsMRC(); // ?MRC
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x00b4);
   Push(0x0071);
   Push(0x0080);
   Push(0x0099);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -1436,7 +1449,7 @@ void UNK_0xee86() // UNK_0xee86
 
 void UNK_0xeeb8() // UNK_0xeeb8
 {
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x009c);
   Push(0x00b7);
@@ -1473,7 +1486,7 @@ void UNK_0xeee0() // UNK_0xeee0
 
 void UNK_0xeefe() // UNK_0xeefe
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xeeb8(); // UNK_0xeeb8
   UNK_0xee86(); // UNK_0xee86
@@ -1684,9 +1697,9 @@ void UNK_0xf043() // UNK_0xf043
   Push(0x0029);
   Push(pp_WBLT); // WBLT
   Store_3(); // !_3
-  SetColor("GREY1");
-  SetColor("GREY1");
-  SetColor("VIOLET");
+  SetColor(GREY1);
+  SetColor(GREY1);
+  SetColor(VIOLET);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x0019);
@@ -1741,7 +1754,7 @@ void UNK_0xf09d() // UNK_0xf09d
 
 void UNK_0xf0bd() // UNK_0xf0bd
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT(": ", 2); // (.")
@@ -1833,9 +1846,9 @@ void UNK_0xf0de() // UNK_0xf0de
 
 void UNK_0xf16b() // UNK_0xf16b
 {
-  SetColor("GREY1");
-  SetColor("GREY1");
-  SetColor("DK-GREEN");
+  SetColor(GREY1);
+  SetColor(GREY1);
+  SetColor(DK_dash_GREEN);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x0054);
@@ -1929,7 +1942,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
 
 void UNK_0xf239() // UNK_0xf239
 {
-  SetColor("DK-GREEN");
+  SetColor(DK_dash_GREEN);
   StoreCOLOR(); // !COLOR
   Push(0x0054);
   Push(0x009a);
@@ -2012,12 +2025,12 @@ void UNK_0xf2dc() // UNK_0xf2dc
   Push(0x006f);
   Push(0x007e);
   Push(0x009c);
-  SetColor("GREY1");
-  SetColor("GREY1");
-  SetColor("VIOLET");
+  SetColor(GREY1);
+  SetColor(GREY1);
+  SetColor(VIOLET);
   IsMRC(); // ?MRC
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0087);
   Push(0x009a);
@@ -2249,7 +2262,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   {
     Push(0x0023);
     Push(0x003b);
-    SetColor("RED");
+    SetColor(RED);
     UNK_0xec36(); // UNK_0xec36
     do
     {
@@ -2261,7 +2274,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
     Push(Read16(Pop())); // @
     Push(pp_UNK_0xec24); // UNK_0xec24
     Push(Read16(Pop())); // @
-    SetColor("RED");
+    SetColor(RED);
     UNK_0xec36(); // UNK_0xec36
   }
   _2DUP(); // 2DUP

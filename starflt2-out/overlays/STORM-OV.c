@@ -48,6 +48,7 @@ extern const unsigned short int pp_E_slash_M; // E/M
 extern const unsigned short int pp__n_STORM; // #STORM
 extern const unsigned short int pp_IsHEAL; // ?HEAL
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern Color BLACK; // BLACK
 void ABS(); // ABS
 void MAX(); // MAX
 void MIN(); // MIN
@@ -468,13 +469,13 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x0096);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
 }
 

@@ -138,6 +138,11 @@ extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__n_ETIME; // #ETIME
 extern const unsigned short int pp_NOF; // NOF
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -313,7 +318,7 @@ void UNK_0xec2a() // UNK_0xec2a
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _st__ex__gt_(); // <!>
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -492,7 +497,7 @@ void UNK_0xed31() // UNK_0xed31
   Push(0x0099);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(pp_XORMODE); // XORMODE
@@ -662,16 +667,16 @@ void UNK_0xedf7() // UNK_0xedf7
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    SetColor("WHITE");
+    SetColor(WHITE);
   } else
   {
     IsCGA(); // ?CGA
     if (Pop() != 0)
     {
-      SetColor("RED");
+      SetColor(RED);
     } else
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
     }
   }
   StoreCOLOR(); // !COLOR

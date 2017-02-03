@@ -98,6 +98,13 @@ extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
@@ -430,7 +437,7 @@ void UNK_0xe673() // UNK_0xe673
 void UNK_0xe687() // UNK_0xe687
 {
   unsigned short int i, imax, j, jmax, k, kmax, l, lmax;
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(0x0011);
   Push(0x00c7);
@@ -517,9 +524,9 @@ void UNK_0xe687() // UNK_0xe687
 
 void UNK_0xe71f() // UNK_0xe71f
 {
-  SetColor("GREY1");
-  SetColor("GREY1");
-  SetColor("LT-BLUE");
+  SetColor(GREY1);
+  SetColor(GREY1);
+  SetColor(LT_dash_BLUE);
   IsMRC(); // ?MRC
 }
 
@@ -536,7 +543,7 @@ void UNK_0xe72b() // UNK_0xe72b
   Push(0x009b);
   UNK_0xe71f(); // UNK_0xe71f
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(0x009b);
   Push(0);
@@ -584,7 +591,7 @@ void UNK_0xe72b() // UNK_0xe72b
   Push(0);
   LLINE(); // LLINE
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(9);
   Push(0x0010);
@@ -635,7 +642,7 @@ void UNK_0xe818() // UNK_0xe818
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   Store_3(); // !_3
-  SetColor("ORANGE");
+  SetColor(ORANGE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
@@ -677,7 +684,7 @@ void UNK_0xe85c() // UNK_0xe85c
     Push(pp_UNK_0xe577); // UNK_0xe577
     Push(pp_ABLT); // ABLT
     Store_3(); // !_3
-    SetColor("BLUE");
+    SetColor(BLUE);
     StoreCOLOR(); // !COLOR
     Push(pp_XORMODE); // XORMODE
     OFF(); // OFF
@@ -697,7 +704,7 @@ void UNK_0xe85c() // UNK_0xe85c
 void UNK_0xe8a8() // UNK_0xe8a8
 {
   unsigned short int i, imax;
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x009c);
@@ -711,7 +718,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
     Push(0x001a);
     POS_dot_(); // POS.
     Push(3);
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
     Push(pp_LVIS); // LVIS
     Push(Read16(Pop())); // @
@@ -744,7 +751,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
 void UNK_0xe8f2() // UNK_0xe8f2
 {
   unsigned short int i, imax;
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x00c7);
@@ -758,7 +765,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
     Push(i); // I
     POS_dot_(); // POS.
     Push(3);
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
     Push(1);
     Push(pp_XBLT); // XBLT
@@ -990,7 +997,7 @@ void UNK_0xea4c() // UNK_0xea4c
 void UNK_0xea70() // UNK_0xea70
 {
   unsigned short int i, imax;
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(pp_ILOCAL); // ILOCAL
   Push(Read16(Pop())); // @
@@ -1044,7 +1051,7 @@ void UNK_0xeaae() // UNK_0xeaae
   Push(0x0014);
   Push(0x0021);
   Push(0x009f);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -1072,7 +1079,7 @@ void UNK_0xeac6() // UNK_0xeac6
 void UNK_0xead8() // UNK_0xead8
 {
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0033);
   Push(7);
@@ -1110,7 +1117,7 @@ void UNK_0xead8() // UNK_0xead8
 void UNK_0xeb1a() // UNK_0xeb1a
 {
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x006b);
   Push(7);
@@ -1132,7 +1139,7 @@ void UNK_0xeb1a() // UNK_0xeb1a
 void UNK_0xeb3a() // UNK_0xeb3a
 {
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x008a);
   Push(7);
@@ -1216,7 +1223,7 @@ void UNK_0xeb91() // UNK_0xeb91
 void UNK_0xebcf() // UNK_0xebcf
 {
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(9);
   Push(7);
@@ -1316,7 +1323,7 @@ void UNK_0xec82() // UNK_0xec82
 
 void UNK_0xecac() // UNK_0xecac
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {

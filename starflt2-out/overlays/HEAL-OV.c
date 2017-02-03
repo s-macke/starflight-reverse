@@ -64,6 +64,10 @@ extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
 extern const unsigned short int pp_Is10; // ?10
 extern const unsigned short int pp_HEALTI; // HEALTI
 extern const unsigned short int pp_ROSTER; // ROSTER
+extern Color BLACK; // BLACK
+extern Color RED; // RED
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_SI; // INST-SI
 void COUNT(); // COUNT
 void MIN(); // MIN
@@ -316,11 +320,11 @@ void UNK_0xf151() // UNK_0xf151
     _gt_SSCT(); // >SSCT
   }
   _gt_DISPLA(); // >DISPLA
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4fa9); // probable 'BLACK'
   Store_2(); // !_2
   CTERASE(); // CTERASE
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(1);
@@ -585,7 +589,7 @@ void DrawVITS() // .VITS
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   b = Pop(); // >R
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf086(); // UNK_0xf086
   Push(0);
@@ -601,7 +605,7 @@ void DrawVITS() // .VITS
     GCR(); // GCR
     Push(pp_WCHARS); // WCHARS
     Push(Read16(Pop())); // @
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(i); // I
     UNK_0xf0fd(); // UNK_0xf0fd
@@ -640,7 +644,7 @@ void DrawVITS() // .VITS
       Push(pp_XBLT); // XBLT
       _plus__ex__2(); // +!_2
       Push(4);
-      SetColor("BLACK");
+      SetColor(BLACK);
       POLY_dash_ER(); // POLY-ER
       Push(pp_XBLT); // XBLT
       Store_2(); // !_2

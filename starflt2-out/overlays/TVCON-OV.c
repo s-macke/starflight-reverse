@@ -77,6 +77,10 @@ extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern const unsigned short int pp__n_ETIME; // #ETIME
+extern Color BLACK; // BLACK
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -667,9 +671,9 @@ void DrawSTARDATE() // .STARDATE
   Push(0x00b2);
   POS_dot_(); // POS.
   Push(0x000a);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_PAST); // PAST
   Push(Read16(Pop())); // @
@@ -898,9 +902,9 @@ void UNK_0xf2f6() // UNK_0xf2f6
   Push(0x0096);
   POS_dot_(); // POS.
   Push(8);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() != 0)
@@ -925,9 +929,9 @@ void UNK_0xf32c() // UNK_0xf32c
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
@@ -952,7 +956,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00ab);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
@@ -963,12 +967,12 @@ void DrawENERGY() // .ENERGY
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     StoreCOLOR(); // !COLOR
     PRINT("NONE", 4); // (.")
     return;
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x07d0);
   _dash_(); // -
@@ -983,7 +987,7 @@ void DrawENERGY() // .ENERGY
     Pop(); // DROP
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
-    SetColor("PINK");
+    SetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
     StoreCOLOR(); // !COLOR
@@ -997,7 +1001,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00a4);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
@@ -1027,7 +1031,7 @@ void DrawCARGO() // .CARGO
   Push(0x009d);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   Get_gt_C_plus_S(); // @>C+S
@@ -1041,7 +1045,7 @@ void DrawCARGO() // .CARGO
     Push(5);
     _slash_(); // /
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(3);
   DrawR(); // .R
@@ -1126,7 +1130,7 @@ void DrawWHERE() // .WHERE
 {
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0010);
   Push(0x00c5);

@@ -34,6 +34,9 @@ extern const unsigned short int pp_TILE_dash_PT; // TILE-PT
 extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
 extern const unsigned short int pp_CMAP; // CMAP
 extern const unsigned short int pp_NOF; // NOF
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 void KEY_2(); // KEY_2
 void _gt_FLAG(); // >FLAG
 void I_gt_C(); // I>C
@@ -100,7 +103,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
     i++;
   } while(i<imax); // (LOOP)
 
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
@@ -141,7 +144,7 @@ void UNK_0xf36f() // UNK_0xf36f
   Push(0x0037);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
@@ -223,7 +226,7 @@ void UNK_0xf418() // UNK_0xf418
   Push(0x001b);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY_2(); // KEY_2
@@ -237,7 +240,7 @@ void UNK_0xf418() // UNK_0xf418
 
 void UNK_0xf452() // UNK_0xf452
 {
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   UNK_0xf36f(); // UNK_0xf36f
@@ -285,7 +288,7 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(0x000c);
     Push(pp_XBLT); // XBLT
     _st__plus__ex__gt_(); // <+!>
-    SetColor("BLACK");
+    SetColor(BLACK);
     StoreCOLOR(); // !COLOR
     Push(-2);
     Push(pp_YBLT); // YBLT

@@ -260,6 +260,11 @@ extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_LASTAP; // LASTAP
+extern Color BLACK; // BLACK
+extern Color DK_dash_GREEN; // DK-GREEN
+extern Color RED; // RED
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -1633,10 +1638,10 @@ void UNK_0xe4e8() // UNK_0xe4e8
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
     return;
   }
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
 }
 
 
@@ -1676,7 +1681,7 @@ void UNK_0xe500() // UNK_0xe500
     i++;
   } while(i<imax); // (LOOP)
 
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1814,10 +1819,10 @@ void UNK_0xe5dc() // UNK_0xe5dc
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    SetColor("DK-GREEN");
+    SetColor(DK_dash_GREEN);
   } else
   {
-    SetColor("BLACK");
+    SetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -1923,7 +1928,7 @@ void UNK_0xe660() // UNK_0xe660
   Push(0x03e8);
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("RED");
+  SetColor(RED);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
@@ -3015,9 +3020,9 @@ void UNK_0xecea() // UNK_0xecea
   _2DUP(); // 2DUP
   a = Pop(); // >R
   b = Pop(); // >R
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xea81(); // UNK_0xea81
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(b); // R>
   Push(a); // R>
@@ -3791,7 +3796,7 @@ void UNK_0xf17e() // UNK_0xf17e
 
 void UNK_0xf18c() // UNK_0xf18c
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("NO TARGET PRESENT");
   DrawTTY(); // .TTY
@@ -3847,7 +3852,7 @@ void UNK_0xf1dc() // UNK_0xf1dc
   Push(pp_UNK_0xde4f); // UNK_0xde4f
   _2_ex_(); // 2!
   VCLIPSET(); // VCLIPSET
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xea81(); // UNK_0xea81
   DCLIPSET(); // DCLIPSET
   Push(pp_UNK_0xde4f); // UNK_0xde4f
@@ -3939,7 +3944,7 @@ void UNK_0xf240() // UNK_0xf240
           UNK_0xf1dc(); // UNK_0xf1dc
         } else
         {
-          SetColor("WHITE");
+          SetColor(WHITE);
           StoreCOLOR(); // !COLOR
           UNK_0x3f3b("WEAPON NOT AVAILABLE");
           DrawTTY(); // .TTY
@@ -3953,7 +3958,7 @@ void UNK_0xf240() // UNK_0xf240
   goto label7;
 
   label2:
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("WEAPONS NOT ARMED ");
   DrawTTY(); // .TTY
@@ -3962,7 +3967,7 @@ void UNK_0xf240() // UNK_0xf240
   return;
 
   label1:
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("OUT OF FUEL! ");
   DrawTTY(); // .TTY
@@ -4133,7 +4138,7 @@ void UNK_0xf414() // UNK_0xf414
   _gt_MAINVIEW(); // >MAINVIEW
   UNK_0xe5dc(); // UNK_0xe5dc
   _gt_DISPLAY(); // >DISPLAY
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("HIT SPACE BAR TO FIRE WEAPON");
   DrawTTY(); // .TTY

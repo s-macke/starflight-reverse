@@ -76,6 +76,8 @@ extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 extern LoadDataType ART_dash_NAME; // ART-NAME
 extern LoadDataType ART_dash_VAL; // ART-VAL
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_VAL; // INST-VAL
 extern IFieldType INST_dash_DATE; // INST-DATE
@@ -248,11 +250,11 @@ void UNK_0xee2c() // UNK_0xee2c
   {
     Push(pp_CTTOP); // CTTOP
     Push(Read16(Pop())); // @
-    SetColor("WHITE");
+    SetColor(WHITE);
   } else
   {
     Push(0x0096);
-    SetColor("GREY1");
+    SetColor(GREY1);
   }
   StoreCOLOR(); // !COLOR
   Push(7);

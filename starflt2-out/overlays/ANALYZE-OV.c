@@ -112,6 +112,7 @@ extern const unsigned short int pp_NLR; // NLR
 extern const unsigned short int pp_SENSE_dash_A; // SENSE-A
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
+extern Color BLUE; // BLUE
 extern IFieldType INST_dash_QT; // INST-QT
 void DABS(); // DABS
 void MAX(); // MAX
@@ -342,7 +343,7 @@ void UNK_0xed4d() // UNK_0xed4d
 
 void UNK_0xed5a() // UNK_0xed5a
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
@@ -390,7 +391,7 @@ void UNK_0xed9f() // UNK_0xed9f
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
@@ -497,7 +498,7 @@ void UNK_0xee9b() // UNK_0xee9b
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -780,7 +781,7 @@ void UNK_0xf0b5() // UNK_0xf0b5
   Push(0x0014);
   Push(1);
   CTPOS_dot_(); // CTPOS.
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT

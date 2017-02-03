@@ -75,6 +75,9 @@ extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern Color BLACK; // BLACK
+extern Color BLUE; // BLUE
+extern Color PINK; // PINK
 extern IFieldType INST_dash_SI; // INST-SI
 extern IFieldType PHRASE_do_; // PHRASE$
 void COUNT(); // COUNT
@@ -337,7 +340,7 @@ void UNK_0xe658() // UNK_0xe658
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
     Push(pp_THIS_dash_BU); // THIS-BU
     Push(Read16(Pop())); // @
     DrawON(); // .ON
@@ -356,7 +359,7 @@ void UNK_0xe658() // UNK_0xe658
   {
     Pop(); // DROP
   }
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -790,7 +793,7 @@ void UNK_0xf1d2() // UNK_0xf1d2
 
 void UNK_0xf1f6() // UNK_0xf1f6
 {
-  SetColor("PINK");
+  SetColor(PINK);
   Push(Read16(regsp)); // DUP
   StoreCOLOR(); // !COLOR
   Push(pp_CTCOLOR); // CTCOLOR

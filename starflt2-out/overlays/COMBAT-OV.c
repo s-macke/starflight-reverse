@@ -290,6 +290,13 @@ extern const unsigned short int pp__i_UHL; // 'UHL
 extern const unsigned short int pp_SMART; // SMART
 extern const unsigned short int pp_LASTAP; // LASTAP
 extern const unsigned short int pp__n_MISS; // #MISS
+extern Color BLACK; // BLACK
+extern Color RED; // RED
+extern Color VIOLET; // VIOLET
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -1738,10 +1745,10 @@ void UNK_0xe31d() // UNK_0xe31d
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
     return;
   }
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
 }
 
 
@@ -1754,13 +1761,13 @@ void C_gt_C() // C>C
   switch(Pop()) // C>C
   {
   case 6:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 7:
-    SetColor("VIOLET");
+    SetColor(VIOLET);
     break;
   case 10:
-    SetColor("PINK");
+    SetColor(PINK);
     break;
   default:
     UNK_0xe31d(); // UNK_0xe31d
@@ -2079,7 +2086,7 @@ void UNK_0xe4f0() // UNK_0xe4f0
     NBCLR(); // NBCLR
   } else
   {
-    SetColor("BLACK");
+    SetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -2168,7 +2175,7 @@ void UNK_0xe572() // UNK_0xe572
   Push(0x03e8);
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("RED");
+  SetColor(RED);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
@@ -2751,7 +2758,7 @@ void UNK_0xe8c0() // UNK_0xe8c0
   ICLOSE(); // ICLOSE
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
 }
@@ -3047,7 +3054,7 @@ void UNK_0xea90() // UNK_0xea90
   UNK_0xe414(); // UNK_0xe414
   DrawLOCAL_dash_(); // .LOCAL-
   _1PIX(); // 1PIX
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xdd64(); // UNK_0xdd64
   WLD_gt_SCR(); // WLD>SCR
@@ -3256,9 +3263,9 @@ void UNK_0xebdd() // UNK_0xebdd
 {
   UNK_0xdd5c(); // UNK_0xdd5c
   UNK_0xdd4c(); // UNK_0xdd4c
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xe966(); // UNK_0xe966
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x6638); Push(0x0002);
   UNK_0xde37(); // UNK_0xde37
@@ -3759,7 +3766,7 @@ void UNK_0xee11() // UNK_0xee11
       CTINIT(); // CTINIT
     } else
     {
-      SetColor("YELLOW");
+      SetColor(YELLOW);
       StoreCOLOR(); // !COLOR
     }
     Push(0x6651); Push(0x0002);
@@ -4418,7 +4425,7 @@ void UNK_0xf242() // UNK_0xf242
 
 void UNK_0xf250() // UNK_0xf250
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x666f); Push(0x0002);
   UNK_0xde37(); // UNK_0xde37
@@ -4472,7 +4479,7 @@ void UNK_0xf28a() // UNK_0xf28a
   _2DUP(); // 2DUP
   Push(pp_UNK_0xde53); // UNK_0xde53
   _2_ex__2(); // 2!_2
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xe966(); // UNK_0xe966
   Push(pp_UNK_0xde53); // UNK_0xde53
   _2_at_(); // 2@
@@ -4532,7 +4539,7 @@ void UNK_0xf2b6() // UNK_0xf2b6
           UNK_0xf28a(); // UNK_0xf28a
         } else
         {
-          SetColor("WHITE");
+          SetColor(WHITE);
           StoreCOLOR(); // !COLOR
           Push(0x668d); Push(0x0002);
           UNK_0xde37(); // UNK_0xde37
@@ -4547,7 +4554,7 @@ void UNK_0xf2b6() // UNK_0xf2b6
   goto label7;
 
   label2:
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x66ae); Push(0x0002);
   UNK_0xde37(); // UNK_0xde37
@@ -4557,7 +4564,7 @@ void UNK_0xf2b6() // UNK_0xf2b6
   return;
 
   label1:
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(0x66cd); Push(0x0002);
   UNK_0xde37(); // UNK_0xde37
@@ -4649,7 +4656,7 @@ void UNK_0xf3b6() // UNK_0xf3b6
     Push(0x005c);
     Push(0x0085);
     Push(0x0061);
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_WI(); // POLY-WI
     StoreCRS(); // !CRS
   }

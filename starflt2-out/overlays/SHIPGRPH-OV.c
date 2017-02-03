@@ -70,6 +70,13 @@ extern const unsigned short int pp_LBLT; // LBLT
 extern const unsigned short int pp_WBLT; // WBLT
 extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_BLTSEG; // BLTSEG
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 void Draw(); // .
 void DrawR(); // .R
@@ -379,7 +386,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(4);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0x0069);
   Push(0x0036);
   _2DUP(); // 2DUP
@@ -414,7 +421,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0x0072);
   Push(0x002c);
   _2DUP(); // 2DUP
@@ -437,7 +444,7 @@ void UNK_0xef3a() // UNK_0xef3a
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(6);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0x007e);
   Push(0x0022);
   _2DUP(); // 2DUP
@@ -494,7 +501,7 @@ void UNK_0xef3a() // UNK_0xef3a
 
 void UNK_0xefb0() // UNK_0xefb0
 {
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -578,7 +585,7 @@ void UNK_0xf046() // UNK_0xf046
   Push(0x65e1+UNK_0xed38.offset); // IFIELD
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
-  SetColor("RED");
+  SetColor(RED);
   Push(Pop() * Pop()); // *
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -697,23 +704,23 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Store_2(); // !_2
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(0x65e1+UNK_0xed47.offset); // IFIELD
   Push(Read16(Pop())); // @
   _plus_BIT(); // +BIT
   UNK_0xf106(); // UNK_0xf106
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x65e1+UNK_0xed5b.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf106(); // UNK_0xf106
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(0x65e1+UNK_0xed60.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   UNK_0xf106(); // UNK_0xf106
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0010);
   Push(pp_UNK_0xf0dc); // UNK_0xf0dc
@@ -748,7 +755,7 @@ void UNK_0xf192() // UNK_0xf192
   Push(0x65e1+UNK_0xed3d.offset); // IFIELD
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   Push(Pop() * Pop()); // *
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -786,10 +793,10 @@ void UNK_0xf1d4() // UNK_0xf1d4
   UNK_0xed65(); // UNK_0xed65
   if (Pop() != 0)
   {
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
   } else
   {
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -859,7 +866,7 @@ void _ro_BALANC() // (BALANC
 
 void UNK_0xf277() // UNK_0xf277
 {
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x009d);
   Push(1);
@@ -923,9 +930,9 @@ void UNK_0xf277() // UNK_0xf277
   LLINE(); // LLINE
   Push(0x0015);
   Push(0x00c3);
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   Push(0x0027);

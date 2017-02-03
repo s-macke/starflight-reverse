@@ -45,6 +45,7 @@ extern const unsigned short int pp_FSTUN; // FSTUN
 extern const unsigned short int pp_SUPER_dash_B; // SUPER-B
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_SURFAC; // (SURFAC
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void _co_(); // ,
 void RRND(); // RRND
@@ -385,7 +386,7 @@ void DIO() // DIO
   _099(); // 099
   Push(pp_FSTUN); // FSTUN
   _099(); // 099
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09("AUTO SAMPLING DEVICES ACTIVATED");
   DrawTTY(); // .TTY

@@ -98,6 +98,16 @@ extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_NAV_dash_TIM; // NAV-TIM
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType _1BTN; // 1BTN
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color GREEN; // GREEN
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color BLUE; // BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -331,12 +341,12 @@ void UNK_0xeddd() // UNK_0xeddd
 {
   POS_dot_(); // POS.
   Push(0x000d);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_ER(); // POLY-ER
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
-  SetColor("GREY2");
-  SetColor("DK-BLUE");
+  SetColor(BLACK);
+  SetColor(GREY2);
+  SetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -566,7 +576,7 @@ void UNK_0xef07() // UNK_0xef07
 
 void UNK_0xef31() // UNK_0xef31
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
 }
 
@@ -613,7 +623,7 @@ void _ro_GET_dash_AU() // (GET-AU
 
 void UNK_0xef65() // UNK_0xef65
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp__n_AUX); // #AUX
   Push(Read16(Pop())); // @
@@ -621,7 +631,7 @@ void UNK_0xef65() // UNK_0xef65
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   UNK_0xeee3(); // UNK_0xeee3
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawHIGHLI(); // .HIGHLI
@@ -656,13 +666,13 @@ void UNK_0xefb2() // UNK_0xefb2
   _gt_DISPLA(); // >DISPLA
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0025);
   Push(0x0085);
   POS_dot_(); // POS.
   Push(2);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(0x0063);
   MIN(); // MIN
@@ -733,19 +743,19 @@ void UNK_0xf018() // UNK_0xf018
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   Push(6);
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   UNK_0xf010(); // UNK_0xf010
   Push(0x000b);
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xf010(); // UNK_0xf010
   Push(0x0010);
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   UNK_0xf010(); // UNK_0xf010
   Push(0x0015);
-  SetColor("ORANGE");
+  SetColor(ORANGE);
   UNK_0xf010(); // UNK_0xf010
   Push(0x001a);
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xf010(); // UNK_0xf010
   V_gt_DISPL(); // V>DISPL
 }
@@ -1448,7 +1458,7 @@ void UNK_0xf440() // UNK_0xf440
 
 void UNK_0xf464() // UNK_0xf464
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x6c69); Push(0x0002);
   UNK_0xee31(); // UNK_0xee31
@@ -1487,7 +1497,7 @@ void UNK_0xf482() // UNK_0xf482
     POS_dot_(); // POS.
     _gt_DISPLA(); // >DISPLA
     Push(2);
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(0x0064);
     MS(); // MS

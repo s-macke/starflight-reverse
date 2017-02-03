@@ -153,6 +153,11 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_NOF; // NOF
 extern LoadDataType ART_dash_NAM; // ART-NAM
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color BLUE; // BLUE
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_OF; // INST-OF
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType PHRASE; // PHRASE
@@ -359,16 +364,16 @@ void APAUSE() // APAUSE
   Push(b); // I
   if (Pop() != 0)
   {
-    SetColor("PINK");
+    SetColor(PINK);
   } else
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
   }
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
     Pop(); // DROP
-    SetColor("WHITE");
+    SetColor(WHITE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -390,10 +395,10 @@ void APAUSE() // APAUSE
   Push(b); // I
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
   } else
   {
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -1037,7 +1042,7 @@ void UNK_0xeb8d() // UNK_0xeb8d
   Push(0x0099);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(pp_XORMODE); // XORMODE
@@ -1343,7 +1348,7 @@ void UNK_0xed0f() // UNK_0xed0f
 void UNK_0xed17() // UNK_0xed17
 {
   unsigned short int i, imax;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_WLINES); // WLINES
   Push(Read16(Pop())); // @
@@ -1410,7 +1415,7 @@ void UNK_0xed5d() // UNK_0xed5d
 void UNK_0xed6b() // UNK_0xed6b
 {
   UNK_0xebc1(); // UNK_0xebc1
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 

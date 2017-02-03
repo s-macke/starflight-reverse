@@ -87,6 +87,7 @@ extern const unsigned short int pp_REPAIRT; // REPAIRT
 extern const unsigned short int pp_IsREPAIR; // ?REPAIR
 extern const unsigned short int pp_REAL_dash_MS; // REAL-MS
 extern LoadDataType ELEM_dash_NAME; // ELEM-NAME
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 void _star__slash_(); // */
 void M_slash_(); // M/
@@ -844,7 +845,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
 
 void UNK_0xf2be() // UNK_0xf2be
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf238(); // UNK_0xf238
   UNK_0xf26c(); // UNK_0xf26c
@@ -861,7 +862,7 @@ void UNK_0xf2be() // UNK_0xf2be
 
 void UNK_0xf2d2() // UNK_0xf2d2
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1144,7 +1145,7 @@ void UNK_0xf45f() // UNK_0xf45f
   }
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("ITEM OPERATIONAL ");
   DrawTTY(); // .TTY

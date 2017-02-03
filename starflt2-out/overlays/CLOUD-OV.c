@@ -32,6 +32,7 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
+extern Color WHITE; // WHITE
 void MS(); // MS
 void Store_2(); // !_2
 void GetINST_dash_S(); // @INST-S
@@ -299,7 +300,7 @@ void DO_dash_CLOUD() // DO-CLOUD
   {
     _gt_1FONT(); // >1FONT
     WUP(); // WUP
-    SetColor("WHITE");
+    SetColor(WHITE);
     StoreCOLOR(); // !COLOR
     _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
     return;

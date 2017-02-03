@@ -184,6 +184,13 @@ extern LoadDataType ELEM_dash_NA; // ELEM-NA
 extern LoadDataType ELEM_dash_VA; // ELEM-VA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VAL; // ART-VAL
+extern Color BLACK; // BLACK
+extern Color RED; // RED
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType TEXT_dash_IN; // TEXT-IN
 extern IFieldType TEXT_dash_TE; // TEXT-TE
 void M_star_(); // M*
@@ -419,7 +426,7 @@ void UNK_0xe8b6() // UNK_0xe8b6
 
 void UNK_0xe8be() // UNK_0xe8be
 {
-  SetColor("RED");
+  SetColor(RED);
 }
 
 
@@ -433,7 +440,7 @@ void UNK_0xe8c4() // UNK_0xe8c4
   Push(2);
   Push(2);
   Push(0x009d);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   UNK_0xe8be(); // UNK_0xe8be
   StoreCOLOR(); // !COLOR
@@ -496,7 +503,7 @@ void UNK_0xe92e() // UNK_0xe92e
 
 void UNK_0xe93c() // UNK_0xe93c
 {
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
 }
 
 
@@ -506,7 +513,7 @@ void UNK_0xe93c() // UNK_0xe93c
 
 void UNK_0xe942() // UNK_0xe942
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
 }
 
 // 0xe946: db 0x4c 0x22 0x0c 0x50 0x90 0x16 0x4c 0x22 0x46 0xe9 0x9d 0x86 0x90 0x16 'L" P  L"F     '
@@ -517,7 +524,7 @@ void UNK_0xe942() // UNK_0xe942
 
 void UNK_0xe956() // UNK_0xe956
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
 }
 
 
@@ -527,7 +534,7 @@ void UNK_0xe956() // UNK_0xe956
 
 void UNK_0xe95c() // UNK_0xe95c
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
 }
 
 
@@ -537,7 +544,7 @@ void UNK_0xe95c() // UNK_0xe95c
 
 void UNK_0xe962() // UNK_0xe962
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
 }
 
 
@@ -547,7 +554,7 @@ void UNK_0xe962() // UNK_0xe962
 
 void UNK_0xe968() // UNK_0xe968
 {
-  SetColor("ORANGE");
+  SetColor(ORANGE);
 }
 
 
@@ -557,7 +564,7 @@ void UNK_0xe968() // UNK_0xe968
 
 void UNK_0xe96e() // UNK_0xe96e
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
 }
 
 // 0xe972: db 0x4c 0x22 0x0c 0x50 0x90 0x16 'L" P  '
@@ -749,7 +756,7 @@ void UNK_0xeada() // UNK_0xeada
   PRINT("YOU ARE ", 8); // (.")
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_SELLING); // SELLING
   Push(Read16(Pop())); // @
@@ -765,7 +772,7 @@ void UNK_0xeada() // UNK_0xeada
   Push(0x00b5);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(pp_SELLING); // SELLING
   Push(Read16(Pop())); // @
@@ -840,7 +847,7 @@ void UNK_0xeb7a() // UNK_0xeb7a
   Push(0x008d);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe96e(); // UNK_0xe96e
   StoreCOLOR(); // !COLOR
@@ -1059,7 +1066,7 @@ void UNK_0xecc5() // UNK_0xecc5
   Push(0x00aa);
   POS_dot_(); // POS.
   Push(5);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
 }
 
@@ -1211,7 +1218,7 @@ void UNK_0xed97() // UNK_0xed97
   Push(0x0039);
   Push(0x0087);
   Push(0x009d);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -1289,7 +1296,7 @@ void UNK_0xedf9() // UNK_0xedf9
 
 void UNK_0xee11() // UNK_0xee11
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xedf9(); // UNK_0xedf9
 }
 
@@ -1935,7 +1942,7 @@ void UNK_0xf13c() // UNK_0xf13c
   Push(4);
   Push(0x0087);
   Push(0x0034);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -2106,7 +2113,7 @@ void UNK_0xf223() // UNK_0xf223
   Push(0x009c);
   POS_dot_(); // POS.
   Push(Read16(cc_UNK_0xed5e)); // UNK_0xed5e
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe96e(); // UNK_0xe96e
   StoreCOLOR(); // !COLOR
@@ -2443,7 +2450,7 @@ void UNK_0xf406() // UNK_0xf406
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor("WHITE");
+    SetColor(WHITE);
     StoreCOLOR(); // !COLOR
     UNK_0x3f09("ANY PURCHASED GOODS WILL BE TRANSFERRED");
     DrawTTY(); // .TTY

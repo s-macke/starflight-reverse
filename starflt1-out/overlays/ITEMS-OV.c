@@ -219,6 +219,12 @@ extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
 extern LoadDataType SPEC_dash_NAME; // SPEC-NAME
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color GREEN; // GREEN
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_SP; // INST-SP
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
@@ -418,7 +424,7 @@ void UNK_0xdecd() // UNK_0xdecd
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(pp_XORMODE); // XORMODE
@@ -640,7 +646,7 @@ void UNK_0xe084() // UNK_0xe084
   Push(5);
   Push(Pop() + Pop()); // +
   POS_dot_(); // POS.
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS KEY TO CONTINUE ", 22); // (.")
 }
@@ -664,7 +670,7 @@ void UNK_0xe0b5() // UNK_0xe0b5
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0);
   Push(0);
@@ -1342,7 +1348,7 @@ void info_dash_setup() // info-setup
   Push(0);
   Push(5);
   UNK_0xdf55(); // UNK_0xdf55
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1452,7 +1458,7 @@ void UNK_0xe5df() // UNK_0xe5df
   Push(0x009d);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
   Get_gt_C_plus_S(); // @>C+S
@@ -1466,7 +1472,7 @@ void UNK_0xe5df() // UNK_0xe5df
     Push(5);
     _slash_(); // /
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(3);
   DrawR(); // .R
@@ -1864,7 +1870,7 @@ void UNK_0xe8ae() // UNK_0xe8ae
 
 void UNK_0xe900() // UNK_0xe900
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1875,7 +1881,7 @@ void UNK_0xe900() // UNK_0xe900
 
 void UNK_0xe908() // UNK_0xe908
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1959,7 +1965,7 @@ void UNK_0xe9aa() // UNK_0xe9aa
   UNK_0xe9a0(); // UNK_0xe9a0
   if (Pop() == 0) return;
   GCR(); // GCR
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("ARM THIS DEVICE\? NO [  ] YES ", 29); // (.")
   Y_slash_N(); // Y/N
@@ -1998,7 +2004,7 @@ void UNK_0xe9fa() // UNK_0xe9fa
   Push(pp_IsBOMB); // ?BOMB
   OFF_2(); // OFF_2
   GCR(); // GCR
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("DISARMING DEVICE ", 17); // (.")
   Push(0x03e8);
@@ -2489,7 +2495,7 @@ void UNK_0xecb9() // UNK_0xecb9
 
 void UNK_0xecd3() // UNK_0xecd3
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_3(); // !_3
   UNK_0xecb9(); // UNK_0xecb9
@@ -2736,7 +2742,7 @@ void UNK_0xee00() // UNK_0xee00
   UNK_0xdf55(); // UNK_0xdf55
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("SCROLL ITEMS: ^\\   QUIT: []", 27); // (.")
   Push(7);
@@ -2766,7 +2772,7 @@ void UNK_0xee3e() // UNK_0xee3e
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xe072(); // UNK_0xe072
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(6);
@@ -2774,7 +2780,7 @@ void UNK_0xee3e() // UNK_0xee3e
   PRINT("REVISING TERRAIN VEHICLE INVENTORY", 34); // (.")
   Push(pp_revision); // revision
   OFF_2(); // OFF_2
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -2878,7 +2884,7 @@ void UNK_0xeee4() // UNK_0xeee4
     imax = Pop();
     do // (DO)
     {
-      SetColor("BLACK");
+      SetColor(BLACK);
       WSHORTE(); // WSHORTE
       i++;
     } while(i<imax); // (LOOP)
@@ -3012,7 +3018,7 @@ void UNK_0xefa6() // UNK_0xefa6
   Push(7);
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xeec4(); // UNK_0xeec4
   GetINST_dash_CLASS(); // @INST-CLASS
@@ -3162,7 +3168,7 @@ void UNK_0xf028() // UNK_0xf028
   UNK_0xe044(); // UNK_0xe044
   UNK_0xe0b5(); // UNK_0xe0b5
   UNK_0xeee4(); // UNK_0xeee4
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf002(); // UNK_0xf002
   UNK_0xef62(); // UNK_0xef62
@@ -3189,7 +3195,7 @@ void UNK_0xf0a8() // UNK_0xf0a8
 void UNK_0xf0b4() // UNK_0xf0b4
 {
   UNK_0xf0a8(); // UNK_0xf0a8
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xf0a8(); // UNK_0xf0a8
   Push(0x0055);
   Push(0x0015);
@@ -3211,7 +3217,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 void UNK_0xf0de() // UNK_0xf0de
 {
   UNK_0xf0a8(); // UNK_0xf0a8
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xf0a8(); // UNK_0xf0a8
   Push(0x005b);
   Push(0x0015);
@@ -3233,7 +3239,7 @@ void UNK_0xf0de() // UNK_0xf0de
 void qtbtn() // qtbtn
 {
   UNK_0xf0a8(); // UNK_0xf0a8
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xf0a8(); // UNK_0xf0a8
   Push(0x0085);
   Push(0x0015);
@@ -3339,7 +3345,7 @@ void UNK_0xf19c() // UNK_0xf19c
 
 void UNK_0xf1a6() // UNK_0xf1a6
 {
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xf0b4(); // UNK_0xf0b4
   CLICK(); // CLICK
   INEXT(); // INEXT
@@ -3348,7 +3354,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   TEXT_gt_PA(); // TEXT>PA
   PAD(); // PAD
   UNK_0xdf01(); // UNK_0xdf01
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(-1);
   Push(pp_WTOP); // WTOP
@@ -3358,7 +3364,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xdf01(); // UNK_0xdf01
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xf0b4(); // UNK_0xf0b4
 }
 
@@ -3369,7 +3375,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1d4() // UNK_0xf1d4
 {
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xf0de(); // UNK_0xf0de
   CLICK(); // CLICK
   UNK_0xf19c(); // UNK_0xf19c
@@ -3379,7 +3385,7 @@ void UNK_0xf1d4() // UNK_0xf1d4
   _gt_C_plus_S(); // >C+S
   TEXT_gt_PA(); // TEXT>PA
   ICLOSE(); // ICLOSE
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PAD(); // PAD
   UNK_0xdf01(); // UNK_0xdf01
@@ -3391,7 +3397,7 @@ void UNK_0xf1d4() // UNK_0xf1d4
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xdf01(); // UNK_0xdf01
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xf0de(); // UNK_0xf0de
 }
 
@@ -3860,17 +3866,17 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
       }
       Push(pp_XORMODE); // XORMODE
       OFF(); // OFF
-      SetColor("WHITE");
+      SetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xeee4(); // UNK_0xeee4
-      SetColor("WHITE");
+      SetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xf002(); // UNK_0xf002
       UNK_0xef62(); // UNK_0xef62
       UNK_0xf222(); // UNK_0xf222
       IsQUIT(); // ?QUIT
     } while(Pop() == 0);
-    SetColor("GREEN");
+    SetColor(GREEN);
     qtbtn(); // qtbtn
     delete_dash_scroll_dash_box(); // delete-scroll-box
     Push2Words("0.");
@@ -3883,7 +3889,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
     Push(7);
     Push(pp_UNK_0xddfa); // UNK_0xddfa
     _st__ex__gt_(); // <!>
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     qtbtn(); // qtbtn
     UNK_0xdf01(); // UNK_0xdf01
     UNK_0xe0b5(); // UNK_0xe0b5

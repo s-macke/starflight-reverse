@@ -258,6 +258,13 @@ extern const unsigned short int pp__ro_THING_rc_; // (THING)
 extern LoadDataType ELEM_dash_NA; // ELEM-NA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_OF; // INST-OF
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_VA; // INST-VA
@@ -788,10 +795,10 @@ void UNK_0xe16c() // UNK_0xe16c
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
     return;
   }
-  SetColor("YELLOW");
+  SetColor(YELLOW);
 }
 
 
@@ -801,7 +808,7 @@ void UNK_0xe16c() // UNK_0xe16c
 
 void UNK_0xe17e() // UNK_0xe17e
 {
-  SetColor("GREY1");
+  SetColor(GREY1);
 }
 
 
@@ -811,7 +818,7 @@ void UNK_0xe17e() // UNK_0xe17e
 
 void UNK_0xe184() // UNK_0xe184
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
 }
 
 
@@ -832,7 +839,7 @@ void UNK_0xe18a() // UNK_0xe18a
 
 void UNK_0xe192() // UNK_0xe192
 {
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
 }
 
 
@@ -2062,7 +2069,7 @@ void UNK_0xe82f() // UNK_0xe82f
   Push(0x0018);
   Push(0);
   POLY_dash_ER(); // POLY-ER
-  SetColor("PINK");
+  SetColor(PINK);
   StoreCOLOR(); // !COLOR
 }
 
@@ -2426,7 +2433,7 @@ void UNK_0xea3c() // UNK_0xea3c
   Push(0x00aa);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe192(); // UNK_0xe192
   StoreCOLOR(); // !COLOR
@@ -2461,7 +2468,7 @@ void UNK_0xea6a() // UNK_0xea6a
     _2DUP(); // 2DUP
     POS_dot_(); // POS.
     Push(2);
-    SetColor("BLACK");
+    SetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(0x00fa);
     MS(); // MS
@@ -2512,7 +2519,7 @@ void UNK_0xeac5() // UNK_0xeac5
   Push(0x00a3);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe192(); // UNK_0xe192
   StoreCOLOR(); // !COLOR
@@ -2531,7 +2538,7 @@ void UNK_0xeaef() // UNK_0xeaef
   Push(0x00a3);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe184(); // UNK_0xe184
   StoreCOLOR(); // !COLOR
@@ -2675,7 +2682,7 @@ void UNK_0xebdf() // UNK_0xebdf
   Push(0x00a3);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe192(); // UNK_0xe192
   StoreCOLOR(); // !COLOR

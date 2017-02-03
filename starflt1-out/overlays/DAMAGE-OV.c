@@ -133,6 +133,9 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
 extern const unsigned short int pp_ROSTER; // ROSTER
+extern Color RED; // RED
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void COUNT(); // COUNT
@@ -837,7 +840,7 @@ void UNK_0xede0() // UNK_0xede0
 
 void UNK_0xedf2() // UNK_0xedf2
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
@@ -1853,7 +1856,7 @@ void UNK_0xf47f() // UNK_0xf47f
   unsigned short int a, i, imax;
   UNK_0xf3f8(); // UNK_0xf3f8
   UNK_0xeaf5(); // UNK_0xeaf5
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   UNK_0xf404(); // UNK_0xf404
   UNK_0xec0a(); // UNK_0xec0a
   UNK_0xf23a(); // UNK_0xf23a
@@ -1917,7 +1920,7 @@ void UNK_0xf47f() // UNK_0xf47f
 void UNK_0xf4e5() // UNK_0xf4e5
 {
   UNK_0xf3f8(); // UNK_0xf3f8
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xf43c(); // UNK_0xf43c
   UNK_0xf23a(); // UNK_0xf23a
   UNK_0xeaf5(); // UNK_0xeaf5

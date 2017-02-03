@@ -112,6 +112,8 @@ extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType ART_dash_NAME; // ART-NAME
 extern LoadDataType ART_dash_VAL; // ART-VAL
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color BLACK; // BLACK
+extern Color BLUE; // BLUE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType PHRASE_do_; // PHRASE$
@@ -383,7 +385,7 @@ void UNK_0xeaee() // UNK_0xeaee
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
     Push(pp_THIS_dash_BU); // THIS-BU
     Push(Read16(Pop())); // @
     DrawON(); // .ON
@@ -406,7 +408,7 @@ void UNK_0xeaee() // UNK_0xeaee
   {
     Pop(); // DROP
   }
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -753,7 +755,7 @@ void UNK_0xecce() // UNK_0xecce
     SWAP(); // SWAP
     C_ex_(); // C!
     Push(Pop()+1); // 1+
-    SetColor("BLUE");
+    SetColor(BLUE);
     StoreCOLOR(); // !COLOR
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x000a);
@@ -804,7 +806,7 @@ void UNK_0xecce() // UNK_0xecce
     i++;
   } while(i<imax); // (LOOP)
 
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x11a4); Push(0x0002);
   UNK_0xea8e(); // UNK_0xea8e

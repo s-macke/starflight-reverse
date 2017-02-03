@@ -89,6 +89,8 @@ extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp__10_star_CARG; // 10*CARG
 extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_ANCHOR; // ANCHOR
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -416,7 +418,7 @@ void UNK_0xecf5() // UNK_0xecf5
   Push(Read16(Pop())); // @
   Push(pp_SEED_3); // SEED_3
   Store_2(); // !_2
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09("GAME OVER - NO FUEL");
   DrawTTY(); // .TTY
@@ -1062,7 +1064,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09(" ");
   UNK_0xeeff(); // UNK_0xeeff
@@ -1138,7 +1140,7 @@ void UNK_0xf297() // UNK_0xf297
 
 void UNK_0xf2ad() // UNK_0xf2ad
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09("IF WE APPLY FULL REVERSE THRUST WE MAY");
   UNK_0xeeff(); // UNK_0xeeff
@@ -1157,7 +1159,7 @@ void UNK_0xf2ad() // UNK_0xf2ad
 
 void UNK_0xf338() // UNK_0xf338
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09("COMMANDER, THE SHIP'S HULL IS UNDER");
   UNK_0xeeff(); // UNK_0xeeff

@@ -121,6 +121,7 @@ extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern LoadDataType ELEM_dash_VA; // ELEM-VA
 extern LoadDataType ART_dash_VAL; // ART-VAL
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_VA; // INST-VA
 extern IFieldType ASKING; // ASKING
@@ -1230,7 +1231,7 @@ void UNK_0xf25f() // UNK_0xf25f
 
 void UNK_0xf28d() // UNK_0xf28d
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x5b65); Push(0x0002);
   UNK_0xed70(); // UNK_0xed70

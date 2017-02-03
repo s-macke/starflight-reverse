@@ -52,6 +52,9 @@ extern const unsigned short int pp_IsEGA; // ?EGA
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp_STIME; // STIME
+extern Color BLACK; // BLACK
+extern Color GREY2; // GREY2
+extern Color YELLOW; // YELLOW
 void D_st_(); // D<
 void Draw(); // .
 void MS(); // MS
@@ -311,7 +314,7 @@ void UNK_0xf152() // UNK_0xf152
 
 void UNK_0xf162() // UNK_0xf162
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf152(); // UNK_0xf152
@@ -408,12 +411,12 @@ void UNK_0xf1de() // UNK_0xf1de
 void DrawAIRLOCK() // .AIRLOCK
 {
   _gt_MAINVIEW(); // >MAINVIEW
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
-  SetColor("BLACK");
-  SetColor("BLACK");
-  SetColor("YELLOW");
+  SetColor(BLACK);
+  SetColor(BLACK);
+  SetColor(YELLOW);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -681,7 +684,7 @@ void _and_RETURN() // &RETURN
   UNK_0x3f3b("CLOSING");
   PORTLEAVE(); // PORTLEAVE
   DrawAIRLOCK(); // .AIRLOCK
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(pp_IsEGA); // ?EGA
   Push(Read16(Pop())); // @

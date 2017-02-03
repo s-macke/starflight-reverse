@@ -135,6 +135,7 @@ extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
 extern LoadDataType SPEC_dash_NAME; // SPEC-NAME
 extern LoadDataType ART_dash_NAME; // ART-NAME
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType PHR_dash_CNT; // PHR-CNT
 extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
@@ -2153,7 +2154,7 @@ void IsTALK() // ?TALK
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
   a = Pop(); // >R
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)

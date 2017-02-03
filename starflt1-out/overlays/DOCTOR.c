@@ -41,6 +41,7 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int pp_XBLT; // XBLT
+extern Color BLACK; // BLACK
 void DrawR(); // .R
 void MS(); // MS
 void WITHIN(); // WITHIN
@@ -515,7 +516,7 @@ void UNK_0xf373() // UNK_0xf373
       Push(2);
       CTPOS_dot_(); // CTPOS.
       Push(0x000f);
-      SetColor("BLACK");
+      SetColor(BLACK);
       POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
       Push(0x63ef+UNK_0xf07e.offset); // IFIELD
       _do__dot_(); // $.

@@ -90,6 +90,17 @@ extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp_FSTUN; // FSTUN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern Color DK_dash_GREE; // DK-GREE
+extern Color GREEN; // GREEN
+extern Color RED; // RED
+extern Color VIOLET; // VIOLET
+extern Color BROWN; // BROWN
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void UNRAVEL(); // UNRAVEL
@@ -722,25 +733,25 @@ void STAR_dash_IC_dash_CASE() // STAR-IC-CASE
   switch(Pop()) // STAR-IC-CASE
   {
   case 77:
-    SetColor("RED");
+    SetColor(RED);
     break;
   case 75:
-    SetColor("ORANGE");
+    SetColor(ORANGE);
     break;
   case 71:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   case 70:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 65:
-    SetColor("GREEN");
+    SetColor(GREEN);
     break;
   case 66:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
   default:
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     break;
 
   }
@@ -766,10 +777,10 @@ void UNK_0xf3b0() // UNK_0xf3b0
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
     return;
   }
-  SetColor("DK-GREE");
+  SetColor(DK_dash_GREE);
 }
 
 
@@ -808,10 +819,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor("BROWN");
+    SetColor(BROWN);
     return;
   }
-  SetColor("RED");
+  SetColor(RED);
 }
 
 
@@ -824,22 +835,22 @@ void PLAN_dash_IC_dash_CASE() // PLAN-IC-CASE
   switch(Pop()) // PLAN-IC-CASE
   {
   case 0:
-    SetColor("GREY1");
+    SetColor(GREY1);
     break;
   case 1:
-    SetColor("VIOLET");
+    SetColor(VIOLET);
     break;
   case 2:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
   case 3:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 4:
     UNK_0xf3e6(); // UNK_0xf3e6
     break;
   default:
-    SetColor("BROWN");
+    SetColor(BROWN);
     break;
 
   }

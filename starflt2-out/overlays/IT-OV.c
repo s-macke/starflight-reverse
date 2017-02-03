@@ -81,6 +81,7 @@ extern LoadDataType ELEM_dash_VA; // ELEM-VA
 extern LoadDataType ART_dash_NAM; // ART-NAM
 extern LoadDataType ART_dash_VAL; // ART-VAL
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_DA; // INST-DA
 extern IFieldType ASKING; // ASKING
@@ -367,7 +368,7 @@ void UNK_0xefff() // UNK_0xefff
   MS(); // MS
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xef4a(); // UNK_0xef4a
   KEY_2(); // KEY_2

@@ -211,6 +211,10 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_LASTAP; // LASTAP
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
+extern Color BLACK; // BLACK
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -1694,7 +1698,7 @@ void UNK_0xe8f8() // UNK_0xe8f8
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
 }
@@ -1739,7 +1743,7 @@ void UNK_0xe946() // UNK_0xe946
   Push(4);
   _dash_(); // -
   POS_dot_(); // POS.
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PRINT("THE ", 4); // (.")
   LoadData(RESEMBLES); // from 'CREATURE'
@@ -2321,9 +2325,9 @@ void UNK_0xecb7() // UNK_0xecb7
   Push(0x00b2);
   POS_dot_(); // POS.
   Push(0x000a);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_STARDATE); // STARDATE
   Push(Read16(Pop())); // @
@@ -2910,9 +2914,9 @@ void DrawDISTANCE() // .DISTANCE
   Push(0x0096);
   POS_dot_(); // POS.
   Push(8);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _dash_STORM(); // -STORM
   IsNAV(); // ?NAV
@@ -2931,9 +2935,9 @@ void DrawDISTANCE() // .DISTANCE
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _dash_STORM(); // -STORM
   IsNAV(); // ?NAV
@@ -2962,7 +2966,7 @@ void DrawCARGO() // .CARGO
   Push(0x009d);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TV_dash_HOLD); // TV-HOLD
   Get_gt_C_plus_S(); // @>C+S
@@ -2976,7 +2980,7 @@ void DrawCARGO() // .CARGO
     Push(5);
     _slash_(); // /
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(3);
   DrawR(); // .R
@@ -2996,7 +3000,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00ab);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
@@ -3009,12 +3013,12 @@ void DrawENERGY() // .ENERGY
   if (Pop() != 0)
   {
     Pop(); // DROP
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     StoreCOLOR(); // !COLOR
     PRINT("NONE", 4); // (.")
     return;
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x07d0);
   _dash_(); // -
@@ -3029,7 +3033,7 @@ void DrawENERGY() // .ENERGY
     Pop(); // DROP
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
-    SetColor("PINK");
+    SetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
     StoreCOLOR(); // !COLOR
@@ -3043,7 +3047,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00a4);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
@@ -3139,7 +3143,7 @@ void DrawWHERE() // .WHERE
   IsNAV(); // ?NAV
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xe0ec(); // UNK_0xe0ec
   UNK_0xf2cd(); // UNK_0xf2cd
@@ -3333,7 +3337,7 @@ void UNK_0xf4b0() // UNK_0xf4b0
   DrawSTATS(); // .STATS
   DrawVIT(); // .VIT
   TV_dash_TASKS(); // TV-TASKS
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_3(); // !_3
 }

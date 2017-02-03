@@ -266,6 +266,18 @@ extern const unsigned short int pp__ro_SHIPBO; // (SHIPBO
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_NTIME; // NTIME
 extern LoadDataType _1BTN; // 1BTN
+extern Color BLACK; // BLACK
+extern Color DK_dash_GREE; // DK-GREE
+extern Color GREEN; // GREEN
+extern Color RED; // RED
+extern Color VIOLET; // VIOLET
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -974,7 +986,7 @@ void UNK_0xdb7e() // UNK_0xdb7e
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xda00); // UNK_0xda00
   Push(Read16(Pop())); // @
@@ -1147,22 +1159,22 @@ void PS_gt_C() // PS>C
   switch(Pop()) // PS>C
   {
   case 0:
-    SetColor("GREY2");
+    SetColor(GREY2);
     break;
   case 1:
-    SetColor("VIOLET");
+    SetColor(VIOLET);
     break;
   case 2:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
   case 3:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 4:
-    SetColor("RED");
+    SetColor(RED);
     break;
   default:
-    SetColor("ORANGE");
+    SetColor(ORANGE);
     break;
 
   }
@@ -1657,25 +1669,25 @@ void SC_gt_C() // SC>C
   switch(Pop()) // SC>C
   {
   case 77:
-    SetColor("RED");
+    SetColor(RED);
     break;
   case 75:
-    SetColor("ORANGE");
+    SetColor(ORANGE);
     break;
   case 71:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   case 70:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 65:
-    SetColor("GREEN");
+    SetColor(GREEN);
     break;
   case 66:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
   default:
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     break;
 
   }
@@ -1764,7 +1776,7 @@ void DrawAUXSYS() // .AUXSYS
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
   _gt_DISPLA(); // >DISPLA
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
   Push(5);
   Push(pp__n_AUX); // #AUX
@@ -1788,7 +1800,7 @@ void DrawAUXSYS() // .AUXSYS
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
       StoreCOLOR(); // !COLOR
       Push(0x0078);
       Push(0x00a1);
@@ -2078,7 +2090,7 @@ void UNK_0xe23b() // UNK_0xe23b
 {
   _gt_DISPLA(); // >DISPLA
   Push(3);
-  SetColor("GREY1");
+  SetColor(GREY1);
   Push(0x00c6);
   Push(0x0016);
   _2DUP(); // 2DUP
@@ -2086,13 +2098,13 @@ void UNK_0xe23b() // UNK_0xe23b
   POS_dot_(); // POS.
   POS_dot_PXT(); // POS.PXT
   Push(3);
-  SetColor("GREY1");
+  SetColor(GREY1);
   Push(0x00c6);
   Push(0x0030);
   POS_dot_PXT(); // POS.PXT
-  SetColor("WHITE");
-  SetColor("BLACK");
-  SetColor("WHITE");
+  SetColor(WHITE);
+  SetColor(BLACK);
+  SetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   UNK_0xe149(); // UNK_0xe149
@@ -2269,7 +2281,7 @@ void UNK_0xe327() // UNK_0xe327
 void UNK_0xe37b() // UNK_0xe37b
 {
   unsigned short int i, imax;
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
   Push(0x0021);
@@ -2324,7 +2336,7 @@ void DrawMVS() // .MVS
     NBCLR(); // NBCLR
   } else
   {
-    SetColor("BLACK");
+    SetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -2944,7 +2956,7 @@ void UNK_0xe822() // UNK_0xe822
     Push(2);
   } else
   {
-    SetColor("DK-GREE");
+    SetColor(DK_dash_GREE);
   }
   Push((Pop()==Pop())?1:0); // =
 }
@@ -4504,7 +4516,7 @@ void _plus_NEST() // +NEST
 
 void COME_dash_HI() // COME-HI
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_TCLR); // TCLR
   Store_2(); // !_2
   UNK_0xf219(); // UNK_0xf219
@@ -4557,7 +4569,7 @@ void COME_dash_HI() // COME-HI
   _plus_NEST(); // +NEST
   Push2Words("*SHIP-C");
   _plus_NEST(); // +NEST
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_TCLR); // TCLR
   Store_2(); // !_2
 }

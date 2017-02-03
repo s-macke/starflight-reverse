@@ -70,6 +70,9 @@ extern const unsigned short int pp_TMAP; // TMAP
 extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern Color BLACK; // BLACK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 void D_st_(); // D<
 void _dash_TRAILING(); // -TRAILING
 void NOP(); // NOP
@@ -483,7 +486,7 @@ void PSYCH() // PSYCH
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
-      SetColor("WHITE");
+      SetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xf13d(); // UNK_0xf13d
       Push(Read16(regsp)); // DUP
@@ -869,9 +872,9 @@ void UNK_0xf4be() // UNK_0xf4be
   Push(0x00c4);
   POS_dot_(); // POS.
   Push(Read16(regsp)); // DUP
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xf48c(); // UNK_0xf48c
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -885,7 +888,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
 {
   unsigned short int i, imax;
   UNK_0xf28a(); // UNK_0xf28a
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf2d8(); // UNK_0xf2d8
   Push(0);
@@ -942,7 +945,7 @@ void DrawTMAP() // .TMAP
   Get_gt_C_plus_S(); // @>C+S
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf4ec(); // UNK_0xf4ec
   UNK_0xf4be(); // UNK_0xf4be

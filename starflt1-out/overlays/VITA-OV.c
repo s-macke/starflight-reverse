@@ -99,6 +99,7 @@ extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_SURFACE_rc_; // (SURFACE)
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void MAX(); // MAX
 void MOD(); // MOD
@@ -1488,7 +1489,7 @@ void DIO() // DIO
 {
   Push(pp_PLHI); // PLHI
   OFF(); // OFF
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f3b("AUTO SAMPLING DEVICES ACTIVATED");
   DrawTTY(); // .TTY

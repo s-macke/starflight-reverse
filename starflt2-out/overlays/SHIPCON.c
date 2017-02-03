@@ -44,6 +44,7 @@ extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType ELEM_dash_VA; // ELEM-VA
+extern Color BLACK; // BLACK
 extern IFieldType INST_dash_X; // INST-X
 void COUNT(); // COUNT
 void _star__slash_(); // */
@@ -361,7 +362,7 @@ void TOW_dash_US() // TOW-US
     UNK_0xf37b(); // UNK_0xf37b
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   }
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(1);
   DrawON(); // .ON
 }

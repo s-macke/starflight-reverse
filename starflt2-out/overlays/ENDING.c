@@ -153,6 +153,7 @@ extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__n_ETIME; // #ETIME
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -957,7 +958,7 @@ void UNK_0xeb62() // UNK_0xeb62
   UNK_0xe862(); // UNK_0xe862
   UNK_0xe9e0(); // UNK_0xe9e0
   ICLOSE(); // ICLOSE
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   WLD_gt_SCR(); // WLD>SCR
@@ -1632,7 +1633,7 @@ void UNK_0xefab() // UNK_0xefab
   Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   Store_2(); // !_2
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   WUP(); // WUP

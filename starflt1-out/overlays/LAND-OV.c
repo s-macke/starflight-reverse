@@ -44,6 +44,8 @@ extern const unsigned short int pp__i_EXTERNAL_dash_EVENTS; // 'EXTERNAL-EVENTS
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern Color BLACK; // BLACK
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -187,9 +189,9 @@ void UNK_0xf177() // UNK_0xf177
 
 void UNK_0xf1c9() // UNK_0xf1c9
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE

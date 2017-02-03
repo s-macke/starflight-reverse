@@ -54,6 +54,10 @@ extern const unsigned short int pp__dash_AIN; // -AIN
 extern const unsigned short int pp__n_AUX; // #AUX
 extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
 extern const unsigned short int pp__10_star_END; // 10*END
+extern Color BLACK; // BLACK
+extern Color BROWN; // BROWN
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 void ABS(); // ABS
@@ -245,9 +249,9 @@ void UNK_0xf08f() // UNK_0xf08f
   GetCRS(); // @CRS
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
-  SetColor("WHITE");
-  SetColor("WHITE");
-  SetColor("BROWN");
+  SetColor(WHITE);
+  SetColor(WHITE);
+  SetColor(BROWN);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PRINT("#", 1); // (.")
@@ -619,7 +623,7 @@ void EINDE() // EINDE
 void UNK_0xf319() // UNK_0xf319
 {
   unsigned short int i, imax;
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT
   DrawERR(); // .ERR case
@@ -632,7 +636,7 @@ void UNK_0xf319() // UNK_0xf319
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
-  SetColor("PINK");
+  SetColor(PINK);
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON(); // BEEPON

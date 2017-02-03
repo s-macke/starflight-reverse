@@ -99,6 +99,12 @@ extern const unsigned short int pp_Is_gt_OP; // ?>OP
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp_TOWFINE; // TOWFINE
 extern const unsigned short int pp_LSCAN; // LSCAN
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color BROWN; // BROWN
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -312,7 +318,7 @@ void UNK_0xe494() // UNK_0xe494
 void UNK_0xe4e2() // UNK_0xe4e2
 {
   unsigned short int i, imax;
-  SetColor("BROWN");
+  SetColor(BROWN);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe4a6); // UNK_0xe4a6
   Push(0x003a);
@@ -346,16 +352,16 @@ void UNK_0xe4e2() // UNK_0xe4e2
 
 void UNK_0xe50e() // UNK_0xe50e
 {
-  SetColor("WHITE");
-  SetColor("WHITE");
-  SetColor("LT-BLUE");
+  SetColor(WHITE);
+  SetColor(WHITE);
+  SetColor(LT_dash_BLUE);
   IsMRC(); // ?MRC
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xe446); // UNK_0xe446
   Store_3(); // !_3
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(2);
   Push(1);
@@ -410,7 +416,7 @@ void UNK_0xe50e() // UNK_0xe50e
 void UNK_0xe59b() // UNK_0xe59b
 {
   _gt_3FONT(); // >3FONT
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x003a);
   Push(0x00b3);
@@ -437,7 +443,7 @@ void UNK_0xe59b() // UNK_0xe59b
 
 void UNK_0xe5f7() // UNK_0xe5f7
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x000d);
@@ -465,9 +471,9 @@ void UNK_0xe637() // UNK_0xe637
   UNK_0xe50e(); // UNK_0xe50e
   UNK_0xe5f7(); // UNK_0xe5f7
   UNK_0xe59b(); // UNK_0xe59b
-  SetColor("WHITE");
-  SetColor("BLUE");
-  SetColor("BLUE");
+  SetColor(WHITE);
+  SetColor(BLUE);
+  SetColor(BLUE);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_3(); // !_3
@@ -495,14 +501,14 @@ void UNK_0xe665() // UNK_0xe665
   Push(0);
   Push(0x0023);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("\\ NEXT MESSAGE  PREVIOUS MESSAGE ^", 34); // (.")
   StoreCRS(); // !CRS
   Push(1);
   Push(0x0025);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO REPLAY OR [ QUIT ]", 36); // (.")
   StoreCRS(); // !CRS
@@ -519,14 +525,14 @@ void UNK_0xe6d3() // UNK_0xe6d3
   Push(0);
   Push(0x001a);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO CONTINUE", 26); // (.")
   StoreCRS(); // !CRS
   Push(1);
   Push(0x0021);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS [] TO ABORT CURRENT NOTICE", 32); // (.")
   StoreCRS(); // !CRS
@@ -551,7 +557,7 @@ void UNK_0xe735() // UNK_0xe735
   Push(3);
   Push(0x00c3);
   POS_dot_(); // POS.
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -590,7 +596,7 @@ void UNK_0xe78b() // UNK_0xe78b
   Push(3);
   Push(0x00c3);
   POS_dot_(); // POS.
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -779,7 +785,7 @@ void UNK_0xe8b6() // UNK_0xe8b6
 {
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(0x001d);
@@ -1020,14 +1026,14 @@ void UNK_0xea28() // UNK_0xea28
     Push(0xfff2);
     Push(0x000e);
     CMESS(); // CMESS
-    SetColor("BLACK");
+    SetColor(BLACK);
     StoreCOLOR(); // !COLOR
     PRINT("NO NEW NOTICES", 14); // (.")
     StoreCRS(); // !CRS
     Push(0xfff3);
     Push(0x001a);
     CMESS(); // CMESS
-    SetColor("BLACK");
+    SetColor(BLACK);
     StoreCOLOR(); // !COLOR
     PRINT("REPEAT LAST NOTICE\? [N Y]", 25); // (.")
     StoreCRS(); // !CRS
@@ -1474,14 +1480,14 @@ void UNK_0xef37() // UNK_0xef37
   Push(0);
   Push(0x0022);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR FOR NEXT EVALUATION", 34); // (.")
   StoreCRS(); // !CRS
   Push(1);
   Push(9);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("[ QUIT ]", 8); // (.")
   StoreCRS(); // !CRS
@@ -1515,7 +1521,7 @@ void UNK_0xeff8() // UNK_0xeff8
   Push(0);
   Push(0x001a);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO CONTINUE", 26); // (.")
   StoreCRS(); // !CRS

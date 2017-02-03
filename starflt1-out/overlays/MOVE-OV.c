@@ -143,6 +143,11 @@ extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color BLACK; // BLACK
+extern Color GREEN; // GREEN
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -327,7 +332,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
 }
@@ -341,7 +346,7 @@ void UNK_0xe702() // UNK_0xe702
 {
   UNK_0xe6c6(); // UNK_0xe6c6
   UNK_0xe6e0(); // UNK_0xe6e0
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_WLEFT); // WLEFT
   Push(Read16(Pop())); // @
@@ -537,7 +542,7 @@ void UNK_0xe802() // UNK_0xe802
   UNK_0xe7ce(); // UNK_0xe7ce
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xe7a0(); // UNK_0xe7a0
   UNK_0xe724(); // UNK_0xe724
@@ -1330,7 +1335,7 @@ void IsPOPULA() // ?POPULA
 
 void UNK_0xeece() // UNK_0xeece
 {
-  SetColor("PINK");
+  SetColor(PINK);
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
   Push(pp_IsNEW); // ?NEW
@@ -1363,7 +1368,7 @@ void UNK_0xeece() // UNK_0xeece
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
   UNK_0xe696(); // UNK_0xe696
@@ -1588,9 +1593,9 @@ void UNK_0xf0c0() // UNK_0xf0c0
   Push(0x0096);
   POS_dot_(); // POS.
   Push(8);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf0b6(); // UNK_0xf0b6
   if (Pop() != 0)
@@ -1607,9 +1612,9 @@ void UNK_0xf0c0() // UNK_0xf0c0
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf0b6(); // UNK_0xf0b6
   if (Pop() == 0) return;
@@ -1691,7 +1696,7 @@ void UNK_0xf16e() // UNK_0xf16e
   UNK_0xef48(); // UNK_0xef48
   Push(pp_LCOLOR); // LCOLOR
   OFF(); // OFF
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
   Push2Words("*SHIP");
@@ -1737,7 +1742,7 @@ void UNK_0xf1fe() // UNK_0xf1fe
   Push(0x00ab);
   POS_dot_(); // POS.
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 }
 
@@ -1754,7 +1759,7 @@ void UNK_0xf212() // UNK_0xf212
   Push(0x63ef+INST_dash_QTY.offset); // IFIELD
   Push(Read16(Pop())); // @
   ICLOSE(); // ICLOSE
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(cc_UNK_0xeba4)); // UNK_0xeba4
   _dash_(); // -
@@ -1769,7 +1774,7 @@ void UNK_0xf212() // UNK_0xf212
     Pop(); // DROP
     Push(pp_COLOR); // COLOR
     Push(Read16(Pop())); // @
-    SetColor("PINK");
+    SetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
     StoreCOLOR(); // !COLOR
@@ -1783,7 +1788,7 @@ void UNK_0xf212() // UNK_0xf212
   Push(0x00a4);
   POS_dot_(); // POS.
   Push(3);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(pp__pe_EFF); // %EFF
   Push(Read16(Pop())); // @
@@ -1858,7 +1863,7 @@ void UNK_0xf2ca() // UNK_0xf2ca
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
 }
@@ -1870,7 +1875,7 @@ void UNK_0xf2ca() // UNK_0xf2ca
 
 void UNK_0xf2d8() // UNK_0xf2d8
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xe7e8(); // UNK_0xe7e8
   UNK_0xe802(); // UNK_0xe802
 }
@@ -1907,7 +1912,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
 void UNK_0xf308() // UNK_0xf308
 {
   UNK_0xf1fe(); // UNK_0xf1fe
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   PRINT("NONE", 4); // (.")
   Pop(); Pop(); // 2DROP
@@ -1955,7 +1960,7 @@ void UNK_0xf355() // UNK_0xf355
   Pop(); // DROP
   UNK_0xf2ca(); // UNK_0xf2ca
   UNK_0xf31d(); // UNK_0xf31d
-  SetColor("GREEN");
+  SetColor(GREEN);
   Push(pp_LCOLOR); // LCOLOR
   Store_3(); // !_3
   Push(-1);
@@ -1986,7 +1991,7 @@ void UNK_0xf37b() // UNK_0xf37b
 {
   UNK_0xf36d(); // UNK_0xf36d
   UNK_0xf2d8(); // UNK_0xf2d8
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_3(); // !_3
   BEEPOFF(); // BEEPOFF
@@ -2138,7 +2143,7 @@ void APPROACH() // APPROACH
   Push(0xc3a7); // probable 'DESCEND'
   MODULE(); // MODULE
   _gt_DISPLAY(); // >DISPLAY
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   DCLIPSET(); // DCLIPSET
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#

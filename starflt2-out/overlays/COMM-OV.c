@@ -361,6 +361,12 @@ extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_SMART; // SMART
 extern LoadDataType _1BTN; // 1BTN
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color BLUE; // BLUE
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType _pe_NAME; // %NAME
 extern IFieldType PHRASE; // PHRASE
@@ -1202,10 +1208,10 @@ void UNK_0xda98() // UNK_0xda98
   Push(Read16(cc_UNK_0xd935)); // UNK_0xd935
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
     return;
   }
-  SetColor("WHITE");
+  SetColor(WHITE);
 }
 
 
@@ -1218,7 +1224,7 @@ void ORIGINATOR_gt_() // ORIGINATOR>
 {
   Push(pp__ro_ORIGIN); // (ORIGIN
   Get_gt_C_plus_S(); // @>C+S
-  SetColor("WHITE");
+  SetColor(WHITE);
   UNK_0xda98(); // UNK_0xda98
   Push(0x65e1+UNK_0xd83e.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -1385,7 +1391,7 @@ void UNK_0xdb81() // UNK_0xdb81
     UNK_0xdb71(); // UNK_0xdb71
     IsTRIG(); // ?TRIG
   } while(Pop() == 0);
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -1399,7 +1405,7 @@ void UNK_0xdb81() // UNK_0xdb81
 void UNK_0xdb95() // UNK_0xdb95
 {
   UNK_0xdb00(); // UNK_0xdb00
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
 }
@@ -2193,16 +2199,16 @@ void UNK_0xe081() // UNK_0xe081
   Push(a); // I
   if (Pop() != 0)
   {
-    SetColor("PINK");
+    SetColor(PINK);
   } else
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
   }
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
     Pop(); // DROP
-    SetColor("WHITE");
+    SetColor(WHITE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -2221,10 +2227,10 @@ void UNK_0xe081() // UNK_0xe081
   Push(a); // R>
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
   } else
   {
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -3031,7 +3037,7 @@ void UNK_0xe4c9() // UNK_0xe4c9
   }
   Push(2);
   _star_CLOSE(); // *CLOSE
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(2);
   DrawON(); // .ON
 }
@@ -5003,7 +5009,7 @@ void _st_COMM_gt_() // <COMM> rule
 
 void UNK_0xee2b() // UNK_0xee2b
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -5019,7 +5025,7 @@ void UNK_0xee2b() // UNK_0xee2b
   Push(pp_UNK_0xd8fb); // UNK_0xd8fb
   _plus__ex__2(); // +!_2
   UNK_0xdd15(); // UNK_0xdd15
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -5057,7 +5063,7 @@ void UNK_0xee5f() // UNK_0xee5f
     UNK_0xe081(); // UNK_0xe081
     return;
   }
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawON(); // .ON
@@ -5594,7 +5600,7 @@ void UNK_0xf165() // UNK_0xf165
   Push(0x5b12); Push(0x0002);
   UNK_0xd80e(); // UNK_0xd80e
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0);
   DrawON(); // .ON
 }
@@ -5752,13 +5758,13 @@ void CL1() // CL1
   Push(pp_UNK_0xe563); // UNK_0xe563
   _099(); // 099
   CLR_dash_BUT(); // CLR-BUT
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(4);
   DrawHIGHLI(); // .HIGHLI
   Push(4);
   Push(pp_THIS_dash_BU); // THIS-BU
   Store_2(); // !_2
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
 }

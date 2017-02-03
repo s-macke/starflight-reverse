@@ -138,6 +138,10 @@ extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_NOF; // NOF
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color BLACK; // BLACK
+extern Color GREEN; // GREEN
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -309,7 +313,7 @@ void UNK_0xea76() // UNK_0xea76
 {
   _gt_TVCT(); // >TVCT
   CTERASE(); // CTERASE
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(0);
@@ -1327,7 +1331,7 @@ void IsPOPULA() // ?POPULA
 
 void UNK_0xf123() // UNK_0xf123
 {
-  SetColor("PINK");
+  SetColor(PINK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   Push(pp_IsNEW); // ?NEW
@@ -1358,7 +1362,7 @@ void UNK_0xf123() // UNK_0xf123
   DrawLOCAL_dash_(); // .LOCAL-
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   UNK_0xea46(); // UNK_0xea46
@@ -1446,7 +1450,7 @@ void UNK_0xf1d9() // UNK_0xf1d9
 
 void UNK_0xf201() // UNK_0xf201
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
 }
@@ -1576,7 +1580,7 @@ void UNK_0xf295() // UNK_0xf295
   UNK_0xf197(); // UNK_0xf197
   Push(pp_LCOLOR); // LCOLOR
   _099(); // 099
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   Push2Words("*SHIP");
@@ -1737,7 +1741,7 @@ void UNK_0xf3d9() // UNK_0xf3d9
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor("GREEN");
+  SetColor(GREEN);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
 }
@@ -1816,7 +1820,7 @@ void UNK_0xf447() // UNK_0xf447
   Pop(); // DROP
   UNK_0xf3d9(); // UNK_0xf3d9
   UNK_0xf417(); // UNK_0xf417
-  SetColor("GREEN");
+  SetColor(GREEN);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   Push(-1);
@@ -1847,7 +1851,7 @@ void UNK_0xf46d() // UNK_0xf46d
 {
   UNK_0xf45f(); // UNK_0xf45f
   UNK_0xf201(); // UNK_0xf201
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   BEEPOFF(); // BEEPOFF

@@ -56,6 +56,7 @@ extern const unsigned short int pp_WBLT; // WBLT
 extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_PORTDAT; // PORTDAT
 extern const unsigned short int pp_STARDATE; // STARDATE
+extern Color DK_dash_BLUE; // DK-BLUE
 void DABS(); // DABS
 void M_star__slash_(); // M*/
 void D_st_(); // D<
@@ -679,7 +680,7 @@ void BOFRAME() // BOFRAME
   TRIM(); // TRIM
   Push(6);
   Push(0x000f);
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -741,7 +742,7 @@ void BINFO() // BINFO
 void BSCREEN() // BSCREEN
 {
   DARK(); // DARK
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   BOFRAME(); // BOFRAME
   BTITLE(); // BTITLE
   BINFO(); // BINFO

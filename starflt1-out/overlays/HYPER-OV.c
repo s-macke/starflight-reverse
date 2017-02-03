@@ -249,6 +249,19 @@ extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_YTABLE; // YTABLE
 extern const unsigned short int pp_IsCALLING; // ?CALLING
 extern LoadDataType _1BTN; // 1BTN
+extern Color BLACK; // BLACK
+extern Color DK_dash_GREEN; // DK-GREEN
+extern Color GREEN; // GREEN
+extern Color RED; // RED
+extern Color VIOLET; // VIOLET
+extern Color BROWN; // BROWN
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -965,7 +978,7 @@ void UNK_0xdb72() // UNK_0xdb72
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xd9dc); // UNK_0xd9dc
   Push(Read16(Pop())); // @
@@ -1117,22 +1130,22 @@ void PS_gt_C() // PS>C
   switch(Pop()) // PS>C
   {
   case 0:
-    SetColor("GREY2");
+    SetColor(GREY2);
     break;
   case 1:
-    SetColor("VIOLET");
+    SetColor(VIOLET);
     break;
   case 2:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
   case 3:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 4:
-    SetColor("ORANGE");
+    SetColor(ORANGE);
     break;
   default:
-    SetColor("BROWN");
+    SetColor(BROWN);
     break;
 
   }
@@ -1629,25 +1642,25 @@ void SC_gt_C() // SC>C
   switch(Pop()) // SC>C
   {
   case 77:
-    SetColor("RED");
+    SetColor(RED);
     break;
   case 75:
-    SetColor("ORANGE");
+    SetColor(ORANGE);
     break;
   case 71:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   case 70:
-    SetColor("WHITE");
+    SetColor(WHITE);
     break;
   case 65:
-    SetColor("GREEN");
+    SetColor(GREEN);
     break;
   case 66:
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     break;
   default:
-    SetColor("BLUE");
+    SetColor(BLUE);
     break;
 
   }
@@ -1739,7 +1752,7 @@ void DrawAUXSYS() // .AUXSYS
   if (Pop() == 0) return;
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   Push(5);
   Push(pp__n_AUX); // #AUX
@@ -1763,7 +1776,7 @@ void DrawAUXSYS() // .AUXSYS
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
       StoreCOLOR(); // !COLOR
       Push(0x0078);
       Push(0x00a1);
@@ -2057,7 +2070,7 @@ void UNK_0xe293() // UNK_0xe293
 {
   _gt_DISPLAY(); // >DISPLAY
   Push(3);
-  SetColor("GREY1");
+  SetColor(GREY1);
   Push(0x00c6);
   Push(0x0016);
   _2DUP(); // 2DUP
@@ -2065,7 +2078,7 @@ void UNK_0xe293() // UNK_0xe293
   POS_dot_(); // POS.
   POS_dot_PXT(); // POS.PXT
   Push(3);
-  SetColor("GREY1");
+  SetColor(GREY1);
   Push(0x00c6);
   Push(0x0030);
   POS_dot_PXT(); // POS.PXT
@@ -2243,7 +2256,7 @@ void UNK_0xe375() // UNK_0xe375
 void UNK_0xe3c9() // UNK_0xe3c9
 {
   unsigned short int i, imax;
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe30b); // UNK_0xe30b
   Push(0x0021);
@@ -2293,10 +2306,10 @@ void DrawMVS() // .MVS
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    SetColor("DK-GREEN");
+    SetColor(DK_dash_GREEN);
   } else
   {
-    SetColor("BLACK");
+    SetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -3454,7 +3467,7 @@ void IsCOLLISION() // ?COLLISION
       Push(0x0083);
       WITHIN(); // WITHIN
       GetIC(); // @IC
-      SetColor("DK-GREEN");
+      SetColor(DK_dash_GREEN);
       Push((Pop()==Pop())?1:0); // =
       Push(Pop() & Pop()); // AND
       Push(Pop() | Pop()); // OR
@@ -4334,7 +4347,7 @@ void _plus_NEST() // +NEST
 
 void COME_dash_HITHER() // COME-HITHER
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_TCLR); // TCLR
   Store_3(); // !_3
   UNK_0xf1b5(); // UNK_0xf1b5
@@ -4384,7 +4397,7 @@ void COME_dash_HITHER() // COME-HITHER
   _plus_NEST(); // +NEST
   Push2Words("*SHIP-CONFIG");
   _plus_NEST(); // +NEST
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_TCLR); // TCLR
   Store_3(); // !_3
 }

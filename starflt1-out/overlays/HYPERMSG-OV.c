@@ -190,6 +190,10 @@ extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
 extern const unsigned short int pp_IsCALLING; // ?CALLING
+extern Color BLACK; // BLACK
+extern Color PINK; // PINK
+extern Color ORANGE; // ORANGE
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -1603,9 +1607,9 @@ void UNK_0xee3b() // UNK_0xee3b
   } while(i<imax); // (/LOOP)
 
   BEEPOFF(); // BEEPOFF
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
@@ -2072,7 +2076,7 @@ void UNK_0xf13d() // UNK_0xf13d
 void UNK_0xf149() // UNK_0xf149
 {
   UNK_0x3f3b("FUEL SUPPLY LOW");
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   UNK_0xf13d(); // UNK_0xf13d
 }
 
@@ -2084,7 +2088,7 @@ void UNK_0xf149() // UNK_0xf149
 void UNK_0xf163() // UNK_0xf163
 {
   UNK_0x3f3b("FUEL SUPPLY CRITICAL");
-  SetColor("ORANGE");
+  SetColor(ORANGE);
   UNK_0xf13d(); // UNK_0xf13d
 }
 
@@ -2096,7 +2100,7 @@ void UNK_0xf163() // UNK_0xf163
 void UNK_0xf182() // UNK_0xf182
 {
   UNK_0x3f3b("OUT OF FUEL");
-  SetColor("PINK");
+  SetColor(PINK);
   UNK_0xf13d(); // UNK_0xf13d
 }
 

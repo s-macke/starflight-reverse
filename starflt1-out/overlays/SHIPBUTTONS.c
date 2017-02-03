@@ -104,6 +104,11 @@ extern const unsigned short int pp_ENC_dash_TIME; // ENC-TIME
 extern const unsigned short int pp_NAV_dash_TIME; // NAV-TIME
 extern LoadDataType _1BTN; // 1BTN
 extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color BLUE; // BLUE
 void MS(); // MS
 void WITHIN(); // WITHIN
 void Store_3(); // !_3
@@ -275,12 +280,12 @@ void UNK_0xee30() // UNK_0xee30
 {
   POS_dot_(); // POS.
   Push(0x000e);
-  SetColor("GREY1");
+  SetColor(GREY1);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   _gt_1FONT(); // >1FONT
-  SetColor("BLACK");
-  SetColor("GREY2");
-  SetColor("DK-BLUE");
+  SetColor(BLACK);
+  SetColor(GREY2);
+  SetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -416,7 +421,7 @@ void UNK_0xef06() // UNK_0xef06
   if (Pop() != 0)
   {
     UNK_0xeee2(); // UNK_0xeee2
-    SetColor("BLUE");
+    SetColor(BLUE);
     SWAP(); // SWAP
     DrawHIGHLI(); // .HIGHLI
     return;
@@ -484,12 +489,12 @@ void UNK_0xef68() // UNK_0xef68
   }
   IsTRIG(); // ?TRIG
   if (Pop() == 0) return;
-  SetColor("BLUE");
+  SetColor(BLUE);
   UNK_0xef5e(); // UNK_0xef5e
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   UNK_0xee24(); // UNK_0xee24
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xef5e(); // UNK_0xef5e
 }
 
@@ -500,7 +505,7 @@ void UNK_0xef68() // UNK_0xef68
 
 void UNK_0xef8c() // UNK_0xef8c
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
 }
 
@@ -547,7 +552,7 @@ void _ro_GET_dash_AUX_rc_() // (GET-AUX)
 
 void UNK_0xefc2() // UNK_0xefc2
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(0xcc3e); // probable 'OV.MVS'
   MODULE(); // MODULE
@@ -557,7 +562,7 @@ void UNK_0xefc2() // UNK_0xefc2
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
   UNK_0xeee2(); // UNK_0xeee2
-  SetColor("BLUE");
+  SetColor(BLUE);
   Push(pp_THIS_dash_BU); // THIS-BU
   Push(Read16(Pop())); // @
   DrawHIGHLI(); // .HIGHLI
@@ -1344,7 +1349,7 @@ void _gt_FLT() // >FLT
   Push(pp_TRAK_dash_HR); // TRAK-HR
   Store_3(); // !_3
   CFIGARRAYS(); // CFIGARRAYS
-  SetColor("GREY2");
+  SetColor(GREY2);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Push(Read16(Pop())); // @

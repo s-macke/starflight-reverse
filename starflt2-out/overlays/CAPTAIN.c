@@ -158,6 +158,11 @@ extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_CTTOP; // CTTOP
 extern LoadDataType _1BTN; // 1BTN
+extern Color BLACK; // BLACK
+extern Color DK_dash_GREE; // DK-GREE
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_SP; // INST-SP
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
@@ -639,9 +644,9 @@ void UNK_0xe617() // UNK_0xe617
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2
-  SetColor("WHITE");
-  SetColor("GREY1");
-  SetColor("DK-GREE");
+  SetColor(WHITE);
+  SetColor(GREY1);
+  SetColor(DK_dash_GREE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1343,7 +1348,7 @@ void UNK_0xea52() // UNK_0xea52
 
 void UNK_0xea70() // UNK_0xea70
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(6);
@@ -1550,7 +1555,7 @@ void UNK_0xec3b() // UNK_0xec3b
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex__2(); // +!_2
   CTERASE(); // CTERASE
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   UNK_0xec11(); // UNK_0xec11
@@ -1589,7 +1594,7 @@ void UNK_0xed21() // UNK_0xed21
     Push(1);
     Push(5);
     CTPOS_dot_(); // CTPOS.
-    SetColor("WHITE");
+    SetColor(WHITE);
     StoreCOLOR(); // !COLOR
     PRINT("REVISING...", 11); // (.")
   }
@@ -1601,7 +1606,7 @@ void UNK_0xed21() // UNK_0xed21
   Push(5);
   CTPOS_dot_(); // CTPOS.
   Push(0x000b);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push2Words("*STARSH");
   UNK_0xe607(); // UNK_0xe607
@@ -1796,7 +1801,7 @@ void UNK_0xee61() // UNK_0xee61
   Store_2(); // !_2
   Push(pp_UNK_0xedbb); // UNK_0xedbb
   _099(); // 099
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(4);
   Push(6);
@@ -1825,7 +1830,7 @@ void UNK_0xeeb4() // UNK_0xeeb4
   if (Pop() != 0)
   {
     UNK_0xe5f7(); // UNK_0xe5f7
-    SetColor("BLACK");
+    SetColor(BLACK);
     UNK_0xe64b(); // UNK_0xe64b
     UNK_0xea52(); // UNK_0xea52
     UNK_0xee61(); // UNK_0xee61

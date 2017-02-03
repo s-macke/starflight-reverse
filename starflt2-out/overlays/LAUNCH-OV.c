@@ -51,6 +51,9 @@ extern const unsigned short int pp_IsG_dash_AWAR; // ?G-AWAR
 extern const unsigned short int pp_GWF; // GWF
 extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern const unsigned short int pp_STIME; // STIME
+extern Color BLACK; // BLACK
+extern Color GREY2; // GREY2
+extern Color YELLOW; // YELLOW
 void D_st_(); // D<
 void Draw(); // .
 void MS(); // MS
@@ -293,7 +296,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
@@ -369,12 +372,12 @@ void UNK_0xf202() // UNK_0xf202
 void DrawAIRLOCK() // .AIRLOCK
 {
   _gt_MAINVI(); // >MAINVI
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
-  SetColor("BLACK");
-  SetColor("BLACK");
-  SetColor("YELLOW");
+  SetColor(BLACK);
+  SetColor(BLACK);
+  SetColor(YELLOW);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -641,7 +644,7 @@ void _and_RETURN() // &RETURN
   UNK_0x3f09("CLOSING");
   UNK_0xf390(); // UNK_0xf390
   DrawAIRLOCK(); // .AIRLOCK
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(Read16(cc_FALSE)); // FALSE
   if (Pop() != 0)

@@ -157,6 +157,11 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp__ro_TRADER; // (TRADER
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color BLACK; // BLACK
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -315,7 +320,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   Push(0x03e8);
   Push(pp_COLOR); // COLOR
   Push(Read16(Pop())); // @
-  SetColor("RED");
+  SetColor(RED);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop()*2); // 2*
@@ -825,7 +830,7 @@ void UNK_0xea44() // UNK_0xea44
   Push(pp_WRIGHT); // WRIGHT
   Push(Read16(Pop())); // @
   Push(Pop()+1); // 1+
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   Push(0);
   Push(0);
@@ -951,12 +956,12 @@ void UNK_0xea94() // UNK_0xea94
 void UNK_0xeb14() // UNK_0xeb14
 {
   UNK_0xe936(); // UNK_0xe936
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(-1);
   UNK_0xe9da(); // UNK_0xe9da
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xe896(); // UNK_0xe896
   UNK_0xe852(); // UNK_0xe852
 }
@@ -970,11 +975,11 @@ void UNK_0xeb2a() // UNK_0xeb2a
 {
   UNK_0xe920(); // UNK_0xe920
   UNK_0xea44(); // UNK_0xea44
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   _gt_2FONT(); // >2FONT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(0);
@@ -1012,11 +1017,11 @@ void UNK_0xeba4() // UNK_0xeba4
 {
   UNK_0xe94a(); // UNK_0xe94a
   UNK_0xea44(); // UNK_0xea44
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   UNK_0xe86e(); // UNK_0xe86e
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(-3);
   Push(pp_WTOP); // WTOP
@@ -1045,11 +1050,11 @@ void UNK_0xec03() // UNK_0xec03
 {
   UNK_0xe8f2(); // UNK_0xe8f2
   UNK_0xea44(); // UNK_0xea44
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   _gt_2FONT(); // >2FONT
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(0);
@@ -1069,7 +1074,7 @@ void UNK_0xec2d() // UNK_0xec2d
   Push(-3);
   Push(pp_WRIGHT); // WRIGHT
   _plus__ex__2(); // +!_2
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   Push(3);
@@ -1089,12 +1094,12 @@ void UNK_0xec49() // UNK_0xec49
   Push(0);
   Push(pp_XORMODE); // XORMODE
   _st__ex__gt_(); // <!>
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor("RED");
+  SetColor(RED);
   StoreCOLOR(); // !COLOR
-  SetColor("BLACK");
+  SetColor(BLACK);
   VIEWSCR(); // VIEWSCR
   UNK_0xeb14(); // UNK_0xeb14
   UNK_0xeb2a(); // UNK_0xeb2a
@@ -1415,7 +1420,7 @@ void UNK_0xee38() // UNK_0xee38
 void TV_dash_SETUP() // TV-SETUP
 {
   UNK_0xec49(); // UNK_0xec49
-  SetColor("DK-BLUE");
+  SetColor(DK_dash_BLUE);
   Push(pp_CRSCOLO); // CRSCOLO
   Store_2(); // !_2
   Push(pp_FUNCTIONS); // FUNCTIONS
@@ -1883,7 +1888,7 @@ void UNK_0xf199() // UNK_0xf199
 
 void UNK_0xf1e5() // UNK_0xf1e5
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(6);
   Push(pp_LBLT); // LBLT
@@ -2022,7 +2027,7 @@ void UNK_0xf2bd() // UNK_0xf2bd
   Push(0);
   Push(0);
   UNK_0xe9da(); // UNK_0xe9da
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
@@ -2081,10 +2086,10 @@ void UNK_0xf328() // UNK_0xf328
 {
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
   } else
   {
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
   }
   UNK_0xf2f8(); // UNK_0xf2f8
 }
@@ -2112,7 +2117,7 @@ void UNK_0xf33a() // UNK_0xf33a
 void TV_dash_DISP() // TV-DISP
 {
   DCLIPSE(); // DCLIPSE
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0x3f09("ACTIVATING TERRAIN VEHICLE");
   DrawTTY(); // .TTY
@@ -2145,7 +2150,7 @@ void TV_dash_DISP() // TV-DISP
   UNK_0xf33a(); // UNK_0xf33a
   TV_dash_SETUP(); // TV-SETUP
   UNK_0xf151(); // UNK_0xf151
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0064);
   Push(pp__pe_VAL); // %VAL

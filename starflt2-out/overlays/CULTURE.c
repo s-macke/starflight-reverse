@@ -81,6 +81,12 @@ extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
 extern const unsigned short int pp_LINE_dash_CO; // LINE-CO
 extern const unsigned short int pp_PAST; // PAST
 extern const unsigned short int pp__ro_TRADER; // (TRADER
+extern Color DK_dash_BLUE; // DK-BLUE
+extern Color RED; // RED
+extern Color BLUE; // BLUE
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color PINK; // PINK
+extern Color WHITE; // WHITE
 void _dash_TRAILING(); // -TRAILING
 void NOP(); // NOP
 void _gt_FLAG(); // >FLAG
@@ -134,10 +140,10 @@ void UNK_0xef56() // UNK_0xef56
   Push(b); // I
   if (Pop() != 0)
   {
-    SetColor("PINK");
+    SetColor(PINK);
   } else
   {
-    SetColor("BLUE");
+    SetColor(BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -148,10 +154,10 @@ void UNK_0xef56() // UNK_0xef56
   Push(b); // R>
   if (Pop() != 0)
   {
-    SetColor("RED");
+    SetColor(RED);
   } else
   {
-    SetColor("DK-BLUE");
+    SetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -230,7 +236,7 @@ void UNK_0xf00b() // UNK_0xf00b
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -243,7 +249,7 @@ void UNK_0xf017() // UNK_0xf017
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor("LT-BLUE");
+  SetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -919,7 +925,7 @@ void DrawCULTURE() // .CULTURE
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  SetColor("WHITE");
+  SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   Push(pp_LINE_dash_CO); // LINE-CO

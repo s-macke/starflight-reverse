@@ -219,6 +219,8 @@ extern const unsigned short int pp__i_VERSIO; // 'VERSIO
 extern const unsigned short int user_TIB; // TIB
 extern const unsigned short int user_ROW; // ROW
 extern const unsigned short int user_COL; // COL
+extern Color BLACK; // BLACK
+extern Color WHITE; // WHITE
 void _ro_RESTORE_rc_(); // (RESTORE)
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void _ro_SETUP_rc_(); // (SETUP)
@@ -1380,7 +1382,7 @@ void UNK_0xe40f() // UNK_0xe40f
   Push(0x0014);
   Push(0x001e);
   Push(0x0099);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   StoreCOLOR(); // !COLOR
 }
@@ -1400,7 +1402,7 @@ void UNK_0xe431() // UNK_0xe431
   Push(0x0014);
   Push(5);
   Push(0x009f);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   StoreCOLOR(); // !COLOR
 }
@@ -1426,7 +1428,7 @@ void UNK_0xe451() // UNK_0xe451
 
 void UNK_0xe45f() // UNK_0xe45f
 {
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(0x009b);

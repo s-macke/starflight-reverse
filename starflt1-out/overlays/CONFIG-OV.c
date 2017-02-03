@@ -88,6 +88,11 @@ extern const unsigned short int pp_OCRS; // OCRS
 extern const unsigned short int pp__dash_AIN; // -AIN
 extern const unsigned short int pp_FQUIT; // FQUIT
 extern const unsigned short int pp_CRSCOLO; // CRSCOLO
+extern Color BLACK; // BLACK
+extern Color DK_dash_GREEN; // DK-GREEN
+extern Color GREY1; // GREY1
+extern Color BLUE; // BLUE
+extern Color WHITE; // WHITE
 extern IFieldType _pe_NAME; // %NAME
 void _star__slash_(); // */
 void M_star_(); // M*
@@ -382,7 +387,7 @@ void UNK_0xea27() // UNK_0xea27
 void UNK_0xea65() // UNK_0xea65
 {
   Push(7);
-  SetColor("BLACK");
+  SetColor(BLACK);
   ROT(); // ROT
   Push(0x000a);
   Push(Pop() * Pop()); // *
@@ -415,7 +420,7 @@ void UNK_0xeaa9() // UNK_0xeaa9
 {
   GetCRS(); // @CRS
   Push(2);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0x00ae);
   Push(0x0085);
   _2DUP(); // 2DUP
@@ -564,7 +569,7 @@ void UNK_0xebb5() // UNK_0xebb5
   } while(i<imax); // (LOOP)
 
   Push(4);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Push(0x00ae);
   Push(0x0037);
   POS_dot_PXT(); // POS.PXT
@@ -1292,7 +1297,7 @@ void UNK_0xf0da() // UNK_0xf0da
 void UNK_0xf14c() // UNK_0xf14c
 {
   UNK_0xe9b2(); // UNK_0xe9b2
-  SetColor("BLUE");
+  SetColor(BLUE);
   UNK_0xeb1b(); // UNK_0xeb1b
   GetCRS(); // @CRS
   Push(pp_NCRS); // NCRS
@@ -1358,7 +1363,7 @@ void UNK_0xf14c() // UNK_0xf14c
   } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xebb5(); // UNK_0xebb5
-  SetColor("BLACK");
+  SetColor(BLACK);
   UNK_0xeb1b(); // UNK_0xeb1b
   Push(pp_UNK_0xea4a); // UNK_0xea4a
   BLD_dash_CRS(); // BLD-CRS
@@ -1757,9 +1762,9 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe976(); // UNK_0xe976
-  SetColor("WHITE");
-  SetColor("GREY1");
-  SetColor("DK-GREEN");
+  SetColor(WHITE);
+  SetColor(GREY1);
+  SetColor(DK_dash_GREEN);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_3(); // !_3

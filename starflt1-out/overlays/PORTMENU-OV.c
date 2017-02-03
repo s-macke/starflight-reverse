@@ -130,6 +130,11 @@ extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
 extern const unsigned short int pp_STIME; // STIME
 extern const unsigned short int pp_IsFANLYZ; // ?FANLYZ
 extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color GREY2; // GREY2
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color WHITE; // WHITE
 void _star__slash_(); // */
 void ABS(); // ABS
 void MAX(); // MAX
@@ -298,14 +303,14 @@ void UNK_0xe955() // UNK_0xe955
     _gt_(); // >
     if (Pop() != 0)
     {
-      SetColor("LT-BLUE");
+      SetColor(LT_dash_BLUE);
     } else
     {
-      SetColor("GREY1");
+      SetColor(GREY1);
     }
   } else
   {
-    SetColor("GREY2");
+    SetColor(GREY2);
   }
   StoreCOLOR(); // !COLOR
   Push(a); // R>
@@ -341,7 +346,7 @@ void UNK_0xe9bb() // UNK_0xe9bb
 void UNK_0xe9c9() // UNK_0xe9c9
 {
   unsigned short int i, imax, j, jmax;
-  SetColor("GREY2");
+  SetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -966,7 +971,7 @@ void UNK_0xede1() // UNK_0xede1
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  SetColor("BLACK");
+  SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0);
   Push(0);
@@ -1647,7 +1652,7 @@ void UNK_0xf2b3() // UNK_0xf2b3
   Push(pp_UNK_0xebfc); // UNK_0xebfc
   Store_3(); // !_3
   DISPLAY(); // DISPLAY
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf293(); // UNK_0xf293
   POS_dot_(); // POS.
@@ -1790,7 +1795,7 @@ void UNK_0xf391() // UNK_0xf391
 void UNK_0xf3a9() // UNK_0xf3a9
 {
   unsigned short int i, imax;
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_ABLT); // ABLT
   Push(Read16(Pop())); // @

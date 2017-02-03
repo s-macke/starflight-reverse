@@ -202,6 +202,12 @@ extern const unsigned short int pp_YSCREEN; // YSCREEN
 extern const unsigned short int pp_XSCREEN; // XSCREEN
 extern const unsigned short int pp__n_CLRMAP; // #CLRMAP
 extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern Color BLACK; // BLACK
+extern Color RED; // RED
+extern Color GREY1; // GREY1
+extern Color LT_dash_BLUE; // LT-BLUE
+extern Color YELLOW; // YELLOW
+extern Color WHITE; // WHITE
 extern ArrayType CONTOUR; // CONTOUR
 extern ArrayType FACET; // FACET
 extern ArrayType FACE; // FACE
@@ -1889,7 +1895,7 @@ void UNK_0xe4e0() // UNK_0xe4e0
     NBCLR(); // NBCLR
   } else
   {
-    SetColor("BLACK");
+    SetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xdbc0); // UNK_0xdbc0
@@ -2068,19 +2074,19 @@ void UNK_0xe5d2() // UNK_0xe5d2
     Push(4);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor("WHITE");
+    SetColor(WHITE);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor("RED");
+    SetColor(RED);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor("GREY1");
+    SetColor(GREY1);
     StoreCOLOR(); // !COLOR
     Push(4);
     Push(9);
@@ -2883,7 +2889,7 @@ void UNK_0xea89() // UNK_0xea89
 void UNK_0xeaa3() // UNK_0xeaa3
 {
   unsigned short int a, i, imax;
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_VIN); // VIN
   Push(Read16(Pop())); // @
@@ -4212,19 +4218,19 @@ void SKYCASE() // SKYCASE
   switch(Pop()) // SKYCASE
   {
   case 0:
-    SetColor("BLACK");
+    SetColor(BLACK);
     break;
   case 7:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   case 12:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   case 19:
-    SetColor("YELLOW");
+    SetColor(YELLOW);
     break;
   default:
-    SetColor("LT-BLUE");
+    SetColor(LT_dash_BLUE);
     break;
 
   }

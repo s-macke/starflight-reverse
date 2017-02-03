@@ -23,6 +23,7 @@
 // =================================
 // ============= EXTERN ============
 // =================================
+extern Color GREY1; // GREY1
 void MAX(); // MAX
 void MIN(); // MIN
 void RRND(); // RRND
@@ -256,7 +257,7 @@ void FLUX() // FLUX
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(0);
   TONE(); // TONE

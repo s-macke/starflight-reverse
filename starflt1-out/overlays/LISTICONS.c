@@ -32,6 +32,9 @@ extern const unsigned short int pp_ABLT; // ABLT
 extern const unsigned short int pp_BLTSEG; // BLTSEG
 extern const unsigned short int pp_TILE_dash_PTR; // TILE-PTR
 extern const unsigned short int pp_CMAP; // CMAP
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
+extern Color WHITE; // WHITE
 void KEY_2(); // KEY_2
 void Is_gt_EGA(); // ?>EGA
 void Store_3(); // !_3
@@ -66,7 +69,7 @@ void TILEFILL(); // TILEFILL
 void altitude() // altitude
 {
   unsigned short int i, imax;
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
@@ -133,7 +136,7 @@ void ICON_dash_KEY() // ICON-KEY
   Push(0x0037);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
@@ -211,7 +214,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
   Push(0x001b);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor("WHITE");
+  SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY_2(); // KEY_2
@@ -253,7 +256,7 @@ void SEE_dash_BLTS() // SEE-BLTS
     Push(0x000c);
     Push(pp_XBLT); // XBLT
     _st__plus__ex__gt_(); // <+!>
-    SetColor("BLACK");
+    SetColor(BLACK);
     StoreCOLOR(); // !COLOR
     Push(-2);
     Push(pp_YBLT); // YBLT
@@ -279,7 +282,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 
 void title() // title
 {
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   ICON_dash_KEY(); // ICON-KEY

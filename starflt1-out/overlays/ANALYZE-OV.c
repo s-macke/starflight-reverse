@@ -116,6 +116,9 @@ extern const unsigned short int pp_SENSE_dash_ADDR; // SENSE-ADDR
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp_IsFANLYZ; // ?FANLYZ
+extern Color BLUE; // BLUE
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QTY; // INST-QTY
 void DABS(); // DABS
 void MIN(); // MIN
@@ -428,7 +431,7 @@ void UNK_0xeccb() // UNK_0xeccb
 
 void UNK_0xecd8() // UNK_0xecd8
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
@@ -468,7 +471,7 @@ void _ro__dot_OBJECT_rc_() // (.OBJECT)
 
 void DrawOBJECT() // .OBJECT
 {
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
@@ -575,7 +578,7 @@ void HEADER() // HEADER
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -815,7 +818,7 @@ void DrawORBIT() // .ORBIT
   Push(0x0014);
   Push(1);
   CTPOS_dot_(); // CTPOS.
-  SetColor("BLUE");
+  SetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT
@@ -1382,12 +1385,12 @@ void UNK_0xf31e() // UNK_0xf31e
     _gt_(); // >
     if (Pop() != 0)
     {
-      SetColor("YELLOW");
+      SetColor(YELLOW);
       StoreCOLOR(); // !COLOR
       PRINT("SLIGHTLY UNSTABLE", 17); // (.")
     } else
     {
-      SetColor("PINK");
+      SetColor(PINK);
       StoreCOLOR(); // !COLOR
       CTCR(); // CTCR
       PRINT("  UNSTABLE - ESTIMATED TIME TO FLARE:", 37); // (.")

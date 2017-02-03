@@ -46,6 +46,8 @@ extern const unsigned short int pp_XBLT; // XBLT
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_IsRECALL; // ?RECALL
 extern const unsigned short int pp__10_star_END; // 10*END
+extern Color BLACK; // BLACK
+extern Color GREY1; // GREY1
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType _pe_NAME; // %NAME
 void M_star_(); // M*
@@ -140,10 +142,10 @@ void UNK_0xf195() // UNK_0xf195
 
 void UNK_0xf1cb() // UNK_0xf1cb
 {
-  SetColor("GREY1");
+  SetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -189,7 +191,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   PRINT("CHECK", 5); // (.")
   Push(2);
   Push(0x00c5);
-  SetColor("BLACK");
+  SetColor(BLACK);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -380,7 +382,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(1);
   Push(0x0016);
   CMESS(); // CMESS
-  SetColor("BLACK");
+  SetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   StoreCRS(); // !CRS

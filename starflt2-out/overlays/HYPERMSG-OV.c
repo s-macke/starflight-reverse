@@ -194,6 +194,9 @@ extern const unsigned short int pp__ro_PLANET; // (PLANET
 extern const unsigned short int pp__ro_ENCOUN; // (ENCOUN
 extern const unsigned short int pp_ATIME; // ATIME
 extern const unsigned short int pp__i_UHL; // 'UHL
+extern Color RED; // RED
+extern Color PINK; // PINK
+extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
 void _star__slash_(); // */
@@ -1699,7 +1702,7 @@ void UNK_0xef4a() // UNK_0xef4a
 
 void UNK_0xef52() // UNK_0xef52
 {
-  SetColor("YELLOW");
+  SetColor(YELLOW);
   UNK_0xef42(); // UNK_0xef42
   UNK_0x3f09("FUEL SUPPLY LOW");
   UNK_0xef4a(); // UNK_0xef4a
@@ -1712,7 +1715,7 @@ void UNK_0xef52() // UNK_0xef52
 
 void UNK_0xef6e() // UNK_0xef6e
 {
-  SetColor("PINK");
+  SetColor(PINK);
   UNK_0xef42(); // UNK_0xef42
   UNK_0x3f09("FUEL SUPPLY CRITICAL");
   UNK_0xef4a(); // UNK_0xef4a
@@ -1725,7 +1728,7 @@ void UNK_0xef6e() // UNK_0xef6e
 
 void UNK_0xef8f() // UNK_0xef8f
 {
-  SetColor("RED");
+  SetColor(RED);
   UNK_0xef42(); // UNK_0xef42
   UNK_0x3f09("OUT OF FUEL");
   UNK_0xef4a(); // UNK_0xef4a
