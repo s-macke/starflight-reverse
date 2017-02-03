@@ -20,7 +20,6 @@ typedef struct
     unsigned char size;
 } IFieldType; // Instance field
 
-
 typedef struct
 {
     unsigned short int width;
@@ -29,6 +28,9 @@ typedef struct
     unsigned short ds;
 } ArrayType;
 
+typedef unsigned char Color;
+
+typedef unsigned short Overlay;
 
 typedef void (*WordCallDef)();
 
@@ -39,7 +41,7 @@ typedef void (*WordCallDef)();
     void Func14(char *s);
     void PRINT(char *s, int n);
     void Push2Words(char *s);
-    void SetColor(char *s);
+    void SetColor(Color color);
     void GetTableEntry(char *s);
     void LoadData(LoadDataType dt);
     void UNK_0x3f3b(char *s);

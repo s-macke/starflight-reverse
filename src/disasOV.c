@@ -95,6 +95,7 @@ void DisasStarflt()
     Transpile(OUTDIR"/starflt", NULL, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_VARIABLES);
 
 #ifdef STARFLT1
+    Transpile(OUTDIR"/common/init",     NULL, ovidx, 0x08d1, 0x0993-1, WRITE_EXTERN | WRITE_VARIABLES);
     Transpile(OUTDIR"/common/main",     NULL, ovidx, 0xd47e, FILESTAR0SIZE+0x100, WRITE_EXTERN | WRITE_VARIABLES);
     Transpile(OUTDIR"/common/overlay",  NULL, ovidx, 0xba1f, 0xd47e - 1, WRITE_EXTERN | WRITE_VARIABLES);
     Transpile(OUTDIR"/common/rule",     NULL, ovidx, 0xb680, 0xba1f - 1, WRITE_EXTERN | WRITE_VARIABLES);

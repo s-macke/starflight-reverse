@@ -126,6 +126,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
         }
 
         if (Read8(currentoffset) == 0xc3) return 0; // ret
+        if (Read8(currentoffset) == 0xcf) return 0; // iret
 
         if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump
         {
@@ -549,7 +550,6 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
 
             unsigned short startaddress = Read16(par);
             int i=0;
-            //fprintf(stderr, "LoadOverlay(\"%s\");\n", s);
             for(i=0; overlays[i].name != NULL; i++)
             {
                 if (overlays[i].startaddress != startaddress) continue;
@@ -561,7 +561,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 exit(1);
             }
             pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "LoadOverlay(\"%s\");\n", s);
+            snprintf(pline[ofs].str, STRINGLEN, "LoadOverlay(%s); // %s\n", Forth2CString(s), s);
             ofs += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
@@ -793,6 +793,15 @@ void SetStructDone(int ovidx)
             pline[parp+0].done = TRUE;
             pline[parp+1].done = TRUE;
         }
+        if (dict[i].codep == CODEEXEC)
+        {
+            pline[parp+0].done = TRUE;
+            pline[parp+1].done = TRUE;
+        }
+        if (dict[i].codep == CODESETCOLOR)
+        {
+            pline[parp+0].done = TRUE;
+        }
         if (dict[i].codep == CODEPUSH2WORDS)
         {
             pline[parp+0].done = TRUE;
@@ -853,6 +862,10 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
                 Variables vars = GetEmptyVariables();
                 ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
             }
+            if (Read16(i+1) == CODESETCOLOR)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
             if (Read16(i+1) == CODELOADDATA)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
@@ -873,6 +886,10 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
             }
+            if (Read16(i+1) == CODEEXEC)
+            {
+                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+            }
         }
         SetWordHeader(ovidx);
         SetStructDone(ovidx);
@@ -889,5 +906,9 @@ void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
         //printf("disasm dict entry %i\n", i);
         DisasmRange(dict[i].codep, 0x100000, ovidx, minaddr, maxaddr);
     }
-    if (ovidx == -1) DisasmRange(0x100, 0x100000, ovidx, minaddr, maxaddr);
+    if (ovidx == -1)
+    {
+        DisasmRange(0x100, 0x100000, ovidx, minaddr, maxaddr); // start of program
+        DisasmRange(0x1d1, 0x100000, ovidx, minaddr, maxaddr); // timer interrupt maybe
+    }
 }

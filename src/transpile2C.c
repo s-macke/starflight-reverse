@@ -172,9 +172,7 @@ void WriteExtern(FILE *fp, int ovidx)
         if (!dict[i].isextern) continue;
         if
         (
-        (dict[i].codep == CODELOADOVERLAY) ||
         (dict[i].codep == CODETABLE) ||
-        (dict[i].codep == CODESETCOLOR) ||
         (dict[i].codep == CODESIGFLD) ||
         (dict[i].codep == CODEPUSH2WORDS) ||
         (dict[i].codep == CODEFUNC5) ||
@@ -213,6 +211,13 @@ void WriteExtern(FILE *fp, int ovidx)
         if (dict[i].codep != CODELOADDATA) continue;
         if (!dict[i].isextern) continue;
         fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
+        dict[i].isextern = FALSE;
+    }
+    for(i=0; i<ndict; i++)
+    {
+        if (dict[i].codep != CODESETCOLOR) continue;
+        if (!dict[i].isextern) continue;
+        fprintf(fp, "extern Color %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].isextern = FALSE;
     }
     for(i=0; i<ndict; i++)
@@ -409,7 +414,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     }
     if (e->codep == CODESETCOLOR)
     {
-        snprintf(ret, STRINGLEN, "SetColor(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "SetColor(%s);\n", Forth2CString(s));
         return;
     }
     if (e->codep == CODESIGFLD)
@@ -1027,14 +1032,20 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     addr = efunc->parp+3-1;
                     continue;
 
+                case CODEEXEC:
                 case CODECONSTANT:
                     fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
                     addr = efunc->parp+2-1;
                     continue;
 
                 case CODELOADOVERLAY:
-                    fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
+                    fprintf(fp, "// Overlay %s = 0x%04x\n", Forth2CString(s), Read16(efunc->parp+0));
                     addr = efunc->parp+2-1;
+                    continue;
+
+                case CODESETCOLOR:
+                    fprintf(fp, "Color %s = 0x%02x\n", Forth2CString(s), Read8(efunc->parp+0));
+                    addr = efunc->parp+1-1;
                     continue;
 
                 case CODEPUSH2WORDS:
