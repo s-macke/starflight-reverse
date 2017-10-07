@@ -1,6 +1,6 @@
 # starflight-reverse
 
-Reversed engineered game starflight (1986)
+Reversed engineered game Starflight (1986)
 
 ## What is Starflight? ##
 
@@ -18,12 +18,11 @@ To find out more about the game check the following links:
 
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
-## What is this project? ##
+## What is this project about? ##
 
-This project is a fun project trying to reverse engineer the old code.
-Starflight was written FORTH and x86 assembly which enables us to extract most of the original source code. Take a look at the [technical articles](http://migblog.blog.com/starflight-home/)
-I tried to write the disassembly more in C-style, because more people are familiar with this style.
+This project is a fun project trying to reverse engineer the old code. Starflight was written in FORTH which enables us to extract most of the original source code. Take a look at the [technical articles](http://migblog.blog.com/starflight-home/)
+The disassember transpiles the FORTH code into C-style code, because more people are familiar with this style. Most of the transpiled code compiles.
 
 ## Usage ##
 
-Just put the content of the original starflight folders into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` `starflt2-out`.
+Just put the content of the original Starflight folders into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` `starflt2-out`. The generated output is part of this repository.
