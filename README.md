@@ -1,4 +1,4 @@
-# starflight-reverse
+# Starflight-Reverse
 
 Reversed engineered game Starflight (1986)
 
