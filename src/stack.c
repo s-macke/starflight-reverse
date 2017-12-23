@@ -50,14 +50,13 @@ void FunctionStackAnalysis(int parp, int ovidx)
             return;
         }
         //printf("word %20s codep=%04x parp=%04x stack=%i in=%i out=%i \n", GetWordName(d), d->codep, d->parp, stack, d->stackin, d->stackout);
-
         if (d->stackin  == STACKINVALID) return;
         if (d->stackout == STACKINVALID) return;
 
         stack -= d->stackin;
         if (stack < stackmin) stackmin = stack;
         stack += d->stackout;
-        if ((strcmp(d->r, "EXIT")==0) /*|| (pline[addr].flow == IFEXIT)*/)
+        if ((strcmp(d->r, "EXIT")==0) || (pline[addr].flow == IFEXIT))
         {
             dd->stackin = -stackmin;
             dd->stackout = stack-stackmin;
@@ -115,7 +114,7 @@ void IterateFunctions(int ovidx)
         FunctionStackAnalysis(dict[i].parp, ovidx);
     }
 
-    printf("%i\n", n);
+    //printf("%i\n", n);
 }
 
 void StackAnalysis(int ovidx)
@@ -158,9 +157,11 @@ void StackAnalysis(int ovidx)
             dict[i].stackin = 1;
             dict[i].stackout = 0;
         }
-        
-
-
+        if (dict[i].codep == CODEPUSH2WORDS)
+        {
+            dict[i].stackin = 0;
+            dict[i].stackout = 2;
+        }
     }
     Set("@", 1, 1);
     Set("C@", 1, 1);
@@ -254,7 +255,7 @@ void StackAnalysis(int ovidx)
     Set("<!>", 2, 0);
     Set("<+!>", 2, 0);
     Set("(.\")", 0, 0); // maybe not necessary. But to stay on the safe side
-
+    Set("<C!>", 2, 0);
     Set("VA>BLK", 2, 2);
     Set("PICK", 1, 1); // recursion because of unravel
     Set("(BUFFER)", 1, 2); // not sure
@@ -270,12 +271,21 @@ void StackAnalysis(int ovidx)
     Set("MS", 0, 1);
     Set("QUIT", 0, 0); // No sure, but probably right
     Set("UNRAVEL", 0, 0); // No sure, but probably right
+    Set("<1.5!>", 3, 0);
+    Set("1.5@", 1, 2);
+
+    Set(">C", 2, 0);
+    Set("C>", 0, 2);
+    Set("CI", 0, 2);
+
+
+    Set("CDEPTH", 0, 1);
 
     Set("LLINE", 4, 0);
+    Set("UNK_0x3672", 1, 1); // in both starflight the same
 
 #ifdef STARFLT1
     Set("!", 2, 0);
-    Set("UNK_0x3672", 1, 1);
     //Set("UNK_0x8332", 1, 1); // Seems recursive
     Set("UNK_0x8df0", 0, 0); // Something with graphics
     Set("UNK_0x93b1", 0, 4);
@@ -287,6 +297,8 @@ void StackAnalysis(int ovidx)
 #endif
 #ifdef STARFLT2
     Set("!_1", 2, 0);
+    Set("UNK_0x7650", 0, 1);
+    Set("CMOVE_1", 3, 0);
 #endif
 
     /*
