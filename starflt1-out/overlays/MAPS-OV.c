@@ -476,7 +476,7 @@ void UNK_0xee58() // UNK_0xee58
 
 
 // ================================================
-// 0xee84: WORD 'UNK_0xee86' codep=0x224c parp=0xee86
+// 0xee84: WORD 'UNK_0xee86' codep=0x224c parp=0xee86 params=6 returns=0
 // ================================================
 
 void UNK_0xee86() // UNK_0xee86
@@ -491,7 +491,7 @@ void UNK_0xee86() // UNK_0xee86
 
 
 // ================================================
-// 0xee94: WORD 'UNK_0xee96' codep=0x224c parp=0xee96 params=2 returns=4
+// 0xee94: WORD 'UNK_0xee96' codep=0x224c parp=0xee96 params=2 returns=2
 // ================================================
 
 void UNK_0xee96() // UNK_0xee96
@@ -1170,7 +1170,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
 
 
 // ================================================
-// 0xf318: WORD '.ROCK' codep=0x224c parp=0xf322
+// 0xf318: WORD '.ROCK' codep=0x224c parp=0xf322 params=4 returns=0
 // ================================================
 
 void DrawROCK() // .ROCK
@@ -1238,7 +1238,7 @@ void DrawICE() // .ICE
 
 
 // ================================================
-// 0xf396: WORD '.MOLTEN' codep=0x224c parp=0xf3a2
+// 0xf396: WORD '.MOLTEN' codep=0x224c parp=0xf3a2 params=8 returns=0
 // ================================================
 
 void DrawMOLTEN() // .MOLTEN
@@ -1254,7 +1254,7 @@ void DrawMOLTEN() // .MOLTEN
 
 
 // ================================================
-// 0xf3b2: WORD '.CARPET' codep=0x224c parp=0xf3be
+// 0xf3b2: WORD '.CARPET' codep=0x224c parp=0xf3be params=0 returns=0
 // ================================================
 
 void DrawCARPET() // .CARPET

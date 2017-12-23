@@ -223,7 +223,7 @@ void UNK_0xee0a() // UNK_0xee0a
 
 
 // ================================================
-// 0xee18: WORD 'UNK_0xee1a' codep=0x224c parp=0xee1a
+// 0xee18: WORD 'UNK_0xee1a' codep=0x224c parp=0xee1a params=0 returns=1
 // ================================================
 
 void UNK_0xee1a() // UNK_0xee1a
@@ -289,7 +289,7 @@ void UNK_0xee54() // UNK_0xee54
 // 0xee6c: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xee6e: WORD 'UNK_0xee70' codep=0x224c parp=0xee70 params=2 returns=0
+// 0xee6e: WORD 'UNK_0xee70' codep=0x224c parp=0xee70 params=0 returns=0
 // ================================================
 
 void UNK_0xee70() // UNK_0xee70
@@ -330,7 +330,7 @@ void UNK_0xee70() // UNK_0xee70
 
 
 // ================================================
-// 0xef25: WORD 'UNK_0xef27' codep=0x224c parp=0xef27
+// 0xef25: WORD 'UNK_0xef27' codep=0x224c parp=0xef27 params=0 returns=0
 // ================================================
 
 void UNK_0xef27() // UNK_0xef27
@@ -515,7 +515,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 
 
 // ================================================
-// 0xf072: WORD 'UNK_0xf074' codep=0x224c parp=0xf074
+// 0xf072: WORD 'UNK_0xf074' codep=0x224c parp=0xf074 params=2 returns=0
 // ================================================
 
 void UNK_0xf074() // UNK_0xf074
@@ -669,7 +669,7 @@ void ITEM_gt_PAD() // ITEM>PAD
 
 
 // ================================================
-// 0xf155: WORD 'UNK_0xf157' codep=0x224c parp=0xf157
+// 0xf155: WORD 'UNK_0xf157' codep=0x224c parp=0xf157 params=7 returns=0
 // ================================================
 
 void UNK_0xf157() // UNK_0xf157
@@ -719,7 +719,7 @@ void UNK_0xf157() // UNK_0xf157
 
 
 // ================================================
-// 0xf1b3: WORD 'BOX>LIST' codep=0x224c parp=0xf1c0
+// 0xf1b3: WORD 'BOX>LIST' codep=0x224c parp=0xf1c0 params=8 returns=0
 // ================================================
 // entry
 
@@ -761,7 +761,7 @@ void BOX_gt_LIST() // BOX>LIST
 
 
 // ================================================
-// 0xf204: WORD 'GET-BOXES' codep=0x224c parp=0xf212
+// 0xf204: WORD 'GET-BOXES' codep=0x224c parp=0xf212 params=12 returns=0
 // ================================================
 // entry
 
@@ -812,7 +812,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 
 
 // ================================================
-// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280
+// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280 params=4 returns=0
 // ================================================
 // entry
 

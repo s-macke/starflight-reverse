@@ -298,7 +298,7 @@ IFieldType UNK_0xf104 = {TRADERSIDX, 0x0c, 0x01};
 // 0xf166: dw 0x0062
 
 // ================================================
-// 0xf168: WORD 'UNK_0xf16a' codep=0x224c parp=0xf16a
+// 0xf168: WORD 'UNK_0xf16a' codep=0x224c parp=0xf16a params=0 returns=0
 // ================================================
 
 void UNK_0xf16a() // UNK_0xf16a
@@ -1013,7 +1013,7 @@ void ICON_dash_PARM() // ICON-PARM
 // 0xf518: db 0x4c 0x22 0xba 0xf4 0xfa 0x15 0x06 0x00 0x06 0xf5 0x50 0x99 0x90 0x16 'L"        P   '
 
 // ================================================
-// 0xf526: WORD '+ICONBOX' codep=0x224c parp=0xf533
+// 0xf526: WORD '+ICONBOX' codep=0x224c parp=0xf533 params=3 returns=0
 // ================================================
 // entry
 

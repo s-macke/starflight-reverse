@@ -411,7 +411,7 @@ void UNK_0xef6e() // UNK_0xef6e
 
 
 // ================================================
-// 0xefa4: WORD 'UNK_0xefa6' codep=0x224c parp=0xefa6
+// 0xefa4: WORD 'UNK_0xefa6' codep=0x224c parp=0xefa6 params=0 returns=0
 // ================================================
 
 void UNK_0xefa6() // UNK_0xefa6
@@ -422,7 +422,7 @@ void UNK_0xefa6() // UNK_0xefa6
 
 
 // ================================================
-// 0xefac: WORD 'UNK_0xefae' codep=0x224c parp=0xefae
+// 0xefac: WORD 'UNK_0xefae' codep=0x224c parp=0xefae params=2 returns=0
 // ================================================
 
 void UNK_0xefae() // UNK_0xefae
@@ -510,7 +510,7 @@ void _ro_TRIM() // (TRIM
 
 
 // ================================================
-// 0xf040: WORD 'UNK_0xf042' codep=0x224c parp=0xf042
+// 0xf040: WORD 'UNK_0xf042' codep=0x224c parp=0xf042 params=0 returns=0
 // ================================================
 
 void UNK_0xf042() // UNK_0xf042
@@ -717,7 +717,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4
+// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4 params=6 returns=1
 // ================================================
 // entry
 
@@ -844,7 +844,7 @@ void _ro_QUIT() // (QUIT
 
 
 // ================================================
-// 0xf28c: WORD '(.0$$' codep=0x224c parp=0xf296
+// 0xf28c: WORD '(.0$$' codep=0x224c parp=0xf296 params=0 returns=0
 // ================================================
 // entry
 
@@ -1031,7 +1031,7 @@ void _ro__ask__dot_EQ() // (?.EQ
 
 
 // ================================================
-// 0xf41a: WORD 'UNK_0xf41c' codep=0x224c parp=0xf41c
+// 0xf41a: WORD 'UNK_0xf41c' codep=0x224c parp=0xf41c params=0 returns=1
 // ================================================
 
 void UNK_0xf41c() // UNK_0xf41c
@@ -1150,7 +1150,7 @@ void _eq_CARG() // =CARG
 
 
 // ================================================
-// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc
+// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc params=6 returns=1
 // ================================================
 // entry
 

@@ -271,7 +271,7 @@ LoadDataType UNK_0xebf7 = {PLANETIDX, 0x10, 0x01, 0x16, 0x658f};
 IFieldType UNK_0xebff = {STARSYSTEMIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xec02: WORD 'UNK_0xec04' codep=0x224c parp=0xec04 params=5 returns=1
+// 0xec02: WORD 'UNK_0xec04' codep=0x224c parp=0xec04 params=2 returns=1
 // ================================================
 
 void UNK_0xec04() // UNK_0xec04
@@ -294,7 +294,7 @@ void UNK_0xec04() // UNK_0xec04
 
 
 // ================================================
-// 0xec24: WORD 'UNK_0xec26' codep=0x224c parp=0xec26
+// 0xec24: WORD 'UNK_0xec26' codep=0x224c parp=0xec26 params=2 returns=0
 // ================================================
 
 void UNK_0xec26() // UNK_0xec26
@@ -486,7 +486,7 @@ void DrawOBJECT() // .OBJECT
 
 
 // ================================================
-// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=2 returns=2
+// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=2 returns=4
 // ================================================
 
 void UNK_0xed5c() // UNK_0xed5c
@@ -796,7 +796,7 @@ void DrawCONSTIT() // .CONSTIT
 
 
 // ================================================
-// 0xefb5: WORD 'UNK_0xefb7' codep=0x224c parp=0xefb7
+// 0xefb5: WORD 'UNK_0xefb7' codep=0x224c parp=0xefb7 params=2 returns=1
 // ================================================
 
 void UNK_0xefb7() // UNK_0xefb7
@@ -810,7 +810,7 @@ void UNK_0xefb7() // UNK_0xefb7
 
 
 // ================================================
-// 0xefc3: WORD '.ORBIT' codep=0x224c parp=0xefc5
+// 0xefc3: WORD '.ORBIT' codep=0x224c parp=0xefc5 params=2 returns=0
 // ================================================
 
 void DrawORBIT() // .ORBIT
@@ -1325,7 +1325,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
 
 
 // ================================================
-// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=7 returns=0
+// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=3 returns=0
 // ================================================
 
 void UNK_0xf2f2() // UNK_0xf2f2
@@ -1488,7 +1488,7 @@ void UNK_0xf426() // UNK_0xf426
 
 
 // ================================================
-// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436
+// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436 params=9 returns=0
 // ================================================
 
 void UNK_0xf436() // UNK_0xf436

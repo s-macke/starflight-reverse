@@ -424,7 +424,7 @@ void UNK_0xf1bc() // UNK_0xf1bc
 
 
 // ================================================
-// 0xf1ec: WORD 'UNK_0xf1ee' codep=0x224c parp=0xf1ee
+// 0xf1ec: WORD 'UNK_0xf1ee' codep=0x224c parp=0xf1ee params=0 returns=1
 // ================================================
 
 void UNK_0xf1ee() // UNK_0xf1ee
@@ -443,7 +443,7 @@ void UNK_0xf1ee() // UNK_0xf1ee
 
 
 // ================================================
-// 0xf208: WORD 'UNK_0xf20a' codep=0x224c parp=0xf20a
+// 0xf208: WORD 'UNK_0xf20a' codep=0x224c parp=0xf20a params=7 returns=1
 // ================================================
 
 void UNK_0xf20a() // UNK_0xf20a
@@ -467,7 +467,7 @@ void UNK_0xf20a() // UNK_0xf20a
 
 
 // ================================================
-// 0xf230: WORD 'PSYCH' codep=0x224c parp=0xf23a
+// 0xf230: WORD 'PSYCH' codep=0x224c parp=0xf23a params=7 returns=0
 // ================================================
 // entry
 

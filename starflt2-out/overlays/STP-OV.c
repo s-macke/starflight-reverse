@@ -217,7 +217,7 @@ void UNK_0xf0bd() // UNK_0xf0bd
 
 
 // ================================================
-// 0xf0c7: WORD 'MP'ER' codep=0x224c parp=0xf0d1
+// 0xf0c7: WORD 'MP'ER' codep=0x224c parp=0xf0d1 params=12 returns=2
 // ================================================
 // entry
 
@@ -303,7 +303,7 @@ void UNK_0xf155() // UNK_0xf155
 
 
 // ================================================
-// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166
+// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166 params=4 returns=2
 // ================================================
 
 void UNK_0xf166() // UNK_0xf166

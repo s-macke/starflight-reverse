@@ -99,7 +99,7 @@ void EXECUTE(); // EXECUTE
 
 
 // ================================================
-// 0x08d1: WORD '(SETUP)' codep=0x224c parp=0x08dd
+// 0x08d1: WORD '(SETUP)' codep=0x224c parp=0x08dd params=0 returns=0
 // ================================================
 
 void _ro_SETUP_rc_() // (SETUP)

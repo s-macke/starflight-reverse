@@ -285,7 +285,7 @@ IFieldType UNK_0xe564 = {SHIPIDX, 0x13, 0x02};
 // 0xe577: db 0x80 0xf7 '  '
 
 // ================================================
-// 0xe579: WORD 'UNK_0xe57b' codep=0x224c parp=0xe57b
+// 0xe579: WORD 'UNK_0xe57b' codep=0x224c parp=0xe57b params=4 returns=0
 // ================================================
 
 void UNK_0xe57b() // UNK_0xe57b
@@ -305,7 +305,7 @@ void UNK_0xe57b() // UNK_0xe57b
 
 
 // ================================================
-// 0xe593: WORD 'UNK_0xe595' codep=0x224c parp=0xe595
+// 0xe593: WORD 'UNK_0xe595' codep=0x224c parp=0xe595 params=0 returns=0
 // ================================================
 
 void UNK_0xe595() // UNK_0xe595

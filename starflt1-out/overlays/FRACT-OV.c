@@ -1287,7 +1287,7 @@ void UNK_0xea37() // UNK_0xea37
 
 
 // ================================================
-// 0xea95: WORD 'UNK_0xea97' codep=0x224c parp=0xea97
+// 0xea95: WORD 'UNK_0xea97' codep=0x224c parp=0xea97 params=0 returns=4
 // ================================================
 
 void UNK_0xea97() // UNK_0xea97
@@ -2297,7 +2297,7 @@ void UNK_0xf023() // UNK_0xf023
 
 
 // ================================================
-// 0xf047: WORD 'UNK_0xf049' codep=0x224c parp=0xf049 params=0 returns=6
+// 0xf047: WORD 'UNK_0xf049' codep=0x224c parp=0xf049 params=0 returns=0
 // ================================================
 
 void UNK_0xf049() // UNK_0xf049
@@ -2332,7 +2332,7 @@ void UNK_0xf049() // UNK_0xf049
 
 
 // ================================================
-// 0xf089: WORD 'UNK_0xf08b' codep=0x224c parp=0xf08b params=0 returns=6
+// 0xf089: WORD 'UNK_0xf08b' codep=0x224c parp=0xf08b params=0 returns=0
 // ================================================
 
 void UNK_0xf08b() // UNK_0xf08b
@@ -2367,7 +2367,7 @@ void UNK_0xf08b() // UNK_0xf08b
 
 
 // ================================================
-// 0xf0cb: WORD 'SCRLCON' codep=0x224c parp=0xf0d7
+// 0xf0cb: WORD 'SCRLCON' codep=0x224c parp=0xf0d7 params=0 returns=0
 // ================================================
 // entry
 

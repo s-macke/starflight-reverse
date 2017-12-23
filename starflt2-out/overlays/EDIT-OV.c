@@ -340,7 +340,7 @@ void UNK_0xef16() // UNK_0xef16
 // 0xef24: db 0x4c 0x22 0xfd 0x04 0x92 0x0c 0xe3 0x04 0x92 0x0c 0x92 0x0f 0x90 0x16 0x4c 0x22 0x20 0x0f 0x89 0x11 0x24 0xef 0xad 0x11 0xc9 0x04 0x0a 0x6d 0x90 0x16 'L"            L"    $      m  '
 
 // ================================================
-// 0xef42: WORD 'UNK_0xef44' codep=0x224c parp=0xef44
+// 0xef42: WORD 'UNK_0xef44' codep=0x224c parp=0xef44 params=1 returns=2
 // ================================================
 
 void UNK_0xef44() // UNK_0xef44
@@ -355,7 +355,7 @@ void UNK_0xef44() // UNK_0xef44
 
 
 // ================================================
-// 0xef52: WORD 'UNK_0xef54' codep=0x224c parp=0xef54
+// 0xef52: WORD 'UNK_0xef54' codep=0x224c parp=0xef54 params=0 returns=2
 // ================================================
 
 void UNK_0xef54() // UNK_0xef54
@@ -366,7 +366,7 @@ void UNK_0xef54() // UNK_0xef54
 
 
 // ================================================
-// 0xef5a: WORD 'UNK_0xef5c' codep=0x224c parp=0xef5c
+// 0xef5a: WORD 'UNK_0xef5c' codep=0x224c parp=0xef5c params=0 returns=2
 // ================================================
 
 void UNK_0xef5c() // UNK_0xef5c
@@ -424,7 +424,7 @@ void UNK_0xef84() // UNK_0xef84
 
 
 // ================================================
-// 0xef8a: WORD 'UNK_0xef8c' codep=0x224c parp=0xef8c
+// 0xef8a: WORD 'UNK_0xef8c' codep=0x224c parp=0xef8c params=0 returns=1
 // ================================================
 
 void UNK_0xef8c() // UNK_0xef8c
@@ -436,7 +436,7 @@ void UNK_0xef8c() // UNK_0xef8c
 
 
 // ================================================
-// 0xef94: WORD 'UNK_0xef96' codep=0x224c parp=0xef96
+// 0xef94: WORD 'UNK_0xef96' codep=0x224c parp=0xef96 params=0 returns=1
 // ================================================
 
 void UNK_0xef96() // UNK_0xef96
@@ -496,7 +496,7 @@ void UNK_0xefc0() // UNK_0xefc0
 
 
 // ================================================
-// 0xefe2: WORD 'UNK_0xefe4' codep=0x224c parp=0xefe4
+// 0xefe2: WORD 'UNK_0xefe4' codep=0x224c parp=0xefe4 params=1 returns=1
 // ================================================
 
 void UNK_0xefe4() // UNK_0xefe4
@@ -515,7 +515,7 @@ void UNK_0xefe4() // UNK_0xefe4
 
 
 // ================================================
-// 0xeffa: WORD 'UNK_0xeffc' codep=0x224c parp=0xeffc
+// 0xeffa: WORD 'UNK_0xeffc' codep=0x224c parp=0xeffc params=0 returns=1
 // ================================================
 
 void UNK_0xeffc() // UNK_0xeffc
@@ -530,7 +530,7 @@ void UNK_0xeffc() // UNK_0xeffc
 
 
 // ================================================
-// 0xf00a: WORD 'UNK_0xf00c' codep=0x224c parp=0xf00c
+// 0xf00a: WORD 'UNK_0xf00c' codep=0x224c parp=0xf00c params=0 returns=2
 // ================================================
 
 void UNK_0xf00c() // UNK_0xf00c
@@ -591,7 +591,7 @@ void DISPLAYKEY() // DISPLAYKEY
 
 
 // ================================================
-// 0xf0c0: WORD 'CLEAR' codep=0x224c parp=0xf0ca params=2 returns=0
+// 0xf0c0: WORD 'CLEAR' codep=0x224c parp=0xf0ca params=0 returns=0
 // ================================================
 
 void CLEAR() // CLEAR
@@ -608,7 +608,7 @@ void CLEAR() // CLEAR
 
 
 // ================================================
-// 0xf0e2: WORD 'ML' codep=0x224c parp=0xf0e9
+// 0xf0e2: WORD 'ML' codep=0x224c parp=0xf0e9 params=2 returns=1
 // ================================================
 
 void ML() // ML
@@ -624,7 +624,7 @@ void ML() // ML
 
 
 // ================================================
-// 0xf0f9: WORD 'MLDN' codep=0x224c parp=0xf102
+// 0xf0f9: WORD 'MLDN' codep=0x224c parp=0xf102 params=1 returns=1
 // ================================================
 
 void MLDN() // MLDN
@@ -635,7 +635,7 @@ void MLDN() // MLDN
 
 
 // ================================================
-// 0xf108: WORD 'MLUP' codep=0x224c parp=0xf111
+// 0xf108: WORD 'MLUP' codep=0x224c parp=0xf111 params=1 returns=1
 // ================================================
 
 void MLUP() // MLUP
@@ -647,7 +647,7 @@ void MLUP() // MLUP
 
 
 // ================================================
-// 0xf119: WORD 'LHOLD' codep=0x224c parp=0xf123
+// 0xf119: WORD 'LHOLD' codep=0x224c parp=0xf123 params=0 returns=1
 // ================================================
 
 void LHOLD() // LHOLD
@@ -660,7 +660,7 @@ void LHOLD() // LHOLD
 
 
 // ================================================
-// 0xf12d: WORD '(DUPL)' codep=0x224c parp=0xf138
+// 0xf12d: WORD '(DUPL)' codep=0x224c parp=0xf138 params=0 returns=0
 // ================================================
 
 void _ro_DUPL_rc_() // (DUPL)
@@ -686,7 +686,7 @@ void _ro_DUPL_rc_() // (DUPL)
 
 
 // ================================================
-// 0xf154: WORD 'INSL' codep=0x224c parp=0xf15d
+// 0xf154: WORD 'INSL' codep=0x224c parp=0xf15d params=0 returns=2
 // ================================================
 
 void INSL() // INSL
@@ -699,7 +699,7 @@ void INSL() // INSL
 
 
 // ================================================
-// 0xf167: WORD 'DUPL' codep=0x224c parp=0xf170
+// 0xf167: WORD 'DUPL' codep=0x224c parp=0xf170 params=0 returns=1
 // ================================================
 
 void DUPL() // DUPL
@@ -710,7 +710,7 @@ void DUPL() // DUPL
 
 
 // ================================================
-// 0xf176: WORD 'SPLIT' codep=0x224c parp=0xf180
+// 0xf176: WORD 'SPLIT' codep=0x224c parp=0xf180 params=0 returns=0
 // ================================================
 
 void SPLIT() // SPLIT
@@ -734,7 +734,7 @@ void SPLIT() // SPLIT
 
 
 // ================================================
-// 0xf1a2: WORD 'XL' codep=0x224c parp=0xf1a9
+// 0xf1a2: WORD 'XL' codep=0x224c parp=0xf1a9 params=0 returns=3
 // ================================================
 
 void XL() // XL
@@ -770,7 +770,7 @@ void XL() // XL
 
 
 // ================================================
-// 0xf1d3: WORD 'XC' codep=0x224c parp=0xf1da
+// 0xf1d3: WORD 'XC' codep=0x224c parp=0xf1da params=0 returns=2
 // ================================================
 
 void XC() // XC
@@ -794,7 +794,7 @@ void XC() // XC
 
 
 // ================================================
-// 0xf1fa: WORD 'INSERT' codep=0x224c parp=0xf205
+// 0xf1fa: WORD 'INSERT' codep=0x224c parp=0xf205 params=1 returns=0
 // ================================================
 
 void INSERT() // INSERT
@@ -877,7 +877,7 @@ void IsVISIBLE() // ?VISIBLE
 
 
 // ================================================
-// 0xf2b1: WORD 'EOL' codep=0x224c parp=0xf2b9
+// 0xf2b1: WORD 'EOL' codep=0x224c parp=0xf2b9 params=0 returns=1
 // ================================================
 
 void EOL() // EOL
@@ -1058,7 +1058,7 @@ void UNK_0xf3e8() // UNK_0xf3e8
 
 
 // ================================================
-// 0xf3f0: WORD 'UNK_0xf3f2' codep=0x224c parp=0xf3f2 params=2 returns=0
+// 0xf3f0: WORD 'UNK_0xf3f2' codep=0x224c parp=0xf3f2 params=0 returns=0
 // ================================================
 
 void UNK_0xf3f2() // UNK_0xf3f2

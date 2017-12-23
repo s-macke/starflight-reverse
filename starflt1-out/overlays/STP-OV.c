@@ -158,7 +158,7 @@ IFieldType UNK_0xefd6 = {SHIPIDX, 0x14, 0x01};
 // 0xefdb: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xefdd: WORD 'SIC'EM' codep=0x224c parp=0xefe8
+// 0xefdd: WORD 'SIC'EM' codep=0x224c parp=0xefe8 params=6 returns=2
 // ================================================
 // entry
 
@@ -652,7 +652,7 @@ void UNK_0xf32d() // UNK_0xf32d
 
 
 // ================================================
-// 0xf349: WORD 'UNK_0xf34b' codep=0x224c parp=0xf34b
+// 0xf349: WORD 'UNK_0xf34b' codep=0x224c parp=0xf34b params=0 returns=0
 // ================================================
 
 void UNK_0xf34b() // UNK_0xf34b

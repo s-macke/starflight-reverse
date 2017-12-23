@@ -850,7 +850,7 @@ void _n_LPS() // #LPS
 
 
 // ================================================
-// 0xe1f2: WORD '?BL<-' codep=0x224c parp=0xe1f4
+// 0xe1f2: WORD '?BL<-' codep=0x224c parp=0xe1f4 params=1 returns=1
 // ================================================
 
 void IsBL_st__dash_() // ?BL<-
@@ -1438,7 +1438,7 @@ void UNK_0xe78c() // UNK_0xe78c
 
 
 // ================================================
-// 0xe7b4: WORD 'UNK_0xe7b6' codep=0x224c parp=0xe7b6
+// 0xe7b4: WORD 'UNK_0xe7b6' codep=0x224c parp=0xe7b6 params=1 returns=0
 // ================================================
 
 void UNK_0xe7b6() // UNK_0xe7b6
@@ -1533,7 +1533,7 @@ void DrawRESUMING() // .RESUMING
 
 
 // ================================================
-// 0xe8ae: WORD 'UNK_0xe8b0' codep=0x224c parp=0xe8b0 params=5 returns=4
+// 0xe8ae: WORD 'UNK_0xe8b0' codep=0x224c parp=0xe8b0 params=1 returns=0
 // ================================================
 
 void UNK_0xe8b0() // UNK_0xe8b0
@@ -2641,7 +2641,7 @@ void BOX() // BOX
 
 
 // ================================================
-// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5 params=2 returns=1
+// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5 params=0 returns=1
 // ================================================
 
 void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS

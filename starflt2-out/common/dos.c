@@ -165,7 +165,7 @@ const unsigned short int pp_UNK_0x4901 = 0x4901; // UNK_0x4901 size: 17
 
 
 // ================================================
-// 0x4094: WORD '>TIB' codep=0x224c parp=0x409d
+// 0x4094: WORD '>TIB' codep=0x224c parp=0x409d params=2 returns=0
 // ================================================
 
 void _gt_TIB() // >TIB
@@ -183,7 +183,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40b1: WORD 'DOSPARM' codep=0x224c parp=0x40bd
+// 0x40b1: WORD 'DOSPARM' codep=0x224c parp=0x40bd params=2 returns=0
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -845,7 +845,7 @@ void SETMAXD() // SETMAXD
 
 
 // ================================================
-// 0x4558: WORD 'UNK_0x455a' codep=0x224c parp=0x455a
+// 0x4558: WORD 'UNK_0x455a' codep=0x224c parp=0x455a params=0 returns=0
 // ================================================
 
 void UNK_0x455a() // UNK_0x455a

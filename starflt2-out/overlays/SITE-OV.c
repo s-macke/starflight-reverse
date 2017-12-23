@@ -355,7 +355,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
 
 
 // ================================================
-// 0xf319: WORD 'UNK_0xf31b' codep=0x224c parp=0xf31b
+// 0xf319: WORD 'UNK_0xf31b' codep=0x224c parp=0xf31b params=0 returns=0
 // ================================================
 
 void UNK_0xf31b() // UNK_0xf31b

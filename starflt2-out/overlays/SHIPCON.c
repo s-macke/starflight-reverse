@@ -94,7 +94,7 @@ void _1_dot_5_at_(); // 1.5@
 IFieldType UNK_0xf376 = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
-// 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b
+// 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b params=4 returns=2
 // ================================================
 
 void UNK_0xf37b() // UNK_0xf37b
@@ -110,7 +110,7 @@ void UNK_0xf37b() // UNK_0xf37b
 
 
 // ================================================
-// 0xf38b: WORD '.NOFUN' codep=0x224c parp=0xf396
+// 0xf38b: WORD '.NOFUN' codep=0x224c parp=0xf396 params=0 returns=0
 // ================================================
 // entry
 
@@ -142,7 +142,7 @@ void DrawNOFUN() // .NOFUN
 
 
 // ================================================
-// 0xf3c6: WORD 'UNK_0xf3c8' codep=0x224c parp=0xf3c8
+// 0xf3c6: WORD 'UNK_0xf3c8' codep=0x224c parp=0xf3c8 params=1 returns=1
 // ================================================
 
 void UNK_0xf3c8() // UNK_0xf3c8
@@ -165,7 +165,7 @@ void UNK_0xf3c8() // UNK_0xf3c8
 
 
 // ================================================
-// 0xf3f4: WORD 'UNK_0xf3f6' codep=0x224c parp=0xf3f6
+// 0xf3f4: WORD 'UNK_0xf3f6' codep=0x224c parp=0xf3f6 params=2 returns=1
 // ================================================
 
 void UNK_0xf3f6() // UNK_0xf3f6
@@ -247,7 +247,7 @@ void UNK_0xf46c() // UNK_0xf46c
 
 
 // ================================================
-// 0xf478: WORD 'UNK_0xf47a' codep=0x224c parp=0xf47a
+// 0xf478: WORD 'UNK_0xf47a' codep=0x224c parp=0xf47a params=1 returns=1
 // ================================================
 
 void UNK_0xf47a() // UNK_0xf47a

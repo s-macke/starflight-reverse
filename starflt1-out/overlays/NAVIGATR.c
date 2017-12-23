@@ -92,7 +92,7 @@ LoadDataType UNK_0xf21a = {BUTTONSIDX, 0x18, 0x0c, 0x49, 0x6858};
 LoadDataType UNK_0xf222 = {BUTTONSIDX, 0x24, 0x0c, 0x49, 0x6858};
 
 // ================================================
-// 0xf228: WORD 'UNK_0xf22a' codep=0x224c parp=0xf22a params=10 returns=1
+// 0xf228: WORD 'UNK_0xf22a' codep=0x224c parp=0xf22a params=0 returns=0
 // ================================================
 
 void UNK_0xf22a() // UNK_0xf22a
@@ -118,7 +118,7 @@ void UNK_0xf234() // UNK_0xf234
 
 
 // ================================================
-// 0xf244: WORD 'UNK_0xf246' codep=0x224c parp=0xf246
+// 0xf244: WORD 'UNK_0xf246' codep=0x224c parp=0xf246 params=3 returns=0
 // ================================================
 
 void UNK_0xf246() // UNK_0xf246
@@ -219,7 +219,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 
 // ================================================
-// 0xf357: WORD 'UNK_0xf359' codep=0x224c parp=0xf359
+// 0xf357: WORD 'UNK_0xf359' codep=0x224c parp=0xf359 params=0 returns=0
 // ================================================
 
 void UNK_0xf359() // UNK_0xf359
@@ -343,7 +343,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
 
 
 // ================================================
-// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8
+// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8 params=6 returns=0
 // ================================================
 // entry
 
@@ -369,7 +369,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 
 
 // ================================================
-// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa
+// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa params=2 returns=0
 // ================================================
 // entry
 

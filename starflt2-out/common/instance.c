@@ -153,7 +153,7 @@ void VI(); // VI
 
 
 // ================================================
-// 0x79d6: WORD 'ICLOSE' codep=0x224c parp=0x79e1
+// 0x79d6: WORD 'ICLOSE' codep=0x224c parp=0x79e1 params=0 returns=0
 // ================================================
 
 void ICLOSE() // ICLOSE
@@ -178,7 +178,7 @@ void ICLOSE() // ICLOSE
 
 
 // ================================================
-// 0x7a01: WORD '*CLOSE' codep=0x224c parp=0x7a0c
+// 0x7a01: WORD '*CLOSE' codep=0x224c parp=0x7a0c params=1 returns=0
 // ================================================
 
 void _star_CLOSE() // *CLOSE
@@ -198,7 +198,7 @@ void _star_CLOSE() // *CLOSE
 
 
 // ================================================
-// 0x7a18: WORD '>C+S' codep=0x224c parp=0x7a21
+// 0x7a18: WORD '>C+S' codep=0x224c parp=0x7a21 params=2 returns=0
 // ================================================
 
 void _gt_C_plus_S() // >C+S
@@ -209,7 +209,7 @@ void _gt_C_plus_S() // >C+S
 
 
 // ================================================
-// 0x7a27: WORD '@>C+S' codep=0x224c parp=0x7a31
+// 0x7a27: WORD '@>C+S' codep=0x224c parp=0x7a31 params=1 returns=0
 // ================================================
 
 void Get_gt_C_plus_S() // @>C+S
@@ -220,7 +220,7 @@ void Get_gt_C_plus_S() // @>C+S
 
 
 // ================================================
-// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41
+// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=2 returns=0
 // ================================================
 
 void IOPEN() // IOPEN
@@ -234,7 +234,7 @@ void IOPEN() // IOPEN
 
 
 // ================================================
-// 0x7a4d: WORD 'CCLR' codep=0x224c parp=0x7a56
+// 0x7a4d: WORD 'CCLR' codep=0x224c parp=0x7a56 params=0 returns=0
 // ================================================
 
 void CCLR() // CCLR
@@ -251,7 +251,7 @@ void CCLR() // CCLR
 
 
 // ================================================
-// 0x7a6a: WORD 'UNK_0x7a6c' codep=0x224c parp=0x7a6c
+// 0x7a6a: WORD 'UNK_0x7a6c' codep=0x224c parp=0x7a6c params=0 returns=2
 // ================================================
 
 void UNK_0x7a6c() // UNK_0x7a6c
@@ -262,7 +262,7 @@ void UNK_0x7a6c() // UNK_0x7a6c
 
 
 // ================================================
-// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c
+// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=2 returns=1
 // ================================================
 
 void IsLAST() // ?LAST
@@ -274,7 +274,7 @@ void IsLAST() // ?LAST
 
 
 // ================================================
-// 0x7a84: WORD '?FIRST' codep=0x224c parp=0x7a8f
+// 0x7a84: WORD '?FIRST' codep=0x224c parp=0x7a8f params=0 returns=1
 // ================================================
 
 void IsFIRST() // ?FIRST
@@ -286,7 +286,7 @@ void IsFIRST() // ?FIRST
 
 
 // ================================================
-// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f
+// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=4 returns=0
 // ================================================
 
 void _gt_C_plus_() // >C+
@@ -299,7 +299,7 @@ void _gt_C_plus_() // >C+
 
 
 // ================================================
-// 0x7aa9: WORD 'INEXT' codep=0x224c parp=0x7ab3
+// 0x7aa9: WORD 'INEXT' codep=0x224c parp=0x7ab3 params=0 returns=0
 // ================================================
 
 void INEXT() // INEXT
@@ -313,7 +313,7 @@ void INEXT() // INEXT
 
 
 // ================================================
-// 0x7ac1: WORD 'IPREV' codep=0x224c parp=0x7acb
+// 0x7ac1: WORD 'IPREV' codep=0x224c parp=0x7acb params=0 returns=0
 // ================================================
 
 void IPREV() // IPREV
@@ -327,7 +327,7 @@ void IPREV() // IPREV
 
 
 // ================================================
-// 0x7ad9: WORD 'IFIRST' codep=0x224c parp=0x7ae4
+// 0x7ad9: WORD 'IFIRST' codep=0x224c parp=0x7ae4 params=0 returns=0
 // ================================================
 
 void IFIRST() // IFIRST
@@ -339,7 +339,7 @@ void IFIRST() // IFIRST
 
 
 // ================================================
-// 0x7aec: WORD 'ILAST' codep=0x224c parp=0x7af6
+// 0x7aec: WORD 'ILAST' codep=0x224c parp=0x7af6 params=0 returns=0
 // ================================================
 
 void ILAST() // ILAST
@@ -538,7 +538,7 @@ void IEXTRAC() // IEXTRAC
 
 
 // ================================================
-// 0x7c6f: WORD 'UNK_0x7c71' codep=0x224c parp=0x7c71
+// 0x7c6f: WORD 'UNK_0x7c71' codep=0x224c parp=0x7c71 params=0 returns=2
 // ================================================
 
 void UNK_0x7c71() // UNK_0x7c71
@@ -549,7 +549,7 @@ void UNK_0x7c71() // UNK_0x7c71
 
 
 // ================================================
-// 0x7c77: WORD '@NEWSPA' codep=0x224c parp=0x7c83
+// 0x7c77: WORD '@NEWSPA' codep=0x224c parp=0x7c83 params=0 returns=3
 // ================================================
 
 void GetNEWSPA() // @NEWSPA
@@ -597,7 +597,7 @@ void MAXSPAC() // MAXSPAC
 
 
 // ================================================
-// 0x7cc1: WORD 'UNK_0x7cc3' codep=0x224c parp=0x7cc3
+// 0x7cc1: WORD 'UNK_0x7cc3' codep=0x224c parp=0x7cc3 params=0 returns=2
 // ================================================
 
 void UNK_0x7cc3() // UNK_0x7cc3
@@ -816,7 +816,7 @@ void SELECT() // SELECT
 
 
 // ================================================
-// 0x7de0: WORD '?>FIRST' codep=0x224c parp=0x7dec
+// 0x7de0: WORD '?>FIRST' codep=0x224c parp=0x7dec params=0 returns=1
 // ================================================
 
 void Is_gt_FIRST() // ?>FIRST
@@ -881,7 +881,7 @@ void IFIND() // IFIND
 
 
 // ================================================
-// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58
+// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=2 returns=0
 // ================================================
 
 void UNK_0x7e58() // UNK_0x7e58
@@ -901,7 +901,7 @@ void UNK_0x7e58() // UNK_0x7e58
 
 
 // ================================================
-// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c
+// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c params=2 returns=0
 // ================================================
 
 void MAP_gt_LEA() // MAP>LEA
@@ -921,7 +921,7 @@ void MAP_gt_LEA() // MAP>LEA
 
 
 // ================================================
-// 0x7e94: WORD 'MAKE1ST' codep=0x224c parp=0x7ea0
+// 0x7e94: WORD 'MAKE1ST' codep=0x224c parp=0x7ea0 params=0 returns=0
 // ================================================
 
 void MAKE1ST() // MAKE1ST
@@ -993,7 +993,7 @@ void _gt_INACTI() // >INACTI
 // 0x7f0c: db 0x4c 0x22 0x2d 0x7c 0xf0 0x7e 0x90 0x16 'L"-| ~  '
 
 // ================================================
-// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20
+// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=2 returns=0
 // ================================================
 
 void IDELETE() // IDELETE
@@ -1019,7 +1019,7 @@ void IDELETE() // IDELETE
 
 
 // ================================================
-// 0x7f4a: WORD 'UNK_0x7f4c' codep=0x224c parp=0x7f4c
+// 0x7f4a: WORD 'UNK_0x7f4c' codep=0x224c parp=0x7f4c params=7 returns=0
 // ================================================
 
 void UNK_0x7f4c() // UNK_0x7f4c
@@ -1058,7 +1058,7 @@ void UNK_0x7f4c() // UNK_0x7f4c
 
 
 // ================================================
-// 0x7f86: WORD 'ALL' codep=0x224c parp=0x7f8e
+// 0x7f86: WORD 'ALL' codep=0x224c parp=0x7f8e params=4 returns=0
 // ================================================
 
 void ALL() // ALL
@@ -1074,7 +1074,7 @@ void ALL() // ALL
 
 
 // ================================================
-// 0x7fa2: WORD 'EACH' codep=0x224c parp=0x7fab
+// 0x7fa2: WORD 'EACH' codep=0x224c parp=0x7fab params=5 returns=0
 // ================================================
 
 void EACH() // EACH
@@ -1133,7 +1133,7 @@ void UNK_0x7fdf() // UNK_0x7fdf
 
 
 // ================================================
-// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5
+// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=2 returns=0
 // ================================================
 
 void UNK_0x7ff5() // UNK_0x7ff5

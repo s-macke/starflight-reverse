@@ -732,7 +732,7 @@ void _plus_ICP() // +ICP
 
 
 // ================================================
-// 0xf51b: WORD '+ICONBOX' codep=0x224c parp=0xf528
+// 0xf51b: WORD '+ICONBOX' codep=0x224c parp=0xf528 params=3 returns=0
 // ================================================
 // entry
 

@@ -305,7 +305,7 @@ void DrawPARMS() // .PARMS
 // 0xf458: jmp    word ptr [bx]
 
 // ================================================
-// 0xf45a: WORD '.HYBRID' codep=0x224c parp=0xf466
+// 0xf45a: WORD '.HYBRID' codep=0x224c parp=0xf466 params=1 returns=0
 // ================================================
 
 void DrawHYBRID() // .HYBRID

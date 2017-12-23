@@ -659,7 +659,7 @@ void UNK_0xf0e0() // UNK_0xf0e0
 
 
 // ================================================
-// 0xf104: WORD 'UNK_0xf106' codep=0x224c parp=0xf106
+// 0xf104: WORD 'UNK_0xf106' codep=0x224c parp=0xf106 params=1 returns=0
 // ================================================
 
 void UNK_0xf106() // UNK_0xf106

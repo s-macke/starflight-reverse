@@ -399,7 +399,7 @@ void UNK_0xf40a() // UNK_0xf40a
 
 
 // ================================================
-// 0xf44e: WORD 'UNK_0xf450' codep=0x224c parp=0xf450
+// 0xf44e: WORD 'UNK_0xf450' codep=0x224c parp=0xf450 params=6 returns=1
 // ================================================
 
 void UNK_0xf450() // UNK_0xf450
@@ -437,7 +437,7 @@ void UNK_0xf450() // UNK_0xf450
 
 
 // ================================================
-// 0xf47e: WORD 'UNK_0xf480' codep=0x224c parp=0xf480
+// 0xf47e: WORD 'UNK_0xf480' codep=0x224c parp=0xf480 params=4 returns=1
 // ================================================
 
 void UNK_0xf480() // UNK_0xf480
@@ -465,7 +465,7 @@ void UNK_0xf480() // UNK_0xf480
 
 
 // ================================================
-// 0xf4a8: WORD 'UNK_0xf4aa' codep=0x224c parp=0xf4aa
+// 0xf4a8: WORD 'UNK_0xf4aa' codep=0x224c parp=0xf4aa params=5 returns=1
 // ================================================
 
 void UNK_0xf4aa() // UNK_0xf4aa
@@ -507,7 +507,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 
 
 // ================================================
-// 0xf4f2: WORD '?CAN-LEAVE' codep=0x224c parp=0xf501
+// 0xf4f2: WORD '?CAN-LEAVE' codep=0x224c parp=0xf501 params=15 returns=1
 // ================================================
 // entry
 

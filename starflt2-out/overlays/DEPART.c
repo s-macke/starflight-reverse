@@ -97,7 +97,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
 
 
 // ================================================
-// 0xf3b8: WORD 'UNK_0xf3ba' codep=0x224c parp=0xf3ba
+// 0xf3b8: WORD 'UNK_0xf3ba' codep=0x224c parp=0xf3ba params=12 returns=1
 // ================================================
 
 void UNK_0xf3ba() // UNK_0xf3ba
@@ -169,7 +169,7 @@ void DISPOSAL() // DISPOSAL
 }
 
 // ================================================
-// 0xf421: WORD 'UNK_0xf423' codep=0x224c parp=0xf423
+// 0xf421: WORD 'UNK_0xf423' codep=0x224c parp=0xf423 params=0 returns=1
 // ================================================
 
 void UNK_0xf423() // UNK_0xf423
@@ -187,7 +187,7 @@ void UNK_0xf423() // UNK_0xf423
 
 
 // ================================================
-// 0xf437: WORD 'UNK_0xf439' codep=0x224c parp=0xf439
+// 0xf437: WORD 'UNK_0xf439' codep=0x224c parp=0xf439 params=1 returns=0
 // ================================================
 
 void UNK_0xf439() // UNK_0xf439
@@ -202,7 +202,7 @@ void UNK_0xf439() // UNK_0xf439
 
 
 // ================================================
-// 0xf445: WORD 'UNK_0xf447' codep=0x224c parp=0xf447
+// 0xf445: WORD 'UNK_0xf447' codep=0x224c parp=0xf447 params=5 returns=0
 // ================================================
 
 void UNK_0xf447() // UNK_0xf447
@@ -247,7 +247,7 @@ void UNK_0xf447() // UNK_0xf447
 
 
 // ================================================
-// 0xf48b: WORD 'UNK_0xf48d' codep=0x224c parp=0xf48d
+// 0xf48b: WORD 'UNK_0xf48d' codep=0x224c parp=0xf48d params=7 returns=0
 // ================================================
 
 void UNK_0xf48d() // UNK_0xf48d
@@ -281,7 +281,7 @@ void UNK_0xf48d() // UNK_0xf48d
 IFieldType UNK_0xf4b7 = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
-// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc
+// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=2 returns=0
 // ================================================
 
 void UNK_0xf4bc() // UNK_0xf4bc

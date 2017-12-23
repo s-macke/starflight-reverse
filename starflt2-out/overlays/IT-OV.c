@@ -235,7 +235,7 @@ LoadDataType UNK_0xeeda = {CREATUREIDX, 0x14, 0x02, 0x22, 0x6f07};
 // 0xeee0: db 0x94 0x73 0x44 0x1c 0x01 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
-// 0xeee8: WORD 'UNK_0xeeea' codep=0x224c parp=0xeeea
+// 0xeee8: WORD 'UNK_0xeeea' codep=0x224c parp=0xeeea params=0 returns=1
 // ================================================
 
 void UNK_0xeeea() // UNK_0xeeea
@@ -352,7 +352,7 @@ void UNK_0xef4a() // UNK_0xef4a
 
 
 // ================================================
-// 0xeffd: WORD 'UNK_0xefff' codep=0x224c parp=0xefff
+// 0xeffd: WORD 'UNK_0xefff' codep=0x224c parp=0xefff params=0 returns=0
 // ================================================
 
 void UNK_0xefff() // UNK_0xefff
@@ -765,7 +765,7 @@ void UNK_0xf25c() // UNK_0xf25c
 
 
 // ================================================
-// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e
+// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=7 returns=0
 // ================================================
 
 void UNK_0xf28e() // UNK_0xf28e
@@ -814,7 +814,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
 
 // ================================================
-// 0xf2e8: WORD 'BOX>LIST' codep=0x224c parp=0xf2f5
+// 0xf2e8: WORD 'BOX>LIST' codep=0x224c parp=0xf2f5 params=12 returns=0
 // ================================================
 // entry
 
@@ -853,7 +853,7 @@ void BOX_gt_LIST() // BOX>LIST
 
 
 // ================================================
-// 0xf331: WORD 'GET-BOXE' codep=0x224c parp=0xf33e
+// 0xf331: WORD 'GET-BOXE' codep=0x224c parp=0xf33e params=16 returns=0
 // ================================================
 // entry
 
@@ -903,7 +903,7 @@ void MAKE_dash_SCR() // MAKE-SCR
 
 
 // ================================================
-// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a
+// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a params=4 returns=0
 // ================================================
 // entry
 

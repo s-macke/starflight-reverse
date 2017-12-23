@@ -185,7 +185,7 @@ void _ro_TRIM() // (TRIM
 
 
 // ================================================
-// 0xf033: WORD 'UNK_0xf035' codep=0x224c parp=0xf035 params=0 returns=2
+// 0xf033: WORD 'UNK_0xf035' codep=0x224c parp=0xf035 params=0 returns=0
 // ================================================
 
 void UNK_0xf035() // UNK_0xf035
@@ -392,7 +392,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad
+// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad params=6 returns=1
 // ================================================
 // entry
 
@@ -441,7 +441,7 @@ void _ro_QUIT() // (QUIT
 
 
 // ================================================
-// 0xf206: WORD '(.0$$' codep=0x224c parp=0xf210 params=0 returns=2
+// 0xf206: WORD '(.0$$' codep=0x224c parp=0xf210 params=0 returns=0
 // ================================================
 // entry
 
@@ -774,7 +774,7 @@ void _ro__ask__dot_EQ() // (?.EQ
 
 
 // ================================================
-// 0xf456: WORD 'UNK_0xf458' codep=0x224c parp=0xf458
+// 0xf456: WORD 'UNK_0xf458' codep=0x224c parp=0xf458 params=0 returns=1
 // ================================================
 
 void UNK_0xf458() // UNK_0xf458

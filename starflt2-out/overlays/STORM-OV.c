@@ -190,7 +190,7 @@ void UNK_0xf134() // UNK_0xf134
 
 
 // ================================================
-// 0xf1ca: WORD 'UNK_0xf1cc' codep=0x224c parp=0xf1cc
+// 0xf1ca: WORD 'UNK_0xf1cc' codep=0x224c parp=0xf1cc params=2 returns=2
 // ================================================
 
 void UNK_0xf1cc() // UNK_0xf1cc
@@ -217,7 +217,7 @@ void UNK_0xf1cc() // UNK_0xf1cc
 
 
 // ================================================
-// 0xf1f2: WORD 'UNK_0xf1f4' codep=0x224c parp=0xf1f4
+// 0xf1f2: WORD 'UNK_0xf1f4' codep=0x224c parp=0xf1f4 params=2 returns=2
 // ================================================
 
 void UNK_0xf1f4() // UNK_0xf1f4
@@ -257,7 +257,7 @@ LoadDataType UNK_0xf2d5 = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 // 0xf2db: db 0x29 0x1d 0x3a 0x20 ') : '
 
 // ================================================
-// 0xf2df: WORD 'UNK_0xf2e1' codep=0x224c parp=0xf2e1
+// 0xf2df: WORD 'UNK_0xf2e1' codep=0x224c parp=0xf2e1 params=4 returns=1
 // ================================================
 
 void UNK_0xf2e1() // UNK_0xf2e1
@@ -274,7 +274,7 @@ void UNK_0xf2e1() // UNK_0xf2e1
 
 
 // ================================================
-// 0xf2f3: WORD 'UNK_0xf2f5' codep=0x224c parp=0xf2f5
+// 0xf2f3: WORD 'UNK_0xf2f5' codep=0x224c parp=0xf2f5 params=4 returns=1
 // ================================================
 
 void UNK_0xf2f5() // UNK_0xf2f5
@@ -446,7 +446,7 @@ void INJURE_dash_PL() // INJURE-PL
 
 
 // ================================================
-// 0xf41a: WORD 'UNK_0xf41c' codep=0x224c parp=0xf41c
+// 0xf41a: WORD 'UNK_0xf41c' codep=0x224c parp=0xf41c params=4 returns=0
 // ================================================
 
 void UNK_0xf41c() // UNK_0xf41c

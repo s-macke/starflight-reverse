@@ -360,7 +360,7 @@ void UNK_0xece7() // UNK_0xece7
 IFieldType UNK_0xecf3 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
-// 0xecf6: WORD 'UNK_0xecf8' codep=0x224c parp=0xecf8
+// 0xecf6: WORD 'UNK_0xecf8' codep=0x224c parp=0xecf8 params=6 returns=0
 // ================================================
 
 void UNK_0xecf8() // UNK_0xecf8
@@ -395,7 +395,7 @@ void UNK_0xecf8() // UNK_0xecf8
 
 
 // ================================================
-// 0xed2c: WORD 'UNK_0xed2e' codep=0x224c parp=0xed2e
+// 0xed2c: WORD 'UNK_0xed2e' codep=0x224c parp=0xed2e params=2 returns=1
 // ================================================
 
 void UNK_0xed2e() // UNK_0xed2e
@@ -727,7 +727,7 @@ void UNK_0xeee8() // UNK_0xeee8
 
 
 // ================================================
-// 0xef78: WORD 'UNK_0xef7a' codep=0x224c parp=0xef7a
+// 0xef78: WORD 'UNK_0xef7a' codep=0x224c parp=0xef7a params=2 returns=0
 // ================================================
 
 void UNK_0xef7a() // UNK_0xef7a

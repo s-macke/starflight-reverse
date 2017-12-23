@@ -168,7 +168,7 @@ void ICON_dash_KEY() // ICON-KEY
 
 
 // ================================================
-// 0xf3c4: WORD '.BLT' codep=0x224c parp=0xf3c6
+// 0xf3c4: WORD '.BLT' codep=0x224c parp=0xf3c6 params=1 returns=0
 // ================================================
 
 void DrawBLT() // .BLT
@@ -223,7 +223,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
 
 
 // ================================================
-// 0xf42a: WORD 'SEE-BLTS' codep=0x224c parp=0xf42c
+// 0xf42a: WORD 'SEE-BLTS' codep=0x224c parp=0xf42c params=3 returns=0
 // ================================================
 
 void SEE_dash_BLTS() // SEE-BLTS

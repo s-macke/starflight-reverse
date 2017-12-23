@@ -279,7 +279,7 @@ void UNK_0xeed3() // UNK_0xeed3
 // 0xef1d: db 0x80 0x04 '  '
 
 // ================================================
-// 0xef1f: WORD '.LON' codep=0x224c parp=0xef28 params=1 returns=0
+// 0xef1f: WORD '.LON' codep=0x224c parp=0xef28 params=0 returns=1
 // ================================================
 
 void DrawLON() // .LON
@@ -342,7 +342,7 @@ void DrawLON() // .LON
 // 0xef9c: db 0xe0 0x01 '  '
 
 // ================================================
-// 0xef9e: WORD 'UNK_0xefa0' codep=0x224c parp=0xefa0 params=1 returns=0
+// 0xef9e: WORD 'UNK_0xefa0' codep=0x224c parp=0xefa0 params=0 returns=1
 // ================================================
 
 void UNK_0xefa0() // UNK_0xefa0
@@ -812,7 +812,7 @@ void UNK_0xf290() // UNK_0xf290
 
 
 // ================================================
-// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311
+// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311 params=2 returns=0
 // ================================================
 
 void UNK_0xf311() // UNK_0xf311
@@ -881,7 +881,7 @@ void UNK_0xf311() // UNK_0xf311
 
 
 // ================================================
-// 0xf387: WORD 'UNK_0xf389' codep=0x224c parp=0xf389
+// 0xf387: WORD 'UNK_0xf389' codep=0x224c parp=0xf389 params=4 returns=0
 // ================================================
 
 void UNK_0xf389() // UNK_0xf389
@@ -949,7 +949,7 @@ void UNK_0xf389() // UNK_0xf389
 
 
 // ================================================
-// 0xf403: WORD 'UNK_0xf405' codep=0x224c parp=0xf405 params=10 returns=1
+// 0xf403: WORD 'UNK_0xf405' codep=0x224c parp=0xf405 params=1 returns=1
 // ================================================
 
 void UNK_0xf405() // UNK_0xf405

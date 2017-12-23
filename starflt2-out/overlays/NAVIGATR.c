@@ -102,7 +102,7 @@ LoadDataType UNK_0xf1aa = {BUTTONSIDX, 0x18, 0x0c, 0x49, 0x6e57};
 LoadDataType UNK_0xf1b2 = {BUTTONSIDX, 0x24, 0x0c, 0x49, 0x6e57};
 
 // ================================================
-// 0xf1b8: WORD 'UNK_0xf1ba' codep=0x224c parp=0xf1ba
+// 0xf1b8: WORD 'UNK_0xf1ba' codep=0x224c parp=0xf1ba params=0 returns=0
 // ================================================
 
 void UNK_0xf1ba() // UNK_0xf1ba
@@ -128,7 +128,7 @@ void UNK_0xf1c4() // UNK_0xf1c4
 
 
 // ================================================
-// 0xf1d4: WORD 'UNK_0xf1d6' codep=0x224c parp=0xf1d6
+// 0xf1d4: WORD 'UNK_0xf1d6' codep=0x224c parp=0xf1d6 params=3 returns=0
 // ================================================
 
 void UNK_0xf1d6() // UNK_0xf1d6
@@ -256,7 +256,7 @@ void UNK_0xf301() // UNK_0xf301
 
 
 // ================================================
-// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311
+// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311 params=0 returns=0
 // ================================================
 
 void UNK_0xf311() // UNK_0xf311

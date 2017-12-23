@@ -389,7 +389,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 
 
 // ================================================
-// 0xeeb6: WORD 'UNK_0xeeb8' codep=0x224c parp=0xeeb8
+// 0xeeb6: WORD 'UNK_0xeeb8' codep=0x224c parp=0xeeb8 params=2 returns=0
 // ================================================
 
 void UNK_0xeeb8() // UNK_0xeeb8
@@ -671,7 +671,7 @@ void UNK_0xf0ab() // UNK_0xf0ab
 
 
 // ================================================
-// 0xf0ce: WORD 'UNK_0xf0d0' codep=0x224c parp=0xf0d0 params=4 returns=0
+// 0xf0ce: WORD 'UNK_0xf0d0' codep=0x224c parp=0xf0d0 params=1 returns=0
 // ================================================
 
 void UNK_0xf0d0() // UNK_0xf0d0
@@ -696,7 +696,7 @@ void UNK_0xf0d0() // UNK_0xf0d0
 
 
 // ================================================
-// 0xf119: WORD 'UNK_0xf11b' codep=0x224c parp=0xf11b
+// 0xf119: WORD 'UNK_0xf11b' codep=0x224c parp=0xf11b params=5 returns=1
 // ================================================
 
 void UNK_0xf11b() // UNK_0xf11b

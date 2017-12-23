@@ -384,7 +384,7 @@ void UNK_0xee22() // UNK_0xee22
 
 
 // ================================================
-// 0xee4c: WORD 'UNK_0xee4e' codep=0x224c parp=0xee4e
+// 0xee4c: WORD 'UNK_0xee4e' codep=0x224c parp=0xee4e params=3 returns=0
 // ================================================
 
 void UNK_0xee4e() // UNK_0xee4e
@@ -403,7 +403,7 @@ void UNK_0xee4e() // UNK_0xee4e
 
 
 // ================================================
-// 0xee64: WORD 'UNK_0xee66' codep=0x224c parp=0xee66
+// 0xee64: WORD 'UNK_0xee66' codep=0x224c parp=0xee66 params=4 returns=1
 // ================================================
 
 void UNK_0xee66() // UNK_0xee66
@@ -415,7 +415,7 @@ void UNK_0xee66() // UNK_0xee66
 
 
 // ================================================
-// 0xee70: WORD 'UNK_0xee72' codep=0x224c parp=0xee72
+// 0xee70: WORD 'UNK_0xee72' codep=0x224c parp=0xee72 params=6 returns=0
 // ================================================
 
 void UNK_0xee72() // UNK_0xee72
@@ -430,7 +430,7 @@ void UNK_0xee72() // UNK_0xee72
 
 
 // ================================================
-// 0xee80: WORD 'UNK_0xee82' codep=0x224c parp=0xee82 params=2 returns=4
+// 0xee80: WORD 'UNK_0xee82' codep=0x224c parp=0xee82 params=2 returns=2
 // ================================================
 
 void UNK_0xee82() // UNK_0xee82
@@ -1110,7 +1110,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
 
 
 // ================================================
-// 0xf306: WORD '.ROCK' codep=0x224c parp=0xf310
+// 0xf306: WORD '.ROCK' codep=0x224c parp=0xf310 params=4 returns=0
 // ================================================
 
 void DrawROCK() // .ROCK
@@ -1178,7 +1178,7 @@ void DrawICE() // .ICE
 
 
 // ================================================
-// 0xf384: WORD '.MOLTEN' codep=0x224c parp=0xf390
+// 0xf384: WORD '.MOLTEN' codep=0x224c parp=0xf390 params=8 returns=0
 // ================================================
 
 void DrawMOLTEN() // .MOLTEN
@@ -1194,7 +1194,7 @@ void DrawMOLTEN() // .MOLTEN
 
 
 // ================================================
-// 0xf3a0: WORD '.CARPET' codep=0x224c parp=0xf3ac
+// 0xf3a0: WORD '.CARPET' codep=0x224c parp=0xf3ac params=0 returns=0
 // ================================================
 
 void DrawCARPET() // .CARPET

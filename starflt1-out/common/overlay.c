@@ -277,7 +277,7 @@ void UNK_0xbab0() // UNK_0xbab0
 
 
 // ================================================
-// 0xbab8: WORD 'DATE$>ADR' codep=0x224c parp=0xbac4 params=10 returns=1
+// 0xbab8: WORD 'DATE$>ADR' codep=0x224c parp=0xbac4 params=0 returns=0
 // ================================================
 
 void DATE_do__gt_ADR() // DATE$>ADR
@@ -288,7 +288,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 
 
 // ================================================
-// 0xbacc: WORD 'BOX>LIS' codep=0x224c parp=0xbad8 params=10 returns=1
+// 0xbacc: WORD 'BOX>LIS' codep=0x224c parp=0xbad8 params=0 returns=0
 // ================================================
 
 void BOX_gt_LIS() // BOX>LIS
@@ -299,7 +299,7 @@ void BOX_gt_LIS() // BOX>LIS
 
 
 // ================================================
-// 0xbae0: WORD 'GET-BOX' codep=0x224c parp=0xbaec params=10 returns=1
+// 0xbae0: WORD 'GET-BOX' codep=0x224c parp=0xbaec params=0 returns=0
 // ================================================
 
 void GET_dash_BOX() // GET-BOX
@@ -310,7 +310,7 @@ void GET_dash_BOX() // GET-BOX
 
 
 // ================================================
-// 0xbaf4: WORD 'MAKE-SC' codep=0x224c parp=0xbb00 params=10 returns=1
+// 0xbaf4: WORD 'MAKE-SC' codep=0x224c parp=0xbb00 params=0 returns=0
 // ================================================
 
 void MAKE_dash_SC() // MAKE-SC
@@ -321,7 +321,7 @@ void MAKE_dash_SC() // MAKE-SC
 
 
 // ================================================
-// 0xbb08: WORD 'delete-scroll-box' codep=0x224c parp=0xbb14 params=10 returns=1
+// 0xbb08: WORD 'delete-scroll-box' codep=0x224c parp=0xbb14 params=0 returns=0
 // ================================================
 
 void delete_dash_scroll_dash_box() // delete-scroll-box
@@ -332,7 +332,7 @@ void delete_dash_scroll_dash_box() // delete-scroll-box
 
 
 // ================================================
-// 0xbb1c: WORD 'BOX>TOC' codep=0x224c parp=0xbb28 params=10 returns=1
+// 0xbb1c: WORD 'BOX>TOC' codep=0x224c parp=0xbb28 params=0 returns=0
 // ================================================
 
 void BOX_gt_TOC() // BOX>TOC
@@ -343,7 +343,7 @@ void BOX_gt_TOC() // BOX>TOC
 
 
 // ================================================
-// 0xbb30: WORD '>BOX' codep=0x224c parp=0xbb39 params=10 returns=1
+// 0xbb30: WORD '>BOX' codep=0x224c parp=0xbb39 params=0 returns=0
 // ================================================
 
 void _gt_BOX() // >BOX
@@ -354,7 +354,7 @@ void _gt_BOX() // >BOX
 
 
 // ================================================
-// 0xbb41: WORD 'BOX>' codep=0x224c parp=0xbb4a params=10 returns=1
+// 0xbb41: WORD 'BOX>' codep=0x224c parp=0xbb4a params=0 returns=0
 // ================================================
 
 void BOX_gt_() // BOX>
@@ -365,7 +365,7 @@ void BOX_gt_() // BOX>
 
 
 // ================================================
-// 0xbb52: WORD '(BOX>)' codep=0x224c parp=0xbb5d params=10 returns=1
+// 0xbb52: WORD '(BOX>)' codep=0x224c parp=0xbb5d params=0 returns=0
 // ================================================
 
 void _ro_BOX_gt__rc_() // (BOX>)
@@ -376,7 +376,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 
 
 // ================================================
-// 0xbb65: WORD 'CLASS>B' codep=0x224c parp=0xbb71 params=10 returns=1
+// 0xbb65: WORD 'CLASS>B' codep=0x224c parp=0xbb71 params=0 returns=0
 // ================================================
 
 void CLASS_gt_B() // CLASS>B
@@ -387,7 +387,7 @@ void CLASS_gt_B() // CLASS>B
 
 
 // ================================================
-// 0xbb79: WORD 'ITEM>PA' codep=0x224c parp=0xbb85 params=10 returns=1
+// 0xbb79: WORD 'ITEM>PA' codep=0x224c parp=0xbb85 params=0 returns=0
 // ================================================
 
 void ITEM_gt_PA() // ITEM>PA
@@ -826,7 +826,7 @@ void IsHEAVY() // ?HEAVY
 
 
 // ================================================
-// 0xbf48: WORD '/STARDATE' codep=0x224c parp=0xbf56 params=10 returns=1
+// 0xbf48: WORD '/STARDATE' codep=0x224c parp=0xbf56 params=0 returns=0
 // ================================================
 
 void _slash_STARDATE() // /STARDATE
@@ -837,7 +837,7 @@ void _slash_STARDATE() // /STARDATE
 
 
 // ================================================
-// 0xbf5e: WORD '.SORD' codep=0x224c parp=0xbf68 params=10 returns=1
+// 0xbf5e: WORD '.SORD' codep=0x224c parp=0xbf68 params=0 returns=0
 // ================================================
 
 void DrawSORD() // .SORD
@@ -944,7 +944,7 @@ void _ro_ROL() // (ROL
 
 
 // ================================================
-// 0xc045: WORD 'OBIT' codep=0x224c parp=0xc04e params=10 returns=1
+// 0xc045: WORD 'OBIT' codep=0x224c parp=0xc04e params=0 returns=0
 // ================================================
 
 void OBIT() // OBIT
@@ -955,7 +955,7 @@ void OBIT() // OBIT
 
 
 // ================================================
-// 0xc056: WORD 'HEAL' codep=0x224c parp=0xc05f params=10 returns=1
+// 0xc056: WORD 'HEAL' codep=0x224c parp=0xc05f params=0 returns=0
 // ================================================
 
 void HEAL() // HEAL
@@ -966,7 +966,7 @@ void HEAL() // HEAL
 
 
 // ================================================
-// 0xc067: WORD '.VIT' codep=0x224c parp=0xc070 params=10 returns=1
+// 0xc067: WORD '.VIT' codep=0x224c parp=0xc070 params=0 returns=0
 // ================================================
 
 void DrawVIT() // .VIT
@@ -1209,7 +1209,7 @@ void OVEDL_plus_AUX() // OVEDL+AUX
 
 
 // ================================================
-// 0xc243: WORD 'MCOMM-EXPERTS' codep=0x224c parp=0xc255 params=10 returns=1
+// 0xc243: WORD 'MCOMM-EXPERTS' codep=0x224c parp=0xc255 params=0 returns=0
 // ================================================
 
 void MCOMM_dash_EXPERTS() // MCOMM-EXPERTS
@@ -1220,7 +1220,7 @@ void MCOMM_dash_EXPERTS() // MCOMM-EXPERTS
 
 
 // ================================================
-// 0xc25d: WORD 'MEDL+AUX' codep=0x224c parp=0xc26a params=10 returns=1
+// 0xc25d: WORD 'MEDL+AUX' codep=0x224c parp=0xc26a params=0 returns=0
 // ================================================
 
 void MEDL_plus_AUX() // MEDL+AUX
@@ -1398,7 +1398,7 @@ void SEEGRID() // SEEGRID
 
 
 // ================================================
-// 0xc3e7: WORD 'MROTATE' codep=0x224c parp=0xc3f3 params=10 returns=1
+// 0xc3e7: WORD 'MROTATE' codep=0x224c parp=0xc3f3 params=0 returns=0
 // ================================================
 
 void MROTATE() // MROTATE
@@ -1963,7 +1963,7 @@ void C_and_C() // C&C
 
 
 // ================================================
-// 0xc940: WORD 'COM' codep=0x224c parp=0xc948 params=10 returns=1
+// 0xc940: WORD 'COM' codep=0x224c parp=0xc948 params=0 returns=0
 // ================================================
 
 void COM() // COM
@@ -1974,7 +1974,7 @@ void COM() // COM
 
 
 // ================================================
-// 0xc950: WORD 'WAR' codep=0x224c parp=0xc958 params=10 returns=1
+// 0xc950: WORD 'WAR' codep=0x224c parp=0xc958 params=0 returns=0
 // ================================================
 
 void WAR() // WAR
@@ -2110,7 +2110,7 @@ void OSET() // OSET
 
 
 // ================================================
-// 0xca35: WORD 'ORBUP' codep=0x224c parp=0xca3f params=10 returns=1
+// 0xca35: WORD 'ORBUP' codep=0x224c parp=0xca3f params=0 returns=0
 // ================================================
 
 void ORBUP() // ORBUP
@@ -2121,7 +2121,7 @@ void ORBUP() // ORBUP
 
 
 // ================================================
-// 0xca47: WORD 'TRAK-ENCS' codep=0x224c parp=0xca55
+// 0xca47: WORD 'TRAK-ENCS' codep=0x224c parp=0xca55 params=0 returns=0
 // ================================================
 
 void TRAK_dash_ENCS() // TRAK-ENCS
@@ -2175,7 +2175,7 @@ void _ro_CTXT_rc_() // (CTXT)
 
 
 // ================================================
-// 0xcaa3: WORD 'CONTEXT-CASES' codep=0x224c parp=0xcab5 params=10 returns=1
+// 0xcaa3: WORD 'CONTEXT-CASES' codep=0x224c parp=0xcab5 params=0 returns=0
 // ================================================
 
 void CONTEXT_dash_CASES() // CONTEXT-CASES
@@ -2197,7 +2197,7 @@ void _plus_A_dash_VESS() // +A-VESS
 
 
 // ================================================
-// 0xcacf: WORD 'MTRAK-ENCS' codep=0x224c parp=0xcade params=10 returns=1
+// 0xcacf: WORD 'MTRAK-ENCS' codep=0x224c parp=0xcade params=0 returns=0
 // ================================================
 
 void MTRAK_dash_ENCS() // MTRAK-ENCS
@@ -2208,7 +2208,7 @@ void MTRAK_dash_ENCS() // MTRAK-ENCS
 
 
 // ================================================
-// 0xcae6: WORD 'MHEAT' codep=0x224c parp=0xcaf0 params=10 returns=1
+// 0xcae6: WORD 'MHEAT' codep=0x224c parp=0xcaf0 params=0 returns=0
 // ================================================
 
 void MHEAT() // MHEAT
@@ -2409,7 +2409,7 @@ void USE_dash_E() // USE-E
 
 
 // ================================================
-// 0xcc67: WORD 'MUSE-E' codep=0x224c parp=0xcc72 params=10 returns=1
+// 0xcc67: WORD 'MUSE-E' codep=0x224c parp=0xcc72 params=0 returns=0
 // ================================================
 
 void MUSE_dash_E() // MUSE-E
@@ -2571,7 +2571,7 @@ void _ro_2X2_rc_() // (2X2)
 
 
 // ================================================
-// 0xcdee: WORD '2X2CO' codep=0x224c parp=0xcdf8 params=10 returns=1
+// 0xcdee: WORD '2X2CO' codep=0x224c parp=0xcdf8 params=0 returns=0
 // ================================================
 
 void _2X2CO() // 2X2CO
@@ -2593,7 +2593,7 @@ void _ro_4X4_rc_() // (4X4)
 
 
 // ================================================
-// 0xce10: WORD '4X4CO' codep=0x224c parp=0xce1a params=10 returns=1
+// 0xce10: WORD '4X4CO' codep=0x224c parp=0xce1a params=0 returns=0
 // ================================================
 
 void _4X4CO() // 4X4CO
@@ -2615,7 +2615,7 @@ void _ro_8X8_rc_() // (8X8)
 
 
 // ================================================
-// 0xce32: WORD '8X8CO' codep=0x224c parp=0xce3c params=10 returns=1
+// 0xce32: WORD '8X8CO' codep=0x224c parp=0xce3c params=0 returns=0
 // ================================================
 
 void _8X8CO() // 8X8CO
@@ -2851,7 +2851,7 @@ void _ro_TALK_rc_() // (TALK)
 
 
 // ================================================
-// 0xd062: WORD 'HEAVEHO' codep=0x224c parp=0xd06e params=10 returns=1
+// 0xd062: WORD 'HEAVEHO' codep=0x224c parp=0xd06e params=0 returns=0
 // ================================================
 
 void HEAVEHO() // HEAVEHO
@@ -2905,7 +2905,7 @@ void _ro_SIMULA_rc_() // (SIMULA)
 
 
 // ================================================
-// 0xd0d8: WORD 'SIMULATE' codep=0x224c parp=0xd0e5 params=10 returns=1
+// 0xd0d8: WORD 'SIMULATE' codep=0x224c parp=0xd0e5 params=0 returns=0
 // ================================================
 
 void SIMULATE() // SIMULATE
@@ -3274,7 +3274,7 @@ void GAMEOP_1() // GAMEOP_1
 
 
 // ================================================
-// 0xd46b: WORD 'GAMEOP_2' codep=0x224c parp=0xd476 params=10 returns=1
+// 0xd46b: WORD 'GAMEOP_2' codep=0x224c parp=0xd476 params=0 returns=0
 // ================================================
 
 void GAMEOP_2() // GAMEOP_2
