@@ -4,6 +4,7 @@
 #define STRINGLEN 300
 #define FALSE 0
 #define TRUE (!(FALSE))
+#define STACKINVALID 0xFFFF
 
 // ----------------------------------------------
 typedef struct

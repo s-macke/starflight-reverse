@@ -38,6 +38,8 @@ DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
     dict[ndict].parp = addr;
     dict[ndict].addr = addr-2;
     dict[ndict].ovidx = ovidx;
+    dict[ndict].stackin = STACKINVALID;
+    dict[ndict].stackout = STACKINVALID;
     ndict++;
     return &dict[ndict-1];
 }
@@ -72,6 +74,8 @@ int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
     dict[ndict].bits = bitfield;
     dict[ndict].ovidx = ovidx;
     dict[ndict].size = -1;
+    dict[ndict].stackin = STACKINVALID;
+    dict[ndict].stackout = STACKINVALID;
 
     int n = 0;
     do

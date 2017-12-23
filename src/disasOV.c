@@ -7,6 +7,7 @@
 #include"transpile2C.h"
 #include"extract.h"
 #include"utils.h"
+#include"stack.h"
 #include"../emul/cpu.h"
 
 // ---------------------------------
@@ -46,7 +47,7 @@ void ParseOverlay(int ovidx)
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
     sprintf(filename, OUTDIR"/overlays/%s", overlays[ovidx].name);
-
+    StackAnalysis(ovidx);
     Transpile(filename, &head, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_HEADER | WRITE_EXTERN | WRITE_VARIABLES);
 }
 
@@ -92,6 +93,7 @@ void DisasStarflt()
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
     SortDictionary();
+    StackAnalysis(ovidx);
     Transpile(OUTDIR"/starflt", NULL, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_VARIABLES);
 
 #ifdef STARFLT1

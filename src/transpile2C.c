@@ -754,11 +754,21 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
         exit(1);
     }
     char *s = GetWordName(e);
-    fprintf(fp,
-    "\n// ================================================\n"
-    "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
-    "// ================================================\n",
-    e->addr, s, e->codep, e->parp);
+    if (e->stackin != 0xFFFF && e->codep == CODECALL)
+    {
+        fprintf(fp,
+        "\n// ================================================\n"
+        "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x params=%i returns=%i\n"
+        "// ================================================\n",
+        e->addr, s, e->codep, e->parp, e->stackin, e->stackout);
+    } else
+    {
+        fprintf(fp,
+        "\n// ================================================\n"
+        "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x\n"
+        "// ================================================\n",
+        e->addr, s, e->codep, e->parp, e->stackin, e->stackout);
+    }
     if (e->isentry) fprintf(fp, "// entry\n");
 }
 
