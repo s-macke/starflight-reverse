@@ -125,7 +125,7 @@ void altitude() // altitude
 
 
 // ================================================
-// 0xf34d: WORD 'ICON-KEY' codep=0x224c parp=0xf34f
+// 0xf34d: WORD 'ICON-KEY' codep=0x224c parp=0xf34f params=0 returns=0
 // ================================================
 
 void ICON_dash_KEY() // ICON-KEY

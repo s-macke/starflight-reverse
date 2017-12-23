@@ -132,7 +132,7 @@ void UNK_0xf2d8() // UNK_0xf2d8
 
 
 // ================================================
-// 0xf306: WORD 'UNK_0xf308' codep=0x224c parp=0xf308
+// 0xf306: WORD 'UNK_0xf308' codep=0x224c parp=0xf308 params=0 returns=0
 // ================================================
 
 void UNK_0xf308() // UNK_0xf308

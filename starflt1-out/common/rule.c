@@ -152,7 +152,7 @@ const unsigned short int cc_CFLGARR = 0xb706; // CFLGARR
 // 0xb706: dw 0xebb3
 
 // ================================================
-// 0xb708: WORD 'XC@' codep=0x224c parp=0xb710
+// 0xb708: WORD 'XC@' codep=0x224c parp=0xb710 params=1 returns=1
 // ================================================
 
 void XC_at_() // XC@
@@ -164,7 +164,7 @@ void XC_at_() // XC@
 
 
 // ================================================
-// 0xb71a: WORD 'C+!' codep=0x224c parp=0xb722
+// 0xb71a: WORD 'C+!' codep=0x224c parp=0xb722 params=2 returns=0
 // ================================================
 
 void C_plus__ex_() // C+!
@@ -179,7 +179,7 @@ void C_plus__ex_() // C+!
 
 
 // ================================================
-// 0xb730: WORD '>EXPERT' codep=0x224c parp=0xb73c
+// 0xb730: WORD '>EXPERT' codep=0x224c parp=0xb73c params=1 returns=0
 // ================================================
 
 void _gt_EXPERT() // >EXPERT
@@ -220,7 +220,7 @@ void _gt_EXPERT() // >EXPERT
 
 
 // ================================================
-// 0xb788: WORD 'DISTRACT' codep=0x224c parp=0xb795
+// 0xb788: WORD 'DISTRACT' codep=0x224c parp=0xb795 params=1 returns=0
 // ================================================
 
 void DISTRACT() // DISTRACT
@@ -235,7 +235,7 @@ void DISTRACT() // DISTRACT
 
 
 // ================================================
-// 0xb7a3: WORD 'EXECUTE-RULE' codep=0x224c parp=0xb7b4
+// 0xb7a3: WORD 'EXECUTE-RULE' codep=0x224c parp=0xb7b4 params=1 returns=1
 // ================================================
 
 void EXECUTE_dash_RULE() // EXECUTE-RULE
@@ -407,7 +407,7 @@ void _dash__dash__gt_() // -->
 
 
 // ================================================
-// 0xb8d2: WORD '?INDEX' codep=0x224c parp=0xb8dd
+// 0xb8d2: WORD '?INDEX' codep=0x224c parp=0xb8dd params=1 returns=1
 // ================================================
 
 void IsINDEX() // ?INDEX

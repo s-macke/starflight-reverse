@@ -350,7 +350,7 @@ void ILAST() // ILAST
 
 
 // ================================================
-// 0x7afc: WORD 'VCLR' codep=0x224c parp=0x7b05
+// 0x7afc: WORD 'VCLR' codep=0x224c parp=0x7b05 params=0 returns=0
 // ================================================
 
 void VCLR() // VCLR
@@ -414,7 +414,7 @@ void FLUSH_2() // FLUSH_2
 
 
 // ================================================
-// 0x7b92: WORD 'MT' codep=0x224c parp=0x7b99
+// 0x7b92: WORD 'MT' codep=0x224c parp=0x7b99 params=0 returns=0
 // ================================================
 
 void MT() // MT
@@ -693,7 +693,7 @@ void IFLD_ex_() // IFLD!
 // 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
 
 // ================================================
-// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51
+// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=4 returns=1
 // ================================================
 
 void IsCLASS_slash_() // ?CLASS/
@@ -717,7 +717,7 @@ void IsCLASS_slash_() // ?CLASS/
 
 
 // ================================================
-// 0x7d71: WORD 'UNK_0x7d73' codep=0x224c parp=0x7d73
+// 0x7d71: WORD 'UNK_0x7d73' codep=0x224c parp=0x7d73 params=0 returns=0
 // ================================================
 
 void UNK_0x7d73() // UNK_0x7d73
@@ -728,7 +728,7 @@ void UNK_0x7d73() // UNK_0x7d73
 
 
 // ================================================
-// 0x7d79: WORD 'UNK_0x7d7b' codep=0x224c parp=0x7d7b
+// 0x7d79: WORD 'UNK_0x7d7b' codep=0x224c parp=0x7d7b params=0 returns=0
 // ================================================
 
 void UNK_0x7d7b() // UNK_0x7d7b
@@ -739,7 +739,7 @@ void UNK_0x7d7b() // UNK_0x7d7b
 
 
 // ================================================
-// 0x7d81: WORD 'UNK_0x7d83' codep=0x224c parp=0x7d83
+// 0x7d81: WORD 'UNK_0x7d83' codep=0x224c parp=0x7d83 params=0 returns=0
 // ================================================
 
 void UNK_0x7d83() // UNK_0x7d83
@@ -750,7 +750,7 @@ void UNK_0x7d83() // UNK_0x7d83
 
 
 // ================================================
-// 0x7d89: WORD 'MAP' codep=0x224c parp=0x7d91
+// 0x7d89: WORD 'MAP' codep=0x224c parp=0x7d91 params=0 returns=0
 // ================================================
 
 void MAP() // MAP
@@ -761,7 +761,7 @@ void MAP() // MAP
 
 
 // ================================================
-// 0x7d97: WORD 'UNK_0x7d99' codep=0x224c parp=0x7d99
+// 0x7d97: WORD 'UNK_0x7d99' codep=0x224c parp=0x7d99 params=2 returns=0
 // ================================================
 
 void UNK_0x7d99() // UNK_0x7d99
@@ -774,7 +774,7 @@ void UNK_0x7d99() // UNK_0x7d99
 
 
 // ================================================
-// 0x7da3: WORD 'UNK_0x7da5' codep=0x224c parp=0x7da5
+// 0x7da3: WORD 'UNK_0x7da5' codep=0x224c parp=0x7da5 params=1 returns=0
 // ================================================
 
 void UNK_0x7da5() // UNK_0x7da5
@@ -786,7 +786,7 @@ void UNK_0x7da5() // UNK_0x7da5
 
 
 // ================================================
-// 0x7dad: WORD 'SELECT' codep=0x224c parp=0x7db8
+// 0x7dad: WORD 'SELECT' codep=0x224c parp=0x7db8 params=3 returns=1
 // ================================================
 
 void SELECT() // SELECT
@@ -830,7 +830,7 @@ void Is_gt_FIRST() // ?>FIRST
 
 
 // ================================================
-// 0x7df8: WORD 'SELECT-' codep=0x224c parp=0x7e04
+// 0x7df8: WORD 'SELECT-' codep=0x224c parp=0x7e04 params=6 returns=1
 // ================================================
 
 void SELECT_dash_() // SELECT-
@@ -859,7 +859,7 @@ void SELECT_dash_() // SELECT-
 // 0x7e2e: db 0x4c 0x22 0x02 0x7e 0xb4 0x0d 0x32 0x0e 0x90 0x0e 0x90 0x16 'L" ~  2     '
 
 // ================================================
-// 0x7e3a: WORD 'UNK_0x7e3c' codep=0x224c parp=0x7e3c
+// 0x7e3a: WORD 'UNK_0x7e3c' codep=0x224c parp=0x7e3c params=5 returns=1
 // ================================================
 
 void UNK_0x7e3c() // UNK_0x7e3c
@@ -870,7 +870,7 @@ void UNK_0x7e3c() // UNK_0x7e3c
 
 
 // ================================================
-// 0x7e44: WORD 'IFIND' codep=0x224c parp=0x7e4e
+// 0x7e44: WORD 'IFIND' codep=0x224c parp=0x7e4e params=5 returns=1
 // ================================================
 
 void IFIND() // IFIND
@@ -1089,7 +1089,7 @@ void EACH() // EACH
 
 
 // ================================================
-// 0x7fbb: WORD 'UNK_0x7fbd' codep=0x224c parp=0x7fbd
+// 0x7fbb: WORD 'UNK_0x7fbd' codep=0x224c parp=0x7fbd params=0 returns=0
 // ================================================
 
 void UNK_0x7fbd() // UNK_0x7fbd

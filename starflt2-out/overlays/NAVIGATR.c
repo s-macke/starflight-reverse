@@ -113,7 +113,7 @@ void UNK_0xf1ba() // UNK_0xf1ba
 
 
 // ================================================
-// 0xf1c2: WORD 'UNK_0xf1c4' codep=0x224c parp=0xf1c4
+// 0xf1c2: WORD 'UNK_0xf1c4' codep=0x224c parp=0xf1c4 params=0 returns=0
 // ================================================
 
 void UNK_0xf1c4() // UNK_0xf1c4
@@ -140,7 +140,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
 
 
 // ================================================
-// 0xf1de: WORD 'UNK_0xf1e0' codep=0x224c parp=0xf1e0
+// 0xf1de: WORD 'UNK_0xf1e0' codep=0x224c parp=0xf1e0 params=0 returns=8
 // ================================================
 
 void UNK_0xf1e0() // UNK_0xf1e0
@@ -159,7 +159,7 @@ void UNK_0xf1e0() // UNK_0xf1e0
 
 
 // ================================================
-// 0xf200: WORD 'UNK_0xf202' codep=0x224c parp=0xf202
+// 0xf200: WORD 'UNK_0xf202' codep=0x224c parp=0xf202 params=0 returns=14
 // ================================================
 
 void UNK_0xf202() // UNK_0xf202
@@ -241,7 +241,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 
 // ================================================
-// 0xf2ff: WORD 'UNK_0xf301' codep=0x224c parp=0xf301
+// 0xf2ff: WORD 'UNK_0xf301' codep=0x224c parp=0xf301 params=0 returns=1
 // ================================================
 
 void UNK_0xf301() // UNK_0xf301

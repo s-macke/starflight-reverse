@@ -130,7 +130,7 @@ LoadDataType UNK_0xf26a = {REGIONSIDX, 0x1b, 0x01, 0x1c, 0x6efc};
 IFieldType UNK_0xf272 = {REGIONSIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277
+// 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277 params=3 returns=1
 // ================================================
 
 void UNK_0xf277() // UNK_0xf277
@@ -177,7 +177,7 @@ void UNK_0xf295() // UNK_0xf295
 
 
 // ================================================
-// 0xf29f: WORD 'UNK_0xf2a1' codep=0x224c parp=0xf2a1
+// 0xf29f: WORD 'UNK_0xf2a1' codep=0x224c parp=0xf2a1 params=3 returns=1
 // ================================================
 
 void UNK_0xf2a1() // UNK_0xf2a1

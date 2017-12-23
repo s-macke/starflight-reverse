@@ -383,7 +383,7 @@ IFieldType _n_BLASTOS = {SHIPIDX, 0x57, 0x01};
 // 0xe7ba: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xe7bc: WORD 'UNK_0xe7be' codep=0x224c parp=0xe7be
+// 0xe7bc: WORD 'UNK_0xe7be' codep=0x224c parp=0xe7be params=0 returns=1
 // ================================================
 
 void UNK_0xe7be() // UNK_0xe7be
@@ -401,7 +401,7 @@ void UNK_0xe7be() // UNK_0xe7be
 
 
 // ================================================
-// 0xe7d2: WORD 'UNK_0xe7d4' codep=0x224c parp=0xe7d4
+// 0xe7d2: WORD 'UNK_0xe7d4' codep=0x224c parp=0xe7d4 params=1 returns=1
 // ================================================
 
 void UNK_0xe7d4() // UNK_0xe7d4
@@ -420,7 +420,7 @@ void UNK_0xe7d4() // UNK_0xe7d4
 
 
 // ================================================
-// 0xe7ee: WORD 'UNK_0xe7f0' codep=0x224c parp=0xe7f0
+// 0xe7ee: WORD 'UNK_0xe7f0' codep=0x224c parp=0xe7f0 params=1 returns=1
 // ================================================
 
 void UNK_0xe7f0() // UNK_0xe7f0
@@ -2068,7 +2068,7 @@ void UNK_0xf36d() // UNK_0xf36d
 
 
 // ================================================
-// 0xf3dd: WORD 'UNK_0xf3df' codep=0x224c parp=0xf3df
+// 0xf3dd: WORD 'UNK_0xf3df' codep=0x224c parp=0xf3df params=2 returns=0
 // ================================================
 
 void UNK_0xf3df() // UNK_0xf3df

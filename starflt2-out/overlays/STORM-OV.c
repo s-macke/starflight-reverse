@@ -101,7 +101,7 @@ void STORMS(); // STORMS
 // 0xf122: db 0x44 0x00 'D '
 
 // ================================================
-// 0xf124: WORD 'UNK_0xf126' codep=0x224c parp=0xf126
+// 0xf124: WORD 'UNK_0xf126' codep=0x224c parp=0xf126 params=1 returns=2
 // ================================================
 
 void UNK_0xf126() // UNK_0xf126
@@ -326,7 +326,7 @@ void UNK_0xf318() // UNK_0xf318
 
 
 // ================================================
-// 0xf330: WORD 'UNK_0xf332' codep=0x224c parp=0xf332
+// 0xf330: WORD 'UNK_0xf332' codep=0x224c parp=0xf332 params=0 returns=1
 // ================================================
 
 void UNK_0xf332() // UNK_0xf332

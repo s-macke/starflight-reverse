@@ -171,7 +171,7 @@ IFieldType UNK_0xed59 = {SHIPIDX, 0x27, 0x02};
 // 0xed5c: db 0x4d 0x74 0x14 0x45 0x04 'Mt E '
 
 // ================================================
-// 0xed61: WORD 'UNK_0xed63' codep=0x224c parp=0xed63
+// 0xed61: WORD 'UNK_0xed63' codep=0x224c parp=0xed63 params=1 returns=1
 // ================================================
 
 void UNK_0xed63() // UNK_0xed63
@@ -365,7 +365,7 @@ void UNK_0xef1a() // UNK_0xef1a
 
 
 // ================================================
-// 0xef8e: WORD 'UNK_0xef90' codep=0x224c parp=0xef90
+// 0xef8e: WORD 'UNK_0xef90' codep=0x224c parp=0xef90 params=0 returns=0
 // ================================================
 
 void UNK_0xef90() // UNK_0xef90
@@ -424,7 +424,7 @@ void UNK_0xef90() // UNK_0xef90
 
 
 // ================================================
-// 0xf012: WORD 'UNK_0xf014' codep=0x224c parp=0xf014
+// 0xf012: WORD 'UNK_0xf014' codep=0x224c parp=0xf014 params=5 returns=0
 // ================================================
 
 void UNK_0xf014() // UNK_0xf014
@@ -446,7 +446,7 @@ void UNK_0xf014() // UNK_0xf014
 
 
 // ================================================
-// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026
+// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=2 returns=18
 // ================================================
 
 void UNK_0xf026() // UNK_0xf026
@@ -487,7 +487,7 @@ void UNK_0xf026() // UNK_0xf026
 
 
 // ================================================
-// 0xf096: WORD 'UNK_0xf098' codep=0x224c parp=0xf098
+// 0xf096: WORD 'UNK_0xf098' codep=0x224c parp=0xf098 params=5 returns=1
 // ================================================
 
 void UNK_0xf098() // UNK_0xf098
@@ -510,7 +510,7 @@ void UNK_0xf098() // UNK_0xf098
 
 
 // ================================================
-// 0xf0b6: WORD '(.PODS)' codep=0x224c parp=0xf0c2
+// 0xf0b6: WORD '(.PODS)' codep=0x224c parp=0xf0c2 params=4 returns=0
 // ================================================
 // entry
 
@@ -581,7 +581,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
 // 0xf128: db 0x78 0x30 0xf8 0xff 0xff 0xf8 0x30 0x78 'x0    0x'
 
 // ================================================
-// 0xf130: WORD 'UNK_0xf132' codep=0x224c parp=0xf132
+// 0xf130: WORD 'UNK_0xf132' codep=0x224c parp=0xf132 params=2 returns=0
 // ================================================
 
 void UNK_0xf132() // UNK_0xf132
@@ -618,7 +618,7 @@ void UNK_0xf132() // UNK_0xf132
 
 
 // ================================================
-// 0xf172: WORD 'UNK_0xf174' codep=0x224c parp=0xf174
+// 0xf172: WORD 'UNK_0xf174' codep=0x224c parp=0xf174 params=2 returns=0
 // ================================================
 
 void UNK_0xf174() // UNK_0xf174
@@ -652,7 +652,7 @@ void UNK_0xf174() // UNK_0xf174
 
 
 // ================================================
-// 0xf1aa: WORD '(.SHIP)' codep=0x224c parp=0xf1b6
+// 0xf1aa: WORD '(.SHIP)' codep=0x224c parp=0xf1b6 params=0 returns=8
 // ================================================
 // entry
 
@@ -695,7 +695,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
 
 
 // ================================================
-// 0xf21b: WORD 'UNK_0xf21d' codep=0x224c parp=0xf21d
+// 0xf21b: WORD 'UNK_0xf21d' codep=0x224c parp=0xf21d params=0 returns=0
 // ================================================
 
 void UNK_0xf21d() // UNK_0xf21d
@@ -781,7 +781,7 @@ void UNK_0xf21d() // UNK_0xf21d
 
 
 // ================================================
-// 0xf30e: WORD 'UNK_0xf310' codep=0x224c parp=0xf310
+// 0xf30e: WORD 'UNK_0xf310' codep=0x224c parp=0xf310 params=0 returns=0
 // ================================================
 
 void UNK_0xf310() // UNK_0xf310

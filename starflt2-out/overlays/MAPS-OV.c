@@ -430,7 +430,7 @@ void UNK_0xee72() // UNK_0xee72
 
 
 // ================================================
-// 0xee80: WORD 'UNK_0xee82' codep=0x224c parp=0xee82
+// 0xee80: WORD 'UNK_0xee82' codep=0x224c parp=0xee82 params=2 returns=4
 // ================================================
 
 void UNK_0xee82() // UNK_0xee82
@@ -485,7 +485,7 @@ void UNK_0xee90() // UNK_0xee90
 
 
 // ================================================
-// 0xef04: WORD 'UNK_0xef06' codep=0x224c parp=0xef06
+// 0xef04: WORD 'UNK_0xef06' codep=0x224c parp=0xef06 params=0 returns=2
 // ================================================
 
 void UNK_0xef06() // UNK_0xef06
@@ -535,7 +535,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
 
 
 // ================================================
-// 0xef5f: WORD '4X4CONTOUR' codep=0x224c parp=0xef6e
+// 0xef5f: WORD '4X4CONTOUR' codep=0x224c parp=0xef6e params=0 returns=2
 // ================================================
 // entry
 

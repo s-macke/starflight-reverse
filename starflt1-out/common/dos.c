@@ -130,7 +130,7 @@ const unsigned short int pp_ASKMOUNT = 0x4658; // ASKMOUNT size: 2
 
 
 // ================================================
-// 0x40c6: WORD '>TIB' codep=0x224c parp=0x40cf
+// 0x40c6: WORD '>TIB' codep=0x224c parp=0x40cf params=2 returns=0
 // ================================================
 
 void _gt_TIB() // >TIB
@@ -148,7 +148,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef
+// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef params=2 returns=0
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -161,7 +161,7 @@ void DOSPARM() // DOSPARM
 
 
 // ================================================
-// 0x40fb: WORD 'XFCB' codep=0x224c parp=0x4104
+// 0x40fb: WORD 'XFCB' codep=0x224c parp=0x4104 params=0 returns=1
 // ================================================
 
 void XFCB() // XFCB
@@ -174,7 +174,7 @@ void XFCB() // XFCB
 
 
 // ================================================
-// 0x410e: WORD 'DRV' codep=0x224c parp=0x4116
+// 0x410e: WORD 'DRV' codep=0x224c parp=0x4116 params=0 returns=1
 // ================================================
 
 void DRV() // DRV
@@ -185,7 +185,7 @@ void DRV() // DRV
 
 
 // ================================================
-// 0x411c: WORD 'NAM' codep=0x224c parp=0x4124
+// 0x411c: WORD 'NAM' codep=0x224c parp=0x4124 params=0 returns=1
 // ================================================
 
 void NAM() // NAM
@@ -197,7 +197,7 @@ void NAM() // NAM
 
 
 // ================================================
-// 0x412c: WORD 'TYP' codep=0x224c parp=0x4134
+// 0x412c: WORD 'TYP' codep=0x224c parp=0x4134 params=0 returns=1
 // ================================================
 
 void TYP() // TYP
@@ -210,7 +210,7 @@ void TYP() // TYP
 
 
 // ================================================
-// 0x4140: WORD 'CURBLK' codep=0x224c parp=0x414b
+// 0x4140: WORD 'CURBLK' codep=0x224c parp=0x414b params=0 returns=1
 // ================================================
 
 void CURBLK() // CURBLK
@@ -223,7 +223,7 @@ void CURBLK() // CURBLK
 
 
 // ================================================
-// 0x4157: WORD 'RECSIZE' codep=0x224c parp=0x4163
+// 0x4157: WORD 'RECSIZE' codep=0x224c parp=0x4163 params=0 returns=1
 // ================================================
 
 void RECSIZE() // RECSIZE
@@ -236,7 +236,7 @@ void RECSIZE() // RECSIZE
 
 
 // ================================================
-// 0x416f: WORD 'FILESIZE' codep=0x224c parp=0x417c
+// 0x416f: WORD 'FILESIZE' codep=0x224c parp=0x417c params=0 returns=1
 // ================================================
 
 void FILESIZE() // FILESIZE
@@ -249,7 +249,7 @@ void FILESIZE() // FILESIZE
 
 
 // ================================================
-// 0x4188: WORD 'CURREC' codep=0x224c parp=0x4193
+// 0x4188: WORD 'CURREC' codep=0x224c parp=0x4193 params=0 returns=1
 // ================================================
 
 void CURREC() // CURREC
@@ -262,7 +262,7 @@ void CURREC() // CURREC
 
 
 // ================================================
-// 0x419f: WORD 'RELREC' codep=0x224c parp=0x41aa
+// 0x419f: WORD 'RELREC' codep=0x224c parp=0x41aa params=0 returns=1
 // ================================================
 
 void RELREC() // RELREC
@@ -275,7 +275,7 @@ void RELREC() // RELREC
 
 
 // ================================================
-// 0x41b6: WORD 'CLRFCB' codep=0x224c parp=0x41c1
+// 0x41b6: WORD 'CLRFCB' codep=0x224c parp=0x41c1 params=0 returns=0
 // ================================================
 
 void CLRFCB() // CLRFCB
@@ -295,7 +295,7 @@ void CLRFCB() // CLRFCB
 
 
 // ================================================
-// 0x41dd: WORD 'SYSTEM' codep=0x224c parp=0x41e8
+// 0x41dd: WORD 'SYSTEM' codep=0x224c parp=0x41e8 params=0 returns=0
 // ================================================
 
 void SYSTEM() // SYSTEM
@@ -309,7 +309,7 @@ void SYSTEM() // SYSTEM
 
 
 // ================================================
-// 0x41f6: WORD 'SYSUTIL' codep=0x224c parp=0x4202
+// 0x41f6: WORD 'SYSUTIL' codep=0x224c parp=0x4202 params=0 returns=0
 // ================================================
 
 void SYSUTIL() // SYSUTIL
@@ -323,7 +323,7 @@ void SYSUTIL() // SYSUTIL
 
 
 // ================================================
-// 0x4212: WORD 'DOSCALL' codep=0x224c parp=0x421e
+// 0x4212: WORD 'DOSCALL' codep=0x224c parp=0x421e params=1 returns=0
 // ================================================
 
 void DOSCALL() // DOSCALL
@@ -337,7 +337,7 @@ void DOSCALL() // DOSCALL
 
 
 // ================================================
-// 0x422c: WORD 'SELDSK' codep=0x224c parp=0x4237
+// 0x422c: WORD 'SELDSK' codep=0x224c parp=0x4237 params=1 returns=0
 // ================================================
 
 void SELDSK() // SELDSK
@@ -354,7 +354,7 @@ void SELDSK() // SELDSK
 
 
 // ================================================
-// 0x424b: WORD 'A::' codep=0x224c parp=0x4253
+// 0x424b: WORD 'A::' codep=0x224c parp=0x4253 params=0 returns=0
 // ================================================
 
 void A_c__c_() // A::
@@ -365,7 +365,7 @@ void A_c__c_() // A::
 
 
 // ================================================
-// 0x4259: WORD 'B::' codep=0x224c parp=0x4261
+// 0x4259: WORD 'B::' codep=0x224c parp=0x4261 params=0 returns=0
 // ================================================
 
 void B_c__c_() // B::
@@ -376,7 +376,7 @@ void B_c__c_() // B::
 
 
 // ================================================
-// 0x4267: WORD 'C::' codep=0x224c parp=0x426f
+// 0x4267: WORD 'C::' codep=0x224c parp=0x426f params=0 returns=0
 // ================================================
 
 void C_c__c_() // C::
@@ -428,7 +428,7 @@ void SETFCB() // SETFCB
 
 
 // ================================================
-// 0x42c6: WORD 'INIT' codep=0x224c parp=0x42cf
+// 0x42c6: WORD 'INIT' codep=0x224c parp=0x42cf params=0 returns=0
 // ================================================
 
 void INIT() // INIT
@@ -524,7 +524,7 @@ void MAKE() // MAKE
 
 
 // ================================================
-// 0x436e: WORD 'DOS-DTA' codep=0x224c parp=0x437a
+// 0x436e: WORD 'DOS-DTA' codep=0x224c parp=0x437a params=0 returns=0
 // ================================================
 
 void DOS_dash_DTA() // DOS-DTA
@@ -563,7 +563,7 @@ void WRITE_dash_RANDOM() // WRITE-RANDOM
 
 
 // ================================================
-// 0x43bf: WORD 'UNK_0x43c1' codep=0x224c parp=0x43c1
+// 0x43bf: WORD 'UNK_0x43c1' codep=0x224c parp=0x43c1 params=1 returns=0
 // ================================================
 
 void UNK_0x43c1() // UNK_0x43c1
@@ -737,7 +737,7 @@ void UNK_0x44c2() // UNK_0x44c2
 
 
 // ================================================
-// 0x4518: WORD 'UNK_0x451a' codep=0x224c parp=0x451a
+// 0x4518: WORD 'UNK_0x451a' codep=0x224c parp=0x451a params=0 returns=2
 // ================================================
 
 void UNK_0x451a() // UNK_0x451a
@@ -755,7 +755,7 @@ void UNK_0x451a() // UNK_0x451a
 
 
 // ================================================
-// 0x4534: WORD 'UNK_0x4536' codep=0x224c parp=0x4536
+// 0x4534: WORD 'UNK_0x4536' codep=0x224c parp=0x4536 params=1 returns=1
 // ================================================
 
 void UNK_0x4536() // UNK_0x4536
@@ -773,7 +773,7 @@ void UNK_0x4536() // UNK_0x4536
 
 
 // ================================================
-// 0x454c: WORD 'UNK_0x454e' codep=0x224c parp=0x454e
+// 0x454c: WORD 'UNK_0x454e' codep=0x224c parp=0x454e params=0 returns=1
 // ================================================
 
 void UNK_0x454e() // UNK_0x454e
@@ -843,7 +843,7 @@ void SETMAXDRV() // SETMAXDRV
 
 
 // ================================================
-// 0x45c3: WORD 'UNK_0x45c5' codep=0x224c parp=0x45c5
+// 0x45c3: WORD 'UNK_0x45c5' codep=0x224c parp=0x45c5 params=0 returns=0
 // ================================================
 
 void UNK_0x45c5() // UNK_0x45c5
@@ -859,7 +859,7 @@ void UNK_0x45c5() // UNK_0x45c5
 
 
 // ================================================
-// 0x45d7: WORD 'UNK_0x45d9' codep=0x224c parp=0x45d9
+// 0x45d7: WORD 'UNK_0x45d9' codep=0x224c parp=0x45d9 params=1 returns=1
 // ================================================
 
 void UNK_0x45d9() // UNK_0x45d9
@@ -929,7 +929,7 @@ void SMARTOPEN() // SMARTOPEN
 // 0x4658: db 0x69 0x46 'iF'
 
 // ================================================
-// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669
+// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669 params=9 returns=0
 // ================================================
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>
@@ -1033,7 +1033,7 @@ void DOSUNMOUNT() // DOSUNMOUNT
 
 
 // ================================================
-// 0x4776: WORD 'DR2' codep=0x224c parp=0x477e
+// 0x4776: WORD 'DR2' codep=0x224c parp=0x477e params=0 returns=0
 // ================================================
 
 void DR2() // DR2
@@ -1054,7 +1054,7 @@ void DR2() // DR2
 
 
 // ================================================
-// 0x479c: WORD 'DR3' codep=0x224c parp=0x47a4
+// 0x479c: WORD 'DR3' codep=0x224c parp=0x47a4 params=0 returns=0
 // ================================================
 
 void DR3() // DR3

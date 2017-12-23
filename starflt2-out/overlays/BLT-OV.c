@@ -382,7 +382,7 @@ void LDAP() // LDAP
 
 
 // ================================================
-// 0xf1d6: WORD 'UNK_0xf1d8' codep=0x224c parp=0xf1d8
+// 0xf1d6: WORD 'UNK_0xf1d8' codep=0x224c parp=0xf1d8 params=0 returns=1
 // ================================================
 
 void UNK_0xf1d8() // UNK_0xf1d8
@@ -410,7 +410,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
 
 
 // ================================================
-// 0xf1fe: WORD 'UNK_0xf200' codep=0x224c parp=0xf200
+// 0xf1fe: WORD 'UNK_0xf200' codep=0x224c parp=0xf200 params=0 returns=0
 // ================================================
 
 void UNK_0xf200() // UNK_0xf200
@@ -425,7 +425,7 @@ void UNK_0xf200() // UNK_0xf200
 
 
 // ================================================
-// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210
+// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210 params=0 returns=0
 // ================================================
 
 void UNK_0xf210() // UNK_0xf210
@@ -440,7 +440,7 @@ void UNK_0xf210() // UNK_0xf210
 
 
 // ================================================
-// 0xf220: WORD 'UNK_0xf222' codep=0x224c parp=0xf222
+// 0xf220: WORD 'UNK_0xf222' codep=0x224c parp=0xf222 params=0 returns=1
 // ================================================
 
 void UNK_0xf222() // UNK_0xf222
@@ -474,7 +474,7 @@ void UNK_0xf222() // UNK_0xf222
 
 
 // ================================================
-// 0xf258: WORD 'UNK_0xf25a' codep=0x224c parp=0xf25a
+// 0xf258: WORD 'UNK_0xf25a' codep=0x224c parp=0xf25a params=1 returns=1
 // ================================================
 
 void UNK_0xf25a() // UNK_0xf25a
@@ -488,7 +488,7 @@ void UNK_0xf25a() // UNK_0xf25a
 
 
 // ================================================
-// 0xf268: WORD 'UNK_0xf26a' codep=0x224c parp=0xf26a
+// 0xf268: WORD 'UNK_0xf26a' codep=0x224c parp=0xf26a params=0 returns=2
 // ================================================
 
 void UNK_0xf26a() // UNK_0xf26a

@@ -201,7 +201,7 @@ void DOSPARM() // DOSPARM
 // 0x40d4: db 0x05 0x00 '  '
 
 // ================================================
-// 0x40d6: WORD '?#DETTE' codep=0x224c parp=0x40e2
+// 0x40d6: WORD '?#DETTE' codep=0x224c parp=0x40e2 params=0 returns=2
 // ================================================
 
 void Is_n_DETTE() // ?#DETTE
@@ -219,7 +219,7 @@ void Is_n_DETTE() // ?#DETTE
 
 
 // ================================================
-// 0x40fc: WORD 'XFCB' codep=0x224c parp=0x4105
+// 0x40fc: WORD 'XFCB' codep=0x224c parp=0x4105 params=0 returns=1
 // ================================================
 
 void XFCB() // XFCB
@@ -232,7 +232,7 @@ void XFCB() // XFCB
 
 
 // ================================================
-// 0x410f: WORD 'DRV' codep=0x224c parp=0x4117
+// 0x410f: WORD 'DRV' codep=0x224c parp=0x4117 params=0 returns=1
 // ================================================
 
 void DRV() // DRV
@@ -243,7 +243,7 @@ void DRV() // DRV
 
 
 // ================================================
-// 0x411d: WORD 'NAM' codep=0x224c parp=0x4125
+// 0x411d: WORD 'NAM' codep=0x224c parp=0x4125 params=0 returns=1
 // ================================================
 
 void NAM() // NAM
@@ -255,7 +255,7 @@ void NAM() // NAM
 
 
 // ================================================
-// 0x412d: WORD 'TYP' codep=0x224c parp=0x4135
+// 0x412d: WORD 'TYP' codep=0x224c parp=0x4135 params=0 returns=1
 // ================================================
 
 void TYP() // TYP
@@ -268,7 +268,7 @@ void TYP() // TYP
 
 
 // ================================================
-// 0x4141: WORD 'CURBLK' codep=0x224c parp=0x414c
+// 0x4141: WORD 'CURBLK' codep=0x224c parp=0x414c params=0 returns=1
 // ================================================
 
 void CURBLK() // CURBLK
@@ -281,7 +281,7 @@ void CURBLK() // CURBLK
 
 
 // ================================================
-// 0x4158: WORD 'RECSIZE' codep=0x224c parp=0x4164
+// 0x4158: WORD 'RECSIZE' codep=0x224c parp=0x4164 params=0 returns=1
 // ================================================
 
 void RECSIZE() // RECSIZE
@@ -294,7 +294,7 @@ void RECSIZE() // RECSIZE
 
 
 // ================================================
-// 0x4170: WORD 'FILESIZ' codep=0x224c parp=0x417c
+// 0x4170: WORD 'FILESIZ' codep=0x224c parp=0x417c params=0 returns=1
 // ================================================
 
 void FILESIZ() // FILESIZ
@@ -307,7 +307,7 @@ void FILESIZ() // FILESIZ
 
 
 // ================================================
-// 0x4188: WORD 'CURREC' codep=0x224c parp=0x4193
+// 0x4188: WORD 'CURREC' codep=0x224c parp=0x4193 params=0 returns=1
 // ================================================
 
 void CURREC() // CURREC
@@ -320,7 +320,7 @@ void CURREC() // CURREC
 
 
 // ================================================
-// 0x419f: WORD 'RELREC' codep=0x224c parp=0x41aa
+// 0x419f: WORD 'RELREC' codep=0x224c parp=0x41aa params=0 returns=1
 // ================================================
 
 void RELREC() // RELREC
@@ -353,7 +353,7 @@ void CLRFCB() // CLRFCB
 
 
 // ================================================
-// 0x41dd: WORD 'SYSTEM' codep=0x224c parp=0x41e8
+// 0x41dd: WORD 'SYSTEM' codep=0x224c parp=0x41e8 params=0 returns=0
 // ================================================
 
 void SYSTEM() // SYSTEM
@@ -367,7 +367,7 @@ void SYSTEM() // SYSTEM
 
 
 // ================================================
-// 0x41f6: WORD 'SYSUTIL' codep=0x224c parp=0x4202
+// 0x41f6: WORD 'SYSUTIL' codep=0x224c parp=0x4202 params=0 returns=0
 // ================================================
 
 void SYSUTIL() // SYSUTIL
@@ -587,7 +587,7 @@ void WRITE_dash_R() // WRITE-R
 
 
 // ================================================
-// 0x4383: WORD 'UNK_0x4385' codep=0x224c parp=0x4385
+// 0x4383: WORD 'UNK_0x4385' codep=0x224c parp=0x4385 params=1 returns=0
 // ================================================
 
 void UNK_0x4385() // UNK_0x4385
@@ -966,7 +966,7 @@ void SMARTOP() // SMARTOP
 // 0x4635: db 0x00 0x00 '  '
 
 // ================================================
-// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643
+// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643 params=9 returns=0
 // ================================================
 
 void _st_ASKMOU() // <ASKMOU
@@ -1221,7 +1221,7 @@ void SETSYSK() // SETSYSK
 // 0x4856: db 0x4e 0x95 0x00 0x00 'N   '
 
 // ================================================
-// 0x485a: WORD '?ERR' codep=0x224c parp=0x4863
+// 0x485a: WORD '?ERR' codep=0x224c parp=0x4863 params=0 returns=1
 // ================================================
 
 void IsERR() // ?ERR

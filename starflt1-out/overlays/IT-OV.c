@@ -209,7 +209,7 @@ LoadDataType UNK_0xede6 = {ARTIFACTIDX, 0x1d, 0x01, 0x1e, 0x652c};
 // 0xee06: dw 0x0010
 
 // ================================================
-// 0xee08: WORD 'UNK_0xee0a' codep=0x224c parp=0xee0a
+// 0xee08: WORD 'UNK_0xee0a' codep=0x224c parp=0xee0a params=0 returns=0
 // ================================================
 
 void UNK_0xee0a() // UNK_0xee0a
@@ -239,7 +239,7 @@ void UNK_0xee1a() // UNK_0xee1a
 
 
 // ================================================
-// 0xee2a: WORD 'UNK_0xee2c' codep=0x224c parp=0xee2c
+// 0xee2a: WORD 'UNK_0xee2c' codep=0x224c parp=0xee2c params=0 returns=0
 // ================================================
 
 void UNK_0xee2c() // UNK_0xee2c
@@ -266,7 +266,7 @@ void UNK_0xee2c() // UNK_0xee2c
 
 
 // ================================================
-// 0xee52: WORD 'UNK_0xee54' codep=0x224c parp=0xee54
+// 0xee52: WORD 'UNK_0xee54' codep=0x224c parp=0xee54 params=2 returns=0
 // ================================================
 
 void UNK_0xee54() // UNK_0xee54
@@ -289,7 +289,7 @@ void UNK_0xee54() // UNK_0xee54
 // 0xee6c: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xee6e: WORD 'UNK_0xee70' codep=0x224c parp=0xee70
+// 0xee6e: WORD 'UNK_0xee70' codep=0x224c parp=0xee70 params=2 returns=0
 // ================================================
 
 void UNK_0xee70() // UNK_0xee70
@@ -397,7 +397,7 @@ void UNK_0xef61() // UNK_0xef61
 
 
 // ================================================
-// 0xef87: WORD 'UNK_0xef89' codep=0x224c parp=0xef89
+// 0xef87: WORD 'UNK_0xef89' codep=0x224c parp=0xef89 params=2 returns=0
 // ================================================
 
 void UNK_0xef89() // UNK_0xef89
@@ -466,7 +466,7 @@ void UNK_0xefe9() // UNK_0xefe9
 
 
 // ================================================
-// 0xf007: WORD 'DATE$>ADR' codep=0x224c parp=0xf015
+// 0xf007: WORD 'DATE$>ADR' codep=0x224c parp=0xf015 params=2 returns=0
 // ================================================
 // entry
 
@@ -529,7 +529,7 @@ void UNK_0xf074() // UNK_0xf074
 
 
 // ================================================
-// 0xf080: WORD 'UNK_0xf082' codep=0x224c parp=0xf082
+// 0xf080: WORD 'UNK_0xf082' codep=0x224c parp=0xf082 params=0 returns=0
 // ================================================
 
 void UNK_0xf082() // UNK_0xf082
@@ -976,7 +976,7 @@ void _gt_BOX() // >BOX
 
 
 // ================================================
-// 0xf381: WORD '?ELEMENT' codep=0x224c parp=0xf38e
+// 0xf381: WORD '?ELEMENT' codep=0x224c parp=0xf38e params=2 returns=1
 // ================================================
 
 void IsELEMENT() // ?ELEMENT

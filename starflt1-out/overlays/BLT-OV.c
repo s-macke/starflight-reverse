@@ -395,7 +395,7 @@ void DrawHYBRID() // .HYBRID
 
 
 // ================================================
-// 0xf4fa: WORD 'PADSEG' codep=0x224c parp=0xf505
+// 0xf4fa: WORD 'PADSEG' codep=0x224c parp=0xf505 params=0 returns=1
 // ================================================
 
 void PADSEG() // PADSEG

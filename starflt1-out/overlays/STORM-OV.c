@@ -111,7 +111,7 @@ void STORMS(); // STORMS
 // 0xf0a2: db 0x48 0x00 'H '
 
 // ================================================
-// 0xf0a4: WORD 'UNK_0xf0a6' codep=0x224c parp=0xf0a6
+// 0xf0a4: WORD 'UNK_0xf0a6' codep=0x224c parp=0xf0a6 params=1 returns=2
 // ================================================
 
 void UNK_0xf0a6() // UNK_0xf0a6
@@ -336,7 +336,7 @@ void UNK_0xf298() // UNK_0xf298
 
 
 // ================================================
-// 0xf2b0: WORD 'UNK_0xf2b2' codep=0x224c parp=0xf2b2
+// 0xf2b0: WORD 'UNK_0xf2b2' codep=0x224c parp=0xf2b2 params=0 returns=1
 // ================================================
 
 void UNK_0xf2b2() // UNK_0xf2b2
@@ -379,7 +379,7 @@ void UNK_0xf2da() // UNK_0xf2da
 
 
 // ================================================
-// 0xf2f2: WORD 'UNK_0xf2f4' codep=0x224c parp=0xf2f4
+// 0xf2f2: WORD 'UNK_0xf2f4' codep=0x224c parp=0xf2f4 params=0 returns=0
 // ================================================
 
 void UNK_0xf2f4() // UNK_0xf2f4

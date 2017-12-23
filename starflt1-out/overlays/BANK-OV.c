@@ -127,7 +127,7 @@ const unsigned short int cc__2LEFT = 0xefa0; // 2LEFT
 // 0xef82: db 0x5c 0x00 '\ '
 
 // ================================================
-// 0xef84: WORD 'TRIM' codep=0x224c parp=0xef86
+// 0xef84: WORD 'TRIM' codep=0x224c parp=0xef86 params=10 returns=1
 // ================================================
 
 void TRIM() // TRIM
@@ -394,7 +394,7 @@ void INT_pe_() // INT%
 // 0xf112: db 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 'DDDDDDDDDDDDDDDDDDDD'
 
 // ================================================
-// 0xf126: WORD '.DOTS' codep=0x224c parp=0xf128
+// 0xf126: WORD '.DOTS' codep=0x224c parp=0xf128 params=1 returns=0
 // ================================================
 
 void DrawDOTS() // .DOTS
@@ -421,7 +421,7 @@ void DrawDOTS() // .DOTS
 
 
 // ================================================
-// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152
+// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152 params=4 returns=0
 // ================================================
 
 void DrawBDATE() // .BDATE
@@ -506,7 +506,7 @@ void Is_dot_MESS() // ?.MESS
 
 
 // ================================================
-// 0xf1e0: WORD 'BTITLE' codep=0x224c parp=0xf1e2
+// 0xf1e0: WORD 'BTITLE' codep=0x224c parp=0xf1e2 params=0 returns=4
 // ================================================
 
 void BTITLE() // BTITLE
@@ -555,7 +555,7 @@ void BTITLE() // BTITLE
 
 
 // ================================================
-// 0xf26d: WORD 'BOFRAME' codep=0x224c parp=0xf26f
+// 0xf26d: WORD 'BOFRAME' codep=0x224c parp=0xf26f params=1 returns=28
 // ================================================
 
 void BOFRAME() // BOFRAME
@@ -781,7 +781,7 @@ void BMESS() // BMESS
 
 
 // ================================================
-// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac
+// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=3 returns=0
 // ================================================
 
 void DrawBALANCE() // .BALANCE

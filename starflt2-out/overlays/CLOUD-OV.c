@@ -70,7 +70,7 @@ IFieldType UNK_0xf3c6 = {ASSIGN_CREWIDX, 0x11, 0x12};
 IFieldType UNK_0xf3d5 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
-// 0xf3d8: WORD 'UNK_0xf3da' codep=0x224c parp=0xf3da
+// 0xf3d8: WORD 'UNK_0xf3da' codep=0x224c parp=0xf3da params=2 returns=1
 // ================================================
 
 void UNK_0xf3da() // UNK_0xf3da
@@ -214,7 +214,7 @@ void UNK_0xf4ca() // UNK_0xf4ca
 
 
 // ================================================
-// 0xf4d2: WORD 'UNK_0xf4d4' codep=0x224c parp=0xf4d4
+// 0xf4d2: WORD 'UNK_0xf4d4' codep=0x224c parp=0xf4d4 params=0 returns=0
 // ================================================
 
 void UNK_0xf4d4() // UNK_0xf4d4

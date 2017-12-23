@@ -250,7 +250,7 @@ LoadDataType UNK_0xecdf = {PLANETIDX, 0x0f, 0x01, 0x17, 0x6c49};
 LoadDataType UNK_0xece7 = {PLANETIDX, 0x10, 0x01, 0x17, 0x6c49};
 
 // ================================================
-// 0xeced: WORD 'UNK_0xecef' codep=0x224c parp=0xecef
+// 0xeced: WORD 'UNK_0xecef' codep=0x224c parp=0xecef params=0 returns=0
 // ================================================
 
 void UNK_0xecef() // UNK_0xecef
@@ -260,7 +260,7 @@ void UNK_0xecef() // UNK_0xecef
 
 
 // ================================================
-// 0xecfa: WORD 'UNK_0xecfc' codep=0x224c parp=0xecfc
+// 0xecfa: WORD 'UNK_0xecfc' codep=0x224c parp=0xecfc params=0 returns=0
 // ================================================
 
 void UNK_0xecfc() // UNK_0xecfc
@@ -270,7 +270,7 @@ void UNK_0xecfc() // UNK_0xecfc
 
 
 // ================================================
-// 0xed07: WORD 'UNK_0xed09' codep=0x224c parp=0xed09
+// 0xed07: WORD 'UNK_0xed09' codep=0x224c parp=0xed09 params=0 returns=0
 // ================================================
 
 void UNK_0xed09() // UNK_0xed09
@@ -318,7 +318,7 @@ void UNK_0xed38() // UNK_0xed38
 
 
 // ================================================
-// 0xed3e: WORD 'UNK_0xed40' codep=0x224c parp=0xed40
+// 0xed3e: WORD 'UNK_0xed40' codep=0x224c parp=0xed40 params=0 returns=0
 // ================================================
 
 void UNK_0xed40() // UNK_0xed40
@@ -328,7 +328,7 @@ void UNK_0xed40() // UNK_0xed40
 
 
 // ================================================
-// 0xed4b: WORD 'UNK_0xed4d' codep=0x224c parp=0xed4d
+// 0xed4b: WORD 'UNK_0xed4d' codep=0x224c parp=0xed4d params=0 returns=0
 // ================================================
 
 void UNK_0xed4d() // UNK_0xed4d
@@ -504,7 +504,7 @@ void UNK_0xee9b() // UNK_0xee9b
 
 
 // ================================================
-// 0xeea5: WORD 'UNK_0xeea7' codep=0x224c parp=0xeea7
+// 0xeea5: WORD 'UNK_0xeea7' codep=0x224c parp=0xeea7 params=0 returns=0
 // ================================================
 
 void UNK_0xeea7() // UNK_0xeea7
@@ -514,7 +514,7 @@ void UNK_0xeea7() // UNK_0xeea7
 
 
 // ================================================
-// 0xeeb5: WORD 'UNK_0xeeb7' codep=0x224c parp=0xeeb7
+// 0xeeb5: WORD 'UNK_0xeeb7' codep=0x224c parp=0xeeb7 params=0 returns=0
 // ================================================
 
 void UNK_0xeeb7() // UNK_0xeeb7
@@ -524,7 +524,7 @@ void UNK_0xeeb7() // UNK_0xeeb7
 
 
 // ================================================
-// 0xeec1: WORD 'UNK_0xeec3' codep=0x224c parp=0xeec3
+// 0xeec1: WORD 'UNK_0xeec3' codep=0x224c parp=0xeec3 params=0 returns=0
 // ================================================
 
 void UNK_0xeec3() // UNK_0xeec3
@@ -574,7 +574,7 @@ void UNK_0xeeed() // UNK_0xeeed
 
 
 // ================================================
-// 0xef06: WORD 'UNK_0xef08' codep=0x224c parp=0xef08
+// 0xef06: WORD 'UNK_0xef08' codep=0x224c parp=0xef08 params=0 returns=0
 // ================================================
 
 void UNK_0xef08() // UNK_0xef08
@@ -584,7 +584,7 @@ void UNK_0xef08() // UNK_0xef08
 
 
 // ================================================
-// 0xef11: WORD 'UNK_0xef13' codep=0x224c parp=0xef13
+// 0xef11: WORD 'UNK_0xef13' codep=0x224c parp=0xef13 params=3 returns=1
 // ================================================
 
 void UNK_0xef13() // UNK_0xef13
@@ -694,7 +694,7 @@ void UNK_0xeff7() // UNK_0xeff7
 
 
 // ================================================
-// 0xf02a: WORD 'UNK_0xf02c' codep=0x224c parp=0xf02c
+// 0xf02a: WORD 'UNK_0xf02c' codep=0x224c parp=0xf02c params=3 returns=0
 // ================================================
 
 void UNK_0xf02c() // UNK_0xf02c
@@ -791,7 +791,7 @@ void UNK_0xf0b5() // UNK_0xf0b5
 
 
 // ================================================
-// 0xf0da: WORD 'UNK_0xf0dc' codep=0x224c parp=0xf0dc
+// 0xf0da: WORD 'UNK_0xf0dc' codep=0x224c parp=0xf0dc params=0 returns=0
 // ================================================
 
 void UNK_0xf0dc() // UNK_0xf0dc
@@ -801,7 +801,7 @@ void UNK_0xf0dc() // UNK_0xf0dc
 
 
 // ================================================
-// 0xf0e7: WORD 'UNK_0xf0e9' codep=0x224c parp=0xf0e9
+// 0xf0e7: WORD 'UNK_0xf0e9' codep=0x224c parp=0xf0e9 params=0 returns=0
 // ================================================
 
 void UNK_0xf0e9() // UNK_0xf0e9
@@ -812,7 +812,7 @@ void UNK_0xf0e9() // UNK_0xf0e9
 
 
 // ================================================
-// 0xf0f4: WORD 'UNK_0xf0f6' codep=0x224c parp=0xf0f6
+// 0xf0f4: WORD 'UNK_0xf0f6' codep=0x224c parp=0xf0f6 params=0 returns=0
 // ================================================
 
 void UNK_0xf0f6() // UNK_0xf0f6
@@ -822,7 +822,7 @@ void UNK_0xf0f6() // UNK_0xf0f6
 
 
 // ================================================
-// 0xf104: WORD 'UNK_0xf106' codep=0x224c parp=0xf106
+// 0xf104: WORD 'UNK_0xf106' codep=0x224c parp=0xf106 params=0 returns=0
 // ================================================
 
 void UNK_0xf106() // UNK_0xf106
@@ -832,7 +832,7 @@ void UNK_0xf106() // UNK_0xf106
 
 
 // ================================================
-// 0xf113: WORD 'UNK_0xf115' codep=0x224c parp=0xf115
+// 0xf113: WORD 'UNK_0xf115' codep=0x224c parp=0xf115 params=0 returns=0
 // ================================================
 
 void UNK_0xf115() // UNK_0xf115
@@ -842,7 +842,7 @@ void UNK_0xf115() // UNK_0xf115
 
 
 // ================================================
-// 0xf121: WORD 'UNK_0xf123' codep=0x224c parp=0xf123
+// 0xf121: WORD 'UNK_0xf123' codep=0x224c parp=0xf123 params=0 returns=0
 // ================================================
 
 void UNK_0xf123() // UNK_0xf123
@@ -913,7 +913,7 @@ void UNK_0xf158() // UNK_0xf158
 
 
 // ================================================
-// 0xf195: WORD 'UNK_0xf197' codep=0x224c parp=0xf197
+// 0xf195: WORD 'UNK_0xf197' codep=0x224c parp=0xf197 params=0 returns=0
 // ================================================
 
 void UNK_0xf197() // UNK_0xf197
@@ -923,7 +923,7 @@ void UNK_0xf197() // UNK_0xf197
 
 
 // ================================================
-// 0xf19f: WORD 'UNK_0xf1a1' codep=0x224c parp=0xf1a1
+// 0xf19f: WORD 'UNK_0xf1a1' codep=0x224c parp=0xf1a1 params=0 returns=0
 // ================================================
 
 void UNK_0xf1a1() // UNK_0xf1a1
@@ -933,7 +933,7 @@ void UNK_0xf1a1() // UNK_0xf1a1
 
 
 // ================================================
-// 0xf1ac: WORD 'UNK_0xf1ae' codep=0x224c parp=0xf1ae
+// 0xf1ac: WORD 'UNK_0xf1ae' codep=0x224c parp=0xf1ae params=0 returns=0
 // ================================================
 
 void UNK_0xf1ae() // UNK_0xf1ae
@@ -943,7 +943,7 @@ void UNK_0xf1ae() // UNK_0xf1ae
 
 
 // ================================================
-// 0xf1b9: WORD 'UNK_0xf1bb' codep=0x224c parp=0xf1bb
+// 0xf1b9: WORD 'UNK_0xf1bb' codep=0x224c parp=0xf1bb params=0 returns=0
 // ================================================
 
 void UNK_0xf1bb() // UNK_0xf1bb
@@ -953,7 +953,7 @@ void UNK_0xf1bb() // UNK_0xf1bb
 
 
 // ================================================
-// 0xf1c4: WORD 'UNK_0xf1c6' codep=0x224c parp=0xf1c6
+// 0xf1c4: WORD 'UNK_0xf1c6' codep=0x224c parp=0xf1c6 params=0 returns=0
 // ================================================
 
 void UNK_0xf1c6() // UNK_0xf1c6
@@ -1052,7 +1052,7 @@ void UNK_0xf221() // UNK_0xf221
 
 
 // ================================================
-// 0xf281: WORD 'UNK_0xf283' codep=0x224c parp=0xf283
+// 0xf281: WORD 'UNK_0xf283' codep=0x224c parp=0xf283 params=0 returns=0
 // ================================================
 
 void UNK_0xf283() // UNK_0xf283
@@ -1062,7 +1062,7 @@ void UNK_0xf283() // UNK_0xf283
 
 
 // ================================================
-// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e
+// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=0 returns=0
 // ================================================
 
 void UNK_0xf28e() // UNK_0xf28e
@@ -1073,7 +1073,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
 
 // ================================================
-// 0xf29a: WORD 'UNK_0xf29c' codep=0x224c parp=0xf29c
+// 0xf29a: WORD 'UNK_0xf29c' codep=0x224c parp=0xf29c params=0 returns=0
 // ================================================
 
 void UNK_0xf29c() // UNK_0xf29c
@@ -1083,7 +1083,7 @@ void UNK_0xf29c() // UNK_0xf29c
 
 
 // ================================================
-// 0xf2a9: WORD 'UNK_0xf2ab' codep=0x224c parp=0xf2ab
+// 0xf2a9: WORD 'UNK_0xf2ab' codep=0x224c parp=0xf2ab params=0 returns=0
 // ================================================
 
 void UNK_0xf2ab() // UNK_0xf2ab
@@ -1093,7 +1093,7 @@ void UNK_0xf2ab() // UNK_0xf2ab
 
 
 // ================================================
-// 0xf2b5: WORD 'UNK_0xf2b7' codep=0x224c parp=0xf2b7
+// 0xf2b5: WORD 'UNK_0xf2b7' codep=0x224c parp=0xf2b7 params=0 returns=0
 // ================================================
 
 void UNK_0xf2b7() // UNK_0xf2b7
@@ -1150,7 +1150,7 @@ void UNK_0xf2e9() // UNK_0xf2e9
 
 
 // ================================================
-// 0xf311: WORD 'UNK_0xf313' codep=0x224c parp=0xf313
+// 0xf311: WORD 'UNK_0xf313' codep=0x224c parp=0xf313 params=0 returns=0
 // ================================================
 
 void UNK_0xf313() // UNK_0xf313
@@ -1160,7 +1160,7 @@ void UNK_0xf313() // UNK_0xf313
 
 
 // ================================================
-// 0xf31c: WORD 'UNK_0xf31e' codep=0x224c parp=0xf31e
+// 0xf31c: WORD 'UNK_0xf31e' codep=0x224c parp=0xf31e params=0 returns=0
 // ================================================
 
 void UNK_0xf31e() // UNK_0xf31e
@@ -1170,7 +1170,7 @@ void UNK_0xf31e() // UNK_0xf31e
 
 
 // ================================================
-// 0xf32b: WORD 'UNK_0xf32d' codep=0x224c parp=0xf32d
+// 0xf32b: WORD 'UNK_0xf32d' codep=0x224c parp=0xf32d params=0 returns=0
 // ================================================
 
 void UNK_0xf32d() // UNK_0xf32d
@@ -1180,7 +1180,7 @@ void UNK_0xf32d() // UNK_0xf32d
 
 
 // ================================================
-// 0xf339: WORD 'UNK_0xf33b' codep=0x224c parp=0xf33b
+// 0xf339: WORD 'UNK_0xf33b' codep=0x224c parp=0xf33b params=0 returns=0
 // ================================================
 
 void UNK_0xf33b() // UNK_0xf33b
@@ -1253,7 +1253,7 @@ void UNK_0xf38f() // UNK_0xf38f
 // 0xf3af: db 0x4d 0x4b 0x47 0x46 0x41 0x42 0x4f 'MKGFABO'
 
 // ================================================
-// 0xf3b6: WORD 'UNK_0xf3b8' codep=0x224c parp=0xf3b8
+// 0xf3b6: WORD 'UNK_0xf3b8' codep=0x224c parp=0xf3b8 params=1 returns=1
 // ================================================
 
 void UNK_0xf3b8() // UNK_0xf3b8

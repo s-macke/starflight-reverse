@@ -195,7 +195,7 @@ const unsigned short int cc_UNK_0xe2a2 = 0xe2a2; // UNK_0xe2a2
 // 0xe2a4: db 0x4d 0x74 0x43 0x0b 0x02 0x4c 0x22 0xf0 0x0d 0x12 0x7e 0x90 0x16 'MtC  L"   ~  '
 
 // ================================================
-// 0xe2b1: WORD 'UNK_0xe2b3' codep=0x224c parp=0xe2b3
+// 0xe2b1: WORD 'UNK_0xe2b3' codep=0x224c parp=0xe2b3 params=0 returns=2
 // ================================================
 
 void UNK_0xe2b3() // UNK_0xe2b3
@@ -208,7 +208,7 @@ void UNK_0xe2b3() // UNK_0xe2b3
 
 
 // ================================================
-// 0xe2bd: WORD 'UNK_0xe2bf' codep=0x224c parp=0xe2bf
+// 0xe2bd: WORD 'UNK_0xe2bf' codep=0x224c parp=0xe2bf params=2 returns=0
 // ================================================
 
 void UNK_0xe2bf() // UNK_0xe2bf
@@ -365,7 +365,7 @@ void UNK_0xe3c2() // UNK_0xe3c2
 
 
 // ================================================
-// 0xe3cc: WORD 'UNK_0xe3ce' codep=0x224c parp=0xe3ce
+// 0xe3cc: WORD 'UNK_0xe3ce' codep=0x224c parp=0xe3ce params=3 returns=1
 // ================================================
 
 void UNK_0xe3ce() // UNK_0xe3ce
@@ -376,7 +376,7 @@ void UNK_0xe3ce() // UNK_0xe3ce
 
 
 // ================================================
-// 0xe3d4: WORD 'UNK_0xe3d6' codep=0x224c parp=0xe3d6
+// 0xe3d4: WORD 'UNK_0xe3d6' codep=0x224c parp=0xe3d6 params=3 returns=1
 // ================================================
 
 void UNK_0xe3d6() // UNK_0xe3d6
@@ -424,7 +424,7 @@ void UNK_0xe3f4() // UNK_0xe3f4
 // 0xe400: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xe402: WORD 'UNK_0xe404' codep=0x224c parp=0xe404
+// 0xe402: WORD 'UNK_0xe404' codep=0x224c parp=0xe404 params=1 returns=0
 // ================================================
 
 void UNK_0xe404() // UNK_0xe404
@@ -580,7 +580,7 @@ LoadDataType UNK_0xe4f7 = {CREATUREIDX, 0x2e, 0x02, 0x9c, 0x69d8};
 // 0xe4fd: db 0x4c 0x22 0x41 0x0e 0xb4 0x0d 0xae 0x3f 0x90 0x0e 0xae 0x3f 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 'L"A    ?   ?  L"  >         '
 
 // ================================================
-// 0xe519: WORD 'UNK_0xe51b' codep=0x224c parp=0xe51b
+// 0xe519: WORD 'UNK_0xe51b' codep=0x224c parp=0xe51b params=0 returns=0
 // ================================================
 
 void UNK_0xe51b() // UNK_0xe51b
@@ -597,7 +597,7 @@ void UNK_0xe51b() // UNK_0xe51b
 
 
 // ================================================
-// 0xe52d: WORD 'UNK_0xe52f' codep=0x224c parp=0xe52f
+// 0xe52d: WORD 'UNK_0xe52f' codep=0x224c parp=0xe52f params=1 returns=2
 // ================================================
 
 void UNK_0xe52f() // UNK_0xe52f
@@ -727,7 +727,7 @@ void UNK_0xe5fd() // UNK_0xe5fd
 
 
 // ================================================
-// 0xe609: WORD 'UNK_0xe60b' codep=0x224c parp=0xe60b
+// 0xe609: WORD 'UNK_0xe60b' codep=0x224c parp=0xe60b params=1 returns=1
 // ================================================
 
 void UNK_0xe60b() // UNK_0xe60b
@@ -830,7 +830,7 @@ void UNK_0xe740() // UNK_0xe740
 
 
 // ================================================
-// 0xe760: WORD 'UNK_0xe762' codep=0x224c parp=0xe762
+// 0xe760: WORD 'UNK_0xe762' codep=0x224c parp=0xe762 params=0 returns=0
 // ================================================
 
 void UNK_0xe762() // UNK_0xe762
@@ -1305,7 +1305,7 @@ void UNK_0xf02b() // UNK_0xf02b
 // 0xf0b4: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf0b6: WORD 'UNK_0xf0b8' codep=0x224c parp=0xf0b8
+// 0xf0b6: WORD 'UNK_0xf0b8' codep=0x224c parp=0xf0b8 params=0 returns=5
 // ================================================
 
 void UNK_0xf0b8() // UNK_0xf0b8
@@ -1877,7 +1877,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
 
 
 // ================================================
-// 0xf4be: WORD 'UNK_0xf4c0' codep=0x224c parp=0xf4c0
+// 0xf4be: WORD 'UNK_0xf4c0' codep=0x224c parp=0xf4c0 params=0 returns=0
 // ================================================
 
 void UNK_0xf4c0() // UNK_0xf4c0
@@ -1909,7 +1909,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 
 
 // ================================================
-// 0xf4ec: WORD 'C+OPARMS' codep=0x224c parp=0xf4f9
+// 0xf4ec: WORD 'C+OPARMS' codep=0x224c parp=0xf4f9 params=0 returns=2
 // ================================================
 // entry
 

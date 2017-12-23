@@ -161,7 +161,7 @@ const unsigned short int cc_UNK_0xef6a = 0xef6a; // UNK_0xef6a
 IFieldType UNK_0xef6e = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xef71: WORD 'UNK_0xef73' codep=0x224c parp=0xef73
+// 0xef71: WORD 'UNK_0xef73' codep=0x224c parp=0xef73 params=0 returns=4
 // ================================================
 
 void UNK_0xef73() // UNK_0xef73
@@ -223,7 +223,7 @@ void UNK_0xef73() // UNK_0xef73
 
 
 // ================================================
-// 0xf006: WORD 'UNK_0xf008' codep=0x224c parp=0xf008
+// 0xf006: WORD 'UNK_0xf008' codep=0x224c parp=0xf008 params=9 returns=1
 // ================================================
 
 void UNK_0xf008() // UNK_0xf008
@@ -239,7 +239,7 @@ void UNK_0xf008() // UNK_0xf008
 
 
 // ================================================
-// 0xf01e: WORD 'UNK_0xf020' codep=0x224c parp=0xf020
+// 0xf01e: WORD 'UNK_0xf020' codep=0x224c parp=0xf020 params=0 returns=0
 // ================================================
 
 void UNK_0xf020() // UNK_0xf020
@@ -523,7 +523,7 @@ void UNK_0xf1ac() // UNK_0xf1ac
 
 
 // ================================================
-// 0xf1d4: WORD 'UNK_0xf1d6' codep=0x224c parp=0xf1d6
+// 0xf1d4: WORD 'UNK_0xf1d6' codep=0x224c parp=0xf1d6 params=0 returns=2
 // ================================================
 
 void UNK_0xf1d6() // UNK_0xf1d6
@@ -561,7 +561,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
 
 
 // ================================================
-// 0xf250: WORD 'UNK_0xf252' codep=0x224c parp=0xf252
+// 0xf250: WORD 'UNK_0xf252' codep=0x224c parp=0xf252 params=1 returns=0
 // ================================================
 
 void UNK_0xf252() // UNK_0xf252
@@ -574,7 +574,7 @@ void UNK_0xf252() // UNK_0xf252
 
 
 // ================================================
-// 0xf25c: WORD 'UNK_0xf25e' codep=0x224c parp=0xf25e
+// 0xf25c: WORD 'UNK_0xf25e' codep=0x224c parp=0xf25e params=0 returns=9
 // ================================================
 
 void UNK_0xf25e() // UNK_0xf25e
@@ -835,7 +835,7 @@ void UNK_0xf430() // UNK_0xf430
 
 
 // ================================================
-// 0xf483: WORD 'DEPART' codep=0x224c parp=0xf48e
+// 0xf483: WORD 'DEPART' codep=0x224c parp=0xf48e params=0 returns=0
 // ================================================
 // entry
 

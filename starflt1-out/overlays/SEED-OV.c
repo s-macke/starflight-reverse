@@ -351,7 +351,7 @@ void UNK_0xed19() // UNK_0xed19
 
 
 // ================================================
-// 0xed2f: WORD 'UNK_0xed31' codep=0x224c parp=0xed31
+// 0xed2f: WORD 'UNK_0xed31' codep=0x224c parp=0xed31 params=3 returns=1
 // ================================================
 
 void UNK_0xed31() // UNK_0xed31
@@ -364,7 +364,7 @@ void UNK_0xed31() // UNK_0xed31
 
 
 // ================================================
-// 0xed3b: WORD 'UNK_0xed3d' codep=0x224c parp=0xed3d
+// 0xed3b: WORD 'UNK_0xed3d' codep=0x224c parp=0xed3d params=6 returns=0
 // ================================================
 
 void UNK_0xed3d() // UNK_0xed3d
@@ -393,7 +393,7 @@ void UNK_0xed49() // UNK_0xed49
 
 
 // ================================================
-// 0xed59: WORD 'UNK_0xed5b' codep=0x224c parp=0xed5b
+// 0xed59: WORD 'UNK_0xed5b' codep=0x224c parp=0xed5b params=2 returns=2
 // ================================================
 
 void UNK_0xed5b() // UNK_0xed5b
@@ -414,7 +414,7 @@ void UNK_0xed5b() // UNK_0xed5b
 
 
 // ================================================
-// 0xed77: WORD 'UNK_0xed79' codep=0x224c parp=0xed79
+// 0xed77: WORD 'UNK_0xed79' codep=0x224c parp=0xed79 params=2 returns=5
 // ================================================
 
 void UNK_0xed79() // UNK_0xed79
@@ -429,7 +429,7 @@ void UNK_0xed79() // UNK_0xed79
 
 
 // ================================================
-// 0xed89: WORD 'UNK_0xed8b' codep=0x224c parp=0xed8b
+// 0xed89: WORD 'UNK_0xed8b' codep=0x224c parp=0xed8b params=2 returns=5
 // ================================================
 
 void UNK_0xed8b() // UNK_0xed8b
@@ -444,7 +444,7 @@ void UNK_0xed8b() // UNK_0xed8b
 
 
 // ================================================
-// 0xed9b: WORD 'UNK_0xed9d' codep=0x224c parp=0xed9d
+// 0xed9b: WORD 'UNK_0xed9d' codep=0x224c parp=0xed9d params=2 returns=5
 // ================================================
 
 void UNK_0xed9d() // UNK_0xed9d
@@ -709,7 +709,7 @@ LoadDataType UNK_0xef5d = {CREATUREIDX, 0x9b, 0x01, 0x9c, 0x69d8};
 // 0xef63: db 0xea 0x73 0x20 0x0a 0x01 0x16 0x8f 0x65 0xea 0x73 0x20 0x0b 0x01 0x16 0x8f 0x65 ' s     e s     e'
 
 // ================================================
-// 0xef73: WORD 'UNK_0xef75' codep=0x224c parp=0xef75
+// 0xef73: WORD 'UNK_0xef75' codep=0x224c parp=0xef75 params=0 returns=0
 // ================================================
 
 void UNK_0xef75() // UNK_0xef75
@@ -1296,7 +1296,7 @@ void UNK_0xf2bb() // UNK_0xf2bb
 
 
 // ================================================
-// 0xf2eb: WORD 'UNK_0xf2ed' codep=0x224c parp=0xf2ed
+// 0xf2eb: WORD 'UNK_0xf2ed' codep=0x224c parp=0xf2ed params=1 returns=3
 // ================================================
 
 void UNK_0xf2ed() // UNK_0xf2ed
@@ -1329,7 +1329,7 @@ void UNK_0xf30d() // UNK_0xf30d
 
 
 // ================================================
-// 0xf319: WORD 'UNK_0xf31b' codep=0x224c parp=0xf31b
+// 0xf319: WORD 'UNK_0xf31b' codep=0x224c parp=0xf31b params=3 returns=2
 // ================================================
 
 void UNK_0xf31b() // UNK_0xf31b
