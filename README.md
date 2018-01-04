@@ -39,6 +39,7 @@ Forth code:
                DO I 1.5@ .DRJ -3 +LOOP
             ELSE ." MT STK"
             THEN CR ;
+  EXIT
 ```
 
 Transformation:
