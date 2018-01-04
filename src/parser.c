@@ -144,6 +144,10 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
             //fprintf(stderr, "call from 0x%04x\n", currentoffset);
             unsigned short addr = (offset+(short int)Read16(currentoffset+1));
             DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr);
+
+            // the assembler is usually also written in forth and is a word
+            if (Read16(addr-2) == CODEPOINTER) GetDictEntry(addr, ovidx);
+
             if (addr == 0x1649)
             {
                 Variables vars = GetEmptyVariables();

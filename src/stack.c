@@ -154,8 +154,8 @@ void StackAnalysis(int ovidx)
         }
         if (dict[i].codep == CODEIFIELD)
         {
-            dict[i].stackin = 1;
-            dict[i].stackout = 0;
+            dict[i].stackin = 0;
+            dict[i].stackout = 1;
         }
         if (dict[i].codep == CODEPUSH2WORDS)
         {
@@ -202,8 +202,8 @@ void StackAnalysis(int ovidx)
     Set("0", 0, 1);
     Set("1", 0, 1);
     Set("2", 0, 1);
-    Set("DUP", 1, 2); // or 1 / 1
-    Set("2DUP", 2, 4); // or 2 / 2
+    Set("DUP", 1, 2);
+    Set("2DUP", 2, 4);
     Set("(!SET)", 3, 0);
     Set("CMOVE_2", 3, 0);
     Set("FILL_2", 3, 0);
@@ -278,6 +278,7 @@ void StackAnalysis(int ovidx)
     Set("C>", 0, 2);
     Set("CI", 0, 2);
 
+    Set("(ABORT\")", 1, 0);
 
     Set("CDEPTH", 0, 1);
 
@@ -289,7 +290,7 @@ void StackAnalysis(int ovidx)
     //Set("UNK_0x8332", 1, 1); // Seems recursive
     Set("UNK_0x8df0", 0, 0); // Something with graphics
     Set("UNK_0x93b1", 0, 4);
-    Set("UNK_0x9390", 4, 0);
+    Set("?EXTENTX", 4, 0);
     Set("ADVANCE>DEF", 1, 0);
     Set("LCOPYBLK", 6, 0); // left, top, right, bottom, left top
     Set("V>DISPLAY", 0, 0); // not sure

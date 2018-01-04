@@ -585,7 +585,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         {
             str[ll] = Read8(addr+3+ll);
         }
-        snprintf(ret, STRINGLEN, "UNK_0x%04x(\"%s\");\n", PARPRINT, Escape(str));
+        snprintf(ret, STRINGLEN, "%s(\"%s\");\n", Forth2CString(s), Escape(str));
         return;
     }
 
