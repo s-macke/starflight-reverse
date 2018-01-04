@@ -136,7 +136,7 @@ void UNK_0xf1b7() // UNK_0xf1b7
 
 
 // ================================================
-// 0xf1e5: WORD 'UNK_0xf1e7' codep=0x224c parp=0xf1e7 params=5 returns=1
+// 0xf1e5: WORD 'UNK_0xf1e7' codep=0x224c parp=0xf1e7 params=3 returns=1
 // ================================================
 
 void UNK_0xf1e7() // UNK_0xf1e7
@@ -197,7 +197,7 @@ void UNK_0xf239() // UNK_0xf239
 
 
 // ================================================
-// 0xf249: WORD 'UNK_0xf24b' codep=0x224c parp=0xf24b params=5 returns=0
+// 0xf249: WORD 'UNK_0xf24b' codep=0x224c parp=0xf24b params=3 returns=0
 // ================================================
 
 void UNK_0xf24b() // UNK_0xf24b
@@ -221,10 +221,10 @@ void UNK_0xf261() // UNK_0xf261
 {
   CTINIT(); // CTINIT
   UNK_0xf239(); // UNK_0xf239
-  UNK_0x3f09("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
+  SET_STR_AS_PARAM("CAPTAIN, THE SHIP IS BEING CRUSHED BY");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
-  UNK_0x3f09("EXTREME GRAVITY. THE ...");
+  SET_STR_AS_PARAM("EXTREME GRAVITY. THE ...");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x1388);
   Push(0x03e8);
@@ -254,21 +254,21 @@ void UNK_0xf2c8() // UNK_0xf2c8
   {
     TTY_dash_SCR(); // TTY-SCR
     TTY_dash_SCR(); // TTY-SCR
-    UNK_0x3f09("EMERGENCY LOCATOR TRANSMISSION:");
+    SET_STR_AS_PARAM("EMERGENCY LOCATOR TRANSMISSION:");
     DrawTTY(); // .TTY
-    UNK_0x3f09(" STARSHIP ISS ");
+    SET_STR_AS_PARAM(" STARSHIP ISS ");
     DrawTTY(); // .TTY
     Push(0x65e1+UNK_0xf1a6.offset); // IFIELD
     COUNT(); // COUNT
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-    UNK_0x3f09(" CRASHED ON PLANET ");
+    SET_STR_AS_PARAM(" CRASHED ON PLANET ");
     DrawTTY(); // .TTY
     Push(pp__ro_ORBIT_rc_); // (ORBIT)
     Get_gt_C_plus_S(); // @>C+S
     Push(0x65e1+INST_dash_QT.offset); // IFIELD
     Is(); // ?
     ICLOSE(); // ICLOSE
-    UNK_0x3f09(" IN SYSTEM ");
+    SET_STR_AS_PARAM(" IN SYSTEM ");
     DrawTTY(); // .TTY
     Push(pp__ro_SYSTEM); // (SYSTEM
     Get_gt_C_plus_S(); // @>C+S
@@ -286,7 +286,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
     Push(0);
     DrawR(); // .R
     ICLOSE(); // ICLOSE
-    UNK_0x3f09("NO SURVIVORS");
+    SET_STR_AS_PARAM("NO SURVIVORS");
     DrawTTY(); // .TTY
     TTY_dash_SCR(); // TTY-SCR
     TTY_dash_SCR(); // TTY-SCR
@@ -329,7 +329,7 @@ void UNK_0xf3b2() // UNK_0xf3b2
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f09("INSUFFICIENT FUEL FOR SAFE LANDING");
+  SET_STR_AS_PARAM("INSUFFICIENT FUEL FOR SAFE LANDING");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
@@ -368,7 +368,7 @@ void UNK_0xf40d() // UNK_0xf40d
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f09("INSUFFICIENT FUEL FOR RE-LAUNCHING");
+  SET_STR_AS_PARAM("INSUFFICIENT FUEL FOR RE-LAUNCHING");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }
@@ -397,10 +397,10 @@ void UNK_0xf452() // UNK_0xf452
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f09("THIS PLANET'S GRAVITY WILL CRUSH THE");
+  SET_STR_AS_PARAM("THIS PLANET'S GRAVITY WILL CRUSH THE");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
-  UNK_0x3f09("SHIP'S HULL.");
+  SET_STR_AS_PARAM("SHIP'S HULL.");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   BEEP(); // BEEP
 }

@@ -433,7 +433,7 @@ IFieldType UNK_0xe3a6 = {SHIPIDX, 0x13, 0x02};
 // 0xe3c1: db 0x80 0xf7 '  '
 
 // ================================================
-// 0xe3c3: WORD 'UNK_0xe3c5' codep=0x224c parp=0xe3c5 params=4 returns=1
+// 0xe3c3: WORD 'UNK_0xe3c5' codep=0x224c parp=0xe3c5 params=0 returns=1
 // ================================================
 
 void UNK_0xe3c5() // UNK_0xe3c5
@@ -1688,7 +1688,7 @@ void UNK_0xebc7() // UNK_0xebc7
 
 void UNK_0xec0f() // UNK_0xec0f
 {
-  UNK_0x3f09("I CAN'T GET OUR BEARINGS, COMMANDER.");
+  SET_STR_AS_PARAM("I CAN'T GET OUR BEARINGS, COMMANDER.");
   DrawTTY(); // .TTY
 }
 
@@ -1699,7 +1699,7 @@ void UNK_0xec0f() // UNK_0xec0f
 
 void UNK_0xec3c() // UNK_0xec3c
 {
-  UNK_0x3f09("WE'RE NOT IN HYPERSPACE, COMMANDER.");
+  SET_STR_AS_PARAM("WE'RE NOT IN HYPERSPACE, COMMANDER.");
   DrawTTY(); // .TTY
 }
 
@@ -1745,7 +1745,7 @@ void UNK_0xec84() // UNK_0xec84
 
 
 // ================================================
-// 0xeca8: WORD 'UNK_0xecaa' codep=0x224c parp=0xecaa params=4 returns=1
+// 0xeca8: WORD 'UNK_0xecaa' codep=0x224c parp=0xecaa params=0 returns=1
 // ================================================
 
 void UNK_0xecaa() // UNK_0xecaa
@@ -1960,7 +1960,7 @@ void UNK_0xee1b() // UNK_0xee1b
 
 
 // ================================================
-// 0xee25: WORD 'UNK_0xee27' codep=0x224c parp=0xee27 params=2 returns=0
+// 0xee25: WORD 'UNK_0xee27' codep=0x224c parp=0xee27 params=0 returns=0
 // ================================================
 
 void UNK_0xee27() // UNK_0xee27
@@ -2083,7 +2083,7 @@ void UNK_0xeeb7() // UNK_0xeeb7
 // 0xeecf: db 0x4c 0x22 0x22 0x75 0x5d 0x17 0x1c 0x00 0x5f 0x12 0x34 0x75 0x5d 0x17 0x2e 0x00 0x5d 0x17 0x34 0x00 0x25 0x40 0xf5 0x12 0x90 0x16 'L""u]   _ 4u] . ] 4 %@    '
 
 // ================================================
-// 0xeee9: WORD 'UNK_0xeeeb' codep=0x224c parp=0xeeeb params=8 returns=1
+// 0xeee9: WORD 'UNK_0xeeeb' codep=0x224c parp=0xeeeb params=0 returns=1
 // ================================================
 
 void UNK_0xeeeb() // UNK_0xeeeb
@@ -2454,7 +2454,7 @@ void UNK_0xf11b() // UNK_0xf11b
 
 
 // ================================================
-// 0xf12f: WORD 'UNK_0xf131' codep=0x224c parp=0xf131 params=4 returns=0
+// 0xf12f: WORD 'UNK_0xf131' codep=0x224c parp=0xf131 params=0 returns=0
 // ================================================
 
 void UNK_0xf131() // UNK_0xf131

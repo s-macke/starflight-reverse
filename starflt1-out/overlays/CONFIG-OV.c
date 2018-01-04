@@ -1150,7 +1150,7 @@ void UNK_0xefcc() // UNK_0xefcc
 
 
 // ================================================
-// 0xf03f: WORD 'UNK_0xf041' codep=0x224c parp=0xf041 params=6 returns=0
+// 0xf03f: WORD 'UNK_0xf041' codep=0x224c parp=0xf041 params=0 returns=0
 // ================================================
 
 void UNK_0xf041() // UNK_0xf041
@@ -1512,7 +1512,7 @@ void UNK_0xf2c5() // UNK_0xf2c5
 
 
 // ================================================
-// 0xf2f8: WORD 'UNK_0xf2fa' codep=0x224c parp=0xf2fa params=8 returns=0
+// 0xf2f8: WORD 'UNK_0xf2fa' codep=0x224c parp=0xf2fa params=2 returns=2
 // ================================================
 
 void UNK_0xf2fa() // UNK_0xf2fa
@@ -1628,7 +1628,7 @@ void UNK_0xf3b8() // UNK_0xf3b8
 
 
 // ================================================
-// 0xf3d5: WORD 'UNK_0xf3d7' codep=0x224c parp=0xf3d7 params=3 returns=0
+// 0xf3d5: WORD 'UNK_0xf3d7' codep=0x224c parp=0xf3d7 params=1 returns=0
 // ================================================
 
 void UNK_0xf3d7() // UNK_0xf3d7
@@ -1666,13 +1666,13 @@ void UNK_0xf3fd() // UNK_0xf3fd
     Push(1);
     Push(0x0026);
     CMESS(); // CMESS
-    UNK_0x3f3b(" NEW ");
+    SET_STR_AS_PARAM(" NEW ");
   } else
   {
     Push(0);
     Push(0x0022);
     CMESS(); // CMESS
-    UNK_0x3f3b(" ");
+    SET_STR_AS_PARAM(" ");
   }
   UNK_0xf3b8(); // UNK_0xf3b8
   Push(pp_XORMODE); // XORMODE

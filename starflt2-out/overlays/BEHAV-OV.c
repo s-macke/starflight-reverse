@@ -368,7 +368,7 @@ void UNK_0xe4c6() // UNK_0xe4c6
 // 0xe4d4: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xe4d6: WORD 'UNK_0xe4d8' codep=0x224c parp=0xe4d8 params=3 returns=1
+// 0xe4d6: WORD 'UNK_0xe4d8' codep=0x224c parp=0xe4d8 params=0 returns=2
 // ================================================
 
 void UNK_0xe4d8() // UNK_0xe4d8
@@ -385,7 +385,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
 
 
 // ================================================
-// 0xe4ea: WORD 'UNK_0xe4ec' codep=0x224c parp=0xe4ec params=3 returns=1
+// 0xe4ea: WORD 'UNK_0xe4ec' codep=0x224c parp=0xe4ec params=0 returns=2
 // ================================================
 
 void UNK_0xe4ec() // UNK_0xe4ec
@@ -541,7 +541,7 @@ IFieldType UNK_0xe5e4 = {TRADERSIDX, 0x0c, 0x01};
 // 0xe5e7: db 0x20 0x74 0x15 0x11 0x03 ' t   '
 
 // ================================================
-// 0xe5ec: WORD 'UNK_0xe5ee' codep=0x224c parp=0xe5ee params=4 returns=1
+// 0xe5ec: WORD 'UNK_0xe5ee' codep=0x224c parp=0xe5ee params=0 returns=1
 // ================================================
 
 void UNK_0xe5ee() // UNK_0xe5ee
@@ -554,7 +554,7 @@ void UNK_0xe5ee() // UNK_0xe5ee
 
 
 // ================================================
-// 0xe5f8: WORD 'UNK_0xe5fa' codep=0x224c parp=0xe5fa params=4 returns=1
+// 0xe5f8: WORD 'UNK_0xe5fa' codep=0x224c parp=0xe5fa params=0 returns=1
 // ================================================
 
 void UNK_0xe5fa() // UNK_0xe5fa
@@ -567,7 +567,7 @@ void UNK_0xe5fa() // UNK_0xe5fa
 
 
 // ================================================
-// 0xe604: WORD 'UNK_0xe606' codep=0x224c parp=0xe606 params=2 returns=1
+// 0xe604: WORD 'UNK_0xe606' codep=0x224c parp=0xe606 params=0 returns=1
 // ================================================
 
 void UNK_0xe606() // UNK_0xe606
@@ -597,7 +597,7 @@ void UNK_0xe618() // UNK_0xe618
 
 
 // ================================================
-// 0xe624: WORD 'UNK_0xe626' codep=0x224c parp=0xe626 params=8 returns=1
+// 0xe624: WORD 'UNK_0xe626' codep=0x224c parp=0xe626 params=0 returns=1
 // ================================================
 
 void UNK_0xe626() // UNK_0xe626
@@ -659,7 +659,7 @@ void UNK_0xe660() // UNK_0xe660
 
 
 // ================================================
-// 0xe668: WORD 'UNK_0xe66a' codep=0x224c parp=0xe66a params=2 returns=1
+// 0xe668: WORD 'UNK_0xe66a' codep=0x224c parp=0xe66a params=0 returns=1
 // ================================================
 
 void UNK_0xe66a() // UNK_0xe66a
@@ -671,7 +671,7 @@ void UNK_0xe66a() // UNK_0xe66a
 
 
 // ================================================
-// 0xe672: WORD 'UNK_0xe674' codep=0x224c parp=0xe674 params=2 returns=1
+// 0xe672: WORD 'UNK_0xe674' codep=0x224c parp=0xe674 params=0 returns=1
 // ================================================
 
 void UNK_0xe674() // UNK_0xe674
@@ -683,7 +683,7 @@ void UNK_0xe674() // UNK_0xe674
 
 
 // ================================================
-// 0xe67c: WORD 'UNK_0xe67e' codep=0x224c parp=0xe67e params=2 returns=1
+// 0xe67c: WORD 'UNK_0xe67e' codep=0x224c parp=0xe67e params=0 returns=1
 // ================================================
 
 void UNK_0xe67e() // UNK_0xe67e
@@ -695,7 +695,7 @@ void UNK_0xe67e() // UNK_0xe67e
 
 
 // ================================================
-// 0xe686: WORD 'UNK_0xe688' codep=0x224c parp=0xe688 params=2 returns=1
+// 0xe686: WORD 'UNK_0xe688' codep=0x224c parp=0xe688 params=0 returns=1
 // ================================================
 
 void UNK_0xe688() // UNK_0xe688
@@ -707,7 +707,7 @@ void UNK_0xe688() // UNK_0xe688
 
 
 // ================================================
-// 0xe690: WORD 'UNK_0xe692' codep=0x224c parp=0xe692 params=2 returns=1
+// 0xe690: WORD 'UNK_0xe692' codep=0x224c parp=0xe692 params=0 returns=1
 // ================================================
 
 void UNK_0xe692() // UNK_0xe692
@@ -953,7 +953,7 @@ void UNK_0xe7b6() // UNK_0xe7b6
 
 void UNK_0xe7c0() // UNK_0xe7c0
 {
-  UNK_0x3f09("STONES AND STICKS");
+  SET_STR_AS_PARAM("STONES AND STICKS");
 }
 
 
@@ -963,7 +963,7 @@ void UNK_0xe7c0() // UNK_0xe7c0
 
 void UNK_0xe7d8() // UNK_0xe7d8
 {
-  UNK_0x3f09("METAL WEAPONS OF SOME SORT");
+  SET_STR_AS_PARAM("METAL WEAPONS OF SOME SORT");
 }
 
 
@@ -973,7 +973,7 @@ void UNK_0xe7d8() // UNK_0xe7d8
 
 void UNK_0xe7f9() // UNK_0xe7f9
 {
-  UNK_0x3f09("CHEMICAL PROJECTILES OF SOME SORT");
+  SET_STR_AS_PARAM("CHEMICAL PROJECTILES OF SOME SORT");
 }
 
 
@@ -983,7 +983,7 @@ void UNK_0xe7f9() // UNK_0xe7f9
 
 void UNK_0xe821() // UNK_0xe821
 {
-  UNK_0x3f09("ENERGY WEAPONS OF SOME SORT");
+  SET_STR_AS_PARAM("ENERGY WEAPONS OF SOME SORT");
 }
 
 
@@ -1880,7 +1880,7 @@ void UNK_0xece0() // UNK_0xece0
 
 
 // ================================================
-// 0xed3e: WORD 'UNK_0xed40' codep=0x224c parp=0xed40 params=4 returns=0
+// 0xed3e: WORD 'UNK_0xed40' codep=0x224c parp=0xed40 params=0 returns=0
 // ================================================
 
 void UNK_0xed40() // UNK_0xed40
@@ -1994,7 +1994,7 @@ void CIRCLES() // CIRCLES
       _st_(); // <
       if (Pop() != 0)
       {
-        UNK_0x3f09("STUNNER WORKS ON PLANETSIDE");
+        SET_STR_AS_PARAM("STUNNER WORKS ON PLANETSIDE");
         DrawTTY(); // .TTY
       }
     }
@@ -2318,7 +2318,7 @@ void UNK_0xefd0() // UNK_0xefd0
 
 
 // ================================================
-// 0xf000: WORD 'UNK_0xf002' codep=0x224c parp=0xf002 params=8 returns=1
+// 0xf000: WORD 'UNK_0xf002' codep=0x224c parp=0xf002 params=0 returns=1
 // ================================================
 
 void UNK_0xf002() // UNK_0xf002
@@ -2348,7 +2348,7 @@ void UNK_0xf012() // UNK_0xf012
 
 
 // ================================================
-// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=2 returns=0
+// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=0 returns=0
 // ================================================
 
 void UNK_0xf026() // UNK_0xf026
@@ -2439,7 +2439,7 @@ void TVMOVE() // TVMOVE
 
 
 // ================================================
-// 0xf0c5: WORD 'DO.WEAPONS' codep=0x224c parp=0xf0d4 params=2 returns=0
+// 0xf0c5: WORD 'DO.WEAPONS' codep=0x224c parp=0xf0d4 params=0 returns=0
 // ================================================
 
 void DO_dot_WEAPONS() // DO.WEAPONS
@@ -2758,7 +2758,7 @@ void UNK_0xf2d5() // UNK_0xf2d5
   if (Pop() != 0)
   {
     _gt_TVCT(); // >TVCT
-    UNK_0x3f09("THE T.V. LIFEFORM SHIELD IS ACTIVE");
+    SET_STR_AS_PARAM("THE T.V. LIFEFORM SHIELD IS ACTIVE");
     DrawTTY(); // .TTY
     Push(0x07d0);
     MS(); // MS
@@ -2768,7 +2768,7 @@ void UNK_0xf2d5() // UNK_0xf2d5
 
 
 // ================================================
-// 0xf310: WORD 'UNK_0xf312' codep=0x224c parp=0xf312 params=2 returns=0
+// 0xf310: WORD 'UNK_0xf312' codep=0x224c parp=0xf312 params=0 returns=2
 // ================================================
 
 void UNK_0xf312() // UNK_0xf312
@@ -2870,7 +2870,7 @@ void UNK_0xf354() // UNK_0xf354
 // 0xf3c8: db 0x4c 0x22 0xdc 0x55 0xae 0x0b 0xf2 0x5f 0xae 0x0b 0x92 0x0f 0x41 0x0e 0xfa 0x15 0x0a 0x00 0xf2 0x5f 0xae 0x0b 0xdc 0x55 0x16 0x6d 0x90 0x16 0x4c 0x22 0xc8 0xf3 0x2f 0x59 0xae 0x0b 0x3e 0x13 0x2f 0x59 0x65 0x6d 0x90 0x16 'L" U   _    A      _   U m  L"  /Y  > /Yem  '
 
 // ================================================
-// 0xf3f4: WORD 'GNUNK-CHEC' codep=0x224c parp=0xf403 params=4 returns=0
+// 0xf3f4: WORD 'GNUNK-CHEC' codep=0x224c parp=0xf403 params=0 returns=0
 // ================================================
 
 void GNUNK_dash_CHEC() // GNUNK-CHEC

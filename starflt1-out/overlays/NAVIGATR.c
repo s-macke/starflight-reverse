@@ -183,13 +183,13 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(Read16(Pop())); // @
   if (Pop() != 0)
   {
-    UNK_0x3f3b("MAGNETIC DISTURBANCES IN NEBULA");
+    SET_STR_AS_PARAM("MAGNETIC DISTURBANCES IN NEBULA");
     DrawTTY(); // .TTY
-    UNK_0x3f3b("CAUSING ENERGY FLUCTUATIONS");
+    SET_STR_AS_PARAM("CAUSING ENERGY FLUCTUATIONS");
     DrawTTY(); // .TTY
   }
   UNK_0xf234(); // UNK_0xf234
-  UNK_0x3f3b("RAISE SHIELD");
+  SET_STR_AS_PARAM("RAISE SHIELD");
   LoadData(UNK_0xf21a); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
@@ -201,7 +201,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
-  UNK_0x3f3b("SHIELDS ARE DOWN");
+  SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
   Push(pp_BTN_dash_REC); // BTN-REC
   Push(Read16(Pop())); // @
@@ -228,7 +228,7 @@ void UNK_0xf359() // UNK_0xf359
   UNK_0xf22a(); // UNK_0xf22a
   if (Pop() == 0) return;
   UNK_0xf234(); // UNK_0xf234
-  UNK_0x3f3b("DROP SHIELD ");
+  SET_STR_AS_PARAM("DROP SHIELD ");
   LoadData(UNK_0xf21a); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
@@ -238,7 +238,7 @@ void UNK_0xf359() // UNK_0xf359
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
-  UNK_0x3f3b("SHIELDS ARE NOW UP");
+  SET_STR_AS_PARAM("SHIELDS ARE NOW UP");
   DrawTTY(); // .TTY
   Push(3);
   Push(2);
@@ -256,7 +256,7 @@ void UNK_0xf359() // UNK_0xf359
 void _gt_DISARM() // >DISARM
 {
   UNK_0xf234(); // UNK_0xf234
-  UNK_0x3f3b("ARM WEAPON");
+  SET_STR_AS_PARAM("ARM WEAPON");
   LoadData(UNK_0xf222); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
@@ -268,13 +268,13 @@ void _gt_DISARM() // >DISARM
   Push(0x63ef+UNK_0xf215.offset); // IFIELD
   C_ex_(); // C!
   UNK_0xf272(); // UNK_0xf272
-  UNK_0x3f3b("WEAPONS ARE DISARMED");
+  SET_STR_AS_PARAM("WEAPONS ARE DISARMED");
   DrawTTY(); // .TTY
 }
 
 
 // ================================================
-// 0xf3f9: WORD 'UNK_0xf3fb' codep=0x224c parp=0xf3fb params=4 returns=0
+// 0xf3f9: WORD 'UNK_0xf3fb' codep=0x224c parp=0xf3fb params=0 returns=0
 // ================================================
 
 void UNK_0xf3fb() // UNK_0xf3fb
@@ -301,7 +301,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
     if (Pop() != 0)
     {
       UNK_0xf272(); // UNK_0xf272
-      UNK_0x3f3b("ARMING MISSILES");
+      SET_STR_AS_PARAM("ARMING MISSILES");
       DrawTTY(); // .TTY
     }
     SWAP(); // SWAP
@@ -317,7 +317,7 @@ void UNK_0xf3fb() // UNK_0xf3fb
     if (Pop() != 0)
     {
       UNK_0xf272(); // UNK_0xf272
-      UNK_0x3f3b("ARMING LASERS");
+      SET_STR_AS_PARAM("ARMING LASERS");
       DrawTTY(); // .TTY
     }
     Push(Pop() + Pop()); // +
@@ -330,20 +330,20 @@ void UNK_0xf3fb() // UNK_0xf3fb
       Push(0x63ef+UNK_0xf215.offset); // IFIELD
       Store_3(); // !_3
       UNK_0xf234(); // UNK_0xf234
-      UNK_0x3f3b("DISARM    ");
+      SET_STR_AS_PARAM("DISARM    ");
       LoadData(UNK_0xf222); // from 'BUTTONS'
       UNK_0xf246(); // UNK_0xf246
     }
     return;
   }
   Pop(); Pop(); // 2DROP
-  UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH WEAPONS");
+  SET_STR_AS_PARAM("SHIP IS NOT EQUIPPED WITH WEAPONS");
   DrawTTY(); // .TTY
 }
 
 
 // ================================================
-// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8 params=6 returns=0
+// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8 params=0 returns=0
 // ================================================
 // entry
 
@@ -369,7 +369,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 
 
 // ================================================
-// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa params=2 returns=0
+// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa params=0 returns=0
 // ================================================
 // entry
 
@@ -395,7 +395,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
-      UNK_0x3f3b("SHIELDS CAN'T BE RAISED");
+      SET_STR_AS_PARAM("SHIELDS CAN'T BE RAISED");
       DrawTTY(); // .TTY
       BEEP(); // BEEP
     } else

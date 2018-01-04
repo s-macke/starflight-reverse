@@ -391,7 +391,7 @@ void UNK_0xe9c9() // UNK_0xe9c9
 // 0xea07: db 0x00 0x00 '  '
 
 // ================================================
-// 0xea09: WORD 'UNK_0xea0b' codep=0x224c parp=0xea0b params=4 returns=0
+// 0xea09: WORD 'UNK_0xea0b' codep=0x224c parp=0xea0b params=0 returns=0
 // ================================================
 
 void UNK_0xea0b() // UNK_0xea0b
@@ -897,7 +897,7 @@ void UNK_0xed4e() // UNK_0xed4e
 
 void UNK_0xed62() // UNK_0xed62
 {
-  UNK_0x3f3b("PERSONNEL");
+  SET_STR_AS_PARAM("PERSONNEL");
 }
 
 
@@ -907,7 +907,7 @@ void UNK_0xed62() // UNK_0xed62
 
 void UNK_0xed72() // UNK_0xed72
 {
-  UNK_0x3f3b("CREW ASSIGNMENT");
+  SET_STR_AS_PARAM("CREW ASSIGNMENT");
 }
 
 
@@ -917,7 +917,7 @@ void UNK_0xed72() // UNK_0xed72
 
 void UNK_0xed88() // UNK_0xed88
 {
-  UNK_0x3f3b("SHIP CONFIGURATION");
+  SET_STR_AS_PARAM("SHIP CONFIGURATION");
 }
 
 
@@ -927,7 +927,7 @@ void UNK_0xed88() // UNK_0xed88
 
 void UNK_0xeda1() // UNK_0xeda1
 {
-  UNK_0x3f3b("TRADE DEPOT");
+  SET_STR_AS_PARAM("TRADE DEPOT");
 }
 
 
@@ -937,7 +937,7 @@ void UNK_0xeda1() // UNK_0xeda1
 
 void UNK_0xedb3() // UNK_0xedb3
 {
-  UNK_0x3f3b("BANK");
+  SET_STR_AS_PARAM("BANK");
 }
 
 
@@ -947,7 +947,7 @@ void UNK_0xedb3() // UNK_0xedb3
 
 void UNK_0xedbe() // UNK_0xedbe
 {
-  UNK_0x3f3b("OPERATIONS");
+  SET_STR_AS_PARAM("OPERATIONS");
 }
 
 
@@ -957,7 +957,7 @@ void UNK_0xedbe() // UNK_0xedbe
 
 void UNK_0xedcf() // UNK_0xedcf
 {
-  UNK_0x3f3b("DOCKING BAY");
+  SET_STR_AS_PARAM("DOCKING BAY");
 }
 
 

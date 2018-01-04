@@ -589,7 +589,7 @@ void _and_LAUNCH() // &LAUNCH
     UNK_0xf306(); // UNK_0xf306
     UNK_0xf0a6(); // UNK_0xf0a6
     UNK_0xf192(); // UNK_0xf192
-    UNK_0x3f09("OPENING");
+    SET_STR_AS_PARAM("OPENING");
     UNK_0xf390(); // UNK_0xf390
     UNK_0xf3b7(); // UNK_0xf3b7
   }
@@ -598,7 +598,7 @@ void _and_LAUNCH() // &LAUNCH
   Push(0xcafc); // probable 'UNNEST'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
-  UNK_0x3f09("STANDING BY TO MANEUVER");
+  SET_STR_AS_PARAM("STANDING BY TO MANEUVER");
   DrawTTY(); // .TTY
 }
 
@@ -641,7 +641,7 @@ void _and_RETURN() // &RETURN
 
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
-  UNK_0x3f09("CLOSING");
+  SET_STR_AS_PARAM("CLOSING");
   UNK_0xf390(); // UNK_0xf390
   DrawAIRLOCK(); // .AIRLOCK
   SetColor(GREY2);

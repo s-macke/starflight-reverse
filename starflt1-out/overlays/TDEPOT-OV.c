@@ -445,7 +445,7 @@ void UNK_0xe3a0() // UNK_0xe3a0
 
 
 // ================================================
-// 0xe3a6: WORD 'UNK_0xe3a8' codep=0x224c parp=0xe3a8 params=2 returns=1
+// 0xe3a6: WORD 'UNK_0xe3a8' codep=0x224c parp=0xe3a8 params=0 returns=1
 // ================================================
 
 void UNK_0xe3a8() // UNK_0xe3a8
@@ -458,7 +458,7 @@ void UNK_0xe3a8() // UNK_0xe3a8
 
 
 // ================================================
-// 0xe3b2: WORD 'UNK_0xe3b4' codep=0x224c parp=0xe3b4 params=3 returns=0
+// 0xe3b2: WORD 'UNK_0xe3b4' codep=0x224c parp=0xe3b4 params=1 returns=0
 // ================================================
 
 void UNK_0xe3b4() // UNK_0xe3b4
@@ -471,7 +471,7 @@ void UNK_0xe3b4() // UNK_0xe3b4
 
 
 // ================================================
-// 0xe3be: WORD 'UNK_0xe3c0' codep=0x224c parp=0xe3c0 params=3 returns=1
+// 0xe3be: WORD 'UNK_0xe3c0' codep=0x224c parp=0xe3c0 params=1 returns=1
 // ================================================
 
 void UNK_0xe3c0() // UNK_0xe3c0
@@ -846,7 +846,7 @@ void UNK_0xe735() // UNK_0xe735
   Push(1);
   Push(0x0022);
   CMESS(); // CMESS
-  UNK_0x3f3b("BUY");
+  SET_STR_AS_PARAM("BUY");
   UNK_0xe709(); // UNK_0xe709
 }
 
@@ -914,7 +914,7 @@ void UNK_0xe7d3() // UNK_0xe7d3
   Push(1);
   Push(0x0021);
   CMESS(); // CMESS
-  UNK_0x3f3b("SELL");
+  SET_STR_AS_PARAM("SELL");
   UNK_0xe709(); // UNK_0xe709
 }
 
@@ -950,7 +950,7 @@ void UNK_0xe804() // UNK_0xe804
   Push(1);
   Push(0x0026);
   CMESS(); // CMESS
-  UNK_0x3f3b("ANALYZE");
+  SET_STR_AS_PARAM("ANALYZE");
   UNK_0xe709(); // UNK_0xe709
 }
 
@@ -1011,7 +1011,7 @@ void UNK_0xe859() // UNK_0xe859
 
 
 // ================================================
-// 0xe869: WORD 'UNK_0xe86b' codep=0x224c parp=0xe86b params=2 returns=0
+// 0xe869: WORD 'UNK_0xe86b' codep=0x224c parp=0xe86b params=0 returns=0
 // ================================================
 
 void UNK_0xe86b() // UNK_0xe86b
@@ -1238,7 +1238,7 @@ void UNK_0xe999() // UNK_0xe999
 
 
 // ================================================
-// 0xe9cb: WORD 'UNK_0xe9cd' codep=0x224c parp=0xe9cd params=2 returns=0
+// 0xe9cb: WORD 'UNK_0xe9cd' codep=0x224c parp=0xe9cd params=0 returns=0
 // ================================================
 
 void UNK_0xe9cd() // UNK_0xe9cd
@@ -1368,7 +1368,7 @@ void UNK_0xea82() // UNK_0xea82
 
 
 // ================================================
-// 0xea96: WORD 'UNK_0xea98' codep=0x224c parp=0xea98 params=3 returns=1
+// 0xea96: WORD 'UNK_0xea98' codep=0x224c parp=0xea98 params=1 returns=1
 // ================================================
 
 void UNK_0xea98() // UNK_0xea98
@@ -1640,7 +1640,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 
 
 // ================================================
-// 0xecce: WORD 'UNK_0xecd0' codep=0x224c parp=0xecd0 params=7 returns=1
+// 0xecce: WORD 'UNK_0xecd0' codep=0x224c parp=0xecd0 params=5 returns=1
 // ================================================
 
 void UNK_0xecd0() // UNK_0xecd0
@@ -1771,7 +1771,7 @@ void UNK_0xed89() // UNK_0xed89
 
 
 // ================================================
-// 0xedb7: WORD 'UNK_0xedb9' codep=0x224c parp=0xedb9 params=4 returns=0
+// 0xedb7: WORD 'UNK_0xedb9' codep=0x224c parp=0xedb9 params=0 returns=0
 // ================================================
 
 void UNK_0xedb9() // UNK_0xedb9
@@ -2086,7 +2086,7 @@ void UNK_0xefe0() // UNK_0xefe0
 
 
 // ================================================
-// 0xf052: WORD 'UNK_0xf054' codep=0x224c parp=0xf054 params=14 returns=0
+// 0xf052: WORD 'UNK_0xf054' codep=0x224c parp=0xf054 params=6 returns=0
 // ================================================
 
 void UNK_0xf054() // UNK_0xf054
@@ -2132,7 +2132,7 @@ void UNK_0xf054() // UNK_0xf054
 
 
 // ================================================
-// 0xf0a8: WORD 'UNK_0xf0aa' codep=0x224c parp=0xf0aa params=5 returns=0
+// 0xf0a8: WORD 'UNK_0xf0aa' codep=0x224c parp=0xf0aa params=1 returns=0
 // ================================================
 
 void UNK_0xf0aa() // UNK_0xf0aa
@@ -2746,7 +2746,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
 
 
 // ================================================
-// 0xf4bf: WORD '<TDART' codep=0x224c parp=0xf4ca params=5 returns=0
+// 0xf4bf: WORD '<TDART' codep=0x224c parp=0xf4ca params=3 returns=0
 // ================================================
 // entry
 

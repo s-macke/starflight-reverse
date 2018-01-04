@@ -711,7 +711,7 @@ void UNK_0x44c2() // UNK_0x44c2
   Push(pp__i_FCB); // 'FCB
   Store(); // !
   CLRFCB(); // CLRFCB
-  UNK_0x3f3b("STARA   COM");
+  SET_STR_AS_PARAM("STARA   COM");
   NAM(); // NAM
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2

@@ -415,7 +415,7 @@ void UNK_0xee66() // UNK_0xee66
 
 
 // ================================================
-// 0xee70: WORD 'UNK_0xee72' codep=0x224c parp=0xee72 params=6 returns=0
+// 0xee70: WORD 'UNK_0xee72' codep=0x224c parp=0xee72 params=2 returns=0
 // ================================================
 
 void UNK_0xee72() // UNK_0xee72
@@ -1110,7 +1110,7 @@ void _ro__dot_STORM_rc_() // (.STORM)
 
 
 // ================================================
-// 0xf306: WORD '.ROCK' codep=0x224c parp=0xf310 params=4 returns=0
+// 0xf306: WORD '.ROCK' codep=0x224c parp=0xf310 params=0 returns=0
 // ================================================
 
 void DrawROCK() // .ROCK
@@ -1178,7 +1178,7 @@ void DrawICE() // .ICE
 
 
 // ================================================
-// 0xf384: WORD '.MOLTEN' codep=0x224c parp=0xf390 params=8 returns=0
+// 0xf384: WORD '.MOLTEN' codep=0x224c parp=0xf390 params=0 returns=0
 // ================================================
 
 void DrawMOLTEN() // .MOLTEN

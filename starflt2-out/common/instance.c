@@ -220,7 +220,7 @@ void Get_gt_C_plus_S() // @>C+S
 
 
 // ================================================
-// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=2 returns=0
+// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=0 returns=0
 // ================================================
 
 void IOPEN() // IOPEN
@@ -262,7 +262,7 @@ void UNK_0x7a6c() // UNK_0x7a6c
 
 
 // ================================================
-// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=2 returns=1
+// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=0 returns=1
 // ================================================
 
 void IsLAST() // ?LAST
@@ -286,7 +286,7 @@ void IsFIRST() // ?FIRST
 
 
 // ================================================
-// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=4 returns=0
+// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=2 returns=0
 // ================================================
 
 void _gt_C_plus_() // >C+
@@ -693,7 +693,7 @@ void IFLD_ex_() // IFLD!
 // 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
 
 // ================================================
-// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=4 returns=1
+// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=2 returns=3
 // ================================================
 
 void IsCLASS_slash_() // ?CLASS/
@@ -881,7 +881,7 @@ void IFIND() // IFIND
 
 
 // ================================================
-// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=2 returns=0
+// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=0 returns=0
 // ================================================
 
 void UNK_0x7e58() // UNK_0x7e58
@@ -901,7 +901,7 @@ void UNK_0x7e58() // UNK_0x7e58
 
 
 // ================================================
-// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c params=2 returns=0
+// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c params=0 returns=0
 // ================================================
 
 void MAP_gt_LEA() // MAP>LEA
@@ -993,7 +993,7 @@ void _gt_INACTI() // >INACTI
 // 0x7f0c: db 0x4c 0x22 0x2d 0x7c 0xf0 0x7e 0x90 0x16 'L"-| ~  '
 
 // ================================================
-// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=2 returns=0
+// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=0 returns=0
 // ================================================
 
 void IDELETE() // IDELETE
@@ -1133,7 +1133,7 @@ void UNK_0x7fdf() // UNK_0x7fdf
 
 
 // ================================================
-// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=2 returns=0
+// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=0 returns=0
 // ================================================
 
 void UNK_0x7ff5() // UNK_0x7ff5

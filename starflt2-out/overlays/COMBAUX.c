@@ -86,7 +86,7 @@ const unsigned short int pp_UNK_0xf434 = 0xf434; // UNK_0xf434 size: 2
 // 0xf2c2: db 0x2a 0x00 '* '
 
 // ================================================
-// 0xf2c4: WORD 'UNK_0xf2c6' codep=0x224c parp=0xf2c6 params=3 returns=1
+// 0xf2c4: WORD 'UNK_0xf2c6' codep=0x224c parp=0xf2c6 params=0 returns=2
 // ================================================
 
 void UNK_0xf2c6() // UNK_0xf2c6
@@ -102,7 +102,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
 
 
 // ================================================
-// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8 params=5 returns=2
+// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8 params=3 returns=2
 // ================================================
 
 void UNK_0xf2d8() // UNK_0xf2d8

@@ -285,7 +285,7 @@ IFieldType UNK_0xe564 = {SHIPIDX, 0x13, 0x02};
 // 0xe577: db 0x80 0xf7 '  '
 
 // ================================================
-// 0xe579: WORD 'UNK_0xe57b' codep=0x224c parp=0xe57b params=4 returns=0
+// 0xe579: WORD 'UNK_0xe57b' codep=0x224c parp=0xe57b params=0 returns=0
 // ================================================
 
 void UNK_0xe57b() // UNK_0xe57b
@@ -1301,7 +1301,7 @@ void UNK_0xec0f() // UNK_0xec0f
 
 void UNK_0xec57() // UNK_0xec57
 {
-  UNK_0x3f3b("I CAN'T GET OUR BEARINGS, CAPTAIN.");
+  SET_STR_AS_PARAM("I CAN'T GET OUR BEARINGS, CAPTAIN.");
   DrawTTY(); // .TTY
 }
 
@@ -1312,7 +1312,7 @@ void UNK_0xec57() // UNK_0xec57
 
 void UNK_0xec82() // UNK_0xec82
 {
-  UNK_0x3f3b("WE'RE NOT IN HYPERSPACE, CAPTAIN.");
+  SET_STR_AS_PARAM("WE'RE NOT IN HYPERSPACE, CAPTAIN.");
   DrawTTY(); // .TTY
 }
 

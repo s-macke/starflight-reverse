@@ -972,7 +972,7 @@ void SET_dash_USER() // SET-USER
   Push(0x000c);
   UNK_0xef84(); // UNK_0xef84
   C_ex__2(); // C!_2
-  UNK_0x3f09("rfg");
+  SET_STR_AS_PARAM("rfg");
   Push(1);
   UNK_0xef84(); // UNK_0xef84
   SWAP(); // SWAP

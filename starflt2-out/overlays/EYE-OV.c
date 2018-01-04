@@ -260,9 +260,9 @@ void UNK_0xebe7() // UNK_0xebe7
 void UNK_0xebfd() // UNK_0xebfd
 {
   CTINIT(); // CTINIT
-  UNK_0x3f09("PRESENCE OF UHL WEAPON IS PREVENTING");
+  SET_STR_AS_PARAM("PRESENCE OF UHL WEAPON IS PREVENTING");
   DrawTTY(); // .TTY
-  UNK_0x3f09("OUR ENTRY INTO THE ANOMALY");
+  SET_STR_AS_PARAM("OUR ENTRY INTO THE ANOMALY");
   DrawTTY(); // .TTY
 }
 
@@ -420,11 +420,11 @@ void UNK_0xecf5() // UNK_0xecf5
   Store_2(); // !_2
   SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09("GAME OVER - NO FUEL");
+  SET_STR_AS_PARAM("GAME OVER - NO FUEL");
   DrawTTY(); // .TTY
   Push(0x1388);
   MS(); // MS
-  UNK_0x3f09("WARP ENGINES ABOUT TO... ");
+  SET_STR_AS_PARAM("WARP ENGINES ABOUT TO... ");
   DrawTTY(); // .TTY
   BEEPON_2(); // BEEPON_2
   Push(0x1388);
@@ -717,7 +717,7 @@ void UNK_0xef1d() // UNK_0xef1d
 
 
 // ================================================
-// 0xef23: WORD 'UNK_0xef25' codep=0x224c parp=0xef25 params=16 returns=0
+// 0xef23: WORD 'UNK_0xef25' codep=0x224c parp=0xef25 params=6 returns=0
 // ================================================
 
 void UNK_0xef25() // UNK_0xef25
@@ -781,9 +781,9 @@ void UNK_0xef25() // UNK_0xef25
 
 void UNK_0xef93() // UNK_0xef93
 {
-  UNK_0x3f09("COMMANDER, WE ARE ONCE AGAIN IN OUR");
+  SET_STR_AS_PARAM("COMMANDER, WE ARE ONCE AGAIN IN OUR");
   DrawTTY(); // .TTY
-  UNK_0x3f09("OWN TIME PERIOD.");
+  SET_STR_AS_PARAM("OWN TIME PERIOD.");
   DrawTTY(); // .TTY
 }
 
@@ -794,13 +794,13 @@ void UNK_0xef93() // UNK_0xef93
 
 void UNK_0xefd4() // UNK_0xefd4
 {
-  UNK_0x3f09("COMMANDER, FROM OUR ANALYSIS OF THE");
+  SET_STR_AS_PARAM("COMMANDER, FROM OUR ANALYSIS OF THE");
   DrawTTY(); // .TTY
-  UNK_0x3f09("LOCAL STELLAR FORMATIONS, WE HAVE");
+  SET_STR_AS_PARAM("LOCAL STELLAR FORMATIONS, WE HAVE");
   DrawTTY(); // .TTY
-  UNK_0x3f09("DETERMINED THAT WE HAVE SOMEHOW");
+  SET_STR_AS_PARAM("DETERMINED THAT WE HAVE SOMEHOW");
   DrawTTY(); // .TTY
-  UNK_0x3f09("TRAVELLED BACK IN TIME.");
+  SET_STR_AS_PARAM("TRAVELLED BACK IN TIME.");
   DrawTTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
   Push(0x65e1+UNK_0xebcb.offset); // IFIELD
@@ -1066,19 +1066,19 @@ void UNK_0xf1b6() // UNK_0xf1b6
 {
   SetColor(YELLOW);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09(" ");
+  SET_STR_AS_PARAM(" ");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("WARNING        WARNING         WARNING");
+  SET_STR_AS_PARAM("WARNING        WARNING         WARNING");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09(" ");
+  SET_STR_AS_PARAM(" ");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("WE ARE PROCEEDING THROUGH THE ANOMALY.");
+  SET_STR_AS_PARAM("WE ARE PROCEEDING THROUGH THE ANOMALY.");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("PLEASE CONFIRM:");
+  SET_STR_AS_PARAM("PLEASE CONFIRM:");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09(" ");
+  SET_STR_AS_PARAM(" ");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("      [BACK OUT      GO THROUGH]      ");
+  SET_STR_AS_PARAM("      [BACK OUT      GO THROUGH]      ");
   UNK_0xeeff(); // UNK_0xeeff
 }
 
@@ -1142,13 +1142,13 @@ void UNK_0xf2ad() // UNK_0xf2ad
 {
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09("IF WE APPLY FULL REVERSE THRUST WE MAY");
+  SET_STR_AS_PARAM("IF WE APPLY FULL REVERSE THRUST WE MAY");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("BE ABLE TO BACK OUT. SHALL WE ATTEMPT ");
+  SET_STR_AS_PARAM("BE ABLE TO BACK OUT. SHALL WE ATTEMPT ");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("TO ESCAPE\?");
+  SET_STR_AS_PARAM("TO ESCAPE\?");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("              [NO   YES] ");
+  SET_STR_AS_PARAM("              [NO   YES] ");
   UNK_0xeeff(); // UNK_0xeeff
 }
 
@@ -1161,15 +1161,15 @@ void UNK_0xf338() // UNK_0xf338
 {
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09("COMMANDER, THE SHIP'S HULL IS UNDER");
+  SET_STR_AS_PARAM("COMMANDER, THE SHIP'S HULL IS UNDER");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("TERRIFIC PRESSURE AND WE ARE IN DANGER");
+  SET_STR_AS_PARAM("TERRIFIC PRESSURE AND WE ARE IN DANGER");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("OF SUSTAINING MAJOR DAMAGE. OUR ENERGY");
+  SET_STR_AS_PARAM("OF SUSTAINING MAJOR DAMAGE. OUR ENERGY");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("STORES ARE ALSO BEING DRAINED AT AN");
+  SET_STR_AS_PARAM("STORES ARE ALSO BEING DRAINED AT AN");
   UNK_0xeeff(); // UNK_0xeeff
-  UNK_0x3f09("ALARMING RATE.");
+  SET_STR_AS_PARAM("ALARMING RATE.");
   UNK_0xeeff(); // UNK_0xeeff
 }
 

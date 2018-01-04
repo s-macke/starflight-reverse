@@ -271,7 +271,7 @@ LoadDataType UNK_0xebf7 = {PLANETIDX, 0x10, 0x01, 0x16, 0x658f};
 IFieldType UNK_0xebff = {STARSYSTEMIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xec02: WORD 'UNK_0xec04' codep=0x224c parp=0xec04 params=2 returns=1
+// 0xec02: WORD 'UNK_0xec04' codep=0x224c parp=0xec04 params=0 returns=1
 // ================================================
 
 void UNK_0xec04() // UNK_0xec04
@@ -294,7 +294,7 @@ void UNK_0xec04() // UNK_0xec04
 
 
 // ================================================
-// 0xec24: WORD 'UNK_0xec26' codep=0x224c parp=0xec26 params=2 returns=0
+// 0xec24: WORD 'UNK_0xec26' codep=0x224c parp=0xec26 params=0 returns=0
 // ================================================
 
 void UNK_0xec26() // UNK_0xec26
@@ -731,7 +731,7 @@ void DrawWEAP() // .WEAP
 
 
 // ================================================
-// 0xef3a: WORD '.DELEM' codep=0x224c parp=0xef3c params=3 returns=0
+// 0xef3a: WORD '.DELEM' codep=0x224c parp=0xef3c params=1 returns=0
 // ================================================
 
 void DrawDELEM() // .DELEM
@@ -776,7 +776,7 @@ void DrawDELEM() // .DELEM
 
 
 // ================================================
-// 0xef8c: WORD '.CONSTIT' codep=0x224c parp=0xef8e params=9 returns=0
+// 0xef8c: WORD '.CONSTIT' codep=0x224c parp=0xef8e params=1 returns=0
 // ================================================
 
 void DrawCONSTIT() // .CONSTIT
@@ -796,7 +796,7 @@ void DrawCONSTIT() // .CONSTIT
 
 
 // ================================================
-// 0xefb5: WORD 'UNK_0xefb7' codep=0x224c parp=0xefb7 params=2 returns=1
+// 0xefb5: WORD 'UNK_0xefb7' codep=0x224c parp=0xefb7 params=0 returns=1
 // ================================================
 
 void UNK_0xefb7() // UNK_0xefb7
@@ -810,7 +810,7 @@ void UNK_0xefb7() // UNK_0xefb7
 
 
 // ================================================
-// 0xefc3: WORD '.ORBIT' codep=0x224c parp=0xefc5 params=2 returns=0
+// 0xefc3: WORD '.ORBIT' codep=0x224c parp=0xefc5 params=0 returns=0
 // ================================================
 
 void DrawORBIT() // .ORBIT
@@ -1271,7 +1271,7 @@ void DrawWEATH() // .WEATH
 
 
 // ================================================
-// 0xf29d: WORD 'UNK_0xf29f' codep=0x224c parp=0xf29f params=4 returns=0
+// 0xf29d: WORD 'UNK_0xf29f' codep=0x224c parp=0xf29f params=2 returns=0
 // ================================================
 
 void UNK_0xf29f() // UNK_0xf29f
@@ -1325,7 +1325,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
 
 
 // ================================================
-// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=3 returns=0
+// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=1 returns=0
 // ================================================
 
 void UNK_0xf2f2() // UNK_0xf2f2
@@ -1418,7 +1418,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
 
 
 // ================================================
-// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1 params=9 returns=0
+// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1 params=1 returns=0
 // ================================================
 
 void UNK_0xf3f1() // UNK_0xf3f1
@@ -1488,7 +1488,7 @@ void UNK_0xf426() // UNK_0xf426
 
 
 // ================================================
-// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436 params=9 returns=0
+// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436 params=3 returns=0
 // ================================================
 
 void UNK_0xf436() // UNK_0xf436

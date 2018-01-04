@@ -455,7 +455,7 @@ void UNK_0xe754() // UNK_0xe754
 
 
 // ================================================
-// 0xe75e: WORD 'UNK_0xe760' codep=0x224c parp=0xe760 params=5 returns=1
+// 0xe75e: WORD 'UNK_0xe760' codep=0x224c parp=0xe760 params=0 returns=2
 // ================================================
 
 void UNK_0xe760() // UNK_0xe760
@@ -508,7 +508,7 @@ void UNK_0xe760() // UNK_0xe760
 
 
 // ================================================
-// 0xe7b2: WORD '?HEAVY' codep=0x224c parp=0xe7bd params=5 returns=1
+// 0xe7b2: WORD '?HEAVY' codep=0x224c parp=0xe7bd params=0 returns=2
 // ================================================
 // entry
 
@@ -635,10 +635,10 @@ void UNK_0xe88e() // UNK_0xe88e
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    UNK_0x3f3b("UP");
+    SET_STR_AS_PARAM("UP");
   } else
   {
-    UNK_0x3f3b("DOWN");
+    SET_STR_AS_PARAM("DOWN");
   }
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -797,7 +797,7 @@ void UNK_0xe974() // UNK_0xe974
 
 
 // ================================================
-// 0xe99e: WORD 'UNK_0xe9a0' codep=0x224c parp=0xe9a0 params=2 returns=0
+// 0xe99e: WORD 'UNK_0xe9a0' codep=0x224c parp=0xe9a0 params=0 returns=2
 // ================================================
 
 void UNK_0xe9a0() // UNK_0xe9a0
@@ -828,7 +828,7 @@ void UNK_0xe9a0() // UNK_0xe9a0
 
 
 // ================================================
-// 0xe9d8: WORD 'UNK_0xe9da' codep=0x224c parp=0xe9da params=2 returns=0
+// 0xe9d8: WORD 'UNK_0xe9da' codep=0x224c parp=0xe9da params=0 returns=0
 // ================================================
 
 void UNK_0xe9da() // UNK_0xe9da
@@ -866,7 +866,7 @@ void UNK_0xe9da() // UNK_0xe9da
 
 
 // ================================================
-// 0xea24: WORD 'UNK_0xea26' codep=0x224c parp=0xea26 params=4 returns=0
+// 0xea24: WORD 'UNK_0xea26' codep=0x224c parp=0xea26 params=0 returns=2
 // ================================================
 
 void UNK_0xea26() // UNK_0xea26
@@ -1785,7 +1785,7 @@ void UNK_0xf0de() // UNK_0xf0de
   unsigned short int i, imax;
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  UNK_0x3f3b("ATMOSPHERE");
+  SET_STR_AS_PARAM("ATMOSPHERE");
   UNK_0xf0bd(); // UNK_0xf0bd
   Push(pp_ATMO); // ATMO
   Push(Read16(Pop())); // @
@@ -1801,7 +1801,7 @@ void UNK_0xf0de() // UNK_0xf0de
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
-  UNK_0x3f3b("HYDROSPHERE");
+  SET_STR_AS_PARAM("HYDROSPHERE");
   UNK_0xf0bd(); // UNK_0xf0bd
   Push(pp_HYDRO); // HYDRO
   Push(Read16(Pop())); // @
@@ -1819,7 +1819,7 @@ void UNK_0xf0de() // UNK_0xf0de
   ICLOSE(); // ICLOSE
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
-  UNK_0x3f3b("LITHOSPHERE");
+  SET_STR_AS_PARAM("LITHOSPHERE");
   UNK_0xf0bd(); // UNK_0xf0bd
   Push(3);
   Push(0);
@@ -1897,7 +1897,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f3b("OBJECT CONSTITUENTS");
+  SET_STR_AS_PARAM("OBJECT CONSTITUENTS");
   UNK_0xf0bd(); // UNK_0xf0bd
   LoadData(UNK_0xe64c); // from 'VESSEL'
   Push(Read8(Pop())&0xFF); // C@
@@ -1937,7 +1937,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
 
 
 // ================================================
-// 0xf237: WORD 'UNK_0xf239' codep=0x224c parp=0xf239 params=2 returns=2
+// 0xf237: WORD 'UNK_0xf239' codep=0x224c parp=0xf239 params=0 returns=2
 // ================================================
 
 void UNK_0xf239() // UNK_0xf239

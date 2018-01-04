@@ -1431,7 +1431,7 @@ void UNK_0xe78c() // UNK_0xe78c
 {
   UNK_0xe394(); // UNK_0xe394
   BEEP(); // BEEP
-  UNK_0x3f3b("SAVED GAME INTEGRITY ERROR.");
+  SET_STR_AS_PARAM("SAVED GAME INTEGRITY ERROR.");
   DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }
@@ -1449,7 +1449,7 @@ void UNK_0xe7b6() // UNK_0xe7b6
   if (Pop() == 0) return;
   UNK_0xe394(); // UNK_0xe394
   BEEP(); // BEEP
-  UNK_0x3f3b("GAME IN PROGRESS BUT NOT SAVED.");
+  SET_STR_AS_PARAM("GAME IN PROGRESS BUT NOT SAVED.");
   DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }
@@ -1494,9 +1494,9 @@ void Is_dash_writeable() // ?-writeable
 void nomaster() // nomaster
 {
   CTINIT(); // CTINIT
-  UNK_0x3f3b("MUST PLAY ON A WRITABLE COPY.");
+  SET_STR_AS_PARAM("MUST PLAY ON A WRITABLE COPY.");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("PRESS ANY KEY TO EXIT.");
+  SET_STR_AS_PARAM("PRESS ANY KEY TO EXIT.");
   DrawTTY(); // .TTY
   KEY_2(); // KEY_2
   Pop(); // DROP
@@ -1525,7 +1525,7 @@ void GDE() // GDE
 
 void DrawRESUMING() // .RESUMING
 {
-  UNK_0x3f3b("RESUMING THE GAME IN PROGRESS...");
+  SET_STR_AS_PARAM("RESUMING THE GAME IN PROGRESS...");
   DrawPAGE(); // .PAGE
   Push(0x03e8);
   MS(); // MS
@@ -1904,7 +1904,7 @@ void POPVECT() // POPVECT
 void UNK_0xea87() // UNK_0xea87
 {
   UNK_0xe394(); // UNK_0xe394
-  UNK_0x3f3b("LOADING GAME IN PROGRESS...");
+  SET_STR_AS_PARAM("LOADING GAME IN PROGRESS...");
   DrawPAGE(); // .PAGE
   Push(0x0037);
   Push(0x0011);
@@ -1921,7 +1921,7 @@ void UNK_0xea87() // UNK_0xea87
 void UNK_0xeac7() // UNK_0xeac7
 {
   UNK_0xe394(); // UNK_0xe394
-  UNK_0x3f3b("...GAME LOAD COMPLETE.");
+  SET_STR_AS_PARAM("...GAME LOAD COMPLETE.");
   DrawPAGE(); // .PAGE
   Push(0x05dc);
   MS(); // MS
@@ -1935,7 +1935,7 @@ void UNK_0xeac7() // UNK_0xeac7
 void UNK_0xeaee() // UNK_0xeaee
 {
   UNK_0xe394(); // UNK_0xe394
-  UNK_0x3f3b("SAVING GAME...");
+  SET_STR_AS_PARAM("SAVING GAME...");
   DrawPAGE(); // .PAGE
   Push(0x0037);
   Push(0x0011);
@@ -1952,7 +1952,7 @@ void UNK_0xeaee() // UNK_0xeaee
 void UNK_0xeb21() // UNK_0xeb21
 {
   UNK_0xe394(); // UNK_0xe394
-  UNK_0x3f3b("GAME SAVE COMPLETE.");
+  SET_STR_AS_PARAM("GAME SAVE COMPLETE.");
   DrawPAGE(); // .PAGE
   UNK_0xe5e9(); // UNK_0xe5e9
 }

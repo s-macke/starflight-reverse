@@ -314,16 +314,16 @@ void UNK_0xee70() // UNK_0xee70
   } while(i<imax); // (LOOP)
 
   GCR(); // GCR
-  UNK_0x3f3b("THE MANIFEST-COMPUTER CAPACITY HAS");
+  SET_STR_AS_PARAM("THE MANIFEST-COMPUTER CAPACITY HAS");
   UNK_0xee54(); // UNK_0xee54
   GCR(); // GCR
-  UNK_0x3f3b("BEEN EXCEEDED. SOME ITEMS MAY NOT");
+  SET_STR_AS_PARAM("BEEN EXCEEDED. SOME ITEMS MAY NOT");
   UNK_0xee54(); // UNK_0xee54
   GCR(); // GCR
-  UNK_0x3f3b("APPEAR IN THIS LIST.");
+  SET_STR_AS_PARAM("APPEAR IN THIS LIST.");
   UNK_0xee54(); // UNK_0xee54
   GCR(); // GCR
-  UNK_0x3f3b("PRESS SPACEBAR TO CONTINUE");
+  SET_STR_AS_PARAM("PRESS SPACEBAR TO CONTINUE");
   UNK_0xee54(); // UNK_0xee54
   StoreCRS(); // !CRS
 }
@@ -472,7 +472,7 @@ void UNK_0xefe9() // UNK_0xefe9
 
 void DATE_do__gt_ADR() // DATE$>ADR
 {
-  UNK_0x3f3b("00-00-");
+  SET_STR_AS_PARAM("00-00-");
   Push(3);
   PICK(); // PICK
   SWAP(); // SWAP
@@ -515,7 +515,7 @@ void DATE_do__gt_ADR() // DATE$>ADR
 
 
 // ================================================
-// 0xf072: WORD 'UNK_0xf074' codep=0x224c parp=0xf074 params=2 returns=0
+// 0xf072: WORD 'UNK_0xf074' codep=0x224c parp=0xf074 params=0 returns=0
 // ================================================
 
 void UNK_0xf074() // UNK_0xf074
@@ -669,7 +669,7 @@ void ITEM_gt_PAD() // ITEM>PAD
 
 
 // ================================================
-// 0xf155: WORD 'UNK_0xf157' codep=0x224c parp=0xf157 params=7 returns=0
+// 0xf155: WORD 'UNK_0xf157' codep=0x224c parp=0xf157 params=5 returns=0
 // ================================================
 
 void UNK_0xf157() // UNK_0xf157
@@ -719,7 +719,7 @@ void UNK_0xf157() // UNK_0xf157
 
 
 // ================================================
-// 0xf1b3: WORD 'BOX>LIST' codep=0x224c parp=0xf1c0 params=8 returns=0
+// 0xf1b3: WORD 'BOX>LIST' codep=0x224c parp=0xf1c0 params=0 returns=0
 // ================================================
 // entry
 
@@ -761,7 +761,7 @@ void BOX_gt_LIST() // BOX>LIST
 
 
 // ================================================
-// 0xf204: WORD 'GET-BOXES' codep=0x224c parp=0xf212 params=12 returns=0
+// 0xf204: WORD 'GET-BOXES' codep=0x224c parp=0xf212 params=2 returns=0
 // ================================================
 // entry
 
@@ -812,7 +812,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 
 
 // ================================================
-// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280 params=4 returns=0
+// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280 params=0 returns=0
 // ================================================
 // entry
 
@@ -976,7 +976,7 @@ void _gt_BOX() // >BOX
 
 
 // ================================================
-// 0xf381: WORD '?ELEMENT' codep=0x224c parp=0xf38e params=2 returns=1
+// 0xf381: WORD '?ELEMENT' codep=0x224c parp=0xf38e params=0 returns=1
 // ================================================
 
 void IsELEMENT() // ?ELEMENT

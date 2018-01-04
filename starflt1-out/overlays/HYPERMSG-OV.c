@@ -365,7 +365,7 @@ void UNK_0xe570() // UNK_0xe570
 // 0xe588: dw 0x0190
 
 // ================================================
-// 0xe58a: WORD 'UNK_0xe58c' codep=0x224c parp=0xe58c params=2 returns=0
+// 0xe58a: WORD 'UNK_0xe58c' codep=0x224c parp=0xe58c params=0 returns=0
 // ================================================
 
 void UNK_0xe58c() // UNK_0xe58c
@@ -713,7 +713,7 @@ void IsPRL() // ?PRL
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
-  UNK_0x3f3b("THE CRYSTAL PEARL IS PULSING!");
+  SET_STR_AS_PARAM("THE CRYSTAL PEARL IS PULSING!");
   DrawTTY(); // .TTY
   GetCRS(); // @CRS
   Push(1);
@@ -775,7 +775,7 @@ void UNK_0xe81b() // UNK_0xe81b
 
 
 // ================================================
-// 0xe82b: WORD 'UNK_0xe82d' codep=0x224c parp=0xe82d params=4 returns=0
+// 0xe82b: WORD 'UNK_0xe82d' codep=0x224c parp=0xe82d params=0 returns=0
 // ================================================
 
 void UNK_0xe82d() // UNK_0xe82d
@@ -797,7 +797,7 @@ void UNK_0xe82d() // UNK_0xe82d
 
 
 // ================================================
-// 0xe849: WORD 'UNK_0xe84b' codep=0x224c parp=0xe84b params=6 returns=0
+// 0xe849: WORD 'UNK_0xe84b' codep=0x224c parp=0xe84b params=0 returns=0
 // ================================================
 
 void UNK_0xe84b() // UNK_0xe84b
@@ -830,7 +830,7 @@ void UNK_0xe84b() // UNK_0xe84b
 
 
 // ================================================
-// 0xe87f: WORD 'UNK_0xe881' codep=0x224c parp=0xe881 params=4 returns=0
+// 0xe87f: WORD 'UNK_0xe881' codep=0x224c parp=0xe881 params=0 returns=0
 // ================================================
 
 void UNK_0xe881() // UNK_0xe881
@@ -908,7 +908,7 @@ void UNK_0xe8b6() // UNK_0xe8b6
 
 
 // ================================================
-// 0xe8ec: WORD 'UNK_0xe8ee' codep=0x224c parp=0xe8ee params=2 returns=0
+// 0xe8ec: WORD 'UNK_0xe8ee' codep=0x224c parp=0xe8ee params=0 returns=0
 // ================================================
 
 void UNK_0xe8ee() // UNK_0xe8ee
@@ -1084,7 +1084,7 @@ void DO_dash_FLARE() // DO-FLARE
 
 void UNK_0xea50() // UNK_0xea50
 {
-  UNK_0x3f3b("...COMMENCING ");
+  SET_STR_AS_PARAM("...COMMENCING ");
   DrawTTY(); // .TTY
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT(" TRAVEL", 7); // (.")
@@ -1097,7 +1097,7 @@ void UNK_0xea50() // UNK_0xea50
 
 void UNK_0xea73() // UNK_0xea73
 {
-  UNK_0x3f3b("ORBIT");
+  SET_STR_AS_PARAM("ORBIT");
 }
 
 
@@ -1107,7 +1107,7 @@ void UNK_0xea73() // UNK_0xea73
 
 void UNK_0xea7f() // UNK_0xea7f
 {
-  UNK_0x3f3b("SYSTEM");
+  SET_STR_AS_PARAM("SYSTEM");
 }
 
 
@@ -1117,7 +1117,7 @@ void UNK_0xea7f() // UNK_0xea7f
 
 void UNK_0xea8c() // UNK_0xea8c
 {
-  UNK_0x3f3b("STARPORT");
+  SET_STR_AS_PARAM("STARPORT");
 }
 
 
@@ -1127,7 +1127,7 @@ void UNK_0xea8c() // UNK_0xea8c
 
 void UNK_0xea9b() // UNK_0xea9b
 {
-  UNK_0x3f3b("ENCOUNTER");
+  SET_STR_AS_PARAM("ENCOUNTER");
 }
 
 
@@ -1137,7 +1137,7 @@ void UNK_0xea9b() // UNK_0xea9b
 
 void UNK_0xeaab() // UNK_0xeaab
 {
-  UNK_0x3f3b("STANDING BY TO ");
+  SET_STR_AS_PARAM("STANDING BY TO ");
   DrawTTY(); // .TTY
 }
 
@@ -1168,7 +1168,7 @@ void UNK_0xeada() // UNK_0xeada
   _2_at_(); // 2@
   Push(pp_ENC_dash_TIME); // ENC-TIME
   StoreD(); // D!
-  UNK_0x3f3b("PRESS SPACEBAR TO ORBIT");
+  SET_STR_AS_PARAM("PRESS SPACEBAR TO ORBIT");
   DrawTTY(); // .TTY
 }
 
@@ -1212,7 +1212,7 @@ void UNK_0xeb26() // UNK_0xeb26
 
 void UNK_0xeb36() // UNK_0xeb36
 {
-  UNK_0x3f3b("...");
+  SET_STR_AS_PARAM("...");
   DrawTTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1228,7 +1228,7 @@ void UNK_0xeb36() // UNK_0xeb36
 
 void UNK_0xeb59() // UNK_0xeb59
 {
-  UNK_0x3f3b("...");
+  SET_STR_AS_PARAM("...");
   DrawTTY(); // .TTY
   UNK_0xea7f(); // UNK_0xea7f
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1244,7 +1244,7 @@ void UNK_0xeb59() // UNK_0xeb59
 
 void UNK_0xeb76() // UNK_0xeb76
 {
-  UNK_0x3f3b("...DOCKING");
+  SET_STR_AS_PARAM("...DOCKING");
   DrawTTY(); // .TTY
   UNK_0xeb26(); // UNK_0xeb26
   Push(Read16(cc__i_OVBACK)); // 'OVBACK
@@ -1315,7 +1315,7 @@ void NF_dash_MESS() // NF-MESS
 
 void UNK_0xebd6() // UNK_0xebd6
 {
-  UNK_0x3f3b("COMPUTING SUB-");
+  SET_STR_AS_PARAM("COMPUTING SUB-");
   DrawTTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1329,7 +1329,7 @@ void UNK_0xebd6() // UNK_0xebd6
 
 void UNK_0xec04() // UNK_0xec04
 {
-  UNK_0x3f3b("INITIATING ");
+  SET_STR_AS_PARAM("INITIATING ");
   DrawTTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1343,7 +1343,7 @@ void UNK_0xec04() // UNK_0xec04
 
 void UNK_0xec2d() // UNK_0xec2d
 {
-  UNK_0x3f3b("COMMENCING ");
+  SET_STR_AS_PARAM("COMMENCING ");
   DrawTTY(); // .TTY
   UNK_0xea7f(); // UNK_0xea7f
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1357,7 +1357,7 @@ void UNK_0xec2d() // UNK_0xec2d
 
 void UNK_0xec57() // UNK_0xec57
 {
-  UNK_0x3f3b("INITIATING DOCKING PROCEDURE...");
+  SET_STR_AS_PARAM("INITIATING DOCKING PROCEDURE...");
   DrawTTY(); // .TTY
 }
 
@@ -1368,7 +1368,7 @@ void UNK_0xec57() // UNK_0xec57
 
 void UNK_0xec7f() // UNK_0xec7f
 {
-  UNK_0x3f3b("SCANNERS INDICATE UNIDENTIFIED OBJECT!");
+  SET_STR_AS_PARAM("SCANNERS INDICATE UNIDENTIFIED OBJECT!");
   DrawTTY(); // .TTY
   Push(0x02bc);
   Push(0x1e78);
@@ -1441,7 +1441,7 @@ IFieldType UNK_0xecfe = {SHIPIDX, 0x11, 0x02};
 // 0xed07: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xed09: WORD 'UNK_0xed0b' codep=0x224c parp=0xed0b params=4 returns=0
+// 0xed09: WORD 'UNK_0xed0b' codep=0x224c parp=0xed0b params=0 returns=0
 // ================================================
 
 void UNK_0xed0b() // UNK_0xed0b
@@ -1477,15 +1477,15 @@ void UNK_0xed0b() // UNK_0xed0b
 
 
 // ================================================
-// 0xed49: WORD 'UNK_0xed4b' codep=0x224c parp=0xed4b params=2 returns=0
+// 0xed49: WORD 'UNK_0xed4b' codep=0x224c parp=0xed4b params=0 returns=0
 // ================================================
 
 void UNK_0xed4b() // UNK_0xed4b
 {
   CTINIT(); // CTINIT
-  UNK_0x3f3b("CAPTAIN,");
+  SET_STR_AS_PARAM("CAPTAIN,");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("THE SHIP IS BEGINNING TO VIBRATE!");
+  SET_STR_AS_PARAM("THE SHIP IS BEGINNING TO VIBRATE!");
   DrawTTY(); // .TTY
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
@@ -1540,13 +1540,13 @@ void UNK_0xed94() // UNK_0xed94
 void UNK_0xedd2() // UNK_0xedd2
 {
   CTINIT(); // CTINIT
-  UNK_0x3f3b("THE HULL ");
+  SET_STR_AS_PARAM("THE HULL ");
   DrawTTY(); // .TTY
 }
 
 
 // ================================================
-// 0xede4: WORD 'UNK_0xede6' codep=0x224c parp=0xede6 params=4 returns=0
+// 0xede4: WORD 'UNK_0xede6' codep=0x224c parp=0xede6 params=0 returns=0
 // ================================================
 
 void UNK_0xede6() // UNK_0xede6
@@ -1558,7 +1558,7 @@ void UNK_0xede6() // UNK_0xede6
 
 
 // ================================================
-// 0xee09: WORD 'UNK_0xee0b' codep=0x224c parp=0xee0b params=4 returns=0
+// 0xee09: WORD 'UNK_0xee0b' codep=0x224c parp=0xee0b params=0 returns=0
 // ================================================
 
 void UNK_0xee0b() // UNK_0xee0b
@@ -1570,7 +1570,7 @@ void UNK_0xee0b() // UNK_0xee0b
 
 
 // ================================================
-// 0xee23: WORD 'UNK_0xee25' codep=0x224c parp=0xee25 params=4 returns=0
+// 0xee23: WORD 'UNK_0xee25' codep=0x224c parp=0xee25 params=0 returns=0
 // ================================================
 
 void UNK_0xee25() // UNK_0xee25
@@ -1613,7 +1613,7 @@ void UNK_0xee3b() // UNK_0xee3b
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
-  UNK_0x3f3b("**SHIP MELTED**");
+  SET_STR_AS_PARAM("**SHIP MELTED**");
   DrawTTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -1793,7 +1793,7 @@ void OSET() // OSET
       MODULE(); // MODULE
       if (Pop() != 0)
       {
-        UNK_0x3f3b("THE CRYSTAL ORB IS GLOWING");
+        SET_STR_AS_PARAM("THE CRYSTAL ORB IS GLOWING");
         DrawTTY(); // .TTY
         Push(0x3a48); // probable 'NOP'
       } else
@@ -1837,7 +1837,7 @@ void UNK_0xefe3() // UNK_0xefe3
 
 void UNK_0xefeb() // UNK_0xefeb
 {
-  UNK_0x3f3b("INTER-STELLAR");
+  SET_STR_AS_PARAM("INTER-STELLAR");
   UNK_0xea50(); // UNK_0xea50
 }
 
@@ -1851,7 +1851,7 @@ void UNK_0xf001() // UNK_0xf001
   Push(0xc4e5); // probable 'OVFLU'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
-  UNK_0x3f3b("...");
+  SET_STR_AS_PARAM("...");
   DrawTTY(); // .TTY
   UNK_0xea8c(); // UNK_0xea8c
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1865,7 +1865,7 @@ void UNK_0xf001() // UNK_0xf001
 
 void UNK_0xf022() // UNK_0xf022
 {
-  UNK_0x3f3b("...");
+  SET_STR_AS_PARAM("...");
   DrawTTY(); // .TTY
   UNK_0xea9b(); // UNK_0xea9b
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1906,7 +1906,7 @@ void UNK_0xf022() // UNK_0xf022
 
 void UNK_0xf078() // UNK_0xf078
 {
-  UNK_0x3f3b("OUTSIDE ");
+  SET_STR_AS_PARAM("OUTSIDE ");
   DrawTTY(); // .TTY
   UNK_0xea73(); // UNK_0xea73
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1966,7 +1966,7 @@ void UF_dash_MESS() // UF-MESS
 
 void UNK_0xf0d5() // UNK_0xf0d5
 {
-  UNK_0x3f3b("LEAVING ");
+  SET_STR_AS_PARAM("LEAVING ");
   DrawTTY(); // .TTY
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT("...", 3); // (.")
@@ -2075,7 +2075,7 @@ void UNK_0xf13d() // UNK_0xf13d
 
 void UNK_0xf149() // UNK_0xf149
 {
-  UNK_0x3f3b("FUEL SUPPLY LOW");
+  SET_STR_AS_PARAM("FUEL SUPPLY LOW");
   SetColor(YELLOW);
   UNK_0xf13d(); // UNK_0xf13d
 }
@@ -2087,7 +2087,7 @@ void UNK_0xf149() // UNK_0xf149
 
 void UNK_0xf163() // UNK_0xf163
 {
-  UNK_0x3f3b("FUEL SUPPLY CRITICAL");
+  SET_STR_AS_PARAM("FUEL SUPPLY CRITICAL");
   SetColor(ORANGE);
   UNK_0xf13d(); // UNK_0xf13d
 }
@@ -2099,7 +2099,7 @@ void UNK_0xf163() // UNK_0xf163
 
 void UNK_0xf182() // UNK_0xf182
 {
-  UNK_0x3f3b("OUT OF FUEL");
+  SET_STR_AS_PARAM("OUT OF FUEL");
   SetColor(PINK);
   UNK_0xf13d(); // UNK_0xf13d
 }
@@ -2186,7 +2186,7 @@ void DMSG() // DMSG
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
-  UNK_0x3f3b("READY TO PICK UP DEBRIS");
+  SET_STR_AS_PARAM("READY TO PICK UP DEBRIS");
   DrawTTY(); // .TTY
 }
 
@@ -2334,12 +2334,12 @@ void UNK_0xf28b() // UNK_0xf28b
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    UNK_0x3f3b("MOTION DETECTED AT");
+    SET_STR_AS_PARAM("MOTION DETECTED AT");
     DrawTTY(); // .TTY
     Push(pp_UNK_0xf27f); // UNK_0xf27f
     OFF(); // OFF
   }
-  UNK_0x3f3b(" X:");
+  SET_STR_AS_PARAM(" X:");
   DrawTTY(); // .TTY
   Push(pp_UNK_0xf283); // UNK_0xf283
   Push(Read16(Pop())); // @
@@ -2392,7 +2392,7 @@ void UNK_0xf31b() // UNK_0xf31b
 
 
 // ================================================
-// 0xf331: WORD 'UNK_0xf333' codep=0x224c parp=0xf333 params=6 returns=2
+// 0xf331: WORD 'UNK_0xf333' codep=0x224c parp=0xf333 params=0 returns=2
 // ================================================
 
 void UNK_0xf333() // UNK_0xf333
@@ -2463,7 +2463,7 @@ void UNK_0xf333() // UNK_0xf333
 
 
 // ================================================
-// 0xf3a9: WORD 'UNK_0xf3ab' codep=0x224c parp=0xf3ab params=2 returns=1
+// 0xf3a9: WORD 'UNK_0xf3ab' codep=0x224c parp=0xf3ab params=0 returns=1
 // ================================================
 
 void UNK_0xf3ab() // UNK_0xf3ab

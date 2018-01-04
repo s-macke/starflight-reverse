@@ -61,7 +61,7 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_IHEADLEN; // IHEADLEN
-extern const unsigned short int cc_UNK_0x4fff; // UNK_0x4fff
+extern const unsigned short int cc_END_dash_CX; // END-CX
 extern const unsigned short int cc_UNK_0x5003; // UNK_0x5003
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
@@ -69,11 +69,11 @@ extern const unsigned short int pp_CXSP; // CXSP
 extern const unsigned short int pp_UNK_0x54b4; // UNK_0x54b4
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
 extern const unsigned short int pp__i_MAP; // 'MAP
-extern const unsigned short int pp__i_TRAVER; // 'TRAVER
+extern const unsigned short int pp__i_TRAVERS; // 'TRAVERS
 extern const unsigned short int pp__i__ask_EXIT; // '?EXIT
 extern const unsigned short int pp_UNK_0x5532; // UNK_0x5532
-extern const unsigned short int pp_UNK_0x5d6b; // UNK_0x5d6b
-extern const unsigned short int pp_UNK_0x5e58; // UNK_0x5e58
+extern const unsigned short int pp_IsREUSE; // ?REUSE
+extern const unsigned short int pp_IsRECYCLED; // ?RECYCLED
 extern const unsigned short int pp_UNK_0x6162; // UNK_0x6162
 extern const unsigned short int pp_UNK_0x6329; // UNK_0x6329
 extern const unsigned short int pp_IBFR; // IBFR
@@ -93,11 +93,11 @@ void VA_gt_BUF(); // VA>BUF
 void UNK_0x74cc(); // UNK_0x74cc
 void UNK_0x74d4(); // UNK_0x74d4
 void UNK_0x74dc(); // UNK_0x74dc
-void UNK_0x74e4(); // UNK_0x74e4
-void StoreINST_dash_SIB(); // !INST-SIB
-void UNK_0x74fe(); // UNK_0x74fe
-void UNK_0x7506(); // UNK_0x7506
-void UNK_0x750e(); // UNK_0x750e
+void StoreINST_dash_CLASS(); // !INST-CLASS
+void StoreINST_dash_SPECIES(); // !INST-SPECIES
+void GetINST_dash_SIB(); // @INST-SIB
+void GetINST_dash_PREV(); // @INST-PREV
+void GetINST_dash_OFF(); // @INST-OFF
 void GetINST_dash_CLASS(); // @INST-CLASS
 void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
@@ -107,8 +107,8 @@ void IsNULL(); // ?NULL
 void Is_dash_NULL(); // ?-NULL
 void IsCHILD(); // ?CHILD
 void UNK_0x761f(); // UNK_0x761f
-void UNK_0x765c(); // UNK_0x765c
-void UNK_0x76ec(); // UNK_0x76ec
+void ICACHE_gt_IBFR(); // ICACHE>IBFR
+void POINT_gt_I(); // POINT>I
 void UNK_0x7720(); // UNK_0x7720
 void UNK_0x77a4(); // UNK_0x77a4
 void UNK_0x790c(); // UNK_0x790c
@@ -133,7 +133,7 @@ void VA_gt_BLK(); // VA>BLK
 void _gt_C(); // >C
 void CI(); // CI
 void CDEPTH(); // CDEPTH
-void PRIORIT(); // PRIORIT
+void PRIORITIZE(); // PRIORITIZE
 void _gt_V(); // >V
 void V_gt_(); // V>
 void VI(); // VI
@@ -162,9 +162,9 @@ void SET_dash_CURRENT() // SET-CURRENT
   UNK_0x7720(); // UNK_0x7720
   if (Pop() != 0)
   {
-    PRIORIT(); // PRIORIT
-    UNK_0x76ec(); // UNK_0x76ec
-    UNK_0x765c(); // UNK_0x765c
+    PRIORITIZE(); // PRIORITIZE
+    POINT_gt_I(); // POINT>I
+    ICACHE_gt_IBFR(); // ICACHE>IBFR
   } else
   {
     CI(); // CI
@@ -192,7 +192,7 @@ void ICLOSE() // ICLOSE
   if (Pop() != 0)
   {
     SET_dash_CURRENT(); // SET-CURRENT
-    UNK_0x750e(); // UNK_0x750e
+    GetINST_dash_OFF(); // @INST-OFF
   } else
   {
     Push2Words("NULL");
@@ -227,12 +227,12 @@ void Get_gt_C_plus_S() // @>C+S
 
 
 // ================================================
-// 0x7a0a: WORD 'IOPEN' codep=0x224c parp=0x7a14 params=2 returns=0
+// 0x7a0a: WORD 'IOPEN' codep=0x224c parp=0x7a14 params=0 returns=0
 // ================================================
 
 void IOPEN() // IOPEN
 {
-  UNK_0x750e(); // UNK_0x750e
+  GetINST_dash_OFF(); // @INST-OFF
   _2DUP(); // 2DUP
   Push(pp_UNK_0x6162); // UNK_0x6162
   _st_1_dot_5_ex__gt_(); // <1.5!>
@@ -247,7 +247,7 @@ void IOPEN() // IOPEN
 void CCLR() // CCLR
 {
   UNK_0x77a4(); // UNK_0x77a4
-  Push(Read16(cc_UNK_0x4fff)); // UNK_0x4fff
+  Push(Read16(cc_END_dash_CX)); // END-CX
   Push(pp_CXSP); // CXSP
   _st__ex__gt_(); // <!>
   Push(pp_UNK_0x6329); // UNK_0x6329
@@ -258,10 +258,10 @@ void CCLR() // CCLR
 
 
 // ================================================
-// 0x7a3d: WORD 'UNK_0x7a3f' codep=0x224c parp=0x7a3f params=0 returns=2
+// 0x7a3d: WORD '1STCHILD' codep=0x224c parp=0x7a3f params=0 returns=2
 // ================================================
 
-void UNK_0x7a3f() // UNK_0x7a3f
+void _1STCHILD() // 1STCHILD
 {
   Push(pp_UNK_0x6162); // UNK_0x6162
   _1_dot_5_at_(); // 1.5@
@@ -269,13 +269,13 @@ void UNK_0x7a3f() // UNK_0x7a3f
 
 
 // ================================================
-// 0x7a45: WORD '?LAST' codep=0x224c parp=0x7a4f params=2 returns=1
+// 0x7a45: WORD '?LAST' codep=0x224c parp=0x7a4f params=0 returns=1
 // ================================================
 
 void IsLAST() // ?LAST
 {
-  UNK_0x74fe(); // UNK_0x74fe
-  UNK_0x7a3f(); // UNK_0x7a3f
+  GetINST_dash_SIB(); // @INST-SIB
+  _1STCHILD(); // 1STCHILD
   D_eq_(); // D=
 }
 
@@ -287,13 +287,13 @@ void IsLAST() // ?LAST
 void IsFIRST() // ?FIRST
 {
   CI(); // CI
-  UNK_0x7a3f(); // UNK_0x7a3f
+  _1STCHILD(); // 1STCHILD
   D_eq_(); // D=
 }
 
 
 // ================================================
-// 0x7a6a: WORD '>C+' codep=0x224c parp=0x7a72 params=4 returns=0
+// 0x7a6a: WORD '>C+' codep=0x224c parp=0x7a72 params=2 returns=0
 // ================================================
 
 void _gt_C_plus_() // >C+
@@ -313,7 +313,7 @@ void INEXT() // INEXT
 {
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
-  UNK_0x74fe(); // UNK_0x74fe
+  GetINST_dash_SIB(); // @INST-SIB
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
 }
@@ -327,7 +327,7 @@ void IPREV() // IPREV
 {
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
-  UNK_0x7506(); // UNK_0x7506
+  GetINST_dash_PREV(); // @INST-PREV
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
 }
@@ -340,7 +340,7 @@ void IPREV() // IPREV
 void IFIRST() // IFIRST
 {
   CDROP(); // CDROP
-  UNK_0x7a3f(); // UNK_0x7a3f
+  _1STCHILD(); // 1STCHILD
   _gt_C_plus_S(); // >C+S
 }
 
@@ -430,14 +430,14 @@ void IINSERT() // IINSERT
   IsCHILD(); // ?CHILD
   if (Pop() != 0)
   {
-    UNK_0x750e(); // UNK_0x750e
+    GetINST_dash_OFF(); // @INST-OFF
     _2SWAP(); // 2SWAP
     UNK_0x74dc(); // UNK_0x74dc
     IOPEN(); // IOPEN
     UNK_0x74cc(); // UNK_0x74cc
     CI(); // CI
     INEXT(); // INEXT
-    UNK_0x7506(); // UNK_0x7506
+    GetINST_dash_PREV(); // @INST-PREV
     _2SWAP(); // 2SWAP
     UNK_0x74d4(); // UNK_0x74d4
     IPREV(); // IPREV
@@ -466,7 +466,7 @@ void IINSERT() // IINSERT
 void _st_INSERT() // <INSERT
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0x7506(); // UNK_0x7506
+  GetINST_dash_PREV(); // @INST-PREV
   _2SWAP(); // 2SWAP
   UNK_0x74d4(); // UNK_0x74d4
   CI(); // CI
@@ -487,7 +487,7 @@ void _st_INSERT() // <INSERT
 void _gt_INSERT() // >INSERT
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0x74fe(); // UNK_0x74fe
+  GetINST_dash_SIB(); // @INST-SIB
   ICLOSE(); // ICLOSE
   _st_INSERT(); // <INSERT
 }
@@ -512,8 +512,8 @@ void IEXTRACT() // IEXTRACT
   IsFIRST(); // ?FIRST
   if (Pop() != 0)
   {
-    UNK_0x7506(); // UNK_0x7506
-    UNK_0x74fe(); // UNK_0x74fe
+    GetINST_dash_PREV(); // @INST-PREV
+    GetINST_dash_SIB(); // @INST-SIB
     ICLOSE(); // ICLOSE
     UNK_0x74dc(); // UNK_0x74dc
     IOPEN(); // IOPEN
@@ -524,7 +524,7 @@ void IEXTRACT() // IEXTRACT
     INEXT(); // INEXT
     return;
   }
-  UNK_0x74fe(); // UNK_0x74fe
+  GetINST_dash_SIB(); // @INST-SIB
   IPREV(); // IPREV
   UNK_0x74cc(); // UNK_0x74cc
   CI(); // CI
@@ -689,7 +689,7 @@ void IFLD_ex_() // IFLD!
 // 0x7cff: db 0x4c 0x22 0x7f 0x0e 0xd3 0x7c 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  | _   '
 
 // ================================================
-// 0x7d0b: WORD '?CLASS/' codep=0x224c parp=0x7d17 params=4 returns=1
+// 0x7d0b: WORD '?CLASS/' codep=0x224c parp=0x7d17 params=2 returns=3
 // ================================================
 
 void IsCLASS_slash_() // ?CLASS/
@@ -740,7 +740,7 @@ void UNK_0x7d41() // UNK_0x7d41
 
 void UNK_0x7d49() // UNK_0x7d49
 {
-  Push(pp__i_TRAVER); // 'TRAVER
+  Push(pp__i_TRAVERS); // 'TRAVERS
   GetEXECUTE(); // @EXECUTE
 }
 
@@ -757,10 +757,10 @@ void MAP() // MAP
 
 
 // ================================================
-// 0x7d5d: WORD 'UNK_0x7d5f' codep=0x224c parp=0x7d5f params=2 returns=0
+// 0x7d5d: WORD 'DUP@>V!' codep=0x224c parp=0x7d5f params=2 returns=0
 // ================================================
 
-void UNK_0x7d5f() // UNK_0x7d5f
+void DUP_at__gt_V_ex_() // DUP@>V!
 {
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); // @
@@ -770,10 +770,10 @@ void UNK_0x7d5f() // UNK_0x7d5f
 
 
 // ================================================
-// 0x7d69: WORD 'UNK_0x7d6b' codep=0x224c parp=0x7d6b params=1 returns=0
+// 0x7d69: WORD 'V>SWAP!' codep=0x224c parp=0x7d6b params=1 returns=0
 // ================================================
 
-void UNK_0x7d6b() // UNK_0x7d6b
+void V_gt_SWAP_ex_() // V>SWAP!
 {
   V_gt_(); // V>
   SWAP(); // SWAP
@@ -833,20 +833,20 @@ void SELECT_dash_() // SELECT-
 {
   unsigned short int a;
   Push(pp_UNK_0x5532); // UNK_0x5532
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(0x7db2); // probable '?>FIRST'
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(0x7a86); // probable 'INEXT'
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d5f(); // UNK_0x7d5f
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  DUP_at__gt_V_ex_(); // DUP@>V!
   SELECT(); // SELECT
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d6b(); // UNK_0x7d6b
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp_UNK_0x5532); // UNK_0x5532
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
@@ -877,7 +877,7 @@ void IFIND() // IFIND
 
 
 // ================================================
-// 0x7e1c: WORD 'UNK_0x7e1e' codep=0x224c parp=0x7e1e params=2 returns=0
+// 0x7e1c: WORD 'UNK_0x7e1e' codep=0x224c parp=0x7e1e params=0 returns=0
 // ================================================
 
 void UNK_0x7e1e() // UNK_0x7e1e
@@ -897,10 +897,10 @@ void UNK_0x7e1e() // UNK_0x7e1e
 
 
 // ================================================
-// 0x7e36: WORD 'UNK_0x7e38' codep=0x224c parp=0x7e38 params=2 returns=0
+// 0x7e36: WORD 'MAP>LEAF' codep=0x224c parp=0x7e38 params=0 returns=0
 // ================================================
 
-void UNK_0x7e38() // UNK_0x7e38
+void MAP_gt_LEAF() // MAP>LEAF
 {
   MAP(); // MAP
   IsCHILD(); // ?CHILD
@@ -908,7 +908,7 @@ void UNK_0x7e38() // UNK_0x7e38
   IOPEN(); // IOPEN
   do
   {
-    UNK_0x7e38(); // UNK_0x7e38
+    MAP_gt_LEAF(); // MAP>LEAF
     UNK_0x7d49(); // UNK_0x7d49
     UNK_0x7d41(); // UNK_0x7d41
   } while(Pop() == 0);
@@ -944,7 +944,7 @@ void UNK_0x7e70() // UNK_0x7e70
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x749c); // probable 'INST-SP'
+    Push(0x749c); // probable 'INST-SPECIES'
     SWAP(); // SWAP
     UNK_0x7e02(); // UNK_0x7e02
     if (Pop() != 0)
@@ -981,7 +981,7 @@ void _gt_INACTIVE() // >INACTIVE
   Push(Read16(cc_IHEADLEN)); // IHEADLEN
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  StoreINST_dash_SIB(); // !INST-SIB
+  StoreINST_dash_SPECIES(); // !INST-SPECIES
   CDROP(); // CDROP
   UNK_0x7e70(); // UNK_0x7e70
 }
@@ -989,28 +989,28 @@ void _gt_INACTIVE() // >INACTIVE
 // 0x7ec8: db 0x4c 0x22 0xf3 0x7b 0xac 0x7e 0x90 0x16 'L" { ~  '
 
 // ================================================
-// 0x7ed0: WORD 'IDELETE' codep=0x224c parp=0x7edc params=2 returns=0
+// 0x7ed0: WORD 'IDELETE' codep=0x224c parp=0x7edc params=0 returns=0
 // ================================================
 
 void IDELETE() // IDELETE
 {
   Push(0x7eca);
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(0x75f3); // probable '?NULL'
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(0x3a48); // probable 'NOP'
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d5f(); // UNK_0x7d5f
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  DUP_at__gt_V_ex_(); // DUP@>V!
   UNK_0x7e1e(); // UNK_0x7e1e
   MAP(); // MAP
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d6b(); // UNK_0x7d6b
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
 }
 
 
@@ -1021,13 +1021,13 @@ void IDELETE() // IDELETE
 void UNK_0x7f08() // UNK_0x7f08
 {
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d5f(); // UNK_0x7d5f
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   Push(pp_UNK_0x5532); // UNK_0x5532
-  UNK_0x7d5f(); // UNK_0x7d5f
+  DUP_at__gt_V_ex_(); // DUP@>V!
   IFIRST(); // IFIRST
   do
   {
@@ -1043,13 +1043,13 @@ void UNK_0x7f08() // UNK_0x7f08
     }
   } while(Pop() == 0);
   Push(pp_UNK_0x5532); // UNK_0x5532
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d6b(); // UNK_0x7d6b
-  Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
+  Push(pp__i_TRAVERS); // 'TRAVERS
+  V_gt_SWAP_ex_(); // V>SWAP!
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d6b(); // UNK_0x7d6b
+  V_gt_SWAP_ex_(); // V>SWAP!
 }
 
 
@@ -1129,7 +1129,7 @@ void UNK_0x7f9b() // UNK_0x7f9b
 
 
 // ================================================
-// 0x7faf: WORD 'UNK_0x7fb1' codep=0x224c parp=0x7fb1 params=2 returns=0
+// 0x7faf: WORD 'UNK_0x7fb1' codep=0x224c parp=0x7fb1 params=0 returns=0
 // ================================================
 
 void UNK_0x7fb1() // UNK_0x7fb1
@@ -1140,12 +1140,12 @@ void UNK_0x7fb1() // UNK_0x7fb1
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x749c); // probable 'INST-SP'
+    Push(0x749c); // probable 'INST-SPECIES'
     OVER(); // OVER
     UNK_0x7e02(); // UNK_0x7e02
     if (Pop() != 0)
     {
-      Push(pp_UNK_0x5e58); // UNK_0x5e58
+      Push(pp_IsRECYCLED); // ?RECYCLED
       ON_2(); // ON_2
       MAKE1ST(); // MAKE1ST
       UNK_0x7f9b(); // UNK_0x7f9b
@@ -1259,16 +1259,16 @@ void UNK_0x8049() // UNK_0x8049
 
 
 // ================================================
-// 0x8081: WORD 'UNK_0x8083' codep=0x224c parp=0x8083
+// 0x8081: WORD 'GET-NEW-INSTANCE' codep=0x224c parp=0x8083
 // ================================================
 
-void UNK_0x8083() // UNK_0x8083
+void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
 {
   do
   {
-    Push(pp_UNK_0x5e58); // UNK_0x5e58
+    Push(pp_IsRECYCLED); // ?RECYCLED
     OFF_2(); // OFF_2
-    Push(pp_UNK_0x5d6b); // UNK_0x5d6b
+    Push(pp_IsREUSE); // ?REUSE
     Push(Read16(Pop())); // @
     if (Pop() != 0)
     {
@@ -1281,7 +1281,7 @@ void UNK_0x8083() // UNK_0x8083
     if (Pop() != 0)
     {
       CDROP(); // CDROP
-      Push(pp_UNK_0x5d6b); // UNK_0x5d6b
+      Push(pp_IsREUSE); // ?REUSE
       Push(Read16(Pop())); // @
       if (Pop() != 0)
       {
@@ -1304,12 +1304,12 @@ void UNK_0x8083() // UNK_0x8083
 
 
 // ================================================
-// 0x80c5: WORD 'SET?REU' codep=0x4a4f parp=0x80d1
+// 0x80c5: WORD 'SET?REUSE' codep=0x4a4f parp=0x80d1
 // ================================================
 
-void SET_ask_REU() // SET?REU
+void SET_ask_REUSE() // SET?REUSE
 {
-  switch(Pop()) // SET?REU
+  switch(Pop()) // SET?REUSE
   {
   case 11:
     Func9("<ON>");
@@ -1364,14 +1364,14 @@ void SET_ask_REU() // SET?REU
 void VICREAT() // VICREAT
 {
   unsigned short int a;
-  Push(pp_UNK_0x5d6b); // UNK_0x5d6b
+  Push(pp_IsREUSE); // ?REUSE
   OFF_2(); // OFF_2
   Push(Read16(regsp)); // DUP
   Push(0x00fe);
   _gt_(); // >
   IsUNRAVEL(); // ?UNRAVEL
   Push(Pop()+1); // 1+
-  UNK_0x8083(); // UNK_0x8083
+  GET_dash_NEW_dash_INSTANCE(); // GET-NEW-INSTANCE
   Push(Pop()-1); // 1-
   CI(); // CI
   VA_gt_BUF(); // VA>BUF
@@ -1399,16 +1399,16 @@ void VICREAT() // VICREAT
 void ICREATE() // ICREATE
 {
   unsigned short int a;
-  Push(pp_UNK_0x5d6b); // UNK_0x5d6b
+  Push(pp_IsREUSE); // ?REUSE
   Push(3);
   PICK(); // PICK
-  SET_ask_REU(); // SET?REU case
+  SET_ask_REUSE(); // SET?REUSE case
   OVER(); // OVER
   Func6("FILE-SLEN");
   Push(Read8(Pop())&0xFF); // C@
-  UNK_0x8083(); // UNK_0x8083
+  GET_dash_NEW_dash_INSTANCE(); // GET-NEW-INSTANCE
   Pop(); // DROP
-  Push(pp_UNK_0x5e58); // UNK_0x5e58
+  Push(pp_IsRECYCLED); // ?RECYCLED
   Push(Read16(Pop())); // @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
@@ -1428,8 +1428,8 @@ void ICREATE() // ICREATE
   } else
   {
     SET_dash_CURRENT(); // SET-CURRENT
-    StoreINST_dash_SIB(); // !INST-SIB
-    UNK_0x74e4(); // UNK_0x74e4
+    StoreINST_dash_SPECIES(); // !INST-SPECIES
+    StoreINST_dash_CLASS(); // !INST-CLASS
   }
   NULLPOINTERS(); // NULLPOINTERS
   CI(); // CI

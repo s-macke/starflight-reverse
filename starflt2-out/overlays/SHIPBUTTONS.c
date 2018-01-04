@@ -267,7 +267,7 @@ void UNK_0xec2a() // UNK_0xec2a
 
 
 // ================================================
-// 0xec32: WORD 'UNK_0xec34' codep=0x224c parp=0xec34 params=2 returns=0
+// 0xec32: WORD 'UNK_0xec34' codep=0x224c parp=0xec34 params=0 returns=0
 // ================================================
 
 void UNK_0xec34() // UNK_0xec34
@@ -357,7 +357,7 @@ void UNK_0xec92() // UNK_0xec92
 void UNK_0xecb4() // UNK_0xecb4
 {
   CTINIT(); // CTINIT
-  UNK_0x3f09("REPORT TO OPERATIONS FOR EVALUATION");
+  SET_STR_AS_PARAM("REPORT TO OPERATIONS FOR EVALUATION");
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
@@ -535,7 +535,7 @@ void UNK_0xede6() // UNK_0xede6
 
 
 // ================================================
-// 0xedf2: WORD 'UNK_0xedf4' codep=0x224c parp=0xedf4 params=5 returns=1
+// 0xedf2: WORD 'UNK_0xedf4' codep=0x224c parp=0xedf4 params=3 returns=1
 // ================================================
 
 void UNK_0xedf4() // UNK_0xedf4
@@ -607,7 +607,7 @@ void UNK_0xee3a() // UNK_0xee3a
 
 
 // ================================================
-// 0xee5c: WORD 'UNK_0xee5e' codep=0x224c parp=0xee5e params=5 returns=1
+// 0xee5c: WORD 'UNK_0xee5e' codep=0x224c parp=0xee5e params=3 returns=1
 // ================================================
 
 void UNK_0xee5e() // UNK_0xee5e
@@ -758,7 +758,7 @@ void _1_dot_1BTN_dot_XEQ() // 1.1BTN.XEQ
 }
 
 // ================================================
-// 0xef27: WORD 'UNK_0xef29' codep=0x224c parp=0xef29 params=9 returns=2
+// 0xef27: WORD 'UNK_0xef29' codep=0x224c parp=0xef29 params=5 returns=2
 // ================================================
 
 void UNK_0xef29() // UNK_0xef29
@@ -790,7 +790,7 @@ void UNK_0xef3d() // UNK_0xef3d
     Push(pp_IsON_dash_PLA); // ?ON-PLA
     ON_2(); // ON_2
     UNK_0xec34(); // UNK_0xec34
-    UNK_0x3f09("STANDBY...SCANNING PLANET.");
+    SET_STR_AS_PARAM("STANDBY...SCANNING PLANET.");
     DrawTTY(); // .TTY
     Push(pp_PLHI); // PLHI
     Push(Read16(Pop())); // @
@@ -819,9 +819,9 @@ void UNK_0xef3d() // UNK_0xef3d
   } else
   {
     CTINIT(); // CTINIT
-    UNK_0x3f09("THE SHIP IS NO LONGER EQUIPPED");
+    SET_STR_AS_PARAM("THE SHIP IS NO LONGER EQUIPPED");
     DrawTTY(); // .TTY
-    UNK_0x3f09("WITH A TERRAIN VEHICLE");
+    SET_STR_AS_PARAM("WITH A TERRAIN VEHICLE");
     DrawTTY(); // .TTY
   }
   Push(pp_UNK_0xebf6); // UNK_0xebf6
@@ -942,7 +942,7 @@ void UNK_0xf0a0() // UNK_0xf0a0
 
 
 // ================================================
-// 0xf0a8: WORD 'UNK_0xf0aa' codep=0x224c parp=0xf0aa params=2 returns=0
+// 0xf0a8: WORD 'UNK_0xf0aa' codep=0x224c parp=0xf0aa params=0 returns=0
 // ================================================
 
 void UNK_0xf0aa() // UNK_0xf0aa
@@ -1005,7 +1005,7 @@ void _1BTN_dot_XEQ() // 1BTN.XEQ
 
 void UNK_0xf0fd() // UNK_0xf0fd
 {
-  UNK_0x3f09("NO CIVILIZATION DETECTED");
+  SET_STR_AS_PARAM("NO CIVILIZATION DETECTED");
   DrawTTY(); // .TTY
 }
 
@@ -1278,7 +1278,7 @@ void _4BTN_dot_XEQ() // 4BTN.XEQ
 }
 
 // ================================================
-// 0xf25b: WORD 'UNK_0xf25d' codep=0x224c parp=0xf25d params=6 returns=2
+// 0xf25b: WORD 'UNK_0xf25d' codep=0x224c parp=0xf25d params=4 returns=2
 // ================================================
 
 void UNK_0xf25d() // UNK_0xf25d
@@ -1562,9 +1562,9 @@ void UNK_0xf3b3() // UNK_0xf3b3
       {
         Pop(); // DROP
         CTINIT(); // CTINIT
-        UNK_0x3f09("CREWMEMBER CONSCIOUS BUT");
+        SET_STR_AS_PARAM("CREWMEMBER CONSCIOUS BUT");
         DrawTTY(); // .TTY
-        UNK_0x3f09("IS NOT RESPONDING");
+        SET_STR_AS_PARAM("IS NOT RESPONDING");
         DrawTTY(); // .TTY
       }
     } else
@@ -1616,16 +1616,16 @@ void UNK_0xf47c() // UNK_0xf47c
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f09("SHIP COMPUTER ACTIVATED");
+  SET_STR_AS_PARAM("SHIP COMPUTER ACTIVATED");
   DrawTTY(); // .TTY
   Push(0xc090); // probable 'OV/STA'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
-  UNK_0x3f09("PRE-LAUNCH PROCEDURES COMPLETE");
+  SET_STR_AS_PARAM("PRE-LAUNCH PROCEDURES COMPLETE");
   DrawTTY(); // .TTY
   Push(0x00fa);
   MS(); // MS
-  UNK_0x3f09("STANDING BY TO INITIATE LAUNCH");
+  SET_STR_AS_PARAM("STANDING BY TO INITIATE LAUNCH");
   DrawTTY(); // .TTY
   Push(0x00fa);
   MS(); // MS

@@ -158,7 +158,7 @@ void ON_3(); // ON_3
 void OFF(); // OFF
 void CMOVE(); // CMOVE
 void FILL_1(); // FILL_1
-void StoreINST_dash_SIB(); // !INST-SIB
+void StoreINST_dash_SPECIES(); // !INST-SPECIES
 void GetINST_dash_CLASS(); // @INST-CLASS
 void GetINST_dash_SPECIES(); // @INST-SPECIES
 void SET_dash_CURRENT(); // SET-CURRENT
@@ -294,7 +294,7 @@ void UNK_0xead5() // UNK_0xead5
 // 0xeadf: db 0x4c 0x22 0xd2 0x9a 0xe2 0x9a 0x90 0x16 'L"      '
 
 // ================================================
-// 0xeae7: WORD 'UNK_0xeae9' codep=0x224c parp=0xeae9 params=3 returns=1
+// 0xeae7: WORD 'UNK_0xeae9' codep=0x224c parp=0xeae9 params=0 returns=2
 // ================================================
 
 void UNK_0xeae9() // UNK_0xeae9
@@ -465,7 +465,7 @@ void UNK_0xebf2() // UNK_0xebf2
 
 
 // ================================================
-// 0xebfa: WORD 'UNK_0xebfc' codep=0x224c parp=0xebfc params=2 returns=1
+// 0xebfa: WORD 'UNK_0xebfc' codep=0x224c parp=0xebfc params=0 returns=1
 // ================================================
 
 void UNK_0xebfc() // UNK_0xebfc
@@ -557,7 +557,7 @@ void UNK_0xec46() // UNK_0xec46
 
 
 // ================================================
-// 0xec68: WORD 'UNK_0xec6a' codep=0x224c parp=0xec6a params=2 returns=0
+// 0xec68: WORD 'UNK_0xec6a' codep=0x224c parp=0xec6a params=0 returns=0
 // ================================================
 
 void UNK_0xec6a() // UNK_0xec6a
@@ -580,7 +580,7 @@ void UNK_0xec6a() // UNK_0xec6a
 
 
 // ================================================
-// 0xec88: WORD 'UNK_0xec8a' codep=0x224c parp=0xec8a params=4 returns=1
+// 0xec88: WORD 'UNK_0xec8a' codep=0x224c parp=0xec8a params=0 returns=1
 // ================================================
 
 void UNK_0xec8a() // UNK_0xec8a
@@ -636,7 +636,7 @@ void UNK_0xecbc() // UNK_0xecbc
 
 
 // ================================================
-// 0xecd6: WORD 'UNK_0xecd8' codep=0x224c parp=0xecd8 params=6 returns=1
+// 0xecd6: WORD 'UNK_0xecd8' codep=0x224c parp=0xecd8 params=0 returns=1
 // ================================================
 
 void UNK_0xecd8() // UNK_0xecd8
@@ -656,7 +656,7 @@ void UNK_0xecd8() // UNK_0xecd8
 
 
 // ================================================
-// 0xecf0: WORD 'UNK_0xecf2' codep=0x224c parp=0xecf2 params=6 returns=0
+// 0xecf0: WORD 'UNK_0xecf2' codep=0x224c parp=0xecf2 params=0 returns=0
 // ================================================
 
 void UNK_0xecf2() // UNK_0xecf2
@@ -855,7 +855,7 @@ void UNK_0xedf2() // UNK_0xedf2
 
 void UNK_0xee04() // UNK_0xee04
 {
-  UNK_0x3f3b("**  GAME  OVER  **");
+  SET_STR_AS_PARAM("**  GAME  OVER  **");
   DrawTTY(); // .TTY
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -871,7 +871,7 @@ void UNK_0xee04() // UNK_0xee04
 void UNK_0xee27() // UNK_0xee27
 {
   UNK_0xedf2(); // UNK_0xedf2
-  UNK_0x3f3b("!!HULL DESTROYED!!");
+  SET_STR_AS_PARAM("!!HULL DESTROYED!!");
   DrawTTY(); // .TTY
   UNK_0xee04(); // UNK_0xee04
 }
@@ -884,7 +884,7 @@ void UNK_0xee27() // UNK_0xee27
 void UNK_0xee46() // UNK_0xee46
 {
   UNK_0xedf2(); // UNK_0xedf2
-  UNK_0x3f3b("!!CREW  DECEASED!!");
+  SET_STR_AS_PARAM("!!CREW  DECEASED!!");
   DrawTTY(); // .TTY
   UNK_0xee04(); // UNK_0xee04
 }
@@ -1075,7 +1075,7 @@ void UNK_0xef76() // UNK_0xef76
 
 
 // ================================================
-// 0xef8c: WORD 'UNK_0xef8e' codep=0x224c parp=0xef8e params=2 returns=0
+// 0xef8c: WORD 'UNK_0xef8e' codep=0x224c parp=0xef8e params=0 returns=0
 // ================================================
 
 void UNK_0xef8e() // UNK_0xef8e
@@ -1088,7 +1088,7 @@ void UNK_0xef8e() // UNK_0xef8e
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    UNK_0x3f3b("KILLED");
+    SET_STR_AS_PARAM("KILLED");
   } else
   {
     Push(Read16(a)); // R@
@@ -1097,7 +1097,7 @@ void UNK_0xef8e() // UNK_0xef8e
     WITHIN(); // WITHIN
     if (Pop() != 0)
     {
-      UNK_0x3f3b("CRITICALLY ");
+      SET_STR_AS_PARAM("CRITICALLY ");
     } else
     {
       Push(Read16(a)); // R@
@@ -1106,7 +1106,7 @@ void UNK_0xef8e() // UNK_0xef8e
       WITHIN(); // WITHIN
       if (Pop() != 0)
       {
-        UNK_0x3f3b("HEAVILIY ");
+        SET_STR_AS_PARAM("HEAVILIY ");
       } else
       {
         Push(Read16(a)); // R@
@@ -1115,15 +1115,15 @@ void UNK_0xef8e() // UNK_0xef8e
         WITHIN(); // WITHIN
         if (Pop() != 0)
         {
-          UNK_0x3f3b("MODERATELY ");
+          SET_STR_AS_PARAM("MODERATELY ");
         } else
         {
-          UNK_0x3f3b("SLIGHTLY ");
+          SET_STR_AS_PARAM("SLIGHTLY ");
         }
       }
     }
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-    UNK_0x3f3b("WOUNDED ");
+    SET_STR_AS_PARAM("WOUNDED ");
   }
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(a); // R>
@@ -1204,7 +1204,7 @@ void UNK_0xf08a() // UNK_0xf08a
   CTINIT(); // CTINIT
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
-  UNK_0x3f3b("ALIEN SHIP DESTROYED ");
+  SET_STR_AS_PARAM("ALIEN SHIP DESTROYED ");
   DrawTTY(); // .TTY
   Push(0);
   Push(0x63ef+UNK_0xeb31.offset); // IFIELD
@@ -1214,7 +1214,7 @@ void UNK_0xf08a() // UNK_0xf08a
   Push(7);
   CMOVE(); // CMOVE
   Push(0x0018);
-  StoreINST_dash_SIB(); // !INST-SIB
+  StoreINST_dash_SPECIES(); // !INST-SPECIES
   SET_dash_CURRENT(); // SET-CURRENT
   Push(pp_UNK_0xf081); // UNK_0xf081
   Push(0x63ef+UNK_0xeb4a.offset); // IFIELD
@@ -1347,7 +1347,7 @@ void UNK_0xf162() // UNK_0xf162
 
 
 // ================================================
-// 0xf198: WORD 'UNK_0xf19a' codep=0x224c parp=0xf19a params=5 returns=0
+// 0xf198: WORD 'UNK_0xf19a' codep=0x224c parp=0xf19a params=1 returns=0
 // ================================================
 
 void UNK_0xf19a() // UNK_0xf19a
@@ -1458,7 +1458,7 @@ void UNK_0xf23a() // UNK_0xf23a
 
 
 // ================================================
-// 0xf246: WORD 'UNK_0xf248' codep=0x224c parp=0xf248 params=6 returns=0
+// 0xf246: WORD 'UNK_0xf248' codep=0x224c parp=0xf248 params=1 returns=1
 // ================================================
 
 void UNK_0xf248() // UNK_0xf248
@@ -1482,7 +1482,7 @@ void UNK_0xf248() // UNK_0xf248
 
 
 // ================================================
-// 0xf268: WORD 'UNK_0xf26a' codep=0x224c parp=0xf26a params=8 returns=0
+// 0xf268: WORD 'UNK_0xf26a' codep=0x224c parp=0xf26a params=1 returns=1
 // ================================================
 
 void UNK_0xf26a() // UNK_0xf26a
@@ -1837,11 +1837,11 @@ void UNK_0xf43c() // UNK_0xf43c
   if (Pop() != 0)
   {
     Pop(); // DROP
-    UNK_0x3f3b("PLASMA BOLT");
+    SET_STR_AS_PARAM("PLASMA BOLT");
     DrawTTY(); // .TTY
     return;
   }
-  UNK_0x3f3b("MISSILE CLASS ");
+  SET_STR_AS_PARAM("MISSILE CLASS ");
   DrawTTY(); // .TTY
   Draw(); // .
 }

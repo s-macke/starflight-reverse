@@ -392,7 +392,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad params=6 returns=1
+// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad params=4 returns=1
 // ================================================
 // entry
 
@@ -492,7 +492,7 @@ void _ro_0_do__do__do_() // (0$$$
 
 void UNK_0xf26b() // UNK_0xf26b
 {
-  UNK_0x3f3b("SENSORS");
+  SET_STR_AS_PARAM("SENSORS");
 }
 
 
@@ -506,7 +506,7 @@ void UNK_0xf279() // UNK_0xf279
   Push(0);
   Push(6);
   CTPOS_dot_(); // CTPOS.
-  UNK_0x3f3b("COMMUNICATIONS");
+  SET_STR_AS_PARAM("COMMUNICATIONS");
 }
 
 
@@ -516,7 +516,7 @@ void UNK_0xf279() // UNK_0xf279
 
 void UNK_0xf296() // UNK_0xf296
 {
-  UNK_0x3f3b("LASERS");
+  SET_STR_AS_PARAM("LASERS");
 }
 
 
@@ -526,7 +526,7 @@ void UNK_0xf296() // UNK_0xf296
 
 void UNK_0xf2a3() // UNK_0xf2a3
 {
-  UNK_0x3f3b("MISSILES");
+  SET_STR_AS_PARAM("MISSILES");
 }
 
 
@@ -536,7 +536,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
 
 void UNK_0xf2b2() // UNK_0xf2b2
 {
-  UNK_0x3f3b("ENGINES");
+  SET_STR_AS_PARAM("ENGINES");
 }
 
 
@@ -546,7 +546,7 @@ void UNK_0xf2b2() // UNK_0xf2b2
 
 void UNK_0xf2c0() // UNK_0xf2c0
 {
-  UNK_0x3f3b("SHIELDS");
+  SET_STR_AS_PARAM("SHIELDS");
 }
 
 
@@ -760,7 +760,7 @@ void _ro__ask__dot_EQ() // (?.EQ
     }
   } else
   {
-    UNK_0x3f3b("SHIP IS NOT EQUIPPED WITH ");
+    SET_STR_AS_PARAM("SHIP IS NOT EQUIPPED WITH ");
     DrawTTY(); // .TTY
     Push(a); // I
     DrawERR(); // .ERR case

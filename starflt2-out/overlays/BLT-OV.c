@@ -335,7 +335,7 @@ void UNK_0xf145() // UNK_0xf145
 
 
 // ================================================
-// 0xf177: WORD 'UNK_0xf179' codep=0x224c parp=0xf179 params=2 returns=1
+// 0xf177: WORD 'UNK_0xf179' codep=0x224c parp=0xf179 params=0 returns=1
 // ================================================
 
 void UNK_0xf179() // UNK_0xf179
@@ -362,10 +362,10 @@ void LDAP() // LDAP
   IsVGA(); // ?VGA
   if (Pop() != 0)
   {
-    UNK_0x3f09("trpics.vga");
+    SET_STR_AS_PARAM("trpics.vga");
   } else
   {
-    UNK_0x3f09("trpics.ega");
+    SET_STR_AS_PARAM("trpics.ega");
   }
   UNK_0xf145(); // UNK_0xf145
   Push(pp_XBUF_dash_SE); // XBUF-SE
@@ -801,10 +801,10 @@ void Get_dot_HY() // @.HY
   IsVGA(); // ?VGA
   if (Pop() != 0)
   {
-    UNK_0x3f09("cpics.vga");
+    SET_STR_AS_PARAM("cpics.vga");
   } else
   {
-    UNK_0x3f09("cpics.ega");
+    SET_STR_AS_PARAM("cpics.ega");
   }
   UNK_0xf145(); // UNK_0xf145
   SETB(); // SETB
@@ -837,7 +837,7 @@ void DrawTPI() // .TPI
   Store_2(); // !_2
   Push(0x0c1c);
   SWAP(); // SWAP
-  UNK_0x3f09("strpics.raw");
+  SET_STR_AS_PARAM("strpics.raw");
   UNK_0xf145(); // UNK_0xf145
   SETB(); // SETB
   Push(4);

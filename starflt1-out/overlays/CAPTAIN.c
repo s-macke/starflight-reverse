@@ -208,7 +208,7 @@ extern Color RED; // RED
 extern Color GREY1; // GREY1
 extern Color BLUE; // BLUE
 extern Color WHITE; // WHITE
-extern IFieldType INST_dash_SP; // INST-SP
+extern IFieldType INST_dash_SPECIES; // INST-SPECIES
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
@@ -250,7 +250,7 @@ void OFF(); // OFF
 void CMOVE(); // CMOVE
 void FILL_1(); // FILL_1
 void _do__eq_(); // $=
-void StoreINST_dash_SIB(); // !INST-SIB
+void StoreINST_dash_SPECIES(); // !INST-SPECIES
 void GetINST_dash_CLASS(); // @INST-CLASS
 void GetINST_dash_SPECIES(); // @INST-SPECIES
 void CDROP(); // CDROP
@@ -703,7 +703,7 @@ void UNK_0xdfb6() // UNK_0xdfb6
 IFieldType UNK_0xdffe = {CAPT_LOGIDX, 0x0b, 0x24};
 
 // ================================================
-// 0xe001: WORD 'UNK_0xe003' codep=0x224c parp=0xe003 params=2 returns=0
+// 0xe001: WORD 'UNK_0xe003' codep=0x224c parp=0xe003 params=0 returns=0
 // ================================================
 
 void UNK_0xe003() // UNK_0xe003
@@ -717,7 +717,7 @@ void UNK_0xe003() // UNK_0xe003
   Push(8);
   PAD(); // PAD
   C_ex_(); // C!
-  UNK_0x3f3b("ATARAXIA");
+  SET_STR_AS_PARAM("ATARAXIA");
   Pop(); // DROP
   Push(Pop()-1); // 1-
   PAD(); // PAD
@@ -884,7 +884,7 @@ void UNK_0xe0e7() // UNK_0xe0e7
 
 
 // ================================================
-// 0xe0f7: WORD 'UNK_0xe0f9' codep=0x224c parp=0xe0f9 params=2 returns=0
+// 0xe0f7: WORD 'UNK_0xe0f9' codep=0x224c parp=0xe0f9 params=0 returns=0
 // ================================================
 
 void UNK_0xe0f9() // UNK_0xe0f9
@@ -963,7 +963,7 @@ void UNK_0xe12b() // UNK_0xe12b
 
 
 // ================================================
-// 0xe18b: WORD 'UNK_0xe18d' codep=0x224c parp=0xe18d params=2 returns=0
+// 0xe18b: WORD 'UNK_0xe18d' codep=0x224c parp=0xe18d params=0 returns=0
 // ================================================
 
 void UNK_0xe18d() // UNK_0xe18d
@@ -1031,7 +1031,7 @@ void UNK_0xe1b1() // UNK_0xe1b1
 
 
 // ================================================
-// 0xe203: WORD 'UNK_0xe205' codep=0x224c parp=0xe205 params=3 returns=0
+// 0xe203: WORD 'UNK_0xe205' codep=0x224c parp=0xe205 params=1 returns=0
 // ================================================
 
 void UNK_0xe205() // UNK_0xe205
@@ -1451,7 +1451,7 @@ void UNK_0xe47c() // UNK_0xe47c
 
 
 // ================================================
-// 0xe48c: WORD 'UNK_0xe48e' codep=0x224c parp=0xe48e params=2 returns=0
+// 0xe48c: WORD 'UNK_0xe48e' codep=0x224c parp=0xe48e params=0 returns=0
 // ================================================
 
 void UNK_0xe48e() // UNK_0xe48e
@@ -1527,7 +1527,7 @@ void UNK_0xe4e2() // UNK_0xe4e2
 
 
 // ================================================
-// 0xe4ec: WORD 'UNK_0xe4ee' codep=0x224c parp=0xe4ee params=2 returns=0
+// 0xe4ec: WORD 'UNK_0xe4ee' codep=0x224c parp=0xe4ee params=0 returns=0
 // ================================================
 
 void UNK_0xe4ee() // UNK_0xe4ee
@@ -1687,7 +1687,7 @@ void UNK_0xe596() // UNK_0xe596
 
 void UNK_0xe5c6() // UNK_0xe5c6
 {
-  UNK_0x3f3b("ELEMENTS");
+  SET_STR_AS_PARAM("ELEMENTS");
   Push(pp_UNK_0xde3e); // UNK_0xde3e
   _1_dot_5_at_(); // 1.5@
   Push2Words("*STARSHIP-HOLD");
@@ -1917,7 +1917,7 @@ void UNK_0xe709() // UNK_0xe709
 
 
 // ================================================
-// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b params=5 returns=0
+// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b params=3 returns=0
 // ================================================
 
 void UNK_0xe73b() // UNK_0xe73b
@@ -2035,7 +2035,7 @@ void UNK_0xe767() // UNK_0xe767
 
 
 // ================================================
-// 0xe7f5: WORD 'UNK_0xe7f7' codep=0x224c parp=0xe7f7 params=5 returns=0
+// 0xe7f5: WORD 'UNK_0xe7f7' codep=0x224c parp=0xe7f7 params=3 returns=0
 // ================================================
 
 void UNK_0xe7f7() // UNK_0xe7f7
@@ -2079,7 +2079,7 @@ void UNK_0xe823() // UNK_0xe823
   if (Pop() != 0)
   {
     Push(0x0031);
-    StoreINST_dash_SIB(); // !INST-SIB
+    StoreINST_dash_SPECIES(); // !INST-SPECIES
   }
   ICLOSE(); // ICLOSE
   UNK_0xe6c9(); // UNK_0xe6c9
@@ -2159,7 +2159,7 @@ void UNK_0xe823() // UNK_0xe823
   if (Pop() != 0)
   {
     Push(0x0030);
-    StoreINST_dash_SIB(); // !INST-SIB
+    StoreINST_dash_SPECIES(); // !INST-SPECIES
   }
   IFIRST(); // IFIRST
   Push(0x000b);
@@ -2168,7 +2168,7 @@ void UNK_0xe823() // UNK_0xe823
   if (Pop() != 0)
   {
     Push(0x000a);
-    StoreINST_dash_SIB(); // !INST-SIB
+    StoreINST_dash_SPECIES(); // !INST-SPECIES
   }
   ICLOSE(); // ICLOSE
   UNK_0xe73b(); // UNK_0xe73b
@@ -2242,7 +2242,7 @@ void UNK_0xe932() // UNK_0xe932
 
 
 // ================================================
-// 0xe96e: WORD 'UNK_0xe970' codep=0x224c parp=0xe970 params=10 returns=0
+// 0xe96e: WORD 'UNK_0xe970' codep=0x224c parp=0xe970 params=0 returns=0
 // ================================================
 
 void UNK_0xe970() // UNK_0xe970
@@ -2281,7 +2281,7 @@ void UNK_0xe970() // UNK_0xe970
 
 
 // ================================================
-// 0xe9b8: WORD 'UNK_0xe9ba' codep=0x224c parp=0xe9ba params=4 returns=0
+// 0xe9b8: WORD 'UNK_0xe9ba' codep=0x224c parp=0xe9ba params=0 returns=0
 // ================================================
 
 void UNK_0xe9ba() // UNK_0xe9ba
@@ -2307,7 +2307,7 @@ void UNK_0xe9ba() // UNK_0xe9ba
 
 
 // ================================================
-// 0xe9e0: WORD 'UNK_0xe9e2' codep=0x224c parp=0xe9e2 params=5 returns=0
+// 0xe9e0: WORD 'UNK_0xe9e2' codep=0x224c parp=0xe9e2 params=1 returns=0
 // ================================================
 
 void UNK_0xe9e2() // UNK_0xe9e2
@@ -2526,7 +2526,7 @@ void UNK_0xeb14() // UNK_0xeb14
 
 void UNK_0xeb82() // UNK_0xeb82
 {
-  Push(0x63ef+INST_dash_SP.offset); // IFIELD
+  Push(0x63ef+INST_dash_SPECIES.offset); // IFIELD
   Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
   COUNT(); // COUNT
@@ -2688,7 +2688,7 @@ void UNK_0xec73() // UNK_0xec73
   Push(0);
   Push(1);
   CTPOS_dot_(); // CTPOS.
-  UNK_0x3f3b("SYSTEM");
+  SET_STR_AS_PARAM("SYSTEM");
   UNK_0xec60(); // UNK_0xec60
   Push(0x63ef+UNK_0xe0c3.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -2698,18 +2698,18 @@ void UNK_0xec73() // UNK_0xec73
   Push(0x63ef+UNK_0xe0c8.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Draw(); // .
-  UNK_0x3f3b("PLANET");
+  SET_STR_AS_PARAM("PLANET");
   UNK_0xec60(); // UNK_0xec60
   Push(0x63ef+UNK_0xe0cd.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   Draw(); // .
-  UNK_0x3f3b("LOCATION");
+  SET_STR_AS_PARAM("LOCATION");
   UNK_0xec60(); // UNK_0xec60
   Push(0x63ef+INST_dash_X.offset); // IFIELD
   _2_at_(); // 2@
   SWAP(); // SWAP
   UNK_0xec30(); // UNK_0xec30
-  UNK_0x3f3b("DATE");
+  SET_STR_AS_PARAM("DATE");
   UNK_0xec60(); // UNK_0xec60
   Push(0x63ef+UNK_0xe0b9.offset); // IFIELD
   Push(Read16(Pop())); // @
@@ -2723,7 +2723,7 @@ void UNK_0xec73() // UNK_0xec73
 
 
 // ================================================
-// 0xecdd: WORD 'UNK_0xecdf' codep=0x224c parp=0xecdf params=6 returns=0
+// 0xecdd: WORD 'UNK_0xecdf' codep=0x224c parp=0xecdf params=2 returns=0
 // ================================================
 
 void UNK_0xecdf() // UNK_0xecdf
@@ -2939,7 +2939,7 @@ void UNK_0xedf7() // UNK_0xedf7
 
 
 // ================================================
-// 0xee48: WORD 'UNK_0xee4a' codep=0x224c parp=0xee4a params=4 returns=0
+// 0xee48: WORD 'UNK_0xee4a' codep=0x224c parp=0xee4a params=0 returns=0
 // ================================================
 
 void UNK_0xee4a() // UNK_0xee4a
@@ -3158,7 +3158,7 @@ void UNK_0xefbf() // UNK_0xefbf
 void _gt_DESCEND() // >DESCEND
 {
   UNK_0xefad(); // UNK_0xefad
-  UNK_0x3f3b("LAUNCH");
+  SET_STR_AS_PARAM("LAUNCH");
   LoadData(_1BTN); // from 'BUTTONS'
   UNK_0xefbf(); // UNK_0xefbf
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
@@ -3227,7 +3227,7 @@ void UNK_0xf007() // UNK_0xf007
     if (Pop() != 0)
     {
       UNK_0xefad(); // UNK_0xefad
-      UNK_0x3f3b("LAND  ");
+      SET_STR_AS_PARAM("LAND  ");
       LoadData(_1BTN); // from 'BUTTONS'
       UNK_0xefbf(); // UNK_0xefbf
     }
@@ -3638,7 +3638,7 @@ void UNK_0xf30e() // UNK_0xf30e
 
 
 // ================================================
-// 0xf346: WORD 'UNK_0xf348' codep=0x224c parp=0xf348 params=4 returns=0
+// 0xf346: WORD 'UNK_0xf348' codep=0x224c parp=0xf348 params=0 returns=0
 // ================================================
 
 void UNK_0xf348() // UNK_0xf348
@@ -3717,7 +3717,7 @@ void UNK_0xf3b2() // UNK_0xf3b2
 
 
 // ================================================
-// 0xf3d1: WORD 'UNK_0xf3d3' codep=0x224c parp=0xf3d3 params=8 returns=1
+// 0xf3d1: WORD 'UNK_0xf3d3' codep=0x224c parp=0xf3d3 params=0 returns=1
 // ================================================
 
 void UNK_0xf3d3() // UNK_0xf3d3

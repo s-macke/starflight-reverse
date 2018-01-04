@@ -446,7 +446,7 @@ void UNK_0xf014() // UNK_0xf014
 
 
 // ================================================
-// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=2 returns=18
+// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=0 returns=18
 // ================================================
 
 void UNK_0xf026() // UNK_0xf026
@@ -487,7 +487,7 @@ void UNK_0xf026() // UNK_0xf026
 
 
 // ================================================
-// 0xf096: WORD 'UNK_0xf098' codep=0x224c parp=0xf098 params=5 returns=1
+// 0xf096: WORD 'UNK_0xf098' codep=0x224c parp=0xf098 params=3 returns=1
 // ================================================
 
 void UNK_0xf098() // UNK_0xf098
@@ -510,7 +510,7 @@ void UNK_0xf098() // UNK_0xf098
 
 
 // ================================================
-// 0xf0b6: WORD '(.PODS)' codep=0x224c parp=0xf0c2 params=4 returns=0
+// 0xf0b6: WORD '(.PODS)' codep=0x224c parp=0xf0c2 params=0 returns=0
 // ================================================
 // entry
 
@@ -581,7 +581,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
 // 0xf128: db 0x78 0x30 0xf8 0xff 0xff 0xf8 0x30 0x78 'x0    0x'
 
 // ================================================
-// 0xf130: WORD 'UNK_0xf132' codep=0x224c parp=0xf132 params=2 returns=0
+// 0xf130: WORD 'UNK_0xf132' codep=0x224c parp=0xf132 params=0 returns=0
 // ================================================
 
 void UNK_0xf132() // UNK_0xf132
@@ -618,7 +618,7 @@ void UNK_0xf132() // UNK_0xf132
 
 
 // ================================================
-// 0xf172: WORD 'UNK_0xf174' codep=0x224c parp=0xf174 params=2 returns=0
+// 0xf172: WORD 'UNK_0xf174' codep=0x224c parp=0xf174 params=0 returns=0
 // ================================================
 
 void UNK_0xf174() // UNK_0xf174
@@ -652,7 +652,7 @@ void UNK_0xf174() // UNK_0xf174
 
 
 // ================================================
-// 0xf1aa: WORD '(.SHIP)' codep=0x224c parp=0xf1b6 params=0 returns=8
+// 0xf1aa: WORD '(.SHIP)' codep=0x224c parp=0xf1b6 params=0 returns=18
 // ================================================
 // entry
 

@@ -387,7 +387,7 @@ void UNK_0xe47c() // UNK_0xe47c
   Push(Read16(Pop())); // @
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
-  UNK_0x3f09("DRONE RECALLED");
+  SET_STR_AS_PARAM("DRONE RECALLED");
   DrawTTY(); // .TTY
   Push(0x03e8);
   MS(); // MS
@@ -594,7 +594,7 @@ void UNK_0xe5e5() // UNK_0xe5e5
 
 
 // ================================================
-// 0xe5f5: WORD 'UNK_0xe5f7' codep=0x224c parp=0xe5f7 params=2 returns=0
+// 0xe5f5: WORD 'UNK_0xe5f7' codep=0x224c parp=0xe5f7 params=0 returns=0
 // ================================================
 
 void UNK_0xe5f7() // UNK_0xe5f7
@@ -830,7 +830,7 @@ void UNK_0xe6ff() // UNK_0xe6ff
 
 void UNK_0xe72f() // UNK_0xe72f
 {
-  UNK_0x3f09("ELEMENTS");
+  SET_STR_AS_PARAM("ELEMENTS");
   Push(pp_UNK_0xe43e); // UNK_0xe43e
   _1_dot_5_at_(); // 1.5@
   Push2Words("*STARSH");
@@ -1060,7 +1060,7 @@ void UNK_0xe872() // UNK_0xe872
 
 
 // ================================================
-// 0xe8a2: WORD 'UNK_0xe8a4' codep=0x224c parp=0xe8a4 params=5 returns=0
+// 0xe8a2: WORD 'UNK_0xe8a4' codep=0x224c parp=0xe8a4 params=3 returns=0
 // ================================================
 
 void UNK_0xe8a4() // UNK_0xe8a4
@@ -1178,7 +1178,7 @@ void UNK_0xe8d0() // UNK_0xe8d0
 
 
 // ================================================
-// 0xe95e: WORD 'UNK_0xe960' codep=0x224c parp=0xe960 params=5 returns=0
+// 0xe95e: WORD 'UNK_0xe960' codep=0x224c parp=0xe960 params=3 returns=0
 // ================================================
 
 void UNK_0xe960() // UNK_0xe960
@@ -1428,7 +1428,7 @@ void UNK_0xeae3() // UNK_0xeae3
 
 
 // ================================================
-// 0xeb2b: WORD 'UNK_0xeb2d' codep=0x224c parp=0xeb2d params=4 returns=0
+// 0xeb2b: WORD 'UNK_0xeb2d' codep=0x224c parp=0xeb2d params=0 returns=0
 // ================================================
 
 void UNK_0xeb2d() // UNK_0xeb2d
@@ -1816,7 +1816,7 @@ void UNK_0xee61() // UNK_0xee61
 
 
 // ================================================
-// 0xeeb2: WORD 'UNK_0xeeb4' codep=0x224c parp=0xeeb4 params=4 returns=0
+// 0xeeb2: WORD 'UNK_0xeeb4' codep=0x224c parp=0xeeb4 params=0 returns=0
 // ================================================
 
 void UNK_0xeeb4() // UNK_0xeeb4
@@ -2013,7 +2013,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
 void _gt_DESCEND() // >DESCEND
 {
   UNK_0xe552(); // UNK_0xe552
-  UNK_0x3f09("LAUNCH");
+  SET_STR_AS_PARAM("LAUNCH");
   LoadData(_1BTN); // from 'BUTTONS'
   UNK_0xe564(); // UNK_0xe564
   Push(pp_CONTEXT_3); // CONTEXT_3
@@ -2083,7 +2083,7 @@ void UNK_0xf05f() // UNK_0xf05f
     if (Pop() != 0)
     {
       UNK_0xe552(); // UNK_0xe552
-      UNK_0x3f09("LAND  ");
+      SET_STR_AS_PARAM("LAND  ");
       LoadData(_1BTN); // from 'BUTTONS'
       UNK_0xe564(); // UNK_0xe564
     }
@@ -2447,7 +2447,7 @@ void UNK_0xf303() // UNK_0xf303
 
 
 // ================================================
-// 0xf351: WORD 'UNK_0xf353' codep=0x224c parp=0xf353 params=4 returns=0
+// 0xf351: WORD 'UNK_0xf353' codep=0x224c parp=0xf353 params=0 returns=0
 // ================================================
 
 void UNK_0xf353() // UNK_0xf353
@@ -2525,7 +2525,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
 
 
 // ================================================
-// 0xf3da: WORD 'UNK_0xf3dc' codep=0x224c parp=0xf3dc params=8 returns=1
+// 0xf3da: WORD 'UNK_0xf3dc' codep=0x224c parp=0xf3dc params=0 returns=1
 // ================================================
 
 void UNK_0xf3dc() // UNK_0xf3dc

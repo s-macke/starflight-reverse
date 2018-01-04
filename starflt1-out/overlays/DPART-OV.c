@@ -193,22 +193,22 @@ void UNK_0xef73() // UNK_0xef73
     Push(0x000c);
     Push(0x0064);
     POS_dot_(); // POS.
-    UNK_0x3f3b("INCOMING");
+    SET_STR_AS_PARAM("INCOMING");
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x0018);
     Push(0x0050);
     POS_dot_(); // POS.
-    UNK_0x3f3b("HIGH");
+    SET_STR_AS_PARAM("HIGH");
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x000f);
     Push(0x003c);
     POS_dot_(); // POS.
-    UNK_0x3f3b("PRIORITY");
+    SET_STR_AS_PARAM("PRIORITY");
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x0011);
     Push(0x0028);
     POS_dot_(); // POS.
-    UNK_0x3f3b("MESSAGE");
+    SET_STR_AS_PARAM("MESSAGE");
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(Read16(cc_UNK_0xef6a)); // UNK_0xef6a
     TONE(); // TONE
@@ -449,7 +449,7 @@ void UNK_0xf158() // UNK_0xf158
 
 
 // ================================================
-// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166 params=5 returns=0
+// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166 params=3 returns=0
 // ================================================
 
 void UNK_0xf166() // UNK_0xf166
@@ -494,7 +494,7 @@ void UNK_0xf166() // UNK_0xf166
 
 
 // ================================================
-// 0xf1aa: WORD 'UNK_0xf1ac' codep=0x224c parp=0xf1ac params=7 returns=0
+// 0xf1aa: WORD 'UNK_0xf1ac' codep=0x224c parp=0xf1ac params=3 returns=0
 // ================================================
 
 void UNK_0xf1ac() // UNK_0xf1ac
@@ -530,11 +530,11 @@ void UNK_0xf1d6() // UNK_0xf1d6
 {
   unsigned short int i, imax;
   CTINIT(); // CTINIT
-  UNK_0x3f3b("CAPTAIN, WE ARE RECEIVING A ");
+  SET_STR_AS_PARAM("CAPTAIN, WE ARE RECEIVING A ");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("COUNTDOWN TRANSMISSION FROM ");
+  SET_STR_AS_PARAM("COUNTDOWN TRANSMISSION FROM ");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("THE BLACK EGG... ");
+  SET_STR_AS_PARAM("THE BLACK EGG... ");
   DrawTTY(); // .TTY
   Push(1);
   Push(5);
@@ -580,7 +580,7 @@ void UNK_0xf252() // UNK_0xf252
 void UNK_0xf25e() // UNK_0xf25e
 {
   unsigned short int i, imax, j, jmax;
-  UNK_0x3f3b("BOOM!");
+  SET_STR_AS_PARAM("BOOM!");
   DrawTTY(); // .TTY
   Push(3);
   Push(Read16(cc_MPS)); // MPS
@@ -620,7 +620,7 @@ void UNK_0xf25e() // UNK_0xf25e
 
 
 // ================================================
-// 0xf29c: WORD 'UNK_0xf29e' codep=0x224c parp=0xf29e params=2 returns=1
+// 0xf29c: WORD 'UNK_0xf29e' codep=0x224c parp=0xf29e params=0 returns=1
 // ================================================
 
 void UNK_0xf29e() // UNK_0xf29e
@@ -672,7 +672,7 @@ void UNK_0xf2b0() // UNK_0xf2b0
 IFieldType UNK_0xf2e6 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
-// 0xf2e9: WORD 'UNK_0xf2eb' codep=0x224c parp=0xf2eb params=6 returns=0
+// 0xf2e9: WORD 'UNK_0xf2eb' codep=0x224c parp=0xf2eb params=0 returns=0
 // ================================================
 
 void UNK_0xf2eb() // UNK_0xf2eb
@@ -726,11 +726,11 @@ void UNK_0xf30b() // UNK_0xf30b
 void UNK_0xf331() // UNK_0xf331
 {
   CTINIT(); // CTINIT
-  UNK_0x3f3b("CAPTAIN, I FELT A TREMOR AS IF");
+  SET_STR_AS_PARAM("CAPTAIN, I FELT A TREMOR AS IF");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("MILLIONS OF VOICES CRIED OUT AND WERE");
+  SET_STR_AS_PARAM("MILLIONS OF VOICES CRIED OUT AND WERE");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("SUDDENLY SILENCED.");
+  SET_STR_AS_PARAM("SUDDENLY SILENCED.");
   DrawTTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
@@ -771,9 +771,9 @@ void UNK_0xf39d() // UNK_0xf39d
   label1:
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
-  UNK_0x3f3b("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");
+  SET_STR_AS_PARAM("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("THE LOCAL VICINITY HAVE CEASED!");
+  SET_STR_AS_PARAM("THE LOCAL VICINITY HAVE CEASED!");
   DrawTTY(); // .TTY
   UNK_0xf30b(); // UNK_0xf30b
 }
@@ -792,7 +792,7 @@ void UNK_0xf426() // UNK_0xf426
 
 
 // ================================================
-// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430 params=10 returns=0
+// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430 params=0 returns=0
 // ================================================
 
 void UNK_0xf430() // UNK_0xf430
@@ -829,7 +829,7 @@ void UNK_0xf430() // UNK_0xf430
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
-  UNK_0x3f3b("PLANET OBLITERATED");
+  SET_STR_AS_PARAM("PLANET OBLITERATED");
   DrawTTY(); // .TTY
 }
 
@@ -869,9 +869,9 @@ void DEPART() // DEPART
         } else
         {
           CTINIT(); // CTINIT
-          UNK_0x3f3b("CRYSTAL PLANET DAMAGED");
+          SET_STR_AS_PARAM("CRYSTAL PLANET DAMAGED");
           DrawTTY(); // .TTY
-          UNK_0x3f3b("BUT NOT DESTROYED");
+          SET_STR_AS_PARAM("BUT NOT DESTROYED");
           DrawTTY(); // .TTY
           Push(0x1388);
           MS(); // MS

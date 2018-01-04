@@ -830,7 +830,7 @@ void UNK_0xe8d4() // UNK_0xe8d4
 // 0xe8fe: db 0x00 0x00 '  '
 
 // ================================================
-// 0xe900: WORD 'UNK_0xe902' codep=0x224c parp=0xe902 params=2 returns=1
+// 0xe900: WORD 'UNK_0xe902' codep=0x224c parp=0xe902 params=0 returns=1
 // ================================================
 
 void UNK_0xe902() // UNK_0xe902
@@ -901,7 +901,7 @@ void UNK_0xe912() // UNK_0xe912
     if (Pop() != 0)
     {
       ILAST(); // ILAST
-      UNK_0x3f3b("***NOTICE ABORTED***");
+      SET_STR_AS_PARAM("***NOTICE ABORTED***");
       Push(0x000d);
       UNK_0xe8d4(); // UNK_0xe8d4
     }
@@ -926,7 +926,7 @@ void UNK_0xe912() // UNK_0xe912
   if (Pop() != 0)
   {
     UNK_0xe866(); // UNK_0xe866
-    UNK_0x3f3b("***END OF NOTICES***");
+    SET_STR_AS_PARAM("***END OF NOTICES***");
     Push(0x000d);
     UNK_0xe8d4(); // UNK_0xe8d4
   }
@@ -935,7 +935,7 @@ void UNK_0xe912() // UNK_0xe912
 
 
 // ================================================
-// 0xe9e0: WORD 'UNK_0xe9e2' codep=0x224c parp=0xe9e2 params=2 returns=0
+// 0xe9e0: WORD 'UNK_0xe9e2' codep=0x224c parp=0xe9e2 params=0 returns=0
 // ================================================
 
 void UNK_0xe9e2() // UNK_0xe9e2
@@ -1047,7 +1047,7 @@ void UNK_0xea28() // UNK_0xea28
   if (Pop() != 0)
   {
     IPREV(); // IPREV
-    UNK_0x3f3b("***REPEATING LAST NOTICE***");
+    SET_STR_AS_PARAM("***REPEATING LAST NOTICE***");
     Push(9);
     UNK_0xe8d4(); // UNK_0xe8d4
   }
@@ -1077,7 +1077,7 @@ void UNK_0xea28() // UNK_0xea28
 
 
 // ================================================
-// 0xeb07: WORD 'UNK_0xeb09' codep=0x224c parp=0xeb09 params=7 returns=0
+// 0xeb07: WORD 'UNK_0xeb09' codep=0x224c parp=0xeb09 params=0 returns=5
 // ================================================
 
 void UNK_0xeb09() // UNK_0xeb09
@@ -1207,7 +1207,7 @@ void UNK_0xec30() // UNK_0xec30
 
 void UNK_0xec60() // UNK_0xec60
 {
-  UNK_0x3f3b("EXTREME HEAT,");
+  SET_STR_AS_PARAM("EXTREME HEAT,");
 }
 
 
@@ -1217,7 +1217,7 @@ void UNK_0xec60() // UNK_0xec60
 
 void UNK_0xec74() // UNK_0xec74
 {
-  UNK_0x3f3b("EXTREME COLD,");
+  SET_STR_AS_PARAM("EXTREME COLD,");
 }
 
 
@@ -1227,7 +1227,7 @@ void UNK_0xec74() // UNK_0xec74
 
 void UNK_0xec88() // UNK_0xec88
 {
-  UNK_0x3f3b("CRUSHING GRAVITY,");
+  SET_STR_AS_PARAM("CRUSHING GRAVITY,");
 }
 
 
@@ -1237,7 +1237,7 @@ void UNK_0xec88() // UNK_0xec88
 
 void UNK_0xeca0() // UNK_0xeca0
 {
-  UNK_0x3f3b("VIOLENT STORMS,");
+  SET_STR_AS_PARAM("VIOLENT STORMS,");
 }
 
 
@@ -1247,7 +1247,7 @@ void UNK_0xeca0() // UNK_0xeca0
 
 void UNK_0xecb6() // UNK_0xecb6
 {
-  UNK_0x3f3b("LACK OF OXYGEN,");
+  SET_STR_AS_PARAM("LACK OF OXYGEN,");
 }
 
 
@@ -1257,7 +1257,7 @@ void UNK_0xecb6() // UNK_0xecb6
 
 void UNK_0xeccc() // UNK_0xeccc
 {
-  UNK_0x3f3b("LACK OF WATER,");
+  SET_STR_AS_PARAM("LACK OF WATER,");
 }
 
 
@@ -1304,7 +1304,7 @@ void UNK_0xed0c() // UNK_0xed0c
   Push(0);
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c
-  UNK_0x3f3b("DUE TO");
+  SET_STR_AS_PARAM("DUE TO");
   UNK_0xec30(); // UNK_0xec30
   Push(7);
   Push(1);
@@ -1336,7 +1336,7 @@ void UNK_0xed0c() // UNK_0xed0c
       Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
-        UNK_0x3f3b("AND");
+        SET_STR_AS_PARAM("AND");
         UNK_0xec30(); // UNK_0xec30
       }
       UNK_0xec30(); // UNK_0xec30
@@ -1345,9 +1345,9 @@ void UNK_0xed0c() // UNK_0xed0c
   } while(i<imax); // (LOOP)
 
   Pop(); // DROP
-  UNK_0x3f3b("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
+  SET_STR_AS_PARAM("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
   UNK_0xec30(); // UNK_0xec30
-  UNK_0x3f3b("YOU HAVE BEEN FINED");
+  SET_STR_AS_PARAM("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
   Push(0x63ef+UNK_0xe45c.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -1360,11 +1360,11 @@ void UNK_0xed0c() // UNK_0xed0c
   _n_S(); // #S
   _n__gt_(); // #>
   UNK_0xec30(); // UNK_0xec30
-  UNK_0x3f3b("MU'S.");
+  SET_STR_AS_PARAM("MU'S.");
   UNK_0xec30(); // UNK_0xec30
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  UNK_0x3f3b("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
+  SET_STR_AS_PARAM("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -1375,7 +1375,7 @@ void UNK_0xed0c() // UNK_0xed0c
 
 void UNK_0xee19() // UNK_0xee19
 {
-  UNK_0x3f3b("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
+  SET_STR_AS_PARAM("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
   UNK_0xec30(); // UNK_0xec30
 }
 
@@ -1386,18 +1386,18 @@ void UNK_0xee19() // UNK_0xee19
 
 void UNK_0xee55() // UNK_0xee55
 {
-  UNK_0x3f3b("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
+  SET_STR_AS_PARAM("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
   UNK_0xec30(); // UNK_0xec30
 }
 
 
 // ================================================
-// 0xee8a: WORD 'UNK_0xee8c' codep=0x224c parp=0xee8c params=5 returns=0
+// 0xee8a: WORD 'UNK_0xee8c' codep=0x224c parp=0xee8c params=3 returns=0
 // ================================================
 
 void UNK_0xee8c() // UNK_0xee8c
 {
-  UNK_0x3f3b("YOU HAVE EARNED A BONUS OF");
+  SET_STR_AS_PARAM("YOU HAVE EARNED A BONUS OF");
   UNK_0xec30(); // UNK_0xec30
   Push(0x63ef+UNK_0xe45c.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -1407,13 +1407,13 @@ void UNK_0xee8c() // UNK_0xee8c
   _n_S(); // #S
   _n__gt_(); // #>
   UNK_0xec30(); // UNK_0xec30
-  UNK_0x3f3b("MU'S FOR THIS RECOMMENDATION.");
+  SET_STR_AS_PARAM("MU'S FOR THIS RECOMMENDATION.");
   UNK_0xec30(); // UNK_0xec30
 }
 
 
 // ================================================
-// 0xeee1: WORD 'UNK_0xeee3' codep=0x224c parp=0xeee3 params=8 returns=0
+// 0xeee1: WORD 'UNK_0xeee3' codep=0x224c parp=0xeee3 params=4 returns=0
 // ================================================
 
 void UNK_0xeee3() // UNK_0xeee3
@@ -1453,7 +1453,7 @@ void UNK_0xeee3() // UNK_0xeee3
 
 
 // ================================================
-// 0xef35: WORD 'UNK_0xef37' codep=0x224c parp=0xef37 params=12 returns=0
+// 0xef35: WORD 'UNK_0xef37' codep=0x224c parp=0xef37 params=4 returns=0
 // ================================================
 
 void UNK_0xef37() // UNK_0xef37
@@ -1473,7 +1473,7 @@ void UNK_0xef37() // UNK_0xef37
   {
     UNK_0xe842(); // UNK_0xe842
     UNK_0xe842(); // UNK_0xe842
-    UNK_0x3f3b("END OF EVALUATIONS");
+    SET_STR_AS_PARAM("END OF EVALUATIONS");
     UNK_0xec30(); // UNK_0xec30
     return;
   }
@@ -1558,7 +1558,7 @@ void UNK_0xf045() // UNK_0xf045
   Push(0);
   Push(6);
   UNK_0xe81c(); // UNK_0xe81c
-  UNK_0x3f3b("DUE TO YOUR NEGLIGENCE, YOUR SHIP IS NO LONGER EQUIPPED WITH A TERRAIN VEHICLE. A NEW TERRAIN VEHICLE IS CURRENTLY BEING INSTALLED. CONSEQUENTLY, YOU HAVE BEEN FINED 10,000 MU.");
+  SET_STR_AS_PARAM("DUE TO YOUR NEGLIGENCE, YOUR SHIP IS NO LONGER EQUIPPED WITH A TERRAIN VEHICLE. A NEW TERRAIN VEHICLE IS CURRENTLY BEING INSTALLED. CONSEQUENTLY, YOU HAVE BEEN FINED 10,000 MU.");
   UNK_0xec30(); // UNK_0xec30
   Push(0xd8f0); Push(0xffff);
   UNK_0xf02b(); // UNK_0xf02b
@@ -1578,10 +1578,10 @@ void UNK_0xf12c() // UNK_0xf12c
   Push(0);
   Push(6);
   UNK_0xe81c(); // UNK_0xe81c
-  UNK_0x3f3b("I.S. CORP. REG. 12A-7312 EMERGENCY DISTRESS CALLS: CAPTAIN AND CREW OF ANY VESSEL INVOKING AN EMERGENCY DISTRESS CALL SHALL BE LIABLE FOR ALL COSTS INCURRED BY INTERSTEL CORP. AS A RESULT OF RESCUE OPERATIONS INITIATED ON BEHALF OF SAID CREW.");
+  SET_STR_AS_PARAM("I.S. CORP. REG. 12A-7312 EMERGENCY DISTRESS CALLS: CAPTAIN AND CREW OF ANY VESSEL INVOKING AN EMERGENCY DISTRESS CALL SHALL BE LIABLE FOR ALL COSTS INCURRED BY INTERSTEL CORP. AS A RESULT OF RESCUE OPERATIONS INITIATED ON BEHALF OF SAID CREW.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
-  UNK_0x3f3b("YOU HAVE BEEN FINED");
+  SET_STR_AS_PARAM("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
   SPACE(); // SPACE
   Push(pp_TOWFINE); // TOWFINE
@@ -1608,13 +1608,13 @@ void UNK_0xf274() // UNK_0xf274
   Push(0);
   Push(6);
   UNK_0xe81c(); // UNK_0xe81c
-  UNK_0x3f3b("CONGRATULATIONS! AS A RESULT OF YOUR EFFORTS, OUR SUN IS ONCE AGAIN STABLE. ALL OF ARTH, AND INDEED THE ENTIRE GALAXY OWES YOU A DEBT WHICH CAN NEVER BE FULLY REPAID. YOUR HEROIC EXPLOITS WILL SURELY BECOME INTER-GALACTIC LEGEND.");
+  SET_STR_AS_PARAM("CONGRATULATIONS! AS A RESULT OF YOUR EFFORTS, OUR SUN IS ONCE AGAIN STABLE. ALL OF ARTH, AND INDEED THE ENTIRE GALAXY OWES YOU A DEBT WHICH CAN NEVER BE FULLY REPAID. YOUR HEROIC EXPLOITS WILL SURELY BECOME INTER-GALACTIC LEGEND.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
-  UNK_0x3f3b("OUR TOKEN BONUS OF 500,000 MU WILL ALLOW YOU TO LIVE HERE ON ARTH IN LUXURY FOR MANY YEARS TO COME, ALTHOUGH WE SUSPECT YOU MAY USE IT TO FURTHER YOUR EXPLORATIONS.");
+  SET_STR_AS_PARAM("OUR TOKEN BONUS OF 500,000 MU WILL ALLOW YOU TO LIVE HERE ON ARTH IN LUXURY FOR MANY YEARS TO COME, ALTHOUGH WE SUSPECT YOU MAY USE IT TO FURTHER YOUR EXPLORATIONS.");
   UNK_0xec30(); // UNK_0xec30
   UNK_0xe842(); // UNK_0xe842
-  UNK_0x3f3b("ONCE AGAIN, THANK YOU!");
+  SET_STR_AS_PARAM("ONCE AGAIN, THANK YOU!");
   UNK_0xec30(); // UNK_0xec30
   Push(pp_WMSG); // WMSG
   OFF(); // OFF

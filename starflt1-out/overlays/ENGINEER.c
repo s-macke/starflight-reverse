@@ -241,7 +241,7 @@ void UNK_0xece5() // UNK_0xece5
 
 
 // ================================================
-// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=5 returns=0
+// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=1 returns=0
 // ================================================
 
 void UNK_0xed5c() // UNK_0xed5c
@@ -389,7 +389,7 @@ void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 
 
 // ================================================
-// 0xee66: WORD 'UNK_0xee68' codep=0x224c parp=0xee68 params=2 returns=0
+// 0xee66: WORD 'UNK_0xee68' codep=0x224c parp=0xee68 params=1 returns=1
 // ================================================
 
 void UNK_0xee68() // UNK_0xee68
@@ -653,7 +653,7 @@ void UNK_0xf013() // UNK_0xf013
 
 
 // ================================================
-// 0xf059: WORD 'UNK_0xf05b' codep=0x224c parp=0xf05b params=3 returns=1
+// 0xf059: WORD 'UNK_0xf05b' codep=0x224c parp=0xf05b params=1 returns=1
 // ================================================
 
 void UNK_0xf05b() // UNK_0xf05b
@@ -696,7 +696,7 @@ void UNK_0xf080() // UNK_0xf080
 
 
 // ================================================
-// 0xf0c9: WORD 'UNK_0xf0cb' codep=0x224c parp=0xf0cb params=5 returns=1
+// 0xf0c9: WORD 'UNK_0xf0cb' codep=0x224c parp=0xf0cb params=1 returns=1
 // ================================================
 
 void UNK_0xf0cb() // UNK_0xf0cb
@@ -785,7 +785,7 @@ void UNK_0xf0ff() // UNK_0xf0ff
 
 
 // ================================================
-// 0xf181: WORD 'UNK_0xf183' codep=0x224c parp=0xf183 params=3 returns=0
+// 0xf181: WORD 'UNK_0xf183' codep=0x224c parp=0xf183 params=1 returns=0
 // ================================================
 
 void UNK_0xf183() // UNK_0xf183
@@ -811,7 +811,7 @@ void UNK_0xf183() // UNK_0xf183
 
 
 // ================================================
-// 0xf1cf: WORD 'UNK_0xf1d1' codep=0x224c parp=0xf1d1 params=3 returns=0
+// 0xf1cf: WORD 'UNK_0xf1d1' codep=0x224c parp=0xf1d1 params=1 returns=0
 // ================================================
 
 void UNK_0xf1d1() // UNK_0xf1d1

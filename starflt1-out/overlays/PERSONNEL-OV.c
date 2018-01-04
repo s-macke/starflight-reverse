@@ -106,7 +106,7 @@ extern Color GREY1; // GREY1
 extern Color GREY2; // GREY2
 extern Color BLUE; // BLUE
 extern Color WHITE; // WHITE
-extern IFieldType INST_dash_SP; // INST-SP
+extern IFieldType INST_dash_SPECIES; // INST-SPECIES
 void COUNT(); // COUNT
 void MOD(); // MOD
 void MIN(); // MIN
@@ -130,7 +130,7 @@ void CMOVE(); // CMOVE
 void FILL_1(); // FILL_1
 void _do__eq_(); // $=
 void FILE_st_(); // FILE<
-void StoreINST_dash_SIB(); // !INST-SIB
+void StoreINST_dash_SPECIES(); // !INST-SPECIES
 void GetINST_dash_SPECIES(); // @INST-SPECIES
 void SET_dash_CURRENT(); // SET-CURRENT
 void ICLOSE(); // ICLOSE
@@ -608,7 +608,7 @@ void UNK_0xe6c5() // UNK_0xe6c5
 
 
 // ================================================
-// 0xe804: WORD 'UNK_0xe806' codep=0x224c parp=0xe806 params=2 returns=1
+// 0xe804: WORD 'UNK_0xe806' codep=0x224c parp=0xe806 params=0 returns=1
 // ================================================
 
 void UNK_0xe806() // UNK_0xe806
@@ -635,7 +635,7 @@ void UNK_0xe806() // UNK_0xe806
 
 
 // ================================================
-// 0xe828: WORD 'UNK_0xe82a' codep=0x224c parp=0xe82a params=9 returns=0
+// 0xe828: WORD 'UNK_0xe82a' codep=0x224c parp=0xe82a params=1 returns=0
 // ================================================
 
 void UNK_0xe82a() // UNK_0xe82a
@@ -818,7 +818,7 @@ void UNK_0xe92a() // UNK_0xe92a
 
 
 // ================================================
-// 0xea42: WORD 'UNK_0xea44' codep=0x224c parp=0xea44 params=2 returns=0
+// 0xea42: WORD 'UNK_0xea44' codep=0x224c parp=0xea44 params=0 returns=0
 // ================================================
 
 void UNK_0xea44() // UNK_0xea44
@@ -1229,7 +1229,7 @@ void UNK_0xed67() // UNK_0xed67
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(a); // I
-  Push(0x63ef+INST_dash_SP.offset); // IFIELD
+  Push(0x63ef+INST_dash_SPECIES.offset); // IFIELD
   Store_3(); // !_3
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
@@ -1486,7 +1486,7 @@ void UNK_0xef53() // UNK_0xef53
 
 
 // ================================================
-// 0xeffd: WORD 'UNK_0xefff' codep=0x224c parp=0xefff params=1 returns=0
+// 0xeffd: WORD 'UNK_0xefff' codep=0x224c parp=0xefff params=0 returns=1
 // ================================================
 
 void UNK_0xefff() // UNK_0xefff
@@ -1639,7 +1639,7 @@ void UNK_0xf09d() // UNK_0xf09d
     Push(pp_XORMODE); // XORMODE
     OFF(); // OFF
     Push(0);
-    StoreINST_dash_SIB(); // !INST-SIB
+    StoreINST_dash_SPECIES(); // !INST-SPECIES
     Push(pp_RECORD_n_); // RECORD#
     OFF(); // OFF
     GetCRS(); // @CRS
@@ -1877,7 +1877,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 
 // ================================================
-// 0xf369: WORD 'UNK_0xf36b' codep=0x224c parp=0xf36b params=2 returns=1
+// 0xf369: WORD 'UNK_0xf36b' codep=0x224c parp=0xf36b params=0 returns=1
 // ================================================
 
 void UNK_0xf36b() // UNK_0xf36b
@@ -1940,7 +1940,7 @@ void UNK_0xf3a3() // UNK_0xf3a3
 
 
 // ================================================
-// 0xf3e5: WORD 'UNK_0xf3e7' codep=0x224c parp=0xf3e7 params=4 returns=0
+// 0xf3e5: WORD 'UNK_0xf3e7' codep=0x224c parp=0xf3e7 params=0 returns=0
 // ================================================
 
 void UNK_0xf3e7() // UNK_0xf3e7

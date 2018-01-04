@@ -414,7 +414,7 @@ void UNK_0xee1f() // UNK_0xee1f
 
 
 // ================================================
-// 0xee2f: WORD 'UNK_0xee31' codep=0x224c parp=0xee31 params=4 returns=2
+// 0xee2f: WORD 'UNK_0xee31' codep=0x224c parp=0xee31 params=2 returns=2
 // ================================================
 
 void UNK_0xee31() // UNK_0xee31
@@ -430,7 +430,7 @@ void UNK_0xee31() // UNK_0xee31
 
 
 // ================================================
-// 0xee41: WORD 'UNK_0xee43' codep=0x224c parp=0xee43 params=4 returns=2
+// 0xee41: WORD 'UNK_0xee43' codep=0x224c parp=0xee43 params=0 returns=2
 // ================================================
 
 void UNK_0xee43() // UNK_0xee43
@@ -646,7 +646,7 @@ void UNK_0xef81() // UNK_0xef81
 {
   _gt_DISPLA(); // >DISPLA
   CTINIT(); // CTINIT
-  UNK_0x3f09("JUMP POD ENGAGED");
+  SET_STR_AS_PARAM("JUMP POD ENGAGED");
   DrawTTY(); // .TTY
   Push(0x6b12); Push(0x0002);
   UNK_0xee31(); // UNK_0xee31
@@ -1255,7 +1255,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 
 // ================================================
-// 0xf312: WORD 'UNK_0xf314' codep=0x224c parp=0xf314 params=7 returns=0
+// 0xf312: WORD 'UNK_0xf314' codep=0x224c parp=0xf314 params=3 returns=0
 // ================================================
 
 void UNK_0xf314() // UNK_0xf314
@@ -1368,7 +1368,7 @@ void UNK_0xf3be() // UNK_0xf3be
 
 
 // ================================================
-// 0xf3d2: WORD 'UNK_0xf3d4' codep=0x224c parp=0xf3d4 params=2 returns=1
+// 0xf3d2: WORD 'UNK_0xf3d4' codep=0x224c parp=0xf3d4 params=0 returns=1
 // ================================================
 
 void UNK_0xf3d4() // UNK_0xf3d4
@@ -1389,7 +1389,7 @@ void UNK_0xf3d4() // UNK_0xf3d4
 
 
 // ================================================
-// 0xf3f4: WORD 'UNK_0xf3f6' codep=0x224c parp=0xf3f6 params=4 returns=0
+// 0xf3f4: WORD 'UNK_0xf3f6' codep=0x224c parp=0xf3f6 params=0 returns=0
 // ================================================
 
 void UNK_0xf3f6() // UNK_0xf3f6
@@ -1561,7 +1561,7 @@ void JUMP() // JUMP
     UNK_0xf314(); // UNK_0xf314
     return;
   }
-  UNK_0x3f09("CANCELLED");
+  SET_STR_AS_PARAM("CANCELLED");
   DrawTTY(); // .TTY
   Push(0xcb2e); // probable 'OV.MVS'
   MODULE(); // MODULE

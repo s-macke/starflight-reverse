@@ -186,7 +186,7 @@ void UNK_0xee4a() // UNK_0xee4a
 
 void UNK_0xee68() // UNK_0xee68
 {
-  UNK_0x3f09("SENSORS");
+  SET_STR_AS_PARAM("SENSORS");
 }
 
 
@@ -200,7 +200,7 @@ void UNK_0xee76() // UNK_0xee76
   Push(0);
   Push(6);
   CTPOS_dot_(); // CTPOS.
-  UNK_0x3f09("COMMUNICATIONS");
+  SET_STR_AS_PARAM("COMMUNICATIONS");
 }
 
 
@@ -210,7 +210,7 @@ void UNK_0xee76() // UNK_0xee76
 
 void UNK_0xee93() // UNK_0xee93
 {
-  UNK_0x3f09("LASERS");
+  SET_STR_AS_PARAM("LASERS");
 }
 
 
@@ -220,7 +220,7 @@ void UNK_0xee93() // UNK_0xee93
 
 void UNK_0xeea0() // UNK_0xeea0
 {
-  UNK_0x3f09("MISSILES");
+  SET_STR_AS_PARAM("MISSILES");
 }
 
 
@@ -230,7 +230,7 @@ void UNK_0xeea0() // UNK_0xeea0
 
 void UNK_0xeeaf() // UNK_0xeeaf
 {
-  UNK_0x3f09("ENGINES");
+  SET_STR_AS_PARAM("ENGINES");
 }
 
 
@@ -240,7 +240,7 @@ void UNK_0xeeaf() // UNK_0xeeaf
 
 void UNK_0xeebd() // UNK_0xeebd
 {
-  UNK_0x3f09("SHIELDS");
+  SET_STR_AS_PARAM("SHIELDS");
 }
 
 
@@ -422,7 +422,7 @@ void UNK_0xefa6() // UNK_0xefa6
 
 
 // ================================================
-// 0xefac: WORD 'UNK_0xefae' codep=0x224c parp=0xefae params=2 returns=0
+// 0xefac: WORD 'UNK_0xefae' codep=0x224c parp=0xefae params=0 returns=0
 // ================================================
 
 void UNK_0xefae() // UNK_0xefae
@@ -717,7 +717,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4 params=6 returns=1
+// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4 params=4 returns=1
 // ================================================
 // entry
 
@@ -1017,7 +1017,7 @@ void _ro__ask__dot_EQ() // (?.EQ
     }
   } else
   {
-    UNK_0x3f09("SHIP IS NOT EQUIPPED WITH ");
+    SET_STR_AS_PARAM("SHIP IS NOT EQUIPPED WITH ");
     DrawTTY(); // .TTY
     Push(a); // I
     DrawERR(); // .ERR case
@@ -1150,7 +1150,7 @@ void _eq_CARG() // =CARG
 
 
 // ================================================
-// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc params=6 returns=1
+// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc params=4 returns=1
 // ================================================
 // entry
 

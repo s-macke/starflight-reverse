@@ -66,7 +66,7 @@ extern Color BLACK; // BLACK
 extern Color RED; // RED
 extern Color YELLOW; // YELLOW
 extern Color WHITE; // WHITE
-extern IFieldType INST_dash_SI; // INST-SI
+extern IFieldType INST_dash_SIB; // INST-SIB
 void COUNT(); // COUNT
 void MIN(); // MIN
 void DrawR(); // .R
@@ -355,7 +355,7 @@ void UNK_0xf183() // UNK_0xf183
 
 
 // ================================================
-// 0xf1f7: WORD 'ROLE-C' codep=0x224c parp=0xf202 params=4 returns=0
+// 0xf1f7: WORD 'ROLE-C' codep=0x224c parp=0xf202 params=0 returns=0
 // ================================================
 // entry
 
@@ -365,7 +365,7 @@ void ROLE_dash_C() // ROLE-C
   UNK_0xf139(); // UNK_0xf139
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+INST_dash_SI.offset); // IFIELD
+  Push(0x63ef+INST_dash_SIB.offset); // IFIELD
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(6);
@@ -461,7 +461,7 @@ void UNK_0xf280() // UNK_0xf280
 
 
 // ================================================
-// 0xf290: WORD 'UNK_0xf292' codep=0x224c parp=0xf292 params=4 returns=1
+// 0xf290: WORD 'UNK_0xf292' codep=0x224c parp=0xf292 params=0 returns=1
 // ================================================
 
 void UNK_0xf292() // UNK_0xf292
@@ -483,7 +483,7 @@ void UNK_0xf292() // UNK_0xf292
 
 
 // ================================================
-// 0xf2b2: WORD 'UNK_0xf2b4' codep=0x224c parp=0xf2b4 params=2 returns=0
+// 0xf2b2: WORD 'UNK_0xf2b4' codep=0x224c parp=0xf2b4 params=0 returns=0
 // ================================================
 
 void UNK_0xf2b4() // UNK_0xf2b4
@@ -497,7 +497,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
 
 
 // ================================================
-// 0xf2cb: WORD 'UNK_0xf2cd' codep=0x224c parp=0xf2cd params=8 returns=0
+// 0xf2cb: WORD 'UNK_0xf2cd' codep=0x224c parp=0xf2cd params=0 returns=0
 // ================================================
 
 void UNK_0xf2cd() // UNK_0xf2cd
@@ -703,7 +703,7 @@ void _gt_SKILL() // >SKILL
 }
 
 // ================================================
-// 0xf414: WORD 'UNK_0xf416' codep=0x224c parp=0xf416 params=4 returns=0
+// 0xf414: WORD 'UNK_0xf416' codep=0x224c parp=0xf416 params=0 returns=0
 // ================================================
 
 void UNK_0xf416() // UNK_0xf416
@@ -743,7 +743,7 @@ void UNK_0xf42f() // UNK_0xf42f
   _1_dot_5_at_(); // 1.5@
   Push(pp_UNK_0xf42a); // UNK_0xf42a
   _1_dot_5_ex_(); // 1.5!
-  Push(0x63ef+INST_dash_SI.offset); // IFIELD
+  Push(0x63ef+INST_dash_SIB.offset); // IFIELD
   Push(0x0011);
   Push(Pop() + Pop()); // +
   Push(6);
@@ -786,7 +786,7 @@ void UNK_0xf42f() // UNK_0xf42f
 
 
 // ================================================
-// 0xf487: WORD 'UNK_0xf489' codep=0x224c parp=0xf489 params=6 returns=0
+// 0xf487: WORD 'UNK_0xf489' codep=0x224c parp=0xf489 params=0 returns=0
 // ================================================
 
 void UNK_0xf489() // UNK_0xf489
@@ -800,7 +800,7 @@ void UNK_0xf489() // UNK_0xf489
 
 
 // ================================================
-// 0xf495: WORD 'UNK_0xf497' codep=0x224c parp=0xf497 params=4 returns=0
+// 0xf495: WORD 'UNK_0xf497' codep=0x224c parp=0xf497 params=0 returns=0
 // ================================================
 
 void UNK_0xf497() // UNK_0xf497
@@ -829,7 +829,7 @@ void UNK_0xf497() // UNK_0xf497
 
 
 // ================================================
-// 0xf4bf: WORD 'UNK_0xf4c1' codep=0x224c parp=0xf4c1 params=4 returns=0
+// 0xf4bf: WORD 'UNK_0xf4c1' codep=0x224c parp=0xf4c1 params=0 returns=0
 // ================================================
 
 void UNK_0xf4c1() // UNK_0xf4c1
@@ -881,7 +881,7 @@ void UNK_0xf4c1() // UNK_0xf4c1
 
 
 // ================================================
-// 0xf50b: WORD 'OBITS' codep=0x224c parp=0xf515 params=8 returns=0
+// 0xf50b: WORD 'OBITS' codep=0x224c parp=0xf515 params=0 returns=0
 // ================================================
 // entry
 
@@ -893,7 +893,7 @@ void OBITS() // OBITS
 
 
 // ================================================
-// 0xf51b: WORD 'HEAL' codep=0x224c parp=0xf524 params=16 returns=0
+// 0xf51b: WORD 'HEAL' codep=0x224c parp=0xf524 params=0 returns=0
 // ================================================
 // entry
 

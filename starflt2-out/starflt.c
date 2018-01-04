@@ -599,7 +599,7 @@
 //              H.  codep:0x224c parp:0x3ecf size:0x0010 C-string:'H_dot_'
 //           RANGE  codep:0x224c parp:0x3ee9 size:0x0008 C-string:'RANGE'
 //           ASCII  codep:0x224c parp:0x3efb size:0x000c C-string:'ASCII'
-//      UNK_0x3f09  codep:0x224c parp:0x3f09 size:0x0010 C-string:'UNK_0x3f09'
+// SET_STR_AS_PARAM  codep:0x224c parp:0x3f09 size:0x0010 C-string:'SET_STR_AS_PARAM'
 //               "  codep:0x224c parp:0x3f1f size:0x0036 C-string:'_qm_'
 //             DU<  codep:0x224c parp:0x3f5d size:0x0018 C-string:'DU_st_'
 //            PICK  codep:0x224c parp:0x3f7e size:0x0016 C-string:'PICK'
@@ -693,7 +693,8 @@
 //              3+  codep:0x4a72 parp:0x4a72 size:0x000a C-string:'_3_plus_'
 //            1.5@  codep:0x4a85 parp:0x4a85 size:0x000e C-string:'_1_dot_5_at_'
 //          1.5!_1  codep:0x4a9c parp:0x4a9c size:0x000c C-string:'_1_dot_5_ex__1'
-//             @DS  codep:0x4ab0 parp:0x4ab0 size:0x0018 C-string:'GetDS'
+//             @DS  codep:0x4ab0 parp:0x4ab0 size:0x0006 C-string:'GetDS'
+//      UNK_0x4ab8  codep:0x1d29 parp:0x4ab8 size:0x0010 C-string:'UNK_0x4ab8'
 //              +@  codep:0x224c parp:0x4acf size:0x0006 C-string:'_plus__at_'
 //           >FLAG  codep:0x224c parp:0x4adf size:0x0006 C-string:'_gt_FLAG'
 //            L+-@  codep:0x4aee parp:0x4aee size:0x0011 C-string:'L_plus__dash__at_'
@@ -1489,7 +1490,8 @@
 //       .CIRCLE_1  codep:0x224c parp:0x8974 size:0x0006 C-string:'DrawCIRCLE_1'
 //         FILLCIR  codep:0x224c parp:0x8986 size:0x0006 C-string:'FILLCIR'
 //         .ELLIPS  codep:0x224c parp:0x8998 size:0x0006 C-string:'DrawELLIPS'
-//         FILLELL  codep:0x224c parp:0x89aa size:0x003b C-string:'FILLELL'
+//         FILLELL  codep:0x224c parp:0x89aa size:0x0006 C-string:'FILLELL'
+//      UNK_0x89b2  codep:0x1d29 parp:0x89b2 size:0x0033 C-string:'UNK_0x89b2'
 //           HLINE  codep:0x89ef parp:0x89ef size:0x0058 C-string:'HLINE'
 //      UNK_0x8a49  codep:0x224c parp:0x8a49 size:0x002c C-string:'UNK_0x8a49'
 //          >1FONT  codep:0x224c parp:0x8a80 size:0x0006 C-string:'_gt_1FONT'
@@ -2468,6 +2470,9 @@ const unsigned short int pp_UNK_0x4901 = 0x4901; // UNK_0x4901 size: 17
 
 const unsigned short int pp_ZZZ = 0x49b4; // ZZZ size: 10
 // {0x76, 0x02, 0x19, 0x00, 0x4f, 0x54, 0x20, 0x20, 0x6d, 0x65}
+
+const unsigned short int pp_UNK_0x4ab8 = 0x4ab8; // UNK_0x4ab8 size: 16
+// {0x51, 0x26, 0x8a, 0x0f, 0x87, 0xd8, 0x26, 0x86, 0x0f, 0x87, 0xd8, 0x26, 0x88, 0x0f, 0x59, 0xc3}
 
 const unsigned short int pp_SEED_3 = 0x4b9c; // SEED_3 size: 2
 // {0xdf, 0x97}
@@ -3701,6 +3706,9 @@ const unsigned short int pp_CCGA = 0x8622; // CCGA size: 16
 
 const unsigned short int pp_PCGA = 0x863b; // PCGA size: 16
 // {0x00, 0x02, 0x02, 0x02, 0x02, 0x02, 0x02, 0x01, 0x00, 0x01, 0x01, 0x03, 0x01, 0x01, 0x03, 0x03}
+
+const unsigned short int pp_UNK_0x89b2 = 0x89b2; // UNK_0x89b2 size: 51
+// {0x06, 0xff, 0x36, 0xf5, 0x84, 0x07, 0x26, 0x8b, 0x06, 0x08, 0x01, 0x8b, 0x0e, 0x56, 0x5a, 0x0b, 0xc9, 0x75, 0x05, 0x25, 0xff, 0x00, 0xeb, 0x03, 0x25, 0xff, 0x40, 0x26, 0x89, 0x06, 0x08, 0x01, 0x07, 0xb8, 0x05, 0x00, 0x8b, 0x0e, 0x6f, 0x59, 0x8b, 0x1e, 0x58, 0x59, 0x8b, 0x16, 0x63, 0x59, 0xcd, 0x63, 0xc3}
 
 const unsigned short int pp_TREJECT = 0x8b5b; // TREJECT size: 6
 // {0x9a, 0x41, 0x00, 0x37, 0x7f, 0xc3}
@@ -11958,10 +11966,10 @@ void ASCII() // ASCII
 
 
 // ================================================
-// 0x3f07: WORD 'UNK_0x3f09' codep=0x224c parp=0x3f09 params=0 returns=2
+// 0x3f07: WORD 'SET_STR_AS_PARAM' codep=0x224c parp=0x3f09 params=0 returns=2
 // ================================================
 
-void UNK_0x3f09() // UNK_0x3f09
+void SET_STR_AS_PARAM() // SET_STR_AS_PARAM
 {
   unsigned short int a;
   Push(Read16(callp0)); // R@
@@ -12787,7 +12795,7 @@ void UNK_0x4480() // UNK_0x4480
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   CLRFCB(); // CLRFCB
-  UNK_0x3f09("STAR2A  COM");
+  SET_STR_AS_PARAM("STAR2A  COM");
   NAM(); // NAM
   SWAP(); // SWAP
   CMOVE_1(); // CMOVE_1
@@ -13607,7 +13615,10 @@ void _3_star_() // 3*
 // 0x4ab1: lodsw
 // 0x4ab2: mov    bx,ax
 // 0x4ab4: jmp    word ptr [bx]
-// 0x4ab6: db 0x29 0x1d ') '
+
+// ================================================
+// 0x4ab6: WORD 'UNK_0x4ab8' codep=0x1d29 parp=0x4ab8
+// ================================================
 // 0x4ab8: push   cx
 // 0x4ab9: es:    
 // 0x4aba: mov    cl,[bx]
@@ -17363,7 +17374,7 @@ void MOUNTA() // MOUNTA
   Push(0x6f85);
   Push(pp_UNK_0x5711); // UNK_0x5711
   Store_2(); // !_2
-  UNK_0x3f09("STAR2A.COM");
+  SET_STR_AS_PARAM("STAR2A.COM");
   MOUNTFI(); // MOUNTFI
 }
 
@@ -17377,7 +17388,7 @@ void MOUNTB() // MOUNTB
   Push(0x6f91);
   Push(pp_UNK_0x5711); // UNK_0x5711
   Store_2(); // !_2
-  UNK_0x3f09("STAR2B.COM");
+  SET_STR_AS_PARAM("STAR2B.COM");
   MOUNTFI(); // MOUNTFI
 }
 
@@ -18075,7 +18086,7 @@ void UNK_0x74e0() // UNK_0x74e0
 
 
 // ================================================
-// 0x74e6: WORD 'UNK_0x74e8' codep=0x224c parp=0x74e8 params=3 returns=0
+// 0x74e6: WORD 'UNK_0x74e8' codep=0x224c parp=0x74e8 params=1 returns=0
 // ================================================
 
 void UNK_0x74e8() // UNK_0x74e8
@@ -18086,7 +18097,7 @@ void UNK_0x74e8() // UNK_0x74e8
 
 
 // ================================================
-// 0x74ee: WORD '!INST-S' codep=0x224c parp=0x74fa params=3 returns=0
+// 0x74ee: WORD '!INST-S' codep=0x224c parp=0x74fa params=1 returns=0
 // ================================================
 
 void StoreINST_dash_S() // !INST-S
@@ -18097,7 +18108,7 @@ void StoreINST_dash_S() // !INST-S
 
 
 // ================================================
-// 0x7500: WORD 'UNK_0x7502' codep=0x224c parp=0x7502 params=2 returns=2
+// 0x7500: WORD 'UNK_0x7502' codep=0x224c parp=0x7502 params=0 returns=2
 // ================================================
 
 void UNK_0x7502() // UNK_0x7502
@@ -18108,7 +18119,7 @@ void UNK_0x7502() // UNK_0x7502
 
 
 // ================================================
-// 0x7508: WORD 'UNK_0x750a' codep=0x224c parp=0x750a params=2 returns=2
+// 0x7508: WORD 'UNK_0x750a' codep=0x224c parp=0x750a params=0 returns=2
 // ================================================
 
 void UNK_0x750a() // UNK_0x750a
@@ -18119,7 +18130,7 @@ void UNK_0x750a() // UNK_0x750a
 
 
 // ================================================
-// 0x7510: WORD 'UNK_0x7512' codep=0x224c parp=0x7512 params=2 returns=2
+// 0x7510: WORD 'UNK_0x7512' codep=0x224c parp=0x7512 params=0 returns=2
 // ================================================
 
 void UNK_0x7512() // UNK_0x7512
@@ -18130,7 +18141,7 @@ void UNK_0x7512() // UNK_0x7512
 
 
 // ================================================
-// 0x7518: WORD '@INST-C' codep=0x224c parp=0x7524 params=2 returns=1
+// 0x7518: WORD '@INST-C' codep=0x224c parp=0x7524 params=0 returns=1
 // ================================================
 
 void GetINST_dash_C() // @INST-C
@@ -18141,7 +18152,7 @@ void GetINST_dash_C() // @INST-C
 
 
 // ================================================
-// 0x752a: WORD '@INST-S' codep=0x224c parp=0x7536 params=2 returns=1
+// 0x752a: WORD '@INST-S' codep=0x224c parp=0x7536 params=0 returns=1
 // ================================================
 
 void GetINST_dash_S() // @INST-S
@@ -18152,7 +18163,7 @@ void GetINST_dash_S() // @INST-S
 
 
 // ================================================
-// 0x753c: WORD '=SPECIE' codep=0x224c parp=0x7548 params=3 returns=1
+// 0x753c: WORD '=SPECIE' codep=0x224c parp=0x7548 params=1 returns=1
 // ================================================
 
 void _eq_SPECIE() // =SPECIE
@@ -18282,7 +18293,7 @@ void Is_dash_NULL() // ?-NULL
 
 
 // ================================================
-// 0x7620: WORD '?CHILD' codep=0x224c parp=0x762b params=2 returns=1
+// 0x7620: WORD '?CHILD' codep=0x224c parp=0x762b params=0 returns=1
 // ================================================
 
 void IsCHILD() // ?CHILD
@@ -18294,7 +18305,7 @@ void IsCHILD() // ?CHILD
 
 
 // ================================================
-// 0x7633: WORD 'UNK_0x7635' codep=0x224c parp=0x7635 params=2 returns=1
+// 0x7633: WORD 'UNK_0x7635' codep=0x224c parp=0x7635 params=0 returns=1
 // ================================================
 
 void UNK_0x7635() // UNK_0x7635
@@ -18925,7 +18936,7 @@ void Get_gt_C_plus_S() // @>C+S
 
 
 // ================================================
-// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=2 returns=0
+// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=0 returns=0
 // ================================================
 
 void IOPEN() // IOPEN
@@ -18967,7 +18978,7 @@ void UNK_0x7a6c() // UNK_0x7a6c
 
 
 // ================================================
-// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=2 returns=1
+// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=0 returns=1
 // ================================================
 
 void IsLAST() // ?LAST
@@ -18991,7 +19002,7 @@ void IsFIRST() // ?FIRST
 
 
 // ================================================
-// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=4 returns=0
+// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=2 returns=0
 // ================================================
 
 void _gt_C_plus_() // >C+
@@ -19398,7 +19409,7 @@ void IFLD_ex_() // IFLD!
 // 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
 
 // ================================================
-// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=4 returns=1
+// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=2 returns=3
 // ================================================
 
 void IsCLASS_slash_() // ?CLASS/
@@ -19586,7 +19597,7 @@ void IFIND() // IFIND
 
 
 // ================================================
-// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=2 returns=0
+// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=0 returns=0
 // ================================================
 
 void UNK_0x7e58() // UNK_0x7e58
@@ -19606,7 +19617,7 @@ void UNK_0x7e58() // UNK_0x7e58
 
 
 // ================================================
-// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c params=2 returns=0
+// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c params=0 returns=0
 // ================================================
 
 void MAP_gt_LEA() // MAP>LEA
@@ -19698,7 +19709,7 @@ void _gt_INACTI() // >INACTI
 // 0x7f0c: db 0x4c 0x22 0x2d 0x7c 0xf0 0x7e 0x90 0x16 'L"-| ~  '
 
 // ================================================
-// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=2 returns=0
+// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=0 returns=0
 // ================================================
 
 void IDELETE() // IDELETE
@@ -19838,7 +19849,7 @@ void UNK_0x7fdf() // UNK_0x7fdf
 
 
 // ================================================
-// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=2 returns=0
+// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=0 returns=0
 // ================================================
 
 void UNK_0x7ff5() // UNK_0x7ff5
@@ -21294,7 +21305,10 @@ void FILLELL() // FILLELL
   FCIRC(); // FCIRC
 }
 
-// 0x89b0: db 0x29 0x1d ') '
+
+// ================================================
+// 0x89b0: WORD 'UNK_0x89b2' codep=0x1d29 parp=0x89b2
+// ================================================
 // 0x89b2: push   es
 // 0x89b3: push   word ptr [84F5]
 // 0x89b7: pop    es
@@ -25973,7 +25987,7 @@ void SRDEPTH() // SRDEPTH
 
 
 // ================================================
-// 0xa8d1: WORD 'UNK_0xa8d3' codep=0x224c parp=0xa8d3 params=2 returns=0
+// 0xa8d1: WORD 'UNK_0xa8d3' codep=0x224c parp=0xa8d3 params=0 returns=0
 // ================================================
 
 void UNK_0xa8d3() // UNK_0xa8d3
@@ -25991,7 +26005,7 @@ void UNK_0xa8d3() // UNK_0xa8d3
 
 
 // ================================================
-// 0xa8e7: WORD 'NEXT-NO' codep=0x224c parp=0xa8f3 params=4 returns=0
+// 0xa8e7: WORD 'NEXT-NO' codep=0x224c parp=0xa8f3 params=0 returns=0
 // ================================================
 
 void NEXT_dash_NO() // NEXT-NO
@@ -26185,7 +26199,7 @@ IFieldType TEXT_dash_IN = {SCROLL_TEXTIDX, 0x0e, 0x03};
 IFieldType TEXT_dash_TE = {SCROLL_TEXTIDX, 0x11, 0x26};
 
 // ================================================
-// 0xaa7a: WORD 'TEXT>PA' codep=0x224c parp=0xaa86 params=2 returns=0
+// 0xaa7a: WORD 'TEXT>PA' codep=0x224c parp=0xaa86 params=0 returns=0
 // ================================================
 
 void TEXT_gt_PA() // TEXT>PA

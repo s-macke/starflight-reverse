@@ -735,7 +735,7 @@ void UNK_0x4480() // UNK_0x4480
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   CLRFCB(); // CLRFCB
-  UNK_0x3f09("STAR2A  COM");
+  SET_STR_AS_PARAM("STAR2A  COM");
   NAM(); // NAM
   SWAP(); // SWAP
   CMOVE_1(); // CMOVE_1

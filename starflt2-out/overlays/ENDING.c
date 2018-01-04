@@ -346,7 +346,7 @@ IFieldType UNK_0xe82b = {SHIPIDX, 0x14, 0x01};
 // 0xe82e: db 0x4c 0x22 0x98 0x9e 0x2e 0x0f 0xe7 0x5e 0x23 0x6d 0x90 0x16 'L"  .  ^#m  '
 
 // ================================================
-// 0xe83a: WORD 'UNK_0xe83c' codep=0x224c parp=0xe83c params=8 returns=0
+// 0xe83a: WORD 'UNK_0xe83c' codep=0x224c parp=0xe83c params=4 returns=0
 // ================================================
 
 void UNK_0xe83c() // UNK_0xe83c
@@ -457,7 +457,7 @@ void FREEB() // FREEB
 
 
 // ================================================
-// 0xe8dc: WORD 'UNK_0xe8de' codep=0x224c parp=0xe8de params=8 returns=1
+// 0xe8dc: WORD 'UNK_0xe8de' codep=0x224c parp=0xe8de params=6 returns=1
 // ================================================
 
 void UNK_0xe8de() // UNK_0xe8de
@@ -479,7 +479,7 @@ void UNK_0xe8de() // UNK_0xe8de
 
 
 // ================================================
-// 0xe902: WORD 'UNK_0xe904' codep=0x224c parp=0xe904 params=5 returns=1
+// 0xe902: WORD 'UNK_0xe904' codep=0x224c parp=0xe904 params=3 returns=1
 // ================================================
 
 void UNK_0xe904() // UNK_0xe904
@@ -669,7 +669,7 @@ void UNK_0xe9d6() // UNK_0xe9d6
 
 
 // ================================================
-// 0xe9de: WORD 'UNK_0xe9e0' codep=0x224c parp=0xe9e0 params=3 returns=1
+// 0xe9de: WORD 'UNK_0xe9e0' codep=0x224c parp=0xe9e0 params=0 returns=2
 // ================================================
 
 void UNK_0xe9e0() // UNK_0xe9e0
@@ -682,7 +682,7 @@ void UNK_0xe9e0() // UNK_0xe9e0
 
 
 // ================================================
-// 0xe9ea: WORD 'UNK_0xe9ec' codep=0x224c parp=0xe9ec params=8 returns=1
+// 0xe9ea: WORD 'UNK_0xe9ec' codep=0x224c parp=0xe9ec params=3 returns=2
 // ================================================
 
 void UNK_0xe9ec() // UNK_0xe9ec
@@ -700,7 +700,7 @@ void UNK_0xe9ec() // UNK_0xe9ec
 
 
 // ================================================
-// 0xea04: WORD 'UNK_0xea06' codep=0x224c parp=0xea06 params=3 returns=1
+// 0xea04: WORD 'UNK_0xea06' codep=0x224c parp=0xea06 params=0 returns=2
 // ================================================
 
 void UNK_0xea06() // UNK_0xea06
@@ -743,7 +743,7 @@ void UNK_0xea10() // UNK_0xea10
 
 
 // ================================================
-// 0xea42: WORD 'UNK_0xea44' codep=0x224c parp=0xea44 params=4 returns=2
+// 0xea42: WORD 'UNK_0xea44' codep=0x224c parp=0xea44 params=2 returns=2
 // ================================================
 
 void UNK_0xea44() // UNK_0xea44
@@ -886,7 +886,7 @@ void UNK_0xeade() // UNK_0xeade
 
 
 // ================================================
-// 0xeafc: WORD 'UNK_0xeafe' codep=0x224c parp=0xeafe params=13 returns=0
+// 0xeafc: WORD 'UNK_0xeafe' codep=0x224c parp=0xeafe params=3 returns=0
 // ================================================
 
 void UNK_0xeafe() // UNK_0xeafe
@@ -1126,7 +1126,7 @@ void UNK_0xec1a() // UNK_0xec1a
 void UNK_0xec78() // UNK_0xec78
 {
   CTINIT(); // CTINIT
-  UNK_0x3f09("AAARRGH! ");
+  SET_STR_AS_PARAM("AAARRGH! ");
   DrawTTY(); // .TTY
   Push(0x1388);
   MS(); // MS
@@ -1140,7 +1140,7 @@ void UNK_0xec78() // UNK_0xec78
 
 
 // ================================================
-// 0xeca0: WORD 'UNK_0xeca2' codep=0x224c parp=0xeca2 params=13 returns=0
+// 0xeca0: WORD 'UNK_0xeca2' codep=0x224c parp=0xeca2 params=3 returns=0
 // ================================================
 
 void UNK_0xeca2() // UNK_0xeca2
@@ -1694,7 +1694,7 @@ void UNK_0xefdb() // UNK_0xefdb
 
 
 // ================================================
-// 0xf01d: WORD 'UNK_0xf01f' codep=0x224c parp=0xf01f params=5 returns=0
+// 0xf01d: WORD 'UNK_0xf01f' codep=0x224c parp=0xf01f params=3 returns=0
 // ================================================
 
 void UNK_0xf01f() // UNK_0xf01f
@@ -2003,7 +2003,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
 
 
 // ================================================
-// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210 params=8 returns=0
+// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210 params=6 returns=0
 // ================================================
 
 void UNK_0xf210() // UNK_0xf210

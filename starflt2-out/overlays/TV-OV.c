@@ -416,7 +416,7 @@ void UNK_0xe76d() // UNK_0xe76d
 
 
 // ================================================
-// 0xe777: WORD 'UNK_0xe779' codep=0x224c parp=0xe779 params=12 returns=1
+// 0xe777: WORD 'UNK_0xe779' codep=0x224c parp=0xe779 params=6 returns=1
 // ================================================
 
 void UNK_0xe779() // UNK_0xe779
@@ -633,7 +633,7 @@ void UNK_0xe896() // UNK_0xe896
 // 0xe8ae: db 0x4c 0x22 0x7e 0x5c 0xae 0x0b 0x41 0x0e 0x87 0x3b 0x46 0x12 0xf2 0x0e 0x5d 0x17 0x0b 0x00 0x2d 0x12 0x3e 0x13 0x90 0x16 'L"~\  A  ;F   ]   - >   '
 
 // ================================================
-// 0xe8c6: WORD 'UNK_0xe8c8' codep=0x224c parp=0xe8c8 params=4 returns=1
+// 0xe8c6: WORD 'UNK_0xe8c8' codep=0x224c parp=0xe8c8 params=0 returns=1
 // ================================================
 
 void UNK_0xe8c8() // UNK_0xe8c8
@@ -767,7 +767,7 @@ void UNK_0xe9da() // UNK_0xe9da
 
 
 // ================================================
-// 0xe9f8: WORD 'UNK_0xe9fa' codep=0x224c parp=0xe9fa params=3 returns=1
+// 0xe9f8: WORD 'UNK_0xe9fa' codep=0x224c parp=0xe9fa params=0 returns=2
 // ================================================
 
 void UNK_0xe9fa() // UNK_0xe9fa
@@ -784,7 +784,7 @@ void UNK_0xe9fa() // UNK_0xe9fa
 // 0xea0a: db 0x4c 0x22 0xc9 0x74 0x16 0x6d 0xbb 0x74 0x16 0x6d 0x90 0x16 'L" t m t m  '
 
 // ================================================
-// 0xea16: WORD 'UNK_0xea18' codep=0x224c parp=0xea18 params=4 returns=1
+// 0xea16: WORD 'UNK_0xea18' codep=0x224c parp=0xea18 params=0 returns=1
 // ================================================
 
 void UNK_0xea18() // UNK_0xea18
@@ -1219,7 +1219,7 @@ void UNK_0xecee() // UNK_0xecee
 
 
 // ================================================
-// 0xed3a: WORD 'UNK_0xed3c' codep=0x224c parp=0xed3c params=2 returns=1
+// 0xed3a: WORD 'UNK_0xed3c' codep=0x224c parp=0xed3c params=0 returns=1
 // ================================================
 
 void UNK_0xed3c() // UNK_0xed3c
@@ -1384,7 +1384,7 @@ void HEAVEHO() // HEAVEHO
 // 0xee34: dw 0x7fff
 
 // ================================================
-// 0xee36: WORD 'UNK_0xee38' codep=0x224c parp=0xee38 params=8 returns=0
+// 0xee36: WORD 'UNK_0xee38' codep=0x224c parp=0xee38 params=0 returns=0
 // ================================================
 
 void UNK_0xee38() // UNK_0xee38
@@ -1429,7 +1429,7 @@ void TV_dash_SETUP() // TV-SETUP
 
 
 // ================================================
-// 0xee7f: WORD 'UNK_0xee81' codep=0x224c parp=0xee81 params=3 returns=0
+// 0xee7f: WORD 'UNK_0xee81' codep=0x224c parp=0xee81 params=1 returns=0
 // ================================================
 
 void UNK_0xee81() // UNK_0xee81
@@ -1510,7 +1510,7 @@ void UNK_0xeec9() // UNK_0xeec9
 
 
 // ================================================
-// 0xeeed: WORD 'UNK_0xeeef' codep=0x224c parp=0xeeef params=5 returns=0
+// 0xeeed: WORD 'UNK_0xeeef' codep=0x224c parp=0xeeef params=3 returns=0
 // ================================================
 
 void UNK_0xeeef() // UNK_0xeeef
@@ -1640,7 +1640,7 @@ void UNK_0xefb5() // UNK_0xefb5
 
 
 // ================================================
-// 0xf00d: WORD 'UNK_0xf00f' codep=0x224c parp=0xf00f params=7 returns=0
+// 0xf00d: WORD 'UNK_0xf00f' codep=0x224c parp=0xf00f params=3 returns=0
 // ================================================
 
 void UNK_0xf00f() // UNK_0xf00f
@@ -2119,7 +2119,7 @@ void TV_dash_DISP() // TV-DISP
   DCLIPSE(); // DCLIPSE
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09("ACTIVATING TERRAIN VEHICLE");
+  SET_STR_AS_PARAM("ACTIVATING TERRAIN VEHICLE");
   DrawTTY(); // .TTY
   Push2Words("0.");
   Push(pp__ro_SCROLL_1); // (SCROLL_1

@@ -370,7 +370,7 @@ void S_gt_CM() // S>CM
 // 0xeacb: db 0x4c 0x22 0x3c 0xea 0x8e 0xea 0x92 0x0c 0xb9 0xea 0xdf 0x79 0x90 0x16 'L"<        y  '
 
 // ================================================
-// 0xead9: WORD 'UNK_0xeadb' codep=0x224c parp=0xeadb params=3 returns=1
+// 0xead9: WORD 'UNK_0xeadb' codep=0x224c parp=0xeadb params=0 returns=2
 // ================================================
 
 void UNK_0xeadb() // UNK_0xeadb
@@ -384,7 +384,7 @@ void UNK_0xeadb() // UNK_0xeadb
 // 0xeae5: db 0x4c 0x22 0x34 0xea 0xd9 0xea 0xdf 0x79 0x90 0x16 'L"4    y  '
 
 // ================================================
-// 0xeaef: WORD 'UNK_0xeaf1' codep=0x224c parp=0xeaf1 params=6 returns=0
+// 0xeaef: WORD 'UNK_0xeaf1' codep=0x224c parp=0xeaf1 params=2 returns=0
 // ================================================
 
 void UNK_0xeaf1() // UNK_0xeaf1
@@ -763,7 +763,7 @@ void UNK_0xed2a() // UNK_0xed2a
 
 
 // ================================================
-// 0xed88: WORD 'UNK_0xed8a' codep=0x224c parp=0xed8a params=4 returns=2
+// 0xed88: WORD 'UNK_0xed8a' codep=0x224c parp=0xed8a params=2 returns=2
 // ================================================
 
 void UNK_0xed8a() // UNK_0xed8a
@@ -806,7 +806,7 @@ void DrawSTARDA() // .STARDA
 // 0xedbe: db 0x94 0x73 0x44 0x90 0x02 0x22 0x07 0x6f ' sD  " o'
 
 // ================================================
-// 0xedc6: WORD 'UNK_0xedc8' codep=0x224c parp=0xedc8 params=4 returns=0
+// 0xedc6: WORD 'UNK_0xedc8' codep=0x224c parp=0xedc8 params=0 returns=0
 // ================================================
 
 void UNK_0xedc8() // UNK_0xedc8
@@ -822,7 +822,7 @@ void UNK_0xedc8() // UNK_0xedc8
 
 
 // ================================================
-// 0xedd8: WORD '#BOXES' codep=0x224c parp=0xede3 params=4 returns=0
+// 0xedd8: WORD '#BOXES' codep=0x224c parp=0xede3 params=2 returns=0
 // ================================================
 
 void _n_BOXES() // #BOXES
@@ -847,7 +847,7 @@ void _n_BOXES() // #BOXES
 
 
 // ================================================
-// 0xee05: WORD 'UNK_0xee07' codep=0x224c parp=0xee07 params=5 returns=0
+// 0xee05: WORD 'UNK_0xee07' codep=0x224c parp=0xee07 params=3 returns=0
 // ================================================
 
 void UNK_0xee07() // UNK_0xee07
@@ -1031,7 +1031,7 @@ void UNK_0xef01() // UNK_0xef01
 // 0xef17: db 0x4c 0x22 0xbb 0x74 0xae 0x0b 0xc9 0x74 0xae 0x0b 0x5d 0x17 0xfe 0x00 0x72 0x52 0x8b 0x75 0x90 0x16 0x4c 0x22 0x22 0x75 0x41 0x0e 0x5d 0x17 0x1b 0x00 0x5f 0x12 0xf2 0x0e 0x5d 0x17 0x30 0x00 0x5f 0x12 0x3e 0x13 0xfa 0x15 0x08 0x00 0x17 0xef 0x60 0x16 0x08 0x00 0x5d 0x17 0x55 0xba 0xd9 0x84 0x50 0x99 0x90 0x16 'L" t   t  ]   rR u  L""uA ]   _   ] 0 _ >       `   ] U   P   '
 
 // ================================================
-// 0xef55: WORD 'UNK_0xef57' codep=0x224c parp=0xef57 params=2 returns=0
+// 0xef55: WORD 'UNK_0xef57' codep=0x224c parp=0xef57 params=0 returns=0
 // ================================================
 
 void UNK_0xef57() // UNK_0xef57
@@ -1087,7 +1087,7 @@ void UNK_0xef99() // UNK_0xef99
 
 
 // ================================================
-// 0xefa5: WORD 'UNK_0xefa7' codep=0x224c parp=0xefa7 params=2 returns=0
+// 0xefa5: WORD 'UNK_0xefa7' codep=0x224c parp=0xefa7 params=0 returns=2
 // ================================================
 
 void UNK_0xefa7() // UNK_0xefa7
@@ -1158,7 +1158,7 @@ void UNK_0xefdf() // UNK_0xefdf
 
 
 // ================================================
-// 0xf00b: WORD 'UNK_0xf00d' codep=0x224c parp=0xf00d params=2 returns=2
+// 0xf00b: WORD 'UNK_0xf00d' codep=0x224c parp=0xf00d params=0 returns=4
 // ================================================
 
 void UNK_0xf00d() // UNK_0xf00d
@@ -1239,7 +1239,7 @@ void UNK_0xf067() // UNK_0xf067
 
 
 // ================================================
-// 0xf093: WORD 'UNK_0xf095' codep=0x224c parp=0xf095 params=2 returns=1
+// 0xf093: WORD 'UNK_0xf095' codep=0x224c parp=0xf095 params=2 returns=3
 // ================================================
 
 void UNK_0xf095() // UNK_0xf095
@@ -1439,7 +1439,7 @@ void UNK_0xf1d9() // UNK_0xf1d9
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  UNK_0x3f09("CANCELLED");
+  SET_STR_AS_PARAM("CANCELLED");
   DrawTTY(); // .TTY
 }
 
@@ -1680,7 +1680,7 @@ void UNK_0xf30d() // UNK_0xf30d
 
 
 // ================================================
-// 0xf381: WORD 'UNK_0xf383' codep=0x224c parp=0xf383 params=6 returns=0
+// 0xf381: WORD 'UNK_0xf383' codep=0x224c parp=0xf383 params=0 returns=0
 // ================================================
 
 void UNK_0xf383() // UNK_0xf383
@@ -1719,7 +1719,7 @@ void UNK_0xf383() // UNK_0xf383
 
 
 // ================================================
-// 0xf3c7: WORD 'UNK_0xf3c9' codep=0x224c parp=0xf3c9 params=2 returns=1
+// 0xf3c7: WORD 'UNK_0xf3c9' codep=0x224c parp=0xf3c9 params=0 returns=1
 // ================================================
 
 void UNK_0xf3c9() // UNK_0xf3c9
@@ -1958,7 +1958,7 @@ void TELE() // TELE
   } else
   {
     CTINIT(); // CTINIT
-    UNK_0x3f09("PLEASE DROP OUT OF MOVE MODE");
+    SET_STR_AS_PARAM("PLEASE DROP OUT OF MOVE MODE");
     DrawTTY(); // .TTY
   }
   Push2Words("NULL");

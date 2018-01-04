@@ -204,7 +204,7 @@ void SET_dash_BANK() // SET-BANK
 
 
 // ================================================
-// 0xefcb: WORD '!TFLAG' codep=0x224c parp=0xefd6 params=2 returns=0
+// 0xefcb: WORD '!TFLAG' codep=0x224c parp=0xefd6 params=0 returns=0
 // ================================================
 // entry
 
@@ -219,7 +219,7 @@ void StoreTFLAG() // !TFLAG
 
 
 // ================================================
-// 0xefe2: WORD 'D@BALANCE' codep=0x224c parp=0xeff0 params=2 returns=2
+// 0xefe2: WORD 'D@BALANCE' codep=0x224c parp=0xeff0 params=0 returns=2
 // ================================================
 // entry
 
@@ -233,7 +233,7 @@ void GetDBALANCE() // D@BALANCE
 
 
 // ================================================
-// 0xeffa: WORD 'D!BALANCE' codep=0x224c parp=0xf008 params=4 returns=0
+// 0xeffa: WORD 'D!BALANCE' codep=0x224c parp=0xf008 params=2 returns=0
 // ================================================
 // entry
 
@@ -247,7 +247,7 @@ void StoreDBALANCE() // D!BALANCE
 
 
 // ================================================
-// 0xf012: WORD '?BALANCE' codep=0x224c parp=0xf01f params=4 returns=1
+// 0xf012: WORD '?BALANCE' codep=0x224c parp=0xf01f params=2 returns=1
 // ================================================
 // entry
 
@@ -260,7 +260,7 @@ void IsBALANCE() // ?BALANCE
 
 
 // ================================================
-// 0xf027: WORD 'INIT-BALANCE' codep=0x224c parp=0xf038 params=4 returns=0
+// 0xf027: WORD 'INIT-BALANCE' codep=0x224c parp=0xf038 params=0 returns=0
 // ================================================
 // entry
 
@@ -276,7 +276,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 
 // ================================================
-// 0xf046: WORD 'TRANSACT' codep=0x224c parp=0xf053 params=3 returns=0
+// 0xf046: WORD 'TRANSACT' codep=0x224c parp=0xf053 params=1 returns=0
 // ================================================
 // entry
 
@@ -350,7 +350,7 @@ void TRANSACT() // TRANSACT
 
 
 // ================================================
-// 0xf0c5: WORD 'INT%' codep=0x224c parp=0xf0ce params=14 returns=0
+// 0xf0c5: WORD 'INT%' codep=0x224c parp=0xf0ce params=0 returns=0
 // ================================================
 // entry
 
@@ -421,7 +421,7 @@ void DrawDOTS() // .DOTS
 
 
 // ================================================
-// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152 params=2 returns=0
+// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152 params=0 returns=0
 // ================================================
 
 void DrawBDATE() // .BDATE
@@ -781,7 +781,7 @@ void BMESS() // BMESS
 
 
 // ================================================
-// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=2 returns=1
+// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=0 returns=1
 // ================================================
 
 void DrawBALANCE() // .BALANCE

@@ -404,7 +404,7 @@ void UNK_0xefe0() // UNK_0xefe0
 
 
 // ================================================
-// 0xeffe: WORD 'UNK_0xf000' codep=0x224c parp=0xf000 params=2 returns=0
+// 0xeffe: WORD 'UNK_0xf000' codep=0x224c parp=0xf000 params=0 returns=0
 // ================================================
 
 void UNK_0xf000() // UNK_0xf000
@@ -482,7 +482,7 @@ void UNK_0xf01c() // UNK_0xf01c
 // 0xf05a: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf05c: WORD 'UNK_0xf05e' codep=0x224c parp=0xf05e params=5 returns=2
+// 0xf05c: WORD 'UNK_0xf05e' codep=0x224c parp=0xf05e params=1 returns=2
 // ================================================
 
 void UNK_0xf05e() // UNK_0xf05e
@@ -635,7 +635,7 @@ void UNK_0xf142() // UNK_0xf142
 
 
 // ================================================
-// 0xf14e: WORD 'UNK_0xf150' codep=0x224c parp=0xf150 params=6 returns=1
+// 0xf14e: WORD 'UNK_0xf150' codep=0x224c parp=0xf150 params=4 returns=1
 // ================================================
 
 void UNK_0xf150() // UNK_0xf150
@@ -683,7 +683,7 @@ void UNK_0xf150() // UNK_0xf150
 
 
 // ================================================
-// 0xf1a0: WORD 'UNK_0xf1a2' codep=0x224c parp=0xf1a2 params=11 returns=0
+// 0xf1a0: WORD 'UNK_0xf1a2' codep=0x224c parp=0xf1a2 params=7 returns=0
 // ================================================
 
 void UNK_0xf1a2() // UNK_0xf1a2
@@ -705,7 +705,7 @@ void UNK_0xf1a2() // UNK_0xf1a2
 
 
 // ================================================
-// 0xf1c4: WORD 'UNK_0xf1c6' codep=0x224c parp=0xf1c6 params=4 returns=0
+// 0xf1c4: WORD 'UNK_0xf1c6' codep=0x224c parp=0xf1c6 params=2 returns=0
 // ================================================
 
 void UNK_0xf1c6() // UNK_0xf1c6
@@ -723,7 +723,7 @@ void UNK_0xf1c6() // UNK_0xf1c6
 
 
 // ================================================
-// 0xf1de: WORD 'UNK_0xf1e0' codep=0x224c parp=0xf1e0 params=2 returns=3
+// 0xf1de: WORD 'UNK_0xf1e0' codep=0x224c parp=0xf1e0 params=0 returns=3
 // ================================================
 
 void UNK_0xf1e0() // UNK_0xf1e0
@@ -772,7 +772,7 @@ void UNK_0xf204() // UNK_0xf204
 
 void UNK_0xf228() // UNK_0xf228
 {
-  UNK_0x3f09("SHALL I TAKE THIS FROM CARGO\?");
+  SET_STR_AS_PARAM("SHALL I TAKE THIS FROM CARGO\?");
   DrawTTY(); // .TTY
   Push(0x01f4);
   MS(); // MS
@@ -789,7 +789,7 @@ void UNK_0xf258() // UNK_0xf258
 {
   BEEP(); // BEEP
   CTERASE(); // CTERASE
-  UNK_0x3f09("COMMANDER, WE NEED ");
+  SET_STR_AS_PARAM("COMMANDER, WE NEED ");
   DrawTTY(); // .TTY
 }
 
@@ -800,7 +800,7 @@ void UNK_0xf258() // UNK_0xf258
 
 void UNK_0xf278() // UNK_0xf278
 {
-  UNK_0x3f09(" FOR REPAIRS.");
+  SET_STR_AS_PARAM(" FOR REPAIRS.");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
@@ -815,7 +815,7 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(0x000a);
   _slash_(); // /
   Draw(); // .
-  UNK_0x3f09("CUBIC METER");
+  SET_STR_AS_PARAM("CUBIC METER");
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   UNK_0xef7e(); // UNK_0xef7e
   Push(0x000a);
@@ -834,7 +834,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
 void UNK_0xf2c2() // UNK_0xf2c2
 {
-  UNK_0x3f09("             [NO YES]");
+  SET_STR_AS_PARAM("             [NO YES]");
   DrawTTY(); // .TTY
 }
 
@@ -890,7 +890,7 @@ void UNK_0xf2fc() // UNK_0xf2fc
 
 void UNK_0xf312() // UNK_0xf312
 {
-  UNK_0x3f09("CEASING REPAIR ");
+  SET_STR_AS_PARAM("CEASING REPAIR ");
   DrawTTY(); // .TTY
   Push(pp_IsREPAIR); // ?REPAIR
   _099(); // 099
@@ -922,7 +922,7 @@ void UNK_0xf338() // UNK_0xf338
 void UNK_0xf346() // UNK_0xf346
 {
   UNK_0xf2f4(); // UNK_0xf2f4
-  UNK_0x3f09("REPAIR COMPLETED ");
+  SET_STR_AS_PARAM("REPAIR COMPLETED ");
   DrawTTY(); // .TTY
 }
 
@@ -933,7 +933,7 @@ void UNK_0xf346() // UNK_0xf346
 
 void UNK_0xf362() // UNK_0xf362
 {
-  UNK_0x3f09("CONTINUING REPAIR ");
+  SET_STR_AS_PARAM("CONTINUING REPAIR ");
   DrawTTY(); // .TTY
 }
 
@@ -972,7 +972,7 @@ void UNK_0xf37d() // UNK_0xf37d
 
 
 // ================================================
-// 0xf3af: WORD 'UNK_0xf3b1' codep=0x224c parp=0xf3b1 params=19 returns=0
+// 0xf3af: WORD 'UNK_0xf3b1' codep=0x224c parp=0xf3b1 params=7 returns=0
 // ================================================
 
 void UNK_0xf3b1() // UNK_0xf3b1
@@ -1147,7 +1147,7 @@ void UNK_0xf481() // UNK_0xf481
   if (Pop() == 0) return;
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f09("ITEM OPERATIONAL ");
+  SET_STR_AS_PARAM("ITEM OPERATIONAL ");
   DrawTTY(); // .TTY
 }
 

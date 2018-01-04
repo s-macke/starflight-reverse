@@ -1570,7 +1570,7 @@ void UNK_0xe571() // UNK_0xe571
 void UNK_0xe60c() // UNK_0xe60c
 {
   _gt_2FONT(); // >2FONT
-  UNK_0x3f09("COMPLETED");
+  SET_STR_AS_PARAM("COMPLETED");
   UNK_0xe451(); // UNK_0xe451
   Push(0x001e);
   Push(0x0011);
@@ -1748,7 +1748,7 @@ void UNK_0xe825() // UNK_0xe825
 {
   UNK_0xe431(); // UNK_0xe431
   BEEP(); // BEEP
-  UNK_0x3f09("SAVED GAME INTEGRITY ERROR.");
+  SET_STR_AS_PARAM("SAVED GAME INTEGRITY ERROR.");
   UNK_0xe451(); // UNK_0xe451
   UNK_0xe60c(); // UNK_0xe60c
 }
@@ -1766,7 +1766,7 @@ void UNK_0xe84f() // UNK_0xe84f
   if (Pop() == 0) return;
   UNK_0xe431(); // UNK_0xe431
   BEEP(); // BEEP
-  UNK_0x3f09("GAME IN PROGRESS WAS NOT SAVED.");
+  SET_STR_AS_PARAM("GAME IN PROGRESS WAS NOT SAVED.");
   UNK_0xe451(); // UNK_0xe451
   _i_KEY(); // 'KEY
   Pop(); // DROP
@@ -1814,9 +1814,9 @@ void UNK_0xe88d() // UNK_0xe88d
 void UNK_0xe8c3() // UNK_0xe8c3
 {
   CTINIT(); // CTINIT
-  UNK_0x3f09("MUST PLAY ON A WRITABLE COPY.");
+  SET_STR_AS_PARAM("MUST PLAY ON A WRITABLE COPY.");
   DrawTTY(); // .TTY
-  UNK_0x3f09("PRESS ANY KEY TO EXIT.");
+  SET_STR_AS_PARAM("PRESS ANY KEY TO EXIT.");
   DrawTTY(); // .TTY
   KEY_2(); // KEY_2
   Pop(); // DROP
@@ -1846,7 +1846,7 @@ void UNK_0xe90c() // UNK_0xe90c
 
 void UNK_0xe922() // UNK_0xe922
 {
-  UNK_0x3f09("RESUMING THE GAME IN PROGRESS...");
+  SET_STR_AS_PARAM("RESUMING THE GAME IN PROGRESS...");
   UNK_0xe451(); // UNK_0xe451
   Push(0x03e8);
   MS(); // MS
@@ -2193,7 +2193,7 @@ void UNK_0xead7() // UNK_0xead7
 void UNK_0xeb0d() // UNK_0xeb0d
 {
   UNK_0xe431(); // UNK_0xe431
-  UNK_0x3f09("LOADING GAME IN PROGRESS...");
+  SET_STR_AS_PARAM("LOADING GAME IN PROGRESS...");
   UNK_0xe451(); // UNK_0xe451
   Push(0x0037);
   Push(0x0011);
@@ -2209,7 +2209,7 @@ void UNK_0xeb0d() // UNK_0xeb0d
 void UNK_0xeb4b() // UNK_0xeb4b
 {
   UNK_0xe431(); // UNK_0xe431
-  UNK_0x3f09("...GAME LOAD COMPLETE.");
+  SET_STR_AS_PARAM("...GAME LOAD COMPLETE.");
   UNK_0xe451(); // UNK_0xe451
   Push(0x05dc);
   MS(); // MS
@@ -2223,7 +2223,7 @@ void UNK_0xeb4b() // UNK_0xeb4b
 void UNK_0xeb72() // UNK_0xeb72
 {
   UNK_0xe431(); // UNK_0xe431
-  UNK_0x3f09("SAVING GAME...");
+  SET_STR_AS_PARAM("SAVING GAME...");
   UNK_0xe451(); // UNK_0xe451
   Push(0x0037);
   Push(0x0011);
@@ -3050,7 +3050,7 @@ void UNK_0xf13c() // UNK_0xf13c
   Push(0);
   Push(0x00fa);
   Push(0x0400);
-  UNK_0x3f09("star2a.com lastSAVE.sva");
+  SET_STR_AS_PARAM("star2a.com lastSAVE.sva");
   _gt_TIB(); // >TIB
   UNK_0xde7e(); // UNK_0xde7e
 }
@@ -3065,7 +3065,7 @@ void UNK_0xf168() // UNK_0xf168
   Push(0);
   Push(0x0168);
   Push(0x0400);
-  UNK_0x3f09("star2b.com lastSAVE.svb");
+  SET_STR_AS_PARAM("star2b.com lastSAVE.svb");
   _gt_TIB(); // >TIB
   UNK_0xde7e(); // UNK_0xde7e
 }
@@ -3079,7 +3079,7 @@ void UNK_0xf194() // UNK_0xf194
 {
   FLUSH_2(); // FLUSH_2
   INIT(); // INIT
-  UNK_0x3f09("lastsave.svb");
+  SET_STR_AS_PARAM("lastsave.svb");
   _gt_TIB(); // >TIB
   SETFCB(); // SETFCB
   Pop(); // DROP
@@ -3199,7 +3199,7 @@ void UNK_0xf259() // UNK_0xf259
 {
   FLUSH_2(); // FLUSH_2
   NODRIVES(); // NODRIVES
-  UNK_0x3f09("SAVING AS 'LASTSAVE'");
+  SET_STR_AS_PARAM("SAVING AS 'LASTSAVE'");
   UNK_0xe451(); // UNK_0xe451
   UNK_0xf194(); // UNK_0xf194
   UNK_0xf1c5(); // UNK_0xf1c5
@@ -3223,7 +3223,7 @@ void UNK_0xf259() // UNK_0xf259
   } else
   {
     MOUNTA(); // MOUNTA
-    UNK_0x3f09("INSUFFICIENT DISK SPACE");
+    SET_STR_AS_PARAM("INSUFFICIENT DISK SPACE");
     UNK_0xe451(); // UNK_0xe451
     UNK_0xe53f(); // UNK_0xe53f
     _gt_A(); // >A
@@ -3439,7 +3439,7 @@ void ERR_ex_() // ERR!
 {
   UNK_0xf3d2(); // UNK_0xf3d2
   DARK(); // DARK
-  UNK_0x3f09("PROGRAM OR DISK ERROR");
+  SET_STR_AS_PARAM("PROGRAM OR DISK ERROR");
   UNK_0xe451(); // UNK_0xe451
   _i_KEY(); // 'KEY
   Pop(); // DROP

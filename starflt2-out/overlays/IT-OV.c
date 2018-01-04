@@ -336,16 +336,16 @@ void UNK_0xef4a() // UNK_0xef4a
   } while(i<imax); // (LOOP)
 
   GCR(); // GCR
-  UNK_0x3f09("THE MANIFEST-COMPUTER CAPACITY HAS");
+  SET_STR_AS_PARAM("THE MANIFEST-COMPUTER CAPACITY HAS");
   UNK_0xef2e(); // UNK_0xef2e
   GCR(); // GCR
-  UNK_0x3f09("BEEN EXCEEDED. SOME ITEMS MAY NOT");
+  SET_STR_AS_PARAM("BEEN EXCEEDED. SOME ITEMS MAY NOT");
   UNK_0xef2e(); // UNK_0xef2e
   GCR(); // GCR
-  UNK_0x3f09("APPEAR IN THIS LIST.");
+  SET_STR_AS_PARAM("APPEAR IN THIS LIST.");
   UNK_0xef2e(); // UNK_0xef2e
   GCR(); // GCR
-  UNK_0x3f09("PRESS SPACEBAR TO CONTINUE");
+  SET_STR_AS_PARAM("PRESS SPACEBAR TO CONTINUE");
   UNK_0xef2e(); // UNK_0xef2e
   StoreCRS(); // !CRS
 }
@@ -413,7 +413,7 @@ void UNK_0xf049() // UNK_0xf049
 {
   SWAP(); // SWAP
   Pop(); // DROP
-  UNK_0x3f09("\?\?-\?\?-\?\?\?\?");
+  SET_STR_AS_PARAM("\?\?-\?\?-\?\?\?\?");
   Pop(); // DROP
   Push(Pop()-1); // 1-
   SWAP(); // SWAP
@@ -550,7 +550,7 @@ void DATE_do__gt_AD() // DATE$>AD
     UNK_0xf049(); // UNK_0xf049
     return;
   }
-  UNK_0x3f09("00-00-");
+  SET_STR_AS_PARAM("00-00-");
   Push(3);
   PICK(); // PICK
   SWAP(); // SWAP
@@ -725,7 +725,7 @@ void UNK_0xf246() // UNK_0xf246
 
 
 // ================================================
-// 0xf252: WORD 'UNK_0xf254' codep=0x224c parp=0xf254 params=3 returns=1
+// 0xf252: WORD 'UNK_0xf254' codep=0x224c parp=0xf254 params=1 returns=1
 // ================================================
 
 void UNK_0xf254() // UNK_0xf254
@@ -736,7 +736,7 @@ void UNK_0xf254() // UNK_0xf254
 
 
 // ================================================
-// 0xf25a: WORD 'UNK_0xf25c' codep=0x224c parp=0xf25c params=6 returns=1
+// 0xf25a: WORD 'UNK_0xf25c' codep=0x224c parp=0xf25c params=0 returns=1
 // ================================================
 
 void UNK_0xf25c() // UNK_0xf25c
@@ -765,7 +765,7 @@ void UNK_0xf25c() // UNK_0xf25c
 
 
 // ================================================
-// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=7 returns=0
+// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=5 returns=0
 // ================================================
 
 void UNK_0xf28e() // UNK_0xf28e
@@ -814,7 +814,7 @@ void UNK_0xf28e() // UNK_0xf28e
 
 
 // ================================================
-// 0xf2e8: WORD 'BOX>LIST' codep=0x224c parp=0xf2f5 params=12 returns=0
+// 0xf2e8: WORD 'BOX>LIST' codep=0x224c parp=0xf2f5 params=0 returns=0
 // ================================================
 // entry
 
@@ -853,7 +853,7 @@ void BOX_gt_LIST() // BOX>LIST
 
 
 // ================================================
-// 0xf331: WORD 'GET-BOXE' codep=0x224c parp=0xf33e params=16 returns=0
+// 0xf331: WORD 'GET-BOXE' codep=0x224c parp=0xf33e params=2 returns=0
 // ================================================
 // entry
 
@@ -903,7 +903,7 @@ void MAKE_dash_SCR() // MAKE-SCR
 
 
 // ================================================
-// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a params=4 returns=0
+// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a params=0 returns=0
 // ================================================
 // entry
 
@@ -986,7 +986,7 @@ void BOX_gt_TOCS() // BOX>TOCS
 
 
 // ================================================
-// 0xf404: WORD '?ELEMENT' codep=0x224c parp=0xf411 params=4 returns=1
+// 0xf404: WORD '?ELEMENT' codep=0x224c parp=0xf411 params=0 returns=1
 // ================================================
 
 void IsELEMENT() // ?ELEMENT

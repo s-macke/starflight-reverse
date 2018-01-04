@@ -205,7 +205,7 @@ void UNK_0xefd5() // UNK_0xefd5
 
 
 // ================================================
-// 0xefdb: WORD '!TFLAG' codep=0x224c parp=0xefe6 params=2 returns=0
+// 0xefdb: WORD '!TFLAG' codep=0x224c parp=0xefe6 params=0 returns=0
 // ================================================
 // entry
 
@@ -220,7 +220,7 @@ void StoreTFLAG() // !TFLAG
 
 
 // ================================================
-// 0xeff2: WORD 'D@BALANCE' codep=0x224c parp=0xf000 params=2 returns=2
+// 0xeff2: WORD 'D@BALANCE' codep=0x224c parp=0xf000 params=0 returns=2
 // ================================================
 // entry
 
@@ -234,7 +234,7 @@ void GetDBALANCE() // D@BALANCE
 
 
 // ================================================
-// 0xf00a: WORD 'D!BALANCE' codep=0x224c parp=0xf018 params=4 returns=0
+// 0xf00a: WORD 'D!BALANCE' codep=0x224c parp=0xf018 params=2 returns=0
 // ================================================
 // entry
 
@@ -248,7 +248,7 @@ void StoreDBALANCE() // D!BALANCE
 
 
 // ================================================
-// 0xf022: WORD '?BALANCE' codep=0x224c parp=0xf02f params=4 returns=1
+// 0xf022: WORD '?BALANCE' codep=0x224c parp=0xf02f params=2 returns=1
 // ================================================
 // entry
 
@@ -261,7 +261,7 @@ void IsBALANCE() // ?BALANCE
 
 
 // ================================================
-// 0xf037: WORD 'INIT-BALANCE' codep=0x224c parp=0xf048 params=4 returns=0
+// 0xf037: WORD 'INIT-BALANCE' codep=0x224c parp=0xf048 params=0 returns=0
 // ================================================
 // entry
 
@@ -277,7 +277,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 
 // ================================================
-// 0xf056: WORD 'TRANSACT' codep=0x224c parp=0xf063 params=3 returns=0
+// 0xf056: WORD 'TRANSACT' codep=0x224c parp=0xf063 params=1 returns=0
 // ================================================
 // entry
 
@@ -351,7 +351,7 @@ void TRANSACT() // TRANSACT
 
 
 // ================================================
-// 0xf0d5: WORD 'INT%' codep=0x224c parp=0xf0de params=14 returns=0
+// 0xf0d5: WORD 'INT%' codep=0x224c parp=0xf0de params=0 returns=0
 // ================================================
 // entry
 

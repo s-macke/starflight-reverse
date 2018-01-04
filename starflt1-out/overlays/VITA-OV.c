@@ -477,7 +477,7 @@ void UNK_0xe9f6() // UNK_0xe9f6
 
 
 // ================================================
-// 0xea08: WORD 'UNK_0xea0a' codep=0x224c parp=0xea0a params=5 returns=0
+// 0xea08: WORD 'UNK_0xea0a' codep=0x224c parp=0xea0a params=3 returns=0
 // ================================================
 
 void UNK_0xea0a() // UNK_0xea0a
@@ -1063,11 +1063,11 @@ void UNK_0xf1d3() // UNK_0xf1d3
   Push(0x0063);
   _gt_(); // >
   if (Pop() == 0) return;
-  UNK_0x3f3b("PROGRAMMER ERROR ");
+  SET_STR_AS_PARAM("PROGRAMMER ERROR ");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("#SPECIES OVERFLOW ");
+  SET_STR_AS_PARAM("#SPECIES OVERFLOW ");
   DrawTTY(); // .TTY
-  UNK_0x3f3b("SO SORRY- WHERE WERE YOU, ANYWAY\?");
+  SET_STR_AS_PARAM("SO SORRY- WHERE WERE YOU, ANYWAY\?");
   DrawTTY(); // .TTY
 
   label1:
@@ -1389,7 +1389,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
 
 
 // ================================================
-// 0xf40a: WORD 'UNK_0xf40c' codep=0x224c parp=0xf40c params=5 returns=0
+// 0xf40a: WORD 'UNK_0xf40c' codep=0x224c parp=0xf40c params=3 returns=0
 // ================================================
 
 void UNK_0xf40c() // UNK_0xf40c
@@ -1422,7 +1422,7 @@ void UNK_0xf40c() // UNK_0xf40c
 
 
 // ================================================
-// 0xf430: WORD 'UNK_0xf432' codep=0x224c parp=0xf432 params=5 returns=1
+// 0xf430: WORD 'UNK_0xf432' codep=0x224c parp=0xf432 params=3 returns=1
 // ================================================
 
 void UNK_0xf432() // UNK_0xf432
@@ -1491,7 +1491,7 @@ void DIO() // DIO
   OFF(); // OFF
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f3b("AUTO SAMPLING DEVICES ACTIVATED");
+  SET_STR_AS_PARAM("AUTO SAMPLING DEVICES ACTIVATED");
   DrawTTY(); // .TTY
   UNK_0xea0a(); // UNK_0xea0a
   UNK_0xeaa0(); // UNK_0xeaa0
@@ -1512,7 +1512,7 @@ void DIO() // DIO
     Push(0x1388);
     MS(); // MS
   }
-  UNK_0x3f3b("INITIATING HULL INTEGRITY CHECK");
+  SET_STR_AS_PARAM("INITIATING HULL INTEGRITY CHECK");
   DrawTTY(); // .TTY
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE

@@ -396,7 +396,7 @@ void UNK_0xeca2() // UNK_0xeca2
   unsigned short int i, imax;
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  UNK_0x3f09("(F2) OR LAUNCH TO RECALL DRONE");
+  SET_STR_AS_PARAM("(F2) OR LAUNCH TO RECALL DRONE");
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
@@ -461,7 +461,7 @@ void UNK_0xecf1() // UNK_0xecf1
 
 
 // ================================================
-// 0xed1d: WORD 'UNK_0xed1f' codep=0x224c parp=0xed1f params=4 returns=2
+// 0xed1d: WORD 'UNK_0xed1f' codep=0x224c parp=0xed1f params=2 returns=2
 // ================================================
 
 void UNK_0xed1f() // UNK_0xed1f
@@ -550,7 +550,7 @@ void UNK_0xed7e() // UNK_0xed7e
 
 
 // ================================================
-// 0xed84: WORD 'UNK_0xed86' codep=0x224c parp=0xed86 params=2 returns=0
+// 0xed84: WORD 'UNK_0xed86' codep=0x224c parp=0xed86 params=0 returns=0
 // ================================================
 
 void UNK_0xed86() // UNK_0xed86
@@ -763,7 +763,7 @@ void UNK_0xee5b() // UNK_0xee5b
 
 
 // ================================================
-// 0xee71: WORD 'UNK_0xee73' codep=0x224c parp=0xee73 params=2 returns=0
+// 0xee71: WORD 'UNK_0xee73' codep=0x224c parp=0xee73 params=0 returns=0
 // ================================================
 
 void UNK_0xee73() // UNK_0xee73
@@ -787,7 +787,7 @@ void UNK_0xee73() // UNK_0xee73
 
 
 // ================================================
-// 0xee8f: WORD 'UNK_0xee91' codep=0x224c parp=0xee91 params=4 returns=0
+// 0xee8f: WORD 'UNK_0xee91' codep=0x224c parp=0xee91 params=0 returns=0
 // ================================================
 
 void UNK_0xee91() // UNK_0xee91
@@ -1573,7 +1573,7 @@ void UNK_0xf27d() // UNK_0xf27d
 
 
 // ================================================
-// 0xf287: WORD 'UNK_0xf289' codep=0x224c parp=0xf289 params=6 returns=0
+// 0xf287: WORD 'UNK_0xf289' codep=0x224c parp=0xf289 params=0 returns=0
 // ================================================
 
 void UNK_0xf289() // UNK_0xf289

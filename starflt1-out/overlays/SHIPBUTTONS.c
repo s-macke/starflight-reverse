@@ -227,7 +227,7 @@ void UNK_0xede2() // UNK_0xede2
 
 
 // ================================================
-// 0xedea: WORD 'UNK_0xedec' codep=0x224c parp=0xedec params=2 returns=0
+// 0xedea: WORD 'UNK_0xedec' codep=0x224c parp=0xedec params=0 returns=0
 // ================================================
 
 void UNK_0xedec() // UNK_0xedec
@@ -638,7 +638,7 @@ void _1_dot_1BTN_dot_XEQ() // 1.1BTN.XEQ
 void UNK_0xf03f() // UNK_0xf03f
 {
   CTINIT(); // CTINIT
-  UNK_0x3f3b("REPORT TO OPERATIONS FOR EVALUATION");
+  SET_STR_AS_PARAM("REPORT TO OPERATIONS FOR EVALUATION");
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
@@ -648,7 +648,7 @@ void UNK_0xf03f() // UNK_0xf03f
 
 
 // ================================================
-// 0xf075: WORD 'UNK_0xf077' codep=0x224c parp=0xf077 params=4 returns=2
+// 0xf075: WORD 'UNK_0xf077' codep=0x224c parp=0xf077 params=2 returns=2
 // ================================================
 
 void UNK_0xf077() // UNK_0xf077
@@ -687,7 +687,7 @@ void UNK_0xf095() // UNK_0xf095
     Push(pp_IsON_dash_PLA); // ?ON-PLA
     ON_3(); // ON_3
     UNK_0xedec(); // UNK_0xedec
-    UNK_0x3f3b("STANDBY...SCANNING PLANET.");
+    SET_STR_AS_PARAM("STANDBY...SCANNING PLANET.");
     DrawTTY(); // .TTY
     Push(pp_PLHI); // PLHI
     Push(Read16(Pop())); // @
@@ -714,9 +714,9 @@ void UNK_0xf095() // UNK_0xf095
   } else
   {
     CTINIT(); // CTINIT
-    UNK_0x3f3b("THE SHIP IS NO LONGER EQUIPPED");
+    SET_STR_AS_PARAM("THE SHIP IS NO LONGER EQUIPPED");
     DrawTTY(); // .TTY
-    UNK_0x3f3b("WITH A TERRAIN VEHICLE");
+    SET_STR_AS_PARAM("WITH A TERRAIN VEHICLE");
     DrawTTY(); // .TTY
   }
   Push(pp_UNK_0xedb6); // UNK_0xedb6
@@ -1285,16 +1285,16 @@ void UNK_0xf41a() // UNK_0xf41a
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  UNK_0x3f3b("SHIP COMPUTER ACTIVATED");
+  SET_STR_AS_PARAM("SHIP COMPUTER ACTIVATED");
   DrawTTY(); // .TTY
   Push(0xbef3); // probable 'OV/STATUS'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
-  UNK_0x3f3b("PRE-LAUNCH PROCEDURES COMPLETE");
+  SET_STR_AS_PARAM("PRE-LAUNCH PROCEDURES COMPLETE");
   DrawTTY(); // .TTY
   Push(0x00fa);
   MS(); // MS
-  UNK_0x3f3b("STANDING BY TO INITIATE LAUNCH");
+  SET_STR_AS_PARAM("STANDING BY TO INITIATE LAUNCH");
   DrawTTY(); // .TTY
   Push(0x00fa);
   MS(); // MS

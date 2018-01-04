@@ -106,7 +106,7 @@ IFieldType UNK_0xf18b = {ASSIGN_CREWIDX, 0x11, 0x12};
 IFieldType UNK_0xf190 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
-// 0xf193: WORD 'UNK_0xf195' codep=0x224c parp=0xf195 params=5 returns=1
+// 0xf193: WORD 'UNK_0xf195' codep=0x224c parp=0xf195 params=3 returns=1
 // ================================================
 
 void UNK_0xf195() // UNK_0xf195
@@ -402,7 +402,7 @@ void UNK_0xf406() // UNK_0xf406
 
 
 // ================================================
-// 0xf412: WORD 'UNK_0xf414' codep=0x224c parp=0xf414 params=5 returns=1
+// 0xf412: WORD 'UNK_0xf414' codep=0x224c parp=0xf414 params=3 returns=1
 // ================================================
 
 void UNK_0xf414() // UNK_0xf414
@@ -449,7 +449,7 @@ void UNK_0xf414() // UNK_0xf414
 
 
 // ================================================
-// 0xf460: WORD 'UNK_0xf462' codep=0x224c parp=0xf462 params=6 returns=1
+// 0xf460: WORD 'UNK_0xf462' codep=0x224c parp=0xf462 params=0 returns=1
 // ================================================
 
 void UNK_0xf462() // UNK_0xf462
@@ -487,7 +487,7 @@ void UNK_0xf462() // UNK_0xf462
 
 
 // ================================================
-// 0xf490: WORD 'UNK_0xf492' codep=0x224c parp=0xf492 params=4 returns=1
+// 0xf490: WORD 'UNK_0xf492' codep=0x224c parp=0xf492 params=0 returns=1
 // ================================================
 
 void UNK_0xf492() // UNK_0xf492
@@ -515,7 +515,7 @@ void UNK_0xf492() // UNK_0xf492
 
 
 // ================================================
-// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=5 returns=1
+// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=3 returns=1
 // ================================================
 
 void UNK_0xf4bc() // UNK_0xf4bc
@@ -557,7 +557,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 
 // ================================================
-// 0xf504: WORD '?CAN-LEAVE' codep=0x224c parp=0xf513 params=20 returns=1
+// 0xf504: WORD '?CAN-LEAVE' codep=0x224c parp=0xf513 params=6 returns=1
 // ================================================
 // entry
 

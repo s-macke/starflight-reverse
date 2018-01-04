@@ -899,7 +899,7 @@ void UNK_0xea2e() // UNK_0xea2e
 // 0xea58: db 0xff 0xff '  '
 
 // ================================================
-// 0xea5a: WORD 'UNK_0xea5c' codep=0x224c parp=0xea5c params=2 returns=1
+// 0xea5a: WORD 'UNK_0xea5c' codep=0x224c parp=0xea5c params=0 returns=1
 // ================================================
 
 void UNK_0xea5c() // UNK_0xea5c
@@ -970,7 +970,7 @@ void UNK_0xea6c() // UNK_0xea6c
     if (Pop() != 0)
     {
       ILAST(); // ILAST
-      UNK_0x3f09("**NOTICE CANCELLED**");
+      SET_STR_AS_PARAM("**NOTICE CANCELLED**");
       Push(0x000d);
       UNK_0xea2e(); // UNK_0xea2e
     }
@@ -995,7 +995,7 @@ void UNK_0xea6c() // UNK_0xea6c
   if (Pop() != 0)
   {
     UNK_0xe9c0(); // UNK_0xe9c0
-    UNK_0x3f09("**END OF NOTICES**");
+    SET_STR_AS_PARAM("**END OF NOTICES**");
     Push(0x000d);
     UNK_0xea2e(); // UNK_0xea2e
   }
@@ -1004,7 +1004,7 @@ void UNK_0xea6c() // UNK_0xea6c
 
 
 // ================================================
-// 0xeb38: WORD 'UNK_0xeb3a' codep=0x224c parp=0xeb3a params=2 returns=0
+// 0xeb38: WORD 'UNK_0xeb3a' codep=0x224c parp=0xeb3a params=0 returns=0
 // ================================================
 
 void UNK_0xeb3a() // UNK_0xeb3a
@@ -1119,7 +1119,7 @@ void UNK_0xeb80() // UNK_0xeb80
   if (Pop() != 0)
   {
     IPREV(); // IPREV
-    UNK_0x3f09("**REPEATING LAST NOTICE**");
+    SET_STR_AS_PARAM("**REPEATING LAST NOTICE**");
     Push(9);
     UNK_0xea2e(); // UNK_0xea2e
   }
@@ -1310,7 +1310,7 @@ void UNK_0xedc8() // UNK_0xedc8
 
 
 // ================================================
-// 0xedf6: WORD 'UNK_0xedf8' codep=0x224c parp=0xedf8 params=3 returns=0
+// 0xedf6: WORD 'UNK_0xedf8' codep=0x224c parp=0xedf8 params=1 returns=0
 // ================================================
 
 void UNK_0xedf8() // UNK_0xedf8
@@ -1329,7 +1329,7 @@ void UNK_0xedf8() // UNK_0xedf8
 
 
 // ================================================
-// 0xee0e: WORD 'UNK_0xee10' codep=0x224c parp=0xee10 params=8 returns=0
+// 0xee0e: WORD 'UNK_0xee10' codep=0x224c parp=0xee10 params=4 returns=0
 // ================================================
 
 void UNK_0xee10() // UNK_0xee10
@@ -1351,7 +1351,7 @@ void UNK_0xee10() // UNK_0xee10
 
 void UNK_0xee26() // UNK_0xee26
 {
-  UNK_0x3f09("EXTREME HEAT,");
+  SET_STR_AS_PARAM("EXTREME HEAT,");
 }
 
 
@@ -1361,7 +1361,7 @@ void UNK_0xee26() // UNK_0xee26
 
 void UNK_0xee3a() // UNK_0xee3a
 {
-  UNK_0x3f09("EXTREME COLD,");
+  SET_STR_AS_PARAM("EXTREME COLD,");
 }
 
 
@@ -1371,7 +1371,7 @@ void UNK_0xee3a() // UNK_0xee3a
 
 void UNK_0xee4e() // UNK_0xee4e
 {
-  UNK_0x3f09("CRUSHING GRAVITY,");
+  SET_STR_AS_PARAM("CRUSHING GRAVITY,");
 }
 
 
@@ -1381,7 +1381,7 @@ void UNK_0xee4e() // UNK_0xee4e
 
 void UNK_0xee66() // UNK_0xee66
 {
-  UNK_0x3f09("VIOLENT STORMS,");
+  SET_STR_AS_PARAM("VIOLENT STORMS,");
 }
 
 
@@ -1391,7 +1391,7 @@ void UNK_0xee66() // UNK_0xee66
 
 void UNK_0xee7c() // UNK_0xee7c
 {
-  UNK_0x3f09("LACK OF OXYGEN,");
+  SET_STR_AS_PARAM("LACK OF OXYGEN,");
 }
 
 
@@ -1401,7 +1401,7 @@ void UNK_0xee7c() // UNK_0xee7c
 
 void UNK_0xee92() // UNK_0xee92
 {
-  UNK_0x3f09("LACK OF WATER,");
+  SET_STR_AS_PARAM("LACK OF WATER,");
 }
 
 
@@ -1411,7 +1411,7 @@ void UNK_0xee92() // UNK_0xee92
 
 void UNK_0xeea7() // UNK_0xeea7
 {
-  UNK_0x3f09("EXISTING SENTIENTS,");
+  SET_STR_AS_PARAM("EXISTING SENTIENTS,");
 }
 
 
@@ -1421,7 +1421,7 @@ void UNK_0xeea7() // UNK_0xeea7
 
 void UNK_0xeec1() // UNK_0xeec1
 {
-  UNK_0x3f09("TEMPORAL DISPLACEMENT,");
+  SET_STR_AS_PARAM("TEMPORAL DISPLACEMENT,");
 }
 
 
@@ -1470,7 +1470,7 @@ void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
 
 void UNK_0xef11() // UNK_0xef11
 {
-  UNK_0x3f09("YOU HAVE BEEN FINED");
+  SET_STR_AS_PARAM("YOU HAVE BEEN FINED");
   UNK_0xedc8(); // UNK_0xedc8
 }
 
@@ -1485,7 +1485,7 @@ void UNK_0xef2d() // UNK_0xef2d
   Push(0);
   Push(0x000b);
   UNK_0xe96c(); // UNK_0xe96c
-  UNK_0x3f09("DUE TO");
+  SET_STR_AS_PARAM("DUE TO");
   UNK_0xedc8(); // UNK_0xedc8
   Push(9);
   Push(1);
@@ -1517,7 +1517,7 @@ void UNK_0xef2d() // UNK_0xef2d
       Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
-        UNK_0x3f09("AND");
+        SET_STR_AS_PARAM("AND");
         UNK_0xedc8(); // UNK_0xedc8
       }
       UNK_0xedc8(); // UNK_0xedc8
@@ -1526,7 +1526,7 @@ void UNK_0xef2d() // UNK_0xef2d
   } while(i<imax); // (LOOP)
 
   Pop(); // DROP
-  UNK_0x3f09("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
+  SET_STR_AS_PARAM("THIS PLANET PROVED UNSUITABLE FOR COLONIZATION.");
   UNK_0xedc8(); // UNK_0xedc8
   UNK_0xef11(); // UNK_0xef11
   Push(0x65e1+UNK_0xe5ac.offset); // IFIELD
@@ -1540,11 +1540,11 @@ void UNK_0xef2d() // UNK_0xef2d
   _n_S(); // #S
   _n__gt_(); // #>
   UNK_0xedc8(); // UNK_0xedc8
-  UNK_0x3f09("SP'S.");
+  SET_STR_AS_PARAM("SP'S.");
   UNK_0xedc8(); // UNK_0xedc8
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  UNK_0x3f09("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
+  SET_STR_AS_PARAM("THIS IS ONLY A WARNING, YOUR NEXT FINE WILL BE HEAVY.");
   UNK_0xedc8(); // UNK_0xedc8
 }
 
@@ -1555,7 +1555,7 @@ void UNK_0xef2d() // UNK_0xef2d
 
 void UNK_0xf024() // UNK_0xf024
 {
-  UNK_0x3f09("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
+  SET_STR_AS_PARAM("THIS PLANET PROVED TO BE SUITABLE FOR COLONIZATION.");
   UNK_0xedc8(); // UNK_0xedc8
 }
 
@@ -1566,7 +1566,7 @@ void UNK_0xf024() // UNK_0xf024
 
 void UNK_0xf060() // UNK_0xf060
 {
-  UNK_0x3f09("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
+  SET_STR_AS_PARAM("GOOD WORK! YOU HAVE LOCATED AN OPTIMAL PLANET.");
   UNK_0xedc8(); // UNK_0xedc8
 }
 
@@ -1577,7 +1577,7 @@ void UNK_0xf060() // UNK_0xf060
 
 void UNK_0xf097() // UNK_0xf097
 {
-  UNK_0x3f09("YOU HAVE EARNED A BONUS OF");
+  SET_STR_AS_PARAM("YOU HAVE EARNED A BONUS OF");
   UNK_0xedc8(); // UNK_0xedc8
   Push(0x65e1+UNK_0xe5ac.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
@@ -1587,7 +1587,7 @@ void UNK_0xf097() // UNK_0xf097
   _n_S(); // #S
   _n__gt_(); // #>
   UNK_0xedc8(); // UNK_0xedc8
-  UNK_0x3f09("SP'S FOR THIS RECOMMENDATION.");
+  SET_STR_AS_PARAM("SP'S FOR THIS RECOMMENDATION.");
   UNK_0xedc8(); // UNK_0xedc8
 }
 
@@ -1653,7 +1653,7 @@ void UNK_0xf142() // UNK_0xf142
   if (Pop() == 0) goto label3;
   UNK_0xe99c(); // UNK_0xe99c
   UNK_0xe99c(); // UNK_0xe99c
-  UNK_0x3f09("END OF EVALUATIONS");
+  SET_STR_AS_PARAM("END OF EVALUATIONS");
   UNK_0xedc8(); // UNK_0xedc8
   Push2Words("*OP");
   _gt_C_plus_S(); // >C+S
@@ -1759,7 +1759,7 @@ void UNK_0xf240() // UNK_0xf240
 
 
 // ================================================
-// 0xf278: WORD 'UNK_0xf27a' codep=0x224c parp=0xf27a params=5 returns=1
+// 0xf278: WORD 'UNK_0xf27a' codep=0x224c parp=0xf27a params=3 returns=1
 // ================================================
 
 void UNK_0xf27a() // UNK_0xf27a
@@ -1774,7 +1774,7 @@ void UNK_0xf27a() // UNK_0xf27a
 
 
 // ================================================
-// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=5 returns=1
+// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=3 returns=1
 // ================================================
 
 void UNK_0xf28e() // UNK_0xf28e
@@ -1921,7 +1921,7 @@ void UNK_0xf38b() // UNK_0xf38b
 
 
 // ================================================
-// 0xf3b2: WORD 'UNK_0xf3b4' codep=0x224c parp=0xf3b4 params=5 returns=1
+// 0xf3b2: WORD 'UNK_0xf3b4' codep=0x224c parp=0xf3b4 params=3 returns=1
 // ================================================
 
 void UNK_0xf3b4() // UNK_0xf3b4

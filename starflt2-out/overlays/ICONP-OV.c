@@ -324,7 +324,7 @@ void UNK_0xf172() // UNK_0xf172
 
 
 // ================================================
-// 0xf182: WORD 'UNK_0xf184' codep=0x224c parp=0xf184 params=2 returns=1
+// 0xf182: WORD 'UNK_0xf184' codep=0x224c parp=0xf184 params=0 returns=1
 // ================================================
 
 void UNK_0xf184() // UNK_0xf184
@@ -433,7 +433,7 @@ void UNK_0xf20c() // UNK_0xf20c
 
 
 // ================================================
-// 0xf214: WORD 'UNK_0xf216' codep=0x224c parp=0xf216 params=2 returns=1
+// 0xf214: WORD 'UNK_0xf216' codep=0x224c parp=0xf216 params=0 returns=1
 // ================================================
 
 void UNK_0xf216() // UNK_0xf216
@@ -615,7 +615,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
 
 
 // ================================================
-// 0xf2ed: WORD 'UNK_0xf2ef' codep=0x224c parp=0xf2ef params=2 returns=1
+// 0xf2ed: WORD 'UNK_0xf2ef' codep=0x224c parp=0xf2ef params=0 returns=1
 // ================================================
 
 void UNK_0xf2ef() // UNK_0xf2ef
@@ -785,7 +785,7 @@ void UNK_0xf3b0() // UNK_0xf3b0
 
 
 // ================================================
-// 0xf3c0: WORD 'UNK_0xf3c2' codep=0x224c parp=0xf3c2 params=2 returns=1
+// 0xf3c0: WORD 'UNK_0xf3c2' codep=0x224c parp=0xf3c2 params=0 returns=1
 // ================================================
 
 void UNK_0xf3c2() // UNK_0xf3c2
@@ -869,7 +869,7 @@ void UNK_0xf421() // UNK_0xf421
 
 
 // ================================================
-// 0xf429: WORD 'UNK_0xf42b' codep=0x224c parp=0xf42b params=2 returns=1
+// 0xf429: WORD 'UNK_0xf42b' codep=0x224c parp=0xf42b params=0 returns=1
 // ================================================
 
 void UNK_0xf42b() // UNK_0xf42b
@@ -919,7 +919,7 @@ void UNK_0xf454() // UNK_0xf454
 
 
 // ================================================
-// 0xf45e: WORD 'UNK_0xf460' codep=0x224c parp=0xf460 params=2 returns=1
+// 0xf45e: WORD 'UNK_0xf460' codep=0x224c parp=0xf460 params=0 returns=1
 // ================================================
 
 void UNK_0xf460() // UNK_0xf460

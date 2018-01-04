@@ -272,7 +272,7 @@ void UNK_0xf023() // UNK_0xf023
 
 void UNK_0xf033() // UNK_0xf033
 {
-  UNK_0x3f09("DEPRESSED");
+  SET_STR_AS_PARAM("DEPRESSED");
 }
 
 
@@ -282,7 +282,7 @@ void UNK_0xf033() // UNK_0xf033
 
 void UNK_0xf043() // UNK_0xf043
 {
-  UNK_0x3f09("LEVEL");
+  SET_STR_AS_PARAM("LEVEL");
 }
 
 
@@ -292,7 +292,7 @@ void UNK_0xf043() // UNK_0xf043
 
 void UNK_0xf04f() // UNK_0xf04f
 {
-  UNK_0x3f09("INFLATED");
+  SET_STR_AS_PARAM("INFLATED");
 }
 
 
@@ -302,7 +302,7 @@ void UNK_0xf04f() // UNK_0xf04f
 
 void UNK_0xf05e() // UNK_0xf05e
 {
-  UNK_0x3f09("NONE");
+  SET_STR_AS_PARAM("NONE");
 }
 
 
@@ -593,7 +593,7 @@ void DrawRACE() // .RACE
 
 void UNK_0xf23d() // UNK_0xf23d
 {
-  UNK_0x3f09("SPARSE");
+  SET_STR_AS_PARAM("SPARSE");
 }
 
 
@@ -603,7 +603,7 @@ void UNK_0xf23d() // UNK_0xf23d
 
 void UNK_0xf24a() // UNK_0xf24a
 {
-  UNK_0x3f09("MODERATE");
+  SET_STR_AS_PARAM("MODERATE");
 }
 
 
@@ -613,7 +613,7 @@ void UNK_0xf24a() // UNK_0xf24a
 
 void UNK_0xf259() // UNK_0xf259
 {
-  UNK_0x3f09("DENSE");
+  SET_STR_AS_PARAM("DENSE");
 }
 
 
@@ -623,7 +623,7 @@ void UNK_0xf259() // UNK_0xf259
 
 void UNK_0xf265() // UNK_0xf265
 {
-  UNK_0x3f09("VERY DENSE");
+  SET_STR_AS_PARAM("VERY DENSE");
 }
 
 
@@ -633,7 +633,7 @@ void UNK_0xf265() // UNK_0xf265
 
 void UNK_0xf276() // UNK_0xf276
 {
-  UNK_0x3f09("STONE AGE");
+  SET_STR_AS_PARAM("STONE AGE");
 }
 
 
@@ -643,7 +643,7 @@ void UNK_0xf276() // UNK_0xf276
 
 void UNK_0xf286() // UNK_0xf286
 {
-  UNK_0x3f09("METAL ERA");
+  SET_STR_AS_PARAM("METAL ERA");
 }
 
 
@@ -653,7 +653,7 @@ void UNK_0xf286() // UNK_0xf286
 
 void UNK_0xf296() // UNK_0xf296
 {
-  UNK_0x3f09("INDUSTRIAL");
+  SET_STR_AS_PARAM("INDUSTRIAL");
 }
 
 
@@ -663,7 +663,7 @@ void UNK_0xf296() // UNK_0xf296
 
 void UNK_0xf2a7() // UNK_0xf2a7
 {
-  UNK_0x3f09("SPACEFARING");
+  SET_STR_AS_PARAM("SPACEFARING");
 }
 
 
@@ -673,7 +673,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
 
 void UNK_0xf2b9() // UNK_0xf2b9
 {
-  UNK_0x3f09("NO TRADING");
+  SET_STR_AS_PARAM("NO TRADING");
 }
 
 
@@ -683,7 +683,7 @@ void UNK_0xf2b9() // UNK_0xf2b9
 
 void UNK_0xf2ca() // UNK_0xf2ca
 {
-  UNK_0x3f09("NO BARTERING");
+  SET_STR_AS_PARAM("NO BARTERING");
 }
 
 
@@ -693,7 +693,7 @@ void UNK_0xf2ca() // UNK_0xf2ca
 
 void UNK_0xf2dd() // UNK_0xf2dd
 {
-  UNK_0x3f09("BARGAIN A LITTLE");
+  SET_STR_AS_PARAM("BARGAIN A LITTLE");
 }
 
 
@@ -703,7 +703,7 @@ void UNK_0xf2dd() // UNK_0xf2dd
 
 void UNK_0xf2f4() // UNK_0xf2f4
 {
-  UNK_0x3f09("BARGAIN A LOT");
+  SET_STR_AS_PARAM("BARGAIN A LOT");
 }
 
 
@@ -851,10 +851,10 @@ void UNK_0xf3d0() // UNK_0xf3d0
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    UNK_0x3f09("INHABITED BY ");
+    SET_STR_AS_PARAM("INHABITED BY ");
   } else
   {
-    UNK_0x3f09(" ");
+    SET_STR_AS_PARAM(" ");
   }
   DrawTTY(); // .TTY
   Push(1);
@@ -887,7 +887,7 @@ void UNK_0xf412() // UNK_0xf412
 // 0xf42e: db 0x4c 0x22 0xa8 0xf0 0x29 0xf0 0x5d 0x17 0x14 0x00 0x5d 0x17 0x2e 0x00 0x25 0xab 0xe6 0x06 0x90 0x16 'L"  ) ]   ] . %     '
 
 // ================================================
-// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444 params=5 returns=0
+// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444 params=3 returns=0
 // ================================================
 
 void UNK_0xf444() // UNK_0xf444

@@ -749,7 +749,7 @@ void UNK_0xf290() // UNK_0xf290
 {
   unsigned short int i, imax, j, jmax, k, kmax;
   CTINIT(); // CTINIT
-  UNK_0x3f3b("THE RED CYLINDER IS FLASHING");
+  SET_STR_AS_PARAM("THE RED CYLINDER IS FLASHING");
   DrawTTY(); // .TTY
   Push(0x0050);
   Push(0);
@@ -812,7 +812,7 @@ void UNK_0xf290() // UNK_0xf290
 
 
 // ================================================
-// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311 params=2 returns=0
+// 0xf30f: WORD 'UNK_0xf311' codep=0x224c parp=0xf311 params=0 returns=0
 // ================================================
 
 void UNK_0xf311() // UNK_0xf311
@@ -881,7 +881,7 @@ void UNK_0xf311() // UNK_0xf311
 
 
 // ================================================
-// 0xf387: WORD 'UNK_0xf389' codep=0x224c parp=0xf389 params=4 returns=0
+// 0xf387: WORD 'UNK_0xf389' codep=0x224c parp=0xf389 params=0 returns=0
 // ================================================
 
 void UNK_0xf389() // UNK_0xf389

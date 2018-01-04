@@ -372,7 +372,7 @@ void UNK_0xe88d() // UNK_0xe88d
 
 
 // ================================================
-// 0xe8a3: WORD 'UNK_0xe8a5' codep=0x224c parp=0xe8a5 params=4 returns=1
+// 0xe8a3: WORD 'UNK_0xe8a5' codep=0x224c parp=0xe8a5 params=0 returns=1
 // ================================================
 
 void UNK_0xe8a5() // UNK_0xe8a5
@@ -574,7 +574,7 @@ void UNK_0xe9b3() // UNK_0xe9b3
 
 
 // ================================================
-// 0xe9d1: WORD 'UNK_0xe9d3' codep=0x224c parp=0xe9d3 params=3 returns=1
+// 0xe9d1: WORD 'UNK_0xe9d3' codep=0x224c parp=0xe9d3 params=0 returns=2
 // ================================================
 
 void UNK_0xe9d3() // UNK_0xe9d3
@@ -591,7 +591,7 @@ void UNK_0xe9d3() // UNK_0xe9d3
 // 0xe9e3: db 0x4c 0x22 0xc5 0x74 0x76 0x6d 0xb7 0x74 0x76 0x6d 0x90 0x16 'L" tvm tvm  '
 
 // ================================================
-// 0xe9ef: WORD 'UNK_0xe9f1' codep=0x224c parp=0xe9f1 params=4 returns=0
+// 0xe9ef: WORD 'UNK_0xe9f1' codep=0x224c parp=0xe9f1 params=0 returns=0
 // ================================================
 
 void UNK_0xe9f1() // UNK_0xe9f1
@@ -988,7 +988,7 @@ void UNK_0xecc4() // UNK_0xecc4
 
 
 // ================================================
-// 0xecea: WORD 'UNK_0xecec' codep=0x224c parp=0xecec params=0 returns=0
+// 0xecea: WORD 'UNK_0xecec' codep=0x224c parp=0xecec params=0 returns=2
 // ================================================
 
 void UNK_0xecec() // UNK_0xecec
@@ -999,7 +999,7 @@ void UNK_0xecec() // UNK_0xecec
 
 
 // ================================================
-// 0xecf2: WORD 'UNK_0xecf4' codep=0x224c parp=0xecf4 params=4 returns=0
+// 0xecf2: WORD 'UNK_0xecf4' codep=0x224c parp=0xecf4 params=0 returns=0
 // ================================================
 
 void UNK_0xecf4() // UNK_0xecf4
@@ -1104,7 +1104,7 @@ void HEAVEHO() // HEAVEHO
 // 0xed92: db 0xea 0x73 0x44 0x90 0x02 0x9c 0xd8 0x69 ' sD    i'
 
 // ================================================
-// 0xed9a: WORD 'UNK_0xed9c' codep=0x224c parp=0xed9c params=8 returns=0
+// 0xed9a: WORD 'UNK_0xed9c' codep=0x224c parp=0xed9c params=0 returns=0
 // ================================================
 
 void UNK_0xed9c() // UNK_0xed9c
@@ -1189,7 +1189,7 @@ void UNK_0xedf7() // UNK_0xedf7
 
 
 // ================================================
-// 0xee1d: WORD 'UNK_0xee1f' codep=0x224c parp=0xee1f params=5 returns=0
+// 0xee1d: WORD 'UNK_0xee1f' codep=0x224c parp=0xee1f params=3 returns=0
 // ================================================
 
 void UNK_0xee1f() // UNK_0xee1f
@@ -1202,7 +1202,7 @@ void UNK_0xee1f() // UNK_0xee1f
 
 
 // ================================================
-// 0xee29: WORD 'UNK_0xee2b' codep=0x224c parp=0xee2b params=3 returns=0
+// 0xee29: WORD 'UNK_0xee2b' codep=0x224c parp=0xee2b params=1 returns=0
 // ================================================
 
 void UNK_0xee2b() // UNK_0xee2b
@@ -1216,7 +1216,7 @@ void UNK_0xee2b() // UNK_0xee2b
 
 
 // ================================================
-// 0xee37: WORD 'UNK_0xee39' codep=0x224c parp=0xee39 params=5 returns=0
+// 0xee37: WORD 'UNK_0xee39' codep=0x224c parp=0xee39 params=3 returns=0
 // ================================================
 
 void UNK_0xee39() // UNK_0xee39
@@ -1363,7 +1363,7 @@ void UNK_0xef45() // UNK_0xef45
 
 
 // ================================================
-// 0xef61: WORD 'UNK_0xef63' codep=0x224c parp=0xef63 params=4 returns=1
+// 0xef61: WORD 'UNK_0xef63' codep=0x224c parp=0xef63 params=0 returns=1
 // ================================================
 
 void UNK_0xef63() // UNK_0xef63
@@ -1393,7 +1393,7 @@ void UNK_0xef63() // UNK_0xef63
 
 
 // ================================================
-// 0xef8d: WORD 'UNK_0xef8f' codep=0x224c parp=0xef8f params=7 returns=0
+// 0xef8d: WORD 'UNK_0xef8f' codep=0x224c parp=0xef8f params=3 returns=0
 // ================================================
 
 void UNK_0xef8f() // UNK_0xef8f
@@ -1879,7 +1879,7 @@ void TV_dash_DISP() // TV-DISP
   _gt_DISPLAY(); // >DISPLAY
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  UNK_0x3f3b("ACTIVATING TERRAIN VEHICLE");
+  SET_STR_AS_PARAM("ACTIVATING TERRAIN VEHICLE");
   DrawTTY(); // .TTY
   Push2Words("0.");
   Push(pp__ro_SCROLL_1); // (SCROLL_1
