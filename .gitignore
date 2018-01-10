@@ -7,3 +7,7 @@
 *.so
 *.so.*
 *.stackdump
+starflt1-in/*.COM
+starflt2-in/*.COM
+starflt2-in/*.OVL
+starflt2-in/*.VGA
