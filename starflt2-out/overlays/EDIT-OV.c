@@ -1093,8 +1093,7 @@ void UNK_0xf40e() // UNK_0xf40e
 
 void UNK_0xf416() // UNK_0xf416
 {
-  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0xee7a)); // UNK_0xee7a @ NOT
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Store_2(); // !_2
   DrawMODE(); // .MODE

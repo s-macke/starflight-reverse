@@ -496,8 +496,7 @@ void UNK_0xbbde() // UNK_0xbbde
   }
   UNK_0xbbb8(); // UNK_0xbbb8
   Push(Read16(pp_UNK_0xbba8)); // UNK_0xbba8 @
-  Push(0x0080);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_UNK_0xbba8)==0x0080?1:0); // UNK_0xbba8 @ 0x0080 =
 }
 
 
@@ -1040,10 +1039,7 @@ void IsSHIP_dash_REPAIR() // ?SHIP-REPAIR
   D_gt_(); // D>
   Push(Read16(pp_IsREPAIR)); // ?REPAIR @
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsREPAIR)); // ?REPAIR @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp_IsREPAIR) | (Read16(pp_IsREPAIR)==1?1:0)); // ?REPAIR @ ?REPAIR @ 1 = OR
 }
 
 
@@ -1058,8 +1054,7 @@ void MREPAIR() // MREPAIR
   Push(0xc0e8); // probable 'DO-REPA'
   MODULE(); // MODULE
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() == 0) return;
   Push(0xbe4b); // probable 'OVDBA'
   MODULE(); // MODULE

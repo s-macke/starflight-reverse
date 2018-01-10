@@ -427,8 +427,7 @@ void UNK_0xeca2() // UNK_0xeca2
 void UNK_0xecf1() // UNK_0xecf1
 {
   unsigned short int i, imax;
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   if (Pop() == 0) return;
   UNK_0xec90(); // UNK_0xec90
   UNK_0xec90(); // UNK_0xec90
@@ -800,8 +799,7 @@ void UNK_0xeea1() // UNK_0xeea1
   if (Pop() == 0) return;
   UNK_0xed7e(); // UNK_0xed7e
   _gt_C_plus_S(); // >C+S
-  Push(Read16(0x65e1+TEXT_dash_CO.offset)); // TEXT-CO<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(0x65e1+TEXT_dash_CO.offset)); // TEXT-CO<IFIELD> @ NOT
   Push(0x65e1+TEXT_dash_CO.offset); // TEXT-CO<IFIELD>
   Store_2(); // !_2
   IsFIRST(); // ?FIRST
@@ -1925,8 +1923,7 @@ void RECALL() // RECALL
 {
   Push(Read16(pp_ETIME)); // ETIME @
   _gt_FLAG(); // >FLAG
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_NOF)==0?1:0); // NOF @ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
@@ -1953,19 +1950,16 @@ void RECALL() // RECALL
 
 void DRONE() // DRONE
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   Push(0x0034);
   Push(0xb78d); // probable 'TV?ART'
   MODULE(); // MODULE
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_NOF)==0?1:0); // NOF @ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(Read16(pp_ETIME)); // ETIME @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_ETIME)); // ETIME @ NOT
     if (Pop() != 0)
     {
       Push(pp_NOF); // NOF

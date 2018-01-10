@@ -713,8 +713,7 @@ void DrawWEAP() // .WEAP
   PRINT("WEAPON STATUS: ", 15); // (.")
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
-  Push(Read16(cc_IsA_dash_WEAP)); // ?A-WEAP
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(cc_IsA_dash_WEAP)); // ?A-WEAP NOT
   if (Pop() != 0)
   {
     PRINT("NOT ", 4); // (.")

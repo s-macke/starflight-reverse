@@ -343,8 +343,7 @@ void UNK_0xf37b() // UNK_0xf37b
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==0?1:0); // CONTEXT-ID# @ 0=
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x0014);
@@ -459,8 +458,7 @@ void UNK_0xf45e() // UNK_0xf45e
       Store_3(); // !_3
     }
   }
-  Push(Read16(pp_GWF)); // GWF @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_GWF)); // GWF @ NOT
 }
 
 
@@ -472,8 +470,7 @@ void UNK_0xf45e() // UNK_0xf45e
 void IsLAND() // ?LAND
 {
   Push(Read16(pp__i_EXTERNAL_dash_EVENTS)); // 'EXTERNAL-EVENTS @
-  Push(Read16(pp__i_HEAT)); // 'HEAT @
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__i_EXTERNAL_dash_EVENTS)==Read16(pp__i_HEAT)?1:0); // 'EXTERNAL-EVENTS @ 'HEAT @ =
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT

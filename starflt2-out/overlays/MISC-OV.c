@@ -762,8 +762,7 @@ void _ro__ask_ART() // (?ART
 
 void UNK_0xf208() // UNK_0xf208
 {
-  Push(Read16(pp_UNK_0xee46)); // UNK_0xee46 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xee46)==0?1:0); // UNK_0xee46 @ 0=
   Push(0);
   Push(4);
   RRND(); // RRND

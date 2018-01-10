@@ -338,8 +338,7 @@ void UNK_0xedea() // UNK_0xedea
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
   Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-  Push(0x0018);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
@@ -1040,8 +1039,7 @@ void WPHRASE() // WPHRASE
 
 void _ro__dot_STORM_rc_() // (.STORM)
 {
-  Push(Read16(pp_ATMO)); // ATMO @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_ATMO)==0?1:0); // ATMO @ 0=
   if (Pop() != 0)
   {
     UNK_0xf20d(); // UNK_0xf20d

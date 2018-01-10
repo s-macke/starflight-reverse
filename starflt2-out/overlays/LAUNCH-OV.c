@@ -246,8 +246,7 @@ void UNK_0xf14e() // UNK_0xf14e
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   UNK_0xf11a(); // UNK_0xf11a
   CTERASE(); // CTERASE
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   if (Pop() == 0) return;
   Push(1);
   Push(pp_CONTEXT_3); // CONTEXT_3
@@ -575,8 +574,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
 void _and_LAUNCH() // &LAUNCH
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==5?1:0); // CONTEXT_3 @ 5 =
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {

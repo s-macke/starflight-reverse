@@ -428,8 +428,7 @@ void UNK_0xf414() // UNK_0xf414
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(Read16(pp_IsTV)); // ?TV @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_IsTV)==0?1:0); // ?TV @ 0=
   Push(Pop() | Pop()); // OR
   Push(Read16(pp_IsRECALL)); // ?RECALL @
   Push(Pop() | Pop()); // OR
@@ -459,8 +458,7 @@ void UNK_0xf462() // UNK_0xf462
   {
     Push(i); // I
     Get_gt_C_plus_S(); // @>C+S
-    Push(Read16(0x65e1+UNK_0xf186.offset) & 8); // UNK_0xf186<IFIELD> @ 8 AND
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(0x65e1+UNK_0xf186.offset) & 8)); // UNK_0xf186<IFIELD> @ 8 AND NOT
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
     Push(6);
@@ -481,12 +479,7 @@ void UNK_0xf492() // UNK_0xf492
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(Read16(0x65e1+_pe_NAME.offset)&0xFF); // %NAME<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16((0x65e1+UNK_0xf190.offset) + 1)&0xFF); // UNK_0xf190<IFIELD> 1+ C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop()*2); // 2*
-  Push(Pop() + Pop()); // +
+  Push(((Read16(0x65e1+_pe_NAME.offset)&0xFF)==0?1:0) + ((Read16((0x65e1+UNK_0xf190.offset) + 1)&0xFF)==0?1:0) * 2); // %NAME<IFIELD> C@ 0= UNK_0xf190<IFIELD> 1+ C@ 0= 2* +
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
   Push(4);

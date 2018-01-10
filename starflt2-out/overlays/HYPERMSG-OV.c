@@ -1466,8 +1466,7 @@ void UNK_0xee09() // UNK_0xee09
     Get_gt_C_plus_S(); // @>C+S
     Push(Read16(0x65e1+UNK_0xe6f5.offset)&0xFF); // UNK_0xe6f5<IFIELD> C@
     ICLOSE(); // ICLOSE
-    Push(Read16(pp_IsAUTO)); // ?AUTO @
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Read16(pp_IsAUTO)==0?1:0); // ?AUTO @ 0=
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
@@ -1480,9 +1479,7 @@ void UNK_0xee09() // UNK_0xee09
     ON_2(); // ON_2
   }
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_CONTEXT_3)==1?1:0)); // CONTEXT_3 @ 1 = NOT
   if (Pop() != 0)
   {
     Push(0xea60); Push(0x0000);
@@ -1891,8 +1888,7 @@ void UNK_0xf08f() // UNK_0xf08f
   Push(Read16(0x65e1+UNK_0xe6e6.offset)&0xFF); // UNK_0xe6e6<IFIELD> C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Read16(0x65e1+UNK_0xe6eb.offset)&0xFF); // UNK_0xe6eb<IFIELD> C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -2042,8 +2038,7 @@ void UNK_0xf18e() // UNK_0xf18e
 {
   unsigned short int a, b;
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
   if (Pop() != 0)
   {
     Push(3);
@@ -2121,12 +2116,7 @@ void UNK_0xf200() // UNK_0xf200
     Push(0x0040);
     WITHIN(); // WITHIN
     Push(Pop() & Pop()); // AND
-    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    Push(2);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
-    Push(Read16(0x65e1+UNK_0xf171.offset)&0xFF); // UNK_0xf171<IFIELD> C@
-    Push(Pop() & Pop()); // AND
+    Push((Read16(pp_CONTEXT_3) | (Read16(pp_CONTEXT_3)==2?1:0)) & (Read16(0x65e1+UNK_0xf171.offset)&0xFF)); // CONTEXT_3 @ CONTEXT_3 @ 2 = OR UNK_0xf171<IFIELD> C@ AND
     UNK_0xf08f(); // UNK_0xf08f
     Push(Pop() & Pop()); // AND
     return;
@@ -2206,8 +2196,7 @@ void TRAK_dash_E() // TRAK-E
   Push(pp_UNK_0xf0da); // UNK_0xf0da
   ON_2(); // ON_2
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
   if (Pop() != 0)
   {
     Push(pp_IGLOBAL); // IGLOBAL

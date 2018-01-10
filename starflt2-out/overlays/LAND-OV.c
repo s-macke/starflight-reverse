@@ -341,8 +341,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
   Push(0x0014);
@@ -457,8 +456,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
       Store_2(); // !_2
     }
   }
-  Push(Read16(pp_GWF)); // GWF @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_GWF)); // GWF @ NOT
 }
 
 

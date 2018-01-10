@@ -630,8 +630,7 @@ void UNK_0xef53() // UNK_0xef53
   {
     Push(0x001d);
     _eq_SPECIE(); // =SPECIE
-    Push(pp_IsAF); // ?AF
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(pp_IsAF==0?1:0); // ?AF 0=
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
@@ -648,11 +647,7 @@ void UNK_0xef53() // UNK_0xef53
       PRINT("EQUIVALENT", 10); // (.")
     }
     Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
-    Push(Read16(pp_NLR)); // NLR @
-    Push(1);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    Push(Pop() & Pop()); // AND
+    Push(Read16(pp_NLR) & !(Read16(pp_NLR)==1?1:0)); // NLR @ NLR @ 1 = NOT AND
     UNK_0xef13(); // UNK_0xef13
     if (Pop() != 0)
     {
@@ -678,8 +673,7 @@ void UNK_0xeff7() // UNK_0xeff7
   PRINT("WEAPON STATUS: ", 15); // (.")
   UNK_0xee5b(); // UNK_0xee5b
   if (Pop() == 0) return;
-  Push(Read16(cc_IsA_dash_WEAP)); // ?A-WEAP
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(cc_IsA_dash_WEAP)); // ?A-WEAP NOT
   if (Pop() != 0)
   {
     PRINT("NOT ", 4); // (.")

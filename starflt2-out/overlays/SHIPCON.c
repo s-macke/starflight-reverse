@@ -249,10 +249,7 @@ void UNK_0xf46c() // UNK_0xf46c
 void UNK_0xf47a() // UNK_0xf47a
 {
   Push(Read16(regsp)); // DUP
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_CONTEXT_3) & (Read16(pp_CONTEXT_3)==5?1:0)); // CONTEXT_3 @ CONTEXT_3 @ 5 = AND
   if (Pop() == 0) return;
   Push(0x52d5); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
@@ -319,13 +316,11 @@ void TOW_dash_US() // TOW-US
   if (Pop() != 0)
   {
     Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    Push(4);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_CONTEXT_3)==4?1:0); // CONTEXT_3 @ 4 =
     Push(Read16(pp__n_VESS)); // #VESS @
     _0_gt_(); // 0>
     Push(Pop() & Pop()); // AND
-    Push(Read16(cc_IsCALLED)); // ?CALLED
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(cc_IsCALLED)); // ?CALLED NOT
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {

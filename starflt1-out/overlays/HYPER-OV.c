@@ -969,10 +969,7 @@ void UNK_0xdb72() // UNK_0xdb72
   CTXT_n_(); // CTXT#
   Push(3);
   _st_(); // <
-  Push(Read16(pp__n_AUX)); // #AUX @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp__n_AUX) & (Read16(pp__n_AUX)==5?1:0)); // #AUX @ #AUX @ 5 = AND
   if (Pop() == 0) return;
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -1710,8 +1707,7 @@ void DrawAUXSYS() // .AUXSYS
 {
   unsigned short int i, imax;
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==2?1:0); // CONTEXT-ID# @ 2 =
   if (Pop() == 0) return;
   _gt_DISPLAY(); // >DISPLAY
   DCLIPSET(); // DCLIPSET
@@ -2774,8 +2770,7 @@ void UNK_0xe742() // UNK_0xe742
 void UNK_0xe7ec() // UNK_0xe7ec
 {
   UNK_0xdafa(); // UNK_0xdafa
-  Push(Read16(pp_IsAUTO)); // ?AUTO @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsAUTO)); // ?AUTO @ NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   UNK_0xe742(); // UNK_0xe742
@@ -3420,11 +3415,9 @@ void UNK_0xec39() // UNK_0xec39
   Push(pp_UNK_0xd9f0); // UNK_0xd9f0
   _1_dot_5_at_(); // 1.5@
   D0_eq_(); // D0=
-  Push(Read16(pp_UNK_0xd9ec)); // UNK_0xd9ec @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xd9ec)==0?1:0); // UNK_0xd9ec @ 0=
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsPORT)); // ?PORT @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_IsPORT)==0?1:0); // ?PORT @ 0=
   Push(Pop() & Pop()); // AND
   CTXT_n_(); // CTXT#
   Push(1);
@@ -3649,10 +3642,7 @@ void IsUNNEST() // ?UNNEST
 
 void IsDOUBLE_dash_UNNEST() // ?DOUBLE-UNNEST
 {
-  Push(Read16(pp_UNK_0xd9ec)); // UNK_0xd9ec @
-  Push(Read16(pp_SKIP2NEST)); // SKIP2NEST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_UNK_0xd9ec) & !Read16(pp_SKIP2NEST)); // UNK_0xd9ec @ SKIP2NEST @ NOT AND
   CTXT_n_(); // CTXT#
   Push(1);
   Push((Pop()==Pop())?1:0); // =
@@ -3749,9 +3739,7 @@ void UNK_0xee53() // UNK_0xee53
 void _ro_GET_dash_AUX() // (GET-AUX
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp__n_AUX)==5?1:0)); // #AUX @ 5 = NOT
   if (Pop() == 0) return;
   DrawAUXSYS(); // .AUXSYS
 }
@@ -4223,9 +4211,7 @@ void COME_dash_HITHER() // COME-HITHER
 
   label5:
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(0x63ef+INST_dash_QTY.offset)==3?1:0)); // INST-QTY<IFIELD> @ 3 = NOT
   if (Pop() == 0) goto label4;
   INEXT(); // INEXT
   goto label5;

@@ -1481,9 +1481,7 @@ void UNK_0xedc5() // UNK_0xedc5
     Push(pp_NCRS); // NCRS
     _plus__ex__2(); // +!_2
     Push(Read16(pp_NCRS)); // NCRS @
-    Push(Read16(pp_OCRS)); // OCRS @
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(pp_NCRS)==Read16(pp_OCRS)?1:0)); // NCRS @ OCRS @ = NOT
     if (Pop() != 0)
     {
       UNK_0xed4b(); // UNK_0xed4b
@@ -1797,8 +1795,7 @@ void UNK_0xf082() // UNK_0xf082
   Push(1);
   _0MESS(); // 0MESS
   GetCRS(); // @CRS
-  Push(Read16(0x65e1+UNK_0xe514.offset)&0xFF); // UNK_0xe514<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x65e1+UNK_0xe514.offset)&0xFF)==0?1:0); // UNK_0xe514<IFIELD> C@ 0=
   if (Pop() != 0)
   {
     Push(0x65e1+UNK_0xe689.offset); // UNK_0xe689<IFIELD>
@@ -2152,8 +2149,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
 void UNK_0xf3f8() // UNK_0xf3f8
 {
   UNK_0xe4e0(); // UNK_0xe4e0
-  Push(Read16(0x65e1+UNK_0xe514.offset)&0xFF); // UNK_0xe514<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x65e1+UNK_0xe514.offset)&0xFF)==0?1:0); // UNK_0xe514<IFIELD> C@ 0=
   if (Pop() != 0)
   {
     Push(0);

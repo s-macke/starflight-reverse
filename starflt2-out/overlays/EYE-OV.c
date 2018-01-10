@@ -246,8 +246,7 @@ void UNK_0xebe7() // UNK_0xebe7
   Push(0x0036);
   Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Pop() & Pop()); // AND
 }
 
@@ -617,8 +616,7 @@ void UNK_0xee3f() // UNK_0xee3f
 void UNK_0xeebd() // UNK_0xeebd
 {
   unsigned short int i, imax;
-  Push(Read16(pp_UNK_0xed9b)); // UNK_0xed9b @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0xed9b)); // UNK_0xed9b @ NOT
   if (Pop() != 0)
   {
     DARK(); // DARK
@@ -812,8 +810,7 @@ void UNK_0xf078() // UNK_0xf078
 {
   UNK_0xebdf(); // UNK_0xebdf
   Push(0x09c4);
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() != 0)
   {
     Push(5);
@@ -913,8 +910,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
 
 void UNK_0xf0fe() // UNK_0xf0fe
 {
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(pp_PAST); // PAST
   Store_2(); // !_2
   INIT_dash_IC(); // INIT-IC
@@ -927,8 +923,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   UNK_0xf0ca(); // UNK_0xf0ca
   UNK_0xf078(); // UNK_0xf078
   Push(0x1388);
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() != 0)
   {
     Push(5);

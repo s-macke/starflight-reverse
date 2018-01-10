@@ -1697,8 +1697,7 @@ void UNK_0xe88d() // UNK_0xe88d
   WRITE_dash_R(); // WRITE-R
   Pop(); Pop(); // 2DROP
   INIT(); // INIT
-  Push(Read16(pp_DERROR)); // DERROR @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_DERROR)==0?1:0); // DERROR @ 0=
 }
 
 
@@ -1996,8 +1995,7 @@ void UNK_0xeaad() // UNK_0xeaad
 {
   unsigned short int i, imax;
   Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
-  Push(Read16(pp_DBUF_dash_SE)); // DBUF-SE @
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_BUF_dash_SEG)==Read16(pp_DBUF_dash_SE)?1:0); // BUF-SEG @ DBUF-SE @ =
   Push(Read16(pp_BLTSEG)); // BLTSEG @
   UNK_0xea79(); // UNK_0xea79
   Push(Read16(pp__3DSEG)); // 3DSEG @
@@ -3059,8 +3057,7 @@ void UNK_0xf259() // UNK_0xf259
     UNK_0xf168(); // UNK_0xf168
     Push(pp_UNK_0xdd2e); // UNK_0xdd2e
     Push(Read16(pp_OPTIO)); // OPTIO @
-    Push(1);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_OPTIO)==1?1:0); // OPTIO @ 1 =
     if (Pop() != 0)
     {
       ON_2(); // ON_2
@@ -3107,8 +3104,7 @@ void UNK_0xf358() // UNK_0xf358
   DARK(); // DARK
   UNK_0xe45f(); // UNK_0xe45f
   UNK_0xef88(); // UNK_0xef88
-  Push(Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @ NOT
   if (Pop() == 0) return;
   UNK_0xf259(); // UNK_0xf259
 }
@@ -3128,8 +3124,7 @@ void UNK_0xf370() // UNK_0xf370
   {
     UNK_0xef88(); // UNK_0xef88
   }
-  Push(Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @ NOT
   if (Pop() == 0) return;
   UNK_0xe60c(); // UNK_0xe60c
 }
@@ -3153,8 +3148,7 @@ void UNK_0xf38e() // UNK_0xf38e
 void UNK_0xf396() // UNK_0xf396
 {
   UNK_0xef88(); // UNK_0xef88
-  Push(Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0xdd2e)); // UNK_0xdd2e @ NOT
   if (Pop() == 0) return;
   Push(Read16(pp__bo__n_CACHE)); // [#CACHE @
   Push(pp__n_CACHE); // #CACHE

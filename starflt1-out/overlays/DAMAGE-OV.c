@@ -579,8 +579,7 @@ void UNK_0xec8a() // UNK_0xec8a
   UNK_0xeac1(); // UNK_0xeac1
   UNK_0xebfc(); // UNK_0xebfc
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_IsNEB)==0?1:0); // ?NEB @ 0=
   Push(Pop() & Pop()); // AND
 }
 
@@ -592,8 +591,7 @@ void UNK_0xec8a() // UNK_0xec8a
 void UNK_0xeca0() // UNK_0xeca0
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==1?1:0); // #AUX @ 1 =
   if (Pop() != 0)
   {
     Push(0xbf05); // probable 'OV/STXT'
@@ -610,8 +608,7 @@ void UNK_0xeca0() // UNK_0xeca0
 void UNK_0xecbc() // UNK_0xecbc
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() != 0)
   {
     Push(0xbe4b); // probable 'OVDBA'
@@ -1294,13 +1291,7 @@ void UNK_0xf136() // UNK_0xf136
 
 void UNK_0xf162() // UNK_0xf162
 {
-  Push(Read16(0x63ef+UNK_0xeb40.offset)); // UNK_0xeb40<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() | Pop()); // OR
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  Push(Pop() | Pop()); // OR
+  Push(((Read16(0x63ef+UNK_0xeb40.offset)==0?1:0) | (Read16(cc_IsA_dash_SHIE)==0?1:0)) | Read16(pp_IsNEB)); // UNK_0xeb40<IFIELD> @ 0= ?A-SHIE 0= OR ?NEB @ OR
   if (Pop() != 0)
   {
     Push(0xeb3b); // probable 'UNK_0xeb3b'
@@ -1311,8 +1302,7 @@ void UNK_0xf162() // UNK_0xf162
     UNK_0xec30(); // UNK_0xec30
   }
   UNK_0xf136(); // UNK_0xf136
-  Push(Read16(0x63ef+UNK_0xeb3b.offset)); // UNK_0xeb3b<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(0x63ef+UNK_0xeb3b.offset)==0?1:0); // UNK_0xeb3b<IFIELD> @ 0=
   if (Pop() == 0) return;
   UNK_0xf08a(); // UNK_0xf08a
 }
@@ -1467,8 +1457,7 @@ void UNK_0xf26a() // UNK_0xf26a
   MAX(); // MAX
   Push(0x63ef+UNK_0xeba3.offset); // UNK_0xeba3<IFIELD>
   Store_3(); // !_3
-  Push(Read16(0x63ef+UNK_0xeba3.offset)); // UNK_0xeba3<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(0x63ef+UNK_0xeba3.offset)==0?1:0); // UNK_0xeba3<IFIELD> @ 0=
   if (Pop() == 0) return;
   Push(0xbe2b); // probable 'OV/DA'
   MODULE(); // MODULE
@@ -1500,8 +1489,7 @@ void UNK_0xf2ac() // UNK_0xf2ac
   ENGINE_dash_(); // ENGINE-
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(Read16(pp_IsAUTO)); // ?AUTO @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsAUTO)); // ?AUTO @ NOT
   if (Pop() != 0)
   {
     Push(5);

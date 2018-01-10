@@ -1401,8 +1401,7 @@ void ICREATE() // ICREATE
   Push(Read8(Pop())&0xFF); // C@
   GET_dash_NEW_dash_INSTANCE(); // GET-NEW-INSTANCE
   Pop(); // DROP
-  Push(Read16(pp_IsRECYCLED)); // ?RECYCLED @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsRECYCLED)); // ?RECYCLED @ NOT
   if (Pop() != 0)
   {
     CI(); // CI

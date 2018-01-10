@@ -355,8 +355,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
 void UNK_0xf31b() // UNK_0xf31b
 {
   Push(Read16(pp_PLHI)); // PLHI @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_PLHI)==-1?1:0); // PLHI @ -1 =
   if (Pop() != 0)
   {
     Push(0x01e0);
@@ -623,8 +622,7 @@ void DrawMERCATOR() // .MERCATOR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   DrawREGION(); // .REGION
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
@@ -643,9 +641,7 @@ void DrawMERCATOR() // .MERCATOR
 void GETSITE_2() // GETSITE_2
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp__n_AUX)==4?1:0)); // #AUX @ 4 = NOT
   if (Pop() != 0)
   {
     DrawMERCATOR(); // .MERCATOR

@@ -1115,10 +1115,7 @@ void UNK_0xe89c() // UNK_0xe89c
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
     {
-      Push(Read16(pp_PAST)); // PAST @
-      if (Pop() == 0) Push(1); else Push(0); // NOT
-      Push(Read16(0x65e1+UNK_0xe39c.offset)&0xFF); // UNK_0xe39c<IFIELD> C@
-      Push(Pop() | Pop()); // OR
+      Push(!Read16(pp_PAST) | Read16(0x65e1+UNK_0xe39c.offset)&0xFF); // PAST @ NOT UNK_0xe39c<IFIELD> C@ OR
     } else
     {
       Push(1);
@@ -1967,8 +1964,7 @@ void UNK_0xeeeb() // UNK_0xeeeb
   Push(Read16(0x65e1+UNK_0xe35b.offset)&0xFF); // UNK_0xe35b<IFIELD> C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Read16(0x65e1+UNK_0xe360.offset)&0xFF); // UNK_0xe360<IFIELD> C@
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
@@ -2337,10 +2333,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_NAV_dash_TIM); // NAV-TIM
   _2_at_(); // 2@
   D_gt_(); // D>
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_CONTEXT_3) & (Read16(pp_CONTEXT_3)==3?1:0)); // CONTEXT_3 @ CONTEXT_3 @ 3 = AND
   if (Pop() != 0)
   {
     UNK_0xf131(); // UNK_0xf131
@@ -2415,9 +2408,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   } else
   {
     Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    Push(3);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(pp_CONTEXT_3)==3?1:0)); // CONTEXT_3 @ 3 = NOT
     NOMAP(); // NOMAP
     Push(0);
   }

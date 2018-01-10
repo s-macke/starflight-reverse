@@ -2058,8 +2058,7 @@ void UNK_0xe68e() // UNK_0xe68e
 {
   SetColor(DK_dash_GREEN);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsNEB)); // ?NEB @ NOT
   if (Pop() != 0)
   {
     DARK(); // DARK
@@ -2104,8 +2103,7 @@ void UNK_0xe6dc() // UNK_0xe6dc
   VCLIPSET(); // VCLIPSET
   UNK_0xe68e(); // UNK_0xe68e
   UNK_0xe5fe(); // UNK_0xe5fe
-  Push(Read16(pp_UNK_0xe5fa)); // UNK_0xe5fa @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xe5fa)==0?1:0); // UNK_0xe5fa @ 0=
   if (Pop() != 0)
   {
     V_gt_DISPLAY(); // V>DISPLAY
@@ -3831,8 +3829,7 @@ void UNK_0xf0d3() // UNK_0xf0d3
     Push(2);
     Push((Pop()==Pop())?1:0); // =
   } while(Pop() == 0);
-  Push(Read16(pp_IsFUEL_dash_DIE)); // ?FUEL-DIE @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsFUEL_dash_DIE)); // ?FUEL-DIE @ NOT
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("SAFE LANDING, CAPTAIN.");
@@ -3910,20 +3907,14 @@ void UNK_0xf246() // UNK_0xf246
     UNK_0xf087(); // UNK_0xf087
     UNK_0xf023(); // UNK_0xf023
     Push(Read16(pp_UNK_0xdbac)); // UNK_0xdbac @
-    Push(0x0167);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(pp_UNK_0xdbac)==0x0167?1:0)); // UNK_0xdbac @ 0x0167 = NOT
     if (Pop() != 0)
     {
       UNK_0xf097(); // UNK_0xf097
     }
     Push(Read16(pp_UNK_0xdbcc)); // UNK_0xdbcc @
-    Push(0x0031);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Read16(pp_UNK_0xdbac)); // UNK_0xdbac @
-    Push(0x0167);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() & Pop()); // AND
+    Push(Read16(pp_UNK_0xdbcc)==0x0031?1:0); // UNK_0xdbcc @ 0x0031 =
+    Push(Read16(pp_UNK_0xdbac) & (Read16(pp_UNK_0xdbac)==0x0167?1:0)); // UNK_0xdbac @ UNK_0xdbac @ 0x0167 = AND
   } while(Pop() == 0);
   Push(pp_UNK_0xdbc0); // UNK_0xdbc0
   OFF(); // OFF
@@ -4048,8 +4039,7 @@ void UNK_0xf314() // UNK_0xf314
     UNK_0xe6dc(); // UNK_0xe6dc
     UNK_0xf2fc(); // UNK_0xf2fc
     Push(Read16(pp_UNK_0xdc10)); // UNK_0xdc10 @
-    Push(Read16(pp_UNK_0xdbc4)); // UNK_0xdbc4 @
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_UNK_0xdc10)==Read16(pp_UNK_0xdbc4)?1:0); // UNK_0xdc10 @ UNK_0xdbc4 @ =
   } while(Pop() == 0);
 }
 

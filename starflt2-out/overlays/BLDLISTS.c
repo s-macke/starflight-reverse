@@ -1518,8 +1518,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
   a = Pop(); // >R
   Push(Read16(a)); // R@
   _gt_FLAG(); // >FLAG
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Pop() & Pop()); // AND
   Push(a); // R>
   SWAP(); // SWAP

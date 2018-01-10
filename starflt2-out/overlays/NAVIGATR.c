@@ -189,14 +189,10 @@ void UNK_0xf202() // UNK_0xf202
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  Push(Read16(pp_Is3)); // ?3 @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_IsNEB) & !Read16(pp_Is3)); // ?NEB @ ?3 @ NOT AND
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(Read16(0x65e1+UNK_0xf196.offset)); // UNK_0xf196<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(0x65e1+UNK_0xf196.offset)==0?1:0); // UNK_0xf196<IFIELD> @ 0=
   ICLOSE(); // ICLOSE
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
@@ -218,8 +214,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_BTN_dash_REC)==3?1:0); // BTN-REC @ 3 =
   if (Pop() != 0)
   {
     Push(3);
@@ -237,10 +232,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 void UNK_0xf301() // UNK_0xf301
 {
-  Push(Read16(pp_Is3)); // ?3 @
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp_Is3) | !Read16(pp_IsNEB)); // ?3 @ ?NEB @ NOT OR
 }
 
 
@@ -253,11 +245,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(6);
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
-  Push(Read16(pp_NLR)); // NLR @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_NLR) & !(Read16(pp_NLR)==-1?1:0)); // NLR @ NLR @ -1 = NOT AND
   UNK_0xf301(); // UNK_0xf301
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
@@ -280,8 +268,7 @@ void UNK_0xf311() // UNK_0xf311
     return;
   }
   Push(Read16(pp_NLR)); // NLR @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_NLR)==-1?1:0); // NLR @ -1 =
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("SHIELDS INOPERATIVE");

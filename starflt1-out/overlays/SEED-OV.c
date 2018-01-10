@@ -381,8 +381,7 @@ void UNK_0xed49() // UNK_0xed49
   _2DUP(); // 2DUP
   IsINVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16(pp_MOVED)); // MOVED @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_MOVED)==0?1:0); // MOVED @ 0=
   Push(Pop() | Pop()); // OR
 }
 
@@ -839,9 +838,7 @@ void UNK_0xf02b() // UNK_0xf02b
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xf001(); // UNK_0xf001
-  Push(Read16(pp_RECORD_n_)); // RECORD# @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_RECORD_n_)==0?1:0)); // RECORD# @ 0= NOT
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {

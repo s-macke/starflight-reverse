@@ -937,8 +937,7 @@ void UNK_0xe7f4() // UNK_0xe7f4
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(Read16(pp_UNK_0xe43a)); // UNK_0xe43a @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_UNK_0xe43a)); // UNK_0xe43a @ NOT
     if (Pop() != 0)
     {
       UNK_0xe72f(); // UNK_0xe72f
@@ -1016,8 +1015,7 @@ void UNK_0xe872() // UNK_0xe872
   Push(pp_UNK_0xe436); // UNK_0xe436
   _099(); // 099
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==4?1:0); // CONTEXT_3 @ 4 =
   if (Pop() != 0)
   {
     UNK_0xe832(); // UNK_0xe832
@@ -1035,9 +1033,7 @@ void UNK_0xe872() // UNK_0xe872
     } while(i<imax); // (LOOP)
 
   }
-  Push(Read16(pp_UNK_0xe436)); // UNK_0xe436 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_UNK_0xe436)==0?1:0)); // UNK_0xe436 @ 0= NOT
   Push(pp_UNK_0xe436); // UNK_0xe436
   Store_2(); // !_2
 }
@@ -1970,8 +1966,7 @@ void UNK_0xf05f() // UNK_0xf05f
   Y_slash_N(); // Y/N
   if (Pop() != 0)
   {
-    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
     Push(pp__ro_PLANET); // (PLANET
     _1_dot_5_at_(); // 1.5@
     D0_eq_(); // D0=
@@ -2048,8 +2043,7 @@ void UNK_0xf12a() // UNK_0xf12a
     return;
   }
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==1?1:0); // CONTEXT_3 @ 1 =
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -2066,8 +2060,7 @@ void UNK_0xf12a() // UNK_0xf12a
 void _ro__slash_LAUNCH_slash_LAND_rc_() // (/LAUNCH/LAND)
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==1?1:0); // CONTEXT_3 @ 1 =
   if (Pop() != 0)
   {
     Push(5);
@@ -2200,11 +2193,7 @@ void UNK_0xf22e() // UNK_0xf22e
   Push(0x000f);
   Push(0x0011);
   WITHIN(); // WITHIN
-  Push(Read16(pp_HYDRO)); // HYDRO @
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_HYDRO) | (Read16(pp_HYDRO)==2?1:0))); // HYDRO @ HYDRO @ 2 = OR NOT
 }
 
 
@@ -2215,13 +2204,8 @@ void UNK_0xf22e() // UNK_0xf22e
 void UNK_0xf24c() // UNK_0xf24c
 {
   Push(Read16(pp_HYDRO)); // HYDRO @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_ATMO)); // ATMO @
-  Push(0x0015);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(Read16(pp_HYDRO)==5?1:0); // HYDRO @ 5 =
+  Push(!(Read16(pp_ATMO) | (Read16(pp_ATMO)==0x0015?1:0))); // ATMO @ ATMO @ 0x0015 = OR NOT
 }
 
 

@@ -1002,13 +1002,11 @@ void UNK_0xe1b1() // UNK_0xe1b1
   Push(pp_CTX); // CTX
   _plus__ex_(); // +!
   Push(Read16(pp_CTX)); // CTX @
-  Push(0x0024);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CTX)==0x0024?1:0); // CTX @ 0x0024 =
   if (Pop() == 0) return;
   INEXT(); // INEXT
   Push(Read16(pp_CTY)); // CTY @
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CTY)==6?1:0); // CTY @ 6 =
   if (Pop() != 0)
   {
     SetColor(BLACK);
@@ -1123,8 +1121,7 @@ void UNK_0xe291() // UNK_0xe291
   }
   INEXT(); // INEXT
   Push(Read16(pp_CTY)); // CTY @
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CTY)==6?1:0); // CTY @ 6 =
   if (Pop() != 0)
   {
     IsFIRST(); // ?FIRST
@@ -1777,8 +1774,7 @@ void UNK_0xe68b() // UNK_0xe68b
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(Read16(pp_UNK_0xde3a)); // UNK_0xde3a @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_UNK_0xde3a)); // UNK_0xde3a @ NOT
     if (Pop() != 0)
     {
       UNK_0xe5c6(); // UNK_0xe5c6
@@ -1856,8 +1852,7 @@ void UNK_0xe709() // UNK_0xe709
   Push(pp_UNK_0xde36); // UNK_0xde36
   OFF(); // OFF
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==4?1:0); // CONTEXT-ID# @ 4 =
   if (Pop() != 0)
   {
     UNK_0xe6c9(); // UNK_0xe6c9
@@ -1875,9 +1870,7 @@ void UNK_0xe709() // UNK_0xe709
     } while(i<imax); // (LOOP)
 
   }
-  Push(Read16(pp_UNK_0xde36)); // UNK_0xde36 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_UNK_0xde36)==0?1:0)); // UNK_0xde36 @ 0= NOT
   Push(pp_UNK_0xde36); // UNK_0xde36
   Store_3(); // !_3
 }
@@ -3097,8 +3090,7 @@ void UNK_0xf007() // UNK_0xf007
   Y_slash_N(); // Y/N
   if (Pop() != 0)
   {
-    Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Read16(pp_CONTEXT_dash_ID_n_)==0?1:0); // CONTEXT-ID# @ 0=
     Push(pp__ro_PLANET); // (PLANET
     _1_dot_5_at_(); // 1.5@
     D0_eq_(); // D0=
@@ -3140,8 +3132,7 @@ void UNK_0xf007() // UNK_0xf007
     D_st_(); // D<
     if (Pop() != 0)
     {
-      Push(Read16(pp_IsSECURE)); // ?SECURE @
-      if (Pop() == 0) Push(1); else Push(0); // 0=
+      Push(Read16(pp_IsSECURE)==0?1:0); // ?SECURE @ 0=
       if (Pop() != 0)
       {
         Push(Read16(pp_STARDATE) + 4); // STARDATE @ 4 +
@@ -3185,8 +3176,7 @@ void UNK_0xf0ea() // UNK_0xf0ea
     return;
   }
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==1?1:0); // CONTEXT-ID# @ 1 =
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
@@ -3342,11 +3332,7 @@ void UNK_0xf1fb() // UNK_0xf1fb
   Push(0x000f);
   Push(0x0011);
   WITHIN(); // WITHIN
-  Push(Read16(pp_HYDRO)); // HYDRO @
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_HYDRO) | (Read16(pp_HYDRO)==2?1:0))); // HYDRO @ HYDRO @ 2 = OR NOT
 }
 
 
@@ -3357,13 +3343,8 @@ void UNK_0xf1fb() // UNK_0xf1fb
 void UNK_0xf219() // UNK_0xf219
 {
   Push(Read16(pp_HYDRO)); // HYDRO @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_ATMO)); // ATMO @
-  Push(0x0015);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(Read16(pp_HYDRO)==5?1:0); // HYDRO @ 5 =
+  Push(!(Read16(pp_ATMO) | (Read16(pp_ATMO)==0x0015?1:0))); // ATMO @ ATMO @ 0x0015 = OR NOT
 }
 
 
@@ -3442,8 +3423,7 @@ void UNK_0xf292() // UNK_0xf292
   }
   Push(0xc5ca); // probable 'T+BALANCE'
   MODULE(); // MODULE
-  Push(Read16(0x63ef+UNK_0xe0aa.offset)&0xFF); // UNK_0xe0aa<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+UNK_0xe0aa.offset)&0xFF)==0?1:0); // UNK_0xe0aa<IFIELD> C@ 0=
   _3_star_(); // 3*
   Push(0xc542); // probable 'OVTRANSACT'
   MODULE(); // MODULE

@@ -1462,8 +1462,7 @@ void UNK_0xeed1() // UNK_0xeed1
   Push(0x5f90); Push(0x0001);
   D_plus_(); // D+
   D_gt_(); // D>
-  Push(Read16(pp_UNK_0xe806)); // UNK_0xe806 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xe806)==0?1:0); // UNK_0xe806 @ 0=
   Push(Pop() & Pop()); // AND
   Push(Pop() | Pop()); // OR
   UNK_0xe9b0(); // UNK_0xe9b0

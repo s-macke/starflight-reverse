@@ -666,8 +666,7 @@ void UNK_0xe930() // UNK_0xe930
   UNK_0xe726(); // UNK_0xe726
   Push(Read16(pp_IsSUP)); // ?SUP @
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsNEB)); // ?NEB @ NOT
   Push(0x65e1+UNK_0xe7e5.offset); // UNK_0xe7e5<IFIELD>
   UNK_0xe85a(); // UNK_0xe85a
   Push(7);
@@ -684,8 +683,7 @@ void UNK_0xe930() // UNK_0xe930
 void UNK_0xe952() // UNK_0xe952
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==1?1:0); // #AUX @ 1 =
   if (Pop() != 0)
   {
     Push(0xc0a1); // probable 'OV/STX'
@@ -702,8 +700,7 @@ void UNK_0xe952() // UNK_0xe952
 void UNK_0xe96e() // UNK_0xe96e
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() != 0)
   {
     Push(0xbcb8); // probable 'OVDBA'
@@ -1427,17 +1424,10 @@ void UNK_0xee11() // UNK_0xee11
 void UNK_0xee67() // UNK_0xee67
 {
   unsigned short int a;
-  Push(Read16(0x65e1+UNK_0xe7a0.offset)); // UNK_0xe7a0<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() | Pop()); // OR
+  Push((Read16(0x65e1+UNK_0xe7a0.offset)==0?1:0) | !Read16(cc_IsA_dash_SHIE)); // UNK_0xe7a0<IFIELD> @ 0= ?A-SHIE NOT OR
   UNK_0xe6e0(); // UNK_0xe6e0
   Push(Pop() | Pop()); // OR
-  Push(Read16(pp_NLR)); // NLR @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp_NLR) | (Read16(pp_NLR)==1?1:0)); // NLR @ NLR @ 1 = OR
   if (Pop() != 0)
   {
     Push(0xe79b); // probable 'UNK_0xe79b'
@@ -1678,8 +1668,7 @@ void UNK_0xf013() // UNK_0xf013
   MAX(); // MAX
   Push(0x65e1+UNK_0xe808.offset); // UNK_0xe808<IFIELD>
   Store_2(); // !_2
-  Push(Read16(0x65e1+UNK_0xe808.offset)); // UNK_0xe808<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(0x65e1+UNK_0xe808.offset)==0?1:0); // UNK_0xe808<IFIELD> @ 0=
   if (Pop() == 0) return;
   Push(0xbc98); // probable 'OV/DA'
   MODULE(); // MODULE
@@ -1712,8 +1701,7 @@ void UNK_0xf059() // UNK_0xf059
   ENGINE_dash_(); // ENGINE-
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(Read16(pp_IsAUTO)); // ?AUTO @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_IsAUTO)==0?1:0); // ?AUTO @ 0=
   if (Pop() != 0)
   {
     Push(5);
@@ -2424,9 +2412,7 @@ void UNK_0xf4a9() // UNK_0xf4a9
     Push(0x0064);
     UNK_0xf437(); // UNK_0xf437
     Push(Read16(pp__n_AUX)); // #AUX @
-    Push(1);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(pp__n_AUX)==1?1:0)); // #AUX @ 1 = NOT
     if (Pop() != 0)
     {
       Push(0xc090); // probable 'OV/STA'

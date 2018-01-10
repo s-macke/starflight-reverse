@@ -330,8 +330,7 @@ void UNK_0xf28e() // UNK_0xf28e
   } else
   {
     Push(Read16(0x65e1+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
-    Push(0x0064);
-    Push((Pop()==Pop())?1:0); // =
+    Push((Read16(0x65e1+UNK_0xf083.offset)&0xFF)==0x0064?1:0); // UNK_0xf083<IFIELD> C@ 0x0064 =
     if (Pop() != 0)
     {
       UNK_0xf219(); // UNK_0xf219
@@ -469,8 +468,7 @@ void UNK_0xf392() // UNK_0xf392
   IOPEN(); // IOPEN
 
   label2:
-  Push((Read16(0x65e1+UNK_0xf088.offset)&0xFF) & 8); // UNK_0xf088<IFIELD> C@ 8 AND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!((Read16(0x65e1+UNK_0xf088.offset)&0xFF) & 8)); // UNK_0xf088<IFIELD> C@ 8 AND NOT
   if (Pop() == 0) goto label1;
   INEXT(); // INEXT
   goto label2;

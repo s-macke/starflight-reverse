@@ -1069,8 +1069,7 @@ void UNK_0xf429() // UNK_0xf429
     Store_2(); // !_2
     UNK_0xf417(); // UNK_0xf417
   }
-  Push(Read16(pp_UNK_0xef66)); // UNK_0xef66 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xef66)==0?1:0); // UNK_0xef66 @ 0=
   if (Pop() == 0) return;
   UNK_0xf312(); // UNK_0xf312
   UNK_0xf2fc(); // UNK_0xf2fc
@@ -1152,8 +1151,7 @@ void UNK_0xf4cb() // UNK_0xf4cb
 void UNK_0xf4df() // UNK_0xf4df
 {
   Push(Read16(pp_IsREPAIR)); // ?REPAIR @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_IsREPAIR)==1?1:0); // ?REPAIR @ 1 =
   if (Pop() == 0) return;
   UNK_0xf01c(); // UNK_0xf01c
   Pop(); // DROP

@@ -542,10 +542,7 @@ void UNK_0xe7cf() // UNK_0xe7cf
 
 void DrawSTARDATE() // .STARDATE
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp__n_AUX) | (Read16(pp__n_AUX)==1?1:0)); // #AUX @ #AUX @ 1 = OR
   if (Pop() == 0) return;
   Push(0x0068);
   Push(0x00b7);
@@ -602,8 +599,7 @@ void UNK_0xe86b() // UNK_0xe86b
 {
   Push(7);
   UNK_0xe754(); // UNK_0xe754
-  Push(Read16(0x63ef+UNK_0xe628.offset) & 3); // UNK_0xe628<IFIELD> @ 3 AND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(0x63ef+UNK_0xe628.offset) & 3)); // UNK_0xe628<IFIELD> @ 3 AND NOT
   if (Pop() != 0)
   {
     PRINT("UN", 2); // (.")
@@ -2179,8 +2175,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   _st_(); // <
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsPORT)); // ?PORT @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsPORT)); // ?PORT @ NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(2);

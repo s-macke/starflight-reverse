@@ -491,11 +491,7 @@ void UNK_0xeda9() // UNK_0xeda9
 void UNK_0xedb5() // UNK_0xedb5
 {
   Push(Read16(pp_IsSUP)); // ?SUP @
-  Push(Read16(pp_NLR)); // NLR @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_NLR) & !(Read16(pp_NLR)==-1?1:0)); // NLR @ NLR @ -1 = NOT AND
   if (Pop() != 0)
   {
     UNK_0xec44(); // UNK_0xec44
@@ -1606,11 +1602,7 @@ void DONULL() // DONULL
 {
   CTINIT(); // CTINIT
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_CONTEXT_3)==4?1:0) & (Read16(pp_NOF)==0?1:0)); // CONTEXT_3 @ 4 = NOF @ 0= AND
   if (Pop() == 0) goto label1;
   Push(pp_NOF); // NOF
   ON_2(); // ON_2
@@ -1675,11 +1667,7 @@ void DONULL() // DONULL
 void TARG() // TARG
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_CONTEXT_3)==4?1:0) & (Read16(pp_NOF)==0?1:0)); // CONTEXT_3 @ 4 = NOF @ 0= AND
   if (Pop() != 0)
   {
     Push(pp_NOF); // NOF

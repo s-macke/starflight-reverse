@@ -1981,8 +1981,7 @@ void UNK_0xe5d2() // UNK_0xe5d2
 {
   NBCLR(); // NBCLR
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_IsNEB)); // ?NEB @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsNEB)); // ?NEB @ NOT
   if (Pop() != 0)
   {
     DARK(); // DARK
@@ -2027,8 +2026,7 @@ void UNK_0xe620() // UNK_0xe620
   VCLIPSE(); // VCLIPSE
   UNK_0xe5d2(); // UNK_0xe5d2
   UNK_0xe542(); // UNK_0xe542
-  Push(Read16(pp_UNK_0xe53e)); // UNK_0xe53e @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xe53e)==0?1:0); // UNK_0xe53e @ 0=
   if (Pop() != 0)
   {
     V_gt_DISPL(); // V>DISPL
@@ -3712,8 +3710,7 @@ void UNK_0xeffd() // UNK_0xeffd
     Push(2);
     Push((Pop()==Pop())?1:0); // =
   } while(Pop() == 0);
-  Push(Read16(pp_IsFUEL_dash_D)); // ?FUEL-D @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsFUEL_dash_D)); // ?FUEL-D @ NOT
   if (Pop() == 0) return;
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("SAFE LANDING, COMMANDER.");
@@ -3791,20 +3788,14 @@ void UNK_0xf16a() // UNK_0xf16a
     UNK_0xefc9(); // UNK_0xefc9
     UNK_0xef65(); // UNK_0xef65
     Push(Read16(pp_UNK_0xdb5c)); // UNK_0xdb5c @
-    Push(0x0167);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Read16(pp_UNK_0xdb5c)==0x0167?1:0)); // UNK_0xdb5c @ 0x0167 = NOT
     if (Pop() != 0)
     {
       UNK_0xefd9(); // UNK_0xefd9
     }
     Push(Read16(pp_UNK_0xdb7c)); // UNK_0xdb7c @
-    Push(0x0031);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Read16(pp_UNK_0xdb5c)); // UNK_0xdb5c @
-    Push(0x0167);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() & Pop()); // AND
+    Push(Read16(pp_UNK_0xdb7c)==0x0031?1:0); // UNK_0xdb7c @ 0x0031 =
+    Push(Read16(pp_UNK_0xdb5c) & (Read16(pp_UNK_0xdb5c)==0x0167?1:0)); // UNK_0xdb5c @ UNK_0xdb5c @ 0x0167 = AND
   } while(Pop() == 0);
   Push(pp_UNK_0xdb70); // UNK_0xdb70
   _099(); // 099
@@ -3929,8 +3920,7 @@ void UNK_0xf238() // UNK_0xf238
     UNK_0xe620(); // UNK_0xe620
     UNK_0xf220(); // UNK_0xf220
     Push(Read16(pp_UNK_0xdbc0)); // UNK_0xdbc0 @
-    Push(Read16(pp_UNK_0xdb74)); // UNK_0xdb74 @
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_UNK_0xdbc0)==Read16(pp_UNK_0xdb74)?1:0); // UNK_0xdbc0 @ UNK_0xdb74 @ =
   } while(Pop() == 0);
 }
 

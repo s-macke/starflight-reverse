@@ -408,13 +408,8 @@ IFieldType UNK_0xdfaa = {ORIGINATORIDX, 0x0b, 0x01};
 
 void UNK_0xdfb7() // UNK_0xdfb7
 {
-  Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16(pp__pe_SLUG)); // %SLUG @
-  Push(0x0064);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_STAR_dash_HR)==0?1:0); // STAR-HR @ 0=
+  Push(Read16(pp__pe_SLUG) & !(Read16(pp__pe_SLUG)==0x0064?1:0)); // %SLUG @ %SLUG @ 0x0064 = NOT AND
   if (Pop() == 0) return;
   Push(Read16(pp__pe_SLUG)); // %SLUG @
   Push(0x000a);
@@ -915,10 +910,7 @@ void IsHEAVY() // ?HEAVY
 
 void UNK_0xe2ea() // UNK_0xe2ea
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp__n_AUX) | (Read16(pp__n_AUX)==1?1:0)); // #AUX @ #AUX @ 1 = OR
   if (Pop() != 0)
   {
     Push(0x0068);
@@ -930,8 +922,7 @@ void UNK_0xe2ea() // UNK_0xe2ea
     Push(1);
     Push(pp_XBLT); // XBLT
     _plus__ex__2(); // +!_2
-    Push(Read16(pp_PAST)); // PAST @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_PAST)); // PAST @ NOT
     if (Pop() != 0)
     {
       Push(Read16(pp_STARDAT)); // STARDAT @
@@ -1155,8 +1146,7 @@ void UNK_0xe498() // UNK_0xe498
 {
   Push(7);
   UNK_0xe207(); // UNK_0xe207
-  Push(Read16(0x65e1+UNK_0xe026.offset) & 3); // UNK_0xe026<IFIELD> @ 3 AND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(0x65e1+UNK_0xe026.offset) & 3)); // UNK_0xe026<IFIELD> @ 3 AND NOT
   if (Pop() != 0)
   {
     PRINT("UN", 2); // (.")
@@ -2951,8 +2941,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   _st_(); // <
   Push(Pop() | Pop()); // OR
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_IsPORT)); // ?PORT @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsPORT)); // ?PORT @ NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(2);
@@ -3145,8 +3134,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
 void UNK_0xf2b4() // UNK_0xf2b4
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==4?1:0); // CONTEXT_3 @ 4 =
   if (Pop() != 0)
   {
     UNK_0xf260(); // UNK_0xf260
@@ -3168,11 +3156,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
 void UNK_0xf2d6() // UNK_0xf2d6
 {
   UNK_0xf20e(); // UNK_0xf20e
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_CONTEXT_3) & !(Read16(pp_CONTEXT_3)==1?1:0)); // CONTEXT_3 @ CONTEXT_3 @ 1 = NOT AND
   UNK_0xf2b4(); // UNK_0xf2b4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -3351,8 +3335,7 @@ void UNK_0xf3c1() // UNK_0xf3c1
   Push(0x0640);
   WITHIN(); // WITHIN
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Pop() & Pop()); // AND
   ICLOSE(); // ICLOSE
 }
@@ -3429,8 +3412,7 @@ void DrawSTARDATE() // .STARDATE
     UNK_0xf40f(); // UNK_0xf40f
     return;
   }
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(pp_HAZE); // HAZE
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR

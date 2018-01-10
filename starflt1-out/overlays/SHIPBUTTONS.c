@@ -414,8 +414,7 @@ void UNK_0xef06() // UNK_0xef06
   Push(pp_BTN_dash_REC); // BTN-REC
   Store_3(); // !_3
   CLR_dash_BUT(); // CLR-BUT
-  Push(Read16(pp_UNK_0xedb6)); // UNK_0xedb6 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xedb6)==0?1:0); // UNK_0xedb6 @ 0=
   if (Pop() != 0)
   {
     UNK_0xeee2(); // UNK_0xeee2
@@ -566,8 +565,7 @@ void UNK_0xefc2() // UNK_0xefc2
 void UNK_0xefe4() // UNK_0xefe4
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(8);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp__n_AUX)==8?1:0); // #AUX @ 8 =
   if (Pop() != 0)
   {
     UNK_0xede2(); // UNK_0xede2
@@ -642,10 +640,7 @@ void UNK_0xf03f() // UNK_0xf03f
 void UNK_0xf077() // UNK_0xf077
 {
   UNK_0xedec(); // UNK_0xedec
-  Push(Read16(pp_IsTV)); // ?TV @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Read16(pp_IsRECALL)); // ?RECALL @
-  Push(Pop() | Pop()); // OR
+  Push(!Read16(pp_IsTV) | Read16(pp_IsRECALL)); // ?TV @ NOT ?RECALL @ OR
   if (Pop() != 0)
   {
     UNK_0xf03f(); // UNK_0xf03f
@@ -675,8 +670,7 @@ void UNK_0xf095() // UNK_0xf095
     SET_STR_AS_PARAM("STANDBY...SCANNING PLANET.");
     DrawTTY(); // .TTY
     Push(Read16(pp_PLHI)); // PLHI @
-    Push(-1);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_PLHI)==-1?1:0); // PLHI @ -1 =
     if (Pop() != 0)
     {
       Push(pp_IsLANDED); // ?LANDED
@@ -749,14 +743,8 @@ void _gt_DISEMBARK() // >DISEMBARK
 
 void UNK_0xf18e() // UNK_0xf18e
 {
-  Push(Read16(pp_IsTV)); // ?TV @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Read16(pp_IsRECALL)); // ?RECALL @
-  Push(Pop() | Pop()); // OR
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(!Read16(pp_IsTV) | Read16(pp_IsRECALL)); // ?TV @ NOT ?RECALL @ OR
+  Push(Read16(pp_CONTEXT_dash_ID_n_) & (Read16(pp_CONTEXT_dash_ID_n_)==5?1:0)); // CONTEXT-ID# @ CONTEXT-ID# @ 5 = AND
   if (Pop() != 0)
   {
     UNK_0xf03f(); // UNK_0xf03f
@@ -1330,8 +1318,7 @@ void _gt_FLT() // >FLT
   SetColor(GREY2);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =
   if (Pop() != 0)
   {
     UNK_0xf4a0(); // UNK_0xf4a0

@@ -780,8 +780,7 @@ void _v_REGION() // |REGION
     SWAP(); // SWAP
     Pop(); // DROP
     Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
-    Push(0xa000);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_BUF_dash_SEG)==0xa000?1:0); // BUF-SEG @ 0xa000 =
     if (Pop() != 0)
     {
       _v_EGA(); // |EGA
@@ -1041,8 +1040,7 @@ void UNK_0xee39() // UNK_0xee39
 void UNK_0xee6f() // UNK_0xee6f
 {
   unsigned short int i, imax;
-  Push(Read16(pp_UNK_0xeced)); // UNK_0xeced @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xeced)==0?1:0); // UNK_0xeced @ 0=
   if (Pop() != 0)
   {
     Push(Read16(pp_UNK_0xecf1)&0xFF); // UNK_0xecf1 C@
@@ -1732,8 +1730,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_ABLT)); // ABLT @
-  Push(pp_UNK_0xf0b5); // UNK_0xf0b5
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_ABLT)==pp_UNK_0xf0b5?1:0); // ABLT @ UNK_0xf0b5 =
   if (Pop() != 0)
   {
     Push(0);
@@ -1798,8 +1795,7 @@ void PORT_dash_PIC() // PORT-PIC
   Push(0x0031);
   Push(0xbe9d); // probable '@.HYBRID'
   MODULE(); // MODULE
-  Push(Read16(pp_IsEGA)); // ?EGA @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_IsEGA)==0?1:0); // ?EGA @ 0=
   if (Pop() != 0)
   {
     UNK_0xf1e9(); // UNK_0xf1e9

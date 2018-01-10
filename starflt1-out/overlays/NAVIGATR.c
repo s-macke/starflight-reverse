@@ -198,8 +198,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_BTN_dash_REC)==3?1:0); // BTN-REC @ 3 =
   if (Pop() != 0)
   {
     Push(3);

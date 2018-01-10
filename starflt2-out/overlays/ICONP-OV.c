@@ -782,8 +782,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
   Push(Read16(0x65e1+UNK_0xf0e5.offset)&0xFF); // UNK_0xf0e5<IFIELD> C@
   if (Pop() != 0)
   {
-    Push(Read16(0x65e1+UNK_0xf0ea.offset)&0xFF); // UNK_0xf0ea<IFIELD> C@
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push((Read16(0x65e1+UNK_0xf0ea.offset)&0xFF)==0?1:0); // UNK_0xf0ea<IFIELD> C@ 0=
     if (Pop() != 0)
     {
       Push(Read16(cc_DEFAULT)); // DEFAULT

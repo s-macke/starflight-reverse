@@ -321,8 +321,7 @@ void UNK_0xe39f() // UNK_0xe39f
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
   Push(Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@
-  Push(0x0053);
-  Push((Pop()==Pop())?1:0); // =
+  Push((Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF)==0x0053?1:0); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@ 0x0053 =
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(4);
   Push((Pop()==Pop())?1:0); // =
@@ -1137,9 +1136,7 @@ void UNK_0xebdb() // UNK_0xebdb
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Push(Read16(Read16(pp_PM_dash_PTR))&0xFF); // PM-PTR @ C@
-      if (Pop() == 0) Push(1); else Push(0); // 0=
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!((Read16(Read16(pp_PM_dash_PTR))&0xFF)==0?1:0)); // PM-PTR @ C@ 0= NOT
       if (Pop() != 0)
       {
         UNK_0xebcf(); // UNK_0xebcf
@@ -1447,8 +1444,7 @@ void UNK_0xed95() // UNK_0xed95
 void UNK_0xeded() // UNK_0xeded
 {
   Push2Words("UNK_0xea2f");
-  Push(Read16(0x63ef+HITS.offset)&0xFF); // HITS<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+HITS.offset)&0xFF)==0?1:0); // HITS<IFIELD> C@ 0=
   if (Pop() != 0)
   {
     Push(0xcaa8); Push(0x0001);
@@ -2129,8 +2125,7 @@ void IsTALK() // ?TALK
       _gt_C_plus_S(); // >C+S
       GetINST_dash_CLASS(); // @INST-CLASS
       Push(Read16(pp_NCRS)); // NCRS @
-      Push(3);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Read16(pp_NCRS)==3?1:0); // NCRS @ 3 =
       if (Pop() != 0)
       {
         CLASS_gt_DE(); // CLASS>DE case

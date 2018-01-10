@@ -1115,8 +1115,7 @@ void UNK_0xeb80() // UNK_0xeb80
       Push(Read16(pp_LKEY)); // LKEY @
       _ro_NOTICES_rc_(); // (NOTICES) case
       Push(Read16(pp_LKEY)); // LKEY @
-      Push(0x0150);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Read16(pp_LKEY)==0x0150?1:0); // LKEY @ 0x0150 =
       if (Pop() != 0)
       {
         UNK_0xe890(); // UNK_0xe890
@@ -1240,8 +1239,7 @@ void UNK_0xed8e() // UNK_0xed8e
   }
   Push(0xc2ed); // probable 'T+BALAN'
   MODULE(); // MODULE
-  Push(Read16(0x65e1+UNK_0xe5c0.offset)&0xFF); // UNK_0xe5c0<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x65e1+UNK_0xe5c0.offset)&0xFF)==0?1:0); // UNK_0xe5c0<IFIELD> C@ 0=
   _3_star_(); // 3*
   Push(0xc273); // probable 'OVTRANS'
   MODULE(); // MODULE
@@ -1965,8 +1963,7 @@ void UNK_0xf438() // UNK_0xf438
   Push(0x0037);
   Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
-  Push(Read16(pp_Is3)); // ?3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_Is3)==0?1:0); // ?3 @ 0=
   Push(Pop() & Pop()); // AND
 }
 
@@ -2016,8 +2013,7 @@ void UNK_0xf47a() // UNK_0xf47a
   _099(); // 099
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  Push(Read16(pp_IsTV)); // ?TV @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsTV)); // ?TV @ NOT
   if (Pop() != 0)
   {
     UNK_0xf240(); // UNK_0xf240

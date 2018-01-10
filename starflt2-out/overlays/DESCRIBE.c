@@ -601,8 +601,7 @@ void UNK_0xe853() // UNK_0xe853
     Push(Read8(Pop())&0xFF); // C@
     Push(0x002e);
     Push((Pop()==Pop())?1:0); // =
-    Push(Read16(pp_CTX)); // CTX @
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Read16(pp_CTX)==0?1:0); // CTX @ 0=
     Push(Pop() | Pop()); // OR
     if (Pop() == 0) Push(1); else Push(0); // NOT
     if (Pop() != 0)
@@ -1880,14 +1879,12 @@ void SYSCAN() // SYSCAN
   Push(8);
   Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_NOF)==0?1:0); // NOF @ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    Push(2);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
     if (Pop() != 0)
     {
       Push(pp_NOF); // NOF
@@ -1908,8 +1905,7 @@ void SYSCAN() // SYSCAN
       Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
       Push(5);
       _st_(); // <
-      Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Read16(pp_IsON_dash_PLA)); // ?ON-PLA @ NOT
       Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {

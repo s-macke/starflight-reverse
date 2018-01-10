@@ -187,8 +187,7 @@ void SIC_i_EM() // SIC'EM
   Push2Words("*ARREST");
   Push(0xcc1a); // probable '>NEST'
   MODULE(); // MODULE
-  Push(Read16(pp_IsAUTO)); // ?AUTO @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsAUTO)); // ?AUTO @ NOT
   if (Pop() == 0) return;
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -802,8 +801,7 @@ void UNK_0xf48f() // UNK_0xf48f
   U_slash_MOD(); // U/MOD
   Pop(); // DROP
   Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_IsSECURE)); // ?SECURE @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsSECURE)); // ?SECURE @ NOT
   Push(Pop() & Pop()); // AND
 }
 
@@ -819,8 +817,7 @@ void STP() // STP
   UNK_0xf48f(); // UNK_0xf48f
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
-  Push(Read16(pp_IsSECURE)); // ?SECURE @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsSECURE)); // ?SECURE @ NOT
   if (Pop() == 0) return;
   UNK_0xf45a(); // UNK_0xf45a
   UNK_0xf48f(); // UNK_0xf48f

@@ -1558,8 +1558,7 @@ void UNK_0xef74() // UNK_0xef74
 
 void UNK_0xef86() // UNK_0xef86
 {
-  Push(Read16(pp_UNK_0xee83)); // UNK_0xee83 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xee83)==0?1:0); // UNK_0xee83 @ 0=
 }
 
 
@@ -1570,8 +1569,7 @@ void UNK_0xef86() // UNK_0xef86
 void UNK_0xef90() // UNK_0xef90
 {
   Push(Read16(pp_UNK_0xee83)); // UNK_0xee83 @
-  Push(0x000f);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_UNK_0xee83)==0x000f?1:0); // UNK_0xee83 @ 0x000f =
 }
 
 
@@ -1670,10 +1668,7 @@ void UNK_0xeff2() // UNK_0xeff2
   Push(2);
   _star_CLOSE(); // *CLOSE
   UNK_0xefd2(); // UNK_0xefd2
-  Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp_SCROLL_dash_) | (Read16(pp_SCROLL_dash_)==1?1:0)); // SCROLL- @ SCROLL- @ 1 = OR
 }
 
 
@@ -2321,8 +2316,7 @@ void UNK_0xf360() // UNK_0xf360
 
 void UNK_0xf38a() // UNK_0xf38a
 {
-  Push(Read16(pp_TERMINA)); // TERMINA @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_TERMINA)); // TERMINA @ NOT
   if (Pop() != 0)
   {
     Push(0xc43a); // probable 'DOOPEN'
@@ -2487,8 +2481,7 @@ void UNK_0xf4ac() // UNK_0xf4ac
     Push(pp__ro_THING_rc_); // (THING)
     _1_dot_5_ex__2(); // 1.5!_2
     UNK_0xedaf(); // UNK_0xedaf
-    Push(Read16(pp_TERMINA)); // TERMINA @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_TERMINA)); // TERMINA @ NOT
     if (Pop() == 0) return;
     Push(pp_TBOX); // TBOX
     _099(); // 099

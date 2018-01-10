@@ -293,8 +293,7 @@ void UNK_0xea46() // UNK_0xea46
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
   Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-  Push(0x0018);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
@@ -1562,8 +1561,7 @@ void UNK_0xf30d() // UNK_0xf30d
   MODULE(); // MODULE
   Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_NOF)); // NOF @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_NOF)==0?1:0); // NOF @ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
@@ -1801,8 +1799,7 @@ void UNK_0xf489() // UNK_0xf489
 {
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  Push(Read16(pp_FTRIG)); // FTRIG @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_FTRIG)==0?1:0); // FTRIG @ 0=
   Push(Pop() & Pop()); // AND
 }
 

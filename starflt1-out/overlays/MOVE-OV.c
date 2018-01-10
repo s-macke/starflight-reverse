@@ -284,8 +284,7 @@ void UNK_0xe696() // UNK_0xe696
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex_(); // +!
   Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-  Push(0x0018);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   OFF(); // OFF
@@ -785,11 +784,7 @@ void UNK_0xe9e5() // UNK_0xe9e5
 void UNK_0xeb7e() // UNK_0xeb7e
 {
   Push(Read16(pp_STARDATE)); // STARDATE @
-  Push(Read16(pp__ro_FLARE_rc_)); // (FLARE) @
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_IsWIN)); // ?WIN @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_STARDATE)==Read16(pp__ro_FLARE_rc_)?1:0) & (Read16(pp_IsWIN)==0?1:0)); // STARDATE @ (FLARE) @ = ?WIN @ 0= AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
   GetEXECUTE(); // @EXECUTE
@@ -1928,8 +1923,7 @@ void UNK_0xf397() // UNK_0xf397
 {
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  Push(Read16(pp_FTRIG)); // FTRIG @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_FTRIG)==0?1:0); // FTRIG @ 0=
   Push(Pop() & Pop()); // AND
 }
 

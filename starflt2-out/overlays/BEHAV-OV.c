@@ -571,8 +571,7 @@ void UNK_0xe606() // UNK_0xe606
   Push(pp_TVEHICL); // TVEHICL
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x65e1+UNK_0xe587.offset)&0xFF); // UNK_0xe587<IFIELD> C@
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push((Read16(0x65e1+UNK_0xe587.offset)&0xFF)==1?1:0); // UNK_0xe587<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
 }
 
@@ -737,8 +736,7 @@ void UNK_0xe6a6() // UNK_0xe6a6
 void UNK_0xe6ae() // UNK_0xe6ae
 {
   Push(Read16(pp_XWLD_c_XP)); // XWLD:XP @
-  Push(8);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_XWLD_c_XP)==8?1:0); // XWLD:XP @ 8 =
 }
 
 
@@ -1978,8 +1976,7 @@ void CIRCLES() // CIRCLES
 
 void UNK_0xee2a() // UNK_0xee2a
 {
-  Push(Read16(pp_FSTUN)); // FSTUN @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_FSTUN)); // FSTUN @ NOT
   if (Pop() == 0) return;
   Push(0xebd6); // probable 'P2SENT'
   DISTRAC(); // DISTRAC
@@ -2174,8 +2171,7 @@ void UNK_0xef38() // UNK_0xef38
 void UNK_0xef4c() // UNK_0xef4c
 {
   unsigned short int i, imax;
-  Push(Read16(pp_UNK_0xe4d4)); // UNK_0xe4d4 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xe4d4)==0?1:0); // UNK_0xe4d4 @ 0=
   if (Pop() != 0)
   {
     UNK_0xef38(); // UNK_0xef38
@@ -2511,13 +2507,7 @@ void IsFUNC() // ?FUNC
 void UNK_0xf19a() // UNK_0xf19a
 {
   unsigned short int i, imax;
-  Push(Read16(pp_PAST)); // PAST @
-  Push(Read16(pp_UNK_0xe4d4)); // UNK_0xe4d4 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
-  Push(Read16(pp_Is3)); // ?3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_PAST) & (Read16(pp_UNK_0xe4d4)==0?1:0)) & (Read16(pp_Is3)==0?1:0)); // PAST @ UNK_0xe4d4 @ 0= AND ?3 @ 0= AND
   if (Pop() != 0)
   {
     UNK_0xef38(); // UNK_0xef38

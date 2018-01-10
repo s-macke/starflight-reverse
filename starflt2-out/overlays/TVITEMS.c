@@ -400,8 +400,7 @@ void UNK_0xe684() // UNK_0xe684
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
   Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-  Push(0x0018);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
   _099(); // 099
@@ -1089,8 +1088,7 @@ void UNK_0xea7f() // UNK_0xea7f
   Push(Read8(Pop())&0xFF); // C@
   Push(1);
   Push(Pop() & Pop()); // AND
-  Push(Read16(0x65e1+UNK_0xe725.offset)&0xFF); // UNK_0xe725<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x65e1+UNK_0xe725.offset)&0xFF)==0?1:0); // UNK_0xe725<IFIELD> C@ 0=
   Push(Pop() & Pop()); // AND
   Push(Read16(0x65e1+UNK_0xe720.offset)&0xFF); // UNK_0xe720<IFIELD> C@
   UNK_0xe6d4(); // UNK_0xe6d4

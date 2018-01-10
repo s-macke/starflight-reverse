@@ -759,8 +759,7 @@ void UNK_0xf00e() // UNK_0xf00e
 void UNK_0xf02e() // UNK_0xf02e
 {
   unsigned short int i, imax;
-  Push(Read16(pp_UNK_0xeed0)); // UNK_0xeed0 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xeed0)==0?1:0); // UNK_0xeed0 @ 0=
   if (Pop() != 0)
   {
     Push(Read16(pp_UNK_0xeed4)&0xFF); // UNK_0xeed4 C@
@@ -1241,8 +1240,7 @@ void UNK_0xf42a() // UNK_0xf42a
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_ABLT)); // ABLT @
-  Push(pp_UNK_0xf1d4); // UNK_0xf1d4
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_ABLT)==pp_UNK_0xf1d4?1:0); // ABLT @ UNK_0xf1d4 =
   if (Pop() != 0)
   {
     Push(0);

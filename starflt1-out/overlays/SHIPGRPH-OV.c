@@ -215,13 +215,7 @@ void UNK_0xed63() // UNK_0xed63
 
 void _ro__dot_MASS_rc_() // (.MASS)
 {
-  Push(0x0032);
-  Push(Read16(0x63ef+UNK_0xed3b.offset)); // UNK_0xed3b<IFIELD> @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(0x0032);
-  Push(Pop() * Pop()); // *
-  Push(Pop() + Pop()); // +
+  Push(0x0032 + ((Read16(0x63ef+UNK_0xed3b.offset)==0?1:0)==0?1:0) * 0x0032); // 0x0032 UNK_0xed3b<IFIELD> @ 0= 0= 0x0032 * +
   Push(0x63ef+UNK_0xed36.offset); // UNK_0xed36<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   Push(Read16(regsp)); // DUP

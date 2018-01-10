@@ -491,8 +491,7 @@ void INJURE_dash_PL() // INJURE-PL
 
 void UNK_0xf3e2() // UNK_0xf3e2
 {
-  Push(Read16(pp_STORM)); // STORM @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_STORM)==0?1:0); // STORM @ 0=
   UNK_0xf275(); // UNK_0xf275
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=

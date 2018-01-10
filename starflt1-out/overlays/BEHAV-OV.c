@@ -508,8 +508,7 @@ void IsPLAYER_dash_FI() // ?PLAYER-FI
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF); // TV-WEAPON<IFIELD> C@
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push((Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF)==1?1:0); // TV-WEAPON<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
 }
@@ -589,8 +588,7 @@ void IsALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF); // TV-WEAPON<IFIELD> C@
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push((Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF)==1?1:0); // TV-WEAPON<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP
@@ -625,8 +623,7 @@ void IsALIEN_dash_HIT_dash_WITH_dash_STUNNER() // ?ALIEN-HIT-WITH-STUNNER
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF); // TV-WEAPON<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF)==0?1:0); // TV-WEAPON<IFIELD> C@ 0=
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
 }
@@ -650,8 +647,7 @@ void UNK_0xe308() // UNK_0xe308
 
 void IsNOTICE_dash_PL() // ?NOTICE-PL
 {
-  Push((Read16(0x63ef+BEHAVE.offset)&0xFF) & 0x0040); // BEHAVE<IFIELD> C@ 0x0040 AND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(((Read16(0x63ef+BEHAVE.offset)&0xFF) & 0x0040)==0?1:0); // BEHAVE<IFIELD> C@ 0x0040 AND 0=
   if (Pop() != 0)
   {
     UNK_0xe0d8(); // UNK_0xe0d8
@@ -849,8 +845,7 @@ void IsSTUNNED() // ?STUNNED
 
 void UNK_0xe488() // UNK_0xe488
 {
-  Push(Read16(0x63ef+HITS.offset)&0xFF); // HITS<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+HITS.offset)&0xFF)==0?1:0); // HITS<IFIELD> C@ 0=
 }
 
 
@@ -871,8 +866,7 @@ void UNK_0xe492() // UNK_0xe492
 
 void UNK_0xe4a2() // UNK_0xe4a2
 {
-  Push(Read16(0x63ef+UNK_0xe1b5.offset)&0xFF); // UNK_0xe1b5<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+UNK_0xe1b5.offset)&0xFF)==0?1:0); // UNK_0xe1b5<IFIELD> C@ 0=
 }
 
 
@@ -1229,8 +1223,7 @@ void UNK_0xe6b0() // UNK_0xe6b0
 
 void UNK_0xe6bc() // UNK_0xe6bc
 {
-  Push(Read16(0x63ef+HITS.offset)&0xFF); // HITS<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+HITS.offset)&0xFF)==0?1:0); // HITS<IFIELD> C@ 0=
   if (Pop() == 0) return;
   UNK_0xe6b0(); // UNK_0xe6b0
   Push(Read16(cc_DEAD_dash_IC)); // DEAD-IC

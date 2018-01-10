@@ -252,8 +252,7 @@ void MP_i_ER() // MP'ER
   Push2Words("*ARREST");
   Push(0xcb0c); // probable '>NEST'
   MODULE(); // MODULE
-  Push(Read16(pp_IsAUTO)); // ?AUTO @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsAUTO)); // ?AUTO @ NOT
   if (Pop() != 0)
   {
     if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -847,11 +846,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 
   label1:
   Push(Read16(pp_UNK_0xf188)); // UNK_0xf188 @
-  Push(Read16(pp_UNK_0xf190)); // UNK_0xf190 @
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_IsSECURE)); // ?SECURE @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_UNK_0xf188)==Read16(pp_UNK_0xf190)?1:0) & !Read16(pp_IsSECURE)); // UNK_0xf188 @ UNK_0xf190 @ = ?SECURE @ NOT AND
 }
 
 
@@ -869,8 +864,7 @@ void SP() // SP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(Read16(pp_IsSECURE)); // ?SECURE @
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Read16(pp_IsSECURE)==0?1:0); // ?SECURE @ 0=
   }
   Push(pp_ESC_dash_EN); // ESC-EN
   ON_2(); // ON_2
@@ -888,8 +882,7 @@ void _2N() // 2N
 {
   UNK_0xf42a(); // UNK_0xf42a
   Push(Read16(pp_UNK_0xf188)); // UNK_0xf188 @
-  Push(Read16(pp_UNK_0xf190)); // UNK_0xf190 @
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_UNK_0xf188)==Read16(pp_UNK_0xf190)?1:0); // UNK_0xf188 @ UNK_0xf190 @ =
   if (Pop() == 0) return;
   Push(pp_IsSECURE); // ?SECURE
   _099(); // 099

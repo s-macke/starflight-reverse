@@ -1636,8 +1636,7 @@ void UNK_0xf47a() // UNK_0xf47a
   OFF(); // OFF
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  Push(Read16(pp_IsTV)); // ?TV @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsTV)); // ?TV @ NOT
   if (Pop() != 0)
   {
     UNK_0xf045(); // UNK_0xf045

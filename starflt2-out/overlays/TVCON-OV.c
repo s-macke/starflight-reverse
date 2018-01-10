@@ -649,8 +649,7 @@ void DrawSTARDATE() // .STARDATE
   POLY_dash_ER(); // POLY-ER
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() != 0)
   {
     Push(Read16(pp_STARDAT)); // STARDAT @

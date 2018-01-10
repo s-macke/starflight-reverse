@@ -483,8 +483,7 @@ void UNK_0xedc6() // UNK_0xedc6
   _2DUP(); // 2DUP
   IsINVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Read16(pp_MOVED)); // MOVED @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_MOVED)); // MOVED @ NOT
   Push(Pop() | Pop()); // OR
 }
 
@@ -615,8 +614,7 @@ void UNK_0xeec0() // UNK_0xeec0
   Push(Pop() & Pop()); // AND
   b = Pop(); // >R
   UNK_0xedf6(); // UNK_0xedf6
-  Push(Read16(pp_MOVED)); // MOVED @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_MOVED)); // MOVED @ NOT
   Push(Pop() & Pop()); // AND
   Push(b); // R>
   Push(Pop() | Pop()); // OR
@@ -1292,8 +1290,7 @@ void UNK_0xf2bc() // UNK_0xf2bc
   UNK_0xf1a2(); // UNK_0xf1a2
   if (Pop() != 0)
   {
-    Push(Read16(pp_PAST)); // PAST @
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Read16(pp_PAST)); // PAST @ NOT
     Push(Pop() & Pop()); // AND
   }
   if (Pop() == 0) return;
@@ -1539,8 +1536,7 @@ void UNK_0xf3fa() // UNK_0xf3fa
   ICLOSE(); // ICLOSE
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   Push(Pop() & Pop()); // AND
 }
 

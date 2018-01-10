@@ -1417,9 +1417,7 @@ void UNK_0xef52() // UNK_0xef52
       Push(pp_NCRS); // NCRS
       _plus__ex__2(); // +!_2
       Push(Read16(pp_NCRS)); // NCRS @
-      Push(Read16(pp_OCRS)); // OCRS @
-      Push((Pop()==Pop())?1:0); // =
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!(Read16(pp_NCRS)==Read16(pp_OCRS)?1:0)); // NCRS @ OCRS @ = NOT
       Push(Read16(pp_NCRS)); // NCRS @
       Push(0);
       Push(5);
@@ -1644,10 +1642,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
       Store_2(); // !_2
       Pop(); // DROP
       Push(Read16(pp_OCRS)); // OCRS @
-      Push(3);
-      Push((Pop()==Pop())?1:0); // =
-      Push(0x00fa);
-      Push(Pop() * Pop()); // *
+      Push((Read16(pp_OCRS)==3?1:0) * 0x00fa); // OCRS @ 3 = 0x00fa *
       Push(Read16(0x65e1+UNK_0xe78c.offset)); // UNK_0xe78c<IFIELD> @
       MIN(); // MIN
       Push(Read16(pp_OCRS)); // OCRS @

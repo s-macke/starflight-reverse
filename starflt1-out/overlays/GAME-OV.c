@@ -703,8 +703,7 @@ void IsHUB() // ?HUB
 {
   Push(pp_UNK_0xe10a); // UNK_0xe10a
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(5);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =
   if (Pop() != 0)
   {
     ON_3(); // ON_3
@@ -1398,8 +1397,7 @@ void Is_dash_writeable() // ?-writeable
   WRITE_dash_RANDOM(); // WRITE-RANDOM
   Pop(); Pop(); // 2DROP
   INIT(); // INIT
-  Push(Read16(pp_DERROR)); // DERROR @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_DERROR)==0?1:0); // DERROR @ 0=
 }
 
 
@@ -1735,8 +1733,7 @@ void PUSHVECT() // PUSHVECT
 {
   unsigned short int i, imax;
   Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
-  Push(Read16(pp_DBUF_dash_SEG)); // DBUF-SEG @
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_BUF_dash_SEG)==Read16(pp_DBUF_dash_SEG)?1:0); // BUF-SEG @ DBUF-SEG @ =
   Push(Read16(pp_BLTSEG)); // BLTSEG @
   UNK_0xe9f3(); // UNK_0xe9f3
   Push(Read16(pp__3DSEG)); // 3DSEG @
@@ -2789,10 +2786,7 @@ void GET_dash_OPTION_n_() // GET-OPTION#
     Push(0x0031);
     Push(0x0034);
     WITHIN(); // WITHIN
-    Push(Read16(pp_LKEY)); // LKEY @
-    Push(0x0039);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Read16(pp_LKEY) | (Read16(pp_LKEY)==0x0039?1:0)); // LKEY @ LKEY @ 0x0039 = OR
   } while(Pop() == 0);
   Push(Read16(pp_LKEY)); // LKEY @
 }

@@ -1158,8 +1158,7 @@ void UNK_0xf395() // UNK_0xf395
     IsTRIG(); // ?TRIG
     if (Pop() != 0)
     {
-      Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 1); // UNK_0xeb5e<IFIELD> C@ 3 AND 1 XOR
-      if (Pop() == 0) Push(1); else Push(0); // 0=
+      Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 1==0?1:0); // UNK_0xeb5e<IFIELD> C@ 3 AND 1 XOR 0=
       if (Pop() != 0)
       {
         Push(a); // I
@@ -1200,8 +1199,7 @@ void UNK_0xf3d7() // UNK_0xf3d7
   do // (DO)
   {
     Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 3); // UNK_0xeb5e<IFIELD> C@ 3 AND 3 XOR
-    Push(2);
-    Push((Pop()==Pop())?1:0); // =
+    Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 3==2?1:0); // UNK_0xeb5e<IFIELD> C@ 3 AND 3 XOR 2 =
     Push(Read16(regsp)); // DUP
     Push(pp_UNK_0xea98); // UNK_0xea98
     _plus__ex_(); // +!
@@ -1314,8 +1312,7 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
       Push(Pop() * Pop()); // *
       Push(Pop() + Pop()); // +
       Get_gt_C_plus_S(); // @>C+S
-      Push((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 8); // UNK_0xeb5e<IFIELD> C@ 8 AND
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 8)); // UNK_0xeb5e<IFIELD> C@ 8 AND NOT
       if (Pop() != 0)
       {
         ICLOSE(); // ICLOSE

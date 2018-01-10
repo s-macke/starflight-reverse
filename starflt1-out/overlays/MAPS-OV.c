@@ -379,8 +379,7 @@ void UNK_0xedde() // UNK_0xedde
     Push(pp_STAR_dash_HR); // STAR-HR
     _plus__ex_(); // +!
     Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-    Push(0x0018);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
     if (Pop() != 0)
     {
       Push(pp_STAR_dash_HR); // STAR-HR
@@ -391,11 +390,7 @@ void UNK_0xedde() // UNK_0xedde
     }
   }
   Push(Read16(pp_STARDATE)); // STARDATE @
-  Push(Read16(pp__ro_FLARE_rc_)); // (FLARE) @
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_IsWIN)); // ?WIN @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_STARDATE)==Read16(pp__ro_FLARE_rc_)?1:0) & (Read16(pp_IsWIN)==0?1:0)); // STARDATE @ (FLARE) @ = ?WIN @ 0= AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
   GetEXECUTE(); // @EXECUTE
@@ -1087,8 +1082,7 @@ void WPHRASE() // WPHRASE
 
 void _ro__dot_STORM_rc_() // (.STORM)
 {
-  Push(Read16(pp_ATMO)); // ATMO @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_ATMO)==0?1:0); // ATMO @ 0=
   if (Pop() != 0)
   {
     UNK_0xf21f(); // UNK_0xf21f

@@ -1352,10 +1352,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_NAV_dash_TIME); // NAV-TIME
   _2_at_(); // 2@
   D_gt_(); // D>
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_CONTEXT_dash_ID_n_) & (Read16(pp_CONTEXT_dash_ID_n_)==3?1:0)); // CONTEXT-ID# @ CONTEXT-ID# @ 3 = AND
   if (Pop() != 0)
   {
     Push(Read16(pp_BVIS)); // BVIS @
@@ -1422,9 +1419,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
     return;
   }
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_CONTEXT_dash_ID_n_)==3?1:0)); // CONTEXT-ID# @ 3 = NOT
   UNK_0xecac(); // UNK_0xecac
   Push(0);
 }

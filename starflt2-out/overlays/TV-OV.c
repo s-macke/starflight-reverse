@@ -2211,8 +2211,7 @@ void UNK_0xf472() // UNK_0xf472
         GetINST_dash_C(); // @INST-C
         Push(0x0044);
         Push((Pop()==Pop())?1:0); // =
-        Push(Read16(pp_UNK_0xf3d9)); // UNK_0xf3d9 @
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Read16(pp_UNK_0xf3d9)); // UNK_0xf3d9 @ NOT
         Push(Pop() & Pop()); // AND
         if (Pop() != 0)
         {

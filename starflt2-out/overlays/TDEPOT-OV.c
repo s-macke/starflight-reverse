@@ -1320,8 +1320,7 @@ void UNK_0xed96() // UNK_0xed96
       Push(0x0030);
       _dash_(); // -
       Push(Pop() + Pop()); // +
-      Push(Read16(pp_UNK_0xe5ee)); // UNK_0xe5ee @
-      if (Pop() == 0) Push(1); else Push(0); // 0=
+      Push(Read16(pp_UNK_0xe5ee)==0?1:0); // UNK_0xe5ee @ 0=
       if (Pop() != 0)
       {
         imax = i; // LEAVE
@@ -1387,10 +1386,7 @@ void UNK_0xee30() // UNK_0xee30
 
 void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 {
-  Push(Read16(pp_UNK_0xe5e6)); // UNK_0xe5e6 @
-  Push(Read16(pp_IsTD)); // ?TD @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() | Pop()); // OR
+  Push(Read16(pp_UNK_0xe5e6) | !Read16(pp_IsTD)); // UNK_0xe5e6 @ ?TD @ NOT OR
   Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   _2_at_(); // 2@
   Push(0xffff); Push(0xffff);

@@ -464,8 +464,7 @@ void UNK_0xdf0b() // UNK_0xdf0b
     Push(pp_STAR_dash_HR); // STAR-HR
     _plus__ex_(); // +!
     Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
-    Push(0x0018);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
     if (Pop() != 0)
     {
       Push(pp_STAR_dash_HR); // STAR-HR
@@ -476,11 +475,7 @@ void UNK_0xdf0b() // UNK_0xdf0b
     }
   }
   Push(Read16(pp_STARDATE)); // STARDATE @
-  Push(Read16(pp__ro_FLARE_rc_)); // (FLARE) @
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_IsWIN)); // ?WIN @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push((Read16(pp_STARDATE)==Read16(pp__ro_FLARE_rc_)?1:0) & (Read16(pp_IsWIN)==0?1:0)); // STARDATE @ (FLARE) @ = ?WIN @ 0= AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
   GetEXECUTE(); // @EXECUTE
@@ -1253,8 +1248,7 @@ void valuate() // valuate
   Isdist(); // ?dist
   Push(Pop()+1); // 1+
   Push(Pop() * Pop()); // *
-  Push(Read16(0x63ef+UNK_0xdfff.offset)&0xFF); // UNK_0xdfff<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x63ef+UNK_0xdfff.offset)&0xFF)==0?1:0); // UNK_0xdfff<IFIELD> C@ 0=
   if (Pop() != 0)
   {
     Push(0x000a);
@@ -1472,11 +1466,7 @@ void UNK_0xe61c() // UNK_0xe61c
 
 void UNK_0xe638() // UNK_0xe638
 {
-  Push((Read16(0x63ef+UNK_0xe004.offset)&0xFF) & 1); // UNK_0xe004<IFIELD> C@ 1 AND
-  Push(Read16(0x63ef+UNK_0xdfff.offset)&0xFF); // UNK_0xdfff<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop() & Pop()); // AND
+  Push(((Read16(0x63ef+UNK_0xe004.offset)&0xFF) & 1) & (((Read16(0x63ef+UNK_0xdfff.offset)&0xFF)==0?1:0)==0?1:0)); // UNK_0xe004<IFIELD> C@ 1 AND UNK_0xdfff<IFIELD> C@ 0= 0= AND
   Push(Read16(0x63ef+UNK_0xdfed.offset)&0xFF); // UNK_0xdfed<IFIELD> C@
   LoadData(UNK_0xdfe5); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
@@ -1944,9 +1934,7 @@ void UNK_0xe9aa() // UNK_0xe9aa
 void UNK_0xe9fa() // UNK_0xe9fa
 {
   UNK_0xe9a0(); // UNK_0xe9a0
-  Push(Read16(pp_IsBOMB)); // ?BOMB @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(pp_IsBOMB)==0?1:0)==0?1:0); // ?BOMB @ 0= 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(pp_IsBOMB); // ?BOMB

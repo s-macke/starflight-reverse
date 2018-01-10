@@ -400,8 +400,7 @@ void UNK_0xefa0() // UNK_0xefa0
 void UNK_0xf014() // UNK_0xf014
 {
   Push(Read16(pp_PLHI)); // PLHI @
-  Push(-1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_PLHI)==-1?1:0); // PLHI @ -1 =
   if (Pop() != 0)
   {
     Push(0x01e0);
@@ -910,10 +909,7 @@ void UNK_0xf389() // UNK_0xf389
       }
       INEXT(); // INEXT
       IsFIRST(); // ?FIRST
-      Push(Read16(pp_UNK_0xf261)&0xFF); // UNK_0xf261 C@
-      Push(0x000a);
-      Push((Pop()==Pop())?1:0); // =
-      Push(Pop() | Pop()); // OR
+      Push(Read16(pp_UNK_0xf261)&0xFF | ((Read16(pp_UNK_0xf261)&0xFF)==0x000a?1:0)); // UNK_0xf261 C@ UNK_0xf261 C@ 0x000a = OR
     } while(Pop() == 0);
     CDROP(); // CDROP
     Push(Read16(pp_UNK_0xf261)&0xFF); // UNK_0xf261 C@
@@ -934,10 +930,7 @@ void UNK_0xf405() // UNK_0xf405
 {
   Push(0xbdd8); // probable 'OV?ARTIFACT'
   MODULE(); // MODULE
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Read16(pp_CONTEXT_dash_ID_n_) & (Read16(pp_CONTEXT_dash_ID_n_)==1?1:0)); // CONTEXT-ID# @ CONTEXT-ID# @ 1 = AND
 }
 
 
@@ -1051,8 +1044,7 @@ void DrawMERCATOR() // .MERCATOR
   FULLARRAY(); // FULLARRAY
   SETREGION(); // SETREGION
   DrawREGION_plus_(); // .REGION+
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_dash_ID_n_)==0?1:0); // CONTEXT-ID# @ 0=
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
@@ -1083,9 +1075,7 @@ void DrawMERCATOR() // .MERCATOR
 void GETSITE_2() // GETSITE_2
 {
   Push(Read16(pp__n_AUX)); // #AUX @
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp__n_AUX)==4?1:0)); // #AUX @ 4 = NOT
   if (Pop() != 0)
   {
     DrawMERCATOR(); // .MERCATOR

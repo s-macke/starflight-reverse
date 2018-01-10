@@ -155,8 +155,7 @@ void UNK_0xf07e() // UNK_0xf07e
 void UNK_0xf090() // UNK_0xf090
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==6?1:0); // CONTEXT_3 @ 6 =
 }
 
 

@@ -396,8 +396,7 @@ void UNK_0xf02d() // UNK_0xf02d
 void UNK_0xf03d() // UNK_0xf03d
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(pp_CONTEXT_3)==6?1:0); // CONTEXT_3 @ 6 =
 }
 
 
@@ -706,9 +705,7 @@ void ITEM_gt_PAD() // ITEM>PAD
 void UNK_0xf246() // UNK_0xf246
 {
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Read16(pp_CONTEXT_3)==6?1:0)); // CONTEXT_3 @ 6 = NOT
 }
 
 

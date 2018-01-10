@@ -572,8 +572,7 @@ void DrawRACE() // .RACE
   _dash_TRAILING(); // -TRAILING
   UNK_0xf0a2(); // UNK_0xf0a2
   ICLOSE(); // ICLOSE
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
   if (Pop() == 0) return;
   GetINST_dash_C(); // @INST-C
   _gt_EXTRA(); // >EXTRA case
@@ -839,8 +838,7 @@ void UNK_0xf3ac() // UNK_0xf3ac
 void UNK_0xf3d0() // UNK_0xf3d0
 {
   UNK_0xf0aa(); // UNK_0xf0aa
-  Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_IsON_dash_PLA)); // ?ON-PLA @ NOT
   if (Pop() != 0)
   {
     SET_STR_AS_PARAM("INHABITED BY ");
@@ -913,8 +911,7 @@ void UNK_0xf444() // UNK_0xf444
 
 void DrawCULTURE() // .CULTURE
 {
-  Push(Read16(pp_PAST)); // PAST @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() == 0) return;
   SetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR

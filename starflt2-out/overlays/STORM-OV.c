@@ -443,8 +443,7 @@ void INJURE_dash_PL() // INJURE-PL
 
 void UNK_0xf41c() // UNK_0xf41c
 {
-  Push(Read16(pp_STORM)); // STORM @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_STORM)==0?1:0); // STORM @ 0=
   UNK_0xf2f5(); // UNK_0xf2f5
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) Push(1); else Push(0); // 0=

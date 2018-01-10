@@ -1322,8 +1322,7 @@ void UNK_0xf398() // UNK_0xf398
 
 void UNK_0xf3be() // UNK_0xf3be
 {
-  Push(Read16(pp_UNK_0xedd5)); // UNK_0xedd5 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xedd5)==0?1:0); // UNK_0xedd5 @ 0=
   if (Pop() == 0) return;
   TIME(); // TIME
   _2_at_(); // 2@
@@ -1376,8 +1375,7 @@ void UNK_0xf40a() // UNK_0xf40a
   _gt_DISPLA(); // >DISPLA
   CTINIT(); // CTINIT
   _gt_SSCT(); // >SSCT
-  Push(Read16(pp_UNK_0xedd5)); // UNK_0xedd5 @
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Read16(pp_UNK_0xedd5)==0?1:0); // UNK_0xedd5 @ 0=
   if (Pop() != 0)
   {
     Push(0x6ba6); Push(0x0002);

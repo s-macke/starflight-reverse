@@ -360,12 +360,7 @@ void ROLE_dash_C() // ROLE-C
     OVER(); // OVER
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
-    Push(Read16(0x65e1+UNK_0xf0eb.offset)&0xFF); // UNK_0xf0eb<IFIELD> C@
-    if (Pop() == 0) Push(1); else Push(0); // 0=
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    Push(Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010); // UNK_0xf0f0<IFIELD> @ 0x0010 AND
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    Push(Pop() & Pop()); // AND
+    Push(!((Read16(0x65e1+UNK_0xf0eb.offset)&0xFF)==0?1:0) & !(Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010)); // UNK_0xf0eb<IFIELD> C@ 0= NOT UNK_0xf0f0<IFIELD> @ 0x0010 AND NOT AND
     if (Pop() != 0)
     {
       CI(); // CI
@@ -670,8 +665,7 @@ void _gt_SKILL() // >SKILL
 
 void UNK_0xf3ec() // UNK_0xf3ec
 {
-  Push(Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010); // UNK_0xf0f0<IFIELD> @ 0x0010 AND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010)==0?1:0); // UNK_0xf0f0<IFIELD> @ 0x0010 AND 0=
   if (Pop() == 0) return;
   Push(Read16(0x65e1+UNK_0xf0f0.offset) | 2); // UNK_0xf0f0<IFIELD> @ 2 OR
   Push(0x65e1+UNK_0xf0f0.offset); // UNK_0xf0f0<IFIELD>
@@ -765,10 +759,7 @@ void UNK_0xf429() // UNK_0xf429
 
 void UNK_0xf483() // UNK_0xf483
 {
-  Push(Read16(0x65e1+UNK_0xf0eb.offset)&0xFF); // UNK_0xf0eb<IFIELD> C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010); // UNK_0xf0f0<IFIELD> @ 0x0010 AND
-  Push(Pop() | Pop()); // OR
+  Push(((Read16(0x65e1+UNK_0xf0eb.offset)&0xFF)==0?1:0) | Read16(0x65e1+UNK_0xf0f0.offset) & 0x0010); // UNK_0xf0eb<IFIELD> C@ 0= UNK_0xf0f0<IFIELD> @ 0x0010 AND OR
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   UNK_0xf40c(); // UNK_0xf40c
@@ -841,8 +832,7 @@ void UNK_0xf4d3() // UNK_0xf4d3
     if (Pop() != 0)
     {
       UNK_0xf4a1(); // UNK_0xf4a1
-      Push(Read16(0x65e1+UNK_0xf0eb.offset)&0xFF); // UNK_0xf0eb<IFIELD> C@
-      if (Pop() == 0) Push(1); else Push(0); // 0=
+      Push((Read16(0x65e1+UNK_0xf0eb.offset)&0xFF)==0?1:0); // UNK_0xf0eb<IFIELD> C@ 0=
       if (Pop() != 0)
       {
         UNK_0xf3ec(); // UNK_0xf3ec

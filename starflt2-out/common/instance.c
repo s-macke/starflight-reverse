@@ -1414,8 +1414,7 @@ void ICREATE() // ICREATE
   Push(Read8(Pop())&0xFF); // C@
   UNK_0x80c7(); // UNK_0x80c7
   Pop(); // DROP
-  Push(Read16(pp_UNK_0x5fe6)); // UNK_0x5fe6 @
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Read16(pp_UNK_0x5fe6)); // UNK_0x5fe6 @ NOT
   if (Pop() != 0)
   {
     CI(); // CI
