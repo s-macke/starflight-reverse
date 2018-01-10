@@ -271,13 +271,11 @@ void UNK_0xf08f() // UNK_0xf08f
 
 void UNK_0xf0b9() // UNK_0xf0b9
 {
-  Push(pp__dash_AIN); // -AIN
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__dash_AIN)); // -AIN @
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    Push(pp__dash_AIN); // -AIN
-    Push(Read16(Pop())); // @
+    Push(Read16(pp__dash_AIN)); // -AIN @
     Push((Pop()==Pop())?1:0); // =
     SWAP(); // SWAP
     Push(0x0030);

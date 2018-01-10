@@ -200,10 +200,8 @@ const unsigned short int cc_UNK_0xe2a2 = 0xe2a2; // UNK_0xe2a2
 
 void UNK_0xe2b3() // UNK_0xe2b3
 {
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
-  Push(pp_FILE_n_); // FILE#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
+  Push(Read16(pp_FILE_n_)); // FILE# @
 }
 
 
@@ -441,8 +439,7 @@ void UNK_0xe404() // UNK_0xe404
 void UNK_0xe40c() // UNK_0xe40c
 {
   UNK_0xe3c2(); // UNK_0xe3c2
-  Push(pp_UNK_0xe400); // UNK_0xe400
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xe400)); // UNK_0xe400 @
   _st_(); // <
 }
 
@@ -589,8 +586,7 @@ void UNK_0xe51b() // UNK_0xe51b
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -836,16 +832,13 @@ void UNK_0xe740() // UNK_0xe740
 void UNK_0xe762() // UNK_0xe762
 {
   unsigned short int i, imax;
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_PLHI) + 1); // PLHI @ 1+
   Push(pp_RECORD_n_); // RECORD#
   OFF(); // OFF
 
   label4:
   UNK_0xe51b(); // UNK_0xe51b
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   OVER(); // OVER
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -936,8 +929,7 @@ void UNK_0xe762() // UNK_0xe762
 void UNK_0xede0() // UNK_0xede0
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
@@ -1075,8 +1067,7 @@ void UNK_0xee38() // UNK_0xee38
 void UNK_0xef05() // UNK_0xef05
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   _2DUP(); // 2DUP
   RRND(); // RRND
@@ -1325,8 +1316,7 @@ void UNK_0xf0b8() // UNK_0xf0b8
 void UNK_0xf0c6() // UNK_0xf0c6
 {
   unsigned short int a, b, c;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
@@ -1375,8 +1365,7 @@ void UNK_0xf11c() // UNK_0xf11c
 {
   LoadData(UNK_0xe477); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
-  Push(pp_UNK_0xf0b4); // UNK_0xf0b4
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf0b4)); // UNK_0xf0b4 @
   _st_(); // <
 }
 
@@ -1387,8 +1376,7 @@ void UNK_0xf11c() // UNK_0xf11c
 
 void UNK_0xf12a() // UNK_0xf12a
 {
-  Push(pp_UNK_0xf0b0); // UNK_0xf0b0
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf0b0)); // UNK_0xf0b0 @
   UNK_0xe3c2(); // UNK_0xe3c2
   _st_(); // <
 }
@@ -1401,8 +1389,7 @@ void UNK_0xf12a() // UNK_0xf12a
 void UNK_0xf136() // UNK_0xf136
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   UNK_0xf0c6(); // UNK_0xf0c6
   Push(pp_UNK_0xf0b4); // UNK_0xf0b4
@@ -1418,8 +1405,7 @@ void UNK_0xf136() // UNK_0xf136
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(pp_UNK_0xf0b0); // UNK_0xf0b0
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf0b0)); // UNK_0xf0b0 @
     UNK_0xe3c2(); // UNK_0xe3c2
     _st_(); // <
     if (Pop() != 0)
@@ -1494,8 +1480,7 @@ void UNK_0xf136() // UNK_0xf136
 
 void UNK_0xf1ea() // UNK_0xf1ea
 {
-  Push(pp_PLANTS); // PLANTS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLANTS)); // PLANTS @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   Pop(); // DROP
@@ -1526,8 +1511,7 @@ void UNK_0xf210() // UNK_0xf210
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
-    Push(pp_UNK_0xf1e6); // UNK_0xf1e6
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf1e6)); // UNK_0xf1e6 @
     LoadData(UNK_0xe47f); // from 'CREATURE'
     Push(Read8(Pop())&0xFF); // C@
     Push(2);
@@ -1756,8 +1740,7 @@ void UNK_0xf3e0() // UNK_0xf3e0
 void UNK_0xf404() // UNK_0xf404
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   LoadData(UNK_0xe47f); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
@@ -1882,16 +1865,13 @@ void UNK_0xf4a6() // UNK_0xf4a6
 
 void UNK_0xf4c0() // UNK_0xf4c0
 {
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_PLHI) + 1); // PLHI @ 1+
   Push(pp_RECORD_n_); // RECORD#
   OFF(); // OFF
 
   label2:
   UNK_0xe51b(); // UNK_0xe51b
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   OVER(); // OVER
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -1915,8 +1895,7 @@ void UNK_0xf4c0() // UNK_0xf4c0
 
 void C_plus_OPARMS() // C+OPARMS
 {
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLHI)); // PLHI @
   if (Pop() != 0)
   {
     UNK_0xe762(); // UNK_0xe762

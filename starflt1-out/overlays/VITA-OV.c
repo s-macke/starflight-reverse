@@ -279,8 +279,7 @@ void UNK_0xe8af() // UNK_0xe8af
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -735,8 +734,7 @@ void UNK_0xef25() // UNK_0xef25
 void UNK_0xef3b() // UNK_0xef3b
 {
   LoadData(UNK_0xe822); // from 'REGIONS'
-  Push(pp_UNK_0xef37); // UNK_0xef37
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef37)); // UNK_0xef37 @
   Push(Pop() + Pop()); // +
 }
 
@@ -748,8 +746,7 @@ void UNK_0xef3b() // UNK_0xef3b
 void UNK_0xef47() // UNK_0xef47
 {
   LoadData(UNK_0xe86a); // from 'REGIONS'
-  Push(pp_UNK_0xef37); // UNK_0xef37
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef37)); // UNK_0xef37 @
   Push(Pop() + Pop()); // +
 }
 
@@ -828,10 +825,8 @@ void UNK_0xf055() // UNK_0xf055
 
 void UNK_0xf067() // UNK_0xf067
 {
-  Push(pp_FILE_n_); // FILE#
-  Push(Read16(Pop())); // @
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_FILE_n_)); // FILE# @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Push(0x0044);
   Func6("FILE-RL");
@@ -862,8 +857,7 @@ void UNK_0xf081() // UNK_0xf081
 
 void UNK_0xf093() // UNK_0xf093
 {
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
 }
@@ -1058,8 +1052,7 @@ void UNK_0xf1b5() // UNK_0xf1b5
 
 void UNK_0xf1d3() // UNK_0xf1d3
 {
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   Push(0x0063);
   _gt_(); // >
   if (Pop() == 0) return;
@@ -1082,10 +1075,8 @@ void UNK_0xf1d3() // UNK_0xf1d3
 void UNK_0xf23c() // UNK_0xf23c
 {
   unsigned short int i, imax;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   LoadData(UNK_0xe88f); // from 'CREATURE'
   Store_3(); // !_3
   LoadData(UNK_0xe89f); // from 'CREATURE'
@@ -1118,8 +1109,7 @@ void UNK_0xf23c() // UNK_0xf23c
 
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   UNK_0xf1d3(); // UNK_0xf1d3
   LoadData(UNK_0xe897); // from 'CREATURE'
   Store_3(); // !_3
@@ -1148,8 +1138,7 @@ void UNK_0xf286() // UNK_0xf286
       Push(i); // I
       UNK_0xf081(); // UNK_0xf081
       UNK_0xf155(); // UNK_0xf155
-      Push(pp_RECORD_n_); // RECORD#
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_RECORD_n_)); // RECORD# @
       ROT(); // ROT
       ROT(); // ROT
       UNK_0xf093(); // UNK_0xf093
@@ -1204,20 +1193,17 @@ void UNK_0xf2da() // UNK_0xf2da
       UNK_0xf093(); // UNK_0xf093
       UNK_0xe8af(); // UNK_0xe8af
       UNK_0xf067(); // UNK_0xf067
-      Push(pp_UNK_0xef53); // UNK_0xef53
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
       LoadData(UNK_0xe87f); // from 'CREATURE'
       Store_3(); // !_3
-      Push(pp_RECORD_n_); // RECORD#
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_RECORD_n_)); // RECORD# @
       SWAP(); // SWAP
       UNK_0xf286(); // UNK_0xf286
       SWAP(); // SWAP
       Push(pp_RECORD_n_); // RECORD#
       Store_3(); // !_3
       UNK_0xe8af(); // UNK_0xe8af
-      Push(pp_UNK_0xef53); // UNK_0xef53
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
       LoadData(UNK_0xe887); // from 'CREATURE'
       Store_3(); // !_3
     } else
@@ -1242,8 +1228,7 @@ void UNK_0xf320() // UNK_0xf320
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -1274,8 +1259,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf189(); // UNK_0xf189
   UNK_0xf179(); // UNK_0xf179
   UNK_0xf2da(); // UNK_0xf2da
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   if (Pop() != 0)
   {
     Push(1);
@@ -1289,8 +1273,7 @@ void UNK_0xf334() // UNK_0xf334
   UNK_0xf093(); // UNK_0xf093
   UNK_0xf320(); // UNK_0xf320
   UNK_0xf2da(); // UNK_0xf2da
-  Push(pp_UNK_0xef53); // UNK_0xef53
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xef53)); // UNK_0xef53 @
   Push(pp_PLHI); // PLHI
   Store_3(); // !_3
 }
@@ -1303,17 +1286,14 @@ void UNK_0xf334() // UNK_0xf334
 void UNK_0xf382() // UNK_0xf382
 {
   unsigned short int i, imax;
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_PLHI) + 1); // PLHI @ 1+
   Push(0);
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
 
   label4:
   UNK_0xe8af(); // UNK_0xe8af
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   OVER(); // OVER
   _st_(); // <
   if (Pop() == 0) goto label1;
@@ -1375,10 +1355,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {
-    Push(pp_PLHI); // PLHI
-    Push(Read16(Pop())); // @
-    Push(0x000a);
-    Push(Pop() + Pop()); // +
+    Push(Read16(pp_PLHI) + 0x000a); // PLHI @ 0x000a +
     _slash_(); // /
     Push(2);
     MAX(); // MAX

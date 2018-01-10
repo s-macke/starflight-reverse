@@ -189,10 +189,8 @@ void UNK_0xf202() // UNK_0xf202
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(pp_IsNEB); // ?NEB
-  Push(Read16(Pop())); // @
-  Push(pp_Is3); // ?3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsNEB)); // ?NEB @
+  Push(Read16(pp_Is3)); // ?3 @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   Push2Words("*SHIP");
@@ -225,8 +223,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0xf1e0(); // UNK_0xf1e0
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
-  Push(pp_BTN_dash_REC); // BTN-REC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   Push(3);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -246,10 +243,8 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 void UNK_0xf301() // UNK_0xf301
 {
-  Push(pp_Is3); // ?3
-  Push(Read16(Pop())); // @
-  Push(pp_IsNEB); // ?NEB
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_Is3)); // ?3 @
+  Push(Read16(pp_IsNEB)); // ?NEB @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
 }
@@ -264,8 +259,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(6);
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
-  Push(pp_NLR); // NLR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_NLR)); // NLR @
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -294,8 +288,7 @@ void UNK_0xf311() // UNK_0xf311
     ON_2(); // ON_2
     return;
   }
-  Push(pp_NLR); // NLR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_NLR)); // NLR @
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
@@ -360,8 +353,7 @@ void UNK_0xf3ef() // UNK_0xf3ef
       UNK_0xf202(); // UNK_0xf202
       SET_STR_AS_PARAM("ARMING ");
       DrawTTY(); // .TTY
-      Push(pp_Is3); // ?3
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_Is3)); // ?3 @
       if (Pop() != 0)
       {
         PRINT("PLASMA BOLTS", 12); // (.")

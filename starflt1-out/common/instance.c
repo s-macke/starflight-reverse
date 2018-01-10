@@ -974,12 +974,7 @@ void _gt_INACTIVE() // >INACTIVE
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(pp_IBFR); // IBFR
-  Push(Read16(Pop())); // @
-  Push(3);
-  _dash_(); // -
-  Push(Read16(cc_IHEADLEN)); // IHEADLEN
-  _dash_(); // -
+  Push((Read16(pp_IBFR) - 3) - Read16(cc_IHEADLEN)); // IBFR @ 3 - IHEADLEN -
   Push(Read16(regsp)); // DUP
   StoreINST_dash_SPECIES(); // !INST-SPECIES
   CDROP(); // CDROP
@@ -1268,8 +1263,7 @@ void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
   {
     Push(pp_IsRECYCLED); // ?RECYCLED
     OFF_2(); // OFF_2
-    Push(pp_IsREUSE); // ?REUSE
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_IsREUSE)); // ?REUSE @
     if (Pop() != 0)
     {
       UNK_0x7fb1(); // UNK_0x7fb1
@@ -1281,8 +1275,7 @@ void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
     if (Pop() != 0)
     {
       CDROP(); // CDROP
-      Push(pp_IsREUSE); // ?REUSE
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_IsREUSE)); // ?REUSE @
       if (Pop() != 0)
       {
         UNK_0x8049(); // UNK_0x8049
@@ -1408,8 +1401,7 @@ void ICREATE() // ICREATE
   Push(Read8(Pop())&0xFF); // C@
   GET_dash_NEW_dash_INSTANCE(); // GET-NEW-INSTANCE
   Pop(); // DROP
-  Push(pp_IsRECYCLED); // ?RECYCLED
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsRECYCLED)); // ?RECYCLED @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {

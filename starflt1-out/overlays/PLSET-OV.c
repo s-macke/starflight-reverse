@@ -1140,8 +1140,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
     do
     {
       UNK_0xf1c8(); // UNK_0xf1c8
-      Push(pp_ATMO); // ATMO
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_ATMO)); // ATMO @
     } while(Pop() == 0);
     return;
   }
@@ -1176,8 +1175,7 @@ void UNK_0xf234() // UNK_0xf234
 
 void UNK_0xf24e() // UNK_0xf24e
 {
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   Push(Read16(regsp)); // DUP
   Push(0x01e0);
   _gt_(); // >
@@ -1351,8 +1349,7 @@ void UNK_0xf389() // UNK_0xf389
 
 void UNK_0xf3ba() // UNK_0xf3ba
 {
-  Push(pp_ATMO); // ATMO
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ATMO)); // ATMO @
   if (Pop() != 0)
   {
     Push(pp_CLIST3); // CLIST3

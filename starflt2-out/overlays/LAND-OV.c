@@ -156,8 +156,7 @@ void UNK_0xf1e7() // UNK_0xf1e7
     Push(0x65e1+INST_dash_QT.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Pop() * Pop()); // *
-    Push(pp_UNK_0xf1b3); // UNK_0xf1b3
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf1b3)); // UNK_0xf1b3 @
     if (Pop() != 0)
     {
       UNK_0xf1b7(); // UNK_0xf1b7
@@ -345,8 +344,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -421,8 +419,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
   UNK_0xf24b(); // UNK_0xf24b
   Push(0xbd55); // probable 'DESCE'
   MODULE(); // MODULE
-  Push(pp_IsFUEL_dash_D); // ?FUEL-D
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsFUEL_dash_D)); // ?FUEL-D @
   if (Pop() != 0)
   {
     UNK_0xf2c8(); // UNK_0xf2c8
@@ -440,8 +437,7 @@ void UNK_0xf4a0() // UNK_0xf4a0
 
 void UNK_0xf4ce() // UNK_0xf4ce
 {
-  Push(pp_GWF); // GWF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_GWF)); // GWF @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -464,8 +460,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
       Store_2(); // !_2
     }
   }
-  Push(pp_GWF); // GWF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_GWF)); // GWF @
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
 
@@ -477,8 +472,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
 
 void IsLAND() // ?LAND
 {
-  Push(pp_IsG_dash_AWAR); // ?G-AWAR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsG_dash_AWAR)); // ?G-AWAR @
   if (Pop() != 0)
   {
     UNK_0xf4ce(); // UNK_0xf4ce

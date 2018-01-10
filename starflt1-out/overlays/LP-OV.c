@@ -208,10 +208,8 @@ void UNK_0xe0e6() // UNK_0xe0e6
 
 void UNK_0xe0f4() // UNK_0xe0f4
 {
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
-  Push(pp_FILE_n_); // FILE#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
+  Push(Read16(pp_FILE_n_)); // FILE# @
 }
 
 
@@ -630,8 +628,7 @@ void UNK_0xe4b6() // UNK_0xe4b6
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -887,8 +884,7 @@ void UNK_0xeb97() // UNK_0xeb97
 void UNK_0xebb3() // UNK_0xebb3
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
@@ -1193,8 +1189,7 @@ void UNK_0xed63() // UNK_0xed63
 void UNK_0xedaf() // UNK_0xedaf
 {
   unsigned short int a;
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
   LoadData(UNK_0xe316); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
@@ -2057,8 +2052,7 @@ void UNK_0xf4cc() // UNK_0xf4cc
 void SPEC_dot_PARM() // SPEC.PARM
 {
   UNK_0xe4b6(); // UNK_0xe4b6
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   Push(pp_SEED); // SEED
   _st__ex__gt_(); // <!>
   UNK_0xf162(); // UNK_0xf162

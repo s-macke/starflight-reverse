@@ -322,8 +322,7 @@ void TRANSACT() // TRANSACT
     ILAST(); // ILAST
     COVER(); // COVER
     SET_dash_CUR(); // SET-CUR
-    Push(pp_STARDAT); // STARDAT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_STARDAT)); // STARDAT @
     Push(0x65e1+UNK_0xefb4.offset); // IFIELD
     _2_at_(); // 2@
     Push(0x65e1+UNK_0xefb9.offset); // IFIELD
@@ -362,11 +361,7 @@ void INT_pe_() // INT%
   Push(0x000c);
   Push(0x0064);
   M_star__slash_(); // M*/
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
-  Push(pp_PORTDAT); // PORTDAT
-  Push(Read16(Pop())); // @
-  _dash_(); // -
+  Push(Read16(pp_STARDAT) - Read16(pp_PORTDAT)); // STARDAT @ PORTDAT @ -
   Push(0x012c);
   M_star__slash_(); // M*/
   _2DUP(); // 2DUP
@@ -382,8 +377,7 @@ void INT_pe_() // INT%
   StoreTFLAG(); // !TFLAG
   Push(5);
   TRANSACT(); // TRANSACT
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDAT)); // STARDAT @
   Push(pp_PORTDAT); // PORTDAT
   Store_2(); // !_2
 }
@@ -403,8 +397,7 @@ void UNK_0xf138() // UNK_0xf138
   Push(0xfffc);
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
-  Push(pp_XBLT); // XBLT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XBLT)); // XBLT @
   _dash_(); // -
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2

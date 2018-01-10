@@ -154,8 +154,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf090() // UNK_0xf090
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(6);
   Push((Pop()==Pop())?1:0); // =
 }
@@ -206,8 +205,7 @@ void UNK_0xf0bb() // UNK_0xf0bb
 
 void UNK_0xf0c5() // UNK_0xf0c5
 {
-  Push(pp_PATIENC); // PATIENC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PATIENC)); // PATIENC @
   Push(4);
   _gt_(); // >
   UNK_0xf07e(); // UNK_0xf07e
@@ -235,8 +233,7 @@ void UNK_0xf0d9() // UNK_0xf0d9
 
 void UNK_0xf0e3() // UNK_0xf0e3
 {
-  Push(pp_PATIENC); // PATIENC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PATIENC)); // PATIENC @
   Push(2);
   _gt_(); // >
   UNK_0xf0d9(); // UNK_0xf0d9
@@ -251,8 +248,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
 
 void UNK_0xf0f5() // UNK_0xf0f5
 {
-  Push(pp_PATIENC); // PATIENC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PATIENC)); // PATIENC @
   Push(3);
   _st_(); // <
   UNK_0xf0d9(); // UNK_0xf0d9
@@ -479,8 +475,7 @@ void PSYCH() // PSYCH
   {
     CTINIT(); // CTINIT
     UNK_0xf13d(); // UNK_0xf13d
-    Push(pp_UNK_0xf08c); // UNK_0xf08c
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf08c)); // UNK_0xf08c @
     Push((Pop()==Pop())?1:0); // =
     if (Pop() == 0) Push(1); else Push(0); // NOT
     Push(Pop() | Pop()); // OR
@@ -665,14 +660,12 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(pp_IsOPEN); // ?OPEN
   ON_2(); // ON_2
   CLIPPER(); // CLIPPER
-  Push(pp__n_IN); // #IN
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_IN)); // #IN @
   Push(pp_IsOPEN); // ?OPEN
   _099(); // 099
   if (Pop() != 0)
   {
-    Push(pp_VIN); // VIN
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_VIN)); // VIN @
     a = Pop(); // >R
     Push(a); // I
     Push(Pop()+2); // 2+
@@ -830,16 +823,11 @@ void UNK_0xf48c() // UNK_0xf48c
   a = Pop(); // >R
   b = Pop(); // >R
   GetCRS(); // @CRS
-  Push(pp_YBLT); // YBLT
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_YBLT) + 1); // YBLT @ 1+
   Push(Read16(regsp)); // DUP
   Push(6);
   _dash_(); // -
-  Push(pp_XBLT); // XBLT
-  Push(Read16(Pop())); // @
-  Push(2);
-  _dash_(); // -
+  Push(Read16(pp_XBLT) - 2); // XBLT @ 2 -
   SWAP(); // SWAP
   OVER(); // OVER
   Push(b); // R>

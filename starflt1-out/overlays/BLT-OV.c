@@ -172,28 +172,23 @@ void DrawPARMS() // .PARMS
 {
   Exec("CR"); // call of word 0x26ee '(CR)'
   PRINT("x2= ", 4); // (.")
-  Push(pp_X2); // X2
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_X2)); // X2 @
   Push(4);
   DrawR(); // .R
   PRINT("x1= ", 4); // (.")
-  Push(pp_X1); // X1
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_X1)); // X1 @
   Push(4);
   DrawR(); // .R
   PRINT("st ", 3); // (.")
-  Push(pp_XSTART); // XSTART
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XSTART)); // XSTART @
   Push(4);
   DrawR(); // .R
   PRINT("en ", 3); // (.")
-  Push(pp_XEND); // XEND
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XEND)); // XEND @
   Push(4);
   DrawR(); // .R
   PRINT("y ", 2); // (.")
-  Push(pp_YLINE); // YLINE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YLINE)); // YLINE @
   Push(4);
   DrawR(); // .R
   KEY_2(); // KEY_2
@@ -337,11 +332,9 @@ void DrawHYBRID() // .HYBRID
   imax = Pop();
   do // (DO)
   {
-    Push(pp_ABLT); // ABLT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_ABLT)); // ABLT @
     b = Pop(); // >R
-    Push(pp_BLTSEG); // BLTSEG
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_BLTSEG)); // BLTSEG @
     c = Pop(); // >R
     Push(4);
     Push(pp_ABLT); // ABLT
@@ -360,12 +353,9 @@ void DrawHYBRID() // .HYBRID
     LC_at_(); // LC@
     if (Pop() != 0)
     {
-      Push(pp_BLTSEG); // BLTSEG
-      Push(Read16(Pop())); // @
-      Push(pp_ABLT); // ABLT
-      Push(Read16(Pop())); // @
-      Push(pp_IsEGA); // ?EGA
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_BLTSEG)); // BLTSEG @
+      Push(Read16(pp_ABLT)); // ABLT @
+      Push(Read16(pp_IsEGA)); // ?EGA @
       if (Pop() != 0)
       {
         DrawEGARUNBIT(); // .EGARUNBIT
@@ -377,12 +367,8 @@ void DrawHYBRID() // .HYBRID
     {
       _co_BLT_cc_(); // {BLT}
     }
-    Push(pp_BLTSEG); // BLTSEG
-    Push(Read16(Pop())); // @
-    Push(pp_ABLT); // ABLT
-    Push(Read16(Pop())); // @
-    Push(4);
-    _dash_(); // -
+    Push(Read16(pp_BLTSEG)); // BLTSEG @
+    Push(Read16(pp_ABLT) - 4); // ABLT @ 4 -
     L_at_(); // L@
     Push(4);
     _dash_(); // -

@@ -126,8 +126,7 @@ void UNK_0xf45e() // UNK_0xf45e
   UNK_0xf444(); // UNK_0xf444
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(pp__i__dot_HUFF); // '.HUFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i__dot_HUFF)); // '.HUFF @
   MODULE(); // MODULE
   Push(2);
   _star_CLOSE(); // *CLOSE

@@ -274,8 +274,7 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(8);
     Push(pp_WBLT); // WBLT
     _st__ex__gt_(); // <!>
-    Push(pp_ICON_h_); // ICON^
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_ICON_h_)); // ICON^ @
     Push(i); // I
     Push(0x0012);
     Push(Pop() * Pop()); // *

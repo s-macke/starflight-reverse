@@ -246,10 +246,7 @@ void UNK_0xf1e1() // UNK_0xf1e1
 
 void UNK_0xf233() // UNK_0xf233
 {
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
-  Push(0x0480);
-  _dash_(); // -
+  Push(Read16(pp_XABS) - 0x0480); // XABS @ 0x0480 -
   Push(0x000a);
   Push(0x0040);
   _star__slash_(); // */
@@ -303,10 +300,7 @@ void UNK_0xf233() // UNK_0xf233
 
 void UNK_0xf2a7() // UNK_0xf2a7
 {
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
-  Push(0x01e0);
-  _dash_(); // -
+  Push(Read16(pp_YABS) - 0x01e0); // YABS @ 0x01e0 -
   Push(0x000a);
   Push(0x0035);
   _star__slash_(); // */
@@ -360,8 +354,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
 
 void UNK_0xf31b() // UNK_0xf31b
 {
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLHI)); // PLHI @
   Push(-1);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -373,12 +366,10 @@ void UNK_0xf31b() // UNK_0xf31b
     Push(pp_UNK_0xf22b); // UNK_0xf22b
     Store_2(); // !_2
   }
-  Push(pp_UNK_0xf22b); // UNK_0xf22b
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf22b)); // UNK_0xf22b @
   Push(pp_XABS); // XABS
   Store_2(); // !_2
-  Push(pp_UNK_0xf22f); // UNK_0xf22f
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf22f)); // UNK_0xf22f @
   Push(pp_YABS); // YABS
   Store_2(); // !_2
   SAVE_dash_OV(); // SAVE-OV
@@ -394,22 +385,19 @@ void UNK_0xf34d() // UNK_0xf34d
   Push(Read16(cc_AX)); // AX
   _099(); // 099
   Push(0x00c5);
-  Push(Read16(cc_BX)); // BX
-  Push(Pop()+1); // 1+
+  Push(Read16(cc_BX) + 1); // BX 1+
   C_ex__2(); // C!_2
   Push(0x0053);
   Push(Read16(cc_BX)); // BX
   C_ex__2(); // C!_2
   Push(0x0090);
-  Push(Read16(cc_CX)); // CX
-  Push(Pop()+1); // 1+
+  Push(Read16(cc_CX) + 1); // CX 1+
   C_ex__2(); // C!_2
   Push(0x009d);
   Push(Read16(cc_CX)); // CX
   C_ex__2(); // C!_2
   Push(0x00c5);
-  Push(Read16(cc_DX)); // DX
-  Push(Pop()+1); // 1+
+  Push(Read16(cc_DX) + 1); // DX 1+
   C_ex__2(); // C!_2
   Push(0x0053);
   Push(Read16(cc_DX)); // DX
@@ -425,8 +413,7 @@ void UNK_0xf34d() // UNK_0xf34d
 void UNK_0xf38d() // UNK_0xf38d
 {
   Push(0x0060);
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   Push(0x0028);
   _slash_(); // /
   Push(Pop()*2); // 2*
@@ -448,8 +435,7 @@ void UNK_0xf38d() // UNK_0xf38d
 
 void UNK_0xf3b7() // UNK_0xf3b7
 {
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XABS)); // XABS @
   Push(0x0030);
   _slash_(); // /
   Push(0x0060);
@@ -474,15 +460,13 @@ void UNK_0xf3df() // UNK_0xf3df
   unsigned short int a;
   UNK_0xf176(); // UNK_0xf176
   UNK_0xf3b7(); // UNK_0xf3b7
-  Push(pp_XBLT); // XBLT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XBLT)); // XBLT @
   Push(0x00c1);
   OVER(); // OVER
   Push(0x008f);
   LLINE(); // LLINE
   UNK_0xf38d(); // UNK_0xf38d
-  Push(pp_YBLT); // YBLT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YBLT)); // YBLT @
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
   Push(0x005f);
@@ -574,8 +558,7 @@ void GETSITE_1() // GETSITE_1
       UNK_0xf2a7(); // UNK_0xf2a7
       UNK_0xf233(); // UNK_0xf233
       UNK_0xf42f(); // UNK_0xf42f
-      Push(pp_YABS); // YABS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_YABS)); // YABS @
       Push(Pop() + Pop()); // +
       Push(0);
       MAX(); // MAX
@@ -583,8 +566,7 @@ void GETSITE_1() // GETSITE_1
       MIN(); // MIN
       Push(pp_YABS); // YABS
       Store_2(); // !_2
-      Push(pp_XABS); // XABS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_XABS)); // XABS @
       Push(Pop() + Pop()); // +
       Push(0);
       MAX(); // MAX
@@ -602,12 +584,10 @@ void GETSITE_1() // GETSITE_1
     }
     IsTRIG(); // ?TRIG
   } while(Pop() == 0);
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XABS)); // XABS @
   Push(pp_UNK_0xf22b); // UNK_0xf22b
   Store_2(); // !_2
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   Push(pp_UNK_0xf22f); // UNK_0xf22f
   Store_2(); // !_2
   Push(pp_ESC_dash_EN); // ESC-EN
@@ -643,8 +623,7 @@ void DrawMERCATOR() // .MERCATOR
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   DrawREGION(); // .REGION
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
@@ -663,8 +642,7 @@ void DrawMERCATOR() // .MERCATOR
 
 void GETSITE_2() // GETSITE_2
 {
-  Push(pp__n_AUX); // #AUX
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_AUX)); // #AUX @
   Push(4);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT

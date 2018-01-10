@@ -342,8 +342,7 @@ LoadDataType UNK_0xec56 = {TRADERSIDX, 0x30, 0x01, 0x32, 0x6ad1};
 
 void UNK_0xec6c() // UNK_0xec6c
 {
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDAT)); // STARDAT @
   Push(0x002d);
   _slash_(); // /
 }
@@ -709,8 +708,7 @@ void UNK_0xee3f() // UNK_0xee3f
   GetINST_dash_S(); // @INST-S
   Push(Read8(Pop())&0xFF); // C@
   ICLOSE(); // ICLOSE
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDAT)); // STARDAT @
   Push(Pop() + Pop()); // +
 }
 
@@ -1330,8 +1328,7 @@ void UNK_0xf33b() // UNK_0xf33b
   if (Pop() == 0) return;
   Pop(); // DROP
   Push(7);
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDAT)); // STARDAT @
   Push(0x001e);
   MOD(); // MOD
   Push(0x000a);
@@ -1359,8 +1356,7 @@ void TRADE_gt_OR() // TRADE>OR
   Push(8);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) return;
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) return;
   Push(3);
   Push(Pop() + Pop()); // +
@@ -1526,8 +1522,7 @@ void UNK_0xf4b7() // UNK_0xf4b7
   a = Pop(); // >R
   Push(Read16(a)); // R@
   _gt_FLAG(); // >FLAG
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   Push(a); // R>

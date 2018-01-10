@@ -270,12 +270,10 @@ void UNK_0xeefc() // UNK_0xeefc
 
 void UNK_0xef0c() // UNK_0xef0c
 {
-  Push(pp_TIME_dash_PA); // TIME-PA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_TIME_dash_PA)); // TIME-PA @
   if (Pop() != 0)
   {
-    Push(pp_CTTOP); // CTTOP
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_CTTOP)); // CTTOP @
   } else
   {
     Push(0x0096);
@@ -357,8 +355,7 @@ void UNK_0xef4a() // UNK_0xef4a
 
 void UNK_0xefff() // UNK_0xefff
 {
-  Push(pp_SCROLL_dash_); // SCROLL-
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
   Push(0x0031);
   _gt_(); // >
   if (Pop() == 0) return;
@@ -398,8 +395,7 @@ void UNK_0xf02d() // UNK_0xf02d
 
 void UNK_0xf03d() // UNK_0xf03d
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(6);
   Push((Pop()==Pop())?1:0); // =
 }
@@ -457,8 +453,7 @@ void UNK_0xf066() // UNK_0xf066
     Push(0x65e1+ASKING.offset); // IFIELD
     Push(Read16(Pop())); // @
   }
-  Push(pp__pe_VAL); // %VAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__pe_VAL)); // %VAL @
   U_star_(); // U*
   Push(0x0064);
   U_slash_MOD(); // U/MOD
@@ -716,8 +711,7 @@ void ITEM_gt_PAD() // ITEM>PAD
 
 void UNK_0xf246() // UNK_0xf246
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(6);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -779,8 +773,7 @@ void UNK_0xf28e() // UNK_0xf28e
   Push(0x000b);
   Push((Pop()==Pop())?1:0); // =
   ICLOSE(); // ICLOSE
-  Push(pp_SCROLL_dash_); // SCROLL-
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
   Push(0x0032);
   _st_(); // <
   Push(Pop() | Pop()); // OR
@@ -825,8 +818,7 @@ void BOX_gt_LIST() // BOX>LIST
   do
   {
     UNK_0xf25c(); // UNK_0xf25c
-    Push(pp_SCROLL_dash_); // SCROLL-
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
     Push(0x0032);
     _st_(); // <
     GetINST_dash_C(); // @INST-C
@@ -1101,23 +1093,19 @@ void _ro_BOX_gt__rc_() // (BOX>)
   IsELEMENT(); // ?ELEMENT
   Push(0x65e1+INST_dash_QT.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(pp_ELEM_dash_AM); // ELEM-AM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ELEM_dash_AM)); // ELEM-AM @
   _gt_(); // >
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(pp_ELEM_dash_AM); // ELEM-AM
-    Push(Read16(Pop())); // @
-    Push(-Pop()); // NEGATE
+    Push(-Read16(pp_ELEM_dash_AM)); // ELEM-AM @ NEGATE
     Push(0x65e1+INST_dash_QT.offset); // IFIELD
     _plus__ex__2(); // +!_2
     GetINST_dash_C(); // @INST-C
     GetINST_dash_S(); // @INST-S
     ICREATE(); // ICREATE
     _gt_C_plus_S(); // >C+S
-    Push(pp_ELEM_dash_AM); // ELEM-AM
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_ELEM_dash_AM)); // ELEM-AM @
     Push(0x65e1+INST_dash_QT.offset); // IFIELD
     Store_2(); // !_2
     C_gt_(); // C>

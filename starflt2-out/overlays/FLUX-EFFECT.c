@@ -233,8 +233,7 @@ void UNK_0xf420() // UNK_0xf420
 void HYPER_dash_FRAME() // HYPER-FRAME
 {
   unsigned short int i, imax;
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf38a)); // UNK_0xf38a @
   if (Pop() != 0)
   {
     DARK(); // DARK
@@ -301,8 +300,7 @@ void FLUX() // FLUX
 void UNK_0xf4e5() // UNK_0xf4e5
 {
   unsigned short int i, imax;
-  Push(pp_UNK_0xf38a); // UNK_0xf38a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf38a)); // UNK_0xf38a @
   if (Pop() != 0)
   {
     DARK(); // DARK

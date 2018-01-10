@@ -130,8 +130,7 @@ void _ro_SETUP_rc_() // (SETUP)
   Push(0x01c0);
   _2_ex__2(); // 2!_2
   SET0_slash_(); // SET0/
-  Push(pp__i_SETUP_plus_); // 'SETUP+
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i_SETUP_plus_)); // 'SETUP+ @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   EXECUTE(); // EXECUTE
@@ -155,8 +154,7 @@ void UNK_0x0939() // UNK_0x0939
   Push(pp_OPERATOR); // OPERATOR
   Push(0x0074);
   CMOVE_2(); // CMOVE_2
-  Push(user_DP); // DP
-  Push(Read16(Pop())); // @
+  Push(Read16(user_DP)); // DP @
   Push(Read16(cc_INITIAL_dash_DPB)); // INITIAL-DPB
   Store(); // !
   _i_FORTH(); // 'FORTH
@@ -171,15 +169,13 @@ void UNK_0x0939() // UNK_0x0939
   SET_dash_BUFFERS(); // SET-BUFFERS
   AUTO_dash_SCREEN(); // AUTO-SCREEN
   UNK_0x0343(); // UNK_0x0343
-  Push(pp_BOOT_dash_HOOK); // BOOT-HOOK
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_BOOT_dash_HOOK)); // BOOT-HOOK @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
     EXECUTE(); // EXECUTE
   }
-  Push(pp_BOOT_dash_LOAD); // BOOT-LOAD
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_BOOT_dash_LOAD)); // BOOT-LOAD @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {

@@ -388,8 +388,7 @@ IFieldType _n_BLASTOS = {SHIPIDX, 0x57, 0x01};
 
 void UNK_0xe7be() // UNK_0xe7be
 {
-  Push(pp_UNK_0xe7ba); // UNK_0xe7ba
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xe7ba)); // UNK_0xe7ba @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   SWAP(); // SWAP
@@ -1357,20 +1356,7 @@ void _n__gt_BUY() // #>BUY
 void UNK_0xee94() // UNK_0xee94
 {
   unsigned short int a;
-  Push(pp_UNK_0xea76); // UNK_0xea76
-  Push(pp_UNK_0xe7ba); // UNK_0xe7ba
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
-  Push(Pop() + Pop()); // +
-  Push(4);
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
-  _dash_(); // -
-  Push(Pop()*2); // 2*
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
+  Push(Read16((pp_UNK_0xea76 + (Read16(pp_UNK_0xe7ba) - 1) * 0x000a) + (4 - Read16(pp_OCRS)) * 2)); // UNK_0xea76 UNK_0xe7ba @ 1- 0x000a * + 4 OCRS @ - 2* + @
   Push(Read16(regsp)); // DUP
   Push(0x0064);
   U_star_(); // U*
@@ -1381,11 +1367,8 @@ void UNK_0xee94() // UNK_0xee94
     U_star_(); // U*
     DNEGATE(); // DNEGATE
     UNK_0xe71e(); // UNK_0xe71e
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    Push(Pop()+1); // 1+
-    Push(pp_UNK_0xe7ba); // UNK_0xe7ba
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_OCRS) + 1); // OCRS @ 1+
+    Push(Read16(pp_UNK_0xe7ba)); // UNK_0xe7ba @
     UNK_0xec6a(); // UNK_0xec6a
     SWAP(); // SWAP
     Pop(); // DROP
@@ -1394,13 +1377,8 @@ void UNK_0xee94() // UNK_0xee94
     C_ex__2(); // C!_2
     Push(Pop()+1); // 1+
     C_ex__2(); // C!_2
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    Push(Pop()+1); // 1+
-    Push(0x01f4);
-    Push(Pop() * Pop()); // *
-    Push(pp_UNK_0xe7ba); // UNK_0xe7ba
-    Push(Read16(Pop())); // @
+    Push((Read16(pp_OCRS) + 1) * 0x01f4); // OCRS @ 1+ 0x01f4 *
+    Push(Read16(pp_UNK_0xe7ba)); // UNK_0xe7ba @
     a = Pop(); // >R
     Push(a); // I
     Push(3);
@@ -1462,14 +1440,11 @@ void UNK_0xef52() // UNK_0xef52
       Push(Pop() * Pop()); // *
       Push(pp_NCRS); // NCRS
       _plus__ex__2(); // +!_2
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
+      Push(Read16(pp_OCRS)); // OCRS @
       Push((Pop()==Pop())?1:0); // =
       if (Pop() == 0) Push(1); else Push(0); // NOT
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
       Push(0);
       Push(5);
       WITHIN(); // WITHIN
@@ -1478,8 +1453,7 @@ void UNK_0xef52() // UNK_0xef52
       {
         BLT(); // BLT
         Push(0x0056);
-        Push(pp_NCRS); // NCRS
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_NCRS)); // NCRS @
         Push(Read16(regsp)); // DUP
         Push(pp_OCRS); // OCRS
         Store_2(); // !_2
@@ -1491,8 +1465,7 @@ void UNK_0xef52() // UNK_0xef52
         BLT(); // BLT
       } else
       {
-        Push(pp_OCRS); // OCRS
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_OCRS)); // OCRS @
         Push(pp_NCRS); // NCRS
         Store_2(); // !_2
       }
@@ -1522,8 +1495,7 @@ void UNK_0xef52() // UNK_0xef52
 
 void UNK_0xefcc() // UNK_0xefcc
 {
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   Push(Read16(regsp)); // DUP
   Push(1);
   Push(6);
@@ -1560,8 +1532,7 @@ void UNK_0xefcc() // UNK_0xefcc
       _099(); // 099
       Push(pp_XORMODE); // XORMODE
       ON_2(); // ON_2
-      Push(pp_CRSCOLO); // CRSCOLO
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_CRSCOLO)); // CRSCOLO @
       StoreCOLOR(); // !COLOR
       BLT(); // BLT
       UNK_0xef52(); // UNK_0xef52
@@ -1679,8 +1650,7 @@ void _n__gt_SELL() // #>SELL
 
 void UNK_0xf0fb() // UNK_0xf0fb
 {
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   Push(Read16(regsp)); // DUP
   Push(1);
   Push(6);
@@ -1702,8 +1672,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
       SWAP(); // SWAP
       Store_2(); // !_2
       Pop(); // DROP
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       Push(3);
       Push((Pop()==Pop())?1:0); // =
       Push(0x00fa);
@@ -1711,8 +1680,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
       Push(0x65e1+UNK_0xe78c.offset); // IFIELD
       Push(Read16(Pop())); // @
       MIN(); // MIN
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       UNK_0xec88(); // UNK_0xec88
       Push(pp_UNK_0xec9c); // UNK_0xec9c
       _2_at_(); // 2@
@@ -1721,8 +1689,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
       MODULE(); // MODULE
       UNK_0xeb07(); // UNK_0xeb07
       UNK_0xe750(); // UNK_0xe750
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       UNK_0xedb2(); // UNK_0xedb2
     } else
     {
@@ -1731,8 +1698,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
     return;
   }
   _n__gt_SELL(); // #>SELL case
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   UNK_0xedb2(); // UNK_0xedb2
 }
 
@@ -1759,8 +1725,7 @@ void UNK_0xf173() // UNK_0xf173
   Push(pp_UNK_0xe903); // UNK_0xe903
   BLD_dash_CRS(); // BLD-CRS
   Push(0);
-  Push(pp_UNK_0xf16f); // UNK_0xf16f
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf16f)); // UNK_0xf16f @
   if (Pop() != 0)
   {
     UNK_0xec33(); // UNK_0xec33
@@ -1782,10 +1747,8 @@ void UNK_0xf173() // UNK_0xf173
       SET_dash_CRS(); // SET-CRS
       if (Pop() != 0)
       {
-        Push(pp_OCRS); // OCRS
-        Push(Read16(Pop())); // @
-        Push(pp_UNK_0xf16f); // UNK_0xf16f
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_OCRS)); // OCRS @
+        Push(Read16(pp_UNK_0xf16f)); // UNK_0xf16f @
         if (Pop() != 0)
         {
           UNK_0xec33(); // UNK_0xec33
@@ -1797,8 +1760,7 @@ void UNK_0xf173() // UNK_0xf173
       IsTRIG(); // ?TRIG
       if (Pop() != 0)
       {
-        Push(pp_UNK_0xf16f); // UNK_0xf16f
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_UNK_0xf16f)); // UNK_0xf16f @
         if (Pop() != 0)
         {
           UNK_0xefcc(); // UNK_0xefcc
@@ -2248,8 +2210,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
     if (Pop() != 0)
     {
       Push(0);
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
     } else
     {

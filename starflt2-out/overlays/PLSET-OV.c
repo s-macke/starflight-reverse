@@ -1160,8 +1160,7 @@ void UNK_0xf409() // UNK_0xf409
 
 void UNK_0xf43a() // UNK_0xf43a
 {
-  Push(pp_ATMO); // ATMO
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ATMO)); // ATMO @
   if (Pop() != 0)
   {
     Push(pp_CLIST3); // CLIST3

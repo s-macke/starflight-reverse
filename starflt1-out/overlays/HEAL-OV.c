@@ -166,13 +166,9 @@ void UNK_0xf0ce() // UNK_0xf0ce
   SWAP(); // SWAP
   Push(4);
   Push(Pop() * Pop()); // *
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(Pop()+2); // 2+
+  Push(Read16(pp_WLEFT) + 2); // WLEFT @ 2+
   Push(Pop() + Pop()); // +
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
+  Push(Read16(pp_WTOP) - 1); // WTOP @ 1-
   ROT(); // ROT
   Push(7);
   Push(Pop() * Pop()); // *
@@ -317,23 +313,16 @@ void UNK_0xf183() // UNK_0xf183
   _1_dot_5_at_(); // 1.5@
   Push2Words("NULL");
   D_eq_(); // D=
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   UNK_0xf0bc(); // UNK_0xf0bc
   _gt_DISPLAY(); // >DISPLAY
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(pp_WBOTTOM); // WBOTTOM
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
-  Push(pp_WRIGHT); // WRIGHT
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_WTOP)); // WTOP @
+  Push(Read16(pp_WLEFT)); // WLEFT @
+  Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
+  Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
   SetColor(YELLOW);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   SetColor(RED);
@@ -533,8 +522,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
         Push(Pop() & Pop()); // AND
         if (Pop() == 0) Push(1); else Push(0); // 0=
         if (Pop() == 0) Push(1); else Push(0); // 0=
-        Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
         _0_gt_(); // 0>
         Push(Pop() & Pop()); // AND
         if (Pop() != 0)
@@ -587,13 +575,11 @@ void UNK_0xf2cd() // UNK_0xf2cd
 void DrawVITS() // .VITS
 {
   unsigned short int a, b, i, imax, j, jmax;
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   b = Pop(); // >R
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -609,8 +595,7 @@ void DrawVITS() // .VITS
   do // (DO)
   {
     GCR(); // GCR
-    Push(pp_WCHARS); // WCHARS
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_WCHARS)); // WCHARS @
     SetColor(BLACK);
     POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
     Push(i); // I
@@ -644,8 +629,7 @@ void DrawVITS() // .VITS
         } while(j<jmax); // (LOOP)
 
       }
-      Push(pp_XBLT); // XBLT
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_XBLT)); // XBLT @
       Push(-1);
       Push(pp_XBLT); // XBLT
       _plus__ex_(); // +!
@@ -762,8 +746,7 @@ void UNK_0xf42f() // UNK_0xf42f
     _gt_SKILL(); // >SKILL case
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
-    Push(pp_UNK_0xf426); // UNK_0xf426
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf426)); // UNK_0xf426 @
     _gt_(); // >
     if (Pop() != 0)
     {

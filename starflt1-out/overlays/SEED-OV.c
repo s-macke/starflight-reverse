@@ -299,8 +299,7 @@ IFieldType UNK_0xeca8 = {CREATUREIDX, 0x1b, 0x01};
 
 void UNK_0xecdd() // UNK_0xecdd
 {
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XABS)); // XABS @
   Push(0x0012);
   _slash_(); // /
   Push(0x0012);
@@ -318,8 +317,7 @@ void UNK_0xecdd() // UNK_0xecdd
 
 void UNK_0xecfb() // UNK_0xecfb
 {
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   Push(0x001e);
   _slash_(); // /
   Push(0x001e);
@@ -385,8 +383,7 @@ void UNK_0xed49() // UNK_0xed49
   _2DUP(); // 2DUP
   IsINVIS(); // ?INVIS
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(pp_MOVED); // MOVED
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_MOVED)); // MOVED @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
 }
@@ -401,14 +398,10 @@ void UNK_0xed5b() // UNK_0xed5b
   Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   SWAP(); // SWAP
-  Push(pp_XCON); // XCON
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_XCON) + 1); // XCON @ 1+
   _dash_(); // -
   SWAP(); // SWAP
-  Push(pp_YCON); // YCON
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_YCON) + 1); // YCON @ 1+
   _dash_(); // -
 }
 
@@ -464,8 +457,7 @@ void UNK_0xed9d() // UNK_0xed9d
 
 void UNK_0xedaf() // UNK_0xedaf
 {
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   Push(Read16(regsp)); // DUP
   Push(0x01e0);
   _gt_(); // >
@@ -593,8 +585,7 @@ void UNK_0xee91() // UNK_0xee91
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   Push(0);
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLHI)); // PLHI @
   Push(0);
 
   i = Pop();
@@ -718,8 +709,7 @@ void UNK_0xef75() // UNK_0xef75
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Pop(); // DROP
 }
@@ -851,15 +841,13 @@ void UNK_0xf02b() // UNK_0xf02b
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xf001(); // UNK_0xf001
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(pp_RECORD_n_); // RECORD#
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_RECORD_n_)); // RECORD# @
     a = Pop(); // >R
     UNK_0xf00b(); // UNK_0xf00b
     UNK_0xef89(); // UNK_0xef89
@@ -1079,8 +1067,7 @@ void UNK_0xf189() // UNK_0xf189
 void UNK_0xf19b() // UNK_0xf19b
 {
   Push(0);
-  Push(pp_UNK_0xec36); // UNK_0xec36
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xec36)); // UNK_0xec36 @
   RRND(); // RRND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
@@ -1639,14 +1626,12 @@ void POPULA() // POPULA
   Push(0);
   D_plus_(); // D+
   D_st_(); // D<
-  Push(pp_IsCRITIC); // ?CRITIC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsCRITIC)); // ?CRITIC @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(pp_PLHI); // PLHI
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_PLHI)); // PLHI @
     if (Pop() != 0)
     {
       UNK_0xf079(); // UNK_0xf079
@@ -1663,8 +1648,7 @@ void POPULA() // POPULA
   Push(0);
   D_plus_(); // D+
   D_st_(); // D<
-  Push(pp_IsCRITIC); // ?CRITIC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsCRITIC)); // ?CRITIC @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;

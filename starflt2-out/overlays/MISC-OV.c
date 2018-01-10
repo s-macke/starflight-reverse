@@ -387,8 +387,7 @@ void UNK_0xef6e() // UNK_0xef6e
   Pop(); // DROP
   IOPEN(); // IOPEN
   CTINIT(); // CTINIT
-  Push(pp__i__dot_HUFF); // '.HUFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i__dot_HUFF)); // '.HUFF @
   MODULE(); // MODULE
   Push(3);
   _star_CLOSE(); // *CLOSE
@@ -519,11 +518,8 @@ void UNK_0xf042() // UNK_0xf042
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-    Push(pp_XBLT); // XBLT
-    Push(Read16(Pop())); // @
-    Push(Pop()*2); // 2*
-    Push(pp_YBLT); // YBLT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_XBLT) * 2); // XBLT @ 2*
+    Push(Read16(pp_YBLT)); // YBLT @
     L_at_PIXEL(); // L@PIXEL
     Push(0xfffc);
     Push(pp_XBLT); // XBLT
@@ -596,13 +592,11 @@ void UNK_0xf09a() // UNK_0xf09a
 
 void UNK_0xf0c0() // UNK_0xf0c0
 {
-  Push(pp__dash_AIN); // -AIN
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__dash_AIN)); // -AIN @
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    Push(pp__dash_AIN); // -AIN
-    Push(Read16(Pop())); // @
+    Push(Read16(pp__dash_AIN)); // -AIN @
     Push((Pop()==Pop())?1:0); // =
     SWAP(); // SWAP
     Push(0x0030);
@@ -769,8 +763,7 @@ void _ro__ask_ART() // (?ART
 
 void UNK_0xf208() // UNK_0xf208
 {
-  Push(pp_UNK_0xee46); // UNK_0xee46
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee46)); // UNK_0xee46 @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0);
   Push(4);
@@ -962,8 +955,7 @@ void UNK_0xf35b() // UNK_0xf35b
   Push(0x0064);
   RRND(); // RRND
   _gt_(); // >
-  Push(pp_UNK_0xee46); // UNK_0xee46
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee46)); // UNK_0xee46 @
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {

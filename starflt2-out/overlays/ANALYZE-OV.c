@@ -478,8 +478,7 @@ void UNK_0xee5b() // UNK_0xee5b
   _gt_(); // >
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLHI)); // PLHI @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
@@ -590,8 +589,7 @@ void UNK_0xef08() // UNK_0xef08
 void UNK_0xef13() // UNK_0xef13
 {
   unsigned short int a;
-  Push(pp_IsNEB); // ?NEB
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsNEB)); // ?NEB @
   if (Pop() == 0) return;
   GetINST_dash_S(); // @INST-S
   a = Pop(); // >R
@@ -652,8 +650,7 @@ void UNK_0xef53() // UNK_0xef53
       PRINT("EQUIVALENT", 10); // (.")
     }
     Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
-    Push(pp_NLR); // NLR
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_NLR)); // NLR @
     Push(1);
     Push((Pop()==Pop())?1:0); // =
     if (Pop() == 0) Push(1); else Push(0); // NOT

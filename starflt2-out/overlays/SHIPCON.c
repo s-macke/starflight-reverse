@@ -116,14 +116,12 @@ void UNK_0xf37b() // UNK_0xf37b
 
 void DrawNOFUN() // .NOFUN
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(5);
   _st_(); // <
   if (Pop() != 0)
   {
-    Push(pp_IsON_dash_PLA); // ?ON-PLA
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
     if (Pop() != 0)
     {
       _gt_TVCT(); // >TVCT
@@ -149,8 +147,7 @@ void UNK_0xf3c8() // UNK_0xf3c8
 {
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) return;
   Push(0x5265); Push(0x0002);
   UNK_0xf37b(); // UNK_0xf37b
@@ -211,8 +208,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
 void UNK_0xf436() // UNK_0xf436
 {
   UNK_0xf3f6(); // UNK_0xf3f6
-  Push(pp__dash_END); // -END
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__dash_END)); // -END @
   Push(5);
   _star__slash_(); // */
   Push(0x001a);
@@ -253,8 +249,7 @@ void UNK_0xf46c() // UNK_0xf46c
 void UNK_0xf47a() // UNK_0xf47a
 {
   Push(Read16(regsp)); // DUP
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() & Pop()); // AND
@@ -323,12 +318,10 @@ void TOW_dash_US() // TOW-US
   UNK_0xf3c8(); // UNK_0xf3c8
   if (Pop() != 0)
   {
-    Push(pp_CONTEXT_3); // CONTEXT_3
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
     Push(4);
     Push((Pop()==Pop())?1:0); // =
-    Push(pp__n_VESS); // #VESS
-    Push(Read16(Pop())); // @
+    Push(Read16(pp__n_VESS)); // #VESS @
     _0_gt_(); // 0>
     Push(Pop() & Pop()); // AND
     Push(Read16(cc_IsCALLED)); // ?CALLED
@@ -343,8 +336,7 @@ void TOW_dash_US() // TOW-US
       UNK_0xf436(); // UNK_0xf436
       Push(0x09c4);
       MS(); // MS
-      Push(pp__i_YANK); // 'YANK
-      Push(Read16(Pop())); // @
+      Push(Read16(pp__i_YANK)); // 'YANK @
       MODULE(); // MODULE
       CTINIT(); // CTINIT
       UNK_0xf46c(); // UNK_0xf46c

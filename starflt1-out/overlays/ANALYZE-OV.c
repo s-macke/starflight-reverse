@@ -276,14 +276,12 @@ IFieldType UNK_0xebff = {STARSYSTEMIDX, 0x0b, 0x02};
 
 void UNK_0xec04() // UNK_0xec04
 {
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   Push(0x63ef+UNK_0xebff.offset); // IFIELD
   Push(Read16(Pop())); // @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp_IsWIN); // ?WIN
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsWIN)); // ?WIN @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0x63ef+UNK_0xebff.offset); // IFIELD
@@ -558,8 +556,7 @@ void Is_dot_CERTAIN() // ?.CERTAIN
   _gt_(); // >
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(pp_PLHI); // PLHI
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PLHI)); // PLHI @
   _0_st_(); // 0<
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() | Pop()); // OR
@@ -1358,8 +1355,7 @@ void UNK_0xf31e() // UNK_0xf31e
   if (Pop() == 0) return;
   Push(0x63ef+UNK_0xebff.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
@@ -1367,8 +1363,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(0x018f);
   WITHIN(); // WITHIN
   if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(pp_IsWIN); // ?WIN
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsWIN)); // ?WIN @
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
@@ -1496,8 +1491,7 @@ void UNK_0xf436() // UNK_0xf436
   UNK_0xf29f(); // UNK_0xf29f
   UNK_0xf2f2(); // UNK_0xf2f2
   UNK_0xec26(); // UNK_0xec26
-  Push(pp_IsFANLYZ); // ?FANLYZ
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsFANLYZ)); // ?FANLYZ @
   if (Pop() == 0) return;
   UNK_0xf31e(); // UNK_0xf31e
 }

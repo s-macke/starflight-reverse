@@ -6,7 +6,7 @@
 #include"../emul/cpu.h"
 #include"parser.h"
 
-#define STACKSTRINGLEN 128
+#define STACKSTRINGLEN 256
 
 // precedence
 #define PVARNUMBERFUNC 1
@@ -425,6 +425,16 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         stackoffset++;
         return;
     }
+    if (e->codep == CODEIFIELD)
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "0x%04x+%s.offset", IFIELDOFFSET, Forth2CString(s));
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s<IFIELD>", s);
+        stack[stackoffset].precedence = PADDSUB;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        return;
+    }
+
 
     // 2 operand logic
     if ((stackoffset >= 2) &&
@@ -530,11 +540,10 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         return;
     }
 
-    // Functions
     if ((stackoffset >= 1) && (strcmp(s, "@") == 0))
     {
         snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "Read16(%s)", stack[stackoffset-1].expr);
-        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s @", stack[stackoffset-1].forth, s);
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
         stack[stackoffset].precedence = PVARNUMBERFUNC;
         stack[stackoffset].isnumber = 0;
         stackoffset++;
@@ -542,6 +551,18 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         return;
     }
 
+    if ((stackoffset >= 1) && (strcmp(s, "C@") == 0))
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "Read16(%s)&0xFF", stack[stackoffset-1].expr);
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PAND;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+    // TODO OVER MAX, !, =, SWAP, NOT, DROP, DUP
 
     Postfix2InfixReset(fp, nspc);
 

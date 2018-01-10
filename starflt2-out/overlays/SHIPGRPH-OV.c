@@ -638,8 +638,7 @@ void UNK_0xf046() // UNK_0xf046
 
 void UNK_0xf0e0() // UNK_0xf0e0
 {
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf0dc)); // UNK_0xf0dc @
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xf0b8); // UNK_0xf0b8
   Push(Pop() + Pop()); // +
@@ -722,10 +721,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   UNK_0xf106(); // UNK_0xf106
   SetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  Push(0x0010);
-  Push(pp_UNK_0xf0dc); // UNK_0xf0dc
-  Push(Read16(Pop())); // @
-  _dash_(); // -
+  Push(0x0010 - Read16(pp_UNK_0xf0dc)); // 0x0010 UNK_0xf0dc @ -
   UNK_0xf106(); // UNK_0xf106
   StoreCRS(); // !CRS
 }

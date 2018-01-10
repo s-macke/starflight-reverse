@@ -202,8 +202,7 @@ void UNK_0xeadc() // UNK_0xeadc
 
 void UNK_0xeb20() // UNK_0xeb20
 {
-  Push(pp_UNK_0xead8); // UNK_0xead8
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xead8)); // UNK_0xead8 @
   Push(1);
   _gt_(); // >
   if (Pop() == 0) return;
@@ -293,8 +292,7 @@ IFieldType UNK_0xeba8 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 void UNK_0xebad() // UNK_0xebad
 {
-  Push(pp_IsEGA); // ?EGA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsEGA)); // ?EGA @
   if (Pop() != 0)
   {
     SetColor(BLUE);
@@ -663,8 +661,7 @@ void UNK_0xee31() // UNK_0xee31
 void UNK_0xef80() // UNK_0xef80
 {
   unsigned short int a;
-  Push(pp_UNK_0xecb3); // UNK_0xecb3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xecb3)); // UNK_0xecb3 @
   a = Pop(); // >R
   Push(0x000a);
   Push(0x0030);
@@ -766,8 +763,7 @@ void UNK_0xf052() // UNK_0xf052
   _gt_HIDDEN(); // >HIDDEN
   GetCRS(); // @CRS
   _gt_1FONT(); // >1FONT
-  Push(pp_UNK_0xecb3); // UNK_0xecb3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xecb3)); // UNK_0xecb3 @
   a = Pop(); // >R
   Push(0x000e);
   SetColor(GREY2);
@@ -871,10 +867,7 @@ void UNK_0xf052() // UNK_0xf052
     SetColor(GREY2);
   }
   StoreCOLOR(); // !COLOR
-  Push(pp_UNK_0xecb3); // UNK_0xecb3
-  Push(Read16(Pop())); // @
-  Push(0x0033);
-  Push(Pop() + Pop()); // +
+  Push(Read16(pp_UNK_0xecb3) + 0x0033); // UNK_0xecb3 @ 0x0033 +
   Push(pp_YBLT); // YBLT
   Store_2(); // !_2
   Push(0x0041);

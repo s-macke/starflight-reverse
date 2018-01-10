@@ -914,20 +914,7 @@ void UNK_0xee14() // UNK_0xee14
 void UNK_0xee20() // UNK_0xee20
 {
   unsigned short int a;
-  Push(pp_UNK_0xeb81); // UNK_0xeb81
-  Push(pp_UNK_0xeb7d); // UNK_0xeb7d
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
-  Push(Pop() + Pop()); // +
-  Push(4);
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
-  _dash_(); // -
-  Push(Pop()*2); // 2*
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
+  Push(Read16((pp_UNK_0xeb81 + (Read16(pp_UNK_0xeb7d) - 1) * 0x000a) + (4 - Read16(pp_OCRS)) * 2)); // UNK_0xeb81 UNK_0xeb7d @ 1- 0x000a * + 4 OCRS @ - 2* + @
   Push(Read16(regsp)); // DUP
   Push(0x0064);
   U_star_(); // U*
@@ -938,11 +925,8 @@ void UNK_0xee20() // UNK_0xee20
     U_star_(); // U*
     DNEGATE(); // DNEGATE
     UNK_0xe99e(); // UNK_0xe99e
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    Push(Pop()+1); // 1+
-    Push(pp_UNK_0xeb7d); // UNK_0xeb7d
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_OCRS) + 1); // OCRS @ 1+
+    Push(Read16(pp_UNK_0xeb7d)); // UNK_0xeb7d @
     UNK_0xec78(); // UNK_0xec78
     SWAP(); // SWAP
     Pop(); // DROP
@@ -951,13 +935,8 @@ void UNK_0xee20() // UNK_0xee20
     C_ex_(); // C!
     Push(Pop()+1); // 1+
     C_ex_(); // C!
-    Push(pp_OCRS); // OCRS
-    Push(Read16(Pop())); // @
-    Push(Pop()+1); // 1+
-    Push(0x01f4);
-    Push(Pop() * Pop()); // *
-    Push(pp_UNK_0xeb7d); // UNK_0xeb7d
-    Push(Read16(Pop())); // @
+    Push((Read16(pp_OCRS) + 1) * 0x01f4); // OCRS @ 1+ 0x01f4 *
+    Push(Read16(pp_UNK_0xeb7d)); // UNK_0xeb7d @
     a = Pop(); // >R
     Push(a); // I
     Push(3);
@@ -1040,14 +1019,11 @@ void UNK_0xef52() // UNK_0xef52
       Push(Pop() * Pop()); // *
       Push(pp_NCRS); // NCRS
       _plus__ex_(); // +!
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
+      Push(Read16(pp_OCRS)); // OCRS @
       Push((Pop()==Pop())?1:0); // =
       if (Pop() == 0) Push(1); else Push(0); // NOT
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
       Push(0);
       Push(5);
       WITHIN(); // WITHIN
@@ -1056,8 +1032,7 @@ void UNK_0xef52() // UNK_0xef52
       {
         BLT(); // BLT
         Push(0x0060);
-        Push(pp_NCRS); // NCRS
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_NCRS)); // NCRS @
         Push(Read16(regsp)); // DUP
         Push(pp_OCRS); // OCRS
         Store_3(); // !_3
@@ -1069,8 +1044,7 @@ void UNK_0xef52() // UNK_0xef52
         BLT(); // BLT
       } else
       {
-        Push(pp_OCRS); // OCRS
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_OCRS)); // OCRS @
         Push(pp_NCRS); // NCRS
         Store_3(); // !_3
       }
@@ -1100,8 +1074,7 @@ void UNK_0xef52() // UNK_0xef52
 
 void UNK_0xefcc() // UNK_0xefcc
 {
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -1135,8 +1108,7 @@ void UNK_0xefcc() // UNK_0xefcc
       OFF(); // OFF
       Push(pp_XORMODE); // XORMODE
       ON_3(); // ON_3
-      Push(pp_CRSCOLO); // CRSCOLO
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_CRSCOLO)); // CRSCOLO @
       StoreCOLOR(); // !COLOR
       BLT(); // BLT
       UNK_0xef52(); // UNK_0xef52
@@ -1230,8 +1202,7 @@ void UNK_0xf041() // UNK_0xf041
 
 void UNK_0xf0da() // UNK_0xf0da
 {
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -1250,8 +1221,7 @@ void UNK_0xf0da() // UNK_0xf0da
       SWAP(); // SWAP
       Store_3(); // !_3
       Pop(); // DROP
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       Push(3);
       Push((Pop()==Pop())?1:0); // =
       Push(0x00fa);
@@ -1259,8 +1229,7 @@ void UNK_0xf0da() // UNK_0xf0da
       Push(0x63ef+UNK_0xea0c.offset); // IFIELD
       Push(Read16(Pop())); // @
       MIN(); // MIN
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       UNK_0xec96(); // UNK_0xec96
       Push(pp_UNK_0xecaa); // UNK_0xecaa
       _2_at_(); // 2@
@@ -1269,8 +1238,7 @@ void UNK_0xf0da() // UNK_0xf0da
       MODULE(); // MODULE
       UNK_0xeadd(); // UNK_0xeadd
       UNK_0xe9d0(); // UNK_0xe9d0
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       UNK_0xed20(); // UNK_0xed20
     } else
     {
@@ -1279,8 +1247,7 @@ void UNK_0xf0da() // UNK_0xf0da
     return;
   }
   UNK_0xf041(); // UNK_0xf041
-  Push(pp_OCRS); // OCRS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_OCRS)); // OCRS @
   UNK_0xed20(); // UNK_0xed20
 }
 
@@ -1307,8 +1274,7 @@ void UNK_0xf14c() // UNK_0xf14c
   Push(pp_UNK_0xea4a); // UNK_0xea4a
   BLD_dash_CRS(); // BLD-CRS
   Push(0);
-  Push(pp_UNK_0xf148); // UNK_0xf148
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf148)); // UNK_0xf148 @
   if (Pop() != 0)
   {
     UNK_0xebe9(); // UNK_0xebe9
@@ -1330,10 +1296,8 @@ void UNK_0xf14c() // UNK_0xf14c
       SET_dash_CRS(); // SET-CRS
       if (Pop() != 0)
       {
-        Push(pp_OCRS); // OCRS
-        Push(Read16(Pop())); // @
-        Push(pp_UNK_0xf148); // UNK_0xf148
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_OCRS)); // OCRS @
+        Push(Read16(pp_UNK_0xf148)); // UNK_0xf148 @
         if (Pop() != 0)
         {
           UNK_0xebe9(); // UNK_0xebe9
@@ -1345,8 +1309,7 @@ void UNK_0xf14c() // UNK_0xf14c
       IsTRIG(); // ?TRIG
       if (Pop() != 0)
       {
-        Push(pp_UNK_0xf148); // UNK_0xf148
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_UNK_0xf148)); // UNK_0xf148 @
         if (Pop() != 0)
         {
           UNK_0xefcc(); // UNK_0xefcc
@@ -1794,8 +1757,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
     if (Pop() != 0)
     {
       Push(0);
-      Push(pp_OCRS); // OCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_OCRS)); // OCRS @
       CONFIG_dash_FUNCTION(); // CONFIG-FUNCTION case
     } else
     {

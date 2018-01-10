@@ -246,8 +246,7 @@ void UNK_0xebe7() // UNK_0xebe7
   Push(0x0036);
   Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Pop() & Pop()); // AND
 }
@@ -479,8 +478,7 @@ void UNK_0xedb5() // UNK_0xedb5
   unsigned short int a;
   a = Pop(); // >R
   Push(0x000a);
-  Push(pp_UNK_0xed9f); // UNK_0xed9f
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xed9f)); // UNK_0xed9f @
   RRND(); // RRND
   Push(a); // I
   Push(Pop()+1); // 1+
@@ -586,10 +584,7 @@ void UNK_0xee3f() // UNK_0xee3f
   Push(0x0077);
   MIN(); // MIN
   LPLOT(); // LPLOT
-  Push(pp_UNK_0xed9f); // UNK_0xed9f
-  Push(Read16(Pop())); // @
-  Push(0x0064);
-  Push(Pop() * Pop()); // *
+  Push(Read16(pp_UNK_0xed9f) * 0x0064); // UNK_0xed9f @ 0x0064 *
   Push(Read16(regsp)); // DUP
   Push(0x00c8);
   Push(Pop() + Pop()); // +
@@ -622,8 +617,7 @@ void UNK_0xee3f() // UNK_0xee3f
 void UNK_0xeebd() // UNK_0xeebd
 {
   unsigned short int i, imax;
-  Push(pp_UNK_0xed9b); // UNK_0xed9b
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xed9b)); // UNK_0xed9b @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -675,8 +669,7 @@ void UNK_0xeee3() // UNK_0xeee3
 
 void UNK_0xeeff() // UNK_0xeeff
 {
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   UNK_0xeee3(); // UNK_0xeee3
   StoreCOLOR(); // !COLOR
   DrawTTY(); // .TTY
@@ -689,8 +682,7 @@ void UNK_0xeeff() // UNK_0xeeff
 
 void UNK_0xef0d() // UNK_0xef0d
 {
-  Push(pp__dash_END); // -END
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__dash_END)); // -END @
 }
 
 
@@ -821,8 +813,7 @@ void UNK_0xf078() // UNK_0xf078
 {
   UNK_0xebdf(); // UNK_0xebdf
   Push(0x09c4);
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -867,8 +858,7 @@ void UNK_0xf098() // UNK_0xf098
 void UNK_0xf0b2() // UNK_0xf0b2
 {
   CTINIT(); // CTINIT
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() != 0)
   {
     UNK_0xefd4(); // UNK_0xefd4
@@ -924,8 +914,7 @@ void UNK_0xf0ca() // UNK_0xf0ca
 
 void UNK_0xf0fe() // UNK_0xf0fe
 {
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_PAST); // PAST
   Store_2(); // !_2
@@ -939,8 +928,7 @@ void UNK_0xf0fe() // UNK_0xf0fe
   UNK_0xf0ca(); // UNK_0xf0ca
   UNK_0xf078(); // UNK_0xf078
   Push(0x1388);
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {

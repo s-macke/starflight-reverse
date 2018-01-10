@@ -121,10 +121,8 @@ void UNK_0xf2d8() // UNK_0xf2d8
     Push(Read16(Pop())); // @
   } else
   {
-    Push(pp_XABS); // XABS
-    Push(Read16(Pop())); // @
-    Push(pp_YABS); // YABS
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_XABS)); // XABS @
+    Push(Read16(pp_YABS)); // YABS @
   }
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -137,17 +135,14 @@ void UNK_0xf2d8() // UNK_0xf2d8
 
 void UNK_0xf308() // UNK_0xf308
 {
-  Push(pp_IsUF); // ?UF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsUF)); // ?UF @
   if (Pop() != 0)
   {
     UNK_0xf2d8(); // UNK_0xf2d8
   } else
   {
-    Push(pp_XABS); // XABS
-    Push(Read16(Pop())); // @
-    Push(pp_YABS); // YABS
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_XABS)); // XABS @
+    Push(Read16(pp_YABS)); // YABS @
   }
   Push(0x001e);
   _dash_(); // -
@@ -181,28 +176,14 @@ void UNK_0xf336() // UNK_0xf336
   _st__ex__gt_(); // <!>
   Push(1);
   Push(Read16(regsp)); // DUP
-  Push(pp_XWLD_c_XP); // XWLD:XP
-  Push(Pop()+2); // 2+
+  Push(pp_XWLD_c_XP + 2); // XWLD:XP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_YWLD_c_YP); // YWLD:YP
-  Push(Pop()+2); // 2+
+  Push(pp_YWLD_c_YP + 2); // YWLD:YP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(0x000a);
-  Push(Pop() + Pop()); // +
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(0x000f);
-  Push(Pop() + Pop()); // +
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(0x001a);
-  Push(Pop() + Pop()); // +
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(0x002b);
-  Push(Pop() + Pop()); // +
+  Push(Read16(pp_XVIS) + 0x000a); // XVIS @ 0x000a +
+  Push(Read16(pp_YVIS) + 0x000f); // YVIS @ 0x000f +
+  Push(Read16(pp_XVIS) + 0x001a); // XVIS @ 0x001a +
+  Push(Read16(pp_YVIS) + 0x002b); // YVIS @ 0x002b +
   StoreVISWIN(); // !VISWIN
 }
 
@@ -228,24 +209,14 @@ void UNK_0xf38e() // UNK_0xf38e
   _st__ex__gt_(); // <!>
   Push(1);
   Push(Read16(regsp)); // DUP
-  Push(pp_XWLD_c_XP); // XWLD:XP
-  Push(Pop()+2); // 2+
+  Push(pp_XWLD_c_XP + 2); // XWLD:XP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_YWLD_c_YP); // YWLD:YP
-  Push(Pop()+2); // 2+
+  Push(pp_YWLD_c_YP + 2); // YWLD:YP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(0x0022);
-  Push(Pop() + Pop()); // +
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(0x003a);
-  Push(Pop() + Pop()); // +
+  Push(Read16(pp_XVIS)); // XVIS @
+  Push(Read16(pp_YVIS)); // YVIS @
+  Push(Read16(pp_XVIS) + 0x0022); // XVIS @ 0x0022 +
+  Push(Read16(pp_YVIS) + 0x003a); // YVIS @ 0x003a +
   StoreVISWIN(); // !VISWIN
 }
 
@@ -270,28 +241,14 @@ void UNK_0xf3da() // UNK_0xf3da
   _st__ex__gt_(); // <!>
   Push(1);
   Push(Read16(regsp)); // DUP
-  Push(pp_XWLD_c_XP); // XWLD:XP
-  Push(Pop()+2); // 2+
+  Push(pp_XWLD_c_XP + 2); // XWLD:XP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_YWLD_c_YP); // YWLD:YP
-  Push(Pop()+2); // 2+
+  Push(pp_YWLD_c_YP + 2); // YWLD:YP 2+
   _st__ex__gt_(); // <!>
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(0x000e);
-  Push(Pop() + Pop()); // +
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(0x0017);
-  Push(Pop() + Pop()); // +
-  Push(pp_XVIS); // XVIS
-  Push(Read16(Pop())); // @
-  Push(0x0016);
-  Push(Pop() + Pop()); // +
-  Push(pp_YVIS); // YVIS
-  Push(Read16(Pop())); // @
-  Push(0x002a);
-  Push(Pop() + Pop()); // +
+  Push(Read16(pp_XVIS) + 0x000e); // XVIS @ 0x000e +
+  Push(Read16(pp_YVIS) + 0x0017); // YVIS @ 0x0017 +
+  Push(Read16(pp_XVIS) + 0x0016); // XVIS @ 0x0016 +
+  Push(Read16(pp_YVIS) + 0x002a); // YVIS @ 0x002a +
   StoreVISWIN(); // !VISWIN
 }
 
@@ -312,19 +269,16 @@ void UNK_0xf3da() // UNK_0xf3da
 
 void UNK_0xf438() // UNK_0xf438
 {
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XABS)); // XABS @
   GetIX(); // @IX
   _dash_(); // -
   ABS(); // ABS
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   GetIY(); // @IY
   _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
-  Push(pp_UNK_0xf434); // UNK_0xf434
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf434)); // UNK_0xf434 @
   MIN(); // MIN
   Push(pp_UNK_0xf434); // UNK_0xf434
   _st__ex__gt_(); // <!>
@@ -337,19 +291,16 @@ void UNK_0xf438() // UNK_0xf438
 
 void UNK_0xf45c() // UNK_0xf45c
 {
-  Push(pp_XABS); // XABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XABS)); // XABS @
   GetIX(); // @IX
   _dash_(); // -
   ABS(); // ABS
-  Push(pp_YABS); // YABS
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YABS)); // YABS @
   GetIY(); // @IY
   _dash_(); // -
   ABS(); // ABS
   MAX(); // MAX
-  Push(pp_UNK_0xf430); // UNK_0xf430
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf430)); // UNK_0xf430 @
   MAX(); // MAX
   Push(pp_UNK_0xf430); // UNK_0xf430
   _st__ex__gt_(); // <!>
@@ -368,8 +319,7 @@ void UNK_0xf480() // UNK_0xf480
   Push(0x03e8);
   Push(pp_UNK_0xf434); // UNK_0xf434
   _st__ex__gt_(); // <!>
-  Push(pp_IGLOBAL); // IGLOBAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IGLOBAL)); // IGLOBAL @
   Push(0);
 
   i = Pop();
@@ -444,16 +394,14 @@ void UNK_0xf4e4() // UNK_0xf4e4
 void SET_dash_SC() // SET-SC
 {
   UNK_0xf308(); // UNK_0xf308
-  Push(pp_IsUF); // ?UF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsUF)); // ?UF @
   if (Pop() != 0)
   {
     UNK_0xf4e4(); // UNK_0xf4e4
   } else
   {
     UNK_0xf480(); // UNK_0xf480
-    Push(pp_UNK_0xf430); // UNK_0xf430
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf430)); // UNK_0xf430 @
   }
   Push(Read16(regsp)); // DUP
   Push(5);
@@ -484,10 +432,8 @@ void SET_dash_SC() // SET-SC
 void GetNF() // @NF
 {
   UNK_0xf480(); // UNK_0xf480
-  Push(pp_UNK_0xf434); // UNK_0xf434
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xf430); // UNK_0xf430
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf434)); // UNK_0xf434 @
+  Push(Read16(pp_UNK_0xf430)); // UNK_0xf430 @
 }
 
 // 0xf547: db 0x43 0x4f 0x4d 0x42 0x41 0x55 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x00 'COMBAU___________________ '

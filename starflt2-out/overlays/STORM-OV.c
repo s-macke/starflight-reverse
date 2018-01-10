@@ -331,8 +331,7 @@ void UNK_0xf318() // UNK_0xf318
 
 void UNK_0xf332() // UNK_0xf332
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
@@ -356,9 +355,7 @@ void UNK_0xf332() // UNK_0xf332
 void UNK_0xf35a() // UNK_0xf35a
 {
   Push(1);
-  Push(pp_E_slash_M); // E/M
-  Push(Read16(Pop())); // @
-  Push(-Pop()); // NEGATE
+  Push(-Read16(pp_E_slash_M)); // E/M @ NEGATE
   _3_star_(); // 3*
   Push(2);
   MAX(); // MAX
@@ -410,12 +407,10 @@ void INJURE_dash_PL() // INJURE-PL
   _slash_(); // /
   Push(1);
   MAX(); // MAX
-  Push(pp_E_slash_M); // E/M
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_E_slash_M)); // E/M @
   _3_star_(); // 3*
   ABS(); // ABS
-  Push(pp__pe_EFF); // %EFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__pe_EFF)); // %EFF @
   _slash_(); // /
   Push(1);
   MAX(); // MAX
@@ -451,8 +446,7 @@ void INJURE_dash_PL() // INJURE-PL
 
 void UNK_0xf41c() // UNK_0xf41c
 {
-  Push(pp_STORM); // STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STORM)); // STORM @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   UNK_0xf2f5(); // UNK_0xf2f5
   Push(Pop() | Pop()); // OR
@@ -462,8 +456,7 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x000c);
   Push(0x00c1);
   Push(0x0044);
-  Push(pp_LCOLOR); // LCOLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_LCOLOR)); // LCOLOR @
   POLY_dash_WI(); // POLY-WI
   Push(0x0074);
   Push(0x0096);
@@ -486,8 +479,7 @@ void UNK_0xf41c() // UNK_0xf41c
 
 void UNK_0xf468() // UNK_0xf468
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(Read16(regsp)); // DUP
   Push(3);
   _gt_(); // >
@@ -576,8 +568,7 @@ void UNK_0xf4e2() // UNK_0xf4e2
 void _ro_DO_dot_STORM() // (DO.STORM
 {
   unsigned short int a;
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   a = Pop(); // >R
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
@@ -594,8 +585,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   ICLOSE(); // ICLOSE
   UNK_0xf468(); // UNK_0xf468
   Push(a); // R>
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push((Pop()==Pop())?1:0); // =
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)

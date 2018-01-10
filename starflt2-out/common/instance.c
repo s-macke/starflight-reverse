@@ -978,12 +978,7 @@ void _gt_INACTI() // >INACTI
 {
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(pp_IBFR); // IBFR
-  Push(Read16(Pop())); // @
-  Push(3);
-  _dash_(); // -
-  Push(Read16(cc_IHEADLE)); // IHEADLE
-  _dash_(); // -
+  Push((Read16(pp_IBFR) - 3) - Read16(cc_IHEADLE)); // IBFR @ 3 - IHEADLE -
   Push(Read16(regsp)); // DUP
   StoreINST_dash_S(); // !INST-S
   CDROP(); // CDROP
@@ -1272,8 +1267,7 @@ void UNK_0x80c7() // UNK_0x80c7
   {
     Push(pp_UNK_0x5fe6); // UNK_0x5fe6
     OFF_2(); // OFF_2
-    Push(pp_UNK_0x5efa); // UNK_0x5efa
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0x5efa)); // UNK_0x5efa @
     if (Pop() != 0)
     {
       UNK_0x7ff5(); // UNK_0x7ff5
@@ -1285,8 +1279,7 @@ void UNK_0x80c7() // UNK_0x80c7
     if (Pop() != 0)
     {
       CDROP(); // CDROP
-      Push(pp_UNK_0x5efa); // UNK_0x5efa
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_UNK_0x5efa)); // UNK_0x5efa @
       if (Pop() != 0)
       {
         UNK_0x808d(); // UNK_0x808d
@@ -1421,8 +1414,7 @@ void ICREATE() // ICREATE
   Push(Read8(Pop())&0xFF); // C@
   UNK_0x80c7(); // UNK_0x80c7
   Pop(); // DROP
-  Push(pp_UNK_0x5fe6); // UNK_0x5fe6
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0x5fe6)); // UNK_0x5fe6 @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {

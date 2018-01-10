@@ -216,8 +216,7 @@ void UNK_0xf470() // UNK_0xf470
 void UNK_0xf4d0() // UNK_0xf4d0
 {
   unsigned short int i, imax;
-  Push(pp_UNK_0xf3da); // UNK_0xf3da
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf3da)); // UNK_0xf3da @
   if (Pop() != 0)
   {
     DARK(); // DARK

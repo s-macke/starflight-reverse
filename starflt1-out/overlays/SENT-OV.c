@@ -250,10 +250,8 @@ const unsigned short int pp_UNK_0xeea9 = 0xeea9; // UNK_0xeea9 size: 2
 
 void UNK_0xe2e6() // UNK_0xe2e6
 {
-  Push(pp_RECORD_n_); // RECORD#
-  Push(Read16(Pop())); // @
-  Push(pp_FILE_n_); // FILE#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_RECORD_n_)); // RECORD# @
+  Push(Read16(pp_FILE_n_)); // FILE# @
 }
 
 
@@ -436,8 +434,7 @@ void UNK_0xe474() // UNK_0xe474
 void UNK_0xe47c() // UNK_0xe47c
 {
   UNK_0xe41d(); // UNK_0xe41d
-  Push(pp_PROBABLE); // PROBABLE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PROBABLE)); // PROBABLE @
   _st_(); // <
 }
 
@@ -590,29 +587,23 @@ void UNK_0xe867() // UNK_0xe867
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   Push(pp_PM_dash_PTR); // PM-PTR
   Store_3(); // !_3
-  Push(pp_LINE_dash_COUNT); // LINE-COUNT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_LINE_dash_COUNT)); // LINE-COUNT @
   Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-    Push(pp_PM_dash_PTR); // PM-PTR
-    Push(Read16(Pop())); // @
-    Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-    Push(Read16(Pop())); // @
-    Push(pp_WLINES); // WLINES
-    Push(Read16(Pop())); // @
-    Push(Pop()-1); // 1-
+    Push(Read16(pp_PM_dash_PTR)); // PM-PTR @
+    Push(Read16(pp_UNK_0xe6c5)); // UNK_0xe6c5 @
+    Push(Read16(pp_WLINES) - 1); // WLINES @ 1-
     _gt_(); // >
     if (Pop() != 0)
     {
       Push(0x03e8);
       MS(); // MS
     }
-    Push(pp_SHOW); // SHOW
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_SHOW)); // SHOW @
     if (Pop() != 0)
     {
       COUNT(); // COUNT
@@ -621,8 +612,7 @@ void UNK_0xe867() // UNK_0xe867
     {
       WLINE_dash_UP(); // WLINE-UP
     }
-    Push(Read16(cc_TEXTC_slash_L)); // TEXTC/L
-    Push(Pop()+1); // 1+
+    Push(Read16(cc_TEXTC_slash_L) + 1); // TEXTC/L 1+
     Push(pp_PM_dash_PTR); // PM-PTR
     _plus__ex_(); // +!
     Push(1);
@@ -657,15 +647,10 @@ void UNK_0xe8b7() // UNK_0xe8b7
 void UNK_0xe8c7() // UNK_0xe8c7
 {
   unsigned short int a;
-  Push(pp_PM_dash_PTR); // PM-PTR
-  Push(Read16(Pop())); // @
-  Push(pp_UNK_0xe6c9); // UNK_0xe6c9
-  _dash_(); // -
-  Push(Read16(cc_TEXTC_slash_L)); // TEXTC/L
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_PM_dash_PTR) - pp_UNK_0xe6c9); // PM-PTR @ UNK_0xe6c9 -
+  Push(Read16(cc_TEXTC_slash_L) + 1); // TEXTC/L 1+
   _slash_(); // /
-  Push(Read16(cc_TEXTC_slash_L)); // TEXTC/L
-  Push(Pop()+1); // 1+
+  Push(Read16(cc_TEXTC_slash_L) + 1); // TEXTC/L 1+
   Push(Pop() * Pop()); // *
   Push(pp_UNK_0xe6c9); // UNK_0xe6c9
   Push(Pop() + Pop()); // +
@@ -685,8 +670,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   UNK_0xe8b7(); // UNK_0xe8b7
   if (Pop() != 0)
   {
-    Push(Read16(cc_TEXTC_slash_L)); // TEXTC/L
-    Push(Pop()+1); // 1+
+    Push(Read16(cc_TEXTC_slash_L) + 1); // TEXTC/L 1+
     Push(Pop() + Pop()); // +
     Push(Read16(regsp)); // DUP
     Push(0);
@@ -709,8 +693,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   C_ex_(); // C!
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
-  Push(pp_PM_dash_PTR); // PM-PTR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PM_dash_PTR)); // PM-PTR @
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   Push(a); // R>
@@ -932,8 +915,7 @@ void UNK_0xea67() // UNK_0xea67
   _co_(); // ,
   CODE(); // (;CODE) inlined assembler code
 // 0xea73: call   1649
-  Push(pp_UNK_0xea63); // UNK_0xea63
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xea63)); // UNK_0xea63 @
   if (Pop() != 0)
   {
     Push(4);
@@ -1094,8 +1076,7 @@ void UNK_0xeb8b() // UNK_0xeb8b
   Push(a); // R>
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  Push(pp_UNK_0xea63); // UNK_0xea63
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xea63)); // UNK_0xea63 @
   if (Pop() == 0) return;
   Push(0xdac2); Push(0x0001);
   _2SWAP(); // 2SWAP
@@ -1163,8 +1144,7 @@ void UNK_0xebdb() // UNK_0xebdb
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Push(pp_PM_dash_PTR); // PM-PTR
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_PM_dash_PTR)); // PM-PTR @
       Push(Read8(Pop())&0xFF); // C@
       if (Pop() == 0) Push(1); else Push(0); // 0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1554,8 +1534,7 @@ void UNK_0xeded() // UNK_0xeded
 
 void UNK_0xeea1() // UNK_0xeea1
 {
-  Push(pp_UNK_0xee9d); // UNK_0xee9d
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee9d)); // UNK_0xee9d @
 }
 
 
@@ -1570,8 +1549,7 @@ void UNK_0xeea1() // UNK_0xeea1
 
 void UNK_0xeead() // UNK_0xeead
 {
-  Push(pp_UNK_0xeea9); // UNK_0xeea9
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xeea9)); // UNK_0xeea9 @
   if (Pop() != 0)
   {
     Push(0xdb5b); Push(0x0001);
@@ -1935,13 +1913,9 @@ void UNK_0xf1ec() // UNK_0xf1ec
   SWAP(); // SWAP
   Push(4);
   Push(Pop() * Pop()); // *
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(Pop()+2); // 2+
+  Push(Read16(pp_WLEFT) + 2); // WLEFT @ 2+
   Push(Pop() + Pop()); // +
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
+  Push(Read16(pp_WTOP) - 1); // WTOP @ 1-
   ROT(); // ROT
   Push(7);
   Push(Pop() * Pop()); // *
@@ -2151,8 +2125,7 @@ void CLASS_gt_TY() // CLASS>TY
 void IsTALK() // ?TALK
 {
   unsigned short int a, i, imax;
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   a = Pop(); // >R
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -2170,8 +2143,7 @@ void IsTALK() // ?TALK
       GetIH(); // @IH
       _gt_C_plus_S(); // >C+S
       GetINST_dash_CLASS(); // @INST-CLASS
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
       Push(3);
       Push((Pop()==Pop())?1:0); // =
       if (Pop() != 0)

@@ -179,8 +179,7 @@ void UNK_0xf272() // UNK_0xf272
 
 void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 {
-  Push(pp_IsNEB); // ?NEB
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsNEB)); // ?NEB @
   if (Pop() != 0)
   {
     SET_STR_AS_PARAM("MAGNETIC DISTURBANCES IN NEBULA");
@@ -203,8 +202,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0xf250(); // UNK_0xf250
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
-  Push(pp_BTN_dash_REC); // BTN-REC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   Push(3);
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
@@ -387,8 +385,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
     _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD
   } else
   {
-    Push(pp_IsNEB); // ?NEB
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_IsNEB)); // ?NEB @
     Push(pp__10_star_END); // 10*END
     _2_at_(); // 2@
     D0_eq_(); // D0=

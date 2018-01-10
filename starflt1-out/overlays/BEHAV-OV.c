@@ -418,14 +418,11 @@ void UNK_0xe114() // UNK_0xe114
   SETLARRAY(); // SETLARRAY
   Push(0x63ef+INST_dash_X.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(pp_XCON); // XCON
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_XCON) + 1); // XCON @ 1+
   _dash_(); // -
   Push(0x63ef+INST_dash_Y.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(pp_YCON); // YCON
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YCON)); // YCON @
   _dash_(); // -
   Push(Pop()+1); // 1+
   ACELLADDR(); // ACELLADDR
@@ -518,8 +515,7 @@ LoadDataType ATMO_dot_ACTIV = {PLANETIDX, 0x11, 0x01, 0x16, 0x658f};
 
 void IsPLAYER_dash_FI() // ?PLAYER-FI
 {
-  Push(pp_WEAPON_dash_); // WEAPON-
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_WEAPON_dash_)); // WEAPON- @
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+TV_dash_WEAPON.offset); // IFIELD
@@ -539,16 +535,13 @@ void IsALIEN_dash_CLO() // ?ALIEN-CLO
 {
   unsigned short int a;
   UNK_0xe10c(); // UNK_0xe10c
-  Push(pp_WEAPXY); // WEAPXY
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_WEAPXY)); // WEAPXY @
   _dash_(); // -
   ABS(); // ABS
   Push(6);
   _st_(); // <
   a = Pop(); // >R
-  Push(pp_WEAPXY); // WEAPXY
-  Push(Pop()+2); // 2+
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_WEAPXY + 2)); // WEAPXY 2+ @
   _dash_(); // -
   ABS(); // ABS
   Push(6);
@@ -1007,12 +1000,10 @@ void UNK_0xe516() // UNK_0xe516
   Push(0x6ac1); // probable 'CONTOUR'
   SETLARRAY(); // SETLARRAY
   UNK_0xe100(); // UNK_0xe100
-  Push(pp_XCON); // XCON
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XCON)); // XCON @
   _dash_(); // -
   SWAP(); // SWAP
-  Push(pp_YCON); // YCON
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YCON)); // YCON @
   _dash_(); // -
   ACELLADDR(); // ACELLADDR
   A_at_(); // A@
@@ -1112,8 +1103,7 @@ void UNK_0xe5b4() // UNK_0xe5b4
 {
   Push(0x63ef+BEHAVE.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x0010);
-  Push(-Pop()); // NEGATE
+  Push(-0x0010); // 0x0010 NEGATE
   Push(Pop() | Pop()); // OR
   Push(0x63ef+BEHAVE.offset); // IFIELD
   C_ex_(); // C!
@@ -1126,8 +1116,7 @@ void UNK_0xe5b4() // UNK_0xe5b4
 
 void UNK_0xe5c8() // UNK_0xe5c8
 {
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   CI(); // CI
@@ -1536,8 +1525,7 @@ void DIE() // DIE
 
 void UNK_0xe83b() // UNK_0xe83b
 {
-  Push(pp__h_CRIT); // ^CRIT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__h_CRIT)); // ^CRIT @
   POINT_gt_ICON(); // POINT>ICON
   GetIL(); // @IL
   GetIH(); // @IH
@@ -1566,8 +1554,7 @@ void UNK_0xe855() // UNK_0xe855
   Push2Words("*SHIP");
   IsICON_eq_I(); // ?ICON=I
   Pop(); // DROP
-  Push(pp_ILOCAL); // ILOCAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ILOCAL)); // ILOCAL @
   _st_(); // <
 }
 
@@ -1646,8 +1633,7 @@ LoadDataType UNK_0xe8ba = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 void UNK_0xe8c2() // UNK_0xe8c2
 {
   UNK_0xe0d8(); // UNK_0xe0d8
-  Push(pp_IsFLAT); // ?FLAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsFLAT)); // ?FLAT @
   if (Pop() != 0)
   {
     Push(0x000a);
@@ -1686,18 +1672,11 @@ void UNK_0xe8e4() // UNK_0xe8e4
 
 void UNK_0xe8f8() // UNK_0xe8f8
 {
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(pp_WBOTTOM); // WBOTTOM
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
-  Push(pp_WRIGHT); // WRIGHT
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
+  Push(Read16(pp_COLOR)); // COLOR @
+  Push(Read16(pp_WTOP)); // WTOP @
+  Push(Read16(pp_WLEFT)); // WLEFT @
+  Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
+  Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
   SetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
@@ -1710,8 +1689,7 @@ void UNK_0xe8f8() // UNK_0xe8f8
 
 void UNK_0xe91a() // UNK_0xe91a
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
@@ -1722,8 +1700,7 @@ void UNK_0xe91a() // UNK_0xe91a
   Push(0x001e);
   _st_(); // <
   if (Pop() == 0) return;
-  Push(pp__i_INJURE); // 'INJURE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i_INJURE)); // 'INJURE @
   MODULE(); // MODULE
 }
 
@@ -1736,12 +1713,8 @@ void UNK_0xe946() // UNK_0xe946
 {
   UNK_0xe0b6(); // UNK_0xe0b6
   UNK_0xe8f8(); // UNK_0xe8f8
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(4);
-  _dash_(); // -
+  Push(Read16(pp_WLEFT)); // WLEFT @
+  Push(Read16(pp_WTOP) - 4); // WTOP @ 4 -
   POS_dot_(); // POS.
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -1765,12 +1738,8 @@ void UNK_0xe946() // UNK_0xe946
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   PRINT(" LIFEFORM ATTACKS ", 18); // (.")
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(0x000a);
-  _dash_(); // -
+  Push(Read16(pp_WLEFT)); // WLEFT @
+  Push(Read16(pp_WTOP) - 0x000a); // WTOP @ 0x000a -
   POS_dot_(); // POS.
   _gt_C_plus_S(); // >C+S
   Push(0x63ef+UNK_0xe8b5.offset); // IFIELD
@@ -2214,8 +2183,7 @@ void GROUND_gt_AIR() // GROUND>AIR rule
 
 void UNK_0xebf8() // UNK_0xebf8
 {
-  Push(pp_WEAPON_dash_); // WEAPON-
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_WEAPON_dash_)); // WEAPON- @
   if (Pop() != 0)
   {
     Push(0xeb07); // probable '?REDUCE-PO'
@@ -2263,16 +2231,14 @@ void UNK_0xebf8() // UNK_0xebf8
 
 void SIMULATE() // SIMULATE
 {
-  Push(pp_IsNEW); // ?NEW
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsNEW)); // ?NEW @
   if (Pop() != 0)
   {
     UNK_0xe84b(); // UNK_0xe84b
     Push(pp_IsNEW); // ?NEW
     OFF_2(); // OFF_2
   }
-  Push(pp_ILOCAL); // ILOCAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ILOCAL)); // ILOCAL @
   Push(1);
   UNK_0xe855(); // UNK_0xe855
   Push(Pop() + Pop()); // +
@@ -2299,12 +2265,8 @@ void SIMULATE() // SIMULATE
     }
   }
   ICLOSE(); // ICLOSE
-  Push(pp__h_CRIT); // ^CRIT
-  Push(Read16(Pop())); // @
-  Push(Pop()+1); // 1+
-  Push(pp_ILOCAL); // ILOCAL
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
+  Push(Read16(pp__h_CRIT) + 1); // ^CRIT @ 1+
+  Push(Read16(pp_ILOCAL) - 1); // ILOCAL @ 1-
   MOD(); // MOD
   Push(pp__h_CRIT); // ^CRIT
   _st__ex__gt_(); // <!>
@@ -2317,8 +2279,7 @@ void SIMULATE() // SIMULATE
 
 void UNK_0xecb7() // UNK_0xecb7
 {
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(0x0074);
@@ -2329,8 +2290,7 @@ void UNK_0xecb7() // UNK_0xecb7
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   Push(0x012c);
   _slash_MOD(); // /MOD
   Push(0x120c);
@@ -2379,12 +2339,10 @@ void UNK_0xecb7() // UNK_0xecb7
 
 void Is_dot_STORM() // ?.STORM
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(3);
   _gt_(); // >
-  Push(pp_STORM); // STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STORM)); // STORM @
   UNK_0xe0e4(); // UNK_0xe0e4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -2399,12 +2357,10 @@ void Is_dot_STORM() // ?.STORM
 
 void IsSTORM() // ?STORM
 {
-  Push(pp_ATMO); // ATMO
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ATMO)); // ATMO @
   if (Pop() != 0)
   {
-    Push(pp_STORM); // STORM
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_STORM)); // STORM @
     if (Pop() != 0)
     {
       Push(-1);
@@ -2428,8 +2384,7 @@ void IsSTORM() // ?STORM
       _gt_(); // >
       if (Pop() != 0)
       {
-        Push(pp__i_STORM); // 'STORM
-        Push(Read16(Pop())); // @
+        Push(Read16(pp__i_STORM)); // 'STORM @
         MODULE(); // MODULE
       } else
       {
@@ -2740,8 +2695,7 @@ void ICONS() // ICONS
   UNK_0xecb7(); // UNK_0xecb7
   Push(pp_UNK_0xef9e); // UNK_0xef9e
   GetEXECUTE(); // @EXECUTE
-  Push(pp__i__dot_VITAL); // '.VITAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i__dot_VITAL)); // '.VITAL @
   MODULE(); // MODULE
 }
 
@@ -2829,8 +2783,7 @@ void UNK_0xf077() // UNK_0xf077
       if (Pop() != 0)
       {
         UNK_0xef23(); // UNK_0xef23
-        Push(pp_NCRS); // NCRS
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_NCRS)); // NCRS @
         _gt_BUTTONS(); // >BUTTONS case
         UNK_0xeef3(); // UNK_0xeef3
       }
@@ -2873,8 +2826,7 @@ IFieldType _h_NAV = {CREWMEMBERIDX, 0x1b, 0x01};
 
 void _dash_STORM() // -STORM
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(Read16(regsp)); // DUP
   Push(4);
   _st_(); // <
@@ -3031,8 +2983,7 @@ void DrawENERGY() // .ENERGY
   if (Pop() != 0)
   {
     Pop(); // DROP
-    Push(pp_COLOR); // COLOR
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_COLOR)); // COLOR @
     SetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
@@ -3049,14 +3000,9 @@ void DrawENERGY() // .ENERGY
   Push(3);
   SetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-  Push(pp__pe_EFF); // %EFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__pe_EFF)); // %EFF @
   Push(0x0064);
-  Push(pp_E_slash_M); // E/M
-  Push(Read16(Pop())); // @
-  Push(4);
-  Push(Pop() * Pop()); // *
-  Push(-Pop()); // NEGATE
+  Push(-Read16(pp_E_slash_M) * 4); // E/M @ 4 * NEGATE
   _star__slash_(); // */
   Push(0x0063);
   MIN(); // MIN
@@ -3181,8 +3127,7 @@ void DrawWHERE() // .WHERE
 void DrawSTATS() // .STATS
 {
   unsigned short int a;
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -3278,8 +3223,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(0xbf56); // probable '/STARDATE'
   Push(pp__i__dot_DATE); // '.DATE
   _st__ex__gt_(); // <!>
-  Push(pp_IsCRITIC); // ?CRITIC
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsCRITIC)); // ?CRITIC @
   if (Pop() != 0)
   {
     Push(0xd06e); // probable 'HEAVEHO'

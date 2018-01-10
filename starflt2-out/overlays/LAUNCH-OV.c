@@ -141,8 +141,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
     Push(i); // I
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
-    Push(pp_XBLT); // XBLT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_XBLT)); // XBLT @
     OVER(); // OVER
     Draw(); // .
     Push(pp_XBLT); // XBLT
@@ -247,8 +246,7 @@ void UNK_0xf14e() // UNK_0xf14e
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   UNK_0xf11a(); // UNK_0xf11a
   CTERASE(); // CTERASE
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1);
@@ -437,8 +435,7 @@ void UNK_0xf306() // UNK_0xf306
 void UNK_0xf312() // UNK_0xf312
 {
   Push(Pop()*2); // 2*
-  Push(pp_YTABL); // YTABL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YTABL)); // YTABL @
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
 }
@@ -492,12 +489,10 @@ void UNK_0xf32a() // UNK_0xf32a
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
   Pop(); // DROP
-  Push(pp_HBUF_dash_SE); // HBUF-SE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_HBUF_dash_SE)); // HBUF-SE @
   ROT(); // ROT
   UNK_0xf320(); // UNK_0xf320
-  Push(pp_DBUF_dash_SE); // DBUF-SE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_DBUF_dash_SE)); // DBUF-SE @
   Push(4);
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
@@ -579,8 +574,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP

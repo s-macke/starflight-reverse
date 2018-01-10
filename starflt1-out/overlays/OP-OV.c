@@ -223,8 +223,7 @@ const unsigned short int pp_UNK_0xe8fe = 0xe8fe; // UNK_0xe8fe size: 2
 
 void UNK_0xe44a() // UNK_0xe44a
 {
-  Push(pp_UNK_0xe446); // UNK_0xe446
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xe446)); // UNK_0xe446 @
 }
 
 
@@ -477,8 +476,7 @@ void UNK_0xe637() // UNK_0xe637
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_3(); // !_3
-  Push(pp_Is_gt_OP); // ?>OP
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_Is_gt_OP)); // ?>OP @
   Push(Read16(regsp)); // DUP
   Push(pp_NCRS); // NCRS
   Store_3(); // !_3
@@ -566,8 +564,7 @@ void UNK_0xe735() // UNK_0xe735
   Push(0x002d);
   Push(0x00c1);
   POS_dot_(); // POS.
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   PAD(); // PAD
   DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
@@ -694,10 +691,7 @@ void UNK_0xe81c() // UNK_0xe81c
 void UNK_0xe842() // UNK_0xe842
 {
   Push(0);
-  Push(1);
-  Push(pp_CTY); // CTY
-  Push(Read16(Pop())); // @
-  Push(Pop() + Pop()); // +
+  Push(1 + Read16(pp_CTY)); // 1 CTY @ +
   UNK_0xe81c(); // UNK_0xe81c
 }
 
@@ -713,8 +707,7 @@ void UNK_0xe842() // UNK_0xe842
 
 void UNK_0xe856() // UNK_0xe856
 {
-  Push(pp_CTX); // CTX
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CTX)); // CTX @
   Push(Pop() + Pop()); // +
   Push(0x0026);
   _st_(); // <
@@ -783,8 +776,7 @@ void UNK_0xe88a() // UNK_0xe88a
 
 void UNK_0xe8b6() // UNK_0xe8b6
 {
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   SetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
@@ -835,8 +827,7 @@ void UNK_0xe8d4() // UNK_0xe8d4
 
 void UNK_0xe902() // UNK_0xe902
 {
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   Push(0x63ef+UNK_0xe452.offset); // IFIELD
   Push(Read16(Pop())); // @
   _st_(); // <
@@ -892,8 +883,7 @@ void UNK_0xe912() // UNK_0xe912
       Pop(); Pop(); // 2DROP
       IsTRIG(); // ?TRIG
       Push(Pop() | Pop()); // OR
-      Push(pp_FQUIT); // FQUIT
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_FQUIT)); // FQUIT @
       Push(Pop() | Pop()); // OR
     } while(Pop() == 0);
     Pop(); Pop(); // 2DROP
@@ -909,8 +899,7 @@ void UNK_0xe912() // UNK_0xe912
     IsFIRST(); // ?FIRST
   } while(Pop() == 0);
   ICLOSE(); // ICLOSE
-  Push(pp_UNK_0xe8fe); // UNK_0xe8fe
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
   Push(0x63ef+UNK_0xe452.offset); // IFIELD
   Push(Read16(Pop())); // @
   MAX(); // MAX
@@ -1010,8 +999,7 @@ void UNK_0xea28() // UNK_0xea28
   label2:
   Push(0x63ef+UNK_0xe452.offset); // IFIELD
   Push(Read16(Pop())); // @
-  Push(pp_UNK_0xe8fe); // UNK_0xe8fe
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
@@ -1638,8 +1626,7 @@ void UNK_0xf450() // UNK_0xf450
       XYSCAN(); // XYSCAN
       Pop(); Pop(); // 2DROP
       IsTRIG(); // ?TRIG
-      Push(pp_FQUIT); // FQUIT
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_FQUIT)); // FQUIT @
       Push(Pop() | Pop()); // OR
       IsLAST(); // ?LAST
       Push(Pop() | Pop()); // OR
@@ -1666,21 +1653,18 @@ void UNK_0xf47a() // UNK_0xf47a
   OFF(); // OFF
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  Push(pp_IsTV); // ?TV
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsTV)); // ?TV @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
     UNK_0xf045(); // UNK_0xf045
   }
-  Push(pp_IsRECALL); // ?RECALL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsRECALL)); // ?RECALL @
   if (Pop() != 0)
   {
     UNK_0xf12c(); // UNK_0xf12c
   }
-  Push(pp_WMSG); // WMSG
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_WMSG)); // WMSG @
   if (Pop() != 0)
   {
     UNK_0xf274(); // UNK_0xf274
@@ -1739,8 +1723,7 @@ void OP_dash_CASE() // OP-CASE
 void _ro_U_dash_OP_rc_() // (U-OP)
 {
   UNK_0xe637(); // UNK_0xe637
-  Push(pp_Is_gt_OP); // ?>OP
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_Is_gt_OP)); // ?>OP @
   if (Pop() != 0)
   {
     Push(0x03e8);
@@ -1765,8 +1748,7 @@ void _ro_U_dash_OP_rc_() // (U-OP)
     IsTRIG(); // ?TRIG
     if (Pop() != 0)
     {
-      Push(pp_NCRS); // NCRS
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_NCRS)); // NCRS @
       OP_dash_CASE(); // OP-CASE case
     }
   } while(Pop() == 0);

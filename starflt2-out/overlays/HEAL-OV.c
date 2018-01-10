@@ -158,13 +158,9 @@ void UNK_0xf09c() // UNK_0xf09c
   SWAP(); // SWAP
   Push(4);
   Push(Pop() * Pop()); // *
-  Push(pp_WLEFT); // WLEFT
-  Push(Read16(Pop())); // @
-  Push(Pop()+2); // 2+
+  Push(Read16(pp_WLEFT) + 2); // WLEFT @ 2+
   Push(Pop() + Pop()); // +
-  Push(pp_WTOP); // WTOP
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
+  Push(Read16(pp_WTOP) - 1); // WTOP @ 1-
   ROT(); // ROT
   Push(7);
   Push(Pop() * Pop()); // *
@@ -310,8 +306,7 @@ void UNK_0xf151() // UNK_0xf151
   Push2Words("NULL");
   D_eq_(); // D=
   if (Pop() == 0) return;
-  Push(pp_IsON_dash_PLA); // ?ON-PLA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
   if (Pop() != 0)
   {
     _gt_TVCT(); // >TVCT
@@ -527,8 +522,7 @@ void UNK_0xf2a3() // UNK_0xf2a3
         Push(4);
         Push(Pop() & Pop()); // AND
         _gt_FLAG(); // >FLAG
-        Push(pp_CONTEXT_3); // CONTEXT_3
-        Push(Read16(Pop())); // @
+        Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
         _0_gt_(); // 0>
         Push(Pop() & Pop()); // AND
         if (Pop() != 0)
@@ -581,13 +575,11 @@ void UNK_0xf2a3() // UNK_0xf2a3
 void DrawVITS() // .VITS
 {
   unsigned short int a, b, i, imax, j, jmax;
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   b = Pop(); // >R
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -603,8 +595,7 @@ void DrawVITS() // .VITS
   do // (DO)
   {
     GCR(); // GCR
-    Push(pp_WCHARS); // WCHARS
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_WCHARS)); // WCHARS @
     SetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(i); // I
@@ -638,8 +629,7 @@ void DrawVITS() // .VITS
         } while(j<jmax); // (LOOP)
 
       }
-      Push(pp_XBLT); // XBLT
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_XBLT)); // XBLT @
       Push(-1);
       Push(pp_XBLT); // XBLT
       _plus__ex__2(); // +!_2
@@ -778,8 +768,7 @@ void UNK_0xf429() // UNK_0xf429
     _gt_SKILL(); // >SKILL case
     Push(Read8(Pop())&0xFF); // C@
     Push(Read16(regsp)); // DUP
-    Push(pp_UNK_0xf420); // UNK_0xf420
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf420)); // UNK_0xf420 @
     _gt_(); // >
     if (Pop() != 0)
     {

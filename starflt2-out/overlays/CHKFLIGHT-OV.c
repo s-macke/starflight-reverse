@@ -174,8 +174,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   Push(0x00c4);
   POS_dot_(); // POS.
   PRINT("PRE", 3); // (.")
-  Push(pp_XBLT); // XBLT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XBLT)); // XBLT @
   Push(0x00c0);
   OVER(); // OVER
   Push(Pop()+2); // 2+
@@ -203,10 +202,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
 void UNK_0xf25e() // UNK_0xf25e
 {
   Push(6);
-  Push(pp_YBLT); // YBLT
-  Push(Read16(Pop())); // @
-  Push(0x0014);
-  _dash_(); // -
+  Push(Read16(pp_YBLT) - 0x0014); // YBLT @ 0x0014 -
   Push(0x00aa);
   MIN(); // MIN
   POS_dot_(); // POS.
@@ -317,8 +313,7 @@ void UNK_0xf331() // UNK_0xf331
   _plus__ex__2(); // +!_2
   UNK_0xf25e(); // UNK_0xf25e
   PRINT("TO ", 3); // (.")
-  Push(pp_UNK_0xf32d); // UNK_0xf32d
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xf32d)); // UNK_0xf32d @
   Push(Read16(regsp)); // DUP
   Push(1);
   Push(Pop() & Pop()); // AND
@@ -407,8 +402,7 @@ void UNK_0xf406() // UNK_0xf406
 
 void UNK_0xf414() // UNK_0xf414
 {
-  Push(pp_IsEVAL); // ?EVAL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsEVAL)); // ?EVAL @
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) goto label1;
@@ -434,12 +428,10 @@ void UNK_0xf414() // UNK_0xf414
   ICLOSE(); // ICLOSE
 
   label1:
-  Push(pp_IsTV); // ?TV
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsTV)); // ?TV @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() | Pop()); // OR
-  Push(pp_IsRECALL); // ?RECALL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsRECALL)); // ?RECALL @
   Push(Pop() | Pop()); // OR
   UNK_0xf406(); // UNK_0xf406
   Push(Pop() | Pop()); // OR

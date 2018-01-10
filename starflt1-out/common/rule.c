@@ -415,9 +415,7 @@ void IsINDEX() // ?INDEX
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(-1);
-  Push(pp_COND_dash_CNT); // COND-CNT
-  Push(Read16(Pop())); // @
-  Push(Pop()*2); // 2*
+  Push(Read16(pp_COND_dash_CNT) * 2); // COND-CNT @ 2*
   Push(0);
 
   i = Pop();
@@ -463,8 +461,7 @@ void CONDITION() // CONDITION
   {
     Push(Read16(cc_CONDLIM)); // CONDLIM
     Push(Read8(Pop())&0xFF); // C@
-    Push(pp_COND_dash_CNT); // COND-CNT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_COND_dash_CNT)); // COND-CNT @
     _gt_(); // >
     if (Pop() == 0) Push(1); else Push(0); // NOT
     ABORT("Condition overflow", 18);// (ABORT")
@@ -475,8 +472,7 @@ void CONDITION() // CONDITION
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(pp_COND_dash_CNT); // COND-CNT
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_COND_dash_CNT)); // COND-CNT @
       Push(a); // I
       OVER(); // OVER
       Push(Pop()*2); // 2*

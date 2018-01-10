@@ -288,8 +288,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 {
   Push(pp__ro_AORIGI); // (AORIGI
   Get_gt_C_plus_S(); // @>C+S
-  Push(pp_EDL); // EDL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_EDL)); // EDL @
   Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
   Push(Read8(Pop())&0xFF); // C@
   _dash_(); // -
@@ -337,8 +336,7 @@ void DEPART() // DEPART
   Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW-
   Store_2(); // !_2
-  Push(pp_IsLANDED); // ?LANDED
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsLANDED)); // ?LANDED @
   if (Pop() != 0)
   {
     UNK_0xf447(); // UNK_0xf447

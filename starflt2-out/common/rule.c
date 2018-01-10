@@ -335,8 +335,7 @@ void EXPERT() // EXPERT
   unsigned short int a, i, imax;
   Push(pp_UNK_0xab57); // UNK_0xab57
   _099(); // 099
-  Push(pp_TRACE); // TRACE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_TRACE)); // TRACE @
   if (Pop() != 0)
   {
     _gt_0FONT_2(); // >0FONT_2
@@ -387,8 +386,7 @@ void EXPERT() // EXPERT
       if (Pop() == 0) Push(1); else Push(0); // NOT
       _gt_V(); // >V
       imax = i; // LEAVE
-      Push(pp_SMART); // SMART
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_SMART)); // SMART @
       if (Pop() != 0)
       {
         Push(i); // I
@@ -438,9 +436,7 @@ void UNK_0xad3f() // UNK_0xad3f
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(-1);
-  Push(pp_UNK_0xab57); // UNK_0xab57
-  Push(Read16(Pop())); // @
-  Push(Pop()*2); // 2*
+  Push(Read16(pp_UNK_0xab57) * 2); // UNK_0xab57 @ 2*
   Push(0);
 
   i = Pop();
@@ -491,8 +487,7 @@ void UNK_0xad73() // UNK_0xad73
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(pp_UNK_0xab57); // UNK_0xab57
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_UNK_0xab57)); // UNK_0xab57 @
       Push(a); // I
       OVER(); // OVER
       Push(Pop()*2); // 2*
@@ -501,8 +496,7 @@ void UNK_0xad73() // UNK_0xad73
       Store_2(); // !_2
       Push(Read16(cc_UNK_0xab6f)); // UNK_0xab6f
       Push(Read8(Pop())&0xFF); // C@
-      Push(pp_UNK_0xab57); // UNK_0xab57
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_UNK_0xab57)); // UNK_0xab57 @
       _gt_(); // >
       if (Pop() == 0) Push(1); else Push(0); // NOT
       ABORT("Condition overflow", 18);// (ABORT")

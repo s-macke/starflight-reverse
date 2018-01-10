@@ -224,14 +224,10 @@ void UNK_0xe58a() // UNK_0xe58a
 void UNK_0xe59e() // UNK_0xe59e
 {
   unsigned short int i, imax, j, jmax;
-  Push(pp_Get_co_0_star_1_sc_); // @,0*1;
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_Get_co_0_star_1_sc_)); // @,0*1; @
   if (Pop() == 0) return;
   BEEPON_2(); // BEEPON_2
-  Push(0x00c8);
-  Push(Read16(cc_MPS)); // MPS
-  Push(Pop()-1); // 1-
-  Push(Pop() * Pop()); // *
+  Push(0x00c8 * (Read16(cc_MPS) - 1)); // 0x00c8 MPS 1- *
   Push(0x01f4);
   MAX(); // MAX
   Push(0x05dc);
@@ -244,9 +240,7 @@ void UNK_0xe59e() // UNK_0xe59e
   {
     Push(i); // I
     TONE(); // TONE
-    Push(0x000a);
-    Push(Read16(cc_MPS)); // MPS
-    Push(Pop() * Pop()); // *
+    Push(0x000a * Read16(cc_MPS)); // 0x000a MPS *
     Push(0);
 
     j = Pop();
@@ -334,15 +328,13 @@ void UNK_0xe642() // UNK_0xe642
 
 void UNK_0xe658() // UNK_0xe658
 {
-  Push(pp_THIS_dash_BU); // THIS-BU
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   Push(2);
   _st_(); // <
   if (Pop() != 0)
   {
     SetColor(BLUE);
-    Push(pp_THIS_dash_BU); // THIS-BU
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
     DrawON(); // .ON
     CTINIT(); // CTINIT
     UNK_0xe642(); // UNK_0xe642
@@ -360,8 +352,7 @@ void UNK_0xe658() // UNK_0xe658
     Pop(); // DROP
   }
   SetColor(BLACK);
-  Push(pp_THIS_dash_BU); // THIS-BU
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawON(); // .ON
 }
 
@@ -432,8 +423,7 @@ void UNK_0xe84f() // UNK_0xe84f
   do
   {
     UNK_0xe6cc(); // UNK_0xe6cc
-    Push(pp_FTRIG); // FTRIG
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_FTRIG)); // FTRIG @
     TIME(); // TIME
     _2_at_(); // 2@
     Push(pp_TIRED_dash_T); // TIRED-T
@@ -441,13 +431,11 @@ void UNK_0xe84f() // UNK_0xe84f
     D_gt_(); // D>
     Push(Pop() | Pop()); // OR
   } while(Pop() == 0);
-  Push(pp_THIS_dash_BU); // THIS-BU
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   Push(Read16(regsp)); // DUP
   Push(2);
   Push((Pop()==Pop())?1:0); // =
-  Push(pp_FTRIG); // FTRIG
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_FTRIG)); // FTRIG @
   Push(Pop() * Pop()); // *
   Push(pp__ro_STOP_dash_C); // (STOP-C
   Store_2(); // !_2
@@ -960,8 +948,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   {
     Push(i); // I
     GetEXECUTE(); // @EXECUTE
-    Push(pp_UNK_0xe63e); // UNK_0xe63e
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xe63e)); // UNK_0xe63e @
     if (Pop() != 0)
     {
       imax = i; // LEAVE

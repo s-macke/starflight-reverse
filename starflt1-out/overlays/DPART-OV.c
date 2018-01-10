@@ -357,8 +357,7 @@ void UNK_0xf09c() // UNK_0xf09c
   MODULE(); // MODULE
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_3(); // ON_3
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STARDATE)); // STARDATE @
   Push(pp_IsWIN); // ?WIN
   Store_3(); // !_3
 }
@@ -415,8 +414,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
       GetINST_dash_SPECIES(); // @INST-SPECIES
       Push(3);
       Push((Pop()==Pop())?1:0); // =
-      Push(pp_IsWIN); // ?WIN
-      Push(Read16(Pop())); // @
+      Push(Read16(pp_IsWIN)); // ?WIN @
       _0_gt_(); // 0>
       Push(Pop() & Pop()); // AND
       Push(Pop() & Pop()); // AND
@@ -582,9 +580,7 @@ void UNK_0xf25e() // UNK_0xf25e
   unsigned short int i, imax, j, jmax;
   SET_STR_AS_PARAM("BOOM!");
   DrawTTY(); // .TTY
-  Push(3);
-  Push(Read16(cc_MPS)); // MPS
-  Push(Pop() * Pop()); // *
+  Push(3 * Read16(cc_MPS)); // 3 MPS *
   Push(0);
 
   i = Pop();
@@ -846,12 +842,10 @@ void DEPART() // DEPART
   Push(0x3a48); // probable 'NOP'
   Push(pp__i_THROW_dash_); // 'THROW-
   Store_3(); // !_3
-  Push(pp_IsLANDED); // ?LANDED
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsLANDED)); // ?LANDED @
   if (Pop() != 0)
   {
-    Push(pp_IsBOMB); // ?BOMB
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_IsBOMB)); // ?BOMB @
     if (Pop() != 0)
     {
       UNK_0xf1d6(); // UNK_0xf1d6

@@ -258,8 +258,7 @@ void STAR_dash_ID_dash_CASES() // STAR-ID-CASES
 
 void UNK_0xf2d9() // UNK_0xf2d9
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   STAR_dash_ID_dash_CASES(); // STAR-ID-CASES case
 }
 
@@ -288,8 +287,7 @@ void PLANET_dash_ID_dash_CASES() // PLANET-ID-CASES
 
 void UNK_0xf2ff() // UNK_0xf2ff
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   PLANET_dash_ID_dash_CASES(); // PLANET-ID-CASES case
 }
 
@@ -492,8 +490,7 @@ void PLANET_dash_ID() // PLANET-ID
 void UNK_0xf3f1() // UNK_0xf3f1
 {
   GetINST_dash_CLASS(); // @INST-CLASS
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   if (Pop() != 0)
   {
     SPACE_dash_ID(); // SPACE-ID case

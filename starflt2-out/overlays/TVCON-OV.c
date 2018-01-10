@@ -223,15 +223,13 @@ IFieldType UNK_0xedd6 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 void IsETIME() // ?ETIME
 {
-  Push(pp_ETIME); // ETIME
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ETIME)); // ETIME @
   if (Pop() == 0) return;
   TIME(); // TIME
   _2_at_(); // 2@
   Push(pp__n_ETIME); // #ETIME
   _2_at_(); // 2@
-  Push(pp_ETIME); // ETIME
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ETIME)); // ETIME @
   Push(0x03e8);
   M_star_(); // M*
   D_plus_(); // D+
@@ -299,8 +297,7 @@ void UNK_0xee58() // UNK_0xee58
   if (Pop() != 0)
   {
     Push(7);
-    Push(pp_STARDAT); // STARDAT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_STARDAT)); // STARDAT @
     Push(0x001e);
     MOD(); // MOD
     Push(0x000a);
@@ -327,8 +324,7 @@ void UNK_0xee58() // UNK_0xee58
 
 void UNK_0xee9a() // UNK_0xee9a
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(6);
   Push(0x000b);
   WITHIN(); // WITHIN
@@ -339,8 +335,7 @@ void UNK_0xee9a() // UNK_0xee9a
   Push(0x001e);
   _st_(); // <
   if (Pop() == 0) return;
-  Push(pp__i_INJURE); // 'INJURE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i_INJURE)); // 'INJURE @
   MODULE(); // MODULE
 }
 
@@ -356,12 +351,10 @@ void UNK_0xee9a() // UNK_0xee9a
 
 void Is_dot_STORM() // ?.STORM
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(3);
   _gt_(); // >
-  Push(pp_STORM); // STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STORM)); // STORM @
   UNK_0xed9e(); // UNK_0xed9e
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -403,12 +396,10 @@ void UNK_0xeefe() // UNK_0xeefe
 
 void DO_dash_STORM() // DO-STORM
 {
-  Push(pp_ATMO); // ATMO
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_ATMO)); // ATMO @
   if (Pop() != 0)
   {
-    Push(pp_STORM); // STORM
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_STORM)); // STORM @
     if (Pop() != 0)
     {
       Push(-1);
@@ -430,8 +421,7 @@ void DO_dash_STORM() // DO-STORM
       _gt_(); // >
       if (Pop() != 0)
       {
-        Push(pp__i_STORM); // 'STORM
-        Push(Read16(Pop())); // @
+        Push(Read16(pp__i_STORM)); // 'STORM @
         MODULE(); // MODULE
       } else
       {
@@ -475,8 +465,7 @@ void UNK_0xefa3() // UNK_0xefa3
 
 void UNK_0xefa9() // UNK_0xefa9
 {
-  Push(pp_STAGES); // STAGES
-  Push(Pop()+2); // 2+
+  Push(pp_STAGES + 2); // STAGES 2+
 }
 
 
@@ -486,9 +475,7 @@ void UNK_0xefa9() // UNK_0xefa9
 
 void UNK_0xefb1() // UNK_0xefb1
 {
-  Push(pp_STAGES); // STAGES
-  Push(6);
-  Push(Pop() + Pop()); // +
+  Push(pp_STAGES + 6); // STAGES 6 +
 }
 
 
@@ -498,9 +485,7 @@ void UNK_0xefb1() // UNK_0xefb1
 
 void UNK_0xefbb() // UNK_0xefbb
 {
-  Push(pp_STAGES); // STAGES
-  Push(8);
-  Push(Pop() + Pop()); // +
+  Push(pp_STAGES + 8); // STAGES 8 +
 }
 
 // 0xefc3: db 0x4c 0x22 0x5a 0x62 0x5d 0x17 0x0a 0x00 0x72 0x0f 0x90 0x16 'L"Zb]   r   '
@@ -514,12 +499,8 @@ void UNK_0xefd1() // UNK_0xefd1
   Push(pp_HAZE); // HAZE
   _2_at_(); // 2@
   D_plus_(); // D+
-  Push(pp_STAR_dash_HR); // STAR-HR
-  Push(Read16(Pop())); // @
-  Push(0x0aaa);
-  Push(Pop() * Pop()); // *
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STAR_dash_HR) * 0x0aaa); // STAR-HR @ 0x0aaa *
+  Push(Read16(pp_STARDAT)); // STARDAT @
   D_st_(); // D<
   OVER(); // OVER
   Push(Read16(Pop())); // @
@@ -640,12 +621,8 @@ void UNK_0xf0e2() // UNK_0xf0e2
 {
   UNK_0xf06f(); // UNK_0xf06f
   if (Pop() == 0) return;
-  Push(pp_STAR_dash_HR); // STAR-HR
-  Push(Read16(Pop())); // @
-  Push(0x0aaa);
-  Push(Pop() * Pop()); // *
-  Push(pp_STARDAT); // STARDAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STAR_dash_HR) * 0x0aaa); // STAR-HR @ 0x0aaa *
+  Push(Read16(pp_STARDAT)); // STARDAT @
   Push(pp_HAZE); // HAZE
   _2_at_(); // 2@
   D_dash_(); // D-
@@ -663,8 +640,7 @@ void UNK_0xf0e2() // UNK_0xf0e2
 
 void DrawSTARDATE() // .STARDATE
 {
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   Push(0x0074);
@@ -675,13 +651,11 @@ void DrawSTARDATE() // .STARDATE
   POLY_dash_ER(); // POLY-ER
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(pp_STARDAT); // STARDAT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_STARDAT)); // STARDAT @
     Push(0x012c);
     _slash_MOD(); // /MOD
     Push(0x121f);
@@ -731,8 +705,7 @@ void DrawSTARDATE() // .STARDATE
 
 void UNK_0xf1ac() // UNK_0xf1ac
 {
-  Push(pp__n_STORM); // #STORM
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__n_STORM)); // #STORM @
   Push(Read16(regsp)); // DUP
   Push(4);
   _st_(); // <
@@ -985,8 +958,7 @@ void DrawENERGY() // .ENERGY
   if (Pop() != 0)
   {
     Pop(); // DROP
-    Push(pp_COLOR); // COLOR
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_COLOR)); // COLOR @
     SetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
@@ -1003,14 +975,9 @@ void DrawENERGY() // .ENERGY
   Push(3);
   SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  Push(pp__pe_EFF); // %EFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__pe_EFF)); // %EFF @
   Push(0x0064);
-  Push(pp_E_slash_M); // E/M
-  Push(Read16(Pop())); // @
-  Push(4);
-  Push(Pop() * Pop()); // *
-  Push(-Pop()); // NEGATE
+  Push(-Read16(pp_E_slash_M) * 4); // E/M @ 4 * NEGATE
   _star__slash_(); // */
   Push(0x0063);
   MIN(); // MIN
@@ -1181,8 +1148,7 @@ void DrawDISTANCE() // .DISTANCE
 void DrawSTATS() // .STATS
 {
   unsigned short int a;
-  Push(pp_XORMODE); // XORMODE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_XORMODE)); // XORMODE @
   a = Pop(); // >R
   Push(pp_XORMODE); // XORMODE
   _099(); // 099

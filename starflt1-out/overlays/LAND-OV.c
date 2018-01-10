@@ -158,8 +158,7 @@ void UNK_0xf177() // UNK_0xf177
     Push(0x63ef+INST_dash_QTY.offset); // IFIELD
     Push(Read16(Pop())); // @
     Push(Pop() * Pop()); // *
-    Push(pp_UNK_0xf143); // UNK_0xf143
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_UNK_0xf143)); // UNK_0xf143 @
     if (Pop() != 0)
     {
       UNK_0xf147(); // UNK_0xf147
@@ -347,8 +346,7 @@ void UNK_0xf37b() // UNK_0xf37b
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
@@ -423,8 +421,7 @@ void UNK_0xf430() // UNK_0xf430
   UNK_0xf1db(); // UNK_0xf1db
   Push(0xc3a7); // probable 'DESCEND'
   MODULE(); // MODULE
-  Push(pp_IsFUEL_dash_DIE); // ?FUEL-DIE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsFUEL_dash_DIE)); // ?FUEL-DIE @
   if (Pop() != 0)
   {
     UNK_0xf258(); // UNK_0xf258
@@ -442,8 +439,7 @@ void UNK_0xf430() // UNK_0xf430
 
 void UNK_0xf45e() // UNK_0xf45e
 {
-  Push(pp_GWF); // GWF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_GWF)); // GWF @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
@@ -466,8 +462,7 @@ void UNK_0xf45e() // UNK_0xf45e
       Store_3(); // !_3
     }
   }
-  Push(pp_GWF); // GWF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_GWF)); // GWF @
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
 
@@ -479,10 +474,8 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void IsLAND() // ?LAND
 {
-  Push(pp__i_EXTERNAL_dash_EVENTS); // 'EXTERNAL-EVENTS
-  Push(Read16(Pop())); // @
-  Push(pp__i_HEAT); // 'HEAT
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i_EXTERNAL_dash_EVENTS)); // 'EXTERNAL-EVENTS @
+  Push(Read16(pp__i_HEAT)); // 'HEAT @
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
@@ -492,8 +485,7 @@ void IsLAND() // ?LAND
     BEEP(); // BEEP
     return;
   }
-  Push(pp_IsG_dash_AWARE); // ?G-AWARE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsG_dash_AWARE)); // ?G-AWARE @
   if (Pop() != 0)
   {
     UNK_0xf45e(); // UNK_0xf45e

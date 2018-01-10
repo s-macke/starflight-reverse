@@ -131,11 +131,9 @@ void CI(); // CI
 void UNK_0xef56() // UNK_0xef56
 {
   unsigned short int a, b;
-  Push(pp_COLOR); // COLOR
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_COLOR)); // COLOR @
   a = Pop(); // >R
-  Push(pp_IsON_dash_PLA); // ?ON-PLA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
   b = Pop(); // >R
   Push(b); // I
   if (Pop() != 0)
@@ -339,11 +337,8 @@ void UNK_0xf082() // UNK_0xf082
   Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   _plus__ex__2(); // +!_2
-  Push(pp_LINE_dash_CO); // LINE-CO
-  Push(Read16(Pop())); // @
-  Push(pp_WLINES); // WLINES
-  Push(Read16(Pop())); // @
-  Push(Pop()-1); // 1-
+  Push(Read16(pp_LINE_dash_CO)); // LINE-CO @
+  Push(Read16(pp_WLINES) - 1); // WLINES @ 1-
   _gt_(); // >
   if (Pop() == 0) return;
   UNK_0xef56(); // UNK_0xef56
@@ -498,8 +493,7 @@ void UNK_0xf199() // UNK_0xf199
   CI(); // CI
   Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
-  Push(pp__i__dot_HUFF); // '.HUFF
-  Push(Read16(Pop())); // @
+  Push(Read16(pp__i__dot_HUFF)); // '.HUFF @
   MODULE(); // MODULE
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -578,8 +572,7 @@ void DrawRACE() // .RACE
   _dash_TRAILING(); // -TRAILING
   UNK_0xf0a2(); // UNK_0xf0a2
   ICLOSE(); // ICLOSE
-  Push(pp_CONTEXT_3); // CONTEXT_3
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   GetINST_dash_C(); // @INST-C
@@ -846,8 +839,7 @@ void UNK_0xf3ac() // UNK_0xf3ac
 void UNK_0xf3d0() // UNK_0xf3d0
 {
   UNK_0xf0aa(); // UNK_0xf0aa
-  Push(pp_IsON_dash_PLA); // ?ON-PLA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsON_dash_PLA)); // ?ON-PLA @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
@@ -921,8 +913,7 @@ void UNK_0xf444() // UNK_0xf444
 
 void DrawCULTURE() // .CULTURE
 {
-  Push(pp_PAST); // PAST
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) return;
   SetColor(WHITE);

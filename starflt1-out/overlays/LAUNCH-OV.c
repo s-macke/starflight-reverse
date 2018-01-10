@@ -143,8 +143,7 @@ void UNK_0xf034() // UNK_0xf034
     Push(i); // I
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
-    Push(pp_XBLT); // XBLT
-    Push(Read16(Pop())); // @
+    Push(Read16(pp_XBLT)); // XBLT @
     OVER(); // OVER
     Draw(); // .
     Push(pp_XBLT); // XBLT
@@ -249,8 +248,7 @@ void LAUNCH() // LAUNCH
   PRINT("COMMENCING LAUNCH SEQUENCE...", 29); // (.")
   COUNTDOWN(); // COUNTDOWN
   CTERASE(); // CTERASE
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   Push(1);
@@ -275,14 +273,10 @@ void UNK_0xf112() // UNK_0xf112
   Push(0x03e8); Push(0x0000);
   D_st_(); // D<
   if (Pop() == 0) return;
-  Push(pp_IsSECURE); // ?SECURE
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsSECURE)); // ?SECURE @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
-  Push(pp_STARDATE); // STARDATE
-  Push(Read16(Pop())); // @
-  Push(4);
-  Push(Pop() + Pop()); // +
+  Push(Read16(pp_STARDATE) + 4); // STARDATE @ 4 +
   Push(pp_IsSECURE); // ?SECURE
   Store_3(); // !_3
   Push(0x01f4);
@@ -476,8 +470,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
 void UNK_0xf2ee() // UNK_0xf2ee
 {
   Push(Pop()*2); // 2*
-  Push(pp_YTABL); // YTABL
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_YTABL)); // YTABL @
   Push(Pop() + Pop()); // +
   Push(Read16(Pop())); // @
 }
@@ -531,12 +524,10 @@ void UNK_0xf306() // UNK_0xf306
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
   Pop(); // DROP
-  Push(pp_HBUF_dash_SEG); // HBUF-SEG
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_HBUF_dash_SEG)); // HBUF-SEG @
   ROT(); // ROT
   UNK_0xf2fc(); // UNK_0xf2fc
-  Push(pp_DBUF_dash_SEG); // DBUF-SEG
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_DBUF_dash_SEG)); // DBUF-SEG @
   Push(4);
   ROLL(); // ROLL
   Push(Pop()+2); // 2+
@@ -571,8 +562,7 @@ void UNK_0xf393() // UNK_0xf393
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
   _gt_DISPLAY(); // >DISPLAY
-  Push(pp_IsEGA); // ?EGA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsEGA)); // ?EGA @
   if (Pop() != 0)
   {
     Push(0x05dc);
@@ -619,8 +609,7 @@ void UNK_0xf393() // UNK_0xf393
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(5);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
@@ -686,8 +675,7 @@ void _and_RETURN() // &RETURN
   DrawAIRLOCK(); // .AIRLOCK
   SetColor(GREY2);
   StoreCOLOR(); // !COLOR
-  Push(pp_IsEGA); // ?EGA
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_IsEGA)); // ?EGA @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {

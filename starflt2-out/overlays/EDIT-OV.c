@@ -214,8 +214,7 @@ void UNK_0xee94() // UNK_0xee94
 
 void UNK_0xeea0() // UNK_0xeea0
 {
-  Push(pp_UNK_0xee76); // UNK_0xee76
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee76)); // UNK_0xee76 @
 }
 
 
@@ -225,8 +224,7 @@ void UNK_0xeea0() // UNK_0xeea0
 
 void UNK_0xeea8() // UNK_0xeea8
 {
-  Push(pp_UNK_0xee72); // UNK_0xee72
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee72)); // UNK_0xee72 @
 }
 
 
@@ -315,8 +313,7 @@ void UNK_0xef04() // UNK_0xef04
 {
   UNK_0xeea0(); // UNK_0xeea0
   Push(Pop()+1); // 1+
-  Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
-  Push(Pop()-1); // 1-
+  Push(Read16(cc_UNK_0xee6a) - 1); // UNK_0xee6a 1-
   MIN(); // MIN
   Push(pp_UNK_0xee76); // UNK_0xee76
   Store_2(); // !_2
@@ -347,8 +344,7 @@ void UNK_0xef44() // UNK_0xef44
 {
   Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
   Push(Pop() * Pop()); // *
-  Push(user_SCR); // SCR
-  Push(Read16(Pop())); // @
+  Push(Read16(user_SCR)); // SCR @
   BLOCK_2(); // BLOCK_2
   Push(Pop() + Pop()); // +
 }
@@ -489,8 +485,7 @@ void UNK_0xefc0() // UNK_0xefc0
   Push(1);
   Push(5);
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
-  Push(user_SCR); // SCR
-  Push(Read16(Pop())); // @
+  Push(Read16(user_SCR)); // SCR @
   Draw(); // .
 }
 
@@ -564,8 +559,7 @@ void DrawMODE() // .MODE
   Push(0x0018);
   Push(0x0048);
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
-  Push(pp_UNK_0xee7a); // UNK_0xee7a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
   if (Pop() != 0)
   {
     PRINT("Insert ", 7); // (.")
@@ -640,8 +634,7 @@ void MLDN() // MLDN
 
 void MLUP() // MLUP
 {
-  Push(Read16(cc_UNK_0xee6a)); // UNK_0xee6a
-  Push(-Pop()); // NEGATE
+  Push(-Read16(cc_UNK_0xee6a)); // UNK_0xee6a NEGATE
   ML(); // ML
 }
 
@@ -801,8 +794,7 @@ void INSERT() // INSERT
 {
   Push(Read16(regsp)); // DUP
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
-  Push(pp_UNK_0xee7a); // UNK_0xee7a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
   if (Pop() != 0)
   {
     UNK_0xef66(); // UNK_0xef66
@@ -840,8 +832,7 @@ void DELETE() // DELETE
 {
   UNK_0xef16(); // UNK_0xef16
   UNK_0xeec0(); // UNK_0xeec0
-  Push(pp_UNK_0xee7a); // UNK_0xee7a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
   if (Pop() != 0)
   {
     XC(); // XC
@@ -930,8 +921,7 @@ void PUT() // PUT
     i++;
   } while(i<imax); // (LOOP)
 
-  Push(pp_UNK_0xee7a); // UNK_0xee7a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {
@@ -1005,18 +995,14 @@ void SET_dash_USER() // SET-USER
   Push(5);
   UNK_0xef84(); // UNK_0xef84
   C_ex__2(); // C!_2
-  Push(Read16(cc_DX)); // DX
-  Push(Pop()+1); // 1+
+  Push(Read16(cc_DX) + 1); // DX 1+
   Push(Read8(Pop())&0xFF); // C@
   Func5("#>MON");
   Push(6);
   UNK_0xef84(); // UNK_0xef84
   SWAP(); // SWAP
   CMOVE_2(); // CMOVE_2
-  Push(Read16(cc_CX)); // CX
-  Push(Read16(Pop())); // @
-  Push(0x076c);
-  _dash_(); // -
+  Push(Read16(Read16(cc_CX)) - 0x076c); // CX @ 0x076c -
   Push(Read16(regsp)); // DUP
   Push(0x000a);
   _slash_MOD(); // /MOD
@@ -1109,8 +1095,7 @@ void UNK_0xf40e() // UNK_0xf40e
 
 void UNK_0xf416() // UNK_0xf416
 {
-  Push(pp_UNK_0xee7a); // UNK_0xee7a
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_UNK_0xee7a)); // UNK_0xee7a @
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(pp_UNK_0xee7a); // UNK_0xee7a
   Store_2(); // !_2
@@ -1125,14 +1110,12 @@ void UNK_0xf416() // UNK_0xf416
 void _gt_STAMP() // >STAMP
 {
   unsigned short int a;
-  Push(pp_STAMP); // STAMP
-  Push(Read16(Pop())); // @
+  Push(Read16(pp_STAMP)); // STAMP @
   if (Pop() != 0)
   {
     SET_dash_USER(); // SET-USER
     Push(pp_UNK_0xedd6); // UNK_0xedd6
-    Push(user_SCR); // SCR
-    Push(Read16(Pop())); // @
+    Push(Read16(user_SCR)); // SCR @
     BLOCK_2(); // BLOCK_2
     a = Pop(); // >R
     Push(Read16(a)); // R@
@@ -1140,9 +1123,7 @@ void _gt_STAMP() // >STAMP
     Push(Pop() + Pop()); // +
     Push(0x000e);
     CMOVE_2(); // CMOVE_2
-    Push(pp_FILENAMES); // FILENAMES
-    Push(0x0016);
-    Push(Pop() + Pop()); // +
+    Push(pp_FILENAMES + 0x0016); // FILENAMES 0x0016 +
     Push(Read16(a)); // R@
     Push(0x0026);
     Push(Pop() + Pop()); // +
