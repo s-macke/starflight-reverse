@@ -48,11 +48,18 @@ stack1.o: src/stack.c src/stack.h
 stack2.o: src/stack.c src/stack.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/stack.c -o stack2.o
 
-disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o transpile2C1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o transpile2C1.o
+postfix2infix1.o: src/postfix2infix.c src/postfix2infix.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/postfix2infix.c -o postfix2infix1.o
 
-disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o transpile2C2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o transpile2C2.o
+postfix2infix2.o: src/postfix2infix.c src/postfix2infix.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/postfix2infix.c -o postfix2infix2.o
+
+
+disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o
+
+disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o
     
 .PHONY: clean
 

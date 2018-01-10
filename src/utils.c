@@ -4,6 +4,16 @@
 
 #include"utils.h"
 
+void Spc(FILE *fp, int spc)
+{
+    int i;
+    for(i=0; i<spc; i++)
+    {
+        fprintf(fp, "  ");
+    }
+}
+
+
 char* Escape(char* pStr)
 {
     static char ret[1024];

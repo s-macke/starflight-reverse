@@ -1,6 +1,8 @@
 #ifndef DICTIONARY_H
 #define DICTIONARY_H
 
+#include<stdio.h>
+
 typedef struct DICTENTRY
 {
     int addr;   // address of word in code
