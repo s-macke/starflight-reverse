@@ -6,6 +6,41 @@
 #include"../emul/cpu.h"
 #include"parser.h"
 
+#define STACKSTRINGLEN 128
+
+// precedence
+#define PVARNUMBERFUNC 1
+#define PNEGATE 2
+#define PMULDIV 3
+#define PADDSUB 4
+#define PBITSHIFT 5
+#define PAND 8
+#define PXOR 9
+#define POR 10
+
+// -------------------------------------------
+typedef struct
+{
+    char expr[STACKSTRINGLEN]; // subexpression string
+    int precedence;
+    char forth[STACKSTRINGLEN];
+    int isnumber;
+} Intermediate;
+
+static Intermediate stack[STACKSTRINGLEN];
+static int stackoffset = 0;
+
+void StackPop(int n)
+{
+    for(int i=stackoffset+n; i<stackoffset; i++)
+    {
+        memcpy(&stack[i], &stack[i+1], sizeof(Intermediate));
+    }
+    stackoffset--;
+}
+
+// -------------------------------------------
+
 typedef struct
 {
     char *word;
@@ -101,7 +136,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         }
         if (ret[0] == 0)
         {
-            snprintf(ret, STRINGLEN, "Push(%s);\n", numberstring, value);
+            snprintf(ret, STRINGLEN, "Push(%s);\n", numberstring);
         }
         return;
     }
@@ -329,8 +364,187 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     return;
 }
 
-void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int ovidx, FILE *fp, int nspc)
+// -------------------------------------------
+
+void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int currentovidx, FILE *fp, int nspc)
 {
+    char *s = GetWordName(e);
+
+    int value = IsPushNumber(addr, e);
+    if (value != 0x10000)
+    {
+        char numberstring[16];
+        if (value < 10) sprintf(numberstring, "%i", value);
+        else if (value > 0xfffc) sprintf(numberstring, "%i", (short signed int)value);
+        else sprintf(numberstring, "0x%04x", value);
+
+        int i = 0;
+        for(i=0; i<ndict; i++)
+        {
+            if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
+            if (dict[i].parp == value)
+            {
+                Postfix2InfixReset(fp, nspc);
+                Spc(fp, nspc);
+                fprintf(fp, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
+                return;
+            }
+        }
+
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", numberstring);
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", numberstring);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 1;
+        stackoffset++;
+        return;
+    }
+    if (e->codep == CODEPOINTER) // pointer to variable or table
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "pp_%s", Forth2CString(s), s);
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        return;
+    }
+    if (e->codep == CODECONSTANT)
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "Read16(cc_%s)", Forth2CString(s));
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        return;
+    }
+    if (e->codep == CODEDI) // User data
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "user_%s", Forth2CString(s));
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        return;
+    }
+
+    // 2 operand logic
+    if ((stackoffset >= 2) &&
+            (
+            (strcmp(s, "+") == 0) ||
+            (strcmp(s, "-") == 0) ||
+            (strcmp(s, "OR") == 0) ||
+            (strcmp(s, "AND") == 0) ||
+            (strcmp(s, "XOR") == 0) ||
+            (strcmp(s, "*") == 0)
+            )
+        )
+    {
+        char op;
+        int precedence;
+        if (strcmp(s, "+") == 0) { op = '+'; precedence = PADDSUB; };
+        if (strcmp(s, "-") == 0) { op = '-'; precedence = PADDSUB; };
+        if (strcmp(s, "OR") == 0) { op = '|'; precedence = POR; };
+        if (strcmp(s, "AND") == 0) { op = '&'; precedence = PAND; };
+        if (strcmp(s, "*") == 0) { op = '*'; precedence = PMULDIV; };
+
+        if (stack[stackoffset-2].precedence >= precedence)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "(%s) %c", stack[stackoffset-2].expr, op);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s %c", stack[stackoffset-2].expr, op);
+        }
+
+        if (stack[stackoffset-1].precedence >= precedence)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s (%s)", stack[stackoffset].expr, stack[stackoffset-1].expr);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s %s", stack[stackoffset].expr, stack[stackoffset-1].expr);
+        }
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s %s", stack[stackoffset-2].forth, stack[stackoffset-1].forth, s);
+/*
+        printf("%s // %s\n",
+            stack[stackoffset].expr,
+            stack[stackoffset].forth);
+*/
+        stack[stackoffset].precedence = precedence;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        StackPop(-2);
+        return;
+    }
+
+    // 1 operand logic
+    if ((stackoffset >= 1) &&
+            (
+            (strcmp(s, "2*") == 0) ||
+            (strcmp(s, "1+") == 0) ||
+            (strcmp(s, "2+") == 0) ||
+            (strcmp(s, "3+") == 0) ||
+            (strcmp(s, "1-") == 0) ||
+            (strcmp(s, "2-") == 0) ||
+            (strcmp(s, "16/") == 0) ||
+            (strcmp(s, "2/") == 0) ||
+            (strcmp(s, "16*") == 0)
+            )
+        )
+    {
+        char op[6];
+        int precedence;
+        if (strcmp(s, "2*") == 0) { sprintf(op, "* 2"); precedence = PMULDIV; };
+        if (strcmp(s, "1+") == 0) { sprintf(op, "+ 1"); precedence = PADDSUB; };
+        if (strcmp(s, "2+") == 0) { sprintf(op, "+ 2"); precedence = PADDSUB; };
+        if (strcmp(s, "3+") == 0) { sprintf(op, "+ 3"); precedence = PADDSUB; };
+        if (strcmp(s, "1-") == 0) { sprintf(op, "- 1"); precedence = PADDSUB; };
+        if (strcmp(s, "2-") == 0) { sprintf(op, "- 2"); precedence = PADDSUB; };
+        if (strcmp(s, "16/") == 0) { sprintf(op, ">> 4"); precedence = PBITSHIFT; }; // TODO check for signed and unsigned
+        if (strcmp(s, "2/") == 0) { sprintf(op, ">> 1"); precedence = PBITSHIFT; };
+        if (strcmp(s, "16*") == 0) { sprintf(op, ">> 4"); precedence = PBITSHIFT; };
+
+        if (stack[stackoffset-1].precedence >= precedence)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "(%s) %s", stack[stackoffset-1].expr, op);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].expr, op);
+        }
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
+
+        stack[stackoffset].precedence = precedence;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+    // negate
+    if ((stackoffset >= 1) && (strcmp(s, "NEGATE") == 0))
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "-%s", stack[stackoffset-1].expr);
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PNEGATE;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+    // Functions
+    if ((stackoffset >= 1) && (strcmp(s, "@") == 0))
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "Read16(%s)", stack[stackoffset-1].expr);
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s @", stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+
+    Postfix2InfixReset(fp, nspc);
+
     char func[STRINGLEN*2];
     GetMacro(addr, e, efunc, func, pline[addr].ovidx);
     Spc(fp, nspc);
@@ -339,7 +553,14 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int ovid
 
 void Postfix2InfixReset(FILE *fp, int nspc)
 {
-
+    for(int i=0; i<stackoffset; i++)
+    {
+        Spc(fp, nspc);
+        fprintf(fp, "Push(%s);", stack[i].expr);
+        if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
+        fprintf(fp, "\n");
+    }
+    stackoffset = 0;
 }
 
 
