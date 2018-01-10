@@ -6,17 +6,20 @@
 #include"../emul/cpu.h"
 #include"parser.h"
 
-#define STACKSTRINGLEN 256
+#define STACKSTRINGLEN 512
 
 // precedence
 #define PVARNUMBERFUNC 1
 #define PNEGATE 2
+#define PNOT 2
 #define PMULDIV 3
 #define PADDSUB 4
 #define PBITSHIFT 5
+#define PEQUAL 7
 #define PAND 8
 #define PXOR 9
 #define POR 10
+#define PTERNARYCONDITIONAL 13
 
 // -------------------------------------------
 typedef struct
@@ -27,7 +30,7 @@ typedef struct
     int isnumber;
 } Intermediate;
 
-static Intermediate stack[STACKSTRINGLEN];
+static Intermediate stack[50];
 static int stackoffset = 0;
 
 void StackPop(int n)
@@ -472,11 +475,6 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
             snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s %s", stack[stackoffset].expr, stack[stackoffset-1].expr);
         }
         snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s %s", stack[stackoffset-2].forth, stack[stackoffset-1].forth, s);
-/*
-        printf("%s // %s\n",
-            stack[stackoffset].expr,
-            stack[stackoffset].forth);
-*/
         stack[stackoffset].precedence = precedence;
         stack[stackoffset].isnumber = 0;
         stackoffset++;
@@ -562,7 +560,67 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         return;
     }
 
-    // TODO OVER MAX, !, =, SWAP, NOT, DROP, DUP
+    if ((stackoffset >= 2) && (strcmp(s, "=") == 0))
+    {
+        if (stack[stackoffset-2].precedence >= PEQUAL)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "(%s)", stack[stackoffset-2].expr);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", stack[stackoffset-2].expr, stack[stackoffset-1].expr);
+        }
+        if (stack[stackoffset-1].precedence >= PEQUAL)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s==(%s)?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s==%s?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+        }
+
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s %s", stack[stackoffset-2].forth, stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PTERNARYCONDITIONAL;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+    // TODO: work with !. What do do with "= NOT"?
+    if ((stackoffset >= 1) && (strcmp(s, "0=") == 0))
+    {
+        if (stack[stackoffset-1].precedence >= PEQUAL)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "(%s)==0?1:0", stack[stackoffset-1].expr);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s==0?1:0", stack[stackoffset-1].expr);
+        }
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PTERNARYCONDITIONAL;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+    if ((stackoffset >= 1) && (strcmp(s, "NOT") == 0))
+    {
+        if (stack[stackoffset-1].precedence >= PNOT)
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "!(%s)", stack[stackoffset-1].expr);
+        } else
+        {
+            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "!%s", stack[stackoffset-1].expr);
+        }
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
+        stack[stackoffset].precedence = PNOT;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        StackPop(-2);
+        return;
+    }
+
+
+    // TODO OVER MAX, !, =, SWAP, DROP, DUP +@
 
     Postfix2InfixReset(fp, nspc);
 
