@@ -292,10 +292,7 @@ IFieldType UNK_0xed60 = {SHIPIDX, 0x57, 0x01};
 
 void UNK_0xed65() // UNK_0xed65
 {
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
-  Push(7);
-  Push(Pop() & Pop()); // AND
+  Push((Read16(Pop() + 1)&0xFF) & 7); //  1+ C@ 7 AND
 }
 
 
@@ -341,18 +338,13 @@ void _ro__dot_MASS_rc_() // (.MASS)
   UNK_0xed65(); // UNK_0xed65
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  Push(9);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 9); //  9 *
   Push(Pop() + Pop()); // +
   Push(Read16(0x65e1+UNK_0xed47.offset)); // UNK_0xed47<IFIELD> @
   _plus_BIT(); // +BIT
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000a); //  0x000a *
   Push(Pop() + Pop()); // +
-  Push((Read16(0x65e1+UNK_0xed60.offset)&0xFF) * 0x000a); // UNK_0xed60<IFIELD> C@ 0x000a *
-  Push(Pop() + Pop()); // +
-  Push((Read16(0x65e1+UNK_0xed5b.offset)&0xFF) * 0x000a); // UNK_0xed5b<IFIELD> C@ 0x000a *
-  Push(Pop() + Pop()); // +
+  Push((Pop() + (Read16(0x65e1+UNK_0xed60.offset)&0xFF) * 0x000a) + (Read16(0x65e1+UNK_0xed5b.offset)&0xFF) * 0x000a); //  UNK_0xed60<IFIELD> C@ 0x000a * + UNK_0xed5b<IFIELD> C@ 0x000a * +
   Push(0x65e1+UNK_0xed42.offset); // UNK_0xed42<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
@@ -364,8 +356,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
-  Push(5);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 5); //  5 *
   Push(Pop() + Pop()); // +
   Push(0x65e1+UNK_0xed51.offset); // UNK_0xed51<IFIELD>
   Store_2(); // !_2
@@ -398,9 +389,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   Push(Read16(regsp)); // DUP
   Push(0x65e1+UNK_0xed4c.offset); // UNK_0xed4c<IFIELD>
   Store_2(); // !_2
-  Push(pp_UNK_0xee59); // UNK_0xee59
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xee59)&0xFF); //  UNK_0xee59 + C@
   Push(pp__dash_END); // -END
   Store_2(); // !_2
   GetCRS(); // @CRS
@@ -623,14 +612,10 @@ void UNK_0xf0e0() // UNK_0xf0e0
 {
   Push(Read16(pp_UNK_0xf0dc)); // UNK_0xf0dc @
   Push(Read16(regsp)); // DUP
-  Push(pp_UNK_0xf0b8); // UNK_0xf0b8
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xf0b8)&0xFF); //  UNK_0xf0b8 + C@
   Push(pp_XBLT); // XBLT
   Store_2(); // !_2
-  Push(pp_UNK_0xf0ca); // UNK_0xf0ca
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xf0ca)&0xFF); //  UNK_0xf0ca + C@
   Push(pp_YBLT); // YBLT
   Store_2(); // !_2
   BLT(); // BLT
@@ -1005,10 +990,7 @@ void UNK_0xf478() // UNK_0xf478
   {
     Push(0x000f);
     Push(i); // I
-    Push(0x000a);
-    Push(Pop() * Pop()); // *
-    Push(0x002c);
-    Push(Pop() + Pop()); // +
+    Push(Pop() * 0x000a + 0x002c); //  0x000a * 0x002c +
     POS_dot_(); // POS.
     PRINT("CLASS ", 6); // (.")
     Push(5);

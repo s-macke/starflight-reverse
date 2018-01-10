@@ -93,7 +93,7 @@ void LET_dash_THERE_dash_BE_dash_STARFLIGHT() // LET-THERE-BE-STARFLIGHT
   MOUNTA(); // MOUNTA
   LDFONTS(); // LDFONTS
   SIGFLD(":TIMESTAMP");
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp_TIMESTAMP); // TIMESTAMP
   Store_3(); // !_3
   Push(pp_RELAXTIME); // RELAXTIME

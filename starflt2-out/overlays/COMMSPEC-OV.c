@@ -433,17 +433,13 @@ void UNK_0xe84f() // UNK_0xe84f
   } while(Pop() == 0);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   Push(Read16(regsp)); // DUP
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_FTRIG)); // FTRIG @
-  Push(Pop() * Pop()); // *
+  Push((Pop()==2?1:0) * Read16(pp_FTRIG)); //  2 = FTRIG @ *
   Push(pp__ro_STOP_dash_C); // (STOP-C
   Store_2(); // !_2
   IsTRIG(); // ?TRIG
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(Pop()*2); // 2*
+  Push((Pop()==0?1:0) * 2); //  0= 2*
   Push(Pop() + Pop()); // +
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Pop(); // DROP
@@ -514,8 +510,7 @@ void UNK_0xea63() // UNK_0xea63
   Push(0x003a);
   Push(1);
   GetRECORD(); // @RECORD
-  Push(0x0048);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0048); //  0x0048 +
   C_ex__2(); // C!_2
   UPDATE(); // UPDATE
   SAVE_dash_BU(); // SAVE-BU
@@ -682,7 +677,7 @@ void UNK_0xee17() // UNK_0xee17
     if (Pop() != 0)
     {
       SWAP(); // SWAP
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
@@ -719,8 +714,7 @@ void UNK_0xf190() // UNK_0xf190
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
     GetINST_dash_S(); // @INST-S
-    Push(6);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==6?1:0); //  6 =
     if (Pop() != 0)
     {
       a = Pop(); // >R
@@ -857,7 +851,7 @@ void _n__gt_PROTEST() // #>PROTEST
 void _n__gt_PRO() // #>PRO
 {
   UNK_0xee17(); // UNK_0xee17
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     _n__gt_PROTEST(); // #>PROTEST case
@@ -925,7 +919,7 @@ void UNK_0xf4ad() // UNK_0xf4ad
   Push(pp_UNK_0xe63e); // UNK_0xe63e
   _099(); // 099
   COUNT(); // COUNT
-  Push(Pop()*2); // 2*
+  Push(Pop() * 2); //  2*
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP

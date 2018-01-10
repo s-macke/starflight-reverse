@@ -157,7 +157,7 @@ void UNK_0xf3c8() // UNK_0xf3c8
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
 }
 
 
@@ -189,12 +189,10 @@ void UNK_0xf3f6() // UNK_0xf3f6
   Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
-  Push(0x0118);
-  _dash_(); // -
+  Push(Pop() - 0x0118); //  0x0118 -
   ABS(); // ABS
   a = Pop(); // >R
-  Push(0x0248);
-  _dash_(); // -
+  Push(Pop() - 0x0248); //  0x0248 -
   ABS(); // ABS
   Push(a); // R>
   MAX(); // MAX
@@ -218,7 +216,7 @@ void UNK_0xf436() // UNK_0xf436
   Push(pp_RECORD_n_); // RECORD#
   Store_2(); // !_2
   LoadData(ELEM_dash_VA); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(0x000a);
   _slash_(); // /
   U_star_(); // U*
@@ -256,7 +254,7 @@ void UNK_0xf47a() // UNK_0xf47a
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
 }
 
 
@@ -320,8 +318,7 @@ void TOW_dash_US() // TOW-US
     Push(Read16(pp__n_VESS)); // #VESS @
     _0_gt_(); // 0>
     Push(Pop() & Pop()); // AND
-    Push(!Read16(cc_IsCALLED)); // ?CALLED NOT
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & !Read16(cc_IsCALLED)); //  ?CALLED NOT AND
     if (Pop() != 0)
     {
       UNK_0xf4b2(); // UNK_0xf4b2

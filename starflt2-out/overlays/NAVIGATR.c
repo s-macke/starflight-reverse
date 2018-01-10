@@ -194,7 +194,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x65e1+UNK_0xf196.offset)==0?1:0); // UNK_0xf196<IFIELD> @ 0=
   ICLOSE(); // ICLOSE
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
@@ -406,7 +406,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   } else
   {
     UNK_0xf301(); // UNK_0xf301
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     Push(pp__10_star_END); // 10*END
     _2_at_(); // 2@
     D0_eq_(); // D0=

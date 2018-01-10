@@ -366,7 +366,7 @@ void UNK_0xec7a() // UNK_0xec7a
 void UNK_0xec82() // UNK_0xec82
 {
   Push(Read16(regsp)); // DUP
-  Push(Pop()>>1); // 2/
+  Push(Pop() >> 1); //  2/
   Push(0);
   SWAP(); // SWAP
   RRND(); // RRND
@@ -383,14 +383,12 @@ void UNK_0xec92() // UNK_0xec92
   UNK_0xec7a(); // UNK_0xec7a
   UNK_0xec6c(); // UNK_0xec6c
   LoadData(UNK_0xec36); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _gt_(); // >
   if (Pop() != 0)
   {
     LoadData(UNK_0xebc6); // from 'TRADERS'
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x0032);
-    Push(Pop() * Pop()); // *
+    Push((Read16(Pop())&0xFF) * 0x0032); //  C@ 0x0032 *
     Push(Read16(regsp)); // DUP
     UNK_0xec82(); // UNK_0xec82
     LoadData(UNK_0xec46); // from 'TRADERS'
@@ -421,7 +419,7 @@ void UNK_0xeccc() // UNK_0xeccc
   a = Pop(); // >R
   Push(Read16(a)); // R@
   LoadData(UNK_0xebe6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
@@ -430,7 +428,7 @@ void UNK_0xeccc() // UNK_0xeccc
   {
     Push(Read16(a)); // R@
     LoadData(UNK_0xebf6); // from 'TRADERS'
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
     {
@@ -471,8 +469,7 @@ void GetTAMT() // @TAMT
 {
   UNK_0xeccc(); // UNK_0xeccc
   IFLD_at_(); // IFLD@
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000a); //  0x000a *
   ICLOSE(); // ICLOSE
 }
 
@@ -531,7 +528,7 @@ void UNK_0xed70() // UNK_0xed70
 void UNK_0xed82() // UNK_0xed82
 {
   LoadData(ART_dash_VAL); // from 'ARTIFACT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
 }
 
 
@@ -542,7 +539,7 @@ void UNK_0xed82() // UNK_0xed82
 void UNK_0xed8a() // UNK_0xed8a
 {
   LoadData(ELEM_dash_VA); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
 }
 
 
@@ -553,7 +550,7 @@ void UNK_0xed8a() // UNK_0xed8a
 void UNK_0xed92() // UNK_0xed92
 {
   LoadData(UNK_0xed60); // from 'STIS'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
 }
 
 
@@ -564,7 +561,7 @@ void UNK_0xed92() // UNK_0xed92
 void UNK_0xed9a() // UNK_0xed9a
 {
   LoadData(UNK_0xed48); // from 'CREATURE'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
 }
 
 
@@ -706,10 +703,9 @@ void UNK_0xee3f() // UNK_0xee3f
 {
   UNK_0xec7a(); // UNK_0xec7a
   GetINST_dash_S(); // @INST-S
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
-  Push(Read16(pp_STARDAT)); // STARDAT @
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(pp_STARDAT)); //  STARDAT @ +
 }
 
 
@@ -731,11 +727,9 @@ void UNK_0xee57() // UNK_0xee57
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebbe); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
-  Push(pp_UNK_0xee23); // UNK_0xee23
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xee23)&0xFF); //  UNK_0xee23 + C@
 }
 
 
@@ -747,11 +741,9 @@ void UNK_0xee69() // UNK_0xee69
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebc6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
-  Push(pp_UNK_0xee1c); // UNK_0xee1c
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xee1c)&0xFF); //  UNK_0xee1c + C@
 }
 
 
@@ -844,13 +836,13 @@ void UNK_0xeed9() // UNK_0xeed9
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebe6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xeec1(); // UNK_0xeec1
   LoadData(UNK_0xebf6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xeec1(); // UNK_0xeec1
   LoadData(UNK_0xebfe); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xeec1(); // UNK_0xeec1
   ICLOSE(); // ICLOSE
 }
@@ -880,10 +872,7 @@ void UNK_0xef03() // UNK_0xef03
   unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebc6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(pp_UNK_0xee2a); // UNK_0xee2a
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((Read16(Pop())&0xFF) + pp_UNK_0xee2a)&0xFF); //  C@ UNK_0xee2a + C@
   ICLOSE(); // ICLOSE
   Push(0x0018);
   Push(1);
@@ -947,10 +936,10 @@ void UNK_0xef67() // UNK_0xef67
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xec06); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xef4f(); // UNK_0xef4f
   LoadData(UNK_0xec0e); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xef4f(); // UNK_0xef4f
   ICLOSE(); // ICLOSE
 }
@@ -982,13 +971,13 @@ void UNK_0xef93() // UNK_0xef93
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xec1e); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xef7b(); // UNK_0xef7b
   LoadData(UNK_0xec26); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xef7b(); // UNK_0xef7b
   LoadData(UNK_0xec2e); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0xef7b(); // UNK_0xef7b
   ICLOSE(); // ICLOSE
 }
@@ -1003,17 +992,13 @@ void UNK_0xefad() // UNK_0xefad
   unsigned short int i, imax;
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebc6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(pp_UNK_0xee2a); // UNK_0xee2a
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()>>1); // 2/
+  Push((Read16((Read16(Pop())&0xFF) + pp_UNK_0xee2a)&0xFF) >> 1); //  C@ UNK_0xee2a + C@ 2/
   Push(0x0017);
   Push(6);
   _eq_SPECIE(); // =SPECIE
   if (Pop() != 0)
   {
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
   }
   Push(1);
 
@@ -1031,9 +1016,7 @@ void UNK_0xefad() // UNK_0xefad
     OVER(); // OVER
     _st_(); // <
     Push(i); // I
-    Push(0x0017);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | (Pop()==0x0017?1:0)); //   0x0017 = OR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xeb92)); // UNK_0xeb92
@@ -1115,7 +1098,7 @@ void UNK_0xf039() // UNK_0xf039
   LoadData(UNK_0xed58); // from 'ELEMENT'
   C_ex__2(); // C!_2
   LoadData(ELEM_dash_VA); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(0x65e1+ASKING.offset); // ASKING<IFIELD>
   Store_2(); // !_2
   CI(); // CI
@@ -1170,7 +1153,7 @@ void UNK_0xf233() // UNK_0xf233
   Push(0xf21b);
   ALL(); // ALL
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     IDELETE(); // IDELETE
@@ -1203,7 +1186,7 @@ void UNK_0xf25f() // UNK_0xf25f
 {
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebd6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
   Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
@@ -1302,7 +1285,7 @@ void UNK_0xf31b() // UNK_0xf31b
   label2:
   IOPEN(); // IOPEN
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   ICLOSE(); // ICLOSE
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -1349,17 +1332,13 @@ void UNK_0xf33b() // UNK_0xf33b
 
 void TRADE_gt_OR() // TRADE>OR
 {
-  Push(pp_UNK_0xf363); // UNK_0xf363
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + pp_UNK_0xf363)&0xFF); //  UNK_0xf363 + C@
   Push(Read16(regsp)); // DUP
-  Push(8);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==8?1:0); //  8 =
   if (Pop() == 0) return;
   Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) return;
-  Push(3);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 3); //  3 +
 }
 
 
@@ -1404,9 +1383,7 @@ void UNK_0xf3e8() // UNK_0xf3e8
   Push(Read16(0x65e1+UNK_0xeb9a.offset)); // UNK_0xeb9a<IFIELD> @
   Push(Read16(0x65e1+UNK_0xeb9f.offset)); // UNK_0xeb9f<IFIELD> @
   _plus_BIT(); // +BIT
-  Push(Pop()+1); // 1+
-  Push(0x01f4);
-  Push(Pop() * Pop()); // *
+  Push((Pop() + 1) * 0x01f4); //  1+ 0x01f4 *
   Push(Read16(regsp)); // DUP
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
@@ -1440,8 +1417,7 @@ void UNK_0xf41e() // UNK_0xf41e
     _1_dot_5_ex__2(); // 1.5!_2
     _gt_C_plus_S(); // >C+S
     GetINST_dash_S(); // @INST-S
-    Push(6);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==6?1:0); //  6 =
     if (Pop() != 0)
     {
       Push(0x0023);
@@ -1463,8 +1439,7 @@ void UNK_0xf41e() // UNK_0xf41e
   Push(Read16(regsp)); // DUP
   LoadData(UNK_0xebae); // from 'TRADERS'
   C_ex__2(); // C!_2
-  Push(4);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==4?1:0); //  4 =
   if (Pop() != 0)
   {
     Push(0x000a);
@@ -1513,20 +1488,19 @@ void UNK_0xf4b7() // UNK_0xf4b7
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xebb6); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
   a = Pop(); // >R
   Push(Read16(a)); // R@
   _gt_FLAG(); // >FLAG
-  Push(!Read16(pp_PAST)); // PAST @ NOT
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & !Read16(pp_PAST)); //  PAST @ NOT AND
   Push(a); // R>
   SWAP(); // SWAP
   b = Pop(); // >R
   UNK_0xf33b(); // UNK_0xf33b
   UNK_0xec7a(); // UNK_0xec7a
   Push(Read16(b)); // R@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Pop(); // DROP
@@ -1556,7 +1530,7 @@ void BLD_dash_LIST() // BLD-LIST
   UNK_0xf28d(); // UNK_0xf28d
   UNK_0xec7a(); // UNK_0xec7a
   LoadData(UNK_0xebd6); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _gt_FLAG(); // >FLAG
   ICLOSE(); // ICLOSE
   if (Pop() != 0)

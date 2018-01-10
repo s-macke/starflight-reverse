@@ -116,20 +116,16 @@ void UNK_0xf1b7() // UNK_0xf1b7
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf1ab); // from 'PLANET'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0x0320);
-    _dash_(); // -
+    Push(Pop() - 0x0320); //  0x0320 -
     Push(0);
     SQRT(); // SQRT
-    Push(0x000a);
-    Push(Pop() * Pop()); // *
-    Push(0x0320);
-    Push(Pop() + Pop()); // +
+    Push(Pop() * 0x000a + 0x0320); //  0x000a * 0x0320 +
   }
   ICLOSE(); // ICLOSE
 }
@@ -153,8 +149,7 @@ void UNK_0xf1e7() // UNK_0xf1e7
     Push(0x001a);
     Push(6);
     IFIND(); // IFIND
-    Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
-    Push(Pop() * Pop()); // *
+    Push(Pop() * Read16(0x65e1+INST_dash_QT.offset)); //  INST-QT<IFIELD> @ *
     Push(Read16(pp_UNK_0xf1b3)); // UNK_0xf1b3 @
     if (Pop() != 0)
     {
@@ -307,8 +302,7 @@ void UNK_0xf39c() // UNK_0xf39c
   UNK_0xf1e7(); // UNK_0xf1e7
   Push(0x0140);
   MIN(); // MIN
-  Push(0x0028);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x0028); //  0x0028 *
   UNK_0xf1b7(); // UNK_0xf1b7
   _st_(); // <
 }
@@ -341,11 +335,9 @@ void UNK_0xf3eb() // UNK_0xf3eb
   Push(0x0140);
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
-  Push(Read16(pp_CONTEXT_3)==0?1:0); // CONTEXT_3 @ 0=
-  Push(Pop() * Pop()); // *
+  Push(Pop() * (Read16(pp_CONTEXT_3)==0?1:0)); //  CONTEXT_3 @ 0= *
   Push(Pop() + Pop()); // +
-  Push(0x0014);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x0014); //  0x0014 *
   UNK_0xf1b7(); // UNK_0xf1b7
   _st_(); // <
 }
@@ -435,7 +427,7 @@ void UNK_0xf4ce() // UNK_0xf4ce
 {
   Push(Read16(pp_GWF)); // GWF @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) return;
   UNK_0xf452(); // UNK_0xf452
   if (Pop() != 0)
@@ -489,7 +481,7 @@ void IsLAND() // ?LAND
 void IsLAUNCH() // ?LAUNCH
 {
   UNK_0xf40d(); // UNK_0xf40d
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   UNK_0xf24b(); // UNK_0xf24b

@@ -546,7 +546,7 @@ void UNK_0xedf7() // UNK_0xedf7
   Push(Read16(pp_UNK_0xed5d)); // UNK_0xed5d @
   a = Pop(); // >R
   Push(Read16(a)); // R@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     UNK_0xed39(); // UNK_0xed39
@@ -726,11 +726,9 @@ void UNK_0xef2c() // UNK_0xef2c
 {
   unsigned short int a;
   _2DUP(); // 2DUP
-  Push(Read16(pp_EYEXY + 2)); // EYEXY 2+ @
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(pp_EYEXY + 2)); //  EYEXY 2+ @ +
   a = Pop(); // >R
-  Push(Read16(pp_EYEXY)); // EYEXY @
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(pp_EYEXY)); //  EYEXY @ +
   Push(a); // R>
   SWAP(); // SWAP
   IsINVIS(); // ?INVIS
@@ -744,7 +742,7 @@ void UNK_0xef2c() // UNK_0xef2c
 void UNK_0xef48() // UNK_0xef48
 {
   UNK_0xec4c(); // UNK_0xec4c
-  Push(Pop()>>1); // 2/
+  Push(Pop() >> 1); //  2/
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 }
@@ -779,8 +777,7 @@ void UNK_0xef54() // UNK_0xef54
     DrawCIRCLE_1(); // .CIRCLE_1
     V_gt_DISPL(); // V>DISPL
     UNK_0xec4c(); // UNK_0xec4c
-    Push(-Pop()); // NEGATE
-    Push(Pop()*2); // 2*
+    Push(-Pop() * 2); //  NEGATE 2*
     int step = Pop();
     i += step;
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
@@ -801,8 +798,7 @@ void UNK_0xef86() // UNK_0xef86
   GetIH(); // @IH
   _gt_C_plus_S(); // >C+S
   GetINST_dash_C(); // @INST-C
-  Push(0x0014);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x0014?1:0); //  0x0014 =
   Push(0xc6d9); // probable 'BLST'
   MODULE(); // MODULE
   ICLOSE(); // ICLOSE
@@ -1064,7 +1060,7 @@ void UNK_0xf0f4() // UNK_0xf0f4
   Push(pp_EYEXY); // EYEXY
   _2_at_(); // 2@
   D_eq_(); // D=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   Push(pp_UNK_0xf046); // UNK_0xf046
   _2_at_(); // 2@
@@ -1096,7 +1092,7 @@ void UNK_0xf138() // UNK_0xf138
 
   label2:
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   IDELETE(); // IDELETE
   goto label2;
@@ -1173,7 +1169,7 @@ void UNK_0xf172() // UNK_0xf172
         IsTRIG(); // ?TRIG
       } while(Pop() == 0);
       UNK_0xede5(); // UNK_0xede5
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       if (Pop() != 0)
       {
         UNK_0xf158(); // UNK_0xf158
@@ -1231,12 +1227,11 @@ void UNK_0xf20c() // UNK_0xf20c
     Get_gt_C_plus_S(); // @>C+S
     GetINST_dash_S(); // @INST-S
     ICLOSE(); // ICLOSE
-    Push(6);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==6?1:0); //  6 =
     if (Pop() != 0)
     {
       SWAP(); // SWAP
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       SWAP(); // SWAP
       imax = i; // LEAVE
     }
@@ -1301,7 +1296,7 @@ void UNK_0xf26c() // UNK_0xf26c
       SWAP(); // SWAP
       _dash_(); // -
       _0_st_(); // 0<
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
     } else
     {
       Pop(); // DROP
@@ -1345,7 +1340,7 @@ void UNK_0xf2bc() // UNK_0xf2bc
   CI(); // CI
   Push2Words("*STARSH");
   D_eq_(); // D=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   CDROP(); // CDROP
   goto label2;
@@ -1362,12 +1357,12 @@ void UNK_0xf2bc() // UNK_0xf2bc
 void UNK_0xf2d4() // UNK_0xf2d4
 {
   UNK_0xf2aa(); // UNK_0xf2aa
-  Push(-Pop()); // NEGATE
+  Push(-Pop()); //  NEGATE
   Push(0x65e1+INST_dash_QT.offset); // INST-QT<IFIELD>
   _plus__ex__2(); // +!_2
   Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
   _0_gt_(); // 0>
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     IDELETE(); // IDELETE
@@ -1541,7 +1536,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   Push(0x0064);
   TONE(); // TONE
   Push(0x504a); // probable 'YELLOW'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(0x4fa9); // probable 'BLACK'
   C_ex__2(); // C!_2
   CTERASE(); // CTERASE
@@ -1620,7 +1615,7 @@ void DONULL() // DONULL
       if (Pop() != 0)
       {
         UNK_0xf20c(); // UNK_0xf20c
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Pop()); //  NOT
         if (Pop() != 0)
         {
           Push(pp_NOF); // NOF

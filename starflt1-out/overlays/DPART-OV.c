@@ -370,20 +370,17 @@ void UNK_0xf0d6() // UNK_0xf0d6
 {
   unsigned short int a;
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     GetINST_dash_CLASS(); // @INST-CLASS
     a = Pop(); // >R
     Push(a); // I
-    Push(0x0044);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x0044?1:0); //  0x0044 =
     Push(a); // I
-    Push(0x001a);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x001a?1:0); //  0x001a =
     Push(a); // I
-    Push(0x0029);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x0029?1:0); //  0x0029 =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
@@ -393,8 +390,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
       Push(Pop() & Pop()); // AND
     }
     Push(a); // I
-    Push(0x001c);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x001c?1:0); //  0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
@@ -405,14 +401,12 @@ void UNK_0xf0d6() // UNK_0xf0d6
       Push(Pop() & Pop()); // AND
     }
     Push(a); // I
-    Push(0x001c);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x001c?1:0); //  0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
       GetINST_dash_SPECIES(); // @INST-SPECIES
-      Push(3);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==3?1:0); //  3 =
       Push(Read16(pp_IsWIN)); // ?WIN @
       _0_gt_(); // 0>
       Push(Pop() & Pop()); // AND
@@ -464,9 +458,9 @@ void UNK_0xf166() // UNK_0xf166
 
   label3:
   IsLAST(); // ?LAST
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf0d6(); // UNK_0xf0d6
@@ -624,8 +618,7 @@ void UNK_0xf29e() // UNK_0xf29e
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
-  Push(0x0017);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x0017?1:0); //  0x0017 =
 }
 
 
@@ -673,8 +666,7 @@ void UNK_0xf2eb() // UNK_0xf2eb
   BIT(); // BIT
   Push(pp__ro_SYSTEM); // (SYSTEM
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x63ef+UNK_0xf2e6.offset)&0xFF); // UNK_0xf2e6<IFIELD> C@
-  Push(Pop() ^ Pop()); // XOR
+  Push(Pop() + (Read16(0x63ef+UNK_0xf2e6.offset)&0xFF)); //  UNK_0xf2e6<IFIELD> C@ XOR
   Push(0x63ef+UNK_0xf2e6.offset); // UNK_0xf2e6<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
@@ -738,15 +730,12 @@ void UNK_0xf39d() // UNK_0xf39d
   CI(); // CI
   Push2Words("*SECS");
   D_eq_(); // D=
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   GetINST_dash_CLASS(); // @INST-CLASS
-  Push(0x003d);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x003d?1:0); //  0x003d =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(9);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (Pop()==9?1:0)); //   9 = AND
   if (Pop() != 0)
   {
     Push(0);

@@ -136,8 +136,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
   {
     Push(0x63ef+UNK_0xf08d.offset); // UNK_0xf08d<IFIELD>
     Push(i); // I
-    Push(3);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 3); //  3 *
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
     Push(Read16(0x63ef+UNK_0xf088.offset)); // UNK_0xf088<IFIELD> @
@@ -145,7 +144,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       b = Pop(); // >R
       CI(); // CI
       Push(b); // R>
@@ -170,7 +169,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
   unsigned short int a;
   a = Pop(); // >R
   Push(a); // I
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) goto label1;
   PRINT("DEAD", 4); // (.")
   goto label2;
@@ -533,7 +532,7 @@ void UNK_0xf421() // UNK_0xf421
     CTCR(); // CTCR
     PRINT("DURABILITY OF ", 14); // (.")
     LoadData(UNK_0xf076); // from 'CREWMEMBER'
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     Push(0);
     DrawR(); // .R
   }

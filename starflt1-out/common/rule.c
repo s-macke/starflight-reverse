@@ -157,9 +157,7 @@ const unsigned short int cc_CFLGARR = 0xb706; // CFLGARR
 
 void XC_at_() // XC@
 {
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x007f);
-  Push(Pop() & Pop()); // AND
+  Push((Read16(Pop())&0xFF) & 0x007f); //  C@ 0x007f AND
 }
 
 
@@ -170,7 +168,7 @@ void XC_at_() // XC@
 void C_plus__ex_() // C+!
 {
   Push(Read16(regsp)); // DUP
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ROT(); // ROT
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -190,16 +188,15 @@ void _gt_EXPERT() // >EXPERT
   Push(0xb6c0); // probable 'RULELIM'
   Store_3(); // !_3
   Push(a); // I
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Push(0xb6ce); // probable 'CONDLIM'
   Store_3(); // !_3
   Push(a); // I
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
   Push(0xb6dc); // probable 'RULECNT'
   Store_3(); // !_3
   Push(a); // R>
-  Push(3);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 3); //  3 +
   Push(0xb6ea); // probable 'RULEARR'
   Store_3(); // !_3
   Push((Read16(Read16(cc_RULELIM))&0xFF) * 2 + Read16(cc_RULEARR)); // RULELIM C@ 2* RULEARR +
@@ -235,11 +232,10 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
   a = Pop(); // >R
   Push(Read16(cc_TRUE)); // TRUE
   Push(a); // I
-  Push(3);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 3); //  3 +
   Push(Read16(regsp)); // DUP
   Push(a); // I
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
@@ -251,21 +247,19 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
     Push(i); // I
     XC_at_(); // XC@
     Push(Pop() + Pop()); // +
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     Push(Read16(regsp)); // DUP
-    Push(Read16(cc_UNKNOWN)); // UNKNOWN
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==Read16(cc_UNKNOWN)?1:0); //  UNKNOWN =
     if (Pop() != 0)
     {
       Pop(); // DROP
       Push(Read16(cc_CONDARR)); // CONDARR
       Push(i); // I
       XC_at_(); // XC@
-      Push(Pop()*2); // 2*
+      Push(Pop() * 2); //  2*
       Push(Pop() + Pop()); // +
       GetEXECUTE(); // @EXECUTE
-      if (Pop() == 0) Push(1); else Push(0); // NOT
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!(!Pop())); //  NOT NOT
       Push(Read16(regsp)); // DUP
       Push(Read16(cc_CFLGARR)); // CFLGARR
       Push(i); // I
@@ -274,15 +268,11 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
       C_ex_(); // C!
     }
     Push(i); // I
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x0080);
-    Push(Pop() & Pop()); // AND
-    if (Pop() == 0) Push(1); else Push(0); // NOT
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(!((Read16(Pop())&0xFF) & 0x0080))); //  C@ 0x0080 AND NOT NOT
     Push((Pop()==Pop())?1:0); // =
     Push(Pop() & Pop()); // AND
     Push(Read16(regsp)); // DUP
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       imax = i; // LEAVE
@@ -296,7 +286,7 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
   {
     b = Pop(); // >R
     Push(a); // I'
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     GetEXECUTE(); // @EXECUTE
     Push(b); // R>
   }
@@ -332,8 +322,7 @@ void EXPERT() // EXPERT
   _gt_V(); // >V
   Push(Read16(cc_RULEARR)); // RULEARR
   Push(Read16(regsp)); // DUP
-  Push((Read16(Read16(cc_RULECNT))&0xFF) * 2); // RULECNT C@ 2*
-  Push(Pop() + Pop()); // +
+  Push(Pop() + (Read16(Read16(cc_RULECNT))&0xFF) * 2); //  RULECNT C@ 2* +
   SWAP(); // SWAP
 
   i = Pop();
@@ -341,28 +330,22 @@ void EXPERT() // EXPERT
   do // (DO)
   {
     Push(i); // I
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop())); //  @
     EXECUTE_dash_RULE(); // EXECUTE-RULE
     if (Pop() != 0)
     {
       V_gt_(); // V>
       Push(Read16(regsp)); // DUP
       _gt_EXPERT(); // >EXPERT
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       _gt_V(); // >V
       imax = i; // LEAVE
       Push(i); // I
-      Push(Read16(cc_RULEARR)); // RULEARR
-      _dash_(); // -
-      Push(Pop()>>1); // 2/
-      Push(Pop()>>1); // 2/
-      Push(Pop()*2); // 2*
-      Push(Read16(cc_RULEARR)); // RULEARR
-      Push(Pop() + Pop()); // +
+      Push(((Pop() - Read16(cc_RULEARR) >> 1) >> 1) * 2 + Read16(cc_RULEARR)); //  RULEARR - 2/ 2/ 2* RULEARR +
       Push(Read16(regsp)); // DUP
-      Push(Read16(Pop())); // @
+      Push(Read16(Pop())); //  @
       Push(i); // I
-      Push(Read16(Pop())); // @
+      Push(Read16(Pop())); //  @
       SWAP(); // SWAP
       Push(i); // I
       Store_3(); // !_3
@@ -374,7 +357,7 @@ void EXPERT() // EXPERT
   } while(i<imax); // (/LOOP)
 
   V_gt_(); // V>
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
 }
 
 
@@ -407,14 +390,14 @@ void IsINDEX() // ?INDEX
     Push(Read16(cc_CONDARR)); // CONDARR
     Push(i); // I
     Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop())); //  @
     Push(a); // J
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
     {
       Pop(); // DROP
       Push(i); // I
-      Push(Pop()>>1); // 2/
+      Push(Pop() >> 1); //  2/
       imax = i; // LEAVE
     }
     Push(2);
@@ -438,13 +421,13 @@ void CONDITION() // CONDITION
   Push(a); // I
   Push(0xb8ce); // probable '-->'
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     Push(Read16(Read16(cc_CONDLIM))&0xFF); // CONDLIM C@
     Push(Read16(pp_COND_dash_CNT)); // COND-CNT @
     _gt_(); // >
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     ABORT("Condition overflow", 18);// (ABORT")
     Push(a); // I
     IsINDEX(); // ?INDEX
@@ -456,9 +439,7 @@ void CONDITION() // CONDITION
       Push(Read16(pp_COND_dash_CNT)); // COND-CNT @
       Push(a); // I
       OVER(); // OVER
-      Push(Pop()*2); // 2*
-      Push(Read16(cc_CONDARR)); // CONDARR
-      Push(Pop() + Pop()); // +
+      Push(Pop() * 2 + Read16(cc_CONDARR)); //  2* CONDARR +
       Store_3(); // !_3
       Push(1);
       Push(pp_COND_dash_CNT); // COND-CNT
@@ -482,7 +463,7 @@ void RULE_c_() // RULE:
   Push(Read16(Read16(cc_RULELIM))&0xFF); // RULELIM C@
   Push(Read16(Read16(cc_RULECNT))&0xFF); // RULECNT C@
   _gt_(); // >
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   ABORT("Rule overflow", 13);// (ABORT")
   HERE(); // HERE
   Push(0);
@@ -494,7 +475,7 @@ void RULE_c_() // RULE:
     CONDITION(); // CONDITION
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     if (Pop() != 0)
     {
       _i__1(); // '_1
@@ -505,11 +486,10 @@ void RULE_c_() // RULE:
       Push(0xb6a4); // probable 'FALSE'
       Push((Pop()==Pop())?1:0); // =
       Push(Pop() | Pop()); // OR
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       ABORT("TRUE or FALSE needed", 20);// (ABORT")
       EXECUTE(); // EXECUTE
-      Push(0x0080);
-      Push(Pop() * Pop()); // *
+      Push(Pop() * 0x0080); //  0x0080 *
       Push(Pop() + Pop()); // +
       C_co_(); // C,
       Push(1);
@@ -520,7 +500,7 @@ void RULE_c_() // RULE:
   } while(Pop() == 0);
   _dash__dash__gt_(); // -->
   OVER(); // OVER
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Store_3(); // !_3
   Push((Read16(Read16(cc_RULECNT))&0xFF) * 2 + Read16(cc_RULEARR)); // RULECNT C@ 2* RULEARR +
   Store_3(); // !_3

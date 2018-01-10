@@ -137,7 +137,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   do // (DO)
   {
     Push(i); // I
-    Push(Pop()<<4); // 16*
+    Push(Pop() >> 4); //  16*
     Push(i); // I
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
@@ -300,12 +300,9 @@ void UNK_0xf1b6() // UNK_0xf1b6
   Push(0);
   Push(0x000a);
   RRND(); // RRND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   OVER(); // OVER
-  Push(0x0084);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & !(Pop()==0x0084?1:0)); //   0x0084 = NOT AND
   if (Pop() != 0)
   {
     Pop(); // DROP
@@ -349,7 +346,7 @@ void UNK_0xf202() // UNK_0xf202
   Push(0x0049);
   Push(4);
   Push(a); // I
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
   UNK_0xf1b6(); // UNK_0xf1b6
@@ -433,10 +430,7 @@ void UNK_0xf306() // UNK_0xf306
 
 void UNK_0xf312() // UNK_0xf312
 {
-  Push(Pop()*2); // 2*
-  Push(Read16(pp_YTABL)); // YTABL @
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop() * 2 + Read16(pp_YTABL))); //  2* YTABL @ + @
 }
 
 
@@ -483,7 +477,7 @@ void UNK_0xf32a() // UNK_0xf32a
     Push(0x004c);
     Push(0x0048);
     _2OVER(); // 2OVER
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
   }
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
@@ -494,7 +488,7 @@ void UNK_0xf32a() // UNK_0xf32a
   Push(Read16(pp_DBUF_dash_SE)); // DBUF-SE @
   Push(4);
   ROLL(); // ROLL
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
   Push(0x0024);
   LCMOVE(); // LCMOVE
 }
@@ -618,7 +612,7 @@ void _and_RETURN() // &RETURN
     Push(0x0010);
     RRND(); // RRND
     Push(Read16(regsp)); // DUP
-    Push(Pop()<<4); // 16*
+    Push(Pop() >> 4); //  16*
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
     Push(0);

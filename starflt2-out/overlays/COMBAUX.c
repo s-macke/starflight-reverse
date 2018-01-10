@@ -140,12 +140,10 @@ void UNK_0xf308() // UNK_0xf308
     Push(Read16(pp_XABS)); // XABS @
     Push(Read16(pp_YABS)); // YABS @
   }
-  Push(0x001e);
-  _dash_(); // -
+  Push(Pop() - 0x001e); //  0x001e -
   Push(pp_YVIS); // YVIS
   _st__ex__gt_(); // <!>
-  Push(0x0012);
-  _dash_(); // -
+  Push(Pop() - 0x0012); //  0x0012 -
   Push(pp_XVIS); // XVIS
   _st__ex__gt_(); // <!>
 }
@@ -329,13 +327,9 @@ void UNK_0xf480() // UNK_0xf480
     Push(0x002c);
     WITHIN(); // WITHIN
     GetID(); // @ID
-    Push(Read16(cc_INVIS_dash_I)); // INVIS-I
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | (Pop()==Read16(cc_INVIS_dash_I)?1:0)); //   INVIS-I = OR
     GetID(); // @ID
-    Push(0x0060);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | (Pop()==0x0060?1:0)); //   0x0060 = OR
     if (Pop() != 0)
     {
       UNK_0xf438(); // UNK_0xf438

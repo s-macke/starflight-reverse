@@ -86,15 +86,13 @@ void UNK_0xf2c6() // UNK_0xf2c6
   {
     Push(pp_CMAP); // CMAP
     Push(i); // I
-    Push(8);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 8); //  8 *
     Push(Pop() + Pop()); // +
     Push(pp_TILE_dash_PT); // TILE-PT
     Store_2(); // !_2
     Push(0x0020);
     Push(i); // I
-    Push(0x000c);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 0x000c); //  0x000c *
     Push(Pop() + Pop()); // +
     Push(0x002d);
     Push(0x000f);
@@ -191,11 +189,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
   {
     Push(Read16(regsp)); // DUP
     Push(i); // I
-    Push(9);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 9); //  9 *
     Push(Pop() + Pop()); // +
     Push(Read16(regsp)); // DUP
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     I_gt_C(); // I>C
     IsCGA(); // ?CGA
     if (Pop() != 0)
@@ -203,7 +200,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
       _gt_FLAG(); // >FLAG
     }
     StoreCOLOR(); // !COLOR
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     Push(pp_ABLT); // ABLT
     _st__ex__gt_(); // <!>
     BLT(); // BLT
@@ -260,8 +257,7 @@ void UNK_0xf45e() // UNK_0xf45e
   imax = Pop();
   do // (DO)
   {
-    Push(0x000a);
-    _dash_(); // -
+    Push(Pop() - 0x000a); //  0x000a -
     Push(Read16(regsp)); // DUP
     Push(pp_YBLT); // YBLT
     _st__ex__gt_(); // <!>
@@ -276,8 +272,7 @@ void UNK_0xf45e() // UNK_0xf45e
     _st__ex__gt_(); // <!>
     Push(Read16(pp_ICON_h_)); // ICON^ @
     Push(i); // I
-    Push(0x0012);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 0x0012); //  0x0012 *
     GetDS(); // @DS
     PAD_v_16(); // PAD|16
     Push(0x0012);
@@ -299,8 +294,7 @@ void UNK_0xf45e() // UNK_0xf45e
     _gt_(); // >
     if (Pop() != 0)
     {
-      Push(0x0011);
-      _dash_(); // -
+      Push(Pop() - 0x0011); //  0x0011 -
     }
     GetRECORD(); // @RECORD
     Push(0x001b);

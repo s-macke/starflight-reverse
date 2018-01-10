@@ -256,7 +256,7 @@ void IsBALANCE() // ?BALANCE
 {
   GetDBALANCE(); // D@BALANCE
   D_gt_(); // D>
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
 }
 
 
@@ -306,13 +306,13 @@ void TRANSACT() // TRANSACT
       IsFIRST(); // ?FIRST
       if (Pop() != 0)
       {
-        Push(Pop()+1); // 1+
+        Push(Pop() + 1); //  1+
         imax = i; // LEAVE
       }
       i++;
     } while(i<imax); // (LOOP)
 
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       IFIRST(); // IFIRST
@@ -396,8 +396,7 @@ void UNK_0xf138() // UNK_0xf138
   Push(0xfffc);
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
-  Push(Read16(pp_XBLT)); // XBLT @
-  _dash_(); // -
+  Push(Pop() - Read16(pp_XBLT)); //  XBLT @ -
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2
   Push(1);
@@ -422,14 +421,13 @@ void UNK_0xf162() // UNK_0xf162
   Push(Read16(0x65e1+UNK_0xefd0.offset)); // UNK_0xefd0<IFIELD> @
   Push(0x012c);
   _slash_MOD(); // /MOD
-  Push(0x121f);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x121f); //  0x121f +
   SWAP(); // SWAP
   Push(0x001e);
   _slash_MOD(); // /MOD
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   SWAP(); // SWAP
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Push(0);
   _st__n_(); // <#
   _n_(); // #
@@ -476,12 +474,10 @@ void UNK_0xf1a6() // UNK_0xf1a6
   }
   a = Pop(); // >R
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(!Pop())); //  NOT NOT
   Push(a); // R>
   Push(Pop() * Pop()); // *
-  Push(0x0020);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0020); //  0x0020 +
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
@@ -749,8 +745,7 @@ void UNK_0xf482() // UNK_0xf482
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000a); //  0x000a *
   Push(0x0095);
   SWAP(); // SWAP
   _dash_(); // -
@@ -802,7 +797,7 @@ void UNK_0xf4d4() // UNK_0xf4d4
   {
     Push(Read16(regsp)); // DUP
     UNK_0xf482(); // UNK_0xf482
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     INEXT(); // INEXT
     IsFIRST(); // ?FIRST
   } while(Pop() == 0);

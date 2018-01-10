@@ -210,7 +210,7 @@ void Is_n_DETTE() // ?#DETTE
   Push(Read16(Read16(cc_AX)) & 0x00c0); // AX @ 0x00c0 AND
   Push(0x0040);
   _slash_(); // /
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
 }
 
 
@@ -331,8 +331,7 @@ void CLRFCB() // CLRFCB
 void SYSTEM() // SYSTEM
 {
   Push(0x2d97); // probable 'FCB'
-  Push(7);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
 }
@@ -345,8 +344,7 @@ void SYSTEM() // SYSTEM
 void SYSUTIL() // SYSUTIL
 {
   Push(0x2d97); // probable 'FCB'
-  Push(0x0033);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0033); //  0x0033 +
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
 }
@@ -405,7 +403,7 @@ void SETFCB() // SETFCB
   CLRFCB(); // CLRFCB
   Push(Read16(cc_BL)); // BL
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   _gt_FCB(); // >FCB
   Push(Read16(Read16(cc_AX))&0xFF); // AX C@
   Push((Read16(Read16(cc_AX))&0xFF)==0x00ff?1:0); // AX C@ 0x00ff =
@@ -591,7 +589,7 @@ void _bo_FILE_bc_() // [FILE]
   DOS_dash_DTA(); // DOS-DTA
   Push(Read16(pp_FILE)); // FILE @
   FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   SWAP(); // SWAP
@@ -627,8 +625,7 @@ void SYSGEN() // SYSGEN
   _2_ex__1(); // 2!_1
   DOS_dash_DTA(); // DOS-DTA
   HERE(); // HERE
-  Push(0x0100);
-  _dash_(); // -
+  Push(Pop() - 0x0100); //  0x0100 -
   RECSIZE(); // RECSIZE
   Store_1(); // !_1
   WRITENE(); // WRITENE
@@ -651,7 +648,7 @@ void _4TH_gt_DOS() // 4TH>DOS
   Push(0x0400);
   RECSIZE(); // RECSIZE
   Store_1(); // !_1
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   SWAP(); // SWAP
 
   i = Pop();
@@ -688,8 +685,7 @@ void UNK_0x4480() // UNK_0x4480
   PAD(); // PAD
   C_ex__1(); // C!_1
   PAD(); // PAD
-  Push(7);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   CLRFCB(); // CLRFCB
@@ -699,16 +695,14 @@ void UNK_0x4480() // UNK_0x4480
   CMOVE_1(); // CMOVE_1
   _ro_CS_ask__rc_(); // (CS?)
   PAD(); // PAD
-  Push(0x0032);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0032); //  0x0032 +
   Push(pp_DTA_1); // DTA_1
   _2_ex__1(); // 2!_1
   DOS_dash_DTA(); // DOS-DTA
   SEARCH1(); // SEARCH1
   Push(0x0042);
   NAM(); // NAM
-  Push(4);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 4); //  4 +
   C_ex__1(); // C!_1
   SEARCH1(); // SEARCH1
   Push(Pop() | Pop()); // OR
@@ -730,9 +724,7 @@ void UNK_0x44d8() // UNK_0x44d8
   DOSCALL(); // DOSCALL
   Push(Read16(Read16(cc_AX))); // AX @
   ABS(); // ABS
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Pop()==1?1:0)); //  1 = NOT
 }
 
 
@@ -785,9 +777,7 @@ void SETMAXD() // SETMAXD
   Push(Read16(pp_MAXDRV)); // MAXDRV @
   Push(Read16(pp_MAXDRV)==2?1:0); // MAXDRV @ 2 =
   Is_n_DETTE(); // ?#DETTE
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (Pop()==1?1:0)); //   1 = AND
   if (Pop() == 0) return;
   Push(1);
   Push(pp_MAXDRV); // MAXDRV
@@ -802,8 +792,7 @@ void SETMAXD() // SETMAXD
 void UNK_0x455a() // UNK_0x455a
 {
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   UNK_0x44f2(); // UNK_0x44f2
   DRV(); // DRV
@@ -818,12 +807,10 @@ void UNK_0x455a() // UNK_0x455a
 void Is1DRV() // ?1DRV
 {
   Is_n_DETTE(); // ?#DETTE
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==1?1:0); //  1 =
   Push(0x0019);
   DOSCALL(); // DOSCALL
-  Push((Read16(Read16(cc_AX))&0xFF)==0?1:0); // AX C@ 0=
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & ((Read16(Read16(cc_AX))&0xFF)==0?1:0)); //  AX C@ 0= AND
 }
 
 
@@ -833,7 +820,7 @@ void Is1DRV() // ?1DRV
 
 void UNK_0x458e() // UNK_0x458e
 {
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Push(Read16(pp_MAXDRV)); // MAXDRV @
   OVER(); // OVER
   _st_(); // <
@@ -856,21 +843,20 @@ void SMARTOP() // SMARTOP
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   a = Pop(); // >R
   UNK_0x455a(); // UNK_0x455a
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
 
   label2:
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0x458e(); // UNK_0x458e
   _2DUP(); // 2DUP
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(a); // I
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -932,13 +918,12 @@ void _st_ASKMOU() // <ASKMOU
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   PRINT(" into ", 6); // (.")
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
     PRINT("drive ", 6); // (.")
-    Push(0x0040);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 0x0040); //  0x0040 +
     Exec("EMIT"); // call of word 0x2731 '(EMIT)'
   } else
   {
@@ -947,10 +932,7 @@ void _st_ASKMOU() // <ASKMOU
   Exec("CR"); // call of word 0x26ee '(CR)'
   PRINT("and press any key.", 18); // (.")
   Exec("KEY_1"); // call of word 0x25d7 '(KEY)'
-  Push(0x001a);
-  Push((Pop()==Pop())?1:0); // =
-  Push(Read16(pp_CANSKIP)); // CANSKIP @
-  Push(Pop() & Pop()); // AND
+  Push((Pop()==0x001a?1:0) & Read16(pp_CANSKIP)); //  0x001a = CANSKIP @ AND
   if (Pop() == 0) return;
   Push(pp_SKIPPED); // SKIPPED
   ON_3(); // ON_3
@@ -972,20 +954,19 @@ void DOSMOUN() // DOSMOUN
   label2:
   Push(a); // I
   FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   SMARTOP(); // SMARTOP
   Push(Read16(regsp)); // DUP
-  Push(!Read16(pp_SKIPPED)); // SKIPPED @ NOT
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
   if (Pop() == 0) goto label1;
   Pop(); // DROP
   FLUSH_1(); // FLUSH_1
   INIT(); // INIT
   Push(a); // I
   FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   Push(pp_ASKMOUN); // ASKMOUN
@@ -1004,7 +985,7 @@ void DOSMOUN() // DOSMOUN
   SWAP(); // SWAP
   Pop(); // DROP
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(a); // R>
   DRIVENUMBERS(); // DRIVENUMBERS
   C_ex__1(); // C!_1
@@ -1018,7 +999,7 @@ void DOSMOUN() // DOSMOUN
 void DOSUNMO() // DOSUNMO
 {
   FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
   Store_1(); // !_1
   CLOSE(); // CLOSE
@@ -1039,7 +1020,7 @@ void DR2() // DR2
   Push(Read16(pp__i_FCB)); // 'FCB @
   NAM(); // NAM
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(1);
   Push(Read16(cc_DOS_dash_FILE)); // DOS-FILE
   _st_MOUNT_gt_(); // <MOUNT>
@@ -1059,7 +1040,7 @@ void DR3() // DR3
   Push(Read16(pp__i_FCB)); // 'FCB @
   NAM(); // NAM
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(1);
   Push(Read16(cc_DOS_dash_FILE) + 1); // DOS-FILE 1+
   _st_MOUNT_gt_(); // <MOUNT>
@@ -1208,21 +1189,20 @@ void _bo_LDS_bc_() // [LDS]
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   a = Pop(); // >R
   UNK_0x455a(); // UNK_0x455a
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
 
   label2:
   DRV(); // DRV
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0x458e(); // UNK_0x458e
   _2DUP(); // 2DUP
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(a); // I
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label1;
@@ -1272,8 +1252,7 @@ void _ro_LDS_rc_() // (LDS)
 
   label2:
   _bo_LDS_bc_(); // [LDS]
-  Push(!Read16(pp_SKIPPED)); // SKIPPED @ NOT
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
   if (Pop() == 0) goto label1;
   Push(pp_ASKMOUN); // ASKMOUN
   GetEXECUTE(); // @EXECUTE

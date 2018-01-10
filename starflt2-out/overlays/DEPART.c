@@ -90,9 +90,8 @@ LoadDataType UNK_0xf3a6 = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 void UNK_0xf3ae() // UNK_0xf3ae
 {
   LoadData(UNK_0xf3a6); // from 'ARTIFACT'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(2);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Read16(Pop())&0xFF); //  C@
+  Push((Read16(Pop())&0xFF)==2?1:0); //  C@ 2 =
 }
 
 
@@ -111,12 +110,12 @@ void UNK_0xf3ba() // UNK_0xf3ba
   Push(0x001b);
   Push(0);
   IFIND(); // IFIND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   IFIRST(); // IFIRST
   Push(0x001c);
   Push(0);
   IFIND(); // IFIND
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() & Pop()); // AND
   GetINST_dash_S(); // @INST-S
   Push(3);
@@ -175,7 +174,7 @@ void DISPOSAL() // DISPOSAL
 void UNK_0xf423() // UNK_0xf423
 {
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     GetINST_dash_C(); // @INST-C
@@ -220,9 +219,9 @@ void UNK_0xf447() // UNK_0xf447
 
   label3:
   IsLAST(); // ?LAST
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf423(); // UNK_0xf423
@@ -295,8 +294,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
   {
     Push(Read16(regsp)); // DUP
     _0_gt_(); // 0>
-    Push(Pop()*2); // 2*
-    Push(Pop()-1); // 1-
+    Push(Pop() * 2 - 1); //  2* 1-
     SWAP(); // SWAP
     ABS(); // ABS
     Push(3);
@@ -304,8 +302,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
     Push(5);
     MAX(); // MAX
     Push(Pop() * Pop()); // *
-    Push(Read16(0x65e1+UNK_0xf4b7.offset)&0xFF); // UNK_0xf4b7<IFIELD> C@
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (Read16(0x65e1+UNK_0xf4b7.offset)&0xFF)); //  UNK_0xf4b7<IFIELD> C@ +
     Push(0x0064);
     MIN(); // MIN
     Push(0);

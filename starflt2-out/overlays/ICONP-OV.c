@@ -316,9 +316,7 @@ void UNK_0xf172() // UNK_0xf172
 {
   UNK_0xf16a(); // UNK_0xf16a
   LoadData(UNK_0xf0fc); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x005a);
-  Push(Pop() + Pop()); // +
+  Push((Read16(Pop())&0xFF) + 0x005a); //  C@ 0x005a +
   ICLOSE(); // ICLOSE
 }
 
@@ -340,7 +338,7 @@ void UNK_0xf184() // UNK_0xf184
 void UNK_0xf192() // UNK_0xf192
 {
   LoadData(UNK_0xf0d0); // from 'VESSEL'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   if (Pop() != 0)
   {
     Push(0x0014);
@@ -431,8 +429,7 @@ void UNK_0xf20c() // UNK_0xf20c
 void UNK_0xf216() // UNK_0xf216
 {
   GetINST_dash_S(); // @INST-S
-  Push(0x0032);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0032); //  0x0032 +
 }
 
 
@@ -579,7 +576,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
 {
   UNK_0xf16a(); // UNK_0xf16a
   LoadData(UNK_0xf0fc); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(3);
   _st_(); // <
   if (Pop() != 0)
@@ -600,7 +597,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
 void UNK_0xf2e7() // UNK_0xf2e7
 {
   LoadData(UNK_0xf0dd); // from 'CREATURE'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
 }
 
 
@@ -614,16 +611,14 @@ void UNK_0xf2ef() // UNK_0xf2ef
   GetINST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(a); // I
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==6?1:0); //  6 =
   if (Pop() != 0)
   {
     Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
   } else
   {
     Push(a); // I
-    Push(0x0017);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x0017?1:0); //  0x0017 =
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xf146)); // UNK_0xf146
@@ -849,7 +844,7 @@ void PLAN_dash_IC_dash_CASE() // PLAN-IC-CASE
 void UNK_0xf421() // UNK_0xf421
 {
   LoadData(UNK_0xf0ef); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   PLAN_dash_IC_dash_CASE(); // PLAN-IC-CASE case
 }
 

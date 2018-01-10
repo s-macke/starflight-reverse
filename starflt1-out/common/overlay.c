@@ -445,15 +445,12 @@ void UNK_0xbbb8() // UNK_0xbbb8
 {
   Push(Read16(pp_UNK_0xbba8)); // UNK_0xbba8 @
   Push(Read16(regsp)); // DUP
-  Push(0x0080);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x0080?1:0); //  0x0080 =
   Push(pp_UNK_0xbba0); // UNK_0xbba0
   _plus__ex_(); // +!
-  Push(Pop()>>1); // 2/
+  Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(0x0080);
-  Push(Pop() * Pop()); // *
+  Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xbba8); // UNK_0xbba8
   Store_3(); // !_3
@@ -466,22 +463,14 @@ void UNK_0xbbb8() // UNK_0xbbb8
 
 void UNK_0xbbde() // UNK_0xbbde
 {
-  Push(Read16(pp_UNK_0xbba8)&0xFF); // UNK_0xbba8 C@
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (Read16(pp_UNK_0xbba8)&0xFF)); //  UNK_0xbba8 C@ AND
   _0_gt_(); // 0>
-  Push(Read16(pp_BTADDR)); // BTADDR @
-  Push(Pop() + Pop()); // +
-  Push(Read16(pp_UNK_0xbb9c)); // UNK_0xbb9c @
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_UNK_0xbb9c))&0xFF); //  BTADDR @ + UNK_0xbb9c @ + C@
   Push(Read16(regsp)); // DUP
-  Push(0x0080);
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & 0x0080); //  0x0080 AND
   if (Pop() != 0)
   {
-    Push(0x007f);
-    Push(Pop() & Pop()); // AND
-    Push(Pop()*2); // 2*
+    Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
     Push(pp_UNK_0xbb9c); // UNK_0xbb9c
     _plus__ex_(); // +!
   } else
@@ -526,9 +515,7 @@ void HUFF_gt_() // HUFF>
   do
   {
     OVER(); // OVER
-    Push(Read16(pp_UNK_0xbba0)); // UNK_0xbba0 @
-    Push(Pop() + Pop()); // +
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop() + Read16(pp_UNK_0xbba0))&0xFF); //  UNK_0xbba0 @ + C@
     UNK_0xbbde(); // UNK_0xbbde
   } while(Pop() == 0);
   goto label3;
@@ -836,15 +823,13 @@ void DrawSORD() // .SORD
 {
   Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(regsp)); // DUP
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==1?1:0); //  1 =
   if (Pop() != 0)
   {
     Push(0xbf05); // probable 'OV/STXT'
     MODULE(); // MODULE
   }
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==3?1:0); //  3 =
   if (Pop() == 0) return;
   Push(0xbe4b); // probable 'OVDBA'
   MODULE(); // MODULE
@@ -981,8 +966,7 @@ void IsAPP() // ?APP
   Push(0);
   D_plus_(); // D+
   D_gt_(); // D>
-  Push(Read16(pp_IsHEAL)); // ?HEAL @
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & Read16(pp_IsHEAL)); //  ?HEAL @ AND
   if (Pop() != 0)
   {
     TIME(); // TIME
@@ -1037,8 +1021,7 @@ void IsSHIP_dash_REPAIR() // ?SHIP-REPAIR
   Push(Read16(pp_REPAIRT)); // REPAIRT @
   Push(0);
   D_gt_(); // D>
-  Push(Read16(pp_IsREPAIR)); // ?REPAIR @
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & Read16(pp_IsREPAIR)); //  ?REPAIR @ AND
   Push(Read16(pp_IsREPAIR) | (Read16(pp_IsREPAIR)==1?1:0)); // ?REPAIR @ ?REPAIR @ 1 = OR
 }
 

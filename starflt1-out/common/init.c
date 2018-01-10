@@ -107,7 +107,7 @@ void _ro_SETUP_rc_() // (SETUP)
   Push(0x01b8);
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
   Push(0x001b);
   _ro__ex_OLD_rc_(); // (!OLD)

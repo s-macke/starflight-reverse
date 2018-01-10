@@ -279,7 +279,7 @@ void UNK_0xec04() // UNK_0xec04
   Push(Read16(pp_STARDATE)); // STARDATE @
   Push(Read16(0x63ef+UNK_0xebff.offset)); // UNK_0xebff<IFIELD> @
   _st_(); // <
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Read16(pp_IsWIN)); // ?WIN @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -487,8 +487,7 @@ void DrawOBJECT() // .OBJECT
 
 void UNK_0xed5c() // UNK_0xed5c
 {
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000a); //  0x000a *
   OVER(); // OVER
   _slash_MOD(); // /MOD
   Push(Read16(regsp)); // DUP
@@ -507,7 +506,7 @@ void DrawSIZE() // .SIZE
   CTCR(); // CTCR
   SPACE(); // SPACE
   LoadData(UNK_0xebaa); // from 'VESSEL'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x63ef+_pe_MASS.offset)); // %MASS<IFIELD> @
@@ -520,7 +519,7 @@ void DrawSIZE() // .SIZE
   Push(Read16(regsp)); // DUP
   Push(0);
   DrawR(); // .R
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     PRINT(".", 1); // (.")
@@ -554,10 +553,10 @@ void Is_dot_CERTAIN() // ?.CERTAIN
   ICLOSE(); // ICLOSE
   Push(Read16(pp_PLHI)); // PLHI @
   _0_st_(); // 0<
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() | Pop()); // OR
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
   PRINT("NOT CERTAIN", 11); // (.")
 }
@@ -641,7 +640,7 @@ void DrawTYPE() // .TYPE
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xeb9a); // from 'VESSEL'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _ro__dot_TYPE_rc_(); // (.TYPE) case
 }
 
@@ -667,15 +666,13 @@ void DrawSHIELDS() // .SHIELDS
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebb2); // from 'VESSEL'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
     LoadData(UNK_0xeb8d); // from 'VESSEL'
-    Push(Read8(Pop())&0xFF); // C@
-    Push(2);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(Read16(Pop())&0xFF); //  C@
+    Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
     if (Pop() != 0)
     {
       PRINT("CLASS ", 6); // (.")
@@ -729,17 +726,13 @@ void DrawWEAP() // .WEAP
 void DrawDELEM() // .DELEM
 {
   Push(Read16(regsp)); // DUP
-  Push((0x63ef+UNK_0xeb95.offset) + 3); // UNK_0xeb95<IFIELD> 3 +
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + ((0x63ef+UNK_0xeb95.offset) + 3))&0xFF); //  UNK_0xeb95<IFIELD> 3 + + C@
   if (Pop() != 0)
   {
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push((0x63ef+UNK_0xeb95.offset) - 1); // UNK_0xeb95<IFIELD> 1-
-      Push(Pop() + Pop()); // +
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(Pop() + ((0x63ef+UNK_0xeb95.offset) - 1))&0xFF); //  UNK_0xeb95<IFIELD> 1- + C@
     } else
     {
       Push(6);
@@ -920,9 +913,9 @@ void UNK_0xf068() // UNK_0xf068
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebf7); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   LoadData(UNK_0xebef); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(Read16(regsp)); // DUP
   DrawTDESC(); // .TDESC case
   OVER(); // OVER
@@ -1028,7 +1021,7 @@ void DrawSURF() // .SURF
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebc7); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _ro__dot_SURF_rc_(); // (.SURF) case
 }
 
@@ -1047,20 +1040,16 @@ void DrawGRAV() // .GRAV
   Store_3(); // !_3
   if (Pop() == 0) return;
   LoadData(UNK_0xebcf); // from 'PLANET'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0x0320);
-    _dash_(); // -
+    Push(Pop() - 0x0320); //  0x0320 -
     Push(0);
     SQRT(); // SQRT
-    Push(0x000a);
-    Push(Pop() * Pop()); // *
-    Push(0x0320);
-    Push(Pop() + Pop()); // +
+    Push(Pop() * 0x000a + 0x0320); //  0x000a * 0x0320 +
   }
   Push(0x0064);
   _slash_MOD(); // /MOD
@@ -1169,7 +1158,7 @@ void UNK_0xf1f9() // UNK_0xf1f9
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(UNK_0xebe7); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _ro__dot_ATMO_rc_(); // (.ATMO) case
 }
 
@@ -1253,7 +1242,7 @@ void DrawWEATH() // .WEATH
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
   LoadData(ATMO_dot_ACTIVITY); // from 'PLANET'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   _ro__dot_WEATH_rc_(); // (.WEATH) case
 }
 
@@ -1293,11 +1282,11 @@ void UNK_0xf2c8() // UNK_0xf2c8
   imax = Pop();
   do // (DO)
   {
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     Push(pp_UNK_0xf2bf); // UNK_0xf2bf
     Push(i); // I
     Push(Pop() + Pop()); // +
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     Push(a); // J
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -1324,7 +1313,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
   UNK_0xf2c8(); // UNK_0xf2c8
   Push(Read16(regsp)); // DUP
   CTINIT(); // CTINIT
-  Push(Pop()-2); // 2-
+  Push(Pop() - 2); //  2-
   Draw(); // .
   PRINT("- ", 2); // (.")
   Push(8);
@@ -1350,9 +1339,7 @@ void UNK_0xf31e() // UNK_0xf31e
   Push(1);
   Push(0x018f);
   WITHIN(); // WITHIN
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Read16(pp_IsWIN)); // ?WIN @
-  Push(Pop() | Pop()); // OR
+  Push(!Pop() | Read16(pp_IsWIN)); //  NOT ?WIN @ OR
   if (Pop() != 0)
   {
     PRINT("STABLE ", 7); // (.")

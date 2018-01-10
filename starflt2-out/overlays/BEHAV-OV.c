@@ -343,8 +343,7 @@ void UNK_0xe4b2() // UNK_0xe4b2
 
 void UNK_0xe4be() // UNK_0xe4be
 {
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Pop()==0?1:0)==0?1:0); //  0= 0=
 }
 
 
@@ -583,9 +582,7 @@ void UNK_0xe606() // UNK_0xe606
 void UNK_0xe618() // UNK_0xe618
 {
   LoadData(UNK_0xe5a6); // from 'CREATURE'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(2);
-  Push(Pop() & Pop()); // AND
+  Push((Read16(Pop())&0xFF) & 2); //  C@ 2 AND
   UNK_0xe4be(); // UNK_0xe4be
 }
 
@@ -634,9 +631,7 @@ void UNK_0xe646() // UNK_0xe646
 void UNK_0xe654() // UNK_0xe654
 {
   LoadData(UNK_0xe5a6); // from 'CREATURE'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(1);
-  Push(Pop() & Pop()); // AND
+  Push((Read16(Pop())&0xFF) & 1); //  C@ 1 AND
 }
 
 
@@ -1033,8 +1028,7 @@ void UNK_0xe87d() // UNK_0xe87d
   Push(0x007f);
   _gt_(); // >
   if (Pop() == 0) return;
-  Push(0x0100);
-  _dash_(); // -
+  Push(Pop() - 0x0100); //  0x0100 -
 }
 
 
@@ -1076,9 +1070,7 @@ void UNK_0xe893() // UNK_0xe893
 void UNK_0xe8c9() // UNK_0xe8c9
 {
   GetID(); // @ID
-  Push(0x0011);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Pop()==0x0011?1:0)); //  0x0011 = NOT
   if (Pop() == 0) return;
   Push(0);
   Push(0xe5c0); // probable 'UNK_0xe5c0'
@@ -1095,8 +1087,7 @@ void UNK_0xe8e3() // UNK_0xe8e3
   Push(1);
   Push(5);
   RRND(); // RRND
-  Push(Read16(cc_MPS)); // MPS
-  Push(Pop() * Pop()); // *
+  Push(Pop() * Read16(cc_MPS)); //  MPS *
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   _slash_(); // /
   Push(1);
@@ -1119,9 +1110,7 @@ void UNK_0xe8fb() // UNK_0xe8fb
   } else
   {
     GetID(); // @ID
-    Push(0x0011);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Pop()==0x0011?1:0)); //  0x0011 = NOT
     if (Pop() != 0)
     {
       UNK_0xe8e3(); // UNK_0xe8e3
@@ -1143,7 +1132,7 @@ void UNK_0xe927() // UNK_0xe927
   a = Pop(); // >R
   Push(a); // I
   IFLD_at_(); // IFLD@
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   Push(0);
   MAX(); // MAX
   Push(a); // R>
@@ -1173,7 +1162,7 @@ void UNK_0xe947() // UNK_0xe947
   Push(0x0015);
   Push(0x0019);
   WITHIN(); // WITHIN
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(0xe5df); // probable 'UNK_0xe5df'
   SWAP(); // SWAP
   if (Pop() != 0)
@@ -1201,7 +1190,7 @@ void UNK_0xe96f() // UNK_0xe96f
   Push(0);
   Push(0x000a);
   RRND(); // RRND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   Push(Pop() & Pop()); // AND
 }
 
@@ -1285,8 +1274,7 @@ void UNK_0xea2b() // UNK_0xea2b
   Push(0);
   Push(6);
   RRND(); // RRND
-  Push(3);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 3); //  3 *
   Push(Pop() + Pop()); // +
   _1_dot_5_at_(); // 1.5@
   ICLOSE(); // ICLOSE
@@ -1341,7 +1329,7 @@ void UNK_0xea86() // UNK_0xea86
     BEEPON_2(); // BEEPON_2
     Push(i); // I
     Push(i); // I
-    Push(Pop()*2); // 2*
+    Push(Pop() * 2); //  2*
     RRND(); // RRND
     TONE(); // TONE
     Push(3 * Read16(cc_MPS)); // 3 MPS *
@@ -1370,9 +1358,9 @@ void UNK_0xeab6() // UNK_0xeab6
 {
   WLD_gt_SCR(); // WLD>SCR
   SWAP(); // SWAP
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
   SWAP(); // SWAP
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
 }
 
 
@@ -1407,7 +1395,7 @@ void UNK_0xeae0() // UNK_0xeae0
   GCR(); // GCR
   UNK_0xe514(); // UNK_0xe514
   LoadData(UNK_0xe5d7); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   ICLOSE(); // ICLOSE
   _gt_WEAP(); // >WEAP case
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -1431,9 +1419,7 @@ void UNK_0xeb33() // UNK_0xeb33
 {
   UNK_0xe514(); // UNK_0xe514
   LoadData(UNK_0xe5d7); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x0019);
-  Push(Pop() * Pop()); // *
+  Push((Read16(Pop())&0xFF) * 0x0019); //  C@ 0x0019 *
   ICLOSE(); // ICLOSE
   UNK_0xea2b(); // UNK_0xea2b
   _gt_C_plus_S(); // >C+S
@@ -1484,7 +1470,7 @@ void UNK_0xeb5f() // UNK_0xeb5f
   }
   UNK_0xeac4(); // UNK_0xeac4
   Push(a); // R>
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     UNK_0xeb57(); // UNK_0xeb57
@@ -1776,8 +1762,7 @@ void UNK_0xeca4() // UNK_0xeca4
     GetIH(); // @IH
     _gt_C_plus_S(); // >C+S
     GetINST_dash_C(); // @INST-C
-    Push(0x0015);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x0015?1:0); //  0x0015 =
     if (Pop() != 0)
     {
       UNK_0xe758(); // UNK_0xe758
@@ -1816,22 +1801,20 @@ void UNK_0xece0() // UNK_0xece0
       _gt_C_plus_S(); // >C+S
       GetINST_dash_C(); // @INST-C
       Push(Read16(regsp)); // DUP
-      Push(0x0044);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==0x0044?1:0); //  0x0044 =
       if (Pop() != 0)
       {
         Pop(); // DROP
         Push(0x002a);
         _eq_SPECIE(); // =SPECIE
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Pop()); //  NOT
         if (Pop() != 0)
         {
           UNK_0xe8fb(); // UNK_0xe8fb
         }
       } else
       {
-        Push(0x0015);
-        Push((Pop()==Pop())?1:0); // =
+        Push(Pop()==0x0015?1:0); //  0x0015 =
         if (Pop() != 0)
         {
           UNK_0xe758(); // UNK_0xe758
@@ -1905,7 +1888,7 @@ void CIRCLES() // CIRCLES
     {
       Push(pp_XORMODE); // XORMODE
       Push(Read16(regsp)); // DUP
-      Push(Read16(Pop())); // @
+      Push(Read16(Pop())); //  @
       a = Pop(); // >R
       _099(); // 099
       BEEPON_2(); // BEEPON_2
@@ -1926,11 +1909,9 @@ void CIRCLES() // CIRCLES
         DrawCIRCLE_1(); // .CIRCLE_1
         V_gt_DISPL(); // V>DISPL
         GetCOLOR(); // @COLOR
-        Push(0x000a);
-        Push(Pop() * Pop()); // *
+        Push(Pop() * 0x000a); //  0x000a *
         Push(i); // I
-        Push(0x000a);
-        Push(Pop() * Pop()); // *
+        Push(Pop() * 0x000a); //  0x000a *
         Push(Pop() + Pop()); // +
         TONE(); // TONE
         Push(5);
@@ -2051,7 +2032,7 @@ void UNK_0xee8f() // UNK_0xee8f
   Push(Read16(pp_WEAPON_dash_)); // WEAPON- @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   Push(pp_WEAPON_dash_); // WEAPON-
   _st__ex__gt_(); // <!>
 }
@@ -2103,11 +2084,11 @@ void _1SIMULATE() // 1SIMULATE
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(Pop()-1); // 1-
+    Push(Pop() - 1); //  1-
     Push(Read16(regsp)); // DUP
     Push(pp_FSTUN); // FSTUN
     _st__ex__gt_(); // <!>
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       UNK_0xeca4(); // UNK_0xeca4
@@ -2179,8 +2160,7 @@ void UNK_0xef4c() // UNK_0xef4c
     if (Pop() != 0)
     {
       Push(Read16(regsp)); // DUP
-      Push(1);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==1?1:0); //  1 =
       if (Pop() != 0)
       {
         Pop(); Pop(); // 2DROP
@@ -2198,8 +2178,7 @@ void UNK_0xef4c() // UNK_0xef4c
           SWAP(); // SWAP
           POINT_gt_I(); // POINT>I
           GetID(); // @ID
-          Push(0x002e);
-          Push((Pop()==Pop())?1:0); // =
+          Push(Pop()==0x002e?1:0); //  0x002e =
           if (Pop() != 0)
           {
             Pop(); // DROP
@@ -2226,7 +2205,7 @@ void UNK_0xef9a() // UNK_0xef9a
   PRINT("DO YOU WANT TO TRADE\?   [ NO YES ] ", 35); // (.")
   Y_slash_N(); // Y/N
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   Push(pp_UNK_0xe4d4); // UNK_0xe4d4
   Store_2(); // !_2
 }
@@ -2515,8 +2494,7 @@ void UNK_0xf19a() // UNK_0xf19a
     if (Pop() != 0)
     {
       Push(Read16(regsp)); // DUP
-      Push(1);
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==1?1:0); //  1 =
       if (Pop() != 0)
       {
         Pop(); Pop(); // 2DROP
@@ -2534,8 +2512,7 @@ void UNK_0xf19a() // UNK_0xf19a
           SWAP(); // SWAP
           POINT_gt_I(); // POINT>I
           GetID(); // @ID
-          Push(0x0031);
-          Push((Pop()==Pop())?1:0); // =
+          Push(Pop()==0x0031?1:0); //  0x0031 =
           if (Pop() != 0)
           {
             Pop(); // DROP
@@ -2616,7 +2593,7 @@ void TV_dash_KEY() // TV-KEY
   }
   UNK_0xf002(); // UNK_0xf002
   if (Pop() == 0) return;
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   UNK_0xf026(); // UNK_0xf026
 }
 
@@ -2710,8 +2687,7 @@ void UNK_0xf312() // UNK_0xf312
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
     GetINST_dash_S(); // @INST-S
-    Push(6);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==6?1:0); //  6 =
     if (Pop() != 0)
     {
       a = Pop(); // >R

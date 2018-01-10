@@ -240,21 +240,17 @@ void UNK_0xed4e() // UNK_0xed4e
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xed32); // from 'PLANET'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
   Push(0x0320);
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0x0320);
-    _dash_(); // -
+    Push(Pop() - 0x0320); //  0x0320 -
     Push(0);
     SQRT(); // SQRT
-    Push(0x000a);
-    Push(Pop() * Pop()); // *
-    Push(0x0320);
-    Push(Pop() + Pop()); // +
+    Push(Pop() * 0x000a + 0x0320); //  0x000a * 0x0320 +
   }
   Push(0x0064);
   _slash_MOD(); // /MOD
@@ -283,12 +279,12 @@ void UNK_0xeda0() // UNK_0xeda0
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xed22); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   LoadData(UNK_0xed2a); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   OVER(); // OVER
   _dash_(); // -
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   ICLOSE(); // ICLOSE
 }
 
@@ -314,7 +310,7 @@ void UNK_0xedb8() // UNK_0xedb8
   ROT(); // ROT
   SWAP(); // SWAP
   _slash_(); // /
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   ROT(); // ROT
   SWAP(); // SWAP
   _slash_(); // /
@@ -389,7 +385,7 @@ void UNK_0xee4e() // UNK_0xee4e
   {
     _i_KEY(); // 'KEY
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() == 0) return;
     UNK_0xedea(); // UNK_0xedea
     Push(pp__i_SIMULA); // 'SIMULA
@@ -405,8 +401,7 @@ void UNK_0xee4e() // UNK_0xee4e
 void UNK_0xee66() // UNK_0xee66
 {
   UNK_0xee4e(); // UNK_0xee4e
-  Push(0x014d);
-  _dash_(); // -
+  Push(Pop() - 0x014d); //  0x014d -
 }
 
 
@@ -510,11 +505,9 @@ void _2X2CONTOUR() // 2X2CONTOUR
   _st__ex__gt_(); // <!>
   UNK_0xef06(); // UNK_0xef06
   OVER(); // OVER
-  Push(0x0022);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0022); //  0x0022 +
   OVER(); // OVER
-  Push(0x003a);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x003a); //  0x003a +
   SETREGI(); // SETREGI
   DrawREGION(); // .REGION
   UNK_0xee90(); // UNK_0xee90
@@ -540,18 +533,14 @@ void _4X4CONTOUR() // 4X4CONTOUR
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
   UNK_0xef06(); // UNK_0xef06
-  Push(0x000f);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x000f); //  0x000f +
   SWAP(); // SWAP
-  Push(9);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 9); //  9 +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(0x0010);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0010); //  0x0010 +
   OVER(); // OVER
-  Push(0x001c);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x001c); //  0x001c +
   SETREGI(); // SETREGI
   DrawREGION(); // .REGION
 }
@@ -612,39 +601,39 @@ void UNK_0xeff3() // UNK_0xeff3
       Push(Read16(pp_COLOR)); // COLOR @
       a = Pop(); // >R
       _2DUP(); // 2DUP
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       SWAP(); // SWAP
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOL(); // CELLCOL
       Push(Read16(pp_COLOR)); // COLOR @
       Push(a); // I
       Push((Pop()==Pop())?1:0); // =
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       if (Pop() != 0)
       {
         Push(a); // R>
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Pop()); //  NOT
         b = Pop(); // >R
       }
       _2DUP(); // 2DUP
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       CELLCOL(); // CELLCOL
       Push(Read16(pp_COLOR)); // COLOR @
       c = Pop(); // >R
       _2DUP(); // 2DUP
       SWAP(); // SWAP
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOL(); // CELLCOL
       Push(Read16(pp_COLOR)); // COLOR @
       Push(c); // I
       Push((Pop()==Pop())?1:0); // =
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       if (Pop() != 0)
       {
         Push(c); // R>
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Pop()); //  NOT
         d = Pop(); // >R
       }
       Push(d); // I
@@ -655,7 +644,7 @@ void UNK_0xeff3() // UNK_0xeff3
         Push(d); // I
         Push(b); // I'
         Push((Pop()==Pop())?1:0); // =
-        if (Pop() == 0) Push(1); else Push(0); // NOT
+        Push(!Pop()); //  NOT
         if (Pop() != 0)
         {
           Push(d); // I
@@ -674,7 +663,7 @@ void UNK_0xeff3() // UNK_0xeff3
           Push(3);
           Push(3);
           BUFFERX(); // BUFFERX
-          Push(Pop()-1); // 1-
+          Push(Pop() - 1); //  1-
           CBLTP(); // CBLTP
           BLT(); // BLT
         }
@@ -710,18 +699,14 @@ void _8X8CONTOUR() // 8X8CONTOUR
   Push(pp_YLLDEST); // YLLDEST
   _st__ex__gt_(); // <!>
   UNK_0xef06(); // UNK_0xef06
-  Push(0x0016);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0016); //  0x0016 +
   SWAP(); // SWAP
-  Push(0x000d);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x000d); //  0x000d +
   SWAP(); // SWAP
   OVER(); // OVER
-  Push(8);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 8); //  8 +
   OVER(); // OVER
-  Push(0x000e);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x000e); //  0x000e +
   SETREGI(); // SETREGI
   DrawREGION(); // .REGION
   UNK_0xeff3(); // UNK_0xeff3
@@ -1201,7 +1186,7 @@ void DrawSURFACE() // .SURFACE
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xecfa); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _slash_SURF(); // /SURF case
   DrawCARPET(); // .CARPET
   ICLOSE(); // ICLOSE

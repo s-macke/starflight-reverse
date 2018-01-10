@@ -666,8 +666,7 @@ void FLD_ex_() // FLD!
 void IFLD_at_() // IFLD@
 {
   Push(Read16(regsp)); // DUP
-  Push(Pop()+2); // 2+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + 2)&0xFF); //  2+ C@
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
@@ -682,8 +681,7 @@ void IFLD_at_() // IFLD@
 void IFLD_ex_() // IFLD!
 {
   Push(Read16(regsp)); // DUP
-  Push(Pop()+2); // 2+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop() + 2)&0xFF); //  2+ C@
   SWAP(); // SWAP
   EXECUTE(); // EXECUTE
   SWAP(); // SWAP
@@ -700,14 +698,14 @@ void IsCLASS_slash_() // ?CLASS/
 {
   OVER(); // OVER
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   SWAP(); // SWAP
   GetINST_dash_C(); // @INST-C
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
   OVER(); // OVER
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   SWAP(); // SWAP
   GetINST_dash_S(); // @INST-S
   Push((Pop()==Pop())?1:0); // =
@@ -767,7 +765,7 @@ void MAP() // MAP
 void UNK_0x7d99() // UNK_0x7d99
 {
   Push(Read16(regsp)); // DUP
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   _gt_V(); // >V
   _st__ex__gt_(); // <!>
 }
@@ -798,7 +796,7 @@ void SELECT() // SELECT
   UNK_0x7d73(); // UNK_0x7d73
   UNK_0x7d7b(); // UNK_0x7d7b
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   UNK_0x7d83(); // UNK_0x7d83
   V_gt_(); // V>
@@ -809,7 +807,7 @@ void SELECT() // SELECT
 
   label1:
   UNK_0x7d7b(); // UNK_0x7d7b
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   V_gt_(); // V>
   Pop(); // DROP
 }
@@ -927,7 +925,7 @@ void MAP_gt_LEA() // MAP>LEA
 void MAKE1ST() // MAKE1ST
 {
   IsFIRST(); // ?FIRST
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) return;
   IEXTRAC(); // IEXTRAC
   CI_i_(); // CI'
@@ -1175,20 +1173,16 @@ void UNK_0x802b() // UNK_0x802b
   if (Pop() != 0)
   {
     UNK_0x7cc3(); // UNK_0x7cc3
-    Push(Read16(cc_IHEADLE)); // IHEADLE
-    _dash_(); // -
-    Push(Pop()-1); // 1-
+    Push((Pop() - Read16(cc_IHEADLE)) - 1); //  IHEADLE - 1-
     GetNEWSPA(); // @NEWSPA
     VA_gt_BUF(); // VA>BUF
     a = Pop(); // >R
     Push(a); // I
-    Push(0x000b);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 0x000b); //  0x000b +
     C_ex__2(); // C!_2
     Push(0x0030);
     Push(a); // R>
-    Push(9);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 9); //  9 +
     C_ex__2(); // C!_2
     GetNEWSPA(); // @NEWSPA
     _gt_C_plus_S(); // >C+S
@@ -1236,8 +1230,7 @@ void UNK_0x808d() // UNK_0x808d
   }
   UNK_0x7cc3(); // UNK_0x7cc3
   OVER(); // OVER
-  Push(Read16(cc_IHEADLE)); // IHEADLE
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(cc_IHEADLE)); //  IHEADLE +
   _st_(); // <
   if (Pop() != 0)
   {
@@ -1246,8 +1239,7 @@ void UNK_0x808d() // UNK_0x808d
   GetNEWSPA(); // @NEWSPA
   _gt_C(); // >C
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc_IHEADLE)); // IHEADLE
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(cc_IHEADLE)); //  IHEADLE +
   UNK_0x7c9d(); // UNK_0x7c9d
   Is_gt_MAXSP(); // ?>MAXSP
   if (Pop() == 0) return;
@@ -1376,20 +1368,18 @@ void VICREAT() // VICREAT
   Push(0x00fe);
   _gt_(); // >
   IsUNRAVEL(); // ?UNRAVEL
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   UNK_0x80c7(); // UNK_0x80c7
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   CI(); // CI
   VA_gt_BUF(); // VA>BUF
   a = Pop(); // >R
   Push(a); // I
-  Push(0x000b);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x000b); //  0x000b +
   C_ex__2(); // C!_2
   Push(0x0030);
   Push(a); // R>
-  Push(9);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 9); //  9 +
   C_ex__2(); // C!_2
   SET_dash_CUR(); // SET-CUR
   NULLPOI(); // NULLPOI
@@ -1411,7 +1401,7 @@ void ICREATE() // ICREATE
   SET_ask_REU(); // SET?REU case
   OVER(); // OVER
   Func6("FILE-SL");
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   UNK_0x80c7(); // UNK_0x80c7
   Pop(); // DROP
   Push(!Read16(pp_UNK_0x5fe6)); // UNK_0x5fe6 @ NOT
@@ -1421,12 +1411,10 @@ void ICREATE() // ICREATE
     VA_gt_BUF(); // VA>BUF
     Push(Read16(regsp)); // DUP
     a = Pop(); // >R
-    Push(0x000a);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 0x000a); //  0x000a +
     C_ex__2(); // C!_2
     Push(a); // R>
-    Push(9);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 9); //  9 +
     C_ex__2(); // C!_2
     SET_dash_CUR(); // SET-CUR
   } else

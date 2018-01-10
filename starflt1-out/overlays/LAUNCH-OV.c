@@ -139,7 +139,7 @@ void UNK_0xf034() // UNK_0xf034
   do // (DO)
   {
     Push(i); // I
-    Push(Pop()<<4); // 16*
+    Push(Pop() >> 4); //  16*
     Push(i); // I
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
@@ -313,19 +313,16 @@ void UNK_0xf162() // UNK_0xf162
   Push(0);
   Push(0x000a);
   RRND(); // RRND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   OVER(); // OVER
-  Push(0x0084);
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & !(Pop()==0x0084?1:0)); //   0x0084 = NOT AND
   if (Pop() != 0)
   {
     Push(1);
     Push(0x0010);
     RRND(); // RRND
     Push(Read16(regsp)); // DUP
-    Push(Pop()<<4); // 16*
+    Push(Pop() >> 4); //  16*
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
     Push(4);
@@ -334,11 +331,9 @@ void UNK_0xf162() // UNK_0xf162
     SWAP(); // SWAP
     _2DUP(); // 2DUP
     LPLOT(); // LPLOT
-    Push(0x0048);
-    _dash_(); // -
+    Push(Pop() - 0x0048); //  0x0048 -
     SWAP(); // SWAP
-    Push(4);
-    _dash_(); // -
+    Push(Pop() - 4); //  4 -
     SWAP(); // SWAP
     _gt_MAINVIEW(); // >MAINVIEW
     LPLOT(); // LPLOT
@@ -383,7 +378,7 @@ void UNK_0xf1de() // UNK_0xf1de
   Push(0x0049);
   Push(4);
   Push(a); // I
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
   UNK_0xf162(); // UNK_0xf162
@@ -467,10 +462,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
 
 void UNK_0xf2ee() // UNK_0xf2ee
 {
-  Push(Pop()*2); // 2*
-  Push(Read16(pp_YTABL)); // YTABL @
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop() * 2 + Read16(pp_YTABL))); //  2* YTABL @ + @
 }
 
 
@@ -517,7 +509,7 @@ void UNK_0xf306() // UNK_0xf306
     Push(0x004c);
     Push(0x0048);
     _2OVER(); // 2OVER
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
   }
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
@@ -528,7 +520,7 @@ void UNK_0xf306() // UNK_0xf306
   Push(Read16(pp_DBUF_dash_SEG)); // DBUF-SEG @
   Push(4);
   ROLL(); // ROLL
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
   Push(0x0024);
   LCMOVE(); // LCMOVE
 }
@@ -652,7 +644,7 @@ void _and_RETURN() // &RETURN
     Push(0x0010);
     RRND(); // RRND
     Push(Read16(regsp)); // DUP
-    Push(Pop()<<4); // 16*
+    Push(Pop() >> 4); //  16*
     Push(Pop() + Pop()); // +
     StoreCOLOR(); // !COLOR
     Push(0);

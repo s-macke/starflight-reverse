@@ -215,7 +215,7 @@ LoadDataType UNK_0xede6 = {ARTIFACTIDX, 0x1d, 0x01, 0x1e, 0x652c};
 void UNK_0xee0a() // UNK_0xee0a
 {
   PAD(); // PAD
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Push(0x0026);
   Push(Read16(cc_BL)); // BL
   FILL_1(); // FILL_1
@@ -231,10 +231,10 @@ void UNK_0xee1a() // UNK_0xee1a
   SRDEPTH(); // SRDEPTH
   Push(0);
   MAX(); // MAX
-  Push(Pop()*2); // 2*
+  Push(Pop() * 2); //  2*
   PAD(); // PAD
   Push(Pop() + Pop()); // +
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
 }
 
 
@@ -255,8 +255,7 @@ void UNK_0xee2c() // UNK_0xee2c
     SetColor(GREY1);
   }
   StoreCOLOR(); // !COLOR
-  Push(7);
-  _dash_(); // -
+  Push(Pop() - 7); //  7 -
   Push(7);
   SWAP(); // SWAP
   POS_dot_(); // POS.
@@ -272,9 +271,7 @@ void UNK_0xee54() // UNK_0xee54
   Push(0x0025);
   OVER(); // OVER
   _dash_(); // -
-  Push(Pop()*2); // 2*
-  Push(7);
-  Push(Pop() + Pop()); // +
+  Push(Pop() * 2 + 7); //  2* 7 +
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -375,7 +372,7 @@ void UNK_0xef61() // UNK_0xef61
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
@@ -403,20 +400,17 @@ void UNK_0xef89() // UNK_0xef89
   SWAP(); // SWAP
   U_gt__do_(); // U>$
   Pop(); // DROP
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   PAD(); // PAD
-  Push(0x0020);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0020); //  0x0020 +
   C_ex_(); // C!
   Push(0x002e);
   PAD(); // PAD
-  Push(0x001f);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x001f); //  0x001f +
   C_ex_(); // C!
   U_gt__do_(); // U>$
   PAD(); // PAD
-  Push(0x001f);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x001f); //  0x001f +
   OVER(); // OVER
   _dash_(); // -
   SWAP(); // SWAP
@@ -429,10 +423,9 @@ void UNK_0xef89() // UNK_0xef89
   Pop(); // DROP
   U_gt__do_(); // U>$
   PAD(); // PAD
-  Push(0x0026);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0026); //  0x0026 +
   OVER(); // OVER
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   _dash_(); // -
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -451,9 +444,7 @@ void UNK_0xefe9() // UNK_0xefe9
   CMOVE(); // CMOVE
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   LoadData(ELEM_dash_VAL); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Read16(Pop()) * 0x000a); //  @ 0x000a *
   SWAP(); // SWAP
   UNK_0xef89(); // UNK_0xef89
 }
@@ -474,34 +465,31 @@ void DATE_do__gt_ADR() // DATE$>ADR
   SWAP(); // SWAP
   Push(0x012c);
   _slash_MOD(); // /MOD
-  Push(0x120c);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x120c); //  0x120c +
   U_gt__do_(); // U>$
   Push(4);
   PICK(); // PICK
-  Push(6);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 6); //  6 +
   SWAP(); // SWAP
   CMOVE(); // CMOVE
   Push(0x001e);
   _slash_MOD(); // /MOD
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   U_gt__do_(); // U>$
   Push(4);
   PICK(); // PICK
-  Push(4);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 4); //  4 +
   OVER(); // OVER
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   _dash_(); // -
   SWAP(); // SWAP
   CMOVE(); // CMOVE
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   U_gt__do_(); // U>$
   ROT(); // ROT
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   OVER(); // OVER
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   _dash_(); // -
   SWAP(); // SWAP
   CMOVE(); // CMOVE
@@ -528,8 +516,7 @@ void UNK_0xf074() // UNK_0xf074
 void UNK_0xf082() // UNK_0xf082
 {
   PAD(); // PAD
-  Push(0x0024);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0024); //  0x0024 +
   Push(3);
   Push(0x003f);
   FILL_1(); // FILL_1
@@ -547,17 +534,14 @@ void UNK_0xf096() // UNK_0xf096
   Push(0x0018);
   CMOVE(); // CMOVE
   LoadData(UNK_0xede6); // from 'ARTIFACT'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(pp_Is_ask__ask_IT)); // ???IT @
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push((Read16(Pop())&0xFF | Read16(pp_Is_ask__ask_IT))==0?1:0); //  C@ ???IT @ OR 0=
   LoadData(ART_dash_VAL); // from 'ARTIFACT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   OVER(); // OVER
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(Pop() * Pop()); // *
   LoadData(ART_dash_VOL); // from 'ARTIFACT'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   UNK_0xef89(); // UNK_0xef89
   if (Pop() == 0) return;
   UNK_0xf082(); // UNK_0xf082
@@ -642,8 +626,7 @@ void ITEM_gt_PAD() // ITEM>PAD
   UNK_0xee0a(); // UNK_0xee0a
   UNK_0xee1a(); // UNK_0xee1a
   PAD(); // PAD
-  Push(0x001e);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x001e); //  0x001e +
   OVER(); // OVER
   _dash_(); // -
   Push(0x002e);
@@ -669,8 +652,7 @@ void UNK_0xf157() // UNK_0xf157
   PICK(); // PICK
   _gt_C_plus_S(); // >C+S
   GetINST_dash_CLASS(); // @INST-CLASS
-  Push(0x000b);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x000b?1:0); //  0x000b =
   ICLOSE(); // ICLOSE
   Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
   Push(0x004b);
@@ -717,16 +699,12 @@ void BOX_gt_LIST() // BOX>LIST
   do
   {
     GetINST_dash_CLASS(); // @INST-CLASS
-    Push(0x0035);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Pop()==0x0035?1:0)); //  0x0035 = NOT
     Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
     Push(0x004b);
     _st_(); // <
     GetINST_dash_CLASS(); // @INST-CLASS
-    Push(0x000b);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | (Pop()==0x000b?1:0)); //   0x000b = OR
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
@@ -734,7 +712,7 @@ void BOX_gt_LIST() // BOX>LIST
       CI(); // CI
       ITEM_gt_PAD(); // ITEM>PAD
       PAD(); // PAD
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
       UNK_0xf157(); // UNK_0xf157
     }
     NEXT_dash_NO(); // NEXT-NO
@@ -903,7 +881,7 @@ void _gt_BOX() // >BOX
   Push(a); // I
   CLASS_gt_BOX_dash_SPEC(); // CLASS>BOX-SPEC case
   IFIND(); // IFIND
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Push(a); // I
@@ -917,8 +895,7 @@ void _gt_BOX() // >BOX
   GetINST_dash_CLASS(); // @INST-CLASS
   ICLOSE(); // ICLOSE
   Push(Read16(regsp)); // DUP
-  Push(0x001a);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x001a?1:0); //  0x001a =
   if (Pop() != 0)
   {
     OVER(); // OVER
@@ -967,8 +944,7 @@ void _gt_BOX() // >BOX
 void IsELEMENT() // ?ELEMENT
 {
   GetINST_dash_CLASS(); // @INST-CLASS
-  Push(0x001a);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x001a?1:0); //  0x001a =
 }
 
 
@@ -1033,7 +1009,7 @@ void BOX_gt_() // BOX>
     ICLOSE(); // ICLOSE
     GetINST_dash_SPECIES(); // @INST-SPECIES
     Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     Push(Pop() & Pop()); // AND
   }
   ROT(); // ROT

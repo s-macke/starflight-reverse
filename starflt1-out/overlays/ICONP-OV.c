@@ -218,7 +218,7 @@ void UNK_0xf293() // UNK_0xf293
 void UNK_0xf2a1() // UNK_0xf2a1
 {
   LoadData(UNK_0xf23b); // from 'VESSEL'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   if (Pop() != 0)
   {
     Push((Read16(0x63ef+UNK_0xf243.offset)&0xFF) + 0x0023); // UNK_0xf243<IFIELD> C@ 0x0023 +
@@ -293,8 +293,7 @@ void UNK_0xf2ff() // UNK_0xf2ff
 void UNK_0xf309() // UNK_0xf309
 {
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(0x0032);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0032); //  0x0032 +
 }
 
 
@@ -413,12 +412,11 @@ void UNK_0xf38f() // UNK_0xf38f
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0x0010);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 0x0010); //  0x0010 +
     return;
   }
   LoadData(UNK_0xf248); // from 'CREATURE'
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
 }
 
 
@@ -429,8 +427,7 @@ void UNK_0xf38f() // UNK_0xf38f
 void UNK_0xf3ab() // UNK_0xf3ab
 {
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(6);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==6?1:0); //  6 =
   if (Pop() != 0)
   {
     Push(0x002c);
@@ -590,7 +587,7 @@ void PLAN_dash_IC_dash_CASES() // PLAN-IC-CASES
 void UNK_0xf47b() // UNK_0xf47b
 {
   LoadData(UNK_0xf25a); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   PLAN_dash_IC_dash_CASES(); // PLAN-IC-CASES case
 }
 

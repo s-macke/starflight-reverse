@@ -228,8 +228,7 @@ void UNK_0xb449() // UNK_0xb449
 {
   BLOCK_2(); // BLOCK_2
   SWAP(); // SWAP
-  Push(0x0040);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x0040); //  0x0040 *
   Push(Pop() + Pop()); // +
 }
 
@@ -247,8 +246,7 @@ void UNK_0xb459() // UNK_0xb459
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
   PAD(); // PAD
   OVER(); // OVER
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()+1); // 1+
+  Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
   CMOVE_2(); // CMOVE_2
 }
 
@@ -351,7 +349,7 @@ void UNK_0xb4d9() // UNK_0xb4d9
   unsigned short int i, imax;
   Push(0x007c);
   UNK_0xb459(); // UNK_0xb459
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   SWAP(); // SWAP
 
   i = Pop();
@@ -412,9 +410,7 @@ void UNK_0xb533() // UNK_0xb533
   M_slash_(); // M/
   SWAP(); // SWAP
   Pop(); // DROP
-  Push(Pop()-1); // 1-
-  Push(Read16(cc_SB)); // SB
-  Push(Pop() + Pop()); // +
+  Push((Pop() - 1) + Read16(cc_SB)); //  1- SB +
 }
 
 
@@ -447,14 +443,14 @@ void WL() // WL
 void UNK_0xb56d() // UNK_0xb56d
 {
   unsigned short int i, imax;
-  Push(Pop()-2); // 2-
+  Push(Pop() - 2); //  2-
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
     Push(i); // I
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop())); //  @
     Push(0);
     D_dot_(); // D.
     Push(-2);
@@ -600,10 +596,7 @@ void ORGIA() // ORGIA
   SWAP(); // SWAP
   _plus_ORG(); // +ORG case
   Push(Pop() + Pop()); // +
-  Push(3);
-  Push(Pop() * Pop()); // *
-  Push(pp_OTABL); // OTABL
-  Push(Pop() + Pop()); // +
+  Push(Pop() * 3 + pp_OTABL); //  3 * OTABL +
 }
 
 
@@ -1275,15 +1268,12 @@ void UNK_0xbb03() // UNK_0xbb03
 {
   Push(Read16(pp_UNK_0xbaf3)); // UNK_0xbaf3 @
   Push(Read16(regsp)); // DUP
-  Push(0x0080);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x0080?1:0); //  0x0080 =
   Push(pp_UNK_0xbaeb); // UNK_0xbaeb
   _plus__ex__2(); // +!_2
-  Push(Pop()>>1); // 2/
+  Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(0x0080);
-  Push(Pop() * Pop()); // *
+  Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
   Push(Pop() + Pop()); // +
   Push(pp_UNK_0xbaf3); // UNK_0xbaf3
   Store_2(); // !_2
@@ -1296,22 +1286,14 @@ void UNK_0xbb03() // UNK_0xbb03
 
 void UNK_0xbb29() // UNK_0xbb29
 {
-  Push(Read16(pp_UNK_0xbaf3)&0xFF); // UNK_0xbaf3 C@
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (Read16(pp_UNK_0xbaf3)&0xFF)); //  UNK_0xbaf3 C@ AND
   _0_gt_(); // 0>
-  Push(Read16(pp_BTADDR)); // BTADDR @
-  Push(Pop() + Pop()); // +
-  Push(Read16(pp_UNK_0xbae7)); // UNK_0xbae7 @
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_UNK_0xbae7))&0xFF); //  BTADDR @ + UNK_0xbae7 @ + C@
   Push(Read16(regsp)); // DUP
-  Push(0x0080);
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & 0x0080); //  0x0080 AND
   if (Pop() != 0)
   {
-    Push(0x007f);
-    Push(Pop() & Pop()); // AND
-    Push(Pop()*2); // 2*
+    Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
     Push(pp_UNK_0xbae7); // UNK_0xbae7
     _plus__ex__2(); // +!_2
   } else
@@ -1356,9 +1338,7 @@ void HUFF_gt_() // HUFF>
   do
   {
     OVER(); // OVER
-    Push(Read16(pp_UNK_0xbaeb)); // UNK_0xbaeb @
-    Push(Pop() + Pop()); // +
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop() + Read16(pp_UNK_0xbaeb))&0xFF); //  UNK_0xbaeb @ + C@
     UNK_0xbb29(); // UNK_0xbb29
   } while(Pop() == 0);
   goto label3;
@@ -1998,15 +1978,13 @@ void DrawSORD() // .SORD
 {
   Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(regsp)); // DUP
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==1?1:0); //  1 =
   if (Pop() != 0)
   {
     Push(0xc0a1); // probable 'OV/STX'
     MODULE(); // MODULE
   }
-  Push(3);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==3?1:0); //  3 =
   if (Pop() == 0) return;
   Push(0xbcb8); // probable 'OVDBA'
   MODULE(); // MODULE
@@ -2129,8 +2107,7 @@ void IsAPP() // ?APP
   Push(0);
   D_plus_(); // D+
   D_gt_(); // D>
-  Push(Read16(pp_IsHEAL)); // ?HEAL @
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & Read16(pp_IsHEAL)); //  ?HEAL @ AND
   if (Pop() != 0)
   {
     TIME(); // TIME
@@ -2329,8 +2306,7 @@ void IsSHIP_dash_R() // ?SHIP-R
   Push(Read16(pp_REPAIRT)); // REPAIRT @
   Push(0);
   D_gt_(); // D>
-  Push(Read16(pp_IsREPAIR)); // ?REPAIR @
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & Read16(pp_IsREPAIR)); //  ?REPAIR @ AND
   Push(Read16(pp_IsREPAIR) | (Read16(pp_IsREPAIR)==1?1:0)); // ?REPAIR @ ?REPAIR @ 1 = OR
 }
 

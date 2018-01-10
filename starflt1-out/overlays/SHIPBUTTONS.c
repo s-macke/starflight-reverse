@@ -236,8 +236,7 @@ void UNK_0xedec() // UNK_0xedec
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x63ef+UNK_0xedba.offset)&0xFF); // UNK_0xedba<IFIELD> C@
   Push(Read16(regsp)); // DUP
-  Push(8);
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & 8); //  8 AND
   if (Pop() != 0)
   {
     Push(0xcb4e); // probable 'OV-SH'
@@ -245,8 +244,7 @@ void UNK_0xedec() // UNK_0xedec
     Push(0x02ee);
     MS(); // MS
   }
-  Push(3);
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & 3); //  3 AND
   if (Pop() != 0)
   {
     Push(0xcb66); // probable 'OV-AR'
@@ -323,10 +321,9 @@ void UNK_0xee6c() // UNK_0xee6c
   Store_3(); // !_3
   Push(pp_RECORD_n_); // RECORD#
   OFF(); // OFF
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   Push(Read16(regsp)); // DUP
-  Push(0x000c);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000c); //  0x000c *
   LoadData(_1BTN); // from 'BUTTONS'
   Push(Pop() + Pop()); // +
   Push(0x000c);
@@ -336,10 +333,7 @@ void UNK_0xee6c() // UNK_0xee6c
   UNK_0xee30(); // UNK_0xee30
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(3);
-  Push(Pop() * Pop()); // *
-  Push(0x63ef+UNK_0xedc4.offset); // UNK_0xedc4<IFIELD>
-  Push(Pop() + Pop()); // +
+  Push(Pop() * 3 + (0x63ef+UNK_0xedc4.offset)); //  3 * UNK_0xedc4<IFIELD> +
   Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+UNK_0xedc9.offset); // UNK_0xedc9<IFIELD>
   _do__dot_(); // $.
@@ -382,7 +376,7 @@ void UNK_0xeee2() // UNK_0xeee2
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       UNK_0xeeba(); // UNK_0xeeba
@@ -592,7 +586,7 @@ void UNK_0xeffc() // UNK_0xeffc
   if (Pop() == 0) return;
   Push(0xd214); // probable 'OV>DE'
   MODULE(); // MODULE
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
 }
 
 
@@ -645,9 +639,9 @@ void UNK_0xf077() // UNK_0xf077
   {
     UNK_0xf03f(); // UNK_0xf03f
   }
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   SWAP(); // SWAP
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
 }
 
 
@@ -1299,8 +1293,7 @@ void _gt_FLT() // >FLT
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
   LoadData(ELEM_dash_VAL); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
-  Push(Pop()*2); // 2*
+  Push(Read16(Pop()) * 2); //  @ 2*
   LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Store_3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT
@@ -1333,8 +1326,7 @@ void _gt_FLT() // >FLT
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
   LoadData(ELEM_dash_VAL); // from 'ELEMENT'
-  Push(Read16(Pop())); // @
-  Push(Pop()>>1); // 2/
+  Push(Read16(Pop()) >> 1); //  @ 2/
   LoadData(ELEM_dash_VAL); // from 'ELEMENT'
   Store_3(); // !_3
   SET_dash_CURRENT(); // SET-CURRENT

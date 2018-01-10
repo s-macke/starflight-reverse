@@ -107,7 +107,7 @@ void LET_dash_THE() // LET-THE
   ON_2(); // ON_2
   MOUNTA(); // MOUNTA
   SIGFLD(":TIMEST");
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop())); //  @
   Push(pp_TIMESTA); // TIMESTA
   Store_2(); // !_2
   Push(pp_RELAXTI); // RELAXTI

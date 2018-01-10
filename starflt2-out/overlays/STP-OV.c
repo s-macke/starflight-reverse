@@ -231,8 +231,7 @@ void MP_i_ER() // MP'ER
   _st_(); // <
   Push(pp_UNK_0xf08b); // UNK_0xf08b
   Store_2(); // !_2
-  Push(0x0080);
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | 0x0080); //  0x0080 OR
   Push(0x65e1+UNK_0xf08f.offset); // UNK_0xf08f<IFIELD>
   C_ex__2(); // C!_2
   Push(0x0064);
@@ -255,7 +254,7 @@ void MP_i_ER() // MP'ER
   Push(!Read16(pp_IsAUTO)); // ?AUTO @ NOT
   if (Pop() != 0)
   {
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
   }
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
@@ -371,8 +370,7 @@ void UNK_0xf194() // UNK_0xf194
 
 void UNK_0xf1ca() // UNK_0xf1ca
 {
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 0x000a); //  0x000a *
 }
 
 
@@ -418,7 +416,7 @@ void UNK_0xf1f8() // UNK_0xf1f8
   RRND(); // RRND
   a = Pop(); // >R
   Push(Read16(a)); // R@
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     UNK_0xf1d4(); // UNK_0xf1d4
@@ -431,8 +429,7 @@ void UNK_0xf1f8() // UNK_0xf1f8
   } else
   {
     Push(Read16(a)); // R@
-    Push(1);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==1?1:0); //  1 =
     if (Pop() != 0)
     {
       Push(0);
@@ -505,9 +502,7 @@ void UNK_0xf28b() // UNK_0xf28b
   Push(0);
   Push(7);
   RRND(); // RRND
-  Push(Pop()*2); // 2*
-  Push(pp__n__gt_A); // #>A
-  Push(Pop() + Pop()); // +
+  Push(Pop() * 2 + pp__n__gt_A); //  2* #>A +
   GetEXECUTE(); // @EXECUTE
 }
 
@@ -545,8 +540,7 @@ void UNK_0xf29d() // UNK_0xf29d
 
 void UNK_0xf2c3() // UNK_0xf2c3
 {
-  Push(Read16(cc__star_MAPSCA)); // *MAPSCA
-  Push(Pop() * Pop()); // *
+  Push(Pop() * Read16(cc__star_MAPSCA)); //  *MAPSCA *
 }
 
 
@@ -560,8 +554,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
   Push(Read16(cc_UNK_0xf18c)); // UNK_0xf18c
   UNK_0xf2c3(); // UNK_0xf2c3
   Push(Pop() + Pop()); // +
-  Push(4);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 4); //  4 +
 }
 
 
@@ -608,16 +601,11 @@ void UNK_0xf2f5() // UNK_0xf2f5
     {
       POINT_gt_I(); // POINT>I
       GetIC(); // @IC
-      Push(Read16(pp_UNK_0xf180)); // UNK_0xf180 @
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==Read16(pp_UNK_0xf180)?1:0); //  UNK_0xf180 @ =
       GetIC(); // @IC
-      Push(Read16(pp_UNK_0xf184)); // UNK_0xf184 @
-      Push((Pop()==Pop())?1:0); // =
-      Push(Pop() | Pop()); // OR
+      Push(Pop() | (Pop()==Read16(pp_UNK_0xf184)?1:0)); //   UNK_0xf184 @ = OR
       GetID(); // @ID
-      Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
-      Push((Pop()==Pop())?1:0); // =
-      Push(Pop() & Pop()); // AND
+      Push(Pop() & (Pop()==Read16(cc_SYS_dash_ICO)?1:0)); //   SYS-ICO = AND
       Push(Read16(regsp)); // DUP
       if (Pop() != 0)
       {
@@ -721,13 +709,10 @@ void UNK_0xf3bc() // UNK_0xf3bc
     Push(0x000a);
     U_star_(); // U*
     ROT(); // ROT
-    Push(0x000a);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 0x000a); //  0x000a *
     Push(Pop() + Pop()); // +
     Push(i); // I
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x0030);
-    _dash_(); // -
+    Push((Read16(Pop())&0xFF) - 0x0030); //  C@ 0x0030 -
     Push(0);
     D_plus_(); // D+
     i++;
@@ -772,8 +757,7 @@ void UNK_0xf42a() // UNK_0xf42a
     DrawTTY(); // .TTY
   }
   TIME(); // TIME
-  Push(Pop()+2); // 2+
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop() + 2)); //  2+ @
   Push(pp_GLOBALS); // GLOBALS
   Store_2(); // !_2
   do
@@ -781,7 +765,7 @@ void UNK_0xf42a() // UNK_0xf42a
     UNK_0xf29d(); // UNK_0xf29d
     UNK_0xf2f5(); // UNK_0xf2f5
     UNK_0xf365(); // UNK_0xf365
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
   } while(Pop() == 0);
   SAVE_dash_OV(); // SAVE-OV
   CTINIT(); // CTINIT
@@ -825,8 +809,7 @@ void UNK_0xf464() // UNK_0xf464
     Pop(); // DROP
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   } while(Pop() == 0);
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==1?1:0); //  1 =
 }
 
 
@@ -839,7 +822,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 
   label2:
   UNK_0xf464(); // UNK_0xf464
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   UNK_0xf414(); // UNK_0xf414
   goto label2;
@@ -861,7 +844,7 @@ void SP() // SP
   _099(); // 099
   UNK_0xf42a(); // UNK_0xf42a
   UNK_0xf4aa(); // UNK_0xf4aa
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     Push(Read16(pp_IsSECURE)==0?1:0); // ?SECURE @ 0=

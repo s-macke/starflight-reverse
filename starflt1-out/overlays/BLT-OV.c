@@ -192,8 +192,7 @@ void DrawPARMS() // .PARMS
   Push(4);
   DrawR(); // .R
   KEY_2(); // KEY_2
-  Push(0x000d);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==0x000d?1:0); //  0x000d =
   if (Pop() == 0) return;
   QUIT(); // QUIT
 }
@@ -341,15 +340,14 @@ void DrawHYBRID() // .HYBRID
     _plus__ex_(); // +!
     Push(c); // I
     Push(b); // I'
-    Push(Pop()+2); // 2+
+    Push(Pop() + 2); //  2+
     LC_at_(); // LC@
     Is_gt_EGA(); // ?>EGA
     Push(pp_COLOR); // COLOR
     Store_3(); // !_3
     Push(c); // R>
     Push(b); // R>
-    Push(3);
-    Push(Pop() + Pop()); // +
+    Push(Pop() + 3); //  3 +
     LC_at_(); // LC@
     if (Pop() != 0)
     {
@@ -370,8 +368,7 @@ void DrawHYBRID() // .HYBRID
     Push(Read16(pp_BLTSEG)); // BLTSEG @
     Push(Read16(pp_ABLT) - 4); // ABLT @ 4 -
     L_at_(); // L@
-    Push(4);
-    _dash_(); // -
+    Push(Pop() - 4); //  4 -
     Push(pp_ABLT); // ABLT
     _plus__ex_(); // +!
     i++;
@@ -388,7 +385,7 @@ void PADSEG() // PADSEG
 {
   PAD(); // PAD
   ADDR_gt_SEG(); // ADDR>SEG
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
 }
 
 

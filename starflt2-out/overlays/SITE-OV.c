@@ -210,16 +210,14 @@ void UNK_0xf1e1() // UNK_0xf1e1
   {
     Push(pp_CMAP); // CMAP
     Push(i); // I
-    Push(8);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 8); //  8 *
     Push(Pop() + Pop()); // +
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     StoreCOLOR(); // !COLOR
     Push(0x0094);
     Push(0x0095);
     Push(i); // I
-    Push(6);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 6); //  6 *
     Push(Pop() + Pop()); // +
     POS_dot_(); // POS.
     BLT(); // BLT
@@ -270,7 +268,7 @@ void UNK_0xf233() // UNK_0xf233
   _0_st_(); // 0<
   if (Pop() != 0)
   {
-    Push(-Pop()); // NEGATE
+    Push(-Pop()); //  NEGATE
     Push(0);
     Push(3);
     D_dot_R(); // D.R
@@ -278,7 +276,7 @@ void UNK_0xf233() // UNK_0xf233
     return;
   }
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Push(0x0082);
@@ -324,7 +322,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
   _0_st_(); // 0<
   if (Pop() != 0)
   {
-    Push(-Pop()); // NEGATE
+    Push(-Pop()); //  NEGATE
     Push(0);
     Push(2);
     D_dot_R(); // D.R
@@ -332,7 +330,7 @@ void UNK_0xf2a7() // UNK_0xf2a7
     return;
   }
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Push(0x006a);
@@ -415,9 +413,7 @@ void UNK_0xf38d() // UNK_0xf38d
   Push(Read16(pp_YABS)); // YABS @
   Push(0x0028);
   _slash_(); // /
-  Push(Pop()*2); // 2*
-  Push(0x0091);
-  Push(Pop() + Pop()); // +
+  Push(Pop() * 2 + 0x0091); //  2* 0x0091 +
   POS_dot_(); // POS.
   Push(0x0030);
   Push(pp_WBLT); // WBLT
@@ -437,8 +433,7 @@ void UNK_0xf3b7() // UNK_0xf3b7
   Push(Read16(pp_XABS)); // XABS @
   Push(0x0030);
   _slash_(); // /
-  Push(0x0060);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0060); //  0x0060 +
   Push(0x00bf);
   POS_dot_(); // POS.
   Push(1);
@@ -475,7 +470,7 @@ void UNK_0xf3df() // UNK_0xf3df
   SWAP(); // SWAP
   LLINE(); // LLINE
   Push(a); // R>
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   Push(0x005f);
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
@@ -557,16 +552,14 @@ void GETSITE_1() // GETSITE_1
       UNK_0xf2a7(); // UNK_0xf2a7
       UNK_0xf233(); // UNK_0xf233
       UNK_0xf42f(); // UNK_0xf42f
-      Push(Read16(pp_YABS)); // YABS @
-      Push(Pop() + Pop()); // +
+      Push(Pop() + Read16(pp_YABS)); //  YABS @ +
       Push(0);
       MAX(); // MAX
       Push(0x03bf);
       MIN(); // MIN
       Push(pp_YABS); // YABS
       Store_2(); // !_2
-      Push(Read16(pp_XABS)); // XABS @
-      Push(Pop() + Pop()); // +
+      Push(Pop() + Read16(pp_XABS)); //  XABS @ +
       Push(0);
       MAX(); // MAX
       Push(0x08ff);

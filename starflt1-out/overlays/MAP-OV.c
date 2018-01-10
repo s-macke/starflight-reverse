@@ -319,11 +319,9 @@ void UNK_0xe595() // UNK_0xe595
   Push(Read16(cc__star_MAPSCALE) * 0x0089); // *MAPSCALE 0x0089 *
   MIN(); // MIN
   OVER(); // OVER
-  Push(0x008b * Read16(cc__star_MAPSCALE)); // 0x008b *MAPSCALE *
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x008b * Read16(cc__star_MAPSCALE)); //  0x008b *MAPSCALE * +
   OVER(); // OVER
-  Push(0x0053 * Read16(cc__star_MAPSCALE)); // 0x0053 *MAPSCALE *
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0053 * Read16(cc__star_MAPSCALE)); //  0x0053 *MAPSCALE * +
   StoreVISWINDOW(); // !VISWINDOW
   Push(0x00c8 * Read16(cc__star_MAPSCALE)); // 0x00c8 *MAPSCALE *
   Push(pp_LOCRADIUS); // LOCRADIUS
@@ -589,11 +587,9 @@ void UNK_0xe818() // UNK_0xe818
   Push(Read16(pp_UNK_0xe542)); // UNK_0xe542 @
   Push(Read16(pp_UNK_0xe546)); // UNK_0xe546 @
   WLD_gt_SCR(); // WLD>SCR
-  Push(6);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 6); //  6 +
   SWAP(); // SWAP
-  Push(3);
-  _dash_(); // -
+  Push(Pop() - 3); //  3 -
   SWAP(); // SWAP
   POS_dot_(); // POS.
   Push(0x000d);
@@ -634,9 +630,9 @@ void UNK_0xe85c() // UNK_0xe85c
   if (Pop() != 0)
   {
     WLD_gt_SCR(); // WLD>SCR
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     SWAP(); // SWAP
-    Push(Pop()-1); // 1-
+    Push(Pop() - 1); //  1-
     SWAP(); // SWAP
     POS_dot_(); // POS.
     Push(3);
@@ -689,8 +685,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
     _slash_(); // /
     Push(i); // I
     Push(Pop() + Pop()); // +
-    Push(0x000f);
-    _dash_(); // -
+    Push(Pop() - 0x000f); //  0x000f -
     Push(0);
     _st__n_(); // <#
     _n_(); // #
@@ -737,9 +732,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
     Push(i); // I
-    Push(0x0023);
-    _dash_(); // -
-    Push(Pop()>>1); // 2/
+    Push(Pop() - 0x0023 >> 1); //  0x0023 - 2/
     Push(Pop() + Pop()); // +
     Push(0);
     _st__n_(); // <#
@@ -783,10 +776,7 @@ void UNK_0xe942() // UNK_0xe942
     GetIY(); // @IY
     WLD_gt_SCR(); // WLD>SCR
     GetID(); // @ID
-    Push(Read16(cc_NULL_dash_IC)); // NULL-IC
-    _dash_(); // -
-    Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
-    Push(Pop() * Pop()); // *
+    Push((Pop() - Read16(cc_NULL_dash_IC)) * Read16(cc__star_MAPSCALE)); //  NULL-IC - *MAPSCALE *
     Push(pp_YWLD_c_YPIX); // YWLD:YPIX
     _2_at_(); // 2@
     SWAP(); // SWAP
@@ -842,8 +832,7 @@ void UNK_0xe97e() // UNK_0xe97e
 
 void UNK_0xe9b6() // UNK_0xe9b6
 {
-  Push(pp_LSCAN); // LSCAN
-  Push(Pop() + Pop()); // +
+  Push(Pop() + pp_LSCAN); //  LSCAN +
 }
 
 
@@ -903,18 +892,13 @@ void UNK_0xe9be() // UNK_0xe9be
     Push(Read16(pp_VIN)); // VIN @
     a = Pop(); // >R
     Push(a); // I
-    Push(Pop()+2); // 2+
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop() + 2)); //  2+ @
     Push(a); // I
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop())); //  @
     Push(a); // I
-    Push(6);
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop() + 6)); //  6 + @
     Push(a); // R>
-    Push(4);
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop() + 4)); //  4 + @
     Push(1);
     return;
   }
@@ -961,12 +945,9 @@ void UNK_0xea70() // UNK_0xea70
     Push(i); // I
     POINT_gt_ICON(); // POINT>ICON
     GetID(); // @ID
-    Push(0x00ff);
-    Push((Pop()==Pop())?1:0); // =
+    Push(Pop()==0x00ff?1:0); //  0x00ff =
     GetIC(); // @IC
-    Push(3);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & (Pop()==3?1:0)); //   3 = AND
     if (Pop() != 0)
     {
       GetIL(); // @IL
@@ -1194,8 +1175,7 @@ void UNK_0xec0f() // UNK_0xec0f
   MAX(); // MAX
   Push(0x00f9 * Read16(cc__star_MAPSCALE)); // 0x00f9 *MAPSCALE *
   MIN(); // MIN
-  Push(Read16(pp_UNK_0xe542)); // UNK_0xe542 @
-  _dash_(); // -
+  Push(Pop() - Read16(pp_UNK_0xe542)); //  UNK_0xe542 @ -
   Push(pp_UNK_0xe53a); // UNK_0xe53a
   Store_3(); // !_3
   Push(Read16(pp_UNK_0xe546) + Read16(pp_UNK_0xe53e)); // UNK_0xe546 @ UNK_0xe53e @ +
@@ -1203,8 +1183,7 @@ void UNK_0xec0f() // UNK_0xec0f
   MAX(); // MAX
   Push(0x00db * Read16(cc__star_MAPSCALE)); // 0x00db *MAPSCALE *
   MIN(); // MIN
-  Push(Read16(pp_UNK_0xe546)); // UNK_0xe546 @
-  _dash_(); // -
+  Push(Pop() - Read16(pp_UNK_0xe546)); //  UNK_0xe546 @ -
   Push(pp_UNK_0xe53e); // UNK_0xe53e
   Store_3(); // !_3
 }
@@ -1265,32 +1244,24 @@ void UNK_0xecc0() // UNK_0xecc0
     _2_at_(); // 2@
     D_dash_(); // D-
     D_gt_(); // D>
-    Push(Read16(pp_UNK_0xe536)); // UNK_0xe536 @
-    Push(Pop() * Pop()); // *
-    Push(Pop()*2); // 2*
+    Push((Pop() * Read16(pp_UNK_0xe536)) * 2); //  UNK_0xe536 @ * 2*
     Push(1);
     MAX(); // MAX
     Push(0x000a);
     MIN(); // MIN
     Push(pp_UNK_0xe536); // UNK_0xe536
     Store_3(); // !_3
-    Push(Read16(pp_UNK_0xe536)); // UNK_0xe536 @
-    Push(Pop() * Pop()); // *
-    Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
-    Push(Pop() * Pop()); // *
+    Push((Pop() * Read16(pp_UNK_0xe536)) * Read16(cc__star_MAPSCALE)); //  UNK_0xe536 @ * *MAPSCALE *
     Push(pp_UNK_0xe53a); // UNK_0xe53a
     Store_3(); // !_3
-    Push(Read16(pp_UNK_0xe536)); // UNK_0xe536 @
-    Push(Pop() * Pop()); // *
-    Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
-    Push(Pop() * Pop()); // *
+    Push((Pop() * Read16(pp_UNK_0xe536)) * Read16(cc__star_MAPSCALE)); //  UNK_0xe536 @ * *MAPSCALE *
     Push(pp_UNK_0xe53e); // UNK_0xe53e
     Store_3(); // !_3
     UNK_0xec0f(); // UNK_0xec0f
     Push(Read16(pp_UNK_0xe53a)); // UNK_0xe53a @
     Push(Read16(pp_UNK_0xe53e)); // UNK_0xe53e @
     D0_eq_(); // D0=
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     if (Pop() != 0)
     {
       UNK_0xe818(); // UNK_0xe818
@@ -1303,7 +1274,7 @@ void UNK_0xecc0() // UNK_0xecc0
       Push(Read16(pp_UNK_0xe542)); // UNK_0xe542 @
       Push(Read16(pp_UNK_0xe546)); // UNK_0xe546 @
       IsINVIS(); // ?INVIS
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       if (Pop() != 0)
       {
         UNK_0xeac6(); // UNK_0xeac6

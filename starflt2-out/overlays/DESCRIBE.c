@@ -467,12 +467,11 @@ void UNK_0xe797() // UNK_0xe797
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(Read8(Pop())&0xFF); // C@
-    Push(Read16(cc_BL)); // BL
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(Pop())&0xFF); //  C@
+    Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
     if (Pop() != 0)
     {
-      Push(Pop()+1); // 1+
+      Push(Pop() + 1); //  1+
     } else
     {
       imax = i; // LEAVE
@@ -500,7 +499,7 @@ void UNK_0xe7df() // UNK_0xe7df
   unsigned short int i, imax;
   UNK_0xe797(); // UNK_0xe797
   _2DUP(); // 2DUP
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   OVER(); // OVER
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
@@ -513,11 +512,10 @@ void UNK_0xe7df() // UNK_0xe7df
   do // (DO)
   {
     Push(i); // I
-    Push(Read8(Pop())&0xFF); // C@
-    Push(Read16(cc_BL)); // BL
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(Pop())&0xFF); //  C@
+    Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
     Push(i); // I
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     Push(imax); // I'
     Push((Pop()==Pop())?1:0); // =
     Push(Pop() | Pop()); // OR
@@ -537,12 +535,12 @@ void UNK_0xe7df() // UNK_0xe7df
   Push(4);
   PICK(); // PICK
   Push(Pop() + Pop()); // +
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   ROT(); // ROT
   Push(3);
   PICK(); // PICK
   _dash_(); // -
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   _2SWAP(); // 2SWAP
 }
 
@@ -553,9 +551,9 @@ void UNK_0xe7df() // UNK_0xe7df
 
 void UNK_0xe833() // UNK_0xe833
 {
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   SWAP(); // SWAP
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   SWAP(); // SWAP
 }
 
@@ -571,8 +569,7 @@ void UNK_0xe833() // UNK_0xe833
 
 void UNK_0xe843() // UNK_0xe843
 {
-  Push(Read16(pp_CTX)); // CTX @
-  Push(Pop() + Pop()); // +
+  Push(Pop() + Read16(pp_CTX)); //  CTX @ +
   Push(Read16(pp_WCHARS)); // WCHARS @
   _st_(); // <
 }
@@ -589,7 +586,7 @@ void UNK_0xe853() // UNK_0xe853
   {
     Push(Read16(regsp)); // DUP
     UNK_0xe843(); // UNK_0xe843
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       UNK_0xe78f(); // UNK_0xe78f
@@ -598,12 +595,8 @@ void UNK_0xe853() // UNK_0xe853
       _099(); // 099
     }
     OVER(); // OVER
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x002e);
-    Push((Pop()==Pop())?1:0); // =
-    Push(Read16(pp_CTX)==0?1:0); // CTX @ 0=
-    Push(Pop() | Pop()); // OR
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(Read16(Pop())&0xFF); //  C@
+    Push(!(((Read16(Pop())&0xFF)==0x002e?1:0) | (Read16(pp_CTX)==0?1:0))); //  C@ 0x002e = CTX @ 0= OR NOT
     if (Pop() != 0)
     {
       SPACE(); // SPACE
@@ -673,7 +666,7 @@ void UNK_0xe956() // UNK_0xe956
 void UNK_0xe972() // UNK_0xe972
 {
   UNK_0xe8f5(); // UNK_0xe8f5
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   if (Pop() != 0)
   {
     SET_STR_AS_PARAM("ARE");
@@ -690,7 +683,7 @@ void UNK_0xe972() // UNK_0xe972
 void UNK_0xe98d() // UNK_0xe98d
 {
   UNK_0xe8f5(); // UNK_0xe8f5
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   if (Pop() != 0)
   {
     SET_STR_AS_PARAM("HAVE");
@@ -707,7 +700,7 @@ void UNK_0xe98d() // UNK_0xe98d
 void UNK_0xe9aa() // UNK_0xe9aa
 {
   UNK_0xe8f5(); // UNK_0xe8f5
-  Push(Pop()-1); // 1-
+  Push(Pop() - 1); //  1-
   if (Pop() == 0) return;
   SET_STR_AS_PARAM("S");
 }
@@ -773,8 +766,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   GetCOLOR(); // @COLOR
   a = Pop(); // >R
   Push(Read16(regsp)); // DUP
-  Push(1);
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==1?1:0); //  1 =
   Push(pp_HAZE); // HAZE
   _2_at_(); // 2@
   Push(Pop() | Pop()); // OR
@@ -782,7 +774,7 @@ void UNK_0xe9fb() // UNK_0xe9fb
   if (Pop() != 0)
   {
     OVER(); // OVER
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     _gt_SPECIAL(); // >SPECIAL case
   } else
   {
@@ -994,7 +986,7 @@ void UNK_0xeb51() // UNK_0xeb51
 void UNK_0xeb67() // UNK_0xeb67
 {
   UNK_0xeb51(); // UNK_0xeb51
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
   Push(Read16(cc_UNK_0xeaf4)); // UNK_0xeaf4
   Push(Read16(pp_UNK_0xeb63)); // UNK_0xeb63 @
@@ -1303,7 +1295,7 @@ void UNK_0xecbd() // UNK_0xecbd
     {
       Push(Read16(a)); // R@
       UNK_0xec77(); // UNK_0xec77
-      if (Pop() == 0) Push(1); else Push(0); // NOT
+      Push(!Pop()); //  NOT
       if (Pop() != 0)
       {
         Push(Read16(a)); // R@
@@ -1350,8 +1342,7 @@ void UNK_0xed17() // UNK_0xed17
     Push(Read16(pp_WLEFT)); // WLEFT @
     Push(Read16(pp_WTOP) - 2); // WTOP @ 2 -
     Push(i); // I
-    Push(7);
-    Push(Pop() * Pop()); // *
+    Push(Pop() * 7); //  7 *
     _dash_(); // -
     POS_dot_(); // POS.
     UNK_0xed0f(); // UNK_0xed0f
@@ -1435,7 +1426,7 @@ void UNK_0xeda7() // UNK_0xeda7
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   IsNULL(); // ?NULL
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!Pop()); //  NOT
   Push(2);
   _star_CLOSE(); // *CLOSE
 }
@@ -1520,7 +1511,7 @@ void UNK_0xee0e() // UNK_0xee0e
   do
   {
     XYSCAN(); // XYSCAN
-    if (Pop() == 0) Push(1); else Push(0); // 0=
+    Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
       RACE_dash_SCR(); // RACE-SCR case
@@ -1879,8 +1870,7 @@ void SYSCAN() // SYSCAN
   Push(8);
   Push(0xb76b); // probable 'OV?ART'
   MODULE(); // MODULE
-  Push(Read16(pp_NOF)==0?1:0); // NOF @ 0=
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (Read16(pp_NOF)==0?1:0)); //  NOF @ 0= AND
   if (Pop() != 0)
   {
     Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
@@ -1905,8 +1895,7 @@ void SYSCAN() // SYSCAN
       Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
       Push(5);
       _st_(); // <
-      Push(!Read16(pp_IsON_dash_PLA)); // ?ON-PLA @ NOT
-      Push(Pop() & Pop()); // AND
+      Push(Pop() & !Read16(pp_IsON_dash_PLA)); //  ?ON-PLA @ NOT AND
       if (Pop() != 0)
       {
         BEEP(); // BEEP
@@ -1997,7 +1986,7 @@ void UNK_0xf3a5() // UNK_0xf3a5
   _dash_TRAILING(); // -TRAILING
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   LoadData(UNK_0xe66b); // from 'TRADERS'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   Push(2);
   _gt_(); // >
   if (Pop() != 0)
@@ -2197,10 +2186,10 @@ void DESCRIBE() // DESCRIBE
     Push(1);
     _gt_(); // >
     Push(i); // I
-    Push(Pop()+1); // 1+
+    Push(Pop() + 1); //  1+
     Push(imax); // I'
     Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!Pop()); //  NOT
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {

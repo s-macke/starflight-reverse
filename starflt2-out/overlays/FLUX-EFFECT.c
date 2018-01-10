@@ -93,8 +93,7 @@ void UNK_0xf38e() // UNK_0xf38e
   Push(0);
   Push(2);
   RRND(); // RRND
-  Push(Pop()*2); // 2*
-  Push(Pop()-1); // 1-
+  Push(Pop() * 2 - 1); //  2* 1-
   Push(Pop() * Pop()); // *
 }
 
@@ -116,7 +115,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(2);
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   Push(0x0048);
   UNK_0xf38e(); // UNK_0xf38e
   Push(0xffdc);
@@ -128,7 +127,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(0x0023);
   MIN(); // MIN
   Push(a); // I
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   Store_2(); // !_2
   Push(0x0078);
   UNK_0xf38e(); // UNK_0xf38e
@@ -141,8 +140,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
   Push(0x003b);
   MIN(); // MIN
   Push(a); // R>
-  Push(3);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 3); //  3 +
   Store_2(); // !_2
 }
 
@@ -181,40 +179,33 @@ void UNK_0xf406() // UNK_0xf406
 void UNK_0xf420() // UNK_0xf420
 {
   unsigned short int a;
-  Push(pp_UNK_0xf356); // UNK_0xf356
-  Push(Pop() + Pop()); // +
+  Push(Pop() + pp_UNK_0xf356); //  UNK_0xf356 +
   a = Pop(); // >R
   Push(a); // I
-  Push(3);
-  Push(Pop() + Pop()); // +
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop() + 3)); //  3 + @
   Push(a); // I
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _slash_(); // /
-  Push(0x0024);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x0024); //  0x0024 +
   Push(0);
   MAX(); // MAX
   Push(0x0047);
   MIN(); // MIN
   Push(a); // I
-  Push(Pop()+1); // 1+
-  Push(Read16(Pop())); // @
+  Push(Read16(Pop() + 1)); //  1+ @
   Push(a); // I
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _slash_(); // /
-  Push(0x003c);
-  Push(Pop() + Pop()); // +
+  Push(Pop() + 0x003c); //  0x003c +
   Push(0);
   MAX(); // MAX
   Push(0x0077);
   MIN(); // MIN
   LPLOT(); // LPLOT
   Push(a); // I
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()-1); // 1-
+  Push((Read16(Pop())&0xFF) - 1); //  C@ 1-
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
     Push(a); // R>
@@ -339,7 +330,7 @@ void JUMPFX() // JUMPFX
   Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
-  Push(Pop()*2); // 2*
+  Push(Pop() * 2); //  2*
   Push(0);
 
   i = Pop();

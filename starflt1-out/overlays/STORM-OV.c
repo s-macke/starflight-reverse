@@ -117,10 +117,9 @@ void STORMS(); // STORMS
 void UNK_0xf0a6() // UNK_0xf0a6
 {
   Push(Read16(regsp)); // DUP
-  Push(Read16(Pop())); // @
-  Push(Pop()+2); // 2+
+  Push(Read16(Pop()) + 2); //  @ 2+
   RANGE(); // RANGE
-  Push(Pop()+2); // 2+
+  Push(Pop() + 2); //  2+
 }
 
 
@@ -132,8 +131,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 {
   unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
-  Push(6);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 6); //  6 *
   Push(Read16(regsp)); // DUP
   _co_(); // ,
   HERE(); // HERE
@@ -188,9 +186,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(4);
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); // @
+    Push(Read16(Pop() + 4)); //  4 + @
     return;
   }
   PRINT("INDEX NOT IN PROBABILITY ARRAY! ", 32); // (.")
@@ -210,18 +206,15 @@ void UNK_0xf14c() // UNK_0xf14c
   {
     OVER(); // OVER
     OVER(); // OVER
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Pop())&0xFF); //  C@
     Push(Read16(regsp)); // DUP
-    Push(0x0064);
-    Push((Pop()==Pop())?1:0); // =
-    if (Pop() == 0) Push(1); else Push(0); // NOT
+    Push(!(Pop()==0x0064?1:0)); //  0x0064 = NOT
     a = Pop(); // >R
     _gt_(); // >
     Push(a); // R>
     Push(Pop() & Pop()); // AND
     if (Pop() == 0) return;
-    Push(Pop()+1); // 1+
-    Push(Pop()+3); // 3+
+    Push((Pop() + 1) + 3); //  1+ 3+
   } while(1);
 }
 
@@ -233,7 +226,7 @@ void UNK_0xf14c() // UNK_0xf14c
 void UNK_0xf174() // UNK_0xf174
 {
   UNK_0xf14c(); // UNK_0xf14c
-  Push(Pop()+1); // 1+
+  Push(Pop() + 1); //  1+
   _1_dot_5_at_(); // 1.5@
   ROT(); // ROT
   Pop(); // DROP
@@ -326,8 +319,7 @@ void UNK_0xf298() // UNK_0xf298
   Push(0);
   Push(6);
   RRND(); // RRND
-  Push(3);
-  Push(Pop() * Pop()); // *
+  Push(Pop() * 3); //  3 *
   Push(Pop() + Pop()); // +
   _1_dot_5_at_(); // 1.5@
   ICLOSE(); // ICLOSE
@@ -450,7 +442,7 @@ void INJURE_dash_PL() // INJURE-PL
   UNK_0xf298(); // UNK_0xf298
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xf290); // from 'CREWMEMBER'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   _slash_(); // /
   Push(1);
   MAX(); // MAX
@@ -494,7 +486,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(Read16(pp_STORM)==0?1:0); // STORM @ 0=
   UNK_0xf275(); // UNK_0xf275
   Push(Pop() | Pop()); // OR
-  if (Pop() == 0) Push(1); else Push(0); // 0=
+  Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
   Push(0x00c5);
   Push(0x000c);
@@ -575,9 +567,7 @@ void UNK_0xf46c() // UNK_0xf46c
   Push(0x0064);
   RRND(); // RRND
   LoadData(UNK_0xf255); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Pop()+1); // 1+
+  Push((Read16(Pop())&0xFF) * 2 + 1); //  C@ 2* 1+
   Push(0);
   STORMS(); // STORMS
   UNK_0xf174(); // UNK_0xf174
@@ -617,7 +607,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf24d); // from 'PLANET'
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Pop())&0xFF); //  C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -629,9 +619,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
   Push(a); // R>
-  Push(Read16(pp__n_STORM)); // #STORM @
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) Push(1); else Push(0); // NOT
+  Push(!(Pop()==Read16(pp__n_STORM)?1:0)); //  #STORM @ = NOT
   if (Pop() != 0)
   {
     Push(0xcdd8); // probable '.STOR'
