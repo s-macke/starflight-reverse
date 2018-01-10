@@ -620,7 +620,7 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
     }
 
 
-    // TODO OVER MAX, !, =, SWAP, DROP, DUP +@
+    // TODO OVER MAX, !, SWAP, DROP, DUP +@, I, J, ...
 
     Postfix2InfixReset(fp, nspc);
 
@@ -634,12 +634,19 @@ void Postfix2InfixReset(FILE *fp, int nspc)
 {
     for(int i=0; i<stackoffset; i++)
     {
+        if (strcmp(stack[i].expr, "Pop()") == 0) continue; // This is a simple Push(Pop()); and can be ignored
         Spc(fp, nspc);
         fprintf(fp, "Push(%s);", stack[i].expr);
         if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
         fprintf(fp, "\n");
     }
-    stackoffset = 0;
+
+    // default is one Pop() on the stack.
+    sprintf(stack[0].expr, "Pop()");
+    sprintf(stack[0].forth, "");
+    stack[0].precedence = PVARNUMBERFUNC;
+    stack[0].isnumber = 0;
+    stackoffset = 1;
 }
 
 
