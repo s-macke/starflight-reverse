@@ -216,41 +216,39 @@ void UNK_0xed63() // UNK_0xed63
 void _ro__dot_MASS_rc_() // (.MASS)
 {
   Push(0x0032);
-  Push(0x63ef+UNK_0xed3b.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed3b.offset)); // UNK_0xed3b<IFIELD> @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0032);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xed36.offset); // IFIELD
+  Push(0x63ef+UNK_0xed36.offset); // UNK_0xed36<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(9);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xed4f.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed4f.offset)); // UNK_0xed4f<IFIELD> @
   _plus_BIT(); // +BIT
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xed4a.offset); // IFIELD
+  Push(0x63ef+UNK_0xed4a.offset); // UNK_0xed4a<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
-  Push(0x63ef+UNK_0xed45.offset); // IFIELD
+  Push(0x63ef+UNK_0xed45.offset); // UNK_0xed45<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xed40.offset); // IFIELD
+  Push(0x63ef+UNK_0xed40.offset); // UNK_0xed40<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
   Push(5);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xed59.offset); // IFIELD
+  Push(0x63ef+UNK_0xed59.offset); // UNK_0xed59<IFIELD>
   Store_3(); // !_3
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
@@ -262,8 +260,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   POS_dot_(); // POS.
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
-  Push(0x63ef+UNK_0xed59.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed59.offset)); // UNK_0xed59<IFIELD> @
   Push(4);
   DrawR(); // .R
   StoreCRS(); // !CRS
@@ -277,14 +274,13 @@ void _ro__dot_MASS_rc_() // (.MASS)
 
 void _ro__dot_ACC_rc_() // (.ACC)
 {
-  Push(0x63ef+UNK_0xed3b.offset); // IFIELD
+  Push(0x63ef+UNK_0xed3b.offset); // UNK_0xed3b<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(0x63ef+UNK_0xed59.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed59.offset)); // UNK_0xed59<IFIELD> @
   _slash_(); // /
-  Push(0x63ef+UNK_0xed54.offset); // IFIELD
+  Push(0x63ef+UNK_0xed54.offset); // UNK_0xed54<IFIELD>
   Store_3(); // !_3
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
@@ -296,8 +292,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   POS_dot_(); // POS.
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
-  Push(0x63ef+UNK_0xed54.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed54.offset)); // UNK_0xed54<IFIELD> @
   Push(2);
   DrawR(); // .R
   StoreCRS(); // !CRS
@@ -334,8 +329,7 @@ void UNK_0xef1a() // UNK_0xef1a
     IFIND(); // IFIND
     if (Pop() != 0)
     {
-      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-      Push(Read16(Pop())); // @
+      Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
     } else
     {
       Push(0);
@@ -451,7 +445,7 @@ void UNK_0xf014() // UNK_0xf014
 
 void UNK_0xf026() // UNK_0xf026
 {
-  Push(0x63ef+UNK_0xed40.offset); // IFIELD
+  Push(0x63ef+UNK_0xed40.offset); // UNK_0xed40<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
   SetColor(RED);
@@ -496,8 +490,7 @@ void UNK_0xf098() // UNK_0xf098
   Push(pp_YBLT); // YBLT
   Store_3(); // !_3
   Push(Read16(regsp)); // DUP
-  Push(0x63ef+UNK_0xed4f.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xed4f.offset)); // UNK_0xed4f<IFIELD> @
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
@@ -586,7 +579,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
 
 void UNK_0xf132() // UNK_0xf132
 {
-  Push(0x63ef+UNK_0xed45.offset); // IFIELD
+  Push(0x63ef+UNK_0xed45.offset); // UNK_0xed45<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
   SetColor(LT_dash_BLUE);
@@ -623,7 +616,7 @@ void UNK_0xf132() // UNK_0xf132
 
 void UNK_0xf174() // UNK_0xf174
 {
-  Push(0x63ef+UNK_0xed4a.offset); // IFIELD
+  Push(0x63ef+UNK_0xed4a.offset); // UNK_0xed4a<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   if (Pop() != 0)
   {

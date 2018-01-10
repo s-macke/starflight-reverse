@@ -401,8 +401,7 @@ void UNK_0xea0b() // UNK_0xea0b
   IOPEN(); // IOPEN
   do
   {
-    Push(0x63ef+UNK_0xe94b.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x63ef+UNK_0xe94b.offset)&0xFF); // UNK_0xe94b<IFIELD> C@
     Push(Read16(regsp)); // DUP
     Push(8);
     Push(Pop() & Pop()); // AND
@@ -415,12 +414,11 @@ void UNK_0xea0b() // UNK_0xea0b
     if (Pop() != 0)
     {
       Push(a); // I
-      Push(0x63ef+UNK_0xe950.offset); // IFIELD
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(0x63ef+UNK_0xe950.offset)&0xFF); // UNK_0xe950<IFIELD> C@
       Push(Pop() + Pop()); // +
       Push(0x0064);
       MIN(); // MIN
-      Push(0x63ef+UNK_0xe950.offset); // IFIELD
+      Push(0x63ef+UNK_0xe950.offset); // UNK_0xe950<IFIELD>
       C_ex_(); // C!
     }
     INEXT(); // INEXT
@@ -601,16 +599,10 @@ void UNK_0xeaf0() // UNK_0xeaf0
   Store_3(); // !_3
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(7);
-  Push(0x63ef+UNK_0xe946.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(7);
-  Push(Pop() & Pop()); // AND
-  _dash_(); // -
+  Push(7 - ((Read16(0x63ef+UNK_0xe946.offset)&0xFF) & 7)); // 7 UNK_0xe946<IFIELD> C@ 7 AND -
   Push(pp_E_dash_USE); // E-USE
   Store_3(); // !_3
-  Push(0x63ef+UNK_0xeaeb.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xeaeb.offset)); // UNK_0xeaeb<IFIELD> @
   ICLOSE(); // ICLOSE
   Push(0x000a);
   U_star_(); // U*
@@ -1053,8 +1045,7 @@ void UNK_0xee6f() // UNK_0xee6f
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() != 0)
   {
-    Push(pp_UNK_0xecf1); // UNK_0xecf1
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(pp_UNK_0xecf1)&0xFF); // UNK_0xecf1 C@
     Push(0);
 
     i = Pop();
@@ -1490,10 +1481,7 @@ void UNK_0xf239() // UNK_0xf239
   unsigned short int i, imax, a;
   Push(pp_UNK_0xea73); // UNK_0xea73
   OFF(); // OFF
-  Push(pp_UNK_0xeeb5); // UNK_0xeeb5
-  Push(Read8(Pop())&0xFF); // C@
-  Push(7);
-  Push(Pop() * Pop()); // *
+  Push((Read16(pp_UNK_0xeeb5)&0xFF) * 7); // UNK_0xeeb5 C@ 7 *
   Push(0);
 
   i = Pop();

@@ -530,7 +530,7 @@ void UNK_0xea0a() // UNK_0xea0a
 void UNK_0xea78() // UNK_0xea78
 {
   Push(0);
-  Push(0x63ef+UNK_0xe87a.offset); // IFIELD
+  Push(0x63ef+UNK_0xe87a.offset); // UNK_0xe87a<IFIELD>
   Store_3(); // !_3
   LoadData(UNK_0xe82a); // from 'REGIONS'
   Push(4);
@@ -1350,8 +1350,7 @@ void UNK_0xf382() // UNK_0xf382
 
 void UNK_0xf3ea() // UNK_0xf3ea
 {
-  Push(0x63ef+UNK_0xe87a.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe87a.offset)); // UNK_0xe87a<IFIELD> @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {

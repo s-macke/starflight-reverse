@@ -155,8 +155,7 @@ void UNK_0xf177() // UNK_0xf177
     Push(0x001a);
     Push(6);
     IFIND(); // IFIND
-    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-    Push(Read16(Pop())); // @
+    Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
     Push(Pop() * Pop()); // *
     Push(Read16(pp_UNK_0xf143)); // UNK_0xf143 @
     if (Pop() != 0)
@@ -169,7 +168,7 @@ void UNK_0xf177() // UNK_0xf177
       _dash_(); // -
       Push(0);
       MAX(); // MAX
-      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
+      Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
       Store_3(); // !_3
     }
     CDROP(); // CDROP
@@ -259,29 +258,27 @@ void UNK_0xf258() // UNK_0xf258
     DrawTTY(); // .TTY
     SET_STR_AS_PARAM(" STARSHIP ISS ");
     DrawTTY(); // .TTY
-    Push(0x63ef+UNK_0xf136.offset); // IFIELD
+    Push(0x63ef+UNK_0xf136.offset); // UNK_0xf136<IFIELD>
     COUNT(); // COUNT
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     SET_STR_AS_PARAM(" CRASHED ON PLANET ");
     DrawTTY(); // .TTY
     Push(pp__ro_ORBIT_rc_); // (ORBIT)
     Get_gt_C_plus_S(); // @>C+S
-    Push(0x63ef+INST_dash_QTY.offset); // IFIELD
+    Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
     Is(); // ?
     ICLOSE(); // ICLOSE
     SET_STR_AS_PARAM(" IN SYSTEM ");
     DrawTTY(); // .TTY
     Push(pp__ro_SYSTEM); // (SYSTEM
     Get_gt_C_plus_S(); // @>C+S
-    Push(0x63ef+INST_dash_X.offset); // IFIELD
-    Push(Read16(Pop())); // @
+    Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
     Push(0);
     DrawR(); // .R
     PRINT(",", 1); // (.")
-    Push(0x63ef+INST_dash_Y.offset); // IFIELD
-    Push(Read16(Pop())); // @
+    Push(Read16(0x63ef+INST_dash_Y.offset)); // INST-Y<IFIELD> @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
     Push(0);

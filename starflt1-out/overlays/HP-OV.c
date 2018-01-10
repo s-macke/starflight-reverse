@@ -263,12 +263,7 @@ void UNK_0xe344() // UNK_0xe344
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()-1); // 1-
-  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
-  Push(Pop() + Pop()); // +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@
   Push(0x0053);
   Push((Pop()==Pop())?1:0); // =
   GetINST_dash_SPECIES(); // @INST-SPECIES

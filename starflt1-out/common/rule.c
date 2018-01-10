@@ -202,18 +202,10 @@ void _gt_EXPERT() // >EXPERT
   Push(Pop() + Pop()); // +
   Push(0xb6ea); // probable 'RULEARR'
   Store_3(); // !_3
-  Push(Read16(cc_RULELIM)); // RULELIM
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_RULEARR)); // RULEARR
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_RULELIM))&0xFF) * 2 + Read16(cc_RULEARR)); // RULELIM C@ 2* RULEARR +
   Push(0xb6f8); // probable 'CONDARR'
   Store_3(); // !_3
-  Push(Read16(cc_CONDLIM)); // CONDLIM
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_CONDARR)); // CONDARR
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_CONDLIM))&0xFF) * 2 + Read16(cc_CONDARR)); // CONDLIM C@ 2* CONDARR +
   Push(0xb706); // probable 'CFLGARR'
   Store_3(); // !_3
 }
@@ -227,8 +219,7 @@ void DISTRACT() // DISTRACT
 {
   _gt_EXPERT(); // >EXPERT
   Push(Read16(cc_CFLGARR)); // CFLGARR
-  Push(Read16(cc_CONDLIM)); // CONDLIM
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_CONDLIM))&0xFF); // CONDLIM C@
   Push(Read16(cc_UNKNOWN)); // UNKNOWN
   FILL_1(); // FILL_1
 }
@@ -332,14 +323,7 @@ void EXPERT() // EXPERT
   C_co_(); // C,
   Push(a); // R>
   _gt_EXPERT(); // >EXPERT
-  Push(Read16(cc_RULELIM)); // RULELIM
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_CONDLIM)); // CONDLIM
-  Push(Read8(Pop())&0xFF); // C@
-  Push(3);
-  Push(Pop() * Pop()); // *
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_RULELIM))&0xFF) * 2 + (Read16(Read16(cc_CONDLIM))&0xFF) * 3); // RULELIM C@ 2* CONDLIM C@ 3 * +
   ALLOT(); // ALLOT
   CODE(); // (;CODE) inlined assembler code
 // 0xb869: call   1649
@@ -348,9 +332,7 @@ void EXPERT() // EXPERT
   _gt_V(); // >V
   Push(Read16(cc_RULEARR)); // RULEARR
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc_RULECNT)); // RULECNT
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
+  Push((Read16(Read16(cc_RULECNT))&0xFF) * 2); // RULECNT C@ 2*
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
@@ -459,8 +441,7 @@ void CONDITION() // CONDITION
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() != 0)
   {
-    Push(Read16(cc_CONDLIM)); // CONDLIM
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(Read16(cc_CONDLIM))&0xFF); // CONDLIM C@
     Push(Read16(pp_COND_dash_CNT)); // COND-CNT @
     _gt_(); // >
     if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -498,10 +479,8 @@ void CONDITION() // CONDITION
 
 void RULE_c_() // RULE:
 {
-  Push(Read16(cc_RULELIM)); // RULELIM
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc_RULECNT)); // RULECNT
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_RULELIM))&0xFF); // RULELIM C@
+  Push(Read16(Read16(cc_RULECNT))&0xFF); // RULECNT C@
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
   ABORT("Rule overflow", 13);// (ABORT")
@@ -543,11 +522,7 @@ void RULE_c_() // RULE:
   OVER(); // OVER
   Push(Pop()+1); // 1+
   Store_3(); // !_3
-  Push(Read16(cc_RULECNT)); // RULECNT
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_RULEARR)); // RULEARR
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_RULECNT))&0xFF) * 2 + Read16(cc_RULEARR)); // RULECNT C@ 2* RULEARR +
   Store_3(); // !_3
   Push(1);
   Push(Read16(cc_RULECNT)); // RULECNT

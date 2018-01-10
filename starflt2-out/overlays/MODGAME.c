@@ -2704,11 +2704,9 @@ void UNK_0xef1e() // UNK_0xef1e
 {
   Push(0x00ba);
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
-  Push(user_ROW); // ROW
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(user_ROW)&0xFF); // ROW C@
   SWAP(); // SWAP
-  Push(user_COL); // COL
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(user_COL)&0xFF); // COL C@
   Push(Pop() + Pop()); // +
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(0x00ba);

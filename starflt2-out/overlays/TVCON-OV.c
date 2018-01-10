@@ -177,10 +177,8 @@ void UNK_0xeda6() // UNK_0xeda6
 
 void UNK_0xedae() // UNK_0xedae
 {
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
+  Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
 }
 
 
@@ -724,10 +722,9 @@ void UNK_0xf1c4() // UNK_0xf1c4
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xedd1.offset); // IFIELD
+  Push(0x65e1+UNK_0xedd1.offset); // UNK_0xedd1<IFIELD>
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x65e1+UNK_0xedd6.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xedd6.offset)&0xFF); // UNK_0xedd6<IFIELD> C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(0x00c7);
@@ -847,15 +844,13 @@ void UNK_0xf2ce() // UNK_0xf2ce
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xedba(); // UNK_0xedba
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(regsp)); // DUP
   U_star_(); // U*
   ROT(); // ROT
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
   _dash_(); // -
   ABS(); // ABS
   Push(Read16(regsp)); // DUP
@@ -932,8 +927,7 @@ void DrawENERGY() // .ENERGY
   SetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
-  Push(0x65e1+INST_dash_QT.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
   ICLOSE(); // ICLOSE
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   _0_gt_(); // 0>
@@ -1002,8 +996,7 @@ void DrawCARGO() // .CARGO
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x65e1+UNK_0xedc4.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xedc4.offset)); // UNK_0xedc4<IFIELD> @
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)
   {

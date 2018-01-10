@@ -265,7 +265,7 @@ void UNK_0xe59e() // UNK_0xe59e
 void UNK_0xe5e2() // UNK_0xe5e2
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+PHRASE_do_.offset); // IFIELD
+  Push(0x65e1+PHRASE_do_.offset); // PHRASE$<IFIELD>
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -473,8 +473,7 @@ void UNK_0xe935() // UNK_0xe935
   _099(); // 099
   Push(pp__ro_AORIGI); // (AORIGI
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x65e1+UNK_0xe62a.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xe62a.offset)&0xFF); // UNK_0xe62a<IFIELD> C@
   I_gt_C(); // I>C
   IsCGA(); // ?CGA
   if (Pop() != 0)
@@ -572,7 +571,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
     Push(pp__ro_ENCOUN); // (ENCOUN
     Get_gt_C_plus_S(); // @>C+S
     Push(0);
-    Push(0x65e1+UNK_0xe639.offset); // IFIELD
+    Push(0x65e1+UNK_0xe639.offset); // UNK_0xe639<IFIELD>
     C_ex__2(); // C!_2
     IOPEN(); // IOPEN
     Push(0x0019);
@@ -609,10 +608,7 @@ void UNK_0xec70() // UNK_0xec70
   do
   {
     INEXT(); // INEXT
-    Push(0x65e1+UNK_0xe634.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(8);
-    Push(Pop() & Pop()); // AND
+    Push((Read16(0x65e1+UNK_0xe634.offset)&0xFF) & 8); // UNK_0xe634<IFIELD> C@ 8 AND
   } while(Pop() == 0);
   Push(1);
 }
@@ -627,10 +623,7 @@ void UNK_0xec84() // UNK_0xec84
   do
   {
     IPREV(); // IPREV
-    Push(0x65e1+UNK_0xe634.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(8);
-    Push(Pop() & Pop()); // AND
+    Push((Read16(0x65e1+UNK_0xe634.offset)&0xFF) & 8); // UNK_0xe634<IFIELD> C@ 8 AND
   } while(Pop() == 0);
   Push(1);
 }
@@ -668,9 +661,7 @@ void UNK_0xee17() // UNK_0xee17
   Push(Read16(cc_TRUE)); // TRUE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+INST_dash_SI.offset); // IFIELD
-  Push(0x0011);
-  Push(Pop() + Pop()); // +
+  Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
   Push(6);
   Push(0);
 
@@ -685,8 +676,7 @@ void UNK_0xee17() // UNK_0xee17
     Get_gt_C_plus_S(); // @>C+S
     Push(6);
     _eq_SPECIE(); // =SPECIE
-    Push(0x65e1+UNK_0xea9c.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x65e1+UNK_0xea9c.offset)&0xFF); // UNK_0xea9c<IFIELD> C@
     _gt_FLAG(); // >FLAG
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
@@ -716,9 +706,7 @@ void UNK_0xf190() // UNK_0xf190
   Push2Words("NULL");
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+INST_dash_SI.offset); // IFIELD
-  Push(0x0011);
-  Push(Pop() + Pop()); // +
+  Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
   Push(0x0012);
   Push(0);
 

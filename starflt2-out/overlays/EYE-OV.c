@@ -738,7 +738,7 @@ void UNK_0xef25() // UNK_0xef25
   UNK_0xef15(); // UNK_0xef15
   UNK_0xebdf(); // UNK_0xebdf
   UNK_0xef0d(); // UNK_0xef0d
-  Push(0x65e1+UNK_0xebc6.offset); // IFIELD
+  Push(0x65e1+UNK_0xebc6.offset); // UNK_0xebc6<IFIELD>
   _plus__ex__2(); // +!_2
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
@@ -752,13 +752,12 @@ void UNK_0xef25() // UNK_0xef25
   Push(6);
   IFIND(); // IFIND
   Pop(); // DROP
-  Push(0x65e1+INST_dash_QT.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
   UNK_0xef0d(); // UNK_0xef0d
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  Push(0x65e1+INST_dash_QT.offset); // IFIELD
+  Push(0x65e1+INST_dash_QT.offset); // INST-QT<IFIELD>
   Store_2(); // !_2
   Push(4);
   _star_CLOSE(); // *CLOSE
@@ -795,11 +794,11 @@ void UNK_0xefd4() // UNK_0xefd4
   SET_STR_AS_PARAM("TRAVELLED BACK IN TIME.");
   DrawTTY(); // .TTY
   UNK_0xebdf(); // UNK_0xebdf
-  Push(0x65e1+UNK_0xebcb.offset); // IFIELD
+  Push(0x65e1+UNK_0xebcb.offset); // UNK_0xebcb<IFIELD>
   UNK_0xebd5(); // UNK_0xebd5
   Push(0x01f4);
   Push(Pop() * Pop()); // *
-  Push(0x65e1+UNK_0xebd0.offset); // IFIELD
+  Push(0x65e1+UNK_0xebd0.offset); // UNK_0xebd0<IFIELD>
   Store_2(); // !_2
   ICLOSE(); // ICLOSE
 }
@@ -1248,13 +1247,11 @@ void UNK_0xf45f() // UNK_0xf45f
 {
   Push2Words("*EYE");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
   Push(5);
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   Push(5);
   UNK_0xf431(); // UNK_0xf431
   Push(Pop() + Pop()); // +
@@ -1265,9 +1262,9 @@ void UNK_0xf45f() // UNK_0xf45f
   Store_2(); // !_2
   UNK_0xebdf(); // UNK_0xebdf
   _2DUP(); // 2DUP
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
+  Push(0x65e1+INST_dash_Y.offset); // INST-Y<IFIELD>
   Store_2(); // !_2
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
+  Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   Store_2(); // !_2
   CI(); // CI
   IsICON_eq_I(); // ?ICON=I

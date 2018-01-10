@@ -264,10 +264,9 @@ void UNK_0xf2e1() // UNK_0xf2e1
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf2c8.offset); // IFIELD
+  Push(0x65e1+UNK_0xf2c8.offset); // UNK_0xf2c8<IFIELD>
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x65e1+UNK_0xf2c3.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xf2c3.offset)&0xFF); // UNK_0xf2c3<IFIELD> C@
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -313,7 +312,7 @@ void UNK_0xf318() // UNK_0xf318
 {
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf301.offset); // IFIELD
+  Push(0x65e1+UNK_0xf301.offset); // UNK_0xf301<IFIELD>
   Push(0);
   Push(6);
   RRND(); // RRND
@@ -374,11 +373,10 @@ void UNK_0xf374() // UNK_0xf374
   _gt_TVCT(); // >TVCT
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Push(0x65e1+UNK_0xf30b.offset); // IFIELD
+  Push(0x65e1+UNK_0xf30b.offset); // UNK_0xf30b<IFIELD>
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
-  Push(0x65e1+UNK_0xf306.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xf306.offset)&0xFF); // UNK_0xf306<IFIELD> C@
   if (Pop() != 0)
   {
     PRINT("INJURED", 7); // (.")
@@ -415,15 +413,14 @@ void INJURE_dash_PL() // INJURE-PL
   Push(1);
   MAX(); // MAX
   Push(Pop() * Pop()); // *
-  Push(0x65e1+UNK_0xf306.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xf306.offset)&0xFF); // UNK_0xf306<IFIELD> C@
   SWAP(); // SWAP
   _dash_(); // -
   Push(0);
   MAX(); // MAX
   Push(0x0064);
   MIN(); // MIN
-  Push(0x65e1+UNK_0xf306.offset); // IFIELD
+  Push(0x65e1+UNK_0xf306.offset); // UNK_0xf306<IFIELD>
   C_ex__2(); // C!_2
   UNK_0xf374(); // UNK_0xf374
   ICLOSE(); // ICLOSE

@@ -93,10 +93,8 @@ void UNK_0xf2c6() // UNK_0xf2c6
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
+  Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   ICLOSE(); // ICLOSE
 }
 
@@ -115,10 +113,8 @@ void UNK_0xf2d8() // UNK_0xf2d8
   IFIND(); // IFIND
   if (Pop() != 0)
   {
-    Push(0x65e1+INST_dash_X.offset); // IFIELD
-    Push(Read16(Pop())); // @
-    Push(0x65e1+INST_dash_Y.offset); // IFIELD
-    Push(Read16(Pop())); // @
+    Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
+    Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   } else
   {
     Push(Read16(pp_XABS)); // XABS @

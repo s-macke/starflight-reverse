@@ -1296,8 +1296,7 @@ void UNK_0xbb03() // UNK_0xbb03
 
 void UNK_0xbb29() // UNK_0xbb29
 {
-  Push(pp_UNK_0xbaf3); // UNK_0xbaf3
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(pp_UNK_0xbaf3)&0xFF); // UNK_0xbaf3 C@
   Push(Pop() & Pop()); // AND
   _0_gt_(); // 0>
   Push(Read16(pp_BTADDR)); // BTADDR @

@@ -828,8 +828,7 @@ void UNK_0xe8d4() // UNK_0xe8d4
 void UNK_0xe902() // UNK_0xe902
 {
   Push(Read16(pp_STARDATE)); // STARDATE @
-  Push(0x63ef+UNK_0xe452.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
 }
@@ -844,8 +843,7 @@ void UNK_0xe912() // UNK_0xe912
   UNK_0xe6d3(); // UNK_0xe6d3
   UNK_0xe8b6(); // UNK_0xe8b6
   UNK_0xe866(); // UNK_0xe866
-  Push(0x63ef+UNK_0xe452.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
   PAD(); // PAD
   DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
@@ -855,16 +853,14 @@ void UNK_0xe912() // UNK_0xe912
   IOPEN(); // IOPEN
   do
   {
-    Push(0x63ef+UNK_0xe457.offset); // IFIELD
-    Push(Pop()+1); // 1+
+    Push((0x63ef+UNK_0xe457.offset) + 1); // UNK_0xe457<IFIELD> 1+
     COUNT(); // COUNT
     HUFF_gt_(); // HUFF>
     Push(pp_LSCAN); // LSCAN
     COUNT(); // COUNT
     Push(1);
     UNK_0xe8d4(); // UNK_0xe8d4
-    Push(0x63ef+UNK_0xe457.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x63ef+UNK_0xe457.offset)&0xFF); // UNK_0xe457<IFIELD> C@
     IsLAST(); // ?LAST
     if (Pop() == 0) Push(1); else Push(0); // 0=
     Push(0x012c);
@@ -900,8 +896,7 @@ void UNK_0xe912() // UNK_0xe912
   } while(Pop() == 0);
   ICLOSE(); // ICLOSE
   Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
-  Push(0x63ef+UNK_0xe452.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
   MAX(); // MAX
   Push(pp_UNK_0xe8fe); // UNK_0xe8fe
   Store_3(); // !_3
@@ -997,8 +992,7 @@ void UNK_0xea28() // UNK_0xea28
   IOPEN(); // IOPEN
 
   label2:
-  Push(0x63ef+UNK_0xe452.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
   Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -1074,14 +1068,13 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x00ac);
   POS_dot_(); // POS.
   PRINT("RECOMMENDATION: ", 16); // (.")
-  Push(0x63ef+UNK_0xe466.offset); // IFIELD
+  Push(0x63ef+UNK_0xe466.offset); // UNK_0xe466<IFIELD>
   Is(); // ?
   Push(4);
   Push(0x00a4);
   POS_dot_(); // POS.
   PRINT("DATE: ", 6); // (.")
-  Push(0x63ef+UNK_0xe461.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xe461.offset)); // UNK_0xe461<IFIELD> @
   PAD(); // PAD
   DATE_do__gt_ADR(); // DATE$>ADR
   PAD(); // PAD
@@ -1091,15 +1084,13 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x009c);
   POS_dot_(); // POS.
   PRINT("SYSTEM: ", 8); // (.")
-  Push(0x63ef+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
   Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   Push(0);
   DrawR(); // .R
   PRINT(",", 1); // (.")
-  Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
   _slash_(); // /
   Draw(); // .
@@ -1107,14 +1098,13 @@ void UNK_0xeb09() // UNK_0xeb09
   Push(0x0094);
   POS_dot_(); // POS.
   PRINT("ORBIT: ", 7); // (.")
-  Push(0x63ef+UNK_0xe46b.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xe46b.offset)&0xFF); // UNK_0xe46b<IFIELD> C@
   Draw(); // .
   Push(4);
   Push(0x008c);
   POS_dot_(); // POS.
   PRINT("NAME: ", 6); // (.")
-  Push(0x63ef+UNK_0xe475.offset); // IFIELD
+  Push(0x63ef+UNK_0xe475.offset); // UNK_0xe475<IFIELD>
   Push(0x000f);
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(4);
@@ -1132,8 +1122,7 @@ void UNK_0xebc1() // UNK_0xebc1
 {
   unsigned short int a;
   UNK_0xe78b(); // UNK_0xe78b
-  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   _0_gt_(); // 0>
   a = Pop(); // >R
   Push(0x0022);
@@ -1312,12 +1301,10 @@ void UNK_0xed0c() // UNK_0xed0c
       Push(i); // I
       Push(Pop()+1); // 1+
       BIT(); // BIT
-      Push(0x63ef+UNK_0xe470.offset); // IFIELD
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(0x63ef+UNK_0xe470.offset)&0xFF); // UNK_0xe470<IFIELD> C@
       _st_(); // <
       if (Pop() == 0) Push(1); else Push(0); // NOT
-      Push(0x63ef+UNK_0xe470.offset); // IFIELD
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(0x63ef+UNK_0xe470.offset)&0xFF); // UNK_0xe470<IFIELD> C@
       _plus_BIT(); // +BIT
       Push(1);
       _gt_(); // >
@@ -1337,8 +1324,7 @@ void UNK_0xed0c() // UNK_0xed0c
   UNK_0xec30(); // UNK_0xec30
   SET_STR_AS_PARAM("YOU HAVE BEEN FINED");
   UNK_0xec30(); // UNK_0xec30
-  Push(0x63ef+UNK_0xe45c.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xe45c.offset)&0xFF); // UNK_0xe45c<IFIELD> C@
   Push(Read16(regsp)); // DUP
   Push(0x03e8);
   M_star_(); // M*
@@ -1387,8 +1373,7 @@ void UNK_0xee8c() // UNK_0xee8c
 {
   SET_STR_AS_PARAM("YOU HAVE EARNED A BONUS OF");
   UNK_0xec30(); // UNK_0xec30
-  Push(0x63ef+UNK_0xe45c.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xe45c.offset)&0xFF); // UNK_0xe45c<IFIELD> C@
   Push(0x03e8);
   U_star_(); // U*
   _st__n_(); // <#
@@ -1409,8 +1394,7 @@ void UNK_0xeee3() // UNK_0xeee3
   Push(0);
   Push(0x000b);
   UNK_0xe81c(); // UNK_0xe81c
-  Push(0x63ef+UNK_0xe45c.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xe45c.offset)&0xFF); // UNK_0xe45c<IFIELD> C@
   Push(0x0028);
   _gt_(); // >
   Push(Read16(regsp)); // DUP
@@ -1446,8 +1430,7 @@ void UNK_0xeee3() // UNK_0xeee3
 
 void UNK_0xef37() // UNK_0xef37
 {
-  Push(0x63ef+UNK_0xe470.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xe470.offset)&0xFF); // UNK_0xe470<IFIELD> C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {

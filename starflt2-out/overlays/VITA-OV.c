@@ -268,7 +268,7 @@ void UNK_0xf3aa() // UNK_0xf3aa
 void UNK_0xf418() // UNK_0xf418
 {
   Push(0);
-  Push(0x65e1+UNK_0xf272.offset); // IFIELD
+  Push(0x65e1+UNK_0xf272.offset); // UNK_0xf272<IFIELD>
   Store_2(); // !_2
   LoadData(UNK_0xf222); // from 'REGIONS'
   Push(4);

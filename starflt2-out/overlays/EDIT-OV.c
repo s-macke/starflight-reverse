@@ -969,8 +969,7 @@ void SET_dash_USER() // SET-USER
   CMOVE_2(); // CMOVE_2
   Push(0x002a);
   DOSCALL(); // DOSCALL
-  Push(Read16(cc_DX)); // DX
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_DX))&0xFF); // DX C@
   Push(Read16(regsp)); // DUP
   Push(0x000a);
   _st_(); // <
@@ -995,8 +994,7 @@ void SET_dash_USER() // SET-USER
   Push(5);
   UNK_0xef84(); // UNK_0xef84
   C_ex__2(); // C!_2
-  Push(Read16(cc_DX) + 1); // DX 1+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_DX) + 1)&0xFF); // DX 1+ C@
   Func5("#>MON");
   Push(6);
   UNK_0xef84(); // UNK_0xef84

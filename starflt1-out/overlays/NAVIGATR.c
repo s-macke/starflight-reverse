@@ -191,13 +191,8 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   SET_STR_AS_PARAM("RAISE SHIELD");
   LoadData(UNK_0xf21a); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x00f7);
-  Push(Pop() & Pop()); // AND
-  Push(0x0010);
-  Push(Pop() | Pop()); // OR
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
+  Push((Read16(0x63ef+UNK_0xf215.offset)&0xFF) & 0x00f7 | 0x0010); // UNK_0xf215<IFIELD> C@ 0x00f7 AND 0x0010 OR
+  Push(0x63ef+UNK_0xf215.offset); // UNK_0xf215<IFIELD>
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
@@ -229,11 +224,8 @@ void UNK_0xf359() // UNK_0xf359
   SET_STR_AS_PARAM("DROP SHIELD ");
   LoadData(UNK_0xf21a); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x0018);
-  Push(Pop() | Pop()); // OR
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
+  Push(Read16(0x63ef+UNK_0xf215.offset)&0xFF | 0x0018); // UNK_0xf215<IFIELD> C@ 0x0018 OR
+  Push(0x63ef+UNK_0xf215.offset); // UNK_0xf215<IFIELD>
   C_ex_(); // C!
   UNK_0xf250(); // UNK_0xf250
   SET_STR_AS_PARAM("SHIELDS ARE NOW UP");
@@ -257,13 +249,8 @@ void _gt_DISARM() // >DISARM
   SET_STR_AS_PARAM("ARM WEAPON");
   LoadData(UNK_0xf222); // from 'BUTTONS'
   UNK_0xf246(); // UNK_0xf246
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x00fc);
-  Push(Pop() & Pop()); // AND
-  Push(0x0020);
-  Push(Pop() | Pop()); // OR
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
+  Push((Read16(0x63ef+UNK_0xf215.offset)&0xFF) & 0x00fc | 0x0020); // UNK_0xf215<IFIELD> C@ 0x00fc AND 0x0020 OR
+  Push(0x63ef+UNK_0xf215.offset); // UNK_0xf215<IFIELD>
   C_ex_(); // C!
   UNK_0xf272(); // UNK_0xf272
   SET_STR_AS_PARAM("WEAPONS ARE DISARMED");
@@ -277,12 +264,8 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3fb() // UNK_0xf3fb
 {
-  Push(0x63ef+UNK_0xf210.offset); // IFIELD
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x63ef+UNK_0xf20b.offset); // IFIELD
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((0x63ef+UNK_0xf210.offset) + 1)&0xFF); // UNK_0xf210<IFIELD> 1+ C@
+  Push(Read16((0x63ef+UNK_0xf20b.offset) + 1)&0xFF); // UNK_0xf20b<IFIELD> 1+ C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -321,11 +304,8 @@ void UNK_0xf3fb() // UNK_0xf3fb
     Push(Pop() + Pop()); // +
     if (Pop() != 0)
     {
-      Push(0x63ef+UNK_0xf215.offset); // IFIELD
-      Push(Read16(Pop())); // @
-      Push(0x0023);
-      Push(Pop() | Pop()); // OR
-      Push(0x63ef+UNK_0xf215.offset); // IFIELD
+      Push(Read16(0x63ef+UNK_0xf215.offset) | 0x0023); // UNK_0xf215<IFIELD> @ 0x0023 OR
+      Push(0x63ef+UNK_0xf215.offset); // UNK_0xf215<IFIELD>
       Store_3(); // !_3
       UNK_0xf234(); // UNK_0xf234
       SET_STR_AS_PARAM("DISARM    ");
@@ -350,10 +330,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(3);
-  Push(Pop() & Pop()); // AND
+  Push(Read16(0x63ef+UNK_0xf215.offset) & 3); // UNK_0xf215<IFIELD> @ 3 AND
   if (Pop() != 0)
   {
     _gt_DISARM(); // >DISARM
@@ -376,10 +353,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xf215.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(8);
-  Push(Pop() & Pop()); // AND
+  Push(Read16(0x63ef+UNK_0xf215.offset) & 8); // UNK_0xf215<IFIELD> @ 8 AND
   if (Pop() != 0)
   {
     _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD

@@ -207,10 +207,7 @@ LoadDataType UNK_0xf25a = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 void UNK_0xf293() // UNK_0xf293
 {
-  Push(0x63ef+UNK_0xf236.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x001b);
-  Push(Pop() + Pop()); // +
+  Push((Read16(0x63ef+UNK_0xf236.offset)&0xFF) + 0x001b); // UNK_0xf236<IFIELD> C@ 0x001b +
 }
 
 
@@ -224,10 +221,7 @@ void UNK_0xf2a1() // UNK_0xf2a1
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
   {
-    Push(0x63ef+UNK_0xf243.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x0023);
-    Push(Pop() + Pop()); // +
+    Push((Read16(0x63ef+UNK_0xf243.offset)&0xFF) + 0x0023); // UNK_0xf243<IFIELD> C@ 0x0023 +
     return;
   }
   Push(0x002b);
@@ -415,8 +409,7 @@ void UNK_0xf387() // UNK_0xf387
 
 void UNK_0xf38f() // UNK_0xf38f
 {
-  Push(0x63ef+UNK_0xf250.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xf250.offset)&0xFF); // UNK_0xf250<IFIELD> C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -550,8 +543,7 @@ void UNK_0xf435() // UNK_0xf435
 
 void UNK_0xf43d() // UNK_0xf43d
 {
-  Push(0x63ef+UNK_0xf255.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xf255.offset)&0xFF); // UNK_0xf255<IFIELD> C@
   if (Pop() != 0)
   {
     Push(Read16(cc_DEFAULT)); // DEFAULT
@@ -707,10 +699,8 @@ void UNK_0xf4e8() // UNK_0xf4e8
 
 void ICON_dash_PARM() // ICON-PARM
 {
-  Push(0x63ef+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(0x63ef+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
+  Push(Read16(0x63ef+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   UNK_0xf3f1(); // UNK_0xf3f1
   UNK_0xf4e8(); // UNK_0xf4e8
   CI(); // CI

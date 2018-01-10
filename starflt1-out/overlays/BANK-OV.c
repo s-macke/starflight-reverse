@@ -212,7 +212,7 @@ void StoreTFLAG() // !TFLAG
 {
   SET_dash_BANK(); // SET-BANK
   Push(1);
-  Push(0x63ef+TFLAG.offset); // IFIELD
+  Push(0x63ef+TFLAG.offset); // TFLAG<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -226,7 +226,7 @@ void StoreTFLAG() // !TFLAG
 void GetDBALANCE() // D@BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63ef+BALANCE.offset); // IFIELD
+  Push(0x63ef+BALANCE.offset); // BALANCE<IFIELD>
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
 }
@@ -240,7 +240,7 @@ void GetDBALANCE() // D@BALANCE
 void StoreDBALANCE() // D!BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63ef+BALANCE.offset); // IFIELD
+  Push(0x63ef+BALANCE.offset); // BALANCE<IFIELD>
   StoreD(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -267,9 +267,9 @@ void IsBALANCE() // ?BALANCE
 void INIT_dash_BALANCE() // INIT-BALANCE
 {
   SET_dash_BANK(); // SET-BANK
-  Push(0x63ef+MASTERBALANCE.offset); // IFIELD
+  Push(0x63ef+MASTERBALANCE.offset); // MASTERBALANCE<IFIELD>
   _2_at_(); // 2@
-  Push(0x63ef+BALANCE.offset); // IFIELD
+  Push(0x63ef+BALANCE.offset); // BALANCE<IFIELD>
   StoreD(); // D!
   ICLOSE(); // ICLOSE
 }
@@ -284,8 +284,7 @@ void TRANSACT() // TRANSACT
 {
   unsigned short int i, imax;
   SET_dash_BANK(); // SET-BANK
-  Push(0x63ef+TFLAG.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+TFLAG.offset)&0xFF); // TFLAG<IFIELD> C@
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
@@ -322,23 +321,23 @@ void TRANSACT() // TRANSACT
     COVER(); // COVER
     SET_dash_CURRENT(); // SET-CURRENT
     Push(Read16(pp_STARDATE)); // STARDATE @
-    Push(0x63ef+MASTERBALANCE.offset); // IFIELD
+    Push(0x63ef+MASTERBALANCE.offset); // MASTERBALANCE<IFIELD>
     _2_at_(); // 2@
-    Push(0x63ef+BALANCE.offset); // IFIELD
+    Push(0x63ef+BALANCE.offset); // BALANCE<IFIELD>
     _2_at_(); // 2@
     D_dash_(); // D-
     ICLOSE(); // ICLOSE
-    Push(0x63ef+T_dash_AMT.offset); // IFIELD
+    Push(0x63ef+T_dash_AMT.offset); // T-AMT<IFIELD>
     StoreD(); // D!
-    Push(0x63ef+T_dash_DATE.offset); // IFIELD
+    Push(0x63ef+T_dash_DATE.offset); // T-DATE<IFIELD>
     Store_3(); // !_3
     ICLOSE(); // ICLOSE
-    Push(0x63ef+BALANCE.offset); // IFIELD
+    Push(0x63ef+BALANCE.offset); // BALANCE<IFIELD>
     _2_at_(); // 2@
-    Push(0x63ef+MASTERBALANCE.offset); // IFIELD
+    Push(0x63ef+MASTERBALANCE.offset); // MASTERBALANCE<IFIELD>
     StoreD(); // D!
     Push(0);
-    Push(0x63ef+TFLAG.offset); // IFIELD
+    Push(0x63ef+TFLAG.offset); // TFLAG<IFIELD>
     C_ex_(); // C!
   } else
   {
@@ -419,8 +418,7 @@ void DrawDOTS() // .DOTS
 
 void DrawBDATE() // .BDATE
 {
-  Push(0x63ef+T_dash_DATE.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+T_dash_DATE.offset)); // T-DATE<IFIELD> @
   Push(0x012c);
   _slash_MOD(); // /MOD
   Push(0x120c);
@@ -456,7 +454,7 @@ void DrawBDATE() // .BDATE
 void Draw_do_AMT() // .$AMT
 {
   unsigned short int a;
-  Push(0x63ef+T_dash_AMT.offset); // IFIELD
+  Push(0x63ef+T_dash_AMT.offset); // T-AMT<IFIELD>
   _2_at_(); // 2@
   _2DUP(); // 2DUP
   _2DUP(); // 2DUP
@@ -783,7 +781,7 @@ void DrawBALANCE() // .BALANCE
   Push(0x001d);
   POS_dot_(); // POS.
   _gt_1FONT(); // >1FONT
-  Push(0x63ef+MASTERBALANCE.offset); // IFIELD
+  Push(0x63ef+MASTERBALANCE.offset); // MASTERBALANCE<IFIELD>
   _2_at_(); // 2@
   Push(7);
   D_dot_R(); // D.R

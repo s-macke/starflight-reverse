@@ -407,12 +407,10 @@ void SETFCB() // SETFCB
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
   Push(Pop()+1); // 1+
   _gt_FCB(); // >FCB
-  Push(Read16(cc_AX)); // AX
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_AX))&0xFF); // AX C@
   Push(0x00ff);
   Push((Pop()==Pop())?1:0); // =
-  Push(Read16(Read16(cc_DI)) + 1); // DI @ 1+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(Read16(cc_DI)) + 1)&0xFF); // DI @ 1+ C@
   Push(Read16(cc_BL)); // BL
   Push((Pop()==Pop())?1:0); // =
   Push(Pop() | Pop()); // OR
@@ -443,8 +441,7 @@ void FCBCALL() // FCBCALL
   Push(Read16(cc_DS)); // DS
   Store_1(); // !_1
   DOSCALL(); // DOSCALL
-  Push(Read16(cc_AX)); // AX
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_AX))&0xFF); // AX C@
 }
 
 
@@ -751,9 +748,7 @@ void UNK_0x44f2() // UNK_0x44f2
 {
   Push(0x0019);
   DOSCALL(); // DOSCALL
-  Push(Read16(cc_AX)); // AX
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()+1); // 1+
+  Push((Read16(Read16(cc_AX))&0xFF) + 1); // AX C@ 1+
 }
 
 
@@ -832,8 +827,7 @@ void Is1DRV() // ?1DRV
   Push((Pop()==Pop())?1:0); // =
   Push(0x0019);
   DOSCALL(); // DOSCALL
-  Push(Read16(cc_AX)); // AX
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_AX))&0xFF); // AX C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop() & Pop()); // AND
 }

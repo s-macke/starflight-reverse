@@ -350,9 +350,8 @@ void UNK_0xedb2() // UNK_0xedb2
   _st__ex__gt_(); // <!>
   LoadData(UNK_0xedaa); // from 'REGIONS'
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
+  Push(Read16(0x63ef+PHR_dash_CNT.offset)&0xFF); // PHR-CNT<IFIELD> C@
+  Push(0x63ef+PHRASE_dash_MEM.offset); // PHRASE-MEM<IFIELD>
   OVER(); // OVER
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x000a);
@@ -467,9 +466,8 @@ void UNK_0xee58() // UNK_0xee58
 void UNK_0xee86() // UNK_0xee86
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
-  Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(0x63ef+PHRASE_dash_MEM.offset); // PHRASE-MEM<IFIELD>
+  Push(Read16(0x63ef+PHR_dash_CNT.offset)&0xFF); // PHR-CNT<IFIELD> C@
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   ICLOSE(); // ICLOSE
 }

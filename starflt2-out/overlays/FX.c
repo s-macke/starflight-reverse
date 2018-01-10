@@ -193,8 +193,7 @@ void N_gt_STAT() // N>STAT
 
 void UNK_0xf0bb() // UNK_0xf0bb
 {
-  Push(pp_A_dash_POSTU); // A-POSTU
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(pp_A_dash_POSTU)&0xFF); // A-POSTU C@
   N_gt_STAT(); // N>STAT case
 }
 

@@ -292,9 +292,8 @@ void UNK_0xe121() // UNK_0xe121
   if (Pop() != 0)
   {
     _gt_C_plus_S(); // >C+S
-    Push(0x63ef+PHRASE_dash_MEM.offset); // IFIELD
-    Push(0x63ef+PHR_dash_CNT.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(0x63ef+PHRASE_dash_MEM.offset); // PHRASE-MEM<IFIELD>
+    Push(Read16(0x63ef+PHR_dash_CNT.offset)&0xFF); // PHR-CNT<IFIELD> C@
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     ICLOSE(); // ICLOSE
     PRINT(" not in ", 8); // (.")

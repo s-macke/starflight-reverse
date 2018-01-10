@@ -676,7 +676,7 @@ void UNK_0xf383() // UNK_0xf383
 {
   EINDE(); // EINDE case
   Push(Pop()*2); // 2*
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
+  Push(0x63ef+UNK_0xefd6.offset); // UNK_0xefd6<IFIELD>
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read16(regsp)); // DUP
@@ -697,7 +697,7 @@ void UNK_0xf39f() // UNK_0xf39f
   Push(Read16(regsp)); // DUP
   EINDE(); // EINDE case
   Push(Pop()*2); // 2*
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
+  Push(0x63ef+UNK_0xefd6.offset); // UNK_0xefd6<IFIELD>
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   Push(0x0064);
@@ -735,7 +735,7 @@ void _ro__ask__dot_EQ() // (?.EQ
   Push(a); // I
   EINDE(); // EINDE case
   Push(Pop()*2); // 2*
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
+  Push(0x63ef+UNK_0xefd6.offset); // UNK_0xefd6<IFIELD>
   Push(Pop() + Pop()); // +
   Push(Pop()+1); // 1+
   Push(Read8(Pop())&0xFF); // C@
@@ -809,8 +809,7 @@ void _eq_CARG() // =CARG
   StoreD(); // D!
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xefdb.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xefdb.offset)); // UNK_0xefdb<IFIELD> @
   _plus_BIT(); // +BIT
   Push(Pop()+1); // 1+
   Push(0x01f4);
@@ -851,18 +850,16 @@ void _eq_CARG() // =CARG
           Push(Pop() & Pop()); // AND
           if (Pop() != 0)
           {
-            Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-            Push(Read16(Pop())); // @
+            Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
             Push(0x000a);
             U_star_(); // U*
             Push(pp__10_star_END); // 10*END
             StoreD(); // D!
           }
-          Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-          Push(Read16(Pop())); // @
+          Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
           Push(Pop() + Pop()); // +
           Push2Words("NULL");
-          Push(0x63ef+INST_dash_X.offset); // IFIELD
+          Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
           StoreD(); // D!
           INEXT(); // INEXT
           IsFIRST(); // ?FIRST
@@ -880,7 +877,7 @@ void _eq_CARG() // =CARG
   ICLOSE(); // ICLOSE
   _dash_(); // -
   Push(Read16(regsp)); // DUP
-  Push(0x63ef+UNK_0xefe0.offset); // IFIELD
+  Push(0x63ef+UNK_0xefe0.offset); // UNK_0xefe0<IFIELD>
   Store_3(); // !_3
   Push(0x000a);
   U_star_(); // U*

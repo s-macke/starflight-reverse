@@ -337,51 +337,43 @@ void UNK_0xed65() // UNK_0xed65
 void _ro__dot_MASS_rc_() // (.MASS)
 {
   Push(0x0032);
-  Push(0x65e1+UNK_0xed33.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xed33.offset)); // UNK_0xed33<IFIELD> @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(0x0032);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed2e.offset); // IFIELD
+  Push(0x65e1+UNK_0xed2e.offset); // UNK_0xed2e<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(9);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed47.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xed47.offset)); // UNK_0xed47<IFIELD> @
   _plus_BIT(); // +BIT
   Push(0x000a);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed60.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push((Read16(0x65e1+UNK_0xed60.offset)&0xFF) * 0x000a); // UNK_0xed60<IFIELD> C@ 0x000a *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed5b.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x000a);
-  Push(Pop() * Pop()); // *
+  Push((Read16(0x65e1+UNK_0xed5b.offset)&0xFF) * 0x000a); // UNK_0xed5b<IFIELD> C@ 0x000a *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed42.offset); // IFIELD
+  Push(0x65e1+UNK_0xed42.offset); // UNK_0xed42<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
-  Push(0x65e1+UNK_0xed3d.offset); // IFIELD
+  Push(0x65e1+UNK_0xed3d.offset); // UNK_0xed3d<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed38.offset); // IFIELD
+  Push(0x65e1+UNK_0xed38.offset); // UNK_0xed38<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
   Push(Pop() + Pop()); // +
   Push(5);
   Push(Pop() * Pop()); // *
   Push(Pop() + Pop()); // +
-  Push(0x65e1+UNK_0xed51.offset); // IFIELD
+  Push(0x65e1+UNK_0xed51.offset); // UNK_0xed51<IFIELD>
   Store_2(); // !_2
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
@@ -393,8 +385,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   POS_dot_(); // POS.
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
-  Push(0x65e1+UNK_0xed51.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xed51.offset)); // UNK_0xed51<IFIELD> @
   Push(4);
   DrawR(); // .R
   StoreCRS(); // !CRS
@@ -408,10 +399,10 @@ void _ro__dot_MASS_rc_() // (.MASS)
 
 void _ro__dot_ACC_rc_() // (.ACC)
 {
-  Push(0x65e1+UNK_0xed33.offset); // IFIELD
+  Push(0x65e1+UNK_0xed33.offset); // UNK_0xed33<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   Push(Read16(regsp)); // DUP
-  Push(0x65e1+UNK_0xed4c.offset); // IFIELD
+  Push(0x65e1+UNK_0xed4c.offset); // UNK_0xed4c<IFIELD>
   Store_2(); // !_2
   Push(pp_UNK_0xee59); // UNK_0xee59
   Push(Pop() + Pop()); // +
@@ -428,8 +419,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   POS_dot_(); // POS.
   SWAP(); // SWAP
   POS_dot_PXT(); // POS.PXT
-  Push(0x65e1+UNK_0xed4c.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xed4c.offset)); // UNK_0xed4c<IFIELD> @
   A_gt_TEXT(); // A>TEXT case
   StoreCRS(); // !CRS
 }
@@ -465,8 +455,7 @@ void UNK_0xef3a() // UNK_0xef3a
     IFIND(); // IFIND
     if (Pop() != 0)
     {
-      Push(0x65e1+INST_dash_QT.offset); // IFIELD
-      Push(Read16(Pop())); // @
+      Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
     } else
     {
       Push(0);
@@ -582,7 +571,7 @@ void UNK_0xf034() // UNK_0xf034
 
 void UNK_0xf046() // UNK_0xf046
 {
-  Push(0x65e1+UNK_0xed38.offset); // IFIELD
+  Push(0x65e1+UNK_0xed38.offset); // UNK_0xed38<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
   SetColor(RED);
@@ -705,19 +694,16 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Store_2(); // !_2
   SetColor(GREY1);
   StoreCOLOR(); // !COLOR
-  Push(0x65e1+UNK_0xed47.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xed47.offset)); // UNK_0xed47<IFIELD> @
   _plus_BIT(); // +BIT
   UNK_0xf106(); // UNK_0xf106
   SetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x65e1+UNK_0xed5b.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xed5b.offset)&0xFF); // UNK_0xed5b<IFIELD> C@
   UNK_0xf106(); // UNK_0xf106
   SetColor(RED);
   StoreCOLOR(); // !COLOR
-  Push(0x65e1+UNK_0xed60.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x65e1+UNK_0xed60.offset)&0xFF); // UNK_0xed60<IFIELD> C@
   UNK_0xf106(); // UNK_0xf106
   SetColor(BLACK);
   StoreCOLOR(); // !COLOR
@@ -748,7 +734,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
 
 void UNK_0xf192() // UNK_0xf192
 {
-  Push(0x65e1+UNK_0xed3d.offset); // IFIELD
+  Push(0x65e1+UNK_0xed3d.offset); // UNK_0xed3d<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   _0_gt_(); // 0>
   SetColor(LT_dash_BLUE);
@@ -785,7 +771,7 @@ void UNK_0xf192() // UNK_0xf192
 
 void UNK_0xf1d4() // UNK_0xf1d4
 {
-  Push(0x65e1+UNK_0xed42.offset); // IFIELD
+  Push(0x65e1+UNK_0xed42.offset); // UNK_0xed42<IFIELD>
   UNK_0xed65(); // UNK_0xed65
   if (Pop() != 0)
   {

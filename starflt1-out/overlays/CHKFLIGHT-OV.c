@@ -400,10 +400,8 @@ void UNK_0xf450() // UNK_0xf450
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0);
-  Push(0x63ef+UNK_0xf1bb.offset); // IFIELD
-  Push(0x0012);
-  Push(Pop() + Pop()); // +
-  Push(0x63ef+UNK_0xf1bb.offset); // IFIELD
+  Push((0x63ef+UNK_0xf1bb.offset) + 0x0012); // UNK_0xf1bb<IFIELD> 0x0012 +
+  Push(0x63ef+UNK_0xf1bb.offset); // UNK_0xf1bb<IFIELD>
 
   i = Pop();
   imax = Pop();
@@ -411,10 +409,7 @@ void UNK_0xf450() // UNK_0xf450
   {
     Push(i); // I
     Get_gt_C_plus_S(); // @>C+S
-    Push(0x63ef+UNK_0xf1b6.offset); // IFIELD
-    Push(Read16(Pop())); // @
-    Push(8);
-    Push(Pop() & Pop()); // AND
+    Push(Read16(0x63ef+UNK_0xf1b6.offset) & 8); // UNK_0xf1b6<IFIELD> @ 8 AND
     if (Pop() == 0) Push(1); else Push(0); // NOT
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
@@ -436,12 +431,9 @@ void UNK_0xf480() // UNK_0xf480
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+_pe_NAME.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+_pe_NAME.offset)&0xFF); // %NAME<IFIELD> C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
-  Push(0x63ef+UNK_0xf1c0.offset); // IFIELD
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((0x63ef+UNK_0xf1c0.offset) + 1)&0xFF); // UNK_0xf1c0<IFIELD> 1+ C@
   if (Pop() == 0) Push(1); else Push(0); // 0=
   Push(Pop()*2); // 2*
   Push(Pop() + Pop()); // +
@@ -476,8 +468,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
     IFIND(); // IFIND
     if (Pop() != 0)
     {
-      Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-      Push(Read16(Pop())); // @
+      Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
       Push(Read16(regsp)); // DUP
       Push(0x000a);
       M_star_(); // M*

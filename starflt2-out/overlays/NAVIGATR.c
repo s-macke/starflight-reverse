@@ -195,8 +195,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   Push(Pop() & Pop()); // AND
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf196.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+UNK_0xf196.offset)); // UNK_0xf196<IFIELD> @
   if (Pop() == 0) Push(1); else Push(0); // 0=
   ICLOSE(); // ICLOSE
   if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -212,13 +211,8 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   SET_STR_AS_PARAM("RAISE SHIELD");
   LoadData(UNK_0xf1aa); // from 'BUTTONS'
   UNK_0xf1d6(); // UNK_0xf1d6
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x00f7);
-  Push(Pop() & Pop()); // AND
-  Push(0x0010);
-  Push(Pop() | Pop()); // OR
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
+  Push((Read16(0x65e1+UNK_0xf1a5.offset)&0xFF) & 0x00f7 | 0x0010); // UNK_0xf1a5<IFIELD> C@ 0x00f7 AND 0x0010 OR
+  Push(0x65e1+UNK_0xf1a5.offset); // UNK_0xf1a5<IFIELD>
   C_ex__2(); // C!_2
   UNK_0xf1e0(); // UNK_0xf1e0
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
@@ -272,11 +266,8 @@ void UNK_0xf311() // UNK_0xf311
     SET_STR_AS_PARAM("DROP SHIELD ");
     LoadData(UNK_0xf1aa); // from 'BUTTONS'
     UNK_0xf1d6(); // UNK_0xf1d6
-    Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(0x0018);
-    Push(Pop() | Pop()); // OR
-    Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
+    Push(Read16(0x65e1+UNK_0xf1a5.offset)&0xFF | 0x0018); // UNK_0xf1a5<IFIELD> C@ 0x0018 OR
+    Push(0x65e1+UNK_0xf1a5.offset); // UNK_0xf1a5<IFIELD>
     C_ex__2(); // C!_2
     UNK_0xf1e0(); // UNK_0xf1e0
     SET_STR_AS_PARAM("SHIELDS ARE NOW UP");
@@ -309,13 +300,8 @@ void _gt_DISARM() // >DISARM
   SET_STR_AS_PARAM("ARM WEAPON");
   LoadData(UNK_0xf1b2); // from 'BUTTONS'
   UNK_0xf1d6(); // UNK_0xf1d6
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x00fc);
-  Push(Pop() & Pop()); // AND
-  Push(0x0020);
-  Push(Pop() | Pop()); // OR
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
+  Push((Read16(0x65e1+UNK_0xf1a5.offset)&0xFF) & 0x00fc | 0x0020); // UNK_0xf1a5<IFIELD> C@ 0x00fc AND 0x0020 OR
+  Push(0x65e1+UNK_0xf1a5.offset); // UNK_0xf1a5<IFIELD>
   C_ex__2(); // C!_2
   UNK_0xf202(); // UNK_0xf202
   SET_STR_AS_PARAM("WEAPONS ARE DISARMED");
@@ -329,12 +315,8 @@ void _gt_DISARM() // >DISARM
 
 void UNK_0xf3ef() // UNK_0xf3ef
 {
-  Push(0x65e1+UNK_0xf1a0.offset); // IFIELD
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x65e1+UNK_0xf19b.offset); // IFIELD
-  Push(Pop()+1); // 1+
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16((0x65e1+UNK_0xf1a0.offset) + 1)&0xFF); // UNK_0xf1a0<IFIELD> 1+ C@
+  Push(Read16((0x65e1+UNK_0xf19b.offset) + 1)&0xFF); // UNK_0xf19b<IFIELD> 1+ C@
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -381,11 +363,8 @@ void UNK_0xf3ef() // UNK_0xf3ef
     Push(Pop() + Pop()); // +
     if (Pop() != 0)
     {
-      Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-      Push(Read16(Pop())); // @
-      Push(0x0023);
-      Push(Pop() | Pop()); // OR
-      Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
+      Push(Read16(0x65e1+UNK_0xf1a5.offset) | 0x0023); // UNK_0xf1a5<IFIELD> @ 0x0023 OR
+      Push(0x65e1+UNK_0xf1a5.offset); // UNK_0xf1a5<IFIELD>
       Store_2(); // !_2
       UNK_0xf1c4(); // UNK_0xf1c4
       SET_STR_AS_PARAM("DISARM    ");
@@ -410,10 +389,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(3);
-  Push(Pop() & Pop()); // AND
+  Push(Read16(0x65e1+UNK_0xf1a5.offset) & 3); // UNK_0xf1a5<IFIELD> @ 3 AND
   if (Pop() != 0)
   {
     _gt_DISARM(); // >DISARM
@@ -436,10 +412,7 @@ void _ro__slash__ro_UD_rc_SHIELD_rc_() // (/(UD)SHIELD)
   CTINIT(); // CTINIT
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf1a5.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(8);
-  Push(Pop() & Pop()); // AND
+  Push(Read16(0x65e1+UNK_0xf1a5.offset) & 8); // UNK_0xf1a5<IFIELD> @ 8 AND
   if (Pop() != 0)
   {
     _gt_DOWN_dash_SHIELD(); // >DOWN-SHIELD

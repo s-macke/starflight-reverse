@@ -887,14 +887,14 @@ void UNK_0xf389() // UNK_0xf389
       Push(0x001b);
       Push(0x001d);
       WITHIN(); // WITHIN
-      Push(0x63ef+INST_dash_X.offset); // IFIELD
+      Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
       _2_at_(); // 2@
       D0_eq_(); // D0=
       if (Pop() == 0) Push(1); else Push(0); // NOT
       Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
-        Push(0x63ef+INST_dash_X.offset); // IFIELD
+        Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
         _2_at_(); // 2@
         SWAP(); // SWAP
         UNK_0xf239(); // UNK_0xf239
@@ -910,15 +910,13 @@ void UNK_0xf389() // UNK_0xf389
       }
       INEXT(); // INEXT
       IsFIRST(); // ?FIRST
-      Push(pp_UNK_0xf261); // UNK_0xf261
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(pp_UNK_0xf261)&0xFF); // UNK_0xf261 C@
       Push(0x000a);
       Push((Pop()==Pop())?1:0); // =
       Push(Pop() | Pop()); // OR
     } while(Pop() == 0);
     CDROP(); // CDROP
-    Push(pp_UNK_0xf261); // UNK_0xf261
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(pp_UNK_0xf261)&0xFF); // UNK_0xf261 C@
     if (Pop() != 0)
     {
       UNK_0xf290(); // UNK_0xf290

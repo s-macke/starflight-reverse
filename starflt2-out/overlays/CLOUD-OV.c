@@ -160,18 +160,15 @@ void UNK_0xf47c() // UNK_0xf47c
   imax = Pop();
   do // (DO)
   {
-    Push(0x65e1+UNK_0xf3c6.offset); // IFIELD
+    Push(0x65e1+UNK_0xf3c6.offset); // UNK_0xf3c6<IFIELD>
     Push(i); // I
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
     UNK_0xf3da(); // UNK_0xf3da
     if (Pop() != 0)
     {
-      Push(0x65e1+UNK_0xf3d5.offset); // IFIELD
-      Push(Read16(Pop())); // @
-      Push(0x0010);
-      Push(Pop() | Pop()); // OR
-      Push(0x65e1+UNK_0xf3d5.offset); // IFIELD
+      Push(Read16(0x65e1+UNK_0xf3d5.offset) | 0x0010); // UNK_0xf3d5<IFIELD> @ 0x0010 OR
+      Push(0x65e1+UNK_0xf3d5.offset); // UNK_0xf3d5<IFIELD>
       Store_2(); // !_2
     }
     ICLOSE(); // ICLOSE

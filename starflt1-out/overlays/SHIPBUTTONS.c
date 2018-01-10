@@ -234,8 +234,7 @@ void UNK_0xedec() // UNK_0xedec
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xedba.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xedba.offset)&0xFF); // UNK_0xedba<IFIELD> C@
   Push(Read16(regsp)); // DUP
   Push(8);
   Push(Pop() & Pop()); // AND
@@ -339,10 +338,10 @@ void UNK_0xee6c() // UNK_0xee6c
   _gt_C_plus_S(); // >C+S
   Push(3);
   Push(Pop() * Pop()); // *
-  Push(0x63ef+UNK_0xedc4.offset); // IFIELD
+  Push(0x63ef+UNK_0xedc4.offset); // UNK_0xedc4<IFIELD>
   Push(Pop() + Pop()); // +
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x63ef+UNK_0xedc9.offset); // IFIELD
+  Push(0x63ef+UNK_0xedc9.offset); // UNK_0xedc9<IFIELD>
   _do__dot_(); // $.
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -364,7 +363,7 @@ void UNK_0xeeba() // UNK_0xeeba
   UNK_0xee30(); // UNK_0xee30
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xedbf.offset); // IFIELD
+  Push(0x63ef+UNK_0xedbf.offset); // UNK_0xedbf<IFIELD>
   _do__dot_(); // $.
   ICLOSE(); // ICLOSE
 }

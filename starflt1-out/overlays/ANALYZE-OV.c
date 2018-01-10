@@ -277,15 +277,13 @@ IFieldType UNK_0xebff = {STARSYSTEMIDX, 0x0b, 0x02};
 void UNK_0xec04() // UNK_0xec04
 {
   Push(Read16(pp_STARDATE)); // STARDATE @
-  Push(0x63ef+UNK_0xebff.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xebff.offset)); // UNK_0xebff<IFIELD> @
   _st_(); // <
   if (Pop() == 0) Push(1); else Push(0); // NOT
   Push(Read16(pp_IsWIN)); // ?WIN @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0x63ef+UNK_0xebff.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+UNK_0xebff.offset)); // UNK_0xebff<IFIELD> @
   _gt_(); // >
   Push(Pop() & Pop()); // AND
 }
@@ -512,8 +510,7 @@ void DrawSIZE() // .SIZE
   Push(Read16(Pop())); // @
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+_pe_MASS.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+_pe_MASS.offset)); // %MASS<IFIELD> @
   ICLOSE(); // ICLOSE
   SWAP(); // SWAP
   Push(0);
@@ -546,10 +543,9 @@ void Is_dot_CERTAIN() // ?.CERTAIN
   CTINIT(); // CTINIT
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xeb7b.offset); // IFIELD
+  Push(0x63ef+UNK_0xeb7b.offset); // UNK_0xeb7b<IFIELD>
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x63ef+UNK_0xeb80.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xeb80.offset)&0xFF); // UNK_0xeb80<IFIELD> C@
   Push(0);
   Push(0x00c8);
   RRND(); // RRND
@@ -734,9 +730,7 @@ void DrawWEAP() // .WEAP
 void DrawDELEM() // .DELEM
 {
   Push(Read16(regsp)); // DUP
-  Push(0x63ef+UNK_0xeb95.offset); // IFIELD
-  Push(3);
-  Push(Pop() + Pop()); // +
+  Push((0x63ef+UNK_0xeb95.offset) + 3); // UNK_0xeb95<IFIELD> 3 +
   Push(Pop() + Pop()); // +
   Push(Read8(Pop())&0xFF); // C@
   if (Pop() != 0)
@@ -744,8 +738,7 @@ void DrawDELEM() // .DELEM
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0x63ef+UNK_0xeb95.offset); // IFIELD
-      Push(Pop()-1); // 1-
+      Push((0x63ef+UNK_0xeb95.offset) - 1); // UNK_0xeb95<IFIELD> 1-
       Push(Pop() + Pop()); // +
       Push(Read8(Pop())&0xFF); // C@
     } else
@@ -800,8 +793,7 @@ void UNK_0xefb7() // UNK_0xefb7
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   Get_gt_C_plus_S(); // @>C+S
-  Push(0x63ef+INST_dash_QTY.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   ICLOSE(); // ICLOSE
 }
 
@@ -1353,10 +1345,7 @@ void UNK_0xf31e() // UNK_0xf31e
   PRINT(" STATE: ", 8); // (.")
   Is_dot_CERTAIN(); // ?.CERTAIN
   if (Pop() == 0) return;
-  Push(0x63ef+UNK_0xebff.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(Read16(pp_STARDATE)); // STARDATE @
-  _dash_(); // -
+  Push(Read16(0x63ef+UNK_0xebff.offset) - Read16(pp_STARDATE)); // UNK_0xebff<IFIELD> @ STARDATE @ -
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
   Push(1);

@@ -214,18 +214,10 @@ void UNK_0xaba5() // UNK_0xaba5
   Push(Pop() + Pop()); // +
   Push(0xab77); // probable 'UNK_0xab77'
   Store_2(); // !_2
-  Push(Read16(cc_UNK_0xab6b)); // UNK_0xab6b
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_UNK_0xab77)); // UNK_0xab77
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_UNK_0xab6b))&0xFF) * 2 + Read16(cc_UNK_0xab77)); // UNK_0xab6b C@ 2* UNK_0xab77 +
   Push(0xab7b); // probable 'UNK_0xab7b'
   Store_2(); // !_2
-  Push(Read16(cc_UNK_0xab6f)); // UNK_0xab6f
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_UNK_0xab7b)); // UNK_0xab7b
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_UNK_0xab6f))&0xFF) * 2 + Read16(cc_UNK_0xab7b)); // UNK_0xab6f C@ 2* UNK_0xab7b +
   Push(0xab7f); // probable 'UNK_0xab7f'
   Store_2(); // !_2
 }
@@ -239,8 +231,7 @@ void DISTRAC() // DISTRAC
 {
   UNK_0xaba5(); // UNK_0xaba5
   Push(Read16(cc_UNK_0xab7f)); // UNK_0xab7f
-  Push(Read16(cc_UNK_0xab6f)); // UNK_0xab6f
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_UNK_0xab6f))&0xFF); // UNK_0xab6f C@
   Push(Read16(cc_UNK_0xab67)); // UNK_0xab67
   FILL_2(); // FILL_2
 }
@@ -349,14 +340,7 @@ void EXPERT() // EXPERT
   C_co_(); // C,
   Push(a); // R>
   UNK_0xaba5(); // UNK_0xaba5
-  Push(Read16(cc_UNK_0xab6b)); // UNK_0xab6b
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_UNK_0xab6f)); // UNK_0xab6f
-  Push(Read8(Pop())&0xFF); // C@
-  Push(3);
-  Push(Pop() * Pop()); // *
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_UNK_0xab6b))&0xFF) * 2 + (Read16(Read16(cc_UNK_0xab6f))&0xFF) * 3); // UNK_0xab6b C@ 2* UNK_0xab6f C@ 3 * +
   ALLOT(); // ALLOT
   CODE(); // (;CODE) inlined assembler code
 // 0xaccc: call   1649
@@ -365,9 +349,7 @@ void EXPERT() // EXPERT
   _gt_V(); // >V
   Push(Read16(cc_UNK_0xab77)); // UNK_0xab77
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc_UNK_0xab73)); // UNK_0xab73
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
+  Push((Read16(Read16(cc_UNK_0xab73))&0xFF) * 2); // UNK_0xab73 C@ 2*
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
 
@@ -494,8 +476,7 @@ void UNK_0xad73() // UNK_0xad73
       Push(Read16(cc_UNK_0xab7b)); // UNK_0xab7b
       Push(Pop() + Pop()); // +
       Store_2(); // !_2
-      Push(Read16(cc_UNK_0xab6f)); // UNK_0xab6f
-      Push(Read8(Pop())&0xFF); // C@
+      Push(Read16(Read16(cc_UNK_0xab6f))&0xFF); // UNK_0xab6f C@
       Push(Read16(pp_UNK_0xab57)); // UNK_0xab57 @
       _gt_(); // >
       if (Pop() == 0) Push(1); else Push(0); // NOT
@@ -519,10 +500,8 @@ void UNK_0xad73() // UNK_0xad73
 
 void RULE_c_() // RULE:
 {
-  Push(Read16(cc_UNK_0xab6b)); // UNK_0xab6b
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Read16(cc_UNK_0xab73)); // UNK_0xab73
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(cc_UNK_0xab6b))&0xFF); // UNK_0xab6b C@
+  Push(Read16(Read16(cc_UNK_0xab73))&0xFF); // UNK_0xab73 C@
   _gt_(); // >
   if (Pop() == 0) Push(1); else Push(0); // NOT
   ABORT("Rule overflow", 13);// (ABORT")
@@ -564,11 +543,7 @@ void RULE_c_() // RULE:
   OVER(); // OVER
   Push(Pop()+1); // 1+
   Store_2(); // !_2
-  Push(Read16(cc_UNK_0xab73)); // UNK_0xab73
-  Push(Read8(Pop())&0xFF); // C@
-  Push(Pop()*2); // 2*
-  Push(Read16(cc_UNK_0xab77)); // UNK_0xab77
-  Push(Pop() + Pop()); // +
+  Push((Read16(Read16(cc_UNK_0xab73))&0xFF) * 2 + Read16(cc_UNK_0xab77)); // UNK_0xab73 C@ 2* UNK_0xab77 +
   Store_2(); // !_2
   Push(1);
   Push(Read16(cc_UNK_0xab73)); // UNK_0xab73

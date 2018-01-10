@@ -456,10 +456,8 @@ void UNK_0xed8e() // UNK_0xed8e
 
 void UNK_0xedae() // UNK_0xedae
 {
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
-  Push(Read16(Pop())); // @
+  Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
+  Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
 }
 
 
@@ -469,9 +467,9 @@ void UNK_0xedae() // UNK_0xedae
 
 void UNK_0xedba() // UNK_0xedba
 {
-  Push(0x65e1+INST_dash_Y.offset); // IFIELD
+  Push(0x65e1+INST_dash_Y.offset); // INST-Y<IFIELD>
   Store_2(); // !_2
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
+  Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   Store_2(); // !_2
 }
 
@@ -670,16 +668,16 @@ void UNK_0xef14() // UNK_0xef14
   UNK_0xedba(); // UNK_0xedba
   LoadData(UNK_0xecb9); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
-  Push(0x65e1+INST_dash_QT.offset); // IFIELD
+  Push(0x65e1+INST_dash_QT.offset); // INST-QT<IFIELD>
   Store_2(); // !_2
   Push(1);
-  Push(0x65e1+UNK_0xecdd.offset); // IFIELD
+  Push(0x65e1+UNK_0xecdd.offset); // UNK_0xecdd<IFIELD>
   C_ex__2(); // C!_2
   Push(0);
-  Push(0x65e1+UNK_0xecd8.offset); // IFIELD
+  Push(0x65e1+UNK_0xecd8.offset); // UNK_0xecd8<IFIELD>
   C_ex__2(); // C!_2
   Push(1);
-  Push(0x65e1+UNK_0xecd3.offset); // IFIELD
+  Push(0x65e1+UNK_0xecd3.offset); // UNK_0xecd3<IFIELD>
   C_ex__2(); // C!_2
   LoadData(UNK_0xecc1); // from 'CREATURE'
   Push(Read8(Pop())&0xFF); // C@
@@ -688,10 +686,10 @@ void UNK_0xef14() // UNK_0xef14
   if (Pop() == 0) Push(1); else Push(0); // 0=
   if (Pop() == 0) return;
   UNK_0xef0a(); // UNK_0xef0a
-  Push(0x65e1+UNK_0xecc9.offset); // IFIELD
+  Push(0x65e1+UNK_0xecc9.offset); // UNK_0xecc9<IFIELD>
   C_ex__2(); // C!_2
   UNK_0xef0a(); // UNK_0xef0a
-  Push(0x65e1+UNK_0xecce.offset); // IFIELD
+  Push(0x65e1+UNK_0xecce.offset); // UNK_0xecce<IFIELD>
   C_ex__2(); // C!_2
 }
 
@@ -861,7 +859,7 @@ void UNK_0xf02a() // UNK_0xf02a
   {
     Push(Read16(pp_STARDAT)); // STARDAT @
   }
-  Push(0x65e1+INST_dash_DA.offset); // IFIELD
+  Push(0x65e1+INST_dash_DA.offset); // INST-DA<IFIELD>
   Store_2(); // !_2
 }
 
@@ -923,7 +921,7 @@ void UNK_0xf090() // UNK_0xf090
   Push(0x000a);
   Push(0x0064);
   RRND(); // RRND
-  Push(0x65e1+INST_dash_QT.offset); // IFIELD
+  Push(0x65e1+INST_dash_QT.offset); // INST-QT<IFIELD>
   Store_2(); // !_2
 }
 
@@ -1637,14 +1635,14 @@ void UNK_0xf480() // UNK_0xf480
 void UNK_0xf48e() // UNK_0xf48e
 {
   Push(1);
-  Push(0x65e1+UNK_0xec9f.offset); // IFIELD
+  Push(0x65e1+UNK_0xec9f.offset); // UNK_0xec9f<IFIELD>
   C_ex__2(); // C!_2
   LoadData(UNK_0xec92); // from 'TRADERS'
   Push(Read8(Pop())&0xFF); // C@
   Push(Pop()-1); // 1-
   Push(1);
   MAX(); // MAX
-  Push(0x65e1+UNK_0xec9a.offset); // IFIELD
+  Push(0x65e1+UNK_0xec9a.offset); // UNK_0xec9a<IFIELD>
   C_ex__2(); // C!_2
   Push(pp_THIS_dash_RE); // THIS-RE
   Get_gt_C_plus_S(); // @>C+S
@@ -1656,7 +1654,7 @@ void UNK_0xf48e() // UNK_0xf48e
   CI(); // CI
   Push(2);
   _star_CLOSE(); // *CLOSE
-  Push(0x65e1+UNK_0xeca4.offset); // IFIELD
+  Push(0x65e1+UNK_0xeca4.offset); // UNK_0xeca4<IFIELD>
   _1_dot_5_ex__2(); // 1.5!_2
 }
 

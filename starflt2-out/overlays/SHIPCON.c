@@ -100,7 +100,7 @@ IFieldType UNK_0xf376 = {STRINGIDX, 0x0b, 0x00};
 void UNK_0xf37b() // UNK_0xf37b
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf376.offset); // IFIELD
+  Push(0x65e1+UNK_0xf376.offset); // UNK_0xf376<IFIELD>
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -186,7 +186,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
     }
   }
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+INST_dash_X.offset); // IFIELD
+  Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   _2_at_(); // 2@
   ICLOSE(); // ICLOSE
   Push(0x0118);

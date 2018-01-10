@@ -134,14 +134,13 @@ void UNK_0xf0a6() // UNK_0xf0a6
   imax = Pop();
   do // (DO)
   {
-    Push(0x63ef+UNK_0xf08d.offset); // IFIELD
+    Push(0x63ef+UNK_0xf08d.offset); // UNK_0xf08d<IFIELD>
     Push(i); // I
     Push(3);
     Push(Pop() * Pop()); // *
     Push(Pop() + Pop()); // +
     Get_gt_C_plus_S(); // @>C+S
-    Push(0x63ef+UNK_0xf088.offset); // IFIELD
-    Push(Read16(Pop())); // @
+    Push(Read16(0x63ef+UNK_0xf088.offset)); // UNK_0xf088<IFIELD> @
     Push(a); // J
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
@@ -250,7 +249,7 @@ void UNK_0xf1af() // UNK_0xf1af
   _gt_C_plus_S(); // >C+S
   CTINIT(); // CTINIT
   PRINT("SHOULD I STOP TREATING ", 23); // (.")
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   ICLOSE(); // ICLOSE
   CTCR(); // CTCR
@@ -270,7 +269,7 @@ void UNK_0xf1af() // UNK_0xf1af
 
 void UNK_0xf1fa() // UNK_0xf1fa
 {
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(" DOESN'T NEED MEDICAL", 21); // (.")
   CTCR(); // CTCR
@@ -284,7 +283,7 @@ void UNK_0xf1fa() // UNK_0xf1fa
 
 void UNK_0xf229() // UNK_0xf229
 {
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(" IS BEYOND HELP.", 16); // (.")
 }
@@ -298,7 +297,7 @@ void UNK_0xf244() // UNK_0xf244
 {
   PRINT("I AM STARTING TREATMENT ON", 26); // (.")
   CTCR(); // CTCR
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -311,24 +310,19 @@ void UNK_0xf244() // UNK_0xf244
 void UNK_0xf26f() // UNK_0xf26f
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xf083.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
   Push(1);
   Push(0x0064);
   WITHIN(); // WITHIN
   if (Pop() != 0)
   {
     UNK_0xf244(); // UNK_0xf244
-    Push(0x63ef+UNK_0xf088.offset); // IFIELD
-    Push(Read16(Pop())); // @
-    Push(4);
-    Push(Pop() | Pop()); // OR
-    Push(0x63ef+UNK_0xf088.offset); // IFIELD
+    Push(Read16(0x63ef+UNK_0xf088.offset) | 4); // UNK_0xf088<IFIELD> @ 4 OR
+    Push(0x63ef+UNK_0xf088.offset); // UNK_0xf088<IFIELD>
     Store_3(); // !_3
   } else
   {
-    Push(0x63ef+UNK_0xf083.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x63ef+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
     Push(0x0064);
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -351,7 +345,7 @@ void UNK_0xf2af() // UNK_0xf2af
 {
   PRINT("I AM CEASING TREATMENT ON", 25); // (.")
   CTCR(); // CTCR
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -365,11 +359,8 @@ void UNK_0xf2d9() // UNK_0xf2d9
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf2af(); // UNK_0xf2af
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(0xfffb);
-  Push(Pop() & Pop()); // AND
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
+  Push(Read16(0x63ef+UNK_0xf088.offset) & 0xfffb); // UNK_0xf088<IFIELD> @ 0xfffb AND
+  Push(0x63ef+UNK_0xf088.offset); // UNK_0xf088<IFIELD>
   Store_3(); // !_3
   ICLOSE(); // ICLOSE
 }
@@ -383,7 +374,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
 {
   PRINT("I AM CONTINUING TREATMENT ON", 28); // (.")
   CTCR(); // CTCR
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(".", 1); // (.")
 }
@@ -397,11 +388,8 @@ void UNK_0xf31e() // UNK_0xf31e
 {
   _gt_C_plus_S(); // >C+S
   UNK_0xf2f1(); // UNK_0xf2f1
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(4);
-  Push(Pop() | Pop()); // OR
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
+  Push(Read16(0x63ef+UNK_0xf088.offset) | 4); // UNK_0xf088<IFIELD> @ 4 OR
+  Push(0x63ef+UNK_0xf088.offset); // UNK_0xf088<IFIELD>
   Store_3(); // !_3
   ICLOSE(); // ICLOSE
 }
@@ -416,10 +404,7 @@ void UNK_0xf334() // UNK_0xf334
   do
   {
     INEXT(); // INEXT
-    Push(0x63ef+UNK_0xf088.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(8);
-    Push(Pop() & Pop()); // AND
+    Push((Read16(0x63ef+UNK_0xf088.offset)&0xFF) & 8); // UNK_0xf088<IFIELD> C@ 8 AND
   } while(Pop() == 0);
   Push(1);
 }
@@ -434,10 +419,7 @@ void UNK_0xf348() // UNK_0xf348
   do
   {
     IPREV(); // IPREV
-    Push(0x63ef+UNK_0xf088.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
-    Push(8);
-    Push(Pop() & Pop()); // AND
+    Push((Read16(0x63ef+UNK_0xf088.offset)&0xFF) & 8); // UNK_0xf088<IFIELD> C@ 8 AND
   } while(Pop() == 0);
   Push(1);
 }
@@ -480,10 +462,7 @@ void UNK_0xf373() // UNK_0xf373
   IOPEN(); // IOPEN
 
   label2:
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(8);
-  Push(Pop() & Pop()); // AND
+  Push((Read16(0x63ef+UNK_0xf088.offset)&0xFF) & 8); // UNK_0xf088<IFIELD> C@ 8 AND
   if (Pop() == 0) Push(1); else Push(0); // NOT
   if (Pop() == 0) goto label1;
   INEXT(); // INEXT
@@ -503,7 +482,7 @@ void UNK_0xf373() // UNK_0xf373
   Push(0x000b);
   Push(2);
   CTPOS_dot_(); // CTPOS.
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   do
   {
@@ -518,7 +497,7 @@ void UNK_0xf373() // UNK_0xf373
       Push(0x000f);
       SetColor(BLACK);
       POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
-      Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+      Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
       _do__dot_(); // $.
     }
     IsTRIG(); // ?TRIG
@@ -538,11 +517,10 @@ void UNK_0xf421() // UNK_0xf421
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+  Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
   _do__dot_(); // $.
   PRINT(" IS ", 4); // (.")
-  Push(0x63ef+UNK_0xf083.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
   Push(Read16(regsp)); // DUP
   UNK_0xf0e6(); // UNK_0xf0e6
   if (Pop() != 0)
@@ -550,8 +528,7 @@ void UNK_0xf421() // UNK_0xf421
     PRINT(",", 1); // (.")
     CTCR(); // CTCR
     PRINT("AND HAS A VITALITY OF ", 22); // (.")
-    Push(0x63ef+UNK_0xf083.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x63ef+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
     Push(0);
     DrawR(); // .R
     PRINT(" AND A", 6); // (.")
@@ -564,13 +541,10 @@ void UNK_0xf421() // UNK_0xf421
   }
   PRINT(".", 1); // (.")
   CTCR(); // CTCR
-  Push(0x63ef+UNK_0xf088.offset); // IFIELD
-  Push(Read16(Pop())); // @
-  Push(4);
-  Push(Pop() & Pop()); // AND
+  Push(Read16(0x63ef+UNK_0xf088.offset) & 4); // UNK_0xf088<IFIELD> @ 4 AND
   if (Pop() != 0)
   {
-    Push(0x63ef+UNK_0xf07e.offset); // IFIELD
+    Push(0x63ef+UNK_0xf07e.offset); // UNK_0xf07e<IFIELD>
     _do__dot_(); // $.
     PRINT(" IS CURRENTLY BEING", 19); // (.")
     CTCR(); // CTCR

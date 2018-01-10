@@ -166,8 +166,7 @@ void SIC_i_EM() // SIC'EM
 {
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(0x63ef+UNK_0xefd6.offset)&0xFF); // UNK_0xefd6<IFIELD> C@
   Push(Read16(regsp)); // DUP
   Push(0x0080);
   _st_(); // <
@@ -175,14 +174,14 @@ void SIC_i_EM() // SIC'EM
   Store_3(); // !_3
   Push(0x0080);
   Push(Pop() | Pop()); // OR
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
+  Push(0x63ef+UNK_0xefd6.offset); // UNK_0xefd6<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
   Push(Read16(pp_YABS)); // YABS @
   Push(Read16(pp_XABS)); // XABS @
   Push2Words("*ARREST");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+INST_dash_X.offset); // IFIELD
+  Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
   StoreD(); // D!
   ICLOSE(); // ICLOSE
   Push2Words("*ARREST");
@@ -603,8 +602,7 @@ void UNK_0xf2e7() // UNK_0xf2e7
   Push(Read16(pp_UNK_0xf032) * 2 + pp_UNK_0xf29b); // UNK_0xf032 @ 2* UNK_0xf29b +
   GetEXECUTE(); // @EXECUTE
   DrawTTY(); // .TTY
-  Push(Read16(pp_UNK_0xf036) + pp_UNK_0xf2cd); // UNK_0xf036 @ UNK_0xf2cd +
-  Push(Read8(Pop())&0xFF); // C@
+  Push(Read16(Read16(pp_UNK_0xf036) + pp_UNK_0xf2cd)&0xFF); // UNK_0xf036 @ UNK_0xf2cd + C@
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
   Push(0x001c);
@@ -857,11 +855,8 @@ void _2NDS() // 2NDS
   if (Pop() == 0) return;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  Push(0x007f);
-  Push(Pop() & Pop()); // AND
-  Push(0x63ef+UNK_0xefd6.offset); // IFIELD
+  Push((Read16(0x63ef+UNK_0xefd6.offset)&0xFF) & 0x007f); // UNK_0xefd6<IFIELD> C@ 0x007f AND
+  Push(0x63ef+UNK_0xefd6.offset); // UNK_0xefd6<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }

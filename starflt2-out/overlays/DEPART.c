@@ -288,10 +288,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 {
   Push(pp__ro_AORIGI); // (AORIGI
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(pp_EDL)); // EDL @
-  Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
-  Push(Read8(Pop())&0xFF); // C@
-  _dash_(); // -
+  Push(Read16(pp_EDL) - (Read16(0x65e1+UNK_0xf4b7.offset)&0xFF)); // EDL @ UNK_0xf4b7<IFIELD> C@ -
   Push(Read16(regsp)); // DUP
   _0_gt_(); // 0>
   if (Pop() != 0)
@@ -307,14 +304,13 @@ void UNK_0xf4bc() // UNK_0xf4bc
     Push(5);
     MAX(); // MAX
     Push(Pop() * Pop()); // *
-    Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
-    Push(Read8(Pop())&0xFF); // C@
+    Push(Read16(0x65e1+UNK_0xf4b7.offset)&0xFF); // UNK_0xf4b7<IFIELD> C@
     Push(Pop() + Pop()); // +
     Push(0x0064);
     MIN(); // MIN
     Push(0);
     MAX(); // MAX
-    Push(0x65e1+UNK_0xf4b7.offset); // IFIELD
+    Push(0x65e1+UNK_0xf4b7.offset); // UNK_0xf4b7<IFIELD>
     C_ex__2(); // C!_2
   } else
   {
