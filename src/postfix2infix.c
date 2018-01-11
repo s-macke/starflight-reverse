@@ -638,7 +638,17 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         return;
     }
 
-    // TODO OVER MAX, !, SWAP, DROP, DUP +@, ...
+    /* disabled, because it doesn't change much
+    if ((stackoffset >= 1) && (strcmp(s, "DROP") == 0))
+    {
+        if (strstr(stack[stackoffset-1].expr, "Pop()") == NULL)
+        {
+            stackoffset--;
+            return;
+        }
+    }
+    */
+    // TODO OVER MAX, !, SWAP, DUP +@, ...
 
     Postfix2InfixReset(fp, nspc);
 
@@ -659,7 +669,7 @@ void Postfix2InfixReset(FILE *fp, int nspc)
         fprintf(fp, "\n");
     }
 
-    // default is one Pop() on the stack.
+    // default is one Pop() on the stack. Be careful here. Not every operation is possible here
     sprintf(stack[0].expr, "Pop()");
     sprintf(stack[0].forth, "");
     stack[0].precedence = PVARNUMBERFUNC;
