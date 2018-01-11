@@ -52,10 +52,10 @@ Transformation:
 | 0x75d5   | CDEPTH      |`  CDEPTH(); `|
 | 0x15fa   | IF          |`  if (Pop() != 0) { `|
 | 0x0020   |             | |
-| 0x54ae   | CXSP        |`    Push(pp_CXSP); `|
-| 0xbae    | @           |`    Push(Read16(Pop()));`|
-| 0x3b73   | 3           |`    Push(3);`|
-| 0x0f72   | +           |`    Push(Pop() + Pop());`|
+| 0x54ae   | CXSP        |`    Push(Read16(pp_CXSP) + 3);`|
+| 0xbae    | @           | |
+| 0x3b73   | 3           | |
+| 0x0f72   | +           | |
 | 0x4ffd   | END-CX      |`    Push(Read16(cc_END_dash_CX));`|
 | 0x15b8   | DO          |`    i = Pop();`|
 |          |             |`    imax = Pop();`|
