@@ -769,7 +769,13 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
         {
             char buffer[0x80];
             disasm(0x0, (unsigned)addr, mem, buffer);
-            fprintf(fp, "// 0x%04x: %s\n", addr, buffer);
+            if (pline[addr].asmaccessesword != 0)
+            {
+                fprintf(fp, "// 0x%04x: %s // %s\n", addr, buffer, GetDictWord(pline[addr].asmaccessesword, ovidx));
+            } else
+            {
+                fprintf(fp, "// 0x%04x: %s\n", addr, buffer);
+            }
             if (Read8(addr) == 0xc3) // ret
             {
                 fprintf(fp, "\n");

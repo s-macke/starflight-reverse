@@ -20,6 +20,7 @@ typedef struct
 
     int done; // this line has been processed
     int isasm;
+    int asmaccessesword; // the asm instruction accesses a word
     int istrivialword;
     int iswordheader;
     int word;

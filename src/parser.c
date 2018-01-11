@@ -95,6 +95,31 @@ void RemoveVariable(Variables *vars)
 
 // -----------------------------------------
 
+// Analyzes strings such as [ABCD], for example "mov ax, [0B3F]"
+void AnalyzeDisasmString(char* buffer, int ovidx, int currentoffset)
+{
+    int n = strlen(buffer);
+    for(int i=0; i<n-5; i++)
+    {
+        if (!((buffer[i] == '[') && (buffer[i+5] == ']'))) continue;
+        int offset = (int)strtol(&buffer[i+1], NULL, 16);
+        if ((Read16(offset-2) == CODEPOINTER) || (Read16(offset-2) == CODECONSTANT))
+        {
+            GetDictEntry(offset, ovidx);
+            pline[currentoffset].asmaccessesword = offset;
+        } else
+        if (Read16(offset-4) == CODEPOINTER)
+        {
+            GetDictEntry(offset-2, ovidx);
+            pline[currentoffset].asmaccessesword = offset-2;
+        } else
+        {
+            //printf("%04x\n", offset);
+        }
+    }
+}
+
+
 int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 {
     char buffer[0x80];
@@ -124,6 +149,8 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
             size--;
             offset++;
         }
+
+        AnalyzeDisasmString(buffer, ovidx, currentoffset);
 
         if (Read8(currentoffset) == 0xc3) return 0; // ret
         if (Read8(currentoffset) == 0xcf) return 0; // iret
