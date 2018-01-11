@@ -437,6 +437,25 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         stackoffset++;
         return;
     }
+    if (strcmp(s, "R>") == 0)
+    {
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", GetVariableName(efunc, pline[addr].variableidx));
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+        return;
+    }
+    if ((strcmp(s, "I") == 0) || (strcmp(s, "J") == 0) || (strcmp(s, "I'")) == 0)
+	{
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", GetVariableName(efunc, pline[addr].variableidx));
+        snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
+        stack[stackoffset].precedence = PVARNUMBERFUNC;
+        stack[stackoffset].isnumber = 0;
+        stackoffset++;
+		return;
+	}
+
 
 
     // 2 operand logic
@@ -619,8 +638,7 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         return;
     }
 
-
-    // TODO OVER MAX, !, SWAP, DROP, DUP +@, I, J, ...
+    // TODO OVER MAX, !, SWAP, DROP, DUP +@, ...
 
     Postfix2InfixReset(fp, nspc);
 
