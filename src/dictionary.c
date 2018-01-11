@@ -164,6 +164,57 @@ void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
     }
 }
 
+void WriteAllDict(char* filename)
+{
+    int i;
+    FILE *fp = fopen(filename, "w");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot open file for writing\n");
+        exit(1);
+    }
+
+    SortDictionary();
+
+    fprintf(fp, "// =================================\n");
+    fprintf(fp, "// =========== DICTIONARY ==========\n");
+    fprintf(fp, "// =================================\n\n");
+
+    fprintf(fp, "typedef struct { int ov; unsigned short code, word; char* name; } WORD;\n\n");
+
+    fprintf(fp, "WORD dict[]=\n{\n");
+    for(i=0; i<ndict; i++)
+    {
+        char *name = GetWordName(&dict[i]);
+        char escapedname[512];
+        int offset = 0;
+        for(int j=0; j<strlen(name); j++)
+        {
+            if (name[j] == '"')
+            {
+                escapedname[offset++] = '\\';
+            } else
+            if (name[j] == '\\')
+            {
+                escapedname[offset++] = '\\';
+            }
+            escapedname[offset++] = name[j];
+        }
+        escapedname[offset] = 0;
+
+        fprintf(fp, "  { .ov = %2i, .code = 0x%04x, .word = 0x%04x, .name = \"%s\"",
+            dict[i].ovidx,
+            dict[i].codep,
+            dict[i].parp,
+            escapedname);
+            fprintf(fp, " }, \n");
+    }
+    fprintf(fp, "  { .ov = -2, .code = 0x0000, .word = 0x0000, .name = NULL }\n");
+
+    fprintf(fp, "};\n");
+    fclose(fp);
+}
+
 static int
 cmpdictp(const void *p1, const void *p2)
 {

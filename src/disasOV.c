@@ -203,7 +203,9 @@ int main()
         LoadSTARFLT();
         ParseOverlay(i);
     }
+
     printf("Found %i words", ndict);
+    WriteAllDict(OUTDIR"/data/dict.h");
 
     return 0;
 }
