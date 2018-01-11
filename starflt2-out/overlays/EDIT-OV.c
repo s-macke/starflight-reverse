@@ -662,9 +662,7 @@ void _ro_DUPL_rc_() // (DUPL)
   imax = Pop();
   do // (DO)
   {
-    Push(0x000e);
-    Push(i); // I
-    _dash_(); // -
+    Push(0x000e - i); // 0x000e I -
     MLDN(); // MLDN
     i++;
   } while(i<imax); // (LOOP)
@@ -738,9 +736,7 @@ void XL() // XL
     do // (DO)
     {
       UNK_0xeea8(); // UNK_0xeea8
-      Push(i); // I
-      Push(Pop() + Pop()); // +
-      Push(Pop() + 1); //  1+
+      Push((Pop() + i) + 1); //  I + 1+
       MLUP(); // MLUP
       i++;
     } while(i<imax); // (LOOP)
@@ -897,9 +893,7 @@ void PUT() // PUT
   do // (DO)
   {
     UNK_0xee94(); // UNK_0xee94
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     IsVISIBLE(); // ?VISIBLE
     Push(!Pop()); //  NOT
     if (Pop() != 0)
@@ -1118,8 +1112,7 @@ void _gt_STAMP() // >STAMP
     Push(0x000b);
     CMOVE_2(); // CMOVE_2
     Push(0x205c);
-    Push(a); // R>
-    Push(Pop() + 0x0024); //  0x0024 +
+    Push(a + 0x0024); // R> 0x0024 +
     Store_2(); // !_2
   }
   SAVE_dash_BU(); // SAVE-BU

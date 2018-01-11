@@ -683,9 +683,7 @@ void UNK_0xe8a8() // UNK_0xe8a8
     Push(Read16(pp_LVIS)); // LVIS @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Pop() - 0x000f); //  0x000f -
+    Push((Pop() + i) - 0x000f); //  I + 0x000f -
     Push(0);
     _st__n_(); // <#
     _n_(); // #
@@ -731,9 +729,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
     Push(Read16(pp_BVIS)); // BVIS @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE
     _slash_(); // /
-    Push(i); // I
-    Push(Pop() - 0x0023 >> 1); //  0x0023 - 2/
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (i - 0x0023 >> 1)); //  I 0x0023 - 2/ +
     Push(0);
     _st__n_(); // <#
     _n_(); // #
@@ -891,14 +887,10 @@ void UNK_0xe9be() // UNK_0xe9be
   {
     Push(Read16(pp_VIN)); // VIN @
     a = Pop(); // >R
-    Push(a); // I
-    Push(Read16(Pop() + 2)); //  2+ @
-    Push(a); // I
-    Push(Read16(Pop())); //  @
-    Push(a); // I
-    Push(Read16(Pop() + 6)); //  6 + @
-    Push(a); // R>
-    Push(Read16(Pop() + 4)); //  4 + @
+    Push(Read16(a + 2)); // I 2+ @
+    Push(Read16(a)); // I @
+    Push(Read16(a + 6)); // I 6 + @
+    Push(Read16(a + 4)); // R> 4 + @
     Push(1);
     return;
   }

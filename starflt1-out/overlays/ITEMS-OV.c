@@ -1272,13 +1272,9 @@ void UNK_0xe523() // UNK_0xe523
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     PAD(); // PAD
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     Push((Pop()==Pop())?1:0); // =
     Push(!Pop()); //  NOT
     if (Pop() != 0)
@@ -2134,9 +2130,7 @@ void UNK_0xeb62() // UNK_0xeb62
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() * 0x0026); //  0x0026 *
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i * 0x0026); //  I 0x0026 * +
     Push(0x0026);
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     GCR(); // GCR
@@ -2947,10 +2941,7 @@ void UNK_0xefd4() // UNK_0xefd4
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP) - 1); // WTOP @ 1-
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push((Read16(pp_WTOP) - 1) - i * 7); // WTOP @ 1- I 7 * -
     POS_dot_(); // POS.
     TEXT_gt_PA(); // TEXT>PA
     PAD(); // PAD
@@ -3539,8 +3530,7 @@ void UNK_0xf36a() // UNK_0xf36a
     Push(Pop() | Pop()); // OR
     Push(Read16(a)); // R@
     Push(Pop() | (Pop()==0x00fe?1:0)); //   0x00fe = OR
-    Push(a); // R>
-    Push(Pop() | (Pop()==0x002c?1:0)); //   0x002c = OR
+    Push(a | (a==0x002c?1:0)); // R> R> 0x002c = OR
     if (Pop() != 0)
     {
       GetIL(); // @IL

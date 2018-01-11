@@ -1173,12 +1173,10 @@ void UNK_0x7fe7() // UNK_0x7fe7
     GetNEWSPACE(); // @NEWSPACE
     VA_gt_BUF(); // VA>BUF
     a = Pop(); // >R
-    Push(a); // I
-    Push(Pop() + 0x000b); //  0x000b +
+    Push(a + 0x000b); // I 0x000b +
     C_ex_(); // C!
     Push(0x0030);
-    Push(a); // R>
-    Push(Pop() + 9); //  9 +
+    Push(a + 9); // R> 9 +
     C_ex_(); // C!
     GetNEWSPACE(); // @NEWSPACE
     _gt_C_plus_S(); // >C+S
@@ -1361,12 +1359,10 @@ void VICREAT() // VICREAT
   CI(); // CI
   VA_gt_BUF(); // VA>BUF
   a = Pop(); // >R
-  Push(a); // I
-  Push(Pop() + 0x000b); //  0x000b +
+  Push(a + 0x000b); // I 0x000b +
   C_ex_(); // C!
   Push(0x0030);
-  Push(a); // R>
-  Push(Pop() + 9); //  9 +
+  Push(a + 9); // R> 9 +
   C_ex_(); // C!
   SET_dash_CURRENT(); // SET-CURRENT
   NULLPOINTERS(); // NULLPOINTERS
@@ -1400,8 +1396,7 @@ void ICREATE() // ICREATE
     a = Pop(); // >R
     Push(Pop() + 0x000a); //  0x000a +
     C_ex_(); // C!
-    Push(a); // R>
-    Push(Pop() + 9); //  9 +
+    Push(a + 9); // R> 9 +
     C_ex_(); // C!
     SET_dash_CURRENT(); // SET-CURRENT
   } else

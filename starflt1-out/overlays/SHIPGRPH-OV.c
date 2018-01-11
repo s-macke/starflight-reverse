@@ -517,8 +517,7 @@ void _ro__dot_PODS_rc_() // (.PODS)
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Pop() * 3 + 0x0076); //  3 * 0x0076 +
+    Push(i * 3 + 0x0076); // I 3 * 0x0076 +
     Push(pp_XBLT); // XBLT
     Store_3(); // !_3
     Push(0x0050);
@@ -828,13 +827,10 @@ void UNK_0xf40f() // UNK_0xf40f
   do // (DO)
   {
     Push(0x000f);
-    Push(i); // I
-    Push(Pop() * 0x000a + 0x0036); //  0x000a * 0x0036 +
+    Push(i * 0x000a + 0x0036); // I 0x000a * 0x0036 +
     POS_dot_(); // POS.
     PRINT("CLASS ", 6); // (.")
-    Push(5);
-    Push(i); // I
-    _dash_(); // -
+    Push(5 - i); // 5 I -
     Push(0);
     DrawR(); // .R
     PRINT("...", 3); // (.")

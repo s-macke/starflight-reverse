@@ -1140,10 +1140,7 @@ void UNK_0xe921() // UNK_0xe921
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP)); // WTOP @
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push(Read16(pp_WTOP) - i * 7); // WTOP @ I 7 * -
     POS_dot_(); // POS.
     TEXT_gt_PA(); // TEXT>PA
     PAD(); // PAD
@@ -1419,13 +1416,11 @@ void UNK_0xeacc() // UNK_0xeacc
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push((Read16(Pop())&0xFF)==0x002e?1:0); //  C@ 0x002e =
+    Push(Read16(i)&0xFF); // I C@
+    Push((Read16(i)&0xFF)==0x002e?1:0); // I C@ 0x002e =
     if (Pop() != 0)
     {
-      Push(i); // I
-      Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+      Push(Read16(i + 1)&0xFF); // I 1+ C@
       Push(0x0030);
       Push(0x003a);
       WITHIN(); // WITHIN
@@ -1436,10 +1431,7 @@ void UNK_0xeacc() // UNK_0xeacc
       }
     } else
     {
-      Push(Pop() * 0x000a); //  0x000a *
-      Push(i); // I
-      Push((Read16(Pop())&0xFF) - 0x0030); //  C@ 0x0030 -
-      Push(Pop() + Pop()); // +
+      Push(Pop() * 0x000a + ((Read16(i)&0xFF) - 0x0030)); //  0x000a * I C@ 0x0030 - +
       Push(Read16(pp_UNK_0xe2be)==0?1:0); // UNK_0xe2be @ 0=
       if (Pop() != 0)
       {
@@ -1649,9 +1641,7 @@ void UNK_0xecfc() // UNK_0xecfc
   do // (DO)
   {
     LoadData(UNK_0xe383); // from 'ANALYZE_TEXT'
-    Push(i); // I
-    Push(Pop() * 0x0026); //  0x0026 *
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i * 0x0026); //  I 0x0026 * +
     PAD(); // PAD
     Push(Pop() + 1); //  1+
     Push(0x0026);
@@ -2189,8 +2179,7 @@ void SELL_dash_IT() // SELL-IT
   GetINST_dash_CLASS(); // @INST-CLASS
   SELL_dash_WHAT(); // SELL-WHAT case
   a = Pop(); // >R
-  Push(a); // I
-  Push(Pop() * -1); //  -1 *
+  Push(a * -1); // I -1 *
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex_(); // +!
 
@@ -2405,8 +2394,7 @@ void UNK_0xf2f9() // UNK_0xf2f9
       DNEGATE(); // DNEGATE
       UNK_0xe2e0(); // UNK_0xe2e0
       UNK_0xe3a8(); // UNK_0xe3a8
-      Push(a); // I
-      _dash_(); // -
+      Push(Pop() - a); //  I -
       UNK_0xe3b4(); // UNK_0xe3b4
       Push(a); // I
       Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
@@ -2478,8 +2466,7 @@ void UNK_0xf386() // UNK_0xf386
   GetINST_dash_CLASS(); // @INST-CLASS
   BUY_dash_WHAT(); // BUY-WHAT case
   a = Pop(); // >R
-  Push(a); // I
-  Push(-Pop()); //  NEGATE
+  Push(-a); // I NEGATE
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex_(); // +!
 

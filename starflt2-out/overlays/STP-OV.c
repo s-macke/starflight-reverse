@@ -711,8 +711,7 @@ void UNK_0xf3bc() // UNK_0xf3bc
     ROT(); // ROT
     Push(Pop() * 0x000a); //  0x000a *
     Push(Pop() + Pop()); // +
-    Push(i); // I
-    Push((Read16(Pop())&0xFF) - 0x0030); //  C@ 0x0030 -
+    Push((Read16(i)&0xFF) - 0x0030); // I C@ 0x0030 -
     Push(0);
     D_plus_(); // D+
     i++;

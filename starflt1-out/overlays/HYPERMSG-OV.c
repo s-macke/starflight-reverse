@@ -643,10 +643,7 @@ void UNK_0xe73a() // UNK_0xe73a
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(i); // I
-    Push(Pop() >> 4); //  16*
-    Push(Pop() + Pop()); // +
+    Push(i + (i >> 4)); // I I 16* +
     StoreCOLOR(); // !COLOR
     Push(0x0028);
     Push(0x0082);

@@ -512,43 +512,32 @@ void UNK_0xe6c5() // UNK_0xe6c5
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Pop() + 1); //  1+
+    Push(i + 1); // I 1+
     Push(0x001c);
     OVER(); // OVER
     Push(0x00c3);
     LLINE(); // LLINE
-    Push(0x009d);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x009d + i); // 0x009d I +
     Push(0x001c);
     OVER(); // OVER
     Push(0x00b6);
     LLINE(); // LLINE
     Push(3);
-    Push(0x001a);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x001a + i); // 0x001a I +
     Push(0x009c);
     OVER(); // OVER
     LLINE(); // LLINE
     Push(0x0044);
-    Push(0x00b7);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x00b7 + i); // 0x00b7 I +
     Push(0x009c);
     OVER(); // OVER
     LLINE(); // LLINE
     Push(3);
-    Push(0x00c4);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x00c4 + i); // 0x00c4 I +
     Push(0x0041);
     OVER(); // OVER
     LLINE(); // LLINE
-    Push(0x0042);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x0042 + i); // 0x0042 I +
     Push(0x00b9);
     OVER(); // OVER
     Push(0x00c3);
@@ -1054,16 +1043,12 @@ void UNK_0xec5d() // UNK_0xec5d
   a = Pop(); // >R
   Push(0x000e);
   SetColor(GREY2);
-  Push(0x0030);
-  Push(a); // I
-  Push(Pop() + Pop()); // +
+  Push(0x0030 + a); // 0x0030 I +
   Push(0x000a);
   POS_dot_PXT(); // POS.PXT
   Push(3);
   SetColor(GREY2);
-  Push(0x0030);
-  Push(a); // I
-  Push(Pop() + Pop()); // +
+  Push(0x0030 + a); // 0x0030 I +
   Push(0x007a);
   POS_dot_PXT(); // POS.PXT
   CTINIT(); // CTINIT
@@ -1078,32 +1063,22 @@ void UNK_0xec5d() // UNK_0xec5d
   {
     Push(3);
     SetColor(GREY2);
-    Push(i); // I
-    Push(Pop() * 7 + 6); //  7 * 6 +
-    Push(a); // J
-    Push(Pop() + Pop()); // +
+    Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x004a);
     POS_dot_PXT(); // POS.PXT
     Push(2);
-    Push(i); // I
-    Push(Pop() + (Pop()==4?1:0) * 5); //   4 = 5 * +
+    Push(i + (i==4?1:0) * 5); // I I 4 = 5 * +
     SetColor(GREY2);
-    Push(i); // I
-    Push(Pop() * 7 + 6); //  7 * 6 +
-    Push(a); // J
-    Push(Pop() + Pop()); // +
+    Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x008d);
-    Push(i); // I
-    Push(Pop() + (Pop()==4?1:0) * 0xffea); //   4 = 0xffea * +
+    Push(i + (i==4?1:0) * 0xffea); // I I 4 = 0xffea * +
     POS_dot_PXT(); // POS.PXT
     i++;
   } while(i<imax); // (LOOP)
 
   Push(2);
   SetColor(GREY2);
-  Push(0x003d);
-  Push(a); // I
-  Push(Pop() + Pop()); // +
+  Push(0x003d + a); // 0x003d I +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT
   Push(0x0028);
@@ -1349,10 +1324,7 @@ void UNK_0xee65() // UNK_0xee65
   imax = Pop();
   do // (DO)
   {
-    Push(Pop() * 0x000a); //  0x000a *
-    Push(i); // I
-    Push((Read16(Pop())&0xFF) - 0x0030); //  C@ 0x0030 -
-    Push(Pop() + Pop()); // +
+    Push(Pop() * 0x000a + ((Read16(i)&0xFF) - 0x0030)); //  0x000a * I C@ 0x0030 - +
     i++;
   } while(i<imax); // (LOOP)
 

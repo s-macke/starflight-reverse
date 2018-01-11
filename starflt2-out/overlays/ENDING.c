@@ -883,8 +883,7 @@ void UNK_0xeafe() // UNK_0xeafe
   Push((Pop() + 1) - Read16(pp_UNK_0xeabc)); //  1+ UNK_0xeabc @ -
   Push(Read16(regsp)); // DUP
   ABS(); // ABS
-  Push(a); // R>
-  Push(Pop() - Read16(pp_UNK_0xeab6)); //  UNK_0xeab6 @ -
+  Push(a - Read16(pp_UNK_0xeab6)); // R> UNK_0xeab6 @ -
   Push(Read16(regsp)); // DUP
   ABS(); // ABS
   ROT(); // ROT
@@ -1540,8 +1539,7 @@ void UNK_0xef5d() // UNK_0xef5d
     Push(Read16(regsp)); // DUP
     a = Pop(); // >R
     LCMOVE(); // LCMOVE
-    Push(a); // R>
-    Push(Pop() + (Read16(pp_LSCAN)&0xFF)); //  LSCAN C@ +
+    Push(a + (Read16(pp_LSCAN)&0xFF)); // R> LSCAN C@ +
     Push(pp_LSCAN); // LSCAN
     C_ex__2(); // C!_2
     Push(Read16(cc_BL)); // BL
@@ -2010,7 +2008,7 @@ void UNK_0xf264() // UNK_0xf264
     DARK(); // DARK
     UNK_0xf1ac(); // UNK_0xf1ac
     Push(j); // I
-    Push(!(Pop()==8?1:0)); //  8 = NOT
+    Push(!(j==8?1:0)); // I 8 = NOT
     if (Pop() != 0)
     {
       Push(0x002c);
@@ -2147,8 +2145,7 @@ void UNK_0xf33e() // UNK_0xf33e
   do // (DO)
   {
     UNK_0xf2fa(); // UNK_0xf2fa
-    Push(i); // I
-    Push(Pop() + pp_EXPOS); //  EXPOS +
+    Push(i + pp_EXPOS); // I EXPOS +
     Push(0x0fa0);
     Push(i); // I
     M_star_(); // M*

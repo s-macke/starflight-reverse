@@ -636,8 +636,7 @@ void UNK_0xe53d() // UNK_0xe53d
     Push(3);
     PICK(); // PICK
     Push((Pop()==Pop())?1:0); // =
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       Push(i); // I
@@ -683,8 +682,7 @@ void UNK_0xe5d5() // UNK_0xe5d5
     Push(!(Pop()==0x0064?1:0)); //  0x0064 = NOT
     a = Pop(); // >R
     _gt_(); // >
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
   } while(1);
@@ -1319,10 +1317,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   Push(0);
   Push(0x0064);
   UNK_0xe3ce(); // UNK_0xe3ce
-  Push(c); // R>
-  Push(b); // R>
-  _dash_(); // -
-  Push(Pop() + 5); //  5 +
+  Push((c - b) + 5); // R> R> - 5 +
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
   Push(9);
@@ -1742,9 +1737,7 @@ void UNK_0xf430() // UNK_0xf430
   _1_dot_5_at_(); // 1.5@
   a = Pop(); // >R
   b = Pop(); // >R
-  Push(b); // I
-  Push(a); // I'
-  Push(Pop() | Pop()); // OR
+  Push(b | a); // I I' OR
   if (Pop() != 0)
   {
     Push(b); // I

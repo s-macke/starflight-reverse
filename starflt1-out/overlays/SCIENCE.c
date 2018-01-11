@@ -469,21 +469,13 @@ void UNK_0xe760() // UNK_0xe760
   imax = Pop();
   do // (DO)
   {
-    Push(0x63ef+UNK_0xe60a.offset); // UNK_0xe60a<IFIELD>
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+    Push(Read16(((0x63ef+UNK_0xe60a.offset) + i) + 1)&0xFF); // UNK_0xe60a<IFIELD> I + 1+ C@
     _0_gt_(); // 0>
-    Push(i); // I
-    Push(Pop()==0?1:0); //  0=
+    Push(i==0?1:0); // I 0=
     MAX(); // MAX
     Push(Pop() + Pop()); // +
     SWAP(); // SWAP
-    Push(0x63ef+UNK_0xe60a.offset); // UNK_0xe60a<IFIELD>
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push((Read16(Pop())&0xFF) & 0x007f); //  C@ 0x007f AND
-    Push(Pop() + Pop()); // +
+    Push(Pop() + ((Read16((0x63ef+UNK_0xe60a.offset) + i)&0xFF) & 0x007f)); //  UNK_0xe60a<IFIELD> I + C@ 0x007f AND +
     SWAP(); // SWAP
     Push(2);
     int step = Pop();
@@ -1151,16 +1143,12 @@ void UNK_0xecb4() // UNK_0xecb4
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-    Push(4);
-    Push(a); // I
-    Push(Pop() * Pop()); // *
+    Push(4 * a); // 4 I *
     Push(1);
     MAX(); // MAX
     Push(Pop() * Pop()); // *
     SWAP(); // SWAP
-    Push(4);
-    Push(a); // I
-    Push(Pop() * Pop()); // *
+    Push(4 * a); // 4 I *
     Push(1);
     MAX(); // MAX
     Push(Pop() * Pop()); // *
@@ -1229,8 +1217,7 @@ void UNK_0xed30() // UNK_0xed30
   Push2Words("NULL");
   D_gt_(); // D>
   if (Pop() == 0) goto label1;
-  Push(a); // R>
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // R> 1+
   b = Pop(); // >R
   Push(0x000a);
   U_slash_MOD(); // U/MOD
@@ -1468,16 +1455,13 @@ void UNK_0xef31() // UNK_0xef31
 {
   unsigned short int a, b;
   a = Pop(); // >R
-  Push(a); // I
-  Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+  Push(Read16(a + 1)&0xFF); // I 1+ C@
   if (Pop() != 0)
   {
     Push(0);
-    Push(a); // I
-    Push((Read16(Pop() + 4)&0xFF) + 1); //  4 + C@ 1+
+    Push((Read16(a + 4)&0xFF) + 1); // I 4 + C@ 1+
     RRND(); // RRND
-    Push(a); // I
-    Push(Read16(Pop() + 4)&0xFF); //  4 + C@
+    Push(Read16(a + 4)&0xFF); // I 4 + C@
     Push(Read16(regsp)); // DUP
     Push(Pop() * Pop()); // *
     OVER(); // OVER
@@ -1508,24 +1492,15 @@ void UNK_0xef31() // UNK_0xef31
     Push(9);
     Push(0x000f);
     _star__slash_(); // */
-    Push(a); // I'
-    Push(Read16(Pop() + 2)&0xFF); //  2+ C@
-    Push(Pop() + Pop()); // +
-    Push(b); // R>
-    Push(a); // I
-    Push(Read16(Pop() + 3)&0xFF); //  3 + C@
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (Read16(a + 2)&0xFF)); //  I' 2+ C@ +
+    Push(b + (Read16(a + 3)&0xFF)); // R> I 3 + C@ +
   } else
   {
-    Push(a); // I
-    Push(Read16(Pop() + 2)&0xFF); //  2+ C@
-    Push(a); // I
-    Push((Read16(Pop() + 4)&0xFF) + 1); //  4 + C@ 1+
+    Push(Read16(a + 2)&0xFF); // I 2+ C@
+    Push((Read16(a + 4)&0xFF) + 1); // I 4 + C@ 1+
     RRND(); // RRND
-    Push(a); // I
-    Push(Read16(Pop() + 5)&0xFF); //  5 + C@
-    Push(a); // I
-    Push((Read16(Pop() + 3)&0xFF) + 1); //  3 + C@ 1+
+    Push(Read16(a + 5)&0xFF); // I 5 + C@
+    Push((Read16(a + 3)&0xFF) + 1); // I 3 + C@ 1+
     RRND(); // RRND
   }
   Push(a); // R>
@@ -1587,8 +1562,7 @@ void UNK_0xefe9() // UNK_0xefe9
     {
       a = Pop(); // >R
       Push(Pop() + 0x0071); //  0x0071 +
-      Push(a); // R>
-      Push(Pop() + 0x007f); //  0x007f +
+      Push(a + 0x007f); // R> 0x007f +
       BEEPON(); // BEEPON
       LPLOT(); // LPLOT
       BEEPOFF(); // BEEPOFF
@@ -1745,9 +1719,7 @@ void UNK_0xf0de() // UNK_0xf0de
   do // (DO)
   {
     LoadData(UNK_0xe68e); // from 'PLANET'
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     UNK_0xf0ce(); // UNK_0xf0ce
     i++;
   } while(i<imax); // (LOOP)
@@ -1831,9 +1803,7 @@ void UNK_0xf1d3() // UNK_0xf1d3
   do // (DO)
   {
     LoadData(UNK_0xe654); // from 'VESSEL'
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {

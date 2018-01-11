@@ -395,8 +395,7 @@ void INITMUS() // INITMUS
     a = Pop(); // >R
     Push(a); // I
     UNK_0xe2d6(); // UNK_0xe2d6
-    Push(a); // R>
-    Push(Pop() + 2); //  2+
+    Push(a + 2); // R> 2+
     UNK_0xe2d6(); // UNK_0xe2d6
     Push(Read16(cc_MUSSEG)); // MUSSEG
     Push(Read16(cc_MUSINT)); // MUSINT
@@ -464,8 +463,7 @@ void CSCR_gt_EGA() // CSCR>EGA
       {
         Push(pp_COLOR); // COLOR
         _st__ex__gt_(); // <!>
-        Push(j); // I
-        Push(Pop() * 2); //  2*
+        Push(j * 2); // I 2*
         Push(i); // J
         PLOT(); // PLOT
       }
@@ -476,8 +474,7 @@ void CSCR_gt_EGA() // CSCR>EGA
       {
         Push(pp_COLOR); // COLOR
         _st__ex__gt_(); // <!>
-        Push(j); // I
-        Push(Pop() * 2 + 1); //  2* 1+
+        Push(j * 2 + 1); // I 2* 1+
         Push(i); // J
         PLOT(); // PLOT
       }
@@ -675,17 +672,10 @@ void BRMOVE() // BRMOVE
     _2OVER(); // 2OVER
     _2OVER(); // 2OVER
     ROT(); // ROT
-    Push(i); // I
-    Push(Pop() * Read16(pp_UNK_0xe6c4)); //  UNK_0xe6c4 @ *
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i * Read16(pp_UNK_0xe6c4)); //  I UNK_0xe6c4 @ * +
     ROT(); // ROT
     ROT(); // ROT
-    Push(Read16(pp_UNK_0xe6c0) + Read16(pp_UNK_0xe6d0)); // UNK_0xe6c0 @ UNK_0xe6d0 @ +
-    Push(i); // I
-    _dash_(); // -
-    Push(Pop() * 0x0050); //  0x0050 *
-    Push(Pop() + Pop()); // +
-    Push(Pop() + Read16(pp_UNK_0xe6d4)); //  UNK_0xe6d4 @ +
+    Push((Pop() + ((Read16(pp_UNK_0xe6c0) + Read16(pp_UNK_0xe6d0)) - i) * 0x0050) + Read16(pp_UNK_0xe6d4)); //  UNK_0xe6c0 @ UNK_0xe6d0 @ + I - 0x0050 * + UNK_0xe6d4 @ +
     Push(Read16(pp_UNK_0xe6c4)); // UNK_0xe6c4 @
     LCMOVE(); // LCMOVE
     i++;
@@ -832,8 +822,7 @@ void REDUCE() // REDUCE
   Push(pp__n_CACHE); // #CACHE
   _plus__ex_(); // +!
   AUTO_dash_CACHE(); // AUTO-CACHE
-  Push(a); // R>
-  Push(-Pop() * 0x0040); //  0x0040 * NEGATE
+  Push(-a * 0x0040); // R> 0x0040 * NEGATE
   Push(pp_LFSEG); // LFSEG
   _plus__ex_(); // +!
   Push(Read16(pp_LFSEG)); // LFSEG @
@@ -894,20 +883,10 @@ void UNK_0xe928() // UNK_0xe928
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(pp_XOFFS); // XOFFS
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); //  @
+    Push(Read16(i + (pp_XOFFS + i))); // I XOFFS I + + @
     Push(pp_UNK_0xe6d4); // UNK_0xe6d4
     Store_3(); // !_3
-    Push(i); // I
-    Push(pp_PAUSEOFF); // PAUSEOFF
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); //  @
+    Push(Read16(i + (pp_PAUSEOFF + i))); // I PAUSEOFF I + + @
     Push(pp_UNK_0xe6bc); // UNK_0xe6bc
     Store_3(); // !_3
     Push(Read16(pp_UNK_0xe6e0)); // UNK_0xe6e0 @

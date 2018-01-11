@@ -838,9 +838,7 @@ void SMARTOPEN() // SMARTOPEN
   UNK_0x45d9(); // UNK_0x45d9
   _2DUP(); // 2DUP
   Push((Pop()==Pop())?1:0); // =
-  Push(!Pop()); //  NOT
-  Push(a); // I
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT I AND
   if (Pop() == 0) goto label1;
   DRV(); // DRV
   C_ex__2(); // C!_2

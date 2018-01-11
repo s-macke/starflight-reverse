@@ -535,12 +535,7 @@ void UNK_0xf280() // UNK_0xf280
         Push2Words("NULL");
         d = Pop(); // >R
       }
-      Push(c); // R>
-      Push(Pop() | Pop()); // OR
-      Push(b); // R>
-      Push(Pop() | Pop()); // OR
-      Push(a); // R>
-      Push(Pop() | Pop()); // OR
+      Push(((Pop() | c) | b) | a); //  R> OR R> OR R> OR
       BMSEG(); // BMSEG
       Push(Read16(Pop())); //  @
       Push(Read16(pp_DST)); // DST @

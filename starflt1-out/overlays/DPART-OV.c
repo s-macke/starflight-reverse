@@ -376,11 +376,11 @@ void UNK_0xf0d6() // UNK_0xf0d6
     GetINST_dash_CLASS(); // @INST-CLASS
     a = Pop(); // >R
     Push(a); // I
-    Push(Pop()==0x0044?1:0); //  0x0044 =
+    Push(a==0x0044?1:0); // I 0x0044 =
     Push(a); // I
-    Push(Pop()==0x001a?1:0); //  0x001a =
+    Push(a==0x001a?1:0); // I 0x001a =
     Push(a); // I
-    Push(Pop()==0x0029?1:0); //  0x0029 =
+    Push(a==0x0029?1:0); // I 0x0029 =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
@@ -390,7 +390,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
       Push(Pop() & Pop()); // AND
     }
     Push(a); // I
-    Push(Pop()==0x001c?1:0); //  0x001c =
+    Push(a==0x001c?1:0); // I 0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
@@ -401,7 +401,7 @@ void UNK_0xf0d6() // UNK_0xf0d6
       Push(Pop() & Pop()); // AND
     }
     Push(a); // I
-    Push(Pop()==0x001c?1:0); //  0x001c =
+    Push(a==0x001c?1:0); // I 0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {

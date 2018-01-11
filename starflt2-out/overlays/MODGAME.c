@@ -698,8 +698,7 @@ void UNK_0xdf59() // UNK_0xdf59
   Push(Pop() + 0x0043); //  0x0043 +
   Push(0x003f);
   FILE_st_(); // FILE<
-  Push(a); // R>
-  Push(Pop() + 0x0086); //  0x0086 +
+  Push(a + 0x0086); // R> 0x0086 +
   Push(0x0040);
   FILE_st_(); // FILE<
 }
@@ -989,8 +988,7 @@ void UNK_0xe1af() // UNK_0xe1af
       Push(i); // J
       L_at_PIXEL(); // L@PIXEL
       Push((Pop() & 0x000f) >> 4); //  0x000f AND 16*
-      Push(j); // I
-      Push(Pop() + 1); //  1+
+      Push(j + 1); // I 1+
       Push(i); // J
       L_at_PIXEL(); // L@PIXEL
       Push(Pop() & 0x000f); //  0x000f AND
@@ -1889,9 +1887,7 @@ void UNK_0xea3f() // UNK_0xea3f
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     Push(pp_UNK_0xde16); // UNK_0xde16
     _plus__ex__2(); // +!_2
     Push(1);
@@ -2206,21 +2202,17 @@ void UNK_0xec7a() // UNK_0xec7a
     {
       Push(4);
       PICK(); // PICK
-      Push(i); // I
-      Push(Pop() * 0x0040); //  0x0040 *
-      Push(Pop() + Pop()); // +
+      Push(Pop() + i * 0x0040); //  I 0x0040 * +
       Push(4);
       PICK(); // PICK
       GetDS(); // @DS
       Push(5);
       PICK(); // PICK
-      Push(i); // I
-      Push(Pop() + Pop()); // +
+      Push(Pop() + i); //  I +
       BLOCK_2(); // BLOCK_2
       _2OVER(); // 2OVER
       _2OVER(); // 2OVER
-      Push(a); // J
-      Push(!Pop()); //  NOT
+      Push(!a); // J NOT
       UNK_0xe951(); // UNK_0xe951
       Push(9);
       PICK(); // PICK

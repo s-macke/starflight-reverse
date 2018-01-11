@@ -481,8 +481,7 @@ void UNK_0xe797() // UNK_0xe797
 
   a = Pop(); // >R
   SWAP(); // SWAP
-  Push(a); // I
-  _dash_(); // -
+  Push(Pop() - a); //  I -
   Push(Pop() + Pop()); // +
   Push(a); // R>
   SWAP(); // SWAP
@@ -511,14 +510,9 @@ void UNK_0xe7df() // UNK_0xe7df
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
-    Push(i); // I
-    Push(Pop() + 1); //  1+
-    Push(imax); // I'
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Read16(i)&0xFF); // I C@
+    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
+    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -1340,10 +1334,7 @@ void UNK_0xed17() // UNK_0xed17
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP) - 2); // WTOP @ 2 -
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push((Read16(pp_WTOP) - 2) - i * 7); // WTOP @ 2 - I 7 * -
     POS_dot_(); // POS.
     UNK_0xed0f(); // UNK_0xed0f
     INEXT(); // INEXT
@@ -2185,12 +2176,7 @@ void DESCRIBE() // DESCRIBE
     Push(imax); // I'
     Push(1);
     _gt_(); // >
-    Push(i); // I
-    Push(Pop() + 1); //  1+
-    Push(imax); // I'
-    Push((Pop()==Pop())?1:0); // =
-    Push(!Pop()); //  NOT
-    Push(Pop() & Pop()); // AND
+    Push(i + 1 & !(i + 1==imax?1:0)); // I 1+ I 1+ I' = NOT AND
     if (Pop() != 0)
     {
       Push(0x05dc);

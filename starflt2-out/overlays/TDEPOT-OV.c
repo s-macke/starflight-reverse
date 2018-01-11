@@ -1011,10 +1011,7 @@ void UNK_0xebeb() // UNK_0xebeb
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP)); // WTOP @
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push(Read16(pp_WTOP) - i * 7); // WTOP @ I 7 * -
     POS_dot_(); // POS.
     TEXT_gt_PA(); // TEXT>PA
     PAD(); // PAD
@@ -1290,13 +1287,11 @@ void UNK_0xed96() // UNK_0xed96
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push((Read16(Pop())&0xFF)==0x002e?1:0); //  C@ 0x002e =
+    Push(Read16(i)&0xFF); // I C@
+    Push((Read16(i)&0xFF)==0x002e?1:0); // I C@ 0x002e =
     if (Pop() != 0)
     {
-      Push(i); // I
-      Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+      Push(Read16(i + 1)&0xFF); // I 1+ C@
       Push(0x0030);
       Push(0x003a);
       WITHIN(); // WITHIN
@@ -1307,10 +1302,7 @@ void UNK_0xed96() // UNK_0xed96
       }
     } else
     {
-      Push(Pop() * 0x000a); //  0x000a *
-      Push(i); // I
-      Push((Read16(Pop())&0xFF) - 0x0030); //  C@ 0x0030 -
-      Push(Pop() + Pop()); // +
+      Push(Pop() * 0x000a + ((Read16(i)&0xFF) - 0x0030)); //  0x000a * I C@ 0x0030 - +
       Push(Read16(pp_UNK_0xe5ee)==0?1:0); // UNK_0xe5ee @ 0=
       if (Pop() != 0)
       {
@@ -1801,8 +1793,7 @@ void SELL_dash_IT() // SELL-IT
   GetINST_dash_C(); // @INST-C
   SELL_dash_WHAT(); // SELL-WHAT case
   a = Pop(); // >R
-  Push(a); // I
-  Push(Pop() * -1); //  -1 *
+  Push(a * -1); // I -1 *
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex__2(); // +!_2
 
@@ -2020,8 +2011,7 @@ void UNK_0xf35c() // UNK_0xf35c
       DNEGATE(); // DNEGATE
       UNK_0xe62a(); // UNK_0xe62a
       UNK_0xe6d4(); // UNK_0xe6d4
-      Push(a); // I
-      _dash_(); // -
+      Push(Pop() - a); //  I -
       UNK_0xe6e0(); // UNK_0xe6e0
       Push(a); // I
       Push(0x65e1+INST_dash_QT.offset); // INST-QT<IFIELD>
@@ -2093,8 +2083,7 @@ void UNK_0xf40d() // UNK_0xf40d
   GetINST_dash_C(); // @INST-C
   BUY_dash_WHAT(); // BUY-WHAT case
   a = Pop(); // >R
-  Push(a); // I
-  Push(-Pop()); //  NEGATE
+  Push(-a); // I NEGATE
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex__2(); // +!_2
 

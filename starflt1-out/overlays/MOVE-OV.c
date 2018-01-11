@@ -651,12 +651,8 @@ void UNK_0xe921() // UNK_0xe921
     jmax = Pop();
     do // (DO)
     {
-      Push(Read16(pp_XLL)); // XLL @
-      Push(j); // I
-      Push(Pop() + Pop()); // +
-      Push(Read16(pp_YLL)); // YLL @
-      Push(i); // J
-      Push(Pop() + Pop()); // +
+      Push(Read16(pp_XLL) + j); // XLL @ I +
+      Push(Read16(pp_YLL) + i); // YLL @ J +
       _2DUP(); // 2DUP
       CELLCOLOR(); // CELLCOLOR
       Push(Read16(pp_COLOR)); // COLOR @
@@ -668,13 +664,10 @@ void UNK_0xe921() // UNK_0xe921
       SWAP(); // SWAP
       CELLCOLOR(); // CELLCOLOR
       Push(Read16(pp_COLOR)); // COLOR @
-      Push(a); // I
-      Push((Pop()==Pop())?1:0); // =
-      Push(!Pop()); //  NOT
+      Push(!(Read16(pp_COLOR)==a?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
-        Push(a); // R>
-        Push(!Pop()); //  NOT
+        Push(!a); // R> NOT
         b = Pop(); // >R
       }
       _2DUP(); // 2DUP
@@ -688,24 +681,17 @@ void UNK_0xe921() // UNK_0xe921
       SWAP(); // SWAP
       CELLCOLOR(); // CELLCOLOR
       Push(Read16(pp_COLOR)); // COLOR @
-      Push(c); // I
-      Push((Pop()==Pop())?1:0); // =
-      Push(!Pop()); //  NOT
+      Push(!(Read16(pp_COLOR)==c?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
-        Push(c); // R>
-        Push(!Pop()); //  NOT
+        Push(!c); // R> NOT
         d = Pop(); // >R
       }
-      Push(d); // I
-      Push(b); // I'
-      Push(Pop() | Pop()); // OR
+      Push(d | b); // I I' OR
       if (Pop() != 0)
       {
         Push(d); // I
-        Push(b); // I'
-        Push((Pop()==Pop())?1:0); // =
-        Push(!Pop()); //  NOT
+        Push(!(d==b?1:0)); // I I' = NOT
         if (Pop() != 0)
         {
           Push(d); // I

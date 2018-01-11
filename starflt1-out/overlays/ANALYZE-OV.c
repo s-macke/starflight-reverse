@@ -1283,12 +1283,8 @@ void UNK_0xf2c8() // UNK_0xf2c8
   do // (DO)
   {
     Push(Pop() + 1); //  1+
-    Push(pp_UNK_0xf2bf); // UNK_0xf2bf
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
-    Push(a); // J
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_UNK_0xf2bf + i)&0xFF); // UNK_0xf2bf I + C@
+    Push((Read16(pp_UNK_0xf2bf + i)&0xFF)==a?1:0); // UNK_0xf2bf I + C@ J =
     if (Pop() != 0)
     {
       imax = i; // LEAVE

@@ -109,8 +109,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   MAX(); // MAX
   Push(0x0023);
   MIN(); // MIN
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // I 1+
   Store_3(); // !_3
   Push(0x0078);
   UNK_0xf3de(); // UNK_0xf3de
@@ -122,8 +121,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
   MAX(); // MAX
   Push(0x003b);
   MIN(); // MIN
-  Push(a); // R>
-  Push(Pop() + 3); //  3 +
+  Push(a + 3); // R> 3 +
   Store_3(); // !_3
 }
 
@@ -142,9 +140,7 @@ void UNK_0xf456() // UNK_0xf456
   imax = Pop();
   do // (DO)
   {
-    Push(pp_UNK_0xf3a6); // UNK_0xf3a6
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(pp_UNK_0xf3a6 + i); // UNK_0xf3a6 I +
     UNK_0xf3f0(); // UNK_0xf3f0
     Push(5);
     int step = Pop();
@@ -164,20 +160,16 @@ void UNK_0xf470() // UNK_0xf470
   unsigned short int a;
   Push(Pop() + pp_UNK_0xf3a6); //  UNK_0xf3a6 +
   a = Pop(); // >R
-  Push(a); // I
-  Push(Read16(Pop() + 3)); //  3 + @
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
+  Push(Read16(a + 3)); // I 3 + @
+  Push(Read16(a)&0xFF); // I C@
   _slash_(); // /
   Push(Pop() + 0x0024); //  0x0024 +
   Push(0);
   MAX(); // MAX
   Push(0x0047);
   MIN(); // MIN
-  Push(a); // I
-  Push(Read16(Pop() + 1)); //  1+ @
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
+  Push(Read16(a + 1)); // I 1+ @
+  Push(Read16(a)&0xFF); // I C@
   _slash_(); // /
   Push(Pop() + 0x003c); //  0x003c +
   Push(0);
@@ -185,8 +177,7 @@ void UNK_0xf470() // UNK_0xf470
   Push(0x0077);
   MIN(); // MIN
   LPLOT(); // LPLOT
-  Push(a); // I
-  Push((Read16(Pop())&0xFF) - 1); //  C@ 1-
+  Push((Read16(a)&0xFF) - 1); // I C@ 1-
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)

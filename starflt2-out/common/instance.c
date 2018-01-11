@@ -1177,12 +1177,10 @@ void UNK_0x802b() // UNK_0x802b
     GetNEWSPA(); // @NEWSPA
     VA_gt_BUF(); // VA>BUF
     a = Pop(); // >R
-    Push(a); // I
-    Push(Pop() + 0x000b); //  0x000b +
+    Push(a + 0x000b); // I 0x000b +
     C_ex__2(); // C!_2
     Push(0x0030);
-    Push(a); // R>
-    Push(Pop() + 9); //  9 +
+    Push(a + 9); // R> 9 +
     C_ex__2(); // C!_2
     GetNEWSPA(); // @NEWSPA
     _gt_C_plus_S(); // >C+S
@@ -1374,12 +1372,10 @@ void VICREAT() // VICREAT
   CI(); // CI
   VA_gt_BUF(); // VA>BUF
   a = Pop(); // >R
-  Push(a); // I
-  Push(Pop() + 0x000b); //  0x000b +
+  Push(a + 0x000b); // I 0x000b +
   C_ex__2(); // C!_2
   Push(0x0030);
-  Push(a); // R>
-  Push(Pop() + 9); //  9 +
+  Push(a + 9); // R> 9 +
   C_ex__2(); // C!_2
   SET_dash_CUR(); // SET-CUR
   NULLPOI(); // NULLPOI
@@ -1413,8 +1409,7 @@ void ICREATE() // ICREATE
     a = Pop(); // >R
     Push(Pop() + 0x000a); //  0x000a +
     C_ex__2(); // C!_2
-    Push(a); // R>
-    Push(Pop() + 9); //  9 +
+    Push(a + 9); // R> 9 +
     C_ex__2(); // C!_2
     SET_dash_CUR(); // SET-CUR
   } else

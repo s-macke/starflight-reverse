@@ -336,8 +336,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   {
     BEEPON_2(); // BEEPON_2
     Push(i); // I
-    Push(i); // I
-    Push(Pop() * 2); //  2*
+    Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
     Push(3 * Read16(cc_MPS)); // 3 MPS *
@@ -853,16 +852,12 @@ void UNK_0xea94() // UNK_0xea94
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(pp_WLEFT) - 2); // WLEFT @ 2-
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((Read16(pp_WLEFT) - 2) + i); // WLEFT @ 2- I +
     Push(Read16(pp_WBOTTOM)); // WBOTTOM @
     OVER(); // OVER
     Push(Read16(pp_WTOP) + 2); // WTOP @ 2+
     LLINE(); // LLINE
-    Push(Read16(pp_WRIGHT) + 2); // WRIGHT @ 2+
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((Read16(pp_WRIGHT) + 2) + i); // WRIGHT @ 2+ I +
     Push(Read16(pp_WBOTTOM)); // WBOTTOM @
     OVER(); // OVER
     Push(Read16(pp_WTOP) + 2); // WTOP @ 2+
@@ -1397,8 +1392,7 @@ void UNK_0xeea1() // UNK_0xeea1
   Push(0x65e1+UNK_0xe73f.offset); // UNK_0xe73f<IFIELD>
   _plus__ex__2(); // +!_2
   ICLOSE(); // ICLOSE
-  Push(a); // R>
-  Push(-Pop()); //  NEGATE
+  Push(-a); // R> NEGATE
   UNK_0xee81(); // UNK_0xee81
 }
 
@@ -1750,8 +1744,7 @@ void UNK_0xf199() // UNK_0xf199
   a = Pop(); // >R
   Push(Pop() + 0x0016); //  0x0016 +
   MIN(); // MIN
-  Push(a); // R>
-  Push(Pop() + 0x000e); //  0x000e +
+  Push(a + 0x000e); // R> 0x000e +
   MAX(); // MAX
   Push(pp_EYEXY + 2); // EYEXY 2+
   _st__ex__gt_(); // <!>
@@ -1761,8 +1754,7 @@ void UNK_0xf199() // UNK_0xf199
   b = Pop(); // >R
   Push(Pop() + 0x0024); //  0x0024 +
   MIN(); // MIN
-  Push(b); // R>
-  Push(Pop() + 0x0016); //  0x0016 +
+  Push(b + 0x0016); // R> 0x0016 +
   MAX(); // MAX
   Push(pp_EYEXY); // EYEXY
   _st__ex__gt_(); // <!>

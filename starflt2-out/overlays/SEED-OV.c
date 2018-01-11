@@ -602,13 +602,10 @@ void UNK_0xeec0() // UNK_0xeec0
   UNK_0xedf6(); // UNK_0xedf6
   a = Pop(); // >R
   UNK_0xedc6(); // UNK_0xedc6
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
   b = Pop(); // >R
   UNK_0xedf6(); // UNK_0xedf6
-  Push(Pop() & !Read16(pp_MOVED)); //  MOVED @ NOT AND
-  Push(b); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() & !Read16(pp_MOVED) | b); //  MOVED @ NOT AND R> OR
 }
 
 
@@ -734,8 +731,7 @@ void UNK_0xef94() // UNK_0xef94
     UNK_0xeec0(); // UNK_0xeec0
     a = Pop(); // >R
     UNK_0xee08(); // UNK_0xee08
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       Push(i); // I
@@ -958,8 +954,7 @@ void UNK_0xf0da() // UNK_0xf0da
       UNK_0xee1a(); // UNK_0xee1a
       a = Pop(); // >R
       UNK_0xedc6(); // UNK_0xedc6
-      Push(a); // R>
-      Push(Pop() & Pop()); // AND
+      Push(Pop() & a); //  R> AND
       if (Pop() != 0)
       {
         UNK_0xf044(); // UNK_0xf044
@@ -1205,12 +1200,10 @@ void UNK_0xf21c() // UNK_0xf21c
       _1_dot_5_at_(); // 1.5@
       IINSERT(); // IINSERT
       Push(a); // I'
-      Push(!(Pop()==0x0029?1:0)); //  0x0029 = NOT
+      Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
       d = Pop(); // >R
       UNK_0xf120(); // UNK_0xf120
-      Push(!Pop()); //  NOT
-      Push(d); // R>
-      Push(Pop() & Pop()); // AND
+      Push(!Pop() & d); //  NOT R> AND
       if (Pop() != 0)
       {
         Push(a); // I'
@@ -1473,8 +1466,7 @@ void UNK_0xf3d4() // UNK_0xf3d4
   UNK_0xf3b8(); // UNK_0xf3b8
   a = Pop(); // >R
   UNK_0xee92(); // UNK_0xee92
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
   if (Pop() != 0)
   {
     UNK_0xf3c0(); // UNK_0xf3c0
@@ -1550,8 +1542,7 @@ void UNK_0xf43a() // UNK_0xf43a
   _st_(); // <
   a = Pop(); // >R
   UNK_0xf3b8(); // UNK_0xf3b8
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
   UNK_0xed24(); // UNK_0xed24
   LoadData(UNK_0xeca9); // from 'TRADERS'
   Push(Read16(Pop())&0xFF); //  C@
@@ -1560,8 +1551,7 @@ void UNK_0xf43a() // UNK_0xf43a
   ICLOSE(); // ICLOSE
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(b); // R>
-  Push(Pop() | (Pop()==7?1:0)); //   7 = OR
+  Push(b | (b==7?1:0)); // R> R> 7 = OR
   if (Pop() != 0)
   {
     Push(Read16(cc_UNK_0xec3e)); // UNK_0xec3e

@@ -297,9 +297,7 @@ void UNK_0xb495() // UNK_0xb495
   Push(Read16(regsp)); // DUP
   a = Pop(); // >R
   Push(Pop() + Pop()); // +
-  Push(0x0040);
-  Push(a); // R>
-  _dash_(); // -
+  Push(0x0040 - a); // 0x0040 R> -
 }
 
 
@@ -449,8 +447,7 @@ void UNK_0xb56d() // UNK_0xb56d
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())); //  @
+    Push(Read16(i)); // I @
     Push(0);
     D_dot_(); // D.
     Push(-2);

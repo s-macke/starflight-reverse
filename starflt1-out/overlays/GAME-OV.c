@@ -550,9 +550,7 @@ void UNK_0xe026() // UNK_0xe026
   imax = Pop();
   do // (DO)
   {
-    Push(0x0010);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x0010 + i); // 0x0010 I +
     Push(0x03da);
     P_ex_(); // P!
     Push(i); // I
@@ -658,8 +656,7 @@ void UNK_0xe0b6() // UNK_0xe0b6
     a = Pop(); // >R
     Push(a); // I
     UNK_0xe09e(); // UNK_0xe09e
-    Push(a); // R>
-    Push(Pop() + 2); //  2+
+    Push(a + 2); // R> 2+
     UNK_0xe09e(); // UNK_0xe09e
     Push(Read16(cc_MUSSEG)); // MUSSEG
     Push(0x000e);
@@ -759,14 +756,12 @@ void SCR_gt_CG() // SCR>CG
     {
       Push(Pop() + 1); //  1+
       Push(Read16(regsp)); // DUP
-      Push(j); // I
-      Push(Pop() * 2); //  2*
+      Push(j * 2); // I 2*
       Push(i); // J
       L_at_PIXEL(); // L@PIXEL
       E_gt_CGA(); // E>CGA
       Push((Pop() & 0x000f) >> 4); //  0x000f AND 16*
-      Push(j); // I
-      Push(Pop() * 2 + 1); //  2* 1+
+      Push(j * 2 + 1); // I 2* 1+
       Push(i); // J
       L_at_PIXEL(); // L@PIXEL
       E_gt_CGA(); // E>CGA
@@ -1485,8 +1480,7 @@ void SCR_gt_EG() // SCR>EG
         Push(pp_COLOR); // COLOR
         _st__ex__gt_(); // <!>
         SETCOLO(); // SETCOLO
-        Push(j); // I
-        Push(Pop() * 2); //  2*
+        Push(j * 2); // I 2*
         Push(i); // J
         PLOT(); // PLOT
       }
@@ -1498,8 +1492,7 @@ void SCR_gt_EG() // SCR>EG
         Push(pp_COLOR); // COLOR
         _st__ex__gt_(); // <!>
         SETCOLO(); // SETCOLO
-        Push(j); // I
-        Push(Pop() * 2 + 1); //  2* 1+
+        Push(j * 2 + 1); // I 2* 1+
         Push(i); // J
         PLOT(); // PLOT
       }
@@ -1631,9 +1624,7 @@ void CHECKSUM() // CHECKSUM
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(Pop() + i)&0xFF); //  I + C@
     Push(pp_CKSUM); // CKSUM
     _plus__ex_(); // +!
     Push(1);
@@ -1962,21 +1953,17 @@ void _v_DISK() // |DISK
     {
       Push(4);
       PICK(); // PICK
-      Push(i); // I
-      Push(Pop() * 0x0040); //  0x0040 *
-      Push(Pop() + Pop()); // +
+      Push(Pop() + i * 0x0040); //  I 0x0040 * +
       Push(4);
       PICK(); // PICK
       GetDS(); // @DS
       Push(5);
       PICK(); // PICK
-      Push(i); // I
-      Push(Pop() + Pop()); // +
+      Push(Pop() + i); //  I +
       BLOCK_2(); // BLOCK_2
       _2OVER(); // 2OVER
       _2OVER(); // 2OVER
-      Push(a); // J
-      Push(!Pop()); //  NOT
+      Push(!a); // J NOT
       UNK_0xe8b0(); // UNK_0xe8b0
       Push(9);
       PICK(); // PICK

@@ -1198,9 +1198,7 @@ void UNK_0xf280() // UNK_0xf280
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push((Read16(Pop())&0xFF) & 1); //  C@ 1 AND
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | (Read16(i)&0xFF) & 1); //  I C@ 1 AND OR
     i++;
   } while(i<imax); // (LOOP)
 

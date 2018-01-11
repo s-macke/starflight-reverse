@@ -535,10 +535,7 @@ void UNK_0xee4d() // UNK_0xee4d
   UNK_0xed49(); // UNK_0xed49
   b = Pop(); // >R
   UNK_0xed8b(); // UNK_0xed8b
-  Push(b); // R>
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (b & a)); //  R> R> AND AND
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
@@ -595,8 +592,7 @@ void UNK_0xee91() // UNK_0xee91
       SWAP(); // SWAP
       a = Pop(); // >R
       SWAP(); // SWAP
-      Push(a); // R>
-      Push(Pop() + 1); //  1+
+      Push(a + 1); // R> 1+
     }
     i++;
   } while(i<imax); // (LOOP)
@@ -1096,8 +1092,7 @@ void UNK_0xf1c1() // UNK_0xf1c1
       UNK_0xed9d(); // UNK_0xed9d
       a = Pop(); // >R
       UNK_0xed49(); // UNK_0xed49
-      Push(a); // R>
-      Push(Pop() & Pop()); // AND
+      Push(Pop() & a); //  R> AND
       if (Pop() != 0)
       {
         UNK_0xf0f7(); // UNK_0xf0f7
@@ -1382,12 +1377,10 @@ void IsEXIST() // ?EXIST
       _1_dot_5_at_(); // 1.5@
       IINSERT(); // IINSERT
       Push(a); // I'
-      Push(!(Pop()==0x0029?1:0)); //  0x0029 = NOT
+      Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
       d = Pop(); // >R
       UNK_0xf207(); // UNK_0xf207
-      Push(!Pop()); //  NOT
-      Push(d); // R>
-      Push(Pop() & Pop()); // AND
+      Push(!Pop() & d); //  NOT R> AND
       if (Pop() != 0)
       {
         Push(a); // I'

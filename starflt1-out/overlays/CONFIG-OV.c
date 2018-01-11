@@ -538,10 +538,7 @@ void UNK_0xebb5() // UNK_0xebb5
   {
     Push(6);
     Push(0);
-    Push(0x0036);
-    Push(i); // I
-    Push(Pop() * 0x000a); //  0x000a *
-    Push(Pop() + Pop()); // +
+    Push(0x0036 + i * 0x000a); // 0x0036 I 0x000a * +
     Push(0x0036);
     POS_dot_PXT(); // POS.PXT
     i++;
@@ -594,11 +591,7 @@ void UNK_0xebe9() // UNK_0xebe9
       MOD(); // MOD
       Push(Pop() * 0x000a + 0x0036); //  0x000a * 0x0036 +
       POS_dot_(); // POS.
-      Push(pp_UNK_0xeb81); // UNK_0xeb81
-      Push(i); // I
-      Push(Pop() * 2); //  2*
-      Push(Pop() + Pop()); // +
-      Push(Read16(Pop())); //  @
+      Push(Read16(pp_UNK_0xeb81 + i * 2)); // UNK_0xeb81 I 2* + @
       Push(0x0064);
       M_star_(); // M*
       Push(6);
@@ -898,7 +891,7 @@ void UNK_0xee20() // UNK_0xee20
     Push(Read16(pp_UNK_0xeb7d)); // UNK_0xeb7d @
     a = Pop(); // >R
     Push(a); // I
-    Push(Pop()==3?1:0); //  3 =
+    Push(a==3?1:0); // I 3 =
     if (Pop() != 0)
     {
       Push(Read16(0x63ef+UNK_0xea0c.offset)); // UNK_0xea0c<IFIELD> @
@@ -1287,11 +1280,7 @@ void UNK_0xf1d6() // UNK_0xf1d6
     SWAP(); // SWAP
     Push(Pop() * 2); //  2*
     _dash_(); // -
-    Push(Pop() + pp_UNK_0xeb81); //  UNK_0xeb81 +
-    Push(a); // I
-    Push((Pop() - 1) * 0x000a); //  1- 0x000a *
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); //  @
+    Push(Read16((Pop() + pp_UNK_0xeb81) + (a - 1) * 0x000a)); //  UNK_0xeb81 + I 1- 0x000a * + @
     Push(0x0064);
     Push(a); // I
     _ro_PARTADDR_rc_(); // (PARTADDR) case
@@ -1421,14 +1410,11 @@ void UNK_0xf2fa() // UNK_0xf2fa
   imax = Pop();
   do // (DO)
   {
-    Push(0x63ef+UNK_0xe9da.offset); // UNK_0xe9da<IFIELD>
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((0x63ef+UNK_0xe9da.offset) + i); // UNK_0xe9da<IFIELD> I +
     a = Pop(); // >R
     Push(a); // I
     UNK_0xea27(); // UNK_0xea27
-    Push(a); // I
-    Push(Pop() + 1); //  1+
+    Push(a + 1); // I 1+
     C_ex_(); // C!
     Push(0x0064);
     Push(a); // R>

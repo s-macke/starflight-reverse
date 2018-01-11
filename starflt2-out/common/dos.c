@@ -856,9 +856,7 @@ void SMARTOP() // SMARTOP
   UNK_0x458e(); // UNK_0x458e
   _2DUP(); // 2DUP
   Push((Pop()==Pop())?1:0); // =
-  Push(!Pop()); //  NOT
-  Push(a); // I
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT I AND
   if (Pop() == 0) goto label1;
   DRV(); // DRV
   C_ex__1(); // C!_1
@@ -1202,9 +1200,7 @@ void _bo_LDS_bc_() // [LDS]
   UNK_0x458e(); // UNK_0x458e
   _2DUP(); // 2DUP
   Push((Pop()==Pop())?1:0); // =
-  Push(!Pop()); //  NOT
-  Push(a); // I
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT I AND
   if (Pop() == 0) goto label1;
   DRV(); // DRV
   C_ex__1(); // C!_1

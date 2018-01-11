@@ -551,9 +551,7 @@ void UNK_0xef07() // UNK_0xef07
   Push(0x003c);
   Push(Read16(a)); // R@
   Push(Pop() + Pop()); // +
-  Push(0x0024);
-  Push(a); // R>
-  Push(Pop() + Pop()); // +
+  Push(0x0024 + a); // 0x0024 R> +
   DISPLAY(); // DISPLAY
   UNK_0xed5e(); // UNK_0xed5e
 }
@@ -834,8 +832,7 @@ void UNK_0xf0b0() // UNK_0xf0b0
   unsigned short int a;
   a = Pop(); // >R
   _dash_(); // -
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
+  Push(Pop() * a); //  R> *
   Push(pp_UNK_0xedd9); // UNK_0xedd9
   _plus__ex__2(); // +!_2
 }
@@ -1007,10 +1004,7 @@ void UNK_0xf18c() // UNK_0xf18c
     Store_2(); // !_2
     UNK_0xf018(); // UNK_0xf018
     UNK_0xefe0(); // UNK_0xefe0
-    Push(0x03e8);
-    Push(i); // I
-    Push(Pop() * 0x000a); //  0x000a *
-    _dash_(); // -
+    Push(0x03e8 - i * 0x000a); // 0x03e8 I 0x000a * -
     TONE(); // TONE
     Push(0x0028);
     MS(); // MS
@@ -1074,9 +1068,7 @@ void UNK_0xf1fe() // UNK_0xf1fe
   a = Pop(); // >R
   UNK_0xee1f(); // UNK_0xee1f
   SWAP(); // SWAP
-  Push(0x00b4);
-  Push(a); // R>
-  _dash_(); // -
+  Push(0x00b4 - a); // 0x00b4 R> -
   UNK_0xee1f(); // UNK_0xee1f
 }
 
@@ -1099,9 +1091,7 @@ void UNK_0xf222() // UNK_0xf222
   UNK_0xf12e(); // UNK_0xf12e
   a = Pop(); // >R
   UNK_0xf1e4(); // UNK_0xf1e4
-  Push(!Pop()); //  NOT
-  Push(a); // R>
-  Push(Pop() | Pop()); // OR
+  Push(!Pop() | a); //  NOT R> OR
   if (Pop() == 0) goto label1;
   Pop(); Pop(); // 2DROP
   goto label2;
@@ -1127,9 +1117,7 @@ void UNK_0xf250() // UNK_0xf250
   D_st_(); // D<
   a = Pop(); // >R
   D_st_(); // D<
-  Push(!Pop()); //  NOT
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT R> AND
 }
 
 

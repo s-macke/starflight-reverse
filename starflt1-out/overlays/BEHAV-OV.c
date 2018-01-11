@@ -530,8 +530,7 @@ void IsALIEN_dash_CLO() // ?ALIEN-CLO
   ABS(); // ABS
   Push(6);
   _st_(); // <
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
 }
 
 
@@ -685,8 +684,7 @@ void IsNEXT_dash_TO_dash_P() // ?NEXT-TO-P
   ABS(); // ABS
   Push(2);
   _st_(); // <
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
 }
 
 

@@ -473,8 +473,7 @@ void UNK_0xedb5() // UNK_0xedb5
   Push(0x000a);
   Push(Read16(pp_UNK_0xed9f)); // UNK_0xed9f @
   RRND(); // RRND
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // I 1+
   C_ex__2(); // C!_2
   Push(1);
   Push(a); // I
@@ -494,8 +493,7 @@ void UNK_0xedb5() // UNK_0xedb5
   MAX(); // MAX
   Push(0x0023);
   MIN(); // MIN
-  Push(a); // I
-  Push(Pop() + 2); //  2+
+  Push(a + 2); // I 2+
   Store_2(); // !_2
   Push(0x0078);
   UNK_0xeda3(); // UNK_0xeda3
@@ -507,8 +505,7 @@ void UNK_0xedb5() // UNK_0xedb5
   MAX(); // MAX
   Push(0x003b);
   MIN(); // MIN
-  Push(a); // R>
-  Push(Pop() + 4); //  4 +
+  Push(a + 4); // R> 4 +
   Store_2(); // !_2
 }
 
@@ -527,9 +524,7 @@ void UNK_0xee25() // UNK_0xee25
   imax = Pop();
   do // (DO)
   {
-    Push(pp_UNK_0xed5d); // UNK_0xed5d
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(pp_UNK_0xed5d + i); // UNK_0xed5d I +
     UNK_0xedb5(); // UNK_0xedb5
     Push(6);
     int step = Pop();
@@ -549,20 +544,16 @@ void UNK_0xee3f() // UNK_0xee3f
   unsigned short int a;
   Push(Pop() + pp_UNK_0xed5d); //  UNK_0xed5d +
   a = Pop(); // >R
-  Push(a); // I
-  Push(Read16(Pop() + 4)); //  4 + @
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
+  Push(Read16(a + 4)); // I 4 + @
+  Push(Read16(a)&0xFF); // I C@
   _slash_(); // /
   Push(Pop() + 0x0024); //  0x0024 +
   Push(0);
   MAX(); // MAX
   Push(0x0047);
   MIN(); // MIN
-  Push(a); // I
-  Push(Read16(Pop() + 2)); //  2+ @
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
+  Push(Read16(a + 2)); // I 2+ @
+  Push(Read16(a)&0xFF); // I C@
   _slash_(); // /
   Push(Pop() + 0x003c); //  0x003c +
   Push(0);
@@ -575,12 +566,9 @@ void UNK_0xee3f() // UNK_0xee3f
   Push(Pop() + 0x00c8); //  0x00c8 +
   RRND(); // RRND
   TONE(); // TONE
-  Push(a); // I
-  Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
+  Push((Read16(a)&0xFF) + 1); // I C@ 1+
   Push(Read16(regsp)); // DUP
-  Push(a); // I
-  Push(Read16(Pop() + 1)&0xFF); //  1+ C@
-  Push((Pop()==Pop())?1:0); // =
+  Push(Pop()==(Read16(a + 1)&0xFF)?1:0); //  I 1+ C@ =
   if (Pop() != 0)
   {
     Pop(); // DROP

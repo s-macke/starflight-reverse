@@ -405,8 +405,7 @@ void UNK_0xf23c() // UNK_0xf23c
       _gt_C_plus_S(); // >C+S
       Push(Read16(0x63ef+UNK_0xf11d.offset)&0xFF); // UNK_0xf11d<IFIELD> C@
       ICLOSE(); // ICLOSE
-      Push(a); // J
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==a?1:0); //  J =
     } else
     {
       Pop(); Pop(); // 2DROP

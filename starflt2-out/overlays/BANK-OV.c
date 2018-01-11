@@ -474,10 +474,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
   }
   a = Pop(); // >R
   Push(Pop() | Pop()); // OR
-  Push(!(!Pop())); //  NOT NOT
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
-  Push(Pop() + 0x0020); //  0x0020 +
+  Push(!(!Pop()) * a + 0x0020); //  NOT NOT R> * 0x0020 +
   Exec("EMIT"); // call of word 0x2731 '(EMIT)'
 }
 
@@ -559,41 +556,25 @@ void UNK_0xf27f() // UNK_0xf27f
   imax = Pop();
   do // (DO)
   {
-    Push(1);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(1 + i); // 1 I +
     Push(0x00c4);
-    Push(1);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(1 + i); // 1 I +
+    Push(3);
+    LLINE(); // LLINE
+    Push(0x009c + i); // 0x009c I +
+    Push(0x00c4);
+    Push(0x009c + i); // 0x009c I +
     Push(3);
     LLINE(); // LLINE
     Push(0x009c);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(0x00c4);
-    Push(0x009c);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(1 + i); // 1 I +
     Push(3);
+    Push(1 + i); // 1 I +
     LLINE(); // LLINE
     Push(0x009c);
-    Push(1);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x00c4 + i); // 0x00c4 I +
     Push(3);
-    Push(1);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    LLINE(); // LLINE
-    Push(0x009c);
-    Push(0x00c4);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(3);
-    Push(0x00c4);
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(0x00c4 + i); // 0x00c4 I +
     LLINE(); // LLINE
     i++;
   } while(i<imax); // (LOOP)

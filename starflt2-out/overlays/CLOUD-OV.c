@@ -160,9 +160,7 @@ void UNK_0xf47c() // UNK_0xf47c
   imax = Pop();
   do // (DO)
   {
-    Push(0x65e1+UNK_0xf3c6.offset); // UNK_0xf3c6<IFIELD>
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((0x65e1+UNK_0xf3c6.offset) + i); // UNK_0xf3c6<IFIELD> I +
     Get_gt_C_plus_S(); // @>C+S
     UNK_0xf3da(); // UNK_0xf3da
     if (Pop() != 0)

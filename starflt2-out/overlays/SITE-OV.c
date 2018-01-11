@@ -208,17 +208,10 @@ void UNK_0xf1e1() // UNK_0xf1e1
   imax = Pop();
   do // (DO)
   {
-    Push(pp_CMAP); // CMAP
-    Push(i); // I
-    Push(Pop() * 8); //  8 *
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(pp_CMAP + i * 8)&0xFF); // CMAP I 8 * + C@
     StoreCOLOR(); // !COLOR
     Push(0x0094);
-    Push(0x0095);
-    Push(i); // I
-    Push(Pop() * 6); //  6 *
-    Push(Pop() + Pop()); // +
+    Push(0x0095 + i * 6); // 0x0095 I 6 * +
     POS_dot_(); // POS.
     BLT(); // BLT
     i++;
@@ -469,8 +462,7 @@ void UNK_0xf3df() // UNK_0xf3df
   Push(0x0090);
   SWAP(); // SWAP
   LLINE(); // LLINE
-  Push(a); // R>
-  Push(Pop() - 1); //  1-
+  Push(a - 1); // R> 1-
   Push(0x005f);
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
@@ -538,11 +530,9 @@ void GETSITE_1() // GETSITE_1
     Push(0x00c8);
     MIN(); // MIN
     a = Pop(); // >R
-    Push(a); // I
-    Push(Pop() * Pop()); // *
+    Push(Pop() * a); //  I *
     SWAP(); // SWAP
-    Push(a); // R>
-    Push(Pop() * Pop()); // *
+    Push(Pop() * a); //  R> *
     _2DUP(); // 2DUP
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)

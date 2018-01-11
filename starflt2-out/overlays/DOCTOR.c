@@ -134,14 +134,9 @@ void UNK_0xf0a6() // UNK_0xf0a6
   imax = Pop();
   do // (DO)
   {
-    Push(0x65e1+UNK_0xf08d.offset); // UNK_0xf08d<IFIELD>
-    Push(i); // I
-    Push(Pop() * 3); //  3 *
-    Push(Pop() + Pop()); // +
+    Push((0x65e1+UNK_0xf08d.offset) + i * 3); // UNK_0xf08d<IFIELD> I 3 * +
     Get_gt_C_plus_S(); // @>C+S
-    Push(Read16(0x65e1+UNK_0xf088.offset)); // UNK_0xf088<IFIELD> @
-    Push(a); // J
-    Push(Pop() & Pop()); // AND
+    Push(Read16(0x65e1+UNK_0xf088.offset) & a); // UNK_0xf088<IFIELD> @ J AND
     if (Pop() != 0)
     {
       Push(Pop() + 1); //  1+
@@ -175,8 +170,7 @@ void UNK_0xf0e6() // UNK_0xf0e6
     return;
   }
   a = Pop(); // >R
-  Push(a); // I
-  Push(Pop()==0?1:0); //  0=
+  Push(a==0?1:0); // I 0=
   if (Pop() == 0) goto label2;
   PRINT("DEAD", 4); // (.")
   goto label3;

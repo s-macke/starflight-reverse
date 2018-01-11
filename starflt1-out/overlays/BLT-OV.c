@@ -339,15 +339,13 @@ void DrawHYBRID() // .HYBRID
     Push(pp_ABLT); // ABLT
     _plus__ex_(); // +!
     Push(c); // I
-    Push(b); // I'
-    Push(Pop() + 2); //  2+
+    Push(b + 2); // I' 2+
     LC_at_(); // LC@
     Is_gt_EGA(); // ?>EGA
     Push(pp_COLOR); // COLOR
     Store_3(); // !_3
     Push(c); // R>
-    Push(b); // R>
-    Push(Pop() + 3); //  3 +
+    Push(b + 3); // R> 3 +
     LC_at_(); // LC@
     if (Pop() != 0)
     {

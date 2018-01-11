@@ -1921,10 +1921,7 @@ void UNK_0xefc4() // UNK_0xefc4
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP) - 1); // WTOP @ 1-
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push((Read16(pp_WTOP) - 1) - i * 7); // WTOP @ 1- I 7 * -
     POS_dot_(); // POS.
     TEXT_gt_PA(); // TEXT>PA
     PAD(); // PAD
@@ -2528,8 +2525,7 @@ void UNK_0xf37e() // UNK_0xf37e
     Push(Pop() | Pop()); // OR
     Push(Read16(a)); // R@
     Push(Pop() | (Pop()==0x00fe?1:0)); //   0x00fe = OR
-    Push(a); // R>
-    Push(Pop() | (Pop()==0x002d?1:0)); //   0x002d = OR
+    Push(a | (a==0x002d?1:0)); // R> R> 0x002d = OR
     GetIC(); // @IC
     Push(Pop() & !(Pop()==Read16(cc_DEAD_dash_IC)?1:0)); //   DEAD-IC = NOT AND
     if (Pop() != 0)

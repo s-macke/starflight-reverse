@@ -899,8 +899,7 @@ void UNK_0xe1b8() // UNK_0xe1b8
 
   a = Pop(); // >R
   SWAP(); // SWAP
-  Push(a); // I
-  _dash_(); // -
+  Push(Pop() - a); //  I -
   Push(Pop() + Pop()); // +
   Push(a); // R>
   SWAP(); // SWAP
@@ -947,14 +946,9 @@ void UNK_0xe200() // UNK_0xe200
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
-    Push(i); // I
-    Push(Pop() + 1); //  1+
-    Push(imax); // I'
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Read16(i)&0xFF); // I C@
+    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
+    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -3792,8 +3786,7 @@ void UNK_0xf276() // UNK_0xf276
     {
       MAX(); // MAX
     }
-    Push(a); // R>
-    Push(Pop() + 1); //  1+
+    Push(a + 1); // R> 1+
     WITHIN(); // WITHIN
     UNK_0xf048(); // UNK_0xf048
     Push(Pop() | Pop()); // OR
@@ -3898,9 +3891,7 @@ void UNK_0xf32a() // UNK_0xf32a
       Push(0x006b);
       UNK_0xe59a(); // UNK_0xe59a
       D_st_(); // D<
-      Push(!Pop()); //  NOT
-      Push(a); // R>
-      Push(Pop() & Pop()); // AND
+      Push(!Pop() & a); //  NOT R> AND
     } else
     {
       D_gt_(); // D>
@@ -3908,9 +3899,7 @@ void UNK_0xf32a() // UNK_0xf32a
       Push(0x006b);
       UNK_0xe59a(); // UNK_0xe59a
       D_gt_(); // D>
-      Push(!Pop()); //  NOT
-      Push(b); // R>
-      Push(Pop() & Pop()); // AND
+      Push(!Pop() & b); //  NOT R> AND
     }
     return;
   }

@@ -989,13 +989,10 @@ void UNK_0xf478() // UNK_0xf478
   do // (DO)
   {
     Push(0x000f);
-    Push(i); // I
-    Push(Pop() * 0x000a + 0x002c); //  0x000a * 0x002c +
+    Push(i * 0x000a + 0x002c); // I 0x000a * 0x002c +
     POS_dot_(); // POS.
     PRINT("CLASS ", 6); // (.")
-    Push(5);
-    Push(i); // I
-    _dash_(); // -
+    Push(5 - i); // 5 I -
     Push(0);
     DrawR(); // .R
     PRINT("...", 3); // (.")

@@ -98,16 +98,10 @@ void altitude() // altitude
   imax = Pop();
   do // (DO)
   {
-    Push(pp_CMAP); // CMAP
-    Push(i); // I
-    Push(Pop() * 8); //  8 *
-    Push(Pop() + Pop()); // +
+    Push(pp_CMAP + i * 8); // CMAP I 8 * +
     Push(pp_TILE_dash_PTR); // TILE-PTR
     Store_3(); // !_3
-    Push(0x0021);
-    Push(i); // I
-    Push(Pop() * 0x000c); //  0x000c *
-    Push(Pop() + Pop()); // +
+    Push(0x0021 + i * 0x000c); // 0x0021 I 0x000c * +
     Push(0x002d);
     Push(0x0010);
     Push(0x000c);
@@ -180,9 +174,7 @@ void DrawBLT() // .BLT
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() * 9); //  9 *
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i * 9); //  I 9 * +
     Push(Read16(regsp)); // DUP
     Push(Read16(Pop())&0xFF); //  C@
     Is_gt_EGA(); // ?>EGA

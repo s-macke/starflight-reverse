@@ -686,16 +686,12 @@ void UNK_0xea91() // UNK_0xea91
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(pp_WLEFT) - 2); // WLEFT @ 2-
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((Read16(pp_WLEFT) - 2) + i); // WLEFT @ 2- I +
     Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
     OVER(); // OVER
     Push(Read16(pp_WTOP) + 2); // WTOP @ 2+
     LLINE(); // LLINE
-    Push(Read16(pp_WRIGHT) + 2); // WRIGHT @ 2+
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((Read16(pp_WRIGHT) + 2) + i); // WRIGHT @ 2+ I +
     Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
     OVER(); // OVER
     Push(Read16(pp_WTOP) + 2); // WTOP @ 2+
@@ -1511,8 +1507,7 @@ void UNK_0xf138() // UNK_0xf138
   a = Pop(); // >R
   Push(Pop() + 0x0016); //  0x0016 +
   MIN(); // MIN
-  Push(a); // R>
-  Push(Pop() + 0x000e); //  0x000e +
+  Push(a + 0x000e); // R> 0x000e +
   MAX(); // MAX
   Push(pp_EYEXY + 2); // EYEXY 2+
   _st__ex__gt_(); // <!>
@@ -1522,8 +1517,7 @@ void UNK_0xf138() // UNK_0xf138
   b = Pop(); // >R
   Push(Pop() + 0x0024); //  0x0024 +
   MIN(); // MIN
-  Push(b); // R>
-  Push(Pop() + 0x0016); //  0x0016 +
+  Push(b + 0x0016); // R> 0x0016 +
   MAX(); // MAX
   Push(pp_EYEXY); // EYEXY
   _st__ex__gt_(); // <!>

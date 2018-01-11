@@ -717,10 +717,7 @@ void UNK_0xee2f() // UNK_0xee2f
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
-    Push(Read16(pp_WTOP) - 2); // WTOP @ 2 -
-    Push(i); // I
-    Push(Pop() * 7); //  7 *
-    _dash_(); // -
+    Push((Read16(pp_WTOP) - 2) - i * 7); // WTOP @ 2 - I 7 * -
     POS_dot_(); // POS.
     UNK_0xee25(); // UNK_0xee25
     INEXT(); // INEXT

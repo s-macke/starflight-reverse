@@ -606,8 +606,7 @@ void UNK_0xe626() // UNK_0xe626
   ABS(); // ABS
   Push(2);
   _st_(); // <
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
 }
 
 
@@ -1328,8 +1327,7 @@ void UNK_0xea86() // UNK_0xea86
   {
     BEEPON_2(); // BEEPON_2
     Push(i); // I
-    Push(i); // I
-    Push(Pop() * 2); //  2*
+    Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
     Push(3 * Read16(cc_MPS)); // 3 MPS *
@@ -1469,8 +1467,7 @@ void UNK_0xeb5f() // UNK_0xeb5f
     SWAP(); // SWAP
   }
   UNK_0xeac4(); // UNK_0xeac4
-  Push(a); // R>
-  Push(Pop()==0?1:0); //  0=
+  Push(a==0?1:0); // R> 0=
   if (Pop() != 0)
   {
     UNK_0xeb57(); // UNK_0xeb57
@@ -1909,10 +1906,7 @@ void CIRCLES() // CIRCLES
         DrawCIRCLE_1(); // .CIRCLE_1
         V_gt_DISPL(); // V>DISPL
         GetCOLOR(); // @COLOR
-        Push(Pop() * 0x000a); //  0x000a *
-        Push(i); // I
-        Push(Pop() * 0x000a); //  0x000a *
-        Push(Pop() + Pop()); // +
+        Push(Pop() * 0x000a + i * 0x000a); //  0x000a * I 0x000a * +
         TONE(); // TONE
         Push(5);
         int step = Pop();

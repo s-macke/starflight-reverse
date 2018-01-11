@@ -1475,10 +1475,8 @@ void UNK_0xdf5e() // UNK_0xdf5e
   unsigned short int a;
   Push(Read16(0x63ef+INST_dash_QTY.offset) * 4 + 2); // INST-QTY<IFIELD> @ 4 * 2+
   a = Pop(); // >R
-  Push(a); // I
-  Push(-Pop()); //  NEGATE
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(-a); // I NEGATE
+  Push(a + 1); // I 1+
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
@@ -1486,9 +1484,7 @@ void UNK_0xdf5e() // UNK_0xdf5e
   _star__slash_(); // */
   Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
   Store_3(); // !_3
-  Push(a); // I
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
+  Push(a * a); // I R> *
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
@@ -1711,8 +1707,7 @@ void DrawAUXSYS() // .AUXSYS
       StoreCOLOR(); // !COLOR
       Push(0x0078);
       Push(0x00a1);
-      Push(i); // I
-      Push(Pop() * 4 + 1); //  4 * 1+
+      Push(i * 4 + 1); // I 4 * 1+
       Push(1);
       Push(1);
       DrawELLIPSE(); // .ELLIPSE
@@ -2085,8 +2080,7 @@ void UNK_0xe325() // UNK_0xe325
     Push(0);
     Push(Read16(cc_UNK_0xe307)); // UNK_0xe307
     RRND(); // RRND
-    Push(i); // I
-    Push(Pop() + 1); //  1+
+    Push(i + 1); // I 1+
     C_ex_(); // C!
     Push(2);
     int step = Pop();
@@ -2176,10 +2170,8 @@ void UNK_0xe3c9() // UNK_0xe3c9
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push(i); // I
-    Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+    Push(Read16(i)&0xFF); // I C@
+    Push(Read16(i + 1)&0xFF); // I 1+ C@
     UNK_0xe375(); // UNK_0xe375
     Push(2);
     int step = Pop();
@@ -2243,11 +2235,9 @@ void UNK_0xe4ba() // UNK_0xe4ba
   b = Pop(); // >R
   c = Pop(); // >R
   Push(c); // I
-  Push(Pop()==Read16(pp_HEADING)?1:0); //  HEADING @ =
-  Push(b); // I'
-  Push(Pop() & (Pop()==Read16(pp_XABS)?1:0)); //   XABS @ = AND
-  Push(a); // J
-  Push(!(Pop() & (Pop()==Read16(pp_YABS)?1:0))); //   YABS @ = AND NOT
+  Push(c==Read16(pp_HEADING)?1:0); // I HEADING @ =
+  Push(b & (b==Read16(pp_XABS)?1:0)); // I' I' XABS @ = AND
+  Push(!(a & (a==Read16(pp_YABS)?1:0))); // J J YABS @ = AND NOT
   _gt_V(); // >V
   Push(c); // R>
   Push(b); // R>
@@ -2421,8 +2411,7 @@ void UNK_0xe5ee() // UNK_0xe5ee
     _2DUP(); // 2DUP
     UNK_0xe59e(); // UNK_0xe59e
     a = Pop(); // >R
-    Push(a); // I
-    Push(!(Pop() & 1)); //  1 AND NOT
+    Push(!(a & 1)); // I 1 AND NOT
     if (Pop() != 0)
     {
       SWAP(); // SWAP
@@ -2457,9 +2446,7 @@ void UNK_0xe5ee() // UNK_0xe5ee
     {
       Push(2);
     }
-    Push(a); // R>
-    Push((Pop() - 1) * 2); //  1- 2*
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (a - 1) * 2); //  R> 1- 2* +
     return;
   }
   Pop(); Pop(); // 2DROP
@@ -2503,9 +2490,7 @@ void UNK_0xe684() // UNK_0xe684
   Push(Pop() * Pop()); // *
   Push(-Pop()); //  NEGATE
   SWAP(); // SWAP
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
-  Push(-Pop()); //  NEGATE
+  Push(-Pop() * a); //  R> * NEGATE
 }
 
 
@@ -2518,11 +2503,9 @@ void UNK_0xe6a0() // UNK_0xe6a0
   unsigned short int a, b;
   a = Pop(); // >R
   UNK_0xe670(); // UNK_0xe670
-  Push(a); // I
-  Push(Pop() * Pop()); // *
+  Push(Pop() * a); //  I *
   SWAP(); // SWAP
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
+  Push(Pop() * a); //  R> *
   SWAP(); // SWAP
   ROT(); // ROT
   Push(Pop() + Pop()); // +
@@ -2547,8 +2530,7 @@ void UNK_0xe6be() // UNK_0xe6be
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  Push(a); // R>
-  Push(Pop() + Pop()); // +
+  Push(Pop() + a); //  R> +
   Push(0);
   SQRT(); // SQRT
   Push(pp__10_star_END); // 10*END
@@ -2618,9 +2600,7 @@ void UNK_0xe728() // UNK_0xe728
   D_st_(); // D<
   a = Pop(); // >R
   D_st_(); // D<
-  Push(!Pop()); //  NOT
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT R> AND
 }
 
 
@@ -3527,7 +3507,7 @@ void IsUNNEST() // ?UNNEST
 
     }
     Push(a); // R>
-    Push(Pop()==1?1:0); //  1 =
+    Push(a==1?1:0); // R> 1 =
     return;
   }
   GetXYABS(); // @XYABS
@@ -3664,12 +3644,10 @@ void UNK_0xee9b() // UNK_0xee9b
   IsCOLLISION(); // ?COLLISION
   a = Pop(); // >R
   Is2NEST_dot_ETC(); // ?2NEST.ETC
-  Push(a); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | a); //  R> OR
   b = Pop(); // >R
   IsSTARPORT(); // ?STARPORT
-  Push(b); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | b); //  R> OR
   if (Pop() == 0) return;
   COLLIDE(); // COLLIDE case
 }

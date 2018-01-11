@@ -136,10 +136,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Pop() >> 4); //  16*
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push((i >> 4) + i); // I 16* I +
     StoreCOLOR(); // !COLOR
     Push(Read16(pp_XBLT)); // XBLT @
     OVER(); // OVER
@@ -345,8 +342,7 @@ void UNK_0xf202() // UNK_0xf202
   Push(0x004c);
   Push(0x0049);
   Push(4);
-  Push(a); // I
-  Push(Pop() - 1); //  1-
+  Push(a - 1); // I 1-
   LCOPYBL(); // LCOPYBL
   Push(a); // R>
   UNK_0xf1b6(); // UNK_0xf1b6
@@ -461,9 +457,7 @@ void UNK_0xf32a() // UNK_0xf32a
     Push(4);
     Push(0x00bf);
     Push(0x004c);
-    Push(0x00bf);
-    Push(a); // I
-    _dash_(); // -
+    Push(0x00bf - a); // 0x00bf I -
     Push(4);
     Push(0x00be);
   } else
@@ -471,9 +465,7 @@ void UNK_0xf32a() // UNK_0xf32a
     Push(0x0048);
     UNK_0xf312(); // UNK_0xf312
     Push(4);
-    Push(0x0048);
-    Push(a); // I
-    Push(Pop() + Pop()); // +
+    Push(0x0048 + a); // 0x0048 I +
     Push(0x004c);
     Push(0x0048);
     _2OVER(); // 2OVER
@@ -530,13 +522,9 @@ void UNK_0xf3b7() // UNK_0xf3b7
     imax = Pop();
     do // (DO)
     {
-      Push(0x0084);
-      Push(i); // I
-      _dash_(); // -
+      Push(0x0084 - i); // 0x0084 I -
       UNK_0xf202(); // UNK_0xf202
-      Push(0x0084);
-      Push(i); // I
-      Push(Pop() + Pop()); // +
+      Push(0x0084 + i); // 0x0084 I +
       UNK_0xf1e4(); // UNK_0xf1e4
       Push(0x7148);
       TONE(); // TONE
@@ -649,15 +637,11 @@ void _and_RETURN() // &RETURN
     jmax = Pop();
     do // (DO)
     {
-      Push(0x003c);
-      Push(j); // I
-      Push(Pop() + Pop()); // +
+      Push(0x003c + j); // 0x003c I +
       Push(1);
       Push(j); // I
       UNK_0xf32a(); // UNK_0xf32a
-      Push(0x003c);
-      Push(j); // I
-      _dash_(); // -
+      Push(0x003c - j); // 0x003c I -
       Push(0);
       Push(j); // I
       UNK_0xf32a(); // UNK_0xf32a

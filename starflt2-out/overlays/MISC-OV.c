@@ -469,16 +469,13 @@ void _ro_TRIM() // (TRIM
   Store_2(); // !_2
   Push(Pop() * 4 + pp_UNK_0xeff2); //  4 * UNK_0xeff2 +
   a = Pop(); // >R
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
+  Push(Read16(a)&0xFF); // I C@
   Push(pp_LBLT); // LBLT
   Store_2(); // !_2
-  Push(a); // I
-  Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+  Push(Read16(a + 1)&0xFF); // I 1+ C@
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2
-  Push(a); // R>
-  Push(Pop() + 2); //  2+
+  Push(a + 2); // R> 2+
   Push(pp_ABLT); // ABLT
   Store_2(); // !_2
   POS_dot_(); // POS.
@@ -595,8 +592,7 @@ void _ro__n_IN_do_() // (#IN$
   unsigned short int a, b;
   a = Pop(); // >R
   PAD(); // PAD
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // I 1+
   Push(0);
   FILL_2(); // FILL_2
   Push(pp_XORMODE); // XORMODE
@@ -619,7 +615,7 @@ void _ro__n_IN_do_() // (#IN$
     Push(0x005b);
     WITHIN(); // WITHIN
     Push(b); // I
-    Push(Pop()==Read16(cc_BL)?1:0); //  BL =
+    Push(b==Read16(cc_BL)?1:0); // I BL =
     PAD(); // PAD
     Push(Read16(Pop())&0xFF); //  C@
     _0_gt_(); // 0>
@@ -649,14 +645,14 @@ void _ro__n_IN_do_() // (#IN$
     } else
     {
       Push(b); // I
-      Push(Pop()==8?1:0); //  8 =
+      Push(b==8?1:0); // I 8 =
       if (Pop() != 0)
       {
         UNK_0xf042(); // UNK_0xf042
       } else
       {
         Push(b); // I
-        Push(!(Pop()==0x000d?1:0)); //  0x000d = NOT
+        Push(!(b==0x000d?1:0)); // I 0x000d = NOT
         Push(b); // I
         _0_gt_(); // 0>
         Push(Pop() & Pop()); // AND
@@ -667,7 +663,7 @@ void _ro__n_IN_do_() // (#IN$
       }
     }
     Push(b); // R>
-    Push(Pop()==0x000d?1:0); //  0x000d =
+    Push(b==0x000d?1:0); // R> 0x000d =
     PAD(); // PAD
     Push(Read16(Pop())&0xFF); //  C@
     _0_gt_(); // 0>

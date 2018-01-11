@@ -164,8 +164,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
     Push(3);
     PICK(); // PICK
     Push((Pop()==Pop())?1:0); // =
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       Push(i); // I
@@ -211,8 +210,7 @@ void UNK_0xf14c() // UNK_0xf14c
     Push(!(Pop()==0x0064?1:0)); //  0x0064 = NOT
     a = Pop(); // >R
     _gt_(); // >
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
   } while(1);
@@ -619,7 +617,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
   Push(a); // R>
-  Push(!(Pop()==Read16(pp__n_STORM)?1:0)); //  #STORM @ = NOT
+  Push(!(a==Read16(pp__n_STORM)?1:0)); // R> #STORM @ = NOT
   if (Pop() != 0)
   {
     Push(0xcdd8); // probable '.STOR'

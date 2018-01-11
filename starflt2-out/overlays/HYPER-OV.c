@@ -1511,10 +1511,8 @@ void UNK_0xdf14() // UNK_0xdf14
   unsigned short int a;
   Push(Read16(0x65e1+INST_dash_QT.offset) * 4 + 2); // INST-QT<IFIELD> @ 4 * 2+
   a = Pop(); // >R
-  Push(a); // I
-  Push(-Pop()); //  NEGATE
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(-a); // I NEGATE
+  Push(a + 1); // I 1+
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
   Push(Read16(cc_UNK_0xd9e4)); // UNK_0xd9e4
@@ -1522,9 +1520,7 @@ void UNK_0xdf14() // UNK_0xdf14
   _star__slash_(); // */
   Push(0x65e1+INST_dash_X.offset); // INST-X<IFIELD>
   Store_2(); // !_2
-  Push(a); // I
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
+  Push(a * a); // I R> *
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
@@ -1744,8 +1740,7 @@ void DrawAUXSYS() // .AUXSYS
       StoreCOLOR(); // !COLOR
       Push(0x0078);
       Push(0x00a1);
-      Push(i); // I
-      Push(Pop() * 4 + 1); //  4 * 1+
+      Push(i * 4 + 1); // I 4 * 1+
       Push(1);
       Push(1);
       DrawELLIPS(); // .ELLIPS
@@ -2119,8 +2114,7 @@ void UNK_0xe2d7() // UNK_0xe2d7
     Push(0);
     Push(Read16(cc_UNK_0xe2b9)); // UNK_0xe2b9
     RRND(); // RRND
-    Push(i); // I
-    Push(Pop() + 1); //  1+
+    Push(i + 1); // I 1+
     C_ex__2(); // C!_2
     Push(2);
     int step = Pop();
@@ -2210,10 +2204,8 @@ void UNK_0xe37b() // UNK_0xe37b
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push(i); // I
-    Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+    Push(Read16(i)&0xFF); // I C@
+    Push(Read16(i + 1)&0xFF); // I 1+ C@
     UNK_0xe327(); // UNK_0xe327
     Push(2);
     int step = Pop();
@@ -2278,11 +2270,9 @@ void UNK_0xe466() // UNK_0xe466
   b = Pop(); // >R
   c = Pop(); // >R
   Push(c); // I
-  Push(Pop()==Read16(pp_HEADING)?1:0); //  HEADING @ =
-  Push(b); // I'
-  Push(Pop() & (Pop()==Read16(pp_XABS)?1:0)); //   XABS @ = AND
-  Push(a); // J
-  Push(!(Pop() & (Pop()==Read16(pp_YABS)?1:0))); //   YABS @ = AND NOT
+  Push(c==Read16(pp_HEADING)?1:0); // I HEADING @ =
+  Push(b & (b==Read16(pp_XABS)?1:0)); // I' I' XABS @ = AND
+  Push(!(a & (a==Read16(pp_YABS)?1:0))); // J J YABS @ = AND NOT
   _gt_V(); // >V
   Push(c); // R>
   Push(b); // R>
@@ -2462,8 +2452,7 @@ void UNK_0xe5a4() // UNK_0xe5a4
     _2DUP(); // 2DUP
     UNK_0xe554(); // UNK_0xe554
     a = Pop(); // >R
-    Push(a); // I
-    Push(!(Pop() & 1)); //  1 AND NOT
+    Push(!(a & 1)); // I 1 AND NOT
     if (Pop() != 0)
     {
       SWAP(); // SWAP
@@ -2498,9 +2487,7 @@ void UNK_0xe5a4() // UNK_0xe5a4
     {
       Push(2);
     }
-    Push(a); // R>
-    Push((Pop() - 1) * 2); //  1- 2*
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (a - 1) * 2); //  R> 1- 2* +
     return;
   }
   Pop(); Pop(); // 2DROP
@@ -2544,9 +2531,7 @@ void UNK_0xe63a() // UNK_0xe63a
   Push(Pop() * Pop()); // *
   Push(-Pop()); //  NEGATE
   SWAP(); // SWAP
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
-  Push(-Pop()); //  NEGATE
+  Push(-Pop() * a); //  R> * NEGATE
 }
 
 
@@ -2559,11 +2544,9 @@ void UNK_0xe656() // UNK_0xe656
   unsigned short int a, b;
   a = Pop(); // >R
   UNK_0xe626(); // UNK_0xe626
-  Push(a); // I
-  Push(Pop() * Pop()); // *
+  Push(Pop() * a); //  I *
   SWAP(); // SWAP
-  Push(a); // R>
-  Push(Pop() * Pop()); // *
+  Push(Pop() * a); //  R> *
   SWAP(); // SWAP
   ROT(); // ROT
   Push(Pop() + Pop()); // +
@@ -2588,8 +2571,7 @@ void UNK_0xe674() // UNK_0xe674
   _dash_(); // -
   Push(Read16(regsp)); // DUP
   Push(Pop() * Pop()); // *
-  Push(a); // R>
-  Push(Pop() + Pop()); // +
+  Push(Pop() + a); //  R> +
   Push(0);
   SQRT(); // SQRT
   Push(pp__10_star_END); // 10*END
@@ -2659,9 +2641,7 @@ void UNK_0xe6de() // UNK_0xe6de
   D_st_(); // D<
   a = Pop(); // >R
   D_st_(); // D<
-  Push(!Pop()); //  NOT
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT R> AND
 }
 
 
@@ -3712,7 +3692,7 @@ void UNK_0xedb8() // UNK_0xedb8
 
     }
     Push(a); // R>
-    Push(Pop()==1?1:0); //  1 =
+    Push(a==1?1:0); // R> 1 =
     return;
   }
   UNK_0xdab4(); // UNK_0xdab4
@@ -3876,12 +3856,10 @@ void UNK_0xef35() // UNK_0xef35
   UNK_0xebdb(); // UNK_0xebdb
   a = Pop(); // >R
   UNK_0xecc1(); // UNK_0xecc1
-  Push(a); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | a); //  R> OR
   b = Pop(); // >R
   UNK_0xed11(); // UNK_0xed11
-  Push(b); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | b); //  R> OR
   if (Pop() == 0) return;
   COLLIDE(); // COLLIDE case
 }

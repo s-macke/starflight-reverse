@@ -329,10 +329,8 @@ void UNK_0xe4e2() // UNK_0xe4e2
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push(i); // I
-    Push(Read16(Pop() + 1)&0xFF); //  1+ C@
+    Push(Read16(i)&0xFF); // I C@
+    Push(Read16(i + 1)&0xFF); // I 1+ C@
     Push(2);
     int step = Pop();
     i += step;
@@ -623,14 +621,9 @@ void UNK_0xe7ca() // UNK_0xe7ca
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
-    Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
-    Push(i); // I
-    Push(Pop() + 1); //  1+
-    Push(imax); // I'
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() | Pop()); // OR
+    Push(Read16(i)&0xFF); // I C@
+    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
+    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -1114,10 +1107,7 @@ void UNK_0xebc1() // UNK_0xebc1
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   _0_gt_(); // 0>
   a = Pop(); // >R
-  Push(0x0022);
-  Push(a); // I
-  Push(Pop() * 8); //  8 *
-  _dash_(); // -
+  Push(0x0022 - a * 8); // 0x0022 I 8 * -
   Push(0x0064);
   POS_dot_(); // POS.
   PRINT("YOU HAVE NOT FILED ANY", 22); // (.")
@@ -1286,8 +1276,7 @@ void UNK_0xed0c() // UNK_0xed0c
     {
       Push(i); // I
       _ro_BAD_dash_PLAN_rc_(); // (BAD-PLAN) case
-      Push(i); // I
-      Push(Pop() + 1); //  1+
+      Push(i + 1); // I 1+
       BIT(); // BIT
       Push(Read16(0x63ef+UNK_0xe470.offset)&0xFF); // UNK_0xe470<IFIELD> C@
       _st_(); // <

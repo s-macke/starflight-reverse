@@ -882,8 +882,7 @@ void UNK_0xef03() // UNK_0xef03
   do // (DO)
   {
     UNK_0xee3f(); // UNK_0xee3f
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i); //  I +
     UNK_0xee31(); // UNK_0xee31
     Push(1);
     Push(0x0064);
@@ -1007,16 +1006,14 @@ void UNK_0xefad() // UNK_0xefad
   do // (DO)
   {
     UNK_0xee51(); // UNK_0xee51
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i); //  I +
     UNK_0xee31(); // UNK_0xee31
     Push(1);
     Push(0x0064);
     RRND(); // RRND
     OVER(); // OVER
     _st_(); // <
-    Push(i); // I
-    Push(Pop() | (Pop()==0x0017?1:0)); //   0x0017 = OR
+    Push(i | (i==0x0017?1:0)); // I I 0x0017 = OR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xeb92)); // UNK_0xeb92

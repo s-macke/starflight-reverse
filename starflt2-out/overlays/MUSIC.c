@@ -544,8 +544,7 @@ void INITMUS() // INITMUS
     a = Pop(); // >R
     Push(a); // I
     UNK_0xebb6(); // UNK_0xebb6
-    Push(a); // R>
-    Push(Pop() + 2); //  2+
+    Push(a + 2); // R> 2+
     UNK_0xebb6(); // UNK_0xebb6
     Push(Read16(cc_MUSSEG)); // MUSSEG
     Push(Read16(cc_UNK_0xeb7e)); // UNK_0xeb7e
@@ -817,12 +816,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
         Push2Words("NULL");
         d = Pop(); // >R
       }
-      Push(c); // R>
-      Push(Pop() | Pop()); // OR
-      Push(b); // R>
-      Push(Pop() | Pop()); // OR
-      Push(a); // R>
-      Push(Pop() | Pop()); // OR
+      Push(((Pop() | c) | b) | a); //  R> OR R> OR R> OR
       BMSEG(); // BMSEG
       Push(Read16(Pop())); //  @
       Push(Read16(pp_DST)); // DST @

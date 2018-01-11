@@ -611,14 +611,14 @@ void UNK_0xf2ef() // UNK_0xf2ef
   GetINST_dash_S(); // @INST-S
   a = Pop(); // >R
   Push(a); // I
-  Push(Pop()==6?1:0); //  6 =
+  Push(a==6?1:0); // I 6 =
   if (Pop() != 0)
   {
     Push(Read16(cc_UNK_0xf14e)); // UNK_0xf14e
   } else
   {
     Push(a); // I
-    Push(Pop()==0x0017?1:0); //  0x0017 =
+    Push(a==0x0017?1:0); // I 0x0017 =
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xf146)); // UNK_0xf146

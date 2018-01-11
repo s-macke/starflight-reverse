@@ -400,8 +400,7 @@ void UNK_0xf212() // UNK_0xf212
       _gt_C_plus_S(); // >C+S
       Push(Read16(0x65e1+UNK_0xf0eb.offset)&0xFF); // UNK_0xf0eb<IFIELD> C@
       ICLOSE(); // ICLOSE
-      Push(a); // J
-      Push((Pop()==Pop())?1:0); // =
+      Push(Pop()==a?1:0); //  J =
     } else
     {
       Pop(); Pop(); // 2DROP

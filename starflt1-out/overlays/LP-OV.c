@@ -264,8 +264,7 @@ void UNK_0xe121() // UNK_0xe121
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i); //  I +
     _1_dot_5_at_(); // 1.5@
     Push(5);
     PICK(); // PICK
@@ -687,8 +686,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
     Push(3);
     PICK(); // PICK
     Push((Pop()==Pop())?1:0); // =
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       Push(i); // I
@@ -734,8 +732,7 @@ void UNK_0xe570() // UNK_0xe570
     Push(!(Pop()==0x0064?1:0)); //  0x0064 = NOT
     a = Pop(); // >R
     _gt_(); // >
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
   } while(1);
@@ -785,8 +782,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
     Push(3);
     PICK(); // PICK
     Push((Pop()==Pop())?1:0); // =
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       Push(i); // I
@@ -1368,8 +1364,7 @@ void UNK_0xef31() // UNK_0xef31
   _2DUP(); // 2DUP
   Push(0xddb3); Push(0x0001);
   D_eq_(); // D=
-  Push(a); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | a); //  R> OR
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
@@ -1382,8 +1377,7 @@ void UNK_0xef31() // UNK_0xef31
     b = Pop(); // >R
     Push(0xdd9d); Push(0x0001);
     D_eq_(); // D=
-    Push(b); // R>
-    Push(Pop() | Pop()); // OR
+    Push(Pop() | b); //  R> OR
     if (Pop() != 0)
     {
       UNK_0xee1d(); // UNK_0xee1d
@@ -1695,9 +1689,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
   a = Pop(); // >R
   LoadData(UNK_0xe356); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
-  Push((Read16(Pop())&0xFF)==1?1:0); //  C@ 1 =
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(((Read16(Pop())&0xFF)==1?1:0) & a); //  C@ 1 = R> AND
   if (Pop() != 0)
   {
     Push(0xc591); Push(0x0001);
@@ -1712,8 +1704,7 @@ void UNK_0xf1b6() // UNK_0xf1b6
   Push(Read16(Pop())&0xFF); //  C@
   Push(5);
   _gt_(); // >
-  Push(b); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & b); //  R> AND
   if (Pop() != 0)
   {
     Push(0xc748); Push(0x0001);
@@ -1820,8 +1811,7 @@ void UNK_0xf256() // UNK_0xf256
   Push(Read16(Pop())&0xFF); //  C@
   Push(4);
   _gt_(); // >
-  Push(c); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & c); //  R> AND
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
@@ -1837,8 +1827,7 @@ void UNK_0xf256() // UNK_0xf256
   _1_dot_5_at_(); // 1.5@
   Push(0xcd8b); Push(0x0001);
   D_eq_(); // D=
-  Push(d); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & d); //  R> AND
   LoadData(UNK_0xe2f6); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xdddc); Push(0x0001);
@@ -1945,9 +1934,7 @@ void UNK_0xf384() // UNK_0xf384
     Push(Read16(regsp)); // DUP
     Push(Pop()==3?1:0); //  3 =
     SWAP(); // SWAP
-    Push(Pop() | (Pop()==4?1:0)); //   4 = OR
-    Push(a); // R>
-    Push(Pop() & Pop()); // AND
+    Push((Pop() | (Pop()==4?1:0)) & a); //   4 = OR R> AND
     if (Pop() != 0)
     {
       LoadData(UNK_0xe3be); // from 'CREATURE'

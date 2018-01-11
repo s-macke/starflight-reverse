@@ -1886,8 +1886,7 @@ void UNK_0xe660() // UNK_0xe660
   {
     BEEPON(); // BEEPON
     Push(i); // I
-    Push(i); // I
-    Push(Pop() * 2); //  2*
+    Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
     Push(3 * Read16(cc_MPS)); // 3 MPS *
@@ -2140,26 +2139,19 @@ void UNK_0xe7cc() // UNK_0xe7cc
   a = Pop(); // >R
   Push(a); // I
   Store_3(); // !_3
-  Push(a); // I
-  Push(Pop() + 2); //  2+
+  Push(a + 2); // I 2+
   Store_3(); // !_3
-  Push(a); // I
-  Push(Pop() + 4); //  4 +
+  Push(a + 4); // I 4 +
   Store_3(); // !_3
-  Push(a); // R>
-  Push(Pop() + 6); //  6 +
+  Push(a + 6); // R> 6 +
   Store_3(); // !_3
   CLIPPER(); // CLIPPER
   Push(Read16(pp_VIN)); // VIN @
   b = Pop(); // >R
-  Push(b); // I
-  Push(Read16(Pop() + 6)); //  6 + @
-  Push(b); // I
-  Push(Read16(Pop() + 4)); //  4 + @
-  Push(b); // I
-  Push(Read16(Pop() + 2)); //  2+ @
-  Push(b); // R>
-  Push(Read16(Pop())); //  @
+  Push(Read16(b + 6)); // I 6 + @
+  Push(Read16(b + 4)); // I 4 + @
+  Push(Read16(b + 2)); // I 2+ @
+  Push(Read16(b)); // R> @
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   D_eq_(); // D=
@@ -2479,8 +2471,7 @@ void UNK_0xea21() // UNK_0xea21
   Push(Read16(a)); // R@
   Push(Pop() + Pop()); // +
   SWAP(); // SWAP
-  Push(a); // R>
-  Push(Pop() + Pop()); // +
+  Push(Pop() + a); //  R> +
   SWAP(); // SWAP
 }
 

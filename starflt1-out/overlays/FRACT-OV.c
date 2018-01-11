@@ -965,17 +965,12 @@ void UNK_0xe80f() // UNK_0xe80f
     jmax = Pop();
     do // (DO)
     {
-      Push(j); // I
-      Push(Pop() + Read16(pp_X2)); //  X2 @ +
-      Push(Read16(pp_Y2)); // Y2 @
-      Push(i); // J
-      Push(Pop() + Pop()); // +
+      Push(j + Read16(pp_X2)); // I X2 @ +
+      Push(Read16(pp_Y2) + i); // Y2 @ J +
       ACELLADDR(); // ACELLADDR
       A_at_(); // A@
-      Push(j); // I
-      Push(Pop() * 4); //  4 *
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push(j * 4); // I 4 *
+      Push(i * 2); // J 2*
       ReadArray(CONANCHOR); // CONANCHOR
       LC_ex_(); // LC!
       j++;
@@ -1001,9 +996,7 @@ void UNK_0xe86f() // UNK_0xe86f
   _2DUP(); // 2DUP
   ACELLADDR(); // ACELLADDR
   A_at_(); // A@
-  Push(a); // R>
-  Push(Pop() + Pop()); // +
-  Push(Pop() >> 1); //  2/
+  Push(Pop() + a >> 1); //  R> + 2/
   b = Pop(); // >R
   ROT(); // ROT
   Push(Pop() + Pop()); // +
@@ -1041,26 +1034,20 @@ void UNK_0xe8a1() // UNK_0xe8a1
     jmax = Pop();
     do // (DO)
     {
-      Push(j); // I
-      Push(Pop() * 4); //  4 *
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push(j * 4); // I 4 *
+      Push(i * 2); // J 2*
       OVER(); // OVER
       Push(Pop() + 4); //  4 +
       OVER(); // OVER
       UNK_0xe86f(); // UNK_0xe86f
-      Push(j); // I
-      Push(Pop() * 4); //  4 *
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push(j * 4); // I 4 *
+      Push(i * 2); // J 2*
       OVER(); // OVER
       Push(Pop() + 2); //  2 +
       OVER(); // OVER
       UNK_0xe86f(); // UNK_0xe86f
-      Push(j); // I
-      Push((Pop() + 1) * 4); //  1+ 4 *
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push((j + 1) * 4); // I 1+ 4 *
+      Push(i * 2); // J 2*
       OVER(); // OVER
       Push(Pop() - 2); //  2 -
       OVER(); // OVER
@@ -1095,10 +1082,8 @@ void UNK_0xe8f7() // UNK_0xe8f7
     jmax = Pop();
     do // (DO)
     {
-      Push(j); // I
-      Push(Pop() * 4); //  4 *
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push(j * 4); // I 4 *
+      Push(i * 2); // J 2*
       OVER(); // OVER
       OVER(); // OVER
       Push(Pop() + 2); //  2+
@@ -1133,10 +1118,8 @@ void UNK_0xe921() // UNK_0xe921
     jmax = Pop();
     do // (DO)
     {
-      Push(j); // I
-      Push(Pop() * 4); //  4 *
-      Push(i); // J
-      Push(Pop() * 2 + 1); //  2* 1+
+      Push(j * 4); // I 4 *
+      Push(i * 2 + 1); // J 2* 1+
       OVER(); // OVER
       Push(Pop() + 4); //  4 +
       OVER(); // OVER
@@ -1171,10 +1154,8 @@ void UNK_0xe94f() // UNK_0xe94f
     jmax = Pop();
     do // (DO)
     {
-      Push(j); // I
-      Push(Pop() * 2 + 1); //  2* 1+
-      Push(i); // J
-      Push(Pop() * 2); //  2*
+      Push(j * 2 + 1); // I 2* 1+
+      Push(i * 2); // J 2*
       OVER(); // OVER
       OVER(); // OVER
       Push(Pop() + 2); //  2+
@@ -1252,17 +1233,13 @@ void UNK_0xe985() // UNK_0xe985
     do // (DO)
     {
       OVER(); // OVER
-      Push(j); // I
-      Push(Pop() + Pop()); // +
+      Push(Pop() + j); //  I +
       OVER(); // OVER
-      Push(i); // J
-      Push(Pop() + Pop()); // +
+      Push(Pop() + i); //  J +
       ReadArray(CONANCHOR); // CONANCHOR
       LC_at_(); // LC@
-      Push(j); // I
-      Push(Pop() * 0x000c); //  0x000c *
-      Push(i); // J
-      Push(Pop() * 0x0014); //  0x0014 *
+      Push(j * 0x000c); // I 0x000c *
+      Push(i * 0x0014); // J 0x0014 *
       ReadArray(CONTOUR); // CONTOUR
       LC_ex_(); // LC!
       j++;
@@ -1317,9 +1294,7 @@ void UNK_0xea37() // UNK_0xea37
   Push(Pop() + 0x0013); //  0x0013 +
   ACELLADDR(); // ACELLADDR
   A_at_(); // A@
-  Push(Pop()==Read16(cc_UNK_0xe364)?1:0); //  UNK_0xe364 =
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push((Pop()==Read16(cc_UNK_0xe364)?1:0) & a); //  UNK_0xe364 = R> AND
   if (Pop() != 0)
   {
     OVER(); // OVER
@@ -1583,31 +1558,27 @@ void UNK_0xeb90() // UNK_0xeb90
   Push(Pop() - Read16(pp_UNK_0xeb8c)); //  UNK_0xeb8c @ -
   XHBUF_dash_SEG(); // XHBUF-SEG
   Push(Read16(Pop())); //  @
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // I 1+
   LC_ex_(); // LC!
   Push(Read16(pp_UNK_0xeb88)); // UNK_0xeb88 @
   UNK_0xeb20(); // UNK_0xeb20
   _dash_(); // -
   XHBUF_dash_SEG(); // XHBUF-SEG
   Push(Read16(Pop())); //  @
-  Push(a); // I
-  Push(Pop() + 2); //  2+
+  Push(a + 2); // I 2+
   LC_ex_(); // LC!
   UNK_0xeb0e(); // UNK_0xeb0e
   Push(Pop() - Read16(pp_UNK_0xeb8c)); //  UNK_0xeb8c @ -
   XHBUF_dash_SEG(); // XHBUF-SEG
   Push(Read16(Pop())); //  @
-  Push(a); // I
-  Push(Pop() + 3); //  3 +
+  Push(a + 3); // I 3 +
   LC_ex_(); // LC!
   Push(Read16(pp_UNK_0xeb88)); // UNK_0xeb88 @
   UNK_0xeb28(); // UNK_0xeb28
   _dash_(); // -
   XHBUF_dash_SEG(); // XHBUF-SEG
   Push(Read16(Pop())); //  @
-  Push(a); // R>
-  Push(Pop() + 4); //  4 +
+  Push(a + 4); // R> 4 +
   LC_ex_(); // LC!
   Push(5);
   Push(pp_POLYPTR); // POLYPTR
@@ -1884,8 +1855,7 @@ void UNK_0xed8d() // UNK_0xed8d
       Push(i); // I
       UNK_0xed62(); // UNK_0xed62
       Push(1);
-      Push(i); // I
-      Push(Pop() + 1); //  1+
+      Push(i + 1); // I 1+
       UNK_0xed62(); // UNK_0xed62
       imax = i; // LEAVE
     } else
@@ -1893,8 +1863,7 @@ void UNK_0xed8d() // UNK_0xed8d
       Push((Pop()==Pop())?1:0); // =
       if (Pop() != 0)
       {
-        Push(i); // I
-        Push(Pop() + 1); //  1+
+        Push(i + 1); // I 1+
         Push(Read16(regsp)); // DUP
         UNK_0xed50(); // UNK_0xed50
         Push(Pop() + 1); //  1+
@@ -1955,8 +1924,7 @@ void UNK_0xedd9() // UNK_0xedd9
   {
     Push(j); // I
     UNK_0xed50(); // UNK_0xed50
-    Push(j); // I
-    Push(Pop() + 1); //  1+
+    Push(j + 1); // I 1+
     UNK_0xed50(); // UNK_0xed50
     Push(Read16(regsp)); // DUP
     Push(0x0021);

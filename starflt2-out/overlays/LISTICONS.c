@@ -84,16 +84,10 @@ void UNK_0xf2c6() // UNK_0xf2c6
   imax = Pop();
   do // (DO)
   {
-    Push(pp_CMAP); // CMAP
-    Push(i); // I
-    Push(Pop() * 8); //  8 *
-    Push(Pop() + Pop()); // +
+    Push(pp_CMAP + i * 8); // CMAP I 8 * +
     Push(pp_TILE_dash_PT); // TILE-PT
     Store_2(); // !_2
-    Push(0x0020);
-    Push(i); // I
-    Push(Pop() * 0x000c); //  0x000c *
-    Push(Pop() + Pop()); // +
+    Push(0x0020 + i * 0x000c); // 0x0020 I 0x000c * +
     Push(0x002d);
     Push(0x000f);
     Push(0x000c);
@@ -188,9 +182,7 @@ void UNK_0xf3e6() // UNK_0xf3e6
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(i); // I
-    Push(Pop() * 9); //  9 *
-    Push(Pop() + Pop()); // +
+    Push(Pop() + i * 9); //  I 9 * +
     Push(Read16(regsp)); // DUP
     Push(Read16(Pop())&0xFF); //  C@
     I_gt_C(); // I>C
@@ -271,8 +263,7 @@ void UNK_0xf45e() // UNK_0xf45e
     Push(pp_WBLT); // WBLT
     _st__ex__gt_(); // <!>
     Push(Read16(pp_ICON_h_)); // ICON^ @
-    Push(i); // I
-    Push(Pop() * 0x0012); //  0x0012 *
+    Push(i * 0x0012); // I 0x0012 *
     GetDS(); // @DS
     PAD_v_16(); // PAD|16
     Push(0x0012);

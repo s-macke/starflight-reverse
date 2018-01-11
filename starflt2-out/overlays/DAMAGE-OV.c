@@ -330,8 +330,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
     Push(0x001f);
     WITHIN(); // WITHIN
     Push(Pop() | Pop()); // OR
-    Push(a); // R>
-    Push(!(Pop() | (Pop()==0x0020?1:0))); //   0x0020 = OR NOT
+    Push(!(a | (a==0x0020?1:0))); // R> R> 0x0020 = OR NOT
     return;
   }
   Push(Read16(cc_FALSE)); // FALSE
@@ -617,8 +616,7 @@ void UNK_0xe8ec() // UNK_0xe8ec
   _dash_(); // -
   Push(0);
   MAX(); // MAX
-  Push(b); // R>
-  Push(Pop() | Pop()); // OR
+  Push(Pop() | b); //  R> OR
   Push(a); // R>
   IFLD_ex_(); // IFLD!
 }
@@ -876,8 +874,7 @@ void UNK_0xea92() // UNK_0xea92
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(i)&0xFF); // I C@
     OVER(); // OVER
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
@@ -886,9 +883,8 @@ void UNK_0xea92() // UNK_0xea92
       imax = i; // LEAVE
     } else
     {
-      Push(i); // I
-      Push(Read16(Pop())&0xFF); //  C@
-      Push((Read16(Pop())&0xFF)==0x00ff?1:0); //  C@ 0x00ff =
+      Push(Read16(i)&0xFF); // I C@
+      Push((Read16(i)&0xFF)==0x00ff?1:0); // I C@ 0x00ff =
       if (Pop() != 0)
       {
         Push(i); // I
@@ -1020,8 +1016,7 @@ void UNK_0xeb7f() // UNK_0xeb7f
   IFLD_at_(); // IFLD@
   Push(Pop() & 0x007f); //  0x007f AND
   UNK_0xe726(); // UNK_0xe726
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
 }
 
 
@@ -1261,8 +1256,7 @@ void UNK_0xed68() // UNK_0xed68
     imax = Pop();
     do // (DO)
     {
-      Push(i); // I
-      Push(Read16(Pop() + pp_WOUNDED)&0xFF); //  WOUNDED + C@
+      Push(Read16(i + pp_WOUNDED)&0xFF); // I WOUNDED + C@
       _3_star_(); // 3*
       Push(Pop() + pp_ROSTER); //  ROSTER +
       _1_dot_5_at_(); // 1.5@
@@ -1365,8 +1359,7 @@ void UNK_0xee11() // UNK_0xee11
         Push(0xe821); // probable 'UNK_0xe821'
         UNK_0xe8a4(); // UNK_0xe8a4
         ICLOSE(); // ICLOSE
-        Push(i); // I
-        Push(Pop() - pp_ROSTER); //  ROSTER -
+        Push(i - pp_ROSTER); // I ROSTER -
         Push(3);
         _slash_(); // /
         UNK_0xea92(); // UNK_0xea92
@@ -1460,8 +1453,7 @@ void UNK_0xeed5() // UNK_0xeed5
   do // (DO)
   {
     Push(i); // I
-    Push(i); // I
-    Push(Pop() + 0x03e8); //  0x03e8 +
+    Push(i + 0x03e8); // I 0x03e8 +
     RRND(); // RRND
     TONE(); // TONE
     Push(5 * Read16(cc_MPS)); // 5 MPS *
@@ -2126,9 +2118,7 @@ void UNK_0xf316() // UNK_0xf316
   D_st_(); // D<
   a = Pop(); // >R
   D_st_(); // D<
-  Push(!Pop()); //  NOT
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(!Pop() & a); //  NOT R> AND
 }
 
 

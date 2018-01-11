@@ -187,16 +187,13 @@ void _gt_EXPERT() // >EXPERT
   Push(a); // I
   Push(0xb6c0); // probable 'RULELIM'
   Store_3(); // !_3
-  Push(a); // I
-  Push(Pop() + 1); //  1+
+  Push(a + 1); // I 1+
   Push(0xb6ce); // probable 'CONDLIM'
   Store_3(); // !_3
-  Push(a); // I
-  Push(Pop() + 2); //  2+
+  Push(a + 2); // I 2+
   Push(0xb6dc); // probable 'RULECNT'
   Store_3(); // !_3
-  Push(a); // R>
-  Push(Pop() + 3); //  3 +
+  Push(a + 3); // R> 3 +
   Push(0xb6ea); // probable 'RULEARR'
   Store_3(); // !_3
   Push((Read16(Read16(cc_RULELIM))&0xFF) * 2 + Read16(cc_RULEARR)); // RULELIM C@ 2* RULEARR +
@@ -231,12 +228,9 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
   unsigned short int a, i, imax, b;
   a = Pop(); // >R
   Push(Read16(cc_TRUE)); // TRUE
-  Push(a); // I
-  Push(Pop() + 3); //  3 +
+  Push(a + 3); // I 3 +
   Push(Read16(regsp)); // DUP
-  Push(a); // I
-  Push(Read16(Pop())&0xFF); //  C@
-  Push(Pop() + Pop()); // +
+  Push(Pop() + (Read16(a)&0xFF)); //  I C@ +
   SWAP(); // SWAP
 
   i = Pop();
@@ -267,10 +261,7 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
       Push(Pop() + Pop()); // +
       C_ex_(); // C!
     }
-    Push(i); // I
-    Push(!(!((Read16(Pop())&0xFF) & 0x0080))); //  C@ 0x0080 AND NOT NOT
-    Push((Pop()==Pop())?1:0); // =
-    Push(Pop() & Pop()); // AND
+    Push(Pop() & (Pop()==!(!((Read16(i)&0xFF) & 0x0080))?1:0)); //   I C@ 0x0080 AND NOT NOT = AND
     Push(Read16(regsp)); // DUP
     Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
@@ -285,8 +276,7 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
   if (Pop() != 0)
   {
     b = Pop(); // >R
-    Push(a); // I'
-    Push(Pop() + 1); //  1+
+    Push(a + 1); // I' 1+
     GetEXECUTE(); // @EXECUTE
     Push(b); // R>
   }
@@ -329,8 +319,7 @@ void EXPERT() // EXPERT
   imax = Pop();
   do // (DO)
   {
-    Push(i); // I
-    Push(Read16(Pop())); //  @
+    Push(Read16(i)); // I @
     EXECUTE_dash_RULE(); // EXECUTE-RULE
     if (Pop() != 0)
     {
@@ -340,12 +329,10 @@ void EXPERT() // EXPERT
       Push(!Pop()); //  NOT
       _gt_V(); // >V
       imax = i; // LEAVE
-      Push(i); // I
-      Push(((Pop() - Read16(cc_RULEARR) >> 1) >> 1) * 2 + Read16(cc_RULEARR)); //  RULEARR - 2/ 2/ 2* RULEARR +
+      Push(((i - Read16(cc_RULEARR) >> 1) >> 1) * 2 + Read16(cc_RULEARR)); // I RULEARR - 2/ 2/ 2* RULEARR +
       Push(Read16(regsp)); // DUP
       Push(Read16(Pop())); //  @
-      Push(i); // I
-      Push(Read16(Pop())); //  @
+      Push(Read16(i)); // I @
       SWAP(); // SWAP
       Push(i); // I
       Store_3(); // !_3
@@ -387,17 +374,12 @@ void IsINDEX() // ?INDEX
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(cc_CONDARR)); // CONDARR
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())); //  @
-    Push(a); // J
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(Read16(cc_CONDARR) + i)); // CONDARR I + @
+    Push(Read16(Read16(cc_CONDARR) + i)==a?1:0); // CONDARR I + @ J =
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(i); // I
-      Push(Pop() >> 1); //  2/
+      Push(i >> 1); // I 2/
       imax = i; // LEAVE
     }
     Push(2);

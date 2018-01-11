@@ -601,9 +601,7 @@ void UNK_0xef13() // UNK_0xef13
   Push(0x001f);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  Push(a); // R>
-  Push(Pop() | (Pop()==0x0020?1:0)); //   0x0020 = OR
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & (a | (a==0x0020?1:0))); //  R> R> 0x0020 = OR AND
 }
 
 
@@ -1239,12 +1237,8 @@ void UNK_0xf3b8() // UNK_0xf3b8
   do // (DO)
   {
     Push(Pop() + 1); //  1+
-    Push(pp_UNK_0xf3af); // UNK_0xf3af
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Read16(Pop())&0xFF); //  C@
-    Push(a); // J
-    Push((Pop()==Pop())?1:0); // =
+    Push(Read16(pp_UNK_0xf3af + i)&0xFF); // UNK_0xf3af I + C@
+    Push((Read16(pp_UNK_0xf3af + i)&0xFF)==a?1:0); // UNK_0xf3af I + C@ J =
     if (Pop() != 0)
     {
       imax = i; // LEAVE

@@ -959,9 +959,7 @@ void UNK_0xe7b4() // UNK_0xe7b4
     Push(Read16(pp_LVIS)); // LVIS @
     Push(Read16(cc__star_MAPSCA)); // *MAPSCA
     _slash_(); // /
-    Push(i); // I
-    Push(Pop() + Pop()); // +
-    Push(Pop() - 0x000f); //  0x000f -
+    Push((Pop() + i) - 0x000f); //  I + 0x000f -
     Push(0);
     _st__n_(); // <#
     _n_(); // #
@@ -1007,9 +1005,7 @@ void UNK_0xe7fe() // UNK_0xe7fe
     Push(Read16(pp_BVIS)); // BVIS @
     Push(Read16(cc__star_MAPSCA)); // *MAPSCA
     _slash_(); // /
-    Push(i); // I
-    Push(Pop() - 0x0023 >> 1); //  0x0023 - 2/
-    Push(Pop() + Pop()); // +
+    Push(Pop() + (i - 0x0023 >> 1)); //  I 0x0023 - 2/ +
     Push(0);
     _st__n_(); // <#
     _n_(); // #
@@ -1243,14 +1239,10 @@ void UNK_0xe952() // UNK_0xe952
   {
     Push(Read16(pp_VIN)); // VIN @
     a = Pop(); // >R
-    Push(a); // I
-    Push(Read16(Pop() + 2)); //  2+ @
-    Push(a); // I
-    Push(Read16(Pop())); //  @
-    Push(a); // I
-    Push(Read16(Pop() + 6)); //  6 + @
-    Push(a); // R>
-    Push(Read16(Pop() + 4)); //  4 + @
+    Push(Read16(a + 2)); // I 2+ @
+    Push(Read16(a)); // I @
+    Push(Read16(a + 6)); // I 6 + @
+    Push(Read16(a + 4)); // R> 4 + @
     Push(1);
     return;
   }
@@ -1633,8 +1625,7 @@ void UNK_0xecaa() // UNK_0xecaa
   a = Pop(); // >R
   Push(Read16(pp_UNK_0xe382) - Read16(cc_UNK_0xe36e)); // UNK_0xe382 @ UNK_0xe36e -
   _gt_(); // >
-  Push(a); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & a); //  R> AND
   Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   Push(Read16(pp_UNK_0xe386) + Read16(cc_UNK_0xe36e)); // UNK_0xe386 @ UNK_0xe36e +
   OVER(); // OVER
@@ -1642,8 +1633,7 @@ void UNK_0xecaa() // UNK_0xecaa
   b = Pop(); // >R
   Push(Read16(pp_UNK_0xe386) - Read16(cc_UNK_0xe36e)); // UNK_0xe386 @ UNK_0xe36e -
   _gt_(); // >
-  Push(b); // R>
-  Push(Pop() & Pop()); // AND
+  Push(Pop() & b); //  R> AND
   Push(Pop() & Pop()); // AND
 }
 
