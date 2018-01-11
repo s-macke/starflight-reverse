@@ -188,7 +188,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 
 // -----------------------------------------
 
-int GetWordLength(int addr, DICTENTRY *e, int currentovidx)
+int GetWordLength(int addr, DICTENTRY *e, int ovidx)
 {
     char *s = GetWordName(e);
 
@@ -235,7 +235,7 @@ int GetWordLength(int addr, DICTENTRY *e, int currentovidx)
     if (e->codep == CODEEXEC)
     {
         int par = Read16(Read16(e->parp)+REGDI);
-        GetDictWord(par, currentovidx);
+        GetDictWord(par, ovidx);
         return 2;
     }
     if (e->ovidx == -1) e->isextern = 1;
@@ -279,7 +279,7 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
 
 // TODO: Analysis of EXECUTE-RULE and EXPERT
 // Execute ruls uses a kind of cache which can be reset with the function DISTRACT
-void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
 {
     int i = 0;
     int j = 0;
@@ -366,7 +366,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
         pline[rulep+2].done = 1;
         pline[rulep+1].word = Read16(rulep + 1);
 
-        DICTENTRY *e = GetDictEntry(p, currentovidx);
+        DICTENTRY *e = GetDictEntry(p, ovidx);
         if (e == NULL)
         {
             fprintf(stderr, "Error: No invalid dict entry allowed here");
@@ -396,7 +396,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
             pline[p+0].done = 1;
             pline[p+1].done = 1;
             pline[p+0].word = Read16(p);
-            DICTENTRY *e = GetDictEntry(Read16(p), currentovidx);
+            DICTENTRY *e = GetDictEntry(Read16(p), ovidx);
             if (e == NULL)
             {
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
@@ -414,7 +414,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     }
 }
 
-void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
+void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
 {
     int par = d->parp;
     int ofs = d->parp;
@@ -431,36 +431,36 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int currentovidx)
     sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
     for(i=0; i<n; i++)
     {
-        DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), currentovidx);
+        DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), ovidx);
         pline[par + i*4 + 6].word = Read16(par + i*4 + 6);
         pline[par + i*4 + 6].done = 1;
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        GetWordLength(par + i*4 + 6, e, currentovidx);
-        GetMacro(par + i*4 + 6, e, d, ret, currentovidx);
+        GetWordLength(par + i*4 + 6, e, ovidx);
+        GetMacro(par + i*4 + 6, e, d, ret, ovidx);
         sprintf(temp, "  case %i:\n    %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
         pline[par + i*4 + 5].done = 1;
         strcat(pline[ofs].str, temp);
     }
-    DICTENTRY *e = GetDictEntry(Read16(par + 2), currentovidx);
+    DICTENTRY *e = GetDictEntry(Read16(par + 2), ovidx);
     pline[par + 2].word = Read16(par + 2);
     pline[par + 2].done = 1;
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    GetWordLength(par + 2, e, currentovidx);
-    GetMacro(par + 2, e, d, ret, currentovidx);
+    GetWordLength(par + 2, e, ovidx);
+    GetMacro(par + 2, e, d, ret, ovidx);
     sprintf(temp, "  default:\n    %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
     strcat(pline[ofs].str, "\n  }\n}\n");
 }
 
-void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx, Variables vars)
+void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovidx, Variables vars)
 {
     if (d == NULL) {
-        d = FindClosestFunction(ofs, currentovidx);
+        d = FindClosestFunction(ofs, ovidx);
         AddUnnamedVariable(&vars, d, -1);
     }
 
@@ -485,7 +485,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         int par = Read16(ofs)+2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
-        DICTENTRY *e = GetDictEntry(par, currentovidx);
+        DICTENTRY *e = GetDictEntry(par, ovidx);
         if (e == NULL)
         {
             pline[ofs].str = malloc(STRINGLEN);
@@ -497,12 +497,12 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         char *s = GetWordName(e);
 
         if (ofs < 0x100+FILESTAR0SIZE)
-        if (currentovidx != -1)
+        if (ovidx != -1)
         if (par >= maxaddr)
         {
             e->isentry = 1;
             pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", Forth2CString(s), overlays[currentovidx].name);
+            snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", Forth2CString(s), overlays[ovidx].name);
             ofs += 2;
             continue;
         }
@@ -511,7 +511,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         {
             if (Read16(Read16(ofs-4)) == CODELIT)
             {
-                char *s = GetDictWord(Read16(ofs-2), currentovidx);
+                char *s = GetDictWord(Read16(ofs-2), ovidx);
             }
             pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "MODULE(); // MODULE\n");
@@ -528,9 +528,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 int c2 = Read16(ofs-6);
                 int c3 = Read16(ofs-10);
                 char *s1 = NULL, *s2 = NULL, *s3 = NULL;
-                if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), currentovidx);
-                if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), currentovidx);
-                if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), currentovidx);
+                if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), ovidx);
+                if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), ovidx);
+                if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), ovidx);
                 pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
             } else
@@ -542,15 +542,15 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 int c4 = Read16(ofs-12);
                 int c5 = Read16(ofs-16);
 
-                char* s1 = GetDictWord(c1, currentovidx);
-                char* s3 = GetDictWord(c3, currentovidx);
-                char* s4 = GetDictWord(c4, currentovidx);
-                char* s5 = GetDictWord(c5, currentovidx);
+                char* s1 = GetDictWord(c1, ovidx);
+                char* s3 = GetDictWord(c3, ovidx);
+                char* s4 = GetDictWord(c4, ovidx);
+                char* s5 = GetDictWord(c5, ovidx);
                 pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
             } else
             {
-                fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", currentovidx);
+                fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", ovidx);
                 exit(1);
             }
             ofs += 2;
@@ -560,6 +560,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "CODE(); // %s inlined assembler code\n", s);
             ofs += 2;
+            DisasmRange(ofs, 0x100000, ovidx, minaddr, maxaddr);
             return;
         } else
         if (strcmp(s, "COMPILE") == 0) // maybe inlined code
@@ -573,7 +574,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
         {
-            if (currentovidx != -1)
+            if (ovidx != -1)
             {
                 fprintf(stderr, "Error: Change of overlay inside overlay\n");
                 exit(1);
@@ -584,9 +585,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
             for(i=0; overlays[i].name != NULL; i++)
             {
                 if (overlays[i].startaddress != startaddress) continue;
-                currentovidx = i;
+                ovidx = i;
             }
-            if (currentovidx == -1)
+            if (ovidx == -1)
             {
                 fprintf(stderr, "Error: Cannot find overlay\n");
                 exit(1);
@@ -624,11 +625,11 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 pline[ofs].gotoaddr = addr;
                 pline[ofs].flow = GOTO;
             }
-            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
+            ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
 
             if (!pline[ofs+4].done && !pline[ofs+4].labelid)
             {
-                DICTENTRY *next = GetDictEntry(Read16(ofs+4)+2, currentovidx);
+                DICTENTRY *next = GetDictEntry(Read16(ofs+4)+2, ovidx);
                 if (strcmp(next->r, "EXIT") == 0)
                 {
                     pline[ofs+4].done = 1;
@@ -663,8 +664,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
                 pline[ofs].gotoaddr = addr;
                 pline[ofs].flow = IFGOTO;
             }
-            ParsePartFunction(ofs+4, minaddr, maxaddr, d, currentovidx, vars);
-            ParsePartFunction(addr, minaddr, maxaddr, d, currentovidx, vars);
+            ParsePartFunction(ofs+4, minaddr, maxaddr, d, ovidx, vars);
+            ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
             ofs += 4;
         } else
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
@@ -759,8 +760,8 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int curr
         } else
         {
             pline[ofs].istrivialword = TRUE;
-            pline[ofs].ovidx = currentovidx;
-            int dofs = GetWordLength(ofs, e, currentovidx);
+            pline[ofs].ovidx = ovidx;
+            int dofs = GetWordLength(ofs, e, ovidx);
             int i;
             for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
             ofs += dofs;
