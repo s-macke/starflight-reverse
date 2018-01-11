@@ -8,7 +8,7 @@
 #include"utils.h"
 #include"../emul/cpu.h"
 #include"disasm/debugger.h"
-#include"transpile2C.h"
+#include"postfix2infix.h"
 
 LineDesc pline[0x10000];
 

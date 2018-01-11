@@ -11,6 +11,5 @@
 #define WRITE_VARIABLES 8
 
 void Transpile(const char *filename, OVLHeader *head, int ovidx, int minaddr, int maxaddr, int outputflag);
-void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, int currentovidx);
 
 #endif
