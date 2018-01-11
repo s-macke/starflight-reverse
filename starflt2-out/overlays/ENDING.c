@@ -18,8 +18,10 @@
 //      UNK_0xe819  codep:0x7420 parp:0xe819 size:0x0003 C-string:'UNK_0xe819'
 //      UNK_0xe81e  codep:0x7420 parp:0xe81e size:0x0003 C-string:'UNK_0xe81e'
 //      UNK_0xe823  codep:0x7394 parp:0xe823 size:0x0006 C-string:'UNK_0xe823'
-//      UNK_0xe82b  codep:0x7420 parp:0xe82b size:0x000f C-string:'UNK_0xe82b'
-//      UNK_0xe83c  codep:0x224c parp:0xe83c size:0x001c C-string:'UNK_0xe83c'
+//      UNK_0xe82b  codep:0x7420 parp:0xe82b size:0x0003 C-string:'UNK_0xe82b'
+//      UNK_0xe830  codep:0x224c parp:0xe830 size:0x000a C-string:'UNK_0xe830'
+//      UNK_0xe83c  codep:0x224c parp:0xe83c size:0x0014 C-string:'UNK_0xe83c'
+//      UNK_0xe852  codep:0x224c parp:0xe852 size:0x0006 C-string:'UNK_0xe852'
 //      UNK_0xe85a  codep:0x224c parp:0xe85a size:0x0006 C-string:'UNK_0xe85a'
 //      UNK_0xe862  codep:0x224c parp:0xe862 size:0x0006 C-string:'UNK_0xe862'
 //      UNK_0xe86a  codep:0x224c parp:0xe86a size:0x0042 C-string:'UNK_0xe86a'
@@ -88,7 +90,8 @@
 //      UNK_0xefab  codep:0x224c parp:0xefab size:0x002e C-string:'UNK_0xefab'
 //      UNK_0xefdb  codep:0x224c parp:0xefdb size:0x0042 C-string:'UNK_0xefdb'
 //      UNK_0xf01f  codep:0x224c parp:0xf01f size:0x003a C-string:'UNK_0xf01f'
-//      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x001c C-string:'UNK_0xf05b'
+//      UNK_0xf05b  codep:0x224c parp:0xf05b size:0x000c C-string:'UNK_0xf05b'
+//      UNK_0xf069  codep:0x224c parp:0xf069 size:0x000e C-string:'UNK_0xf069'
 //      UNK_0xf079  codep:0x224c parp:0xf079 size:0x001e C-string:'UNK_0xf079'
 //      UNK_0xf099  codep:0x224c parp:0xf099 size:0x001a C-string:'UNK_0xf099'
 //            ANIM  codep:0x2214 parp:0xf0bc size:0x000c C-string:'ANIM'
@@ -127,6 +130,7 @@
 extern const unsigned short int cc_BL; // BL
 extern const unsigned short int cc_MPS; // MPS
 extern const unsigned short int pp_Get_co_0_star_1_sc_; // @,0*1;
+extern const unsigned short int pp_DTA_1; // DTA_1
 extern const unsigned short int pp_BMAP; // BMAP
 extern const unsigned short int pp_WIN; // WIN
 extern const unsigned short int pp_IsUF; // ?UF
@@ -153,6 +157,7 @@ extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp__n_ETIME; // #ETIME
 extern LoadDataType ART_dash_VOL; // ART-VOL
+extern Color YELLOW; // YELLOW
 extern Color WHITE; // WHITE
 extern IFieldType INST_dash_QT; // INST-QT
 extern IFieldType INST_dash_X; // INST-X
@@ -173,6 +178,7 @@ void _2OVER(); // 2OVER
 void D_dash_(); // D-
 void D_eq_(); // D=
 void D_gt_(); // D>
+void DOS_dash_DTA(); // DOS-DTA
 void _ro_LDS_rc_(); // (LDS)
 void KEY_2(); // KEY_2
 void _plus__at_(); // +@
@@ -343,7 +349,19 @@ LoadDataType UNK_0xe823 = {VESSELIDX, 0x10, 0x01, 0x24, 0x6b5d};
 // 0xe829: WORD 'UNK_0xe82b' codep=0x7420 parp=0xe82b
 // ================================================
 IFieldType UNK_0xe82b = {SHIPIDX, 0x14, 0x01};
-// 0xe82e: db 0x4c 0x22 0x98 0x9e 0x2e 0x0f 0xe7 0x5e 0x23 0x6d 0x90 0x16 'L"  .  ^#m  '
+
+// ================================================
+// 0xe82e: WORD 'UNK_0xe830' codep=0x224c parp=0xe830 orphan
+// ================================================
+
+void UNK_0xe830() // UNK_0xe830
+{
+  WUP(); // WUP
+  Push(1);
+  Push(pp_LINE_dash_CO); // LINE-CO
+  _plus__ex__2(); // +!_2
+}
+
 
 // ================================================
 // 0xe83a: WORD 'UNK_0xe83c' codep=0x224c parp=0xe83c params=4 returns=0
@@ -361,7 +379,17 @@ void UNK_0xe83c() // UNK_0xe83c
   IOPEN(); // IOPEN
 }
 
-// 0xe850: db 0x4c 0x22 0x48 0x50 0x9d 0x86 0x90 0x16 'L"HP    '
+
+// ================================================
+// 0xe850: WORD 'UNK_0xe852' codep=0x224c parp=0xe852 orphan
+// ================================================
+
+void UNK_0xe852() // UNK_0xe852
+{
+  SetColor(YELLOW);
+  StoreCOLOR(); // !COLOR
+}
+
 
 // ================================================
 // 0xe858: WORD 'UNK_0xe85a' codep=0x224c parp=0xe85a params=0 returns=0
@@ -1668,7 +1696,20 @@ void UNK_0xf05b() // UNK_0xf05b
   Push(Read16(pp_FONTSEG) + 0x0091); // FONTSEG @ 0x0091 +
 }
 
-// 0xf067: db 0x4c 0x22 0x29 0x54 0xae 0x0b 0x20 0x0f 0x3a 0x2c 0x4c 0x6d 0x45 0x43 0x90 0x16 'L")T    :,LmEC  '
+
+// ================================================
+// 0xf067: WORD 'UNK_0xf069' codep=0x224c parp=0xf069 orphan
+// ================================================
+
+void UNK_0xf069() // UNK_0xf069
+{
+  Push(Read16(pp_XBUF_dash_SE)); // XBUF-SE @
+  Push(0);
+  Push(pp_DTA_1); // DTA_1
+  StoreD(); // D!
+  DOS_dash_DTA(); // DOS-DTA
+}
+
 
 // ================================================
 // 0xf077: WORD 'UNK_0xf079' codep=0x224c parp=0xf079

@@ -12,7 +12,8 @@
 // =========== DICTIONARY ==========
 // =================================
 //      UNK_0xe6f6  codep:0x224c parp:0xe6f6 size:0x0008 C-string:'UNK_0xe6f6'
-//      UNK_0xe700  codep:0x224c parp:0xe700 size:0x0012 C-string:'UNK_0xe700'
+//      UNK_0xe700  codep:0x224c parp:0xe700 size:0x0008 C-string:'UNK_0xe700'
+//      UNK_0xe70a  codep:0x224c parp:0xe70a size:0x0008 C-string:'UNK_0xe70a'
 //      UNK_0xe714  codep:0x224c parp:0xe714 size:0x0008 C-string:'UNK_0xe714'
 //      UNK_0xe71e  codep:0x224c parp:0xe71e size:0x0008 C-string:'UNK_0xe71e'
 //      UNK_0xe728  codep:0x224c parp:0xe728 size:0x0008 C-string:'UNK_0xe728'
@@ -31,7 +32,8 @@
 //      UNK_0xe782  codep:0x7420 parp:0xe782 size:0x0003 C-string:'UNK_0xe782'
 //      UNK_0xe787  codep:0x7420 parp:0xe787 size:0x0003 C-string:'UNK_0xe787'
 //      UNK_0xe78c  codep:0x7420 parp:0xe78c size:0x0003 C-string:'UNK_0xe78c'
-//      UNK_0xe791  codep:0x7420 parp:0xe791 size:0x0008 C-string:'UNK_0xe791'
+//      UNK_0xe791  codep:0x7420 parp:0xe791 size:0x0003 C-string:'UNK_0xe791'
+//      UNK_0xe796  codep:0x7420 parp:0xe796 size:0x0003 C-string:'UNK_0xe796'
 //         #JUMPOS  codep:0x7420 parp:0xe7a5 size:0x0003 C-string:'_n_JUMPOS'
 //        #BLASTOS  codep:0x7420 parp:0xe7b5 size:0x0003 C-string:'_n_BLASTOS'
 //      UNK_0xe7ba  codep:0x1d29 parp:0xe7ba size:0x0002 C-string:'UNK_0xe7ba'
@@ -227,7 +229,17 @@ void UNK_0xe700() // UNK_0xe700
   MODULE(); // MODULE
 }
 
-// 0xe708: db 0x4c 0x22 0x5d 0x17 0x85 0xc2 0xd9 0x84 0x90 0x16 'L"]       '
+
+// ================================================
+// 0xe708: WORD 'UNK_0xe70a' codep=0x224c parp=0xe70a orphan params=0 returns=0
+// ================================================
+
+void UNK_0xe70a() // UNK_0xe70a
+{
+  Push(0xc285); // probable 'OVD@BAL'
+  MODULE(); // MODULE
+}
+
 
 // ================================================
 // 0xe712: WORD 'UNK_0xe714' codep=0x224c parp=0xe714 params=0 returns=0
@@ -365,7 +377,11 @@ IFieldType UNK_0xe78c = {SHIPIDX, 0x32, 0x02};
 // 0xe78f: WORD 'UNK_0xe791' codep=0x7420 parp=0xe791
 // ================================================
 IFieldType UNK_0xe791 = {SHIPIDX, 0x43, 0x02};
-// 0xe794: db 0x20 0x74 0x14 0x45 0x04 ' t E '
+
+// ================================================
+// 0xe794: WORD 'UNK_0xe796' codep=0x7420 parp=0xe796 orphan
+// ================================================
+IFieldType UNK_0xe796 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
 // 0xe799: WORD '#JUMPOS' codep=0x7420 parp=0xe7a5

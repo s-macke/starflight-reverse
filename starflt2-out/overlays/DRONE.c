@@ -60,7 +60,8 @@
 //      UNK_0xefd7  codep:0x224c parp:0xefd7 size:0x000c C-string:'UNK_0xefd7'
 //            ACT#  codep:0x1d29 parp:0xefec size:0x0002 C-string:'ACT_n_'
 //      UNK_0xeff0  codep:0x224c parp:0xeff0 size:0x000a C-string:'UNK_0xeff0'
-//      UNK_0xeffc  codep:0x224c parp:0xeffc size:0x002c C-string:'UNK_0xeffc'
+//      UNK_0xeffc  codep:0x224c parp:0xeffc size:0x001a C-string:'UNK_0xeffc'
+//      UNK_0xf018  codep:0x224c parp:0xf018 size:0x0010 C-string:'UNK_0xf018'
 //      UNK_0xf02a  codep:0x224c parp:0xf02a size:0x0010 C-string:'UNK_0xf02a'
 //      UNK_0xf03c  codep:0x224c parp:0xf03c size:0x000c C-string:'UNK_0xf03c'
 //      UNK_0xf04a  codep:0x224c parp:0xf04a size:0x0016 C-string:'UNK_0xf04a'
@@ -128,6 +129,7 @@ extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WLEFT; // WLEFT
 extern const unsigned short int pp_WLINES; // WLINES
 extern const unsigned short int pp_FQUIT; // FQUIT
+extern const unsigned short int pp_LKEY; // LKEY
 extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
 extern const unsigned short int pp_XABS; // XABS
 extern const unsigned short int pp_YABS; // YABS
@@ -159,6 +161,7 @@ void BEEP(); // BEEP
 void MS(); // MS
 void NOP(); // NOP
 void D_dash_(); // D-
+void WITHIN(); // WITHIN
 void KEY_2(); // KEY_2
 void _gt_FLAG(); // >FLAG
 void RRND(); // RRND
@@ -1070,7 +1073,19 @@ void UNK_0xeffc() // UNK_0xeffc
   Store_2(); // !_2
 }
 
-// 0xf016: db 0x4c 0x22 0x22 0x5e 0xae 0x0b 0x5d 0x17 0x3b 0x01 0x5d 0x17 0x45 0x01 0x25 0x40 0x90 0x16 'L""^  ] ; ] E %@  '
+
+// ================================================
+// 0xf016: WORD 'UNK_0xf018' codep=0x224c parp=0xf018 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xf018() // UNK_0xf018
+{
+  Push(Read16(pp_LKEY)); // LKEY @
+  Push(0x013b);
+  Push(0x0145);
+  WITHIN(); // WITHIN
+}
+
 
 // ================================================
 // 0xf028: WORD 'UNK_0xf02a' codep=0x224c parp=0xf02a params=1 returns=1

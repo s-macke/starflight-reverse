@@ -11,7 +11,8 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-//      UNK_0xe0b6  codep:0x224c parp:0xe0b6 size:0x0020 C-string:'UNK_0xe0b6'
+//      UNK_0xe0b6  codep:0x224c parp:0xe0b6 size:0x0016 C-string:'UNK_0xe0b6'
+//      UNK_0xe0ce  codep:0x224c parp:0xe0ce size:0x0008 C-string:'UNK_0xe0ce'
 //      UNK_0xe0d8  codep:0x224c parp:0xe0d8 size:0x000a C-string:'UNK_0xe0d8'
 //      UNK_0xe0e4  codep:0x224c parp:0xe0e4 size:0x0006 C-string:'UNK_0xe0e4'
 //      UNK_0xe0ec  codep:0x224c parp:0xe0ec size:0x0012 C-string:'UNK_0xe0ec'
@@ -26,10 +27,13 @@
 //      UNK_0xe175  codep:0x73ea parp:0xe175 size:0x0006 C-string:'UNK_0xe175'
 //            HITS  codep:0x744d parp:0xe184 size:0x0003 C-string:'HITS'
 //           STUNS  codep:0x744d parp:0xe191 size:0x0003 C-string:'STUNS'
-//      HIT.POINTS  codep:0x73ea parp:0xe1a3 size:0x0010 C-string:'HIT_dot_POINTS'
+//      HIT.POINTS  codep:0x73ea parp:0xe1a3 size:0x0006 C-string:'HIT_dot_POINTS'
+//      UNK_0xe1ab  codep:0x744d parp:0xe1ab size:0x0003 C-string:'UNK_0xe1ab'
+//      UNK_0xe1b0  codep:0x744d parp:0xe1b0 size:0x0003 C-string:'UNK_0xe1b0'
 //      UNK_0xe1b5  codep:0x744d parp:0xe1b5 size:0x0003 C-string:'UNK_0xe1b5'
 //      UNK_0xe1ba  codep:0x744d parp:0xe1ba size:0x0003 C-string:'UNK_0xe1ba'
-//          BEHAVE  codep:0x744d parp:0xe1c8 size:0x000b C-string:'BEHAVE'
+//          BEHAVE  codep:0x744d parp:0xe1c8 size:0x0003 C-string:'BEHAVE'
+//      UNK_0xe1cd  codep:0x73ea parp:0xe1cd size:0x0006 C-string:'UNK_0xe1cd'
 //       TV-WEAPON  codep:0x744d parp:0xe1e1 size:0x0003 C-string:'TV_dash_WEAPON'
 //      UNK_0xe1e6  codep:0x744d parp:0xe1e6 size:0x0003 C-string:'UNK_0xe1e6'
 //      ATMO.ACTIV  codep:0x73ea parp:0xe1f8 size:0x0006 C-string:'ATMO_dot_ACTIV'
@@ -47,9 +51,14 @@
 //      UNK_0xe388  codep:0x224c parp:0xe388 size:0x000e C-string:'UNK_0xe388'
 //      UNK_0xe398  codep:0x224c parp:0xe398 size:0x000c C-string:'UNK_0xe398'
 //      UNK_0xe3a6  codep:0x224c parp:0xe3a6 size:0x0012 C-string:'UNK_0xe3a6'
-//      UNK_0xe3ba  codep:0x224c parp:0xe3ba size:0x0052 C-string:'UNK_0xe3ba'
+//      UNK_0xe3ba  codep:0x224c parp:0xe3ba size:0x0018 C-string:'UNK_0xe3ba'
+//      UNK_0xe3d4  codep:0x224c parp:0xe3d4 size:0x0006 C-string:'UNK_0xe3d4'
+//      UNK_0xe3dc  codep:0x224c parp:0xe3dc size:0x0012 C-string:'UNK_0xe3dc'
+//      UNK_0xe3f0  codep:0x224c parp:0xe3f0 size:0x000c C-string:'UNK_0xe3f0'
+//      UNK_0xe3fe  codep:0x224c parp:0xe3fe size:0x000e C-string:'UNK_0xe3fe'
 //      UNK_0xe40e  codep:0x224c parp:0xe40e size:0x000a C-string:'UNK_0xe40e'
-//      UNK_0xe41a  codep:0x224c parp:0xe41a size:0x0012 C-string:'UNK_0xe41a'
+//      UNK_0xe41a  codep:0x224c parp:0xe41a size:0x0004 C-string:'UNK_0xe41a'
+//      UNK_0xe420  codep:0x224c parp:0xe420 size:0x000c C-string:'UNK_0xe420'
 //      UNK_0xe42e  codep:0x224c parp:0xe42e size:0x0008 C-string:'UNK_0xe42e'
 //      UNK_0xe438  codep:0x224c parp:0xe438 size:0x0014 C-string:'UNK_0xe438'
 //      UNK_0xe44e  codep:0x224c parp:0xe44e size:0x000c C-string:'UNK_0xe44e'
@@ -64,7 +73,8 @@
 // ?WANTS-TO-FLOAT  codep:0x224c parp:0xe4f2 size:0x0004 C-string:'IsWANTS_dash_TO_dash_FLOAT'
 //      UNK_0xe4f8  codep:0x224c parp:0xe4f8 size:0x000e C-string:'UNK_0xe4f8'
 //      UNK_0xe508  codep:0x224c parp:0xe508 size:0x000c C-string:'UNK_0xe508'
-//      UNK_0xe516  codep:0x224c parp:0xe516 size:0x0030 C-string:'UNK_0xe516'
+//      UNK_0xe516  codep:0x224c parp:0xe516 size:0x0022 C-string:'UNK_0xe516'
+//      UNK_0xe53a  codep:0x224c parp:0xe53a size:0x000c C-string:'UNK_0xe53a'
 //      UNK_0xe548  codep:0x224c parp:0xe548 size:0x000c C-string:'UNK_0xe548'
 //      UNK_0xe556  codep:0x224c parp:0xe556 size:0x000c C-string:'UNK_0xe556'
 //      UNK_0xe564  codep:0x224c parp:0xe564 size:0x003c C-string:'UNK_0xe564'
@@ -129,7 +139,8 @@
 //      UNK_0xef23  codep:0x224c parp:0xef23 size:0x0012 C-string:'UNK_0xef23'
 //      UNK_0xef37  codep:0x224c parp:0xef37 size:0x0026 C-string:'UNK_0xef37'
 //       FUNCTIONS  codep:0x1d29 parp:0xef6b size:0x001d C-string:'FUNCTIONS'
-//      UNK_0xef8a  codep:0x224c parp:0xef8a size:0x0012 C-string:'UNK_0xef8a'
+//      UNK_0xef8a  codep:0x224c parp:0xef8a size:0x000a C-string:'UNK_0xef8a'
+//      UNK_0xef96  codep:0x224c parp:0xef96 size:0x0006 C-string:'UNK_0xef96'
 //      UNK_0xef9e  codep:0x1d29 parp:0xef9e size:0x0002 C-string:'UNK_0xef9e'
 //            MAPS  codep:0x224c parp:0xefa9 size:0x0008 C-string:'MAPS'
 //       WALK&TALK  codep:0x224c parp:0xefbf size:0x0008 C-string:'WALK_and_TALK'
@@ -145,13 +156,15 @@
 //          -STORM  codep:0x224c parp:0xf103 size:0x0016 C-string:'_dash_STORM'
 //            ?NAV  codep:0x224c parp:0xf122 size:0x0018 C-string:'IsNAV'
 //       .DISTANCE  codep:0x224c parp:0xf148 size:0x006c C-string:'DrawDISTANCE'
-//          .CARGO  codep:0x224c parp:0xf1bf size:0x0057 C-string:'DrawCARGO'
+//          .CARGO  codep:0x224c parp:0xf1bf size:0x003b C-string:'DrawCARGO'
+//      UNK_0xf1fc  codep:0x224c parp:0xf1fc size:0x001a C-string:'UNK_0xf1fc'
 //         .ENERGY  codep:0x224c parp:0xf222 size:0x00a9 C-string:'DrawENERGY'
 //      UNK_0xf2cd  codep:0x224c parp:0xf2cd size:0x0026 C-string:'UNK_0xf2cd'
 //      UNK_0xf2f5  codep:0x224c parp:0xf2f5 size:0x0022 C-string:'UNK_0xf2f5'
 //      UNK_0xf319  codep:0x224c parp:0xf319 size:0x0022 C-string:'UNK_0xf319'
 //          .WHERE  codep:0x224c parp:0xf346 size:0x0048 C-string:'DrawWHERE'
-//          .STATS  codep:0x224c parp:0xf399 size:0x002a C-string:'DrawSTATS'
+//          .STATS  codep:0x224c parp:0xf399 size:0x001a C-string:'DrawSTATS'
+//      UNK_0xf3b5  codep:0x224c parp:0xf3b5 size:0x000e C-string:'UNK_0xf3b5'
 //        TV-TASKS  codep:0x224c parp:0xf3d0 size:0x0064 C-string:'TV_dash_TASKS'
 //      UNK_0xf436  codep:0x224c parp:0xf436 size:0x0062 C-string:'UNK_0xf436'
 //      UNK_0xf49a  codep:0x224c parp:0xf49a size:0x000a C-string:'UNK_0xf49a'
@@ -168,9 +181,11 @@ extern const unsigned short int pp_IsCRITIC; // ?CRITIC
 extern const unsigned short int pp__i_INJURE; // 'INJURE
 extern const unsigned short int pp_ATMO; // ATMO
 extern const unsigned short int pp_LCOLOR; // LCOLOR
+extern const unsigned short int pp_OLDHR; // OLDHR
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_IsNEW; // ?NEW
+extern const unsigned short int pp_FORCED; // FORCED
 extern const unsigned short int pp_XORMODE; // XORMODE
 extern const unsigned short int pp_XCON; // XCON
 extern const unsigned short int pp_YCON; // YCON
@@ -188,6 +203,7 @@ extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WRIGHT; // WRIGHT
 extern const unsigned short int pp_WLEFT; // WLEFT
 extern const unsigned short int pp_YABS; // YABS
+extern const unsigned short int pp_STAR_dash_HR; // STAR-HR
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp_TIME_dash_PASSING; // TIME-PASSING
 extern const unsigned short int pp__i_DEATH; // 'DEATH
@@ -280,6 +296,7 @@ void IsTRIG(); // ?TRIG
 void SET_dash_CRS(); // SET-CRS
 void DISTRACT(); // DISTRACT
 void DrawVIT(); // .VIT
+void HEAVEHO(); // HEAVEHO
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -342,7 +359,18 @@ void UNK_0xe0b6() // UNK_0xe0b6
   _plus__ex_(); // +!
 }
 
-// 0xe0cc: db 0x4c 0x22 0x20 0x0f 0x3d 0x0f 0xd8 0x4a 0x90 0x16 'L"  =  J  '
+
+// ================================================
+// 0xe0cc: WORD 'UNK_0xe0ce' codep=0x224c parp=0xe0ce orphan
+// ================================================
+
+void UNK_0xe0ce() // UNK_0xe0ce
+{
+  Push(0);
+  Push(2);
+  RRND(); // RRND
+}
+
 
 // ================================================
 // 0xe0d6: WORD 'UNK_0xe0d8' codep=0x224c parp=0xe0d8
@@ -464,7 +492,16 @@ IFieldType STUNS = {CREATUREIDX, 0x12, 0x01};
 // 0xe194: WORD 'HIT.POINTS' codep=0x73ea parp=0xe1a3
 // ================================================
 LoadDataType HIT_dot_POINTS = {CREATUREIDX, 0x34, 0x01, 0x9c, 0x69d8};
-// 0xe1a9: db 0x4d 0x74 0x44 0x18 0x03 0x4d 0x74 0x44 0x17 0x01 'MtD  MtD  '
+
+// ================================================
+// 0xe1a9: WORD 'UNK_0xe1ab' codep=0x744d parp=0xe1ab orphan
+// ================================================
+IFieldType UNK_0xe1ab = {CREATUREIDX, 0x18, 0x03};
+
+// ================================================
+// 0xe1ae: WORD 'UNK_0xe1b0' codep=0x744d parp=0xe1b0 orphan
+// ================================================
+IFieldType UNK_0xe1b0 = {CREATUREIDX, 0x17, 0x01};
 
 // ================================================
 // 0xe1b3: WORD 'UNK_0xe1b5' codep=0x744d parp=0xe1b5
@@ -480,7 +517,11 @@ IFieldType UNK_0xe1ba = {CREATUREIDX, 0x13, 0x01};
 // 0xe1bd: WORD 'BEHAVE' codep=0x744d parp=0xe1c8
 // ================================================
 IFieldType BEHAVE = {CREATUREIDX, 0x1b, 0x01};
-// 0xe1cb: db 0xea 0x73 0x44 0x0b 0x01 0x9c 0xd8 0x69 ' sD    i'
+
+// ================================================
+// 0xe1cb: WORD 'UNK_0xe1cd' codep=0x73ea parp=0xe1cd orphan
+// ================================================
+LoadDataType UNK_0xe1cd = {CREATUREIDX, 0x0b, 0x01, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe1d3: WORD 'TV-WEAPON' codep=0x744d parp=0xe1e1
@@ -743,7 +784,57 @@ void UNK_0xe3ba() // UNK_0xe3ba
   Push(Pop() & Pop()); // AND
 }
 
-// 0xe3d2: db 0x4c 0x22 0xa9 0xe1 0x02 0x7a 0x90 0x16 0x4c 0x22 0xcb 0xe1 0x92 0x0c 0xd2 0xe3 0xcb 0xe1 0xc9 0x79 0x92 0x0f 0x2e 0x0f 0x2d 0x12 0x90 0x16 0x4c 0x22 0xb8 0xe1 0x92 0x0c 0x5d 0x17 0x27 0x00 0x2d 0x12 0x90 0x16 0x4c 0x22 0xc6 0xe1 0x92 0x0c 0x5d 0x17 0x80 0x00 0xf5 0x12 0xe2 0xe0 0x90 0x16 'L"   z  L"         y  . -   L"    ] ' -   L"    ]         '
+
+// ================================================
+// 0xe3d2: WORD 'UNK_0xe3d4' codep=0x224c parp=0xe3d4 orphan params=0 returns=0
+// ================================================
+
+void UNK_0xe3d4() // UNK_0xe3d4
+{
+  Push(0x63ef+UNK_0xe1ab.offset); // UNK_0xe1ab<IFIELD>
+  Get_gt_C_plus_S(); // @>C+S
+}
+
+
+// ================================================
+// 0xe3da: WORD 'UNK_0xe3dc' codep=0x224c parp=0xe3dc orphan
+// ================================================
+
+void UNK_0xe3dc() // UNK_0xe3dc
+{
+  LoadData(UNK_0xe1cd); // from 'CREATURE'
+  Push(Read16(Pop())&0xFF); //  C@
+  UNK_0xe3d4(); // UNK_0xe3d4
+  LoadData(UNK_0xe1cd); // from 'CREATURE'
+  ICLOSE(); // ICLOSE
+  _dash_(); // -
+  Push(1);
+  _gt_(); // >
+}
+
+
+// ================================================
+// 0xe3ee: WORD 'UNK_0xe3f0' codep=0x224c parp=0xe3f0 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xe3f0() // UNK_0xe3f0
+{
+  Push(Read16(0x63ef+UNK_0xe1ba.offset)&0xFF); // UNK_0xe1ba<IFIELD> C@
+  Push(0x0027);
+  _gt_(); // >
+}
+
+
+// ================================================
+// 0xe3fc: WORD 'UNK_0xe3fe' codep=0x224c parp=0xe3fe orphan params=0 returns=1
+// ================================================
+
+void UNK_0xe3fe() // UNK_0xe3fe
+{
+  Push((Read16(0x63ef+BEHAVE.offset)&0xFF) & 0x0080); // BEHAVE<IFIELD> C@ 0x0080 AND
+  UNK_0xe0e4(); // UNK_0xe0e4
+}
+
 
 // ================================================
 // 0xe40c: WORD 'UNK_0xe40e' codep=0x224c parp=0xe40e params=0 returns=1
@@ -764,7 +855,17 @@ void UNK_0xe41a() // UNK_0xe41a
   Push(Read16(cc_FALSE)); // FALSE
 }
 
-// 0xe41e: db 0x4c 0x22 0xc6 0xe1 0x92 0x0c 0x9b 0x3b 0xf5 0x12 0xe2 0xe0 0x90 0x16 'L"     ;      '
+
+// ================================================
+// 0xe41e: WORD 'UNK_0xe420' codep=0x224c parp=0xe420 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xe420() // UNK_0xe420
+{
+  Push((Read16(0x63ef+BEHAVE.offset)&0xFF) & 8); // BEHAVE<IFIELD> C@ 8 AND
+  UNK_0xe0e4(); // UNK_0xe0e4
+}
+
 
 // ================================================
 // 0xe42c: WORD 'UNK_0xe42e' codep=0x224c parp=0xe42e params=0 returns=1
@@ -950,7 +1051,19 @@ void UNK_0xe516() // UNK_0xe516
   _gt_(); // >
 }
 
-// 0xe538: db 0x4c 0x22 0x3e 0xe1 0x92 0x0c 0x5d 0x17 0x23 0x00 0x46 0x12 0x90 0x16 'L">   ] # F   '
+
+// ================================================
+// 0xe538: WORD 'UNK_0xe53a' codep=0x224c parp=0xe53a orphan
+// ================================================
+
+void UNK_0xe53a() // UNK_0xe53a
+{
+  LoadData(UNK_0xe140); // from 'CREATURE'
+  Push(Read16(Pop())&0xFF); //  C@
+  Push(0x0023);
+  _st_(); // <
+}
+
 
 // ================================================
 // 0xe546: WORD 'UNK_0xe548' codep=0x224c parp=0xe548 params=0 returns=1
@@ -2501,7 +2614,17 @@ void UNK_0xef8a() // UNK_0xef8a
   Pop(); // DROP
 }
 
-// 0xef94: db 0x4c 0x22 0xcf 0xa1 0x6c 0xd0 0x90 0x16 'L"  l   '
+
+// ================================================
+// 0xef94: WORD 'UNK_0xef96' codep=0x224c parp=0xef96 orphan params=0 returns=0
+// ================================================
+
+void UNK_0xef96() // UNK_0xef96
+{
+  CLICK(); // CLICK
+  HEAVEHO(); // HEAVEHO
+}
+
 
 // ================================================
 // 0xef9c: WORD 'UNK_0xef9e' codep=0x1d29 parp=0xef9e
@@ -2825,7 +2948,21 @@ void DrawCARGO() // .CARGO
   ICLOSE(); // ICLOSE
 }
 
-// 0xf1fa: db 0x4c 0x22 0x69 0x54 0xae 0x0b 0x64 0x5e 0xae 0x0b 0x92 0x0f 0x41 0x0e 0xfa 0x15 0x0a 0x00 0x64 0x5e 0xae 0x0b 0x69 0x54 0x76 0x6d 0x90 0x16 'L"iT  d^    A     d^  iTvm  '
+
+// ================================================
+// 0xf1fa: WORD 'UNK_0xf1fc' codep=0x224c parp=0xf1fc orphan params=0 returns=1
+// ================================================
+
+void UNK_0xf1fc() // UNK_0xf1fc
+{
+  Push(Read16(pp_OLDHR) - Read16(pp_STAR_dash_HR)); // OLDHR @ STAR-HR @ -
+  Push(Read16(regsp)); // DUP
+  if (Pop() == 0) return;
+  Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
+  Push(pp_OLDHR); // OLDHR
+  Store_3(); // !_3
+}
+
 
 // ================================================
 // 0xf216: WORD '.ENERGY' codep=0x224c parp=0xf222
@@ -3021,7 +3158,19 @@ void DrawSTATS() // .STATS
   Store_3(); // !_3
 }
 
-// 0xf3b3: db 0x4c 0x22 0xfa 0xf1 0x8e 0x57 0xae 0x0b 0x3e 0x13 0x8e 0x57 0xc5 0x6d 0x90 0x16 'L"   W  >  W m  '
+
+// ================================================
+// 0xf3b3: WORD 'UNK_0xf3b5' codep=0x224c parp=0xf3b5 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xf3b5() // UNK_0xf3b5
+{
+  UNK_0xf1fc(); // UNK_0xf1fc
+  Push(Pop() | Read16(pp_FORCED)); //  FORCED @ OR
+  Push(pp_FORCED); // FORCED
+  OFF(); // OFF
+}
+
 
 // ================================================
 // 0xf3c3: WORD 'TV-TASKS' codep=0x224c parp=0xf3d0 params=0 returns=0
@@ -3030,7 +3179,7 @@ void DrawSTATS() // .STATS
 
 void TV_dash_TASKS() // TV-TASKS
 {
-  Push(0xf3b5);
+  Push(0xf3b5); // probable 'UNK_0xf3b5'
   Push(pp__i_VEHICLE_dash_CYCLE); // 'VEHICLE-CYCLE
   _st__ex__gt_(); // <!>
   Push(0xed75); // probable '?STORM'

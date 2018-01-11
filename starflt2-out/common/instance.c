@@ -83,6 +83,7 @@ extern const unsigned short int pp__i_MAP; // 'MAP
 extern const unsigned short int pp__i_TRAVER; // 'TRAVER
 extern const unsigned short int pp__i__ask_EXIT; // '?EXIT
 extern const unsigned short int pp_UNK_0x56b2; // UNK_0x56b2
+extern const unsigned short int pp_UNK_0x56e0; // UNK_0x56e0
 extern const unsigned short int pp_UNK_0x5efa; // UNK_0x5efa
 extern const unsigned short int pp_UNK_0x5fe6; // UNK_0x5fe6
 extern const unsigned short int pp_UNK_0x63a2; // UNK_0x63a2
@@ -119,7 +120,9 @@ void IsNULL(); // ?NULL
 void Is_dash_NULL(); // ?-NULL
 void IsCHILD(); // ?CHILD
 void UNK_0x7635(); // UNK_0x7635
+void UNK_0x7702(); // UNK_0x7702
 void UNK_0x77ba(); // UNK_0x77ba
+void UNK_0x77d6(); // UNK_0x77d6
 void SET_dash_CUR(); // SET-CUR
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -389,7 +392,33 @@ void VCLR() // VCLR
 // 0x7b49: lodsw
 // 0x7b4a: mov    bx,ax
 // 0x7b4c: jmp    word ptr [bx]
-// 0x7b4e: db 0x4c 0x22 0xb8 0x77 0xde 0x56 0xae 0x0b 0xc8 0x0d 0xfa 0x15 0x14 0x00 0x20 0x0f 0xb8 0x15 0x50 0x0e 0x05 0x10 0x00 0x77 0xd4 0x77 0xd0 0x15 0xf6 0xff 0xa0 0x79 0x90 0x16 'L" w V            P    w w     y  '
+
+// ================================================
+// 0x7b4e: WORD 'UNK_0x7b50' codep=0x224c parp=0x7b50 orphan params=0 returns=0
+// ================================================
+
+void UNK_0x7b50() // UNK_0x7b50
+{
+  unsigned short int i, imax;
+  UNK_0x77ba(); // UNK_0x77ba
+  Push(Read16(pp_UNK_0x56e0)); // UNK_0x56e0 @
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  if (Pop() == 0) return;
+  Push(0);
+
+  i = Pop();
+  imax = Pop();
+  do // (DO)
+  {
+    Push(i * 2); // I 2*
+    UNK_0x7702(); // UNK_0x7702
+    UNK_0x77d6(); // UNK_0x77d6
+    i++;
+  } while(i<imax); // (LOOP)
+
+  SET_dash_CUR(); // SET-CUR
+}
+
 
 // ================================================
 // 0x7b70: WORD 'SAVE-BU' codep=0x224c parp=0x7b7c
@@ -688,7 +717,19 @@ void IFLD_ex_() // IFLD!
   FLD_ex_(); // FLD! case
 }
 
-// 0x7d39: db 0x4c 0x22 0x7f 0x0e 0x0d 0x7d 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  } _   '
+
+// ================================================
+// 0x7d39: WORD 'UNK_0x7d3b' codep=0x224c parp=0x7d3b orphan
+// ================================================
+
+void UNK_0x7d3b() // UNK_0x7d3b
+{
+  OVER(); // OVER
+  IFLD_at_(); // IFLD@
+  OVER(); // OVER
+  Push((Pop()==Pop())?1:0); // =
+}
+
 
 // ================================================
 // 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=2 returns=3
@@ -854,7 +895,20 @@ void SELECT_dash_() // SELECT-
   Push(a); // R>
 }
 
-// 0x7e2e: db 0x4c 0x22 0x02 0x7e 0xb4 0x0d 0x32 0x0e 0x90 0x0e 0x90 0x16 'L" ~  2     '
+
+// ================================================
+// 0x7e2e: WORD 'UNK_0x7e30' codep=0x224c parp=0x7e30 orphan params=7 returns=1
+// ================================================
+
+void UNK_0x7e30() // UNK_0x7e30
+{
+  unsigned short int a;
+  SELECT_dash_(); // SELECT-
+  a = Pop(); // >R
+  Pop(); // DROP
+  Push(a); // R>
+}
+
 
 // ================================================
 // 0x7e3a: WORD 'UNK_0x7e3c' codep=0x224c parp=0x7e3c params=5 returns=1
@@ -862,7 +916,7 @@ void SELECT_dash_() // SELECT-
 
 void UNK_0x7e3c() // UNK_0x7e3c
 {
-  Push(0x7d3b);
+  Push(0x7d3b); // probable 'UNK_0x7d3b'
   SELECT_dash_(); // SELECT-
 }
 
@@ -983,7 +1037,17 @@ void _gt_INACTI() // >INACTI
   UNK_0x7eb4(); // UNK_0x7eb4
 }
 
-// 0x7f0c: db 0x4c 0x22 0x2d 0x7c 0xf0 0x7e 0x90 0x16 'L"-| ~  '
+
+// ================================================
+// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e orphan
+// ================================================
+
+void UNK_0x7f0e() // UNK_0x7f0e
+{
+  IEXTRAC(); // IEXTRAC
+  _gt_INACTI(); // >INACTI
+}
+
 
 // ================================================
 // 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20 params=0 returns=0
@@ -991,7 +1055,7 @@ void _gt_INACTI() // >INACTI
 
 void IDELETE() // IDELETE
 {
-  Push(0x7f0e);
+  Push(0x7f0e); // probable 'UNK_0x7f0e'
   Push(pp__i_MAP); // 'MAP
   UNK_0x7d99(); // UNK_0x7d99
   Push(0x7609); // probable '?NULL'

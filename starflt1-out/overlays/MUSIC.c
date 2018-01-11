@@ -27,7 +27,8 @@
 //      UNK_0xe2ca  codep:0x1d29 parp:0xe2ca size:0x0002 C-string:'UNK_0xe2ca'
 //      UNK_0xe2ce  codep:0x224c parp:0xe2ce size:0x0006 C-string:'UNK_0xe2ce'
 //      UNK_0xe2d6  codep:0x224c parp:0xe2d6 size:0x0006 C-string:'UNK_0xe2d6'
-//      UNK_0xe2de  codep:0x224c parp:0xe2de size:0x000e C-string:'UNK_0xe2de'
+//      UNK_0xe2de  codep:0x224c parp:0xe2de size:0x0006 C-string:'UNK_0xe2de'
+//      UNK_0xe2e6  codep:0x224c parp:0xe2e6 size:0x0006 C-string:'UNK_0xe2e6'
 //      UNK_0xe2ee  codep:0x224c parp:0xe2ee size:0x01c9 C-string:'UNK_0xe2ee'
 //              P2  codep:0x1d29 parp:0xe4be size:0x0014 C-string:'P2'
 //              P3  codep:0x1d29 parp:0xe4d9 size:0x0014 C-string:'P3'
@@ -41,7 +42,8 @@
 //           HIMUS  codep:0x224c parp:0xe5eb size:0x0014 C-string:'HIMUS'
 //        CSCR>EGA  codep:0x224c parp:0xe60c size:0x0072 C-string:'CSCR_gt_EGA'
 //      UNK_0xe680  codep:0x224c parp:0xe680 size:0x001a C-string:'UNK_0xe680'
-//      UNK_0xe69c  codep:0x224c parp:0xe69c size:0x001e C-string:'UNK_0xe69c'
+//      UNK_0xe69c  codep:0x224c parp:0xe69c size:0x001a C-string:'UNK_0xe69c'
+//      UNK_0xe6b8  codep:0x2214 parp:0xe6b8 size:0x0002 C-string:'UNK_0xe6b8'
 //      UNK_0xe6bc  codep:0x1d29 parp:0xe6bc size:0x0002 C-string:'UNK_0xe6bc'
 //      UNK_0xe6c0  codep:0x1d29 parp:0xe6c0 size:0x0002 C-string:'UNK_0xe6c0'
 //      UNK_0xe6c4  codep:0x1d29 parp:0xe6c4 size:0x0002 C-string:'UNK_0xe6c4'
@@ -203,6 +205,7 @@ const unsigned short int cc_RESTVALUE = 0xe29e; // RESTVALUE
 const unsigned short int cc_TONESTATE = 0xe2ae; // TONESTATE
 const unsigned short int cc_SONGS = 0xe2ba; // SONGS
 const unsigned short int cc_SCALE = 0xe2c6; // SCALE
+const unsigned short int cc_UNK_0xe6b8 = 0xe6b8; // UNK_0xe6b8
 
 
 // 0xe212: db 0x7f 0x00 ' '
@@ -309,7 +312,17 @@ void UNK_0xe2de() // UNK_0xe2de
   L_at_(); // L@
 }
 
-// 0xe2e4: db 0x4c 0x22 0xcc 0xe2 0xcb 0x2e 0x90 0x16 'L"   .  '
+
+// ================================================
+// 0xe2e4: WORD 'UNK_0xe2e6' codep=0x224c parp=0xe2e6 orphan params=1 returns=1
+// ================================================
+
+void UNK_0xe2e6() // UNK_0xe2e6
+{
+  UNK_0xe2ce(); // UNK_0xe2ce
+  LC_at_(); // LC@
+}
+
 
 // ================================================
 // 0xe2ec: WORD 'UNK_0xe2ee' codep=0x224c parp=0xe2ee params=2 returns=0
@@ -529,7 +542,11 @@ void UNK_0xe69c() // UNK_0xe69c
   MS(); // MS
 }
 
-// 0xe6b6: db 0x14 0x22 0x00 0x00 ' "  '
+
+// ================================================
+// 0xe6b6: WORD 'UNK_0xe6b8' codep=0x2214 parp=0xe6b8 orphan
+// ================================================
+// 0xe6b8: dw 0x0000
 
 // ================================================
 // 0xe6ba: WORD 'UNK_0xe6bc' codep=0x1d29 parp=0xe6bc

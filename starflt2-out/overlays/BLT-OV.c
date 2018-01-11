@@ -17,7 +17,8 @@
 //      UNK_0xf046  codep:0x224c parp:0xf046 size:0x0010 C-string:'UNK_0xf046'
 //      UNK_0xf058  codep:0x224c parp:0xf058 size:0x000e C-string:'UNK_0xf058'
 //      UNK_0xf068  codep:0x1d29 parp:0xf068 size:0x0011 C-string:'UNK_0xf068'
-//      UNK_0xf07b  codep:0x224c parp:0xf07b size:0x0094 C-string:'UNK_0xf07b'
+//      UNK_0xf07b  codep:0x224c parp:0xf07b size:0x0074 C-string:'UNK_0xf07b'
+//      UNK_0xf0f1  codep:0x224c parp:0xf0f1 size:0x001e C-string:'UNK_0xf0f1'
 //      UNK_0xf111  codep:0x224c parp:0xf111 size:0x0018 C-string:'UNK_0xf111'
 //      UNK_0xf12b  codep:0x224c parp:0xf12b size:0x0018 C-string:'UNK_0xf12b'
 //      UNK_0xf145  codep:0x224c parp:0xf145 size:0x0032 C-string:'UNK_0xf145'
@@ -44,6 +45,9 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_BL; // BL
+extern const unsigned short int cc_AX; // AX
+extern const unsigned short int cc_BX; // BX
+extern const unsigned short int cc_DS; // DS
 extern const unsigned short int pp_DTA_1; // DTA_1
 extern const unsigned short int pp_SKIPPED; // SKIPPED
 extern const unsigned short int pp_CANSKIP; // CANSKIP
@@ -87,10 +91,13 @@ void ON_2(); // ON_2
 void _099(); // 099
 void FILL_2(); // FILL_2
 void MOUNTB(); // MOUNTB
+void FILE_st_(); // FILE<
 void GetINST_dash_S(); // @INST-S
 void ICLOSE(); // ICLOSE
 void Get_gt_C_plus_S(); // @>C+S
 void SAVE_dash_OV(); // SAVE-OV
+void PAD_v_16(); // PAD|16
+void PAD_gt_SEG(); // PAD>SEG
 void IsVGA(); // ?VGA
 void IsCGA(); // ?CGA
 void DARK(); // DARK
@@ -108,6 +115,7 @@ void LC_at_(); // LC@
 void LC_ex_(); // LC!
 void LCMOVE(); // LCMOVE
 void GetDS(); // @DS
+void GRCALL(); // GRCALL
 void _gt_PLANES(); // >PLANES
 
 
@@ -255,7 +263,28 @@ void UNK_0xf07b() // UNK_0xf07b
   SAVE_dash_OV(); // SAVE-OV
 }
 
-// 0xf0ef: db 0x4c 0x22 0x8d 0x85 0x5d 0x17 0x36 0x00 0xe1 0x72 0xae 0x4a 0xd7 0x39 0x16 0x6d 0x77 0x85 0xa1 0x39 0x16 0x6d 0xaf 0x3b 0x98 0x39 0x16 0x6d 0x4d 0x85 0x90 0x16 'L"  ] 6  r J 9 mw  9 m ; 9 mM   '
+
+// ================================================
+// 0xf0ef: WORD 'UNK_0xf0f1' codep=0x224c parp=0xf0f1 orphan
+// ================================================
+
+void UNK_0xf0f1() // UNK_0xf0f1
+{
+  PAD_gt_SEG(); // PAD>SEG
+  Push(0x0036);
+  FILE_st_(); // FILE<
+  GetDS(); // @DS
+  Push(Read16(cc_DS)); // DS
+  Store_2(); // !_2
+  PAD_v_16(); // PAD|16
+  Push(Read16(cc_BX)); // BX
+  Store_2(); // !_2
+  Push(9);
+  Push(Read16(cc_AX)); // AX
+  Store_2(); // !_2
+  GRCALL(); // GRCALL
+}
+
 
 // ================================================
 // 0xf10f: WORD 'UNK_0xf111' codep=0x224c parp=0xf111

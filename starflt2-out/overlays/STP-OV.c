@@ -31,7 +31,8 @@
 //      UNK_0xf188  codep:0x1d29 parp:0xf188 size:0x0002 C-string:'UNK_0xf188'
 //      UNK_0xf18c  codep:0x2214 parp:0xf18c size:0x0002 C-string:'UNK_0xf18c'
 //      UNK_0xf190  codep:0x1d29 parp:0xf190 size:0x0002 C-string:'UNK_0xf190'
-//      UNK_0xf194  codep:0x224c parp:0xf194 size:0x0034 C-string:'UNK_0xf194'
+//      UNK_0xf194  codep:0x224c parp:0xf194 size:0x0028 C-string:'UNK_0xf194'
+//      UNK_0xf1be  codep:0x224c parp:0xf1be size:0x000a C-string:'UNK_0xf1be'
 //      UNK_0xf1ca  codep:0x224c parp:0xf1ca size:0x0008 C-string:'UNK_0xf1ca'
 //      UNK_0xf1d4  codep:0x224c parp:0xf1d4 size:0x0010 C-string:'UNK_0xf1d4'
 //      UNK_0xf1e6  codep:0x224c parp:0xf1e6 size:0x0010 C-string:'UNK_0xf1e6'
@@ -111,6 +112,7 @@ void _do__ex_(); // $!
 void OVER(); // OVER
 void ROT(); // ROT
 void SWAP(); // SWAP
+void _slash_(); // /
 void _dash_(); // -
 void D_plus_(); // D+
 void U_star_(); // U*
@@ -362,7 +364,19 @@ void UNK_0xf194() // UNK_0xf194
   Is(); // ?
 }
 
-// 0xf1bc: db 0x4c 0x22 0x8a 0xf1 0x8f 0x3b 0x4c 0x0f 0x92 0x0f 0x90 0x16 'L"   ;L     '
+
+// ================================================
+// 0xf1bc: WORD 'UNK_0xf1be' codep=0x224c parp=0xf1be orphan params=0 returns=1
+// ================================================
+
+void UNK_0xf1be() // UNK_0xf1be
+{
+  Push(Read16(cc_UNK_0xf18c)); // UNK_0xf18c
+  Push(5);
+  _slash_(); // /
+  _dash_(); // -
+}
+
 
 // ================================================
 // 0xf1c8: WORD 'UNK_0xf1ca' codep=0x224c parp=0xf1ca params=1 returns=1

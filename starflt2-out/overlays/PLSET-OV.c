@@ -11,7 +11,9 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-//      UNK_0xed66  codep:0x2214 parp:0xed66 size:0x000a C-string:'UNK_0xed66'
+//      UNK_0xed66  codep:0x2214 parp:0xed66 size:0x0002 C-string:'UNK_0xed66'
+//      UNK_0xed6a  codep:0x2214 parp:0xed6a size:0x0002 C-string:'UNK_0xed6a'
+//      UNK_0xed6e  codep:0x2214 parp:0xed6e size:0x0002 C-string:'UNK_0xed6e'
 //      UNK_0xed72  codep:0x7394 parp:0xed72 size:0x0006 C-string:'UNK_0xed72'
 //      UNK_0xed7a  codep:0x7394 parp:0xed7a size:0x0006 C-string:'UNK_0xed7a'
 //      UNK_0xed82  codep:0x7394 parp:0xed82 size:0x0006 C-string:'UNK_0xed82'
@@ -58,7 +60,9 @@
 //      UNK_0xf21b  codep:0x224c parp:0xf21b size:0x002a C-string:'UNK_0xf21b'
 //      UNK_0xf247  codep:0x224c parp:0xf247 size:0x003a C-string:'UNK_0xf247'
 //      UNK_0xf283  codep:0x224c parp:0xf283 size:0x001c C-string:'UNK_0xf283'
-//      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x0086 C-string:'UNK_0xf2a1'
+//      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x003a C-string:'UNK_0xf2a1'
+//      UNK_0xf2dd  codep:0x224c parp:0xf2dd size:0x0018 C-string:'UNK_0xf2dd'
+//      UNK_0xf2f7  codep:0x224c parp:0xf2f7 size:0x0030 C-string:'UNK_0xf2f7'
 //      UNK_0xf329  codep:0x224c parp:0xf329 size:0x000c C-string:'UNK_0xf329'
 //            RUGS  codep:0x1d29 parp:0xf33e size:0x0020 C-string:'RUGS'
 //      UNK_0xf360  codep:0x224c parp:0xf360 size:0x0012 C-string:'UNK_0xf360'
@@ -75,7 +79,8 @@
 //      UNK_0xf49c  codep:0x224c parp:0xf49c size:0x0016 C-string:'UNK_0xf49c'
 //      UNK_0xf4b4  codep:0x224c parp:0xf4b4 size:0x0012 C-string:'UNK_0xf4b4'
 //        (TERRAIN  codep:0x4b3b parp:0xf4d3 size:0x0018 C-string:'_ro_TERRAIN'
-//      UNK_0xf4ed  codep:0x224c parp:0xf4ed size:0x0012 C-string:'UNK_0xf4ed'
+//      UNK_0xf4ed  codep:0x224c parp:0xf4ed size:0x0008 C-string:'UNK_0xf4ed'
+//      UNK_0xf4f7  codep:0x224c parp:0xf4f7 size:0x0008 C-string:'UNK_0xf4f7'
 //      UNK_0xf501  codep:0x224c parp:0xf501 size:0x001a C-string:'UNK_0xf501'
 //        PLAN-RUL  codep:0x224c parp:0xf528 size:0x0000 C-string:'PLAN_dash_RUL'
 
@@ -90,6 +95,7 @@ extern const unsigned short int pp_HYDRO; // HYDRO
 extern const unsigned short int pp_ATMO; // ATMO
 extern const unsigned short int pp__ro_ELIST_rc_; // (ELIST)
 extern const unsigned short int pp_GLOBALS; // GLOBALS
+extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET; // (PLANET
@@ -124,6 +130,7 @@ void StoreXYSEED(); // !XYSEED
 void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void OVER(); // OVER
+void ROT(); // ROT
 void SWAP(); // SWAP
 void _slash_(); // /
 void _dash_(); // -
@@ -175,6 +182,8 @@ const unsigned short int pp__ro_SAND_rc_ = 0xf428; // (SAND) size: 16
 
 
 const unsigned short int cc_UNK_0xed66 = 0xed66; // UNK_0xed66
+const unsigned short int cc_UNK_0xed6a = 0xed6a; // UNK_0xed6a
+const unsigned short int cc_UNK_0xed6e = 0xed6e; // UNK_0xed6e
 
 
 // 0xed62: db 0x80 0x00 '  '
@@ -183,7 +192,16 @@ const unsigned short int cc_UNK_0xed66 = 0xed66; // UNK_0xed66
 // 0xed64: WORD 'UNK_0xed66' codep=0x2214 parp=0xed66
 // ================================================
 // 0xed66: dw 0x0020
-// 0xed68: db 0x14 0x22 0x43 0x00 0x14 0x22 0x44 0x00 ' "C  "D '
+
+// ================================================
+// 0xed68: WORD 'UNK_0xed6a' codep=0x2214 parp=0xed6a orphan
+// ================================================
+// 0xed6a: dw 0x0043
+
+// ================================================
+// 0xed6c: WORD 'UNK_0xed6e' codep=0x2214 parp=0xed6e orphan
+// ================================================
+// 0xed6e: dw 0x0044
 
 // ================================================
 // 0xed70: WORD 'UNK_0xed72' codep=0x7394 parp=0xed72
@@ -251,7 +269,7 @@ LoadDataType UNK_0xedca = {PLANETIDX, 0x11, 0x02, 0x17, 0x6c49};
 LoadDataType UNK_0xedd2 = {PLANETIDX, 0x13, 0x01, 0x17, 0x6c49};
 
 // ================================================
-// 0xedd8: WORD 'UNK_0xedda' codep=0x224c parp=0xedda
+// 0xedd8: WORD 'UNK_0xedda' codep=0x224c parp=0xedda orphan
 // ================================================
 
 void UNK_0xedda() // UNK_0xedda
@@ -1012,7 +1030,55 @@ void UNK_0xf2a1() // UNK_0xf2a1
   UNK_0xf283(); // UNK_0xf283
 }
 
-// 0xf2db: db 0x4c 0x22 0xaf 0x64 0x83 0x4a 0x1f 0x7a 0xb8 0xed 0x92 0x0c 0xc0 0xed 0x92 0x0c 0x7f 0x0e 0x92 0x0f 0xe7 0x0f 0xdf 0x79 0x90 0x16 0x4c 0x22 0x3a 0x5f 0xae 0x0b 0x41 0x0e 0x5d 0x17 0xe0 0x01 0x2d 0x12 0xfa 0x15 0x0a 0x00 0x5d 0x17 0xc0 0x03 0xf2 0x0e 0x92 0x0f 0x5d 0x17 0xe0 0x01 0xdb 0xf2 0xb3 0x0e 0xf2 0x0e 0x4c 0x0f 0xe7 0x0f 0xb3 0x0e 0xf2 0x0e 0x4c 0x0f 0x72 0x0f 0x90 0x16 'L" d J z              y  L":_  A ]   -     ]       ]         L       L r   '
+
+// ================================================
+// 0xf2db: WORD 'UNK_0xf2dd' codep=0x224c parp=0xf2dd orphan
+// ================================================
+
+void UNK_0xf2dd() // UNK_0xf2dd
+{
+  Push(pp__ro_PLANET); // (PLANET
+  _1_dot_5_at_(); // 1.5@
+  _gt_C_plus_S(); // >C+S
+  LoadData(UNK_0xedba); // from 'PLANET'
+  Push(Read16(Pop())&0xFF); //  C@
+  LoadData(UNK_0xedc2); // from 'PLANET'
+  Push(Read16(Pop())&0xFF); //  C@
+  OVER(); // OVER
+  _dash_(); // -
+  Push(Pop() + 1); //  1+
+  ICLOSE(); // ICLOSE
+}
+
+
+// ================================================
+// 0xf2f5: WORD 'UNK_0xf2f7' codep=0x224c parp=0xf2f7 orphan
+// ================================================
+
+void UNK_0xf2f7() // UNK_0xf2f7
+{
+  Push(Read16(pp_YABS)); // YABS @
+  Push(Read16(regsp)); // DUP
+  Push(0x01e0);
+  _gt_(); // >
+  if (Pop() != 0)
+  {
+    Push(0x03c0);
+    SWAP(); // SWAP
+    _dash_(); // -
+  }
+  Push(0x01e0);
+  UNK_0xf2dd(); // UNK_0xf2dd
+  ROT(); // ROT
+  SWAP(); // SWAP
+  _slash_(); // /
+  Push(Pop() + 1); //  1+
+  ROT(); // ROT
+  SWAP(); // SWAP
+  _slash_(); // /
+  Push(Pop() + Pop()); // +
+}
+
 
 // ================================================
 // 0xf327: WORD 'UNK_0xf329' codep=0x224c parp=0xf329
@@ -1258,7 +1324,18 @@ void UNK_0xf4ed() // UNK_0xf4ed
   _ro_TERRAIN(); // (TERRAIN case
 }
 
-// 0xf4f5: db 0x4c 0x22 0x20 0x0f 0x57 0xaa 0x16 0x6d 0x90 0x16 'L"  W  m  '
+
+// ================================================
+// 0xf4f5: WORD 'UNK_0xf4f7' codep=0x224c parp=0xf4f7 orphan params=0 returns=0
+// ================================================
+
+void UNK_0xf4f7() // UNK_0xf4f7
+{
+  Push(0);
+  Push(0x65e1+TEXT_dash_CO.offset); // TEXT-CO<IFIELD>
+  Store_2(); // !_2
+}
+
 
 // ================================================
 // 0xf4ff: WORD 'UNK_0xf501' codep=0x224c parp=0xf501 params=3 returns=0
@@ -1269,7 +1346,7 @@ void UNK_0xf501() // UNK_0xf501
   Push(pp__ro_ELIST_rc_); // (ELIST)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-  Push(0xf4f7);
+  Push(0xf4f7); // probable 'UNK_0xf4f7'
   ALL(); // ALL
   IFIRST(); // IFIRST
   Push(1);

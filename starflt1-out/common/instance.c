@@ -72,6 +72,7 @@ extern const unsigned short int pp__i_MAP; // 'MAP
 extern const unsigned short int pp__i_TRAVERS; // 'TRAVERS
 extern const unsigned short int pp__i__ask_EXIT; // '?EXIT
 extern const unsigned short int pp_UNK_0x5532; // UNK_0x5532
+extern const unsigned short int pp_QTYINST; // QTYINST
 extern const unsigned short int pp_IsREUSE; // ?REUSE
 extern const unsigned short int pp_IsRECYCLED; // ?RECYCLED
 extern const unsigned short int pp_UNK_0x6162; // UNK_0x6162
@@ -111,6 +112,7 @@ void ICACHE_gt_IBFR(); // ICACHE>IBFR
 void POINT_gt_I(); // POINT>I
 void UNK_0x7720(); // UNK_0x7720
 void UNK_0x77a4(); // UNK_0x77a4
+void UNK_0x77c0(); // UNK_0x77c0
 void UNK_0x790c(); // UNK_0x790c
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -396,7 +398,33 @@ void VCLR() // VCLR
 // 0x7b1c: lodsw
 // 0x7b1d: mov    bx,ax
 // 0x7b1f: jmp    word ptr [bx]
-// 0x7b21: db 0x4c 0x22 0xa2 0x77 0x76 0x55 0xae 0x0b 0xc8 0x0d 0xfa 0x15 0x14 0x00 0x20 0x0f 0xb8 0x15 0x50 0x0e 0x05 0x10 0xea 0x76 0xbe 0x77 0xd0 0x15 0xf6 0xff 0x8a 0x79 0x90 0x16 'L" wvU            P    v w     y  '
+
+// ================================================
+// 0x7b21: WORD 'UNK_0x7b23' codep=0x224c parp=0x7b23 orphan params=0 returns=0
+// ================================================
+
+void UNK_0x7b23() // UNK_0x7b23
+{
+  unsigned short int i, imax;
+  UNK_0x77a4(); // UNK_0x77a4
+  Push(Read16(pp_QTYINST)); // QTYINST @
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  if (Pop() == 0) return;
+  Push(0);
+
+  i = Pop();
+  imax = Pop();
+  do // (DO)
+  {
+    Push(i * 2); // I 2*
+    POINT_gt_I(); // POINT>I
+    UNK_0x77c0(); // UNK_0x77c0
+    i++;
+  } while(i<imax); // (LOOP)
+
+  SET_dash_CURRENT(); // SET-CURRENT
+}
+
 
 // ================================================
 // 0x7b43: WORD 'SAVE-BUFFERS' codep=0x224c parp=0x7b4f params=0 returns=0
@@ -684,7 +712,19 @@ void IFLD_ex_() // IFLD!
   FLD_ex_(); // FLD! case
 }
 
-// 0x7cff: db 0x4c 0x22 0x7f 0x0e 0xd3 0x7c 0x7f 0x0e 0x5f 0x12 0x90 0x16 'L"  | _   '
+
+// ================================================
+// 0x7cff: WORD 'UNK_0x7d01' codep=0x224c parp=0x7d01 orphan
+// ================================================
+
+void UNK_0x7d01() // UNK_0x7d01
+{
+  OVER(); // OVER
+  IFLD_at_(); // IFLD@
+  OVER(); // OVER
+  Push((Pop()==Pop())?1:0); // =
+}
+
 
 // ================================================
 // 0x7d0b: WORD '?CLASS/' codep=0x224c parp=0x7d17 params=2 returns=3
@@ -850,7 +890,20 @@ void SELECT_dash_() // SELECT-
   Push(a); // R>
 }
 
-// 0x7df4: db 0x4c 0x22 0xc8 0x7d 0xb4 0x0d 0x32 0x0e 0x90 0x0e 0x90 0x16 'L" }  2     '
+
+// ================================================
+// 0x7df4: WORD 'UNK_0x7df6' codep=0x224c parp=0x7df6 orphan params=7 returns=1
+// ================================================
+
+void UNK_0x7df6() // UNK_0x7df6
+{
+  unsigned short int a;
+  SELECT_dash_(); // SELECT-
+  a = Pop(); // >R
+  Pop(); // DROP
+  Push(a); // R>
+}
+
 
 // ================================================
 // 0x7e00: WORD 'UNK_0x7e02' codep=0x224c parp=0x7e02 params=5 returns=1
@@ -858,7 +911,7 @@ void SELECT_dash_() // SELECT-
 
 void UNK_0x7e02() // UNK_0x7e02
 {
-  Push(0x7d01);
+  Push(0x7d01); // probable 'UNK_0x7d01'
   SELECT_dash_(); // SELECT-
 }
 
@@ -979,7 +1032,17 @@ void _gt_INACTIVE() // >INACTIVE
   UNK_0x7e70(); // UNK_0x7e70
 }
 
-// 0x7ec8: db 0x4c 0x22 0xf3 0x7b 0xac 0x7e 0x90 0x16 'L" { ~  '
+
+// ================================================
+// 0x7ec8: WORD 'UNK_0x7eca' codep=0x224c parp=0x7eca orphan
+// ================================================
+
+void UNK_0x7eca() // UNK_0x7eca
+{
+  IEXTRACT(); // IEXTRACT
+  _gt_INACTIVE(); // >INACTIVE
+}
+
 
 // ================================================
 // 0x7ed0: WORD 'IDELETE' codep=0x224c parp=0x7edc params=0 returns=0
@@ -987,7 +1050,7 @@ void _gt_INACTIVE() // >INACTIVE
 
 void IDELETE() // IDELETE
 {
-  Push(0x7eca);
+  Push(0x7eca); // probable 'UNK_0x7eca'
   Push(pp__i_MAP); // 'MAP
   DUP_at__gt_V_ex_(); // DUP@>V!
   Push(0x75f3); // probable '?NULL'

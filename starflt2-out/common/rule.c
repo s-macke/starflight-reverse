@@ -164,7 +164,7 @@ const unsigned short int cc_UNK_0xab7f = 0xab7f; // UNK_0xab7f
 // 0xab7f: dw 0xec84
 
 // ================================================
-// 0xab81: WORD 'UNK_0xab83' codep=0x224c parp=0xab83 params=1 returns=1
+// 0xab81: WORD 'UNK_0xab83' codep=0x224c parp=0xab83 orphan params=1 returns=1
 // ================================================
 
 void UNK_0xab83() // UNK_0xab83
@@ -232,7 +232,7 @@ void DISTRAC() // DISTRAC
 
 
 // ================================================
-// 0xac0b: WORD 'UNK_0xac0d' codep=0x224c parp=0xac0d params=1 returns=1
+// 0xac0b: WORD 'UNK_0xac0d' codep=0x224c parp=0xac0d orphan params=1 returns=1
 // ================================================
 
 void UNK_0xac0d() // UNK_0xac0d

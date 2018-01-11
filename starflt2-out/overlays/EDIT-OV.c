@@ -28,7 +28,9 @@
 //      UNK_0xeee4  codep:0x224c parp:0xeee4 size:0x000e C-string:'UNK_0xeee4'
 //      UNK_0xeef4  codep:0x224c parp:0xeef4 size:0x000e C-string:'UNK_0xeef4'
 //      UNK_0xef04  codep:0x224c parp:0xef04 size:0x0010 C-string:'UNK_0xef04'
-//      UNK_0xef16  codep:0x224c parp:0xef16 size:0x002c C-string:'UNK_0xef16'
+//      UNK_0xef16  codep:0x224c parp:0xef16 size:0x000e C-string:'UNK_0xef16'
+//      UNK_0xef26  codep:0x224c parp:0xef26 size:0x000c C-string:'UNK_0xef26'
+//      UNK_0xef34  codep:0x224c parp:0xef34 size:0x000e C-string:'UNK_0xef34'
 //      UNK_0xef44  codep:0x224c parp:0xef44 size:0x000e C-string:'UNK_0xef44'
 //      UNK_0xef54  codep:0x224c parp:0xef54 size:0x0006 C-string:'UNK_0xef54'
 //      UNK_0xef5c  codep:0x224c parp:0xef5c size:0x0008 C-string:'UNK_0xef5c'
@@ -83,6 +85,9 @@ extern const unsigned short int cc_C_slash_L; // C/L
 extern const unsigned short int cc_CX; // CX
 extern const unsigned short int cc_DX; // DX
 extern const unsigned short int pp_FILENAMES; // FILENAMES
+extern const unsigned short int user_COL; // COL
+extern const unsigned short int user_COLMIN; // COLMIN
+extern const unsigned short int user_COLMAX; // COLMAX
 extern const unsigned short int user_SCR; // SCR
 void MAX(); // MAX
 void MIN(); // MIN
@@ -331,7 +336,31 @@ void UNK_0xef16() // UNK_0xef16
   Store_2(); // !_2
 }
 
-// 0xef24: db 0x4c 0x22 0xfd 0x04 0x92 0x0c 0xe3 0x04 0x92 0x0c 0x92 0x0f 0x90 0x16 0x4c 0x22 0x20 0x0f 0x89 0x11 0x24 0xef 0xad 0x11 0xc9 0x04 0x0a 0x6d 0x90 0x16 'L"            L"    $      m  '
+
+// ================================================
+// 0xef24: WORD 'UNK_0xef26' codep=0x224c parp=0xef26 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xef26() // UNK_0xef26
+{
+  Push((Read16(user_COLMAX)&0xFF) - (Read16(user_COLMIN)&0xFF)); // COLMAX C@ COLMIN C@ -
+}
+
+
+// ================================================
+// 0xef32: WORD 'UNK_0xef34' codep=0x224c parp=0xef34 orphan params=1 returns=0
+// ================================================
+
+void UNK_0xef34() // UNK_0xef34
+{
+  Push(0);
+  MAX(); // MAX
+  UNK_0xef26(); // UNK_0xef26
+  MIN(); // MIN
+  Push(user_COL); // COL
+  C_ex__2(); // C!_2
+}
+
 
 // ================================================
 // 0xef42: WORD 'UNK_0xef44' codep=0x224c parp=0xef44 params=1 returns=2

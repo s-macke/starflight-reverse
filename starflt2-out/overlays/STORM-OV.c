@@ -19,7 +19,8 @@
 //      UNK_0xf2c3  codep:0x7420 parp:0xf2c3 size:0x0003 C-string:'UNK_0xf2c3'
 //      UNK_0xf2c8  codep:0x7420 parp:0xf2c8 size:0x0003 C-string:'UNK_0xf2c8'
 //      UNK_0xf2cd  codep:0x7394 parp:0xf2cd size:0x0006 C-string:'UNK_0xf2cd'
-//      UNK_0xf2d5  codep:0x7394 parp:0xf2d5 size:0x000a C-string:'UNK_0xf2d5'
+//      UNK_0xf2d5  codep:0x7394 parp:0xf2d5 size:0x0006 C-string:'UNK_0xf2d5'
+//      UNK_0xf2dd  codep:0x1d29 parp:0xf2dd size:0x0002 C-string:'UNK_0xf2dd'
 //      UNK_0xf2e1  codep:0x224c parp:0xf2e1 size:0x0012 C-string:'UNK_0xf2e1'
 //      UNK_0xf2f5  codep:0x224c parp:0xf2f5 size:0x000a C-string:'UNK_0xf2f5'
 //      UNK_0xf301  codep:0x7420 parp:0xf301 size:0x0003 C-string:'UNK_0xf301'
@@ -95,6 +96,9 @@ void STORMS(); // STORMS
 // =================================
 // =========== VARIABLES ===========
 // =================================
+const unsigned short int pp_UNK_0xf2dd = 0xf2dd; // UNK_0xf2dd size: 2
+// {0x3a, 0x20}
+
 
 
 
@@ -245,7 +249,11 @@ LoadDataType UNK_0xf2cd = {PLANETIDX, 0x11, 0x02, 0x17, 0x6c49};
 // 0xf2d3: WORD 'UNK_0xf2d5' codep=0x7394 parp=0xf2d5
 // ================================================
 LoadDataType UNK_0xf2d5 = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
-// 0xf2db: db 0x29 0x1d 0x3a 0x20 ') : '
+
+// ================================================
+// 0xf2db: WORD 'UNK_0xf2dd' codep=0x1d29 parp=0xf2dd orphan
+// ================================================
+// 0xf2dd: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xf2df: WORD 'UNK_0xf2e1' codep=0x224c parp=0xf2e1 params=0 returns=1

@@ -18,7 +18,9 @@
 //      UNK_0xedc4  codep:0x7420 parp:0xedc4 size:0x0003 C-string:'UNK_0xedc4'
 //      UNK_0xedc9  codep:0x7394 parp:0xedc9 size:0x0006 C-string:'UNK_0xedc9'
 //      UNK_0xedd1  codep:0x7420 parp:0xedd1 size:0x0003 C-string:'UNK_0xedd1'
-//      UNK_0xedd6  codep:0x7420 parp:0xedd6 size:0x000d C-string:'UNK_0xedd6'
+//      UNK_0xedd6  codep:0x7420 parp:0xedd6 size:0x0003 C-string:'UNK_0xedd6'
+//      UNK_0xeddb  codep:0x7420 parp:0xeddb size:0x0003 C-string:'UNK_0xeddb'
+//      UNK_0xede0  codep:0x7420 parp:0xede0 size:0x0003 C-string:'UNK_0xede0'
 //          ?ETIME  codep:0x224c parp:0xedee size:0x002a C-string:'IsETIME'
 //      UNK_0xee1a  codep:0x224c parp:0xee1a size:0x003c C-string:'UNK_0xee1a'
 //      UNK_0xee58  codep:0x224c parp:0xee58 size:0x0040 C-string:'UNK_0xee58'
@@ -30,11 +32,15 @@
 //      UNK_0xefa3  codep:0x224c parp:0xefa3 size:0x0004 C-string:'UNK_0xefa3'
 //      UNK_0xefa9  codep:0x224c parp:0xefa9 size:0x0006 C-string:'UNK_0xefa9'
 //      UNK_0xefb1  codep:0x224c parp:0xefb1 size:0x0008 C-string:'UNK_0xefb1'
-//      UNK_0xefbb  codep:0x224c parp:0xefbb size:0x0014 C-string:'UNK_0xefbb'
+//      UNK_0xefbb  codep:0x224c parp:0xefbb size:0x0008 C-string:'UNK_0xefbb'
+//      UNK_0xefc5  codep:0x224c parp:0xefc5 size:0x000a C-string:'UNK_0xefc5'
 //      UNK_0xefd1  codep:0x224c parp:0xefd1 size:0x0030 C-string:'UNK_0xefd1'
 //      UNK_0xf003  codep:0x224c parp:0xf003 size:0x0008 C-string:'UNK_0xf003'
-//      UNK_0xf00d  codep:0x224c parp:0xf00d size:0x0060 C-string:'UNK_0xf00d'
-//      UNK_0xf06f  codep:0x224c parp:0xf06f size:0x003e C-string:'UNK_0xf06f'
+//      UNK_0xf00d  codep:0x224c parp:0xf00d size:0x0046 C-string:'UNK_0xf00d'
+//      UNK_0xf055  codep:0x224c parp:0xf055 size:0x0010 C-string:'UNK_0xf055'
+//      UNK_0xf067  codep:0x224c parp:0xf067 size:0x0006 C-string:'UNK_0xf067'
+//      UNK_0xf06f  codep:0x224c parp:0xf06f size:0x0014 C-string:'UNK_0xf06f'
+//      UNK_0xf085  codep:0x224c parp:0xf085 size:0x0028 C-string:'UNK_0xf085'
 //            FADE  codep:0x224c parp:0xf0b6 size:0x002a C-string:'FADE'
 //      UNK_0xf0e2  codep:0x224c parp:0xf0e2 size:0x002a C-string:'UNK_0xf0e2'
 //       .STARDATE  codep:0x224c parp:0xf11a size:0x0090 C-string:'DrawSTARDATE'
@@ -101,6 +107,7 @@ void WITHIN(); // WITHIN
 void _3_star_(); // 3*
 void RRND(); // RRND
 void SQRT(); // SQRT
+void C_ex__2(); // C!_2
 void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
 void StoreD(); // D!
@@ -212,7 +219,16 @@ IFieldType UNK_0xedd1 = {ASSIGN_CREWIDX, 0x17, 0x03};
 // 0xedd4: WORD 'UNK_0xedd6' codep=0x7420 parp=0xedd6
 // ================================================
 IFieldType UNK_0xedd6 = {CREWMEMBERIDX, 0x1b, 0x01};
-// 0xedd9: db 0x20 0x74 0x10 0x20 0x02 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
+
+// ================================================
+// 0xedd9: WORD 'UNK_0xeddb' codep=0x7420 parp=0xeddb orphan
+// ================================================
+IFieldType UNK_0xeddb = {CREWMEMBERIDX, 0x20, 0x02};
+
+// ================================================
+// 0xedde: WORD 'UNK_0xede0' codep=0x7420 parp=0xede0
+// ================================================
+IFieldType UNK_0xede0 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xede3: WORD '?ETIME' codep=0x224c parp=0xedee params=0 returns=0
@@ -482,7 +498,16 @@ void UNK_0xefbb() // UNK_0xefbb
   Push(pp_STAGES + 8); // STAGES 8 +
 }
 
-// 0xefc3: db 0x4c 0x22 0x5a 0x62 0x5d 0x17 0x0a 0x00 0x72 0x0f 0x90 0x16 'L"Zb]   r   '
+
+// ================================================
+// 0xefc3: WORD 'UNK_0xefc5' codep=0x224c parp=0xefc5 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xefc5() // UNK_0xefc5
+{
+  Push(pp_STAGES + 0x000a); // STAGES 0x000a +
+}
+
 
 // ================================================
 // 0xefcf: WORD 'UNK_0xefd1' codep=0x224c parp=0xefd1 params=3 returns=1
@@ -560,7 +585,28 @@ void UNK_0xf00d() // UNK_0xf00d
   UNK_0xf003(); // UNK_0xf003
 }
 
-// 0xf053: db 0x4c 0x22 0x34 0x75 0x89 0x12 0xd9 0xed 0xae 0x0b 0x2e 0x0f 0xf5 0x12 0xf5 0x12 0x90 0x16 0x4c 0x22 0x53 0xf0 0x3e 0x13 0x90 0x16 'L"4u      .       L"S >   '
+
+// ================================================
+// 0xf053: WORD 'UNK_0xf055' codep=0x224c parp=0xf055 orphan params=0 returns=1
+// ================================================
+
+void UNK_0xf055() // UNK_0xf055
+{
+  GetINST_dash_S(); // @INST-S
+  Push((Pop()==0?1:0) & (Read16(0x65e1+UNK_0xeddb.offset) & 1)); //  0= UNK_0xeddb<IFIELD> @ 1 AND AND
+}
+
+
+// ================================================
+// 0xf065: WORD 'UNK_0xf067' codep=0x224c parp=0xf067 orphan params=1 returns=1
+// ================================================
+
+void UNK_0xf067() // UNK_0xf067
+{
+  UNK_0xf055(); // UNK_0xf055
+  Push(Pop() | Pop()); // OR
+}
+
 
 // ================================================
 // 0xf06d: WORD 'UNK_0xf06f' codep=0x224c parp=0xf06f params=2 returns=0
@@ -572,13 +618,36 @@ void UNK_0xf06f() // UNK_0xf06f
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(0xf067);
+  Push(0xf067); // probable 'UNK_0xf067'
   ALL(); // ALL
   Push(2);
   _star_CLOSE(); // *CLOSE
 }
 
-// 0xf083: db 0x4c 0x22 0x53 0xf0 0xfa 0x15 0x22 0x00 0x5d 0x17 0x10 0x00 0xd9 0xed 0x16 0x6d 0x20 0x0f 0xde 0xed 0x0a 0x6d 0x5d 0x17 0x8b 0xc1 0xd9 0x84 0x5d 0x17 0xb8 0xc1 0xd9 0x84 0x20 0x0f 0xd9 0xed 0x16 0x6d 0x90 0x16 'L"S   " ]      m     m]     ]          m  '
+
+// ================================================
+// 0xf083: WORD 'UNK_0xf085' codep=0x224c parp=0xf085 orphan params=0 returns=0
+// ================================================
+
+void UNK_0xf085() // UNK_0xf085
+{
+  UNK_0xf055(); // UNK_0xf055
+  if (Pop() == 0) return;
+  Push(0x0010);
+  Push(0x65e1+UNK_0xeddb.offset); // UNK_0xeddb<IFIELD>
+  Store_2(); // !_2
+  Push(0);
+  Push(0x65e1+UNK_0xede0.offset); // UNK_0xede0<IFIELD>
+  C_ex__2(); // C!_2
+  Push(0xc18b); // probable '(OBI'
+  MODULE(); // MODULE
+  Push(0xc1b8); // probable '(ROL'
+  MODULE(); // MODULE
+  Push(0);
+  Push(0x65e1+UNK_0xeddb.offset); // UNK_0xeddb<IFIELD>
+  Store_2(); // !_2
+}
+
 
 // ================================================
 // 0xf0ad: WORD 'FADE' codep=0x224c parp=0xf0b6 params=0 returns=0
@@ -598,7 +667,7 @@ void FADE() // FADE
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(0xf085);
+  Push(0xf085); // probable 'UNK_0xf085'
   ALL(); // ALL
   Push(2);
   _star_CLOSE(); // *CLOSE

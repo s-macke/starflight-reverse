@@ -12,7 +12,8 @@
 // =========== DICTIONARY ==========
 // =================================
 //      UNK_0xe566  codep:0x224c parp:0xe566 size:0x0008 C-string:'UNK_0xe566'
-//      UNK_0xe570  codep:0x224c parp:0xe570 size:0x000a C-string:'UNK_0xe570'
+//      UNK_0xe570  codep:0x224c parp:0xe570 size:0x0006 C-string:'UNK_0xe570'
+//      UNK_0xe578  codep:0x2214 parp:0xe578 size:0x0002 C-string:'UNK_0xe578'
 //      UNK_0xe57c  codep:0x2214 parp:0xe57c size:0x0002 C-string:'UNK_0xe57c'
 //      UNK_0xe580  codep:0x2214 parp:0xe580 size:0x0002 C-string:'UNK_0xe580'
 //      UNK_0xe584  codep:0x2214 parp:0xe584 size:0x0002 C-string:'UNK_0xe584'
@@ -74,7 +75,8 @@
 //            NS-M  codep:0x4a4f parp:0xeccd size:0x0018 C-string:'NS_dash_M'
 //         NS-MESS  codep:0x224c parp:0xecf1 size:0x0006 C-string:'NS_dash_MESS'
 //      UNK_0xecf9  codep:0x744d parp:0xecf9 size:0x0003 C-string:'UNK_0xecf9'
-//      UNK_0xecfe  codep:0x744d parp:0xecfe size:0x0007 C-string:'UNK_0xecfe'
+//      UNK_0xecfe  codep:0x744d parp:0xecfe size:0x0003 C-string:'UNK_0xecfe'
+//      UNK_0xed03  codep:0x1d29 parp:0xed03 size:0x0002 C-string:'UNK_0xed03'
 //      UNK_0xed07  codep:0x1d29 parp:0xed07 size:0x0002 C-string:'UNK_0xed07'
 //      UNK_0xed0b  codep:0x224c parp:0xed0b size:0x003e C-string:'UNK_0xed0b'
 //      UNK_0xed4b  codep:0x224c parp:0xed4b size:0x0047 C-string:'UNK_0xed4b'
@@ -289,6 +291,9 @@ void BFILL(); // BFILL
 const unsigned short int pp_UNK_0xe931 = 0xe931; // UNK_0xe931 size: 2
 // {0x00, 0x00}
 
+const unsigned short int pp_UNK_0xed03 = 0xed03; // UNK_0xed03 size: 2
+// {0x46, 0x00}
+
 const unsigned short int pp_UNK_0xed07 = 0xed07; // UNK_0xed07 size: 2
 // {0x3a, 0x20}
 
@@ -311,6 +316,7 @@ const unsigned short int pp_UNK_0xf43d = 0xf43d; // UNK_0xf43d size: 2
 // {0x3a, 0x20}
 
 
+const unsigned short int cc_UNK_0xe578 = 0xe578; // UNK_0xe578
 const unsigned short int cc_UNK_0xe57c = 0xe57c; // UNK_0xe57c
 const unsigned short int cc_UNK_0xe580 = 0xe580; // UNK_0xe580
 const unsigned short int cc_UNK_0xe584 = 0xe584; // UNK_0xe584
@@ -341,7 +347,11 @@ void UNK_0xe570() // UNK_0xe570
   ICLOSE(); // ICLOSE
 }
 
-// 0xe576: db 0x14 0x22 0x00 0x00 ' "  '
+
+// ================================================
+// 0xe576: WORD 'UNK_0xe578' codep=0x2214 parp=0xe578 orphan
+// ================================================
+// 0xe578: dw 0x0000
 
 // ================================================
 // 0xe57a: WORD 'UNK_0xe57c' codep=0x2214 parp=0xe57c
@@ -1394,7 +1404,11 @@ IFieldType UNK_0xecf9 = {SHIPIDX, 0x32, 0x02};
 // 0xecfc: WORD 'UNK_0xecfe' codep=0x744d parp=0xecfe
 // ================================================
 IFieldType UNK_0xecfe = {SHIPIDX, 0x11, 0x02};
-// 0xed01: db 0x29 0x1d 0x46 0x00 ') F '
+
+// ================================================
+// 0xed01: WORD 'UNK_0xed03' codep=0x1d29 parp=0xed03 orphan
+// ================================================
+// 0xed03: db 0x46 0x00 'F '
 
 // ================================================
 // 0xed05: WORD 'UNK_0xed07' codep=0x1d29 parp=0xed07

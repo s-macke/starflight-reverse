@@ -21,7 +21,8 @@
 //      UNK_0xeebd  codep:0x224c parp:0xeebd size:0x000c C-string:'UNK_0xeebd'
 //            .ERR  codep:0x4b3b parp:0xeed2 size:0x001c C-string:'DrawERR'
 //           EINDE  codep:0x4b3b parp:0xeef8 size:0x001c C-string:'EINDE'
-//      UNK_0xef16  codep:0x7420 parp:0xef16 size:0x0008 C-string:'UNK_0xef16'
+//      UNK_0xef16  codep:0x7420 parp:0xef16 size:0x0003 C-string:'UNK_0xef16'
+//      UNK_0xef1b  codep:0x7420 parp:0xef1b size:0x0003 C-string:'UNK_0xef1b'
 //      UNK_0xef20  codep:0x7420 parp:0xef20 size:0x0003 C-string:'UNK_0xef20'
 //      UNK_0xef25  codep:0x7420 parp:0xef25 size:0x0003 C-string:'UNK_0xef25'
 //            SCNT  codep:0x7420 parp:0xef31 size:0x0003 C-string:'SCNT'
@@ -314,7 +315,11 @@ void EINDE() // EINDE
 // 0xef14: WORD 'UNK_0xef16' codep=0x7420 parp=0xef16
 // ================================================
 IFieldType UNK_0xef16 = {SHIPIDX, 0x11, 0x02};
-// 0xef19: db 0x20 0x74 0x14 0x1b 0x02 ' t   '
+
+// ================================================
+// 0xef19: WORD 'UNK_0xef1b' codep=0x7420 parp=0xef1b orphan
+// ================================================
+IFieldType UNK_0xef1b = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
 // 0xef1e: WORD 'UNK_0xef20' codep=0x7420 parp=0xef20

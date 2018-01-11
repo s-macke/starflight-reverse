@@ -11,9 +11,12 @@
 // =================================
 // =========== DICTIONARY ==========
 // =================================
-//      UNK_0xf3c6  codep:0x7420 parp:0xf3c6 size:0x000d C-string:'UNK_0xf3c6'
+//      UNK_0xf3c6  codep:0x7420 parp:0xf3c6 size:0x0003 C-string:'UNK_0xf3c6'
+//      UNK_0xf3cb  codep:0x7420 parp:0xf3cb size:0x0003 C-string:'UNK_0xf3cb'
+//      UNK_0xf3d0  codep:0x7420 parp:0xf3d0 size:0x0003 C-string:'UNK_0xf3d0'
 //      UNK_0xf3d5  codep:0x7420 parp:0xf3d5 size:0x0003 C-string:'UNK_0xf3d5'
-//      UNK_0xf3da  codep:0x224c parp:0xf3da size:0x0048 C-string:'UNK_0xf3da'
+//      UNK_0xf3da  codep:0x224c parp:0xf3da size:0x0006 C-string:'UNK_0xf3da'
+//      UNK_0xf3e2  codep:0x224c parp:0xf3e2 size:0x0040 C-string:'UNK_0xf3e2'
 //         #HUMANS  codep:0x224c parp:0xf42e size:0x0014 C-string:'_n_HUMANS'
 //      UNK_0xf444  codep:0x224c parp:0xf444 size:0x0018 C-string:'UNK_0xf444'
 //      UNK_0xf45e  codep:0x224c parp:0xf45e size:0x0012 C-string:'UNK_0xf45e'
@@ -32,8 +35,10 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int pp__i__dot_HUFF; // '.HUFF
+extern const unsigned short int pp_CONTEXT_3; // CONTEXT_3
 extern Color WHITE; // WHITE
 void MS(); // MS
+void _gt_FLAG(); // >FLAG
 void Store_2(); // !_2
 void GetINST_dash_S(); // @INST-S
 void ICLOSE(); // ICLOSE
@@ -62,7 +67,16 @@ void CI(); // CI
 // 0xf3c4: WORD 'UNK_0xf3c6' codep=0x7420 parp=0xf3c6
 // ================================================
 IFieldType UNK_0xf3c6 = {ASSIGN_CREWIDX, 0x11, 0x12};
-// 0xf3c9: db 0x20 0x74 0x10 0x0b 0x0f 0x20 0x74 0x10 0x1f 0x01 ' t    t   '
+
+// ================================================
+// 0xf3c9: WORD 'UNK_0xf3cb' codep=0x7420 parp=0xf3cb orphan
+// ================================================
+IFieldType UNK_0xf3cb = {CREWMEMBERIDX, 0x0b, 0x0f};
+
+// ================================================
+// 0xf3ce: WORD 'UNK_0xf3d0' codep=0x7420 parp=0xf3d0 orphan
+// ================================================
+IFieldType UNK_0xf3d0 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
 // 0xf3d3: WORD 'UNK_0xf3d5' codep=0x7420 parp=0xf3d5
@@ -79,7 +93,35 @@ void UNK_0xf3da() // UNK_0xf3da
   Push(Pop()==0?1:0); //  0=
 }
 
-// 0xf3e0: db 0x4c 0x22 0xd3 0xf3 0xae 0x0b 0xb4 0x0d 0xd8 0xf3 0xa2 0x0e 0x2e 0x0f 0xf5 0x12 0xa2 0x0e 0x3d 0x0f 0xf5 0x12 0x07 0x13 0xa2 0x0e 0xa7 0x3b 0xf5 0x12 0xdd 0x4a 0xa2 0x0e 0x5d 0x17 0x10 0x00 0xf5 0x12 0x07 0x13 0x2a 0x5c 0xae 0x0b 0x89 0x12 0x3e 0x13 0xf5 0x12 0xf5 0x12 0xf5 0x12 0xf5 0x12 0x72 0x0f 0x90 0x0e 0x32 0x0e 0x90 0x16 'L"          .     =        ;   J  ]       *\    >         r   2   '
+
+// ================================================
+// 0xf3e0: WORD 'UNK_0xf3e2' codep=0x224c parp=0xf3e2 orphan params=1 returns=1
+// ================================================
+
+void UNK_0xf3e2() // UNK_0xf3e2
+{
+  unsigned short int a;
+  Push(Read16(0x65e1+UNK_0xf3d5.offset)); // UNK_0xf3d5<IFIELD> @
+  a = Pop(); // >R
+  UNK_0xf3da(); // UNK_0xf3da
+  Push(Read16(a)); // R@
+  Push(Pop() & 1); //  1 AND
+  Push(Read16(a)); // R@
+  Push(!(Pop() & 2)); //  2 AND NOT
+  Push(Read16(a)); // R@
+  Push(Pop() & 8); //  8 AND
+  _gt_FLAG(); // >FLAG
+  Push(Read16(a)); // R@
+  Push(!(Pop() & 0x0010) | (Read16(pp_CONTEXT_3)==0?1:0)); //  0x0010 AND NOT CONTEXT_3 @ 0= OR
+  Push(Pop() & Pop()); // AND
+  Push(Pop() & Pop()); // AND
+  Push(Pop() & Pop()); // AND
+  Push(Pop() & Pop()); // AND
+  Push(Pop() + Pop()); // +
+  Push(a); // R>
+  Pop(); // DROP
+}
+
 
 // ================================================
 // 0xf422: WORD '#HUMANS' codep=0x224c parp=0xf42e params=2 returns=0
@@ -91,7 +133,7 @@ void _n_HUMANS() // #HUMANS
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
   Push(0);
-  Push(0xf3e2);
+  Push(0xf3e2); // probable 'UNK_0xf3e2'
   ALL(); // ALL
   Push(2);
   _star_CLOSE(); // *CLOSE
