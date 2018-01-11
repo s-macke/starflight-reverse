@@ -45,6 +45,7 @@ typedef void (*WordCallDef)();
     void GetTableEntry(char *s);
     void LoadData(LoadDataType dt);
     void UNK_0x3f3b(char *s);
+    void SET_STR_AS_PARAM(char *s);
     void Exec(char *s);
     void LoadOverlay(char *s);
     void DOTASKS(WordCallDef a, WordCallDef b, WordCallDef c);
