@@ -20,6 +20,7 @@ typedef struct DICTENTRY
     int nloopvars;
     int nstackvariables;
     int isextern;
+    int isorphan; // word seems not to be used
 
     // stack information of this word. For word '+' stackin=2 and stackout=1
     int stackin, stackout;

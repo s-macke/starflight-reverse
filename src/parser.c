@@ -880,7 +880,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     SetStructDone(ovidx);
 
 /* Find orphaned words */
-/*
+
     for(int j=0; j<2; j++)
     {
         for(int i=minaddr; i<maxaddr-3; i++)
@@ -890,42 +890,50 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
             if (Read16(i+1) == CODECALL)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
                 Variables vars = GetEmptyVariables();
                 ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
             }
             if (Read16(i+1) == CODESETCOLOR)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODELOADDATA)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODEPOINTER)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODECONSTANT)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODEIFIELD)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODE2DARRAY)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
             if (Read16(i+1) == CODEEXEC)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                e->isorphan = 1;
             }
         }
         SetWordHeader(ovidx);
         SetStructDone(ovidx);
     }
-*/
+
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
