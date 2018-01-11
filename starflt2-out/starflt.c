@@ -11102,17 +11102,10 @@ void SYN() // SYN
   if (Pop() != 0)
   {
     CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0x5b
-// db 0xdb
-// db 0xae
-// db 0x0b
-// db 0x73
-// db 0x16
-// db 0x60
-// db 0x16
-// db 0x1b
-// db 0x00
+// 0x3aeb: call   1649
+    Push(Read16(Pop())); //  @
+    CFAEXEC(); // CFAEXEC
+    return;
   }
   CODE(); // (;CODE) inlined assembler code
 // 0x3af8: call   1649
@@ -11348,31 +11341,16 @@ void HEAD_c_() // HEAD:
   IMMEDIATE(); // IMMEDIATE
   RESIDENT(); // RESIDENT
   CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0x9a
-// db 0xd9
-// db 0xae
-// db 0x0b
-// db 0x9c
-// db 0x05
-// db 0xae
-// db 0x0b
-// db 0xfa
-// db 0x15
-// db 0x08
-// db 0x00
-// db 0x93
-// db 0x1f
-// db 0x60
-// db 0x16
-// db 0x06
-// db 0x00
-// db 0x15
-// db 0x10
-// db 0x82
-// db 0x16
-// db 0x90
-// db 0x16
+// 0x3cac: call   1649
+  Push(Read16(Pop())); //  @
+  Push(Read16(user_STATE)); // STATE @
+  if (Pop() != 0)
+  {
+    _co_(); // ,
+    return;
+  }
+  Push(Pop() + 2); //  2+
+  EXECUTE(); // EXECUTE
 }
 
 
@@ -25590,7 +25568,7 @@ void _dash_XTRAIL() // -XTRAIL
 // 0xab7f: dw 0xec84
 
 // ================================================
-// 0xab81: WORD 'UNK_0xab83' codep=0x224c parp=0xab83 orphan params=1 returns=1
+// 0xab81: WORD 'UNK_0xab83' codep=0x224c parp=0xab83 params=1 returns=1
 // ================================================
 
 void UNK_0xab83() // UNK_0xab83
@@ -25658,7 +25636,7 @@ void DISTRAC() // DISTRAC
 
 
 // ================================================
-// 0xac0b: WORD 'UNK_0xac0d' codep=0x224c parp=0xac0d orphan params=1 returns=1
+// 0xac0b: WORD 'UNK_0xac0d' codep=0x224c parp=0xac0d params=1 returns=1
 // ================================================
 
 void UNK_0xac0d() // UNK_0xac0d

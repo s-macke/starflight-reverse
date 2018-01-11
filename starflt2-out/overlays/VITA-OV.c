@@ -40,7 +40,9 @@
 //      UNK_0xf2a1  codep:0x224c parp:0xf2a1 size:0x0014 C-string:'UNK_0xf2a1'
 //      UNK_0xf2b7  codep:0x224c parp:0xf2b7 size:0x0015 C-string:'UNK_0xf2b7'
 //      UNK_0xf2ce  codep:0x224c parp:0xf2ce size:0x000c C-string:'UNK_0xf2ce'
-//      UNK_0xf2dc  codep:0x224c parp:0xf2dc size:0x00cc C-string:'UNK_0xf2dc'
+//      UNK_0xf2dc  codep:0x224c parp:0xf2dc size:0x0096 C-string:'UNK_0xf2dc'
+//      UNK_0xf374  codep:0x224c parp:0xf374 size:0x0026 C-string:'UNK_0xf374'
+//      UNK_0xf39c  codep:0x224c parp:0xf39c size:0x000c C-string:'UNK_0xf39c'
 //      UNK_0xf3aa  codep:0x224c parp:0xf3aa size:0x0036 C-string:'UNK_0xf3aa'
 //        A.DENSIT  codep:0xf2bf parp:0xf3ed size:0x000e C-string:'A_dot_DENSIT'
 //        PLANET.G  codep:0xf2bf parp:0xf408 size:0x000e C-string:'PLANET_dot_G'
@@ -66,7 +68,10 @@ void _star__slash_(); // */
 void _co_(); // ,
 void ALLOT(); // ALLOT
 void HERE(); // HERE
+void UNRAVEL(); // UNRAVEL
 void RANGE(); // RANGE
+void PICK(); // PICK
+void ROLL(); // ROLL
 void RRND(); // RRND
 void C_ex__2(); // C!_2
 void Store_2(); // !_2
@@ -86,12 +91,16 @@ void IFIND(); // IFIND
 void ICREATE(); // ICREATE
 void _star_CREATE(); // *CREATE
 void StoreCOLOR(); // !COLOR
+void BYE_2(); // BYE_2
 void DrawTTY(); // .TTY
+void _2_at_(); // 2@
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
+void ROT(); // ROT
 void SWAP(); // SWAP
 void _dash_(); // -
+void _gt_(); // >
 void _1_dot_5_at_(); // 1.5@
 void CI(); // CI
 
@@ -321,6 +330,7 @@ void UNK_0xf2ce() // UNK_0xf2ce
 
 void UNK_0xf2dc() // UNK_0xf2dc
 {
+  unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(Pop() * 6); //  6 *
   Push(Read16(regsp)); // DUP
@@ -332,186 +342,93 @@ void UNK_0xf2dc() // UNK_0xf2dc
   Push(0);
   FILL_2(); // FILL_2
   CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0x52
-// db 0x23
-// db 0x20
-// db 0x0f
-// db 0x87
-// db 0x3b
-// db 0x9b
-// db 0x3f
-// db 0x87
-// db 0x3b
-// db 0x9b
-// db 0x3f
-// db 0x87
-// db 0x3b
-// db 0x9b
-// db 0x3f
-// db 0xcc
-// db 0xf2
-// db 0xb8
-// db 0x15
-// db 0x50
-// db 0x0e
-// db 0x38
-// db 0x0c
-// db 0x7f
-// db 0x3b
-// db 0x7c
-// db 0x3f
-// db 0x5f
-// db 0x12
-// db 0xb4
-// db 0x0d
-// db 0x7f
-// db 0x3b
-// db 0x7c
-// db 0x3f
-// db 0x5f
-// db 0x12
-// db 0x90
-// db 0x0e
-// db 0xf5
-// db 0x12
-// db 0xfa
-// db 0x15
-// db 0x10
-// db 0x00
-// db 0x50
-// db 0x0e
-// db 0x87
-// db 0x3b
-// db 0x9b
-// db 0x3f
-// db 0x32
-// db 0x0e
-// db 0xb3
-// db 0x0e
-// db 0xb3
-// db 0x0e
-// db 0x4a
-// db 0x17
-// db 0x97
-// db 0x3b
-// db 0x5c
-// db 0x15
-// db 0xd4
-// db 0xff
-// db 0xde
-// db 0x0d
-// db 0xc8
-// db 0x0d
-// db 0xfa
-// db 0x15
-// db 0x0c
-// db 0x00
-// db 0x87
-// db 0x3b
-// db 0x72
-// db 0x0f
-// db 0xae
-// db 0x0b
-// db 0x60
-// db 0x16
-// db 0x29
-// db 0x00
-// db 0xdc
-// db 0x1b
-// db 0x20
-// db 0x49
-// db 0x4e
-// db 0x44
-// db 0x45
-// db 0x58
-// db 0x20
-// db 0x4e
-// db 0x4f
-// db 0x54
-// db 0x20
-// db 0x49
-// db 0x4e
-// db 0x20
-// db 0x50
-// db 0x52
-// db 0x4f
-// db 0x42
-// db 0x41
-// db 0x42
-// db 0x49
-// db 0x4c
-// db 0x49
-// db 0x54
-// db 0x59
-// db 0x20
-// db 0x41
-// db 0x52
-// db 0x52
-// db 0x41
-// db 0x59
-// db 0x21
-// db 0x20
-// db 0x6c
-// db 0x3a
-// db 0x3f
-// db 0x90
-// db 0x90
-// db 0x16
-// db 0x4c
-// db 0x22
-// db 0x7f
-// db 0x0e
-// db 0x7f
-// db 0x0e
-// db 0x92
-// db 0x0c
-// db 0x41
-// db 0x0e
-// db 0x5d
-// db 0x17
-// db 0x64
-// db 0x00
-// db 0x5f
-// db 0x12
-// db 0x07
-// db 0x13
-// db 0xb4
-// db 0x0d
-// db 0x2d
-// db 0x12
-// db 0x90
-// db 0x0e
-// db 0xf5
-// db 0x12
-// db 0xfa
-// db 0x15
-// db 0x0a
-// db 0x00
-// db 0xe7
-// db 0x0f
-// db 0x70
-// db 0x4a
-// db 0x60
-// db 0x16
-// db 0xde
-// db 0xff
-// db 0x90
-// db 0x16
-// db 0x4c
-// db 0x22
-// db 0x72
-// db 0xf3
-// db 0xe7
-// db 0x0f
-// db 0x83
-// db 0x4a
-// db 0xb3
-// db 0x0e
-// db 0x32
-// db 0x0e
-// db 0x90
-// db 0x16
+// 0xf2f4: call   1649
+  Push(0);
+  Push(4);
+  ROLL(); // ROLL
+  Push(4);
+  ROLL(); // ROLL
+  Push(4);
+  ROLL(); // ROLL
+  UNK_0xf2ce(); // UNK_0xf2ce
+
+  i = Pop();
+  imax = Pop();
+  do // (DO)
+  {
+    Push(i); // I
+    _2_at_(); // 2@
+    Push(3);
+    PICK(); // PICK
+    Push((Pop()==Pop())?1:0); // =
+    a = Pop(); // >R
+    Push(3);
+    PICK(); // PICK
+    Push((Pop()==Pop())?1:0); // =
+    Push(Pop() & a); //  R> AND
+    if (Pop() != 0)
+    {
+      Push(i); // I
+      Push(4);
+      ROLL(); // ROLL
+      Pop(); // DROP
+      ROT(); // ROT
+      ROT(); // ROT
+      imax = i; // LEAVE
+    }
+    Push(6);
+    int step = Pop();
+    i += step;
+    if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
+  } while(1); // (+LOOP)
+
+  Pop(); Pop(); // 2DROP
+  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+  if (Pop() != 0)
+  {
+    Push(Read16(Pop() + 4)); //  4 + @
+    return;
+  }
+  PRINT("INDEX NOT IN PROBABILITY ARRAY! ", 32); // (.")
+  UNRAVEL(); // UNRAVEL
+  BYE_2(); // BYE_2
+}
+
+
+// ================================================
+// 0xf372: WORD 'UNK_0xf374' codep=0x224c parp=0xf374 orphan params=2 returns=2
+// ================================================
+
+void UNK_0xf374() // UNK_0xf374
+{
+  unsigned short int a;
+  do
+  {
+    OVER(); // OVER
+    OVER(); // OVER
+    Push(Read16(Pop())&0xFF); //  C@
+    Push(Read16(regsp)); // DUP
+    Push(!(Pop()==0x0064?1:0)); //  0x0064 = NOT
+    a = Pop(); // >R
+    _gt_(); // >
+    Push(Pop() & a); //  R> AND
+    if (Pop() == 0) return;
+    Push((Pop() + 1) + 3); //  1+ 3+
+  } while(1);
+}
+
+
+// ================================================
+// 0xf39a: WORD 'UNK_0xf39c' codep=0x224c parp=0xf39c orphan params=2 returns=2
+// ================================================
+
+void UNK_0xf39c() // UNK_0xf39c
+{
+  UNK_0xf374(); // UNK_0xf374
+  Push(Pop() + 1); //  1+
+  _1_dot_5_at_(); // 1.5@
+  ROT(); // ROT
+  Pop(); // DROP
 }
 
 

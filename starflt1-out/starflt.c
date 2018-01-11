@@ -10840,17 +10840,10 @@ void SYN() // SYN
   if (Pop() != 0)
   {
     CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0x67
-// db 0xdb
-// db 0xae
-// db 0x0b
-// db 0x73
-// db 0x16
-// db 0x60
-// db 0x16
-// db 0x1b
-// db 0x00
+// 0x3adf: call   1649
+    Push(Read16(Pop())); //  @
+    CFAEXEC(); // CFAEXEC
+    return;
   }
   CODE(); // (;CODE) inlined assembler code
 // 0x3aec: call   1649
@@ -11086,31 +11079,16 @@ void HEAD_c_() // HEAD:
   IMMEDIATE(); // IMMEDIATE
   RESIDENT(); // RESIDENT
   CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0xa6
-// db 0xd9
-// db 0xae
-// db 0x0b
-// db 0x9c
-// db 0x05
-// db 0xae
-// db 0x0b
-// db 0xfa
-// db 0x15
-// db 0x08
-// db 0x00
-// db 0x93
-// db 0x1f
-// db 0x60
-// db 0x16
-// db 0x06
-// db 0x00
-// db 0x15
-// db 0x10
-// db 0x82
-// db 0x16
-// db 0x90
-// db 0x16
+// 0x3ca0: call   1649
+  Push(Read16(Pop())); //  @
+  Push(Read16(user_STATE)); // STATE @
+  if (Pop() != 0)
+  {
+    _co_(); // ,
+    return;
+  }
+  Push(Pop() + 2); //  2+
+  EXECUTE(); // EXECUTE
 }
 
 

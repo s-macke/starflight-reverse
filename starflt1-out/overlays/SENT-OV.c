@@ -33,7 +33,8 @@
 //        PROBABLE  codep:0x1d29 parp:0xe470 size:0x0002 C-string:'PROBABLE'
 //      UNK_0xe474  codep:0x224c parp:0xe474 size:0x0006 C-string:'UNK_0xe474'
 //      UNK_0xe47c  codep:0x224c parp:0xe47c size:0x000a C-string:'UNK_0xe47c'
-//      UNK_0xe488  codep:0x224c parp:0xe488 size:0x001d C-string:'UNK_0xe488'
+//      UNK_0xe488  codep:0x224c parp:0xe488 size:0x0015 C-string:'UNK_0xe488'
+//      UNK_0xe49f  codep:0x73ea parp:0xe49f size:0x0006 C-string:'UNK_0xe49f'
 //            HITS  codep:0x744d parp:0xe4ae size:0x0003 C-string:'HITS'
 //      UNK_0xe4b3  codep:0x744d parp:0xe4b3 size:0x0003 C-string:'UNK_0xe4b3'
 //      UNK_0xe4b8  codep:0x73ea parp:0xe4b8 size:0x0006 C-string:'UNK_0xe4b8'
@@ -546,29 +547,18 @@ void UNK_0xe488() // UNK_0xe488
   Push(0);
   _co_(); // ,
   CODE(); // (;CODE) inlined assembler code
-// db 0xe8
-// db 0xb6
-// db 0x31
-// db 0x7f
-// db 0x0e
-// db 0x72
-// db 0x0f
-// db 0x72
-// db 0x0f
-// db 0xae
-// db 0x0b
-// db 0x90
-// db 0x16
-// db 0xea
-// db 0x73
-// db 0x18
-// db 0x00
-// db 0x03
-// db 0x00
-// db 0x00
-// db 0x00
+// 0xe490: call   1649
+  OVER(); // OVER
+  Push(Pop() + Pop()); // +
+  Push(Pop() + Pop()); // +
+  Push(Read16(Pop())); //  @
 }
 
+
+// ================================================
+// 0xe49d: WORD 'UNK_0xe49f' codep=0x73ea parp=0xe49f orphan
+// ================================================
+LoadDataType UNK_0xe49f = {STARIDX, 0x00, 0x03, 0x00, 0x0000};
 
 // ================================================
 // 0xe4a5: WORD 'HITS' codep=0x744d parp=0xe4ae
