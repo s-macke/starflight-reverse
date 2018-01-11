@@ -667,7 +667,7 @@ void UNK_0xeba2() // UNK_0xeba2
 // ================================================
 // 0xebfe: WORD '(|REGION)' codep=0xec0c parp=0xec0c
 // ================================================
-// 0xec0c: pop    word ptr [561C]
+// 0xec0c: pop    word ptr [561C] // X1
 // 0xec10: pop    cx
 // 0xec11: push   es
 // 0xec12: mov    es,cx
@@ -675,29 +675,29 @@ void UNK_0xeba2() // UNK_0xeba2
 // 0xec15: push   di
 // 0xec16: push   bp
 // 0xec17: push   ds
-// 0xec18: mov    dx,[5892]
+// 0xec18: mov    dx,[5892] // WBLT
 // 0xec1c: shr    dx,1
 // 0xec1e: shr    dx,1
 // 0xec20: inc    dx
 // 0xec21: inc    dx
-// 0xec22: mov    bp,[586E]
+// 0xec22: mov    bp,[586E] // XBLT
 // 0xec26: shr    bp,1
 // 0xec28: xor    di,di
-// 0xec2a: mov    ax,[5887]
+// 0xec2a: mov    ax,[5887] // LBLT
 // 0xec2e: mov    cx,ax
 // 0xec30: mov    ax,cx
 // 0xec32: pop    ds
 // 0xec33: push   ds
-// 0xec34: mov    bx,[5863]
+// 0xec34: mov    bx,[5863] // YBLT
 // 0xec38: sub    bx,cx
 // 0xec3a: inc    bx
 // 0xec3b: shl    bx,1
-// 0xec3d: add    bx,[563A]
+// 0xec3d: add    bx,[563A] // YTABL
 // 0xec41: mov    si,[bx]
 // 0xec43: add    si,bp
 // 0xec45: mov    cx,dx
-// 0xec47: mov    bx,[561C]
-// 0xec4b: push   word ptr [5648]
+// 0xec47: mov    bx,[561C] // X1
+// 0xec4b: push   word ptr [5648] // BUF-SEG
 // 0xec4f: pop    ds
 // 0xec50: or     bx,bx
 // 0xec52: jz     EC5A
@@ -734,12 +734,12 @@ void UNK_0xeba2() // UNK_0xeba2
 // 0xec7f: push   es
 // 0xec80: push   di
 // 0xec81: push   si
-// 0xec82: mov    ax,[55E6]
-// 0xec86: mov    dx,[55D8]
-// 0xec8a: mov    bx,[EBFC]
+// 0xec82: mov    ax,[55E6] // DBUF-SEG
+// 0xec86: mov    dx,[55D8] // HBUF-SEG
+// 0xec8a: mov    bx,[EBFC] // UNK_0xebfc
 // 0xec8e: add    bx,03
 // 0xec91: shl    bx,1
-// 0xec93: add    bx,[563A]
+// 0xec93: add    bx,[563A] // YTABL
 // 0xec97: mov    si,[bx]
 // 0xec99: mov    di,si
 // 0xec9b: test   cx,0001

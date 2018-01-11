@@ -528,15 +528,15 @@ void UNK_0xebd7() // UNK_0xebd7
 // ================================================
 // 0xec04: pop    ax
 // 0xec05: add    ax,0003
-// 0xec08: mov    [5A3D],ax
+// 0xec08: mov    [5A3D],ax // YBLT
 // 0xec0c: pop    ax
 // 0xec0d: add    ax,0006
-// 0xec10: mov    [5A48],ax
-// 0xec14: mov    word ptr [5A6C],0004
-// 0xec1a: mov    word ptr [5A61],0006
-// 0xec20: mov    word ptr [5A77],EBF6
+// 0xec10: mov    [5A48],ax // XBLT
+// 0xec14: mov    word ptr [5A6C],0004 // WBLT
+// 0xec1a: mov    word ptr [5A61],0006 // LBLT
+// 0xec20: mov    word ptr [5A77],EBF6 // ABLT
 // 0xec26: push   ds
-// 0xec27: pop    word ptr [5A84]
+// 0xec27: pop    word ptr [5A84] // BLTSEG
 // 0xec2b: lodsw
 // 0xec2c: mov    bx,ax
 // 0xec2e: jmp    word ptr [bx]

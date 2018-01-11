@@ -556,15 +556,15 @@ void _4X4CONTOUR() // 4X4CONTOUR
 // ================================================
 // 0xefc5: pop    ax
 // 0xefc6: add    ax,0003
-// 0xefc9: mov    [5A3D],ax
+// 0xefc9: mov    [5A3D],ax // YBLT
 // 0xefcd: pop    ax
 // 0xefce: add    ax,0006
-// 0xefd1: mov    [5A48],ax
-// 0xefd5: mov    word ptr [5A6C],0004
-// 0xefdb: mov    word ptr [5A61],0006
-// 0xefe1: mov    word ptr [5A77],EFB7
+// 0xefd1: mov    [5A48],ax // XBLT
+// 0xefd5: mov    word ptr [5A6C],0004 // WBLT
+// 0xefdb: mov    word ptr [5A61],0006 // LBLT
+// 0xefe1: mov    word ptr [5A77],EFB7 // ABLT
 // 0xefe7: push   ds
-// 0xefe8: pop    word ptr [5A84]
+// 0xefe8: pop    word ptr [5A84] // BLTSEG
 // 0xefec: lodsw
 // 0xefed: mov    bx,ax
 // 0xefef: jmp    word ptr [bx]

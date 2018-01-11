@@ -14,11 +14,19 @@
 //      UNK_0xe356  codep:0x1d29 parp:0xe356 size:0x0002 C-string:'UNK_0xe356'
 //      UNK_0xe35a  codep:0x1d29 parp:0xe35a size:0x0002 C-string:'UNK_0xe35a'
 //      UNK_0xe35e  codep:0x1d29 parp:0xe35e size:0x0004 C-string:'UNK_0xe35e'
-//      UNK_0xe364  codep:0x2214 parp:0xe364 size:0x000a C-string:'UNK_0xe364'
+//      UNK_0xe364  codep:0x2214 parp:0xe364 size:0x0002 C-string:'UNK_0xe364'
+//      UNK_0xe368  codep:0x1d29 parp:0xe368 size:0x0002 C-string:'UNK_0xe368'
+//      UNK_0xe36c  codep:0x1d29 parp:0xe36c size:0x0002 C-string:'UNK_0xe36c'
 //      UNK_0xe370  codep:0x1d29 parp:0xe370 size:0x0002 C-string:'UNK_0xe370'
-//      UNK_0xe374  codep:0x1d29 parp:0xe374 size:0x000a C-string:'UNK_0xe374'
+//      UNK_0xe374  codep:0x1d29 parp:0xe374 size:0x0002 C-string:'UNK_0xe374'
+//      UNK_0xe378  codep:0x1d29 parp:0xe378 size:0x0002 C-string:'UNK_0xe378'
+//      UNK_0xe37c  codep:0x1d29 parp:0xe37c size:0x0002 C-string:'UNK_0xe37c'
 //      UNK_0xe380  codep:0x3b74 parp:0xe380 size:0x0004 C-string:'UNK_0xe380'
-//      UNK_0xe386  codep:0x2214 parp:0xe386 size:0x0012 C-string:'UNK_0xe386'
+//      UNK_0xe386  codep:0x2214 parp:0xe386 size:0x0002 C-string:'UNK_0xe386'
+//      UNK_0xe38a  codep:0x1d29 parp:0xe38a size:0x0002 C-string:'UNK_0xe38a'
+//      UNK_0xe38e  codep:0x1d29 parp:0xe38e size:0x0002 C-string:'UNK_0xe38e'
+//      UNK_0xe392  codep:0x1d29 parp:0xe392 size:0x0002 C-string:'UNK_0xe392'
+//      UNK_0xe396  codep:0x1d29 parp:0xe396 size:0x0002 C-string:'UNK_0xe396'
 //      UNK_0xe39a  codep:0x224c parp:0xe39a size:0x000a C-string:'UNK_0xe39a'
 //      UNK_0xe3a6  codep:0x224c parp:0xe3a6 size:0x0018 C-string:'UNK_0xe3a6'
 //      UNK_0xe3c0  codep:0x1d29 parp:0xe3c0 size:0x001e C-string:'UNK_0xe3c0'
@@ -54,7 +62,8 @@
 //      UNK_0xe985  codep:0x224c parp:0xe985 size:0x009a C-string:'UNK_0xe985'
 //      UNK_0xea21  codep:0x224c parp:0xea21 size:0x0014 C-string:'UNK_0xea21'
 //      UNK_0xea37  codep:0x224c parp:0xea37 size:0x005e C-string:'UNK_0xea37'
-//      UNK_0xea97  codep:0x224c parp:0xea97 size:0x0038 C-string:'UNK_0xea97'
+//      UNK_0xea97  codep:0x224c parp:0xea97 size:0x0034 C-string:'UNK_0xea97'
+//      UNK_0xeacd  codep:0x1d29 parp:0xeacd size:0x0002 C-string:'UNK_0xeacd'
 //      UNK_0xead1  codep:0xead1 parp:0xead1 size:0x0009 C-string:'UNK_0xead1'
 //      UNK_0xeadc  codep:0xeadc parp:0xeadc size:0x000c C-string:'UNK_0xeadc'
 //      UNK_0xeaea  codep:0xeaea parp:0xeaea size:0x000c C-string:'UNK_0xeaea'
@@ -196,11 +205,35 @@ const unsigned short int pp_UNK_0xe35a = 0xe35a; // UNK_0xe35a size: 2
 const unsigned short int pp_UNK_0xe35e = 0xe35e; // UNK_0xe35e size: 4
 // {0x56, 0x3a, 0x20, 0x6e}
 
+const unsigned short int pp_UNK_0xe368 = 0xe368; // UNK_0xe368 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe36c = 0xe36c; // UNK_0xe36c size: 2
+// {0x3a, 0x20}
+
 const unsigned short int pp_UNK_0xe370 = 0xe370; // UNK_0xe370 size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xe374 = 0xe374; // UNK_0xe374 size: 10
-// {0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_UNK_0xe374 = 0xe374; // UNK_0xe374 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe378 = 0xe378; // UNK_0xe378 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe37c = 0xe37c; // UNK_0xe37c size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe38a = 0xe38a; // UNK_0xe38a size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe38e = 0xe38e; // UNK_0xe38e size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe392 = 0xe392; // UNK_0xe392 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xe396 = 0xe396; // UNK_0xe396 size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_UNK_0xe3c0 = 0xe3c0; // UNK_0xe3c0 size: 30
 // {0x8b, 0x06, 0x9c, 0x4b, 0xb9, 0xbd, 0x7a, 0xf7, 0xe9, 0x05, 0x0f, 0x1b, 0x89, 0x06, 0x9c, 0x4b, 0x5a, 0x5b, 0x59, 0x52, 0x2b, 0xd9, 0xf7, 0xe3, 0x03, 0xd1, 0x58, 0x52, 0x50, 0xc3}
@@ -243,6 +276,9 @@ const unsigned short int pp_UNK_0xe6aa = 0xe6aa; // UNK_0xe6aa size: 22
 
 const unsigned short int pp_UNK_0xe6c2 = 0xe6c2; // UNK_0xe6c2 size: 154
 // {0x8b, 0xec, 0x8b, 0x46, 0x04, 0x2b, 0x46, 0x08, 0x48, 0x7e, 0x05, 0xb8, 0x01, 0x00, 0xeb, 0x02, 0x33, 0xc0, 0x89, 0x06, 0x6c, 0xe3, 0x8b, 0x4e, 0x02, 0x2b, 0x4e, 0x06, 0x49, 0x7e, 0x05, 0xb9, 0x01, 0x00, 0xeb, 0x02, 0x33, 0xc9, 0x89, 0x0e, 0x68, 0xe3, 0x0b, 0xc1, 0x7e, 0x64, 0xe8, 0x9e, 0xff, 0xe8, 0x05, 0xff, 0xe8, 0x37, 0xff, 0xe8, 0xae, 0xff, 0x33, 0xc0, 0xff, 0x76, 0x0e, 0x50, 0x50, 0xff, 0x76, 0x08, 0xff, 0x76, 0x06, 0xff, 0x76, 0x0c, 0xff, 0x76, 0x0a, 0xe8, 0xb0, 0xff, 0x33, 0xc0, 0xff, 0x76, 0x0e, 0x50, 0x50, 0xff, 0x76, 0x0c, 0xff, 0x76, 0x06, 0xff, 0x76, 0x04, 0xff, 0x76, 0x0a, 0xe8, 0x9a, 0xff, 0x33, 0xc0, 0xff, 0x76, 0x0e, 0x50, 0x50, 0xff, 0x76, 0x08, 0xff, 0x76, 0x0a, 0xff, 0x76, 0x0c, 0xff, 0x76, 0x02, 0xe8, 0x84, 0xff, 0x33, 0xc0, 0xff, 0x76, 0x0e, 0x50, 0x50, 0xff, 0x76, 0x0c, 0xff, 0x76, 0x0a, 0xff, 0x76, 0x04, 0xff, 0x76, 0x02, 0xe8, 0x6e, 0xff, 0x58, 0x83, 0xc4, 0x0e, 0x8b, 0xec, 0x50, 0xc3}
+
+const unsigned short int pp_UNK_0xeacd = 0xeacd; // UNK_0xeacd size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_POLYPTR = 0xeb80; // POLYPTR size: 2
 // {0x20, 0x4f}
@@ -298,7 +334,16 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // 0xe362: WORD 'UNK_0xe364' codep=0x2214 parp=0xe364
 // ================================================
 // 0xe364: dw 0xff80
-// 0xe366: db 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 ') : ) : '
+
+// ================================================
+// 0xe366: WORD 'UNK_0xe368' codep=0x1d29 parp=0xe368
+// ================================================
+// 0xe368: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe36a: WORD 'UNK_0xe36c' codep=0x1d29 parp=0xe36c
+// ================================================
+// 0xe36c: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xe36e: WORD 'UNK_0xe370' codep=0x1d29 parp=0xe370
@@ -308,7 +353,17 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // ================================================
 // 0xe372: WORD 'UNK_0xe374' codep=0x1d29 parp=0xe374
 // ================================================
-// 0xe374: db 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 ': ) : ) : '
+// 0xe374: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe376: WORD 'UNK_0xe378' codep=0x1d29 parp=0xe378
+// ================================================
+// 0xe378: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe37a: WORD 'UNK_0xe37c' codep=0x1d29 parp=0xe37c
+// ================================================
+// 0xe37c: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xe37e: WORD 'UNK_0xe380' codep=0x3b74 parp=0xe380
@@ -319,7 +374,26 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // 0xe384: WORD 'UNK_0xe386' codep=0x2214 parp=0xe386
 // ================================================
 // 0xe386: dw 0x0075
-// 0xe388: db 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 ') : ) : ) : ) : '
+
+// ================================================
+// 0xe388: WORD 'UNK_0xe38a' codep=0x1d29 parp=0xe38a
+// ================================================
+// 0xe38a: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe38c: WORD 'UNK_0xe38e' codep=0x1d29 parp=0xe38e
+// ================================================
+// 0xe38e: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe390: WORD 'UNK_0xe392' codep=0x1d29 parp=0xe392
+// ================================================
+// 0xe392: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xe394: WORD 'UNK_0xe396' codep=0x1d29 parp=0xe396
+// ================================================
+// 0xe396: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xe398: WORD 'UNK_0xe39a' codep=0x224c parp=0xe39a params=3 returns=0
@@ -362,11 +436,11 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // ================================================
 // 0xe3be: WORD 'UNK_0xe3c0' codep=0x1d29 parp=0xe3c0
 // ================================================
-// 0xe3c0: mov    ax,[4B9C]
+// 0xe3c0: mov    ax,[4B9C] // SEED_3
 // 0xe3c4: mov    cx,7ABD
 // 0xe3c7: imul   cx
 // 0xe3c9: add    ax,1B0F
-// 0xe3cc: mov    [4B9C],ax
+// 0xe3cc: mov    [4B9C],ax // SEED_3
 // 0xe3d0: pop    dx
 // 0xe3d1: pop    bx
 // 0xe3d2: pop    cx
@@ -405,11 +479,11 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe3fb: pop    ax
 // 0xe3fc: pop    cx
 // 0xe3fd: push   bx
-// 0xe3fe: mov    dx,[E356]
+// 0xe3fe: mov    dx,[E356] // UNK_0xe356
 // 0xe402: or     dx,dx
 // 0xe404: jle    E456
-// 0xe406: add    cx,[E370]
-// 0xe40a: add    ax,[E374]
+// 0xe406: add    cx,[E370] // UNK_0xe370
+// 0xe40a: add    ax,[E374] // UNK_0xe374
 // 0xe40e: jns    E419
 // 0xe410: inc    ax
 // 0xe411: neg    ax
@@ -423,7 +497,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe424: add    ax,dx
 // 0xe426: inc    ax
 // 0xe427: add    cx,0480
-// 0xe42b: mov    [4B9C],ax
+// 0xe42b: mov    [4B9C],ax // SEED_3
 // 0xe42f: push   cx
 // 0xe430: mov    ax,0001
 // 0xe433: push   ax
@@ -431,7 +505,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe436: push   ax
 // 0xe437: call   E3C0
 // 0xe43a: pop    cx
-// 0xe43b: pop    word ptr [4B9C]
+// 0xe43b: pop    word ptr [4B9C] // SEED_3
 // 0xe43f: push   cx
 // 0xe440: mov    ax,0001
 // 0xe443: push   ax
@@ -440,9 +514,9 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe447: call   E3C0
 // 0xe44a: pop    ax
 // 0xe44b: pop    cx
-// 0xe44c: xor    ax,[5B49]
+// 0xe44c: xor    ax,[5B49] // GLOBALS
 // 0xe450: xor    ax,cx
-// 0xe452: mov    [4B9C],ax
+// 0xe452: mov    [4B9C],ax // SEED_3
 // 0xe456: mov    ax,[bp+0E]
 // 0xe459: mov    cx,ax
 // 0xe45b: neg    cx
@@ -466,12 +540,12 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe46e: jns    E47F
 // 0xe470: inc    ax
 // 0xe471: neg    ax
-// 0xe473: mov    bx,[4D60]
+// 0xe473: mov    bx,[4D60] // 'ARRAY
 // 0xe477: mov    bx,[bx]
 // 0xe479: shr    bx,1
 // 0xe47b: add    cx,bx
 // 0xe47d: jmp    E49B
-// 0xe47f: mov    bx,[4D60]
+// 0xe47f: mov    bx,[4D60] // 'ARRAY
 // 0xe483: mov    bx,[bx+02]
 // 0xe486: cmp    ax,bx
 // 0xe488: js     E49B
@@ -479,16 +553,16 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe48c: neg    ax
 // 0xe48e: add    ax,bx
 // 0xe490: inc    ax
-// 0xe491: mov    bx,[4D60]
+// 0xe491: mov    bx,[4D60] // 'ARRAY
 // 0xe495: mov    bx,[bx]
 // 0xe497: shr    bx,1
 // 0xe499: add    cx,bx
 // 0xe49b: or     cx,cx
 // 0xe49d: jns    E4A7
-// 0xe49f: mov    bx,[4D60]
+// 0xe49f: mov    bx,[4D60] // 'ARRAY
 // 0xe4a3: add    cx,[bx]
 // 0xe4a5: jmp    E4B3
-// 0xe4a7: mov    bx,[4D60]
+// 0xe4a7: mov    bx,[4D60] // 'ARRAY
 // 0xe4ab: mov    bx,[bx]
 // 0xe4ad: cmp    cx,bx
 // 0xe4af: js     E4B3
@@ -502,12 +576,12 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // ================================================
 // 0xe4b7: WORD 'UNK_0xe4b9' codep=0x1d29 parp=0xe4b9
 // ================================================
-// 0xe4b9: pop    word ptr [E38A]
-// 0xe4bd: mov    ax,[4D39]
+// 0xe4b9: pop    word ptr [E38A] // UNK_0xe38a
+// 0xe4bd: mov    ax,[4D39] // SPHEREW
 // 0xe4c1: or     ax,ax
 // 0xe4c3: jle    E4C8
 // 0xe4c5: call   E469
-// 0xe4c8: mov    bx,[4D60]
+// 0xe4c8: mov    bx,[4D60] // 'ARRAY
 // 0xe4cc: mov    ax,[bx+06]
 // 0xe4cf: mov    bx,[bx+04]
 // 0xe4d2: pop    cx
@@ -519,9 +593,9 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe4dc: pop    ds
 // 0xe4dd: pop    dx
 // 0xe4de: add    cx,dx
-// 0xe4e0: mov    [E378],ax
-// 0xe4e4: mov    [E37C],cx
-// 0xe4e8: push   word ptr [E38A]
+// 0xe4e0: mov    [E378],ax // UNK_0xe378
+// 0xe4e4: mov    [E37C],cx // UNK_0xe37c
+// 0xe4e8: push   word ptr [E38A] // UNK_0xe38a
 // 0xe4ec: ret    
 
 
@@ -529,13 +603,13 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe4ed: WORD 'UNK_0xe4ef' codep=0x1d29 parp=0xe4ef
 // ================================================
 // 0xe4ef: pop    dx
-// 0xe4f0: mov    bx,[E37C]
+// 0xe4f0: mov    bx,[E37C] // UNK_0xe37c
 // 0xe4f4: push   ds
-// 0xe4f5: push   word ptr [E378]
+// 0xe4f5: push   word ptr [E378] // UNK_0xe378
 // 0xe4f9: pop    ds
 // 0xe4fa: mov    al,[bx]
 // 0xe4fc: pop    ds
-// 0xe4fd: mov    cx,[4D47]
+// 0xe4fd: mov    cx,[4D47] // SIGNEXT
 // 0xe501: or     cx,cx
 // 0xe503: jle    E508
 // 0xe505: cbw    
@@ -549,7 +623,7 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // ================================================
 // 0xe50d: WORD 'UNK_0xe50f' codep=0x1d29 parp=0xe50f
 // ================================================
-// 0xe50f: pop    word ptr [E38E]
+// 0xe50f: pop    word ptr [E38E] // UNK_0xe38e
 // 0xe513: call   E4B9
 // 0xe516: call   E4EF
 // 0xe519: pop    ax
@@ -557,14 +631,14 @@ void UNK_0xe3a6() // UNK_0xe3a6
 // 0xe51d: jnz    E52F
 // 0xe51f: pop    ax
 // 0xe520: push   ds
-// 0xe521: push   word ptr [E378]
-// 0xe525: mov    bx,[E37C]
+// 0xe521: push   word ptr [E378] // UNK_0xe378
+// 0xe525: mov    bx,[E37C] // UNK_0xe37c
 // 0xe529: pop    ds
 // 0xe52a: mov    [bx],al
 // 0xe52c: pop    ds
 // 0xe52d: jmp    E530
 // 0xe52f: pop    ax
-// 0xe530: push   word ptr [E38E]
+// 0xe530: push   word ptr [E38E] // UNK_0xe38e
 // 0xe534: ret    
 
 
@@ -601,14 +675,14 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe56b: WORD 'UNK_0xe56d' codep=0x1d29 parp=0xe56d
 // ================================================
 // 0xe56d: pop    cx
-// 0xe56e: pop    word ptr [E396]
+// 0xe56e: pop    word ptr [E396] // UNK_0xe396
 // 0xe572: push   cx
 // 0xe573: push   word ptr [bp+08]
-// 0xe576: push   word ptr [E396]
+// 0xe576: push   word ptr [E396] // UNK_0xe396
 // 0xe57a: call   E4B9
 // 0xe57d: call   E4EF
 // 0xe580: push   word ptr [bp+04]
-// 0xe583: push   word ptr [E396]
+// 0xe583: push   word ptr [E396] // UNK_0xe396
 // 0xe587: call   E4B9
 // 0xe58a: call   E4EF
 // 0xe58d: pop    ax
@@ -620,11 +694,11 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe597: add    bx,[bp+04]
 // 0xe59a: sar    bx,1
 // 0xe59c: push   bx
-// 0xe59d: push   word ptr [E396]
+// 0xe59d: push   word ptr [E396] // UNK_0xe396
 // 0xe5a1: call   E3FA
 // 0xe5a4: call   E3E0
 // 0xe5a7: push   word ptr [bp+0C]
-// 0xe5aa: push   word ptr [E396]
+// 0xe5aa: push   word ptr [E396] // UNK_0xe396
 // 0xe5ae: call   E50F
 // 0xe5b1: ret    
 
@@ -633,13 +707,13 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe5b2: WORD 'UNK_0xe5b4' codep=0x1d29 parp=0xe5b4
 // ================================================
 // 0xe5b4: pop    cx
-// 0xe5b5: pop    word ptr [E396]
+// 0xe5b5: pop    word ptr [E396] // UNK_0xe396
 // 0xe5b9: push   cx
-// 0xe5ba: push   word ptr [E396]
+// 0xe5ba: push   word ptr [E396] // UNK_0xe396
 // 0xe5be: push   word ptr [bp+06]
 // 0xe5c1: call   E4B9
 // 0xe5c4: call   E4EF
-// 0xe5c7: push   word ptr [E396]
+// 0xe5c7: push   word ptr [E396] // UNK_0xe396
 // 0xe5cb: push   word ptr [bp+02]
 // 0xe5ce: call   E4B9
 // 0xe5d1: call   E4EF
@@ -648,14 +722,14 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe5d6: add    ax,cx
 // 0xe5d8: sar    ax,1
 // 0xe5da: push   ax
-// 0xe5db: push   word ptr [E396]
+// 0xe5db: push   word ptr [E396] // UNK_0xe396
 // 0xe5df: mov    bx,[bp+06]
 // 0xe5e2: add    bx,[bp+02]
 // 0xe5e5: sar    bx,1
 // 0xe5e7: push   bx
 // 0xe5e8: call   E3FA
 // 0xe5eb: call   E3E0
-// 0xe5ee: push   word ptr [E396]
+// 0xe5ee: push   word ptr [E396] // UNK_0xe396
 // 0xe5f2: push   word ptr [bp+0A]
 // 0xe5f5: call   E50F
 // 0xe5f8: ret    
@@ -664,7 +738,7 @@ void UNK_0xe541() // UNK_0xe541
 // ================================================
 // 0xe5f9: WORD 'UNK_0xe5fb' codep=0x1d29 parp=0xe5fb
 // ================================================
-// 0xe5fb: mov    ax,[E368]
+// 0xe5fb: mov    ax,[E368] // UNK_0xe368
 // 0xe5ff: or     ax,ax
 // 0xe601: jle    E614
 // 0xe603: mov    ax,[bp+08]
@@ -674,7 +748,7 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe60b: call   E5B4
 // 0xe60e: push   word ptr [bp+04]
 // 0xe611: call   E5B4
-// 0xe614: mov    ax,[E36C]
+// 0xe614: mov    ax,[E36C] // UNK_0xe36c
 // 0xe618: or     ax,ax
 // 0xe61a: jle    E62D
 // 0xe61c: mov    ax,[bp+06]
@@ -690,8 +764,8 @@ void UNK_0xe541() // UNK_0xe541
 // ================================================
 // 0xe62e: WORD 'UNK_0xe630' codep=0x1d29 parp=0xe630
 // ================================================
-// 0xe630: mov    ax,[E368]
-// 0xe634: and    ax,[E36C]
+// 0xe630: mov    ax,[E368] // UNK_0xe368
+// 0xe634: and    ax,[E36C] // UNK_0xe36c
 // 0xe638: jle    E68E
 // 0xe63a: push   word ptr [bp+0C]
 // 0xe63d: push   word ptr [bp+06]
@@ -747,8 +821,8 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe6a8: WORD 'UNK_0xe6aa' codep=0x1d29 parp=0xe6aa
 // ================================================
 // 0xe6aa: mov    ax,[bp+0E]
-// 0xe6ad: mul    word ptr [E360]
-// 0xe6b1: div    word ptr [E35E]
+// 0xe6ad: mul    word ptr [E360] // UNK_0xe35e
+// 0xe6b1: div    word ptr [E35E] // UNK_0xe35e
 // 0xe6b5: or     ax,ax
 // 0xe6b7: jg     E6BC
 // 0xe6b9: mov    ax,0001
@@ -767,7 +841,7 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe6cd: mov    ax,0001
 // 0xe6d0: jmp    E6D4
 // 0xe6d2: xor    ax,ax
-// 0xe6d4: mov    [E36C],ax
+// 0xe6d4: mov    [E36C],ax // UNK_0xe36c
 // 0xe6d8: mov    cx,[bp+02]
 // 0xe6db: sub    cx,[bp+06]
 // 0xe6de: dec    cx
@@ -775,7 +849,7 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe6e1: mov    cx,0001
 // 0xe6e4: jmp    E6E8
 // 0xe6e6: xor    cx,cx
-// 0xe6e8: mov    [E368],cx
+// 0xe6e8: mov    [E368],cx // UNK_0xe368
 // 0xe6ec: or     ax,cx
 // 0xe6ee: jle    E754
 // 0xe6f0: call   E691
@@ -828,9 +902,9 @@ void UNK_0xe541() // UNK_0xe541
 // ================================================
 // 0xe75c: WORD 'UNK_0xe75e' codep=0xe75e parp=0xe75e
 // ================================================
-// 0xe75e: mov    [E392],bp
+// 0xe75e: mov    [E392],bp // UNK_0xe392
 // 0xe762: call   E6C2
-// 0xe765: mov    bp,[E392]
+// 0xe765: mov    bp,[E392] // UNK_0xe392
 // 0xe769: lodsw
 // 0xe76a: mov    bx,ax
 // 0xe76c: jmp    word ptr [bx]
@@ -839,7 +913,7 @@ void UNK_0xe541() // UNK_0xe541
 // 0xe76e: WORD 'UNK_0xe770' codep=0xe770 parp=0xe770
 // ================================================
 // 0xe770: pop    ax
-// 0xe771: mov    bx,[4D60]
+// 0xe771: mov    bx,[4D60] // 'ARRAY
 // 0xe775: mov    cx,[bx+04]
 // 0xe778: mov    bx,[bx+06]
 // 0xe77b: push   es
@@ -1352,12 +1426,16 @@ void UNK_0xea97() // UNK_0xea97
 
 }
 
-// 0xeacb: db 0x29 0x1d 0x3a 0x20 ') : '
+
+// ================================================
+// 0xeacb: WORD 'UNK_0xeacd' codep=0x1d29 parp=0xeacd
+// ================================================
+// 0xeacd: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xeacf: WORD 'UNK_0xead1' codep=0xead1 parp=0xead1
 // ================================================
-// 0xead1: mov    [EACD],sp
+// 0xead1: mov    [EACD],sp // UNK_0xeacd
 // 0xead5: lodsw
 // 0xead6: mov    bx,ax
 // 0xead8: jmp    word ptr [bx]
@@ -1366,7 +1444,7 @@ void UNK_0xea97() // UNK_0xea97
 // 0xeada: WORD 'UNK_0xeadc' codep=0xeadc parp=0xeadc
 // ================================================
 // 0xeadc: add    sp,0E
-// 0xeadf: mov    [EACD],sp
+// 0xeadf: mov    [EACD],sp // UNK_0xeacd
 // 0xeae3: lodsw
 // 0xeae4: mov    bx,ax
 // 0xeae6: jmp    word ptr [bx]
@@ -1375,7 +1453,7 @@ void UNK_0xea97() // UNK_0xea97
 // 0xeae8: WORD 'UNK_0xeaea' codep=0xeaea parp=0xeaea
 // ================================================
 // 0xeaea: pop    bx
-// 0xeaeb: add    bx,[EACD]
+// 0xeaeb: add    bx,[EACD] // UNK_0xeacd
 // 0xeaef: push   word ptr [bx]
 // 0xeaf1: lodsw
 // 0xeaf2: mov    bx,ax
@@ -1385,7 +1463,7 @@ void UNK_0xea97() // UNK_0xea97
 // 0xeaf6: WORD 'UNK_0xeaf8' codep=0xeaf8 parp=0xeaf8
 // ================================================
 // 0xeaf8: pop    bx
-// 0xeaf9: add    bx,[EACD]
+// 0xeaf9: add    bx,[EACD] // UNK_0xeacd
 // 0xeafd: pop    word ptr [bx]
 // 0xeaff: lodsw
 // 0xeb00: mov    bx,ax
@@ -1762,7 +1840,7 @@ void UNK_0xecc6() // UNK_0xecc6
 // ================================================
 // 0xed32: WORD 'UNK_0xed34' codep=0xed34 parp=0xed34
 // ================================================
-// 0xed34: mov    [ED30],sp
+// 0xed34: mov    [ED30],sp // UNK_0xed30
 // 0xed38: pop    ax
 // 0xed39: shl    ax,1
 // 0xed3b: sub    sp,ax
@@ -1786,7 +1864,7 @@ void UNK_0xecc6() // UNK_0xecc6
 // 0xed50: pop    bx
 // 0xed51: shl    bx,1
 // 0xed53: neg    bx
-// 0xed55: add    bx,[ED30]
+// 0xed55: add    bx,[ED30] // UNK_0xed30
 // 0xed59: push   word ptr [bx]
 // 0xed5b: lodsw
 // 0xed5c: mov    bx,ax
@@ -1798,7 +1876,7 @@ void UNK_0xecc6() // UNK_0xecc6
 // 0xed62: pop    bx
 // 0xed63: shl    bx,1
 // 0xed65: neg    bx
-// 0xed67: add    bx,[ED30]
+// 0xed67: add    bx,[ED30] // UNK_0xed30
 // 0xed6b: pop    ax
 // 0xed6c: mov    [bx],ax
 // 0xed6e: lodsw
@@ -1958,12 +2036,12 @@ void UNK_0xedd9() // UNK_0xedd9
 // 0xee63: WORD 'UNK_0xee65' codep=0xee65 parp=0xee65
 // ================================================
 // 0xee65: mov    cx,es
-// 0xee67: mov    dx,[5F1B]
+// 0xee67: mov    dx,[5F1B] // ?EGA
 // 0xee6b: and    dx,01
 // 0xee6e: jnz    EE76
-// 0xee70: mov    dx,[572D]
+// 0xee70: mov    dx,[572D] // HBUF-SE
 // 0xee74: jmp    EE7A
-// 0xee76: mov    dx,[542B]
+// 0xee76: mov    dx,[542B] // XBUF-SE
 // 0xee7a: mov    es,dx
 // 0xee7c: xor    ax,ax
 // 0xee7e: pop    bx
@@ -1985,9 +2063,9 @@ void UNK_0xedd9() // UNK_0xedd9
 // 0xee94: WORD 'UNK_0xee96' codep=0xee96 parp=0xee96
 // ================================================
 // 0xee96: mov    cx,es
-// 0xee98: mov    dx,[52A2]
+// 0xee98: mov    dx,[52A2] // POLYSEG
 // 0xee9c: mov    es,dx
-// 0xee9e: mov    bx,[ED7D]
+// 0xee9e: mov    bx,[ED7D] // FADDR
 // 0xeea2: pop    ax
 // 0xeea3: es:    
 // 0xeea4: mov    [bx],al
@@ -1998,7 +2076,7 @@ void UNK_0xedd9() // UNK_0xedd9
 // 0xeeaf: es:    
 // 0xeeb0: pop    word ptr [bx]
 // 0xeeb2: add    bx,04
-// 0xeeb5: mov    [ED7D],bx
+// 0xeeb5: mov    [ED7D],bx // FADDR
 // 0xeeb9: mov    es,cx
 // 0xeebb: lodsw
 // 0xeebc: mov    bx,ax
@@ -2018,7 +2096,7 @@ void UNK_0xedd9() // UNK_0xedd9
 // 0xeecc: xor    ax,ax
 // 0xeece: pop    ax
 // 0xeecf: push   ax
-// 0xeed0: cmp    ax,[ED81]
+// 0xeed0: cmp    ax,[ED81] // UNK_0xed81
 // 0xeed4: jnz    EEDB
 // 0xeed6: mov    ax,0001
 // 0xeed9: jmp    EEDD
@@ -2036,7 +2114,7 @@ void UNK_0xedd9() // UNK_0xedd9
 // 0xeee8: mov    ax,0004
 // 0xeeeb: mov    ah,al
 // 0xeeed: push   ax
-// 0xeeee: mov    ax,[ED81]
+// 0xeeee: mov    ax,[ED81] // UNK_0xed81
 // 0xeef2: push   ax
 // 0xeef3: lodsw
 // 0xeef4: mov    bx,ax

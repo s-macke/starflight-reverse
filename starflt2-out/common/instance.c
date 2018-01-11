@@ -364,9 +364,9 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b0d: WORD '>V' codep=0x7b14 parp=0x7b14
 // ================================================
-// 0x7b14: mov    bx,[5638]
+// 0x7b14: mov    bx,[5638] // UNK_0x5638
 // 0x7b18: pop    word ptr [bx]
-// 0x7b1a: sub    word ptr [5638],02
+// 0x7b1a: sub    word ptr [5638],02 // UNK_0x5638
 // 0x7b1f: lodsw
 // 0x7b20: mov    bx,ax
 // 0x7b22: jmp    word ptr [bx]
@@ -374,8 +374,8 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b24: WORD 'V>' codep=0x7b2b parp=0x7b2b
 // ================================================
-// 0x7b2b: add    word ptr [5638],02
-// 0x7b30: mov    bx,[5638]
+// 0x7b2b: add    word ptr [5638],02 // UNK_0x5638
+// 0x7b30: mov    bx,[5638] // UNK_0x5638
 // 0x7b34: push   word ptr [bx]
 // 0x7b36: lodsw
 // 0x7b37: mov    bx,ax
@@ -384,7 +384,7 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b3b: WORD 'VI' codep=0x7b42 parp=0x7b42
 // ================================================
-// 0x7b42: mov    bx,[5638]
+// 0x7b42: mov    bx,[5638] // UNK_0x5638
 // 0x7b46: push   word ptr [bx+02]
 // 0x7b49: lodsw
 // 0x7b4a: mov    bx,ax

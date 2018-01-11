@@ -896,11 +896,24 @@
 //             VIN  codep:0x1d29 parp:0x569b size:0x0002 C-string:'VIN'
 //            VOUT  codep:0x1d29 parp:0x56a6 size:0x0002 C-string:'VOUT'
 //             OIN  codep:0x1d29 parp:0x56b0 size:0x0002 C-string:'OIN'
-//            OOUT  codep:0x1d29 parp:0x56bb size:0x0016 C-string:'OOUT'
+//            OOUT  codep:0x1d29 parp:0x56bb size:0x0002 C-string:'OOUT'
+//      UNK_0x56bf  codep:0x1d29 parp:0x56bf size:0x0002 C-string:'UNK_0x56bf'
+//      UNK_0x56c3  codep:0x1d29 parp:0x56c3 size:0x0002 C-string:'UNK_0x56c3'
+//      UNK_0x56c7  codep:0x1d29 parp:0x56c7 size:0x0002 C-string:'UNK_0x56c7'
+//      UNK_0x56cb  codep:0x1d29 parp:0x56cb size:0x0002 C-string:'UNK_0x56cb'
+//      UNK_0x56cf  codep:0x1d29 parp:0x56cf size:0x0002 C-string:'UNK_0x56cf'
 //          TACCPT  codep:0x1d29 parp:0x56dc size:0x0002 C-string:'TACCPT'
 //           TRJCT  codep:0x1d29 parp:0x56e8 size:0x0002 C-string:'TRJCT'
 //           ?OPEN  codep:0x1d29 parp:0x56f4 size:0x0002 C-string:'IsOPEN'
-//           ?EVAL  codep:0x1d29 parp:0x5700 size:0x002e C-string:'IsEVAL'
+//           ?EVAL  codep:0x1d29 parp:0x5700 size:0x0002 C-string:'IsEVAL'
+//      UNK_0x5704  codep:0x1d29 parp:0x5704 size:0x0002 C-string:'UNK_0x5704'
+//      UNK_0x5708  codep:0x1d29 parp:0x5708 size:0x0002 C-string:'UNK_0x5708'
+//      UNK_0x570c  codep:0x1d29 parp:0x570c size:0x0002 C-string:'UNK_0x570c'
+//      UNK_0x5710  codep:0x1d29 parp:0x5710 size:0x0002 C-string:'UNK_0x5710'
+//      UNK_0x5714  codep:0x1d29 parp:0x5714 size:0x0002 C-string:'UNK_0x5714'
+//      UNK_0x5718  codep:0x1d29 parp:0x5718 size:0x000e C-string:'UNK_0x5718'
+//      UNK_0x5728  codep:0x1d29 parp:0x5728 size:0x0002 C-string:'UNK_0x5728'
+//      UNK_0x572c  codep:0x1d29 parp:0x572c size:0x0002 C-string:'UNK_0x572c'
 //           ILEFT  codep:0x1d29 parp:0x5738 size:0x0002 C-string:'ILEFT'
 //          IRIGHT  codep:0x1d29 parp:0x5745 size:0x0002 C-string:'IRIGHT'
 //          IBELOW  codep:0x1d29 parp:0x5752 size:0x0002 C-string:'IBELOW'
@@ -914,9 +927,12 @@
 //          XSTART  codep:0x1d29 parp:0x57b7 size:0x0002 C-string:'XSTART'
 //            XEND  codep:0x1d29 parp:0x57c2 size:0x0002 C-string:'XEND'
 //           YLINE  codep:0x1d29 parp:0x57ce size:0x0002 C-string:'YLINE'
-//            SCAN  codep:0x1d29 parp:0x57d9 size:0x000a C-string:'SCAN'
+//            SCAN  codep:0x1d29 parp:0x57d9 size:0x0002 C-string:'SCAN'
+//      UNK_0x57dd  codep:0x1d29 parp:0x57dd size:0x0002 C-string:'UNK_0x57dd'
+//      UNK_0x57e1  codep:0x1d29 parp:0x57e1 size:0x0002 C-string:'UNK_0x57e1'
 //            YMIN  codep:0x1d29 parp:0x57ec size:0x0002 C-string:'YMIN'
-//            YMAX  codep:0x1d29 parp:0x57f7 size:0x0006 C-string:'YMAX'
+//            YMAX  codep:0x1d29 parp:0x57f7 size:0x0002 C-string:'YMAX'
+//      UNK_0x57fb  codep:0x1d29 parp:0x57fb size:0x0002 C-string:'UNK_0x57fb'
 //           MOVED  codep:0x1d29 parp:0x5807 size:0x0002 C-string:'MOVED'
 //          PLANTS  codep:0x1d29 parp:0x5814 size:0x0002 C-string:'PLANTS'
 //         ANIMALS  codep:0x1d29 parp:0x5822 size:0x0002 C-string:'ANIMALS'
@@ -982,7 +998,10 @@
 //          'STORM  codep:0x1d29 parp:0x5acf size:0x0002 C-string:'_i_STORM'
 //             E/M  codep:0x1d29 parp:0x5ad9 size:0x0002 C-string:'E_slash_M'
 //      FORCEPTASK  codep:0x1d29 parp:0x5ae7 size:0x0002 C-string:'FORCEPTASK'
-//          #STORM  codep:0x1d29 parp:0x5af4 size:0x000e C-string:'_n_STORM'
+//          #STORM  codep:0x1d29 parp:0x5af4 size:0x0002 C-string:'_n_STORM'
+//      UNK_0x5af8  codep:0x1d29 parp:0x5af8 size:0x0002 C-string:'UNK_0x5af8'
+//      UNK_0x5afc  codep:0x1d29 parp:0x5afc size:0x0002 C-string:'UNK_0x5afc'
+//      UNK_0x5b00  codep:0x1d29 parp:0x5b00 size:0x0002 C-string:'UNK_0x5b00'
 //      UNK_0x5b04  codep:0x1d29 parp:0x5b04 size:0x0002 C-string:'UNK_0x5b04'
 //         PORTDAT  codep:0x1d29 parp:0x5b12 size:0x0002 C-string:'PORTDAT'
 //           ?PORT  codep:0x1d29 parp:0x5b1e size:0x0002 C-string:'IsPORT'
@@ -2577,8 +2596,23 @@ const unsigned short int pp_VOUT = 0x56a6; // VOUT size: 2
 const unsigned short int pp_OIN = 0x56b0; // OIN size: 2
 // {0xf6, 0x69}
 
-const unsigned short int pp_OOUT = 0x56bb; // OOUT size: 22
-// {0xf6, 0x69, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_OOUT = 0x56bb; // OOUT size: 2
+// {0xf6, 0x69}
+
+const unsigned short int pp_UNK_0x56bf = 0x56bf; // UNK_0x56bf size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x56c3 = 0x56c3; // UNK_0x56c3 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x56c7 = 0x56c7; // UNK_0x56c7 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x56cb = 0x56cb; // UNK_0x56cb size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x56cf = 0x56cf; // UNK_0x56cf size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_TACCPT = 0x56dc; // TACCPT size: 2
 // {0x00, 0x00}
@@ -2589,8 +2623,32 @@ const unsigned short int pp_TRJCT = 0x56e8; // TRJCT size: 2
 const unsigned short int pp_IsOPEN = 0x56f4; // ?OPEN size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_IsEVAL = 0x5700; // ?EVAL size: 46
-// {0x00, 0x00, 0x29, 0x1d, 0x3c, 0x00, 0x29, 0x1d, 0xc2, 0x00, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3c, 0x00, 0x29, 0x1d, 0xc6, 0x00, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_IsEVAL = 0x5700; // ?EVAL size: 2
+// {0x00, 0x00}
+
+const unsigned short int pp_UNK_0x5704 = 0x5704; // UNK_0x5704 size: 2
+// {0x3c, 0x00}
+
+const unsigned short int pp_UNK_0x5708 = 0x5708; // UNK_0x5708 size: 2
+// {0xc2, 0x00}
+
+const unsigned short int pp_UNK_0x570c = 0x570c; // UNK_0x570c size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x5710 = 0x5710; // UNK_0x5710 size: 2
+// {0x3c, 0x00}
+
+const unsigned short int pp_UNK_0x5714 = 0x5714; // UNK_0x5714 size: 2
+// {0xc6, 0x00}
+
+const unsigned short int pp_UNK_0x5718 = 0x5718; // UNK_0x5718 size: 14
+// {0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x5728 = 0x5728; // UNK_0x5728 size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0x572c = 0x572c; // UNK_0x572c size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_ILEFT = 0x5738; // ILEFT size: 2
 // {0x00, 0x00}
@@ -2631,14 +2689,23 @@ const unsigned short int pp_XEND = 0x57c2; // XEND size: 2
 const unsigned short int pp_YLINE = 0x57ce; // YLINE size: 2
 // {0x20, 0x20}
 
-const unsigned short int pp_SCAN = 0x57d9; // SCAN size: 10
-// {0x9e, 0x67, 0x29, 0x1d, 0x00, 0x00, 0x29, 0x1d, 0x9e, 0x67}
+const unsigned short int pp_SCAN = 0x57d9; // SCAN size: 2
+// {0x9e, 0x67}
+
+const unsigned short int pp_UNK_0x57dd = 0x57dd; // UNK_0x57dd size: 2
+// {0x00, 0x00}
+
+const unsigned short int pp_UNK_0x57e1 = 0x57e1; // UNK_0x57e1 size: 2
+// {0x9e, 0x67}
 
 const unsigned short int pp_YMIN = 0x57ec; // YMIN size: 2
 // {0xc2, 0x00}
 
-const unsigned short int pp_YMAX = 0x57f7; // YMAX size: 6
-// {0xc6, 0x00, 0x29, 0x1d, 0x02, 0x00}
+const unsigned short int pp_YMAX = 0x57f7; // YMAX size: 2
+// {0xc6, 0x00}
+
+const unsigned short int pp_UNK_0x57fb = 0x57fb; // UNK_0x57fb size: 2
+// {0x02, 0x00}
 
 const unsigned short int pp_MOVED = 0x5807; // MOVED size: 2
 // {0x69, 0x7a}
@@ -2835,8 +2902,17 @@ const unsigned short int pp_E_slash_M = 0x5ad9; // E/M size: 2
 const unsigned short int pp_FORCEPTASK = 0x5ae7; // FORCEPTASK size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp__n_STORM = 0x5af4; // #STORM size: 14
-// {0x00, 0x00, 0x29, 0x1d, 0x8f, 0x01, 0x29, 0x1d, 0x00, 0x00, 0x29, 0x1d, 0x90, 0x01}
+const unsigned short int pp__n_STORM = 0x5af4; // #STORM size: 2
+// {0x00, 0x00}
+
+const unsigned short int pp_UNK_0x5af8 = 0x5af8; // UNK_0x5af8 size: 2
+// {0x8f, 0x01}
+
+const unsigned short int pp_UNK_0x5afc = 0x5afc; // UNK_0x5afc size: 2
+// {0x00, 0x00}
+
+const unsigned short int pp_UNK_0x5b00 = 0x5b00; // UNK_0x5b00 size: 2
+// {0x90, 0x01}
 
 const unsigned short int pp_UNK_0x5b04 = 0x5b04; // UNK_0x5b04 size: 2
 // {0x00, 0x00}
@@ -6137,7 +6213,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x16df: push   si
 // 0x16e0: push   es
 // 0x16e1: pushf  
-// 0x16e2: mov    ax,[16B4]
+// 0x16e2: mov    ax,[16B4] // REGISTERS
 // 0x16e5: push   ax
 // 0x16e6: popf   
 // 0x16e7: mov    bx,[16B8]
@@ -6150,10 +6226,10 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1700: mov    ax,[16C4]
 // 0x1703: mov    ds,ax
 // 0x1705: cs:    
-// 0x1706: mov    ax,[16B6]
+// 0x1706: mov    ax,[16B6] // REGISTERS
 // 0x1709: call   16C8
 // 0x170c: cs:    
-// 0x170d: mov    [16B6],ax
+// 0x170d: mov    [16B6],ax // REGISTERS
 // 0x1710: mov    ax,ds
 // 0x1712: cs:    
 // 0x1713: mov    [16C4],ax
@@ -6161,7 +6237,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1718: mov    ds,ax
 // 0x171a: pushf  
 // 0x171b: pop    ax
-// 0x171c: mov    [16B4],ax
+// 0x171c: mov    [16B4],ax // REGISTERS
 // 0x171f: mov    ax,bx
 // 0x1721: mov    [16B8],ax
 // 0x1724: mov    ax,cx
@@ -7465,7 +7541,7 @@ void CFA() // CFA
 // ================================================
 // 0x21c7: WORD 'UNK_0x21c9' codep=0x21c9 parp=0x21c9
 // ================================================
-// 0x21c9: mov    ax,[0A0B]
+// 0x21c9: mov    ax,[0A0B] // #SPACE
 // 0x21cc: add    ax,[di+04]
 // 0x21cf: jo     21E0
 // 0x21d1: cmp    ax,sp
@@ -8751,13 +8827,13 @@ void U_dot_R() // U.R
 // 0x2aba: cmp    ax,cx
 // 0x2abc: jge    2AC0
 // 0x2abe: mov    cx,ax
-// 0x2ac0: mov    ax,[018A]
+// 0x2ac0: mov    ax,[018A] // (TIME)
 // 0x2ac3: add    ax,cx
-// 0x2ac5: mov    [018A],ax
+// 0x2ac5: mov    [018A],ax // (TIME)
 // 0x2ac8: jae    2AD4
-// 0x2aca: mov    ax,[0188]
+// 0x2aca: mov    ax,[0188] // (TIME)
 // 0x2acd: adc    ax,0000
-// 0x2ad1: mov    [0188],ax
+// 0x2ad1: mov    [0188],ax // (TIME)
 // 0x2ad4: mov    ax,[0193]
 // 0x2ad7: sub    ax,cx
 // 0x2ad9: jge    2ADD
@@ -9327,7 +9403,7 @@ void MTBUFFERS() // MTBUFFERS
 // 0x3049: mov    dx,es
 // 0x304b: xor    bx,bx
 // 0x304d: xor    ax,ax
-// 0x304f: push   word ptr [2C84]
+// 0x304f: push   word ptr [2C84] // PREV
 // 0x3053: pop    es
 // 0x3054: es:    
 // 0x3055: cmp    [bx+06],cx
@@ -9338,7 +9414,7 @@ void MTBUFFERS() // MTBUFFERS
 // 0x305e: add    [di+01],dh
 // 0x3061: inc    ax
 // 0x3062: jmp    3084
-// 0x3064: push   word ptr [2CBE]
+// 0x3064: push   word ptr [2CBE] // USE
 // 0x3068: pop    es
 // 0x3069: es:    
 // 0x306a: cmp    [bx+06],cx
@@ -9348,17 +9424,17 @@ void MTBUFFERS() // MTBUFFERS
 // 0x3071: jg     3076
 // 0x3073: add    [di+0E],dh
 // 0x3076: inc    ax
-// 0x3077: push   word ptr [2C84]
+// 0x3077: push   word ptr [2C84] // PREV
 // 0x307b: push   es
-// 0x307c: pop    word ptr [2C84]
-// 0x3080: pop    word ptr [2CBE]
+// 0x307c: pop    word ptr [2C84] // PREV
+// 0x3080: pop    word ptr [2CBE] // USE
 // 0x3084: or     ax,ax
 // 0x3086: jnz    308B
 // 0x3088: push   cx
 // 0x3089: jmp    3094
 // 0x308b: push   es
-// 0x308c: mov    cx,[2C84]
-// 0x3090: mov    [2C6C],cx
+// 0x308c: mov    cx,[2C84] // PREV
+// 0x3090: mov    [2C6C],cx // LPREV
 // 0x3094: push   ax
 // 0x3095: mov    es,dx
 // 0x3097: lodsw
@@ -9374,10 +9450,10 @@ void MTBUFFERS() // MTBUFFERS
 // 0x30ad: mov    bx,ax
 // 0x30af: sub    bx,02
 // 0x30b2: push   es
-// 0x30b3: push   word ptr [2C04]
+// 0x30b3: push   word ptr [2C04] // BLKCACHE
 // 0x30b7: pop    es
 // 0x30b8: call   2F36
-// 0x30bb: push   word ptr [2C9D]
+// 0x30bb: push   word ptr [2C9D] // SEGCACHE
 // 0x30bf: pop    es
 // 0x30c0: call   2F36
 // 0x30c3: pop    es
@@ -10037,7 +10113,7 @@ void _ro_DISKERROR_ask__rc_() // (DISKERROR?)
 // 0x3670: WORD 'UNK_0x3672' codep=0x3672 parp=0x3672
 // ================================================
 // 0x3672: pop    ax
-// 0x3673: add    ax,[2C79]
+// 0x3673: add    ax,[2C79] // OFFSET
 // 0x3677: push   ax
 // 0x3678: lodsw
 // 0x3679: mov    bx,ax
@@ -10050,7 +10126,7 @@ void _ro_DISKERROR_ask__rc_() // (DISKERROR?)
 // 0x3680: push   di
 // 0x3681: push   si
 // 0x3682: push   bp
-// 0x3683: mov    cx,[2B3A]
+// 0x3683: mov    cx,[2B3A] // #FILES
 // 0x3687: mov    di,2D74
 // 0x368a: xor    bx,bx
 // 0x368c: mov    bp,cx
@@ -10090,7 +10166,7 @@ void _ro_DISKERROR_ask__rc_() // (DISKERROR?)
 // 0x36c3: mov    cl,[si]
 // 0x36c5: or     cx,cx
 // 0x36c7: jnz    36CD
-// 0x36c9: mov    cx,[2C15]
+// 0x36c9: mov    cx,[2C15] // DEFAULTDRV
 // 0x36cd: dec    cx
 // 0x36ce: push   cx
 // 0x36cf: xchg   ax,si
@@ -12590,7 +12666,7 @@ void KEY_2() // KEY_2
 // 0x48e1: mov    dx,ds
 // 0x48e3: pop    di
 // 0x48e4: pop    es
-// 0x48e5: mov    [48C6],si
+// 0x48e5: mov    [48C6],si // ZZZ
 // 0x48e9: pop    si
 // 0x48ea: pop    ds
 // 0x48eb: or     cx,cx
@@ -12605,7 +12681,7 @@ void KEY_2() // KEY_2
 // 0x48f8: cld    
 // 0x48f9: mov    es,ax
 // 0x48fb: mov    ds,dx
-// 0x48fd: mov    si,[48C6]
+// 0x48fd: mov    si,[48C6] // ZZZ
 // 0x4901: mov    di,bx
 // 0x4903: lodsw
 // 0x4904: mov    bx,ax
@@ -12871,11 +12947,11 @@ void CASE_c_() // CASE:
 // ================================================
 // 0x4ab2: WORD 'FRND' codep=0x4abb parp=0x4abb
 // ================================================
-// 0x4abb: mov    ax,[4AB0]
+// 0x4abb: mov    ax,[4AB0] // SEED
 // 0x4abf: mov    cx,7ABD
 // 0x4ac2: imul   cx
 // 0x4ac4: add    ax,1B0F
-// 0x4ac7: mov    [4AB0],ax
+// 0x4ac7: mov    [4AB0],ax // SEED
 // 0x4acb: push   ax
 // 0x4acc: lodsw
 // 0x4acd: mov    bx,ax
@@ -13107,7 +13183,7 @@ void SQRT() // SQRT
 // ================================================
 // 0x4c87: pop    ax
 // 0x4c88: mov    bx,ax
-// 0x4c8a: mov    cx,[4C57]
+// 0x4c8a: mov    cx,[4C57] // PEAK
 // 0x4c8e: sub    bx,cx
 // 0x4c90: add    bx,0080
 // 0x4c94: cmp    bh,00
@@ -13117,7 +13193,7 @@ void SQRT() // SQRT
 // 0x4c9f: mov    cl,03
 // 0x4ca1: shr    bx,cl
 // 0x4ca3: mov    cl,[bx+4C5B]
-// 0x4ca7: mov    bx,[4C4C]
+// 0x4ca7: mov    bx,[4C4C] // FILTER
 // 0x4cab: xchg   dx,cx
 // 0x4cad: shr    bx,cl
 // 0x4caf: jmp    4CB3
@@ -14295,7 +14371,32 @@ void TABLE() // TABLE
 // ================================================
 // 0x56b2: WORD 'OOUT' codep=0x1d29 parp=0x56bb
 // ================================================
-// 0x56bb: db 0xf6 0x69 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 ' i) : ) : ) : ) : ) : '
+// 0x56bb: db 0xf6 0x69 ' i'
+
+// ================================================
+// 0x56bd: WORD 'UNK_0x56bf' codep=0x1d29 parp=0x56bf
+// ================================================
+// 0x56bf: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x56c1: WORD 'UNK_0x56c3' codep=0x1d29 parp=0x56c3
+// ================================================
+// 0x56c3: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x56c5: WORD 'UNK_0x56c7' codep=0x1d29 parp=0x56c7
+// ================================================
+// 0x56c7: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x56c9: WORD 'UNK_0x56cb' codep=0x1d29 parp=0x56cb
+// ================================================
+// 0x56cb: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x56cd: WORD 'UNK_0x56cf' codep=0x1d29 parp=0x56cf
+// ================================================
+// 0x56cf: db 0x3a 0x20 ': '
 
 // ================================================
 // 0x56d1: WORD 'TACCPT' codep=0x1d29 parp=0x56dc
@@ -14315,7 +14416,47 @@ void TABLE() // TABLE
 // ================================================
 // 0x56f6: WORD '?EVAL' codep=0x1d29 parp=0x5700
 // ================================================
-// 0x5700: db 0x00 0x00 0x29 0x1d 0x3c 0x00 0x29 0x1d 0xc2 0x00 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3c 0x00 0x29 0x1d 0xc6 0x00 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 '  ) < )   ) : ) < )   ) : ) : ) : ) : ) : ) : '
+// 0x5700: db 0x00 0x00 '  '
+
+// ================================================
+// 0x5702: WORD 'UNK_0x5704' codep=0x1d29 parp=0x5704
+// ================================================
+// 0x5704: db 0x3c 0x00 '< '
+
+// ================================================
+// 0x5706: WORD 'UNK_0x5708' codep=0x1d29 parp=0x5708
+// ================================================
+// 0x5708: db 0xc2 0x00 '  '
+
+// ================================================
+// 0x570a: WORD 'UNK_0x570c' codep=0x1d29 parp=0x570c
+// ================================================
+// 0x570c: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x570e: WORD 'UNK_0x5710' codep=0x1d29 parp=0x5710
+// ================================================
+// 0x5710: db 0x3c 0x00 '< '
+
+// ================================================
+// 0x5712: WORD 'UNK_0x5714' codep=0x1d29 parp=0x5714
+// ================================================
+// 0x5714: db 0xc6 0x00 '  '
+
+// ================================================
+// 0x5716: WORD 'UNK_0x5718' codep=0x1d29 parp=0x5718
+// ================================================
+// 0x5718: db 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 ': ) : ) : ) : '
+
+// ================================================
+// 0x5726: WORD 'UNK_0x5728' codep=0x1d29 parp=0x5728
+// ================================================
+// 0x5728: db 0x3a 0x20 ': '
+
+// ================================================
+// 0x572a: WORD 'UNK_0x572c' codep=0x1d29 parp=0x572c
+// ================================================
+// 0x572c: db 0x3a 0x20 ': '
 
 // ================================================
 // 0x572e: WORD 'ILEFT' codep=0x1d29 parp=0x5738
@@ -14385,7 +14526,17 @@ void TABLE() // TABLE
 // ================================================
 // 0x57d0: WORD 'SCAN' codep=0x1d29 parp=0x57d9
 // ================================================
-// 0x57d9: db 0x9e 0x67 0x29 0x1d 0x00 0x00 0x29 0x1d 0x9e 0x67 ' g)   )  g'
+// 0x57d9: db 0x9e 0x67 ' g'
+
+// ================================================
+// 0x57db: WORD 'UNK_0x57dd' codep=0x1d29 parp=0x57dd
+// ================================================
+// 0x57dd: db 0x00 0x00 '  '
+
+// ================================================
+// 0x57df: WORD 'UNK_0x57e1' codep=0x1d29 parp=0x57e1
+// ================================================
+// 0x57e1: db 0x9e 0x67 ' g'
 
 // ================================================
 // 0x57e3: WORD 'YMIN' codep=0x1d29 parp=0x57ec
@@ -14395,7 +14546,12 @@ void TABLE() // TABLE
 // ================================================
 // 0x57ee: WORD 'YMAX' codep=0x1d29 parp=0x57f7
 // ================================================
-// 0x57f7: db 0xc6 0x00 0x29 0x1d 0x02 0x00 '  )   '
+// 0x57f7: db 0xc6 0x00 '  '
+
+// ================================================
+// 0x57f9: WORD 'UNK_0x57fb' codep=0x1d29 parp=0x57fb
+// ================================================
+// 0x57fb: db 0x02 0x00 '  '
 
 // ================================================
 // 0x57fd: WORD 'MOVED' codep=0x1d29 parp=0x5807
@@ -14725,7 +14881,22 @@ void TABLE() // TABLE
 // ================================================
 // 0x5ae9: WORD '#STORM' codep=0x1d29 parp=0x5af4
 // ================================================
-// 0x5af4: db 0x00 0x00 0x29 0x1d 0x8f 0x01 0x29 0x1d 0x00 0x00 0x29 0x1d 0x90 0x01 '  )   )   )   '
+// 0x5af4: db 0x00 0x00 '  '
+
+// ================================================
+// 0x5af6: WORD 'UNK_0x5af8' codep=0x1d29 parp=0x5af8
+// ================================================
+// 0x5af8: db 0x8f 0x01 '  '
+
+// ================================================
+// 0x5afa: WORD 'UNK_0x5afc' codep=0x1d29 parp=0x5afc
+// ================================================
+// 0x5afc: db 0x00 0x00 '  '
+
+// ================================================
+// 0x5afe: WORD 'UNK_0x5b00' codep=0x1d29 parp=0x5b00
+// ================================================
+// 0x5b00: db 0x90 0x01 '  '
 
 // ================================================
 // 0x5b02: WORD 'UNK_0x5b04' codep=0x1d29 parp=0x5b04
@@ -15785,7 +15956,7 @@ void Is_gt_EGA() // ?>EGA
 // 0x6d12: pop    cx
 // 0x6d13: or     cx,cx
 // 0x6d15: jns    6D4D
-// 0x6d17: mov    bx,[54A1]
+// 0x6d17: mov    bx,[54A1] // 1BUFADR
 // 0x6d1b: mov    dx,bx
 // 0x6d1d: add    dx,07
 // 0x6d20: cmp    cx,dx
@@ -15795,7 +15966,7 @@ void Is_gt_EGA() // ?>EGA
 // 0x6d2a: jle    6D32
 // 0x6d2c: mov    byte ptr [bx+02],FF
 // 0x6d30: jmp    6D4B
-// 0x6d32: mov    bx,[54A5]
+// 0x6d32: mov    bx,[54A5] // 1BUFADR
 // 0x6d36: mov    dx,bx
 // 0x6d38: add    dx,07
 // 0x6d3b: cmp    cx,dx
@@ -16487,23 +16658,23 @@ void MEM_st_DSK() // MEM<DSK
 // 0x71dd: pop    ax
 // 0x71de: cmp    ax,0090
 // 0x71e1: js     71EF
-// 0x71e3: mov    bx,[535E]
+// 0x71e3: mov    bx,[535E] // DIRBLK
 // 0x71e7: add    bx,03
 // 0x71ea: sub    ax,0090
 // 0x71ed: jmp    7213
 // 0x71ef: cmp    ax,0060
 // 0x71f2: js     7200
-// 0x71f4: mov    bx,[535E]
+// 0x71f4: mov    bx,[535E] // DIRBLK
 // 0x71f8: add    bx,02
 // 0x71fb: sub    ax,0060
 // 0x71fe: jmp    7213
 // 0x7200: cmp    ax,0030
 // 0x7203: js     720F
-// 0x7205: mov    bx,[535E]
+// 0x7205: mov    bx,[535E] // DIRBLK
 // 0x7209: inc    bx
 // 0x720a: sub    ax,0030
 // 0x720d: jmp    7213
-// 0x720f: mov    bx,[535E]
+// 0x720f: mov    bx,[535E] // DIRBLK
 // 0x7213: mov    cx,0015
 // 0x7216: imul   cx
 // 0x7218: push   ax
@@ -16969,11 +17140,11 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 // ================================================
 // 0x7538: WORD '>C' codep=0x753f parp=0x753f
 // ================================================
-// 0x753f: mov    bx,[54B0]
+// 0x753f: mov    bx,[54B0] // CXSP
 // 0x7543: pop    ax
 // 0x7544: mov    [bx+02],al
 // 0x7547: pop    word ptr [bx]
-// 0x7549: sub    word ptr [54B0],03
+// 0x7549: sub    word ptr [54B0],03 // CXSP
 // 0x754e: lodsw
 // 0x754f: mov    bx,ax
 // 0x7551: jmp    word ptr [bx]
@@ -16981,8 +17152,8 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 // ================================================
 // 0x7553: WORD 'C>' codep=0x755a parp=0x755a
 // ================================================
-// 0x755a: add    word ptr [54B0],03
-// 0x755f: mov    bx,[54B0]
+// 0x755a: add    word ptr [54B0],03 // CXSP
+// 0x755f: mov    bx,[54B0] // CXSP
 // 0x7563: push   word ptr [bx]
 // 0x7565: xor    ax,ax
 // 0x7567: mov    al,[bx+02]
@@ -16994,7 +17165,7 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 // ================================================
 // 0x7570: WORD 'CI' codep=0x7577 parp=0x7577
 // ================================================
-// 0x7577: mov    bx,[54B0]
+// 0x7577: mov    bx,[54B0] // CXSP
 // 0x757b: push   word ptr [bx+03]
 // 0x757e: xor    ax,ax
 // 0x7580: mov    al,[bx+05]
@@ -17055,7 +17226,7 @@ void COVER() // COVER
 // 0x75cc: WORD 'CDEPTH' codep=0x75d7 parp=0x75d7
 // ================================================
 // 0x75d7: mov    ax,6398
-// 0x75da: sub    ax,[54B0]
+// 0x75da: sub    ax,[54B0] // CXSP
 // 0x75de: mov    cx,0003
 // 0x75e1: div    cl
 // 0x75e3: push   ax
@@ -17123,7 +17294,7 @@ void StoreIADDR() // !IADDR
 // ================================================
 // 0x7638: WORD '@[IOFF]' codep=0x763a parp=0x763a
 // ================================================
-// 0x763a: mov    ax,[558C]
+// 0x763a: mov    ax,[558C] // [IOFF]
 // 0x763e: push   ax
 // 0x763f: lodsw
 // 0x7640: mov    bx,ax
@@ -17179,15 +17350,15 @@ void BVA_gt_BUF() // BVA>BUF
 // 0x7689: mov    bx,ax
 // 0x768b: sub    bx,02
 // 0x768e: push   es
-// 0x768f: push   word ptr [54EA]
+// 0x768f: push   word ptr [54EA] // UNK_0x54ea
 // 0x7693: pop    es
 // 0x7694: call   2F36
-// 0x7697: push   word ptr [54F2]
+// 0x7697: push   word ptr [54F2] // LOCSEC
 // 0x769b: pop    es
 // 0x769c: call   2F36
 // 0x769f: shr    bx,1
 // 0x76a1: shr    ax,1
-// 0x76a3: push   word ptr [54EE]
+// 0x76a3: push   word ptr [54EE] // UNK_0x54ee
 // 0x76a7: pop    es
 // 0x76a8: call   49CA
 // 0x76ab: pop    es
@@ -17778,9 +17949,9 @@ void VCLR() // VCLR
 // ================================================
 // 0x7ae0: WORD '>V' codep=0x7ae7 parp=0x7ae7
 // ================================================
-// 0x7ae7: mov    bx,[54B4]
+// 0x7ae7: mov    bx,[54B4] // UNK_0x54b4
 // 0x7aeb: pop    word ptr [bx]
-// 0x7aed: sub    word ptr [54B4],02
+// 0x7aed: sub    word ptr [54B4],02 // UNK_0x54b4
 // 0x7af2: lodsw
 // 0x7af3: mov    bx,ax
 // 0x7af5: jmp    word ptr [bx]
@@ -17788,8 +17959,8 @@ void VCLR() // VCLR
 // ================================================
 // 0x7af7: WORD 'V>' codep=0x7afe parp=0x7afe
 // ================================================
-// 0x7afe: add    word ptr [54B4],02
-// 0x7b03: mov    bx,[54B4]
+// 0x7afe: add    word ptr [54B4],02 // UNK_0x54b4
+// 0x7b03: mov    bx,[54B4] // UNK_0x54b4
 // 0x7b07: push   word ptr [bx]
 // 0x7b09: lodsw
 // 0x7b0a: mov    bx,ax
@@ -17798,7 +17969,7 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b0e: WORD 'VI' codep=0x7b15 parp=0x7b15
 // ================================================
-// 0x7b15: mov    bx,[54B4]
+// 0x7b15: mov    bx,[54B4] // UNK_0x54b4
 // 0x7b19: push   word ptr [bx+02]
 // 0x7b1c: lodsw
 // 0x7b1d: mov    bx,ax
@@ -19294,23 +19465,23 @@ void GetCOLOR() // @COLOR
 // 0x853e: push   si
 // 0x853f: mov    bl,0F
 // 0x8541: xor    bh,bh
-// 0x8543: mov    si,[569B]
-// 0x8547: mov    di,[56B0]
-// 0x854b: mov    bp,[5752]
-// 0x854f: mov    cx,[5686]
+// 0x8543: mov    si,[569B] // VIN
+// 0x8547: mov    di,[56B0] // OIN
+// 0x854b: mov    bp,[5752] // IBELOW
+// 0x854f: mov    cx,[5686] // #IN
 // 0x8553: xor    dx,dx
 // 0x8555: lodsw
 // 0x8556: cmp    ax,bp
 // 0x8558: jns    855D
 // 0x855a: or     dx,04
-// 0x855d: cmp    ax,[575F]
+// 0x855d: cmp    ax,[575F] // IABOVE
 // 0x8561: jle    8566
 // 0x8563: or     dx,08
 // 0x8566: lodsw
-// 0x8567: cmp    ax,[5738]
+// 0x8567: cmp    ax,[5738] // ILEFT
 // 0x856b: jns    8570
 // 0x856d: or     dx,01
-// 0x8570: cmp    ax,[5745]
+// 0x8570: cmp    ax,[5745] // IRIGHT
 // 0x8574: jle    8579
 // 0x8576: or     dx,02
 // 0x8579: mov    ax,dx
@@ -19320,9 +19491,9 @@ void GetCOLOR() // @COLOR
 // 0x8580: loop   8553
 // 0x8582: xor    ax,ax
 // 0x8584: mov    al,bl
-// 0x8586: mov    [56E8],ax
+// 0x8586: mov    [56E8],ax // TRJCT
 // 0x858a: mov    al,bh
-// 0x858c: mov    [56DC],ax
+// 0x858c: mov    [56DC],ax // TACCPT
 // 0x8590: pop    si
 // 0x8591: pop    di
 // 0x8592: pop    bp
@@ -19336,15 +19507,15 @@ void GetCOLOR() // @COLOR
 // 0x8597: push   bp
 // 0x8598: push   si
 // 0x8599: push   di
-// 0x859a: mov    cx,[5710]
-// 0x859e: mov    si,[5714]
-// 0x85a2: mov    bp,[5704]
-// 0x85a6: mov    di,[5708]
-// 0x85aa: cmp    word ptr [56CF],01
+// 0x859a: mov    cx,[5710] // UNK_0x5710
+// 0x859e: mov    si,[5714] // UNK_0x5714
+// 0x85a2: mov    bp,[5704] // UNK_0x5704
+// 0x85a6: mov    di,[5708] // UNK_0x5708
+// 0x85aa: cmp    word ptr [56CF],01 // UNK_0x56cf
 // 0x85af: jnz    85B5
 // 0x85b1: xchg   cx,si
 // 0x85b3: xchg   bp,di
-// 0x85b5: mov    ax,[572C]
+// 0x85b5: mov    ax,[572C] // UNK_0x572c
 // 0x85b9: sub    ax,cx
 // 0x85bb: mov    bx,di
 // 0x85bd: sub    bx,si
@@ -19354,21 +19525,21 @@ void GetCOLOR() // @COLOR
 // 0x85c5: idiv   bx
 // 0x85c7: add    ax,si
 // 0x85c9: mov    dx,ax
-// 0x85cb: mov    cx,[572C]
-// 0x85cf: cmp    word ptr [56CF],01
+// 0x85cb: mov    cx,[572C] // UNK_0x572c
+// 0x85cf: cmp    word ptr [56CF],01 // UNK_0x56cf
 // 0x85d4: jnz    85D8
 // 0x85d6: xchg   cx,dx
 // 0x85d8: sub    ax,ax
-// 0x85da: cmp    cx,[5738]
+// 0x85da: cmp    cx,[5738] // ILEFT
 // 0x85de: jns    85E3
 // 0x85e0: or     ax,0001
-// 0x85e3: cmp    cx,[5745]
+// 0x85e3: cmp    cx,[5745] // IRIGHT
 // 0x85e7: jle    85EC
 // 0x85e9: or     ax,0002
-// 0x85ec: cmp    dx,[5752]
+// 0x85ec: cmp    dx,[5752] // IBELOW
 // 0x85f0: jns    85F5
 // 0x85f2: or     ax,0004
-// 0x85f5: cmp    dx,[575F]
+// 0x85f5: cmp    dx,[575F] // IABOVE
 // 0x85f9: jle    85FE
 // 0x85fb: or     ax,0008
 // 0x85fe: pop    di
@@ -19381,32 +19552,32 @@ void GetCOLOR() // @COLOR
 // ================================================
 // 0x8603: WORD 'CLIP' codep=0x1d29 parp=0x8605
 // ================================================
-// 0x8605: mov    word ptr [5691],0000
-// 0x860b: xchg   [56BF],si
-// 0x860f: xchg   [56C3],di
-// 0x8613: xchg   [56C7],bx
-// 0x8617: xchg   [56CB],bp
-// 0x861b: mov    si,[569B]
-// 0x861f: mov    di,[56A6]
-// 0x8623: mov    bx,[56B0]
-// 0x8627: mov    bp,[56BB]
-// 0x862b: mov    cx,[5686]
-// 0x862f: cmp    word ptr [56F4],01
+// 0x8605: mov    word ptr [5691],0000 // #OUT
+// 0x860b: xchg   [56BF],si // UNK_0x56bf
+// 0x860f: xchg   [56C3],di // UNK_0x56c3
+// 0x8613: xchg   [56C7],bx // UNK_0x56c7
+// 0x8617: xchg   [56CB],bp // UNK_0x56cb
+// 0x861b: mov    si,[569B] // VIN
+// 0x861f: mov    di,[56A6] // VOUT
+// 0x8623: mov    bx,[56B0] // OIN
+// 0x8627: mov    bp,[56BB] // OOUT
+// 0x862b: mov    cx,[5686] // #IN
+// 0x862f: cmp    word ptr [56F4],01 // ?OPEN
 // 0x8634: jnz    8666
 // 0x8636: mov    ax,[si]
-// 0x8638: mov    [5708],ax
+// 0x8638: mov    [5708],ax // UNK_0x5708
 // 0x863c: mov    ax,[si+02]
-// 0x863f: mov    [5704],ax
+// 0x863f: mov    [5704],ax // UNK_0x5704
 // 0x8643: mov    al,[bx]
-// 0x8645: mov    [570C],al
-// 0x8649: and    al,[5728]
+// 0x8645: mov    [570C],al // UNK_0x570c
+// 0x8649: and    al,[5728] // UNK_0x5728
 // 0x864d: jnz    865F
 // 0x864f: movsw
 // 0x8650: movsw
-// 0x8651: mov    al,[570C]
+// 0x8651: mov    al,[570C] // UNK_0x570c
 // 0x8655: mov    [bp+00],al
 // 0x8658: inc    bp
-// 0x8659: inc    word ptr [5691]
+// 0x8659: inc    word ptr [5691] // #OUT
 // 0x865d: jmp    8662
 // 0x865f: add    si,04
 // 0x8662: dec    cx
@@ -19415,54 +19586,54 @@ void GetCOLOR() // @COLOR
 // 0x8666: dec    cx
 // 0x8667: add    bx,cx
 // 0x8669: mov    al,[bx]
-// 0x866b: mov    [570C],al
+// 0x866b: mov    [570C],al // UNK_0x570c
 // 0x866f: sub    bx,cx
 // 0x8671: mov    ax,cx
 // 0x8673: shl    ax,1
 // 0x8675: shl    ax,1
 // 0x8677: add    si,ax
 // 0x8679: mov    dx,[si]
-// 0x867b: mov    [5708],dx
+// 0x867b: mov    [5708],dx // UNK_0x5708
 // 0x867f: mov    dx,[si+02]
-// 0x8682: mov    [5704],dx
+// 0x8682: mov    [5704],dx // UNK_0x5704
 // 0x8686: sub    si,ax
 // 0x8688: inc    cx
 // 0x8689: mov    ax,[si]
-// 0x868b: mov    [5714],ax
+// 0x868b: mov    [5714],ax // UNK_0x5714
 // 0x868f: mov    ax,[si+02]
-// 0x8692: mov    [5710],ax
+// 0x8692: mov    [5710],ax // UNK_0x5710
 // 0x8696: mov    al,[bx]
-// 0x8698: mov    [5718],al
+// 0x8698: mov    [5718],al // UNK_0x5718
 // 0x869c: inc    bx
-// 0x869d: mov    ax,[5728]
-// 0x86a1: and    al,[5718]
-// 0x86a5: and    ah,[570C]
+// 0x869d: mov    ax,[5728] // UNK_0x5728
+// 0x86a1: and    al,[5718] // UNK_0x5718
+// 0x86a5: and    ah,[570C] // UNK_0x570c
 // 0x86a9: cmp    ah,al
 // 0x86ab: jz     8709
 // 0x86ad: push   cx
 // 0x86ae: push   ax
 // 0x86af: xor    cx,cx
-// 0x86b1: mov    ax,[572C]
-// 0x86b5: cmp    word ptr [56CF],00
+// 0x86b1: mov    ax,[572C] // UNK_0x572c
+// 0x86b5: cmp    word ptr [56CF],00 // UNK_0x56cf
 // 0x86ba: jnz    86D2
-// 0x86bc: cmp    ax,[5710]
+// 0x86bc: cmp    ax,[5710] // UNK_0x5710
 // 0x86c0: jz     86C3
 // 0x86c2: inc    cx
-// 0x86c3: cmp    ax,[5704]
+// 0x86c3: cmp    ax,[5704] // UNK_0x5704
 // 0x86c7: jz     86CE
 // 0x86c9: and    cx,01
 // 0x86cc: jmp    86D0
 // 0x86ce: xor    cx,cx
 // 0x86d0: jmp    86E6
-// 0x86d2: cmp    ax,[5714]
+// 0x86d2: cmp    ax,[5714] // UNK_0x5714
 // 0x86d6: jz     86D9
 // 0x86d8: inc    cx
-// 0x86d9: cmp    ax,[5708]
+// 0x86d9: cmp    ax,[5708] // UNK_0x5708
 // 0x86dd: jz     86E4
 // 0x86df: and    cx,01
 // 0x86e2: jmp    86E6
 // 0x86e4: xor    cx,cx
-// 0x86e6: cmp    word ptr [56F4],01
+// 0x86e6: cmp    word ptr [56F4],01 // ?OPEN
 // 0x86eb: jnz    86EE
 // 0x86ed: inc    cx
 // 0x86ee: or     cx,cx
@@ -19474,42 +19645,42 @@ void GetCOLOR() // @COLOR
 // 0x86fc: add    di,02
 // 0x86ff: mov    [bp+00],ax
 // 0x8702: inc    bp
-// 0x8703: inc    word ptr [5691]
+// 0x8703: inc    word ptr [5691] // #OUT
 // 0x8707: pop    ax
 // 0x8708: pop    cx
 // 0x8709: or     al,al
 // 0x870b: jnz    871D
 // 0x870d: movsw
 // 0x870e: movsw
-// 0x870f: mov    dl,[5718]
+// 0x870f: mov    dl,[5718] // UNK_0x5718
 // 0x8713: mov    [bp+00],dl
 // 0x8716: inc    bp
-// 0x8717: inc    word ptr [5691]
+// 0x8717: inc    word ptr [5691] // #OUT
 // 0x871b: jmp    8720
 // 0x871d: add    si,04
-// 0x8720: mov    ax,[5714]
-// 0x8724: mov    [5708],ax
-// 0x8728: mov    ax,[5710]
-// 0x872c: mov    [5704],ax
-// 0x8730: mov    al,[5718]
-// 0x8734: mov    [570C],al
+// 0x8720: mov    ax,[5714] // UNK_0x5714
+// 0x8724: mov    [5708],ax // UNK_0x5708
+// 0x8728: mov    ax,[5710] // UNK_0x5710
+// 0x872c: mov    [5704],ax // UNK_0x5704
+// 0x8730: mov    al,[5718] // UNK_0x5718
+// 0x8734: mov    [570C],al // UNK_0x570c
 // 0x8738: dec    cx
 // 0x8739: jz     873E
 // 0x873b: jmp    8689
-// 0x873e: mov    ax,[569B]
-// 0x8742: mov    cx,[56A6]
-// 0x8746: mov    [56A6],ax
-// 0x874a: mov    [569B],cx
-// 0x874e: mov    ax,[56B0]
-// 0x8752: mov    cx,[56BB]
-// 0x8756: mov    [56BB],ax
-// 0x875a: mov    [56B0],cx
-// 0x875e: mov    ax,[5691]
-// 0x8762: mov    [5686],ax
-// 0x8766: xchg   [56BF],si
-// 0x876a: xchg   [56C3],di
-// 0x876e: xchg   [56C7],bx
-// 0x8772: xchg   [56CB],bp
+// 0x873e: mov    ax,[569B] // VIN
+// 0x8742: mov    cx,[56A6] // VOUT
+// 0x8746: mov    [56A6],ax // VOUT
+// 0x874a: mov    [569B],cx // VIN
+// 0x874e: mov    ax,[56B0] // OIN
+// 0x8752: mov    cx,[56BB] // OOUT
+// 0x8756: mov    [56BB],ax // OOUT
+// 0x875a: mov    [56B0],cx // OIN
+// 0x875e: mov    ax,[5691] // #OUT
+// 0x8762: mov    [5686],ax // #IN
+// 0x8766: xchg   [56BF],si // UNK_0x56bf
+// 0x876a: xchg   [56C3],di // UNK_0x56c3
+// 0x876e: xchg   [56C7],bx // UNK_0x56c7
+// 0x8772: xchg   [56CB],bp // UNK_0x56cb
 // 0x8776: ret    
 
 
@@ -19518,12 +19689,12 @@ void GetCOLOR() // @COLOR
 // ================================================
 // 0x8783: push   di
 // 0x8784: call   8538
-// 0x8787: mov    ax,[56E8]
+// 0x8787: mov    ax,[56E8] // TRJCT
 // 0x878b: or     ax,ax
 // 0x878d: jz     8797
-// 0x878f: mov    word ptr [5686],0000
+// 0x878f: mov    word ptr [5686],0000 // #IN
 // 0x8795: jmp    87D9
-// 0x8797: mov    ax,[56DC]
+// 0x8797: mov    ax,[56DC] // TACCPT
 // 0x879b: or     ax,ax
 // 0x879d: jz     87D9
 // 0x879f: mov    di,5253
@@ -19531,14 +19702,14 @@ void GetCOLOR() // @COLOR
 // 0x87a5: mov    dx,[di]
 // 0x87a7: test   dl,al
 // 0x87a9: jz     87D4
-// 0x87ab: mov    [5728],dx
+// 0x87ab: mov    [5728],dx // UNK_0x5728
 // 0x87af: add    di,02
 // 0x87b2: xor    dx,dx
 // 0x87b4: mov    dl,[di]
-// 0x87b6: mov    [56CF],dx
+// 0x87b6: mov    [56CF],dx // UNK_0x56cf
 // 0x87ba: inc    di
 // 0x87bb: mov    dx,[di]
-// 0x87bd: mov    [572C],dx
+// 0x87bd: mov    [572C],dx // UNK_0x572c
 // 0x87c1: add    di,02
 // 0x87c4: push   ax
 // 0x87c5: push   cx
@@ -19559,28 +19730,28 @@ void GetCOLOR() // @COLOR
 // ================================================
 // 0x87df: WORD 'SCANCON' codep=0x1d29 parp=0x87e1
 // ================================================
-// 0x87e1: push   word ptr [5710]
-// 0x87e5: mov    ax,[5708]
-// 0x87e9: mov    cx,[5714]
+// 0x87e1: push   word ptr [5710] // UNK_0x5710
+// 0x87e5: mov    ax,[5708] // UNK_0x5708
+// 0x87e9: mov    cx,[5714] // UNK_0x5714
 // 0x87ed: push   cx
 // 0x87ee: cmp    cx,ax
 // 0x87f0: jns    880A
-// 0x87f2: mov    [5708],cx
-// 0x87f6: mov    [5714],ax
-// 0x87fa: mov    cx,[5704]
-// 0x87fe: mov    ax,[5710]
-// 0x8802: mov    [5704],ax
-// 0x8806: mov    [5710],cx
+// 0x87f2: mov    [5708],cx // UNK_0x5708
+// 0x87f6: mov    [5714],ax // UNK_0x5714
+// 0x87fa: mov    cx,[5704] // UNK_0x5704
+// 0x87fe: mov    ax,[5710] // UNK_0x5710
+// 0x8802: mov    [5704],ax // UNK_0x5704
+// 0x8806: mov    [5710],cx // UNK_0x5710
 // 0x880a: mov    bl,C3
-// 0x880c: mov    ax,[5710]
-// 0x8810: sub    ax,[5704]
+// 0x880c: mov    ax,[5710] // UNK_0x5710
+// 0x8810: sub    ax,[5704] // UNK_0x5704
 // 0x8814: jge    881A
 // 0x8816: mov    bl,CB
 // 0x8818: neg    ax
 // 0x881a: mov    cx,ax
 // 0x881c: mov    bh,C7
-// 0x881e: mov    ax,[5714]
-// 0x8822: sub    ax,[5708]
+// 0x881e: mov    ax,[5714] // UNK_0x5714
+// 0x8822: sub    ax,[5708] // UNK_0x5708
 // 0x8826: mov    dx,ax
 // 0x8828: cmp    dx,cx
 // 0x882a: jge    8830
@@ -19598,13 +19769,13 @@ void GetCOLOR() // @COLOR
 // 0x8848: mov    [di],dx
 // 0x884a: add    di,03
 // 0x884d: mov    [di],bl
-// 0x884f: mov    bl,[5704]
-// 0x8853: mov    bh,[5708]
+// 0x884f: mov    bl,[5704] // UNK_0x5704
+// 0x8853: mov    bh,[5708] // UNK_0x5708
 // 0x8857: xor    cx,cx
 // 0x8859: xor    ax,ax
 // 0x885b: mov    al,bh
 // 0x885d: shl    ax,1
-// 0x885f: add    ax,[57E1]
+// 0x885f: add    ax,[57E1] // UNK_0x57e1
 // 0x8863: mov    di,ax
 // 0x8865: mov    [di],bl
 // 0x8867: inc    bh
@@ -19615,8 +19786,8 @@ void GetCOLOR() // @COLOR
 // 0x8877: inc    bl
 // 0x8879: dec    dx
 // 0x887a: jge    8859
-// 0x887c: pop    word ptr [5714]
-// 0x8880: pop    word ptr [5710]
+// 0x887c: pop    word ptr [5714] // UNK_0x5714
+// 0x8880: pop    word ptr [5710] // UNK_0x5710
 // 0x8884: ret    
 
 
@@ -19625,82 +19796,82 @@ void GetCOLOR() // @COLOR
 // ================================================
 // 0x8891: push   di
 // 0x8892: xor    cx,cx
-// 0x8894: mov    [57FB],cx
-// 0x8898: mov    [57DD],cx
-// 0x889c: mov    di,[569B]
-// 0x88a0: mov    ax,[5686]
+// 0x8894: mov    [57FB],cx // UNK_0x57fb
+// 0x8898: mov    [57DD],cx // UNK_0x57dd
+// 0x889c: mov    di,[569B] // VIN
+// 0x88a0: mov    ax,[5686] // #IN
 // 0x88a4: dec    ax
 // 0x88a5: shl    ax,1
 // 0x88a7: shl    ax,1
 // 0x88a9: add    di,ax
 // 0x88ab: mov    cx,[di]
-// 0x88ad: mov    [5708],cx
+// 0x88ad: mov    [5708],cx // UNK_0x5708
 // 0x88b1: add    di,02
 // 0x88b4: mov    cx,[di]
-// 0x88b6: mov    [5704],cx
-// 0x88ba: mov    di,[569B]
+// 0x88b6: mov    [5704],cx // UNK_0x5704
+// 0x88ba: mov    di,[569B] // VIN
 // 0x88be: mov    cx,[di]
-// 0x88c0: mov    [57EC],cx
-// 0x88c4: mov    [57F7],cx
-// 0x88c8: mov    cx,[5686]
+// 0x88c0: mov    [57EC],cx // YMIN
+// 0x88c4: mov    [57F7],cx // YMAX
+// 0x88c8: mov    cx,[5686] // #IN
 // 0x88cc: mov    ax,[di]
-// 0x88ce: mov    [5714],ax
+// 0x88ce: mov    [5714],ax // UNK_0x5714
 // 0x88d2: add    di,02
 // 0x88d5: mov    bx,[di]
-// 0x88d7: mov    [5710],bx
+// 0x88d7: mov    [5710],bx // UNK_0x5710
 // 0x88db: add    di,02
-// 0x88de: mov    dx,[5708]
+// 0x88de: mov    dx,[5708] // UNK_0x5708
 // 0x88e2: cmp    ax,dx
 // 0x88e4: jnz    88FF
-// 0x88e6: inc    word ptr [57FB]
-// 0x88ea: cmp    bx,[5704]
+// 0x88e6: inc    word ptr [57FB] // UNK_0x57fb
+// 0x88ea: cmp    bx,[5704] // UNK_0x5704
 // 0x88ee: jns    88F7
-// 0x88f0: push   word ptr [5704]
+// 0x88f0: push   word ptr [5704] // UNK_0x5704
 // 0x88f4: push   bx
 // 0x88f5: jmp    88FC
 // 0x88f7: push   bx
-// 0x88f8: push   word ptr [5704]
+// 0x88f8: push   word ptr [5704] // UNK_0x5704
 // 0x88fc: push   ax
 // 0x88fd: jmp    8937
-// 0x88ff: mov    dx,[57EC]
+// 0x88ff: mov    dx,[57EC] // YMIN
 // 0x8903: cmp    dx,ax
 // 0x8905: jle    890D
-// 0x8907: mov    [57EC],ax
+// 0x8907: mov    [57EC],ax // YMIN
 // 0x890b: jmp    8919
-// 0x890d: mov    dx,[57F7]
+// 0x890d: mov    dx,[57F7] // YMAX
 // 0x8911: cmp    dx,ax
 // 0x8913: jns    8919
-// 0x8915: mov    [57F7],ax
+// 0x8915: mov    [57F7],ax // YMAX
 // 0x8919: xor    dx,dx
-// 0x891b: mov    bx,[5708]
+// 0x891b: mov    bx,[5708] // UNK_0x5708
 // 0x891f: cmp    bx,ax
 // 0x8921: jle    8924
 // 0x8923: inc    dx
-// 0x8924: mov    [57DD],dx
-// 0x8928: add    dx,[57D9]
-// 0x892c: mov    [57E1],dx
+// 0x8924: mov    [57DD],dx // UNK_0x57dd
+// 0x8928: add    dx,[57D9] // SCAN
+// 0x892c: mov    [57E1],dx // UNK_0x57e1
 // 0x8930: push   cx
 // 0x8931: push   di
 // 0x8932: call   87E1
 // 0x8935: pop    di
 // 0x8936: pop    cx
-// 0x8937: mov    ax,[5714]
-// 0x893b: mov    [5708],ax
-// 0x893f: mov    ax,[5710]
-// 0x8943: mov    [5704],ax
+// 0x8937: mov    ax,[5714] // UNK_0x5714
+// 0x893b: mov    [5708],ax // UNK_0x5708
+// 0x893f: mov    ax,[5710] // UNK_0x5710
+// 0x8943: mov    [5704],ax // UNK_0x5704
 // 0x8947: dec    cx
 // 0x8948: jz     894D
 // 0x894a: jmp    88CC
-// 0x894d: cmp    [57FB],cx
+// 0x894d: cmp    [57FB],cx // UNK_0x57fb
 // 0x8951: jle    898F
 // 0x8953: mov    ax,0900
-// 0x8956: mov    [5708],ax
-// 0x895a: mov    cx,[57FB]
+// 0x8956: mov    [5708],ax // UNK_0x5708
+// 0x895a: mov    cx,[57FB] // UNK_0x57fb
 // 0x895e: pop    dx
 // 0x895f: mov    di,dx
 // 0x8961: shl    di,1
-// 0x8963: add    di,[57D9]
-// 0x8967: cmp    dx,[5708]
+// 0x8963: add    di,[57D9] // SCAN
+// 0x8967: cmp    dx,[5708] // UNK_0x5708
 // 0x896b: jnz    8982
 // 0x896d: pop    ax
 // 0x896e: mov    ah,[di]
@@ -19714,7 +19885,7 @@ void GetCOLOR() // @COLOR
 // 0x897c: jle    8980
 // 0x897e: mov    [di],al
 // 0x8980: jmp    898D
-// 0x8982: mov    [5708],dx
+// 0x8982: mov    [5708],dx // UNK_0x5708
 // 0x8986: pop    ax
 // 0x8987: mov    [di],al
 // 0x8989: pop    ax
@@ -20101,10 +20272,10 @@ void _gt_HIDDEN() // >HIDDEN
 // ================================================
 // 0x8d09: mov    dx,03DA
 // 0x8d0c: mov    ax,0004
-// 0x8d0f: sub    ax,[584A]
+// 0x8d0f: sub    ax,[584A] // MONITOR
 // 0x8d13: jnz    8D18
 // 0x8d15: mov    dx,03BA
-// 0x8d18: mov    ax,[5DA3]
+// 0x8d18: mov    ax,[5DA3] // ?EGA
 // 0x8d1c: test   ax,00FF
 // 0x8d1f: jz     8D26
 // 0x8d21: mov    cx,0008
@@ -20172,12 +20343,12 @@ void _gt_MONO() // >MONO
 // ================================================
 // 0x8d8b: push   si
 // 0x8d8c: push   di
-// 0x8d8d: mov    di,[584A]
+// 0x8d8d: mov    di,[584A] // MONITOR
 // 0x8d91: cmp    di,04
 // 0x8d94: jnz    8D9B
 // 0x8d96: call   8CA6
 // 0x8d99: jmp    8DE7
-// 0x8d9b: mov    ax,[5DA3]
+// 0x8d9b: mov    ax,[5DA3] // ?EGA
 // 0x8d9f: test   ax,00FF
 // 0x8da2: jz     8DB5
 // 0x8da4: call   8CEB
@@ -20192,7 +20363,7 @@ void _gt_MONO() // >MONO
 // 0x8db5: mov    dx,03D4
 // 0x8db8: mov    si,8C5C
 // 0x8dbb: call   8C41
-// 0x8dbe: cmp    word ptr [84EC],01
+// 0x8dbe: cmp    word ptr [84EC],01 // ?TANDRG
 // 0x8dc3: jnz    8DCA
 // 0x8dc5: call   8D48
 // 0x8dc8: jmp    8DCD
@@ -20220,7 +20391,7 @@ void _gt_MONO() // >MONO
 // ================================================
 // 0x8df0: push   si
 // 0x8df1: push   di
-// 0x8df2: mov    di,[584A]
+// 0x8df2: mov    di,[584A] // MONITOR
 // 0x8df6: cmp    di,04
 // 0x8df9: jnz    8E00
 // 0x8dfb: call   8CCD
@@ -20432,7 +20603,7 @@ void SCR_dash_RES() // SCR-RES
 // 0x8f54: xchg   ah,al
 // 0x8f56: out    dx,al
 // 0x8f57: mov    dx,03CE
-// 0x8f5a: mov    ah,[55F2]
+// 0x8f5a: mov    ah,[55F2] // COLOR
 // 0x8f5e: mov    al,00
 // 0x8f60: out    dx,al
 // 0x8f61: inc    dx
@@ -20445,10 +20616,10 @@ void SCR_dash_RES() // SCR-RES
 // 0x8f6b: inc    dx
 // 0x8f6c: xchg   ah,al
 // 0x8f6e: out    dx,al
-// 0x8f6f: mov    ax,[5648]
+// 0x8f6f: mov    ax,[5648] // BUF-SEG
 // 0x8f73: mov    es,ax
 // 0x8f75: mov    di,0000
-// 0x8f78: mov    cx,[5656]
+// 0x8f78: mov    cx,[5656] // BUF-CNT
 // 0x8f7c: repz   
 // 0x8f7d: stosb
 // 0x8f7e: pop    di
@@ -20459,18 +20630,18 @@ void SCR_dash_RES() // SCR-RES
 // ================================================
 // 0x8f81: WORD 'BFILL' codep=0x8f8b parp=0x8f8b
 // ================================================
-// 0x8f8b: mov    ax,[5DA3]
+// 0x8f8b: mov    ax,[5DA3] // ?EGA
 // 0x8f8f: test   ax,00FF
 // 0x8f92: jz     8F99
 // 0x8f94: call   8F3D
 // 0x8f97: jmp    8FB3
 // 0x8f99: push   di
-// 0x8f9a: mov    ax,[55F2]
+// 0x8f9a: mov    ax,[55F2] // COLOR
 // 0x8f9e: mov    ah,al
 // 0x8fa0: push   es
-// 0x8fa1: mov    cx,[5648]
+// 0x8fa1: mov    cx,[5648] // BUF-SEG
 // 0x8fa5: mov    es,cx
-// 0x8fa7: mov    cx,[5656]
+// 0x8fa7: mov    cx,[5656] // BUF-CNT
 // 0x8fab: shr    cx,1
 // 0x8fad: xor    di,di
 // 0x8faf: repz   
@@ -20823,11 +20994,11 @@ void LOAD_dash_CO() // LOAD-CO
 // ================================================
 // 0x9300: WORD '(PLOT)' codep=0x1d29 parp=0x930b
 // ================================================
-// 0x930b: pop    word ptr [5663]
+// 0x930b: pop    word ptr [5663] // RETURN
 // 0x930f: pop    dx
 // 0x9310: pop    ax
 // 0x9311: shl    dx,1
-// 0x9313: add    dx,[563A]
+// 0x9313: add    dx,[563A] // YTABL
 // 0x9317: push   dx
 // 0x9318: push   ax
 // 0x9319: and    ax,0003
@@ -20842,7 +21013,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x932b: add    ax,[bx]
 // 0x932d: mov    bx,ax
 // 0x932f: push   es
-// 0x9330: mov    cx,[5648]
+// 0x9330: mov    cx,[5648] // BUF-SEG
 // 0x9334: mov    es,cx
 // 0x9336: mov    ax,dx
 // 0x9338: xchg   ah,al
@@ -20853,7 +21024,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x9341: xchg   ah,al
 // 0x9343: out    dx,al
 // 0x9344: mov    dx,03CE
-// 0x9347: mov    ah,[55F2]
+// 0x9347: mov    ah,[55F2] // COLOR
 // 0x934b: mov    al,00
 // 0x934d: out    dx,al
 // 0x934e: inc    dx
@@ -20864,7 +21035,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x9355: es:    
 // 0x9356: mov    [bx],al
 // 0x9358: pop    es
-// 0x9359: push   word ptr [5663]
+// 0x9359: push   word ptr [5663] // RETURN
 // 0x935d: ret    
 
 
@@ -20880,7 +21051,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x936f: WORD 'SETCOLO' codep=0x937b parp=0x937b
 // ================================================
 // 0x937b: mov    dx,03CE
-// 0x937e: mov    ah,[55F2]
+// 0x937e: mov    ah,[55F2] // COLOR
 // 0x9382: mov    al,00
 // 0x9384: out    dx,al
 // 0x9385: inc    dx
@@ -20893,13 +21064,13 @@ void LOAD_dash_CO() // LOAD-CO
 // ================================================
 // 0x938e: WORD '?EXTENTX' codep=0x9390 parp=0x9390
 // ================================================
-// 0x9390: mov    bx,[569B]
+// 0x9390: mov    bx,[569B] // VIN
 // 0x9394: mov    cx,0004
 // 0x9397: pop    word ptr [bx]
 // 0x9399: add    bx,02
 // 0x939c: loop   9397
 // 0x939e: mov    bx,0002
-// 0x93a1: mov    [5686],bx
+// 0x93a1: mov    [5686],bx // #IN
 // 0x93a5: push   di
 // 0x93a6: call   8538
 // 0x93a9: pop    di
@@ -20910,16 +21081,16 @@ void LOAD_dash_CO() // LOAD-CO
 // ================================================
 // 0x93af: WORD 'UNK_0x93b1' codep=0x93b1 parp=0x93b1
 // ================================================
-// 0x93b1: push   word ptr [586E]
-// 0x93b5: mov    ax,[5863]
-// 0x93b9: sub    ax,[5887]
+// 0x93b1: push   word ptr [586E] // XBLT
+// 0x93b5: mov    ax,[5863] // YBLT
+// 0x93b9: sub    ax,[5887] // LBLT
 // 0x93bd: inc    ax
 // 0x93be: push   ax
-// 0x93bf: mov    ax,[586E]
-// 0x93c3: add    ax,[5892]
+// 0x93bf: mov    ax,[586E] // XBLT
+// 0x93c3: add    ax,[5892] // WBLT
 // 0x93c7: dec    ax
 // 0x93c8: push   ax
-// 0x93c9: push   word ptr [5863]
+// 0x93c9: push   word ptr [5863] // YBLT
 // 0x93cd: lodsw
 // 0x93ce: mov    bx,ax
 // 0x93d0: jmp    word ptr [bx]
@@ -21302,13 +21473,13 @@ void SET_dash_COLORMAP() // SET-COLORMAP
 // 0x97d6: shr    bx,1
 // 0x97d8: and    bx,38
 // 0x97db: add    bx,6A3F
-// 0x97df: mov    [58CD],bx
+// 0x97df: mov    [58CD],bx // TILE-PTR
 // 0x97e3: xor    ax,ax
 // 0x97e5: mov    al,[bx]
-// 0x97e7: mov    [55F2],ax
+// 0x97e7: mov    [55F2],ax // COLOR
 // 0x97eb: add    bx,02
 // 0x97ee: mov    al,[bx]
-// 0x97f0: mov    [55FF],ax
+// 0x97f0: mov    [55FF],ax // DCOLOR
 // 0x97f4: lodsw
 // 0x97f5: mov    bx,ax
 // 0x97f7: jmp    word ptr [bx]
@@ -21352,19 +21523,19 @@ void StoreXYSEED() // !XYSEED
 // 0x9842: pop    ax
 // 0x9843: pop    dx
 // 0x9844: pop    bx
-// 0x9845: sub    dx,[4E53]
+// 0x9845: sub    dx,[4E53] // YLL
 // 0x9849: inc    dx
 // 0x984a: or     cx,cx
 // 0x984c: jz     9850
 // 0x984e: shl    dx,cl
-// 0x9850: add    dx,[596B]
+// 0x9850: add    dx,[596B] // YLLDEST
 // 0x9854: dec    dx
-// 0x9855: sub    bx,[4E49]
+// 0x9855: sub    bx,[4E49] // XLL
 // 0x9859: mov    cx,ax
 // 0x985b: or     cx,cx
 // 0x985d: jz     9861
 // 0x985f: shl    bx,cl
-// 0x9861: add    bx,[595D]
+// 0x9861: add    bx,[595D] // XLLDEST
 // 0x9865: push   bx
 // 0x9866: push   dx
 // 0x9867: lodsw
@@ -21489,17 +21660,17 @@ void DrawREGION_plus_() // .REGION+
 // ================================================
 // 0x992d: sub    ax,ax
 // 0x992f: pop    dx
-// 0x9930: cmp    dx,[5B31]
+// 0x9930: cmp    dx,[5B31] // BVIS
 // 0x9934: jns    9939
 // 0x9936: or     ax,0004
-// 0x9939: cmp    dx,[5B22]
+// 0x9939: cmp    dx,[5B22] // UNK_0x5b22
 // 0x993d: jle    9942
 // 0x993f: or     ax,0008
 // 0x9942: pop    dx
-// 0x9943: cmp    dx,[5B3C]
+// 0x9943: cmp    dx,[5B3C] // LVIS
 // 0x9947: jns    994C
 // 0x9949: or     ax,0001
-// 0x994c: cmp    dx,[5B26]
+// 0x994c: cmp    dx,[5B26] // UNK_0x5b26
 // 0x9950: jle    9955
 // 0x9952: or     ax,0002
 // 0x9955: or     ax,ax
@@ -21516,22 +21687,22 @@ void DrawREGION_plus_() // .REGION+
 // 0x9964: WORD 'WLD>SCR' codep=0x9970 parp=0x9970
 // ================================================
 // 0x9970: pop    ax
-// 0x9971: sub    ax,[5B31]
-// 0x9975: mov    cx,[6221]
+// 0x9971: sub    ax,[5B31] // BVIS
+// 0x9975: mov    cx,[6221] // YWLD:YPIX
 // 0x9979: imul   cx
-// 0x997b: mov    cx,[6223]
+// 0x997b: mov    cx,[6223] // YWLD:YPIX
 // 0x997f: idiv   cx
-// 0x9981: add    ax,[596B]
-// 0x9985: mov    [48C6],ax
+// 0x9981: add    ax,[596B] // YLLDEST
+// 0x9985: mov    [48C6],ax // ZZZ
 // 0x9989: pop    ax
-// 0x998a: sub    ax,[5B3C]
-// 0x998e: mov    cx,[6211]
+// 0x998a: sub    ax,[5B3C] // LVIS
+// 0x998e: mov    cx,[6211] // XWLD:XPIX
 // 0x9992: imul   cx
-// 0x9994: mov    cx,[6213]
+// 0x9994: mov    cx,[6213] // XWLD:XPIX
 // 0x9998: idiv   cx
-// 0x999a: add    ax,[595D]
+// 0x999a: add    ax,[595D] // XLLDEST
 // 0x999e: push   ax
-// 0x999f: push   word ptr [48C6]
+// 0x999f: push   word ptr [48C6] // ZZZ
 // 0x99a3: lodsw
 // 0x99a4: mov    bx,ax
 // 0x99a6: jmp    word ptr [bx]
@@ -21541,9 +21712,9 @@ void DrawREGION_plus_() // .REGION+
 // ================================================
 // 0x99b4: pop    ax
 // 0x99b5: add    ax,0007
-// 0x99b8: sub    ax,[5A4E]
+// 0x99b8: sub    ax,[5A4E] // UNK_0x5a4e
 // 0x99bc: pop    cx
-// 0x99bd: sub    cx,[5A4E]
+// 0x99bd: sub    cx,[5A4E] // UNK_0x5a4e
 // 0x99c1: push   cx
 // 0x99c2: push   ax
 // 0x99c3: lodsw
@@ -21653,7 +21824,7 @@ void _gt_3ICONF() // >3ICONF
 // 0x9a6c: pop    ax
 // 0x9a6d: push   es
 // 0x9a6e: mov    es,ax
-// 0x9a70: mov    bx,[5A02]
+// 0x9a70: mov    bx,[5A02] // IINDEX
 // 0x9a74: shl    bx,1
 // 0x9a76: es:    
 // 0x9a77: mov    ax,[bx]
@@ -21669,7 +21840,7 @@ void _gt_3ICONF() // >3ICONF
 // 0x9a82: pop    ax
 // 0x9a83: push   es
 // 0x9a84: mov    es,ax
-// 0x9a86: mov    bx,[5A02]
+// 0x9a86: mov    bx,[5A02] // IINDEX
 // 0x9a8a: xor    ax,ax
 // 0x9a8c: es:    
 // 0x9a8d: mov    al,[bx]
@@ -21686,7 +21857,7 @@ void _gt_3ICONF() // >3ICONF
 // 0x9a9f: pop    cx
 // 0x9aa0: push   es
 // 0x9aa1: mov    es,ax
-// 0x9aa3: mov    bx,[5A02]
+// 0x9aa3: mov    bx,[5A02] // IINDEX
 // 0x9aa7: shl    bx,1
 // 0x9aa9: es:    
 // 0x9aaa: mov    [bx],cx
@@ -21702,7 +21873,7 @@ void _gt_3ICONF() // >3ICONF
 // 0x9abb: pop    cx
 // 0x9abc: push   es
 // 0x9abd: mov    es,ax
-// 0x9abf: mov    bx,[5A02]
+// 0x9abf: mov    bx,[5A02] // IINDEX
 // 0x9ac3: es:    
 // 0x9ac4: mov    [bx],cl
 // 0x9ac6: pop    es
@@ -22105,39 +22276,39 @@ void DrawLOCAL_dash_ICONS() // .LOCAL-ICONS
 // 0x9d16: WORD 'UNK_0x9d18' codep=0x9d18 parp=0x9d18
 // ================================================
 // 0x9d18: pop    cx
-// 0x9d19: pop    word ptr [5B04]
-// 0x9d1d: pop    word ptr [5B00]
-// 0x9d21: pop    word ptr [5AFC]
-// 0x9d25: pop    word ptr [5AF8]
+// 0x9d19: pop    word ptr [5B04] // UNK_0x5b04
+// 0x9d1d: pop    word ptr [5B00] // UNK_0x5b00
+// 0x9d21: pop    word ptr [5AFC] // UNK_0x5afc
+// 0x9d25: pop    word ptr [5AF8] // UNK_0x5af8
 // 0x9d29: xor    ax,ax
 // 0x9d2b: push   ax
 // 0x9d2c: or     cx,cx
 // 0x9d2e: jle    9D71
 // 0x9d30: mov    bx,cx
 // 0x9d32: dec    bx
-// 0x9d33: add    bx,[5B04]
+// 0x9d33: add    bx,[5B04] // UNK_0x5b04
 // 0x9d37: shl    bx,1
 // 0x9d39: push   es
-// 0x9d3a: push   word ptr [59BE]
+// 0x9d3a: push   word ptr [59BE] // UNK_0x59be
 // 0x9d3e: pop    es
 // 0x9d3f: es:    
 // 0x9d40: mov    dx,[bx]
 // 0x9d42: pop    es
-// 0x9d43: sub    dx,[5AF8]
+// 0x9d43: sub    dx,[5AF8] // UNK_0x5af8
 // 0x9d47: jns    9D4B
 // 0x9d49: neg    dx
-// 0x9d4b: cmp    dx,[5B00]
+// 0x9d4b: cmp    dx,[5B00] // UNK_0x5b00
 // 0x9d4f: jg     9D6F
 // 0x9d51: push   es
-// 0x9d52: push   word ptr [59C2]
+// 0x9d52: push   word ptr [59C2] // UNK_0x59c2
 // 0x9d56: pop    es
 // 0x9d57: es:    
 // 0x9d58: mov    dx,[bx]
 // 0x9d5a: pop    es
-// 0x9d5b: sub    dx,[5AFC]
+// 0x9d5b: sub    dx,[5AFC] // UNK_0x5afc
 // 0x9d5f: jns    9D63
 // 0x9d61: neg    dx
-// 0x9d63: cmp    dx,[5B00]
+// 0x9d63: cmp    dx,[5B00] // UNK_0x5b00
 // 0x9d67: jg     9D6F
 // 0x9d69: pop    ax
 // 0x9d6a: shr    bx,1
@@ -22239,24 +22410,24 @@ void IsICON_eq_I() // ?ICON=I
 // 0x9e14: pop    ax
 // 0x9e15: pop    bx
 // 0x9e16: push   es
-// 0x9e17: push   word ptr [59C6]
+// 0x9e17: push   word ptr [59C6] // UNK_0x59c6
 // 0x9e1b: pop    es
 // 0x9e1c: call   49CA
-// 0x9e1f: push   word ptr [59CA]
+// 0x9e1f: push   word ptr [59CA] // UNK_0x59ca
 // 0x9e23: pop    es
 // 0x9e24: call   49CA
-// 0x9e27: push   word ptr [59DA]
+// 0x9e27: push   word ptr [59DA] // IHSEG
 // 0x9e2b: pop    es
 // 0x9e2c: call   49CA
 // 0x9e2f: shl    ax,1
 // 0x9e31: shl    bx,1
-// 0x9e33: push   word ptr [59BE]
+// 0x9e33: push   word ptr [59BE] // UNK_0x59be
 // 0x9e37: pop    es
 // 0x9e38: call   2F36
-// 0x9e3b: push   word ptr [59C2]
+// 0x9e3b: push   word ptr [59C2] // UNK_0x59c2
 // 0x9e3f: pop    es
 // 0x9e40: call   2F36
-// 0x9e43: push   word ptr [59CE]
+// 0x9e43: push   word ptr [59CE] // UNK_0x59ce
 // 0x9e47: pop    es
 // 0x9e48: call   2F36
 // 0x9e4b: pop    es
@@ -22325,25 +22496,25 @@ void _dash_ICON() // -ICON
 // 0x9eaf: WORD 'UNK_0x9eb1' codep=0x9eb1 parp=0x9eb1
 // ================================================
 // 0x9eb1: pop    cx
-// 0x9eb2: pop    word ptr [5B04]
+// 0x9eb2: pop    word ptr [5B04] // UNK_0x5b04
 // 0x9eb6: pop    dx
-// 0x9eb7: pop    word ptr [48C8]
+// 0x9eb7: pop    word ptr [48C8] // ZZZ
 // 0x9ebb: xor    ax,ax
 // 0x9ebd: push   es
-// 0x9ebe: pop    word ptr [48C6]
-// 0x9ec2: push   word ptr [59C6]
+// 0x9ebe: pop    word ptr [48C6] // ZZZ
+// 0x9ec2: push   word ptr [59C6] // UNK_0x59c6
 // 0x9ec6: pop    es
 // 0x9ec7: push   ax
 // 0x9ec8: or     cx,cx
 // 0x9eca: jle    9EE8
 // 0x9ecc: mov    bx,cx
 // 0x9ece: dec    bx
-// 0x9ecf: add    bx,[5B04]
+// 0x9ecf: add    bx,[5B04] // UNK_0x5b04
 // 0x9ed3: es:    
 // 0x9ed4: mov    al,[bx]
 // 0x9ed6: cmp    ax,dx
 // 0x9ed8: jns    9EE6
-// 0x9eda: cmp    ax,[48C8]
+// 0x9eda: cmp    ax,[48C8] // ZZZ
 // 0x9ede: jle    9EE6
 // 0x9ee0: pop    ax
 // 0x9ee1: push   bx
@@ -22351,7 +22522,7 @@ void _dash_ICON() // -ICON
 // 0x9ee3: push   ax
 // 0x9ee4: xor    ax,ax
 // 0x9ee6: loop   9ECC
-// 0x9ee8: push   word ptr [48C6]
+// 0x9ee8: push   word ptr [48C6] // ZZZ
 // 0x9eec: pop    es
 // 0x9eed: lodsw
 // 0x9eee: mov    bx,ax

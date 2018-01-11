@@ -616,15 +616,15 @@ void UNK_0xe8c6() // UNK_0xe8c6
 // ================================================
 // 0xe8f3: pop    ax
 // 0xe8f4: add    ax,0003
-// 0xe8f7: mov    [5863],ax
+// 0xe8f7: mov    [5863],ax // YBLT
 // 0xe8fb: pop    ax
 // 0xe8fc: add    ax,0006
-// 0xe8ff: mov    [586E],ax
-// 0xe903: mov    word ptr [5892],0004
-// 0xe909: mov    word ptr [5887],0006
-// 0xe90f: mov    word ptr [589D],E8E5
+// 0xe8ff: mov    [586E],ax // XBLT
+// 0xe903: mov    word ptr [5892],0004 // WBLT
+// 0xe909: mov    word ptr [5887],0006 // LBLT
+// 0xe90f: mov    word ptr [589D],E8E5 // ABLT
 // 0xe915: push   ds
-// 0xe916: pop    word ptr [58AA]
+// 0xe916: pop    word ptr [58AA] // BLTSEG
 // 0xe91a: lodsw
 // 0xe91b: mov    bx,ax
 // 0xe91d: jmp    word ptr [bx]

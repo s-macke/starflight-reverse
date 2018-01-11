@@ -413,7 +413,7 @@ void UNK_0xf014() // UNK_0xf014
 // ================================================
 // 0xf042: WORD '(|REGION)' codep=0xf050 parp=0xf050
 // ================================================
-// 0xf050: pop    word ptr [561C]
+// 0xf050: pop    word ptr [561C] // X1
 // 0xf054: pop    cx
 // 0xf055: push   es
 // 0xf056: mov    es,cx
@@ -421,29 +421,29 @@ void UNK_0xf014() // UNK_0xf014
 // 0xf059: push   di
 // 0xf05a: push   bp
 // 0xf05b: push   ds
-// 0xf05c: mov    dx,[5892]
+// 0xf05c: mov    dx,[5892] // WBLT
 // 0xf060: shr    dx,1
 // 0xf062: shr    dx,1
 // 0xf064: inc    dx
 // 0xf065: inc    dx
-// 0xf066: mov    bp,[586E]
+// 0xf066: mov    bp,[586E] // XBLT
 // 0xf06a: shr    bp,1
 // 0xf06c: xor    di,di
-// 0xf06e: mov    ax,[5887]
+// 0xf06e: mov    ax,[5887] // LBLT
 // 0xf072: mov    cx,ax
 // 0xf074: mov    ax,cx
 // 0xf076: pop    ds
 // 0xf077: push   ds
-// 0xf078: mov    bx,[5863]
+// 0xf078: mov    bx,[5863] // YBLT
 // 0xf07c: sub    bx,cx
 // 0xf07e: inc    bx
 // 0xf07f: shl    bx,1
-// 0xf081: add    bx,[563A]
+// 0xf081: add    bx,[563A] // YTABL
 // 0xf085: mov    si,[bx]
 // 0xf087: add    si,bp
 // 0xf089: mov    cx,dx
-// 0xf08b: mov    bx,[561C]
-// 0xf08f: push   word ptr [5648]
+// 0xf08b: mov    bx,[561C] // X1
+// 0xf08f: push   word ptr [5648] // BUF-SEG
 // 0xf093: pop    ds
 // 0xf094: or     bx,bx
 // 0xf096: jz     F09E
@@ -480,11 +480,11 @@ void UNK_0xf014() // UNK_0xf014
 // 0xf0c3: push   es
 // 0xf0c4: push   di
 // 0xf0c5: push   si
-// 0xf0c6: mov    ax,[55E6]
-// 0xf0ca: mov    dx,[55D8]
+// 0xf0c6: mov    ax,[55E6] // DBUF-SEG
+// 0xf0ca: mov    dx,[55D8] // HBUF-SEG
 // 0xf0ce: mov    bx,00C5
 // 0xf0d1: shl    bx,1
-// 0xf0d3: add    bx,[563A]
+// 0xf0d3: add    bx,[563A] // YTABL
 // 0xf0d7: mov    si,[bx]
 // 0xf0d9: mov    di,si
 // 0xf0db: test   cx,0001

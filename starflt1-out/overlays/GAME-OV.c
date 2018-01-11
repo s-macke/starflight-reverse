@@ -15,7 +15,9 @@
 //      UNK_0xde5e  codep:0x2214 parp:0xde5e size:0x0002 C-string:'UNK_0xde5e'
 //      UNK_0xde62  codep:0x2214 parp:0xde62 size:0x0002 C-string:'UNK_0xde62'
 //      UNK_0xde66  codep:0x2214 parp:0xde66 size:0x0002 C-string:'UNK_0xde66'
-//      UNK_0xde6a  codep:0x2214 parp:0xde6a size:0x000a C-string:'UNK_0xde6a'
+//      UNK_0xde6a  codep:0x2214 parp:0xde6a size:0x0002 C-string:'UNK_0xde6a'
+//      UNK_0xde6e  codep:0x2214 parp:0xde6e size:0x0002 C-string:'UNK_0xde6e'
+//      UNK_0xde72  codep:0x2214 parp:0xde72 size:0x0002 C-string:'UNK_0xde72'
 //      UNK_0xde76  codep:0x2214 parp:0xde76 size:0x0002 C-string:'UNK_0xde76'
 //      UNK_0xde7a  codep:0x2214 parp:0xde7a size:0x0002 C-string:'UNK_0xde7a'
 //      UNK_0xde7e  codep:0x2214 parp:0xde7e size:0x0002 C-string:'UNK_0xde7e'
@@ -363,6 +365,8 @@ const unsigned short int cc_UNK_0xde5e = 0xde5e; // UNK_0xde5e
 const unsigned short int cc_UNK_0xde62 = 0xde62; // UNK_0xde62
 const unsigned short int cc_UNK_0xde66 = 0xde66; // UNK_0xde66
 const unsigned short int cc_UNK_0xde6a = 0xde6a; // UNK_0xde6a
+const unsigned short int cc_UNK_0xde6e = 0xde6e; // UNK_0xde6e
+const unsigned short int cc_UNK_0xde72 = 0xde72; // UNK_0xde72
 const unsigned short int cc_UNK_0xde76 = 0xde76; // UNK_0xde76
 const unsigned short int cc_UNK_0xde7a = 0xde7a; // UNK_0xde7a
 const unsigned short int cc_UNK_0xde7e = 0xde7e; // UNK_0xde7e
@@ -396,7 +400,16 @@ const unsigned short int cc_UNK_0xdfae = 0xdfae; // UNK_0xdfae
 // 0xde68: WORD 'UNK_0xde6a' codep=0x2214 parp=0xde6a
 // ================================================
 // 0xde6a: dw 0x0082
-// 0xde6c: db 0x14 0x22 0x04 0x00 0x14 0x22 0x00 0x00 ' "   "  '
+
+// ================================================
+// 0xde6c: WORD 'UNK_0xde6e' codep=0x2214 parp=0xde6e
+// ================================================
+// 0xde6e: dw 0x0004
+
+// ================================================
+// 0xde70: WORD 'UNK_0xde72' codep=0x2214 parp=0xde72
+// ================================================
+// 0xde72: dw 0x0000
 
 // ================================================
 // 0xde74: WORD 'UNK_0xde76' codep=0x2214 parp=0xde76
@@ -1840,7 +1853,7 @@ void UNK_0xeb21() // UNK_0xeb21
 // 0xeb4f: push   si
 // 0xeb50: push   di
 // 0xeb51: mov    di,bx
-// 0xeb53: mov    si,[078C]
+// 0xeb53: mov    si,[078C] // OPERATOR
 // 0xeb57: sub    si,03E8
 // 0xeb5b: mov    cx,03E8
 // 0xeb5e: repz   
@@ -1864,12 +1877,12 @@ void UNK_0xeb21() // UNK_0xeb21
 // 0xeb7f: cli    
 // 0xeb80: push   ds
 // 0xeb81: pop    es
-// 0xeb82: mov    di,[078C]
+// 0xeb82: mov    di,[078C] // OPERATOR
 // 0xeb86: sub    di,03E8
 // 0xeb8a: mov    cx,03E8
 // 0xeb8d: repz   
 // 0xeb8e: movsb
-// 0xeb8f: add    sp,[DE72]
+// 0xeb8f: add    sp,[DE72] // UNK_0xde72
 // 0xeb93: mov    si,[bp-02]
 // 0xeb96: mov    di,[bp-04]
 // 0xeb99: sti    
@@ -1887,7 +1900,7 @@ void UNK_0xeb21() // UNK_0xeb21
 // 0xebaf: push   si
 // 0xebb0: push   di
 // 0xebb1: mov    di,bx
-// 0xebb3: mov    si,[078E]
+// 0xebb3: mov    si,[078E] // OPERATOR
 // 0xebb7: sub    si,00DC
 // 0xebbb: mov    cx,00DC
 // 0xebbe: repz   
@@ -1910,13 +1923,13 @@ void UNK_0xeb21() // UNK_0xeb21
 // 0xebd9: inc    bx
 // 0xebda: mov    si,bx
 // 0xebdc: push   di
-// 0xebdd: mov    di,[078E]
+// 0xebdd: mov    di,[078E] // OPERATOR
 // 0xebe1: sub    di,00DC
 // 0xebe5: mov    cx,00DC
 // 0xebe8: repz   
 // 0xebe9: movsb
 // 0xebea: pop    di
-// 0xebeb: add    bp,[DE6E]
+// 0xebeb: add    bp,[DE6E] // UNK_0xde6e
 // 0xebef: mov    si,[bp+00]
 // 0xebf2: inc    bp
 // 0xebf3: inc    bp

@@ -80,26 +80,26 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // ================================================
 // entry
 // 0xf220: cli    
-// 0xf221: push   word ptr [586E]
-// 0xf225: pop    word ptr [561C]
-// 0xf229: push   word ptr [5863]
-// 0xf22d: pop    word ptr [5613]
+// 0xf221: push   word ptr [586E] // XBLT
+// 0xf225: pop    word ptr [561C] // X1
+// 0xf229: push   word ptr [5863] // YBLT
+// 0xf22d: pop    word ptr [5613] // Y1
 // 0xf231: pop    bx
 // 0xf232: pop    es
 // 0xf233: es:    
 // 0xf234: mov    cx,[bx]
 // 0xf236: push   es
-// 0xf237: pop    word ptr [58AA]
+// 0xf237: pop    word ptr [58AA] // BLTSEG
 // 0xf23b: push   si
 // 0xf23c: push   di
 // 0xf23d: add    bx,02
-// 0xf240: mov    [562E],bx
-// 0xf244: mov    ax,[586E]
-// 0xf248: add    ax,[5892]
-// 0xf24c: mov    [5625],ax
+// 0xf240: mov    [562E],bx // X2
+// 0xf244: mov    ax,[586E] // XBLT
+// 0xf248: add    ax,[5892] // WBLT
+// 0xf24c: mov    [5625],ax // Y2
 // 0xf250: push   cx
 // 0xf251: xor    cx,cx
-// 0xf253: push   word ptr [58AA]
+// 0xf253: push   word ptr [58AA] // BLTSEG
 // 0xf257: pop    es
 // 0xf258: es:    
 // 0xf259: mov    cl,[bx]
@@ -108,15 +108,15 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // 0xf25e: jz     F2DC
 // 0xf260: mov    ax,bx
 // 0xf262: dec    ax
-// 0xf263: sub    ax,[562E]
+// 0xf263: sub    ax,[562E] // X2
 // 0xf267: and    ax,0001
 // 0xf26a: jnz    F2BE
-// 0xf26c: push   word ptr [5648]
+// 0xf26c: push   word ptr [5648] // BUF-SEG
 // 0xf270: pop    es
-// 0xf271: mov    dx,[5613]
+// 0xf271: mov    dx,[5613] // Y1
 // 0xf275: shl    dx,1
-// 0xf277: mov    ax,[561C]
-// 0xf27b: add    dx,[563A]
+// 0xf277: mov    ax,[561C] // X1
+// 0xf27b: add    dx,[563A] // YTABL
 // 0xf27f: mov    di,dx
 // 0xf281: shr    ax,1
 // 0xf283: mov    dx,00F0
@@ -126,31 +126,31 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // 0xf28c: mov    di,ax
 // 0xf28e: es:    
 // 0xf28f: mov    al,[di]
-// 0xf291: mov    dh,[55F2]
+// 0xf291: mov    dh,[55F2] // COLOR
 // 0xf295: and    dh,dl
 // 0xf297: not    dl
 // 0xf299: and    al,dl
 // 0xf29b: or     al,dh
 // 0xf29d: es:    
 // 0xf29e: mov    [di],al
-// 0xf2a0: inc    word ptr [561C]
-// 0xf2a4: mov    ax,[561C]
-// 0xf2a8: cmp    ax,[5625]
+// 0xf2a0: inc    word ptr [561C] // X1
+// 0xf2a4: mov    ax,[561C] // X1
+// 0xf2a8: cmp    ax,[5625] // Y2
 // 0xf2ac: jnz    F2BA
-// 0xf2ae: push   word ptr [586E]
-// 0xf2b2: pop    word ptr [561C]
-// 0xf2b6: dec    word ptr [5613]
+// 0xf2ae: push   word ptr [586E] // XBLT
+// 0xf2b2: pop    word ptr [561C] // X1
+// 0xf2b6: dec    word ptr [5613] // Y1
 // 0xf2ba: loop   F271
 // 0xf2bc: jmp    F2DC
-// 0xf2be: add    [561C],cx
-// 0xf2c2: mov    ax,[561C]
-// 0xf2c6: cmp    ax,[5625]
+// 0xf2be: add    [561C],cx // X1
+// 0xf2c2: mov    ax,[561C] // X1
+// 0xf2c6: cmp    ax,[5625] // Y2
 // 0xf2ca: js     F2D8
-// 0xf2cc: sub    ax,[5892]
-// 0xf2d0: dec    word ptr [5613]
+// 0xf2cc: sub    ax,[5892] // WBLT
+// 0xf2d0: dec    word ptr [5613] // Y1
 // 0xf2d4: jmp    F2C6
 // 0xf2d6: jmp    F2DC
-// 0xf2d8: mov    [561C],ax
+// 0xf2d8: mov    [561C],ax // X1
 // 0xf2dc: pop    cx
 // 0xf2dd: dec    cx
 // 0xf2de: jz     F2E3
@@ -213,27 +213,27 @@ void DrawPARMS() // .PARMS
 // ================================================
 // entry
 // 0xf379: mov    dx,03CE
-// 0xf37c: mov    ah,[55F2]
+// 0xf37c: mov    ah,[55F2] // COLOR
 // 0xf380: mov    al,00
 // 0xf382: out    dx,al
 // 0xf383: inc    dx
 // 0xf384: xchg   ah,al
 // 0xf386: out    dx,al
-// 0xf387: mov    bx,[586E]
-// 0xf38b: mov    [561C],bx
-// 0xf38f: mov    ax,[5892]
+// 0xf387: mov    bx,[586E] // XBLT
+// 0xf38b: mov    [561C],bx // X1
+// 0xf38f: mov    ax,[5892] // WBLT
 // 0xf393: dec    ax
 // 0xf394: add    bx,ax
-// 0xf396: mov    [F35C],bx
-// 0xf39a: mov    bx,[5863]
-// 0xf39e: mov    [5613],bx
+// 0xf396: mov    [F35C],bx // BRIGHT
+// 0xf39a: mov    bx,[5863] // YBLT
+// 0xf39e: mov    [5613],bx // Y1
 // 0xf3a2: mov    dx,es
 // 0xf3a4: pop    bx
 // 0xf3a5: pop    es
 // 0xf3a6: push   dx
 // 0xf3a7: es:    
 // 0xf3a8: mov    cx,[bx]
-// 0xf3aa: mov    [F368],cx
+// 0xf3aa: mov    [F368],cx // 2TEMP
 // 0xf3ae: sub    cx,cx
 // 0xf3b0: push   bx
 // 0xf3b1: push   cx
@@ -246,51 +246,51 @@ void DrawPARMS() // .PARMS
 // 0xf3bb: and    ax,00FF
 // 0xf3be: jnz    F3C3
 // 0xf3c0: jmp    F448
-// 0xf3c3: mov    cx,[561C]
+// 0xf3c3: mov    cx,[561C] // X1
 // 0xf3c7: add    cx,ax
 // 0xf3c9: dec    cx
-// 0xf3ca: mov    [562E],cx
-// 0xf3ce: cmp    cx,[F35C]
+// 0xf3ca: mov    [562E],cx // X2
+// 0xf3ce: cmp    cx,[F35C] // BRIGHT
 // 0xf3d2: jbe    F41B
 // 0xf3d4: mov    bx,sp
 // 0xf3d6: mov    ax,[bx]
 // 0xf3d8: and    ax,0001
 // 0xf3db: jnz    F3F8
-// 0xf3dd: mov    ax,[561C]
-// 0xf3e1: mov    [57B7],ax
-// 0xf3e5: mov    ax,[F35C]
-// 0xf3e9: mov    [57C2],ax
-// 0xf3ed: mov    ax,[5613]
-// 0xf3f1: mov    [57CE],ax
+// 0xf3dd: mov    ax,[561C] // X1
+// 0xf3e1: mov    [57B7],ax // XSTART
+// 0xf3e5: mov    ax,[F35C] // BRIGHT
+// 0xf3e9: mov    [57C2],ax // XEND
+// 0xf3ed: mov    ax,[5613] // Y1
+// 0xf3f1: mov    [57CE],ax // YLINE
 // 0xf3f5: call   9125
-// 0xf3f8: mov    ax,[562E]
-// 0xf3fc: mov    cx,[5892]
+// 0xf3f8: mov    ax,[562E] // X2
+// 0xf3fc: mov    cx,[5892] // WBLT
 // 0xf400: sub    ax,cx
-// 0xf402: mov    [562E],ax
-// 0xf406: mov    ax,[586E]
-// 0xf40a: mov    [561C],ax
-// 0xf40e: dec    word ptr [5613]
-// 0xf412: mov    cx,[562E]
+// 0xf402: mov    [562E],ax // X2
+// 0xf406: mov    ax,[586E] // XBLT
+// 0xf40a: mov    [561C],ax // X1
+// 0xf40e: dec    word ptr [5613] // Y1
+// 0xf412: mov    cx,[562E] // X2
 // 0xf416: jmp    F3CE
 // 0xf419: jmp    F448
 // 0xf41b: mov    bx,sp
 // 0xf41d: mov    ax,[bx]
 // 0xf41f: and    ax,0001
 // 0xf422: jnz    F43F
-// 0xf424: mov    ax,[561C]
-// 0xf428: mov    [57B7],ax
-// 0xf42c: mov    ax,[562E]
-// 0xf430: mov    [57C2],ax
-// 0xf434: mov    ax,[5613]
-// 0xf438: mov    [57CE],ax
+// 0xf424: mov    ax,[561C] // X1
+// 0xf428: mov    [57B7],ax // XSTART
+// 0xf42c: mov    ax,[562E] // X2
+// 0xf430: mov    [57C2],ax // XEND
+// 0xf434: mov    ax,[5613] // Y1
+// 0xf438: mov    [57CE],ax // YLINE
 // 0xf43c: call   9125
-// 0xf43f: mov    ax,[562E]
+// 0xf43f: mov    ax,[562E] // X2
 // 0xf443: inc    ax
-// 0xf444: mov    [561C],ax
+// 0xf444: mov    [561C],ax // X1
 // 0xf448: pop    cx
 // 0xf449: pop    bx
 // 0xf44a: inc    cx
-// 0xf44b: cmp    cx,[F368]
+// 0xf44b: cmp    cx,[F368] // 2TEMP
 // 0xf44f: jz     F454
 // 0xf451: jmp    F3B0
 // 0xf454: pop    es

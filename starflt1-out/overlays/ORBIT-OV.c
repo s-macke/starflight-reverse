@@ -41,11 +41,15 @@
 //      UNK_0xdbfc  codep:0x1d29 parp:0xdbfc size:0x0002 C-string:'UNK_0xdbfc'
 //      UNK_0xdc00  codep:0x1d29 parp:0xdc00 size:0x0002 C-string:'UNK_0xdc00'
 //      UNK_0xdc04  codep:0x1d29 parp:0xdc04 size:0x0002 C-string:'UNK_0xdc04'
-//      UNK_0xdc08  codep:0x1d29 parp:0xdc08 size:0x0006 C-string:'UNK_0xdc08'
+//      UNK_0xdc08  codep:0x1d29 parp:0xdc08 size:0x0002 C-string:'UNK_0xdc08'
+//      UNK_0xdc0c  codep:0x1d29 parp:0xdc0c size:0x0002 C-string:'UNK_0xdc0c'
 //      UNK_0xdc10  codep:0x1d29 parp:0xdc10 size:0x0002 C-string:'UNK_0xdc10'
 //      UNK_0xdc14  codep:0x1d29 parp:0xdc14 size:0x0002 C-string:'UNK_0xdc14'
 //      UNK_0xdc18  codep:0x1d29 parp:0xdc18 size:0x0002 C-string:'UNK_0xdc18'
-//      UNK_0xdc1c  codep:0x1d29 parp:0xdc1c size:0x0016 C-string:'UNK_0xdc1c'
+//      UNK_0xdc1c  codep:0x1d29 parp:0xdc1c size:0x0002 C-string:'UNK_0xdc1c'
+//      UNK_0xdc20  codep:0x1d29 parp:0xdc20 size:0x0002 C-string:'UNK_0xdc20'
+//      UNK_0xdc24  codep:0x1d29 parp:0xdc24 size:0x0002 C-string:'UNK_0xdc24'
+//      UNK_0xdc28  codep:0x1d29 parp:0xdc28 size:0x000a C-string:'UNK_0xdc28'
 //      UNK_0xdc34  codep:0x1d29 parp:0xdc34 size:0x0002 C-string:'UNK_0xdc34'
 //      UNK_0xdc38  codep:0x1d29 parp:0xdc38 size:0x0020 C-string:'UNK_0xdc38'
 //      UNK_0xdc5a  codep:0x1d29 parp:0xdc5a size:0x0008 C-string:'UNK_0xdc5a'
@@ -386,8 +390,11 @@ const unsigned short int pp_UNK_0xdc00 = 0xdc00; // UNK_0xdc00 size: 2
 const unsigned short int pp_UNK_0xdc04 = 0xdc04; // UNK_0xdc04 size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_UNK_0xdc08 = 0xdc08; // UNK_0xdc08 size: 6
-// {0x7f, 0x00, 0x29, 0x1d, 0xce, 0x18}
+const unsigned short int pp_UNK_0xdc08 = 0xdc08; // UNK_0xdc08 size: 2
+// {0x7f, 0x00}
+
+const unsigned short int pp_UNK_0xdc0c = 0xdc0c; // UNK_0xdc0c size: 2
+// {0xce, 0x18}
 
 const unsigned short int pp_UNK_0xdc10 = 0xdc10; // UNK_0xdc10 size: 2
 // {0x14, 0x00}
@@ -398,8 +405,17 @@ const unsigned short int pp_UNK_0xdc14 = 0xdc14; // UNK_0xdc14 size: 2
 const unsigned short int pp_UNK_0xdc18 = 0xdc18; // UNK_0xdc18 size: 2
 // {0x0a, 0x00}
 
-const unsigned short int pp_UNK_0xdc1c = 0xdc1c; // UNK_0xdc1c size: 22
-// {0x1f, 0x00, 0x29, 0x1d, 0xde, 0xf6, 0x29, 0x1d, 0x02, 0x00, 0x29, 0x1d, 0x02, 0x00, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_UNK_0xdc1c = 0xdc1c; // UNK_0xdc1c size: 2
+// {0x1f, 0x00}
+
+const unsigned short int pp_UNK_0xdc20 = 0xdc20; // UNK_0xdc20 size: 2
+// {0xde, 0xf6}
+
+const unsigned short int pp_UNK_0xdc24 = 0xdc24; // UNK_0xdc24 size: 2
+// {0x02, 0x00}
+
+const unsigned short int pp_UNK_0xdc28 = 0xdc28; // UNK_0xdc28 size: 10
+// {0x02, 0x00, 0x29, 0x1d, 0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
 
 const unsigned short int pp_UNK_0xdc34 = 0xdc34; // UNK_0xdc34 size: 2
 // {0x2e, 0x00}
@@ -592,7 +608,12 @@ const unsigned short int cc_UNK_0xdb8e = 0xdb8e; // UNK_0xdb8e
 // ================================================
 // 0xdc06: WORD 'UNK_0xdc08' codep=0x1d29 parp=0xdc08
 // ================================================
-// 0xdc08: db 0x7f 0x00 0x29 0x1d 0xce 0x18 ' )   '
+// 0xdc08: db 0x7f 0x00 ' '
+
+// ================================================
+// 0xdc0a: WORD 'UNK_0xdc0c' codep=0x1d29 parp=0xdc0c
+// ================================================
+// 0xdc0c: db 0xce 0x18 '  '
 
 // ================================================
 // 0xdc0e: WORD 'UNK_0xdc10' codep=0x1d29 parp=0xdc10
@@ -612,7 +633,22 @@ const unsigned short int cc_UNK_0xdb8e = 0xdb8e; // UNK_0xdb8e
 // ================================================
 // 0xdc1a: WORD 'UNK_0xdc1c' codep=0x1d29 parp=0xdc1c
 // ================================================
-// 0xdc1c: db 0x1f 0x00 0x29 0x1d 0xde 0xf6 0x29 0x1d 0x02 0x00 0x29 0x1d 0x02 0x00 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 '  )   )   )   ) : ) : '
+// 0xdc1c: db 0x1f 0x00 '  '
+
+// ================================================
+// 0xdc1e: WORD 'UNK_0xdc20' codep=0x1d29 parp=0xdc20
+// ================================================
+// 0xdc20: db 0xde 0xf6 '  '
+
+// ================================================
+// 0xdc22: WORD 'UNK_0xdc24' codep=0x1d29 parp=0xdc24
+// ================================================
+// 0xdc24: db 0x02 0x00 '  '
+
+// ================================================
+// 0xdc26: WORD 'UNK_0xdc28' codep=0x1d29 parp=0xdc28
+// ================================================
+// 0xdc28: db 0x02 0x00 0x29 0x1d 0x3a 0x20 0x29 0x1d 0x3a 0x20 '  ) : ) : '
 
 // ================================================
 // 0xdc32: WORD 'UNK_0xdc34' codep=0x1d29 parp=0xdc34
@@ -666,45 +702,45 @@ LoadDataType UNK_0xdcdc = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 // ================================================
 // 0xdd2a: WORD 'UNK_0xdd2c' codep=0xdd2c parp=0xdd2c
 // ================================================
-// 0xdd2c: pop    word ptr [DC24]
-// 0xdd30: pop    word ptr [DC28]
-// 0xdd34: mov    bx,[DC20]
+// 0xdd2c: pop    word ptr [DC24] // UNK_0xdc24
+// 0xdd30: pop    word ptr [DC28] // UNK_0xdc28
+// 0xdd34: mov    bx,[DC20] // UNK_0xdc20
 // 0xdd38: add    bx,0E
 // 0xdd3b: mov    cx,[bx]
 // 0xdd3d: sub    bx,04
 // 0xdd40: mov    dx,[bx]
-// 0xdd42: mov    bx,[DC28]
+// 0xdd42: mov    bx,[DC28] // UNK_0xdc28
 // 0xdd46: call   DD20
 // 0xdd49: push   ax
-// 0xdd4a: mov    bx,[DC20]
+// 0xdd4a: mov    bx,[DC20] // UNK_0xdc20
 // 0xdd4e: add    bx,02
 // 0xdd51: mov    cx,[bx]
 // 0xdd53: add    bx,04
 // 0xdd56: mov    dx,[bx]
-// 0xdd58: mov    bx,[DC28]
+// 0xdd58: mov    bx,[DC28] // UNK_0xdc28
 // 0xdd5c: call   DD20
 // 0xdd5f: mov    dx,ax
 // 0xdd61: pop    cx
-// 0xdd62: mov    bx,[DC24]
+// 0xdd62: mov    bx,[DC24] // UNK_0xdc24
 // 0xdd66: call   DD20
 // 0xdd69: push   ax
-// 0xdd6a: mov    bx,[DC20]
+// 0xdd6a: mov    bx,[DC20] // UNK_0xdc20
 // 0xdd6e: mov    dx,[bx]
 // 0xdd70: add    bx,0C
 // 0xdd73: mov    cx,[bx]
-// 0xdd75: mov    bx,[DC24]
+// 0xdd75: mov    bx,[DC24] // UNK_0xdc24
 // 0xdd79: call   DD20
 // 0xdd7c: push   ax
-// 0xdd7d: mov    bx,[DC20]
+// 0xdd7d: mov    bx,[DC20] // UNK_0xdc20
 // 0xdd81: add    bx,04
 // 0xdd84: mov    dx,[bx]
 // 0xdd86: add    bx,04
 // 0xdd89: mov    cx,[bx]
-// 0xdd8b: mov    bx,[DC24]
+// 0xdd8b: mov    bx,[DC24] // UNK_0xdc24
 // 0xdd8f: call   DD20
 // 0xdd92: mov    dx,ax
 // 0xdd94: pop    cx
-// 0xdd95: mov    bx,[DC28]
+// 0xdd95: mov    bx,[DC28] // UNK_0xdc28
 // 0xdd99: call   DD20
 // 0xdd9c: push   ax
 // 0xdd9d: lodsw
@@ -897,7 +933,7 @@ void UNK_0xded4() // UNK_0xded4
 // ================================================
 // 0xdef6: WORD 'SETQUAD' codep=0xdf02 parp=0xdf02
 // ================================================
-// 0xdf02: mov    [DC20],sp
+// 0xdf02: mov    [DC20],sp // UNK_0xdc20
 // 0xdf06: lodsw
 // 0xdf07: mov    bx,ax
 // 0xdf09: jmp    word ptr [bx]
@@ -1255,14 +1291,14 @@ void UNK_0xe13b() // UNK_0xe13b
 // 0xe16b: push   si
 // 0xe16c: push   di
 // 0xe16d: push   es
-// 0xe16e: mov    cx,[5DD3]
+// 0xe16e: mov    cx,[5DD3] // 3DSEG
 // 0xe172: mov    es,cx
-// 0xe174: mov    si,[569B]
-// 0xe178: mov    di,[5DDE]
-// 0xe17c: mov    cx,[5686]
-// 0xe180: mov    dl,[DBD4]
-// 0xe184: mov    dh,[DBD8]
-// 0xe188: mov    bl,[DBDC]
+// 0xe174: mov    si,[569B] // VIN
+// 0xe178: mov    di,[5DDE] // VIN'
+// 0xe17c: mov    cx,[5686] // #IN
+// 0xe180: mov    dl,[DBD4] // UNK_0xdbd4
+// 0xe184: mov    dh,[DBD8] // UNK_0xdbd8
+// 0xe188: mov    bl,[DBDC] // UNK_0xdbdc
 // 0xe18c: es:    
 // 0xe18d: mov    al,[si]
 // 0xe18f: sub    al,dl
@@ -1307,21 +1343,21 @@ void UNK_0xe13b() // UNK_0xe13b
 // 0xe1c9: mov    bh,[si]
 // 0xe1cb: add    si,02
 // 0xe1ce: mov    ax,[si]
-// 0xe1d0: mov    [DC0C],ax
+// 0xe1d0: mov    [DC0C],ax // UNK_0xdc0c
 // 0xe1d4: add    si,02
 // 0xe1d7: push   si
 // 0xe1d8: push   cx
 // 0xe1d9: sub    cx,03
 // 0xe1dc: neg    cx
 // 0xe1de: shl    cx,1
-// 0xe1e0: add    cx,[56A6]
+// 0xe1e0: add    cx,[56A6] // VOUT
 // 0xe1e4: mov    di,cx
-// 0xe1e6: mov    si,[5DDE]
+// 0xe1e6: mov    si,[5DDE] // VIN'
 // 0xe1ea: push   es
-// 0xe1eb: mov    cx,[5DD3]
+// 0xe1eb: mov    cx,[5DD3] // 3DSEG
 // 0xe1ef: mov    es,cx
-// 0xe1f1: mov    cx,[5686]
-// 0xe1f5: mov    bp,[DC0C]
+// 0xe1f1: mov    cx,[5686] // #IN
+// 0xe1f5: mov    bp,[DC0C] // UNK_0xdc0c
 // 0xe1f9: es:    
 // 0xe1fa: mov    al,[si]
 // 0xe1fc: inc    si
@@ -1359,13 +1395,13 @@ void UNK_0xe13b() // UNK_0xe13b
 // 0xe229: push   bp
 // 0xe22a: push   si
 // 0xe22b: push   es
-// 0xe22c: mov    di,[56A6]
+// 0xe22c: mov    di,[56A6] // VOUT
 // 0xe230: add    di,04
-// 0xe233: mov    si,[5DEC]
-// 0xe237: mov    cx,[5DD3]
+// 0xe233: mov    si,[5DEC] // YSCREEN
+// 0xe237: mov    cx,[5DD3] // 3DSEG
 // 0xe23b: mov    es,cx
-// 0xe23d: mov    bp,[DC14]
-// 0xe241: mov    cx,[5686]
+// 0xe23d: mov    bp,[DC14] // UNK_0xdc14
+// 0xe241: mov    cx,[5686] // #IN
 // 0xe245: es:    
 // 0xe246: mov    bx,[di]
 // 0xe248: sub    di,02
@@ -1379,9 +1415,9 @@ void UNK_0xe13b() // UNK_0xe13b
 // 0xe257: sub    di,02
 // 0xe25a: es:    
 // 0xe25b: mov    ax,[di]
-// 0xe25d: imul   word ptr [DC10]
+// 0xe25d: imul   word ptr [DC10] // UNK_0xdc10
 // 0xe261: idiv   bx
-// 0xe263: add    ax,[5DFA]
+// 0xe263: add    ax,[5DFA] // XSCREEN
 // 0xe267: es:    
 // 0xe268: mov    [di],ax
 // 0xe26a: add    di,0A
