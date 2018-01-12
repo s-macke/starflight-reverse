@@ -601,6 +601,7 @@ void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int curr
         stack[stackoffset].isnumber = 0;
         stackoffset++;
         StackPop(-2);
+        StackPop(-2);
         return;
     }
 
