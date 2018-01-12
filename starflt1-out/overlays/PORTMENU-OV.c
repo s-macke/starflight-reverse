@@ -148,7 +148,7 @@ void WITHIN(); // WITHIN
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -271,7 +271,7 @@ IFieldType UNK_0xe94b = {CREWMEMBERIDX, 0x20, 0x02};
 IFieldType UNK_0xe950 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
-// 0xe953: WORD 'UNK_0xe955' codep=0x224c parp=0xe955
+// 0xe953: WORD 'UNK_0xe955' codep=0x224c parp=0xe955 params=0 returns=0
 // ================================================
 
 void UNK_0xe955() // UNK_0xe955
@@ -298,14 +298,14 @@ void UNK_0xe955() // UNK_0xe955
     _gt_(); // >
     if (Pop() != 0)
     {
-      SetColor(LT_dash_BLUE);
+      GetColor(LT_dash_BLUE);
     } else
     {
-      SetColor(GREY1);
+      GetColor(GREY1);
     }
   } else
   {
-    SetColor(GREY2);
+    GetColor(GREY2);
   }
   StoreCOLOR(); // !COLOR
   Push(a); // R>
@@ -321,7 +321,7 @@ void UNK_0xe955() // UNK_0xe955
 
 
 // ================================================
-// 0xe9b9: WORD 'UNK_0xe9bb' codep=0x224c parp=0xe9bb
+// 0xe9b9: WORD 'UNK_0xe9bb' codep=0x224c parp=0xe9bb params=1 returns=0
 // ================================================
 
 void UNK_0xe9bb() // UNK_0xe9bb
@@ -335,13 +335,13 @@ void UNK_0xe9bb() // UNK_0xe9bb
 
 
 // ================================================
-// 0xe9c7: WORD 'UNK_0xe9c9' codep=0x224c parp=0xe9c9
+// 0xe9c7: WORD 'UNK_0xe9c9' codep=0x224c parp=0xe9c9 params=0 returns=2
 // ================================================
 
 void UNK_0xe9c9() // UNK_0xe9c9
 {
   unsigned short int i, imax, j, jmax;
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -932,7 +932,7 @@ void UNK_0xede1() // UNK_0xede1
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0);
   Push(0);
@@ -1328,10 +1328,10 @@ void UNK_0xf1a9() // UNK_0xf1a9
   Store_3(); // !_3
   Push(Read16(Pop() + 2)&0xFF); //  2+ C@
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(-2);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(2);
   Push(pp_LBLT); // LBLT
   Store_3(); // !_3
@@ -1484,9 +1484,9 @@ void UNK_0xf2b3() // UNK_0xf2b3
   Push(Read16(pp_YBLT)); // YBLT @
   _2SWAP(); // 2SWAP
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf239(); // UNK_0xf239
   Push(Read16(pp_XBLT)); // XBLT @
   Push(Read16(pp_YBLT)); // YBLT @
@@ -1496,7 +1496,7 @@ void UNK_0xf2b3() // UNK_0xf2b3
   Push(pp_UNK_0xebfc); // UNK_0xebfc
   Store_3(); // !_3
   DISPLAY(); // DISPLAY
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf293(); // UNK_0xf293
   POS_dot_(); // POS.
@@ -1631,7 +1631,7 @@ void UNK_0xf391() // UNK_0xf391
 void UNK_0xf3a9() // UNK_0xf3a9
 {
   unsigned short int i, imax;
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_ABLT)); // ABLT @
   Push(Read16(pp_ABLT)==pp_UNK_0xf0b5?1:0); // ABLT @ UNK_0xf0b5 =

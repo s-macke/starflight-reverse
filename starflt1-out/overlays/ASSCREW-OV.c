@@ -82,7 +82,7 @@ void D_gt_(); // D>
 void KEY_2(); // KEY_2
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -222,7 +222,7 @@ void UNK_0xeac4() // UNK_0xeac4
   BLT(); // BLT
   Push(6);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   StoreCRS(); // !CRS
 }
 
@@ -326,10 +326,10 @@ void UNK_0xeb6d() // UNK_0xeb6d
   Push(Read16(pp_IsEGA)); // ?EGA @
   if (Pop() != 0)
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     return;
   }
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
 }
 
 
@@ -344,16 +344,16 @@ void UNK_0xeb81() // UNK_0xeb81
   Push(1);
   Push(8);
   Push(0x0043);
-  SetColor(GREY2);
+  GetColor(GREY2);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x003c);
   Push(0x0044);
   Push(8);
   Push(0x009d);
-  SetColor(GREY2);
+  GetColor(GREY2);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  SetColor(WHITE);
-  SetColor(WHITE);
+  GetColor(WHITE);
+  GetColor(WHITE);
   UNK_0xeb6d(); // UNK_0xeb6d
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
@@ -406,7 +406,7 @@ void UNK_0xeb81() // UNK_0xeb81
   PRINT("FILE", 4); // (.")
   Push(2);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xeac4(); // UNK_0xeac4
   Push(1);
   Push(8);
@@ -578,7 +578,7 @@ void UNK_0xedf8() // UNK_0xedf8
   DARK(); // DARK
   Push(0x001c);
   Push(0x00c3);
-  SetColor(BLUE);
+  GetColor(BLUE);
   Draw1LOGO(); // .1LOGO
   CTINIT(); // CTINIT
   Push(0x000a);
@@ -605,7 +605,7 @@ void UNK_0xedf8() // UNK_0xedf8
   Push(0x0075);
   POS_dot_(); // POS.
   PRINT("DOCTOR", 6); // (.")
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   Push(0x0030);
@@ -614,7 +614,7 @@ void UNK_0xedf8() // UNK_0xedf8
   PRINT("CREW", 4); // (.")
   Push(0x000a);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("ASSIGNMENT", 10); // (.")
   Push(2);
   Push(0);
@@ -682,9 +682,9 @@ void UNK_0xef47() // UNK_0xef47
   Push(a); // I
   UNK_0xec7e(); // UNK_0xec7e
   CTINIT(); // CTINIT
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(WHITE);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xeb3b.offset); // UNK_0xeb3b<IFIELD>
@@ -774,19 +774,19 @@ void UNK_0xf019() // UNK_0xf019
   Push(Read16(pp_UNK_0xec7a)); // UNK_0xec7a @
   a = Pop(); // >R
   Push(0x000e);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x0030 + a); // 0x0030 I +
   Push(0x000a);
   POS_dot_PXT(); // POS.PXT
   Push(3);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x0030 + a); // 0x0030 I +
   Push(0x007a);
   POS_dot_PXT(); // POS.PXT
   CTINIT(); // CTINIT
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(WHITE);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(5);
@@ -797,13 +797,13 @@ void UNK_0xf019() // UNK_0xf019
   do // (DO)
   {
     Push(3);
-    SetColor(GREY2);
+    GetColor(GREY2);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x004a);
     POS_dot_PXT(); // POS.PXT
     Push(2);
     Push(i + (i==4?1:0) * 5); // I I 4 = 5 * +
-    SetColor(GREY2);
+    GetColor(GREY2);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x008d);
     Push(i + (i==4?1:0) * 0xffea); // I I 4 = 0xffea * +
@@ -812,7 +812,7 @@ void UNK_0xf019() // UNK_0xf019
   } while(i<imax); // (LOOP)
 
   Push(2);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x003d + a); // 0x003d I +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT
@@ -833,10 +833,10 @@ void UNK_0xf019() // UNK_0xf019
   OFF(); // OFF
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
   } else
   {
-    SetColor(GREY2);
+    GetColor(GREY2);
   }
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_UNK_0xec7a) + 0x0033); // UNK_0xec7a @ 0x0033 +
@@ -874,7 +874,7 @@ void UNK_0xf128() // UNK_0xf128
   Push(0);
   _2SWAP(); // 2SWAP
   POS_dot_PXT(); // POS.PXT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SWAP(); // SWAP
   POS_dot_(); // POS.
@@ -1020,7 +1020,7 @@ void UNK_0xf238() // UNK_0xf238
     Push(0x0012);
     Push(pp_WBLT); // WBLT
     Store_3(); // !_3
-    SetColor(BLACK);
+    GetColor(BLACK);
     UNK_0xf1ec(); // UNK_0xf1ec
     GetCRS(); // @CRS
     Push(0x0025);
@@ -1029,7 +1029,7 @@ void UNK_0xf238() // UNK_0xf238
     CTINIT(); // CTINIT
     PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
     StoreCRS(); // !CRS
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
   }
   Push((Pop() + 1) * 0x000a); //  1+ 0x000a *
@@ -1088,11 +1088,11 @@ void UNK_0xf2b1() // UNK_0xf2b1
     Push(0x0012);
   }
   UNK_0xea9c(); // UNK_0xea9c
-  SetColor(BLACK);
+  GetColor(BLACK);
   _2SWAP(); // 2SWAP
   POS_dot_PXT(); // POS.PXT
   StoreCRS(); // !CRS
-  SetColor(WHITE);
+  GetColor(WHITE);
   UNK_0xf1ec(); // UNK_0xf1ec
   Push(0);
 }
@@ -1180,7 +1180,7 @@ void UNK_0xf3d7() // UNK_0xf3d7
     Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 3==2?1:0); // UNK_0xeb5e<IFIELD> C@ 3 AND 3 XOR 2 =
     Push(Read16(regsp)); // DUP
     Push(pp_UNK_0xea98); // UNK_0xea98
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(Pop() | Pop()); // OR
     INEXT(); // INEXT
     i++;
@@ -1263,15 +1263,15 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
     Push(8);
     Push(0x00a9);
     POS_dot_(); // POS.
-    SetColor(WHITE);
-    SetColor(GREY2);
-    SetColor(DK_dash_GREEN);
+    GetColor(WHITE);
+    GetColor(GREY2);
+    GetColor(DK_dash_GREEN);
     IsMRC(); // ?MRC
     StoreCOLOR(); // !COLOR
     Push(pp_XORMODE); // XORMODE
     ON_3(); // ON_3
     BLT(); // BLT
-    SetColor(WHITE);
+    GetColor(WHITE);
     UNK_0xf1ec(); // UNK_0xf1ec
     Push2Words("*ASSIGN-CREW");
     _gt_C_plus_S(); // >C+S

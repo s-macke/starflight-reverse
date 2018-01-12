@@ -324,7 +324,7 @@ void UNK_0xea76() // UNK_0xea76
 {
   _gt_TVCT(); // >TVCT
   CTERASE(); // CTERASE
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(0);
@@ -480,7 +480,7 @@ void UNK_0xeb23() // UNK_0xeb23
 
 
 // ================================================
-// 0xeb41: WORD 'UNK_0xeb43' codep=0x224c parp=0xeb43 orphan params=0 returns=3
+// 0xeb41: WORD 'UNK_0xeb43' codep=0x224c parp=0xeb43 orphan
 // ================================================
 
 void UNK_0xeb43() // UNK_0xeb43
@@ -494,7 +494,7 @@ void UNK_0xeb43() // UNK_0xeb43
 
 
 // ================================================
-// 0xeb51: WORD 'SET-SPE' codep=0x224c parp=0xeb5d params=0 returns=2
+// 0xeb51: WORD 'SET-SPE' codep=0x224c parp=0xeb5d
 // ================================================
 // entry
 
@@ -825,7 +825,7 @@ void UNK_0xedc8() // UNK_0xedc8
 
 
 // ================================================
-// 0xedd8: WORD '#BOXES' codep=0x224c parp=0xede3 params=2 returns=0
+// 0xedd8: WORD '#BOXES' codep=0x224c parp=0xede3
 // ================================================
 
 void _n_BOXES() // #BOXES
@@ -850,7 +850,7 @@ void _n_BOXES() // #BOXES
 
 
 // ================================================
-// 0xee05: WORD 'UNK_0xee07' codep=0x224c parp=0xee07 params=3 returns=0
+// 0xee05: WORD 'UNK_0xee07' codep=0x224c parp=0xee07
 // ================================================
 
 void UNK_0xee07() // UNK_0xee07
@@ -973,7 +973,7 @@ void UNK_0xee5b() // UNK_0xee5b
 
 
 // ================================================
-// 0xeed9: WORD 'UNK_0xeedb' codep=0x224c parp=0xeedb orphan params=3 returns=1
+// 0xeed9: WORD 'UNK_0xeedb' codep=0x224c parp=0xeedb orphan
 // ================================================
 
 void UNK_0xeedb() // UNK_0xeedb
@@ -1108,7 +1108,7 @@ void UNK_0xef79() // UNK_0xef79
 
 
 // ================================================
-// 0xef97: WORD 'UNK_0xef99' codep=0x224c parp=0xef99
+// 0xef97: WORD 'UNK_0xef99' codep=0x224c parp=0xef99 params=0 returns=0
 // ================================================
 
 void UNK_0xef99() // UNK_0xef99
@@ -1350,7 +1350,7 @@ void IsPOPULA() // ?POPULA
 
 void UNK_0xf123() // UNK_0xf123
 {
-  SetColor(PINK);
+  GetColor(PINK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   Push(pp_IsNEW); // ?NEW
@@ -1381,7 +1381,7 @@ void UNK_0xf123() // UNK_0xf123
   DrawLOCAL_dash_(); // .LOCAL-
   V_gt_DISPL(); // V>DISPL
   _gt_DISPLA(); // >DISPLA
-  SetColor(GREEN);
+  GetColor(GREEN);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   UNK_0xea46(); // UNK_0xea46
@@ -1483,7 +1483,7 @@ void UNK_0xf1d9() // UNK_0xf1d9
 
 void UNK_0xf201() // UNK_0xf201
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
 }
@@ -1509,7 +1509,7 @@ void UNK_0xf20b() // UNK_0xf20b
 
 
 // ================================================
-// 0xf221: WORD 'UNK_0xf223' codep=0x224c parp=0xf223 params=2 returns=2
+// 0xf221: WORD 'UNK_0xf223' codep=0x224c parp=0xf223
 // ================================================
 
 void UNK_0xf223() // UNK_0xf223
@@ -1610,7 +1610,7 @@ void UNK_0xf295() // UNK_0xf295
   UNK_0xf197(); // UNK_0xf197
   Push(pp_LCOLOR); // LCOLOR
   _099(); // 099
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
   Push2Words("*SHIP");
@@ -1758,7 +1758,7 @@ void UNK_0xf3d9() // UNK_0xf3d9
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(GREEN);
+  GetColor(GREEN);
   UNK_0xeb09(); // UNK_0xeb09
   DrawWHERE(); // .WHERE
 }
@@ -1833,7 +1833,7 @@ void UNK_0xf447() // UNK_0xf447
   Pop(); // DROP
   UNK_0xf3d9(); // UNK_0xf3d9
   UNK_0xf417(); // UNK_0xf417
-  SetColor(GREEN);
+  GetColor(GREEN);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   Push(-1);
@@ -1863,7 +1863,7 @@ void UNK_0xf46d() // UNK_0xf46d
 {
   UNK_0xf45f(); // UNK_0xf45f
   UNK_0xf201(); // UNK_0xf201
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   BEEPOFF(); // BEEPOFF

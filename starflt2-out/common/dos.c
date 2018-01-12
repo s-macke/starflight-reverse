@@ -111,7 +111,7 @@ void UNMOUNT(); // UNMOUNT
 void BLOCK_1(); // BLOCK_1
 void FLUSH_1(); // FLUSH_1
 void IsUNRAVEL(); // ?UNRAVEL
-void Store_1(); // !_1
+void Store(); // !
 void _ro_CS_ask__rc_(); // (CS?)
 void _2_ex__1(); // 2!_1
 void _2_at_(); // 2@
@@ -182,7 +182,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40b1: WORD 'DOSPARM' codep=0x224c parp=0x40bd params=2 returns=0
+// 0x40b1: WORD 'DOSPARM' codep=0x224c parp=0x40bd
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -333,7 +333,7 @@ void SYSTEM() // SYSTEM
   Push(0x2d97); // probable 'FCB'
   Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -346,7 +346,7 @@ void SYSUTIL() // SYSUTIL
   Push(0x2d97); // probable 'FCB'
   Push(Pop() + 0x0033); //  0x0033 +
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -376,19 +376,19 @@ void _gt_FCB() // >FCB
   Push(Read16(cc_BL)); // BL
   FILL_1(); // FILL_1
   Push(Read16(cc_SI)); // SI
-  Store_1(); // !_1
+  Store(); // !
   Push(Read16(pp__i_FCB)); // 'FCB @
   Push(Read16(cc_DI)); // DI
-  Store_1(); // !_1
+  Store(); // !
   _ro_CS_ask__rc_(); // (CS?)
   Push(Read16(regsp)); // DUP
   Push(Read16(cc_DS)); // DS
-  Store_1(); // !_1
+  Store(); // !
   Push(Read16(cc_ES)); // ES
-  Store_1(); // !_1
+  Store(); // !
   Push(5);
   Push(Read16(cc_AX)); // AX
-  Store_1(); // !_1
+  Store(); // !
   Push(0x0029);
   DOSCALL(); // DOSCALL
 }
@@ -430,10 +430,10 @@ void FCBCALL() // FCBCALL
 {
   Push(Read16(pp__i_FCB)); // 'FCB @
   Push(Read16(cc_DX)); // DX
-  Store_1(); // !_1
+  Store(); // !
   _ro_CS_ask__rc_(); // (CS?)
   Push(Read16(cc_DS)); // DS
-  Store_1(); // !_1
+  Store(); // !
   DOSCALL(); // DOSCALL
   Push(Read16(Read16(cc_AX))&0xFF); // AX C@
 }
@@ -514,9 +514,9 @@ void DOS_dash_DTA() // DOS-DTA
   Push(pp_DTA_1); // DTA_1
   _2_at_(); // 2@
   Push(Read16(cc_DX)); // DX
-  Store_1(); // !_1
+  Store(); // !
   Push(Read16(cc_DS)); // DS
-  Store_1(); // !_1
+  Store(); // !
   Push(0x001a);
   DOSCALL(); // DOSCALL
 }
@@ -591,10 +591,10 @@ void _bo_FILE_bc_() // [FILE]
   FCBPFAS(); // FCBPFAS
   Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   SWAP(); // SWAP
   RELREC(); // RELREC
-  Store_1(); // !_1
+  Store(); // !
   if (Pop() != 0)
   {
     READ_dash_RA(); // READ-RA
@@ -603,7 +603,7 @@ void _bo_FILE_bc_() // [FILE]
     WRITE_dash_R(); // WRITE-R
   }
   Push(pp_DISK_dash_ERROR); // DISK-ERROR
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -627,7 +627,7 @@ void SYSGEN() // SYSGEN
   HERE(); // HERE
   Push(Pop() - 0x0100); //  0x0100 -
   RECSIZE(); // RECSIZE
-  Store_1(); // !_1
+  Store(); // !
   WRITENE(); // WRITENE
   _ro_SETUP_rc_(); // (SETUP)
   IsUNRAVEL(); // ?UNRAVEL
@@ -647,7 +647,7 @@ void _4TH_gt_DOS() // 4TH>DOS
   MAKE_st_NA(); // MAKE<NA
   Push(0x0400);
   RECSIZE(); // RECSIZE
-  Store_1(); // !_1
+  Store(); // !
   Push(Pop() + 1); //  1+
   SWAP(); // SWAP
 
@@ -687,7 +687,7 @@ void UNK_0x4480() // UNK_0x4480
   PAD(); // PAD
   Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   CLRFCB(); // CLRFCB
   SET_STR_AS_PARAM("STAR2A  COM");
   NAM(); // NAM
@@ -708,7 +708,7 @@ void UNK_0x4480() // UNK_0x4480
   Push(Pop() | Pop()); // OR
   Push(a); // R>
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -719,7 +719,7 @@ void UNK_0x4480() // UNK_0x4480
 void UNK_0x44d8() // UNK_0x44d8
 {
   Push(Read16(cc_DX)); // DX
-  Store_1(); // !_1
+  Store(); // !
   Push(0x0036);
   DOSCALL(); // DOSCALL
   Push(Read16(Read16(cc_AX))); // AX @
@@ -753,7 +753,7 @@ void SETMAXD() // SETMAXD
   UNK_0x44f2(); // UNK_0x44f2
   MAX(); // MAX
   Push(pp_MAXDRV); // MAXDRV
-  Store_1(); // !_1
+  Store(); // !
   UNK_0x4480(); // UNK_0x4480
   if (Pop() == 0) return;
   Push(7);
@@ -769,7 +769,7 @@ void SETMAXD() // SETMAXD
     {
       Push(i); // I
       Push(pp_MAXDRV); // MAXDRV
-      Store_1(); // !_1
+      Store(); // !
     }
     i++;
   } while(i<imax); // (LOOP)
@@ -781,7 +781,7 @@ void SETMAXD() // SETMAXD
   if (Pop() == 0) return;
   Push(1);
   Push(pp_MAXDRV); // MAXDRV
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -898,7 +898,7 @@ void SMARTOP() // SMARTOP
 // 0x4635: db 0x00 0x00 '  '
 
 // ================================================
-// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643 params=9 returns=0
+// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643
 // ================================================
 
 void _st_ASKMOU() // <ASKMOU
@@ -954,7 +954,7 @@ void DOSMOUN() // DOSMOUN
   FCBPFAS(); // FCBPFAS
   Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   SMARTOP(); // SMARTOP
   Push(Read16(regsp)); // DUP
   Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
@@ -966,7 +966,7 @@ void DOSMOUN() // DOSMOUN
   FCBPFAS(); // FCBPFAS
   Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   Push(pp_ASKMOUN); // ASKMOUN
   GetEXECUTE(); // @EXECUTE
   goto label2;
@@ -974,7 +974,7 @@ void DOSMOUN() // DOSMOUN
   label1:
   Push(0x0400);
   RECSIZE(); // RECSIZE
-  Store_1(); // !_1
+  Store(); // !
   FILESIZ(); // FILESIZ
   _2_at_(); // 2@
   SWAP(); // SWAP
@@ -999,7 +999,7 @@ void DOSUNMO() // DOSUNMO
   FCBPFAS(); // FCBPFAS
   Push(Read16(Pop())); //  @
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   CLOSE(); // CLOSE
   Pop(); // DROP
   Push(0);
@@ -1068,10 +1068,10 @@ void USING() // USING
 void SETBLOC() // SETBLOC
 {
   Push(Read16(cc_ES)); // ES
-  Store_1(); // !_1
+  Store(); // !
   Push(Read16(regsp)); // DUP
   Push(Read16(cc_BX)); // BX
-  Store_1(); // !_1
+  Store(); // !
   Push(0x004a);
   DOSCALL(); // DOSCALL
   Push(Read16(Read16(cc_PSW)) & 1); // PSW @ 1 AND
@@ -1086,7 +1086,7 @@ void SETBLOC() // SETBLOC
   }
   _ro_CS_ask__rc_(); // (CS?)
   Push(Read16(cc_ES)); // ES
-  Store_1(); // !_1
+  Store(); // !
 }
 
 
@@ -1107,7 +1107,7 @@ void SETSYSK() // SETSYSK
   Push(0x0040);
   U_slash_MOD(); // U/MOD
   Push(pp_SYSK); // SYSK
-  Store_1(); // !_1
+  Store(); // !
   Pop(); // DROP
   _ro_CS_ask__rc_(); // (CS?)
   SETBLOC(); // SETBLOC
@@ -1156,20 +1156,20 @@ void UNK_0x486f() // UNK_0x486f
   Push(Read16(pp_UNK_0x484e)); // UNK_0x484e @
   Push(Read16(pp_UNK_0x4852)); // UNK_0x4852 @
   Push(pp_UNK_0x4856); // UNK_0x4856
-  Store_1(); // !_1
+  Store(); // !
   Push(pp_UNK_0x4856 + 2); // UNK_0x4856 2+
   OFF_1(); // OFF_1
   Push(Read16(cc_DX)); // DX
-  Store_1(); // !_1
+  Store(); // !
   Push(3);
   Push(Read16(cc_AX)); // AX
   C_ex__1(); // C!_1
   _ro_CS_ask__rc_(); // (CS?)
   Push(Read16(cc_ES)); // ES
-  Store_1(); // !_1
+  Store(); // !
   Push(pp_UNK_0x4856); // UNK_0x4856
   Push(Read16(cc_BX)); // BX
-  Store_1(); // !_1
+  Store(); // !
   Push(0x004b);
   DOSCALL(); // DOSCALL
 }
@@ -1238,13 +1238,13 @@ void _ro_LDS_rc_() // (LDS)
   a = Pop(); // >R
   Push(pp_UNK_0x4901); // UNK_0x4901
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
   OVER(); // OVER
   _gt_FCB(); // >FCB
   Push(pp_UNK_0x4852); // UNK_0x4852
-  Store_1(); // !_1
+  Store(); // !
   Push(pp_UNK_0x484e); // UNK_0x484e
-  Store_1(); // !_1
+  Store(); // !
 
   label2:
   _bo_LDS_bc_(); // [LDS]
@@ -1257,7 +1257,7 @@ void _ro_LDS_rc_() // (LDS)
   label1:
   Push(a); // R>
   Push(pp__i_FCB); // 'FCB
-  Store_1(); // !_1
+  Store(); // !
 }
 
 

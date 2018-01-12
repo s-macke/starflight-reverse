@@ -343,7 +343,7 @@ void UNK_0xec99() // UNK_0xec99
 
 
 // ================================================
-// 0xec9f: WORD 'UNK_0xeca1' codep=0x224c parp=0xeca1
+// 0xec9f: WORD 'UNK_0xeca1' codep=0x224c parp=0xeca1 params=0 returns=1
 // ================================================
 
 void UNK_0xeca1() // UNK_0xeca1
@@ -356,7 +356,7 @@ void UNK_0xeca1() // UNK_0xeca1
 
 
 // ================================================
-// 0xecad: WORD 'UNK_0xecaf' codep=0x224c parp=0xecaf
+// 0xecad: WORD 'UNK_0xecaf' codep=0x224c parp=0xecaf params=0 returns=1
 // ================================================
 
 void UNK_0xecaf() // UNK_0xecaf
@@ -411,7 +411,7 @@ void UNK_0xecf5() // UNK_0xecf5
   Push(Read16(Pop() + 2)); //  2+ @
   Push(pp_SEED_3); // SEED_3
   Store_2(); // !_2
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("GAME OVER - NO FUEL");
   DrawTTY(); // .TTY
@@ -448,7 +448,7 @@ void UNK_0xecf5() // UNK_0xecf5
 // 0xed9f: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xeda1: WORD 'UNK_0xeda3' codep=0x224c parp=0xeda3
+// 0xeda1: WORD 'UNK_0xeda3' codep=0x224c parp=0xeda3 params=2 returns=1
 // ================================================
 
 void UNK_0xeda3() // UNK_0xeda3
@@ -463,7 +463,7 @@ void UNK_0xeda3() // UNK_0xeda3
 
 
 // ================================================
-// 0xedb3: WORD 'UNK_0xedb5' codep=0x224c parp=0xedb5
+// 0xedb3: WORD 'UNK_0xedb5' codep=0x224c parp=0xedb5 params=1 returns=0
 // ================================================
 
 void UNK_0xedb5() // UNK_0xedb5
@@ -511,7 +511,7 @@ void UNK_0xedb5() // UNK_0xedb5
 
 
 // ================================================
-// 0xee23: WORD 'UNK_0xee25' codep=0x224c parp=0xee25
+// 0xee23: WORD 'UNK_0xee25' codep=0x224c parp=0xee25 params=0 returns=0
 // ================================================
 
 void UNK_0xee25() // UNK_0xee25
@@ -536,7 +536,7 @@ void UNK_0xee25() // UNK_0xee25
 
 
 // ================================================
-// 0xee3d: WORD 'UNK_0xee3f' codep=0x224c parp=0xee3f
+// 0xee3d: WORD 'UNK_0xee3f' codep=0x224c parp=0xee3f params=1 returns=2
 // ================================================
 
 void UNK_0xee3f() // UNK_0xee3f
@@ -679,7 +679,7 @@ void UNK_0xef1d() // UNK_0xef1d
 
 
 // ================================================
-// 0xef23: WORD 'UNK_0xef25' codep=0x224c parp=0xef25 params=6 returns=0
+// 0xef23: WORD 'UNK_0xef25' codep=0x224c parp=0xef25
 // ================================================
 
 void UNK_0xef25() // UNK_0xef25
@@ -1013,7 +1013,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM(" ");
   UNK_0xeeff(); // UNK_0xeeff
@@ -1089,7 +1089,7 @@ void UNK_0xf297() // UNK_0xf297
 
 void UNK_0xf2ad() // UNK_0xf2ad
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("IF WE APPLY FULL REVERSE THRUST WE MAY");
   UNK_0xeeff(); // UNK_0xeeff
@@ -1108,7 +1108,7 @@ void UNK_0xf2ad() // UNK_0xf2ad
 
 void UNK_0xf338() // UNK_0xf338
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("COMMANDER, THE SHIP'S HULL IS UNDER");
   UNK_0xeeff(); // UNK_0xeeff
@@ -1166,7 +1166,7 @@ void UNK_0xf40b() // UNK_0xf40b
 
 
 // ================================================
-// 0xf42f: WORD 'UNK_0xf431' codep=0x224c parp=0xf431
+// 0xf42f: WORD 'UNK_0xf431' codep=0x224c parp=0xf431 params=0 returns=0
 // ================================================
 
 void UNK_0xf431() // UNK_0xf431

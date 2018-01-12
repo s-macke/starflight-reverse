@@ -82,7 +82,7 @@ void NOP(); // NOP
 void WITHIN(); // WITHIN
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -165,7 +165,7 @@ void UNK_0xec75() // UNK_0xec75
 
 void UNK_0xec89() // UNK_0xec89
 {
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x009a);
   Push(0x00b4);
@@ -198,7 +198,7 @@ void UNK_0xecd1() // UNK_0xecd1
 {
   Push(0xfff9);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0x0055);
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
@@ -212,14 +212,14 @@ void UNK_0xecd1() // UNK_0xecd1
 void UNK_0xece5() // UNK_0xece5
 {
   _gt_2FONT(); // >2FONT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0067);
   Push(0x00c2);
   POS_dot_(); // POS.
   PRINT("DAMAGE", 6); // (.")
   _gt_1FONT(); // >1FONT
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x0055);
   Push(0x00b2);
@@ -273,9 +273,9 @@ void UNK_0xed5c() // UNK_0xed5c
     Push(Pop() * 7); //  7 *
     _dash_(); // -
     POS_dot_(); // POS.
-    SetColor(WHITE);
-    SetColor(GREY2);
-    SetColor(DK_dash_GREEN);
+    GetColor(WHITE);
+    GetColor(GREY2);
+    GetColor(DK_dash_GREEN);
     IsMRC(); // ?MRC
     StoreCOLOR(); // !COLOR
     Push(Read16(pp_WBLT)); // WBLT @
@@ -289,9 +289,9 @@ void UNK_0xed5c() // UNK_0xed5c
     Push(0x0028 - Read16(pp_WBLT)); // 0x0028 WBLT @ -
     Push(pp_WBLT); // WBLT
     Store_3(); // !_3
-    SetColor(GREY1);
-    SetColor(GREY1);
-    SetColor(RED);
+    GetColor(GREY1);
+    GetColor(GREY1);
+    GetColor(RED);
     IsMRC(); // ?MRC
     StoreCOLOR(); // !COLOR
     Push(Read16(pp_WBLT)); // WBLT @
@@ -356,7 +356,7 @@ void DBARS() // DBARS
 
 void _ro__slash_DAMAGE_rc_() // (/DAMAGE)
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   UNK_0xec89(); // UNK_0xec89
   UNK_0xece5(); // UNK_0xece5
@@ -615,7 +615,7 @@ void UNK_0xf013() // UNK_0xf013
 
 
 // ================================================
-// 0xf059: WORD 'UNK_0xf05b' codep=0x224c parp=0xf05b params=1 returns=1
+// 0xf059: WORD 'UNK_0xf05b' codep=0x224c parp=0xf05b params=1 returns=0
 // ================================================
 
 void UNK_0xf05b() // UNK_0xf05b
@@ -973,7 +973,7 @@ void UNK_0xf3c5() // UNK_0xf3c5
   Push(7);
   Push(pp_LBLT); // LBLT
   Store_3(); // !_3
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3

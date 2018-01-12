@@ -592,10 +592,10 @@ void UNK_0xe4dd() // UNK_0xe4dd
   _0_st_(); // 0<
   if (Pop() != 0)
   {
-    SetColor(WHITE);
+    GetColor(WHITE);
   } else
   {
-    SetColor(PINK);
+    GetColor(PINK);
   }
   StoreCOLOR(); // !COLOR
 }
@@ -653,10 +653,10 @@ void UNK_0xe549() // UNK_0xe549
     _0_st_(); // 0<
     if (Pop() != 0)
     {
-      SetColor(GREY1);
+      GetColor(GREY1);
     } else
     {
-      SetColor(PINK);
+      GetColor(PINK);
     }
     StoreCOLOR(); // !COLOR
     _2DUP(); // 2DUP
@@ -679,10 +679,10 @@ void UNK_0xe585() // UNK_0xe585
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor(WHITE);
+    GetColor(WHITE);
   } else
   {
-    SetColor(GREY2);
+    GetColor(GREY2);
   }
   StoreCOLOR(); // !COLOR
   Push(0x0011);
@@ -770,9 +770,9 @@ void UNK_0xe585() // UNK_0xe585
 
 void UNK_0xe629() // UNK_0xe629
 {
-  SetColor(GREY1);
-  SetColor(GREY1);
-  SetColor(LT_dash_BLUE);
+  GetColor(GREY1);
+  GetColor(GREY1);
+  GetColor(LT_dash_BLUE);
   IsMRC(); // ?MRC
 }
 
@@ -789,7 +789,7 @@ void UNK_0xe635() // UNK_0xe635
   Push(0x009b);
   UNK_0xe629(); // UNK_0xe629
   POLY_dash_WI(); // POLY-WI
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(0x009b);
   Push(0);
@@ -837,7 +837,7 @@ void UNK_0xe635() // UNK_0xe635
   Push(0);
   LLINE(); // LLINE
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(9);
   Push(0x0010);
@@ -884,7 +884,7 @@ void UNK_0xe722() // UNK_0xe722
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   Store_2(); // !_2
-  SetColor(ORANGE);
+  GetColor(ORANGE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
@@ -924,7 +924,7 @@ void UNK_0xe766() // UNK_0xe766
     Push(pp_UNK_0xe3c1); // UNK_0xe3c1
     Push(pp_ABLT); // ABLT
     Store_2(); // !_2
-    SetColor(BLUE);
+    GetColor(BLUE);
     StoreCOLOR(); // !COLOR
     Push(pp_XORMODE); // XORMODE
     _099(); // 099
@@ -946,7 +946,7 @@ void UNK_0xe766() // UNK_0xe766
 void UNK_0xe7b4() // UNK_0xe7b4
 {
   unsigned short int i, imax;
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x009c);
@@ -960,7 +960,7 @@ void UNK_0xe7b4() // UNK_0xe7b4
     Push(0x001a);
     POS_dot_(); // POS.
     Push(3);
-    SetColor(BLACK);
+    GetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(Read16(pp_LVIS)); // LVIS @
     Push(Read16(cc__star_MAPSCA)); // *MAPSCA
@@ -989,7 +989,7 @@ void UNK_0xe7b4() // UNK_0xe7b4
 void UNK_0xe7fe() // UNK_0xe7fe
 {
   unsigned short int i, imax;
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x00c7);
@@ -1003,7 +1003,7 @@ void UNK_0xe7fe() // UNK_0xe7fe
     Push(i); // I
     POS_dot_(); // POS.
     Push(3);
-    SetColor(BLACK);
+    GetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(1);
     Push(pp_XBLT); // XBLT
@@ -1029,7 +1029,7 @@ void UNK_0xe7fe() // UNK_0xe7fe
 
 
 // ================================================
-// 0xe84c: WORD 'UNK_0xe84e' codep=0x224c parp=0xe84e
+// 0xe84c: WORD 'UNK_0xe84e' codep=0x224c parp=0xe84e params=0 returns=1
 // ================================================
 
 void UNK_0xe84e() // UNK_0xe84e
@@ -1283,7 +1283,7 @@ void UNK_0xe9e0() // UNK_0xe9e0
 void UNK_0xea04() // UNK_0xea04
 {
   unsigned short int i, imax;
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   _1PIX(); // 1PIX
   Push(Read16(pp_ILOCAL)); // ILOCAL @
@@ -1322,7 +1322,7 @@ void UNK_0xea3a() // UNK_0xea3a
   Push(0x0014);
   Push(0x0021);
   Push(0x009f);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -1377,7 +1377,7 @@ void UNK_0xea7c() // UNK_0xea7c
 void UNK_0xea8c() // UNK_0xea8c
 {
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0033);
   Push(7);
@@ -1411,7 +1411,7 @@ void UNK_0xea8c() // UNK_0xea8c
 void UNK_0xead0() // UNK_0xead0
 {
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x006b);
   Push(7);
@@ -1432,7 +1432,7 @@ void UNK_0xead0() // UNK_0xead0
 void UNK_0xeaf0() // UNK_0xeaf0
 {
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x008a);
   Push(7);
@@ -1503,7 +1503,7 @@ void UNK_0xeb47() // UNK_0xeb47
 void UNK_0xeb85() // UNK_0xeb85
 {
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(9);
   Push(7);
@@ -1583,7 +1583,7 @@ void UNK_0xec3c() // UNK_0xec3c
 
 void NOMAP() // NOMAP
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {

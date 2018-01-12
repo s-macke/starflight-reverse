@@ -387,7 +387,7 @@ void UNK_0xe646() // UNK_0xe646
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(pp_XORMODE); // XORMODE
@@ -941,7 +941,7 @@ void UNK_0xe914() // UNK_0xe914
   Push(0);
   Push(5);
   UNK_0xe6b4(); // UNK_0xe6b4
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1244,7 +1244,7 @@ void UNK_0xeb09() // UNK_0xeb09
 
 
 // ================================================
-// 0xeb17: WORD 'UNK_0xeb19' codep=0x224c parp=0xeb19 orphan params=0 returns=2
+// 0xeb17: WORD 'UNK_0xeb19' codep=0x224c parp=0xeb19 orphan
 // ================================================
 
 void UNK_0xeb19() // UNK_0xeb19
@@ -1539,7 +1539,7 @@ void UNK_0xecbf() // UNK_0xecbf
 
 void UNK_0xecdf() // UNK_0xecdf
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   UNK_0xecbf(); // UNK_0xecbf
@@ -1766,7 +1766,7 @@ void UNK_0xedf0() // UNK_0xedf0
   Push(0x0015);
   POS_dot_(); // POS.
   Push(Read16(pp_COLOR)); // COLOR @
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("SCROLL ITEMS: ^\\   QUIT: []", 27); // (.")
   Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
@@ -1802,13 +1802,13 @@ void UNK_0xee3e() // UNK_0xee3e
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xe762(); // UNK_0xe762
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
   _gt_BOTT(); // >BOTT
   PRINT("REVISING TERRAIN VEHICLE INVENTORY", 34); // (.")
   Push(pp_UNK_0xe636); // UNK_0xe636
   OFF_2(); // OFF_2
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1909,7 +1909,7 @@ void UNK_0xeee2() // UNK_0xeee2
     imax = Pop();
     do // (DO)
     {
-      SetColor(BLACK);
+      GetColor(BLACK);
       WSHORTE(); // WSHORTE
       i++;
     } while(i<imax); // (LOOP)
@@ -2031,7 +2031,7 @@ void UNK_0xef94() // UNK_0xef94
   Push(7);
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xeec2(); // UNK_0xeec2
   GetINST_dash_C(); // @INST-C
@@ -2169,7 +2169,7 @@ void UNK_0xf018() // UNK_0xf018
   _gt_TVCT(); // >TVCT
   UNK_0xe784(); // UNK_0xe784
   UNK_0xeee2(); // UNK_0xeee2
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xeff2(); // UNK_0xeff2
   UNK_0xef52(); // UNK_0xef52
@@ -2195,7 +2195,7 @@ void UNK_0xf096() // UNK_0xf096
 void UNK_0xf0a2() // UNK_0xf0a2
 {
   UNK_0xf096(); // UNK_0xf096
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xf096(); // UNK_0xf096
   Push(0x0053);
   Push(0x0015);
@@ -2217,7 +2217,7 @@ void UNK_0xf0a2() // UNK_0xf0a2
 void UNK_0xf0cc() // UNK_0xf0cc
 {
   UNK_0xf096(); // UNK_0xf096
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xf096(); // UNK_0xf096
   Push(0x0057);
   Push(0x0015);
@@ -2239,7 +2239,7 @@ void UNK_0xf0cc() // UNK_0xf0cc
 void UNK_0xf0f6() // UNK_0xf0f6
 {
   UNK_0xf096(); // UNK_0xf096
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xf096(); // UNK_0xf096
   Push(0x007f);
   Push(0x0015);
@@ -2342,7 +2342,7 @@ void UNK_0xf18a() // UNK_0xf18a
 
 void UNK_0xf194() // UNK_0xf194
 {
-  SetColor(GREEN);
+  GetColor(GREEN);
   UNK_0xf0a2(); // UNK_0xf0a2
   CLICK(); // CLICK
   INEXT(); // INEXT
@@ -2351,7 +2351,7 @@ void UNK_0xf194() // UNK_0xf194
   TEXT_gt_PA(); // TEXT>PA
   PAD(); // PAD
   UNK_0xe67a(); // UNK_0xe67a
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(-1);
   Push(pp_WTOP); // WTOP
@@ -2367,7 +2367,7 @@ void UNK_0xf194() // UNK_0xf194
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex__2(); // +!_2
   UNK_0xe67a(); // UNK_0xe67a
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   UNK_0xf0a2(); // UNK_0xf0a2
 }
 
@@ -2378,7 +2378,7 @@ void UNK_0xf194() // UNK_0xf194
 
 void UNK_0xf1ce() // UNK_0xf1ce
 {
-  SetColor(GREEN);
+  GetColor(GREEN);
   UNK_0xf0cc(); // UNK_0xf0cc
   CLICK(); // CLICK
   UNK_0xf18a(); // UNK_0xf18a
@@ -2388,7 +2388,7 @@ void UNK_0xf1ce() // UNK_0xf1ce
   _gt_C_plus_S(); // >C+S
   TEXT_gt_PA(); // TEXT>PA
   ICLOSE(); // ICLOSE
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PAD(); // PAD
   UNK_0xe67a(); // UNK_0xe67a
@@ -2406,7 +2406,7 @@ void UNK_0xf1ce() // UNK_0xf1ce
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex__2(); // +!_2
   UNK_0xe67a(); // UNK_0xe67a
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   UNK_0xf0cc(); // UNK_0xf0cc
 }
 
@@ -2732,7 +2732,7 @@ void UNK_0xf3e4() // UNK_0xf3e4
 
 
 // ================================================
-// 0xf404: WORD 'UNK_0xf406' codep=0x224c parp=0xf406 params=0 returns=0
+// 0xf404: WORD 'UNK_0xf406' codep=0x224c parp=0xf406
 // ================================================
 
 void UNK_0xf406() // UNK_0xf406
@@ -2806,7 +2806,7 @@ void _gt_DEBRIS() // >DEBRIS
 
 
 // ================================================
-// 0xf464: WORD 'UNK_0xf466' codep=0x224c parp=0xf466 params=3 returns=0
+// 0xf464: WORD 'UNK_0xf466' codep=0x224c parp=0xf466
 // ================================================
 
 void UNK_0xf466() // UNK_0xf466
@@ -2831,7 +2831,7 @@ void UNK_0xf466() // UNK_0xf466
 
 
 // ================================================
-// 0xf48e: WORD 'UNK_0xf490' codep=0x224c parp=0xf490 params=3 returns=0
+// 0xf48e: WORD 'UNK_0xf490' codep=0x224c parp=0xf490
 // ================================================
 
 void UNK_0xf490() // UNK_0xf490
@@ -2882,14 +2882,14 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
       Push(pp_XORMODE); // XORMODE
       _099(); // 099
       UNK_0xeee2(); // UNK_0xeee2
-      SetColor(WHITE);
+      GetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xeff2(); // UNK_0xeff2
       UNK_0xef52(); // UNK_0xef52
       UNK_0xf228(); // UNK_0xf228
       IsQUIT(); // ?QUIT
     } while(Pop() == 0);
-    SetColor(GREEN);
+    GetColor(GREEN);
     UNK_0xf0f6(); // UNK_0xf0f6
     DELETE_dash_(); // DELETE-
     Push2Words("0.");
@@ -2904,7 +2904,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
     Push(7);
     Push(pp_UNK_0xe63a); // UNK_0xe63a
     _st__ex__gt_(); // <!>
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     UNK_0xf0f6(); // UNK_0xf0f6
     UNK_0xe67a(); // UNK_0xe67a
     UNK_0xe784(); // UNK_0xe784

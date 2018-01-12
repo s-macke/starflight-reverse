@@ -192,7 +192,7 @@ void _3_star_(); // 3*
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -296,7 +296,7 @@ const unsigned short int cc_UNK_0xe431 = 0xe431; // UNK_0xe431
 // 0xe2da: dw 0x0039
 
 // ================================================
-// 0xe2dc: WORD 'UNK_0xe2de' codep=0x224c parp=0xe2de orphan params=3 returns=1
+// 0xe2dc: WORD 'UNK_0xe2de' codep=0x224c parp=0xe2de orphan
 // ================================================
 
 void UNK_0xe2de() // UNK_0xe2de
@@ -436,7 +436,7 @@ void UNK_0xe3eb() // UNK_0xe3eb
 
 
 // ================================================
-// 0xe405: WORD 'UNK_0xe407' codep=0x224c parp=0xe407 orphan
+// 0xe405: WORD 'UNK_0xe407' codep=0x224c parp=0xe407 orphan params=0 returns=1
 // ================================================
 
 void UNK_0xe407() // UNK_0xe407
@@ -448,7 +448,7 @@ void UNK_0xe407() // UNK_0xe407
 
 
 // ================================================
-// 0xe411: WORD 'UNK_0xe413' codep=0x224c parp=0xe413
+// 0xe411: WORD 'UNK_0xe413' codep=0x224c parp=0xe413 params=0 returns=1
 // ================================================
 
 void UNK_0xe413() // UNK_0xe413
@@ -460,7 +460,7 @@ void UNK_0xe413() // UNK_0xe413
 
 
 // ================================================
-// 0xe41b: WORD 'UNK_0xe41d' codep=0x224c parp=0xe41d
+// 0xe41b: WORD 'UNK_0xe41d' codep=0x224c parp=0xe41d params=0 returns=1
 // ================================================
 
 void UNK_0xe41d() // UNK_0xe41d
@@ -526,7 +526,7 @@ void UNK_0xe474() // UNK_0xe474
 
 
 // ================================================
-// 0xe47a: WORD 'UNK_0xe47c' codep=0x224c parp=0xe47c
+// 0xe47a: WORD 'UNK_0xe47c' codep=0x224c parp=0xe47c params=0 returns=1
 // ================================================
 
 void UNK_0xe47c() // UNK_0xe47c
@@ -833,10 +833,10 @@ void UNK_0xe867() // UNK_0xe867
     }
     Push(Read16(cc_TEXTC_slash_L) + 1); // TEXTC/L 1+
     Push(pp_PM_dash_PTR); // PM-PTR
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(1);
     Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     i++;
   } while(i<imax); // (LOOP)
 
@@ -896,7 +896,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
     Store_3(); // !_3
     Push(1);
     Push(pp_LINE_dash_COUNT); // LINE-COUNT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
   }
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())&0xFF); //  C@
@@ -912,7 +912,7 @@ void UNK_0xe8c7() // UNK_0xe8c7
   CMOVE(); // CMOVE
   Push(a); // R>
   Push(pp_PM_dash_PTR); // PM-PTR
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -1083,7 +1083,7 @@ void UNK_0xea3d() // UNK_0xea3d
 
 
 // ================================================
-// 0xea45: WORD 'UNK_0xea47' codep=0x224c parp=0xea47
+// 0xea45: WORD 'UNK_0xea47' codep=0x224c parp=0xea47 params=0 returns=0
 // ================================================
 
 void UNK_0xea47() // UNK_0xea47
@@ -1202,7 +1202,7 @@ void UNK_0xeafb() // UNK_0xeafb
 
 
 // ================================================
-// 0xeb4b: WORD 'UNK_0xeb4d' codep=0x224c parp=0xeb4d
+// 0xeb4b: WORD 'UNK_0xeb4d' codep=0x224c parp=0xeb4d params=0 returns=0
 // ================================================
 
 void UNK_0xeb4d() // UNK_0xeb4d
@@ -1514,7 +1514,7 @@ void UNK_0xecfd() // UNK_0xecfd
 
 
 // ================================================
-// 0xed29: WORD 'UNK_0xed2b' codep=0x224c parp=0xed2b
+// 0xed29: WORD 'UNK_0xed2b' codep=0x224c parp=0xed2b params=3 returns=0
 // ================================================
 
 void UNK_0xed2b() // UNK_0xed2b
@@ -1862,7 +1862,7 @@ void UNK_0xef83() // UNK_0xef83
 // 0xefd2: db 0x06 0x00 0x00 0x00 0x01 0x00 0xda 0xef 0x14 0x49 0xdb 0x01 0x27 0x68 0xdc 0x01 0x39 0x4e 0xdc 0x01 0x64 0x36 0xdb 0x01 '         I  'h  9N  d6  '
 
 // ================================================
-// 0xefea: WORD 'UNK_0xefec' codep=0x224c parp=0xefec
+// 0xefea: WORD 'UNK_0xefec' codep=0x224c parp=0xefec params=0 returns=0
 // ================================================
 
 void UNK_0xefec() // UNK_0xefec
@@ -2049,7 +2049,7 @@ void UNK_0xf166() // UNK_0xf166
   UNK_0xe867(); // UNK_0xe867
   Push(3);
   Push(pp_UNK_0xe6c5); // UNK_0xe6c5
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(b); // R>
   Push(a); // R>
   UNK_0xe2f2(); // UNK_0xe2f2
@@ -2274,7 +2274,7 @@ void IsTALK() // ?TALK
   unsigned short int a, i, imax;
   Push(Read16(pp_COLOR)); // COLOR @
   a = Pop(); // >R
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)

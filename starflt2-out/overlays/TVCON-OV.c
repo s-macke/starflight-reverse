@@ -609,7 +609,7 @@ void UNK_0xf067() // UNK_0xf067
 
 
 // ================================================
-// 0xf06d: WORD 'UNK_0xf06f' codep=0x224c parp=0xf06f params=2 returns=0
+// 0xf06d: WORD 'UNK_0xf06f' codep=0x224c parp=0xf06f
 // ================================================
 
 void UNK_0xf06f() // UNK_0xf06f
@@ -650,7 +650,7 @@ void UNK_0xf085() // UNK_0xf085
 
 
 // ================================================
-// 0xf0ad: WORD 'FADE' codep=0x224c parp=0xf0b6 params=0 returns=0
+// 0xf0ad: WORD 'FADE' codep=0x224c parp=0xf0b6
 // ================================================
 
 void FADE() // FADE
@@ -676,7 +676,7 @@ void FADE() // FADE
 
 
 // ================================================
-// 0xf0e0: WORD 'UNK_0xf0e2' codep=0x224c parp=0xf0e2 params=3 returns=0
+// 0xf0e0: WORD 'UNK_0xf0e2' codep=0x224c parp=0xf0e2
 // ================================================
 
 void UNK_0xf0e2() // UNK_0xf0e2
@@ -709,9 +709,9 @@ void DrawSTARDATE() // .STARDATE
   Push(0x00b2);
   POS_dot_(); // POS.
   Push(0x000a);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() != 0)
@@ -930,9 +930,9 @@ void UNK_0xf2f6() // UNK_0xf2f6
   Push(0x0096);
   POS_dot_(); // POS.
   Push(8);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() != 0)
@@ -957,9 +957,9 @@ void UNK_0xf32c() // UNK_0xf32c
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
@@ -984,7 +984,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00ab);
   POS_dot_(); // POS.
   Push(7);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xeda6(); // UNK_0xeda6
   Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
@@ -994,12 +994,12 @@ void DrawENERGY() // .ENERGY
   Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     StoreCOLOR(); // !COLOR
     PRINT("NONE", 4); // (.")
     return;
   }
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Pop() - 0x07d0); //  0x07d0 -
   Push(0x0064);
@@ -1012,7 +1012,7 @@ void DrawENERGY() // .ENERGY
   {
     Pop(); // DROP
     Push(Read16(pp_COLOR)); // COLOR @
-    SetColor(PINK);
+    GetColor(PINK);
     StoreCOLOR(); // !COLOR
     PRINT("RESERVE", 7); // (.")
     StoreCOLOR(); // !COLOR
@@ -1026,7 +1026,7 @@ void DrawENERGY() // .ENERGY
   Push(0x00a4);
   POS_dot_(); // POS.
   Push(3);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(Read16(pp__pe_EFF)); // %EFF @
   Push(0x0064);
@@ -1051,7 +1051,7 @@ void DrawCARGO() // .CARGO
   Push(0x009d);
   POS_dot_(); // POS.
   Push(3);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(pp_TV_dash_HOLD); // TV-HOLD
   Get_gt_C_plus_S(); // @>C+S
@@ -1064,7 +1064,7 @@ void DrawCARGO() // .CARGO
     Push(5);
     _slash_(); // /
   }
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(3);
   DrawR(); // .R
@@ -1147,7 +1147,7 @@ void DrawWHERE() // .WHERE
 {
   UNK_0xf1de(); // UNK_0xf1de
   if (Pop() == 0) return;
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0010);
   Push(0x00c5);

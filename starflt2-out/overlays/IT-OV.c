@@ -367,7 +367,7 @@ void UNK_0xefff() // UNK_0xefff
   MS(); // MS
   _i_KEY(); // 'KEY
   Pop(); // DROP
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xef4a(); // UNK_0xef4a
   KEY_2(); // KEY_2
@@ -873,7 +873,7 @@ void MAKE_dash_SCR() // MAKE-SCR
 
 
 // ================================================
-// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a params=0 returns=0
+// 0xf38d: WORD 'DELETE-S' codep=0x224c parp=0xf39a
 // ================================================
 // entry
 

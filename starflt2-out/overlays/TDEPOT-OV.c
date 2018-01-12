@@ -367,7 +367,7 @@ void UNK_0xe634() // UNK_0xe634
 
 void UNK_0xe644() // UNK_0xe644
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
 }
 
 
@@ -412,7 +412,7 @@ void UNK_0xe668() // UNK_0xe668
 {
   unsigned short int a;
   Push(Read16(pp_IsTD)); // ?TD @
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(Pop() * Pop()); // *
   a = Pop(); // >R
   Push(0);
@@ -447,7 +447,7 @@ void UNK_0xe682() // UNK_0xe682
 void UNK_0xe6ab() // UNK_0xe6ab
 {
   Push(0x0012);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x0064);
   Push(0x002c);
   POS_dot_PXT(); // POS.PXT
@@ -562,9 +562,9 @@ void UNK_0xe716() // UNK_0xe716
 
 void UNK_0xe726() // UNK_0xe726
 {
-  SetColor(WHITE);
-  SetColor(DK_dash_BLUE);
-  SetColor(LT_dash_BLUE);
+  GetColor(WHITE);
+  GetColor(DK_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -576,7 +576,7 @@ void UNK_0xe726() // UNK_0xe726
 
 void UNK_0xe734() // UNK_0xe734
 {
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   UNK_0xe726(); // UNK_0xe726
@@ -645,7 +645,7 @@ void UNK_0xe734() // UNK_0xe734
 void UNK_0xe7e1() // UNK_0xe7e1
 {
   Push(7);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x001d);
   Push(0x006e);
   _2DUP(); // 2DUP
@@ -655,9 +655,9 @@ void UNK_0xe7e1() // UNK_0xe7e1
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
   GetCOLOR(); // @COLOR
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
-  SetColor(WHITE);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
+  GetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0xc285); // probable 'OVD@BAL'
@@ -677,9 +677,9 @@ void UNK_0xe815() // UNK_0xe815
   Push(-1);
   Push(0x0023);
   CMESS(); // CMESS
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
-  SetColor(GREY1);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
+  GetColor(GREY1);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PRINT("YOUR ACCOUNT BALANCE IS: ", 25); // (.")
@@ -787,7 +787,7 @@ void UNK_0xe974() // UNK_0xe974
   Push(2);
   Push(0x000c);
   Push(0x009d);
-  SetColor(GREY2);
+  GetColor(GREY2);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -1060,13 +1060,13 @@ void UNK_0xeb45() // UNK_0xeb45
   Push(0x0096);
   POS_dot_(); // POS.
   Push(5);
-  SetColor(BLUE);
+  GetColor(BLUE);
   POLY_dash_ER(); // POLY-ER
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
-  SetColor(BROWN);
-  SetColor(BROWN);
-  SetColor(BLACK);
+  GetColor(BROWN);
+  GetColor(BROWN);
+  GetColor(BLACK);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PAD(); // PAD
@@ -1125,8 +1125,8 @@ void UNK_0xebeb() // UNK_0xebeb
 {
   unsigned short int i, imax;
   UNK_0xe6ab(); // UNK_0xe6ab
-  SetColor(BLACK);
-  SetColor(GREY1);
+  GetColor(BLACK);
+  GetColor(GREY1);
   UNK_0xe644(); // UNK_0xe644
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
@@ -1321,7 +1321,7 @@ void UNK_0xed1d() // UNK_0xed1d
   Push(1);
   Push(0x0018);
   CMESS(); // CMESS
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("INSUFFICIENT CARGO SPACE", 24); // (.")
   StoreCRS(); // !CRS
@@ -1338,7 +1338,7 @@ void UNK_0xed4c() // UNK_0xed4c
   Push(1);
   Push(0x0012);
   CMESS(); // CMESS
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   UNK_0xe654(); // UNK_0xe654
   StoreCRS(); // !CRS
@@ -1392,7 +1392,7 @@ void UNK_0xed96() // UNK_0xed96
     UNK_0xe644(); // UNK_0xe644
   } else
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
   }
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe5ee); // UNK_0xe5ee
@@ -1739,7 +1739,7 @@ void UNK_0xf07e() // UNK_0xf07e
   Push(Read16(pp_WTOP)); // WTOP @
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(0x0026);
-  SetColor(GREY2);
+  GetColor(GREY2);
   _2OVER(); // 2OVER
   POS_dot_PXT(); // POS.PXT
   SWAP(); // SWAP
@@ -1755,7 +1755,7 @@ void UNK_0xf07e() // UNK_0xf07e
 
 
 // ================================================
-// 0xf0f0: WORD 'UNK_0xf0f2' codep=0x224c parp=0xf0f2 params=6 returns=0
+// 0xf0f0: WORD 'UNK_0xf0f2' codep=0x224c parp=0xf0f2
 // ================================================
 
 void UNK_0xf0f2() // UNK_0xf0f2
@@ -1821,7 +1821,7 @@ void UNK_0xf148() // UNK_0xf148
 void UNK_0xf162() // UNK_0xf162
 {
   Push(0x0025);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x0064);
   Push(2);
   POS_dot_PXT(); // POS.PXT
@@ -1855,7 +1855,7 @@ void UNK_0xf174() // UNK_0xf174
       if (Pop() != 0)
       {
         IPREV(); // IPREV
-        SetColor(GREY2);
+        GetColor(GREY2);
         WSHORTE(); // WSHORTE
       }
       i++;
@@ -1957,7 +1957,7 @@ void UNK_0xf228() // UNK_0xf228
     Push(Read16(pp_WLEFT)); // WLEFT @
     Push(Read16(pp_WBOTTOM) - 8); // WBOTTOM @ 8 -
     Push(Read16(pp_WRIGHT)); // WRIGHT @
-    SetColor(GREY2);
+    GetColor(GREY2);
     POLY_dash_WI(); // POLY-WI
     UNK_0xebe1(); // UNK_0xebe1
   }
@@ -2324,8 +2324,8 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   _099(); // 099
   Push(pp_OCRS); // OCRS
   _099(); // 099
-  SetColor(GREY2);
-  SetColor(GREY1);
+  GetColor(GREY2);
+  GetColor(GREY1);
   UNK_0xe644(); // UNK_0xe644
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
@@ -2349,7 +2349,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
       DEPOT_dash_FUNCTION(); // DEPOT-FUNCTION case
       a = Pop(); // >R
       Push(-1);
-      SetColor(GREY2);
+      GetColor(GREY2);
       X0MESS(); // X0MESS
       UNK_0xe668(); // UNK_0xe668
       StoreCRS(); // !CRS

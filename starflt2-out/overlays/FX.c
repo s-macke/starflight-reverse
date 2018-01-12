@@ -478,7 +478,7 @@ void PSYCH() // PSYCH
     Push(Pop() | !(Pop()==Read16(pp_UNK_0xf08c)?1:0)); //   UNK_0xf08c @ = NOT OR
     if (Pop() != 0)
     {
-      SetColor(WHITE);
+      GetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xf13d(); // UNK_0xf13d
       Push(Read16(regsp)); // DUP
@@ -519,7 +519,7 @@ void UNK_0xf2a0() // UNK_0xf2a0
   Push(0);
   Push(0);
   Push(0x009f);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -851,9 +851,9 @@ void UNK_0xf4be() // UNK_0xf4be
   Push(0x00c4);
   POS_dot_(); // POS.
   Push(Read16(regsp)); // DUP
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xf48c(); // UNK_0xf48c
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -867,7 +867,7 @@ void UNK_0xf4ec() // UNK_0xf4ec
 {
   unsigned short int i, imax;
   UNK_0xf28a(); // UNK_0xf28a
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf2d8(); // UNK_0xf2d8
   Push(0);
@@ -915,7 +915,7 @@ void DrawTMAP() // .TMAP
   Get_gt_C_plus_S(); // @>C+S
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf4ec(); // UNK_0xf4ec
   UNK_0xf4be(); // UNK_0xf4be

@@ -297,7 +297,7 @@ void UNK_0xed0e() // UNK_0xed0e
 
 
 // ================================================
-// 0xed52: WORD 'UNK_0xed54' codep=0x224c parp=0xed54
+// 0xed52: WORD 'UNK_0xed54' codep=0x224c parp=0xed54 params=1 returns=0
 // ================================================
 
 void UNK_0xed54() // UNK_0xed54
@@ -317,7 +317,7 @@ void UNK_0xed54() // UNK_0xed54
 void UNK_0xed62() // UNK_0xed62
 {
   unsigned short int i, imax;
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -676,7 +676,7 @@ void UNK_0xefb6() // UNK_0xefb6
   Push(0x002c);
   Push(0x00c0);
   Push(0x0072);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   Push(0);
   Push(0);
@@ -1119,7 +1119,7 @@ void UNK_0xf360() // UNK_0xf360
 
 void UNK_0xf37e() // UNK_0xf37e
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Pop() * 0x000e + pp_UNK_0xf1d4); //  0x000e * UNK_0xf1d4 +
   Push(pp_ABLT); // ABLT
@@ -1224,7 +1224,7 @@ void UNK_0xf41c() // UNK_0xf41c
 void UNK_0xf42a() // UNK_0xf42a
 {
   unsigned short int i, imax;
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_ABLT)); // ABLT @
   Push(Read16(pp_ABLT)==pp_UNK_0xf1d4?1:0); // ABLT @ UNK_0xf1d4 =

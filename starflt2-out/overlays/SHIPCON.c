@@ -346,7 +346,7 @@ void TOW_dash_US() // TOW-US
     UNK_0xf37b(); // UNK_0xf37b
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   }
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(1);
   DrawON(); // .ON
 }

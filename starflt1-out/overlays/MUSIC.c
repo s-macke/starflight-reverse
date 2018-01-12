@@ -88,7 +88,7 @@ void MS(); // MS
 void _2OVER(); // 2OVER
 void D_gt_(); // D>
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void ON_3(); // ON_3
 void OFF(); // OFF
 void BLOCK_2(); // BLOCK_2
@@ -637,7 +637,7 @@ void UNK_0xe700() // UNK_0xe700
 
 
 // ================================================
-// 0xe714: WORD 'UNK_0xe716' codep=0x224c parp=0xe716 params=3 returns=0
+// 0xe714: WORD 'UNK_0xe716' codep=0x224c parp=0xe716
 // ================================================
 
 void UNK_0xe716() // UNK_0xe716
@@ -704,7 +704,7 @@ void BRMOVE() // BRMOVE
   Pop(); Pop(); // 2DROP
   Push(Read16(pp_UNK_0xe6c4) * Read16(pp_UNK_0xe6c0) + 0x0010); // UNK_0xe6c4 @ UNK_0xe6c0 @ * 0x0010 +
   Push(pp_UNK_0xe6e0); // UNK_0xe6e0
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xe6bc)); // UNK_0xe6bc @
   MS(); // MS
 }
@@ -837,11 +837,11 @@ void REDUCE() // REDUCE
   Push(Read16(a)); // R@
   Push(-Pop()); //  NEGATE
   Push(pp__n_CACHE); // #CACHE
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   AUTO_dash_CACHE(); // AUTO-CACHE
   Push(-a * 0x0040); // R> 0x0040 * NEGATE
   Push(pp_LFSEG); // LFSEG
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_LFSEG)); // LFSEG @
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
   Store_3(); // !_3
@@ -861,7 +861,7 @@ void INCREASE() // INCREASE
   AUTO_dash_CACHE(); // AUTO-CACHE
   Push(Pop() * 0x0040); //  0x0040 *
   Push(pp_LFSEG); // LFSEG
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 

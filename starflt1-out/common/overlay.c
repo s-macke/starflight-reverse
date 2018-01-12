@@ -78,7 +78,7 @@ void D_gt_(); // D>
 void WITHIN(); // WITHIN
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _2_ex_(); // 2!
 void OFF(); // OFF
 void ICLOSE(); // ICLOSE
@@ -449,7 +449,7 @@ void UNK_0xbbb8() // UNK_0xbbb8
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0080?1:0); //  0x0080 =
   Push(pp_UNK_0xbba0); // UNK_0xbba0
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
   Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
@@ -474,12 +474,12 @@ void UNK_0xbbde() // UNK_0xbbde
   {
     Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
     Push(pp_UNK_0xbb9c); // UNK_0xbb9c
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
   } else
   {
     Push(1);
     Push(pp_UNK_0xbba4); // UNK_0xbba4
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(Read16(cc_UNK_0xbbac)); // UNK_0xbbac
     EXECUTE(); // EXECUTE
     Push(pp_UNK_0xbb9c); // UNK_0xbb9c
@@ -559,7 +559,7 @@ void UNK_0xbc8f() // UNK_0xbc8f
   C_ex_(); // C!
   Push(1);
   Push(pp_LSCAN); // LSCAN
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 

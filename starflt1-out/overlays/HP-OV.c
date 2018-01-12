@@ -144,7 +144,7 @@ void _3_star_(); // 3*
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void OFF(); // OFF
 void FILL_1(); // FILL_1
@@ -209,7 +209,7 @@ const unsigned short int cc_UNK_0xe2a2 = 0xe2a2; // UNK_0xe2a2
 IFieldType UNK_0xe2a6 = {REGIONSIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xe2a9: WORD 'UNK_0xe2ab' codep=0x224c parp=0xe2ab orphan params=3 returns=1
+// 0xe2a9: WORD 'UNK_0xe2ab' codep=0x224c parp=0xe2ab orphan
 // ================================================
 
 void UNK_0xe2ab() // UNK_0xe2ab
@@ -342,7 +342,7 @@ void UNK_0xe390() // UNK_0xe390
 
 
 // ================================================
-// 0xe3aa: WORD 'UNK_0xe3ac' codep=0x224c parp=0xe3ac
+// 0xe3aa: WORD 'UNK_0xe3ac' codep=0x224c parp=0xe3ac params=0 returns=1
 // ================================================
 
 void UNK_0xe3ac() // UNK_0xe3ac
@@ -354,7 +354,7 @@ void UNK_0xe3ac() // UNK_0xe3ac
 
 
 // ================================================
-// 0xe3b6: WORD 'UNK_0xe3b8' codep=0x224c parp=0xe3b8
+// 0xe3b6: WORD 'UNK_0xe3b8' codep=0x224c parp=0xe3b8 params=0 returns=1
 // ================================================
 
 void UNK_0xe3b8() // UNK_0xe3b8
@@ -366,7 +366,7 @@ void UNK_0xe3b8() // UNK_0xe3b8
 
 
 // ================================================
-// 0xe3c0: WORD 'UNK_0xe3c2' codep=0x224c parp=0xe3c2
+// 0xe3c0: WORD 'UNK_0xe3c2' codep=0x224c parp=0xe3c2 params=0 returns=1
 // ================================================
 
 void UNK_0xe3c2() // UNK_0xe3c2
@@ -448,7 +448,7 @@ void UNK_0xe404() // UNK_0xe404
 
 
 // ================================================
-// 0xe40a: WORD 'UNK_0xe40c' codep=0x224c parp=0xe40c
+// 0xe40a: WORD 'UNK_0xe40c' codep=0x224c parp=0xe40c params=0 returns=1
 // ================================================
 
 void UNK_0xe40c() // UNK_0xe40c
@@ -931,7 +931,7 @@ void UNK_0xe762() // UNK_0xe762
   Pop(); Pop(); // 2DROP
   Push(1);
   Push(pp_RECORD_n_); // RECORD#
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   goto label4;
 
   label1:
@@ -1432,7 +1432,7 @@ void UNK_0xf11c() // UNK_0xf11c
 
 
 // ================================================
-// 0xf128: WORD 'UNK_0xf12a' codep=0x224c parp=0xf12a
+// 0xf128: WORD 'UNK_0xf12a' codep=0x224c parp=0xf12a params=0 returns=1
 // ================================================
 
 void UNK_0xf12a() // UNK_0xf12a

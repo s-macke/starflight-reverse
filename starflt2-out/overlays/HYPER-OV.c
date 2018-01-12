@@ -1014,7 +1014,7 @@ void UNK_0xdb7e() // UNK_0xdb7e
   _st_(); // <
   Push(Read16(pp__n_AUX) & (Read16(pp__n_AUX)==5?1:0)); // #AUX @ #AUX @ 5 = AND
   if (Pop() == 0) return;
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_UNK_0xda00)); // UNK_0xda00 @
   a = Pop(); // >R
@@ -1095,7 +1095,7 @@ void UNK_0xdbf7() // UNK_0xdbf7
 
 
 // ================================================
-// 0xdc23: WORD 'UNK_0xdc25' codep=0x224c parp=0xdc25
+// 0xdc23: WORD 'UNK_0xdc25' codep=0x224c parp=0xdc25 params=1 returns=1
 // ================================================
 
 void UNK_0xdc25() // UNK_0xdc25
@@ -1115,7 +1115,7 @@ void UNK_0xdc25() // UNK_0xdc25
 
 
 // ================================================
-// 0xdc41: WORD 'UNK_0xdc43' codep=0x224c parp=0xdc43
+// 0xdc41: WORD 'UNK_0xdc43' codep=0x224c parp=0xdc43 params=0 returns=0
 // ================================================
 
 void UNK_0xdc43() // UNK_0xdc43
@@ -1171,22 +1171,22 @@ void PS_gt_C() // PS>C
   switch(Pop()) // PS>C
   {
   case 0:
-    SetColor(GREY2);
+    GetColor(GREY2);
     break;
   case 1:
-    SetColor(VIOLET);
+    GetColor(VIOLET);
     break;
   case 2:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   case 3:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 4:
-    SetColor(RED);
+    GetColor(RED);
     break;
   default:
-    SetColor(ORANGE);
+    GetColor(ORANGE);
     break;
 
   }
@@ -1483,7 +1483,7 @@ void UNK_0xdea0() // UNK_0xdea0
 
 
 // ================================================
-// 0xdebe: WORD 'UNK_0xdec0' codep=0x224c parp=0xdec0 params=3 returns=0
+// 0xdebe: WORD 'UNK_0xdec0' codep=0x224c parp=0xdec0
 // ================================================
 
 void UNK_0xdec0() // UNK_0xdec0
@@ -1536,7 +1536,7 @@ void UNK_0xdeec() // UNK_0xdeec
 
 
 // ================================================
-// 0xdef4: WORD 'UNK_0xdef6' codep=0x224c parp=0xdef6
+// 0xdef4: WORD 'UNK_0xdef6' codep=0x224c parp=0xdef6 params=0 returns=0
 // ================================================
 
 void UNK_0xdef6() // UNK_0xdef6
@@ -1666,25 +1666,25 @@ void SC_gt_C() // SC>C
   switch(Pop()) // SC>C
   {
   case 77:
-    SetColor(RED);
+    GetColor(RED);
     break;
   case 75:
-    SetColor(ORANGE);
+    GetColor(ORANGE);
     break;
   case 71:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 70:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 65:
-    SetColor(GREEN);
+    GetColor(GREEN);
     break;
   case 66:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   default:
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     break;
 
   }
@@ -1766,7 +1766,7 @@ void DrawAUXSYS() // .AUXSYS
   Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
   if (Pop() == 0) return;
   _gt_DISPLA(); // >DISPLA
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
   Push(5);
   Push(pp__n_AUX); // #AUX
@@ -1789,7 +1789,7 @@ void DrawAUXSYS() // .AUXSYS
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      SetColor(GREY1);
+      GetColor(GREY1);
       StoreCOLOR(); // !COLOR
       Push(0x0078);
       Push(0x00a1);
@@ -2126,7 +2126,7 @@ void UNK_0xe23b() // UNK_0xe23b
 {
   _gt_DISPLA(); // >DISPLA
   Push(3);
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(0x00c6);
   Push(0x0016);
   _2DUP(); // 2DUP
@@ -2134,13 +2134,13 @@ void UNK_0xe23b() // UNK_0xe23b
   POS_dot_(); // POS.
   POS_dot_PXT(); // POS.PXT
   Push(3);
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(0x00c6);
   Push(0x0030);
   POS_dot_PXT(); // POS.PXT
-  SetColor(WHITE);
-  SetColor(BLACK);
-  SetColor(WHITE);
+  GetColor(WHITE);
+  GetColor(BLACK);
+  GetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   UNK_0xe149(); // UNK_0xe149
@@ -2200,7 +2200,7 @@ void UNK_0xe23b() // UNK_0xe23b
 // 0xe2bd: db 0x44 0x7f 0xf5 0x87 0xa5 0xc0 0x3c 0xd2 0xa5 0x57 0xf2 0x7d 0x78 0xa7 0xed 0x0c 0x90 0x55 0x41 0x41 0xa3 0x43 0x40 0x22 'D    <  W }x    UAA C@"'
 
 // ================================================
-// 0xe2d5: WORD 'UNK_0xe2d7' codep=0x224c parp=0xe2d7
+// 0xe2d5: WORD 'UNK_0xe2d7' codep=0x224c parp=0xe2d7 params=0 returns=0
 // ================================================
 
 void UNK_0xe2d7() // UNK_0xe2d7
@@ -2302,7 +2302,7 @@ void UNK_0xe327() // UNK_0xe327
 void UNK_0xe37b() // UNK_0xe37b
 {
   unsigned short int i, imax;
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe2bd + 0x0021); // UNK_0xe2bd 0x0021 +
   Push(pp_UNK_0xe2bd); // UNK_0xe2bd
@@ -2346,7 +2346,7 @@ void DrawMVS() // .MVS
     NBCLR(); // NBCLR
   } else
   {
-    SetColor(BLACK);
+    GetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -2376,7 +2376,7 @@ void UNK_0xe3f6() // UNK_0xe3f6
   GetIX(); // @IX
   GetIY(); // @IY
   WLD_gt_SCR(); // WLD>SCR
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   CURSORS(); // CURSORS
   Push(pp_ABLT); // ABLT
@@ -2912,7 +2912,7 @@ void UNK_0xe7b0() // UNK_0xe7b0
 
 
 // ================================================
-// 0xe7c2: WORD 'USE-E' codep=0x224c parp=0xe7cc params=1 returns=0
+// 0xe7c2: WORD 'USE-E' codep=0x224c parp=0xe7cc
 // ================================================
 // entry
 
@@ -2973,7 +2973,7 @@ void UNK_0xe822() // UNK_0xe822
     Push(2);
   } else
   {
-    SetColor(DK_dash_GREE);
+    GetColor(DK_dash_GREE);
   }
   Push((Pop()==Pop())?1:0); // =
 }
@@ -3194,7 +3194,7 @@ void UNK_0xe977() // UNK_0xe977
 
 
 // ================================================
-// 0xe98b: WORD 'UNK_0xe98d' codep=0x224c parp=0xe98d params=3 returns=1
+// 0xe98b: WORD 'UNK_0xe98d' codep=0x224c parp=0xe98d
 // ================================================
 
 void UNK_0xe98d() // UNK_0xe98d
@@ -4247,7 +4247,7 @@ void SETUP_dash_M() // SETUP-M
 
 
 // ================================================
-// 0xf0f7: WORD 'CLEANUP' codep=0x224c parp=0xf103 params=6 returns=0
+// 0xf0f7: WORD 'CLEANUP' codep=0x224c parp=0xf103
 // ================================================
 
 void CLEANUP() // CLEANUP
@@ -4308,7 +4308,7 @@ void CLEANUP() // CLEANUP
 
 
 // ================================================
-// 0xf17d: WORD 'CHK-MOV' codep=0x224c parp=0xf189 params=2 returns=1
+// 0xf17d: WORD 'CHK-MOV' codep=0x224c parp=0xf189
 // ================================================
 // entry
 
@@ -4420,7 +4420,7 @@ void _plus_NEST() // +NEST
 
 void COME_dash_HI() // COME-HI
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
   Push(pp_TCLR); // TCLR
   Store_2(); // !_2
   UNK_0xf219(); // UNK_0xf219
@@ -4470,7 +4470,7 @@ void COME_dash_HI() // COME-HI
   _plus_NEST(); // +NEST
   Push2Words("*SHIP-C");
   _plus_NEST(); // +NEST
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_TCLR); // TCLR
   Store_2(); // !_2
 }

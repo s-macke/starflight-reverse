@@ -232,7 +232,7 @@ void WRITE_dash_RANDOM(); // WRITE-RANDOM
 void KEY_2(); // KEY_2
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _2_ex_(); // 2!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -642,7 +642,7 @@ void UNK_0xe07e() // UNK_0xe07e
   SWAP(); // SWAP
   Push(Read16(regsp)); // DUP
   Push(pp__do_LEN); // $LEN
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   CMOVE(); // CMOVE
 }
 
@@ -922,7 +922,7 @@ void _n__n_LINES() // ##LINES
   Store_3(); // !_3
   Push(1);
   Push(pp_UNK_0xdf9a); // UNK_0xdf9a
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   goto label2;
 
   label1:
@@ -1004,10 +1004,10 @@ void Draw_n_LINES() // .#LINES
   DrawSUB(); // .SUB
   Push(-Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86)); // UNK_0xdf7e @ UNK_0xdf86 @ + NEGATE
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xdfa2) + 1); // UNK_0xdfa2 @ 1+
   Push(pp_SUB_do_ADDR); // SUB$ADDR
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   goto label2;
 
   label1:
@@ -1073,7 +1073,7 @@ void ERASEWIND() // ERASEWIND
   Push(0x0014);
   Push(0x0028);
   Push(0x0096);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
 }
@@ -1090,7 +1090,7 @@ void UNK_0xe394() // UNK_0xe394
   Push(0x0014);
   Push(5);
   Push(0x009f);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
 }
@@ -1115,7 +1115,7 @@ void DrawPAGE() // .PAGE
 
 void BORDER() // BORDER
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(0x009b);
@@ -1219,7 +1219,7 @@ void DrawGAMEOPS() // .GAMEOPS
   PRINT("GAME", 4); // (.")
   Push(0x000a);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("OPTIONS", 7); // (.")
   _gt_2FONT(); // >2FONT
   Push(0x0027);
@@ -1259,7 +1259,7 @@ void DrawSAVEHEAD() // .SAVEHEAD
   PRINT("SAVE", 4); // (.")
   Push(0x000a);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("GAME", 4); // (.")
   _gt_0FONT(); // >0FONT
 }
@@ -1278,7 +1278,7 @@ void DrawLOADHEAD() // .LOADHEAD
   PRINT("LOAD", 4); // (.")
   Push(0x000a);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("GAME", 4); // (.")
   _gt_0FONT(); // >0FONT
 }
@@ -1791,7 +1791,7 @@ void CHECKSUM() // CHECKSUM
     Push(Read16(regsp)); // DUP
     Push(Read16(Pop() + i)&0xFF); //  I + C@
     Push(pp_CKSUM); // CKSUM
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(1);
     i += Pop();
   } while(i<imax); // (/LOOP)
@@ -1864,7 +1864,7 @@ void UNK_0xea11() // UNK_0xea11
 
 
 // ================================================
-// 0xea25: WORD 'PUSHVECT' codep=0x224c parp=0xea27
+// 0xea25: WORD 'PUSHVECT' codep=0x224c parp=0xea27 params=0 returns=6
 // ================================================
 
 void PUSHVECT() // PUSHVECT
@@ -1893,7 +1893,7 @@ void PUSHVECT() // PUSHVECT
 
 
 // ================================================
-// 0xea4f: WORD 'POPVECT' codep=0x224c parp=0xea51
+// 0xea4f: WORD 'POPVECT' codep=0x224c parp=0xea51 params=6 returns=0
 // ================================================
 
 void POPVECT() // POPVECT
@@ -2414,7 +2414,7 @@ void SETSAVE() // SETSAVE
 
 
 // ================================================
-// 0xed90: WORD 'UNK_0xed92' codep=0x224c parp=0xed92 params=3 returns=0
+// 0xed90: WORD 'UNK_0xed92' codep=0x224c parp=0xed92
 // ================================================
 
 void UNK_0xed92() // UNK_0xed92
@@ -2429,7 +2429,7 @@ void UNK_0xed92() // UNK_0xed92
 
 
 // ================================================
-// 0xeda0: WORD 'UNK_0xeda2' codep=0x224c parp=0xeda2
+// 0xeda0: WORD 'UNK_0xeda2' codep=0x224c parp=0xeda2 params=0 returns=1
 // ================================================
 
 void UNK_0xeda2() // UNK_0xeda2
@@ -2568,7 +2568,7 @@ void SAVEGAME() // SAVEGAME
 
 
 // ================================================
-// 0xee61: WORD 'UNK_0xee63' codep=0x224c parp=0xee63 params=3 returns=0
+// 0xee61: WORD 'UNK_0xee63' codep=0x224c parp=0xee63 params=1 returns=0
 // ================================================
 
 void UNK_0xee63() // UNK_0xee63
@@ -2584,7 +2584,7 @@ void UNK_0xee63() // UNK_0xee63
 
 
 // ================================================
-// 0xee79: WORD 'UNK_0xee7b' codep=0x224c parp=0xee7b params=3 returns=0
+// 0xee79: WORD 'UNK_0xee7b' codep=0x224c parp=0xee7b params=1 returns=0
 // ================================================
 
 void UNK_0xee7b() // UNK_0xee7b
@@ -2601,7 +2601,7 @@ void UNK_0xee7b() // UNK_0xee7b
 
 
 // ================================================
-// 0xee97: WORD 'UNK_0xee99' codep=0x224c parp=0xee99 params=3 returns=0
+// 0xee97: WORD 'UNK_0xee99' codep=0x224c parp=0xee99 params=1 returns=0
 // ================================================
 
 void UNK_0xee99() // UNK_0xee99
@@ -2617,7 +2617,7 @@ void UNK_0xee99() // UNK_0xee99
 
 
 // ================================================
-// 0xeeaf: WORD 'BOX' codep=0x224c parp=0xeeb1 params=10 returns=0
+// 0xeeaf: WORD 'BOX' codep=0x224c parp=0xeeb1 params=4 returns=0
 // ================================================
 
 void BOX() // BOX
@@ -2656,7 +2656,7 @@ void BOX() // BOX
 
 
 // ================================================
-// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5 params=0 returns=1
+// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5
 // ================================================
 
 void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS
@@ -2902,7 +2902,7 @@ void NEW_dot_GA() // NEW.GA
 
 
 // ================================================
-// 0xf493: WORD 'GET-OPTION#' codep=0x224c parp=0xf495 params=3 returns=1
+// 0xf493: WORD 'GET-OPTION#' codep=0x224c parp=0xf495
 // ================================================
 
 void GET_dash_OPTION_n_() // GET-OPTION#
@@ -2955,7 +2955,7 @@ void GAMEOPCASE() // GAMEOPCASE
 }
 
 // ================================================
-// 0xf4da: WORD '>GAMEOPTIONS' codep=0x224c parp=0xf4dc
+// 0xf4da: WORD '>GAMEOPTIONS' codep=0x224c parp=0xf4dc params=0 returns=6
 // ================================================
 
 void _gt_GAMEOPTIONS() // >GAMEOPTIONS
@@ -2989,7 +2989,7 @@ void GAMEOPTIONS() // GAMEOPTIONS
 
 
 // ================================================
-// 0xf502: WORD '<GAMEOPTIONS' codep=0x224c parp=0xf504
+// 0xf502: WORD '<GAMEOPTIONS' codep=0x224c parp=0xf504 params=6 returns=0
 // ================================================
 
 void _st_GAMEOPTIONS() // <GAMEOPTIONS

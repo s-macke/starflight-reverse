@@ -67,7 +67,7 @@ const unsigned short int pp_UNK_0xf3da = 0xf3da; // UNK_0xf3da size: 2
 // 0xf3da: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf3dc: WORD 'UNK_0xf3de' codep=0x224c parp=0xf3de
+// 0xf3dc: WORD 'UNK_0xf3de' codep=0x224c parp=0xf3de params=2 returns=1
 // ================================================
 
 void UNK_0xf3de() // UNK_0xf3de
@@ -82,7 +82,7 @@ void UNK_0xf3de() // UNK_0xf3de
 
 
 // ================================================
-// 0xf3ee: WORD 'UNK_0xf3f0' codep=0x224c parp=0xf3f0
+// 0xf3ee: WORD 'UNK_0xf3f0' codep=0x224c parp=0xf3f0 params=1 returns=0
 // ================================================
 
 void UNK_0xf3f0() // UNK_0xf3f0
@@ -127,7 +127,7 @@ void UNK_0xf3f0() // UNK_0xf3f0
 
 
 // ================================================
-// 0xf454: WORD 'UNK_0xf456' codep=0x224c parp=0xf456
+// 0xf454: WORD 'UNK_0xf456' codep=0x224c parp=0xf456 params=0 returns=0
 // ================================================
 
 void UNK_0xf456() // UNK_0xf456
@@ -152,7 +152,7 @@ void UNK_0xf456() // UNK_0xf456
 
 
 // ================================================
-// 0xf46e: WORD 'UNK_0xf470' codep=0x224c parp=0xf470
+// 0xf46e: WORD 'UNK_0xf470' codep=0x224c parp=0xf470 params=1 returns=1
 // ================================================
 
 void UNK_0xf470() // UNK_0xf470
@@ -192,7 +192,7 @@ void UNK_0xf470() // UNK_0xf470
 
 
 // ================================================
-// 0xf4ce: WORD 'UNK_0xf4d0' codep=0x224c parp=0xf4d0
+// 0xf4ce: WORD 'UNK_0xf4d0' codep=0x224c parp=0xf4d0 params=0 returns=1
 // ================================================
 
 void UNK_0xf4d0() // UNK_0xf4d0
@@ -227,7 +227,7 @@ void UNK_0xf4d0() // UNK_0xf4d0
 
 
 // ================================================
-// 0xf4fc: WORD 'FLUX' codep=0x224c parp=0xf505
+// 0xf4fc: WORD 'FLUX' codep=0x224c parp=0xf505 params=0 returns=1
 // ================================================
 // entry
 
@@ -238,7 +238,7 @@ void FLUX() // FLUX
   Push(pp_UNK_0xf3da); // UNK_0xf3da
   ON_3(); // ON_3
   UNK_0xf456(); // UNK_0xf456
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(0);
   TONE(); // TONE

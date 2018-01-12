@@ -297,7 +297,7 @@ void UNK_0xec34() // UNK_0xec34
 
 
 // ================================================
-// 0xec6a: WORD 'UNK_0xec6c' codep=0x224c parp=0xec6c params=0 returns=0
+// 0xec6a: WORD 'UNK_0xec6c' codep=0x224c parp=0xec6c
 // ================================================
 
 void UNK_0xec6c() // UNK_0xec6c
@@ -317,12 +317,12 @@ void UNK_0xec78() // UNK_0xec78
 {
   POS_dot_(); // POS.
   Push(0x000d);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_ER(); // POLY-ER
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
-  SetColor(GREY2);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(GREY2);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -468,7 +468,7 @@ void UNK_0xed86() // UNK_0xed86
   if (Pop() != 0)
   {
     UNK_0xed62(); // UNK_0xed62
-    SetColor(BLUE);
+    GetColor(BLUE);
     SWAP(); // SWAP
     DrawHIGHLI(); // .HIGHLI
     return;
@@ -520,7 +520,7 @@ void UNK_0xede6() // UNK_0xede6
 
 
 // ================================================
-// 0xedf2: WORD 'UNK_0xedf4' codep=0x224c parp=0xedf4 params=3 returns=1
+// 0xedf2: WORD 'UNK_0xedf4' codep=0x224c parp=0xedf4
 // ================================================
 
 void UNK_0xedf4() // UNK_0xedf4
@@ -580,17 +580,17 @@ void UNK_0xee3a() // UNK_0xee3a
   }
   IsTRIG(); // ?TRIG
   if (Pop() == 0) return;
-  SetColor(BLUE);
+  GetColor(BLUE);
   UNK_0xee30(); // UNK_0xee30
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   UNK_0xec6c(); // UNK_0xec6c
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xee30(); // UNK_0xee30
 }
 
 
 // ================================================
-// 0xee5c: WORD 'UNK_0xee5e' codep=0x224c parp=0xee5e params=3 returns=1
+// 0xee5c: WORD 'UNK_0xee5e' codep=0x224c parp=0xee5e
 // ================================================
 
 void UNK_0xee5e() // UNK_0xee5e
@@ -609,7 +609,7 @@ void UNK_0xee5e() // UNK_0xee5e
 
 void UNK_0xee76() // UNK_0xee76
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
 }
 
@@ -656,7 +656,7 @@ void _ro_GET_dash_AUX_rc_() // (GET-AUX)
 
 void UNK_0xeeac() // UNK_0xeeac
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(0xcb2e); // probable 'OV.MVS'
   MODULE(); // MODULE
@@ -664,7 +664,7 @@ void UNK_0xeeac() // UNK_0xeeac
   _ro_GET_dash_AUX_rc_(); // (GET-AUX) case
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   UNK_0xed62(); // UNK_0xed62
-  SetColor(BLUE);
+  GetColor(BLUE);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawHIGHLI(); // .HIGHLI
 }
@@ -730,7 +730,7 @@ void _1_dot_1BTN_dot_XEQ() // 1.1BTN.XEQ
 }
 
 // ================================================
-// 0xef27: WORD 'UNK_0xef29' codep=0x224c parp=0xef29 params=5 returns=2
+// 0xef27: WORD 'UNK_0xef29' codep=0x224c parp=0xef29
 // ================================================
 
 void UNK_0xef29() // UNK_0xef29
@@ -978,7 +978,7 @@ void UNK_0xf0fd() // UNK_0xf0fd
 
 void UNK_0xf11e() // UNK_0xf11e
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(pp__ro_PLANET); // (PLANET
@@ -1079,7 +1079,7 @@ void _2BTN_dot_XEQ() // 2BTN.XEQ
 }
 
 // ================================================
-// 0xf1b1: WORD 'UNK_0xf1b3' codep=0x224c parp=0xf1b3 params=3 returns=0
+// 0xf1b1: WORD 'UNK_0xf1b3' codep=0x224c parp=0xf1b3
 // ================================================
 
 void UNK_0xf1b3() // UNK_0xf1b3
@@ -1233,7 +1233,7 @@ void _4BTN_dot_XEQ() // 4BTN.XEQ
 }
 
 // ================================================
-// 0xf25b: WORD 'UNK_0xf25d' codep=0x224c parp=0xf25d params=4 returns=2
+// 0xf25b: WORD 'UNK_0xf25d' codep=0x224c parp=0xf25d
 // ================================================
 
 void UNK_0xf25d() // UNK_0xf25d
@@ -1613,7 +1613,7 @@ void _gt_FLT() // >FLT
   Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
   Push(pp_TRAK_dash_HR); // TRAK-HR
   Store_2(); // !_2
-  SetColor(GREY2);
+  GetColor(GREY2);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==5?1:0); // CONTEXT_3 @ 5 =

@@ -167,7 +167,7 @@ void RRND(); // RRND
 void SQRT(); // SQRT
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -286,7 +286,7 @@ void UNK_0xeac1() // UNK_0xeac1
 
 
 // ================================================
-// 0xeac7: WORD 'UNK_0xeac9' codep=0x224c parp=0xeac9
+// 0xeac7: WORD 'UNK_0xeac9' codep=0x224c parp=0xeac9 params=0 returns=1
 // ================================================
 
 void UNK_0xeac9() // UNK_0xeac9
@@ -653,7 +653,7 @@ void UNK_0xec6a() // UNK_0xec6a
   ICLOSE(); // ICLOSE
   Push(-1);
   Push(pp__n_VESS); // #VESS
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -795,7 +795,7 @@ void UNK_0xed4e() // UNK_0xed4e
 // 0xed5a: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xed5c: WORD 'UNK_0xed5e' codep=0x224c parp=0xed5e
+// 0xed5c: WORD 'UNK_0xed5e' codep=0x224c parp=0xed5e params=0 returns=1
 // ================================================
 
 void UNK_0xed5e() // UNK_0xed5e
@@ -899,7 +899,7 @@ void UNK_0xede0() // UNK_0xede0
 
 void UNK_0xedf2() // UNK_0xedf2
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
@@ -1334,7 +1334,7 @@ void UNK_0xf136() // UNK_0xf136
   Push(Read16(regsp)); // DUP
   Push(-Pop()); //  NEGATE
   Push(pp_A_dash_STRENGTH); // A-STRENGTH
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0x63ef+UNK_0xeb3b.offset); // UNK_0xeb3b<IFIELD>
   _2_at_(); // 2@
   Push(Pop() + Pop()); // +
@@ -1665,7 +1665,7 @@ void _n__gt_DAMAG() // #>DAMAG
 }
 
 // ================================================
-// 0xf356: WORD 'UNK_0xf358' codep=0x224c parp=0xf358
+// 0xf356: WORD 'UNK_0xf358' codep=0x224c parp=0xf358 params=1 returns=2
 // ================================================
 
 void UNK_0xf358() // UNK_0xf358
@@ -1855,7 +1855,7 @@ void UNK_0xf47f() // UNK_0xf47f
   unsigned short int a, i, imax;
   UNK_0xf3f8(); // UNK_0xf3f8
   UNK_0xeaf5(); // UNK_0xeaf5
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   UNK_0xf404(); // UNK_0xf404
   UNK_0xec0a(); // UNK_0xec0a
   UNK_0xf23a(); // UNK_0xf23a
@@ -1916,7 +1916,7 @@ void UNK_0xf47f() // UNK_0xf47f
 void UNK_0xf4e5() // UNK_0xf4e5
 {
   UNK_0xf3f8(); // UNK_0xf3f8
-  SetColor(RED);
+  GetColor(RED);
   UNK_0xf43c(); // UNK_0xf43c
   UNK_0xf23a(); // UNK_0xf23a
   UNK_0xeaf5(); // UNK_0xeaf5

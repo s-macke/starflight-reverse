@@ -710,9 +710,9 @@ void UNK_0xe617() // UNK_0xe617
   Push(0x009a);
   Push(pp_WBLT); // WBLT
   Store_2(); // !_2
-  SetColor(WHITE);
-  SetColor(GREY1);
-  SetColor(DK_dash_GREE);
+  GetColor(WHITE);
+  GetColor(GREY1);
+  GetColor(DK_dash_GREE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -1099,7 +1099,7 @@ void UNK_0xe872() // UNK_0xe872
 
 
 // ================================================
-// 0xe8a2: WORD 'UNK_0xe8a4' codep=0x224c parp=0xe8a4 params=3 returns=0
+// 0xe8a2: WORD 'UNK_0xe8a4' codep=0x224c parp=0xe8a4
 // ================================================
 
 void UNK_0xe8a4() // UNK_0xe8a4
@@ -1199,7 +1199,7 @@ void UNK_0xe8d0() // UNK_0xe8d0
 
 
 // ================================================
-// 0xe95e: WORD 'UNK_0xe960' codep=0x224c parp=0xe960 params=3 returns=0
+// 0xe95e: WORD 'UNK_0xe960' codep=0x224c parp=0xe960
 // ================================================
 
 void UNK_0xe960() // UNK_0xe960
@@ -1351,7 +1351,7 @@ void UNK_0xea52() // UNK_0xea52
 
 void UNK_0xea70() // UNK_0xea70
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(6);
@@ -1453,7 +1453,7 @@ void UNK_0xeb55() // UNK_0xeb55
 {
   Push(0xbf80); // probable 'CTUP'
   MODULE(); // MODULE
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(6);
@@ -1572,7 +1572,7 @@ void UNK_0xec3b() // UNK_0xec3b
   Push(pp_WBOTTOM); // WBOTTOM
   _plus__ex__2(); // +!_2
   CTERASE(); // CTERASE
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   UNK_0xec11(); // UNK_0xec11
@@ -1705,7 +1705,7 @@ void UNK_0xed21() // UNK_0xed21
     Push(1);
     Push(5);
     CTPOS_dot_(); // CTPOS.
-    SetColor(WHITE);
+    GetColor(WHITE);
     StoreCOLOR(); // !COLOR
     PRINT("REVISING...", 11); // (.")
   }
@@ -1717,7 +1717,7 @@ void UNK_0xed21() // UNK_0xed21
   Push(5);
   CTPOS_dot_(); // CTPOS.
   Push(0x000b);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push2Words("*STARSH");
   UNK_0xe607(); // UNK_0xe607
@@ -1907,7 +1907,7 @@ void UNK_0xee61() // UNK_0xee61
   Store_2(); // !_2
   Push(pp_UNK_0xedbb); // UNK_0xedbb
   _099(); // 099
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(4);
   Push(6);
@@ -1931,7 +1931,7 @@ void UNK_0xeeb4() // UNK_0xeeb4
   if (Pop() != 0)
   {
     UNK_0xe5f7(); // UNK_0xe5f7
-    SetColor(BLACK);
+    GetColor(BLACK);
     UNK_0xe64b(); // UNK_0xe64b
     UNK_0xea52(); // UNK_0xea52
     UNK_0xee61(); // UNK_0xee61

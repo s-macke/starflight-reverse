@@ -693,7 +693,7 @@ LoadDataType UNK_0xdc8c = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 // 0xdc94: db 0x8b 0xc1 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0x03 0xc1 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0x03 0xc2 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0xc3 0x94 0xdc 0x99 0xdc 0xa8 0xdc 0xb2 0xdc 0xc1 0xdc '   )     @    @   )     @   )     @    @   )              '
 
 // ================================================
-// 0xdcce: WORD 'UNK_0xdcd0' codep=0x1d29 parp=0xdcd0
+// 0xdcce: WORD 'UNK_0xdcd0' codep=0x1d29 parp=0xdcd0 params=0 returns=1
 // ================================================
 // 0xdcd0: shl    bx,1
 // 0xdcd2: add    bx,DCC4
@@ -749,7 +749,7 @@ LoadDataType UNK_0xdc8c = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 // 0xdd50: jmp    word ptr [bx]
 
 // ================================================
-// 0xdd52: WORD 'UNK_0xdd54' codep=0x224c parp=0xdd54 orphan params=2 returns=3
+// 0xdd52: WORD 'UNK_0xdd54' codep=0x224c parp=0xdd54 orphan
 // ================================================
 
 void UNK_0xdd54() // UNK_0xdd54
@@ -784,7 +784,7 @@ void UNK_0xdd54() // UNK_0xdd54
 
 
 // ================================================
-// 0xdd74: WORD 'UNK_0xdd76' codep=0x224c parp=0xdd76 params=2 returns=3
+// 0xdd74: WORD 'UNK_0xdd76' codep=0x224c parp=0xdd76
 // ================================================
 
 void UNK_0xdd76() // UNK_0xdd76
@@ -826,7 +826,7 @@ void UNK_0xdd76() // UNK_0xdd76
 
 
 // ================================================
-// 0xdd9c: WORD 'UNK_0xdd9e' codep=0x224c parp=0xdd9e params=0 returns=6
+// 0xdd9c: WORD 'UNK_0xdd9e' codep=0x224c parp=0xdd9e
 // ================================================
 
 void UNK_0xdd9e() // UNK_0xdd9e
@@ -866,7 +866,7 @@ void UNK_0xdd9e() // UNK_0xdd9e
 
 
 // ================================================
-// 0xddea: WORD 'UNK_0xddec' codep=0x224c parp=0xddec params=0 returns=6
+// 0xddea: WORD 'UNK_0xddec' codep=0x224c parp=0xddec
 // ================================================
 
 void UNK_0xddec() // UNK_0xddec
@@ -1828,7 +1828,7 @@ void UNK_0xe4e0() // UNK_0xe4e0
     NBCLR(); // NBCLR
   } else
   {
-    SetColor(BLACK);
+    GetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_UNK_0xdbc0)); // UNK_0xdbc0 @
@@ -1956,7 +1956,7 @@ void UNK_0xe598() // UNK_0xe598
 
 
 // ================================================
-// 0xe5b2: WORD 'UNK_0xe5b4' codep=0x224c parp=0xe5b4
+// 0xe5b2: WORD 'UNK_0xe5b4' codep=0x224c parp=0xe5b4 params=1 returns=0
 // ================================================
 
 void UNK_0xe5b4() // UNK_0xe5b4
@@ -2000,19 +2000,19 @@ void UNK_0xe5d2() // UNK_0xe5d2
     Push(4);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor(WHITE);
+    GetColor(WHITE);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor(RED);
+    GetColor(RED);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe5b4(); // UNK_0xe5b4
-    SetColor(GREY1);
+    GetColor(GREY1);
     StoreCOLOR(); // !COLOR
     Push(4);
     Push(9);
@@ -2094,7 +2094,7 @@ void _gt_VIEWSITE() // >VIEWSITE
 
 
 // ================================================
-// 0xe6ab: WORD 'UNK_0xe6ad' codep=0x224c parp=0xe6ad params=0 returns=9
+// 0xe6ab: WORD 'UNK_0xe6ad' codep=0x224c parp=0xe6ad
 // ================================================
 
 void UNK_0xe6ad() // UNK_0xe6ad
@@ -2650,7 +2650,7 @@ void UNK_0xea89() // UNK_0xea89
 void UNK_0xeaa3() // UNK_0xeaa3
 {
   unsigned short int a, i, imax;
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_VIN)); // VIN @
   a = Pop(); // >R
@@ -3759,7 +3759,7 @@ void ASCEND() // ASCEND
 
 
 // ================================================
-// 0xf2b3: WORD 'UNK_0xf2b5' codep=0x224c parp=0xf2b5 params=0 returns=12
+// 0xf2b3: WORD 'UNK_0xf2b5' codep=0x224c parp=0xf2b5
 // ================================================
 
 void UNK_0xf2b5() // UNK_0xf2b5
@@ -3770,7 +3770,7 @@ void UNK_0xf2b5() // UNK_0xf2b5
 
 
 // ================================================
-// 0xf2bb: WORD 'UNK_0xf2bd' codep=0x224c parp=0xf2bd
+// 0xf2bb: WORD 'UNK_0xf2bd' codep=0x224c parp=0xf2bd params=0 returns=0
 // ================================================
 
 void UNK_0xf2bd() // UNK_0xf2bd
@@ -3830,19 +3830,19 @@ void SKYCASE() // SKYCASE
   switch(Pop()) // SKYCASE
   {
   case 0:
-    SetColor(BLACK);
+    GetColor(BLACK);
     break;
   case 7:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 12:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 19:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   default:
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     break;
 
   }

@@ -219,7 +219,7 @@ void KEY_2(); // KEY_2
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void StoreD(); // D!
 void ON_3(); // ON_3
@@ -492,7 +492,7 @@ void UNK_0xe602() // UNK_0xe602
 
 
 // ================================================
-// 0xe614: WORD 'UNK_0xe616' codep=0x224c parp=0xe616
+// 0xe614: WORD 'UNK_0xe616' codep=0x224c parp=0xe616 params=0 returns=3
 // ================================================
 
 void UNK_0xe616() // UNK_0xe616
@@ -540,7 +540,7 @@ void UNK_0xe616() // UNK_0xe616
   LoadData(UNK_0xe5a1); // from 'VESSEL'
   Push(Read16(Pop())&0xFF); //  C@
   Push(pp_A_dash_STRENGTH); // A-STRENGTH
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_XABS)); // XABS @
   Push(Read16(pp_YABS)); // YABS @
   ROT(); // ROT
@@ -582,10 +582,10 @@ void _plus_A_dash_VESS() // +A-VESS
   MIN(); // MIN
   Push(Read16(regsp)); // DUP
   Push(pp_AVCNT); // AVCNT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(regsp)); // DUP
   Push(pp__n_VESS); // #VESS
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0);
 
   i = Pop();
@@ -1468,7 +1468,7 @@ void UNK_0xed4b() // UNK_0xed4b
 
 
 // ================================================
-// 0xed92: WORD 'UNK_0xed94' codep=0x224c parp=0xed94
+// 0xed92: WORD 'UNK_0xed94' codep=0x224c parp=0xed94 params=0 returns=0
 // ================================================
 
 void UNK_0xed94() // UNK_0xed94
@@ -1570,9 +1570,9 @@ void UNK_0xee3b() // UNK_0xee3b
   } while(i<imax); // (/LOOP)
 
   BEEPOFF(); // BEEPOFF
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
@@ -1622,7 +1622,7 @@ void HEAT() // HEAT
 {
   Push(1);
   Push(pp_UNK_0xed07); // UNK_0xed07
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xed07)); // UNK_0xed07 @
   HCASE(); // HCASE case
   SAVE_dash_OVERLAY(); // SAVE-OVERLAY
@@ -2031,7 +2031,7 @@ void UNK_0xf13d() // UNK_0xf13d
 void UNK_0xf149() // UNK_0xf149
 {
   SET_STR_AS_PARAM("FUEL SUPPLY LOW");
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   UNK_0xf13d(); // UNK_0xf13d
 }
 
@@ -2043,7 +2043,7 @@ void UNK_0xf149() // UNK_0xf149
 void UNK_0xf163() // UNK_0xf163
 {
   SET_STR_AS_PARAM("FUEL SUPPLY CRITICAL");
-  SetColor(ORANGE);
+  GetColor(ORANGE);
   UNK_0xf13d(); // UNK_0xf13d
 }
 
@@ -2055,7 +2055,7 @@ void UNK_0xf163() // UNK_0xf163
 void UNK_0xf182() // UNK_0xf182
 {
   SET_STR_AS_PARAM("OUT OF FUEL");
-  SetColor(PINK);
+  GetColor(PINK);
   UNK_0xf13d(); // UNK_0xf13d
 }
 
@@ -2441,10 +2441,10 @@ void UNK_0xf3f5() // UNK_0xf3f5
   C_ex_(); // C!
   Push(Read16(pp_UNK_0xf283)); // UNK_0xf283 @
   Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xf287)); // UNK_0xf287 @
   Push(0x63ef+INST_dash_Y.offset); // INST-Y<IFIELD>
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 

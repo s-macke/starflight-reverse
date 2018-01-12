@@ -805,7 +805,7 @@ void XC() // XC
 
 
 // ================================================
-// 0xf1fa: WORD 'INSERT' codep=0x224c parp=0xf205 params=1 returns=0
+// 0xf1fa: WORD 'INSERT' codep=0x224c parp=0xf205 params=1 returns=1
 // ================================================
 
 void INSERT() // INSERT

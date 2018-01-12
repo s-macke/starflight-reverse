@@ -742,25 +742,25 @@ void STAR_dash_IC_dash_CASE() // STAR-IC-CASE
   switch(Pop()) // STAR-IC-CASE
   {
   case 77:
-    SetColor(RED);
+    GetColor(RED);
     break;
   case 75:
-    SetColor(ORANGE);
+    GetColor(ORANGE);
     break;
   case 71:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 70:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 65:
-    SetColor(GREEN);
+    GetColor(GREEN);
     break;
   case 66:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   default:
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     break;
 
   }
@@ -786,10 +786,10 @@ void UNK_0xf3b0() // UNK_0xf3b0
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
     return;
   }
-  SetColor(DK_dash_GREE);
+  GetColor(DK_dash_GREE);
 }
 
 
@@ -825,10 +825,10 @@ void UNK_0xf3e6() // UNK_0xf3e6
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor(BROWN);
+    GetColor(BROWN);
     return;
   }
-  SetColor(RED);
+  GetColor(RED);
 }
 
 
@@ -841,22 +841,22 @@ void PLAN_dash_IC_dash_CASE() // PLAN-IC-CASE
   switch(Pop()) // PLAN-IC-CASE
   {
   case 0:
-    SetColor(GREY1);
+    GetColor(GREY1);
     break;
   case 1:
-    SetColor(VIOLET);
+    GetColor(VIOLET);
     break;
   case 2:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   case 3:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 4:
     UNK_0xf3e6(); // UNK_0xf3e6
     break;
   default:
-    SetColor(BROWN);
+    GetColor(BROWN);
     break;
 
   }
@@ -1050,7 +1050,7 @@ void UNK_0xf51a() // UNK_0xf51a
 
 
 // ================================================
-// 0xf526: WORD '+ICONBOX' codep=0x224c parp=0xf533 params=3 returns=0
+// 0xf526: WORD '+ICONBOX' codep=0x224c parp=0xf533
 // ================================================
 // entry
 

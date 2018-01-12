@@ -106,7 +106,7 @@ IFieldType UNK_0xf18b = {ASSIGN_CREWIDX, 0x11, 0x12};
 IFieldType UNK_0xf190 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
-// 0xf193: WORD 'UNK_0xf195' codep=0x224c parp=0xf195 params=3 returns=1
+// 0xf193: WORD 'UNK_0xf195' codep=0x224c parp=0xf195
 // ================================================
 
 void UNK_0xf195() // UNK_0xf195
@@ -142,10 +142,10 @@ void UNK_0xf195() // UNK_0xf195
 
 void UNK_0xf1cb() // UNK_0xf1cb
 {
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -190,7 +190,7 @@ void UNK_0xf1cb() // UNK_0xf1cb
   PRINT("CHECK", 5); // (.")
   Push(2);
   Push(0x00c5);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -371,7 +371,7 @@ void UNK_0xf3a9() // UNK_0xf3a9
   Push(1);
   Push(0x0016);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   StoreCRS(); // !CRS
@@ -391,7 +391,7 @@ void UNK_0xf406() // UNK_0xf406
 
 
 // ================================================
-// 0xf412: WORD 'UNK_0xf414' codep=0x224c parp=0xf414 params=3 returns=1
+// 0xf412: WORD 'UNK_0xf414' codep=0x224c parp=0xf414
 // ================================================
 
 void UNK_0xf414() // UNK_0xf414
@@ -480,7 +480,7 @@ void UNK_0xf492() // UNK_0xf492
 
 
 // ================================================
-// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=3 returns=1
+// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc
 // ================================================
 
 void UNK_0xf4bc() // UNK_0xf4bc
@@ -521,7 +521,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 
 // ================================================
-// 0xf504: WORD '?CAN-LEAVE' codep=0x224c parp=0xf513 params=6 returns=1
+// 0xf504: WORD '?CAN-LEAVE' codep=0x224c parp=0xf513
 // ================================================
 // entry
 

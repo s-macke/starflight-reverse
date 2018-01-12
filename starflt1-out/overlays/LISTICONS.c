@@ -69,7 +69,7 @@ void TILEFILL(); // TILEFILL
 void altitude() // altitude
 {
   unsigned short int i, imax;
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x001f);
   Push(0x002e);
@@ -128,7 +128,7 @@ void ICON_dash_KEY() // ICON-KEY
   Push(0x0037);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   PRINT("ICON", 4); // (.")
@@ -203,7 +203,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
   Push(0x001b);
   Push(pp_XBLT); // XBLT
   _st__ex__gt_(); // <!>
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   PRINT("(PRESS ANY KEY TO CONTINUE)", 27); // (.")
   KEY_2(); // KEY_2
@@ -244,7 +244,7 @@ void SEE_dash_BLTS() // SEE-BLTS
     Push(0x000c);
     Push(pp_XBLT); // XBLT
     _st__plus__ex__gt_(); // <+!>
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
     Push(-2);
     Push(pp_YBLT); // YBLT
@@ -270,7 +270,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 
 void title() // title
 {
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   ICON_dash_KEY(); // ICON-KEY

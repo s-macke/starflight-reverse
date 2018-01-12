@@ -72,7 +72,7 @@ void WITHIN(); // WITHIN
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -189,7 +189,7 @@ void UNK_0xf035() // UNK_0xf035
   {
     Push(0xfffc);
     Push(pp_XBLT); // XBLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     PAD(); // PAD
     Push(Read16(regsp)); // DUP
     Push(Read16(Pop())&0xFF); //  C@
@@ -198,7 +198,7 @@ void UNK_0xf035() // UNK_0xf035
     Exec("EMIT"); // call of word 0x2731 '(EMIT)'
     Push(0xfffc);
     Push(pp_XBLT); // XBLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     PAD(); // PAD
     Push((Read16(Pop())&0xFF) - 1); //  C@ 1-
     PAD(); // PAD
@@ -241,16 +241,16 @@ void UNK_0xf08f() // UNK_0xf08f
   GetCRS(); // @CRS
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
-  SetColor(WHITE);
-  SetColor(WHITE);
-  SetColor(BROWN);
+  GetColor(WHITE);
+  GetColor(WHITE);
+  GetColor(BROWN);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
   Push(0xfffc);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("#", 1); // (.")
   UNK_0xf06d(); // UNK_0xf06d
   StoreCRS(); // !CRS
@@ -373,7 +373,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad params=4 returns=1
+// 0xf1a3: WORD '(?ART' codep=0x224c parp=0xf1ad
 // ================================================
 // entry
 
@@ -604,7 +604,7 @@ void EINDE() // EINDE
 void UNK_0xf319() // UNK_0xf319
 {
   unsigned short int i, imax;
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTINIT(); // CTINIT
   DrawERR(); // .ERR case
@@ -617,7 +617,7 @@ void UNK_0xf319() // UNK_0xf319
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
-  SetColor(PINK);
+  GetColor(PINK);
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON(); // BEEPON

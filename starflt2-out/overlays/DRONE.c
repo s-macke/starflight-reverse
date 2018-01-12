@@ -321,7 +321,7 @@ void UNK_0xec2a() // UNK_0xec2a
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
   _st__ex__gt_(); // <!>
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
@@ -373,7 +373,7 @@ void UNK_0xec60() // UNK_0xec60
 
 
 // ================================================
-// 0xec8e: WORD 'UNK_0xec90' codep=0x224c parp=0xec90
+// 0xec8e: WORD 'UNK_0xec90' codep=0x224c parp=0xec90 params=0 returns=1
 // ================================================
 
 void UNK_0xec90() // UNK_0xec90
@@ -495,7 +495,7 @@ void UNK_0xed31() // UNK_0xed31
   Push(0x0099);
   Push(pp_WBLT); // WBLT
   _st__ex__gt_(); // <!>
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(pp_XORMODE); // XORMODE
@@ -663,16 +663,16 @@ void UNK_0xedf7() // UNK_0xedf7
   Push(Read16(0x65e1+TEXT_dash_CO.offset)); // TEXT-CO<IFIELD> @
   if (Pop() != 0)
   {
-    SetColor(WHITE);
+    GetColor(WHITE);
   } else
   {
     IsCGA(); // ?CGA
     if (Pop() != 0)
     {
-      SetColor(RED);
+      GetColor(RED);
     } else
     {
-      SetColor(GREY1);
+      GetColor(GREY1);
     }
   }
   StoreCOLOR(); // !COLOR
@@ -1396,7 +1396,7 @@ void UNK_0xf13e() // UNK_0xf13e
 // 0xf1a6: db 0x03 ' '
 
 // ================================================
-// 0xf1a7: WORD 'UNK_0xf1a9' codep=0x224c parp=0xf1a9
+// 0xf1a7: WORD 'UNK_0xf1a9' codep=0x224c parp=0xf1a9 params=0 returns=0
 // ================================================
 
 void UNK_0xf1a9() // UNK_0xf1a9
@@ -1635,7 +1635,7 @@ void UNK_0xf2cb() // UNK_0xf2cb
 
 
 // ================================================
-// 0xf2eb: WORD 'UNK_0xf2ed' codep=0x224c parp=0xf2ed params=0 returns=3
+// 0xf2eb: WORD 'UNK_0xf2ed' codep=0x224c parp=0xf2ed
 // ================================================
 
 void UNK_0xf2ed() // UNK_0xf2ed
@@ -1656,7 +1656,7 @@ void UNK_0xf2ed() // UNK_0xf2ed
 
 
 // ================================================
-// 0xf31b: WORD 'UNK_0xf31d' codep=0x224c parp=0xf31d params=0 returns=2
+// 0xf31b: WORD 'UNK_0xf31d' codep=0x224c parp=0xf31d
 // ================================================
 
 void UNK_0xf31d() // UNK_0xf31d

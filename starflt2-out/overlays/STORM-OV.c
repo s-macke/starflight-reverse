@@ -304,7 +304,7 @@ IFieldType UNK_0xf30b = {CREWMEMBERIDX, 0x0b, 0x0f};
 LoadDataType UNK_0xf310 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6ac8};
 
 // ================================================
-// 0xf316: WORD 'UNK_0xf318' codep=0x224c parp=0xf318
+// 0xf316: WORD 'UNK_0xf318' codep=0x224c parp=0xf318 params=0 returns=2
 // ================================================
 
 void UNK_0xf318() // UNK_0xf318
@@ -346,7 +346,7 @@ void UNK_0xf332() // UNK_0xf332
 
 
 // ================================================
-// 0xf358: WORD 'UNK_0xf35a' codep=0x224c parp=0xf35a
+// 0xf358: WORD 'UNK_0xf35a' codep=0x224c parp=0xf35a params=0 returns=1
 // ================================================
 
 void UNK_0xf35a() // UNK_0xf35a
@@ -456,13 +456,13 @@ void UNK_0xf41c() // UNK_0xf41c
   Push(0x0096);
   POS_dot_(); // POS.
   Push(7);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
 }
 
@@ -536,7 +536,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
 
 
 // ================================================
-// 0xf4e0: WORD 'UNK_0xf4e2' codep=0x224c parp=0xf4e2
+// 0xf4e0: WORD 'UNK_0xf4e2' codep=0x224c parp=0xf4e2 params=0 returns=0
 // ================================================
 
 void UNK_0xf4e2() // UNK_0xf4e2

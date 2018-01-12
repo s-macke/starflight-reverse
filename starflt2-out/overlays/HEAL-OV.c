@@ -315,11 +315,11 @@ void UNK_0xf151() // UNK_0xf151
     _gt_SSCT(); // >SSCT
   }
   _gt_DISPLA(); // >DISPLA
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   Push(0x4fa9); // probable 'BLACK'
   Store_2(); // !_2
   CTERASE(); // CTERASE
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(1);
@@ -556,7 +556,7 @@ void DrawVITS() // .VITS
   _099(); // 099
   Push(Read16(pp_COLOR)); // COLOR @
   b = Pop(); // >R
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf086(); // UNK_0xf086
   Push(0);
@@ -571,7 +571,7 @@ void DrawVITS() // .VITS
   {
     GCR(); // GCR
     Push(Read16(pp_WCHARS)); // WCHARS @
-    SetColor(BLACK);
+    GetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(i); // I
     UNK_0xf0fd(); // UNK_0xf0fd
@@ -606,7 +606,7 @@ void DrawVITS() // .VITS
       Push(pp_XBLT); // XBLT
       _plus__ex__2(); // +!_2
       Push(4);
-      SetColor(BLACK);
+      GetColor(BLACK);
       POLY_dash_ER(); // POLY-ER
       Push(pp_XBLT); // XBLT
       Store_2(); // !_2

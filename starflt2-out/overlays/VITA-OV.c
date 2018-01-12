@@ -229,7 +229,7 @@ LoadDataType UNK_0xf26a = {REGIONSIDX, 0x1b, 0x01, 0x1c, 0x6efc};
 IFieldType UNK_0xf272 = {REGIONSIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277 params=3 returns=1
+// 0xf275: WORD 'UNK_0xf277' codep=0x224c parp=0xf277
 // ================================================
 
 void UNK_0xf277() // UNK_0xf277
@@ -240,7 +240,7 @@ void UNK_0xf277() // UNK_0xf277
 
 
 // ================================================
-// 0xf27d: WORD 'UNK_0xf27f' codep=0x224c parp=0xf27f orphan
+// 0xf27d: WORD 'UNK_0xf27f' codep=0x224c parp=0xf27f orphan params=0 returns=1
 // ================================================
 
 void UNK_0xf27f() // UNK_0xf27f
@@ -252,7 +252,7 @@ void UNK_0xf27f() // UNK_0xf27f
 
 
 // ================================================
-// 0xf289: WORD 'UNK_0xf28b' codep=0x224c parp=0xf28b orphan
+// 0xf289: WORD 'UNK_0xf28b' codep=0x224c parp=0xf28b orphan params=0 returns=1
 // ================================================
 
 void UNK_0xf28b() // UNK_0xf28b
@@ -264,7 +264,7 @@ void UNK_0xf28b() // UNK_0xf28b
 
 
 // ================================================
-// 0xf293: WORD 'UNK_0xf295' codep=0x224c parp=0xf295 orphan
+// 0xf293: WORD 'UNK_0xf295' codep=0x224c parp=0xf295 orphan params=0 returns=1
 // ================================================
 
 void UNK_0xf295() // UNK_0xf295
@@ -433,7 +433,7 @@ void UNK_0xf39c() // UNK_0xf39c
 
 
 // ================================================
-// 0xf3a8: WORD 'UNK_0xf3aa' codep=0x224c parp=0xf3aa params=3 returns=0
+// 0xf3a8: WORD 'UNK_0xf3aa' codep=0x224c parp=0xf3aa
 // ================================================
 
 void UNK_0xf3aa() // UNK_0xf3aa
@@ -536,7 +536,7 @@ void UNK_0xf440() // UNK_0xf440
 
 
 // ================================================
-// 0xf45c: WORD 'UNK_0xf45e' codep=0x224c parp=0xf45e params=3 returns=1
+// 0xf45c: WORD 'UNK_0xf45e' codep=0x224c parp=0xf45e
 // ================================================
 
 void UNK_0xf45e() // UNK_0xf45e
@@ -605,7 +605,7 @@ void DIO() // DIO
   _099(); // 099
   Push(pp_FSTUN); // FSTUN
   _099(); // 099
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("AUTO SAMPLING DEVICES ACTIVATED");
   DrawTTY(); // .TTY

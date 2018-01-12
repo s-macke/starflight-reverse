@@ -257,7 +257,7 @@ void UNK_0xedec() // UNK_0xedec
 
 
 // ================================================
-// 0xee22: WORD 'UNK_0xee24' codep=0x224c parp=0xee24 params=0 returns=0
+// 0xee22: WORD 'UNK_0xee24' codep=0x224c parp=0xee24
 // ================================================
 
 void UNK_0xee24() // UNK_0xee24
@@ -277,12 +277,12 @@ void UNK_0xee30() // UNK_0xee30
 {
   POS_dot_(); // POS.
   Push(0x000e);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
-  SetColor(GREY2);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(GREY2);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -412,7 +412,7 @@ void UNK_0xef06() // UNK_0xef06
   if (Pop() != 0)
   {
     UNK_0xeee2(); // UNK_0xeee2
-    SetColor(BLUE);
+    GetColor(BLUE);
     SWAP(); // SWAP
     DrawHIGHLI(); // .HIGHLI
     return;
@@ -476,11 +476,11 @@ void UNK_0xef68() // UNK_0xef68
   }
   IsTRIG(); // ?TRIG
   if (Pop() == 0) return;
-  SetColor(BLUE);
+  GetColor(BLUE);
   UNK_0xef5e(); // UNK_0xef5e
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   UNK_0xee24(); // UNK_0xee24
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xef5e(); // UNK_0xef5e
 }
 
@@ -491,7 +491,7 @@ void UNK_0xef68() // UNK_0xef68
 
 void UNK_0xef8c() // UNK_0xef8c
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
 }
 
@@ -538,7 +538,7 @@ void _ro_GET_dash_AUX_rc_() // (GET-AUX)
 
 void UNK_0xefc2() // UNK_0xefc2
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(0xcc3e); // probable 'OV.MVS'
   MODULE(); // MODULE
@@ -546,7 +546,7 @@ void UNK_0xefc2() // UNK_0xefc2
   _ro_GET_dash_AUX_rc_(); // (GET-AUX) case
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   UNK_0xeee2(); // UNK_0xeee2
-  SetColor(BLUE);
+  GetColor(BLUE);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawHIGHLI(); // .HIGHLI
 }
@@ -904,7 +904,7 @@ void _2BTN_dot_XEQ() // 2BTN.XEQ
 }
 
 // ================================================
-// 0xf274: WORD 'UNK_0xf276' codep=0x224c parp=0xf276 params=3 returns=0
+// 0xf274: WORD 'UNK_0xf276' codep=0x224c parp=0xf276
 // ================================================
 
 void UNK_0xf276() // UNK_0xf276
@@ -1308,7 +1308,7 @@ void _gt_FLT() // >FLT
   Push(pp_TRAK_dash_HR); // TRAK-HR
   Store_3(); // !_3
   CFIGARRAYS(); // CFIGARRAYS
-  SetColor(GREY2);
+  GetColor(GREY2);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =

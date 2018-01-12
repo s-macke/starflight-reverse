@@ -42,7 +42,7 @@ void NODRIVES(); // NODRIVES
 void KEY_2(); // KEY_2
 void Is_gt_EGA(); // ?>EGA
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void MOUNTA(); // MOUNTA
 void MOUNTB(); // MOUNTB
 void FILE_st_(); // FILE<
@@ -337,7 +337,7 @@ void DrawHYBRID() // .HYBRID
     c = Pop(); // >R
     Push(4);
     Push(pp_ABLT); // ABLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(c); // I
     Push(b + 2); // I' 2+
     LC_at_(); // LC@
@@ -368,7 +368,7 @@ void DrawHYBRID() // .HYBRID
     L_at_(); // L@
     Push(Pop() - 4); //  4 -
     Push(pp_ABLT); // ABLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     i++;
   } while(i<imax); // (LOOP)
 

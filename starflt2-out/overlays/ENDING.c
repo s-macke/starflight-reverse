@@ -364,7 +364,7 @@ void UNK_0xe830() // UNK_0xe830
 
 
 // ================================================
-// 0xe83a: WORD 'UNK_0xe83c' codep=0x224c parp=0xe83c params=4 returns=0
+// 0xe83a: WORD 'UNK_0xe83c' codep=0x224c parp=0xe83c
 // ================================================
 
 void UNK_0xe83c() // UNK_0xe83c
@@ -386,7 +386,7 @@ void UNK_0xe83c() // UNK_0xe83c
 
 void UNK_0xe852() // UNK_0xe852
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
 }
 
@@ -478,7 +478,7 @@ void FREEB() // FREEB
 
 
 // ================================================
-// 0xe8dc: WORD 'UNK_0xe8de' codep=0x224c parp=0xe8de params=6 returns=1
+// 0xe8dc: WORD 'UNK_0xe8de' codep=0x224c parp=0xe8de
 // ================================================
 
 void UNK_0xe8de() // UNK_0xe8de
@@ -500,7 +500,7 @@ void UNK_0xe8de() // UNK_0xe8de
 
 
 // ================================================
-// 0xe902: WORD 'UNK_0xe904' codep=0x224c parp=0xe904 params=3 returns=1
+// 0xe902: WORD 'UNK_0xe904' codep=0x224c parp=0xe904
 // ================================================
 
 void UNK_0xe904() // UNK_0xe904
@@ -689,7 +689,7 @@ void UNK_0xe9e0() // UNK_0xe9e0
 
 
 // ================================================
-// 0xe9ea: WORD 'UNK_0xe9ec' codep=0x224c parp=0xe9ec params=3 returns=2
+// 0xe9ea: WORD 'UNK_0xe9ec' codep=0x224c parp=0xe9ec
 // ================================================
 
 void UNK_0xe9ec() // UNK_0xe9ec
@@ -893,7 +893,7 @@ void UNK_0xeade() // UNK_0xeade
 
 
 // ================================================
-// 0xeafc: WORD 'UNK_0xeafe' codep=0x224c parp=0xeafe params=3 returns=0
+// 0xeafc: WORD 'UNK_0xeafe' codep=0x224c parp=0xeafe
 // ================================================
 
 void UNK_0xeafe() // UNK_0xeafe
@@ -955,7 +955,7 @@ void UNK_0xeb62() // UNK_0xeb62
   UNK_0xe862(); // UNK_0xe862
   UNK_0xe9e0(); // UNK_0xe9e0
   ICLOSE(); // ICLOSE
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   WLD_gt_SCR(); // WLD>SCR
@@ -1130,7 +1130,7 @@ void UNK_0xec78() // UNK_0xec78
 
 
 // ================================================
-// 0xeca0: WORD 'UNK_0xeca2' codep=0x224c parp=0xeca2 params=3 returns=0
+// 0xeca0: WORD 'UNK_0xeca2' codep=0x224c parp=0xeca2
 // ================================================
 
 void UNK_0xeca2() // UNK_0xeca2
@@ -1252,7 +1252,7 @@ void UNK_0xed33() // UNK_0xed33
 
 
 // ================================================
-// 0xed8b: WORD 'UNK_0xed8d' codep=0x224c parp=0xed8d
+// 0xed8b: WORD 'UNK_0xed8d' codep=0x224c parp=0xed8d params=0 returns=0
 // ================================================
 
 void UNK_0xed8d() // UNK_0xed8d
@@ -1287,7 +1287,7 @@ void UNK_0xed8d() // UNK_0xed8d
 
 
 // ================================================
-// 0xedb7: WORD 'UNK_0xedb9' codep=0x224c parp=0xedb9
+// 0xedb7: WORD 'UNK_0xedb9' codep=0x224c parp=0xedb9 params=1 returns=0
 // ================================================
 
 void UNK_0xedb9() // UNK_0xedb9
@@ -1595,7 +1595,7 @@ void UNK_0xefab() // UNK_0xefab
   Push(1);
   Push(pp_LINE_dash_CO); // LINE-CO
   Store_2(); // !_2
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   WUP(); // WUP
@@ -1656,7 +1656,7 @@ void UNK_0xefdb() // UNK_0xefdb
 
 
 // ================================================
-// 0xf01d: WORD 'UNK_0xf01f' codep=0x224c parp=0xf01f params=3 returns=0
+// 0xf01d: WORD 'UNK_0xf01f' codep=0x224c parp=0xf01f
 // ================================================
 
 void UNK_0xf01f() // UNK_0xf01f
@@ -1881,7 +1881,7 @@ void UNK_0xf184() // UNK_0xf184
 
 
 // ================================================
-// 0xf19e: WORD 'UNK_0xf1a0' codep=0x224c parp=0xf1a0
+// 0xf19e: WORD 'UNK_0xf1a0' codep=0x224c parp=0xf1a0 params=1 returns=1
 // ================================================
 
 void UNK_0xf1a0() // UNK_0xf1a0
@@ -1959,7 +1959,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
 
 
 // ================================================
-// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210 params=6 returns=0
+// 0xf20e: WORD 'UNK_0xf210' codep=0x224c parp=0xf210
 // ================================================
 
 void UNK_0xf210() // UNK_0xf210

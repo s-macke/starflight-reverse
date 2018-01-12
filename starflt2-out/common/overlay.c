@@ -236,7 +236,7 @@ void UNK_0xb449() // UNK_0xb449
 
 
 // ================================================
-// 0xb457: WORD 'UNK_0xb459' codep=0x224c parp=0xb459 params=3 returns=0
+// 0xb457: WORD 'UNK_0xb459' codep=0x224c parp=0xb459
 // ================================================
 
 void UNK_0xb459() // UNK_0xb459
@@ -304,7 +304,7 @@ void UNK_0xb495() // UNK_0xb495
 
 
 // ================================================
-// 0xb4a7: WORD 'UNK_0xb4a9' codep=0x224c parp=0xb4a9 params=4 returns=1
+// 0xb4a7: WORD 'UNK_0xb4a9' codep=0x224c parp=0xb4a9 params=1 returns=2
 // ================================================
 
 void UNK_0xb4a9() // UNK_0xb4a9
@@ -462,7 +462,7 @@ void UNK_0xb56d() // UNK_0xb56d
 
 
 // ================================================
-// 0xb581: WORD '.S' codep=0x224c parp=0xb588 params=2 returns=0
+// 0xb581: WORD '.S' codep=0x224c parp=0xb588 params=0 returns=0
 // ================================================
 
 void DrawS() // .S

@@ -86,7 +86,7 @@ void SETLARRAY(); // SETLARRAY
 void FULLARRAY(); // FULLARRAY
 void SETREGION(); // SETREGION
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void OFF(); // OFF
 void FILL_1(); // FILL_1
@@ -197,10 +197,10 @@ void DrawLATFRAME() // .LATFRAME
   Push(0x0053);
   Push(0x007e);
   Push(0x009c);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   CTINIT(); // CTINIT
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x0066);
   Push(0x008a);
@@ -214,13 +214,13 @@ void DrawLATFRAME() // .LATFRAME
   Push(0x005f);
   Push(0x008e);
   Push(0x0090);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0x00c1);
   Push(0x0093);
   Push(0x008e);
   Push(0x0098);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -270,7 +270,7 @@ void UNK_0xeed3() // UNK_0xeed3
 // 0xef1d: db 0x80 0x04 '  '
 
 // ================================================
-// 0xef1f: WORD '.LON' codep=0x224c parp=0xef28 params=0 returns=1
+// 0xef1f: WORD '.LON' codep=0x224c parp=0xef28 params=0 returns=0
 // ================================================
 
 void DrawLON() // .LON
@@ -330,7 +330,7 @@ void DrawLON() // .LON
 // 0xef9c: db 0xe0 0x01 '  '
 
 // ================================================
-// 0xef9e: WORD 'UNK_0xefa0' codep=0x224c parp=0xefa0 params=0 returns=1
+// 0xef9e: WORD 'UNK_0xefa0' codep=0x224c parp=0xefa0 params=0 returns=0
 // ================================================
 
 void UNK_0xefa0() // UNK_0xefa0
@@ -623,7 +623,7 @@ void _gt_XHAIR() // >XHAIR
 {
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   GetDS(); // @DS
   Push(pp_BLTSEG); // BLTSEG
@@ -706,7 +706,7 @@ void UNK_0xf239() // UNK_0xf239
 // 0xf28c: db 0xa4 0x4a ' J'
 
 // ================================================
-// 0xf28e: WORD 'UNK_0xf290' codep=0x224c parp=0xf290
+// 0xf28e: WORD 'UNK_0xf290' codep=0x224c parp=0xf290 params=0 returns=4
 // ================================================
 
 void UNK_0xf290() // UNK_0xf290
@@ -879,7 +879,7 @@ void UNK_0xf389() // UNK_0xf389
         StoreD(); // D!
         Push(1);
         Push(pp_UNK_0xf261); // UNK_0xf261
-        _plus__ex_(); // +!
+        _plus__ex__2(); // +!_2
       }
       INEXT(); // INEXT
       IsFIRST(); // ?FIRST
@@ -947,7 +947,7 @@ void GETSITE_1() // GETSITE_1
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
-      SetColor(GREY1);
+      GetColor(GREY1);
       StoreCOLOR(); // !COLOR
       UNK_0xefa0(); // UNK_0xefa0
       DrawLON(); // .LON
@@ -967,7 +967,7 @@ void GETSITE_1() // GETSITE_1
       Push(pp_XABS); // XABS
       Store_3(); // !_3
       _gt_XHAIR(); // >XHAIR
-      SetColor(WHITE);
+      GetColor(WHITE);
       StoreCOLOR(); // !COLOR
       UNK_0xefa0(); // UNK_0xefa0
       DrawLON(); // .LON

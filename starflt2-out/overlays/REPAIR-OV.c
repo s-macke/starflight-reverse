@@ -549,7 +549,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 // 0xf0e4: db 0x01 0x00 0x0c 0x00 0x14 0x00 0x04 0x00 0x10 0x00 '          '
 
 // ================================================
-// 0xf0ee: WORD 'UNK_0xf0f0' codep=0x224c parp=0xf0f0
+// 0xf0ee: WORD 'UNK_0xf0f0' codep=0x224c parp=0xf0f0 params=0 returns=1
 // ================================================
 
 void UNK_0xf0f0() // UNK_0xf0f0
@@ -565,7 +565,7 @@ void UNK_0xf0f0() // UNK_0xf0f0
 
 
 // ================================================
-// 0xf106: WORD 'UNK_0xf108' codep=0x224c parp=0xf108
+// 0xf106: WORD 'UNK_0xf108' codep=0x224c parp=0xf108 params=0 returns=2
 // ================================================
 
 void UNK_0xf108() // UNK_0xf108
@@ -587,7 +587,7 @@ void UNK_0xf108() // UNK_0xf108
 
 
 // ================================================
-// 0xf12c: WORD 'UNK_0xf12e' codep=0x224c parp=0xf12e
+// 0xf12c: WORD 'UNK_0xf12e' codep=0x224c parp=0xf12e params=0 returns=1
 // ================================================
 
 void UNK_0xf12e() // UNK_0xf12e
@@ -602,7 +602,7 @@ void UNK_0xf12e() // UNK_0xf12e
 
 
 // ================================================
-// 0xf140: WORD 'UNK_0xf142' codep=0x224c parp=0xf142
+// 0xf140: WORD 'UNK_0xf142' codep=0x224c parp=0xf142 params=0 returns=1
 // ================================================
 
 void UNK_0xf142() // UNK_0xf142
@@ -615,7 +615,7 @@ void UNK_0xf142() // UNK_0xf142
 
 
 // ================================================
-// 0xf14e: WORD 'UNK_0xf150' codep=0x224c parp=0xf150 params=4 returns=1
+// 0xf14e: WORD 'UNK_0xf150' codep=0x224c parp=0xf150
 // ================================================
 
 void UNK_0xf150() // UNK_0xf150
@@ -662,7 +662,7 @@ void UNK_0xf150() // UNK_0xf150
 
 
 // ================================================
-// 0xf1a0: WORD 'UNK_0xf1a2' codep=0x224c parp=0xf1a2 params=7 returns=0
+// 0xf1a0: WORD 'UNK_0xf1a2' codep=0x224c parp=0xf1a2
 // ================================================
 
 void UNK_0xf1a2() // UNK_0xf1a2
@@ -813,7 +813,7 @@ void UNK_0xf2c2() // UNK_0xf2c2
 
 void UNK_0xf2e0() // UNK_0xf2e0
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf258(); // UNK_0xf258
   UNK_0xf28e(); // UNK_0xf28e
@@ -830,7 +830,7 @@ void UNK_0xf2e0() // UNK_0xf2e0
 
 void UNK_0xf2f4() // UNK_0xf2f4
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -938,7 +938,7 @@ void UNK_0xf37d() // UNK_0xf37d
 
 
 // ================================================
-// 0xf3af: WORD 'UNK_0xf3b1' codep=0x224c parp=0xf3b1 params=7 returns=0
+// 0xf3af: WORD 'UNK_0xf3b1' codep=0x224c parp=0xf3b1
 // ================================================
 
 void UNK_0xf3b1() // UNK_0xf3b1
@@ -1104,7 +1104,7 @@ void UNK_0xf481() // UNK_0xf481
   }
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("ITEM OPERATIONAL ");
   DrawTTY(); // .TTY

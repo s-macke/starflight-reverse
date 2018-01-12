@@ -114,7 +114,7 @@ void DMAX(); // DMAX
 void BIT(); // BIT
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -398,7 +398,7 @@ void UNK_0xea27() // UNK_0xea27
 void UNK_0xea65() // UNK_0xea65
 {
   Push(7);
-  SetColor(BLACK);
+  GetColor(BLACK);
   ROT(); // ROT
   Push(Pop() * 0x000a + 0x0077); //  0x000a * 0x0077 +
   Push(0x007d);
@@ -427,7 +427,7 @@ void UNK_0xeaa9() // UNK_0xeaa9
 {
   GetCRS(); // @CRS
   Push(2);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x00ae);
   Push(0x0085);
   _2DUP(); // 2DUP
@@ -561,7 +561,7 @@ void UNK_0xebb5() // UNK_0xebb5
   } while(i<imax); // (LOOP)
 
   Push(4);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x00ae);
   Push(0x0037);
   POS_dot_PXT(); // POS.PXT
@@ -824,10 +824,10 @@ void UNK_0xed6a() // UNK_0xed6a
       if (Pop() != 0)
       {
         Push(0x63ef+UNK_0xe9fd.offset); // UNK_0xe9fd<IFIELD>
-        _plus__ex_(); // +!
+        _plus__ex__2(); // +!_2
         Push(0x01f4);
         Push(0x63ef+UNK_0xea11.offset); // UNK_0xea11<IFIELD>
-        _plus__ex_(); // +!
+        _plus__ex__2(); // +!_2
         imax = i; // LEAVE
       } else
       {
@@ -977,7 +977,7 @@ void UNK_0xef52() // UNK_0xef52
     {
       Push(Pop() * -1); //  -1 *
       Push(pp_NCRS); // NCRS
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       Push(Read16(pp_NCRS)); // NCRS @
       Push(!(Read16(pp_NCRS)==Read16(pp_OCRS)?1:0)); // NCRS @ OCRS @ = NOT
       Push(Read16(pp_NCRS)); // NCRS @
@@ -1110,7 +1110,7 @@ void UNK_0xf041() // UNK_0xf041
         BIT(); // BIT
         Push(Pop() * -1); //  -1 *
         Push(0x63ef+UNK_0xe9fd.offset); // UNK_0xe9fd<IFIELD>
-        _plus__ex_(); // +!
+        _plus__ex__2(); // +!_2
         Push(0x01f4); Push(0x0000);
         UNK_0xe99e(); // UNK_0xe99e
         Push(0xc6ba); // probable 'OV.PODS'
@@ -1120,7 +1120,7 @@ void UNK_0xf041() // UNK_0xf041
         imax = i; // LEAVE
         Push(0xfe0c);
         Push(0x63ef+UNK_0xea11.offset); // UNK_0xea11<IFIELD>
-        _plus__ex_(); // +!
+        _plus__ex__2(); // +!_2
       }
       Push(-1);
       int step = Pop();
@@ -1207,7 +1207,7 @@ void UNK_0xf0da() // UNK_0xf0da
 void UNK_0xf14c() // UNK_0xf14c
 {
   UNK_0xe9b2(); // UNK_0xe9b2
-  SetColor(BLUE);
+  GetColor(BLUE);
   UNK_0xeb1b(); // UNK_0xeb1b
   GetCRS(); // @CRS
   Push(pp_NCRS); // NCRS
@@ -1233,7 +1233,7 @@ void UNK_0xf14c() // UNK_0xf14c
     {
       Push(Pop() * -1); //  -1 *
       Push(pp_NCRS); // NCRS
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       Push(pp_UNK_0xea4a); // UNK_0xea4a
       SET_dash_CRS(); // SET-CRS
       if (Pop() != 0)
@@ -1268,7 +1268,7 @@ void UNK_0xf14c() // UNK_0xf14c
   } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xebb5(); // UNK_0xebb5
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xeb1b(); // UNK_0xeb1b
   Push(pp_UNK_0xea4a); // UNK_0xea4a
   BLD_dash_CRS(); // BLD-CRS
@@ -1645,9 +1645,9 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe976(); // UNK_0xe976
-  SetColor(WHITE);
-  SetColor(GREY1);
-  SetColor(DK_dash_GREEN);
+  GetColor(WHITE);
+  GetColor(GREY1);
+  GetColor(DK_dash_GREEN);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_3(); // !_3
@@ -1668,7 +1668,7 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   {
     XYSCAN(); // XYSCAN
     Push(pp_NCRS); // NCRS
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Pop(); // DROP
     Push(pp_UNK_0xea33); // UNK_0xea33
     SET_dash_CRS(); // SET-CRS

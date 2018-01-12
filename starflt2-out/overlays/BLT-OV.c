@@ -511,7 +511,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 
 // ================================================
-// 0xf27e: WORD 'UNK_0xf280' codep=0x224c parp=0xf280
+// 0xf27e: WORD 'UNK_0xf280' codep=0x224c parp=0xf280 params=0 returns=0
 // ================================================
 
 void UNK_0xf280() // UNK_0xf280

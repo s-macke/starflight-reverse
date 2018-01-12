@@ -404,7 +404,7 @@ void UNK_0xee22() // UNK_0xee22
 
 
 // ================================================
-// 0xee4c: WORD 'UNK_0xee4e' codep=0x224c parp=0xee4e params=3 returns=0
+// 0xee4c: WORD 'UNK_0xee4e' codep=0x224c parp=0xee4e
 // ================================================
 
 void UNK_0xee4e() // UNK_0xee4e
@@ -423,7 +423,7 @@ void UNK_0xee4e() // UNK_0xee4e
 
 
 // ================================================
-// 0xee64: WORD 'UNK_0xee66' codep=0x224c parp=0xee66 params=4 returns=1
+// 0xee64: WORD 'UNK_0xee66' codep=0x224c parp=0xee66
 // ================================================
 
 void UNK_0xee66() // UNK_0xee66
@@ -466,7 +466,7 @@ void UNK_0xee82() // UNK_0xee82
 
 void UNK_0xee90() // UNK_0xee90
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_MAINVI(); // >MAINVI
   Push(0x001a);
@@ -543,7 +543,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
 
 
 // ================================================
-// 0xef5f: WORD '4X4CONTOUR' codep=0x224c parp=0xef6e params=0 returns=2
+// 0xef5f: WORD '4X4CONTOUR' codep=0x224c parp=0xef6e
 // ================================================
 // entry
 
@@ -1213,7 +1213,7 @@ void DrawSURFACE() // .SURFACE
 
 void UNK_0xf41e() // UNK_0xf41e
 {
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1224,7 +1224,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 void UNK_0xf426() // UNK_0xf426
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 

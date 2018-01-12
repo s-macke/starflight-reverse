@@ -141,7 +141,7 @@ void SQRT(); // SQRT
 void SETLARRAY(); // SETLARRAY
 void SETREGION(); // SETREGION
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void OFF(); // OFF
 void ICLOSE(); // ICLOSE
@@ -401,7 +401,7 @@ void UNK_0xedde() // UNK_0xedde
     StoreD(); // D!
     Push(1);
     Push(pp_STAR_dash_HR); // STAR-HR
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
     Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
     if (Pop() != 0)
@@ -410,7 +410,7 @@ void UNK_0xedde() // UNK_0xedde
       OFF(); // OFF
       Push(1);
       Push(pp_STARDATE); // STARDATE
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
     }
   }
   Push(Read16(pp_STARDATE)); // STARDATE @
@@ -469,7 +469,7 @@ void UNK_0xee58() // UNK_0xee58
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
   Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_WLEFT)); // WLEFT @
@@ -511,7 +511,7 @@ void UNK_0xee96() // UNK_0xee96
 
 void UNK_0xeea4() // UNK_0xeea4
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_MAINVIEW(); // >MAINVIEW
   Push(0x001a);
@@ -559,7 +559,7 @@ void UNK_0xef1a() // UNK_0xef1a
 
 
 // ================================================
-// 0xef30: WORD '2X2CONTOUR' codep=0x224c parp=0xef3f params=0 returns=2
+// 0xef30: WORD '2X2CONTOUR' codep=0x224c parp=0xef3f
 // ================================================
 // entry
 
@@ -588,7 +588,7 @@ void _2X2CONTOUR() // 2X2CONTOUR
 
 
 // ================================================
-// 0xef73: WORD '4X4CONTOUR' codep=0x224c parp=0xef82 params=0 returns=2
+// 0xef73: WORD '4X4CONTOUR' codep=0x224c parp=0xef82
 // ================================================
 // entry
 
@@ -1257,7 +1257,7 @@ void DrawSURFACE() // .SURFACE
 
 void UNK_0xf430() // UNK_0xf430
 {
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1268,7 +1268,7 @@ void UNK_0xf430() // UNK_0xf430
 
 void UNK_0xf438() // UNK_0xf438
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1389,7 +1389,7 @@ void UNK_0xf4f4() // UNK_0xf4f4
   UNK_0xf485(); // UNK_0xf485
   Push(6);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf4b2(); // UNK_0xf4b2
   UNK_0xf4c7(); // UNK_0xf4c7
   UNK_0xf454(); // UNK_0xf454

@@ -252,7 +252,7 @@ const unsigned short int cc_UNK_0xe4dc = 0xe4dc; // UNK_0xe4dc
 
 void UNK_0xe3e6() // UNK_0xe3e6
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
 }
 
@@ -263,9 +263,9 @@ void UNK_0xe3e6() // UNK_0xe3e6
 
 void UNK_0xe3ee() // UNK_0xe3ee
 {
-  SetColor(WHITE);
-  SetColor(RED);
-  SetColor(RED);
+  GetColor(WHITE);
+  GetColor(RED);
+  GetColor(RED);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_2(); // !_2
@@ -783,19 +783,19 @@ void UNK_0xe6c9() // UNK_0xe6c9
   Push(1);
   Push(0x001c);
   Push(0x0043);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_WI(); // POLY-WI
   Push(0x00b6);
   Push(0x0044);
   Push(0x001c);
   Push(0x009d);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_WI(); // POLY-WI
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(WHITE);
-  SetColor(RED);
-  SetColor(DK_dash_BLUE);
+  GetColor(WHITE);
+  GetColor(RED);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(2);
@@ -840,16 +840,16 @@ void UNK_0xe6c9() // UNK_0xe6c9
 
   Push(0x004e);
   Push(0x00c5);
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
   _gt_3FONT(); // >3FONT
   Push(0x005f);
   Push(0x00c4);
   POS_dot_(); // POS.
   PRINT("PERSONNEL", 9); // (.")
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
@@ -857,9 +857,9 @@ void UNK_0xe6c9() // UNK_0xe6c9
   Push(0x00bd);
   POS_dot_(); // POS.
   PRINT("FILE#", 5); // (.")
-  SetColor(WHITE);
-  SetColor(RED);
-  SetColor(DK_dash_BLUE);
+  GetColor(WHITE);
+  GetColor(RED);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(2);
@@ -1036,9 +1036,9 @@ void UNK_0xe927() // UNK_0xe927
   Push(pp_UNK_0xe91b); // UNK_0xe91b
   Store_2(); // !_2
   CTINIT(); // CTINIT
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x000a);
@@ -1109,12 +1109,12 @@ void UNK_0xea41() // UNK_0xea41
   UNK_0xe5bb(); // UNK_0xe5bb
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
     StoreCOLOR(); // !COLOR
     PRINT("DEAD", 4); // (.")
   } else
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     StoreCOLOR(); // !COLOR
     PRINT("COMATOSE", 8); // (.")
   }
@@ -1225,7 +1225,7 @@ void UNK_0xeb53() // UNK_0xeb53
   Push(0x0080);
   POS_dot_(); // POS.
   UNK_0xe529(); // UNK_0xe529
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   UNK_0xe43a(); // UNK_0xe43a
   UNK_0xe5e1(); // UNK_0xe5e1
@@ -1234,10 +1234,10 @@ void UNK_0xeb53() // UNK_0xeb53
   UNK_0xe5bb(); // UNK_0xe5bb
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
   } else
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
   }
   StoreCOLOR(); // !COLOR
   Push(0x0064);
@@ -1267,9 +1267,9 @@ void UNK_0xeba9() // UNK_0xeba9
   Store_2(); // !_2
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0x000a);
@@ -1319,22 +1319,22 @@ void UNK_0xec39() // UNK_0xec39
   Push(5);
   Push(0x001e);
   Push(0x0099);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_WI(); // POLY-WI
   Push(Read16(pp_UNK_0xe91b)); // UNK_0xe91b @
   a = Pop(); // >R
   Push(0x000e);
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(0x0030 + a); // 0x0030 I +
   Push(0x000a);
   POS_dot_PXT(); // POS.PXT
   Push(3);
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(0x0030 + a); // 0x0030 I +
   Push(0x007a);
   POS_dot_PXT(); // POS.PXT
   CTINIT(); // CTINIT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(0);
@@ -1344,13 +1344,13 @@ void UNK_0xec39() // UNK_0xec39
   do // (DO)
   {
     Push(3);
-    SetColor(GREY1);
+    GetColor(GREY1);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x004a);
     POS_dot_PXT(); // POS.PXT
     Push(2);
     Push(i + (i==4?1:0) * 5); // I I 4 = 5 * +
-    SetColor(GREY1);
+    GetColor(GREY1);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x008d);
     Push(i + (i==4?1:0) * 0xffea); // I I 4 = 0xffea * +
@@ -1359,7 +1359,7 @@ void UNK_0xec39() // UNK_0xec39
   } while(i<imax); // (LOOP)
 
   Push(2);
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(0x003d + a); // 0x003d I +
   Push(0x0028);
   POS_dot_PXT(); // POS.PXT
@@ -1382,7 +1382,7 @@ void UNK_0xec39() // UNK_0xec39
     Push(0x0064);
     Push(0x001e);
     Push(0x0099);
-    SetColor(GREY1);
+    GetColor(GREY1);
     POLY_dash_WI(); // POLY-WI
     GetINST_dash_S(); // @INST-S
     Push(Read16(regsp)); // DUP
@@ -1436,9 +1436,9 @@ void UNK_0xed4b() // UNK_0xed4b
   Push(a); // I
   Push(pp_NCRS); // NCRS
   Store_2(); // !_2
-  SetColor(GREY1);
-  SetColor(RED);
-  SetColor(RED);
+  GetColor(GREY1);
+  GetColor(RED);
+  GetColor(RED);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(a); // I
@@ -1583,7 +1583,7 @@ void UNK_0xee3d() // UNK_0xee3d
   Push(0);
   DrawR(); // .R
   PRINT(")\? ", 3); // (.")
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(-1);
   Push(pp__dash_AIN); // -AIN
@@ -1664,7 +1664,7 @@ void UNK_0xef2b() // UNK_0xef2b
   GetCRS(); // @CRS
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   BLT(); // BLT
   StoreCRS(); // !CRS
@@ -1744,10 +1744,10 @@ void UNK_0xf02c() // UNK_0xf02c
     IsCGA(); // ?CGA
     if (Pop() != 0)
     {
-      SetColor(WHITE);
+      GetColor(WHITE);
     } else
     {
-      SetColor(BLUE);
+      GetColor(BLUE);
     }
     StoreCOLOR(); // !COLOR
     Push(0x000a);
@@ -1976,10 +1976,10 @@ void UNK_0xf2b2() // UNK_0xf2b2
   IsCGA(); // ?CGA
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
     return;
   }
-  SetColor(GREY2);
+  GetColor(GREY2);
 }
 
 

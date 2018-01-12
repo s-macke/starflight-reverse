@@ -549,9 +549,9 @@ void UNK_0xf09a() // UNK_0xf09a
   GetCRS(); // @CRS
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
-  SetColor(WHITE);
-  SetColor(WHITE);
-  SetColor(BROWN);
+  GetColor(WHITE);
+  GetColor(WHITE);
+  GetColor(BROWN);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   UNK_0xee4a(); // UNK_0xee4a
@@ -681,7 +681,7 @@ void _ro__n_IN_do_() // (#IN$
 
 
 // ================================================
-// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4 params=4 returns=1
+// 0xf1aa: WORD '(?ART' codep=0x224c parp=0xf1b4
 // ================================================
 // entry
 
@@ -728,7 +728,7 @@ void _ro__ask_ART() // (?ART
 
 
 // ================================================
-// 0xf206: WORD 'UNK_0xf208' codep=0x224c parp=0xf208
+// 0xf206: WORD 'UNK_0xf208' codep=0x224c parp=0xf208 params=0 returns=0
 // ================================================
 
 void UNK_0xf208() // UNK_0xf208
@@ -857,7 +857,7 @@ void _ro_0_do__do__do_() // (0$$$
 void UNK_0xf2f1() // UNK_0xf2f1
 {
   unsigned short int i, imax;
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
   CTINIT(); // CTINIT
   DrawERR(); // .ERR case
@@ -870,7 +870,7 @@ void UNK_0xf2f1() // UNK_0xf2f1
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
-  SetColor(PINK);
+  GetColor(PINK);
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON_2(); // BEEPON_2
@@ -1081,7 +1081,7 @@ void _eq_CARG() // =CARG
 
 
 // ================================================
-// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc params=4 returns=1
+// 0xf4f2: WORD 'TV?AR' codep=0x224c parp=0xf4fc
 // ================================================
 // entry
 

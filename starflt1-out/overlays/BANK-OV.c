@@ -71,7 +71,7 @@ void D_gt_(); // D>
 void DMIN(); // DMIN
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -394,7 +394,7 @@ void DrawDOTS() // .DOTS
 {
   Push(0xfffc);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Pop() - Read16(pp_XBLT)); //  XBLT @ -
   Push(pp_WBLT); // WBLT
   Store_3(); // !_3
@@ -407,7 +407,7 @@ void DrawDOTS() // .DOTS
   BLT(); // BLT
   Push(4);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -648,13 +648,13 @@ void BOFRAME() // BOFRAME
   TRIM(); // TRIM
   Push(6);
   Push(0x000f);
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
 }
 
 
 // ================================================
-// 0xf3a9: WORD 'BINFO' codep=0x224c parp=0xf3ab
+// 0xf3a9: WORD 'BINFO' codep=0x224c parp=0xf3ab params=0 returns=0
 // ================================================
 
 void BINFO() // BINFO
@@ -704,13 +704,13 @@ void BINFO() // BINFO
 
 
 // ================================================
-// 0xf462: WORD 'BSCREEN' codep=0x224c parp=0xf464
+// 0xf462: WORD 'BSCREEN' codep=0x224c parp=0xf464 params=0 returns=50
 // ================================================
 
 void BSCREEN() // BSCREEN
 {
   DARK(); // DARK
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   BOFRAME(); // BOFRAME
   BTITLE(); // BTITLE
   BINFO(); // BINFO
@@ -748,7 +748,7 @@ void BMESS() // BMESS
 
 
 // ================================================
-// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=0 returns=1
+// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=0 returns=0
 // ================================================
 
 void DrawBALANCE() // .BALANCE

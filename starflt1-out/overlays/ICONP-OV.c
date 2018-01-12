@@ -504,25 +504,25 @@ void STAR_dash_IC_dash_CASES() // STAR-IC-CASES
   switch(Pop()) // STAR-IC-CASES
   {
   case 77:
-    SetColor(RED);
+    GetColor(RED);
     break;
   case 75:
-    SetColor(ORANGE);
+    GetColor(ORANGE);
     break;
   case 71:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 70:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 65:
-    SetColor(GREEN);
+    GetColor(GREEN);
     break;
   case 66:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   default:
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     break;
 
   }
@@ -564,22 +564,22 @@ void PLAN_dash_IC_dash_CASES() // PLAN-IC-CASES
   switch(Pop()) // PLAN-IC-CASES
   {
   case 0:
-    SetColor(GREY1);
+    GetColor(GREY1);
     break;
   case 1:
-    SetColor(VIOLET);
+    GetColor(VIOLET);
     break;
   case 2:
-    SetColor(BLUE);
+    GetColor(BLUE);
     break;
   case 3:
-    SetColor(WHITE);
+    GetColor(WHITE);
     break;
   case 4:
-    SetColor(ORANGE);
+    GetColor(ORANGE);
     break;
   default:
-    SetColor(BROWN);
+    GetColor(BROWN);
     break;
 
   }
@@ -674,7 +674,7 @@ void _n_IC_dash_CASES() // #IC-CASES
     UNK_0xf485(); // UNK_0xf485
     break;
   case 46:
-    SetColor(DK_dash_GREEN);
+    GetColor(DK_dash_GREEN);
     break;
   default:
     Push(Read16(cc_DEFAULT)); // DEFAULT
@@ -721,7 +721,7 @@ void _plus_ICP() // +ICP
 
 
 // ================================================
-// 0xf51b: WORD '+ICONBOX' codep=0x224c parp=0xf528 params=3 returns=0
+// 0xf51b: WORD '+ICONBOX' codep=0x224c parp=0xf528
 // ================================================
 // entry
 

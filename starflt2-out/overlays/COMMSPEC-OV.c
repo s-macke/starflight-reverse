@@ -376,7 +376,7 @@ void UNK_0xe580() // UNK_0xe580
 
 
 // ================================================
-// 0xe588: WORD 'UNK_0xe58a' codep=0x224c parp=0xe58a params=4 returns=0
+// 0xe588: WORD 'UNK_0xe58a' codep=0x224c parp=0xe58a
 // ================================================
 
 void UNK_0xe58a() // UNK_0xe58a
@@ -547,7 +547,7 @@ void UNK_0xe658() // UNK_0xe658
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
     DrawON(); // .ON
     CTINIT(); // CTINIT
@@ -565,7 +565,7 @@ void UNK_0xe658() // UNK_0xe658
   {
     Pop(); // DROP
   }
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawON(); // .ON
 }
@@ -682,7 +682,7 @@ void UNK_0xe715() // UNK_0xe715
 
 
 // ================================================
-// 0xe71d: WORD 'UNK_0xe71f' codep=0x224c parp=0xe71f orphan params=3 returns=1
+// 0xe71d: WORD 'UNK_0xe71f' codep=0x224c parp=0xe71f orphan
 // ================================================
 
 void UNK_0xe71f() // UNK_0xe71f
@@ -697,7 +697,7 @@ void UNK_0xe71f() // UNK_0xe71f
 
 
 // ================================================
-// 0xe731: WORD 'UNK_0xe733' codep=0x224c parp=0xe733 orphan params=5 returns=1
+// 0xe731: WORD 'UNK_0xe733' codep=0x224c parp=0xe733 orphan
 // ================================================
 
 void UNK_0xe733() // UNK_0xe733
@@ -733,7 +733,7 @@ void UNK_0xe733() // UNK_0xe733
 
 
 // ================================================
-// 0xe769: WORD 'UNK_0xe76b' codep=0x224c parp=0xe76b orphan params=7 returns=0
+// 0xe769: WORD 'UNK_0xe76b' codep=0x224c parp=0xe76b orphan
 // ================================================
 
 void UNK_0xe76b() // UNK_0xe76b
@@ -799,7 +799,7 @@ void UNK_0xe7a1() // UNK_0xe7a1
 
 
 // ================================================
-// 0xe7b7: WORD 'UNK_0xe7b9' codep=0x224c parp=0xe7b9 orphan params=8 returns=0
+// 0xe7b7: WORD 'UNK_0xe7b9' codep=0x224c parp=0xe7b9 orphan
 // ================================================
 
 void UNK_0xe7b9() // UNK_0xe7b9
@@ -871,7 +871,7 @@ void UNK_0xe809() // UNK_0xe809
 
 
 // ================================================
-// 0xe813: WORD 'UNK_0xe815' codep=0x224c parp=0xe815 orphan params=5 returns=1
+// 0xe813: WORD 'UNK_0xe815' codep=0x224c parp=0xe815 orphan
 // ================================================
 
 void UNK_0xe815() // UNK_0xe815
@@ -1070,7 +1070,7 @@ void UNK_0xe935() // UNK_0xe935
 
 
 // ================================================
-// 0xe957: WORD 'UNK_0xe959' codep=0x224c parp=0xe959 orphan params=3 returns=0
+// 0xe957: WORD 'UNK_0xe959' codep=0x224c parp=0xe959 orphan
 // ================================================
 
 void UNK_0xe959() // UNK_0xe959
@@ -1580,7 +1580,7 @@ void UNK_0xecdd() // UNK_0xecdd
       Push(2);
       CTPOS_dot_(); // CTPOS.
       Push(0x000f);
-      SetColor(BLACK);
+      GetColor(BLACK);
       POLY_dash_ER(); // POLY-ER
       Push(0x65e1+UNK_0xe62f.offset); // UNK_0xe62f<IFIELD>
       _do__dot_(); // $.
@@ -1861,7 +1861,7 @@ void UNK_0xeee1() // UNK_0xeee1
 
 
 // ================================================
-// 0xeeeb: WORD 'UNK_0xeeed' codep=0x224c parp=0xeeed orphan
+// 0xeeeb: WORD 'UNK_0xeeed' codep=0x224c parp=0xeeed orphan params=0 returns=1
 // ================================================
 
 void UNK_0xeeed() // UNK_0xeeed
@@ -1873,7 +1873,7 @@ void UNK_0xeeed() // UNK_0xeeed
 
 
 // ================================================
-// 0xeef5: WORD 'UNK_0xeef7' codep=0x224c parp=0xeef7 orphan
+// 0xeef5: WORD 'UNK_0xeef7' codep=0x224c parp=0xeef7 orphan params=0 returns=1
 // ================================================
 
 void UNK_0xeef7() // UNK_0xeef7
@@ -1924,7 +1924,7 @@ void UNK_0xef39() // UNK_0xef39
 
 
 // ================================================
-// 0xef4d: WORD 'UNK_0xef4f' codep=0x224c parp=0xef4f orphan
+// 0xef4d: WORD 'UNK_0xef4f' codep=0x224c parp=0xef4f orphan params=0 returns=0
 // ================================================
 
 void UNK_0xef4f() // UNK_0xef4f
@@ -2083,7 +2083,7 @@ void UNK_0xf076() // UNK_0xf076
 
 
 // ================================================
-// 0xf086: WORD 'UNK_0xf088' codep=0x224c parp=0xf088 orphan
+// 0xf086: WORD 'UNK_0xf088' codep=0x224c parp=0xf088 orphan params=0 returns=0
 // ================================================
 
 void UNK_0xf088() // UNK_0xf088
@@ -2179,7 +2179,7 @@ void UNK_0xf11a() // UNK_0xf11a
 
 
 // ================================================
-// 0xf138: WORD 'UNK_0xf13a' codep=0x224c parp=0xf13a orphan
+// 0xf138: WORD 'UNK_0xf13a' codep=0x224c parp=0xf13a orphan params=0 returns=0
 // ================================================
 
 void UNK_0xf13a() // UNK_0xf13a
@@ -2301,7 +2301,7 @@ void UNK_0xf1d2() // UNK_0xf1d2
 
 void UNK_0xf1f6() // UNK_0xf1f6
 {
-  SetColor(PINK);
+  GetColor(PINK);
   Push(Read16(regsp)); // DUP
   StoreCOLOR(); // !COLOR
   Push(pp_CTCOLOR); // CTCOLOR
@@ -2426,9 +2426,9 @@ void UNK_0xf28a() // UNK_0xf28a
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     Push(0x4fa9); // probable 'BLACK'
     Store_2(); // !_2
     CTERASE(); // CTERASE
@@ -2531,7 +2531,7 @@ void UNK_0xf33e() // UNK_0xf33e
 
 
 // ================================================
-// 0xf368: WORD 'UNK_0xf36a' codep=0x224c parp=0xf36a orphan
+// 0xf368: WORD 'UNK_0xf36a' codep=0x224c parp=0xf36a orphan params=0 returns=1
 // ================================================
 
 void UNK_0xf36a() // UNK_0xf36a
@@ -2607,7 +2607,7 @@ void UNK_0xf394() // UNK_0xf394
 
 void UNK_0xf3ec() // UNK_0xf3ec
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
   WUP(); // WUP
   Push(0xbe45); // probable '.HUFF'

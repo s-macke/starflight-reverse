@@ -525,7 +525,7 @@ void UNK_0xe888() // UNK_0xe888
 {
   GetCRS(); // @CRS
   Push(2);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x00ae);
   Push(0x0085);
   _2DUP(); // 2DUP
@@ -732,7 +732,7 @@ void UNK_0xea52() // UNK_0xea52
 void UNK_0xeaaa() // UNK_0xeaaa
 {
   Push(7);
-  SetColor(BLACK);
+  GetColor(BLACK);
   ROT(); // ROT
   Push(Pop() * 0x000a + 0x007c); //  0x000a * 0x007c +
   Push(0x007d);
@@ -884,7 +884,7 @@ void UNK_0xebcb() // UNK_0xebcb
   do // (DO)
   {
     Push(6);
-    SetColor(BLACK);
+    GetColor(BLACK);
     Push(0x002c + i * 0x000a); // 0x002c I 0x000a * +
     Push(0x0036);
     POS_dot_PXT(); // POS.PXT
@@ -892,17 +892,17 @@ void UNK_0xebcb() // UNK_0xebcb
   } while(i<imax); // (LOOP)
 
   Push(4);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x00ae);
   Push(0x0037);
   POS_dot_PXT(); // POS.PXT
   Push(6);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x0072);
   Push(0x0036);
   POS_dot_PXT(); // POS.PXT
   Push(6);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x0068);
   Push(0x0036);
   POS_dot_PXT(); // POS.PXT
@@ -1646,7 +1646,7 @@ void UNK_0xf0fb() // UNK_0xf0fb
 void UNK_0xf173() // UNK_0xf173
 {
   UNK_0xe732(); // UNK_0xe732
-  SetColor(BLUE);
+  GetColor(BLUE);
   UNK_0xe826(); // UNK_0xe826
   GetCRS(); // @CRS
   Push(pp_NCRS); // NCRS
@@ -1707,7 +1707,7 @@ void UNK_0xf173() // UNK_0xf173
   } while(Pop() == 0);
   _gt_1FONT(); // >1FONT
   UNK_0xebcb(); // UNK_0xebcb
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xe826(); // UNK_0xe826
   Push(pp_UNK_0xe903); // UNK_0xe903
   BLD_dash_CRS(); // BLD-CRS
@@ -2086,9 +2086,9 @@ void _ro_U_dash_CONFIG_rc_() // (U-CONFIG)
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   UNK_0xe6f6(); // UNK_0xe6f6
-  SetColor(WHITE);
-  SetColor(GREY1);
-  SetColor(DK_dash_GREE);
+  GetColor(WHITE);
+  GetColor(GREY1);
+  GetColor(DK_dash_GREE);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_2(); // !_2

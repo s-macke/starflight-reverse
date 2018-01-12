@@ -435,7 +435,7 @@ void UNK_0xe8b6() // UNK_0xe8b6
 
 void UNK_0xe8be() // UNK_0xe8be
 {
-  SetColor(RED);
+  GetColor(RED);
 }
 
 
@@ -449,7 +449,7 @@ void UNK_0xe8c4() // UNK_0xe8c4
   Push(2);
   Push(2);
   Push(0x009d);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   UNK_0xe8be(); // UNK_0xe8be
   StoreCOLOR(); // !COLOR
@@ -512,7 +512,7 @@ void UNK_0xe92e() // UNK_0xe92e
 
 void UNK_0xe93c() // UNK_0xe93c
 {
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
 }
 
 
@@ -522,7 +522,7 @@ void UNK_0xe93c() // UNK_0xe93c
 
 void UNK_0xe942() // UNK_0xe942
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
 }
 
 
@@ -532,7 +532,7 @@ void UNK_0xe942() // UNK_0xe942
 
 void UNK_0xe948() // UNK_0xe948
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
 }
 
 
@@ -553,7 +553,7 @@ void UNK_0xe94e() // UNK_0xe94e
 
 void UNK_0xe956() // UNK_0xe956
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
 }
 
 
@@ -563,7 +563,7 @@ void UNK_0xe956() // UNK_0xe956
 
 void UNK_0xe95c() // UNK_0xe95c
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
 }
 
 
@@ -573,7 +573,7 @@ void UNK_0xe95c() // UNK_0xe95c
 
 void UNK_0xe962() // UNK_0xe962
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
 }
 
 
@@ -583,7 +583,7 @@ void UNK_0xe962() // UNK_0xe962
 
 void UNK_0xe968() // UNK_0xe968
 {
-  SetColor(ORANGE);
+  GetColor(ORANGE);
 }
 
 
@@ -593,7 +593,7 @@ void UNK_0xe968() // UNK_0xe968
 
 void UNK_0xe96e() // UNK_0xe96e
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
 }
 
 
@@ -603,7 +603,7 @@ void UNK_0xe96e() // UNK_0xe96e
 
 void UNK_0xe974() // UNK_0xe974
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
 }
 
 
@@ -793,7 +793,7 @@ void UNK_0xeada() // UNK_0xeada
   POS_dot_(); // POS.
   PRINT("YOU ARE ", 8); // (.")
   Push(Read16(pp_COLOR)); // COLOR @
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_SELLING)); // SELLING @
   if (Pop() != 0)
@@ -808,7 +808,7 @@ void UNK_0xeada() // UNK_0xeada
   Push(0x00b5);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(Read16(pp_SELLING)); // SELLING @
   if (Pop() != 0)
@@ -882,7 +882,7 @@ void UNK_0xeb7a() // UNK_0xeb7a
   Push(0x008d);
   POS_dot_(); // POS.
   Push(0x0018);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe96e(); // UNK_0xe96e
   StoreCOLOR(); // !COLOR
@@ -1098,7 +1098,7 @@ void UNK_0xecc5() // UNK_0xecc5
   Push(0x00aa);
   POS_dot_(); // POS.
   Push(5);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
 }
 
@@ -1248,7 +1248,7 @@ void UNK_0xed97() // UNK_0xed97
   Push(0x0039);
   Push(0x0087);
   Push(0x009d);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -1323,7 +1323,7 @@ void UNK_0xedf9() // UNK_0xedf9
 
 void UNK_0xee11() // UNK_0xee11
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xedf9(); // UNK_0xedf9
 }
 
@@ -1944,7 +1944,7 @@ void UNK_0xf13c() // UNK_0xf13c
   Push(4);
   Push(0x0087);
   Push(0x0034);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
 }
 
@@ -2110,7 +2110,7 @@ void UNK_0xf223() // UNK_0xf223
   Push(0x009c);
   POS_dot_(); // POS.
   Push(Read16(cc_UNK_0xed5e)); // UNK_0xed5e
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   UNK_0xe96e(); // UNK_0xe96e
   StoreCOLOR(); // !COLOR
@@ -2429,7 +2429,7 @@ void UNK_0xf406() // UNK_0xf406
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor(WHITE);
+    GetColor(WHITE);
     StoreCOLOR(); // !COLOR
     SET_STR_AS_PARAM("ANY PURCHASED GOODS WILL BE TRANSFERRED");
     DrawTTY(); // .TTY

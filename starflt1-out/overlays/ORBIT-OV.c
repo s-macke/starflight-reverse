@@ -249,7 +249,7 @@ void SETREGION(); // SETREGION
 void FILLREGION(); // FILLREGION
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void ON_3(); // ON_3
 void OFF(); // OFF
 void FILL_1(); // FILL_1
@@ -701,7 +701,7 @@ LoadDataType UNK_0xdcdc = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 // 0xdce4: db 0x8b 0xc1 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0x03 0xc1 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0x03 0xc1 0x40 0xd1 0xf8 0x03 0xc2 0x40 0xd1 0xf8 0xc3 0x29 0x1d 0x8b 0xc2 0xc3 0xe4 0xdc 0xe9 0xdc 0xf8 0xdc 0x02 0xdd 0x11 0xdd '   )     @    @   )     @   )     @    @   )              '
 
 // ================================================
-// 0xdd1e: WORD 'UNK_0xdd20' codep=0x1d29 parp=0xdd20
+// 0xdd1e: WORD 'UNK_0xdd20' codep=0x1d29 parp=0xdd20 params=0 returns=1
 // ================================================
 // 0xdd20: shl    bx,1
 // 0xdd22: add    bx,DD14
@@ -757,7 +757,7 @@ LoadDataType UNK_0xdcdc = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 // 0xdda0: jmp    word ptr [bx]
 
 // ================================================
-// 0xdda2: WORD 'UNK_0xdda4' codep=0x224c parp=0xdda4 orphan params=2 returns=3
+// 0xdda2: WORD 'UNK_0xdda4' codep=0x224c parp=0xdda4 orphan
 // ================================================
 
 void UNK_0xdda4() // UNK_0xdda4
@@ -792,7 +792,7 @@ void UNK_0xdda4() // UNK_0xdda4
 
 
 // ================================================
-// 0xddc4: WORD 'UNK_0xddc6' codep=0x224c parp=0xddc6 params=2 returns=3
+// 0xddc4: WORD 'UNK_0xddc6' codep=0x224c parp=0xddc6
 // ================================================
 
 void UNK_0xddc6() // UNK_0xddc6
@@ -834,7 +834,7 @@ void UNK_0xddc6() // UNK_0xddc6
 
 
 // ================================================
-// 0xddec: WORD 'UNK_0xddee' codep=0x224c parp=0xddee params=0 returns=6
+// 0xddec: WORD 'UNK_0xddee' codep=0x224c parp=0xddee
 // ================================================
 
 void UNK_0xddee() // UNK_0xddee
@@ -874,7 +874,7 @@ void UNK_0xddee() // UNK_0xddee
 
 
 // ================================================
-// 0xde3a: WORD 'UNK_0xde3c' codep=0x224c parp=0xde3c params=0 returns=6
+// 0xde3a: WORD 'UNK_0xde3c' codep=0x224c parp=0xde3c
 // ================================================
 
 void UNK_0xde3c() // UNK_0xde3c
@@ -1893,10 +1893,10 @@ void UNK_0xe59c() // UNK_0xe59c
   Push(Read16(pp_IsNEB)); // ?NEB @
   if (Pop() != 0)
   {
-    SetColor(DK_dash_GREEN);
+    GetColor(DK_dash_GREEN);
   } else
   {
-    SetColor(BLACK);
+    GetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_UNK_0xdc10)); // UNK_0xdc10 @
@@ -2024,7 +2024,7 @@ void UNK_0xe654() // UNK_0xe654
 
 
 // ================================================
-// 0xe66e: WORD 'UNK_0xe670' codep=0x224c parp=0xe670
+// 0xe66e: WORD 'UNK_0xe670' codep=0x224c parp=0xe670 params=1 returns=0
 // ================================================
 
 void UNK_0xe670() // UNK_0xe670
@@ -2055,7 +2055,7 @@ void UNK_0xe670() // UNK_0xe670
 
 void UNK_0xe68e() // UNK_0xe68e
 {
-  SetColor(DK_dash_GREEN);
+  GetColor(DK_dash_GREEN);
   StoreCOLOR(); // !COLOR
   Push(!Read16(pp_IsNEB)); // ?NEB @ NOT
   if (Pop() != 0)
@@ -2068,19 +2068,19 @@ void UNK_0xe68e() // UNK_0xe68e
     Push(4);
     RRND(); // RRND
     UNK_0xe670(); // UNK_0xe670
-    SetColor(WHITE);
+    GetColor(WHITE);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe670(); // UNK_0xe670
-    SetColor(RED);
+    GetColor(RED);
     StoreCOLOR(); // !COLOR
     Push(2);
     Push(5);
     RRND(); // RRND
     UNK_0xe670(); // UNK_0xe670
-    SetColor(GREY1);
+    GetColor(GREY1);
     StoreCOLOR(); // !COLOR
     Push(4);
     Push(9);
@@ -2162,7 +2162,7 @@ void _gt_VIEWSITE() // >VIEWSITE
 
 
 // ================================================
-// 0xe767: WORD 'UNK_0xe769' codep=0x224c parp=0xe769 params=0 returns=9
+// 0xe767: WORD 'UNK_0xe769' codep=0x224c parp=0xe769
 // ================================================
 
 void UNK_0xe769() // UNK_0xe769
@@ -2719,7 +2719,7 @@ void UNK_0xeb45() // UNK_0xeb45
 void UNK_0xeb61() // UNK_0xeb61
 {
   unsigned short int a, i, imax;
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_VIN)); // VIN @
   a = Pop(); // >R
@@ -3440,7 +3440,7 @@ void UNK_0xf023() // UNK_0xf023
 {
   Push(Read16(pp_UNK_0xdbb8)); // UNK_0xdbb8 @
   Push(pp_UNK_0xdbb0); // UNK_0xdbb0
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xdbb0)); // UNK_0xdbb0 @
   Push(0x0018);
   MIN(); // MIN
@@ -3507,7 +3507,7 @@ void UNK_0xf097() // UNK_0xf097
 {
   Push(Read16(pp_UNK_0xdbb4)); // UNK_0xdbb4 @
   Push(pp_UNK_0xdbac); // UNK_0xdbac
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -3592,7 +3592,7 @@ void UNK_0xf0d3() // UNK_0xf0d3
   SEEGRID(); // SEEGRID
   Push(1);
   Push(pp_UNK_0xdbd0); // UNK_0xdbd0
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(0x0023);
   UNK_0xe3a8(); // UNK_0xe3a8
   SEEGRID(); // SEEGRID
@@ -3832,7 +3832,7 @@ void UNK_0xf314() // UNK_0xf314
       Push(-1);
     }
     Push(pp_UNK_0xdc18); // UNK_0xdc18
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     UNK_0xe6dc(); // UNK_0xe6dc
     UNK_0xf2fc(); // UNK_0xf2fc
     Push(Read16(pp_UNK_0xdc10)); // UNK_0xdc10 @
@@ -3869,7 +3869,7 @@ void UNK_0xf391() // UNK_0xf391
 
 
 // ================================================
-// 0xf39d: WORD 'UNK_0xf39f' codep=0x224c parp=0xf39f
+// 0xf39d: WORD 'UNK_0xf39f' codep=0x224c parp=0xf39f params=0 returns=0
 // ================================================
 
 void UNK_0xf39f() // UNK_0xf39f
@@ -3929,19 +3929,19 @@ void SKYCASE() // SKYCASE
   switch(Pop()) // SKYCASE
   {
   case 0:
-    SetColor(BLACK);
+    GetColor(BLACK);
     break;
   case 7:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 12:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   case 19:
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     break;
   default:
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     break;
 
   }

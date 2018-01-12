@@ -67,7 +67,7 @@ void HERE(); // HERE
 void _i__1(); // '_1
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void OFF(); // OFF
 void FILL_1(); // FILL_1
 void OVER(); // OVER
@@ -425,7 +425,7 @@ void CONDITION() // CONDITION
       Store_3(); // !_3
       Push(1);
       Push(pp_COND_dash_CNT); // COND-CNT
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
     }
   } else
   {

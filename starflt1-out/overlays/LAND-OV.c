@@ -134,7 +134,7 @@ void UNK_0xf147() // UNK_0xf147
 
 
 // ================================================
-// 0xf175: WORD 'UNK_0xf177' codep=0x224c parp=0xf177 params=3 returns=1
+// 0xf175: WORD 'UNK_0xf177' codep=0x224c parp=0xf177
 // ================================================
 
 void UNK_0xf177() // UNK_0xf177
@@ -182,9 +182,9 @@ void UNK_0xf177() // UNK_0xf177
 
 void UNK_0xf1c9() // UNK_0xf1c9
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   Push(0x4f0c); // probable 'BLACK'
   Store_3(); // !_3
   CTERASE(); // CTERASE
@@ -192,7 +192,7 @@ void UNK_0xf1c9() // UNK_0xf1c9
 
 
 // ================================================
-// 0xf1d9: WORD 'UNK_0xf1db' codep=0x224c parp=0xf1db params=3 returns=0
+// 0xf1d9: WORD 'UNK_0xf1db' codep=0x224c parp=0xf1db
 // ================================================
 
 void UNK_0xf1db() // UNK_0xf1db

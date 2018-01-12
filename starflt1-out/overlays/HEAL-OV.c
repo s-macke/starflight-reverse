@@ -79,7 +79,7 @@ void KEY_2(); // KEY_2
 void _3_star_(); // 3*
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void OFF(); // OFF
 void FILL_1(); // FILL_1
@@ -321,9 +321,9 @@ void UNK_0xf183() // UNK_0xf183
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
   Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(1);
@@ -560,7 +560,7 @@ void DrawVITS() // .VITS
   OFF(); // OFF
   Push(Read16(pp_COLOR)); // COLOR @
   b = Pop(); // >R
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf0a6(); // UNK_0xf0a6
   Push(0);
@@ -575,7 +575,7 @@ void DrawVITS() // .VITS
   {
     GCR(); // GCR
     Push(Read16(pp_WCHARS)); // WCHARS @
-    SetColor(BLACK);
+    GetColor(BLACK);
     POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
     Push(i); // I
     UNK_0xf12f(); // UNK_0xf12f
@@ -587,7 +587,7 @@ void DrawVITS() // .VITS
     {
       Push(1);
       Push(pp_XBLT); // XBLT
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       Push(0x63ef+UNK_0xf0ff.offset); // UNK_0xf0ff<IFIELD>
       _do__dot_(); // $.
       Push(0x000e - (Read16(0x63ef+UNK_0xf0ff.offset)&0xFF)); // 0x000e UNK_0xf0ff<IFIELD> C@ -
@@ -608,9 +608,9 @@ void DrawVITS() // .VITS
       Push(Read16(pp_XBLT)); // XBLT @
       Push(-1);
       Push(pp_XBLT); // XBLT
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       Push(4);
-      SetColor(BLACK);
+      GetColor(BLACK);
       POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
       Push(pp_XBLT); // XBLT
       Store_3(); // !_3

@@ -649,7 +649,7 @@ void UNK_0xf27f() // UNK_0xf27f
   UNK_0xef96(); // UNK_0xef96
   Push(6);
   Push(0x000f);
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -711,7 +711,7 @@ void UNK_0xf3bb() // UNK_0xf3bb
 void UNK_0xf474() // UNK_0xf474
 {
   DARK(); // DARK
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   UNK_0xf27f(); // UNK_0xf27f
   UNK_0xf1f2(); // UNK_0xf1f2
   UNK_0xf3bb(); // UNK_0xf3bb

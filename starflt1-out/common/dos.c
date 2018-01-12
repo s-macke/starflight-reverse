@@ -147,7 +147,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef params=2 returns=0
+// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -865,7 +865,7 @@ void SMARTOPEN() // SMARTOPEN
 // 0x4658: db 0x69 0x46 'iF'
 
 // ================================================
-// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669 params=9 returns=0
+// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669
 // ================================================
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>

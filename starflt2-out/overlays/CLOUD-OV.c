@@ -124,7 +124,7 @@ void UNK_0xf3e2() // UNK_0xf3e2
 
 
 // ================================================
-// 0xf422: WORD '#HUMANS' codep=0x224c parp=0xf42e params=2 returns=0
+// 0xf422: WORD '#HUMANS' codep=0x224c parp=0xf42e
 // ================================================
 
 void _n_HUMANS() // #HUMANS
@@ -141,7 +141,7 @@ void _n_HUMANS() // #HUMANS
 
 
 // ================================================
-// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444 params=4 returns=2
+// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444
 // ================================================
 
 void UNK_0xf444() // UNK_0xf444
@@ -160,7 +160,7 @@ void UNK_0xf444() // UNK_0xf444
 
 
 // ================================================
-// 0xf45c: WORD 'UNK_0xf45e' codep=0x224c parp=0xf45e params=4 returns=0
+// 0xf45c: WORD 'UNK_0xf45e' codep=0x224c parp=0xf45e
 // ================================================
 
 void UNK_0xf45e() // UNK_0xf45e
@@ -176,7 +176,7 @@ void UNK_0xf45e() // UNK_0xf45e
 
 
 // ================================================
-// 0xf470: WORD 'UNK_0xf472' codep=0x224c parp=0xf472 params=3 returns=0
+// 0xf470: WORD 'UNK_0xf472' codep=0x224c parp=0xf472
 // ================================================
 
 void UNK_0xf472() // UNK_0xf472
@@ -223,7 +223,7 @@ void UNK_0xf47c() // UNK_0xf47c
 
 
 // ================================================
-// 0xf4b0: WORD 'UNK_0xf4b2' codep=0x224c parp=0xf4b2 params=3 returns=2
+// 0xf4b0: WORD 'UNK_0xf4b2' codep=0x224c parp=0xf4b2
 // ================================================
 
 void UNK_0xf4b2() // UNK_0xf4b2
@@ -239,7 +239,7 @@ void UNK_0xf4b2() // UNK_0xf4b2
 
 
 // ================================================
-// 0xf4c8: WORD 'UNK_0xf4ca' codep=0x224c parp=0xf4ca params=3 returns=0
+// 0xf4c8: WORD 'UNK_0xf4ca' codep=0x224c parp=0xf4ca
 // ================================================
 
 void UNK_0xf4ca() // UNK_0xf4ca
@@ -259,7 +259,7 @@ void UNK_0xf4d4() // UNK_0xf4d4
 
 
 // ================================================
-// 0xf4d6: WORD 'UNK_0xf4d8' codep=0x224c parp=0xf4d8 params=3 returns=0
+// 0xf4d6: WORD 'UNK_0xf4d8' codep=0x224c parp=0xf4d8
 // ================================================
 
 void UNK_0xf4d8() // UNK_0xf4d8
@@ -270,7 +270,7 @@ void UNK_0xf4d8() // UNK_0xf4d8
 
 
 // ================================================
-// 0xf4e0: WORD 'UNK_0xf4e2' codep=0x224c parp=0xf4e2 params=3 returns=0
+// 0xf4e0: WORD 'UNK_0xf4e2' codep=0x224c parp=0xf4e2
 // ================================================
 
 void UNK_0xf4e2() // UNK_0xf4e2
@@ -281,7 +281,7 @@ void UNK_0xf4e2() // UNK_0xf4e2
 
 
 // ================================================
-// 0xf4ea: WORD 'UNK_0xf4ec' codep=0x224c parp=0xf4ec params=3 returns=0
+// 0xf4ea: WORD 'UNK_0xf4ec' codep=0x224c parp=0xf4ec
 // ================================================
 
 void UNK_0xf4ec() // UNK_0xf4ec
@@ -325,7 +325,7 @@ void _ro_DO_dash_CLOUD_rc_() // (DO-CLOUD)
 }
 
 // ================================================
-// 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c params=4 returns=0
+// 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
 // ================================================
 // entry
 
@@ -336,7 +336,7 @@ void DO_dash_CLOUD() // DO-CLOUD
   {
     _gt_1FONT(); // >1FONT
     WUP(); // WUP
-    SetColor(WHITE);
+    GetColor(WHITE);
     StoreCOLOR(); // !COLOR
     _ro_DO_dash_CLOUD_rc_(); // (DO-CLOUD) case
     return;

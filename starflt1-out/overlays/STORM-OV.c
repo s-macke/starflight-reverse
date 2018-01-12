@@ -314,7 +314,7 @@ IFieldType UNK_0xf28b = {CREWMEMBERIDX, 0x0b, 0x0f};
 LoadDataType UNK_0xf290 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================
-// 0xf296: WORD 'UNK_0xf298' codep=0x224c parp=0xf298
+// 0xf296: WORD 'UNK_0xf298' codep=0x224c parp=0xf298 params=0 returns=2
 // ================================================
 
 void UNK_0xf298() // UNK_0xf298
@@ -356,7 +356,7 @@ void UNK_0xf2b2() // UNK_0xf2b2
 
 
 // ================================================
-// 0xf2d8: WORD 'UNK_0xf2da' codep=0x224c parp=0xf2da
+// 0xf2d8: WORD 'UNK_0xf2da' codep=0x224c parp=0xf2da params=0 returns=1
 // ================================================
 
 void UNK_0xf2da() // UNK_0xf2da
@@ -401,7 +401,7 @@ void UNK_0xf30e() // UNK_0xf30e
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WBOTTOM) - 1); // WBOTTOM @ 1-
   Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_WLEFT)); // WLEFT @
@@ -418,7 +418,7 @@ void UNK_0xf33c() // UNK_0xf33c
 {
   UNK_0xf2f4(); // UNK_0xf2f4
   UNK_0xf30e(); // UNK_0xf30e
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x63ef+UNK_0xf28b.offset); // UNK_0xf28b<IFIELD>
   _do__dot_(); // $.
@@ -504,13 +504,13 @@ void UNK_0xf3e2() // UNK_0xf3e2
   Push(0x0096);
   POS_dot_(); // POS.
   Push(7);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(0x0074);
   Push(0x008f);
   POS_dot_(); // POS.
   Push(9);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
 }
 
@@ -584,7 +584,7 @@ void UNK_0xf46c() // UNK_0xf46c
 
 
 // ================================================
-// 0xf4a6: WORD 'UNK_0xf4a8' codep=0x224c parp=0xf4a8
+// 0xf4a6: WORD 'UNK_0xf4a8' codep=0x224c parp=0xf4a8 params=0 returns=0
 // ================================================
 
 void UNK_0xf4a8() // UNK_0xf4a8

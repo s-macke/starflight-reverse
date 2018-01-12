@@ -97,7 +97,7 @@ void D_eq_(); // D=
 void KEY_2(); // KEY_2
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -248,11 +248,11 @@ void UNK_0xee2c() // UNK_0xee2c
   if (Pop() != 0)
   {
     Push(Read16(pp_CTTOP)); // CTTOP @
-    SetColor(WHITE);
+    GetColor(WHITE);
   } else
   {
     Push(0x0096);
-    SetColor(GREY1);
+    GetColor(GREY1);
   }
   StoreCOLOR(); // !COLOR
   Push(Pop() - 7); //  7 -
@@ -677,7 +677,7 @@ void UNK_0xf157() // UNK_0xf157
     ICLOSE(); // ICLOSE
     Push(1);
     Push(pp_SCROLL_dash_); // SCROLL-
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     ICLOSE(); // ICLOSE
     return;
   }
@@ -776,7 +776,7 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 
 
 // ================================================
-// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280 params=0 returns=0
+// 0xf26a: WORD 'DELETE-SCROLL-BOX' codep=0x224c parp=0xf280
 // ================================================
 // entry
 
@@ -919,7 +919,7 @@ void _gt_BOX() // >BOX
       ICLOSE(); // ICLOSE
       _gt_INACTIVE(); // >INACTIVE
       Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       ICLOSE(); // ICLOSE
     } else
     {
@@ -964,7 +964,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
   {
     Push(-Read16(pp_ELEM_dash_AM)); // ELEM-AM @ NEGATE
     Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(0x001a);
     GetINST_dash_SPECIES(); // @INST-SPECIES
     ICREATE(); // ICREATE

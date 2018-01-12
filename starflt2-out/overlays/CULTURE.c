@@ -147,10 +147,10 @@ void UNK_0xef56() // UNK_0xef56
   Push(b); // I
   if (Pop() != 0)
   {
-    SetColor(PINK);
+    GetColor(PINK);
   } else
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -161,10 +161,10 @@ void UNK_0xef56() // UNK_0xef56
   Push(b); // R>
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
   } else
   {
-    SetColor(DK_dash_BLUE);
+    GetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   TXT_dash_WIN(); // TXT-WIN
@@ -251,7 +251,7 @@ void UNK_0xf00b() // UNK_0xf00b
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -264,7 +264,7 @@ void UNK_0xf017() // UNK_0xf017
 {
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -912,7 +912,7 @@ void UNK_0xf430() // UNK_0xf430
 
 
 // ================================================
-// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444 params=3 returns=0
+// 0xf442: WORD 'UNK_0xf444' codep=0x224c parp=0xf444
 // ================================================
 
 void UNK_0xf444() // UNK_0xf444
@@ -954,7 +954,7 @@ void UNK_0xf472() // UNK_0xf472
 
 
 // ================================================
-// 0xf484: WORD 'UNK_0xf486' codep=0x224c parp=0xf486 orphan params=3 returns=0
+// 0xf484: WORD 'UNK_0xf486' codep=0x224c parp=0xf486 orphan
 // ================================================
 
 void UNK_0xf486() // UNK_0xf486
@@ -1014,7 +1014,7 @@ void DrawCULTURE() // .CULTURE
 {
   Push(!Read16(pp_PAST)); // PAST @ NOT
   if (Pop() == 0) return;
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_2(); // !_2
   Push(pp_LINE_dash_CO); // LINE-CO

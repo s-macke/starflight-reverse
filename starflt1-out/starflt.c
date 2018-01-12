@@ -213,7 +213,7 @@
 //               /  codep:0x0f4e parp:0x0f4e size:0x000b C-string:'_slash_'
 //            /MOD  codep:0x0f62 parp:0x0f62 size:0x000c C-string:'_slash_MOD'
 //               +  codep:0x0f74 parp:0x0f74 size:0x000a C-string:'_plus_'
-//            +!_2  codep:0x0f85 parp:0x0f85 size:0x0009 C-string:'_plus__ex__2'
+//              +!  codep:0x0f85 parp:0x0f85 size:0x0009 C-string:'_plus__ex_'
 //               -  codep:0x0f94 parp:0x0f94 size:0x000a C-string:'_dash_'
 //              +-  codep:0x224c parp:0x0fa5 size:0x000a C-string:'_plus__dash_'
 //               *  codep:0x0fb5 parp:0x0fb5 size:0x000a C-string:'_star_'
@@ -1209,7 +1209,7 @@
 //         ?UPDATE  codep:0x6d12 parp:0x6d12 size:0x0053 C-string:'IsUPDATE'
 //              C!  codep:0x224c parp:0x6d6c size:0x0006 C-string:'C_ex_'
 //             !_3  codep:0x224c parp:0x6d78 size:0x0006 C-string:'Store_3'
-//              +!  codep:0x224c parp:0x6d85 size:0x0006 C-string:'_plus__ex_'
+//            +!_2  codep:0x224c parp:0x6d85 size:0x0006 C-string:'_plus__ex__2'
 //            1.5!  codep:0x224c parp:0x6d94 size:0x0006 C-string:'_1_dot_5_ex_'
 //              2!  codep:0x224c parp:0x6da1 size:0x0006 C-string:'_2_ex_'
 //              D!  codep:0x224c parp:0x6dae size:0x0004 C-string:'StoreD'
@@ -3712,7 +3712,7 @@ const unsigned short int user_WIDTH = 0x07d4; // WIDTH
 // 0x0129: db 0x37 0x09 0x8a 0x07 '7   '
 
 // ================================================
-// 0x012d: WORD '(!SET)' codep=0x0138 parp=0x0138
+// 0x012d: WORD '(!SET)' codep=0x0138 parp=0x0138 params=3 returns=0
 // ================================================
 // 0x0138: mov    dx,ds
 // 0x013a: mov    ax,0000
@@ -3921,7 +3921,7 @@ void COLD() // COLD
 
 
 // ================================================
-// 0x0341: WORD 'UNK_0x0343' codep=0x224c parp=0x0343 params=4 returns=0
+// 0x0341: WORD 'UNK_0x0343' codep=0x224c parp=0x0343 params=0 returns=0
 // ================================================
 
 void UNK_0x0343() // UNK_0x0343
@@ -4538,7 +4538,7 @@ void _i_FORTH() // 'FORTH
 
 
 // ================================================
-// 0x0aca: WORD 'ME' codep=0x0ad1 parp=0x0ad1
+// 0x0aca: WORD 'ME' codep=0x0ad1 parp=0x0ad1 params=0 returns=1
 // ================================================
 // 0x0ad1: push   di
 // 0x0ad2: lodsw
@@ -4605,7 +4605,7 @@ void UNK_0x0b5d() // UNK_0x0b5d
 
 
 // ================================================
-// 0x0b70: WORD '?ENOUGH' codep=0x224c parp=0x0b7c params=0 returns=0
+// 0x0b70: WORD '?ENOUGH' codep=0x224c parp=0x0b7c params=1 returns=0
 // ================================================
 
 void IsENOUGH() // ?ENOUGH
@@ -4622,7 +4622,7 @@ void IsENOUGH() // ?ENOUGH
 
 
 // ================================================
-// 0x0baa: WORD '@' codep=0x0bb0 parp=0x0bb0
+// 0x0baa: WORD '@' codep=0x0bb0 parp=0x0bb0 params=1 returns=1
 // ================================================
 // 0x0bb0: pop    bx
 // 0x0bb1: push   word ptr [bx]
@@ -4651,7 +4651,7 @@ void IsENOUGH() // ?ENOUGH
 // 0x0bd9: jmp    word ptr [bx]
 
 // ================================================
-// 0x0bdb: WORD '!' codep=0x0be1 parp=0x0be1
+// 0x0bdb: WORD '!' codep=0x0be1 parp=0x0be1 params=2 returns=0
 // ================================================
 // 0x0be1: pop    bx
 // 0x0be2: pop    ax
@@ -4689,7 +4689,7 @@ void IsENOUGH() // ?ENOUGH
 // 0x0c1b: jmp    word ptr [bx]
 
 // ================================================
-// 0x0c1d: WORD '2!_2' codep=0x0c24 parp=0x0c24
+// 0x0c1d: WORD '2!_2' codep=0x0c24 parp=0x0c24 params=3 returns=0
 // ================================================
 // 0x0c24: pop    bx
 // 0x0c25: pop    ax
@@ -4703,7 +4703,7 @@ void IsENOUGH() // ?ENOUGH
 // 0x0c31: jmp    word ptr [bx]
 
 // ================================================
-// 0x0c33: WORD '2@' codep=0x0c3a parp=0x0c3a
+// 0x0c33: WORD '2@' codep=0x0c3a parp=0x0c3a params=1 returns=2
 // ================================================
 // 0x0c3a: pop    bx
 // 0x0c3b: cli    
@@ -4728,7 +4728,7 @@ void BLANK() // BLANK
 
 
 // ================================================
-// 0x0c59: WORD 'C!_2' codep=0x0c60 parp=0x0c60
+// 0x0c59: WORD 'C!_2' codep=0x0c60 parp=0x0c60 params=2 returns=0
 // ================================================
 // 0x0c60: pop    bx
 // 0x0c61: pop    ax
@@ -4758,7 +4758,7 @@ void BLANK() // BLANK
 // 0x0c8b: jmp    word ptr [bx]
 
 // ================================================
-// 0x0c8d: WORD 'C@' codep=0x0c94 parp=0x0c94
+// 0x0c8d: WORD 'C@' codep=0x0c94 parp=0x0c94 params=1 returns=1
 // ================================================
 // 0x0c94: pop    bx
 // 0x0c95: sub    ax,ax
@@ -4829,7 +4829,7 @@ void COUNT() // COUNT
 // 0x0d04: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d06: WORD 'CMOVE_2' codep=0x0d10 parp=0x0d10
+// 0x0d06: WORD 'CMOVE_2' codep=0x0d10 parp=0x0d10 params=3 returns=0
 // ================================================
 // 0x0d10: mov    ax,ds
 // 0x0d12: mov    es,ax
@@ -4851,7 +4851,7 @@ void COUNT() // COUNT
 // 0x0d2a: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d2c: WORD 'FILL_2' codep=0x0d35 parp=0x0d35
+// 0x0d2c: WORD 'FILL_2' codep=0x0d35 parp=0x0d35 params=3 returns=0
 // ================================================
 // 0x0d35: mov    ax,ds
 // 0x0d37: mov    es,ax
@@ -4872,7 +4872,7 @@ void COUNT() // COUNT
 // 0x0d4d: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d4f: WORD 'P!' codep=0x0d56 parp=0x0d56
+// 0x0d4f: WORD 'P!' codep=0x0d56 parp=0x0d56 params=2 returns=0
 // ================================================
 // 0x0d56: pop    dx
 // 0x0d57: pop    ax
@@ -4882,7 +4882,7 @@ void COUNT() // COUNT
 // 0x0d5c: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d5e: WORD 'P@' codep=0x0d65 parp=0x0d65
+// 0x0d5e: WORD 'P@' codep=0x0d65 parp=0x0d65 params=1 returns=1
 // ================================================
 // 0x0d65: sub    ax,ax
 // 0x0d67: pop    dx
@@ -4893,7 +4893,7 @@ void COUNT() // COUNT
 // 0x0d6d: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d6f: WORD 'SEG>ADDR' codep=0x0d7c parp=0x0d7c
+// 0x0d6f: WORD 'SEG>ADDR' codep=0x0d7c parp=0x0d7c params=1 returns=1
 // ================================================
 // 0x0d7c: pop    ax
 // 0x0d7d: mov    bx,cs
@@ -4908,7 +4908,7 @@ void COUNT() // COUNT
 // 0x0d8d: jmp    word ptr [bx]
 
 // ================================================
-// 0x0d8f: WORD 'ADDR>SEG' codep=0x0d9c parp=0x0d9c
+// 0x0d8f: WORD 'ADDR>SEG' codep=0x0d9c parp=0x0d9c params=1 returns=1
 // ================================================
 // 0x0d9c: pop    ax
 // 0x0d9d: shr    ax,1
@@ -4923,7 +4923,7 @@ void COUNT() // COUNT
 // 0x0dad: jmp    word ptr [bx]
 
 // ================================================
-// 0x0daf: WORD '>R' codep=0x0db6 parp=0x0db6
+// 0x0daf: WORD '>R' codep=0x0db6 parp=0x0db6 params=1 returns=0
 // ================================================
 // 0x0db6: pop    bx
 // 0x0db7: dec    bp
@@ -4934,7 +4934,7 @@ void COUNT() // COUNT
 // 0x0dbf: jmp    word ptr [bx]
 
 // ================================================
-// 0x0dc1: WORD '?DUP' codep=0x0dca parp=0x0dca
+// 0x0dc1: WORD '?DUP' codep=0x0dca parp=0x0dca params=1 returns=1
 // ================================================
 // 0x0dca: pop    ax
 // 0x0dcb: or     ax,ax
@@ -4946,7 +4946,7 @@ void COUNT() // COUNT
 // 0x0dd4: jmp    word ptr [bx]
 
 // ================================================
-// 0x0dd6: WORD '2DROP' codep=0x0de0 parp=0x0de0
+// 0x0dd6: WORD '2DROP' codep=0x0de0 parp=0x0de0 params=2 returns=0
 // ================================================
 // 0x0de0: add    sp,0004
 // 0x0de4: lodsw
@@ -4954,7 +4954,7 @@ void COUNT() // COUNT
 // 0x0de7: jmp    word ptr [bx]
 
 // ================================================
-// 0x0de9: WORD '2DUP' codep=0x0df2 parp=0x0df2
+// 0x0de9: WORD '2DUP' codep=0x0df2 parp=0x0df2 params=2 returns=4
 // ================================================
 // 0x0df2: mov    bx,sp
 // 0x0df4: push   word ptr [bx+02]
@@ -4964,7 +4964,7 @@ void COUNT() // COUNT
 // 0x0dfc: jmp    word ptr [bx]
 
 // ================================================
-// 0x0dfe: WORD '2SWAP' codep=0x0e08 parp=0x0e08
+// 0x0dfe: WORD '2SWAP' codep=0x0e08 parp=0x0e08 params=4 returns=4
 // ================================================
 // 0x0e08: pop    ax
 // 0x0e09: pop    bx
@@ -4993,7 +4993,7 @@ void DEPTH() // DEPTH
 
 
 // ================================================
-// 0x0e2b: WORD 'DROP' codep=0x0e34 parp=0x0e34
+// 0x0e2b: WORD 'DROP' codep=0x0e34 parp=0x0e34 params=1 returns=0
 // ================================================
 // 0x0e34: inc    sp
 // 0x0e35: inc    sp
@@ -5002,7 +5002,7 @@ void DEPTH() // DEPTH
 // 0x0e39: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e3b: WORD 'DUP' codep=0x0e43 parp=0x0e43
+// 0x0e3b: WORD 'DUP' codep=0x0e43 parp=0x0e43 params=1 returns=2
 // ================================================
 // 0x0e43: mov    bx,sp
 // 0x0e45: push   word ptr [bx]
@@ -5011,7 +5011,7 @@ void DEPTH() // DEPTH
 // 0x0e4a: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e4c: WORD 'I' codep=0x0e52 parp=0x0e52
+// 0x0e4c: WORD 'I' codep=0x0e52 parp=0x0e52 params=0 returns=1
 // ================================================
 // 0x0e52: mov    ax,[bp+00]
 // 0x0e55: push   ax
@@ -5020,7 +5020,7 @@ void DEPTH() // DEPTH
 // 0x0e59: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e5b: WORD 'I'' codep=0x0e62 parp=0x0e62
+// 0x0e5b: WORD 'I'' codep=0x0e62 parp=0x0e62 params=0 returns=1
 // ================================================
 // 0x0e62: push   word ptr [bp+02]
 // 0x0e65: lodsw
@@ -5028,7 +5028,7 @@ void DEPTH() // DEPTH
 // 0x0e68: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e6a: WORD 'J' codep=0x0e70 parp=0x0e70
+// 0x0e6a: WORD 'J' codep=0x0e70 parp=0x0e70 params=0 returns=1
 // ================================================
 // 0x0e70: push   word ptr [bp+04]
 // 0x0e73: lodsw
@@ -5036,7 +5036,7 @@ void DEPTH() // DEPTH
 // 0x0e76: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e78: WORD 'OVER' codep=0x0e81 parp=0x0e81
+// 0x0e78: WORD 'OVER' codep=0x0e81 parp=0x0e81 params=2 returns=3
 // ================================================
 // 0x0e81: mov    bx,sp
 // 0x0e83: push   word ptr [bx+02]
@@ -5045,7 +5045,7 @@ void DEPTH() // DEPTH
 // 0x0e89: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e8b: WORD 'R>' codep=0x0e92 parp=0x0e92
+// 0x0e8b: WORD 'R>' codep=0x0e92 parp=0x0e92 params=0 returns=1
 // ================================================
 // 0x0e92: mov    ax,[bp+00]
 // 0x0e95: inc    bp
@@ -5056,7 +5056,7 @@ void DEPTH() // DEPTH
 // 0x0e9b: jmp    word ptr [bx]
 
 // ================================================
-// 0x0e9d: WORD 'R@' codep=0x0ea4 parp=0x0ea4
+// 0x0e9d: WORD 'R@' codep=0x0ea4 parp=0x0ea4 params=0 returns=1
 // ================================================
 // 0x0ea4: mov    ax,[bp+00]
 // 0x0ea7: push   ax
@@ -5065,7 +5065,7 @@ void DEPTH() // DEPTH
 // 0x0eab: jmp    word ptr [bx]
 
 // ================================================
-// 0x0ead: WORD 'ROT' codep=0x0eb5 parp=0x0eb5
+// 0x0ead: WORD 'ROT' codep=0x0eb5 parp=0x0eb5 params=3 returns=3
 // ================================================
 // 0x0eb5: pop    dx
 // 0x0eb6: pop    bx
@@ -5078,7 +5078,7 @@ void DEPTH() // DEPTH
 // 0x0ebe: jmp    word ptr [bx]
 
 // ================================================
-// 0x0ec0: WORD 'RP!' codep=0x0ec8 parp=0x0ec8
+// 0x0ec0: WORD 'RP!' codep=0x0ec8 parp=0x0ec8 params=0 returns=0
 // ================================================
 // 0x0ec8: mov    bp,[di+02]
 // 0x0ecb: lodsw
@@ -5086,7 +5086,7 @@ void DEPTH() // DEPTH
 // 0x0ece: jmp    word ptr [bx]
 
 // ================================================
-// 0x0ed0: WORD 'RP@' codep=0x0ed8 parp=0x0ed8
+// 0x0ed0: WORD 'RP@' codep=0x0ed8 parp=0x0ed8 params=0 returns=1
 // ================================================
 // 0x0ed8: push   bp
 // 0x0ed9: lodsw
@@ -5104,7 +5104,7 @@ void S0() // S0
 
 
 // ================================================
-// 0x0eeb: WORD 'SWAP' codep=0x0ef4 parp=0x0ef4
+// 0x0eeb: WORD 'SWAP' codep=0x0ef4 parp=0x0ef4 params=2 returns=2
 // ================================================
 // 0x0ef4: pop    dx
 // 0x0ef5: pop    ax
@@ -5115,7 +5115,7 @@ void S0() // S0
 // 0x0efb: jmp    word ptr [bx]
 
 // ================================================
-// 0x0efd: WORD 'SP!' codep=0x0f05 parp=0x0f05
+// 0x0efd: WORD 'SP!' codep=0x0f05 parp=0x0f05 params=0 returns=0
 // ================================================
 // 0x0f05: mov    sp,[di]
 // 0x0f07: lodsw
@@ -5123,7 +5123,7 @@ void S0() // S0
 // 0x0f0a: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f0c: WORD 'SP@' codep=0x0f14 parp=0x0f14
+// 0x0f0c: WORD 'SP@' codep=0x0f14 parp=0x0f14 params=0 returns=1
 // ================================================
 // 0x0f14: mov    ax,sp
 // 0x0f16: push   ax
@@ -5132,7 +5132,7 @@ void S0() // S0
 // 0x0f1a: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f1c: WORD '0' codep=0x0f22 parp=0x0f22
+// 0x0f1c: WORD '0' codep=0x0f22 parp=0x0f22 params=0 returns=1
 // ================================================
 // 0x0f22: sub    ax,ax
 // 0x0f24: push   ax
@@ -5141,7 +5141,7 @@ void S0() // S0
 // 0x0f28: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f2a: WORD '1' codep=0x0f30 parp=0x0f30
+// 0x0f2a: WORD '1' codep=0x0f30 parp=0x0f30 params=0 returns=1
 // ================================================
 // 0x0f30: mov    ax,0001
 // 0x0f33: push   ax
@@ -5150,7 +5150,7 @@ void S0() // S0
 // 0x0f37: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f39: WORD '2' codep=0x0f3f parp=0x0f3f
+// 0x0f39: WORD '2' codep=0x0f3f parp=0x0f3f params=0 returns=1
 // ================================================
 // 0x0f3f: mov    ax,0002
 // 0x0f42: push   ax
@@ -5159,7 +5159,7 @@ void S0() // S0
 // 0x0f46: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f48: WORD '/' codep=0x0f4e parp=0x0f4e
+// 0x0f48: WORD '/' codep=0x0f4e parp=0x0f4e params=2 returns=2
 // ================================================
 // 0x0f4e: pop    bx
 // 0x0f4f: pop    ax
@@ -5171,7 +5171,7 @@ void S0() // S0
 // 0x0f57: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f59: WORD '/MOD' codep=0x0f62 parp=0x0f62
+// 0x0f59: WORD '/MOD' codep=0x0f62 parp=0x0f62 params=2 returns=2
 // ================================================
 // 0x0f62: pop    bx
 // 0x0f63: pop    ax
@@ -5184,7 +5184,7 @@ void S0() // S0
 // 0x0f6c: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f6e: WORD '+' codep=0x0f74 parp=0x0f74
+// 0x0f6e: WORD '+' codep=0x0f74 parp=0x0f74 params=2 returns=1
 // ================================================
 // 0x0f74: pop    ax
 // 0x0f75: pop    bx
@@ -5195,7 +5195,7 @@ void S0() // S0
 // 0x0f7c: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f7e: WORD '+!_2' codep=0x0f85 parp=0x0f85
+// 0x0f7e: WORD '+!' codep=0x0f85 parp=0x0f85 params=2 returns=0
 // ================================================
 // 0x0f85: pop    bx
 // 0x0f86: pop    ax
@@ -5205,7 +5205,7 @@ void S0() // S0
 // 0x0f8c: jmp    word ptr [bx]
 
 // ================================================
-// 0x0f8e: WORD '-' codep=0x0f94 parp=0x0f94
+// 0x0f8e: WORD '-' codep=0x0f94 parp=0x0f94 params=2 returns=1
 // ================================================
 // 0x0f94: pop    bx
 // 0x0f95: pop    ax
@@ -5228,7 +5228,7 @@ void _plus__dash_() // +-
 
 
 // ================================================
-// 0x0faf: WORD '*' codep=0x0fb5 parp=0x0fb5
+// 0x0faf: WORD '*' codep=0x0fb5 parp=0x0fb5 params=2 returns=1
 // ================================================
 // 0x0fb5: pop    ax
 // 0x0fb6: pop    bx
@@ -5265,7 +5265,7 @@ void _star__slash_MOD() // */MOD
 
 
 // ================================================
-// 0x0fe2: WORD '1+' codep=0x0fe9 parp=0x0fe9
+// 0x0fe2: WORD '1+' codep=0x0fe9 parp=0x0fe9 params=1 returns=1
 // ================================================
 // 0x0fe9: pop    ax
 // 0x0fea: inc    ax
@@ -5275,7 +5275,7 @@ void _star__slash_MOD() // */MOD
 // 0x0fef: jmp    word ptr [bx]
 
 // ================================================
-// 0x0ff1: WORD '1-' codep=0x0ff8 parp=0x0ff8
+// 0x0ff1: WORD '1-' codep=0x0ff8 parp=0x0ff8 params=1 returns=1
 // ================================================
 // 0x0ff8: pop    ax
 // 0x0ff9: dec    ax
@@ -5285,7 +5285,7 @@ void _star__slash_MOD() // */MOD
 // 0x0ffe: jmp    word ptr [bx]
 
 // ================================================
-// 0x1000: WORD '2*' codep=0x1007 parp=0x1007
+// 0x1000: WORD '2*' codep=0x1007 parp=0x1007 params=1 returns=1
 // ================================================
 // 0x1007: pop    ax
 // 0x1008: add    ax,ax
@@ -5295,7 +5295,7 @@ void _star__slash_MOD() // */MOD
 // 0x100e: jmp    word ptr [bx]
 
 // ================================================
-// 0x1010: WORD '2+' codep=0x1017 parp=0x1017
+// 0x1010: WORD '2+' codep=0x1017 parp=0x1017 params=1 returns=1
 // ================================================
 // 0x1017: pop    ax
 // 0x1018: inc    ax
@@ -5306,7 +5306,7 @@ void _star__slash_MOD() // */MOD
 // 0x101e: jmp    word ptr [bx]
 
 // ================================================
-// 0x1020: WORD '2-' codep=0x1027 parp=0x1027
+// 0x1020: WORD '2-' codep=0x1027 parp=0x1027 params=1 returns=1
 // ================================================
 // 0x1027: pop    ax
 // 0x1028: dec    ax
@@ -5317,7 +5317,7 @@ void _star__slash_MOD() // */MOD
 // 0x102e: jmp    word ptr [bx]
 
 // ================================================
-// 0x1030: WORD '2/' codep=0x1037 parp=0x1037
+// 0x1030: WORD '2/' codep=0x1037 parp=0x1037 params=1 returns=1
 // ================================================
 // 0x1037: pop    ax
 // 0x1038: sar    ax,1
@@ -5327,7 +5327,7 @@ void _star__slash_MOD() // */MOD
 // 0x103e: jmp    word ptr [bx]
 
 // ================================================
-// 0x1040: WORD '4*' codep=0x1047 parp=0x1047
+// 0x1040: WORD '4*' codep=0x1047 parp=0x1047 params=1 returns=1
 // ================================================
 // 0x1047: pop    ax
 // 0x1048: shl    ax,1
@@ -5349,7 +5349,7 @@ void ABS() // ABS
 
 
 // ================================================
-// 0x1060: WORD 'D+' codep=0x1067 parp=0x1067
+// 0x1060: WORD 'D+' codep=0x1067 parp=0x1067 params=4 returns=2
 // ================================================
 // 0x1067: pop    ax
 // 0x1068: pop    dx
@@ -5399,7 +5399,7 @@ void DABS() // DABS
 
 
 // ================================================
-// 0x10ad: WORD 'DNEGATE' codep=0x10b9 parp=0x10b9
+// 0x10ad: WORD 'DNEGATE' codep=0x10b9 parp=0x10b9 params=2 returns=2
 // ================================================
 // 0x10b9: sub    ax,ax
 // 0x10bb: pop    cx
@@ -5574,7 +5574,7 @@ void MIN() // MIN
 
 
 // ================================================
-// 0x11bd: WORD 'NEGATE' codep=0x11c8 parp=0x11c8
+// 0x11bd: WORD 'NEGATE' codep=0x11c8 parp=0x11c8 params=1 returns=1
 // ================================================
 // 0x11c8: pop    ax
 // 0x11c9: neg    ax
@@ -5584,7 +5584,7 @@ void MIN() // MIN
 // 0x11cf: jmp    word ptr [bx]
 
 // ================================================
-// 0x11d1: WORD 'U*' codep=0x11d8 parp=0x11d8
+// 0x11d1: WORD 'U*' codep=0x11d8 parp=0x11d8 params=2 returns=2
 // ================================================
 // 0x11d8: pop    ax
 // 0x11d9: pop    bx
@@ -5596,7 +5596,7 @@ void MIN() // MIN
 // 0x11e1: jmp    word ptr [bx]
 
 // ================================================
-// 0x11e3: WORD 'U/MOD' codep=0x11ed parp=0x11ed
+// 0x11e3: WORD 'U/MOD' codep=0x11ed parp=0x11ed params=3 returns=2
 // ================================================
 // 0x11ed: pop    bx
 // 0x11ee: pop    dx
@@ -5642,7 +5642,7 @@ void UMIN() // UMIN
 
 
 // ================================================
-// 0x1229: WORD '>' codep=0x122f parp=0x122f
+// 0x1229: WORD '>' codep=0x122f parp=0x122f params=2 returns=1
 // ================================================
 // 0x122f: pop    ax
 // 0x1230: mov    cx,8000
@@ -5657,7 +5657,7 @@ void UMIN() // UMIN
 // 0x1240: jmp    word ptr [bx]
 
 // ================================================
-// 0x1242: WORD '<' codep=0x1248 parp=0x1248
+// 0x1242: WORD '<' codep=0x1248 parp=0x1248 params=2 returns=1
 // ================================================
 // 0x1248: pop    ax
 // 0x1249: mov    cx,8000
@@ -5672,7 +5672,7 @@ void UMIN() // UMIN
 // 0x1259: jmp    word ptr [bx]
 
 // ================================================
-// 0x125b: WORD '=' codep=0x1261 parp=0x1261
+// 0x125b: WORD '=' codep=0x1261 parp=0x1261 params=2 returns=1
 // ================================================
 // 0x1261: pop    ax
 // 0x1262: pop    dx
@@ -5686,7 +5686,7 @@ void UMIN() // UMIN
 // 0x1271: jmp    word ptr [bx]
 
 // ================================================
-// 0x1273: WORD '0<' codep=0x127a parp=0x127a
+// 0x1273: WORD '0<' codep=0x127a parp=0x127a params=1 returns=1
 // ================================================
 // 0x127a: pop    ax
 // 0x127b: cwd    
@@ -5697,7 +5697,7 @@ void UMIN() // UMIN
 // 0x1282: jmp    word ptr [bx]
 
 // ================================================
-// 0x1284: WORD '0=' codep=0x128b parp=0x128b
+// 0x1284: WORD '0=' codep=0x128b parp=0x128b params=1 returns=1
 // ================================================
 // 0x128b: pop    ax
 // 0x128c: xor    cx,cx
@@ -5709,7 +5709,7 @@ void UMIN() // UMIN
 // 0x1298: jmp    word ptr [bx]
 
 // ================================================
-// 0x129a: WORD '0>' codep=0x12a1 parp=0x12a1
+// 0x129a: WORD '0>' codep=0x12a1 parp=0x12a1 params=1 returns=1
 // ================================================
 // 0x12a1: pop    ax
 // 0x12a2: neg    ax
@@ -5749,7 +5749,7 @@ void D_st_() // D<
 
 
 // ================================================
-// 0x12da: WORD 'U<' codep=0x12e1 parp=0x12e1
+// 0x12da: WORD 'U<' codep=0x12e1 parp=0x12e1 params=2 returns=1
 // ================================================
 // 0x12e1: pop    ax
 // 0x12e2: pop    dx
@@ -5762,7 +5762,7 @@ void D_st_() // D<
 // 0x12ed: jmp    word ptr [bx]
 
 // ================================================
-// 0x12ef: WORD 'AND' codep=0x12f7 parp=0x12f7
+// 0x12ef: WORD 'AND' codep=0x12f7 parp=0x12f7 params=2 returns=1
 // ================================================
 // 0x12f7: pop    ax
 // 0x12f8: pop    bx
@@ -5773,7 +5773,7 @@ void D_st_() // D<
 // 0x12ff: jmp    word ptr [bx]
 
 // ================================================
-// 0x1301: WORD 'NOT' codep=0x1309 parp=0x1309
+// 0x1301: WORD 'NOT' codep=0x1309 parp=0x1309 params=1 returns=1
 // ================================================
 // 0x1309: pop    ax
 // 0x130a: xor    cx,cx
@@ -5809,7 +5809,7 @@ void ON() // ON
 
 
 // ================================================
-// 0x1339: WORD 'OR' codep=0x1340 parp=0x1340
+// 0x1339: WORD 'OR' codep=0x1340 parp=0x1340 params=2 returns=1
 // ================================================
 // 0x1340: pop    ax
 // 0x1341: pop    bx
@@ -5820,7 +5820,7 @@ void ON() // ON
 // 0x1348: jmp    word ptr [bx]
 
 // ================================================
-// 0x134a: WORD 'TOGGLE' codep=0x1355 parp=0x1355
+// 0x134a: WORD 'TOGGLE' codep=0x1355 parp=0x1355 params=2 returns=0
 // ================================================
 // 0x1355: pop    ax
 // 0x1356: pop    bx
@@ -5830,7 +5830,7 @@ void ON() // ON
 // 0x135c: jmp    word ptr [bx]
 
 // ================================================
-// 0x135e: WORD 'XOR' codep=0x1366 parp=0x1366
+// 0x135e: WORD 'XOR' codep=0x1366 parp=0x1366 params=2 returns=1
 // ================================================
 // 0x1366: pop    ax
 // 0x1367: pop    bx
@@ -5939,7 +5939,7 @@ void _ro_NUMBER_rc_() // (NUMBER)
 
 
 // ================================================
-// 0x142b: WORD '>UPPERCASE' codep=0x143a parp=0x143a
+// 0x142b: WORD '>UPPERCASE' codep=0x143a parp=0x143a params=2 returns=0
 // ================================================
 // 0x143a: pop    cx
 // 0x143b: pop    bx
@@ -5999,7 +5999,7 @@ void CONVERT() // CONVERT
   {
     Push(1);
     Push(user_DPL); // DPL
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
   }
   Push(a); // R>
   goto label3;
@@ -6042,14 +6042,14 @@ void HOLD() // HOLD
 {
   Push(-1);
   Push(user_HLD); // HLD
-  _plus__ex__2(); // +!_2
+  _plus__ex_(); // +!
   Push(Read16(user_HLD)); // HLD @
   C_ex__2(); // C!_2
 }
 
 
 // ================================================
-// 0x14ff: WORD 'S->D' codep=0x1508 parp=0x1508
+// 0x14ff: WORD 'S->D' codep=0x1508 parp=0x1508 params=1 returns=2
 // ================================================
 // 0x1508: mov    bx,sp
 // 0x150a: mov    ax,[bx]
@@ -6092,7 +6092,7 @@ void SIGN() // SIGN
 // 0x1550: jmp    word ptr [bx]
 
 // ================================================
-// 0x1552: WORD '(+LOOP)' codep=0x155e parp=0x155e
+// 0x1552: WORD '(+LOOP)' codep=0x155e parp=0x155e params=1 returns=0
 // ================================================
 // 0x155e: pop    bx
 // 0x155f: mov    ax,[bp+00]
@@ -6116,7 +6116,7 @@ void SIGN() // SIGN
 // 0x1585: jmp    word ptr [bx]
 
 // ================================================
-// 0x1587: WORD '(/LOOP)' codep=0x1593 parp=0x1593
+// 0x1587: WORD '(/LOOP)' codep=0x1593 parp=0x1593 params=1 returns=0
 // ================================================
 // 0x1593: pop    ax
 // 0x1594: add    ax,[bp+00]
@@ -6135,7 +6135,7 @@ void SIGN() // SIGN
 // 0x15af: jmp    word ptr [bx]
 
 // ================================================
-// 0x15b1: WORD '(DO)' codep=0x15ba parp=0x15ba
+// 0x15b1: WORD '(DO)' codep=0x15ba parp=0x15ba params=2 returns=0
 // ================================================
 // 0x15ba: pop    dx
 // 0x15bb: pop    ax
@@ -6148,7 +6148,7 @@ void SIGN() // SIGN
 // 0x15c5: jmp    word ptr [bx]
 
 // ================================================
-// 0x15c7: WORD '(LOOP)' codep=0x15d2 parp=0x15d2
+// 0x15c7: WORD '(LOOP)' codep=0x15d2 parp=0x15d2 params=0 returns=0
 // ================================================
 // 0x15d2: mov    ax,[bp+00]
 // 0x15d5: inc    ax
@@ -6167,7 +6167,7 @@ void SIGN() // SIGN
 // 0x15ee: jmp    word ptr [bx]
 
 // ================================================
-// 0x15f0: WORD '0BRANCH' codep=0x15fc parp=0x15fc
+// 0x15f0: WORD '0BRANCH' codep=0x15fc parp=0x15fc params=1 returns=0
 // ================================================
 // 0x15fc: pop    ax
 // 0x15fd: or     ax,ax
@@ -6215,7 +6215,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1655: jmp    word ptr [bx]
 
 // ================================================
-// 0x1657: WORD 'BRANCH' codep=0x1662 parp=0x1662
+// 0x1657: WORD 'BRANCH' codep=0x1662 parp=0x1662 params=0 returns=0
 // ================================================
 // 0x1662: add    si,[si]
 // 0x1664: lodsw
@@ -6229,7 +6229,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1676: jmp    word ptr [bx]
 
 // ================================================
-// 0x1678: WORD 'EXECUTE' codep=0x1684 parp=0x1684
+// 0x1678: WORD 'EXECUTE' codep=0x1684 parp=0x1684 params=1 returns=0
 // ================================================
 // 0x1684: pop    bx
 // 0x1685: dec    bx
@@ -6237,7 +6237,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1687: jmp    word ptr [bx]
 
 // ================================================
-// 0x1689: WORD 'EXIT' codep=0x1692 parp=0x1692
+// 0x1689: WORD 'EXIT' codep=0x1692 parp=0x1692 params=0 returns=0
 // ================================================
 // 0x1692: mov    si,[bp+00]
 // 0x1695: inc    bp
@@ -6247,7 +6247,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x169a: jmp    word ptr [bx]
 
 // ================================================
-// 0x169c: WORD 'GO' codep=0x16a3 parp=0x16a3
+// 0x169c: WORD 'GO' codep=0x16a3 parp=0x16a3 params=1 returns=0
 // ================================================
 // 0x16a3: pop    bx
 // 0x16a4: jmp    bx
@@ -6261,7 +6261,7 @@ void ABORT_dash_IT() // ABORT-IT
 
 
 // ================================================
-// 0x16cb: WORD 'INTERRUPT' codep=0x16d9 parp=0x16d9
+// 0x16cb: WORD 'INTERRUPT' codep=0x16d9 parp=0x16d9 params=1 returns=0
 // ================================================
 // 0x16d9: pop    ax
 // 0x16da: mov    [16C9],al
@@ -6324,7 +6324,7 @@ void ABORT_dash_IT() // ABORT-IT
 // 0x1755: jmp    word ptr [bx]
 
 // ================================================
-// 0x1757: WORD 'LIT' codep=0x175f parp=0x175f
+// 0x1757: WORD 'LIT' codep=0x175f parp=0x175f params=0 returns=1
 // ================================================
 // 0x175f: lodsw
 // 0x1760: push   ax
@@ -6583,7 +6583,7 @@ void _ro_LINKS_rc_() // (LINKS)
 
 
 // ================================================
-// 0x1934: WORD '<NAME>' codep=0x224c parp=0x193f
+// 0x1934: WORD '<NAME>' codep=0x224c parp=0x193f params=0 returns=0
 // ================================================
 
 void _st_NAME_gt_() // <NAME>
@@ -6896,14 +6896,14 @@ void _i_STREAM() // 'STREAM
 
 
 // ================================================
-// 0x1bab: WORD '(' codep=0x224c parp=0x1bb1 params=2 returns=0
+// 0x1bab: WORD '(' codep=0x224c parp=0x1bb1 params=0 returns=0
 // ================================================
 
 void _ro_() // (
 {
   Push(-1);
   Push(user__gt_IN); // >IN
-  _plus__ex__2(); // +!_2
+  _plus__ex_(); // +!
   Push(0x0029);
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
   Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
@@ -6986,7 +6986,7 @@ void _ro_ABORT_rc_() // (ABORT)
 
 
 // ================================================
-// 0x1c4f: WORD '."' codep=0x224c parp=0x1c56 params=2 returns=0
+// 0x1c4f: WORD '."' codep=0x224c parp=0x1c56 params=0 returns=0
 // ================================================
 
 void Draw_qm_() // ."
@@ -6998,7 +6998,7 @@ void Draw_qm_() // ."
   {
     Push(1);
     Push(user__gt_IN); // >IN
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
     return;
   }
   Push(0x0022);
@@ -7088,7 +7088,7 @@ void _ro_CREATE_rc_() // (CREATE)
 
 
 // ================================================
-// 0x1d31: WORD '(EXPECT)' codep=0x224c parp=0x1d3e params=5 returns=0
+// 0x1d31: WORD '(EXPECT)' codep=0x224c parp=0x1d3e
 // ================================================
 
 void _ro_EXPECT_rc_() // (EXPECT)
@@ -7203,7 +7203,7 @@ void _ro_INTERPRET_rc_() // (INTERPRET)
 
 
 // ================================================
-// 0x1e18: WORD '(LOAD)' codep=0x224c parp=0x1e23 params=4 returns=0
+// 0x1e18: WORD '(LOAD)' codep=0x224c parp=0x1e23
 // ================================================
 
 void _ro_LOAD_rc_() // (LOAD)
@@ -7232,7 +7232,7 @@ void _ro_LOAD_rc_() // (LOAD)
 
 
 // ================================================
-// 0x1e5c: WORD '(WHERE)' codep=0x224c parp=0x1e68 params=3 returns=0
+// 0x1e5c: WORD '(WHERE)' codep=0x224c parp=0x1e68 params=0 returns=0
 // ================================================
 
 void _ro_WHERE_rc_() // (WHERE)
@@ -7305,7 +7305,7 @@ void _ro_WHERE_rc_() // (WHERE)
 
 
 // ================================================
-// 0x1efb: WORD '(WORD)' codep=0x224c parp=0x1f06
+// 0x1efb: WORD '(WORD)' codep=0x224c parp=0x1f06 params=1 returns=1
 // ================================================
 
 void _ro_WORD_rc_() // (WORD)
@@ -7326,7 +7326,7 @@ void _ro_WORD_rc_() // (WORD)
   } else
   {
     Push(user__gt_IN); // >IN
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
     OVER(); // OVER
     _dash_(); // -
     Push(Read16(regsp)); // DUP
@@ -7374,7 +7374,7 @@ void _co_() // ,
   Store(); // !
   Push(2);
   Push(user_DP); // DP
-  _plus__ex__2(); // +!_2
+  _plus__ex_(); // +!
   UNK_0x21c9(); // UNK_0x21c9
 }
 
@@ -7523,7 +7523,7 @@ void ABORT_qm_() // ABORT"
   {
     Push(1);
     Push(user__gt_IN); // >IN
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
     Push(0);
     C_co_(); // C,
     return;
@@ -7566,7 +7566,7 @@ void ALLOT() // ALLOT
   Push(Read16(regsp)); // DUP
   UNK_0x0ad9(); // UNK_0x0ad9
   Push(user_DP); // DP
-  _plus__ex__2(); // +!_2
+  _plus__ex_(); // +!
 }
 
 
@@ -7735,7 +7735,7 @@ void ELSE() // ELSE
 
 
 // ================================================
-// 0x229f: WORD 'ENCLOSE' codep=0x22ab parp=0x22ab
+// 0x229f: WORD 'ENCLOSE' codep=0x22ab parp=0x22ab params=2 returns=4
 // ================================================
 // 0x22ab: pop    ax
 // 0x22ac: pop    bx
@@ -7933,7 +7933,7 @@ void PFA() // PFA
 
 
 // ================================================
-// 0x23fb: WORD 'QUERY' codep=0x224c parp=0x2405 params=0 returns=0
+// 0x23fb: WORD 'QUERY' codep=0x224c parp=0x2405
 // ================================================
 
 void QUERY() // QUERY
@@ -8012,7 +8012,7 @@ void SMUDGE() // SMUDGE
 
 
 // ================================================
-// 0x248c: WORD 'TEXT' codep=0x224c parp=0x2495 params=3 returns=0
+// 0x248c: WORD 'TEXT' codep=0x224c parp=0x2495 params=1 returns=0
 // ================================================
 
 void TEXT() // TEXT
@@ -8088,7 +8088,7 @@ void UNTIL() // UNTIL
 
 
 // ================================================
-// 0x2513: WORD 'VARIABLE' codep=0x224c parp=0x2520 params=2 returns=0
+// 0x2513: WORD 'VARIABLE' codep=0x224c parp=0x2520
 // ================================================
 
 void VARIABLE() // VARIABLE
@@ -8227,7 +8227,7 @@ void _bc_() // ]
 // 0x260d: db 0x33 0x05 '3 '
 
 // ================================================
-// 0x260f: WORD 'TONE' codep=0x2618 parp=0x2618
+// 0x260f: WORD 'TONE' codep=0x2618 parp=0x2618 params=1 returns=0
 // ================================================
 // 0x2618: pop    cx
 // 0x2619: mov    al,B6
@@ -8245,7 +8245,7 @@ void _bc_() // ]
 // 0x262b: jmp    word ptr [bx]
 
 // ================================================
-// 0x262d: WORD 'BEEPON_2' codep=0x2638 parp=0x2638
+// 0x262d: WORD 'BEEPON_2' codep=0x2638 parp=0x2638 params=0 returns=0
 // ================================================
 // 0x2638: cli    
 // 0x2639: mov    dx,0061
@@ -8258,7 +8258,7 @@ void _bc_() // ]
 // 0x2645: jmp    word ptr [bx]
 
 // ================================================
-// 0x2647: WORD 'BEEPOFF' codep=0x2653 parp=0x2653
+// 0x2647: WORD 'BEEPOFF' codep=0x2653 parp=0x2653 params=0 returns=0
 // ================================================
 // 0x2653: cli    
 // 0x2654: mov    dx,0061
@@ -8320,7 +8320,7 @@ void _ro_TYPE_rc_() // (TYPE)
 
 
 // ================================================
-// 0x26c6: WORD '(BS)' codep=0x224c parp=0x26cf
+// 0x26c6: WORD '(BS)' codep=0x224c parp=0x26cf params=0 returns=0
 // ================================================
 
 void _ro_BS_rc_() // (BS)
@@ -8339,7 +8339,7 @@ void _ro_BS_rc_() // (BS)
 
 
 // ================================================
-// 0x26e5: WORD '(CR)' codep=0x224c parp=0x26ee
+// 0x26e5: WORD '(CR)' codep=0x224c parp=0x26ee params=0 returns=0
 // ================================================
 
 void _ro_CR_rc_() // (CR)
@@ -8374,7 +8374,7 @@ void _ro_CR_rc_() // (CR)
 
 
 // ================================================
-// 0x2726: WORD '(EMIT)' codep=0x224c parp=0x2731
+// 0x2726: WORD '(EMIT)' codep=0x224c parp=0x2731 params=1 returns=0
 // ================================================
 
 void _ro_EMIT_rc_() // (EMIT)
@@ -8388,7 +8388,7 @@ void _ro_EMIT_rc_() // (EMIT)
 
 
 // ================================================
-// 0x2741: WORD '(PAGE)' codep=0x224c parp=0x274c
+// 0x2741: WORD '(PAGE)' codep=0x224c parp=0x274c params=0 returns=0
 // ================================================
 
 void _ro_PAGE_rc_() // (PAGE)
@@ -8402,7 +8402,7 @@ void _ro_PAGE_rc_() // (PAGE)
 
 
 // ================================================
-// 0x2758: WORD '(POSITION)' codep=0x2767 parp=0x2767
+// 0x2758: WORD '(POSITION)' codep=0x2767 parp=0x2767 params=2 returns=0
 // ================================================
 // 0x2767: pop    ax
 // 0x2768: mov    [di+1B],al
@@ -8479,7 +8479,7 @@ void DrawLINE() // .LINE
 
 
 // ================================================
-// 0x27dc: WORD '.R' codep=0x224c parp=0x27e3 params=2 returns=1
+// 0x27dc: WORD '.R' codep=0x224c parp=0x27e3 params=2 returns=0
 // ================================================
 
 void DrawR() // .R
@@ -8529,7 +8529,7 @@ void Is() // ?
 
 
 // ================================================
-// 0x2828: WORD '?POSITION' codep=0x2836 parp=0x2836
+// 0x2828: WORD '?POSITION' codep=0x2836 parp=0x2836 params=0 returns=2
 // ================================================
 // 0x2836: sub    ax,ax
 // 0x2838: mov    al,[di+1A]
@@ -8541,7 +8541,7 @@ void Is() // ?
 // 0x2843: jmp    word ptr [bx]
 
 // ================================================
-// 0x2845: WORD 'CUR>ADDR' codep=0x2852 parp=0x2852
+// 0x2845: WORD 'CUR>ADDR' codep=0x2852 parp=0x2852 params=0 returns=1
 // ================================================
 // 0x2852: call   270E
 // 0x2855: shl    ax,1
@@ -8551,7 +8551,7 @@ void Is() // ?
 // 0x285b: jmp    word ptr [bx]
 
 // ================================================
-// 0x285d: WORD 'CURFWD' codep=0x224c parp=0x2868
+// 0x285d: WORD 'CURFWD' codep=0x224c parp=0x2868 params=1 returns=0
 // ================================================
 
 void CURFWD() // CURFWD
@@ -8596,7 +8596,7 @@ void D_dot_() // D.
 
 
 // ================================================
-// 0x289d: WORD 'D.R' codep=0x224c parp=0x28a5 params=2 returns=0
+// 0x289d: WORD 'D.R' codep=0x224c parp=0x28a5 params=3 returns=0
 // ================================================
 
 void D_dot_R() // D.R
@@ -8667,7 +8667,7 @@ void ID_dot_() // ID.
 
 
 // ================================================
-// 0x291f: WORD 'LIST' codep=0x224c parp=0x2928 params=9 returns=0
+// 0x291f: WORD 'LIST' codep=0x224c parp=0x2928
 // ================================================
 
 void LIST() // LIST
@@ -8707,7 +8707,7 @@ void LIST() // LIST
 
 
 // ================================================
-// 0x2966: WORD 'SCROLLUP' codep=0x2973 parp=0x2973
+// 0x2966: WORD 'SCROLLUP' codep=0x2973 parp=0x2973 params=1 returns=0
 // ================================================
 // 0x2973: pop    ax
 // 0x2974: mov    ah,06
@@ -8725,7 +8725,7 @@ void LIST() // LIST
 // 0x298a: jmp    word ptr [bx]
 
 // ================================================
-// 0x298c: WORD 'SPACE' codep=0x224c parp=0x2996 params=1 returns=0
+// 0x298c: WORD 'SPACE' codep=0x224c parp=0x2996 params=0 returns=0
 // ================================================
 
 void SPACE() // SPACE
@@ -8771,7 +8771,7 @@ void U_dot_() // U.
 
 
 // ================================================
-// 0x29ca: WORD 'U.R' codep=0x224c parp=0x29d2 params=1 returns=0
+// 0x29ca: WORD 'U.R' codep=0x224c parp=0x29d2 params=2 returns=0
 // ================================================
 
 void U_dot_R() // U.R
@@ -8783,7 +8783,7 @@ void U_dot_R() // U.R
 
 
 // ================================================
-// 0x29da: WORD 'V@' codep=0x29e1 parp=0x29e1
+// 0x29da: WORD 'V@' codep=0x29e1 parp=0x29e1 params=1 returns=0
 // ================================================
 // 0x29e1: mov    cx,ds
 // 0x29e3: mov    ax,[di+18]
@@ -8798,7 +8798,7 @@ void U_dot_R() // U.R
 // 0x29f3: jmp    word ptr [bx]
 
 // ================================================
-// 0x29f5: WORD 'V!' codep=0x29fc parp=0x29fc
+// 0x29f5: WORD 'V!' codep=0x29fc parp=0x29fc params=2 returns=0
 // ================================================
 // 0x29fc: mov    cx,ds
 // 0x29fe: mov    ax,[di+18]
@@ -8812,7 +8812,7 @@ void U_dot_R() // U.R
 // 0x2a0c: jmp    word ptr [bx]
 
 // ================================================
-// 0x2a0e: WORD 'VFILL' codep=0x2a18 parp=0x2a18
+// 0x2a0e: WORD 'VFILL' codep=0x2a18 parp=0x2a18 params=3 returns=0
 // ================================================
 // 0x2a18: mov    ax,[di+18]
 // 0x2a1b: mov    dx,di
@@ -8829,7 +8829,7 @@ void U_dot_R() // U.R
 // 0x2a2a: jmp    word ptr [bx]
 
 // ================================================
-// 0x2a2c: WORD 'VMOVE' codep=0x2a36 parp=0x2a36
+// 0x2a2c: WORD 'VMOVE' codep=0x2a36 parp=0x2a36 params=3 returns=0
 // ================================================
 // 0x2a36: mov    ax,[di+18]
 // 0x2a39: mov    dx,di
@@ -9245,7 +9245,7 @@ void R_slash_W_i_S() // R/W'S
 
 
 // ================================================
-// 0x2e9d: WORD 'L@' codep=0x2ea4 parp=0x2ea4
+// 0x2e9d: WORD 'L@' codep=0x2ea4 parp=0x2ea4 params=2 returns=1
 // ================================================
 // 0x2ea4: mov    dx,ds
 // 0x2ea6: pop    bx
@@ -9257,7 +9257,7 @@ void R_slash_W_i_S() // R/W'S
 // 0x2eaf: jmp    word ptr [bx]
 
 // ================================================
-// 0x2eb1: WORD 'L!' codep=0x2eb8 parp=0x2eb8
+// 0x2eb1: WORD 'L!' codep=0x2eb8 parp=0x2eb8 params=3 returns=0
 // ================================================
 // 0x2eb8: mov    dx,ds
 // 0x2eba: pop    bx
@@ -9269,7 +9269,7 @@ void R_slash_W_i_S() // R/W'S
 // 0x2ec3: jmp    word ptr [bx]
 
 // ================================================
-// 0x2ec5: WORD 'LC@' codep=0x2ecd parp=0x2ecd
+// 0x2ec5: WORD 'LC@' codep=0x2ecd parp=0x2ecd params=2 returns=1
 // ================================================
 // 0x2ecd: mov    dx,ds
 // 0x2ecf: pop    bx
@@ -9283,7 +9283,7 @@ void R_slash_W_i_S() // R/W'S
 // 0x2edb: jmp    word ptr [bx]
 
 // ================================================
-// 0x2edd: WORD 'LC!' codep=0x2ee5 parp=0x2ee5
+// 0x2edd: WORD 'LC!' codep=0x2ee5 parp=0x2ee5 params=3 returns=0
 // ================================================
 // 0x2ee5: mov    dx,ds
 // 0x2ee7: pop    bx
@@ -9296,7 +9296,7 @@ void R_slash_W_i_S() // R/W'S
 // 0x2ef1: jmp    word ptr [bx]
 
 // ================================================
-// 0x2ef3: WORD 'LCMOVE' codep=0x2efe parp=0x2efe
+// 0x2ef3: WORD 'LCMOVE' codep=0x2efe parp=0x2efe params=5 returns=0
 // ================================================
 // 0x2efe: mov    [bp-02],di
 // 0x2f01: mov    ax,es
@@ -9326,7 +9326,7 @@ void R_slash_W_i_S() // R/W'S
 // 0x2f28: jmp    word ptr [bx]
 
 // ================================================
-// 0x2f2a: WORD '{LXCHG}' codep=0x1d29 parp=0x2f36
+// 0x2f2a: WORD '{LXCHG}' codep=0x1d29 parp=0x2f36 params=0 returns=1
 // ================================================
 // 0x2f36: push   cx
 // 0x2f37: es:    
@@ -9342,7 +9342,7 @@ void R_slash_W_i_S() // R/W'S
 
 
 // ================================================
-// 0x2f46: WORD 'LWSCAN' codep=0x2f51 parp=0x2f51
+// 0x2f46: WORD 'LWSCAN' codep=0x2f51 parp=0x2f51 params=4 returns=2
 // ================================================
 // 0x2f51: pop    ax
 // 0x2f52: pop    cx
@@ -9464,7 +9464,7 @@ void MTBUFFERS() // MTBUFFERS
 
 
 // ================================================
-// 0x303b: WORD '(BUFFER)' codep=0x3048 parp=0x3048
+// 0x303b: WORD '(BUFFER)' codep=0x3048 parp=0x3048 params=1 returns=2
 // ================================================
 // 0x3048: pop    cx
 // 0x3049: mov    dx,es
@@ -9509,7 +9509,7 @@ void MTBUFFERS() // MTBUFFERS
 // 0x309a: jmp    word ptr [bx]
 
 // ================================================
-// 0x309c: WORD 'ADVANCE>DEF' codep=0x30a8 parp=0x30a8
+// 0x309c: WORD 'ADVANCE>DEF' codep=0x30a8 parp=0x30a8 params=1 returns=0
 // ================================================
 // 0x30a8: pop    ax
 // 0x30a9: or     ax,ax
@@ -9853,10 +9853,10 @@ void _bo_DIRECT_bc_() // [DIRECT]
     Store(); // !
     Push(1);
     Push(pp_TRACK); // TRACK
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
     Push(0x0200);
     Push(pp_DTA); // DTA
-    _plus__ex__2(); // +!_2
+    _plus__ex_(); // +!
     _bo_R_slash_W_bc_(); // [R/W]
   }
   Pop(); // DROP
@@ -10075,7 +10075,7 @@ void EMITS() // EMITS
 
 
 // ================================================
-// 0x3531: WORD 'FILES' codep=0x224c parp=0x353b params=10 returns=0
+// 0x3531: WORD 'FILES' codep=0x224c parp=0x353b params=0 returns=0
 // ================================================
 
 void FILES() // FILES
@@ -10155,7 +10155,7 @@ void FILES() // FILES
 
 
 // ================================================
-// 0x3628: WORD 'DRIVES' codep=0x224c parp=0x3633 params=10 returns=0
+// 0x3628: WORD 'DRIVES' codep=0x224c parp=0x3633 params=0 returns=0
 // ================================================
 
 void DRIVES() // DRIVES
@@ -10177,7 +10177,7 @@ void _ro_DISKERROR_ask__rc_() // (DISKERROR?)
 // 0x3650: db 0x82 0x2c 0xae 0x0b 0xe7 0x2f 0x30 0x06 0x42 0x06 0x20 0x0f 0x24 0x2c 0x5e 0x0c 0x13 0x1c 0x0b 0x44 0x69 0x73 0x6b 0x20 0x65 0x72 0x72 0x6f 0x72 0x21 0x90 0x16 ' ,   /0 B   $,^    Disk error!  '
 
 // ================================================
-// 0x3670: WORD 'UNK_0x3672' codep=0x3672 parp=0x3672
+// 0x3670: WORD 'UNK_0x3672' codep=0x3672 parp=0x3672 params=1 returns=1
 // ================================================
 // 0x3672: pop    ax
 // 0x3673: add    ax,[2C79] // OFFSET
@@ -10280,7 +10280,7 @@ void UNK_0x36d7() // UNK_0x36d7
 
 
 // ================================================
-// 0x3713: WORD 'UNK_0x3715' codep=0x224c parp=0x3715 params=1 returns=2
+// 0x3713: WORD 'UNK_0x3715' codep=0x224c parp=0x3715
 // ================================================
 
 void UNK_0x3715() // UNK_0x3715
@@ -10470,7 +10470,7 @@ void UNK_0x3823() // UNK_0x3823
 
 
 // ================================================
-// 0x3847: WORD 'UNK_0x3849' codep=0x224c parp=0x3849 params=1 returns=1
+// 0x3847: WORD 'UNK_0x3849' codep=0x224c parp=0x3849
 // ================================================
 
 void UNK_0x3849() // UNK_0x3849
@@ -10890,7 +10890,7 @@ void SYN() // SYN
 // 0x3b44: db 0x0c 0x22 ' "'
 
 // ================================================
-// 0x3b46: WORD '2V=' codep=0x224c parp=0x3b4e params=2 returns=0
+// 0x3b46: WORD '2V=' codep=0x224c parp=0x3b4e
 // ================================================
 
 void _2V_eq_() // 2V=
@@ -10962,7 +10962,7 @@ void _2C_eq_() // 2C=
 // 0x3bb7: dw 0xfffe
 
 // ================================================
-// 0x3bb9: WORD 'THRU_1' codep=0x224c parp=0x3bc2 params=3 returns=0
+// 0x3bb9: WORD 'THRU_1' codep=0x224c parp=0x3bc2
 // ================================================
 
 void THRU_1() // THRU_1
@@ -11214,7 +11214,7 @@ void UNK_0x3d39() // UNK_0x3d39
 
 
 // ================================================
-// 0x3d83: WORD 'DISPOSE' codep=0x224c parp=0x3d8f params=2 returns=0
+// 0x3d83: WORD 'DISPOSE' codep=0x224c parp=0x3d8f params=0 returns=0
 // ================================================
 
 void DISPOSE() // DISPOSE
@@ -11462,7 +11462,7 @@ void SET_STR_AS_PARAM() // SET_STR_AS_PARAM
 
 
 // ================================================
-// 0x3f4b: WORD '"' codep=0x224c parp=0x3f51 params=2 returns=2
+// 0x3f4b: WORD '"' codep=0x224c parp=0x3f51 params=0 returns=2
 // ================================================
 
 void _qm_() // "
@@ -11711,7 +11711,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef params=2 returns=0
+// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -12429,7 +12429,7 @@ void SMARTOPEN() // SMARTOPEN
 // 0x4658: db 0x69 0x46 'iF'
 
 // ================================================
-// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669 params=9 returns=0
+// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669
 // ================================================
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>
@@ -12659,7 +12659,7 @@ void UNK_0x4866() // UNK_0x4866
 
 
 // ================================================
-// 0x486c: WORD 'ON_2' codep=0x4873 parp=0x4873
+// 0x486c: WORD 'ON_2' codep=0x4873 parp=0x4873 params=1 returns=0
 // ================================================
 // 0x4873: pop    bx
 // 0x4874: mov    ax,0001
@@ -12669,7 +12669,7 @@ void UNK_0x4866() // UNK_0x4866
 // 0x487c: jmp    word ptr [bx]
 
 // ================================================
-// 0x487e: WORD 'OFF_2' codep=0x4886 parp=0x4886
+// 0x487e: WORD 'OFF_2' codep=0x4886 parp=0x4886 params=1 returns=0
 // ================================================
 // 0x4886: pop    bx
 // 0x4887: xor    ax,ax
@@ -12743,7 +12743,7 @@ void KEY_2() // KEY_2
 // 0x4906: jmp    word ptr [bx]
 
 // ================================================
-// 0x4908: WORD '2^N' codep=0x4910 parp=0x4910
+// 0x4908: WORD '2^N' codep=0x4910 parp=0x4910 params=1 returns=1
 // ================================================
 // 0x4910: pop    cx
 // 0x4911: xor    ax,ax
@@ -12768,7 +12768,7 @@ void BIT() // BIT
 
 
 // ================================================
-// 0x492d: WORD '16/' codep=0x4935 parp=0x4935
+// 0x492d: WORD '16/' codep=0x4935 parp=0x4935 params=1 returns=1
 // ================================================
 // 0x4935: pop    ax
 // 0x4936: mov    cx,0004
@@ -12779,7 +12779,7 @@ void BIT() // BIT
 // 0x493f: jmp    word ptr [bx]
 
 // ================================================
-// 0x4941: WORD '16*' codep=0x4949 parp=0x4949
+// 0x4941: WORD '16*' codep=0x4949 parp=0x4949 params=1 returns=1
 // ================================================
 // 0x4949: pop    ax
 // 0x494a: mov    cx,0004
@@ -12790,7 +12790,7 @@ void BIT() // BIT
 // 0x4953: jmp    word ptr [bx]
 
 // ================================================
-// 0x4955: WORD 'D16*' codep=0x495e parp=0x495e
+// 0x4955: WORD 'D16*' codep=0x495e parp=0x495e params=2 returns=2
 // ================================================
 // 0x495e: pop    ax
 // 0x495f: pop    dx
@@ -12825,7 +12825,7 @@ void _3_star_() // 3*
 // 0x498c: jmp    word ptr [bx]
 
 // ================================================
-// 0x498e: WORD '1.5@' codep=0x4997 parp=0x4997
+// 0x498e: WORD '1.5@' codep=0x4997 parp=0x4997 params=1 returns=2
 // ================================================
 // 0x4997: pop    bx
 // 0x4998: push   word ptr [bx]
@@ -12848,7 +12848,7 @@ void _3_star_() // 3*
 // 0x49b8: jmp    word ptr [bx]
 
 // ================================================
-// 0x49ba: WORD '@DS' codep=0x49c2 parp=0x49c2
+// 0x49ba: WORD '@DS' codep=0x49c2 parp=0x49c2 params=0 returns=1
 // ================================================
 // 0x49c2: push   ds
 // 0x49c3: lodsw
@@ -12856,7 +12856,7 @@ void _3_star_() // 3*
 // 0x49c6: jmp    word ptr [bx]
 
 // ================================================
-// 0x49c8: WORD 'UNK_0x49ca' codep=0x1d29 parp=0x49ca
+// 0x49c8: WORD 'UNK_0x49ca' codep=0x1d29 parp=0x49ca params=0 returns=1
 // ================================================
 // 0x49ca: push   cx
 // 0x49cb: es:    
@@ -13000,7 +13000,7 @@ void CASE_c_() // CASE:
 // 0x4ab0: db 0xe4 0x39 ' 9'
 
 // ================================================
-// 0x4ab2: WORD 'FRND' codep=0x4abb parp=0x4abb
+// 0x4ab2: WORD 'FRND' codep=0x4abb parp=0x4abb params=0 returns=1
 // ================================================
 // 0x4abb: mov    ax,[4AB0] // SEED
 // 0x4abf: mov    cx,7ABD
@@ -13013,7 +13013,7 @@ void CASE_c_() // CASE:
 // 0x4acf: jmp    word ptr [bx]
 
 // ================================================
-// 0x4ad1: WORD 'RRND' codep=0x224c parp=0x4ada
+// 0x4ad1: WORD 'RRND' codep=0x224c parp=0x4ada params=2 returns=1
 // ================================================
 
 void RRND() // RRND
@@ -13336,7 +13336,7 @@ void _n_ROWZ() // #ROWZ
 
 
 // ================================================
-// 0x4d44: WORD 'ACELLADDR' codep=0x224c parp=0x4d50 params=0 returns=1
+// 0x4d44: WORD 'ACELLADDR' codep=0x224c parp=0x4d50
 // ================================================
 
 void ACELLADDR() // ACELLADDR
@@ -13372,7 +13372,7 @@ void ACELLADDR() // ACELLADDR
 // 0x4d7c: jmp    word ptr [bx]
 
 // ================================================
-// 0x4d7e: WORD 'A!' codep=0x224c parp=0x4d85 params=0 returns=0
+// 0x4d7e: WORD 'A!' codep=0x224c parp=0x4d85
 // ================================================
 
 void A_ex_() // A!
@@ -13383,7 +13383,7 @@ void A_ex_() // A!
 
 
 // ================================================
-// 0x4d8b: WORD 'A@' codep=0x224c parp=0x4d92 params=0 returns=0
+// 0x4d8b: WORD 'A@' codep=0x224c parp=0x4d92
 // ================================================
 
 void A_at_() // A@
@@ -13394,7 +13394,7 @@ void A_at_() // A@
 
 
 // ================================================
-// 0x4d98: WORD '!OFFSETS' codep=0x4da4 parp=0x4da4
+// 0x4d98: WORD '!OFFSETS' codep=0x4da4 parp=0x4da4 params=1 returns=0
 // ================================================
 // 0x4da4: pop    bx
 // 0x4da5: push   si
@@ -13531,7 +13531,7 @@ void SETREGION() // SETREGION
 
 
 // ================================================
-// 0x4ea1: WORD 'FILLREGION' codep=0x224c parp=0x4ead params=1 returns=4
+// 0x4ea1: WORD 'FILLREGION' codep=0x224c parp=0x4ead
 // ================================================
 
 void FILLREGION() // FILLREGION
@@ -16029,7 +16029,7 @@ void Is_gt_EGA() // ?>EGA
 // 0x6d04: jmp    word ptr [bx]
 
 // ================================================
-// 0x6d06: WORD '?UPDATE' codep=0x6d12 parp=0x6d12
+// 0x6d06: WORD '?UPDATE' codep=0x6d12 parp=0x6d12 params=1 returns=1
 // ================================================
 // 0x6d12: pop    cx
 // 0x6d13: or     cx,cx
@@ -16088,13 +16088,13 @@ void Store_3() // !_3
 
 
 // ================================================
-// 0x6d7e: WORD '+!' codep=0x224c parp=0x6d85 params=2 returns=0
+// 0x6d7e: WORD '+!_2' codep=0x224c parp=0x6d85 params=2 returns=0
 // ================================================
 
-void _plus__ex_() // +!
+void _plus__ex__2() // +!_2
 {
   IsUPDATE(); // ?UPDATE
-  _plus__ex__2(); // +!_2
+  _plus__ex_(); // +!
 }
 
 
@@ -16229,7 +16229,7 @@ void LBLOCK_2() // LBLOCK_2
 
 
 // ================================================
-// 0x6e38: WORD 'LOAD_1' codep=0x224c parp=0x6e41 params=2 returns=0
+// 0x6e38: WORD 'LOAD_1' codep=0x224c parp=0x6e41
 // ================================================
 
 void LOAD_1() // LOAD_1
@@ -16344,7 +16344,7 @@ void SIGFLD() // SIGFLD
 // 0x6f0f: db 0xfa 0x03 '  '
 
 // ================================================
-// 0x6f11: WORD 'THRU_2' codep=0x224c parp=0x6f1a params=3 returns=0
+// 0x6f11: WORD 'THRU_2' codep=0x224c parp=0x6f1a
 // ================================================
 
 void THRU_2() // THRU_2
@@ -16376,7 +16376,7 @@ void THRU_2() // THRU_2
 
 
 // ================================================
-// 0x6f3e: WORD 'VA>BLK' codep=0x6f49 parp=0x6f49
+// 0x6f3e: WORD 'VA>BLK' codep=0x6f49 parp=0x6f49 params=2 returns=2
 // ================================================
 // 0x6f49: pop    ax
 // 0x6f4a: pop    dx
@@ -16454,7 +16454,7 @@ void UNK_0x6fa3() // UNK_0x6fa3
 
 
 // ================================================
-// 0x6faf: WORD 'UNK_0x6fb1' codep=0x224c parp=0x6fb1 params=0 returns=0
+// 0x6faf: WORD 'UNK_0x6fb1' codep=0x224c parp=0x6fb1
 // ================================================
 
 void UNK_0x6fb1() // UNK_0x6fb1
@@ -16470,7 +16470,7 @@ void UNK_0x6fb1() // UNK_0x6fb1
 // 0x6fb9: db 0xdb 0x6f ' o'
 
 // ================================================
-// 0x6fbb: WORD 'UNK_0x6fbd' codep=0x224c parp=0x6fbd params=3 returns=0
+// 0x6fbb: WORD 'UNK_0x6fbd' codep=0x224c parp=0x6fbd
 // ================================================
 
 void UNK_0x6fbd() // UNK_0x6fbd
@@ -16520,7 +16520,7 @@ void UNK_0x6fe7() // UNK_0x6fe7
 
 
 // ================================================
-// 0x6ff1: WORD 'MOUNTA' codep=0x224c parp=0x6ffc params=1 returns=0
+// 0x6ff1: WORD 'MOUNTA' codep=0x224c parp=0x6ffc
 // ================================================
 
 void MOUNTA() // MOUNTA
@@ -16534,7 +16534,7 @@ void MOUNTA() // MOUNTA
 
 
 // ================================================
-// 0x7014: WORD 'MOUNTB' codep=0x224c parp=0x701f params=1 returns=0
+// 0x7014: WORD 'MOUNTB' codep=0x224c parp=0x701f
 // ================================================
 
 void MOUNTB() // MOUNTB
@@ -16548,7 +16548,7 @@ void MOUNTB() // MOUNTB
 
 
 // ================================================
-// 0x7037: WORD 'UNK_0x7039' codep=0x224c parp=0x7039 params=1 returns=0
+// 0x7037: WORD 'UNK_0x7039' codep=0x224c parp=0x7039
 // ================================================
 
 void UNK_0x7039() // UNK_0x7039
@@ -17253,7 +17253,7 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 
 
 // ================================================
-// 0x7538: WORD '>C' codep=0x753f parp=0x753f
+// 0x7538: WORD '>C' codep=0x753f parp=0x753f params=2 returns=0
 // ================================================
 // 0x753f: mov    bx,[54B0] // CXSP
 // 0x7543: pop    ax
@@ -17265,7 +17265,7 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 // 0x7551: jmp    word ptr [bx]
 
 // ================================================
-// 0x7553: WORD 'C>' codep=0x755a parp=0x755a
+// 0x7553: WORD 'C>' codep=0x755a parp=0x755a params=0 returns=2
 // ================================================
 // 0x755a: add    word ptr [54B0],03 // CXSP
 // 0x755f: mov    bx,[54B0] // CXSP
@@ -17278,7 +17278,7 @@ void GetINST_dash_SPECIES() // @INST-SPECIES
 // 0x756e: jmp    word ptr [bx]
 
 // ================================================
-// 0x7570: WORD 'CI' codep=0x7577 parp=0x7577
+// 0x7570: WORD 'CI' codep=0x7577 parp=0x7577 params=0 returns=2
 // ================================================
 // 0x7577: mov    bx,[54B0] // CXSP
 // 0x757b: push   word ptr [bx+03]
@@ -17338,7 +17338,7 @@ void COVER() // COVER
 
 
 // ================================================
-// 0x75cc: WORD 'CDEPTH' codep=0x75d7 parp=0x75d7
+// 0x75cc: WORD 'CDEPTH' codep=0x75d7 parp=0x75d7 params=0 returns=1
 // ================================================
 // 0x75d7: mov    ax,6398
 // 0x75da: sub    ax,[54B0] // CXSP
@@ -18062,7 +18062,7 @@ void VCLR() // VCLR
 
 
 // ================================================
-// 0x7ae0: WORD '>V' codep=0x7ae7 parp=0x7ae7
+// 0x7ae0: WORD '>V' codep=0x7ae7 parp=0x7ae7 params=1 returns=0
 // ================================================
 // 0x7ae7: mov    bx,[54B4] // UNK_0x54b4
 // 0x7aeb: pop    word ptr [bx]
@@ -18072,7 +18072,7 @@ void VCLR() // VCLR
 // 0x7af5: jmp    word ptr [bx]
 
 // ================================================
-// 0x7af7: WORD 'V>' codep=0x7afe parp=0x7afe
+// 0x7af7: WORD 'V>' codep=0x7afe parp=0x7afe params=0 returns=1
 // ================================================
 // 0x7afe: add    word ptr [54B4],02 // UNK_0x54b4
 // 0x7b03: mov    bx,[54B4] // UNK_0x54b4
@@ -18082,7 +18082,7 @@ void VCLR() // VCLR
 // 0x7b0c: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b0e: WORD 'VI' codep=0x7b15 parp=0x7b15
+// 0x7b0e: WORD 'VI' codep=0x7b15 parp=0x7b15 params=0 returns=1
 // ================================================
 // 0x7b15: mov    bx,[54B4] // UNK_0x54b4
 // 0x7b19: push   word ptr [bx+02]
@@ -18442,7 +18442,7 @@ void IsCLASS_slash_() // ?CLASS/
 
 
 // ================================================
-// 0x7d37: WORD 'UNK_0x7d39' codep=0x224c parp=0x7d39 params=0 returns=0
+// 0x7d37: WORD 'UNK_0x7d39' codep=0x224c parp=0x7d39
 // ================================================
 
 void UNK_0x7d39() // UNK_0x7d39
@@ -18453,7 +18453,7 @@ void UNK_0x7d39() // UNK_0x7d39
 
 
 // ================================================
-// 0x7d3f: WORD 'UNK_0x7d41' codep=0x224c parp=0x7d41 params=0 returns=0
+// 0x7d3f: WORD 'UNK_0x7d41' codep=0x224c parp=0x7d41
 // ================================================
 
 void UNK_0x7d41() // UNK_0x7d41
@@ -18464,7 +18464,7 @@ void UNK_0x7d41() // UNK_0x7d41
 
 
 // ================================================
-// 0x7d47: WORD 'UNK_0x7d49' codep=0x224c parp=0x7d49 params=0 returns=0
+// 0x7d47: WORD 'UNK_0x7d49' codep=0x224c parp=0x7d49
 // ================================================
 
 void UNK_0x7d49() // UNK_0x7d49
@@ -18475,7 +18475,7 @@ void UNK_0x7d49() // UNK_0x7d49
 
 
 // ================================================
-// 0x7d4f: WORD 'MAP' codep=0x224c parp=0x7d57 params=0 returns=0
+// 0x7d4f: WORD 'MAP' codep=0x224c parp=0x7d57
 // ================================================
 
 void MAP() // MAP
@@ -18511,7 +18511,7 @@ void V_gt_SWAP_ex_() // V>SWAP!
 
 
 // ================================================
-// 0x7d73: WORD 'SELECT' codep=0x224c parp=0x7d7e params=3 returns=1
+// 0x7d73: WORD 'SELECT' codep=0x224c parp=0x7d7e
 // ================================================
 
 void SELECT() // SELECT
@@ -18555,7 +18555,7 @@ void Is_gt_FIRST() // ?>FIRST
 
 
 // ================================================
-// 0x7dbe: WORD 'SELECT-' codep=0x224c parp=0x7dca params=6 returns=1
+// 0x7dbe: WORD 'SELECT-' codep=0x224c parp=0x7dca
 // ================================================
 
 void SELECT_dash_() // SELECT-
@@ -18583,7 +18583,7 @@ void SELECT_dash_() // SELECT-
 
 
 // ================================================
-// 0x7df4: WORD 'UNK_0x7df6' codep=0x224c parp=0x7df6 orphan params=7 returns=1
+// 0x7df4: WORD 'UNK_0x7df6' codep=0x224c parp=0x7df6 orphan
 // ================================================
 
 void UNK_0x7df6() // UNK_0x7df6
@@ -18597,7 +18597,7 @@ void UNK_0x7df6() // UNK_0x7df6
 
 
 // ================================================
-// 0x7e00: WORD 'UNK_0x7e02' codep=0x224c parp=0x7e02 params=5 returns=1
+// 0x7e00: WORD 'UNK_0x7e02' codep=0x224c parp=0x7e02
 // ================================================
 
 void UNK_0x7e02() // UNK_0x7e02
@@ -18608,7 +18608,7 @@ void UNK_0x7e02() // UNK_0x7e02
 
 
 // ================================================
-// 0x7e0a: WORD 'IFIND' codep=0x224c parp=0x7e14 params=5 returns=1
+// 0x7e0a: WORD 'IFIND' codep=0x224c parp=0x7e14
 // ================================================
 
 void IFIND() // IFIND
@@ -18639,7 +18639,7 @@ void UNK_0x7e1e() // UNK_0x7e1e
 
 
 // ================================================
-// 0x7e36: WORD 'MAP>LEAF' codep=0x224c parp=0x7e38 params=0 returns=0
+// 0x7e36: WORD 'MAP>LEAF' codep=0x224c parp=0x7e38
 // ================================================
 
 void MAP_gt_LEAF() // MAP>LEAF
@@ -18736,7 +18736,7 @@ void UNK_0x7eca() // UNK_0x7eca
 
 
 // ================================================
-// 0x7ed0: WORD 'IDELETE' codep=0x224c parp=0x7edc params=0 returns=0
+// 0x7ed0: WORD 'IDELETE' codep=0x224c parp=0x7edc
 // ================================================
 
 void IDELETE() // IDELETE
@@ -18762,7 +18762,7 @@ void IDELETE() // IDELETE
 
 
 // ================================================
-// 0x7f06: WORD 'UNK_0x7f08' codep=0x224c parp=0x7f08 params=7 returns=0
+// 0x7f06: WORD 'UNK_0x7f08' codep=0x224c parp=0x7f08
 // ================================================
 
 void UNK_0x7f08() // UNK_0x7f08
@@ -18801,7 +18801,7 @@ void UNK_0x7f08() // UNK_0x7f08
 
 
 // ================================================
-// 0x7f42: WORD 'ALL' codep=0x224c parp=0x7f4a params=4 returns=0
+// 0x7f42: WORD 'ALL' codep=0x224c parp=0x7f4a
 // ================================================
 
 void ALL() // ALL
@@ -18817,7 +18817,7 @@ void ALL() // ALL
 
 
 // ================================================
-// 0x7f5e: WORD 'EACH' codep=0x224c parp=0x7f67 params=5 returns=0
+// 0x7f5e: WORD 'EACH' codep=0x224c parp=0x7f67
 // ================================================
 
 void EACH() // EACH
@@ -18832,7 +18832,7 @@ void EACH() // EACH
 
 
 // ================================================
-// 0x7f77: WORD 'UNK_0x7f79' codep=0x224c parp=0x7f79 params=0 returns=0
+// 0x7f77: WORD 'UNK_0x7f79' codep=0x224c parp=0x7f79
 // ================================================
 
 void UNK_0x7f79() // UNK_0x7f79
@@ -19200,7 +19200,7 @@ void _star_CREATE() // *CREATE
 
 
 // ================================================
-// 0x81d5: WORD '.DRJ' codep=0x224c parp=0x81d7 params=1 returns=0
+// 0x81d5: WORD '.DRJ' codep=0x224c parp=0x81d7 params=2 returns=0
 // ================================================
 
 void DrawDRJ() // .DRJ
@@ -19213,7 +19213,7 @@ void DrawDRJ() // .DRJ
 
 
 // ================================================
-// 0x81e1: WORD 'UNK_0x81e3' codep=0x224c parp=0x81e3 orphan params=2 returns=1
+// 0x81e1: WORD 'UNK_0x81e3' codep=0x224c parp=0x81e3 orphan params=2 returns=0
 // ================================================
 
 void UNK_0x81e3() // UNK_0x81e3
@@ -19239,7 +19239,7 @@ void UNK_0x81e3() // UNK_0x81e3
 
 
 // ================================================
-// 0x820e: WORD '.C' codep=0x224c parp=0x8215 params=4 returns=0
+// 0x820e: WORD '.C' codep=0x224c parp=0x8215 params=0 returns=0
 // ================================================
 
 void DrawC() // .C
@@ -19274,7 +19274,7 @@ void DrawC() // .C
 
 
 // ================================================
-// 0x8248: WORD 'UNK_0x824a' codep=0x224c parp=0x824a orphan params=4 returns=0
+// 0x8248: WORD 'UNK_0x824a' codep=0x224c parp=0x824a orphan
 // ================================================
 
 void UNK_0x824a() // UNK_0x824a
@@ -19292,7 +19292,7 @@ void UNK_0x824a() // UNK_0x824a
 
 
 // ================================================
-// 0x8260: WORD '.TREE' codep=0x224c parp=0x826a params=0 returns=0
+// 0x8260: WORD '.TREE' codep=0x224c parp=0x826a
 // ================================================
 
 void DrawTREE() // .TREE
@@ -19574,7 +19574,7 @@ void OPEN_dash_OVERLAY() // OPEN-OVERLAY
 
 
 // ================================================
-// 0x8479: WORD '.CVSAS' codep=0x224c parp=0x847b
+// 0x8479: WORD '.CVSAS' codep=0x224c parp=0x847b params=0 returns=0
 // ================================================
 
 void DrawCVSAS() // .CVSAS
@@ -19598,7 +19598,7 @@ void DrawCVSAS() // .CVSAS
 
 
 // ================================================
-// 0x84ad: WORD 'CLOSE-OVERLAY' codep=0x224c parp=0x84b9
+// 0x84ad: WORD 'CLOSE-OVERLAY' codep=0x224c parp=0x84b9 params=0 returns=0
 // ================================================
 
 void CLOSE_dash_OVERLAY() // CLOSE-OVERLAY
@@ -19674,7 +19674,7 @@ void GetCOLOR() // @COLOR
 
 
 // ================================================
-// 0x8536: WORD 'TREJECT/TACCEPT' codep=0x1d29 parp=0x8538 orphan
+// 0x8536: WORD 'TREJECT/TACCEPT' codep=0x1d29 parp=0x8538 orphan params=0 returns=1
 // ================================================
 // 0x8538: mov    ax,ds
 // 0x853a: mov    es,ax
@@ -19719,7 +19719,7 @@ void GetCOLOR() // @COLOR
 
 
 // ================================================
-// 0x8594: WORD 'INT/O' codep=0x1d29 parp=0x8596
+// 0x8594: WORD 'INT/O' codep=0x1d29 parp=0x8596 params=0 returns=1
 // ================================================
 // 0x8596: push   bx
 // 0x8597: push   bp
@@ -19768,7 +19768,7 @@ void GetCOLOR() // @COLOR
 
 
 // ================================================
-// 0x8603: WORD 'CLIP' codep=0x1d29 parp=0x8605
+// 0x8603: WORD 'CLIP' codep=0x1d29 parp=0x8605 params=0 returns=1
 // ================================================
 // 0x8605: mov    word ptr [5691],0000 // #OUT
 // 0x860b: xchg   [56BF],si // UNK_0x56bf
@@ -19946,7 +19946,7 @@ void GetCOLOR() // @COLOR
 // 0x87dd: jmp    word ptr [bx]
 
 // ================================================
-// 0x87df: WORD 'SCANCON' codep=0x1d29 parp=0x87e1
+// 0x87df: WORD 'SCANCON' codep=0x1d29 parp=0x87e1 params=0 returns=1
 // ================================================
 // 0x87e1: push   word ptr [5710] // UNK_0x5710
 // 0x87e5: mov    ax,[5708] // UNK_0x5708
@@ -20418,7 +20418,7 @@ void _gt_HIDDEN() // >HIDDEN
 
 
 // ================================================
-// 0x8c35: WORD 'SET6845' codep=0x1d29 parp=0x8c41
+// 0x8c35: WORD 'SET6845' codep=0x1d29 parp=0x8c41 params=0 returns=1
 // ================================================
 // 0x8c41: mov    cx,000E
 // 0x8c44: xor    ah,ah
@@ -20449,7 +20449,7 @@ void _gt_HIDDEN() // >HIDDEN
 // 0x8c8c: db 0x61 0x50 0x52 0x0f 0x19 0x06 0x19 0x19 0x02 0x0d 0x0b 0x0c 0x00 0x00 'aPR           '
 
 // ================================================
-// 0x8c9a: WORD '>HGRAPH' codep=0x1d29 parp=0x8ca6
+// 0x8c9a: WORD '>HGRAPH' codep=0x1d29 parp=0x8ca6 params=0 returns=1
 // ================================================
 // 0x8ca6: mov    dx,03B8
 // 0x8ca9: mov    al,02
@@ -20467,7 +20467,7 @@ void _gt_HIDDEN() // >HIDDEN
 
 
 // ================================================
-// 0x8cc2: WORD '>HTEXT' codep=0x1d29 parp=0x8ccd
+// 0x8cc2: WORD '>HTEXT' codep=0x1d29 parp=0x8ccd params=0 returns=1
 // ================================================
 // 0x8ccd: mov    dx,03B8
 // 0x8cd0: mov    al,20
@@ -20485,7 +20485,7 @@ void _gt_HIDDEN() // >HIDDEN
 
 
 // ================================================
-// 0x8ce9: WORD 'UNK_0x8ceb' codep=0x1d29 parp=0x8ceb
+// 0x8ce9: WORD 'UNK_0x8ceb' codep=0x1d29 parp=0x8ceb params=0 returns=1
 // ================================================
 // 0x8ceb: mov    ax,008D
 // 0x8cee: int    10
@@ -20527,7 +20527,7 @@ void _gt_HIDDEN() // >HIDDEN
 // 0x8d3b: jmp    word ptr [bx]
 
 // ================================================
-// 0x8d3d: WORD '>TANDY' codep=0x1d29 parp=0x8d48
+// 0x8d3d: WORD '>TANDY' codep=0x1d29 parp=0x8d48 params=0 returns=1
 // ================================================
 // 0x8d48: mov    al,03
 // 0x8d4a: mov    dx,03DA
@@ -20619,7 +20619,7 @@ void _gt_MONO() // >MONO
 // 0x8dec: jmp    word ptr [bx]
 
 // ================================================
-// 0x8dee: WORD 'UNK_0x8df0' codep=0x8df0 parp=0x8df0
+// 0x8dee: WORD 'UNK_0x8df0' codep=0x8df0 parp=0x8df0 params=0 returns=0
 // ================================================
 // 0x8df0: push   si
 // 0x8df1: push   di
@@ -20657,7 +20657,7 @@ void _gt_A() // >A
 
 
 // ================================================
-// 0x8e26: WORD 'COPYLIN' codep=0x1d29 parp=0x8e32
+// 0x8e26: WORD 'COPYLIN' codep=0x1d29 parp=0x8e32 params=0 returns=1
 // ================================================
 // 0x8e32: mov    al,05
 // 0x8e34: mov    ah,01
@@ -20816,7 +20816,7 @@ void SCR_dash_RES() // SCR-RES
 
 
 // ================================================
-// 0x8f3b: WORD 'UNK_0x8f3d' codep=0x1d29 parp=0x8f3d orphan
+// 0x8f3b: WORD 'UNK_0x8f3d' codep=0x1d29 parp=0x8f3d orphan params=0 returns=1
 // ================================================
 // 0x8f3d: push   es
 // 0x8f3e: push   di
@@ -20860,7 +20860,7 @@ void SCR_dash_RES() // SCR-RES
 
 
 // ================================================
-// 0x8f81: WORD 'BFILL' codep=0x8f8b parp=0x8f8b
+// 0x8f81: WORD 'BFILL' codep=0x8f8b parp=0x8f8b params=0 returns=0
 // ================================================
 // 0x8f8b: mov    ax,[5DA3] // ?EGA
 // 0x8f8f: test   ax,00FF
@@ -20891,7 +20891,7 @@ void SCR_dash_RES() // SCR-RES
 void DARK() // DARK
 {
   GetCOLOR(); // @COLOR
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(pp_COLOR); // COLOR
   Store_3(); // !_3
   BFILL(); // BFILL
@@ -20925,7 +20925,7 @@ void BYE() // BYE
 // 0x8ff7: db 0xcb ' '
 
 // ================================================
-// 0x8ff8: WORD 'LPLOT' codep=0x9002 parp=0x9002
+// 0x8ff8: WORD 'LPLOT' codep=0x9002 parp=0x9002 params=2 returns=0
 // ================================================
 // 0x9002: call   8C16:029D
 // 0x9007: lodsw
@@ -20941,7 +20941,7 @@ void BYE() // BYE
 // 0x901f: jmp    word ptr [bx]
 
 // ================================================
-// 0x9021: WORD '{BLT}' codep=0x902b parp=0x902b
+// 0x9021: WORD '{BLT}' codep=0x902b parp=0x902b params=0 returns=0
 // ================================================
 // 0x902b: call   8C16:020D
 // 0x9030: lodsw
@@ -20949,7 +20949,7 @@ void BYE() // BYE
 // 0x9033: jmp    word ptr [bx]
 
 // ================================================
-// 0x9035: WORD 'LLINE' codep=0x903f parp=0x903f
+// 0x9035: WORD 'LLINE' codep=0x903f parp=0x903f params=4 returns=0
 // ================================================
 // 0x903f: call   8C16:0336
 // 0x9044: lodsw
@@ -20957,7 +20957,7 @@ void BYE() // BYE
 // 0x9047: jmp    word ptr [bx]
 
 // ================================================
-// 0x9049: WORD 'LFILLPOLY' codep=0x9055 parp=0x9055
+// 0x9049: WORD 'LFILLPOLY' codep=0x9055 parp=0x9055 params=0 returns=0
 // ================================================
 // 0x9055: call   8C16:041B
 // 0x905a: lodsw
@@ -20965,7 +20965,7 @@ void BYE() // BYE
 // 0x905d: jmp    word ptr [bx]
 
 // ================================================
-// 0x905f: WORD 'LCOPYBLK' codep=0x906b parp=0x906b
+// 0x905f: WORD 'LCOPYBLK' codep=0x906b parp=0x906b params=6 returns=0
 // ================================================
 // 0x906b: call   8C16:05C1
 // 0x9070: lodsw
@@ -20989,7 +20989,7 @@ void BYE() // BYE
 // 0x909f: jmp    word ptr [bx]
 
 // ================================================
-// 0x90a1: WORD 'V>DISPLAY' codep=0x90ad parp=0x90ad
+// 0x90a1: WORD 'V>DISPLAY' codep=0x90ad parp=0x90ad params=0 returns=0
 // ================================================
 // 0x90ad: call   8C16:0052
 // 0x90b2: lodsw
@@ -21224,7 +21224,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x92fe: jmp    word ptr [bx]
 
 // ================================================
-// 0x9300: WORD '(PLOT)' codep=0x1d29 parp=0x930b
+// 0x9300: WORD '(PLOT)' codep=0x1d29 parp=0x930b params=0 returns=1
 // ================================================
 // 0x930b: pop    word ptr [5663] // RETURN
 // 0x930f: pop    dx
@@ -21294,7 +21294,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x938c: jmp    word ptr [bx]
 
 // ================================================
-// 0x938e: WORD '?EXTENTX' codep=0x9390 parp=0x9390
+// 0x938e: WORD '?EXTENTX' codep=0x9390 parp=0x9390 params=4 returns=0
 // ================================================
 // 0x9390: mov    bx,[569B] // VIN
 // 0x9394: mov    cx,0004
@@ -21311,7 +21311,7 @@ void LOAD_dash_CO() // LOAD-CO
 // 0x93ad: jmp    word ptr [bx]
 
 // ================================================
-// 0x93af: WORD 'UNK_0x93b1' codep=0x93b1 parp=0x93b1
+// 0x93af: WORD 'UNK_0x93b1' codep=0x93b1 parp=0x93b1 params=0 returns=4
 // ================================================
 // 0x93b1: push   word ptr [586E] // XBLT
 // 0x93b5: mov    ax,[5863] // YBLT
@@ -21386,7 +21386,7 @@ void UNK_0x93fa() // UNK_0x93fa
   }
   BLT(); // BLT
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(a); // R>
   Push(pp_BLTSEG); // BLTSEG
   Store_3(); // !_3
@@ -21394,7 +21394,7 @@ void UNK_0x93fa() // UNK_0x93fa
 
 
 // ================================================
-// 0x945e: WORD 'UNK_0x9460' codep=0x224c parp=0x9460 orphan
+// 0x945e: WORD 'UNK_0x9460' codep=0x224c parp=0x9460 orphan params=2 returns=0
 // ================================================
 
 void UNK_0x9460() // UNK_0x9460
@@ -21481,7 +21481,7 @@ void _co_2FONT_cc_() // {2FONT}
   BLT(); // BLT
   Push(Read16(pp_WBLT) + 1); // WBLT @ 1+
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(a); // R>
   Push(pp_BLTSEG); // BLTSEG
   Store_3(); // !_3
@@ -21532,7 +21532,7 @@ void UNK_0x953f() // UNK_0x953f
   BLT(); // BLT
   Push(Read16(pp_WBLT) + 1); // WBLT @ 1+
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(a); // R>
   Push(pp_BLTSEG); // BLTSEG
   Store_3(); // !_3
@@ -21694,7 +21694,7 @@ void FILLCIRC() // FILLCIRC
 
 
 // ================================================
-// 0x96d4: WORD 'FRAMELEN' codep=0x224c parp=0x96d6
+// 0x96d4: WORD 'FRAMELEN' codep=0x224c parp=0x96d6 params=0 returns=0
 // ================================================
 
 void FRAMELEN() // FRAMELEN
@@ -21706,7 +21706,7 @@ void FRAMELEN() // FRAMELEN
 
 
 // ================================================
-// 0x96f2: WORD '.PACKBL' codep=0x224c parp=0x96fe
+// 0x96f2: WORD '.PACKBL' codep=0x224c parp=0x96fe params=3 returns=0
 // ================================================
 
 void DrawPACKBL() // .PACKBL
@@ -21728,7 +21728,7 @@ void DrawPACKBL() // .PACKBL
   Store_3(); // !_3
   Push(Pop() >> 1); //  2/
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(a); // I
   Push(1);
   LC_at_(); // LC@
@@ -21737,7 +21737,7 @@ void DrawPACKBL() // .PACKBL
   Store_3(); // !_3
   Push(-Pop() >> 1); //  2/ NEGATE
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   FRAMELEN(); // FRAMELEN
   Push(a); // R>
   Push(2);
@@ -21835,7 +21835,7 @@ void CELLCOLOR() // CELLCOLOR
 
 
 // ================================================
-// 0x980d: WORD '!XYSEED' codep=0x224c parp=0x9819
+// 0x980d: WORD '!XYSEED' codep=0x224c parp=0x9819 params=2 returns=0
 // ================================================
 
 void StoreXYSEED() // !XYSEED
@@ -21881,7 +21881,7 @@ void StoreXYSEED() // !XYSEED
 // 0x986a: jmp    word ptr [bx]
 
 // ================================================
-// 0x986c: WORD 'UNK_0x986e' codep=0x224c parp=0x986e params=0 returns=0
+// 0x986c: WORD 'UNK_0x986e' codep=0x224c parp=0x986e
 // ================================================
 
 void UNK_0x986e() // UNK_0x986e
@@ -21961,7 +21961,7 @@ void Draw8X8CELL() // .8X8CELL
 
 
 // ================================================
-// 0x98ee: WORD '.REGION+' codep=0x224c parp=0x98fa params=0 returns=2
+// 0x98ee: WORD '.REGION+' codep=0x224c parp=0x98fa
 // ================================================
 
 void DrawREGION_plus_() // .REGION+
@@ -22365,7 +22365,7 @@ void INIT_dash_ICONLIST() // INIT-ICONLIST
 
 
 // ================================================
-// 0x9ba2: WORD '.BACKGR' codep=0x224c parp=0x9bae params=0 returns=0
+// 0x9ba2: WORD '.BACKGR' codep=0x224c parp=0x9bae
 // ================================================
 
 void DrawBACKGR() // .BACKGR
@@ -22403,11 +22403,11 @@ void UNK_0x9bb6() // UNK_0x9bb6
     StoreCOLOR(); // !COLOR
     Push(1);
     Push(pp_ABLT); // ABLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     BLT(); // BLT
     Push(8);
     Push(pp_ABLT); // ABLT
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     i++;
   } while(i<imax); // (LOOP)
 
@@ -22445,7 +22445,7 @@ void UNK_0x9bee() // UNK_0x9bee
 
 
 // ================================================
-// 0x9c20: WORD 'UNK_0x9c22' codep=0x224c parp=0x9c22 params=0 returns=0
+// 0x9c20: WORD 'UNK_0x9c22' codep=0x224c parp=0x9c22
 // ================================================
 
 void UNK_0x9c22() // UNK_0x9c22
@@ -22815,7 +22815,7 @@ void _dash_ICON() // -ICON
   {
     Push(-1);
     Push(pp_ILOCAL); // ILOCAL
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(Read16(pp_ILOCAL)); // ILOCAL @
     Push(Read16(regsp)); // DUP
     a = Pop(); // >R
@@ -22824,7 +22824,7 @@ void _dash_ICON() // -ICON
   }
   Push(-1);
   Push(pp_IGLOBAL); // IGLOBAL
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_IGLOBAL)); // IGLOBAL @
   UNK_0x9e14(); // UNK_0x9e14
 }
@@ -22894,7 +22894,7 @@ void _plus_ICON() // +ICON
   POINT_gt_ICON(); // POINT>ICON
   Push(1);
   Push(pp_IGLOBAL); // IGLOBAL
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   StoreIH(); // !IH
   StoreIL(); // !IL
   StoreIC(); // !IC
@@ -23191,7 +23191,7 @@ void CTERASE() // CTERASE
   Push(3);
   Push(1);
   Push(0x009c);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   Push(0);
   Push(0);
@@ -23652,7 +23652,7 @@ void GCR() // GCR
 {
   Push(0xfff9);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
@@ -23669,13 +23669,13 @@ void WSHORTE() // WSHORTE
   SWAP(); // SWAP
   Push(7);
   Push(pp_WBOTTOM); // WBOTTOM
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(pp_WBOTTOM) - 2); // WBOTTOM @ 2-
   Push(Read16(pp_WLEFT)); // WLEFT @
   POS_dot_PXT(); // POS.PXT
   Push(-1);
   Push(pp_WLINES); // WLINES
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -23743,7 +23743,7 @@ void CTINIT() // CTINIT
   _gt_1FONT(); // >1FONT
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0xa513); // probable 'UNK_0xa513'
   Push(0x0644); // probable 'CR'
@@ -23995,7 +23995,7 @@ void UNK_0xa705() // UNK_0xa705
 
   Push(1);
   Push(0x0041);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -24156,10 +24156,10 @@ void UNK_0xa84a() // UNK_0xa84a
   UNK_0xa802(); // UNK_0xa802
   Push(-2);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(2);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(3);
   Push(pp_LBLT); // LBLT
   Store_3(); // !_3
@@ -24184,7 +24184,7 @@ void DrawON() // .ON
   a = Pop(); // >R
   UNK_0xa84a(); // UNK_0xa84a
   Push(a); // R>
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push((Pop()==Pop())?1:0); // =
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
@@ -24226,7 +24226,7 @@ void INIT_dash_BU() // INIT-BU
   CLR_dash_BUT(); // CLR-BUT
   Push(pp_THIS_dash_BU); // THIS-BU
   OFF(); // OFF
-  SetColor(BLUE);
+  GetColor(BLUE);
   Push(0);
   DrawHIGHLI(); // .HIGHLI
 }
@@ -24239,12 +24239,12 @@ void INIT_dash_BU() // INIT-BU
 void _ro_SHIP_dash_C() // (SHIP-C
 {
   _gt_SSCT(); // >SSCT
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor(GREEN);
-  SetColor(GREEN);
-  SetColor(DK_dash_BLUE);
+  GetColor(GREEN);
+  GetColor(GREEN);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   VIEWSCR(); // VIEWSCR
@@ -24254,7 +24254,7 @@ void _ro_SHIP_dash_C() // (SHIP-C
   UNK_0xa705(); // UNK_0xa705
   Push(0);
   UNK_0xa77e(); // UNK_0xa77e
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTERASE(); // CTERASE
   CLR_dash_BUT(); // CLR-BUT
@@ -24268,13 +24268,13 @@ void _ro_SHIP_dash_C() // (SHIP-C
 
 void SHIP_dash_CONSOLE() // SHIP-CONSOLE
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
 }
 
 
 // ================================================
-// 0xa918: WORD ''KEY' codep=0x224c parp=0xa921 params=3 returns=1
+// 0xa918: WORD ''KEY' codep=0x224c parp=0xa921
 // ================================================
 
 void _i_KEY() // 'KEY
@@ -24573,12 +24573,12 @@ void UNK_0xaa98() // UNK_0xaa98
   Store_3(); // !_3
   Push(0xfff5);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
 // ================================================
-// 0xaaaa: WORD 'UNK_0xaaac' codep=0x224c parp=0xaaac orphan params=0 returns=0
+// 0xaaaa: WORD 'UNK_0xaaac' codep=0x224c parp=0xaaac orphan
 // ================================================
 
 void UNK_0xaaac() // UNK_0xaaac
@@ -24610,9 +24610,9 @@ void DrawABTN() // .ABTN
   OVER(); // OVER
   Push(Pop() - 7); //  7 -
   Push(0x009c);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   LoadData(_1BTN); // from 'BUTTONS'
   Push(Pop() + a * 0x000c); //  R> 0x000c * +
@@ -24637,13 +24637,13 @@ void DrawBTN_dash_TE() // .BTN-TE
   Store_3(); // !_3
   Push(pp_BTN_dash_REC); // BTN-REC
   Store_3(); // !_3
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xa77e(); // UNK_0xa77e
   Push(0x005d);
   Push(0x0077);
   POS_dot_(); // POS.
   _gt_2FONT(); // >2FONT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   LoadData(_n_BTN); // from 'BUTTONS'
   Push((Read16(Pop())&0xFF) * 0x000c); //  C@ 0x000c *
@@ -24690,9 +24690,9 @@ void NEW_dash_BUT() // NEW-BUT
   WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     OVER(); // OVER
-    SetColor(BLACK);
+    GetColor(BLACK);
     Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
     DrawHIGHLI(); // .HIGHLI
     DrawHIGHLI(); // .HIGHLI
@@ -24970,7 +24970,7 @@ void U_gt__do_() // U>$
 
 
 // ================================================
-// 0xae2d: WORD 'UNK_0xae2f' codep=0x224c parp=0xae2f
+// 0xae2d: WORD 'UNK_0xae2f' codep=0x224c parp=0xae2f params=0 returns=1
 // ================================================
 
 void UNK_0xae2f() // UNK_0xae2f
@@ -24993,7 +24993,7 @@ void UNK_0xae2f() // UNK_0xae2f
 
 
 // ================================================
-// 0xae43: WORD 'UNK_0xae45' codep=0x224c parp=0xae45
+// 0xae43: WORD 'UNK_0xae45' codep=0x224c parp=0xae45 params=1 returns=0
 // ================================================
 
 void UNK_0xae45() // UNK_0xae45
@@ -25141,7 +25141,7 @@ void X0MESS() // X0MESS
 
 void _0MESS() // 0MESS
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   X0MESS(); // X0MESS
 }
 
@@ -25174,7 +25174,7 @@ void _dash_XTRAILING() // -XTRAILING
 
 
 // ================================================
-// 0xaf97: WORD 'CEX+WAX' codep=0x224c parp=0xafa3 params=0 returns=0
+// 0xaf97: WORD 'CEX+WAX' codep=0x224c parp=0xafa3
 // ================================================
 
 void CEX_plus_WAX() // CEX+WAX
@@ -25201,7 +25201,7 @@ void UNK_0xafaf() // UNK_0xafaf
 
 
 // ================================================
-// 0xafcb: WORD 'UNK_0xafcd' codep=0x224c parp=0xafcd params=0 returns=0
+// 0xafcb: WORD 'UNK_0xafcd' codep=0x224c parp=0xafcd
 // ================================================
 
 void UNK_0xafcd() // UNK_0xafcd
@@ -25212,7 +25212,7 @@ void UNK_0xafcd() // UNK_0xafcd
 
 
 // ================================================
-// 0xafd3: WORD 'UNK_0xafd5' codep=0x224c parp=0xafd5 params=0 returns=0
+// 0xafd3: WORD 'UNK_0xafd5' codep=0x224c parp=0xafd5
 // ================================================
 
 void UNK_0xafd5() // UNK_0xafd5
@@ -25223,7 +25223,7 @@ void UNK_0xafd5() // UNK_0xafd5
 
 
 // ================================================
-// 0xafdb: WORD 'UNK_0xafdd' codep=0x224c parp=0xafdd params=0 returns=0
+// 0xafdb: WORD 'UNK_0xafdd' codep=0x224c parp=0xafdd
 // ================================================
 
 void UNK_0xafdd() // UNK_0xafdd
@@ -25234,7 +25234,7 @@ void UNK_0xafdd() // UNK_0xafdd
 
 
 // ================================================
-// 0xafe3: WORD 'UNK_0xafe5' codep=0x224c parp=0xafe5 params=0 returns=0
+// 0xafe3: WORD 'UNK_0xafe5' codep=0x224c parp=0xafe5
 // ================================================
 
 void UNK_0xafe5() // UNK_0xafe5
@@ -25245,7 +25245,7 @@ void UNK_0xafe5() // UNK_0xafe5
 
 
 // ================================================
-// 0xafeb: WORD 'UNK_0xafed' codep=0x224c parp=0xafed params=1 returns=0
+// 0xafeb: WORD 'UNK_0xafed' codep=0x224c parp=0xafed
 // ================================================
 
 void UNK_0xafed() // UNK_0xafed
@@ -25258,7 +25258,7 @@ void UNK_0xafed() // UNK_0xafed
 
 
 // ================================================
-// 0xaff9: WORD 'UNK_0xaffb' codep=0x224c parp=0xaffb params=0 returns=0
+// 0xaff9: WORD 'UNK_0xaffb' codep=0x224c parp=0xaffb
 // ================================================
 
 void UNK_0xaffb() // UNK_0xaffb
@@ -25269,7 +25269,7 @@ void UNK_0xaffb() // UNK_0xaffb
 
 
 // ================================================
-// 0xb001: WORD 'UNK_0xb003' codep=0x224c parp=0xb003 params=0 returns=0
+// 0xb001: WORD 'UNK_0xb003' codep=0x224c parp=0xb003
 // ================================================
 
 void UNK_0xb003() // UNK_0xb003
@@ -25280,7 +25280,7 @@ void UNK_0xb003() // UNK_0xb003
 
 
 // ================================================
-// 0xb009: WORD 'UNK_0xb00b' codep=0x224c parp=0xb00b params=0 returns=0
+// 0xb009: WORD 'UNK_0xb00b' codep=0x224c parp=0xb00b
 // ================================================
 
 void UNK_0xb00b() // UNK_0xb00b
@@ -25291,7 +25291,7 @@ void UNK_0xb00b() // UNK_0xb00b
 
 
 // ================================================
-// 0xb011: WORD 'UNK_0xb013' codep=0x224c parp=0xb013 params=1 returns=0
+// 0xb011: WORD 'UNK_0xb013' codep=0x224c parp=0xb013
 // ================================================
 
 void UNK_0xb013() // UNK_0xb013
@@ -25322,7 +25322,7 @@ void IsNEW_dash_HO() // ?NEW-HO
 
 
 // ================================================
-// 0xb03f: WORD 'UNK_0xb041' codep=0x224c parp=0xb041 params=0 returns=0
+// 0xb03f: WORD 'UNK_0xb041' codep=0x224c parp=0xb041
 // ================================================
 
 void UNK_0xb041() // UNK_0xb041
@@ -25367,7 +25367,7 @@ void UNK_0xb049() // UNK_0xb049
   {
     Push(1);
     Push(pp_STARDATE); // STARDATE
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     UNK_0xafaf(); // UNK_0xafaf
     Push(pp_STAR_dash_HR); // STAR-HR
     OFF(); // OFF
@@ -25375,7 +25375,7 @@ void UNK_0xb049() // UNK_0xb049
   {
     Push(1);
     Push(pp_STAR_dash_HR); // STAR-HR
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
   }
   UNK_0xb041(); // UNK_0xb041
   Push(Read16(pp_IsSUP)); // ?SUP @
@@ -25429,7 +25429,7 @@ void UNK_0xb0e1() // UNK_0xb0e1
 
 
 // ================================================
-// 0xb0ef: WORD 'UNK_0xb0f1' codep=0x224c parp=0xb0f1 params=0 returns=0
+// 0xb0ef: WORD 'UNK_0xb0f1' codep=0x224c parp=0xb0f1
 // ================================================
 
 void UNK_0xb0f1() // UNK_0xb0f1
@@ -25680,7 +25680,7 @@ void LFCLAIM() // LFCLAIM
 
 
 // ================================================
-// 0xb2db: WORD 'AINSTALL' codep=0x224c parp=0xb2dd
+// 0xb2db: WORD 'AINSTALL' codep=0x224c parp=0xb2dd params=1 returns=0
 // ================================================
 
 void AINSTALL() // AINSTALL
@@ -25714,7 +25714,7 @@ void BINSTALL() // BINSTALL
 
 
 // ================================================
-// 0xb307: WORD 'AINSTALLS' codep=0x224c parp=0xb309
+// 0xb307: WORD 'AINSTALLS' codep=0x224c parp=0xb309 params=0 returns=0
 // ================================================
 
 void AINSTALLS() // AINSTALLS
@@ -25741,7 +25741,7 @@ void AINSTALLS() // AINSTALLS
 
 
 // ================================================
-// 0xb32d: WORD 'BINSTALLS' codep=0x224c parp=0xb32f params=0 returns=34
+// 0xb32d: WORD 'BINSTALLS' codep=0x224c parp=0xb32f params=0 returns=0
 // ================================================
 
 void BINSTALLS() // BINSTALLS
@@ -25935,7 +25935,7 @@ void UNK_0xb49f() // UNK_0xb49f
 
 
 // ================================================
-// 0xb4a5: WORD 'CFIGARRAYS' codep=0x224c parp=0xb4b1
+// 0xb4a5: WORD 'CFIGARRAYS' codep=0x224c parp=0xb4b1 params=0 returns=0
 // ================================================
 
 void CFIGARRAYS() // CFIGARRAYS
@@ -26456,7 +26456,7 @@ void CONDITION() // CONDITION
       Store_3(); // !_3
       Push(1);
       Push(pp_COND_dash_CNT); // COND-CNT
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
     }
   } else
   {
@@ -26836,7 +26836,7 @@ void UNK_0xbbb8() // UNK_0xbbb8
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0080?1:0); //  0x0080 =
   Push(pp_UNK_0xbba0); // UNK_0xbba0
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
   Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
@@ -26861,12 +26861,12 @@ void UNK_0xbbde() // UNK_0xbbde
   {
     Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
     Push(pp_UNK_0xbb9c); // UNK_0xbb9c
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
   } else
   {
     Push(1);
     Push(pp_UNK_0xbba4); // UNK_0xbba4
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(Read16(cc_UNK_0xbbac)); // UNK_0xbbac
     EXECUTE(); // EXECUTE
     Push(pp_UNK_0xbb9c); // UNK_0xbb9c
@@ -26946,7 +26946,7 @@ void UNK_0xbc8f() // UNK_0xbc8f
   C_ex_(); // C!
   Push(1);
   Push(pp_LSCAN); // LSCAN
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 

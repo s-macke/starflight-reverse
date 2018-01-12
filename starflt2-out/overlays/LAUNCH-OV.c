@@ -183,7 +183,7 @@ void UNK_0xf0fa() // UNK_0xf0fa
 
 
 // ================================================
-// 0xf10a: WORD 'UNK_0xf10c' codep=0x224c parp=0xf10c
+// 0xf10a: WORD 'UNK_0xf10c' codep=0x224c parp=0xf10c params=0 returns=0
 // ================================================
 
 void UNK_0xf10c() // UNK_0xf10c
@@ -290,7 +290,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
 
 void UNK_0xf1b6() // UNK_0xf1b6
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf1a6(); // UNK_0xf1a6
@@ -362,12 +362,12 @@ void UNK_0xf202() // UNK_0xf202
 void DrawAIRLOCK() // .AIRLOCK
 {
   _gt_MAINVI(); // >MAINVI
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(YELLOW);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(YELLOW);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -618,7 +618,7 @@ void _and_RETURN() // &RETURN
   SET_STR_AS_PARAM("CLOSING");
   UNK_0xf390(); // UNK_0xf390
   DrawAIRLOCK(); // .AIRLOCK
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(Read16(cc_FALSE)); // FALSE
   if (Pop() != 0)

@@ -185,7 +185,7 @@ void UNK_0xf07a() // UNK_0xf07a
 
 
 // ================================================
-// 0xf08a: WORD 'UNK_0xf08c' codep=0x224c parp=0xf08c
+// 0xf08a: WORD 'UNK_0xf08c' codep=0x224c parp=0xf08c params=0 returns=0
 // ================================================
 
 void UNK_0xf08c() // UNK_0xf08c
@@ -197,7 +197,7 @@ void UNK_0xf08c() // UNK_0xf08c
 
 
 // ================================================
-// 0xf098: WORD 'COUNTDOWN' codep=0x224c parp=0xf09a
+// 0xf098: WORD 'COUNTDOWN' codep=0x224c parp=0xf09a params=0 returns=8
 // ================================================
 
 void COUNTDOWN() // COUNTDOWN
@@ -298,12 +298,12 @@ void UNK_0xf152() // UNK_0xf152
 
 
 // ================================================
-// 0xf160: WORD 'UNK_0xf162' codep=0x224c parp=0xf162
+// 0xf160: WORD 'UNK_0xf162' codep=0x224c parp=0xf162 params=1 returns=0
 // ================================================
 
 void UNK_0xf162() // UNK_0xf162
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
   UNK_0xf152(); // UNK_0xf152
@@ -342,7 +342,7 @@ void UNK_0xf162() // UNK_0xf162
 
 
 // ================================================
-// 0xf1be: WORD 'UNK_0xf1c0' codep=0x224c parp=0xf1c0
+// 0xf1be: WORD 'UNK_0xf1c0' codep=0x224c parp=0xf1c0 params=1 returns=0
 // ================================================
 
 void UNK_0xf1c0() // UNK_0xf1c0
@@ -362,7 +362,7 @@ void UNK_0xf1c0() // UNK_0xf1c0
 
 
 // ================================================
-// 0xf1dc: WORD 'UNK_0xf1de' codep=0x224c parp=0xf1de
+// 0xf1dc: WORD 'UNK_0xf1de' codep=0x224c parp=0xf1de params=1 returns=0
 // ================================================
 
 void UNK_0xf1de() // UNK_0xf1de
@@ -394,12 +394,12 @@ void UNK_0xf1de() // UNK_0xf1de
 void DrawAIRLOCK() // .AIRLOCK
 {
   _gt_MAINVIEW(); // >MAINVIEW
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
-  SetColor(BLACK);
-  SetColor(BLACK);
-  SetColor(YELLOW);
+  GetColor(BLACK);
+  GetColor(BLACK);
+  GetColor(YELLOW);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
@@ -535,7 +535,7 @@ void PORTLEAVE() // PORTLEAVE
 
 
 // ================================================
-// 0xf391: WORD 'UNK_0xf393' codep=0x224c parp=0xf393
+// 0xf391: WORD 'UNK_0xf393' codep=0x224c parp=0xf393 params=0 returns=4
 // ================================================
 
 void UNK_0xf393() // UNK_0xf393
@@ -650,7 +650,7 @@ void _and_RETURN() // &RETURN
   SET_STR_AS_PARAM("CLOSING");
   PORTLEAVE(); // PORTLEAVE
   DrawAIRLOCK(); // .AIRLOCK
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   Push(Read16(pp_IsEGA)==0?1:0); // ?EGA @ 0=
   if (Pop() != 0)

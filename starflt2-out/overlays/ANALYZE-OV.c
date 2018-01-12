@@ -369,7 +369,7 @@ void UNK_0xed4d() // UNK_0xed4d
 
 void UNK_0xed5a() // UNK_0xed5a
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
@@ -414,7 +414,7 @@ void UNK_0xed9f() // UNK_0xed9f
 {
   GetINST_dash_C(); // @INST-C
   Push(Pop() & !(Pop()==0x003c?1:0)); //   0x003c = NOT AND
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
@@ -517,7 +517,7 @@ void UNK_0xee9b() // UNK_0xee9b
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -779,7 +779,7 @@ void UNK_0xf0b5() // UNK_0xf0b5
   Push(0x0014);
   Push(1);
   CTPOS_dot_(); // CTPOS.
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT

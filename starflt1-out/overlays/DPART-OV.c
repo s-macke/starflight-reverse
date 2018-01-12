@@ -179,16 +179,16 @@ void UNK_0xef73() // UNK_0xef73
     Push(Read16(cc_UNK_0xef66)); // UNK_0xef66
     TONE(); // TONE
     BEEPON(); // BEEPON
-    SetColor(DK_dash_BLUE);
+    GetColor(DK_dash_BLUE);
     StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
     V_gt_DISPLAY(); // V>DISPLAY
     Push(0x00c8);
     MS(); // MS
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
     StoreCOLOR(); // !COLOR
     BFILL(); // BFILL
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
     Push(0x000c);
     Push(0x0064);
@@ -259,7 +259,7 @@ void UNK_0xf026() // UNK_0xf026
   HUFF_gt_(); // HUFF>
   Push(pp_LSCAN); // LSCAN
   COUNT(); // COUNT
-  SetColor(WHITE);
+  GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_3(); // !_3
   Push(0xc216); // probable 'P>CT'
@@ -440,7 +440,7 @@ void UNK_0xf158() // UNK_0xf158
 
 
 // ================================================
-// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166 params=3 returns=0
+// 0xf164: WORD 'UNK_0xf166' codep=0x224c parp=0xf166
 // ================================================
 
 void UNK_0xf166() // UNK_0xf166
@@ -485,7 +485,7 @@ void UNK_0xf166() // UNK_0xf166
 
 
 // ================================================
-// 0xf1aa: WORD 'UNK_0xf1ac' codep=0x224c parp=0xf1ac params=3 returns=0
+// 0xf1aa: WORD 'UNK_0xf1ac' codep=0x224c parp=0xf1ac
 // ================================================
 
 void UNK_0xf1ac() // UNK_0xf1ac
@@ -580,16 +580,16 @@ void UNK_0xf25e() // UNK_0xf25e
   imax = Pop();
   do // (DO)
   {
-    SetColor(BLACK);
-    SetColor(ORANGE);
-    SetColor(RED);
-    SetColor(ORANGE);
-    SetColor(YELLOW);
-    SetColor(ORANGE);
-    SetColor(YELLOW);
-    SetColor(WHITE);
-    SetColor(YELLOW);
-    SetColor(WHITE);
+    GetColor(BLACK);
+    GetColor(ORANGE);
+    GetColor(RED);
+    GetColor(ORANGE);
+    GetColor(YELLOW);
+    GetColor(ORANGE);
+    GetColor(YELLOW);
+    GetColor(WHITE);
+    GetColor(YELLOW);
+    GetColor(WHITE);
     Push(0x000a);
     Push(0);
 
@@ -768,7 +768,7 @@ void UNK_0xf426() // UNK_0xf426
 
 
 // ================================================
-// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430 params=0 returns=0
+// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430
 // ================================================
 
 void UNK_0xf430() // UNK_0xf430

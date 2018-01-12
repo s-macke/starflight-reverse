@@ -308,7 +308,7 @@ void RRND(); // RRND
 void SQRT(); // SQRT
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _2_ex_(); // 2!
 void StoreD(); // D!
 void ON_3(); // ON_3
@@ -480,7 +480,7 @@ void UNK_0xdd46() // UNK_0xdd46
 
 
 // ================================================
-// 0xdd4c: WORD 'UNK_0xdd4e' codep=0x224c parp=0xdd4e
+// 0xdd4c: WORD 'UNK_0xdd4e' codep=0x224c parp=0xdd4e params=0 returns=1
 // ================================================
 
 void UNK_0xdd4e() // UNK_0xdd4e
@@ -492,7 +492,7 @@ void UNK_0xdd4e() // UNK_0xdd4e
 
 
 // ================================================
-// 0xdd58: WORD 'UNK_0xdd5a' codep=0x224c parp=0xdd5a
+// 0xdd58: WORD 'UNK_0xdd5a' codep=0x224c parp=0xdd5a params=0 returns=1
 // ================================================
 
 void UNK_0xdd5a() // UNK_0xdd5a
@@ -782,7 +782,7 @@ void UNK_0xde81() // UNK_0xde81
 
 
 // ================================================
-// 0xde99: WORD 'UNK_0xde9b' codep=0x224c parp=0xde9b
+// 0xde99: WORD 'UNK_0xde9b' codep=0x224c parp=0xde9b params=0 returns=0
 // ================================================
 
 void UNK_0xde9b() // UNK_0xde9b
@@ -798,7 +798,7 @@ void UNK_0xde9b() // UNK_0xde9b
 
 
 // ================================================
-// 0xdea9: WORD 'UNK_0xdeab' codep=0x224c parp=0xdeab
+// 0xdea9: WORD 'UNK_0xdeab' codep=0x224c parp=0xdeab params=0 returns=1
 // ================================================
 
 void UNK_0xdeab() // UNK_0xdeab
@@ -983,7 +983,7 @@ void UNK_0xdf72() // UNK_0xdf72
 
 
 // ================================================
-// 0xdf8a: WORD 'UNK_0xdf8c' codep=0x224c parp=0xdf8c
+// 0xdf8a: WORD 'UNK_0xdf8c' codep=0x224c parp=0xdf8c params=0 returns=1
 // ================================================
 
 void UNK_0xdf8c() // UNK_0xdf8c
@@ -1105,7 +1105,7 @@ void UNK_0xe00f() // UNK_0xe00f
 
 
 // ================================================
-// 0xe017: WORD 'UNK_0xe019' codep=0x224c parp=0xe019
+// 0xe017: WORD 'UNK_0xe019' codep=0x224c parp=0xe019 params=0 returns=1
 // ================================================
 
 void UNK_0xe019() // UNK_0xe019
@@ -1171,7 +1171,7 @@ void UNK_0xe055() // UNK_0xe055
 
 
 // ================================================
-// 0xe05f: WORD 'UNK_0xe061' codep=0x224c parp=0xe061 orphan
+// 0xe05f: WORD 'UNK_0xe061' codep=0x224c parp=0xe061 orphan params=0 returns=1
 // ================================================
 
 void UNK_0xe061() // UNK_0xe061
@@ -1704,10 +1704,10 @@ void UNK_0xe4e8() // UNK_0xe4e8
   Push((Read16(Pop())&0xFF)==Read16(cc_UNK_0xe207)?1:0); //  C@ UNK_0xe207 =
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
     return;
   }
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
 }
 
 
@@ -1745,7 +1745,7 @@ void UNK_0xe500() // UNK_0xe500
     i++;
   } while(i<imax); // (LOOP)
 
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -1881,10 +1881,10 @@ void UNK_0xe5dc() // UNK_0xe5dc
   Push(Read16(pp_IsNEB)); // ?NEB @
   if (Pop() != 0)
   {
-    SetColor(DK_dash_GREEN);
+    GetColor(DK_dash_GREEN);
   } else
   {
-    SetColor(BLACK);
+    GetColor(BLACK);
   }
   StoreCOLOR(); // !COLOR
   BFILL(); // BFILL
@@ -1976,7 +1976,7 @@ void UNK_0xe624() // UNK_0xe624
 // 0xe65c: dw 0x0000
 
 // ================================================
-// 0xe65e: WORD 'UNK_0xe660' codep=0x224c parp=0xe660
+// 0xe65e: WORD 'UNK_0xe660' codep=0x224c parp=0xe660 params=0 returns=0
 // ================================================
 
 void UNK_0xe660() // UNK_0xe660
@@ -1985,7 +1985,7 @@ void UNK_0xe660() // UNK_0xe660
   Push(0x0064);
   Push(0x03e8);
   Push(Read16(pp_COLOR)); // COLOR @
-  SetColor(RED);
+  GetColor(RED);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop() * 2 - 1); //  2* 1-
@@ -2216,7 +2216,7 @@ void UNK_0xe798() // UNK_0xe798
         {
           Push(1);
           Push(pp_UNK_0xe6b0); // UNK_0xe6b0
-          _plus__ex_(); // +!
+          _plus__ex__2(); // +!_2
         }
       }
     }
@@ -2506,7 +2506,7 @@ void UNK_0xe97d() // UNK_0xe97d
     UNK_0xe72c(); // UNK_0xe72c
     Push(-1);
     Push(pp_UNK_0xe6b0); // UNK_0xe6b0
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     i++;
   } while(i<imax); // (LOOP)
 
@@ -2974,9 +2974,9 @@ void UNK_0xecea() // UNK_0xecea
   _2DUP(); // 2DUP
   a = Pop(); // >R
   b = Pop(); // >R
-  SetColor(RED);
+  GetColor(RED);
   UNK_0xea81(); // UNK_0xea81
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(b); // R>
   Push(a); // R>
@@ -3059,7 +3059,7 @@ void UNK_0xed86() // UNK_0xed86
 
 
 // ================================================
-// 0xed98: WORD 'UNK_0xed9a' codep=0x224c parp=0xed9a
+// 0xed98: WORD 'UNK_0xed9a' codep=0x224c parp=0xed9a params=1 returns=0
 // ================================================
 
 void UNK_0xed9a() // UNK_0xed9a
@@ -3355,7 +3355,7 @@ void UNK_0xef08() // UNK_0xef08
   if (Pop() == 0) return;
   Push(5);
   LoadData(UNK_0xdd98); // from 'VESSEL'
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -3369,7 +3369,7 @@ void UNK_0xef20() // UNK_0xef20
   if (Pop() == 0) return;
   Push(0x0014);
   Push(0x63ef+UNK_0xde1b.offset); // UNK_0xde1b<IFIELD>
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -3465,7 +3465,7 @@ void UNK_0xf00e() // UNK_0xf00e
 
 
 // ================================================
-// 0xf018: WORD 'UNK_0xf01a' codep=0x224c parp=0xf01a params=6 returns=0
+// 0xf018: WORD 'UNK_0xf01a' codep=0x224c parp=0xf01a
 // ================================================
 
 void UNK_0xf01a() // UNK_0xf01a
@@ -3486,7 +3486,7 @@ void UNK_0xf01a() // UNK_0xf01a
 
 
 // ================================================
-// 0xf03c: WORD 'UNK_0xf03e' codep=0x224c parp=0xf03e params=6 returns=0
+// 0xf03c: WORD 'UNK_0xf03e' codep=0x224c parp=0xf03e
 // ================================================
 
 void UNK_0xf03e() // UNK_0xf03e
@@ -3544,7 +3544,7 @@ void UNK_0xf080() // UNK_0xf080
 
 
 // ================================================
-// 0xf088: WORD 'UNK_0xf08a' codep=0x224c parp=0xf08a params=6 returns=0
+// 0xf088: WORD 'UNK_0xf08a' codep=0x224c parp=0xf08a
 // ================================================
 
 void UNK_0xf08a() // UNK_0xf08a
@@ -3575,7 +3575,7 @@ void UNK_0xf08a() // UNK_0xf08a
 // 0xf0b0: db 0x56 0x3a 0x20 0x20 'V:  '
 
 // ================================================
-// 0xf0b4: WORD 'UNK_0xf0b6' codep=0x224c parp=0xf0b6
+// 0xf0b4: WORD 'UNK_0xf0b6' codep=0x224c parp=0xf0b6 params=1 returns=2
 // ================================================
 
 void UNK_0xf0b6() // UNK_0xf0b6
@@ -3710,7 +3710,7 @@ void UNK_0xf17e() // UNK_0xf17e
 
 void UNK_0xf18c() // UNK_0xf18c
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("NO TARGET PRESENT");
   DrawTTY(); // .TTY
@@ -3764,7 +3764,7 @@ void UNK_0xf1dc() // UNK_0xf1dc
   Push(pp_UNK_0xde4f); // UNK_0xde4f
   _2_ex_(); // 2!
   VCLIPSET(); // VCLIPSET
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   UNK_0xea81(); // UNK_0xea81
   DCLIPSET(); // DCLIPSET
   Push(pp_UNK_0xde4f); // UNK_0xde4f
@@ -3795,14 +3795,14 @@ void UNK_0xf208() // UNK_0xf208
     POINT_gt_ICON(); // POINT>ICON
     _2DUP(); // 2DUP
     Push(pp_XABS); // XABS
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(pp_YABS); // YABS
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     _2DUP(); // 2DUP
     Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(0x63ef+INST_dash_Y.offset); // INST-Y<IFIELD>
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     GetIX(); // @IX
     Push(Pop() + Pop()); // +
     StoreIX(); // !IX
@@ -3856,7 +3856,7 @@ void UNK_0xf240() // UNK_0xf240
           UNK_0xf1dc(); // UNK_0xf1dc
         } else
         {
-          SetColor(WHITE);
+          GetColor(WHITE);
           StoreCOLOR(); // !COLOR
           SET_STR_AS_PARAM("WEAPON NOT AVAILABLE");
           DrawTTY(); // .TTY
@@ -3870,7 +3870,7 @@ void UNK_0xf240() // UNK_0xf240
   goto label7;
 
   label2:
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("WEAPONS NOT ARMED ");
   DrawTTY(); // .TTY
@@ -3879,7 +3879,7 @@ void UNK_0xf240() // UNK_0xf240
   return;
 
   label1:
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("OUT OF FUEL! ");
   DrawTTY(); // .TTY
@@ -3944,7 +3944,7 @@ void UNK_0xf2f4() // UNK_0xf2f4
 
 
 // ================================================
-// 0xf350: WORD 'UNK_0xf352' codep=0x224c parp=0xf352 params=6 returns=0
+// 0xf350: WORD 'UNK_0xf352' codep=0x224c parp=0xf352
 // ================================================
 
 void UNK_0xf352() // UNK_0xf352
@@ -4058,7 +4058,7 @@ void UNK_0xf414() // UNK_0xf414
   _gt_MAINVIEW(); // >MAINVIEW
   UNK_0xe5dc(); // UNK_0xe5dc
   _gt_DISPLAY(); // >DISPLAY
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("HIT SPACE BAR TO FIRE WEAPON");
   DrawTTY(); // .TTY

@@ -337,12 +337,12 @@ void UNK_0xeddd() // UNK_0xeddd
 {
   POS_dot_(); // POS.
   Push(0x000d);
-  SetColor(GREY1);
+  GetColor(GREY1);
   POLY_dash_ER(); // POLY-ER
   _gt_1FONT(); // >1FONT
-  SetColor(BLACK);
-  SetColor(GREY2);
-  SetColor(DK_dash_BLUE);
+  GetColor(BLACK);
+  GetColor(GREY2);
+  GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
 }
@@ -382,7 +382,7 @@ void UNK_0xee0b() // UNK_0xee0b
 
 
 // ================================================
-// 0xee13: WORD 'UNK_0xee15' codep=0x224c parp=0xee15
+// 0xee13: WORD 'UNK_0xee15' codep=0x224c parp=0xee15 params=0 returns=1
 // ================================================
 
 void UNK_0xee15() // UNK_0xee15
@@ -394,7 +394,7 @@ void UNK_0xee15() // UNK_0xee15
 
 
 // ================================================
-// 0xee1d: WORD 'UNK_0xee1f' codep=0x224c parp=0xee1f
+// 0xee1d: WORD 'UNK_0xee1f' codep=0x224c parp=0xee1f params=2 returns=1
 // ================================================
 
 void UNK_0xee1f() // UNK_0xee1f
@@ -563,7 +563,7 @@ void UNK_0xef07() // UNK_0xef07
 
 void UNK_0xef31() // UNK_0xef31
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   ERASE_dash_A(); // ERASE-A
 }
 
@@ -610,13 +610,13 @@ void _ro_GET_dash_AU() // (GET-AU
 
 void UNK_0xef65() // UNK_0xef65
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   _ro_SHIP_dash_C(); // (SHIP-C
   Push(Read16(pp__n_AUX)); // #AUX @
   _ro_GET_dash_AU(); // (GET-AU case
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   UNK_0xeee3(); // UNK_0xeee3
-  SetColor(BLUE);
+  GetColor(BLUE);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawHIGHLI(); // .HIGHLI
 }
@@ -650,13 +650,13 @@ void UNK_0xefb2() // UNK_0xefb2
   _gt_DISPLA(); // >DISPLA
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0025);
   Push(0x0085);
   POS_dot_(); // POS.
   Push(2);
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_ER(); // POLY-ER
   Push(0x0063);
   MIN(); // MIN
@@ -723,19 +723,19 @@ void UNK_0xf018() // UNK_0xf018
   _gt_MAINVI(); // >MAINVI
   DARK(); // DARK
   Push(6);
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   UNK_0xf010(); // UNK_0xf010
   Push(0x000b);
-  SetColor(GREEN);
+  GetColor(GREEN);
   UNK_0xf010(); // UNK_0xf010
   Push(0x0010);
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   UNK_0xf010(); // UNK_0xf010
   Push(0x0015);
-  SetColor(ORANGE);
+  GetColor(ORANGE);
   UNK_0xf010(); // UNK_0xf010
   Push(0x001a);
-  SetColor(RED);
+  GetColor(RED);
   UNK_0xf010(); // UNK_0xf010
   V_gt_DISPL(); // V>DISPL
 }
@@ -1019,7 +1019,7 @@ void UNK_0xf18c() // UNK_0xf18c
 
 
 // ================================================
-// 0xf1c6: WORD 'UNK_0xf1c8' codep=0x224c parp=0xf1c8
+// 0xf1c6: WORD 'UNK_0xf1c8' codep=0x224c parp=0xf1c8 params=0 returns=0
 // ================================================
 
 void UNK_0xf1c8() // UNK_0xf1c8
@@ -1052,7 +1052,7 @@ void UNK_0xf1e4() // UNK_0xf1e4
 
 
 // ================================================
-// 0xf1fc: WORD 'UNK_0xf1fe' codep=0x224c parp=0xf1fe
+// 0xf1fc: WORD 'UNK_0xf1fe' codep=0x224c parp=0xf1fe params=2 returns=2
 // ================================================
 
 void UNK_0xf1fe() // UNK_0xf1fe
@@ -1074,7 +1074,7 @@ void UNK_0xf1fe() // UNK_0xf1fe
 
 
 // ================================================
-// 0xf220: WORD 'UNK_0xf222' codep=0x224c parp=0xf222
+// 0xf220: WORD 'UNK_0xf222' codep=0x224c parp=0xf222 params=0 returns=0
 // ================================================
 
 void UNK_0xf222() // UNK_0xf222
@@ -1201,7 +1201,7 @@ void UNK_0xf26a() // UNK_0xf26a
 
 
 // ================================================
-// 0xf312: WORD 'UNK_0xf314' codep=0x224c parp=0xf314 params=3 returns=0
+// 0xf312: WORD 'UNK_0xf314' codep=0x224c parp=0xf314
 // ================================================
 
 void UNK_0xf314() // UNK_0xf314
@@ -1252,7 +1252,7 @@ void UNK_0xf314() // UNK_0xf314
 
 
 // ================================================
-// 0xf37e: WORD 'UNK_0xf380' codep=0x224c parp=0xf380
+// 0xf37e: WORD 'UNK_0xf380' codep=0x224c parp=0xf380 params=0 returns=0
 // ================================================
 
 void UNK_0xf380() // UNK_0xf380
@@ -1391,7 +1391,7 @@ void UNK_0xf440() // UNK_0xf440
 
 void UNK_0xf464() // UNK_0xf464
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x6c69); Push(0x0002);
   UNK_0xee31(); // UNK_0xee31
@@ -1429,7 +1429,7 @@ void UNK_0xf482() // UNK_0xf482
     POS_dot_(); // POS.
     _gt_DISPLA(); // >DISPLA
     Push(2);
-    SetColor(BLACK);
+    GetColor(BLACK);
     POLY_dash_ER(); // POLY-ER
     Push(0x0064);
     MS(); // MS

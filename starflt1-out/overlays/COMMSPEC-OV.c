@@ -138,7 +138,7 @@ void KEY_2(); // KEY_2
 void RRND(); // RRND
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -389,7 +389,7 @@ void UNK_0xeaee() // UNK_0xeaee
   _st_(); // <
   if (Pop() != 0)
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
     DrawON(); // .ON
     CTINIT(); // CTINIT
@@ -411,7 +411,7 @@ void UNK_0xeaee() // UNK_0xeaee
   {
     Pop(); // DROP
   }
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawON(); // .ON
 }
@@ -535,7 +535,7 @@ void UNK_0xebc4() // UNK_0xebc4
 // 0xebce: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xebd0: WORD 'UNK_0xebd2' codep=0x224c parp=0xebd2 params=3 returns=1
+// 0xebd0: WORD 'UNK_0xebd2' codep=0x224c parp=0xebd2
 // ================================================
 
 void UNK_0xebd2() // UNK_0xebd2
@@ -550,7 +550,7 @@ void UNK_0xebd2() // UNK_0xebd2
 
 
 // ================================================
-// 0xebe4: WORD 'UNK_0xebe6' codep=0x224c parp=0xebe6 params=5 returns=1
+// 0xebe4: WORD 'UNK_0xebe6' codep=0x224c parp=0xebe6
 // ================================================
 
 void UNK_0xebe6() // UNK_0xebe6
@@ -589,7 +589,7 @@ void UNK_0xebe6() // UNK_0xebe6
 
 
 // ================================================
-// 0xec22: WORD 'UNK_0xec24' codep=0x224c parp=0xec24 params=7 returns=0
+// 0xec22: WORD 'UNK_0xec24' codep=0x224c parp=0xec24
 // ================================================
 
 void UNK_0xec24() // UNK_0xec24
@@ -626,7 +626,7 @@ void UNK_0xec36() // UNK_0xec36
 
 
 // ================================================
-// 0xec4c: WORD 'UNK_0xec4e' codep=0x224c parp=0xec4e params=8 returns=0
+// 0xec4c: WORD 'UNK_0xec4e' codep=0x224c parp=0xec4e
 // ================================================
 
 void UNK_0xec4e() // UNK_0xec4e
@@ -634,7 +634,7 @@ void UNK_0xec4e() // UNK_0xec4e
   UNK_0xec24(); // UNK_0xec24
   Push(-Pop()); //  NEGATE
   Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   _0_gt_(); // 0>
   Push(!Pop()); //  NOT
@@ -752,7 +752,7 @@ void UNK_0xecce() // UNK_0xecce
     SWAP(); // SWAP
     C_ex_(); // C!
     Push(Pop() + 1); //  1+
-    SetColor(BLUE);
+    GetColor(BLUE);
     StoreCOLOR(); // !COLOR
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     Push(0x000a);
@@ -801,7 +801,7 @@ void UNK_0xecce() // UNK_0xecce
     i++;
   } while(i<imax); // (LOOP)
 
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x11a4); Push(0x0002);
   UNK_0xea8e(); // UNK_0xea8e
@@ -1143,7 +1143,7 @@ void UNK_0xf006() // UNK_0xf006
 
 
 // ================================================
-// 0xf010: WORD 'UNK_0xf012' codep=0x224c parp=0xf012 params=3 returns=0
+// 0xf010: WORD 'UNK_0xf012' codep=0x224c parp=0xf012
 // ================================================
 
 void UNK_0xf012() // UNK_0xf012
@@ -1401,7 +1401,7 @@ void UNK_0xf1c6() // UNK_0xf1c6
 
 
 // ================================================
-// 0xf1d0: WORD 'UNK_0xf1d2' codep=0x224c parp=0xf1d2 params=3 returns=0
+// 0xf1d0: WORD 'UNK_0xf1d2' codep=0x224c parp=0xf1d2
 // ================================================
 
 void UNK_0xf1d2() // UNK_0xf1d2
@@ -1542,7 +1542,7 @@ void UNK_0xf2aa() // UNK_0xf2aa
 
 
 // ================================================
-// 0xf310: WORD 'UNK_0xf312' codep=0x224c parp=0xf312 params=3 returns=0
+// 0xf310: WORD 'UNK_0xf312' codep=0x224c parp=0xf312
 // ================================================
 
 void UNK_0xf312() // UNK_0xf312
@@ -1643,9 +1643,9 @@ void UNK_0xf3a2() // UNK_0xf3a2
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
-    SetColor(YELLOW);
+    GetColor(YELLOW);
     Push(0x4f0c); // probable 'BLACK'
     Store_3(); // !_3
     CTERASE(); // CTERASE

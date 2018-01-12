@@ -100,7 +100,7 @@ void UNK_0xf2c6() // UNK_0xf2c6
 
 
 // ================================================
-// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8 params=3 returns=2
+// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8
 // ================================================
 
 void UNK_0xf2d8() // UNK_0xf2d8

@@ -340,7 +340,7 @@ const unsigned short int pp_FUNCTIONS = 0xf052; // FUNCTIONS size: 25
 // 0xe482: db 0x0f 0x01 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x4c 0x7e 0x90 0x16 0x4c 0x22 0xed 0x22 0x7f 0x3b 0x8c 0x21 0x32 0x6d 0x90 0x16 '  L"  >         L"  L~  L" "; !2m  '
 
 // ================================================
-// 0xe4a6: WORD 'UNK_0xe4a8' codep=0x224c parp=0xe4a8
+// 0xe4a6: WORD 'UNK_0xe4a8' codep=0x224c parp=0xe4a8 params=0 returns=1
 // ================================================
 
 void UNK_0xe4a8() // UNK_0xe4a8
@@ -352,7 +352,7 @@ void UNK_0xe4a8() // UNK_0xe4a8
 
 
 // ================================================
-// 0xe4b0: WORD 'UNK_0xe4b2' codep=0x224c parp=0xe4b2
+// 0xe4b0: WORD 'UNK_0xe4b2' codep=0x224c parp=0xe4b2 params=0 returns=1
 // ================================================
 
 void UNK_0xe4b2() // UNK_0xe4b2
@@ -382,7 +382,7 @@ void UNK_0xe4c6() // UNK_0xe4c6
   Push(0);
   Push(0);
   CTPOS_dot_(); // CTPOS.
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -430,7 +430,7 @@ void UNK_0xe4f8() // UNK_0xe4f8
 
 
 // ================================================
-// 0xe4fe: WORD 'UNK_0xe500' codep=0x224c parp=0xe500
+// 0xe4fe: WORD 'UNK_0xe500' codep=0x224c parp=0xe500 params=1 returns=1
 // ================================================
 
 void UNK_0xe500() // UNK_0xe500
@@ -458,7 +458,7 @@ void UNK_0xe514() // UNK_0xe514
 
 
 // ================================================
-// 0xe51a: WORD 'UNK_0xe51c' codep=0x224c parp=0xe51c orphan params=0 returns=3
+// 0xe51a: WORD 'UNK_0xe51c' codep=0x224c parp=0xe51c orphan
 // ================================================
 
 void UNK_0xe51c() // UNK_0xe51c
@@ -1191,7 +1191,7 @@ void UNK_0xe8c9() // UNK_0xe8c9
 
 
 // ================================================
-// 0xe8e1: WORD 'UNK_0xe8e3' codep=0x224c parp=0xe8e3
+// 0xe8e1: WORD 'UNK_0xe8e3' codep=0x224c parp=0xe8e3 params=0 returns=2
 // ================================================
 
 void UNK_0xe8e3() // UNK_0xe8e3
@@ -1289,7 +1289,7 @@ void UNK_0xe947() // UNK_0xe947
 
 
 // ================================================
-// 0xe96d: WORD 'UNK_0xe96f' codep=0x224c parp=0xe96f
+// 0xe96d: WORD 'UNK_0xe96f' codep=0x224c parp=0xe96f params=0 returns=1
 // ================================================
 
 void UNK_0xe96f() // UNK_0xe96f
@@ -1396,7 +1396,7 @@ void UNK_0xea01() // UNK_0xea01
 
 
 // ================================================
-// 0xea29: WORD 'UNK_0xea2b' codep=0x224c parp=0xea2b
+// 0xea29: WORD 'UNK_0xea2b' codep=0x224c parp=0xea2b params=0 returns=2
 // ================================================
 
 void UNK_0xea2b() // UNK_0xea2b
@@ -1446,7 +1446,7 @@ void UNK_0xea45() // UNK_0xea45
 
 
 // ================================================
-// 0xea84: WORD 'UNK_0xea86' codep=0x224c parp=0xea86
+// 0xea84: WORD 'UNK_0xea86' codep=0x224c parp=0xea86 params=0 returns=0
 // ================================================
 
 void UNK_0xea86() // UNK_0xea86
@@ -1506,7 +1506,7 @@ void UNK_0xeac4() // UNK_0xeac4
   UNK_0xeab6(); // UNK_0xeab6
   UNK_0xe4ec(); // UNK_0xe4ec
   UNK_0xeab6(); // UNK_0xeab6
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   _1PIX(); // 1PIX
   LLINE(); // LLINE
@@ -1979,7 +1979,7 @@ void UNK_0xed40() // UNK_0xed40
 
 
 // ================================================
-// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c
+// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=0 returns=1
 // ================================================
 
 void UNK_0xed5c() // UNK_0xed5c
@@ -2747,10 +2747,10 @@ void UNK_0xf289() // UNK_0xf289
   Push(Read16(pp_IsFLAT)); // ?FLAT @
   if (Pop() != 0)
   {
-    SetColor(PINK);
+    GetColor(PINK);
   } else
   {
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
   }
   a = Pop(); // >R
   Push(Read16(a)); // R@
@@ -2857,7 +2857,7 @@ void UNK_0xf354() // UNK_0xf354
   _star_CLOSE(); // *CLOSE
   GetCOLOR(); // @COLOR
   a = Pop(); // >R
-  SetColor(PINK);
+  GetColor(PINK);
   StoreCOLOR(); // !COLOR
   Push(0xbe55); // probable '.AHUF'
   MODULE(); // MODULE
@@ -3074,7 +3074,7 @@ void UNK_0xf500() // UNK_0xf500
   UNK_0xe552(); // UNK_0xe552
   DrawVIT(); // .VIT
   TV_dash_TASKS(); // TV-TASKS
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(pp_LCOLOR); // LCOLOR
   Store_2(); // !_2
   UNK_0xf2d5(); // UNK_0xf2d5

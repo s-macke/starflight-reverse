@@ -61,7 +61,7 @@ const unsigned short int pp_UNK_0xf38a = 0xf38a; // UNK_0xf38a size: 2
 // 0xf342: db 0x21 0x00 '! '
 
 // ================================================
-// 0xf344: WORD 'UNK_0xf346' codep=0x224c parp=0xf346
+// 0xf344: WORD 'UNK_0xf346' codep=0x224c parp=0xf346 params=0 returns=0
 // ================================================
 
 void UNK_0xf346() // UNK_0xf346
@@ -84,7 +84,7 @@ void UNK_0xf346() // UNK_0xf346
 // 0xf38a: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf38c: WORD 'UNK_0xf38e' codep=0x224c parp=0xf38e
+// 0xf38c: WORD 'UNK_0xf38e' codep=0x224c parp=0xf38e params=2 returns=1
 // ================================================
 
 void UNK_0xf38e() // UNK_0xf38e
@@ -99,7 +99,7 @@ void UNK_0xf38e() // UNK_0xf38e
 
 
 // ================================================
-// 0xf39e: WORD 'UNK_0xf3a0' codep=0x224c parp=0xf3a0
+// 0xf39e: WORD 'UNK_0xf3a0' codep=0x224c parp=0xf3a0 params=1 returns=0
 // ================================================
 
 void UNK_0xf3a0() // UNK_0xf3a0
@@ -144,7 +144,7 @@ void UNK_0xf3a0() // UNK_0xf3a0
 
 
 // ================================================
-// 0xf404: WORD 'UNK_0xf406' codep=0x224c parp=0xf406
+// 0xf404: WORD 'UNK_0xf406' codep=0x224c parp=0xf406 params=0 returns=0
 // ================================================
 
 void UNK_0xf406() // UNK_0xf406
@@ -169,7 +169,7 @@ void UNK_0xf406() // UNK_0xf406
 
 
 // ================================================
-// 0xf41e: WORD 'UNK_0xf420' codep=0x224c parp=0xf420
+// 0xf41e: WORD 'UNK_0xf420' codep=0x224c parp=0xf420 params=1 returns=1
 // ================================================
 
 void UNK_0xf420() // UNK_0xf420
@@ -252,7 +252,7 @@ void FLUX() // FLUX
   Push(pp_UNK_0xf38a); // UNK_0xf38a
   ON_2(); // ON_2
   UNK_0xf406(); // UNK_0xf406
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   Push(0);
   TONE(); // TONE

@@ -171,7 +171,7 @@ void D_gt_(); // D>
 void WITHIN(); // WITHIN
 void C_ex_(); // C!
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void _1_dot_5_ex_(); // 1.5!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -354,10 +354,10 @@ void UNK_0xe2fa() // UNK_0xe2fa
   Push(Read16(pp_IsEGA)); // ?EGA @
   if (Pop() != 0)
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
     return;
   }
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
 }
 
 
@@ -402,7 +402,7 @@ void UNK_0xe32c() // UNK_0xe32c
 {
   unsigned short int a;
   Push(Read16(pp_IsTD)); // ?TD @
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(Pop() * Pop()); // *
   a = Pop(); // >R
   Push(0);
@@ -437,7 +437,7 @@ void UNK_0xe346() // UNK_0xe346
 void UNK_0xe36f() // UNK_0xe36f
 {
   Push(0x0012);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x0064);
   Push(0x002c);
   POS_dot_PXT(); // POS.PXT
@@ -538,7 +538,7 @@ void UNK_0xe3e0() // UNK_0xe3e0
 {
   Push(4);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 }
 
 
@@ -562,8 +562,8 @@ void UNK_0xe3ea() // UNK_0xe3ea
 
 void UNK_0xe3fa() // UNK_0xe3fa
 {
-  SetColor(WHITE);
-  SetColor(DK_dash_BLUE);
+  GetColor(WHITE);
+  GetColor(DK_dash_BLUE);
   UNK_0xe2fa(); // UNK_0xe2fa
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
@@ -576,7 +576,7 @@ void UNK_0xe3fa() // UNK_0xe3fa
 
 void UNK_0xe408() // UNK_0xe408
 {
-  SetColor(GREY2);
+  GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
   UNK_0xe3fa(); // UNK_0xe3fa
@@ -629,7 +629,7 @@ void UNK_0xe408() // UNK_0xe408
   PRINT("TRADE", 5); // (.")
   Push(6);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("DEPOT", 5); // (.")
   Push(0x004b);
   Push(0x00c5);
@@ -650,7 +650,7 @@ void UNK_0xe408() // UNK_0xe408
 void UNK_0xe4c7() // UNK_0xe4c7
 {
   Push(7);
-  SetColor(GREY2);
+  GetColor(GREY2);
   Push(0x001d);
   Push(0x006e);
   _2DUP(); // 2DUP
@@ -660,9 +660,9 @@ void UNK_0xe4c7() // UNK_0xe4c7
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   GetCOLOR(); // @COLOR
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
-  SetColor(BLUE);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
+  GetColor(BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   Push(0xc558); // probable 'OVD@BALANCE'
@@ -682,9 +682,9 @@ void UNK_0xe4fb() // UNK_0xe4fb
   Push(-1);
   Push(0x0023);
   CMESS(); // CMESS
-  SetColor(BLACK);
-  SetColor(DK_dash_BLUE);
-  SetColor(BLUE);
+  GetColor(BLACK);
+  GetColor(DK_dash_BLUE);
+  GetColor(BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PRINT("YOUR ACCOUNT BALANCE IS: ", 25); // (.")
@@ -768,7 +768,7 @@ void UNK_0xe628() // UNK_0xe628
   Push(Read16(pp_IsTANDRG)); // ?TANDRG @
   if (Pop() != 0)
   {
-    SetColor(DK_dash_BLUE);
+    GetColor(DK_dash_BLUE);
     StoreCOLOR(); // !COLOR
   }
   Push(0x000c);
@@ -802,7 +802,7 @@ void UNK_0xe679() // UNK_0xe679
   Push(2);
   Push(0x000c);
   Push(0x009d);
-  SetColor(GREY2);
+  GetColor(GREY2);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
 }
 
@@ -1095,13 +1095,13 @@ void UNK_0xe87b() // UNK_0xe87b
   Push(0x0096);
   POS_dot_(); // POS.
   Push(5);
-  SetColor(BLUE);
+  GetColor(BLUE);
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
-  SetColor(BROWN);
-  SetColor(BROWN);
-  SetColor(BLACK);
+  GetColor(BROWN);
+  GetColor(BROWN);
+  GetColor(BLACK);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
   PAD(); // PAD
@@ -1160,8 +1160,8 @@ void UNK_0xe921() // UNK_0xe921
 {
   unsigned short int i, imax;
   UNK_0xe36f(); // UNK_0xe36f
-  SetColor(BLACK);
-  SetColor(GREY1);
+  GetColor(BLACK);
+  GetColor(GREY1);
   UNK_0xe2fa(); // UNK_0xe2fa
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
@@ -1356,7 +1356,7 @@ void UNK_0xea53() // UNK_0xea53
   Push(1);
   Push(0x0018);
   CMESS(); // CMESS
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("INSUFFICIENT CARGO SPACE", 24); // (.")
   StoreCRS(); // !CRS
@@ -1373,7 +1373,7 @@ void UNK_0xea82() // UNK_0xea82
   Push(1);
   Push(0x0012);
   CMESS(); // CMESS
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   UNK_0xe318(); // UNK_0xe318
   StoreCRS(); // !CRS
@@ -1427,7 +1427,7 @@ void UNK_0xeacc() // UNK_0xeacc
     UNK_0xe2fa(); // UNK_0xe2fa
   } else
   {
-    SetColor(BLUE);
+    GetColor(BLUE);
   }
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe2be); // UNK_0xe2be
@@ -1624,7 +1624,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 
 
 // ================================================
-// 0xecce: WORD 'UNK_0xecd0' codep=0x224c parp=0xecd0 params=5 returns=1
+// 0xecce: WORD 'UNK_0xecd0' codep=0x224c parp=0xecd0
 // ================================================
 
 void UNK_0xecd0() // UNK_0xecd0
@@ -1702,10 +1702,10 @@ void UNK_0xecfc() // UNK_0xecfc
   Store_3(); // !_3
   PRINT("[ QUIT ]", 8); // (.")
   Push(0);
-  SetColor(GREY2);
+  GetColor(GREY2);
   X0MESS(); // X0MESS
   Push(1);
-  SetColor(GREY2);
+  GetColor(GREY2);
   X0MESS(); // X0MESS
   do
   {
@@ -1726,7 +1726,7 @@ void UNK_0xed89() // UNK_0xed89
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WBOTTOM)); // WBOTTOM @
   Push(Read16(pp_WRIGHT)); // WRIGHT @
-  SetColor(GREY2);
+  GetColor(GREY2);
   POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
   CTINIT(); // CTINIT
   UNK_0xe86b(); // UNK_0xe86b
@@ -1869,12 +1869,12 @@ void UNK_0xee73() // UNK_0xee73
     UNK_0xe606(); // UNK_0xe606
     StoreCRS(); // !CRS
     Push(0x0019);
-    SetColor(GREY2);
+    GetColor(GREY2);
     Push(0x0068);
     Push(0x001e);
     POS_dot_PXT(); // POS.PXT
     Push(0x0015);
-    SetColor(GREY2);
+    GetColor(GREY2);
     Push(0x0061);
     Push(0x0026);
     POS_dot_PXT(); // POS.PXT
@@ -2015,7 +2015,7 @@ void UNK_0xefe0() // UNK_0xefe0
   Push(Read16(pp_WTOP)); // WTOP @
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(0x0026);
-  SetColor(GREY2);
+  GetColor(GREY2);
   _2OVER(); // 2OVER
   POS_dot_PXT(); // POS.PXT
   SWAP(); // SWAP
@@ -2031,7 +2031,7 @@ void UNK_0xefe0() // UNK_0xefe0
 
 
 // ================================================
-// 0xf052: WORD 'UNK_0xf054' codep=0x224c parp=0xf054 params=6 returns=0
+// 0xf052: WORD 'UNK_0xf054' codep=0x224c parp=0xf054
 // ================================================
 
 void UNK_0xf054() // UNK_0xf054
@@ -2103,7 +2103,7 @@ void UNK_0xf0aa() // UNK_0xf0aa
       if (Pop() != 0)
       {
         IPREV(); // IPREV
-        SetColor(GREY2);
+        GetColor(GREY2);
         WSHORTE(); // WSHORTE
       }
       UNK_0xe9eb(); // UNK_0xe9eb
@@ -2214,7 +2214,7 @@ void SELL_dash_IT() // SELL-IT
   a = Pop(); // >R
   Push(a * -1); // I -1 *
   Push(pp_SCROLL_dash_); // SCROLL-
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 
   label2:
   Push(Read16(regsp)); // DUP
@@ -2249,7 +2249,7 @@ void UNK_0xf1a6() // UNK_0xf1a6
     Push(Read16(pp_WLEFT)); // WLEFT @
     Push(Read16(pp_WBOTTOM) - 8); // WBOTTOM @ 8 -
     Push(Read16(pp_WRIGHT)); // WRIGHT @
-    SetColor(GREY2);
+    GetColor(GREY2);
     POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
     UNK_0xe917(); // UNK_0xe917
   }
@@ -2344,7 +2344,7 @@ void UNK_0xf1d8() // UNK_0xf1d8
     UNK_0xe606(); // UNK_0xe606
     StoreCRS(); // !CRS
     Push(0x0017);
-    SetColor(GREY2);
+    GetColor(GREY2);
     Push(0x006b);
     Push(0x0022);
     POS_dot_PXT(); // POS.PXT
@@ -2431,7 +2431,7 @@ void UNK_0xf2f9() // UNK_0xf2f9
       UNK_0xe3b4(); // UNK_0xe3b4
       Push(a); // I
       Push(0x63ef+INST_dash_QTY.offset); // INST-QTY<IFIELD>
-      _plus__ex_(); // +!
+      _plus__ex__2(); // +!_2
       Push(0x001a);
       GetINST_dash_SPECIES(); // @INST-SPECIES
       ICREATE(); // ICREATE
@@ -2501,7 +2501,7 @@ void UNK_0xf386() // UNK_0xf386
   a = Pop(); // >R
   Push(-a); // I NEGATE
   Push(pp_SCROLL_dash_); // SCROLL-
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
 
   label2:
   Push(Read16(regsp)); // DUP
@@ -2618,8 +2618,8 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   OFF(); // OFF
   Push(pp_OCRS); // OCRS
   OFF(); // OFF
-  SetColor(GREY2);
-  SetColor(GREY1);
+  GetColor(GREY2);
+  GetColor(GREY1);
   UNK_0xe2fa(); // UNK_0xe2fa
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
@@ -2630,7 +2630,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
   {
     XYSCAN(); // XYSCAN
     Push(pp_NCRS); // NCRS
-    _plus__ex_(); // +!
+    _plus__ex__2(); // +!_2
     Push(pp_UNK_0xe4b4); // UNK_0xe4b4
     SET_dash_CRS(); // SET-CRS
     Pop(); Pop(); // 2DROP
@@ -2643,7 +2643,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
       DEPOT_dash_FUNCTION(); // DEPOT-FUNCTION case
       a = Pop(); // >R
       Push(-1);
-      SetColor(GREY2);
+      GetColor(GREY2);
       X0MESS(); // X0MESS
       UNK_0xe32c(); // UNK_0xe32c
       StoreCRS(); // !CRS
@@ -2661,7 +2661,7 @@ void _ro_U_dash_DEPOT_rc_() // (U-DEPOT)
 
 
 // ================================================
-// 0xf4bf: WORD '<TDART' codep=0x224c parp=0xf4ca params=3 returns=0
+// 0xf4bf: WORD '<TDART' codep=0x224c parp=0xf4ca
 // ================================================
 // entry
 

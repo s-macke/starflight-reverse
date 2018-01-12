@@ -357,7 +357,7 @@ void UNK_0xe5ec() // UNK_0xe5ec
 
 void UNK_0xe5fe() // UNK_0xe5fe
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO CONTINUE", 26); // (.")
   StoreCRS(); // !CRS
@@ -386,7 +386,7 @@ void UNK_0xe625() // UNK_0xe625
 void UNK_0xe672() // UNK_0xe672
 {
   unsigned short int i, imax;
-  SetColor(BROWN);
+  GetColor(BROWN);
   StoreCOLOR(); // !COLOR
   Push(pp_UNK_0xe636); // UNK_0xe636
   Push(0x003a);
@@ -417,16 +417,16 @@ void UNK_0xe672() // UNK_0xe672
 
 void UNK_0xe69e() // UNK_0xe69e
 {
-  SetColor(WHITE);
-  SetColor(WHITE);
-  SetColor(LT_dash_BLUE);
+  GetColor(WHITE);
+  GetColor(WHITE);
+  GetColor(LT_dash_BLUE);
   IsMRC(); // ?MRC
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xe596); // UNK_0xe596
   Store_2(); // !_2
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(2);
   Push(1);
@@ -483,7 +483,7 @@ void UNK_0xe72b() // UNK_0xe72b
   _gt_3FONT(); // >3FONT
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(0x003a);
   Push(0x00b3);
@@ -508,7 +508,7 @@ void UNK_0xe72b() // UNK_0xe72b
 
 void UNK_0xe787() // UNK_0xe787
 {
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
   Push(0x000d);
@@ -536,9 +536,9 @@ void UNK_0xe7bc() // UNK_0xe7bc
   UNK_0xe69e(); // UNK_0xe69e
   UNK_0xe787(); // UNK_0xe787
   UNK_0xe72b(); // UNK_0xe72b
-  SetColor(WHITE);
-  SetColor(BLUE);
-  SetColor(BLUE);
+  GetColor(WHITE);
+  GetColor(BLUE);
+  GetColor(BLUE);
   IsMRC(); // ?MRC
   Push(pp_CRSCOLO); // CRSCOLO
   Store_2(); // !_2
@@ -565,14 +565,14 @@ void UNK_0xe7ea() // UNK_0xe7ea
   Push(0);
   Push(0x0019);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("SPACEBAR FOR NEXT MESSAGE", 25); // (.")
   StoreCRS(); // !CRS
   Push(1);
   Push(0x001e);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("^ FOR PRIOR MESSAGE  [] TO QUIT", 31); // (.")
   StoreCRS(); // !CRS
@@ -595,7 +595,7 @@ void UNK_0xe84e() // UNK_0xe84e
   Push(1);
   Push(0x0022);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS [] TO CANCEL CURRENT NOTICE", 33); // (.")
   StoreCRS(); // !CRS
@@ -622,7 +622,7 @@ void UNK_0xe890() // UNK_0xe890
   POS_dot_(); // POS.
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("NOTICES", 7); // (.")
   _gt_1FONT(); // >1FONT
@@ -660,7 +660,7 @@ void UNK_0xe8e6() // UNK_0xe8e6
   POS_dot_(); // POS.
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   UNK_0xe625(); // UNK_0xe625
   _gt_DISPLA(); // >DISPLA
@@ -843,7 +843,7 @@ void UNK_0xe9e4() // UNK_0xe9e4
 void UNK_0xea10() // UNK_0xea10
 {
   Push(Read16(pp_COLOR)); // COLOR @
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(1);
   Push(0x001d);
@@ -1073,14 +1073,14 @@ void UNK_0xeb80() // UNK_0xeb80
     Push(0xfff2);
     Push(0x000e);
     CMESS(); // CMESS
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
     PRINT("NO NEW NOTICES", 14); // (.")
     StoreCRS(); // !CRS
     Push(0xfff3);
     Push(0x001a);
     CMESS(); // CMESS
-    SetColor(BLACK);
+    GetColor(BLACK);
     StoreCOLOR(); // !COLOR
     PRINT("REPEAT LAST NOTICE\? [N Y]", 25); // (.")
     StoreCRS(); // !CRS
@@ -1236,7 +1236,7 @@ void UNK_0xed8e() // UNK_0xed8e
 
 
 // ================================================
-// 0xedc6: WORD 'UNK_0xedc8' codep=0x224c parp=0xedc8 params=3 returns=0
+// 0xedc6: WORD 'UNK_0xedc8' codep=0x224c parp=0xedc8 params=2 returns=0
 // ================================================
 
 void UNK_0xedc8() // UNK_0xedc8
@@ -1269,7 +1269,7 @@ void UNK_0xedc8() // UNK_0xedc8
 
 
 // ================================================
-// 0xedf6: WORD 'UNK_0xedf8' codep=0x224c parp=0xedf8 params=1 returns=0
+// 0xedf6: WORD 'UNK_0xedf8' codep=0x224c parp=0xedf8 params=0 returns=0
 // ================================================
 
 void UNK_0xedf8() // UNK_0xedf8
@@ -1288,7 +1288,7 @@ void UNK_0xedf8() // UNK_0xedf8
 
 
 // ================================================
-// 0xee0e: WORD 'UNK_0xee10' codep=0x224c parp=0xee10 params=4 returns=0
+// 0xee0e: WORD 'UNK_0xee10' codep=0x224c parp=0xee10
 // ================================================
 
 void UNK_0xee10() // UNK_0xee10
@@ -1424,7 +1424,7 @@ void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
 }
 
 // ================================================
-// 0xef0f: WORD 'UNK_0xef11' codep=0x224c parp=0xef11 params=1 returns=0
+// 0xef0f: WORD 'UNK_0xef11' codep=0x224c parp=0xef11 params=0 returns=0
 // ================================================
 
 void UNK_0xef11() // UNK_0xef11
@@ -1505,7 +1505,7 @@ void UNK_0xef2d() // UNK_0xef2d
 
 
 // ================================================
-// 0xf022: WORD 'UNK_0xf024' codep=0x224c parp=0xf024 params=1 returns=0
+// 0xf022: WORD 'UNK_0xf024' codep=0x224c parp=0xf024 params=0 returns=0
 // ================================================
 
 void UNK_0xf024() // UNK_0xf024
@@ -1516,7 +1516,7 @@ void UNK_0xf024() // UNK_0xf024
 
 
 // ================================================
-// 0xf05e: WORD 'UNK_0xf060' codep=0x224c parp=0xf060 params=1 returns=0
+// 0xf05e: WORD 'UNK_0xf060' codep=0x224c parp=0xf060 params=0 returns=0
 // ================================================
 
 void UNK_0xf060() // UNK_0xf060
@@ -1632,7 +1632,7 @@ void UNK_0xf142() // UNK_0xf142
   Push(0);
   Push(0x0022);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR FOR NEXT EVALUATION", 34); // (.")
   StoreCRS(); // !CRS
@@ -1711,7 +1711,7 @@ void UNK_0xf240() // UNK_0xf240
 
 
 // ================================================
-// 0xf278: WORD 'UNK_0xf27a' codep=0x224c parp=0xf27a params=3 returns=1
+// 0xf278: WORD 'UNK_0xf27a' codep=0x224c parp=0xf27a
 // ================================================
 
 void UNK_0xf27a() // UNK_0xf27a
@@ -1726,7 +1726,7 @@ void UNK_0xf27a() // UNK_0xf27a
 
 
 // ================================================
-// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e params=3 returns=1
+// 0xf28c: WORD 'UNK_0xf28e' codep=0x224c parp=0xf28e
 // ================================================
 
 void UNK_0xf28e() // UNK_0xf28e
@@ -1872,7 +1872,7 @@ void UNK_0xf38b() // UNK_0xf38b
 
 
 // ================================================
-// 0xf3b2: WORD 'UNK_0xf3b4' codep=0x224c parp=0xf3b4 params=3 returns=1
+// 0xf3b2: WORD 'UNK_0xf3b4' codep=0x224c parp=0xf3b4
 // ================================================
 
 void UNK_0xf3b4() // UNK_0xf3b4

@@ -68,7 +68,7 @@ void DrawR(); // .R
 void D_dot_(); // D.
 void _2OVER(); // 2OVER
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void OFF(); // OFF
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
@@ -246,7 +246,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(4);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x0069);
   Push(0x0036);
   _2DUP(); // 2DUP
@@ -277,7 +277,7 @@ void _ro__dot_ACC_rc_() // (.ACC)
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(2);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x008b);
   Push(0x002c);
   _2DUP(); // 2DUP
@@ -300,7 +300,7 @@ void UNK_0xef1a() // UNK_0xef1a
   GetCRS(); // @CRS
   CTINIT(); // CTINIT
   Push(6);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Push(0x007e);
   Push(0x0022);
   _2DUP(); // 2DUP
@@ -344,7 +344,7 @@ void UNK_0xef1a() // UNK_0xef1a
   Push(3);
   Push(Read16(regsp)); // DUP
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   Draw(); // .
   StoreCRS(); // !CRS
 }
@@ -356,7 +356,7 @@ void UNK_0xef1a() // UNK_0xef1a
 
 void UNK_0xef90() // UNK_0xef90
 {
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -440,7 +440,7 @@ void UNK_0xf026() // UNK_0xf026
   Push(0x63ef+UNK_0xed40.offset); // UNK_0xed40<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
-  SetColor(RED);
+  GetColor(RED);
   Push(Pop() * Pop()); // *
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -483,7 +483,7 @@ void UNK_0xf098() // UNK_0xf098
   Store_3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(((Pop() & Read16(0x63ef+UNK_0xed4f.offset))==0?1:0)==0?1:0); //  UNK_0xed4f<IFIELD> @ AND 0= 0=
-  SetColor(GREY1);
+  GetColor(GREY1);
   Push(Pop() * Pop()); // *
   StoreCOLOR(); // !COLOR
   BLT(); // BLT
@@ -567,7 +567,7 @@ void UNK_0xf132() // UNK_0xf132
   Push(0x63ef+UNK_0xed45.offset); // UNK_0xed45<IFIELD>
   UNK_0xed63(); // UNK_0xed63
   _0_gt_(); // 0>
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   Push(Pop() * Pop()); // *
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -605,10 +605,10 @@ void UNK_0xf174() // UNK_0xf174
   UNK_0xed63(); // UNK_0xed63
   if (Pop() != 0)
   {
-    SetColor(LT_dash_BLUE);
+    GetColor(LT_dash_BLUE);
   } else
   {
-    SetColor(DK_dash_BLUE);
+    GetColor(DK_dash_BLUE);
   }
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
@@ -678,7 +678,7 @@ void _ro_BALANCEMESS_rc_() // (BALANCEMESS)
 
 void UNK_0xf21d() // UNK_0xf21d
 {
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   StoreCOLOR(); // !COLOR
   Push(0x009d);
   Push(1);
@@ -742,9 +742,9 @@ void UNK_0xf21d() // UNK_0xf21d
   LLINE(); // LLINE
   Push(0x0015);
   Push(0x00c3);
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   Draw1LOGO(); // .1LOGO
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   _gt_3FONT(); // >3FONT
   Push(0x0027);
@@ -753,7 +753,7 @@ void UNK_0xf21d() // UNK_0xf21d
   PRINT("SHIP", 4); // (.")
   Push(6);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("CONFIGURATION", 13); // (.")
 }
 

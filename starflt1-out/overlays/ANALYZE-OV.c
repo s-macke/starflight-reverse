@@ -443,7 +443,7 @@ void UNK_0xeccb() // UNK_0xeccb
 
 void UNK_0xecd8() // UNK_0xecd8
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("STELLAR PARAMETERS", 18); // (.")
   CTINIT(); // CTINIT
@@ -483,7 +483,7 @@ void _ro__dot_OBJECT_rc_() // (.OBJECT)
 
 void DrawOBJECT() // .OBJECT
 {
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
   {
@@ -498,7 +498,7 @@ void DrawOBJECT() // .OBJECT
 
 
 // ================================================
-// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=2 returns=4
+// 0xed5a: WORD 'UNK_0xed5c' codep=0x224c parp=0xed5c params=2 returns=3
 // ================================================
 
 void UNK_0xed5c() // UNK_0xed5c
@@ -550,7 +550,7 @@ void DrawSIZE() // .SIZE
 
 
 // ================================================
-// 0xedc7: WORD '?.CERTAIN' codep=0x224c parp=0xedc9
+// 0xedc7: WORD '?.CERTAIN' codep=0x224c parp=0xedc9 params=0 returns=1
 // ================================================
 
 void Is_dot_CERTAIN() // ?.CERTAIN
@@ -579,14 +579,14 @@ void Is_dot_CERTAIN() // ?.CERTAIN
 
 
 // ================================================
-// 0xee07: WORD 'HEADER' codep=0x224c parp=0xee09 params=1 returns=0
+// 0xee07: WORD 'HEADER' codep=0x224c parp=0xee09 params=0 returns=0
 // ================================================
 
 void HEADER() // HEADER
 {
   CTCR(); // CTCR
   SPACE(); // SPACE
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
 }
 
@@ -646,7 +646,7 @@ void _ro__dot_TYPE_rc_() // (.TYPE)
 }
 
 // ================================================
-// 0xee59: WORD '.TYPE' codep=0x224c parp=0xee5b
+// 0xee59: WORD '.TYPE' codep=0x224c parp=0xee5b params=0 returns=0
 // ================================================
 
 void DrawTYPE() // .TYPE
@@ -672,7 +672,7 @@ void UNK_0xee76() // UNK_0xee76
 
 
 // ================================================
-// 0xee7f: WORD '.SHIELDS' codep=0x224c parp=0xee81
+// 0xee7f: WORD '.SHIELDS' codep=0x224c parp=0xee81 params=0 returns=0
 // ================================================
 
 void DrawSHIELDS() // .SHIELDS
@@ -717,7 +717,7 @@ void DrawSHIELDS() // .SHIELDS
 
 
 // ================================================
-// 0xef05: WORD '.WEAP' codep=0x224c parp=0xef07
+// 0xef05: WORD '.WEAP' codep=0x224c parp=0xef07 params=0 returns=0
 // ================================================
 
 void DrawWEAP() // .WEAP
@@ -774,7 +774,7 @@ void DrawDELEM() // .DELEM
 
 
 // ================================================
-// 0xef8c: WORD '.CONSTIT' codep=0x224c parp=0xef8e params=1 returns=0
+// 0xef8c: WORD '.CONSTIT' codep=0x224c parp=0xef8e params=0 returns=0
 // ================================================
 
 void DrawCONSTIT() // .CONSTIT
@@ -815,7 +815,7 @@ void DrawORBIT() // .ORBIT
   Push(0x0014);
   Push(1);
   CTPOS_dot_(); // CTPOS.
-  SetColor(BLUE);
+  GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   PRINT("ORBIT NUMBER: ", 14); // (.")
   CTINIT(); // CTINIT
@@ -919,7 +919,7 @@ void DrawTDESC() // .TDESC
 }
 
 // ================================================
-// 0xf066: WORD 'UNK_0xf068' codep=0x224c parp=0xf068
+// 0xf066: WORD 'UNK_0xf068' codep=0x224c parp=0xf068 params=0 returns=0
 // ================================================
 
 void UNK_0xf068() // UNK_0xf068
@@ -1027,7 +1027,7 @@ void _ro__dot_SURF_rc_() // (.SURF)
 }
 
 // ================================================
-// 0xf105: WORD '.SURF' codep=0x224c parp=0xf107
+// 0xf105: WORD '.SURF' codep=0x224c parp=0xf107 params=0 returns=0
 // ================================================
 
 void DrawSURF() // .SURF
@@ -1043,7 +1043,7 @@ void DrawSURF() // .SURF
 
 
 // ================================================
-// 0xf12f: WORD '.GRAV' codep=0x224c parp=0xf131
+// 0xf12f: WORD '.GRAV' codep=0x224c parp=0xf131 params=0 returns=0
 // ================================================
 
 void DrawGRAV() // .GRAV
@@ -1164,7 +1164,7 @@ void _ro__dot_ATMO_rc_() // (.ATMO)
 }
 
 // ================================================
-// 0xf1f7: WORD 'UNK_0xf1f9' codep=0x224c parp=0xf1f9
+// 0xf1f7: WORD 'UNK_0xf1f9' codep=0x224c parp=0xf1f9 params=0 returns=0
 // ================================================
 
 void UNK_0xf1f9() // UNK_0xf1f9
@@ -1248,7 +1248,7 @@ void _ro__dot_WEATH_rc_() // (.WEATH)
 }
 
 // ================================================
-// 0xf278: WORD '.WEATH' codep=0x224c parp=0xf27a
+// 0xf278: WORD '.WEATH' codep=0x224c parp=0xf27a params=0 returns=0
 // ================================================
 
 void DrawWEATH() // .WEATH
@@ -1264,7 +1264,7 @@ void DrawWEATH() // .WEATH
 
 
 // ================================================
-// 0xf29d: WORD 'UNK_0xf29f' codep=0x224c parp=0xf29f params=2 returns=0
+// 0xf29d: WORD 'UNK_0xf29f' codep=0x224c parp=0xf29f params=0 returns=0
 // ================================================
 
 void UNK_0xf29f() // UNK_0xf29f
@@ -1314,7 +1314,7 @@ void UNK_0xf2c8() // UNK_0xf2c8
 
 
 // ================================================
-// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=1 returns=0
+// 0xf2f0: WORD 'UNK_0xf2f2' codep=0x224c parp=0xf2f2 params=0 returns=0
 // ================================================
 
 void UNK_0xf2f2() // UNK_0xf2f2
@@ -1335,7 +1335,7 @@ void UNK_0xf2f2() // UNK_0xf2f2
 
 
 // ================================================
-// 0xf31c: WORD 'UNK_0xf31e' codep=0x224c parp=0xf31e
+// 0xf31c: WORD 'UNK_0xf31e' codep=0x224c parp=0xf31e params=0 returns=0
 // ================================================
 
 void UNK_0xf31e() // UNK_0xf31e
@@ -1367,12 +1367,12 @@ void UNK_0xf31e() // UNK_0xf31e
     _gt_(); // >
     if (Pop() != 0)
     {
-      SetColor(YELLOW);
+      GetColor(YELLOW);
       StoreCOLOR(); // !COLOR
       PRINT("SLIGHTLY UNSTABLE", 17); // (.")
     } else
     {
-      SetColor(PINK);
+      GetColor(PINK);
       StoreCOLOR(); // !COLOR
       CTCR(); // CTCR
       PRINT("  UNSTABLE - ESTIMATED TIME TO FLARE:", 37); // (.")
@@ -1400,7 +1400,7 @@ void UNK_0xf3eb() // UNK_0xf3eb
 
 
 // ================================================
-// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1 params=1 returns=0
+// 0xf3ef: WORD 'UNK_0xf3f1' codep=0x224c parp=0xf3f1 params=0 returns=0
 // ================================================
 
 void UNK_0xf3f1() // UNK_0xf3f1
@@ -1455,7 +1455,7 @@ void UNK_0xf41e() // UNK_0xf41e
 
 
 // ================================================
-// 0xf424: WORD 'UNK_0xf426' codep=0x224c parp=0xf426
+// 0xf424: WORD 'UNK_0xf426' codep=0x224c parp=0xf426 params=0 returns=0
 // ================================================
 
 void UNK_0xf426() // UNK_0xf426
@@ -1470,7 +1470,7 @@ void UNK_0xf426() // UNK_0xf426
 
 
 // ================================================
-// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436 params=3 returns=0
+// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436 params=0 returns=0
 // ================================================
 
 void UNK_0xf436() // UNK_0xf436

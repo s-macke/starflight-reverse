@@ -51,7 +51,7 @@ void MIN(); // MIN
 void NOP(); // NOP
 void KEY_2(); // KEY_2
 void Store_3(); // !_3
-void _plus__ex_(); // +!
+void _plus__ex__2(); // +!_2
 void StoreD(); // D!
 void OFF(); // OFF
 void CDROP(); // CDROP
@@ -107,10 +107,10 @@ IFieldType UNK_0xf1c0 = {SHIPIDX, 0x13, 0x02};
 
 void UNK_0xf1c5() // UNK_0xf1c5
 {
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
@@ -147,15 +147,15 @@ void UNK_0xf1c5() // UNK_0xf1c5
   LLINE(); // LLINE
   Push(5);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("FLIGHT", 6); // (.")
   Push(6);
   Push(pp_XBLT); // XBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   PRINT("CHECK", 5); // (.")
   Push(2);
   Push(0x00c5);
-  SetColor(BLACK);
+  GetColor(BLACK);
   Draw1LOGO(); // .1LOGO
 }
 
@@ -184,7 +184,7 @@ void UNK_0xf270() // UNK_0xf270
   PRINT("REPORT TO OPERATIONS FOR", 24); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf258(); // UNK_0xf258
   PRINT("EVALUATION", 10); // (.")
 }
@@ -231,7 +231,7 @@ void UNK_0xf2f5() // UNK_0xf2f5
   UNK_0xf258(); // UNK_0xf258
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf2de(); // UNK_0xf2de
 }
 
@@ -275,7 +275,7 @@ void UNK_0xf32b() // UNK_0xf32b
   PRINT("REPORT TO SHIP-CONFIGURATION", 28); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf258(); // UNK_0xf258
   PRINT("TO ", 3); // (.")
   Push(Read16(pp_UNK_0xf327)); // UNK_0xf327 @
@@ -297,7 +297,7 @@ void UNK_0xf372() // UNK_0xf372
   PRINT("REPORT TO TRADE DEPOT TO", 24); // (.")
   Push(0x000a);
   Push(pp_YBLT); // YBLT
-  _plus__ex_(); // +!
+  _plus__ex__2(); // +!_2
   UNK_0xf258(); // UNK_0xf258
   PRINT("PURCHASE FUEL", 13); // (.")
 }
@@ -337,7 +337,7 @@ void UNK_0xf3ad() // UNK_0xf3ad
   Push(1);
   Push(0x0016);
   CMESS(); // CMESS
-  SetColor(BLACK);
+  GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   PRINT("PRESS SPACEBAR TO EXIT", 22); // (.")
   StoreCRS(); // !CRS
@@ -430,7 +430,7 @@ void UNK_0xf480() // UNK_0xf480
 
 
 // ================================================
-// 0xf4a8: WORD 'UNK_0xf4aa' codep=0x224c parp=0xf4aa params=3 returns=1
+// 0xf4a8: WORD 'UNK_0xf4aa' codep=0x224c parp=0xf4aa
 // ================================================
 
 void UNK_0xf4aa() // UNK_0xf4aa
@@ -471,7 +471,7 @@ void UNK_0xf4aa() // UNK_0xf4aa
 
 
 // ================================================
-// 0xf4f2: WORD '?CAN-LEAVE' codep=0x224c parp=0xf501 params=3 returns=1
+// 0xf4f2: WORD '?CAN-LEAVE' codep=0x224c parp=0xf501
 // ================================================
 // entry
 

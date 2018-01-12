@@ -323,7 +323,7 @@ const unsigned short int cc_UNK_0xee34 = 0xee34; // UNK_0xee34
 // 0xe6e6: dw 0x0000
 
 // ================================================
-// 0xe6e8: WORD 'UNK_0xe6ea' codep=0x224c parp=0xe6ea
+// 0xe6e8: WORD 'UNK_0xe6ea' codep=0x224c parp=0xe6ea params=0 returns=0
 // ================================================
 
 void UNK_0xe6ea() // UNK_0xe6ea
@@ -332,7 +332,7 @@ void UNK_0xe6ea() // UNK_0xe6ea
   Push(0x0064);
   Push(0x03e8);
   Push(Read16(pp_COLOR)); // COLOR @
-  SetColor(RED);
+  GetColor(RED);
   Push((Pop()==Pop())?1:0); // =
   Push(Read16(regsp)); // DUP
   Push(Pop() * 2 - 1); //  2* 1-
@@ -436,7 +436,7 @@ void UNK_0xe76d() // UNK_0xe76d
 
 
 // ================================================
-// 0xe777: WORD 'UNK_0xe779' codep=0x224c parp=0xe779 params=6 returns=1
+// 0xe777: WORD 'UNK_0xe779' codep=0x224c parp=0xe779
 // ================================================
 
 void UNK_0xe779() // UNK_0xe779
@@ -508,7 +508,7 @@ void DISPOSAL() // DISPOSAL
 }
 
 // ================================================
-// 0xe7e0: WORD 'UNK_0xe7e2' codep=0x224c parp=0xe7e2
+// 0xe7e0: WORD 'UNK_0xe7e2' codep=0x224c parp=0xe7e2 params=0 returns=2
 // ================================================
 
 void UNK_0xe7e2() // UNK_0xe7e2
@@ -927,7 +927,7 @@ void UNK_0xea44() // UNK_0xea44
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WBOTTOM)); // WBOTTOM @
   Push(Read16(pp_WRIGHT) + 1); // WRIGHT @ 1+
-  SetColor(BLACK);
+  GetColor(BLACK);
   POLY_dash_WI(); // POLY-WI
   Push(0);
   Push(0);
@@ -1019,12 +1019,12 @@ void UNK_0xea94() // UNK_0xea94
 void UNK_0xeb14() // UNK_0xeb14
 {
   UNK_0xe936(); // UNK_0xe936
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(-1);
   UNK_0xe9da(); // UNK_0xe9da
-  SetColor(BLACK);
+  GetColor(BLACK);
   UNK_0xe896(); // UNK_0xe896
   UNK_0xe852(); // UNK_0xe852
 }
@@ -1038,11 +1038,11 @@ void UNK_0xeb2a() // UNK_0xeb2a
 {
   UNK_0xe920(); // UNK_0xe920
   UNK_0xea44(); // UNK_0xea44
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   _gt_2FONT(); // >2FONT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(5);
   Push(0);
@@ -1080,11 +1080,11 @@ void UNK_0xeba4() // UNK_0xeba4
 {
   UNK_0xe94a(); // UNK_0xe94a
   UNK_0xea44(); // UNK_0xea44
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   UNK_0xe86e(); // UNK_0xe86e
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(-3);
   Push(pp_WTOP); // WTOP
@@ -1113,11 +1113,11 @@ void UNK_0xec03() // UNK_0xec03
 {
   UNK_0xe8f2(); // UNK_0xe8f2
   UNK_0xea44(); // UNK_0xea44
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   _gt_2FONT(); // >2FONT
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0);
   Push(0);
@@ -1137,7 +1137,7 @@ void UNK_0xec2d() // UNK_0xec2d
   Push(-3);
   Push(pp_WRIGHT); // WRIGHT
   _plus__ex__2(); // +!_2
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
   UNK_0xea94(); // UNK_0xea94
   Push(3);
@@ -1157,12 +1157,12 @@ void UNK_0xec49() // UNK_0xec49
   Push(0);
   Push(pp_XORMODE); // XORMODE
   _st__ex__gt_(); // <!>
-  SetColor(GREY1);
+  GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   SFILL(); // SFILL
-  SetColor(RED);
+  GetColor(RED);
   StoreCOLOR(); // !COLOR
-  SetColor(BLACK);
+  GetColor(BLACK);
   VIEWSCR(); // VIEWSCR
   UNK_0xeb14(); // UNK_0xeb14
   UNK_0xeb2a(); // UNK_0xeb2a
@@ -1472,7 +1472,7 @@ void UNK_0xee38() // UNK_0xee38
 void TV_dash_SETUP() // TV-SETUP
 {
   UNK_0xec49(); // UNK_0xec49
-  SetColor(DK_dash_BLUE);
+  GetColor(DK_dash_BLUE);
   Push(pp_CRSCOLO); // CRSCOLO
   Store_2(); // !_2
   Push(pp_FUNCTIONS); // FUNCTIONS
@@ -1561,7 +1561,7 @@ void UNK_0xeec9() // UNK_0xeec9
 
 
 // ================================================
-// 0xeeed: WORD 'UNK_0xeeef' codep=0x224c parp=0xeeef params=3 returns=0
+// 0xeeed: WORD 'UNK_0xeeef' codep=0x224c parp=0xeeef
 // ================================================
 
 void UNK_0xeeef() // UNK_0xeeef
@@ -1687,7 +1687,7 @@ void UNK_0xefb5() // UNK_0xefb5
 
 
 // ================================================
-// 0xf00d: WORD 'UNK_0xf00f' codep=0x224c parp=0xf00f params=3 returns=0
+// 0xf00d: WORD 'UNK_0xf00f' codep=0x224c parp=0xf00f
 // ================================================
 
 void UNK_0xf00f() // UNK_0xf00f
@@ -1906,7 +1906,7 @@ void UNK_0xf199() // UNK_0xf199
 
 void UNK_0xf1e5() // UNK_0xf1e5
 {
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(6);
   Push(pp_LBLT); // LBLT
@@ -2039,7 +2039,7 @@ void UNK_0xf2bd() // UNK_0xf2bd
   Push(0);
   Push(0);
   UNK_0xe9da(); // UNK_0xe9da
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(pp_WEAPXY); // WEAPXY
   _2_at_(); // 2@
@@ -2097,10 +2097,10 @@ void UNK_0xf328() // UNK_0xf328
 {
   if (Pop() != 0)
   {
-    SetColor(RED);
+    GetColor(RED);
   } else
   {
-    SetColor(DK_dash_BLUE);
+    GetColor(DK_dash_BLUE);
   }
   UNK_0xf2f8(); // UNK_0xf2f8
 }
@@ -2128,7 +2128,7 @@ void UNK_0xf33a() // UNK_0xf33a
 void TV_dash_DISP() // TV-DISP
 {
   DCLIPSE(); // DCLIPSE
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("ACTIVATING TERRAIN VEHICLE");
   DrawTTY(); // .TTY
@@ -2161,7 +2161,7 @@ void TV_dash_DISP() // TV-DISP
   UNK_0xf33a(); // UNK_0xf33a
   TV_dash_SETUP(); // TV-SETUP
   UNK_0xf151(); // UNK_0xf151
-  SetColor(WHITE);
+  GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   Push(0x0064);
   Push(pp__pe_VAL); // %VAL
@@ -2186,7 +2186,7 @@ void TV_dash_CLEANU() // TV-CLEANU
 // 0xf3d9: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf3db: WORD 'UNK_0xf3dd' codep=0x224c parp=0xf3dd
+// 0xf3db: WORD 'UNK_0xf3dd' codep=0x224c parp=0xf3dd params=1 returns=1
 // ================================================
 
 void UNK_0xf3dd() // UNK_0xf3dd
@@ -2205,7 +2205,7 @@ void UNK_0xf3dd() // UNK_0xf3dd
 
 
 // ================================================
-// 0xf3f3: WORD 'UNK_0xf3f5' codep=0x224c parp=0xf3f5
+// 0xf3f3: WORD 'UNK_0xf3f5' codep=0x224c parp=0xf3f5 params=0 returns=1
 // ================================================
 
 void UNK_0xf3f5() // UNK_0xf3f5

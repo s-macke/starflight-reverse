@@ -370,7 +370,7 @@ void UNK_0xe726() // UNK_0xe726
 
 
 // ================================================
-// 0xe72c: WORD 'UNK_0xe72e' codep=0x224c parp=0xe72e
+// 0xe72c: WORD 'UNK_0xe72e' codep=0x224c parp=0xe72e params=0 returns=1
 // ================================================
 
 void UNK_0xe72e() // UNK_0xe72e
@@ -898,7 +898,7 @@ void REFRESH() // REFRESH
 // 0xea1c: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xea1e: WORD 'UNK_0xea20' codep=0x224c parp=0xea20
+// 0xea1e: WORD 'UNK_0xea20' codep=0x224c parp=0xea20 params=0 returns=1
 // ================================================
 
 void UNK_0xea20() // UNK_0xea20
@@ -1033,7 +1033,7 @@ void UNK_0xead4() // UNK_0xead4
 
 void UNK_0xeae2() // UNK_0xeae2
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   Push(0x4fa9); // probable 'BLACK'
   Store_2(); // !_2
   CTERASE(); // CTERASE
@@ -1896,7 +1896,7 @@ void _n__gt_DAMAG() // #>DAMAG
 }
 
 // ================================================
-// 0xf103: WORD 'UNK_0xf105' codep=0x224c parp=0xf105
+// 0xf103: WORD 'UNK_0xf105' codep=0x224c parp=0xf105 params=1 returns=2
 // ================================================
 
 void UNK_0xf105() // UNK_0xf105
@@ -2150,7 +2150,7 @@ void UNK_0xf283() // UNK_0xf283
   unsigned short int a, i, imax;
   UNK_0xf1a9(); // UNK_0xf1a9
   UNK_0xe75a(); // UNK_0xe75a
-  SetColor(LT_dash_BLUE);
+  GetColor(LT_dash_BLUE);
   UNK_0xf1b5(); // UNK_0xf1b5
   UNK_0xe87e(); // UNK_0xe87e
   UNK_0xeff1(); // UNK_0xeff1
@@ -2275,7 +2275,7 @@ void UNK_0xf338() // UNK_0xf338
 
 void UNK_0xf340() // UNK_0xf340
 {
-  SetColor(YELLOW);
+  GetColor(YELLOW);
   UNK_0xf330(); // UNK_0xf330
   PRINT("FUEL SUPPLY LOW", 15); // (.")
   UNK_0xf338(); // UNK_0xf338
@@ -2288,7 +2288,7 @@ void UNK_0xf340() // UNK_0xf340
 
 void UNK_0xf35c() // UNK_0xf35c
 {
-  SetColor(PINK);
+  GetColor(PINK);
   UNK_0xf330(); // UNK_0xf330
   SET_STR_AS_PARAM("FUEL SUPPLY CRITICAL");
   UNK_0xf338(); // UNK_0xf338
@@ -2301,7 +2301,7 @@ void UNK_0xf35c() // UNK_0xf35c
 
 void UNK_0xf37d() // UNK_0xf37d
 {
-  SetColor(RED);
+  GetColor(RED);
   UNK_0xf330(); // UNK_0xf330
   SET_STR_AS_PARAM("OUT OF FUEL");
   UNK_0xf338(); // UNK_0xf338
@@ -2469,7 +2469,7 @@ void UNK_0xf437() // UNK_0xf437
 void UNK_0xf4a9() // UNK_0xf4a9
 {
   UNK_0xf1a9(); // UNK_0xf1a9
-  SetColor(RED);
+  GetColor(RED);
   UNK_0xf25f(); // UNK_0xf25f
   UNK_0xe84c(); // UNK_0xe84c
   Push(Pop()==7?1:0); //  7 =
