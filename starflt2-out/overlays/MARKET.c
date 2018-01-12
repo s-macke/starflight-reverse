@@ -1599,7 +1599,6 @@ void UNK_0xef86() // UNK_0xef86
 
 void UNK_0xef90() // UNK_0xef90
 {
-  Push(Read16(pp_UNK_0xee83)); // UNK_0xee83 @
   Push(Read16(pp_UNK_0xee83)==0x000f?1:0); // UNK_0xee83 @ 0x000f =
 }
 
@@ -1699,7 +1698,7 @@ void UNK_0xeff2() // UNK_0xeff2
   Push(2);
   _star_CLOSE(); // *CLOSE
   UNK_0xefd2(); // UNK_0xefd2
-  Push(Read16(pp_SCROLL_dash_) | (Read16(pp_SCROLL_dash_)==1?1:0)); // SCROLL- @ SCROLL- @ 1 = OR
+  Push(Pop() | (Read16(pp_SCROLL_dash_)==1?1:0)); //  SCROLL- @ 1 = OR
 }
 
 

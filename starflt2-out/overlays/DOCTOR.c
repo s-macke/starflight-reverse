@@ -322,7 +322,6 @@ void UNK_0xf28e() // UNK_0xf28e
     Store_2(); // !_2
   } else
   {
-    Push(Read16(0x65e1+UNK_0xf083.offset)&0xFF); // UNK_0xf083<IFIELD> C@
     Push((Read16(0x65e1+UNK_0xf083.offset)&0xFF)==0x0064?1:0); // UNK_0xf083<IFIELD> C@ 0x0064 =
     if (Pop() != 0)
     {

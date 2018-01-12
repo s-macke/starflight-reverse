@@ -430,7 +430,6 @@ IFieldType UNK_0xe768 = {CREATUREIDX, 0x18, 0x01};
 void UNK_0xe76d() // UNK_0xe76d
 {
   LoadData(UNK_0xe760); // from 'ARTIFACT'
-  Push(Read16(Pop())&0xFF); //  C@
   Push((Read16(Pop())&0xFF)==2?1:0); //  C@ 2 =
 }
 
@@ -1221,7 +1220,8 @@ void UNK_0xeca1() // UNK_0xeca1
   IsLAST(); // ?LAST
   GetINST_dash_C(); // @INST-C
   DISPOSAL(); // DISPOSAL case
-  Push(Pop() & (Pop()==Read16(cc_FALSE)?1:0)); //   FALSE = AND
+  Push(Pop()==Read16(cc_FALSE)?1:0); //  FALSE =
+  Push(Pop() & Pop()); // AND
 }
 
 

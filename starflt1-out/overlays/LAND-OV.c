@@ -461,7 +461,6 @@ void UNK_0xf45e() // UNK_0xf45e
 
 void IsLAND() // ?LAND
 {
-  Push(Read16(pp__i_EXTERNAL_dash_EVENTS)); // 'EXTERNAL-EVENTS @
   Push(Read16(pp__i_EXTERNAL_dash_EVENTS)==Read16(pp__i_HEAT)?1:0); // 'EXTERNAL-EVENTS @ 'HEAT @ =
   if (Pop() != 0)
   {

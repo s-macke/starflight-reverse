@@ -1226,7 +1226,6 @@ void UNK_0xf42a() // UNK_0xf42a
   unsigned short int i, imax;
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_ABLT)); // ABLT @
   Push(Read16(pp_ABLT)==pp_UNK_0xf1d4?1:0); // ABLT @ UNK_0xf1d4 =
   if (Pop() != 0)
   {

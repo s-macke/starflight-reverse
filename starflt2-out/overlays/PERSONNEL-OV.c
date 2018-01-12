@@ -1348,12 +1348,10 @@ void UNK_0xec39() // UNK_0xec39
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x004a);
     POS_dot_PXT(); // POS.PXT
-    Push(2);
-    Push(i + (i==4?1:0) * 5); // I I 4 = 5 * +
+    Push(2 + (i==4?1:0) * 5); // 2 I 4 = 5 * +
     GetColor(GREY1);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
-    Push(0x008d);
-    Push(i + (i==4?1:0) * 0xffea); // I I 4 = 0xffea * +
+    Push(0x008d + (i==4?1:0) * 0xffea); // 0x008d I 4 = 0xffea * +
     POS_dot_PXT(); // POS.PXT
     i++;
   } while(i<imax); // (LOOP)
@@ -1485,7 +1483,6 @@ void UNK_0xedc5() // UNK_0xedc5
     Pop(); // DROP
     Push(pp_NCRS); // NCRS
     _plus__ex__2(); // +!_2
-    Push(Read16(pp_NCRS)); // NCRS @
     Push(!(Read16(pp_NCRS)==Read16(pp_OCRS)?1:0)); // NCRS @ OCRS @ = NOT
     if (Pop() != 0)
     {
@@ -1938,7 +1935,6 @@ void UNK_0xf1dc() // UNK_0xf1dc
 void UNK_0xf217() // UNK_0xf217
 {
   LoadData(UNK_0xe671); // from 'CREWMEMBER'
-  Push(Read16(Pop() + Read16(pp_OCRS))&0xFF); //  OCRS @ + C@
   Push((Read16(Pop() + Read16(pp_OCRS))&0xFF)==(Read16((0x65e1+UNK_0xe68e.offset) + Read16(pp_OCRS))&0xFF)?1:0); //  OCRS @ + C@ UNK_0xe68e<IFIELD> OCRS @ + C@ =
   if (Pop() != 0)
   {

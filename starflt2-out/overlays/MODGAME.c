@@ -1145,7 +1145,6 @@ void UNK_0xe287() // UNK_0xe287
   do
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push(!((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0)); //  C@ BL = NOT
     if (Pop() == 0) return;
     Push(Pop() - 1); //  1-
@@ -2137,7 +2136,6 @@ void UNK_0xea97() // UNK_0xea97
 void UNK_0xeaad() // UNK_0xeaad
 {
   unsigned short int i, imax;
-  Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
   Push(Read16(pp_BUF_dash_SEG)==Read16(pp_DBUF_dash_SE)?1:0); // BUF-SEG @ DBUF-SE @ =
   Push(Read16(pp_BLTSEG)); // BLTSEG @
   UNK_0xea79(); // UNK_0xea79
@@ -3225,7 +3223,6 @@ void UNK_0xf259() // UNK_0xf259
     UNK_0xf13c(); // UNK_0xf13c
     UNK_0xf168(); // UNK_0xf168
     Push(pp_UNK_0xdd2e); // UNK_0xdd2e
-    Push(Read16(pp_OPTIO)); // OPTIO @
     Push(Read16(pp_OPTIO)==1?1:0); // OPTIO @ 1 =
     if (Pop() != 0)
     {

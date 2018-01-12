@@ -3608,15 +3608,12 @@ void UNK_0xf16a() // UNK_0xf16a
     SEEGRID(); // SEEGRID
     UNK_0xefc9(); // UNK_0xefc9
     UNK_0xef65(); // UNK_0xef65
-    Push(Read16(pp_UNK_0xdb5c)); // UNK_0xdb5c @
     Push(!(Read16(pp_UNK_0xdb5c)==0x0167?1:0)); // UNK_0xdb5c @ 0x0167 = NOT
     if (Pop() != 0)
     {
       UNK_0xefd9(); // UNK_0xefd9
     }
-    Push(Read16(pp_UNK_0xdb7c)); // UNK_0xdb7c @
-    Push(Read16(pp_UNK_0xdb7c)==0x0031?1:0); // UNK_0xdb7c @ 0x0031 =
-    Push(Read16(pp_UNK_0xdb5c) & (Read16(pp_UNK_0xdb5c)==0x0167?1:0)); // UNK_0xdb5c @ UNK_0xdb5c @ 0x0167 = AND
+    Push((Read16(pp_UNK_0xdb7c)==0x0031?1:0) & (Read16(pp_UNK_0xdb5c)==0x0167?1:0)); // UNK_0xdb7c @ 0x0031 = UNK_0xdb5c @ 0x0167 = AND
   } while(Pop() == 0);
   Push(pp_UNK_0xdb70); // UNK_0xdb70
   _099(); // 099
@@ -3739,7 +3736,6 @@ void UNK_0xf238() // UNK_0xf238
     _plus__ex__2(); // +!_2
     UNK_0xe620(); // UNK_0xe620
     UNK_0xf220(); // UNK_0xf220
-    Push(Read16(pp_UNK_0xdbc0)); // UNK_0xdbc0 @
     Push(Read16(pp_UNK_0xdbc0)==Read16(pp_UNK_0xdb74)?1:0); // UNK_0xdbc0 @ UNK_0xdb74 @ =
   } while(Pop() == 0);
 }

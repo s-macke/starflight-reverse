@@ -687,7 +687,6 @@ void DrawSHIELDS() // .SHIELDS
   if (Pop() != 0)
   {
     LoadData(UNK_0xeb8d); // from 'VESSEL'
-    Push(Read16(Pop())&0xFF); //  C@
     Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
     if (Pop() != 0)
     {
@@ -1299,7 +1298,6 @@ void UNK_0xf2c8() // UNK_0xf2c8
   do // (DO)
   {
     Push(Pop() + 1); //  1+
-    Push(Read16(pp_UNK_0xf2bf + i)&0xFF); // UNK_0xf2bf I + C@
     Push((Read16(pp_UNK_0xf2bf + i)&0xFF)==a?1:0); // UNK_0xf2bf I + C@ J =
     if (Pop() != 0)
     {

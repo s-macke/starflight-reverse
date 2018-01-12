@@ -571,8 +571,7 @@ void UNK_0xeda9() // UNK_0xeda9
 
 void UNK_0xedb5() // UNK_0xedb5
 {
-  Push(Read16(pp_IsSUP)); // ?SUP @
-  Push(Read16(pp_NLR) & !(Read16(pp_NLR)==-1?1:0)); // NLR @ NLR @ -1 = NOT AND
+  Push(Read16(pp_IsSUP) & !(Read16(pp_NLR)==-1?1:0)); // ?SUP @ NLR @ -1 = NOT AND
   if (Pop() != 0)
   {
     UNK_0xec44(); // UNK_0xec44
@@ -1677,7 +1676,6 @@ void UNK_0xf476() // UNK_0xf476
 void DONULL() // DONULL
 {
   CTINIT(); // CTINIT
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push((Read16(pp_CONTEXT_3)==4?1:0) & (Read16(pp_NOF)==0?1:0)); // CONTEXT_3 @ 4 = NOF @ 0= AND
   if (Pop() == 0) goto label1;
   Push(pp_NOF); // NOF
@@ -1742,7 +1740,6 @@ void DONULL() // DONULL
 
 void TARG() // TARG
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push((Read16(pp_CONTEXT_3)==4?1:0) & (Read16(pp_NOF)==0?1:0)); // CONTEXT_3 @ 4 = NOF @ 0= AND
   if (Pop() != 0)
   {

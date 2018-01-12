@@ -312,7 +312,8 @@ void UNK_0xf162() // UNK_0xf162
   RRND(); // RRND
   Push(Pop()==0?1:0); //  0=
   OVER(); // OVER
-  Push(Pop() & !(Pop()==0x0084?1:0)); //   0x0084 = NOT AND
+  Push(!(Pop()==0x0084?1:0)); //  0x0084 = NOT
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     Push(1);
@@ -587,7 +588,6 @@ void UNK_0xf393() // UNK_0xf393
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)

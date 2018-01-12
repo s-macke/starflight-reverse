@@ -901,7 +901,6 @@ void UNK_0xefd4() // UNK_0xefd4
 void UNK_0xefe6() // UNK_0xefe6
 {
   LoadData(UNK_0xec62); // from 'PLANET'
-  Push(Read16(Pop())&0xFF); //  C@
   Push(!((Read16(Pop())&0xFF)==6?1:0)); //  C@ 6 = NOT
   if (Pop() == 0) goto label1;
 
@@ -1321,7 +1320,6 @@ void UNK_0xf21c() // UNK_0xf21c
       Push(pp_THIS_dash_RE); // THIS-RE
       _1_dot_5_at_(); // 1.5@
       IINSERT(); // IINSERT
-      Push(a); // I'
       Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
       d = Pop(); // >R
       UNK_0xf120(); // UNK_0xf120
@@ -1673,7 +1671,7 @@ void UNK_0xf43a() // UNK_0xf43a
   ICLOSE(); // ICLOSE
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(b | (b==7?1:0)); // R> R> 7 = OR
+  Push(Pop() | (b==7?1:0)); //  R> 7 = OR
   if (Pop() != 0)
   {
     Push(Read16(cc_UNK_0xec3e)); // UNK_0xec3e

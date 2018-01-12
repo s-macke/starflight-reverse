@@ -559,7 +559,7 @@ void UNK_0xe7cf() // UNK_0xe7cf
 
 void DrawSTARDATE() // .STARDATE
 {
-  Push(Read16(pp__n_AUX) | (Read16(pp__n_AUX)==1?1:0)); // #AUX @ #AUX @ 1 = OR
+  Push(Pop() | (Read16(pp__n_AUX)==1?1:0)); //  #AUX @ 1 = OR
   if (Pop() == 0) return;
   Push(0x0068);
   Push(0x00b7);
@@ -1570,7 +1570,6 @@ void UNK_0xefe9() // UNK_0xefe9
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==1?1:0); //  C@ 1 =
     if (Pop() != 0)
     {

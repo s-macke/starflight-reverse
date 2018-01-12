@@ -261,7 +261,8 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
       Push(Pop() + Pop()); // +
       C_ex_(); // C!
     }
-    Push(Pop() & (Pop()==!(!((Read16(i)&0xFF) & 0x0080))?1:0)); //   I C@ 0x0080 AND NOT NOT = AND
+    Push(Pop()==!(!((Read16(i)&0xFF) & 0x0080))?1:0); //  I C@ 0x0080 AND NOT NOT =
+    Push(Pop() & Pop()); // AND
     Push(Read16(regsp)); // DUP
     Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
@@ -374,7 +375,6 @@ void IsINDEX() // ?INDEX
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(Read16(cc_CONDARR) + i)); // CONDARR I + @
     Push(Read16(Read16(cc_CONDARR) + i)==a?1:0); // CONDARR I + @ J =
     if (Pop() != 0)
     {

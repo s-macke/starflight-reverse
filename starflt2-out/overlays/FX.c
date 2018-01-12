@@ -157,7 +157,6 @@ void UNK_0xf07e() // UNK_0xf07e
 
 void UNK_0xf090() // UNK_0xf090
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==6?1:0); // CONTEXT_3 @ 6 =
 }
 
@@ -475,7 +474,8 @@ void PSYCH() // PSYCH
   {
     CTINIT(); // CTINIT
     UNK_0xf13d(); // UNK_0xf13d
-    Push(Pop() | !(Pop()==Read16(pp_UNK_0xf08c)?1:0)); //   UNK_0xf08c @ = NOT OR
+    Push(!(Pop()==Read16(pp_UNK_0xf08c)?1:0)); //  UNK_0xf08c @ = NOT
+    Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
       GetColor(WHITE);

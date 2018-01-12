@@ -297,7 +297,6 @@ void UNK_0xe696() // UNK_0xe696
   Push(1);
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
-  Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
   Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
@@ -699,7 +698,6 @@ void UNK_0xe921() // UNK_0xe921
       Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOLOR(); // CELLCOLOR
-      Push(Read16(pp_COLOR)); // COLOR @
       Push(!(Read16(pp_COLOR)==a?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
@@ -716,7 +714,6 @@ void UNK_0xe921() // UNK_0xe921
       Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOLOR(); // CELLCOLOR
-      Push(Read16(pp_COLOR)); // COLOR @
       Push(!(Read16(pp_COLOR)==c?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
@@ -726,7 +723,6 @@ void UNK_0xe921() // UNK_0xe921
       Push(d | b); // I I' OR
       if (Pop() != 0)
       {
-        Push(d); // I
         Push(!(d==b?1:0)); // I I' = NOT
         if (Pop() != 0)
         {
@@ -824,7 +820,6 @@ void UNK_0xea1d() // UNK_0xea1d
 
 void UNK_0xeb7e() // UNK_0xeb7e
 {
-  Push(Read16(pp_STARDATE)); // STARDATE @
   Push((Read16(pp_STARDATE)==Read16(pp__ro_FLARE_rc_)?1:0) & (Read16(pp_IsWIN)==0?1:0)); // STARDATE @ (FLARE) @ = ?WIN @ 0= AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
@@ -1214,7 +1209,8 @@ void UNK_0xeda8() // UNK_0xeda8
   GetINST_dash_CLASS(); // @INST-CLASS
   Push(Pop()==0x000b?1:0); //  0x000b =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() & (Pop()==0x000b?1:0)); //   0x000b = AND
+  Push(Pop()==0x000b?1:0); //  0x000b =
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP

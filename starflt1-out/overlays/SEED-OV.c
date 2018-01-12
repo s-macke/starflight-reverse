@@ -1022,7 +1022,6 @@ void UNK_0xf079() // UNK_0xf079
 void UNK_0xf0c7() // UNK_0xf0c7
 {
   LoadData(UNK_0xec3a); // from 'PLANET'
-  Push(Read16(Pop())&0xFF); //  C@
   Push(!((Read16(Pop())&0xFF)==6?1:0)); //  C@ 6 = NOT
   if (Pop() == 0) goto label1;
 
@@ -1485,7 +1484,6 @@ void IsEXIST() // ?EXIST
       Push(pp_THIS_dash_RE); // THIS-RE
       _1_dot_5_at_(); // 1.5@
       IINSERT(); // IINSERT
-      Push(a); // I'
       Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
       d = Pop(); // >R
       UNK_0xf207(); // UNK_0xf207

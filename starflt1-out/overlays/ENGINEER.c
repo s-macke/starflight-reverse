@@ -250,8 +250,7 @@ void UNK_0xed5c() // UNK_0xed5c
   Push(Read16(regsp)); // DUP
   Push(Pop() * 2 + (0x63ef+UNK_0xec70.offset)); //  2* UNK_0xec70<IFIELD> +
   a = Pop(); // >R
-  Push(Read16(a + 1)&0xFF); // I 1+ C@
-  Push(a | (a==0x63ef+UNK_0xec70.offset?1:0)); // I I UNK_0xec70<IFIELD> = OR
+  Push(Read16(a + 1)&0xFF | (a==0x63ef+UNK_0xec70.offset?1:0)); // I 1+ C@ I UNK_0xec70<IFIELD> = OR
   if (Pop() != 0)
   {
     CURSORSPACE(); // CURSORSPACE
@@ -596,8 +595,7 @@ void UNK_0xf013() // UNK_0xf013
   PRINT(": ", 2); // (.")
   Push(Pop() * 2 + (0x63ef+UNK_0xec70.offset)); //  2* UNK_0xec70<IFIELD> +
   a = Pop(); // >R
-  Push(Read16(a + 1)&0xFF); // I 1+ C@
-  Push(a | (a==0x63ef+UNK_0xec70.offset?1:0)); // I I UNK_0xec70<IFIELD> = OR
+  Push(Read16(a + 1)&0xFF | (a==0x63ef+UNK_0xec70.offset?1:0)); // I 1+ C@ I UNK_0xec70<IFIELD> = OR
   if (Pop() != 0)
   {
     Push(Read16(a)&0xFF); // I C@
@@ -1036,7 +1034,8 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
   a = Pop(); // >R
   Push(Read16(a + 1)&0xFF); // I 1+ C@
   _0_gt_(); // 0>
-  Push(Pop() & (a | (a==0x63ef+UNK_0xec70.offset?1:0))); //  R> R> UNK_0xec70<IFIELD> = OR AND
+  Push(Pop() | (a==0x63ef+UNK_0xec70.offset?1:0)); //  R> UNK_0xec70<IFIELD> = OR
+  Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   Push(Read16(pp_OCRS)); // OCRS @
   UNK_0xf231(); // UNK_0xf231
@@ -1048,7 +1047,6 @@ void _ro__slash_REPAIR_rc_() // (/REPAIR)
     if (Pop() != 0)
     {
       b = Pop(); // >R
-      Push(b); // I
       Push(b==Read16(pp_OCRS)?1:0); // I OCRS @ =
       if (Pop() != 0)
       {

@@ -558,7 +558,6 @@ void UNK_0xefc2() // UNK_0xefc2
 
 void UNK_0xefe4() // UNK_0xefe4
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==8?1:0); // #AUX @ 8 =
   if (Pop() != 0)
   {
@@ -663,7 +662,6 @@ void UNK_0xf095() // UNK_0xf095
     UNK_0xedec(); // UNK_0xedec
     SET_STR_AS_PARAM("STANDBY...SCANNING PLANET.");
     DrawTTY(); // .TTY
-    Push(Read16(pp_PLHI)); // PLHI @
     Push(Read16(pp_PLHI)==-1?1:0); // PLHI @ -1 =
     if (Pop() != 0)
     {
@@ -737,8 +735,7 @@ void _gt_DISEMBARK() // >DISEMBARK
 
 void UNK_0xf18e() // UNK_0xf18e
 {
-  Push(!Read16(pp_IsTV) | Read16(pp_IsRECALL)); // ?TV @ NOT ?RECALL @ OR
-  Push(Read16(pp_CONTEXT_dash_ID_n_) & (Read16(pp_CONTEXT_dash_ID_n_)==5?1:0)); // CONTEXT-ID# @ CONTEXT-ID# @ 5 = AND
+  Push((!Read16(pp_IsTV) | Read16(pp_IsRECALL)) & (Read16(pp_CONTEXT_dash_ID_n_)==5?1:0)); // ?TV @ NOT ?RECALL @ OR CONTEXT-ID# @ 5 = AND
   if (Pop() != 0)
   {
     UNK_0xf03f(); // UNK_0xf03f
@@ -1310,7 +1307,6 @@ void _gt_FLT() // >FLT
   CFIGARRAYS(); // CFIGARRAYS
   GetColor(GREY2);
   _ro_SHIP_dash_C(); // (SHIP-C
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =
   if (Pop() != 0)
   {

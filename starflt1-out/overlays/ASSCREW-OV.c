@@ -801,12 +801,10 @@ void UNK_0xf019() // UNK_0xf019
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
     Push(0x004a);
     POS_dot_PXT(); // POS.PXT
-    Push(2);
-    Push(i + (i==4?1:0) * 5); // I I 4 = 5 * +
+    Push(2 + (i==4?1:0) * 5); // 2 I 4 = 5 * +
     GetColor(GREY2);
     Push((i * 7 + 6) + a); // I 7 * 6 + J +
-    Push(0x008d);
-    Push(i + (i==4?1:0) * 0xffea); // I I 4 = 0xffea * +
+    Push(0x008d + (i==4?1:0) * 0xffea); // 0x008d I 4 = 0xffea * +
     POS_dot_PXT(); // POS.PXT
     i++;
   } while(i<imax); // (LOOP)
@@ -1176,7 +1174,6 @@ void UNK_0xf3d7() // UNK_0xf3d7
   imax = Pop();
   do // (DO)
   {
-    Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 3); // UNK_0xeb5e<IFIELD> C@ 3 AND 3 XOR
     Push(((Read16(0x63ef+UNK_0xeb5e.offset)&0xFF) & 3) + 3==2?1:0); // UNK_0xeb5e<IFIELD> C@ 3 AND 3 XOR 2 =
     Push(Read16(regsp)); // DUP
     Push(pp_UNK_0xea98); // UNK_0xea98

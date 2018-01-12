@@ -1298,7 +1298,8 @@ void UNK_0xea04() // UNK_0xea04
     GetID(); // @ID
     Push(Pop()==0x00ff?1:0); //  0x00ff =
     GetIC(); // @IC
-    Push(Pop() & (Pop()==3?1:0)); //   3 = AND
+    Push(Pop()==3?1:0); //  3 =
+    Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
       GetIL(); // @IL
@@ -2302,7 +2303,7 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
   Push(pp_NAV_dash_TIM); // NAV-TIM
   _2_at_(); // 2@
   D_gt_(); // D>
-  Push(Read16(pp_CONTEXT_3) & (Read16(pp_CONTEXT_3)==3?1:0)); // CONTEXT_3 @ CONTEXT_3 @ 3 = AND
+  Push(Pop() & (Read16(pp_CONTEXT_3)==3?1:0)); //  CONTEXT_3 @ 3 = AND
   if (Pop() != 0)
   {
     UNK_0xf131(); // UNK_0xf131
@@ -2376,7 +2377,6 @@ void _ro__slash_STARMAP_rc_() // (/STARMAP)
     Push(1);
   } else
   {
-    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
     Push(!(Read16(pp_CONTEXT_3)==3?1:0)); // CONTEXT_3 @ 3 = NOT
     NOMAP(); // NOMAP
     Push(0);

@@ -425,7 +425,6 @@ void UNK_0xe684() // UNK_0xe684
   Push(1);
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
-  Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
   Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
@@ -2681,10 +2680,12 @@ void UNK_0xf37e() // UNK_0xf37e
     WITHIN(); // WITHIN
     Push(Pop() | Pop()); // OR
     Push(Read16(a)); // R@
-    Push(Pop() | (Pop()==0x00fe?1:0)); //   0x00fe = OR
-    Push(a | (a==0x002d?1:0)); // R> R> 0x002d = OR
+    Push(Pop()==0x00fe?1:0); //  0x00fe =
+    Push(Pop() | Pop()); // OR
+    Push(Pop() | (a==0x002d?1:0)); //  R> 0x002d = OR
     GetIC(); // @IC
-    Push(Pop() & !(Pop()==Read16(cc_DEAD_dash_IC)?1:0)); //   DEAD-IC = NOT AND
+    Push(!(Pop()==Read16(cc_DEAD_dash_IC)?1:0)); //  DEAD-IC = NOT
+    Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
       GetIL(); // @IL

@@ -657,7 +657,6 @@ void UNK_0xe606() // UNK_0xe606
 {
   Push(pp_TVEHICL); // TVEHICL
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x65e1+UNK_0xe587.offset)&0xFF); // UNK_0xe587<IFIELD> C@
   Push((Read16(0x65e1+UNK_0xe587.offset)&0xFF)==1?1:0); // UNK_0xe587<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
 }
@@ -817,7 +816,6 @@ void UNK_0xe6a6() // UNK_0xe6a6
 
 void UNK_0xe6ae() // UNK_0xe6ae
 {
-  Push(Read16(pp_XWLD_c_XP)); // XWLD:XP @
   Push(Read16(pp_XWLD_c_XP)==8?1:0); // XWLD:XP @ 8 =
 }
 

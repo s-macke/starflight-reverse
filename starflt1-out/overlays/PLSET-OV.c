@@ -1016,7 +1016,6 @@ void UNK_0xf162() // UNK_0xf162
 {
   unsigned short int a;
   LoadData(UNK_0xec5a); // from 'PLANET'
-  Push(Read16(Pop())&0xFF); //  C@
   Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
   a = Pop(); // >R
 
@@ -1109,7 +1108,8 @@ void UNK_0xf1e6() // UNK_0xf1e6
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0012?1:0); //  0x0012 =
   SWAP(); // SWAP
-  Push(Pop() | (Pop()==0x0022?1:0)); //   0x0022 = OR
+  Push(Pop()==0x0022?1:0); //  0x0022 =
+  Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
     Push(5);

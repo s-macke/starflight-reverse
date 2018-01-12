@@ -90,7 +90,6 @@ LoadDataType UNK_0xf3a6 = {ARTIFACTIDX, 0x1e, 0x01, 0x20, 0x6bcd};
 void UNK_0xf3ae() // UNK_0xf3ae
 {
   LoadData(UNK_0xf3a6); // from 'ARTIFACT'
-  Push(Read16(Pop())&0xFF); //  C@
   Push((Read16(Pop())&0xFF)==2?1:0); //  C@ 2 =
 }
 

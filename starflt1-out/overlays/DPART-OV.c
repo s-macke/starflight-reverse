@@ -375,11 +375,8 @@ void UNK_0xf0d6() // UNK_0xf0d6
   {
     GetINST_dash_CLASS(); // @INST-CLASS
     a = Pop(); // >R
-    Push(a); // I
     Push(a==0x0044?1:0); // I 0x0044 =
-    Push(a); // I
     Push(a==0x001a?1:0); // I 0x001a =
-    Push(a); // I
     Push(a==0x0029?1:0); // I 0x0029 =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
@@ -389,7 +386,6 @@ void UNK_0xf0d6() // UNK_0xf0d6
       _st_(); // <
       Push(Pop() & Pop()); // AND
     }
-    Push(a); // I
     Push(a==0x001c?1:0); // I 0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
@@ -400,7 +396,6 @@ void UNK_0xf0d6() // UNK_0xf0d6
       WITHIN(); // WITHIN
       Push(Pop() & Pop()); // AND
     }
-    Push(a); // I
     Push(a==0x001c?1:0); // I 0x001c =
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
@@ -735,7 +730,8 @@ void UNK_0xf39d() // UNK_0xf39d
   GetINST_dash_CLASS(); // @INST-CLASS
   Push(Pop()==0x003d?1:0); //  0x003d =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() & (Pop()==9?1:0)); //   9 = AND
+  Push(Pop()==9?1:0); //  9 =
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     Push(0);

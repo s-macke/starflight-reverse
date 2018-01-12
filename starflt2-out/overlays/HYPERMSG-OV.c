@@ -1591,7 +1591,6 @@ void UNK_0xee09() // UNK_0xee09
     Push(pp_IsAUTO); // ?AUTO
     ON_2(); // ON_2
   }
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(!(Read16(pp_CONTEXT_3)==1?1:0)); // CONTEXT_3 @ 1 = NOT
   if (Pop() != 0)
   {
@@ -2144,7 +2143,6 @@ void UNK_0xf176() // UNK_0xf176
 void UNK_0xf18e() // UNK_0xf18e
 {
   unsigned short int a, b;
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
   if (Pop() != 0)
   {
@@ -2222,7 +2220,7 @@ void UNK_0xf200() // UNK_0xf200
     Push(0x0040);
     WITHIN(); // WITHIN
     Push(Pop() & Pop()); // AND
-    Push((Read16(pp_CONTEXT_3) | (Read16(pp_CONTEXT_3)==2?1:0)) & (Read16(0x65e1+UNK_0xf171.offset)&0xFF)); // CONTEXT_3 @ CONTEXT_3 @ 2 = OR UNK_0xf171<IFIELD> C@ AND
+    Push((Pop() | (Read16(pp_CONTEXT_3)==2?1:0)) & (Read16(0x65e1+UNK_0xf171.offset)&0xFF)); //  CONTEXT_3 @ 2 = OR UNK_0xf171<IFIELD> C@ AND
     UNK_0xf08f(); // UNK_0xf08f
     Push(Pop() & Pop()); // AND
     return;
@@ -2297,7 +2295,6 @@ void TRAK_dash_E() // TRAK-E
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xf0da); // UNK_0xf0da
   ON_2(); // ON_2
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
   if (Pop() != 0)
   {
@@ -2517,7 +2514,8 @@ void UNK_0xf413() // UNK_0xf413
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0018?1:0); //  0x0018 =
   SWAP(); // SWAP
-  Push(Pop() | (Pop()==0x0020?1:0)); //   0x0020 = OR
+  Push(Pop()==0x0020?1:0); //  0x0020 =
+  Push(Pop() | Pop()); // OR
 }
 
 
@@ -2597,7 +2595,8 @@ void UNK_0xf506() // UNK_0xf506
   GetINST_dash_C(); // @INST-C
   Push(Pop()==0x000b?1:0); //  0x000b =
   GetINST_dash_S(); // @INST-S
-  Push(Pop() & (Pop()==4?1:0)); //   4 = AND
+  Push(Pop()==4?1:0); //  4 =
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     UNK_0xf4b2(); // UNK_0xf4b2

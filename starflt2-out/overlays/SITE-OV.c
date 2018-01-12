@@ -345,7 +345,6 @@ void UNK_0xf2a7() // UNK_0xf2a7
 
 void UNK_0xf31b() // UNK_0xf31b
 {
-  Push(Read16(pp_PLHI)); // PLHI @
   Push(Read16(pp_PLHI)==-1?1:0); // PLHI @ -1 =
   if (Pop() != 0)
   {
@@ -623,7 +622,6 @@ void DrawMERCATOR() // .MERCATOR
 
 void GETSITE_2() // GETSITE_2
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(!(Read16(pp__n_AUX)==4?1:0)); // #AUX @ 4 = NOT
   if (Pop() != 0)
   {

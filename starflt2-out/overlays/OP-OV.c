@@ -689,9 +689,7 @@ void UNK_0xe91a() // UNK_0xe91a
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
-    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
-    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
+    Push(((Read16(i)&0xFF)==Read16(cc_BL)?1:0) | (i + 1==imax?1:0)); // I C@ BL = I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -1107,7 +1105,6 @@ void UNK_0xeb80() // UNK_0xeb80
       Pop(); Pop(); // 2DROP
       Push(Read16(pp_LKEY)); // LKEY @
       _ro_NOTICES_rc_(); // (NOTICES) case
-      Push(Read16(pp_LKEY)); // LKEY @
       Push(Read16(pp_LKEY)==0x0150?1:0); // LKEY @ 0x0150 =
       if (Pop() != 0)
       {

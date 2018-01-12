@@ -1017,7 +1017,7 @@ void UNK_0xdb72() // UNK_0xdb72
   CTXT_n_(); // CTXT#
   Push(3);
   _st_(); // <
-  Push(Read16(pp__n_AUX) & (Read16(pp__n_AUX)==5?1:0)); // #AUX @ #AUX @ 5 = AND
+  Push(Pop() & (Read16(pp__n_AUX)==5?1:0)); //  #AUX @ 5 = AND
   if (Pop() == 0) return;
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
@@ -1110,7 +1110,8 @@ void UNK_0xdc19() // UNK_0xdc19
   Push(6);
   WITHIN(); // WITHIN
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() | (Pop()==0x000b?1:0)); //   0x000b = OR
+  Push(Pop()==0x000b?1:0); //  0x000b =
+  Push(Pop() | Pop()); // OR
   if (Pop() == 0) return;
   Push(0);
   Push(0x07d0);
@@ -1219,7 +1220,8 @@ void UNK_0xdcc6() // UNK_0xdcc6
   Push(Pop() - (Read16(0x63ef+UNK_0xdbd7.offset)&0xFF)); //  UNK_0xdbd7<IFIELD> C@ -
   _0_gt_(); // 0>
   SWAP(); // SWAP
-  Push(Pop() | (Pop()==0x00ff?1:0)); //   0x00ff = OR
+  Push(Pop()==0x00ff?1:0); //  0x00ff =
+  Push(Pop() | Pop()); // OR
   Push(Read16(regsp)); // DUP
   Push(0x63ef+UNK_0xda56.offset); // UNK_0xda56<IFIELD>
   C_ex_(); // C!
@@ -1460,7 +1462,8 @@ void UNK_0xdef6() // UNK_0xdef6
   GetINST_dash_CLASS(); // @INST-CLASS
   Push(Pop()==0x000b?1:0); //  0x000b =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() & (Pop()==4?1:0)); //   4 = AND
+  Push(Pop()==4?1:0); //  4 =
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     UNK_0xdeac(); // UNK_0xdeac
@@ -1737,7 +1740,6 @@ void UNK_0xe033() // UNK_0xe033
 void DrawAUXSYS() // .AUXSYS
 {
   unsigned short int i, imax;
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==2?1:0); // CONTEXT-ID# @ 2 =
   if (Pop() == 0) return;
   _gt_DISPLAY(); // >DISPLAY
@@ -2307,13 +2309,16 @@ void DrawMVS() // .MVS
 {
   UNK_0xdac6(); // UNK_0xdac6
   CTXT_n_(); // CTXT#
-  Push(!(Pop() | (Pop()==1?1:0))); //   1 = OR NOT
+  Push(Pop()==1?1:0); //  1 =
+  Push(Pop() | Pop()); // OR
+  Push(!Pop()); //  NOT
   if (Pop() == 0) return;
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
   Push(Read16(pp_IsNEB)); // ?NEB @
   CTXT_n_(); // CTXT#
-  Push(Pop() & (Pop()==2?1:0)); //   2 = AND
+  Push(Pop()==2?1:0); //  2 =
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     GetColor(DK_dash_GREEN);
@@ -2412,10 +2417,7 @@ void UNK_0xe4ba() // UNK_0xe4ba
   a = Pop(); // >R
   b = Pop(); // >R
   c = Pop(); // >R
-  Push(c); // I
-  Push(c==Read16(pp_HEADING)?1:0); // I HEADING @ =
-  Push(b & (b==Read16(pp_XABS)?1:0)); // I' I' XABS @ = AND
-  Push(!(a & (a==Read16(pp_YABS)?1:0))); // J J YABS @ = AND NOT
+  Push(!(((c==Read16(pp_HEADING)?1:0) & (b==Read16(pp_XABS)?1:0)) & (a==Read16(pp_YABS)?1:0))); // I HEADING @ = I' XABS @ = AND J YABS @ = AND NOT
   _gt_V(); // >V
   Push(c); // R>
   Push(b); // R>
@@ -2933,19 +2935,23 @@ void UNK_0xe85e() // UNK_0xe85e
   Push(a); // I
   Push(Read16(pp_YTABLE + 0x010c) + 0x0012); // YTABLE 0x010c + @ 0x0012 +
   LC_at_(); // LC@
-  Push((Pop() & 0x000f) + ((Pop() & 0x000f)==1?1:0)); //  0x000f AND  0x000f AND 1 = +
+  Push((Pop() & 0x000f)==1?1:0); //  0x000f AND 1 =
+  Push(Pop() + Pop()); // +
   Push(a); // I
   Push(Read16(pp_YTABLE + 0x010c) + 0x0015); // YTABLE 0x010c + @ 0x0015 +
   LC_at_(); // LC@
-  Push((Pop() & 0x00f0) + ((Pop() & 0x00f0)==0x0010?1:0)); //  0x00f0 AND  0x00f0 AND 0x0010 = +
+  Push((Pop() & 0x00f0)==0x0010?1:0); //  0x00f0 AND 0x0010 =
+  Push(Pop() + Pop()); // +
   Push(a); // I
   Push(Read16(pp_YTABLE + 0x00fa) + 0x0012); // YTABLE 0x00fa + @ 0x0012 +
   LC_at_(); // LC@
-  Push((Pop() & 0x000f) + ((Pop() & 0x000f)==1?1:0)); //  0x000f AND  0x000f AND 1 = +
+  Push((Pop() & 0x000f)==1?1:0); //  0x000f AND 1 =
+  Push(Pop() + Pop()); // +
   Push(a); // R>
   Push(Read16(pp_YTABLE + 0x00fa) + 0x0015); // YTABLE 0x00fa + @ 0x0015 +
   LC_at_(); // LC@
-  Push((Pop() & 0x00f0) + ((Pop() & 0x00f0)==0x0010?1:0)); //  0x00f0 AND  0x00f0 AND 0x0010 = +
+  Push((Pop() & 0x00f0)==0x0010?1:0); //  0x00f0 AND 0x0010 =
+  Push(Pop() + Pop()); // +
   Push(2);
   _gt_(); // >
 }
@@ -3427,7 +3433,8 @@ void IsCOLLISION() // ?COLLISION
       Push(Pop() | Pop()); // OR
       Push(!Pop()); //  NOT
       CTXT_n_(); // CTXT#
-      Push(Pop() & !(Pop()==1?1:0)); //   1 = NOT AND
+      Push(!(Pop()==1?1:0)); //  1 = NOT
+      Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
         GetIL(); // @IL
@@ -3486,7 +3493,8 @@ void UNK_0xec39() // UNK_0xec39
   D0_eq_(); // D0=
   Push((Pop() & (Read16(pp_UNK_0xd9ec)==0?1:0)) & (Read16(pp_IsPORT)==0?1:0)); //  UNK_0xd9ec @ 0= AND ?PORT @ 0= AND
   CTXT_n_(); // CTXT#
-  Push(Pop() & (Pop()==1?1:0)); //   1 = AND
+  Push(Pop()==1?1:0); //  1 =
+  Push(Pop() & Pop()); // AND
   Push(Read16(regsp)); // DUP
 }
 
@@ -3684,7 +3692,6 @@ void IsUNNEST() // ?UNNEST
       } while(i<imax); // (LOOP)
 
     }
-    Push(a); // R>
     Push(a==1?1:0); // R> 1 =
     return;
   }
@@ -3706,7 +3713,8 @@ void IsDOUBLE_dash_UNNEST() // ?DOUBLE-UNNEST
 {
   Push(Read16(pp_UNK_0xd9ec) & !Read16(pp_SKIP2NEST)); // UNK_0xd9ec @ SKIP2NEST @ NOT AND
   CTXT_n_(); // CTXT#
-  Push(Pop() & (Pop()==1?1:0)); //   1 = AND
+  Push(Pop()==1?1:0); //  1 =
+  Push(Pop() & Pop()); // AND
 }
 
 
@@ -3798,7 +3806,6 @@ void UNK_0xee53() // UNK_0xee53
 
 void _ro_GET_dash_AUX() // (GET-AUX
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(!(Read16(pp__n_AUX)==5?1:0)); // #AUX @ 5 = NOT
   if (Pop() == 0) return;
   DrawAUXSYS(); // .AUXSYS
@@ -4258,7 +4265,6 @@ void COME_dash_HITHER() // COME-HITHER
   IOPEN(); // IOPEN
 
   label5:
-  Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   Push(!(Read16(0x63ef+INST_dash_QTY.offset)==3?1:0)); // INST-QTY<IFIELD> @ 3 = NOT
   if (Pop() == 0) goto label4;
   INEXT(); // INEXT

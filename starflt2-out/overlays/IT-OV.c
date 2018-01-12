@@ -397,7 +397,6 @@ void UNK_0xf02d() // UNK_0xf02d
 
 void UNK_0xf03d() // UNK_0xf03d
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==6?1:0); // CONTEXT_3 @ 6 =
 }
 
@@ -694,7 +693,6 @@ void ITEM_gt_PAD() // ITEM>PAD
 
 void UNK_0xf246() // UNK_0xf246
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(!(Read16(pp_CONTEXT_3)==6?1:0)); // CONTEXT_3 @ 6 = NOT
 }
 
@@ -802,7 +800,8 @@ void BOX_gt_LIST() // BOX>LIST
     Push(0x0032);
     _st_(); // <
     GetINST_dash_C(); // @INST-C
-    Push(Pop() | (Pop()==0x000b?1:0)); //   0x000b = OR
+    Push(Pop()==0x000b?1:0); //  0x000b =
+    Push(Pop() | Pop()); // OR
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {

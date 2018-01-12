@@ -1931,7 +1931,6 @@ void UNK_0xef4f() // UNK_0xef4f
 {
   UNK_0xe56c(); // UNK_0xe56c
   UNK_0xe576(); // UNK_0xe576
-  Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push(Read16(pp_A_dash_POSTU)==2?1:0); // A-POSTU @ 2 =
   Push(0);
   Push(Read16(cc_MPS)); // MPS
@@ -2090,7 +2089,6 @@ void UNK_0xf088() // UNK_0xf088
 {
   UNK_0xe56c(); // UNK_0xe56c
   UNK_0xe576(); // UNK_0xe576
-  Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push(Read16(pp_A_dash_POSTU)==4?1:0); // A-POSTU @ 4 =
   Push(0);
   Push(0x0014);
@@ -2184,7 +2182,6 @@ void UNK_0xf11a() // UNK_0xf11a
 
 void UNK_0xf13a() // UNK_0xf13a
 {
-  Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push(Read16(pp_A_dash_POSTU)==4?1:0); // A-POSTU @ 4 =
   UNK_0xee17(); // UNK_0xee17
   Push(Pop() & Pop()); // AND

@@ -677,7 +677,6 @@ void UNK_0xe73a() // UNK_0xe73a
 void IsPRL() // ?PRL
 {
   unsigned short int i, imax;
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push((Read16(pp_CONTEXT_dash_ID_n_)==4?1:0) & Read16(cc_IsA_dash_WEAP)); // CONTEXT-ID# @ 4 = ?A-WEAP AND
   Push(Read16(pp__n_VESS)); // #VESS @
   _0_gt_(); // 0>
@@ -721,7 +720,6 @@ void IsPRL() // ?PRL
   StoreCRS(); // !CRS
 
   label2:
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(!(Read16(pp_CONTEXT_dash_ID_n_)==3?1:0)); // CONTEXT-ID# @ 3 = NOT
   if (Pop() == 0) goto label1;
   Push(Read16(pp__i_UNNEST)); // 'UNNEST @
@@ -1432,7 +1430,6 @@ void UNK_0xed0b() // UNK_0xed0b
   Push(0x63ef+UNK_0xecfe.offset); // UNK_0xecfe<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() != 0)
   {
@@ -1839,7 +1836,6 @@ void UNK_0xf022() // UNK_0xf022
     Push(pp_FORCEPTASK); // FORCEPTASK
     OFF(); // OFF
   }
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(!(Read16(pp_CONTEXT_dash_ID_n_)==1?1:0)); // CONTEXT-ID# @ 1 = NOT
   if (Pop() != 0)
   {
@@ -2338,7 +2334,6 @@ void UNK_0xf31b() // UNK_0xf31b
 void UNK_0xf333() // UNK_0xf333
 {
   unsigned short int a, b;
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==2?1:0); // CONTEXT-ID# @ 2 =
   if (Pop() != 0)
   {
@@ -2416,7 +2411,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
     Push(0x0040);
     WITHIN(); // WITHIN
     Push(Pop() & Pop()); // AND
-    Push(((Read16(pp_CONTEXT_dash_ID_n_) | (Read16(pp_CONTEXT_dash_ID_n_)==2?1:0)) | Read16(pp_Is12)) & (Read16(0x63ef+UNK_0xf316.offset)&0xFF)); // CONTEXT-ID# @ CONTEXT-ID# @ 2 = OR ?12 @ OR UNK_0xf316<IFIELD> C@ AND
+    Push(((Pop() | (Read16(pp_CONTEXT_dash_ID_n_)==2?1:0)) | Read16(pp_Is12)) & (Read16(0x63ef+UNK_0xf316.offset)&0xFF)); //  CONTEXT-ID# @ 2 = OR ?12 @ OR UNK_0xf316<IFIELD> C@ AND
     return;
   }
   Push(0);
@@ -2489,7 +2484,6 @@ void TRAK_dash_E() // TRAK-E
   ICLOSE(); // ICLOSE
   Push(pp_UNK_0xf27f); // UNK_0xf27f
   ON_3(); // ON_3
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==2?1:0); // CONTEXT-ID# @ 2 =
   if (Pop() != 0)
   {

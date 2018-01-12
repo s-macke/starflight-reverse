@@ -913,7 +913,6 @@ void UNK_0xf21b() // UNK_0xf21b
 {
   unsigned short int a;
   LoadData(UNK_0xedaa); // from 'PLANET'
-  Push(Read16(Pop())&0xFF); //  C@
   Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
   a = Pop(); // >R
 

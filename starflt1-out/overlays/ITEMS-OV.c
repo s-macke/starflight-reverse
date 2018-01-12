@@ -497,7 +497,6 @@ void UNK_0xdf0b() // UNK_0xdf0b
     Push(1);
     Push(pp_STAR_dash_HR); // STAR-HR
     _plus__ex__2(); // +!_2
-    Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
     Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
     if (Pop() != 0)
     {
@@ -508,7 +507,6 @@ void UNK_0xdf0b() // UNK_0xdf0b
       _plus__ex__2(); // +!_2
     }
   }
-  Push(Read16(pp_STARDATE)); // STARDATE @
   Push((Read16(pp_STARDATE)==Read16(pp__ro_FLARE_rc_)?1:0) & (Read16(pp_IsWIN)==0?1:0)); // STARDATE @ (FLARE) @ = ?WIN @ 0= AND
   if (Pop() == 0) return;
   Push(pp__i_FLARE); // 'FLARE
@@ -3792,8 +3790,9 @@ void UNK_0xf36a() // UNK_0xf36a
     WITHIN(); // WITHIN
     Push(Pop() | Pop()); // OR
     Push(Read16(a)); // R@
-    Push(Pop() | (Pop()==0x00fe?1:0)); //   0x00fe = OR
-    Push(a | (a==0x002c?1:0)); // R> R> 0x002c = OR
+    Push(Pop()==0x00fe?1:0); //  0x00fe =
+    Push(Pop() | Pop()); // OR
+    Push(Pop() | (a==0x002c?1:0)); //  R> 0x002c = OR
     if (Pop() != 0)
     {
       GetIL(); // @IL

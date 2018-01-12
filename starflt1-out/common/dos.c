@@ -384,9 +384,7 @@ void SETFCB() // SETFCB
   Store(); // !
   Push(0x0029);
   DOSCALL(); // DOSCALL
-  Push(Read16(Read16(cc_AX))&0xFF); // AX C@
-  Push((Read16(Read16(cc_AX))&0xFF)==0x00ff?1:0); // AX C@ 0x00ff =
-  Push(Read16(Read16(Read16(cc_DI)) + 1)&0xFF | ((Read16(Read16(Read16(cc_DI)) + 1)&0xFF)==Read16(cc_BL)?1:0)); // DI @ 1+ C@ DI @ 1+ C@ BL = OR
+  Push(((Read16(Read16(cc_AX))&0xFF)==0x00ff?1:0) | ((Read16(Read16(Read16(cc_DI)) + 1)&0xFF)==Read16(cc_BL)?1:0)); // AX C@ 0x00ff = DI @ 1+ C@ BL = OR
 }
 
 
@@ -716,7 +714,6 @@ void UNK_0x4536() // UNK_0x4536
   Store(); // !
   Push(0x0036);
   DOSCALL(); // DOSCALL
-  Push(Read16(Read16(cc_AX))); // AX @
   Push(!(Read16(Read16(cc_AX))==-1?1:0)); // AX @ -1 = NOT
 }
 
@@ -772,10 +769,10 @@ void SETMAXDRV() // SETMAXDRV
     i++;
   } while(i<imax); // (LOOP)
 
-  Push(Read16(pp_MAXDRV)); // MAXDRV @
   Push(Read16(pp_MAXDRV)==2?1:0); // MAXDRV @ 2 =
   UNK_0x451a(); // UNK_0x451a
-  Push(Pop() & (Pop()==1?1:0)); //   1 = AND
+  Push(Pop()==1?1:0); //  1 =
+  Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(1);
   Push(pp_MAXDRV); // MAXDRV

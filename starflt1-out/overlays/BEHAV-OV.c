@@ -547,7 +547,6 @@ void IsPLAYER_dash_FI() // ?PLAYER-FI
   Push(Read16(pp_WEAPON_dash_)); // WEAPON- @
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF); // TV-WEAPON<IFIELD> C@
   Push((Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF)==1?1:0); // TV-WEAPON<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND
@@ -624,7 +623,6 @@ void IsALIEN_dash_HIT_dash_WITH_dash_LASER() // ?ALIEN-HIT-WITH-LASER
   D_eq_(); // D=
   Push(pp_TVEHICLE); // TVEHICLE
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF); // TV-WEAPON<IFIELD> C@
   Push((Read16(0x63ef+TV_dash_WEAPON.offset)&0xFF)==1?1:0); // TV-WEAPON<IFIELD> C@ 1 =
   ICLOSE(); // ICLOSE
   Push(Pop() & Pop()); // AND

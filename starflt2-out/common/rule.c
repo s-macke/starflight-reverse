@@ -273,7 +273,8 @@ void UNK_0xac0d() // UNK_0xac0d
       Push(Pop() + Pop()); // +
       C_ex__2(); // C!_2
     }
-    Push(Pop() & (Pop()==!(!((Read16(i)&0xFF) & 0x0080))?1:0)); //   I C@ 0x0080 AND NOT NOT = AND
+    Push(Pop()==!(!((Read16(i)&0xFF) & 0x0080))?1:0); //  I C@ 0x0080 AND NOT NOT =
+    Push(Pop() & Pop()); // AND
     Push(Read16(regsp)); // DUP
     Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
@@ -395,7 +396,6 @@ void UNK_0xad3f() // UNK_0xad3f
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(Read16(cc_UNK_0xab7b) + i)); // UNK_0xab7b I + @
     Push(Read16(Read16(cc_UNK_0xab7b) + i)==a?1:0); // UNK_0xab7b I + @ J =
     if (Pop() != 0)
     {

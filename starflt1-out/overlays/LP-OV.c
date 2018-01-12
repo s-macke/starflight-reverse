@@ -1815,7 +1815,6 @@ void UNK_0xf1b6() // UNK_0xf1b6
   D_eq_(); // D=
   a = Pop(); // >R
   LoadData(UNK_0xe356); // from 'CREATURE'
-  Push(Read16(Pop())&0xFF); //  C@
   Push(((Read16(Pop())&0xFF)==1?1:0) & a); //  C@ 1 = R> AND
   if (Pop() != 0)
   {
@@ -2061,7 +2060,9 @@ void UNK_0xf384() // UNK_0xf384
     Push(Read16(regsp)); // DUP
     Push(Pop()==3?1:0); //  3 =
     SWAP(); // SWAP
-    Push((Pop() | (Pop()==4?1:0)) & a); //   4 = OR R> AND
+    Push(Pop()==4?1:0); //  4 =
+    Push(Pop() | Pop()); // OR
+    Push(Pop() & a); //  R> AND
     if (Pop() != 0)
     {
       LoadData(UNK_0xe3be); // from 'CREATURE'

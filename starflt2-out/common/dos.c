@@ -405,9 +405,7 @@ void SETFCB() // SETFCB
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
   Push(Pop() + 1); //  1+
   _gt_FCB(); // >FCB
-  Push(Read16(Read16(cc_AX))&0xFF); // AX C@
-  Push((Read16(Read16(cc_AX))&0xFF)==0x00ff?1:0); // AX C@ 0x00ff =
-  Push(Read16(Read16(Read16(cc_DI)) + 1)&0xFF | ((Read16(Read16(Read16(cc_DI)) + 1)&0xFF)==Read16(cc_BL)?1:0)); // DI @ 1+ C@ DI @ 1+ C@ BL = OR
+  Push(((Read16(Read16(cc_AX))&0xFF)==0x00ff?1:0) | ((Read16(Read16(Read16(cc_DI)) + 1)&0xFF)==Read16(cc_BL)?1:0)); // AX C@ 0x00ff = DI @ 1+ C@ BL = OR
 }
 
 
@@ -774,10 +772,10 @@ void SETMAXD() // SETMAXD
     i++;
   } while(i<imax); // (LOOP)
 
-  Push(Read16(pp_MAXDRV)); // MAXDRV @
   Push(Read16(pp_MAXDRV)==2?1:0); // MAXDRV @ 2 =
   Is_n_DETTE(); // ?#DETTE
-  Push(Pop() & (Pop()==1?1:0)); //   1 = AND
+  Push(Pop()==1?1:0); //  1 =
+  Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   Push(1);
   Push(pp_MAXDRV); // MAXDRV

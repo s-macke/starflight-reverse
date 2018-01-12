@@ -1133,7 +1133,6 @@ void UNK_0xf4a9() // UNK_0xf4a9
 
 void UNK_0xf4bd() // UNK_0xf4bd
 {
-  Push(Read16(pp_IsREPAIR)); // ?REPAIR @
   Push(Read16(pp_IsREPAIR)==1?1:0); // ?REPAIR @ 1 =
   if (Pop() == 0) return;
   UNK_0xeffc(); // UNK_0xeffc

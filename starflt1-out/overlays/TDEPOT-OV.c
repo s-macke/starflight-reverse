@@ -1449,7 +1449,6 @@ void UNK_0xeacc() // UNK_0xeacc
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
     Push((Read16(i)&0xFF)==0x002e?1:0); // I C@ 0x002e =
     if (Pop() != 0)
     {
@@ -2285,7 +2284,9 @@ void UNK_0xf1d8() // UNK_0xf1d8
   Push(Pop()==0x0011?1:0); //  0x0011 =
   IPREV(); // IPREV
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(!(Pop() & (Pop()==0x001b?1:0))); //   0x001b = AND NOT
+  Push(Pop()==0x001b?1:0); //  0x001b =
+  Push(Pop() & Pop()); // AND
+  Push(!Pop()); //  NOT
   Push(Pop() & Pop()); // AND
   INEXT(); // INEXT
   if (Pop() != 0)
@@ -2296,7 +2297,8 @@ void UNK_0xf1d8() // UNK_0xf1d8
       GetINST_dash_SPECIES(); // @INST-SPECIES
       Push(!(Pop()==0x0011?1:0)); //  0x0011 = NOT
       GetINST_dash_CLASS(); // @INST-CLASS
-      Push(Pop() & (Pop()==0x000b?1:0)); //   0x000b = AND
+      Push(Pop()==0x000b?1:0); //  0x000b =
+      Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
         BOX_gt_LIS(); // BOX>LIS

@@ -305,7 +305,6 @@ void UNK_0xea46() // UNK_0xea46
   Push(1);
   Push(pp_STAR_dash_HR); // STAR-HR
   _plus__ex__2(); // +!_2
-  Push(Read16(pp_STAR_dash_HR)); // STAR-HR @
   Push(Read16(pp_STAR_dash_HR)==0x0018?1:0); // STAR-HR @ 0x0018 =
   if (Pop() == 0) return;
   Push(pp_STAR_dash_HR); // STAR-HR
@@ -634,7 +633,6 @@ void UNK_0xec32() // UNK_0xec32
       Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOL(); // CELLCOL
-      Push(Read16(pp_COLOR)); // COLOR @
       Push(!(Read16(pp_COLOR)==a?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
@@ -651,7 +649,6 @@ void UNK_0xec32() // UNK_0xec32
       Push(Pop() + 1); //  1+
       SWAP(); // SWAP
       CELLCOL(); // CELLCOL
-      Push(Read16(pp_COLOR)); // COLOR @
       Push(!(Read16(pp_COLOR)==c?1:0)); // COLOR @ I = NOT
       if (Pop() != 0)
       {
@@ -661,7 +658,6 @@ void UNK_0xec32() // UNK_0xec32
       Push(d | b); // I I' OR
       if (Pop() != 0)
       {
-        Push(d); // I
         Push(!(d==b?1:0)); // I I' = NOT
         if (Pop() != 0)
         {
@@ -1054,7 +1050,8 @@ void UNK_0xef2d() // UNK_0xef2d
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x001b?1:0); //  0x001b =
   SWAP(); // SWAP
-  Push(Pop() | (Pop()==0x0030?1:0)); //   0x0030 = OR
+  Push(Pop()==0x0030?1:0); //  0x0030 =
+  Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
     UNK_0xef19(); // UNK_0xef19

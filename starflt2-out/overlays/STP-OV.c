@@ -617,9 +617,11 @@ void UNK_0xf2f5() // UNK_0xf2f5
       GetIC(); // @IC
       Push(Pop()==Read16(pp_UNK_0xf180)?1:0); //  UNK_0xf180 @ =
       GetIC(); // @IC
-      Push(Pop() | (Pop()==Read16(pp_UNK_0xf184)?1:0)); //   UNK_0xf184 @ = OR
+      Push(Pop()==Read16(pp_UNK_0xf184)?1:0); //  UNK_0xf184 @ =
+      Push(Pop() | Pop()); // OR
       GetID(); // @ID
-      Push(Pop() & (Pop()==Read16(cc_SYS_dash_ICO)?1:0)); //   SYS-ICO = AND
+      Push(Pop()==Read16(cc_SYS_dash_ICO)?1:0); //  SYS-ICO =
+      Push(Pop() & Pop()); // AND
       Push(Read16(regsp)); // DUP
       if (Pop() != 0)
       {
@@ -841,7 +843,6 @@ void UNK_0xf4aa() // UNK_0xf4aa
   goto label2;
 
   label1:
-  Push(Read16(pp_UNK_0xf188)); // UNK_0xf188 @
   Push((Read16(pp_UNK_0xf188)==Read16(pp_UNK_0xf190)?1:0) & !Read16(pp_IsSECURE)); // UNK_0xf188 @ UNK_0xf190 @ = ?SECURE @ NOT AND
 }
 
@@ -877,7 +878,6 @@ void SP() // SP
 void _2N() // 2N
 {
   UNK_0xf42a(); // UNK_0xf42a
-  Push(Read16(pp_UNK_0xf188)); // UNK_0xf188 @
   Push(Read16(pp_UNK_0xf188)==Read16(pp_UNK_0xf190)?1:0); // UNK_0xf188 @ UNK_0xf190 @ =
   if (Pop() == 0) return;
   Push(pp_IsSECURE); // ?SECURE

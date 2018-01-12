@@ -1414,7 +1414,6 @@ void UNK_0xed96() // UNK_0xed96
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
     Push((Read16(i)&0xFF)==0x002e?1:0); // I C@ 0x002e =
     if (Pop() != 0)
     {
@@ -1810,7 +1809,8 @@ void UNK_0xf148() // UNK_0xf148
   a = Pop(); // >R
   Push(a); // R>
   GetINST_dash_S(); // @INST-S
-  Push(Pop() & (Pop()==0x000f?1:0)); //   0x000f = AND
+  Push(Pop()==0x000f?1:0); //  0x000f =
+  Push(Pop() & Pop()); // AND
 }
 
 

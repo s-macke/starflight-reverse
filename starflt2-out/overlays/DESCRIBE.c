@@ -629,7 +629,6 @@ void UNK_0xe797() // UNK_0xe797
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
     if (Pop() != 0)
     {
@@ -690,9 +689,7 @@ void UNK_0xe7df() // UNK_0xe7df
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
-    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
-    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
+    Push(((Read16(i)&0xFF)==Read16(cc_BL)?1:0) | (i + 1==imax?1:0)); // I C@ BL = I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -769,7 +766,6 @@ void UNK_0xe853() // UNK_0xe853
       _099(); // 099
     }
     OVER(); // OVER
-    Push(Read16(Pop())&0xFF); //  C@
     Push(!(((Read16(Pop())&0xFF)==0x002e?1:0) | (Read16(pp_CTX)==0?1:0))); //  C@ 0x002e = CTX @ 0= OR NOT
     if (Pop() != 0)
     {
@@ -2566,7 +2562,6 @@ void SYSCAN() // SYSCAN
   Push(Pop() & (Read16(pp_NOF)==0?1:0)); //  NOF @ 0= AND
   if (Pop() != 0)
   {
-    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
     Push(Read16(pp_CONTEXT_3)==2?1:0); // CONTEXT_3 @ 2 =
     if (Pop() != 0)
     {
@@ -2917,7 +2912,7 @@ void DESCRIBE() // DESCRIBE
     Push(imax); // I'
     Push(1);
     _gt_(); // >
-    Push(i + 1 & !(i + 1==imax?1:0)); // I 1+ I 1+ I' = NOT AND
+    Push(Pop() & !(i + 1==imax?1:0)); //  I 1+ I' = NOT AND
     if (Pop() != 0)
     {
       Push(0x05dc);

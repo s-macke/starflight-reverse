@@ -1352,7 +1352,6 @@ void UNK_0xe109() // UNK_0xe109
 
 void UNK_0xe121() // UNK_0xe121
 {
-  Push(Read16(pp_A_dash_POSTU)&0xFF); // A-POSTU C@
   Push((Read16(pp_A_dash_POSTU)&0xFF)==1?1:0); // A-POSTU C@ 1 =
 }
 
@@ -1363,7 +1362,6 @@ void UNK_0xe121() // UNK_0xe121
 
 void UNK_0xe12d() // UNK_0xe12d
 {
-  Push(Read16(pp_A_dash_POSTU)&0xFF); // A-POSTU C@
   Push((Read16(pp_A_dash_POSTU)&0xFF)==8?1:0); // A-POSTU C@ 8 =
 }
 
@@ -1374,7 +1372,6 @@ void UNK_0xe12d() // UNK_0xe12d
 
 void UNK_0xe139() // UNK_0xe139
 {
-  Push(Read16(pp_A_dash_POSTU)&0xFF); // A-POSTU C@
   Push((Read16(pp_A_dash_POSTU)&0xFF)==0x0010?1:0); // A-POSTU C@ 0x0010 =
 }
 
@@ -1435,7 +1432,6 @@ void UNK_0xe18f() // UNK_0xe18f
 
 void UNK_0xe1a5() // UNK_0xe1a5
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==1?1:0); // #AUX @ 1 =
   if (Pop() != 0)
   {
@@ -1452,7 +1448,6 @@ void UNK_0xe1a5() // UNK_0xe1a5
 
 void UNK_0xe1c1() // UNK_0xe1c1
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() != 0)
   {
@@ -1700,7 +1695,6 @@ void SCALE_gt_MIS() // SCALE>MIS
 void UNK_0xe4e8() // UNK_0xe4e8
 {
   MORIG(); // MORIG
-  Push(Read16(Pop())&0xFF); //  C@
   Push((Read16(Pop())&0xFF)==Read16(cc_UNK_0xe207)?1:0); //  C@ UNK_0xe207 =
   if (Pop() != 0)
   {
@@ -1916,7 +1910,6 @@ void UNK_0xe5f4() // UNK_0xe5f4
 void UNK_0xe60a() // UNK_0xe60a
 {
   MORIG(); // MORIG
-  Push(Read16(Pop())&0xFF); //  C@
   Push((Read16(Pop())&0xFF)==Read16(cc_UNK_0xe207)?1:0); //  C@ UNK_0xe207 =
   if (Pop() != 0)
   {
@@ -2157,7 +2150,6 @@ void UNK_0xe744() // UNK_0xe744
     SWAP(); // SWAP
     POINT_gt_ICON(); // POINT>ICON
     MORIG(); // MORIG
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==Read16(cc_UNK_0xe207)?1:0); //  C@ UNK_0xe207 =
     if (Pop() != 0)
     {
@@ -2271,7 +2263,7 @@ void UNK_0xe7cc() // UNK_0xe7cc
   _2OVER(); // 2OVER
   _2OVER(); // 2OVER
   D_eq_(); // D=
-  Push(Read16(pp__n_IN) & (Read16(pp__n_IN)==3?1:0)); // #IN @ #IN @ 3 = AND
+  Push(Pop() & (Read16(pp__n_IN)==3?1:0)); //  #IN @ 3 = AND
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
@@ -3086,7 +3078,6 @@ void UNK_0xed9a() // UNK_0xed9a
 
 void IsAPPROACH() // ?APPROACH
 {
-  Push(Read16(0x63ef+UNK_0xddc7.offset)&0xFF); // UNK_0xddc7<IFIELD> C@
   Push((Read16(0x63ef+UNK_0xddc7.offset)&0xFF)==3?1:0); // UNK_0xddc7<IFIELD> C@ 3 =
 }
 
@@ -3993,7 +3984,6 @@ void UNK_0xf352() // UNK_0xf352
 
 void UNK_0xf3ae() // UNK_0xf3ae
 {
-  Push(Read16(pp_LKEY)); // LKEY @
   Push(Read16(pp_LKEY)==0x000d?1:0); // LKEY @ 0x000d =
 }
 
@@ -4101,7 +4091,6 @@ void UNK_0xf414() // UNK_0xf414
 
 void WAR() // WAR
 {
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==4?1:0); // CONTEXT-ID# @ 4 =
   if (Pop() != 0)
   {

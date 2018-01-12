@@ -750,7 +750,8 @@ void UNK_0xf048() // UNK_0xf048
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0017?1:0); //  0x0017 =
   SWAP(); // SWAP
-  Push(Pop() | (Pop()==0x003c?1:0)); //   0x003c = OR
+  Push(Pop()==0x003c?1:0); //  0x003c =
+  Push(Pop() | Pop()); // OR
 }
 
 

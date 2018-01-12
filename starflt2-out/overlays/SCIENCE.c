@@ -414,8 +414,7 @@ IFieldType UNK_0xdfaa = {ORIGINATORIDX, 0x0b, 0x01};
 
 void UNK_0xdfb7() // UNK_0xdfb7
 {
-  Push(Read16(pp_STAR_dash_HR)==0?1:0); // STAR-HR @ 0=
-  Push(Read16(pp__pe_SLUG) & !(Read16(pp__pe_SLUG)==0x0064?1:0)); // %SLUG @ %SLUG @ 0x0064 = NOT AND
+  Push((Read16(pp_STAR_dash_HR)==0?1:0) & !(Read16(pp__pe_SLUG)==0x0064?1:0)); // STAR-HR @ 0= %SLUG @ 0x0064 = NOT AND
   if (Pop() == 0) return;
   Push(Read16(pp__pe_SLUG)); // %SLUG @
   Push(0x000a);
@@ -937,7 +936,7 @@ void IsHEAVY() // ?HEAVY
 
 void UNK_0xe2ea() // UNK_0xe2ea
 {
-  Push(Read16(pp__n_AUX) | (Read16(pp__n_AUX)==1?1:0)); // #AUX @ #AUX @ 1 = OR
+  Push(Pop() | (Read16(pp__n_AUX)==1?1:0)); //  #AUX @ 1 = OR
   if (Pop() != 0)
   {
     Push(0x0068);
@@ -2300,7 +2299,6 @@ void UNK_0xeceb() // UNK_0xeceb
   if (Pop() != 0)
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==1?1:0); //  C@ 1 =
     if (Pop() != 0)
     {
@@ -3080,7 +3078,6 @@ void UNK_0xf2a0() // UNK_0xf2a0
 
 void UNK_0xf2b4() // UNK_0xf2b4
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==4?1:0); // CONTEXT_3 @ 4 =
   if (Pop() != 0)
   {
@@ -3103,7 +3100,7 @@ void UNK_0xf2b4() // UNK_0xf2b4
 void UNK_0xf2d6() // UNK_0xf2d6
 {
   UNK_0xf20e(); // UNK_0xf20e
-  Push(Read16(pp_CONTEXT_3) & !(Read16(pp_CONTEXT_3)==1?1:0)); // CONTEXT_3 @ CONTEXT_3 @ 1 = NOT AND
+  Push(Pop() & !(Read16(pp_CONTEXT_3)==1?1:0)); //  CONTEXT_3 @ 1 = NOT AND
   UNK_0xf2b4(); // UNK_0xf2b4
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;

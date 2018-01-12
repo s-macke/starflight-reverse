@@ -327,9 +327,11 @@ void UNK_0xf480() // UNK_0xf480
     Push(0x002c);
     WITHIN(); // WITHIN
     GetID(); // @ID
-    Push(Pop() | (Pop()==Read16(cc_INVIS_dash_I)?1:0)); //   INVIS-I = OR
+    Push(Pop()==Read16(cc_INVIS_dash_I)?1:0); //  INVIS-I =
+    Push(Pop() | Pop()); // OR
     GetID(); // @ID
-    Push(Pop() | (Pop()==0x0060?1:0)); //   0x0060 = OR
+    Push(Pop()==0x0060?1:0); //  0x0060 =
+    Push(Pop() | Pop()); // OR
     if (Pop() != 0)
     {
       UNK_0xf438(); // UNK_0xf438

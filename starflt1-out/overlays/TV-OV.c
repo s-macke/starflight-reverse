@@ -1748,7 +1748,6 @@ void UNK_0xf1fc() // UNK_0xf1fc
 
 void UNK_0xf24e() // UNK_0xf24e
 {
-  Push(Read16(pp_NCRS)); // NCRS @
   Push(Read16(pp_NCRS)==4?1:0); // NCRS @ 4 =
   if (Pop() != 0)
   {

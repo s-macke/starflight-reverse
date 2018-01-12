@@ -288,10 +288,10 @@ void UNK_0xe344() // UNK_0xe344
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@
   Push((Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF)==0x0053?1:0); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@ 0x0053 =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() | (Pop()==4?1:0)); //   4 = OR
+  Push(Pop()==4?1:0); //  4 =
+  Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>
@@ -1570,7 +1570,6 @@ void UNK_0xf210() // UNK_0xf210
   {
     Push(Read16(pp_UNK_0xf1e6)); // UNK_0xf1e6 @
     LoadData(UNK_0xe47f); // from 'CREATURE'
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==2?1:0); //  C@ 2 =
     if (Pop() != 0)
     {

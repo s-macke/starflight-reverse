@@ -619,7 +619,6 @@ void _ro__n_IN_do_() // (#IN$
     Push(0x0021);
     Push(0x005b);
     WITHIN(); // WITHIN
-    Push(b); // I
     Push(b==Read16(cc_BL)?1:0); // I BL =
     PAD(); // PAD
     Push(Read16(Pop())&0xFF); //  C@
@@ -649,14 +648,12 @@ void _ro__n_IN_do_() // (#IN$
       C_ex__2(); // C!_2
     } else
     {
-      Push(b); // I
       Push(b==8?1:0); // I 8 =
       if (Pop() != 0)
       {
         UNK_0xf042(); // UNK_0xf042
       } else
       {
-        Push(b); // I
         Push(!(b==0x000d?1:0)); // I 0x000d = NOT
         Push(b); // I
         _0_gt_(); // 0>
@@ -667,7 +664,6 @@ void _ro__n_IN_do_() // (#IN$
         }
       }
     }
-    Push(b); // R>
     Push(b==0x000d?1:0); // R> 0x000d =
     PAD(); // PAD
     Push(Read16(Pop())&0xFF); //  C@
@@ -1030,9 +1026,11 @@ void _eq_CARG() // =CARG
       GetINST_dash_C(); // @INST-C
       Push(Pop()==0x000b?1:0); //  0x000b =
       GetINST_dash_S(); // @INST-S
-      Push(Pop() & !(Pop()==0x0011?1:0)); //   0x0011 = NOT AND
+      Push(!(Pop()==0x0011?1:0)); //  0x0011 = NOT
+      Push(Pop() & Pop()); // AND
       GetINST_dash_S(); // @INST-S
-      Push(Pop() & !(Pop()==0x0030?1:0)); //   0x0030 = NOT AND
+      Push(!(Pop()==0x0030?1:0)); //  0x0030 = NOT
+      Push(Pop() & Pop()); // AND
       if (Pop() != 0)
       {
         IOPEN(); // IOPEN
@@ -1041,7 +1039,8 @@ void _eq_CARG() // =CARG
           GetINST_dash_S(); // @INST-S
           Push(Pop()==6?1:0); //  6 =
           GetINST_dash_C(); // @INST-C
-          Push(Pop() & (Pop()==0x001a?1:0)); //   0x001a = AND
+          Push(Pop()==0x001a?1:0); //  0x001a =
+          Push(Pop() & Pop()); // AND
           if (Pop() != 0)
           {
             Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @

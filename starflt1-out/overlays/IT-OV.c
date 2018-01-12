@@ -704,7 +704,8 @@ void BOX_gt_LIST() // BOX>LIST
     Push(0x004b);
     _st_(); // <
     GetINST_dash_CLASS(); // @INST-CLASS
-    Push(Pop() | (Pop()==0x000b?1:0)); //   0x000b = OR
+    Push(Pop()==0x000b?1:0); //  0x000b =
+    Push(Pop() | Pop()); // OR
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {

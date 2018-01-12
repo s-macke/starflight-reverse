@@ -299,7 +299,8 @@ void UNK_0xf1b6() // UNK_0xf1b6
   RRND(); // RRND
   Push(Pop()==0?1:0); //  0=
   OVER(); // OVER
-  Push(Pop() & !(Pop()==0x0084?1:0)); //   0x0084 = NOT AND
+  Push(!(Pop()==0x0084?1:0)); //  0x0084 = NOT
+  Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
     Pop(); // DROP
@@ -555,7 +556,6 @@ void UNK_0xf3b7() // UNK_0xf3b7
 
 void _and_LAUNCH() // &LAUNCH
 {
-  Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(Read16(pp_CONTEXT_3)==5?1:0); // CONTEXT_3 @ 5 =
   Push(Read16(regsp)); // DUP
   if (Pop() != 0)

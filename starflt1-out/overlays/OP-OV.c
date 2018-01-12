@@ -632,9 +632,7 @@ void UNK_0xe7ca() // UNK_0xe7ca
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
-    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
-    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
+    Push(((Read16(i)&0xFF)==Read16(cc_BL)?1:0) | (i + 1==imax?1:0)); // I C@ BL = I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP

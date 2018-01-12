@@ -937,7 +937,6 @@ void UNK_0xe1b8() // UNK_0xe1b8
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0); //  C@ BL =
     if (Pop() != 0)
     {
@@ -998,9 +997,7 @@ void UNK_0xe200() // UNK_0xe200
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(i)&0xFF); // I C@
-    Push((Read16(i)&0xFF)==Read16(cc_BL)?1:0); // I C@ BL =
-    Push(i + 1 | (i + 1==imax?1:0)); // I 1+ I 1+ I' = OR
+    Push(((Read16(i)&0xFF)==Read16(cc_BL)?1:0) | (i + 1==imax?1:0)); // I C@ BL = I 1+ I' = OR
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -1052,7 +1049,6 @@ void UNK_0xe254() // UNK_0xe254
 void UNK_0xe264() // UNK_0xe264
 {
   OVER(); // OVER
-  Push(Read16(Pop() + 1)&0xFF); //  1+ C@
   Push(!((Read16(Pop() + 1)&0xFF)==Read16(cc_BL)?1:0)); //  1+ C@ BL = NOT
   if (Pop() == 0) return;
   Push(pp_UNK_0xe260); // UNK_0xe260
@@ -1092,7 +1088,6 @@ void UNK_0xe28c() // UNK_0xe28c
       _099(); // 099
     }
     OVER(); // OVER
-    Push(Read16(Pop())&0xFF); //  C@
     Push(!(((Read16(Pop())&0xFF)==0x002e?1:0) | (Read16(pp_UNK_0xdfd6)==0?1:0))); //  C@ 0x002e = UNK_0xdfd6 @ 0= OR NOT
     if (Pop() != 0)
     {
@@ -2530,7 +2525,6 @@ void UNK_0xea9d() // UNK_0xea9d
   if (Pop() != 0)
   {
     LoadData(UNK_0xe10a); // from 'ARTIFACT'
-    Push(Read16(Pop())&0xFF); //  C@
     Push((Read16(Pop())&0xFF)==2?1:0); //  C@ 2 =
   } else
   {
@@ -4044,7 +4038,6 @@ void UNK_0xf37e() // UNK_0xf37e
 
 void UNK_0xf386() // UNK_0xf386
 {
-  Push(Read16(pp_PLAST)); // PLAST @
   Push(Read16(pp_PLAST)==Read16(pp_UNK_0xdfde)?1:0); // PLAST @ UNK_0xdfde @ =
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xe4ae); // UNK_0xe4ae
@@ -4247,7 +4240,6 @@ void DO_dash_BARTER() // DO-BARTER
 
 void UNK_0xf486() // UNK_0xf486
 {
-  Push(Read16(pp_PLAST)); // PLAST @
   Push(Read16(pp_PLAST)==Read16(pp_UNK_0xdfde)?1:0); // PLAST @ UNK_0xdfde @ =
   if (Pop() != 0)
   {

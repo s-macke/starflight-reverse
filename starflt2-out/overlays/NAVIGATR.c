@@ -213,7 +213,6 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
   UNK_0xf1e0(); // UNK_0xf1e0
   SET_STR_AS_PARAM("SHIELDS ARE DOWN");
   DrawTTY(); // .TTY
-  Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   Push(Read16(pp_BTN_dash_REC)==3?1:0); // BTN-REC @ 3 =
   if (Pop() != 0)
   {
@@ -245,7 +244,7 @@ void UNK_0xf311() // UNK_0xf311
   Push(6);
   UNK_0xf1ba(); // UNK_0xf1ba
   _gt_FLAG(); // >FLAG
-  Push(Read16(pp_NLR) & !(Read16(pp_NLR)==-1?1:0)); // NLR @ NLR @ -1 = NOT AND
+  Push(Pop() & !(Read16(pp_NLR)==-1?1:0)); //  NLR @ -1 = NOT AND
   UNK_0xf301(); // UNK_0xf301
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
@@ -267,7 +266,6 @@ void UNK_0xf311() // UNK_0xf311
     ON_2(); // ON_2
     return;
   }
-  Push(Read16(pp_NLR)); // NLR @
   Push(Read16(pp_NLR)==-1?1:0); // NLR @ -1 =
   if (Pop() == 0) return;
   CTINIT(); // CTINIT

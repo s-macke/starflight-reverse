@@ -413,7 +413,8 @@ void _ro__dot_OBJECT_rc_() // (.OBJECT)
 void UNK_0xed9f() // UNK_0xed9f
 {
   GetINST_dash_C(); // @INST-C
-  Push(Pop() & !(Pop()==0x003c?1:0)); //   0x003c = NOT AND
+  Push(!(Pop()==0x003c?1:0)); //  0x003c = NOT
+  Push(Pop() & Pop()); // AND
   GetColor(BLUE);
   StoreCOLOR(); // !COLOR
   if (Pop() != 0)
@@ -627,7 +628,8 @@ void UNK_0xef13() // UNK_0xef13
   Push(0x001f);
   WITHIN(); // WITHIN
   Push(Pop() | Pop()); // OR
-  Push(Pop() & (a | (a==0x0020?1:0))); //  R> R> 0x0020 = OR AND
+  Push(Pop() | (a==0x0020?1:0)); //  R> 0x0020 = OR
+  Push(Pop() & Pop()); // AND
 }
 
 
@@ -663,8 +665,7 @@ void UNK_0xef53() // UNK_0xef53
       Draw(); // .
       PRINT("EQUIVALENT", 10); // (.")
     }
-    Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
-    Push(Read16(pp_NLR) & !(Read16(pp_NLR)==1?1:0)); // NLR @ NLR @ 1 = NOT AND
+    Push(Read16(cc_IsA_dash_SHIE) & !(Read16(pp_NLR)==1?1:0)); // ?A-SHIE NLR @ 1 = NOT AND
     UNK_0xef13(); // UNK_0xef13
     if (Pop() != 0)
     {
@@ -1263,7 +1264,6 @@ void UNK_0xf3b8() // UNK_0xf3b8
   do // (DO)
   {
     Push(Pop() + 1); //  1+
-    Push(Read16(pp_UNK_0xf3af + i)&0xFF); // UNK_0xf3af I + C@
     Push((Read16(pp_UNK_0xf3af + i)&0xFF)==a?1:0); // UNK_0xf3af I + C@ J =
     if (Pop() != 0)
     {

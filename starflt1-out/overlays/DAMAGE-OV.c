@@ -677,7 +677,6 @@ void UNK_0xec8a() // UNK_0xec8a
 
 void UNK_0xeca0() // UNK_0xeca0
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==1?1:0); // #AUX @ 1 =
   if (Pop() != 0)
   {
@@ -694,7 +693,6 @@ void UNK_0xeca0() // UNK_0xeca0
 
 void UNK_0xecbc() // UNK_0xecbc
 {
-  Push(Read16(pp__n_AUX)); // #AUX @
   Push(Read16(pp__n_AUX)==3?1:0); // #AUX @ 3 =
   if (Pop() != 0)
   {
@@ -860,7 +858,6 @@ void UNK_0xed9e() // UNK_0xed9e
       imax = i; // LEAVE
     } else
     {
-      Push(Read16(i)&0xFF); // I C@
       Push((Read16(i)&0xFF)==0x00ff?1:0); // I C@ 0x00ff =
       if (Pop() != 0)
       {
@@ -1383,7 +1380,9 @@ void UNK_0xf19a() // UNK_0xf19a
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(Pop()==0x0018?1:0); //  0x0018 =
   GetINST_dash_CLASS(); // @INST-CLASS
-  Push(!(Pop() | (Pop()==0x0014?1:0))); //   0x0014 = OR NOT
+  Push(Pop()==0x0014?1:0); //  0x0014 =
+  Push(Pop() | Pop()); // OR
+  Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     Push(Read16(pp_IsSOUND)); // ?SOUND @

@@ -1233,7 +1233,6 @@ void UNK_0xf0a6() // UNK_0xf0a6
 {
   UNK_0xea70(); // UNK_0xea70
   UNK_0xea7a(); // UNK_0xea7a
-  Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push((Read16(pp_A_dash_POSTU)==2?1:0) & Read16(cc_UNK_0xf08a)); // A-POSTU @ 2 = UNK_0xf08a AND
   if (Pop() != 0)
   {
@@ -1352,7 +1351,6 @@ void UNK_0xf174() // UNK_0xf174
 {
   UNK_0xea70(); // UNK_0xea70
   UNK_0xea7a(); // UNK_0xea7a
-  Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push(Read16(pp_A_dash_POSTU)==2?1:0); // A-POSTU @ 2 =
   if (Pop() != 0)
   {
@@ -1416,7 +1414,6 @@ void UNK_0xf1d2() // UNK_0xf1d2
   if (Pop() != 0)
   {
     UNK_0xf1c6(); // UNK_0xf1c6
-    Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
     Push(((Read16(pp_A_dash_POSTU)==8?1:0) * 6 + 3) + 0x0030); // A-POSTU @ 8 = 6 * 3 + 0x0030 +
     Push(3);
     PICK(); // PICK
@@ -1429,7 +1426,6 @@ void UNK_0xf1d2() // UNK_0xf1d2
     if (Pop() != 0)
     {
       Push(Read16(pp_UNK_0xebce)); // UNK_0xebce @
-      Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
       Push((Read16(pp_A_dash_POSTU)==8?1:0) * 0x003c + 0x001e); // A-POSTU @ 8 = 0x003c * 0x001e +
       MIN(); // MIN
       Push(6);

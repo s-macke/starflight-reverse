@@ -768,7 +768,6 @@ void _v_REGION() // |REGION
   {
     SWAP(); // SWAP
     Pop(); // DROP
-    Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
     Push(Read16(pp_BUF_dash_SEG)==0xa000?1:0); // BUF-SEG @ 0xa000 =
     if (Pop() != 0)
     {
@@ -1633,7 +1632,6 @@ void UNK_0xf3a9() // UNK_0xf3a9
   unsigned short int i, imax;
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_ABLT)); // ABLT @
   Push(Read16(pp_ABLT)==pp_UNK_0xf0b5?1:0); // ABLT @ UNK_0xf0b5 =
   if (Pop() != 0)
   {

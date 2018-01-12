@@ -382,10 +382,10 @@ void UNK_0xe39f() // UNK_0xe39f
   b = Pop(); // >R
   _2DUP(); // 2DUP
   _gt_C_plus_S(); // >C+S
-  Push(Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@
   Push((Read16(((Read16(0x63ef+PHR_dash_CNT.offset)&0xFF) - 1) + (0x63ef+PHRASE_dash_MEM.offset))&0xFF)==0x0053?1:0); // PHR-CNT<IFIELD> C@ 1- PHRASE-MEM<IFIELD> + C@ 0x0053 =
   GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop() | (Pop()==4?1:0)); //   4 = OR
+  Push(Pop()==4?1:0); //  4 =
+  Push(Pop() | Pop()); // OR
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>
@@ -1192,7 +1192,9 @@ void UNK_0xeafb() // UNK_0xeafb
     Push(Read16(a)); // R@
     Push(Pop()==0x0049?1:0); //  0x0049 =
     Push(Read16(a)); // R@
-    Push(Pop() | ((Pop()==0x004f?1:0) | (a | (a==0x0055?1:0)))); //   0x004f = R> R> 0x0055 = OR OR OR
+    Push((Pop()==0x004f?1:0) | (a==0x0055?1:0)); //  0x004f = R> 0x0055 = OR
+    Push(Pop() | Pop()); // OR
+    Push(Pop() | Pop()); // OR
     Push(Pop() | Pop()); // OR
     ICLOSE(); // ICLOSE
     return;
@@ -2290,7 +2292,6 @@ void IsTALK() // ?TALK
       GetIH(); // @IH
       _gt_C_plus_S(); // >C+S
       GetINST_dash_CLASS(); // @INST-CLASS
-      Push(Read16(pp_NCRS)); // NCRS @
       Push(Read16(pp_NCRS)==3?1:0); // NCRS @ 3 =
       if (Pop() != 0)
       {
@@ -2303,7 +2304,7 @@ void IsTALK() // ?TALK
       Push(imax); // I'
       Push(1);
       _gt_(); // >
-      Push(i + 1 & !(i + 1==imax?1:0)); // I 1+ I 1+ I' = NOT AND
+      Push(Pop() & !(i + 1==imax?1:0)); //  I 1+ I' = NOT AND
       if (Pop() != 0)
       {
         Push(0x05dc);

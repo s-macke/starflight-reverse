@@ -2048,7 +2048,6 @@ void UNK_0xf264() // UNK_0xf264
     _gt_MAINVI(); // >MAINVI
     DARK(); // DARK
     UNK_0xf1ac(); // UNK_0xf1ac
-    Push(j); // I
     Push(!(j==8?1:0)); // I 8 = NOT
     if (Pop() != 0)
     {

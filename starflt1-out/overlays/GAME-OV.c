@@ -756,7 +756,6 @@ void OUTERSPACE() // OUTERSPACE
 void IsHUB() // ?HUB
 {
   Push(pp_UNK_0xe10a); // UNK_0xe10a
-  Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(Read16(pp_CONTEXT_dash_ID_n_)==5?1:0); // CONTEXT-ID# @ 5 =
   if (Pop() != 0)
   {
@@ -889,7 +888,6 @@ void IsBL_st__dash_() // ?BL<-
   do
   {
     Push(Read16(regsp)); // DUP
-    Push(Read16(Pop())&0xFF); //  C@
     Push(!((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0)); //  C@ BL = NOT
     if (Pop() == 0) return;
     Push(Pop() - 1); //  1-
@@ -1870,7 +1868,6 @@ void UNK_0xea11() // UNK_0xea11
 void PUSHVECT() // PUSHVECT
 {
   unsigned short int i, imax;
-  Push(Read16(pp_BUF_dash_SEG)); // BUF-SEG @
   Push(Read16(pp_BUF_dash_SEG)==Read16(pp_DBUF_dash_SEG)?1:0); // BUF-SEG @ DBUF-SEG @ =
   Push(Read16(pp_BLTSEG)); // BLTSEG @
   UNK_0xe9f3(); // UNK_0xe9f3
@@ -2913,7 +2910,7 @@ void GET_dash_OPTION_n_() // GET-OPTION#
     Push(0x0031);
     Push(0x0034);
     WITHIN(); // WITHIN
-    Push(Read16(pp_LKEY) | (Read16(pp_LKEY)==0x0039?1:0)); // LKEY @ LKEY @ 0x0039 = OR
+    Push(Pop() | (Read16(pp_LKEY)==0x0039?1:0)); //  LKEY @ 0x0039 = OR
   } while(Pop() == 0);
   Push(Read16(pp_LKEY)); // LKEY @
 }

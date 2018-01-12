@@ -624,7 +624,6 @@ void _ro_DO_dot_STORM() // (DO.STORM
   }
   ICLOSE(); // ICLOSE
   UNK_0xf42e(); // UNK_0xf42e
-  Push(a); // R>
   Push(!(a==Read16(pp__n_STORM)?1:0)); // R> #STORM @ = NOT
   if (Pop() != 0)
   {

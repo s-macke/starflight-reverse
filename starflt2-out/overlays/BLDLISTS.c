@@ -1063,7 +1063,7 @@ void UNK_0xefad() // UNK_0xefad
     RRND(); // RRND
     OVER(); // OVER
     _st_(); // <
-    Push(i | (i==0x0017?1:0)); // I I 0x0017 = OR
+    Push(Pop() | (i==0x0017?1:0)); //  I 0x0017 = OR
     if (Pop() != 0)
     {
       Push(Read16(cc_UNK_0xeb92)); // UNK_0xeb92
