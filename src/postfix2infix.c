@@ -186,9 +186,9 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
         snprintf(ret, STRINGLEN, "GetTableEntry(\"%s\");\n", s);
         return;
     }
-    if (e->codep == CODESETCOLOR)
+    if (e->codep == CODEGETCOLOR)
     {
-        snprintf(ret, STRINGLEN, "SetColor(%s);\n", Forth2CString(s));
+        snprintf(ret, STRINGLEN, "GetColor(%s);\n", Forth2CString(s));
         return;
     }
     if (e->codep == CODESIGFLD)

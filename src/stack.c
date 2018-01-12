@@ -8,6 +8,7 @@
 #include"dictionary.h"
 #include"parser.h"
 #include"stack.h"
+#include"../emul/cpu.h"
 
 void FunctionStackAnalysis(int parp, int ovidx)
 {
@@ -15,7 +16,6 @@ void FunctionStackAnalysis(int parp, int ovidx)
 
     int addr = dd->parp;
     char *s = GetWordName(dd);
-
     if (dd->codep != CODECALL) return;
     if (dd->stackin != STACKINVALID) return;
     if (dd->stackout != STACKINVALID) return;
@@ -50,6 +50,23 @@ void FunctionStackAnalysis(int parp, int ovidx)
             return;
         }
         //printf("word %20s codep=%04x parp=%04x stack=%i in=%i out=%i \n", GetWordName(d), d->codep, d->parp, stack, d->stackin, d->stackout);
+
+        if (d->codep == CODEEXEC)
+        {
+            int par = Read16(Read16(d->parp)+REGDI);
+            d = GetDictEntry(par, ovidx);
+            if (d == NULL)
+            {
+                fprintf(stderr, "Error: Something went wrong\n");
+                exit(1);
+            }
+        }
+/*
+        if (strcmp(GetWordName(dd), "?.CERTAIN") == 0)
+        {
+            printf("%s %i %i\n", GetWordName(d), d->stackin, d->stackout);
+        }
+*/
         if (d->stackin  == STACKINVALID) return;
         if (d->stackout == STACKINVALID) return;
 
@@ -137,20 +154,10 @@ void StackAnalysis(int ovidx)
             dict[i].stackin = 0;
             dict[i].stackout = 0;
         }
-        if (dict[i].codep == CODESETCOLOR)
+        if (dict[i].codep == CODEGETCOLOR)
         {
             dict[i].stackin = 0;
             dict[i].stackout = 1;
-        }
-        if (dict[i].codep == CODEEXEC) // not sure, call 1649
-        {
-            dict[i].stackin = 2; // at least correct for TYPE
-            dict[i].stackout = 0;
-        }
-        if (dict[i].codep == CODESIGFLD) // not sure, call 1649
-        {
-            dict[i].stackin = 0;
-            dict[i].stackout = 0;
         }
         if (dict[i].codep == CODEIFIELD)
         {
@@ -161,6 +168,16 @@ void StackAnalysis(int ovidx)
         {
             dict[i].stackin = 0;
             dict[i].stackout = 2;
+        }
+        if (dict[i].codep == CODESIGFLD) // not sure, call 1649
+        {
+            dict[i].stackin = 0;
+            dict[i].stackout = 0;
+        }
+        if (dict[i].codep == CODETABLE) // call 1649, probably right
+        {
+            dict[i].stackin = 1;
+            dict[i].stackout = 1;
         }
     }
     Set("@", 1, 1);
@@ -178,6 +195,7 @@ void StackAnalysis(int ovidx)
     Set("2*", 1, 1);
     Set("4*", 1, 1);
     Set("2/", 1, 1);
+    Set("16/", 1, 1);
     Set("+", 2, 1);
     Set("-", 2, 1);
     Set("*", 2, 1);
@@ -210,7 +228,7 @@ void StackAnalysis(int ovidx)
     Set("EXIT", 0, 0);
     Set("GO", 1, 0);
     Set("EXECUTE", 1, 0);
-    Set("@EXECUTE", 1, 0);
+    //Set("@EXECUTE", 1, 0); Need special logic
     Set("ADDR>SEG", 1, 1);
     Set("SEG>ADDR", 1, 1);
     Set("P!", 2, 0);
@@ -243,6 +261,7 @@ void StackAnalysis(int ovidx)
     Set("LCMOVE", 5, 0);
     Set("+!_2", 2, 0);
     Set("?UPDATE", 1, 1); // not sure
+    Set("!OFFSETS", 1, 0);
     Set("OFF_2", 1, 0);
     Set("ON_2", 1, 0);
     Set("BFILL", 0, 0);
@@ -273,20 +292,36 @@ void StackAnalysis(int ovidx)
     Set("UNRAVEL", 0, 0); // No sure, but probably right
     Set("<1.5!>", 3, 0);
     Set("1.5@", 1, 2);
-
     Set(">C", 2, 0);
     Set("C>", 0, 2);
     Set("CI", 0, 2);
-
-    Set("(ABORT\")", 1, 0);
-
+    //Set("(ABORT\")", 1, 0);
     Set("CDEPTH", 0, 1);
-
     Set("LLINE", 4, 0);
     Set("UNK_0x3672", 1, 1); // in both starflight the same
+    Set("BINSTALLS", 0, 0);
+    Set("(POSITION)", 2, 0);
+    Set("POSITION", 2, 0);
+    Set("SCROLLUP", 1, 0);
+    Set("?POSITION", 0, 2);
+    Set("CUR>ADDR", 0, 1);
+    Set("V!", 2, 0);
+    Set("V@", 1, 0);
+    Set("VFILL", 3, 0);
+    Set("VMOVE", 3, 0);
+    //Set("(FIND)", 2, 1); // 1 in unsuccessful, 3 if successfull
+    Set("ENCLOSE", 2, 4);
+    Set(">UPPERCASE", 2, 0);
+    //Set("DIGIT", 2, 1); // output dependent
+    Set("!", 2, 0);
+    Set("+!", 2, 0);
+    Set("?ENOUGH", 1, 0); // Because of abort dependent on path
+    Set("FRND", 0, 1);
+    //Set("*CREATE", 1, 1); // output dependent on input
+    Set("LPLOT", 2, 0);
 
 #ifdef STARFLT1
-    Set("!", 2, 0);
+
     //Set("UNK_0x8332", 1, 1); // Seems recursive
     Set("UNK_0x8df0", 0, 0); // Something with graphics
     Set("UNK_0x93b1", 0, 4);
@@ -295,17 +330,16 @@ void StackAnalysis(int ovidx)
     Set("LCOPYBLK", 6, 0); // left, top, right, bottom, left top
     Set("V>DISPLAY", 0, 0); // not sure
     Set("{BLT}", 0, 0); // not sure
+    Set("LFILLPOLY", 0, 0); // probably
+
 #endif
 #ifdef STARFLT2
-    Set("!_1", 2, 0);
     Set("UNK_0x7650", 0, 1);
     Set("CMOVE_1", 3, 0);
 #endif
 
     /*
-    Set("LPLOT", 0, 0);
     Set("LXPLOT", 0, 0);
-    Set("LFILLPOLY", 0, 0);
     Set("TILEFILL", 0, 0);
     Set("SQLPLOT", 0, 0);
     Set("EEXTENT", 0, 0);

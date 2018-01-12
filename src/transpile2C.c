@@ -194,7 +194,7 @@ void WriteExtern(FILE *fp, int ovidx)
     }
     for(i=0; i<ndict; i++)
     {
-        if (dict[i].codep != CODESETCOLOR) continue;
+        if (dict[i].codep != CODEGETCOLOR) continue;
         if (!dict[i].isextern) continue;
         fprintf(fp, "extern Color %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
         dict[i].isextern = FALSE;
@@ -431,7 +431,7 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
     {
         fprintf(fp, " orphan");
     }
-    if (e->stackin != 0xFFFF && e->codep == CODECALL)
+    if (e->stackin != 0xFFFF && (e->codep == CODECALL || pline[e->parp].isasm) )
     {
          fprintf(fp, " params=%i returns=%i", e->stackin, e->stackout);
     }
@@ -740,7 +740,7 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                     addr = efunc->parp+2-1;
                     continue;
 
-                case CODESETCOLOR:
+                case CODEGETCOLOR:
                     fprintf(fp, "Color %s = 0x%02x\n", Forth2CString(s), Read8(efunc->parp+0));
                     addr = efunc->parp+1-1;
                     continue;

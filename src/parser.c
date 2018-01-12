@@ -830,7 +830,7 @@ void SetStructDone(int ovidx)
             pline[parp+0].done = TRUE;
             pline[parp+1].done = TRUE;
         }
-        if (dict[i].codep == CODESETCOLOR)
+        if (dict[i].codep == CODEGETCOLOR)
         {
             pline[parp+0].done = TRUE;
         }
@@ -895,7 +895,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
                 Variables vars = GetEmptyVariables();
                 ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
             }
-            if (Read16(i+1) == CODESETCOLOR)
+            if (Read16(i+1) == CODEGETCOLOR)
             {
                 DICTENTRY *e = GetDictEntry(i+3, ovidx);
                 e->isorphan = 1;

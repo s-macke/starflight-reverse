@@ -55,7 +55,7 @@ extern WORDRENAME renamewords[];
     #define CODELOADDATA      0x73ea // code executed when data is loaded from directory
     #define CODELOADOVERLAY   0x83F8
     #define CODETABLE         0x5275 // "OVT" "IARRAYS"
-    #define CODESETCOLOR      0x4ef5 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
+    #define CODEGETCOLOR      0x4ef5 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
     #define CODESIGFLD        0x6ec1 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
     #define CODEPUSH2WORDS    0x3b68 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
     #define CODEFUNC5         0x4a96 // "CCASE" (in CASE:)
@@ -68,7 +68,7 @@ extern WORDRENAME renamewords[];
     #define CODE2DARRAY       0x4e00 // Arrays
     #define CODEFUNC12        0x0000 //
     #define CODERULE          0xb869 //
-    #define CODEEXEC          0x17b7 // -FIND ?TERMINAL ABORT BELL TYPE ....
+    #define CODEEXEC          0x17b7 // The code pointers can be overwritten. -FIND ?TERMINAL ABORT BELL TYPE ....
 
 
 
@@ -97,7 +97,7 @@ extern WORDRENAME renamewords[];
     #define CODELOADDATA      0x7394 // code executed when data is loaded from directory
     #define CODELOADOVERLAY   0x83DD
     #define CODETABLE         0x53f7 // "OVT" "IARRAYS"
-    #define CODESETCOLOR      0x4f96 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
+    #define CODEGETCOLOR      0x4f96 // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
     #define CODESIGFLD        0x6e67 // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
     #define CODEPUSH2WORDS    0x3b74 // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
     #define CODEFUNC5         0x4b82 // "CCASE"

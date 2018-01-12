@@ -365,8 +365,8 @@ WORDRENAME renamewords[] =
     {0xff, 0x9c34, ".CIRCLE_2"}, // ".CIRCLE"
     {0xff, 0x6d94, "1.5!"}, // "1.5!"
     {0xff, 0x49ae, "1.5!_2"}, // "1.5!"
-    {0xff, 0x6d85, "+!"}, // "+!"
-    {0xff, 0x0f85, "+!_2"}, // "+!"
+    {0xff, 0x6d85, "+!_2"}, // "+!"
+    {0xff, 0x0f85, "+!"}, // "+!"
     {0xff, 0x6d6c, "C!"}, // "C!"
     {0xff, 0x0c60, "C!_2"}, // "C!"
     {0xff, 0x6da1, "2!"}, // "2!"
@@ -563,7 +563,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x4974, "OFF_2" }, // OFF
     {0xff, 0x0d35, "FILL_1" }, // FILL
     {0xff, 0x6d9f, "FILL_2" }, // FILL
-    {0xff, 0x0be1, "!_1" }, // !
+    {0xff, 0x0be1, "!" }, // ! // ! this is the standard store
     {0xff, 0x6d18, "!_2" }, // !
     {0xff, 0x05ac, "CONTEXT_1" }, // CONTEXT
     {0xff, 0xca30, "CONTEXT_2" }, // CONTEXT
@@ -587,7 +587,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x63f2, "(SCROLL_2" }, // (SCROLL
     {0xff, 0x4a9c, "1.5!_1" }, // 1.5!
     {0xff, 0x6d34, "1.5!_2" }, // 1.5!
-    {0xff, 0x0f85, "+!_1" }, // +!
+    {0xff, 0x0f85, "+!" }, // +!
     {0xff, 0x6d25, "+!_2" }, // +!
     {0xff, 0x0c60, "C!_1" }, // C!
     {0xff, 0x6d0c, "C!_2" }, // C!
@@ -616,6 +616,12 @@ WORDRENAME renamewords[] =
     {0xff, 0x06ac, "KEY_1" }, // KEY
     {0xff, 0x4999, "KEY_2" }, // KEY
     {0xff, PARPRINT, "SET_STR_AS_PARAM"}, // "UNK_0x3f09"
+    {0xff, 0x4e13, "!OFFSETS"}, // "!OFFSET"
+    {0xff, 0xb0c1, "LFCLAIM"}, // "UNK_0xb0c1"
+    {0xff, 0xb0d3, "AINSTALL"}, // "UNK_0xb0d3"
+    {0xff, 0xb0f5, "BINSTALL"}, // "UNK_0xb0f5"
+    {0xff, 0xb0ff, "AINSTALLS"}, // "UNK_0xbb0ff"
+    {0xff, 0xb141, "BINSTALLS"}, // "UNK_0xb141"
     {0x0, 0x0, NULL}
 };
 
