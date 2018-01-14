@@ -1,27 +1,52 @@
 #include"cpu.h"
+#include<string.h>
 
-unsigned char mem[0x10000];
+unsigned char m[1024*1024];
+unsigned char *mem;
 unsigned short regsp;
 
-unsigned char Read8(unsigned short ofs)
+void Write8(unsigned short offset, unsigned char x)
 {
-    return mem[ofs];
+    mem[offset] = x;
 }
 
-unsigned short Read16(unsigned short ofs)
+void Write8Long(unsigned short s, unsigned short o, unsigned char x)
 {
-    return mem[ofs+0] | (mem[ofs+1]<<8);
+    m[(s<<4) + o] = x;
 }
 
-void Write16(unsigned short ofs, unsigned short x)
+void Write16(unsigned short offset, unsigned short x)
 {
-    mem[ofs+0] = (x>>0)&0xFF;
-    mem[ofs+1] = (x>>8)&0xFF;
+    mem[offset+0] = (x>>0)&0xFF;
+    mem[offset+1] = (x>>8)&0xFF;
 }
 
-void Write8(unsigned short ofs, unsigned char x)
+void Write16Long(unsigned short s, unsigned short o, unsigned short x)
 {
-    mem[ofs] = x;
+    m[(s<<4)+o+0] = x&0xFF;
+    m[(s<<4)+o+1] = x>>8;
+}
+
+unsigned char Read8(unsigned short offset)
+{
+    return mem[offset];
+}
+
+unsigned char Read8Long(unsigned short s, unsigned short o)
+{
+    int addr = (s<<4) + o;
+    return m[addr];
+}
+
+unsigned short Read16(unsigned short offset)
+{
+    return mem[offset+0] | (mem[offset+1]<<8);
+}
+
+unsigned short Read16Long(unsigned short s, unsigned short o)
+{
+    int addr = (s<<4) + o;
+    return m[addr + 0] | (m[addr + 1]<<8);
 }
 
 void Push(unsigned short x)
@@ -37,5 +62,10 @@ unsigned short Pop()
     return x;
 }
 
+void InitCPU()
+{
+    memset(m, 0, 1024*1024);
+    mem = &m[0x192 << 4];
+}
 
 

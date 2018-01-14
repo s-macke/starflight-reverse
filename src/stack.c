@@ -319,6 +319,7 @@ void StackAnalysis(int ovidx)
     Set("FRND", 0, 1);
     //Set("*CREATE", 1, 1); // output dependent on input
     Set("LPLOT", 2, 0);
+    Set("(KEY)", 0, 1);
 
 #ifdef STARFLT1
 

@@ -137,6 +137,8 @@ int main()
     FILE *fpc;
     FILE *fph;
 
+    InitCPU();
+
     ExtractDirectory();
     ExtractDataFile(OUTDIR"/data.h");
     ExtractInstance(OUTDIR"/data/instance.txt");
@@ -159,6 +161,8 @@ int main()
     {
         LoadOverlayDict(i);
 #ifdef STARFLT1
+        GetDictEntry(0x8a2d, -1);
+        GetDictEntry(0x602f, -1);
         switch(i)
         {
             case 0x0F: // VITA-OV
