@@ -862,7 +862,7 @@ void SMARTOPEN() // SMARTOPEN
 // 0x4658: db 0x69 0x46 'iF'
 
 // ================================================
-// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669
+// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669 params=0 returns=0
 // ================================================
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>

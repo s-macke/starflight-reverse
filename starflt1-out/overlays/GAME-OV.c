@@ -2653,7 +2653,7 @@ void BOX() // BOX
 
 
 // ================================================
-// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5
+// 0xeee3: WORD 'SET.DISPLAY.VECTORS' codep=0x224c parp=0xeee5 params=0 returns=1
 // ================================================
 
 void SET_dot_DISPLAY_dot_VECTORS() // SET.DISPLAY.VECTORS

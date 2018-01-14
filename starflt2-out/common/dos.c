@@ -896,7 +896,7 @@ void SMARTOP() // SMARTOP
 // 0x4635: db 0x00 0x00 '  '
 
 // ================================================
-// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643
+// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643 params=0 returns=0
 // ================================================
 
 void _st_ASKMOU() // <ASKMOU

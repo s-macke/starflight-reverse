@@ -7338,7 +7338,7 @@ void _ro_CREATE_rc_() // (CREATE)
 
 
 // ================================================
-// 0x1d31: WORD '(EXPECT)' codep=0x224c parp=0x1d3e
+// 0x1d31: WORD '(EXPECT)' codep=0x224c parp=0x1d3e params=2 returns=0
 // ================================================
 
 void _ro_EXPECT_rc_() // (EXPECT)
@@ -8181,7 +8181,7 @@ void PFA() // PFA
 
 
 // ================================================
-// 0x23fb: WORD 'QUERY' codep=0x224c parp=0x2405
+// 0x23fb: WORD 'QUERY' codep=0x224c parp=0x2405 params=0 returns=0
 // ================================================
 
 void QUERY() // QUERY
@@ -8446,7 +8446,7 @@ void _bc_() // ]
 // 0x25cb: jmp    word ptr [bx]
 
 // ================================================
-// 0x25cd: WORD '(KEY)' codep=0x25d7 parp=0x25d7
+// 0x25cd: WORD '(KEY)' codep=0x25d7 parp=0x25d7 params=0 returns=1
 // ================================================
 // 0x25d7: mov    ah,01
 // 0x25d9: int    16
@@ -12640,7 +12640,7 @@ void SMARTOP() // SMARTOP
 // 0x4635: db 0x00 0x00 '  '
 
 // ================================================
-// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643
+// 0x4637: WORD '<ASKMOU' codep=0x224c parp=0x4643 params=0 returns=0
 // ================================================
 
 void _st_ASKMOU() // <ASKMOU
@@ -25358,7 +25358,7 @@ void _st_CTVERS() // <CTVERS
 
 
 // ================================================
-// 0xaa2f: WORD '<CTASKM' codep=0x224c parp=0xaa3b
+// 0xaa2f: WORD '<CTASKM' codep=0x224c parp=0xaa3b params=0 returns=0
 // ================================================
 
 void _st_CTASKM() // <CTASKM
