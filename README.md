@@ -20,7 +20,7 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-This project is a fun project trying to reverse engineer the old code. Starflight was written in FORTH which enables us to extract most of the original source code. Take a look at the [technical articles](http://migblog.blog.com/starflight-home/)
+This project is a fun project trying to reverse engineer the old code. Starflight was written in FORTH which enables us to extract most of the original source code. Take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
 The disassember transpiles the FORTH code into C-style code, because more people are familiar with this style. Most of the transpiled code compiles.
 
 ## Usage ##
