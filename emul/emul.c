@@ -2,7 +2,6 @@
 #include<stdlib.h>
 #include<string.h>
 
-#define STARFLT1
 #include"cpu.h"
 #include"../starflt1-out/data/dict.h"
 #include"../src/global.h"
