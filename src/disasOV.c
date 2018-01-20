@@ -112,14 +112,12 @@ void DisasStarflt()
     Transpile(OUTDIR"/common/instance", NULL, ovidx, 0x79d6, 0x81f3 - 1, WRITE_EXTERN | WRITE_VARIABLES);
     Transpile(OUTDIR"/common/dos",      NULL, ovidx, 0x4094, 0x4952 - 1, WRITE_EXTERN | WRITE_VARIABLES);
 #endif
-
-
 }
 
 void ExtractDirectory()
 {
     FILE *fp;
-    fp = fopen(OUTDIR"/directory.txt", "w");
+    fp = fopen(OUTDIR"/data/directory.h", "w");
     if (fp == NULL)
     {
         fprintf(stderr, "Error: Cannot create file\n");

@@ -109,28 +109,32 @@ void LoadDir(FILE *fp)
 
     //SortDirectory();
 
-    fprintf(fp, "// =================================\n");
-    fprintf(fp, "// ==== Directory of Star Files ====\n");
-    fprintf(fp, "// =================================\n");
+    fprintf(fp, "// =====================================\n");
+    fprintf(fp, "// ==== Directory of the STAR files ====\n");
+    fprintf(fp, "// =====================================\n\n");
+
+    fprintf(fp, "typedef struct { int idx; char* name; int fileno, start, end, size, nblocks, blocksize, lsize; } DIRENTRY;\n\n");
+
+    fprintf(fp, "DIRENTRY dir[]=\n{\n");
 
     int idx = 0;
     for(idx = 0; idx<ndir; idx++)
     {
-        fprintf(fp, "// idx: 0x%02x name:'", dir[idx].idx);
+        fprintf(fp, "  { .idx=0x%02x, .name=\"", dir[idx].idx);
         for(j=0; j<12; j++) fprintf(fp, "%c", dir[idx].name[j]);
-        fprintf(fp, "' fileno:%2i  start:0x%06x end:0x%06x size:0x%05x nblocks:%4i blocksize:%4i lsize:0x%02x gap:0x%06x",
+        fprintf(fp, "\", .fileno=%1i, .start=0x%06x, .end=0x%06x, .size=0x%05x, .nblocks=%4i, .blocksize=%4i, .lsize=0x%02x },",
             dir[idx].fileno,
             dir[idx].start*16,
             dir[idx].end*16,
             ((dir[idx].end-dir[idx].start)+1)*16,
             dir[idx].nblocks,
             dir[idx].blocksize,
-            dir[idx].lsize,
-            dir[idx+1].start*16 - dir[idx].end*16
+            dir[idx].lsize
             );
         fprintf(fp, "\n");
     }
-
+    fprintf(fp, "  { .idx= -1, .name=NULL, .fileno=0, .start=0x0, .end=0x0, .size=0x0, .nblocks=0x0, .blocksize=0x0, .lsize=0x0 }");
+    fprintf(fp, "};\n");
 }
 
 char* Extract(int fileidx, int *size)
