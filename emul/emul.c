@@ -3,7 +3,9 @@
 #include<string.h>
 
 #include"cpu.h"
+#include"graphics.h"
 #include"../starflt1-out/data/dict.h"
+#include"../starflt1-out/data/directory.h"
 #include"../src/global.h"
 
 const unsigned short cs = 0x192;
@@ -28,22 +30,46 @@ void LoadSTARFLT()
     fclose(fp);
 }
 
-char* FindWord(int word)
+// ugly code to get our own overlay index from the address in the star file
+int GetOverlayIndex(int address)
 {
+    if (address == 0) return -1;
+    //printf("Find overlay for address 0x%04x\n", address);
     int i = 0;
     do
     {
+        if ((address<<4) == dir[i].start)
+        {
+            int idx = dir[i].idx;
+            int j = 0;
+            do
+            {
+                if (overlays[j].id == idx) return j;
+            } while(overlays[++j].name != NULL);
+        }
+    } while(dir[++i].name != NULL);
+    fprintf(stderr, "Error: Cannot find index for address 0x%04x\n", address);
+    exit(1);
+}
+
+char* FindWord(int word)
+{
+    int ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
+    int i = 0;
+    do
+    {
+        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
         if (word == dict[i].word) return dict[i].name;
     } while(dict[++i].name != NULL);
     if (word == 0x0) return "";
     fprintf(stderr, "Error: Cannot find word 0x%04x\n", word);
     exit(1);
-    return NULL;
 }
 
 int FindWordByName(char* s, int n)
 {
     if (n == 0) return 0;
+    int ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
 
     char temp[256];
     for(int i=0; i<n; i++)
@@ -53,10 +79,22 @@ int FindWordByName(char* s, int n)
     int i = 0;
     do
     {
+        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
         if (strcmp(dict[i].name, temp) == 0) return dict[i].word;
     } while(dict[++i].name != NULL);
     //fprintf(stderr, "Error: Cannot find string %s\n", s);
     return 0;
+}
+
+char *FindDirectoryName(int idx)
+{
+    int i = 0;
+    do
+    {
+        if (idx == dir[i].idx) return dir[i].name;
+    } while(dir[++i].name != NULL);
+    fprintf(stderr, "Error: Cannot find directory entry %i\n", idx);
+    exit(1);
 }
 
 // ------------------------------------------------
@@ -77,7 +115,6 @@ void SetBPBase(int bp)
     }
 }
 
-
 int iscall[20000];
 
 void DefineCallStack(int bp, int value)
@@ -89,11 +126,13 @@ void DefineCallStack(int bp, int value)
 
 int FindClosestWord(int si)
 {
+    int ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
     int dist = 0x10000;
     int i = 0;
     int word = -1;
     do
     {
+        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
         int d = si - dict[i].word;
         if (d < 0) continue;
         if (d < dist)
@@ -101,14 +140,16 @@ int FindClosestWord(int si)
             dist = d;
             word = dict[i].word;
         }
-    } while(dict[i++].name != NULL);
+    } while(dict[++i].name != NULL);
     return word;
 }
 
-void PrintCalltrace(int bx)
+void PrintCallstacktrace(int bx)
 {
+    int ovidx = GetOverlayIndex(Read16(0x55a5));
     SetBPBase(bp);
-    printf("Callstack\n");
+    printf("==================================\n");
+    printf("Callstack for overlay=%i %s\n", ovidx, (ovidx==-1)?"":overlays[ovidx].name);
     printf("  0x%04x: %s\n", si, FindWord(bx+2));
 
     int word = FindClosestWord(si);
@@ -121,6 +162,8 @@ void PrintCalltrace(int bx)
             printf("  0x%04x: %s\n", word, FindWord(word));
         }
     }
+    printf("==================================\n");
+    fflush(stdout);
 }
 
 // ------------------------------------------------
@@ -444,7 +487,7 @@ void Call(unsigned short addr, unsigned short bx)
     }
     switch(addr)
     {
-// -----------------------------------
+        // --- call functions ---
 
         case 0x224c: // call
             bx += 2;
@@ -459,7 +502,12 @@ void Call(unsigned short addr, unsigned short bx)
             bp += 2;
         break;
 
-        // - call stack operations mainly for loops -
+        // --- branching ---
+        case 0x1662: si += Read16(si); break; // BRANCH
+        case 0x15FC: if (Pop() == 0) si += Read16(si); else si+=2; break; // 0BRANCH
+
+
+        // --- callstack operations mainly for loops ---
 
         case 0x0E52: Push(Read16(bp+0)); break; // "I"
         case 0x0E62: Push(Read16(bp+2)); break; // "I'"
@@ -521,23 +569,27 @@ void Call(unsigned short addr, unsigned short bx)
                 int offset = Read16(regsp+2);
                 for(int i=0; i<n; i++)
                     printf("%c", Read8(offset+i));
+                GraphicsText(&mem[offset], n);
             }
             if (strcmp(s, "(CR)") == 0)
             {
                 printf("\n");
+                GraphicsCarriageReturn();
             }
             if (strcmp(s, "(POSITION)") == 0)
             {
                 //printf("%i, %i\n", Read16(regsp), Read16(regsp+2));
+                GraphicsSetCursor(Read16(regsp), Read16(regsp+2));
             }
             if (strcmp(s, "(EMIT)") == 0) // print one char
             {
+                GraphicsChar(Read16(regsp));
                 //printf("print char %i\n", Read16(regsp));
             }
             if (strcmp(s, "(WORD)") == 0) // scans input stream for char and copies
             {
                 //unsigned short offset = Read16(REGDI+0x12);
-                //PrintCalltrace(bx);
+                //PrintCallstacktrace(bx);
                 //printf("%i offset %i\n", Read16(regsp), offset);
                 //exit(1);
             }
@@ -574,7 +626,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x0EC8: bp = Read16(regdi+2); break; // RP!
 
         case 0x83f8: // all overlays
-            printf("Load overlay %s\n", FindWord(bx+2));
+            printf("Load overlay '%s'\n", FindWord(bx+2));
             ParameterCall(bx, 0x83f8);
             break;
         case 0x5275: ParameterCall(bx, 0x5275); break; // "OVT" "IARRAYS"
@@ -583,8 +635,9 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x3b68: ParameterCall(bx, 0x3b68); break; // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CCASE"
         case 0x7227:
-            //PrintCalltrace(bx);
-            printf("Receive %s from STAR*.COM Dictionary for index 0x%x\n", FindWord(bx+2), Read16(regsp));
+            //printf("Receive %s from STAR*.COM Dictionary for index 0x%x: '%s'\n", FindWord(bx+2), Read16(regsp), FindDirectoryName(Read16(regsp)));
+            printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
+            //PrintCallstacktrace(bx);
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
             ParameterCall(bx, 0x7227);
         break;
@@ -678,15 +731,15 @@ void Call(unsigned short addr, unsigned short bx)
             Write16(bx+2, cx);
         break;
 
-        case 0x30a8: // "ADVANCE"
-            //printf("Advance\n");
+        case 0x30a8: // "ADVANCE>DEF"
+            //printf("Advance>def %i\n", Read16(regsp));
             ax = Pop();
             if (ax != 0)
             {
                 bx = ax - 2;
-                unsigned short es = Read16(0x2C04);
+                unsigned short es = Read16(0x2C04); // BLKCACHE
                 LXCHG(es, bx);
-                es = Read16(0x2C9D);
+                es = Read16(0x2C9D); // SEGCACHE
                 LXCHG(es, bx);
             }
         break;
@@ -772,7 +825,7 @@ void Call(unsigned short addr, unsigned short bx)
             //printf("Digit base=%i ascii=%i\n", dx, ax);
         break;
 
-        case 0x22AB: // Enclose
+        case 0x22AB: // ENCLOSE
 
             // TODO: check
             ax = Pop()&0xFF;
@@ -816,7 +869,7 @@ void Call(unsigned short addr, unsigned short bx)
                 Push(ax);
             break;
 
-        case 0x1AC0: // check for name !!!
+        case 0x1AC0: // ???
             bx = Pop();
             ax = Read8(bx);
             bx++;
@@ -1064,11 +1117,6 @@ void Call(unsigned short addr, unsigned short bx)
             Push(cx);
             break;
 
-        case 0x75d7: // "CDEPTH"
-            ax = ((0x6398 - Read16(0x54B0))&0xFF)/3;
-            Push(ax);
-        break;
-
 // ---------------------------------------------
 
         case 0x1248: // "<"
@@ -1183,21 +1231,13 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x2a9a:  // "TIME"
         {
             static int ntime = 0;
-            //printf("%i\n", ntime);
-            if (ntime == 0)
-            {
-            Write16(0x188, 0x1);
-            Write16(0x18A, 0x19B1);
+            //printf("TIME %i\n", ntime);
+            Write16(0x18A, ntime); // TIME low
+            Write16(0x188, (ntime >> 16));   // TIME high
             Write16(0x193, 0x0);
-            } else
-            if (ntime < 241)    {
-                Write16(0x18A, 0x19B3);
-            } else
-                Write16(0x18A, 0x19B4);
-
             ntime++;
-        }
             Push(0x188);
+        }
         break;
 
 
@@ -1207,18 +1247,21 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x2653:  // "BEEPOFF"
         break;
 
-// ---------------------------------------------
-// graphic card stuff
+        // --- graphics ---
 
-        case 0x8E4F:  // something with EGA
-        Pop();
-        Pop();
-        Pop();
-        Pop();
+        case 0x8E4F:  // Move entire display to/from seg
+            printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n", 
+                Read16(regsp+2), Read16(regsp+0), Read16(regsp+6), Read16(regsp+4));
+            Pop();
+            Pop();
+            Pop();
+            Pop();
         break;
 
-        case 0x9367: // "PLOT"
-            //Write16(0x5663, Pop()); // safe return address for call
+        case 0x9367: // "PLOT" TODO
+            //printf("(plot) %i %i seg=0x%04x color=%i\n", Read16(regsp+2), Read16(regsp+4), Read16(0x5648), Read16(0x55F2));
+            GraphicsPixel(Read16(regsp+2), Read16(regsp+4), Read16(0x55F2));
+            Write16(0x5663, Pop()); // RETURN
             dx = Pop();
             ax = Pop();
             dx <<= 1;
@@ -1240,10 +1283,10 @@ void Call(unsigned short addr, unsigned short bx)
 
             //bx = Pop(); // es = Pop();
 
-            //Push(Read16(0x5663));
+            Push(Read16(0x5663));
         break;
 
-        case 0x6C86: // "C>EGA"
+        case 0x6C86: // "C>EGA" // TODO???
             dx = Pop() & 0xF;
             Push(si);
             ax = 0;
@@ -1271,24 +1314,47 @@ void Call(unsigned short addr, unsigned short bx)
             Push(ax);
         break;
 
-
-        case 0x8F8B: // "BFILL"
-            // a lot with the display
+        case 0x8F8B: // "BFILL" TODO
+            //printf("bfill color=%i ega=%i segment=0x%04x count=0x%04x\n", Read16(0x55F2), Read16(0x5DA3), Read16(0x5648), Read16(0x5656));
+            GraphicsClear();
         break;
 
-
-        case 0x8D09: // "DISPLAY"
-            // a lot with the display
-        break;
-
-        case 0x8D8B: // do something???
-            //set screen, display image???
-        break;
-
-
-        case 0x8DF0: // set graphics card (depends on variable 0x584A)
+        case 0x903f: // "LLINE" TODO
         {
-            // call 0x8CC0 something  with printer
+            int y2 = Pop();
+            int x2 = Pop();
+            int y1 = Pop();
+            int x1 = Pop();
+            printf("lline %i %i %i %i\n", x1, y1, x2, y2);
+            GraphicsLine(x1, y1, x2, y2, 15);
+        }
+        break;
+
+        case 0x93B1: // Part of Bit Block Image Transfer (BLT) ??? 
+            printf("blt xblt=%i ylbt=%i lblt=%i wblt=%i\n", Read16(0x586E), Read16(0x5863), Read16(0x5887), Read16(0x5892));
+            Push(Read16(0x586E)); // xblt
+            Push(Read16(0x5863) - Read16(0x5887) + 1); // yblt - lblt + 1
+            Push(Read16(0x586E) + Read16(0x5892) - 1); // xblt + wblt - 1
+            Push(Read16(0x5863)); // yblt
+        break;
+
+        case 0x8D09: // "DISPLAY" wait for vertical retrace
+            printf("wait for vertical retrace\n");
+            getchar();
+            getchar();
+            GraphicsUpdate();
+        break;
+
+        case 0x8D8B:
+            printf("set video mode monitor=%i ?ega=%i\n", Read16(0x584A), Read16(0x5DA3));
+            // out 3ce,0x0F01 write to all four planes at once?
+            GraphicsMode(1);
+        break;
+
+        case 0x8DF0: // set text mode
+        {
+            printf("set text mode\n");
+            GraphicsMode(0);
         }
         break;
 
@@ -1310,6 +1376,12 @@ void Call(unsigned short addr, unsigned short bx)
             Write16(0x54B4, Read16(0x54B4)-2);
         break;
 
+        case 0x7AFE: // "V>"
+            Write16(0x54B4, Read16(0x54B4)+2);
+            bx = Read16(0x54B4);
+            Push(Read16(bx));
+        break;
+
         case 0x29FC: // "V!"
         {
             // Graphics card output. Prints chars on screen
@@ -1320,7 +1392,7 @@ void Call(unsigned short addr, unsigned short bx)
             ax = Pop(); // color and char
             Write16Long(seg, bx, ax);
             //ds = cx;
-            //printf("Draw 0x%04x 0x%04x at segment: 0x%04x\n", bx, ax, Read16(di + 0x18));
+            //printf("PutChar 0x%04x 0x%04x at segment: 0x%04x\n", bx, ax, seg);
         }
         break;
 
@@ -1352,8 +1424,7 @@ void Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-        // 3 byte variables handling
-
+        // ---- 3 byte stack ---
         case 0x753F: // ">C"
             bx = Read16(0x54b0); // CXSP
             Write16(bx+2, Pop()&0xFF);
@@ -1373,6 +1444,13 @@ void Call(unsigned short addr, unsigned short bx)
             Push(Read16(bx+3));
             Push(Read8(bx+5));
         break;
+
+        case 0x75d7: // "CDEPTH"
+            ax = ((0x6398 - Read16(0x54B0))&0xFF)/3;
+            Push(ax);
+        break;
+
+// -------------------------------
 
         case 0x4997: // "1.5@"
             bx = Pop();
@@ -1418,7 +1496,8 @@ void Call(unsigned short addr, unsigned short bx)
             int tempes = Pop();
             int tempsi = Pop();
             int tempds = Pop();
-            //printf("copy from %x:%x to %x:%x  %i bytes\n", tempds, tempsi, tempes, tempdi, tempcx);
+            //printf("LCMOVE from 0x%04x:0x%04x to 0x%04x:0x%04x  %i bytes\n", tempds, tempsi, tempes, tempdi, tempcx);
+            //PrintCallstacktrace(bx);
             for(i=0; i<tempcx; i++)
                 Write8Long(tempes, tempdi+i, Read8Long(tempds, tempsi+i));
         }
@@ -1581,12 +1660,11 @@ void Call(unsigned short addr, unsigned short bx)
             Push((x>>16)&0xFFFF);
             break;
         }
+        // ---- Special Forth interpreter functions ---
 
-        case 0x1818: Find(); break; // "(FIND)"
+        case 0x1818: Find(); break; // "(FIND)" finds a word in the dictionary
 
-        case 0x1662: si += Read16(si); break; // BRANCH
-        case 0x15FC: if (Pop() == 0) si += Read16(si); else si+=2; break; // 0BRANCH
-
+        // -----------------------------------
         case 0x0F22: Push(0x0); break; // 0
         case 0x0F30: Push(0x1); break; // 1
         case 0x0F3F: Push(0x2); break; // 2
@@ -1626,7 +1704,7 @@ void Call(unsigned short addr, unsigned short bx)
             int ds = Pop();
             ax = Pop();
             Write16Long(ds, bx, ax);
-            //printf("Write16 to 0x%04x:0x%04x = %x\n", ds, bx, ax);
+            //printf("Write16Long to 0x%04x:0x%04x = %x\n", ds, bx, ax);
         }
         break;
         case 0x2EA4: // "L@"
@@ -1645,7 +1723,7 @@ void Call(unsigned short addr, unsigned short bx)
             int ds = Pop();
             ax = Pop();
             Write8Long(ds, bx, ax&0xFF);
-            //printf("Write8 to 0x%x:0x%x = %x\n", ds, bx, ax);
+            //printf("Write8Long to 0x%x:0x%x = %x\n", ds, bx, ax);
         }
         break;
         case 0x2eCD: // "LC@"
@@ -1662,7 +1740,7 @@ void Call(unsigned short addr, unsigned short bx)
             Write16(bx, Read16(bx) + ax);
         break;
 
-        // ------ stack operations ------
+        // ------ standard stack operations ------
         case 0x0E34: regsp += 2; break; // "DROP"
         case 0x0DE0: regsp += 4; break; // "2DROP"
         case 0x0E81: Push(Read16(regsp+2)); break; // "OVER"
@@ -1708,6 +1786,8 @@ void Call(unsigned short addr, unsigned short bx)
 
         default:
             printf("unknown opcode 0x%04x at si = %x\n", addr, si);
+            fflush(stdout);
+            getchar();
             exit(1);
         break;
     }
@@ -1730,27 +1810,33 @@ void Step()
 
 int main()
 {
+    setvbuf(stdout, NULL, _IONBF, 0);
     printf("Try the following commands:\n");
     printf("'2 3 + .'\n");
     printf("'STARTER'\n");
     printf("'mountb bank-ov d@balance d.'\n");
-
     InitCPU();
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
 
     LoadSTARFLT();
+    GraphicsInit();
 
     // Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
     Write16(0x2420, 0x0F22-2); // "0"
 
-    // interrupt vector
+    /*
+    // default interrupt vector
     Write16Long(0, 0x1C*4+2, 0xF000);
     Write16Long(0, 0x1C*4+0, 0x1280);
-
+    */
     while(1)
     {
         Step();
     }
+
+    GraphicsWait();
+    GraphicsQuit();
+
     return 0;
 }

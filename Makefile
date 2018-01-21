@@ -60,8 +60,11 @@ disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictio
 disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o
 	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o
 
-emulate: emul/emul.c emul/cpu.c
-	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c -o emulate
+emulate: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
+	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate
+
+emulatesdl: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
+	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate -lSDL2
 
 .PHONY: clean
 
