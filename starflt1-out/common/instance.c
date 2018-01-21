@@ -107,12 +107,12 @@ void COVER(); // COVER
 void IsNULL(); // ?NULL
 void Is_dash_NULL(); // ?-NULL
 void IsCHILD(); // ?CHILD
-void UNK_0x761f(); // UNK_0x761f
+void IsONLY(); // ?ONLY
 void ICACHE_gt_IBFR(); // ICACHE>IBFR
 void POINT_gt_I(); // POINT>I
 void UNK_0x7720(); // UNK_0x7720
-void UNK_0x77a4(); // UNK_0x77a4
-void UNK_0x77c0(); // UNK_0x77c0
+void IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
+void IsUPD_gt_DISK(); // ?UPD>DISK
 void UNK_0x790c(); // UNK_0x790c
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -157,7 +157,7 @@ void SET_dash_CURRENT() // SET-CURRENT
   CDEPTH(); // CDEPTH
   _0_gt_(); // 0>
   if (Pop() == 0) return;
-  UNK_0x77a4(); // UNK_0x77a4
+  IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
   CI(); // CI
@@ -187,7 +187,7 @@ void SET_dash_CURRENT() // SET-CURRENT
 
 void ICLOSE() // ICLOSE
 {
-  UNK_0x77a4(); // UNK_0x77a4
+  IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
   CDROP(); // CDROP
   COVER(); // COVER
   Is_dash_NULL(); // ?-NULL
@@ -248,7 +248,7 @@ void IOPEN() // IOPEN
 
 void CCLR() // CCLR
 {
-  UNK_0x77a4(); // UNK_0x77a4
+  IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
   Push(Read16(cc_END_dash_CX)); // END-CX
   Push(pp_CXSP); // CXSP
   _st__ex__gt_(); // <!>
@@ -406,7 +406,7 @@ void VCLR() // VCLR
 void UNK_0x7b23() // UNK_0x7b23
 {
   unsigned short int i, imax;
-  UNK_0x77a4(); // UNK_0x77a4
+  IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
   Push(Read16(pp_QTYINST)); // QTYINST @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
@@ -418,7 +418,7 @@ void UNK_0x7b23() // UNK_0x7b23
   {
     Push(i * 2); // I 2*
     POINT_gt_I(); // POINT>I
-    UNK_0x77c0(); // UNK_0x77c0
+    IsUPD_gt_DISK(); // ?UPD>DISK
     i++;
   } while(i<imax); // (LOOP)
 
@@ -528,7 +528,7 @@ void _gt_INSERT() // >INSERT
 void IEXTRACT() // IEXTRACT
 {
   CI(); // CI
-  UNK_0x761f(); // UNK_0x761f
+  IsONLY(); // ?ONLY
   if (Pop() != 0)
   {
     ICLOSE(); // ICLOSE

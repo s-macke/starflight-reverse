@@ -405,7 +405,7 @@ void LPLOT(); // LPLOT
 void LXPLOT(); // LXPLOT
 void V_gt_DISPLAY(); // V>DISPLAY
 void WLD_gt_SCR(); // WLD>SCR
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 
 
 // =================================
@@ -3922,7 +3922,7 @@ void SET_dash_DESTINATION() // SET-DESTINATION
     Push(pp_LKEY); // LKEY
     Store_3(); // !_3
   }
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   Push(Read16(pp_SKEY)); // SKEY @
   Push(0x005b);
   _gt_(); // >

@@ -331,7 +331,7 @@ void _gt_2FONT(); // >2FONT
 void StoreVISWINDOW(); // !VISWINDOW
 void _gt_1ICONFONT(); // >1ICONFONT
 void _gt_2ICONF(); // >2ICONF
-void _gt_3ICONF(); // >3ICONF
+void _gt_3ICONFONT(); // >3ICONFONT
 void GetIX(); // @IX
 void GetIY(); // @IY
 void GetID(); // @ID
@@ -344,7 +344,7 @@ void DrawICON(); // .ICON
 void POINT_gt_ICON(); // POINT>ICON
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
 void IsICONS_dash_AT(); // ?ICONS-AT
-void IsICON_eq_I(); // ?ICON=I
+void IsICON_dash_IADDR(); // ?ICON-IADDR
 void ORGLIST(); // ORGLIST
 void POS_dot_(); // POS.
 void BEEPON(); // BEEPON
@@ -377,14 +377,14 @@ void _st__ex__gt_(); // <!>
 void _st__plus__ex__gt_(); // <+!>
 void CI(); // CI
 void CLIPPER(); // CLIPPER
-void DISPLAY(); // DISPLAY
+void DISPLAY_dash_WAIT(); // DISPLAY-WAIT
 void BFILL(); // BFILL
 void LLINE(); // LLINE
 void V_gt_DISPLAY(); // V>DISPLAY
 void IsINVIS(); // ?INVIS
 void WLD_gt_SCR(); // WLD>SCR
 void SCR_gt_BLT(); // SCR>BLT
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 void CURRX(); // CURRX
 void CURRY(); // CURRY
 void DESTX(); // DESTX
@@ -1941,7 +1941,7 @@ void UNK_0xe624() // UNK_0xe624
     BEEPON(); // BEEPON
     Push(i); // I
     TONE(); // TONE
-    DISPLAY(); // DISPLAY
+    DISPLAY_dash_WAIT(); // DISPLAY-WAIT
     Push(0x000c * Read16(cc_MPS)); // 0x000c MPS *
     Push(0);
 
@@ -2287,7 +2287,7 @@ void UNK_0xe86e() // UNK_0xe86e
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   CI(); // CI
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Push(Pop()==0?1:0); //  0=
   ABORT("ERR: MOVE-ICON", 14);// (ABORT")
   POINT_gt_ICON(); // POINT>ICON
@@ -2594,7 +2594,7 @@ void UNK_0xea3d() // UNK_0xea3d
   Push(Read16(pp_IINDEX)); // IINDEX @
   a = Pop(); // >R
   Push2Words("*SHIP");
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Pop(); // DROP
   POINT_gt_ICON(); // POINT>ICON
   Push((Read16(0x63ef+UNK_0xde2a.offset)&0xFF) + 0x001b); // UNK_0xde2a<IFIELD> C@ 0x001b +
@@ -2700,7 +2700,7 @@ void UNK_0xeabb() // UNK_0xeabb
 void UNK_0xeb15() // UNK_0xeb15
 {
   UNK_0xea01(); // UNK_0xea01
-  _gt_3ICONF(); // >3ICONF
+  _gt_3ICONFONT(); // >3ICONFONT
   Push(1);
   Push(Read16(regsp)); // DUP
   Push(pp_XLLDEST); // XLLDEST
@@ -3781,7 +3781,7 @@ void UNK_0xf208() // UNK_0xf208
   if (Pop() != 0)
   {
     CI(); // CI
-    IsICON_eq_I(); // ?ICON=I
+    IsICON_dash_IADDR(); // ?ICON-IADDR
     Pop(); // DROP
     POINT_gt_ICON(); // POINT>ICON
     _2DUP(); // 2DUP
@@ -3994,7 +3994,7 @@ void UNK_0xf3ae() // UNK_0xf3ae
 
 void UNK_0xf3bc() // UNK_0xf3bc
 {
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   _2DUP(); // 2DUP
   KEY_gt_ORIEN(); // KEY>ORIEN case
   Push(Read16(0x63ef+UNK_0xde2a.offset)&0xFF); // UNK_0xde2a<IFIELD> C@

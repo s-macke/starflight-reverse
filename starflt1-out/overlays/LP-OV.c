@@ -181,7 +181,7 @@ void _st_(); // <
 void _0_st_(); // 0<
 void _1_dot_5_at_(); // 1.5@
 void _st__ex__gt_(); // <!>
-void _ro_SLIPPE(); // (SLIPPE
+void _ro_SLIPPER_rc_(); // (SLIPPER)
 void _gt_SIZE(); // >SIZE
 void _gt_MOVER(); // >MOVER
 void IsCOLOR(); // ?COLOR
@@ -424,7 +424,7 @@ void UNK_0xe29d() // UNK_0xe29d
 void UNK_0xe2b3() // UNK_0xe2b3
 {
   UNK_0xe291(); // UNK_0xe291
-  _ro_SLIPPE(); // (SLIPPE
+  _ro_SLIPPER_rc_(); // (SLIPPER)
 }
 
 

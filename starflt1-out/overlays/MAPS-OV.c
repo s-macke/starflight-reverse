@@ -158,7 +158,7 @@ void DrawREGION_plus_(); // .REGION+
 void StoreVISWINDOW(); // !VISWINDOW
 void _gt_1ICONFONT(); // >1ICONFONT
 void _gt_2ICONF(); // >2ICONF
-void _gt_3ICONF(); // >3ICONF
+void _gt_3ICONFONT(); // >3ICONFONT
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
 void POS_dot_(); // POS.
 void POLY_dash_WINDOW_dash_FILL(); // POLY-WINDOW-FILL
@@ -188,7 +188,7 @@ void _st__plus__ex__gt_(); // <+!>
 void LLINE(); // LLINE
 void V_gt_DISPLAY(); // V>DISPLAY
 void BUFFERXY(); // BUFFERXY
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 void CBLTP(); // CBLTP
 
 
@@ -433,7 +433,7 @@ void UNK_0xee28() // UNK_0xee28
     _i_KEY(); // 'KEY
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   } while(Pop() == 0);
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   Pop(); Pop(); // 2DROP
 }
 
@@ -822,7 +822,7 @@ void UNK_0xf187() // UNK_0xf187
   OFF(); // OFF
   _gt_MAINVIEW(); // >MAINVIEW
   DARK(); // DARK
-  _gt_3ICONF(); // >3ICONF
+  _gt_3ICONFONT(); // >3ICONFONT
   Push(Read16(pp__i_2X2)); // '2X2 @
   Push(pp__i__dot_BACKG); // '.BACKG
   Store_3(); // !_3

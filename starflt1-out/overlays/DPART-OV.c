@@ -117,7 +117,7 @@ void CTINIT(); // CTINIT
 void DrawTTY(); // .TTY
 void _i_KEY(); // 'KEY
 void SUBROOT(); // SUBROOT
-void NEXT_dash_NO(); // NEXT-NO
+void NEXT_dash_NODE(); // NEXT-NODE
 void HUFF_gt_(); // HUFF>
 void _2_at_(); // 2@
 void SWAP(); // SWAP
@@ -721,7 +721,7 @@ void UNK_0xf39d() // UNK_0xf39d
   SUBROOT(); // SUBROOT
 
   label3:
-  NEXT_dash_NO(); // NEXT-NO
+  NEXT_dash_NODE(); // NEXT-NODE
   CI(); // CI
   Push2Words("*SECS");
   D_eq_(); // D=

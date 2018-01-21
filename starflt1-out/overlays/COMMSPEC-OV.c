@@ -98,7 +98,7 @@ extern const unsigned short int pp_P_dash_RACES; // P-RACES
 extern const unsigned short int pp__dash_END; // -END
 extern const unsigned short int pp_IsELAN; // ?ELAN
 extern const unsigned short int pp_IsSPHEXI; // ?SPHEXI
-extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
+extern const unsigned short int pp__ro_STOP_dash_COMM_rc_; // (STOP-COMM)
 extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
 extern const unsigned short int pp_SKIP2NEST; // SKIP2NEST
 extern const unsigned short int pp_FTRIG; // FTRIG
@@ -511,7 +511,7 @@ void UNK_0xebae() // UNK_0xebae
 
 void UNK_0xebb6() // UNK_0xebb6
 {
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
   ON_3(); // ON_3
   Push(0x0064);
   UNK_0xea84(); // UNK_0xea84
@@ -814,7 +814,7 @@ void UNK_0xecce() // UNK_0xecce
     return;
   }
   PRINT("GRANTED.", 8); // (.")
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
   ON_3(); // ON_3
   Push(pp_SKIP2NEST); // SKIP2NEST
   ON_3(); // ON_3
@@ -982,7 +982,7 @@ void XY_slash_N() // XY/N
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   Push(Read16(regsp)); // DUP
   Push((Pop()==2?1:0) * Read16(pp_FTRIG)); //  2 = FTRIG @ *
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
   Store_3(); // !_3
   IsTRIG(); // ?TRIG
   Push((Pop()==0?1:0) * 2); //  0= 2*
@@ -1707,7 +1707,7 @@ void UNK_0xf414() // UNK_0xf414
     MS(); // MS
     Push(pp_UNK_0xecca); // UNK_0xecca
     ON_3(); // ON_3
-    Push(pp__ro_STOP_dash_C); // (STOP-C
+    Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
     ON_3(); // ON_3
     Push(0);
     Push(0x63ef+UNK_0xeaa0.offset); // UNK_0xeaa0<IFIELD>

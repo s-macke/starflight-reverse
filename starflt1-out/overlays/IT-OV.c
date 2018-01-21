@@ -132,7 +132,7 @@ void GCR(); // GCR
 void _i_KEY(); // 'KEY
 void SUBROOT(); // SUBROOT
 void SRDEPTH(); // SRDEPTH
-void NEXT_dash_NO(); // NEXT-NO
+void NEXT_dash_NODE(); // NEXT-NODE
 void U_gt__do_(); // U>$
 void _2DUP(); // 2DUP
 void OVER(); // OVER
@@ -716,7 +716,7 @@ void BOX_gt_LIST() // BOX>LIST
       Push(Pop() + 1); //  1+
       UNK_0xf157(); // UNK_0xf157
     }
-    NEXT_dash_NO(); // NEXT-NO
+    NEXT_dash_NODE(); // NEXT-NODE
     _2DUP(); // 2DUP
     CI(); // CI
     D_eq_(); // D=

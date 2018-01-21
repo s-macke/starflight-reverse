@@ -215,7 +215,7 @@ void StoreIX(); // !IX
 void StoreIY(); // !IY
 void POINT_gt_ICON(); // POINT>ICON
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
-void IsICON_eq_I(); // ?ICON=I
+void IsICON_dash_IADDR(); // ?ICON-IADDR
 void _dash_ICON(); // -ICON
 void _plus_ICON(); // +ICON
 void ORGLIST(); // ORGLIST
@@ -257,7 +257,7 @@ void _gt_C(); // >C
 void CI(); // CI
 void V_gt_DISPLAY(); // V>DISPLAY
 void BUFFERXY(); // BUFFERXY
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 void CBLTP(); // CBLTP
 
 
@@ -1015,7 +1015,7 @@ void UNK_0xeca6() // UNK_0xeca6
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
   CI(); // CI
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   if (Pop() != 0)
   {
     POINT_gt_ICON(); // POINT>ICON
@@ -1264,7 +1264,7 @@ void UNK_0xee34() // UNK_0xee34
   SET_dash_CURRENT(); // SET-CURRENT
   IOPEN(); // IOPEN
   CI(); // CI
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
@@ -1894,7 +1894,7 @@ void UNK_0xf2e2() // UNK_0xf2e2
   OFF(); // OFF
   Pop(); Pop(); // 2DROP
   Push(Read16(pp_SKEY)); // SKEY @
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
 }
 
 
@@ -2020,7 +2020,7 @@ void UNK_0xf397() // UNK_0xf397
 
 void UNK_0xf3a7() // UNK_0xf3a7
 {
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   UNK_0xf397(); // UNK_0xf397
   if (Pop() == 0) goto label1;
   UNK_0xf2b8(); // UNK_0xf2b8

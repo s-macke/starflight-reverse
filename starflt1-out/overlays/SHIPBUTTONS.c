@@ -154,7 +154,7 @@ void GetEXECUTE(); // @EXECUTE
 void _gt_V(); // >V
 void V_gt_(); // V>
 void V_gt_DISPLAY(); // V>DISPLAY
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 
 
 // =================================
@@ -467,7 +467,7 @@ void UNK_0xef5e() // UNK_0xef5e
 
 void UNK_0xef68() // UNK_0xef68
 {
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   Pop(); // DROP
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)

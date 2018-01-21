@@ -124,7 +124,7 @@ void LCMOVE(); // LCMOVE
 void GetDS(); // @DS
 void _st__ex__gt_(); // <!>
 void C_gt_EGA(); // C>EGA
-void DISPLAY(); // DISPLAY
+void DISPLAY_dash_WAIT(); // DISPLAY-WAIT
 void PLOT(); // PLOT
 
 
@@ -654,7 +654,7 @@ void UNK_0xe716() // UNK_0xe716
 
 
 // ================================================
-// 0xe728: WORD 'BRMOVE' codep=0x224c parp=0xe733
+// 0xe728: WORD 'BRMOVE' codep=0x224c parp=0xe733 params=1 returns=2
 // ================================================
 
 void BRMOVE() // BRMOVE
@@ -698,7 +698,7 @@ void BRMOVE() // BRMOVE
     i++;
   } while(i<imax); // (LOOP)
 
-  DISPLAY(); // DISPLAY
+  DISPLAY_dash_WAIT(); // DISPLAY-WAIT
   SCR_dash_RES(); // SCR-RES
   Pop(); Pop(); // 2DROP
   Pop(); Pop(); // 2DROP

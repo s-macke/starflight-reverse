@@ -205,10 +205,10 @@ void _gt_2FONT(); // >2FONT
 void StoreVISWINDOW(); // !VISWINDOW
 void _gt_1ICONFONT(); // >1ICONFONT
 void INIT_dash_ICONLIST(); // INIT-ICONLIST
-void DrawBACKGR(); // .BACKGR
+void DrawBACKGROUND(); // .BACKGROUND
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
 void IsICONS_dash_AT(); // ?ICONS-AT
-void IsICON_eq_I(); // ?ICON=I
+void IsICON_dash_IADDR(); // ?ICON-IADDR
 void _dash_ICON(); // -ICON
 void _plus_ICON(); // +ICON
 void ORGLIST(); // ORGLIST
@@ -1554,7 +1554,7 @@ void UNK_0xf0e3() // UNK_0xf0e3
   OFF(); // OFF
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  DrawBACKGR(); // .BACKGR
+  DrawBACKGROUND(); // .BACKGROUND
   DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
@@ -1943,7 +1943,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 void UNK_0xf3b5() // UNK_0xf3b5
 {
   Push2Words("*SHIP");
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Pop(); // DROP
   Push(Read16(pp_ILOCAL) - 1); // ILOCAL @ 1-
   _gt_(); // >

@@ -142,7 +142,7 @@ void _gt_(); // >
 void _st_(); // <
 void _0_st_(); // 0<
 void _1_dot_5_at_(); // 1.5@
-void _ro_SLIPPE(); // (SLIPPE
+void _ro_SLIPPER_rc_(); // (SLIPPER)
 void CI(); // CI
 void LO_dash_MASS(); // LO-MASS
 void HI_dash_MASS(); // HI-MASS
@@ -349,7 +349,7 @@ void UNK_0xecc9() // UNK_0xecc9
 void UNK_0xecdf() // UNK_0xecdf
 {
   UNK_0xecb1(); // UNK_0xecb1
-  _ro_SLIPPE(); // (SLIPPE
+  _ro_SLIPPER_rc_(); // (SLIPPER)
 }
 
 

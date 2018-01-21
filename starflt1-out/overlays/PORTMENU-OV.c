@@ -192,7 +192,7 @@ void BEEPOFF(); // BEEPOFF
 void TIME(); // TIME
 void GetDS(); // @DS
 void _plus__dash__at_(); // +-@
-void DISPLAY(); // DISPLAY
+void DISPLAY_dash_WAIT(); // DISPLAY-WAIT
 void LPLOT(); // LPLOT
 void _co_BLT_cc_(); // {BLT}
 void _ro__v_REGION_rc_(); // (|REGION)
@@ -1494,7 +1494,7 @@ void UNK_0xf2b3() // UNK_0xf2b3
   Push(Read16(regsp)); // DUP
   Push(pp_UNK_0xebfc); // UNK_0xebfc
   Store_3(); // !_3
-  DISPLAY(); // DISPLAY
+  DISPLAY_dash_WAIT(); // DISPLAY-WAIT
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   UNK_0xf293(); // UNK_0xf293
@@ -1651,13 +1651,13 @@ void UNK_0xf3a9() // UNK_0xf3a9
       do // (DO)
       {
         UNK_0xf18b(); // UNK_0xf18b
-        DISPLAY(); // DISPLAY
+        DISPLAY_dash_WAIT(); // DISPLAY-WAIT
         UNK_0xf293(); // UNK_0xf293
         UNK_0xf2a1(); // UNK_0xf2a1
         Push(0x0032);
         MS(); // MS
         UNK_0xf18b(); // UNK_0xf18b
-        DISPLAY(); // DISPLAY
+        DISPLAY_dash_WAIT(); // DISPLAY-WAIT
         UNK_0xf293(); // UNK_0xf293
         UNK_0xf2a1(); // UNK_0xf2a1
         UNK_0xf22b(); // UNK_0xf22b

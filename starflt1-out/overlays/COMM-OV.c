@@ -311,7 +311,7 @@ extern const unsigned short int pp__i_UNNEST; // 'UNNEST
 extern const unsigned short int pp__n_VESS; // #VESS
 extern const unsigned short int pp_CTCOLOR; // CTCOLOR
 extern const unsigned short int pp__i_CC; // 'CC
-extern const unsigned short int pp__ro_STOP_dash_C; // (STOP-C
+extern const unsigned short int pp__ro_STOP_dash_COMM_rc_; // (STOP-COMM)
 extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
 extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
 extern const unsigned short int pp_SKIP2NEST; // SKIP2NEST
@@ -4247,7 +4247,7 @@ void UNK_0xecbf() // UNK_0xecbf
 
 void UNK_0xeceb() // UNK_0xeceb
 {
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
   ON_3(); // ON_3
 }
 
@@ -4781,7 +4781,7 @@ void UNK_0xf061() // UNK_0xf061
   INIT_dash_BU(); // INIT-BU
   Push(Read16(pp__i_XCOMM)); // 'XCOMM @
   MODULE(); // MODULE
-  Push(!Read16(pp__ro_STOP_dash_C)); // (STOP-C @ NOT
+  Push(!Read16(pp__ro_STOP_dash_COMM_rc_)); // (STOP-COMM) @ NOT
   if (Pop() != 0)
   {
     do
@@ -4855,7 +4855,7 @@ void UNK_0xf0d5() // UNK_0xf0d5
       }
     } else
     {
-      Push(pp__ro_STOP_dash_C); // (STOP-C
+      Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
       ON_3(); // ON_3
     }
     return;
@@ -4935,7 +4935,7 @@ void CL1() // CL1
   Push(5);
   DrawBTN_dash_TE(); // .BTN-TE
   INIT_dash_BU(); // INIT-BU
-  Push(pp__ro_STOP_dash_C); // (STOP-C
+  Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
   OFF(); // OFF
   Push(pp_UNK_0xe4b2); // UNK_0xe4b2
   ON_3(); // ON_3
@@ -4966,11 +4966,11 @@ void CL1() // CL1
       Push(2);
       Push(0xbdef); // probable 'OV?.EQUIP-OK'
       MODULE(); // MODULE
-      Push(!Pop() | Read16(pp__ro_STOP_dash_C)); //  NOT (STOP-C @ OR
-      Push(pp__ro_STOP_dash_C); // (STOP-C
+      Push(!Pop() | Read16(pp__ro_STOP_dash_COMM_rc_)); //  NOT (STOP-COMM) @ OR
+      Push(pp__ro_STOP_dash_COMM_rc_); // (STOP-COMM)
       Store_3(); // !_3
     }
-    Push(Read16(pp__ro_STOP_dash_C)); // (STOP-C @
+    Push(Read16(pp__ro_STOP_dash_COMM_rc_)); // (STOP-COMM) @
     UNK_0xdb0c(); // UNK_0xdb0c
     if (Pop() != 0)
     {
@@ -4986,7 +4986,7 @@ void CL1() // CL1
       Push(pp_FTRIG); // FTRIG
       OFF(); // OFF
     }
-    Push(Read16(pp__ro_STOP_dash_C)); // (STOP-C @
+    Push(Read16(pp__ro_STOP_dash_COMM_rc_)); // (STOP-COMM) @
   } while(Pop() == 0);
   Push(0);
   DrawBTN_dash_TE(); // .BTN-TE

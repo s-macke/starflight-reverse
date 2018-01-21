@@ -278,10 +278,10 @@ void StoreIX(); // !IX
 void StoreIY(); // !IY
 void StoreID(); // !ID
 void StoreIC(); // !IC
-void DrawBACKGR(); // .BACKGR
+void DrawBACKGROUND(); // .BACKGROUND
 void POINT_gt_ICON(); // POINT>ICON
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
-void IsICON_eq_I(); // ?ICON=I
+void IsICON_dash_IADDR(); // ?ICON-IADDR
 void _dash_ICON(); // -ICON
 void _plus_ICON(); // +ICON
 void ORGLIST(); // ORGLIST
@@ -323,7 +323,7 @@ void _st__plus__ex__gt_(); // <+!>
 void _st_D_ex__gt_(); // <D!>
 void CI(); // CI
 void V_gt_DISPLAY(); // V>DISPLAY
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 
 
 // =================================
@@ -1162,7 +1162,7 @@ void UNK_0xe5c8() // UNK_0xe5c8
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   CI(); // CI
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   if (Pop() != 0)
   {
     POINT_gt_ICON(); // POINT>ICON
@@ -1173,7 +1173,7 @@ void UNK_0xe5c8() // UNK_0xe5c8
   }
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  DrawBACKGR(); // .BACKGR
+  DrawBACKGROUND(); // .BACKGROUND
   DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
@@ -1309,7 +1309,7 @@ void UNK_0xe6a4() // UNK_0xe6a4
 void UNK_0xe6b0() // UNK_0xe6b0
 {
   CI(); // CI
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Pop(); // DROP
   POINT_gt_ICON(); // POINT>ICON
 }
@@ -1569,7 +1569,7 @@ void UNK_0xe84b() // UNK_0xe84b
 void UNK_0xe855() // UNK_0xe855
 {
   Push2Words("*SHIP");
-  IsICON_eq_I(); // ?ICON=I
+  IsICON_dash_IADDR(); // ?ICON-IADDR
   Pop(); // DROP
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   _st_(); // <
@@ -2534,7 +2534,7 @@ void UNK_0xeef3() // UNK_0xeef3
   OFF(); // OFF
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  DrawBACKGR(); // .BACKGR
+  DrawBACKGROUND(); // .BACKGROUND
   DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
@@ -2765,7 +2765,7 @@ void UNK_0xf06b() // UNK_0xf06b
 
 void UNK_0xf077() // UNK_0xf077
 {
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   Push(0);
   Push(1);
   _2OVER(); // 2OVER

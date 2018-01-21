@@ -318,7 +318,7 @@ void _gt_1FONT(); // >1FONT
 void GetID(); // @ID
 void GetIL(); // @IL
 void GetIH(); // @IH
-void DrawBACKGR(); // .BACKGR
+void DrawBACKGROUND(); // .BACKGROUND
 void POINT_gt_ICON(); // POINT>ICON
 void DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
 void IsICONS_dash_AT(); // ?ICONS-AT
@@ -731,7 +731,7 @@ void UNK_0xe072() // UNK_0xe072
 {
   _gt_MAINVIEW(); // >MAINVIEW
   VCLIPSET(); // VCLIPSET
-  DrawBACKGR(); // .BACKGR
+  DrawBACKGROUND(); // .BACKGROUND
   DrawLOCAL_dash_ICONS(); // .LOCAL-ICONS
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY

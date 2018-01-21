@@ -62,9 +62,9 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc__star_MAPSCALE; // *MAPSCALE
-extern const unsigned short int cc_NULL_dash_IC; // NULL-IC
+extern const unsigned short int cc_NULL_dash_ICON; // NULL-ICON
 extern const unsigned short int cc_SYS_dash_ICO; // SYS-ICO
-extern const unsigned short int pp_CLIP_dash_TA; // CLIP-TA
+extern const unsigned short int pp_CLIP_dash_TABLE; // CLIP-TABLE
 extern const unsigned short int pp__dash_END; // -END
 extern const unsigned short int pp__n_IN; // #IN
 extern const unsigned short int pp_VIN; // VIN
@@ -353,22 +353,22 @@ void UNK_0xe613() // UNK_0xe613
   Push(Read16(regsp)); // DUP
   Push(pp_ILEFT); // ILEFT
   Store_3(); // !_3
-  Push(pp_CLIP_dash_TA + 0x0012); // CLIP-TA 0x0012 +
+  Push(pp_CLIP_dash_TABLE + 0x0012); // CLIP-TABLE 0x0012 +
   Store_3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(pp_IBELOW); // IBELOW
   Store_3(); // !_3
-  Push(pp_CLIP_dash_TA + 0x000d); // CLIP-TA 0x000d +
+  Push(pp_CLIP_dash_TABLE + 0x000d); // CLIP-TABLE 0x000d +
   Store_3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(pp_IRIGHT); // IRIGHT
   Store_3(); // !_3
-  Push(pp_CLIP_dash_TA + 8); // CLIP-TA 8 +
+  Push(pp_CLIP_dash_TABLE + 8); // CLIP-TABLE 8 +
   Store_3(); // !_3
   Push(Read16(regsp)); // DUP
   Push(pp_IABOVE); // IABOVE
   Store_3(); // !_3
-  Push(pp_CLIP_dash_TA + 3); // CLIP-TA 3 +
+  Push(pp_CLIP_dash_TABLE + 3); // CLIP-TABLE 3 +
   Store_3(); // !_3
   Push(0x0014);
   Push(pp_XLLDEST); // XLLDEST
@@ -753,7 +753,7 @@ void UNK_0xe8f2() // UNK_0xe8f2
 void UNK_0xe942() // UNK_0xe942
 {
   unsigned short int i, imax;
-  Push(Read16(cc_NULL_dash_IC)); // NULL-IC
+  Push(Read16(cc_NULL_dash_ICON)); // NULL-ICON
   Push(Read16(cc_SYS_dash_ICO)); // SYS-ICO
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   IsICONSI(); // ?ICONSI
@@ -772,7 +772,7 @@ void UNK_0xe942() // UNK_0xe942
     GetIY(); // @IY
     WLD_gt_SCR(); // WLD>SCR
     GetID(); // @ID
-    Push((Pop() - Read16(cc_NULL_dash_IC)) * Read16(cc__star_MAPSCALE)); //  NULL-IC - *MAPSCALE *
+    Push((Pop() - Read16(cc_NULL_dash_ICON)) * Read16(cc__star_MAPSCALE)); //  NULL-ICON - *MAPSCALE *
     Push(pp_YWLD_c_YPIX); // YWLD:YPIX
     _2_at_(); // 2@
     SWAP(); // SWAP

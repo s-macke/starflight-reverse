@@ -164,7 +164,7 @@ void _dash_(); // -
 void _gt_(); // >
 void _st_(); // <
 void _1_dot_5_at_(); // 1.5@
-void _ro_SLIPPE(); // (SLIPPE
+void _ro_SLIPPER_rc_(); // (SLIPPER)
 void SHAPES(); // SHAPES
 void EPIDERM(); // EPIDERM
 void ANIMAL_dot_APPENDAGE(); // ANIMAL.APPENDAGE
@@ -413,7 +413,7 @@ void UNK_0xe3d6() // UNK_0xe3d6
 void UNK_0xe3ec() // UNK_0xe3ec
 {
   UNK_0xe3ac(); // UNK_0xe3ac
-  _ro_SLIPPE(); // (SLIPPE
+  _ro_SLIPPER_rc_(); // (SLIPPER)
 }
 
 

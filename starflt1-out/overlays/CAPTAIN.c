@@ -342,7 +342,7 @@ void _plus__dash__at_(); // +-@
 void CI(); // CI
 void LLINE(); // LLINE
 void V_gt_DISPLAY(); // V>DISPLAY
-void _ro_XYSCAN(); // (XYSCAN
+void _ro_XYSCAN_rc_(); // (XYSCAN)
 
 
 // =================================
@@ -1201,7 +1201,7 @@ void UNK_0xe2f6() // UNK_0xe2f6
 
 void UNK_0xe34e() // UNK_0xe34e
 {
-  _ro_XYSCAN(); // (XYSCAN case
+  _ro_XYSCAN_rc_(); // (XYSCAN) case
   Push(pp_CTX); // CTX
   _plus__ex__2(); // +!_2
   Push(-Pop()); //  NEGATE
