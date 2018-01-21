@@ -85,6 +85,7 @@ void DisasStarflt()
     int minaddr = 0x100;
     int maxaddr = FILESTAR0SIZE+0x100;
     InitParser();
+
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
     SortDictionary();
@@ -144,7 +145,8 @@ int main()
     ExtractDictionary(OUTDIR"/data/dictionary.txt");
 #endif
 // ---------------------
-
+    fflush(stdout);
+    fflush(stderr);
     for(i=0; overlays[i].name != NULL; i++)
     {
         overlays[i].startaddress = GetStartAddress(overlays[i].id);
@@ -161,6 +163,8 @@ int main()
 #ifdef STARFLT1
         GetDictEntry(0x8a2d, -1);
         GetDictEntry(0x602f, -1);
+        GetDictEntry(0x63a3, -1);
+        GetDictEntry(0x4c5b, -1);
         switch(i)
         {
             case 0x0F: // VITA-OV
@@ -191,12 +195,16 @@ int main()
 #else
         if (i == 0x13) GetDictEntry(0xf277, 0x13); // VITA-OV
 #endif
+        fflush(stdout);
+        fflush(stderr);
     }
 
 // ---------------------
 
     LoadSTARFLT();
     DisasStarflt();
+    fflush(stdout);
+    fflush(stderr);
 
     for(i=0; overlays[i].name != NULL; i++)
     {
@@ -204,6 +212,8 @@ int main()
         //reset memory
         LoadSTARFLT();
         ParseOverlay(i);
+        fflush(stdout);
+        fflush(stderr);
     }
 
     printf("Found %i words", ndict);

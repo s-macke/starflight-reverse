@@ -1,5 +1,6 @@
 #include"cpu.h"
 #include<string.h>
+#include<stdio.h>
 
 unsigned char m[1024*1024];
 unsigned char *mem;
