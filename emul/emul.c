@@ -584,6 +584,7 @@ void Call(unsigned short addr, unsigned short bx)
             if (strcmp(s, "(EMIT)") == 0) // print one char
             {
                 GraphicsChar(Read16(regsp));
+                GraphicsUpdate();
                 //printf("print char %i\n", Read16(regsp));
             }
             if (strcmp(s, "(WORD)") == 0) // scans input stream for char and copies
@@ -593,7 +594,6 @@ void Call(unsigned short addr, unsigned short bx)
                 //printf("%i offset %i\n", Read16(regsp), offset);
                 //exit(1);
             }
-
             Call(ax, bx);
         break;
 
@@ -646,24 +646,17 @@ void Call(unsigned short addr, unsigned short bx)
 
         // -----------------------------------
 
-        case 0x8A2D: // some screen coordinates
+        case 0x8A2D: // calculate memory offset for given coordinates. Interleaved. Maybe CGA?
+        {
             ax = Pop() >> 1;
-            cx = Pop();
-            bx = 0xc7; // = 199
-            bx -= cx;
+            bx = 199 - Pop();
             if (bx & 1)
             {
                 ax += 0x2000;
-                bx &= 0xFFFE; // remove lower bit
+                bx &= 0x00FE; // remove lower bit
             }
-            int temp = bx;
-            bx = ax;
-            ax = temp;
-            cx = 0x28; // = 40
-            ax *= cx;
-            bx += ax;
-            ax = bx;
-            Push(ax);
+            Push(bx * 40 + ax);
+        }
         break;
 
         case 0x25D7: // "KEY" read keyboard endless loop, executed by "0x17B7"
@@ -671,7 +664,7 @@ void Call(unsigned short addr, unsigned short bx)
                 // 1. either low byte ascii, high byte 0
                 // 2. or low byte scancode, high byte 1
                 char c;
-                c = getchar();
+                c = GraphicsGetChar();
                 //printf("key %i\n", c);
                 if (c == 0xa) c = 0xd;
                 Push(c);
@@ -1250,7 +1243,7 @@ void Call(unsigned short addr, unsigned short bx)
         // --- graphics ---
 
         case 0x8E4F:  // Move entire display to/from seg
-            printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n", 
+            printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n",
                 Read16(regsp+2), Read16(regsp+0), Read16(regsp+6), Read16(regsp+4));
             Pop();
             Pop();
@@ -1330,7 +1323,7 @@ void Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-        case 0x93B1: // Part of Bit Block Image Transfer (BLT) ??? 
+        case 0x93B1: // Part of Bit Block Image Transfer (BLT) ???
             printf("blt xblt=%i ylbt=%i lblt=%i wblt=%i\n", Read16(0x586E), Read16(0x5863), Read16(0x5887), Read16(0x5892));
             Push(Read16(0x586E)); // xblt
             Push(Read16(0x5863) - Read16(0x5887) + 1); // yblt - lblt + 1
@@ -1340,8 +1333,8 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x8D09: // "DISPLAY" wait for vertical retrace
             printf("wait for vertical retrace\n");
-            getchar();
-            getchar();
+            GraphicsGetChar();
+            GraphicsGetChar();
             GraphicsUpdate();
         break;
 
@@ -1370,13 +1363,17 @@ void Call(unsigned short addr, unsigned short bx)
         }
         break;
 
+        // move u from parm stack to the vector stack. Used as the Overlay call stack
         case 0x7AE7: // ">V"
-            bx = Read16(0x54B4);
+            //printf("Push 0x%04x\n", Read16(regsp));
+            bx = Read16(0x54B4); // VSP
             Write16(bx, Pop());
             Write16(0x54B4, Read16(0x54B4)-2);
         break;
 
+        // move u from vector stack to parm stack
         case 0x7AFE: // "V>"
+            //printf("Pop\n");
             Write16(0x54B4, Read16(0x54B4)+2);
             bx = Read16(0x54B4);
             Push(Read16(bx));
@@ -1787,7 +1784,7 @@ void Call(unsigned short addr, unsigned short bx)
         default:
             printf("unknown opcode 0x%04x at si = %x\n", addr, si);
             fflush(stdout);
-            getchar();
+            GraphicsGetChar();
             exit(1);
         break;
     }

@@ -5,9 +5,10 @@ static SDL_Renderer *renderer;
 static SDL_Texture *texture;
 #endif
 
+#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include <stdint.h>
+#include<stdint.h>
 #include"graphics.h"
 
 #define WIDTH 640
@@ -457,5 +458,28 @@ void GraphicsLine(int x1, int y1, int x2, int y2, int color)
 void GraphicsPixel(int x, int y, int color)
 {
     pixels[y*WIDTH+x] = colortable[color&0xF];
+}
+
+char GraphicsGetChar()
+{
+#ifdef SDL
+    SDL_Event event;
+
+    while(1)
+    {
+        SDL_WaitEvent(&event);
+        switch (event.type)
+        {
+            case SDL_QUIT:
+                /*return;*/
+                exit(1);
+            case SDL_KEYDOWN:
+                return event.key.keysym.sym;
+        }
+    }
+
+#else
+    return getchar();
+#endif
 }
 

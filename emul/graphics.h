@@ -14,5 +14,6 @@
     void GraphicsChar(unsigned char s);
     void GraphicsLine(int x1, int y1, int x2, int y2, int color);
     void GraphicsPixel(int x, int y, int color);
+    char GraphicsGetChar();
 
 #endif
