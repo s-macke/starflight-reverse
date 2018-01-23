@@ -215,9 +215,7 @@ int main()
         fflush(stdout);
         fflush(stderr);
     }
-
-    printf("Found %i words", ndict);
     WriteAllDict(OUTDIR"/data/dict.h");
-
+    DictConsistencyCheck();
     return 0;
 }

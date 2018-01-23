@@ -241,3 +241,40 @@ void SortDictionary()
     }
     dict[ndict-1].size = 0;
 }
+
+void DictConsistencyCheck()
+{
+    int nunknowns = 0;
+    
+    for(int i=0; i<ndict; i++)
+    {
+        if (strncmp(dict[i].r, "UNK_", 4) == 0)
+            nunknowns++;
+    }
+    printf("Found %i words, %i of the words are unknown", ndict, nunknowns);
+
+    for(int i=0; i<ndict; i++)
+    for(int j=i+1; j<ndict; j++)
+    {
+        if (dict[i].parp == dict[j].parp)
+        if (dict[i].ovidx == dict[j].ovidx)
+        {
+            fprintf(stderr, "Error: Found duplicate word\n");
+        }
+
+        if (strncmp(dict[i].r, "UNK_", 4) == 0) continue;
+        if (strncmp(dict[j].r, "UNK_", 4) == 0) continue;
+        if (dict[i].ovidx != dict[j].ovidx) continue;
+
+        if (strcmp(GetWordName(&dict[i]), GetWordName(&dict[j])) == 0)
+        {
+            
+                
+            fprintf(stderr, "Error: Found duplicate word name '%s': ov1=%i ov2=%i \n", GetWordName(&dict[i]), dict[i].ovidx, dict[j].ovidx);
+        }
+        
+    }
+
+}
+
+
