@@ -469,18 +469,30 @@ void GraphicsPixel(int x, int y, int color)
     pixels[(y+1)*WIDTH+(x+3)] = colortable[color&0xF];
 }
 
-void GraphicsBLT(int x1, int y1, int w, int h, char* image, int color)
+void GraphicsBLT(int x1, int y1, int h, int w, char* image, int color)
 {
     short int *img = (short int*)image;
-    x1 <<= 2;
-    y1 = 400 - (y1 << 1);
-    w <<= 2;
-    h <<= 1;
     int n = 0;
-    for(int y=y1; y<=y1+h; y++)
-    for(int x=x1; x<=x1+w; x++)
+    for(int y=y1; y>y1-h; y--)
+    for(int x=x1; x<x1+w; x++)
     {
-        if ((*img) & (1<<(n))) pixels[y*WIDTH+x] = colortable[color&0xF];
+        int x0 = x << 2;
+        int y0 = 400 - (y << 1);
+        if (x0 >= 0)
+        if (y0 >= 0)
+        if (x0 < WIDTH)
+        if (y0 < HEIGHT)
+        if ((*img) & (1<<(15-n)))
+        {
+            pixels[(y0+0) * WIDTH + (x0+0)] = colortable[color&0xF];
+            pixels[(y0+0) * WIDTH + (x0+1)] = colortable[color&0xF];
+            pixels[(y0+1) * WIDTH + (x0+0)] = colortable[color&0xF];
+            pixels[(y0+1) * WIDTH + (x0+1)] = colortable[color&0xF];
+            pixels[(y0+0) * WIDTH + (x0+0+2)] = colortable[color&0xF];
+            pixels[(y0+0) * WIDTH + (x0+1+2)] = colortable[color&0xF];
+            pixels[(y0+1) * WIDTH + (x0+0+2)] = colortable[color&0xF];
+            pixels[(y0+1) * WIDTH + (x0+1+2)] = colortable[color&0xF];
+        }
         n++;
         if (n == 16)
         {
