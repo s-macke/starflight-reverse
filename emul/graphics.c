@@ -21,22 +21,22 @@ int cursory = 0;
 
 static int colortable[16] =
 {
-    0x000000,
-    0x800000,
-    0x008000,
-    0x808000,
-    0x000080,
-    0x800080,
-    0x008080,
-    0xc0c0c0,
-    0x808080,
-    0xff0000,
-    0x00ff00,
-    0xffff00,
-    0x0000ff,
-    0xff00ff,
-    0x00ffff,
-    0xffffff
+0x000000,
+0x0000AA,
+0x00AA00,
+0x00AAAA,
+0xAA0000,
+0xAA00AA,
+0xAA5500,
+0xAAAAAA,
+0x555555,
+0x5555FF,
+0x55FF55,
+0x55FFFF,
+0xFF5555,
+0xFF55FF,
+0xFFFF55,
+0xFFFFFF,
 };
 
 static char vgafont8[256*8] =
@@ -307,8 +307,8 @@ void GraphicsInit()
         printf("SDL_Init Error: %s\n", SDL_GetError());
         return;
     }
-    freopen("CON", "w", stdout); // redirects stdout
-    freopen("CON", "w", stderr); // redirects stderr
+    freopen("stdout", "w", stdout); // redirects stdout
+    freopen("stderr", "w", stderr); // redirects stderr
 
     window = SDL_CreateWindow("Hello World!", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
     if (window == NULL)
@@ -457,7 +457,38 @@ void GraphicsLine(int x1, int y1, int x2, int y2, int color)
 
 void GraphicsPixel(int x, int y, int color)
 {
-    pixels[y*WIDTH+x] = colortable[color&0xF];
+    x <<= 2;
+    y = 400-(y<<1);
+    pixels[(y+0)*WIDTH+(x+0)] = colortable[color&0xF];
+    pixels[(y+0)*WIDTH+(x+1)] = colortable[color&0xF];
+    pixels[(y+1)*WIDTH+(x+1)] = colortable[color&0xF];
+    pixels[(y+1)*WIDTH+(x+0)] = colortable[color&0xF];
+    pixels[(y+0)*WIDTH+(x+2)] = colortable[color&0xF];
+    pixels[(y+1)*WIDTH+(x+2)] = colortable[color&0xF];
+    pixels[(y+0)*WIDTH+(x+3)] = colortable[color&0xF];
+    pixels[(y+1)*WIDTH+(x+3)] = colortable[color&0xF];
+}
+
+void GraphicsBLT(int x1, int y1, int w, int h, char* image, int color)
+{
+    short int *img = (short int*)image;
+    x1 <<= 2;
+    y1 = 400 - (y1 << 1);
+    w <<= 2;
+    h <<= 1;
+    int n = 0;
+    for(int y=y1; y<=y1+h; y++)
+    for(int x=x1; x<=x1+w; x++)
+    {
+        if ((*img) & (1<<(n))) pixels[y*WIDTH+x] = colortable[color&0xF];
+        n++;
+        if (n == 16)
+        {
+            n = 0;
+            img++;
+        }
+    }
+    GraphicsUpdate();
 }
 
 char GraphicsGetChar()

@@ -819,7 +819,6 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x22AB: // ENCLOSE
-
             // TODO: check
             ax = Pop()&0xFF;
             bx = Pop();
@@ -1232,19 +1231,18 @@ void Call(unsigned short addr, unsigned short bx)
             Push(0x188);
         }
         break;
-
-
 // ---------------------------------------------
-// sound stuff
+        // --- sound stuff ---
 
-        case 0x2653:  // "BEEPOFF"
-        break;
+        case 0x2638: break; // BEEPON_2
+        case 0x2653: break; // "BEEPOFF"
+        case 0x2618: Pop(); break; // "TONE"
 
         // --- graphics ---
 
         case 0x8E4F:  // Move entire display to/from seg
-            printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n",
-                Read16(regsp+2), Read16(regsp+0), Read16(regsp+6), Read16(regsp+4));
+            //printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n",
+            //    Read16(regsp+2), Read16(regsp+0), Read16(regsp+6), Read16(regsp+4));
             Pop();
             Pop();
             Pop();
@@ -1252,13 +1250,17 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x9367: // "PLOT" TODO
-            //printf("(plot) %i %i seg=0x%04x color=%i\n", Read16(regsp+2), Read16(regsp+4), Read16(0x5648), Read16(0x55F2));
-            GraphicsPixel(Read16(regsp+2), Read16(regsp+4), Read16(0x55F2));
-            Write16(0x5663, Pop()); // RETURN
+            // ignore return address from call
+            {
+            //printf("(plot) %i %i seg=0x%04x color=%i\n",
+            //    Read16(regsp+2), Read16(regsp+0), Read16(0x5648), Read16(0x55F2));
+            int color = Read16(0x55F2);
+            GraphicsPixel(Read16(regsp+2), Read16(regsp+0), color);
             dx = Pop();
             ax = Pop();
+            /*
             dx <<= 1;
-            dx += Read16(0x563A);
+            dx += Read16(0x563A); // YTABL
             Push(dx);
             Push(ax);
             ax = (ax&3)<<1;
@@ -1268,16 +1270,76 @@ void Call(unsigned short addr, unsigned short bx)
             bx = Pop();
             ax += Read16(bx);
             bx = ax;
-            cx = Read16(0x5648);
+            cx = Read16(0x5648); // BUF-SEG
             unsigned short es = cx;
             ax = dx;
-            //XCHG(&ax, &dx);
-            //dx = 0x3CE;
-
-            //bx = Pop(); // es = Pop();
-
-            Push(Read16(0x5663));
+            */
+            }
         break;
+
+        case 0x93B1: // "BEXTENT" Part of Bit Block Image Transfer (BLT)
+            //printf("blt xblt=%i yblt=%i lblt=%i wblt=%i\n", Read16(0x586E), Read16(0x5863), Read16(0x5887), Read16(0x5892));
+            Push(Read16(0x586E)); // xblt
+            Push(Read16(0x5863) - Read16(0x5887) + 1); // yblt - lblt + 1
+            Push(Read16(0x586E) + Read16(0x5892) - 1); // xblt + wblt - 1
+            Push(Read16(0x5863)); // yblt
+        break;
+
+        case 0x9390: // "?EXTENTX"
+           // text loc. of extent rel. to clipping window - result is in trjct & taccpt
+           // IMPORTANT: USES VIN & OIN AS TEMP SPACE
+           {
+            int y2 = Pop();
+            int x2 = Pop();
+            int y1 = Pop();
+            int x1 = Pop();
+            //printf("BLT %i %i %i %i\n", x1, y1, x2, y2);
+            //exit(1);
+           }
+        break;
+// ================================================
+// 0x938e: WORD '?EXTENTX' codep=0x9390 parp=0x9390 params=4 returns=0
+// ================================================
+// 0x9390: mov    bx,[569B] // VIN
+// 0x9394: mov    cx,0004
+// 0x9397: pop    word ptr [bx]
+// 0x9399: add    bx,02
+// 0x939c: loop   9397
+// 0x939e: mov    bx,0002
+// 0x93a1: mov    [5686],bx // #IN
+// 0x93a5: push   di
+// 0x93a6: call   8538
+// 0x93a9: pop    di
+// 0x93aa: lodsw
+// 0x93ab: mov    bx,ax
+// 0x93ad: jmp    word ptr [bx]
+
+        case 0x902b: // "{BLT}" plot a bit pattern given parameters
+            PrintCallstacktrace(bx);
+            {
+            int color = Read16(0x55F2); // COLOR
+            int bltseg = Read16(0x58aa); // BLTSEG
+            int bltoffs = Read16(0x589d);  // ABLT
+            int x0 = Read16(0x586E);
+            int y0 = Read16(0x5863);
+            int w = Read16(0x5887);
+            int h = Read16(0x5892);
+            printf("blt xblt=%i yblt=%i lblt=%i wblt=%i color=%i 0x%04x:0x%04x\n", x0, y0, w, h, color, bltseg, bltoffs);
+            GraphicsBLT(x0, y0, w, h, &m[(bltseg<<4) + bltoffs], color);
+            }
+            //exit(1);
+        break;
+
+        case 0x8891: // SCANPOLY
+            //PrintCallstacktrace(bx);
+            //exit(1);
+        break;
+
+        case 0x9055: // LFILLPOLY
+            //PrintCallstacktrace(bx);
+            //exit(1);
+        break;
+
 
         case 0x6C86: // "C>EGA" // TODO???
             dx = Pop() & 0xF;
@@ -1314,21 +1376,25 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x903f: // "LLINE" TODO
         {
+            /*
+            for(int i=0x9002; i<0x9126; i++)
+            {
+                if (Read8(i) == 0x9a)
+                {
+                    int seg = Read16(i+3);
+                    int ofs = Read16(i+1);
+                printf("%20s 0x%02x, 0x%04x, 0x%04x, 0x%02x : 0x%02x 0x%02x\n", FindWord(i), Read8(i), seg, ofs, Read8(i+5), Read8Long(seg, ofs), Read8Long(seg, ofs+1));
+                }
+            }
+            exit(1);
+            */
             int y2 = Pop();
             int x2 = Pop();
             int y1 = Pop();
             int x1 = Pop();
-            printf("lline %i %i %i %i\n", x1, y1, x2, y2);
+            //printf("lline %i %i %i %i\n", x1, y1, x2, y2);
             GraphicsLine(x1, y1, x2, y2, 15);
         }
-        break;
-
-        case 0x93B1: // Part of Bit Block Image Transfer (BLT) ???
-            printf("blt xblt=%i ylbt=%i lblt=%i wblt=%i\n", Read16(0x586E), Read16(0x5863), Read16(0x5887), Read16(0x5892));
-            Push(Read16(0x586E)); // xblt
-            Push(Read16(0x5863) - Read16(0x5887) + 1); // yblt - lblt + 1
-            Push(Read16(0x586E) + Read16(0x5892) - 1); // xblt + wblt - 1
-            Push(Read16(0x5863)); // yblt
         break;
 
         case 0x8D09: // "DISPLAY" wait for vertical retrace
@@ -1365,7 +1431,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         // move u from parm stack to the vector stack. Used as the Overlay call stack
         case 0x7AE7: // ">V"
-            //printf("Push 0x%04x\n", Read16(regsp));
+            printf("Push 0x%04x\n", Read16(regsp));
             bx = Read16(0x54B4); // VSP
             Write16(bx, Pop());
             Write16(0x54B4, Read16(0x54B4)-2);
@@ -1779,10 +1845,11 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x0f05: regsp = Read16(regdi);break; // "SP!"
         case 0x4873: Write16(Pop(), 1); break; // ON
         case 0x4886: Write16(Pop(), 0); break; // "OFF"
-        case 0x0D7C: Push((Pop()-cs)<<4); break; // SEG>ADDR
+        case 0x0D7C: Push((Pop()-cs)<<4); break; // "SEG>ADDR"
+        case 0x4892: break; // "CAPSON" Turn on caps
 
         default:
-            printf("unknown opcode 0x%04x at si = %x\n", addr, si);
+            printf("unknown opcode 0x%04x at si = 0x%04x\n", addr, si);
             fflush(stdout);
             GraphicsGetChar();
             exit(1);
@@ -1821,7 +1888,6 @@ int main()
     // Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
     Write16(0x2420, 0x0F22-2); // "0"
-
     /*
     // default interrupt vector
     Write16Long(0, 0x1C*4+2, 0xF000);
