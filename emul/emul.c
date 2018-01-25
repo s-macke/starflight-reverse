@@ -116,12 +116,17 @@ void SetBPBase(int bp)
 }
 
 int iscall[20000];
+int iscallovidx[20000];
 
 void DefineCallStack(int bp, int value)
 {
     SetBPBase(bp);
     //printf("%i\n", bpbase-bp);
-    if (bpbase-bp > 0) iscall[(bpbase-bp)>>1] = value;
+    if (bpbase-bp > 0)
+    {
+        iscall[(bpbase-bp)>>1] = value;
+        if (value) iscallovidx[(bpbase-bp)>>1] = GetOverlayIndex(Read16(0x55a5));
+    }
 }
 
 int FindClosestWord(int si)
@@ -144,22 +149,29 @@ int FindClosestWord(int si)
     return word;
 }
 
+char* GetOverlayName(int word, int ovidx)
+{
+    if (word < (FILESTAR0SIZE+0x100)) return "STARFLT";
+    return (ovidx==-1)?"STARFLT":overlays[ovidx].name;
+}
+
 void PrintCallstacktrace(int bx)
 {
     int ovidx = GetOverlayIndex(Read16(0x55a5));
     SetBPBase(bp);
     printf("==================================\n");
-    printf("Callstack for overlay=%i %s\n", ovidx, (ovidx==-1)?"":overlays[ovidx].name);
-    printf("  0x%04x: %s\n", si, FindWord(bx+2));
+    printf("Callstack\n");
+    printf("  0x%04x: %15s %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2));
 
     int word = FindClosestWord(si);
-    printf("  0x%04x: %s\n", word, FindWord(word));
+    printf("  0x%04x: %15s %s\n", word, GetOverlayName(word, ovidx), FindWord(word));
     for(int i=bp; i<bpbase; i += 2)
     {
         if (iscall[(bpbase-i)>>1])
         {
             int word = FindClosestWord(Read16(i));
-            printf("  0x%04x: %s\n", word, FindWord(word));
+            char* ovname = GetOverlayName(word, iscallovidx[(bpbase-i)>>1]);
+            printf("  0x%04x: %15s %s\n", word, ovname, FindWord(word));
         }
     }
     printf("==================================\n");
@@ -1331,13 +1343,13 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x8891: // SCANPOLY
-            //PrintCallstacktrace(bx);
-            //exit(1);
+            PrintCallstacktrace(bx);
+            exit(1);
         break;
 
         case 0x9055: // LFILLPOLY
-            //PrintCallstacktrace(bx);
-            //exit(1);
+            PrintCallstacktrace(bx);
+            exit(1);
         break;
 
 
@@ -1850,6 +1862,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         default:
             printf("unknown opcode 0x%04x at si = 0x%04x\n", addr, si);
+            PrintCallstacktrace(bx);
             fflush(stdout);
             GraphicsGetChar();
             exit(1);
