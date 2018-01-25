@@ -16,6 +16,8 @@ void LoadOverlayDict(int ovidx)
 {
     OVLHeader head;
     ExtractOverlay(ovidx, &head, mem);
+    //printf("%s storeofs=0x%04x size=%i size=%i\n", overlays[ovidx].name, head.storeofs, head.ovlsize, head.size);
+
     int i;
     for(i=0; i<8; i+=2)
     {
@@ -126,8 +128,28 @@ void ExtractDirectory()
     }
     LoadDir(fp);
     fclose(fp);
-
 }
+
+void DisasmEGA()
+{
+    int size;
+    printf("Disassemble EGA\n");
+    char* data = Extract(0x91, &size);
+    memcpy(&mem[0x0], data, size);
+    InitParser();
+
+    for(int i=0; i<size; i++)
+    {
+        if (Read16(i) == CODEPOINTER)
+        {
+            DisasmRange(i+2, 0x100000, -1, 0x0, size);
+        }
+    }
+
+    Transpile(OUTDIR"/ega.asm", NULL, -1, 0, size, 0);
+}
+
+
 
 int main()
 {
@@ -216,6 +238,9 @@ int main()
         fflush(stderr);
     }
     WriteAllDict(OUTDIR"/data/dict.h");
+#ifdef STARFLT1
+    DisasmEGA();
+#endif
     DictConsistencyCheck();
     return 0;
 }

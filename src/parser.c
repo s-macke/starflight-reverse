@@ -153,6 +153,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
         AnalyzeDisasmString(buffer, ovidx, currentoffset);
 
         if (Read8(currentoffset) == 0xc3) return 0; // ret
+        if (Read8(currentoffset) == 0xcb) return 0; // retf
         if (Read8(currentoffset) == 0xcf) return 0; // iret
 
         if ((Read8(currentoffset) >= 0x70) && (Read8(currentoffset) <= 0x7f)) // conditional jump

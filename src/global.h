@@ -70,8 +70,6 @@ extern WORDRENAME renamewords[];
     #define CODERULE          0xb869 //
     #define CODEEXEC          0x17b7 // The code pointers can be overwritten. -FIND ?TERMINAL ABORT BELL TYPE ....
 
-
-
 #elif STARFLT2
     #define CODECALL 0x224c
     #define CODEEXIT 0x1692 // exit function

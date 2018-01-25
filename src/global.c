@@ -579,6 +579,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x824a, "INDENT.INM"}, // "UNK_0x824a"
     {0xff, 0xd445, "GAME-OV"}, // "GAME-O"
     {0xff, 0x8ee7, ">LORES_2"}, // ">LORES"
+    {0xff, 0x4892, "CAPSON"}, // "UNK_0x4892"
     
     {0x0, 0x0, NULL}
 };

@@ -43,5 +43,6 @@ void InitParser();
 void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int currentovidx, Variables vars);
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr);
+int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr);
 
 #endif

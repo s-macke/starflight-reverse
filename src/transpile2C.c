@@ -42,7 +42,7 @@ void Transpile(const char *_filename, OVLHeader *head, int ovidx, int minaddr, i
         exit(1);
     }
 
-    if (ovidx != -1)
+    if ((ovidx != -1) && (head != NULL))
     {
         fprintf(fpc, "// ====== OVERLAY '%s' ======\n", overlays[ovidx].name);
         fprintf(fpc, "// store offset = 0x%04x\n", head->storeofs);

@@ -335,6 +335,9 @@ void StackAnalysis(int ovidx)
     Set("LFILLPOLY", 0, 0); // probably
     Set("DISPLAY-WAIT", 0, 0);
     Set("PLOT", 3, 1);
+    Set("SCANPOLY", 0, 0);
+    Set("LFILLPOLY", 0, 0);
+    Set("CAPSON", 0, 0);
 
 #endif
 #ifdef STARFLT2
