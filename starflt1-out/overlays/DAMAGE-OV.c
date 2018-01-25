@@ -891,7 +891,7 @@ void UNK_0xede0() // UNK_0xede0
 
 
 // ================================================
-// 0xedf0: WORD 'UNK_0xedf2' codep=0x224c parp=0xedf2
+// 0xedf0: WORD 'UNK_0xedf2' codep=0x224c parp=0xedf2 params=0 returns=0
 // ================================================
 
 void UNK_0xedf2() // UNK_0xedf2

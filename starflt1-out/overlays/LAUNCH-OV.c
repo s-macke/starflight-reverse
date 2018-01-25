@@ -235,7 +235,7 @@ void COUNTDOWN() // COUNTDOWN
 
 
 // ================================================
-// 0xf0cc: WORD 'LAUNCH' codep=0x224c parp=0xf0ce
+// 0xf0cc: WORD 'LAUNCH' codep=0x224c parp=0xf0ce params=0 returns=8
 // ================================================
 
 void LAUNCH() // LAUNCH
@@ -520,7 +520,7 @@ void UNK_0xf306() // UNK_0xf306
 
 
 // ================================================
-// 0xf36a: WORD 'PORTLEAVE' codep=0x224c parp=0xf36c
+// 0xf36a: WORD 'PORTLEAVE' codep=0x224c parp=0xf36c params=2 returns=0
 // ================================================
 
 void PORTLEAVE() // PORTLEAVE
@@ -582,7 +582,7 @@ void UNK_0xf393() // UNK_0xf393
 
 
 // ================================================
-// 0xf3ef: WORD '&LAUNCH' codep=0x224c parp=0xf3fb
+// 0xf3ef: WORD '&LAUNCH' codep=0x224c parp=0xf3fb params=0 returns=8
 // ================================================
 // entry
 
@@ -610,7 +610,7 @@ void _and_LAUNCH() // &LAUNCH
 
 
 // ================================================
-// 0xf449: WORD '&RETURN' codep=0x224c parp=0xf455
+// 0xf449: WORD '&RETURN' codep=0x224c parp=0xf455 params=0 returns=2
 // ================================================
 // entry
 

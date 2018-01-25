@@ -756,7 +756,7 @@ void UNK_0xf441() // UNK_0xf441
 
 
 // ================================================
-// 0xf458: WORD 'UNK_0xf45a' codep=0x224c parp=0xf45a
+// 0xf458: WORD 'UNK_0xf45a' codep=0x224c parp=0xf45a params=0 returns=2
 // ================================================
 
 void UNK_0xf45a() // UNK_0xf45a

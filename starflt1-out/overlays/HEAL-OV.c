@@ -547,7 +547,7 @@ void UNK_0xf2cd() // UNK_0xf2cd
 
 
 // ================================================
-// 0xf353: WORD '.VITS' codep=0x224c parp=0xf35d
+// 0xf353: WORD '.VITS' codep=0x224c parp=0xf35d params=0 returns=0
 // ================================================
 // entry
 

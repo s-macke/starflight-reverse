@@ -751,7 +751,7 @@ void UNK_0xf208() // UNK_0xf208
 
 
 // ================================================
-// 0xf236: WORD 'UNK_0xf238' codep=0x224c parp=0xf238
+// 0xf236: WORD 'UNK_0xf238' codep=0x224c parp=0xf238 params=0 returns=0
 // ================================================
 
 void UNK_0xf238() // UNK_0xf238

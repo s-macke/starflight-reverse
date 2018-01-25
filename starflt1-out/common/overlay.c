@@ -3245,9 +3245,9 @@ void PORTM() // PORTM
 // 0xd426: db 0x34 0xd4 0xef 0xd3 0x2f 0xf5 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0xff 0xff 0x1a 0x08 '4   /               '
 
 // ================================================
-// 0xd43a: WORD 'GAME-O' codep=0x83f8 parp=0xd445
+// 0xd43a: WORD 'GAME-OV' codep=0x83f8 parp=0xd445
 // ================================================
-// Overlay GAME_dash_O = 0x8f71
+// Overlay GAME_dash_OV = 0x8f71
 
 // ================================================
 // 0xd447: WORD 'STARTGAME' codep=0x224c parp=0xd452
@@ -3255,7 +3255,7 @@ void PORTM() // PORTM
 
 void STARTGAME() // STARTGAME
 {
-  LoadOverlay(GAME_dash_O); // GAME-O
+  LoadOverlay(GAME_dash_OV); // GAME-OV
   START_dot_GAME(); // Overlay GAME-OV
 }
 
@@ -3266,7 +3266,7 @@ void STARTGAME() // STARTGAME
 
 void GAMEOP_1() // GAMEOP_1
 {
-  LoadOverlay(GAME_dash_O); // GAME-O
+  LoadOverlay(GAME_dash_OV); // GAME-OV
   GAMEOPS(); // Overlay GAME-OV
   SAVE_dash_OVERLAY(); // SAVE-OVERLAY
 }

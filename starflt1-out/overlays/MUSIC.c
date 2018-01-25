@@ -96,7 +96,7 @@ void FILE_st_(); // FILE<
 void FLUSH_2(); // FLUSH_2
 void _gt_DISPLAY(); // >DISPLAY
 void _gt_HIDDEN(); // >HIDDEN
-void _gt_LORES(); // >LORES
+void _gt_LORES_2(); // >LORES_2
 void SCR_dash_RES(); // SCR-RES
 void DARK(); // DARK
 void SONG(); // SONG
@@ -807,7 +807,7 @@ void UNK_0xe82b() // UNK_0xe82b
   GetDS(); // @DS
   Push(pp_UNK_0xe6dc); // UNK_0xe6dc
   Store_3(); // !_3
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   DARK(); // DARK
   Push(0x000a);
   UNK_0xe700(); // UNK_0xe700

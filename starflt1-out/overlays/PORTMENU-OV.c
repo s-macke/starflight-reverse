@@ -922,7 +922,7 @@ void UNK_0xedcf() // UNK_0xedcf
 
 
 // ================================================
-// 0xeddf: WORD 'UNK_0xede1' codep=0x224c parp=0xede1
+// 0xeddf: WORD 'UNK_0xede1' codep=0x224c parp=0xede1 params=0 returns=2
 // ================================================
 
 void UNK_0xede1() // UNK_0xede1

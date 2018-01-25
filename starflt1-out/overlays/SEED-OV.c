@@ -161,7 +161,7 @@ void IEXTRACT(); // IEXTRACT
 void GetNEWSPACE(); // @NEWSPACE
 void MAXSPACE(); // MAXSPACE
 void IFLD_at_(); // IFLD@
-void IsCLASS_slash_(); // ?CLASS/
+void IsCLASS_slash_SPECIES(); // ?CLASS/SPECIES
 void IFIND(); // IFIND
 void ALL(); // ALL
 void ICREATE(); // ICREATE
@@ -1093,7 +1093,7 @@ void UNK_0xf143() // UNK_0xf143
   unsigned short int a;
   Push(0x001c);
   Push(1);
-  IsCLASS_slash_(); // ?CLASS/
+  IsCLASS_slash_SPECIES(); // ?CLASS/SPECIES
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
@@ -1469,7 +1469,7 @@ void IsEXIST() // ?EXIST
       UNK_0xed31(); // UNK_0xed31
       Push(0x0029);
       Push(4);
-      IsCLASS_slash_(); // ?CLASS/
+      IsCLASS_slash_SPECIES(); // ?CLASS/SPECIES
       c = Pop(); // >R
       Pop(); Pop(); // 2DROP
       Push(c); // R>

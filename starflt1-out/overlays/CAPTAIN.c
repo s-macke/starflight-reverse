@@ -895,7 +895,7 @@ void UNK_0xe0f9() // UNK_0xe0f9
 
 
 // ================================================
-// 0xe129: WORD 'UNK_0xe12b' codep=0x224c parp=0xe12b
+// 0xe129: WORD 'UNK_0xe12b' codep=0x224c parp=0xe12b params=0 returns=0
 // ================================================
 
 void UNK_0xe12b() // UNK_0xe12b
@@ -2067,7 +2067,7 @@ void UNK_0xe823() // UNK_0xe823
 
 
 // ================================================
-// 0xe8e7: WORD 'UNK_0xe8e9' codep=0x224c parp=0xe8e9
+// 0xe8e7: WORD 'UNK_0xe8e9' codep=0x224c parp=0xe8e9 params=1 returns=0
 // ================================================
 
 void UNK_0xe8e9() // UNK_0xe8e9
@@ -2099,7 +2099,7 @@ void UNK_0xe907() // UNK_0xe907
 
 
 // ================================================
-// 0xe930: WORD 'UNK_0xe932' codep=0x224c parp=0xe932
+// 0xe930: WORD 'UNK_0xe932' codep=0x224c parp=0xe932 params=0 returns=0
 // ================================================
 
 void UNK_0xe932() // UNK_0xe932
@@ -3079,7 +3079,7 @@ void UNK_0xf007() // UNK_0xf007
 
 
 // ================================================
-// 0xf0cb: WORD 'UNK_0xf0cd' codep=0x224c parp=0xf0cd
+// 0xf0cb: WORD 'UNK_0xf0cd' codep=0x224c parp=0xf0cd params=0 returns=0
 // ================================================
 
 void UNK_0xf0cd() // UNK_0xf0cd
@@ -3304,7 +3304,7 @@ void UNK_0xf23f() // UNK_0xf23f
 
 
 // ================================================
-// 0xf255: WORD 'UNK_0xf257' codep=0x224c parp=0xf257
+// 0xf255: WORD 'UNK_0xf257' codep=0x224c parp=0xf257 params=0 returns=0
 // ================================================
 
 void UNK_0xf257() // UNK_0xf257
@@ -3526,7 +3526,7 @@ void UNK_0xf3d3() // UNK_0xf3d3
 
 
 // ================================================
-// 0xf42a: WORD '(/LOG-PLAN)' codep=0x224c parp=0xf43a
+// 0xf42a: WORD '(/LOG-PLAN)' codep=0x224c parp=0xf43a params=0 returns=0
 // ================================================
 // entry
 

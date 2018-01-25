@@ -457,7 +457,7 @@ void UNK_0xee3e() // UNK_0xee3e
 
 
 // ================================================
-// 0xee56: WORD 'UNK_0xee58' codep=0x224c parp=0xee58
+// 0xee56: WORD 'UNK_0xee58' codep=0x224c parp=0xee58 params=0 returns=0
 // ================================================
 
 void UNK_0xee58() // UNK_0xee58
@@ -1316,7 +1316,7 @@ void UNK_0xf46c() // UNK_0xf46c
 
 
 // ================================================
-// 0xf483: WORD 'UNK_0xf485' codep=0x224c parp=0xf485
+// 0xf483: WORD 'UNK_0xf485' codep=0x224c parp=0xf485 params=0 returns=0
 // ================================================
 
 void UNK_0xf485() // UNK_0xf485

@@ -261,7 +261,7 @@ void _ro__dot_MASS_rc_() // (.MASS)
 
 
 // ================================================
-// 0xeed5: WORD '(.ACC)' codep=0x224c parp=0xeee0
+// 0xeed5: WORD '(.ACC)' codep=0x224c parp=0xeee0 params=0 returns=1
 // ================================================
 // entry
 
@@ -650,7 +650,7 @@ void _ro__dot_SHIP_rc_() // (.SHIP)
 
 
 // ================================================
-// 0xf1cc: WORD '(BALANCEMESS)' codep=0x224c parp=0xf1de
+// 0xf1cc: WORD '(BALANCEMESS)' codep=0x224c parp=0xf1de params=2 returns=0
 // ================================================
 // entry
 

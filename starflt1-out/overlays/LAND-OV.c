@@ -177,7 +177,7 @@ void UNK_0xf177() // UNK_0xf177
 
 
 // ================================================
-// 0xf1c7: WORD 'UNK_0xf1c9' codep=0x224c parp=0xf1c9
+// 0xf1c7: WORD 'UNK_0xf1c9' codep=0x224c parp=0xf1c9 params=0 returns=0
 // ================================================
 
 void UNK_0xf1c9() // UNK_0xf1c9

@@ -499,7 +499,7 @@ void UNK_0xf373() // UNK_0xf373
 
 
 // ================================================
-// 0xf41f: WORD 'UNK_0xf421' codep=0x224c parp=0xf421
+// 0xf41f: WORD 'UNK_0xf421' codep=0x224c parp=0xf421 params=2 returns=0
 // ================================================
 
 void UNK_0xf421() // UNK_0xf421

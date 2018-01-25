@@ -182,7 +182,7 @@ extern const unsigned short int pp__i_INJURE; // 'INJURE
 extern const unsigned short int pp_ATMO; // ATMO
 extern const unsigned short int pp_LCOLOR; // LCOLOR
 extern const unsigned short int pp_OLDHR; // OLDHR
-extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
+extern const unsigned short int pp__i_THROW_dash_AWAY; // 'THROW-AWAY
 extern const unsigned short int pp_COLOR; // COLOR
 extern const unsigned short int pp_IsNEW; // ?NEW
 extern const unsigned short int pp_FORCED; // FORCED
@@ -1679,7 +1679,7 @@ void UNK_0xe8e4() // UNK_0xe8e4
 
 
 // ================================================
-// 0xe8f6: WORD 'UNK_0xe8f8' codep=0x224c parp=0xe8f8
+// 0xe8f6: WORD 'UNK_0xe8f8' codep=0x224c parp=0xe8f8 params=0 returns=0
 // ================================================
 
 void UNK_0xe8f8() // UNK_0xe8f8
@@ -2280,7 +2280,7 @@ void SIMULATE() // SIMULATE
 
 
 // ================================================
-// 0xecb5: WORD 'UNK_0xecb7' codep=0x224c parp=0xecb7
+// 0xecb5: WORD 'UNK_0xecb7' codep=0x224c parp=0xecb7 params=0 returns=0
 // ================================================
 
 void UNK_0xecb7() // UNK_0xecb7
@@ -2866,7 +2866,7 @@ void IsNAV() // ?NAV
 
 
 // ================================================
-// 0xf13a: WORD '.DISTANCE' codep=0x224c parp=0xf148
+// 0xf13a: WORD '.DISTANCE' codep=0x224c parp=0xf148 params=0 returns=0
 // ================================================
 
 void DrawDISTANCE() // .DISTANCE
@@ -2916,7 +2916,7 @@ void DrawDISTANCE() // .DISTANCE
 
 
 // ================================================
-// 0xf1b4: WORD '.CARGO' codep=0x224c parp=0xf1bf
+// 0xf1b4: WORD '.CARGO' codep=0x224c parp=0xf1bf params=0 returns=0
 // ================================================
 
 void DrawCARGO() // .CARGO
@@ -2963,7 +2963,7 @@ void UNK_0xf1fc() // UNK_0xf1fc
 
 
 // ================================================
-// 0xf216: WORD '.ENERGY' codep=0x224c parp=0xf222
+// 0xf216: WORD '.ENERGY' codep=0x224c parp=0xf222 params=0 returns=0
 // ================================================
 
 void DrawENERGY() // .ENERGY
@@ -3137,7 +3137,7 @@ void DrawWHERE() // .WHERE
 
 
 // ================================================
-// 0xf38e: WORD '.STATS' codep=0x224c parp=0xf399
+// 0xf38e: WORD '.STATS' codep=0x224c parp=0xf399 params=0 returns=0
 // ================================================
 
 void DrawSTATS() // .STATS
@@ -3213,7 +3213,7 @@ void TV_dash_TASKS() // TV-TASKS
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   ON_2(); // ON_2
   Push(0xd06e); // probable 'HEAVEHO'
-  Push(pp__i_THROW_dash_); // 'THROW-
+  Push(pp__i_THROW_dash_AWAY); // 'THROW-AWAY
   Store_3(); // !_3
 }
 
@@ -3259,7 +3259,7 @@ void UNK_0xf436() // UNK_0xf436
   {
     Push(0x3a48); // probable 'NOP'
   }
-  Push(pp__i_THROW_dash_); // 'THROW-
+  Push(pp__i_THROW_dash_AWAY); // 'THROW-AWAY
   _st__ex__gt_(); // <!>
 }
 
@@ -3288,7 +3288,7 @@ void UNK_0xf4a6() // UNK_0xf4a6
 
 
 // ================================================
-// 0xf4ae: WORD 'UNK_0xf4b0' codep=0x224c parp=0xf4b0
+// 0xf4ae: WORD 'UNK_0xf4b0' codep=0x224c parp=0xf4b0 params=0 returns=0
 // ================================================
 
 void UNK_0xf4b0() // UNK_0xf4b0
@@ -3298,7 +3298,7 @@ void UNK_0xf4b0() // UNK_0xf4b0
   Push(pp_STORM); // STORM
   OFF(); // OFF
   Push(0xd06e); // probable 'HEAVEHO'
-  Push(pp__i_THROW_dash_); // 'THROW-
+  Push(pp__i_THROW_dash_AWAY); // 'THROW-AWAY
   Store_3(); // !_3
   Push(0xd001); // probable 'TV-DISP'
   MODULE(); // MODULE

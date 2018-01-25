@@ -190,7 +190,7 @@ void INEXT(); // INEXT
 void IINSERT(); // IINSERT
 void _gt_INSERT(); // >INSERT
 void IEXTRACT(); // IEXTRACT
-void IsCLASS_slash_(); // ?CLASS/
+void IsCLASS_slash_SPECIES(); // ?CLASS/SPECIES
 void IFIND(); // IFIND
 void IDELETE(); // IDELETE
 void StoreCOLOR(); // !COLOR
@@ -198,7 +198,7 @@ void VCLIPSET(); // VCLIPSET
 void DCLIPSET(); // DCLIPSET
 void _gt_MAINVIEW(); // >MAINVIEW
 void _gt_DISPLAY(); // >DISPLAY
-void _gt_LORES(); // >LORES
+void _gt_LORES_2(); // >LORES_2
 void BLT(); // BLT
 void _gt_1FONT(); // >1FONT
 void _gt_2FONT(); // >2FONT
@@ -395,7 +395,7 @@ IFieldType UNK_0xe869 = {CREWMEMBERIDX, 0x1b, 0x01};
 IFieldType UNK_0xe86e = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
-// 0xe871: WORD 'UNK_0xe873' codep=0x224c parp=0xe873
+// 0xe871: WORD 'UNK_0xe873' codep=0x224c parp=0xe873 params=1 returns=0
 // ================================================
 
 void UNK_0xe873() // UNK_0xe873
@@ -695,7 +695,7 @@ void UNK_0xe9f1() // UNK_0xe9f1
 // 0xea3b: db 0x00 0x00 '  '
 
 // ================================================
-// 0xea3d: WORD 'UNK_0xea3f' codep=0x224c parp=0xea3f
+// 0xea3d: WORD 'UNK_0xea3f' codep=0x224c parp=0xea3f params=0 returns=0
 // ================================================
 
 void UNK_0xea3f() // UNK_0xea3f
@@ -791,7 +791,7 @@ void UNK_0xea91() // UNK_0xea91
 
 
 // ================================================
-// 0xeb13: WORD 'UNK_0xeb15' codep=0x224c parp=0xeb15
+// 0xeb13: WORD 'UNK_0xeb15' codep=0x224c parp=0xeb15 params=0 returns=0
 // ================================================
 
 void UNK_0xeb15() // UNK_0xeb15
@@ -918,7 +918,7 @@ void UNK_0xec2b() // UNK_0xec2b
 {
   _gt_DISPLAY(); // >DISPLAY
   _gt_1FONT(); // >1FONT
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   Push(0);
   Push(pp_XORMODE); // XORMODE
   _st__ex__gt_(); // <!>
@@ -1064,7 +1064,7 @@ void UNK_0xed12() // UNK_0xed12
   D_eq_(); // D=
   Push(!Pop()); //  NOT
   if (Pop() == 0) goto label1;
-  IsCLASS_slash_(); // ?CLASS/
+  IsCLASS_slash_SPECIES(); // ?CLASS/SPECIES
   if (Pop() != 0)
   {
     UNK_0xecc4(); // UNK_0xecc4
@@ -1937,7 +1937,7 @@ void UNK_0xf3ab() // UNK_0xf3ab
 
 
 // ================================================
-// 0xf3b3: WORD 'UNK_0xf3b5' codep=0x224c parp=0xf3b5
+// 0xf3b3: WORD 'UNK_0xf3b5' codep=0x224c parp=0xf3b5 params=0 returns=1
 // ================================================
 
 void UNK_0xf3b5() // UNK_0xf3b5

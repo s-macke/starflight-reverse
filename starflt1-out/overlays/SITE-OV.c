@@ -188,7 +188,7 @@ const unsigned short int pp_UNK_0xf28c = 0xf28c; // UNK_0xf28c size: 2
 // 0xee54: db 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff '            '
 
 // ================================================
-// 0xee60: WORD '.LATFRAME' codep=0x224c parp=0xee6e
+// 0xee60: WORD '.LATFRAME' codep=0x224c parp=0xee6e params=0 returns=0
 // ================================================
 
 void DrawLATFRAME() // .LATFRAME

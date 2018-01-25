@@ -48,7 +48,7 @@ void MOUNTB(); // MOUNTB
 void FILE_st_(); // FILE<
 void _gt_MONO(); // >MONO
 void _gt_A(); // >A
-void _gt_LORES(); // >LORES
+void _gt_LORES_2(); // >LORES_2
 void DARK(); // DARK
 void POS_dot_(); // POS.
 void ADDR_gt_SEG(); // ADDR>SEG
@@ -165,7 +165,7 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // 0xf2eb: jmp    word ptr [bx]
 
 // ================================================
-// 0xf2ed: WORD '.PARMS' codep=0x224c parp=0xf2f8
+// 0xf2ed: WORD '.PARMS' codep=0x224c parp=0xf2f8 params=0 returns=0
 // ================================================
 
 void DrawPARMS() // .PARMS
@@ -408,7 +408,7 @@ void Get_dot_HYBRID() // @.HYBRID
 
 void SETUP() // SETUP
 {
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   _gt_MONO(); // >MONO
   _gt_A(); // >A
   DARK(); // DARK

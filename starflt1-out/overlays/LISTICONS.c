@@ -192,7 +192,7 @@ void DrawBLT() // .BLT
 
 
 // ================================================
-// 0xf3f0: WORD 'PAUSE-PAGE' codep=0x224c parp=0xf3f2
+// 0xf3f0: WORD 'PAUSE-PAGE' codep=0x224c parp=0xf3f2 params=0 returns=0
 // ================================================
 
 void PAUSE_dash_PAGE() // PAUSE-PAGE
@@ -265,7 +265,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 
 
 // ================================================
-// 0xf488: WORD 'title' codep=0x224c parp=0xf48a
+// 0xf488: WORD 'title' codep=0x224c parp=0xf48a params=0 returns=0
 // ================================================
 
 void title() // title

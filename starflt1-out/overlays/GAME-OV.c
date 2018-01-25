@@ -251,7 +251,7 @@ void _gt_DISPLAY(); // >DISPLAY
 void _gt_HIDDEN(); // >HIDDEN
 void _gt_ALPHA(); // >ALPHA
 void _v_DISPLAY(); // |DISPLAY
-void _gt_LORES(); // >LORES
+void _gt_LORES_2(); // >LORES_2
 void SCR_dash_RES(); // SCR-RES
 void DARK(); // DARK
 void BYE(); // BYE
@@ -1061,7 +1061,7 @@ void BORDERMARGIN() // BORDERMARGIN
 
 
 // ================================================
-// 0xe374: WORD 'ERASEWIND' codep=0x224c parp=0xe376
+// 0xe374: WORD 'ERASEWIND' codep=0x224c parp=0xe376 params=0 returns=0
 // ================================================
 
 void ERASEWIND() // ERASEWIND
@@ -1078,7 +1078,7 @@ void ERASEWIND() // ERASEWIND
 
 
 // ================================================
-// 0xe392: WORD 'UNK_0xe394' codep=0x224c parp=0xe394
+// 0xe392: WORD 'UNK_0xe394' codep=0x224c parp=0xe394 params=0 returns=0
 // ================================================
 
 void UNK_0xe394() // UNK_0xe394
@@ -1095,7 +1095,7 @@ void UNK_0xe394() // UNK_0xe394
 
 
 // ================================================
-// 0xe3ae: WORD '.PAGE' codep=0x224c parp=0xe3b0
+// 0xe3ae: WORD '.PAGE' codep=0x224c parp=0xe3b0 params=2 returns=2
 // ================================================
 
 void DrawPAGE() // .PAGE
@@ -1183,7 +1183,7 @@ void BORDER() // BORDER
 
 
 // ================================================
-// 0xe49a: WORD 'UNK_0xe49c' codep=0x224c parp=0xe49c orphan
+// 0xe49a: WORD 'UNK_0xe49c' codep=0x224c parp=0xe49c orphan params=0 returns=0
 // ================================================
 
 void UNK_0xe49c() // UNK_0xe49c
@@ -1283,7 +1283,7 @@ void DrawLOADHEAD() // .LOADHEAD
 
 
 // ================================================
-// 0xe5e7: WORD 'UNK_0xe5e9' codep=0x224c parp=0xe5e9
+// 0xe5e7: WORD 'UNK_0xe5e9' codep=0x224c parp=0xe5e9 params=0 returns=0
 // ================================================
 
 void UNK_0xe5e9() // UNK_0xe5e9
@@ -1408,7 +1408,7 @@ void UNK_0xe687() // UNK_0xe687
 
 
 // ================================================
-// 0xe693: WORD 'UNK_0xe695' codep=0x224c parp=0xe695 orphan
+// 0xe693: WORD 'UNK_0xe695' codep=0x224c parp=0xe695 orphan params=0 returns=2
 // ================================================
 
 void UNK_0xe695() // UNK_0xe695
@@ -1465,7 +1465,7 @@ void UNK_0xe695() // UNK_0xe695
 
 
 // ================================================
-// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b orphan
+// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b orphan params=2 returns=2
 // ================================================
 
 void UNK_0xe73b() // UNK_0xe73b
@@ -1488,7 +1488,7 @@ void UNK_0xe73b() // UNK_0xe73b
 
 
 // ================================================
-// 0xe78a: WORD 'UNK_0xe78c' codep=0x224c parp=0xe78c
+// 0xe78a: WORD 'UNK_0xe78c' codep=0x224c parp=0xe78c params=0 returns=2
 // ================================================
 
 void UNK_0xe78c() // UNK_0xe78c
@@ -1548,7 +1548,7 @@ void Is_dash_writeable() // ?-writeable
 
 
 // ================================================
-// 0xe822: WORD 'nomaster' codep=0x224c parp=0xe824
+// 0xe822: WORD 'nomaster' codep=0x224c parp=0xe824 params=0 returns=0
 // ================================================
 
 void nomaster() // nomaster
@@ -1580,7 +1580,7 @@ void GDE() // GDE
 
 
 // ================================================
-// 0xe87f: WORD '.RESUMING' codep=0x224c parp=0xe881
+// 0xe87f: WORD '.RESUMING' codep=0x224c parp=0xe881 params=0 returns=4
 // ================================================
 
 void DrawRESUMING() // .RESUMING
@@ -1932,7 +1932,7 @@ void POPVECT() // POPVECT
 
 
 // ================================================
-// 0xea85: WORD 'UNK_0xea87' codep=0x224c parp=0xea87
+// 0xea85: WORD 'UNK_0xea87' codep=0x224c parp=0xea87 params=0 returns=2
 // ================================================
 
 void UNK_0xea87() // UNK_0xea87
@@ -1949,7 +1949,7 @@ void UNK_0xea87() // UNK_0xea87
 
 
 // ================================================
-// 0xeac5: WORD 'UNK_0xeac7' codep=0x224c parp=0xeac7
+// 0xeac5: WORD 'UNK_0xeac7' codep=0x224c parp=0xeac7 params=0 returns=4
 // ================================================
 
 void UNK_0xeac7() // UNK_0xeac7
@@ -1963,7 +1963,7 @@ void UNK_0xeac7() // UNK_0xeac7
 
 
 // ================================================
-// 0xeaec: WORD 'UNK_0xeaee' codep=0x224c parp=0xeaee
+// 0xeaec: WORD 'UNK_0xeaee' codep=0x224c parp=0xeaee params=0 returns=2
 // ================================================
 
 void UNK_0xeaee() // UNK_0xeaee
@@ -1980,7 +1980,7 @@ void UNK_0xeaee() // UNK_0xeaee
 
 
 // ================================================
-// 0xeb1f: WORD 'UNK_0xeb21' codep=0x224c parp=0xeb21
+// 0xeb1f: WORD 'UNK_0xeb21' codep=0x224c parp=0xeb21 params=0 returns=2
 // ================================================
 
 void UNK_0xeb21() // UNK_0xeb21
@@ -2528,7 +2528,7 @@ void LOAD_dot_GAME() // LOAD.GAME
   MOUNTA(); // MOUNTA
   DATALOAD(); // DATALOAD
   UNK_0xed92(); // UNK_0xed92
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   Push(pp_RESUME); // RESUME
   ON_3(); // ON_3
   Push(pp_UNK_0xde86); // UNK_0xde86
@@ -2752,7 +2752,7 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
   LOAD_dash_CO(); // LOAD-CO
   SETDBUF(); // SETDBUF
   _gt_DISPLAY(); // >DISPLAY
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   DARK(); // DARK
 }
 
@@ -2876,7 +2876,7 @@ void POLICE_dot_WARNING() // POLICE.WARNING
   UNK_0xe61d(); // UNK_0xe61d
   Exec("PAGE"); // call of word 0x274c '(PAGE)'
   SET_dot_COLORS(); // SET.COLORS
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   DARK(); // DARK
 }
 

@@ -399,7 +399,7 @@ void _ro__ask_ART() // (?ART
 
 
 // ================================================
-// 0xf1db: WORD '(QUIT' codep=0x224c parp=0xf1e5
+// 0xf1db: WORD '(QUIT' codep=0x224c parp=0xf1e5 params=0 returns=0
 // ================================================
 // entry
 

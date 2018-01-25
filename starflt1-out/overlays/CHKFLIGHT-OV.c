@@ -102,7 +102,7 @@ IFieldType UNK_0xf1bb = {ASSIGN_CREWIDX, 0x11, 0x12};
 IFieldType UNK_0xf1c0 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
-// 0xf1c3: WORD 'UNK_0xf1c5' codep=0x224c parp=0xf1c5
+// 0xf1c3: WORD 'UNK_0xf1c5' codep=0x224c parp=0xf1c5 params=0 returns=0
 // ================================================
 
 void UNK_0xf1c5() // UNK_0xf1c5
@@ -304,7 +304,7 @@ void UNK_0xf372() // UNK_0xf372
 
 
 // ================================================
-// 0xf3ab: WORD 'UNK_0xf3ad' codep=0x224c parp=0xf3ad
+// 0xf3ab: WORD 'UNK_0xf3ad' codep=0x224c parp=0xf3ad params=1 returns=0
 // ================================================
 
 void UNK_0xf3ad() // UNK_0xf3ad

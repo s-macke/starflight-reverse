@@ -44,7 +44,7 @@
 // =================================
 extern const unsigned short int cc_MPS; // MPS
 extern const unsigned short int pp_IsCRITIC; // ?CRITIC
-extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
+extern const unsigned short int pp__i_THROW_dash_AWAY; // 'THROW-AWAY
 extern const unsigned short int pp_IsBOMB; // ?BOMB
 extern const unsigned short int pp_IsLANDED; // ?LANDED
 extern const unsigned short int pp_IsELAN; // ?ELAN
@@ -816,7 +816,7 @@ void DEPART() // DEPART
   Push(pp_IsCRITIC); // ?CRITIC
   OFF(); // OFF
   Push(0x3a48); // probable 'NOP'
-  Push(pp__i_THROW_dash_); // 'THROW-
+  Push(pp__i_THROW_dash_AWAY); // 'THROW-AWAY
   Store_3(); // !_3
   Push(Read16(pp_IsLANDED)); // ?LANDED @
   if (Pop() != 0)

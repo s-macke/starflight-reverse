@@ -204,7 +204,7 @@ void VCLIPSET(); // VCLIPSET
 void DCLIPSET(); // DCLIPSET
 void _gt_MAINVIEW(); // >MAINVIEW
 void _gt_DISPLAY(); // >DISPLAY
-void _gt_LORES(); // >LORES
+void _gt_LORES_2(); // >LORES_2
 void DARK(); // DARK
 void BLT(); // BLT
 void CELLCOLOR(); // CELLCOLOR
@@ -326,7 +326,7 @@ void UNK_0xe6c6() // UNK_0xe6c6
 
 
 // ================================================
-// 0xe6de: WORD 'UNK_0xe6e0' codep=0x224c parp=0xe6e0
+// 0xe6de: WORD 'UNK_0xe6e0' codep=0x224c parp=0xe6e0 params=0 returns=0
 // ================================================
 
 void UNK_0xe6e0() // UNK_0xe6e0
@@ -343,7 +343,7 @@ void UNK_0xe6e0() // UNK_0xe6e0
 
 
 // ================================================
-// 0xe700: WORD 'UNK_0xe702' codep=0x224c parp=0xe702
+// 0xe700: WORD 'UNK_0xe702' codep=0x224c parp=0xe702 params=0 returns=0
 // ================================================
 
 void UNK_0xe702() // UNK_0xe702
@@ -510,7 +510,7 @@ void UNK_0xe7ce() // UNK_0xe7ce
 
 
 // ================================================
-// 0xe7e6: WORD 'UNK_0xe7e8' codep=0x224c parp=0xe7e8
+// 0xe7e6: WORD 'UNK_0xe7e8' codep=0x224c parp=0xe7e8 params=1 returns=0
 // ================================================
 
 void UNK_0xe7e8() // UNK_0xe7e8
@@ -1591,7 +1591,7 @@ void UNK_0xf0b6() // UNK_0xf0b6
 
 
 // ================================================
-// 0xf0be: WORD 'UNK_0xf0c0' codep=0x224c parp=0xf0c0
+// 0xf0be: WORD 'UNK_0xf0c0' codep=0x224c parp=0xf0c0 params=0 returns=0
 // ================================================
 
 void UNK_0xf0c0() // UNK_0xf0c0
@@ -1740,7 +1740,7 @@ void UNK_0xf16e() // UNK_0xf16e
 
 
 // ================================================
-// 0xf1fc: WORD 'UNK_0xf1fe' codep=0x224c parp=0xf1fe
+// 0xf1fc: WORD 'UNK_0xf1fe' codep=0x224c parp=0xf1fe params=0 returns=0
 // ================================================
 
 void UNK_0xf1fe() // UNK_0xf1fe
@@ -1755,7 +1755,7 @@ void UNK_0xf1fe() // UNK_0xf1fe
 
 
 // ================================================
-// 0xf210: WORD 'UNK_0xf212' codep=0x224c parp=0xf212
+// 0xf210: WORD 'UNK_0xf212' codep=0x224c parp=0xf212 params=0 returns=0
 // ================================================
 
 void UNK_0xf212() // UNK_0xf212
@@ -1807,7 +1807,7 @@ void UNK_0xf212() // UNK_0xf212
 
 
 // ================================================
-// 0xf290: WORD 'UNK_0xf292' codep=0x224c parp=0xf292
+// 0xf290: WORD 'UNK_0xf292' codep=0x224c parp=0xf292 params=0 returns=0
 // ================================================
 
 void UNK_0xf292() // UNK_0xf292
@@ -1852,7 +1852,7 @@ void UNK_0xf2b8() // UNK_0xf2b8
 
 
 // ================================================
-// 0xf2c8: WORD 'UNK_0xf2ca' codep=0x224c parp=0xf2ca
+// 0xf2c8: WORD 'UNK_0xf2ca' codep=0x224c parp=0xf2ca params=0 returns=0
 // ================================================
 
 void UNK_0xf2ca() // UNK_0xf2ca
@@ -1866,7 +1866,7 @@ void UNK_0xf2ca() // UNK_0xf2ca
 
 
 // ================================================
-// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8
+// 0xf2d6: WORD 'UNK_0xf2d8' codep=0x224c parp=0xf2d8 params=0 returns=0
 // ================================================
 
 void UNK_0xf2d8() // UNK_0xf2d8
@@ -1943,7 +1943,7 @@ void UNK_0xf31d() // UNK_0xf31d
 
 
 // ================================================
-// 0xf353: WORD 'UNK_0xf355' codep=0x224c parp=0xf355
+// 0xf353: WORD 'UNK_0xf355' codep=0x224c parp=0xf355 params=0 returns=0
 // ================================================
 
 void UNK_0xf355() // UNK_0xf355
@@ -1975,7 +1975,7 @@ void UNK_0xf36d() // UNK_0xf36d
 
 
 // ================================================
-// 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b
+// 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b params=0 returns=0
 // ================================================
 
 void UNK_0xf37b() // UNK_0xf37b
@@ -2094,7 +2094,7 @@ LoadDataType plan_dash_tseed = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
 
 void APPROACH() // APPROACH
 {
-  _gt_LORES(); // >LORES
+  _gt_LORES_2(); // >LORES_2
   DARK(); // DARK
   Push(pp__ro_PLANET); // (PLANET
   _1_dot_5_at_(); // 1.5@
