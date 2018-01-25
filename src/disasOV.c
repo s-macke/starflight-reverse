@@ -137,10 +137,16 @@ void DisasmEGA()
     char* data = Extract(0x91, &size);
     memcpy(&mem[0x0], data, size);
     InitParser();
-
+    for(int i=0; i<15; i++)
+    {
+        pline[i*2+0].done = 1;
+        pline[i*2+1].done = 1;
+        DisasmRange(Read16(i*2), 0x100000, -1, 0x0, size);
+    }
+    // and find the rest
     for(int i=0; i<size; i++)
     {
-        if (Read16(i) == CODEPOINTER)
+        if (!pline[i].done && !pline[i+1].done && Read16(i) == CODEPOINTER)
         {
             DisasmRange(i+2, 0x100000, -1, 0x0, size);
         }
