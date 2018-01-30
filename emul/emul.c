@@ -52,9 +52,10 @@ int GetOverlayIndex(int address)
     exit(1);
 }
 
-char* FindWord(int word)
+char* FindWord(int word, int ovidx)
 {
-    int ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
+    if (ovidx == -1) ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
+
     int i = 0;
     do
     {
@@ -129,9 +130,8 @@ void DefineCallStack(int bp, int value)
     }
 }
 
-int FindClosestWord(int si)
+int FindClosestWord(int si, int ovidx)
 {
-    int ovidx = GetOverlayIndex(Read16(0x55a5)); // "OV#"
     int dist = 0x10000;
     int i = 0;
     int word = -1;
@@ -163,17 +163,18 @@ void PrintCallstacktrace(int bx)
     printf("              Callstack\n");
     printf("  Address         Overlay   Word \n");
     printf("========================================\n");
-    printf("  0x%04x  %15s   %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2));
+    printf("  0x%04x  %15s   %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2, ovidx));
 
-    int word = FindClosestWord(si);
-    printf("  0x%04x  %15s   %s\n", word, GetOverlayName(word, ovidx), FindWord(word));
+    int word = FindClosestWord(si, ovidx);
+    printf("  0x%04x  %15s   %s\n", word, GetOverlayName(word, ovidx), FindWord(word, ovidx));
     for(int i=bp; i<bpbase; i += 2)
     {
         if (iscall[(bpbase-i)>>1])
         {
-            int word = FindClosestWord(Read16(i));
-            char* ovname = GetOverlayName(word, iscallovidx[(bpbase-i)>>1]);
-            printf("  0x%04x  %15s   %s\n", word, ovname, FindWord(word));
+            ovidx = iscallovidx[(bpbase-i)>>1];
+            int word = FindClosestWord(Read16(i), ovidx);
+            char* ovname = GetOverlayName(word, ovidx);
+            printf("  0x%04x  %15s   %s\n", word, ovname, FindWord(word, ovidx));
         }
     }
     printf("==================================\n");
@@ -575,7 +576,7 @@ void Call(unsigned short addr, unsigned short bx)
             bx = Read16(bx+regdi);
             bx -= 2;
             ax = Read16(bx);
-            char *s = FindWord(bx+2);
+            char *s = FindWord(bx+2, -1);
             //printf("Execute %s\n", s);
             if (strcmp(s, "(TYPE)") == 0)
             {
@@ -640,7 +641,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x0EC8: bp = Read16(regdi+2); break; // RP!
 
         case 0x83f8: // all overlays
-            printf("Load overlay '%s'\n", FindWord(bx+2));
+            printf("Load overlay '%s'\n", FindWord(bx+2, -1));
             ParameterCall(bx, 0x83f8);
             break;
         case 0x5275: ParameterCall(bx, 0x5275); break; // "OVT" "IARRAYS"
@@ -649,7 +650,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x3b68: ParameterCall(bx, 0x3b68); break; // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CCASE"
         case 0x7227:
-            //printf("Receive %s from STAR*.COM Dictionary for index 0x%x: '%s'\n", FindWord(bx+2), Read16(regsp), FindDirectoryName(Read16(regsp)));
+            //printf("Receive %s from STAR*.COM Dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
             printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
             //PrintCallstacktrace(bx);
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
@@ -1397,7 +1398,7 @@ void Call(unsigned short addr, unsigned short bx)
                 {
                     int seg = Read16(i+3);
                     int ofs = Read16(i+1);
-                printf("%20s 0x%02x, 0x%04x, 0x%04x, 0x%02x : 0x%02x 0x%02x\n", FindWord(i), Read8(i), seg, ofs, Read8(i+5), Read8Long(seg, ofs), Read8Long(seg, ofs+1));
+                printf("%20s 0x%02x, 0x%04x, 0x%04x, 0x%02x : 0x%02x 0x%02x\n", FindWord(i, -1), Read8(i), seg, ofs, Read8(i+5), Read8Long(seg, ofs), Read8Long(seg, ofs+1));
                 }
             }
             exit(1);
@@ -1882,7 +1883,7 @@ void Step()
     unsigned short execaddr = Read16(bx);
 #ifdef DEBUG
     printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, si-2, bx+2, regsp);
-    printf(" %s\n", FindWord(bx+2));
+    printf(" %s\n", FindWord(bx+2, -1));
 #endif
     Call(execaddr, bx);
 }
