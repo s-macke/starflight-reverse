@@ -159,19 +159,21 @@ void PrintCallstacktrace(int bx)
 {
     int ovidx = GetOverlayIndex(Read16(0x55a5));
     SetBPBase(bp);
-    printf("==================================\n");
-    printf("Callstack\n");
-    printf("  0x%04x: %15s %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2));
+    printf("========================================\n");
+    printf("              Callstack\n");
+    printf("  Address         Overlay   Word \n");
+    printf("========================================\n");
+    printf("  0x%04x  %15s   %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2));
 
     int word = FindClosestWord(si);
-    printf("  0x%04x: %15s %s\n", word, GetOverlayName(word, ovidx), FindWord(word));
+    printf("  0x%04x  %15s   %s\n", word, GetOverlayName(word, ovidx), FindWord(word));
     for(int i=bp; i<bpbase; i += 2)
     {
         if (iscall[(bpbase-i)>>1])
         {
             int word = FindClosestWord(Read16(i));
             char* ovname = GetOverlayName(word, iscallovidx[(bpbase-i)>>1]);
-            printf("  0x%04x: %15s %s\n", word, ovname, FindWord(word));
+            printf("  0x%04x  %15s   %s\n", word, ovname, FindWord(word));
         }
     }
     printf("==================================\n");
@@ -1443,7 +1445,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         // move u from parm stack to the vector stack. Used as the Overlay call stack
         case 0x7AE7: // ">V"
-            printf("Push 0x%04x\n", Read16(regsp));
+            //printf("Push 0x%04x\n", Read16(regsp));
             bx = Read16(0x54B4); // VSP
             Write16(bx, Pop());
             Write16(0x54B4, Read16(0x54B4)-2);
