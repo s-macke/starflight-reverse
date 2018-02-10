@@ -1284,7 +1284,7 @@ void UNK_0xf067() // UNK_0xf067
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   GetRECORD(); // @RECORD
   Push(0x0044);
-  Func6("FILE-RL");
+  Func6("FILE-RLEN");
   Push(Read16(Pop())&0xFF); //  C@
   Push(0);
   FILL_1(); // FILL_1

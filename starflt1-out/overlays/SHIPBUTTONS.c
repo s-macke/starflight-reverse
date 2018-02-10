@@ -161,7 +161,7 @@ void _ro_XYSCAN_rc_(); // (XYSCAN)
 // =========== VARIABLES ===========
 // =================================
 const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 2
-// {0x00, 0x00}
+// {0x3a, 0x20}
 
 
 
@@ -171,7 +171,7 @@ const unsigned short int pp_UNK_0xedb6 = 0xedb6; // UNK_0xedb6 size: 2
 // ================================================
 // 0xedb4: WORD 'UNK_0xedb6' codep=0x1d29 parp=0xedb6
 // ================================================
-// 0xedb6: db 0x00 0x00 '  '
+// 0xedb6: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xedb8: WORD 'UNK_0xedba' codep=0x744d parp=0xedba

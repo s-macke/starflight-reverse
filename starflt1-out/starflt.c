@@ -844,9 +844,9 @@
 //             ?TV  codep:0x1d29 parp:0x545f size:0x0002 C-string:'IsTV'
 //           OLDHR  codep:0x1d29 parp:0x546b size:0x0002 C-string:'OLDHR'
 //           AVCNT  codep:0x1d29 parp:0x5477 size:0x0002 C-string:'AVCNT'
-//      UNK_0x547b  codep:0x1d29 parp:0x547b size:0x0002 C-string:'UNK_0x547b'
-//      UNK_0x547f  codep:0x1d29 parp:0x547f size:0x0002 C-string:'UNK_0x547f'
-//      UNK_0x5483  codep:0x1d29 parp:0x5483 size:0x0002 C-string:'UNK_0x5483'
+//          LFILE#  codep:0x1d29 parp:0x547b size:0x0002 C-string:'LFILE_n_'
+//        LRECORD#  codep:0x1d29 parp:0x547f size:0x0002 C-string:'LRECORD_n_'
+//        LRECORD#  codep:0x1d29 parp:0x5483 size:0x0002 C-string:'LRECORD_n_'
 //           FILE#  codep:0x1d29 parp:0x548f size:0x0002 C-string:'FILE_n_'
 //         RECORD#  codep:0x1d29 parp:0x549d size:0x0002 C-string:'RECORD_n_'
 //         1BUFADR  codep:0x1d29 parp:0x54a1 size:0x0002 C-string:'_1BUFADR'
@@ -1240,7 +1240,7 @@
 //          VA>BLK  codep:0x6f49 parp:0x6f49 size:0x0019 C-string:'VA_gt_BLK'
 //          VA>BUF  codep:0x224c parp:0x6f6d size:0x0008 C-string:'VA_gt_BUF'
 //      UNK_0x6f77  codep:0x224c parp:0x6f77 size:0x0008 C-string:'UNK_0x6f77'
-//      UNK_0x6f81  codep:0x224c parp:0x6f81 size:0x000c C-string:'UNK_0x6f81'
+//          ?AFILE  codep:0x224c parp:0x6f81 size:0x000c C-string:'IsAFILE'
 //      UNK_0x6f8f  codep:0x224c parp:0x6f8f size:0x0012 C-string:'UNK_0x6f8f'
 //      UNK_0x6fa3  codep:0x224c parp:0x6fa3 size:0x000c C-string:'UNK_0x6fa3'
 //      UNK_0x6fb1  codep:0x224c parp:0x6fb1 size:0x0006 C-string:'UNK_0x6fb1'
@@ -1258,26 +1258,26 @@
 //      UNK_0x70d9  codep:0x224c parp:0x70d9 size:0x008e C-string:'UNK_0x70d9'
 //         MEM>DSK  codep:0x224c parp:0x7173 size:0x0006 C-string:'MEM_gt_DSK'
 //         MEM<DSK  codep:0x224c parp:0x7185 size:0x0006 C-string:'MEM_st_DSK'
-//      UNK_0x718d  codep:0x718d parp:0x718d size:0x004e C-string:'UNK_0x718d'
-//      UNK_0x71dd  codep:0x71dd parp:0x71dd size:0x0042 C-string:'UNK_0x71dd'
-//      UNK_0x7221  codep:0x224c parp:0x7221 size:0x0017 C-string:'UNK_0x7221'
-//         FILE-NA  codep:0x7227 parp:0x7244 size:0x0001 C-string:'FILE_dash_NA'
-//         FILE-TY  codep:0x7227 parp:0x7251 size:0x0001 C-string:'FILE_dash_TY'
+//          RECADD  codep:0x718d parp:0x718d size:0x004e C-string:'RECADD'
+//         DOFFBLK  codep:0x71dd parp:0x71dd size:0x0042 C-string:'DOFFBLK'
+//          DFIELD  codep:0x224c parp:0x7221 size:0x0017 C-string:'DFIELD'
+//       FILE-NAME  codep:0x7227 parp:0x7244 size:0x0001 C-string:'FILE_dash_NAME'
+//       FILE-TYPE  codep:0x7227 parp:0x7251 size:0x0001 C-string:'FILE_dash_TYPE'
 //      FILE-START  codep:0x7227 parp:0x725e size:0x0001 C-string:'FILE_dash_START'
-//         FILE-EN  codep:0x7227 parp:0x726b size:0x0001 C-string:'FILE_dash_EN'
-//         FILE-#R  codep:0x7227 parp:0x7278 size:0x0001 C-string:'FILE_dash__n_R'
-//         FILE-RL  codep:0x7227 parp:0x7285 size:0x0001 C-string:'FILE_dash_RL'
+//        FILE-END  codep:0x7227 parp:0x726b size:0x0001 C-string:'FILE_dash_END'
+//       FILE-#REC  codep:0x7227 parp:0x7278 size:0x0001 C-string:'FILE_dash__n_REC'
+//       FILE-RLEN  codep:0x7227 parp:0x7285 size:0x0001 C-string:'FILE_dash_RLEN'
 //       FILE-SLEN  codep:0x7227 parp:0x7292 size:0x0001 C-string:'FILE_dash_SLEN'
-//      UNK_0x7295  codep:0x7295 parp:0x7295 size:0x001a C-string:'UNK_0x7295'
+//     BVSA>OFFBLK  codep:0x7295 parp:0x7295 size:0x001a C-string:'BVSA_gt_OFFBLK'
 //           FILE:  codep:0x224c parp:0x72b9 size:0x005c C-string:'FILE_c_'
 //           >FILE  codep:0x224c parp:0x731f size:0x0010 C-string:'_gt_FILE'
 //           FILE<  codep:0x224c parp:0x7339 size:0x0010 C-string:'FILE_st_'
 //         ?BMOUNT  codep:0x224c parp:0x734b size:0x000a C-string:'IsBMOUNT'
-//      UNK_0x7357  codep:0x224c parp:0x7357 size:0x0020 C-string:'UNK_0x7357'
-//      UNK_0x7379  codep:0x224c parp:0x7379 size:0x0016 C-string:'UNK_0x7379'
+//            |REC  codep:0x224c parp:0x7357 size:0x0020 C-string:'_v_REC'
+//      ?-RECINBUF  codep:0x224c parp:0x7379 size:0x0016 C-string:'Is_dash_RECINBUF'
 //         @RECORD  codep:0x224c parp:0x739b size:0x0022 C-string:'GetRECORD'
 //          AFIELD  codep:0x224c parp:0x73c8 size:0x005b C-string:'AFIELD'
-//      UNK_0x7425  codep:0x7425 parp:0x7425 size:0x000f C-string:'UNK_0x7425'
+//         IFLDADR  codep:0x7425 parp:0x7425 size:0x000f C-string:'IFLDADR'
 //          IFIELD  codep:0x224c parp:0x743f size:0x0015 C-string:'IFIELD'
 //        INST-SIB  codep:0x744d parp:0x7460 size:0x0003 C-string:'INST_dash_SIB'
 //       INST-PREV  codep:0x744d parp:0x746f size:0x0003 C-string:'INST_dash_PREV'
@@ -2462,13 +2462,13 @@ const unsigned short int pp_OLDHR = 0x546b; // OLDHR size: 2
 const unsigned short int pp_AVCNT = 0x5477; // AVCNT size: 2
 // {0x41, 0x49}
 
-const unsigned short int pp_UNK_0x547b = 0x547b; // UNK_0x547b size: 2
+const unsigned short int pp_LFILE_n_ = 0x547b; // LFILE# size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_UNK_0x547f = 0x547f; // UNK_0x547f size: 2
+const unsigned short int pp_LRECORD_n_ = 0x547f; // LRECORD# size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_UNK_0x5483 = 0x5483; // UNK_0x5483 size: 2
+const unsigned short int pp_LRECORD_n_ = 0x5483; // LRECORD# size: 2
 // {0x76, 0xf9}
 
 const unsigned short int pp_FILE_n_ = 0x548f; // FILE# size: 2
@@ -14146,17 +14146,17 @@ void TABLE() // TABLE
 // 0x5477: db 0x41 0x49 'AI'
 
 // ================================================
-// 0x5479: WORD 'UNK_0x547b' codep=0x1d29 parp=0x547b
+// 0x5479: WORD 'LFILE#' codep=0x1d29 parp=0x547b
 // ================================================
 // 0x547b: db 0x00 0x00 '  '
 
 // ================================================
-// 0x547d: WORD 'UNK_0x547f' codep=0x1d29 parp=0x547f
+// 0x547d: WORD 'LRECORD#' codep=0x1d29 parp=0x547f
 // ================================================
 // 0x547f: db 0x00 0x00 '  '
 
 // ================================================
-// 0x5481: WORD 'UNK_0x5483' codep=0x1d29 parp=0x5483
+// 0x5481: WORD 'LRECORD#' codep=0x1d29 parp=0x5483
 // ================================================
 // 0x5483: db 0x76 0xf9 'v '
 
@@ -16247,9 +16247,9 @@ void FILL_1() // FILL_1
 
 void UNK_0x6e0d() // UNK_0x6e0d
 {
-  Push(pp_UNK_0x547b); // UNK_0x547b
+  Push(pp_LFILE_n_); // LFILE#
   OFF_2(); // OFF_2
-  Push(pp_UNK_0x547f); // UNK_0x547f
+  Push(pp_LRECORD_n_); // LRECORD#
   OFF_2(); // OFF_2
 }
 
@@ -16466,10 +16466,10 @@ void UNK_0x6f77() // UNK_0x6f77
 
 
 // ================================================
-// 0x6f7f: WORD 'UNK_0x6f81' codep=0x224c parp=0x6f81 params=0 returns=1
+// 0x6f7f: WORD '?AFILE' codep=0x224c parp=0x6f81 params=0 returns=1
 // ================================================
 
-void UNK_0x6f81() // UNK_0x6f81
+void IsAFILE() // ?AFILE
 {
   Push(Read16(pp_OFFSET)==0x05dc?1:0); // OFFSET @ 0x05dc =
 }
@@ -16599,7 +16599,7 @@ void MOUNTB() // MOUNTB
 
 void UNK_0x7039() // UNK_0x7039
 {
-  UNK_0x6f81(); // UNK_0x6f81
+  IsAFILE(); // ?AFILE
   if (Pop() != 0)
   {
     MOUNTB(); // MOUNTB
@@ -16776,7 +16776,7 @@ void MEM_st_DSK() // MEM<DSK
 
 
 // ================================================
-// 0x718b: WORD 'UNK_0x718d' codep=0x718d parp=0x718d
+// 0x718b: WORD 'RECADD' codep=0x718d parp=0x718d
 // ================================================
 // 0x718d: mov    bx,sp
 // 0x718f: mov    ax,0400
@@ -16814,7 +16814,7 @@ void MEM_st_DSK() // MEM<DSK
 // 0x71d9: jmp    word ptr [bx]
 
 // ================================================
-// 0x71db: WORD 'UNK_0x71dd' codep=0x71dd parp=0x71dd
+// 0x71db: WORD 'DOFFBLK' codep=0x71dd parp=0x71dd
 // ================================================
 // 0x71dd: pop    ax
 // 0x71de: cmp    ax,0090
@@ -16845,10 +16845,10 @@ void MEM_st_DSK() // MEM<DSK
 // 0x721d: jmp    word ptr [bx]
 
 // ================================================
-// 0x721f: WORD 'UNK_0x7221' codep=0x224c parp=0x7221
+// 0x721f: WORD 'DFIELD' codep=0x224c parp=0x7221
 // ================================================
 
-void UNK_0x7221() // UNK_0x7221
+void DFIELD() // DFIELD
 {
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   C_co_(); // C,
@@ -16856,7 +16856,7 @@ void UNK_0x7221() // UNK_0x7221
 // 0x7227: call   1649
   Push(Read16(Pop())&0xFF); //  C@
   SWAP(); // SWAP
-  UNK_0x71dd(); // UNK_0x71dd
+  DOFFBLK(); // DOFFBLK
   BLOCK_2(); // BLOCK_2
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
@@ -16864,12 +16864,12 @@ void UNK_0x7221() // UNK_0x7221
 
 
 // ================================================
-// 0x7238: WORD 'FILE-NA' codep=0x7227 parp=0x7244
+// 0x7238: WORD 'FILE-NAME' codep=0x7227 parp=0x7244
 // ================================================
 // 0x7244: db 0x00 ' '
 
 // ================================================
-// 0x7245: WORD 'FILE-TY' codep=0x7227 parp=0x7251
+// 0x7245: WORD 'FILE-TYPE' codep=0x7227 parp=0x7251
 // ================================================
 // 0x7251: db 0x0c ' '
 
@@ -16879,17 +16879,17 @@ void UNK_0x7221() // UNK_0x7221
 // 0x725e: db 0x0d ' '
 
 // ================================================
-// 0x725f: WORD 'FILE-EN' codep=0x7227 parp=0x726b
+// 0x725f: WORD 'FILE-END' codep=0x7227 parp=0x726b
 // ================================================
 // 0x726b: db 0x0f ' '
 
 // ================================================
-// 0x726c: WORD 'FILE-#R' codep=0x7227 parp=0x7278
+// 0x726c: WORD 'FILE-#REC' codep=0x7227 parp=0x7278
 // ================================================
 // 0x7278: db 0x11 ' '
 
 // ================================================
-// 0x7279: WORD 'FILE-RL' codep=0x7227 parp=0x7285
+// 0x7279: WORD 'FILE-RLEN' codep=0x7227 parp=0x7285
 // ================================================
 // 0x7285: db 0x13 ' '
 
@@ -16899,7 +16899,7 @@ void UNK_0x7221() // UNK_0x7221
 // 0x7292: db 0x14 ' '
 
 // ================================================
-// 0x7293: WORD 'UNK_0x7295' codep=0x7295 parp=0x7295
+// 0x7293: WORD 'BVSA>OFFBLK' codep=0x7295 parp=0x7295
 // ================================================
 // 0x7295: pop    ax
 // 0x7296: sub    ax,3E80
@@ -16948,7 +16948,7 @@ void FILE_c_() // FILE:
     Push(pp_LSCAN); // LSCAN
     Push(0x000c);
     Push(i); // I
-    Func6("FILE-NA");
+    Func6("FILE-NAME");
     _dash_TEXT(); // -TEXT
     Push(!Pop()); //  NOT
     if (Pop() != 0)
@@ -17010,46 +17010,46 @@ void FILE_st_() // FILE<
 
 void IsBMOUNT() // ?BMOUNT
 {
-  UNK_0x6f81(); // UNK_0x6f81
+  IsAFILE(); // ?AFILE
   if (Pop() == 0) return;
   MOUNTB(); // MOUNTB
 }
 
 
 // ================================================
-// 0x7355: WORD 'UNK_0x7357' codep=0x224c parp=0x7357
+// 0x7355: WORD '|REC' codep=0x224c parp=0x7357
 // ================================================
 
-void UNK_0x7357() // UNK_0x7357
+void _v_REC() // |REC
 {
   IsBMOUNT(); // ?BMOUNT
-  UNK_0x7295(); // UNK_0x7295
+  BVSA_gt_OFFBLK(); // BVSA>OFFBLK
   Push(4);
   PICK(); // PICK
-  Push(pp_UNK_0x547f); // UNK_0x547f
+  Push(pp_LRECORD_n_); // LRECORD#
   _st__ex__gt_(); // <!>
-  UNK_0x718d(); // UNK_0x718d
+  RECADD(); // RECADD
   BLOCK_1(); // BLOCK_1
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
-  Push(pp_UNK_0x5483); // UNK_0x5483
+  Push(pp_LRECORD_n_); // LRECORD#
   _st__ex__gt_(); // <!>
   SWAP(); // SWAP
-  Push(pp_UNK_0x547b); // UNK_0x547b
+  Push(pp_LFILE_n_); // LFILE#
   _st__ex__gt_(); // <!>
 }
 
 
 // ================================================
-// 0x7377: WORD 'UNK_0x7379' codep=0x224c parp=0x7379 params=2 returns=3
+// 0x7377: WORD '?-RECINBUF' codep=0x224c parp=0x7379 params=2 returns=3
 // ================================================
 
-void UNK_0x7379() // UNK_0x7379
+void Is_dash_RECINBUF() // ?-RECINBUF
 {
   OVER(); // OVER
-  Push(Pop()==Read16(pp_UNK_0x547b)?1:0); //  UNK_0x547b @ =
+  Push(Pop()==Read16(pp_LFILE_n_)?1:0); //  LFILE# @ =
   OVER(); // OVER
-  Push(Pop()==Read16(pp_UNK_0x547f)?1:0); //  UNK_0x547f @ =
+  Push(Pop()==Read16(pp_LRECORD_n_)?1:0); //  LRECORD# @ =
   Push(Pop() & Pop()); // AND
   Push(!Pop()); //  NOT
 }
@@ -17061,21 +17061,21 @@ void UNK_0x7379() // UNK_0x7379
 
 void GetRECORD() // @RECORD
 {
-  UNK_0x7379(); // UNK_0x7379
+  Is_dash_RECINBUF(); // ?-RECINBUF
   if (Pop() != 0)
   {
     OVER(); // OVER
-    Func6("FILE-RL");
+    Func6("FILE-RLEN");
     Push(Read16(Pop())&0xFF); //  C@
     Push(3);
     PICK(); // PICK
     Func6("FILE-START");
     Push(Read16(Pop())); //  @
-    UNK_0x7357(); // UNK_0x7357
+    _v_REC(); // |REC
     return;
   }
   Pop(); Pop(); // 2DROP
-  Push(Read16(pp_UNK_0x5483)); // UNK_0x5483 @
+  Push(Read16(pp_LRECORD_n_)); // LRECORD# @
 }
 
 
@@ -17095,7 +17095,7 @@ void AFIELD() // AFIELD
   C_co_(); // C,
   C_co_(); // C,
   Push(a); // I
-  Func6("FILE-RL");
+  Func6("FILE-RLEN");
   Push(Read16(Pop())&0xFF); //  C@
   C_co_(); // C,
   Push(a); // R>
@@ -17107,23 +17107,23 @@ void AFIELD() // AFIELD
   b = Pop(); // >R
   Push(Read16(pp_FILE_n_)); // FILE# @
   Push(Read16(pp_RECORD_n_)); // RECORD# @
-  UNK_0x7379(); // UNK_0x7379
+  Is_dash_RECINBUF(); // ?-RECINBUF
   if (Pop() != 0)
   {
     Push(Read16(b + 3)&0xFF); // I 3 + C@
     Push(Read16(b + 4)); // I 4 + @
-    UNK_0x7357(); // UNK_0x7357
+    _v_REC(); // |REC
   } else
   {
     Pop(); Pop(); // 2DROP
-    Push(Read16(pp_UNK_0x5483)); // UNK_0x5483 @
+    Push(Read16(pp_LRECORD_n_)); // LRECORD# @
   }
   Push(Pop() + (Read16(b + 1)&0xFF)); //  R> 1+ C@ +
 }
 
 
 // ================================================
-// 0x7423: WORD 'UNK_0x7425' codep=0x7425 parp=0x7425
+// 0x7423: WORD 'IFLDADR' codep=0x7425 parp=0x7425
 // ================================================
 // 0x7425: pop    bx
 // 0x7426: xor    ax,ax
@@ -17148,7 +17148,7 @@ void IFIELD() // IFIELD
   C_co_(); // C,
   CODE(); // (;CODE) inlined assembler code
 // 0x744d: call   1649
-  UNK_0x7425(); // UNK_0x7425
+  IFLDADR(); // IFLDADR
 }
 
 
@@ -17801,7 +17801,7 @@ void AFIELD_c_() // AFIELD:
   C_co_(); // C,
   C_co_(); // C,
   Push(a); // I
-  Func6("FILE-RL");
+  Func6("FILE-RLEN");
   Push(Read16(Pop())&0xFF); //  C@
   C_co_(); // C,
   Push(a); // R>
@@ -19271,7 +19271,7 @@ void DrawINM() // .INM
   if (Pop() != 0)
   {
     GetINST_dash_CLASS(); // @INST-CLASS
-    Func6("FILE-NA");
+    Func6("FILE-NAME");
     Push(0x000c);
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     CI(); // CI
@@ -19587,7 +19587,7 @@ void OPEN_dash_OVERLAY() // OPEN-OVERLAY
   Func6("FILE-START");
   Push(Read16(Pop())); //  @
   SWAP(); // SWAP
-  Func6("FILE-#R");
+  Func6("FILE-#REC");
   Push(Read16(Pop())); //  @
   OVER(); // OVER
   Push(pp_OV_n_); // OV#
@@ -25907,7 +25907,7 @@ void ICINIT() // ICINIT
   Push2Words("NULL");
   Push(pp_IADDR); // IADDR
   _2_ex_(); // 2!
-  Push(pp_UNK_0x547b); // UNK_0x547b
+  Push(pp_LFILE_n_); // LFILE#
   OFF(); // OFF
   Push(pp_IBFR + 2); // IBFR 2+
   OFF(); // OFF

@@ -1,16 +1,6 @@
 IROOT        species:32 size:0   
   ISYSTEM      species:32 size:0   
     INACTIVE     species:32 size:0   
-      STRING       species:2 size:0   
-        REGIONS      species:2 size:2   
-        REGIONS      species:2 size:2   
-        STRING       species:2 size:0   
-      BOX          species:8 size:8   
-        BOX          species:8 size:8   
-        BOX          species:8 size:8   
-        BOX          species:8 size:8   
-        BOX          species:8 size:8   
-        BOX          species:8 size:8   
       BANK-TRANS   species:6 size:6   5 32 amount:8224 32 32
         ELEMENT      species:6 size:6   
         ELEMENT      species:6 size:6   
@@ -261,6 +251,10 @@ IROOT        species:32 size:0
         STRING       species:14 size:0   
         STRING       species:14 size:0   
         STRING       species:14 size:0   
+      STRING       species:2 size:0   
+        STRING       species:2 size:0   
+        STRING       species:2 size:0   
+        STRING       species:2 size:0   
       STRING       species:9 size:0   
       STRING       species:10 size:0   
       STRING       species:32 size:0   
