@@ -495,9 +495,10 @@ void Call(unsigned short addr, unsigned short bx)
     unsigned short ax;
 
     // bx contains pointer to WORD
-    if ((regsp < FILESTAR0SIZE+0x100) || (regsp > 0xF6F4))
+    if ((regsp < FILESTAR0SIZE+0x100) || (regsp > (0xF6F4)))
     {
-        fprintf(stderr, "Error: stack point in invalid area\n");
+        fprintf(stderr, "Error: stack pointer in invalid area: sp=0x%04x\n", regsp);
+        PrintCallstacktrace(bx);
         exit(1);
     }
     switch(addr)
@@ -648,7 +649,9 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x4ef5: ParameterCall(bx, 0x4ef5); break; // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
         case 0x6ec1: ParameterCall(bx, 0x6ec1); break; // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
         case 0x3b68: ParameterCall(bx, 0x3b68); break; // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
-        case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CCASE"
+        case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CASE:"
+        case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
+        case 0x73ea: ParameterCall(bx, 0x73ea); break; // "TRANSTEXT" ....
         case 0x7227:
             //printf("Receive %s from STAR*.COM Dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
             printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
@@ -694,6 +697,7 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x25bc: // "(?TERMINAL)" keyboard check buffer
+            printf("keyboard check buffer\n");
             Push(0);
         break;
 
@@ -886,6 +890,28 @@ void Call(unsigned short addr, unsigned short bx)
             Push(ax);
             break;
 
+        case 0x7295: // "UNK_0x7295" TODO something in bank overlay, maybe for AFIELD. Not sure if this is right
+            ax = Pop() - 0x3e80;
+            Push((dx&0x3F)<<4);
+            Push(ax >> 6);
+
+// 0x7295: pop    ax
+// 0x7296: sub    ax,3E80
+// 0x7299: mov    cx,0006
+// 0x729c: xor    dx,dx
+
+// 0x729e: shr    ax,1
+// 0x72a0: rcr    dl,1
+// 0x72a2: loop   729E
+
+// 0x72a4: shl    dx,1
+// 0x72a6: shl    dx,1
+
+// 0x72a8: push   dx
+// 0x72a9: push   ax
+            break;
+
+
         case 0x143A: // ">UPPERCASE"
             cx = Pop();
             bx = Pop();
@@ -965,6 +991,13 @@ void Call(unsigned short addr, unsigned short bx)
             Push((signed short int)ax/(signed short int)bx);
         break;
 
+        case 0xF62: // "/MOD"
+            bx = Pop();
+            ax = Pop();
+            Push((signed short int)ax%(signed short int)bx);
+            Push((signed short int)ax/(signed short int)bx);
+        break;
+
         case 0x1261: // "-"
             ax = Pop();
             dx = Pop();
@@ -1010,6 +1043,29 @@ void Call(unsigned short addr, unsigned short bx)
             ax += Read16(0x2c79);
             Push(ax);
             break;
+
+
+        case 0x4a15: // Helper for "CASE"
+        {
+            bx = Pop(); // pointer to case struct
+            ax = Pop(); // switch(ax)....
+            //printf("case at 0x%04x: %i\n", bx, ax);
+            cx = Read16(bx); // number of case entries
+            bx += 2;
+            dx = Read16(bx); // default word
+            bx += 2;
+            for(int i=0; i<cx; i++)
+            {
+                if (Read16(bx) == ax)
+                {
+                    dx = Read16(bx+2);
+                    break;
+                }
+                bx += 4;
+            }
+            Push(dx);
+        }
+        break;
 
         case 0x3048: // "(BUFFER)"
         {
@@ -1292,6 +1348,12 @@ void Call(unsigned short addr, unsigned short bx)
             }
         break;
 
+
+        case 0x9002: // "LPLOT" TODO
+        printf("LPLOT %i %i\n", Pop(), Pop());
+        //exit(1);
+        break;
+
         case 0x93B1: // "BEXTENT" Part of Bit Block Image Transfer (BLT)
             //printf("blt xblt=%i yblt=%i lblt=%i wblt=%i\n", Read16(0x586E), Read16(0x5863), Read16(0x5887), Read16(0x5892));
             Push(Read16(0x586E)); // xblt
@@ -1330,7 +1392,7 @@ void Call(unsigned short addr, unsigned short bx)
 // 0x93ad: jmp    word ptr [bx]
 
         case 0x902b: // "{BLT}" plot a bit pattern given parameters
-            PrintCallstacktrace(bx);
+            //PrintCallstacktrace(bx);
             {
             int color = Read16(0x55F2); // COLOR
             int bltseg = Read16(0x58aa); // BLTSEG
@@ -1339,21 +1401,47 @@ void Call(unsigned short addr, unsigned short bx)
             int y0 = Read16(0x5863);
             int w = Read16(0x5887);
             int h = Read16(0x5892);
-            printf("blt xblt=%i yblt=%i lblt=%i wblt=%i color=%i 0x%04x:0x%04x\n", x0, y0, w, h, color, bltseg, bltoffs);
+            //printf("blt xblt=%i yblt=%i lblt=%i wblt=%i color=%i 0x%04x:0x%04x\n", x0, y0, w, h, color, bltseg, bltoffs);
             GraphicsBLT(x0, y0, w, h, &m[(bltseg<<4) + bltoffs], color);
             }
             //exit(1);
         break;
 
-        case 0x8891: // SCANPOLY
-            PrintCallstacktrace(bx);
-            exit(1);
+        case 0x8891: // SCANPOLY TODO
+            fprintf(stderr, "SCANPOLY\n");
+            {
+                int VIN = Read16(0x569B);
+                int nIN = Read16(0x5686);
+                printf("0x%04x %i\n", VIN, nIN);
+                for(int i=0; i<nIN; i++)
+                {
+                    printf("%i %i\n", Read16(VIN + i*4 + 0), Read16(VIN + i*4 + 2));
+                }
+                /*
+                for(int i=44; i<114; i++)
+                for(int j=192; j<199; j++)
+                {
+                    GraphicsPixel(i, j, 0xF);
+                }
+                */
+            }
+            GraphicsUpdate();
+            //exit(1);
         break;
 
-        case 0x9055: // LFILLPOLY
-            PrintCallstacktrace(bx);
-            exit(1);
+        case 0x9055: // LFILLPOLY TODO
+            fprintf(stderr, "LFILLPOLY\n");
+            int color = Read16(0x55F2); // COLOR
+            //exit(1);
         break;
+
+        case 0x906b: // 'LCOPYBLK' TODO
+
+            fprintf(stderr, "LCOPYBLK %i %i %i %i %i %i\n", Pop(), Pop(), Pop(), Pop(), Pop(), Pop());
+
+            //exit(1);
+        break;
+
 
 
         case 0x6C86: // "C>EGA" // TODO???
@@ -1385,11 +1473,14 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x8F8B: // "BFILL" TODO
+        {
+            int color = Read16(0x55F2); // COLOR
             //printf("bfill color=%i ega=%i segment=0x%04x count=0x%04x\n", Read16(0x55F2), Read16(0x5DA3), Read16(0x5648), Read16(0x5656));
-            GraphicsClear();
+            GraphicsClear(color);
+        }
         break;
 
-        case 0x903f: // "LLINE" TODO
+        case 0x903f: // "LLINE"
         {
             /*
             for(int i=0x9002; i<0x9126; i++)
@@ -1408,15 +1499,16 @@ void Call(unsigned short addr, unsigned short bx)
             int y1 = Pop();
             int x1 = Pop();
             //printf("lline %i %i %i %i\n", x1, y1, x2, y2);
-            GraphicsLine(x1, y1, x2, y2, 15);
+            int color = Read16(0x55F2); // COLOR
+            GraphicsLine(x1, y1, x2, y2, color);
         }
         break;
 
         case 0x8D09: // "DISPLAY" wait for vertical retrace
-            printf("wait for vertical retrace\n");
-            GraphicsGetChar();
-            GraphicsGetChar();
-            GraphicsUpdate();
+            //printf("wait for vertical retrace\n");
+            //GraphicsGetChar();
+            //GraphicsGetChar();
+            //GraphicsUpdate();
         break;
 
         case 0x8D8B:
@@ -1460,6 +1552,11 @@ void Call(unsigned short addr, unsigned short bx)
             Push(Read16(bx));
         break;
 
+        // move u from vector stack to parm stack
+        case 0x7B15: // "VI"
+            Push(Read16(Read16(0x54B4)+2));
+        break;
+
         case 0x29FC: // "V!"
         {
             // Graphics card output. Prints chars on screen
@@ -1492,13 +1589,52 @@ void Call(unsigned short addr, unsigned short bx)
                 printf("\n");
                 */
             }
-            for(i=0; i<cx; i++)
+            for(i=2; i<cx; i++)
             {
                 ax = (ax & 0xFF00) | (Read8(tempsi)&0xFF);
                 Write16Long(es, tempdi, ax);
                 tempsi++;
                 tempdi+=2;
             }
+        }
+        break;
+
+        case 0xf379: // ".EGARUNBIT" from BLT-OV\n
+        {
+            int color = Read16(0x55F2);
+            int XBLT = Read16(0x586E);
+            int YBLT = Read16(0x5863);
+            int WBLT = Read16(0x5892);
+            int offset = Pop();
+            int segment = Pop();
+            int temp2 = Read16Long(segment, offset); // size of this color segment - 6
+
+            //printf("color=%i xblt=%i yblt=%i wblt=%i 0x%04x:0x%04x 0x%04x temp2=%i\n", color, XBLT, YBLT, WBLT, segment, offset, regsp, temp2);
+            int xofs = 0;
+            int yofs = 0;
+            for(int i=0; i<temp2; i++)
+            {
+                int al = Read8Long(segment, offset + 2 + i);
+                if (al == 0) continue;
+                for(int j=0; j<al; j++)
+                {
+                    if ((i&1) == 0) GraphicsPixel(XBLT+xofs, YBLT-yofs, color);
+                    if ((++xofs) >= WBLT)
+                    {
+                        xofs = 0;
+                        yofs++;
+                    }
+                }
+            }
+            GraphicsUpdate();
+        }
+        break;
+
+        case 0xec7d: // "|EGA" in PORTMENU-OV
+        {
+            cx = Pop();
+            //printf("|EGA %i\n", cx);
+            //exit(1);
         }
         break;
 
@@ -1861,6 +1997,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x4873: Write16(Pop(), 1); break; // ON
         case 0x4886: Write16(Pop(), 0); break; // "OFF"
         case 0x0D7C: Push((Pop()-cs)<<4); break; // "SEG>ADDR"
+        case 0x4abb: Push(rand()); break; // "FRND"
         case 0x4892: break; // "CAPSON" Turn on caps
 
         default:
@@ -1895,6 +2032,10 @@ int main()
     printf("'2 3 + .'\n");
     printf("'STARTER'\n");
     printf("'mountb bank-ov d@balance d.'\n");
+    printf("'?ega on mounta PM-OV PORT-PIC'\n");
+    printf("'?ega on mounta music-OV 141 cscr>ega'\n");
+    printf("'?ega on mounta u-b\n");
+
     InitCPU();
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
 

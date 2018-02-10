@@ -335,7 +335,7 @@ void GraphicsInit()
     }
 #endif
     pixels = malloc(WIDTH * HEIGHT * sizeof(uint32_t));
-    GraphicsClear();
+    GraphicsClear(0);
 }
 
 void GraphicsUpdate()
@@ -422,11 +422,16 @@ void GraphicsText(char *s, int n)
 // 0 = text, 1 = ega graphics
 void GraphicsMode(int mode)
 {
+    GraphicsClear(0);
 }
 
-void GraphicsClear()
+void GraphicsClear(int color)
 {
     //memset(pixels, 0, WIDTH * HEIGHT * sizeof(uint32_t));
+    for(int i=0; i<WIDTH*HEIGHT; i++)
+    {
+        pixels[i] = colortable[color&0xF];
+    }
     GraphicsUpdate();
 }
 
@@ -505,6 +510,7 @@ void GraphicsBLT(int x1, int y1, int h, int w, char* image, int color)
 
 char GraphicsGetChar()
 {
+
 #ifdef SDL
     SDL_Event event;
 

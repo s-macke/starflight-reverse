@@ -7,7 +7,7 @@
     void GraphicsQuit();
 
     void GraphicsMode(int mode); // 0 = text, 1 = ega graphics
-    void GraphicsClear();
+    void GraphicsClear(int color);
     void GraphicsText(char *s, int n);
     void GraphicsCarriageReturn();
     void GraphicsSetCursor(int x, int y);
