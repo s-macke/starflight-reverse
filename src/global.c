@@ -90,8 +90,6 @@ WORDRENAME renamewords[] =
     {0xff, 0x6f0f, ":VERSION"}, // ":VERSIO"
     {0xff, 0x6eda, ":SIGNATURE"}, // ":SIGNAT"
     {0xff, 0x6ee8, ":TIMESTAMP"}, // ":TIMEST"
-    {0xff, 0x725e, "FILE-START"}, // "FILE-ST"
-    {0xff, 0x7292, "FILE-SLEN"}, // "FILE-SL"
     {0xff, 0x74ab, "INST-QTY"}, // "INST-QT"
     {0xff, 0x74f6, "!INST-SPECIES"}, // "!INST-S"
     {0xff, 0x74e4, "!INST-CLASS"}, // "UNK_0x74e4"
@@ -580,7 +578,24 @@ WORDRENAME renamewords[] =
     {0xff, 0xd445, "GAME-OV"}, // "GAME-O"
     {0xff, 0x8ee7, ">LORES_2"}, // ">LORES"
     {0xff, 0x4892, "CAPSON"}, // "UNK_0x4892"
-    
+    {0xff, 0x718d, "RECADD"}, // "UNK_0x718d"
+    {0xff, 0x7221, "DFIELD"}, // "UNK_0x7221"
+    {0xff, 0x71dd, "DOFFBLK"}, // "UNK_0x71dd"
+    {0xff, 0x7295, "BVSA>OFFBLK"}, // "UNK_0x7295"
+    {0xff, 0x7244, "FILE-NAME"}, // "FILE-NA" 12 ASCII characters
+    {0xff, 0x7251, "FILE-TYPE"}, // "FILE-TY" 0=fixed,1=var,2=overlay
+    {0xff, 0x725e, "FILE-START"}, // "FILE-ST" start of file on disk
+    {0xff, 0x726b, "FILE-END"}, // "FILE-EN" end of file on disk
+    {0xff, 0x7278, "FILE-#REC"}, // "FILE-#R" max # records
+    {0xff, 0x7285, "FILE-RLEN"}, // "FILE-RL" max record length
+    {0xff, 0x7292, "FILE-SLEN"}, // "FILE-SL" status record length
+    {0xff, 0x6f81, "?AFILE"}, // UNK_0x6f81
+    {0xff, 0x7357, "|REC"}, // UNK_0x7357
+    {0xff, 0x547f, "LRECORD#"}, // UNK_0x547f
+    {0xff, 0x547b, "LFILE#"}, // UNK_0x547b
+    {0xff, 0x5483, "LRECORD#"}, // UNK_0x5483
+    {0xff, 0x7379, "?-RECINBUF"}, // UNK_0x7379
+    {0xff, 0x7425, "IFLDADR"}, // UNK_0x7425
     {0x0, 0x0, NULL}
 };
 
