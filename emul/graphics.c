@@ -39,6 +39,27 @@ static int colortable[16] =
 0xFFFFFF,
 };
 
+static int colortable2[16] =
+{
+0x000000,
+0x00AA00,
+0x0000AA,
+0x5555FF,
+0xAA0000,
+0xAA5500,
+0x555555,
+0x55FF55,
+0xAA00AA,
+0xAAAAAA,
+0x55FFFF,
+0x00AAAA,
+0xFFFF55,
+0xFF5555,
+0xFFFFFF,
+};
+
+
+
 static char vgafont8[256*8] =
 {
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,
@@ -299,23 +320,15 @@ static char vgafont8[256*8] =
 0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
 };
 
-void GraphicsInit()
+static int GraphicsInitThread(void *ptr)
 {
 #ifdef SDL
-    if (SDL_Init(SDL_INIT_VIDEO) != 0)
-    {
-        printf("SDL_Init Error: %s\n", SDL_GetError());
-        return;
-    }
-    freopen("stdout", "w", stdout); // redirects stdout
-    freopen("stderr", "w", stderr); // redirects stderr
-
     window = SDL_CreateWindow("Hello World!", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, WIDTH, HEIGHT, SDL_WINDOW_SHOWN);
     if (window == NULL)
     {
         printf("SDL_CreateWindow Error: %s", SDL_GetError());
         SDL_Quit();
-        return;
+        return 0;
     }
 
     renderer = SDL_CreateRenderer(window, -1, 0);
@@ -323,7 +336,7 @@ void GraphicsInit()
     {
         printf("SDL_CreateRenderer Error: %s", SDL_GetError());
         SDL_Quit();
-        return;
+        return 0;
     }
 
     texture = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_ARGB8888, SDL_TEXTUREACCESS_STATIC, WIDTH, HEIGHT);
@@ -331,11 +344,28 @@ void GraphicsInit()
     {
         printf("SDL_CreateTexture Error: %s", SDL_GetError());
         SDL_Quit();
-        return;
+        return 0;
     }
 #endif
     pixels = malloc(WIDTH * HEIGHT * sizeof(uint32_t));
     GraphicsClear(0);
+    return 0;
+}
+
+void GraphicsInit()
+{
+#ifdef SDL
+    if (SDL_Init(SDL_INIT_VIDEO | SDL_INIT_EVENTS) != 0)
+    {
+        printf("SDL_Init Error: %s\n", SDL_GetError());
+        return;
+    }
+    freopen("stdout", "w", stdout); // redirects stdout
+    freopen("stderr", "w", stderr); // redirects stderr
+    GraphicsInitThread(NULL);
+#else
+    GraphicsInitThread(NULL);
+#endif
 }
 
 void GraphicsUpdate()
@@ -345,8 +375,7 @@ void GraphicsUpdate()
     SDL_RenderClear(renderer);
     SDL_RenderCopy(renderer, texture, NULL, NULL);
     SDL_RenderPresent(renderer);
-    SDL_Event event;
-    SDL_WaitEventTimeout(&event, 0);
+    SDL_PumpEvents();
 #endif
 }
 
@@ -436,7 +465,7 @@ void GraphicsClear(int color)
 }
 
 
-void GraphicsLine(int x1, int y1, int x2, int y2, int color)
+void GraphicsLine(int x1, int y1, int x2, int y2, int color, int xormode)
 {
     x1 <<= 2;
     y1 = 400-(y1<<1);
@@ -508,22 +537,53 @@ void GraphicsBLT(int x1, int y1, int h, int w, char* image, int color)
     GraphicsUpdate();
 }
 
-char GraphicsGetChar()
-{
+int keyinbuffer = -1;
 
 #ifdef SDL
-    SDL_Event event;
+unsigned short GetKey(int sym)
+{
+    if (sym == SDLK_LEFT)
+    {
+        return 331;
+    }
+    if (sym == SDLK_RIGHT)
+    {
+        return 333;
+    }
+    if (sym == SDLK_UP)
+    {
+        return 328;
+    }
+    if (sym == SDLK_DOWN)
+    {
+        return 336;
+    }
+    return sym;
+}
+#endif
 
+unsigned short GraphicsGetChar()
+{
+#ifdef SDL
+    if (keyinbuffer > 0)
+    {
+        int temp = keyinbuffer;
+        keyinbuffer = -1;
+        return temp;
+    }
+    GraphicsSetCursor(0, 0);
+    GraphicsText("Wait", 4);
+    SDL_Event event;
     while(1)
     {
         SDL_WaitEvent(&event);
         switch (event.type)
         {
             case SDL_QUIT:
-                /*return;*/
+                GraphicsQuit();
                 exit(1);
             case SDL_KEYDOWN:
-                return event.key.keysym.sym;
+                return GetKey(event.key.keysym.sym);
         }
     }
 
@@ -532,3 +592,40 @@ char GraphicsGetChar()
 #endif
 }
 
+int GraphicsCharsInBuffer()
+{
+    //printf("keyboard check buffer\n");
+    #ifdef SDL
+        char dummy[256];
+        GraphicsSetCursor(0, 0);
+        sprintf(dummy, "Check %i", rand());
+        GraphicsText(dummy, strlen(dummy));
+
+        SDL_Event event;
+        SDL_WaitEventTimeout(&event, 1);
+        switch (event.type)
+        {
+            case SDL_QUIT:
+                GraphicsQuit();
+                exit(1);
+            case SDL_KEYDOWN:
+                keyinbuffer = GetKey(event.key.keysym.sym);
+                sprintf(dummy, "  (%i)", event.key.keysym.sym);
+                GraphicsText(dummy, strlen(dummy));
+                return 1;
+        }
+        return 0;
+    /*
+        SDL_Event events[5];
+        GraphicsSetCursor(0, 0);
+
+        SDL_PumpEvents();
+        int x = SDL_PeepEvents(events, 5, SDL_PEEKEVENT, SDL_KEYDOWN, SDL_KEYDOWN);
+        sprintf(dummy, "Check %i %i", x, rand());
+        GraphicsText(dummy, strlen(dummy));
+    return SDL_PeepEvents(events, 5, SDL_PEEKEVENT, SDL_KEYDOWN, SDL_KEYDOWN);
+    */
+    #else
+    return 0;
+    #endif
+}

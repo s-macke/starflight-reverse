@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<time.h>
+#include<sys/time.h>
 
 #include"cpu.h"
 #include"graphics.h"
@@ -366,19 +368,41 @@ void ParameterCall(unsigned short bx, unsigned short addr)
 }
 
 
-void LXCHG(unsigned short es, unsigned short bx) //  "{LXCHG}"
+void LXCHG16(unsigned short es, unsigned short bx, unsigned short ax) //  "{LXCHG}"
 {
-    Push(cx);
     cx = Read16Long(es, bx);
-    unsigned short ax;
     XCHG(&bx, &ax);
-    unsigned short temp = Read16Long(es,bx);
+    unsigned short temp = Read16Long(es, bx);
     XCHG(&cx, &temp);
     Write16Long(es, bx, temp);
     XCHG(&bx, &ax);
     Write16Long(es, bx, cx);
-    cx = Pop();
+// 0x2f36: push   cx
+// 0x2f38: mov    cx,es:[bx]
+// 0x2f3a: xchg   ax,bx
+// 0x2f3d: xchg   es:[bx],cx
+// 0x2f3f: xchg   ax,bx
+// 0x2f42: mov    es:[bx],cx
+// 0x2f44: pop    cx
+// 0x2f45: ret
 }
+
+void LXCHG8(unsigned short es, unsigned short bx, unsigned short ax)
+{
+    unsigned short cx = Read8Long(es, bx);
+    XCHG(&bx, &ax);
+    unsigned short temp = Read8Long(es, bx);
+    XCHG(&cx, &temp);
+    Write8Long(es, bx, temp&0xFF);
+    XCHG(&bx, &ax);
+    Write8Long(es, bx, cx&0xFF);
+// 0x49cc: mov    cl,es:[bx]
+// 0x49ce: xchg   ax,bx
+// 0x49d1: xchg   es:[bx],cl
+// 0x49d3: xchg   ax,bx
+// 0x49d6: mov    es:[bx],cl
+}
+
 
 void Find() // "(FIND)"
 {
@@ -408,8 +432,8 @@ void Find() // "(FIND)"
     //printf("Found 0x%04x\n", word);
     if (word == 0x0)
     {
-        Push(0);
-        return;
+        //Push(0);
+        //return;
     } else
     {
         Push(word);
@@ -426,14 +450,14 @@ void Find() // "(FIND)"
     unsigned char dl, dh;
     dl = 0x3F;
     dh = 0x7F;
-    printf("first dictionary entry address=%x\n  word to search at address=%x\n", bx, cx);
+    //printf("first dictionary entry address=%x\n  word to search at address=%x\n", bx, cx);
 
     while(1)
     {
         //printf("0x%04x\n",bx);
         if (bx == 0) // word is not found, return 0
         {
-            printf("  word not found\n");
+            //printf("  word not found\n");
             //x1859:
             regdi = Pop();
             si = Pop();
@@ -484,7 +508,7 @@ void Find() // "(FIND)"
         dh = ah;
         Push(dl);
         Push(1);
-        printf("  word found at bx=0x%04x ax=0x%04x dl=0x%04x\n", bx, ax, (dh<<8)|dl);
+        //printf("  word found at bx=0x%04x ax=0x%04x dl=0x%04x\n", bx, ax, (dh<<8)|dl);
         return;
     }
 }
@@ -492,7 +516,6 @@ void Find() // "(FIND)"
 void Call(unsigned short addr, unsigned short bx)
 {
     unsigned short i;
-    unsigned short ax;
 
     // bx contains pointer to WORD
     if ((regsp < FILESTAR0SIZE+0x100) || (regsp > (0xF6F4)))
@@ -533,9 +556,8 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x0EA4: Push(Read16(bp+0)); break; // "R@"
         case 0x0E92: // "R>" pop variables from the callstack
-            ax = Read16(bp);
+            Push(Read16(bp));
             bp += 2;
-            Push(ax);
         break;
 
         case 0xDB6: // ">R" push variables on the callstack
@@ -548,25 +570,21 @@ void Call(unsigned short addr, unsigned short bx)
         // ------------------------------
 
         case 0x3A39: // "@EXECUTE"
-            bx = Pop();
-            bx = Read16(bx)-2;
-            ax = Read16(bx);
+            bx = Read16(Pop()) - 2;
             //printf("jump to %x\n", ax);
-            Call(ax, bx);
+            Call(Read16(bx), bx);
         break;
 
         case 0x1675: // "CFAEXEC"
             bx = Pop();
-            ax = Read16(bx);
             //printf("jump to %x\n", addr);
-            Call(ax, bx);
+            Call(Read16(bx), bx);
             break;
 
         case 0x1684: // "EXECUTE"
-            bx = Pop()-2;
-            ax = Read16(bx);
+            bx = Pop() - 2;
             //printf("execute %s\n", FindWord(bx+2));
-            Call(ax, bx);
+            Call(Read16(bx), bx);
         break;
 
         case 0x17B7: // Exec function pointers "CREATE" "TYPE", "CALL", "ABORT" "PAGE", ...
@@ -576,7 +594,6 @@ void Call(unsigned short addr, unsigned short bx)
             bx = Read16(bx);
             bx = Read16(bx+regdi);
             bx -= 2;
-            ax = Read16(bx);
             char *s = FindWord(bx+2, -1);
             //printf("Execute %s\n", s);
             if (strcmp(s, "(TYPE)") == 0)
@@ -610,13 +627,14 @@ void Call(unsigned short addr, unsigned short bx)
                 //printf("%i offset %i\n", Read16(regsp), offset);
                 //exit(1);
             }
-            Call(ax, bx);
+            Call(Read16(bx), bx);
         break;
 
         case 0x21C9: // TODO for forth interpreter, is incomplete
+        {
             // Check for stack size and jump to error handling
             //printf("Info: %i 0x%x\n", Read16(0x0A0B), Read16(regdi+4));
-            ax = Read16(0x0A0B); // #SPACE (256)
+            unsigned short ax = Read16(0x0A0B); // #SPACE (256)
             ax += Read16(regdi+4);
             if ((Read16(0x0A0B) + Read16(regdi+4)) > 0xFFFF)
             {
@@ -630,7 +648,22 @@ void Call(unsigned short addr, unsigned short bx)
             printf("Jump to %x\n", bx);
             exit(1);
             */
-            break;
+// 0x21c9: mov    ax,[0A0B] // #SPACE
+// 0x21cc: add    ax,[di+04]
+// 0x21cf: jo     21E0
+// 0x21d1: cmp    ax,sp
+// 0x21d3: ja     21E0
+// 0x21d5: mov    ax,[di]
+// 0x21d7: cmp    ax,sp
+// 0x21d9: jb     21E0
+// 0x21db: lodsw
+// 0x21dc: mov    bx,ax
+// 0x21de: jmp    word ptr [bx]
+// 0x21e0: mov    bx,0B10
+// 0x21e3: jmp    word ptr [bx]
+
+        }
+        break;
 
         case 0x16a3: // "GO"
             bx = Pop();
@@ -666,7 +699,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x8A2D: // calculate memory offset for given coordinates. Interleaved. Maybe CGA?
         {
-            ax = Pop() >> 1;
+            unsigned short ax = Pop() >> 1;
             bx = 199 - Pop();
             if (bx & 1)
             {
@@ -681,30 +714,20 @@ void Call(unsigned short addr, unsigned short bx)
             {
                 // 1. either low byte ascii, high byte 0
                 // 2. or low byte scancode, high byte 1
-                char c;
+                unsigned short c;
                 c = GraphicsGetChar();
                 //printf("key %i\n", c);
                 if (c == 0xa) c = 0xd;
                 Push(c);
-                /*
-                static int keyboardn = 0;
-                if (keyboardn == 0) Push(0x35); // 5
-                if (keyboardn == 1) Push(0x0d); // enter
-                keyboardn++;
-                exit(1);
-                */
             }
         break;
 
         case 0x25bc: // "(?TERMINAL)" keyboard check buffer
-            printf("keyboard check buffer\n");
-            Push(0);
+            Push(GraphicsCharsInBuffer());
         break;
 
         case 0x1508:  // "S->D"
-            bx = regsp;
-            ax = Read16(bx);
-            if (ax&0x8000) Push(0xFFFF); else Push(0x0);
+            if (Read16(regsp)&0x8000) Push(0xFFFF); else Push(0x0);
         break;
 
         case 0x1D29: Push(bx+2); break; // ???  // get pointer to variable or table
@@ -713,19 +736,16 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x175F: // read constant "LIT"
         {
-            ax = Read16(si);
-            si+=2;
-            Push(ax);
+            Push(Read16(si));
+            si += 2;
         }
         break;
 
         case 0x1618: // read constant "2LIT"
-            ax = Read16(si);
+            Push(Read16(si));
             si += 2;
-            Push(ax);
-            ax = Read16(si);
+            Push(Read16(si));
             si += 2;
-            Push(ax);
         break;
 
         case 0xC3A: // 2@ write
@@ -736,29 +756,32 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0xC24: // read
+        {
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             cx = Pop();
             Write16(bx, ax);
             Write16(bx+2, cx);
+        }
         break;
 
         case 0x30a8: // "ADVANCE>DEF"
+        {
             //printf("Advance>def %i\n", Read16(regsp));
-            ax = Pop();
+            unsigned short ax = Pop();
             if (ax != 0)
             {
                 bx = ax - 2;
-                unsigned short es = Read16(0x2C04); // BLKCACHE
-                LXCHG(es, bx);
-                es = Read16(0x2C9D); // SEGCACHE
-                LXCHG(es, bx);
+                LXCHG16(Read16(0x2C04), bx, ax); // BLKCACHE
+                LXCHG16(Read16(0x2C9D), bx, ax); // SEGCACHE
             }
+        }
         break;
 
         case 0x4DA4: // "!OFFSET"
         {
             //printf("!OFFSET}n");
+            unsigned short ax;
             bx = Pop();
             int tempsi = Read16(bx);
             int tempcx = Read16(bx+2);
@@ -813,18 +836,21 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x138: // "(!SET)" // write interrupt vector table
+        {
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             cx = Pop();
             Write16Long(0, bx*4+0, ax);
             Write16Long(0, bx*4+2, cx);
+        }
         break;
 
 
         case 0x14BD: // "DIGIT"
+        {
             // TODO: handle base if decimal or hex
             dx = Pop(); // base
-            ax = (Pop()&0xFF);
+            unsigned short ax = (Pop()&0xFF);
 
             if ((ax < '0') || (ax > '9'))
             {
@@ -833,15 +859,15 @@ void Call(unsigned short addr, unsigned short bx)
             }
             Push(ax-0x30);
             Push(1);
-
+        }
             //printf("Digit base=%i ascii=%i\n", dx, ax);
         break;
 
-        case 0x22AB: // ENCLOSE
-            // TODO: check
-            ax = Pop()&0xFF;
+        case 0x22AB: // ENCLOSE  TODO: check
+        {
+            unsigned short ax = Pop() & 0xFF;
             bx = Pop();
-            //printf("search at ax:0x%x bx:0x%x\n", ax, bx);
+            //printf("enclose at ax:0x%04x bx:0x%04x\n", ax, bx);
             //printf("%c%c%c%c%c\n", mem[bx+0], mem[bx+1], mem[bx+2], mem[bx+3], mem[bx+4], mem[bx+5]);
             Push(bx);
             dx = 0xFFFF;
@@ -879,22 +905,97 @@ void Call(unsigned short addr, unsigned short bx)
                 Push(dx);
                 Push(ax);
             break;
+        }
 
         case 0x1AC0: // ???
+        {
             bx = Pop();
-            ax = Read8(bx);
+            unsigned short ax = Read8(bx);
             bx++;
-            ax += Read8(bx);
-            ax &= 6;
-            ax += 6;
+            ax = ((ax + Read8(bx)) & 6) + 6;
             Push(ax);
+        }
+        break;
+
+        case 0x718d: // "RECADD"
+        {
+            int sp0 = Pop(); // has something to do with OFFBLK
+            int sp2 = Pop(); // has something to do with OFFBLK
+            int recordsize = Pop();
+            int recordidx = Pop();
+
+            printf("RECADD 0x%04x 0x%04x recordsize=%i recordidx=%i\n", sp0, sp2, recordsize, recordidx);
+            //  { .idx=0x0e, .name="BANK-TRANS  ", .fileno=2, .start=0x064800, .end=0x064880, .size=0x00090, .nblocks=   7, .blocksize=  19, .lsize=0x06 },
+            //RECADD 0x0098 0x0100 recordsize=19 recordidx=6
+
+            unsigned short ax = 1024 - sp2;
+            ax = ax / recordsize;
+            if (ax > recordidx)
+            {
+                sp2 += recordidx * recordsize;
+            } else
+            {
+                recordidx -= ax;
+                sp0++;
+                sp2 = 0;
+                ax = 1024 / recordsize;
+                cx = ax;
+                ax = recordidx / cx;
+                sp0 += ax;
+                sp2 = (recordidx%cx) * recordsize;
+            }
+            Push(sp2);
+            Push(sp0);
+        }
+
+// 0x718d: mov    bx,sp
+// 0x718f: mov    ax,0400
+// 0x7192: sub    ax,[bx+02]
+// 0x7195: xor    dx,dx
+// 0x7197: mov    cx,[bx+04]
+// 0x719a: div    cx
+// 0x719c: cmp    ax,[bx+06]
+// 0x719f: jle    71AB
+
+// 0x71a1: mov    ax,[bx+06]
+// 0x71a4: mul    cx
+// 0x71a6: add    [bx+02],ax
+// 0x71a9: jmp    71CF
+
+// 0x71ab: sub    [bx+06],ax
+// 0x71ae: inc    word ptr [bx]
+// 0x71b0: mov    word ptr [bx+02],0000
+// 0x71b5: mov    ax,0400
+// 0x71b8: xor    dx,dx
+// 0x71ba: div    cx
+
+// 0x71bc: mov    cx,ax
+// 0x71be: mov    ax,[bx+06]
+// 0x71c1: xor    dx,dx
+// 0x71c3: div    cx
+// 0x71c5: add    [bx],ax
+// 0x71c7: mov    ax,dx
+// 0x71c9: mul    word ptr [bx+04]
+// 0x71cc: mov    [bx+02],ax
+
+// 0x71cf: pop    ax
+// 0x71d0: pop    cx
+// 0x71d1: add    sp,04
+// 0x71d4: push   cx
+// 0x71d5: push   ax
+// 0x71d6: lodsw
+// 0x71d7: mov    bx,ax
+// 0x71d9: jmp    word ptr [bx]
+            //exit(1);
             break;
 
-        case 0x7295: // "UNK_0x7295" TODO something in bank overlay, maybe for AFIELD. Not sure if this is right
-            ax = Pop() - 0x3e80;
-            Push((dx&0x3F)<<4);
+        case 0x7295: // "BVSA>OFFBLK". Input: offset in file divided by 16
+        {
+            printf("BVSA>OFFBLK 0x%04x\n", Read16(regsp));
+            unsigned short ax = Pop() - 0x3e80; // BLOVSA
+            Push((ax & 0x3F) << 4);
             Push(ax >> 6);
-
+        }
 // 0x7295: pop    ax
 // 0x7296: sub    ax,3E80
 // 0x7299: mov    cx,0006
@@ -911,6 +1012,52 @@ void Call(unsigned short addr, unsigned short bx)
 // 0x72a9: push   ax
             break;
 
+        case 0x7684: // "PRIORITIZE"
+            {
+                unsigned short ax = Pop();
+                printf("PRIORITIZE %i\n", ax);
+                if (ax == 0)
+                {
+                    Push(ax);
+                } else
+                {
+                    bx = ax - 2;
+                    LXCHG16(Read16(0x54EA), bx, ax); //  LOISEG
+                    LXCHG16(Read16(0x54F2), bx, ax); //  LOCSEC
+                    bx >>= 1;
+                    ax >>= 1;
+                    LXCHG8(Read16(0x54EE), bx, ax); // HIISEG
+                    Push(bx << 1);
+                }
+            }
+            break;
+// 0x7684: pop    ax
+// 0x7685: or     ax,ax
+// 0x7687: jz     76B0
+
+// 0x7689: mov    bx,ax
+// 0x768b: sub    bx,02
+// 0x768e: push   es
+// 0x768f: push   word ptr [54EA] // LOISEG
+// 0x7693: pop    es
+// 0x7694: call   2F36  LXCHG
+// 0x7697: push   word ptr [54F2] // LOCSEC
+// 0x769b: pop    es
+// 0x769c: call   2F36 LXCHG
+// 0x769f: shr    bx,1
+// 0x76a1: shr    ax,1
+// 0x76a3: push   word ptr [54EE] // HIISEG
+// 0x76a7: pop    es
+// 0x76a8: call   49CA
+// 0x76ab: pop    es
+// 0x76ac: shl    bx,1
+// 0x76ae: mov    ax,bx
+
+// 0x76b0: push   ax
+// 0x76b1: lodsw
+// 0x76b2: mov    bx,ax
+// 0x76b4: jmp    word ptr [bx]
+
 
         case 0x143A: // ">UPPERCASE"
             cx = Pop();
@@ -919,7 +1066,7 @@ void Call(unsigned short addr, unsigned short bx)
             //printf("Uppercase %i at 0x%04x\n", cx, bx);
             for(i=0; i<cx; i++)
             {
-                ax = Read8(bx);
+                unsigned short ax = Read8(bx);
                 if ((ax >= 0x61) && (ax <= 0x7A)) ax &= 0xDF;
                 Write8(bx, ax);
                 bx++;
@@ -929,19 +1076,19 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x2852: // "CUR>ADDR"
         {
-        bx = Read16(regdi + 0x1A);
-        unsigned char bh = (bx >> 8);
-        unsigned char bl = (bx & 0xFF);
-        ax = Read16(regdi + 0x1C) & 0xFF;
-        ax = (ax + bl) & 0xFF;
-        bl = 0x50;
-        ax *= bl;
-        bl = bh;
-        bh = Read16(regdi + 0x1D) & 0xFF;
-        bl += bh;
-        bh = 0;
-        ax += (bh << 8) | bl;
-        Push(ax << 1);
+            bx = Read16(regdi + 0x1A);
+            unsigned char bh = (bx >> 8);
+            unsigned char bl = (bx & 0xFF);
+            unsigned short ax = Read16(regdi + 0x1C) & 0xFF;
+            ax = (ax + bl) & 0xFF;
+            bl = 0x50;
+            ax *= bl;
+            bl = bh;
+            bh = Read16(regdi + 0x1D) & 0xFF;
+            bl += bh;
+            bh = 0;
+            ax += (bh << 8) | bl;
+            Push(ax << 1);
         }
         break;
 
@@ -952,7 +1099,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x0D35: // "FILL"
         {
-            ax = Pop()&0xFF;
+            unsigned short ax = Pop()&0xFF;
             cx = Pop();
             int tempdi = Pop();
             for(i=0; i<cx; i++)
@@ -965,20 +1112,22 @@ void Call(unsigned short addr, unsigned short bx)
             break;
 
         case 0x2973: // SCROLLUP
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             ax = (ax & 0xFF) | (0x6 << 8);
             dx = mem[regdi + 0x1e]<<8;
             dx |= mem[regdi + 0x1f];
             bx = Read16(0x20);
             cx = 0;
             // int 10h
-            break;
+        }
+        break;
 
         case 0x11ED: // "U/MOD"
         {
             bx = Pop();
             dx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             unsigned int nom = ax | (dx<<16);
             Push(nom % bx);
             Push(nom / bx);
@@ -986,69 +1135,73 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0xF4E: // "/"
+        {
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Push((signed short int)ax/(signed short int)bx);
+        }
         break;
 
         case 0xF62: // "/MOD"
+        {
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Push((signed short int)ax%(signed short int)bx);
             Push((signed short int)ax/(signed short int)bx);
+        }
         break;
 
         case 0x1261: // "-"
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             dx = Pop();
             if (ax == dx) Push(1); else Push(0);
+        }
         break;
 
         case 0x127a: // "0<"
-            ax = Pop();
-            Push((ax&0x8000)?1:0);
+            Push((Pop()&0x8000)?1:0);
         break;
 
         case 0x71DD: // "UNK_0x71dd" gets the idx from the dictionary in STARX.com
+        {
             //WriteCallGraph();
             //exit(1);
-            ax = Pop();
+            unsigned short ax = Pop();
             //printf("read idx 0x%x  from STARA.COM or STARB.COM FILE\n", ax);
             if (ax >= 0x90)
             {
-                bx = Read16(0x535e)+3;
+                bx = Read16(0x535e) + 3;
                 ax -= 0x90;
             } else
             if (ax >= 0x60)
             {
-                bx = Read16(0x535e)+2;
+                bx = Read16(0x535e) + 2;
                 ax -= 0x60;
             } else
             if (ax >= 0x30)
             {
-                bx = Read16(0x535e)+1;
+                bx = Read16(0x535e) + 1;
                 ax -= 0x30;
             } else
             {
-                bx = Read16(0x535e);
+                bx = Read16(0x535e) + 0;
             }
             //0x72313:
             ax *= 0x15;
             Push(ax);
             Push(bx);
-            break;
+        }
+        break;
 
         case 0x3672:
-            ax = Pop();
-            ax += Read16(0x2c79);
-            Push(ax);
+            Push(Pop() + Read16(0x2c79)); // OFFSET
             break;
-
 
         case 0x4a15: // Helper for "CASE"
         {
             bx = Pop(); // pointer to case struct
-            ax = Pop(); // switch(ax)....
+            unsigned short ax = Pop(); // switch(ax)....
             //printf("case at 0x%04x: %i\n", bx, ax);
             cx = Read16(bx); // number of case entries
             bx += 2;
@@ -1072,7 +1225,7 @@ void Call(unsigned short addr, unsigned short bx)
             cx = Pop();
             //dx = /*es*/0x1FE;
             bx = 0;
-            ax = 0;
+            unsigned short ax = 0;
             int es = Read16(0x2c84); // "PREV"
             //printf("es : 0x%04x check with 0x%04x\n", es, cx);
             if (Read16Long(es, bx+6) == cx)
@@ -1107,9 +1260,10 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
             case 0x2F51: // "LWSCAN"
+            {
                 // search in string for occurence of sign
                 // return 1 or 0;
-                ax = Pop();
+                unsigned short ax = Pop();
                 cx = Pop();
                 //printf("search for 0x%x (%i words)\n", ax, cx);
                 if (cx == 0)
@@ -1138,9 +1292,12 @@ void Call(unsigned short addr, unsigned short bx)
                         Push(0);
                     }
                 }
+            }
             break;
 
             case 0x367F: // ???
+            {
+                unsigned short ax;
                 dx = Pop();
                 Push(regdi);
                 Push(si);
@@ -1171,7 +1328,8 @@ void Call(unsigned short addr, unsigned short bx)
                 Push(ax);
                 Push(cx);
                 Push(bx);
-                break;
+            }
+            break;
 
         case 0x36BB: // ???
             cx = mem[Pop() + 0x2D23];
@@ -1183,16 +1341,20 @@ void Call(unsigned short addr, unsigned short bx)
 // ---------------------------------------------
 
         case 0x1248: // "<"
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             dx = Pop();
             //printf("input %x %x\n", ax, dx);
             if ((signed short)dx < (signed short)ax) Push(1); else Push(0);
+        }
         break;
 
         case 0x122F: // ">"
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             dx = Pop();
             if ((signed short)dx > (signed short)ax) Push(1); else Push(0);
+        }
         break;
 
         case 0x12a1: // "0>"
@@ -1209,9 +1371,11 @@ void Call(unsigned short addr, unsigned short bx)
 
 
         case 0x12E1: // "U<"
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             dx = Pop();
             if (dx < ax) Push(1); else Push(0);
+        }
         break;
 
         case 0x1FA:
@@ -1293,12 +1457,18 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x2a9a:  // "TIME"
         {
+            struct timeval tv;
+            gettimeofday(&tv, NULL);
+            int time_in_mill = ((tv.tv_sec) * 1000 + (tv.tv_usec) / 1000 )*10;
+            Write16(0x18A, time_in_mill); // TIME low
+            Write16(0x188, (time_in_mill >> 16));   // TIME high
+            /*
             static int ntime = 0;
-            //printf("TIME %i\n", ntime);
             Write16(0x18A, ntime); // TIME low
             Write16(0x188, (ntime >> 16));   // TIME high
-            Write16(0x193, 0x0);
             ntime++;
+            */
+            Write16(0x193, 0x0);
             Push(0x188);
         }
         break;
@@ -1328,7 +1498,7 @@ void Call(unsigned short addr, unsigned short bx)
             int color = Read16(0x55F2);
             GraphicsPixel(Read16(regsp+2), Read16(regsp+0), color);
             dx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             /*
             dx <<= 1;
             dx += Read16(0x563A); // YTABL
@@ -1347,7 +1517,6 @@ void Call(unsigned short addr, unsigned short bx)
             */
             }
         break;
-
 
         case 0x9002: // "LPLOT" TODO
         printf("LPLOT %i %i\n", Pop(), Pop());
@@ -1412,7 +1581,7 @@ void Call(unsigned short addr, unsigned short bx)
             {
                 int VIN = Read16(0x569B);
                 int nIN = Read16(0x5686);
-                printf("0x%04x %i\n", VIN, nIN);
+                printf("scanpoly 0x%04x %i\n", VIN, nIN);
                 for(int i=0; i<nIN; i++)
                 {
                     printf("%i %i\n", Read16(VIN + i*4 + 0), Read16(VIN + i*4 + 2));
@@ -1430,31 +1599,30 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x9055: // LFILLPOLY TODO
-            fprintf(stderr, "LFILLPOLY\n");
+        {
+            printf("LFILLPOLY\n");
             int color = Read16(0x55F2); // COLOR
-            //exit(1);
+        }
         break;
 
         case 0x906b: // 'LCOPYBLK' TODO
-
-            fprintf(stderr, "LCOPYBLK %i %i %i %i %i %i\n", Pop(), Pop(), Pop(), Pop(), Pop(), Pop());
-
+            printf("LCOPYBLK %i %i %i %i %i %i\n", Pop(), Pop(), Pop(), Pop(), Pop(), Pop());
             //exit(1);
         break;
 
-
-
         case 0x6C86: // "C>EGA" // TODO???
+        {
+            //printf("c>ega\n");
             dx = Pop() & 0xF;
             Push(si);
-            ax = 0;
+            unsigned short ax = 0;
             Push(0x0);
             cx = 0x10;
             // decrementing lodsb
             si = 0x4FCA;
             for(;cx>0; cx--)
             {
-                ax = Read8(si)&0xF;
+                ax = Read8(si) & 0xF;
                 si--;
                 if (ax == dx)
                 {
@@ -1470,6 +1638,35 @@ void Call(unsigned short addr, unsigned short bx)
             ax = Read8(si);
             si = Pop();
             Push(ax);
+        }
+// 0x6c86: pop    dx
+// 0x6c87: and    dx,0F
+// 0x6c8a: push   si
+// 0x6c8b: xor    ax,ax
+
+// 0x6c8d: push   ax
+// 0x6c8e: mov    cx,0010
+// 0x6c91: std
+// 0x6c92: mov    si,4FCA
+
+// 0x6c95: lodsb
+// 0x6c96: and    ax,000F
+// 0x6c99: cmp    ax,dx
+// 0x6c9b: jnz    6CA4
+// 0x6c9d: pop    ax
+// 0x6c9e: mov    ax,cx
+// 0x6ca0: push   ax
+// 0x6ca1: mov    cx,0001
+// 0x6ca4: loop   6C95
+
+// 0x6ca6: pop    ax
+// 0x6ca7: mov    si,4FCD
+// 0x6caa: add    si,ax
+// 0x6cac: dec    si
+// 0x6cad: lodsb
+// 0x6cae: pop    si
+// 0x6caf: cld
+// 0x6cb0: push   ax
         break;
 
         case 0x8F8B: // "BFILL" TODO
@@ -1499,16 +1696,13 @@ void Call(unsigned short addr, unsigned short bx)
             int y1 = Pop();
             int x1 = Pop();
             //printf("lline %i %i %i %i\n", x1, y1, x2, y2);
-            int color = Read16(0x55F2); // COLOR
-            GraphicsLine(x1, y1, x2, y2, color);
+            GraphicsLine(x1, y1, x2, y2, Read16(0x55F2), Read16(0x587C));
         }
         break;
 
         case 0x8D09: // "DISPLAY" wait for vertical retrace
             //printf("wait for vertical retrace\n");
-            //GraphicsGetChar();
-            //GraphicsGetChar();
-            //GraphicsUpdate();
+            GraphicsUpdate();
         break;
 
         case 0x8D8B:
@@ -1527,7 +1721,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x2767: // "POSITION"
         {
             // set cursor position
-            ax = Pop();
+            unsigned short ax = Pop();
             bx = Pop();
             Write8(regdi+0x1B, ax&0xFF);
             Write8(regdi+0x1A, bx&0xFF);
@@ -1564,7 +1758,7 @@ void Call(unsigned short addr, unsigned short bx)
             int seg = Read16(regdi + 0x18); // screen segment
             //ds = ax;
             bx = Pop(); // offset
-            ax = Pop(); // color and char
+            unsigned short ax = Pop(); // color and char
             Write16Long(seg, bx, ax);
             //ds = cx;
             //printf("PutChar 0x%04x 0x%04x at segment: 0x%04x\n", bx, ax, seg);
@@ -1574,7 +1768,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x27F8: // Color text video memory // "">VMOVE""
         {
             unsigned short int es = Read16(regdi+0x18);
-            ax = Read16(regdi+0x20);
+            unsigned short ax = Read16(regdi+0x20);
             cx = Pop();
             int tempdi = Pop();
             int tempsi = Pop();
@@ -1660,8 +1854,7 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x75d7: // "CDEPTH"
-            ax = ((0x6398 - Read16(0x54B0))&0xFF)/3;
-            Push(ax);
+            Push(((0x6398 - Read16(0x54B0))&0xFF)/3);
         break;
 
 // -------------------------------
@@ -1682,10 +1875,8 @@ void Call(unsigned short addr, unsigned short bx)
             Push(Read16(0x558C)); // [IOFF]
         break;
 
-        case 0x7425:
-            bx = Pop();
-            ax = Read8(bx+1) + 0x63ef;
-            Push(ax);
+        case 0x7425: // "IFLDADR"
+            Push(Read8(Pop()+1) + 0x63ef);
         break;
 
 // ---------------------------------------------
@@ -1718,15 +1909,14 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x0D9C: //"ADDR>SEG"
-            ax = (Pop()>>4) + cs; // ds = cs
-            Push(ax);
+            Push((Pop()>>4) + cs); // ds = cs
         break;
 // --------------------------
 
         case 0x15BA: // "(DO)"
         {
             dx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             int temp = regsp;
             regsp = bp;
             Push(ax);
@@ -1739,7 +1929,8 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x1593: // "(/LOOP)"
-            ax = Pop() + Read16(bp);
+        {
+            unsigned short ax = Pop() + Read16(bp);
 
             if ((signed short int)ax >= (signed short int)Read16(bp+2))
             {
@@ -1751,13 +1942,13 @@ void Call(unsigned short addr, unsigned short bx)
                 Write16(bp, ax);
                 si += Read16(si);
             }
-
+        }
         break;
 
         case 0x155E: // "(+LOOP)"
         {
             bx = Pop();  // stepsize
-            ax = Read16(bp) + bx;
+            unsigned short ax = Read16(bp) + bx;
             //printf("stepsize %i, comparison index: %x dest: %x \n", (short)bx, Read16(bp), Read16(bp+2));
             if (bx&0x8000) // if stepsize is negative
             {
@@ -1796,7 +1987,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x15D2: // "(LOOP)"
         {
-            ax = Read16(bp)+1; // index
+            unsigned short ax = Read16(bp)+1; // index
             bx = Read16(bp+2);
             if ((signed short int)ax >= (signed short int)bx)
             {
@@ -1815,7 +2006,7 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x1067: // "D+"
         {
-            ax = Pop();
+            unsigned short ax = Pop();
             dx = Pop();
             bx = Pop();
             cx = Pop();
@@ -1827,36 +2018,22 @@ void Call(unsigned short addr, unsigned short bx)
             break;
         }
 
-        case 0x6f49: // "VA>BLK"
-        {
-            ax = Pop();
-            dx = Pop();
-            bx = 0;
-            cx = 0xA;
-            long long x = (((long long)ax) << 32) | ((long long)dx << 16);
-            //printf("%x %x 0x%llx %i\n", (int)ax, (int)dx, x, sizeof(x));
-            x = x >> 0xA;
-            Push((x&0xFFFF) >> 6);
-            Push((x>>16)&0xFFFF);
-            break;
-        }
-
         case 0x10B9: // "DNEGATE"
         {
-            ax = 0;
+            unsigned short ax = 0;
             cx = Pop();
             dx = Pop();
             //printf("neg: 0x%x 0x%x\n", cx, dx);
             int x = (cx << 16) | dx;
             x = -x;
             Push(x&0xFFFF);
-            Push(x >> 16);
+            Push((x >> 16) & 0xFFFF);
             break;
         }
 
         case 0x495E: // "D16*"
         {
-            ax = Pop();
+            unsigned short ax = Pop();
             dx = Pop();
             unsigned int x = (ax << 16) | dx;
             x = x << 4;
@@ -1865,9 +2042,33 @@ void Call(unsigned short addr, unsigned short bx)
             break;
         }
 
+        case 0x6f49: // "VA>BLK"
+        {
+            unsigned short ax = Pop();
+            dx = Pop();
+            bx = 0;
+            long long x = (((long long)ax) << 32) | ((long long)dx << 16);
+            //printf("%x %x 0x%llx %i\n", (int)ax, (int)dx, x, sizeof(x));
+            x = x >> 0xA;
+            Push((x&0xFFFF) >> 6);
+            Push((x>>16)&0xFFFF);
+            break;
+        }
+// 0x6f49: pop    ax
+// 0x6f4a: pop    dx
+// 0x6f4b: mov    cx,000A
+// 0x6f4e: shr    ax,1
+// 0x6f50: rcr    dx,1
+// 0x6f52: rcr    bx,1
+// 0x6f54: loop   6F4E
+// 0x6f56: mov    cx,0006
+// 0x6f59: shr    bx,cl
+// 0x6f5b: push   bx
+// 0x6f5c: push   dx
+
         case 0x11D8: // "U*"
         {
-            ax = Pop();
+            unsigned short ax = Pop();
             bx = Pop();
             unsigned int x = (unsigned int)ax * (unsigned int)bx;
             Push(x&0xFFFF);
@@ -1886,16 +2087,24 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x12F7: Push(Pop() & Pop()); break; // AND
         case 0x1366: Push(Pop() ^ Pop()); break; // XOR
         case 0x0F74: Push(Pop() + Pop()); break; // "+"
+        case 0x4bc5: Push((signed short)((char)Read8(Pop()))); break; // "+-@" sign extend
+        case 0x1355:  // "TOGGLE"
+        {
+            unsigned short ax = Pop();
+            bx = Pop();
+            Write8(bx, Read8(bx)^(ax&0xFF));
+        }
+        break;
+
         case 0x0F94: // "-"
             bx = Pop();
-            ax = Pop();
-            Push(ax - bx);
+            Push(Pop() - bx);
         break;
         case 0x0FB5: Push(Pop() * Pop()); break; // *
         case 0x11C8: Push(-Pop()); break; // NEGATE
         case 0x1309: if (Pop() == 0) Push(1); else Push(0); break;// "NOT"
         case 0x128B: if (Pop() == 0) Push(1); else Push(0); break; // "0="
-        case 0x1007: ax = Pop(); Push(ax+ax); break; // 2*
+        case 0x1007: Push(Pop()*2); break; // 2*
         case 0x4984: Push(Pop()+3); break; // "3+"
         case 0x0FE9: Push(Pop()+1); break; // "1+"
         case 0x0FF8: Push(Pop()-1); break; // "1-"
@@ -1916,7 +2125,7 @@ void Call(unsigned short addr, unsigned short bx)
         {
             bx = Pop();
             int ds = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Write16Long(ds, bx, ax);
             //printf("Write16Long to 0x%04x:0x%04x = %x\n", ds, bx, ax);
         }
@@ -1935,7 +2144,7 @@ void Call(unsigned short addr, unsigned short bx)
         {
             bx = Pop();
             int ds = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Write8Long(ds, bx, ax&0xFF);
             //printf("Write8Long to 0x%x:0x%x = %x\n", ds, bx, ax);
         }
@@ -1944,14 +2153,16 @@ void Call(unsigned short addr, unsigned short bx)
         {
             bx = Pop();
             int ds = Pop();
-            ax = Read8Long(ds, bx);
+            unsigned short ax = Read8Long(ds, bx);
             Push(ax);
         }
         break;
         case 0x0F85:  // "+!"
+        {
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Write16(bx, Read16(bx) + ax);
+        }
         break;
 
         // ------ standard stack operations ------
@@ -1962,13 +2173,16 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x0DF2: bx = regsp; Push(Read16(bx+2)); Push(Read16(bx)); break; // "2DUP"
         case 0x0DCA: if (Read16(regsp) != 0) Push(Read16(regsp)); break; //"?DUP"
         case 0x0EF4: // "SWAP"
+        {
             dx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Push(dx);
             Push(ax);
+        }
         break;
         case 0x0E08: // "2SWAP"
-            ax = Pop();
+        {
+            unsigned short ax = Pop();
             bx = Pop();
             cx = Pop();
             dx = Pop();
@@ -1976,15 +2190,18 @@ void Call(unsigned short addr, unsigned short bx)
             Push(ax);
             Push(dx);
             Push(cx);
+        }
         break;
         case 0x0EB5: // "ROT"
+        {
             dx = Pop();
             bx = Pop();
-            ax = Pop();
+            unsigned short ax = Pop();
             Push(bx);
             Push(dx);
             Push(ax);
-            break;
+        }
+        break;
 
         // ------------------------------
 
@@ -2045,6 +2262,7 @@ int main()
     // Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
     Write16(0x2420, 0x0F22-2); // "0"
+
     /*
     // default interrupt vector
     Write16Long(0, 0x1C*4+2, 0xF000);
@@ -2055,7 +2273,7 @@ int main()
         Step();
     }
 
-    GraphicsWait();
+    //GraphicsWait();
     GraphicsQuit();
 
     return 0;
