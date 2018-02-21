@@ -166,11 +166,11 @@ char* Extract(int fileidx, int *size)
     return buf;
 }
 
-char* ExtractRecord(int fileidx, int recordidx, int *size)
+char* ExtractRecord(int fileidx, int recordidx)
 {
     int i;
-    static char record[256];
-    memset(record, 0, 256);
+    static char record[512];
+    memset(record, 0, 512);
 
     DIRENTRY *de = GetDirByIdx(fileidx);
     if (de == NULL) exit(1);
@@ -185,21 +185,21 @@ char* ExtractRecord(int fileidx, int recordidx, int *size)
         file = fopen(FILESTARA, "rb");
     }
 
-    if ((start&(~1023)) != ((start+de->blocksize)&(~1023)))
+    if ((start&(~1023)) != ((start+de->blocksize-1)&(~1023)))
     {
         start = (start+de->blocksize)&(~1023);
     }
     for(i=0; i<recordidx; i++)
     {
         start = start+de->blocksize;
-        if ((start&(~1023)) != ((start+de->blocksize)&(~1023)))
+        if ((start&(~1023)) != ((start+de->blocksize-1)&(~1023)))
         {
             start = (start+de->blocksize)&(~1023);
         }
     }
 
     fseek(file, start, SEEK_SET);
-    fread(record, dir->blocksize, 1, file);
+    fread(record, de->blocksize, 1, file);
     fclose(file);
     return record;
 }
@@ -308,7 +308,7 @@ void ExtractDictionary(const char* filename)
     fclose(fp);
 }
 
-void ExtractBankRecords(FILE *fp, int idx, const char *label)
+void ExtractTextRecords(FILE *fp, int idx, const char *label, int containslength)
 {
     int i;
     fprintf(fp, "char *%s_STRINGS[] =\n{\n", label);
@@ -317,13 +317,20 @@ void ExtractBankRecords(FILE *fp, int idx, const char *label)
 
     for(int i=0; i<de->nblocks; i++)
     {
-        char* buf = ExtractRecord(de->idx, i, &size);
-        int n = buf[0];
-        fprintf(fp, "  \"");
-        for(int j=1; j<=n; j++)
+        char* buf = ExtractRecord(de->idx, i);
+        if (containslength)
         {
-            fprintf(fp, "%c", buf[j]);
+            int n = buf[0];
+            fprintf(fp, "  \"");
+            for(int j=1; j<=n; j++)
+                fprintf(fp, "%c", buf[j]);
+        } else
+        {
+            fprintf(fp, "  \"");
+            for(int j=0; j<de->blocksize; j++)
+                fprintf(fp, "%c", buf[j]);
         }
+
         if (i != de->nblocks-1) fprintf(fp, "\",\n"); else fprintf(fp, "\"\n");
     }
     fprintf(fp, "};\n\n");
@@ -359,7 +366,30 @@ void ExtractDataFile(const char* filename)
     }
     fprintf(fp, "} FILEINDEXES;\n\n");
 
-    ExtractBankRecords(fp, 0xe, "BANK");
+    ExtractTextRecords(fp, 0x0b, "BOX", 0);
+    ExtractTextRecords(fp, 0x0e, "BANKTRANS", 1);
+
+    //ExtractTextRecords(fp, 0x3a, "BUTTONS", 0);
+    //ExtractTextRecords(fp, 0x44, "CREATURE", 0);
+    //ExtractTextRecords(fp, 0x1a, "ELEMENT", 0);
+    //ExtractTextRecords(fp, 0x1c, "ARTIFACT", 0);
+    //ExtractTextRecords(fp, 0x10, "CREWMEMBER", 0);
+    //ExtractTextRecords(fp, 0x19, "VESSEL", 0);
+    //ExtractTextRecords(fp, 0x20, "PLANET", 0);
+    //ExtractTextRecords(fp, 0x43, "REGIONS", 0);
+    //ExtractTextRecords(fp, 0x87, "PSTATS", 0);
+
+#ifdef STARFLT1
+    ExtractTextRecords(fp, 0x39, "ANALYZETEXT", 0);
+    ExtractTextRecords(fp, 0x28, "SPECIMEN", 0);
+    //ExtractTextRecords(fp, 0x2b, "BIODATA", 0); // points to the same data as specimen
+    //ExtractTextRecords(fp, 0x82, "COMPOUNDS", 0);
+#else
+    //ExtractTextRecords(fp, 0x09, "STIS", 0);
+    //ExtractTextRecords(fp, 0x15, "TRADERS", 0);
+    //ExtractTextRecords(fp, 0x1e, "COMPOUNDS", 0);
+    //ExtractTextRecords(fp, 0x28, "TRADEMAP", 0);
+#endif
 
     fprintf(fp, "#endif\n");
     fclose(fp);
