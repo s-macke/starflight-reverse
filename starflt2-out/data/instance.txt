@@ -2511,16 +2511,16 @@ IROOT        species:32 size:0
                     STRING       species:32 size:0   
                   NOTICE       species:236 size:1   
                     STRING       species:32 size:0   
-            MESSAGE      species:156 size:17   
-            MESSAGE      species:75 size:17   
-            MESSAGE      species:203 size:17   
-            MESSAGE      species:77 size:17   
-            MESSAGE      species:232 size:17   
-              MESSAGE'     species:101 size:2   
-            MESSAGE      species:0 size:17   
-            MESSAGE      species:92 size:17   
-            MESSAGE      species:238 size:17   
-            MESSAGE      species:164 size:17   
+            MESSAGE      species:156 size:17   ...CONTACT OF A VERY LIMITED NATURE. IT REFERS TO ITSELF AS UHL. IT APPEARS TO BE MUCH TOO STRONG FOR US. THERE IS LITTLE WE CAN DO. RECOMMEND THAT YOU...
+            MESSAGE      species:75 size:17   ...BREAKDOWN OF OUR ENTIRE CIVILIZATION...PANIC...MASS SUICIDES...HAVE ATTEMPTED TO FLEE IN COLONY SHIPS BUT THERE SIMPLY HASN'T BEEN ENOUGH TIME...
+            MESSAGE      species:203 size:17   ...BUT IT SEEMS TO BE COMPLETELY INVULNERABLE...FOR SOME REASON THE DWEENLE SEEM UNAFFECTED...DEATH TOLL IS NOW AT 16.4 BILLION AND PROSPECTS FOR THE FEW OF US THAT REMAIN SANE ARE NOT ENCOURAGING.
+            MESSAGE      species:77 size:17   ..TO PROTECT THE HALLS OF MEMORY FROM THOSE UNDER THE CONTROL OF THE UHL... CANNOT AFFORD TO LET THEM HAVE ACCESS TO ALL OF THE INFORMATION THERE...
+            MESSAGE      species:232 size:17   THEY MIGHT POSSIBLY DESTROY IT OR USE IT FOR DESTRUCTIVE PURPOSES... HAVE CREATED THE GUARDIAN FORTRESS SATELLITE...
+              MESSAGE'     species:101 size:2   NINININININININININININININININI
+            MESSAGE      species:0 size:17   ... HAVE DISCOVERED A CONTINUUM FLUX PATH THAT LEADS FROM THE HALLS OF MEMORY TO THE ANOMALY... FEW HAVE ATTEMPTED ESCAPE THROUGH THE ANOMALY. UNKNOWN IF... HAVE BEEN SUCCESSFUL.
+            MESSAGE      species:92 size:17   ... NOT LONG BEFORE ... LAST OF US WILL BE FORCED TO CHOOSE BETWEEN SUICIDE OR PSYCHIC DOMINATION... WE ARE LOST... GAVE KEY TO THE GUARDIAN SATELLITE TO THE DWEENLE... PERHAPS SOME DAY, IF ANY OF US HAVE SURVIVED... REBUILD OUR CIVILIZATION.
+            MESSAGE      species:238 size:17   ... LAST STRONGHOLD AT THE HALLS OF MEMORY, LOCATED AT 26S X 135E ... PREPARING FOR DEATH ... HOPE ... DESPAIR ... 
+            MESSAGE      species:164 size:17   NOTICE TO ALL SPEMIN WORSHIPPERS WHO HAVE COME HERE TO THESE SACRED LEGHK RUINS TO GAZE UPON THE MOST VALUABLE THING
         ENCOUNTER    species:2 size:19   
       STARSYSTEM   species:77 size:9   129 32 24 1 72 3 255
         PLANET       species:1 size:10   
@@ -2582,8 +2582,8 @@ IROOT        species:32 size:0
         PLANET       species:17 size:10   
       STARSYSTEM   species:65 size:9   129 32 176 1 64 3 112
         PLANET       species:50 size:10   
-          MESSAGE      species:97 size:17   
-            MESSAGE'     species:0 size:2   
+          MESSAGE      species:97 size:17   NINITGR^ISPE^SI9IIII^ISIIO^I? AI
+            MESSAGE'     species:0 size:2   ...UNABLE TO DETERMINE ITS ORIGIN, ITS MOTIVATIONS, OR ITS PRECISE NATURE. WE DO NOT EVEN KNOW IF IT IS SENTIENT. ALL WE KNOW IS THAT IT PERVADES OUR SPACE AND THREATENS OUR EXISTENCE. MILLIONS HAVE GONE INSANE. PLEASE, WE NEED ASSISTANCE...
           RUIN         species:6 size:7   
         PLANET       species:9 size:10   
         PLANET       species:10 size:10   
@@ -2665,10 +2665,10 @@ IROOT        species:32 size:0
         PLANET       species:11 size:10   
         PLANET       species:58 size:10   
           MESSAGE      species:83 size:17   
-            MESSAGE'     species:0 size:2   
-            MESSAGE'     species:119 size:2   
-            MESSAGE'     species:193 size:2   
-            MESSAGE'     species:58 size:2   
+            MESSAGE'     species:0 size:2   WE KNOW THAT THE HALLS ARE LOCATED SOMEWHERE NEAR THE COORDINATES 30S X 134E.
+            MESSAGE'     species:119 size:2   WE HAVE ASCERTAINED THAT THE STAR SYSTEM THAT THE HALLS OF MEMORY ARE IN IS A GREEN CLASS-A STAR AND FORMS AN EQUILATERAL TRIANGLE WITH THE HOOK AND THE 6 YELLOW STONES.
+            MESSAGE'     species:193 size:2   WE SURMISE THAT THESE WERE CONSTELLATIONS IN THE LEGHK COSMOLOGY, BUT AS TO WHERE THESE ARE ... PERHAPS THOSE ABOARD THE ELTHAR-ESH WILL BE ABLE TO ANSWER THE QUESTION ... 
+            MESSAGE'     species:58 size:2   TO ANY WHO MAY COME AFTER US. WE HAVE BUILT THIS STRUCTURE AND STOPPED HERE TO REST AND REPAIR OUR SHIP. WE HAVE STUDIED THE GUARDIAN TRANSMITTER KEY AND HAVE MADE A DUPLICATE FOR OUR OWN NEEDS.
           RUIN         species:6 size:7   
         PLANET       species:17 size:10   
         ENCOUNTER    species:23 size:19   
@@ -2759,9 +2759,9 @@ IROOT        species:32 size:0
         ENCOUNTER    species:6 size:19   
       STARSYSTEM   species:66 size:9   129 32 80 3 112 0 204
         PLANET       species:56 size:10   
-          MESSAGE      species:182 size:17   
-            MESSAGE'     species:77 size:2   
-            MESSAGE'     species:230 size:2   
+          MESSAGE      species:182 size:17   WE SHALL LEAVE THE ORIGINAL HERE IN CASE WE ARE UNSUCCESFUL AND ANY OTHER ATTEMPTS ARE MADE AFTER US. NOW, WE SHALL PROCEED ON TO THE HALLS OF MEMORY, AND HOPEFULLY THIS TIME WE SHALL BE ABLE TO GET PAST THE GUARDIAN SATELLITE.
+            MESSAGE'     species:77 size:2   IF WE ARE UNSUCCESFUL, THEN IT WILL BE TOO LATE FOR OUR RACE. WHOEVER YOU ARE, IF YOU ARE NOT UHL, GOOD LUCK AND WISH US LUCK IF YOU CAN. - CAPTAIN OF THE ELTHAR-ESH.
+            MESSAGE'     species:230 size:2   9 DAYS WE HAVE SPENT HERE TRYING TO FIGURE OUT WHERE WE COULD HAVE GONE WRONG. I AM CERTAIN THAT THOSE ON ELTHESH COULD NOT HAVE BEEN MISTAKEN. THE HALLS OF MEMORY SHOULD BE HERE.
           RUIN         species:6 size:7   
           ARTIFACT     species:44 size:10   
         PLANET       species:8 size:10   
@@ -2895,8 +2895,8 @@ IROOT        species:32 size:0
         PLANET       species:4 size:10   
         PLANET       species:6 size:10   
         PLANET       species:39 size:10   
-          MESSAGE      species:77 size:17   
-            MESSAGE'     species:1 size:2   
+          MESSAGE      species:77 size:17   TAKE NOTE- BEWARE THE SHYNEUM PLANET IN THE SYSTEM 117,153. THERE RESIDES AN AWFUL THING.
+            MESSAGE'     species:1 size:2   ... HAVE DISCOVERED THAT THERE EXISTS A PLACE BUILT BY THE LEGHK, AND REFERRED TO THEM AS THE HALLS OF MEMORY. THIS, WE HAVE DETERMINED, WAS THE REPOSITORY OF ALL THE CUMULATIVE LEARNING OF THE ANCIENT LEGHK CIVILIZATION.
           RUIN         species:6 size:7   
           ENCOUNTER    species:23 size:19   
         ENCOUNTER    species:23 size:19   
@@ -2913,9 +2913,9 @@ IROOT        species:32 size:0
       STARSYSTEM   species:77 size:9   129 32 240 4 184 5 255
         PLANET       species:5 size:10   
         PLANET       species:35 size:10   
-          MESSAGE      species:21 size:17   
-            MESSAGE'     species:129 size:2   
-            MESSAGE'     species:244 size:2   
+          MESSAGE      species:21 size:17    UPON CLOSER EXAMINATION WE, THE HIGH BLOB COUNCIL, HAVE DETERMINED THAT THE MOST VALUABLE THING IS ACTUALLY JUST A WORTHLESS LUMP OF SHINEY GREEN GLASS.
+            MESSAGE'     species:129 size:2   IN OUR TYPICALLY CLEVER FASHION WE HAVE SOLD IT TO THE FOOLISH G'NUNK WHO WERE WILLING TO PAY AN EXORBITANT AMT. PRAISE THE GREAT BLOB GODDESS.
+            MESSAGE'     species:244 size:2   BUOB,UILLIN^IELINIIIIIIONI^NININ
         PLANET       species:8 size:10   
         PLANET       species:12 size:10   
         PLANET       species:17 size:10   

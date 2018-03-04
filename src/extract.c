@@ -356,11 +356,6 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         {
             fprintf(fp, "%i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
         }
-#ifdef STARFLT1
-        if (class == 0x30) // string
-        {
-            HuffmanDecode(fp, &buf[a+13], buf[a+12]);
-        }
         if (class == 0x35) // message
         {
             HuffmanDecode(fp, &buf[a+26], buf[a+25]);
@@ -369,7 +364,13 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         {
             HuffmanDecode(fp, &buf[a+41], buf[a+40]);
         }
+#ifdef STARFLT1
+        if (class == 0x30) // string
+        {
+            HuffmanDecode(fp, &buf[a+13], buf[a+12]);
+        }
 #endif
+
         fprintf(fp, "\n");
 
         if (children != 0) IterSibling(fp, buf, iter+1, children);
