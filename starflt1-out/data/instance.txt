@@ -1705,22 +1705,22 @@ IROOT        species:32 size:0
         PLANET       species:7 size:0   
         PLANET       species:18 size:0   
           ARTIFACT     species:9 size:6   
-          MESSAGE      species:74 size:17   
-          MESSAGE      species:183 size:17   
-          MESSAGE      species:105 size:17   
-          MESSAGE      species:0 size:17   
-          MESSAGE      species:151 size:17   
-          MESSAGE      species:245 size:17   
-          MESSAGE      species:134 size:17   
-          MESSAGE      species:0 size:17   
-          MESSAGE      species:85 size:17   
-          MESSAGE      species:9 size:17   
-          MESSAGE      species:0 size:17   
-          MESSAGE      species:162 size:17   
-          MESSAGE      species:81 size:17   
+          MESSAGE      species:74 size:17   LOG - ...PEOPLE ARE PANICKING. THE SOLAR FLARES ARE INTENSIFYING. THE BEST ESTIMATES GIVE US 3 DAYS AT THE OUTSIDE. LOG ENTRY 2-28-3480 SURFACE TEMP. IS AT 150 DEGREES C., ONLY BEING THIS FAR UNDERGROUND HAS KEPT US ALIVE THIS LONG...
+          MESSAGE      species:183 size:17   CORNERSTONE INSCRIPTION - BEN AND ANNA'S ACADEMY OF INDEPENDENT THINKING
+          MESSAGE      species:105 size:17   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+          MESSAGE      species:0 size:17   NEWSPAPER - JAN 28, 3478 - SCIENTISTS EXPECT CANCER CURE BREAKTHROUGH ANY DAY...
+          MESSAGE      species:151 size:17   NEWSPAPER - MARCH 22, 3477 - NEW GOVERNMENT TAX HIKE TO GO INTO EFFECT. EFFECTIVE THIS APRIL MIDDLE INCOME FAMILIES CAN EXPECT TO PAY 260% OF THEIR ANNUAL INCOME IN TAXES.
+          MESSAGE      species:245 size:17   MAGAZINE - MAY 3, 3450 - IN AN INTERVIEW YESTERDAY GEORGE SCHMENGE, THE DONOR FOR THE FIRST SUCCESSFUL BRAIN TRANSPLANT HAD LITTLE TO SAY.
+          MESSAGE      species:134 size:17   SIGN -  FIRST CHURCH OF THE LAST LAUGH. TODAY'S SERMON - SO FAR, SO WHAT?
+          MESSAGE      species:0 size:17   ANCIENT HISTORY TEXT BOOK - ...IN PRIMITIVE SOCIETIES IT BECAME POPULAR FOR A SHORT TIME TO SIT COUNTLESS HOURS IN FRONT OF 2 DIMENSIONAL PHOSPHOR SCREENS AND LIVE OUT FANTASIES. MANY HISTORIANS BELIEVE THIS ACTIVITY MARKED THE DOWNFALL OF CIVILIZATION.
+          MESSAGE      species:85 size:17   NEWSPAPER - 3404 - LOVELY LUNAR LANSCAPES. OWN YOUR OWN HOME IN THOSE FINAL YEARS AFTER RETIREMENT. LIVE IN QUIET SERENITY BY THE SEA OF TRANQUILITY. CRATERSIDE HOMES ARE NOW AVAILABLE AND START AT ONLY 699,000,000. SENIOR CITIZENS 200 YRS AND UP ONLY.
+          MESSAGE      species:9 size:17   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+          MESSAGE      species:0 size:17   NEWSPAPER - FEB. 8, 3465 - ...THE DEATH OF JOHNNY BEAVER MARKED THE EXTINCTION OF THE LAST ANIMAL SPECIES OTHER THAN MAN ON EARTH. THE ENVIRONMENTAL PROTECTION AGENCY WAS FORCED TO CLOSE DOWN DUE TO THE LACK OF ANY ENVIRONMENT TO PROTECT.
+          MESSAGE      species:162 size:17   NEWSPAPER APRIL 1, 3465 - A REPRESENTATIVE FROM CMIS, CHRISTIAN MISSIONARIES IN SPACE, REPORTS THE SUCCESSFUL CONVERSION OF AN ENTIRE PLANET OF QUASI-HUMANOIDS IN THE OMEGA SECTOR. 'ONCE AGAIN WE HAVE SAVED A RACE FROM THEIR NATIVE CULTURAL DEPRAVITY.'
+          MESSAGE      species:81 size:17   SIGN - STARFLIGHT NAVIGATIONAL RESEARCH STATION
         PLANET       species:6 size:0   
           ARTIFACT     species:8 size:6   
-          MESSAGE      species:8 size:17   
+          MESSAGE      species:8 size:17   LETTER - ...HEREBY REQUEST THAT THE RESEARCHERS AT THE MARS POLAR STATION BE DIRECTED TO LOOK INTO THIS AND ...
         PLANET       species:17 size:0   
         PLANET       species:17 size:0   
         PLANET       species:16 size:0   
@@ -1728,14 +1728,14 @@ IROOT        species:32 size:0
       STARSYSTEM   species:75 size:8   188 255 200 6 192 2 175
         PLANET       species:5 size:0   
         PLANET       species:19 size:0   
-          MESSAGE      species:77 size:17   
-          MESSAGE      species:179 size:17   
-          MESSAGE      species:20 size:17   
+          MESSAGE      species:77 size:17   NOTICE - TO ALL PERSONNEL - EARTH BASE ONE, AT 12N X 104W IS TEMPORARILY QUARANTINED DUE TO...
+          MESSAGE      species:179 size:17   REQUEST - ...MINING STATIONS 25 THROUGH 158 ON PLANET 4 REQUEST IMMEDIATE SUPPLIES. WE ARE...
+          MESSAGE      species:20 size:17   SIGN - MARDAN 4 MINING STATION NO. 82
         PLANET       species:17 size:0   
         PLANET       species:20 size:0   
-          MESSAGE      species:119 size:17   
+          MESSAGE      species:119 size:17   SIGN - MARDAN 4 MINING STATION NO. 17
           MESSAGE      species:185 size:17   
-          MESSAGE      species:0 size:17   
+          MESSAGE      species:0 size:17   SOME ARCANE AND INDECIPHERABLE PHLEGMAK WRITING.
         PLANET       species:15 size:0   
         PLANET       species:13 size:0   
       STARSYSTEM   species:71 size:8   196 255 184 6 192 2 52
@@ -1746,7 +1746,7 @@ IROOT        species:32 size:0
         PLANET       species:10 size:0   
         PLANET       species:21 size:0   
           ARTIFACT     species:3 size:6   
-          MESSAGE      species:67 size:17   
+          MESSAGE      species:67 size:17   COORDINATE LISTING - ... AT 59N X 22E, BASE 2 AT 54N X 13E DOMICILE AT...
         PLANET       species:17 size:0   
         PLANET       species:13 size:0   
       STARSYSTEM   species:70 size:8   128 255 64 7 184 0 0
@@ -1769,31 +1769,31 @@ IROOT        species:32 size:0
           ARTIFACT     species:3 size:6   
       STARSYSTEM   species:79 size:8   32 0 0 6 192 4 16
         PLANET       species:23 size:0   
-          MESSAGE      species:0 size:17   
-            MESSAGE'     species:185 size:2   
-            MESSAGE'     species:70 size:2   
-            MESSAGE'     species:168 size:2   
-            MESSAGE'     species:34 size:2   
-            MESSAGE'     species:166 size:2   
-            MESSAGE'     species:63 size:2   
-            MESSAGE'     species:0 size:2   
-            MESSAGE'     species:161 size:2   
+          MESSAGE      species:0 size:17   ENTRY 2 - IT WOULD SEEM THAT THE ELECTRO-MAGNETIC FIELD AROUND THE CRYSTAL PLANET IS, IN FACT, BLOCKING COMMUNICATIONS SINCE IT HAS BEEN AN HOUR AND I HAVE STILL RECEIVED NO TRANSMISSION FROM CRYSTAL BASE 1.
+            MESSAGE'     species:185 size:2   ENTRY 2 CONT. - I AM THEREFORE WRITING IN THIS LOG AS PLANNED, AND WILL ATTEMPT TO FIND A SAFE PLACE FOR IT BEFORE THE EXPLOSION.
+            MESSAGE'     species:70 size:2   ENTRY 3 - I HAVE REACHED THE CONTROL CENTER AND HAVE SET THE CHARGES. IT APPEARS TO BE A MASSIVE RUIN OF THE ANCIENTS. THE QUEER CRYSTALLINE LUMPS OF ENDURIUM ARE EVERYWHERE HERE.
+            MESSAGE'     species:168 size:2   ENTRY 4 - I HAVE JUST HAD AN ASTOUNDING EXPERIENCE! I CAN HARDLY BELIEVE IT BUT I SEEM TO HAVE MADE TELEPATHIC CONTACT WITH THE ANCIENTS. THEY ARE HERE! ON THE CRYSTAL PLANET, CONTROLLING IT!
+            MESSAGE'     species:34 size:2   ENTRY 4 CONT. - I WISH THERE WAS SOME WAY FOR ME TO COMMUNICATE WHAT I HAVE FOUND. THE EXPLOSION IS SET FOR T-MINUS 40 MINUTES. IN THE EVENT THAT THE CRYSTAL PLANET IS NOT DESTROYED, I CAN ONLY HOPE THAT THIS LOG IS FOUND BY SOMEONE.
+            MESSAGE'     species:166 size:2   ENTRY 4 CONT.- I CAN HARDLY BELIEVE IT! THOSE WEIRD LUMPS ARE ACTUALLY INTELLIGENT LIFE. THE ANCIENTS ARE ENDURIUM! AND WE HAVE SPENT HUNDREDS OF YEARS HUNTING THEM TO BURN FOR FUEL IN OUR SHIPS.
+            MESSAGE'     species:63 size:2   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+            MESSAGE'     species:0 size:2   ENTRY 4 CONT.- THIS CRYSTAL PLANET WAS THEIR LAST DEFENSE. I CAN HARDLY BLAME THEM. CARBON BASED LIFE MUST HAVE SEEMED SOMETHING LIKE A VIRUS TO THEM. JUST THE SAME, I HOPE THE EXPLOSION WORKS. IT LOOKS LIKE AT THIS POINT IT'S US OR THEM. MCCONNELL OUT.
+            MESSAGE'     species:161 size:2   VRHSRR0URUKIARUKKKKVISEDKSDESRR 
       STARSYSTEM   species:71 size:8   80 0 160 5 224 3 238
         PLANET       species:5 size:0   
         PLANET       species:24 size:0   
           ARTIFACT     species:6 size:6   
-          MESSAGE      species:137 size:17   
-          MESSAGE      species:227 size:17   
-          MESSAGE      species:143 size:17   
-          MESSAGE      species:238 size:17   
-          MESSAGE      species:96 size:17   
+          MESSAGE      species:137 size:17   REPORT - ... HAVE FINALLY LOCATED HARRISON'S BASE OF OPERATIONS ON NEW SCOTLAND, AND ONCE AGAIN HE'S A STEP AHEAD OF US. WE BELIEVE HE MAY HAVE RELOCATED AT 44S X 137W ON THE FIRST PLANET OF SYSTEM 81,98. WE WILL PROCEED TO...
+          MESSAGE      species:227 size:17   ORDERS - ...REPORT IMMEDIATELY TO BASE 59N X 22E FOR NEW ORDERS FROM HARRISON. THE NEXT...
+          MESSAGE      species:143 size:17   PAPERS - HARRISON HAS ONCE AGAIN BEEN SUCCESSFUL IN HIS LATEST RAID. THIS TIME THE ATTACK WAS ON SIX EMPIRE CARGO SHIPS BOUND FOR...
+          MESSAGE      species:238 size:17   NEWSPAPER - ... OF THE EMPIRE NOW SUSPECT THAT HARRISON'S BASE IS HERE ON NEW SCOTLAND AND THAT HIS TROOPS ARE SECRETED HERE AMONGST OUR POPULATION...
+          MESSAGE      species:96 size:17   INSTITUTE RESEARCH REPORT TO ELOWAN HOMEWORLD BASE 60S X 45E  - WE HAVE ASCERTAINED THAT THE DEAD ZONE IS COREWARD OF THE X-COORDINATE 200. WE HAVE ALSO DETERMINED THAT THE CAUSE OF THE FLARES IS SOMEWHERE COREWARD AND UPSPIN OF OUR PRESENT LOCATION...
         PLANET       species:12 size:0   
         PLANET       species:16 size:0   
         PLANET       species:13 size:0   
         PLANET       species:14 size:0   
       STARSYSTEM   species:75 size:8   80 0 160 5 192 3 88
         PLANET       species:25 size:0   
-          MESSAGE      species:219 size:17   
+          MESSAGE      species:219 size:17   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
         PLANET       species:15 size:0   
         PLANET       species:13 size:0   
       STARSYSTEM   species:70 size:8   80 0 160 5 208 3 20
@@ -1802,7 +1802,7 @@ IROOT        species:32 size:0
       STARSYSTEM   species:75 size:8   28 1 8 4 8 1 31
         PLANET       species:5 size:0   
         PLANET       species:26 size:0   
-          MESSAGE      species:0 size:17   
+          MESSAGE      species:0 size:17   WRITING IN A VARIANT OF OLD EMPIRE ENGLISH - ...HARRISON HAS LANDED AND BUILT STRUCTURES AT 44S X 137W . TO ENSURE OUR SAFETY WE MUST REPORT HIM TO THE EMPIRE.
         PLANET       species:17 size:0   
         PLANET       species:16 size:0   
           ENCOUNTER    species:7 size:17   
@@ -1823,7 +1823,7 @@ IROOT        species:32 size:0
       STARSYSTEM   species:77 size:8   220 1 136 2 16 3 65
         PLANET       species:28 size:0   
           ARTIFACT     species:14 size:6   
-          MESSAGE      species:184 size:17   
+          MESSAGE      species:184 size:17   THE ONLY THING DECIPHERABLE IN SOME ALIEN WRITINGS ARE PLANETARY COORDINATES 12N X 32E .
         PLANET       species:14 size:0   
       STARSYSTEM   species:70 size:8   96 1 128 3 64 6 92
         PLANET       species:10 size:0   
@@ -1881,8 +1881,8 @@ IROOT        species:32 size:0
         PLANET       species:30 size:0   
           ENCOUNTER    species:2 size:17   
           ARTIFACT     species:10 size:6   
-          MESSAGE      species:59 size:17   
-          MESSAGE      species:151 size:17   
+          MESSAGE      species:59 size:17   AMIDST PILES OF ALIEN BOOKS SOME WRITING FROM THE OLD EMPIRE - ...THE PYTHAGORAS CONSTELLATION AT 216,87...
+          MESSAGE      species:151 size:17   MICROFILM - ...REASON TO BELIEVE THERE IS A BLACK EGG DEVICE IN SOME PHLEGMAK RUINS AT 52N X 16E ON THE THIRD PLANET OF SYSTEM 238,189...
         PLANET       species:7 size:0   
         PLANET       species:8 size:0   
         PLANET       species:14 size:0   
@@ -2058,7 +2058,7 @@ IROOT        species:32 size:0
                     STRING       species:32 size:0   THE END
         BOX          species:4 size:8   
           PLANET       species:31 size:0   
-            MESSAGE      species:1 size:17   
+            MESSAGE      species:1 size:17   REPORT - TO COLONY CONTROL AT 16S X 20W , PLANET 4, SYSTEM 118,146 - DUE TO THE INCREASED DEMAND FOR HYPER-TRITICALE AND A RECENT INFESTATION OF SMALL FURRY CREATURES WHICH HAVE DEPLETED OUR STOCK WE...
         BOX          species:4 size:8   
           PLANET       species:16 size:0   
         BOX          species:4 size:8   
@@ -2066,7 +2066,7 @@ IROOT        species:32 size:0
       STARSYSTEM   species:75 size:8   52 1 216 3 40 3 239
         PLANET       species:6 size:0   
         PLANET       species:32 size:0   
-          MESSAGE      species:127 size:17   
+          MESSAGE      species:127 size:17   INTELLIGENCE COMMUNICATION - ...SHIP WAS ATTACKED BY THE GAZURTOID. ALL CREW WERE KILLED AND THE NEW CLOAKING DEVICE WAS STOLEN. A PROBE WAS ABLE TO TRACK THEIR SHIP'S TACHYON TRAIL TO THE SYSTEM 68,66. OTHER THAN THAT WE DON'T...
         PLANET       species:17 size:0   
         PLANET       species:17 size:0   
         PLANET       species:15 size:0   
@@ -2078,7 +2078,7 @@ IROOT        species:32 size:0
         PLANET       species:17 size:0   
         PLANET       species:33 size:0   
           ARTIFACT     species:12 size:6   
-          MESSAGE      species:31 size:17   
+          MESSAGE      species:31 size:17   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
         ENCOUNTER    species:8 size:17   
         ENCOUNTER    species:8 size:17   
         ENCOUNTER    species:8 size:17   
@@ -2101,14 +2101,14 @@ IROOT        species:32 size:0
         PLANET       species:35 size:0   
           ENCOUNTER    species:10 size:17   
           ARTIFACT     species:3 size:6   
-          MESSAGE      species:0 size:17   
+          MESSAGE      species:0 size:17   CAPTAIN'S LOG ENTRY - OCTOBER 31, 3480 - WE HAVE MANAGED TO SET UP A CAMP OF SORTS HERE, AND HAVE ENOUGH SUPPLIES TO KEEP US ALIVE FOR SEVERAL MONTHS. WE WERE ON OUR WAY TO ESTABLISH THE NOAH 9 COLONY WORLD OF 'HEAVEN' WHEN THE SHIP BLEW.
         PLANET       species:15 size:0   
       STARSYSTEM   species:77 size:8   100 0 120 5 240 2 164
         PLANET       species:36 size:0   
           ENCOUNTER    species:19 size:17   
-          MESSAGE      species:143 size:17   
-            MESSAGE'     species:64 size:2   
-            MESSAGE'     species:219 size:2   
+          MESSAGE      species:143 size:17   THE MECHANS ARE CURRENTLY IN PREPARATION PHASE CODE BLUE. OUR ARRIVAL WOULD HAVE INITIATED CODE RED, AND WE WOULD HAVE TAKEN CONTROL OF THE MECHANS. I BELIEVE OUR SHIP WAS SABOTAGED BY THE LAYTONITES, DAMN THEM. HALF OF MY CREW IS DEAD.
+            MESSAGE'     species:64 size:2   THEIR BOMB BLEW OUT THE ENTIRE AFT QUARTER SECTION OF THE SHIP. I DON'T KNOW HOW WE MADE IT DOWN TO THE SURFACE IN THAT DEFECTIVE POD. I JUST HOPE OUR LUCK HOLDS OUT. CAPTAIN OUT.
+            MESSAGE'     species:219 size:2   SIGN - RONALD PETER GAAL MEMORIAL RESEARCH STATION.
         PLANET       species:14 size:0   
         PLANET       species:13 size:0   
       STARSYSTEM   species:71 size:8   208 0 160 4 248 1 108
@@ -2204,7 +2204,7 @@ IROOT        species:32 size:0
         PLANET       species:8 size:0   
         PLANET       species:41 size:0   
         PLANET       species:42 size:0   
-          MESSAGE      species:88 size:17   
+          MESSAGE      species:88 size:17   REPORT - PROJECT TELEPORT, 1-2-3380 - ...IN SHORT WE HAVE DEVISED A SCHEME TO TELEPORT AN OPERATIVE FROM A SPECIALLY BUILT STARBASE (WHICH WILL BE KNOWN AS CRYSTAL BASE 1) TO THE SURFACE OF THE CRYSTAL PLANET.
       STARSYSTEM   species:66 size:8   140 0 40 5 168 2 128
         PLANET       species:14 size:0   
       STARSYSTEM   species:79 size:8   140 0 40 5 160 2 231
@@ -2214,15 +2214,15 @@ IROOT        species:32 size:0
         PLANET       species:8 size:0   
         PLANET       species:6 size:0   
         PLANET       species:43 size:0   
-          MESSAGE      species:158 size:17   
-            MESSAGE'     species:67 size:2   
-            MESSAGE'     species:0 size:2   
-            MESSAGE'     species:156 size:2   
-            MESSAGE'     species:39 size:2   
-            MESSAGE'     species:191 size:2   
-            MESSAGE'     species:103 size:2   
-            MESSAGE'     species:6 size:2   
-            MESSAGE'     species:106 size:2   
+          MESSAGE      species:158 size:17   BECAUSE OF THE PROBLEMS INVOLVED WITH A TELEPORTATION OF THIS DISTANCE WE WILL NOT BE ABLE TO RETRIEVE THE OPERATIVE. THE VOLUNTEER WILL BE SENT IN WITH A NUCLEAR EXPLOSIVE. IF POSSIBLE HE WILL STAY IN COMMUNICATION WITH THE STARBASE.
+            MESSAGE'     species:67 size:2   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+            MESSAGE'     species:0 size:2   COMMUNICATION TRANSCRIPT - CRYSTAL BASE 1 TO AKTERON INSTITUTE, 8-8-3382   ...BEEN 14 HOURS SINCE COMMANDER MCCONNELL WAS SENT DOWN. AT NO POINT HAVE WE RECEIVED ANY COMMUNICATION FROM HIM.
+            MESSAGE'     species:156 size:2   AT EXACTLY 12 HRS AND 11 MINUTES AFTER HIS DEPARTURE WE WITNESSED AN EXPLOSION ON THE PLANET'S SURFACE. WE ARE NOW SENDING OUT DRONES TO TEST THE DEFENSES OF THE CRYSTAL PLANET IN AN ATTEMPT TO ASCERTAIN THE EFFECT OF THE EXPLOSION...
+            MESSAGE'     species:39 size:2   RESEARCH COUNCIL RECOMMENDATION 5-5-3386 - ...THEREFORE IT IS OUR FINDING THAT THE ONLY EFFECTIVE MEANS OF DESTROYING THE CRYSTAL PLANET IS WITH THE USE OF 3 DEVICES. THE FIRST OF THESE, THE CRYSTAL ORB, IS NEEDED TO NULLIFY THE DEFENSES OF THE PLANET.
+            MESSAGE'     species:191 size:2   THIS IS IN THE POSSESSION OF THE VELOX AND IS KNOWN TO THEM AS THE SMALL EGG. THE SECOND DEVICE IS THE CRYSTAL CONE. THIS IS NEEDED TO IDENTIFY FROM ORBIT THE LOCATION OF THE CONTROL NEXUS, AND IS KNOWN TO BE AT COORDINATES 29S X 55W ON THE FIRST
+            MESSAGE'     species:103 size:2   PLANET IN SYSTEM 20,198. UNFORTUNATELY THIS IS DEEP IN UHLEK SPACE. THE CRYSTAL PLANET IS ONLY VULNERABLE AT THE CONTROL NEXUS.
+            MESSAGE'     species:6 size:2   LASTLY, A BOMB OF SUFFICIENT EXPLOSIVE POWER IS REQUIRED. THE ACTUAL FORCE NECESSARY IS UNKNOWN BUT OUR BEST ESTIMATES INDICATE SOMETHING ON THE ORDER OF BEVA-TONS.
+            MESSAGE'     species:106 size:2   EKSDKSDKSDKSDKSDKSDKSDKSDKSRTSE 
       STARSYSTEM   species:70 size:8   156 0 8 5 56 4 3
         PLANET       species:2 size:0   
         PLANET       species:6 size:0   
