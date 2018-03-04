@@ -427,16 +427,13 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
     char *s = GetWordName(e);
     fprintf(fp, "\n// ================================================\n");
     fprintf(fp, "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x", e->addr, s, e->codep, e->parp);
-    if (e->isorphan)
-    {
-        fprintf(fp, " orphan");
-    }
     if (e->stackin != 0xFFFF && (e->codep == CODECALL || pline[e->parp].isasm) )
     {
          fprintf(fp, " params=%i returns=%i", e->stackin, e->stackout);
     }
     fprintf(fp, "\n// ================================================\n");
-    if (e->isentry) fprintf(fp, "// entry\n");
+    if (e->isorphan) fprintf(fp, "// orphan\n");
+    if (e->isentry)  fprintf(fp, "// entry\n");
 }
 
 int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
