@@ -291,7 +291,6 @@ void HuffmanDecode(FILE* fp, char* buf, int n)
     }
 }
 
-
 /*
 standard instands fields:
 IFieldType INST_dash_SIB     = {DIRECTORYIDX, 0x00, 0x03};
@@ -362,6 +361,14 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         {
             HuffmanDecode(fp, &buf[a+13], buf[a+12]);
         }
+        if (class == 0x35) // message
+        {
+            HuffmanDecode(fp, &buf[a+26], buf[a+25]);
+        }
+        if (class == 0x1b) // message
+        {
+            HuffmanDecode(fp, &buf[a+41], buf[a+40]);
+        }
 #endif
         fprintf(fp, "\n");
 
@@ -398,7 +405,6 @@ void ExtractInstance(const char* filename)
             printf("D");
         if (instancedone[i] >= 0x20)
             printf("%c", instancedone[i]);
-
     }
     printf("\n");
     */
