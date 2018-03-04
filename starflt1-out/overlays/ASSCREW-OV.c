@@ -883,8 +883,9 @@ void UNK_0xf128() // UNK_0xf128
 
 
 // ================================================
-// 0xf15c: WORD 'UNK_0xf15e' codep=0x224c parp=0xf15e orphan params=1 returns=0
+// 0xf15c: WORD 'UNK_0xf15e' codep=0x224c parp=0xf15e params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xf15e() // UNK_0xf15e
 {

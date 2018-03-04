@@ -265,8 +265,9 @@ void UNK_0xf07b() // UNK_0xf07b
 
 
 // ================================================
-// 0xf0ef: WORD 'UNK_0xf0f1' codep=0x224c parp=0xf0f1 orphan
+// 0xf0ef: WORD 'UNK_0xf0f1' codep=0x224c parp=0xf0f1
 // ================================================
+// orphan
 
 void UNK_0xf0f1() // UNK_0xf0f1
 {

@@ -394,8 +394,9 @@ void VCLR() // VCLR
 // 0x7b4c: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b4e: WORD 'UNK_0x7b50' codep=0x224c parp=0x7b50 orphan params=0 returns=0
+// 0x7b4e: WORD 'UNK_0x7b50' codep=0x224c parp=0x7b50 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0x7b50() // UNK_0x7b50
 {
@@ -719,8 +720,9 @@ void IFLD_ex_() // IFLD!
 
 
 // ================================================
-// 0x7d39: WORD 'UNK_0x7d3b' codep=0x224c parp=0x7d3b orphan
+// 0x7d39: WORD 'UNK_0x7d3b' codep=0x224c parp=0x7d3b
 // ================================================
+// orphan
 
 void UNK_0x7d3b() // UNK_0x7d3b
 {
@@ -897,8 +899,9 @@ void SELECT_dash_() // SELECT-
 
 
 // ================================================
-// 0x7e2e: WORD 'UNK_0x7e30' codep=0x224c parp=0x7e30 orphan
+// 0x7e2e: WORD 'UNK_0x7e30' codep=0x224c parp=0x7e30
 // ================================================
+// orphan
 
 void UNK_0x7e30() // UNK_0x7e30
 {
@@ -1039,8 +1042,9 @@ void _gt_INACTI() // >INACTI
 
 
 // ================================================
-// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e orphan
+// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e
 // ================================================
+// orphan
 
 void UNK_0x7f0e() // UNK_0x7f0e
 {

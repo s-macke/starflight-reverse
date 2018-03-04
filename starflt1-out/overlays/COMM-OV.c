@@ -690,8 +690,9 @@ IFieldType UNK_0xd9ac = {CREWMEMBERIDX, 0x1d, 0x01};
 IFieldType UNK_0xd9b1 = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
-// 0xd9b4: WORD 'UNK_0xd9b6' codep=0x744d parp=0xd9b6 orphan
+// 0xd9b4: WORD 'UNK_0xd9b6' codep=0x744d parp=0xd9b6
 // ================================================
+// orphan
 IFieldType UNK_0xd9b6 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
@@ -715,8 +716,9 @@ IFieldType UNK_0xd9c5 = {ASSIGN_CREWIDX, 0x1d, 0x03};
 IFieldType UNK_0xd9ca = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xd9cd: WORD 'UNK_0xd9cf' codep=0x744d parp=0xd9cf orphan
+// 0xd9cd: WORD 'UNK_0xd9cf' codep=0x744d parp=0xd9cf
 // ================================================
+// orphan
 IFieldType UNK_0xd9cf = {SHIPIDX, 0x17, 0x02};
 
 // ================================================

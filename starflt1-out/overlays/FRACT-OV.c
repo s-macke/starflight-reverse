@@ -336,8 +336,9 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // 0xe364: dw 0xff80
 
 // ================================================
-// 0xe366: WORD 'UNK_0xe368' codep=0x1d29 parp=0xe368 orphan
+// 0xe366: WORD 'UNK_0xe368' codep=0x1d29 parp=0xe368
 // ================================================
+// orphan
 // 0xe368: db 0x3a 0x20 ': '
 
 // ================================================
@@ -376,8 +377,9 @@ const unsigned short int cc_UNK_0xe7fd = 0xe7fd; // UNK_0xe7fd
 // 0xe386: dw 0x0075
 
 // ================================================
-// 0xe388: WORD 'UNK_0xe38a' codep=0x1d29 parp=0xe38a orphan
+// 0xe388: WORD 'UNK_0xe38a' codep=0x1d29 parp=0xe38a
 // ================================================
+// orphan
 // 0xe38a: db 0x3a 0x20 ': '
 
 // ================================================
@@ -434,8 +436,9 @@ void UNK_0xe3a6() // UNK_0xe3a6
 
 
 // ================================================
-// 0xe3be: WORD 'UNK_0xe3c0' codep=0x1d29 parp=0xe3c0 orphan params=0 returns=1
+// 0xe3be: WORD 'UNK_0xe3c0' codep=0x1d29 parp=0xe3c0 params=0 returns=1
 // ================================================
+// orphan
 // 0xe3c0: mov    ax,[4AB0] // SEED
 // 0xe3c4: mov    cx,7ABD
 // 0xe3c7: imul   cx
@@ -672,8 +675,9 @@ void UNK_0xe541() // UNK_0xe541
 
 
 // ================================================
-// 0xe56b: WORD 'UNK_0xe56d' codep=0x1d29 parp=0xe56d orphan params=0 returns=1
+// 0xe56b: WORD 'UNK_0xe56d' codep=0x1d29 parp=0xe56d params=0 returns=1
 // ================================================
+// orphan
 // 0xe56d: pop    cx
 // 0xe56e: pop    word ptr [E396] // UNK_0xe396
 // 0xe572: push   cx
@@ -1428,8 +1432,9 @@ void UNK_0xea97() // UNK_0xea97
 
 
 // ================================================
-// 0xeacb: WORD 'UNK_0xeacd' codep=0x1d29 parp=0xeacd orphan
+// 0xeacb: WORD 'UNK_0xeacd' codep=0x1d29 parp=0xeacd
 // ================================================
+// orphan
 // 0xeacd: db 0x3a 0x20 ': '
 
 // ================================================

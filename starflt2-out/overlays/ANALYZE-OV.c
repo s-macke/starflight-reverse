@@ -201,8 +201,9 @@ IFieldType UNK_0xec70 = {CREWMEMBERIDX, 0x1a, 0x02};
 LoadDataType UNK_0xec75 = {ELEMENTIDX, 0x00, 0x10, 0x17, 0x6ba9};
 
 // ================================================
-// 0xec7b: WORD 'UNK_0xec7d' codep=0x7394 parp=0xec7d orphan
+// 0xec7b: WORD 'UNK_0xec7d' codep=0x7394 parp=0xec7d
 // ================================================
+// orphan
 LoadDataType UNK_0xec7d = {VESSELIDX, 0x00, 0x01, 0x24, 0x6b5d};
 
 // ================================================
@@ -216,8 +217,9 @@ IFieldType UNK_0xec85 = {VESSELIDX, 0x12, 0x07};
 LoadDataType UNK_0xec8a = {VESSELIDX, 0x04, 0x01, 0x24, 0x6b5d};
 
 // ================================================
-// 0xec90: WORD 'UNK_0xec92' codep=0x7394 parp=0xec92 orphan
+// 0xec90: WORD 'UNK_0xec92' codep=0x7394 parp=0xec92
 // ================================================
+// orphan
 LoadDataType UNK_0xec92 = {VESSELIDX, 0x06, 0x01, 0x24, 0x6b5d};
 
 // ================================================
@@ -231,13 +233,15 @@ LoadDataType UNK_0xec9a = {VESSELIDX, 0x07, 0x02, 0x24, 0x6b5d};
 LoadDataType UNK_0xeca2 = {VESSELIDX, 0x0e, 0x02, 0x24, 0x6b5d};
 
 // ================================================
-// 0xeca8: WORD 'UNK_0xecaa' codep=0x7394 parp=0xecaa orphan
+// 0xeca8: WORD 'UNK_0xecaa' codep=0x7394 parp=0xecaa
 // ================================================
+// orphan
 LoadDataType UNK_0xecaa = {VESSELIDX, 0x12, 0x01, 0x24, 0x6b5d};
 
 // ================================================
-// 0xecb0: WORD 'UNK_0xecb2' codep=0x7420 parp=0xecb2 orphan
+// 0xecb0: WORD 'UNK_0xecb2' codep=0x7420 parp=0xecb2
 // ================================================
+// orphan
 IFieldType UNK_0xecb2 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
@@ -251,8 +255,9 @@ LoadDataType UNK_0xecb7 = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 LoadDataType UNK_0xecbf = {PLANETIDX, 0x02, 0x02, 0x17, 0x6c49};
 
 // ================================================
-// 0xecc5: WORD 'UNK_0xecc7' codep=0x7394 parp=0xecc7 orphan
+// 0xecc5: WORD 'UNK_0xecc7' codep=0x7394 parp=0xecc7
 // ================================================
+// orphan
 LoadDataType UNK_0xecc7 = {PLANETIDX, 0x04, 0x01, 0x17, 0x6c49};
 
 // ================================================

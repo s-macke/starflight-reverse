@@ -277,8 +277,9 @@ IFieldType UNK_0xed4c = {SHIPIDX, 0x25, 0x02};
 IFieldType UNK_0xed51 = {SHIPIDX, 0x27, 0x02};
 
 // ================================================
-// 0xed54: WORD 'UNK_0xed56' codep=0x7420 parp=0xed56 orphan
+// 0xed54: WORD 'UNK_0xed56' codep=0x7420 parp=0xed56
 // ================================================
+// orphan
 IFieldType UNK_0xed56 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================

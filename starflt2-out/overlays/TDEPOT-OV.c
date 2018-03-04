@@ -303,8 +303,9 @@ void UNK_0xe5f2() // UNK_0xe5f2
 
 
 // ================================================
-// 0xe60a: WORD 'UNK_0xe60c' codep=0x224c parp=0xe60c orphan params=0 returns=0
+// 0xe60a: WORD 'UNK_0xe60c' codep=0x224c parp=0xe60c params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe60c() // UNK_0xe60c
 {
@@ -325,8 +326,9 @@ void UNK_0xe616() // UNK_0xe616
 
 
 // ================================================
-// 0xe61e: WORD 'UNK_0xe620' codep=0x224c parp=0xe620 orphan params=0 returns=0
+// 0xe61e: WORD 'UNK_0xe620' codep=0x224c parp=0xe620 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe620() // UNK_0xe620
 {
@@ -372,8 +374,9 @@ void UNK_0xe644() // UNK_0xe644
 
 
 // ================================================
-// 0xe648: WORD 'UNK_0xe64a' codep=0x224c parp=0xe64a orphan params=0 returns=0
+// 0xe648: WORD 'UNK_0xe64a' codep=0x224c parp=0xe64a params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe64a() // UNK_0xe64a
 {
@@ -394,8 +397,9 @@ void UNK_0xe654() // UNK_0xe654
 
 
 // ================================================
-// 0xe65c: WORD 'UNK_0xe65e' codep=0x224c parp=0xe65e orphan params=0 returns=0
+// 0xe65c: WORD 'UNK_0xe65e' codep=0x224c parp=0xe65e params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe65e() // UNK_0xe65e
 {
@@ -513,8 +517,9 @@ void UNK_0xe6ec() // UNK_0xe6ec
 
 
 // ================================================
-// 0xe6f4: WORD 'UNK_0xe6f6' codep=0x224c parp=0xe6f6 orphan params=1 returns=1
+// 0xe6f4: WORD 'UNK_0xe6f6' codep=0x224c parp=0xe6f6 params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe6f6() // UNK_0xe6f6
 {
@@ -1020,8 +1025,9 @@ void UNK_0xeb35() // UNK_0xeb35
 
 
 // ================================================
-// 0xeb43: WORD 'UNK_0xeb45' codep=0x224c parp=0xeb45 orphan
+// 0xeb43: WORD 'UNK_0xeb45' codep=0x224c parp=0xeb45
 // ================================================
+// orphan
 
 void UNK_0xeb45() // UNK_0xeb45
 {

@@ -424,8 +424,9 @@ IFieldType UNK_0xe3a1 = {STARSYSTEMIDX, 0x0b, 0x01};
 IFieldType UNK_0xe3a6 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
-// 0xe3a9: WORD 'UNK_0xe3ab' codep=0x7394 parp=0xe3ab orphan
+// 0xe3a9: WORD 'UNK_0xe3ab' codep=0x7394 parp=0xe3ab
 // ================================================
+// orphan
 LoadDataType UNK_0xe3ab = {TRADE_MAPIDX, 0x14, 0x04, 0x74, 0x6d54};
 
 // ================================================
@@ -1922,8 +1923,9 @@ void UNK_0xeeb7() // UNK_0xeeb7
 
 
 // ================================================
-// 0xeecf: WORD 'UNK_0xeed1' codep=0x224c parp=0xeed1 orphan params=0 returns=1
+// 0xeecf: WORD 'UNK_0xeed1' codep=0x224c parp=0xeed1 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xeed1() // UNK_0xeed1
 {

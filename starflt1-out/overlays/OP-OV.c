@@ -269,8 +269,9 @@ IFieldType UNK_0xe470 = {EVALUATIONIDX, 0x14, 0x01};
 IFieldType UNK_0xe475 = {EVALUATIONIDX, 0x15, 0x0f};
 
 // ================================================
-// 0xe478: WORD 'UNK_0xe47a' codep=0x224c parp=0xe47a orphan params=0 returns=0
+// 0xe478: WORD 'UNK_0xe47a' codep=0x224c parp=0xe47a params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe47a() // UNK_0xe47a
 {

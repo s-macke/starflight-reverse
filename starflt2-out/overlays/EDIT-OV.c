@@ -338,8 +338,9 @@ void UNK_0xef16() // UNK_0xef16
 
 
 // ================================================
-// 0xef24: WORD 'UNK_0xef26' codep=0x224c parp=0xef26 orphan params=0 returns=1
+// 0xef24: WORD 'UNK_0xef26' codep=0x224c parp=0xef26 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xef26() // UNK_0xef26
 {
@@ -348,8 +349,9 @@ void UNK_0xef26() // UNK_0xef26
 
 
 // ================================================
-// 0xef32: WORD 'UNK_0xef34' codep=0x224c parp=0xef34 orphan params=1 returns=0
+// 0xef32: WORD 'UNK_0xef34' codep=0x224c parp=0xef34 params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xef34() // UNK_0xef34
 {

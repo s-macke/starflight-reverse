@@ -198,13 +198,15 @@ const unsigned short int cc_UNK_0xec1e = 0xec1e; // UNK_0xec1e
 // 0xec16: dw 0x0020
 
 // ================================================
-// 0xec18: WORD 'UNK_0xec1a' codep=0x2214 parp=0xec1a orphan
+// 0xec18: WORD 'UNK_0xec1a' codep=0x2214 parp=0xec1a
 // ================================================
+// orphan
 // 0xec1a: dw 0x0043
 
 // ================================================
-// 0xec1c: WORD 'UNK_0xec1e' codep=0x2214 parp=0xec1e orphan
+// 0xec1c: WORD 'UNK_0xec1e' codep=0x2214 parp=0xec1e
 // ================================================
+// orphan
 // 0xec1e: dw 0x0044
 
 // ================================================

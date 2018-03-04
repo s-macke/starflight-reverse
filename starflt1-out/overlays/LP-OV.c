@@ -211,8 +211,9 @@ const unsigned short int cc_UNK_0xe0da = 0xe0da; // UNK_0xe0da
 // 0xe0da: dw 0x0044
 
 // ================================================
-// 0xe0dc: WORD 'UNK_0xe0de' codep=0x224c parp=0xe0de orphan
+// 0xe0dc: WORD 'UNK_0xe0de' codep=0x224c parp=0xe0de
 // ================================================
+// orphan
 
 void UNK_0xe0de() // UNK_0xe0de
 {
@@ -259,8 +260,9 @@ void UNK_0xe100() // UNK_0xe100
 
 
 // ================================================
-// 0xe10a: WORD 'UNK_0xe10c' codep=0x224c parp=0xe10c orphan
+// 0xe10a: WORD 'UNK_0xe10c' codep=0x224c parp=0xe10c
 // ================================================
+// orphan
 
 void UNK_0xe10c() // UNK_0xe10c
 {
@@ -443,8 +445,9 @@ void UNK_0xe2bb() // UNK_0xe2bb
 
 
 // ================================================
-// 0xe2c5: WORD 'UNK_0xe2c7' codep=0x224c parp=0xe2c7 orphan
+// 0xe2c5: WORD 'UNK_0xe2c7' codep=0x224c parp=0xe2c7
 // ================================================
+// orphan
 
 void UNK_0xe2c7() // UNK_0xe2c7
 {
@@ -461,8 +464,9 @@ void UNK_0xe2c7() // UNK_0xe2c7
 
 
 // ================================================
-// 0xe2dc: WORD 'UNK_0xe2de' codep=0x73ea parp=0xe2de orphan
+// 0xe2dc: WORD 'UNK_0xe2de' codep=0x73ea parp=0xe2de
 // ================================================
+// orphan
 LoadDataType UNK_0xe2de = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
 
 // ================================================
@@ -516,8 +520,9 @@ LoadDataType UNK_0xe326 = {CREATUREIDX, 0x13, 0x03, 0x9c, 0x69d8};
 LoadDataType UNK_0xe32e = {CREATUREIDX, 0x16, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe334: WORD 'UNK_0xe336' codep=0x73ea parp=0xe336 orphan
+// 0xe334: WORD 'UNK_0xe336' codep=0x73ea parp=0xe336
 // ================================================
+// orphan
 LoadDataType UNK_0xe336 = {CREATUREIDX, 0x19, 0x01, 0x9c, 0x69d8};
 
 // ================================================
@@ -526,8 +531,9 @@ LoadDataType UNK_0xe336 = {CREATUREIDX, 0x19, 0x01, 0x9c, 0x69d8};
 LoadDataType UNK_0xe33e = {CREATUREIDX, 0x1a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe344: WORD 'UNK_0xe346' codep=0x73ea parp=0xe346 orphan
+// 0xe344: WORD 'UNK_0xe346' codep=0x73ea parp=0xe346
 // ================================================
+// orphan
 LoadDataType UNK_0xe346 = {CREATUREIDX, 0x1d, 0x01, 0x9c, 0x69d8};
 
 // ================================================
@@ -606,18 +612,21 @@ LoadDataType UNK_0xe3b6 = {CREATUREIDX, 0x3a, 0x02, 0x9c, 0x69d8};
 LoadDataType UNK_0xe3be = {CREATUREIDX, 0x3c, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3c4: WORD 'UNK_0xe3c6' codep=0x73ea parp=0xe3c6 orphan
+// 0xe3c4: WORD 'UNK_0xe3c6' codep=0x73ea parp=0xe3c6
 // ================================================
+// orphan
 LoadDataType UNK_0xe3c6 = {CREATUREIDX, 0x3f, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3cc: WORD 'UNK_0xe3ce' codep=0x73ea parp=0xe3ce orphan
+// 0xe3cc: WORD 'UNK_0xe3ce' codep=0x73ea parp=0xe3ce
 // ================================================
+// orphan
 LoadDataType UNK_0xe3ce = {CREATUREIDX, 0x42, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3d4: WORD 'UNK_0xe3d6' codep=0x73ea parp=0xe3d6 orphan
+// 0xe3d4: WORD 'UNK_0xe3d6' codep=0x73ea parp=0xe3d6
 // ================================================
+// orphan
 LoadDataType UNK_0xe3d6 = {CREATUREIDX, 0x45, 0x03, 0x9c, 0x69d8};
 
 // ================================================
@@ -626,23 +635,27 @@ LoadDataType UNK_0xe3d6 = {CREATUREIDX, 0x45, 0x03, 0x9c, 0x69d8};
 LoadDataType UNK_0xe3de = {CREATUREIDX, 0x48, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3e4: WORD 'UNK_0xe3e6' codep=0x73ea parp=0xe3e6 orphan
+// 0xe3e4: WORD 'UNK_0xe3e6' codep=0x73ea parp=0xe3e6
 // ================================================
+// orphan
 LoadDataType UNK_0xe3e6 = {CREATUREIDX, 0x4b, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3ec: WORD 'UNK_0xe3ee' codep=0x73ea parp=0xe3ee orphan
+// 0xe3ec: WORD 'UNK_0xe3ee' codep=0x73ea parp=0xe3ee
 // ================================================
+// orphan
 LoadDataType UNK_0xe3ee = {CREATUREIDX, 0x4e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3f4: WORD 'UNK_0xe3f6' codep=0x73ea parp=0xe3f6 orphan
+// 0xe3f4: WORD 'UNK_0xe3f6' codep=0x73ea parp=0xe3f6
 // ================================================
+// orphan
 LoadDataType UNK_0xe3f6 = {CREATUREIDX, 0x51, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3fc: WORD 'UNK_0xe3fe' codep=0x73ea parp=0xe3fe orphan
+// 0xe3fc: WORD 'UNK_0xe3fe' codep=0x73ea parp=0xe3fe
 // ================================================
+// orphan
 LoadDataType UNK_0xe3fe = {CREATUREIDX, 0x54, 0x03, 0x9c, 0x69d8};
 // 0xe404: db 0xea 0x73 0x44 0x57 0x03 0x9c 0xd8 0x69 ' sDW   i'
 
@@ -652,23 +665,27 @@ LoadDataType UNK_0xe3fe = {CREATUREIDX, 0x54, 0x03, 0x9c, 0x69d8};
 LoadDataType UNK_0xe40e = {CREATUREIDX, 0x5a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe414: WORD 'UNK_0xe416' codep=0x73ea parp=0xe416 orphan
+// 0xe414: WORD 'UNK_0xe416' codep=0x73ea parp=0xe416
 // ================================================
+// orphan
 LoadDataType UNK_0xe416 = {CREATUREIDX, 0x5d, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe41c: WORD 'UNK_0xe41e' codep=0x73ea parp=0xe41e orphan
+// 0xe41c: WORD 'UNK_0xe41e' codep=0x73ea parp=0xe41e
 // ================================================
+// orphan
 LoadDataType UNK_0xe41e = {CREATUREIDX, 0x60, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe424: WORD 'UNK_0xe426' codep=0x73ea parp=0xe426 orphan
+// 0xe424: WORD 'UNK_0xe426' codep=0x73ea parp=0xe426
 // ================================================
+// orphan
 LoadDataType UNK_0xe426 = {CREATUREIDX, 0x63, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe42c: WORD 'UNK_0xe42e' codep=0x73ea parp=0xe42e orphan
+// 0xe42c: WORD 'UNK_0xe42e' codep=0x73ea parp=0xe42e
 // ================================================
+// orphan
 LoadDataType UNK_0xe42e = {CREATUREIDX, 0x66, 0x03, 0x9c, 0x69d8};
 // 0xe434: db 0xea 0x73 0x44 0x69 0x03 0x9c 0xd8 0x69 ' sDi   i'
 
@@ -678,23 +695,27 @@ LoadDataType UNK_0xe42e = {CREATUREIDX, 0x66, 0x03, 0x9c, 0x69d8};
 LoadDataType UNK_0xe43e = {CREATUREIDX, 0x6c, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe444: WORD 'UNK_0xe446' codep=0x73ea parp=0xe446 orphan
+// 0xe444: WORD 'UNK_0xe446' codep=0x73ea parp=0xe446
 // ================================================
+// orphan
 LoadDataType UNK_0xe446 = {CREATUREIDX, 0x6f, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe44c: WORD 'UNK_0xe44e' codep=0x73ea parp=0xe44e orphan
+// 0xe44c: WORD 'UNK_0xe44e' codep=0x73ea parp=0xe44e
 // ================================================
+// orphan
 LoadDataType UNK_0xe44e = {CREATUREIDX, 0x72, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe454: WORD 'UNK_0xe456' codep=0x73ea parp=0xe456 orphan
+// 0xe454: WORD 'UNK_0xe456' codep=0x73ea parp=0xe456
 // ================================================
+// orphan
 LoadDataType UNK_0xe456 = {CREATUREIDX, 0x75, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe45c: WORD 'UNK_0xe45e' codep=0x73ea parp=0xe45e orphan
+// 0xe45c: WORD 'UNK_0xe45e' codep=0x73ea parp=0xe45e
 // ================================================
+// orphan
 LoadDataType UNK_0xe45e = {CREATUREIDX, 0x78, 0x03, 0x9c, 0x69d8};
 // 0xe464: db 0xea 0x73 0x44 0x7b 0x03 0x9c 0xd8 0x69 ' sD{   i'
 
@@ -704,13 +725,15 @@ LoadDataType UNK_0xe45e = {CREATUREIDX, 0x78, 0x03, 0x9c, 0x69d8};
 LoadDataType UNK_0xe46e = {CREATUREIDX, 0x7e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe474: WORD 'UNK_0xe476' codep=0x73ea parp=0xe476 orphan
+// 0xe474: WORD 'UNK_0xe476' codep=0x73ea parp=0xe476
 // ================================================
+// orphan
 LoadDataType UNK_0xe476 = {CREATUREIDX, 0x81, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe47c: WORD 'UNK_0xe47e' codep=0x73ea parp=0xe47e orphan
+// 0xe47c: WORD 'UNK_0xe47e' codep=0x73ea parp=0xe47e
 // ================================================
+// orphan
 LoadDataType UNK_0xe47e = {CREATUREIDX, 0x84, 0x03, 0x9c, 0x69d8};
 
 // ================================================
@@ -773,8 +796,9 @@ void UNK_0xe4ca() // UNK_0xe4ca
 
 
 // ================================================
-// 0xe4d6: WORD 'UNK_0xe4d8' codep=0x224c parp=0xe4d8 orphan
+// 0xe4d6: WORD 'UNK_0xe4d8' codep=0x224c parp=0xe4d8
 // ================================================
+// orphan
 
 void UNK_0xe4d8() // UNK_0xe4d8
 {

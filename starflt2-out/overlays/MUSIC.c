@@ -261,23 +261,27 @@ const unsigned short int cc_VGAS = 0xf1fa; // VGAS
 // 0xeb7e: dw 0x000e
 
 // ================================================
-// 0xeb80: WORD 'UNK_0xeb82' codep=0x2214 parp=0xeb82 orphan
+// 0xeb80: WORD 'UNK_0xeb82' codep=0x2214 parp=0xeb82
 // ================================================
+// orphan
 // 0xeb82: dw 0x0003
 
 // ================================================
-// 0xeb84: WORD 'UNK_0xeb86' codep=0x2214 parp=0xeb86 orphan
+// 0xeb84: WORD 'UNK_0xeb86' codep=0x2214 parp=0xeb86
 // ================================================
+// orphan
 // 0xeb86: dw 0x0005
 
 // ================================================
-// 0xeb88: WORD 'UNK_0xeb8a' codep=0x2214 parp=0xeb8a orphan
+// 0xeb88: WORD 'UNK_0xeb8a' codep=0x2214 parp=0xeb8a
 // ================================================
+// orphan
 // 0xeb8a: dw 0x0007
 
 // ================================================
-// 0xeb8c: WORD 'UNK_0xeb8e' codep=0x2214 parp=0xeb8e orphan
+// 0xeb8c: WORD 'UNK_0xeb8e' codep=0x2214 parp=0xeb8e
 // ================================================
+// orphan
 // 0xeb8e: dw 0x0009
 // 0xeb90: db 0x14 0x22 0x0a 0x00 0x14 0x22 0x0b 0x00 0x14 0x22 0x0c 0x00 0x14 0x22 0x0d 0x00 0x14 0x22 0x10 0x00 0x14 0x22 0x24 0x00 ' "   "   "   "   "   "$ '
 
@@ -320,8 +324,9 @@ void UNK_0xebbe() // UNK_0xebbe
 
 
 // ================================================
-// 0xebc4: WORD 'UNK_0xebc6' codep=0x224c parp=0xebc6 orphan params=1 returns=1
+// 0xebc4: WORD 'UNK_0xebc6' codep=0x224c parp=0xebc6 params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0xebc6() // UNK_0xebc6
 {
@@ -694,8 +699,9 @@ void UNK_0xf01b() // UNK_0xf01b
 
 
 // ================================================
-// 0xf02b: WORD 'UNK_0xf02d' codep=0x1d29 parp=0xf02d orphan
+// 0xf02b: WORD 'UNK_0xf02d' codep=0x1d29 parp=0xf02d
 // ================================================
+// orphan
 // 0xf02d: db 0x3a 0x20 0x05 0x41 ':  A'
 
 // ================================================

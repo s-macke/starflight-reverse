@@ -1613,8 +1613,9 @@ void UNK_0xf312() // UNK_0xf312
 
 
 // ================================================
-// 0xf394: WORD 'UNK_0xf396' codep=0x224c parp=0xf396 orphan
+// 0xf394: WORD 'UNK_0xf396' codep=0x224c parp=0xf396
 // ================================================
+// orphan
 
 void UNK_0xf396() // UNK_0xf396
 {
@@ -1624,8 +1625,9 @@ void UNK_0xf396() // UNK_0xf396
 
 
 // ================================================
-// 0xf3a0: WORD 'UNK_0xf3a2' codep=0x224c parp=0xf3a2 orphan
+// 0xf3a0: WORD 'UNK_0xf3a2' codep=0x224c parp=0xf3a2
 // ================================================
+// orphan
 
 void UNK_0xf3a2() // UNK_0xf3a2
 {

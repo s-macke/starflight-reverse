@@ -235,8 +235,9 @@ LoadDataType UNK_0xeed2 = {CREATUREIDX, 0x00, 0x14, 0x22, 0x6f07};
 LoadDataType UNK_0xeeda = {CREATUREIDX, 0x14, 0x02, 0x22, 0x6f07};
 
 // ================================================
-// 0xeee0: WORD 'UNK_0xeee2' codep=0x7394 parp=0xeee2 orphan
+// 0xeee0: WORD 'UNK_0xeee2' codep=0x7394 parp=0xeee2
 // ================================================
+// orphan
 LoadDataType UNK_0xeee2 = {CREATUREIDX, 0x1c, 0x01, 0x22, 0x6f07};
 
 // ================================================

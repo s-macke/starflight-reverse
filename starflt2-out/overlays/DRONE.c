@@ -1075,8 +1075,9 @@ void UNK_0xeffc() // UNK_0xeffc
 
 
 // ================================================
-// 0xf016: WORD 'UNK_0xf018' codep=0x224c parp=0xf018 orphan params=0 returns=1
+// 0xf016: WORD 'UNK_0xf018' codep=0x224c parp=0xf018 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf018() // UNK_0xf018
 {

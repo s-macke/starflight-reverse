@@ -351,8 +351,9 @@ LoadDataType UNK_0xe823 = {VESSELIDX, 0x10, 0x01, 0x24, 0x6b5d};
 IFieldType UNK_0xe82b = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
-// 0xe82e: WORD 'UNK_0xe830' codep=0x224c parp=0xe830 orphan
+// 0xe82e: WORD 'UNK_0xe830' codep=0x224c parp=0xe830
 // ================================================
+// orphan
 
 void UNK_0xe830() // UNK_0xe830
 {
@@ -381,8 +382,9 @@ void UNK_0xe83c() // UNK_0xe83c
 
 
 // ================================================
-// 0xe850: WORD 'UNK_0xe852' codep=0x224c parp=0xe852 orphan
+// 0xe850: WORD 'UNK_0xe852' codep=0x224c parp=0xe852
 // ================================================
+// orphan
 
 void UNK_0xe852() // UNK_0xe852
 {
@@ -1698,8 +1700,9 @@ void UNK_0xf05b() // UNK_0xf05b
 
 
 // ================================================
-// 0xf067: WORD 'UNK_0xf069' codep=0x224c parp=0xf069 orphan
+// 0xf067: WORD 'UNK_0xf069' codep=0x224c parp=0xf069
 // ================================================
+// orphan
 
 void UNK_0xf069() // UNK_0xf069
 {

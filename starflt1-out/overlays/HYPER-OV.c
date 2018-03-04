@@ -775,8 +775,9 @@ IFieldType FLAREDATE = {STARSYSTEMIDX, 0x0b, 0x02};
 LoadDataType UNK_0xda65 = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xda6b: WORD 'UNK_0xda6d' codep=0x744d parp=0xda6d orphan
+// 0xda6b: WORD 'UNK_0xda6d' codep=0x744d parp=0xda6d
 // ================================================
+// orphan
 IFieldType UNK_0xda6d = {ORIGINATORIDX, 0x14, 0x01};
 
 // ================================================
@@ -911,8 +912,9 @@ void UNK_0xdade() // UNK_0xdade
 
 
 // ================================================
-// 0xdae8: WORD 'UNK_0xdaea' codep=0x224c parp=0xdaea orphan params=0 returns=1
+// 0xdae8: WORD 'UNK_0xdaea' codep=0x224c parp=0xdaea params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xdaea() // UNK_0xdaea
 {
@@ -993,8 +995,9 @@ void UNK_0xdb32() // UNK_0xdb32
 
 
 // ================================================
-// 0xdb5e: WORD 'UNK_0xdb60' codep=0x224c parp=0xdb60 orphan params=1 returns=0
+// 0xdb5e: WORD 'UNK_0xdb60' codep=0x224c parp=0xdb60 params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xdb60() // UNK_0xdb60
 {
@@ -1500,8 +1503,9 @@ void UNK_0xdf16() // UNK_0xdf16
 
 
 // ================================================
-// 0xdf34: WORD 'UNK_0xdf36' codep=0x224c parp=0xdf36 orphan params=0 returns=2
+// 0xdf34: WORD 'UNK_0xdf36' codep=0x224c parp=0xdf36 params=0 returns=2
 // ================================================
+// orphan
 
 void UNK_0xdf36() // UNK_0xdf36
 {
@@ -1837,8 +1841,9 @@ void UNK_0xe12b() // UNK_0xe12b
 
 
 // ================================================
-// 0xe153: WORD 'UNK_0xe155' codep=0x224c parp=0xe155 orphan
+// 0xe153: WORD 'UNK_0xe155' codep=0x224c parp=0xe155
 // ================================================
+// orphan
 
 void UNK_0xe155() // UNK_0xe155
 {
@@ -1917,8 +1922,9 @@ void _gt__bo_CONTEXT_bc_() // >[CONTEXT]
 
 
 // ================================================
-// 0xe1c9: WORD 'UNK_0xe1cb' codep=0x224c parp=0xe1cb orphan params=0 returns=0
+// 0xe1c9: WORD 'UNK_0xe1cb' codep=0x224c parp=0xe1cb params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe1cb() // UNK_0xe1cb
 {
@@ -2345,8 +2351,9 @@ void DrawMVS() // .MVS
 
 
 // ================================================
-// 0xe440: WORD 'UNK_0xe442' codep=0x224c parp=0xe442 orphan
+// 0xe440: WORD 'UNK_0xe442' codep=0x224c parp=0xe442
 // ================================================
+// orphan
 
 void UNK_0xe442() // UNK_0xe442
 {

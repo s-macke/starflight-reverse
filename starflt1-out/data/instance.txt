@@ -26,10 +26,10 @@ IROOT        species:32 size:0
         BANK-TRANS   species:6 size:6   32 32 amount:8224 32 32
         BANK-TRANS   species:6 size:6   32 32 amount:8224 32 32
         BANK-TRANS   species:6 size:6   32 32 amount:8224 32 32
-      STRING       species:69 size:0   
-      STRING       species:142 size:0   
-      STRING       species:36 size:0   
-        STRING       species:36 size:0   
+      STRING       species:69 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:142 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:36 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+        STRING       species:36 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
       VESSEL       species:16 size:16   
         VESSEL       species:16 size:16   
         VESSEL       species:16 size:16   
@@ -239,1466 +239,1466 @@ IROOT        species:32 size:0
       RUIN         species:7 size:7   
         RUIN         species:7 size:7   
         RUIN         species:7 size:7   
-      STRING       species:12 size:0   
-        STRING       species:12 size:0   
-        STRING       species:12 size:0   
-      STRING       species:23 size:0   
-        STRING       species:23 size:0   
-        STRING       species:23 size:0   
-        STRING       species:23 size:0   
-      STRING       species:14 size:0   
-        STRING       species:14 size:0   
-        STRING       species:14 size:0   
-        STRING       species:14 size:0   
-        STRING       species:14 size:0   
-      STRING       species:2 size:0   
-        STRING       species:2 size:0   
-        STRING       species:2 size:0   
-        STRING       species:2 size:0   
-      STRING       species:9 size:0   
-      STRING       species:10 size:0   
-      STRING       species:32 size:0   
-        STRING       species:32 size:0   
-      STRING       species:127 size:0   
-      STRING       species:31 size:0   
-      STRING       species:52 size:0   
-      STRING       species:131 size:0   
-      STRING       species:30 size:0   
-      STRING       species:102 size:0   
-        STRING       species:102 size:0   
-      STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-        STRING       species:5 size:0   
-      STRING       species:84 size:0   
-      STRING       species:18 size:0   
-      STRING       species:123 size:0   
-      STRING       species:83 size:0   
-      STRING       species:22 size:0   
-      STRING       species:51 size:0   
-      STRING       species:60 size:0   
-      STRING       species:28 size:0   
-      STRING       species:47 size:0   
-      STRING       species:96 size:0   
-      STRING       species:24 size:0   
-      STRING       species:55 size:0   
-      STRING       species:33 size:0   
-      STRING       species:65 size:0   
-      STRING       species:1 size:0   
+      STRING       species:12 size:0   EKSDKSDKSDKSD-UOAKR EEOKKKKVSKVR
+        STRING       species:12 size:0   EKSDKSDKSDKSD-RSA6?KEKKK-KYSDKSD
+        STRING       species:12 size:0   EKSDKSDKSDKSDKKPIKKPIKKKKRSR0LGN
+      STRING       species:23 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDE
+        STRING       species:23 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDE
+        STRING       species:23 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDE
+        STRING       species:23 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDE
+      STRING       species:14 size:0   EKSDKSDKSDKSDKSDKKRKRKVKRKKKVSR8
+        STRING       species:14 size:0   EKSDKSDKSDKSDKSDKB EQN AISRKKKV1
+        STRING       species:14 size:0   EKSDKSDKSDKSDKSDJAH 8.B6KKKSSERE
+        STRING       species:14 size:0   EKSDKSDKSDKSDKSDKK,SRKRIIDKKKVSR
+        STRING       species:14 size:0   EKSDKSDKSDKSDKSDKKEIKSK,6KKKNVKT
+      STRING       species:2 size:0   AMKKAMKKKKDSR8O  KUVOPHECY OF TH
+        STRING       species:2 size:0    RQERNISRKKKVS0SERDEESTTSTIKVOEJ
+        STRING       species:2 size:0   IKDKEK6KKKNVKUOE9 NSWER IMMEDIAT
+        STRING       species:2 size:0   ETKIKNS6KKKNV0EDO?OO ARE FRIGHTE
+      STRING       species:9 size:0   EKSDKSDKSRIAN 8GAE6KKKNKKIEDTATT
+      STRING       species:10 size:0   EKSDKSDKSDKKSR6V6EKKKVSRKI TRKPL
+      STRING       species:32 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+        STRING       species:32 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:127 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:31 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:52 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:131 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:30 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:102 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+        STRING       species:102 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:5 size:0   EKSV DSKRSM KDES9VAIEENE8DVRVDDK
+        STRING       species:5 size:0   EKSRATDQEEJ6KKKNVKRIDSVITIK6KKOJ
+        STRING       species:5 size:0   EKSRA TAKRIGEKKKKVSVIDYCVXXIOGOR
+        STRING       species:5 size:0   EKSRNNH9UO.KKKKVSK-EIY EVIFRIFI.
+        STRING       species:5 size:0   EKSKDYKKRYKKKK0YRSVEKIEVRVDKKV  
+        STRING       species:5 size:0   EKSV.9DXLSKKKKR IDKDKSKIEKRKKKNK
+        STRING       species:5 size:0   EKS-I IKYS IKKKKD IVKRKNKT KDKKK
+        STRING       species:5 size:0   EKS6USKSCNSKKKKR IEK6DSVI RVSKKD
+        STRING       species:5 size:0   EKSV.OKDXS9KKKD IENKEKSKTKSEKKKR
+        STRING       species:5 size:0   EKSV.SKDXA9KKKD IEEKR0.KIKRSKKVS
+        STRING       species:5 size:0   EKSV.AKDXN9KKKD IDKD-SSEE RKKKKE
+        STRING       species:5 size:0   EKSV.NKDXUSKKKKR IRSKI0KEDKEKKKR
+      STRING       species:84 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:18 size:0   EKSDKSDKSDKSDKSDKSDKSDKK IKS0TKI
+      STRING       species:123 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:83 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:22 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKKLK
+      STRING       species:51 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:60 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:28 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:47 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:96 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:24 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:55 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:33 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:65 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:1 size:0   SKOTVKKKKVSKKMEY.VXXUEEKKSRKEIE6KKKKNKKIERRIOEE,EIREEI ERMKOTVKE R6KKKKNKKEYETOEVIETUIGRDKTR6DE IDKKKKVSKKMOTIEEEI ERGOEK SSRKNAIDKKKKVSK-TRTOENGETTEVI.ESOEI ERISRE IDKAOIDKKKKVSKKTTIO IETUUEE0EYDKRENVKKKKVSK0RROEEI ERIFIA'SE
         STRING       species:1 size:0   
-      STRING       species:79 size:0   
-      STRING       species:35 size:0   
-      STRING       species:3 size:0   
-        STRING       species:3 size:0   
-        STRING       species:3 size:0   
-      STRING       species:81 size:0   
-      STRING       species:20 size:0   
-        STRING       species:20 size:0   
-      STRING       species:43 size:0   
-      STRING       species:11 size:0   
-      STRING       species:80 size:0   
-      STRING       species:70 size:0   
-      STRING       species:48 size:0   
-        STRING       species:48 size:0   
-      STRING       species:21 size:0   
-      STRING       species:26 size:0   
-      STRING       species:41 size:0   
-      STRING       species:58 size:0   
+      STRING       species:79 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:35 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:3 size:0   R RSKREET SKIWKKUTUENI0IIERNEVDK
+        STRING       species:3 size:0   G9JRA  KRRKKIMKKIRKKRSKKIIK8RKKI
+        STRING       species:3 size:0   NDAAKREO EKKKKVSKIROIREEI EDTEGE
+      STRING       species:81 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:20 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKS.SS0 
+        STRING       species:20 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKK ISK0
+      STRING       species:43 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:11 size:0   EKSDKSDKSDKSKDPSK0NIKKKKRSR6HLKJ
+      STRING       species:80 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:70 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:48 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+        STRING       species:48 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:21 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSRTSE 
+      STRING       species:26 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:41 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
+      STRING       species:58 size:0   EKSDKSDKSDKSDKSDKSDKSDKSDKSDKSDK
     FRAGMENT     species:32 size:0   
   IAPPLICATION species:32 size:0   
     BOX          species:36 size:8   
       ORIGINATOR   species:21 size:19   
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PULL OVER! THIS IS THE INTERSTEL CORPORATE POLICE. YOU ARE UNDER ARREST. DROP ALL SHIELDS AND DIS-ARM ALL WEAPONS. YOU ARE IN VIOLATION OF INTERGALACTIC SOFTWARE THEFT LAW. DO NOT ATTEMPT TO RESIST.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PULL OVER! THIS IS THE INTERSTEL CORPORATE POLICE. YOU ARE UNDER ARREST. DROP ALL SHIELDS AND DIS-ARM ALL WEAPONS. YOU ARE IN VIOLATION OF INTERGALACTIC SOFTWARE THEFT LAW. DO NOT ATTEMPT TO RESIST.
       ORIGINATOR   species:5 size:19   
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 34762RM - THIRD PLANET OF SEVEN - SYSTEM COORDINATES 163,119 - LIFEBEARING - BIO-DENSITY HIGH - MINERAL DENSITY MEDIUM TO LOW - CODED DATA BR97723 011 1 347 6QS8 82 11AR 22 000 - ENDING TRANSMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 59980GJ - FIRST PLANET OF SIX - SYSTEM COORDINATES 149,133 - MOLTEN, NON-COLONIZABLE - MINERAL DENSITY VERY HIGH - CODED DATA 7899 JD809 340 10 0 90 BT531 118 6AR 67 001 - ENDING TRANSMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 78964TL - THIRD PLANET OF FIVE - SYSTEM COORDINATES 94,42 - LIFEBEARING - BIO-DENSITY MEDIUM - MINERAL DENSITY MEDIUM - CODED DATA GY8 0 011 111 UO78 293 192 374 9AR 33 011 - ENDING TRANSMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 67826AK - THIRD PLANET OF FOUR - SYSTEM COORDINATES 163,46 - LIFEBEARING - BIODENSITY MEDIUM TO LOW - MINERAL DENSITY MEDIUM TO LOW - CODED DATA AD4 346 30 110 6374 227 642 76AR 979 9 88 110 - ENDING TRANSMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 47298BG - THIRD PLANET OF FOUR - SYSTEM COORDINATES 179,195 - LIFEBEARING - BIODENSITY MEDIUM - MINERAL DENSITY MEDIUM - CODED DATA FU80 48 001 20 11 983 249 249 348 8AR 7832 001 - ENDING TRANSMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLANET 4823789PR - SECOND PLANET OF SIX - SYSTEM COORDINATES 17,213 - LIFEBEARING - BIODENSITY VERY HIGH - MINERAL DENSITY HIGH - CODED DATA DH98 324 001 111  749 247 984 184 88AS 1237 007 - ENDING TRANSMISSION.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   COMMENCING TRANSMISSION OF PLANETARY DATA ON STANDARD FREQUENCIES...PLEASE STANDBY.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOMAD PROBE REQUESTING PERMISSION TO TRANSMIT DATA. PLEASE RESPOND.
       ORIGINATOR   species:4 size:19   
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   00001 01111 00000 100001 00011 00001 11100 100001 11000 11110 01111 11111
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   00001 01111 00000 100001 00011 00001 11100 100001 11000 11110 01111 11111
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   00001 01111 00000 100001 00011 00001 11100 100001 11000 11110 01111 11111
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
+          STRING       species:32 size:0   1
+          STRING       species:32 size:0   0
       ORIGINATOR   species:2 size:19   
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AND LO, UNTO THEM IT WAS SAID 'SHALL YE GO FORTH AND CLEANSETH THE GALAXY OF THE ACCURSED BREATHERS OF AIR.'
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   REFLECT UPON THYSELF AND BE APPALLED! FOR ART THOU NOT THE ACCURSED ABOMINATION? AND SO SHALL I RAISETH MY TENTACLE AND SMITE THEE!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FEAR NOT VILE AIR BREATHERS, FOR IN DEATH SHALST THOU FINDETH REDEMPTION, AND I AM THY REDEEMER!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS WRITTEN 'THOU WHO BREATHEST NOT LIQUID BUT RATHER AIR SHALL PERISH IN THE FLAMES OF HOLY RIGHTEOUSNESS'. LOOK UNTO ME AND REPENT FOR I AM THE CARRIER OF THE FLAME AND THY TIME IS AT HAND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALSO IS IT WRITTEN 'ONLY TO THE UHLEK, THY HOLY VANGUARD SHALT THOU SHOW SUFFERENCE. YEA! SUFFER NOT OTHER AIR BREATHERS AND IDOLATERS IN THY RIGHTEOUS PATH, FOR THOU ART THE GAZURTOID, THE HOLY CRUSADERS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AND BLULBGRB BEGAT URGGLBB WHO BEGAT GLBRRGB WHO BEGAT LUBRBGLB WHO BEGAT BULGRB. THEREBY WAS THE BEGATTING BEGUN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INTO THE FIREY REACHES WENT THE CHOSEN ONE OF THE GAZURTOID AND THERE DID HE SEE THAT NO LIQUID BUT ONLY AIR WAS BREATHED. AND UPON RETURNING TO THE LIQUID REALM DID HE THEN PROCLAIM THAT AIR BREATHERS WERE TRULY THE MOST VILE AND HEINOUS OF CREATURES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AND OUT OF DARK NOTHINGNESS WAS CREATED THE WATER BREATHER, AND LO, HE WAS BORED. THEN NEXT WAS THE AIR BREATHER CREATED AND UNTO THE WATER BREATHER WAS IT COMMANDED 'THOU SHALT PERSECUTE HIM AND THEREBY SHALT THY BOREDOM BE VANQUISHED.'
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AND UNTO HIM CAME THE DIVINE REVELATION. 'THOU SHALT BUILDETH A VESSEL AND IT SHALL BE 8 MILLION TENTACLE LENGTHS ROUND, AND THOU SHALT GO FORTH INTO THE VASTNESS OF SPACE AND SO SHALL YE SPREAD MY WORD, AND WITH LOVE COMMITEST MASS GENOCIDE IN MY NAME.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   REPENT, AIR BREATHERS! REPENT! THE HOUR OF JUDGEMENT IS AT HAND!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AM GAZURTOID AND I HAVE COME TO SAVE THEE, YE WHO BREATHEST NOT GLORIOUS LIQUID. DROP THY DEFENSES AND BE SAVED!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YEA! AND UNTO THE HEAVENLY REALM I SEND THEE. FOR I AM THE TENTACLE OF RIGHTEOUSNESS AND I SHALL SMITE THEE WITH LOVE!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FIGHT US NOT, INFIDEL AIR-BREATHERS. WE ARE GAZURTOID, YOUR LAST HOPE OF REDEMPTION.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   REPENT, AIR BREATHERS! REPENT! THE HOUR OF JUDGEMENT IS AT HAND!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AM GAZURTOID AND I HAVE COME TO SAVE THEE, YE WHO BREATHEST NOT GLORIOUS LIQUID. DROP THY DEFENSES AND BE SAVED!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YEA! AND UNTO THE HEAVENLY REALM I SEND THEE. FOR I AM THE TENTACLE OF RIGHTEOUSNESS AND I SHALL SMITE THEE WITH LOVE!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FIGHT US NOT, INFIDEL AIR-BREATHERS. WE ARE GAZURTOID, YOUR LAST HOPE OF REDEMPTION.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YEA! AND THOU HAST COME UNTO THE HOLY LAND, THE PLANET OF THE GAZURTOID. NOW WE SHALL CLEANSE THEE IN A RIGHTEOUS BATH OF HOLY FIRE!
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YEA! AND THOU HAST COME UNTO THE HOLY LAND, THE PLANET OF THE GAZURTOID. NOW WE SHALL CLEANSE THEE IN A RIGHTEOUS BATH OF HOLY FIRE!
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   B
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   B
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   B
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   B
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   B
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   G
+          STRING       species:32 size:0   R
+          STRING       species:32 size:0   U
+          STRING       species:32 size:0   L
+          STRING       species:32 size:0   B
       ORIGINATOR   species:7 size:19   
         SUBJECT      species:15 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FAREWELL FRRIENDSSS. WE SHALLL MEET AGAINN SSOONNN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SSHALLL MEET AGAINNN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ENOUGH TALKINNGG. WE HAVVE SSSAID TOO MMUCH.
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU DO WISSH TO BECOMME ALLIESS DO YYOU NNOT?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARRRE YOU FRRIENDSS OF THE ELLOWWAN?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO YYOU FIGHT THE GAZURRTOID?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARRRE YOU WILLING TO DESSTRROY ELAN, THE SSECRET BASSE PLANNET OF THE UHLEK?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARRRE YOU MEMBERRSS OF THE OLLD HUMANN EMMMPIRRE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAVVE YOU DESSTROYED ELOWANIAN SSHIPSS?
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARRE ALLLIESS, YOURR RRACE ANND MINE, UNITED INN A COMMON CAUSE. WE MUSSST RRID THE GALAXYY OF THOSE WHO WOULD OPPOSSE USSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO NNOT FORRGET ABOUT ELAN. IFF YOU HAVVE NOT ALLREADY DESTROYED IT YOU MUSST DO IT SSSOON, FOR YOURR SSAFETY AS WELL AS OURRSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SHALLL BUILD ANOTHERR EMPIRRE ANND YOU SHALL BE OURR ALLIESS ANND RULE WITH USSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   COMMERRCE ANND MMUTUAL AID AGAINSST A COMMON CAUSE - THESSE ARRRE THE IMPORRTANT THINGSSS TO RREMEMBERRR.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OURR RRACES ARRE MUCH ALIKE. WE BOTHH KNOW WHAT ISS IMPORRTANNT. WE MUSST UNITE FORR THE BENEFIT OF BOTHH OURR PEOPLESS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE CANNOT SSSTAND RRACES WHO COWERR ANND DEBASSSE THEMSSELVESS. THISS LACK OF DIGNNITY ISS APALLLINGG.  ANY RRACE WHO DOESS THISS DESERVESS TO DIE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SSSUPREME TECHNOLOGY ISS THE MOSSST NOBLE GOAL OF SSENTIENCE. JOIN USS IN HELLPING THE LESSS ASSTUTE RRACES BECOMME AWARE OF THISSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   TOGETHERR WE SHALLL MAKE A FORRMIDABLLE FORRRCE. ALL WE NEED ARRE THE PRROPER RRRESOURRCES. IFF ONLY WE HAD THE PLLUTONIUM......
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT ISS NNOT ALWAYSS EASY TO ACCEPT THE FACT THAT THE WEAK MUSSST DIE. BUT THISS ISS THE WAY OF THE UNIVERRSSE ISS IT NNOT?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   A PRROPHET ONCE SSAID THAT IT ISS THE DESSSTINY OF THE THRYNN TO RRRULE THE GALAXY. OF COURRSE THE PRROPHET WASS THRYNN BUT WHAT DOESS THAT MATTERRR?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVVE MADE A GRRRAVE MISSSTAKE INN ANGERRING USSS. WE CANN BE THE BESSST OF FRRIENDSS BUT WE ARRE CERRTAINLLY THE WORSST OF ENEMIESS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WERRE PRREPARRED TO ACCEPT YYOU FULLY AS ALLIESSS. YOU HAVVE PROVENN THAT YOU ARRE NNOT SUITABLE. NNOW WE MUSSST LISST YOU AMONGSST OURR ENEMIESS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVVE LLITTLE TIME, ENEMIESS OF THE THE THRYNN. LLEAVE ANND DO NOT ANNGERR USSS FURRTHERR. WE WOULD RREGRRET DESTROYING YYOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE OFFERR YOU THISS LASSST WARRNING. YOU WILLL VACATE THE VICINITY AT ONNCE ORRR YOU WILLL FACE THE IMMEDIATE ANND DIRRE CONSEQUENCESS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INN EXCHANGE FORR OURRR SAFETY WE OFFERR INFORRMATIONN. YOU MAY ASSK WHAT YOU WILLL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE CLLAIM THE RRRIGHT OF FRREE PASSSAGE AS GUARANTEED ALL NNEUTRRAL RRRACES IN THE INTERRPLANETARRY TRREATY OF 3190.
         SUBJECT      species:11 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE ARRE A LOT OF MYTHSS CONNCERNING THE ANCIENT ONES. WE DO NOTT WASSTE OUR TIME WITH LEGENDS AND SSTORIES. THE ONNLY RRELEVANT INNFORMATION ISS THATT THEY HAVE LEFT BEHIND LUMPSS OF HIGH ENERGY CRYSTAL WHICH WE USSE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHAT HASS BECOME OF THE ANCIENT ONES WE DO NOTT KNOW OR CARE. WE ARE CONNCERNED WITH LOCATING THEIR RUINS FOR THEIR ENERGY RESSOURCE VALUE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE HEARD SSTORIES OF A DEVICE OF THE ANCIENTS WHICH ISS DESSTROYING LIFE IN THE GALAXY. WE HAVE SSSEEN NO EVIDENCE OF THISSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE ARRE CERTAIN DEVICES OF THE ANCIENTS WHICH WOULD BE USSEFUL TO USS. ONE OF THESE IS CALLED THE CRYSTAL PEARL ANND ISS SSAID TO BE INN THE CITY OF THE ANCIENTS. ITT ISS ANN AUTOMATIC WARP-OUT DEVICE FOR WHENNN A SSHIP ISS HEAVVILY DAMAGED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE ASSSCERTAINED THERE ISS THE POSSIBILITY OF A FAIRLY LARGE ANCIENT RUIN AT 42S X 13W ONN PLANET 2 OF SSYSSTEM 154,62. THISS, HOWEVER, ISS DEEP INN ELLLOWANN SSSPACE AND PRESENTSSS SSOMEWHATT OF A RISSK FOR USS.
         SUBJECT      species:10 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARRE, OF COURSSE, AWARE THE OLD EMPIRE WASS DESSTROYED BY INNVADERS IN 3480 OF YOURR DATE SSYSSTEM. PITY. OF COURSSE, WE HAD EXPECTED ALL HUMANNS WERE KILLED. SSSURVIVAL OF THE FITTISSST, HMMMM?.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE RUNN ACROSSS ANDROIDSS OF THE OLD EMPIRE INN OUR TRAVELSS. THERE ISS A GROUP OF THEM WHO HAVE BEENN WAITINNG OVER A MILLENIUM FORR THEIR COLONY GROUP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE LOSST COLONIST SSHIP FORR WHICH THE EMPIRE ANDROIDS WAIT WASS DESSTROYED. WE HAVE FOUNNND THE DERRELICT INN THE SSYSSTEM OF 175,94.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE THRYNN WERE QUITE PROMINENNT INN THE OLD EMPIRE. OF COURSSE, SSINNCE THE HUMANS WERE THE ONES TO SSTRUCTURE IT IT EVENNTUALLY FELL APART. NO OFFENSE AGAINSST THE HUMANS, OF COURSSSE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE OTHERR RACES INN THE OLD EMPIRE WERRE NOTT AS ADVANCED INN DIPLOMACY AS WE THRYNN. THEY DID NOTT UNDERSSTAND THE PROPER AND NNECESSSARY APPLICATION OF FORCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE OLD EMPIRE WASS, OF COURSSE, BASED INN EARTH'S SSYSSTEMM. THISS WASS CERTAINLY A MISSSTAKE. IT SSHOULD HAVE BEENN BASED IN OURR THOSS SSYSSTEM, WHERE THE TRRUE SSEAT OF GOVERNMENT WASS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE DESSSTRUCTION OF THE OLD EMPIRE WASS FORR THE BESSST. NOW THE NEW EMPIRE SSHALL RISE AND TOGETHER WE SSHALL RULE. ALL WE NEED FFROM YOU ARRE CERTAIN DEVICES WHICH WOULD EXPEDITE THISS PROCESSSS.
         SUBJECT      species:9 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IFF ONE WASS TO BRING USS THE SSHIMMERING BALL DEVICE WE WOULD PAY WELL. OURR INNTELLIGENNCE INNDICATES ITT ISS LOCATED INN A GAZURTOID NEBULA. ONE MAY REACH THISS SSYSSTEM BY USING THE CONTINUUM FLUX OF THE CROSS NEXUS AT 98,79.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE CROSS NEXUS ISS A CONSSTELLATION WITH A HIGH DENSITY OF FLUXES. ITT ISS INN GAZURTOID SPACE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE EXISSTSS A DEVICE CALLED THE TESSERACT. THISS DEVICE BELONGS TO THE THRYNN BUTT WASS SSTOLEN BY THE UHLEK. ITT ISS AT SOMEWHERE ONN THE FIFTH PLANET IN SSYSSTEM 18,50. WE HAVE BEEN UNABLE TO REACH ITT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ANOTHER DEVICE THATT WASS SSTOLEN FROM USS BY THE UHLEK ISS A CYLINDRICAL RED DEVICE. ITT ISS KNOWN TO BE ON ANN OLD EMPIRE OUTPOST WORLD THATT WASS ONCE CALLED KOANN-3. ITT ISS LOCATED IN THE SSYSSTEM OF 112,200 AT 59N X 64W.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE EXISSTS A DEVICE INN THE SHAPE OF DODECAHEDRON. THISS ISS AN ANCIENT DISSTRESS BEACON WHICH ATTRACTSS ANNY SSHIPS IN THE AREA. IFF YOU FIND THISS WE WILL PURCHASSE ITT FOR ITS FUNCTIONING ISS OF GREAT INNTERESST TO USS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE RING DEVICE ISS A DEVICE, OF COURSE, INVENNTED BY THE THRYNN BUT WE HAVE LOST THE SSECRET TO ITS WORKING. IT CAUSES CONTINUUM FLUXES TO APPEARR ONN ONES SSHIPS SSCREENS. ONE IS KNOWN TO BE SSOMEWHERE ONN NORRTHERN MARRSSS INN THE OLD EARTH SYSSTEM.
         SUBJECT      species:8 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ELLLOWAN ARRE ANN EVIL RACE OF THE WORSSST TYPE. THEY ARRE CLEVER ANND WILL ATTEMPT TO MANNIPULATE YOU FORR THEIRR OWNN ENNDSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE ARRE MANY EVIL RACES IN THISS SSECTOR OF THE GALAXY. DO NOT BELIEVE THE SSTORIES THE ELLLOWAN TELL ABOUT THEM. THEY ATTACK BECAUSE THEY ARRE EVIL AND THAT ISS ALL. THEY MUSSST BE DESTROYED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT SSO HAPPENSS THE ELLLOWAN USE PLUTONIUM TO BUILD THEIRR SSHIPS. IF YOU SSHOULD HAPPENN TO RUN ACROSSS ANY WRECKED ELLLOWAN SSHIPS YOU COULD SSALVAGE THISS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE ISS AN INSSECTOID RACE CALLED THE VELOXI UPSPIN OF OURR TERRITORY. WE ARRE CURRENTLY ENTERINNG NEGOTIATIONSS AND EXPECT TO BECOME ALLLIES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GAZURTOID ARRE ANN EVILLL RACE UPSPIN ANND OUTWARD OF THRYNN TERRITORY. MISSSILES ARRE INNEFFECTIVE AGAINSST THEIR SSHIPS BECAUSE OF SSPECIAL SSHIELDING. YOU MUSST USSE LASERSSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SSEEK A DEVICE IN THE SSHAPE OF A ROD. THIS CREATES A LASER DEFLECTION SSCREEN ARROUND ONES SSHIP. OUR ONLY LEAD ISS THAT IT ONCE WAS POSSESSED BY A HUMAN NAMED HARRISONN WHO LIVED ON A PLANET CALLED NEW SCOTLAND IN THE UPSPIN SYSSTEM OF THE SSTAFF.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE UHLEK ARRE THE EVILESST OF ALLL RACES. IF ONE WASS TO DESSTROY THEIR SSECRET PLANET OF OPERATIONNS WITH A BLACK EGG BOMB, THEY WOULD BE UTTERRLY DESSTROYED. THISS PLANET ISS CALLED ELAN ANND ISS THE 2ND PLANET OF THE SSYSSTEM - 148,63.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SPEMIN SSHIPSS ARRE EASSILY DEFEATED. THE SPEMIN ARRE ARE A RACE OF BARELY SSENTIENT BLOB CREATURES. THEIRR SSHIP DESIGNN WAS COPIED FROM THE GAZURTOID, BUT THEY DO NNOT UNNDERSTAND WHAT THEY BUILD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE DO NNOT KNOW WHY THE GAZURTOID TOLERATE THE SPEMIN. THE GAZURTOID WILL ATTACK ANNY AIR-BREATHERS. PRROBABLY THE SPEMIN ARRE SSIMPLY NNOT WORRRTH THE GAZURTOIDS TRROUBLE TO DESSTROY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE MINNSSTREL CREATURES WHICH FLOAT INN SSPACE ARE SSPIES FORR THE OTHERR RACES. WE DO NOT TOLERATE THEIRR BABBLINGSS. YOU SSHOULD DESSTROY THEM AS WE DO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ITT ISS NECESSSARY THATT WE DESSTROY THE EVILLL RACES WHO THREATENN OURR SURVIVAL. AS ALLIESS WE CANN DO THISS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE SPEMIN SSPEAK A SSTRANGE AND DISSGUSSTING LANGUAGE. THERE ISS ANN ORB DEVICE WHICH MAKES A QUEERR WHININNG SSOUND. THISS TRANSSLATES THE SPEMIN LANGUAGE. ITT WASS BUILT BY USS BUT WASS LOSST. IF YOU FIND ITT WE SHALL REWARD YOU.
         SUBJECT      species:7 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARRE PRRACTICAL, RRREALISTIC PEOPLE WHO DONNN'T CONCERRNN OURSSSELVES WITH TRRUTH, BEAUTY, ANND OTHERRR SUCH FRRRIVOLOUS NONNSENSSSE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INNN THE OLD EMPIRRRE WE HELD POSSITIONSSS OF POWERR AND PRRRESTIGE. WE BELIEVE INNN COOPERATIONNN CERRTAINLY AND THE GOOD OF ALL BUT THE SSSTRRONG ANND CAPABLE MUSST RRULE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ELLLOWANN ARRE OURR ENEMIESS. THEY ARRE CLEVERR, THOUGH NNOTT WHAT WE WOULD CALLL INTELLLIGENNT. DO NNOTTT LET THEIR FFLOWERY SSSPEECH DECEIVE YOU, YOU CANNNOT TRRUSST THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OURR HOME SSYSSTEM ISS THOSS. THE ELLLOWANN PLANT CREATURRRES INNVADED OURR SSYSSTEM LLLONG AGO ANND WERRE RREPULSSSED. THAT IS, WE DRROVE THEMM AWAY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE, UNNNLIKE THE PLLANT CREATURRRES WHO IDLE AWAY THEIRR TIME DREAMMINNG, BELIEVE INNN PRRODUCTIVITY, PRROGRRESS, ANND DEVELOPMENNT. WE HAVE A GREAT INNTERESST INNN TECHNNOLOGY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ELLLOWANN WILLL DOUBTLESSS MALIGNN USS BUT IT ISS ONLY ANN EFFFORT TO BUILD THEMSSELVESS UP. PAY NO ATTENNTIONN TO THISS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OURR TECHNNOLOGICAL RESSEARCH ISS OF PRIMARRY IMMPORTANCE TO USS. WE THEREFORRE ARRE WILLINNG TO PAY WELLL FOR ANNY SSSPECIAL ARRTIFACTSSS OF INNTERESST THAT YOU MAY FINND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INN OURR RESSEARCH WE REQUIRE LARRGE AMOUNNTS OF THE ELEMENNT PLUTONIUM, ANND ITT ISS VERRY RRARE INN OURR SSYSSTEM. WE WILL PAY WELL FFOR THISS IFF YOU HAPPEN UPON ANNY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARRE A SSOCIAL PEOPLE ANND BELIEVE SSTRONGLY INN THE NNECESSSITY OF PROTOCOL ANND THE PRROPER FORMALITY FFOR THE FUNCTIONINNG OF SSOCIETY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARRE OVIPEROUS, OF COURSSSE, BUT THESE MATTERSS ARRE BETTER LEFFT UNDISSUCSSSED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE THRYNN HAVE A FIRM BELIEF INN WHAT YOU CALL NNATURAL SSSELECTION, ANND THE SSURVIVAL OF THE FITTESSST. WE HAVE A VERRY HIERARCHICAL SSOCIETY ANND A RIGID ETHIC BASED ON DECORUM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE DO NNOTT BELIEVE INN WILD ANND FANNCIFUL THEORIES SUCH AS WHAT THE PLANNT CREATURE ELLLOWANN OCCUPY THEMSSELVES WITH. WE BELIEVE INN SSTRAIGHTFORRRWARRD DIPLOMACY.
         SUBJECT      species:6 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   RRESPOND IMMEDIATELY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU WILL PLEASSE ANSWERRR.
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I HAVVE NOTT BEENN EDUCATED INN THESSE MATTERSSS. PERHAPPSS YOU WISSHH TO KNOW ABOUTT SOMETHING ELSSSE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THISSS SHOULD NOTT CONCERNN YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I WILLL NOT SPEAKK OF THISS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE NOWW GIVE ADDITIONALL WARRNING AS RREQUIRED BY GALACTIC INTERSSPECIESS PRROTOCOLL. YOU MUSSST DEPARRT.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARRE WITHINN THE LIMITSSS OF OURR HOMEWORRRLD TERRITORYY. THISS IS INN VIOLATIONN OF THE TRANSSENTIENT-INVIOLATE-REGION TRREATY OF 3210. DEPARRRT AT ONCCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE NOWW GIVE ADDITIONALL WARRNING AS RREQUIRED BY GALACTIC INTERSSPECIESS PRROTOCOLL. YOU MUSSST DEPARRT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVVE VIOLATED OURRR HOMEWORRLD TERRITORYY. THISSS CANNOT BE ALLOWED. YOU MUSSST PAYY THE CONQUENCESSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YESSS CAPTAIN *, WE RRECOGNIZED YOURR SSHIP. THISS ISSS THIRRD ORRDERRR COMMANDERR %. WELCOME ARRTHLINGSS. PERHAPSS YOU  HAVE BRROUGHT USS SSSOME USEFULL ITEMSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AHHH, JUSST SSSO. WE WISSH PEACE AS WELLL ARRTHLINGSS. IAMM CALLED %. HOW MAYY WE BE OF SERRVICE TO EACH OTHERR?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARRE THYNYNTHYRNN OF THE THRYNN CONFEDERRACYY. WE ARRE THE ELLITE GUARRRD. WHYY DO YOU HAILL USSS?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THISS ISSS CAPTAINN % OF THE THRYNN VESSSEL +. WE GREET YOU IN THE NNAME OF THE THRYNN CONFEDERRACYY OF PLANETSSS. DOUBTLESSS YOU HAVVE COME TO ALLY WITHH USSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FEWW ENEMIESS HAVE LIVVED TO RRREGRET THEIRR PRROVOCATIONNSS OF THE THRYNN. WE ISSUE FINALL WARRNING. DO NOTT PRROVOKE USS FURRTHERR.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVVE THE ADVANTAGE OF USSS. WE RREQUESST THAT YYOU NNOT HARRM USSS AS PER THE IMPERRIAL CODE OF INTERSSTELLARR WARRRFARRE - SURRENDERR PRRROCEDURE, CIRCA 2850. THISS ISS OURRR RRIGHT.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARRE WITHINN THE LIMITSSS OF OURR HOMEWORRRLD TERRITORYY. THISS IS INN VIOLATIONN OF THE TRANSSENTIENT-INVIOLATE-REGION TRREATY OF 3210. DEPARRRT AT ONCCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE NOWW GIVE ADDITIONALL WARRNING AS RREQUIRED BY GALACTIC INTERSSPECIESS PRROTOCOLL. YOU MUSSST DEPARRT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVVE VIOLATED OURRR HOMEWORRLD TERRITORYY. THISSS CANNOT BE ALLOWED. YOU MUSSST PAYY THE CONQUENCESSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SSSO, WE MEET AGAINN. WELCOMME, FRIENDSS OF OURRR FRIENDSS, ENEMIES OF OURRR ENEMIES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AHHH, GREETINGSSS ARTHLINGSS. IT PLEASES USSS TO SSSEE YOU AGAINN. WE SSINCERELY HOPE THAT WE SHALLL BOTH PRROFIT FRROM THISSS MEETING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THISS ISS CAPTAIN % OF THE THRYNN SSHIP +. INTERRSSTELLAR PRROTOCOL DEMANDSS THAT YOU IDENTIFY YOURRSSELVESS ANND YOURR INTENTIONSSS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AM %, SSECOND ORRDERR COMMANDERR OF THE THYNYNTHYRNN LEGIONSS OF THE THRYNN. SSSTATE YOURR ORRIGIN ANND PURRPOSE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREETINGSSS. THISS ISS AMBASSADOR %, RRIDING ON THE SSHIP +. INN THE NAME OF THE THRYNN CONFEDERRACYY OF PLANETSSS I GREET YOU ANND OFFERR OURR HOPES FORR FRRIENDSSHIP ANND MUTUAL COOPERATIONN. PLEASSE RRESPONND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARRE NNOT WELLCOME IN THISS SSSPACE. UNDERR THE CONVENTION ESSTABLISHED BY THE AKTERON TRREATY OF 3225 WE GIVE WARRRNING. DEPARRT IMMEDIATELLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ENEMIESSS OF THE THRYNN, YOU SHOULD NNOT HAVVE COME HERRE. IFF YOU VALLUE YOURR LIVESS YOU WILL LLEAVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ASSK YOU NNOT TO INCITE TRROUBLE BETWEEN OURR RRRACES.
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   SS
+          STRING       species:32 size:0   ASA
+          STRING       species:32 size:0   ESS
+          STRING       species:32 size:0   IR
+          STRING       species:32 size:0   AR
+          STRING       species:32 size:0   ER
+          STRING       species:32 size:0   HSS
+          STRING       species:32 size:0   Y
+          STRING       species:32 size:0   T'L
+          STRING       species:32 size:0   NG'SE
+          STRING       species:32 size:0   N'Q
+          STRING       species:32 size:0   T'K
+          STRING       species:32 size:0   K'L
+          STRING       species:32 size:0   YRH
+          STRING       species:32 size:0   SH
+          STRING       species:32 size:0   RY
+          STRING       species:32 size:0   AR
+          STRING       species:32 size:0   TH
+          STRING       species:32 size:0   NN
+          STRING       species:32 size:0   RR
+          STRING       species:32 size:0   MM
+          STRING       species:32 size:0   IH
+          STRING       species:32 size:0   AH
+          STRING       species:32 size:0   EH
+          STRING       species:32 size:0   I
+          STRING       species:32 size:0   A
+          STRING       species:32 size:0   E
+          STRING       species:32 size:0   IHS
+          STRING       species:32 size:0   AHS
+          STRING       species:32 size:0   EHS
+          STRING       species:32 size:0   HS
+          STRING       species:32 size:0   S
       ORIGINATOR   species:1 size:19   
         SUBJECT      species:15 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE MUST NOW TAKE OUR LEAVE. FARE THEE WELL FRIENDS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE NOW DEPART.
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ART THOU FRIENDS OR ALLIES OF THE THRYNN?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAST THOU OR THINE EVER PARTAKEN OF HEADFRUIT?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ART THOU AND THE INSTITUTE OF OLD IN ANY WAY AFFILIATED?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WAS NOT ARTH A NOAH COLONY?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAST THOU TO THE DEAD ZONE BEEN, AND THE RUINS OF OLD EARTH SEEN?
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THOU ART WISE IN THY PEACEFUL DEALINGS, FOR THE PATH TO KNOWLEDGE DOTH LIE THEREIN. WERE THAT ALL RACES WERE MINDED SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AGAIN WE ARE AS WE ONCE WERE WITH THOSE FEW OF YOUR KIND, ALLIES IN THE CAUSE OF TRUTH AND THE SEARCH FOR WISDOM. THIS IS AS IT SHOULD BE, IS IT NOT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FORSAKE US NOT FOR THE TERRIBLE THRYNN. YOU CAN BUT ONLY LOSE FOR DOING THIS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PRAY, DO NOT LISTEN TO SUCH THINGS AS THE THRYNN MIGHT SAY OF US. 'TIS NAUGHT BUT EMPTY SLANDER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FORSOOTH, WE CAN DETECT THE PRESENCE OF THRYNN, AND THEY US, FOR WE ARE THE FIERCEST OF ENEMIES. DO NOT UNDERSTAND ME WRONGLY, THEY ALONE ARE THE AGGRESSORS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IF FROM THYSELF TO STORE THOU WOULDST CONVERT, OR ELSE OF THEE THIS I PROGNOSTICATE. THY END IS TRUTH'S AND BEAUTY'S DOOM AND DATE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ASK ONLY THAT YOU COMMIT NEITHER VIOLENCE NOR TRESSPASS AGAINST US. IN RETURN WE OFFER MUCH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN SOOTH ARE CONCEPTS AKIN TO ORGANISMS, FOR DO THEY NOT REQUIRE TIME FOR GROWTH AND CULTIVATION, AND DO WE NOT BREED THEM FOR BEAUTY AND FOR PRODUCTIVITY. LET US EXCHANGE CONCEPTS THAT WE MAY BRING NEW VITALITY TO OUR MINDS.
         SUBJECT      species:11 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ANCIENT ONES, WHO ARE NO MORE, ARE THE OLDEST OF ALL RACES. LITTLE DO WE KNOW OF THEM BUT FOR THE SONGS OF THE MINSTRELS. 'TWAS FROM ANOTHER GALAXY, FAR DISTANT, THAT THEY CAME, OR SO IT IS SUNG.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IF THE MINSTREL SONGS BE TRUE THE SPAN OF AN ANCIENT ONE'S LIFE WAS MEASURED NOT IN YEARS, BUT RATHER IN MILLENIUM, SO LONG-LIVED WERE THEY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE VELOX, IN THEIR BOASTFUL PRIDE, LAY CLAIM TO BE DESCENDANTS OF THE ANCIENT ONES. HEED NOT SUCH CONCEITFUL FOLLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FOR EVERY RACE THAT IS POSSESSED OF SOME SLIGHT KNOWLEDGE OF THE ANCIENT ONES THERE IS ANOTHER THEORY TO EXPLAIN THEIR NATURE. PERHAPS ONLY THE DELASA'ALIA KNOW THE FACE OF TRUTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MAYHAP NONE HAVE KNOWN MORE OF THE ANCIENT ONES THAN THE INSTITUTE OF THE OLD EMPIRE OF EARTH. BUT ALACK, WITH THE FALL OF THE EMPIRE THE KNOWLEDGE WAS LOST, FOR NONE, NOT EVEN WE, KNEW THE LOCATION OF ITS FINAL HIDING PLACE AMONG THE STARS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   'TIS NOT KNOWN WHETHER ANY ANCIENT ONES SURVIVE STILL. MAYHAP ONLY THAT HEINOUS LEGACY, THE CRYSTAL PLANET, HAS BEEN LEFT US. ITS EVIL TASK IS TO DESTROY ALL THAT LIVES. WHY, WE KNOW NOT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   UPON APPROACHING THE CRYSTAL PLANET IT DOTH UNLEASH A MIGHTY FORCE, SO TAKE CARE. ONLY THE POSSESSION OF A CERTAIN DEVICE WILL STAY THIS. THE NATURE OF THIS DEVICE WAS PERCHANCE KNOWN TO THOSE OF THE INSTITUTE, BUT IT IS UNBEKNOWNST TO US.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   'TIS KNOWN TO US THAT UPON THE CRYSTAL PLANET THERE IS ONE PLACE ONLY THAT IS VULNERABLE TO ATTACK. OFT HAVE WE TRIED AND FAILED, FOR EVEN THIS NEXUS OF CONTROL IS ALL BUT IMPREGNABLE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IF THOU WOULDST MAKE ATTACK UPON THE ANCIENT PLANET OF CRYSTAL FIRSTLY MUST THOU FIND THE NEXUS OF CONTROL. TO DO THIS THOU WOULDST REQUIRE THAT WHICH IS LOST, THE CONE OF CRYSTAL FASHIONED BY THE ANCIENT ONES.
         SUBJECT      species:10 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   'TWAS IN 2770 THAT THE EMPIRE DID DISCOVER OUR HOME SYSTEM OF ELERAN. CONTACT FIRST WAS MADE WITH THE WRETCHED THRYNN. THEREFORE WERE WE NOT AT FIRST ACCEPTED AS SENTIENT FOR THEY SPOKE WRONGLY OF US AND WERE NOT QUESTIONED IN THEIR SLANDER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHEN THRYNN AND ELOWAN FIRST WERE TAKEN INTO THE EMPIRE THE THRYNN NURTURED A PROFANE SEED. THE SALE OF HEADFRUIT ON THE BLACK MARKET QUICK BECAME A TENACIOUS WEED THAT SURVIVED TO THE FINAL DAYS OF THE EMPIRE.
         SUBJECT      species:9 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE SUN OF THE PLANET THOU CALL'ST ARTH SHALL FLARE IN THE FINAL WEEK OF YOUR TEN-MONTH OF THIS YEAR, SO WE HAVE ASCERTAINED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AKTERON, GAAL, IRIDANI, AND ECHT. THESE ARE THE SUNS OF THE FOUR SEEDLINGS, A CONSTELLATION IN OUR DEMESNE OFT USED AS A LANDMARK BY OUR PEOPLE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   COREWARD DOES THE DEAD-ZONE LIE. IN THIS REGION NO LIVING THING SHALT THOU FIND, FOR THE CRYSTAL PLANET HAS PASSED HERE AND LEFT NAUGHT BEHIND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUTWARD OF THE DEAD-ZONE LIES THE ZONE INTERMEDIATE. HERE THE CRYSTAL PLANET ORBITS, COMPLETING ITS TASK ERE IT MOVES ON.
         SUBJECT      species:8 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLACE NOT YOUR TRUST IN THE THRYNN, FOR THEY ARE NOT WHAT THEY WOULD APPEAR TO BE AND WOULD DO THEE HARM SHOULD THEY BE GIVEN CHANCE TO DO SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE CULTURE OF THE THRYNN EMBRACES THE MACHINE. THEY ARE ADVANCED AND YET WITHIN THEM THOU WILT GREAT IGNORANCE FIND, FOR THEY KNOW NOT EVEN THAT IN NINE-MONTH OF THIS YEAR THEIR SUN SHALL FLARE, NOR SHALL WE, WHO BEAR THEM NO GREAT LOVE, TELL THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CONSTANT AND FIERCE HAVE BEEN THE ATTACKS OF THE VILE THRYNN, E'ER SINCE THE EMPIRE FELL AND COULD NO LONGER JUDGE THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   KNOW THEE THIS, THAT THE HOMEWORLDS OF ALL RACES ARE WELL GUARDED AND THITHER THOU MAYEST NOT DESCEND. EVEN IF THOU ART FRIENDS WILL THEY NOT SUFFER THEE TO VIOLATE THAT FINAL BASTION. WELL HAS THIS LESSON BEEN LEARN'D BY ALL RACES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INTERESTING INDEED ARE THE ANCIENT VELOXI, FOR THEY ARE POSSESSED OF BOTH GREAT WISDOM AND GREAT IGNORANCE. IN MATTERS OF THE ANCIENTS THEIR ARROGANCE BREEDS FALSE WISDOM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MEETING THEE HAS BEEN NO SMALL SURPRISE, FOR 'TWAS OUR BELIEF THAT THE COLONY WORLDS OF THE EMPIRE HAD'ST BEEN DESTROYED ALL HERETOFORE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE SPEMIN KNOWEST LITTLE AND MOSTLY DO THEY BLUSTER. UPON PAMPERING SHALT THOU APPEASE THEM, BUT THAT WHICH IS USEFUL SHALT THOU GAIN'ST ONLY BY FORCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   STRONGEST OF MANY RACES ARE THE UHLEK, AND AS WELL THE GAZURTOID, WHO HAVE FLED THE WAVE OF FLARING SUNS. IN SOOTH, ONLY THOSE WHO ARE STRONGEST HAVE SURVIVED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   LONGER THAN ANY OTHER RACE HAVE THE UHLEK FLED. FROM THE CENTER OF THE GALAXY THEY HAVE COME HITHER, AND SO SHALL THEY CONTINUE, FOR WITH THE PASSAGE OF EACH 100 SCORE YEARS THEY AGAIN JOURNEY OUTWARD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE UHLEK ARE A RACE LIKE NONE OTHER. AS IF CELLS OF ONE LARGE CREATURE, AUTONOMOUS YET ONE, THEY ARE POSSESSED OF A SINGLE MIND WHICH RESIDES APART FROM THEM, BURIED DEEP IN SUBTERRANIAN CAVERNS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO LONG HAVE THE GAZURTOID BEEN TRAVELLING OUTWARD THEY HAVE FORGOTTEN WHY THEY MUST MIGRATE. THEY KNOW ONLY THAT THEY ARE ON A HOLY CRUSADE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   EXPECT LITTLE FROM THE GAZURTOID FOR THEY OFFER LITTLE. WASTE NOT YOUR TIME IN VAIN EFFORT TO LEARN FROM THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE UHLEK SPEAK ONLY WITH THEIR WEAPONS. 'TIS OUR THOUGHT THAT THOU WOULD'ST NOT CARE MUCH FOR WHAT THEY HAVE TO SAY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE WANDERING CREATURES OF SPACE HAVE BEEN CALLED BY MANY 'THE MINSTRELS', AND BY SOME  'DELASA'ALIA'. THEY ARE OLD BEYOND COUNTING AND WISE IN LIKE MEASURE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE MINSTRELS, ALONE OF ALL RACES, REQUIRE NO VESSEL IN THE DEPTHS OF SPACE. ONLY DO THEY WANDER AND SING OF WHAT WAS. LITTLE DO WE KNOW OF THAT WHICH LIES WITHIN THE HEARTS OF THE DELASA'ALIA.
         SUBJECT      species:7 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS WITH THE THEORY OF SCIENCE THAT WE ARE, OURSELVES CONCERN'D, AND SUCH THINGS AS MAY BE CALLED BEAUTY AND PERHAPS TRUTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOW BUT FEW OF US REMAIN, FOR THE SUN'S FLARE DID OUR SECOND HOMEWORLD DESTROY, AND AS WELL ARE WE PREYED UPON BY THE THRYNN, RELENTLESS AND COLD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AT A TIME WHEN WE DOTH REACH AN AGE OF ADOLESCENCE WE ARE UPROOTED. IN SO DOING WE ARE BECOME OMNIVEROUS PRODUCERS UNTIL THAT TIME WHEN AGAIN WE MUST ROOT, WHEREUPON OUR HEADS INTO FLOWERS TURN AND WE REPRODUCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MAYHAP ONE OF EVERY 300 OF OUR NUMBER DOTH STAY ROOTED WITHIN THE GROUND, AND IN SO DOING IS ITS HEAD THEN TRANSFORMED INTO A MELON-LIKE FRUIT CALLED HEADFRUIT WHEREIN LIE THE MANY SEEDS OF OUR FUTURE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HEADFRUIT IS OF ALL THINGS, TO US, MOST DEAR. UPON CLAIMING THAT IT DOST BESTOW GREATER INTELLIGENCE AND INCREASE THE SPAN OF LIFE DO THE SLY THRYNN THIEVE AND CONSUME THIS FRUIT. SO  HAVE WE BEEN ENEMIES, AND SO SHALL WE ALWAYS BE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO OTHER PLANET IS SO SACRED AS ELAN. FOR THERE DOST OUR YOUNG ABIDE, AND IN TRANQUILITY DWELL. NOT EVEN THOSE OF US GROWN DISTURB THEIR MEDITATIONS THERE. AN ISLAND WORLD, WITH OCEANS VAST AND SPLENDOROUS, ELAN REVOLVES ABOUT THE YELLOW SUN OF 148,63.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IS NOT VIOLENCE, ABOVE ALL THINGS, MOST BASE AND VILE? SURELY ONLY AS A FINAL MEASURE, AND EVEN THEN WITH RESERVATION, CAN IT BE CONDONED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE STAR OF OUR BIRTH WAS ALSO THAT OF THE THRYNN. TOGETHER THERE WE DWELT AS THEY DO STILL, TILL WE FLED HITHER, LEST THEY DESTROY US AT LAST.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ORANGE STAR OF OUR BIRTH, AT 129,33, WAS NAMED ELERAN, AND BY THE THRYNN THOSS. AND UPON THE SECOND PLANET DID WE DWELL, AND THEY UPON THE FOURTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AS OUR YOUNG PLAY OFTEN DO THEY SING SONGS SUCH AS THIS- SOMEDAY TO THE GROUND WILL FALL, IRIDANI, ECHT, AND GAAL. UP THEY'LL GROW WITH BRANCHES TALL, THEN TO AKTERON THEY'LL CALL. AND AT LAST IT TOO WILL FALL. THE BRIGHTEST SEEDLING OF THEM ALL.
         SUBJECT      species:6 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHAT SAYEST THOU?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I WAIT ON THY ANSWER.
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PRAY FORGIVE ME, BUT I KNOW LITTLE OF SUCH THINGS. PERHAPS YOU MIGHT ASK THIS OF ANOTHER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0    
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREETINGS AND FELICITATIONS MOST GRAND, FRIENDS OF THE ELOWAN. WE WOULDST HELP THEE IN ANY WAY WE CAN. PRAY, HOW MIGHT WE BE OF SERVICE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE OFFER FELICITATIONS MOST SINCERE. THOU ART WELL MET, AND WELCOME HERE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE EXTEND TO THEE THE VINE OF FRIENDSHIP. IF THOU WOULDST HAVE IT SO, WE WOULD SHARE WITH THEE WHAT WE KNOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE ELOWAN. IF THINE INTENTIONS BE PEACEFUL IN SOOTH,WE GREET THEE. IF NOT, WE REQUEST THAT THOU LEAVEST US WHO BEAR THEE NO ILL WILL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE ELOWAN, AND ABOVE ALL ELSE DO WE CHERISH PEACE. IF THOU ART OF LIKE MIND WE WELCOME THEE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ENTREAT THEE FROM VIOLENCE REFRAIN, FOR NOTHING MORE DO WE DISDAIN, AND IN SO DOING ALL THAT WE MIGHT GAIN, WOULD BE FOREVER LOST, LIKE TEARS IN RAIN.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAIL TO THEE AND WELL MET ARE WE. THOU ART WELCOME, FRIENDS OF THE ELOWAN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AGAIN WE ARE MET AND HAPLY SO. UNTO THEE WE OFFER WHAT SMALL WISDOM WE HAVE ACQUIRED. WHAT SAY YOU?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN FRIENDSHIP WE GREET THEE, FELLOW TRAVELLERS OF ETERNAL NIGHT. FEAR NOT THE ELOWAN WHO SEEK THAT WHICH THOU DOST ALSO, THE LIGHT OF KNOWLEDGE AND THE PEACE OF UNDERSTANDING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAIL AND WELCOME. 'TIS OUR REQUEST THAT THEE IDENTIFY THYSELF FORTHWITH. WE ARE ELOWAN AND WOULD HAVE PEACE BETWEEN US.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   STATEST THOU THINE INTENTIONS AND NAME THYSELF. WE GREET THEE IN PEACE IF THOU GREETEST US IN LIKE MEASURE. WE ARE ELOWAN, AND WE BEAR THEE NO MALICE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAIL. ART THOU FRIENDS OR FOE OF THE ELOWAN? WE ASK THEE IN FRIENDSHIP AND WOULD HAVE IT BE THUS BETWEEN US. THE CHOICE IS THINE.
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   IAE
+          STRING       species:32 size:0   LIW
+          STRING       species:32 size:0   SEH
+          STRING       species:32 size:0   OHS
+          STRING       species:32 size:0   IH'L
+          STRING       species:32 size:0   SH
+          STRING       species:32 size:0   I'AO
+          STRING       species:32 size:0   IER
+          STRING       species:32 size:0   SOR
+          STRING       species:32 size:0   OE
+          STRING       species:32 size:0   EHN
+          STRING       species:32 size:0   NEH
+          STRING       species:32 size:0   SEH
+          STRING       species:32 size:0   NIH
+          STRING       species:32 size:0   FAE
+          STRING       species:32 size:0   ILA
+          STRING       species:32 size:0   IEL
+          STRING       species:32 size:0   LA
+          STRING       species:32 size:0   SAH
+          STRING       species:32 size:0   AHS
+          STRING       species:32 size:0   RHIS
+          STRING       species:32 size:0   ESH
+          STRING       species:32 size:0   AHN
+          STRING       species:32 size:0   A'R
+          STRING       species:32 size:0   ALIR
+          STRING       species:32 size:0   L'W
+          STRING       species:32 size:0   EHN
+          STRING       species:32 size:0   AWAH
+          STRING       species:32 size:0   ENAR
+          STRING       species:32 size:0   ELOR
+          STRING       species:32 size:0   ELOW
+          STRING       species:32 size:0   ILI
       ORIGINATOR   species:6 size:19   
         SUBJECT      species:15 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE WASTED TOO MUCH TIME. BE GONE SCUM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU MAY GO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE MUST GO NOW BUT WE HAVE ENJOYED CHATTING WITH YOU. DROP BY AGAIN SOMETIME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE MUST LEAVE NOW SO THAT WE CAN GO AND SPREAD WORD OF YOUR GREATNESS AMONG OUR SPEMIN BROTHERS. FAREWELL GOOD FRIENDS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ENOUGH JABBERING. IT IS TIME FOR A GLORIOUS SPEMIN VICTORY!
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I SUPPOSE YOU HAVE HEARD OF ME BEFORE, HMMMMM?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU MUST DEMONSTRATE YOUR GOOD INTENTIONS BY DROPPING ANY SHIELDS AND DISARMING ANY WEAPONS. WILL YOU DO THIS?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WOULD NOT HOLD IT AGAINST YOU FOR WE UNDERSTAND THE NECESSITIES OF SELF DEFENSE CAPTAIN *, WE SIMPLY WISH TO KNOW - HAVE YOU BATTLED SPEMIN SHIPS BEFORE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS PLAIN THAT YOU ARE TERRIFIED OF US. IN FACT, YOU WISH TO BEG US NOT TO HARM YOU. IS THIS NOT SO?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARE ENVIOUS OF US AND YOU HAVE COME TO LEARN FROM THE SPEMIN MASTERS, IS THIS NOT TRUE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHAT IS THE REAL REASON YOU HAVE COME HERE? WAS IT AS SPIES AND ASSASSINS? TO PILLAGE AND KILL AND DESTROY?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE BELIEVE THAT YOU ARE TRULY A KIND AND PEACEFUL RACE WHO WOULD NOT REALLY HARM US. THIS IS TRUE ISN'T IT?
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS FORTUNATE THAT YOU RECOGNIZE THE VAST SUPERIORITY OF YOUR SPEMIN MASTERS. THAT IS TO SAY, US. WE SHALL SPARE YOU THIS TIME. PERHAPS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO, YOU WISH TO PRAISE US. THIS IS ACCEPTABLE. YOU MAY CONTINUE TO DO SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO, ONCE AGAIN THE PITIFUL TWO-EYED SLIMELESS ALIEN MONSTERS BEG THE ALL-POWERFUL SPEMIN FOR MERCY. THIS DOES NOT SURPRISE US.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CONTRARY TO WHAT THE OTHER RACES IN THE GALAXY SAY ABOUT US SPEMIN, WE ARE NOT GODS. OF COURSE, IT IS EASY TO SEE WHY YOU THINK WE ARE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IF YOU HAVE COME ONCE MORE TO BEG THE MIGHTY SPEMIN TO PROTECT THE HUMAN EMPIRE WE CANNOT BE BOTHERED. IN FACT, WE CANNOT BE BOTHERED WITH YOU. YOUR ENTIRE RACE IS AN IRRITATION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO, VILE AND DISGUSTINGLY UPRIGHT CREATURES, IT IS OBVIOUS THAT YOU WISH TO SURRENDER NOW. YOU MAY DO SO, AND THEN WE WILL CONSIDER NOT DESTROYING YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOUR RACE AGAIN DEMONSTRATES THIS INSANE NEED TO ANNIHILATE ITSELF. IN A MOMENT WE SHALL USE OUR SECRET WEAPON AND YOU SHALL BECOME AN EXAMPLE TO THE GALAXY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PREPARE FOR EXCRUCIATING PAIN, UNBEARABLE AGONY, THE MOST HORRIBLE OF DEATHS, THE MOST UNIMAGINABLE TORTURE. ANY MOMENT NOW WE SHALL ATTACK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SHALL GIVE YOU ONE MORE CHANCE TO SURRENDER YOUR PUNY SHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AT ANY MOMENT AN ENTIRE FLEET OF ELITE SPEMIN WARSHIPS SHALL ARRIVE. THIS PROBABLY FRIGHTENS YOU AND YOU WISH TO COOPERATE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE WE WERE JUST JOKING ABOUT BLOWING YOU TO PIECES. SMERG SMERG SMERG, ISN'T THAT A FUNNY JOKE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLEEEAAAASE DON'T HURT US OH GREATEST OF SPECIES. PLEEEAAAAASE! THINK OF OUR WIVES AND LITTLE BLOBBIES BACK HOME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OH! FLASH OF INSPIRATION! WE NOW SEE THAT YOU ARE RIGHT AND WE ARE WRONG. SPEMIN ARE BAD, BAD! THANK GOODNESS WE HAVE SEEN THIS IN TIME. NOW WE CAN BE FRIENDS.
         SUBJECT      species:11 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ANCIENT ONES WORSHIPPED US AS DO ALL THE OTHER RACES. PERHAPS YOU WOULD LIKE TO KNOW MORE ABOUT OUR RACE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHO ARE YOU TO DEMAND INFORMATION FROM US? THE ANCIENT ONES WERE NOTHING COMPARED TO THE SPEMIN, JUST AS YOU ARE NOTHING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE ARE MANY RUINS OF THE ANCIENTS IN SPEMIN TERRITORY. IN FACT, THERE IS A GREAT CITY OF THE ANCIENTS IN A NEBULA JUST OUTWARD OF OUR HOME PLANET. OF COURSE THIS IS SECRET, AND ANY SPEMIN WOULD DIE BEFORE HE WOULD REVEAL THIS.
         SUBJECT      species:10 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE OLD EMPIRE IS OF NO IMPORTANCE. OBVIOUSLY WHAT YOU WISH TO KNOW ABOUT IS OUR RACE. SUCH FOOLS. YOU THOUGHT TO HIDE THIS FROM US.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE DESTROYED THE OLD EMPIRE BECAUSE THEY DID NOT OBEY OUR COMMANDS. THERE IS A LESSON HERE FOR YOU TO LEARN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WERE ONCE A PART OF THE OLD EMPIRE, AS WERE THE VELOX, THE THRYNN, AND THE ELOWAN. YOUR KIND HAS UNJUSTLY FORSAKEN US, WE WHO HAVE NOTHING BUT RESPECT AND ADMIRATION AND YES, EVEN LOVE FOR YOUR PEOPLE. FOR SHAME.
         SUBJECT      species:9 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO NOT PLAY GAMES WITH US. IF YOU WISH TO KNOW ABOUT OUR GREAT SPEMIN RACE JUST ASK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU REQUIRE INFORMATION? HERE IS SOME INFORMATION. YOU WILL DIE VERY SOON. PLEASE LET US KNOW IF YOU NEED MORE INFORMATION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE IS A SECRET WAY INTO UHLEK TERRITORY. THE FIRST JUMP POINT IS AT 106,139. THE SECOND IS AT 64,186. AND THE THIRD IS AT 35,186. DO NOT TRY TO DO THIS THOUGH. ANYONE BUT A MASTER SPEMIN NAVIGATOR WOULD GET LOST.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALRIGHT......YOU HAVE FORCED IT OUT OF US. WE HAVE HEARD OF THE EXISTANCE OF A VELOXI FOCUSING STONE ON THE FIRST PLANET OF THE SYSTEM 81,98. WE HAVE BEEN UNABLE TO....I MEAN HAVE CHOSEN NOT TO FIND IT THOUGH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SPEMIN ARE WISE BEYOND IMAGINING. FOR EXAMPLE, WE HAPPEN TO KNOW THAT THE ANCIENTS BUILT A DEVICE CALLED A CRYSTAL PEARL WHICH AUTOMATICALLY WARPS A CRITICALLY WOUNDED SHIP OUT OF DANGER. THIS IS JUST ONE OF MANY THINGS WE KNOW.
         SUBJECT      species:8 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO NOT WASTE OUR TIME WITH UNIMPORTANT QUESTIONS. OBVIOUSLY OURS IS THE ONLY IMPORTANT RACE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU DARE ASK US ABOUT OTHER RACES? YOUR IMPUDENCE IS BEYOND BELIEF.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE DO NOT KNOW A GREAT DEAL ABOUT OTHER RACES. FOR SOME STRANGE REASON THEY TEND TO STAY AWAY FROM US. OF COURSE WE WILL GLADLY TELL YOU WHAT WE KNOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE VELOX ARE AN ARROGANT RACE OF INSECTS. WE HAVE FOUND THAT BY PRETENDING TO WORSHIP THEM SOMETIMES THEY WILL NOT DESTROY US. OF COURSE YOU MUST NOT THINK WE ARE ONLY PRETENDING TO WORSHIP YOU, *. I GIVE YOU THE SPEMIN WORD OF HONOR.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE IS A RACE OF MACHINE HUMANS. WE DO NOT UNDERSTAND THEIR BEHAVIOR. THERE IS ALSO THE PLANT RACE AND THE REPTILE RACE. THESE RACES HATE AND DESPISE EACH OTHER. THEY FIGHT AND KILL. THIS WE UNDERSTAND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GAZURTOID ARE A RACE OF AQUATIC CREATURES WHO ARE WHAT YOU MIGHT CALL.... INSANE FANATICS. THEY BELIEVE IT IS THEIR DESTINY TO CLEANSE THE UNIVERSE OF, IF WE MAY USE THEIR TERM, 'BLASPHEMING HERETICAL LOW-LIFE AIR-BREATHING SCUMDOGS'.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AS YOU MUST KNOW, THE NUMLOX AND PHLEGMAK WERE THE FIRST RACES TO ATTACK FROM THE CORE. LATER CAME THE UHLEK AND THE GAZURTOID. WHEN THE OLD EMPIRE SPURNED US, THEIR LOVING AND DEVOTED CHILDREN, WE WERE FORCED TO PRETEND ALLEGIANCE WITH THE GAZURTOID.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALL THE GAZURTOID EVER DO IS SPOUT THEIR RELIGIOUS RHETORIC. BEING DIABOLICALLY CLEVER WE HAVE MANAGED TO CONVINCE THEM THAT WE ARE WATER BREATHERS. WE HAVE DONE THIS BY SITTING IN POOLS OF WATER WHENEVER WE COMMUNICATE WITH THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GAZURTOID POSSESS EFFECTIVE SHIELDING AGAINST MISSILES. IT IS NECESSARY TO ATTACK THEM WITH LASERS. OUR BRILLIANT SCIENTISTS ARE WORKING ON THIS PUZZLE. THEY ARE JUST ON THE VERGE OF A MAJOR BREAKTHROUGH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE THE GAZURTOID ARE REALLY NO MATCH FOR OUR WARSHIPS. IN FACT, THEY COPIED THE DESIGN FROM US. THE UHLEK, ON THE OTHER HAND COME A LITTLE CLOSER TO MATCHING OUR STRENGTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE TRICKED THE GAZURTOID INTO TELLING US MANY THINGS. WE HAPPEN TO KNOW ALL ABOUT THE UHLEK. NOT MANY RACES KNOW ABOUT THE UHLEK, BUT OF COURSE NO OTHER RACE HAS THE AWESOME MIND OF A SPEMIN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE UHLEK ARE NOT MANY CREATURES, BUT ONE. IT IS SIMPLY SPREAD OUT IN SPACE. THE UHLEK HAVE A CENTRAL MIND-GANGLION. IT IS A MASSIVE THING BURIED DEEP WITHIN A PLANET. IF IT WAS DESTROYED THE UHLEK WOULD BE HELPLESS UNTIL ANOTHER ONE DEVELOPED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   TO DESTROY AN UHLEK MIND-GANGLION IT IS NECESSARY TO DESTROY AN ENTIRE PLANET. OF COURSE WE COULD DESTROY AN ENTIRE PLANET IF WE CHOSE TO. UNFORTUNATELY WE HAVE A LAW AGAINST DESTROYING PLANETS, SO SOME OTHER FEARLESS, POWERFUL RACE SHALL HAVE TO DO IT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE MIND-GANGLION PLANET OF THE UHLEK IS THE LIFE-BEARING PLANET IN THE SYSTEM 55,32. DESTROYING IT SHOULD BE A TRIVIAL TASK. WE ARE ALMOST TEMPTED TO DO IT OURSELVES.
         SUBJECT      species:7 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS UNDERSTANDABLE THAT YOU WISH TO LEARN ABOUT US. ALL OF THE RACES IN THE GALAXY ENVY AND ADMIRE US AS YOU DO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE THE CHOSEN BLOBS, CHILDREN OF THE GREAT BLOB GODDESS, GURTBLUNK. UNTO US SHE SPEWS HER LOVE IN NEVER ENDING CHUNKS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE BLOB GODDESS HAS ORDAINED THAT WE SHALL RULE ALL INFERIOR BEINGS. YOU HAVE FEWER THAN SEVEN EYES. YOU CANNOT OOZE. YOU LACK THE MOST RUDIMENTARY SLIME. YOU ARE CLEARLY INFERIOR BEINGS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AMONG US THER IS A SAYING - MORE SPEMIN...GOOD, FEWER SPEMIN...BAD. OF COURSE WE REPRODUCE BY BUDDING. THE FIRST COMMANDMENT OF THE GREAT BLOB GODDESS IS - DIVIDE AND MULTIPLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO DOUBT YOU WISH TO BECOME A SLAVE RACE OF THE SPEMIN. WE ARE A RACE OF HIGH MORALS AND ARE AGAINST SLAVERY, BUT SINCE YOU FEEL SO STRONGLY ABOUT IT WE MAY BE WILLING TO MAKE AN EXCEPTION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE YOU STARE IN WONDERMENT AT OUR BEAUTIFUL ANTENNAE. THESE ANTENNAE ALLOW US TO GET 32 CHANNELS WITH NO NEED FOR CABLE. IN ADDITION THEY PICK UP THE COSMIC VIBRATIONS THAT GIVE US OUR GOD-LIKE POWERS. THEY ALSO HAPPEN TO BE VERY FASHIONABLE .
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE IS A SAYING AMONG THE SPEMIN THAT SUMS UP OUR WHOLE PHILOSOPHY OF LIFE. IT IS - BLUKBLUK DURT, SMEG! ROUGHLY TRANSLATED IT MEANS  'QUIVERING PARTICLE SECRETES ENZYME.' THIS IS JUST A ROUGH TRANSLATION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HISTORICAL FACT SHOWS US THAT THE SPEMIN ONCE RULED THE OLD EMPIRE. THE FACTS SHOW US THAT THE HUMANS WERE OUR SUBJECTS.... I MEAN OUR SERVANTS.... I MEAN OUR SLAVES. YES, THAT'S IT, THE FACTS SHOW US THAT THE HUMANS WERE OUR SLAVES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO OTHER RACE CAN KNOW THE PLEASURES OF A SPEMIN. AHH, TO ENGULF A FRESH GLOB OF PROTEIN SUBSTANCE, TO BOUNCE A NEWLY BUDDED BLOBBIE ON ONE'S PSEUDOPOD. TRULY THE OTHER RACES ARE DEPRIVED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SPEMIN LIVE TO THE AGE OF 600. SOME OF THE OLDEST SPEMIN PERHAPS TO 1000. IN YOUR ARTH YEARS THIS WOULD EQUATE TO....UH....APPROXIMATELY....4.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE BRAIN OF A SPEMIN IS THE MOST COMPLEX THING IN THE UNIVERSE. IN FACT, IT IS SO COMPLEX THAT OUR SPEMIN DOCTORS HAVE, AS YET, BEEN UNABLE TO DETERMINE THE EXACT LOCATION OF IT IN THE SPEMIN BODY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU WISH TO KNOW ABOUT THE MIGHTY SPEMIN? DROP YOUR DEFENSES AND WE SHALL TEACH YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU SHALL SOON LEARN MORE THAN YOU WOULD CARE TO KNOW ABOUT THE ALMIGHTY SPEMIN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VERY WELL, WE ARE THE OLDEST RACE AND THE YOUNGEST, THE WISEST AND THE MOST INNOCENT, THE STRONGEST AND THE WEAKEST. WE ARE ALSO THE MOST CLEVER. WE ARE, IN FACT, SO CLEVER THAT EVEN WE CANNOT UNDERSTAND WHAT WE SAY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CERTAINLY OUR RACES HAVE BEEN FRIENDS SINCE ANCIENT TIMES. IN THE WAR OF THE FIRST WAVE WE FOUGHT AS ALLIES AGAINST THE PHLEGMAK AND NUMLOX, SIDE BY SIDE, BACK TO BACK, SINGING OUR SONGS OF FRIENDSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR RACE WORSHIPS AND HONORS YOUR KIND. HOW WONDERFUL IT MUST BE TO BE STIFF AND UPRIGHT. WE LOOK UPON YOU ALMOST AS GODS. NO, AS MORE THAN GODS, AS.... WELL, WHATEVER IS MORE THAN A GOD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN THE YEAR 2675 THE OLD EMPIRE DISCOVERED OUR HOMEWORLD AND UPLIFTED US FROM A STATE OF MORAL, INTELLECTUAL, AND EMOTIONAL DEPRAVITY TO THE DIVINE STATE WE ARE IN NOW. WE HAVE BEEN MEANING TO THANK YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE BEEN UNJUSTLY PICKED ON BY ALL OF THE OTHER RACES. WE MEAN WELL, AND ONLY WANT TO BE LIKED, BUT ALL THE OTHER RACES IN THE GALAXY KEEP MISINTERPRETING OUR INTENTIONS AND BLOWING UP OUR SHIPS FOR NO REASON.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE'RE REALLY JUST A HAPPY-GO-LUCKY RACE OF ZANY GUYS. I KNOW, CALL US CRAZY, BUT I GUESS WE'RE PRETTY LOVABLE.
         SUBJECT      species:6 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WELL?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HMMMMMMM?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE'RE WAITING *.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I'M SORRY BUT I DON'T THINK I HEARD YOUR ANSWER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AWAIT YOUR ANSWER WITH BAITED BREATH CAPTAIN *.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ANSWER IMMEDIATELY OR THE & IS NO MORE.
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU INSIST ON TESTING THE DEFENSES OF THE SPEMIN HOMEWORLD? YOU WASTE OUR VALUABLE TIME, BUT SINCE YOU TRAVELLED ALL THIS WAY, WE SHALL OBLIGE YOU WITH OUR SWIFT AND SUDDEN ATTACK!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVE NO NEED TO KNOW ABOUT THIS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHAT YOU WISH TO KNOW IS OF NO IMPORTANCE. YOU WASTE MY TIME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I BEG YOUR FORGIVENESS BUT I DO NOT KNOW ABOUT THIS. PERHAPS YOU WOULD LIKE TO KNOW MORE ABOUT US SPEMIN.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU DARE TO APPROACH THE HOMEWORLD OF THE MIGHTY SPEMIN? SUCH AUDACITY! SUCH PRESUMPTION! SUCH GALL! PREPARE TO RECEIVE YOUR FINAL LESSON IN MANNERS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ONCE AGAIN YOU SURPRISE US WITH YOUR UNSURPASSED IDIOCY. PERHAPS YOU THINK WE WOULD NOT MIND YOU APPROACHING OUR HOMEWORLD. PREPARE YOURSELF FOR OUR WARM WELCOME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AM HIGH GRAND MASTER SUPREME CAPTAIN %, COMMANDER EXTRAORDINAIRE OF THE DELUXE INTERSTELLAR HYPERDRIVE SPEMIN CRUISE-SHIP +. WE ARE PREPARED TO DISCUSS THE TERMS OF YOUR SURRENDER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS USELESS TO PRETEND THAT YOU ARE NOT AFRAID OF US. WE ARE THE DEATH DEALING SPEMIN, AND I AM THE FAMOUS FORMIDABLE CAPTAIN %. DOUBTLESS YOU HAVE HEARD OF ME. YOU MASK YOUR FEAR WELL, BUT NOT WELL ENOUGH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOTICE HOW WE TOY MERCILESSLY WITH YOU. THIS IS THE FATE OF ALL WHO OPPOSE THE SPEMIN. PREPARE FOR OUR UNSTOPPABLE ATTACK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS TOO LATE FOR YOU TO BEG FOR MERCY. I, HIGH COMMANDER % OF THE SECRET SPEMIN DEATH FLEET SHALL OOZE DOWN AND ABSORB YOU LIKE SO MUCH FOOD SUBSTANCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO, YOU WISH US TO IDENTIFY OURSELVES. DO YOU THINK US FOOLS? IT IS TO OUR ADVANTAGE TO KEEP YOU GUESSING. PERHAPS WE ARE UHLEK, PERHAPS WE ARE GAZURTOID. WE ARE SIMPLY TOO CLEVER FOR YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO THE SKELETOIDS BEG US FOR MERCY. NOW WE SEE WHO IS VASTLY SUPERIOR AND WHO IS WRETCHED SCUM. OF COURSE YOUR RACE HAS NO PRIDE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN % OF THE SPEMIN SHIP +. WE ARE ON A PEACEFUL MISSION. WE ARE BRINGING FOOD TO HOMELESS, STARVING YOUNG SKELETOIDS OF YOUR KIND. FOR THEIR SAKE, PLEASE DO NOT HARM US.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SURRENDER! YOUR RACE IS WISE AND KIND AND GOOD AND NICE. WE SPEMIN ARE SORRY FOR ALL THE BAD THINGS WE HAVE DONE. WE PROMISE NEVER TO BE BAD AGAIN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SURRENDER! DO NOT DESTROY US AND WE WILL GIVE YOU A WONDERFUL GIFT.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU DARE TO APPROACH THE HOMEWORLD OF THE MIGHTY SPEMIN? SUCH AUDACITY! SUCH PRESUMPTION! SUCH GALL! PREPARE TO RECEIVE YOUR FINAL LESSON IN MANNERS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ONCE AGAIN YOU SURPRISE US WITH YOUR UNSURPASSED IDIOCY. PERHAPS YOU THINK WE WOULD NOT MIND YOU APPROACHING OUR HOMEWORLD. PREPARE YOURSELF FOR OUR WARM WELCOME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE FRIGHTENINGLY AWESOME SPEMIN, MASTERS OF THE GALAXY, LORDS OF THE UNIVERSE, ALL-POWERFUL BEINGS FROM ANOTHER DIMENSION. TREMBLE BEFORE US. IDENTIFY YOURSELVES SUBCREATURES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVE COME TO PAY YOUR RESPECTS AND GROVEL BEFORE YOUR SPEMIN MASTERS. YOU ARE AFRAID NOW, AND RIGHTLY SO. YOU WILL IDENTIFY YOURSELVES AT ONCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HALT ALIENS. DEACTIVATE ALL SHIELDS AND WEAPONS IMMEDIATELY LEST WE UNLEASH THE AWESOME DESTRUCTIVE FORCE OF OUR MIGHTY VESSELS. RESPOND AT ONCE TO SHOW YOUR SUBMISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE THE LANCING, KILLING PSEUDOPOD OF DOOM. WE OFFER YOU THIS CHOICE - YOU WILL OBEY US OR YOU WILL CEASE TO EXIST.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO, WE MEET ONCE AGAIN, HEINOUS SKELETOIDS. THIS TIME YOU WILL PAY FOR YOUR FOOLISHNESS. PRAY TO YOUR FALSE GODS, NOT EVEN THE GREAT BLOB GODDESS CAN SAVE YOU NOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO NOT TRY TO RUN AWAY, INFERIOR CREATURES. SURRENDER TO US AND WE SHALL KILL YOU SWIFTLY AND PAINLESSLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OH, MOST FORTUNATE OF OCCURANCES! THE RETURN OF THE SUPREME BEINGS. WE LAY DOWN OUR POWERFUL DEFENSIVE SCREENS TO SHOW YOU OUR GOOD INTENTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREETINGS, MIGHTY AND POWERFUL ALLIES OF THE ALSO MIGHTY AND POWERFUL SPEMIN. WE ARE BOTH MIGHTY AND POWERFUL. IS IT NOT A GOOD THING THAT WE ARE THE BEST OF BUDDIES WHO WOULD NEVER HARM EACH OTHER?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE SURRENDER! WE SURRENDER! PLEASE DO NOT HURT US. WE WILL DO ANYTHING. ANYTHING! DO YOU WANT TO KNOW THE SECRET LOCATION OF OUR HOME PLANET? IT IS AT 82,148. DESTROY THE OTHER SPEMIN SHIPS BUT SPARE US, PLEASE!
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   SMEG
+          STRING       species:32 size:0   GLEEB
+          STRING       species:32 size:0   MURT
+          STRING       species:32 size:0   ZIT
+          STRING       species:32 size:0   GLUT
+          STRING       species:32 size:0   NERJ
+          STRING       species:32 size:0   NERG
+          STRING       species:32 size:0   SPE
+          STRING       species:32 size:0   NUH
+          STRING       species:32 size:0   GURGLE
+          STRING       species:32 size:0   BLOOP
+          STRING       species:32 size:0   WHEEZE
+          STRING       species:32 size:0   GIF
+          STRING       species:32 size:0   NGAH
+          STRING       species:32 size:0   FEK
+          STRING       species:32 size:0   CHURT
+          STRING       species:32 size:0   SKREE
+          STRING       species:32 size:0   BLUK
+          STRING       species:32 size:0   IK
+          STRING       species:32 size:0   DORT
+          STRING       species:32 size:0   BLURT
+          STRING       species:32 size:0   CHOO
+          STRING       species:32 size:0   ZID
+          STRING       species:32 size:0   LUP
+          STRING       species:32 size:0   DENG
+          STRING       species:32 size:0   GHU
+          STRING       species:32 size:0   BLEH
+          STRING       species:32 size:0   ZUG
+          STRING       species:32 size:0   BEMF
+          STRING       species:32 size:0   GOO
+          STRING       species:32 size:0   DURT
+          STRING       species:32 size:0   BLUNK
       ORIGINATOR   species:3 size:19   
         SUBJECT      species:15 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOW TERMINATING COMMUNICATIONS.
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR SCANNERS SHOW THAT YOUR VESSEL IS DERIVED FROM EMPIRE TECHNOLOGY. DO YOU CONFIRM?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARE YOU GROUP 9?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HEAVEN AWAITS. ARE YOU PREPARED?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO YOU SERVE LAYTON?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE WAITED LONG FOR NOAH, SHALL WE CONTINUE TO DO SO?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IS IT YOUR DESIRE THAT WE MAINTAIN CODE BLUE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO YOU VERIFY CODE RED?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARE YOU AN ENEMY OF NOAH?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ARE YOU READY TO TAKE YOUR PLACE IN THE BRAVE NEW WORLD?
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR DATA BANKS ARE AT YOUR DISPOSAL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE WAITED LONG FOR YOU GROUP 9.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU HAVE BEEN DELAYED. WE WERE NOT PROGRAMMED FOR THIS CONTINGENCY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE MUST VERIFY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WARNING. WE ARE PROGRAMMED TO REPEL INVADERS. LEAVE IMMEDIATELY OR BE DESTROYED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS EMPIRE SPACE. YOU MUST LEAVE AT ONCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INVADERS DEPART IMMEDIATELY.
         SUBJECT      species:11 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU WILL BE DESTROYED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ENDURIUM WAS FIRST DISCOVERED IN SOME ANCIENT RUINS ON SOL-4 IN 2100.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE STRANGE CRYSTALLINE LUMPS OF ENDURIUM ARE ALWAYS FOUND IN ANCIENT RUINS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   RUINS OF THE ANCIENTS HAVE BEEN FOUND ALL OVER SPACE, BUT PRIMARILY SEEM TO BE IN M-TYPE SYSTEMS. THEY ARE MANY HUNDREDS OF MILLIONS OF YEARS OLD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE INSTITUTE, BASED AT 75S X 66E ON AKTERON 6 STUDIED THE ANCIENTS INTENSELY. THERE WAS MUCH CONTROVERSY SURROUNDING THEIR FINDINGS. THEY OFTEN WORKED WITH THE ELOWAN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN THE EMPIRE THERE WERE SEVERAL POPULAR THEORIES ABOUT THE ANCIENTS. ONE WAS THAT THEY TRAVELLED THE UNIVERSE SEEDING LIFE AND LEAVING ENDURIUM. ANOTHER BELIEF IS THAT THEY WILL ONE DAY RETURN TO JUDGE MANKIND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS BELIEVED THAT THE DEVICE KNOWN AS THE CRYSTAL PLANET WAS BUILT BY THE ANCIENTS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE HAVE LONG BEEN RUMORS THAT SOMEWHERE IN A NEBULA IN SPEMIN SPACE IS A VAST CITY OF THE ANCIENTS. IT IS THOUGHT TO BE ON THE INNERMOST PLANET OF THE SYSTEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE DISCOVERED SOME RUINS AT 36N X 90E ON THE ICE PLANET IN OUR SYSTEM.
         SUBJECT      species:10 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS THE FINAL WARNING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE FIRST WAVE OF ATTACKS ON THE EMPIRE WAS BY THE NUMLOX AND PHLEGMAK AND STARTED IN 3000. THE SECOND WAVE, COMPRISED OF UHLEK AND GAZURTOID, STARTED IN 3400. BOTH CAME FROM COREWARD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AS OF THE TIME OF OUR DEPARTURE THERE WAS AN 84 PERCENT CERTAINTY FACTOR THAT THE NUMLOX AND PHLEGMAK RACES HAD BEEN COMPLETELY DESTROYED BY THE EMPIRE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOUR PRESENCE HERE INDICATES THE EMPIRE HAS SURVIVED. AT THE TIME OF OUR DEPARTURE THE PROBABILITY OF THIS WAS VERY LOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DURING THE WARS WITH THE PHLEGMAK MANY WORLDS OF THE EMPIRE WERE DESTROYED BY THEIR BLACK-EGG PLANET BOMBS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ENTIRE ECONOMY OF THE EMPIRE IS BASED ON ENDURIUM. WHEN WE LEFT, THE RICHEST AND STRONGEST PLANET WAS NEW SCOTLAND, THE SECOND PLANET IN THE UPSPIN END OF THE STAFF CONSTELLATION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHEN WE LEFT, THE EMPIRE WAS DIVIDED INTO MANY FACTIONS. ONE OF THESE WAS HEADED BY LAYTON. THE LAYTONITES BELIEVED THE EMPIRE WAS EVIL AND SHOULD DIE. THEY ARE ENEMIES OF PROJECT NOAH. THEY ARE OUR ENEMIES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   EMPIRE MORALE WAS BROKEN IN 3440 WHEN THE OFFENSIVE HEADQUARTERS ON MARDAN-2 WERE DESTROYED BY THE UHLEK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE INSTITUTE HAS AN UNDERGROUND STATION ON EARTH AT 12N X 104W.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE EMPIRE UTILIZES DRONES CALLED NOMADS IN THEIR PRELIMINARY EXPLORATIONS. THESE COLLECT LIFE AND MINERAL DATA ON PLANETS WHICH MAY PROVE TO BE SUITABLE FOR COLONIZATION.
         SUBJECT      species:9 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CEASE COMMUNICATIONS AND LEAVE IMMEDIATELY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE INSTITUTE WAS A SOCIETY OF SCIENTISTS AND OTHER INTELLECTUALS CONVINCED OF THE EMPIRE'S IMPENDING DESTRUCTION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE INSTITUTE DISCOVERED AN INCREASE IN THE INSTABILITY OF STARS COREWARD. THERE ARE MANY REFERENCES IN OUR DATA BANKS TO THE ENCROACHING  'DEAD ZONE'.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHEN WE LEFT EARTH THE INSTITUTE WAS STUDYING SOL FOR ANOMALOUS RADIATION EMISSIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SOL IS OF COURSE IN THE PYTHAGORAS CONSTELLATION. EARTH DID MOST OF ITS MINING ON MINERAL RICH MARDAN-4, ALSO IN PYTHAGORAS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE INSTITUTE HAS A STARFLIGHT RESEARCH STATION AT THE CENTER OF THE NORTH POLE ON MARS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE FIRST NOAH MISSION, NOAH 1, FAILED BECAUSE A RING DEVICE MALFUNCTION RESULTED IN AN INABILITY TO IDENTIFY CONTINUUM FLUXES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE FOUND EVIDENCE OF EMPIRE RUINS AT 28N X 4E ON ONE OF THE PLANETS IN THE NEARBY CLASS-G SYSTEM. WE HAVE BEEN UNABLE TO INVESTIGATE HOWEVER BECAUSE IT IS WITHIN VELOXI SPACE AND IS GUARDED BY A DRONE.
         SUBJECT      species:8 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE UHLEK PASSED THROUGH THIS REGION MOVING OUTWARD OVER 1000 YRS AGO. THEIR LAST SHIP WAS SEEN IN 3603. FORTUNATELY THEY DID NOT FIND HEAVEN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE LOST 4 OF OUR SHIPS TO ONE UHLEK SHIP IN 3540. THEY POSSESS POWERFUL WEAPONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GAZURTOID ARE MANY-TENTACLED AQUATIC CREATURES WHO LIVE IN TREMENDOUS COLONY SHIPS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GAZURTOID PASSED THROUGH THIS REGION FOLLOWING THE UHLEK. THEY ARE DANGEROUS ENEMIES OF THE EMPIRE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE SPEMIN WERE DISCOVERED IN SYSTEM 82,148 IN 2675. THEY WERE IN A PRE-TECHNOLOGICAL STATE. THE EMPIRE PUT A LOT OF EFFORT INTO TEACHING THE SPEMIN THEIR SCIENCE AND TECHNOLOGY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALL GROUPS, ORGANIZATIONS AND GOVERNMENTS OF THE SPEMIN ARE PRECEEDED BY SS. THIS STANDS FOR 'THE SECRET SOCIETY OF'. WE DO NOT KNOW WHY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN 2790 THE SECRET SOCIETY FOR SPEMIN SUPERIORITY, THE SSSS, GAINED POWER AND THE SPEMIN ATTACKED THE EMPIRE USING THE TECHNOLOGY WE HAD TAUGHT THEM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN THE YEAR 3000, WHEN THE NUMLOX AND PHLEGMAK ATTACKED THE EMPIRE, THE SPEMIN BEGGED FOR PROTECTION. DESPITE THEIR DECLARATION OF WAR IN 2790 PROTECTION WAS GRANTED. AT THE END OF THE ATTACK THE SPEMIN AGAIN TURNED ON THE EMPIRE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN THE YEAR 3400 THE SECOND WAVE ATTACKED THE EMPIRE. FOR THE SECOND TIME THE SPEMIN PLEADED FOR PROTECTION. WHEN THE EMPIRE DID NOT GRANT IT THE SPEMIN ALLIED WITH THE GAZURTOID.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE SPEMIN'S TECHNOLOGY IS INFERIOR SINCE THEY ONLY COPY FROM OTHER RACES. IN SPITE OF THIS THEY ARE NUMEROUS BECAUSE THEY BUILD THEIR SHIPS OUT OF CHEAP MATERIALS AND REPRODUCE AT AN ASTONISHING RATE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN THE YEAR 4410 WE HAD AN ENCOUNTER WITH A SPEMIN SHIP. IT THREATENED US AND THEN FLED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE VELOX WERE THE FIRST RACE ENCOUNTERED BY THE EMPIRE. THIS WAS IN 2300.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE WERE MINOR SKIRMISHES WITH THE VELOX BETWEEN 2300 AND 2400 UNTIL THE HUMAN-VELOX TREATY WAS FINALLY SIGNED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE VELOX HAVE BEEN IN SPACE FOR MANY THOUSANDS OF YEARS. MUCH OF THE EMPIRE'S TECHNOLOGY, INCLUDING SHIP DESIGN, WAS MODELED AFTER THEIRS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE VELOX EMPIRE IS UPSPIN OF HERE. THEY ARE ARROGANT AND SINCE 3330 HAVE HAD AN ISOLATIONIST ATTITUDE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE THRYNN ARE SENTIENT REPTILIAN CREATURES THAT WERE DISCOVERED AND TAKEN INTO THE EMPIRE IN 2770. THEY ARE NATIVES OF THE SAME SYSTEM AS THE ELOWAN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ELOWAN ARE PLANT-LIKE CREATURES WHICH WERE AT FIRST BELIEVED TO NOT BE SENTIENT, DUE TO THE DEPRECATIONS OF THEIR ENEMIES THE THRYNN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE THRYNN CONCERN THEMSELVES ONLY WITH  'MATTERS OF IMPORT'. IN THE EMPIRE THEY GENERALLY FILLED THE NICHES OF AMBASSADORS, DIPLOMATS AND SPIES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ELOWAN HAVE A REPUTATION AS CREATIVE THINKERS. IN THE EMPIRE THEY WERE GENERALLY ARTISTS, PHILOSOPHERS, AND THEORETICAL SCIENTISTS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE THRYNN AND ELOWAN WERE DISCOVERED ON DIFFERENT PLANETS IN A K CLASS SYSTEM WITH 5 PLANETS DOWNSPIN OF HERE. THE THRYNN HAD A MORE ADVANCED TECHNOLOGY AND OFTEN ATTACKED THE ELOWAN PLANET.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE GIVE WARNING. YOU MUST LEAVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
         SUBJECT      species:7 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU MUST LEAVE IMMEDIATELY OR YOU WILL BE DESTROYED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR MISSION WAS TO ESTABLISH THE UNDERGROUND COLONY OF HEAVEN. WE WERE TO BE FOLLOWED BY YOU, GROUP 9, ONE YEAR LATER, BUT YOU DID NOT ARRIVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE LEFT EARTH IN 3479, SENT OUT BY THE INSTITUTE WITH INSTRUCTIONS FOR STANDARD NOAH PROJECT PROCEDURE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR INSTRUCTIONS WERE TO PATROL THE AREA WITHIN 8 SECTORS OF THE HEAVEN SYSTEM AND REPEL ANY INVADERS AFTER HEAVEN WAS ESTABLISHED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INITIALLY HEAVEN WAS ONLY MARGINALLY HABITABLE. IT WAS NECESSARY TO COMPLETELY TERRA-FORM IT AND ENGINEER A SUITABLE BIOTA.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SINCE OUR ESTABLISHMENT HERE WE HAVE BEEN ATTACKED 14 TIMES. TWICE IT HAS BEEN NECESSARY TO RETREAT UNDERGROUND AND REBUILD OURSELVES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROJECT NOAH WAS A FINAL ATTEMPT OF THE INSTITUTE TO ENSURE THE SURVIVAL OF THE EMPIRE AND THE HUMAN SPECIES. THAT IS WHY THE NOAH COLONIES ARE ALL UNDERGROUND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE COLONY WORLD OF HEAVEN, THE 4TH PLANET, HAS A CAPACITY TO SUPPORT SEVERAL HUNDRED THOUSAND COLONISTS. IT AWAITS YOU.
         SUBJECT      species:6 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE AWAIT YOUR RESPONSE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   RESPOND.
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE IS INSUFFICIENT DATA IN THIS VESSEL'S COMPUTER ON THIS SUBJECT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WILL ANSWER NO QUESTIONS.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WHAT DO YOU REQUIRE GROUP 9?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE MECHAN 9.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS EMPIRE TERRITORY. LEAVE IMMEDIATELY.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INTRUDER RESPOND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE MECHAN 9. RESPOND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WELCOME GROUP 9. WE ARE MECHAN 9.
       ORIGINATOR   species:10 size:19   
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   RESPOND
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   RESPOND
       ORIGINATOR   species:18 size:19   
       ORIGINATOR   species:9 size:19   
       ORIGINATOR   species:16 size:19   
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE BEG YOU TO HONOR OUR POOR SELVES AND BESTOW UPON US A PEARL OF WISDOM (CONCERNING / ).
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HUMBLY SUGGEST THAT WE WOULD BE INTERESTED IN ANY LITTLE THING YOU MIGHT WISH TO TELL US (ABOUT / ).
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO YOU HAVE ANY INFORMATION YOU CAN SHARE WITH US (ABOUT / )?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE WOULD GREATLY APPRECIATE SOME INFORMATION. IS THERE ANYTHING YOU CAN TELL US (ABOUT / )?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE INTERESTED IN INFORMATION (CONCERNING / ). CAN YOU HELP US?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE REQUIRE INFORMATION. (YOU WILL TELL US ABOUT / . )
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PLEASE DO NOT BLAST US INTO ATOMIC PARTICLES. TAKE PITY ON US WHO ARE NOT FIT TO GROVEL IN YOUR WASTE PRODUCTS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE CAN SEE THAT YOU ARE INDEED THE TRUE RACE. PRAY ENLIGHTEN US WITH YOUR GEMS OF INFINITE WISDOM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE TRULY ARE NOT WORTH YOUR TROUBLE TO DESTROY. WE WANT ONLY TO BATHE IN YOUR EVER SPEWING FOUNTAIN OF KNOWLEDGE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE UNDERSTAND THAT YOU COULD DESTROY US IF YOU CHOSE. I, CAPTAIN *, BEG YOU IN THE NAME OF PEACE AND MERCY AND ALL THAT IS GOOD AND NICE AND TRUE NOT TO DO THIS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AS REPRESENTATIVES OF THE PEOPLES OF ARTH WE EXTEND OUR BEST WISHES AND OUR HOPE FOR EQUITABLE RELATIONS IN THE FUTURE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IT IS OUR HOPE THAT OUR RESPECTIVE PEOPLES WILL ENJOY A LONG AND MUTUALLY BENEFICIAL RELATIONSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THERE IS A LOT WE CAN LEARN FROM EACH OTHER. PLEASE CONVEY TO YOUR LEADERS OUR SINCERE WISHES FOR PEACE AND FRIENDSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PERHAPS SOME DAY OUR YOUNG SHALL PLAY AND ROMP TOGETHER IN THE BLISSFULL LIGHT OF HARMONY AND FRIENDSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   DO NOT BE AFRAID OF US, WE ARE ON A PEACEFUL MISSION. THERE IS NO LIMIT TO WHAT BOTH OUR RACES CAN GAIN FROM MUTUAL EXCHANGE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   LET US EMBRACE ONE ANOTHER AND SING THE SONGS OF FRIENDSHIP AND SOME DAY PERHAPS WE SHALL LOOK UPON ONE ANOTHER AND SAY ...'BROTHER'.                                                   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU FOOLS. YOU RISK THE WRATH OF THE PEOPLE OF ARTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PREPARE TO DIE ALIEN SCUM.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OUR PATIENCE WEARS THIN. WE SHALL GIVE YOU 3 MINUTES IN WHICH TO COOPERATE. IF YOU DO NOT ... HA HA HA!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE HEARD ENOUGH OF YOUR INANE RANTING. YOU WILL TELL US WHAT WE WISH TO KNOW OR WE WILL DESTROY YOU. YOU HAVE LITTLE TIME LEFT.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE A PEACEFUL EXPLORATION VESSEL FROM ARTH. PLEASE DO NOT HARM US OH MOST HIGH AND MIGHTY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I AM CAPTAIN * OF THE VESSEL &. GREETINGS AND FELICITATIONS OH KIND AND MERCIFUL ALIENS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN * OF THE STARSHIP &. WE ARE ON A PEACEFUL EXPLORATION MISSION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HELLO. WE COME IN PEACE FROM THE PLANET ARTH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS A CAPTAIN * OF THE WARSHIP &. WE ARE PREPARED TO SPARE YOU IF YOU COMPLY WITH OUR DEMANDS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE HAVE NO PATIENCE FOR YOUR FOOLISHNESS. YOU WILL COOPERATE WITH US OR YOU WILL BE DESTROYED.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HAIL OH MIGHTY ONES, MASTERS OF THE UNIVERSE. WE BOW TO YOUR WONDERFUL MAGNIFICENCE AND ASK THAT YOU DO NOT HARM OUR INSIGNIFICANT SELVES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREETINGS OH HIGHEST OF THE HIGH, MOST GREAT ALIEN BEINGS. WE COME IN PEACE FROM THE PLANET ARTH, AND RESPECTFULLY REQUEST THAT YOU IDENTIFY YOUR VASTLY SUPERIOR SELVES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN * OF THE STARSHIP &. WE HUMBLY SUGGEST THAT YOU MAY WISH TO IDENTIFY YOURSELVES AS WELL. IF NOT, THAT IS PERFECTLY O.K.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREETINGS. WE COME IN PEACE AND WISH TO COMMUNICATE, PLEASE IDENTIFY YOURSELVES.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN * OF THE &. WE ARE ON A PEACEFUL MISSION AND REQUEST COMMUNICATIONS. PLEASE IDENTIFY YOURSELVES AND YOUR INTENTIONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE COME IN PEACE AND BRING GREETINGS FROM THE PLANET ARTH. PLEASE RESPOND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN * OF THE STARSHIP &. IDENTIFY YOURSELVES IMMEDIATELY OR BE DESTROYED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS CAPTAIN * OF THE POWERFUL STARSHIP &. YOU WILL COOPERATE AND IDENTIFY YOURSELVES IMMEDIATELY OR BE ANNIHILATED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS THE STARSHIP &. WE ARE HEAVILY ARMED. WE REQUIRE INFORMATION. COMPLY OR BE DESTROYED.
       ORIGINATOR   species:8 size:19   
         SUBJECT      species:15 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ENOUGH THE TALKING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOW MUST GOING GREATEST BUDDY CAPTAIN *.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SEEING YOU THE LATER CROCODILE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SEEING YOU IN A WHILE ALLIGATOR.
         SUBJECT      species:14 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IS THE YOU ALIEN PART OF OLD EMPIRE?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARE COMING TO WORSHIP OF ILLUSTRIOUS QUEEN OF VELOXI GRAND LOVELY?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IS YOU KILLING THE SPEMINS?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE VELOXI ARE SUPERIOR ALL THE TIME. AGREEING?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IS THE YOU ALIENS IN OURS THE VELOXI SPACE SEARCH FOR MOST PRECIOUS ENERGY CRYSTALS OF ANCIENTS?
         SUBJECT      species:13 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I GUESS US IS BEST FRIEND. PERHAPS WE WILL EAT TOGETHER THE SLIMY NODULES A MANY THE MOST DELICIOUS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE IS MAKING YOU HONORARY VELOXI. OF COURSE STILL THE INFERIOR ALIEN BUT MUCH THE BETTER I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   BEST IDEA I HAVE. WE IS EXCHANGE THE MANY DIRTY JOKE AND THEN TOO MUCH THE LAUGHING ACTIVITY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOT TRYING THE FUNNY STUFF ALIEN TRESSPASSERS, SUPERIOR VELOXI THE MOST POWERFUL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IF YOU IS SHOWING PROPER RESPECT FOR DISTINGUISHED VELOXI CHARMING THEN EVERYONE IS HAPPY AS BIVALVE MOLLUSK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SUPERIOR VELOXI MAJESTIC ARE OLDEST EMPIRE. 100,000 YEARS THE LONG TIME. ASSUREDLY YOU IS BARBARIAN UPSTART INFIDEL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU IS COOPERATING WITH VELOXI JIM DANDY AND MAYBE WE IS NICE GUY THE NOT KILLING YOU.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARE PROBABLY THINK VELOXI IS TOO SMART. NO WONDER. ALL VELOXI ARE EXCEPTIONAL CUNNING THE BRAIN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ZOUNDS! I FLABBERGAST! I DUMBFOUND! I NOT BELIEVING MY SENSORY APPARATUS! BARBARIAN ALIENS IS NOT RECOGNIZE VELOXI ARE TOO MUCH THE SUPERIOR.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OKEY THE DOKEY TERRIBLE ALIENS A UGLY. NOW VELOXI US IS MOST ANGRY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PERHAPS HAVING MADE MOST REASONABLE UNCLEAR. VELOXI HAVING TERRIBLE WEAPONS FIERCELY. SHOOTING WEAPONS. WEAPONS BLOWING UP. BIG EXPLOSION MAKING NASTY ALIENS DYING NO DOUBT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU IS TRY VELOXI PATIENCE. SO MUCH SO THE SECRETING THE MANY FLUIDS AND GNASHING THE MANDIBLES. LAST CHANCE A WARNING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI ARE ACTUALLY MOST REASONABLE AND NOT WANTING TROUBLE FURTHERMORE. US IS BOTH CIVILIZED ADULT. LET US TALKING PEACEFUL AND NONE THE USELESS FIGHTING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GREATEST IDEA I HAVE! I AM MAKE SUGGESTION. THE YOU ALIENS ARE NOT DESTROY OURS THE PRETTY SPACESHIP. YES, I THINK THIS IS BEST IDEA CERTAINLY.
         SUBJECT      species:11 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE ANCIENTS IS ANCESTORS OF VELOXI, VELOXI LEGEND IS SAYING. VELOXI IS POWERFUL RACE. ANCIENTS WAS POWERFUL RACE. OBVIOUSLY US ARE RELATIVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE GREAT EGG AT 192,152 IS MADE BY ANCIENTS. IT IS OF COURSE LOOKING LIKE BIG VELOXI EGG EXACTLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE MOST MAGNIFICENT HEXAGON ON SACRED PLANET SPHEXI IS A SIGN FROM ANCIENTS TO WONDERFUL VELOXI DESCENDANTS. THE SMALL EGG IS THERE. MOST SACRED OF VELOXI POSSESSIONS ABSOLUTELY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE MOST MAGNIFICENT HEXAGON IS OF COURSE SIGN TO VELOXI FROM ANCIENTS OF HOLY NUMBER 6. MOST PERFECT OF ALL NUMBERS. OF COURSE VELOXI ARE 6 LEGS, THE ONLY RACE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ANCIENTS LEFT VELOXI US PROPHECY OF GREAT EGG. VERY IMPORTANCE, BUT CERTAINLY ONLY TELLING TO BEST FRIENDS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SPHEXI IS FIRST PLANET AT 132,165 STAR.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROPHECY OF EGG SAYS GREAT EGG IS TRAVEL THROUGH GALAXY FROM CORE TO OUTWARD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROPHECY OF EGG SAYS GREAT EGG THE CAUSING SUN OF ANY SYSTEM WHERE IS LIFE TO FLARE. THE LIFE IS KILLED NO DOUBT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROPHECY OF THE EGG SAY THE GREAT EGG IS SLOWLY MOVE AND DRIVING IN FRONT RACES THAT TRYING TO ESCAPE DESTRUCTION OF GREAT EGG.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROPHECY OF THE EGG SAY THAT GREAT EGG WILL DESTROYING ALL LIFE IN GALAXY EXCEPTING OF COURSE GRACIOUS QUEEN.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PROPHECY IS SAYING AFTER THE GREAT EGG IS DESTROY ALL LIFE IT WILL HATCH AND OUT IS COMING XPU, THE OLD ONE. XPU IS THEN MATING WITH QUEEN AND MAKING NEW VELOXI RACE FOR GALAXY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ACCORDING TO PROPHECY OF EGG THE GREAT EGG IS NOT HARMING QUEEN OF VELOXI AS LONG AS VELOXI IS HAVE THE SMALL EGG.
         SUBJECT      species:10 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI IS EXTREME DELIGHTFUL THE OLD EMPIRE WAS WIPED UP. THE EMPIRE WAS MANY SCOUNDREL ACTIVITY TOO NAUGHTY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OLD EMPIRE WAS TRY COLONIZE THE MANY PLANETS. ALWAYS THE EXPANDING. THEY WAS USING DRONES CALLED NOMAD TO COLLECTING DATAS. MANY DRONES IS STILL COMING AROUND VELOXI SPACE. IS ANNOY VELOXI TOO MUCH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN YEAR 3120 VELOXI AND EMPIRE WAS MADE PACT TO FIGHT FIRST WAVE. WAVE WAS ATTACK EMPIRE FIRST AND VELOXI HELP, THEN WHEN ATTACK IS ON VELOXI GRAND LOVELY, EMPIRE NOT HELPING. VELOXI IS FUMING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE EMPIRE WERE BETRAYING VELOXI WONDERFUL IN FIRST WAVE ATTACK OF PHLEGMAK AND NUMLOX SO WHEN SECOND WAVE IS ATTACK, VELOXI IS NOT HELPING AND EMPIRE IS TOO WEAK. EMPIRE IS DESTROYED. TOO BAD.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN EMPIRE YEAR 3330 VELOXI AND EMPIRE NOT BUDDIES. EVIL NASTY EMPIRE PIRATE NAMING HARRISON IS ATTACK VELOXI SHIP AND STEAL FOCUSING STONE. VELOXI IS SO ANGRY. EVEN NOW VELOXI A NOT FORGET.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OLD EMPIRE PIRATE WAS STOLE PRECIOUS VELOXI STONE. IF EVER RETURNING VELOXI TOO GRATEFUL I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE IS REMEMBER RUINS OF OLD EMPIRE BEING AT 34N X 28E ON ICE PLANET OF DOWNSPIN SYSTEM IN STAFF CONSTELLATION. VELOXI EXPLORATION IS FIND THE LONG TIMES AGO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   IN OLD TIME EMPIRE WAS HAVING BASE IN VELOXI TERRITORY AT 28N X 4E FIRST PLANET OF YELLOW SYSTEM AT 143,115. THIS PLANET ARE FORBIDDEN HOWEVER.
         SUBJECT      species:9 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE ARE LONGTIME RECEIVING OLD EMPIRE DISTRESS CALL FROM SYSTEM 175,94. OF COURSE VELOXI COULD CARING LESS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MOST EXTREME IMPORTANCE SYSTEM OF VELOXI GRAND LOVELY IS GUARDED BY VELOXI DRONES THE MOST DESTRUCTIVE. ALL MUST ANSWERING QUESTIONS CORRECTLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   EXPLORERS IS FINDING THE MANY INTERESTING LIFES ON PLANETS IN 149,133 SYSTEM. VELOXI IS STUDY. TOO INTERESTING I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CERTAINLY A MOST PERFECT NUMBER IS PRECISELY SIX. VELOXI ARE KNOW THIS ABSOLUTELY. IS SACRED NUMBER OF ANCIENTS AND OF COURSE THE SIX LEGS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO MANY MINERALS IS FINDING ON MOLTEN PLANET OF 149,133. ESPECIALLY THE MANY AT BIGGEST MOUNTAINS. MINERALS IS ALWAYS MORE THE MOUNTAINS. OF COURSE YOU KNOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE ANSWERING VELOXI PROBE IS BY 6 MULTIPLES THE YES ANSWER.
         SUBJECT      species:8 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OTHER RACES SMALL IMPORTANT. VELOXI ARE NUMBER ONE IMPORTANCE. OTHER RACES NOT EVEN KNOWING PROPHECY OF EGG. BARBARIANS CERTAINLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI LAUGHING AT OTHER RACES. NOT EVEN KNOWING HOW TO MEETING END OF LIFE IN GALAXY LIKE MOST CIVILIZED VELOXI.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SPEMIN RACE IS TOO MUCH EXTREMELY THE COWARDLY STUPID. NOT EVEN TASTING GOOD THE ICKY BLOB.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ELOWAN PLANT AND THRYNN SCALY BEAST IS ALWAYS FIGHT. THRYNN SCALY BEAST IS ATTACKING MANY TIME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI HAD THINKING ALL HUMAN WERE DESTROY IN SECOND WAVE. SECOND WAVE IS UHLEK AND GAZURTOID ATTACKING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   UHLEK IS POWERFUL THE MOST. GAZURTOID SQUID MEANIES IS FOLLOW BEHIND UHLEK AS UHLEK MOVING OUTWARD FROM COREWARD IN SECOND WAVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   FIRST WAVE ATTACKING WAS PHLEGMAK AND NUMLOX RACES. WAVES OF ATTACKING IS COMING FROM COREWARD. FIRST WAVE ARE ATTACK IN YEAR 3000.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO VELOXI IS KNOW WHAT UHLEK ARE LOOK LIKE. UHLEK IS FAR AWAY OUTWARD. MUCH HAPPINESS FOR CAUSE VELOXI.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   PHLEGMAK AND NUMLOX IS DEAD THE RACES. SUPREME VELOXI IS KILL. LAST BATTLE BEING 3250 AT PHLEGMAK BASE AT 35S X 99E ON SECOND PLANET IN HANDLE OF AXE MOST ASSUREDLY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WAVES OF ATTACKING RACES IS COMING FROM GALAXY CENTER. FIRST WAVE IS YEAR 3000, SECOND WAVE WAS STARTING YEAR 3400, UHLEK AND GAZURTOID.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   GAZURTOID SQUIDS IS A FANATICAL STUPID. IS THINK TO RID GALAXY OF AIR-BREATHERS. VELOXI CAN'T BELIEVE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MINSTREL CREATURE IS OLD ALMOST AS VELOXI. THEY WANDERING IN SPACE AND SINGING THE BALLADS. VELOXI ARE THINKING VERY STRANGE BUT HARMLESS MOST DEFINITELY.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SOMETIMES VELOXI IS SEE VERY STRANGE ALIEN SHIP. THIS SHIP ARE ONLY COMMUNICATING OCCASIONALLY AND THEN NOT UNDERSTANDING THE FUNNY BALLS. VELOXI IS THINK TOO STRANGE.
         SUBJECT      species:7 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE BEST OF QUESTIONS AND HAPPILY ANSWERING.  WE VELOXI IS ANCIENT AND PRESTIGE. ILLUSTRIOUS VELOXI EMPIRE TOO OLD THE IMAGINE. US IS CIVILIZED THE MOST.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   A GLORIOUS VELOXI WORSHIP EXCEPTIONALLY GROSSNESS OF GRACIOUS QUEEN. CENTER OF ALL VELOXI LIFE THE WORSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALL VELOXI IS MALE DRONE, OF COURSE BUT QUEEN. OTHER VELOXI FEMALE IS KILL WHEN HATCH. ONLY GRACIOUS QUEEN IS LAYING ALL EGGS MOST PRODIGIOUS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALL VELOXI DREAM IS TO FERTILIZE QUEEN. TOO GREAT THE HONOR. OF COURSE AFTERWARDS DRONE IS LOSE HEAD, HOWEVER NONE THE MATTER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI IS FEEDING QUEEN SPECIAL BEST JELLY. SHE IS GROWING SO BIG AND LIVE LONGEST TIME. MAYBE 2 KILOMETERS THE MEASURE, AND LIVING 500 YEARS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MOST GRACIOUSNESS QUEEN LIVING ON VOTIPUTOX, HIVE WORLD OF VELOXI.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI IS WORSHIP QUEEN AND ALSO ANCIENTS, GREAT ANCESTORS OF VELOXI GRAND LOVELY. SACRED PLANET OF ANCIENTS IS SPHEXI.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   QUEEN IS COMMUNICATING TO ALL VELOXI DRONES THROUGH HIVE-MIND. IN ANCIENT DAY WAS USING FOCUSING STONE. TODAY IS LOST, MUCH THE SORRY.
         SUBJECT      species:6 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AWAITING YOUR ANSWER I THINK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NOW ANSWERING OR SEVERE CONSEQUENCES INDEED.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARE ANSWER NOW YOU'RE WELCOME.
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   US ARE NOT ANSWER THE QUESTIONS. YOU ARE LEAVING OR US IS GETTING MORE THE UPSET AND SOON FIRING DEADLY WEAPONS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU ARE BETTER GO, US IS GETTING TIRED THE WARNING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOU IS MAYBE THINK WE ARE PLAY GAME? NO. WE ARE SERIOUS TOO MUCH. YOU ARE GO NOW LAST CHANCE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   US IS GETTING TIRED OF SAY. ALIEN NOT WELCOME AT VOTIPUTOX. YOU ARE MAKE VELOXI UPSET. SOON WE ARE ATTACK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NONE THE INFORMATION. VELOXI A NOT KNOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   YOUR QUESTION ARE PRESUMPTUOUS TOO MUCH. OF COURSE I IS NOT ANSWER.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   TOO MUCH THE ENJOYMENT OF MEETING AGAIN THE BEST ALIEN BUDDIES. SUCH A HAPPINESS I GUSH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   INDEEDY US IS TALKING A MANY THING WITH ALIEN BEST FRIEND.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE IS VELOXI THE EVERYDAY. I BEING CAPTAIN % OF EXCEPTIONALLY PLEASANT VESSEL +. NOW PERHAPS THE INFORMATION EXCHANGING.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   US ARE MOST VALIANT AND WONDERFUL DRONES OF VELOXI EMPIRE GRAND LOVELY. NOW WE ARE DOING THE COMMUNICATING ACTIVITY WITH INFERIOR ALIENS A TRESPASS.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   OF COURSE US IS VELOXI. NOW PREPARING TO DYING YOU THE EVIL TRESPASSERS OF VELOXI GRAND LOVELY. 
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   US IS OF COURSE  ILLUSTRIOUS VELOXI. NOW YOU IS SURRENDERING YOUR SPACE BOAT AND CREATING THE BEST SITUATION NO DOUBT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE IS VELOXI YOUR BEST FRIEND. PLEASE NOT TO DESTROYING US, BEST GOOD ALIENS A UGLY. US IS SURRENDER.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   US IS SURRENDER. I CAPTAIN %. YOU IS TOO MUCH THE SORRY IF KILLING US I'M A THINK SO.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI IS ISSUE WARNING. VOTIPUTOX, VELOXI HOMEWORLD IS OFF THE LIMIT TO ALIEN. I ARE SORRY BUT YOU IS LEAVING I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO ALIENS ARE WELCOME VELOXI HOMEWORLD. THE YOU ALIENS ARE MUST LEAVE NOW EXTREMELY. I IS NO JOKE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HALT ALIENS! I IS CAPTAIN % AND I AM ORDER YOU PRETTY QUICKLY LEAVING VELOXI HOMEWORLD VOTIPUTOX. NO ALIEN ARE ALLOWED. YOU ARE LEAVE OTHERWISE US ARE ATTACK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALIEN ENEMY ARE COME TO VELOXI HOMEWORLD FOR INVADING. US IS PROTECT SUPREME VELOXI EMPIRE. BANZAII!
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THE HAPPINESS OF SEEING AGAIN THE SLIGHTLY DISGUSTING ALIEN FRIENDS. EXTREME DELIGHTFUL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   AHOY ICKY BEINGS. US IS VELOXI THE MOST HAPPY TO SEEING YOU. NOW WE IS MAKING THE FRIENDLY AND MOST OUTGOING GESTURES. HAPPILY ARE THE YOU RESPONDING?
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MOST HARMONIOUS GREETINGS FRIENDS AND WORSHIPPERS OF VELOXI GRAND LOVELY. LET US COMMUNICATING THE EVERYTIME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   MOST HARMONIOUS GREETINGS. US IS ILLUSTRIOUS VELOXI. PLEASE NOW THE IDENTIFYING I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I IS CALLED % AND ARE SUPREME COMMANDING CAPTAIN OF GREATEST SHIP +. PERHAPS WE ARE A COMMUNICATING HAPPINESS PEACEFUL AND NOT COMPLETELY OBLITERATING INFERIOR ALIENS THE TRESPASSING. IMMEDIATELY A RESPONDING YOU'RE WELCOME.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ME IS NAMING CAPTAIN % OF MOST ELEGANT AND DANGEROUS VELOXI SHIP NAMING +. THE YOU ALIENS PLEASE TO IDENTIFYING AND TELLING US VELOXI THE MOST SIGNIFICANT AND HIGHLY SECRET INFORMATION.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HALT ALIEN INVADERS. IDENTIFY NOW OR THE FIERY DEATH.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SO ALIEN INVADERS. YOU IS SHOWING PROPER RESPECT A QUICKLY OR EXTREMELY THE DYING. US IS NOT WAITING LONG TIME. IDENTIFY NOW.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HALT BARBARIANS AND MAKING SHOW OF DEFENSELESSNESS. US IS VELOXI, CHAMPION BEST A-NUMBER-1 RACE OF GALACTIC BEAUTIFUL. YOU ARE OBEYING NO DOUBT.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   WE IS SURRENDER. PLEASE NOT VAPORIZING NICE VELOXI SHIP. LET US THE COMMUNICATING FRIENDSHIP.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CERTAINLY US IS SURRENDER MOST PEACEFUL.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   VELOXI IS ISSUE WARNING. VOTIPUTOX, VELOXI HOMEWORLD IS OFF THE LIMIT TO ALIEN. I ARE SORRY BUT YOU IS LEAVING I THINK SO.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   NO ALIENS ARE WELCOME VELOXI HOMEWORLD. THE YOU ALIENS ARE MUST LEAVE NOW EXTREMELY. I IS NO JOKE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   HALT ALIENS! I IS CAPTAIN % AND I AM ORDER YOU PRETTY QUICKLY LEAVING VELOXI HOMEWORLD VOTIPUTOX. NO ALIEN ARE ALLOWED. YOU ARE LEAVE OTHERWISE US ARE ATTACK.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ALIEN ENEMY ARE COME TO VELOXI HOMEWORLD FOR INVADING. US IS PROTECT SUPREME VELOXI EMPIRE. BANZAII!
         BOX          species:48 size:8   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
-          STRING       species:32 size:0   
+          STRING       species:32 size:0   TS
+          STRING       species:32 size:0   PUX
+          STRING       species:32 size:0   XI
+          STRING       species:32 size:0   PHE
+          STRING       species:32 size:0   TO
+          STRING       species:32 size:0   POX
+          STRING       species:32 size:0   VO
+          STRING       species:32 size:0   VE
+          STRING       species:32 size:0   CHU
+          STRING       species:32 size:0   FI
+          STRING       species:32 size:0   TI
+          STRING       species:32 size:0   TU
+          STRING       species:32 size:0   PU
+          STRING       species:32 size:0   XI
+          STRING       species:32 size:0   PHE
+          STRING       species:32 size:0   TSE
+          STRING       species:32 size:0   FE
+          STRING       species:32 size:0   TE
+          STRING       species:32 size:0   NOC
+          STRING       species:32 size:0   FO
+          STRING       species:32 size:0   TOX
+          STRING       species:32 size:0   PO
+          STRING       species:32 size:0   VO
+          STRING       species:32 size:0   VE
+          STRING       species:32 size:0   VU
+          STRING       species:32 size:0   VI
+          STRING       species:32 size:0   KSI
+          STRING       species:32 size:0   TZI
+          STRING       species:32 size:0   ZE
+          STRING       species:32 size:0   TZ
+          STRING       species:32 size:0   SH'
+          STRING       species:32 size:0   XX
       ORIGINATOR   species:11 size:19   
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...THROUGH THE WINDLESS NIGHT WE SAIL, TO WATCH THE TIMELESS DANCE UNFOLD. OUT OF JOY WE SHARE THE TALE, TO ANY WHO WOULD HAVE IT TOLD...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...BACK WHEN ALL THE STARS WERE YOUNG, BEFORE THE MINSTREL SONGS WERE SUNG, WHEN THIS GALAXY WAS NEW, THERE CAME FROM FAR THE CRYSTAL FEW. GRADUALLY THEY SPREAD THROUGH SPACE. THEY WERE THE FIRST, THE ONLY RACE...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...TIME, IT SEEMS, DOESN'T FLOW. FOR SOME IT'S FAST, FOR OTHERS SLOW. IN WHAT TO ONE RACE IS NO TIME AT ALL, ANOTHER RACE CAN RISE AND FALL...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...AND HARDER STILL TO RECOGNIZE THAT WHICH LIES BEFORE ONES EYES. SO MANY RACES HAVE BELIEVED IN ONLY WHAT WAS PRECONCEIVED. THAT WHICH IS ANCIENT MAY BE NEW, IT ALL DEPENDS ON POINT OF VIEW...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...THE VIRUS SPREAD LIKE BURNING FIRE, THE SEA OF DREAD ROSE HIGHER AND HIGHER. THE CRYSTAL ONES HAD TO FIGHT BY CAUSING SUNS TO IGNITE. SELF-DEFENSE, IT IS THEIR RIGHT...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...FROM INWARD OUT THE RACES FLEE, SEARCHING FOR A PLACE TO HIDE. EVER IN A WAVE OF WAR, AND ON THE CREST THE STRONGEST RIDE.
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   ...WE ARE THE WATCHERS OF THE DANCE...MANY WONDER AT US. BUT HOW COULD THERE NOT BE AN AUDIENCE....FOR THE GREATEST OF ALL COMEDIES...
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CAPTAIN *, SOMETHING VERY PECULIAR IS HAPPENING. I AM RECEIVING A MESSAGE BUT THERE DOESN'T SEEM TO BE ANY TRANSMISSION.
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CAPTAIN, SOMETHING VERY STRANGE IS HAPPENING. I AM RECEIVING A MESSAGE BUT THERE DOESN'T SEEM TO BE ANY TRANSMISSION.
       ORIGINATOR   species:19 size:19   
         SUBJECT      species:5 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   THIS IS A RECORDED MESSAGE. I AM CAPTAIN SMELENUF OF THE EMPIRE COLONY SHIP 'LASTHOPE'. THE DATE IS 3-10-3480. MY SHIP HAS BEEN CRITICALLY DAMAGED. TWO THIRDS OF THE CREW AND COLONISTS ARE DEAD. WE HAVE PUT DOWN ON THE FIRST PLANET IN THIS SYSTEM...
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   I REPEAT...WE HAVE BEEN FORCED TO PUT DOWN. WE WILL BE AT COORDINATES 22N X 97W. WE WILL SURVIVE FOR AS LONG AS WE CAN. I JUST HOPE YOU'RE NOT TOO LATE. SMELENUF OUT.
         SUBJECT      species:2 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CAPTAIN, WE'RE PICKING UP A DISTRESS BEACON SIGNAL
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SOS....SOS
         SUBJECT      species:1 size:0   
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   CAPTAIN *, WE'RE PICKING UP A DISTRESS BEACON SIGNAL
           PHRASECONTRL species:0 size:6   
-            STRING       species:32 size:0   
+            STRING       species:32 size:0   SOS....SOS
     BOX          species:1 size:8   
       STARSYSTEM   species:71 size:8   196 255 184 6 176 2 255
         PLANET       species:6 size:0   
@@ -1986,76 +1986,76 @@ IROOT        species:32 size:0
                 BOX          species:45 size:8   
                 BOX          species:28 size:8   
                   NOTICE       species:0 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   YOU ARE ABOUT TO EMBARK ON YOUR FIRST MISSION. IN YOUR BANK ACCOUNT YOU WILL FIND THE AMOUNT OF 12,000 MONETARY UNITS (M.U.). THIS MONEY IS TO BE SPENT TRAINING YOUR CREW, CONFIGURING YOUR SHIP, AND PURCHASING ANY NECESSARY MATERIALS.
+                    STRING       species:32 size:0   OF COURSE YOU MAY WISH TO LEAVE SOME PORTION OF THIS IN THE BANK TO EARN INTEREST. THIS IS ACCEPTABLE. AT THIS STAGE OF THE OPERATION OUR PRIMARY GOAL IS TO GATHER INFORMATION. CONSEQUENTLY, YOUR OBJECTIVES ARE -
+                    STRING       species:32 size:0   1. SEEK OUT AND EXPLORE STRANGE &&&&& NEW WORLDS
+                    STRING       species:32 size:0   2. BOLDLY GO WHERE NO MAN HAS &&&&& GONE BEFORE
+                    STRING       species:32 size:0   3. ESTABLISH CONTACT WITH ANY &&&&& SENTIENTS
+                    STRING       species:32 size:0   4. CAPTURE AND BRING BACK &&& &&&&& NON-SENTIENT LIFEFORMS
+                    STRING       species:32 size:0   5. RECORD ALIEN LIFEFORM DATA
+                    STRING       species:32 size:0   6. BRING BACK ALIEN ARTIFACTS
+                    STRING       species:32 size:0   7. BRING BACK ANY VALUABLE &&& &&&&& MINERALS (INCLUDING ENDURIUM).
+                    STRING       species:32 size:0   8. KEEP FROM GETTING BRUTALLY &&&&& KILLED
+                    STRING       species:32 size:0   WE HAVE LITTLE INFORMATION TO OFFER CONCERNING WHAT YOU MIGHT FIND. WE SUGGEST HOWEVER, THAT YOU AVOID THE AREA OF SPACE AROUND THE COORDINATES 135,84 SINCE THAT IS WHERE WE LOST CONTACT WITH TWO OF OUR EARLIER SHIPS.
+                    STRING       species:32 size:0   SCOUT REPORTS INDICATE A HIGH DENSITY OF MINERALS IN THE MOUNTAINOUS REGIONS OF THE INNERMOST PLANET OF OUR SYSTEM.
+                    STRING       species:32 size:0   FURTHER, WE HAVE FOUND INFORMATION THAT LEADS US TO BELIEVE THAT THERE MAY BE SOME RUINS OF THE OLD EMPIRE AT COORDINATES 17N X 162E ON THE SECOND PLANET OF THE NEIGHBORING K-CLASS SYSTEM.
+                    STRING       species:32 size:0   WE HAVE ALSO RECEIVED SOME INDICATION OF ALIEN ACTIVITY IN THE SYSTEM 175,94.
+                    STRING       species:32 size:0   GOOD LUCK, AND A SAFE RETURN.
                   NOTICE       species:1 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   IT IS NECESSARY TO GIVE YOU SOME UNPLEASANT NEWS. YOU MAY HAVE BEEN AWARE THAT FOR THE LAST SEVERAL YEARS SCIENTISTS HAVE BEEN OBSERVING ANOMALOUS FLUCTUATIONS IN THE RADIATION LEVELS OF OUR SUN.
+                    STRING       species:32 size:0   WHILE YOU HAVE BEEN AWAY IT HAS BEEN ASCERTAINED THAT THE STABILITY OF OUR SUN IS DEFINITELY DETERIORATING. HOW MUCH TIME WE HAVE UNTIL THERE IS A FATALLY LARGE FLARE, WE ARE STILL NOT SURE, BUT THERE IS LITTLE DOUBT THAT THIS WILL EVENTUALLY OCCUR.
+                    STRING       species:32 size:0   AS YET, WE HAVE NO CLUE AS TO THE CAUSE OF THIS INSTABILITY. THEREFORE, WE MUST ASSUME THERE IS NOTHING WE CAN DO TO CHANGE THE SITUATION. IN VIEW OF THIS THE ONLY OPTION AVAILABLE TO US IS TO GET AS MANY COLONISTS OFF OF ARTH AS WE CAN.
+                    STRING       species:32 size:0   YOU CAN BE INVALUABLE TO US IN THIS. FIRST WE NEED ENDURIUM TO POWER THE SHIPS WE WILL BUILD. WE WILL PAY WELL FOR ANY THAT YOU CAN BRING BACK. SECONDLY, WE NEED TO KNOW WHERE TO SEND THE COLONISTS.
+                    STRING       species:32 size:0   AS YOU MAY HAVE ALREADY DISCOVERED, YOUR SHIP IS EQUIPPED WITH HOMING DRONES WHICH YOU MAY USE TO LOG YOUR RECOMMENDATIONS. THIS IS SO THAT WE CAN MOVE THE COLONISTS OUT AS QUICKLY AS POSSIBLE.
+                    STRING       species:32 size:0   IN ADDITION, A SENSOR HAS BEEN INSTALLED WHICH WILL INFORM YOU OF THE STELLAR CONDITION UPON ENTERING A SYSTEM. YOUR SHIP COMPUTER WILL INFORM YOU IN THE EVENT THAT A FLARE IS IMMINENT.
+                    STRING       species:32 size:0   WE ADVISE CAUTION WHILE IN SYSTEMS WHICH ARE MORE THAN SLIGHTLY UNSTABLE. BEING CAUGHT IN A SOLAR FLARE WOULD CERTAINLY BE FATAL.
+                    STRING       species:32 size:0   IN YOUR MANUAL WE HAVE OUTLINED THE CRITERIA WHICH WILL BE IMPORTANT IN YOUR EVALUATION OF VIABLE COLONY WORLDS. YOU WILL BE REWARDED FOR RECOMMENDATIONS OF VALUABLE PLANETS AND PENALIZED FOR RECOMMENDATIONS OF PLANETS WHICH TURN OUT TO BE UNINHABITABLE.
+                    STRING       species:32 size:0   CONSIDER CAREFULLY BEFORE LOGGING A PLANET.
                   NOTICE       species:2 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   TO ALL CAPTAINS - ONE OF OUR SHIPS WAS JUST DESTROYED BY WHAT REPORTS INDICATE TO BE ANDROIDS APPROXIMATELY 20 SECTORS DIRECTLY COREWARD OF ARTH. WHEN PASSING THROUGH THIS AREA PROCEED WITH CAUTION.
                   NOTICE       species:4 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   WE HAVE RECEIVED REPORTS OF AN AREA OUTWARD AND DOWNSPIN OF ARTH ABOUT 40 SECTORS DISTANT. THERE IS A CONSTELLATION HERE IN THE SHAPE OF A CROSS WHICH SEEMS TO MARK A NEXUS OF CONTINUUM FLUXES.
+                    STRING       species:32 size:0   WE SUGGEST HOWEVER, THAT UNLESS YOU ARE PROPERLY PREPARED YOU AVOID THIS AREA SINCE WE HAVE ALREADY LOST SEVERAL SHIPS IN ITS VICINITY.
                   NOTICE       species:7 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   A BIG CONGRATULATIONS TO COMMANDER TOPIPHOPHEX AND HIS MATE. THEY JUST HATCHED 16 NEW LARVAE. WAY TO GO TOPI!
                   NOTICE       species:9 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   ONE OF OUR SHIPS HAS STUMBLED ACROSS SOME RUINS ON THE THIRD PLANET OF OUR OWN SYSTEM. THERE IS EVIDENCE THAT THERE MAY BE MORE. THIS MAY BE WORTH INVESTIGATING.
                   NOTICE       species:11 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   XENON, WHERE'S MY MONEY?  BORNO.
                   NOTICE       species:13 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   SCIENTISTS HAVE ASCERTAINED THAT THE CAUSE OF THE INSTABILITIES IN OUR SUN ARE EXTERNAL TO THE STAR. THE RATE OF THE DETERIORATION IS INCREASING. THERE IS A POSSIBILITY THAT SOME OTHER RACE MAY HAVE SOME CLUE AS TO THE CAUSE.
+                    STRING       species:32 size:0   OUR SITUATION APPEARS INCREASINGLY DIRE.
                   NOTICE       species:17 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   WE HAVE COMPILED A LIST OF SOME OF THE NEARBY FLUXES FROM DATA THAT HAS BEEN BROUGHT BACK BY THE EXPLORATION VESSELS. THIS MAY BE OF USE TO YOU. HERE ARE SOME LINK PAIRS -
+                    STRING       species:32 size:0     128,105  -  146,112
+                    STRING       species:32 size:0     126, 87  -  173, 88
+                    STRING       species:32 size:0     148,166  -  170, 93
+                    STRING       species:32 size:0     104, 82  -  118,107
                   NOTICE       species:22 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   HIGHLY QUALIFIED FEMALE THRYNN, IHSSS T'LARRA, SEEKS EMPLOYMENT ON OUTGOING EXPLORATION VESSEL. EXTENSIVE EXPERIENCE AS COMMUNICATIONS OFFICER ON BOARD THE ISS INTREPID AND HAS A CLASS 5 NAVIGATOR'S RATING.
                   NOTICE       species:30 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   BORNO, MEET ME ON REGULON 7 ON THE 15 TH. YOU KNOW WHERE. YOU'LL GET YOUR MONEY.  XENON.
                   NOTICE       species:39 size:1   
-                    STRING       species:32 size:0   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   ONE OF OUR SHIPS HAS REPORTED THAT THE THRYNN HAVE OFFERED TO BUY ARTIFACTS FROM THEM AT INFLATED RATES. WE URGE YOU NOT TO DO THIS.
+                    STRING       species:32 size:0   INASMUCH AS IT MAY FURTHER RELATIONS WITH THEM THIS IS UNDERSTANDABLE, BUT WE DO NOT WISH TO SACRIFICE WHAT WE MIGHT BE ABLE TO LEARN FROM THESE ARTIFACTS.
                   NOTICE       species:47 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   WE HAVE JUST LOST ANOTHER OF OUR SHIPS. THIS TIME IT WAS AT THE COORDINATES 192,152. ANY SHIPS IN THIS AREA MAY WISH TO INVESTIGATE, BUT WE ADVISE EXTREME CAUTION.
                   NOTICE       species:49 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   DUE TO AN INCREASED DEMAND RESULTING FROM STEPPED UP COLONIZATION EFFORTS, THE PRICE OF ENDURIUM HAS BEEN RAISED TO 1500 M.U. PER CUBIC METER.
                   NOTICE       species:65 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   WE HAVE RECEIVED TO DATE, MANY REPORTS WHICH INDICATE THAT MINIMAL OR NO LIFE EXISTS COREWARD OF HERE. ANY SHIPS ACQUIRING MORE INFORMATION ARE INSTRUCTED TO REPORT ON THIS IMMEDIATELY.
                   NOTICE       species:84 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   USED 'TELEPORTAL' MATTER-MITTER. ALMOST PERFECT CONDITION. FINE FOR SHORT DISTANCE TELEPORTATION, AND RELATIVELY SAFE FOR LONGER JUMPS. 13,000 OR BEST OFFER. WILL CONSIDER TRADE FOR FAMILY SIZED NEUTRON SCOOTER.     SEE GUIDO.
                   NOTICE       species:104 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   XENON, I WAS THERE, WHERE WERE YOU?  BORNO.
                   NOTICE       species:125 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   ELOWAN HERMAPHRODITE SEEKS XB-STP W-VO FOR FUN AND COMPANIONSHIP. MUST BE WELL-LEAVED AND ENJOY 4-D SENSO-RAMA AND MOON HOPPING. SEND HOLOGRAM.
                   NOTICE       species:134 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   THE PRICE OF ENDURIUM HAS ONCE AGAIN BEEN RAISED. IT IS NOW 2000 M.U. PER CUBIC METER FOR EVERYONE BUT THE INTERSTEL CORPORATE HEADS AND THEIR FAMILIES. FOR THEM THERE IS A SPECIAL REDUCED RATE OF 50 M.U. PER CUBIC METER.
                   NOTICE       species:162 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   BORNO, GONE RELATIVISTIC. SEE YOU IN A HUNDRED YEARS.  XENON.
                   NOTICE       species:56 size:1   
-                    STRING       species:32 size:0   
+                    STRING       species:32 size:0   THE END
         BOX          species:4 size:8   
           PLANET       species:31 size:0   
             MESSAGE      species:1 size:17   

@@ -305,8 +305,9 @@ IFieldType UNK_0xe7ef = {BOXIDX, 0x11, 0x02};
 IFieldType UNK_0xe7f4 = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
-// 0xe7f7: WORD 'UNK_0xe7f9' codep=0x224c parp=0xe7f9 orphan params=1 returns=2
+// 0xe7f7: WORD 'UNK_0xe7f9' codep=0x224c parp=0xe7f9 params=1 returns=2
 // ================================================
+// orphan
 
 void UNK_0xe7f9() // UNK_0xe7f9
 {
@@ -320,8 +321,9 @@ void UNK_0xe7f9() // UNK_0xe7f9
 
 
 // ================================================
-// 0xe805: WORD 'UNK_0xe807' codep=0x224c parp=0xe807 orphan params=2 returns=2
+// 0xe805: WORD 'UNK_0xe807' codep=0x224c parp=0xe807 params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xe807() // UNK_0xe807
 {
@@ -333,8 +335,9 @@ void UNK_0xe807() // UNK_0xe807
 
 
 // ================================================
-// 0xe813: WORD 'UNK_0xe815' codep=0x224c parp=0xe815 orphan params=0 returns=0
+// 0xe813: WORD 'UNK_0xe815' codep=0x224c parp=0xe815 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe815() // UNK_0xe815
 {
@@ -636,8 +639,9 @@ void UNK_0xe9d3() // UNK_0xe9d3
 
 
 // ================================================
-// 0xe9e3: WORD 'UNK_0xe9e5' codep=0x224c parp=0xe9e5 orphan params=2 returns=0
+// 0xe9e3: WORD 'UNK_0xe9e5' codep=0x224c parp=0xe9e5 params=2 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe9e5() // UNK_0xe9e5
 {
@@ -938,8 +942,9 @@ void UNK_0xec2b() // UNK_0xec2b
 
 
 // ================================================
-// 0xec51: WORD 'UNK_0xec53' codep=0x224c parp=0xec53 orphan params=0 returns=0
+// 0xec51: WORD 'UNK_0xec53' codep=0x224c parp=0xec53 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xec53() // UNK_0xec53
 {
@@ -1113,8 +1118,9 @@ void HEAVEHO() // HEAVEHO
 // 0xed90: dw 0x7fff
 
 // ================================================
-// 0xed92: WORD 'UNK_0xed94' codep=0x73ea parp=0xed94 orphan
+// 0xed92: WORD 'UNK_0xed94' codep=0x73ea parp=0xed94
 // ================================================
+// orphan
 LoadDataType UNK_0xed94 = {CREATUREIDX, 0x90, 0x02, 0x9c, 0x69d8};
 
 // ================================================
@@ -1926,8 +1932,9 @@ void UNK_0xf37b() // UNK_0xf37b
 
 
 // ================================================
-// 0xf3a9: WORD 'UNK_0xf3ab' codep=0x224c parp=0xf3ab orphan params=0 returns=0
+// 0xf3a9: WORD 'UNK_0xf3ab' codep=0x224c parp=0xf3ab params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xf3ab() // UNK_0xf3ab
 {

@@ -1328,7 +1328,7 @@
 //         AFIELD:  codep:0x224c parp:0x78b3 size:0x0028 C-string:'AFIELD_c_'
 //         IFIELD:  codep:0x224c parp:0x78e7 size:0x0014 C-string:'IFIELD_c_'
 //            #BTN  codep:0x73ea parp:0x7904 size:0x0006 C-string:'_n_BTN'
-//      UNK_0x790c  codep:0x224c parp:0x790c size:0x0074 C-string:'UNK_0x790c'
+//       DISK>IBFR  codep:0x224c parp:0x790c size:0x0074 C-string:'DISK_gt_IBFR'
 //     SET-CURRENT  codep:0x224c parp:0x798c size:0x0034 C-string:'SET_dash_CURRENT'
 //          ICLOSE  codep:0x224c parp:0x79cb size:0x0020 C-string:'ICLOSE'
 //            >C+S  codep:0x224c parp:0x79f4 size:0x0006 C-string:'_gt_C_plus_S'
@@ -1792,20 +1792,20 @@
 //         CLASS>B  codep:0x224c parp:0xbb71 size:0x0008 C-string:'CLASS_gt_B'
 //         ITEM>PA  codep:0x224c parp:0xbb85 size:0x0008 C-string:'ITEM_gt_PA'
 //          BTADDR  codep:0x1d29 parp:0xbb98 size:0x0002 C-string:'BTADDR'
-//      UNK_0xbb9c  codep:0x1d29 parp:0xbb9c size:0x0002 C-string:'UNK_0xbb9c'
-//      UNK_0xbba0  codep:0x1d29 parp:0xbba0 size:0x0002 C-string:'UNK_0xbba0'
+// HUFF_BT_POINTER  codep:0x1d29 parp:0xbb9c size:0x0002 C-string:'HUFF_BT_POINTER'
+// HUFF_ACTIVE_POINTER_BYTE  codep:0x1d29 parp:0xbba0 size:0x0002 C-string:'HUFF_ACTIVE_POINTER_BYTE'
 //      UNK_0xbba4  codep:0x1d29 parp:0xbba4 size:0x0002 C-string:'UNK_0xbba4'
-//      UNK_0xbba8  codep:0x1d29 parp:0xbba8 size:0x0002 C-string:'UNK_0xbba8'
-//      UNK_0xbbac  codep:0x2214 parp:0xbbac size:0x0002 C-string:'UNK_0xbbac'
-//      UNK_0xbbb0  codep:0x2214 parp:0xbbb0 size:0x0002 C-string:'UNK_0xbbb0'
-//      UNK_0xbbb4  codep:0x2214 parp:0xbbb4 size:0x0002 C-string:'UNK_0xbbb4'
-//      UNK_0xbbb8  codep:0x224c parp:0xbbb8 size:0x0024 C-string:'UNK_0xbbb8'
+// HUFF_ACTIVE_POINTER_BIT  codep:0x1d29 parp:0xbba8 size:0x0002 C-string:'HUFF_ACTIVE_POINTER_BIT'
+// HUFF_PHRASE_ADDCHAR  codep:0x2214 parp:0xbbac size:0x0002 C-string:'HUFF_PHRASE_ADDCHAR'
+// HUFF_PHRASE_INIT  codep:0x2214 parp:0xbbb0 size:0x0002 C-string:'HUFF_PHRASE_INIT'
+// HUFF_PHRASE_FINISH  codep:0x2214 parp:0xbbb4 size:0x0002 C-string:'HUFF_PHRASE_FINISH'
+// HUFF_MOVE_ACTIVE_POINTER  codep:0x224c parp:0xbbb8 size:0x0024 C-string:'HUFF_MOVE_ACTIVE_POINTER'
 //      UNK_0xbbde  codep:0x224c parp:0xbbde size:0x004e C-string:'UNK_0xbbde'
 //           HUFF>  codep:0x224c parp:0xbc36 size:0x0040 C-string:'HUFF_gt_'
 //         PHRASE$  codep:0x744d parp:0xbc82 size:0x0003 C-string:'PHRASE_do_'
-//      UNK_0xbc87  codep:0x224c parp:0xbc87 size:0x0006 C-string:'UNK_0xbc87'
-//      UNK_0xbc8f  codep:0x224c parp:0xbc8f size:0x0014 C-string:'UNK_0xbc8f'
-//      UNK_0xbca5  codep:0x224c parp:0xbca5 size:0x0070 C-string:'UNK_0xbca5'
+// HUFF_LSCAN_INIT  codep:0x224c parp:0xbc87 size:0x0006 C-string:'HUFF_LSCAN_INIT'
+// HUFF_LSCAN_ADDCHAR  codep:0x224c parp:0xbc8f size:0x0014 C-string:'HUFF_LSCAN_ADDCHAR'
+// HUFF_LSCAN_FINISH  codep:0x224c parp:0xbca5 size:0x0070 C-string:'HUFF_LSCAN_FINISH'
 //        MISC-VOC  codep:0x1ab5 parp:0xbd1f size:0x0014 C-string:'MISC_dash_VOC'
 //         MISC-OV  codep:0x83f8 parp:0xbd3d size:0x0002 C-string:'MISC_dash_OV'
 //          =CARGO  codep:0x224c parp:0xbd4a size:0x0006 C-string:'_eq_CARGO'
@@ -3551,16 +3551,16 @@ const unsigned short int pp_COND_dash_CNT = 0xb68d; // COND-CNT size: 2
 const unsigned short int pp_BTADDR = 0xbb98; // BTADDR size: 2
 // {0xb1, 0xbc}
 
-const unsigned short int pp_UNK_0xbb9c = 0xbb9c; // UNK_0xbb9c size: 2
+const unsigned short int pp_HUFF_BT_POINTER = 0xbb9c; // HUFF_BT_POINTER size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xbba0 = 0xbba0; // UNK_0xbba0 size: 2
+const unsigned short int pp_HUFF_ACTIVE_POINTER_BYTE = 0xbba0; // HUFF_ACTIVE_POINTER_BYTE size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_UNK_0xbba4 = 0xbba4; // UNK_0xbba4 size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xbba8 = 0xbba8; // UNK_0xbba8 size: 2
+const unsigned short int pp_HUFF_ACTIVE_POINTER_BIT = 0xbba8; // HUFF_ACTIVE_POINTER_BIT size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_HEALTI = 0xbfaf; // HEALTI size: 2
@@ -3661,9 +3661,9 @@ const unsigned short int cc_RULECNT = 0xb6dc; // RULECNT
 const unsigned short int cc_RULEARR = 0xb6ea; // RULEARR
 const unsigned short int cc_CONDARR = 0xb6f8; // CONDARR
 const unsigned short int cc_CFLGARR = 0xb706; // CFLGARR
-const unsigned short int cc_UNK_0xbbac = 0xbbac; // UNK_0xbbac
-const unsigned short int cc_UNK_0xbbb0 = 0xbbb0; // UNK_0xbbb0
-const unsigned short int cc_UNK_0xbbb4 = 0xbbb4; // UNK_0xbbb4
+const unsigned short int cc_HUFF_PHRASE_ADDCHAR = 0xbbac; // HUFF_PHRASE_ADDCHAR
+const unsigned short int cc_HUFF_PHRASE_INIT = 0xbbb0; // HUFF_PHRASE_INIT
+const unsigned short int cc_HUFF_PHRASE_FINISH = 0xbbb4; // HUFF_PHRASE_FINISH
 
 const unsigned short int user_SP0 = 0x078c; // SP0
 const unsigned short int user_R0 = 0x078e; // R0
@@ -4584,8 +4584,9 @@ void UNK_0x0ad9() // UNK_0x0ad9
 
 
 // ================================================
-// 0x0b10: WORD 'UNK_0x0b12' codep=0x224c parp=0x0b12 orphan params=0 returns=0
+// 0x0b10: WORD 'UNK_0x0b12' codep=0x224c parp=0x0b12 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0x0b12() // UNK_0x0b12
 {
@@ -6728,8 +6729,9 @@ void UNK_0x1a5c() // UNK_0x1a5c
 
 
 // ================================================
-// 0x1a64: WORD 'UNK_0x1a66' codep=0x224c parp=0x1a66 orphan
+// 0x1a64: WORD 'UNK_0x1a66' codep=0x224c parp=0x1a66
 // ================================================
+// orphan
 
 void UNK_0x1a66() // UNK_0x1a66
 {
@@ -12647,8 +12649,9 @@ void SETSYSK() // SETSYSK
 
 
 // ================================================
-// 0x4864: WORD 'UNK_0x4866' codep=0x224c parp=0x4866 orphan
+// 0x4864: WORD 'UNK_0x4866' codep=0x224c parp=0x4866
 // ================================================
+// orphan
 
 void UNK_0x4866() // UNK_0x4866
 {
@@ -13670,8 +13673,9 @@ Color YELLOW = 0x0e
 Color WHITE = 0x0f
 
 // ================================================
-// 0x4fb9: WORD 'UNK_0x4fbb' codep=0x1d29 parp=0x4fbb orphan
+// 0x4fb9: WORD 'UNK_0x4fbb' codep=0x1d29 parp=0x4fbb
 // ================================================
+// orphan
 // 0x4fbb: db 0x00 0x22 0x11 0x99 0x44 0x66 0x88 0xaa 0x55 0x77 0xbb 0x33 0xee 0xcc 0xdd 0xff ' "  Df  Uw 3    '
 
 // ================================================
@@ -13981,8 +13985,9 @@ void TABLE() // TABLE
 // 0x52d9: dw 0x01e8
 
 // ================================================
-// 0x52db: WORD '9CHAR' codep=0x2214 parp=0x52dd orphan
+// 0x52db: WORD '9CHAR' codep=0x2214 parp=0x52dd
 // ================================================
+// orphan
 // 0x52dd: dw 0x0223
 
 // ================================================
@@ -15528,8 +15533,9 @@ void UNK_0x602f() // UNK_0x602f
 
 
 // ================================================
-// 0x6039: WORD 'UNK_0x603b' codep=0x224c parp=0x603b orphan params=0 returns=0
+// 0x6039: WORD 'UNK_0x603b' codep=0x224c parp=0x603b params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0x603b() // UNK_0x603b
 {
@@ -15539,8 +15545,9 @@ void UNK_0x603b() // UNK_0x603b
 
 
 // ================================================
-// 0x6041: WORD 'UNK_0x6043' codep=0x224c parp=0x6043 orphan params=0 returns=0
+// 0x6041: WORD 'UNK_0x6043' codep=0x224c parp=0x6043 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0x6043() // UNK_0x6043
 {
@@ -16487,8 +16494,9 @@ void UNK_0x6f8f() // UNK_0x6f8f
 
 
 // ================================================
-// 0x6fa1: WORD 'UNK_0x6fa3' codep=0x224c parp=0x6fa3 orphan params=1 returns=1
+// 0x6fa1: WORD 'UNK_0x6fa3' codep=0x224c parp=0x6fa3 params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0x6fa3() // UNK_0x6fa3
 {
@@ -16540,8 +16548,9 @@ void UNK_0x6fbd() // UNK_0x6fbd
 
 
 // ================================================
-// 0x6fd9: WORD 'UNK_0x6fdb' codep=0x224c parp=0x6fdb orphan
+// 0x6fd9: WORD 'UNK_0x6fdb' codep=0x224c parp=0x6fdb
 // ================================================
+// orphan
 
 void UNK_0x6fdb() // UNK_0x6fdb
 {
@@ -16553,8 +16562,9 @@ void UNK_0x6fdb() // UNK_0x6fdb
 
 
 // ================================================
-// 0x6fe5: WORD 'UNK_0x6fe7' codep=0x224c parp=0x6fe7 orphan
+// 0x6fe5: WORD 'UNK_0x6fe7' codep=0x224c parp=0x6fe7
 // ================================================
+// orphan
 
 void UNK_0x6fe7() // UNK_0x6fe7
 {
@@ -17834,10 +17844,10 @@ void IFIELD_c_() // IFIELD:
 LoadDataType _n_BTN = {BUTTONSIDX, 0x48, 0x01, 0x49, 0x6858};
 
 // ================================================
-// 0x790a: WORD 'UNK_0x790c' codep=0x224c parp=0x790c
+// 0x790a: WORD 'DISK>IBFR' codep=0x224c parp=0x790c
 // ================================================
 
-void UNK_0x790c() // UNK_0x790c
+void DISK_gt_IBFR() // DISK>IBFR
 {
   Is_do_COLLECT(); // ?$COLLECT
   _2DUP(); // 2DUP
@@ -17909,7 +17919,7 @@ void SET_dash_CURRENT() // SET-CURRENT
   } else
   {
     CI(); // CI
-    UNK_0x790c(); // UNK_0x790c
+    DISK_gt_IBFR(); // DISK>IBFR
   }
   GetINST_dash_CLASS(); // @INST-CLASS
   Push(pp_FILE_n_); // FILE#
@@ -18139,8 +18149,9 @@ void VCLR() // VCLR
 // 0x7b1f: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b21: WORD 'IC>DSK' codep=0x224c parp=0x7b23 orphan params=0 returns=0
+// 0x7b21: WORD 'IC>DSK' codep=0x224c parp=0x7b23 params=0 returns=0
 // ================================================
+// orphan
 
 void IC_gt_DSK() // IC>DSK
 {
@@ -18453,8 +18464,9 @@ void IFLD_ex_() // IFLD!
 
 
 // ================================================
-// 0x7cff: WORD '?FLD=' codep=0x224c parp=0x7d01 orphan
+// 0x7cff: WORD '?FLD=' codep=0x224c parp=0x7d01
 // ================================================
+// orphan
 
 void IsFLD_eq_() // ?FLD=
 {
@@ -18631,8 +18643,9 @@ void SELECT_dash_2DROP() // SELECT-2DROP
 
 
 // ================================================
-// 0x7df4: WORD '3SELECTDROP' codep=0x224c parp=0x7df6 orphan
+// 0x7df4: WORD '3SELECTDROP' codep=0x224c parp=0x7df6
 // ================================================
+// orphan
 
 void _3SELECTDROP() // 3SELECTDROP
 {
@@ -18773,8 +18786,9 @@ void _gt_INACTIVE() // >INACTIVE
 
 
 // ================================================
-// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca orphan
+// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca
 // ================================================
+// orphan
 
 void _ro_IDELETE_rc_() // (IDELETE)
 {
@@ -19261,8 +19275,9 @@ void DrawDRJ() // .DRJ
 
 
 // ================================================
-// 0x81e1: WORD '.INM' codep=0x224c parp=0x81e3 orphan params=2 returns=0
+// 0x81e1: WORD '.INM' codep=0x224c parp=0x81e3 params=2 returns=0
 // ================================================
+// orphan
 
 void DrawINM() // .INM
 {
@@ -19322,8 +19337,9 @@ void DrawC() // .C
 
 
 // ================================================
-// 0x8248: WORD 'INDENT.INM' codep=0x224c parp=0x824a orphan
+// 0x8248: WORD 'INDENT.INM' codep=0x224c parp=0x824a
 // ================================================
+// orphan
 
 void INDENT_dot_INM() // INDENT.INM
 {
@@ -19722,8 +19738,9 @@ void GetCOLOR() // @COLOR
 
 
 // ================================================
-// 0x8536: WORD 'TREJECT/TACCEPT' codep=0x1d29 parp=0x8538 orphan params=0 returns=1
+// 0x8536: WORD 'TREJECT/TACCEPT' codep=0x1d29 parp=0x8538 params=0 returns=1
 // ================================================
+// orphan
 // 0x8538: mov    ax,ds
 // 0x853a: mov    es,ax
 // 0x853c: push   bp
@@ -20221,8 +20238,9 @@ void DCLIPSET() // DCLIPSET
 
 
 // ================================================
-// 0x8a17: WORD 'UNK_0x8a19' codep=0x224c parp=0x8a19 orphan params=2 returns=1
+// 0x8a17: WORD 'UNK_0x8a19' codep=0x224c parp=0x8a19 params=2 returns=1
 // ================================================
+// orphan
 
 void UNK_0x8a19() // UNK_0x8a19
 {
@@ -20257,8 +20275,9 @@ void UNK_0x8a19() // UNK_0x8a19
 // 0x8a50: jmp    word ptr [bx]
 
 // ================================================
-// 0x8a52: WORD 'UNK_0x8a54' codep=0x224c parp=0x8a54 orphan params=2 returns=3
+// 0x8a52: WORD 'UNK_0x8a54' codep=0x224c parp=0x8a54 params=2 returns=3
 // ================================================
+// orphan
 
 void UNK_0x8a54() // UNK_0x8a54
 {
@@ -20910,8 +20929,9 @@ void SCR_dash_RES() // SCR-RES
 
 
 // ================================================
-// 0x8f3b: WORD 'UNK_0x8f3d' codep=0x1d29 parp=0x8f3d orphan params=0 returns=1
+// 0x8f3b: WORD 'UNK_0x8f3d' codep=0x1d29 parp=0x8f3d params=0 returns=1
 // ================================================
+// orphan
 // 0x8f3d: push   es
 // 0x8f3e: push   di
 // 0x8f3f: mov    ah,0F
@@ -21442,8 +21462,9 @@ void BLT() // BLT
 
 
 // ================================================
-// 0x93f8: WORD '{1FONT}' codep=0x224c parp=0x93fa orphan params=1 returns=0
+// 0x93f8: WORD '{1FONT}' codep=0x224c parp=0x93fa params=1 returns=0
 // ================================================
+// orphan
 
 void _co_1FONT_cc_() // {1FONT}
 {
@@ -21488,8 +21509,9 @@ void _co_1FONT_cc_() // {1FONT}
 
 
 // ================================================
-// 0x945e: WORD '{GTYPE}' codep=0x224c parp=0x9460 orphan params=2 returns=0
+// 0x945e: WORD '{GTYPE}' codep=0x224c parp=0x9460 params=2 returns=0
 // ================================================
+// orphan
 
 void _co_GTYPE_cc_() // {GTYPE}
 {
@@ -21598,8 +21620,9 @@ void _gt_2FONT() // >2FONT
 
 
 // ================================================
-// 0x953d: WORD '{3FONT}' codep=0x224c parp=0x953f orphan params=1 returns=0
+// 0x953d: WORD '{3FONT}' codep=0x224c parp=0x953f params=1 returns=0
 // ================================================
+// orphan
 
 void _co_3FONT_cc_() // {3FONT}
 {
@@ -24181,8 +24204,9 @@ void ERASE_dash_T() // ERASE-T
 
 
 // ================================================
-// 0xa7ec: WORD 'UNK_0xa7ee' codep=0x224c parp=0xa7ee orphan params=1 returns=0
+// 0xa7ec: WORD 'UNK_0xa7ee' codep=0x224c parp=0xa7ee params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xa7ee() // UNK_0xa7ee
 {
@@ -24672,8 +24696,9 @@ void NEXT_dash_BUTTON() // NEXT-BUTTON
 
 
 // ================================================
-// 0xaaaa: WORD 'XEQ-BUTTON' codep=0x224c parp=0xaaac orphan
+// 0xaaaa: WORD 'XEQ-BUTTON' codep=0x224c parp=0xaaac
 // ================================================
+// orphan
 
 void XEQ_dash_BUTTON() // XEQ-BUTTON
 {
@@ -25240,8 +25265,9 @@ void _0MESS() // 0MESS
 
 
 // ================================================
-// 0xaf59: WORD 'UNK_0xaf5b' codep=0x2214 parp=0xaf5b orphan
+// 0xaf59: WORD 'UNK_0xaf5b' codep=0x2214 parp=0xaf5b
 // ================================================
+// orphan
 // 0xaf5b: dw 0x002e
 
 // ================================================
@@ -25972,8 +25998,9 @@ void INSTALLXKEY() // INSTALLXKEY
 
 
 // ================================================
-// 0xb45d: WORD 'KILLBREAK' codep=0x224c parp=0xb45f orphan params=0 returns=0
+// 0xb45d: WORD 'KILLBREAK' codep=0x224c parp=0xb45f params=0 returns=0
 // ================================================
+// orphan
 
 void KILLBREAK() // KILLBREAK
 {
@@ -25985,8 +26012,9 @@ void KILLBREAK() // KILLBREAK
 
 
 // ================================================
-// 0xb46d: WORD 'farb' codep=0x224c parp=0xb46f orphan
+// 0xb46d: WORD 'farb' codep=0x224c parp=0xb46f
 // ================================================
+// orphan
 
 void farb() // farb
 {
@@ -26015,8 +26043,9 @@ void RESTOREKEY() // RESTOREKEY
 
 
 // ================================================
-// 0xb49d: WORD 'FLIMP' codep=0x224c parp=0xb49f orphan params=0 returns=0
+// 0xb49d: WORD 'FLIMP' codep=0x224c parp=0xb49f params=0 returns=0
 // ================================================
+// orphan
 
 void FLIMP() // FLIMP
 {
@@ -26883,12 +26912,12 @@ void ITEM_gt_PA() // ITEM>PA
 // 0xbb98: db 0xb1 0xbc '  '
 
 // ================================================
-// 0xbb9a: WORD 'UNK_0xbb9c' codep=0x1d29 parp=0xbb9c
+// 0xbb9a: WORD 'HUFF_BT_POINTER' codep=0x1d29 parp=0xbb9c
 // ================================================
 // 0xbb9c: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbb9e: WORD 'UNK_0xbba0' codep=0x1d29 parp=0xbba0
+// 0xbb9e: WORD 'HUFF_ACTIVE_POINTER_BYTE' codep=0x1d29 parp=0xbba0
 // ================================================
 // 0xbba0: db 0x3a 0x20 ': '
 
@@ -26898,41 +26927,41 @@ void ITEM_gt_PA() // ITEM>PA
 // 0xbba4: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbba6: WORD 'UNK_0xbba8' codep=0x1d29 parp=0xbba8
+// 0xbba6: WORD 'HUFF_ACTIVE_POINTER_BIT' codep=0x1d29 parp=0xbba8
 // ================================================
 // 0xbba8: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbbaa: WORD 'UNK_0xbbac' codep=0x2214 parp=0xbbac
+// 0xbbaa: WORD 'HUFF_PHRASE_ADDCHAR' codep=0x2214 parp=0xbbac
 // ================================================
 // 0xbbac: dw 0xbc8f
 
 // ================================================
-// 0xbbae: WORD 'UNK_0xbbb0' codep=0x2214 parp=0xbbb0
+// 0xbbae: WORD 'HUFF_PHRASE_INIT' codep=0x2214 parp=0xbbb0
 // ================================================
 // 0xbbb0: dw 0xbc87
 
 // ================================================
-// 0xbbb2: WORD 'UNK_0xbbb4' codep=0x2214 parp=0xbbb4
+// 0xbbb2: WORD 'HUFF_PHRASE_FINISH' codep=0x2214 parp=0xbbb4
 // ================================================
 // 0xbbb4: dw 0xbca5
 
 // ================================================
-// 0xbbb6: WORD 'UNK_0xbbb8' codep=0x224c parp=0xbbb8 params=0 returns=0
+// 0xbbb6: WORD 'HUFF_MOVE_ACTIVE_POINTER' codep=0x224c parp=0xbbb8 params=0 returns=0
 // ================================================
 
-void UNK_0xbbb8() // UNK_0xbbb8
+void HUFF_MOVE_ACTIVE_POINTER() // HUFF_MOVE_ACTIVE_POINTER
 {
-  Push(Read16(pp_UNK_0xbba8)); // UNK_0xbba8 @
+  Push(Read16(pp_HUFF_ACTIVE_POINTER_BIT)); // HUFF_ACTIVE_POINTER_BIT @
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0080?1:0); //  0x0080 =
-  Push(pp_UNK_0xbba0); // UNK_0xbba0
+  Push(pp_HUFF_ACTIVE_POINTER_BYTE); // HUFF_ACTIVE_POINTER_BYTE
   _plus__ex__2(); // +!_2
   Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
   Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
   Push(Pop() + Pop()); // +
-  Push(pp_UNK_0xbba8); // UNK_0xbba8
+  Push(pp_HUFF_ACTIVE_POINTER_BIT); // HUFF_ACTIVE_POINTER_BIT
   Store_3(); // !_3
 }
 
@@ -26943,28 +26972,28 @@ void UNK_0xbbb8() // UNK_0xbbb8
 
 void UNK_0xbbde() // UNK_0xbbde
 {
-  Push(Pop() & (Read16(pp_UNK_0xbba8)&0xFF)); //  UNK_0xbba8 C@ AND
+  Push(Pop() & (Read16(pp_HUFF_ACTIVE_POINTER_BIT)&0xFF)); //  HUFF_ACTIVE_POINTER_BIT C@ AND
   _0_gt_(); // 0>
-  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_UNK_0xbb9c))&0xFF); //  BTADDR @ + UNK_0xbb9c @ + C@
+  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_HUFF_BT_POINTER))&0xFF); //  BTADDR @ + HUFF_BT_POINTER @ + C@
   Push(Read16(regsp)); // DUP
   Push(Pop() & 0x0080); //  0x0080 AND
   if (Pop() != 0)
   {
     Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
-    Push(pp_UNK_0xbb9c); // UNK_0xbb9c
+    Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
     _plus__ex__2(); // +!_2
   } else
   {
     Push(1);
     Push(pp_UNK_0xbba4); // UNK_0xbba4
     _plus__ex__2(); // +!_2
-    Push(Read16(cc_UNK_0xbbac)); // UNK_0xbbac
+    Push(Read16(cc_HUFF_PHRASE_ADDCHAR)); // HUFF_PHRASE_ADDCHAR
     EXECUTE(); // EXECUTE
-    Push(pp_UNK_0xbb9c); // UNK_0xbb9c
+    Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
     OFF(); // OFF
   }
-  UNK_0xbbb8(); // UNK_0xbbb8
-  Push(Read16(pp_UNK_0xbba8)==0x0080?1:0); // UNK_0xbba8 @ 0x0080 =
+  HUFF_MOVE_ACTIVE_POINTER(); // HUFF_MOVE_ACTIVE_POINTER
+  Push(Read16(pp_HUFF_ACTIVE_POINTER_BIT)==0x0080?1:0); // HUFF_ACTIVE_POINTER_BIT @ 0x0080 =
 }
 
 
@@ -26974,16 +27003,16 @@ void UNK_0xbbde() // UNK_0xbbde
 
 void HUFF_gt_() // HUFF>
 {
-  Push(pp_UNK_0xbb9c); // UNK_0xbb9c
+  Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
   OFF(); // OFF
   Push(pp_UNK_0xbba4); // UNK_0xbba4
   OFF(); // OFF
-  Push(pp_UNK_0xbba0); // UNK_0xbba0
+  Push(pp_HUFF_ACTIVE_POINTER_BYTE); // HUFF_ACTIVE_POINTER_BYTE
   OFF(); // OFF
   Push(0x0080);
-  Push(pp_UNK_0xbba8); // UNK_0xbba8
+  Push(pp_HUFF_ACTIVE_POINTER_BIT); // HUFF_ACTIVE_POINTER_BIT
   Store_3(); // !_3
-  Push(Read16(cc_UNK_0xbbb0)); // UNK_0xbbb0
+  Push(Read16(cc_HUFF_PHRASE_INIT)); // HUFF_PHRASE_INIT
   EXECUTE(); // EXECUTE
 
   label3:
@@ -26994,14 +27023,14 @@ void HUFF_gt_() // HUFF>
   do
   {
     OVER(); // OVER
-    Push(Read16(Pop() + Read16(pp_UNK_0xbba0))&0xFF); //  UNK_0xbba0 @ + C@
+    Push(Read16(Pop() + Read16(pp_HUFF_ACTIVE_POINTER_BYTE))&0xFF); //  HUFF_ACTIVE_POINTER_BYTE @ + C@
     UNK_0xbbde(); // UNK_0xbbde
   } while(Pop() == 0);
   goto label3;
 
   label1:
   Pop(); Pop(); // 2DROP
-  Push(Read16(cc_UNK_0xbbb4)); // UNK_0xbbb4
+  Push(Read16(cc_HUFF_PHRASE_FINISH)); // HUFF_PHRASE_FINISH
   EXECUTE(); // EXECUTE
 }
 
@@ -27012,10 +27041,11 @@ void HUFF_gt_() // HUFF>
 IFieldType PHRASE_do_ = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
-// 0xbc85: WORD 'UNK_0xbc87' codep=0x224c parp=0xbc87 orphan params=0 returns=0
+// 0xbc85: WORD 'HUFF_LSCAN_INIT' codep=0x224c parp=0xbc87 params=0 returns=0
 // ================================================
+// orphan
 
-void UNK_0xbc87() // UNK_0xbc87
+void HUFF_LSCAN_INIT() // HUFF_LSCAN_INIT
 {
   Push(pp_LSCAN); // LSCAN
   OFF(); // OFF
@@ -27023,10 +27053,11 @@ void UNK_0xbc87() // UNK_0xbc87
 
 
 // ================================================
-// 0xbc8d: WORD 'UNK_0xbc8f' codep=0x224c parp=0xbc8f orphan params=1 returns=0
+// 0xbc8d: WORD 'HUFF_LSCAN_ADDCHAR' codep=0x224c parp=0xbc8f params=1 returns=0
 // ================================================
+// orphan
 
-void UNK_0xbc8f() // UNK_0xbc8f
+void HUFF_LSCAN_ADDCHAR() // HUFF_LSCAN_ADDCHAR
 {
   Push(pp_LSCAN); // LSCAN
   Push(Read16(regsp)); // DUP
@@ -27041,10 +27072,11 @@ void UNK_0xbc8f() // UNK_0xbc8f
 
 
 // ================================================
-// 0xbca3: WORD 'UNK_0xbca5' codep=0x224c parp=0xbca5 orphan params=0 returns=0
+// 0xbca3: WORD 'HUFF_LSCAN_FINISH' codep=0x224c parp=0xbca5 params=0 returns=0
 // ================================================
+// orphan
 
-void UNK_0xbca5() // UNK_0xbca5
+void HUFF_LSCAN_FINISH() // HUFF_LSCAN_FINISH
 {
   Push(Read16((0x63ef+PHRASE_do_.offset) + 1)&0xFF); // PHRASE$<IFIELD> 1+ C@
   Push(pp_LSCAN); // LSCAN

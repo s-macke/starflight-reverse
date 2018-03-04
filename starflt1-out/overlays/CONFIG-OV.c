@@ -209,8 +209,9 @@ void UNK_0xe980() // UNK_0xe980
 
 
 // ================================================
-// 0xe988: WORD 'UNK_0xe98a' codep=0x224c parp=0xe98a orphan params=0 returns=0
+// 0xe988: WORD 'UNK_0xe98a' codep=0x224c parp=0xe98a params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe98a() // UNK_0xe98a
 {
@@ -357,8 +358,9 @@ IFieldType UNK_0xea0c = {SHIPIDX, 0x32, 0x02};
 IFieldType UNK_0xea11 = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
-// 0xea14: WORD 'UNK_0xea16' codep=0x744d parp=0xea16 orphan
+// 0xea14: WORD 'UNK_0xea16' codep=0x744d parp=0xea16
 // ================================================
+// orphan
 IFieldType UNK_0xea16 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================

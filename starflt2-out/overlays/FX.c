@@ -510,8 +510,9 @@ void UNK_0xf28a() // UNK_0xf28a
 
 
 // ================================================
-// 0xf29e: WORD 'UNK_0xf2a0' codep=0x224c parp=0xf2a0 orphan
+// 0xf29e: WORD 'UNK_0xf2a0' codep=0x224c parp=0xf2a0
 // ================================================
+// orphan
 
 void UNK_0xf2a0() // UNK_0xf2a0
 {
@@ -525,13 +526,15 @@ void UNK_0xf2a0() // UNK_0xf2a0
 
 
 // ================================================
-// 0xf2b2: WORD 'UNK_0xf2b4' codep=0x7394 parp=0xf2b4 orphan
+// 0xf2b2: WORD 'UNK_0xf2b4' codep=0x7394 parp=0xf2b4
 // ================================================
+// orphan
 LoadDataType UNK_0xf2b4 = {TRADERSIDX, 0x21, 0x01, 0x32, 0x6ad1};
 
 // ================================================
-// 0xf2ba: WORD 'UNK_0xf2bc' codep=0x7394 parp=0xf2bc orphan
+// 0xf2ba: WORD 'UNK_0xf2bc' codep=0x7394 parp=0xf2bc
 // ================================================
+// orphan
 LoadDataType UNK_0xf2bc = {PLANETIDX, 0x16, 0x01, 0x17, 0x6c49};
 
 // ================================================

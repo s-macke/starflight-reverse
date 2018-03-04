@@ -259,8 +259,9 @@ IFieldType UNK_0xed00 = {CREWMEMBERIDX, 0x1f, 0x01};
 IFieldType UNK_0xed05 = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
-// 0xed08: WORD 'UNK_0xed0a' codep=0x1d29 parp=0xed0a orphan
+// 0xed08: WORD 'UNK_0xed0a' codep=0x1d29 parp=0xed0a
 // ================================================
+// orphan
 // 0xed0a: db 0x3a 0x20 ': '
 
 // ================================================
@@ -792,8 +793,9 @@ void UNK_0xf02e() // UNK_0xf02e
 
 
 // ================================================
-// 0xf072: WORD 'UNK_0xf074' codep=0x1d29 parp=0xf074 orphan
+// 0xf072: WORD 'UNK_0xf074' codep=0x1d29 parp=0xf074
 // ================================================
+// orphan
 // 0xf074: db 0x3a 0x20 0x05 0x41 ':  A'
 
 // ================================================

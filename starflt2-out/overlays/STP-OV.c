@@ -366,8 +366,9 @@ void UNK_0xf194() // UNK_0xf194
 
 
 // ================================================
-// 0xf1bc: WORD 'UNK_0xf1be' codep=0x224c parp=0xf1be orphan params=0 returns=1
+// 0xf1bc: WORD 'UNK_0xf1be' codep=0x224c parp=0xf1be params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf1be() // UNK_0xf1be
 {

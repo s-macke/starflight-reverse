@@ -222,8 +222,9 @@ IFieldType UNK_0xeb95 = {VESSELIDX, 0x12, 0x07};
 LoadDataType UNK_0xeb9a = {VESSELIDX, 0x04, 0x01, 0x49, 0x6491};
 
 // ================================================
-// 0xeba0: WORD 'UNK_0xeba2' codep=0x73ea parp=0xeba2 orphan
+// 0xeba0: WORD 'UNK_0xeba2' codep=0x73ea parp=0xeba2
 // ================================================
+// orphan
 LoadDataType UNK_0xeba2 = {VESSELIDX, 0x06, 0x01, 0x49, 0x6491};
 
 // ================================================
@@ -237,13 +238,15 @@ LoadDataType UNK_0xebaa = {VESSELIDX, 0x07, 0x02, 0x49, 0x6491};
 LoadDataType UNK_0xebb2 = {VESSELIDX, 0x0e, 0x02, 0x49, 0x6491};
 
 // ================================================
-// 0xebb8: WORD 'UNK_0xebba' codep=0x73ea parp=0xebba orphan
+// 0xebb8: WORD 'UNK_0xebba' codep=0x73ea parp=0xebba
 // ================================================
+// orphan
 LoadDataType UNK_0xebba = {VESSELIDX, 0x12, 0x01, 0x49, 0x6491};
 
 // ================================================
-// 0xebc0: WORD 'UNK_0xebc2' codep=0x744d parp=0xebc2 orphan
+// 0xebc0: WORD 'UNK_0xebc2' codep=0x744d parp=0xebc2
 // ================================================
+// orphan
 IFieldType UNK_0xebc2 = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================

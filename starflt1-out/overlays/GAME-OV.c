@@ -416,13 +416,15 @@ const unsigned short int cc_UNK_0xdfae = 0xdfae; // UNK_0xdfae
 // 0xde6a: dw 0x0082
 
 // ================================================
-// 0xde6c: WORD 'UNK_0xde6e' codep=0x2214 parp=0xde6e orphan
+// 0xde6c: WORD 'UNK_0xde6e' codep=0x2214 parp=0xde6e
 // ================================================
+// orphan
 // 0xde6e: dw 0x0004
 
 // ================================================
-// 0xde70: WORD 'UNK_0xde72' codep=0x2214 parp=0xde72 orphan
+// 0xde70: WORD 'UNK_0xde72' codep=0x2214 parp=0xde72
 // ================================================
+// orphan
 // 0xde72: dw 0x0000
 
 // ================================================
@@ -610,8 +612,9 @@ void SET_dot_COLORS() // SET.COLORS
 
 
 // ================================================
-// 0xe068: WORD 'UNK_0xe06a' codep=0x1d29 parp=0xe06a orphan
+// 0xe068: WORD 'UNK_0xe06a' codep=0x1d29 parp=0xe06a
 // ================================================
+// orphan
 // 0xe06a: db 0x3a 0x20 ': '
 
 // ================================================
@@ -1183,8 +1186,9 @@ void BORDER() // BORDER
 
 
 // ================================================
-// 0xe49a: WORD 'UNK_0xe49c' codep=0x224c parp=0xe49c orphan params=0 returns=0
+// 0xe49a: WORD 'UNK_0xe49c' codep=0x224c parp=0xe49c params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe49c() // UNK_0xe49c
 {
@@ -1398,8 +1402,9 @@ void UNK_0xe66f() // UNK_0xe66f
 
 
 // ================================================
-// 0xe685: WORD 'UNK_0xe687' codep=0x224c parp=0xe687 orphan params=0 returns=1
+// 0xe685: WORD 'UNK_0xe687' codep=0x224c parp=0xe687 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe687() // UNK_0xe687
 {
@@ -1408,8 +1413,9 @@ void UNK_0xe687() // UNK_0xe687
 
 
 // ================================================
-// 0xe693: WORD 'UNK_0xe695' codep=0x224c parp=0xe695 orphan params=0 returns=2
+// 0xe693: WORD 'UNK_0xe695' codep=0x224c parp=0xe695 params=0 returns=2
 // ================================================
+// orphan
 
 void UNK_0xe695() // UNK_0xe695
 {
@@ -1465,8 +1471,9 @@ void UNK_0xe695() // UNK_0xe695
 
 
 // ================================================
-// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b orphan params=2 returns=2
+// 0xe739: WORD 'UNK_0xe73b' codep=0x224c parp=0xe73b params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xe73b() // UNK_0xe73b
 {

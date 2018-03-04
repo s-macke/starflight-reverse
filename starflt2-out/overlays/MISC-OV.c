@@ -317,8 +317,9 @@ void EINDE() // EINDE
 IFieldType UNK_0xef16 = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
-// 0xef19: WORD 'UNK_0xef1b' codep=0x7420 parp=0xef1b orphan
+// 0xef19: WORD 'UNK_0xef1b' codep=0x7420 parp=0xef1b
 // ================================================
+// orphan
 IFieldType UNK_0xef1b = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================

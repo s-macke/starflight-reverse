@@ -230,8 +230,9 @@ IFieldType UNK_0xf11d = {CREWMEMBERIDX, 0x1f, 0x01};
 IFieldType UNK_0xf122 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
-// 0xf125: WORD 'UNK_0xf127' codep=0x73ea parp=0xf127 orphan
+// 0xf125: WORD 'UNK_0xf127' codep=0x73ea parp=0xf127
 // ================================================
+// orphan
 LoadDataType UNK_0xf127 = {CREWMEMBERIDX, 0x13, 0x01, 0x14, 0x6489};
 
 // ================================================

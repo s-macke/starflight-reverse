@@ -147,8 +147,9 @@ IFieldType UNK_0xf255 = {CREATUREIDX, 0x11, 0x01};
 LoadDataType UNK_0xf25a = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xf260: WORD 'UNK_0xf262' codep=0x744d parp=0xf262 orphan
+// 0xf260: WORD 'UNK_0xf262' codep=0x744d parp=0xf262
 // ================================================
+// orphan
 IFieldType UNK_0xf262 = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================

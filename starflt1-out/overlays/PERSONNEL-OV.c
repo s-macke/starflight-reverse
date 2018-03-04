@@ -229,8 +229,9 @@ void UNK_0xe516() // UNK_0xe516
 
 
 // ================================================
-// 0xe51e: WORD 'UNK_0xe520' codep=0x224c parp=0xe520 orphan params=0 returns=0
+// 0xe51e: WORD 'UNK_0xe520' codep=0x224c parp=0xe520 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe520() // UNK_0xe520
 {
@@ -240,8 +241,9 @@ void UNK_0xe520() // UNK_0xe520
 
 
 // ================================================
-// 0xe528: WORD 'UNK_0xe52a' codep=0x224c parp=0xe52a orphan params=0 returns=0
+// 0xe528: WORD 'UNK_0xe52a' codep=0x224c parp=0xe52a params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe52a() // UNK_0xe52a
 {
@@ -251,8 +253,9 @@ void UNK_0xe52a() // UNK_0xe52a
 
 
 // ================================================
-// 0xe532: WORD 'UNK_0xe534' codep=0x224c parp=0xe534 orphan params=0 returns=0
+// 0xe532: WORD 'UNK_0xe534' codep=0x224c parp=0xe534 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe534() // UNK_0xe534
 {
@@ -340,8 +343,9 @@ void UNK_0xe57a() // UNK_0xe57a
 
 
 // ================================================
-// 0xe582: WORD 'UNK_0xe584' codep=0x224c parp=0xe584 orphan params=0 returns=1
+// 0xe582: WORD 'UNK_0xe584' codep=0x224c parp=0xe584 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe584() // UNK_0xe584
 {
@@ -369,8 +373,9 @@ void UNK_0xe590() // UNK_0xe590
 
 
 // ================================================
-// 0xe5a4: WORD 'UNK_0xe5a6' codep=0x224c parp=0xe5a6 orphan params=0 returns=0
+// 0xe5a4: WORD 'UNK_0xe5a6' codep=0x224c parp=0xe5a6 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe5a6() // UNK_0xe5a6
 {
@@ -407,8 +412,9 @@ void UNK_0xe5b6() // UNK_0xe5b6
 
 
 // ================================================
-// 0xe5d0: WORD 'UNK_0xe5d2' codep=0x224c parp=0xe5d2 orphan params=0 returns=0
+// 0xe5d0: WORD 'UNK_0xe5d2' codep=0x224c parp=0xe5d2 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe5d2() // UNK_0xe5d2
 {

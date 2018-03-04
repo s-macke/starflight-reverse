@@ -193,8 +193,9 @@ IFieldType UNK_0xf0ea = {CREATUREIDX, 0x18, 0x01};
 LoadDataType UNK_0xf0ef = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 
 // ================================================
-// 0xf0f5: WORD 'UNK_0xf0f7' codep=0x7420 parp=0xf0f7 orphan
+// 0xf0f5: WORD 'UNK_0xf0f7' codep=0x7420 parp=0xf0f7
 // ================================================
+// orphan
 IFieldType UNK_0xf0f7 = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
@@ -208,13 +209,15 @@ LoadDataType UNK_0xf0fc = {TRADERSIDX, 0x13, 0x01, 0x32, 0x6ad1};
 IFieldType UNK_0xf104 = {TRADERSIDX, 0x0c, 0x01};
 
 // ================================================
-// 0xf107: WORD 'UNK_0xf109' codep=0x7420 parp=0xf109 orphan
+// 0xf107: WORD 'UNK_0xf109' codep=0x7420 parp=0xf109
 // ================================================
+// orphan
 IFieldType UNK_0xf109 = {STARSYSTEMIDX, 0x0b, 0x01};
 
 // ================================================
-// 0xf10c: WORD 'UNK_0xf10e' codep=0x7394 parp=0xf10e orphan
+// 0xf10c: WORD 'UNK_0xf10e' codep=0x7394 parp=0xf10e
 // ================================================
+// orphan
 LoadDataType UNK_0xf10e = {VESSELIDX, 0x04, 0x01, 0x24, 0x6b5d};
 
 // ================================================
@@ -996,8 +999,9 @@ void UNK_0xf4b4() // UNK_0xf4b4
 
 
 // ================================================
-// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc orphan params=0 returns=1
+// 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf4bc() // UNK_0xf4bc
 {
@@ -1035,8 +1039,9 @@ void ICON_dash_PARM() // ICON-PARM
 
 
 // ================================================
-// 0xf518: WORD 'UNK_0xf51a' codep=0x224c parp=0xf51a orphan params=0 returns=0
+// 0xf518: WORD 'UNK_0xf51a' codep=0x224c parp=0xf51a params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xf51a() // UNK_0xf51a
 {

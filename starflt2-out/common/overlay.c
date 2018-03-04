@@ -1354,8 +1354,9 @@ void HUFF_gt_() // HUFF>
 IFieldType PHRASE_do_ = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
-// 0xbbd0: WORD 'UNK_0xbbd2' codep=0x224c parp=0xbbd2 orphan params=0 returns=0
+// 0xbbd0: WORD 'UNK_0xbbd2' codep=0x224c parp=0xbbd2 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xbbd2() // UNK_0xbbd2
 {
@@ -1365,8 +1366,9 @@ void UNK_0xbbd2() // UNK_0xbbd2
 
 
 // ================================================
-// 0xbbd8: WORD 'UNK_0xbbda' codep=0x224c parp=0xbbda orphan params=1 returns=0
+// 0xbbd8: WORD 'UNK_0xbbda' codep=0x224c parp=0xbbda params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xbbda() // UNK_0xbbda
 {
@@ -1383,8 +1385,9 @@ void UNK_0xbbda() // UNK_0xbbda
 
 
 // ================================================
-// 0xbbee: WORD 'UNK_0xbbf0' codep=0x224c parp=0xbbf0 orphan params=0 returns=0
+// 0xbbee: WORD 'UNK_0xbbf0' codep=0x224c parp=0xbbf0 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xbbf0() // UNK_0xbbf0
 {

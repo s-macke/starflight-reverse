@@ -722,8 +722,9 @@ LoadDataType UNK_0xe04c = {ANALYZE_TEXTIDX, 0x00, 0xbe, 0xbe, 0x6790};
 IFieldType UNK_0xe054 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xe057: WORD 'UNK_0xe059' codep=0x73ea parp=0xe059 orphan
+// 0xe057: WORD 'UNK_0xe059' codep=0x73ea parp=0xe059
 // ================================================
+// orphan
 LoadDataType UNK_0xe059 = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
 
 // ================================================
@@ -792,8 +793,9 @@ IFieldType UNK_0xe0aa = {EVALUATIONIDX, 0x14, 0x01};
 IFieldType UNK_0xe0af = {EVALUATIONIDX, 0x15, 0x0f};
 
 // ================================================
-// 0xe0b2: WORD 'UNK_0xe0b4' codep=0x744d parp=0xe0b4 orphan
+// 0xe0b2: WORD 'UNK_0xe0b4' codep=0x744d parp=0xe0b4
 // ================================================
+// orphan
 IFieldType UNK_0xe0b4 = {SHIPIDX, 0x13, 0x02};
 
 // ================================================

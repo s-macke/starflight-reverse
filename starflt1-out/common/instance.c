@@ -113,7 +113,7 @@ void POINT_gt_I(); // POINT>I
 void UNK_0x7720(); // UNK_0x7720
 void IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
 void IsUPD_gt_DISK(); // ?UPD>DISK
-void UNK_0x790c(); // UNK_0x790c
+void DISK_gt_IBFR(); // DISK>IBFR
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
@@ -170,7 +170,7 @@ void SET_dash_CURRENT() // SET-CURRENT
   } else
   {
     CI(); // CI
-    UNK_0x790c(); // UNK_0x790c
+    DISK_gt_IBFR(); // DISK>IBFR
   }
   GetINST_dash_CLASS(); // @INST-CLASS
   Push(pp_FILE_n_); // FILE#
@@ -400,8 +400,9 @@ void VCLR() // VCLR
 // 0x7b1f: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b21: WORD 'IC>DSK' codep=0x224c parp=0x7b23 orphan params=0 returns=0
+// 0x7b21: WORD 'IC>DSK' codep=0x224c parp=0x7b23 params=0 returns=0
 // ================================================
+// orphan
 
 void IC_gt_DSK() // IC>DSK
 {
@@ -714,8 +715,9 @@ void IFLD_ex_() // IFLD!
 
 
 // ================================================
-// 0x7cff: WORD '?FLD=' codep=0x224c parp=0x7d01 orphan
+// 0x7cff: WORD '?FLD=' codep=0x224c parp=0x7d01
 // ================================================
+// orphan
 
 void IsFLD_eq_() // ?FLD=
 {
@@ -892,8 +894,9 @@ void SELECT_dash_2DROP() // SELECT-2DROP
 
 
 // ================================================
-// 0x7df4: WORD '3SELECTDROP' codep=0x224c parp=0x7df6 orphan
+// 0x7df4: WORD '3SELECTDROP' codep=0x224c parp=0x7df6
 // ================================================
+// orphan
 
 void _3SELECTDROP() // 3SELECTDROP
 {
@@ -1034,8 +1037,9 @@ void _gt_INACTIVE() // >INACTIVE
 
 
 // ================================================
-// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca orphan
+// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca
 // ================================================
+// orphan
 
 void _ro_IDELETE_rc_() // (IDELETE)
 {

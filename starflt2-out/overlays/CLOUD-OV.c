@@ -69,13 +69,15 @@ void CI(); // CI
 IFieldType UNK_0xf3c6 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
-// 0xf3c9: WORD 'UNK_0xf3cb' codep=0x7420 parp=0xf3cb orphan
+// 0xf3c9: WORD 'UNK_0xf3cb' codep=0x7420 parp=0xf3cb
 // ================================================
+// orphan
 IFieldType UNK_0xf3cb = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
-// 0xf3ce: WORD 'UNK_0xf3d0' codep=0x7420 parp=0xf3d0 orphan
+// 0xf3ce: WORD 'UNK_0xf3d0' codep=0x7420 parp=0xf3d0
 // ================================================
+// orphan
 IFieldType UNK_0xf3d0 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
@@ -95,8 +97,9 @@ void UNK_0xf3da() // UNK_0xf3da
 
 
 // ================================================
-// 0xf3e0: WORD 'UNK_0xf3e2' codep=0x224c parp=0xf3e2 orphan params=1 returns=1
+// 0xf3e0: WORD 'UNK_0xf3e2' codep=0x224c parp=0xf3e2 params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf3e2() // UNK_0xf3e2
 {

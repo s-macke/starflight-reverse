@@ -251,8 +251,9 @@ LoadDataType UNK_0xf2cd = {PLANETIDX, 0x11, 0x02, 0x17, 0x6c49};
 LoadDataType UNK_0xf2d5 = {PLANETIDX, 0x01, 0x01, 0x17, 0x6c49};
 
 // ================================================
-// 0xf2db: WORD 'UNK_0xf2dd' codep=0x1d29 parp=0xf2dd orphan
+// 0xf2db: WORD 'UNK_0xf2dd' codep=0x1d29 parp=0xf2dd
 // ================================================
+// orphan
 // 0xf2dd: db 0x3a 0x20 ': '
 
 // ================================================

@@ -537,8 +537,9 @@ void UNK_0xdd78() // UNK_0xdd78
 
 
 // ================================================
-// 0xdd82: WORD 'UNK_0xdd84' codep=0x224c parp=0xdd84 orphan params=0 returns=0
+// 0xdd82: WORD 'UNK_0xdd84' codep=0x224c parp=0xdd84 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xdd84() // UNK_0xdd84
 {
@@ -548,8 +549,9 @@ void UNK_0xdd84() // UNK_0xdd84
 
 
 // ================================================
-// 0xdd8a: WORD 'UNK_0xdd8c' codep=0x2214 parp=0xdd8c orphan
+// 0xdd8a: WORD 'UNK_0xdd8c' codep=0x2214 parp=0xdd8c
 // ================================================
+// orphan
 // 0xdd8c: dw 0x0019
 
 // ================================================
@@ -583,8 +585,9 @@ LoadDataType UNK_0xddb0 = {VESSELIDX, 0x14, 0x01, 0x49, 0x6491};
 IFieldType UNK_0xddb8 = {VESSELIDX, 0x0c, 0x01};
 
 // ================================================
-// 0xddbb: WORD 'UNK_0xddbd' codep=0x744d parp=0xddbd orphan
+// 0xddbb: WORD 'UNK_0xddbd' codep=0x744d parp=0xddbd
 // ================================================
+// orphan
 IFieldType UNK_0xddbd = {VESSELIDX, 0x12, 0x02};
 
 // ================================================
@@ -603,18 +606,21 @@ IFieldType UNK_0xddc7 = {VESSELIDX, 0x11, 0x01};
 IFieldType UNK_0xddcc = {VESSELIDX, 0x0b, 0x01};
 
 // ================================================
-// 0xddcf: WORD 'UNK_0xddd1' codep=0x2214 parp=0xddd1 orphan
+// 0xddcf: WORD 'UNK_0xddd1' codep=0x2214 parp=0xddd1
 // ================================================
+// orphan
 // 0xddd1: dw 0x0014
 
 // ================================================
-// 0xddd3: WORD 'UNK_0xddd5' codep=0x744d parp=0xddd5 orphan
+// 0xddd3: WORD 'UNK_0xddd5' codep=0x744d parp=0xddd5
 // ================================================
+// orphan
 IFieldType UNK_0xddd5 = {SHIPIDX, 0x11, 0x01};
 
 // ================================================
-// 0xddd8: WORD 'UNK_0xddda' codep=0x744d parp=0xddda orphan
+// 0xddd8: WORD 'UNK_0xddda' codep=0x744d parp=0xddda
 // ================================================
+// orphan
 IFieldType UNK_0xddda = {SHIPIDX, 0x12, 0x01};
 
 // ================================================
@@ -623,23 +629,27 @@ IFieldType UNK_0xddda = {SHIPIDX, 0x12, 0x01};
 IFieldType UNK_0xdddf = {SHIPIDX, 0x13, 0x01};
 
 // ================================================
-// 0xdde2: WORD 'UNK_0xdde4' codep=0x744d parp=0xdde4 orphan
+// 0xdde2: WORD 'UNK_0xdde4' codep=0x744d parp=0xdde4
 // ================================================
+// orphan
 IFieldType UNK_0xdde4 = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
-// 0xdde7: WORD 'UNK_0xdde9' codep=0x744d parp=0xdde9 orphan
+// 0xdde7: WORD 'UNK_0xdde9' codep=0x744d parp=0xdde9
 // ================================================
+// orphan
 IFieldType UNK_0xdde9 = {SHIPIDX, 0x15, 0x01};
 
 // ================================================
-// 0xddec: WORD 'UNK_0xddee' codep=0x744d parp=0xddee orphan
+// 0xddec: WORD 'UNK_0xddee' codep=0x744d parp=0xddee
 // ================================================
+// orphan
 IFieldType UNK_0xddee = {SHIPIDX, 0x16, 0x01};
 
 // ================================================
-// 0xddf1: WORD 'UNK_0xddf3' codep=0x744d parp=0xddf3 orphan
+// 0xddf1: WORD 'UNK_0xddf3' codep=0x744d parp=0xddf3
 // ================================================
+// orphan
 IFieldType UNK_0xddf3 = {SHIPIDX, 0x17, 0x01};
 // 0xddf6: db 0x4d 0x74 0x14 0x18 0x01 0x4d 0x74 0x14 0x19 0x01 'Mt   Mt   '
 
@@ -1171,8 +1181,9 @@ void UNK_0xe055() // UNK_0xe055
 
 
 // ================================================
-// 0xe05f: WORD 'UNK_0xe061' codep=0x224c parp=0xe061 orphan params=0 returns=1
+// 0xe05f: WORD 'UNK_0xe061' codep=0x224c parp=0xe061 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe061() // UNK_0xe061
 {
@@ -1253,8 +1264,9 @@ void UNK_0xe0ab() // UNK_0xe0ab
 
 
 // ================================================
-// 0xe0b1: WORD 'UNK_0xe0b3' codep=0x224c parp=0xe0b3 orphan params=0 returns=1
+// 0xe0b1: WORD 'UNK_0xe0b3' codep=0x224c parp=0xe0b3 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe0b3() // UNK_0xe0b3
 {
@@ -1377,8 +1389,9 @@ void UNK_0xe139() // UNK_0xe139
 
 
 // ================================================
-// 0xe145: WORD 'UNK_0xe147' codep=0x1d29 parp=0xe147 orphan
+// 0xe145: WORD 'UNK_0xe147' codep=0x1d29 parp=0xe147
 // ================================================
+// orphan
 // 0xe147: db 0x00 0x00 0x4c 0x22 0x4c 0xdd 0x5d 0x17 0x5a 0x00 0x46 0x12 0xfa 0x15 0x08 0x00 0x45 0xe1 0xac 0x3b 0x53 0x13 0x45 0xe1 0xae 0x0b 0x44 0xdd 0x90 0x16 '  L"L ] Z F     E  ;S E   D   '
 
 // ================================================
@@ -1503,8 +1516,9 @@ void UNK_0xe1dd() // UNK_0xe1dd
 // 0xe207: dw 0x0000
 
 // ================================================
-// 0xe209: WORD 'UNK_0xe20b' codep=0x224c parp=0xe20b orphan
+// 0xe209: WORD 'UNK_0xe20b' codep=0x224c parp=0xe20b
 // ================================================
+// orphan
 
 void UNK_0xe20b() // UNK_0xe20b
 {
@@ -1611,8 +1625,9 @@ void UNK_0xe482() // UNK_0xe482
 
 
 // ================================================
-// 0xe48c: WORD 'UNK_0xe48e' codep=0x224c parp=0xe48e orphan
+// 0xe48c: WORD 'UNK_0xe48e' codep=0x224c parp=0xe48e
 // ================================================
+// orphan
 
 void UNK_0xe48e() // UNK_0xe48e
 {
@@ -2895,8 +2910,9 @@ void UNK_0xec7b() // UNK_0xec7b
 
 
 // ================================================
-// 0xec81: WORD 'UNK_0xec83' codep=0x224c parp=0xec83 orphan params=2 returns=2
+// 0xec81: WORD 'UNK_0xec83' codep=0x224c parp=0xec83 params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xec83() // UNK_0xec83
 {
@@ -3878,8 +3894,9 @@ void UNK_0xf240() // UNK_0xf240
 
 
 // ================================================
-// 0xf2e8: WORD 'UNK_0xf2ea' codep=0x224c parp=0xf2ea orphan
+// 0xf2e8: WORD 'UNK_0xf2ea' codep=0x224c parp=0xf2ea
 // ================================================
+// orphan
 
 void UNK_0xf2ea() // UNK_0xf2ea
 {

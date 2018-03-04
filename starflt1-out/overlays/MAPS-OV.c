@@ -219,23 +219,27 @@ const unsigned short int cc_UNK_0xed02 = 0xed02; // UNK_0xed02
 LoadDataType UNK_0xecba = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xecc0: WORD 'UNK_0xecc2' codep=0x73ea parp=0xecc2 orphan
+// 0xecc0: WORD 'UNK_0xecc2' codep=0x73ea parp=0xecc2
 // ================================================
+// orphan
 LoadDataType UNK_0xecc2 = {PLANETIDX, 0x04, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xecc8: WORD 'UNK_0xecca' codep=0x73ea parp=0xecca orphan
+// 0xecc8: WORD 'UNK_0xecca' codep=0x73ea parp=0xecca
 // ================================================
+// orphan
 LoadDataType UNK_0xecca = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
-// 0xecd0: WORD 'UNK_0xecd2' codep=0x73ea parp=0xecd2 orphan
+// 0xecd0: WORD 'UNK_0xecd2' codep=0x73ea parp=0xecd2
 // ================================================
+// orphan
 LoadDataType UNK_0xecd2 = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xecd8: WORD 'UNK_0xecda' codep=0x73ea parp=0xecda orphan
+// 0xecd8: WORD 'UNK_0xecda' codep=0x73ea parp=0xecda
 // ================================================
+// orphan
 LoadDataType UNK_0xecda = {PLANETIDX, 0x0c, 0x01, 0x16, 0x658f};
 
 // ================================================
@@ -254,8 +258,9 @@ LoadDataType UNK_0xecea = {PLANETIDX, 0x10, 0x01, 0x16, 0x658f};
 LoadDataType UNK_0xecf2 = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 
 // ================================================
-// 0xecf8: WORD 'UNK_0xecfa' codep=0x73ea parp=0xecfa orphan
+// 0xecf8: WORD 'UNK_0xecfa' codep=0x73ea parp=0xecfa
 // ================================================
+// orphan
 LoadDataType UNK_0xecfa = {REGIONSIDX, 0x07, 0x08, 0x1c, 0x69cd};
 
 // ================================================

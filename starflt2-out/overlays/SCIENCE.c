@@ -480,8 +480,9 @@ IFieldType UNK_0xe021 = {SHIPIDX, 0x43, 0x02};
 IFieldType UNK_0xe026 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xe029: WORD 'UNK_0xe02b' codep=0x7420 parp=0xe02b orphan
+// 0xe029: WORD 'UNK_0xe02b' codep=0x7420 parp=0xe02b
 // ================================================
+// orphan
 IFieldType UNK_0xe02b = {SHIPIDX, 0x15, 0x02};
 
 // ================================================
@@ -495,13 +496,15 @@ IFieldType UNK_0xe030 = {SHIPIDX, 0x56, 0x01};
 IFieldType UNK_0xe035 = {SHIPIDX, 0x57, 0x01};
 
 // ================================================
-// 0xe038: WORD 'UNK_0xe03a' codep=0x7420 parp=0xe03a orphan
+// 0xe038: WORD 'UNK_0xe03a' codep=0x7420 parp=0xe03a
 // ================================================
+// orphan
 IFieldType UNK_0xe03a = {CREWMEMBERIDX, 0x1a, 0x01};
 
 // ================================================
-// 0xe03d: WORD 'UNK_0xe03f' codep=0x7420 parp=0xe03f orphan
+// 0xe03d: WORD 'UNK_0xe03f' codep=0x7420 parp=0xe03f
 // ================================================
+// orphan
 IFieldType UNK_0xe03f = {ASSIGN_CREWIDX, 0x14, 0x03};
 
 // ================================================
@@ -535,13 +538,15 @@ IFieldType UNK_0xe064 = {VESSELIDX, 0x12, 0x02};
 LoadDataType UNK_0xe069 = {VESSELIDX, 0x0c, 0x02, 0x24, 0x6b5d};
 
 // ================================================
-// 0xe06f: WORD 'UNK_0xe071' codep=0x7420 parp=0xe071 orphan
+// 0xe06f: WORD 'UNK_0xe071' codep=0x7420 parp=0xe071
 // ================================================
+// orphan
 IFieldType UNK_0xe071 = {VESSELIDX, 0x14, 0x02};
 
 // ================================================
-// 0xe074: WORD 'UNK_0xe076' codep=0x7394 parp=0xe076 orphan
+// 0xe074: WORD 'UNK_0xe076' codep=0x7394 parp=0xe076
 // ================================================
+// orphan
 LoadDataType UNK_0xe076 = {VESSELIDX, 0x0e, 0x02, 0x24, 0x6b5d};
 
 // ================================================
@@ -657,8 +662,9 @@ void UNK_0xe107() // UNK_0xe107
 
 
 // ================================================
-// 0xe10d: WORD 'UNK_0xe10f' codep=0x224c parp=0xe10f orphan params=0 returns=2
+// 0xe10d: WORD 'UNK_0xe10f' codep=0x224c parp=0xe10f params=0 returns=2
 // ================================================
+// orphan
 
 void UNK_0xe10f() // UNK_0xe10f
 {

@@ -759,13 +759,15 @@ IFieldType UNK_0xd884 = {CREWMEMBERIDX, 0x1d, 0x01};
 IFieldType UNK_0xd889 = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
-// 0xd88c: WORD 'UNK_0xd88e' codep=0x7420 parp=0xd88e orphan
+// 0xd88c: WORD 'UNK_0xd88e' codep=0x7420 parp=0xd88e
 // ================================================
+// orphan
 IFieldType UNK_0xd88e = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xd891: WORD 'UNK_0xd893' codep=0x7420 parp=0xd893 orphan
+// 0xd891: WORD 'UNK_0xd893' codep=0x7420 parp=0xd893
 // ================================================
+// orphan
 IFieldType UNK_0xd893 = {CREWMEMBERIDX, 0x1a, 0x0f};
 
 // ================================================
@@ -784,8 +786,9 @@ IFieldType UNK_0xd89d = {ASSIGN_CREWIDX, 0x1d, 0x03};
 IFieldType UNK_0xd8a2 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xd8a5: WORD 'UNK_0xd8a7' codep=0x7420 parp=0xd8a7 orphan
+// 0xd8a5: WORD 'UNK_0xd8a7' codep=0x7420 parp=0xd8a7
 // ================================================
+// orphan
 IFieldType UNK_0xd8a7 = {SHIPIDX, 0x17, 0x02};
 
 // ================================================
@@ -1180,8 +1183,9 @@ void UNK_0xd9e9() // UNK_0xd9e9
 // 0xda7d: dw 0x000a
 
 // ================================================
-// 0xda7f: WORD 'UNK_0xda81' codep=0x7420 parp=0xda81 orphan
+// 0xda7f: WORD 'UNK_0xda81' codep=0x7420 parp=0xda81
 // ================================================
+// orphan
 IFieldType UNK_0xda81 = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================

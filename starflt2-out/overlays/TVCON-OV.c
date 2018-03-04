@@ -221,8 +221,9 @@ IFieldType UNK_0xedd1 = {ASSIGN_CREWIDX, 0x17, 0x03};
 IFieldType UNK_0xedd6 = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xedd9: WORD 'UNK_0xeddb' codep=0x7420 parp=0xeddb orphan
+// 0xedd9: WORD 'UNK_0xeddb' codep=0x7420 parp=0xeddb
 // ================================================
+// orphan
 IFieldType UNK_0xeddb = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
@@ -500,8 +501,9 @@ void UNK_0xefbb() // UNK_0xefbb
 
 
 // ================================================
-// 0xefc3: WORD 'UNK_0xefc5' codep=0x224c parp=0xefc5 orphan params=0 returns=1
+// 0xefc3: WORD 'UNK_0xefc5' codep=0x224c parp=0xefc5 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xefc5() // UNK_0xefc5
 {
@@ -587,8 +589,9 @@ void UNK_0xf00d() // UNK_0xf00d
 
 
 // ================================================
-// 0xf053: WORD 'UNK_0xf055' codep=0x224c parp=0xf055 orphan params=0 returns=1
+// 0xf053: WORD 'UNK_0xf055' codep=0x224c parp=0xf055 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf055() // UNK_0xf055
 {
@@ -598,8 +601,9 @@ void UNK_0xf055() // UNK_0xf055
 
 
 // ================================================
-// 0xf065: WORD 'UNK_0xf067' codep=0x224c parp=0xf067 orphan params=1 returns=1
+// 0xf065: WORD 'UNK_0xf067' codep=0x224c parp=0xf067 params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0xf067() // UNK_0xf067
 {
@@ -626,8 +630,9 @@ void UNK_0xf06f() // UNK_0xf06f
 
 
 // ================================================
-// 0xf083: WORD 'UNK_0xf085' codep=0x224c parp=0xf085 orphan params=0 returns=0
+// 0xf083: WORD 'UNK_0xf085' codep=0x224c parp=0xf085 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xf085() // UNK_0xf085
 {

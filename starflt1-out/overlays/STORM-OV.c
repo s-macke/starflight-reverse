@@ -261,8 +261,9 @@ LoadDataType UNK_0xf24d = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 LoadDataType UNK_0xf255 = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xf25b: WORD 'UNK_0xf25d' codep=0x1d29 parp=0xf25d orphan
+// 0xf25b: WORD 'UNK_0xf25d' codep=0x1d29 parp=0xf25d
 // ================================================
+// orphan
 // 0xf25d: db 0x3a 0x20 ': '
 
 // ================================================

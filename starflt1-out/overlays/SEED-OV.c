@@ -251,8 +251,9 @@ LoadDataType UNK_0xec52 = {PLANETIDX, 0x09, 0x01, 0x16, 0x658f};
 LoadDataType UNK_0xec5a = {REGIONSIDX, 0x1b, 0x01, 0x1c, 0x69cd};
 
 // ================================================
-// 0xec60: WORD 'UNK_0xec62' codep=0x744d parp=0xec62 orphan
+// 0xec60: WORD 'UNK_0xec62' codep=0x744d parp=0xec62
 // ================================================
+// orphan
 IFieldType UNK_0xec62 = {REGIONSIDX, 0x0b, 0x02};
 
 // ================================================
@@ -311,8 +312,9 @@ LoadDataType UNK_0xeca0 = {CREATUREIDX, 0x3a, 0x02, 0x9c, 0x69d8};
 IFieldType UNK_0xeca8 = {CREATUREIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xecab: WORD 'UNK_0xecad' codep=0x224c parp=0xecad orphan params=0 returns=1
+// 0xecab: WORD 'UNK_0xecad' codep=0x224c parp=0xecad params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xecad() // UNK_0xecad
 {
@@ -323,8 +325,9 @@ void UNK_0xecad() // UNK_0xecad
 
 
 // ================================================
-// 0xecb7: WORD 'UNK_0xecb9' codep=0x224c parp=0xecb9 orphan params=0 returns=1
+// 0xecb7: WORD 'UNK_0xecb9' codep=0x224c parp=0xecb9 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xecb9() // UNK_0xecb9
 {
@@ -335,8 +338,9 @@ void UNK_0xecb9() // UNK_0xecb9
 
 
 // ================================================
-// 0xecc1: WORD 'UNK_0xecc3' codep=0x224c parp=0xecc3 orphan params=0 returns=1
+// 0xecc1: WORD 'UNK_0xecc3' codep=0x224c parp=0xecc3 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xecc3() // UNK_0xecc3
 {
@@ -347,8 +351,9 @@ void UNK_0xecc3() // UNK_0xecc3
 
 
 // ================================================
-// 0xeccd: WORD 'UNK_0xeccf' codep=0x224c parp=0xeccf orphan params=2 returns=2
+// 0xeccd: WORD 'UNK_0xeccf' codep=0x224c parp=0xeccf params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xeccf() // UNK_0xeccf
 {
@@ -536,8 +541,9 @@ void UNK_0xedaf() // UNK_0xedaf
 
 
 // ================================================
-// 0xeddf: WORD 'UNK_0xede1' codep=0x224c parp=0xede1 orphan params=0 returns=0
+// 0xeddf: WORD 'UNK_0xede1' codep=0x224c parp=0xede1 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xede1() // UNK_0xede1
 {
@@ -689,18 +695,21 @@ void UNK_0xee91() // UNK_0xee91
 
 
 // ================================================
-// 0xeecb: WORD 'UNK_0xeecd' codep=0x73ea parp=0xeecd orphan
+// 0xeecb: WORD 'UNK_0xeecd' codep=0x73ea parp=0xeecd
 // ================================================
+// orphan
 LoadDataType UNK_0xeecd = {CREATUREIDX, 0x02, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xeed3: WORD 'UNK_0xeed5' codep=0x73ea parp=0xeed5 orphan
+// 0xeed3: WORD 'UNK_0xeed5' codep=0x73ea parp=0xeed5
 // ================================================
+// orphan
 LoadDataType UNK_0xeed5 = {CREATUREIDX, 0x04, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xeedb: WORD 'UNK_0xeedd' codep=0x73ea parp=0xeedd orphan
+// 0xeedb: WORD 'UNK_0xeedd' codep=0x73ea parp=0xeedd
 // ================================================
+// orphan
 LoadDataType UNK_0xeedd = {CREATUREIDX, 0x07, 0x03, 0x9c, 0x69d8};
 
 // ================================================
@@ -784,13 +793,15 @@ LoadDataType UNK_0xef55 = {CREATUREIDX, 0x2e, 0x02, 0x9c, 0x69d8};
 LoadDataType UNK_0xef5d = {CREATUREIDX, 0x9b, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xef63: WORD 'UNK_0xef65' codep=0x73ea parp=0xef65 orphan
+// 0xef63: WORD 'UNK_0xef65' codep=0x73ea parp=0xef65
 // ================================================
+// orphan
 LoadDataType UNK_0xef65 = {PLANETIDX, 0x0a, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xef6b: WORD 'UNK_0xef6d' codep=0x73ea parp=0xef6d orphan
+// 0xef6b: WORD 'UNK_0xef6d' codep=0x73ea parp=0xef6d
 // ================================================
+// orphan
 LoadDataType UNK_0xef6d = {PLANETIDX, 0x0b, 0x01, 0x16, 0x658f};
 
 // ================================================

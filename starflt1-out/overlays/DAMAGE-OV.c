@@ -309,8 +309,9 @@ void UNK_0xead5() // UNK_0xead5
 
 
 // ================================================
-// 0xeadf: WORD 'UNK_0xeae1' codep=0x224c parp=0xeae1 orphan
+// 0xeadf: WORD 'UNK_0xeae1' codep=0x224c parp=0xeae1
 // ================================================
+// orphan
 
 void UNK_0xeae1() // UNK_0xeae1
 {
@@ -342,8 +343,9 @@ void UNK_0xeaf5() // UNK_0xeaf5
 
 
 // ================================================
-// 0xeafb: WORD 'UNK_0xeafd' codep=0x2214 parp=0xeafd orphan
+// 0xeafb: WORD 'UNK_0xeafd' codep=0x2214 parp=0xeafd
 // ================================================
+// orphan
 // 0xeafd: dw 0x0019
 
 // ================================================
@@ -357,13 +359,15 @@ LoadDataType UNK_0xeb01 = {VESSELIDX, 0x0c, 0x04, 0x49, 0x6491};
 LoadDataType UNK_0xeb09 = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 
 // ================================================
-// 0xeb0f: WORD 'UNK_0xeb11' codep=0x73ea parp=0xeb11 orphan
+// 0xeb0f: WORD 'UNK_0xeb11' codep=0x73ea parp=0xeb11
 // ================================================
+// orphan
 LoadDataType UNK_0xeb11 = {VESSELIDX, 0x13, 0x01, 0x49, 0x6491};
 
 // ================================================
-// 0xeb17: WORD 'UNK_0xeb19' codep=0x73ea parp=0xeb19 orphan
+// 0xeb17: WORD 'UNK_0xeb19' codep=0x73ea parp=0xeb19
 // ================================================
+// orphan
 LoadDataType UNK_0xeb19 = {VESSELIDX, 0x12, 0x01, 0x49, 0x6491};
 
 // ================================================
@@ -382,8 +386,9 @@ LoadDataType UNK_0xeb29 = {VESSELIDX, 0x10, 0x01, 0x49, 0x6491};
 IFieldType UNK_0xeb31 = {VESSELIDX, 0x0c, 0x01};
 
 // ================================================
-// 0xeb34: WORD 'UNK_0xeb36' codep=0x744d parp=0xeb36 orphan
+// 0xeb34: WORD 'UNK_0xeb36' codep=0x744d parp=0xeb36
 // ================================================
+// orphan
 IFieldType UNK_0xeb36 = {VESSELIDX, 0x17, 0x04};
 
 // ================================================
@@ -407,8 +412,9 @@ IFieldType UNK_0xeb45 = {VESSELIDX, 0x0b, 0x01};
 IFieldType UNK_0xeb4a = {VESSELIDX, 0x12, 0x07};
 
 // ================================================
-// 0xeb4d: WORD 'UNK_0xeb4f' codep=0x2214 parp=0xeb4f orphan
+// 0xeb4d: WORD 'UNK_0xeb4f' codep=0x2214 parp=0xeb4f
 // ================================================
+// orphan
 // 0xeb4f: dw 0x0014
 
 // ================================================
@@ -422,23 +428,27 @@ IFieldType UNK_0xeb53 = {SHIPIDX, 0x11, 0x01};
 IFieldType UNK_0xeb58 = {SHIPIDX, 0x12, 0x01};
 
 // ================================================
-// 0xeb5b: WORD 'UNK_0xeb5d' codep=0x744d parp=0xeb5d orphan
+// 0xeb5b: WORD 'UNK_0xeb5d' codep=0x744d parp=0xeb5d
 // ================================================
+// orphan
 IFieldType UNK_0xeb5d = {SHIPIDX, 0x13, 0x01};
 
 // ================================================
-// 0xeb60: WORD 'UNK_0xeb62' codep=0x744d parp=0xeb62 orphan
+// 0xeb60: WORD 'UNK_0xeb62' codep=0x744d parp=0xeb62
 // ================================================
+// orphan
 IFieldType UNK_0xeb62 = {SHIPIDX, 0x14, 0x01};
 
 // ================================================
-// 0xeb65: WORD 'UNK_0xeb67' codep=0x744d parp=0xeb67 orphan
+// 0xeb65: WORD 'UNK_0xeb67' codep=0x744d parp=0xeb67
 // ================================================
+// orphan
 IFieldType UNK_0xeb67 = {SHIPIDX, 0x15, 0x01};
 
 // ================================================
-// 0xeb6a: WORD 'UNK_0xeb6c' codep=0x744d parp=0xeb6c orphan
+// 0xeb6a: WORD 'UNK_0xeb6c' codep=0x744d parp=0xeb6c
 // ================================================
+// orphan
 IFieldType UNK_0xeb6c = {SHIPIDX, 0x16, 0x01};
 // 0xeb6f: db 0x4d 0x74 0x14 0x17 0x01 0x4d 0x74 0x14 0x18 0x01 0x4d 0x74 0x14 0x19 0x01 'Mt   Mt   Mt   '
 
@@ -448,23 +458,27 @@ IFieldType UNK_0xeb6c = {SHIPIDX, 0x16, 0x01};
 IFieldType UNK_0xeb80 = {SHIPIDX, 0x1a, 0x01};
 
 // ================================================
-// 0xeb83: WORD 'UNK_0xeb85' codep=0x744d parp=0xeb85 orphan
+// 0xeb83: WORD 'UNK_0xeb85' codep=0x744d parp=0xeb85
 // ================================================
+// orphan
 IFieldType UNK_0xeb85 = {SHIPIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xeb88: WORD 'UNK_0xeb8a' codep=0x744d parp=0xeb8a orphan
+// 0xeb88: WORD 'UNK_0xeb8a' codep=0x744d parp=0xeb8a
 // ================================================
+// orphan
 IFieldType UNK_0xeb8a = {SHIPIDX, 0x1c, 0x01};
 
 // ================================================
-// 0xeb8d: WORD 'UNK_0xeb8f' codep=0x744d parp=0xeb8f orphan
+// 0xeb8d: WORD 'UNK_0xeb8f' codep=0x744d parp=0xeb8f
 // ================================================
+// orphan
 IFieldType UNK_0xeb8f = {SHIPIDX, 0x1d, 0x01};
 
 // ================================================
-// 0xeb92: WORD 'UNK_0xeb94' codep=0x744d parp=0xeb94 orphan
+// 0xeb92: WORD 'UNK_0xeb94' codep=0x744d parp=0xeb94
 // ================================================
+// orphan
 IFieldType UNK_0xeb94 = {SHIPIDX, 0x1e, 0x01};
 
 // ================================================
@@ -483,8 +497,9 @@ IFieldType UNK_0xeb9e = {SHIPIDX, 0x45, 0x04};
 IFieldType UNK_0xeba3 = {SHIPIDX, 0x32, 0x02};
 
 // ================================================
-// 0xeba6: WORD 'UNK_0xeba8' codep=0x744d parp=0xeba8 orphan
+// 0xeba6: WORD 'UNK_0xeba8' codep=0x744d parp=0xeba8
 // ================================================
+// orphan
 IFieldType UNK_0xeba8 = {SHIPIDX, 0x49, 0x01};
 
 // ================================================

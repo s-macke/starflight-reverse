@@ -164,8 +164,9 @@ const unsigned short int pp_UNK_0xf0e4 = 0xf0e4; // UNK_0xf0e4 size: 10
 IFieldType UNK_0xeefa = {SHIPIDX, 0x11, 0x02};
 
 // ================================================
-// 0xeefd: WORD 'UNK_0xeeff' codep=0x7420 parp=0xeeff orphan
+// 0xeefd: WORD 'UNK_0xeeff' codep=0x7420 parp=0xeeff
 // ================================================
+// orphan
 IFieldType UNK_0xeeff = {SHIPIDX, 0x12, 0x01};
 
 // ================================================
@@ -204,8 +205,9 @@ IFieldType UNK_0xef1d = {SHIPIDX, 0x1d, 0x02};
 IFieldType UNK_0xef22 = {SHIPIDX, 0x29, 0x07};
 
 // ================================================
-// 0xef25: WORD 'UNK_0xef27' codep=0x7420 parp=0xef27 orphan
+// 0xef25: WORD 'UNK_0xef27' codep=0x7420 parp=0xef27
 // ================================================
+// orphan
 IFieldType UNK_0xef27 = {SHIPIDX, 0x32, 0x02};
 
 // ================================================
