@@ -111,7 +111,7 @@ const unsigned short int pp_UNK_0xf1fc = 0xf1fc; // UNK_0xf1fc size: 50
 // 0xf022: db 0x50 0x00 'P '
 
 // ================================================
-// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026
+// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026 params=3 returns=2
 // ================================================
 
 void UNK_0xf026() // UNK_0xf026
@@ -258,7 +258,7 @@ void LAUNCH() // LAUNCH
 
 
 // ================================================
-// 0xf110: WORD 'UNK_0xf112' codep=0x224c parp=0xf112
+// 0xf110: WORD 'UNK_0xf112' codep=0x224c parp=0xf112 params=2 returns=0
 // ================================================
 
 void UNK_0xf112() // UNK_0xf112
@@ -442,7 +442,7 @@ void DrawAIRLOCK() // .AIRLOCK
 
 
 // ================================================
-// 0xf2e0: WORD 'UNK_0xf2e2' codep=0x224c parp=0xf2e2
+// 0xf2e0: WORD 'UNK_0xf2e2' codep=0x224c parp=0xf2e2 params=0 returns=3
 // ================================================
 
 void UNK_0xf2e2() // UNK_0xf2e2

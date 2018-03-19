@@ -882,7 +882,7 @@ void DrawSORD() // .SORD
 
 
 // ================================================
-// 0xbf8c: WORD '?VCYCLE' codep=0x224c parp=0xbf98
+// 0xbf8c: WORD '?VCYCLE' codep=0x224c parp=0xbf98 params=0 returns=1
 // ================================================
 
 void IsVCYCLE() // ?VCYCLE
@@ -998,7 +998,7 @@ void DrawVIT() // .VIT
 
 
 // ================================================
-// 0xc078: WORD '?APP' codep=0x224c parp=0xc081
+// 0xc078: WORD '?APP' codep=0x224c parp=0xc081 params=0 returns=1
 // ================================================
 
 void IsAPP() // ?APP
@@ -1052,7 +1052,7 @@ void DO_dash_REPA() // DO-REPA
 
 
 // ================================================
-// 0xc0f8: WORD '?SHIP-REPAIR' codep=0x224c parp=0xc104
+// 0xc0f8: WORD '?SHIP-REPAIR' codep=0x224c parp=0xc104 params=0 returns=1
 // ================================================
 
 void IsSHIP_dash_REPAIR() // ?SHIP-REPAIR
@@ -1071,7 +1071,7 @@ void IsSHIP_dash_REPAIR() // ?SHIP-REPAIR
 
 
 // ================================================
-// 0xc12a: WORD 'MREPAIR' codep=0x224c parp=0xc136
+// 0xc12a: WORD 'MREPAIR' codep=0x224c parp=0xc136 params=0 returns=0
 // ================================================
 
 void MREPAIR() // MREPAIR

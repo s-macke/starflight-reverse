@@ -308,7 +308,7 @@ void UNK_0xedac() // UNK_0xedac
 
 
 // ================================================
-// 0xee48: WORD 'DBARS' codep=0x224c parp=0xee52
+// 0xee48: WORD 'DBARS' codep=0x224c parp=0xee52 params=0 returns=0
 // ================================================
 // entry
 

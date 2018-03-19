@@ -695,7 +695,7 @@ void UNK_0xe0ae() // UNK_0xe0ae
 
 
 // ================================================
-// 0xe0b4: WORD 'UNK_0xe0b6' codep=0x224c parp=0xe0b6
+// 0xe0b4: WORD 'UNK_0xe0b6' codep=0x224c parp=0xe0b6 params=0 returns=0
 // ================================================
 
 void UNK_0xe0b6() // UNK_0xe0b6
@@ -1365,7 +1365,7 @@ void UNK_0xe64f() // UNK_0xe64f
 
 
 // ================================================
-// 0xe657: WORD 'UNK_0xe659' codep=0x224c parp=0xe659
+// 0xe657: WORD 'UNK_0xe659' codep=0x224c parp=0xe659 params=1 returns=0
 // ================================================
 
 void UNK_0xe659() // UNK_0xe659
@@ -1526,7 +1526,7 @@ void UNK_0xe7b6() // UNK_0xe7b6
 
 
 // ================================================
-// 0xe7ec: WORD '?-writeable' codep=0x224c parp=0xe7ee
+// 0xe7ec: WORD '?-writeable' codep=0x224c parp=0xe7ee params=0 returns=1
 // ================================================
 
 void Is_dash_writeable() // ?-writeable
@@ -2765,7 +2765,7 @@ void SET_dot_DISPLAY_dot_MODE() // SET.DISPLAY.MODE
 
 
 // ================================================
-// 0xf067: WORD 'UNK_0xf069' codep=0x224c parp=0xf069
+// 0xf067: WORD 'UNK_0xf069' codep=0x224c parp=0xf069 params=0 returns=1
 // ================================================
 
 void UNK_0xf069() // UNK_0xf069

@@ -334,7 +334,7 @@ void UNK_0xe2f2() // UNK_0xe2f2
 
 
 // ================================================
-// 0xe2fc: WORD 'UNK_0xe2fe' codep=0x224c parp=0xe2fe
+// 0xe2fc: WORD 'UNK_0xe2fe' codep=0x224c parp=0xe2fe params=2 returns=0
 // ================================================
 // orphan
 
@@ -1308,7 +1308,7 @@ void UNK_0xeb8b() // UNK_0xeb8b
 
 
 // ================================================
-// 0xebaf: WORD 'UNK_0xebb1' codep=0x224c parp=0xebb1
+// 0xebaf: WORD 'UNK_0xebb1' codep=0x224c parp=0xebb1 params=2 returns=6
 // ================================================
 
 void UNK_0xebb1() // UNK_0xebb1

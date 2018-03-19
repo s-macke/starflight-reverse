@@ -1261,7 +1261,7 @@ void UNK_0xe979() // UNK_0xe979
 
 
 // ================================================
-// 0xe983: WORD 'UNK_0xe985' codep=0x224c parp=0xe985
+// 0xe983: WORD 'UNK_0xe985' codep=0x224c parp=0xe985 params=0 returns=4
 // ================================================
 
 void UNK_0xe985() // UNK_0xe985

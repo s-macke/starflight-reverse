@@ -450,7 +450,7 @@ void FLUSH_2() // FLUSH_2
 
 
 // ================================================
-// 0x7b65: WORD 'IINSERT' codep=0x224c parp=0x7b71
+// 0x7b65: WORD 'IINSERT' codep=0x224c parp=0x7b71 params=4 returns=0
 // ================================================
 
 void IINSERT() // IINSERT
@@ -489,7 +489,7 @@ void IINSERT() // IINSERT
 
 
 // ================================================
-// 0x7bad: WORD '<INSERT' codep=0x224c parp=0x7bb9
+// 0x7bad: WORD '<INSERT' codep=0x224c parp=0x7bb9 params=4 returns=0
 // ================================================
 
 void _st_INSERT() // <INSERT
@@ -510,7 +510,7 @@ void _st_INSERT() // <INSERT
 
 
 // ================================================
-// 0x7bd3: WORD '>INSERT' codep=0x224c parp=0x7bdf
+// 0x7bd3: WORD '>INSERT' codep=0x224c parp=0x7bdf params=4 returns=0
 // ================================================
 
 void _gt_INSERT() // >INSERT
@@ -523,7 +523,7 @@ void _gt_INSERT() // >INSERT
 
 
 // ================================================
-// 0x7be9: WORD 'IEXTRACT' codep=0x224c parp=0x7bf5
+// 0x7be9: WORD 'IEXTRACT' codep=0x224c parp=0x7bf5 params=0 returns=2
 // ================================================
 
 void IEXTRACT() // IEXTRACT
@@ -585,7 +585,7 @@ void GetNEWSPACE() // @NEWSPACE
 
 
 // ================================================
-// 0x7c4f: WORD '!NEWSPACE' codep=0x224c parp=0x7c5b
+// 0x7c4f: WORD '!NEWSPACE' codep=0x224c parp=0x7c5b params=1 returns=0
 // ================================================
 
 void StoreNEWSPACE() // !NEWSPACE
@@ -596,7 +596,7 @@ void StoreNEWSPACE() // !NEWSPACE
 
 
 // ================================================
-// 0x7c61: WORD '+!NEWSPACE' codep=0x224c parp=0x7c63
+// 0x7c61: WORD '+!NEWSPACE' codep=0x224c parp=0x7c63 params=0 returns=1
 // ================================================
 
 void _plus__ex_NEWSPACE() // +!NEWSPACE
@@ -609,7 +609,7 @@ void _plus__ex_NEWSPACE() // +!NEWSPACE
 
 
 // ================================================
-// 0x7c6d: WORD 'MAXSPACE' codep=0x224c parp=0x7c79
+// 0x7c6d: WORD 'MAXSPACE' codep=0x224c parp=0x7c79 params=0 returns=2
 // ================================================
 
 void MAXSPACE() // MAXSPACE
@@ -987,7 +987,7 @@ void MAKE1ST() // MAKE1ST
 
 
 // ================================================
-// 0x7e6e: WORD 'EXTRACTED>INACTIVE' codep=0x224c parp=0x7e70
+// 0x7e6e: WORD 'EXTRACTED>INACTIVE' codep=0x224c parp=0x7e70 params=3 returns=0
 // ================================================
 
 void EXTRACTED_gt_INACTIVE() // EXTRACTED>INACTIVE
@@ -1021,7 +1021,7 @@ void EXTRACTED_gt_INACTIVE() // EXTRACTED>INACTIVE
 
 
 // ================================================
-// 0x7ea2: WORD '>INACTIVE' codep=0x224c parp=0x7eae
+// 0x7ea2: WORD '>INACTIVE' codep=0x224c parp=0x7eae params=2 returns=0
 // ================================================
 
 void _gt_INACTIVE() // >INACTIVE
@@ -1037,7 +1037,7 @@ void _gt_INACTIVE() // >INACTIVE
 
 
 // ================================================
-// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca
+// 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca params=0 returns=0
 // ================================================
 // orphan
 
@@ -1156,7 +1156,7 @@ void THROW_dash_AWAY() // THROW-AWAY
 
 
 // ================================================
-// 0x7f7f: WORD 'NULLPOINTERS' codep=0x224c parp=0x7f8b
+// 0x7f7f: WORD 'NULLPOINTERS' codep=0x224c parp=0x7f8b params=0 returns=0
 // ================================================
 
 void NULLPOINTERS() // NULLPOINTERS
@@ -1171,7 +1171,7 @@ void NULLPOINTERS() // NULLPOINTERS
 
 
 // ================================================
-// 0x7f99: WORD 'CHILDEXTRACT' codep=0x224c parp=0x7f9b
+// 0x7f99: WORD 'CHILDEXTRACT' codep=0x224c parp=0x7f9b params=0 returns=2
 // ================================================
 
 void CHILDEXTRACT() // CHILDEXTRACT
@@ -1224,7 +1224,7 @@ void TRY_dash_INACTIVE() // TRY-INACTIVE
 
 
 // ================================================
-// 0x7fe5: WORD 'NEWFRAGMENT' codep=0x224c parp=0x7fe7
+// 0x7fe5: WORD 'NEWFRAGMENT' codep=0x224c parp=0x7fe7 params=0 returns=4
 // ================================================
 
 void NEWFRAGMENT() // NEWFRAGMENT
@@ -1258,7 +1258,7 @@ void NEWFRAGMENT() // NEWFRAGMENT
 
 
 // ================================================
-// 0x8027: WORD '?>MAXSP' codep=0x224c parp=0x8033
+// 0x8027: WORD '?>MAXSP' codep=0x224c parp=0x8033 params=1 returns=4
 // ================================================
 
 void Is_gt_MAXSP() // ?>MAXSP
@@ -1277,7 +1277,7 @@ void Is_gt_MAXSP() // ?>MAXSP
 
 
 // ================================================
-// 0x8047: WORD 'TRY-NEWSPACE' codep=0x224c parp=0x8049
+// 0x8047: WORD 'TRY-NEWSPACE' codep=0x224c parp=0x8049 params=1 returns=9
 // ================================================
 
 void TRY_dash_NEWSPACE() // TRY-NEWSPACE
@@ -1311,7 +1311,7 @@ void TRY_dash_NEWSPACE() // TRY-NEWSPACE
 
 
 // ================================================
-// 0x8081: WORD 'GET-NEW-INSTANCE' codep=0x224c parp=0x8083
+// 0x8081: WORD 'GET-NEW-INSTANCE' codep=0x224c parp=0x8083 params=1 returns=9
 // ================================================
 
 void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
@@ -1408,7 +1408,7 @@ void SET_ask_REUSE() // SET?REUSE
 }
 
 // ================================================
-// 0x8109: WORD 'VICREAT' codep=0x224c parp=0x8115
+// 0x8109: WORD 'VICREAT' codep=0x224c parp=0x8115 params=1 returns=11
 // ================================================
 
 void VICREAT() // VICREAT

@@ -317,7 +317,7 @@ void UNK_0xf4bc() // UNK_0xf4bc
 
 
 // ================================================
-// 0xf506: WORD 'DEPART' codep=0x224c parp=0xf511
+// 0xf506: WORD 'DEPART' codep=0x224c parp=0xf511 params=0 returns=0
 // ================================================
 // entry
 

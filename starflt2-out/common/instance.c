@@ -455,7 +455,7 @@ void MT() // MT
 
 
 // ================================================
-// 0x7b9f: WORD 'IINSERT' codep=0x224c parp=0x7bab
+// 0x7b9f: WORD 'IINSERT' codep=0x224c parp=0x7bab params=4 returns=0
 // ================================================
 
 void IINSERT() // IINSERT
@@ -494,7 +494,7 @@ void IINSERT() // IINSERT
 
 
 // ================================================
-// 0x7be7: WORD '<INSERT' codep=0x224c parp=0x7bf3
+// 0x7be7: WORD '<INSERT' codep=0x224c parp=0x7bf3 params=4 returns=0
 // ================================================
 
 void _st_INSERT() // <INSERT
@@ -515,7 +515,7 @@ void _st_INSERT() // <INSERT
 
 
 // ================================================
-// 0x7c0d: WORD '>INSERT' codep=0x224c parp=0x7c19
+// 0x7c0d: WORD '>INSERT' codep=0x224c parp=0x7c19 params=4 returns=0
 // ================================================
 
 void _gt_INSERT() // >INSERT
@@ -528,7 +528,7 @@ void _gt_INSERT() // >INSERT
 
 
 // ================================================
-// 0x7c23: WORD 'IEXTRAC' codep=0x224c parp=0x7c2f
+// 0x7c23: WORD 'IEXTRAC' codep=0x224c parp=0x7c2f params=0 returns=2
 // ================================================
 
 void IEXTRAC() // IEXTRAC
@@ -590,7 +590,7 @@ void GetNEWSPA() // @NEWSPA
 
 
 // ================================================
-// 0x7c89: WORD '!NEWSPA' codep=0x224c parp=0x7c95
+// 0x7c89: WORD '!NEWSPA' codep=0x224c parp=0x7c95 params=1 returns=0
 // ================================================
 
 void StoreNEWSPA() // !NEWSPA
@@ -601,7 +601,7 @@ void StoreNEWSPA() // !NEWSPA
 
 
 // ================================================
-// 0x7c9b: WORD 'UNK_0x7c9d' codep=0x224c parp=0x7c9d
+// 0x7c9b: WORD 'UNK_0x7c9d' codep=0x224c parp=0x7c9d params=0 returns=1
 // ================================================
 
 void UNK_0x7c9d() // UNK_0x7c9d
@@ -614,7 +614,7 @@ void UNK_0x7c9d() // UNK_0x7c9d
 
 
 // ================================================
-// 0x7ca7: WORD 'MAXSPAC' codep=0x224c parp=0x7cb3
+// 0x7ca7: WORD 'MAXSPAC' codep=0x224c parp=0x7cb3 params=0 returns=2
 // ================================================
 
 void MAXSPAC() // MAXSPAC
@@ -992,7 +992,7 @@ void MAKE1ST() // MAKE1ST
 
 
 // ================================================
-// 0x7eb2: WORD 'UNK_0x7eb4' codep=0x224c parp=0x7eb4
+// 0x7eb2: WORD 'UNK_0x7eb4' codep=0x224c parp=0x7eb4 params=3 returns=0
 // ================================================
 
 void UNK_0x7eb4() // UNK_0x7eb4
@@ -1026,7 +1026,7 @@ void UNK_0x7eb4() // UNK_0x7eb4
 
 
 // ================================================
-// 0x7ee6: WORD '>INACTI' codep=0x224c parp=0x7ef2
+// 0x7ee6: WORD '>INACTI' codep=0x224c parp=0x7ef2 params=2 returns=0
 // ================================================
 
 void _gt_INACTI() // >INACTI
@@ -1042,7 +1042,7 @@ void _gt_INACTI() // >INACTI
 
 
 // ================================================
-// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e
+// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e params=0 returns=0
 // ================================================
 // orphan
 
@@ -1161,7 +1161,7 @@ void UNK_0x7fbd() // UNK_0x7fbd
 
 
 // ================================================
-// 0x7fc3: WORD 'NULLPOI' codep=0x224c parp=0x7fcf
+// 0x7fc3: WORD 'NULLPOI' codep=0x224c parp=0x7fcf params=0 returns=0
 // ================================================
 
 void NULLPOI() // NULLPOI
@@ -1176,7 +1176,7 @@ void NULLPOI() // NULLPOI
 
 
 // ================================================
-// 0x7fdd: WORD 'UNK_0x7fdf' codep=0x224c parp=0x7fdf
+// 0x7fdd: WORD 'UNK_0x7fdf' codep=0x224c parp=0x7fdf params=0 returns=2
 // ================================================
 
 void UNK_0x7fdf() // UNK_0x7fdf
@@ -1229,7 +1229,7 @@ void UNK_0x7ff5() // UNK_0x7ff5
 
 
 // ================================================
-// 0x8029: WORD 'UNK_0x802b' codep=0x224c parp=0x802b
+// 0x8029: WORD 'UNK_0x802b' codep=0x224c parp=0x802b params=0 returns=4
 // ================================================
 
 void UNK_0x802b() // UNK_0x802b
@@ -1263,7 +1263,7 @@ void UNK_0x802b() // UNK_0x802b
 
 
 // ================================================
-// 0x806b: WORD '?>MAXSP' codep=0x224c parp=0x8077
+// 0x806b: WORD '?>MAXSP' codep=0x224c parp=0x8077 params=1 returns=4
 // ================================================
 
 void Is_gt_MAXSP() // ?>MAXSP
@@ -1282,7 +1282,7 @@ void Is_gt_MAXSP() // ?>MAXSP
 
 
 // ================================================
-// 0x808b: WORD 'UNK_0x808d' codep=0x224c parp=0x808d
+// 0x808b: WORD 'UNK_0x808d' codep=0x224c parp=0x808d params=1 returns=9
 // ================================================
 
 void UNK_0x808d() // UNK_0x808d
@@ -1316,7 +1316,7 @@ void UNK_0x808d() // UNK_0x808d
 
 
 // ================================================
-// 0x80c5: WORD 'UNK_0x80c7' codep=0x224c parp=0x80c7
+// 0x80c5: WORD 'UNK_0x80c7' codep=0x224c parp=0x80c7 params=1 returns=9
 // ================================================
 
 void UNK_0x80c7() // UNK_0x80c7
@@ -1422,7 +1422,7 @@ void SET_ask_REU() // SET?REU
 }
 
 // ================================================
-// 0x8159: WORD 'VICREAT' codep=0x224c parp=0x8165
+// 0x8159: WORD 'VICREAT' codep=0x224c parp=0x8165 params=1 returns=11
 // ================================================
 
 void VICREAT() // VICREAT

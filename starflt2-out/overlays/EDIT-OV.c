@@ -183,7 +183,7 @@ const unsigned short int cc_UNK_0xee6e = 0xee6e; // UNK_0xee6e
 // 0xee7a: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xee7c: WORD 'UNK_0xee7e' codep=0x224c parp=0xee7e
+// 0xee7c: WORD 'UNK_0xee7e' codep=0x224c parp=0xee7e params=3 returns=0
 // ================================================
 
 void UNK_0xee7e() // UNK_0xee7e

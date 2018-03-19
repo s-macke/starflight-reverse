@@ -386,7 +386,7 @@ void R_co_() // R,
 // 0xe580: db 0x01 0x4b 0x02 0x01 0xbe 0x01 0x01 0x4b 0x02 0x01 0xd9 0x01 0x01 0xf4 0x01 0x01 0x0f 0x02 0x01 0x30 0x02 0x00 0x00 ' K     K           0   '
 
 // ================================================
-// 0xe597: WORD 'INITMUS' codep=0x224c parp=0xe5a3
+// 0xe597: WORD 'INITMUS' codep=0x224c parp=0xe5a3 params=0 returns=0
 // ================================================
 
 void INITMUS() // INITMUS
@@ -423,7 +423,7 @@ void INITMUS() // INITMUS
 
 
 // ================================================
-// 0xe5e1: WORD 'HIMUS' codep=0x224c parp=0xe5eb
+// 0xe5e1: WORD 'HIMUS' codep=0x224c parp=0xe5eb params=0 returns=0
 // ================================================
 
 void HIMUS() // HIMUS

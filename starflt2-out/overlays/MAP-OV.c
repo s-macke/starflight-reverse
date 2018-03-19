@@ -1893,7 +1893,7 @@ void UNK_0xee51() // UNK_0xee51
 
 
 // ================================================
-// 0xeeab: WORD 'UNK_0xeead' codep=0x224c parp=0xeead
+// 0xeeab: WORD 'UNK_0xeead' codep=0x224c parp=0xeead params=0 returns=0
 // ================================================
 
 void UNK_0xeead() // UNK_0xeead

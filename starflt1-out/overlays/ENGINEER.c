@@ -308,7 +308,7 @@ void UNK_0xed5c() // UNK_0xed5c
 
 
 // ================================================
-// 0xedf8: WORD 'DBARS' codep=0x224c parp=0xee02
+// 0xedf8: WORD 'DBARS' codep=0x224c parp=0xee02 params=0 returns=0
 // ================================================
 // entry
 
@@ -349,7 +349,7 @@ void DBARS() // DBARS
 
 
 // ================================================
-// 0xee46: WORD '(/DAMAGE)' codep=0x224c parp=0xee54
+// 0xee46: WORD '(/DAMAGE)' codep=0x224c parp=0xee54 params=0 returns=0
 // ================================================
 // entry
 

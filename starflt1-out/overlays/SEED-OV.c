@@ -1602,7 +1602,7 @@ void UNK_0xf42c() // UNK_0xf42c
 
 
 // ================================================
-// 0xf440: WORD 'UNK_0xf442' codep=0x224c parp=0xf442
+// 0xf440: WORD 'UNK_0xf442' codep=0x224c parp=0xf442 params=2 returns=0
 // ================================================
 
 void UNK_0xf442() // UNK_0xf442
@@ -1700,7 +1700,7 @@ void UNK_0xf492() // UNK_0xf492
 
 
 // ================================================
-// 0xf4c8: WORD 'POPULA' codep=0x224c parp=0xf4d3
+// 0xf4c8: WORD 'POPULA' codep=0x224c parp=0xf4d3 params=0 returns=4
 // ================================================
 // entry
 

@@ -667,7 +667,7 @@ void UNK_0xe8b4() // UNK_0xe8b4
 
 
 // ================================================
-// 0xe8cc: WORD 'UNK_0xe8ce' codep=0x224c parp=0xe8ce
+// 0xe8cc: WORD 'UNK_0xe8ce' codep=0x224c parp=0xe8ce params=0 returns=0
 // ================================================
 
 void UNK_0xe8ce() // UNK_0xe8ce
@@ -701,7 +701,7 @@ void UNK_0xe8ce() // UNK_0xe8ce
 
 
 // ================================================
-// 0xe90c: WORD 'UNK_0xe90e' codep=0x224c parp=0xe90e
+// 0xe90c: WORD 'UNK_0xe90e' codep=0x224c parp=0xe90e params=0 returns=0
 // ================================================
 
 void UNK_0xe90e() // UNK_0xe90e
@@ -959,7 +959,7 @@ void UNK_0xea52() // UNK_0xea52
 
 
 // ================================================
-// 0xeaf8: WORD '.STAT-TEXT' codep=0x224c parp=0xeb07
+// 0xeaf8: WORD '.STAT-TEXT' codep=0x224c parp=0xeb07 params=0 returns=3
 // ================================================
 // entry
 
@@ -1048,7 +1048,7 @@ void DrawSTAT_dash_TEXT() // .STAT-TEXT
 
 
 // ================================================
-// 0xebfe: WORD 'UNK_0xec00' codep=0x224c parp=0xec00
+// 0xebfe: WORD 'UNK_0xec00' codep=0x224c parp=0xec00 params=0 returns=15
 // ================================================
 
 void UNK_0xec00() // UNK_0xec00
@@ -1061,7 +1061,7 @@ void UNK_0xec00() // UNK_0xec00
 
 
 // ================================================
-// 0xec0a: WORD '(/STATUS)' codep=0x224c parp=0xec18
+// 0xec0a: WORD '(/STATUS)' codep=0x224c parp=0xec18 params=0 returns=15
 // ================================================
 // entry
 
@@ -2085,7 +2085,7 @@ void UNK_0xf39c() // UNK_0xf39c
 
 
 // ================================================
-// 0xf400: WORD 'UNK_0xf402' codep=0x224c parp=0xf402
+// 0xf400: WORD 'UNK_0xf402' codep=0x224c parp=0xf402 params=0 returns=0
 // ================================================
 
 void UNK_0xf402() // UNK_0xf402

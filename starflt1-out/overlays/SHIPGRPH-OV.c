@@ -212,7 +212,7 @@ void UNK_0xed63() // UNK_0xed63
 // 0xee53: db 0x00 0xf0 '  '
 
 // ================================================
-// 0xee55: WORD '(.MASS)' codep=0x224c parp=0xee61
+// 0xee55: WORD '(.MASS)' codep=0x224c parp=0xee61 params=0 returns=0
 // ================================================
 // entry
 

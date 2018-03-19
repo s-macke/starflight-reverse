@@ -1058,7 +1058,7 @@ void _gt_BOX() // >BOX
 
 
 // ================================================
-// 0xf4c8: WORD '(BOX>)' codep=0x224c parp=0xf4d3
+// 0xf4c8: WORD '(BOX>)' codep=0x224c parp=0xf4d3 params=0 returns=2
 // ================================================
 // entry
 
@@ -1089,7 +1089,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 
 
 // ================================================
-// 0xf509: WORD 'BOX>' codep=0x224c parp=0xf512
+// 0xf509: WORD 'BOX>' codep=0x224c parp=0xf512 params=0 returns=3
 // ================================================
 // entry
 

@@ -987,7 +987,7 @@ void DISP_dash_SETUP() // DISP-SETUP
 // 0xe9e5: db 0x00 0x00 '  '
 
 // ================================================
-// 0xe9e7: WORD 'UNK_0xe9e9' codep=0x224c parp=0xe9e9
+// 0xe9e7: WORD 'UNK_0xe9e9' codep=0x224c parp=0xe9e9 params=0 returns=3
 // ================================================
 
 void UNK_0xe9e9() // UNK_0xe9e9
@@ -1223,7 +1223,7 @@ void UNK_0xeb75() // UNK_0xeb75
 
 
 // ================================================
-// 0xeb8c: WORD 'UNK_0xeb8e' codep=0x224c parp=0xeb8e
+// 0xeb8c: WORD 'UNK_0xeb8e' codep=0x224c parp=0xeb8e params=0 returns=0
 // ================================================
 
 void UNK_0xeb8e() // UNK_0xeb8e
@@ -2236,7 +2236,7 @@ void UNK_0xf200() // UNK_0xf200
 
 
 // ================================================
-// 0xf246: WORD 'UNK_0xf248' codep=0x224c parp=0xf248
+// 0xf246: WORD 'UNK_0xf248' codep=0x224c parp=0xf248 params=0 returns=0
 // ================================================
 
 void UNK_0xf248() // UNK_0xf248

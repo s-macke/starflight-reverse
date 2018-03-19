@@ -1367,7 +1367,7 @@ void UNK_0xf2d7() // UNK_0xf2d7
 
 
 // ================================================
-// 0xf30b: WORD 'UNK_0xf30d' codep=0x224c parp=0xf30d
+// 0xf30b: WORD 'UNK_0xf30d' codep=0x224c parp=0xf30d params=0 returns=2
 // ================================================
 
 void UNK_0xf30d() // UNK_0xf30d
@@ -1491,7 +1491,7 @@ void UNK_0xf3da() // UNK_0xf3da
 
 
 // ================================================
-// 0xf3e6: WORD 'UNK_0xf3e8' codep=0x224c parp=0xf3e8
+// 0xf3e6: WORD 'UNK_0xf3e8' codep=0x224c parp=0xf3e8 params=0 returns=0
 // ================================================
 
 void UNK_0xf3e8() // UNK_0xf3e8

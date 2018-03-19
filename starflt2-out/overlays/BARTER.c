@@ -1687,7 +1687,7 @@ void UNK_0xe5f8() // UNK_0xe5f8
 
 
 // ================================================
-// 0xe5fc: WORD 'UNK_0xe5fe' codep=0x224c parp=0xe5fe
+// 0xe5fc: WORD 'UNK_0xe5fe' codep=0x224c parp=0xe5fe params=0 returns=0
 // ================================================
 
 void UNK_0xe5fe() // UNK_0xe5fe
@@ -2336,7 +2336,7 @@ void UNK_0xe960() // UNK_0xe960
 
 
 // ================================================
-// 0xe97a: WORD 'UNK_0xe97c' codep=0x224c parp=0xe97c
+// 0xe97a: WORD 'UNK_0xe97c' codep=0x224c parp=0xe97c params=2 returns=1
 // ================================================
 
 void UNK_0xe97c() // UNK_0xe97c
@@ -2368,7 +2368,7 @@ void UNK_0xe97c() // UNK_0xe97c
 
 
 // ================================================
-// 0xe9a8: WORD 'UNK_0xe9aa' codep=0x224c parp=0xe9aa
+// 0xe9a8: WORD 'UNK_0xe9aa' codep=0x224c parp=0xe9aa params=0 returns=1
 // ================================================
 
 void UNK_0xe9aa() // UNK_0xe9aa
@@ -2724,7 +2724,7 @@ void UNK_0xebdf() // UNK_0xebdf
 
 
 // ================================================
-// 0xec0c: WORD 'UNK_0xec0e' codep=0x224c parp=0xec0e
+// 0xec0c: WORD 'UNK_0xec0e' codep=0x224c parp=0xec0e params=0 returns=0
 // ================================================
 
 void UNK_0xec0e() // UNK_0xec0e

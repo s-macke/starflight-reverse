@@ -1260,7 +1260,7 @@ void _ro_BAD_dash_PLAN_rc_() // (BAD-PLAN)
 }
 
 // ================================================
-// 0xed0a: WORD 'UNK_0xed0c' codep=0x224c parp=0xed0c
+// 0xed0a: WORD 'UNK_0xed0c' codep=0x224c parp=0xed0c params=1 returns=0
 // ================================================
 
 void UNK_0xed0c() // UNK_0xed0c
@@ -1506,7 +1506,7 @@ void UNK_0xf02b() // UNK_0xf02b
 
 
 // ================================================
-// 0xf043: WORD 'UNK_0xf045' codep=0x224c parp=0xf045
+// 0xf043: WORD 'UNK_0xf045' codep=0x224c parp=0xf045 params=0 returns=3
 // ================================================
 
 void UNK_0xf045() // UNK_0xf045

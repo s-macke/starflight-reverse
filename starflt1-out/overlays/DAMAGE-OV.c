@@ -585,7 +585,7 @@ void UNK_0xec0a() // UNK_0xec0a
 
 
 // ================================================
-// 0xec10: WORD 'UNK_0xec12' codep=0x224c parp=0xec12
+// 0xec10: WORD 'UNK_0xec12' codep=0x224c parp=0xec12 params=4 returns=1
 // ================================================
 
 void UNK_0xec12() // UNK_0xec12

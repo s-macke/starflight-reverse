@@ -1269,7 +1269,7 @@ void UNK_0xf380() // UNK_0xf380
 
 
 // ================================================
-// 0xf396: WORD 'UNK_0xf398' codep=0x224c parp=0xf398
+// 0xf396: WORD 'UNK_0xf398' codep=0x224c parp=0xf398 params=1 returns=1
 // ================================================
 
 void UNK_0xf398() // UNK_0xf398

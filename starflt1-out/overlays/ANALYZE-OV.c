@@ -1510,7 +1510,7 @@ void _ro__dot_ANALYSIS_rc_() // (.ANALYSIS)
 }
 
 // ================================================
-// 0xf468: WORD '(/ANALYSIS)' codep=0x224c parp=0xf478
+// 0xf468: WORD '(/ANALYSIS)' codep=0x224c parp=0xf478 params=1 returns=0
 // ================================================
 // entry
 

@@ -422,7 +422,7 @@ void UNK_0xea65() // UNK_0xea65
 
 
 // ================================================
-// 0xeaa7: WORD 'UNK_0xeaa9' codep=0x224c parp=0xeaa9
+// 0xeaa7: WORD 'UNK_0xeaa9' codep=0x224c parp=0xeaa9 params=0 returns=0
 // ================================================
 
 void UNK_0xeaa9() // UNK_0xeaa9
@@ -450,7 +450,7 @@ void UNK_0xeaa9() // UNK_0xeaa9
 
 
 // ================================================
-// 0xeadb: WORD 'UNK_0xeadd' codep=0x224c parp=0xeadd
+// 0xeadb: WORD 'UNK_0xeadd' codep=0x224c parp=0xeadd params=0 returns=0
 // ================================================
 
 void UNK_0xeadd() // UNK_0xeadd

@@ -1001,7 +1001,7 @@ void UNK_0xf41c() // UNK_0xf41c
 
 
 // ================================================
-// 0xf43c: WORD '=CARG' codep=0x224c parp=0xf446
+// 0xf43c: WORD '=CARG' codep=0x224c parp=0xf446 params=0 returns=0
 // ================================================
 // entry
 

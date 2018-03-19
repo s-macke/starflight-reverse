@@ -291,7 +291,7 @@ void UNK_0xea3e() // UNK_0xea3e
 
 
 // ================================================
-// 0xea44: WORD 'UNK_0xea46' codep=0x224c parp=0xea46
+// 0xea44: WORD 'UNK_0xea46' codep=0x224c parp=0xea46 params=0 returns=0
 // ================================================
 
 void UNK_0xea46() // UNK_0xea46

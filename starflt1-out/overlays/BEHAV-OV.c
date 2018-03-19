@@ -2583,7 +2583,7 @@ void UNK_0xef23() // UNK_0xef23
 
 
 // ================================================
-// 0xef35: WORD 'UNK_0xef37' codep=0x224c parp=0xef37
+// 0xef35: WORD 'UNK_0xef37' codep=0x224c parp=0xef37 params=0 returns=1
 // ================================================
 
 void UNK_0xef37() // UNK_0xef37

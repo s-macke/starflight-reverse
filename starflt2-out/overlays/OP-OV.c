@@ -1207,7 +1207,7 @@ void UNK_0xed1f() // UNK_0xed1f
 
 
 // ================================================
-// 0xed8c: WORD 'UNK_0xed8e' codep=0x224c parp=0xed8e
+// 0xed8c: WORD 'UNK_0xed8e' codep=0x224c parp=0xed8e params=0 returns=3
 // ================================================
 
 void UNK_0xed8e() // UNK_0xed8e

@@ -950,7 +950,7 @@ void IsELEMENT() // ?ELEMENT
 
 
 // ================================================
-// 0xf398: WORD '(BOX>)' codep=0x224c parp=0xf3a3
+// 0xf398: WORD '(BOX>)' codep=0x224c parp=0xf3a3 params=0 returns=2
 // ================================================
 // entry
 
@@ -981,7 +981,7 @@ void _ro_BOX_gt__rc_() // (BOX>)
 
 
 // ================================================
-// 0xf3db: WORD 'BOX>' codep=0x224c parp=0xf3e4
+// 0xf3db: WORD 'BOX>' codep=0x224c parp=0xf3e4 params=0 returns=3
 // ================================================
 // entry
 

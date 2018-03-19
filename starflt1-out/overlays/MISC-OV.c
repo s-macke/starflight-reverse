@@ -760,7 +760,7 @@ void UNK_0xf458() // UNK_0xf458
 
 
 // ================================================
-// 0xf478: WORD '=CARG' codep=0x224c parp=0xf482
+// 0xf478: WORD '=CARG' codep=0x224c parp=0xf482 params=0 returns=0
 // ================================================
 // entry
 

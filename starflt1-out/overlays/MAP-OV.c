@@ -998,7 +998,7 @@ void UNK_0xeac6() // UNK_0xeac6
 
 
 // ================================================
-// 0xead6: WORD 'UNK_0xead8' codep=0x224c parp=0xead8
+// 0xead6: WORD 'UNK_0xead8' codep=0x224c parp=0xead8 params=0 returns=2
 // ================================================
 
 void UNK_0xead8() // UNK_0xead8
@@ -1094,7 +1094,7 @@ void UNK_0xeb3a() // UNK_0xeb3a
 
 
 // ================================================
-// 0xeb8f: WORD 'UNK_0xeb91' codep=0x224c parp=0xeb91
+// 0xeb8f: WORD 'UNK_0xeb91' codep=0x224c parp=0xeb91 params=0 returns=4
 // ================================================
 
 void UNK_0xeb91() // UNK_0xeb91
@@ -1124,7 +1124,7 @@ void UNK_0xeb91() // UNK_0xeb91
 
 
 // ================================================
-// 0xebcd: WORD 'UNK_0xebcf' codep=0x224c parp=0xebcf
+// 0xebcd: WORD 'UNK_0xebcf' codep=0x224c parp=0xebcf params=0 returns=2
 // ================================================
 
 void UNK_0xebcf() // UNK_0xebcf
@@ -1305,7 +1305,7 @@ void UNK_0xed4c() // UNK_0xed4c
 
 
 // ================================================
-// 0xed60: WORD '(/STARMAP)' codep=0x224c parp=0xed6f
+// 0xed60: WORD '(/STARMAP)' codep=0x224c parp=0xed6f params=0 returns=1
 // ================================================
 // entry
 

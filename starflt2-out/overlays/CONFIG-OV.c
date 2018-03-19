@@ -452,7 +452,7 @@ void UNK_0xe7f0() // UNK_0xe7f0
 
 
 // ================================================
-// 0xe808: WORD 'UNK_0xe80a' codep=0x224c parp=0xe80a
+// 0xe808: WORD 'UNK_0xe80a' codep=0x224c parp=0xe80a params=0 returns=1
 // ================================================
 
 void UNK_0xe80a() // UNK_0xe80a

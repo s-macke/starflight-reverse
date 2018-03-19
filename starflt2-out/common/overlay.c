@@ -2136,7 +2136,7 @@ void KILL() // KILL
 
 
 // ================================================
-// 0xc1ef: WORD '?APP' codep=0x224c parp=0xc1f8
+// 0xc1ef: WORD '?APP' codep=0x224c parp=0xc1f8 params=0 returns=1
 // ================================================
 
 void IsAPP() // ?APP
@@ -2334,7 +2334,7 @@ void DO_dash_REPA() // DO-REPA
 
 
 // ================================================
-// 0xc391: WORD '?SHIP-R' codep=0x224c parp=0xc39d
+// 0xc391: WORD '?SHIP-R' codep=0x224c parp=0xc39d params=0 returns=1
 // ================================================
 
 void IsSHIP_dash_R() // ?SHIP-R
@@ -2353,7 +2353,7 @@ void IsSHIP_dash_R() // ?SHIP-R
 
 
 // ================================================
-// 0xc3c3: WORD 'MREPAIR' codep=0x224c parp=0xc3cf
+// 0xc3c3: WORD 'MREPAIR' codep=0x224c parp=0xc3cf params=0 returns=0
 // ================================================
 
 void MREPAIR() // MREPAIR

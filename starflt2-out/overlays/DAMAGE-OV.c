@@ -667,7 +667,7 @@ void UNK_0xe87e() // UNK_0xe87e
 
 
 // ================================================
-// 0xe884: WORD 'UNK_0xe886' codep=0x224c parp=0xe886
+// 0xe884: WORD 'UNK_0xe886' codep=0x224c parp=0xe886 params=4 returns=1
 // ================================================
 
 void UNK_0xe886() // UNK_0xe886

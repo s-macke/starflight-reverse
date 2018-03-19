@@ -559,7 +559,7 @@ void UNK_0xef2b() // UNK_0xef2b
 
 
 // ================================================
-// 0xef57: WORD 'UNK_0xef59' codep=0x224c parp=0xef59
+// 0xef57: WORD 'UNK_0xef59' codep=0x224c parp=0xef59 params=0 returns=3
 // ================================================
 
 void UNK_0xef59() // UNK_0xef59
@@ -575,7 +575,7 @@ void UNK_0xef59() // UNK_0xef59
 
 
 // ================================================
-// 0xef6b: WORD 'INITMUS' codep=0x224c parp=0xef77
+// 0xef6b: WORD 'INITMUS' codep=0x224c parp=0xef77 params=0 returns=0
 // ================================================
 
 void INITMUS() // INITMUS
@@ -608,7 +608,7 @@ void INITMUS() // INITMUS
 
 
 // ================================================
-// 0xefa9: WORD 'HIMUS' codep=0x224c parp=0xefb3
+// 0xefa9: WORD 'HIMUS' codep=0x224c parp=0xefb3 params=0 returns=0
 // ================================================
 // entry
 
@@ -1265,7 +1265,7 @@ void UNK_0xf40e() // UNK_0xf40e
 
 
 // ================================================
-// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430
+// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430 params=0 returns=1
 // ================================================
 
 void UNK_0xf430() // UNK_0xf430

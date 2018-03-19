@@ -446,7 +446,7 @@ void DrawBDATE() // .BDATE
 
 
 // ================================================
-// 0xf194: WORD '.$AMT' codep=0x224c parp=0xf196
+// 0xf194: WORD '.$AMT' codep=0x224c parp=0xf196 params=0 returns=0
 // ================================================
 
 void Draw_do_AMT() // .$AMT

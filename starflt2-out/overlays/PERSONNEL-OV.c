@@ -1912,7 +1912,7 @@ void UNK_0xf177() // UNK_0xf177
 
 
 // ================================================
-// 0xf1da: WORD 'UNK_0xf1dc' codep=0x224c parp=0xf1dc
+// 0xf1da: WORD 'UNK_0xf1dc' codep=0x224c parp=0xf1dc params=0 returns=2
 // ================================================
 
 void UNK_0xf1dc() // UNK_0xf1dc

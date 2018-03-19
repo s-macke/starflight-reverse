@@ -569,7 +569,7 @@ void UNK_0xeee5() // UNK_0xeee5
 // 0xef0f: db 0x56 0x3a 0x20 0x56 'V: V'
 
 // ================================================
-// 0xef13: WORD 'UNK_0xef15' codep=0x224c parp=0xef15
+// 0xef13: WORD 'UNK_0xef15' codep=0x224c parp=0xef15 params=0 returns=1
 // ================================================
 
 void UNK_0xef15() // UNK_0xef15
@@ -583,7 +583,7 @@ void UNK_0xef15() // UNK_0xef15
 
 
 // ================================================
-// 0xef21: WORD 'UNK_0xef23' codep=0x224c parp=0xef23
+// 0xef21: WORD 'UNK_0xef23' codep=0x224c parp=0xef23 params=0 returns=0
 // ================================================
 
 void UNK_0xef23() // UNK_0xef23

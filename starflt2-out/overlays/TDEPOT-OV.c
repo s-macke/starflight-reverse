@@ -978,7 +978,7 @@ void UNK_0xeb09() // UNK_0xeb09
 
 
 // ================================================
-// 0xeb0f: WORD 'UNK_0xeb11' codep=0x224c parp=0xeb11
+// 0xeb0f: WORD 'UNK_0xeb11' codep=0x224c parp=0xeb11 params=0 returns=0
 // ================================================
 
 void UNK_0xeb11() // UNK_0xeb11
@@ -994,7 +994,7 @@ void UNK_0xeb11() // UNK_0xeb11
 
 
 // ================================================
-// 0xeb21: WORD 'UNK_0xeb23' codep=0x224c parp=0xeb23
+// 0xeb21: WORD 'UNK_0xeb23' codep=0x224c parp=0xeb23 params=0 returns=0
 // ================================================
 
 void UNK_0xeb23() // UNK_0xeb23
@@ -1575,7 +1575,7 @@ void KEY_dash_ELEM_dash_AMT() // KEY-ELEM-AMT
 
 
 // ================================================
-// 0xef7c: WORD 'UNK_0xef7e' codep=0x224c parp=0xef7e
+// 0xef7c: WORD 'UNK_0xef7e' codep=0x224c parp=0xef7e params=3 returns=1
 // ================================================
 
 void UNK_0xef7e() // UNK_0xef7e

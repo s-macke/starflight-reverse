@@ -283,7 +283,7 @@ const unsigned short int cc_UNK_0xeba4 = 0xeba4; // UNK_0xeba4
 // 0xe692: db 0xe1 0x00 '  '
 
 // ================================================
-// 0xe694: WORD 'UNK_0xe696' codep=0x224c parp=0xe696
+// 0xe694: WORD 'UNK_0xe696' codep=0x224c parp=0xe696 params=0 returns=0
 // ================================================
 
 void UNK_0xe696() // UNK_0xe696
@@ -1532,7 +1532,7 @@ void UNK_0xef74() // UNK_0xef74
 
 
 // ================================================
-// 0xf058: WORD 'UNK_0xf05a' codep=0x224c parp=0xf05a
+// 0xf058: WORD 'UNK_0xf05a' codep=0x224c parp=0xf05a params=0 returns=1
 // ================================================
 
 void UNK_0xf05a() // UNK_0xf05a
