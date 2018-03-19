@@ -143,16 +143,16 @@ const unsigned short int pp_OTABL = 0xb63a; // OTABL size: 54
 const unsigned short int pp_BTADDR = 0xbae3; // BTADDR size: 2
 // {0xfc, 0xbb}
 
-const unsigned short int pp_UNK_0xbae7 = 0xbae7; // UNK_0xbae7 size: 2
+const unsigned short int pp_HUFF_BT_POINTER = 0xbae7; // HUFF_BT_POINTER size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xbaeb = 0xbaeb; // UNK_0xbaeb size: 2
+const unsigned short int pp_HUFF_ACTIVE_POINTER_BYTE = 0xbaeb; // HUFF_ACTIVE_POINTER_BYTE size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_UNK_0xbaef = 0xbaef; // UNK_0xbaef size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xbaf3 = 0xbaf3; // UNK_0xbaf3 size: 2
+const unsigned short int pp_HUFF_ACTIVE_POINTER_BIT = 0xbaf3; // HUFF_ACTIVE_POINTER_BIT size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_HEALTI = 0xc128; // HEALTI size: 2
@@ -169,9 +169,9 @@ const unsigned short int pp__n_MISS = 0xc6e9; // #MISS size: 2
 
 
 const unsigned short int cc_SB = 0xb43a; // SB
-const unsigned short int cc_UNK_0xbaf7 = 0xbaf7; // UNK_0xbaf7
-const unsigned short int cc_UNK_0xbafb = 0xbafb; // UNK_0xbafb
-const unsigned short int cc_UNK_0xbaff = 0xbaff; // UNK_0xbaff
+const unsigned short int cc_HUFF_PHRASE_ADDCHAR = 0xbaf7; // HUFF_PHRASE_ADDCHAR
+const unsigned short int cc_HUFF_PHRASE_INIT = 0xbafb; // HUFF_PHRASE_INIT
+const unsigned short int cc_HUFF_PHRASE_FINISH = 0xbaff; // HUFF_PHRASE_FINISH
 
 
 
@@ -1225,12 +1225,12 @@ void SCRLC() // SCRLC
 // 0xbae3: db 0xfc 0xbb '  '
 
 // ================================================
-// 0xbae5: WORD 'UNK_0xbae7' codep=0x1d29 parp=0xbae7
+// 0xbae5: WORD 'HUFF_BT_POINTER' codep=0x1d29 parp=0xbae7
 // ================================================
 // 0xbae7: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbae9: WORD 'UNK_0xbaeb' codep=0x1d29 parp=0xbaeb
+// 0xbae9: WORD 'HUFF_ACTIVE_POINTER_BYTE' codep=0x1d29 parp=0xbaeb
 // ================================================
 // 0xbaeb: db 0x3a 0x20 ': '
 
@@ -1240,41 +1240,41 @@ void SCRLC() // SCRLC
 // 0xbaef: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbaf1: WORD 'UNK_0xbaf3' codep=0x1d29 parp=0xbaf3
+// 0xbaf1: WORD 'HUFF_ACTIVE_POINTER_BIT' codep=0x1d29 parp=0xbaf3
 // ================================================
 // 0xbaf3: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xbaf5: WORD 'UNK_0xbaf7' codep=0x2214 parp=0xbaf7
+// 0xbaf5: WORD 'HUFF_PHRASE_ADDCHAR' codep=0x2214 parp=0xbaf7
 // ================================================
 // 0xbaf7: dw 0xbbda
 
 // ================================================
-// 0xbaf9: WORD 'UNK_0xbafb' codep=0x2214 parp=0xbafb
+// 0xbaf9: WORD 'HUFF_PHRASE_INIT' codep=0x2214 parp=0xbafb
 // ================================================
 // 0xbafb: dw 0xbbd2
 
 // ================================================
-// 0xbafd: WORD 'UNK_0xbaff' codep=0x2214 parp=0xbaff
+// 0xbafd: WORD 'HUFF_PHRASE_FINISH' codep=0x2214 parp=0xbaff
 // ================================================
 // 0xbaff: dw 0xbbf0
 
 // ================================================
-// 0xbb01: WORD 'UNK_0xbb03' codep=0x224c parp=0xbb03 params=0 returns=0
+// 0xbb01: WORD 'HUFF_MOVE_ACTIVE_POINTER' codep=0x224c parp=0xbb03 params=0 returns=0
 // ================================================
 
-void UNK_0xbb03() // UNK_0xbb03
+void HUFF_MOVE_ACTIVE_POINTER() // HUFF_MOVE_ACTIVE_POINTER
 {
-  Push(Read16(pp_UNK_0xbaf3)); // UNK_0xbaf3 @
+  Push(Read16(pp_HUFF_ACTIVE_POINTER_BIT)); // HUFF_ACTIVE_POINTER_BIT @
   Push(Read16(regsp)); // DUP
   Push(Pop()==0x0080?1:0); //  0x0080 =
-  Push(pp_UNK_0xbaeb); // UNK_0xbaeb
+  Push(pp_HUFF_ACTIVE_POINTER_BYTE); // HUFF_ACTIVE_POINTER_BYTE
   _plus__ex__2(); // +!_2
   Push(Pop() >> 1); //  2/
   Push(Read16(regsp)); // DUP
   Push((Pop()==0?1:0) * 0x0080); //  0= 0x0080 *
   Push(Pop() + Pop()); // +
-  Push(pp_UNK_0xbaf3); // UNK_0xbaf3
+  Push(pp_HUFF_ACTIVE_POINTER_BIT); // HUFF_ACTIVE_POINTER_BIT
   Store_2(); // !_2
 }
 
@@ -1285,28 +1285,28 @@ void UNK_0xbb03() // UNK_0xbb03
 
 void UNK_0xbb29() // UNK_0xbb29
 {
-  Push(Pop() & (Read16(pp_UNK_0xbaf3)&0xFF)); //  UNK_0xbaf3 C@ AND
+  Push(Pop() & (Read16(pp_HUFF_ACTIVE_POINTER_BIT)&0xFF)); //  HUFF_ACTIVE_POINTER_BIT C@ AND
   _0_gt_(); // 0>
-  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_UNK_0xbae7))&0xFF); //  BTADDR @ + UNK_0xbae7 @ + C@
+  Push(Read16((Pop() + Read16(pp_BTADDR)) + Read16(pp_HUFF_BT_POINTER))&0xFF); //  BTADDR @ + HUFF_BT_POINTER @ + C@
   Push(Read16(regsp)); // DUP
   Push(Pop() & 0x0080); //  0x0080 AND
   if (Pop() != 0)
   {
     Push((Pop() & 0x007f) * 2); //  0x007f AND 2*
-    Push(pp_UNK_0xbae7); // UNK_0xbae7
+    Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
     _plus__ex__2(); // +!_2
   } else
   {
     Push(1);
     Push(pp_UNK_0xbaef); // UNK_0xbaef
     _plus__ex__2(); // +!_2
-    Push(Read16(cc_UNK_0xbaf7)); // UNK_0xbaf7
+    Push(Read16(cc_HUFF_PHRASE_ADDCHAR)); // HUFF_PHRASE_ADDCHAR
     EXECUTE(); // EXECUTE
-    Push(pp_UNK_0xbae7); // UNK_0xbae7
+    Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
     _099(); // 099
   }
-  UNK_0xbb03(); // UNK_0xbb03
-  Push(Read16(pp_UNK_0xbaf3)==0x0080?1:0); // UNK_0xbaf3 @ 0x0080 =
+  HUFF_MOVE_ACTIVE_POINTER(); // HUFF_MOVE_ACTIVE_POINTER
+  Push(Read16(pp_HUFF_ACTIVE_POINTER_BIT)==0x0080?1:0); // HUFF_ACTIVE_POINTER_BIT @ 0x0080 =
 }
 
 
@@ -1316,16 +1316,16 @@ void UNK_0xbb29() // UNK_0xbb29
 
 void HUFF_gt_() // HUFF>
 {
-  Push(pp_UNK_0xbae7); // UNK_0xbae7
+  Push(pp_HUFF_BT_POINTER); // HUFF_BT_POINTER
   _099(); // 099
   Push(pp_UNK_0xbaef); // UNK_0xbaef
   _099(); // 099
-  Push(pp_UNK_0xbaeb); // UNK_0xbaeb
+  Push(pp_HUFF_ACTIVE_POINTER_BYTE); // HUFF_ACTIVE_POINTER_BYTE
   _099(); // 099
   Push(0x0080);
-  Push(pp_UNK_0xbaf3); // UNK_0xbaf3
+  Push(pp_HUFF_ACTIVE_POINTER_BIT); // HUFF_ACTIVE_POINTER_BIT
   Store_2(); // !_2
-  Push(Read16(cc_UNK_0xbafb)); // UNK_0xbafb
+  Push(Read16(cc_HUFF_PHRASE_INIT)); // HUFF_PHRASE_INIT
   EXECUTE(); // EXECUTE
 
   label3:
@@ -1336,14 +1336,14 @@ void HUFF_gt_() // HUFF>
   do
   {
     OVER(); // OVER
-    Push(Read16(Pop() + Read16(pp_UNK_0xbaeb))&0xFF); //  UNK_0xbaeb @ + C@
+    Push(Read16(Pop() + Read16(pp_HUFF_ACTIVE_POINTER_BYTE))&0xFF); //  HUFF_ACTIVE_POINTER_BYTE @ + C@
     UNK_0xbb29(); // UNK_0xbb29
   } while(Pop() == 0);
   goto label3;
 
   label1:
   Pop(); Pop(); // 2DROP
-  Push(Read16(cc_UNK_0xbaff)); // UNK_0xbaff
+  Push(Read16(cc_HUFF_PHRASE_FINISH)); // HUFF_PHRASE_FINISH
   EXECUTE(); // EXECUTE
 }
 
@@ -1354,11 +1354,11 @@ void HUFF_gt_() // HUFF>
 IFieldType PHRASE_do_ = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
-// 0xbbd0: WORD 'UNK_0xbbd2' codep=0x224c parp=0xbbd2 params=0 returns=0
+// 0xbbd0: WORD 'HUFF_LSCAN_INIT' codep=0x224c parp=0xbbd2 params=0 returns=0
 // ================================================
 // orphan
 
-void UNK_0xbbd2() // UNK_0xbbd2
+void HUFF_LSCAN_INIT() // HUFF_LSCAN_INIT
 {
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
@@ -1366,11 +1366,11 @@ void UNK_0xbbd2() // UNK_0xbbd2
 
 
 // ================================================
-// 0xbbd8: WORD 'UNK_0xbbda' codep=0x224c parp=0xbbda params=1 returns=0
+// 0xbbd8: WORD 'HUFF_LSCAN_ADDCHAR' codep=0x224c parp=0xbbda params=1 returns=0
 // ================================================
 // orphan
 
-void UNK_0xbbda() // UNK_0xbbda
+void HUFF_LSCAN_ADDCHAR() // HUFF_LSCAN_ADDCHAR
 {
   Push(pp_LSCAN); // LSCAN
   Push(Read16(regsp)); // DUP
@@ -1385,11 +1385,11 @@ void UNK_0xbbda() // UNK_0xbbda
 
 
 // ================================================
-// 0xbbee: WORD 'UNK_0xbbf0' codep=0x224c parp=0xbbf0 params=0 returns=0
+// 0xbbee: WORD 'HUFF_LSCAN_FINISH' codep=0x224c parp=0xbbf0 params=0 returns=0
 // ================================================
 // orphan
 
-void UNK_0xbbf0() // UNK_0xbbf0
+void HUFF_LSCAN_FINISH() // HUFF_LSCAN_FINISH
 {
   Push(Read16((0x65e1+PHRASE_do_.offset) + 1)&0xFF); // PHRASE$<IFIELD> 1+ C@
   Push(pp_LSCAN); // LSCAN

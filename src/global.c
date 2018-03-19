@@ -777,6 +777,19 @@ WORDRENAME renamewords[] =
     {0xff, 0xb0f5, "BINSTALL"}, // "UNK_0xb0f5"
     {0xff, 0xb0ff, "AINSTALLS"}, // "UNK_0xbb0ff"
     {0xff, 0xb141, "BINSTALLS"}, // "UNK_0xb141"
+
+    // named by me
+    {0xff, 0xbbd2, "HUFF_LSCAN_INIT"}, // UNK_0xbbd2
+    {0xff, 0xbbf0, "HUFF_LSCAN_FINISH"}, // UNK_0xbbf0
+    {0xff, 0xbbda, "HUFF_LSCAN_ADDCHAR"}, // UNK_0xbbda
+    {0xff, 0xbafb, "HUFF_PHRASE_INIT"}, // UNK_0xbafb
+    {0xff, 0xbaff, "HUFF_PHRASE_FINISH"}, // UNK_0xbaff
+    {0xff, 0xbaf7, "HUFF_PHRASE_ADDCHAR"}, // UNK_0xbaf7
+    {0xff, 0xbaf3, "HUFF_ACTIVE_POINTER_BIT"}, // UNK_0xbaf3
+    {0xff, 0xbaeb, "HUFF_ACTIVE_POINTER_BYTE"}, // UNK_0xbaeb
+    {0xff, 0xbae7, "HUFF_BT_POINTER"}, // UNK_0xbae7
+
+    {0xff, 0xbb03, "HUFF_MOVE_ACTIVE_POINTER"}, // UNK_0xbb03
     {0x0, 0x0, NULL}
 };
 
