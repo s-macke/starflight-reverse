@@ -1382,16 +1382,16 @@ void Call(unsigned short addr, unsigned short bx)
         /*Push(0x20F);Push(0x7246);Push(0x1FE);Push(0x1CF);Pop();Pop();Pop();Pop(); */
         break; // overwrite interrupt 0 to and div 0?
 
-
-        case 0x6D12: // "?UPDATE"  used in CMOVE() function, when something is copied and the overlay is merged. Upates Word "#RECORD"
-            // TODO!!!
+        case 0x6D12: // "?UPDATE" converts addr to addr
+            // if addr is in a block buffer or instance buffer set the update flag
+            // used in CMOVE() function, when something is copied and the overlay is merged.
             //fprintf(stderr, "?UPDATE incomplete?");
             //exit(1);
             // cx = 0xb429 long jump in XKEYINT
             // cx = 0x5eed [KEYINT]
             // cx = 0x613c UNK_0x613c
             cx = Pop();
-            //printf("unknown 0x%x\n", cx);
+            printf("?Update of 0x%x\n", cx);
             if (cx&0x8000)
             {
             }
@@ -1519,8 +1519,8 @@ void Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x9002: // "LPLOT" TODO
-        printf("LPLOT %i %i\n", Pop(), Pop());
-        //exit(1);
+            printf("LPLOT %i %i\n", Pop(), Pop());
+            //exit(1);
         break;
 
         case 0x93B1: // "BEXTENT" Part of Bit Block Image Transfer (BLT)
