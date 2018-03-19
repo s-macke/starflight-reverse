@@ -777,6 +777,8 @@ WORDRENAME renamewords[] =
     {0xff, 0xb0f5, "BINSTALL"}, // "UNK_0xb0f5"
     {0xff, 0xb0ff, "AINSTALLS"}, // "UNK_0xbb0ff"
     {0xff, 0xb141, "BINSTALLS"}, // "UNK_0xb141"
+    {0xff, 0x4bf4, "D2*"}, // "UNK_0x4bf4"
+    {0xff, 0x4c03, "EASY-BITS"}, // "UNK_0x4c03"
 
     // named by me
     {0xff, 0xbbd2, "HUFF_LSCAN_INIT"}, // UNK_0xbbd2

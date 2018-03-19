@@ -149,6 +149,11 @@ void StackAnalysis(int ovidx)
             dict[i].stackin = 0;
             dict[i].stackout = 1;
         }
+        if (dict[i].codep == CODE2LIT)
+        {
+            dict[i].stackin = 0;
+            dict[i].stackout = 2;
+        }
         if (dict[i].codep == CODELOADOVERLAY) // not sure, call 1649
         {
             dict[i].stackin = 0;
@@ -179,6 +184,18 @@ void StackAnalysis(int ovidx)
             dict[i].stackin = 1;
             dict[i].stackout = 1;
         }
+        if (dict[i].codep == CODE2DARRAY)
+        {
+            dict[i].stackin = 2;
+            dict[i].stackout = 2;
+        }
+        /*
+        if (dict[i].codep == CODEFUNC6)
+        {
+            dict[i].stackin = 1;
+            dict[i].stackout = 1;
+        }
+        */
     }
     Set("@", 1, 1);
     Set("C@", 1, 1);
@@ -223,6 +240,7 @@ void StackAnalysis(int ovidx)
     Set("DUP", 1, 2);
     Set("2DUP", 2, 4);
     Set("(!SET)", 3, 0);
+    Set("(!OLD)", 1, 2);
     Set("CMOVE_2", 3, 0);
     Set("FILL_2", 3, 0);
     Set("EXIT", 0, 0);
@@ -320,6 +338,26 @@ void StackAnalysis(int ovidx)
     //Set("*CREATE", 1, 1); // output dependent on input
     Set("LPLOT", 2, 0);
     Set("(KEY)", 0, 1);
+    Set("L1.5@", 2, 2);
+    Set("+-@", 1, 1);
+    Set("EASY-BITS", 4, 3);
+    Set("D2*", 2, 2);
+    Set("+BIT", 1, 1);
+    Set("FRND", 0, 1);
+    Set("L+-@", 2, 1);
+    Set("1.5!_2", 3, 0);
+    Set("3+", 1, 1);
+    Set("<LCMOVE", 5, 0);
+    Set("@L", 2, 1);
+    Set("!L", 3, 0);
+    Set("(CS?)", 0, 1);
+    Set("C!L", 3, 0);
+    Set("C@L", 2, 1);
+    Set("CMOVE>", 3, 0);
+    Set("CMOVE_2", 3, 0);
+    Set("2LIT", 0, 2);
+    Set("DIGIT", 2, 2);
+    Set("TIME", 0, 1);
 
 #ifdef STARFLT1
 
@@ -338,7 +376,7 @@ void StackAnalysis(int ovidx)
     Set("SCANPOLY", 0, 0);
     Set("LFILLPOLY", 0, 0);
     Set("CAPSON", 0, 0);
-
+    Set("PRTSCR", 0, 0);
 #endif
 #ifdef STARFLT2
     Set("UNK_0x7650", 0, 1);
