@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //           %MASS  codep:0x744d parp:0xeb76 size:0x0003 C-string:'_pe_MASS'
 //      UNK_0xeb7b  codep:0x744d parp:0xeb7b size:0x0003 C-string:'UNK_0xeb7b'

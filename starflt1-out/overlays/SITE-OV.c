@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //            WLON  codep:0x1d29 parp:0xee1d size:0x0004 C-string:'WLON'
 //            ELON  codep:0x1d29 parp:0xee2a size:0x0004 C-string:'ELON'

@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //         LTLNBLT  codep:0x1d29 parp:0xf160 size:0x000c C-string:'LTLNBLT'
 //      UNK_0xf16e  codep:0x224c parp:0xf16e size:0x0006 C-string:'UNK_0xf16e'

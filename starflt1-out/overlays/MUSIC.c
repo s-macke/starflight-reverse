@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //          OLDINT  codep:0x2214 parp:0xe21f size:0x0002 C-string:'OLDINT'
 //          ?MUSIC  codep:0x2214 parp:0xe22c size:0x0002 C-string:'IsMUSIC'

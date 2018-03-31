@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //        altitude  codep:0x224c parp:0xf2a6 size:0x00a7 C-string:'altitude'
 //        ICON-KEY  codep:0x224c parp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'

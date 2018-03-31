@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //            TRIM  codep:0x224c parp:0xef86 size:0x0008 C-string:'TRIM'
 //          3RIGHT  codep:0x2214 parp:0xef90 size:0x0002 C-string:'_3RIGHT'

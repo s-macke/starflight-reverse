@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //      UNK_0xdfa6  codep:0x1d29 parp:0xdfa6 size:0x0002 C-string:'UNK_0xdfa6'
 //      UNK_0xdfaa  codep:0x7420 parp:0xdfaa size:0x0003 C-string:'UNK_0xdfaa'

@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //        revision  codep:0x1d29 parp:0xddf6 size:0x0002 C-string:'revision'
 //      UNK_0xddfa  codep:0x1d29 parp:0xddfa size:0x0002 C-string:'UNK_0xddfa'

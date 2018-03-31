@@ -146,7 +146,7 @@ void WriteVocabulary(unsigned char *mem, FILE *fp, int ovidx)
     int i;
     unsigned int bitfield = 0;
     fprintf(fp, "\n// =================================\n");
-    fprintf(fp, "// =========== Vocabulary ==========\n");
+    fprintf(fp, "// =========== VOCABULARY ==========\n");
     fprintf(fp, "// =================================\n");
 
     for(i=0; i<nwords; i++)

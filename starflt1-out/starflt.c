@@ -58,7 +58,7 @@
 #include"../overlays/STP-OV.h"
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //          (!SET)  codep:0x0138 parp:0x0138 size:0x001d C-string:'_ro__ex_SET_rc_'
 //          (!OLD)  codep:0x0160 parp:0x0160 size:0x001d C-string:'_ro__ex_OLD_rc_'

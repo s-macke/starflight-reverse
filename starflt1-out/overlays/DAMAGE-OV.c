@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //            'OVS  codep:0x1d29 parp:0xeabd size:0x0002 C-string:'_i_OVS'
 //      UNK_0xeac1  codep:0x224c parp:0xeac1 size:0x0006 C-string:'UNK_0xeac1'

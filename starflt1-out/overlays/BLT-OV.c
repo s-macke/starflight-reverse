@@ -9,7 +9,7 @@
 
 
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 //         .RUNBIT  codep:0xf220 parp:0xf220 size:0x00cd C-string:'DrawRUNBIT'
 //          .PARMS  codep:0x224c parp:0xf2f8 size:0x0059 C-string:'DrawPARMS'

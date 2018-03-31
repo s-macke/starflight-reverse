@@ -1,5 +1,5 @@
 // =================================
-// =========== DICTIONARY ==========
+// =========== VOCABULARY ==========
 // =================================
 
 typedef struct { int ov; unsigned short code, word; char* name; } WORD;
