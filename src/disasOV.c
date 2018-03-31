@@ -189,39 +189,39 @@ int main()
     {
         LoadOverlayDict(i);
 #ifdef STARFLT1
-        GetDictEntry(0x8a2d, -1);
-        GetDictEntry(0x602f, -1);
-        GetDictEntry(0x63a3, -1);
-        GetDictEntry(0x4c5b, -1);
+        GetWordByAddr(0x8a2d, -1);
+        GetWordByAddr(0x602f, -1);
+        GetWordByAddr(0x63a3, -1);
+        GetWordByAddr(0x4c5b, -1);
         switch(i)
         {
             case 0x0F: // VITA-OV
-                GetDictEntry(0xe928, 0x0F);
+                GetWordByAddr(0xe928, 0x0F);
                 break;
             case 0x30: // DAMAGE-OV
-                GetDictEntry(0xee65, 0x30);
+                GetWordByAddr(0xee65, 0x30);
                 break;
             case 0x2D: // STORM-OV
-                GetDictEntry(0xf0b4, 0x2D);
+                GetWordByAddr(0xf0b4, 0x2D);
                 break;
             case 0x2B: // PLSET-OV
-                GetDictEntry(0xec9a, 0x2B);
+                GetWordByAddr(0xec9a, 0x2B);
                 break;
             case 0x33:  // STP-OV
-                for(j=0; j<9; j++) GetDictEntry(Read16(0xf287+j*2), 0x33);
-                for(j=0; j<24; j++) GetDictEntry(Read16(0xf29b+j*2), 0x33);
+                for(j=0; j<9; j++) GetWordByAddr(Read16(0xf287+j*2), 0x33);
+                for(j=0; j<24; j++) GetWordByAddr(Read16(0xf29b+j*2), 0x33);
                 break;
             case 0x15:  // COMMSPEC-OV
-                for(j=0; j<4; j++) GetDictEntry(Read16(0xf454+1+j*2), 0x15);
-                for(j=0; j<5; j++) GetDictEntry(Read16(0xf45f+1+j*2), 0x15);
-                for(j=0; j<3; j++) GetDictEntry(Read16(0xf46c+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetDictEntry(Read16(0xf475+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetDictEntry(Read16(0xf47a+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetDictEntry(Read16(0xf47f+1+j*2), 0x15);
+                for(j=0; j<4; j++) GetWordByAddr(Read16(0xf454+1+j*2), 0x15);
+                for(j=0; j<5; j++) GetWordByAddr(Read16(0xf45f+1+j*2), 0x15);
+                for(j=0; j<3; j++) GetWordByAddr(Read16(0xf46c+1+j*2), 0x15);
+                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf475+1+j*2), 0x15);
+                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47a+1+j*2), 0x15);
+                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47f+1+j*2), 0x15);
                 break;
         }
 #else
-        if (i == 0x13) GetDictEntry(0xf277, 0x13); // VITA-OV
+        if (i == 0x13) GetWordByAddr(0xf277, 0x13); // VITA-OV
 #endif
         fflush(stdout);
         fflush(stderr);

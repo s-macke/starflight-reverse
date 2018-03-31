@@ -6,10 +6,10 @@
 #include"utils.h"
 #include"../emul/cpu.h"
 
-struct DICTENTRY dict[10000];
+struct WORD dict[10000];
 int ndict = 0;
 
-char* GetWordName(DICTENTRY *dict)
+char* GetWordName(WORD *dict)
 {
     int i;
     for(i = 0; renamewords[i].newword != NULL; i++)
@@ -21,7 +21,7 @@ char* GetWordName(DICTENTRY *dict)
     return dict->r;
 }
 
-DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
+WORD* GetWordByAddr(unsigned short addr, int ovidx)
 {
     int i = 0;
     if (addr < 0x100+FILESTAR0SIZE) ovidx = -1;
@@ -44,9 +44,9 @@ DICTENTRY* GetDictEntry(unsigned short addr, int ovidx)
     return &dict[ndict-1];
 }
 
-char* GetDictWord(unsigned short addr, int ovidx)
+char* GetWordNameByAddr(unsigned short addr, int ovidx)
 {
-    return GetWordName(GetDictEntry(addr, ovidx));
+    return GetWordName(GetWordByAddr(addr, ovidx));
 }
 
 int GetDictStart(int addr)
@@ -68,7 +68,7 @@ int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
     unsigned char bitfield = Read8(addr+2);
     unsigned int length = bitfield & 0x3F;
     int i = 0;
-    memset(&dict[ndict], 0, sizeof(DICTENTRY));
+    memset(&dict[ndict], 0, sizeof(WORD));
     dict[ndict].addr = addr;
     dict[ndict].linkp = linkp;
     dict[ndict].bits = bitfield;
@@ -218,15 +218,15 @@ void WriteAllDict(char* filename)
 static int
 cmpdictp(const void *p1, const void *p2)
 {
-    DICTENTRY *a = (DICTENTRY*)p1;
-    DICTENTRY *b = (DICTENTRY*)p2;
+    WORD *a = (WORD*)p1;
+    WORD *b = (WORD*)p2;
 
     return (a->parp-b->parp) + (a->ovidx-b->ovidx)*0x10000;
 }
 
 void SortDictionary()
 {
-    qsort(dict, ndict, sizeof(DICTENTRY), cmpdictp);
+    qsort(dict, ndict, sizeof(WORD), cmpdictp);
 
     int i = 0;
     for(i=0; i<ndict-1; i++)

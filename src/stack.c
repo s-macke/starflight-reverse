@@ -12,7 +12,7 @@
 
 void FunctionStackAnalysis(int parp, int ovidx)
 {
-    DICTENTRY *dd = GetDictEntry(parp, ovidx);
+    WORD *dd = GetWordByAddr(parp, ovidx);
 
     int addr = dd->parp;
     char *s = GetWordName(dd);
@@ -44,7 +44,7 @@ void FunctionStackAnalysis(int parp, int ovidx)
             continue;
         }
 
-        DICTENTRY *d = GetDictEntry(pline[addr].word, ovidx);
+        WORD *d = GetWordByAddr(pline[addr].word, ovidx);
         if (d == NULL)
         {
             return;
@@ -54,7 +54,7 @@ void FunctionStackAnalysis(int parp, int ovidx)
         if (d->codep == CODEEXEC)
         {
             int par = Read16(Read16(d->parp)+REGDI);
-            d = GetDictEntry(par, ovidx);
+            d = GetWordByAddr(par, ovidx);
             if (d == NULL)
             {
                 fprintf(stderr, "Error: Something went wrong\n");

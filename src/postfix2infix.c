@@ -75,7 +75,7 @@ BasicWords basicwords[] =
     {NULL, NULL}
 };
 
-char* GetVariableName(DICTENTRY *efunc, int varidx)
+char* GetVariableName(WORD *efunc, int varidx)
 {
     static char *def = "h";
     static char *default1 = "unknown";
@@ -89,7 +89,7 @@ char* GetVariableName(DICTENTRY *efunc, int varidx)
 }
 
 
-unsigned int IsPushNumber(int addr, DICTENTRY *e)
+unsigned int IsPushNumber(int addr, WORD *e)
 {
     if (e->codep == CODELIT) return Read16(addr + 2);
     if (e->codep == CODECONSTANT)
@@ -113,7 +113,7 @@ unsigned int IsPushNumber(int addr, DICTENTRY *e)
 
 
 
-void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, int currentovidx)
+void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currentovidx)
 {
     int i=0;
     ret[0] = 0;
@@ -258,7 +258,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
     {
         int par = Read16(Read16(e->parp)+REGDI);
         snprintf(ret, STRINGLEN, "Exec(\"%s\"); // call of word 0x%04x '%s'\n",
-            Forth2CString(s), par, GetDictWord(par, currentovidx));
+            Forth2CString(s), par, GetWordNameByAddr(par, currentovidx));
         return;
     }
     if (strcmp(s, ">R") == 0)
@@ -369,7 +369,7 @@ void GetMacro(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, char *ret, in
 
 // -------------------------------------------
 
-void Postfix2Infix(unsigned short addr, DICTENTRY *e, DICTENTRY *efunc, int currentovidx, FILE *fp, int nspc)
+void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, FILE *fp, int nspc)
 {
     char *s = GetWordName(e);
 

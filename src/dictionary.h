@@ -3,7 +3,7 @@
 
 #include<stdio.h>
 
-typedef struct DICTENTRY
+typedef struct WORD
 {
     int addr;   // address of word in code
     int codep;  // code pointer
@@ -28,16 +28,16 @@ typedef struct DICTENTRY
     // variables for functions
     int nvars;
     char vars[20][5];
-} DICTENTRY;
+} WORD;
 
 extern int ndict;
-extern struct DICTENTRY dict[10000];
+extern struct WORD dict[10000];
 
 void SortDictionary();
 void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
-DICTENTRY* GetDictEntry(unsigned short addr, int ovidx);
-char* GetDictWord(unsigned short addr, int ovidx);
-char* GetWordName(DICTENTRY *dict);
+WORD* GetWordByAddr(unsigned short addr, int ovidx);
+char* GetWordNameByAddr(unsigned short addr, int ovidx);
+char* GetWordName(WORD *dict);
 void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
 void WriteAllDict(char* filename);
 void DictConsistencyCheck();

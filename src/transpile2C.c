@@ -120,13 +120,13 @@ void SetExtern(int ovidx, int minaddr, int maxaddr)
 {
     int addr;
     int i;
-    DICTENTRY *efunc = NULL;
+    WORD *efunc = NULL;
     for(i=0; i<ndict; i++) dict[i].isextern = FALSE;
 
     for(addr=minaddr; addr<=maxaddr; addr++)
     {
         if (!pline[addr].word) continue;
-        efunc = GetDictEntry(pline[addr].word, ovidx);
+        efunc = GetWordByAddr(pline[addr].word, ovidx);
         if (efunc == NULL) continue;
         if (efunc->codep == CODELIT) continue;
         if (efunc->codep == CODE2LIT) continue;
@@ -277,7 +277,7 @@ void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
 // ----------------------------------------------------
 
-int IsLabelStillInUse(DICTENTRY *e, int labeladdr)
+int IsLabelStillInUse(WORD *e, int labeladdr)
 {
     int addr = e->parp;
     while(pline[addr].flow != FUNCEND)
@@ -333,7 +333,7 @@ int ContainsFlow(int startaddr, int endaddr)
     return FALSE;
 }
 
-void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
+void TreatIfGoto(WORD *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
     if (labeladdr < ifgotoaddr) return;
@@ -344,7 +344,7 @@ void TreatIfGoto(DICTENTRY *e, int ifgotoaddr)
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
-void TreatLoop(DICTENTRY *e, int ifgotoaddr)
+void TreatLoop(WORD *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
     if (labeladdr > ifgotoaddr) return;
@@ -356,7 +356,7 @@ void TreatLoop(DICTENTRY *e, int ifgotoaddr)
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
-void TreatEndlessLoop(DICTENTRY *e, int gotoaddr)
+void TreatEndlessLoop(WORD *e, int gotoaddr)
 {
     int labeladdr = pline[gotoaddr].gotoaddr;
     if (labeladdr > gotoaddr) return;
@@ -369,7 +369,7 @@ void TreatEndlessLoop(DICTENTRY *e, int gotoaddr)
 }
 
 
-void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
+void TreatIfElseGoto(WORD *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
 
@@ -395,7 +395,7 @@ void TreatIfElseGoto(DICTENTRY *e, int ifgotoaddr)
     pline[labeladdr].labelid = 0;
 }
 
-void RemoveGotos(DICTENTRY *e)
+void RemoveGotos(WORD *e)
 {
     int addr = e->parp;
     while(pline[addr].flow != FUNCEND)
@@ -416,12 +416,12 @@ void RemoveGotos(DICTENTRY *e)
 
 // ----------------------------------------------------
 
-void WriteWordHeader(FILE *fp, DICTENTRY *e)
+void WriteWordHeader(FILE *fp, WORD *e)
 {
     int i = 0;
     if (e == NULL)
     {
-        fprintf(stderr, "Error: No dictentry found");
+        fprintf(stderr, "Error: No WORD found");
         exit(1);
     }
     char *s = GetWordName(e);
@@ -436,7 +436,7 @@ void WriteWordHeader(FILE *fp, DICTENTRY *e)
     if (e->isentry)  fprintf(fp, "// entry\n");
 }
 
-int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
+int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
 {
     int j;
     int addr = efunc->parp;
@@ -524,7 +524,7 @@ int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
             case LOOP:
             {
                 Postfix2InfixReset(fp, nspc);
-                DICTENTRY *e = GetDictEntry(Read16(addr)+2, pline[addr].ovidx);
+                WORD *e = GetWordByAddr(Read16(addr)+2, pline[addr].ovidx);
                 if (strcmp(e->r, "(/LOOP)") == 0)
                 {
                     Spc(fp, nspc);
@@ -656,7 +656,7 @@ int WriteParsedFunction(FILE *fp, DICTENTRY *efunc, int ovidx)
 
         if (pline[addr].istrivialword)
         {
-            DICTENTRY *e = GetDictEntry(Read16(addr)+2, pline[addr].ovidx);
+            WORD *e = GetWordByAddr(Read16(addr)+2, pline[addr].ovidx);
             Postfix2Infix(addr, e, efunc, pline[addr].ovidx, fp, nspc);
         }
         if ((pline[addr].str != NULL) && (pline[addr].str[0] != 0))
@@ -687,13 +687,13 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
     int addr = 0;
     int j = 0;
     char str[0x10000];
-    DICTENTRY *efunc = NULL;
+    WORD *efunc = NULL;
 
     for(addr=minaddr; addr<=maxaddr; addr++)
     {
         if (pline[addr].iswordheader)
         {
-            efunc = GetDictEntry(addr+2, ovidx);
+            efunc = GetWordByAddr(addr+2, ovidx);
             WriteWordHeader(fp, efunc);
             char *s = GetWordName(efunc);
             if (efunc->codep == CODECALL)
@@ -764,7 +764,7 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
             disasm(0x0, (unsigned)addr, mem, buffer);
             if (pline[addr].asmaccessesword != 0)
             {
-                fprintf(fp, "// 0x%04x: %s // %s\n", addr, buffer, GetDictWord(pline[addr].asmaccessesword, ovidx));
+                fprintf(fp, "// 0x%04x: %s // %s\n", addr, buffer, GetWordNameByAddr(pline[addr].asmaccessesword, ovidx));
             } else
             {
                 fprintf(fp, "// 0x%04x: %s\n", addr, buffer);

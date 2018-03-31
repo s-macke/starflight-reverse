@@ -21,7 +21,7 @@ Variables GetEmptyVariables()
     return vars;
 }
 
-char* GetVariable(Variables *vars, DICTENTRY *e, int stackidxfromtop)
+char* GetVariable(Variables *vars, WORD *e, int stackidxfromtop)
 {
     static char *def = "h";
     static char *default1 = "unknown";
@@ -41,7 +41,7 @@ char* GetVariable(Variables *vars, DICTENTRY *e, int stackidxfromtop)
     if (varidx == -3) return default3;
 }
 
-void AddLoopVariables(Variables *vars, DICTENTRY *e)
+void AddLoopVariables(Variables *vars, WORD *e)
 {
     e->vars[e->nvars+0][0] = 'i' + e->nloopvars;
     e->vars[e->nvars+1][0] = 'i' + e->nloopvars;
@@ -65,7 +65,7 @@ void RemoveLoopVariables(Variables *vars)
     vars->nstack -= 2;
 }
 
-void AddVariable(Variables *vars, DICTENTRY *e)
+void AddVariable(Variables *vars, WORD *e)
 {
     e->vars[e->nvars][0] = 'a' + e->nstackvariables;
     e->nstackvariables++;
@@ -76,7 +76,7 @@ void AddVariable(Variables *vars, DICTENTRY *e)
     e->nvars++;
 }
 
-void AddUnnamedVariable(Variables *vars, DICTENTRY *e, int idx)
+void AddUnnamedVariable(Variables *vars, WORD *e, int idx)
 {
     vars->stack[vars->nstack] = idx;
     vars->nstack++;
@@ -105,12 +105,12 @@ void AnalyzeDisasmString(char* buffer, int ovidx, int currentoffset)
         int offset = (int)strtol(&buffer[i+1], NULL, 16);
         if ((Read16(offset-2) == CODEPOINTER) || (Read16(offset-2) == CODECONSTANT))
         {
-            GetDictEntry(offset, ovidx);
+            GetWordByAddr(offset, ovidx);
             pline[currentoffset].asmaccessesword = offset;
         } else
         if (Read16(offset-4) == CODEPOINTER)
         {
-            GetDictEntry(offset-2, ovidx);
+            GetWordByAddr(offset-2, ovidx);
             pline[currentoffset].asmaccessesword = offset-2;
         } else
         {
@@ -174,7 +174,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
             DisasmRange(addr&0xffff, 0x10000, ovidx, minaddr, maxaddr);
 
             // the assembler is usually also written in forth and is a word
-            if (Read16(addr-2) == CODEPOINTER) GetDictEntry(addr, ovidx);
+            if (Read16(addr-2) == CODEPOINTER) GetWordByAddr(addr, ovidx);
 
             if (addr == 0x1649)
             {
@@ -189,7 +189,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 
 // -----------------------------------------
 
-int GetWordLength(int addr, DICTENTRY *e, int ovidx)
+int GetWordByAddrLength(int addr, WORD *e, int ovidx)
 {
     char *s = GetWordName(e);
 
@@ -236,7 +236,7 @@ int GetWordLength(int addr, DICTENTRY *e, int ovidx)
     if (e->codep == CODEEXEC)
     {
         int par = Read16(Read16(e->parp)+REGDI);
-        GetDictWord(par, ovidx);
+        GetWordNameByAddr(par, ovidx);
         return 2;
     }
     if (e->ovidx == -1) e->isextern = 1;
@@ -245,11 +245,11 @@ int GetWordLength(int addr, DICTENTRY *e, int ovidx)
 }
 
 // unsafe test to find closest dict entry
-DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
+WORD* FindClosestFunction(unsigned short int addr, int ovidx)
 {
     int i = 0;
     int dist = 0xFFFF;
-    DICTENTRY *result = NULL;
+    WORD *result = NULL;
     for(i=0; i<ndict; i++)
     {
         if (dict[i].parp > addr) continue;
@@ -268,10 +268,10 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
     }
 
     //test if there is another function in between not yet analyzed
-    DICTENTRY *result2 = result;
+    WORD *result2 = result;
     for(i=result->parp; i<addr-2; i+=2) {
         if (Read16(i) == CODECALL) {
-            result2 = GetDictEntry(i+2, ovidx);
+            result2 = GetWordByAddr(i+2, ovidx);
         }
     }
 
@@ -280,7 +280,7 @@ DICTENTRY* FindClosestFunction(unsigned short int addr, int ovidx)
 
 // TODO: Analysis of EXECUTE-RULE and EXPERT
 // Execute ruls uses a kind of cache which can be reset with the function DISTRACT
-void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
+void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 {
     int i = 0;
     int j = 0;
@@ -367,7 +367,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
         pline[rulep+2].done = 1;
         pline[rulep+1].word = Read16(rulep + 1);
 
-        DICTENTRY *e = GetDictEntry(p, ovidx);
+        WORD *e = GetWordByAddr(p, ovidx);
         if (e == NULL)
         {
             fprintf(stderr, "Error: No invalid dict entry allowed here");
@@ -376,7 +376,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
         char ifthen[STRINGLEN*2];
         char func[STRINGLEN*2];
 
-        GetWordLength(rulep + 1, e, e->ovidx);
+        GetWordByAddrLength(rulep + 1, e, e->ovidx);
         GetMacro(e->parp, e, d, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n    %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n    %s  }\n}\n\n", func);
@@ -397,13 +397,13 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
             pline[p+0].done = 1;
             pline[p+1].done = 1;
             pline[p+0].word = Read16(p);
-            DICTENTRY *e = GetDictEntry(Read16(p), ovidx);
+            WORD *e = GetWordByAddr(Read16(p), ovidx);
             if (e == NULL)
             {
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
                 exit(1);
             }
-            GetWordLength(p, e, e->ovidx);
+            GetWordByAddrLength(p, e, e->ovidx);
             GetMacro(p, e, d, func, e->ovidx);
             strcat(try, "  ");
             strcat(try, func);
@@ -415,7 +415,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
     }
 }
 
-void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
+void ParseCaseFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 {
     int par = d->parp;
     int ofs = d->parp;
@@ -432,33 +432,33 @@ void ParseCaseFunction(int minaddr, int maxaddr, DICTENTRY *d, int ovidx)
     sprintf(pline[ofs].str, "  switch(Pop()) // %s\n  {\n", s);
     for(i=0; i<n; i++)
     {
-        DICTENTRY *e = GetDictEntry(Read16(par + i*4 + 6), ovidx);
+        WORD *e = GetWordByAddr(Read16(par + i*4 + 6), ovidx);
         pline[par + i*4 + 6].word = Read16(par + i*4 + 6);
         pline[par + i*4 + 6].done = 1;
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        GetWordLength(par + i*4 + 6, e, ovidx);
+        GetWordByAddrLength(par + i*4 + 6, e, ovidx);
         GetMacro(par + i*4 + 6, e, d, ret, ovidx);
         sprintf(temp, "  case %i:\n    %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
         pline[par + i*4 + 5].done = 1;
         strcat(pline[ofs].str, temp);
     }
-    DICTENTRY *e = GetDictEntry(Read16(par + 2), ovidx);
+    WORD *e = GetWordByAddr(Read16(par + 2), ovidx);
     pline[par + 2].word = Read16(par + 2);
     pline[par + 2].done = 1;
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    GetWordLength(par + 2, e, ovidx);
+    GetWordByAddrLength(par + 2, e, ovidx);
     GetMacro(par + 2, e, d, ret, ovidx);
     sprintf(temp, "  default:\n    %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
     strcat(pline[ofs].str, "\n  }\n}\n");
 }
 
-void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovidx, Variables vars)
+void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int ovidx, Variables vars)
 {
     if (d == NULL) {
         d = FindClosestFunction(ofs, ovidx);
@@ -486,7 +486,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
         int par = Read16(ofs)+2;
         pline[ofs+0].done = 1;
         pline[ofs+1].done = 1;
-        DICTENTRY *e = GetDictEntry(par, ovidx);
+        WORD *e = GetWordByAddr(par, ovidx);
         if (e == NULL)
         {
             pline[ofs].str = malloc(STRINGLEN);
@@ -512,7 +512,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
         {
             if (Read16(Read16(ofs-4)) == CODELIT)
             {
-                char *s = GetDictWord(Read16(ofs-2), ovidx);
+                char *s = GetWordNameByAddr(Read16(ofs-2), ovidx);
             }
             pline[ofs].str = malloc(STRINGLEN);
             snprintf(pline[ofs].str, STRINGLEN, "MODULE(); // MODULE\n");
@@ -529,9 +529,9 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
                 int c2 = Read16(ofs-6);
                 int c3 = Read16(ofs-10);
                 char *s1 = NULL, *s2 = NULL, *s3 = NULL;
-                if (c1 != 0) s1 = GetDictWord(Read16(ofs-2), ovidx);
-                if (c2 != 0) s2 = GetDictWord(Read16(ofs-6), ovidx);
-                if (c3 != 0) s3 = GetDictWord(Read16(ofs-10), ovidx);
+                if (c1 != 0) s1 = GetWordNameByAddr(Read16(ofs-2), ovidx);
+                if (c2 != 0) s2 = GetWordNameByAddr(Read16(ofs-6), ovidx);
+                if (c3 != 0) s3 = GetWordNameByAddr(Read16(ofs-10), ovidx);
                 pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
             } else
@@ -543,10 +543,10 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
                 int c4 = Read16(ofs-12);
                 int c5 = Read16(ofs-16);
 
-                char* s1 = GetDictWord(c1, ovidx);
-                char* s3 = GetDictWord(c3, ovidx);
-                char* s4 = GetDictWord(c4, ovidx);
-                char* s5 = GetDictWord(c5, ovidx);
+                char* s1 = GetWordNameByAddr(c1, ovidx);
+                char* s3 = GetWordNameByAddr(c3, ovidx);
+                char* s4 = GetWordNameByAddr(c4, ovidx);
+                char* s5 = GetWordNameByAddr(c5, ovidx);
                 pline[ofs].str = malloc(STRINGLEN);
                 snprintf(pline[ofs].str, STRINGLEN, "DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
             } else
@@ -630,7 +630,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
 
             if (!pline[ofs+4].done && !pline[ofs+4].labelid)
             {
-                DICTENTRY *next = GetDictEntry(Read16(ofs+4)+2, ovidx);
+                WORD *next = GetWordByAddr(Read16(ofs+4)+2, ovidx);
                 if (strcmp(next->r, "EXIT") == 0)
                 {
                     pline[ofs+4].done = 1;
@@ -762,7 +762,7 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, DICTENTRY *d, int ovid
         {
             pline[ofs].istrivialword = TRUE;
             pline[ofs].ovidx = ovidx;
-            int dofs = GetWordLength(ofs, e, ovidx);
+            int dofs = GetWordByAddrLength(ofs, e, ovidx);
             int i;
             for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
             ofs += dofs;
@@ -891,44 +891,44 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
             if (Read16(i+1) == CODECALL)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
                 Variables vars = GetEmptyVariables();
                 ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
             }
             if (Read16(i+1) == CODEGETCOLOR)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODELOADDATA)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODEPOINTER)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODECONSTANT)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODEIFIELD)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODE2DARRAY)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
             if (Read16(i+1) == CODEEXEC)
             {
-                DICTENTRY *e = GetDictEntry(i+3, ovidx);
+                WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
             }
         }
