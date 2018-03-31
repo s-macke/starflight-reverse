@@ -883,8 +883,10 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
 /* Find orphaned words */
 
-    for(int j=0; j<2; j++)
+    while(1)
     {
+        int nwordstemp = nwords;
+
         for(int i=minaddr; i<maxaddr-3; i++)
         {
             if ((!pline[i+0].done) || (pline[i+1].done) || (pline[i+2].done)) continue;
@@ -934,6 +936,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         }
         SetWordHeader(ovidx);
         SetStructDone(ovidx);
+        if (nwordstemp == nwords) break;
     }
 
 }

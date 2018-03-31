@@ -222,6 +222,8 @@ int main()
         }
 #else
         if (i == 0x13) GetWordByAddr(0xf277, 0x13); // VITA-OV
+        if (i == 0x13) GetWordByAddr(0xf1f2, 0x13); // VITA-OV
+        if (i == 0x18) GetWordByAddr(0xf40a, 0x18); // COMMSPEC-OV
 #endif
         fflush(stdout);
         fflush(stderr);
