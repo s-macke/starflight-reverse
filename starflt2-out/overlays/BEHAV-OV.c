@@ -11,6 +11,9 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xe486  codep:0x224c parp:0xe486 size:0x000c C-string:'UNK_0xe486'
+//      UNK_0xe494  codep:0x224c parp:0xe494 size:0x0006 C-string:'UNK_0xe494'
+//      UNK_0xe49c  codep:0x224c parp:0xe49c size:0x000a C-string:'UNK_0xe49c'
 //      UNK_0xe4a8  codep:0x224c parp:0xe4a8 size:0x0008 C-string:'UNK_0xe4a8'
 //      UNK_0xe4b2  codep:0x224c parp:0xe4b2 size:0x000a C-string:'UNK_0xe4b2'
 //      UNK_0xe4be  codep:0x224c parp:0xe4be size:0x0006 C-string:'UNK_0xe4be'
@@ -231,6 +234,8 @@ void ABS(); // ABS
 void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
+void ALLOT(); // ALLOT
+void HERE(); // HERE
 void BEEP(); // BEEP
 void MS(); // MS
 void NOP(); // NOP
@@ -244,6 +249,7 @@ void SETLARR(); // SETLARR
 void C_ex__2(); // C!_2
 void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
+void _1_dot_5_ex__2(); // 1.5!_2
 void _2_ex__2(); // 2!_2
 void ON_2(); // ON_2
 void _099(); // 099
@@ -337,7 +343,47 @@ const unsigned short int pp_FUNCTIONS = 0xf052; // FUNCTIONS size: 25
 
 
 
-// 0xe482: db 0x0f 0x01 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x4c 0x7e 0x90 0x16 0x4c 0x22 0xed 0x22 0x7f 0x3b 0x8c 0x21 0x32 0x6d 0x90 0x16 '  L"  >         L"  L~  L" "; !2m  '
+// 0xe482: db 0x0f 0x01 '  '
+
+// ================================================
+// 0xe484: WORD 'UNK_0xe486' codep=0x224c parp=0xe486 params=2 returns=2
+// ================================================
+// orphan
+
+void UNK_0xe486() // UNK_0xe486
+{
+  _2DUP(); // 2DUP
+  Push(Pop() | Pop()); // OR
+  if (Pop() == 0) return;
+  _2DUP(); // 2DUP
+}
+
+
+// ================================================
+// 0xe492: WORD 'UNK_0xe494' codep=0x224c parp=0xe494
+// ================================================
+// orphan
+
+void UNK_0xe494() // UNK_0xe494
+{
+  _2DUP(); // 2DUP
+  IFIND(); // IFIND
+}
+
+
+// ================================================
+// 0xe49a: WORD 'UNK_0xe49c' codep=0x224c parp=0xe49c params=2 returns=0
+// ================================================
+// orphan
+
+void UNK_0xe49c() // UNK_0xe49c
+{
+  HERE(); // HERE
+  Push(3);
+  ALLOT(); // ALLOT
+  _1_dot_5_ex__2(); // 1.5!_2
+}
+
 
 // ================================================
 // 0xe4a6: WORD 'UNK_0xe4a8' codep=0x224c parp=0xe4a8 params=0 returns=1

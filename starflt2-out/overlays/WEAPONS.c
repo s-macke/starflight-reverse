@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xec26  codep:0x224c parp:0xec26 size:0x0010 C-string:'UNK_0xec26'
 //      UNK_0xec38  codep:0x224c parp:0xec38 size:0x000a C-string:'UNK_0xec38'
 //      UNK_0xec44  codep:0x224c parp:0xec44 size:0x0006 C-string:'UNK_0xec44'
 //      UNK_0xec4c  codep:0x224c parp:0xec4c size:0x0006 C-string:'UNK_0xec4c'
@@ -102,6 +103,7 @@ extern const unsigned short int pp_NLR; // NLR
 extern const unsigned short int pp_EYEXY; // EYEXY
 extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_XWLD_c_XP; // XWLD:XP
+extern const unsigned short int pp__ro_AORIGI; // (AORIGI
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_NTIME; // NTIME
 extern const unsigned short int pp_NOF; // NOF
@@ -234,7 +236,22 @@ const unsigned short int pp_UNK_0xf254 = 0xf254; // UNK_0xf254 size: 2
 const unsigned short int cc_UNK_0xec5e = 0xec5e; // UNK_0xec5e
 
 
-// 0xec22: db 0x94 0x00 0x4c 0x22 0xef 0x64 0x2f 0x7a 0x34 0x75 0x5d 0x17 0x0a 0x00 0x5f 0x12 0xdf 0x79 0x90 0x16 '  L" d/z4u]   _  y  '
+// 0xec22: db 0x94 0x00 '  '
+
+// ================================================
+// 0xec24: WORD 'UNK_0xec26' codep=0x224c parp=0xec26 params=0 returns=1
+// ================================================
+// orphan
+
+void UNK_0xec26() // UNK_0xec26
+{
+  Push(pp__ro_AORIGI); // (AORIGI
+  Get_gt_C_plus_S(); // @>C+S
+  GetINST_dash_S(); // @INST-S
+  Push(Pop()==0x000a?1:0); //  0x000a =
+  ICLOSE(); // ICLOSE
+}
+
 
 // ================================================
 // 0xec36: WORD 'UNK_0xec38' codep=0x224c parp=0xec38 params=0 returns=2

@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xecb6  codep:0x2214 parp:0xecb6 size:0x0002 C-string:'UNK_0xecb6'
 //      UNK_0xecba  codep:0x73ea parp:0xecba size:0x0006 C-string:'UNK_0xecba'
 //      UNK_0xecc2  codep:0x73ea parp:0xecc2 size:0x0006 C-string:'UNK_0xecc2'
 //      UNK_0xecca  codep:0x73ea parp:0xecca size:0x0006 C-string:'UNK_0xecca'
@@ -208,10 +209,17 @@ const unsigned short int pp__i_8X8 = 0xf12f; // '8X8 size: 2
 // {0x3c, 0xce}
 
 
+const unsigned short int cc_UNK_0xecb6 = 0xecb6; // UNK_0xecb6
 const unsigned short int cc_UNK_0xed02 = 0xed02; // UNK_0xed02
 
 
-// 0xecb2: db 0x8c 0x00 0x14 0x22 0x20 0x00 '   "  '
+// 0xecb2: db 0x8c 0x00 '  '
+
+// ================================================
+// 0xecb4: WORD 'UNK_0xecb6' codep=0x2214 parp=0xecb6
+// ================================================
+// orphan
+// 0xecb6: dw 0x0020
 
 // ================================================
 // 0xecb8: WORD 'UNK_0xecba' codep=0x73ea parp=0xecba

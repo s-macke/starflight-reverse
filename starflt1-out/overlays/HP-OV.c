@@ -11,6 +11,9 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xe296  codep:0x2214 parp:0xe296 size:0x0002 C-string:'UNK_0xe296'
+//      UNK_0xe29a  codep:0x2214 parp:0xe29a size:0x0002 C-string:'UNK_0xe29a'
+//      UNK_0xe29e  codep:0x2214 parp:0xe29e size:0x0002 C-string:'UNK_0xe29e'
 //      UNK_0xe2a2  codep:0x2214 parp:0xe2a2 size:0x0002 C-string:'UNK_0xe2a2'
 //      UNK_0xe2a6  codep:0x744d parp:0xe2a6 size:0x0003 C-string:'UNK_0xe2a6'
 //      UNK_0xe2ab  codep:0x224c parp:0xe2ab size:0x0006 C-string:'UNK_0xe2ab'
@@ -193,10 +196,31 @@ const unsigned short int pp_UNK_0xf1e6 = 0xf1e6; // UNK_0xf1e6 size: 2
 // {0x3a, 0x20}
 
 
+const unsigned short int cc_UNK_0xe296 = 0xe296; // UNK_0xe296
+const unsigned short int cc_UNK_0xe29a = 0xe29a; // UNK_0xe29a
+const unsigned short int cc_UNK_0xe29e = 0xe29e; // UNK_0xe29e
 const unsigned short int cc_UNK_0xe2a2 = 0xe2a2; // UNK_0xe2a2
 
 
-// 0xe292: db 0x2b 0x01 0x14 0x22 0x20 0x00 0x14 0x22 0x18 0x00 0x14 0x22 0x43 0x00 '+  "   "   "C '
+// 0xe292: db 0x2b 0x01 '+ '
+
+// ================================================
+// 0xe294: WORD 'UNK_0xe296' codep=0x2214 parp=0xe296
+// ================================================
+// orphan
+// 0xe296: dw 0x0020
+
+// ================================================
+// 0xe298: WORD 'UNK_0xe29a' codep=0x2214 parp=0xe29a
+// ================================================
+// orphan
+// 0xe29a: dw 0x0018
+
+// ================================================
+// 0xe29c: WORD 'UNK_0xe29e' codep=0x2214 parp=0xe29e
+// ================================================
+// orphan
+// 0xe29e: dw 0x0043
 
 // ================================================
 // 0xe2a0: WORD 'UNK_0xe2a2' codep=0x2214 parp=0xe2a2

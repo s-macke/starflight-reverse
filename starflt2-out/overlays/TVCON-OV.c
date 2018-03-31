@@ -11,6 +11,11 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xed66  codep:0x224c parp:0xed66 size:0x000c C-string:'UNK_0xed66'
+//      UNK_0xed74  codep:0x224c parp:0xed74 size:0x0006 C-string:'UNK_0xed74'
+//      UNK_0xed7c  codep:0x224c parp:0xed7c size:0x000a C-string:'UNK_0xed7c'
+//      UNK_0xed88  codep:0x224c parp:0xed88 size:0x0008 C-string:'UNK_0xed88'
+//      UNK_0xed92  codep:0x224c parp:0xed92 size:0x000a C-string:'UNK_0xed92'
 //      UNK_0xed9e  codep:0x224c parp:0xed9e size:0x0006 C-string:'UNK_0xed9e'
 //      UNK_0xeda6  codep:0x224c parp:0xeda6 size:0x0006 C-string:'UNK_0xeda6'
 //      UNK_0xedae  codep:0x224c parp:0xedae size:0x000a C-string:'UNK_0xedae'
@@ -97,6 +102,8 @@ void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
 void D_st_(); // D<
+void ALLOT(); // ALLOT
+void HERE(); // HERE
 void DrawR(); // .R
 void MS(); // MS
 void _2OVER(); // 2OVER
@@ -110,6 +117,7 @@ void SQRT(); // SQRT
 void C_ex__2(); // C!_2
 void Store_2(); // !_2
 void _plus__ex__2(); // +!_2
+void _1_dot_5_ex__2(); // 1.5!_2
 void StoreD(); // D!
 void ON_2(); // ON_2
 void _099(); // 099
@@ -120,6 +128,7 @@ void _star_CLOSE(); // *CLOSE
 void _gt_C_plus_S(); // >C+S
 void Get_gt_C_plus_S(); // @>C+S
 void IOPEN(); // IOPEN
+void IFIND(); // IFIND
 void ALL(); // ALL
 void SAVE_dash_OV(); // SAVE-OV
 void StoreCOLOR(); // !COLOR
@@ -128,6 +137,7 @@ void _gt_TVCT(); // >TVCT
 void POLY_dash_ER(); // POLY-ER
 void DrawVIT(); // .VIT
 void _2_at_(); // 2@
+void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
 void OVER(); // OVER
 void ROT(); // ROT
@@ -154,7 +164,73 @@ const unsigned short int pp__pe_STORM = 0xeecf; // %STORM size: 5
 
 
 
-// 0xed62: db 0x81 0x00 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x4c 0x7e 0x90 0x16 0x4c 0x22 0xed 0x22 0x7f 0x3b 0x8c 0x21 0x32 0x6d 0x90 0x16 0x4c 0x22 0x20 0x0f 0x3d 0x0f 0xc4 0x4b 0x90 0x16 0x4c 0x22 0x20 0x0f 0x5d 0x17 0x64 0x00 0xc4 0x4b 0x90 0x16 '  L"  >         L"  L~  L" "; !2m  L"  =  K  L"  ] d  K  '
+// 0xed62: db 0x81 0x00 '  '
+
+// ================================================
+// 0xed64: WORD 'UNK_0xed66' codep=0x224c parp=0xed66 params=2 returns=2
+// ================================================
+// orphan
+
+void UNK_0xed66() // UNK_0xed66
+{
+  _2DUP(); // 2DUP
+  Push(Pop() | Pop()); // OR
+  if (Pop() == 0) return;
+  _2DUP(); // 2DUP
+}
+
+
+// ================================================
+// 0xed72: WORD 'UNK_0xed74' codep=0x224c parp=0xed74
+// ================================================
+// orphan
+
+void UNK_0xed74() // UNK_0xed74
+{
+  _2DUP(); // 2DUP
+  IFIND(); // IFIND
+}
+
+
+// ================================================
+// 0xed7a: WORD 'UNK_0xed7c' codep=0x224c parp=0xed7c params=2 returns=0
+// ================================================
+// orphan
+
+void UNK_0xed7c() // UNK_0xed7c
+{
+  HERE(); // HERE
+  Push(3);
+  ALLOT(); // ALLOT
+  _1_dot_5_ex__2(); // 1.5!_2
+}
+
+
+// ================================================
+// 0xed86: WORD 'UNK_0xed88' codep=0x224c parp=0xed88 params=0 returns=1
+// ================================================
+// orphan
+
+void UNK_0xed88() // UNK_0xed88
+{
+  Push(0);
+  Push(2);
+  RRND(); // RRND
+}
+
+
+// ================================================
+// 0xed90: WORD 'UNK_0xed92' codep=0x224c parp=0xed92 params=0 returns=1
+// ================================================
+// orphan
+
+void UNK_0xed92() // UNK_0xed92
+{
+  Push(0);
+  Push(0x0064);
+  RRND(); // RRND
+}
+
 
 // ================================================
 // 0xed9c: WORD 'UNK_0xed9e' codep=0x224c parp=0xed9e params=1 returns=1

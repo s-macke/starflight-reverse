@@ -11,6 +11,9 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xe2c6  codep:0x2214 parp:0xe2c6 size:0x0002 C-string:'UNK_0xe2c6'
+//      UNK_0xe2ca  codep:0x2214 parp:0xe2ca size:0x0002 C-string:'UNK_0xe2ca'
+//      UNK_0xe2ce  codep:0x2214 parp:0xe2ce size:0x0002 C-string:'UNK_0xe2ce'
 //      UNK_0xe2d2  codep:0x2214 parp:0xe2d2 size:0x0002 C-string:'UNK_0xe2d2'
 //      UNK_0xe2d6  codep:0x2214 parp:0xe2d6 size:0x0002 C-string:'UNK_0xe2d6'
 //      UNK_0xe2da  codep:0x2214 parp:0xe2da size:0x0002 C-string:'UNK_0xe2da'
@@ -300,13 +303,34 @@ const unsigned short int pp_UNK_0xeea9 = 0xeea9; // UNK_0xeea9 size: 2
 // {0x3a, 0x20}
 
 
+const unsigned short int cc_UNK_0xe2c6 = 0xe2c6; // UNK_0xe2c6
+const unsigned short int cc_UNK_0xe2ca = 0xe2ca; // UNK_0xe2ca
+const unsigned short int cc_UNK_0xe2ce = 0xe2ce; // UNK_0xe2ce
 const unsigned short int cc_UNK_0xe2d2 = 0xe2d2; // UNK_0xe2d2
 const unsigned short int cc_UNK_0xe2d6 = 0xe2d6; // UNK_0xe2d6
 const unsigned short int cc_UNK_0xe2da = 0xe2da; // UNK_0xe2da
 const unsigned short int cc_UNK_0xe431 = 0xe431; // UNK_0xe431
 
 
-// 0xe2c2: db 0x10 0x01 0x14 0x22 0x20 0x00 0x14 0x22 0x18 0x00 0x14 0x22 0x43 0x00 '   "   "   "C '
+// 0xe2c2: db 0x10 0x01 '  '
+
+// ================================================
+// 0xe2c4: WORD 'UNK_0xe2c6' codep=0x2214 parp=0xe2c6
+// ================================================
+// orphan
+// 0xe2c6: dw 0x0020
+
+// ================================================
+// 0xe2c8: WORD 'UNK_0xe2ca' codep=0x2214 parp=0xe2ca
+// ================================================
+// orphan
+// 0xe2ca: dw 0x0018
+
+// ================================================
+// 0xe2cc: WORD 'UNK_0xe2ce' codep=0x2214 parp=0xe2ce
+// ================================================
+// orphan
+// 0xe2ce: dw 0x0043
 
 // ================================================
 // 0xe2d0: WORD 'UNK_0xe2d2' codep=0x2214 parp=0xe2d2

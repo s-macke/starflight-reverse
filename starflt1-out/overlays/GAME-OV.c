@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xde56  codep:0x2214 parp:0xde56 size:0x0002 C-string:'UNK_0xde56'
 //      UNK_0xde5a  codep:0x2214 parp:0xde5a size:0x0002 C-string:'UNK_0xde5a'
 //      UNK_0xde5e  codep:0x2214 parp:0xde5e size:0x0002 C-string:'UNK_0xde5e'
 //      UNK_0xde62  codep:0x2214 parp:0xde62 size:0x0002 C-string:'UNK_0xde62'
@@ -374,6 +375,7 @@ const unsigned short int pp_UNK_0xe10a = 0xe10a; // UNK_0xe10a size: 2
 // {0x3a, 0x20}
 
 
+const unsigned short int cc_UNK_0xde56 = 0xde56; // UNK_0xde56
 const unsigned short int cc_UNK_0xde5a = 0xde5a; // UNK_0xde5a
 const unsigned short int cc_UNK_0xde5e = 0xde5e; // UNK_0xde5e
 const unsigned short int cc_UNK_0xde62 = 0xde62; // UNK_0xde62
@@ -388,7 +390,13 @@ const unsigned short int cc_UNK_0xdfaa = 0xdfaa; // UNK_0xdfaa
 const unsigned short int cc_UNK_0xdfae = 0xdfae; // UNK_0xdfae
 
 
-// 0xde52: db 0x72 0x01 0x14 0x22 0x3d 0x00 'r  "= '
+// 0xde52: db 0x72 0x01 'r '
+
+// ================================================
+// 0xde54: WORD 'UNK_0xde56' codep=0x2214 parp=0xde56
+// ================================================
+// orphan
+// 0xde56: dw 0x003d
 
 // ================================================
 // 0xde58: WORD 'UNK_0xde5a' codep=0x2214 parp=0xde5a

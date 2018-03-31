@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xf206  codep:0x744d parp:0xf206 size:0x0003 C-string:'UNK_0xf206'
 //      UNK_0xf20b  codep:0x744d parp:0xf20b size:0x0003 C-string:'UNK_0xf20b'
 //      UNK_0xf210  codep:0x744d parp:0xf210 size:0x0003 C-string:'UNK_0xf210'
 //      UNK_0xf215  codep:0x744d parp:0xf215 size:0x0003 C-string:'UNK_0xf215'
@@ -64,7 +65,13 @@ void SWAP(); // SWAP
 
 
 
-// 0xf202: db 0x36 0x00 0x4d 0x74 0x14 0x19 0x02 '6 Mt   '
+// 0xf202: db 0x36 0x00 '6 '
+
+// ================================================
+// 0xf204: WORD 'UNK_0xf206' codep=0x744d parp=0xf206
+// ================================================
+// orphan
+IFieldType UNK_0xf206 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
 // 0xf209: WORD 'UNK_0xf20b' codep=0x744d parp=0xf20b

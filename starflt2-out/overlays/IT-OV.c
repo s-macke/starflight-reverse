@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xee96  codep:0x7394 parp:0xee96 size:0x0006 C-string:'UNK_0xee96'
 //      UNK_0xee9e  codep:0x7394 parp:0xee9e size:0x0006 C-string:'UNK_0xee9e'
 //      UNK_0xeea6  codep:0x7394 parp:0xeea6 size:0x0006 C-string:'UNK_0xeea6'
 //      UNK_0xeeae  codep:0x7394 parp:0xeeae size:0x0006 C-string:'UNK_0xeeae'
@@ -172,7 +173,13 @@ const unsigned short int cc_UNK_0xeeca = 0xeeca; // UNK_0xeeca
 const unsigned short int cc_UNK_0xeece = 0xeece; // UNK_0xeece
 
 
-// 0xee92: db 0x6d 0x00 0x94 0x73 0x1c 0x1d 0x01 0x20 0xcd 0x6b 'm  s     k'
+// 0xee92: db 0x6d 0x00 'm '
+
+// ================================================
+// 0xee94: WORD 'UNK_0xee96' codep=0x7394 parp=0xee96
+// ================================================
+// orphan
+LoadDataType UNK_0xee96 = {ARTIFACTIDX, 0x1d, 0x01, 0x20, 0x6bcd};
 
 // ================================================
 // 0xee9c: WORD 'UNK_0xee9e' codep=0x7394 parp=0xee9e

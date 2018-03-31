@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xf186  codep:0x2214 parp:0xf186 size:0x0002 C-string:'UNK_0xf186'
 //      UNK_0xf18a  codep:0x2214 parp:0xf18a size:0x0002 C-string:'UNK_0xf18a'
 //      UNK_0xf18e  codep:0x2214 parp:0xf18e size:0x0002 C-string:'UNK_0xf18e'
 //      UNK_0xf192  codep:0x7394 parp:0xf192 size:0x0006 C-string:'UNK_0xf192'
@@ -118,11 +119,18 @@ void CI(); // CI
 // =========== VARIABLES ===========
 // =================================
 
+const unsigned short int cc_UNK_0xf186 = 0xf186; // UNK_0xf186
 const unsigned short int cc_UNK_0xf18a = 0xf18a; // UNK_0xf18a
 const unsigned short int cc_UNK_0xf18e = 0xf18e; // UNK_0xf18e
 
 
-// 0xf182: db 0x3e 0x00 0x14 0x22 0x20 0x00 '>  "  '
+// 0xf182: db 0x3e 0x00 '> '
+
+// ================================================
+// 0xf184: WORD 'UNK_0xf186' codep=0x2214 parp=0xf186
+// ================================================
+// orphan
+// 0xf186: dw 0x0020
 
 // ================================================
 // 0xf188: WORD 'UNK_0xf18a' codep=0x2214 parp=0xf18a

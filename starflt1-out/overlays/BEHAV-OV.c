@@ -11,6 +11,10 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xe086  codep:0x224c parp:0xe086 size:0x000c C-string:'UNK_0xe086'
+//      UNK_0xe094  codep:0x224c parp:0xe094 size:0x0006 C-string:'UNK_0xe094'
+//      UNK_0xe09c  codep:0x224c parp:0xe09c size:0x000a C-string:'UNK_0xe09c'
+//      UNK_0xe0a8  codep:0x224c parp:0xe0a8 size:0x000c C-string:'UNK_0xe0a8'
 //      UNK_0xe0b6  codep:0x224c parp:0xe0b6 size:0x0016 C-string:'UNK_0xe0b6'
 //      UNK_0xe0ce  codep:0x224c parp:0xe0ce size:0x0008 C-string:'UNK_0xe0ce'
 //      UNK_0xe0d8  codep:0x224c parp:0xe0d8 size:0x000a C-string:'UNK_0xe0d8'
@@ -220,6 +224,7 @@ extern const unsigned short int pp_WEAPON_dash_; // WEAPON-
 extern const unsigned short int pp__h_CRIT; // ^CRIT
 extern const unsigned short int pp_IsFLAT; // ?FLAT
 extern const unsigned short int pp_WEAPXY; // WEAPXY
+extern const unsigned short int pp_BOX_dash_IADDR; // BOX-IADDR
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
@@ -241,6 +246,8 @@ void ABS(); // ABS
 void MAX(); // MAX
 void MOD(); // MOD
 void MIN(); // MIN
+void ALLOT(); // ALLOT
+void HERE(); // HERE
 void DrawR(); // .R
 void MS(); // MS
 void NOP(); // NOP
@@ -256,6 +263,7 @@ void SETLARRAY(); // SETLARRAY
 void C_ex_(); // C!
 void Store_3(); // !_3
 void _plus__ex__2(); // +!_2
+void _1_dot_5_ex_(); // 1.5!
 void _2_ex_(); // 2!
 void ON_3(); // ON_3
 void OFF(); // OFF
@@ -263,6 +271,9 @@ void CDROP(); // CDROP
 void ICLOSE(); // ICLOSE
 void _gt_C_plus_S(); // >C+S
 void Get_gt_C_plus_S(); // @>C+S
+void IOPEN(); // IOPEN
+void IFIRST(); // IFIRST
+void IFIND(); // IFIND
 void IDELETE(); // IDELETE
 void StoreCOLOR(); // !COLOR
 void VCLIPSET(); // VCLIPSET
@@ -341,7 +352,62 @@ const unsigned short int pp_UNK_0xef9e = 0xef9e; // UNK_0xef9e size: 2
 
 
 
-// 0xe082: db 0x49 0x01 0x4c 0x22 0xf0 0x0d 0x3e 0x13 0xfa 0x15 0x04 0x00 0xf0 0x0d 0x90 0x16 0x4c 0x22 0xf0 0x0d 0x12 0x7e 0x90 0x16 0x4c 0x22 0xed 0x22 0x73 0x3b 0x8c 0x21 0x92 0x6d 0x90 0x16 0x4c 0x22 0xd0 0x61 0x95 0x49 0xf2 0x79 0x12 0x7a 0xb5 0x7a 0x90 0x16 'I L"  >         L"   ~  L" "s; ! m  L" a I y z z  '
+// 0xe082: db 0x49 0x01 'I '
+
+// ================================================
+// 0xe084: WORD 'UNK_0xe086' codep=0x224c parp=0xe086 params=2 returns=2
+// ================================================
+// orphan
+
+void UNK_0xe086() // UNK_0xe086
+{
+  _2DUP(); // 2DUP
+  Push(Pop() | Pop()); // OR
+  if (Pop() == 0) return;
+  _2DUP(); // 2DUP
+}
+
+
+// ================================================
+// 0xe092: WORD 'UNK_0xe094' codep=0x224c parp=0xe094
+// ================================================
+// orphan
+
+void UNK_0xe094() // UNK_0xe094
+{
+  _2DUP(); // 2DUP
+  IFIND(); // IFIND
+}
+
+
+// ================================================
+// 0xe09a: WORD 'UNK_0xe09c' codep=0x224c parp=0xe09c params=2 returns=0
+// ================================================
+// orphan
+
+void UNK_0xe09c() // UNK_0xe09c
+{
+  HERE(); // HERE
+  Push(3);
+  ALLOT(); // ALLOT
+  _1_dot_5_ex_(); // 1.5!
+}
+
+
+// ================================================
+// 0xe0a6: WORD 'UNK_0xe0a8' codep=0x224c parp=0xe0a8 params=0 returns=0
+// ================================================
+// orphan
+
+void UNK_0xe0a8() // UNK_0xe0a8
+{
+  Push(pp_BOX_dash_IADDR); // BOX-IADDR
+  _1_dot_5_at_(); // 1.5@
+  _gt_C_plus_S(); // >C+S
+  IOPEN(); // IOPEN
+  IFIRST(); // IFIRST
+}
+
 
 // ================================================
 // 0xe0b4: WORD 'UNK_0xe0b6' codep=0x224c parp=0xe0b6 params=0 returns=0

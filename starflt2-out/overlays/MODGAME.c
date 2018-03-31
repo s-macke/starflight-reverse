@@ -11,6 +11,7 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
+//      UNK_0xdd06  codep:0x2214 parp:0xdd06 size:0x0002 C-string:'UNK_0xdd06'
 //      UNK_0xdd0a  codep:0x2214 parp:0xdd0a size:0x0002 C-string:'UNK_0xdd0a'
 //      UNK_0xdd0e  codep:0x2214 parp:0xdd0e size:0x0002 C-string:'UNK_0xdd0e'
 //      UNK_0xdd12  codep:0x2214 parp:0xdd12 size:0x0002 C-string:'UNK_0xdd12'
@@ -429,6 +430,7 @@ const unsigned short int pp_OPTIO = 0xf219; // OPTIO size: 2
 // {0x20, 0x20}
 
 
+const unsigned short int cc_UNK_0xdd06 = 0xdd06; // UNK_0xdd06
 const unsigned short int cc_UNK_0xdd0a = 0xdd0a; // UNK_0xdd0a
 const unsigned short int cc_UNK_0xdd0e = 0xdd0e; // UNK_0xdd0e
 const unsigned short int cc_UNK_0xdd12 = 0xdd12; // UNK_0xdd12
@@ -444,7 +446,13 @@ const unsigned short int cc_STARE = 0xe05b; // STARE
 const unsigned short int cc_STARV = 0xe072; // STARV
 
 
-// 0xdd02: db 0x85 0x01 0x14 0x22 0x4b 0x00 '   "K '
+// 0xdd02: db 0x85 0x01 '  '
+
+// ================================================
+// 0xdd04: WORD 'UNK_0xdd06' codep=0x2214 parp=0xdd06
+// ================================================
+// orphan
+// 0xdd06: dw 0x004b
 
 // ================================================
 // 0xdd08: WORD 'UNK_0xdd0a' codep=0x2214 parp=0xdd0a
