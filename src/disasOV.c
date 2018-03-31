@@ -69,14 +69,14 @@ void LoadSTARFLT()
 void ParseStarFltDict()
 {
     // these addresses are in the "FORTH" dict entry
-    ndict = 0;
+    nwords = 0;
     ParseDict(mem, DICTLIST1-2, 1, -1);
     ParseDict(mem, DICTLIST2-2, 1, -1);
     ParseDict(mem, DICTLIST3-2, 1, -1);
     ParseDict(mem, DICTLIST4-2, 1, -1);
 
     SortDictionary();
-    dict[ndict-1].size = FILESTAR0SIZE+0x100-dict[ndict-1].parp;
+    vocabulary[nwords-1].size = FILESTAR0SIZE+0x100-vocabulary[nwords-1].parp;
 }
 
 void DisasStarflt()
@@ -91,7 +91,7 @@ void DisasStarflt()
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
     SortDictionary();
-    dict[ndict-1].size = maxaddr-dict[ndict-1].parp;
+    vocabulary[nwords-1].size = maxaddr-vocabulary[nwords-1].parp;
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);

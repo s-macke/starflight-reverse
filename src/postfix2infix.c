@@ -128,12 +128,12 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         else sprintf(numberstring, "0x%04x", value);
 
         int i = 0;
-        for(i=0; i<ndict; i++)
+        for(i=0; i<nwords; i++)
         {
-            if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
-            if (dict[i].parp == value)
+            if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
+            if (vocabulary[i].parp == value)
             {
-                snprintf(ret, STRINGLEN, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
+                snprintf(ret, STRINGLEN, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&vocabulary[i]));
                 break;
             }
         }
@@ -382,14 +382,14 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
         else sprintf(numberstring, "0x%04x", value);
 
         int i = 0;
-        for(i=0; i<ndict; i++)
+        for(i=0; i<nwords; i++)
         {
-            if ((dict[i].ovidx == -1) || (dict[i].ovidx == currentovidx))
-            if (dict[i].parp == value)
+            if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
+            if (vocabulary[i].parp == value)
             {
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);
-                fprintf(fp, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&dict[i]));
+                fprintf(fp, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&vocabulary[i]));
                 return;
             }
         }

@@ -80,11 +80,11 @@ void WriteHeaderFile(FILE *fph, int ovidx)
     fprintf(fph, "#define %s_H\n\n", Forth2CString(overlays[ovidx].name));
 
     // write header file
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].ovidx != ovidx) continue;
-        if (!dict[i].isentry) continue;
-        char *s = GetWordName(&dict[i]);
+        if (vocabulary[i].ovidx != ovidx) continue;
+        if (!vocabulary[i].isentry) continue;
+        char *s = GetWordName(&vocabulary[i]);
         fprintf(fph, "void %s(); // %s\n", Forth2CString(s), s);
     }
 
@@ -121,7 +121,7 @@ void SetExtern(int ovidx, int minaddr, int maxaddr)
     int addr;
     int i;
     WORD *efunc = NULL;
-    for(i=0; i<ndict; i++) dict[i].isextern = FALSE;
+    for(i=0; i<nwords; i++) vocabulary[i].isextern = FALSE;
 
     for(addr=minaddr; addr<=maxaddr; addr++)
     {
@@ -146,87 +146,87 @@ void WriteExtern(FILE *fp, int ovidx)
     fprintf(fp, "// ============= EXTERN ============\n");
     fprintf(fp, "// =================================\n");
 
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (!dict[i].isextern) continue;
+        if (!vocabulary[i].isextern) continue;
         if
         (
-        (dict[i].codep == CODETABLE) ||
-        (dict[i].codep == CODESIGFLD) ||
-        (dict[i].codep == CODEPUSH2WORDS) ||
-        (dict[i].codep == CODEFUNC5) ||
-        (dict[i].codep == CODEFUNC6) ||
-        (dict[i].codep == CODESETVOCABULARY) ||
-        (dict[i].codep == IFIELDOFFSET) ||
-        (dict[i].codep == CODEFUNC9) ||
-        (dict[i].codep == CODEFUNC12) ||
-        (dict[i].codep == CODEEXEC)
-        ) dict[i].isextern = FALSE;
+        (vocabulary[i].codep == CODETABLE) ||
+        (vocabulary[i].codep == CODESIGFLD) ||
+        (vocabulary[i].codep == CODEPUSH2WORDS) ||
+        (vocabulary[i].codep == CODEFUNC5) ||
+        (vocabulary[i].codep == CODEFUNC6) ||
+        (vocabulary[i].codep == CODESETVOCABULARY) ||
+        (vocabulary[i].codep == IFIELDOFFSET) ||
+        (vocabulary[i].codep == CODEFUNC9) ||
+        (vocabulary[i].codep == CODEFUNC12) ||
+        (vocabulary[i].codep == CODEEXEC)
+        ) vocabulary[i].isextern = FALSE;
     }
 
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODECONSTANT) continue;
-        if (!dict[i].isextern) continue;
-        if (!IgnoreWord(dict[i].r)) fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODECONSTANT) continue;
+        if (!vocabulary[i].isextern) continue;
+        if (!IgnoreWord(vocabulary[i].r)) fprintf(fp, "extern const unsigned short int cc_%s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODEPOINTER) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern const unsigned short int pp_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODEPOINTER) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern const unsigned short int pp_%s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODEDI) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODEDI) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern const unsigned short int user_%s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODELOADDATA) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODELOADDATA) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern LoadDataType %s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODEGETCOLOR) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern Color %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODEGETCOLOR) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern Color %s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODEIFIELD) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern IFieldType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODEIFIELD) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern IFieldType %s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODE2DARRAY) continue;
-        if (!dict[i].isextern) continue;
-        fprintf(fp, "extern ArrayType %s; // %s\n", Forth2CString(GetWordName(&dict[i])), GetWordName(&dict[i]));
-        dict[i].isextern = FALSE;
+        if (vocabulary[i].codep != CODE2DARRAY) continue;
+        if (!vocabulary[i].isextern) continue;
+        fprintf(fp, "extern ArrayType %s; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), GetWordName(&vocabulary[i]));
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].codep != CODECALL) continue;
-        if (!dict[i].isextern) continue;
-        char *s = GetWordName(&dict[i]);
+        if (vocabulary[i].codep != CODECALL) continue;
+        if (!vocabulary[i].isextern) continue;
+        char *s = GetWordName(&vocabulary[i]);
         if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
-        dict[i].isextern = FALSE;
+        vocabulary[i].isextern = FALSE;
     }
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (!dict[i].isextern) continue;
-        char *s = GetWordName(&dict[i]);
+        if (!vocabulary[i].isextern) continue;
+        char *s = GetWordName(&vocabulary[i]);
         if (!IgnoreWord(s)) fprintf(fp, "void %s(); // %s\n", Forth2CString(s), s);
-        dict[i].isextern = FALSE;
+        vocabulary[i].isextern = FALSE;
     }
     fprintf(fp, "\n");
 }
@@ -240,35 +240,35 @@ void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
     fprintf(fp, "// =========== VARIABLES ===========\n");
     fprintf(fp, "// =================================\n");
 
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].ovidx != ovidx) continue;
-        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
-        if (dict[i].codep != CODEPOINTER) continue;
+        if (vocabulary[i].ovidx != ovidx) continue;
+        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if (vocabulary[i].codep != CODEPOINTER) continue;
         fprintf(fp, "const unsigned short int pp_%s = 0x%04x; // %s size: %i\n// {",
-            Forth2CString(GetWordName(&dict[i])),
-            dict[i].parp,
-            GetWordName(&dict[i]),
-            dict[i].size
+            Forth2CString(GetWordName(&vocabulary[i])),
+            vocabulary[i].parp,
+            GetWordName(&vocabulary[i]),
+            vocabulary[i].size
         );
-        for(j=0; j<dict[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(dict[i].parp+j));
-        fprintf(fp, "0x%02x}\n\n", Read8(dict[i].parp+j));
+        for(j=0; j<vocabulary[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(vocabulary[i].parp+j));
+        fprintf(fp, "0x%02x}\n\n", Read8(vocabulary[i].parp+j));
     }
     fprintf(fp, "\n");
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].ovidx != ovidx) continue;
-        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
-        if (dict[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), dict[i].parp, GetWordName(&dict[i]));
+        if (vocabulary[i].ovidx != ovidx) continue;
+        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if (vocabulary[i].codep != CODECONSTANT) continue;
+        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), vocabulary[i].parp, GetWordName(&vocabulary[i]));
     }
     fprintf(fp, "\n");
-    for(i=0; i<ndict; i++)
+    for(i=0; i<nwords; i++)
     {
-        if (dict[i].ovidx != ovidx) continue;
-        if ((dict[i].parp < minaddr) || (dict[i].parp > maxaddr)) continue;
-        if (dict[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&dict[i])), Read16(dict[i].parp)+REGDI, GetWordName(&dict[i]));
+        if (vocabulary[i].ovidx != ovidx) continue;
+        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if (vocabulary[i].codep != CODEDI) continue;
+        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), Read16(vocabulary[i].parp)+REGDI, GetWordName(&vocabulary[i]));
     }
     fprintf(fp, "\n");
 }

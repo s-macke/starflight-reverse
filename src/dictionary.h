@@ -30,8 +30,8 @@ typedef struct WORD
     char vars[20][5];
 } WORD;
 
-extern int ndict;
-extern struct WORD dict[10000];
+extern int nwords;
+extern struct WORD vocabulary[10000];
 
 void SortDictionary();
 void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);

@@ -107,12 +107,12 @@ void FunctionStackAnalysis(int parp, int ovidx)
 
 void Set(const char *name, int stackin, int stackout)
 {
-    for(int i=0; i<ndict; i++)
+    for(int i=0; i<nwords; i++)
     {
-        if (strcmp(GetWordName(&dict[i]), name) == 0)
+        if (strcmp(GetWordName(&vocabulary[i]), name) == 0)
         {
-            dict[i].stackin = stackin;
-            dict[i].stackout = stackout;
+            vocabulary[i].stackin = stackin;
+            vocabulary[i].stackout = stackout;
             return;
         }
     }
@@ -124,11 +124,11 @@ void Set(const char *name, int stackin, int stackout)
 void IterateFunctions(int ovidx)
 {
     int n = 0;
-    for(int i=0; i<ndict; i++)
+    for(int i=0; i<nwords; i++)
     {
-        if (dict[i].ovidx != ovidx) continue;
-        if ((dict[i].codep == CODECALL) && (dict[i].stackin != STACKINVALID)) n++;
-        FunctionStackAnalysis(dict[i].parp, ovidx);
+        if (vocabulary[i].ovidx != ovidx) continue;
+        if ((vocabulary[i].codep == CODECALL) && (vocabulary[i].stackin != STACKINVALID)) n++;
+        FunctionStackAnalysis(vocabulary[i].parp, ovidx);
     }
 
     //printf("%i\n", n);
@@ -136,64 +136,64 @@ void IterateFunctions(int ovidx)
 
 void StackAnalysis(int ovidx)
 {
-    int ndictbefore = ndict;
-    for(int i=0; i<ndict; i++)
+    int nwordsbefore = nwords;
+    for(int i=0; i<nwords; i++)
     {
-        if (dict[i].codep == CODEPOINTER)
+        if (vocabulary[i].codep == CODEPOINTER)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 1;
         }
-        if (dict[i].codep == CODELIT || dict[i].codep == CODEDI || dict[i].codep == CODECONSTANT)
+        if (vocabulary[i].codep == CODELIT || vocabulary[i].codep == CODEDI || vocabulary[i].codep == CODECONSTANT)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 1;
         }
-        if (dict[i].codep == CODE2LIT)
+        if (vocabulary[i].codep == CODE2LIT)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 2;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 2;
         }
-        if (dict[i].codep == CODELOADOVERLAY) // not sure, call 1649
+        if (vocabulary[i].codep == CODELOADOVERLAY) // not sure, call 1649
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 0;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 0;
         }
-        if (dict[i].codep == CODEGETCOLOR)
+        if (vocabulary[i].codep == CODEGETCOLOR)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 1;
         }
-        if (dict[i].codep == CODEIFIELD)
+        if (vocabulary[i].codep == CODEIFIELD)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 1;
         }
-        if (dict[i].codep == CODEPUSH2WORDS)
+        if (vocabulary[i].codep == CODEPUSH2WORDS)
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 2;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 2;
         }
-        if (dict[i].codep == CODESIGFLD) // not sure, call 1649
+        if (vocabulary[i].codep == CODESIGFLD) // not sure, call 1649
         {
-            dict[i].stackin = 0;
-            dict[i].stackout = 0;
+            vocabulary[i].stackin = 0;
+            vocabulary[i].stackout = 0;
         }
-        if (dict[i].codep == CODETABLE) // call 1649, probably right
+        if (vocabulary[i].codep == CODETABLE) // call 1649, probably right
         {
-            dict[i].stackin = 1;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 1;
+            vocabulary[i].stackout = 1;
         }
-        if (dict[i].codep == CODE2DARRAY)
+        if (vocabulary[i].codep == CODE2DARRAY)
         {
-            dict[i].stackin = 2;
-            dict[i].stackout = 2;
+            vocabulary[i].stackin = 2;
+            vocabulary[i].stackout = 2;
         }
         /*
-        if (dict[i].codep == CODEFUNC6)
+        if (vocabulary[i].codep == CODEFUNC6)
         {
-            dict[i].stackin = 1;
-            dict[i].stackout = 1;
+            vocabulary[i].stackin = 1;
+            vocabulary[i].stackout = 1;
         }
         */
     }
@@ -403,9 +403,9 @@ void StackAnalysis(int ovidx)
     IterateFunctions(ovidx);
     IterateFunctions(ovidx);
 
-    if (ndictbefore != ndict)
+    if (nwordsbefore != nwords)
     {
-        printf("ndict change from %i to %i\n", ndictbefore, ndict);
+        printf("nwords change from %i to %i\n", nwordsbefore, nwords);
     }
 }
 
