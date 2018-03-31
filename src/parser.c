@@ -856,6 +856,8 @@ void SetStructDone(int ovidx)
     }
 }
 
+void FindOrphanWords(int minaddr, int maxaddr, int ovidx);
+
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 {
     int i;
@@ -880,9 +882,11 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     }
     SetWordHeader(ovidx);
     SetStructDone(ovidx);
+    FindOrphanWords(minaddr, maxaddr, ovidx);
+}
 
-/* Find orphaned words */
-
+void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
+{
     while(1)
     {
         int nwordstemp = nwords;

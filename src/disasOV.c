@@ -211,6 +211,11 @@ int main()
                 for(j=0; j<9; j++) GetWordByAddr(Read16(0xf287+j*2), 0x33);
                 for(j=0; j<24; j++) GetWordByAddr(Read16(0xf29b+j*2), 0x33);
                 break;
+            /*
+            case 0x2F: // COMBAT-OV
+                GetWordByAddr(0xe460-4, 0x2F); // not sure about this
+                break;
+            */
             case 0x15:  // COMMSPEC-OV
                 for(j=0; j<4; j++) GetWordByAddr(Read16(0xf454+1+j*2), 0x15);
                 for(j=0; j<5; j++) GetWordByAddr(Read16(0xf45f+1+j*2), 0x15);
@@ -224,6 +229,7 @@ int main()
         if (i == 0x13) GetWordByAddr(0xf277, 0x13); // VITA-OV
         if (i == 0x13) GetWordByAddr(0xf1f2, 0x13); // VITA-OV
         if (i == 0x18) GetWordByAddr(0xf40a, 0x18); // COMMSPEC-OV
+        if (i == 0x39) GetWordByAddr(0xe4c2, 0x39); // BARTER
 #endif
         fflush(stdout);
         fflush(stderr);
@@ -238,7 +244,7 @@ int main()
 
     for(i=0; overlays[i].name != NULL; i++)
     {
-        printf("Generate %s\n", overlays[i].name);
+        printf("%2i: Generate %s\n", i, overlays[i].name);
         //reset memory
         LoadSTARFLT();
         ParseOverlay(i);
