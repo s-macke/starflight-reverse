@@ -18,11 +18,11 @@ transpile2C1.o: src/transpile2C.c src/transpile2C.h
 transpile2C2.o: src/transpile2C.c src/transpile2C.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/transpile2C.c -o transpile2C2.o
 
-dictionary1.o: src/dictionary.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/dictionary.c -o dictionary1.o
+vocabulary1.o: src/vocabulary.c src/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/vocabulary.c -o vocabulary1.o
 
-dictionary2.o: src/dictionary.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/dictionary.c -o dictionary2.o
+vocabulary2.o: src/vocabulary.c src/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/vocabulary.c -o vocabulary2.o
 
 parser1.o: src/parser.c src/global.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/parser.c -o parser1.o
@@ -60,11 +60,11 @@ instance1.o: src/instance.c src/instance.h
 instance2.o: src/instance.c src/instance.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/instance.c -o instance2.o
 
-disasOV1: src/disasOV.c src/dictionary.c src/extract.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
+disasOV1: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
 
-disasOV2: src/disasOV.c src/dictionary.c src/extract.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
+disasOV2: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
 
 emulate: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
 	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate

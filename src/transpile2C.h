@@ -3,7 +3,7 @@
 
 #include<stdio.h>
 #include"extract.h"
-#include"dictionary.h"
+#include"vocabulary.h"
 
 #define WRITE_DICT 1
 #define WRITE_HEADER 2

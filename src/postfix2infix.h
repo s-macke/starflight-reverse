@@ -1,7 +1,7 @@
 #ifndef POSTFIX2INFIX
 #define POSTFIX2INFIX
 
-#include"dictionary.h"
+#include"vocabulary.h"
 
 
 void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int ovidx, FILE *fp, int nspc);

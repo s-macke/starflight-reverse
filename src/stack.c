@@ -5,7 +5,7 @@
 #include"global.h"
 #include"stack.h"
 
-#include"dictionary.h"
+#include"vocabulary.h"
 #include"parser.h"
 #include"stack.h"
 #include"../emul/cpu.h"

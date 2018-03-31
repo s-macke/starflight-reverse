@@ -1,7 +1,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 
-#include"dictionary.h"
+#include"vocabulary.h"
 
 typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEND=7,
                 IFNOT=8, IFELSE=9, IFCLOSE=10, IFCLOSE2=11, IFCLOSE3=12, IFCLOSE4=13,

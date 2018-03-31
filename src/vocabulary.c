@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include"global.h"
-#include"dictionary.h"
+#include"vocabulary.h"
 #include"utils.h"
 #include"../emul/cpu.h"
 
