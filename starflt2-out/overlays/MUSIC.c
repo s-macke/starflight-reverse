@@ -17,7 +17,13 @@
 //      UNK_0xeb82  codep:0x2214 parp:0xeb82 size:0x0002 C-string:'UNK_0xeb82'
 //      UNK_0xeb86  codep:0x2214 parp:0xeb86 size:0x0002 C-string:'UNK_0xeb86'
 //      UNK_0xeb8a  codep:0x2214 parp:0xeb8a size:0x0002 C-string:'UNK_0xeb8a'
-//      UNK_0xeb8e  codep:0x2214 parp:0xeb8e size:0x001a C-string:'UNK_0xeb8e'
+//      UNK_0xeb8e  codep:0x2214 parp:0xeb8e size:0x0002 C-string:'UNK_0xeb8e'
+//      UNK_0xeb92  codep:0x2214 parp:0xeb92 size:0x0002 C-string:'UNK_0xeb92'
+//      UNK_0xeb96  codep:0x2214 parp:0xeb96 size:0x0002 C-string:'UNK_0xeb96'
+//      UNK_0xeb9a  codep:0x2214 parp:0xeb9a size:0x0002 C-string:'UNK_0xeb9a'
+//      UNK_0xeb9e  codep:0x2214 parp:0xeb9e size:0x0002 C-string:'UNK_0xeb9e'
+//      UNK_0xeba2  codep:0x2214 parp:0xeba2 size:0x0002 C-string:'UNK_0xeba2'
+//      UNK_0xeba6  codep:0x2214 parp:0xeba6 size:0x0002 C-string:'UNK_0xeba6'
 //      UNK_0xebaa  codep:0x1d29 parp:0xebaa size:0x0002 C-string:'UNK_0xebaa'
 //      UNK_0xebae  codep:0x224c parp:0xebae size:0x0006 C-string:'UNK_0xebae'
 //      UNK_0xebb6  codep:0x224c parp:0xebb6 size:0x0006 C-string:'UNK_0xebb6'
@@ -238,6 +244,12 @@ const unsigned short int cc_UNK_0xeb82 = 0xeb82; // UNK_0xeb82
 const unsigned short int cc_UNK_0xeb86 = 0xeb86; // UNK_0xeb86
 const unsigned short int cc_UNK_0xeb8a = 0xeb8a; // UNK_0xeb8a
 const unsigned short int cc_UNK_0xeb8e = 0xeb8e; // UNK_0xeb8e
+const unsigned short int cc_UNK_0xeb92 = 0xeb92; // UNK_0xeb92
+const unsigned short int cc_UNK_0xeb96 = 0xeb96; // UNK_0xeb96
+const unsigned short int cc_UNK_0xeb9a = 0xeb9a; // UNK_0xeb9a
+const unsigned short int cc_UNK_0xeb9e = 0xeb9e; // UNK_0xeb9e
+const unsigned short int cc_UNK_0xeba2 = 0xeba2; // UNK_0xeba2
+const unsigned short int cc_UNK_0xeba6 = 0xeba6; // UNK_0xeba6
 const unsigned short int cc_EGAT = 0xf1c8; // EGAT
 const unsigned short int cc_EGAB = 0xf1e1; // EGAB
 const unsigned short int cc_VGAS = 0xf1fa; // VGAS
@@ -283,7 +295,42 @@ const unsigned short int cc_VGAS = 0xf1fa; // VGAS
 // ================================================
 // orphan
 // 0xeb8e: dw 0x0009
-// 0xeb90: db 0x14 0x22 0x0a 0x00 0x14 0x22 0x0b 0x00 0x14 0x22 0x0c 0x00 0x14 0x22 0x0d 0x00 0x14 0x22 0x10 0x00 0x14 0x22 0x24 0x00 ' "   "   "   "   "   "$ '
+
+// ================================================
+// 0xeb90: WORD 'UNK_0xeb92' codep=0x2214 parp=0xeb92
+// ================================================
+// orphan
+// 0xeb92: dw 0x000a
+
+// ================================================
+// 0xeb94: WORD 'UNK_0xeb96' codep=0x2214 parp=0xeb96
+// ================================================
+// orphan
+// 0xeb96: dw 0x000b
+
+// ================================================
+// 0xeb98: WORD 'UNK_0xeb9a' codep=0x2214 parp=0xeb9a
+// ================================================
+// orphan
+// 0xeb9a: dw 0x000c
+
+// ================================================
+// 0xeb9c: WORD 'UNK_0xeb9e' codep=0x2214 parp=0xeb9e
+// ================================================
+// orphan
+// 0xeb9e: dw 0x000d
+
+// ================================================
+// 0xeba0: WORD 'UNK_0xeba2' codep=0x2214 parp=0xeba2
+// ================================================
+// orphan
+// 0xeba2: dw 0x0010
+
+// ================================================
+// 0xeba4: WORD 'UNK_0xeba6' codep=0x2214 parp=0xeba6
+// ================================================
+// orphan
+// 0xeba6: dw 0x0024
 
 // ================================================
 // 0xeba8: WORD 'UNK_0xebaa' codep=0x1d29 parp=0xebaa

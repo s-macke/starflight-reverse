@@ -35,7 +35,13 @@
 //      UNK_0xe7b4  codep:0x2214 parp:0xe7b4 size:0x0002 C-string:'UNK_0xe7b4'
 //      UNK_0xe7b8  codep:0x7420 parp:0xe7b8 size:0x0003 C-string:'UNK_0xe7b8'
 //      UNK_0xe7bd  codep:0x7420 parp:0xe7bd size:0x0003 C-string:'UNK_0xe7bd'
-//      UNK_0xe7c2  codep:0x7420 parp:0xe7c2 size:0x0021 C-string:'UNK_0xe7c2'
+//      UNK_0xe7c2  codep:0x7420 parp:0xe7c2 size:0x0003 C-string:'UNK_0xe7c2'
+//      UNK_0xe7c7  codep:0x7420 parp:0xe7c7 size:0x0003 C-string:'UNK_0xe7c7'
+//      UNK_0xe7cc  codep:0x7420 parp:0xe7cc size:0x0003 C-string:'UNK_0xe7cc'
+//      UNK_0xe7d1  codep:0x7420 parp:0xe7d1 size:0x0003 C-string:'UNK_0xe7d1'
+//      UNK_0xe7d6  codep:0x7420 parp:0xe7d6 size:0x0003 C-string:'UNK_0xe7d6'
+//      UNK_0xe7db  codep:0x7420 parp:0xe7db size:0x0003 C-string:'UNK_0xe7db'
+//      UNK_0xe7e0  codep:0x7420 parp:0xe7e0 size:0x0003 C-string:'UNK_0xe7e0'
 //      UNK_0xe7e5  codep:0x7420 parp:0xe7e5 size:0x0003 C-string:'UNK_0xe7e5'
 //      UNK_0xe7ea  codep:0x7420 parp:0xe7ea size:0x0003 C-string:'UNK_0xe7ea'
 //      UNK_0xe7ef  codep:0x7420 parp:0xe7ef size:0x0003 C-string:'UNK_0xe7ef'
@@ -519,7 +525,42 @@ IFieldType UNK_0xe7bd = {SHIPIDX, 0x12, 0x01};
 // ================================================
 // orphan
 IFieldType UNK_0xe7c2 = {SHIPIDX, 0x13, 0x01};
-// 0xe7c5: db 0x20 0x74 0x14 0x14 0x01 0x20 0x74 0x14 0x15 0x01 0x20 0x74 0x14 0x16 0x01 0x20 0x74 0x14 0x17 0x01 0x20 0x74 0x14 0x18 0x01 0x20 0x74 0x14 0x19 0x01 ' t    t    t    t    t    t   '
+
+// ================================================
+// 0xe7c5: WORD 'UNK_0xe7c7' codep=0x7420 parp=0xe7c7
+// ================================================
+// orphan
+IFieldType UNK_0xe7c7 = {SHIPIDX, 0x14, 0x01};
+
+// ================================================
+// 0xe7ca: WORD 'UNK_0xe7cc' codep=0x7420 parp=0xe7cc
+// ================================================
+// orphan
+IFieldType UNK_0xe7cc = {SHIPIDX, 0x15, 0x01};
+
+// ================================================
+// 0xe7cf: WORD 'UNK_0xe7d1' codep=0x7420 parp=0xe7d1
+// ================================================
+// orphan
+IFieldType UNK_0xe7d1 = {SHIPIDX, 0x16, 0x01};
+
+// ================================================
+// 0xe7d4: WORD 'UNK_0xe7d6' codep=0x7420 parp=0xe7d6
+// ================================================
+// orphan
+IFieldType UNK_0xe7d6 = {SHIPIDX, 0x17, 0x01};
+
+// ================================================
+// 0xe7d9: WORD 'UNK_0xe7db' codep=0x7420 parp=0xe7db
+// ================================================
+// orphan
+IFieldType UNK_0xe7db = {SHIPIDX, 0x18, 0x01};
+
+// ================================================
+// 0xe7de: WORD 'UNK_0xe7e0' codep=0x7420 parp=0xe7e0
+// ================================================
+// orphan
+IFieldType UNK_0xe7e0 = {SHIPIDX, 0x19, 0x01};
 
 // ================================================
 // 0xe7e3: WORD 'UNK_0xe7e5' codep=0x7420 parp=0xe7e5
@@ -1807,10 +1848,10 @@ void UNK_0xf059() // UNK_0xf059
     MODULE(); // MODULE
     Pop(); // DROP
   }
-  Push(0xe7c7);
+  Push(0xe7c7); // probable 'UNK_0xe7c7'
   IFLD_at_(); // IFLD@
   Push(Pop() | 0x0080); //  0x0080 OR
-  Push(0xe7c7);
+  Push(0xe7c7); // probable 'UNK_0xe7c7'
   IFLD_ex_(); // IFLD!
   Push(pp_IsAUTO); // ?AUTO
   ON_2(); // ON_2
@@ -1823,7 +1864,7 @@ void UNK_0xf059() // UNK_0xf059
 
 void UNK_0xf095() // UNK_0xf095
 {
-  Push(0xe7cc);
+  Push(0xe7cc); // probable 'UNK_0xe7cc'
   UNK_0xe8ec(); // UNK_0xe8ec
 }
 
@@ -1834,7 +1875,7 @@ void UNK_0xf095() // UNK_0xf095
 
 void UNK_0xf09f() // UNK_0xf09f
 {
-  Push(0xe7d6);
+  Push(0xe7d6); // probable 'UNK_0xe7d6'
   UNK_0xe8ec(); // UNK_0xe8ec
 }
 
@@ -1856,7 +1897,7 @@ void UNK_0xf0a9() // UNK_0xf0a9
 
 void UNK_0xf0b3() // UNK_0xf0b3
 {
-  Push(0xe7e0);
+  Push(0xe7e0); // probable 'UNK_0xe7e0'
   UNK_0xe8ec(); // UNK_0xe8ec
   SHIELD_dash_(); // SHIELD-
   Push(Pop()==0?1:0); //  0=
