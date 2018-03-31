@@ -6,7 +6,7 @@
 
 #include"cpu.h"
 #include"graphics.h"
-#include"../starflt1-out/data/dict.h"
+#include"../starflt1-out/data/vocabulary.h"
 #include"../starflt1-out/data/directory.h"
 #include"../src/global.h"
 
@@ -15,7 +15,7 @@ const unsigned short ds = 0x192;
 
 unsigned short int regdi = REGDI; // points to word "OPERATOR"
 unsigned short int bp = 0xd4a7 + 0x100 + 0x80; // call stack
-unsigned short int si = 0x129; // current dictonary address (the forth pc pointer)
+unsigned short int si = 0x129; // current vocabulary address (the forth pc pointer)
 unsigned short int cx = 0x0;
 unsigned short int dx = 0x0;
 
@@ -61,9 +61,9 @@ char* FindWord(int word, int ovidx)
     int i = 0;
     do
     {
-        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
-        if (word == dict[i].word) return dict[i].name;
-    } while(dict[++i].name != NULL);
+        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
+        if (word == vocabulary[i].word) return vocabulary[i].name;
+    } while(vocabulary[++i].name != NULL);
     if (word == 0x0) return "";
     fprintf(stderr, "Error: Cannot find word 0x%04x\n", word);
     exit(1);
@@ -82,9 +82,9 @@ int FindWordByName(char* s, int n)
     int i = 0;
     do
     {
-        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
-        if (strcmp(dict[i].name, temp) == 0) return dict[i].word;
-    } while(dict[++i].name != NULL);
+        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
+        if (strcmp(vocabulary[i].name, temp) == 0) return vocabulary[i].word;
+    } while(vocabulary[++i].name != NULL);
     //fprintf(stderr, "Error: Cannot find string %s\n", s);
     return 0;
 }
@@ -139,15 +139,15 @@ int FindClosestWord(int si, int ovidx)
     int word = -1;
     do
     {
-        if ((dict[i].ov != ovidx) && (dict[i].ov != -1)) continue;
-        int d = si - dict[i].word;
+        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
+        int d = si - vocabulary[i].word;
         if (d < 0) continue;
         if (d < dist)
         {
             dist = d;
-            word = dict[i].word;
+            word = vocabulary[i].word;
         }
-    } while(dict[++i].name != NULL);
+    } while(vocabulary[++i].name != NULL);
     return word;
 }
 
@@ -406,8 +406,8 @@ void LXCHG8(unsigned short es, unsigned short bx, unsigned short ax)
 
 void Find() // "(FIND)"
 {
-    //Find word in dictionary
-    unsigned short bx = Pop(); // first entry in dictionary
+    //Find word in the vocabulary
+    unsigned short bx = Pop(); // first entry in vocabulary
     unsigned short cx = Pop(); // length and string of entry
     int n = Read8(cx);
 /*
@@ -417,9 +417,9 @@ void Find() // "(FIND)"
     printf("'\n");
 */
 
-// ------------------------------
-// Implementation on our own dict
-// ------------------------------
+// ------------------------------------
+// Implementation on our own vocabulary
+// ------------------------------------
 
     if (n == 0)
     {
@@ -450,7 +450,7 @@ void Find() // "(FIND)"
     unsigned char dl, dh;
     dl = 0x3F;
     dh = 0x7F;
-    //printf("first dictionary entry address=%x\n  word to search at address=%x\n", bx, cx);
+    //printf("first vocabulary entry address=%x\n  word to search at address=%x\n", bx, cx);
 
     while(1)
     {
@@ -686,7 +686,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
         case 0x73ea: ParameterCall(bx, 0x73ea); break; // "TRANSTEXT" ....
         case 0x7227:
-            //printf("Receive %s from STAR*.COM Dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
+            //printf("Receive %s from STAR*.COM dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
             printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
             //PrintCallstacktrace(bx);
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
@@ -2077,7 +2077,7 @@ void Call(unsigned short addr, unsigned short bx)
         }
         // ---- Special Forth interpreter functions ---
 
-        case 0x1818: Find(); break; // "(FIND)" finds a word in the dictionary
+        case 0x1818: Find(); break; // "(FIND)" finds a word in the vocabulary
 
         // -----------------------------------
         case 0x0F22: Push(0x0); break; // 0

@@ -23,9 +23,9 @@ void LoadOverlayDict(int ovidx)
     {
         int vocofs = (head.buf[0xa+i] | (head.buf[0xb+i]<<8));
         if (vocofs == 0) continue;
-        ParseDict(mem, vocofs - 2, 0, ovidx);
+        ParseVocabulary(mem, vocofs - 2, 0, ovidx);
     }
-    SortDictionary();
+    SortVocabulary();
 }
 
 void ParseOverlay(int ovidx)
@@ -42,12 +42,12 @@ void ParseOverlay(int ovidx)
 
     InitParser();
 
-    SortDictionary();
+    SortVocabulary();
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortDictionary();
+    SortVocabulary();
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortDictionary();
+    SortVocabulary();
     sprintf(filename, OUTDIR"/overlays/%s", overlays[ovidx].name);
     StackAnalysis(ovidx);
     Transpile(filename, &head, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_HEADER | WRITE_EXTERN | WRITE_VARIABLES);
@@ -70,12 +70,12 @@ void ParseStarFltDict()
 {
     // these addresses are in the "FORTH" dict entry
     nwords = 0;
-    ParseDict(mem, DICTLIST1-2, 1, -1);
-    ParseDict(mem, DICTLIST2-2, 1, -1);
-    ParseDict(mem, DICTLIST3-2, 1, -1);
-    ParseDict(mem, DICTLIST4-2, 1, -1);
+    ParseVocabulary(mem, DICTLIST1-2, 1, -1);
+    ParseVocabulary(mem, DICTLIST2-2, 1, -1);
+    ParseVocabulary(mem, DICTLIST3-2, 1, -1);
+    ParseVocabulary(mem, DICTLIST4-2, 1, -1);
 
-    SortDictionary();
+    SortVocabulary();
     vocabulary[nwords-1].size = FILESTAR0SIZE+0x100-vocabulary[nwords-1].parp;
 }
 
@@ -90,12 +90,12 @@ void DisasStarflt()
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
-    SortDictionary();
+    SortVocabulary();
     vocabulary[nwords-1].size = maxaddr-vocabulary[nwords-1].parp;
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortDictionary();
+    SortVocabulary();
     StackAnalysis(ovidx);
     Transpile(OUTDIR"/starflt", NULL, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_VARIABLES);
 
@@ -243,10 +243,10 @@ int main()
         fflush(stdout);
         fflush(stderr);
     }
-    WriteAllDict(OUTDIR"/data/dict.h");
+    WriteAllVocabulary(OUTDIR"/data/vocabulary.h");
 #ifdef STARFLT1
     DisasmEGA();
 #endif
-    DictConsistencyCheck();
+    VocabularyConsistencyCheck();
     return 0;
 }

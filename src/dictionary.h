@@ -33,13 +33,13 @@ typedef struct WORD
 extern int nwords;
 extern struct WORD vocabulary[10000];
 
-void SortDictionary();
-void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx);
+void SortVocabulary();
+void ParseVocabulary(unsigned char *mem, int linkp, int decrypt, int ovidx);
 WORD* GetWordByAddr(unsigned short addr, int ovidx);
 char* GetWordNameByAddr(unsigned short addr, int ovidx);
 char* GetWordName(WORD *dict);
-void WriteDict(unsigned char *mem, FILE *fp, int ovidx);
-void WriteAllDict(char* filename);
-void DictConsistencyCheck();
+void WriteVocabulary(unsigned char *mem, FILE *fp, int ovidx);
+void WriteAllVocabulary(char* filename);
+void VocabularyConsistencyCheck();
 
 #endif

@@ -9,16 +9,16 @@
 struct WORD vocabulary[10000];
 int nwords = 0;
 
-char* GetWordName(WORD *dict)
+char* GetWordName(WORD *word)
 {
     int i;
     for(i = 0; renamewords[i].newword != NULL; i++)
     {
-        if ((dict->ovidx == (signed char)renamewords[i].ovidx) && (dict->parp == renamewords[i].parp))
+        if ((word->ovidx == (signed char)renamewords[i].ovidx) && (word->parp == renamewords[i].parp))
             return renamewords[i].newword;
     }
 
-    return dict->r;
+    return word->r;
 }
 
 WORD* GetWordByAddr(unsigned short addr, int ovidx)
@@ -49,7 +49,7 @@ char* GetWordNameByAddr(unsigned short addr, int ovidx)
     return GetWordName(GetWordByAddr(addr, ovidx));
 }
 
-int GetDictStart(int addr)
+int GetVocabularyStart(int addr)
 {
     int i = 0;
     for(i=0; i<nwords; i++)
@@ -119,7 +119,7 @@ int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
     return linkp - 2;
 }
 
-void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx)
+void ParseVocabulary(unsigned char *mem, int linkp, int decrypt, int ovidx)
 {
     int i = 0;
     int j = 0;
@@ -141,12 +141,12 @@ void ParseDict(unsigned char *mem, int linkp, int decrypt, int ovidx)
     }
 }
 
-void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
+void WriteVocabulary(unsigned char *mem, FILE *fp, int ovidx)
 {
     int i;
     unsigned int bitfield = 0;
     fprintf(fp, "\n// =================================\n");
-    fprintf(fp, "// =========== DICTIONARY ==========\n");
+    fprintf(fp, "// =========== Vocabulary ==========\n");
     fprintf(fp, "// =================================\n");
 
     for(i=0; i<nwords; i++)
@@ -164,7 +164,7 @@ void WriteDict(unsigned char *mem, FILE *fp, int ovidx)
     }
 }
 
-void WriteAllDict(char* filename)
+void WriteAllVocabulary(char* filename)
 {
     int i;
     FILE *fp = fopen(filename, "w");
@@ -174,10 +174,10 @@ void WriteAllDict(char* filename)
         exit(1);
     }
 
-    SortDictionary();
+    SortVocabulary();
 
     fprintf(fp, "// =================================\n");
-    fprintf(fp, "// =========== DICTIONARY ==========\n");
+    fprintf(fp, "// =========== VOCABULARY ==========\n");
     fprintf(fp, "// =================================\n\n");
 
     fprintf(fp, "typedef struct { int ov; unsigned short code, word; char* name; } WORD;\n\n");
@@ -224,7 +224,7 @@ cmpdictp(const void *p1, const void *p2)
     return (a->parp-b->parp) + (a->ovidx-b->ovidx)*0x10000;
 }
 
-void SortDictionary()
+void SortVocabulary()
 {
     qsort(vocabulary, nwords, sizeof(WORD), cmpdictp);
 
@@ -242,7 +242,7 @@ void SortDictionary()
     vocabulary[nwords-1].size = 0;
 }
 
-void DictConsistencyCheck()
+void VocabularyConsistencyCheck()
 {
     int nunknowns = 0;
     

@@ -60,7 +60,7 @@ void Transpile(const char *_filename, OVLHeader *head, int ovidx, int minaddr, i
             i++;
         }
     }
-    if (outputflag & WRITE_DICT) WriteDict(mem, fpc, ovidx);
+    if (outputflag & WRITE_DICT) WriteVocabulary(mem, fpc, ovidx);
     if (outputflag & WRITE_EXTERN)
     {
         SetExtern(ovidx, minaddr, maxaddr);
