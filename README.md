@@ -1,10 +1,12 @@
 # Starflight-Reverse
 
-Reversed engineered game Starflight (1986)
+Reverse engineered game Starflight (1986)
+
+![Starflight 1 for the PC](images/starflight-game.gif)
 
 ## What is Starflight? ##
 
-Starflight developed by Binary Systems was one of the best exploration and role playing games in the 90s. It influenced a whole game genre.
+Starflight developed by Binary Systems was one of the best exploration and role playing games in the 80s. It influenced a whole game genre.
 
 To find out more about the game check the following links:
 
@@ -15,6 +17,7 @@ To find out more about the game check the following links:
 [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
 
 [Starflight ressource page](http://starflt.com)
+
 
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
@@ -29,7 +32,7 @@ Just put the content of the original Starflight folders into the folders `starfl
 
 ## Translation ##
 
-To understand what the program does take a look at the following table. It take the bytecode as input and transforms it into C.
+To understand what the program does take a look at the following table. It takes the bytecode as input and transforms it into C.
 
 Forth code:
 ```FORTH
@@ -72,7 +75,7 @@ Transformation:
 | 0x1660   | ELSE        |`  } else {`|
 | 0x000b   |             ||
 | 0x1bdc   | " MT STK"   |`    PRINT("MT STK", 6);`|
-| 0x6      |             ||
+| 0x06     |             ||
 | 0x4d     | 'M'         ||
 | 0x54     | 'T'         ||
 | 0x20     | ' '         ||
