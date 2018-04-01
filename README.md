@@ -21,25 +21,80 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-As much fun as playing this truely amazing game is reverse engineering it. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can debug with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason for this is, that Starflight was written in FORTH, a language which I barely knew about.
+As much fun as playing this truely amazing game is reverse engineering it. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason for this is, that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language which I barely knew about.
 
 When you dissect the executable it reveals some fantastic internals
- * The x86-assembly code is less than 5% of the code
- * More than 90% of the code are actually two-byte pointers, which I call Bytecode here.
- * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code and enables us to reverse engineer a high portion of the original source code
+ * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
+ * The x86-assembly code consumes less than 5% of the size of the exectuable
+ * More than 90% of the executable are actually two-byte pointers.
+ * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code and enable us to reverse engineer a high portion of the original source code
+ * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 2/3 of the CPU cycles just by jumping around in the code.
  * The Forth interpreter (not compiler) is still part of the executable and can be enabled
  * The executable makes heavily use of code overlays, which makes the decoding much more complicated
 
 Take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
-The disassember transpiles the FORTH code into C-style code, because more people are familiar with this style. Most of the transpiled code compiles.
 
 ## Usage ##
 
 Just put the content of the original Starflight folders into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` `starflt2-out`. The generated output is part of this repository.
 
+## The main building block ##
+
+Forth is basically a stack machine and uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading).
+You can understand the structure of the game code when you just analyze this piece of code, which is acually the equivalent of the command '+'.
+
+```Asm
+0x0f74: pop    ax
+0x0f75: pop    bx
+0x0f76: add    ax,bx
+0x0f78: push   ax
+0x0f79: lodsw
+0x0f7a: mov    bx,ax
+0x0f7c: jmp    word ptr [bx]
+```
+
+There are around a hundred of those code blocks scattered in the executable. To understand these code blocks lets look at the equivalent in C.
+
+```C
+
+void Call(uint16_t word_adress)
+{
+    // the first two byte of the word's address contain 
+    // the address of the corresponding code, which must be executed for this word 
+    uint16_t code_address = Read16(word_address);
+
+    switch(code_address)
+    {
+        .
+        .
+        .
+        case 0x0f74: // word '+'
+            Push16(Pop16() + Pop16());
+            break;
+        .
+        .
+        .
+    }
+}
+
+void Run()
+{
+    uint16_t instruction_pointer = start_of_program_pointer;
+    while(1)
+    {
+        uint16_t word_address = Read16(instruction_pointer);
+        instruction_pointer += 2;
+        Call(word_address);
+    }
+}
+
+```
+
+This is a space efficient encoding, but speedwise it is a catastrophe. 
+
 ## Translation ##
 
-To understand what the program does take a look at the following table. It takes the bytecode as input and transforms it into C.
+The disassember transpiles the FORTH code into C-style code.. Most of the transpiled code compiles. To understand what the program does take a look at the following table. It takes the "bytecode" as input and transforms it into C.
 
 Forth code:
 ```FORTH
