@@ -24,7 +24,7 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 As much fun as playing this truely amazing game is reverse engineering it. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason for this is, that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language which I barely knew about.
 
 When you dissect the executable it reveals some fantastic internals
- * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation)
+ * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation). The compiled code keeps this structure.
  * The x86-assembly code consumes less than 5% of the size of the exectuable
  * More than 90% of the executable are actually two-byte pointers.
  * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code and enable us to reverse engineer a high portion of the original source code
@@ -53,7 +53,7 @@ You can understand the structure of the game code when you just analyze this pie
 0x0f7c: jmp    word ptr [bx]
 ```
 
-There are around a hundred of those code blocks scattered in the executable. To understand these code blocks lets look at the equivalent in C.
+There are around a hundred of those code blocks scattered in the executable, surrounded by seemingly unreadable data. To understand these code blocks lets look at the equivalent in C.
 
 ```C
 
