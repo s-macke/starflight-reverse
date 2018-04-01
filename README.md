@@ -1,12 +1,10 @@
-# Starflight-Reverse
-
-Reverse engineered game Starflight (1986)
-
-![Starflight 1 for the PC](images/starflight-game.gif)
+# Starflight-Reverse #
 
 ## What is Starflight? ##
 
-Starflight developed by Binary Systems was one of the best exploration and role playing games in the 80s. It influenced a whole game genre.
+![Starflight 1 for the PC](images/starflight-game.gif)
+
+Starflight developed by Binary Systems was one of the best exploration and role playing games of the 80s. It influenced a whole game genre.
 
 To find out more about the game check the following links:
 
@@ -23,7 +21,16 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-This project is a fun project trying to reverse engineer the old code. Starflight was written in FORTH which enables us to extract most of the original source code. Take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
+As much fun as playing this truely amazing game is reverse engineering it. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can debug with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason for this is, that Starflight was written in FORTH, a language which I barely knew about.
+
+When you dissect the executable it reveals some fantastic internals
+ * The x86-assembly code is less than 5% of the code
+ * More than 90% of the code are actually two-byte pointers, which I call Bytecode here.
+ * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code and enables us to reverse engineer a high portion of the original source code
+ * The Forth interpreter (not compiler) is still part of the executable and can be enabled
+ * The executable makes heavily use of code overlays, which makes the decoding much more complicated
+
+Take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
 The disassember transpiles the FORTH code into C-style code, because more people are familiar with this style. Most of the transpiled code compiles.
 
 ## Usage ##
