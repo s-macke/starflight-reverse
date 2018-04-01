@@ -21,18 +21,18 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-As much fun as playing this truely amazing game is reverse engineering it. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason for this is, that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language which I barely knew about.
+As much as playing this truly amazing game is fun, reverse engineering this game is also fun. Expect the unexpected. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
 
 When you dissect the executable it reveals some fantastic internals
  * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation). The compiled code keeps this structure.
  * The x86-assembly code consumes less than 5% of the size of the exectuable
  * More than 90% of the executable are actually two-byte pointers.
- * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code and enable us to reverse engineer a high portion of the original source code
- * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 2/3 of the CPU cycles just by jumping around in the code.
+ * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code, but encrypted. This enables us to reverse engineer a high portion of the original source code.
  * The Forth interpreter (not compiler) is still part of the executable and can be enabled
+ * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 50% of the CPU cycles just by jumping around in the code.
  * The executable makes heavily use of code overlays, which makes the decoding much more complicated
 
-Take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
+For more information take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
 
 ## Usage ##
 
@@ -53,7 +53,7 @@ You can understand the structure of the game code when you just analyze this pie
 0x0f7c: jmp    word ptr [bx]
 ```
 
-There are around a hundred of those code blocks scattered in the executable, surrounded by seemingly unreadable data. To understand these code blocks lets look at the equivalent in C.
+There are around a hundred of those code blocks scattered in the executable, surrounded by seemingly incomprehensible data. To understand these code blocks lets look at the equivalent in C.
 
 ```C
 
@@ -89,8 +89,7 @@ void Run()
 }
 
 ```
-
-This is a space efficient encoding, but speedwise it is a catastrophe. 
+The instruction pointer (the si register above) points to the address of the Forth "word" in memory. The word contains the address to the assemler code of the word and optional data. This is a space efficient encoding, but speedwise it is a catastrophe.
 
 ## Translation ##
 
