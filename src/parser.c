@@ -189,7 +189,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr)
 
 // -----------------------------------------
 
-int GetWordByAddrLength(int addr, WORD *e, int ovidx)
+int GetWordInstructionLength(int addr, WORD *e, int ovidx)
 {
     char *s = GetWordName(e);
 
@@ -213,32 +213,11 @@ int GetWordByAddrLength(int addr, WORD *e, int ovidx)
     {
         return 6;
     }
-    if (e->codep == CODEPOINTER) // pointer to variable or table
-    {
-        if (e->ovidx == -1) e->isextern = 1;
-        return 2;
-    }
-    if (e->codep == CODECONSTANT)
-    {
-        if (e->ovidx == -1) e->isextern = 1;
-        return 2;
-    }
-    if (e->codep == CODEDI) // User data
-    {
-        if (e->ovidx == -1) e->isextern = 1;
-        return 2;
-    }
-    if (e->codep == CODERULE)
-    {
-        if (e->ovidx == -1) e->isextern = 1;
-        return 2;
-    }
-    if (e->codep == CODEEXEC)
-    {
-        int par = Read16(Read16(e->parp)+REGDI);
-        GetWordNameByAddr(par, ovidx);
-        return 2;
-    }
+    return 2;
+}
+
+int SetWordExtern(int addr, WORD *e, int ovidx)
+{
     if (e->ovidx == -1) e->isextern = 1;
     if (e->codep > (0x100+FILESTAR0SIZE)) e->isextern = 1;
     return 2;
@@ -376,7 +355,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
         char ifthen[STRINGLEN*2];
         char func[STRINGLEN*2];
 
-        GetWordByAddrLength(rulep + 1, e, e->ovidx);
+        SetWordExtern(rulep + 1, e, e->ovidx);
         GetMacro(e->parp, e, d, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n    %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n    %s  }\n}\n\n", func);
@@ -403,7 +382,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
                 fprintf(stderr, "Error: No invalid dict entry allowed here");
                 exit(1);
             }
-            GetWordByAddrLength(p, e, e->ovidx);
+            SetWordExtern(p, e, e->ovidx);
             GetMacro(p, e, d, func, e->ovidx);
             strcat(try, "  ");
             strcat(try, func);
@@ -438,7 +417,7 @@ void ParseCaseFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
         pline[par + i*4 + 7].done = 1;
 
         char ret[STRINGLEN];
-        GetWordByAddrLength(par + i*4 + 6, e, ovidx);
+        SetWordExtern(par + i*4 + 6, e, ovidx);
         GetMacro(par + i*4 + 6, e, d, ret, ovidx);
         sprintf(temp, "  case %i:\n    %s    break;\n", Read16(par + i*4 + 4), ret);
         pline[par + i*4 + 4].done = 1;
@@ -451,26 +430,28 @@ void ParseCaseFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
     pline[par + 3].done = 1;
 
     char ret[STRINGLEN];
-    GetWordByAddrLength(par + 2, e, ovidx);
+    SetWordExtern(par + 2, e, ovidx);
     GetMacro(par + 2, e, d, ret, ovidx);
     sprintf(temp, "  default:\n    %s    break;\n", ret);
     strcat(pline[ofs].str, temp);
     strcat(pline[ofs].str, "\n  }\n}\n");
 }
 
-void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int ovidx, Variables vars)
+void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx, Variables vars)
 {
-    if (d == NULL) {
-        d = FindClosestFunction(ofs, ovidx);
+    if (d == NULL)
+    {
+        d = FindClosestFunction(offset, ovidx);
         AddUnnamedVariable(&vars, d, -1);
     }
 
-    if (d->codep != CODECALL) {
-        fprintf(stderr, "Error: not a forth function call");
+    if (d->codep != CODECALL)
+    {
+        fprintf(stderr, "Error: not a Forth function call");
         exit(1);
     }
 
-    if (ofs == d->parp) // is head of function
+    if (offset == d->parp) // is head of function
     {
         AddUnnamedVariable(&vars, d, -2);
         AddUnnamedVariable(&vars, d, -3);
@@ -478,99 +459,107 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int ovidx, Va
 
     while(1)
     {
-        if (ofs < minaddr) return;
-        if (ofs > maxaddr) return;
-        if (pline[ofs].done) return;
+        if (offset < minaddr) return;
+        if (offset > maxaddr) return;
+        if (pline[offset].done) return;
 
-        pline[ofs].word = Read16(ofs)+2;
-        int par = Read16(ofs)+2;
-        pline[ofs+0].done = 1;
-        pline[ofs+1].done = 1;
+        pline[offset].word = Read16(offset)+2;
+        int par = Read16(offset)+2;
+        pline[offset+0].done = 1;
+        pline[offset+1].done = 1;
         WORD *e = GetWordByAddr(par, ovidx);
+
         if (e == NULL)
         {
-            pline[ofs].str = malloc(STRINGLEN);
-            sprintf(pline[ofs].str, "UNK_0x%04x(); // Unknown overlay function\n", par);
-            ofs += 2;
+            pline[offset].str = malloc(STRINGLEN);
+            sprintf(pline[offset].str, "UNK_0x%04x(); // Unknown overlay function\n", par);
+            offset += 2;
             continue;
         }
 
         char *s = GetWordName(e);
 
-        if (ofs < 0x100+FILESTAR0SIZE)
+        if (offset < 0x100+FILESTAR0SIZE)
         if (ovidx != -1)
         if (par >= maxaddr)
         {
             e->isentry = 1;
-            pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "%s(); // Overlay %s\n", Forth2CString(s), overlays[ovidx].name);
-            ofs += 2;
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "%s(); // Overlay %s\n", Forth2CString(s), overlays[ovidx].name);
+            offset += 2;
             continue;
+        }
+
+        // add new word which is executed to the list
+        if (e->codep == CODEEXEC)
+        {
+            int par = Read16(Read16(e->parp)+REGDI);
+            GetWordNameByAddr(par, ovidx);
         }
 
         if (strcmp(s, "MODULE") == 0)
         {
-            if (Read16(Read16(ofs-4)) == CODELIT)
+            if (Read16(Read16(offset-4)) == CODELIT)
             {
-                char *s = GetWordNameByAddr(Read16(ofs-2), ovidx);
+                char *s = GetWordNameByAddr(Read16(offset-2), ovidx);
             }
-            pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "MODULE(); // MODULE\n");
-            ofs += 2;
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "MODULE(); // MODULE\n");
+            offset += 2;
         } else
         if (strcmp(s, "DOTASKS") == 0)
         {
-            int codep1 = Read16(Read16(ofs-4));
-            int codep2 = Read16(Read16(ofs-8));
-            int codep3 = Read16(Read16(ofs-12));
+            int codep1 = Read16(Read16(offset-4));
+            int codep2 = Read16(Read16(offset-8));
+            int codep3 = Read16(Read16(offset-12));
             if ((codep1 == CODELIT) && (codep2 == CODELIT) && (codep3 == CODELIT))
             {
-                int c1 = Read16(ofs-2);
-                int c2 = Read16(ofs-6);
-                int c3 = Read16(ofs-10);
+                int c1 = Read16(offset-2);
+                int c2 = Read16(offset-6);
+                int c3 = Read16(offset-10);
                 char *s1 = NULL, *s2 = NULL, *s3 = NULL;
-                if (c1 != 0) s1 = GetWordNameByAddr(Read16(ofs-2), ovidx);
-                if (c2 != 0) s2 = GetWordNameByAddr(Read16(ofs-6), ovidx);
-                if (c3 != 0) s3 = GetWordNameByAddr(Read16(ofs-10), ovidx);
-                pline[ofs].str = malloc(STRINGLEN);
-                snprintf(pline[ofs].str, STRINGLEN, "DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
+                if (c1 != 0) s1 = GetWordNameByAddr(Read16(offset-2), ovidx);
+                if (c2 != 0) s2 = GetWordNameByAddr(Read16(offset-6), ovidx);
+                if (c3 != 0) s3 = GetWordNameByAddr(Read16(offset-10), ovidx);
+                pline[offset].str = malloc(STRINGLEN);
+                snprintf(pline[offset].str, STRINGLEN, "DOTASKS(%s, %s, %s);\n", Forth2CString(s1), Forth2CString(s2), Forth2CString(s3));
             } else
             if ((codep1 == CODELIT) && (codep2 != CODELIT) && (codep3 != CODELIT)) // for DOTASKS in SHIPBUTTONS
             {
                 // TODO: a number is missing here: Look at SHIPBUTTONS.c
-                int c1 = Read16(ofs-2);
-                int c3 = Read16(ofs-8);
-                int c4 = Read16(ofs-12);
-                int c5 = Read16(ofs-16);
+                int c1 = Read16(offset-2);
+                int c3 = Read16(offset-8);
+                int c4 = Read16(offset-12);
+                int c5 = Read16(offset-16);
 
                 char* s1 = GetWordNameByAddr(c1, ovidx);
                 char* s3 = GetWordNameByAddr(c3, ovidx);
                 char* s4 = GetWordNameByAddr(c4, ovidx);
                 char* s5 = GetWordNameByAddr(c5, ovidx);
-                pline[ofs].str = malloc(STRINGLEN);
-                snprintf(pline[ofs].str, STRINGLEN, "DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
+                pline[offset].str = malloc(STRINGLEN);
+                snprintf(pline[offset].str, STRINGLEN, "DOTASKS2(%s, %s, %s, %s);\n", Forth2CString(s1), Forth2CString(s3), Forth2CString(s4), Forth2CString(s5));
             } else
             {
                 fprintf(stderr, "Error: DOTASKS without specifying tasks in ov:%i\n", ovidx);
                 exit(1);
             }
-            ofs += 2;
+            offset += 2;
         } else
         if (strcmp(s, "(;CODE)") == 0) // maybe inlined code
         {
-            pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "CODE(); // %s inlined assembler code\n", s);
-            ofs += 2;
-            DisasmRange(ofs, 0x100000, ovidx, minaddr, maxaddr);
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "CODE(); // %s inlined assembler code\n", s);
+            offset += 2;
+            DisasmRange(offset, 0x100000, ovidx, minaddr, maxaddr);
             return;
         } else
         if (strcmp(s, "COMPILE") == 0) // maybe inlined code
         {
-            pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "%s(0x%04x); // compile?\n", s, Read16(ofs+2));
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            ofs += 4;
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "%s(0x%04x); // compile?\n", s, Read16(offset+2));
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            offset += 4;
             //return;
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
@@ -593,50 +582,50 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int ovidx, Va
                 fprintf(stderr, "Error: Cannot find overlay\n");
                 exit(1);
             }
-            pline[ofs].str = malloc(STRINGLEN);
-            snprintf(pline[ofs].str, STRINGLEN, "LoadOverlay(%s); // %s\n", Forth2CString(s), s);
-            ofs += 2;
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "LoadOverlay(%s); // %s\n", Forth2CString(s), s);
+            offset += 2;
         } else
         if (strcmp(s, "EXIT") == 0)
         {
-            pline[ofs].flow = FUNCEND;
-            if (pline[ofs+2].labelid != 0)
+            pline[offset].flow = FUNCEND;
+            if (pline[offset+2].labelid != 0)
             {
-                pline[ofs].flow = EXIT;
+                pline[offset].flow = EXIT;
             }
-            ofs += 2;
+            offset += 2;
             return;
         } else
         if (strcmp(s, "BRANCH") == 0)
         {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            int addr = (ofs + 2 + par)&0xFFFF;
+            par = Read16(offset + 2);
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            int addr = (offset + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                pline[ofs].gotoaddr = -1;
-                pline[ofs].flow = EXIT;
+                pline[offset].gotoaddr = -1;
+                pline[offset].flow = EXIT;
             } else
             {
                 if (pline[addr].labelid == 0)
                 {
                     pline[addr].labelid = ++d->nlabel;
                 }
-                pline[ofs].gotoaddr = addr;
-                pline[ofs].flow = GOTO;
+                pline[offset].gotoaddr = addr;
+                pline[offset].flow = GOTO;
             }
             ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
 
-            if (!pline[ofs+4].done && !pline[ofs+4].labelid)
+            if (!pline[offset+4].done && !pline[offset+4].labelid)
             {
-                WORD *next = GetWordByAddr(Read16(ofs+4)+2, ovidx);
+                WORD *next = GetWordByAddr(Read16(offset+4)+2, ovidx);
                 if (strcmp(next->r, "EXIT") == 0)
                 {
-                    pline[ofs+4].done = 1;
-                    pline[ofs+5].done = 1;
-                    pline[ofs+4].word = Read16(ofs+4)+2;
-                    pline[ofs+4].flow = FUNCEND;
+                    pline[offset+4].done = 1;
+                    pline[offset+5].done = 1;
+                    pline[offset+4].word = Read16(offset+4)+2;
+                    pline[offset+4].flow = FUNCEND;
                 } else
                 {
                     fprintf(stderr, "Error: unexpected continuance of function after branch");
@@ -644,128 +633,127 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int ovidx, Va
                 }
             }
             return;
-            ofs += 4;
+            offset += 4;
         } else
         if (strcmp(s, "0BRANCH") == 0)
         {
-            par = Read16(ofs+2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            int addr = (ofs + 2 + par)&0xFFFF;
+            par = Read16(offset+2);
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            int addr = (offset + 2 + par)&0xFFFF;
             if (Read16(Read16(addr)) == CODEEXIT)
             {
-                pline[ofs].gotoaddr = -1;
-                pline[ofs].flow = IFEXIT;
+                pline[offset].gotoaddr = -1;
+                pline[offset].flow = IFEXIT;
             } else
             {
                 if (pline[addr].labelid == 0)
                 {
                     pline[addr].labelid = ++d->nlabel;
                 }
-                pline[ofs].gotoaddr = addr;
-                pline[ofs].flow = IFGOTO;
+                pline[offset].gotoaddr = addr;
+                pline[offset].flow = IFGOTO;
             }
-            ParsePartFunction(ofs+4, minaddr, maxaddr, d, ovidx, vars);
+            ParsePartFunction(offset+4, minaddr, maxaddr, d, ovidx, vars);
             ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
-            ofs += 4;
+            offset += 4;
         } else
         if (strcmp(s, ">R") == 0) // doesn't work for function (EXPECT)
         {
             AddVariable(&vars, d);
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         if (strcmp(s, "R>") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].istrivialword = TRUE;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].istrivialword = TRUE;
             RemoveVariable(&vars);
-            ofs += 2;
+            offset += 2;
         } else
         if (strcmp(s, "R@") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         if (strcmp(s, "LEAVE") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         if (strcmp(s, "(DO)") == 0)
         {
             AddLoopVariables(&vars, d);
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].flow = DO;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].flow = DO;
+            offset += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
         {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            int addr = (ofs + par)&0xFFFF;
+            par = Read16(offset + 2);
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            int addr = (offset + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
-            pline[addr].loopaddr = ofs;
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[addr].loopaddr = offset;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[ofs].flow = LOOP;
-            ofs += 4;
+            pline[offset].flow = LOOP;
+            offset += 4;
         } else
         if (strcmp(s, "(LOOP)") == 0)
         {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            int addr = (ofs + par)&0xFFFF;
+            par = Read16(offset + 2);
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            int addr = (offset + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
-            pline[addr].loopaddr = ofs;
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[addr].loopaddr = offset;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[ofs].flow = LOOP;
-            ofs += 4;
+            pline[offset].flow = LOOP;
+            offset += 4;
         } else
         if (strcmp(s, "(+LOOP)") == 0)
         {
-            par = Read16(ofs + 2);
-            pline[ofs+2].done = 1;
-            pline[ofs+3].done = 1;
-            int addr = (ofs + par)&0xFFFF;
+            par = Read16(offset + 2);
+            pline[offset+2].done = 1;
+            pline[offset+3].done = 1;
+            int addr = (offset + par)&0xFFFF;
             if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
-            pline[addr].loopaddr = ofs;
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
+            pline[addr].loopaddr = offset;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[ofs].flow = LOOP;
-            ofs += 4;
+            pline[offset].flow = LOOP;
+            offset += 4;
         } else
         if (strcmp(s, "I") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-1];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-1];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         if (strcmp(s, "I'") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-2];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-2];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         if (strcmp(s, "J") == 0)
         {
-            pline[ofs].variableidx = vars.stack[vars.nstack-3];
-            pline[ofs].istrivialword = TRUE;
-            ofs += 2;
+            pline[offset].variableidx = vars.stack[vars.nstack-3];
+            pline[offset].istrivialword = TRUE;
+            offset += 2;
         } else
         {
-            pline[ofs].istrivialword = TRUE;
-            pline[ofs].ovidx = ovidx;
-            int dofs = GetWordByAddrLength(ofs, e, ovidx);
-            int i;
-            for(i=0; i<dofs; i++) pline[ofs+i].done = 1;
-            ofs += dofs;
+            pline[offset].istrivialword = TRUE;
+            pline[offset].ovidx = ovidx;
+            int doffset = GetWordInstructionLength(offset, e, ovidx);
+            for(int i=0; i<doffset; i++) pline[offset+i].done = 1;
+            offset += doffset;
         }
     }
 }
@@ -803,18 +791,11 @@ void SetStructDone(int ovidx)
         if (vocabulary[i].ovidx != ovidx) continue;
         if (vocabulary[i].codep == CODELOADDATA)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
-            pline[parp+2].done = TRUE;
-            pline[parp+3].done = TRUE;
-            pline[parp+4].done = TRUE;
-            pline[parp+5].done = TRUE;
+            for(int i=0; i<=5; i++) pline[parp+i].done = 1;
         }
         if (vocabulary[i].codep == CODEIFIELD)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
-            pline[parp+2].done = TRUE;
+            for(int i=0; i<=2; i++) pline[parp+i].done = 1;
         }
         if (vocabulary[i].codep == CODECONSTANT)
         {
@@ -837,21 +818,11 @@ void SetStructDone(int ovidx)
         }
         if (vocabulary[i].codep == CODEPUSH2WORDS)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
-            pline[parp+2].done = TRUE;
-            pline[parp+3].done = TRUE;
+            for(int i=0; i<=3; i++) pline[parp+i].done = 1;
         }
         if (vocabulary[i].codep == CODE2DARRAY)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
-            pline[parp+2].done = TRUE;
-            pline[parp+3].done = TRUE;
-            pline[parp+4].done = TRUE;
-            pline[parp+5].done = TRUE;
-            pline[parp+6].done = TRUE;
-            pline[parp+7].done = TRUE;
+            for(int i=0; i<=7; i++) pline[parp+i].done = 1;
         }
     }
 }
