@@ -9,13 +9,9 @@ Starflight developed by Binary Systems was one of the best exploration and role 
 To find out more about the game check the following links:
 
 [Wikipedia](https://de.wikipedia.org/wiki/Starflight)
-
 [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
-
 [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
-
 [Starflight ressource page](http://starflt.com)
-
 
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
@@ -26,7 +22,7 @@ As much as playing this truly amazing game is fun, reverse engineering this game
 When you dissect the executable it reveals some fantastic internals
  * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation). The compiled code keeps this structure.
  * The x86-assembly code consumes less than 5% of the size of the exectuable
- * More than 90% of the executable are actually two-byte pointers.
+ * More than 90% of the executable are actually 16-Bit pointers.
  * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code, but encrypted. This enables us to reverse engineer a high portion of the original source code.
  * The Forth interpreter (not compiler) is still part of the executable and can be enabled
  * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 50% of the CPU cycles just by jumping around in the code.
@@ -36,12 +32,12 @@ For more information take a look at the [technical articles](https://github.com/
 
 ## Usage ##
 
-Just put the content of the original Starflight folders into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` `starflt2-out`. The generated output is part of this repository.
+Put the files of the original Starflight game into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` and `starflt2-out`. The generated output is part of this repository.
 
 ## The main building block ##
 
 Forth is basically a stack machine and uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading).
-You can understand the structure of the game code when you just analyze this piece of code, which is acually the equivalent of the command '+'.
+You can understand the structure of the game code when you analyze this piece of code, which is the equivalent of the Forth word '+'.
 
 ```Asm
 0x0f74: pop    ax
@@ -56,7 +52,8 @@ You can understand the structure of the game code when you just analyze this pie
 There are around a hundred of those code blocks scattered in the executable, surrounded by seemingly incomprehensible data. To understand these code blocks lets look at the equivalent in C.
 
 ```C
-
+uint16_t instruction_pointer = start_of_program_pointer;
+    
 void Call(uint16_t word_adress)
 {
     // the first two byte of the word's address contain 
@@ -79,7 +76,6 @@ void Call(uint16_t word_adress)
 
 void Run()
 {
-    uint16_t instruction_pointer = start_of_program_pointer;
     while(1)
     {
         uint16_t word_address = Read16(instruction_pointer);
@@ -89,7 +85,7 @@ void Run()
 }
 
 ```
-The instruction pointer (the si register above) points to the address of the Forth "word" in memory. The word contains the address to the assemler code of the word and optional data. This is a space efficient encoding, but speedwise it is a catastrophe.
+The instruction pointer variable points to the address of the Forth "word" in memory. The word contains the address to the assemler code of the word and optional data. This is a space efficient encoding, but speedwise it is a catastrophe.
 
 ## Translation ##
 
