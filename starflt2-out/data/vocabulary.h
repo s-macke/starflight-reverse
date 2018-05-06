@@ -2801,6 +2801,8 @@ WORD vocabulary[]=
   { .ov =  8, .code = 0x7420, .word = 0xf42b, .name = "UNK_0xf42b" }, 
   { .ov =  8, .code = 0x1d29, .word = 0xf430, .name = "UNK_0xf430" }, 
   { .ov =  8, .code = 0x1d29, .word = 0xf434, .name = "UNK_0xf434" }, 
+  { .ov =  8, .code = 0x224c, .word = 0xf438, .name = "UNK_0xf438" }, 
+  { .ov =  8, .code = 0x224c, .word = 0xf464, .name = "UNK_0xf464" }, 
   { .ov =  8, .code = 0x224c, .word = 0xf4b2, .name = "UNK_0xf4b2" }, 
   { .ov =  8, .code = 0x224c, .word = 0xf4e6, .name = ">ORBITS" }, 
   { .ov =  8, .code = 0x224c, .word = 0xf506, .name = "UNK_0xf506" }, 
