@@ -888,7 +888,8 @@
 //      UNK_0x5625  codep:0x1d29 parp:0x5625 size:0x0002 C-string:'UNK_0x5625'
 //      UNK_0x5629  codep:0x1d29 parp:0x5629 size:0x0002 C-string:'UNK_0x5629'
 //            CXSP  codep:0x1d29 parp:0x5634 size:0x0002 C-string:'CXSP'
-//      UNK_0x5638  codep:0x1d29 parp:0x5638 size:0x0006 C-string:'UNK_0x5638'
+//      UNK_0x5638  codep:0x1d29 parp:0x5638 size:0x0002 C-string:'UNK_0x5638'
+//      UNK_0x563c  codep:0x1d29 parp:0x563c size:0x0002 C-string:'UNK_0x563c'
 //             EDL  codep:0x1d29 parp:0x5646 size:0x0002 C-string:'EDL'
 //         A-POSTU  codep:0x1d29 parp:0x5654 size:0x0002 C-string:'A_dash_POSTU'
 //      UNK_0x5658  codep:0x1d29 parp:0x5658 size:0x0002 C-string:'UNK_0x5658'
@@ -896,7 +897,8 @@
 //      UNK_0x566a  codep:0x1d29 parp:0x566a size:0x0002 C-string:'UNK_0x566a'
 //      UNK_0x566e  codep:0x1d29 parp:0x566e size:0x0002 C-string:'UNK_0x566e'
 //      UNK_0x5672  codep:0x1d29 parp:0x5672 size:0x0002 C-string:'UNK_0x5672'
-//      UNK_0x5676  codep:0x1d29 parp:0x5676 size:0x0006 C-string:'UNK_0x5676'
+//      UNK_0x5676  codep:0x1d29 parp:0x5676 size:0x0002 C-string:'UNK_0x5676'
+//      UNK_0x567a  codep:0x1d29 parp:0x567a size:0x0002 C-string:'UNK_0x567a'
 //         'THROW-  codep:0x1d29 parp:0x5688 size:0x0002 C-string:'_i_THROW_dash_'
 //            'MAP  codep:0x1d29 parp:0x5693 size:0x0002 C-string:'_i_MAP'
 //         'TRAVER  codep:0x1d29 parp:0x56a1 size:0x0002 C-string:'_i_TRAVER'
@@ -2724,8 +2726,11 @@ const unsigned short int pp_UNK_0x5629 = 0x5629; // UNK_0x5629 size: 2
 const unsigned short int pp_CXSP = 0x5634; // CXSP size: 2
 // {0x7e, 0x65}
 
-const unsigned short int pp_UNK_0x5638 = 0x5638; // UNK_0x5638 size: 6
-// {0xd1, 0x65, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_UNK_0x5638 = 0x5638; // UNK_0x5638 size: 2
+// {0xd1, 0x65}
+
+const unsigned short int pp_UNK_0x563c = 0x563c; // UNK_0x563c size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_EDL = 0x5646; // EDL size: 2
 // {0x00, 0x74}
@@ -2748,8 +2753,11 @@ const unsigned short int pp_UNK_0x566e = 0x566e; // UNK_0x566e size: 2
 const unsigned short int pp_UNK_0x5672 = 0x5672; // UNK_0x5672 size: 2
 // {0xca, 0x93}
 
-const unsigned short int pp_UNK_0x5676 = 0x5676; // UNK_0x5676 size: 6
-// {0x08, 0x94, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp_UNK_0x5676 = 0x5676; // UNK_0x5676 size: 2
+// {0x08, 0x94}
+
+const unsigned short int pp_UNK_0x567a = 0x567a; // UNK_0x567a size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp__i_THROW_dash_ = 0x5688; // 'THROW- size: 2
 // {0x6e, 0x3a}
@@ -14655,7 +14663,13 @@ IFieldType UNK_0x54fc = {IDX, 0x54, 0x87};
 // ================================================
 // 0x5636: WORD 'UNK_0x5638' codep=0x1d29 parp=0x5638
 // ================================================
-// 0x5638: db 0xd1 0x65 0x29 0x1d 0x3a 0x20 ' e) : '
+// 0x5638: db 0xd1 0x65 ' e'
+
+// ================================================
+// 0x563a: WORD 'UNK_0x563c' codep=0x1d29 parp=0x563c
+// ================================================
+// orphan
+// 0x563c: db 0x3a 0x20 ': '
 
 // ================================================
 // 0x563e: WORD 'EDL' codep=0x1d29 parp=0x5646
@@ -14695,7 +14709,13 @@ IFieldType UNK_0x54fc = {IDX, 0x54, 0x87};
 // ================================================
 // 0x5674: WORD 'UNK_0x5676' codep=0x1d29 parp=0x5676
 // ================================================
-// 0x5676: db 0x08 0x94 0x29 0x1d 0x3a 0x20 '  ) : '
+// 0x5676: db 0x08 0x94 '  '
+
+// ================================================
+// 0x5678: WORD 'UNK_0x567a' codep=0x1d29 parp=0x567a
+// ================================================
+// orphan
+// 0x567a: db 0x3a 0x20 ': '
 
 // ================================================
 // 0x567c: WORD ''THROW-' codep=0x1d29 parp=0x5688
@@ -15405,16 +15425,19 @@ IFieldType UNK_0x5bea = {IDX, 0x5b, 0x84};
 // ================================================
 // 0x5c82: WORD 'UNK_0x5c84' codep=0x1d29 parp=0x5c84
 // ================================================
+// orphan
 // 0x5c84: db 0x4a 0x00 'J '
 
 // ================================================
 // 0x5c86: WORD 'UNK_0x5c88' codep=0x1d29 parp=0x5c88
 // ================================================
+// orphan
 // 0x5c88: db 0x00 0x00 '  '
 
 // ================================================
 // 0x5c8a: WORD 'UNK_0x5c8c' codep=0x1d29 parp=0x5c8c
 // ================================================
+// orphan
 // 0x5c8c: db 0x4b 0x00 'K '
 
 // ================================================

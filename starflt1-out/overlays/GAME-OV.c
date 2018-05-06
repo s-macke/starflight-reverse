@@ -34,7 +34,8 @@
 //      UNK_0xdf86  codep:0x1d29 parp:0xdf86 size:0x0002 C-string:'UNK_0xdf86'
 //      UNK_0xdf8a  codep:0x1d29 parp:0xdf8a size:0x0002 C-string:'UNK_0xdf8a'
 //      UNK_0xdf8e  codep:0x1d29 parp:0xdf8e size:0x0002 C-string:'UNK_0xdf8e'
-//           $ADDR  codep:0x1d29 parp:0xdf92 size:0x0006 C-string:'_do_ADDR'
+//           $ADDR  codep:0x1d29 parp:0xdf92 size:0x0002 C-string:'_do_ADDR'
+//      UNK_0xdf96  codep:0x1d29 parp:0xdf96 size:0x0002 C-string:'UNK_0xdf96'
 //      UNK_0xdf9a  codep:0x1d29 parp:0xdf9a size:0x0002 C-string:'UNK_0xdf9a'
 //        SUB$ADDR  codep:0x1d29 parp:0xdf9e size:0x0002 C-string:'SUB_do_ADDR'
 //      UNK_0xdfa2  codep:0x1d29 parp:0xdfa2 size:0x0002 C-string:'UNK_0xdfa2'
@@ -344,8 +345,11 @@ const unsigned short int pp_UNK_0xdf8a = 0xdf8a; // UNK_0xdf8a size: 2
 const unsigned short int pp_UNK_0xdf8e = 0xdf8e; // UNK_0xdf8e size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp__do_ADDR = 0xdf92; // $ADDR size: 6
-// {0x3a, 0x20, 0x29, 0x1d, 0x3a, 0x20}
+const unsigned short int pp__do_ADDR = 0xdf92; // $ADDR size: 2
+// {0x3a, 0x20}
+
+const unsigned short int pp_UNK_0xdf96 = 0xdf96; // UNK_0xdf96 size: 2
+// {0x3a, 0x20}
 
 const unsigned short int pp_UNK_0xdf9a = 0xdf9a; // UNK_0xdf9a size: 2
 // {0x3a, 0x20}
@@ -513,7 +517,13 @@ const unsigned short int cc_UNK_0xdfae = 0xdfae; // UNK_0xdfae
 // ================================================
 // 0xdf90: WORD '$ADDR' codep=0x1d29 parp=0xdf92
 // ================================================
-// 0xdf92: db 0x3a 0x20 0x29 0x1d 0x3a 0x20 ': ) : '
+// 0xdf92: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xdf94: WORD 'UNK_0xdf96' codep=0x1d29 parp=0xdf96
+// ================================================
+// orphan
+// 0xdf96: db 0x3a 0x20 ': '
 
 // ================================================
 // 0xdf98: WORD 'UNK_0xdf9a' codep=0x1d29 parp=0xdf9a
@@ -633,6 +643,7 @@ void SET_dot_COLORS() // SET.COLORS
 // ================================================
 // 0xe070: WORD 'UNK_0xe072' codep=0x224c parp=0xe072 params=1 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe072() // UNK_0xe072
 {
