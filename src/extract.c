@@ -92,13 +92,14 @@ void LoadDir(FILE *fp)
         {
             int pos = ftell(file);
             memset(&de, 0, sizeof(de));
-            fread(de.name, 12, 1, file);
-            fread(&de.fileno, 1, 1, file);
-            fread(&de.start, 2, 1, file);
-            fread(&de.end, 2, 1, file);
-            fread(&de.nblocks, 2, 1, file);
-            fread(&de.blocksize, 1, 1, file);
-            fread(&de.lsize, 1, 1, file);
+            int ret;
+            ret = fread(de.name, 12, 1, file);
+            ret = fread(&de.fileno, 1, 1, file);
+            ret = fread(&de.start, 2, 1, file);
+            ret = fread(&de.end, 2, 1, file);
+            ret = fread(&de.nblocks, 2, 1, file);
+            ret = fread(&de.blocksize, 1, 1, file);
+            ret = fread(&de.lsize, 1, 1, file);
             de.idx = ndir;
             memcpy((void*)&dir[ndir], (void*)&de, sizeof(DIRENTRY));
             ndir++;
@@ -159,7 +160,7 @@ char* Extract(int fileidx, int *size)
     memset(buf, 0, l);
 
     fseek(file, start, SEEK_SET);
-    fread(buf, l, 1, file);
+    int ret = fread(buf, l, 1, file);
     fclose(file);
     if (l == 0) return buf;
 
@@ -199,7 +200,7 @@ char* ExtractRecord(int fileidx, int recordidx)
     }
 
     fseek(file, start, SEEK_SET);
-    fread(record, de->blocksize, 1, file);
+    int ret = fread(record, de->blocksize, 1, file);
     fclose(file);
     return record;
 }
@@ -341,4 +342,3 @@ void ExtractDataFile(const char* filename)
     fprintf(fp, "#endif\n");
     fclose(fp);
 }
-

@@ -33,7 +33,7 @@ WORD* GetWordByAddr(unsigned short addr, int ovidx)
     unsigned short codep = Read16(addr-2);
     if (codep == 0x0) return NULL;
 
-    snprintf(vocabulary[nwords].r, STRINGLEN, "UNK_0x%04x", addr);
+    snprintf(vocabulary[nwords].r, 64, "UNK_0x%04x", addr);
     vocabulary[nwords].codep = codep;
     vocabulary[nwords].parp = addr;
     vocabulary[nwords].addr = addr-2;
@@ -108,9 +108,9 @@ int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
     for(i=0; i<nwords; i++) {
         if ((vocabulary[i].ovidx == ovidx) && (strcmp(GetWordName(&vocabulary[i]), GetWordName(&vocabulary[nwords])) == 0)) {
             fprintf(stderr, "found duplicate:\n", ovidx, vocabulary[i].r, vocabulary[nwords].parp, vocabulary[i].parp);
-            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n", 
+            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n",
             (unsigned char)ovidx, vocabulary[nwords].parp, GetWordName(&vocabulary[nwords]), vocabulary[nwords].r);
-            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n", 
+            fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n",
             (unsigned char)ovidx, vocabulary[i].parp, GetWordName(&vocabulary[i]), vocabulary[i].r);
         }
     }
@@ -245,13 +245,13 @@ void SortVocabulary()
 void VocabularyConsistencyCheck()
 {
     int nunknowns = 0;
-    
+
     for(int i=0; i<nwords; i++)
     {
         if (strncmp(vocabulary[i].r, "UNK_", 4) == 0)
             nunknowns++;
     }
-    printf("Found %i words, %i of the words are unknown", nwords, nunknowns);
+    printf("Found %i words, %i of the words are unknown\n", nwords, nunknowns);
 
     for(int i=0; i<nwords; i++)
     for(int j=i+1; j<nwords; j++)
@@ -268,13 +268,11 @@ void VocabularyConsistencyCheck()
 
         if (strcmp(GetWordName(&vocabulary[i]), GetWordName(&vocabulary[j])) == 0)
         {
-            
-                
+
+
             fprintf(stderr, "Error: Found duplicate word name '%s': ov1=%i ov2=%i \n", GetWordName(&vocabulary[i]), vocabulary[i].ovidx, vocabulary[j].ovidx);
         }
-        
+
     }
 
 }
-
-

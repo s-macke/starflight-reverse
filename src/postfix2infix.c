@@ -154,7 +154,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         }
         word++;
     }
-    
+
     if (e->codep == CODE2LIT) // constant number
     {
         snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
@@ -372,6 +372,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
 void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, FILE *fp, int nspc)
 {
     char *s = GetWordName(e);
+    char temp[STACKSTRINGLEN];
 
     int value = IsPushNumber(addr, e);
     if (value != 0x10000)
@@ -403,7 +404,7 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
     {
-        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "pp_%s", Forth2CString(s), s);
+        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "pp_%s", Forth2CString(s));
         snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s", s);
         stack[stackoffset].precedence = PVARNUMBERFUNC;
         stack[stackoffset].isnumber = 0;
@@ -488,10 +489,12 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
 
         if (stack[stackoffset-1].precedence >= precedence)
         {
-            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s (%s)", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            snprintf(temp, STACKSTRINGLEN, "%s (%s)", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            strncpy(stack[stackoffset].expr, temp, STACKSTRINGLEN);
         } else
         {
-            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s %s", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            snprintf(temp, STACKSTRINGLEN, "%s %s", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            strncpy(stack[stackoffset].expr, temp, STACKSTRINGLEN);
         }
         snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s %s", stack[stackoffset-2].forth, stack[stackoffset-1].forth, s);
         stack[stackoffset].precedence = precedence;
@@ -586,14 +589,16 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
             snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "(%s)", stack[stackoffset-2].expr);
         } else
         {
-            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", stack[stackoffset-2].expr, stack[stackoffset-1].expr);
+          snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s", stack[stackoffset-2].expr);
         }
         if (stack[stackoffset-1].precedence >= PEQUAL)
         {
-            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s==(%s)?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            snprintf(temp, STACKSTRINGLEN, "%s==(%s)?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            strncpy(stack[stackoffset].expr, temp, STACKSTRINGLEN);
         } else
         {
-            snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "%s==%s?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            snprintf(temp, STACKSTRINGLEN, "%s==%s?1:0", stack[stackoffset].expr, stack[stackoffset-1].expr);
+            strncpy(stack[stackoffset].expr, temp, STACKSTRINGLEN);
         }
 
         snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s %s", stack[stackoffset-2].forth, stack[stackoffset-1].forth, s);
@@ -672,10 +677,8 @@ void Postfix2InfixReset(FILE *fp, int nspc)
 
     // default is one Pop() on the stack. Be careful here. Not every operation is possible here
     sprintf(stack[0].expr, "Pop()");
-    sprintf(stack[0].forth, "");
+    stack[0].forth[0] = 0;
     stack[0].precedence = PVARNUMBERFUNC;
     stack[0].isnumber = 0;
     stackoffset = 1;
 }
-
-

@@ -600,7 +600,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
             case IFNOT:
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);
-                fprintf(fp, "if (Pop() != 0)\n", pline[pline[addr].gotoaddr].labelid);
+                fprintf(fp, "if (Pop() != 0)\n");
                 Spc(fp, nspc);
                 fprintf(fp, "{\n");
                 nspc++;

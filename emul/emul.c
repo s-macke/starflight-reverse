@@ -28,7 +28,7 @@ void LoadSTARFLT()
         fprintf(stderr, "Error: Cannot find file %s\n", FILESTAR0);
         exit(1);
     }
-    fread(&mem[0x100], FILESTAR0SIZE, 1, fp);
+    int ret = fread(&mem[0x100], FILESTAR0SIZE, 1, fp);
     fclose(fp);
 }
 
@@ -275,7 +275,7 @@ void HandleInterrupt()
             exit(1);
         }
         fseek (fp, block*size, SEEK_SET);
-        fread(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size, 1, fp);
+        int ret = fread(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size, 1, fp);
         fclose(fp);
         ax = 0x0;
     } else
