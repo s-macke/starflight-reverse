@@ -127,7 +127,7 @@ extern const unsigned short int pp__i_SIMULA; // 'SIMULA
 extern const unsigned short int pp_LAST_dash_UPDATE; // LAST-UPDATE
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern Color BLACK; // BLACK
 extern Color LT_dash_BLUE; // LT-BLUE
 extern Color WHITE; // WHITE
@@ -287,7 +287,7 @@ LoadDataType UNK_0xed06 = {COMPOUNDSIDX, 0x00, 0x03, 0x07, 0x93a8};
 
 void UNK_0xed0e() // UNK_0xed0e
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xecf2); // from 'PLANET'
   Push(Read16(Pop())); //  @
@@ -326,7 +326,7 @@ void UNK_0xed0e() // UNK_0xed0e
 
 void UNK_0xed60() // UNK_0xed60
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xece2); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
@@ -1249,7 +1249,7 @@ void _slash_SURF() // /SURF
 
 void DrawSURFACE() // .SURFACE
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xecba); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@

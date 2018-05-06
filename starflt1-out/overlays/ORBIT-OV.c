@@ -214,7 +214,7 @@ extern const unsigned short int pp_VIN_i_; // VIN'
 extern const unsigned short int pp_YSCREEN; // YSCREEN
 extern const unsigned short int pp_XSCREEN; // XSCREEN
 extern const unsigned short int pp__n_CLRMAP; // #CLRMAP
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern Color BLACK; // BLACK
 extern Color DK_dash_GREEN; // DK-GREEN
 extern Color RED; // RED
@@ -3532,7 +3532,7 @@ void UNK_0xf0a3() // UNK_0xf0a3
 
 void UNK_0xf0af() // UNK_0xf0af
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
@@ -3899,7 +3899,7 @@ void UNK_0xf39f() // UNK_0xf39f
 
 void UNK_0xf3cb() // UNK_0xf3cb
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xdcdc); // from 'PLANET'

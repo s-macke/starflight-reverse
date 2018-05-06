@@ -147,7 +147,7 @@ extern const unsigned short int pp__ro_SHIP_rc_; // (SHIP)
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern Color BLACK; // BLACK
 extern Color DK_dash_BLUE; // DK-BLUE
@@ -1051,7 +1051,7 @@ void UNK_0xecf4() // UNK_0xecf4
 
 void UNK_0xed12() // UNK_0xed12
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI

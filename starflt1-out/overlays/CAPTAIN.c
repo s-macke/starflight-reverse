@@ -197,9 +197,9 @@ extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
 extern const unsigned short int pp_STIME; // STIME
 extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType _1BTN; // 1BTN
@@ -3023,7 +3023,7 @@ void UNK_0xf007() // UNK_0xf007
   if (Pop() != 0)
   {
     Push(Read16(pp_CONTEXT_dash_ID_n_)==0?1:0); // CONTEXT-ID# @ 0=
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     D0_eq_(); // D0=
     Push(!Pop()); //  NOT
@@ -3379,7 +3379,7 @@ void UNK_0xf2d0() // UNK_0xf2d0
   Push(0);
   Push(1);
   _star_CREATE(); // *CREATE
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
   _2_at_(); // 2@
@@ -3401,7 +3401,7 @@ void UNK_0xf2d0() // UNK_0xf2d0
 
 void UNK_0xf30e() // UNK_0xf30e
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   UNK_0xf1ab(); // UNK_0xf1ab
   UNK_0xf199(); // UNK_0xf199
@@ -3510,7 +3510,7 @@ void UNK_0xf3d3() // UNK_0xf3d3
   BIT(); // BIT
   Push(Read16(regsp)); // DUP
   ICLOSE(); // ICLOSE
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   Push(Pop() & (Read16(0x63ef+UNK_0xe0be.offset)&0xFF)); //  UNK_0xe0be<IFIELD> C@ AND
   Push(Read16(regsp)); // DUP
@@ -3542,7 +3542,7 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   Push(2);
   _st_(); // <
   if (Pop() == 0) goto label1;
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x000c);

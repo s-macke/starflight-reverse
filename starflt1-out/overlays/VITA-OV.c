@@ -132,7 +132,7 @@ extern const unsigned short int pp_PLANTS; // PLANTS
 extern const unsigned short int pp_ANIMALS; // ANIMALS
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp__ro_SURFACE_rc_; // (SURFACE)
 extern Color WHITE; // WHITE
 void _star__slash_(); // */
@@ -655,7 +655,7 @@ void UNK_0xe9f6() // UNK_0xe9f6
 void UNK_0xea0a() // UNK_0xea0a
 {
   unsigned short int i, imax;
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -758,7 +758,7 @@ void UNK_0xeaa0() // UNK_0xeaa0
 
 void UNK_0xeabe() // UNK_0xeabe
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xe802); // from 'PLANET'
@@ -802,7 +802,7 @@ void UNK_0xeaec() // UNK_0xeaec
 
 void UNK_0xec19() // UNK_0xec19
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xe7e2); // from 'PLANET'
@@ -1494,7 +1494,7 @@ void UNK_0xf155() // UNK_0xf155
 {
   do
   {
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     _gt_C_plus_S(); // >C+S
     LoadData(UNK_0xe7ea); // from 'PLANET'
@@ -1900,7 +1900,7 @@ void UNK_0xf3ea() // UNK_0xf3ea
 void UNK_0xf40c() // UNK_0xf40c
 {
   unsigned short int i, imax;
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1932,7 +1932,7 @@ void UNK_0xf40c() // UNK_0xf40c
 
 void UNK_0xf432() // UNK_0xf432
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -1956,7 +1956,7 @@ void UNK_0xf448() // UNK_0xf448
     Push(0x002e);
     ICREATE(); // ICREATE
     _2DUP(); // 2DUP
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     IINSERT(); // IINSERT
     Push(0x000b);

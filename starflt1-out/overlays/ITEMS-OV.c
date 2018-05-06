@@ -228,9 +228,9 @@ extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp__ro_SURFACE_rc_; // (SURFACE)
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern const unsigned short int pp_LSCAN; // LSCAN
@@ -1434,7 +1434,7 @@ void niche_gt_val() // niche>val
 
 void Isdist() // ?dist
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+INST_dash_X.offset) - 0x03e8); // INST-X<IFIELD> @ 0x03e8 -
   Push(Read16(regsp)); // DUP
@@ -1732,7 +1732,7 @@ void UNK_0xe67c() // UNK_0xe67c
   Push(Read16(pp_STARDATE)); // STARDATE @
   Push(0x63ef+INST_dash_DATE.offset); // INST-DATE<IFIELD>
   Store_3(); // !_3
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
   UNK_0xe672(); // UNK_0xe672
@@ -3710,7 +3710,7 @@ void UNK_0xf2ee() // UNK_0xf2ee
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     UNK_0xf29c(); // UNK_0xf29c

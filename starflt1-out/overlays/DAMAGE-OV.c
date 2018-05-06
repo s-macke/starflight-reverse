@@ -149,7 +149,7 @@ extern const unsigned short int pp__n_AUX; // #AUX
 extern const unsigned short int pp_XABS; // XABS
 extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
-extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
+extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
 extern const unsigned short int pp_ROSTER; // ROSTER
 extern Color RED; // RED
 extern Color LT_dash_BLUE; // LT-BLUE
@@ -675,7 +675,7 @@ void UNK_0xec46() // UNK_0xec46
 
 void UNK_0xec6a() // UNK_0xec6a
 {
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   Get_gt_C_plus_S(); // @>C+S
   Push(1);
   Push(0x63ef+UNK_0xebad.offset); // UNK_0xebad<IFIELD>

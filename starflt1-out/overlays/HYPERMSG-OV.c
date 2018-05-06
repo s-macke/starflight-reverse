@@ -187,10 +187,10 @@ extern const unsigned short int pp_SENSE_dash_ADDR; // SENSE-ADDR
 extern const unsigned short int pp_ENC_dash_TIME; // ENC-TIME
 extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
-extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
+extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
 extern const unsigned short int pp_IsCALLING; // ?CALLING
 extern Color BLACK; // BLACK
 extern Color PINK; // PINK
@@ -560,7 +560,7 @@ void UNK_0xe616() // UNK_0xe616
 void _plus_A_dash_VESS() // +A-VESS
 {
   unsigned short int i, imax;
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+UNK_0xe5c3.offset)&0xFF); // UNK_0xe5c3<IFIELD> C@
   Push(Read16(regsp)); // DUP
@@ -682,7 +682,7 @@ void IsPRL() // ?PRL
   Push(Read16(pp__n_VESS)); // #VESS @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   _1_dot_5_at_(); // 1.5@
   Push2Words("*ARREST");
   D_eq_(); // D=
@@ -789,7 +789,7 @@ void UNK_0xe84b() // UNK_0xe84b
   OFF(); // OFF
   UNK_0xe58c(); // UNK_0xe58c
   INIT_dash_ICONLIST(); // INIT-ICONLIST
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(Pop()==0x0013?1:0); //  0x0013 =
@@ -816,7 +816,7 @@ void UNK_0xe84b() // UNK_0xe84b
 void UNK_0xe881() // UNK_0xe881
 {
   INIT_dash_ICONLIST(); // INIT-ICONLIST
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   Push(pp__ro_FLARE_rc_); // (FLARE)
@@ -946,7 +946,7 @@ void UNK_0xe935() // UNK_0xe935
 {
   Push(0x03e8);
   MS(); // MS
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
   _1_dot_5_ex_(); // 1.5!
@@ -1004,7 +1004,7 @@ void DO_dash_FLARE() // DO-FLARE
   Push(0x000a);
   Push(0x00c7);
   POS_dot_(); // POS.
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   UNK_0xe951(); // UNK_0xe951
   PRINT("STAR IN SYSTEM ", 15); // (.")
@@ -1149,7 +1149,7 @@ void UNK_0xeada() // UNK_0xeada
 
 void UNK_0xeb08() // UNK_0xeb08
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   UNK_0xe8b6(); // UNK_0xe8b6
   Push(!Pop()); //  NOT
@@ -1715,7 +1715,7 @@ void OSET() // OSET
 {
   Push(6);
   NS_dash_MESS(); // NS-MESS
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   UNK_0xe8b6(); // UNK_0xe8b6
   if (Pop() != 0)

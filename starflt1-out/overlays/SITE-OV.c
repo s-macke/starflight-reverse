@@ -66,7 +66,7 @@ extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp_KEYTIME; // KEYTIME
 extern const unsigned short int pp_LKEYTIM; // LKEYTIM
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_CMAP; // CMAP
 extern Color BLACK; // BLACK
 extern Color GREY1; // GREY1
@@ -777,7 +777,7 @@ void UNK_0xf290() // UNK_0xf290
 void UNK_0xf311() // UNK_0xf311
 {
   unsigned short int i, imax, j, jmax;
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(Pop()==0x0017?1:0); //  0x0017 =
@@ -841,7 +841,7 @@ void UNK_0xf311() // UNK_0xf311
 
 void UNK_0xf389() // UNK_0xf389
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(!(Pop()==0x0017?1:0)); //  0x0017 = NOT

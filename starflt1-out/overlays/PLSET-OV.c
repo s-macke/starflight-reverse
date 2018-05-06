@@ -102,9 +102,9 @@ extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_GLOBALSEED; // GLOBALSEED
 extern const unsigned short int pp_YABS; // YABS
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
 extern IFieldType INST_dash_Y; // INST-Y
@@ -380,7 +380,7 @@ IFieldType UNK_0xecf3 = {STARSYSTEMIDX, 0x11, 0x01};
 
 void UNK_0xecf8() // UNK_0xecf8
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
@@ -397,7 +397,7 @@ void UNK_0xecf8() // UNK_0xecf8
     {
       Push(Pop() + 1); //  1+
     }
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     CI(); // CI
     D_eq_(); // D=
@@ -478,7 +478,7 @@ void UNK_0xed8e() // UNK_0xed8e
   UNK_0xed2e(); // UNK_0xed2e
   Push(pp_GLOBALSEED); // GLOBALSEED
   Store_3(); // !_3
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
@@ -522,7 +522,7 @@ void UNK_0xede2() // UNK_0xede2
 
 void UNK_0xedf8() // UNK_0xedf8
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x63ef+INST_dash_X.offset) - 0x007d); // INST-X<IFIELD> @ 0x007d -
@@ -733,7 +733,7 @@ void UNK_0xeee8() // UNK_0xeee8
 
 void UNK_0xef7a() // UNK_0xef7a
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
@@ -1147,7 +1147,7 @@ void UNK_0xf1e6() // UNK_0xf1e6
 
 void UNK_0xf234() // UNK_0xf234
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xec62); // from 'PLANET'
@@ -1461,7 +1461,7 @@ void UNK_0xf46d() // UNK_0xf46d
 void PLAN_dash_RUL() // PLAN-RUL
 {
   UNK_0xed8e(); // UNK_0xed8e
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES

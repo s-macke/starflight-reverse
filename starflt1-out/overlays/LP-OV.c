@@ -141,7 +141,7 @@ extern const unsigned short int pp_SEED; // SEED
 extern const unsigned short int pp_PEAK; // PEAK
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern IFieldType PHR_dash_CNT; // PHR-CNT
 extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _star__slash_(); // */
@@ -1047,7 +1047,7 @@ void UNK_0xebb3() // UNK_0xebb3
   unsigned short int a;
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xe2ee); // from 'PLANET'

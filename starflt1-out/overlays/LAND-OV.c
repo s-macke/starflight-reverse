@@ -41,9 +41,9 @@ extern const unsigned short int pp_IsG_dash_AWARE; // ?G-AWARE
 extern const unsigned short int pp_GWF; // GWF
 extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
 extern const unsigned short int pp__i_EXTERNAL_dash_EVENTS; // 'EXTERNAL-EVENTS
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern Color BLACK; // BLACK
 extern Color YELLOW; // YELLOW
 extern IFieldType INST_dash_QTY; // INST-QTY
@@ -115,7 +115,7 @@ LoadDataType UNK_0xf13b = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 
 void UNK_0xf147() // UNK_0xf147
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf13b); // from 'PLANET'
   Push(Read16(Pop())); //  @
@@ -265,7 +265,7 @@ void UNK_0xf258() // UNK_0xf258
     ICLOSE(); // ICLOSE
     SET_STR_AS_PARAM(" IN SYSTEM ");
     DrawTTY(); // .TTY
-    Push(pp__ro_SYSTEM); // (SYSTEM
+    Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
     Get_gt_C_plus_S(); // @>C+S
     Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
     Push(Read16(cc__star_MAPSCALE)); // *MAPSCALE

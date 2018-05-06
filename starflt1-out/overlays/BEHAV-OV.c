@@ -228,7 +228,7 @@ extern const unsigned short int pp_BOX_dash_IADDR; // BOX-IADDR
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_LASTAP; // LASTAP
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
@@ -2450,7 +2450,7 @@ void IsSTORM() // ?STORM
       Is_dot_STORM(); // ?.STORM
     } else
     {
-      Push(pp__ro_PLANET); // (PLANET
+      Push(pp__ro_PLANET_rc_); // (PLANET)
       Get_gt_C_plus_S(); // @>C+S
       LoadData(ATMO_dot_ACTIV); // from 'PLANET'
       Push(Read16(Pop())); //  @

@@ -330,8 +330,8 @@ extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp_TOWFINE; // TOWFINE
 extern const unsigned short int pp__ro_ORIGIN; // (ORIGIN
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
-extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
+extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
 extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_CTTOP; // CTTOP
@@ -1393,7 +1393,7 @@ void _plus__ex_EDL() // +!EDL
   Push(0x63ef+UNK_0xdb07.offset); // UNK_0xdb07<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   _1_dot_5_at_(); // 1.5@
   Push2Words("*HEAVEN");
   D_eq_(); // D=
@@ -4630,14 +4630,14 @@ void UNK_0xeefd() // UNK_0xeefd
 void UNK_0xef2d() // UNK_0xef2d
 {
   unsigned short int a;
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+    Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     D0_eq_(); // D0=
@@ -4900,7 +4900,7 @@ void _ro_CBTN_rc_() // (CBTN)
 
 void UNK_0xf13e() // UNK_0xf13e
 {
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   _1_dot_5_at_(); // 1.5@
   Push2Words("*ARREST");
   D_eq_(); // D=
@@ -5082,7 +5082,7 @@ void UNK_0xf27a() // UNK_0xf27a
     if (Pop() != 0)
     {
       UNK_0xe014(); // UNK_0xe014
-      Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+      Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
       _1_dot_5_at_(); // 1.5@
       _2DUP(); // 2DUP
       Push(Pop() & 0x000f | 2); //  0x000f AND 2 OR
@@ -5266,7 +5266,7 @@ void UNK_0xf3c2() // UNK_0xf3c2
 
 void IAPWR() // IAPWR
 {
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0);

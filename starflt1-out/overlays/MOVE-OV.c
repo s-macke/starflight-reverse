@@ -151,7 +151,7 @@ extern const unsigned short int pp__i_REPAIR; // 'REPAIR
 extern const unsigned short int pp_LAST_dash_UPDATE; // LAST-UPDATE
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern LoadDataType ART_dash_VOL; // ART-VOL
 extern Color BLACK; // BLACK
@@ -1143,7 +1143,7 @@ void UNK_0xed4c() // UNK_0xed4c
   Push(0x000b);
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _2DUP(); // 2DUP
@@ -1202,7 +1202,7 @@ void UNK_0xeda8() // UNK_0xeda8
   UNK_0xe7b8(); // UNK_0xe7b8
   UNK_0xed14(); // UNK_0xed14
   Push2Words("NULL");
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -1307,7 +1307,7 @@ void IsPOPULA() // ?POPULA
   {
     Pop(); Pop(); // 2DROP
     UNK_0xed4c(); // UNK_0xed4c
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     CDROP(); // CDROP
@@ -2105,7 +2105,7 @@ void APPROACH() // APPROACH
 {
   _gt_LORES_2(); // >LORES_2
   DARK(); // DARK
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT

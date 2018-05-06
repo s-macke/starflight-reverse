@@ -55,7 +55,7 @@ extern const unsigned short int pp_WTOP; // WTOP
 extern const unsigned short int pp_WBOTTOM; // WBOTTOM
 extern const unsigned short int pp_WRIGHT; // WRIGHT
 extern const unsigned short int pp_WLEFT; // WLEFT
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern Color BLACK; // BLACK
 extern Color WHITE; // WHITE
 void ABS(); // ABS
@@ -611,7 +611,7 @@ void _ro_DO_dot_STORM() // (DO.STORM
   unsigned short int a;
   Push(Read16(pp__n_STORM)); // #STORM @
   a = Pop(); // >R
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xf24d); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@

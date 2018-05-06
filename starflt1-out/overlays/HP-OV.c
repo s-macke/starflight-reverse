@@ -124,8 +124,8 @@ extern const unsigned short int pp_RECORD_n_; // RECORD#
 extern const unsigned short int pp_PLANTS; // PLANTS
 extern const unsigned short int pp_ANIMALS; // ANIMALS
 extern const unsigned short int pp_PLHI; // PLHI
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern IFieldType PHR_dash_CNT; // PHR-CNT
 extern IFieldType PHRASE_dash_MEM; // PHRASE-MEM
 void _star__slash_(); // */
@@ -1015,7 +1015,7 @@ void UNK_0xede0() // UNK_0xede0
   unsigned short int a;
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xe44f); // from 'PLANET'
@@ -1061,7 +1061,7 @@ void UNK_0xee38() // UNK_0xee38
   UNK_0xe2b3(); // UNK_0xe2b3
   a = Pop(); // >R
   b = Pop(); // >R
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
@@ -1421,7 +1421,7 @@ void UNK_0xf0c6() // UNK_0xf0c6
   unsigned short int a, b, c;
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   LoadData(UNK_0xe44f); // from 'PLANET'
@@ -1734,7 +1734,7 @@ void UNK_0xf2d2() // UNK_0xf2d2
   {
     Pop(); Pop(); // 2DROP
     UNK_0xe3c2(); // UNK_0xe3c2
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     _gt_C_plus_S(); // >C+S
     LoadData(UNK_0xe44f); // from 'PLANET'

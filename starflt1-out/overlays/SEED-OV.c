@@ -123,7 +123,7 @@ extern const unsigned short int pp_YCON; // YCON
 extern const unsigned short int pp_XABS; // XABS
 extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_PLHI; // PLHI
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
 extern LoadDataType ART_dash_VOL; // ART-VOL
 extern IFieldType INST_dash_QTY; // INST-QTY
@@ -410,7 +410,7 @@ void UNK_0xecfb() // UNK_0xecfb
 
 void UNK_0xed19() // UNK_0xed19
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xec26); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
@@ -1196,7 +1196,7 @@ void UNK_0xf19b() // UNK_0xf19b
 void UNK_0xf1c1() // UNK_0xf1c1
 {
   unsigned short int i, imax, a;
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   LoadData(UNK_0xec52); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
@@ -1465,7 +1465,7 @@ void IsEXIST() // ?EXIST
   unsigned short int a, b, c, d;
   a = Pop(); // >R
   Push(1);
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -1569,7 +1569,7 @@ void UNK_0xf3f6() // UNK_0xf3f6
 
 void UNK_0xf400() // UNK_0xf400
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -1676,7 +1676,7 @@ void UNK_0xf468() // UNK_0xf468
 
 void UNK_0xf492() // UNK_0xf492
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   Push(0xef65); // probable 'UNK_0xef65'
   UNK_0xf468(); // UNK_0xf468

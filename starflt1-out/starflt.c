@@ -1160,12 +1160,12 @@
 //        TVEHICLE  codep:0x1d29 parp:0x626f size:0x0004 C-string:'TVEHICLE'
 //         TV-HOLD  codep:0x1d29 parp:0x627f size:0x0004 C-string:'TV_dash_HOLD'
 //       SUPER-BOX  codep:0x1d29 parp:0x628f size:0x0004 C-string:'SUPER_dash_BOX'
-//         (SYSTEM  codep:0x1d29 parp:0x629f size:0x0004 C-string:'_ro_SYSTEM'
+//        (SYSTEM)  codep:0x1d29 parp:0x629f size:0x0004 C-string:'_ro_SYSTEM_rc_'
 //         (ORBIT)  codep:0x1d29 parp:0x62af size:0x0004 C-string:'_ro_ORBIT_rc_'
-//         (PLANET  codep:0x1d29 parp:0x62bf size:0x0004 C-string:'_ro_PLANET'
+//        (PLANET)  codep:0x1d29 parp:0x62bf size:0x0004 C-string:'_ro_PLANET_rc_'
 //       (SURFACE)  codep:0x1d29 parp:0x62cf size:0x0004 C-string:'_ro_SURFACE_rc_'
-//      (ENCOUNTER  codep:0x1d29 parp:0x62df size:0x0004 C-string:'_ro_ENCOUNTER'
-//        (SHIPBOX  codep:0x1d29 parp:0x62ef size:0x0004 C-string:'_ro_SHIPBOX'
+//     (ENCOUNTER)  codep:0x1d29 parp:0x62df size:0x0004 C-string:'_ro_ENCOUNTER_rc_'
+//       (SHIPBOX)  codep:0x1d29 parp:0x62ef size:0x0004 C-string:'_ro_SHIPBOX_rc_'
 //    (AORIGINATOR  codep:0x1d29 parp:0x62ff size:0x0004 C-string:'_ro_AORIGINATOR'
 //         THIS-RE  codep:0x1d29 parp:0x630f size:0x0004 C-string:'THIS_dash_RE'
 //         (THIS-I  codep:0x1d29 parp:0x631f size:0x0004 C-string:'_ro_THIS_dash_I'
@@ -3392,22 +3392,22 @@ const unsigned short int pp_TV_dash_HOLD = 0x627f; // TV-HOLD size: 4
 const unsigned short int pp_SUPER_dash_BOX = 0x628f; // SUPER-BOX size: 4
 // {0x20, 0x72, 0x72, 0x61}
 
-const unsigned short int pp__ro_SYSTEM = 0x629f; // (SYSTEM size: 4
+const unsigned short int pp__ro_SYSTEM_rc_ = 0x629f; // (SYSTEM) size: 4
 // {0x21, 0x16, 0x00, 0x65}
 
 const unsigned short int pp__ro_ORBIT_rc_ = 0x62af; // (ORBIT) size: 4
 // {0x88, 0x1d, 0x02, 0x65}
 
-const unsigned short int pp__ro_PLANET = 0x62bf; // (PLANET size: 4
+const unsigned short int pp__ro_PLANET_rc_ = 0x62bf; // (PLANET) size: 4
 // {0x55, 0x16, 0x00, 0x65}
 
 const unsigned short int pp__ro_SURFACE_rc_ = 0x62cf; // (SURFACE) size: 4
 // {0x20, 0x72, 0x72, 0x65}
 
-const unsigned short int pp__ro_ENCOUNTER = 0x62df; // (ENCOUNTER size: 4
+const unsigned short int pp__ro_ENCOUNTER_rc_ = 0x62df; // (ENCOUNTER) size: 4
 // {0x00, 0x00, 0x00, 0x00}
 
-const unsigned short int pp__ro_SHIPBOX = 0x62ef; // (SHIPBOX size: 4
+const unsigned short int pp__ro_SHIPBOX_rc_ = 0x62ef; // (SHIPBOX) size: 4
 // {0xbc, 0x9a, 0x00, 0x65}
 
 const unsigned short int pp__ro_AORIGINATOR = 0x62ff; // (AORIGINATOR size: 4
@@ -15763,7 +15763,7 @@ void COLORCA() // COLORCA
 // 0x628f: db 0x20 0x72 0x72 0x61 ' rra'
 
 // ================================================
-// 0x6293: WORD '(SYSTEM' codep=0x1d29 parp=0x629f
+// 0x6293: WORD '(SYSTEM)' codep=0x1d29 parp=0x629f
 // ================================================
 // 0x629f: db 0x21 0x16 0x00 0x65 '!  e'
 
@@ -15773,7 +15773,7 @@ void COLORCA() // COLORCA
 // 0x62af: db 0x88 0x1d 0x02 0x65 '   e'
 
 // ================================================
-// 0x62b3: WORD '(PLANET' codep=0x1d29 parp=0x62bf
+// 0x62b3: WORD '(PLANET)' codep=0x1d29 parp=0x62bf
 // ================================================
 // 0x62bf: db 0x55 0x16 0x00 0x65 'U  e'
 
@@ -15783,12 +15783,12 @@ void COLORCA() // COLORCA
 // 0x62cf: db 0x20 0x72 0x72 0x65 ' rre'
 
 // ================================================
-// 0x62d3: WORD '(ENCOUNTER' codep=0x1d29 parp=0x62df
+// 0x62d3: WORD '(ENCOUNTER)' codep=0x1d29 parp=0x62df
 // ================================================
 // 0x62df: db 0x00 0x00 0x00 0x00 '    '
 
 // ================================================
-// 0x62e3: WORD '(SHIPBOX' codep=0x1d29 parp=0x62ef
+// 0x62e3: WORD '(SHIPBOX)' codep=0x1d29 parp=0x62ef
 // ================================================
 // 0x62ef: db 0xbc 0x9a 0x00 0x65 '   e'
 

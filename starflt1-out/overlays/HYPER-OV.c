@@ -11,25 +11,25 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
-//      UNK_0xd976  codep:0x224c parp:0xd976 size:0x0008 C-string:'UNK_0xd976'
+//   SET-'EXTERNAL  codep:0x224c parp:0xd976 size:0x0008 C-string:'SET_dash__i_EXTERNAL'
 //           SHP>C  codep:0x224c parp:0xd980 size:0x0006 C-string:'SHP_gt_C'
 //           PLN>C  codep:0x224c parp:0xd988 size:0x0006 C-string:'PLN_gt_C'
-//      UNK_0xd990  codep:0x224c parp:0xd990 size:0x0006 C-string:'UNK_0xd990'
-//      UNK_0xd998  codep:0x224c parp:0xd998 size:0x0006 C-string:'UNK_0xd998'
-//      UNK_0xd9a0  codep:0x224c parp:0xd9a0 size:0x0006 C-string:'UNK_0xd9a0'
+//           ORB>C  codep:0x224c parp:0xd990 size:0x0006 C-string:'ORB_gt_C'
+//           SYS>C  codep:0x224c parp:0xd998 size:0x0006 C-string:'SYS_gt_C'
+//           ENC>C  codep:0x224c parp:0xd9a0 size:0x0006 C-string:'ENC_gt_C'
 //      UNK_0xd9a8  codep:0x224c parp:0xd9a8 size:0x0006 C-string:'UNK_0xd9a8'
-//      UNK_0xd9b0  codep:0x2214 parp:0xd9b0 size:0x0002 C-string:'UNK_0xd9b0'
-//      UNK_0xd9b4  codep:0x2214 parp:0xd9b4 size:0x0002 C-string:'UNK_0xd9b4'
-//      UNK_0xd9b8  codep:0x2214 parp:0xd9b8 size:0x0002 C-string:'UNK_0xd9b8'
-//      UNK_0xd9bc  codep:0x2214 parp:0xd9bc size:0x0002 C-string:'UNK_0xd9bc'
+//        RCOLLIDE  codep:0x2214 parp:0xd9b0 size:0x0002 C-string:'RCOLLIDE'
+//       PRTRADIUS  codep:0x2214 parp:0xd9b4 size:0x0002 C-string:'PRTRADIUS'
+//       DEFRADIUS  codep:0x2214 parp:0xd9b8 size:0x0002 C-string:'DEFRADIUS'
+//       ORBRADIUS  codep:0x2214 parp:0xd9bc size:0x0002 C-string:'ORBRADIUS'
 //      UNK_0xd9c0  codep:0x2214 parp:0xd9c0 size:0x0002 C-string:'UNK_0xd9c0'
-//      UNK_0xd9c4  codep:0x2214 parp:0xd9c4 size:0x0002 C-string:'UNK_0xd9c4'
-//      UNK_0xd9c8  codep:0x2214 parp:0xd9c8 size:0x0002 C-string:'UNK_0xd9c8'
-//      UNK_0xd9cc  codep:0x2214 parp:0xd9cc size:0x0002 C-string:'UNK_0xd9cc'
-//      UNK_0xd9d0  codep:0x2214 parp:0xd9d0 size:0x0002 C-string:'UNK_0xd9d0'
-//      UNK_0xd9d4  codep:0x2214 parp:0xd9d4 size:0x0002 C-string:'UNK_0xd9d4'
+//       SYSRADIUS  codep:0x2214 parp:0xd9c4 size:0x0002 C-string:'SYSRADIUS'
+//       VISLENGTH  codep:0x2214 parp:0xd9c8 size:0x0002 C-string:'VISLENGTH'
+//        VISWIDTH  codep:0x2214 parp:0xd9cc size:0x0002 C-string:'VISWIDTH'
+//         BVISOFF  codep:0x2214 parp:0xd9d0 size:0x0002 C-string:'BVISOFF'
+//         LVISOFF  codep:0x2214 parp:0xd9d4 size:0x0002 C-string:'LVISOFF'
 //      UNK_0xd9d8  codep:0x2214 parp:0xd9d8 size:0x0002 C-string:'UNK_0xd9d8'
-//      UNK_0xd9dc  codep:0x1d29 parp:0xd9dc size:0x0002 C-string:'UNK_0xd9dc'
+//        (RADIUS)  codep:0x1d29 parp:0xd9dc size:0x0002 C-string:'_ro_RADIUS_rc_'
 //      UNK_0xd9e0  codep:0x1d29 parp:0xd9e0 size:0x0002 C-string:'UNK_0xd9e0'
 //      UNK_0xd9e4  codep:0x1d29 parp:0xd9e4 size:0x0002 C-string:'UNK_0xd9e4'
 //      UNK_0xd9e8  codep:0x1d29 parp:0xd9e8 size:0x0002 C-string:'UNK_0xd9e8'
@@ -254,11 +254,11 @@ extern const unsigned short int pp_NAV_dash_TIME; // NAV-TIME
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
-extern const unsigned short int pp__ro_ENCOUNTER; // (ENCOUNTER
-extern const unsigned short int pp__ro_SHIPBOX; // (SHIPBOX
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
+extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
+extern const unsigned short int pp__ro_SHIPBOX_rc_; // (SHIPBOX)
 extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
 extern const unsigned short int pp_YTABLE; // YTABLE
 extern const unsigned short int pp_IsCALLING; // ?CALLING
@@ -411,7 +411,7 @@ void _ro_XYSCAN_rc_(); // (XYSCAN)
 // =================================
 // =========== VARIABLES ===========
 // =================================
-const unsigned short int pp_UNK_0xd9dc = 0xd9dc; // UNK_0xd9dc size: 2
+const unsigned short int pp__ro_RADIUS_rc_ = 0xd9dc; // (RADIUS) size: 2
 // {0x00, 0x00}
 
 const unsigned short int pp_UNK_0xd9e0 = 0xd9e0; // UNK_0xd9e0 size: 2
@@ -472,16 +472,16 @@ const unsigned short int pp_UNK_0xe925 = 0xe925; // UNK_0xe925 size: 2
 // {0x00, 0x00}
 
 
-const unsigned short int cc_UNK_0xd9b0 = 0xd9b0; // UNK_0xd9b0
-const unsigned short int cc_UNK_0xd9b4 = 0xd9b4; // UNK_0xd9b4
-const unsigned short int cc_UNK_0xd9b8 = 0xd9b8; // UNK_0xd9b8
-const unsigned short int cc_UNK_0xd9bc = 0xd9bc; // UNK_0xd9bc
+const unsigned short int cc_RCOLLIDE = 0xd9b0; // RCOLLIDE
+const unsigned short int cc_PRTRADIUS = 0xd9b4; // PRTRADIUS
+const unsigned short int cc_DEFRADIUS = 0xd9b8; // DEFRADIUS
+const unsigned short int cc_ORBRADIUS = 0xd9bc; // ORBRADIUS
 const unsigned short int cc_UNK_0xd9c0 = 0xd9c0; // UNK_0xd9c0
-const unsigned short int cc_UNK_0xd9c4 = 0xd9c4; // UNK_0xd9c4
-const unsigned short int cc_UNK_0xd9c8 = 0xd9c8; // UNK_0xd9c8
-const unsigned short int cc_UNK_0xd9cc = 0xd9cc; // UNK_0xd9cc
-const unsigned short int cc_UNK_0xd9d0 = 0xd9d0; // UNK_0xd9d0
-const unsigned short int cc_UNK_0xd9d4 = 0xd9d4; // UNK_0xd9d4
+const unsigned short int cc_SYSRADIUS = 0xd9c4; // SYSRADIUS
+const unsigned short int cc_VISLENGTH = 0xd9c8; // VISLENGTH
+const unsigned short int cc_VISWIDTH = 0xd9cc; // VISWIDTH
+const unsigned short int cc_BVISOFF = 0xd9d0; // BVISOFF
+const unsigned short int cc_LVISOFF = 0xd9d4; // LVISOFF
 const unsigned short int cc_UNK_0xd9d8 = 0xd9d8; // UNK_0xd9d8
 const unsigned short int cc_UNK_0xe2fb = 0xe2fb; // UNK_0xe2fb
 const unsigned short int cc_UNK_0xe2ff = 0xe2ff; // UNK_0xe2ff
@@ -493,10 +493,10 @@ const unsigned short int cc_UNK_0xe906 = 0xe906; // UNK_0xe906
 // 0xd972: db 0x91 0x01 '  '
 
 // ================================================
-// 0xd974: WORD 'UNK_0xd976' codep=0x224c parp=0xd976 params=0 returns=0
+// 0xd974: WORD 'SET-'EXTERNAL' codep=0x224c parp=0xd976 params=0 returns=0
 // ================================================
 
-void UNK_0xd976() // UNK_0xd976
+void SET_dash__i_EXTERNAL() // SET-'EXTERNAL
 {
   Push(0xca8c); // probable '!'EXT'
   MODULE(); // MODULE
@@ -520,16 +520,16 @@ void SHP_gt_C() // SHP>C
 
 void PLN_gt_C() // PLN>C
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
 }
 
 
 // ================================================
-// 0xd98e: WORD 'UNK_0xd990' codep=0x224c parp=0xd990 params=0 returns=0
+// 0xd98e: WORD 'ORB>C' codep=0x224c parp=0xd990 params=0 returns=0
 // ================================================
 
-void UNK_0xd990() // UNK_0xd990
+void ORB_gt_C() // ORB>C
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   Get_gt_C_plus_S(); // @>C+S
@@ -537,23 +537,23 @@ void UNK_0xd990() // UNK_0xd990
 
 
 // ================================================
-// 0xd996: WORD 'UNK_0xd998' codep=0x224c parp=0xd998 params=0 returns=0
+// 0xd996: WORD 'SYS>C' codep=0x224c parp=0xd998 params=0 returns=0
 // ================================================
 
-void UNK_0xd998() // UNK_0xd998
+void SYS_gt_C() // SYS>C
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
 }
 
 
 // ================================================
-// 0xd99e: WORD 'UNK_0xd9a0' codep=0x224c parp=0xd9a0 params=0 returns=0
+// 0xd99e: WORD 'ENC>C' codep=0x224c parp=0xd9a0 params=0 returns=0
 // ================================================
 
-void UNK_0xd9a0() // UNK_0xd9a0
+void ENC_gt_C() // ENC>C
 {
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   Get_gt_C_plus_S(); // @>C+S
 }
 
@@ -570,22 +570,22 @@ void UNK_0xd9a8() // UNK_0xd9a8
 
 
 // ================================================
-// 0xd9ae: WORD 'UNK_0xd9b0' codep=0x2214 parp=0xd9b0
+// 0xd9ae: WORD 'RCOLLIDE' codep=0x2214 parp=0xd9b0
 // ================================================
 // 0xd9b0: dw 0x0003
 
 // ================================================
-// 0xd9b2: WORD 'UNK_0xd9b4' codep=0x2214 parp=0xd9b4
+// 0xd9b2: WORD 'PRTRADIUS' codep=0x2214 parp=0xd9b4
 // ================================================
 // 0xd9b4: dw 0x0000
 
 // ================================================
-// 0xd9b6: WORD 'UNK_0xd9b8' codep=0x2214 parp=0xd9b8
+// 0xd9b6: WORD 'DEFRADIUS' codep=0x2214 parp=0xd9b8
 // ================================================
 // 0xd9b8: dw 0x004b
 
 // ================================================
-// 0xd9ba: WORD 'UNK_0xd9bc' codep=0x2214 parp=0xd9bc
+// 0xd9ba: WORD 'ORBRADIUS' codep=0x2214 parp=0xd9bc
 // ================================================
 // 0xd9bc: dw 0x0000
 
@@ -595,27 +595,27 @@ void UNK_0xd9a8() // UNK_0xd9a8
 // 0xd9c0: dw 0x0016
 
 // ================================================
-// 0xd9c2: WORD 'UNK_0xd9c4' codep=0x2214 parp=0xd9c4
+// 0xd9c2: WORD 'SYSRADIUS' codep=0x2214 parp=0xd9c4
 // ================================================
 // 0xd9c4: dw 0x0190
 
 // ================================================
-// 0xd9c6: WORD 'UNK_0xd9c8' codep=0x2214 parp=0xd9c8
+// 0xd9c6: WORD 'VISLENGTH' codep=0x2214 parp=0xd9c8
 // ================================================
 // 0xd9c8: dw 0x0040
 
 // ================================================
-// 0xd9ca: WORD 'UNK_0xd9cc' codep=0x2214 parp=0xd9cc
+// 0xd9ca: WORD 'VISWIDTH' codep=0x2214 parp=0xd9cc
 // ================================================
 // 0xd9cc: dw 0x003e
 
 // ================================================
-// 0xd9ce: WORD 'UNK_0xd9d0' codep=0x2214 parp=0xd9d0
+// 0xd9ce: WORD 'BVISOFF' codep=0x2214 parp=0xd9d0
 // ================================================
 // 0xd9d0: dw 0x0009
 
 // ================================================
-// 0xd9d2: WORD 'UNK_0xd9d4' codep=0x2214 parp=0xd9d4
+// 0xd9d2: WORD 'LVISOFF' codep=0x2214 parp=0xd9d4
 // ================================================
 // 0xd9d4: dw 0x0008
 
@@ -625,7 +625,7 @@ void UNK_0xd9a8() // UNK_0xd9a8
 // 0xd9d8: dw 0x000c
 
 // ================================================
-// 0xd9da: WORD 'UNK_0xd9dc' codep=0x1d29 parp=0xd9dc
+// 0xd9da: WORD '(RADIUS)' codep=0x1d29 parp=0xd9dc
 // ================================================
 // 0xd9dc: db 0x00 0x00 '  '
 
@@ -953,7 +953,7 @@ void UNK_0xdb04() // UNK_0xdb04
   IFIND(); // IFIND
   Pop(); // DROP
   CI(); // CI
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_ex_(); // 1.5!
   UNK_0xd9a8(); // UNK_0xd9a8
   Push(pp_GWF); // GWF
@@ -975,14 +975,14 @@ void UNK_0xdb32() // UNK_0xdb32
   OFF(); // OFF
   Push(pp_UNK_0xd9ec); // UNK_0xd9ec
   OFF(); // OFF
-  UNK_0xd990(); // UNK_0xd990
+  ORB_gt_C(); // ORB>C
   UNK_0xda72(); // UNK_0xda72
   UNK_0xda86(); // UNK_0xda86
   ICLOSE(); // ICLOSE
   Push(0xc885); // probable 'DEPART'
   MODULE(); // MODULE
   Push2Words("NULL");
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_ex_(); // 1.5!
   Push2Words("NULL");
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
@@ -1024,7 +1024,7 @@ void UNK_0xdb72() // UNK_0xdb72
   if (Pop() == 0) return;
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_UNK_0xd9dc)); // UNK_0xd9dc @
+  Push(Read16(pp__ro_RADIUS_rc_)); // (RADIUS) @
   a = Pop(); // >R
   Push(Read16(pp_XABS)); // XABS @
   Push(0x0024);
@@ -1208,7 +1208,7 @@ void _gt_CONS_dash_DISP() // >CONS-DISP
 
 void UNK_0xdcc6() // UNK_0xdcc6
 {
-  UNK_0xd9a0(); // UNK_0xd9a0
+  ENC_gt_C(); // ENC>C
   GetINST_dash_SPECIES(); // @INST-SPECIES
   Push(Pop()==0x0013?1:0); //  0x0013 =
   if (Pop() != 0)
@@ -1256,7 +1256,7 @@ void UNK_0xdcc6() // UNK_0xdcc6
   UNK_0xdc19(); // UNK_0xdc19
   ICLOSE(); // ICLOSE
   Push2Words("NULL");
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   _1_dot_5_ex_(); // 1.5!
   Push(0xc1f3); // probable '>HAIL'
   MODULE(); // MODULE
@@ -1278,9 +1278,9 @@ void UNK_0xdd6a() // UNK_0xdd6a
 {
   Push(pp_UNK_0xd9f0); // UNK_0xd9f0
   _1_dot_5_at_(); // 1.5@
-  Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+  Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
   _1_dot_5_ex_(); // 1.5!
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   D0_eq_(); // D0=
   if (Pop() != 0)
@@ -1291,7 +1291,7 @@ void UNK_0xdd6a() // UNK_0xdd6a
   }
   Push(pp_AVCNT); // AVCNT
   OFF(); // OFF
-  UNK_0xd9a0(); // UNK_0xd9a0
+  ENC_gt_C(); // ENC>C
   GetINST_dash_SPECIES(); // @INST-SPECIES
   ORGIADDR(); // ORGIADDR
   _1_dot_5_at_(); // 1.5@
@@ -1361,7 +1361,7 @@ void UNK_0xddda() // UNK_0xddda
 
 void UNK_0xddf2() // UNK_0xddf2
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   Push(0x0018);
   GetINST_dash_SPECIES(); // @INST-SPECIES
@@ -1382,7 +1382,7 @@ void UNK_0xddf2() // UNK_0xddf2
 
 void UNK_0xde12() // UNK_0xde12
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   IOPEN(); // IOPEN
   Push(0x0018);
   Push(0);
@@ -1444,7 +1444,7 @@ void UNK_0xded6() // UNK_0xded6
 {
   Push(pp_UNK_0xde2a); // UNK_0xde2a
   OFF(); // OFF
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   Push(Read16(0x63ef+UNK_0xda5b.offset)&0xFF); // UNK_0xda5b<IFIELD> C@
   Push(pp_UNK_0xde2e); // UNK_0xde2e
   Store_3(); // !_3
@@ -1482,7 +1482,7 @@ void UNK_0xdef6() // UNK_0xdef6
 
 void UNK_0xdf16() // UNK_0xdf16
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   IOPEN(); // IOPEN
 
   label2:
@@ -1509,7 +1509,7 @@ void UNK_0xdf16() // UNK_0xdf16
 
 void UNK_0xdf36() // UNK_0xdf36
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   UNK_0xda72(); // UNK_0xda72
   ICLOSE(); // ICLOSE
 }
@@ -1521,7 +1521,7 @@ void UNK_0xdf36() // UNK_0xdf36
 
 void UNK_0xdf40() // UNK_0xdf40
 {
-  Push(Read16(cc_UNK_0xd9c4) - 5); // UNK_0xd9c4 5 -
+  Push(Read16(cc_SYSRADIUS) - 5); // SYSRADIUS 5 -
   Push(Read16(regsp)); // DUP
   Push(-Pop()); //  NEGATE
   SWAP(); // SWAP
@@ -1548,7 +1548,7 @@ void UNK_0xdf5e() // UNK_0xdf5e
   Push(a + 1); // I 1+
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
-  Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
+  Push(Read16(cc_SYSRADIUS)); // SYSRADIUS
   Push(0x0024);
   _star__slash_(); // */
   Push(0x63ef+INST_dash_X.offset); // INST-X<IFIELD>
@@ -1565,7 +1565,7 @@ void UNK_0xdf5e() // UNK_0xdf5e
   RRND(); // RRND
   Push(Pop() * 2 - 1); //  2* 1-
   Push(Pop() * Pop()); // *
-  Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
+  Push(Read16(cc_SYSRADIUS)); // SYSRADIUS
   Push(0x0024);
   _star__slash_(); // */
   Push(0x63ef+INST_dash_Y.offset); // INST-Y<IFIELD>
@@ -1619,7 +1619,7 @@ void _gt_XY() // >XY
 
 void UNK_0xdfdc() // UNK_0xdfdc
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   IsCHILD(); // ?CHILD
   if (Pop() != 0)
   {
@@ -1718,12 +1718,12 @@ void UNK_0xe033() // UNK_0xe033
     {
       Push(Read16(0x63ef+INST_dash_X.offset)); // INST-X<IFIELD> @
       Push(0x0024);
-      Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
+      Push(Read16(cc_SYSRADIUS)); // SYSRADIUS
       _star__slash_(); // */
       Push(Pop() + 0x0078); //  0x0078 +
       Push(Read16(0x63ef+INST_dash_Y.offset)); // INST-Y<IFIELD> @
       Push(0x0024);
-      Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
+      Push(Read16(cc_SYSRADIUS)); // SYSRADIUS
       _star__slash_(); // */
       Push(Pop() + 0x00a1); //  0x00a1 +
       Push(1);
@@ -1753,7 +1753,7 @@ void DrawAUXSYS() // .AUXSYS
   Push(5);
   Push(pp__n_AUX); // #AUX
   Store_3(); // !_3
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   GetINST_dash_SPECIES(); // @INST-SPECIES
   UNK_0xe01f(); // UNK_0xe01f
   Push(Read16(0x63ef+UNK_0xda5b.offset)&0xFF); // UNK_0xda5b<IFIELD> C@
@@ -1802,7 +1802,7 @@ void UNK_0xe107() // UNK_0xe107
   Store_3(); // !_3
   Push(pp_UNK_0xd9f0); // UNK_0xd9f0
   _1_dot_5_at_(); // 1.5@
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_ex_(); // 1.5!
   Push(0xe0a3); // probable '.AUXSYS'
   Push(pp_UNK_0xda02); // UNK_0xda02
@@ -1820,14 +1820,14 @@ void UNK_0xe107() // UNK_0xe107
 
 void UNK_0xe12b() // UNK_0xe12b
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   UNK_0xda72(); // UNK_0xda72
   UNK_0xda86(); // UNK_0xda86
   ICLOSE(); // ICLOSE
   UNK_0xdf16(); // UNK_0xdf16
   UNK_0xde12(); // UNK_0xde12
   Push2Words("NULL");
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_ex_(); // 1.5!
   Push(0xbef3); // probable 'OV/STATUS'
   MODULE(); // MODULE
@@ -1928,7 +1928,7 @@ void _gt__bo_CONTEXT_bc_() // >[CONTEXT]
 
 void UNK_0xe1cb() // UNK_0xe1cb
 {
-  Push(pp__ro_SHIPBOX); // (SHIPBOX
+  Push(pp__ro_SHIPBOX_rc_); // (SHIPBOX)
   Get_gt_C_plus_S(); // @>C+S
 }
 
@@ -1954,19 +1954,19 @@ void RADII() // RADII
   switch(Pop()) // RADII
   {
   case 1:
-    Push(Read16(cc_UNK_0xd9bc)); // UNK_0xd9bc
+    Push(Read16(cc_ORBRADIUS)); // ORBRADIUS
     break;
   case 2:
-    Push(Read16(cc_UNK_0xd9c4)); // UNK_0xd9c4
+    Push(Read16(cc_SYSRADIUS)); // SYSRADIUS
     break;
   case 4:
     Push(Read16(cc_UNK_0xd9c0)); // UNK_0xd9c0
     break;
   case 5:
-    Push(Read16(cc_UNK_0xd9b4)); // UNK_0xd9b4
+    Push(Read16(cc_PRTRADIUS)); // PRTRADIUS
     break;
   default:
-    Push(Read16(cc_UNK_0xd9b8)); // UNK_0xd9b8
+    Push(Read16(cc_DEFRADIUS)); // DEFRADIUS
     break;
 
   }
@@ -1981,19 +1981,19 @@ void IVAR() // IVAR
   switch(Pop()) // IVAR
   {
   case 0:
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     break;
   case 1:
     Push(pp__ro_ORBIT_rc_); // (ORBIT)
     break;
   case 2:
-    Push(pp__ro_SYSTEM); // (SYSTEM
+    Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
     break;
   case 4:
-    Push(pp__ro_ENCOUNTER); // (ENCOUNTER
+    Push(pp__ro_ENCOUNTER_rc_); // (ENCOUNTER)
     break;
   default:
-    Push(pp__ro_SHIPBOX); // (SHIPBOX
+    Push(pp__ro_SHIPBOX_rc_); // (SHIPBOX)
     break;
 
   }
@@ -2030,7 +2030,7 @@ void _n_CPARMS() // #CPARMS
 void StoreCPARMS() // !CPARMS
 {
   unsigned short int a;
-  Push(pp_UNK_0xd9dc); // UNK_0xd9dc
+  Push(pp__ro_RADIUS_rc_); // (RADIUS)
   Store_3(); // !_3
   Push(pp_CONTEXT_dash_ID_n_); // CONTEXT-ID#
   Store_3(); // !_3
@@ -2038,7 +2038,7 @@ void StoreCPARMS() // !CPARMS
   _2DUP(); // 2DUP
   Push(a); // R>
   _1_dot_5_ex_(); // 1.5!
-  Push(pp__ro_SHIPBOX); // (SHIPBOX
+  Push(pp__ro_SHIPBOX_rc_); // (SHIPBOX)
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -2059,7 +2059,7 @@ void UNK_0xe252() // UNK_0xe252
 
 void UNK_0xe258() // UNK_0xe258
 {
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   UNK_0xda72(); // UNK_0xda72
   ICLOSE(); // ICLOSE
 }
@@ -2071,7 +2071,7 @@ void UNK_0xe258() // UNK_0xe258
 
 void UNK_0xe262() // UNK_0xe262
 {
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
@@ -2079,7 +2079,7 @@ void UNK_0xe262() // UNK_0xe262
     UNK_0xe258(); // UNK_0xe258
     return;
   }
-  UNK_0xd9a0(); // UNK_0xd9a0
+  ENC_gt_C(); // ENC>C
   UNK_0xda72(); // UNK_0xda72
   ICLOSE(); // ICLOSE
 }
@@ -2462,14 +2462,14 @@ void UNK_0xe4fa() // UNK_0xe4fa
   if (Pop() != 0)
   {
     _2DUP(); // 2DUP
-    Push(Pop() - Read16(cc_UNK_0xd9d0)); //  UNK_0xd9d0 -
+    Push(Pop() - Read16(cc_BVISOFF)); //  BVISOFF -
     SWAP(); // SWAP
-    Push(Pop() - Read16(cc_UNK_0xd9d4)); //  UNK_0xd9d4 -
+    Push(Pop() - Read16(cc_LVISOFF)); //  LVISOFF -
     SWAP(); // SWAP
     _2SWAP(); // 2SWAP
-    Push(Pop() + Read16(cc_UNK_0xd9c8)); //  UNK_0xd9c8 +
+    Push(Pop() + Read16(cc_VISLENGTH)); //  VISLENGTH +
     SWAP(); // SWAP
-    Push(Pop() + Read16(cc_UNK_0xd9cc)); //  UNK_0xd9cc +
+    Push(Pop() + Read16(cc_VISWIDTH)); //  VISWIDTH +
     SWAP(); // SWAP
     StoreVISWINDOW(); // !VISWINDOW
   } else
@@ -3122,7 +3122,7 @@ void UNK_0xe9bb() // UNK_0xe9bb
   Push(!(Pop()==1?1:0)); //  1 = NOT
   if (Pop() == 0) return;
   Push(Read16(pp_HEADING)); // HEADING @
-  Push(Read16(pp_UNK_0xd9dc)); // UNK_0xd9dc @
+  Push(Read16(pp__ro_RADIUS_rc_)); // (RADIUS) @
   OVER(); // OVER
   UNK_0xe684(); // UNK_0xe684
   _2DUP(); // 2DUP
@@ -3144,7 +3144,7 @@ void UNK_0xe9bb() // UNK_0xe9bb
 
 void NEST() // NEST
 {
-  Push(pp__ro_SHIPBOX); // (SHIPBOX
+  Push(pp__ro_SHIPBOX_rc_); // (SHIPBOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -3170,7 +3170,7 @@ void NEST() // NEST
   Push(Read16(regsp)); // DUP
   Push(0xc9fe); // probable 'D-UP'
   MODULE(); // MODULE
-  UNK_0xd976(); // UNK_0xd976
+  SET_dash__i_EXTERNAL(); // SET-'EXTERNAL
   _gt_CONS_dash_DISP(); // >CONS-DISP
   UNK_0xe325(); // UNK_0xe325
   Push(0xc9c4); // probable 'NFM'
@@ -3288,7 +3288,7 @@ void JMPSHP() // JMPSHP
   Push(0);
   Push(8);
   RRND(); // RRND
-  Push(Read16(cc_UNK_0xd9b0) + 1); // UNK_0xd9b0 1+
+  Push(Read16(cc_RCOLLIDE) + 1); // RCOLLIDE 1+
   UNK_0xe6a0(); // UNK_0xe6a0
   UNK_0xe560(); // UNK_0xe560
   TIME(); // TIME
@@ -3409,7 +3409,7 @@ void IsCOLLISION() // ?COLLISION
 {
   unsigned short int i, imax;
   UNK_0xda9e(); // UNK_0xda9e
-  Push(Read16(cc_UNK_0xd9b0)); // UNK_0xd9b0
+  Push(Read16(cc_RCOLLIDE)); // RCOLLIDE
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   IsICONS_dash_LOCUS(); // ?ICONS-LOCUS
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -3561,7 +3561,7 @@ void IsSTARPORT() // ?STARPORT
   UNK_0xec39(); // UNK_0xec39
   if (Pop() != 0)
   {
-    UNK_0xd998(); // UNK_0xd998
+    SYS_gt_C(); // SYS>C
     Push(Read16(0x63ef+FLAREDATE.offset)); // FLAREDATE<IFIELD> @
     Push(Read16(pp_STARDATE)); // STARDATE @
     _gt_(); // >
@@ -3656,7 +3656,7 @@ void UNNEST_dash_SPACEXY() // UNNEST-SPACEXY
   Push(Read16(pp_UNK_0xd9e8)); // UNK_0xd9e8 @
   Push(3);
   PICK(); // PICK
-  Push(Read16(cc_UNK_0xd9b0) + 1); // UNK_0xd9b0 1+
+  Push(Read16(cc_RCOLLIDE) + 1); // RCOLLIDE 1+
   UNK_0xe6a0(); // UNK_0xe6a0
   UNK_0xe560(); // UNK_0xe560
 }
@@ -3680,7 +3680,7 @@ void IsUNNEST() // ?UNNEST
   if (Pop() != 0)
   {
     GetXYABS(); // @XYABS
-    Push(Read16(pp_UNK_0xd9dc)); // UNK_0xd9dc @
+    Push(Read16(pp__ro_RADIUS_rc_)); // (RADIUS) @
     Push(Read16(pp_ILOCAL)); // ILOCAL @
     IsICONS_dash_LOCUS(); // ?ICONS-LOCUS
     Push(Read16(regsp)); // DUP
@@ -3707,7 +3707,7 @@ void IsUNNEST() // ?UNNEST
   SWAP(); // SWAP
   ABS(); // ABS
   MAX(); // MAX
-  Push(Read16(pp_UNK_0xd9dc)); // UNK_0xd9dc @
+  Push(Read16(pp__ro_RADIUS_rc_)); // (RADIUS) @
   _gt_(); // >
 }
 
@@ -3733,7 +3733,7 @@ void IsDOUBLE_dash_UNNEST() // ?DOUBLE-UNNEST
 void UNNEST() // UNNEST
 {
   unsigned short int a;
-  Push(pp__ro_SHIPBOX); // (SHIPBOX
+  Push(pp__ro_SHIPBOX_rc_); // (SHIPBOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -3759,7 +3759,7 @@ void UNNEST() // UNNEST
   Push(a); // I
   UNNEST_dash_SPACEXY(); // UNNEST-SPACEXY
   UNK_0xdad0(); // UNK_0xdad0
-  UNK_0xd976(); // UNK_0xd976
+  SET_dash__i_EXTERNAL(); // SET-'EXTERNAL
   CTXT_n_(); // CTXT#
   Push(0xc9fe); // probable 'D-UP'
   MODULE(); // MODULE
@@ -3894,7 +3894,7 @@ void UNK_0xef11() // UNK_0xef11
 {
   Push(Read16(Pop())); //  @
   Push(Pop() + Pop()); // +
-  Push(-Read16(cc_UNK_0xd9c4) - 0x000c); // UNK_0xd9c4 NEGATE 0x000c -
+  Push(-Read16(cc_SYSRADIUS) - 0x000c); // SYSRADIUS NEGATE 0x000c -
   UNK_0xdafa(); // UNK_0xdafa
   Push(!Pop()); //  NOT
   Push(Pop() * Pop()); // *
@@ -4042,7 +4042,7 @@ void SETUP_dash_MOV() // SETUP-MOV
   Push(pp_UNK_0xd9fe); // UNK_0xd9fe
   Store_3(); // !_3
   UNK_0xd9a8(); // UNK_0xd9a8
-  UNK_0xd976(); // UNK_0xd976
+  SET_dash__i_EXTERNAL(); // SET-'EXTERNAL
   _gt_CONS_dash_DISP(); // >CONS-DISP
   Push(Read16(pp_HEADING)); // HEADING @
   GetXYABS(); // @XYABS
@@ -4245,7 +4245,7 @@ void COME_dash_HITHER() // COME-HITHER
   label2:
   UNK_0xdafa(); // UNK_0xdafa
   Push(!Pop()); //  NOT
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   _1_dot_5_at_(); // 1.5@
   Push2Words("*ASYS");
   D_eq_(); // D=
@@ -4268,7 +4268,7 @@ void COME_dash_HITHER() // COME-HITHER
     Push2Words("*ASYS");
     _plus_NEST(); // +NEST
   }
-  UNK_0xd998(); // UNK_0xd998
+  SYS_gt_C(); // SYS>C
   IOPEN(); // IOPEN
 
   label5:

@@ -11,32 +11,32 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
-//      UNK_0xef66  codep:0x2214 parp:0xef66 size:0x0002 C-string:'UNK_0xef66'
-//      UNK_0xef6a  codep:0x2214 parp:0xef6a size:0x0002 C-string:'UNK_0xef6a'
-//      UNK_0xef6e  codep:0x744d parp:0xef6e size:0x0003 C-string:'UNK_0xef6e'
-//      UNK_0xef73  codep:0x224c parp:0xef73 size:0x0093 C-string:'UNK_0xef73'
+//          HIBEEP  codep:0x2214 parp:0xef66 size:0x0002 C-string:'HIBEEP'
+//          LOBEEP  codep:0x2214 parp:0xef6a size:0x0002 C-string:'LOBEEP'
+//         PHRASE$  codep:0x744d parp:0xef6e size:0x0003 C-string:'PHRASE_do_'
+//      MESSPREFIX  codep:0x224c parp:0xef73 size:0x0093 C-string:'MESSPREFIX'
 //      UNK_0xf008  codep:0x224c parp:0xf008 size:0x0016 C-string:'UNK_0xf008'
 //      UNK_0xf020  codep:0x224c parp:0xf020 size:0x0004 C-string:'UNK_0xf020'
-//      UNK_0xf026  codep:0x224c parp:0xf026 size:0x003c C-string:'UNK_0xf026'
-//      UNK_0xf064  codep:0x224c parp:0xf064 size:0x0028 C-string:'UNK_0xf064'
+//         .PHRASE  codep:0x224c parp:0xf026 size:0x003c C-string:'DrawPHRASE'
+//        .PHRASES  codep:0x224c parp:0xf064 size:0x0028 C-string:'DrawPHRASES'
 //      UNK_0xf08e  codep:0x224c parp:0xf08e size:0x000c C-string:'UNK_0xf08e'
 //      UNK_0xf09c  codep:0x224c parp:0xf09c size:0x0038 C-string:'UNK_0xf09c'
 //      UNK_0xf0d6  codep:0x224c parp:0xf0d6 size:0x0080 C-string:'UNK_0xf0d6'
-//      UNK_0xf158  codep:0x224c parp:0xf158 size:0x000c C-string:'UNK_0xf158'
+//         ?DELETE  codep:0x224c parp:0xf158 size:0x000c C-string:'IsDELETE'
 //      UNK_0xf166  codep:0x224c parp:0xf166 size:0x0044 C-string:'UNK_0xf166'
-//      UNK_0xf1ac  codep:0x224c parp:0xf1ac size:0x0028 C-string:'UNK_0xf1ac'
-//      UNK_0xf1d6  codep:0x224c parp:0xf1d6 size:0x007a C-string:'UNK_0xf1d6'
-//      UNK_0xf252  codep:0x224c parp:0xf252 size:0x000a C-string:'UNK_0xf252'
-//      UNK_0xf25e  codep:0x224c parp:0xf25e size:0x003e C-string:'UNK_0xf25e'
-//      UNK_0xf29e  codep:0x224c parp:0xf29e size:0x0010 C-string:'UNK_0xf29e'
-//      UNK_0xf2b0  codep:0x224c parp:0xf2b0 size:0x0034 C-string:'UNK_0xf2b0'
-//      UNK_0xf2e6  codep:0x744d parp:0xf2e6 size:0x0003 C-string:'UNK_0xf2e6'
-//      UNK_0xf2eb  codep:0x224c parp:0xf2eb size:0x001e C-string:'UNK_0xf2eb'
+//    OTHER-DELETE  codep:0x224c parp:0xf1ac size:0x0028 C-string:'OTHER_dash_DELETE'
+//       .BOMBMESS  codep:0x224c parp:0xf1d6 size:0x007a C-string:'DrawBOMBMESS'
+//      FLASHCOLOR  codep:0x224c parp:0xf252 size:0x000a C-string:'FLASHCOLOR'
+//       EXPLOSION  codep:0x224c parp:0xf25e size:0x003e C-string:'EXPLOSION'
+//        ?CRYSTAL  codep:0x224c parp:0xf29e size:0x0010 C-string:'IsCRYSTAL'
+//        ?ATNEXUS  codep:0x224c parp:0xf2b0 size:0x0034 C-string:'IsATNEXUS'
+//      ORBIT-MASK  codep:0x744d parp:0xf2e6 size:0x0003 C-string:'ORBIT_dash_MASK'
+//      CLRORBMASK  codep:0x224c parp:0xf2eb size:0x001e C-string:'CLRORBMASK'
 //      UNK_0xf30b  codep:0x224c parp:0xf30b size:0x0024 C-string:'UNK_0xf30b'
 //      UNK_0xf331  codep:0x224c parp:0xf331 size:0x006a C-string:'UNK_0xf331'
 //      UNK_0xf39d  codep:0x224c parp:0xf39d size:0x0087 C-string:'UNK_0xf39d'
 //      UNK_0xf426  codep:0x224c parp:0xf426 size:0x0008 C-string:'UNK_0xf426'
-//      UNK_0xf430  codep:0x224c parp:0xf430 size:0x0053 C-string:'UNK_0xf430'
+//   ?DELETEPLANET  codep:0x224c parp:0xf430 size:0x0053 C-string:'IsDELETEPLANET'
 //          DEPART  codep:0x224c parp:0xf48e size:0x0000 C-string:'DEPART'
 
 // =================================
@@ -58,9 +58,9 @@ extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp__ro_AWARD_rc_; // (AWARD)
 extern const unsigned short int pp__ro_BOMB_rc_; // (BOMB)
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
-extern const unsigned short int pp__ro_SYSTEM; // (SYSTEM
+extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern Color BLACK; // BLACK
 extern Color DK_dash_BLUE; // DK-BLUE
@@ -139,32 +139,32 @@ void V_gt_DISPLAY(); // V>DISPLAY
 // =========== VARIABLES ===========
 // =================================
 
-const unsigned short int cc_UNK_0xef66 = 0xef66; // UNK_0xef66
-const unsigned short int cc_UNK_0xef6a = 0xef6a; // UNK_0xef6a
+const unsigned short int cc_HIBEEP = 0xef66; // HIBEEP
+const unsigned short int cc_LOBEEP = 0xef6a; // LOBEEP
 
 
 // 0xef62: db 0x5e 0x00 '^ '
 
 // ================================================
-// 0xef64: WORD 'UNK_0xef66' codep=0x2214 parp=0xef66
+// 0xef64: WORD 'HIBEEP' codep=0x2214 parp=0xef66
 // ================================================
 // 0xef66: dw 0x03e8
 
 // ================================================
-// 0xef68: WORD 'UNK_0xef6a' codep=0x2214 parp=0xef6a
+// 0xef68: WORD 'LOBEEP' codep=0x2214 parp=0xef6a
 // ================================================
 // 0xef6a: dw 0x0fa0
 
 // ================================================
-// 0xef6c: WORD 'UNK_0xef6e' codep=0x744d parp=0xef6e
+// 0xef6c: WORD 'PHRASE$' codep=0x744d parp=0xef6e
 // ================================================
-IFieldType UNK_0xef6e = {ENCOUNTERIDX, 0x1b, 0x01};
+IFieldType PHRASE_do_ = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xef71: WORD 'UNK_0xef73' codep=0x224c parp=0xef73 params=0 returns=4
+// 0xef71: WORD 'MESSPREFIX' codep=0x224c parp=0xef73 params=0 returns=4
 // ================================================
 
-void UNK_0xef73() // UNK_0xef73
+void MESSPREFIX() // MESSPREFIX
 {
   unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
@@ -176,7 +176,7 @@ void UNK_0xef73() // UNK_0xef73
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(cc_UNK_0xef66)); // UNK_0xef66
+    Push(Read16(cc_HIBEEP)); // HIBEEP
     TONE(); // TONE
     BEEPON(); // BEEPON
     GetColor(DK_dash_BLUE);
@@ -210,7 +210,7 @@ void UNK_0xef73() // UNK_0xef73
     POS_dot_(); // POS.
     SET_STR_AS_PARAM("MESSAGE");
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-    Push(Read16(cc_UNK_0xef6a)); // UNK_0xef6a
+    Push(Read16(cc_LOBEEP)); // LOBEEP
     TONE(); // TONE
     V_gt_DISPLAY(); // V>DISPLAY
     Push(0x01f4);
@@ -249,10 +249,10 @@ void UNK_0xf020() // UNK_0xf020
 
 
 // ================================================
-// 0xf024: WORD 'UNK_0xf026' codep=0x224c parp=0xf026
+// 0xf024: WORD '.PHRASE' codep=0x224c parp=0xf026
 // ================================================
 
-void UNK_0xf026() // UNK_0xf026
+void DrawPHRASE() // .PHRASE
 {
   Push((0x63ef+PHRASE_do_.offset) + 1); // PHRASE$<IFIELD> 1+
   COUNT(); // COUNT
@@ -284,16 +284,16 @@ void UNK_0xf026() // UNK_0xf026
 
 
 // ================================================
-// 0xf062: WORD 'UNK_0xf064' codep=0x224c parp=0xf064
+// 0xf062: WORD '.PHRASES' codep=0x224c parp=0xf064
 // ================================================
 
-void UNK_0xf064() // UNK_0xf064
+void DrawPHRASES() // .PHRASES
 {
   unsigned short int i, imax;
   CDEPTH(); // CDEPTH
 
   label2:
-  UNK_0xf026(); // UNK_0xf026
+  DrawPHRASE(); // .PHRASE
   IsCHILD(); // ?CHILD
   if (Pop() == 0) goto label1;
   IOPEN(); // IOPEN
@@ -327,7 +327,7 @@ void UNK_0xf08e() // UNK_0xf08e
   CTINIT(); // CTINIT
   Push(pp__ro_AWARD_rc_); // (AWARD)
   Get_gt_C_plus_S(); // @>C+S
-  UNK_0xf064(); // UNK_0xf064
+  DrawPHRASES(); // .PHRASES
   ICLOSE(); // ICLOSE
 }
 
@@ -340,7 +340,7 @@ void UNK_0xf09c() // UNK_0xf09c
 {
   Push(pp_TIME_dash_PASSING); // TIME-PASSING
   OFF(); // OFF
-  UNK_0xef73(); // UNK_0xef73
+  MESSPREFIX(); // MESSPREFIX
   UNK_0xf008(); // UNK_0xf008
   Push(0);
   SONG(); // SONG
@@ -420,10 +420,10 @@ void UNK_0xf0d6() // UNK_0xf0d6
 
 
 // ================================================
-// 0xf156: WORD 'UNK_0xf158' codep=0x224c parp=0xf158 params=1 returns=0
+// 0xf156: WORD '?DELETE' codep=0x224c parp=0xf158 params=1 returns=0
 // ================================================
 
-void UNK_0xf158() // UNK_0xf158
+void IsDELETE() // ?DELETE
 {
   if (Pop() != 0)
   {
@@ -440,7 +440,7 @@ void UNK_0xf158() // UNK_0xf158
 
 void UNK_0xf166() // UNK_0xf166
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
 
@@ -459,7 +459,7 @@ void UNK_0xf166() // UNK_0xf166
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) goto label2;
   UNK_0xf0d6(); // UNK_0xf0d6
-  UNK_0xf158(); // UNK_0xf158
+  IsDELETE(); // ?DELETE
   goto label3;
 
   label2:
@@ -470,7 +470,7 @@ void UNK_0xf166() // UNK_0xf166
   }
   IsNULL(); // ?NULL
   ICLOSE(); // ICLOSE
-  UNK_0xf158(); // UNK_0xf158
+  IsDELETE(); // ?DELETE
   goto label5;
 
   label1:
@@ -480,12 +480,12 @@ void UNK_0xf166() // UNK_0xf166
 
 
 // ================================================
-// 0xf1aa: WORD 'UNK_0xf1ac' codep=0x224c parp=0xf1ac
+// 0xf1aa: WORD 'OTHER-DELETE' codep=0x224c parp=0xf1ac
 // ================================================
 
-void UNK_0xf1ac() // UNK_0xf1ac
+void OTHER_dash_DELETE() // OTHER-DELETE
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -509,10 +509,10 @@ void UNK_0xf1ac() // UNK_0xf1ac
 
 
 // ================================================
-// 0xf1d4: WORD 'UNK_0xf1d6' codep=0x224c parp=0xf1d6 params=0 returns=2
+// 0xf1d4: WORD '.BOMBMESS' codep=0x224c parp=0xf1d6 params=0 returns=2
 // ================================================
 
-void UNK_0xf1d6() // UNK_0xf1d6
+void DrawBOMBMESS() // .BOMBMESS
 {
   unsigned short int i, imax;
   CTINIT(); // CTINIT
@@ -547,10 +547,10 @@ void UNK_0xf1d6() // UNK_0xf1d6
 
 
 // ================================================
-// 0xf250: WORD 'UNK_0xf252' codep=0x224c parp=0xf252 params=1 returns=0
+// 0xf250: WORD 'FLASHCOLOR' codep=0x224c parp=0xf252 params=1 returns=0
 // ================================================
 
-void UNK_0xf252() // UNK_0xf252
+void FLASHCOLOR() // FLASHCOLOR
 {
   StoreCOLOR(); // !COLOR
   _gt_MAINVIEW(); // >MAINVIEW
@@ -560,10 +560,10 @@ void UNK_0xf252() // UNK_0xf252
 
 
 // ================================================
-// 0xf25c: WORD 'UNK_0xf25e' codep=0x224c parp=0xf25e params=0 returns=9
+// 0xf25c: WORD 'EXPLOSION' codep=0x224c parp=0xf25e params=0 returns=9
 // ================================================
 
-void UNK_0xf25e() // UNK_0xf25e
+void EXPLOSION() // EXPLOSION
 {
   unsigned short int i, imax, j, jmax;
   SET_STR_AS_PARAM("BOOM!");
@@ -592,7 +592,7 @@ void UNK_0xf25e() // UNK_0xf25e
     jmax = Pop();
     do // (DO)
     {
-      UNK_0xf252(); // UNK_0xf252
+      FLASHCOLOR(); // FLASHCOLOR
       j++;
     } while(j<jmax); // (LOOP)
 
@@ -604,12 +604,12 @@ void UNK_0xf25e() // UNK_0xf25e
 
 
 // ================================================
-// 0xf29c: WORD 'UNK_0xf29e' codep=0x224c parp=0xf29e params=0 returns=1
+// 0xf29c: WORD '?CRYSTAL' codep=0x224c parp=0xf29e params=0 returns=1
 // ================================================
 
-void UNK_0xf29e() // UNK_0xf29e
+void IsCRYSTAL() // ?CRYSTAL
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE
@@ -618,10 +618,10 @@ void UNK_0xf29e() // UNK_0xf29e
 
 
 // ================================================
-// 0xf2ae: WORD 'UNK_0xf2b0' codep=0x224c parp=0xf2b0 params=0 returns=1
+// 0xf2ae: WORD '?ATNEXUS' codep=0x224c parp=0xf2b0 params=0 returns=1
 // ================================================
 
-void UNK_0xf2b0() // UNK_0xf2b0
+void IsATNEXUS() // ?ATNEXUS
 {
   Push(pp__ro_BOMB_rc_); // (BOMB)
   Get_gt_C_plus_S(); // @>C+S
@@ -644,25 +644,25 @@ void UNK_0xf2b0() // UNK_0xf2b0
 
 
 // ================================================
-// 0xf2e4: WORD 'UNK_0xf2e6' codep=0x744d parp=0xf2e6
+// 0xf2e4: WORD 'ORBIT-MASK' codep=0x744d parp=0xf2e6
 // ================================================
-IFieldType UNK_0xf2e6 = {STARSYSTEMIDX, 0x11, 0x01};
+IFieldType ORBIT_dash_MASK = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
-// 0xf2e9: WORD 'UNK_0xf2eb' codep=0x224c parp=0xf2eb params=0 returns=0
+// 0xf2e9: WORD 'CLRORBMASK' codep=0x224c parp=0xf2eb params=0 returns=0
 // ================================================
 
-void UNK_0xf2eb() // UNK_0xf2eb
+void CLRORBMASK() // CLRORBMASK
 {
   Push(pp__ro_ORBIT_rc_); // (ORBIT)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+INST_dash_QTY.offset)); // INST-QTY<IFIELD> @
   ICLOSE(); // ICLOSE
   BIT(); // BIT
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
-  Push(Pop() + (Read16(0x63ef+UNK_0xf2e6.offset)&0xFF)); //  UNK_0xf2e6<IFIELD> C@ XOR
-  Push(0x63ef+UNK_0xf2e6.offset); // UNK_0xf2e6<IFIELD>
+  Push(Pop() + (Read16(0x63ef+ORBIT_dash_MASK.offset)&0xFF)); //  ORBIT-MASK<IFIELD> C@ XOR
+  Push(0x63ef+ORBIT_dash_MASK.offset); // ORBIT-MASK<IFIELD>
   C_ex_(); // C!
   ICLOSE(); // ICLOSE
 }
@@ -735,7 +735,7 @@ void UNK_0xf39d() // UNK_0xf39d
   if (Pop() != 0)
   {
     Push(0);
-    Push(0x63ef+UNK_0xef6e.offset); // UNK_0xef6e<IFIELD>
+    Push(0x63ef+PHRASE_do_.offset); // PHRASE$<IFIELD>
     C_ex_(); // C!
   }
   goto label3;
@@ -757,17 +757,17 @@ void UNK_0xf39d() // UNK_0xf39d
 
 void UNK_0xf426() // UNK_0xf426
 {
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   D_eq_(); // D=
 }
 
 
 // ================================================
-// 0xf42e: WORD 'UNK_0xf430' codep=0x224c parp=0xf430
+// 0xf42e: WORD '?DELETEPLANET' codep=0x224c parp=0xf430
 // ================================================
 
-void UNK_0xf430() // UNK_0xf430
+void IsDELETEPLANET() // ?DELETEPLANET
 {
   Push2Words("*SPHEXI");
   UNK_0xf426(); // UNK_0xf426
@@ -790,8 +790,8 @@ void UNK_0xf430() // UNK_0xf430
   {
     UNK_0xf39d(); // UNK_0xf39d
   }
-  UNK_0xf2eb(); // UNK_0xf2eb
-  Push(pp__ro_SYSTEM); // (SYSTEM
+  CLRORBMASK(); // CLRORBMASK
+  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CDROP(); // CDROP
@@ -824,15 +824,15 @@ void DEPART() // DEPART
     Push(Read16(pp_IsBOMB)); // ?BOMB @
     if (Pop() != 0)
     {
-      UNK_0xf1d6(); // UNK_0xf1d6
-      UNK_0xf25e(); // UNK_0xf25e
-      UNK_0xf29e(); // UNK_0xf29e
+      DrawBOMBMESS(); // .BOMBMESS
+      EXPLOSION(); // EXPLOSION
+      IsCRYSTAL(); // ?CRYSTAL
       if (Pop() != 0)
       {
-        UNK_0xf2b0(); // UNK_0xf2b0
+        IsATNEXUS(); // ?ATNEXUS
         if (Pop() != 0)
         {
-          UNK_0xf430(); // UNK_0xf430
+          IsDELETEPLANET(); // ?DELETEPLANET
           UNK_0xf09c(); // UNK_0xf09c
           Push(pp_WMSG); // WMSG
           ON_3(); // ON_3
@@ -845,11 +845,11 @@ void DEPART() // DEPART
           DrawTTY(); // .TTY
           Push(0x1388);
           MS(); // MS
-          UNK_0xf1ac(); // UNK_0xf1ac
+          OTHER_dash_DELETE(); // OTHER-DELETE
         }
       } else
       {
-        UNK_0xf430(); // UNK_0xf430
+        IsDELETEPLANET(); // ?DELETEPLANET
       }
       Push2Words("NULL");
       Push(pp__ro_BOMB_rc_); // (BOMB)
@@ -859,7 +859,7 @@ void DEPART() // DEPART
     } else
     {
       UNK_0xf166(); // UNK_0xf166
-      UNK_0xf1ac(); // UNK_0xf1ac
+      OTHER_dash_DELETE(); // OTHER-DELETE
     }
   }
   Push(-1);

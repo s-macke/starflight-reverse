@@ -128,7 +128,7 @@ extern const unsigned short int pp_LKEYTIM; // LKEYTIM
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
-extern const unsigned short int pp__ro_PLANET; // (PLANET
+extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern LoadDataType ELEM_dash_NAME; // ELEM-NAME
 extern Color BLACK; // BLACK
 extern Color DK_dash_BLUE; // DK-BLUE
@@ -1739,7 +1739,7 @@ void UNK_0xf0de() // UNK_0xf0de
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
   ICLOSE(); // ICLOSE
-  Push(pp__ro_PLANET); // (PLANET
+  Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   SET_STR_AS_PARAM("LITHOSPHERE");
   UNK_0xf0bd(); // UNK_0xf0bd
@@ -2145,7 +2145,7 @@ void _ro__slash_SENSORS_rc_() // (/SENSORS)
   _st_(); // <
   if (Pop() != 0)
   {
-    Push(pp__ro_PLANET); // (PLANET
+    Push(pp__ro_PLANET_rc_); // (PLANET)
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
     Push(pp_SENSE_dash_ADDR); // SENSE-ADDR
