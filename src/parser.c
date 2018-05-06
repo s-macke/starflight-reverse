@@ -874,7 +874,28 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
 
         for(int i=minaddr; i<maxaddr-3; i++)
         {
-            if (pline[i+1].done || pline[i+2].done) continue;
+            if (pline[i+1].done || pline[i+2].done)
+            {
+
+              // search for very special orphan words, e. g.
+              // 0xf03a: db 0x3a 0x20 0x29 0x1d 0x3a 0x20 ': ) : '
+              //                      ^^^^^^^^^
+              if ((Read16(i+1) == CODEPOINTER) && (!pline[i+1+4].done) && (!pline[i+1+5].done))
+              {
+                if (Read16(i+1+4) == CODEPOINTER)
+                {
+                    WORD *e = GetWordByAddr(i+3+4, ovidx);
+                    e->isorphan = 1;
+                }
+                if (Read16(i+1+4) == CODECALL)
+                {
+                    WORD *e = GetWordByAddr(i+3+4, ovidx);
+                    e->isorphan = 1;
+                }
+              }
+
+              continue;
+            }
             if ((!(i==minaddr+1)) && (!pline[i+0].done)) continue;
 
             if (Read16(i+1) == CODECALL)
