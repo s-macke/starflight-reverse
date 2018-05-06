@@ -1807,7 +1807,7 @@ void UNK_0xefeb() // UNK_0xefeb
 
 void UNK_0xf001() // UNK_0xf001
 {
-  Push(0xc4e5); // probable 'OVFLU'
+  Push(0xc4e5); // probable 'OVFLUX-EFFECT'
   MODULE(); // MODULE
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("...");

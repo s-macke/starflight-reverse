@@ -1493,10 +1493,10 @@ void _ro_GETSITE_rc_() // (GETSITE)
 // Overlay FLUX_dash_OV = 0x89fc
 
 // ================================================
-// 0xc4db: WORD 'OVFLU' codep=0x224c parp=0xc4e5
+// 0xc4db: WORD 'OVFLUX-EFFECT' codep=0x224c parp=0xc4e5
 // ================================================
 
-void OVFLU() // OVFLU
+void OVFLUX_dash_EFFECT() // OVFLUX-EFFECT
 {
   LoadOverlay(FLUX_dash_OV); // FLUX-OV
   FLUX(); // Overlay FLUX-EFFECT

@@ -1903,7 +1903,7 @@
 //       (GETSITE)  codep:0x224c parp:0xc4a2 size:0x000a C-string:'_ro_GETSITE_rc_'
 //        FLUX-VOC  codep:0x1ab5 parp:0xc4b9 size:0x0014 C-string:'FLUX_dash_VOC'
 //         FLUX-OV  codep:0x83f8 parp:0xc4d9 size:0x0002 C-string:'FLUX_dash_OV'
-//           OVFLU  codep:0x224c parp:0xc4e5 size:0x0006 C-string:'OVFLU'
+//   OVFLUX-EFFECT  codep:0x224c parp:0xc4e5 size:0x0006 C-string:'OVFLUX_dash_EFFECT'
 //        BANK-VOC  codep:0x1ab5 parp:0xc4f8 size:0x0014 C-string:'BANK_dash_VOC'
 //         BANK-OV  codep:0x83f8 parp:0xc518 size:0x0002 C-string:'BANK_dash_OV'
 //  OVINIT-BALANCE  codep:0x224c parp:0xc52d size:0x0006 C-string:'OVINIT_dash_BALANCE'
@@ -28069,10 +28069,10 @@ void _ro_GETSITE_rc_() // (GETSITE)
 // Overlay FLUX_dash_OV = 0x89fc
 
 // ================================================
-// 0xc4db: WORD 'OVFLU' codep=0x224c parp=0xc4e5
+// 0xc4db: WORD 'OVFLUX-EFFECT' codep=0x224c parp=0xc4e5
 // ================================================
 
-void OVFLU() // OVFLU
+void OVFLUX_dash_EFFECT() // OVFLUX-EFFECT
 {
   LoadOverlay(FLUX_dash_OV); // FLUX-OV
   FLUX(); // Overlay FLUX-EFFECT
