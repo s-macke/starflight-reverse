@@ -507,6 +507,16 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             snprintf(pline[offset].str, STRINGLEN, "MODULE(); // MODULE\n");
             offset += 2;
         } else
+        if (strcmp(s, "EACH") == 0)
+        {
+            if (Read16(Read16(offset-4)) == CODELIT)
+            {
+                char *s = GetWordNameByAddr(Read16(offset-2), ovidx);
+            }
+            pline[offset].str = malloc(STRINGLEN);
+            snprintf(pline[offset].str, STRINGLEN, "EACH(); // EACH\n");
+            offset += 2;
+        } else
         if (strcmp(s, "DOTASKS") == 0)
         {
             int codep1 = Read16(Read16(offset-4));
@@ -914,7 +924,6 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
         SetStructDone(ovidx);
         if (nwordstemp == nwords) break;
     }
-
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
