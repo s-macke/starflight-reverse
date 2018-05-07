@@ -280,9 +280,9 @@ void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
 int IsLabelStillInUse(WORD *e, int labeladdr)
 {
     int addr = e->parp;
-    while(pline[addr].flow != FUNCEND)
+    while(!ContainsFlow(&pline[addr], FUNCEND))
     {
-        if ((pline[addr].flow == IFGOTO) || (pline[addr].flow == GOTO))
+        if (ContainsFlow(&pline[addr], IFGOTO) || ContainsFlow(&pline[addr], GOTO))
         {
             if (pline[addr].gotoaddr == labeladdr) return TRUE;
         }
@@ -291,44 +291,14 @@ int IsLabelStillInUse(WORD *e, int labeladdr)
     return FALSE;
 }
 
-void AddFlow(controlflowenum *oldflow, controlflowenum newflow)
-{
-    if ((*oldflow == IFCLOSE) && (newflow == IFCLOSE))
-    {
-        *oldflow = IFCLOSE2;
-        return;
-    }
-    if ((*oldflow == IFCLOSE2) && (newflow == IFCLOSE))
-    {
-        *oldflow = IFCLOSE3;
-        return;
-    }
-    if ((*oldflow == IFCLOSE3) && (newflow == IFCLOSE))
-    {
-        *oldflow = IFCLOSE4;
-        return;
-    }
-    if ((*oldflow == IFCLOSE4) && (newflow == IFCLOSE))
-    {
-        fprintf(stderr, "Error: Too much closing brackets");
-        exit(1);
-    }
-    if ((*oldflow == DOSIMPLE) && (newflow == DOSIMPLE))
-    {
-        fprintf(stderr, "Error: flow already full");
-        exit(1);
-    }
-    *oldflow = newflow;
-}
-
-int ContainsFlow(int startaddr, int endaddr)
+int ContainsAnyFlow(int startaddr, int endaddr)
 {
     int addr;
     for(addr = startaddr; addr < endaddr; addr++)
     {
-        controlflowenum flow = pline[addr].flow;
-        if (flow == DO) addr = pline[addr].loopaddr;
-        if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return TRUE;
+         controlflowenum flow = pline[addr].flow.flow;
+         if (flow == DO) addr = pline[addr].loopaddr;
+         if ((flow == LOOP) || (flow == GOTO) || (flow == IFGOTO) || (pline[addr].labelid > 0)) return TRUE;
     }
     return FALSE;
 }
@@ -337,10 +307,10 @@ void TreatIfGoto(WORD *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
     if (labeladdr < ifgotoaddr) return;
-    if (ContainsFlow(ifgotoaddr+1, labeladdr)) return;
+    if (ContainsAnyFlow(ifgotoaddr+1, labeladdr)) return;
 
-    AddFlow(&pline[ifgotoaddr].flow, IFNOT);
-    AddFlow(&pline[labeladdr-1].flow, IFCLOSE);
+    AddFlow(&pline[ifgotoaddr], IFNOT);
+    AddFlow(&pline[labeladdr-1], IFCLOSE);
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
@@ -348,11 +318,11 @@ void TreatLoop(WORD *e, int ifgotoaddr)
 {
     int labeladdr = pline[ifgotoaddr].gotoaddr;
     if (labeladdr > ifgotoaddr) return;
-    if (pline[labeladdr].flow != NONE) return;
-    if (ContainsFlow(labeladdr+1, ifgotoaddr)) return;
+    if (pline[labeladdr].flow.flow != NONE) return;
+    if (ContainsAnyFlow(labeladdr+1, ifgotoaddr)) return;
 
-    AddFlow(&pline[labeladdr].flow, DOSIMPLE);
-    AddFlow(&pline[ifgotoaddr].flow, LOOPTEST);
+    AddFlow(&pline[labeladdr], DOSIMPLE);
+    AddFlow(&pline[ifgotoaddr], LOOPTEST);
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
@@ -360,11 +330,11 @@ void TreatEndlessLoop(WORD *e, int gotoaddr)
 {
     int labeladdr = pline[gotoaddr].gotoaddr;
     if (labeladdr > gotoaddr) return;
-    if (pline[labeladdr].flow != NONE) return;
-    if (ContainsFlow(labeladdr+1, gotoaddr)) return;
+    if (pline[labeladdr].flow.flow != NONE) return;
+    if (ContainsAnyFlow(labeladdr+1, gotoaddr)) return;
 
-    AddFlow(&pline[labeladdr].flow, DOSIMPLE);
-    AddFlow(&pline[gotoaddr].flow, LOOPENDLESS);
+    AddFlow(&pline[labeladdr], DOSIMPLE);
+    AddFlow(&pline[gotoaddr], LOOPENDLESS);
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
@@ -375,17 +345,17 @@ void TreatIfElseGoto(WORD *e, int ifgotoaddr)
 
     if (labeladdr < ifgotoaddr) return;
     int elsegotoaddr = labeladdr-4;
-    if (pline[elsegotoaddr].flow != GOTO) return;
-    if (ContainsFlow(ifgotoaddr+1, elsegotoaddr)) return;
+    if (!ContainsFlow(&pline[elsegotoaddr], GOTO)) return;
+    if (ContainsAnyFlow(ifgotoaddr+1, elsegotoaddr)) return;
     int elselabeladdr = pline[elsegotoaddr].gotoaddr;
     if (elselabeladdr == labeladdr) return;
     if (elselabeladdr < elsegotoaddr) return;
-    if (pline[labeladdr].flow != NONE) return;
-    if (ContainsFlow(labeladdr+1, elselabeladdr)) return;
+    if (pline[labeladdr].flow.flow != NONE) return;
+    if (ContainsAnyFlow(labeladdr+1, elselabeladdr)) return;
 
-    AddFlow(&pline[ifgotoaddr].flow, IFNOT);
-    AddFlow(&pline[elsegotoaddr].flow, IFELSE);
-    AddFlow(&pline[elselabeladdr-1].flow, IFCLOSE);
+    AddFlow(&pline[ifgotoaddr], IFNOT);
+    AddFlow(&pline[elsegotoaddr], IFELSE);
+    AddFlow(&pline[elselabeladdr-1], IFCLOSE);
     if (!IsLabelStillInUse(e, elselabeladdr)) pline[elselabeladdr].labelid = 0;
     if (IsLabelStillInUse(e, labeladdr))
     {
@@ -398,15 +368,15 @@ void TreatIfElseGoto(WORD *e, int ifgotoaddr)
 void RemoveGotos(WORD *e)
 {
     int addr = e->parp;
-    while(pline[addr].flow != FUNCEND)
+    while(!ContainsFlow(&pline[addr], FUNCEND))
     {
-        if (pline[addr].flow == IFGOTO)
+        if (ContainsFlow(&pline[addr], IFGOTO))
         {
             TreatIfGoto(e, addr);
             TreatIfElseGoto(e, addr);
             TreatLoop(e, addr);
         }
-        if (pline[addr].flow == GOTO)
+        if (ContainsFlow(&pline[addr], GOTO))
         {
             TreatEndlessLoop(e, addr);
         }
@@ -482,7 +452,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
             fprintf(fp, "label%i:\n", pline[addr].labelid);
         }
 
-        switch(pline[addr].flow)
+        switch(pline[addr].flow.flow)
         {
             case DO:
                 Postfix2InfixReset(fp, nspc);
@@ -618,34 +588,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
 
             case IFCLOSE:
                 Postfix2InfixReset(fp, nspc);
-                nspc--;
-                Spc(fp, nspc);
-                fprintf(fp, "}\n");
-                break;
-
-            case IFCLOSE2:
-                Postfix2InfixReset(fp, nspc);
-                for(j=0; j<2; j++)
-                {
-                    nspc--;
-                    Spc(fp, nspc);
-                    fprintf(fp, "}\n");
-                }
-                break;
-
-            case IFCLOSE3:
-                Postfix2InfixReset(fp, nspc);
-                for(j=0; j<3; j++)
-                {
-                    nspc--;
-                    Spc(fp, nspc);
-                    fprintf(fp, "}\n");
-                }
-                break;
-
-            case IFCLOSE4:
-                Postfix2InfixReset(fp, nspc);
-                for(j=0; j<4; j++)
+                for(j=0; j<pline[addr].flow.nclosing; j++)
                 {
                     nspc--;
                     Spc(fp, nspc);

@@ -598,10 +598,10 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
         } else
         if (strcmp(s, "EXIT") == 0)
         {
-            pline[offset].flow = FUNCEND;
+            AddFlow(&pline[offset], FUNCEND);
             if (pline[offset+2].labelid != 0)
             {
-                pline[offset].flow = EXIT;
+                AddFlow(&pline[offset], EXIT);
             }
             offset += 2;
             return;
@@ -615,7 +615,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             if (Read16(Read16(addr)) == CODEEXIT)
             {
                 pline[offset].gotoaddr = -1;
-                pline[offset].flow = EXIT;
+                AddFlow(&pline[offset], EXIT);
             } else
             {
                 if (pline[addr].labelid == 0)
@@ -623,7 +623,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
                     pline[addr].labelid = ++d->nlabel;
                 }
                 pline[offset].gotoaddr = addr;
-                pline[offset].flow = GOTO;
+                AddFlow(&pline[offset], GOTO);
             }
             ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
 
@@ -635,7 +635,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
                     pline[offset+4].done = 1;
                     pline[offset+5].done = 1;
                     pline[offset+4].word = Read16(offset+4)+2;
-                    pline[offset+4].flow = FUNCEND;
+                    AddFlow(&pline[offset+4], FUNCEND);
                 } else
                 {
                     fprintf(stderr, "Error: unexpected continuance of function after branch");
@@ -654,7 +654,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             if (Read16(Read16(addr)) == CODEEXIT)
             {
                 pline[offset].gotoaddr = -1;
-                pline[offset].flow = IFEXIT;
+                AddFlow(&pline[offset], IFEXIT);
             } else
             {
                 if (pline[addr].labelid == 0)
@@ -662,7 +662,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
                     pline[addr].labelid = ++d->nlabel;
                 }
                 pline[offset].gotoaddr = addr;
-                pline[offset].flow = IFGOTO;
+                AddFlow(&pline[offset], IFGOTO);
             }
             ParsePartFunction(offset+4, minaddr, maxaddr, d, ovidx, vars);
             ParsePartFunction(addr, minaddr, maxaddr, d, ovidx, vars);
@@ -698,7 +698,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
         {
             AddLoopVariables(&vars, d);
             pline[offset].variableidx = vars.stack[vars.nstack-1];
-            pline[offset].flow = DO;
+            AddFlow(&pline[offset], DO);
             offset += 2;
         } else
         if (strcmp(s, "(/LOOP)") == 0)
@@ -707,11 +707,11 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             pline[offset+2].done = 1;
             pline[offset+3].done = 1;
             int addr = (offset + par)&0xFFFF;
-            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            if (!ContainsFlow(&pline[addr], DO)) { fprintf(stderr, "Error: No Do\n"); exit(1); }
             pline[addr].loopaddr = offset;
             pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[offset].flow = LOOP;
+            AddFlow(&pline[offset], LOOP);
             offset += 4;
         } else
         if (strcmp(s, "(LOOP)") == 0)
@@ -720,11 +720,11 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             pline[offset+2].done = 1;
             pline[offset+3].done = 1;
             int addr = (offset + par)&0xFFFF;
-            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            if (!ContainsFlow(&pline[addr], DO)) { fprintf(stderr, "Error: No Do\n"); exit(1); }
             pline[addr].loopaddr = offset;
             pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[offset].flow = LOOP;
+            AddFlow(&pline[offset], LOOP);
             offset += 4;
         } else
         if (strcmp(s, "(+LOOP)") == 0)
@@ -733,11 +733,11 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             pline[offset+2].done = 1;
             pline[offset+3].done = 1;
             int addr = (offset + par)&0xFFFF;
-            if (pline[addr].flow != DO){fprintf(stderr, "Error: No do"); exit(1);}
+            if (!ContainsFlow(&pline[addr], DO)) {fprintf(stderr, "Error: No Do\n"); exit(1);}
             pline[addr].loopaddr = offset;
             pline[offset].variableidx = vars.stack[vars.nstack-1];
             RemoveLoopVariables(&vars);
-            pline[offset].flow = LOOP;
+            AddFlow(&pline[offset], LOOP);
             offset += 4;
         } else
         if (strcmp(s, "I") == 0)

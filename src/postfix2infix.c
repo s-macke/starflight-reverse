@@ -551,7 +551,15 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
     // negate
     if ((stackoffset >= 1) && (strcmp(s, "NEGATE") == 0))
     {
-        snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "-%s", stack[stackoffset-1].expr);
+        if (stack[stackoffset-1].precedence >= PNEGATE)
+        {
+          snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "-(%s)", stack[stackoffset-1].expr);
+        } else
+        {
+          snprintf(stack[stackoffset].expr, STACKSTRINGLEN, "-%s", stack[stackoffset-1].expr);
+        }
+
+
         snprintf(stack[stackoffset].forth, STACKSTRINGLEN, "%s %s", stack[stackoffset-1].forth, s);
         stack[stackoffset].precedence = PNEGATE;
         stack[stackoffset].isnumber = 0;

@@ -73,7 +73,7 @@ void FunctionStackAnalysis(int parp, int ovidx)
         stack -= d->stackin;
         if (stack < stackmin) stackmin = stack;
         stack += d->stackout;
-        if ((strcmp(d->r, "EXIT")==0) || (pline[addr].flow == IFEXIT))
+        if ((strcmp(d->r, "EXIT")==0) || (ContainsFlow(&pline[addr], IFEXIT)))
         {
             dd->stackin = -stackmin;
             dd->stackout = stack-stackmin;
@@ -408,5 +408,3 @@ void StackAnalysis(int ovidx)
         printf("nwords change from %i to %i\n", nwordsbefore, nwords);
     }
 }
-
-

@@ -1,12 +1,19 @@
 #ifndef PARSER_H
 #define PARSER_H
+#include<stdbool.h>
 
 #include"vocabulary.h"
 
 typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEND=7,
-                IFNOT=8, IFELSE=9, IFCLOSE=10, IFCLOSE2=11, IFCLOSE3=12, IFCLOSE4=13,
+                IFNOT=8, IFELSE=9, IFCLOSE=10,
                 DOSIMPLE=14, LOOPTEST=15, LOOPENDLESS=16
              } controlflowenum;
+
+typedef struct
+{
+    controlflowenum flow; // controlflowenum list
+    int nclosing;
+} Flow;
 
 typedef struct
 {
@@ -16,7 +23,7 @@ typedef struct
     int labelid; // != 0 is a label for a goto
     int gotoaddr; // != 0 is a goto to a label. can be conditional or unconditional
     int loopaddr; // for flow = DO it contains the address of the coressponding loop
-    controlflowenum flow;
+    Flow flow;
 
     int done; // this line has been processed
     int isasm;
@@ -44,5 +51,36 @@ void ParsePartFunction(int ofs, int minaddr, int maxaddr, WORD *d, int currentov
 void ParseForthFunctions(int ovidx, int minaddr, int maxaddr);
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr);
 int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr);
+
+// -----------------------------------------
+
+inline void AddFlow(LineDesc* pline, controlflowenum newflow)
+{
+  if (newflow == IFCLOSE)
+  {
+    pline->flow.nclosing++;
+  }
+  /*
+    if (pline->flow.nflow > 7)
+    {
+        fprintf(stderr, "Error: Flow too large while adding flow %i\n", newflow);
+        return;
+    }
+    */
+    pline->flow.flow = newflow;
+}
+
+inline _Bool ContainsFlow(LineDesc* pline, controlflowenum flow)
+{
+  return pline->flow.flow == flow;
+  /*
+    for(int i=0; i<pline->flow.nflow; i++)
+        if (pline->flow.flow[i] == flow) return true;
+    return false;
+    */
+}
+
+// -----------------------------------------
+
 
 #endif
