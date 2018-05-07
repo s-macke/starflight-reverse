@@ -1805,7 +1805,7 @@ void UNK_0xf212() // UNK_0xf212
   POLY_dash_ERASE_dash_TEXT(); // POLY-ERASE-TEXT
   Push(Read16(pp__pe_EFF)); // %EFF @
   Push(0x0064);
-  Push(-Read16(pp_E_slash_M) * 4); // E/M @ 4 * NEGATE
+  Push(-(Read16(pp_E_slash_M) * 4)); // E/M @ 4 * NEGATE
   _star__slash_(); // */
   Push(0x0063);
   MIN(); // MIN

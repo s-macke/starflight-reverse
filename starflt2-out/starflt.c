@@ -7685,7 +7685,7 @@ void IsCOMP() // ?COMP
 void UNK_0x1ff4() // UNK_0x1ff4
 {
   HERE(); // HERE
-  Push(-(Read16(Pop())&0xFF)==0?1:0 & (Read16(user_MSGFLAGS) & 0x0010)); //  C@ 0= NEGATE MSGFLAGS @ 0x0010 AND AND
+  Push(-((Read16(Pop())&0xFF)==0?1:0) & (Read16(user_MSGFLAGS) & 0x0010)); //  C@ 0= NEGATE MSGFLAGS @ 0x0010 AND AND
   ABORT("You can't redefine 'return'", 27);// (ABORT")
 }
 
@@ -20072,7 +20072,7 @@ void OPEN_dash_OV() // OPEN-OV
   Push(pp_OV_n_); // OV#
   _st__ex__gt_(); // <!>
   Push(Read16(regsp)); // DUP
-  Push(-Pop() >> 4 + Read16(cc_UNK_0x5102)); //  16* NEGATE UNK_0x5102 +
+  Push(-(Pop() >> 4) + Read16(cc_UNK_0x5102)); //  16* NEGATE UNK_0x5102 +
   Push(Read16(regsp)); // DUP
   UNK_0x82d3(); // UNK_0x82d3
   Push(Read16(regsp)); // DUP

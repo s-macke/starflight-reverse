@@ -7457,7 +7457,7 @@ void IsCOMP() // ?COMP
 void UNK_0x1ff4() // UNK_0x1ff4
 {
   HERE(); // HERE
-  Push(-(Read16(Pop())&0xFF)==0?1:0 & (Read16(user_MSGFLAGS) & 0x0010)); //  C@ 0= NEGATE MSGFLAGS @ 0x0010 AND AND
+  Push(-((Read16(Pop())&0xFF)==0?1:0) & (Read16(user_MSGFLAGS) & 0x0010)); //  C@ 0= NEGATE MSGFLAGS @ 0x0010 AND AND
   ABORT("You can't redefine 'return'", 27);// (ABORT")
 }
 
@@ -19678,7 +19678,7 @@ void OPEN_dash_OVERLAY() // OPEN-OVERLAY
   Push(pp_OV_n_); // OV#
   _st__ex__gt_(); // <!>
   Push(Read16(regsp)); // DUP
-  Push(-Pop() >> 4 + Read16(cc_EM)); //  16* NEGATE EM +
+  Push(-(Pop() >> 4) + Read16(cc_EM)); //  16* NEGATE EM +
   Push(Read16(regsp)); // DUP
   IsROOMERROR(); // ?ROOMERROR
   Push(Read16(regsp)); // DUP
@@ -21921,7 +21921,7 @@ void DrawPACKBLT() // .PACKBLT
   Push(Read16(regsp)); // DUP
   Push(pp_WBLT); // WBLT
   Store_3(); // !_3
-  Push(-Pop() >> 1); //  2/ NEGATE
+  Push(-(Pop() >> 1)); //  2/ NEGATE
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   FRAMELEN(); // FRAMELEN

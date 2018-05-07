@@ -2289,9 +2289,9 @@ void UNK_0xe327() // UNK_0xe327
   Push(Pop() * Pop()); // *
   if (Pop() != 0)
   {
-    Push(-Pop() - Read16(cc_UNK_0xe2b1)); //  UNK_0xe2b1 - NEGATE
+    Push(-(Pop() - Read16(cc_UNK_0xe2b1))); //  UNK_0xe2b1 - NEGATE
     SWAP(); // SWAP
-    Push(-Pop() - Read16(cc_UNK_0xe2ad)); //  UNK_0xe2ad - NEGATE
+    Push(-(Pop() - Read16(cc_UNK_0xe2ad))); //  UNK_0xe2ad - NEGATE
     SWAP(); // SWAP
     LPLOT(); // LPLOT
     return;
@@ -2705,7 +2705,7 @@ void UNK_0xe63a() // UNK_0xe63a
   Push(Pop() * Pop()); // *
   Push(-Pop()); //  NEGATE
   SWAP(); // SWAP
-  Push(-Pop() * a); //  R> * NEGATE
+  Push(-(Pop() * a)); //  R> * NEGATE
 }
 
 

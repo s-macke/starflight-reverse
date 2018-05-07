@@ -2358,9 +2358,9 @@ void _ro__dot_DUST_rc_() // (.DUST)
   Push(Pop() * Pop()); // *
   if (Pop() != 0)
   {
-    Push(-Pop() - Read16(cc_YBND)); //  YBND - NEGATE
+    Push(-(Pop() - Read16(cc_YBND))); //  YBND - NEGATE
     SWAP(); // SWAP
-    Push(-Pop() - Read16(cc_XBND)); //  XBND - NEGATE
+    Push(-(Pop() - Read16(cc_XBND))); //  XBND - NEGATE
     SWAP(); // SWAP
     LPLOT(); // LPLOT
     return;
@@ -2768,7 +2768,7 @@ void _n_NEXTXY() // #NEXTXY
   Push(Pop() * Pop()); // *
   Push(-Pop()); //  NEGATE
   SWAP(); // SWAP
-  Push(-Pop() * a); //  R> * NEGATE
+  Push(-(Pop() * a)); //  R> * NEGATE
 }
 
 

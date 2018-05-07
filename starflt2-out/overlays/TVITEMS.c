@@ -1984,7 +1984,7 @@ void UNK_0xef22() // UNK_0xef22
   SWAP(); // SWAP
   _st__ex__gt_(); // <!>
   _gt_TVCT(); // >TVCT
-  Push(-Read16(pp_UNK_0xe63e) * 7); // UNK_0xe63e @ 7 * NEGATE
+  Push(-(Read16(pp_UNK_0xe63e) * 7)); // UNK_0xe63e @ 7 * NEGATE
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xe67a(); // UNK_0xe67a

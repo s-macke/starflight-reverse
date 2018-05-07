@@ -3109,7 +3109,7 @@ void UNK_0xef32() // UNK_0xef32
   SWAP(); // SWAP
   _st__ex__gt_(); // <!>
   UNK_0xe044(); // UNK_0xe044
-  Push(-Read16(pp_UNK_0xdec9) * 7); // UNK_0xdec9 @ 7 * NEGATE
+  Push(-(Read16(pp_UNK_0xdec9) * 7)); // UNK_0xdec9 @ 7 * NEGATE
   Push(pp_WTOP); // WTOP
   _st__plus__ex__gt_(); // <+!>
   UNK_0xdf01(); // UNK_0xdf01

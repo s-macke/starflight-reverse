@@ -522,7 +522,7 @@ void UNK_0xe529() // UNK_0xe529
   Push(Read16(Pop() + pp_UNK_0xe519)&0xFF); //  UNK_0xe519 + C@
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
-  Push(-Read16((Pop() + 1) + pp_UNK_0xe519)&0xFF); //  1+ UNK_0xe519 + C@ NEGATE
+  Push(-(Read16((Pop() + 1) + pp_UNK_0xe519)&0xFF)); //  1+ UNK_0xe519 + C@ NEGATE
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
 }

@@ -1215,7 +1215,7 @@ void UNK_0xe29f() // UNK_0xe29f
 void UNK_0xe2e1() // UNK_0xe2e1
 {
   UNK_0xe29f(); // UNK_0xe29f
-  Push(-(Read16(pp_UNK_0xde5e) - Read16(pp_UNK_0xde6a) >> 1) * (Read16(pp_UNK_0xde4e) + Read16(pp_UNK_0xde56)) + Read16(pp_UNK_0xde46)); // UNK_0xde5e @ UNK_0xde6a @ - 2/ UNK_0xde4e @ UNK_0xde56 @ + * NEGATE UNK_0xde46 @ +
+  Push(-((Read16(pp_UNK_0xde5e) - Read16(pp_UNK_0xde6a) >> 1) * (Read16(pp_UNK_0xde4e) + Read16(pp_UNK_0xde56))) + Read16(pp_UNK_0xde46)); // UNK_0xde5e @ UNK_0xde6a @ - 2/ UNK_0xde4e @ UNK_0xde56 @ + * NEGATE UNK_0xde46 @ +
   Push(pp_YBLT); // YBLT
   Store_2(); // !_2
 }
@@ -1240,7 +1240,7 @@ void UNK_0xe30b() // UNK_0xe30b
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_YBLT); // YBLT
   Store_2(); // !_2
-  Push((Read16(pp_UNK_0xde42) + Read16(pp_UNK_0xde3e) >> 1) + -Read16(pp_XBLT) >> 1); // UNK_0xde42 @ UNK_0xde3e @ + 2/ XBLT @ 2/ NEGATE +
+  Push((Read16(pp_UNK_0xde42) + Read16(pp_UNK_0xde3e) >> 1) + -(Read16(pp_XBLT) >> 1)); // UNK_0xde42 @ UNK_0xde3e @ + 2/ XBLT @ 2/ NEGATE +
   Push(pp_XBLT); // XBLT
   Store_2(); // !_2
   DARK(); // DARK
@@ -1283,7 +1283,7 @@ void UNK_0xe35f() // UNK_0xe35f
   Push(pp_UNK_0xde72); // UNK_0xde72
   Store_2(); // !_2
   UNK_0xe34f(); // UNK_0xe34f
-  Push(-Read16(pp_UNK_0xde4e) + Read16(pp_UNK_0xde56)); // UNK_0xde4e @ UNK_0xde56 @ + NEGATE
+  Push(-(Read16(pp_UNK_0xde4e) + Read16(pp_UNK_0xde56))); // UNK_0xde4e @ UNK_0xde56 @ + NEGATE
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xde72) + 1); // UNK_0xde72 @ 1+

@@ -841,7 +841,7 @@ void REDUCE() // REDUCE
   Push(pp__n_CACHE); // #CACHE
   _plus__ex__2(); // +!_2
   AUTO_dash_CACHE(); // AUTO-CACHE
-  Push(-a * 0x0040); // R> 0x0040 * NEGATE
+  Push(-(a * 0x0040)); // R> 0x0040 * NEGATE
   Push(pp_LFSEG); // LFSEG
   _plus__ex__2(); // +!_2
   Push(Read16(pp_LFSEG)); // LFSEG @

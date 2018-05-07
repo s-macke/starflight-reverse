@@ -957,7 +957,7 @@ void _n__n_LINES() // ##LINES
 void _n_YBLT() // #YBLT
 {
   _n__n_LINES(); // ##LINES
-  Push(-(Read16(pp_UNK_0xdf8e) - Read16(pp_UNK_0xdf9a) >> 1) * (Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86)) + Read16(pp_UNK_0xdf76)); // UNK_0xdf8e @ UNK_0xdf9a @ - 2/ UNK_0xdf7e @ UNK_0xdf86 @ + * NEGATE UNK_0xdf76 @ +
+  Push(-((Read16(pp_UNK_0xdf8e) - Read16(pp_UNK_0xdf9a) >> 1) * (Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86))) + Read16(pp_UNK_0xdf76)); // UNK_0xdf8e @ UNK_0xdf9a @ - 2/ UNK_0xdf7e @ UNK_0xdf86 @ + * NEGATE UNK_0xdf76 @ +
   Push(pp_YBLT); // YBLT
   Store_3(); // !_3
 }
@@ -981,7 +981,7 @@ void _n_XBLT() // #XBLT
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(pp_YBLT); // YBLT
   Store_3(); // !_3
-  Push((Read16(pp_UNK_0xdf72) + Read16(pp_UNK_0xdf6e) >> 1) + -Read16(pp_XBLT) >> 1); // UNK_0xdf72 @ UNK_0xdf6e @ + 2/ XBLT @ 2/ NEGATE +
+  Push((Read16(pp_UNK_0xdf72) + Read16(pp_UNK_0xdf6e) >> 1) + -(Read16(pp_XBLT) >> 1)); // UNK_0xdf72 @ UNK_0xdf6e @ + 2/ XBLT @ 2/ NEGATE +
   Push(pp_XBLT); // XBLT
   Store_3(); // !_3
 }
@@ -1022,7 +1022,7 @@ void Draw_n_LINES() // .#LINES
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2
   Store_3(); // !_3
   DrawSUB(); // .SUB
-  Push(-Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86)); // UNK_0xdf7e @ UNK_0xdf86 @ + NEGATE
+  Push(-(Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86))); // UNK_0xdf7e @ UNK_0xdf86 @ + NEGATE
   Push(pp_YBLT); // YBLT
   _plus__ex__2(); // +!_2
   Push(Read16(pp_UNK_0xdfa2) + 1); // UNK_0xdfa2 @ 1+

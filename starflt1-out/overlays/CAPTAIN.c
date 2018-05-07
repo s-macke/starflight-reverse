@@ -530,7 +530,7 @@ void UNK_0xdebc() // UNK_0xdebc
       OVER(); // OVER
       Push(Pop() + i); //  I +
       Push(Read16(regsp)); // DUP
-      Push(-Read16(Pop())&0xFF); //  C@ NEGATE
+      Push(-(Read16(Pop())&0xFF)); //  C@ NEGATE
       Push(Read16(regsp)); // DUP
       ROT(); // ROT
       C_ex_(); // C!

@@ -1521,7 +1521,7 @@ void UNK_0xe27a() // UNK_0xe27a
     {
       Push(1);
       SWAP(); // SWAP
-      Push(-Pop() - 0x0017); //  0x0017 - NEGATE
+      Push(-(Pop() - 0x0017)); //  0x0017 - NEGATE
     } else
     {
       Push(Read16(regsp)); // DUP
@@ -1536,7 +1536,7 @@ void UNK_0xe27a() // UNK_0xe27a
       {
         Push(-1);
         SWAP(); // SWAP
-        Push(-Pop() - 0x002f); //  0x002f - NEGATE
+        Push(-(Pop() - 0x002f)); //  0x002f - NEGATE
       }
     }
   }
@@ -1561,7 +1561,7 @@ void UNK_0xe2e6() // UNK_0xe2e6
   {
     Push(1);
     SWAP(); // SWAP
-    Push(-Pop() - 0x000b); //  0x000b - NEGATE
+    Push(-(Pop() - 0x000b)); //  0x000b - NEGATE
   } else
   {
     Push(Read16(regsp)); // DUP
@@ -1581,7 +1581,7 @@ void UNK_0xe2e6() // UNK_0xe2e6
       {
         Push(-1);
         SWAP(); // SWAP
-        Push(-Pop() - 0x0023); //  0x0023 - NEGATE
+        Push(-(Pop() - 0x0023)); //  0x0023 - NEGATE
       } else
       {
         Push(1);
@@ -2379,7 +2379,7 @@ void UNK_0xe8a1() // UNK_0xe8a1
       OVER(); // OVER
       ReadArray(XFORMVERT); // XFORMVERT
       L_at_(); // L@
-      Push((i * 4 + pp_UNK_0xdc38) + -j - 1 * 2); // J 4 * UNK_0xdc38 + I 1- NEGATE 2* +
+      Push((i * 4 + pp_UNK_0xdc38) + -(j - 1) * 2); // J 4 * UNK_0xdc38 + I 1- NEGATE 2* +
       Store_3(); // !_3
       j++;
     } while(j<jmax); // (LOOP)
