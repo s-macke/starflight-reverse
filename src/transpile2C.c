@@ -310,7 +310,7 @@ void TreatIfGoto(WORD *e, int ifgotoaddr)
     if (ContainsAnyFlow(ifgotoaddr+1, labeladdr)) return;
 
     AddFlow(&pline[ifgotoaddr], IFNOT);
-    AddFlow(&pline[labeladdr-1], IFCLOSE);
+    AddFlow(&pline[labeladdr-1], CLOSE);
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
 }
 
@@ -331,11 +331,23 @@ void TreatEndlessLoop(WORD *e, int gotoaddr)
     int labeladdr = pline[gotoaddr].gotoaddr;
     if (labeladdr > gotoaddr) return;
     if (pline[labeladdr].flow.flow != NONE) return;
-    if (ContainsAnyFlow(labeladdr+1, gotoaddr)) return;
 
-    AddFlow(&pline[labeladdr], DOSIMPLE);
-    AddFlow(&pline[gotoaddr], LOOPENDLESS);
+    AddFlow(&pline[labeladdr], DOENDLESS);
+    AddFlow(&pline[gotoaddr], CLOSE);
     if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
+
+    // search for IFGPOTO, which can be used for the break; statement
+    for(int i=labeladdr; i < gotoaddr; i++)
+    {
+      if (ContainsFlow(&pline[i], IFGOTO))
+      if (pline[i].gotoaddr == gotoaddr+4)
+      {
+        int labeladdr = pline[i].gotoaddr;
+        AddFlow(&pline[i], IFBREAK);
+        if (!IsLabelStillInUse(e, labeladdr)) pline[labeladdr].labelid = 0;
+      }
+    }
+
 }
 
 
@@ -355,7 +367,7 @@ void TreatIfElseGoto(WORD *e, int ifgotoaddr)
 
     AddFlow(&pline[ifgotoaddr], IFNOT);
     AddFlow(&pline[elsegotoaddr], IFELSE);
-    AddFlow(&pline[elselabeladdr-1], IFCLOSE);
+    AddFlow(&pline[elselabeladdr-1], CLOSE);
     if (!IsLabelStillInUse(e, elselabeladdr)) pline[elselabeladdr].labelid = 0;
     if (IsLabelStillInUse(e, labeladdr))
     {
@@ -484,11 +496,13 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 fprintf(fp, "} while(Pop() == 0);\n");
                 break;
 
-            case LOOPENDLESS:
+            case DOENDLESS:
                 Postfix2InfixReset(fp, nspc);
-                nspc--;
                 Spc(fp, nspc);
-                fprintf(fp, "} while(1);\n");
+                fprintf(fp, "while(1)\n");
+                Spc(fp, nspc);
+                fprintf(fp, "{\n");
+                nspc++;
                 break;
 
             case LOOP:
@@ -543,6 +557,12 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[pline[addr].gotoaddr].labelid);
                 break;
 
+            case IFBREAK:
+                Postfix2InfixReset(fp, nspc);
+                Spc(fp, nspc);
+                fprintf(fp, "if (Pop() == 0) break;\n\n");
+                break;
+
             case IFEXIT:
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);
@@ -586,7 +606,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 nspc++;
                 break;
 
-            case IFCLOSE:
+            case CLOSE:
                 Postfix2InfixReset(fp, nspc);
                 for(j=0; j<pline[addr].flow.nclosing; j++)
                 {

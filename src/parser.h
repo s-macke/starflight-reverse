@@ -5,8 +5,10 @@
 #include"vocabulary.h"
 
 typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEND=7,
-                IFNOT=8, IFELSE=9, IFCLOSE=10,
-                DOSIMPLE=14, LOOPTEST=15, LOOPENDLESS=16
+                IFNOT=8, IFELSE=9,
+                CLOSE=10, // if or loop
+                IFBREAK=11, // break loop
+                DOSIMPLE=14, LOOPTEST=15, DOENDLESS=16
              } controlflowenum;
 
 typedef struct
@@ -56,7 +58,7 @@ int DisasmRange(int offset, int size, int ovidx, int minaddr, int maxaddr);
 
 inline void AddFlow(LineDesc* pline, controlflowenum newflow)
 {
-  if (newflow == IFCLOSE)
+  if (newflow == CLOSE)
   {
     pline->flow.nclosing++;
   }
