@@ -533,17 +533,16 @@ void UNK_0xf29d() // UNK_0xf29d
   UNK_0xf28b(); // UNK_0xf28b
   Push(pp_UNK_0xf180); // UNK_0xf180
   Store_2(); // !_2
+  while(1)
+  {
+    UNK_0xf28b(); // UNK_0xf28b
+    Push(Read16(pp_UNK_0xf180)); // UNK_0xf180 @
+    OVER(); // OVER
+    Push((Pop()==Pop())?1:0); // =
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xf28b(); // UNK_0xf28b
-  Push(Read16(pp_UNK_0xf180)); // UNK_0xf180 @
-  OVER(); // OVER
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  goto label2;
-
-  label1:
+    Pop(); // DROP
+  }
   Push(pp_UNK_0xf184); // UNK_0xf184
   Store_2(); // !_2
 }
@@ -835,15 +834,14 @@ void UNK_0xf464() // UNK_0xf464
 
 void UNK_0xf4aa() // UNK_0xf4aa
 {
+  while(1)
+  {
+    UNK_0xf464(); // UNK_0xf464
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xf464(); // UNK_0xf464
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf414(); // UNK_0xf414
-  goto label2;
-
-  label1:
+    UNK_0xf414(); // UNK_0xf414
+  }
   Push((Read16(pp_UNK_0xf188)==Read16(pp_UNK_0xf190)?1:0) & !Read16(pp_IsSECURE)); // UNK_0xf188 @ UNK_0xf190 @ = ?SECURE @ NOT AND
 }
 

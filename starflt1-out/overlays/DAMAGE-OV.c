@@ -1753,16 +1753,15 @@ void UNK_0xf378() // UNK_0xf378
 
 void UNK_0xf3a4() // UNK_0xf3a4
 {
+  while(1)
+  {
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    Push(!(Pop()==0?1:0)); //  0= NOT
+    if (Pop() == 0) break;
 
-  label2:
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  Push(!(Pop()==0?1:0)); //  0= NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf358(); // UNK_0xf358
-  UNK_0xf378(); // UNK_0xf378
-  goto label2;
-
-  label1:
+    UNK_0xf358(); // UNK_0xf358
+    UNK_0xf378(); // UNK_0xf378
+  }
   Push(Read16(pp_UNK_0xed9a)); // UNK_0xed9a @
   if (Pop() != 0)
   {

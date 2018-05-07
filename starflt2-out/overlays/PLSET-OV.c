@@ -333,7 +333,7 @@ void UNK_0xee0e() // UNK_0xee0e
   IFIND(); // IFIND
   Pop(); // DROP
   Push(0);
-  do
+  while(1)
   {
     GetINST_dash_C(); // @INST-C
     Push(Pop()==Read16(cc_UNK_0xed66)?1:0); //  UNK_0xed66 =
@@ -348,7 +348,7 @@ void UNK_0xee0e() // UNK_0xee0e
     Push(!Pop()); //  NOT
     if (Pop() == 0) return;
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 
@@ -490,17 +490,16 @@ void UNK_0xef0e() // UNK_0xef0e
 void UNK_0xef3e() // UNK_0xef3e
 {
   unsigned short int a;
+  while(1)
+  {
+    _2DUP(); // 2DUP
+    RRND(); // RRND
+    Push(Read16(regsp)); // DUP
+    Push(Pop()==6?1:0); //  6 =
+    if (Pop() == 0) break;
 
-  label2:
-  _2DUP(); // 2DUP
-  RRND(); // RRND
-  Push(Read16(regsp)); // DUP
-  Push(Pop()==6?1:0); //  6 =
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  goto label2;
-
-  label1:
+    Pop(); // DROP
+  }
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
@@ -918,18 +917,17 @@ void UNK_0xf21b() // UNK_0xf21b
   LoadData(UNK_0xedaa); // from 'PLANET'
   Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
   a = Pop(); // >R
+  while(1)
+  {
+    UNK_0xf1e1(); // UNK_0xf1e1
+    Push(Read16(regsp)); // DUP
+    Push(Read16(a)); // R@
+    Push(Pop() | Pop()); // OR
+    Push(Pop()==0?1:0); //  0=
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xf1e1(); // UNK_0xf1e1
-  Push(Read16(regsp)); // DUP
-  Push(Read16(a)); // R@
-  Push(Pop() | Pop()); // OR
-  Push(Pop()==0?1:0); //  0=
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  goto label2;
-
-  label1:
+    Pop(); // DROP
+  }
   Push(a); // R>
   Pop(); // DROP
   Push(pp_HYDRO); // HYDRO

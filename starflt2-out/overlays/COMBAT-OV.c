@@ -1796,15 +1796,14 @@ void UNK_0xe2f9() // UNK_0xe2f9
 void UNK_0xe2ff() // UNK_0xe2ff
 {
   UNK_0xdd16(); // UNK_0xdd16
+  while(1)
+  {
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  IDELETE(); // IDELETE
-  goto label2;
-
-  label1:
+    IDELETE(); // IDELETE
+  }
   Push(2);
   _star_CLOSE(); // *CLOSE
   Push(pp__n_MISS); // #MISS
@@ -2524,7 +2523,7 @@ void UNK_0xe6d8() // UNK_0xe6d8
 
 void UNK_0xe704() // UNK_0xe704
 {
-  do
+  while(1)
   {
     IsLAST(); // ?LAST
     Push(!Pop()); //  NOT
@@ -2533,7 +2532,7 @@ void UNK_0xe704() // UNK_0xe704
     Push(Pop() & Pop()); // AND
     if (Pop() == 0) return;
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 
@@ -2596,7 +2595,7 @@ void UNK_0xe754() // UNK_0xe754
 
 void UNK_0xe764() // UNK_0xe764
 {
-  do
+  while(1)
   {
     UNK_0xe2f9(); // UNK_0xe2f9
     Push(!(Pop()==7?1:0)); //  7 = NOT
@@ -2624,7 +2623,7 @@ void UNK_0xe764() // UNK_0xe764
     Push(!Pop()); //  NOT
     if (Pop() == 0) return;
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 

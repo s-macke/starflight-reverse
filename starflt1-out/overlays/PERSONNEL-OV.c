@@ -684,18 +684,17 @@ void UNK_0xe806() // UNK_0xe806
   CI(); // CI
   _gt_C_plus_S(); // >C+S
   Push(0);
+  while(1)
+  {
+    IsLAST(); // ?LAST
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  Push(Read16(0x63ef+UNK_0xe6a3.offset)&0xFF); // UNK_0xe6a3<IFIELD> C@
-  _0_gt_(); // 0>
-  Push(Pop() + Pop()); // +
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+    Push(Read16(0x63ef+UNK_0xe6a3.offset)&0xFF); // UNK_0xe6a3<IFIELD> C@
+    _0_gt_(); // 0>
+    Push(Pop() + Pop()); // +
+  }
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
 }

@@ -829,21 +829,20 @@ void SELECT() // SELECT
 {
   Push(0);
   _gt_V(); // >V
+  while(1)
+  {
+    IsCHOICE(); // ?CHOICE
+    IsEXIT(); // ?EXIT
+    Push(Pop() | Pop()); // OR
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsCHOICE(); // ?CHOICE
-  IsEXIT(); // ?EXIT
-  Push(Pop() | Pop()); // OR
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  TRAVERS(); // TRAVERS
-  V_gt_(); // V>
-  Pop(); // DROP
-  Push(1);
-  _gt_V(); // >V
-  goto label2;
-
-  label1:
+    TRAVERS(); // TRAVERS
+    V_gt_(); // V>
+    Pop(); // DROP
+    Push(1);
+    _gt_V(); // >V
+  }
   IsEXIT(); // ?EXIT
   Push(!Pop()); //  NOT
   V_gt_(); // V>
@@ -1316,7 +1315,7 @@ void TRY_dash_NEWSPACE() // TRY-NEWSPACE
 
 void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
 {
-  do
+  while(1)
   {
     Push(pp_IsRECYCLED); // ?RECYCLED
     OFF_2(); // OFF_2
@@ -1349,7 +1348,7 @@ void GET_dash_NEW_dash_INSTANCE() // GET-NEW-INSTANCE
     IsNULL(); // ?NULL
     if (Pop() == 0) return;
     CDROP(); // CDROP
-  } while(1);
+  }
 }
 
 

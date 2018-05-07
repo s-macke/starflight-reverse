@@ -2230,16 +2230,15 @@ void SELL_dash_IT() // SELL-IT
   Push(a * -1); // I -1 *
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex__2(); // +!_2
+  while(1)
+  {
+    Push(Read16(regsp)); // DUP
+    CDEPTH(); // CDEPTH
+    _st_(); // <
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(regsp)); // DUP
-  CDEPTH(); // CDEPTH
-  _st_(); // <
-  if (Pop() == 0) goto label1;
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    ICLOSE(); // ICLOSE
+  }
   Pop(); // DROP
   Push(a); // R>
   Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
@@ -2520,16 +2519,15 @@ void UNK_0xf386() // UNK_0xf386
   Push(-a); // I NEGATE
   Push(pp_SCROLL_dash_); // SCROLL-
   _plus__ex__2(); // +!_2
+  while(1)
+  {
+    Push(Read16(regsp)); // DUP
+    CDEPTH(); // CDEPTH
+    _st_(); // <
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(regsp)); // DUP
-  CDEPTH(); // CDEPTH
-  _st_(); // <
-  if (Pop() == 0) goto label1;
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    ICLOSE(); // ICLOSE
+  }
   Pop(); // DROP
   Push(a); // R>
   UNK_0xf0aa(); // UNK_0xf0aa

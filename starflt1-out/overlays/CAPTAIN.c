@@ -1660,7 +1660,7 @@ void UNK_0xe5ef() // UNK_0xe5ef
   _1_dot_5_ex_(); // 1.5!
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  do
+  while(1)
   {
     Push(0x63ef+TEXT_dash_IN.offset); // TEXT-IN<IFIELD>
     Get_gt_C_plus_S(); // @>C+S
@@ -1673,7 +1673,7 @@ void UNK_0xe5ef() // UNK_0xe5ef
     ICLOSE(); // ICLOSE
     if (Pop() == 0) return;
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 

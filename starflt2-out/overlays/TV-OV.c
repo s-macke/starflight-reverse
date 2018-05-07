@@ -1384,43 +1384,42 @@ void UNK_0xeda8() // UNK_0xeda8
   _st__ex__gt_(); // <!>
   Push(0x000b);
   Push(0x000b);
-
-  label4:
-  Push(pp_SUPER_dash_B); // SUPER-B
-  _1_dot_5_at_(); // 1.5@
-  CI(); // CI
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  IsCLASS_slash_(); // ?CLASS/
-  if (Pop() != 0)
+  while(1)
   {
-    UNK_0xed54(); // UNK_0xed54
-    Push(Read16(pp_UNK_0xed4c + 4)); // UNK_0xed4c 4 + @
-    OVER(); // OVER
-    _st_(); // <
-    IOPEN(); // IOPEN
-    ILAST(); // ILAST
-    UNK_0xeca1(); // UNK_0xeca1
+    Push(pp_SUPER_dash_B); // SUPER-B
+    _1_dot_5_at_(); // 1.5@
+    CI(); // CI
+    D_eq_(); // D=
     Push(!Pop()); //  NOT
-    Push(Pop() & Pop()); // AND
-    ICLOSE(); // ICLOSE
+    if (Pop() == 0) break;
+
+    IsCLASS_slash_(); // ?CLASS/
     if (Pop() != 0)
     {
-      CI(); // CI
-      Push(pp_UNK_0xed4c); // UNK_0xed4c
-      _1_dot_5_ex__2(); // 1.5!_2
-      Push(pp_UNK_0xed4c + 4); // UNK_0xed4c 4 +
-      _st__ex__gt_(); // <!>
-    } else
-    {
-      Pop(); // DROP
+      UNK_0xed54(); // UNK_0xed54
+      Push(Read16(pp_UNK_0xed4c + 4)); // UNK_0xed4c 4 + @
+      OVER(); // OVER
+      _st_(); // <
+      IOPEN(); // IOPEN
+      ILAST(); // ILAST
+      UNK_0xeca1(); // UNK_0xeca1
+      Push(!Pop()); //  NOT
+      Push(Pop() & Pop()); // AND
+      ICLOSE(); // ICLOSE
+      if (Pop() != 0)
+      {
+        CI(); // CI
+        Push(pp_UNK_0xed4c); // UNK_0xed4c
+        _1_dot_5_ex__2(); // 1.5!_2
+        Push(pp_UNK_0xed4c + 4); // UNK_0xed4c 4 +
+        _st__ex__gt_(); // <!>
+      } else
+      {
+        Pop(); // DROP
+      }
     }
+    INEXT(); // INEXT
   }
-  INEXT(); // INEXT
-  goto label4;
-
-  label1:
   Pop(); Pop(); // 2DROP
   Push(2);
   _star_CLOSE(); // *CLOSE
@@ -1703,21 +1702,20 @@ void UNK_0xefb5() // UNK_0xefb5
 void UNK_0xf00f() // UNK_0xf00f
 {
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  IEXTRAC(); // IEXTRAC
-  Push2Words("*STARSH");
-  _gt_C_plus_S(); // >C+S
-  IOPEN(); // IOPEN
-  CDROP(); // CDROP
-  _gt_BOX(); // >BOX
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    IEXTRAC(); // IEXTRAC
+    Push2Words("*STARSH");
+    _gt_C_plus_S(); // >C+S
+    IOPEN(); // IOPEN
+    CDROP(); // CDROP
+    _gt_BOX(); // >BOX
+    ICLOSE(); // ICLOSE
+  }
   ICLOSE(); // ICLOSE
   Push2Words("*STARSH");
   _gt_C_plus_S(); // >C+S
@@ -1752,14 +1750,14 @@ void UNK_0xf00f() // UNK_0xf00f
 
 void UNK_0xf06b() // UNK_0xf06b
 {
-  do
+  while(1)
   {
     IsNULL(); // ?NULL
     Push(!Pop()); //  NOT
     if (Pop() == 0) return;
     UNK_0xf00f(); // UNK_0xf00f
     IDELETE(); // IDELETE
-  } while(1);
+  }
 }
 
 

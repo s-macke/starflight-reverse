@@ -1327,21 +1327,20 @@ void HUFF_gt_() // HUFF>
   Store_2(); // !_2
   Push(Read16(cc_HUFF_PHRASE_INIT)); // HUFF_PHRASE_INIT
   EXECUTE(); // EXECUTE
-
-  label3:
-  Push(Read16(regsp)); // DUP
-  Push(Read16(pp_UNK_0xbaef)); // UNK_0xbaef @
-  _gt_(); // >
-  if (Pop() == 0) goto label1;
-  do
+  while(1)
   {
-    OVER(); // OVER
-    Push(Read16(Pop() + Read16(pp_HUFF_ACTIVE_POINTER_BYTE))&0xFF); //  HUFF_ACTIVE_POINTER_BYTE @ + C@
-    UNK_0xbb29(); // UNK_0xbb29
-  } while(Pop() == 0);
-  goto label3;
+    Push(Read16(regsp)); // DUP
+    Push(Read16(pp_UNK_0xbaef)); // UNK_0xbaef @
+    _gt_(); // >
+    if (Pop() == 0) break;
 
-  label1:
+    do
+    {
+      OVER(); // OVER
+      Push(Read16(Pop() + Read16(pp_HUFF_ACTIVE_POINTER_BYTE))&0xFF); //  HUFF_ACTIVE_POINTER_BYTE @ + C@
+      UNK_0xbb29(); // UNK_0xbb29
+    } while(Pop() == 0);
+  }
   Pop(); Pop(); // 2DROP
   Push(Read16(cc_HUFF_PHRASE_FINISH)); // HUFF_PHRASE_FINISH
   EXECUTE(); // EXECUTE

@@ -2169,20 +2169,19 @@ void _gt_VIEWSITE() // >VIEWSITE
   MAX(); // MAX
   Push(pp_UNK_0xdc34); // UNK_0xdc34
   Store_3(); // !_3
+  while(1)
+  {
+    SHOWSITE(); // SHOWSITE
+    Push(Read16(pp_UNK_0xdc10)); // UNK_0xdc10 @
+    Push(Read16(regsp)); // DUP
+    Push(!(Pop()==0x012c?1:0)); //  0x012c = NOT
+    if (Pop() == 0) break;
 
-  label2:
-  SHOWSITE(); // SHOWSITE
-  Push(Read16(pp_UNK_0xdc10)); // UNK_0xdc10 @
-  Push(Read16(regsp)); // DUP
-  Push(!(Pop()==0x012c?1:0)); //  0x012c = NOT
-  if (Pop() == 0) goto label1;
-  Push(Pop() + Read16(pp_UNK_0xdc34)); //  UNK_0xdc34 @ +
-  Push(0x012c);
-  MIN(); // MIN
-  UNK_0xe3a8(); // UNK_0xe3a8
-  goto label2;
-
-  label1:
+    Push(Pop() + Read16(pp_UNK_0xdc34)); //  UNK_0xdc34 @ +
+    Push(0x012c);
+    MIN(); // MIN
+    UNK_0xe3a8(); // UNK_0xe3a8
+  }
   Pop(); // DROP
 }
 

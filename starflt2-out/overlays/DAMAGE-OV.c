@@ -2012,16 +2012,15 @@ void DO_dash_ADAM() // DO-ADAM
 {
   UNK_0xeed5(); // UNK_0xeed5
   UNK_0xea80(); // UNK_0xea80
+  while(1)
+  {
+    if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+    Push(!(Pop()==0?1:0)); //  0= NOT
+    if (Pop() == 0) break;
 
-  label2:
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
-  Push(!(Pop()==0?1:0)); //  0= NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf105(); // UNK_0xf105
-  UNK_0xf125(); // UNK_0xf125
-  goto label2;
-
-  label1:
+    UNK_0xf105(); // UNK_0xf105
+    UNK_0xf125(); // UNK_0xf125
+  }
   Push(Read16(pp__n_WOUNDE)); // #WOUNDE @
   if (Pop() != 0)
   {

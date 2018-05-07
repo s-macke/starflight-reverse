@@ -805,17 +805,16 @@ void UNK_0xe78d() // UNK_0xe78d
 
 void UNK_0xe7a1() // UNK_0xe7a1
 {
+  while(1)
+  {
+    CI(); // CI
+    Push2Words("*STARSH");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  CI(); // CI
-  Push2Words("*STARSH");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  CDROP(); // CDROP
-  goto label2;
-
-  label1:
+    CDROP(); // CDROP
+  }
   ICLOSE(); // ICLOSE
 }
 
@@ -1587,14 +1586,13 @@ void UNK_0xecdd() // UNK_0xecdd
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(!((Read16(0x65e1+UNK_0xe634.offset)&0xFF) & 8)); // UNK_0xe634<IFIELD> C@ 8 AND NOT
+    if (Pop() == 0) break;
 
-  label2:
-  Push(!((Read16(0x65e1+UNK_0xe634.offset)&0xFF) & 8)); // UNK_0xe634<IFIELD> C@ 8 AND NOT
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+  }
   Push(1);
   Push(0x0015);
   CMESS(); // CMESS

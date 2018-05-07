@@ -947,7 +947,7 @@ void UNK_0xe758() // UNK_0xe758
   _1_dot_5_ex__2(); // 1.5!_2
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  do
+  while(1)
   {
     Push(0x65e1+TEXT_dash_IN.offset); // TEXT-IN<IFIELD>
     Get_gt_C_plus_S(); // @>C+S
@@ -960,7 +960,7 @@ void UNK_0xe758() // UNK_0xe758
     ICLOSE(); // ICLOSE
     if (Pop() == 0) return;
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 

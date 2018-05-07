@@ -205,7 +205,7 @@ void UNK_0xf0b4() // UNK_0xf0b4
 void UNK_0xf14c() // UNK_0xf14c
 {
   unsigned short int a;
-  do
+  while(1)
   {
     OVER(); // OVER
     OVER(); // OVER
@@ -217,7 +217,7 @@ void UNK_0xf14c() // UNK_0xf14c
     Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
-  } while(1);
+  }
 }
 
 

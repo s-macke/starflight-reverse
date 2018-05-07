@@ -2623,41 +2623,44 @@ void UNK_0xf23a() // UNK_0xf23a
   label1:
   Push(Read16(a)); // R@
   Push(Pop()==0x000b?1:0); //  0x000b =
-  if (Pop() == 0) goto label2;
-  IOPEN(); // IOPEN
-  UNK_0xf168(); // UNK_0xf168
-  if (Pop() == 0) goto label3;
-  IOPEN(); // IOPEN
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label4;
-
-  label7:
-  Push(0x003d);
-  Push(0);
-  IFIND(); // IFIND
   if (Pop() != 0)
   {
-    CJ(); // CJ
-    _gt_C_plus_S(); // >C+S
-    UNK_0xf1b8(); // UNK_0xf1b8
+    IOPEN(); // IOPEN
+    UNK_0xf168(); // UNK_0xf168
+    if (Pop() != 0)
+    {
+      IOPEN(); // IOPEN
+      IsNULL(); // ?NULL
+      Push(!Pop()); //  NOT
+      if (Pop() != 0)
+      {
+        while(1)
+        {
+          Push(0x003d);
+          Push(0);
+          IFIND(); // IFIND
+          if (Pop() != 0)
+          {
+            CJ(); // CJ
+            _gt_C_plus_S(); // >C+S
+            UNK_0xf1b8(); // UNK_0xf1b8
+            ICLOSE(); // ICLOSE
+            UNK_0xf1ec(); // UNK_0xf1ec
+            IsLAST(); // ?LAST
+            Push(!Pop()); //  NOT
+          } else
+          {
+            Push(Read16(cc_FALSE)); // FALSE
+          }
+          if (Pop() == 0) break;
+
+          INEXT(); // INEXT
+        }
+      }
+      ICLOSE(); // ICLOSE
+    }
     ICLOSE(); // ICLOSE
-    UNK_0xf1ec(); // UNK_0xf1ec
-    IsLAST(); // ?LAST
-    Push(!Pop()); //  NOT
-  } else
-  {
-    Push(Read16(cc_FALSE)); // FALSE
   }
-  if (Pop() == 0) goto label4;
-  INEXT(); // INEXT
-  goto label7;
-
-  label4:
-  ICLOSE(); // ICLOSE
-
-  label3:
-  ICLOSE(); // ICLOSE
 
   label2:
   Push(a); // R>

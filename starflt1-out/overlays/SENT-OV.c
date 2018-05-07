@@ -1257,7 +1257,7 @@ void UNK_0xe94b() // UNK_0xe94b
 void UNK_0xe9e3() // UNK_0xe9e3
 {
   unsigned short int a;
-  do
+  while(1)
   {
     OVER(); // OVER
     OVER(); // OVER
@@ -1269,7 +1269,7 @@ void UNK_0xe9e3() // UNK_0xe9e3
     Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3 +
-  } while(1);
+  }
 }
 
 
@@ -1566,46 +1566,45 @@ void UNK_0xebdb() // UNK_0xebdb
   UNK_0xeb6f(); // UNK_0xeb6f
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
+  while(1)
+  {
+    Push2Words("UNK_0xea2f");
+    _2OVER(); // 2OVER
+    D_dash_(); // D-
+    Push(Pop() | Pop()); // OR
+    if (Pop() == 0) break;
 
-  label4:
-  Push2Words("UNK_0xea2f");
-  _2OVER(); // 2OVER
-  D_dash_(); // D-
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
-  UNK_0xea3d(); // UNK_0xea3d
-  if (Pop() != 0)
-  {
-    Pop(); Pop(); // 2DROP
-    U_gt__do_(); // U>$
-    UNK_0xe8c7(); // UNK_0xe8c7
-  } else
-  {
-    CI(); // CI
-    Push2Words("UNK_0xe6bf");
-    D_eq_(); // D=
+    UNK_0xea3d(); // UNK_0xea3d
     if (Pop() != 0)
     {
-      Push(!((Read16(Read16(pp_PM_dash_PTR))&0xFF)==0?1:0)); // PM-PTR @ C@ 0= NOT
+      Pop(); Pop(); // 2DROP
+      U_gt__do_(); // U>$
+      UNK_0xe8c7(); // UNK_0xe8c7
+    } else
+    {
+      CI(); // CI
+      Push2Words("UNK_0xe6bf");
+      D_eq_(); // D=
       if (Pop() != 0)
+      {
+        Push(!((Read16(Read16(pp_PM_dash_PTR))&0xFF)==0?1:0)); // PM-PTR @ C@ 0= NOT
+        if (Pop() != 0)
+        {
+          UNK_0xebcf(); // UNK_0xebcf
+          UNK_0xe8c7(); // UNK_0xe8c7
+          ICLOSE(); // ICLOSE
+        } else
+        {
+          Pop(); Pop(); // 2DROP
+        }
+      } else
       {
         UNK_0xebcf(); // UNK_0xebcf
         UNK_0xe8c7(); // UNK_0xe8c7
         ICLOSE(); // ICLOSE
-      } else
-      {
-        Pop(); Pop(); // 2DROP
       }
-    } else
-    {
-      UNK_0xebcf(); // UNK_0xebcf
-      UNK_0xe8c7(); // UNK_0xe8c7
-      ICLOSE(); // ICLOSE
     }
   }
-  goto label4;
-
-  label1:
   UNK_0xebcf(); // UNK_0xebcf
   UNK_0xe8c7(); // UNK_0xe8c7
   ICLOSE(); // ICLOSE

@@ -1924,16 +1924,15 @@ void UNK_0xe149() // UNK_0xe149
 void UNK_0xe157() // UNK_0xe157
 {
   Push(Read16(pp_UNK_0xda04)); // UNK_0xda04 @
+  while(1)
+  {
+    Push(Read16(pp_CXSP)); // CXSP @
+    OVER(); // OVER
+    U_st_(); // U<
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(pp_CXSP)); // CXSP @
-  OVER(); // OVER
-  U_st_(); // U<
-  if (Pop() == 0) goto label1;
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    ICLOSE(); // ICLOSE
+  }
   Pop(); // DROP
 }
 
@@ -4437,25 +4436,24 @@ void COME_dash_HI() // COME-HI
   Push2Words("NULL");
   Push(pp_HAZE); // HAZE
   StoreD(); // D!
+  while(1)
+  {
+    UNK_0xdb1c(); // UNK_0xdb1c
+    Push(!Pop()); //  NOT
+    Push(pp__ro_SYSTEM); // (SYSTEM
+    _1_dot_5_at_(); // 1.5@
+    Push2Words("*ASYS");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    Push(Pop() & Pop()); // AND
+    UNK_0xdaca(); // UNK_0xdaca
+    Push(2);
+    _st_(); // <
+    Push(Pop() | Pop()); // OR
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xdb1c(); // UNK_0xdb1c
-  Push(!Pop()); //  NOT
-  Push(pp__ro_SYSTEM); // (SYSTEM
-  _1_dot_5_at_(); // 1.5@
-  Push2Words("*ASYS");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  UNK_0xdaca(); // UNK_0xdaca
-  Push(2);
-  _st_(); // <
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
-  UNNEST(); // UNNEST
-  goto label2;
-
-  label1:
+    UNNEST(); // UNNEST
+  }
   Push(pp_IsNEB); // ?NEB
   _099(); // 099
   UNK_0xdb1c(); // UNK_0xdb1c
@@ -4466,14 +4464,13 @@ void COME_dash_HI() // COME-HI
   }
   UNK_0xd9b8(); // UNK_0xd9b8
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(!(Read16(0x65e1+INST_dash_QT.offset)==8?1:0)); // INST-QT<IFIELD> @ 8 = NOT
+    if (Pop() == 0) break;
 
-  label5:
-  Push(!(Read16(0x65e1+INST_dash_QT.offset)==8?1:0)); // INST-QT<IFIELD> @ 8 = NOT
-  if (Pop() == 0) goto label4;
-  INEXT(); // INEXT
-  goto label5;
-
-  label4:
+    INEXT(); // INEXT
+  }
   CI(); // CI
   UNK_0xd9c8(); // UNK_0xd9c8
   _plus_NEST(); // +NEST

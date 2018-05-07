@@ -1084,20 +1084,19 @@ void UNK_0xf222() // UNK_0xf222
   UNK_0xf1c8(); // UNK_0xf1c8
   Push(Read16(pp_UNK_0xedd5)); // UNK_0xedd5 @
   if (Pop() == 0) return;
+  while(1)
+  {
+    _2DUP(); // 2DUP
+    UNK_0xf1fe(); // UNK_0xf1fe
+    _2DUP(); // 2DUP
+    UNK_0xf12e(); // UNK_0xf12e
+    a = Pop(); // >R
+    UNK_0xf1e4(); // UNK_0xf1e4
+    Push(!Pop() | a); //  NOT R> OR
+    if (Pop() == 0) break;
 
-  label2:
-  _2DUP(); // 2DUP
-  UNK_0xf1fe(); // UNK_0xf1fe
-  _2DUP(); // 2DUP
-  UNK_0xf12e(); // UNK_0xf12e
-  a = Pop(); // >R
-  UNK_0xf1e4(); // UNK_0xf1e4
-  Push(!Pop() | a); //  NOT R> OR
-  if (Pop() == 0) goto label1;
-  Pop(); Pop(); // 2DROP
-  goto label2;
-
-  label1:
+    Pop(); Pop(); // 2DROP
+  }
   _2SWAP(); // 2SWAP
   Pop(); Pop(); // 2DROP
 }

@@ -780,7 +780,7 @@ void UNK_0xe53d() // UNK_0xe53d
 void UNK_0xe5d5() // UNK_0xe5d5
 {
   unsigned short int a;
-  do
+  while(1)
   {
     OVER(); // OVER
     OVER(); // OVER
@@ -792,7 +792,7 @@ void UNK_0xe5d5() // UNK_0xe5d5
     Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
-  } while(1);
+  }
 }
 
 
@@ -922,57 +922,56 @@ void UNK_0xe762() // UNK_0xe762
   Push(Read16(pp_PLHI) + 1); // PLHI @ 1+
   Push(pp_RECORD_n_); // RECORD#
   OFF(); // OFF
-
-  label4:
-  UNK_0xe51b(); // UNK_0xe51b
-  Push(Read16(pp_RECORD_n_)); // RECORD# @
-  OVER(); // OVER
-  _st_(); // <
-  if (Pop() == 0) goto label1;
-  UNK_0xe6f8(); // UNK_0xe6f8
-  UNK_0xe740(); // UNK_0xe740
-  LoadData(UNK_0xe467); // from 'CREATURE'
-  _1_dot_5_at_(); // 1.5@
-  LoadData(UNK_0xe46f); // from 'CREATURE'
-  _1_dot_5_at_(); // 1.5@
-  LoadData(UNK_0xe45f); // from 'CREATURE'
-  Push(Read16(Pop()) + 1); //  @ 1+
-  LoadData(UNK_0xe457); // from 'CREATURE'
-  Push(Read16(Pop()) + 1); //  @ 1+
-  _2DUP(); // 2DUP
-  _dash_(); // -
-  if (Pop() != 0)
+  while(1)
   {
+    UNK_0xe51b(); // UNK_0xe51b
+    Push(Read16(pp_RECORD_n_)); // RECORD# @
+    OVER(); // OVER
+    _st_(); // <
+    if (Pop() == 0) break;
 
-    i = Pop();
-    imax = Pop();
-    do // (DO)
+    UNK_0xe6f8(); // UNK_0xe6f8
+    UNK_0xe740(); // UNK_0xe740
+    LoadData(UNK_0xe467); // from 'CREATURE'
+    _1_dot_5_at_(); // 1.5@
+    LoadData(UNK_0xe46f); // from 'CREATURE'
+    _1_dot_5_at_(); // 1.5@
+    LoadData(UNK_0xe45f); // from 'CREATURE'
+    Push(Read16(Pop()) + 1); //  @ 1+
+    LoadData(UNK_0xe457); // from 'CREATURE'
+    Push(Read16(Pop()) + 1); //  @ 1+
+    _2DUP(); // 2DUP
+    _dash_(); // -
+    if (Pop() != 0)
     {
-      Push(i); // I
-      Push(pp_RECORD_n_); // RECORD#
-      Store_3(); // !_3
-      UNK_0xe51b(); // UNK_0xe51b
-      _2DUP(); // 2DUP
-      LoadData(UNK_0xe46f); // from 'CREATURE'
-      _1_dot_5_ex_(); // 1.5!
-      _2OVER(); // 2OVER
-      LoadData(UNK_0xe467); // from 'CREATURE'
-      _1_dot_5_ex_(); // 1.5!
-      i++;
-    } while(i<imax); // (LOOP)
 
-  } else
-  {
+      i = Pop();
+      imax = Pop();
+      do // (DO)
+      {
+        Push(i); // I
+        Push(pp_RECORD_n_); // RECORD#
+        Store_3(); // !_3
+        UNK_0xe51b(); // UNK_0xe51b
+        _2DUP(); // 2DUP
+        LoadData(UNK_0xe46f); // from 'CREATURE'
+        _1_dot_5_ex_(); // 1.5!
+        _2OVER(); // 2OVER
+        LoadData(UNK_0xe467); // from 'CREATURE'
+        _1_dot_5_ex_(); // 1.5!
+        i++;
+      } while(i<imax); // (LOOP)
+
+    } else
+    {
+      Pop(); Pop(); // 2DROP
+    }
     Pop(); Pop(); // 2DROP
+    Pop(); Pop(); // 2DROP
+    Push(1);
+    Push(pp_RECORD_n_); // RECORD#
+    _plus__ex__2(); // +!_2
   }
-  Pop(); Pop(); // 2DROP
-  Pop(); Pop(); // 2DROP
-  Push(1);
-  Push(pp_RECORD_n_); // RECORD#
-  _plus__ex__2(); // +!_2
-  goto label4;
-
-  label1:
   Pop(); // DROP
 }
 
@@ -1956,21 +1955,20 @@ void UNK_0xf4c0() // UNK_0xf4c0
   Push(Read16(pp_PLHI) + 1); // PLHI @ 1+
   Push(pp_RECORD_n_); // RECORD#
   OFF(); // OFF
+  while(1)
+  {
+    UNK_0xe51b(); // UNK_0xe51b
+    Push(Read16(pp_RECORD_n_)); // RECORD# @
+    OVER(); // OVER
+    _st_(); // <
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xe51b(); // UNK_0xe51b
-  Push(Read16(pp_RECORD_n_)); // RECORD# @
-  OVER(); // OVER
-  _st_(); // <
-  if (Pop() == 0) goto label1;
-  UNK_0xf4a6(); // UNK_0xf4a6
-  LoadData(UNK_0xe4f7); // from 'CREATURE'
-  Push(Read16(Pop()) + 1); //  @ 1+
-  Push(pp_RECORD_n_); // RECORD#
-  Store_3(); // !_3
-  goto label2;
-
-  label1:
+    UNK_0xf4a6(); // UNK_0xf4a6
+    LoadData(UNK_0xe4f7); // from 'CREATURE'
+    Push(Read16(Pop()) + 1); //  @ 1+
+    Push(pp_RECORD_n_); // RECORD#
+    Store_3(); // !_3
+  }
   Pop(); // DROP
 }
 

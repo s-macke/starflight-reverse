@@ -847,24 +847,23 @@ void SMARTOP() // SMARTOP
   UNK_0x455a(); // UNK_0x455a
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
+  while(1)
+  {
+    DRV(); // DRV
+    Push(Read16(Pop())&0xFF); //  C@
+    UNK_0x458e(); // UNK_0x458e
+    _2DUP(); // 2DUP
+    Push((Pop()==Pop())?1:0); // =
+    Push(!Pop() & a); //  NOT I AND
+    if (Pop() == 0) break;
 
-  label2:
-  DRV(); // DRV
-  Push(Read16(Pop())&0xFF); //  C@
-  UNK_0x458e(); // UNK_0x458e
-  _2DUP(); // 2DUP
-  Push((Pop()==Pop())?1:0); // =
-  Push(!Pop() & a); //  NOT I AND
-  if (Pop() == 0) goto label1;
-  DRV(); // DRV
-  C_ex__1(); // C!_1
-  OPEN(); // OPEN
-  Push(a); // R>
-  Pop(); // DROP
-  b = Pop(); // >R
-  goto label2;
-
-  label1:
+    DRV(); // DRV
+    C_ex__1(); // C!_1
+    OPEN(); // OPEN
+    Push(a); // R>
+    Pop(); // DROP
+    b = Pop(); // >R
+  }
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   Push(Read16(regsp)); // DUP
@@ -946,30 +945,29 @@ void DOSMOUN() // DOSMOUN
   OFF_1(); // OFF_1
   a = Pop(); // >R
   INIT(); // INIT
+  while(1)
+  {
+    Push(a); // I
+    FCBPFAS(); // FCBPFAS
+    Push(Read16(Pop())); //  @
+    Push(pp__i_FCB); // 'FCB
+    Store(); // !
+    SMARTOP(); // SMARTOP
+    Push(Read16(regsp)); // DUP
+    Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
+    if (Pop() == 0) break;
 
-  label2:
-  Push(a); // I
-  FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); //  @
-  Push(pp__i_FCB); // 'FCB
-  Store(); // !
-  SMARTOP(); // SMARTOP
-  Push(Read16(regsp)); // DUP
-  Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  FLUSH_1(); // FLUSH_1
-  INIT(); // INIT
-  Push(a); // I
-  FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); //  @
-  Push(pp__i_FCB); // 'FCB
-  Store(); // !
-  Push(pp_ASKMOUN); // ASKMOUN
-  GetEXECUTE(); // @EXECUTE
-  goto label2;
-
-  label1:
+    Pop(); // DROP
+    FLUSH_1(); // FLUSH_1
+    INIT(); // INIT
+    Push(a); // I
+    FCBPFAS(); // FCBPFAS
+    Push(Read16(Pop())); //  @
+    Push(pp__i_FCB); // 'FCB
+    Store(); // !
+    Push(pp_ASKMOUN); // ASKMOUN
+    GetEXECUTE(); // @EXECUTE
+  }
   Push(0x0400);
   RECSIZE(); // RECSIZE
   Store(); // !
@@ -1191,25 +1189,24 @@ void _bo_LDS_bc_() // [LDS]
   UNK_0x455a(); // UNK_0x455a
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
+  while(1)
+  {
+    DRV(); // DRV
+    Push(Read16(Pop())&0xFF); //  C@
+    UNK_0x458e(); // UNK_0x458e
+    _2DUP(); // 2DUP
+    Push((Pop()==Pop())?1:0); // =
+    Push(!Pop() & a); //  NOT I AND
+    if (Pop() == 0) break;
 
-  label2:
-  DRV(); // DRV
-  Push(Read16(Pop())&0xFF); //  C@
-  UNK_0x458e(); // UNK_0x458e
-  _2DUP(); // 2DUP
-  Push((Pop()==Pop())?1:0); // =
-  Push(!Pop() & a); //  NOT I AND
-  if (Pop() == 0) goto label1;
-  DRV(); // DRV
-  C_ex__1(); // C!_1
-  UNK_0x486f(); // UNK_0x486f
-  IsERR(); // ?ERR
-  Push(a); // R>
-  Pop(); // DROP
-  b = Pop(); // >R
-  goto label2;
-
-  label1:
+    DRV(); // DRV
+    C_ex__1(); // C!_1
+    UNK_0x486f(); // UNK_0x486f
+    IsERR(); // ?ERR
+    Push(a); // R>
+    Pop(); // DROP
+    b = Pop(); // >R
+  }
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   Push(Read16(regsp)); // DUP
@@ -1243,16 +1240,15 @@ void _ro_LDS_rc_() // (LDS)
   Store(); // !
   Push(pp_UNK_0x484e); // UNK_0x484e
   Store(); // !
+  while(1)
+  {
+    _bo_LDS_bc_(); // [LDS]
+    Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
+    if (Pop() == 0) break;
 
-  label2:
-  _bo_LDS_bc_(); // [LDS]
-  Push(Pop() & !Read16(pp_SKIPPED)); //  SKIPPED @ NOT AND
-  if (Pop() == 0) goto label1;
-  Push(pp_ASKMOUN); // ASKMOUN
-  GetEXECUTE(); // @EXECUTE
-  goto label2;
-
-  label1:
+    Push(pp_ASKMOUN); // ASKMOUN
+    GetEXECUTE(); // @EXECUTE
+  }
   Push(a); // R>
   Push(pp__i_FCB); // 'FCB
   Store(); // !

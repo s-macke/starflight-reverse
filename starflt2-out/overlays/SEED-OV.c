@@ -942,22 +942,21 @@ void UNK_0xefe6() // UNK_0xefe6
 {
   LoadData(UNK_0xec62); // from 'PLANET'
   Push(!((Read16(Pop())&0xFF)==6?1:0)); //  C@ 6 = NOT
-  if (Pop() == 0) goto label1;
+  if (Pop() != 0)
+  {
+    while(1)
+    {
+      Push(1);
+      Push(0x0017);
+      RRND(); // RRND
+      Push(Read16(regsp)); // DUP
+      Push(Pop()==6?1:0); //  6 =
+      if (Pop() == 0) break;
 
-  label3:
-  Push(1);
-  Push(0x0017);
-  RRND(); // RRND
-  Push(Read16(regsp)); // DUP
-  Push(Pop()==6?1:0); //  6 =
-  if (Pop() == 0) goto label2;
-  Pop(); // DROP
-  goto label3;
-
-  label2:
-  return;
-
-  label1:
+      Pop(); // DROP
+    }
+    return;
+  }
   Push(6);
 }
 
@@ -1145,29 +1144,28 @@ void UNK_0xf120() // UNK_0xf120
   IOPEN(); // IOPEN
   Push(0);
   a = Pop(); // >R
-
-  label3:
-  Push(0x0029);
-  Push(0);
-  IFIND(); // IFIND
-  Push(Read16(a)); // R@
-  Push(Pop()==0?1:0); //  0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
-  _2DUP(); // 2DUP
-  UNK_0xedae(); // UNK_0xedae
-  D_eq_(); // D=
-  if (Pop() != 0)
+  while(1)
   {
-    Push(a); // R>
-    Pop(); // DROP
-    Push(1);
-    b = Pop(); // >R
-  }
-  INEXT(); // INEXT
-  goto label3;
+    Push(0x0029);
+    Push(0);
+    IFIND(); // IFIND
+    Push(Read16(a)); // R@
+    Push(Pop()==0?1:0); //  0=
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) break;
 
-  label1:
+    _2DUP(); // 2DUP
+    UNK_0xedae(); // UNK_0xedae
+    D_eq_(); // D=
+    if (Pop() != 0)
+    {
+      Push(a); // R>
+      Pop(); // DROP
+      Push(1);
+      b = Pop(); // >R
+    }
+    INEXT(); // INEXT
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(a); // R>
@@ -1325,61 +1323,60 @@ void UNK_0xf21c() // UNK_0xf21c
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-
-  label6:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
-  Push(Read16(a)); // R@
-  Push(0);
-  IFIND(); // IFIND
-  Push(Read16(regsp)); // DUP
-  b = Pop(); // >R
-  if (Pop() != 0)
+  while(1)
   {
-    UNK_0xf1da(); // UNK_0xf1da
-    UNK_0xf1e8(); // UNK_0xf1e8
+    IsLAST(); // ?LAST
+    Push(!Pop()); //  NOT
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) break;
+
+    Push(Read16(a)); // R@
+    Push(0);
+    IFIND(); // IFIND
+    Push(Read16(regsp)); // DUP
+    b = Pop(); // >R
     if (Pop() != 0)
     {
-      UNK_0xedae(); // UNK_0xedae
-      Push(0x0029);
-      Push(4);
-      IsCLASS_slash_(); // ?CLASS/
-      c = Pop(); // >R
-      Pop(); Pop(); // 2DROP
-      Push(c); // R>
+      UNK_0xf1da(); // UNK_0xf1da
+      UNK_0xf1e8(); // UNK_0xf1e8
       if (Pop() != 0)
       {
-        _2DUP(); // 2DUP
-        UNK_0xf0b2(); // UNK_0xf0b2
-      }
-      UNK_0xf190(); // UNK_0xf190
-      IEXTRAC(); // IEXTRAC
-      IPREV(); // IPREV
-      Push(pp_THIS_dash_RE); // THIS-RE
-      _1_dot_5_at_(); // 1.5@
-      IINSERT(); // IINSERT
-      Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
-      d = Pop(); // >R
-      UNK_0xf120(); // UNK_0xf120
-      Push(!Pop() & d); //  NOT R> AND
-      if (Pop() != 0)
-      {
-        Push(a); // I'
-        UNK_0xf1f4(); // UNK_0xf1f4
-      } else
-      {
+        UNK_0xedae(); // UNK_0xedae
+        Push(0x0029);
+        Push(4);
+        IsCLASS_slash_(); // ?CLASS/
+        c = Pop(); // >R
         Pop(); Pop(); // 2DROP
+        Push(c); // R>
+        if (Pop() != 0)
+        {
+          _2DUP(); // 2DUP
+          UNK_0xf0b2(); // UNK_0xf0b2
+        }
+        UNK_0xf190(); // UNK_0xf190
+        IEXTRAC(); // IEXTRAC
+        IPREV(); // IPREV
+        Push(pp_THIS_dash_RE); // THIS-RE
+        _1_dot_5_at_(); // 1.5@
+        IINSERT(); // IINSERT
+        Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
+        d = Pop(); // >R
+        UNK_0xf120(); // UNK_0xf120
+        Push(!Pop() & d); //  NOT R> AND
+        if (Pop() != 0)
+        {
+          Push(a); // I'
+          UNK_0xf1f4(); // UNK_0xf1f4
+        } else
+        {
+          Pop(); Pop(); // 2DROP
+        }
       }
+      Pop(); Pop(); // 2DROP
     }
-    Pop(); Pop(); // 2DROP
+    INEXT(); // INEXT
+    Push(b); // R>
   }
-  INEXT(); // INEXT
-  Push(b); // R>
-  goto label6;
-
-  label1:
   ICLOSE(); // ICLOSE
   ICLOSE(); // ICLOSE
   Push(a); // R>

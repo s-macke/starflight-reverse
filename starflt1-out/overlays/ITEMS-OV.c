@@ -3262,55 +3262,54 @@ void UNK_0xf028() // UNK_0xf028
   OFF(); // OFF
   Push(pp_FQUIT); // FQUIT
   OFF(); // OFF
+  while(1)
+  {
+    IsQUIT(); // ?QUIT
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label4:
-  IsQUIT(); // ?QUIT
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  XYSCAN(); // XYSCAN
-  Push(1);
-  Push(0);
-  _2OVER(); // 2OVER
-  D_eq_(); // D=
-  if (Pop() != 0)
-  {
-    Pop(); Pop(); // 2DROP
-    Push(-1);
-    UNK_0xef32(); // UNK_0xef32
-  } else
-  {
-    Push(-1);
+    XYSCAN(); // XYSCAN
+    Push(1);
     Push(0);
     _2OVER(); // 2OVER
     D_eq_(); // D=
     if (Pop() != 0)
     {
       Pop(); Pop(); // 2DROP
-      Push(1);
+      Push(-1);
       UNK_0xef32(); // UNK_0xef32
     } else
     {
-      Pop(); // DROP
-      IsTRIG(); // ?TRIG
+      Push(-1);
+      Push(0);
+      _2OVER(); // 2OVER
+      D_eq_(); // D=
       if (Pop() != 0)
       {
-        Push(Read16(pp_UNK_0xdec9)); // UNK_0xdec9 @
-        GetINST_dash_CLASS(); // @INST-CLASS
-        DISPATCH(); // DISPATCH case
-        Push(Read16(pp_revision)); // revision @
+        Pop(); Pop(); // 2DROP
+        Push(1);
+        UNK_0xef32(); // UNK_0xef32
+      } else
+      {
+        Pop(); // DROP
+        IsTRIG(); // ?TRIG
         if (Pop() != 0)
         {
-          UNK_0xef8e(); // UNK_0xef8e
+          Push(Read16(pp_UNK_0xdec9)); // UNK_0xdec9 @
+          GetINST_dash_CLASS(); // @INST-CLASS
+          DISPATCH(); // DISPATCH case
+          Push(Read16(pp_revision)); // revision @
+          if (Pop() != 0)
+          {
+            UNK_0xef8e(); // UNK_0xef8e
+          }
+          Push(pp_FQUIT); // FQUIT
+          ON_3(); // ON_3
         }
-        Push(pp_FQUIT); // FQUIT
-        ON_3(); // ON_3
+        Pop(); // DROP
       }
-      Pop(); // DROP
     }
   }
-  goto label4;
-
-  label1:
   CDROP(); // CDROP
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -3613,38 +3612,37 @@ void UNK_0xf252() // UNK_0xf252
   IOPEN(); // IOPEN
   IsNULL(); // ?NULL
   Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-
-  label4:
-  _2DUP(); // 2DUP
-  Push(Pop() | Pop()); // OR
-  Push(Pop()==0?1:0); //  0=
-  IsLAST(); // ?LAST
-  Push(Pop()==0?1:0); //  0=
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
-  CJ(); // CJ
-  CI(); // CI
-  D_eq_(); // D=
   if (Pop() != 0)
   {
-    Pop(); Pop(); // 2DROP
-    CI_i_(); // CI'
-  }
-  INEXT(); // INEXT
-  goto label4;
+    while(1)
+    {
+      _2DUP(); // 2DUP
+      Push(Pop() | Pop()); // OR
+      Push(Pop()==0?1:0); //  0=
+      IsLAST(); // ?LAST
+      Push(Pop()==0?1:0); //  0=
+      Push(Pop() & Pop()); // AND
+      if (Pop() == 0) break;
 
-  label2:
-  CJ(); // CJ
-  CI(); // CI
-  D_eq_(); // D=
-  if (Pop() != 0)
-  {
-    Pop(); Pop(); // 2DROP
-    CI_i_(); // CI'
+      CJ(); // CJ
+      CI(); // CI
+      D_eq_(); // D=
+      if (Pop() != 0)
+      {
+        Pop(); Pop(); // 2DROP
+        CI_i_(); // CI'
+      }
+      INEXT(); // INEXT
+    }
+    CJ(); // CJ
+    CI(); // CI
+    D_eq_(); // D=
+    if (Pop() != 0)
+    {
+      Pop(); Pop(); // 2DROP
+      CI_i_(); // CI'
+    }
   }
-
-  label1:
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -3657,7 +3655,7 @@ void UNK_0xf252() // UNK_0xf252
 void UNK_0xf29c() // UNK_0xf29c
 {
   Push2Words("0.");
-  do
+  while(1)
   {
     _2DUP(); // 2DUP
     Push(Pop() | Pop()); // OR
@@ -3685,7 +3683,7 @@ void UNK_0xf29c() // UNK_0xf29c
       Pop(); Pop(); // 2DROP
     }
     INEXT(); // INEXT
-  } while(1);
+  }
 }
 
 
@@ -3873,15 +3871,14 @@ void UNK_0xf3d6() // UNK_0xf3d6
 void UNK_0xf3f8() // UNK_0xf3f8
 {
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf3d6(); // UNK_0xf3d6
-  goto label2;
-
-  label1:
+    UNK_0xf3d6(); // UNK_0xf3d6
+  }
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
   IPREV(); // IPREV
@@ -3898,15 +3895,14 @@ void UNK_0xf412() // UNK_0xf412
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _st__ex__gt_(); // <!>
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf3f8(); // UNK_0xf3f8
-  goto label2;
-
-  label1:
+    UNK_0xf3f8(); // UNK_0xf3f8
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
   Push(0x000a);

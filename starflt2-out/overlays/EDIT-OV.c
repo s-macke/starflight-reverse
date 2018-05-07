@@ -1392,7 +1392,7 @@ void EDIT() // EDIT
   Exec("PAGE"); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
-  do
+  while(1)
   {
     UNK_0xeec0(); // UNK_0xeec0
     KEY_2(); // KEY_2
@@ -1404,7 +1404,7 @@ void EDIT() // EDIT
     {
       EDIT_dash_KEYS(); // EDIT-KEYS case
     }
-  } while(1);
+  }
 }
 
 
@@ -1442,7 +1442,7 @@ void VIEW() // VIEW
   Exec("PAGE"); // call of word 0x274c '(PAGE)'
   LIST(); // LIST
   DISPLAYKEY(); // DISPLAYKEY
-  do
+  while(1)
   {
     UNK_0xeec0(); // UNK_0xeec0
     KEY_2(); // KEY_2
@@ -1452,7 +1452,7 @@ void VIEW() // VIEW
     {
       VIEW_dash_KEYS(); // VIEW-KEYS case
     }
-  } while(1);
+  }
 }
 
 // 0xf557: db 0x2b 0x45 0x44 0x49 0x54 0x5f 0x5f 0x5f 0x5f 0x00 '+EDIT____ '

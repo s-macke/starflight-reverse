@@ -2488,7 +2488,7 @@ void UNK_0xe2b3() // UNK_0xe2b3
 
 void UNK_0xe2c3() // UNK_0xe2c3
 {
-  do
+  while(1)
   {
     OVER(); // OVER
     Push(!((Read16(Pop())&0xFF)==0x0029?1:0)); //  C@ 0x0029 = NOT
@@ -2497,7 +2497,7 @@ void UNK_0xe2c3() // UNK_0xe2c3
     Push(Pop() & Pop()); // AND
     if (Pop() == 0) return;
     UNK_0xe1c1(); // UNK_0xe1c1
-  } while(1);
+  }
 }
 
 

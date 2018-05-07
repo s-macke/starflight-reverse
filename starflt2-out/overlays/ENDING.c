@@ -963,34 +963,33 @@ void UNK_0xeb62() // UNK_0xeb62
   WLD_gt_SCR(); // WLD>SCR
   LXPLOT(); // LXPLOT
   UNK_0xeafe(); // UNK_0xeafe
+  while(1)
+  {
+    UNK_0xeb56(); // UNK_0xeb56
+    Push(pp_UNK_0xeab0); // UNK_0xeab0
+    StoreD(); // D!
+    UNK_0xeb56(); // UNK_0xeb56
+    UNK_0xe9ec(); // UNK_0xe9ec
+    Push(Pop() + 1); //  1+
+    SWAP(); // SWAP
+    Push(Pop() + 1); //  1+
+    SWAP(); // SWAP
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xeb56(); // UNK_0xeb56
-  Push(pp_UNK_0xeab0); // UNK_0xeab0
-  StoreD(); // D!
-  UNK_0xeb56(); // UNK_0xeb56
-  UNK_0xe9ec(); // UNK_0xe9ec
-  Push(Pop() + 1); //  1+
-  SWAP(); // SWAP
-  Push(Pop() + 1); //  1+
-  SWAP(); // SWAP
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  Push(pp_UNK_0xeab0); // UNK_0xeab0
-  _2_at_(); // 2@
-  WLD_gt_SCR(); // WLD>SCR
-  LXPLOT(); // LXPLOT
-  UNK_0xeade(); // UNK_0xeade
-  UNK_0xeb56(); // UNK_0xeb56
-  WLD_gt_SCR(); // WLD>SCR
-  LXPLOT(); // LXPLOT
-  V_gt_DISPL(); // V>DISPL
-  Push(0x01f4);
-  MS(); // MS
-  goto label2;
-
-  label1:
+    Push(pp_UNK_0xeab0); // UNK_0xeab0
+    _2_at_(); // 2@
+    WLD_gt_SCR(); // WLD>SCR
+    LXPLOT(); // LXPLOT
+    UNK_0xeade(); // UNK_0xeade
+    UNK_0xeb56(); // UNK_0xeb56
+    WLD_gt_SCR(); // WLD>SCR
+    LXPLOT(); // LXPLOT
+    V_gt_DISPL(); // V>DISPL
+    Push(0x01f4);
+    MS(); // MS
+  }
   _gt_DISPLA(); // >DISPLA
 }
 

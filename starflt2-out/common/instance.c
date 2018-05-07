@@ -834,21 +834,20 @@ void SELECT() // SELECT
 {
   Push(0);
   _gt_V(); // >V
+  while(1)
+  {
+    UNK_0x7d73(); // UNK_0x7d73
+    UNK_0x7d7b(); // UNK_0x7d7b
+    Push(Pop() | Pop()); // OR
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0x7d73(); // UNK_0x7d73
-  UNK_0x7d7b(); // UNK_0x7d7b
-  Push(Pop() | Pop()); // OR
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0x7d83(); // UNK_0x7d83
-  V_gt_(); // V>
-  Pop(); // DROP
-  Push(1);
-  _gt_V(); // >V
-  goto label2;
-
-  label1:
+    UNK_0x7d83(); // UNK_0x7d83
+    V_gt_(); // V>
+    Pop(); // DROP
+    Push(1);
+    _gt_V(); // >V
+  }
   UNK_0x7d7b(); // UNK_0x7d7b
   Push(!Pop()); //  NOT
   V_gt_(); // V>
@@ -1321,7 +1320,7 @@ void UNK_0x808d() // UNK_0x808d
 
 void UNK_0x80c7() // UNK_0x80c7
 {
-  do
+  while(1)
   {
     Push(pp_UNK_0x5fe6); // UNK_0x5fe6
     OFF_2(); // OFF_2
@@ -1354,7 +1353,7 @@ void UNK_0x80c7() // UNK_0x80c7
     IsNULL(); // ?NULL
     if (Pop() == 0) return;
     CDROP(); // CDROP
-  } while(1);
+  }
 }
 
 

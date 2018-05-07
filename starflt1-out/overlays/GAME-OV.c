@@ -907,13 +907,13 @@ void _n_LPS() // #LPS
 
 void IsBL_st__dash_() // ?BL<-
 {
-  do
+  while(1)
   {
     Push(Read16(regsp)); // DUP
     Push(!((Read16(Pop())&0xFF)==Read16(cc_BL)?1:0)); //  C@ BL = NOT
     if (Pop() == 0) return;
     Push(Pop() - 1); //  1-
-  } while(1);
+  }
 }
 
 
@@ -929,23 +929,22 @@ void _n__n_LINES() // ##LINES
   Push(1);
   Push(pp_UNK_0xdf9a); // UNK_0xdf9a
   Store_3(); // !_3
+  while(1)
+  {
+    Push(Read16(pp_SUB_do_ADDR) + Read16(pp_UNK_0xdf8a)); // SUB$ADDR @ UNK_0xdf8a @ +
+    Push(Read16(regsp)); // DUP
+    Push(Read16(pp__do_ADDR) + Read16(pp__do_LEN)); // $ADDR @ $LEN @ +
+    U_st_(); // U<
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(pp_SUB_do_ADDR) + Read16(pp_UNK_0xdf8a)); // SUB$ADDR @ UNK_0xdf8a @ +
-  Push(Read16(regsp)); // DUP
-  Push(Read16(pp__do_ADDR) + Read16(pp__do_LEN)); // $ADDR @ $LEN @ +
-  U_st_(); // U<
-  if (Pop() == 0) goto label1;
-  IsBL_st__dash_(); // ?BL<-
-  Push(Pop() + 1); //  1+
-  Push(pp_SUB_do_ADDR); // SUB$ADDR
-  Store_3(); // !_3
-  Push(1);
-  Push(pp_UNK_0xdf9a); // UNK_0xdf9a
-  _plus__ex__2(); // +!_2
-  goto label2;
-
-  label1:
+    IsBL_st__dash_(); // ?BL<-
+    Push(Pop() + 1); //  1+
+    Push(pp_SUB_do_ADDR); // SUB$ADDR
+    Store_3(); // !_3
+    Push(1);
+    Push(pp_UNK_0xdf9a); // UNK_0xdf9a
+    _plus__ex__2(); // +!_2
+  }
   Pop(); // DROP
 }
 
@@ -1010,27 +1009,26 @@ void Draw_n_LINES() // .#LINES
   Push(Read16(pp__do_ADDR)); // $ADDR @
   Push(pp_SUB_do_ADDR); // SUB$ADDR
   Store_3(); // !_3
+  while(1)
+  {
+    Push(Read16(pp_SUB_do_ADDR) + Read16(pp_UNK_0xdf8a)); // SUB$ADDR @ UNK_0xdf8a @ +
+    Push(Read16(regsp)); // DUP
+    Push(Read16(pp__do_ADDR) + Read16(pp__do_LEN)); // $ADDR @ $LEN @ +
+    U_st_(); // U<
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(pp_SUB_do_ADDR) + Read16(pp_UNK_0xdf8a)); // SUB$ADDR @ UNK_0xdf8a @ +
-  Push(Read16(regsp)); // DUP
-  Push(Read16(pp__do_ADDR) + Read16(pp__do_LEN)); // $ADDR @ $LEN @ +
-  U_st_(); // U<
-  if (Pop() == 0) goto label1;
-  IsBL_st__dash_(); // ?BL<-
-  Push(Pop() - Read16(pp_SUB_do_ADDR)); //  SUB$ADDR @ -
-  Push(pp_UNK_0xdfa2); // UNK_0xdfa2
-  Store_3(); // !_3
-  DrawSUB(); // .SUB
-  Push(-(Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86))); // UNK_0xdf7e @ UNK_0xdf86 @ + NEGATE
-  Push(pp_YBLT); // YBLT
-  _plus__ex__2(); // +!_2
-  Push(Read16(pp_UNK_0xdfa2) + 1); // UNK_0xdfa2 @ 1+
-  Push(pp_SUB_do_ADDR); // SUB$ADDR
-  _plus__ex__2(); // +!_2
-  goto label2;
-
-  label1:
+    IsBL_st__dash_(); // ?BL<-
+    Push(Pop() - Read16(pp_SUB_do_ADDR)); //  SUB$ADDR @ -
+    Push(pp_UNK_0xdfa2); // UNK_0xdfa2
+    Store_3(); // !_3
+    DrawSUB(); // .SUB
+    Push(-(Read16(pp_UNK_0xdf7e) + Read16(pp_UNK_0xdf86))); // UNK_0xdf7e @ UNK_0xdf86 @ + NEGATE
+    Push(pp_YBLT); // YBLT
+    _plus__ex__2(); // +!_2
+    Push(Read16(pp_UNK_0xdfa2) + 1); // UNK_0xdfa2 @ 1+
+    Push(pp_SUB_do_ADDR); // SUB$ADDR
+    _plus__ex__2(); // +!_2
+  }
   Pop(); // DROP
   Push((Read16(pp__do_ADDR) + Read16(pp__do_LEN)) - Read16(pp_SUB_do_ADDR)); // $ADDR @ $LEN @ + SUB$ADDR @ -
   Push(pp_UNK_0xdfa2); // UNK_0xdfa2

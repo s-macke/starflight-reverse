@@ -786,15 +786,14 @@ void UNK_0xf45a() // UNK_0xf45a
 
 void UNK_0xf48f() // UNK_0xf48f
 {
+  while(1)
+  {
+    UNK_0xf3e4(); // UNK_0xf3e4
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xf3e4(); // UNK_0xf3e4
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf441(); // UNK_0xf441
-  goto label2;
-
-  label1:
+    UNK_0xf441(); // UNK_0xf441
+  }
   UNK_0xf048(); // UNK_0xf048
   Push(pp_UNK_0xf042); // UNK_0xf042
   _2_at_(); // 2@

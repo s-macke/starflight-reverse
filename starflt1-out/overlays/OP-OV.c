@@ -982,17 +982,16 @@ void UNK_0xea28() // UNK_0xea28
   IFIND(); // IFIND
   Pop(); // DROP
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
+    Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
+    _gt_(); // >
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(0x63ef+UNK_0xe452.offset)); // UNK_0xe452<IFIELD> @
-  Push(Read16(pp_UNK_0xe8fe)); // UNK_0xe8fe @
-  _gt_(); // >
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+  }
   UNK_0xe902(); // UNK_0xe902
   Push(!Pop()); //  NOT
   if (Pop() != 0)

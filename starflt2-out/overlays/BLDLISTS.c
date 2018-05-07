@@ -1396,19 +1396,18 @@ void UNK_0xf31b() // UNK_0xf31b
 {
   Push2Words("*4SALE");
   _gt_C_plus_S(); // >C+S
+  while(1)
+  {
+    IOPEN(); // IOPEN
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    ICLOSE(); // ICLOSE
+    if (Pop() == 0) break;
 
-  label2:
-  IOPEN(); // IOPEN
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  ICLOSE(); // ICLOSE
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-  UNK_0xf30d(); // UNK_0xf30d
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    IOPEN(); // IOPEN
+    UNK_0xf30d(); // UNK_0xf30d
+    ICLOSE(); // ICLOSE
+  }
   ICLOSE(); // ICLOSE
 }
 

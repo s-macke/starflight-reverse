@@ -291,15 +291,14 @@ void DrawPHRASES() // .PHRASES
 {
   unsigned short int i, imax;
   CDEPTH(); // CDEPTH
+  while(1)
+  {
+    DrawPHRASE(); // .PHRASE
+    IsCHILD(); // ?CHILD
+    if (Pop() == 0) break;
 
-  label2:
-  DrawPHRASE(); // .PHRASE
-  IsCHILD(); // ?CHILD
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-  goto label2;
-
-  label1:
+    IOPEN(); // IOPEN
+  }
   CDEPTH(); // CDEPTH
   SWAP(); // SWAP
   _dash_(); // -
@@ -443,37 +442,35 @@ void UNK_0xf166() // UNK_0xf166
   Push(pp__ro_PLANET_rc_); // (PLANET)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-
-  label5:
-  Push(0x000b);
-  Push(0x000b);
-  IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-
-  label3:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
-  UNK_0xf0d6(); // UNK_0xf0d6
-  IsDELETE(); // ?DELETE
-  goto label3;
-
-  label2:
-  UNK_0xf0d6(); // UNK_0xf0d6
-  if (Pop() != 0)
+  while(1)
   {
-    IDELETE(); // IDELETE
-  }
-  IsNULL(); // ?NULL
-  ICLOSE(); // ICLOSE
-  IsDELETE(); // ?DELETE
-  goto label5;
+    Push(0x000b);
+    Push(0x000b);
+    IFIND(); // IFIND
+    if (Pop() == 0) break;
 
-  label1:
+    IOPEN(); // IOPEN
+    while(1)
+    {
+      IsLAST(); // ?LAST
+      Push(!Pop()); //  NOT
+      IsNULL(); // ?NULL
+      Push(!Pop()); //  NOT
+      Push(Pop() & Pop()); // AND
+      if (Pop() == 0) break;
+
+      UNK_0xf0d6(); // UNK_0xf0d6
+      IsDELETE(); // ?DELETE
+    }
+    UNK_0xf0d6(); // UNK_0xf0d6
+    if (Pop() != 0)
+    {
+      IDELETE(); // IDELETE
+    }
+    IsNULL(); // ?NULL
+    ICLOSE(); // ICLOSE
+    IsDELETE(); // ?DELETE
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -493,16 +490,15 @@ void OTHER_dash_DELETE() // OTHER-DELETE
   Get_gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
+  while(1)
+  {
+    Push(0x0043);
+    Push(0);
+    IFIND(); // IFIND
+    if (Pop() == 0) break;
 
-  label2:
-  Push(0x0043);
-  Push(0);
-  IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
-  IDELETE(); // IDELETE
-  goto label2;
-
-  label1:
+    IDELETE(); // IDELETE
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -719,28 +715,27 @@ void UNK_0xf39d() // UNK_0xf39d
   Push2Words("*SECS");
   _gt_C_plus_S(); // >C+S
   SUBROOT(); // SUBROOT
-
-  label3:
-  NEXT_dash_NODE(); // NEXT-NODE
-  CI(); // CI
-  Push2Words("*SECS");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  GetINST_dash_CLASS(); // @INST-CLASS
-  Push(Pop()==0x003d?1:0); //  0x003d =
-  GetINST_dash_SPECIES(); // @INST-SPECIES
-  Push(Pop()==9?1:0); //  9 =
-  Push(Pop() & Pop()); // AND
-  if (Pop() != 0)
+  while(1)
   {
-    Push(0);
-    Push(0x63ef+PHRASE_do_.offset); // PHRASE$<IFIELD>
-    C_ex_(); // C!
-  }
-  goto label3;
+    NEXT_dash_NODE(); // NEXT-NODE
+    CI(); // CI
+    Push2Words("*SECS");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label1:
+    GetINST_dash_CLASS(); // @INST-CLASS
+    Push(Pop()==0x003d?1:0); //  0x003d =
+    GetINST_dash_SPECIES(); // @INST-SPECIES
+    Push(Pop()==9?1:0); //  9 =
+    Push(Pop() & Pop()); // AND
+    if (Pop() != 0)
+    {
+      Push(0);
+      Push(0x63ef+PHRASE_do_.offset); // PHRASE$<IFIELD>
+      C_ex_(); // C!
+    }
+  }
   ICLOSE(); // ICLOSE
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("CAPTAIN, ALL ALIEN COMMUNICATIONS IN");

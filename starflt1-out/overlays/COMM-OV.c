@@ -2216,18 +2216,17 @@ void UNK_0xe313() // UNK_0xe313
 
 void UNK_0xe329() // UNK_0xe329
 {
+  while(1)
+  {
+    OVER(); // OVER
+    Push(!((Read16(Pop())&0xFF)==0x0029?1:0)); //  C@ 0x0029 = NOT
+    OVER(); // OVER
+    _0_gt_(); // 0>
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) break;
 
-  label2:
-  OVER(); // OVER
-  Push(!((Read16(Pop())&0xFF)==0x0029?1:0)); //  C@ 0x0029 = NOT
-  OVER(); // OVER
-  _0_gt_(); // 0>
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
-  UNK_0xe1e4(); // UNK_0xe1e4
-  goto label2;
-
-  label1:
+    UNK_0xe1e4(); // UNK_0xe1e4
+  }
   UNK_0xe1e4(); // UNK_0xe1e4
 }
 

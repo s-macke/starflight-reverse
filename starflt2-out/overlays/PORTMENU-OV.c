@@ -1387,7 +1387,7 @@ void WALKIES() // WALKIES
   UNK_0xf091(); // UNK_0xf091
   UNK_0xef23(); // UNK_0xef23
   UNK_0xf486(); // UNK_0xf486
-  do
+  while(1)
   {
     XYSCAN(); // XYSCAN
     _2DUP(); // 2DUP
@@ -1406,7 +1406,7 @@ void WALKIES() // WALKIES
       _i_KEY(); // 'KEY
       Pop(); // DROP
     }
-  } while(1);
+  }
 }
 
 

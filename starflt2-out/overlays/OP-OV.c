@@ -1051,20 +1051,19 @@ void UNK_0xeb80() // UNK_0xeb80
   IFIND(); // IFIND
   Pop(); // DROP
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(Read16(0x65e1+UNK_0xe5a2.offset)); // UNK_0xe5a2<IFIELD> @
+    Push(Read16(pp_UNK_0xea58)); // UNK_0xea58 @
+    _gt_(); // >
+    Push(!Pop()); //  NOT
+    IsLAST(); // ?LAST
+    Push(!Pop()); //  NOT
+    Push(Pop() & Pop()); // AND
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(0x65e1+UNK_0xe5a2.offset)); // UNK_0xe5a2<IFIELD> @
-  Push(Read16(pp_UNK_0xea58)); // UNK_0xea58 @
-  _gt_(); // >
-  Push(!Pop()); //  NOT
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+  }
   UNK_0xea5c(); // UNK_0xea5c
   Push(!Pop()); //  NOT
   if (Pop() != 0)
@@ -1600,33 +1599,32 @@ void UNK_0xf142() // UNK_0xf142
   }
   UNK_0xed8e(); // UNK_0xed8e
   IsLAST(); // ?LAST
-  if (Pop() == 0) goto label3;
-  UNK_0xe99c(); // UNK_0xe99c
-  UNK_0xe99c(); // UNK_0xe99c
-  SET_STR_AS_PARAM("END OF EVALUATIONS");
-  UNK_0xedc8(); // UNK_0xedc8
-  Push2Words("*OP");
-  _gt_C_plus_S(); // >C+S
-  IOPEN(); // IOPEN
-  Push(0x000b);
-  Push(0x002d);
-  IFIND(); // IFIND
-  Pop(); // DROP
-  IOPEN(); // IOPEN
+  if (Pop() != 0)
+  {
+    UNK_0xe99c(); // UNK_0xe99c
+    UNK_0xe99c(); // UNK_0xe99c
+    SET_STR_AS_PARAM("END OF EVALUATIONS");
+    UNK_0xedc8(); // UNK_0xedc8
+    Push2Words("*OP");
+    _gt_C_plus_S(); // >C+S
+    IOPEN(); // IOPEN
+    Push(0x000b);
+    Push(0x002d);
+    IFIND(); // IFIND
+    Pop(); // DROP
+    IOPEN(); // IOPEN
+    while(1)
+    {
+      IsNULL(); // ?NULL
+      Push(!Pop()); //  NOT
+      if (Pop() == 0) break;
 
-  label5:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label4;
-  IDELETE(); // IDELETE
-  goto label5;
-
-  label4:
-  Push(3);
-  _star_CLOSE(); // *CLOSE
-  return;
-
-  label3:
+      IDELETE(); // IDELETE
+    }
+    Push(3);
+    _star_CLOSE(); // *CLOSE
+    return;
+  }
   Push(0);
   Push(0x0022);
   CMESS(); // CMESS

@@ -208,37 +208,35 @@ void UNK_0xf447() // UNK_0xf447
   Push(pp__ro_PLANET); // (PLANET
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-
-  label5:
-  Push(0x000b);
-  Push(0x000b);
-  IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
-  IOPEN(); // IOPEN
-
-  label3:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  if (Pop() == 0) goto label2;
-  UNK_0xf423(); // UNK_0xf423
-  UNK_0xf439(); // UNK_0xf439
-  goto label3;
-
-  label2:
-  UNK_0xf423(); // UNK_0xf423
-  if (Pop() != 0)
+  while(1)
   {
-    IDELETE(); // IDELETE
-  }
-  IsNULL(); // ?NULL
-  ICLOSE(); // ICLOSE
-  UNK_0xf439(); // UNK_0xf439
-  goto label5;
+    Push(0x000b);
+    Push(0x000b);
+    IFIND(); // IFIND
+    if (Pop() == 0) break;
 
-  label1:
+    IOPEN(); // IOPEN
+    while(1)
+    {
+      IsLAST(); // ?LAST
+      Push(!Pop()); //  NOT
+      IsNULL(); // ?NULL
+      Push(!Pop()); //  NOT
+      Push(Pop() & Pop()); // AND
+      if (Pop() == 0) break;
+
+      UNK_0xf423(); // UNK_0xf423
+      UNK_0xf439(); // UNK_0xf439
+    }
+    UNK_0xf423(); // UNK_0xf423
+    if (Pop() != 0)
+    {
+      IDELETE(); // IDELETE
+    }
+    IsNULL(); // ?NULL
+    ICLOSE(); // ICLOSE
+    UNK_0xf439(); // UNK_0xf439
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }
@@ -258,16 +256,15 @@ void UNK_0xf48d() // UNK_0xf48d
   Get_gt_C_plus_S(); // @>C+S
   IDELETE(); // IDELETE
   IFIRST(); // IFIRST
+  while(1)
+  {
+    Push(0x0043);
+    Push(0);
+    IFIND(); // IFIND
+    if (Pop() == 0) break;
 
-  label2:
-  Push(0x0043);
-  Push(0);
-  IFIND(); // IFIND
-  if (Pop() == 0) goto label1;
-  IDELETE(); // IDELETE
-  goto label2;
-
-  label1:
+    IDELETE(); // IDELETE
+  }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
 }

@@ -756,18 +756,17 @@ void UNK_0xee5b() // UNK_0xee5b
 void UNK_0xee73() // UNK_0xee73
 {
   UNK_0xed86(); // UNK_0xed86
+  while(1)
+  {
+    INEXT(); // INEXT
+    IsFIRST(); // ?FIRST
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  INEXT(); // INEXT
-  IsFIRST(); // ?FIRST
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  Push(0);
-  Push(0x65e1+TEXT_dash_CO.offset); // TEXT-CO<IFIELD>
-  Store_2(); // !_2
-  goto label2;
-
-  label1:
+    Push(0);
+    Push(0x65e1+TEXT_dash_CO.offset); // TEXT-CO<IFIELD>
+    Store_2(); // !_2
+  }
   Push(2);
   _star_CLOSE(); // *CLOSE
 }

@@ -1503,25 +1503,24 @@ void _ro__gt_ORBIT_rc_() // (>ORBIT)
 void ORBIT_gt_() // ORBIT>
 {
   IOPEN(); // IOPEN
-
-  label3:
-  Is_dash_NULL(); // ?-NULL
-  if (Pop() == 0) goto label1;
-  IEXTRACT(); // IEXTRACT
-  CI_i_(); // CI'
-  _st_INSERT(); // <INSERT
-  ICLOSE(); // ICLOSE
-  IsFIRST(); // ?FIRST
-  if (Pop() != 0)
+  while(1)
   {
-    IPREV(); // IPREV
-    MAKE1ST(); // MAKE1ST
-    INEXT(); // INEXT
-  }
-  IOPEN(); // IOPEN
-  goto label3;
+    Is_dash_NULL(); // ?-NULL
+    if (Pop() == 0) break;
 
-  label1:
+    IEXTRACT(); // IEXTRACT
+    CI_i_(); // CI'
+    _st_INSERT(); // <INSERT
+    ICLOSE(); // ICLOSE
+    IsFIRST(); // ?FIRST
+    if (Pop() != 0)
+    {
+      IPREV(); // IPREV
+      MAKE1ST(); // MAKE1ST
+      INEXT(); // INEXT
+    }
+    IOPEN(); // IOPEN
+  }
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
 }
@@ -1575,15 +1574,14 @@ void UNK_0xdf16() // UNK_0xdf16
 {
   SYS_gt_C(); // SYS>C
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsLAST(); // ?LAST
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  Is_dash_ORBIT(); // ?-ORBIT
-  goto label2;
-
-  label1:
+    Is_dash_ORBIT(); // ?-ORBIT
+  }
   Is_dash_NULL(); // ?-NULL
   if (Pop() != 0)
   {
@@ -1998,16 +1996,15 @@ void IsCAN_dash_NAVIGATE() // ?CAN-NAVIGATE
 void _gt__bo_CONTEXT_bc_() // >[CONTEXT]
 {
   Push(Read16(pp__bo_CONTEXT_bc_)); // [CONTEXT] @
+  while(1)
+  {
+    Push(Read16(pp_CXSP)); // CXSP @
+    OVER(); // OVER
+    U_st_(); // U<
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(pp_CXSP)); // CXSP @
-  OVER(); // OVER
-  U_st_(); // U<
-  if (Pop() == 0) goto label1;
-  ICLOSE(); // ICLOSE
-  goto label2;
-
-  label1:
+    ICLOSE(); // ICLOSE
+  }
   Pop(); // DROP
 }
 
@@ -4332,25 +4329,24 @@ void COME_dash_HITHER() // COME-HITHER
   Push(pp_TCLR); // TCLR
   Store_3(); // !_3
   UNK_0xf1b5(); // UNK_0xf1b5
+  while(1)
+  {
+    IsHYPER(); // ?HYPER
+    Push(!Pop()); //  NOT
+    Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
+    _1_dot_5_at_(); // 1.5@
+    Push2Words("*ASYS");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    Push(Pop() & Pop()); // AND
+    CTXT_n_(); // CTXT#
+    Push(2);
+    _st_(); // <
+    Push(Pop() | Pop()); // OR
+    if (Pop() == 0) break;
 
-  label2:
-  IsHYPER(); // ?HYPER
-  Push(!Pop()); //  NOT
-  Push(pp__ro_SYSTEM_rc_); // (SYSTEM)
-  _1_dot_5_at_(); // 1.5@
-  Push2Words("*ASYS");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  Push(Pop() & Pop()); // AND
-  CTXT_n_(); // CTXT#
-  Push(2);
-  _st_(); // <
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label1;
-  UNNEST(); // UNNEST
-  goto label2;
-
-  label1:
+    UNNEST(); // UNNEST
+  }
   Push(pp_IsNEB); // ?NEB
   OFF(); // OFF
   IsHYPER(); // ?HYPER
@@ -4361,14 +4357,13 @@ void COME_dash_HITHER() // COME-HITHER
   }
   SYS_gt_C(); // SYS>C
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(!(Read16(0x63ef+INST_dash_QTY.offset)==3?1:0)); // INST-QTY<IFIELD> @ 3 = NOT
+    if (Pop() == 0) break;
 
-  label5:
-  Push(!(Read16(0x63ef+INST_dash_QTY.offset)==3?1:0)); // INST-QTY<IFIELD> @ 3 = NOT
-  if (Pop() == 0) goto label4;
-  INEXT(); // INEXT
-  goto label5;
-
-  label4:
+    INEXT(); // INEXT
+  }
   CI(); // CI
   _2ICLOSE(); // 2ICLOSE
   _plus_NEST(); // +NEST

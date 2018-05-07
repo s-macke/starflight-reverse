@@ -495,19 +495,18 @@ void UNK_0xedd3() // UNK_0xedd3
   CI(); // CI
   _gt_C_plus_S(); // >C+S
   Push(0);
+  while(1)
+  {
+    Push(Read16(0x65e1+UNK_0xeba3.offset)&0xFF); // UNK_0xeba3<IFIELD> C@
+    Push(0x0018);
+    _st_(); // <
+    if (Pop() == 0) break;
 
-  label2:
-  Push(Read16(0x65e1+UNK_0xeba3.offset)&0xFF); // UNK_0xeba3<IFIELD> C@
-  Push(0x0018);
-  _st_(); // <
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  Push(Read16(0x65e1+UNK_0xeb9e.offset)&0xFF); // UNK_0xeb9e<IFIELD> C@
-  _0_gt_(); // 0>
-  Push(Pop() + Pop()); // +
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+    Push(Read16(0x65e1+UNK_0xeb9e.offset)&0xFF); // UNK_0xeb9e<IFIELD> C@
+    _0_gt_(); // 0>
+    Push(Pop() + Pop()); // +
+  }
   ICLOSE(); // ICLOSE
   _0_gt_(); // 0>
 }

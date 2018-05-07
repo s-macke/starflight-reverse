@@ -2791,39 +2791,38 @@ void UNK_0xec2e() // UNK_0xec2e
     Push(0);
   }
   Push(Pop()==0?1:0); //  0=
-  if (Pop() == 0) goto label3;
-  UNK_0xeac5(); // UNK_0xeac5
-  Push(1);
-  Push(pp_ELEM_dash_AM); // ELEM-AM
-  Store_2(); // !_2
-  UNK_0xeaef(); // UNK_0xeaef
-  Push(1);
-  Push(pp_UNK_0xeb8f); // UNK_0xeb8f
-  Store_2(); // !_2
-
-  label6:
-  XYSCAN(); // XYSCAN
-  IsTRIG(); // ?TRIG
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label4;
-  Pop(); // DROP
-  if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    UNK_0xec0e(); // UNK_0xec0e
+    UNK_0xeac5(); // UNK_0xeac5
+    Push(1);
+    Push(pp_ELEM_dash_AM); // ELEM-AM
+    Store_2(); // !_2
+    UNK_0xeaef(); // UNK_0xeaef
+    Push(1);
     Push(pp_UNK_0xeb8f); // UNK_0xeb8f
     Store_2(); // !_2
-    UNK_0xeb93(); // UNK_0xeb93
-    UNK_0xeaef(); // UNK_0xeaef
-    UNK_0xea3c(); // UNK_0xea3c
+    while(1)
+    {
+      XYSCAN(); // XYSCAN
+      IsTRIG(); // ?TRIG
+      Push(!Pop()); //  NOT
+      if (Pop() == 0) break;
+
+      Pop(); // DROP
+      if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
+      if (Pop() != 0)
+      {
+        UNK_0xec0e(); // UNK_0xec0e
+        Push(pp_UNK_0xeb8f); // UNK_0xeb8f
+        Store_2(); // !_2
+        UNK_0xeb93(); // UNK_0xeb93
+        UNK_0xeaef(); // UNK_0xeaef
+        UNK_0xea3c(); // UNK_0xea3c
+      }
+    }
+    Pop(); Pop(); // 2DROP
+    return;
   }
-  goto label6;
-
-  label4:
-  Pop(); Pop(); // 2DROP
-  return;
-
-  label3:
   UNK_0xe15c(); // UNK_0xe15c
   Push(Read16(0x65e1+INST_dash_QT.offset)); // INST-QT<IFIELD> @
   ICLOSE(); // ICLOSE

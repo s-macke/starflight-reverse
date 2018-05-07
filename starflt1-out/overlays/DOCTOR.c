@@ -451,14 +451,13 @@ void UNK_0xf373() // UNK_0xf373
   Push2Words("*PERSON");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
+  while(1)
+  {
+    Push(!((Read16(0x63ef+UNK_0xf088.offset)&0xFF) & 8)); // UNK_0xf088<IFIELD> C@ 8 AND NOT
+    if (Pop() == 0) break;
 
-  label2:
-  Push(!((Read16(0x63ef+UNK_0xf088.offset)&0xFF) & 8)); // UNK_0xf088<IFIELD> C@ 8 AND NOT
-  if (Pop() == 0) goto label1;
-  INEXT(); // INEXT
-  goto label2;
-
-  label1:
+    INEXT(); // INEXT
+  }
   Push(1);
   Push(0x0015);
   CMESS(); // CMESS

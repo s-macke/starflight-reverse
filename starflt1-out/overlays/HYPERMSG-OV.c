@@ -719,15 +719,14 @@ void IsPRL() // ?PRL
   } while(1); // (+LOOP)
 
   StoreCRS(); // !CRS
+  while(1)
+  {
+    Push(!(Read16(pp_CONTEXT_dash_ID_n_)==3?1:0)); // CONTEXT-ID# @ 3 = NOT
+    if (Pop() == 0) break;
 
-  label2:
-  Push(!(Read16(pp_CONTEXT_dash_ID_n_)==3?1:0)); // CONTEXT-ID# @ 3 = NOT
-  if (Pop() == 0) goto label1;
-  Push(Read16(pp__i_UNNEST)); // 'UNNEST @
-  MODULE(); // MODULE
-  goto label2;
-
-  label1:
+    Push(Read16(pp__i_UNNEST)); // 'UNNEST @
+    MODULE(); // MODULE
+  }
   Push(Read16(pp_HEADING)); // HEADING @
   Push(0);
   Push(0x07d0);

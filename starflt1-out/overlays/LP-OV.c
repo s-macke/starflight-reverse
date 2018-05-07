@@ -900,7 +900,7 @@ void UNK_0xe4d8() // UNK_0xe4d8
 void UNK_0xe570() // UNK_0xe570
 {
   unsigned short int a;
-  do
+  while(1)
   {
     OVER(); // OVER
     OVER(); // OVER
@@ -912,7 +912,7 @@ void UNK_0xe570() // UNK_0xe570
     Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
-  } while(1);
+  }
 }
 
 

@@ -421,7 +421,7 @@ void UNK_0xee22() // UNK_0xee22
 
 void UNK_0xee4e() // UNK_0xee4e
 {
-  do
+  while(1)
   {
     _i_KEY(); // 'KEY
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
@@ -430,7 +430,7 @@ void UNK_0xee4e() // UNK_0xee4e
     UNK_0xedea(); // UNK_0xedea
     Push(pp__i_SIMULA); // 'SIMULA
     GetEXECUTE(); // @EXECUTE
-  } while(1);
+  }
 }
 
 

@@ -2634,25 +2634,24 @@ void UNK_0xf464() // UNK_0xf464
 void UNK_0xf4b2() // UNK_0xf4b2
 {
   IOPEN(); // IOPEN
-
-  label3:
-  Is_dash_NULL(); // ?-NULL
-  if (Pop() == 0) goto label1;
-  IEXTRAC(); // IEXTRAC
-  CI_i_(); // CI'
-  _st_INSERT(); // <INSERT
-  ICLOSE(); // ICLOSE
-  IsFIRST(); // ?FIRST
-  if (Pop() != 0)
+  while(1)
   {
-    IPREV(); // IPREV
-    MAKE1ST(); // MAKE1ST
-    INEXT(); // INEXT
-  }
-  IOPEN(); // IOPEN
-  goto label3;
+    Is_dash_NULL(); // ?-NULL
+    if (Pop() == 0) break;
 
-  label1:
+    IEXTRAC(); // IEXTRAC
+    CI_i_(); // CI'
+    _st_INSERT(); // <INSERT
+    ICLOSE(); // ICLOSE
+    IsFIRST(); // ?FIRST
+    if (Pop() != 0)
+    {
+      IPREV(); // IPREV
+      MAKE1ST(); // MAKE1ST
+      INEXT(); // INEXT
+    }
+    IOPEN(); // IOPEN
+  }
   ICLOSE(); // ICLOSE
   IDELETE(); // IDELETE
 }
@@ -2708,15 +2707,14 @@ void ORBITS_gt_() // ORBITS>
 {
   UNK_0xf401(); // UNK_0xf401
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsLAST(); // ?LAST
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsLAST(); // ?LAST
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf506(); // UNK_0xf506
-  goto label2;
-
-  label1:
+    UNK_0xf506(); // UNK_0xf506
+  }
   Is_dash_NULL(); // ?-NULL
   if (Pop() != 0)
   {

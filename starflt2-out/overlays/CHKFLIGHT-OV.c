@@ -399,29 +399,28 @@ void UNK_0xf414() // UNK_0xf414
   Push(Read16(pp_IsEVAL)); // ?EVAL @
   Push(Read16(regsp)); // DUP
   Push(Pop()==0?1:0); //  0=
-  if (Pop() == 0) goto label1;
-  Push2Words("*OP");
-  _gt_C_plus_S(); // >C+S
-  IOPEN(); // IOPEN
-  Push(0x000b);
-  Push(0x002d);
-  IFIND(); // IFIND
-  Pop(); // DROP
-  IOPEN(); // IOPEN
+  if (Pop() != 0)
+  {
+    Push2Words("*OP");
+    _gt_C_plus_S(); // >C+S
+    IOPEN(); // IOPEN
+    Push(0x000b);
+    Push(0x002d);
+    IFIND(); // IFIND
+    Pop(); // DROP
+    IOPEN(); // IOPEN
+    while(1)
+    {
+      CI(); // CI
+      Push(Pop() | Pop()); // OR
+      if (Pop() == 0) break;
 
-  label3:
-  CI(); // CI
-  Push(Pop() | Pop()); // OR
-  if (Pop() == 0) goto label2;
-  IDELETE(); // IDELETE
-  goto label3;
-
-  label2:
-  ICLOSE(); // ICLOSE
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
-
-  label1:
+      IDELETE(); // IDELETE
+    }
+    ICLOSE(); // ICLOSE
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
+  }
   Push((Pop() | (Read16(pp_IsTV)==0?1:0)) | Read16(pp_IsRECALL)); //  ?TV @ 0= OR ?RECALL @ OR
   UNK_0xf406(); // UNK_0xf406
   Push(Pop() | Pop()); // OR

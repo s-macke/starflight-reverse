@@ -197,7 +197,7 @@ void UNK_0xf134() // UNK_0xf134
 void UNK_0xf1cc() // UNK_0xf1cc
 {
   unsigned short int a;
-  do
+  while(1)
   {
     OVER(); // OVER
     OVER(); // OVER
@@ -209,7 +209,7 @@ void UNK_0xf1cc() // UNK_0xf1cc
     Push(Pop() & a); //  R> AND
     if (Pop() == 0) return;
     Push((Pop() + 1) + 3); //  1+ 3+
-  } while(1);
+  }
 }
 
 

@@ -828,24 +828,23 @@ void SMARTOPEN() // SMARTOPEN
   UNK_0x45c5(); // UNK_0x45c5
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
+  while(1)
+  {
+    DRV(); // DRV
+    Push(Read16(Pop())&0xFF); //  C@
+    UNK_0x45d9(); // UNK_0x45d9
+    _2DUP(); // 2DUP
+    Push((Pop()==Pop())?1:0); // =
+    Push(!Pop() & a); //  NOT I AND
+    if (Pop() == 0) break;
 
-  label2:
-  DRV(); // DRV
-  Push(Read16(Pop())&0xFF); //  C@
-  UNK_0x45d9(); // UNK_0x45d9
-  _2DUP(); // 2DUP
-  Push((Pop()==Pop())?1:0); // =
-  Push(!Pop() & a); //  NOT I AND
-  if (Pop() == 0) goto label1;
-  DRV(); // DRV
-  C_ex__2(); // C!_2
-  OPEN(); // OPEN
-  Push(a); // R>
-  Pop(); // DROP
-  b = Pop(); // >R
-  goto label2;
-
-  label1:
+    DRV(); // DRV
+    C_ex__2(); // C!_2
+    OPEN(); // OPEN
+    Push(a); // R>
+    Pop(); // DROP
+    b = Pop(); // >R
+  }
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   Push(Read16(regsp)); // DUP
@@ -907,29 +906,28 @@ void DOSMOUNT() // DOSMOUNT
   unsigned short int a;
   a = Pop(); // >R
   INIT(); // INIT
+  while(1)
+  {
+    Push(a); // I
+    FCBPFAS(); // FCBPFAS
+    Push(Read16(Pop())); //  @
+    Push(pp__i_FCB); // 'FCB
+    Store(); // !
+    SMARTOPEN(); // SMARTOPEN
+    Push(Read16(regsp)); // DUP
+    if (Pop() == 0) break;
 
-  label2:
-  Push(a); // I
-  FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); //  @
-  Push(pp__i_FCB); // 'FCB
-  Store(); // !
-  SMARTOPEN(); // SMARTOPEN
-  Push(Read16(regsp)); // DUP
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  FLUSH(); // FLUSH
-  INIT(); // INIT
-  Push(a); // I
-  FCBPFAS(); // FCBPFAS
-  Push(Read16(Pop())); //  @
-  Push(pp__i_FCB); // 'FCB
-  Store(); // !
-  Push(pp_ASKMOUNT); // ASKMOUNT
-  GetEXECUTE(); // @EXECUTE
-  goto label2;
-
-  label1:
+    Pop(); // DROP
+    FLUSH(); // FLUSH
+    INIT(); // INIT
+    Push(a); // I
+    FCBPFAS(); // FCBPFAS
+    Push(Read16(Pop())); //  @
+    Push(pp__i_FCB); // 'FCB
+    Store(); // !
+    Push(pp_ASKMOUNT); // ASKMOUNT
+    GetEXECUTE(); // @EXECUTE
+  }
   Push(0x0400);
   RECSIZE(); // RECSIZE
   Store(); // !

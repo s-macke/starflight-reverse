@@ -1244,29 +1244,28 @@ void UNK_0xed30() // UNK_0xed30
   Push(0x0055);
   Push(0x00ac);
   POS_dot_(); // POS.
+  while(1)
+  {
+    _2DUP(); // 2DUP
+    Push2Words("NULL");
+    D_gt_(); // D>
+    if (Pop() == 0) break;
 
-  label2:
-  _2DUP(); // 2DUP
-  Push2Words("NULL");
-  D_gt_(); // D>
-  if (Pop() == 0) goto label1;
-  Push(a + 1); // R> 1+
-  b = Pop(); // >R
-  Push(0x000a);
-  U_slash_MOD(); // U/MOD
-  SWAP(); // SWAP
-  Pop(); // DROP
-  Push(0);
-  _2SWAP(); // 2SWAP
-  Push(0x000a);
-  U_slash_MOD(); // U/MOD
-  SWAP(); // SWAP
-  Pop(); // DROP
-  Push(0);
-  _2SWAP(); // 2SWAP
-  goto label2;
-
-  label1:
+    Push(a + 1); // R> 1+
+    b = Pop(); // >R
+    Push(0x000a);
+    U_slash_MOD(); // U/MOD
+    SWAP(); // SWAP
+    Pop(); // DROP
+    Push(0);
+    _2SWAP(); // 2SWAP
+    Push(0x000a);
+    U_slash_MOD(); // U/MOD
+    SWAP(); // SWAP
+    Pop(); // DROP
+    Push(0);
+    _2SWAP(); // 2SWAP
+  }
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP

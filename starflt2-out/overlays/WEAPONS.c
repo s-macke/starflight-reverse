@@ -1153,31 +1153,30 @@ void UNK_0xf0f4() // UNK_0xf0f4
   WLD_gt_SCR(); // WLD>SCR
   LXPLOT(); // LXPLOT
   UNK_0xf094(); // UNK_0xf094
+  while(1)
+  {
+    UNK_0xf0e8(); // UNK_0xf0e8
+    Push(pp_UNK_0xf046); // UNK_0xf046
+    StoreD(); // D!
+    UNK_0xf0e8(); // UNK_0xf0e8
+    Push(pp_EYEXY); // EYEXY
+    _2_at_(); // 2@
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  UNK_0xf0e8(); // UNK_0xf0e8
-  Push(pp_UNK_0xf046); // UNK_0xf046
-  StoreD(); // D!
-  UNK_0xf0e8(); // UNK_0xf0e8
-  Push(pp_EYEXY); // EYEXY
-  _2_at_(); // 2@
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  Push(pp_UNK_0xf046); // UNK_0xf046
-  _2_at_(); // 2@
-  WLD_gt_SCR(); // WLD>SCR
-  LXPLOT(); // LXPLOT
-  UNK_0xf074(); // UNK_0xf074
-  UNK_0xf0e8(); // UNK_0xf0e8
-  WLD_gt_SCR(); // WLD>SCR
-  LXPLOT(); // LXPLOT
-  V_gt_DISPL(); // V>DISPL
-  Push(0x003c);
-  MS(); // MS
-  goto label2;
-
-  label1:
+    Push(pp_UNK_0xf046); // UNK_0xf046
+    _2_at_(); // 2@
+    WLD_gt_SCR(); // WLD>SCR
+    LXPLOT(); // LXPLOT
+    UNK_0xf074(); // UNK_0xf074
+    UNK_0xf0e8(); // UNK_0xf0e8
+    WLD_gt_SCR(); // WLD>SCR
+    LXPLOT(); // LXPLOT
+    V_gt_DISPL(); // V>DISPL
+    Push(0x003c);
+    MS(); // MS
+  }
   UNK_0xecb3(); // UNK_0xecb3
 }
 
@@ -1191,15 +1190,14 @@ void UNK_0xf138() // UNK_0xf138
   Push2Words("*MISS");
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
+  while(1)
+  {
+    IsNULL(); // ?NULL
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  IsNULL(); // ?NULL
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  IDELETE(); // IDELETE
-  goto label2;
-
-  label1:
+    IDELETE(); // IDELETE
+  }
   Push(2);
   _star_CLOSE(); // *CLOSE
   Push(pp__n_MISS); // #MISS
@@ -1437,17 +1435,16 @@ void UNK_0xf2aa() // UNK_0xf2aa
 
 void UNK_0xf2bc() // UNK_0xf2bc
 {
+  while(1)
+  {
+    CI(); // CI
+    Push2Words("*STARSH");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  CI(); // CI
-  Push2Words("*STARSH");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  CDROP(); // CDROP
-  goto label2;
-
-  label1:
+    CDROP(); // CDROP
+  }
   ICLOSE(); // ICLOSE
 }
 

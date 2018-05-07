@@ -610,17 +610,16 @@ void UNK_0xec24() // UNK_0xec24
 
 void UNK_0xec36() // UNK_0xec36
 {
+  while(1)
+  {
+    CI(); // CI
+    Push2Words("*STARSHIP-HOLD");
+    D_eq_(); // D=
+    Push(!Pop()); //  NOT
+    if (Pop() == 0) break;
 
-  label2:
-  CI(); // CI
-  Push2Words("*STARSHIP-HOLD");
-  D_eq_(); // D=
-  Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  CDROP(); // CDROP
-  goto label2;
-
-  label1:
+    CDROP(); // CDROP
+  }
   ICLOSE(); // ICLOSE
 }
 
