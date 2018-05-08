@@ -1330,7 +1330,6 @@ void UNK_0xf4ed() // UNK_0xf4ed
 // ================================================
 // 0xf4f5: WORD 'UNK_0xf4f7' codep=0x224c parp=0xf4f7 params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0xf4f7() // UNK_0xf4f7
 {

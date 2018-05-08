@@ -99,7 +99,6 @@ void UNK_0xf3da() // UNK_0xf3da
 // ================================================
 // 0xf3e0: WORD 'UNK_0xf3e2' codep=0x224c parp=0xf3e2 params=1 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf3e2() // UNK_0xf3e2
 {

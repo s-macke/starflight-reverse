@@ -686,7 +686,6 @@ void UNK_0xee2c() // UNK_0xee2c
 // ================================================
 // 0xee5c: WORD 'UNK_0xee5e' codep=0x224c parp=0xee5e params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0xee5e() // UNK_0xee5e
 {

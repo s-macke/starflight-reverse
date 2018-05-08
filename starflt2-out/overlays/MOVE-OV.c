@@ -1034,7 +1034,6 @@ void UNK_0xef01() // UNK_0xef01
 // ================================================
 // 0xef17: WORD 'UNK_0xef19' codep=0x224c parp=0xef19 params=0 returns=6
 // ================================================
-// orphan
 
 void UNK_0xef19() // UNK_0xef19
 {
@@ -1049,7 +1048,6 @@ void UNK_0xef19() // UNK_0xef19
 // ================================================
 // 0xef2b: WORD 'UNK_0xef2d' codep=0x224c parp=0xef2d
 // ================================================
-// orphan
 
 void UNK_0xef2d() // UNK_0xef2d
 {

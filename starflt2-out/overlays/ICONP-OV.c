@@ -155,7 +155,6 @@ const unsigned short int cc_UNK_0xf166 = 0xf166; // UNK_0xf166
 // ================================================
 // 0xf0c4: WORD 'UNK_0xf0c6' codep=0x7420 parp=0xf0c6
 // ================================================
-// orphan
 IFieldType UNK_0xf0c6 = {NEBULAIDX, 0x11, 0x01};
 
 // ================================================
@@ -212,7 +211,6 @@ IFieldType UNK_0xf104 = {TRADERSIDX, 0x0c, 0x01};
 // ================================================
 // 0xf107: WORD 'UNK_0xf109' codep=0x7420 parp=0xf109
 // ================================================
-// orphan
 IFieldType UNK_0xf109 = {STARSYSTEMIDX, 0x0b, 0x01};
 
 // ================================================
@@ -1002,7 +1000,6 @@ void UNK_0xf4b4() // UNK_0xf4b4
 // ================================================
 // 0xf4ba: WORD 'UNK_0xf4bc' codep=0x224c parp=0xf4bc params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf4bc() // UNK_0xf4bc
 {
@@ -1042,7 +1039,6 @@ void ICON_dash_PARM() // ICON-PARM
 // ================================================
 // 0xf518: WORD 'UNK_0xf51a' codep=0x224c parp=0xf51a params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0xf51a() // UNK_0xf51a
 {

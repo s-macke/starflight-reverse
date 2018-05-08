@@ -551,7 +551,6 @@ void UNK_0xedaf() // UNK_0xedaf
 // ================================================
 // 0xeddf: WORD 'UNK_0xede1' codep=0x224c parp=0xede1 params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0xede1() // UNK_0xede1
 {
