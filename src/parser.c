@@ -878,6 +878,23 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
 void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
 {
+    // some constants might point to words. So check all of them. They are not orphan
+    for(int i=minaddr; i<maxaddr-3; i++)
+    {
+        if (!pline[i].word) continue;
+        if (!(Read16(Read16(i)) == CODELIT)) continue;
+
+        if ((Read16(Read16(i+2)-2)) == CODECALL)
+            GetWordByAddr(Read16(i+2), ovidx);
+
+        if ((Read16(Read16(i+2)-2)) == CODEPOINTER)
+            GetWordByAddr(Read16(i+2), ovidx);
+
+        if ((Read16(Read16(i+2)-2)) == CODECONSTANT)
+            GetWordByAddr(Read16(i+2), ovidx);
+
+    }
+
     while(1)
     {
         int nwordstemp = nwords;
