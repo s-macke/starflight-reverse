@@ -497,36 +497,13 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             GetWordNameByAddr(par, ovidx);
         }
 
-        if (strcmp(s, "MODULE") == 0)
+        // find words, which are executed by this words
+        if (strcmp(s, "MODULE") == 0 || strcmp(s, "EACH") == 0 || strcmp(s, "ALL") == 0)
         {
             if (Read16(Read16(offset-4)) == CODELIT)
-            {
-                char *s = GetWordNameByAddr(Read16(offset-2), ovidx);
-            }
-            pline[offset].str = malloc(STRINGLEN);
-            snprintf(pline[offset].str, STRINGLEN, "MODULE(); // MODULE\n");
-            offset += 2;
-        } else
-        if (strcmp(s, "EACH") == 0)
-        {
-            if (Read16(Read16(offset-4)) == CODELIT)
-            {
-                char *s = GetWordNameByAddr(Read16(offset-2), ovidx);
-            }
-            pline[offset].str = malloc(STRINGLEN);
-            snprintf(pline[offset].str, STRINGLEN, "EACH(); // EACH\n");
-            offset += 2;
-        } else
-        if (strcmp(s, "ALL") == 0)
-        {
-            if (Read16(Read16(offset-4)) == CODELIT)
-            {
-                char *s = GetWordNameByAddr(Read16(offset-2), ovidx);
-            }
-            pline[offset].str = malloc(STRINGLEN);
-            snprintf(pline[offset].str, STRINGLEN, "ALL(); // ALL\n");
-            offset += 2;
-        } else
+                GetWordNameByAddr(Read16(offset-2), ovidx);
+        }
+
         if (strcmp(s, "DOTASKS") == 0)
         {
             int codep1 = Read16(Read16(offset-4));
