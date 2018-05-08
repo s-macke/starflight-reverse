@@ -1448,6 +1448,8 @@ WORD vocabulary[]=
   { .ov = -1, .code = 0x1d29, .word = 0x89b2, .name = "UNK_0x89b2" }, 
   { .ov = -1, .code = 0x89ef, .word = 0x89ef, .name = "HLINE" }, 
   { .ov = -1, .code = 0x1d29, .word = 0x89f9, .name = "UNK_0x89f9" }, 
+  { .ov = -1, .code = 0x224c, .word = 0x89ff, .name = "UNK_0x89ff" }, 
+  { .ov = -1, .code = 0x224c, .word = 0x8a2f, .name = "UNK_0x8a2f" }, 
   { .ov = -1, .code = 0x224c, .word = 0x8a49, .name = "UNK_0x8a49" }, 
   { .ov = -1, .code = 0x224c, .word = 0x8a80, .name = ">1FONT" }, 
   { .ov = -1, .code = 0x224c, .word = 0x8a91, .name = ">2FONT" }, 
