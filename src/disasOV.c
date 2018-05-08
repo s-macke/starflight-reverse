@@ -188,49 +188,6 @@ int main()
     for(i=0; overlays[i].name != NULL; i++)
     {
         LoadOverlayDict(i);
-#ifdef STARFLT1
-        GetWordByAddr(0x8a2d, -1);
-        GetWordByAddr(0x602f, -1);
-        GetWordByAddr(0x63a3, -1);
-        GetWordByAddr(0x4c5b, -1);
-        switch(i)
-        {
-            case 0x0F: // VITA-OV
-                GetWordByAddr(0xe928, 0x0F);
-                break;
-            case 0x30: // DAMAGE-OV
-                GetWordByAddr(0xee65, 0x30);
-                break;
-            case 0x2D: // STORM-OV
-                GetWordByAddr(0xf0b4, 0x2D);
-                break;
-            case 0x2B: // PLSET-OV
-                GetWordByAddr(0xec9a, 0x2B);
-                break;
-            case 0x33:  // STP-OV
-                for(j=0; j<9; j++) GetWordByAddr(Read16(0xf287+j*2), 0x33);
-                for(j=0; j<24; j++) GetWordByAddr(Read16(0xf29b+j*2), 0x33);
-                break;
-            /*
-            case 0x2F: // COMBAT-OV
-                GetWordByAddr(0xe460-4, 0x2F); // not sure about this
-                break;
-            */
-            case 0x15:  // COMMSPEC-OV
-                for(j=0; j<4; j++) GetWordByAddr(Read16(0xf454+1+j*2), 0x15);
-                for(j=0; j<5; j++) GetWordByAddr(Read16(0xf45f+1+j*2), 0x15);
-                for(j=0; j<3; j++) GetWordByAddr(Read16(0xf46c+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf475+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47a+1+j*2), 0x15);
-                for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47f+1+j*2), 0x15);
-                break;
-        }
-#else
-        if (i == 0x13) GetWordByAddr(0xf277, 0x13); // VITA-OV
-        if (i == 0x13) GetWordByAddr(0xf1f2, 0x13); // VITA-OV
-        if (i == 0x18) GetWordByAddr(0xf40a, 0x18); // COMMSPEC-OV
-        if (i == 0x39) GetWordByAddr(0xe4c2, 0x39); // BARTER
-#endif
         fflush(stdout);
         fflush(stderr);
     }

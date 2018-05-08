@@ -878,7 +878,34 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
 
 void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
 {
-    // some constants might point to words. So check all of them. They are not orphan
+
+// STEP 1: nanually found words
+#ifdef STARFLT1
+    int j;
+    GetWordByAddr(0x8a2d, -1);
+    GetWordByAddr(0x63a3, -1); // not sure about this
+    switch(ovidx)
+    {
+        /*
+        case 0x2F: // COMBAT-OV
+            GetWordByAddr(0xe460-4, 0x2F); // not sure about this
+            break;
+        */
+        case 0x15:  // COMMSPEC-OV
+            for(j=0; j<4; j++) GetWordByAddr(Read16(0xf454+1+j*2), 0x15);
+            for(j=0; j<5; j++) GetWordByAddr(Read16(0xf45f+1+j*2), 0x15);
+            for(j=0; j<3; j++) GetWordByAddr(Read16(0xf46c+1+j*2), 0x15);
+            for(j=0; j<1; j++) GetWordByAddr(Read16(0xf475+1+j*2), 0x15);
+            for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47a+1+j*2), 0x15);
+            for(j=0; j<1; j++) GetWordByAddr(Read16(0xf47f+1+j*2), 0x15);
+            break;
+    }
+#else
+    if (ovidx == 0x18) GetWordByAddr(0xf40a, 0x18); // COMMSPEC-OV
+    if (ovidx == 0x39) GetWordByAddr(0xe4c2, 0x39); // BARTER
+#endif
+
+    // STEP 2: some constants might point to words. So check all of them.
     for(int i=minaddr; i<maxaddr-3; i++)
     {
         if (!pline[i].word) continue;
@@ -895,6 +922,7 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
 
     }
 
+    // STEP 3:
     while(1)
     {
         int nwordstemp = nwords;
@@ -972,6 +1000,7 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
         SetStructDone(ovidx);
         if (nwordstemp == nwords) break;
     }
+
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
