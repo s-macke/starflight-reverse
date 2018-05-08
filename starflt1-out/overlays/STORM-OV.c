@@ -117,6 +117,7 @@ const unsigned short int pp_UNK_0xf25d = 0xf25d; // UNK_0xf25d size: 2
 // ================================================
 // 0xf0a4: WORD 'UNK_0xf0a6' codep=0x224c parp=0xf0a6 params=1 returns=2
 // ================================================
+// orphan
 
 void UNK_0xf0a6() // UNK_0xf0a6
 {
@@ -130,6 +131,7 @@ void UNK_0xf0a6() // UNK_0xf0a6
 // ================================================
 // 0xf0b2: WORD 'UNK_0xf0b4' codep=0x224c parp=0xf0b4
 // ================================================
+// orphan
 
 void UNK_0xf0b4() // UNK_0xf0b4
 {

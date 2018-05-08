@@ -287,6 +287,7 @@ LoadDataType UNK_0xec92 = {REGIONSIDX, 0x07, 0x08, 0x1c, 0x69cd};
 // ================================================
 // 0xec98: WORD 'UNK_0xec9a' codep=0x224c parp=0xec9a
 // ================================================
+// orphan
 
 void UNK_0xec9a() // UNK_0xec9a
 {
