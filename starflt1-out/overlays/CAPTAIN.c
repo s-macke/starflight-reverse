@@ -3541,51 +3541,51 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
   Push(2);
   _st_(); // <
-  if (Pop() == 0) goto label1;
-  Push(pp__ro_PLANET_rc_); // (PLANET)
-  Get_gt_C_plus_S(); // @>C+S
-  IOPEN(); // IOPEN
-  Push(0x000c);
-  Push(0);
-  IFIND(); // IFIND
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
   if (Pop() != 0)
   {
-    PRINT("THAT'S ARTH YOU FOOL!", 21); // (.")
-  } else
-  {
-    Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
-    Push(2);
-    _st_(); // <
+    Push(pp__ro_PLANET_rc_); // (PLANET)
+    Get_gt_C_plus_S(); // @>C+S
+    IOPEN(); // IOPEN
+    Push(0x000c);
+    Push(0);
+    IFIND(); // IFIND
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
     if (Pop() != 0)
     {
-      PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
-      CTCR(); // CTCR
-      PRINT("COLONIZATION\? [N Y]", 19); // (.")
-      Y_slash_N(); // Y/N
-      CTCR(); // CTCR
-      if (Pop() != 0)
-      {
-        UNK_0xf3d3(); // UNK_0xf3d3
-        if (Pop() != 0)
-        {
-          Push(0xc5a8); // probable 'I-TRANS'
-          MODULE(); // MODULE
-          Push(Read16(pp_STARDATE)); // STARDATE @
-          Push(pp_PORTDAT); // PORTDAT
-          Store_3(); // !_3
-          UNK_0xf3b2(); // UNK_0xf3b2
-        }
-      }
+      PRINT("THAT'S ARTH YOU FOOL!", 21); // (.")
     } else
     {
-      UNK_0xf0cd(); // UNK_0xf0cd
+      Push(Read16(pp_CONTEXT_dash_ID_n_)); // CONTEXT-ID# @
+      Push(2);
+      _st_(); // <
+      if (Pop() != 0)
+      {
+        PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
+        CTCR(); // CTCR
+        PRINT("COLONIZATION\? [N Y]", 19); // (.")
+        Y_slash_N(); // Y/N
+        CTCR(); // CTCR
+        if (Pop() != 0)
+        {
+          UNK_0xf3d3(); // UNK_0xf3d3
+          if (Pop() != 0)
+          {
+            Push(0xc5a8); // probable 'I-TRANS'
+            MODULE(); // MODULE
+            Push(Read16(pp_STARDATE)); // STARDATE @
+            Push(pp_PORTDAT); // PORTDAT
+            Store_3(); // !_3
+            UNK_0xf3b2(); // UNK_0xf3b2
+          }
+        }
+      } else
+      {
+        UNK_0xf0cd(); // UNK_0xf0cd
+      }
     }
+    return;
   }
-  return;
-
-  label1:
   UNK_0xf0cd(); // UNK_0xf0cd
 }
 

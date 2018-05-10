@@ -2639,53 +2639,53 @@ void _ro__slash_LOG_dash_PLAN_rc_() // (/LOG-PLAN)
   Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
   Push(2);
   _st_(); // <
-  if (Pop() == 0) goto label1;
-  Push(pp__ro_PLANET); // (PLANET
-  Get_gt_C_plus_S(); // @>C+S
-  IOPEN(); // IOPEN
-  Push(0x000c);
-  Push(0);
-  IFIND(); // IFIND
-  CDROP(); // CDROP
-  ICLOSE(); // ICLOSE
   if (Pop() != 0)
   {
-    PRINT("THE PLANET THAT STARPORT ORBITS IS", 34); // (.")
-    GCR(); // GCR
-    PRINT("DEFINITELY NOT COLONIZABLE!", 27); // (.")
-  } else
-  {
-    Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
-    Push(2);
-    _st_(); // <
+    Push(pp__ro_PLANET); // (PLANET
+    Get_gt_C_plus_S(); // @>C+S
+    IOPEN(); // IOPEN
+    Push(0x000c);
+    Push(0);
+    IFIND(); // IFIND
+    CDROP(); // CDROP
+    ICLOSE(); // ICLOSE
     if (Pop() != 0)
     {
-      PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
-      CTCR(); // CTCR
-      PRINT("COLONIZATION\? [N Y]", 19); // (.")
-      Y_slash_N(); // Y/N
-      CTCR(); // CTCR
-      if (Pop() != 0)
-      {
-        UNK_0xf3dc(); // UNK_0xf3dc
-        if (Pop() != 0)
-        {
-          Push(0xc2cd); // probable 'I-TRANS'
-          MODULE(); // MODULE
-          Push(Read16(pp_STARDAT)); // STARDAT @
-          Push(pp_PORTDAT); // PORTDAT
-          Store_2(); // !_2
-          UNK_0xf3bb(); // UNK_0xf3bb
-        }
-      }
+      PRINT("THE PLANET THAT STARPORT ORBITS IS", 34); // (.")
+      GCR(); // GCR
+      PRINT("DEFINITELY NOT COLONIZABLE!", 27); // (.")
     } else
     {
-      UNK_0xf10d(); // UNK_0xf10d
+      Push(Read16(pp_CONTEXT_3)); // CONTEXT_3 @
+      Push(2);
+      _st_(); // <
+      if (Pop() != 0)
+      {
+        PRINT("RECOMMEND THIS PLANET FOR", 25); // (.")
+        CTCR(); // CTCR
+        PRINT("COLONIZATION\? [N Y]", 19); // (.")
+        Y_slash_N(); // Y/N
+        CTCR(); // CTCR
+        if (Pop() != 0)
+        {
+          UNK_0xf3dc(); // UNK_0xf3dc
+          if (Pop() != 0)
+          {
+            Push(0xc2cd); // probable 'I-TRANS'
+            MODULE(); // MODULE
+            Push(Read16(pp_STARDAT)); // STARDAT @
+            Push(pp_PORTDAT); // PORTDAT
+            Store_2(); // !_2
+            UNK_0xf3bb(); // UNK_0xf3bb
+          }
+        }
+      } else
+      {
+        UNK_0xf10d(); // UNK_0xf10d
+      }
     }
+    return;
   }
-  return;
-
-  label1:
   UNK_0xf10d(); // UNK_0xf10d
 }
 

@@ -1696,56 +1696,55 @@ void DONULL() // DONULL
 {
   CTINIT(); // CTINIT
   Push((Read16(pp_CONTEXT_3)==4?1:0) & (Read16(pp_NOF)==0?1:0)); // CONTEXT_3 @ 4 = NOF @ 0= AND
-  if (Pop() == 0) goto label1;
-  Push(pp_NOF); // NOF
-  ON_2(); // ON_2
-  Push(0x000d);
-  Push(0xb76b); // probable 'OV?ART'
-  MODULE(); // MODULE
   if (Pop() != 0)
   {
-    UNK_0xf3bc(); // UNK_0xf3bc
+    Push(pp_NOF); // NOF
+    ON_2(); // ON_2
+    Push(0x000d);
+    Push(0xb76b); // probable 'OV?ART'
+    MODULE(); // MODULE
     if (Pop() != 0)
     {
-      Push(0x00c8);
-      Push(4);
-      UNK_0xf26c(); // UNK_0xf26c
+      UNK_0xf3bc(); // UNK_0xf3bc
       if (Pop() != 0)
       {
-        UNK_0xf20c(); // UNK_0xf20c
-        Push(!Pop()); //  NOT
+        Push(0x00c8);
+        Push(4);
+        UNK_0xf26c(); // UNK_0xf26c
         if (Pop() != 0)
         {
-          Push(pp_NOF); // NOF
-          ON_2(); // ON_2
-          UNK_0xf374(); // UNK_0xf374
-          Push(pp_NOF); // NOF
-          _099(); // 099
+          UNK_0xf20c(); // UNK_0xf20c
+          Push(!Pop()); //  NOT
+          if (Pop() != 0)
+          {
+            Push(pp_NOF); // NOF
+            ON_2(); // ON_2
+            UNK_0xf374(); // UNK_0xf374
+            Push(pp_NOF); // NOF
+            _099(); // 099
+          } else
+          {
+            UNK_0xf448(); // UNK_0xf448
+          }
         } else
         {
-          UNK_0xf448(); // UNK_0xf448
+          UNK_0xf476(); // UNK_0xf476
         }
       } else
       {
-        UNK_0xf476(); // UNK_0xf476
+        SET_STR_AS_PARAM("CANCELLED");
+        DrawTTY(); // .TTY
       }
     } else
     {
-      SET_STR_AS_PARAM("CANCELLED");
-      DrawTTY(); // .TTY
+      Push(0xb7e7); // probable '.NOFUN'
+      MODULE(); // MODULE
     }
   } else
   {
     Push(0xb7e7); // probable '.NOFUN'
     MODULE(); // MODULE
   }
-  goto label10;
-
-  label1:
-  Push(0xb7e7); // probable '.NOFUN'
-  MODULE(); // MODULE
-
-  label10:
   Push2Words("NULL");
   Push(pp_NOF); // NOF
   _099(); // 099

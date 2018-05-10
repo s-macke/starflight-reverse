@@ -1068,74 +1068,75 @@ void UNK_0xee38() // UNK_0xee38
   Push(0x004d);
   OVER(); // OVER
   Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label1;
-  Pop(); // DROP
-  Push(1);
-  goto label2;
-
-  label1:
-  Push(0x004b);
-  OVER(); // OVER
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label3;
-  Pop(); // DROP
-  Push(9);
-  goto label2;
-
-  label3:
-  Push(0x0047);
-  OVER(); // OVER
-  Push((Pop()==Pop())?1:0); // =
-  if (Pop() == 0) goto label4;
-  Pop(); // DROP
-  Push(0x000b);
-  goto label2;
-
-  label4:
-  Push(0x0046);
-  OVER(); // OVER
-  Push((Pop()==Pop())?1:0); // =
   if (Pop() != 0)
   {
     Pop(); // DROP
-    Push(0x0018);
+    Push(1);
   } else
   {
-    Push(0x0041);
+    Push(0x004b);
     OVER(); // OVER
     Push((Pop()==Pop())?1:0); // =
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(0x000f);
+      Push(9);
     } else
     {
-      Push(0x0042);
+      Push(0x0047);
       OVER(); // OVER
       Push((Pop()==Pop())?1:0); // =
       if (Pop() != 0)
       {
         Pop(); // DROP
-        Push(0x0013);
+        Push(0x000b);
       } else
       {
-        Push(0x004f);
+        Push(0x0046);
         OVER(); // OVER
         Push((Pop()==Pop())?1:0); // =
         if (Pop() != 0)
         {
           Pop(); // DROP
-          Push(0x001b);
+          Push(0x0018);
         } else
         {
-          ABORT("Spectral class not found", 24);// (ABORT")
-          Pop(); // DROP
+          Push(0x0041);
+          OVER(); // OVER
+          Push((Pop()==Pop())?1:0); // =
+          if (Pop() != 0)
+          {
+            Pop(); // DROP
+            Push(0x000f);
+          } else
+          {
+            Push(0x0042);
+            OVER(); // OVER
+            Push((Pop()==Pop())?1:0); // =
+            if (Pop() != 0)
+            {
+              Pop(); // DROP
+              Push(0x0013);
+            } else
+            {
+              Push(0x004f);
+              OVER(); // OVER
+              Push((Pop()==Pop())?1:0); // =
+              if (Pop() != 0)
+              {
+                Pop(); // DROP
+                Push(0x001b);
+              } else
+              {
+                ABORT("Spectral class not found", 24);// (ABORT")
+                Pop(); // DROP
+              }
+            }
+          }
         }
       }
     }
   }
-
-  label2:
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>

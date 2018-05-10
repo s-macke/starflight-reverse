@@ -733,54 +733,53 @@ void UNK_0xe151() // UNK_0xe151
   Push(0);
   Push(0x0014);
   WITHIN(); // WITHIN
-  if (Pop() == 0) goto label1;
-  PRINT("CRITICAL", 8); // (.")
-  goto label2;
-
-  label1:
-  Push(a); // I
-  Push(0x0014);
-  Push(0x0032);
-  WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-    PRINT("HEAVY", 5); // (.")
+    PRINT("CRITICAL", 8); // (.")
   } else
   {
     Push(a); // I
+    Push(0x0014);
     Push(0x0032);
-    Push(0x0050);
     WITHIN(); // WITHIN
     if (Pop() != 0)
     {
-      PRINT("MODERATE", 8); // (.")
+      PRINT("HEAVY", 5); // (.")
     } else
     {
       Push(a); // I
+      Push(0x0032);
       Push(0x0050);
-      Push(0x005f);
       WITHIN(); // WITHIN
       if (Pop() != 0)
       {
-        PRINT("SLIGHT", 6); // (.")
+        PRINT("MODERATE", 8); // (.")
       } else
       {
         Push(a); // I
+        Push(0x0050);
         Push(0x005f);
-        Push(0x0064);
         WITHIN(); // WITHIN
         if (Pop() != 0)
         {
-          PRINT("MINIMAL", 7); // (.")
+          PRINT("SLIGHT", 6); // (.")
         } else
         {
-          PRINT("NONE", 4); // (.")
+          Push(a); // I
+          Push(0x005f);
+          Push(0x0064);
+          WITHIN(); // WITHIN
+          if (Pop() != 0)
+          {
+            PRINT("MINIMAL", 7); // (.")
+          } else
+          {
+            PRINT("NONE", 4); // (.")
+          }
         }
       }
     }
   }
-
-  label2:
   Push(a); // R>
   Pop(); // DROP
 }

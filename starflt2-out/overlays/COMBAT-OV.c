@@ -4481,65 +4481,64 @@ void UNK_0xf2b6() // UNK_0xf2b6
 {
   UNK_0xf12a(); // UNK_0xf12a
   Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf0aa(); // UNK_0xf0aa
-  if (Pop() == 0) goto label2;
-  UNK_0xf074(); // UNK_0xf074
-  UNK_0xf1ca(); // UNK_0xf1ca
-  UNK_0xf242(); // UNK_0xf242
   if (Pop() != 0)
   {
-    UNK_0xdd4c(); // UNK_0xdd4c
-    Push(pp_UNK_0xde53); // UNK_0xde53
-    _2_at_(); // 2@
-    UNK_0xde5d(); // UNK_0xde5d
-    Push(7);
-    _st_(); // <
-    UNK_0xe19c(); // UNK_0xe19c
-    Push(Pop() & Pop()); // AND
-    Push(Pop() & (Read16(pp_Is3)==0?1:0)); //  ?3 @ 0= AND
+    UNK_0xf0aa(); // UNK_0xf0aa
     if (Pop() != 0)
     {
-      UNK_0xf28a(); // UNK_0xf28a
-    } else
-    {
-      UNK_0xe178(); // UNK_0xe178
+      UNK_0xf074(); // UNK_0xf074
+      UNK_0xf1ca(); // UNK_0xf1ca
+      UNK_0xf242(); // UNK_0xf242
       if (Pop() != 0)
       {
-        UNK_0xf26e(); // UNK_0xf26e
-      } else
-      {
+        UNK_0xdd4c(); // UNK_0xdd4c
+        Push(pp_UNK_0xde53); // UNK_0xde53
+        _2_at_(); // 2@
+        UNK_0xde5d(); // UNK_0xde5d
+        Push(7);
+        _st_(); // <
         UNK_0xe19c(); // UNK_0xe19c
+        Push(Pop() & Pop()); // AND
+        Push(Pop() & (Read16(pp_Is3)==0?1:0)); //  ?3 @ 0= AND
         if (Pop() != 0)
         {
           UNK_0xf28a(); // UNK_0xf28a
         } else
         {
-          GetColor(WHITE);
-          StoreCOLOR(); // !COLOR
-          Push(0x668d); Push(0x0002);
-          UNK_0xde37(); // UNK_0xde37
-          DrawTTY(); // .TTY
+          UNK_0xe178(); // UNK_0xe178
+          if (Pop() != 0)
+          {
+            UNK_0xf26e(); // UNK_0xf26e
+          } else
+          {
+            UNK_0xe19c(); // UNK_0xe19c
+            if (Pop() != 0)
+            {
+              UNK_0xf28a(); // UNK_0xf28a
+            } else
+            {
+              GetColor(WHITE);
+              StoreCOLOR(); // !COLOR
+              Push(0x668d); Push(0x0002);
+              UNK_0xde37(); // UNK_0xde37
+              DrawTTY(); // .TTY
+            }
+          }
         }
+      } else
+      {
+        UNK_0xf250(); // UNK_0xf250
       }
+    } else
+    {
+      GetColor(WHITE);
+      StoreCOLOR(); // !COLOR
+      Push(0x66ae); Push(0x0002);
+      UNK_0xde37(); // UNK_0xde37
+      DrawTTY(); // .TTY
     }
-  } else
-  {
-    UNK_0xf250(); // UNK_0xf250
+    return;
   }
-  goto label7;
-
-  label2:
-  GetColor(WHITE);
-  StoreCOLOR(); // !COLOR
-  Push(0x66ae); Push(0x0002);
-  UNK_0xde37(); // UNK_0xde37
-  DrawTTY(); // .TTY
-
-  label7:
-  return;
-
-  label1:
   GetColor(RED);
   StoreCOLOR(); // !COLOR
   Push(0x66cd); Push(0x0002);

@@ -164,55 +164,54 @@ void UNK_0xf0e6() // UNK_0xf0e6
   unsigned short int a;
   a = Pop(); // >R
   Push(a==0?1:0); // I 0=
-  if (Pop() == 0) goto label1;
-  PRINT("DEAD", 4); // (.")
-  goto label2;
-
-  label1:
-  Push(a); // I
-  Push(1);
-  Push(0x0015);
-  WITHIN(); // WITHIN
   if (Pop() != 0)
   {
-    PRINT("CRITICALLY", 10); // (.")
+    PRINT("DEAD", 4); // (.")
   } else
   {
     Push(a); // I
+    Push(1);
     Push(0x0015);
-    Push(0x0033);
     WITHIN(); // WITHIN
     if (Pop() != 0)
     {
-      PRINT("HEAVILY", 7); // (.")
+      PRINT("CRITICALLY", 10); // (.")
     } else
     {
       Push(a); // I
+      Push(0x0015);
       Push(0x0033);
-      Push(0x0051);
       WITHIN(); // WITHIN
       if (Pop() != 0)
       {
-        PRINT("MODERATELY", 10); // (.")
+        PRINT("HEAVILY", 7); // (.")
       } else
       {
         Push(a); // I
+        Push(0x0033);
         Push(0x0051);
-        Push(0x0064);
         WITHIN(); // WITHIN
         if (Pop() != 0)
         {
-          PRINT("SLIGHTLY", 8); // (.")
+          PRINT("MODERATELY", 10); // (.")
         } else
         {
-          PRINT("NOT", 3); // (.")
+          Push(a); // I
+          Push(0x0051);
+          Push(0x0064);
+          WITHIN(); // WITHIN
+          if (Pop() != 0)
+          {
+            PRINT("SLIGHTLY", 8); // (.")
+          } else
+          {
+            PRINT("NOT", 3); // (.")
+          }
         }
       }
     }
+    PRINT(" WOUNDED", 8); // (.")
   }
-  PRINT(" WOUNDED", 8); // (.")
-
-  label2:
   Push(a); // R>
   Pop(); // DROP
 }

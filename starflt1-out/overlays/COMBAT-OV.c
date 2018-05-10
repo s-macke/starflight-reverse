@@ -3866,62 +3866,61 @@ void UNK_0xf240() // UNK_0xf240
 {
   UNK_0xf080(); // UNK_0xf080
   Push(!Pop()); //  NOT
-  if (Pop() == 0) goto label1;
-  UNK_0xf00e(); // UNK_0xf00e
-  if (Pop() == 0) goto label2;
-  UNK_0xefd6(); // UNK_0xefd6
-  UNK_0xf11e(); // UNK_0xf11e
-  UNK_0xf17e(); // UNK_0xf17e
   if (Pop() != 0)
   {
-    UNK_0xdd64(); // UNK_0xdd64
-    Push(pp_UNK_0xde4f); // UNK_0xde4f
-    _2_at_(); // 2@
-    UNK_0xde59(); // UNK_0xde59
-    Push(7);
-    _st_(); // <
-    UNK_0xe109(); // UNK_0xe109
-    Push(Pop() & Pop()); // AND
+    UNK_0xf00e(); // UNK_0xf00e
     if (Pop() != 0)
     {
-      UNK_0xf1dc(); // UNK_0xf1dc
-    } else
-    {
-      UNK_0xe0f1(); // UNK_0xe0f1
+      UNK_0xefd6(); // UNK_0xefd6
+      UNK_0xf11e(); // UNK_0xf11e
+      UNK_0xf17e(); // UNK_0xf17e
       if (Pop() != 0)
       {
-        UNK_0xf1b6(); // UNK_0xf1b6
-      } else
-      {
+        UNK_0xdd64(); // UNK_0xdd64
+        Push(pp_UNK_0xde4f); // UNK_0xde4f
+        _2_at_(); // 2@
+        UNK_0xde59(); // UNK_0xde59
+        Push(7);
+        _st_(); // <
         UNK_0xe109(); // UNK_0xe109
+        Push(Pop() & Pop()); // AND
         if (Pop() != 0)
         {
           UNK_0xf1dc(); // UNK_0xf1dc
         } else
         {
-          GetColor(WHITE);
-          StoreCOLOR(); // !COLOR
-          SET_STR_AS_PARAM("WEAPON NOT AVAILABLE");
-          DrawTTY(); // .TTY
+          UNK_0xe0f1(); // UNK_0xe0f1
+          if (Pop() != 0)
+          {
+            UNK_0xf1b6(); // UNK_0xf1b6
+          } else
+          {
+            UNK_0xe109(); // UNK_0xe109
+            if (Pop() != 0)
+            {
+              UNK_0xf1dc(); // UNK_0xf1dc
+            } else
+            {
+              GetColor(WHITE);
+              StoreCOLOR(); // !COLOR
+              SET_STR_AS_PARAM("WEAPON NOT AVAILABLE");
+              DrawTTY(); // .TTY
+            }
+          }
         }
+      } else
+      {
+        UNK_0xf18c(); // UNK_0xf18c
       }
+    } else
+    {
+      GetColor(WHITE);
+      StoreCOLOR(); // !COLOR
+      SET_STR_AS_PARAM("WEAPONS NOT ARMED ");
+      DrawTTY(); // .TTY
     }
-  } else
-  {
-    UNK_0xf18c(); // UNK_0xf18c
+    return;
   }
-  goto label7;
-
-  label2:
-  GetColor(WHITE);
-  StoreCOLOR(); // !COLOR
-  SET_STR_AS_PARAM("WEAPONS NOT ARMED ");
-  DrawTTY(); // .TTY
-
-  label7:
-  return;
-
-  label1:
   GetColor(RED);
   StoreCOLOR(); // !COLOR
   SET_STR_AS_PARAM("OUT OF FUEL! ");
