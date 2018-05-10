@@ -424,11 +424,9 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
     int addr = efunc->parp;
     char *s = GetWordName(efunc);
     fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
-    RemoveGotos(efunc);
-    RemoveGotos(efunc);
-    RemoveGotos(efunc);
-    RemoveGotos(efunc);
-    //RemoveGotos(e);
+    for(j=0; j<8; j++)
+        RemoveGotos(efunc);
+
     if (efunc->nvars > 0)
     {
         fprintf(fp, "  unsigned short int ");
