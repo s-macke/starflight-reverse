@@ -1055,6 +1055,7 @@ void UNK_0xeffc() // UNK_0xeffc
 // ================================================
 // 0xf062: WORD 'UNK_0xf064' codep=0x224c parp=0xf064 params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xf064() // UNK_0xf064
 {

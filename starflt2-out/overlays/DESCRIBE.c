@@ -1320,6 +1320,7 @@ void RACE_gt_TRA() // RACE>TRA
 // ================================================
 // 0xeb39: WORD 'UNK_0xeb3b' codep=0x224c parp=0xeb3b params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xeb3b() // UNK_0xeb3b
 {

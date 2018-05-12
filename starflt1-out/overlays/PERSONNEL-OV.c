@@ -393,6 +393,7 @@ void UNK_0xe5a6() // UNK_0xe5a6
 // ================================================
 // 0xe5b4: WORD 'UNK_0xe5b6' codep=0x224c parp=0xe5b6 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xe5b6() // UNK_0xe5b6
 {

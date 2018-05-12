@@ -1037,6 +1037,7 @@ void UNK_0xec88() // UNK_0xec88
 // ================================================
 // 0xeca0: WORD 'UNK_0xeca2' codep=0x224c parp=0xeca2
 // ================================================
+// orphan
 
 void UNK_0xeca2() // UNK_0xeca2
 {

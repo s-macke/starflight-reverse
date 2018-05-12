@@ -928,7 +928,6 @@ void IsPLANET() // ?PLANET
 // ================================================
 // 0xdae8: WORD '?*ORPLAN' codep=0x224c parp=0xdaea params=0 returns=1
 // ================================================
-// orphan
 
 void Is_star_ORPLAN() // ?*ORPLAN
 {

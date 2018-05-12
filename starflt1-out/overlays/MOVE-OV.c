@@ -797,13 +797,11 @@ void UNK_0xe9e5() // UNK_0xe9e5
 // ================================================
 // 0xea13: WORD 'UNK_0xea15' codep=0x73ea parp=0xea15
 // ================================================
-// orphan
 LoadDataType UNK_0xea15 = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xea1b: WORD 'UNK_0xea1d' codep=0x224c parp=0xea1d params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0xea1d() // UNK_0xea1d
 {
@@ -1709,7 +1707,6 @@ void UNK_0xf05a() // UNK_0xf05a
 // ================================================
 // 0xf080: WORD 'UNK_0xf082' codep=0x224c parp=0xf082 params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf082() // UNK_0xf082
 {

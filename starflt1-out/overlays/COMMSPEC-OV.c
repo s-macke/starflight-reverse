@@ -338,7 +338,6 @@ IFieldType UNK_0xeaa5 = {ORIGINATORIDX, 0x13, 0x01};
 // ================================================
 // 0xeaa8: WORD 'UNK_0xeaaa' codep=0x744d parp=0xeaaa
 // ================================================
-// orphan
 IFieldType UNK_0xeaaa = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
@@ -567,6 +566,7 @@ void UNK_0xebd2() // UNK_0xebd2
 // ================================================
 // 0xebe4: WORD 'UNK_0xebe6' codep=0x224c parp=0xebe6
 // ================================================
+// orphan
 
 void UNK_0xebe6() // UNK_0xebe6
 {
@@ -606,6 +606,7 @@ void UNK_0xebe6() // UNK_0xebe6
 // ================================================
 // 0xec22: WORD 'UNK_0xec24' codep=0x224c parp=0xec24
 // ================================================
+// orphan
 
 void UNK_0xec24() // UNK_0xec24
 {
@@ -622,6 +623,7 @@ void UNK_0xec24() // UNK_0xec24
 // ================================================
 // 0xec34: WORD 'UNK_0xec36' codep=0x224c parp=0xec36 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xec36() // UNK_0xec36
 {
@@ -642,6 +644,7 @@ void UNK_0xec36() // UNK_0xec36
 // ================================================
 // 0xec4c: WORD 'UNK_0xec4e' codep=0x224c parp=0xec4e
 // ================================================
+// orphan
 
 void UNK_0xec4e() // UNK_0xec4e
 {
@@ -665,6 +668,7 @@ void UNK_0xec4e() // UNK_0xec4e
 // ================================================
 // 0xec6c: WORD 'UNK_0xec6e' codep=0x224c parp=0xec6e
 // ================================================
+// orphan
 
 void UNK_0xec6e() // UNK_0xec6e
 {
@@ -687,6 +691,7 @@ void UNK_0xec6e() // UNK_0xec6e
 // ================================================
 // 0xec8c: WORD 'UNK_0xec8e' codep=0x224c parp=0xec8e
 // ================================================
+// orphan
 
 void UNK_0xec8e() // UNK_0xec8e
 {
@@ -714,6 +719,7 @@ void UNK_0xec8e() // UNK_0xec8e
 // ================================================
 // 0xecb8: WORD 'UNK_0xecba' codep=0x224c parp=0xecba params=1 returns=1
 // ================================================
+// orphan
 
 void UNK_0xecba() // UNK_0xecba
 {
@@ -733,7 +739,6 @@ void UNK_0xecba() // UNK_0xecba
 // ================================================
 // 0xeccc: WORD 'UNK_0xecce' codep=0x224c parp=0xecce
 // ================================================
-// orphan
 
 void UNK_0xecce() // UNK_0xecce
 {

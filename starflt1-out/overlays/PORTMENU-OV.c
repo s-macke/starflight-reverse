@@ -825,6 +825,7 @@ void UNK_0xed10() // UNK_0xed10
 // ================================================
 // 0xed3e: WORD 'UNK_0xed40' codep=0x224c parp=0xed40 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xed40() // UNK_0xed40
 {

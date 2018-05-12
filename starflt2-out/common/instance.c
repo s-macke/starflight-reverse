@@ -722,7 +722,6 @@ void IFLD_ex_() // IFLD!
 // ================================================
 // 0x7d39: WORD 'UNK_0x7d3b' codep=0x224c parp=0x7d3b
 // ================================================
-// orphan
 
 void UNK_0x7d3b() // UNK_0x7d3b
 {
@@ -1043,7 +1042,6 @@ void _gt_INACTI() // >INACTI
 // ================================================
 // 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e params=0 returns=0
 // ================================================
-// orphan
 
 void UNK_0x7f0e() // UNK_0x7f0e
 {

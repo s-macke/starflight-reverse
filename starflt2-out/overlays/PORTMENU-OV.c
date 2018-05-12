@@ -571,6 +571,7 @@ void UNK_0xeee5() // UNK_0xeee5
 // ================================================
 // 0xef13: WORD 'UNK_0xef15' codep=0x224c parp=0xef15 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xef15() // UNK_0xef15
 {

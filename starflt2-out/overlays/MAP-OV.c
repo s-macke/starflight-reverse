@@ -1925,7 +1925,6 @@ void UNK_0xeeb7() // UNK_0xeeb7
 // ================================================
 // 0xeecf: WORD 'UNK_0xeed1' codep=0x224c parp=0xeed1 params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xeed1() // UNK_0xeed1
 {

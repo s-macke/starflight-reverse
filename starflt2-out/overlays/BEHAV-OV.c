@@ -2949,7 +2949,6 @@ void UNK_0xf354() // UNK_0xf354
 // ================================================
 // 0xf3c8: WORD 'UNK_0xf3ca' codep=0x224c parp=0xf3ca params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf3ca() // UNK_0xf3ca
 {
@@ -2965,7 +2964,6 @@ void UNK_0xf3ca() // UNK_0xf3ca
 // ================================================
 // 0xf3e4: WORD 'UNK_0xf3e6' codep=0x224c parp=0xf3e6 params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf3e6() // UNK_0xf3e6
 {

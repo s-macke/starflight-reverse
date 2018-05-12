@@ -209,6 +209,7 @@ void UNK_0xea9c() // UNK_0xea9c
 // ================================================
 // 0xeac2: WORD 'UNK_0xeac4' codep=0x224c parp=0xeac4 params=0 returns=0
 // ================================================
+// orphan
 
 void UNK_0xeac4() // UNK_0xeac4
 {

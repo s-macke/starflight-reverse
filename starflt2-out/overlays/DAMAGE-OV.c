@@ -666,6 +666,7 @@ IFieldType UNK_0xe82e = {CREWMEMBERIDX, 0x0b, 0x0f};
 // ================================================
 // 0xe84a: WORD 'UNK_0xe84c' codep=0x224c parp=0xe84c params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe84c() // UNK_0xe84c
 {

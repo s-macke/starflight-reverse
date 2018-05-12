@@ -319,6 +319,7 @@ void UNK_0xec65() // UNK_0xec65
 // ================================================
 // 0xec81: WORD 'UNK_0xec83' codep=0x224c parp=0xec83 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xec83() // UNK_0xec83
 {

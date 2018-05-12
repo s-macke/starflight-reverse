@@ -42,7 +42,8 @@
 //      UNK_0xed8a  codep:0x224c parp:0xed8a size:0x0010 C-string:'UNK_0xed8a'
 //         .STARDA  codep:0x224c parp:0xeda6 size:0x0008 C-string:'DrawSTARDA'
 //      UNK_0xedb0  codep:0x1d29 parp:0xedb0 size:0x0002 C-string:'UNK_0xedb0'
-//      UNK_0xedb4  codep:0x1d29 parp:0xedb4 size:0x0006 C-string:'UNK_0xedb4'
+//      UNK_0xedb4  codep:0x1d29 parp:0xedb4 size:0x0002 C-string:'UNK_0xedb4'
+//      UNK_0xedb8  codep:0x2214 parp:0xedb8 size:0x0002 C-string:'UNK_0xedb8'
 //      UNK_0xedbc  codep:0x2214 parp:0xedbc size:0x0002 C-string:'UNK_0xedbc'
 //      UNK_0xedc0  codep:0x7394 parp:0xedc0 size:0x0006 C-string:'UNK_0xedc0'
 //      UNK_0xedc8  codep:0x224c parp:0xedc8 size:0x0010 C-string:'UNK_0xedc8'
@@ -259,10 +260,11 @@ const unsigned short int pp_CBLT = 0xebf6; // CBLT size: 4
 const unsigned short int pp_UNK_0xedb0 = 0xedb0; // UNK_0xedb0 size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_UNK_0xedb4 = 0xedb4; // UNK_0xedb4 size: 6
-// {0x3a, 0x20, 0x14, 0x22, 0xd0, 0x07}
+const unsigned short int pp_UNK_0xedb4 = 0xedb4; // UNK_0xedb4 size: 2
+// {0x3a, 0x20}
 
 
+const unsigned short int cc_UNK_0xedb8 = 0xedb8; // UNK_0xedb8
 const unsigned short int cc_UNK_0xedbc = 0xedbc; // UNK_0xedbc
 
 
@@ -798,7 +800,13 @@ void DrawSTARDA() // .STARDA
 // ================================================
 // 0xedb2: WORD 'UNK_0xedb4' codep=0x1d29 parp=0xedb4
 // ================================================
-// 0xedb4: db 0x3a 0x20 0x14 0x22 0xd0 0x07 ':  "  '
+// 0xedb4: db 0x3a 0x20 ': '
+
+// ================================================
+// 0xedb6: WORD 'UNK_0xedb8' codep=0x2214 parp=0xedb8
+// ================================================
+// orphan
+// 0xedb8: dw 0x07d0
 
 // ================================================
 // 0xedba: WORD 'UNK_0xedbc' codep=0x2214 parp=0xedbc
@@ -1447,7 +1455,6 @@ void UNK_0xf197() // UNK_0xf197
 // ================================================
 // 0xf1bb: WORD 'UNK_0xf1bd' codep=0x224c parp=0xf1bd params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf1bd() // UNK_0xf1bd
 {

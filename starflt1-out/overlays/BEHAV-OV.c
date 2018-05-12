@@ -3027,7 +3027,6 @@ void DrawCARGO() // .CARGO
 // ================================================
 // 0xf1fa: WORD 'UNK_0xf1fc' codep=0x224c parp=0xf1fc params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf1fc() // UNK_0xf1fc
 {
@@ -3238,7 +3237,6 @@ void DrawSTATS() // .STATS
 // ================================================
 // 0xf3b3: WORD 'UNK_0xf3b5' codep=0x224c parp=0xf3b5 params=0 returns=1
 // ================================================
-// orphan
 
 void UNK_0xf3b5() // UNK_0xf3b5
 {

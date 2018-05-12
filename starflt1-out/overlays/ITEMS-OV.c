@@ -2286,6 +2286,7 @@ void UNK_0xea76() // UNK_0xea76
 // ================================================
 // 0xeabe: WORD 'UNK_0xeac0' codep=0x224c parp=0xeac0
 // ================================================
+// orphan
 
 void UNK_0xeac0() // UNK_0xeac0
 {

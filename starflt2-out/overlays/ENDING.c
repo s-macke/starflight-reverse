@@ -589,6 +589,7 @@ void UNK_0xe940() // UNK_0xe940
 // ================================================
 // 0xe96e: WORD 'UNK_0xe970' codep=0x224c parp=0xe970 params=0 returns=1
 // ================================================
+// orphan
 
 void UNK_0xe970() // UNK_0xe970
 {
@@ -858,6 +859,7 @@ void UNK_0xea92() // UNK_0xea92
 // ================================================
 // 0xeacc: WORD 'UNK_0xeace' codep=0x224c parp=0xeace params=2 returns=2
 // ================================================
+// orphan
 
 void UNK_0xeace() // UNK_0xeace
 {
@@ -1026,6 +1028,7 @@ void UNK_0xebb0() // UNK_0xebb0
 // ================================================
 // 0xebd2: WORD 'UNK_0xebd4' codep=0x224c parp=0xebd4
 // ================================================
+// orphan
 
 void UNK_0xebd4() // UNK_0xebd4
 {

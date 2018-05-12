@@ -717,7 +717,6 @@ void IFLD_ex_() // IFLD!
 // ================================================
 // 0x7cff: WORD '?FLD=' codep=0x224c parp=0x7d01
 // ================================================
-// orphan
 
 void IsFLD_eq_() // ?FLD=
 {
@@ -1038,7 +1037,6 @@ void _gt_INACTIVE() // >INACTIVE
 // ================================================
 // 0x7ec8: WORD '(IDELETE)' codep=0x224c parp=0x7eca params=0 returns=0
 // ================================================
-// orphan
 
 void _ro_IDELETE_rc_() // (IDELETE)
 {
