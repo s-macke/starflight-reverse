@@ -882,6 +882,9 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
     if (ovidx == 0x39) GetWordByAddr(0xe4c2, 0x39); // BARTER
 #endif
 
+    SetWordHeader(ovidx);
+    SetStructDone(ovidx);
+
     // STEP 2: some constants might point to words. So check all of them.
     for(int i=minaddr; i<maxaddr-3; i++)
     {
@@ -889,8 +892,11 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
         if (!(Read16(Read16(i)) == CODELIT)) continue;
 
         if ((Read16(Read16(i+2)-2)) == CODECALL)
-            GetWordByAddr(Read16(i+2), ovidx);
-
+        {
+            WORD *e = GetWordByAddr(Read16(i+2), ovidx);
+            Variables vars = GetEmptyVariables();
+            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+        }
         if ((Read16(Read16(i+2)-2)) == CODEPOINTER)
             GetWordByAddr(Read16(i+2), ovidx);
 
@@ -899,7 +905,10 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
 
     }
 
-    // STEP 3:
+    SetWordHeader(ovidx);
+    SetStructDone(ovidx);
+
+    // STEP 3: find word, which start after the end of other words
     while(1)
     {
         int nwordstemp = nwords;
@@ -919,10 +928,24 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
                     WORD *e = GetWordByAddr(i+3+4, ovidx);
                     e->isorphan = 1;
                 }
+                if (Read16(i+1+4) == CODECONSTANT)
+                {
+                    WORD *e = GetWordByAddr(i+3+4, ovidx);
+                    e->isorphan = 1;
+                }
                 if (Read16(i+1+4) == CODECALL)
                 {
                     WORD *e = GetWordByAddr(i+3+4, ovidx);
                     e->isorphan = 1;
+                    Variables vars = GetEmptyVariables();
+                    ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+                }
+                if (Read16(i+1+6) == CODECALL)
+                {
+                    WORD *e = GetWordByAddr(i+3+6, ovidx);
+                    e->isorphan = 1;
+                    Variables vars = GetEmptyVariables();
+                    ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
                 }
               }
 
@@ -978,6 +1001,8 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
         if (nwordstemp == nwords) break;
     }
 
+    SetWordHeader(ovidx);
+    SetStructDone(ovidx);
 }
 
 void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
