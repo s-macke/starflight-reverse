@@ -640,7 +640,7 @@ void _plus_A_dash_VESS() // +A-VESS
 
 
 // ================================================
-// 0xe738: WORD 'UNK_0xe73a' codep=0x224c parp=0xe73a
+// 0xe738: WORD 'UNK_0xe73a' codep=0x224c parp=0xe73a params=1 returns=1
 // ================================================
 
 void UNK_0xe73a() // UNK_0xe73a

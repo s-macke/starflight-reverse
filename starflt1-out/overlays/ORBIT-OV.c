@@ -1910,7 +1910,7 @@ void UNK_0xe564() // UNK_0xe564
 
 
 // ================================================
-// 0xe59a: WORD 'UNK_0xe59c' codep=0x224c parp=0xe59c
+// 0xe59a: WORD 'UNK_0xe59c' codep=0x224c parp=0xe59c params=0 returns=1
 // ================================================
 
 void UNK_0xe59c() // UNK_0xe59c

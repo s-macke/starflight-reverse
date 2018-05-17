@@ -21783,7 +21783,7 @@ void StoreEPARMS() // !EPARMS
 
 
 // ================================================
-// 0x9626: WORD '.ELLIPSE' codep=0x224c parp=0x9632
+// 0x9626: WORD '.ELLIPSE' codep=0x224c parp=0x9632 params=5 returns=0
 // ================================================
 
 void DrawELLIPSE() // .ELLIPSE
@@ -21802,7 +21802,7 @@ void DrawELLIPSE() // .ELLIPSE
 
 
 // ================================================
-// 0x9652: WORD '.CIRCLE' codep=0x224c parp=0x965e
+// 0x9652: WORD '.CIRCLE' codep=0x224c parp=0x965e params=3 returns=0
 // ================================================
 
 void DrawCIRCLE() // .CIRCLE
