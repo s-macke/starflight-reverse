@@ -362,6 +362,7 @@ void StackAnalysis(int ovidx)
 #ifdef STARFLT1
 
     //Set("UNK_0x8332", 1, 1); // Seems recursive
+    //Set("UNK_0xeb81", 0, 0);
     Set(">ALPHACODE", 0, 0); // Something with graphics
     Set(">LORES", 0, 0); // set video mode
     Set("BEXTENT", 0, 4);
@@ -371,12 +372,14 @@ void StackAnalysis(int ovidx)
     Set("V>DISPLAY", 0, 0); // not sure
     Set("{BLT}", 0, 0); // not sure
     Set("LFILLPOLY", 0, 0); // probably
+    Set(".ELLIPSE", 5, 0); // probably
     Set("DISPLAY-WAIT", 0, 0);
     Set("PLOT", 3, 1);
     Set("SCANPOLY", 0, 0);
     Set("LFILLPOLY", 0, 0);
     Set("CAPSON", 0, 0);
     Set("PRTSCR", 0, 0);
+
 #endif
 #ifdef STARFLT2
     Set("UNK_0x7650", 0, 1);
