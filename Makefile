@@ -60,11 +60,17 @@ instance1.o: src/instance.c src/instance.h
 instance2.o: src/instance.c src/instance.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/instance.c -o instance2.o
 
-disasOV1: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o
+graph1.o: src/graph.c src/graph.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/graph.c -o graph1.o
 
-disasOV2: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o
+graph2.o: src/graph.c src/graph.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/graph.c -o graph2.o
+
+disasOV1: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o vocabulary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
+
+disasOV2: src/disasOV.c src/vocabulary.c src/extract.c disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o vocabulary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
 
 emulate: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
 	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate
@@ -74,7 +80,7 @@ emulatesdl: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
 
 .PHONY: clean
 
-clean: 
+clean:
 	rm -f *.o
 	rm -f disasOV1
 	rm -f disasOV2

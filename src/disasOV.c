@@ -8,6 +8,7 @@
 #include"extract.h"
 #include"utils.h"
 #include"stack.h"
+#include"graph.h"
 #include"../emul/cpu.h"
 
 // ---------------------------------
@@ -213,5 +214,10 @@ int main()
     DisasmEGA();
 #endif
     VocabularyConsistencyCheck();
+/*
+    LoadSTARFLT();
+    DisasStarflt();
+    WriteCallGraph();
+*/
     return 0;
 }
