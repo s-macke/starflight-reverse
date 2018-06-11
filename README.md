@@ -86,12 +86,13 @@ void Run()
 }
 
 ```
-The code executed for a specific word has access to 4 major variables (16-Bit)
+The code executed for a specific word has access to 5 major variables (16-Bit)
 
-  * instruction pointer: This is part of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory. Can be altered by the word's code for branch and loop control.
-  * stack pointer: This is a stack machine and therefore needs a stack pointer. Push will put an item into stack at the top.  Pop retrieve an item at the top of stack.
-  * word address: The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
-  * code address: The x86-machine code which must be executed 
+  * instruction pointer (register si): This poiuntts inside of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory which must be executed next. The instruction pointer can be altered by the word's code for branch and loop control.
+  * stack pointer (register sp): This is a stack machine and therefore needs a stack pointer. Push will put an item into stack at the top.  Pop retrieve an item at the top of stack.
+  * call stack pointer (register bp): contains the return addresses of the functions. Also used to temporarily store values.
+  * word address (register bx): The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
+  * code address (register ip): The x86-machine code which must be executed 
 
 This is a space efficient encoding, but speedwise it is a catastrophe.
 
