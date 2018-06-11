@@ -43,10 +43,10 @@ You can understand the structure of the game code when you analyze this piece of
 0x0f72: dw 0x0f74
 0x0f74: pop    ax
 0x0f75: pop    bx
-0x0f76: add    ax,bx
+0x0f76: add    ax, bx
 0x0f78: push   ax
 0x0f79: lodsw
-0x0f7a: mov    bx,ax
+0x0f7a: mov    bx, ax
 0x0f7c: jmp    word ptr [bx]
 ```
 
@@ -86,7 +86,14 @@ void Run()
 }
 
 ```
-The instruction pointer variable points to the address of the Forth "word" in memory. The word contains the address to the assemler code of the word and optional data. This is a space efficient encoding, but speedwise it is a catastrophe.
+The code executed for a specific word has access to 4 major variables (16-Bit)
+
+  * instruction pointer: This is part of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory. Can be altered by the word's code for branch and loop control.
+  * stack pointer: This is a stack machine and therefore needs a stack pointer. Push will put an item into stack at the top.  Pop retrieve an item at the top of stack.
+  * word address: The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
+  * code address: The x86-machine code which must be executed 
+
+This is a space efficient encoding, but speedwise it is a catastrophe.
 
 ## Translation ##
 
