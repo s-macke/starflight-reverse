@@ -8,10 +8,10 @@ Starflight developed by Binary Systems was one of the best exploration and role 
 
 To find out more about the game check the following links:
 
-[Wikipedia](https://de.wikipedia.org/wiki/Starflight)
-[Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
-[Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
-[Starflight ressource page](http://starflt.com)
+  * [Wikipedia](https://de.wikipedia.org/wiki/Starflight)
+  * [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
+  * [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
+  * [Starflight ressource page](http://starflt.com)
 
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
@@ -88,7 +88,7 @@ void Run()
 ```
 The code executed for a specific word has access to 5 major variables (16-Bit)
 
-  * instruction pointer (register si): This poiuntts inside of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory which must be executed next. The instruction pointer can be altered by the word's code for branch and loop control.
+  * instruction pointer (register si): This points inside of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory which must be executed next. The instruction pointer can be altered by the word's code for branch and loop control.
   * stack pointer (register sp): This is a stack machine and therefore needs a stack pointer. Push will put an item into stack at the top.  Pop retrieve an item at the top of stack.
   * call stack pointer (register bp): contains the return addresses of the functions. Also used to temporarily store items.
   * word address (register bx): The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
