@@ -40,6 +40,7 @@ Forth is basically a stack machine and uses [indirect threading](https://en.wiki
 You can understand the structure of the game code when you analyze this piece of code, which is the equivalent of the Forth word '+'.
 
 ```Asm
+0x0f72: dw 0x0f74
 0x0f74: pop    ax
 0x0f75: pop    bx
 0x0f76: add    ax,bx
@@ -89,7 +90,7 @@ The instruction pointer variable points to the address of the Forth "word" in me
 
 ## Translation ##
 
-The disassember transpiles the FORTH code into C-style code.. Most of the transpiled code compiles. To understand what the program does take a look at the following table. It takes the "bytecode" as input and transforms it into C.
+The disassember transpiles the FORTH code into C-style code.. Most of the transpiled code compiles. To understand what the program does take a look at the following table. It takes the "bytecode" (which are mainly 16-Bit pointers) as input and transforms it into C.
 
 Forth code:
 ```FORTH
@@ -104,7 +105,7 @@ Forth code:
 
 Transformation:
 
-| BYTECODE |   FORTH     | C      |
+| 16-Bit Pointers | FORTH     | C      |
 | -------- | ----------- | ------ |
 |          | : .C ( -- ) |`void DrawC() { `|
 |          |             |`  unsigned short int i, imax; `|
