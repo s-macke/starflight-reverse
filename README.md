@@ -119,8 +119,7 @@ Transformation:
 |          |             |`  unsigned short int i, imax; `|
 | 0x0642   | CR          |`  Exec("CR"); `|
 | 0x75d5   | CDEPTH      |`  CDEPTH(); `|
-| 0x15fa   | IF          |`  if (Pop() != 0) { `|
-| 0x0020   |             | |
+| 0x15fa 0x0020 | IF          |`  if (Pop() != 0) { `|
 | 0x54ae   | CXSP        |`    Push(Read16(pp_CXSP) + 3);`|
 | 0xbae    | @           | |
 | 0x3b73   | 3           | |
@@ -132,14 +131,12 @@ Transformation:
 | 0x50e0   | I           |`        Push(i);`|
 | 0x4995   | 1.5@        |`        _1_dot_5_at_();`|
 | 0x81d5   | .DRJ        |`        DrawDRJ();`|
-| 0x175d   | -3          |`        Push(-3);`|
-| 0xfffd   |             ||
-| 0x155c   | +LOOP       |`    int step = Pop();`|
-| 0xffff   |             |`    i += step;`|
+| 0x175d 0xfffd | -3          |`        Push(-3);`|
+| 0x155c 0xffff | +LOOP       |`    int step = Pop();`|
+|               |             |`    i += step;`|
 |          |             |`    if (((step>=0) && (i>=imax)) \|\| ((step<0) && (i<=imax))) break;`|
 |          |             |`    } while(1);`|
-| 0x1660   | ELSE        |`  } else {`|
-| 0x000b   |             ||
+| 0x1660 0x000b | ELSE        |`  } else {`|
 | 0x1bdc   | " MT STK"   |`    PRINT("MT STK", 6);`|
 | 0x06     |             ||
 | 0x4d     | 'M'         ||
