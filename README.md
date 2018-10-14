@@ -19,7 +19,13 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
+The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 later I tried again and it was a very plaeseant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
+
 As much as playing this truly amazing game is fun, reverse engineering this game is also fun. Expect the unexpected. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
+
+The game comes in 3 Files
+* STARA.COM and STARB.COM: Both contain the game data and the game executable stored in a its own directory structure.
+* STARFLT.COM: This file is a DOS executable and contains the initialitzation routines, general Forth routines and routines to read and write of the on-disk data structures in STARA.COM and STARB.COM
 
 When you dissect the executable it reveals some fantastic internals
  * Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation). The compiled code retains the structure of the Forth source code. No optimization by the compiler.
