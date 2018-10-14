@@ -4,11 +4,13 @@
 
 ![Starflight 1 for the PC](images/starflight-game.gif)
 
-Starflight developed by Binary Systems was one of the best exploration and role playing games of the 80s. It influenced a whole game genre.
+Back in the 80ths, an unknown company called Binary Systems published the game Starflight. The game puts the player in the role of a starship captain sent to explore the galaxy. There is no set path, allowing players to switch freely between mining, ship-to-ship combat, and alien diplomacy. The broader plot of the game emerges slowly, as the player discovers that an ancient race of beings is causing stars to flare and destroy all living creatures.
+The game has been widely praised by both contemporary and modern critics, and is one of the earliest instances of a sandbox game.  The game influenced the design of numerous other games for decades after its release. 
 
 To find out more about the game check the following links:
 
   * [Wikipedia](https://de.wikipedia.org/wiki/Starflight)
+  * [The Digital Antiquarian](https://www.filfre.net/2014/10/starflight/)
   * [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
   * [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
   * [Starflight ressource page](http://starflt.com)
