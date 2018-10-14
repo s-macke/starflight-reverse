@@ -21,7 +21,29 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 later I tried again and it was a very plaeseant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
 
-As much as playing this truly amazing game is fun, reverse engineering this game is also fun. Expect the unexpected. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
+As much as playing this truly amazing game is fun, reverse engineering this game is also an adventure. You follow in the footsteps of the developers and experience their thought processes as if it were the year 1985 again.
+For this game expect the unexpected. Normally when you reverse engineer such an old game you expect ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
+
+Forth is the language with the ultimate milimanism regarding syntax. There is no more syntax than the space between "words". You can write a Forth reader and interpreter basically in a few lines of code.
+
+In a modern language you write something like
+```PYTHON
+print(2+3)
+```
+to print the result of 2+3. In Forth however it looks like this.
+
+```FORTH
+2 3 + .
+```
+The interpretation is as follows
+* push 2 on the stack
+* push 3 on the stack
+* pop the last two stack entries and add them together. Push the result back to stack. 
+* pop the top value from the stack and print it
+
+The syntax is simple and the interpreter is simple. Certainly a language that lived up to the limitations of the early home computers.
+
+## Disassembly description ##
 
 The game comes in 3 Files
 * STARA.COM and STARB.COM: Both contain the game data and the game executable stored in a its own directory structure.
