@@ -19,7 +19,7 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 later I tried again and it was a very plaeseant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
+The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 later I tried again and it was a very pleasant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
 
 As much as playing this truly amazing game is fun, so is reverse engineering this game. You follow in the footsteps of the developers and experience their thought processes as if it were the year 1985 again.
 For this game expect the unexpected. Normally when you reverse engineer such an old game you have to receive ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
@@ -39,18 +39,143 @@ to print the result of 2+3. In Forth however it looks like this.
 ```
 Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.org/wiki/Reverse_Polish_notation). The interpretation is as follows
 
-* push 2 on the stack
-* push 3 on the stack
-* pop the last two stack entries and add them together. Push the result back to stack. 
+* push 2 on top of the stack
+* push 3 on top of the stack
+* pop the last two stack entries and add them together. Push the result back on top of the stack. 
 * pop the top value from the stack and print it
 
 The syntax is simple and the interpreter is simple. "2", "3", "+" and "." are just called "words". There is no syntactic distinction between data and code. Certainly a language that lived up to the limitations of the early home computers.
 
-## Disassembly description ##
+## Files ##
 
 The game comes in 3 Files
 * STARA.COM and STARB.COM: Both contain the game data and the game executable stored in a its own directory structure.
-* STARFLT.COM: This file is a DOS executable and contains the initialitzation routines, general Forth routines and routines to read and write of the on-disk data structures in STARA.COM and STARB.COM
+* STARFLT.COM: This file is a DOS executable and contains the initialitzation routines, general Forth routines and routines to read and write of the on-disk data structures in STARA.COM and STARB.COM. 
+
+## Directory in STARA and STARB
+
+Content of STARA.com
+
+| entry        | size   | description |
+|--------------|--------|-------------|
+| DIRECTORY    | 4096   | contains directory of STARA and STARB |
+| ELO-CPIC     | 4816   |             |
+| GAZ-CPIC     | 3120   |             |
+| MEC-CPIC     | 2848   |             |
+| MYS-CPIC     | 6064   |             |
+| NOM-CPIC     | 1136   |             |
+| SPE-CPIC     | 1888   |             |
+| THR-CPIC     | 2480   |             |
+| VEL-CPIC     | 4672   |             |
+| VPR-CPIC     | 1248   |             |
+| MIN-CPIC     | 2096   |             |
+| SPLASH       | 16384  | Picture     |
+| MED-PIC      | 2048   | Picture     |
+| PHAZES       | 6144   |             |
+| HUM-PIC      | 480    | Picture     |
+| VEL-PIC      | 432    | Picture     |
+| THR-PIC      | 272    | Picture     |
+| ELO-PIC      | 608    | Picture     |
+| AND-PIC      | 640    | Picture     |
+| SAVE         | 124000 |             |
+| MUSIC        | 4960   | Code Overlay |
+| EARTH        | 1152   | Map of the planet earth |
+| GALAXY       | 6304   |             |
+| CREDITS      | 16384  | picture     |
+| COP-CPIC     | 2928   |             |
+| FONTS        | 768    |             |
+| CGA          | 3600   | Machine Code routines for the CGA graphics card            |
+| EGA          | 3600   | Machine Code routines for the EGA graphics card |
+
+Content of STARB.com
+
+| entry        | size   | description |
+|--------------|--------|-------------|
+| DIRECTORY    | 4096   | contains directory of STARA and STARB |
+| INSTANCE     | 150528 | Tree structure with most of the content of the game |
+| BOX          | 1024   | Table       |
+| BANK-TRANS   | 144    | Table       |
+| CREWMEMBER   | 128    | Table       |
+| VESSEL       | 1936   | Table       |
+| ELEMENT      | 544    | Table       |
+| ARTIFACT     | 1584   | Table       |
+| PLANET       | 1360   | Table       |
+| SPECIMEN     | 448    | Table       |
+| BIO-DATA     | 448    | Table       |
+| TPORT-PIC    | 2416   | Picture     |
+| BPORT-PIC    | 3984   | Picture     |
+| ANALYZE-TEXT | 3200   | Table       |
+| BUTTONS      | 944    | Table       |
+| ICON1:1      | 912    |             |
+| ICON1:2      | 912    |             |
+| ICON1:4      | 912    |             |
+| ICON-NAME    | 736    |             |
+| DPART-OV     | 1552   | Code Overlay |
+| REGIONS      | 176    | Table       |
+| CREATURE     | 17024  | Table       |
+| CHKFLIGHT-OV | 960    | Code Overlay |
+| FRACT-OV     | 4640   | Code Overlay |
+| ICONP-OV     | 832    | Code Overlay |
+| SITE-OV      | 1888   | Code Overlay |
+| HYPERMSG-OV  | 4112   | Code Overlay |
+| GPOLY        | 368    |             |
+| FACET        | 288    |             |
+| VERTEX       | 416    |             |
+| BLT-OV       | 864    | Code Overlay |
+| MISC-OV      | 1440   | Code Overlay |
+| BANK-OV      | 1520   | Code Overlay |
+| ASSCREW-OV   | 2800   | Code Overlay |
+| PERSONNEL-OV | 4192   | Code Overlay |
+| SHIPGRPH-OV  | 2112   | Code Overlay |
+| CONFIG-OV    | 3072   | Code Overlay |
+| TDEPOT-OV    | 4800   | Code Overlay |
+| PORTMENU-OV  | 3120   | Code Overlay |
+| VITA-OV      | 3552   | Code Overlay |
+| HP-OV        | 4832   | Code Overlay |
+| LP-OV        | 5280   | Code Overlay |
+| SENT-OV      | 4784   | Code Overlay |
+| TV-OV        | 3472   | Code Overlay |
+| COMM-OV      | 7232   | Code Overlay |
+| COMMSPEC-OV  | 2864   | Code Overlay |
+| SEED-OV      | 2400   | Code Overlay |
+| LISTICONS    | 720    | Code Overlay |
+| MOVE-OV      | 3808   | Code Overlay |
+| ENGINEER     | 2320   | Code Overlay |
+| DOCTOR       | 1280   | Code Overlay |
+| ORBIT-OV     | 6640   | Code Overlay |
+| CAPTAIN      | 5952   | Code Overlay |
+| SCIENCE      | 3952   | Code Overlay |
+| NAVIGATR     | 880    | Code Overlay |
+| SHIPBUTTONS  | 1984   |             |
+| MAP-OV       | 4160   | Code Overlay |
+| HYPER-OV     | 7168   | Code Overlay |
+| ANALYZE-OV   | 2560   | Code Overlay |
+| LAUNCH-OV    | 1360   | Code Overlay |
+| FLUX-EFFECT  | 464    |             |
+| OP-OV        | 4400   | Code Overlay |
+| ITEMS-OV     | 6016   | Code Overlay |
+| LSYSICON     | 752    |             |
+| MSYSICON     | 448    |             |
+| SSYSICON     | 176    |             |
+| BEHAV-OV     | 5360   |             |
+| CMAP         | 1008   |             |
+| INSTALL      | 800    |             |
+| HEAL-OV      | 1232   | Code Overlay |
+| REPAIR-OV    | 1696   | Code Overlay |
+| GAME-OV      | 5920   | Code Overlay |
+| PLSET-OV     | 2400   | Code Overlay |
+| MAPS-OV      | 2240   | Code Overlay |
+| VES-BLT      | 4528   |              |
+| STORM-OV     | 1232   | Code Overlay |
+| COMPOUNDS    | 176    | Table        |
+| IT-OV        | 1936   | Code Overlay |
+| COMBAT-OV    | 6192   | Code Overlay |
+| DAMAGE-OV    | 2752   | Code Overlay |
+| LAND-OV      | 1088   | Code Overlay |
+| PSTATS       | 64     | Table        |
+| STP-OV       | 1440   | Code Overlay |
+
+## Disassembly description ##
 
 When you dissect the executable it reveals some fantastic internals
  * The compiled code retains the structure of the Forth source code. No optimization by the compiler. A word in the source code are two bytes in the compiled code.
