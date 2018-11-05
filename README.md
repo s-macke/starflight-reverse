@@ -59,9 +59,15 @@ When you dissect the executable STARFLT.COM it reveals some fantastic internals
 
 ## The main building block ##
 
-As explained above Forth is a stack machine. As coding mechanic it uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading), a very space efficient method to store your compiled code. Indirect threading uses pointers to locations that in turn point to machine code.
+As explained above Forth is a stack machine. As coding mechanic it uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading), a very space efficient method to store your compiled code. Threaded code has a form that essentially consists entirely of calls to subroutines. Indirect threading uses pointers to locations that in turn point to machine code.
 
-Let's say your instruction pointer points to the 16-Bit value 0x0f72, which is the coded equivalent of the Forth word '+'. Remember the description above. The word '+' pops the last two stack entries, adds them together and pushes the result back on top of the stack. According to indirect threading this 16-Bit code 0x0f72 is a pointer to a location that in turn points to machine code. When you read the memory content Read16(0x0f72) you get the pointer 0x0f74. And indeed, when you look at this memory location and disassemble it, you receive the following
+Let's say your instruction pointer points to the address 0x1000.
+
+```Asm
+0x1000: dw 0x0f72
+```
+
+This address contains the 16-Bit value Read16(0x1000)=0x0f72, which is the coded equivalent of the Forth word '+'. Remember the description above. The word '+' pops the last two stack entries, adds them together and pushes the result back on top of the stack. According to indirect threading this 16-Bit value 0x0f72 is a pointer to a location that in turn points to machine code. When you read the memory content Read16(0x0f72) you get the pointer to 0x0f74. And indeed, when you look at this memory location and disassemble it, you receive the following
 
 ```Asm
 0x0f72: dw 0x0f74
