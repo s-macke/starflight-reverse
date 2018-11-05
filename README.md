@@ -14,7 +14,7 @@ To find out more about the game check the following links:
   * [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
   * [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
   * [Starflight ressource page](http://starflt.com)
-
+  * [technical articles saved from oblivion](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
@@ -46,13 +46,143 @@ Forth is a stack machine, with a [reverse Polish notation](https://en.wikipedia.
 
 The syntax is simple and the interpreter is simple. "2", "3", "+" and "." are just called "words". There is no syntactic distinction between data and code. Certainly a language that lived up to the limitations of the early home computers.
 
+## Disassembly description ##
+
+When you dissect the executable STARFLT.COM it reveals some fantastic internals
+ * The compiled code retains the structure of the Forth source code. No optimization by the compiler. A word in the source code are two bytes in the compiled code.
+ * The x86-assembly code consumes less than 5% of the size of the exectuable
+ * More than 90% of the executable are actually 16-Bit pointers.
+ * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code, but encrypted. This enables us to reverse engineer a high portion of the original source code.
+ * The Forth interpreter (not compiler) is still part of the executable and can be enabled
+ * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 50% of the CPU cycles just by jumping around in the code.
+ * The executable makes heavily use of code overlays, which makes the decoding much more complicated
+
+## The main building block ##
+
+As explained above Forth is a stack machine. As coding mechanic it uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading), a very space efficient method to store your compiled code. Indirect threading uses pointers to locations that in turn point to machine code.
+
+Let's say your instruction pointer points to the 16-Bit value 0x0f72, which is the coded equivalent of the Forth word '+'. Remember the description above. The word '+' pops the last two stack entries, adds them together and pushes the result back on top of the stack. According to indirect threading this 16-Bit code 0x0f72 is a pointer to a location that in turn points to machine code. When you read the memory content Read16(0x0f72) you get the pointer 0x0f74. And indeed, when you look at this memory location and disassemble it, you receive the following
+
+```Asm
+0x0f72: dw 0x0f74
+0x0f74: pop    ax
+0x0f75: pop    bx
+0x0f76: add    ax, bx
+0x0f78: push   ax
+0x0f79: lodsw
+0x0f7a: mov    bx, ax
+0x0f7c: jmp    word ptr [bx]
+```
+
+The first four instructions perform exactly the operations that the word "+" should perform. The last three assembler instructions starting from the "lodsw" increase the instruction pointer and jump to the next code. There are around a hundred of these code blocks scattered in the executable all defining the machine code for specific Forth words. All other Forth words are implemented in Forth itself. And that's actually all you need to know about the code structure.
+
+As you can see this is a space efficient encoding, but speedwise it is a catastrophe. Every few machine code instructions you have to jump to a different code block.
+
+The equivalent of indirect threading in C would look like this.
+
+```C
+uint16_t instruction_pointer = start_of_program_pointer;
+    
+void Call(uint16_t word_adress)
+{
+    // the first two byte of the word's address contain 
+    // the address of the corresponding code, which must be executed for this word
+    uint16_t code_address = Read16(word_address);
+
+    switch(code_address)
+    {
+        .
+        .
+        .
+        case 0x0f74: // word '+'
+            Push16(Pop16() + Pop16());
+            break;
+        .
+        .
+        .
+    }
+}
+
+void Run()
+{
+    while(1)
+    {
+        uint16_t word_address = Read16(instruction_pointer);
+        instruction_pointer += 2;
+        Call(word_address);
+    }
+}
+
+```
+
+The code executed for a specific word has access to 5 major variables (16-Bit)
+
+  * instruction pointer (register si): This points inside of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory which must be executed next. The instruction pointer can be altered by the word's code for branch and loop control.
+  * stack pointer (register sp): This is a stack machine and therefore needs a stack pointer. Push will put an item on the stack. Pop retrieves an item from the top of the stack.
+  * call stack pointer (register bp): contains the return addresses of the functions. Also used to temporarily store items.
+  * word address (register bx): The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
+  * code address (register ip): The x86-machine code which must be executed
+
+## Translation ##
+
+The disassember transpiles the FORTH code into C-style code.. Most of the transpiled code compiles. To understand what the program does take a look at the following table. It takes the "bytecode" (which are mainly 16-Bit pointers) as input and transforms it into C.
+
+Forth code:
+```FORTH
+: .C ( -- )
+\ Display context stack contents.
+  CR CDEPTH IF CXSP @ 3 + END-CX
+               DO I 1.5@ .DRJ -3 +LOOP
+            ELSE ." MT STK"
+            THEN CR ;
+  EXIT
+```
+
+Transformation:
+
+| 16-Bit Pointers | FORTH     | C      |
+| -------- | ----------- | ------ |
+|          | : .C ( -- ) |`void DrawC() { `|
+|          |             |`  unsigned short int i, imax; `|
+| 0x0642   | CR          |`  Exec("CR"); `|
+| 0x75d5   | CDEPTH      |`  CDEPTH(); `|
+| 0x15fa 0x0020 | IF          |`  if (Pop() != 0) { `|
+| 0x54ae   | CXSP        |`    Push(Read16(pp_CXSP) + 3);`|
+| 0xbae    | @           | |
+| 0x3b73   | 3           | |
+| 0x0f72   | +           | |
+| 0x4ffd   | END-CX      |`    Push(Read16(cc_END_dash_CX));`|
+| 0x15b8   | DO          |`    i = Pop();`|
+|          |             |`    imax = Pop();`|
+|          |             |`    do {`|
+| 0x50e0   | I           |`        Push(i);`|
+| 0x4995   | 1.5@        |`        _1_dot_5_at_();`|
+| 0x81d5   | .DRJ        |`        DrawDRJ();`|
+| 0x175d 0xfffd | -3          |`        Push(-3);`|
+| 0x155c 0xffff | +LOOP       |`    int step = Pop();`|
+|               |             |`    i += step;`|
+|          |             |`    if (((step>=0) && (i>=imax)) \|\| ((step<0) && (i<=imax))) break;`|
+|          |             |`    } while(1);`|
+| 0x1660 0x000b | ELSE        |`  } else {`|
+| 0x1bdc   | " MT STK"   |`    PRINT("MT STK", 6);`|
+| 0x06     |             ||
+| 0x4d     | 'M'         ||
+| 0x54     | 'T'         ||
+| 0x20     | ' '         ||
+| 0x53     | 'S'         ||
+| 0x54     | 'T'         ||
+| 0x4b     | 'K'         ||
+|          | THEN        |`  }`|
+| 0x0642   | CR          |`  Exec("CR");`|
+| 0x1690   | EXIT        |`}`|
+
 ## Files ##
 
 The game comes in 3 Files
 * STARA.COM and STARB.COM: Both contain the game data and the game executable stored in a its own directory structure.
 * STARFLT.COM: This file is a DOS executable and contains the initialitzation routines, general Forth routines and routines to read and write of the on-disk data structures in STARA.COM and STARB.COM. 
 
-## Directory in STARA and STARB
+## Directory in STARA.COM and STARB.COM
 
 Content of STARA.com
 
@@ -87,7 +217,7 @@ Content of STARA.com
 | CGA          | 3600   | Machine Code routines for the CGA graphics card            |
 | EGA          | 3600   | Machine Code routines for the EGA graphics card |
 
-Content of STARB.com
+Content of STARB.COM
 
 | entry        | size   | description |
 |--------------|--------|-------------|
@@ -175,134 +305,8 @@ Content of STARB.com
 | PSTATS       | 64     | Table        |
 | STP-OV       | 1440   | Code Overlay |
 
-## Disassembly description ##
-
-When you dissect the executable it reveals some fantastic internals
- * The compiled code retains the structure of the Forth source code. No optimization by the compiler. A word in the source code are two bytes in the compiled code.
- * The x86-assembly code consumes less than 5% of the size of the exectuable
- * More than 90% of the executable are actually 16-Bit pointers.
- * 2000 of around 6000 word names, which you would call debugging symbols nowadays, are still in the code, but encrypted. This enables us to reverse engineer a high portion of the original source code.
- * The Forth interpreter (not compiler) is still part of the executable and can be enabled
- * The executable is slow. Besides of some assembler optimized routines, the code wastes at least 50% of the CPU cycles just by jumping around in the code.
- * The executable makes heavily use of code overlays, which makes the decoding much more complicated
-
-For more information take a look at the [technical articles](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
 
 ## Usage ##
 
 Put the files of the original Starflight game into the folders `starflt1-in` and `starflt2-in` and run `make`. You should get two executables (`disasOV1` and `disasOV2`), which produces the content in the folders `starflt1-out` and `starflt2-out`. The generated output is part of this repository.
 
-## The main building block ##
-
-Forth is basically a stack machine and uses [indirect threading](https://en.wikipedia.org/wiki/Threaded_code#Indirect_threading).
-You can understand the structure of the game code when you analyze this piece of code, which is the equivalent of the Forth word '+'.
-
-```Asm
-0x0f72: dw 0x0f74
-0x0f74: pop    ax
-0x0f75: pop    bx
-0x0f76: add    ax, bx
-0x0f78: push   ax
-0x0f79: lodsw
-0x0f7a: mov    bx, ax
-0x0f7c: jmp    word ptr [bx]
-```
-
-There are around a hundred of those code blocks scattered in the executable, surrounded by seemingly incomprehensible data. To understand these code blocks lets look at the equivalent in C.
-
-```C
-uint16_t instruction_pointer = start_of_program_pointer;
-    
-void Call(uint16_t word_adress)
-{
-    // the first two byte of the word's address contain 
-    // the address of the corresponding code, which must be executed for this word 
-    uint16_t code_address = Read16(word_address);
-
-    switch(code_address)
-    {
-        .
-        .
-        .
-        case 0x0f74: // word '+'
-            Push16(Pop16() + Pop16());
-            break;
-        .
-        .
-        .
-    }
-}
-
-void Run()
-{
-    while(1)
-    {
-        uint16_t word_address = Read16(instruction_pointer);
-        instruction_pointer += 2;
-        Call(word_address);
-    }
-}
-
-```
-The code executed for a specific word has access to 5 major variables (16-Bit)
-
-  * instruction pointer (register si): This points inside of a more complex function ("word") in Forth. It points to the address of the Forth "word" in memory which must be executed next. The instruction pointer can be altered by the word's code for branch and loop control.
-  * stack pointer (register sp): This is a stack machine and therefore needs a stack pointer. Push will put an item into stack at the top.  Pop retrieve an item at the top of stack.
-  * call stack pointer (register bp): contains the return addresses of the functions. Also used to temporarily store items.
-  * word address (register bx): The first 2 byte contain the address to the x86 machine code of this word. Afterwards, there can be optional data such as constants, variables and arrays. In the above example for '+' it contains the machine code itself.
-  * code address (register ip): The x86-machine code which must be executed 
-
-This is a space efficient encoding, but speedwise it is a catastrophe.
-
-## Translation ##
-
-The disassember transpiles the FORTH code into C-style code.. Most of the transpiled code compiles. To understand what the program does take a look at the following table. It takes the "bytecode" (which are mainly 16-Bit pointers) as input and transforms it into C.
-
-Forth code:
-```FORTH
-: .C ( -- )
-\ Display context stack contents.
-  CR CDEPTH IF CXSP @ 3 + END-CX
-               DO I 1.5@ .DRJ -3 +LOOP
-            ELSE ." MT STK"
-            THEN CR ;
-  EXIT
-```
-
-Transformation:
-
-| 16-Bit Pointers | FORTH     | C      |
-| -------- | ----------- | ------ |
-|          | : .C ( -- ) |`void DrawC() { `|
-|          |             |`  unsigned short int i, imax; `|
-| 0x0642   | CR          |`  Exec("CR"); `|
-| 0x75d5   | CDEPTH      |`  CDEPTH(); `|
-| 0x15fa 0x0020 | IF          |`  if (Pop() != 0) { `|
-| 0x54ae   | CXSP        |`    Push(Read16(pp_CXSP) + 3);`|
-| 0xbae    | @           | |
-| 0x3b73   | 3           | |
-| 0x0f72   | +           | |
-| 0x4ffd   | END-CX      |`    Push(Read16(cc_END_dash_CX));`|
-| 0x15b8   | DO          |`    i = Pop();`|
-|          |             |`    imax = Pop();`|
-|          |             |`    do {`|
-| 0x50e0   | I           |`        Push(i);`|
-| 0x4995   | 1.5@        |`        _1_dot_5_at_();`|
-| 0x81d5   | .DRJ        |`        DrawDRJ();`|
-| 0x175d 0xfffd | -3          |`        Push(-3);`|
-| 0x155c 0xffff | +LOOP       |`    int step = Pop();`|
-|               |             |`    i += step;`|
-|          |             |`    if (((step>=0) && (i>=imax)) \|\| ((step<0) && (i<=imax))) break;`|
-|          |             |`    } while(1);`|
-| 0x1660 0x000b | ELSE        |`  } else {`|
-| 0x1bdc   | " MT STK"   |`    PRINT("MT STK", 6);`|
-| 0x06     |             ||
-| 0x4d     | 'M'         ||
-| 0x54     | 'T'         ||
-| 0x20     | ' '         ||
-| 0x53     | 'S'         ||
-| 0x54     | 'T'         ||
-| 0x4b     | 'K'         ||
-|          | THEN        |`  }`|
-| 0x0642   | CR          |`  Exec("CR");`|
-| 0x1690   | EXIT        |`}`|
