@@ -185,22 +185,22 @@ void _gt_EXPERT() // >EXPERT
   unsigned short int a;
   a = Pop(); // >R
   Push(a); // I
-  Push(0xb6c0); // probable 'RULELIM'
+  Push(0xb6c0); // 'RULELIM'
   Store_3(); // !_3
   Push(a + 1); // I 1+
-  Push(0xb6ce); // probable 'CONDLIM'
+  Push(0xb6ce); // 'CONDLIM'
   Store_3(); // !_3
   Push(a + 2); // I 2+
-  Push(0xb6dc); // probable 'RULECNT'
+  Push(0xb6dc); // 'RULECNT'
   Store_3(); // !_3
   Push(a + 3); // R> 3 +
-  Push(0xb6ea); // probable 'RULEARR'
+  Push(0xb6ea); // 'RULEARR'
   Store_3(); // !_3
   Push((Read16(Read16(cc_RULELIM))&0xFF) * 2 + Read16(cc_RULEARR)); // RULELIM C@ 2* RULEARR +
-  Push(0xb6f8); // probable 'CONDARR'
+  Push(0xb6f8); // 'CONDARR'
   Store_3(); // !_3
   Push((Read16(Read16(cc_CONDLIM))&0xFF) * 2 + Read16(cc_CONDARR)); // CONDLIM C@ 2* CONDARR +
-  Push(0xb706); // probable 'CFLGARR'
+  Push(0xb706); // 'CFLGARR'
   Store_3(); // !_3
 }
 
@@ -401,7 +401,7 @@ void CONDITION() // CONDITION
   _dash__dash__gt_(); // -->
   a = Pop(); // >R
   Push(a); // I
-  Push(0xb8ce); // probable '-->'
+  Push(0xb8ce); // '-->'
   Push((Pop()==Pop())?1:0); // =
   Push(!Pop()); //  NOT
   if (Pop() != 0)
@@ -450,7 +450,7 @@ void RULE_c_() // RULE:
   HERE(); // HERE
   Push(0);
   C_co_(); // C,
-  Push(0x3a48); // probable 'NOP'
+  Push(0x3a48); // 'NOP'
   _co_(); // ,
   do
   {
@@ -462,10 +462,10 @@ void RULE_c_() // RULE:
     {
       _i__1(); // '_1
       Push(Read16(regsp)); // DUP
-      Push(0xb698); // probable 'TRUE'
+      Push(0xb698); // 'TRUE'
       Push((Pop()==Pop())?1:0); // =
       OVER(); // OVER
-      Push(0xb6a4); // probable 'FALSE'
+      Push(0xb6a4); // 'FALSE'
       Push((Pop()==Pop())?1:0); // =
       Push(Pop() | Pop()); // OR
       Push(!Pop()); //  NOT

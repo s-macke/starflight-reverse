@@ -100,7 +100,7 @@ void LET_dash_THE() // LET-THE
   Push(pp_ESC_dash_EN); // ESC-EN
   _099(); // 099
   MOUNTA(); // MOUNTA
-  Push(0xb5f1); // probable 'TALLOC'
+  Push(0xb5f1); // 'TALLOC'
   MODULE(); // MODULE
   STARTER(); // STARTER
   Push(pp_RELAXTI); // RELAXTI

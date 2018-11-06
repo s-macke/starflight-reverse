@@ -148,16 +148,16 @@ const unsigned short int pp_SKIPPED = 0x4627; // SKIPPED size: 2
 const unsigned short int pp_CANSKIP = 0x4635; // CANSKIP size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_UNK_0x484e = 0x484e; // UNK_0x484e size: 2
+const unsigned short int pp_W484E = 0x484e; // W484E size: 2
 // {0x90, 0x8d}
 
-const unsigned short int pp_UNK_0x4852 = 0x4852; // UNK_0x4852 size: 2
+const unsigned short int pp_W4852 = 0x4852; // W4852 size: 2
 // {0x4e, 0x95}
 
-const unsigned short int pp_UNK_0x4856 = 0x4856; // UNK_0x4856 size: 4
+const unsigned short int pp_W4856 = 0x4856; // W4856 size: 4
 // {0x4e, 0x95, 0x00, 0x00}
 
-const unsigned short int pp_UNK_0x4901 = 0x4901; // UNK_0x4901 size: 17
+const unsigned short int pp_W4901 = 0x4901; // W4901 size: 17
 // {0x00, 0x52, 0x32, 0x20, 0x20, 0x20, 0x20, 0x20, 0x20, 0x4f, 0x56, 0x4c, 0x00, 0x00, 0x00, 0x00, 0x41}
 
 
@@ -330,7 +330,7 @@ void CLRFCB() // CLRFCB
 
 void SYSTEM() // SYSTEM
 {
-  Push(0x2d97); // probable 'FCB'
+  Push(0x2d97); // 'FCB'
   Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
   Store(); // !
@@ -343,7 +343,7 @@ void SYSTEM() // SYSTEM
 
 void SYSUTIL() // SYSUTIL
 {
-  Push(0x2d97); // probable 'FCB'
+  Push(0x2d97); // 'FCB'
   Push(Pop() + 0x0033); //  0x0033 +
   Push(pp__i_FCB); // 'FCB
   Store(); // !
@@ -543,10 +543,10 @@ void WRITE_dash_R() // WRITE-R
 
 
 // ================================================
-// 0x4383: WORD 'UNK_0x4385' codep=0x224c parp=0x4385 params=1 returns=0
+// 0x4383: WORD 'W4385' codep=0x224c parp=0x4385 params=1 returns=0
 // ================================================
 
-void UNK_0x4385() // UNK_0x4385
+void W4385() // W4385
 {
   ABORT("Bad name", 8);// (ABORT")
 }
@@ -559,7 +559,7 @@ void UNK_0x4385() // UNK_0x4385
 void MAKE_st_NA() // MAKE<NA
 {
   SETFCB(); // SETFCB
-  UNK_0x4385(); // UNK_0x4385
+  W4385(); // W4385
   MAKE(); // MAKE
   ABORT("Can't create.", 13);// (ABORT")
 }
@@ -572,7 +572,7 @@ void MAKE_st_NA() // MAKE<NA
 void OPEN_st_NA() // OPEN<NA
 {
   SETFCB(); // SETFCB
-  UNK_0x4385(); // UNK_0x4385
+  W4385(); // W4385
   OPEN(); // OPEN
   ABORT("Can't open.", 11);// (ABORT")
 }
@@ -671,10 +671,10 @@ void _4TH_gt_DOS() // 4TH>DOS
 
 
 // ================================================
-// 0x447e: WORD 'UNK_0x4480' codep=0x224c parp=0x4480
+// 0x447e: WORD 'W4480' codep=0x224c parp=0x4480
 // ================================================
 
-void UNK_0x4480() // UNK_0x4480
+void W4480() // W4480
 {
   unsigned short int a;
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -711,10 +711,10 @@ void UNK_0x4480() // UNK_0x4480
 
 
 // ================================================
-// 0x44d6: WORD 'UNK_0x44d8' codep=0x224c parp=0x44d8
+// 0x44d6: WORD 'W44D8' codep=0x224c parp=0x44d8
 // ================================================
 
-void UNK_0x44d8() // UNK_0x44d8
+void W44D8() // W44D8
 {
   Push(Read16(cc_DX)); // DX
   Store(); // !
@@ -727,10 +727,10 @@ void UNK_0x44d8() // UNK_0x44d8
 
 
 // ================================================
-// 0x44f0: WORD 'UNK_0x44f2' codep=0x224c parp=0x44f2
+// 0x44f0: WORD 'W44F2' codep=0x224c parp=0x44f2
 // ================================================
 
-void UNK_0x44f2() // UNK_0x44f2
+void W44F2() // W44F2
 {
   Push(0x0019);
   DOSCALL(); // DOSCALL
@@ -748,11 +748,11 @@ void SETMAXD() // SETMAXD
   Is_n_DETTE(); // ?#DETTE
   Push(2);
   MAX(); // MAX
-  UNK_0x44f2(); // UNK_0x44f2
+  W44F2(); // W44F2
   MAX(); // MAX
   Push(pp_MAXDRV); // MAXDRV
   Store(); // !
-  UNK_0x4480(); // UNK_0x4480
+  W4480(); // W4480
   if (Pop() == 0) return;
   Push(7);
   Push(Read16(pp_MAXDRV) + 1); // MAXDRV @ 1+
@@ -762,7 +762,7 @@ void SETMAXD() // SETMAXD
   do // (DO)
   {
     Push(i); // I
-    UNK_0x44d8(); // UNK_0x44d8
+    W44D8(); // W44D8
     if (Pop() != 0)
     {
       Push(i); // I
@@ -784,15 +784,15 @@ void SETMAXD() // SETMAXD
 
 
 // ================================================
-// 0x4558: WORD 'UNK_0x455a' codep=0x224c parp=0x455a params=0 returns=0
+// 0x4558: WORD 'W455A' codep=0x224c parp=0x455a params=0 returns=0
 // ================================================
 
-void UNK_0x455a() // UNK_0x455a
+void W455A() // W455A
 {
   DRV(); // DRV
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
-  UNK_0x44f2(); // UNK_0x44f2
+  W44F2(); // W44F2
   DRV(); // DRV
   C_ex__1(); // C!_1
 }
@@ -813,10 +813,10 @@ void Is1DRV() // ?1DRV
 
 
 // ================================================
-// 0x458c: WORD 'UNK_0x458e' codep=0x224c parp=0x458e
+// 0x458c: WORD 'W458E' codep=0x224c parp=0x458e
 // ================================================
 
-void UNK_0x458e() // UNK_0x458e
+void W458E() // W458E
 {
   Push(Pop() + 1); //  1+
   Push(Read16(pp_MAXDRV)); // MAXDRV @
@@ -844,14 +844,14 @@ void SMARTOP() // SMARTOP
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   a = Pop(); // >R
-  UNK_0x455a(); // UNK_0x455a
+  W455A(); // W455A
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
   while(1)
   {
     DRV(); // DRV
     Push(Read16(Pop())&0xFF); //  C@
-    UNK_0x458e(); // UNK_0x458e
+    W458E(); // W458E
     _2DUP(); // 2DUP
     Push((Pop()==Pop())?1:0); // =
     Push(!Pop() & a); //  NOT I AND
@@ -1008,7 +1008,7 @@ void DOSUNMO() // DOSUNMO
 
 void DR2() // DR2
 {
-  Push(0x43e3); // probable '[FILE]'
+  Push(0x43e3); // '[FILE]'
   Push(0x02d0);
   SYSTEM(); // SYSTEM
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -1028,7 +1028,7 @@ void DR2() // DR2
 
 void DR3() // DR3
 {
-  Push(0x43e3); // probable '[FILE]'
+  Push(0x43e3); // '[FILE]'
   Push(0x05dc);
   SYSUTIL(); // SYSUTIL
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -1052,7 +1052,7 @@ void USING() // USING
   UNMOUNT(); // UNMOUNT
   SYSTEM(); // SYSTEM
   SETFCB(); // SETFCB
-  UNK_0x4385(); // UNK_0x4385
+  W4385(); // W4385
   DR2(); // DR2
 }
 
@@ -1119,17 +1119,17 @@ void SETSYSK() // SETSYSK
 
 
 // ================================================
-// 0x484c: WORD 'UNK_0x484e' codep=0x1d29 parp=0x484e
+// 0x484c: WORD 'W484E' codep=0x1d29 parp=0x484e
 // ================================================
 // 0x484e: db 0x90 0x8d '  '
 
 // ================================================
-// 0x4850: WORD 'UNK_0x4852' codep=0x1d29 parp=0x4852
+// 0x4850: WORD 'W4852' codep=0x1d29 parp=0x4852
 // ================================================
 // 0x4852: db 0x4e 0x95 'N '
 
 // ================================================
-// 0x4854: WORD 'UNK_0x4856' codep=0x1d29 parp=0x4856
+// 0x4854: WORD 'W4856' codep=0x1d29 parp=0x4856
 // ================================================
 // 0x4856: db 0x4e 0x95 0x00 0x00 'N   '
 
@@ -1144,16 +1144,16 @@ void IsERR() // ?ERR
 
 
 // ================================================
-// 0x486d: WORD 'UNK_0x486f' codep=0x224c parp=0x486f
+// 0x486d: WORD 'W486F' codep=0x224c parp=0x486f
 // ================================================
 
-void UNK_0x486f() // UNK_0x486f
+void W486F() // W486F
 {
-  Push(Read16(pp_UNK_0x484e)); // UNK_0x484e @
-  Push(Read16(pp_UNK_0x4852)); // UNK_0x4852 @
-  Push(pp_UNK_0x4856); // UNK_0x4856
+  Push(Read16(pp_W484E)); // W484E @
+  Push(Read16(pp_W4852)); // W4852 @
+  Push(pp_W4856); // W4856
   Store(); // !
-  Push(pp_UNK_0x4856 + 2); // UNK_0x4856 2+
+  Push(pp_W4856 + 2); // W4856 2+
   OFF_1(); // OFF_1
   Push(Read16(cc_DX)); // DX
   Store(); // !
@@ -1163,7 +1163,7 @@ void UNK_0x486f() // UNK_0x486f
   _ro_CS_ask__rc_(); // (CS?)
   Push(Read16(cc_ES)); // ES
   Store(); // !
-  Push(pp_UNK_0x4856); // UNK_0x4856
+  Push(pp_W4856); // W4856
   Push(Read16(cc_BX)); // BX
   Store(); // !
   Push(0x004b);
@@ -1178,7 +1178,7 @@ void UNK_0x486f() // UNK_0x486f
 void _bo_LDS_bc_() // [LDS]
 {
   unsigned short int a, b;
-  UNK_0x486f(); // UNK_0x486f
+  W486F(); // W486F
   IsERR(); // ?ERR
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
@@ -1186,14 +1186,14 @@ void _bo_LDS_bc_() // [LDS]
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   a = Pop(); // >R
-  UNK_0x455a(); // UNK_0x455a
+  W455A(); // W455A
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
   while(1)
   {
     DRV(); // DRV
     Push(Read16(Pop())&0xFF); //  C@
-    UNK_0x458e(); // UNK_0x458e
+    W458E(); // W458E
     _2DUP(); // 2DUP
     Push((Pop()==Pop())?1:0); // =
     Push(!Pop() & a); //  NOT I AND
@@ -1201,7 +1201,7 @@ void _bo_LDS_bc_() // [LDS]
 
     DRV(); // DRV
     C_ex__1(); // C!_1
-    UNK_0x486f(); // UNK_0x486f
+    W486F(); // W486F
     IsERR(); // ?ERR
     Push(a); // R>
     Pop(); // DROP
@@ -1218,7 +1218,7 @@ void _bo_LDS_bc_() // [LDS]
 
 
 // ================================================
-// 0x48ff: WORD 'UNK_0x4901' codep=0x1d29 parp=0x4901
+// 0x48ff: WORD 'W4901' codep=0x1d29 parp=0x4901
 // ================================================
 // 0x4901: db 0x00 0x52 0x32 0x20 0x20 0x20 0x20 0x20 0x20 0x4f 0x56 0x4c 0x00 0x00 0x00 0x00 0x41 ' R2      OVL    A'
 
@@ -1231,14 +1231,14 @@ void _ro_LDS_rc_() // (LDS)
   unsigned short int a;
   Push(Read16(pp__i_FCB)); // 'FCB @
   a = Pop(); // >R
-  Push(pp_UNK_0x4901); // UNK_0x4901
+  Push(pp_W4901); // W4901
   Push(pp__i_FCB); // 'FCB
   Store(); // !
   OVER(); // OVER
   _gt_FCB(); // >FCB
-  Push(pp_UNK_0x4852); // UNK_0x4852
+  Push(pp_W4852); // W4852
   Store(); // !
-  Push(pp_UNK_0x484e); // UNK_0x484e
+  Push(pp_W484E); // W484E
   Store(); // !
   while(1)
   {

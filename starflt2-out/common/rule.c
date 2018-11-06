@@ -101,25 +101,25 @@ void V_gt_(); // V>
 // =================================
 // =========== VARIABLES ===========
 // =================================
-const unsigned short int pp_UNK_0xab57 = 0xab57; // UNK_0xab57 size: 2
+const unsigned short int pp_WAB57 = 0xab57; // WAB57 size: 2
 // {0x06, 0x00}
 
 const unsigned short int pp_SMART = 0xab63; // SMART size: 2
 // {0x00, 0x00}
 
 
-const unsigned short int cc_UNK_0xab67 = 0xab67; // UNK_0xab67
-const unsigned short int cc_UNK_0xab6b = 0xab6b; // UNK_0xab6b
-const unsigned short int cc_UNK_0xab6f = 0xab6f; // UNK_0xab6f
-const unsigned short int cc_UNK_0xab73 = 0xab73; // UNK_0xab73
-const unsigned short int cc_UNK_0xab77 = 0xab77; // UNK_0xab77
-const unsigned short int cc_UNK_0xab7b = 0xab7b; // UNK_0xab7b
-const unsigned short int cc_UNK_0xab7f = 0xab7f; // UNK_0xab7f
+const unsigned short int cc_WAB67 = 0xab67; // WAB67
+const unsigned short int cc_WAB6B = 0xab6b; // WAB6B
+const unsigned short int cc_WAB6F = 0xab6f; // WAB6F
+const unsigned short int cc_WAB73 = 0xab73; // WAB73
+const unsigned short int cc_WAB77 = 0xab77; // WAB77
+const unsigned short int cc_WAB7B = 0xab7b; // WAB7B
+const unsigned short int cc_WAB7F = 0xab7f; // WAB7F
 
 
 
 // ================================================
-// 0xab55: WORD 'UNK_0xab57' codep=0x1d29 parp=0xab57
+// 0xab55: WORD 'WAB57' codep=0x1d29 parp=0xab57
 // ================================================
 // 0xab57: db 0x06 0x00 '  '
 
@@ -129,45 +129,45 @@ const unsigned short int cc_UNK_0xab7f = 0xab7f; // UNK_0xab7f
 // 0xab63: db 0x00 0x00 '  '
 
 // ================================================
-// 0xab65: WORD 'UNK_0xab67' codep=0x2214 parp=0xab67
+// 0xab65: WORD 'WAB67' codep=0x2214 parp=0xab67
 // ================================================
 // 0xab67: dw 0x00ff
 
 // ================================================
-// 0xab69: WORD 'UNK_0xab6b' codep=0x2214 parp=0xab6b
+// 0xab69: WORD 'WAB6B' codep=0x2214 parp=0xab6b
 // ================================================
 // 0xab6b: dw 0xec67
 
 // ================================================
-// 0xab6d: WORD 'UNK_0xab6f' codep=0x2214 parp=0xab6f
+// 0xab6d: WORD 'WAB6F' codep=0x2214 parp=0xab6f
 // ================================================
 // 0xab6f: dw 0xec68
 
 // ================================================
-// 0xab71: WORD 'UNK_0xab73' codep=0x2214 parp=0xab73
+// 0xab71: WORD 'WAB73' codep=0x2214 parp=0xab73
 // ================================================
 // 0xab73: dw 0xec69
 
 // ================================================
-// 0xab75: WORD 'UNK_0xab77' codep=0x2214 parp=0xab77
+// 0xab75: WORD 'WAB77' codep=0x2214 parp=0xab77
 // ================================================
 // 0xab77: dw 0xec6a
 
 // ================================================
-// 0xab79: WORD 'UNK_0xab7b' codep=0x2214 parp=0xab7b
+// 0xab79: WORD 'WAB7B' codep=0x2214 parp=0xab7b
 // ================================================
 // 0xab7b: dw 0xec78
 
 // ================================================
-// 0xab7d: WORD 'UNK_0xab7f' codep=0x2214 parp=0xab7f
+// 0xab7d: WORD 'WAB7F' codep=0x2214 parp=0xab7f
 // ================================================
 // 0xab7f: dw 0xec84
 
 // ================================================
-// 0xab81: WORD 'UNK_0xab83' codep=0x224c parp=0xab83 params=1 returns=1
+// 0xab81: WORD 'WAB83' codep=0x224c parp=0xab83 params=1 returns=1
 // ================================================
 
-void UNK_0xab83() // UNK_0xab83
+void WAB83() // WAB83
 {
   Push((Read16(Pop())&0xFF) & 0x007f); //  C@ 0x007f AND
 }
@@ -189,30 +189,30 @@ void C_plus__ex_() // C+!
 
 
 // ================================================
-// 0xaba3: WORD 'UNK_0xaba5' codep=0x224c parp=0xaba5 params=1 returns=0
+// 0xaba3: WORD 'WABA5' codep=0x224c parp=0xaba5 params=1 returns=0
 // ================================================
 
-void UNK_0xaba5() // UNK_0xaba5
+void WABA5() // WABA5
 {
   unsigned short int a;
   a = Pop(); // >R
   Push(a); // I
-  Push(0xab6b); // probable 'UNK_0xab6b'
+  Push(0xab6b); // 'WAB6B'
   Store_2(); // !_2
   Push(a + 1); // I 1+
-  Push(0xab6f); // probable 'UNK_0xab6f'
+  Push(0xab6f); // 'WAB6F'
   Store_2(); // !_2
   Push(a + 2); // I 2+
-  Push(0xab73); // probable 'UNK_0xab73'
+  Push(0xab73); // 'WAB73'
   Store_2(); // !_2
   Push(a + 3); // R> 3 +
-  Push(0xab77); // probable 'UNK_0xab77'
+  Push(0xab77); // 'WAB77'
   Store_2(); // !_2
-  Push((Read16(Read16(cc_UNK_0xab6b))&0xFF) * 2 + Read16(cc_UNK_0xab77)); // UNK_0xab6b C@ 2* UNK_0xab77 +
-  Push(0xab7b); // probable 'UNK_0xab7b'
+  Push((Read16(Read16(cc_WAB6B))&0xFF) * 2 + Read16(cc_WAB77)); // WAB6B C@ 2* WAB77 +
+  Push(0xab7b); // 'WAB7B'
   Store_2(); // !_2
-  Push((Read16(Read16(cc_UNK_0xab6f))&0xFF) * 2 + Read16(cc_UNK_0xab7b)); // UNK_0xab6f C@ 2* UNK_0xab7b +
-  Push(0xab7f); // probable 'UNK_0xab7f'
+  Push((Read16(Read16(cc_WAB6F))&0xFF) * 2 + Read16(cc_WAB7B)); // WAB6F C@ 2* WAB7B +
+  Push(0xab7f); // 'WAB7F'
   Store_2(); // !_2
 }
 
@@ -223,19 +223,19 @@ void UNK_0xaba5() // UNK_0xaba5
 
 void DISTRAC() // DISTRAC
 {
-  UNK_0xaba5(); // UNK_0xaba5
-  Push(Read16(cc_UNK_0xab7f)); // UNK_0xab7f
-  Push(Read16(Read16(cc_UNK_0xab6f))&0xFF); // UNK_0xab6f C@
-  Push(Read16(cc_UNK_0xab67)); // UNK_0xab67
+  WABA5(); // WABA5
+  Push(Read16(cc_WAB7F)); // WAB7F
+  Push(Read16(Read16(cc_WAB6F))&0xFF); // WAB6F C@
+  Push(Read16(cc_WAB67)); // WAB67
   FILL_2(); // FILL_2
 }
 
 
 // ================================================
-// 0xac0b: WORD 'UNK_0xac0d' codep=0x224c parp=0xac0d params=1 returns=1
+// 0xac0b: WORD 'WAC0D' codep=0x224c parp=0xac0d params=1 returns=1
 // ================================================
 
-void UNK_0xac0d() // UNK_0xac0d
+void WAC0D() // WAC0D
 {
   unsigned short int a, i, imax, b;
   a = Pop(); // >R
@@ -249,27 +249,27 @@ void UNK_0xac0d() // UNK_0xac0d
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(cc_UNK_0xab7f)); // UNK_0xab7f
+    Push(Read16(cc_WAB7F)); // WAB7F
     Push(i); // I
-    UNK_0xab83(); // UNK_0xab83
+    WAB83(); // WAB83
     Push(Pop() + Pop()); // +
     Push(Read16(Pop())&0xFF); //  C@
     Push(Read16(regsp)); // DUP
-    Push(Pop()==Read16(cc_UNK_0xab67)?1:0); //  UNK_0xab67 =
+    Push(Pop()==Read16(cc_WAB67)?1:0); //  WAB67 =
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(Read16(cc_UNK_0xab7b)); // UNK_0xab7b
+      Push(Read16(cc_WAB7B)); // WAB7B
       Push(i); // I
-      UNK_0xab83(); // UNK_0xab83
+      WAB83(); // WAB83
       Push(Pop() * 2); //  2*
       Push(Pop() + Pop()); // +
       GetEXECUTE(); // @EXECUTE
       Push(!(Pop()==0?1:0)); //  0= NOT
       Push(Read16(regsp)); // DUP
-      Push(Read16(cc_UNK_0xab7f)); // UNK_0xab7f
+      Push(Read16(cc_WAB7F)); // WAB7F
       Push(i); // I
-      UNK_0xab83(); // UNK_0xab83
+      WAB83(); // WAB83
       Push(Pop() + Pop()); // +
       C_ex__2(); // C!_2
     }
@@ -305,7 +305,7 @@ void UNK_0xac0d() // UNK_0xac0d
 void EXPERT() // EXPERT
 {
   unsigned short int a, i, imax;
-  Push(pp_UNK_0xab57); // UNK_0xab57
+  Push(pp_WAB57); // WAB57
   _099(); // 099
   Push(Read16(pp_TRACE)); // TRACE @
   if (Pop() != 0)
@@ -320,17 +320,17 @@ void EXPERT() // EXPERT
   Push(0);
   C_co_(); // C,
   Push(a); // R>
-  UNK_0xaba5(); // UNK_0xaba5
-  Push((Read16(Read16(cc_UNK_0xab6b))&0xFF) * 2 + (Read16(Read16(cc_UNK_0xab6f))&0xFF) * 3); // UNK_0xab6b C@ 2* UNK_0xab6f C@ 3 * +
+  WABA5(); // WABA5
+  Push((Read16(Read16(cc_WAB6B))&0xFF) * 2 + (Read16(Read16(cc_WAB6F))&0xFF) * 3); // WAB6B C@ 2* WAB6F C@ 3 * +
   ALLOT(); // ALLOT
   CODE(); // (;CODE) inlined assembler code
 // 0xaccc: call   1649
   Push(Read16(regsp)); // DUP
-  UNK_0xaba5(); // UNK_0xaba5
+  WABA5(); // WABA5
   _gt_V(); // >V
-  Push(Read16(cc_UNK_0xab77)); // UNK_0xab77
+  Push(Read16(cc_WAB77)); // WAB77
   Push(Read16(regsp)); // DUP
-  Push(Pop() + (Read16(Read16(cc_UNK_0xab73))&0xFF) * 2); //  UNK_0xab73 C@ 2* +
+  Push(Pop() + (Read16(Read16(cc_WAB73))&0xFF) * 2); //  WAB73 C@ 2* +
   SWAP(); // SWAP
 
   i = Pop();
@@ -338,19 +338,19 @@ void EXPERT() // EXPERT
   do // (DO)
   {
     Push(Read16(i)); // I @
-    UNK_0xac0d(); // UNK_0xac0d
+    WAC0D(); // WAC0D
     if (Pop() != 0)
     {
       V_gt_(); // V>
       Push(Read16(regsp)); // DUP
-      UNK_0xaba5(); // UNK_0xaba5
+      WABA5(); // WABA5
       Push(!Pop()); //  NOT
       _gt_V(); // >V
       imax = i; // LEAVE
       Push(Read16(pp_SMART)); // SMART @
       if (Pop() != 0)
       {
-        Push(((i - Read16(cc_UNK_0xab77) >> 1) >> 1) * 2 + Read16(cc_UNK_0xab77)); // I UNK_0xab77 - 2/ 2/ 2* UNK_0xab77 +
+        Push(((i - Read16(cc_WAB77) >> 1) >> 1) * 2 + Read16(cc_WAB77)); // I WAB77 - 2/ 2/ 2* WAB77 +
         Push(Read16(regsp)); // DUP
         Push(Read16(Pop())); //  @
         Push(Read16(i)); // I @
@@ -381,22 +381,22 @@ void _dash__dash__gt_() // -->
 
 
 // ================================================
-// 0xad3d: WORD 'UNK_0xad3f' codep=0x224c parp=0xad3f params=1 returns=1
+// 0xad3d: WORD 'WAD3F' codep=0x224c parp=0xad3f params=1 returns=1
 // ================================================
 
-void UNK_0xad3f() // UNK_0xad3f
+void WAD3F() // WAD3F
 {
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(-1);
-  Push(Read16(pp_UNK_0xab57) * 2); // UNK_0xab57 @ 2*
+  Push(Read16(pp_WAB57) * 2); // WAB57 @ 2*
   Push(0);
 
   i = Pop();
   imax = Pop();
   do // (DO)
   {
-    Push(Read16(Read16(cc_UNK_0xab7b) + i)==a?1:0); // UNK_0xab7b I + @ J =
+    Push(Read16(Read16(cc_WAB7B) + i)==a?1:0); // WAB7B I + @ J =
     if (Pop() != 0)
     {
       Pop(); // DROP
@@ -413,39 +413,39 @@ void UNK_0xad3f() // UNK_0xad3f
 
 
 // ================================================
-// 0xad71: WORD 'UNK_0xad73' codep=0x224c parp=0xad73
+// 0xad71: WORD 'WAD73' codep=0x224c parp=0xad73
 // ================================================
 
-void UNK_0xad73() // UNK_0xad73
+void WAD73() // WAD73
 {
   unsigned short int a;
   _dash__dash__gt_(); // -->
   a = Pop(); // >R
   Push(a); // I
-  Push(0xad39); // probable '-->'
+  Push(0xad39); // '-->'
   Push((Pop()==Pop())?1:0); // =
   Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
     Push(a); // I
-    UNK_0xad3f(); // UNK_0xad3f
+    WAD3F(); // WAD3F
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
     if (Pop() != 0)
     {
       Pop(); // DROP
-      Push(Read16(pp_UNK_0xab57)); // UNK_0xab57 @
+      Push(Read16(pp_WAB57)); // WAB57 @
       Push(a); // I
       OVER(); // OVER
-      Push(Pop() * 2 + Read16(cc_UNK_0xab7b)); //  2* UNK_0xab7b +
+      Push(Pop() * 2 + Read16(cc_WAB7B)); //  2* WAB7B +
       Store_2(); // !_2
-      Push(Read16(Read16(cc_UNK_0xab6f))&0xFF); // UNK_0xab6f C@
-      Push(Read16(pp_UNK_0xab57)); // UNK_0xab57 @
+      Push(Read16(Read16(cc_WAB6F))&0xFF); // WAB6F C@
+      Push(Read16(pp_WAB57)); // WAB57 @
       _gt_(); // >
       Push(!Pop()); //  NOT
       ABORT("Condition overflow", 18);// (ABORT")
       Push(1);
-      Push(pp_UNK_0xab57); // UNK_0xab57
+      Push(pp_WAB57); // WAB57
       _plus__ex__2(); // +!_2
     }
   } else
@@ -463,19 +463,19 @@ void UNK_0xad73() // UNK_0xad73
 
 void RULE_c_() // RULE:
 {
-  Push(Read16(Read16(cc_UNK_0xab6b))&0xFF); // UNK_0xab6b C@
-  Push(Read16(Read16(cc_UNK_0xab73))&0xFF); // UNK_0xab73 C@
+  Push(Read16(Read16(cc_WAB6B))&0xFF); // WAB6B C@
+  Push(Read16(Read16(cc_WAB73))&0xFF); // WAB73 C@
   _gt_(); // >
   Push(!Pop()); //  NOT
   ABORT("Rule overflow", 13);// (ABORT")
   HERE(); // HERE
   Push(0);
   C_co_(); // C,
-  Push(0x3a48); // probable 'NOP'
+  Push(0x3a48); // 'NOP'
   _co_(); // ,
   do
   {
-    UNK_0xad73(); // UNK_0xad73
+    WAD73(); // WAD73
     Push(Read16(regsp)); // DUP
     _0_st_(); // 0<
     Push(!Pop()); //  NOT
@@ -483,10 +483,10 @@ void RULE_c_() // RULE:
     {
       _i__2(); // '_2
       Push(Read16(regsp)); // DUP
-      Push(0x51c5); // probable 'TRUE'
+      Push(0x51c5); // 'TRUE'
       Push((Pop()==Pop())?1:0); // =
       OVER(); // OVER
-      Push(0x51d1); // probable 'FALSE'
+      Push(0x51d1); // 'FALSE'
       Push((Pop()==Pop())?1:0); // =
       Push(Pop() | Pop()); // OR
       Push(!Pop()); //  NOT
@@ -505,10 +505,10 @@ void RULE_c_() // RULE:
   OVER(); // OVER
   Push(Pop() + 1); //  1+
   Store_2(); // !_2
-  Push((Read16(Read16(cc_UNK_0xab73))&0xFF) * 2 + Read16(cc_UNK_0xab77)); // UNK_0xab73 C@ 2* UNK_0xab77 +
+  Push((Read16(Read16(cc_WAB73))&0xFF) * 2 + Read16(cc_WAB77)); // WAB73 C@ 2* WAB77 +
   Store_2(); // !_2
   Push(1);
-  Push(Read16(cc_UNK_0xab73)); // UNK_0xab73
+  Push(Read16(cc_WAB73)); // WAB73
   C_plus__ex_(); // C+!
 }
 

@@ -132,7 +132,7 @@ const unsigned short int cc__2LEFT = 0xefa0; // 2LEFT
 
 void TRIM() // TRIM
 {
-  Push(0xbdba); // probable 'OVTRIMS'
+  Push(0xbdba); // 'OVTRIMS'
   MODULE(); // MODULE
 }
 

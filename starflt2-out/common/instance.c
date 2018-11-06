@@ -74,20 +74,20 @@
 // ============= EXTERN ============
 // =================================
 extern const unsigned short int cc_IHEADLE; // IHEADLE
-extern const unsigned short int cc_UNK_0x50fa; // UNK_0x50fa
-extern const unsigned short int cc_UNK_0x50fe; // UNK_0x50fe
+extern const unsigned short int cc_W50FA; // W50FA
+extern const unsigned short int cc_W50FE; // W50FE
 extern const unsigned short int pp_CXSP; // CXSP
-extern const unsigned short int pp_UNK_0x5638; // UNK_0x5638
+extern const unsigned short int pp_W5638; // W5638
 extern const unsigned short int pp__i_THROW_dash_; // 'THROW-
 extern const unsigned short int pp__i_MAP; // 'MAP
 extern const unsigned short int pp__i_TRAVER; // 'TRAVER
 extern const unsigned short int pp__i__ask_EXIT; // '?EXIT
-extern const unsigned short int pp_UNK_0x56b2; // UNK_0x56b2
-extern const unsigned short int pp_UNK_0x56e0; // UNK_0x56e0
-extern const unsigned short int pp_UNK_0x5efa; // UNK_0x5efa
-extern const unsigned short int pp_UNK_0x5fe6; // UNK_0x5fe6
-extern const unsigned short int pp_UNK_0x63a2; // UNK_0x63a2
-extern const unsigned short int pp_UNK_0x651b; // UNK_0x651b
+extern const unsigned short int pp_W56B2; // W56B2
+extern const unsigned short int pp_W56E0; // W56E0
+extern const unsigned short int pp_W5EFA; // W5EFA
+extern const unsigned short int pp_W5FE6; // W5FE6
+extern const unsigned short int pp_W63A2; // W63A2
+extern const unsigned short int pp_W651B; // W651B
 extern const unsigned short int pp_IBFR; // IBFR
 void M_plus_(); // M+
 void D_st_(); // D<
@@ -103,14 +103,14 @@ void Store_2(); // !_2
 void _1_dot_5_ex__2(); // 1.5!_2
 void FILL_2(); // FILL_2
 void VA_gt_BUF(); // VA>BUF
-void UNK_0x74d0(); // UNK_0x74d0
-void UNK_0x74d8(); // UNK_0x74d8
-void UNK_0x74e0(); // UNK_0x74e0
-void UNK_0x74e8(); // UNK_0x74e8
+void W74D0(); // W74D0
+void W74D8(); // W74D8
+void W74E0(); // W74E0
+void W74E8(); // W74E8
 void StoreINST_dash_S(); // !INST-S
-void UNK_0x7502(); // UNK_0x7502
-void UNK_0x750a(); // UNK_0x750a
-void UNK_0x7512(); // UNK_0x7512
+void W7502(); // W7502
+void W750A(); // W750A
+void W7512(); // W7512
 void GetINST_dash_C(); // @INST-C
 void GetINST_dash_S(); // @INST-S
 void CDROP(); // CDROP
@@ -119,10 +119,10 @@ void COVER(); // COVER
 void IsNULL(); // ?NULL
 void Is_dash_NULL(); // ?-NULL
 void IsCHILD(); // ?CHILD
-void UNK_0x7635(); // UNK_0x7635
-void UNK_0x7702(); // UNK_0x7702
-void UNK_0x77ba(); // UNK_0x77ba
-void UNK_0x77d6(); // UNK_0x77d6
+void W7635(); // W7635
+void W7702(); // W7702
+void W77BA(); // W77BA
+void W77D6(); // W77D6
 void SET_dash_CUR(); // SET-CUR
 void _2DUP(); // 2DUP
 void _2SWAP(); // 2SWAP
@@ -161,19 +161,19 @@ void VI(); // VI
 
 void ICLOSE() // ICLOSE
 {
-  UNK_0x77ba(); // UNK_0x77ba
+  W77BA(); // W77BA
   CDROP(); // CDROP
   COVER(); // COVER
   Is_dash_NULL(); // ?-NULL
   if (Pop() != 0)
   {
     SET_dash_CUR(); // SET-CUR
-    UNK_0x7512(); // UNK_0x7512
+    W7512(); // W7512
   } else
   {
     Push2Words("NULL");
   }
-  Push(pp_UNK_0x63a2); // UNK_0x63a2
+  Push(pp_W63A2); // W63A2
   _st_1_dot_5_ex__gt_(); // <1.5!>
   CDROP(); // CDROP
   SET_dash_CUR(); // SET-CUR
@@ -228,9 +228,9 @@ void Get_gt_C_plus_S() // @>C+S
 
 void IOPEN() // IOPEN
 {
-  UNK_0x7512(); // UNK_0x7512
+  W7512(); // W7512
   _2DUP(); // 2DUP
-  Push(pp_UNK_0x63a2); // UNK_0x63a2
+  Push(pp_W63A2); // W63A2
   _st_1_dot_5_ex__gt_(); // <1.5!>
   _gt_C_plus_S(); // >C+S
 }
@@ -242,11 +242,11 @@ void IOPEN() // IOPEN
 
 void CCLR() // CCLR
 {
-  UNK_0x77ba(); // UNK_0x77ba
-  Push(Read16(cc_UNK_0x50fa)); // UNK_0x50fa
+  W77BA(); // W77BA
+  Push(Read16(cc_W50FA)); // W50FA
   Push(pp_CXSP); // CXSP
   _st__ex__gt_(); // <!>
-  Push(pp_UNK_0x651b); // UNK_0x651b
+  Push(pp_W651B); // W651B
   Push(0x0078);
   Push(0);
   FILL_2(); // FILL_2
@@ -254,12 +254,12 @@ void CCLR() // CCLR
 
 
 // ================================================
-// 0x7a6a: WORD 'UNK_0x7a6c' codep=0x224c parp=0x7a6c params=0 returns=2
+// 0x7a6a: WORD 'W7A6C' codep=0x224c parp=0x7a6c params=0 returns=2
 // ================================================
 
-void UNK_0x7a6c() // UNK_0x7a6c
+void W7A6C() // W7A6C
 {
-  Push(pp_UNK_0x63a2); // UNK_0x63a2
+  Push(pp_W63A2); // W63A2
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -270,8 +270,8 @@ void UNK_0x7a6c() // UNK_0x7a6c
 
 void IsLAST() // ?LAST
 {
-  UNK_0x7502(); // UNK_0x7502
-  UNK_0x7a6c(); // UNK_0x7a6c
+  W7502(); // W7502
+  W7A6C(); // W7A6C
   D_eq_(); // D=
 }
 
@@ -283,7 +283,7 @@ void IsLAST() // ?LAST
 void IsFIRST() // ?FIRST
 {
   CI(); // CI
-  UNK_0x7a6c(); // UNK_0x7a6c
+  W7A6C(); // W7A6C
   D_eq_(); // D=
 }
 
@@ -309,7 +309,7 @@ void INEXT() // INEXT
 {
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
-  UNK_0x7502(); // UNK_0x7502
+  W7502(); // W7502
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
 }
@@ -323,7 +323,7 @@ void IPREV() // IPREV
 {
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
-  UNK_0x750a(); // UNK_0x750a
+  W750A(); // W750A
   CDROP(); // CDROP
   _gt_C_plus_S(); // >C+S
 }
@@ -336,7 +336,7 @@ void IPREV() // IPREV
 void IFIRST() // IFIRST
 {
   CDROP(); // CDROP
-  UNK_0x7a6c(); // UNK_0x7a6c
+  W7A6C(); // W7A6C
   _gt_C_plus_S(); // >C+S
 }
 
@@ -358,8 +358,8 @@ void ILAST() // ILAST
 
 void VCLR() // VCLR
 {
-  Push(Read16(cc_UNK_0x50fe)); // UNK_0x50fe
-  Push(pp_UNK_0x5638); // UNK_0x5638
+  Push(Read16(cc_W50FE)); // W50FE
+  Push(pp_W5638); // W5638
   _st__ex__gt_(); // <!>
 }
 
@@ -367,9 +367,9 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b0d: WORD '>V' codep=0x7b14 parp=0x7b14 params=1 returns=0
 // ================================================
-// 0x7b14: mov    bx,[5638] // UNK_0x5638
+// 0x7b14: mov    bx,[5638] // W5638
 // 0x7b18: pop    word ptr [bx]
-// 0x7b1a: sub    word ptr [5638],02 // UNK_0x5638
+// 0x7b1a: sub    word ptr [5638],02 // W5638
 // 0x7b1f: lodsw
 // 0x7b20: mov    bx,ax
 // 0x7b22: jmp    word ptr [bx]
@@ -377,8 +377,8 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b24: WORD 'V>' codep=0x7b2b parp=0x7b2b params=0 returns=1
 // ================================================
-// 0x7b2b: add    word ptr [5638],02 // UNK_0x5638
-// 0x7b30: mov    bx,[5638] // UNK_0x5638
+// 0x7b2b: add    word ptr [5638],02 // W5638
+// 0x7b30: mov    bx,[5638] // W5638
 // 0x7b34: push   word ptr [bx]
 // 0x7b36: lodsw
 // 0x7b37: mov    bx,ax
@@ -387,22 +387,22 @@ void VCLR() // VCLR
 // ================================================
 // 0x7b3b: WORD 'VI' codep=0x7b42 parp=0x7b42 params=0 returns=1
 // ================================================
-// 0x7b42: mov    bx,[5638] // UNK_0x5638
+// 0x7b42: mov    bx,[5638] // W5638
 // 0x7b46: push   word ptr [bx+02]
 // 0x7b49: lodsw
 // 0x7b4a: mov    bx,ax
 // 0x7b4c: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b4e: WORD 'UNK_0x7b50' codep=0x224c parp=0x7b50 params=0 returns=0
+// 0x7b4e: WORD 'W7B50' codep=0x224c parp=0x7b50 params=0 returns=0
 // ================================================
 // orphan
 
-void UNK_0x7b50() // UNK_0x7b50
+void W7B50() // W7B50
 {
   unsigned short int i, imax;
-  UNK_0x77ba(); // UNK_0x77ba
-  Push(Read16(pp_UNK_0x56e0)); // UNK_0x56e0 @
+  W77BA(); // W77BA
+  Push(Read16(pp_W56E0)); // W56E0 @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
   Push(0);
@@ -412,8 +412,8 @@ void UNK_0x7b50() // UNK_0x7b50
   do // (DO)
   {
     Push(i * 2); // I 2*
-    UNK_0x7702(); // UNK_0x7702
-    UNK_0x77d6(); // UNK_0x77d6
+    W7702(); // W7702
+    W77D6(); // W77D6
     i++;
   } while(i<imax); // (LOOP)
 
@@ -464,29 +464,29 @@ void IINSERT() // IINSERT
   IsCHILD(); // ?CHILD
   if (Pop() != 0)
   {
-    UNK_0x7512(); // UNK_0x7512
+    W7512(); // W7512
     _2SWAP(); // 2SWAP
-    UNK_0x74e0(); // UNK_0x74e0
+    W74E0(); // W74E0
     IOPEN(); // IOPEN
-    UNK_0x74d0(); // UNK_0x74d0
+    W74D0(); // W74D0
     CI(); // CI
     INEXT(); // INEXT
-    UNK_0x750a(); // UNK_0x750a
+    W750A(); // W750A
     _2SWAP(); // 2SWAP
-    UNK_0x74d8(); // UNK_0x74d8
+    W74D8(); // W74D8
     IPREV(); // IPREV
-    UNK_0x74d8(); // UNK_0x74d8
+    W74D8(); // W74D8
     CI(); // CI
     IPREV(); // IPREV
-    UNK_0x74d0(); // UNK_0x74d0
+    W74D0(); // W74D0
   } else
   {
-    UNK_0x74e0(); // UNK_0x74e0
+    W74E0(); // W74E0
     IOPEN(); // IOPEN
     CI(); // CI
-    UNK_0x74d0(); // UNK_0x74d0
+    W74D0(); // W74D0
     CI(); // CI
-    UNK_0x74d8(); // UNK_0x74d8
+    W74D8(); // W74D8
   }
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
@@ -500,16 +500,16 @@ void IINSERT() // IINSERT
 void _st_INSERT() // <INSERT
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0x750a(); // UNK_0x750a
+  W750A(); // W750A
   _2SWAP(); // 2SWAP
-  UNK_0x74d8(); // UNK_0x74d8
+  W74D8(); // W74D8
   CI(); // CI
   IPREV(); // IPREV
-  UNK_0x74d0(); // UNK_0x74d0
-  UNK_0x74d8(); // UNK_0x74d8
+  W74D0(); // W74D0
+  W74D8(); // W74D8
   CI(); // CI
   IPREV(); // IPREV
-  UNK_0x74d0(); // UNK_0x74d0
+  W74D0(); // W74D0
   ICLOSE(); // ICLOSE
 }
 
@@ -521,7 +521,7 @@ void _st_INSERT() // <INSERT
 void _gt_INSERT() // >INSERT
 {
   _gt_C_plus_S(); // >C+S
-  UNK_0x7502(); // UNK_0x7502
+  W7502(); // W7502
   ICLOSE(); // ICLOSE
   _st_INSERT(); // <INSERT
 }
@@ -534,44 +534,44 @@ void _gt_INSERT() // >INSERT
 void IEXTRAC() // IEXTRAC
 {
   CI(); // CI
-  UNK_0x7635(); // UNK_0x7635
+  W7635(); // W7635
   if (Pop() != 0)
   {
     ICLOSE(); // ICLOSE
     Push2Words("NULL");
-    UNK_0x74e0(); // UNK_0x74e0
+    W74E0(); // W74E0
     IOPEN(); // IOPEN
     return;
   }
   IsFIRST(); // ?FIRST
   if (Pop() != 0)
   {
-    UNK_0x750a(); // UNK_0x750a
-    UNK_0x7502(); // UNK_0x7502
+    W750A(); // W750A
+    W7502(); // W7502
     ICLOSE(); // ICLOSE
-    UNK_0x74e0(); // UNK_0x74e0
+    W74E0(); // W74E0
     IOPEN(); // IOPEN
-    UNK_0x74d8(); // UNK_0x74d8
+    W74D8(); // W74D8
     CI(); // CI
     IPREV(); // IPREV
-    UNK_0x74d0(); // UNK_0x74d0
+    W74D0(); // W74D0
     INEXT(); // INEXT
     return;
   }
-  UNK_0x7502(); // UNK_0x7502
+  W7502(); // W7502
   IPREV(); // IPREV
-  UNK_0x74d0(); // UNK_0x74d0
+  W74D0(); // W74D0
   CI(); // CI
   INEXT(); // INEXT
-  UNK_0x74d8(); // UNK_0x74d8
+  W74D8(); // W74D8
 }
 
 
 // ================================================
-// 0x7c6f: WORD 'UNK_0x7c71' codep=0x224c parp=0x7c71 params=0 returns=2
+// 0x7c6f: WORD 'W7C71' codep=0x224c parp=0x7c71 params=0 returns=2
 // ================================================
 
-void UNK_0x7c71() // UNK_0x7c71
+void W7C71() // W7C71
 {
   Push2Words("VANEWSP");
   VA_gt_BUF(); // VA>BUF
@@ -584,7 +584,7 @@ void UNK_0x7c71() // UNK_0x7c71
 
 void GetNEWSPA() // @NEWSPA
 {
-  UNK_0x7c71(); // UNK_0x7c71
+  W7C71(); // W7C71
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -595,16 +595,16 @@ void GetNEWSPA() // @NEWSPA
 
 void StoreNEWSPA() // !NEWSPA
 {
-  UNK_0x7c71(); // UNK_0x7c71
+  W7C71(); // W7C71
   _1_dot_5_ex__2(); // 1.5!_2
 }
 
 
 // ================================================
-// 0x7c9b: WORD 'UNK_0x7c9d' codep=0x224c parp=0x7c9d params=0 returns=1
+// 0x7c9b: WORD 'W7C9D' codep=0x224c parp=0x7c9d params=0 returns=1
 // ================================================
 
-void UNK_0x7c9d() // UNK_0x7c9d
+void W7C9D() // W7C9D
 {
   GetNEWSPA(); // @NEWSPA
   ROT(); // ROT
@@ -627,10 +627,10 @@ void MAXSPAC() // MAXSPAC
 
 
 // ================================================
-// 0x7cc1: WORD 'UNK_0x7cc3' codep=0x224c parp=0x7cc3 params=0 returns=2
+// 0x7cc1: WORD 'W7CC3' codep=0x224c parp=0x7cc3 params=0 returns=2
 // ================================================
 
-void UNK_0x7cc3() // UNK_0x7cc3
+void W7CC3() // W7CC3
 {
   GetNEWSPA(); // @NEWSPA
   VA_gt_BLK(); // VA>BLK
@@ -720,10 +720,10 @@ void IFLD_ex_() // IFLD!
 
 
 // ================================================
-// 0x7d39: WORD 'UNK_0x7d3b' codep=0x224c parp=0x7d3b
+// 0x7d39: WORD 'W7D3B' codep=0x224c parp=0x7d3b
 // ================================================
 
-void UNK_0x7d3b() // UNK_0x7d3b
+void W7D3B() // W7D3B
 {
   OVER(); // OVER
   IFLD_at_(); // IFLD@
@@ -757,21 +757,21 @@ void IsCLASS_slash_() // ?CLASS/
 
 
 // ================================================
-// 0x7d71: WORD 'UNK_0x7d73' codep=0x224c parp=0x7d73
+// 0x7d71: WORD 'W7D73' codep=0x224c parp=0x7d73
 // ================================================
 
-void UNK_0x7d73() // UNK_0x7d73
+void W7D73() // W7D73
 {
-  Push(pp_UNK_0x56b2); // UNK_0x56b2
+  Push(pp_W56B2); // W56B2
   GetEXECUTE(); // @EXECUTE
 }
 
 
 // ================================================
-// 0x7d79: WORD 'UNK_0x7d7b' codep=0x224c parp=0x7d7b
+// 0x7d79: WORD 'W7D7B' codep=0x224c parp=0x7d7b
 // ================================================
 
-void UNK_0x7d7b() // UNK_0x7d7b
+void W7D7B() // W7D7B
 {
   Push(pp__i__ask_EXIT); // '?EXIT
   GetEXECUTE(); // @EXECUTE
@@ -779,10 +779,10 @@ void UNK_0x7d7b() // UNK_0x7d7b
 
 
 // ================================================
-// 0x7d81: WORD 'UNK_0x7d83' codep=0x224c parp=0x7d83
+// 0x7d81: WORD 'W7D83' codep=0x224c parp=0x7d83
 // ================================================
 
-void UNK_0x7d83() // UNK_0x7d83
+void W7D83() // W7D83
 {
   Push(pp__i_TRAVER); // 'TRAVER
   GetEXECUTE(); // @EXECUTE
@@ -801,10 +801,10 @@ void MAP() // MAP
 
 
 // ================================================
-// 0x7d97: WORD 'UNK_0x7d99' codep=0x224c parp=0x7d99 params=2 returns=0
+// 0x7d97: WORD 'W7D99' codep=0x224c parp=0x7d99 params=2 returns=0
 // ================================================
 
-void UNK_0x7d99() // UNK_0x7d99
+void W7D99() // W7D99
 {
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())); //  @
@@ -814,10 +814,10 @@ void UNK_0x7d99() // UNK_0x7d99
 
 
 // ================================================
-// 0x7da3: WORD 'UNK_0x7da5' codep=0x224c parp=0x7da5 params=1 returns=0
+// 0x7da3: WORD 'W7DA5' codep=0x224c parp=0x7da5 params=1 returns=0
 // ================================================
 
-void UNK_0x7da5() // UNK_0x7da5
+void W7DA5() // W7DA5
 {
   V_gt_(); // V>
   SWAP(); // SWAP
@@ -835,19 +835,19 @@ void SELECT() // SELECT
   _gt_V(); // >V
   while(1)
   {
-    UNK_0x7d73(); // UNK_0x7d73
-    UNK_0x7d7b(); // UNK_0x7d7b
+    W7D73(); // W7D73
+    W7D7B(); // W7D7B
     Push(Pop() | Pop()); // OR
     Push(!Pop()); //  NOT
     if (Pop() == 0) break;
 
-    UNK_0x7d83(); // UNK_0x7d83
+    W7D83(); // W7D83
     V_gt_(); // V>
     Pop(); // DROP
     Push(1);
     _gt_V(); // >V
   }
-  UNK_0x7d7b(); // UNK_0x7d7b
+  W7D7B(); // W7D7B
   Push(!Pop()); //  NOT
   V_gt_(); // V>
   Pop(); // DROP
@@ -875,21 +875,21 @@ void Is_gt_FIRST() // ?>FIRST
 void SELECT_dash_() // SELECT-
 {
   unsigned short int a;
-  Push(pp_UNK_0x56b2); // UNK_0x56b2
-  UNK_0x7d99(); // UNK_0x7d99
-  Push(0x7dec); // probable '?>FIRST'
+  Push(pp_W56B2); // W56B2
+  W7D99(); // W7D99
+  Push(0x7dec); // '?>FIRST'
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d99(); // UNK_0x7d99
-  Push(0x7ab3); // probable 'INEXT'
+  W7D99(); // W7D99
+  Push(0x7ab3); // 'INEXT'
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d99(); // UNK_0x7d99
+  W7D99(); // W7D99
   SELECT(); // SELECT
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7da5(); // UNK_0x7da5
-  Push(pp_UNK_0x56b2); // UNK_0x56b2
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
+  Push(pp_W56B2); // W56B2
+  W7DA5(); // W7DA5
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
@@ -897,11 +897,11 @@ void SELECT_dash_() // SELECT-
 
 
 // ================================================
-// 0x7e2e: WORD 'UNK_0x7e30' codep=0x224c parp=0x7e30
+// 0x7e2e: WORD 'W7E30' codep=0x224c parp=0x7e30
 // ================================================
 // orphan
 
-void UNK_0x7e30() // UNK_0x7e30
+void W7E30() // W7E30
 {
   unsigned short int a;
   SELECT_dash_(); // SELECT-
@@ -912,12 +912,12 @@ void UNK_0x7e30() // UNK_0x7e30
 
 
 // ================================================
-// 0x7e3a: WORD 'UNK_0x7e3c' codep=0x224c parp=0x7e3c
+// 0x7e3a: WORD 'W7E3C' codep=0x224c parp=0x7e3c
 // ================================================
 
-void UNK_0x7e3c() // UNK_0x7e3c
+void W7E3C() // W7E3C
 {
-  Push(0x7d3b); // probable 'UNK_0x7d3b'
+  Push(0x7d3b); // 'W7D3B'
   SELECT_dash_(); // SELECT-
 }
 
@@ -928,26 +928,26 @@ void UNK_0x7e3c() // UNK_0x7e3c
 
 void IFIND() // IFIND
 {
-  Push(0x7d51); // probable '?CLASS/'
+  Push(0x7d51); // '?CLASS/'
   SELECT_dash_(); // SELECT-
 }
 
 
 // ================================================
-// 0x7e56: WORD 'UNK_0x7e58' codep=0x224c parp=0x7e58 params=0 returns=0
+// 0x7e56: WORD 'W7E58' codep=0x224c parp=0x7e58 params=0 returns=0
 // ================================================
 
-void UNK_0x7e58() // UNK_0x7e58
+void W7E58() // W7E58
 {
   IsCHILD(); // ?CHILD
   if (Pop() == 0) return;
   IOPEN(); // IOPEN
   do
   {
-    UNK_0x7e58(); // UNK_0x7e58
+    W7E58(); // W7E58
     MAP(); // MAP
-    UNK_0x7d83(); // UNK_0x7d83
-    UNK_0x7d7b(); // UNK_0x7d7b
+    W7D83(); // W7D83
+    W7D7B(); // W7D7B
   } while(Pop() == 0);
   ICLOSE(); // ICLOSE
 }
@@ -966,8 +966,8 @@ void MAP_gt_LEA() // MAP>LEA
   do
   {
     MAP_gt_LEA(); // MAP>LEA
-    UNK_0x7d83(); // UNK_0x7d83
-    UNK_0x7d7b(); // UNK_0x7d7b
+    W7D83(); // W7D83
+    W7D7B(); // W7D7B
   } while(Pop() == 0);
   ICLOSE(); // ICLOSE
 }
@@ -990,10 +990,10 @@ void MAKE1ST() // MAKE1ST
 
 
 // ================================================
-// 0x7eb2: WORD 'UNK_0x7eb4' codep=0x224c parp=0x7eb4 params=3 returns=0
+// 0x7eb2: WORD 'W7EB4' codep=0x224c parp=0x7eb4 params=3 returns=0
 // ================================================
 
-void UNK_0x7eb4() // UNK_0x7eb4
+void W7EB4() // W7EB4
 {
   Push2Words("INACTIV");
   _gt_C_plus_S(); // >C+S
@@ -1001,9 +1001,9 @@ void UNK_0x7eb4() // UNK_0x7eb4
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x74a0); // probable 'INST-SP'
+    Push(0x74a0); // 'INST-SP'
     SWAP(); // SWAP
-    UNK_0x7e3c(); // UNK_0x7e3c
+    W7E3C(); // W7E3C
     if (Pop() != 0)
     {
       MAKE1ST(); // MAKE1ST
@@ -1035,15 +1035,15 @@ void _gt_INACTI() // >INACTI
   Push(Read16(regsp)); // DUP
   StoreINST_dash_S(); // !INST-S
   CDROP(); // CDROP
-  UNK_0x7eb4(); // UNK_0x7eb4
+  W7EB4(); // W7EB4
 }
 
 
 // ================================================
-// 0x7f0c: WORD 'UNK_0x7f0e' codep=0x224c parp=0x7f0e params=0 returns=0
+// 0x7f0c: WORD 'W7F0E' codep=0x224c parp=0x7f0e params=0 returns=0
 // ================================================
 
-void UNK_0x7f0e() // UNK_0x7f0e
+void W7F0E() // W7F0E
 {
   IEXTRAC(); // IEXTRAC
   _gt_INACTI(); // >INACTI
@@ -1056,40 +1056,40 @@ void UNK_0x7f0e() // UNK_0x7f0e
 
 void IDELETE() // IDELETE
 {
-  Push(0x7f0e); // probable 'UNK_0x7f0e'
+  Push(0x7f0e); // 'W7F0E'
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d99(); // UNK_0x7d99
-  Push(0x7609); // probable '?NULL'
+  W7D99(); // W7D99
+  Push(0x7609); // '?NULL'
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d99(); // UNK_0x7d99
-  Push(0x3a48); // probable 'NOP'
+  W7D99(); // W7D99
+  Push(0x3a48); // 'NOP'
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d99(); // UNK_0x7d99
-  UNK_0x7e58(); // UNK_0x7e58
+  W7D99(); // W7D99
+  W7E58(); // W7E58
   MAP(); // MAP
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
 }
 
 
 // ================================================
-// 0x7f4a: WORD 'UNK_0x7f4c' codep=0x224c parp=0x7f4c
+// 0x7f4a: WORD 'W7F4C' codep=0x224c parp=0x7f4c
 // ================================================
 
-void UNK_0x7f4c() // UNK_0x7f4c
+void W7F4C() // W7F4C
 {
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7d99(); // UNK_0x7d99
+  W7D99(); // W7D99
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7d99(); // UNK_0x7d99
+  W7D99(); // W7D99
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7d99(); // UNK_0x7d99
-  Push(pp_UNK_0x56b2); // UNK_0x56b2
-  UNK_0x7d99(); // UNK_0x7d99
+  W7D99(); // W7D99
+  Push(pp_W56B2); // W56B2
+  W7D99(); // W7D99
   IFIRST(); // IFIRST
   do
   {
@@ -1097,21 +1097,21 @@ void UNK_0x7f4c() // UNK_0x7f4c
     if (Pop() != 0)
     {
       MAP(); // MAP
-      UNK_0x7d83(); // UNK_0x7d83
+      W7D83(); // W7D83
       IsFIRST(); // ?FIRST
     } else
     {
       Push(1);
     }
   } while(Pop() == 0);
-  Push(pp_UNK_0x56b2); // UNK_0x56b2
-  UNK_0x7da5(); // UNK_0x7da5
+  Push(pp_W56B2); // W56B2
+  W7DA5(); // W7DA5
   Push(pp__i__ask_EXIT); // '?EXIT
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
   Push(pp__i_TRAVER); // 'TRAVER
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
   Push(pp__i_MAP); // 'MAP
-  UNK_0x7da5(); // UNK_0x7da5
+  W7DA5(); // W7DA5
 }
 
 
@@ -1123,11 +1123,11 @@ void ALL() // ALL
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(0x761a); // probable '?-NULL'
-  Push(0x7dec); // probable '?>FIRST'
-  Push(0x7ab3); // probable 'INEXT'
+  Push(0x761a); // '?-NULL'
+  Push(0x7dec); // '?>FIRST'
+  Push(0x7ab3); // 'INEXT'
   Push(a); // R>
-  UNK_0x7f4c(); // UNK_0x7f4c
+  W7F4C(); // W7F4C
 }
 
 
@@ -1139,18 +1139,18 @@ void EACH() // EACH
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(0x7dec); // probable '?>FIRST'
-  Push(0x7ab3); // probable 'INEXT'
+  Push(0x7dec); // '?>FIRST'
+  Push(0x7ab3); // 'INEXT'
   Push(a); // R>
-  UNK_0x7f4c(); // UNK_0x7f4c
+  W7F4C(); // W7F4C
 }
 
 
 // ================================================
-// 0x7fbb: WORD 'UNK_0x7fbd' codep=0x224c parp=0x7fbd
+// 0x7fbb: WORD 'W7FBD' codep=0x224c parp=0x7fbd
 // ================================================
 
-void UNK_0x7fbd() // UNK_0x7fbd
+void W7FBD() // W7FBD
 {
   Push(pp__i_THROW_dash_); // 'THROW-
   GetEXECUTE(); // @EXECUTE
@@ -1164,19 +1164,19 @@ void UNK_0x7fbd() // UNK_0x7fbd
 void NULLPOI() // NULLPOI
 {
   Push2Words("NULL");
-  UNK_0x74d0(); // UNK_0x74d0
+  W74D0(); // W74D0
   Push2Words("NULL");
-  UNK_0x74d8(); // UNK_0x74d8
+  W74D8(); // W74D8
   Push2Words("NULL");
-  UNK_0x74e0(); // UNK_0x74e0
+  W74E0(); // W74E0
 }
 
 
 // ================================================
-// 0x7fdd: WORD 'UNK_0x7fdf' codep=0x224c parp=0x7fdf params=0 returns=2
+// 0x7fdd: WORD 'W7FDF' codep=0x224c parp=0x7fdf params=0 returns=2
 // ================================================
 
-void UNK_0x7fdf() // UNK_0x7fdf
+void W7FDF() // W7FDF
 {
   IsCHILD(); // ?CHILD
   if (Pop() != 0)
@@ -1191,10 +1191,10 @@ void UNK_0x7fdf() // UNK_0x7fdf
 
 
 // ================================================
-// 0x7ff3: WORD 'UNK_0x7ff5' codep=0x224c parp=0x7ff5 params=0 returns=0
+// 0x7ff3: WORD 'W7FF5' codep=0x224c parp=0x7ff5 params=0 returns=0
 // ================================================
 
-void UNK_0x7ff5() // UNK_0x7ff5
+void W7FF5() // W7FF5
 {
   Push2Words("INACTIV");
   _gt_C_plus_S(); // >C+S
@@ -1202,15 +1202,15 @@ void UNK_0x7ff5() // UNK_0x7ff5
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x74a0); // probable 'INST-SP'
+    Push(0x74a0); // 'INST-SP'
     OVER(); // OVER
-    UNK_0x7e3c(); // UNK_0x7e3c
+    W7E3C(); // W7E3C
     if (Pop() != 0)
     {
-      Push(pp_UNK_0x5fe6); // UNK_0x5fe6
+      Push(pp_W5FE6); // W5FE6
       ON_1(); // ON_1
       MAKE1ST(); // MAKE1ST
-      UNK_0x7fdf(); // UNK_0x7fdf
+      W7FDF(); // W7FDF
     } else
     {
       Push2Words("NULL");
@@ -1226,18 +1226,18 @@ void UNK_0x7ff5() // UNK_0x7ff5
 
 
 // ================================================
-// 0x8029: WORD 'UNK_0x802b' codep=0x224c parp=0x802b params=0 returns=4
+// 0x8029: WORD 'W802B' codep=0x224c parp=0x802b params=0 returns=4
 // ================================================
 
-void UNK_0x802b() // UNK_0x802b
+void W802B() // W802B
 {
   unsigned short int a;
-  UNK_0x7cc3(); // UNK_0x7cc3
+  W7CC3(); // W7CC3
   Push(Read16(cc_IHEADLE)); // IHEADLE
   _gt_(); // >
   if (Pop() != 0)
   {
-    UNK_0x7cc3(); // UNK_0x7cc3
+    W7CC3(); // W7CC3
     Push((Pop() - Read16(cc_IHEADLE)) - 1); //  IHEADLE - 1-
     GetNEWSPA(); // @NEWSPA
     VA_gt_BUF(); // VA>BUF
@@ -1254,8 +1254,8 @@ void UNK_0x802b() // UNK_0x802b
     ICLOSE(); // ICLOSE
     _gt_INACTI(); // >INACTI
   }
-  UNK_0x7cc3(); // UNK_0x7cc3
-  UNK_0x7c9d(); // UNK_0x7c9d
+  W7CC3(); // W7CC3
+  W7C9D(); // W7C9D
 }
 
 
@@ -1279,10 +1279,10 @@ void Is_gt_MAXSP() // ?>MAXSP
 
 
 // ================================================
-// 0x808b: WORD 'UNK_0x808d' codep=0x224c parp=0x808d params=1 returns=9
+// 0x808b: WORD 'W808D' codep=0x224c parp=0x808d params=1 returns=9
 // ================================================
 
-void UNK_0x808d() // UNK_0x808d
+void W808D() // W808D
 {
   Is_gt_MAXSP(); // ?>MAXSP
   if (Pop() != 0)
@@ -1291,19 +1291,19 @@ void UNK_0x808d() // UNK_0x808d
     _gt_C(); // >C
     return;
   }
-  UNK_0x7cc3(); // UNK_0x7cc3
+  W7CC3(); // W7CC3
   OVER(); // OVER
   Push(Pop() + Read16(cc_IHEADLE)); //  IHEADLE +
   _st_(); // <
   if (Pop() != 0)
   {
-    UNK_0x802b(); // UNK_0x802b
+    W802B(); // W802B
   }
   GetNEWSPA(); // @NEWSPA
   _gt_C(); // >C
   Push(Read16(regsp)); // DUP
   Push(Pop() + Read16(cc_IHEADLE)); //  IHEADLE +
-  UNK_0x7c9d(); // UNK_0x7c9d
+  W7C9D(); // W7C9D
   Is_gt_MAXSP(); // ?>MAXSP
   if (Pop() == 0) return;
   CDROP(); // CDROP
@@ -1313,39 +1313,39 @@ void UNK_0x808d() // UNK_0x808d
 
 
 // ================================================
-// 0x80c5: WORD 'UNK_0x80c7' codep=0x224c parp=0x80c7 params=1 returns=9
+// 0x80c5: WORD 'W80C7' codep=0x224c parp=0x80c7 params=1 returns=9
 // ================================================
 
-void UNK_0x80c7() // UNK_0x80c7
+void W80C7() // W80C7
 {
   while(1)
   {
-    Push(pp_UNK_0x5fe6); // UNK_0x5fe6
+    Push(pp_W5FE6); // W5FE6
     OFF_2(); // OFF_2
-    Push(Read16(pp_UNK_0x5efa)); // UNK_0x5efa @
+    Push(Read16(pp_W5EFA)); // W5EFA @
     if (Pop() != 0)
     {
-      UNK_0x7ff5(); // UNK_0x7ff5
+      W7FF5(); // W7FF5
     } else
     {
-      UNK_0x808d(); // UNK_0x808d
+      W808D(); // W808D
     }
     IsNULL(); // ?NULL
     if (Pop() != 0)
     {
       CDROP(); // CDROP
-      Push(Read16(pp_UNK_0x5efa)); // UNK_0x5efa @
+      Push(Read16(pp_W5EFA)); // W5EFA @
       if (Pop() != 0)
       {
-        UNK_0x808d(); // UNK_0x808d
+        W808D(); // W808D
       } else
       {
-        UNK_0x7ff5(); // UNK_0x7ff5
+        W7FF5(); // W7FF5
       }
       IsNULL(); // ?NULL
       if (Pop() != 0)
       {
-        UNK_0x7fbd(); // UNK_0x7fbd
+        W7FBD(); // W7FBD
       }
     }
     IsNULL(); // ?NULL
@@ -1425,14 +1425,14 @@ void SET_ask_REU() // SET?REU
 void VICREAT() // VICREAT
 {
   unsigned short int a;
-  Push(pp_UNK_0x5efa); // UNK_0x5efa
+  Push(pp_W5EFA); // W5EFA
   OFF_2(); // OFF_2
   Push(Read16(regsp)); // DUP
   Push(0x00fe);
   _gt_(); // >
   IsUNRAVEL(); // ?UNRAVEL
   Push(Pop() + 1); //  1+
-  UNK_0x80c7(); // UNK_0x80c7
+  W80C7(); // W80C7
   Push(Pop() - 1); //  1-
   CI(); // CI
   VA_gt_BUF(); // VA>BUF
@@ -1456,16 +1456,16 @@ void VICREAT() // VICREAT
 void ICREATE() // ICREATE
 {
   unsigned short int a;
-  Push(pp_UNK_0x5efa); // UNK_0x5efa
+  Push(pp_W5EFA); // W5EFA
   Push(3);
   PICK(); // PICK
   SET_ask_REU(); // SET?REU case
   OVER(); // OVER
   Func6("FILE-SL");
   Push(Read16(Pop())&0xFF); //  C@
-  UNK_0x80c7(); // UNK_0x80c7
+  W80C7(); // W80C7
   Pop(); // DROP
-  Push(!Read16(pp_UNK_0x5fe6)); // UNK_0x5fe6 @ NOT
+  Push(!Read16(pp_W5FE6)); // W5FE6 @ NOT
   if (Pop() != 0)
   {
     CI(); // CI
@@ -1481,7 +1481,7 @@ void ICREATE() // ICREATE
   {
     SET_dash_CUR(); // SET-CUR
     StoreINST_dash_S(); // !INST-S
-    UNK_0x74e8(); // UNK_0x74e8
+    W74E8(); // W74E8
   }
   NULLPOI(); // NULLPOI
   CI(); // CI

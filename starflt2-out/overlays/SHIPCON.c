@@ -11,17 +11,17 @@
 // =================================
 // =========== VOCABULARY ==========
 // =================================
-//      UNK_0xf376  codep:0x7420 parp:0xf376 size:0x0003 C-string:'UNK_0xf376'
-//      UNK_0xf37b  codep:0x224c parp:0xf37b size:0x0010 C-string:'UNK_0xf37b'
+//           WF376  codep:0x7420 parp:0xf376 size:0x0003 C-string:'WF376'
+//           WF37B  codep:0x224c parp:0xf37b size:0x0010 C-string:'WF37B'
 //          .NOFUN  codep:0x224c parp:0xf396 size:0x0030 C-string:'DrawNOFUN'
-//      UNK_0xf3c8  codep:0x224c parp:0xf3c8 size:0x002c C-string:'UNK_0xf3c8'
-//      UNK_0xf3f6  codep:0x224c parp:0xf3f6 size:0x003e C-string:'UNK_0xf3f6'
-//      UNK_0xf436  codep:0x224c parp:0xf436 size:0x0034 C-string:'UNK_0xf436'
-//      UNK_0xf46c  codep:0x224c parp:0xf46c size:0x000c C-string:'UNK_0xf46c'
-//      UNK_0xf47a  codep:0x224c parp:0xf47a size:0x0024 C-string:'UNK_0xf47a'
-//      UNK_0xf4a0  codep:0x224c parp:0xf4a0 size:0x0010 C-string:'UNK_0xf4a0'
-//      UNK_0xf4b2  codep:0x224c parp:0xf4b2 size:0x000c C-string:'UNK_0xf4b2'
-//      UNK_0xf4c0  codep:0x224c parp:0xf4c0 size:0x000c C-string:'UNK_0xf4c0'
+//           WF3C8  codep:0x224c parp:0xf3c8 size:0x002c C-string:'WF3C8'
+//           WF3F6  codep:0x224c parp:0xf3f6 size:0x003e C-string:'WF3F6'
+//           WF436  codep:0x224c parp:0xf436 size:0x0034 C-string:'WF436'
+//           WF46C  codep:0x224c parp:0xf46c size:0x000c C-string:'WF46C'
+//           WF47A  codep:0x224c parp:0xf47a size:0x0024 C-string:'WF47A'
+//           WF4A0  codep:0x224c parp:0xf4a0 size:0x0010 C-string:'WF4A0'
+//           WF4B2  codep:0x224c parp:0xf4b2 size:0x000c C-string:'WF4B2'
+//           WF4C0  codep:0x224c parp:0xf4c0 size:0x000c C-string:'WF4C0'
 //          TOW-US  codep:0x224c parp:0xf4d7 size:0x0000 C-string:'TOW_dash_US'
 
 // =================================
@@ -89,18 +89,18 @@ void _1_dot_5_at_(); // 1.5@
 // 0xf372: db 0x1f 0x00 '  '
 
 // ================================================
-// 0xf374: WORD 'UNK_0xf376' codep=0x7420 parp=0xf376
+// 0xf374: WORD 'WF376' codep=0x7420 parp=0xf376
 // ================================================
-IFieldType UNK_0xf376 = {STRINGIDX, 0x0b, 0x00};
+IFieldType WF376 = {STRINGIDX, 0x0b, 0x00};
 
 // ================================================
-// 0xf379: WORD 'UNK_0xf37b' codep=0x224c parp=0xf37b params=2 returns=2
+// 0xf379: WORD 'WF37B' codep=0x224c parp=0xf37b params=2 returns=2
 // ================================================
 
-void UNK_0xf37b() // UNK_0xf37b
+void WF37B() // WF37B
 {
   _gt_C_plus_S(); // >C+S
-  Push(0x65e1+UNK_0xf376.offset); // UNK_0xf376<IFIELD>
+  Push(0x65e1+WF376.offset); // WF376<IFIELD>
   Push(pp_LSCAN); // LSCAN
   _do__ex_(); // $!
   Push(pp_LSCAN); // LSCAN
@@ -131,7 +131,7 @@ void DrawNOFUN() // .NOFUN
     }
     CTINIT(); // CTINIT
     Push(0x5242); Push(0x0002);
-    UNK_0xf37b(); // UNK_0xf37b
+    WF37B(); // WF37B
     DrawTTY(); // .TTY
     return;
   }
@@ -140,20 +140,20 @@ void DrawNOFUN() // .NOFUN
 
 
 // ================================================
-// 0xf3c6: WORD 'UNK_0xf3c8' codep=0x224c parp=0xf3c8 params=1 returns=1
+// 0xf3c6: WORD 'WF3C8' codep=0x224c parp=0xf3c8 params=1 returns=1
 // ================================================
 
-void UNK_0xf3c8() // UNK_0xf3c8
+void WF3C8() // WF3C8
 {
   Push(Read16(regsp)); // DUP
   if (Pop() == 0) return;
   Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) return;
   Push(0x5265); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
   Push(0x528c); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
@@ -162,10 +162,10 @@ void UNK_0xf3c8() // UNK_0xf3c8
 
 
 // ================================================
-// 0xf3f4: WORD 'UNK_0xf3f6' codep=0x224c parp=0xf3f6 params=0 returns=1
+// 0xf3f4: WORD 'WF3F6' codep=0x224c parp=0xf3f6 params=0 returns=1
 // ================================================
 
-void UNK_0xf3f6() // UNK_0xf3f6
+void WF3F6() // WF3F6
 {
   unsigned short int a;
   Push(pp__ro_SYSTEM); // (SYSTEM
@@ -200,12 +200,12 @@ void UNK_0xf3f6() // UNK_0xf3f6
 
 
 // ================================================
-// 0xf434: WORD 'UNK_0xf436' codep=0x224c parp=0xf436
+// 0xf434: WORD 'WF436' codep=0x224c parp=0xf436
 // ================================================
 
-void UNK_0xf436() // UNK_0xf436
+void WF436() // WF436
 {
-  UNK_0xf3f6(); // UNK_0xf3f6
+  WF3F6(); // WF3F6
   Push(Read16(pp__dash_END)); // -END @
   Push(5);
   _star__slash_(); // */
@@ -229,28 +229,28 @@ void UNK_0xf436() // UNK_0xf436
 
 
 // ================================================
-// 0xf46a: WORD 'UNK_0xf46c' codep=0x224c parp=0xf46c
+// 0xf46a: WORD 'WF46C' codep=0x224c parp=0xf46c
 // ================================================
 
-void UNK_0xf46c() // UNK_0xf46c
+void WF46C() // WF46C
 {
   Push(0x52a8); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
 
 
 // ================================================
-// 0xf478: WORD 'UNK_0xf47a' codep=0x224c parp=0xf47a params=1 returns=1
+// 0xf478: WORD 'WF47A' codep=0x224c parp=0xf47a params=1 returns=1
 // ================================================
 
-void UNK_0xf47a() // UNK_0xf47a
+void WF47A() // WF47A
 {
   Push(Read16(regsp)); // DUP
   Push(Pop() & (Read16(pp_CONTEXT_3)==5?1:0)); //  CONTEXT_3 @ 5 = AND
   if (Pop() == 0) return;
   Push(0x52d5); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
@@ -259,39 +259,39 @@ void UNK_0xf47a() // UNK_0xf47a
 
 
 // ================================================
-// 0xf49e: WORD 'UNK_0xf4a0' codep=0x224c parp=0xf4a0
+// 0xf49e: WORD 'WF4A0' codep=0x224c parp=0xf4a0
 // ================================================
 
-void UNK_0xf4a0() // UNK_0xf4a0
+void WF4A0() // WF4A0
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
   Push(0x52f5); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
 
 
 // ================================================
-// 0xf4b0: WORD 'UNK_0xf4b2' codep=0x224c parp=0xf4b2
+// 0xf4b0: WORD 'WF4B2' codep=0x224c parp=0xf4b2
 // ================================================
 
-void UNK_0xf4b2() // UNK_0xf4b2
+void WF4B2() // WF4B2
 {
   Push(0x5322); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
 
 
 // ================================================
-// 0xf4be: WORD 'UNK_0xf4c0' codep=0x224c parp=0xf4c0
+// 0xf4be: WORD 'WF4C0' codep=0x224c parp=0xf4c0
 // ================================================
 
-void UNK_0xf4c0() // UNK_0xf4c0
+void WF4C0() // WF4C0
 {
   Push(0x534b); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
 
@@ -303,14 +303,14 @@ void UNK_0xf4c0() // UNK_0xf4c0
 
 void TOW_dash_US() // TOW-US
 {
-  UNK_0xf4a0(); // UNK_0xf4a0
+  WF4A0(); // WF4A0
   CTCR(); // CTCR
   Push(0x5373); Push(0x0002);
-  UNK_0xf37b(); // UNK_0xf37b
+  WF37B(); // WF37B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
-  UNK_0xf47a(); // UNK_0xf47a
-  UNK_0xf3c8(); // UNK_0xf3c8
+  WF47A(); // WF47A
+  WF3C8(); // WF3C8
   if (Pop() != 0)
   {
     Push(Read16(pp_CONTEXT_3)==4?1:0); // CONTEXT_3 @ 4 =
@@ -320,17 +320,17 @@ void TOW_dash_US() // TOW-US
     Push(Pop() & !Read16(cc_IsCALLED)); //  ?CALLED NOT AND
     if (Pop() != 0)
     {
-      UNK_0xf4b2(); // UNK_0xf4b2
+      WF4B2(); // WF4B2
     } else
     {
-      UNK_0xf4c0(); // UNK_0xf4c0
-      UNK_0xf436(); // UNK_0xf436
+      WF4C0(); // WF4C0
+      WF436(); // WF436
       Push(0x09c4);
       MS(); // MS
       Push(Read16(pp__i_YANK)); // 'YANK @
       MODULE(); // MODULE
       CTINIT(); // CTINIT
-      UNK_0xf46c(); // UNK_0xf46c
+      WF46C(); // WF46C
       Push(pp__ro_STOP_dash_C); // (STOP-C
       ON_2(); // ON_2
       Push(pp_IsRECALL); // ?RECALL
@@ -342,7 +342,7 @@ void TOW_dash_US() // TOW-US
   {
     CTERASE(); // CTERASE
     Push(0x538e); Push(0x0002);
-    UNK_0xf37b(); // UNK_0xf37b
+    WF37B(); // WF37B
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   }
   GetColor(BLACK);

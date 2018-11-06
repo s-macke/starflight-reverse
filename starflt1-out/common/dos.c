@@ -275,7 +275,7 @@ void CLRFCB() // CLRFCB
 
 void SYSTEM() // SYSTEM
 {
-  Push(0x2d97); // probable 'FCB'
+  Push(0x2d97); // 'FCB'
   Push(Pop() + 7); //  7 +
   Push(pp__i_FCB); // 'FCB
   Store(); // !
@@ -288,7 +288,7 @@ void SYSTEM() // SYSTEM
 
 void SYSUTIL() // SYSUTIL
 {
-  Push(0x2d97); // probable 'FCB'
+  Push(0x2d97); // 'FCB'
   Push(Pop() + 0x0033); //  0x0033 +
   Push(pp__i_FCB); // 'FCB
   Store(); // !
@@ -522,10 +522,10 @@ void WRITE_dash_RANDOM() // WRITE-RANDOM
 
 
 // ================================================
-// 0x43bf: WORD 'UNK_0x43c1' codep=0x224c parp=0x43c1 params=1 returns=0
+// 0x43bf: WORD 'W43C1' codep=0x224c parp=0x43c1 params=1 returns=0
 // ================================================
 
-void UNK_0x43c1() // UNK_0x43c1
+void W43C1() // W43C1
 {
   ABORT("Bad name", 8);// (ABORT")
 }
@@ -538,7 +538,7 @@ void UNK_0x43c1() // UNK_0x43c1
 void MAKE_st_NAME_gt_() // MAKE<NAME>
 {
   SETFCB(); // SETFCB
-  UNK_0x43c1(); // UNK_0x43c1
+  W43C1(); // W43C1
   MAKE(); // MAKE
   ABORT("Can't create.", 13);// (ABORT")
 }
@@ -551,7 +551,7 @@ void MAKE_st_NAME_gt_() // MAKE<NAME>
 void OPEN_st_NAME_gt_() // OPEN<NAME>
 {
   SETFCB(); // SETFCB
-  UNK_0x43c1(); // UNK_0x43c1
+  W43C1(); // W43C1
   OPEN(); // OPEN
   ABORT("Can't open.", 11);// (ABORT")
 }
@@ -650,10 +650,10 @@ void _4TH_gt_DOS() // 4TH>DOS
 
 
 // ================================================
-// 0x44c0: WORD 'UNK_0x44c2' codep=0x224c parp=0x44c2 params=0 returns=1
+// 0x44c0: WORD 'W44C2' codep=0x224c parp=0x44c2 params=0 returns=1
 // ================================================
 
-void UNK_0x44c2() // UNK_0x44c2
+void W44C2() // W44C2
 {
   unsigned short int a;
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -690,10 +690,10 @@ void UNK_0x44c2() // UNK_0x44c2
 
 
 // ================================================
-// 0x4518: WORD 'UNK_0x451a' codep=0x224c parp=0x451a params=0 returns=2
+// 0x4518: WORD 'W451A' codep=0x224c parp=0x451a params=0 returns=2
 // ================================================
 
-void UNK_0x451a() // UNK_0x451a
+void W451A() // W451A
 {
   Push(0x0011);
   INTERRUPT(); // INTERRUPT
@@ -705,10 +705,10 @@ void UNK_0x451a() // UNK_0x451a
 
 
 // ================================================
-// 0x4534: WORD 'UNK_0x4536' codep=0x224c parp=0x4536 params=1 returns=1
+// 0x4534: WORD 'W4536' codep=0x224c parp=0x4536 params=1 returns=1
 // ================================================
 
-void UNK_0x4536() // UNK_0x4536
+void W4536() // W4536
 {
   Push(Read16(cc_DX)); // DX
   Store(); // !
@@ -719,10 +719,10 @@ void UNK_0x4536() // UNK_0x4536
 
 
 // ================================================
-// 0x454c: WORD 'UNK_0x454e' codep=0x224c parp=0x454e params=0 returns=1
+// 0x454c: WORD 'W454E' codep=0x224c parp=0x454e params=0 returns=1
 // ================================================
 
-void UNK_0x454e() // UNK_0x454e
+void W454E() // W454E
 {
   Push(0x0019);
   DOSCALL(); // DOSCALL
@@ -742,14 +742,14 @@ void UNK_0x454e() // UNK_0x454e
 void SETMAXDRV() // SETMAXDRV
 {
   unsigned short int i, imax;
-  UNK_0x451a(); // UNK_0x451a
+  W451A(); // W451A
   Push(2);
   MAX(); // MAX
-  UNK_0x454e(); // UNK_0x454e
+  W454E(); // W454E
   MAX(); // MAX
   Push(pp_MAXDRV); // MAXDRV
   Store(); // !
-  UNK_0x44c2(); // UNK_0x44c2
+  W44C2(); // W44C2
   if (Pop() == 0) return;
   Push(7);
   Push(Read16(pp_MAXDRV) + 1); // MAXDRV @ 1+
@@ -759,7 +759,7 @@ void SETMAXDRV() // SETMAXDRV
   do // (DO)
   {
     Push(i); // I
-    UNK_0x4536(); // UNK_0x4536
+    W4536(); // W4536
     if (Pop() != 0)
     {
       Push(i); // I
@@ -770,7 +770,7 @@ void SETMAXDRV() // SETMAXDRV
   } while(i<imax); // (LOOP)
 
   Push(Read16(pp_MAXDRV)==2?1:0); // MAXDRV @ 2 =
-  UNK_0x451a(); // UNK_0x451a
+  W451A(); // W451A
   Push(Pop()==1?1:0); //  1 =
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
@@ -781,25 +781,25 @@ void SETMAXDRV() // SETMAXDRV
 
 
 // ================================================
-// 0x45c3: WORD 'UNK_0x45c5' codep=0x224c parp=0x45c5 params=0 returns=0
+// 0x45c3: WORD 'W45C5' codep=0x224c parp=0x45c5 params=0 returns=0
 // ================================================
 
-void UNK_0x45c5() // UNK_0x45c5
+void W45C5() // W45C5
 {
   DRV(); // DRV
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
-  UNK_0x454e(); // UNK_0x454e
+  W454E(); // W454E
   DRV(); // DRV
   C_ex__2(); // C!_2
 }
 
 
 // ================================================
-// 0x45d7: WORD 'UNK_0x45d9' codep=0x224c parp=0x45d9 params=1 returns=1
+// 0x45d7: WORD 'W45D9' codep=0x224c parp=0x45d9 params=1 returns=1
 // ================================================
 
-void UNK_0x45d9() // UNK_0x45d9
+void W45D9() // W45D9
 {
   Push(Pop() + 1); //  1+
   Push(Read16(pp_MAXDRV)); // MAXDRV @
@@ -825,14 +825,14 @@ void SMARTOPEN() // SMARTOPEN
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() == 0) return;
   a = Pop(); // >R
-  UNK_0x45c5(); // UNK_0x45c5
+  W45C5(); // W45C5
   DRV(); // DRV
   Push(Read16(Pop())&0xFF); //  C@
   while(1)
   {
     DRV(); // DRV
     Push(Read16(Pop())&0xFF); //  C@
-    UNK_0x45d9(); // UNK_0x45d9
+    W45D9(); // W45D9
     _2DUP(); // 2DUP
     Push((Pop()==Pop())?1:0); // =
     Push(!Pop() & a); //  NOT I AND
@@ -968,7 +968,7 @@ void DOSUNMOUNT() // DOSUNMOUNT
 
 void DR2() // DR2
 {
-  Push(0x4425); // probable '[FILE]'
+  Push(0x4425); // '[FILE]'
   Push(0x02d0);
   SYSTEM(); // SYSTEM
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -988,7 +988,7 @@ void DR2() // DR2
 
 void DR3() // DR3
 {
-  Push(0x4425); // probable '[FILE]'
+  Push(0x4425); // '[FILE]'
   Push(0x05dc);
   SYSUTIL(); // SYSUTIL
   Push(Read16(pp__i_FCB)); // 'FCB @
@@ -1012,16 +1012,16 @@ void USING() // USING
   UNMOUNT(); // UNMOUNT
   SYSTEM(); // SYSTEM
   SETFCB(); // SETFCB
-  UNK_0x43c1(); // UNK_0x43c1
+  W43C1(); // W43C1
   DR2(); // DR2
 }
 
 
 // ================================================
-// 0x47dc: WORD 'UNK_0x47de' codep=0x224c parp=0x47de params=2 returns=2
+// 0x47dc: WORD 'W47DE' codep=0x224c parp=0x47de params=2 returns=2
 // ================================================
 
-void UNK_0x47de() // UNK_0x47de
+void W47DE() // W47DE
 {
   Push(Read16(cc_ES)); // ES
   Store(); // !
@@ -1054,7 +1054,7 @@ void SETSYSK() // SETSYSK
 {
   Push(0x8000);
   _ro_CS_ask__rc_(); // (CS?)
-  UNK_0x47de(); // UNK_0x47de
+  W47DE(); // W47DE
   Pop(); // DROP
   Push(Read16(regsp)); // DUP
   _ro_CS_ask__rc_(); // (CS?)
@@ -1066,7 +1066,7 @@ void SETSYSK() // SETSYSK
   Store(); // !
   Pop(); // DROP
   _ro_CS_ask__rc_(); // (CS?)
-  UNK_0x47de(); // UNK_0x47de
+  W47DE(); // W47DE
   Pop(); // DROP
   Push(0x2000);
   U_st_(); // U<

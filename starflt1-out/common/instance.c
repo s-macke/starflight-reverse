@@ -75,8 +75,8 @@ extern const unsigned short int pp__i__ask_CHOICE; // '?CHOICE
 extern const unsigned short int pp_QTYINST; // QTYINST
 extern const unsigned short int pp_IsREUSE; // ?REUSE
 extern const unsigned short int pp_IsRECYCLED; // ?RECYCLED
-extern const unsigned short int pp_UNK_0x6162; // UNK_0x6162
-extern const unsigned short int pp_UNK_0x6329; // UNK_0x6329
+extern const unsigned short int pp_W6162; // W6162
+extern const unsigned short int pp_W6329; // W6329
 extern const unsigned short int pp_IBFR; // IBFR
 void M_plus_(); // M+
 void D_st_(); // D<
@@ -110,7 +110,7 @@ void IsCHILD(); // ?CHILD
 void IsONLY(); // ?ONLY
 void ICACHE_gt_IBFR(); // ICACHE>IBFR
 void POINT_gt_I(); // POINT>I
-void UNK_0x7720(); // UNK_0x7720
+void W7720(); // W7720
 void IsUPDATE_gt_CACHE(); // ?UPDATE>CACHE
 void IsUPD_gt_DISK(); // ?UPD>DISK
 void DISK_gt_IBFR(); // DISK>IBFR
@@ -161,7 +161,7 @@ void SET_dash_CURRENT() // SET-CURRENT
   Is_dash_NULL(); // ?-NULL
   if (Pop() == 0) return;
   CI(); // CI
-  UNK_0x7720(); // UNK_0x7720
+  W7720(); // W7720
   if (Pop() != 0)
   {
     PRIORITIZE(); // PRIORITIZE
@@ -199,7 +199,7 @@ void ICLOSE() // ICLOSE
   {
     Push2Words("NULL");
   }
-  Push(pp_UNK_0x6162); // UNK_0x6162
+  Push(pp_W6162); // W6162
   _st_1_dot_5_ex__gt_(); // <1.5!>
   CDROP(); // CDROP
   SET_dash_CURRENT(); // SET-CURRENT
@@ -236,7 +236,7 @@ void IOPEN() // IOPEN
 {
   GetINST_dash_OFF(); // @INST-OFF
   _2DUP(); // 2DUP
-  Push(pp_UNK_0x6162); // UNK_0x6162
+  Push(pp_W6162); // W6162
   _st_1_dot_5_ex__gt_(); // <1.5!>
   _gt_C_plus_S(); // >C+S
 }
@@ -252,7 +252,7 @@ void CCLR() // CCLR
   Push(Read16(cc_END_dash_CX)); // END-CX
   Push(pp_CXSP); // CXSP
   _st__ex__gt_(); // <!>
-  Push(pp_UNK_0x6329); // UNK_0x6329
+  Push(pp_W6329); // W6329
   Push(0x0078);
   Push(0);
   FILL_1(); // FILL_1
@@ -265,7 +265,7 @@ void CCLR() // CCLR
 
 void _1STCHILD() // 1STCHILD
 {
-  Push(pp_UNK_0x6162); // UNK_0x6162
+  Push(pp_W6162); // W6162
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -872,10 +872,10 @@ void SELECT_dash_2DROP() // SELECT-2DROP
   unsigned short int a;
   Push(pp__i__ask_CHOICE); // '?CHOICE
   DUP_at__gt_V_ex_(); // DUP@>V!
-  Push(0x7db2); // probable '?>FIRST'
+  Push(0x7db2); // '?>FIRST'
   Push(pp__i__ask_EXIT); // '?EXIT
   DUP_at__gt_V_ex_(); // DUP@>V!
-  Push(0x7a86); // probable 'INEXT'
+  Push(0x7a86); // 'INEXT'
   Push(pp__i_TRAVERS); // 'TRAVERS
   DUP_at__gt_V_ex_(); // DUP@>V!
   SELECT(); // SELECT
@@ -912,7 +912,7 @@ void _3SELECTDROP() // 3SELECTDROP
 
 void _eq_FIND() // =FIND
 {
-  Push(0x7d01); // probable '?FLD='
+  Push(0x7d01); // '?FLD='
   SELECT_dash_2DROP(); // SELECT-2DROP
 }
 
@@ -923,7 +923,7 @@ void _eq_FIND() // =FIND
 
 void IFIND() // IFIND
 {
-  Push(0x7d17); // probable '?CLASS/SPECIES'
+  Push(0x7d17); // '?CLASS/SPECIES'
   SELECT_dash_2DROP(); // SELECT-2DROP
 }
 
@@ -996,7 +996,7 @@ void EXTRACTED_gt_INACTIVE() // EXTRACTED>INACTIVE
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x749c); // probable 'INST-SPECIES'
+    Push(0x749c); // 'INST-SPECIES'
     SWAP(); // SWAP
     _eq_FIND(); // =FIND
     if (Pop() != 0)
@@ -1051,13 +1051,13 @@ void _ro_IDELETE_rc_() // (IDELETE)
 
 void IDELETE() // IDELETE
 {
-  Push(0x7eca); // probable '(IDELETE)'
+  Push(0x7eca); // '(IDELETE)'
   Push(pp__i_MAP); // 'MAP
   DUP_at__gt_V_ex_(); // DUP@>V!
-  Push(0x75f3); // probable '?NULL'
+  Push(0x75f3); // '?NULL'
   Push(pp__i__ask_EXIT); // '?EXIT
   DUP_at__gt_V_ex_(); // DUP@>V!
-  Push(0x3a48); // probable 'NOP'
+  Push(0x3a48); // 'NOP'
   Push(pp__i_TRAVERS); // 'TRAVERS
   DUP_at__gt_V_ex_(); // DUP@>V!
   MAP_gt_ROOT(); // MAP>ROOT
@@ -1118,9 +1118,9 @@ void ALL() // ALL
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(0x7604); // probable '?-NULL'
-  Push(0x7db2); // probable '?>FIRST'
-  Push(0x7a86); // probable 'INEXT'
+  Push(0x7604); // '?-NULL'
+  Push(0x7db2); // '?>FIRST'
+  Push(0x7a86); // 'INEXT'
   Push(a); // R>
   SELECT_dash_MAP(); // SELECT-MAP
 }
@@ -1134,8 +1134,8 @@ void EACH() // EACH
 {
   unsigned short int a;
   a = Pop(); // >R
-  Push(0x7db2); // probable '?>FIRST'
-  Push(0x7a86); // probable 'INEXT'
+  Push(0x7db2); // '?>FIRST'
+  Push(0x7a86); // 'INEXT'
   Push(a); // R>
   SELECT_dash_MAP(); // SELECT-MAP
 }
@@ -1197,7 +1197,7 @@ void TRY_dash_INACTIVE() // TRY-INACTIVE
   if (Pop() != 0)
   {
     IOPEN(); // IOPEN
-    Push(0x749c); // probable 'INST-SPECIES'
+    Push(0x749c); // 'INST-SPECIES'
     OVER(); // OVER
     _eq_FIND(); // =FIND
     if (Pop() != 0)

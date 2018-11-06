@@ -72,8 +72,8 @@ extern const unsigned short int user_CONTEXT_2; // CONTEXT_2
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void AUTO_dash_LIMIT(); // AUTO-LIMIT
 void AUTO_dash_SCREEN(); // AUTO-SCREEN
-void UNK_0x0343(); // UNK_0x0343
-void UNK_0x03c3(); // UNK_0x03c3
+void W0343(); // W0343
+void W03C3(); // W03C3
 void SET_dash_BUFFERS(); // SET-BUFFERS
 void FREEZE(); // FREEZE
 void _i_FORTH(); // 'FORTH
@@ -138,10 +138,10 @@ void _ro_SETUP_rc_() // (SETUP)
 
 
 // ================================================
-// 0x0937: WORD 'UNK_0x0939' codep=0x224c parp=0x0939 params=0 returns=0
+// 0x0937: WORD 'W0939' codep=0x224c parp=0x0939 params=0 returns=0
 // ================================================
 
-void UNK_0x0939() // UNK_0x0939
+void W0939() // W0939
 {
   _ro_SETUP_rc_(); // (SETUP)
   _ro_CS_ask__rc_(); // (CS?)
@@ -168,7 +168,7 @@ void UNK_0x0939() // UNK_0x0939
   RP_ex_(); // RP!
   SET_dash_BUFFERS(); // SET-BUFFERS
   AUTO_dash_SCREEN(); // AUTO-SCREEN
-  UNK_0x0343(); // UNK_0x0343
+  W0343(); // W0343
   Push(Read16(pp_BOOT_dash_HOOK)); // BOOT-HOOK @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
@@ -181,7 +181,7 @@ void UNK_0x0939() // UNK_0x0939
   {
     Exec("LOAD_2"); // call of word 0x1e23 '(LOAD)'
   }
-  UNK_0x03c3(); // UNK_0x03c3
+  W03C3(); // W03C3
   Exec("ABORT"); // call of word 0x1c45 '(ABORT)'
 }
 

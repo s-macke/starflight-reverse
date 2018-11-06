@@ -13,7 +13,7 @@
 // =================================
 //      HYPER-DOTS  codep:0x1d29 parp:0xf3a6 size:0x0032 C-string:'HYPER_dash_DOTS'
 //     ?STAR-TRAIL  codep:0x1d29 parp:0xf3da size:0x0002 C-string:'IsSTAR_dash_TRAIL'
-//      UNK_0xf3de  codep:0x224c parp:0xf3de size:0x0010 C-string:'UNK_0xf3de'
+//           WF3DE  codep:0x224c parp:0xf3de size:0x0010 C-string:'WF3DE'
 //            NOVA  codep:0x224c parp:0xf3f0 size:0x0064 C-string:'NOVA'
 // INIT-HYPER-STARS  codep:0x224c parp:0xf456 size:0x0018 C-string:'INIT_dash_HYPER_dash_STARS'
 //      HYPER-PLOT  codep:0x224c parp:0xf470 size:0x005e C-string:'HYPER_dash_PLOT'
@@ -67,10 +67,10 @@ const unsigned short int pp_IsSTAR_dash_TRAIL = 0xf3da; // ?STAR-TRAIL size: 2
 // 0xf3da: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf3dc: WORD 'UNK_0xf3de' codep=0x224c parp=0xf3de params=2 returns=1
+// 0xf3dc: WORD 'WF3DE' codep=0x224c parp=0xf3de params=2 returns=1
 // ================================================
 
-void UNK_0xf3de() // UNK_0xf3de
+void WF3DE() // WF3DE
 {
   Push(Pop() * Pop()); // *
   Push(0);
@@ -100,7 +100,7 @@ void NOVA() // NOVA
   Push(Read16(regsp)); // DUP
   Push(Pop()==0?1:0); //  0=
   Push(0x0048);
-  UNK_0xf3de(); // UNK_0xf3de
+  WF3DE(); // WF3DE
   Push(0xffdc);
   Push(0x0024);
   RRND(); // RRND
@@ -112,7 +112,7 @@ void NOVA() // NOVA
   Push(a + 1); // I 1+
   Store_3(); // !_3
   Push(0x0078);
-  UNK_0xf3de(); // UNK_0xf3de
+  WF3DE(); // WF3DE
   Push(0xffc4);
   Push(0x003c);
   RRND(); // RRND
