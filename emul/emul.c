@@ -83,7 +83,7 @@ int FindWordByName(char* s, int n)
     do
     {
         if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
-        if (strcmp(vocabulary[i].name, temp) == 0) return vocabulary[i].word;
+        if (strcasecmp(vocabulary[i].name, temp) == 0) return vocabulary[i].word;
     } while(vocabulary[++i].name != NULL);
     //fprintf(stderr, "Error: Cannot find string %s\n", s);
     return 0;
