@@ -13,8 +13,9 @@ To find out more about the game check the following links:
   * [The Digital Antiquarian](https://www.filfre.net/2014/10/starflight/)
   * [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
   * [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
-  * [Starflight ressource page](http://starflt.com)
-  * [technical articles saved from oblivion](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
+  * [Starflight Resource Pages](http://starflt.com)
+  * [Technical Articles Saved from Oblivion](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
+
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
@@ -29,6 +30,7 @@ For this game expect the unexpected. Normally when you reverse engineer such an 
 Forth is the language with the ultimate milimanism regarding syntax. There is no more syntax than the space between "words". You can write a Forth reader and interpreter basically in a few lines of code.
 
 In a modern language you write something like
+
 ```PYTHON
 print(2+3)
 ```
@@ -97,7 +99,6 @@ Reading the address 0x53a3 reveals
 and the corresponding code
 
 ```Asm
-
 0x1d29: inc    bx
 0x1d2a: inc    bx
 0x1d2b: push   bx
