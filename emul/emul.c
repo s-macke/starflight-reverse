@@ -1163,7 +1163,7 @@ void Call(unsigned short addr, unsigned short bx)
             Push((Pop()&0x8000)?1:0);
         break;
 
-        case 0x71DD: // "UNK_0x71dd" gets the idx from the dictionary in STARX.com
+        case 0x71DD: // "W71DD" gets the idx from the dictionary in STARX.com
         {
             //WriteCallGraph();
             //exit(1);
@@ -1389,7 +1389,7 @@ void Call(unsigned short addr, unsigned short bx)
             //exit(1);
             // cx = 0xb429 long jump in XKEYINT
             // cx = 0x5eed [KEYINT]
-            // cx = 0x613c UNK_0x613c
+            // cx = 0x613c W613C
             cx = Pop();
             printf("?Update of 0x%x\n", cx);
             if (cx&0x8000)

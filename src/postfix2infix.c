@@ -133,7 +133,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
             if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
             if (vocabulary[i].parp == value)
             {
-                snprintf(ret, STRINGLEN, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&vocabulary[i]));
+                snprintf(ret, STRINGLEN, "Push(%s); // '%s'\n", numberstring, GetWordName(&vocabulary[i]));
                 break;
             }
         }
@@ -390,7 +390,7 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
             {
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);
-                fprintf(fp, "Push(%s); // probable '%s'\n", numberstring, GetWordName(&vocabulary[i]));
+                fprintf(fp, "Push(%s); // '%s'\n", numberstring, GetWordName(&vocabulary[i]));
                 return;
             }
         }

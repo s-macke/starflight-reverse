@@ -44,7 +44,7 @@ typedef void (*WordCallDef)();
     void SetColor(Color color);
     void GetTableEntry(char *s);
     void LoadData(LoadDataType dt);
-    void UNK_0x3f3b(char *s);
+    void W3F3B(char *s);
     void SET_STR_AS_PARAM(char *s);
     void Exec(char *s);
     void LoadOverlay(char *s);
@@ -58,7 +58,7 @@ typedef void (*WordCallDef)();
     void MODULE();
 
     // for starfight2
-    void UNK_0x3f09(char *s);
+    void W3F09(char *s);
     void Func12(char *s);
     void Func5(char *s);
 

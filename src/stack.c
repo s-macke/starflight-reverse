@@ -316,7 +316,7 @@ void StackAnalysis(int ovidx)
     //Set("(ABORT\")", 1, 0);
     Set("CDEPTH", 0, 1);
     Set("LLINE", 4, 0);
-    Set("UNK_0x3672", 1, 1); // in both starflight the same
+    Set("W3672", 1, 1); // in both starflight the same
     Set("BINSTALLS", 0, 0);
     Set("(POSITION)", 2, 0);
     Set("POSITION", 2, 0);
@@ -361,8 +361,8 @@ void StackAnalysis(int ovidx)
 
 #ifdef STARFLT1
 
-    //Set("UNK_0x8332", 1, 1); // Seems recursive
-    //Set("UNK_0xeb81", 0, 0);
+    //Set("W8332", 1, 1); // Seems recursive
+    //Set("WEB81", 0, 0);
     Set(">ALPHACODE", 0, 0); // Something with graphics
     Set(">LORES", 0, 0); // set video mode
     Set("BEXTENT", 0, 4);
@@ -382,7 +382,7 @@ void StackAnalysis(int ovidx)
 
 #endif
 #ifdef STARFLT2
-    Set("UNK_0x7650", 0, 1);
+    Set("W7650", 0, 1);
     Set("CMOVE_1", 3, 0);
 #endif
 

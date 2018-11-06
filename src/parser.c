@@ -472,7 +472,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
         if (e == NULL)
         {
             pline[offset].str = malloc(STRINGLEN);
-            sprintf(pline[offset].str, "UNK_0x%04x(); // Unknown overlay function\n", par);
+            sprintf(pline[offset].str, "W%04X(); // Unknown overlay function\n", par);
             offset += 2;
             continue;
         }

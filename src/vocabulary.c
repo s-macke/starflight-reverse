@@ -33,7 +33,7 @@ WORD* GetWordByAddr(unsigned short addr, int ovidx)
     unsigned short codep = Read16(addr-2);
     if (codep == 0x0) return NULL;
 
-    snprintf(vocabulary[nwords].r, 64, "UNK_0x%04x", addr);
+    snprintf(vocabulary[nwords].r, 64, "W%04X", addr);
     vocabulary[nwords].codep = codep;
     vocabulary[nwords].parp = addr;
     vocabulary[nwords].addr = addr-2;
@@ -207,7 +207,7 @@ void WriteAllVocabulary(char* filename)
             vocabulary[i].codep,
             vocabulary[i].parp,
             escapedname);
-            fprintf(fp, " }, \n");
+            fprintf(fp, " },\n");
     }
     fprintf(fp, "  { .ov = -2, .code = 0x0000, .word = 0x0000, .name = NULL }\n");
 
@@ -248,7 +248,9 @@ void VocabularyConsistencyCheck()
 
     for(int i=0; i<nwords; i++)
     {
-        if (strncmp(vocabulary[i].r, "UNK_", 4) == 0)
+        // This is not the best check
+        if (strlen(vocabulary[i].r) == 5)
+        if (strncmp(vocabulary[i].r, "W", 1) == 0)
             nunknowns++;
     }
     printf("Found %i words, %i of the words are unknown\n", nwords, nunknowns);
@@ -262,14 +264,12 @@ void VocabularyConsistencyCheck()
             fprintf(stderr, "Error: Found duplicate word\n");
         }
 
-        if (strncmp(vocabulary[i].r, "UNK_", 4) == 0) continue;
-        if (strncmp(vocabulary[j].r, "UNK_", 4) == 0) continue;
+        if (strlen(vocabulary[i].r) == 5 && strncmp(vocabulary[i].r, "W", 1) == 0) continue;
+        if (strlen(vocabulary[j].r) == 5 && strncmp(vocabulary[j].r, "W", 1) == 0) continue;
         if (vocabulary[i].ovidx != vocabulary[j].ovidx) continue;
 
         if (strcmp(GetWordName(&vocabulary[i]), GetWordName(&vocabulary[j])) == 0)
         {
-
-
             fprintf(stderr, "Error: Found duplicate word name '%s': ov1=%i ov2=%i \n", GetWordName(&vocabulary[i]), vocabulary[i].ovidx, vocabulary[j].ovidx);
         }
 
