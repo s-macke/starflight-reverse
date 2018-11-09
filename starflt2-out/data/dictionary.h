@@ -1,10 +1,10 @@
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
 
 typedef struct { int ov; unsigned short code, word; char* name; } WORD;
 
-WORD vocabulary[]=
+WORD dictionary[]=
 {
   { .ov = -1, .code = 0x0138, .word = 0x0138, .name = "(!SET)" },
   { .ov = -1, .code = 0x0160, .word = 0x0160, .name = "(!OLD)" },
