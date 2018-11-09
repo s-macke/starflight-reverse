@@ -80,7 +80,7 @@ void STARTGAME(); // STARTGAME
 
 
 // ================================================
-// 0xd47e: WORD 'LET-THERE-BE-STARFLIGHT' codep=0x224c parp=0xd489
+// 0xd47e: WORD 'LET-THERE-BE-STARFLIGHT' codep=0x224c wordp=0xd489
 // ================================================
 
 void LET_dash_THERE_dash_BE_dash_STARFLIGHT() // LET-THERE-BE-STARFLIGHT

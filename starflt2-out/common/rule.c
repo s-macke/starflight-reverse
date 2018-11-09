@@ -119,52 +119,52 @@ const unsigned short int cc_WAB7F = 0xab7f; // WAB7F
 
 
 // ================================================
-// 0xab55: WORD 'WAB57' codep=0x1d29 parp=0xab57
+// 0xab55: WORD 'WAB57' codep=0x1d29 wordp=0xab57
 // ================================================
 // 0xab57: db 0x06 0x00 '  '
 
 // ================================================
-// 0xab59: WORD 'SMART' codep=0x1d29 parp=0xab63
+// 0xab59: WORD 'SMART' codep=0x1d29 wordp=0xab63
 // ================================================
 // 0xab63: db 0x00 0x00 '  '
 
 // ================================================
-// 0xab65: WORD 'WAB67' codep=0x2214 parp=0xab67
+// 0xab65: WORD 'WAB67' codep=0x2214 wordp=0xab67
 // ================================================
 // 0xab67: dw 0x00ff
 
 // ================================================
-// 0xab69: WORD 'WAB6B' codep=0x2214 parp=0xab6b
+// 0xab69: WORD 'WAB6B' codep=0x2214 wordp=0xab6b
 // ================================================
 // 0xab6b: dw 0xec67
 
 // ================================================
-// 0xab6d: WORD 'WAB6F' codep=0x2214 parp=0xab6f
+// 0xab6d: WORD 'WAB6F' codep=0x2214 wordp=0xab6f
 // ================================================
 // 0xab6f: dw 0xec68
 
 // ================================================
-// 0xab71: WORD 'WAB73' codep=0x2214 parp=0xab73
+// 0xab71: WORD 'WAB73' codep=0x2214 wordp=0xab73
 // ================================================
 // 0xab73: dw 0xec69
 
 // ================================================
-// 0xab75: WORD 'WAB77' codep=0x2214 parp=0xab77
+// 0xab75: WORD 'WAB77' codep=0x2214 wordp=0xab77
 // ================================================
 // 0xab77: dw 0xec6a
 
 // ================================================
-// 0xab79: WORD 'WAB7B' codep=0x2214 parp=0xab7b
+// 0xab79: WORD 'WAB7B' codep=0x2214 wordp=0xab7b
 // ================================================
 // 0xab7b: dw 0xec78
 
 // ================================================
-// 0xab7d: WORD 'WAB7F' codep=0x2214 parp=0xab7f
+// 0xab7d: WORD 'WAB7F' codep=0x2214 wordp=0xab7f
 // ================================================
 // 0xab7f: dw 0xec84
 
 // ================================================
-// 0xab81: WORD 'WAB83' codep=0x224c parp=0xab83 params=1 returns=1
+// 0xab81: WORD 'WAB83' codep=0x224c wordp=0xab83 params=1 returns=1
 // ================================================
 
 void WAB83() // WAB83
@@ -174,7 +174,7 @@ void WAB83() // WAB83
 
 
 // ================================================
-// 0xab8d: WORD 'C+!' codep=0x224c parp=0xab95 params=2 returns=0
+// 0xab8d: WORD 'C+!' codep=0x224c wordp=0xab95 params=2 returns=0
 // ================================================
 
 void C_plus__ex_() // C+!
@@ -189,7 +189,7 @@ void C_plus__ex_() // C+!
 
 
 // ================================================
-// 0xaba3: WORD 'WABA5' codep=0x224c parp=0xaba5 params=1 returns=0
+// 0xaba3: WORD 'WABA5' codep=0x224c wordp=0xaba5 params=1 returns=0
 // ================================================
 
 void WABA5() // WABA5
@@ -218,7 +218,7 @@ void WABA5() // WABA5
 
 
 // ================================================
-// 0xabf1: WORD 'DISTRAC' codep=0x224c parp=0xabfd params=1 returns=0
+// 0xabf1: WORD 'DISTRAC' codep=0x224c wordp=0xabfd params=1 returns=0
 // ================================================
 
 void DISTRAC() // DISTRAC
@@ -232,7 +232,7 @@ void DISTRAC() // DISTRAC
 
 
 // ================================================
-// 0xac0b: WORD 'WAC0D' codep=0x224c parp=0xac0d params=1 returns=1
+// 0xac0b: WORD 'WAC0D' codep=0x224c wordp=0xac0d params=1 returns=1
 // ================================================
 
 void WAC0D() // WAC0D
@@ -299,7 +299,7 @@ void WAC0D() // WAC0D
 
 
 // ================================================
-// 0xac8d: WORD 'EXPERT' codep=0x224c parp=0xac98
+// 0xac8d: WORD 'EXPERT' codep=0x224c wordp=0xac98
 // ================================================
 
 void EXPERT() // EXPERT
@@ -371,7 +371,7 @@ void EXPERT() // EXPERT
 
 
 // ================================================
-// 0xad31: WORD '-->' codep=0x224c parp=0xad39
+// 0xad31: WORD '-->' codep=0x224c wordp=0xad39
 // ================================================
 
 void _dash__dash__gt_() // -->
@@ -381,7 +381,7 @@ void _dash__dash__gt_() // -->
 
 
 // ================================================
-// 0xad3d: WORD 'WAD3F' codep=0x224c parp=0xad3f params=1 returns=1
+// 0xad3d: WORD 'WAD3F' codep=0x224c wordp=0xad3f params=1 returns=1
 // ================================================
 
 void WAD3F() // WAD3F
@@ -413,7 +413,7 @@ void WAD3F() // WAD3F
 
 
 // ================================================
-// 0xad71: WORD 'WAD73' codep=0x224c parp=0xad73
+// 0xad71: WORD 'WAD73' codep=0x224c wordp=0xad73
 // ================================================
 
 void WAD73() // WAD73
@@ -458,7 +458,7 @@ void WAD73() // WAD73
 
 
 // ================================================
-// 0xadd6: WORD 'RULE:' codep=0x224c parp=0xade0
+// 0xadd6: WORD 'RULE:' codep=0x224c wordp=0xade0
 // ================================================
 
 void RULE_c_() // RULE:

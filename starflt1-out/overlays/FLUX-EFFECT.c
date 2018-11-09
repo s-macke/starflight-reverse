@@ -9,16 +9,16 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//      HYPER-DOTS  codep:0x1d29 parp:0xf3a6 size:0x0032 C-string:'HYPER_dash_DOTS'
-//     ?STAR-TRAIL  codep:0x1d29 parp:0xf3da size:0x0002 C-string:'IsSTAR_dash_TRAIL'
-//           WF3DE  codep:0x224c parp:0xf3de size:0x0010 C-string:'WF3DE'
-//            NOVA  codep:0x224c parp:0xf3f0 size:0x0064 C-string:'NOVA'
-// INIT-HYPER-STARS  codep:0x224c parp:0xf456 size:0x0018 C-string:'INIT_dash_HYPER_dash_STARS'
-//      HYPER-PLOT  codep:0x224c parp:0xf470 size:0x005e C-string:'HYPER_dash_PLOT'
-//     HYPER-FRAME  codep:0x224c parp:0xf4d0 size:0x002c C-string:'HYPER_dash_FRAME'
-//            FLUX  codep:0x224c parp:0xf505 size:0x0000 C-string:'FLUX'
+//      HYPER-DOTS  codep:0x1d29 wordp:0xf3a6 size:0x0032 C-string:'HYPER_dash_DOTS'
+//     ?STAR-TRAIL  codep:0x1d29 wordp:0xf3da size:0x0002 C-string:'IsSTAR_dash_TRAIL'
+//           WF3DE  codep:0x224c wordp:0xf3de size:0x0010 C-string:'WF3DE'
+//            NOVA  codep:0x224c wordp:0xf3f0 size:0x0064 C-string:'NOVA'
+// INIT-HYPER-STARS  codep:0x224c wordp:0xf456 size:0x0018 C-string:'INIT_dash_HYPER_dash_STARS'
+//      HYPER-PLOT  codep:0x224c wordp:0xf470 size:0x005e C-string:'HYPER_dash_PLOT'
+//     HYPER-FRAME  codep:0x224c wordp:0xf4d0 size:0x002c C-string:'HYPER_dash_FRAME'
+//            FLUX  codep:0x224c wordp:0xf505 size:0x0000 C-string:'FLUX'
 
 // =================================
 // ============= EXTERN ============
@@ -57,17 +57,17 @@ const unsigned short int pp_IsSTAR_dash_TRAIL = 0xf3da; // ?STAR-TRAIL size: 2
 // 0xf3a2: db 0x1a 0x00 '  '
 
 // ================================================
-// 0xf3a4: WORD 'HYPER-DOTS' codep=0x1d29 parp=0xf3a6
+// 0xf3a4: WORD 'HYPER-DOTS' codep=0x1d29 wordp=0xf3a6
 // ================================================
 // 0xf3a6: db 0x3a 0x20 0x05 0x41 0x4c 0x4c 0x4f 0x54 0x20 0x4f 0x53 0x48 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x41 0x57 0x4b ':  ALLOT OSH                                   AWK'
 
 // ================================================
-// 0xf3d8: WORD '?STAR-TRAIL' codep=0x1d29 parp=0xf3da
+// 0xf3d8: WORD '?STAR-TRAIL' codep=0x1d29 wordp=0xf3da
 // ================================================
 // 0xf3da: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf3dc: WORD 'WF3DE' codep=0x224c parp=0xf3de params=2 returns=1
+// 0xf3dc: WORD 'WF3DE' codep=0x224c wordp=0xf3de params=2 returns=1
 // ================================================
 
 void WF3DE() // WF3DE
@@ -82,7 +82,7 @@ void WF3DE() // WF3DE
 
 
 // ================================================
-// 0xf3ee: WORD 'NOVA' codep=0x224c parp=0xf3f0 params=1 returns=0
+// 0xf3ee: WORD 'NOVA' codep=0x224c wordp=0xf3f0 params=1 returns=0
 // ================================================
 
 void NOVA() // NOVA
@@ -127,7 +127,7 @@ void NOVA() // NOVA
 
 
 // ================================================
-// 0xf454: WORD 'INIT-HYPER-STARS' codep=0x224c parp=0xf456 params=0 returns=0
+// 0xf454: WORD 'INIT-HYPER-STARS' codep=0x224c wordp=0xf456 params=0 returns=0
 // ================================================
 
 void INIT_dash_HYPER_dash_STARS() // INIT-HYPER-STARS
@@ -152,7 +152,7 @@ void INIT_dash_HYPER_dash_STARS() // INIT-HYPER-STARS
 
 
 // ================================================
-// 0xf46e: WORD 'HYPER-PLOT' codep=0x224c parp=0xf470 params=1 returns=1
+// 0xf46e: WORD 'HYPER-PLOT' codep=0x224c wordp=0xf470 params=1 returns=1
 // ================================================
 
 void HYPER_dash_PLOT() // HYPER-PLOT
@@ -192,7 +192,7 @@ void HYPER_dash_PLOT() // HYPER-PLOT
 
 
 // ================================================
-// 0xf4ce: WORD 'HYPER-FRAME' codep=0x224c parp=0xf4d0 params=0 returns=1
+// 0xf4ce: WORD 'HYPER-FRAME' codep=0x224c wordp=0xf4d0 params=0 returns=1
 // ================================================
 
 void HYPER_dash_FRAME() // HYPER-FRAME
@@ -227,7 +227,7 @@ void HYPER_dash_FRAME() // HYPER-FRAME
 
 
 // ================================================
-// 0xf4fc: WORD 'FLUX' codep=0x224c parp=0xf505 params=0 returns=1
+// 0xf4fc: WORD 'FLUX' codep=0x224c wordp=0xf505 params=0 returns=1
 // ================================================
 // entry
 

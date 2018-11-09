@@ -9,41 +9,41 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//            TRIM  codep:0x224c parp:0xef86 size:0x0008 C-string:'TRIM'
-//          3RIGHT  codep:0x2214 parp:0xef90 size:0x0002 C-string:'_3RIGHT'
-//           3LEFT  codep:0x2214 parp:0xef94 size:0x0002 C-string:'_3LEFT'
-//           3PLUS  codep:0x2214 parp:0xef98 size:0x0002 C-string:'_3PLUS'
-//          2RIGHT  codep:0x2214 parp:0xef9c size:0x0002 C-string:'_2RIGHT'
-//           2LEFT  codep:0x2214 parp:0xefa0 size:0x0002 C-string:'_2LEFT'
-//   MASTERBALANCE  codep:0x744d parp:0xefa4 size:0x0003 C-string:'MASTERBALANCE'
-//         BALANCE  codep:0x744d parp:0xefa9 size:0x0003 C-string:'BALANCE'
-//           TFLAG  codep:0x744d parp:0xefae size:0x0003 C-string:'TFLAG'
-//       TRANSTEXT  codep:0x73ea parp:0xefb3 size:0x0006 C-string:'TRANSTEXT'
-//           T-AMT  codep:0x744d parp:0xefbb size:0x0003 C-string:'T_dash_AMT'
-//          T-DATE  codep:0x744d parp:0xefc0 size:0x0003 C-string:'T_dash_DATE'
-//        SET-BANK  codep:0x224c parp:0xefc5 size:0x0006 C-string:'SET_dash_BANK'
-//          !TFLAG  codep:0x224c parp:0xefd6 size:0x000c C-string:'StoreTFLAG'
-//       D@BALANCE  codep:0x224c parp:0xeff0 size:0x000a C-string:'GetDBALANCE'
-//       D!BALANCE  codep:0x224c parp:0xf008 size:0x000a C-string:'StoreDBALANCE'
-//        ?BALANCE  codep:0x224c parp:0xf01f size:0x0008 C-string:'IsBALANCE'
-//    INIT-BALANCE  codep:0x224c parp:0xf038 size:0x000e C-string:'INIT_dash_BALANCE'
-//        TRANSACT  codep:0x224c parp:0xf053 size:0x0072 C-string:'TRANSACT'
-//            INT%  codep:0x224c parp:0xf0ce size:0x0042 C-string:'INT_pe_'
-//            DOTS  codep:0x1d29 parp:0xf112 size:0x0014 C-string:'DOTS'
-//           .DOTS  codep:0x224c parp:0xf128 size:0x0028 C-string:'DrawDOTS'
-//          .BDATE  codep:0x224c parp:0xf152 size:0x0042 C-string:'DrawBDATE'
-//           .$AMT  codep:0x224c parp:0xf196 size:0x0042 C-string:'Draw_do_AMT'
-//          ?.MESS  codep:0x224c parp:0xf1da size:0x0006 C-string:'Is_dot_MESS'
-//          BTITLE  codep:0x224c parp:0xf1e2 size:0x008b C-string:'BTITLE'
-//         BOFRAME  codep:0x224c parp:0xf26f size:0x013a C-string:'BOFRAME'
-//           BINFO  codep:0x224c parp:0xf3ab size:0x00b7 C-string:'BINFO'
-//         BSCREEN  codep:0x224c parp:0xf464 size:0x000c C-string:'BSCREEN'
-//           BMESS  codep:0x224c parp:0xf472 size:0x0038 C-string:'BMESS'
-//        .BALANCE  codep:0x224c parp:0xf4ac size:0x0016 C-string:'DrawBALANCE'
-//           .BANK  codep:0x224c parp:0xf4c4 size:0x001e C-string:'DrawBANK'
-//        (U-BANK)  codep:0x224c parp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
+//            TRIM  codep:0x224c wordp:0xef86 size:0x0008 C-string:'TRIM'
+//          3RIGHT  codep:0x2214 wordp:0xef90 size:0x0002 C-string:'_3RIGHT'
+//           3LEFT  codep:0x2214 wordp:0xef94 size:0x0002 C-string:'_3LEFT'
+//           3PLUS  codep:0x2214 wordp:0xef98 size:0x0002 C-string:'_3PLUS'
+//          2RIGHT  codep:0x2214 wordp:0xef9c size:0x0002 C-string:'_2RIGHT'
+//           2LEFT  codep:0x2214 wordp:0xefa0 size:0x0002 C-string:'_2LEFT'
+//   MASTERBALANCE  codep:0x744d wordp:0xefa4 size:0x0003 C-string:'MASTERBALANCE'
+//         BALANCE  codep:0x744d wordp:0xefa9 size:0x0003 C-string:'BALANCE'
+//           TFLAG  codep:0x744d wordp:0xefae size:0x0003 C-string:'TFLAG'
+//       TRANSTEXT  codep:0x73ea wordp:0xefb3 size:0x0006 C-string:'TRANSTEXT'
+//           T-AMT  codep:0x744d wordp:0xefbb size:0x0003 C-string:'T_dash_AMT'
+//          T-DATE  codep:0x744d wordp:0xefc0 size:0x0003 C-string:'T_dash_DATE'
+//        SET-BANK  codep:0x224c wordp:0xefc5 size:0x0006 C-string:'SET_dash_BANK'
+//          !TFLAG  codep:0x224c wordp:0xefd6 size:0x000c C-string:'StoreTFLAG'
+//       D@BALANCE  codep:0x224c wordp:0xeff0 size:0x000a C-string:'GetDBALANCE'
+//       D!BALANCE  codep:0x224c wordp:0xf008 size:0x000a C-string:'StoreDBALANCE'
+//        ?BALANCE  codep:0x224c wordp:0xf01f size:0x0008 C-string:'IsBALANCE'
+//    INIT-BALANCE  codep:0x224c wordp:0xf038 size:0x000e C-string:'INIT_dash_BALANCE'
+//        TRANSACT  codep:0x224c wordp:0xf053 size:0x0072 C-string:'TRANSACT'
+//            INT%  codep:0x224c wordp:0xf0ce size:0x0042 C-string:'INT_pe_'
+//            DOTS  codep:0x1d29 wordp:0xf112 size:0x0014 C-string:'DOTS'
+//           .DOTS  codep:0x224c wordp:0xf128 size:0x0028 C-string:'DrawDOTS'
+//          .BDATE  codep:0x224c wordp:0xf152 size:0x0042 C-string:'DrawBDATE'
+//           .$AMT  codep:0x224c wordp:0xf196 size:0x0042 C-string:'Draw_do_AMT'
+//          ?.MESS  codep:0x224c wordp:0xf1da size:0x0006 C-string:'Is_dot_MESS'
+//          BTITLE  codep:0x224c wordp:0xf1e2 size:0x008b C-string:'BTITLE'
+//         BOFRAME  codep:0x224c wordp:0xf26f size:0x013a C-string:'BOFRAME'
+//           BINFO  codep:0x224c wordp:0xf3ab size:0x00b7 C-string:'BINFO'
+//         BSCREEN  codep:0x224c wordp:0xf464 size:0x000c C-string:'BSCREEN'
+//           BMESS  codep:0x224c wordp:0xf472 size:0x0038 C-string:'BMESS'
+//        .BALANCE  codep:0x224c wordp:0xf4ac size:0x0016 C-string:'DrawBALANCE'
+//           .BANK  codep:0x224c wordp:0xf4c4 size:0x001e C-string:'DrawBANK'
+//        (U-BANK)  codep:0x224c wordp:0xf4ef size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
 // ============= EXTERN ============
@@ -127,7 +127,7 @@ const unsigned short int cc__2LEFT = 0xefa0; // 2LEFT
 // 0xef82: db 0x5c 0x00 '\ '
 
 // ================================================
-// 0xef84: WORD 'TRIM' codep=0x224c parp=0xef86 params=0 returns=0
+// 0xef84: WORD 'TRIM' codep=0x224c wordp=0xef86 params=0 returns=0
 // ================================================
 
 void TRIM() // TRIM
@@ -138,62 +138,62 @@ void TRIM() // TRIM
 
 
 // ================================================
-// 0xef8e: WORD '3RIGHT' codep=0x2214 parp=0xef90
+// 0xef8e: WORD '3RIGHT' codep=0x2214 wordp=0xef90
 // ================================================
 // 0xef90: dw 0x0000
 
 // ================================================
-// 0xef92: WORD '3LEFT' codep=0x2214 parp=0xef94
+// 0xef92: WORD '3LEFT' codep=0x2214 wordp=0xef94
 // ================================================
 // 0xef94: dw 0x0001
 
 // ================================================
-// 0xef96: WORD '3PLUS' codep=0x2214 parp=0xef98
+// 0xef96: WORD '3PLUS' codep=0x2214 wordp=0xef98
 // ================================================
 // 0xef98: dw 0x0002
 
 // ================================================
-// 0xef9a: WORD '2RIGHT' codep=0x2214 parp=0xef9c
+// 0xef9a: WORD '2RIGHT' codep=0x2214 wordp=0xef9c
 // ================================================
 // 0xef9c: dw 0x0003
 
 // ================================================
-// 0xef9e: WORD '2LEFT' codep=0x2214 parp=0xefa0
+// 0xef9e: WORD '2LEFT' codep=0x2214 wordp=0xefa0
 // ================================================
 // 0xefa0: dw 0x0004
 
 // ================================================
-// 0xefa2: WORD 'MASTERBALANCE' codep=0x744d parp=0xefa4
+// 0xefa2: WORD 'MASTERBALANCE' codep=0x744d wordp=0xefa4
 // ================================================
 IFieldType MASTERBALANCE = {BANKIDX, 0x0b, 0x04};
 
 // ================================================
-// 0xefa7: WORD 'BALANCE' codep=0x744d parp=0xefa9
+// 0xefa7: WORD 'BALANCE' codep=0x744d wordp=0xefa9
 // ================================================
 IFieldType BALANCE = {BANKIDX, 0x0f, 0x04};
 
 // ================================================
-// 0xefac: WORD 'TFLAG' codep=0x744d parp=0xefae
+// 0xefac: WORD 'TFLAG' codep=0x744d wordp=0xefae
 // ================================================
 IFieldType TFLAG = {BANKIDX, 0x13, 0x01};
 
 // ================================================
-// 0xefb1: WORD 'TRANSTEXT' codep=0x73ea parp=0xefb3
+// 0xefb1: WORD 'TRANSTEXT' codep=0x73ea wordp=0xefb3
 // ================================================
 LoadDataType TRANSTEXT = {BANK_TRANSIDX, 0x00, 0x13, 0x13, 0x6480};
 
 // ================================================
-// 0xefb9: WORD 'T-AMT' codep=0x744d parp=0xefbb
+// 0xefb9: WORD 'T-AMT' codep=0x744d wordp=0xefbb
 // ================================================
 IFieldType T_dash_AMT = {BANK_TRANSIDX, 0x0b, 0x04};
 
 // ================================================
-// 0xefbe: WORD 'T-DATE' codep=0x744d parp=0xefc0
+// 0xefbe: WORD 'T-DATE' codep=0x744d wordp=0xefc0
 // ================================================
 IFieldType T_dash_DATE = {BANK_TRANSIDX, 0x0f, 0x02};
 
 // ================================================
-// 0xefc3: WORD 'SET-BANK' codep=0x224c parp=0xefc5 params=0 returns=0
+// 0xefc3: WORD 'SET-BANK' codep=0x224c wordp=0xefc5 params=0 returns=0
 // ================================================
 
 void SET_dash_BANK() // SET-BANK
@@ -204,7 +204,7 @@ void SET_dash_BANK() // SET-BANK
 
 
 // ================================================
-// 0xefcb: WORD '!TFLAG' codep=0x224c parp=0xefd6 params=0 returns=0
+// 0xefcb: WORD '!TFLAG' codep=0x224c wordp=0xefd6 params=0 returns=0
 // ================================================
 // entry
 
@@ -219,7 +219,7 @@ void StoreTFLAG() // !TFLAG
 
 
 // ================================================
-// 0xefe2: WORD 'D@BALANCE' codep=0x224c parp=0xeff0 params=0 returns=2
+// 0xefe2: WORD 'D@BALANCE' codep=0x224c wordp=0xeff0 params=0 returns=2
 // ================================================
 // entry
 
@@ -233,7 +233,7 @@ void GetDBALANCE() // D@BALANCE
 
 
 // ================================================
-// 0xeffa: WORD 'D!BALANCE' codep=0x224c parp=0xf008 params=2 returns=0
+// 0xeffa: WORD 'D!BALANCE' codep=0x224c wordp=0xf008 params=2 returns=0
 // ================================================
 // entry
 
@@ -247,7 +247,7 @@ void StoreDBALANCE() // D!BALANCE
 
 
 // ================================================
-// 0xf012: WORD '?BALANCE' codep=0x224c parp=0xf01f params=2 returns=1
+// 0xf012: WORD '?BALANCE' codep=0x224c wordp=0xf01f params=2 returns=1
 // ================================================
 // entry
 
@@ -260,7 +260,7 @@ void IsBALANCE() // ?BALANCE
 
 
 // ================================================
-// 0xf027: WORD 'INIT-BALANCE' codep=0x224c parp=0xf038 params=0 returns=0
+// 0xf027: WORD 'INIT-BALANCE' codep=0x224c wordp=0xf038 params=0 returns=0
 // ================================================
 // entry
 
@@ -276,7 +276,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 
 // ================================================
-// 0xf046: WORD 'TRANSACT' codep=0x224c parp=0xf053 params=1 returns=0
+// 0xf046: WORD 'TRANSACT' codep=0x224c wordp=0xf053 params=1 returns=0
 // ================================================
 // entry
 
@@ -348,7 +348,7 @@ void TRANSACT() // TRANSACT
 
 
 // ================================================
-// 0xf0c5: WORD 'INT%' codep=0x224c parp=0xf0ce params=0 returns=0
+// 0xf0c5: WORD 'INT%' codep=0x224c wordp=0xf0ce params=0 returns=0
 // ================================================
 // entry
 
@@ -382,12 +382,12 @@ void INT_pe_() // INT%
 
 
 // ================================================
-// 0xf110: WORD 'DOTS' codep=0x1d29 parp=0xf112
+// 0xf110: WORD 'DOTS' codep=0x1d29 wordp=0xf112
 // ================================================
 // 0xf112: db 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 'DDDDDDDDDDDDDDDDDDDD'
 
 // ================================================
-// 0xf126: WORD '.DOTS' codep=0x224c parp=0xf128 params=1 returns=0
+// 0xf126: WORD '.DOTS' codep=0x224c wordp=0xf128 params=1 returns=0
 // ================================================
 
 void DrawDOTS() // .DOTS
@@ -412,7 +412,7 @@ void DrawDOTS() // .DOTS
 
 
 // ================================================
-// 0xf150: WORD '.BDATE' codep=0x224c parp=0xf152 params=0 returns=0
+// 0xf150: WORD '.BDATE' codep=0x224c wordp=0xf152 params=0 returns=0
 // ================================================
 
 void DrawBDATE() // .BDATE
@@ -446,7 +446,7 @@ void DrawBDATE() // .BDATE
 
 
 // ================================================
-// 0xf194: WORD '.$AMT' codep=0x224c parp=0xf196 params=0 returns=0
+// 0xf194: WORD '.$AMT' codep=0x224c wordp=0xf196 params=0 returns=0
 // ================================================
 
 void Draw_do_AMT() // .$AMT
@@ -479,7 +479,7 @@ void Draw_do_AMT() // .$AMT
 
 
 // ================================================
-// 0xf1d8: WORD '?.MESS' codep=0x224c parp=0xf1da
+// 0xf1d8: WORD '?.MESS' codep=0x224c wordp=0xf1da
 // ================================================
 
 void Is_dot_MESS() // ?.MESS
@@ -490,7 +490,7 @@ void Is_dot_MESS() // ?.MESS
 
 
 // ================================================
-// 0xf1e0: WORD 'BTITLE' codep=0x224c parp=0xf1e2 params=0 returns=13
+// 0xf1e0: WORD 'BTITLE' codep=0x224c wordp=0xf1e2 params=0 returns=13
 // ================================================
 
 void BTITLE() // BTITLE
@@ -539,7 +539,7 @@ void BTITLE() // BTITLE
 
 
 // ================================================
-// 0xf26d: WORD 'BOFRAME' codep=0x224c parp=0xf26f params=1 returns=37
+// 0xf26d: WORD 'BOFRAME' codep=0x224c wordp=0xf26f params=1 returns=37
 // ================================================
 
 void BOFRAME() // BOFRAME
@@ -654,7 +654,7 @@ void BOFRAME() // BOFRAME
 
 
 // ================================================
-// 0xf3a9: WORD 'BINFO' codep=0x224c parp=0xf3ab params=0 returns=0
+// 0xf3a9: WORD 'BINFO' codep=0x224c wordp=0xf3ab params=0 returns=0
 // ================================================
 
 void BINFO() // BINFO
@@ -704,7 +704,7 @@ void BINFO() // BINFO
 
 
 // ================================================
-// 0xf462: WORD 'BSCREEN' codep=0x224c parp=0xf464 params=0 returns=50
+// 0xf462: WORD 'BSCREEN' codep=0x224c wordp=0xf464 params=0 returns=50
 // ================================================
 
 void BSCREEN() // BSCREEN
@@ -718,7 +718,7 @@ void BSCREEN() // BSCREEN
 
 
 // ================================================
-// 0xf470: WORD 'BMESS' codep=0x224c parp=0xf472
+// 0xf470: WORD 'BMESS' codep=0x224c wordp=0xf472
 // ================================================
 
 void BMESS() // BMESS
@@ -748,7 +748,7 @@ void BMESS() // BMESS
 
 
 // ================================================
-// 0xf4aa: WORD '.BALANCE' codep=0x224c parp=0xf4ac params=0 returns=0
+// 0xf4aa: WORD '.BALANCE' codep=0x224c wordp=0xf4ac params=0 returns=0
 // ================================================
 
 void DrawBALANCE() // .BALANCE
@@ -765,7 +765,7 @@ void DrawBALANCE() // .BALANCE
 
 
 // ================================================
-// 0xf4c2: WORD '.BANK' codep=0x224c parp=0xf4c4
+// 0xf4c2: WORD '.BANK' codep=0x224c wordp=0xf4c4
 // ================================================
 
 void DrawBANK() // .BANK
@@ -789,7 +789,7 @@ void DrawBANK() // .BANK
 
 
 // ================================================
-// 0xf4e2: WORD '(U-BANK)' codep=0x224c parp=0xf4ef
+// 0xf4e2: WORD '(U-BANK)' codep=0x224c wordp=0xf4ef
 // ================================================
 // entry
 

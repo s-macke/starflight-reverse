@@ -156,7 +156,7 @@ void VI(); // VI
 
 
 // ================================================
-// 0x79d6: WORD 'ICLOSE' codep=0x224c parp=0x79e1 params=0 returns=0
+// 0x79d6: WORD 'ICLOSE' codep=0x224c wordp=0x79e1 params=0 returns=0
 // ================================================
 
 void ICLOSE() // ICLOSE
@@ -181,7 +181,7 @@ void ICLOSE() // ICLOSE
 
 
 // ================================================
-// 0x7a01: WORD '*CLOSE' codep=0x224c parp=0x7a0c params=1 returns=0
+// 0x7a01: WORD '*CLOSE' codep=0x224c wordp=0x7a0c params=1 returns=0
 // ================================================
 
 void _star_CLOSE() // *CLOSE
@@ -201,7 +201,7 @@ void _star_CLOSE() // *CLOSE
 
 
 // ================================================
-// 0x7a18: WORD '>C+S' codep=0x224c parp=0x7a21 params=2 returns=0
+// 0x7a18: WORD '>C+S' codep=0x224c wordp=0x7a21 params=2 returns=0
 // ================================================
 
 void _gt_C_plus_S() // >C+S
@@ -212,7 +212,7 @@ void _gt_C_plus_S() // >C+S
 
 
 // ================================================
-// 0x7a27: WORD '@>C+S' codep=0x224c parp=0x7a31 params=1 returns=0
+// 0x7a27: WORD '@>C+S' codep=0x224c wordp=0x7a31 params=1 returns=0
 // ================================================
 
 void Get_gt_C_plus_S() // @>C+S
@@ -223,7 +223,7 @@ void Get_gt_C_plus_S() // @>C+S
 
 
 // ================================================
-// 0x7a37: WORD 'IOPEN' codep=0x224c parp=0x7a41 params=0 returns=0
+// 0x7a37: WORD 'IOPEN' codep=0x224c wordp=0x7a41 params=0 returns=0
 // ================================================
 
 void IOPEN() // IOPEN
@@ -237,7 +237,7 @@ void IOPEN() // IOPEN
 
 
 // ================================================
-// 0x7a4d: WORD 'CCLR' codep=0x224c parp=0x7a56 params=0 returns=0
+// 0x7a4d: WORD 'CCLR' codep=0x224c wordp=0x7a56 params=0 returns=0
 // ================================================
 
 void CCLR() // CCLR
@@ -254,7 +254,7 @@ void CCLR() // CCLR
 
 
 // ================================================
-// 0x7a6a: WORD 'W7A6C' codep=0x224c parp=0x7a6c params=0 returns=2
+// 0x7a6a: WORD 'W7A6C' codep=0x224c wordp=0x7a6c params=0 returns=2
 // ================================================
 
 void W7A6C() // W7A6C
@@ -265,7 +265,7 @@ void W7A6C() // W7A6C
 
 
 // ================================================
-// 0x7a72: WORD '?LAST' codep=0x224c parp=0x7a7c params=0 returns=1
+// 0x7a72: WORD '?LAST' codep=0x224c wordp=0x7a7c params=0 returns=1
 // ================================================
 
 void IsLAST() // ?LAST
@@ -277,7 +277,7 @@ void IsLAST() // ?LAST
 
 
 // ================================================
-// 0x7a84: WORD '?FIRST' codep=0x224c parp=0x7a8f params=0 returns=1
+// 0x7a84: WORD '?FIRST' codep=0x224c wordp=0x7a8f params=0 returns=1
 // ================================================
 
 void IsFIRST() // ?FIRST
@@ -289,7 +289,7 @@ void IsFIRST() // ?FIRST
 
 
 // ================================================
-// 0x7a97: WORD '>C+' codep=0x224c parp=0x7a9f params=2 returns=0
+// 0x7a97: WORD '>C+' codep=0x224c wordp=0x7a9f params=2 returns=0
 // ================================================
 
 void _gt_C_plus_() // >C+
@@ -302,7 +302,7 @@ void _gt_C_plus_() // >C+
 
 
 // ================================================
-// 0x7aa9: WORD 'INEXT' codep=0x224c parp=0x7ab3 params=0 returns=0
+// 0x7aa9: WORD 'INEXT' codep=0x224c wordp=0x7ab3 params=0 returns=0
 // ================================================
 
 void INEXT() // INEXT
@@ -316,7 +316,7 @@ void INEXT() // INEXT
 
 
 // ================================================
-// 0x7ac1: WORD 'IPREV' codep=0x224c parp=0x7acb params=0 returns=0
+// 0x7ac1: WORD 'IPREV' codep=0x224c wordp=0x7acb params=0 returns=0
 // ================================================
 
 void IPREV() // IPREV
@@ -330,7 +330,7 @@ void IPREV() // IPREV
 
 
 // ================================================
-// 0x7ad9: WORD 'IFIRST' codep=0x224c parp=0x7ae4 params=0 returns=0
+// 0x7ad9: WORD 'IFIRST' codep=0x224c wordp=0x7ae4 params=0 returns=0
 // ================================================
 
 void IFIRST() // IFIRST
@@ -342,7 +342,7 @@ void IFIRST() // IFIRST
 
 
 // ================================================
-// 0x7aec: WORD 'ILAST' codep=0x224c parp=0x7af6 params=0 returns=0
+// 0x7aec: WORD 'ILAST' codep=0x224c wordp=0x7af6 params=0 returns=0
 // ================================================
 
 void ILAST() // ILAST
@@ -353,7 +353,7 @@ void ILAST() // ILAST
 
 
 // ================================================
-// 0x7afc: WORD 'VCLR' codep=0x224c parp=0x7b05 params=0 returns=0
+// 0x7afc: WORD 'VCLR' codep=0x224c wordp=0x7b05 params=0 returns=0
 // ================================================
 
 void VCLR() // VCLR
@@ -365,7 +365,7 @@ void VCLR() // VCLR
 
 
 // ================================================
-// 0x7b0d: WORD '>V' codep=0x7b14 parp=0x7b14 params=1 returns=0
+// 0x7b0d: WORD '>V' codep=0x7b14 wordp=0x7b14 params=1 returns=0
 // ================================================
 // 0x7b14: mov    bx,[5638] // W5638
 // 0x7b18: pop    word ptr [bx]
@@ -375,7 +375,7 @@ void VCLR() // VCLR
 // 0x7b22: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b24: WORD 'V>' codep=0x7b2b parp=0x7b2b params=0 returns=1
+// 0x7b24: WORD 'V>' codep=0x7b2b wordp=0x7b2b params=0 returns=1
 // ================================================
 // 0x7b2b: add    word ptr [5638],02 // W5638
 // 0x7b30: mov    bx,[5638] // W5638
@@ -385,7 +385,7 @@ void VCLR() // VCLR
 // 0x7b39: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b3b: WORD 'VI' codep=0x7b42 parp=0x7b42 params=0 returns=1
+// 0x7b3b: WORD 'VI' codep=0x7b42 wordp=0x7b42 params=0 returns=1
 // ================================================
 // 0x7b42: mov    bx,[5638] // W5638
 // 0x7b46: push   word ptr [bx+02]
@@ -394,7 +394,7 @@ void VCLR() // VCLR
 // 0x7b4c: jmp    word ptr [bx]
 
 // ================================================
-// 0x7b4e: WORD 'W7B50' codep=0x224c parp=0x7b50 params=0 returns=0
+// 0x7b4e: WORD 'W7B50' codep=0x224c wordp=0x7b50 params=0 returns=0
 // ================================================
 // orphan
 
@@ -422,7 +422,7 @@ void W7B50() // W7B50
 
 
 // ================================================
-// 0x7b70: WORD 'SAVE-BU' codep=0x224c parp=0x7b7c
+// 0x7b70: WORD 'SAVE-BU' codep=0x224c wordp=0x7b7c
 // ================================================
 
 void SAVE_dash_BU() // SAVE-BU
@@ -433,7 +433,7 @@ void SAVE_dash_BU() // SAVE-BU
 
 
 // ================================================
-// 0x7b82: WORD 'FLUSH_2' codep=0x224c parp=0x7b8c
+// 0x7b82: WORD 'FLUSH_2' codep=0x224c wordp=0x7b8c
 // ================================================
 
 void FLUSH_2() // FLUSH_2
@@ -444,7 +444,7 @@ void FLUSH_2() // FLUSH_2
 
 
 // ================================================
-// 0x7b92: WORD 'MT' codep=0x224c parp=0x7b99 params=0 returns=0
+// 0x7b92: WORD 'MT' codep=0x224c wordp=0x7b99 params=0 returns=0
 // ================================================
 
 void MT() // MT
@@ -455,7 +455,7 @@ void MT() // MT
 
 
 // ================================================
-// 0x7b9f: WORD 'IINSERT' codep=0x224c parp=0x7bab params=4 returns=0
+// 0x7b9f: WORD 'IINSERT' codep=0x224c wordp=0x7bab params=4 returns=0
 // ================================================
 
 void IINSERT() // IINSERT
@@ -494,7 +494,7 @@ void IINSERT() // IINSERT
 
 
 // ================================================
-// 0x7be7: WORD '<INSERT' codep=0x224c parp=0x7bf3 params=4 returns=0
+// 0x7be7: WORD '<INSERT' codep=0x224c wordp=0x7bf3 params=4 returns=0
 // ================================================
 
 void _st_INSERT() // <INSERT
@@ -515,7 +515,7 @@ void _st_INSERT() // <INSERT
 
 
 // ================================================
-// 0x7c0d: WORD '>INSERT' codep=0x224c parp=0x7c19 params=4 returns=0
+// 0x7c0d: WORD '>INSERT' codep=0x224c wordp=0x7c19 params=4 returns=0
 // ================================================
 
 void _gt_INSERT() // >INSERT
@@ -528,7 +528,7 @@ void _gt_INSERT() // >INSERT
 
 
 // ================================================
-// 0x7c23: WORD 'IEXTRAC' codep=0x224c parp=0x7c2f params=0 returns=2
+// 0x7c23: WORD 'IEXTRAC' codep=0x224c wordp=0x7c2f params=0 returns=2
 // ================================================
 
 void IEXTRAC() // IEXTRAC
@@ -568,7 +568,7 @@ void IEXTRAC() // IEXTRAC
 
 
 // ================================================
-// 0x7c6f: WORD 'W7C71' codep=0x224c parp=0x7c71 params=0 returns=2
+// 0x7c6f: WORD 'W7C71' codep=0x224c wordp=0x7c71 params=0 returns=2
 // ================================================
 
 void W7C71() // W7C71
@@ -579,7 +579,7 @@ void W7C71() // W7C71
 
 
 // ================================================
-// 0x7c77: WORD '@NEWSPA' codep=0x224c parp=0x7c83 params=0 returns=3
+// 0x7c77: WORD '@NEWSPA' codep=0x224c wordp=0x7c83 params=0 returns=3
 // ================================================
 
 void GetNEWSPA() // @NEWSPA
@@ -590,7 +590,7 @@ void GetNEWSPA() // @NEWSPA
 
 
 // ================================================
-// 0x7c89: WORD '!NEWSPA' codep=0x224c parp=0x7c95 params=1 returns=0
+// 0x7c89: WORD '!NEWSPA' codep=0x224c wordp=0x7c95 params=1 returns=0
 // ================================================
 
 void StoreNEWSPA() // !NEWSPA
@@ -601,7 +601,7 @@ void StoreNEWSPA() // !NEWSPA
 
 
 // ================================================
-// 0x7c9b: WORD 'W7C9D' codep=0x224c parp=0x7c9d params=0 returns=1
+// 0x7c9b: WORD 'W7C9D' codep=0x224c wordp=0x7c9d params=0 returns=1
 // ================================================
 
 void W7C9D() // W7C9D
@@ -614,7 +614,7 @@ void W7C9D() // W7C9D
 
 
 // ================================================
-// 0x7ca7: WORD 'MAXSPAC' codep=0x224c parp=0x7cb3 params=0 returns=2
+// 0x7ca7: WORD 'MAXSPAC' codep=0x224c wordp=0x7cb3 params=0 returns=2
 // ================================================
 
 void MAXSPAC() // MAXSPAC
@@ -627,7 +627,7 @@ void MAXSPAC() // MAXSPAC
 
 
 // ================================================
-// 0x7cc1: WORD 'W7CC3' codep=0x224c parp=0x7cc3 params=0 returns=2
+// 0x7cc1: WORD 'W7CC3' codep=0x224c wordp=0x7cc3 params=0 returns=2
 // ================================================
 
 void W7CC3() // W7CC3
@@ -642,7 +642,7 @@ void W7CC3() // W7CC3
 
 
 // ================================================
-// 0x7cd3: WORD 'FLD@' codep=0x4b3b parp=0x7cdc
+// 0x7cd3: WORD 'FLD@' codep=0x4b3b wordp=0x7cdc
 // ================================================
 
 void FLD_at_() // FLD@
@@ -666,7 +666,7 @@ void FLD_at_() // FLD@
 }
 
 // ================================================
-// 0x7cec: WORD 'FLD!' codep=0x4b3b parp=0x7cf5
+// 0x7cec: WORD 'FLD!' codep=0x4b3b wordp=0x7cf5
 // ================================================
 
 void FLD_ex_() // FLD!
@@ -690,7 +690,7 @@ void FLD_ex_() // FLD!
 }
 
 // ================================================
-// 0x7d05: WORD 'IFLD@' codep=0x224c parp=0x7d0f
+// 0x7d05: WORD 'IFLD@' codep=0x224c wordp=0x7d0f
 // ================================================
 
 void IFLD_at_() // IFLD@
@@ -705,7 +705,7 @@ void IFLD_at_() // IFLD@
 
 
 // ================================================
-// 0x7d1f: WORD 'IFLD!' codep=0x224c parp=0x7d29
+// 0x7d1f: WORD 'IFLD!' codep=0x224c wordp=0x7d29
 // ================================================
 
 void IFLD_ex_() // IFLD!
@@ -720,7 +720,7 @@ void IFLD_ex_() // IFLD!
 
 
 // ================================================
-// 0x7d39: WORD 'W7D3B' codep=0x224c parp=0x7d3b
+// 0x7d39: WORD 'W7D3B' codep=0x224c wordp=0x7d3b
 // ================================================
 
 void W7D3B() // W7D3B
@@ -733,7 +733,7 @@ void W7D3B() // W7D3B
 
 
 // ================================================
-// 0x7d45: WORD '?CLASS/' codep=0x224c parp=0x7d51 params=2 returns=3
+// 0x7d45: WORD '?CLASS/' codep=0x224c wordp=0x7d51 params=2 returns=3
 // ================================================
 
 void IsCLASS_slash_() // ?CLASS/
@@ -757,7 +757,7 @@ void IsCLASS_slash_() // ?CLASS/
 
 
 // ================================================
-// 0x7d71: WORD 'W7D73' codep=0x224c parp=0x7d73
+// 0x7d71: WORD 'W7D73' codep=0x224c wordp=0x7d73
 // ================================================
 
 void W7D73() // W7D73
@@ -768,7 +768,7 @@ void W7D73() // W7D73
 
 
 // ================================================
-// 0x7d79: WORD 'W7D7B' codep=0x224c parp=0x7d7b
+// 0x7d79: WORD 'W7D7B' codep=0x224c wordp=0x7d7b
 // ================================================
 
 void W7D7B() // W7D7B
@@ -779,7 +779,7 @@ void W7D7B() // W7D7B
 
 
 // ================================================
-// 0x7d81: WORD 'W7D83' codep=0x224c parp=0x7d83
+// 0x7d81: WORD 'W7D83' codep=0x224c wordp=0x7d83
 // ================================================
 
 void W7D83() // W7D83
@@ -790,7 +790,7 @@ void W7D83() // W7D83
 
 
 // ================================================
-// 0x7d89: WORD 'MAP' codep=0x224c parp=0x7d91
+// 0x7d89: WORD 'MAP' codep=0x224c wordp=0x7d91
 // ================================================
 
 void MAP() // MAP
@@ -801,7 +801,7 @@ void MAP() // MAP
 
 
 // ================================================
-// 0x7d97: WORD 'W7D99' codep=0x224c parp=0x7d99 params=2 returns=0
+// 0x7d97: WORD 'W7D99' codep=0x224c wordp=0x7d99 params=2 returns=0
 // ================================================
 
 void W7D99() // W7D99
@@ -814,7 +814,7 @@ void W7D99() // W7D99
 
 
 // ================================================
-// 0x7da3: WORD 'W7DA5' codep=0x224c parp=0x7da5 params=1 returns=0
+// 0x7da3: WORD 'W7DA5' codep=0x224c wordp=0x7da5 params=1 returns=0
 // ================================================
 
 void W7DA5() // W7DA5
@@ -826,7 +826,7 @@ void W7DA5() // W7DA5
 
 
 // ================================================
-// 0x7dad: WORD 'SELECT' codep=0x224c parp=0x7db8
+// 0x7dad: WORD 'SELECT' codep=0x224c wordp=0x7db8
 // ================================================
 
 void SELECT() // SELECT
@@ -855,7 +855,7 @@ void SELECT() // SELECT
 
 
 // ================================================
-// 0x7de0: WORD '?>FIRST' codep=0x224c parp=0x7dec params=0 returns=1
+// 0x7de0: WORD '?>FIRST' codep=0x224c wordp=0x7dec params=0 returns=1
 // ================================================
 
 void Is_gt_FIRST() // ?>FIRST
@@ -869,7 +869,7 @@ void Is_gt_FIRST() // ?>FIRST
 
 
 // ================================================
-// 0x7df8: WORD 'SELECT-' codep=0x224c parp=0x7e04
+// 0x7df8: WORD 'SELECT-' codep=0x224c wordp=0x7e04
 // ================================================
 
 void SELECT_dash_() // SELECT-
@@ -897,7 +897,7 @@ void SELECT_dash_() // SELECT-
 
 
 // ================================================
-// 0x7e2e: WORD 'W7E30' codep=0x224c parp=0x7e30
+// 0x7e2e: WORD 'W7E30' codep=0x224c wordp=0x7e30
 // ================================================
 // orphan
 
@@ -912,7 +912,7 @@ void W7E30() // W7E30
 
 
 // ================================================
-// 0x7e3a: WORD 'W7E3C' codep=0x224c parp=0x7e3c
+// 0x7e3a: WORD 'W7E3C' codep=0x224c wordp=0x7e3c
 // ================================================
 
 void W7E3C() // W7E3C
@@ -923,7 +923,7 @@ void W7E3C() // W7E3C
 
 
 // ================================================
-// 0x7e44: WORD 'IFIND' codep=0x224c parp=0x7e4e
+// 0x7e44: WORD 'IFIND' codep=0x224c wordp=0x7e4e
 // ================================================
 
 void IFIND() // IFIND
@@ -934,7 +934,7 @@ void IFIND() // IFIND
 
 
 // ================================================
-// 0x7e56: WORD 'W7E58' codep=0x224c parp=0x7e58 params=0 returns=0
+// 0x7e56: WORD 'W7E58' codep=0x224c wordp=0x7e58 params=0 returns=0
 // ================================================
 
 void W7E58() // W7E58
@@ -954,7 +954,7 @@ void W7E58() // W7E58
 
 
 // ================================================
-// 0x7e70: WORD 'MAP>LEA' codep=0x224c parp=0x7e7c
+// 0x7e70: WORD 'MAP>LEA' codep=0x224c wordp=0x7e7c
 // ================================================
 
 void MAP_gt_LEA() // MAP>LEA
@@ -974,7 +974,7 @@ void MAP_gt_LEA() // MAP>LEA
 
 
 // ================================================
-// 0x7e94: WORD 'MAKE1ST' codep=0x224c parp=0x7ea0 params=0 returns=0
+// 0x7e94: WORD 'MAKE1ST' codep=0x224c wordp=0x7ea0 params=0 returns=0
 // ================================================
 
 void MAKE1ST() // MAKE1ST
@@ -990,7 +990,7 @@ void MAKE1ST() // MAKE1ST
 
 
 // ================================================
-// 0x7eb2: WORD 'W7EB4' codep=0x224c parp=0x7eb4 params=3 returns=0
+// 0x7eb2: WORD 'W7EB4' codep=0x224c wordp=0x7eb4 params=3 returns=0
 // ================================================
 
 void W7EB4() // W7EB4
@@ -1024,7 +1024,7 @@ void W7EB4() // W7EB4
 
 
 // ================================================
-// 0x7ee6: WORD '>INACTI' codep=0x224c parp=0x7ef2 params=2 returns=0
+// 0x7ee6: WORD '>INACTI' codep=0x224c wordp=0x7ef2 params=2 returns=0
 // ================================================
 
 void _gt_INACTI() // >INACTI
@@ -1040,7 +1040,7 @@ void _gt_INACTI() // >INACTI
 
 
 // ================================================
-// 0x7f0c: WORD 'W7F0E' codep=0x224c parp=0x7f0e params=0 returns=0
+// 0x7f0c: WORD 'W7F0E' codep=0x224c wordp=0x7f0e params=0 returns=0
 // ================================================
 
 void W7F0E() // W7F0E
@@ -1051,7 +1051,7 @@ void W7F0E() // W7F0E
 
 
 // ================================================
-// 0x7f14: WORD 'IDELETE' codep=0x224c parp=0x7f20
+// 0x7f14: WORD 'IDELETE' codep=0x224c wordp=0x7f20
 // ================================================
 
 void IDELETE() // IDELETE
@@ -1077,7 +1077,7 @@ void IDELETE() // IDELETE
 
 
 // ================================================
-// 0x7f4a: WORD 'W7F4C' codep=0x224c parp=0x7f4c
+// 0x7f4a: WORD 'W7F4C' codep=0x224c wordp=0x7f4c
 // ================================================
 
 void W7F4C() // W7F4C
@@ -1116,7 +1116,7 @@ void W7F4C() // W7F4C
 
 
 // ================================================
-// 0x7f86: WORD 'ALL' codep=0x224c parp=0x7f8e
+// 0x7f86: WORD 'ALL' codep=0x224c wordp=0x7f8e
 // ================================================
 
 void ALL() // ALL
@@ -1132,7 +1132,7 @@ void ALL() // ALL
 
 
 // ================================================
-// 0x7fa2: WORD 'EACH' codep=0x224c parp=0x7fab
+// 0x7fa2: WORD 'EACH' codep=0x224c wordp=0x7fab
 // ================================================
 
 void EACH() // EACH
@@ -1147,7 +1147,7 @@ void EACH() // EACH
 
 
 // ================================================
-// 0x7fbb: WORD 'W7FBD' codep=0x224c parp=0x7fbd
+// 0x7fbb: WORD 'W7FBD' codep=0x224c wordp=0x7fbd
 // ================================================
 
 void W7FBD() // W7FBD
@@ -1158,7 +1158,7 @@ void W7FBD() // W7FBD
 
 
 // ================================================
-// 0x7fc3: WORD 'NULLPOI' codep=0x224c parp=0x7fcf params=0 returns=0
+// 0x7fc3: WORD 'NULLPOI' codep=0x224c wordp=0x7fcf params=0 returns=0
 // ================================================
 
 void NULLPOI() // NULLPOI
@@ -1173,7 +1173,7 @@ void NULLPOI() // NULLPOI
 
 
 // ================================================
-// 0x7fdd: WORD 'W7FDF' codep=0x224c parp=0x7fdf params=0 returns=2
+// 0x7fdd: WORD 'W7FDF' codep=0x224c wordp=0x7fdf params=0 returns=2
 // ================================================
 
 void W7FDF() // W7FDF
@@ -1191,7 +1191,7 @@ void W7FDF() // W7FDF
 
 
 // ================================================
-// 0x7ff3: WORD 'W7FF5' codep=0x224c parp=0x7ff5 params=0 returns=0
+// 0x7ff3: WORD 'W7FF5' codep=0x224c wordp=0x7ff5 params=0 returns=0
 // ================================================
 
 void W7FF5() // W7FF5
@@ -1226,7 +1226,7 @@ void W7FF5() // W7FF5
 
 
 // ================================================
-// 0x8029: WORD 'W802B' codep=0x224c parp=0x802b params=0 returns=4
+// 0x8029: WORD 'W802B' codep=0x224c wordp=0x802b params=0 returns=4
 // ================================================
 
 void W802B() // W802B
@@ -1260,7 +1260,7 @@ void W802B() // W802B
 
 
 // ================================================
-// 0x806b: WORD '?>MAXSP' codep=0x224c parp=0x8077 params=1 returns=4
+// 0x806b: WORD '?>MAXSP' codep=0x224c wordp=0x8077 params=1 returns=4
 // ================================================
 
 void Is_gt_MAXSP() // ?>MAXSP
@@ -1279,7 +1279,7 @@ void Is_gt_MAXSP() // ?>MAXSP
 
 
 // ================================================
-// 0x808b: WORD 'W808D' codep=0x224c parp=0x808d params=1 returns=9
+// 0x808b: WORD 'W808D' codep=0x224c wordp=0x808d params=1 returns=9
 // ================================================
 
 void W808D() // W808D
@@ -1313,7 +1313,7 @@ void W808D() // W808D
 
 
 // ================================================
-// 0x80c5: WORD 'W80C7' codep=0x224c parp=0x80c7 params=1 returns=9
+// 0x80c5: WORD 'W80C7' codep=0x224c wordp=0x80c7 params=1 returns=9
 // ================================================
 
 void W80C7() // W80C7
@@ -1356,7 +1356,7 @@ void W80C7() // W80C7
 
 
 // ================================================
-// 0x8109: WORD 'SET?REU' codep=0x4b3b parp=0x8115
+// 0x8109: WORD 'SET?REU' codep=0x4b3b wordp=0x8115
 // ================================================
 
 void SET_ask_REU() // SET?REU
@@ -1419,7 +1419,7 @@ void SET_ask_REU() // SET?REU
 }
 
 // ================================================
-// 0x8159: WORD 'VICREAT' codep=0x224c parp=0x8165 params=1 returns=11
+// 0x8159: WORD 'VICREAT' codep=0x224c wordp=0x8165 params=1 returns=11
 // ================================================
 
 void VICREAT() // VICREAT
@@ -1450,7 +1450,7 @@ void VICREAT() // VICREAT
 
 
 // ================================================
-// 0x819f: WORD 'ICREATE' codep=0x224c parp=0x81ab
+// 0x819f: WORD 'ICREATE' codep=0x224c wordp=0x81ab
 // ================================================
 
 void ICREATE() // ICREATE

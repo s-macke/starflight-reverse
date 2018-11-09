@@ -9,17 +9,17 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//         .RUNBIT  codep:0xf220 parp:0xf220 size:0x00cd C-string:'DrawRUNBIT'
-//          .PARMS  codep:0x224c parp:0xf2f8 size:0x0059 C-string:'DrawPARMS'
-//          BRIGHT  codep:0x1d29 parp:0xf35c size:0x0002 C-string:'BRIGHT'
-//           2TEMP  codep:0x1d29 parp:0xf368 size:0x0002 C-string:'_2TEMP'
-//      .EGARUNBIT  codep:0xf379 parp:0xf379 size:0x00e1 C-string:'DrawEGARUNBIT'
-//         .HYBRID  codep:0x224c parp:0xf466 size:0x0094 C-string:'DrawHYBRID'
-//          PADSEG  codep:0x224c parp:0xf505 size:0x0008 C-string:'PADSEG'
-//        @.HYBRID  codep:0x224c parp:0xf51a size:0x000c C-string:'Get_dot_HYBRID'
-//           SETUP  codep:0x224c parp:0xf530 size:0x0000 C-string:'SETUP'
+//         .RUNBIT  codep:0xf220 wordp:0xf220 size:0x00cd C-string:'DrawRUNBIT'
+//          .PARMS  codep:0x224c wordp:0xf2f8 size:0x0059 C-string:'DrawPARMS'
+//          BRIGHT  codep:0x1d29 wordp:0xf35c size:0x0002 C-string:'BRIGHT'
+//           2TEMP  codep:0x1d29 wordp:0xf368 size:0x0002 C-string:'_2TEMP'
+//      .EGARUNBIT  codep:0xf379 wordp:0xf379 size:0x00e1 C-string:'DrawEGARUNBIT'
+//         .HYBRID  codep:0x224c wordp:0xf466 size:0x0094 C-string:'DrawHYBRID'
+//          PADSEG  codep:0x224c wordp:0xf505 size:0x0008 C-string:'PADSEG'
+//        @.HYBRID  codep:0x224c wordp:0xf51a size:0x000c C-string:'Get_dot_HYBRID'
+//           SETUP  codep:0x224c wordp:0xf530 size:0x0000 C-string:'SETUP'
 
 // =================================
 // ============= EXTERN ============
@@ -76,7 +76,7 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // 0xf212: db 0x35 0x00 '5 '
 
 // ================================================
-// 0xf214: WORD '.RUNBIT' codep=0xf220 parp=0xf220
+// 0xf214: WORD '.RUNBIT' codep=0xf220 wordp=0xf220
 // ================================================
 // entry
 // 0xf220: cli    
@@ -165,7 +165,7 @@ const unsigned short int pp__2TEMP = 0xf368; // 2TEMP size: 2
 // 0xf2eb: jmp    word ptr [bx]
 
 // ================================================
-// 0xf2ed: WORD '.PARMS' codep=0x224c parp=0xf2f8 params=0 returns=0
+// 0xf2ed: WORD '.PARMS' codep=0x224c wordp=0xf2f8 params=0 returns=0
 // ================================================
 
 void DrawPARMS() // .PARMS
@@ -199,17 +199,17 @@ void DrawPARMS() // .PARMS
 
 
 // ================================================
-// 0xf351: WORD 'BRIGHT' codep=0x1d29 parp=0xf35c
+// 0xf351: WORD 'BRIGHT' codep=0x1d29 wordp=0xf35c
 // ================================================
 // 0xf35c: db 0x2e 0x52 '.R'
 
 // ================================================
-// 0xf35e: WORD '2TEMP' codep=0x1d29 parp=0xf368
+// 0xf35e: WORD '2TEMP' codep=0x1d29 wordp=0xf368
 // ================================================
 // 0xf368: db 0x20 0x2e ' .'
 
 // ================================================
-// 0xf36a: WORD '.EGARUNBIT' codep=0xf379 parp=0xf379
+// 0xf36a: WORD '.EGARUNBIT' codep=0xf379 wordp=0xf379
 // ================================================
 // entry
 // 0xf379: mov    dx,03CE
@@ -299,7 +299,7 @@ void DrawPARMS() // .PARMS
 // 0xf458: jmp    word ptr [bx]
 
 // ================================================
-// 0xf45a: WORD '.HYBRID' codep=0x224c parp=0xf466 params=1 returns=0
+// 0xf45a: WORD '.HYBRID' codep=0x224c wordp=0xf466 params=1 returns=0
 // ================================================
 
 void DrawHYBRID() // .HYBRID
@@ -376,7 +376,7 @@ void DrawHYBRID() // .HYBRID
 
 
 // ================================================
-// 0xf4fa: WORD 'PADSEG' codep=0x224c parp=0xf505 params=0 returns=1
+// 0xf4fa: WORD 'PADSEG' codep=0x224c wordp=0xf505 params=0 returns=1
 // ================================================
 
 void PADSEG() // PADSEG
@@ -388,7 +388,7 @@ void PADSEG() // PADSEG
 
 
 // ================================================
-// 0xf50d: WORD '@.HYBRID' codep=0x224c parp=0xf51a
+// 0xf50d: WORD '@.HYBRID' codep=0x224c wordp=0xf51a
 // ================================================
 // entry
 
@@ -403,7 +403,7 @@ void Get_dot_HYBRID() // @.HYBRID
 
 
 // ================================================
-// 0xf526: WORD 'SETUP' codep=0x224c parp=0xf530
+// 0xf526: WORD 'SETUP' codep=0x224c wordp=0xf530
 // ================================================
 
 void SETUP() // SETUP

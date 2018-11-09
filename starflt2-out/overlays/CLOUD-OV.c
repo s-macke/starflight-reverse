@@ -9,27 +9,27 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF3C6  codep:0x7420 parp:0xf3c6 size:0x0003 C-string:'WF3C6'
-//           WF3CB  codep:0x7420 parp:0xf3cb size:0x0003 C-string:'WF3CB'
-//           WF3D0  codep:0x7420 parp:0xf3d0 size:0x0003 C-string:'WF3D0'
-//           WF3D5  codep:0x7420 parp:0xf3d5 size:0x0003 C-string:'WF3D5'
-//           WF3DA  codep:0x224c parp:0xf3da size:0x0006 C-string:'WF3DA'
-//           WF3E2  codep:0x224c parp:0xf3e2 size:0x0040 C-string:'WF3E2'
-//         #HUMANS  codep:0x224c parp:0xf42e size:0x0014 C-string:'_n_HUMANS'
-//           WF444  codep:0x224c parp:0xf444 size:0x0018 C-string:'WF444'
-//           WF45E  codep:0x224c parp:0xf45e size:0x0012 C-string:'WF45E'
-//           WF472  codep:0x224c parp:0xf472 size:0x0008 C-string:'WF472'
-//           WF47C  codep:0x224c parp:0xf47c size:0x0034 C-string:'WF47C'
-//           WF4B2  codep:0x224c parp:0xf4b2 size:0x0016 C-string:'WF4B2'
-//           WF4CA  codep:0x224c parp:0xf4ca size:0x0008 C-string:'WF4CA'
-//           WF4D4  codep:0x224c parp:0xf4d4 size:0x0002 C-string:'WF4D4'
-//           WF4D8  codep:0x224c parp:0xf4d8 size:0x0008 C-string:'WF4D8'
-//           WF4E2  codep:0x224c parp:0xf4e2 size:0x0008 C-string:'WF4E2'
-//           WF4EC  codep:0x224c parp:0xf4ec size:0x0008 C-string:'WF4EC'
-//      (DO-CLOUD)  codep:0x4b3b parp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
-//        DO-CLOUD  codep:0x224c parp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
+//           WF3C6  codep:0x7420 wordp:0xf3c6 size:0x0003 C-string:'WF3C6'
+//           WF3CB  codep:0x7420 wordp:0xf3cb size:0x0003 C-string:'WF3CB'
+//           WF3D0  codep:0x7420 wordp:0xf3d0 size:0x0003 C-string:'WF3D0'
+//           WF3D5  codep:0x7420 wordp:0xf3d5 size:0x0003 C-string:'WF3D5'
+//           WF3DA  codep:0x224c wordp:0xf3da size:0x0006 C-string:'WF3DA'
+//           WF3E2  codep:0x224c wordp:0xf3e2 size:0x0040 C-string:'WF3E2'
+//         #HUMANS  codep:0x224c wordp:0xf42e size:0x0014 C-string:'_n_HUMANS'
+//           WF444  codep:0x224c wordp:0xf444 size:0x0018 C-string:'WF444'
+//           WF45E  codep:0x224c wordp:0xf45e size:0x0012 C-string:'WF45E'
+//           WF472  codep:0x224c wordp:0xf472 size:0x0008 C-string:'WF472'
+//           WF47C  codep:0x224c wordp:0xf47c size:0x0034 C-string:'WF47C'
+//           WF4B2  codep:0x224c wordp:0xf4b2 size:0x0016 C-string:'WF4B2'
+//           WF4CA  codep:0x224c wordp:0xf4ca size:0x0008 C-string:'WF4CA'
+//           WF4D4  codep:0x224c wordp:0xf4d4 size:0x0002 C-string:'WF4D4'
+//           WF4D8  codep:0x224c wordp:0xf4d8 size:0x0008 C-string:'WF4D8'
+//           WF4E2  codep:0x224c wordp:0xf4e2 size:0x0008 C-string:'WF4E2'
+//           WF4EC  codep:0x224c wordp:0xf4ec size:0x0008 C-string:'WF4EC'
+//      (DO-CLOUD)  codep:0x4b3b wordp:0xf503 size:0x001c C-string:'_ro_DO_dash_CLOUD_rc_'
+//        DO-CLOUD  codep:0x224c wordp:0xf52c size:0x0000 C-string:'DO_dash_CLOUD'
 
 // =================================
 // ============= EXTERN ============
@@ -64,29 +64,29 @@ void CI(); // CI
 // 0xf3c2: db 0x1a 0x00 '  '
 
 // ================================================
-// 0xf3c4: WORD 'WF3C6' codep=0x7420 parp=0xf3c6
+// 0xf3c4: WORD 'WF3C6' codep=0x7420 wordp=0xf3c6
 // ================================================
 IFieldType WF3C6 = {ASSIGN_CREWIDX, 0x11, 0x12};
 
 // ================================================
-// 0xf3c9: WORD 'WF3CB' codep=0x7420 parp=0xf3cb
+// 0xf3c9: WORD 'WF3CB' codep=0x7420 wordp=0xf3cb
 // ================================================
 // orphan
 IFieldType WF3CB = {CREWMEMBERIDX, 0x0b, 0x0f};
 
 // ================================================
-// 0xf3ce: WORD 'WF3D0' codep=0x7420 parp=0xf3d0
+// 0xf3ce: WORD 'WF3D0' codep=0x7420 wordp=0xf3d0
 // ================================================
 // orphan
 IFieldType WF3D0 = {CREWMEMBERIDX, 0x1f, 0x01};
 
 // ================================================
-// 0xf3d3: WORD 'WF3D5' codep=0x7420 parp=0xf3d5
+// 0xf3d3: WORD 'WF3D5' codep=0x7420 wordp=0xf3d5
 // ================================================
 IFieldType WF3D5 = {CREWMEMBERIDX, 0x20, 0x02};
 
 // ================================================
-// 0xf3d8: WORD 'WF3DA' codep=0x224c parp=0xf3da params=0 returns=1
+// 0xf3d8: WORD 'WF3DA' codep=0x224c wordp=0xf3da params=0 returns=1
 // ================================================
 
 void WF3DA() // WF3DA
@@ -97,7 +97,7 @@ void WF3DA() // WF3DA
 
 
 // ================================================
-// 0xf3e0: WORD 'WF3E2' codep=0x224c parp=0xf3e2 params=1 returns=1
+// 0xf3e0: WORD 'WF3E2' codep=0x224c wordp=0xf3e2 params=1 returns=1
 // ================================================
 
 void WF3E2() // WF3E2
@@ -126,7 +126,7 @@ void WF3E2() // WF3E2
 
 
 // ================================================
-// 0xf422: WORD '#HUMANS' codep=0x224c parp=0xf42e
+// 0xf422: WORD '#HUMANS' codep=0x224c wordp=0xf42e
 // ================================================
 
 void _n_HUMANS() // #HUMANS
@@ -143,7 +143,7 @@ void _n_HUMANS() // #HUMANS
 
 
 // ================================================
-// 0xf442: WORD 'WF444' codep=0x224c parp=0xf444
+// 0xf442: WORD 'WF444' codep=0x224c wordp=0xf444
 // ================================================
 
 void WF444() // WF444
@@ -162,7 +162,7 @@ void WF444() // WF444
 
 
 // ================================================
-// 0xf45c: WORD 'WF45E' codep=0x224c parp=0xf45e
+// 0xf45c: WORD 'WF45E' codep=0x224c wordp=0xf45e
 // ================================================
 
 void WF45E() // WF45E
@@ -178,7 +178,7 @@ void WF45E() // WF45E
 
 
 // ================================================
-// 0xf470: WORD 'WF472' codep=0x224c parp=0xf472
+// 0xf470: WORD 'WF472' codep=0x224c wordp=0xf472
 // ================================================
 
 void WF472() // WF472
@@ -189,7 +189,7 @@ void WF472() // WF472
 
 
 // ================================================
-// 0xf47a: WORD 'WF47C' codep=0x224c parp=0xf47c params=0 returns=0
+// 0xf47a: WORD 'WF47C' codep=0x224c wordp=0xf47c params=0 returns=0
 // ================================================
 
 void WF47C() // WF47C
@@ -225,7 +225,7 @@ void WF47C() // WF47C
 
 
 // ================================================
-// 0xf4b0: WORD 'WF4B2' codep=0x224c parp=0xf4b2
+// 0xf4b0: WORD 'WF4B2' codep=0x224c wordp=0xf4b2
 // ================================================
 
 void WF4B2() // WF4B2
@@ -241,7 +241,7 @@ void WF4B2() // WF4B2
 
 
 // ================================================
-// 0xf4c8: WORD 'WF4CA' codep=0x224c parp=0xf4ca
+// 0xf4c8: WORD 'WF4CA' codep=0x224c wordp=0xf4ca
 // ================================================
 
 void WF4CA() // WF4CA
@@ -252,7 +252,7 @@ void WF4CA() // WF4CA
 
 
 // ================================================
-// 0xf4d2: WORD 'WF4D4' codep=0x224c parp=0xf4d4 params=0 returns=0
+// 0xf4d2: WORD 'WF4D4' codep=0x224c wordp=0xf4d4 params=0 returns=0
 // ================================================
 
 void WF4D4() // WF4D4
@@ -261,7 +261,7 @@ void WF4D4() // WF4D4
 
 
 // ================================================
-// 0xf4d6: WORD 'WF4D8' codep=0x224c parp=0xf4d8
+// 0xf4d6: WORD 'WF4D8' codep=0x224c wordp=0xf4d8
 // ================================================
 
 void WF4D8() // WF4D8
@@ -272,7 +272,7 @@ void WF4D8() // WF4D8
 
 
 // ================================================
-// 0xf4e0: WORD 'WF4E2' codep=0x224c parp=0xf4e2
+// 0xf4e0: WORD 'WF4E2' codep=0x224c wordp=0xf4e2
 // ================================================
 
 void WF4E2() // WF4E2
@@ -283,7 +283,7 @@ void WF4E2() // WF4E2
 
 
 // ================================================
-// 0xf4ea: WORD 'WF4EC' codep=0x224c parp=0xf4ec
+// 0xf4ea: WORD 'WF4EC' codep=0x224c wordp=0xf4ec
 // ================================================
 
 void WF4EC() // WF4EC
@@ -294,7 +294,7 @@ void WF4EC() // WF4EC
 
 
 // ================================================
-// 0xf4f4: WORD '(DO-CLOUD)' codep=0x4b3b parp=0xf503
+// 0xf4f4: WORD '(DO-CLOUD)' codep=0x4b3b wordp=0xf503
 // ================================================
 
 void _ro_DO_dash_CLOUD_rc_() // (DO-CLOUD)
@@ -327,7 +327,7 @@ void _ro_DO_dash_CLOUD_rc_() // (DO-CLOUD)
 }
 
 // ================================================
-// 0xf51f: WORD 'DO-CLOUD' codep=0x224c parp=0xf52c
+// 0xf51f: WORD 'DO-CLOUD' codep=0x224c wordp=0xf52c
 // ================================================
 // entry
 

@@ -9,30 +9,30 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF026  codep:0x224c parp:0xf026 size:0x000c C-string:'WF026'
-//           WF034  codep:0x224c parp:0xf034 size:0x002e C-string:'WF034'
-//           WF064  codep:0x224c parp:0xf064 size:0x0014 C-string:'WF064'
-//           WF07A  codep:0x224c parp:0xf07a size:0x0010 C-string:'WF07A'
-//           WF08C  codep:0x224c parp:0xf08c size:0x000c C-string:'WF08C'
-//       COUNTDOWN  codep:0x224c parp:0xf09a size:0x0032 C-string:'COUNTDOWN'
-//          LAUNCH  codep:0x224c parp:0xf0ce size:0x0042 C-string:'LAUNCH'
-//           WF112  codep:0x224c parp:0xf112 size:0x003e C-string:'WF112'
-//           WF152  codep:0x224c parp:0xf152 size:0x000e C-string:'WF152'
-//           WF162  codep:0x224c parp:0xf162 size:0x005c C-string:'WF162'
-//           WF1C0  codep:0x224c parp:0xf1c0 size:0x001c C-string:'WF1C0'
-//           WF1DE  codep:0x224c parp:0xf1de size:0x001c C-string:'WF1DE'
-//           WF1FC  codep:0x1d29 parp:0xf1fc size:0x0032 C-string:'WF1FC'
-//        .AIRLOCK  codep:0x224c parp:0xf23b size:0x00a5 C-string:'DrawAIRLOCK'
-//           WF2E2  codep:0x224c parp:0xf2e2 size:0x000a C-string:'WF2E2'
-//           WF2EE  codep:0x224c parp:0xf2ee size:0x000c C-string:'WF2EE'
-//           WF2FC  codep:0x224c parp:0xf2fc size:0x0008 C-string:'WF2FC'
-//           WF306  codep:0x224c parp:0xf306 size:0x0064 C-string:'WF306'
-//       PORTLEAVE  codep:0x224c parp:0xf36c size:0x0025 C-string:'PORTLEAVE'
-//           WF393  codep:0x224c parp:0xf393 size:0x005c C-string:'WF393'
-//         &LAUNCH  codep:0x224c parp:0xf3fb size:0x004e C-string:'_and_LAUNCH'
-//         &RETURN  codep:0x224c parp:0xf455 size:0x0000 C-string:'_and_RETURN'
+//           WF026  codep:0x224c wordp:0xf026 size:0x000c C-string:'WF026'
+//           WF034  codep:0x224c wordp:0xf034 size:0x002e C-string:'WF034'
+//           WF064  codep:0x224c wordp:0xf064 size:0x0014 C-string:'WF064'
+//           WF07A  codep:0x224c wordp:0xf07a size:0x0010 C-string:'WF07A'
+//           WF08C  codep:0x224c wordp:0xf08c size:0x000c C-string:'WF08C'
+//       COUNTDOWN  codep:0x224c wordp:0xf09a size:0x0032 C-string:'COUNTDOWN'
+//          LAUNCH  codep:0x224c wordp:0xf0ce size:0x0042 C-string:'LAUNCH'
+//           WF112  codep:0x224c wordp:0xf112 size:0x003e C-string:'WF112'
+//           WF152  codep:0x224c wordp:0xf152 size:0x000e C-string:'WF152'
+//           WF162  codep:0x224c wordp:0xf162 size:0x005c C-string:'WF162'
+//           WF1C0  codep:0x224c wordp:0xf1c0 size:0x001c C-string:'WF1C0'
+//           WF1DE  codep:0x224c wordp:0xf1de size:0x001c C-string:'WF1DE'
+//           WF1FC  codep:0x1d29 wordp:0xf1fc size:0x0032 C-string:'WF1FC'
+//        .AIRLOCK  codep:0x224c wordp:0xf23b size:0x00a5 C-string:'DrawAIRLOCK'
+//           WF2E2  codep:0x224c wordp:0xf2e2 size:0x000a C-string:'WF2E2'
+//           WF2EE  codep:0x224c wordp:0xf2ee size:0x000c C-string:'WF2EE'
+//           WF2FC  codep:0x224c wordp:0xf2fc size:0x0008 C-string:'WF2FC'
+//           WF306  codep:0x224c wordp:0xf306 size:0x0064 C-string:'WF306'
+//       PORTLEAVE  codep:0x224c wordp:0xf36c size:0x0025 C-string:'PORTLEAVE'
+//           WF393  codep:0x224c wordp:0xf393 size:0x005c C-string:'WF393'
+//         &LAUNCH  codep:0x224c wordp:0xf3fb size:0x004e C-string:'_and_LAUNCH'
+//         &RETURN  codep:0x224c wordp:0xf455 size:0x0000 C-string:'_and_RETURN'
 
 // =================================
 // ============= EXTERN ============
@@ -111,7 +111,7 @@ const unsigned short int pp_WF1FC = 0xf1fc; // WF1FC size: 50
 // 0xf022: db 0x50 0x00 'P '
 
 // ================================================
-// 0xf024: WORD 'WF026' codep=0x224c parp=0xf026 params=3 returns=2
+// 0xf024: WORD 'WF026' codep=0x224c wordp=0xf026 params=3 returns=2
 // ================================================
 
 void WF026() // WF026
@@ -125,7 +125,7 @@ void WF026() // WF026
 
 
 // ================================================
-// 0xf032: WORD 'WF034' codep=0x224c parp=0xf034 params=1 returns=2
+// 0xf032: WORD 'WF034' codep=0x224c wordp=0xf034 params=1 returns=2
 // ================================================
 
 void WF034() // WF034
@@ -155,7 +155,7 @@ void WF034() // WF034
 
 
 // ================================================
-// 0xf062: WORD 'WF064' codep=0x224c parp=0xf064 params=1 returns=2
+// 0xf062: WORD 'WF064' codep=0x224c wordp=0xf064 params=1 returns=2
 // ================================================
 
 void WF064() // WF064
@@ -171,7 +171,7 @@ void WF064() // WF064
 
 
 // ================================================
-// 0xf078: WORD 'WF07A' codep=0x224c parp=0xf07a params=1 returns=2
+// 0xf078: WORD 'WF07A' codep=0x224c wordp=0xf07a params=1 returns=2
 // ================================================
 
 void WF07A() // WF07A
@@ -185,7 +185,7 @@ void WF07A() // WF07A
 
 
 // ================================================
-// 0xf08a: WORD 'WF08C' codep=0x224c parp=0xf08c params=0 returns=0
+// 0xf08a: WORD 'WF08C' codep=0x224c wordp=0xf08c params=0 returns=0
 // ================================================
 
 void WF08C() // WF08C
@@ -197,7 +197,7 @@ void WF08C() // WF08C
 
 
 // ================================================
-// 0xf098: WORD 'COUNTDOWN' codep=0x224c parp=0xf09a params=0 returns=8
+// 0xf098: WORD 'COUNTDOWN' codep=0x224c wordp=0xf09a params=0 returns=8
 // ================================================
 
 void COUNTDOWN() // COUNTDOWN
@@ -235,7 +235,7 @@ void COUNTDOWN() // COUNTDOWN
 
 
 // ================================================
-// 0xf0cc: WORD 'LAUNCH' codep=0x224c parp=0xf0ce params=0 returns=8
+// 0xf0cc: WORD 'LAUNCH' codep=0x224c wordp=0xf0ce params=0 returns=8
 // ================================================
 
 void LAUNCH() // LAUNCH
@@ -258,7 +258,7 @@ void LAUNCH() // LAUNCH
 
 
 // ================================================
-// 0xf110: WORD 'WF112' codep=0x224c parp=0xf112 params=2 returns=0
+// 0xf110: WORD 'WF112' codep=0x224c wordp=0xf112 params=2 returns=0
 // ================================================
 
 void WF112() // WF112
@@ -284,7 +284,7 @@ void WF112() // WF112
 
 
 // ================================================
-// 0xf150: WORD 'WF152' codep=0x224c parp=0xf152 params=1 returns=0
+// 0xf150: WORD 'WF152' codep=0x224c wordp=0xf152 params=1 returns=0
 // ================================================
 
 void WF152() // WF152
@@ -298,7 +298,7 @@ void WF152() // WF152
 
 
 // ================================================
-// 0xf160: WORD 'WF162' codep=0x224c parp=0xf162 params=1 returns=0
+// 0xf160: WORD 'WF162' codep=0x224c wordp=0xf162 params=1 returns=0
 // ================================================
 
 void WF162() // WF162
@@ -343,7 +343,7 @@ void WF162() // WF162
 
 
 // ================================================
-// 0xf1be: WORD 'WF1C0' codep=0x224c parp=0xf1c0 params=1 returns=0
+// 0xf1be: WORD 'WF1C0' codep=0x224c wordp=0xf1c0 params=1 returns=0
 // ================================================
 
 void WF1C0() // WF1C0
@@ -363,7 +363,7 @@ void WF1C0() // WF1C0
 
 
 // ================================================
-// 0xf1dc: WORD 'WF1DE' codep=0x224c parp=0xf1de params=1 returns=0
+// 0xf1dc: WORD 'WF1DE' codep=0x224c wordp=0xf1de params=1 returns=0
 // ================================================
 
 void WF1DE() // WF1DE
@@ -383,12 +383,12 @@ void WF1DE() // WF1DE
 
 
 // ================================================
-// 0xf1fa: WORD 'WF1FC' codep=0x1d29 parp=0xf1fc
+// 0xf1fa: WORD 'WF1FC' codep=0x1d29 wordp=0xf1fc
 // ================================================
 // 0xf1fc: db 0xff 0x0f 0xff 0x01 0x3f 0xf8 0xc7 0xff 0xfe 0xff 0xf3 0xfc 0x8f 0xff 0xf0 0x1f 0xff 0xf0 0x0f 0x0f 0xf0 0x00 0x0f 0x00 0x00 0x00 0x00 0xf0 0x00 0x0f 0xf0 0xf0 0x0f 0xff 0xf8 0x0f 0xff 0xf1 0x3f 0xcf 0xff 0x7f 0xff 0xe3 0x1f 0xfc 0x80 0xff 0xf0 0xff '    ?                                 ?          '
 
 // ================================================
-// 0xf22e: WORD '.AIRLOCK' codep=0x224c parp=0xf23b params=0 returns=0
+// 0xf22e: WORD '.AIRLOCK' codep=0x224c wordp=0xf23b params=0 returns=0
 // ================================================
 // entry
 
@@ -442,7 +442,7 @@ void DrawAIRLOCK() // .AIRLOCK
 
 
 // ================================================
-// 0xf2e0: WORD 'WF2E2' codep=0x224c parp=0xf2e2 params=0 returns=3
+// 0xf2e0: WORD 'WF2E2' codep=0x224c wordp=0xf2e2 params=0 returns=3
 // ================================================
 
 void WF2E2() // WF2E2
@@ -454,7 +454,7 @@ void WF2E2() // WF2E2
 
 
 // ================================================
-// 0xf2ec: WORD 'WF2EE' codep=0x224c parp=0xf2ee params=1 returns=1
+// 0xf2ec: WORD 'WF2EE' codep=0x224c wordp=0xf2ee params=1 returns=1
 // ================================================
 
 void WF2EE() // WF2EE
@@ -464,7 +464,7 @@ void WF2EE() // WF2EE
 
 
 // ================================================
-// 0xf2fa: WORD 'WF2FC' codep=0x224c parp=0xf2fc params=1 returns=1
+// 0xf2fa: WORD 'WF2FC' codep=0x224c wordp=0xf2fc params=1 returns=1
 // ================================================
 
 void WF2FC() // WF2FC
@@ -476,7 +476,7 @@ void WF2FC() // WF2FC
 
 
 // ================================================
-// 0xf304: WORD 'WF306' codep=0x224c parp=0xf306 params=3 returns=0
+// 0xf304: WORD 'WF306' codep=0x224c wordp=0xf306 params=3 returns=0
 // ================================================
 
 void WF306() // WF306
@@ -520,7 +520,7 @@ void WF306() // WF306
 
 
 // ================================================
-// 0xf36a: WORD 'PORTLEAVE' codep=0x224c parp=0xf36c params=2 returns=0
+// 0xf36a: WORD 'PORTLEAVE' codep=0x224c wordp=0xf36c params=2 returns=0
 // ================================================
 
 void PORTLEAVE() // PORTLEAVE
@@ -536,7 +536,7 @@ void PORTLEAVE() // PORTLEAVE
 
 
 // ================================================
-// 0xf391: WORD 'WF393' codep=0x224c parp=0xf393 params=0 returns=4
+// 0xf391: WORD 'WF393' codep=0x224c wordp=0xf393 params=0 returns=4
 // ================================================
 
 void WF393() // WF393
@@ -582,7 +582,7 @@ void WF393() // WF393
 
 
 // ================================================
-// 0xf3ef: WORD '&LAUNCH' codep=0x224c parp=0xf3fb params=0 returns=8
+// 0xf3ef: WORD '&LAUNCH' codep=0x224c wordp=0xf3fb params=0 returns=8
 // ================================================
 // entry
 
@@ -610,7 +610,7 @@ void _and_LAUNCH() // &LAUNCH
 
 
 // ================================================
-// 0xf449: WORD '&RETURN' codep=0x224c parp=0xf455 params=0 returns=2
+// 0xf449: WORD '&RETURN' codep=0x224c wordp=0xf455 params=0 returns=2
 // ================================================
 // entry
 

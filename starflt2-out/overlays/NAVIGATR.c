@@ -9,26 +9,26 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF196  codep:0x7420 parp:0xf196 size:0x0003 C-string:'WF196'
-//           WF19B  codep:0x7420 parp:0xf19b size:0x0003 C-string:'WF19B'
-//           WF1A0  codep:0x7420 parp:0xf1a0 size:0x0003 C-string:'WF1A0'
-//           WF1A5  codep:0x7420 parp:0xf1a5 size:0x0003 C-string:'WF1A5'
-//           WF1AA  codep:0x7394 parp:0xf1aa size:0x0006 C-string:'WF1AA'
-//           WF1B2  codep:0x7394 parp:0xf1b2 size:0x0006 C-string:'WF1B2'
-//           WF1BA  codep:0x224c parp:0xf1ba size:0x0008 C-string:'WF1BA'
-//           WF1C4  codep:0x224c parp:0xf1c4 size:0x0010 C-string:'WF1C4'
-//           WF1D6  codep:0x224c parp:0xf1d6 size:0x0008 C-string:'WF1D6'
-//           WF1E0  codep:0x224c parp:0xf1e0 size:0x0020 C-string:'WF1E0'
-//           WF202  codep:0x224c parp:0xf202 size:0x0030 C-string:'WF202'
-//    >DOWN-SHIELD  codep:0x224c parp:0xf243 size:0x00bc C-string:'_gt_DOWN_dash_SHIELD'
-//           WF301  codep:0x224c parp:0xf301 size:0x000e C-string:'WF301'
-//           WF311  codep:0x224c parp:0xf311 size:0x008c C-string:'WF311'
-//         >DISARM  codep:0x224c parp:0xf3a9 size:0x0044 C-string:'_gt_DISARM'
-//           WF3EF  codep:0x224c parp:0xf3ef size:0x00da C-string:'WF3EF'
-//     (/(DIS)ARM)  codep:0x224c parp:0xf4d9 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
-//   (/(UD)SHIELD)  codep:0x224c parp:0xf50b size:0x0000 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
+//           WF196  codep:0x7420 wordp:0xf196 size:0x0003 C-string:'WF196'
+//           WF19B  codep:0x7420 wordp:0xf19b size:0x0003 C-string:'WF19B'
+//           WF1A0  codep:0x7420 wordp:0xf1a0 size:0x0003 C-string:'WF1A0'
+//           WF1A5  codep:0x7420 wordp:0xf1a5 size:0x0003 C-string:'WF1A5'
+//           WF1AA  codep:0x7394 wordp:0xf1aa size:0x0006 C-string:'WF1AA'
+//           WF1B2  codep:0x7394 wordp:0xf1b2 size:0x0006 C-string:'WF1B2'
+//           WF1BA  codep:0x224c wordp:0xf1ba size:0x0008 C-string:'WF1BA'
+//           WF1C4  codep:0x224c wordp:0xf1c4 size:0x0010 C-string:'WF1C4'
+//           WF1D6  codep:0x224c wordp:0xf1d6 size:0x0008 C-string:'WF1D6'
+//           WF1E0  codep:0x224c wordp:0xf1e0 size:0x0020 C-string:'WF1E0'
+//           WF202  codep:0x224c wordp:0xf202 size:0x0030 C-string:'WF202'
+//    >DOWN-SHIELD  codep:0x224c wordp:0xf243 size:0x00bc C-string:'_gt_DOWN_dash_SHIELD'
+//           WF301  codep:0x224c wordp:0xf301 size:0x000e C-string:'WF301'
+//           WF311  codep:0x224c wordp:0xf311 size:0x008c C-string:'WF311'
+//         >DISARM  codep:0x224c wordp:0xf3a9 size:0x0044 C-string:'_gt_DISARM'
+//           WF3EF  codep:0x224c wordp:0xf3ef size:0x00da C-string:'WF3EF'
+//     (/(DIS)ARM)  codep:0x224c wordp:0xf4d9 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
+//   (/(UD)SHIELD)  codep:0x224c wordp:0xf50b size:0x0000 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
 
 // =================================
 // ============= EXTERN ============
@@ -72,37 +72,37 @@ void SWAP(); // SWAP
 // 0xf192: db 0x3e 0x00 '> '
 
 // ================================================
-// 0xf194: WORD 'WF196' codep=0x7420 parp=0xf196
+// 0xf194: WORD 'WF196' codep=0x7420 wordp=0xf196
 // ================================================
 IFieldType WF196 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
-// 0xf199: WORD 'WF19B' codep=0x7420 parp=0xf19b
+// 0xf199: WORD 'WF19B' codep=0x7420 wordp=0xf19b
 // ================================================
 IFieldType WF19B = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
-// 0xf19e: WORD 'WF1A0' codep=0x7420 parp=0xf1a0
+// 0xf19e: WORD 'WF1A0' codep=0x7420 wordp=0xf1a0
 // ================================================
 IFieldType WF1A0 = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
-// 0xf1a3: WORD 'WF1A5' codep=0x7420 parp=0xf1a5
+// 0xf1a3: WORD 'WF1A5' codep=0x7420 wordp=0xf1a5
 // ================================================
 IFieldType WF1A5 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xf1a8: WORD 'WF1AA' codep=0x7394 parp=0xf1aa
+// 0xf1a8: WORD 'WF1AA' codep=0x7394 wordp=0xf1aa
 // ================================================
 LoadDataType WF1AA = {BUTTONSIDX, 0x18, 0x0c, 0x49, 0x6e57};
 
 // ================================================
-// 0xf1b0: WORD 'WF1B2' codep=0x7394 parp=0xf1b2
+// 0xf1b0: WORD 'WF1B2' codep=0x7394 wordp=0xf1b2
 // ================================================
 LoadDataType WF1B2 = {BUTTONSIDX, 0x24, 0x0c, 0x49, 0x6e57};
 
 // ================================================
-// 0xf1b8: WORD 'WF1BA' codep=0x224c parp=0xf1ba params=0 returns=0
+// 0xf1b8: WORD 'WF1BA' codep=0x224c wordp=0xf1ba params=0 returns=0
 // ================================================
 
 void WF1BA() // WF1BA
@@ -113,7 +113,7 @@ void WF1BA() // WF1BA
 
 
 // ================================================
-// 0xf1c2: WORD 'WF1C4' codep=0x224c parp=0xf1c4 params=0 returns=0
+// 0xf1c2: WORD 'WF1C4' codep=0x224c wordp=0xf1c4 params=0 returns=0
 // ================================================
 
 void WF1C4() // WF1C4
@@ -128,7 +128,7 @@ void WF1C4() // WF1C4
 
 
 // ================================================
-// 0xf1d4: WORD 'WF1D6' codep=0x224c parp=0xf1d6 params=3 returns=0
+// 0xf1d4: WORD 'WF1D6' codep=0x224c wordp=0xf1d6 params=3 returns=0
 // ================================================
 
 void WF1D6() // WF1D6
@@ -140,7 +140,7 @@ void WF1D6() // WF1D6
 
 
 // ================================================
-// 0xf1de: WORD 'WF1E0' codep=0x224c parp=0xf1e0 params=0 returns=8
+// 0xf1de: WORD 'WF1E0' codep=0x224c wordp=0xf1e0 params=0 returns=8
 // ================================================
 
 void WF1E0() // WF1E0
@@ -159,7 +159,7 @@ void WF1E0() // WF1E0
 
 
 // ================================================
-// 0xf200: WORD 'WF202' codep=0x224c parp=0xf202 params=0 returns=14
+// 0xf200: WORD 'WF202' codep=0x224c wordp=0xf202 params=0 returns=14
 // ================================================
 
 void WF202() // WF202
@@ -183,7 +183,7 @@ void WF202() // WF202
 
 
 // ================================================
-// 0xf232: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf243
+// 0xf232: WORD '>DOWN-SHIELD' codep=0x224c wordp=0xf243
 // ================================================
 // entry
 
@@ -226,7 +226,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 
 // ================================================
-// 0xf2ff: WORD 'WF301' codep=0x224c parp=0xf301 params=0 returns=1
+// 0xf2ff: WORD 'WF301' codep=0x224c wordp=0xf301 params=0 returns=1
 // ================================================
 
 void WF301() // WF301
@@ -236,7 +236,7 @@ void WF301() // WF301
 
 
 // ================================================
-// 0xf30f: WORD 'WF311' codep=0x224c parp=0xf311 params=0 returns=0
+// 0xf30f: WORD 'WF311' codep=0x224c wordp=0xf311 params=0 returns=0
 // ================================================
 
 void WF311() // WF311
@@ -275,7 +275,7 @@ void WF311() // WF311
 
 
 // ================================================
-// 0xf39d: WORD '>DISARM' codep=0x224c parp=0xf3a9
+// 0xf39d: WORD '>DISARM' codep=0x224c wordp=0xf3a9
 // ================================================
 // entry
 
@@ -295,7 +295,7 @@ void _gt_DISARM() // >DISARM
 
 
 // ================================================
-// 0xf3ed: WORD 'WF3EF' codep=0x224c parp=0xf3ef
+// 0xf3ed: WORD 'WF3EF' codep=0x224c wordp=0xf3ef
 // ================================================
 
 void WF3EF() // WF3EF
@@ -365,7 +365,7 @@ void WF3EF() // WF3EF
 
 
 // ================================================
-// 0xf4c9: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4d9
+// 0xf4c9: WORD '(/(DIS)ARM)' codep=0x224c wordp=0xf4d9
 // ================================================
 // entry
 
@@ -388,7 +388,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 
 
 // ================================================
-// 0xf4f9: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf50b
+// 0xf4f9: WORD '(/(UD)SHIELD)' codep=0x224c wordp=0xf50b
 // ================================================
 // entry
 

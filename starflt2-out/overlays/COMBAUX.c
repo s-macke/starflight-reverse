@@ -9,23 +9,23 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF2C6  codep:0x224c parp:0xf2c6 size:0x0010 C-string:'WF2C6'
-//           WF2D8  codep:0x224c parp:0xf2d8 size:0x002e C-string:'WF2D8'
-//           WF308  codep:0x224c parp:0xf308 size:0x002c C-string:'WF308'
-//           WF336  codep:0x224c parp:0xf336 size:0x0056 C-string:'WF336'
-//           WF38E  codep:0x224c parp:0xf38e size:0x004a C-string:'WF38E'
-//           WF3DA  codep:0x224c parp:0xf3da size:0x0054 C-string:'WF3DA'
-//           WF430  codep:0x1d29 parp:0xf430 size:0x0002 C-string:'WF430'
-//           WF434  codep:0x1d29 parp:0xf434 size:0x0002 C-string:'WF434'
-//           WF438  codep:0x224c parp:0xf438 size:0x0022 C-string:'WF438'
-//           WF45C  codep:0x224c parp:0xf45c size:0x0022 C-string:'WF45C'
-//           WF480  codep:0x224c parp:0xf480 size:0x0044 C-string:'WF480'
-//           WF4C6  codep:0x224c parp:0xf4c6 size:0x001c C-string:'WF4C6'
-//           WF4E4  codep:0x224c parp:0xf4e4 size:0x0008 C-string:'WF4E4'
-//          SET-SC  codep:0x224c parp:0xf4f7 size:0x003c C-string:'SET_dash_SC'
-//             @NF  codep:0x224c parp:0xf53b size:0x0000 C-string:'GetNF'
+//           WF2C6  codep:0x224c wordp:0xf2c6 size:0x0010 C-string:'WF2C6'
+//           WF2D8  codep:0x224c wordp:0xf2d8 size:0x002e C-string:'WF2D8'
+//           WF308  codep:0x224c wordp:0xf308 size:0x002c C-string:'WF308'
+//           WF336  codep:0x224c wordp:0xf336 size:0x0056 C-string:'WF336'
+//           WF38E  codep:0x224c wordp:0xf38e size:0x004a C-string:'WF38E'
+//           WF3DA  codep:0x224c wordp:0xf3da size:0x0054 C-string:'WF3DA'
+//           WF430  codep:0x1d29 wordp:0xf430 size:0x0002 C-string:'WF430'
+//           WF434  codep:0x1d29 wordp:0xf434 size:0x0002 C-string:'WF434'
+//           WF438  codep:0x224c wordp:0xf438 size:0x0022 C-string:'WF438'
+//           WF45C  codep:0x224c wordp:0xf45c size:0x0022 C-string:'WF45C'
+//           WF480  codep:0x224c wordp:0xf480 size:0x0044 C-string:'WF480'
+//           WF4C6  codep:0x224c wordp:0xf4c6 size:0x001c C-string:'WF4C6'
+//           WF4E4  codep:0x224c wordp:0xf4e4 size:0x0008 C-string:'WF4E4'
+//          SET-SC  codep:0x224c wordp:0xf4f7 size:0x003c C-string:'SET_dash_SC'
+//             @NF  codep:0x224c wordp:0xf53b size:0x0000 C-string:'GetNF'
 
 // =================================
 // ============= EXTERN ============
@@ -86,7 +86,7 @@ const unsigned short int pp_WF434 = 0xf434; // WF434 size: 2
 // 0xf2c2: db 0x2a 0x00 '* '
 
 // ================================================
-// 0xf2c4: WORD 'WF2C6' codep=0x224c parp=0xf2c6 params=0 returns=2
+// 0xf2c4: WORD 'WF2C6' codep=0x224c wordp=0xf2c6 params=0 returns=2
 // ================================================
 
 void WF2C6() // WF2C6
@@ -100,7 +100,7 @@ void WF2C6() // WF2C6
 
 
 // ================================================
-// 0xf2d6: WORD 'WF2D8' codep=0x224c parp=0xf2d8
+// 0xf2d6: WORD 'WF2D8' codep=0x224c wordp=0xf2d8
 // ================================================
 
 void WF2D8() // WF2D8
@@ -126,7 +126,7 @@ void WF2D8() // WF2D8
 
 
 // ================================================
-// 0xf306: WORD 'WF308' codep=0x224c parp=0xf308 params=0 returns=0
+// 0xf306: WORD 'WF308' codep=0x224c wordp=0xf308 params=0 returns=0
 // ================================================
 
 void WF308() // WF308
@@ -150,7 +150,7 @@ void WF308() // WF308
 
 
 // ================================================
-// 0xf334: WORD 'WF336' codep=0x224c parp=0xf336 params=0 returns=0
+// 0xf334: WORD 'WF336' codep=0x224c wordp=0xf336 params=0 returns=0
 // ================================================
 
 void WF336() // WF336
@@ -183,7 +183,7 @@ void WF336() // WF336
 
 
 // ================================================
-// 0xf38c: WORD 'WF38E' codep=0x224c parp=0xf38e params=0 returns=0
+// 0xf38c: WORD 'WF38E' codep=0x224c wordp=0xf38e params=0 returns=0
 // ================================================
 
 void WF38E() // WF38E
@@ -216,7 +216,7 @@ void WF38E() // WF38E
 
 
 // ================================================
-// 0xf3d8: WORD 'WF3DA' codep=0x224c parp=0xf3da params=0 returns=0
+// 0xf3d8: WORD 'WF3DA' codep=0x224c wordp=0xf3da params=0 returns=0
 // ================================================
 
 void WF3DA() // WF3DA
@@ -248,17 +248,17 @@ void WF3DA() // WF3DA
 
 
 // ================================================
-// 0xf42e: WORD 'WF430' codep=0x1d29 parp=0xf430
+// 0xf42e: WORD 'WF430' codep=0x1d29 wordp=0xf430
 // ================================================
 // 0xf430: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf432: WORD 'WF434' codep=0x1d29 parp=0xf434
+// 0xf432: WORD 'WF434' codep=0x1d29 wordp=0xf434
 // ================================================
 // 0xf434: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xf436: WORD 'WF438' codep=0x224c parp=0xf438
+// 0xf436: WORD 'WF438' codep=0x224c wordp=0xf438
 // ================================================
 
 void WF438() // WF438
@@ -280,7 +280,7 @@ void WF438() // WF438
 
 
 // ================================================
-// 0xf45a: WORD 'WF45C' codep=0x224c parp=0xf45c
+// 0xf45a: WORD 'WF45C' codep=0x224c wordp=0xf45c
 // ================================================
 
 void WF45C() // WF45C
@@ -302,7 +302,7 @@ void WF45C() // WF45C
 
 
 // ================================================
-// 0xf47e: WORD 'WF480' codep=0x224c parp=0xf480
+// 0xf47e: WORD 'WF480' codep=0x224c wordp=0xf480
 // ================================================
 
 void WF480() // WF480
@@ -344,7 +344,7 @@ void WF480() // WF480
 
 
 // ================================================
-// 0xf4c4: WORD 'WF4C6' codep=0x224c parp=0xf4c6 params=4 returns=1
+// 0xf4c4: WORD 'WF4C6' codep=0x224c wordp=0xf4c6 params=4 returns=1
 // ================================================
 
 void WF4C6() // WF4C6
@@ -367,7 +367,7 @@ void WF4C6() // WF4C6
 
 
 // ================================================
-// 0xf4e2: WORD 'WF4E4' codep=0x224c parp=0xf4e4
+// 0xf4e2: WORD 'WF4E4' codep=0x224c wordp=0xf4e4
 // ================================================
 
 void WF4E4() // WF4E4
@@ -379,7 +379,7 @@ void WF4E4() // WF4E4
 
 
 // ================================================
-// 0xf4ec: WORD 'SET-SC' codep=0x224c parp=0xf4f7
+// 0xf4ec: WORD 'SET-SC' codep=0x224c wordp=0xf4f7
 // ================================================
 // entry
 
@@ -417,7 +417,7 @@ void SET_dash_SC() // SET-SC
 
 
 // ================================================
-// 0xf533: WORD '@NF' codep=0x224c parp=0xf53b
+// 0xf533: WORD '@NF' codep=0x224c wordp=0xf53b
 // ================================================
 // entry
 

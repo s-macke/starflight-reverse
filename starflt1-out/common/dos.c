@@ -130,7 +130,7 @@ const unsigned short int pp_ASKMOUNT = 0x4658; // ASKMOUNT size: 2
 
 
 // ================================================
-// 0x40c6: WORD '>TIB' codep=0x224c parp=0x40cf params=2 returns=0
+// 0x40c6: WORD '>TIB' codep=0x224c wordp=0x40cf params=2 returns=0
 // ================================================
 
 void _gt_TIB() // >TIB
@@ -147,7 +147,7 @@ void _gt_TIB() // >TIB
 
 
 // ================================================
-// 0x40e3: WORD 'DOSPARM' codep=0x224c parp=0x40ef
+// 0x40e3: WORD 'DOSPARM' codep=0x224c wordp=0x40ef
 // ================================================
 
 void DOSPARM() // DOSPARM
@@ -160,7 +160,7 @@ void DOSPARM() // DOSPARM
 
 
 // ================================================
-// 0x40fb: WORD 'XFCB' codep=0x224c parp=0x4104 params=0 returns=1
+// 0x40fb: WORD 'XFCB' codep=0x224c wordp=0x4104 params=0 returns=1
 // ================================================
 
 void XFCB() // XFCB
@@ -170,7 +170,7 @@ void XFCB() // XFCB
 
 
 // ================================================
-// 0x410e: WORD 'DRV' codep=0x224c parp=0x4116 params=0 returns=1
+// 0x410e: WORD 'DRV' codep=0x224c wordp=0x4116 params=0 returns=1
 // ================================================
 
 void DRV() // DRV
@@ -180,7 +180,7 @@ void DRV() // DRV
 
 
 // ================================================
-// 0x411c: WORD 'NAM' codep=0x224c parp=0x4124 params=0 returns=1
+// 0x411c: WORD 'NAM' codep=0x224c wordp=0x4124 params=0 returns=1
 // ================================================
 
 void NAM() // NAM
@@ -190,7 +190,7 @@ void NAM() // NAM
 
 
 // ================================================
-// 0x412c: WORD 'TYP' codep=0x224c parp=0x4134 params=0 returns=1
+// 0x412c: WORD 'TYP' codep=0x224c wordp=0x4134 params=0 returns=1
 // ================================================
 
 void TYP() // TYP
@@ -200,7 +200,7 @@ void TYP() // TYP
 
 
 // ================================================
-// 0x4140: WORD 'CURBLK' codep=0x224c parp=0x414b params=0 returns=1
+// 0x4140: WORD 'CURBLK' codep=0x224c wordp=0x414b params=0 returns=1
 // ================================================
 
 void CURBLK() // CURBLK
@@ -210,7 +210,7 @@ void CURBLK() // CURBLK
 
 
 // ================================================
-// 0x4157: WORD 'RECSIZE' codep=0x224c parp=0x4163 params=0 returns=1
+// 0x4157: WORD 'RECSIZE' codep=0x224c wordp=0x4163 params=0 returns=1
 // ================================================
 
 void RECSIZE() // RECSIZE
@@ -220,7 +220,7 @@ void RECSIZE() // RECSIZE
 
 
 // ================================================
-// 0x416f: WORD 'FILESIZE' codep=0x224c parp=0x417c params=0 returns=1
+// 0x416f: WORD 'FILESIZE' codep=0x224c wordp=0x417c params=0 returns=1
 // ================================================
 
 void FILESIZE() // FILESIZE
@@ -230,7 +230,7 @@ void FILESIZE() // FILESIZE
 
 
 // ================================================
-// 0x4188: WORD 'CURREC' codep=0x224c parp=0x4193 params=0 returns=1
+// 0x4188: WORD 'CURREC' codep=0x224c wordp=0x4193 params=0 returns=1
 // ================================================
 
 void CURREC() // CURREC
@@ -240,7 +240,7 @@ void CURREC() // CURREC
 
 
 // ================================================
-// 0x419f: WORD 'RELREC' codep=0x224c parp=0x41aa params=0 returns=1
+// 0x419f: WORD 'RELREC' codep=0x224c wordp=0x41aa params=0 returns=1
 // ================================================
 
 void RELREC() // RELREC
@@ -250,7 +250,7 @@ void RELREC() // RELREC
 
 
 // ================================================
-// 0x41b6: WORD 'CLRFCB' codep=0x224c parp=0x41c1 params=0 returns=0
+// 0x41b6: WORD 'CLRFCB' codep=0x224c wordp=0x41c1 params=0 returns=0
 // ================================================
 
 void CLRFCB() // CLRFCB
@@ -270,7 +270,7 @@ void CLRFCB() // CLRFCB
 
 
 // ================================================
-// 0x41dd: WORD 'SYSTEM' codep=0x224c parp=0x41e8 params=0 returns=0
+// 0x41dd: WORD 'SYSTEM' codep=0x224c wordp=0x41e8 params=0 returns=0
 // ================================================
 
 void SYSTEM() // SYSTEM
@@ -283,7 +283,7 @@ void SYSTEM() // SYSTEM
 
 
 // ================================================
-// 0x41f6: WORD 'SYSUTIL' codep=0x224c parp=0x4202 params=0 returns=0
+// 0x41f6: WORD 'SYSUTIL' codep=0x224c wordp=0x4202 params=0 returns=0
 // ================================================
 
 void SYSUTIL() // SYSUTIL
@@ -296,7 +296,7 @@ void SYSUTIL() // SYSUTIL
 
 
 // ================================================
-// 0x4212: WORD 'DOSCALL' codep=0x224c parp=0x421e params=1 returns=0
+// 0x4212: WORD 'DOSCALL' codep=0x224c wordp=0x421e params=1 returns=0
 // ================================================
 
 void DOSCALL() // DOSCALL
@@ -309,7 +309,7 @@ void DOSCALL() // DOSCALL
 
 
 // ================================================
-// 0x422c: WORD 'SELDSK' codep=0x224c parp=0x4237 params=1 returns=0
+// 0x422c: WORD 'SELDSK' codep=0x224c wordp=0x4237 params=1 returns=0
 // ================================================
 
 void SELDSK() // SELDSK
@@ -326,7 +326,7 @@ void SELDSK() // SELDSK
 
 
 // ================================================
-// 0x424b: WORD 'A::' codep=0x224c parp=0x4253 params=0 returns=0
+// 0x424b: WORD 'A::' codep=0x224c wordp=0x4253 params=0 returns=0
 // ================================================
 
 void A_c__c_() // A::
@@ -337,7 +337,7 @@ void A_c__c_() // A::
 
 
 // ================================================
-// 0x4259: WORD 'B::' codep=0x224c parp=0x4261 params=0 returns=0
+// 0x4259: WORD 'B::' codep=0x224c wordp=0x4261 params=0 returns=0
 // ================================================
 
 void B_c__c_() // B::
@@ -348,7 +348,7 @@ void B_c__c_() // B::
 
 
 // ================================================
-// 0x4267: WORD 'C::' codep=0x224c parp=0x426f params=0 returns=0
+// 0x4267: WORD 'C::' codep=0x224c wordp=0x426f params=0 returns=0
 // ================================================
 
 void C_c__c_() // C::
@@ -359,7 +359,7 @@ void C_c__c_() // C::
 
 
 // ================================================
-// 0x4275: WORD 'SETFCB' codep=0x224c parp=0x4280 params=0 returns=1
+// 0x4275: WORD 'SETFCB' codep=0x224c wordp=0x4280 params=0 returns=1
 // ================================================
 
 void SETFCB() // SETFCB
@@ -389,7 +389,7 @@ void SETFCB() // SETFCB
 
 
 // ================================================
-// 0x42c6: WORD 'INIT' codep=0x224c parp=0x42cf params=0 returns=0
+// 0x42c6: WORD 'INIT' codep=0x224c wordp=0x42cf params=0 returns=0
 // ================================================
 
 void INIT() // INIT
@@ -400,7 +400,7 @@ void INIT() // INIT
 
 
 // ================================================
-// 0x42d7: WORD 'FCBCALL' codep=0x224c parp=0x42e3 params=1 returns=1
+// 0x42d7: WORD 'FCBCALL' codep=0x224c wordp=0x42e3 params=1 returns=1
 // ================================================
 
 void FCBCALL() // FCBCALL
@@ -417,7 +417,7 @@ void FCBCALL() // FCBCALL
 
 
 // ================================================
-// 0x42f9: WORD 'OPEN' codep=0x224c parp=0x4302 params=0 returns=1
+// 0x42f9: WORD 'OPEN' codep=0x224c wordp=0x4302 params=0 returns=1
 // ================================================
 
 void OPEN() // OPEN
@@ -428,7 +428,7 @@ void OPEN() // OPEN
 
 
 // ================================================
-// 0x430a: WORD 'CLOSE' codep=0x224c parp=0x4314 params=0 returns=1
+// 0x430a: WORD 'CLOSE' codep=0x224c wordp=0x4314 params=0 returns=1
 // ================================================
 
 void CLOSE() // CLOSE
@@ -439,7 +439,7 @@ void CLOSE() // CLOSE
 
 
 // ================================================
-// 0x431c: WORD 'SEARCH1ST' codep=0x224c parp=0x432a params=0 returns=1
+// 0x431c: WORD 'SEARCH1ST' codep=0x224c wordp=0x432a params=0 returns=1
 // ================================================
 
 void SEARCH1ST() // SEARCH1ST
@@ -450,7 +450,7 @@ void SEARCH1ST() // SEARCH1ST
 
 
 // ================================================
-// 0x4332: WORD 'READNEXT' codep=0x224c parp=0x433f params=0 returns=1
+// 0x4332: WORD 'READNEXT' codep=0x224c wordp=0x433f params=0 returns=1
 // ================================================
 
 void READNEXT() // READNEXT
@@ -461,7 +461,7 @@ void READNEXT() // READNEXT
 
 
 // ================================================
-// 0x4347: WORD 'WRITENEXT' codep=0x224c parp=0x4355 params=0 returns=1
+// 0x4347: WORD 'WRITENEXT' codep=0x224c wordp=0x4355 params=0 returns=1
 // ================================================
 
 void WRITENEXT() // WRITENEXT
@@ -472,7 +472,7 @@ void WRITENEXT() // WRITENEXT
 
 
 // ================================================
-// 0x435d: WORD 'MAKE' codep=0x224c parp=0x4366 params=0 returns=1
+// 0x435d: WORD 'MAKE' codep=0x224c wordp=0x4366 params=0 returns=1
 // ================================================
 
 void MAKE() // MAKE
@@ -483,7 +483,7 @@ void MAKE() // MAKE
 
 
 // ================================================
-// 0x436e: WORD 'DOS-DTA' codep=0x224c parp=0x437a params=0 returns=0
+// 0x436e: WORD 'DOS-DTA' codep=0x224c wordp=0x437a params=0 returns=0
 // ================================================
 
 void DOS_dash_DTA() // DOS-DTA
@@ -500,7 +500,7 @@ void DOS_dash_DTA() // DOS-DTA
 
 
 // ================================================
-// 0x438e: WORD 'READ-RANDOM' codep=0x224c parp=0x439e params=0 returns=1
+// 0x438e: WORD 'READ-RANDOM' codep=0x224c wordp=0x439e params=0 returns=1
 // ================================================
 
 void READ_dash_RANDOM() // READ-RANDOM
@@ -511,7 +511,7 @@ void READ_dash_RANDOM() // READ-RANDOM
 
 
 // ================================================
-// 0x43a6: WORD 'WRITE-RANDOM' codep=0x224c parp=0x43b7 params=0 returns=1
+// 0x43a6: WORD 'WRITE-RANDOM' codep=0x224c wordp=0x43b7 params=0 returns=1
 // ================================================
 
 void WRITE_dash_RANDOM() // WRITE-RANDOM
@@ -522,7 +522,7 @@ void WRITE_dash_RANDOM() // WRITE-RANDOM
 
 
 // ================================================
-// 0x43bf: WORD 'W43C1' codep=0x224c parp=0x43c1 params=1 returns=0
+// 0x43bf: WORD 'W43C1' codep=0x224c wordp=0x43c1 params=1 returns=0
 // ================================================
 
 void W43C1() // W43C1
@@ -532,7 +532,7 @@ void W43C1() // W43C1
 
 
 // ================================================
-// 0x43ce: WORD 'MAKE<NAME>' codep=0x224c parp=0x43dd params=0 returns=0
+// 0x43ce: WORD 'MAKE<NAME>' codep=0x224c wordp=0x43dd params=0 returns=0
 // ================================================
 
 void MAKE_st_NAME_gt_() // MAKE<NAME>
@@ -545,7 +545,7 @@ void MAKE_st_NAME_gt_() // MAKE<NAME>
 
 
 // ================================================
-// 0x43f5: WORD 'OPEN<NAME>' codep=0x224c parp=0x4404 params=0 returns=0
+// 0x43f5: WORD 'OPEN<NAME>' codep=0x224c wordp=0x4404 params=0 returns=0
 // ================================================
 
 void OPEN_st_NAME_gt_() // OPEN<NAME>
@@ -558,7 +558,7 @@ void OPEN_st_NAME_gt_() // OPEN<NAME>
 
 
 // ================================================
-// 0x441a: WORD '[FILE]' codep=0x224c parp=0x4425 params=2 returns=0
+// 0x441a: WORD '[FILE]' codep=0x224c wordp=0x4425 params=2 returns=0
 // ================================================
 
 void _bo_FILE_bc_() // [FILE]
@@ -585,7 +585,7 @@ void _bo_FILE_bc_() // [FILE]
 
 
 // ================================================
-// 0x444b: WORD 'SYSGEN' codep=0x224c parp=0x4456 params=0 returns=0
+// 0x444b: WORD 'SYSGEN' codep=0x224c wordp=0x4456 params=0 returns=0
 // ================================================
 
 void SYSGEN() // SYSGEN
@@ -614,7 +614,7 @@ void SYSGEN() // SYSGEN
 
 
 // ================================================
-// 0x4486: WORD '4TH>DOS' codep=0x224c parp=0x4492 params=2 returns=1
+// 0x4486: WORD '4TH>DOS' codep=0x224c wordp=0x4492 params=2 returns=1
 // ================================================
 
 void _4TH_gt_DOS() // 4TH>DOS
@@ -650,7 +650,7 @@ void _4TH_gt_DOS() // 4TH>DOS
 
 
 // ================================================
-// 0x44c0: WORD 'W44C2' codep=0x224c parp=0x44c2 params=0 returns=1
+// 0x44c0: WORD 'W44C2' codep=0x224c wordp=0x44c2 params=0 returns=1
 // ================================================
 
 void W44C2() // W44C2
@@ -690,7 +690,7 @@ void W44C2() // W44C2
 
 
 // ================================================
-// 0x4518: WORD 'W451A' codep=0x224c parp=0x451a params=0 returns=2
+// 0x4518: WORD 'W451A' codep=0x224c wordp=0x451a params=0 returns=2
 // ================================================
 
 void W451A() // W451A
@@ -705,7 +705,7 @@ void W451A() // W451A
 
 
 // ================================================
-// 0x4534: WORD 'W4536' codep=0x224c parp=0x4536 params=1 returns=1
+// 0x4534: WORD 'W4536' codep=0x224c wordp=0x4536 params=1 returns=1
 // ================================================
 
 void W4536() // W4536
@@ -719,7 +719,7 @@ void W4536() // W4536
 
 
 // ================================================
-// 0x454c: WORD 'W454E' codep=0x224c parp=0x454e params=0 returns=1
+// 0x454c: WORD 'W454E' codep=0x224c wordp=0x454e params=0 returns=1
 // ================================================
 
 void W454E() // W454E
@@ -731,12 +731,12 @@ void W454E() // W454E
 
 
 // ================================================
-// 0x455c: WORD 'MAXDRV' codep=0x1d29 parp=0x4567
+// 0x455c: WORD 'MAXDRV' codep=0x1d29 wordp=0x4567
 // ================================================
 // 0x4567: db 0x04 0x00 '  '
 
 // ================================================
-// 0x4569: WORD 'SETMAXDRV' codep=0x224c parp=0x4577 params=0 returns=1
+// 0x4569: WORD 'SETMAXDRV' codep=0x224c wordp=0x4577 params=0 returns=1
 // ================================================
 
 void SETMAXDRV() // SETMAXDRV
@@ -781,7 +781,7 @@ void SETMAXDRV() // SETMAXDRV
 
 
 // ================================================
-// 0x45c3: WORD 'W45C5' codep=0x224c parp=0x45c5 params=0 returns=0
+// 0x45c3: WORD 'W45C5' codep=0x224c wordp=0x45c5 params=0 returns=0
 // ================================================
 
 void W45C5() // W45C5
@@ -796,7 +796,7 @@ void W45C5() // W45C5
 
 
 // ================================================
-// 0x45d7: WORD 'W45D9' codep=0x224c parp=0x45d9 params=1 returns=1
+// 0x45d7: WORD 'W45D9' codep=0x224c wordp=0x45d9 params=1 returns=1
 // ================================================
 
 void W45D9() // W45D9
@@ -812,7 +812,7 @@ void W45D9() // W45D9
 
 
 // ================================================
-// 0x45ed: WORD 'SMARTOPEN' codep=0x224c parp=0x45fb params=0 returns=1
+// 0x45ed: WORD 'SMARTOPEN' codep=0x224c wordp=0x45fb params=0 returns=1
 // ================================================
 
 void SMARTOPEN() // SMARTOPEN
@@ -856,12 +856,12 @@ void SMARTOPEN() // SMARTOPEN
 
 
 // ================================================
-// 0x464b: WORD 'ASKMOUNT' codep=0x1d29 parp=0x4658
+// 0x464b: WORD 'ASKMOUNT' codep=0x1d29 wordp=0x4658
 // ================================================
 // 0x4658: db 0x69 0x46 'iF'
 
 // ================================================
-// 0x465a: WORD '<ASKMOUNT>' codep=0x224c parp=0x4669 params=0 returns=0
+// 0x465a: WORD '<ASKMOUNT>' codep=0x224c wordp=0x4669 params=0 returns=0
 // ================================================
 
 void _st_ASKMOUNT_gt_() // <ASKMOUNT>
@@ -898,7 +898,7 @@ void _st_ASKMOUNT_gt_() // <ASKMOUNT>
 
 
 // ================================================
-// 0x46f8: WORD 'DOSMOUNT' codep=0x224c parp=0x4705 params=1 returns=2
+// 0x46f8: WORD 'DOSMOUNT' codep=0x224c wordp=0x4705 params=1 returns=2
 // ================================================
 
 void DOSMOUNT() // DOSMOUNT
@@ -947,7 +947,7 @@ void DOSMOUNT() // DOSMOUNT
 
 
 // ================================================
-// 0x4757: WORD 'DOSUNMOUNT' codep=0x224c parp=0x4766 params=1 returns=1
+// 0x4757: WORD 'DOSUNMOUNT' codep=0x224c wordp=0x4766 params=1 returns=1
 // ================================================
 
 void DOSUNMOUNT() // DOSUNMOUNT
@@ -963,7 +963,7 @@ void DOSUNMOUNT() // DOSUNMOUNT
 
 
 // ================================================
-// 0x4776: WORD 'DR2' codep=0x224c parp=0x477e params=0 returns=0
+// 0x4776: WORD 'DR2' codep=0x224c wordp=0x477e params=0 returns=0
 // ================================================
 
 void DR2() // DR2
@@ -983,7 +983,7 @@ void DR2() // DR2
 
 
 // ================================================
-// 0x479c: WORD 'DR3' codep=0x224c parp=0x47a4 params=0 returns=0
+// 0x479c: WORD 'DR3' codep=0x224c wordp=0x47a4 params=0 returns=0
 // ================================================
 
 void DR3() // DR3
@@ -1003,7 +1003,7 @@ void DR3() // DR3
 
 
 // ================================================
-// 0x47c4: WORD 'USING' codep=0x224c parp=0x47ce params=0 returns=0
+// 0x47c4: WORD 'USING' codep=0x224c wordp=0x47ce params=0 returns=0
 // ================================================
 
 void USING() // USING
@@ -1018,7 +1018,7 @@ void USING() // USING
 
 
 // ================================================
-// 0x47dc: WORD 'W47DE' codep=0x224c parp=0x47de params=2 returns=2
+// 0x47dc: WORD 'W47DE' codep=0x224c wordp=0x47de params=2 returns=2
 // ================================================
 
 void W47DE() // W47DE
@@ -1047,7 +1047,7 @@ void W47DE() // W47DE
 
 
 // ================================================
-// 0x4810: WORD 'SETSYSK' codep=0x224c parp=0x481c params=0 returns=0
+// 0x4810: WORD 'SETSYSK' codep=0x224c wordp=0x481c params=0 returns=0
 // ================================================
 
 void SETSYSK() // SETSYSK

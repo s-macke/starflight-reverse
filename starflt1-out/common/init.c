@@ -99,7 +99,7 @@ void EXECUTE(); // EXECUTE
 
 
 // ================================================
-// 0x08d1: WORD '(SETUP)' codep=0x224c parp=0x08dd params=0 returns=0
+// 0x08d1: WORD '(SETUP)' codep=0x224c wordp=0x08dd params=0 returns=0
 // ================================================
 
 void _ro_SETUP_rc_() // (SETUP)
@@ -138,7 +138,7 @@ void _ro_SETUP_rc_() // (SETUP)
 
 
 // ================================================
-// 0x0937: WORD 'W0939' codep=0x224c parp=0x0939 params=0 returns=0
+// 0x0937: WORD 'W0939' codep=0x224c wordp=0x0939 params=0 returns=0
 // ================================================
 
 void W0939() // W0939

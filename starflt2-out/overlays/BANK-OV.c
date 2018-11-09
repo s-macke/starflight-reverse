@@ -9,41 +9,41 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WEF96  codep:0x224c parp:0xef96 size:0x0008 C-string:'WEF96'
-//           WEFA0  codep:0x2214 parp:0xefa0 size:0x0002 C-string:'WEFA0'
-//           WEFA4  codep:0x2214 parp:0xefa4 size:0x0002 C-string:'WEFA4'
-//           WEFA8  codep:0x2214 parp:0xefa8 size:0x0002 C-string:'WEFA8'
-//           WEFAC  codep:0x2214 parp:0xefac size:0x0002 C-string:'WEFAC'
-//           WEFB0  codep:0x2214 parp:0xefb0 size:0x0002 C-string:'WEFB0'
-//           WEFB4  codep:0x7420 parp:0xefb4 size:0x0003 C-string:'WEFB4'
-//           WEFB9  codep:0x7420 parp:0xefb9 size:0x0003 C-string:'WEFB9'
-//           WEFBE  codep:0x7420 parp:0xefbe size:0x0003 C-string:'WEFBE'
-//           WEFC3  codep:0x7394 parp:0xefc3 size:0x0006 C-string:'WEFC3'
-//           WEFCB  codep:0x7420 parp:0xefcb size:0x0003 C-string:'WEFCB'
-//           WEFD0  codep:0x7420 parp:0xefd0 size:0x0003 C-string:'WEFD0'
-//           WEFD5  codep:0x224c parp:0xefd5 size:0x0006 C-string:'WEFD5'
-//          !TFLAG  codep:0x224c parp:0xefe6 size:0x000c C-string:'StoreTFLAG'
-//       D@BALANCE  codep:0x224c parp:0xf000 size:0x000a C-string:'GetDBALANCE'
-//       D!BALANCE  codep:0x224c parp:0xf018 size:0x000a C-string:'StoreDBALANCE'
-//        ?BALANCE  codep:0x224c parp:0xf02f size:0x0008 C-string:'IsBALANCE'
-//    INIT-BALANCE  codep:0x224c parp:0xf048 size:0x000e C-string:'INIT_dash_BALANCE'
-//        TRANSACT  codep:0x224c parp:0xf063 size:0x0072 C-string:'TRANSACT'
-//            INT%  codep:0x224c parp:0xf0de size:0x0042 C-string:'INT_pe_'
-//           WF122  codep:0x1d29 parp:0xf122 size:0x0014 C-string:'WF122'
-//           WF138  codep:0x224c parp:0xf138 size:0x0028 C-string:'WF138'
-//           WF162  codep:0x224c parp:0xf162 size:0x0042 C-string:'WF162'
-//           WF1A6  codep:0x224c parp:0xf1a6 size:0x0042 C-string:'WF1A6'
-//           WF1EA  codep:0x224c parp:0xf1ea size:0x0006 C-string:'WF1EA'
-//           WF1F2  codep:0x224c parp:0xf1f2 size:0x008b C-string:'WF1F2'
-//           WF27F  codep:0x224c parp:0xf27f size:0x013a C-string:'WF27F'
-//           WF3BB  codep:0x224c parp:0xf3bb size:0x00b7 C-string:'WF3BB'
-//           WF474  codep:0x224c parp:0xf474 size:0x000c C-string:'WF474'
-//           WF482  codep:0x224c parp:0xf482 size:0x0038 C-string:'WF482'
-//           WF4BC  codep:0x224c parp:0xf4bc size:0x0016 C-string:'WF4BC'
-//           WF4D4  codep:0x224c parp:0xf4d4 size:0x001e C-string:'WF4D4'
-//        (U-BANK)  codep:0x224c parp:0xf4ff size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
+//           WEF96  codep:0x224c wordp:0xef96 size:0x0008 C-string:'WEF96'
+//           WEFA0  codep:0x2214 wordp:0xefa0 size:0x0002 C-string:'WEFA0'
+//           WEFA4  codep:0x2214 wordp:0xefa4 size:0x0002 C-string:'WEFA4'
+//           WEFA8  codep:0x2214 wordp:0xefa8 size:0x0002 C-string:'WEFA8'
+//           WEFAC  codep:0x2214 wordp:0xefac size:0x0002 C-string:'WEFAC'
+//           WEFB0  codep:0x2214 wordp:0xefb0 size:0x0002 C-string:'WEFB0'
+//           WEFB4  codep:0x7420 wordp:0xefb4 size:0x0003 C-string:'WEFB4'
+//           WEFB9  codep:0x7420 wordp:0xefb9 size:0x0003 C-string:'WEFB9'
+//           WEFBE  codep:0x7420 wordp:0xefbe size:0x0003 C-string:'WEFBE'
+//           WEFC3  codep:0x7394 wordp:0xefc3 size:0x0006 C-string:'WEFC3'
+//           WEFCB  codep:0x7420 wordp:0xefcb size:0x0003 C-string:'WEFCB'
+//           WEFD0  codep:0x7420 wordp:0xefd0 size:0x0003 C-string:'WEFD0'
+//           WEFD5  codep:0x224c wordp:0xefd5 size:0x0006 C-string:'WEFD5'
+//          !TFLAG  codep:0x224c wordp:0xefe6 size:0x000c C-string:'StoreTFLAG'
+//       D@BALANCE  codep:0x224c wordp:0xf000 size:0x000a C-string:'GetDBALANCE'
+//       D!BALANCE  codep:0x224c wordp:0xf018 size:0x000a C-string:'StoreDBALANCE'
+//        ?BALANCE  codep:0x224c wordp:0xf02f size:0x0008 C-string:'IsBALANCE'
+//    INIT-BALANCE  codep:0x224c wordp:0xf048 size:0x000e C-string:'INIT_dash_BALANCE'
+//        TRANSACT  codep:0x224c wordp:0xf063 size:0x0072 C-string:'TRANSACT'
+//            INT%  codep:0x224c wordp:0xf0de size:0x0042 C-string:'INT_pe_'
+//           WF122  codep:0x1d29 wordp:0xf122 size:0x0014 C-string:'WF122'
+//           WF138  codep:0x224c wordp:0xf138 size:0x0028 C-string:'WF138'
+//           WF162  codep:0x224c wordp:0xf162 size:0x0042 C-string:'WF162'
+//           WF1A6  codep:0x224c wordp:0xf1a6 size:0x0042 C-string:'WF1A6'
+//           WF1EA  codep:0x224c wordp:0xf1ea size:0x0006 C-string:'WF1EA'
+//           WF1F2  codep:0x224c wordp:0xf1f2 size:0x008b C-string:'WF1F2'
+//           WF27F  codep:0x224c wordp:0xf27f size:0x013a C-string:'WF27F'
+//           WF3BB  codep:0x224c wordp:0xf3bb size:0x00b7 C-string:'WF3BB'
+//           WF474  codep:0x224c wordp:0xf474 size:0x000c C-string:'WF474'
+//           WF482  codep:0x224c wordp:0xf482 size:0x0038 C-string:'WF482'
+//           WF4BC  codep:0x224c wordp:0xf4bc size:0x0016 C-string:'WF4BC'
+//           WF4D4  codep:0x224c wordp:0xf4d4 size:0x001e C-string:'WF4D4'
+//        (U-BANK)  codep:0x224c wordp:0xf4ff size:0x0000 C-string:'_ro_U_dash_BANK_rc_'
 
 // =================================
 // ============= EXTERN ============
@@ -128,7 +128,7 @@ const unsigned short int cc_WEFB0 = 0xefb0; // WEFB0
 // 0xef92: db 0x5d 0x00 '] '
 
 // ================================================
-// 0xef94: WORD 'WEF96' codep=0x224c parp=0xef96 params=0 returns=0
+// 0xef94: WORD 'WEF96' codep=0x224c wordp=0xef96 params=0 returns=0
 // ================================================
 
 void WEF96() // WEF96
@@ -139,62 +139,62 @@ void WEF96() // WEF96
 
 
 // ================================================
-// 0xef9e: WORD 'WEFA0' codep=0x2214 parp=0xefa0
+// 0xef9e: WORD 'WEFA0' codep=0x2214 wordp=0xefa0
 // ================================================
 // 0xefa0: dw 0x0000
 
 // ================================================
-// 0xefa2: WORD 'WEFA4' codep=0x2214 parp=0xefa4
+// 0xefa2: WORD 'WEFA4' codep=0x2214 wordp=0xefa4
 // ================================================
 // 0xefa4: dw 0x0001
 
 // ================================================
-// 0xefa6: WORD 'WEFA8' codep=0x2214 parp=0xefa8
+// 0xefa6: WORD 'WEFA8' codep=0x2214 wordp=0xefa8
 // ================================================
 // 0xefa8: dw 0x0002
 
 // ================================================
-// 0xefaa: WORD 'WEFAC' codep=0x2214 parp=0xefac
+// 0xefaa: WORD 'WEFAC' codep=0x2214 wordp=0xefac
 // ================================================
 // 0xefac: dw 0x0003
 
 // ================================================
-// 0xefae: WORD 'WEFB0' codep=0x2214 parp=0xefb0
+// 0xefae: WORD 'WEFB0' codep=0x2214 wordp=0xefb0
 // ================================================
 // 0xefb0: dw 0x0004
 
 // ================================================
-// 0xefb2: WORD 'WEFB4' codep=0x7420 parp=0xefb4
+// 0xefb2: WORD 'WEFB4' codep=0x7420 wordp=0xefb4
 // ================================================
 IFieldType WEFB4 = {BANKIDX, 0x0b, 0x04};
 
 // ================================================
-// 0xefb7: WORD 'WEFB9' codep=0x7420 parp=0xefb9
+// 0xefb7: WORD 'WEFB9' codep=0x7420 wordp=0xefb9
 // ================================================
 IFieldType WEFB9 = {BANKIDX, 0x0f, 0x04};
 
 // ================================================
-// 0xefbc: WORD 'WEFBE' codep=0x7420 parp=0xefbe
+// 0xefbc: WORD 'WEFBE' codep=0x7420 wordp=0xefbe
 // ================================================
 IFieldType WEFBE = {BANKIDX, 0x13, 0x01};
 
 // ================================================
-// 0xefc1: WORD 'WEFC3' codep=0x7394 parp=0xefc3
+// 0xefc1: WORD 'WEFC3' codep=0x7394 wordp=0xefc3
 // ================================================
 LoadDataType WEFC3 = {BANK_TRANSIDX, 0x00, 0x13, 0x13, 0x6abd};
 
 // ================================================
-// 0xefc9: WORD 'WEFCB' codep=0x7420 parp=0xefcb
+// 0xefc9: WORD 'WEFCB' codep=0x7420 wordp=0xefcb
 // ================================================
 IFieldType WEFCB = {BANK_TRANSIDX, 0x0b, 0x04};
 
 // ================================================
-// 0xefce: WORD 'WEFD0' codep=0x7420 parp=0xefd0
+// 0xefce: WORD 'WEFD0' codep=0x7420 wordp=0xefd0
 // ================================================
 IFieldType WEFD0 = {BANK_TRANSIDX, 0x0f, 0x02};
 
 // ================================================
-// 0xefd3: WORD 'WEFD5' codep=0x224c parp=0xefd5 params=0 returns=0
+// 0xefd3: WORD 'WEFD5' codep=0x224c wordp=0xefd5 params=0 returns=0
 // ================================================
 
 void WEFD5() // WEFD5
@@ -205,7 +205,7 @@ void WEFD5() // WEFD5
 
 
 // ================================================
-// 0xefdb: WORD '!TFLAG' codep=0x224c parp=0xefe6 params=0 returns=0
+// 0xefdb: WORD '!TFLAG' codep=0x224c wordp=0xefe6 params=0 returns=0
 // ================================================
 // entry
 
@@ -220,7 +220,7 @@ void StoreTFLAG() // !TFLAG
 
 
 // ================================================
-// 0xeff2: WORD 'D@BALANCE' codep=0x224c parp=0xf000 params=0 returns=2
+// 0xeff2: WORD 'D@BALANCE' codep=0x224c wordp=0xf000 params=0 returns=2
 // ================================================
 // entry
 
@@ -234,7 +234,7 @@ void GetDBALANCE() // D@BALANCE
 
 
 // ================================================
-// 0xf00a: WORD 'D!BALANCE' codep=0x224c parp=0xf018 params=2 returns=0
+// 0xf00a: WORD 'D!BALANCE' codep=0x224c wordp=0xf018 params=2 returns=0
 // ================================================
 // entry
 
@@ -248,7 +248,7 @@ void StoreDBALANCE() // D!BALANCE
 
 
 // ================================================
-// 0xf022: WORD '?BALANCE' codep=0x224c parp=0xf02f params=2 returns=1
+// 0xf022: WORD '?BALANCE' codep=0x224c wordp=0xf02f params=2 returns=1
 // ================================================
 // entry
 
@@ -261,7 +261,7 @@ void IsBALANCE() // ?BALANCE
 
 
 // ================================================
-// 0xf037: WORD 'INIT-BALANCE' codep=0x224c parp=0xf048 params=0 returns=0
+// 0xf037: WORD 'INIT-BALANCE' codep=0x224c wordp=0xf048 params=0 returns=0
 // ================================================
 // entry
 
@@ -277,7 +277,7 @@ void INIT_dash_BALANCE() // INIT-BALANCE
 
 
 // ================================================
-// 0xf056: WORD 'TRANSACT' codep=0x224c parp=0xf063 params=1 returns=0
+// 0xf056: WORD 'TRANSACT' codep=0x224c wordp=0xf063 params=1 returns=0
 // ================================================
 // entry
 
@@ -349,7 +349,7 @@ void TRANSACT() // TRANSACT
 
 
 // ================================================
-// 0xf0d5: WORD 'INT%' codep=0x224c parp=0xf0de params=0 returns=0
+// 0xf0d5: WORD 'INT%' codep=0x224c wordp=0xf0de params=0 returns=0
 // ================================================
 // entry
 
@@ -383,12 +383,12 @@ void INT_pe_() // INT%
 
 
 // ================================================
-// 0xf120: WORD 'WF122' codep=0x1d29 parp=0xf122
+// 0xf120: WORD 'WF122' codep=0x1d29 wordp=0xf122
 // ================================================
 // 0xf122: db 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 0x44 'DDDDDDDDDDDDDDDDDDDD'
 
 // ================================================
-// 0xf136: WORD 'WF138' codep=0x224c parp=0xf138
+// 0xf136: WORD 'WF138' codep=0x224c wordp=0xf138
 // ================================================
 
 void WF138() // WF138
@@ -413,7 +413,7 @@ void WF138() // WF138
 
 
 // ================================================
-// 0xf160: WORD 'WF162' codep=0x224c parp=0xf162
+// 0xf160: WORD 'WF162' codep=0x224c wordp=0xf162
 // ================================================
 
 void WF162() // WF162
@@ -447,7 +447,7 @@ void WF162() // WF162
 
 
 // ================================================
-// 0xf1a4: WORD 'WF1A6' codep=0x224c parp=0xf1a6
+// 0xf1a4: WORD 'WF1A6' codep=0x224c wordp=0xf1a6
 // ================================================
 
 void WF1A6() // WF1A6
@@ -480,7 +480,7 @@ void WF1A6() // WF1A6
 
 
 // ================================================
-// 0xf1e8: WORD 'WF1EA' codep=0x224c parp=0xf1ea
+// 0xf1e8: WORD 'WF1EA' codep=0x224c wordp=0xf1ea
 // ================================================
 
 void WF1EA() // WF1EA
@@ -491,7 +491,7 @@ void WF1EA() // WF1EA
 
 
 // ================================================
-// 0xf1f0: WORD 'WF1F2' codep=0x224c parp=0xf1f2
+// 0xf1f0: WORD 'WF1F2' codep=0x224c wordp=0xf1f2
 // ================================================
 
 void WF1F2() // WF1F2
@@ -540,7 +540,7 @@ void WF1F2() // WF1F2
 
 
 // ================================================
-// 0xf27d: WORD 'WF27F' codep=0x224c parp=0xf27f
+// 0xf27d: WORD 'WF27F' codep=0x224c wordp=0xf27f
 // ================================================
 
 void WF27F() // WF27F
@@ -655,7 +655,7 @@ void WF27F() // WF27F
 
 
 // ================================================
-// 0xf3b9: WORD 'WF3BB' codep=0x224c parp=0xf3bb
+// 0xf3b9: WORD 'WF3BB' codep=0x224c wordp=0xf3bb
 // ================================================
 
 void WF3BB() // WF3BB
@@ -705,7 +705,7 @@ void WF3BB() // WF3BB
 
 
 // ================================================
-// 0xf472: WORD 'WF474' codep=0x224c parp=0xf474
+// 0xf472: WORD 'WF474' codep=0x224c wordp=0xf474
 // ================================================
 
 void WF474() // WF474
@@ -719,7 +719,7 @@ void WF474() // WF474
 
 
 // ================================================
-// 0xf480: WORD 'WF482' codep=0x224c parp=0xf482
+// 0xf480: WORD 'WF482' codep=0x224c wordp=0xf482
 // ================================================
 
 void WF482() // WF482
@@ -749,7 +749,7 @@ void WF482() // WF482
 
 
 // ================================================
-// 0xf4ba: WORD 'WF4BC' codep=0x224c parp=0xf4bc
+// 0xf4ba: WORD 'WF4BC' codep=0x224c wordp=0xf4bc
 // ================================================
 
 void WF4BC() // WF4BC
@@ -766,7 +766,7 @@ void WF4BC() // WF4BC
 
 
 // ================================================
-// 0xf4d2: WORD 'WF4D4' codep=0x224c parp=0xf4d4
+// 0xf4d2: WORD 'WF4D4' codep=0x224c wordp=0xf4d4
 // ================================================
 
 void WF4D4() // WF4D4
@@ -790,7 +790,7 @@ void WF4D4() // WF4D4
 
 
 // ================================================
-// 0xf4f2: WORD '(U-BANK)' codep=0x224c parp=0xf4ff
+// 0xf4f2: WORD '(U-BANK)' codep=0x224c wordp=0xf4ff
 // ================================================
 // entry
 

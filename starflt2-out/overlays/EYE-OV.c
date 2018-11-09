@@ -9,70 +9,70 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WEBC6  codep:0x7420 parp:0xebc6 size:0x0003 C-string:'WEBC6'
-//           WEBCB  codep:0x7420 parp:0xebcb size:0x0003 C-string:'WEBCB'
-//           WEBD0  codep:0x7420 parp:0xebd0 size:0x0003 C-string:'WEBD0'
-//           WEBD5  codep:0x224c parp:0xebd5 size:0x0008 C-string:'WEBD5'
-//           WEBDF  codep:0x224c parp:0xebdf size:0x0006 C-string:'WEBDF'
-//           WEBE7  codep:0x224c parp:0xebe7 size:0x0014 C-string:'WEBE7'
-//           WEBFD  codep:0x224c parp:0xebfd size:0x004c C-string:'WEBFD'
-//           WEC4B  codep:0x1d29 parp:0xec4b size:0x0004 C-string:'WEC4B'
-//           WEC51  codep:0x1d29 parp:0xec51 size:0x0002 C-string:'WEC51'
-//           WEC55  codep:0x1d29 parp:0xec55 size:0x0002 C-string:'WEC55'
-//           WEC59  codep:0x1d29 parp:0xec59 size:0x0002 C-string:'WEC59'
-//           WEC5D  codep:0x1d29 parp:0xec5d size:0x0002 C-string:'WEC5D'
-//           WEC61  codep:0x1d29 parp:0xec61 size:0x0002 C-string:'WEC61'
-//           WEC65  codep:0x224c parp:0xec65 size:0x0016 C-string:'WEC65'
-//           WEC7D  codep:0x1d29 parp:0xec7d size:0x0004 C-string:'WEC7D'
-//           WEC83  codep:0x224c parp:0xec83 size:0x0014 C-string:'WEC83'
-//           WEC99  codep:0x224c parp:0xec99 size:0x0006 C-string:'WEC99'
-//           WECA1  codep:0x224c parp:0xeca1 size:0x000c C-string:'WECA1'
-//           WECAF  codep:0x224c parp:0xecaf size:0x000c C-string:'WECAF'
-//           WECBD  codep:0x224c parp:0xecbd size:0x0036 C-string:'WECBD'
-//           WECF5  codep:0x224c parp:0xecf5 size:0x0066 C-string:'WECF5'
-//           WED5D  codep:0x1d29 parp:0xed5d size:0x003c C-string:'WED5D'
-//           WED9B  codep:0x1d29 parp:0xed9b size:0x0002 C-string:'WED9B'
-//           WED9F  codep:0x1d29 parp:0xed9f size:0x0002 C-string:'WED9F'
-//           WEDA3  codep:0x224c parp:0xeda3 size:0x0010 C-string:'WEDA3'
-//           WEDB5  codep:0x224c parp:0xedb5 size:0x006e C-string:'WEDB5'
-//           WEE25  codep:0x224c parp:0xee25 size:0x0018 C-string:'WEE25'
-//           WEE3F  codep:0x224c parp:0xee3f size:0x007c C-string:'WEE3F'
-//           WEEBD  codep:0x224c parp:0xeebd size:0x0024 C-string:'WEEBD'
-//           WEEE3  codep:0x224c parp:0xeee3 size:0x001a C-string:'WEEE3'
-//           WEEFF  codep:0x224c parp:0xeeff size:0x000c C-string:'WEEFF'
-//           WEF0D  codep:0x224c parp:0xef0d size:0x0006 C-string:'WEF0D'
-//           WEF15  codep:0x224c parp:0xef15 size:0x0006 C-string:'WEF15'
-//           WEF1D  codep:0x224c parp:0xef1d size:0x0006 C-string:'WEF1D'
-//           WEF25  codep:0x224c parp:0xef25 size:0x006c C-string:'WEF25'
-//           WEF93  codep:0x224c parp:0xef93 size:0x003f C-string:'WEF93'
-//           WEFD4  codep:0x224c parp:0xefd4 size:0x00a2 C-string:'WEFD4'
-//           WF078  codep:0x224c parp:0xf078 size:0x001e C-string:'WF078'
-//           WF098  codep:0x224c parp:0xf098 size:0x0018 C-string:'WF098'
-//           WF0B2  codep:0x224c parp:0xf0b2 size:0x0016 C-string:'WF0B2'
-//           WF0CA  codep:0x224c parp:0xf0ca size:0x0032 C-string:'WF0CA'
-//           WF0FE  codep:0x224c parp:0xf0fe size:0x0046 C-string:'WF0FE'
-//           WF146  codep:0x224c parp:0xf146 size:0x001c C-string:'WF146'
-//           WF164  codep:0x224c parp:0xf164 size:0x000e C-string:'WF164'
-//           WF174  codep:0x2214 parp:0xf174 size:0x0002 C-string:'WF174'
-//           WF178  codep:0x2214 parp:0xf178 size:0x0002 C-string:'WF178'
-//           WF17C  codep:0x2214 parp:0xf17c size:0x0002 C-string:'WF17C'
-//           WF180  codep:0x2214 parp:0xf180 size:0x0002 C-string:'WF180'
-//           WF184  codep:0x224c parp:0xf184 size:0x0020 C-string:'WF184'
-//           WF1A6  codep:0x224c parp:0xf1a6 size:0x000e C-string:'WF1A6'
-//           WF1B6  codep:0x224c parp:0xf1b6 size:0x00ad C-string:'WF1B6'
-//           WF265  codep:0x224c parp:0xf265 size:0x0030 C-string:'WF265'
-//           WF297  codep:0x224c parp:0xf297 size:0x0014 C-string:'WF297'
-//           WF2AD  codep:0x224c parp:0xf2ad size:0x0089 C-string:'WF2AD'
-//           WF338  codep:0x224c parp:0xf338 size:0x00bf C-string:'WF338'
-//           WF3F9  codep:0x224c parp:0xf3f9 size:0x0010 C-string:'WF3F9'
-//           WF40B  codep:0x224c parp:0xf40b size:0x0024 C-string:'WF40B'
-//           WF431  codep:0x224c parp:0xf431 size:0x000e C-string:'WF431'
-//           WF441  codep:0x224c parp:0xf441 size:0x001c C-string:'WF441'
-//           WF45F  codep:0x224c parp:0xf45f size:0x0044 C-string:'WF45F'
-//           WF4A5  codep:0x224c parp:0xf4a5 size:0x0056 C-string:'WF4A5'
-//          DO-EYE  codep:0x224c parp:0xf506 size:0x0000 C-string:'DO_dash_EYE'
+//           WEBC6  codep:0x7420 wordp:0xebc6 size:0x0003 C-string:'WEBC6'
+//           WEBCB  codep:0x7420 wordp:0xebcb size:0x0003 C-string:'WEBCB'
+//           WEBD0  codep:0x7420 wordp:0xebd0 size:0x0003 C-string:'WEBD0'
+//           WEBD5  codep:0x224c wordp:0xebd5 size:0x0008 C-string:'WEBD5'
+//           WEBDF  codep:0x224c wordp:0xebdf size:0x0006 C-string:'WEBDF'
+//           WEBE7  codep:0x224c wordp:0xebe7 size:0x0014 C-string:'WEBE7'
+//           WEBFD  codep:0x224c wordp:0xebfd size:0x004c C-string:'WEBFD'
+//           WEC4B  codep:0x1d29 wordp:0xec4b size:0x0004 C-string:'WEC4B'
+//           WEC51  codep:0x1d29 wordp:0xec51 size:0x0002 C-string:'WEC51'
+//           WEC55  codep:0x1d29 wordp:0xec55 size:0x0002 C-string:'WEC55'
+//           WEC59  codep:0x1d29 wordp:0xec59 size:0x0002 C-string:'WEC59'
+//           WEC5D  codep:0x1d29 wordp:0xec5d size:0x0002 C-string:'WEC5D'
+//           WEC61  codep:0x1d29 wordp:0xec61 size:0x0002 C-string:'WEC61'
+//           WEC65  codep:0x224c wordp:0xec65 size:0x0016 C-string:'WEC65'
+//           WEC7D  codep:0x1d29 wordp:0xec7d size:0x0004 C-string:'WEC7D'
+//           WEC83  codep:0x224c wordp:0xec83 size:0x0014 C-string:'WEC83'
+//           WEC99  codep:0x224c wordp:0xec99 size:0x0006 C-string:'WEC99'
+//           WECA1  codep:0x224c wordp:0xeca1 size:0x000c C-string:'WECA1'
+//           WECAF  codep:0x224c wordp:0xecaf size:0x000c C-string:'WECAF'
+//           WECBD  codep:0x224c wordp:0xecbd size:0x0036 C-string:'WECBD'
+//           WECF5  codep:0x224c wordp:0xecf5 size:0x0066 C-string:'WECF5'
+//           WED5D  codep:0x1d29 wordp:0xed5d size:0x003c C-string:'WED5D'
+//           WED9B  codep:0x1d29 wordp:0xed9b size:0x0002 C-string:'WED9B'
+//           WED9F  codep:0x1d29 wordp:0xed9f size:0x0002 C-string:'WED9F'
+//           WEDA3  codep:0x224c wordp:0xeda3 size:0x0010 C-string:'WEDA3'
+//           WEDB5  codep:0x224c wordp:0xedb5 size:0x006e C-string:'WEDB5'
+//           WEE25  codep:0x224c wordp:0xee25 size:0x0018 C-string:'WEE25'
+//           WEE3F  codep:0x224c wordp:0xee3f size:0x007c C-string:'WEE3F'
+//           WEEBD  codep:0x224c wordp:0xeebd size:0x0024 C-string:'WEEBD'
+//           WEEE3  codep:0x224c wordp:0xeee3 size:0x001a C-string:'WEEE3'
+//           WEEFF  codep:0x224c wordp:0xeeff size:0x000c C-string:'WEEFF'
+//           WEF0D  codep:0x224c wordp:0xef0d size:0x0006 C-string:'WEF0D'
+//           WEF15  codep:0x224c wordp:0xef15 size:0x0006 C-string:'WEF15'
+//           WEF1D  codep:0x224c wordp:0xef1d size:0x0006 C-string:'WEF1D'
+//           WEF25  codep:0x224c wordp:0xef25 size:0x006c C-string:'WEF25'
+//           WEF93  codep:0x224c wordp:0xef93 size:0x003f C-string:'WEF93'
+//           WEFD4  codep:0x224c wordp:0xefd4 size:0x00a2 C-string:'WEFD4'
+//           WF078  codep:0x224c wordp:0xf078 size:0x001e C-string:'WF078'
+//           WF098  codep:0x224c wordp:0xf098 size:0x0018 C-string:'WF098'
+//           WF0B2  codep:0x224c wordp:0xf0b2 size:0x0016 C-string:'WF0B2'
+//           WF0CA  codep:0x224c wordp:0xf0ca size:0x0032 C-string:'WF0CA'
+//           WF0FE  codep:0x224c wordp:0xf0fe size:0x0046 C-string:'WF0FE'
+//           WF146  codep:0x224c wordp:0xf146 size:0x001c C-string:'WF146'
+//           WF164  codep:0x224c wordp:0xf164 size:0x000e C-string:'WF164'
+//           WF174  codep:0x2214 wordp:0xf174 size:0x0002 C-string:'WF174'
+//           WF178  codep:0x2214 wordp:0xf178 size:0x0002 C-string:'WF178'
+//           WF17C  codep:0x2214 wordp:0xf17c size:0x0002 C-string:'WF17C'
+//           WF180  codep:0x2214 wordp:0xf180 size:0x0002 C-string:'WF180'
+//           WF184  codep:0x224c wordp:0xf184 size:0x0020 C-string:'WF184'
+//           WF1A6  codep:0x224c wordp:0xf1a6 size:0x000e C-string:'WF1A6'
+//           WF1B6  codep:0x224c wordp:0xf1b6 size:0x00ad C-string:'WF1B6'
+//           WF265  codep:0x224c wordp:0xf265 size:0x0030 C-string:'WF265'
+//           WF297  codep:0x224c wordp:0xf297 size:0x0014 C-string:'WF297'
+//           WF2AD  codep:0x224c wordp:0xf2ad size:0x0089 C-string:'WF2AD'
+//           WF338  codep:0x224c wordp:0xf338 size:0x00bf C-string:'WF338'
+//           WF3F9  codep:0x224c wordp:0xf3f9 size:0x0010 C-string:'WF3F9'
+//           WF40B  codep:0x224c wordp:0xf40b size:0x0024 C-string:'WF40B'
+//           WF431  codep:0x224c wordp:0xf431 size:0x000e C-string:'WF431'
+//           WF441  codep:0x224c wordp:0xf441 size:0x001c C-string:'WF441'
+//           WF45F  codep:0x224c wordp:0xf45f size:0x0044 C-string:'WF45F'
+//           WF4A5  codep:0x224c wordp:0xf4a5 size:0x0056 C-string:'WF4A5'
+//          DO-EYE  codep:0x224c wordp:0xf506 size:0x0000 C-string:'DO_dash_EYE'
 
 // =================================
 // ============= EXTERN ============
@@ -200,22 +200,22 @@ const unsigned short int cc_WF180 = 0xf180; // WF180
 // 0xebc2: db 0x9b 0x00 '  '
 
 // ================================================
-// 0xebc4: WORD 'WEBC6' codep=0x7420 parp=0xebc6
+// 0xebc4: WORD 'WEBC6' codep=0x7420 wordp=0xebc6
 // ================================================
 IFieldType WEBC6 = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
-// 0xebc9: WORD 'WEBCB' codep=0x7420 parp=0xebcb
+// 0xebc9: WORD 'WEBCB' codep=0x7420 wordp=0xebcb
 // ================================================
 IFieldType WEBCB = {SHIPIDX, 0x1a, 0x01};
 
 // ================================================
-// 0xebce: WORD 'WEBD0' codep=0x7420 parp=0xebd0
+// 0xebce: WORD 'WEBD0' codep=0x7420 wordp=0xebd0
 // ================================================
 IFieldType WEBD0 = {SHIPIDX, 0x30, 0x02};
 
 // ================================================
-// 0xebd3: WORD 'WEBD5' codep=0x224c parp=0xebd5 params=1 returns=1
+// 0xebd3: WORD 'WEBD5' codep=0x224c wordp=0xebd5 params=1 returns=1
 // ================================================
 
 void WEBD5() // WEBD5
@@ -225,7 +225,7 @@ void WEBD5() // WEBD5
 
 
 // ================================================
-// 0xebdd: WORD 'WEBDF' codep=0x224c parp=0xebdf params=0 returns=0
+// 0xebdd: WORD 'WEBDF' codep=0x224c wordp=0xebdf params=0 returns=0
 // ================================================
 
 void WEBDF() // WEBDF
@@ -236,7 +236,7 @@ void WEBDF() // WEBDF
 
 
 // ================================================
-// 0xebe5: WORD 'WEBE7' codep=0x224c parp=0xebe7 params=0 returns=1
+// 0xebe5: WORD 'WEBE7' codep=0x224c wordp=0xebe7 params=0 returns=1
 // ================================================
 
 void WEBE7() // WEBE7
@@ -249,7 +249,7 @@ void WEBE7() // WEBE7
 
 
 // ================================================
-// 0xebfb: WORD 'WEBFD' codep=0x224c parp=0xebfd
+// 0xebfb: WORD 'WEBFD' codep=0x224c wordp=0xebfd
 // ================================================
 
 void WEBFD() // WEBFD
@@ -263,37 +263,37 @@ void WEBFD() // WEBFD
 
 
 // ================================================
-// 0xec49: WORD 'WEC4B' codep=0x1d29 parp=0xec4b
+// 0xec49: WORD 'WEC4B' codep=0x1d29 wordp=0xec4b
 // ================================================
 // 0xec4b: db 0x56 0x3a 0x20 0xae 'V:  '
 
 // ================================================
-// 0xec4f: WORD 'WEC51' codep=0x1d29 parp=0xec51
+// 0xec4f: WORD 'WEC51' codep=0x1d29 wordp=0xec51
 // ================================================
 // 0xec51: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xec53: WORD 'WEC55' codep=0x1d29 parp=0xec55
+// 0xec53: WORD 'WEC55' codep=0x1d29 wordp=0xec55
 // ================================================
 // 0xec55: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xec57: WORD 'WEC59' codep=0x1d29 parp=0xec59
+// 0xec57: WORD 'WEC59' codep=0x1d29 wordp=0xec59
 // ================================================
 // 0xec59: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xec5b: WORD 'WEC5D' codep=0x1d29 parp=0xec5d
+// 0xec5b: WORD 'WEC5D' codep=0x1d29 wordp=0xec5d
 // ================================================
 // 0xec5d: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xec5f: WORD 'WEC61' codep=0x1d29 parp=0xec61
+// 0xec5f: WORD 'WEC61' codep=0x1d29 wordp=0xec61
 // ================================================
 // 0xec61: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xec63: WORD 'WEC65' codep=0x224c parp=0xec65 params=0 returns=0
+// 0xec63: WORD 'WEC65' codep=0x224c wordp=0xec65 params=0 returns=0
 // ================================================
 
 void WEC65() // WEC65
@@ -312,12 +312,12 @@ void WEC65() // WEC65
 
 
 // ================================================
-// 0xec7b: WORD 'WEC7D' codep=0x1d29 parp=0xec7d
+// 0xec7b: WORD 'WEC7D' codep=0x1d29 wordp=0xec7d
 // ================================================
 // 0xec7d: db 0x56 0x3a 0x20 0x66 'V: f'
 
 // ================================================
-// 0xec81: WORD 'WEC83' codep=0x224c parp=0xec83 params=0 returns=1
+// 0xec81: WORD 'WEC83' codep=0x224c wordp=0xec83 params=0 returns=1
 // ================================================
 // orphan
 
@@ -334,7 +334,7 @@ void WEC83() // WEC83
 
 
 // ================================================
-// 0xec97: WORD 'WEC99' codep=0x224c parp=0xec99 params=1 returns=1
+// 0xec97: WORD 'WEC99' codep=0x224c wordp=0xec99 params=1 returns=1
 // ================================================
 
 void WEC99() // WEC99
@@ -344,7 +344,7 @@ void WEC99() // WEC99
 
 
 // ================================================
-// 0xec9f: WORD 'WECA1' codep=0x224c parp=0xeca1 params=0 returns=1
+// 0xec9f: WORD 'WECA1' codep=0x224c wordp=0xeca1 params=0 returns=1
 // ================================================
 
 void WECA1() // WECA1
@@ -357,7 +357,7 @@ void WECA1() // WECA1
 
 
 // ================================================
-// 0xecad: WORD 'WECAF' codep=0x224c parp=0xecaf params=0 returns=1
+// 0xecad: WORD 'WECAF' codep=0x224c wordp=0xecaf params=0 returns=1
 // ================================================
 
 void WECAF() // WECAF
@@ -370,7 +370,7 @@ void WECAF() // WECAF
 
 
 // ================================================
-// 0xecbb: WORD 'WECBD' codep=0x224c parp=0xecbd
+// 0xecbb: WORD 'WECBD' codep=0x224c wordp=0xecbd
 // ================================================
 
 void WECBD() // WECBD
@@ -401,7 +401,7 @@ void WECBD() // WECBD
 
 
 // ================================================
-// 0xecf3: WORD 'WECF5' codep=0x224c parp=0xecf5
+// 0xecf3: WORD 'WECF5' codep=0x224c wordp=0xecf5
 // ================================================
 
 void WECF5() // WECF5
@@ -434,22 +434,22 @@ void WECF5() // WECF5
 
 
 // ================================================
-// 0xed5b: WORD 'WED5D' codep=0x1d29 parp=0xed5d
+// 0xed5b: WORD 'WED5D' codep=0x1d29 wordp=0xed5d
 // ================================================
 // 0xed5d: db 0x3a 0x20 0x05 0x41 0x4c 0x4c 0x4f 0x54 0x20 0x4f 0x53 0x48 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x20 0x5c 0x20 0x45 0x59 0x45 0x20 0x20 0x20 0x20 0x20 0x4f 0x56 0x52 0x41 0x28 0x72 0x66 0x67 0x31 0x34 0x61 0x70 0x72 0x38 0x38 0x29 ':  ALLOT OSH                      \ EYE     OVRA(rfg14apr88)'
 
 // ================================================
-// 0xed99: WORD 'WED9B' codep=0x1d29 parp=0xed9b
+// 0xed99: WORD 'WED9B' codep=0x1d29 wordp=0xed9b
 // ================================================
 // 0xed9b: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xed9d: WORD 'WED9F' codep=0x1d29 parp=0xed9f
+// 0xed9d: WORD 'WED9F' codep=0x1d29 wordp=0xed9f
 // ================================================
 // 0xed9f: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xeda1: WORD 'WEDA3' codep=0x224c parp=0xeda3 params=2 returns=1
+// 0xeda1: WORD 'WEDA3' codep=0x224c wordp=0xeda3 params=2 returns=1
 // ================================================
 
 void WEDA3() // WEDA3
@@ -464,7 +464,7 @@ void WEDA3() // WEDA3
 
 
 // ================================================
-// 0xedb3: WORD 'WEDB5' codep=0x224c parp=0xedb5 params=1 returns=0
+// 0xedb3: WORD 'WEDB5' codep=0x224c wordp=0xedb5 params=1 returns=0
 // ================================================
 
 void WEDB5() // WEDB5
@@ -512,7 +512,7 @@ void WEDB5() // WEDB5
 
 
 // ================================================
-// 0xee23: WORD 'WEE25' codep=0x224c parp=0xee25 params=0 returns=0
+// 0xee23: WORD 'WEE25' codep=0x224c wordp=0xee25 params=0 returns=0
 // ================================================
 
 void WEE25() // WEE25
@@ -537,7 +537,7 @@ void WEE25() // WEE25
 
 
 // ================================================
-// 0xee3d: WORD 'WEE3F' codep=0x224c parp=0xee3f params=1 returns=2
+// 0xee3d: WORD 'WEE3F' codep=0x224c wordp=0xee3f params=1 returns=2
 // ================================================
 
 void WEE3F() // WEE3F
@@ -583,7 +583,7 @@ void WEE3F() // WEE3F
 
 
 // ================================================
-// 0xeebb: WORD 'WEEBD' codep=0x224c parp=0xeebd
+// 0xeebb: WORD 'WEEBD' codep=0x224c wordp=0xeebd
 // ================================================
 
 void WEEBD() // WEEBD
@@ -615,7 +615,7 @@ void WEEBD() // WEEBD
 
 
 // ================================================
-// 0xeee1: WORD 'WEEE3' codep=0x224c parp=0xeee3
+// 0xeee1: WORD 'WEEE3' codep=0x224c wordp=0xeee3
 // ================================================
 
 void WEEE3() // WEEE3
@@ -635,7 +635,7 @@ void WEEE3() // WEEE3
 
 
 // ================================================
-// 0xeefd: WORD 'WEEFF' codep=0x224c parp=0xeeff
+// 0xeefd: WORD 'WEEFF' codep=0x224c wordp=0xeeff
 // ================================================
 
 void WEEFF() // WEEFF
@@ -648,7 +648,7 @@ void WEEFF() // WEEFF
 
 
 // ================================================
-// 0xef0b: WORD 'WEF0D' codep=0x224c parp=0xef0d params=0 returns=1
+// 0xef0b: WORD 'WEF0D' codep=0x224c wordp=0xef0d params=0 returns=1
 // ================================================
 
 void WEF0D() // WEF0D
@@ -658,7 +658,7 @@ void WEF0D() // WEF0D
 
 
 // ================================================
-// 0xef13: WORD 'WEF15' codep=0x224c parp=0xef15 params=1 returns=0
+// 0xef13: WORD 'WEF15' codep=0x224c wordp=0xef15 params=1 returns=0
 // ================================================
 
 void WEF15() // WEF15
@@ -669,7 +669,7 @@ void WEF15() // WEF15
 
 
 // ================================================
-// 0xef1b: WORD 'WEF1D' codep=0x224c parp=0xef1d params=0 returns=2
+// 0xef1b: WORD 'WEF1D' codep=0x224c wordp=0xef1d params=0 returns=2
 // ================================================
 
 void WEF1D() // WEF1D
@@ -680,7 +680,7 @@ void WEF1D() // WEF1D
 
 
 // ================================================
-// 0xef23: WORD 'WEF25' codep=0x224c parp=0xef25
+// 0xef23: WORD 'WEF25' codep=0x224c wordp=0xef25
 // ================================================
 
 void WEF25() // WEF25
@@ -738,7 +738,7 @@ void WEF25() // WEF25
 
 
 // ================================================
-// 0xef91: WORD 'WEF93' codep=0x224c parp=0xef93
+// 0xef91: WORD 'WEF93' codep=0x224c wordp=0xef93
 // ================================================
 
 void WEF93() // WEF93
@@ -751,7 +751,7 @@ void WEF93() // WEF93
 
 
 // ================================================
-// 0xefd2: WORD 'WEFD4' codep=0x224c parp=0xefd4
+// 0xefd2: WORD 'WEFD4' codep=0x224c wordp=0xefd4
 // ================================================
 
 void WEFD4() // WEFD4
@@ -775,7 +775,7 @@ void WEFD4() // WEFD4
 
 
 // ================================================
-// 0xf076: WORD 'WF078' codep=0x224c parp=0xf078 params=0 returns=1
+// 0xf076: WORD 'WF078' codep=0x224c wordp=0xf078 params=0 returns=1
 // ================================================
 
 void WF078() // WF078
@@ -795,7 +795,7 @@ void WF078() // WF078
 
 
 // ================================================
-// 0xf096: WORD 'WF098' codep=0x224c parp=0xf098
+// 0xf096: WORD 'WF098' codep=0x224c wordp=0xf098
 // ================================================
 
 void WF098() // WF098
@@ -820,7 +820,7 @@ void WF098() // WF098
 
 
 // ================================================
-// 0xf0b0: WORD 'WF0B2' codep=0x224c parp=0xf0b2
+// 0xf0b0: WORD 'WF0B2' codep=0x224c wordp=0xf0b2
 // ================================================
 
 void WF0B2() // WF0B2
@@ -839,7 +839,7 @@ void WF0B2() // WF0B2
 
 
 // ================================================
-// 0xf0c8: WORD 'WF0CA' codep=0x224c parp=0xf0ca
+// 0xf0c8: WORD 'WF0CA' codep=0x224c wordp=0xf0ca
 // ================================================
 
 void WF0CA() // WF0CA
@@ -877,7 +877,7 @@ void WF0CA() // WF0CA
 
 
 // ================================================
-// 0xf0fc: WORD 'WF0FE' codep=0x224c parp=0xf0fe
+// 0xf0fc: WORD 'WF0FE' codep=0x224c wordp=0xf0fe
 // ================================================
 
 void WF0FE() // WF0FE
@@ -917,7 +917,7 @@ void WF0FE() // WF0FE
 
 
 // ================================================
-// 0xf144: WORD 'WF146' codep=0x224c parp=0xf146 params=1 returns=0
+// 0xf144: WORD 'WF146' codep=0x224c wordp=0xf146 params=1 returns=0
 // ================================================
 
 void WF146() // WF146
@@ -940,7 +940,7 @@ void WF146() // WF146
 
 
 // ================================================
-// 0xf162: WORD 'WF164' codep=0x224c parp=0xf164
+// 0xf162: WORD 'WF164' codep=0x224c wordp=0xf164
 // ================================================
 
 void WF164() // WF164
@@ -954,27 +954,27 @@ void WF164() // WF164
 
 
 // ================================================
-// 0xf172: WORD 'WF174' codep=0x2214 parp=0xf174
+// 0xf172: WORD 'WF174' codep=0x2214 wordp=0xf174
 // ================================================
 // 0xf174: dw 0x0040
 
 // ================================================
-// 0xf176: WORD 'WF178' codep=0x2214 parp=0xf178
+// 0xf176: WORD 'WF178' codep=0x2214 wordp=0xf178
 // ================================================
 // 0xf178: dw 0x003e
 
 // ================================================
-// 0xf17a: WORD 'WF17C' codep=0x2214 parp=0xf17c
+// 0xf17a: WORD 'WF17C' codep=0x2214 wordp=0xf17c
 // ================================================
 // 0xf17c: dw 0x0009
 
 // ================================================
-// 0xf17e: WORD 'WF180' codep=0x2214 parp=0xf180
+// 0xf17e: WORD 'WF180' codep=0x2214 wordp=0xf180
 // ================================================
 // 0xf180: dw 0x0008
 
 // ================================================
-// 0xf182: WORD 'WF184' codep=0x224c parp=0xf184 params=2 returns=0
+// 0xf182: WORD 'WF184' codep=0x224c wordp=0xf184 params=2 returns=0
 // ================================================
 
 void WF184() // WF184
@@ -994,7 +994,7 @@ void WF184() // WF184
 
 
 // ================================================
-// 0xf1a4: WORD 'WF1A6' codep=0x224c parp=0xf1a6 params=0 returns=0
+// 0xf1a4: WORD 'WF1A6' codep=0x224c wordp=0xf1a6 params=0 returns=0
 // ================================================
 
 void WF1A6() // WF1A6
@@ -1009,7 +1009,7 @@ void WF1A6() // WF1A6
 
 
 // ================================================
-// 0xf1b4: WORD 'WF1B6' codep=0x224c parp=0xf1b6
+// 0xf1b4: WORD 'WF1B6' codep=0x224c wordp=0xf1b6
 // ================================================
 
 void WF1B6() // WF1B6
@@ -1034,7 +1034,7 @@ void WF1B6() // WF1B6
 
 
 // ================================================
-// 0xf263: WORD 'WF265' codep=0x224c parp=0xf265 params=1 returns=0
+// 0xf263: WORD 'WF265' codep=0x224c wordp=0xf265 params=1 returns=0
 // ================================================
 
 void WF265() // WF265
@@ -1068,7 +1068,7 @@ void WF265() // WF265
 
 
 // ================================================
-// 0xf295: WORD 'WF297' codep=0x224c parp=0xf297 params=0 returns=0
+// 0xf295: WORD 'WF297' codep=0x224c wordp=0xf297 params=0 returns=0
 // ================================================
 
 void WF297() // WF297
@@ -1085,7 +1085,7 @@ void WF297() // WF297
 
 
 // ================================================
-// 0xf2ab: WORD 'WF2AD' codep=0x224c parp=0xf2ad
+// 0xf2ab: WORD 'WF2AD' codep=0x224c wordp=0xf2ad
 // ================================================
 
 void WF2AD() // WF2AD
@@ -1104,7 +1104,7 @@ void WF2AD() // WF2AD
 
 
 // ================================================
-// 0xf336: WORD 'WF338' codep=0x224c parp=0xf338
+// 0xf336: WORD 'WF338' codep=0x224c wordp=0xf338
 // ================================================
 
 void WF338() // WF338
@@ -1125,7 +1125,7 @@ void WF338() // WF338
 
 
 // ================================================
-// 0xf3f7: WORD 'WF3F9' codep=0x224c parp=0xf3f9 params=0 returns=0
+// 0xf3f7: WORD 'WF3F9' codep=0x224c wordp=0xf3f9 params=0 returns=0
 // ================================================
 
 void WF3F9() // WF3F9
@@ -1141,7 +1141,7 @@ void WF3F9() // WF3F9
 
 
 // ================================================
-// 0xf409: WORD 'WF40B' codep=0x224c parp=0xf40b params=3 returns=1
+// 0xf409: WORD 'WF40B' codep=0x224c wordp=0xf40b params=3 returns=1
 // ================================================
 
 void WF40B() // WF40B
@@ -1167,7 +1167,7 @@ void WF40B() // WF40B
 
 
 // ================================================
-// 0xf42f: WORD 'WF431' codep=0x224c parp=0xf431 params=0 returns=0
+// 0xf42f: WORD 'WF431' codep=0x224c wordp=0xf431 params=0 returns=0
 // ================================================
 
 void WF431() // WF431
@@ -1181,7 +1181,7 @@ void WF431() // WF431
 
 
 // ================================================
-// 0xf43f: WORD 'WF441' codep=0x224c parp=0xf441
+// 0xf43f: WORD 'WF441' codep=0x224c wordp=0xf441
 // ================================================
 
 void WF441() // WF441
@@ -1202,7 +1202,7 @@ void WF441() // WF441
 
 
 // ================================================
-// 0xf45d: WORD 'WF45F' codep=0x224c parp=0xf45f
+// 0xf45d: WORD 'WF45F' codep=0x224c wordp=0xf45f
 // ================================================
 
 void WF45F() // WF45F
@@ -1242,7 +1242,7 @@ void WF45F() // WF45F
 
 
 // ================================================
-// 0xf4a3: WORD 'WF4A5' codep=0x224c parp=0xf4a5 params=0 returns=0
+// 0xf4a3: WORD 'WF4A5' codep=0x224c wordp=0xf4a5 params=0 returns=0
 // ================================================
 
 void WF4A5() // WF4A5
@@ -1286,7 +1286,7 @@ void WF4A5() // WF4A5
 
 
 // ================================================
-// 0xf4fb: WORD 'DO-EYE' codep=0x224c parp=0xf506
+// 0xf4fb: WORD 'DO-EYE' codep=0x224c wordp=0xf506
 // ================================================
 // entry
 

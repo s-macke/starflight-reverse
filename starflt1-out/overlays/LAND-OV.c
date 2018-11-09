@@ -9,27 +9,27 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF136  codep:0x744d parp:0xf136 size:0x0003 C-string:'WF136'
-//           WF13B  codep:0x73ea parp:0xf13b size:0x0006 C-string:'WF13B'
-//           WF143  codep:0x1d29 parp:0xf143 size:0x0002 C-string:'WF143'
-//           WF147  codep:0x224c parp:0xf147 size:0x002e C-string:'WF147'
-//           WF177  codep:0x224c parp:0xf177 size:0x0050 C-string:'WF177'
-//           WF1C9  codep:0x224c parp:0xf1c9 size:0x0010 C-string:'WF1C9'
-//           WF1DB  codep:0x224c parp:0xf1db size:0x0014 C-string:'WF1DB'
-//           WF1F1  codep:0x224c parp:0xf1f1 size:0x0065 C-string:'WF1F1'
-//           WF258  codep:0x224c parp:0xf258 size:0x00d2 C-string:'WF258'
-//           WF32C  codep:0x224c parp:0xf32c size:0x0014 C-string:'WF32C'
-//           WF342  codep:0x224c parp:0xf342 size:0x0037 C-string:'WF342'
-//           WF37B  codep:0x224c parp:0xf37b size:0x0020 C-string:'WF37B'
-//           WF39D  codep:0x224c parp:0xf39d size:0x0037 C-string:'WF39D'
-//           WF3D6  codep:0x224c parp:0xf3d6 size:0x000a C-string:'WF3D6'
-//           WF3E2  codep:0x224c parp:0xf3e2 size:0x004c C-string:'WF3E2'
-//           WF430  codep:0x224c parp:0xf430 size:0x002c C-string:'WF430'
-//           WF45E  codep:0x224c parp:0xf45e size:0x0036 C-string:'WF45E'
-//           ?LAND  codep:0x224c parp:0xf49e size:0x004b C-string:'IsLAND'
-//         ?LAUNCH  codep:0x224c parp:0xf4f5 size:0x0000 C-string:'IsLAUNCH'
+//           WF136  codep:0x744d wordp:0xf136 size:0x0003 C-string:'WF136'
+//           WF13B  codep:0x73ea wordp:0xf13b size:0x0006 C-string:'WF13B'
+//           WF143  codep:0x1d29 wordp:0xf143 size:0x0002 C-string:'WF143'
+//           WF147  codep:0x224c wordp:0xf147 size:0x002e C-string:'WF147'
+//           WF177  codep:0x224c wordp:0xf177 size:0x0050 C-string:'WF177'
+//           WF1C9  codep:0x224c wordp:0xf1c9 size:0x0010 C-string:'WF1C9'
+//           WF1DB  codep:0x224c wordp:0xf1db size:0x0014 C-string:'WF1DB'
+//           WF1F1  codep:0x224c wordp:0xf1f1 size:0x0065 C-string:'WF1F1'
+//           WF258  codep:0x224c wordp:0xf258 size:0x00d2 C-string:'WF258'
+//           WF32C  codep:0x224c wordp:0xf32c size:0x0014 C-string:'WF32C'
+//           WF342  codep:0x224c wordp:0xf342 size:0x0037 C-string:'WF342'
+//           WF37B  codep:0x224c wordp:0xf37b size:0x0020 C-string:'WF37B'
+//           WF39D  codep:0x224c wordp:0xf39d size:0x0037 C-string:'WF39D'
+//           WF3D6  codep:0x224c wordp:0xf3d6 size:0x000a C-string:'WF3D6'
+//           WF3E2  codep:0x224c wordp:0xf3e2 size:0x004c C-string:'WF3E2'
+//           WF430  codep:0x224c wordp:0xf430 size:0x002c C-string:'WF430'
+//           WF45E  codep:0x224c wordp:0xf45e size:0x0036 C-string:'WF45E'
+//           ?LAND  codep:0x224c wordp:0xf49e size:0x004b C-string:'IsLAND'
+//         ?LAUNCH  codep:0x224c wordp:0xf4f5 size:0x0000 C-string:'IsLAUNCH'
 
 // =================================
 // ============= EXTERN ============
@@ -95,22 +95,22 @@ const unsigned short int pp_WF143 = 0xf143; // WF143 size: 2
 // 0xf132: db 0x3f 0x00 '? '
 
 // ================================================
-// 0xf134: WORD 'WF136' codep=0x744d parp=0xf136
+// 0xf134: WORD 'WF136' codep=0x744d wordp=0xf136
 // ================================================
 IFieldType WF136 = {SHIPIDX, 0x34, 0x0f};
 
 // ================================================
-// 0xf139: WORD 'WF13B' codep=0x73ea parp=0xf13b
+// 0xf139: WORD 'WF13B' codep=0x73ea wordp=0xf13b
 // ================================================
 LoadDataType WF13B = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 
 // ================================================
-// 0xf141: WORD 'WF143' codep=0x1d29 parp=0xf143
+// 0xf141: WORD 'WF143' codep=0x1d29 wordp=0xf143
 // ================================================
 // 0xf143: db 0x00 0x00 '  '
 
 // ================================================
-// 0xf145: WORD 'WF147' codep=0x224c parp=0xf147
+// 0xf145: WORD 'WF147' codep=0x224c wordp=0xf147
 // ================================================
 
 void WF147() // WF147
@@ -134,7 +134,7 @@ void WF147() // WF147
 
 
 // ================================================
-// 0xf175: WORD 'WF177' codep=0x224c parp=0xf177
+// 0xf175: WORD 'WF177' codep=0x224c wordp=0xf177
 // ================================================
 
 void WF177() // WF177
@@ -177,7 +177,7 @@ void WF177() // WF177
 
 
 // ================================================
-// 0xf1c7: WORD 'WF1C9' codep=0x224c parp=0xf1c9 params=0 returns=0
+// 0xf1c7: WORD 'WF1C9' codep=0x224c wordp=0xf1c9 params=0 returns=0
 // ================================================
 
 void WF1C9() // WF1C9
@@ -192,7 +192,7 @@ void WF1C9() // WF1C9
 
 
 // ================================================
-// 0xf1d9: WORD 'WF1DB' codep=0x224c parp=0xf1db
+// 0xf1d9: WORD 'WF1DB' codep=0x224c wordp=0xf1db
 // ================================================
 
 void WF1DB() // WF1DB
@@ -209,7 +209,7 @@ void WF1DB() // WF1DB
 
 
 // ================================================
-// 0xf1ef: WORD 'WF1F1' codep=0x224c parp=0xf1f1
+// 0xf1ef: WORD 'WF1F1' codep=0x224c wordp=0xf1f1
 // ================================================
 
 void WF1F1() // WF1F1
@@ -234,7 +234,7 @@ void WF1F1() // WF1F1
 
 
 // ================================================
-// 0xf256: WORD 'WF258' codep=0x224c parp=0xf258
+// 0xf256: WORD 'WF258' codep=0x224c wordp=0xf258
 // ================================================
 
 void WF258() // WF258
@@ -296,7 +296,7 @@ void WF258() // WF258
 
 
 // ================================================
-// 0xf32a: WORD 'WF32C' codep=0x224c parp=0xf32c
+// 0xf32a: WORD 'WF32C' codep=0x224c wordp=0xf32c
 // ================================================
 
 void WF32C() // WF32C
@@ -311,7 +311,7 @@ void WF32C() // WF32C
 
 
 // ================================================
-// 0xf340: WORD 'WF342' codep=0x224c parp=0xf342
+// 0xf340: WORD 'WF342' codep=0x224c wordp=0xf342
 // ================================================
 
 void WF342() // WF342
@@ -328,7 +328,7 @@ void WF342() // WF342
 
 
 // ================================================
-// 0xf379: WORD 'WF37B' codep=0x224c parp=0xf37b
+// 0xf379: WORD 'WF37B' codep=0x224c wordp=0xf37b
 // ================================================
 
 void WF37B() // WF37B
@@ -346,7 +346,7 @@ void WF37B() // WF37B
 
 
 // ================================================
-// 0xf39b: WORD 'WF39D' codep=0x224c parp=0xf39d
+// 0xf39b: WORD 'WF39D' codep=0x224c wordp=0xf39d
 // ================================================
 
 void WF39D() // WF39D
@@ -363,7 +363,7 @@ void WF39D() // WF39D
 
 
 // ================================================
-// 0xf3d4: WORD 'WF3D6' codep=0x224c parp=0xf3d6
+// 0xf3d4: WORD 'WF3D6' codep=0x224c wordp=0xf3d6
 // ================================================
 
 void WF3D6() // WF3D6
@@ -375,7 +375,7 @@ void WF3D6() // WF3D6
 
 
 // ================================================
-// 0xf3e0: WORD 'WF3E2' codep=0x224c parp=0xf3e2
+// 0xf3e0: WORD 'WF3E2' codep=0x224c wordp=0xf3e2
 // ================================================
 
 void WF3E2() // WF3E2
@@ -395,7 +395,7 @@ void WF3E2() // WF3E2
 
 
 // ================================================
-// 0xf42e: WORD 'WF430' codep=0x224c parp=0xf430
+// 0xf42e: WORD 'WF430' codep=0x224c wordp=0xf430
 // ================================================
 
 void WF430() // WF430
@@ -422,7 +422,7 @@ void WF430() // WF430
 
 
 // ================================================
-// 0xf45c: WORD 'WF45E' codep=0x224c parp=0xf45e params=0 returns=0
+// 0xf45c: WORD 'WF45E' codep=0x224c wordp=0xf45e params=0 returns=0
 // ================================================
 
 void WF45E() // WF45E
@@ -455,7 +455,7 @@ void WF45E() // WF45E
 
 
 // ================================================
-// 0xf494: WORD '?LAND' codep=0x224c parp=0xf49e
+// 0xf494: WORD '?LAND' codep=0x224c wordp=0xf49e
 // ================================================
 // entry
 
@@ -485,7 +485,7 @@ void IsLAND() // ?LAND
 
 
 // ================================================
-// 0xf4e9: WORD '?LAUNCH' codep=0x224c parp=0xf4f5
+// 0xf4e9: WORD '?LAUNCH' codep=0x224c wordp=0xf4f5
 // ================================================
 // entry
 

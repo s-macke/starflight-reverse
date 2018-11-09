@@ -9,37 +9,37 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WEFF6  codep:0x1d29 parp:0xeff6 size:0x000e C-string:'WEFF6'
-//           WF006  codep:0x1d29 parp:0xf006 size:0x0013 C-string:'WF006'
-//           WF01B  codep:0x1d29 parp:0xf01b size:0x0029 C-string:'WF01B'
-//           WF046  codep:0x224c parp:0xf046 size:0x0010 C-string:'WF046'
-//           WF058  codep:0x224c parp:0xf058 size:0x000e C-string:'WF058'
-//           WF068  codep:0x1d29 parp:0xf068 size:0x0011 C-string:'WF068'
-//           WF07B  codep:0x224c parp:0xf07b size:0x0074 C-string:'WF07B'
-//           WF0F1  codep:0x224c parp:0xf0f1 size:0x001e C-string:'WF0F1'
-//           WF111  codep:0x224c parp:0xf111 size:0x0018 C-string:'WF111'
-//           WF12B  codep:0x224c parp:0xf12b size:0x0018 C-string:'WF12B'
-//           WF145  codep:0x224c parp:0xf145 size:0x0032 C-string:'WF145'
-//           WF179  codep:0x224c parp:0xf179 size:0x0010 C-string:'WF179'
-//            LDAP  codep:0x224c parp:0xf192 size:0x0044 C-string:'LDAP'
-//           WF1D8  codep:0x224c parp:0xf1d8 size:0x0026 C-string:'WF1D8'
-//           WF200  codep:0x224c parp:0xf200 size:0x000e C-string:'WF200'
-//           WF210  codep:0x224c parp:0xf210 size:0x0010 C-string:'WF210'
-//           WF222  codep:0x224c parp:0xf222 size:0x0036 C-string:'WF222'
-//           WF25A  codep:0x224c parp:0xf25a size:0x000e C-string:'WF25A'
-//           WF26A  codep:0x224c parp:0xf26a size:0x0014 C-string:'WF26A'
-//           WF280  codep:0x224c parp:0xf280 size:0x0088 C-string:'WF280'
-//           WF30A  codep:0x224c parp:0xf30a size:0x0044 C-string:'WF30A'
-//            SETB  codep:0x224c parp:0xf357 size:0x0036 C-string:'SETB'
-//            ESTA  codep:0x2214 parp:0xf396 size:0x000d C-string:'ESTA'
-//            VSTA  codep:0x2214 parp:0xf3ac size:0x000d C-string:'VSTA'
-//           WF3BB  codep:0x224c parp:0xf3bb size:0x005a C-string:'WF3BB'
-//            LDSY  codep:0x224c parp:0xf41e size:0x003e C-string:'LDSY'
-//            @.HY  codep:0x224c parp:0xf465 size:0x005c C-string:'Get_dot_HY'
-//            .TPI  codep:0x224c parp:0xf4ca size:0x0036 C-string:'DrawTPI'
-//            .API  codep:0x224c parp:0xf509 size:0x0000 C-string:'DrawAPI'
+//           WEFF6  codep:0x1d29 wordp:0xeff6 size:0x000e C-string:'WEFF6'
+//           WF006  codep:0x1d29 wordp:0xf006 size:0x0013 C-string:'WF006'
+//           WF01B  codep:0x1d29 wordp:0xf01b size:0x0029 C-string:'WF01B'
+//           WF046  codep:0x224c wordp:0xf046 size:0x0010 C-string:'WF046'
+//           WF058  codep:0x224c wordp:0xf058 size:0x000e C-string:'WF058'
+//           WF068  codep:0x1d29 wordp:0xf068 size:0x0011 C-string:'WF068'
+//           WF07B  codep:0x224c wordp:0xf07b size:0x0074 C-string:'WF07B'
+//           WF0F1  codep:0x224c wordp:0xf0f1 size:0x001e C-string:'WF0F1'
+//           WF111  codep:0x224c wordp:0xf111 size:0x0018 C-string:'WF111'
+//           WF12B  codep:0x224c wordp:0xf12b size:0x0018 C-string:'WF12B'
+//           WF145  codep:0x224c wordp:0xf145 size:0x0032 C-string:'WF145'
+//           WF179  codep:0x224c wordp:0xf179 size:0x0010 C-string:'WF179'
+//            LDAP  codep:0x224c wordp:0xf192 size:0x0044 C-string:'LDAP'
+//           WF1D8  codep:0x224c wordp:0xf1d8 size:0x0026 C-string:'WF1D8'
+//           WF200  codep:0x224c wordp:0xf200 size:0x000e C-string:'WF200'
+//           WF210  codep:0x224c wordp:0xf210 size:0x0010 C-string:'WF210'
+//           WF222  codep:0x224c wordp:0xf222 size:0x0036 C-string:'WF222'
+//           WF25A  codep:0x224c wordp:0xf25a size:0x000e C-string:'WF25A'
+//           WF26A  codep:0x224c wordp:0xf26a size:0x0014 C-string:'WF26A'
+//           WF280  codep:0x224c wordp:0xf280 size:0x0088 C-string:'WF280'
+//           WF30A  codep:0x224c wordp:0xf30a size:0x0044 C-string:'WF30A'
+//            SETB  codep:0x224c wordp:0xf357 size:0x0036 C-string:'SETB'
+//            ESTA  codep:0x2214 wordp:0xf396 size:0x000d C-string:'ESTA'
+//            VSTA  codep:0x2214 wordp:0xf3ac size:0x000d C-string:'VSTA'
+//           WF3BB  codep:0x224c wordp:0xf3bb size:0x005a C-string:'WF3BB'
+//            LDSY  codep:0x224c wordp:0xf41e size:0x003e C-string:'LDSY'
+//            @.HY  codep:0x224c wordp:0xf465 size:0x005c C-string:'Get_dot_HY'
+//            .TPI  codep:0x224c wordp:0xf4ca size:0x0036 C-string:'DrawTPI'
+//            .API  codep:0x224c wordp:0xf509 size:0x0000 C-string:'DrawAPI'
 
 // =================================
 // ============= EXTERN ============
@@ -142,22 +142,22 @@ const unsigned short int cc_VSTA = 0xf3ac; // VSTA
 // 0xeff2: db 0x57 0x00 'W '
 
 // ================================================
-// 0xeff4: WORD 'WEFF6' codep=0x1d29 parp=0xeff6
+// 0xeff4: WORD 'WEFF6' codep=0x1d29 wordp=0xeff6
 // ================================================
 // 0xeff6: db 0x0c 0x0c 0x08 0x02 0x0b 0x07 0x04 0x05 0x06 0x03 0x0a 0x09 0x1e 0x1f '              '
 
 // ================================================
-// 0xf004: WORD 'WF006' codep=0x1d29 parp=0xf006
+// 0xf004: WORD 'WF006' codep=0x1d29 wordp=0xf006
 // ================================================
 // 0xf006: db 0x1a 0x0c 0x04 0x11 0x08 0x02 0x12 0x10 0x14 0x0f 0x0d 0x16 0x17 0x19 0x1b 0x18 0x13 0x15 0x0e '                   '
 
 // ================================================
-// 0xf019: WORD 'WF01B' codep=0x1d29 parp=0xf01b
+// 0xf019: WORD 'WF01B' codep=0x1d29 wordp=0xf01b
 // ================================================
 // 0xf01b: db 0x00 0x00 0x01 0x02 0x02 0x02 0x03 0x00 0x04 0x05 0x06 0x06 0x06 0x06 0x06 0x06 0x06 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x00 0x07 0x08 0x09 0x0a 0x0b 0x0c 0x0d 0x0e 0x0f 0x10 0x11 0x12 0x00 '                                         '
 
 // ================================================
-// 0xf044: WORD 'WF046' codep=0x224c parp=0xf046
+// 0xf044: WORD 'WF046' codep=0x224c wordp=0xf046
 // ================================================
 
 void WF046() // WF046
@@ -171,7 +171,7 @@ void WF046() // WF046
 
 
 // ================================================
-// 0xf056: WORD 'WF058' codep=0x224c parp=0xf058
+// 0xf056: WORD 'WF058' codep=0x224c wordp=0xf058
 // ================================================
 
 void WF058() // WF058
@@ -185,12 +185,12 @@ void WF058() // WF058
 
 
 // ================================================
-// 0xf066: WORD 'WF068' codep=0x1d29 parp=0xf068
+// 0xf066: WORD 'WF068' codep=0x1d29 wordp=0xf068
 // ================================================
 // 0xf068: db 0x3a 0x20 0x05 0x41 0x4c 0x4c 0x4f 0x54 0x20 0x29 0x92 0x0c 0xdb 0x23 0x5d 0x17 0x20 ':  ALLOT )   #]  '
 
 // ================================================
-// 0xf079: WORD 'WF07B' codep=0x224c parp=0xf07b params=0 returns=0
+// 0xf079: WORD 'WF07B' codep=0x224c wordp=0xf07b params=0 returns=0
 // ================================================
 
 void WF07B() // WF07B
@@ -265,7 +265,7 @@ void WF07B() // WF07B
 
 
 // ================================================
-// 0xf0ef: WORD 'WF0F1' codep=0x224c parp=0xf0f1
+// 0xf0ef: WORD 'WF0F1' codep=0x224c wordp=0xf0f1
 // ================================================
 // orphan
 
@@ -288,7 +288,7 @@ void WF0F1() // WF0F1
 
 
 // ================================================
-// 0xf10f: WORD 'WF111' codep=0x224c parp=0xf111
+// 0xf10f: WORD 'WF111' codep=0x224c wordp=0xf111
 // ================================================
 
 void WF111() // WF111
@@ -306,7 +306,7 @@ void WF111() // WF111
 
 
 // ================================================
-// 0xf129: WORD 'WF12B' codep=0x224c parp=0xf12b
+// 0xf129: WORD 'WF12B' codep=0x224c wordp=0xf12b
 // ================================================
 
 void WF12B() // WF12B
@@ -324,7 +324,7 @@ void WF12B() // WF12B
 
 
 // ================================================
-// 0xf143: WORD 'WF145' codep=0x224c parp=0xf145
+// 0xf143: WORD 'WF145' codep=0x224c wordp=0xf145
 // ================================================
 
 void WF145() // WF145
@@ -356,7 +356,7 @@ void WF145() // WF145
 
 
 // ================================================
-// 0xf177: WORD 'WF179' codep=0x224c parp=0xf179 params=0 returns=1
+// 0xf177: WORD 'WF179' codep=0x224c wordp=0xf179 params=0 returns=1
 // ================================================
 
 void WF179() // WF179
@@ -370,7 +370,7 @@ void WF179() // WF179
 
 
 // ================================================
-// 0xf189: WORD 'LDAP' codep=0x224c parp=0xf192
+// 0xf189: WORD 'LDAP' codep=0x224c wordp=0xf192
 // ================================================
 // entry
 
@@ -399,7 +399,7 @@ void LDAP() // LDAP
 
 
 // ================================================
-// 0xf1d6: WORD 'WF1D8' codep=0x224c parp=0xf1d8 params=0 returns=1
+// 0xf1d6: WORD 'WF1D8' codep=0x224c wordp=0xf1d8 params=0 returns=1
 // ================================================
 
 void WF1D8() // WF1D8
@@ -426,7 +426,7 @@ void WF1D8() // WF1D8
 
 
 // ================================================
-// 0xf1fe: WORD 'WF200' codep=0x224c parp=0xf200 params=0 returns=0
+// 0xf1fe: WORD 'WF200' codep=0x224c wordp=0xf200 params=0 returns=0
 // ================================================
 
 void WF200() // WF200
@@ -440,7 +440,7 @@ void WF200() // WF200
 
 
 // ================================================
-// 0xf20e: WORD 'WF210' codep=0x224c parp=0xf210 params=0 returns=0
+// 0xf20e: WORD 'WF210' codep=0x224c wordp=0xf210 params=0 returns=0
 // ================================================
 
 void WF210() // WF210
@@ -454,7 +454,7 @@ void WF210() // WF210
 
 
 // ================================================
-// 0xf220: WORD 'WF222' codep=0x224c parp=0xf222 params=0 returns=1
+// 0xf220: WORD 'WF222' codep=0x224c wordp=0xf222 params=0 returns=1
 // ================================================
 
 void WF222() // WF222
@@ -485,7 +485,7 @@ void WF222() // WF222
 
 
 // ================================================
-// 0xf258: WORD 'WF25A' codep=0x224c parp=0xf25a params=1 returns=1
+// 0xf258: WORD 'WF25A' codep=0x224c wordp=0xf25a params=1 returns=1
 // ================================================
 
 void WF25A() // WF25A
@@ -495,7 +495,7 @@ void WF25A() // WF25A
 
 
 // ================================================
-// 0xf268: WORD 'WF26A' codep=0x224c parp=0xf26a params=0 returns=2
+// 0xf268: WORD 'WF26A' codep=0x224c wordp=0xf26a params=0 returns=2
 // ================================================
 
 void WF26A() // WF26A
@@ -512,7 +512,7 @@ void WF26A() // WF26A
 
 
 // ================================================
-// 0xf27e: WORD 'WF280' codep=0x224c parp=0xf280 params=0 returns=0
+// 0xf27e: WORD 'WF280' codep=0x224c wordp=0xf280 params=0 returns=0
 // ================================================
 
 void WF280() // WF280
@@ -587,7 +587,7 @@ void WF280() // WF280
 
 
 // ================================================
-// 0xf308: WORD 'WF30A' codep=0x224c parp=0xf30a
+// 0xf308: WORD 'WF30A' codep=0x224c wordp=0xf30a
 // ================================================
 
 void WF30A() // WF30A
@@ -637,7 +637,7 @@ void WF30A() // WF30A
 
 
 // ================================================
-// 0xf34e: WORD 'SETB' codep=0x224c parp=0xf357
+// 0xf34e: WORD 'SETB' codep=0x224c wordp=0xf357
 // ================================================
 // entry
 
@@ -670,19 +670,19 @@ void SETB() // SETB
 
 
 // ================================================
-// 0xf38d: WORD 'ESTA' codep=0x2214 parp=0xf396
+// 0xf38d: WORD 'ESTA' codep=0x2214 wordp=0xf396
 // ================================================
 // 0xf396: dw 0xf399
 // 0xf398: db 0x00 0x73 0x74 0x61 0x72 0x73 0x2e 0x65 0x67 0x61 0x00 ' stars.ega '
 
 // ================================================
-// 0xf3a3: WORD 'VSTA' codep=0x2214 parp=0xf3ac
+// 0xf3a3: WORD 'VSTA' codep=0x2214 wordp=0xf3ac
 // ================================================
 // 0xf3ac: dw 0xf3af
 // 0xf3ae: db 0x00 0x73 0x74 0x61 0x72 0x73 0x2e 0x76 0x67 0x61 0x00 ' stars.vga '
 
 // ================================================
-// 0xf3b9: WORD 'WF3BB' codep=0x224c parp=0xf3bb
+// 0xf3b9: WORD 'WF3BB' codep=0x224c wordp=0xf3bb
 // ================================================
 
 void WF3BB() // WF3BB
@@ -728,7 +728,7 @@ void WF3BB() // WF3BB
 
 
 // ================================================
-// 0xf415: WORD 'LDSY' codep=0x224c parp=0xf41e
+// 0xf415: WORD 'LDSY' codep=0x224c wordp=0xf41e
 // ================================================
 // entry
 
@@ -761,7 +761,7 @@ void LDSY() // LDSY
 
 
 // ================================================
-// 0xf45c: WORD '@.HY' codep=0x224c parp=0xf465
+// 0xf45c: WORD '@.HY' codep=0x224c wordp=0xf465
 // ================================================
 // entry
 
@@ -806,7 +806,7 @@ void Get_dot_HY() // @.HY
 
 
 // ================================================
-// 0xf4c1: WORD '.TPI' codep=0x224c parp=0xf4ca
+// 0xf4c1: WORD '.TPI' codep=0x224c wordp=0xf4ca
 // ================================================
 // entry
 
@@ -832,7 +832,7 @@ void DrawTPI() // .TPI
 
 
 // ================================================
-// 0xf500: WORD '.API' codep=0x224c parp=0xf509
+// 0xf500: WORD '.API' codep=0x224c wordp=0xf509
 // ================================================
 // entry
 

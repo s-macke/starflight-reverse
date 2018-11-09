@@ -9,25 +9,25 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF206  codep:0x744d parp:0xf206 size:0x0003 C-string:'WF206'
-//           WF20B  codep:0x744d parp:0xf20b size:0x0003 C-string:'WF20B'
-//           WF210  codep:0x744d parp:0xf210 size:0x0003 C-string:'WF210'
-//           WF215  codep:0x744d parp:0xf215 size:0x0003 C-string:'WF215'
-//           WF21A  codep:0x73ea parp:0xf21a size:0x0006 C-string:'WF21A'
-//           WF222  codep:0x73ea parp:0xf222 size:0x0006 C-string:'WF222'
-//           WF22A  codep:0x224c parp:0xf22a size:0x0008 C-string:'WF22A'
-//           WF234  codep:0x224c parp:0xf234 size:0x0010 C-string:'WF234'
-//           WF246  codep:0x224c parp:0xf246 size:0x0008 C-string:'WF246'
-//           WF250  codep:0x224c parp:0xf250 size:0x0020 C-string:'WF250'
-//           WF272  codep:0x224c parp:0xf272 size:0x0030 C-string:'WF272'
-//    >DOWN-SHIELD  codep:0x224c parp:0xf2b3 size:0x00a4 C-string:'_gt_DOWN_dash_SHIELD'
-//           WF359  codep:0x224c parp:0xf359 size:0x0050 C-string:'WF359'
-//         >DISARM  codep:0x224c parp:0xf3b5 size:0x0044 C-string:'_gt_DISARM'
-//           WF3FB  codep:0x224c parp:0xf3fb size:0x00bd C-string:'WF3FB'
-//     (/(DIS)ARM)  codep:0x224c parp:0xf4c8 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
-//   (/(UD)SHIELD)  codep:0x224c parp:0xf4fa size:0x0000 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
+//           WF206  codep:0x744d wordp:0xf206 size:0x0003 C-string:'WF206'
+//           WF20B  codep:0x744d wordp:0xf20b size:0x0003 C-string:'WF20B'
+//           WF210  codep:0x744d wordp:0xf210 size:0x0003 C-string:'WF210'
+//           WF215  codep:0x744d wordp:0xf215 size:0x0003 C-string:'WF215'
+//           WF21A  codep:0x73ea wordp:0xf21a size:0x0006 C-string:'WF21A'
+//           WF222  codep:0x73ea wordp:0xf222 size:0x0006 C-string:'WF222'
+//           WF22A  codep:0x224c wordp:0xf22a size:0x0008 C-string:'WF22A'
+//           WF234  codep:0x224c wordp:0xf234 size:0x0010 C-string:'WF234'
+//           WF246  codep:0x224c wordp:0xf246 size:0x0008 C-string:'WF246'
+//           WF250  codep:0x224c wordp:0xf250 size:0x0020 C-string:'WF250'
+//           WF272  codep:0x224c wordp:0xf272 size:0x0030 C-string:'WF272'
+//    >DOWN-SHIELD  codep:0x224c wordp:0xf2b3 size:0x00a4 C-string:'_gt_DOWN_dash_SHIELD'
+//           WF359  codep:0x224c wordp:0xf359 size:0x0050 C-string:'WF359'
+//         >DISARM  codep:0x224c wordp:0xf3b5 size:0x0044 C-string:'_gt_DISARM'
+//           WF3FB  codep:0x224c wordp:0xf3fb size:0x00bd C-string:'WF3FB'
+//     (/(DIS)ARM)  codep:0x224c wordp:0xf4c8 size:0x0020 C-string:'_ro__slash__ro_DIS_rc_ARM_rc_'
+//   (/(UD)SHIELD)  codep:0x224c wordp:0xf4fa size:0x0000 C-string:'_ro__slash__ro_UD_rc_SHIELD_rc_'
 
 // =================================
 // ============= EXTERN ============
@@ -68,38 +68,38 @@ void SWAP(); // SWAP
 // 0xf202: db 0x36 0x00 '6 '
 
 // ================================================
-// 0xf204: WORD 'WF206' codep=0x744d parp=0xf206
+// 0xf204: WORD 'WF206' codep=0x744d wordp=0xf206
 // ================================================
 // orphan
 IFieldType WF206 = {SHIPIDX, 0x19, 0x02};
 
 // ================================================
-// 0xf209: WORD 'WF20B' codep=0x744d parp=0xf20b
+// 0xf209: WORD 'WF20B' codep=0x744d wordp=0xf20b
 // ================================================
 IFieldType WF20B = {SHIPIDX, 0x1b, 0x02};
 
 // ================================================
-// 0xf20e: WORD 'WF210' codep=0x744d parp=0xf210
+// 0xf20e: WORD 'WF210' codep=0x744d wordp=0xf210
 // ================================================
 IFieldType WF210 = {SHIPIDX, 0x1d, 0x02};
 
 // ================================================
-// 0xf213: WORD 'WF215' codep=0x744d parp=0xf215
+// 0xf213: WORD 'WF215' codep=0x744d wordp=0xf215
 // ================================================
 IFieldType WF215 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xf218: WORD 'WF21A' codep=0x73ea parp=0xf21a
+// 0xf218: WORD 'WF21A' codep=0x73ea wordp=0xf21a
 // ================================================
 LoadDataType WF21A = {BUTTONSIDX, 0x18, 0x0c, 0x49, 0x6858};
 
 // ================================================
-// 0xf220: WORD 'WF222' codep=0x73ea parp=0xf222
+// 0xf220: WORD 'WF222' codep=0x73ea wordp=0xf222
 // ================================================
 LoadDataType WF222 = {BUTTONSIDX, 0x24, 0x0c, 0x49, 0x6858};
 
 // ================================================
-// 0xf228: WORD 'WF22A' codep=0x224c parp=0xf22a params=0 returns=0
+// 0xf228: WORD 'WF22A' codep=0x224c wordp=0xf22a params=0 returns=0
 // ================================================
 
 void WF22A() // WF22A
@@ -110,7 +110,7 @@ void WF22A() // WF22A
 
 
 // ================================================
-// 0xf232: WORD 'WF234' codep=0x224c parp=0xf234 params=0 returns=0
+// 0xf232: WORD 'WF234' codep=0x224c wordp=0xf234 params=0 returns=0
 // ================================================
 
 void WF234() // WF234
@@ -125,7 +125,7 @@ void WF234() // WF234
 
 
 // ================================================
-// 0xf244: WORD 'WF246' codep=0x224c parp=0xf246 params=3 returns=0
+// 0xf244: WORD 'WF246' codep=0x224c wordp=0xf246 params=3 returns=0
 // ================================================
 
 void WF246() // WF246
@@ -137,7 +137,7 @@ void WF246() // WF246
 
 
 // ================================================
-// 0xf24e: WORD 'WF250' codep=0x224c parp=0xf250 params=0 returns=8
+// 0xf24e: WORD 'WF250' codep=0x224c wordp=0xf250 params=0 returns=8
 // ================================================
 
 void WF250() // WF250
@@ -156,7 +156,7 @@ void WF250() // WF250
 
 
 // ================================================
-// 0xf270: WORD 'WF272' codep=0x224c parp=0xf272 params=0 returns=14
+// 0xf270: WORD 'WF272' codep=0x224c wordp=0xf272 params=0 returns=14
 // ================================================
 
 void WF272() // WF272
@@ -180,7 +180,7 @@ void WF272() // WF272
 
 
 // ================================================
-// 0xf2a2: WORD '>DOWN-SHIELD' codep=0x224c parp=0xf2b3
+// 0xf2a2: WORD '>DOWN-SHIELD' codep=0x224c wordp=0xf2b3
 // ================================================
 // entry
 
@@ -217,7 +217,7 @@ void _gt_DOWN_dash_SHIELD() // >DOWN-SHIELD
 
 
 // ================================================
-// 0xf357: WORD 'WF359' codep=0x224c parp=0xf359 params=0 returns=0
+// 0xf357: WORD 'WF359' codep=0x224c wordp=0xf359 params=0 returns=0
 // ================================================
 
 void WF359() // WF359
@@ -244,7 +244,7 @@ void WF359() // WF359
 
 
 // ================================================
-// 0xf3a9: WORD '>DISARM' codep=0x224c parp=0xf3b5
+// 0xf3a9: WORD '>DISARM' codep=0x224c wordp=0xf3b5
 // ================================================
 // entry
 
@@ -264,7 +264,7 @@ void _gt_DISARM() // >DISARM
 
 
 // ================================================
-// 0xf3f9: WORD 'WF3FB' codep=0x224c parp=0xf3fb params=0 returns=0
+// 0xf3f9: WORD 'WF3FB' codep=0x224c wordp=0xf3fb params=0 returns=0
 // ================================================
 
 void WF3FB() // WF3FB
@@ -326,7 +326,7 @@ void WF3FB() // WF3FB
 
 
 // ================================================
-// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c parp=0xf4c8 params=0 returns=0
+// 0xf4b8: WORD '(/(DIS)ARM)' codep=0x224c wordp=0xf4c8 params=0 returns=0
 // ================================================
 // entry
 
@@ -349,7 +349,7 @@ void _ro__slash__ro_DIS_rc_ARM_rc_() // (/(DIS)ARM)
 
 
 // ================================================
-// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c parp=0xf4fa params=0 returns=0
+// 0xf4e8: WORD '(/(UD)SHIELD)' codep=0x224c wordp=0xf4fa params=0 returns=0
 // ================================================
 // entry
 

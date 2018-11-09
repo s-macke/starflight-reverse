@@ -9,15 +9,15 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//           WF2C6  codep:0x224c parp:0xf2c6 size:0x00a7 C-string:'WF2C6'
-//           WF36F  codep:0x224c parp:0xf36f size:0x0075 C-string:'WF36F'
-//           WF3E6  codep:0x224c parp:0xf3e6 size:0x0030 C-string:'WF3E6'
-//           WF418  codep:0x224c parp:0xf418 size:0x0038 C-string:'WF418'
-//           WF452  codep:0x224c parp:0xf452 size:0x000a C-string:'WF452'
-//           WF45E  codep:0x224c parp:0xf45e size:0x007e C-string:'WF45E'
-//           ICONS  codep:0x224c parp:0xf4e6 size:0x0000 C-string:'ICONS'
+//           WF2C6  codep:0x224c wordp:0xf2c6 size:0x00a7 C-string:'WF2C6'
+//           WF36F  codep:0x224c wordp:0xf36f size:0x0075 C-string:'WF36F'
+//           WF3E6  codep:0x224c wordp:0xf3e6 size:0x0030 C-string:'WF3E6'
+//           WF418  codep:0x224c wordp:0xf418 size:0x0038 C-string:'WF418'
+//           WF452  codep:0x224c wordp:0xf452 size:0x000a C-string:'WF452'
+//           WF45E  codep:0x224c wordp:0xf45e size:0x007e C-string:'WF45E'
+//           ICONS  codep:0x224c wordp:0xf4e6 size:0x0000 C-string:'ICONS'
 
 // =================================
 // ============= EXTERN ============
@@ -71,7 +71,7 @@ void BLT(); // BLT
 // 0xf2c2: db 0x2b 0x00 '+ '
 
 // ================================================
-// 0xf2c4: WORD 'WF2C6' codep=0x224c parp=0xf2c6
+// 0xf2c4: WORD 'WF2C6' codep=0x224c wordp=0xf2c6
 // ================================================
 
 void WF2C6() // WF2C6
@@ -125,7 +125,7 @@ void WF2C6() // WF2C6
 
 
 // ================================================
-// 0xf36d: WORD 'WF36F' codep=0x224c parp=0xf36f
+// 0xf36d: WORD 'WF36F' codep=0x224c wordp=0xf36f
 // ================================================
 
 void WF36F() // WF36F
@@ -168,7 +168,7 @@ void WF36F() // WF36F
 
 
 // ================================================
-// 0xf3e4: WORD 'WF3E6' codep=0x224c parp=0xf3e6
+// 0xf3e4: WORD 'WF3E6' codep=0x224c wordp=0xf3e6
 // ================================================
 
 void WF3E6() // WF3E6
@@ -204,7 +204,7 @@ void WF3E6() // WF3E6
 
 
 // ================================================
-// 0xf416: WORD 'WF418' codep=0x224c parp=0xf418
+// 0xf416: WORD 'WF418' codep=0x224c wordp=0xf418
 // ================================================
 
 void WF418() // WF418
@@ -224,7 +224,7 @@ void WF418() // WF418
 
 
 // ================================================
-// 0xf450: WORD 'WF452' codep=0x224c parp=0xf452
+// 0xf450: WORD 'WF452' codep=0x224c wordp=0xf452
 // ================================================
 
 void WF452() // WF452
@@ -237,7 +237,7 @@ void WF452() // WF452
 
 
 // ================================================
-// 0xf45c: WORD 'WF45E' codep=0x224c parp=0xf45e
+// 0xf45c: WORD 'WF45E' codep=0x224c wordp=0xf45e
 // ================================================
 
 void WF45E() // WF45E
@@ -301,7 +301,7 @@ void WF45E() // WF45E
 
 
 // ================================================
-// 0xf4dc: WORD 'ICONS' codep=0x224c parp=0xf4e6
+// 0xf4dc: WORD 'ICONS' codep=0x224c wordp=0xf4e6
 // ================================================
 // entry
 

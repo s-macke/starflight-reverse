@@ -9,15 +9,15 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//        altitude  codep:0x224c parp:0xf2a6 size:0x00a7 C-string:'altitude'
-//        ICON-KEY  codep:0x224c parp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'
-//            .BLT  codep:0x224c parp:0xf3c6 size:0x002a C-string:'DrawBLT'
-//      PAUSE-PAGE  codep:0x224c parp:0xf3f2 size:0x0038 C-string:'PAUSE_dash_PAGE'
-//        SEE-BLTS  codep:0x224c parp:0xf42c size:0x005c C-string:'SEE_dash_BLTS'
-//           title  codep:0x224c parp:0xf48a size:0x000a C-string:'title'
-//           ICONS  codep:0x224c parp:0xf49e size:0x0000 C-string:'ICONS'
+//        altitude  codep:0x224c wordp:0xf2a6 size:0x00a7 C-string:'altitude'
+//        ICON-KEY  codep:0x224c wordp:0xf34f size:0x0075 C-string:'ICON_dash_KEY'
+//            .BLT  codep:0x224c wordp:0xf3c6 size:0x002a C-string:'DrawBLT'
+//      PAUSE-PAGE  codep:0x224c wordp:0xf3f2 size:0x0038 C-string:'PAUSE_dash_PAGE'
+//        SEE-BLTS  codep:0x224c wordp:0xf42c size:0x005c C-string:'SEE_dash_BLTS'
+//           title  codep:0x224c wordp:0xf48a size:0x000a C-string:'title'
+//           ICONS  codep:0x224c wordp:0xf49e size:0x0000 C-string:'ICONS'
 
 // =================================
 // ============= EXTERN ============
@@ -63,7 +63,7 @@ void TILEFILL(); // TILEFILL
 // 0xf2a2: db 0x24 0x00 '$ '
 
 // ================================================
-// 0xf2a4: WORD 'altitude' codep=0x224c parp=0xf2a6
+// 0xf2a4: WORD 'altitude' codep=0x224c wordp=0xf2a6
 // ================================================
 
 void altitude() // altitude
@@ -117,7 +117,7 @@ void altitude() // altitude
 
 
 // ================================================
-// 0xf34d: WORD 'ICON-KEY' codep=0x224c parp=0xf34f params=0 returns=0
+// 0xf34d: WORD 'ICON-KEY' codep=0x224c wordp=0xf34f params=0 returns=0
 // ================================================
 
 void ICON_dash_KEY() // ICON-KEY
@@ -160,7 +160,7 @@ void ICON_dash_KEY() // ICON-KEY
 
 
 // ================================================
-// 0xf3c4: WORD '.BLT' codep=0x224c parp=0xf3c6 params=1 returns=0
+// 0xf3c4: WORD '.BLT' codep=0x224c wordp=0xf3c6 params=1 returns=0
 // ================================================
 
 void DrawBLT() // .BLT
@@ -192,7 +192,7 @@ void DrawBLT() // .BLT
 
 
 // ================================================
-// 0xf3f0: WORD 'PAUSE-PAGE' codep=0x224c parp=0xf3f2 params=0 returns=0
+// 0xf3f0: WORD 'PAUSE-PAGE' codep=0x224c wordp=0xf3f2 params=0 returns=0
 // ================================================
 
 void PAUSE_dash_PAGE() // PAUSE-PAGE
@@ -212,7 +212,7 @@ void PAUSE_dash_PAGE() // PAUSE-PAGE
 
 
 // ================================================
-// 0xf42a: WORD 'SEE-BLTS' codep=0x224c parp=0xf42c params=3 returns=0
+// 0xf42a: WORD 'SEE-BLTS' codep=0x224c wordp=0xf42c params=3 returns=0
 // ================================================
 
 void SEE_dash_BLTS() // SEE-BLTS
@@ -265,7 +265,7 @@ void SEE_dash_BLTS() // SEE-BLTS
 
 
 // ================================================
-// 0xf488: WORD 'title' codep=0x224c parp=0xf48a params=0 returns=0
+// 0xf488: WORD 'title' codep=0x224c wordp=0xf48a params=0 returns=0
 // ================================================
 
 void title() // title
@@ -278,7 +278,7 @@ void title() // title
 
 
 // ================================================
-// 0xf494: WORD 'ICONS' codep=0x224c parp=0xf49e
+// 0xf494: WORD 'ICONS' codep=0x224c wordp=0xf49e
 // ================================================
 // entry
 

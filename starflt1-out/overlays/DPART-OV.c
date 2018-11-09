@@ -9,35 +9,35 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//          HIBEEP  codep:0x2214 parp:0xef66 size:0x0002 C-string:'HIBEEP'
-//          LOBEEP  codep:0x2214 parp:0xef6a size:0x0002 C-string:'LOBEEP'
-//         PHRASE$  codep:0x744d parp:0xef6e size:0x0003 C-string:'PHRASE_do_'
-//      MESSPREFIX  codep:0x224c parp:0xef73 size:0x0093 C-string:'MESSPREFIX'
-//           WF008  codep:0x224c parp:0xf008 size:0x0016 C-string:'WF008'
-//           WF020  codep:0x224c parp:0xf020 size:0x0004 C-string:'WF020'
-//         .PHRASE  codep:0x224c parp:0xf026 size:0x003c C-string:'DrawPHRASE'
-//        .PHRASES  codep:0x224c parp:0xf064 size:0x0028 C-string:'DrawPHRASES'
-//           WF08E  codep:0x224c parp:0xf08e size:0x000c C-string:'WF08E'
-//           WF09C  codep:0x224c parp:0xf09c size:0x0038 C-string:'WF09C'
-//           WF0D6  codep:0x224c parp:0xf0d6 size:0x0080 C-string:'WF0D6'
-//         ?DELETE  codep:0x224c parp:0xf158 size:0x000c C-string:'IsDELETE'
-//           WF166  codep:0x224c parp:0xf166 size:0x0044 C-string:'WF166'
-//    OTHER-DELETE  codep:0x224c parp:0xf1ac size:0x0028 C-string:'OTHER_dash_DELETE'
-//       .BOMBMESS  codep:0x224c parp:0xf1d6 size:0x007a C-string:'DrawBOMBMESS'
-//      FLASHCOLOR  codep:0x224c parp:0xf252 size:0x000a C-string:'FLASHCOLOR'
-//       EXPLOSION  codep:0x224c parp:0xf25e size:0x003e C-string:'EXPLOSION'
-//        ?CRYSTAL  codep:0x224c parp:0xf29e size:0x0010 C-string:'IsCRYSTAL'
-//        ?ATNEXUS  codep:0x224c parp:0xf2b0 size:0x0034 C-string:'IsATNEXUS'
-//      ORBIT-MASK  codep:0x744d parp:0xf2e6 size:0x0003 C-string:'ORBIT_dash_MASK'
-//      CLRORBMASK  codep:0x224c parp:0xf2eb size:0x001e C-string:'CLRORBMASK'
-//           WF30B  codep:0x224c parp:0xf30b size:0x0024 C-string:'WF30B'
-//           WF331  codep:0x224c parp:0xf331 size:0x006a C-string:'WF331'
-//           WF39D  codep:0x224c parp:0xf39d size:0x0087 C-string:'WF39D'
-//           WF426  codep:0x224c parp:0xf426 size:0x0008 C-string:'WF426'
-//   ?DELETEPLANET  codep:0x224c parp:0xf430 size:0x0053 C-string:'IsDELETEPLANET'
-//          DEPART  codep:0x224c parp:0xf48e size:0x0000 C-string:'DEPART'
+//          HIBEEP  codep:0x2214 wordp:0xef66 size:0x0002 C-string:'HIBEEP'
+//          LOBEEP  codep:0x2214 wordp:0xef6a size:0x0002 C-string:'LOBEEP'
+//         PHRASE$  codep:0x744d wordp:0xef6e size:0x0003 C-string:'PHRASE_do_'
+//      MESSPREFIX  codep:0x224c wordp:0xef73 size:0x0093 C-string:'MESSPREFIX'
+//           WF008  codep:0x224c wordp:0xf008 size:0x0016 C-string:'WF008'
+//           WF020  codep:0x224c wordp:0xf020 size:0x0004 C-string:'WF020'
+//         .PHRASE  codep:0x224c wordp:0xf026 size:0x003c C-string:'DrawPHRASE'
+//        .PHRASES  codep:0x224c wordp:0xf064 size:0x0028 C-string:'DrawPHRASES'
+//           WF08E  codep:0x224c wordp:0xf08e size:0x000c C-string:'WF08E'
+//           WF09C  codep:0x224c wordp:0xf09c size:0x0038 C-string:'WF09C'
+//           WF0D6  codep:0x224c wordp:0xf0d6 size:0x0080 C-string:'WF0D6'
+//         ?DELETE  codep:0x224c wordp:0xf158 size:0x000c C-string:'IsDELETE'
+//           WF166  codep:0x224c wordp:0xf166 size:0x0044 C-string:'WF166'
+//    OTHER-DELETE  codep:0x224c wordp:0xf1ac size:0x0028 C-string:'OTHER_dash_DELETE'
+//       .BOMBMESS  codep:0x224c wordp:0xf1d6 size:0x007a C-string:'DrawBOMBMESS'
+//      FLASHCOLOR  codep:0x224c wordp:0xf252 size:0x000a C-string:'FLASHCOLOR'
+//       EXPLOSION  codep:0x224c wordp:0xf25e size:0x003e C-string:'EXPLOSION'
+//        ?CRYSTAL  codep:0x224c wordp:0xf29e size:0x0010 C-string:'IsCRYSTAL'
+//        ?ATNEXUS  codep:0x224c wordp:0xf2b0 size:0x0034 C-string:'IsATNEXUS'
+//      ORBIT-MASK  codep:0x744d wordp:0xf2e6 size:0x0003 C-string:'ORBIT_dash_MASK'
+//      CLRORBMASK  codep:0x224c wordp:0xf2eb size:0x001e C-string:'CLRORBMASK'
+//           WF30B  codep:0x224c wordp:0xf30b size:0x0024 C-string:'WF30B'
+//           WF331  codep:0x224c wordp:0xf331 size:0x006a C-string:'WF331'
+//           WF39D  codep:0x224c wordp:0xf39d size:0x0087 C-string:'WF39D'
+//           WF426  codep:0x224c wordp:0xf426 size:0x0008 C-string:'WF426'
+//   ?DELETEPLANET  codep:0x224c wordp:0xf430 size:0x0053 C-string:'IsDELETEPLANET'
+//          DEPART  codep:0x224c wordp:0xf48e size:0x0000 C-string:'DEPART'
 
 // =================================
 // ============= EXTERN ============
@@ -146,22 +146,22 @@ const unsigned short int cc_LOBEEP = 0xef6a; // LOBEEP
 // 0xef62: db 0x5e 0x00 '^ '
 
 // ================================================
-// 0xef64: WORD 'HIBEEP' codep=0x2214 parp=0xef66
+// 0xef64: WORD 'HIBEEP' codep=0x2214 wordp=0xef66
 // ================================================
 // 0xef66: dw 0x03e8
 
 // ================================================
-// 0xef68: WORD 'LOBEEP' codep=0x2214 parp=0xef6a
+// 0xef68: WORD 'LOBEEP' codep=0x2214 wordp=0xef6a
 // ================================================
 // 0xef6a: dw 0x0fa0
 
 // ================================================
-// 0xef6c: WORD 'PHRASE$' codep=0x744d parp=0xef6e
+// 0xef6c: WORD 'PHRASE$' codep=0x744d wordp=0xef6e
 // ================================================
 IFieldType PHRASE_do_ = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xef71: WORD 'MESSPREFIX' codep=0x224c parp=0xef73 params=0 returns=4
+// 0xef71: WORD 'MESSPREFIX' codep=0x224c wordp=0xef73 params=0 returns=4
 // ================================================
 
 void MESSPREFIX() // MESSPREFIX
@@ -223,7 +223,7 @@ void MESSPREFIX() // MESSPREFIX
 
 
 // ================================================
-// 0xf006: WORD 'WF008' codep=0x224c parp=0xf008 params=0 returns=1
+// 0xf006: WORD 'WF008' codep=0x224c wordp=0xf008 params=0 returns=1
 // ================================================
 
 void WF008() // WF008
@@ -239,7 +239,7 @@ void WF008() // WF008
 
 
 // ================================================
-// 0xf01e: WORD 'WF020' codep=0x224c parp=0xf020 params=0 returns=0
+// 0xf01e: WORD 'WF020' codep=0x224c wordp=0xf020 params=0 returns=0
 // ================================================
 
 void WF020() // WF020
@@ -249,7 +249,7 @@ void WF020() // WF020
 
 
 // ================================================
-// 0xf024: WORD '.PHRASE' codep=0x224c parp=0xf026
+// 0xf024: WORD '.PHRASE' codep=0x224c wordp=0xf026
 // ================================================
 
 void DrawPHRASE() // .PHRASE
@@ -284,7 +284,7 @@ void DrawPHRASE() // .PHRASE
 
 
 // ================================================
-// 0xf062: WORD '.PHRASES' codep=0x224c parp=0xf064
+// 0xf062: WORD '.PHRASES' codep=0x224c wordp=0xf064
 // ================================================
 
 void DrawPHRASES() // .PHRASES
@@ -318,7 +318,7 @@ void DrawPHRASES() // .PHRASES
 
 
 // ================================================
-// 0xf08c: WORD 'WF08E' codep=0x224c parp=0xf08e
+// 0xf08c: WORD 'WF08E' codep=0x224c wordp=0xf08e
 // ================================================
 
 void WF08E() // WF08E
@@ -332,7 +332,7 @@ void WF08E() // WF08E
 
 
 // ================================================
-// 0xf09a: WORD 'WF09C' codep=0x224c parp=0xf09c
+// 0xf09a: WORD 'WF09C' codep=0x224c wordp=0xf09c
 // ================================================
 
 void WF09C() // WF09C
@@ -362,7 +362,7 @@ void WF09C() // WF09C
 
 
 // ================================================
-// 0xf0d4: WORD 'WF0D6' codep=0x224c parp=0xf0d6 params=0 returns=1
+// 0xf0d4: WORD 'WF0D6' codep=0x224c wordp=0xf0d6 params=0 returns=1
 // ================================================
 
 void WF0D6() // WF0D6
@@ -419,7 +419,7 @@ void WF0D6() // WF0D6
 
 
 // ================================================
-// 0xf156: WORD '?DELETE' codep=0x224c parp=0xf158 params=1 returns=0
+// 0xf156: WORD '?DELETE' codep=0x224c wordp=0xf158 params=1 returns=0
 // ================================================
 
 void IsDELETE() // ?DELETE
@@ -434,7 +434,7 @@ void IsDELETE() // ?DELETE
 
 
 // ================================================
-// 0xf164: WORD 'WF166' codep=0x224c parp=0xf166
+// 0xf164: WORD 'WF166' codep=0x224c wordp=0xf166
 // ================================================
 
 void WF166() // WF166
@@ -477,7 +477,7 @@ void WF166() // WF166
 
 
 // ================================================
-// 0xf1aa: WORD 'OTHER-DELETE' codep=0x224c parp=0xf1ac
+// 0xf1aa: WORD 'OTHER-DELETE' codep=0x224c wordp=0xf1ac
 // ================================================
 
 void OTHER_dash_DELETE() // OTHER-DELETE
@@ -505,7 +505,7 @@ void OTHER_dash_DELETE() // OTHER-DELETE
 
 
 // ================================================
-// 0xf1d4: WORD '.BOMBMESS' codep=0x224c parp=0xf1d6 params=0 returns=2
+// 0xf1d4: WORD '.BOMBMESS' codep=0x224c wordp=0xf1d6 params=0 returns=2
 // ================================================
 
 void DrawBOMBMESS() // .BOMBMESS
@@ -543,7 +543,7 @@ void DrawBOMBMESS() // .BOMBMESS
 
 
 // ================================================
-// 0xf250: WORD 'FLASHCOLOR' codep=0x224c parp=0xf252 params=1 returns=0
+// 0xf250: WORD 'FLASHCOLOR' codep=0x224c wordp=0xf252 params=1 returns=0
 // ================================================
 
 void FLASHCOLOR() // FLASHCOLOR
@@ -556,7 +556,7 @@ void FLASHCOLOR() // FLASHCOLOR
 
 
 // ================================================
-// 0xf25c: WORD 'EXPLOSION' codep=0x224c parp=0xf25e params=0 returns=9
+// 0xf25c: WORD 'EXPLOSION' codep=0x224c wordp=0xf25e params=0 returns=9
 // ================================================
 
 void EXPLOSION() // EXPLOSION
@@ -600,7 +600,7 @@ void EXPLOSION() // EXPLOSION
 
 
 // ================================================
-// 0xf29c: WORD '?CRYSTAL' codep=0x224c parp=0xf29e params=0 returns=1
+// 0xf29c: WORD '?CRYSTAL' codep=0x224c wordp=0xf29e params=0 returns=1
 // ================================================
 
 void IsCRYSTAL() // ?CRYSTAL
@@ -614,7 +614,7 @@ void IsCRYSTAL() // ?CRYSTAL
 
 
 // ================================================
-// 0xf2ae: WORD '?ATNEXUS' codep=0x224c parp=0xf2b0 params=0 returns=1
+// 0xf2ae: WORD '?ATNEXUS' codep=0x224c wordp=0xf2b0 params=0 returns=1
 // ================================================
 
 void IsATNEXUS() // ?ATNEXUS
@@ -640,12 +640,12 @@ void IsATNEXUS() // ?ATNEXUS
 
 
 // ================================================
-// 0xf2e4: WORD 'ORBIT-MASK' codep=0x744d parp=0xf2e6
+// 0xf2e4: WORD 'ORBIT-MASK' codep=0x744d wordp=0xf2e6
 // ================================================
 IFieldType ORBIT_dash_MASK = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
-// 0xf2e9: WORD 'CLRORBMASK' codep=0x224c parp=0xf2eb params=0 returns=0
+// 0xf2e9: WORD 'CLRORBMASK' codep=0x224c wordp=0xf2eb params=0 returns=0
 // ================================================
 
 void CLRORBMASK() // CLRORBMASK
@@ -665,7 +665,7 @@ void CLRORBMASK() // CLRORBMASK
 
 
 // ================================================
-// 0xf309: WORD 'WF30B' codep=0x224c parp=0xf30b
+// 0xf309: WORD 'WF30B' codep=0x224c wordp=0xf30b
 // ================================================
 
 void WF30B() // WF30B
@@ -690,7 +690,7 @@ void WF30B() // WF30B
 
 
 // ================================================
-// 0xf32f: WORD 'WF331' codep=0x224c parp=0xf331
+// 0xf32f: WORD 'WF331' codep=0x224c wordp=0xf331
 // ================================================
 
 void WF331() // WF331
@@ -707,7 +707,7 @@ void WF331() // WF331
 
 
 // ================================================
-// 0xf39b: WORD 'WF39D' codep=0x224c parp=0xf39d
+// 0xf39b: WORD 'WF39D' codep=0x224c wordp=0xf39d
 // ================================================
 
 void WF39D() // WF39D
@@ -747,7 +747,7 @@ void WF39D() // WF39D
 
 
 // ================================================
-// 0xf424: WORD 'WF426' codep=0x224c parp=0xf426 params=2 returns=1
+// 0xf424: WORD 'WF426' codep=0x224c wordp=0xf426 params=2 returns=1
 // ================================================
 
 void WF426() // WF426
@@ -759,7 +759,7 @@ void WF426() // WF426
 
 
 // ================================================
-// 0xf42e: WORD '?DELETEPLANET' codep=0x224c parp=0xf430
+// 0xf42e: WORD '?DELETEPLANET' codep=0x224c wordp=0xf430
 // ================================================
 
 void IsDELETEPLANET() // ?DELETEPLANET
@@ -802,7 +802,7 @@ void IsDELETEPLANET() // ?DELETEPLANET
 
 
 // ================================================
-// 0xf483: WORD 'DEPART' codep=0x224c parp=0xf48e params=0 returns=0
+// 0xf483: WORD 'DEPART' codep=0x224c wordp=0xf48e params=0 returns=0
 // ================================================
 // entry
 

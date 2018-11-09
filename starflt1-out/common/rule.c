@@ -102,57 +102,57 @@ const unsigned short int cc_CFLGARR = 0xb706; // CFLGARR
 
 
 // ================================================
-// 0xb680: WORD 'COND-CNT' codep=0x1d29 parp=0xb68d
+// 0xb680: WORD 'COND-CNT' codep=0x1d29 wordp=0xb68d
 // ================================================
 // 0xb68d: db 0x0d 0x00 '  '
 
 // ================================================
-// 0xb68f: WORD 'TRUE' codep=0x2214 parp=0xb698
+// 0xb68f: WORD 'TRUE' codep=0x2214 wordp=0xb698
 // ================================================
 // 0xb698: dw 0x0001
 
 // ================================================
-// 0xb69a: WORD 'FALSE' codep=0x2214 parp=0xb6a4
+// 0xb69a: WORD 'FALSE' codep=0x2214 wordp=0xb6a4
 // ================================================
 // 0xb6a4: dw 0x0000
 
 // ================================================
-// 0xb6a6: WORD 'UNKNOWN' codep=0x2214 parp=0xb6b2
+// 0xb6a6: WORD 'UNKNOWN' codep=0x2214 wordp=0xb6b2
 // ================================================
 // 0xb6b2: dw 0x00ff
 
 // ================================================
-// 0xb6b4: WORD 'RULELIM' codep=0x2214 parp=0xb6c0
+// 0xb6b4: WORD 'RULELIM' codep=0x2214 wordp=0xb6c0
 // ================================================
 // 0xb6c0: dw 0xeb86
 
 // ================================================
-// 0xb6c2: WORD 'CONDLIM' codep=0x2214 parp=0xb6ce
+// 0xb6c2: WORD 'CONDLIM' codep=0x2214 wordp=0xb6ce
 // ================================================
 // 0xb6ce: dw 0xeb87
 
 // ================================================
-// 0xb6d0: WORD 'RULECNT' codep=0x2214 parp=0xb6dc
+// 0xb6d0: WORD 'RULECNT' codep=0x2214 wordp=0xb6dc
 // ================================================
 // 0xb6dc: dw 0xeb88
 
 // ================================================
-// 0xb6de: WORD 'RULEARR' codep=0x2214 parp=0xb6ea
+// 0xb6de: WORD 'RULEARR' codep=0x2214 wordp=0xb6ea
 // ================================================
 // 0xb6ea: dw 0xeb89
 
 // ================================================
-// 0xb6ec: WORD 'CONDARR' codep=0x2214 parp=0xb6f8
+// 0xb6ec: WORD 'CONDARR' codep=0x2214 wordp=0xb6f8
 // ================================================
 // 0xb6f8: dw 0xeb97
 
 // ================================================
-// 0xb6fa: WORD 'CFLGARR' codep=0x2214 parp=0xb706
+// 0xb6fa: WORD 'CFLGARR' codep=0x2214 wordp=0xb706
 // ================================================
 // 0xb706: dw 0xebb3
 
 // ================================================
-// 0xb708: WORD 'XC@' codep=0x224c parp=0xb710 params=1 returns=1
+// 0xb708: WORD 'XC@' codep=0x224c wordp=0xb710 params=1 returns=1
 // ================================================
 
 void XC_at_() // XC@
@@ -162,7 +162,7 @@ void XC_at_() // XC@
 
 
 // ================================================
-// 0xb71a: WORD 'C+!' codep=0x224c parp=0xb722 params=2 returns=0
+// 0xb71a: WORD 'C+!' codep=0x224c wordp=0xb722 params=2 returns=0
 // ================================================
 
 void C_plus__ex_() // C+!
@@ -177,7 +177,7 @@ void C_plus__ex_() // C+!
 
 
 // ================================================
-// 0xb730: WORD '>EXPERT' codep=0x224c parp=0xb73c params=1 returns=0
+// 0xb730: WORD '>EXPERT' codep=0x224c wordp=0xb73c params=1 returns=0
 // ================================================
 
 void _gt_EXPERT() // >EXPERT
@@ -206,7 +206,7 @@ void _gt_EXPERT() // >EXPERT
 
 
 // ================================================
-// 0xb788: WORD 'DISTRACT' codep=0x224c parp=0xb795 params=1 returns=0
+// 0xb788: WORD 'DISTRACT' codep=0x224c wordp=0xb795 params=1 returns=0
 // ================================================
 
 void DISTRACT() // DISTRACT
@@ -220,7 +220,7 @@ void DISTRACT() // DISTRACT
 
 
 // ================================================
-// 0xb7a3: WORD 'EXECUTE-RULE' codep=0x224c parp=0xb7b4 params=1 returns=1
+// 0xb7a3: WORD 'EXECUTE-RULE' codep=0x224c wordp=0xb7b4 params=1 returns=1
 // ================================================
 
 void EXECUTE_dash_RULE() // EXECUTE-RULE
@@ -287,7 +287,7 @@ void EXECUTE_dash_RULE() // EXECUTE-RULE
 
 
 // ================================================
-// 0xb834: WORD 'EXPERT' codep=0x224c parp=0xb83f
+// 0xb834: WORD 'EXPERT' codep=0x224c wordp=0xb83f
 // ================================================
 
 void EXPERT() // EXPERT
@@ -350,7 +350,7 @@ void EXPERT() // EXPERT
 
 
 // ================================================
-// 0xb8c6: WORD '-->' codep=0x224c parp=0xb8ce
+// 0xb8c6: WORD '-->' codep=0x224c wordp=0xb8ce
 // ================================================
 
 void _dash__dash__gt_() // -->
@@ -360,7 +360,7 @@ void _dash__dash__gt_() // -->
 
 
 // ================================================
-// 0xb8d2: WORD '?INDEX' codep=0x224c parp=0xb8dd params=1 returns=1
+// 0xb8d2: WORD '?INDEX' codep=0x224c wordp=0xb8dd params=1 returns=1
 // ================================================
 
 void IsINDEX() // ?INDEX
@@ -392,7 +392,7 @@ void IsINDEX() // ?INDEX
 
 
 // ================================================
-// 0xb90f: WORD 'CONDITION' codep=0x224c parp=0xb91d
+// 0xb90f: WORD 'CONDITION' codep=0x224c wordp=0xb91d
 // ================================================
 
 void CONDITION() // CONDITION
@@ -437,7 +437,7 @@ void CONDITION() // CONDITION
 
 
 // ================================================
-// 0xb980: WORD 'RULE:' codep=0x224c parp=0xb98a
+// 0xb980: WORD 'RULE:' codep=0x224c wordp=0xb98a
 // ================================================
 
 void RULE_c_() // RULE:

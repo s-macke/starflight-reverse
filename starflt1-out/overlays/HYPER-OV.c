@@ -9,195 +9,195 @@
 
 
 // =================================
-// =========== VOCABULARY ==========
+// =========== Dictionary ==========
 // =================================
-//   SET-'EXTERNAL  codep:0x224c parp:0xd976 size:0x0008 C-string:'SET_dash__i_EXTERNAL'
-//           SHP>C  codep:0x224c parp:0xd980 size:0x0006 C-string:'SHP_gt_C'
-//           PLN>C  codep:0x224c parp:0xd988 size:0x0006 C-string:'PLN_gt_C'
-//           ORB>C  codep:0x224c parp:0xd990 size:0x0006 C-string:'ORB_gt_C'
-//           SYS>C  codep:0x224c parp:0xd998 size:0x0006 C-string:'SYS_gt_C'
-//           ENC>C  codep:0x224c parp:0xd9a0 size:0x0006 C-string:'ENC_gt_C'
-//         2ICLOSE  codep:0x224c parp:0xd9a8 size:0x0006 C-string:'_2ICLOSE'
-//        RCOLLIDE  codep:0x2214 parp:0xd9b0 size:0x0002 C-string:'RCOLLIDE'
-//       PRTRADIUS  codep:0x2214 parp:0xd9b4 size:0x0002 C-string:'PRTRADIUS'
-//       DEFRADIUS  codep:0x2214 parp:0xd9b8 size:0x0002 C-string:'DEFRADIUS'
-//       ORBRADIUS  codep:0x2214 parp:0xd9bc size:0x0002 C-string:'ORBRADIUS'
-//       ENCRADIUS  codep:0x2214 parp:0xd9c0 size:0x0002 C-string:'ENCRADIUS'
-//       SYSRADIUS  codep:0x2214 parp:0xd9c4 size:0x0002 C-string:'SYSRADIUS'
-//       VISLENGTH  codep:0x2214 parp:0xd9c8 size:0x0002 C-string:'VISLENGTH'
-//        VISWIDTH  codep:0x2214 parp:0xd9cc size:0x0002 C-string:'VISWIDTH'
-//         BVISOFF  codep:0x2214 parp:0xd9d0 size:0x0002 C-string:'BVISOFF'
-//         LVISOFF  codep:0x2214 parp:0xd9d4 size:0x0002 C-string:'LVISOFF'
-//        MAXSPEED  codep:0x2214 parp:0xd9d8 size:0x0002 C-string:'MAXSPEED'
-//        (RADIUS)  codep:0x1d29 parp:0xd9dc size:0x0002 C-string:'_ro_RADIUS_rc_'
-//       [CONTEXT]  codep:0x1d29 parp:0xd9e0 size:0x0002 C-string:'_bo_CONTEXT_bc_'
-//           WD9E4  codep:0x1d29 parp:0xd9e4 size:0x0002 C-string:'WD9E4'
-//           WD9E8  codep:0x1d29 parp:0xd9e8 size:0x0002 C-string:'WD9E8'
-//           WD9EC  codep:0x1d29 parp:0xd9ec size:0x0002 C-string:'WD9EC'
-//       (COLLIDE)  codep:0x1d29 parp:0xd9f0 size:0x0004 C-string:'_ro_COLLIDE_rc_'
-//            XCRS  codep:0x1d29 parp:0xd9f6 size:0x0002 C-string:'XCRS'
-//            YCRS  codep:0x1d29 parp:0xd9fa size:0x0002 C-string:'YCRS'
-//       NAV-SKILL  codep:0x1d29 parp:0xd9fe size:0x0002 C-string:'NAV_dash_SKILL'
-//      'AUX-CLEAN  codep:0x1d29 parp:0xda02 size:0x0002 C-string:'_i_AUX_dash_CLEAN'
-// ?HAS-RING-DEVICE  codep:0x1d29 parp:0xda06 size:0x0002 C-string:'IsHAS_dash_RING_dash_DEVICE'
-//          ESPEED  codep:0x1d29 parp:0xda0a size:0x0002 C-string:'ESPEED'
-//             ?HW  codep:0x1d29 parp:0xda0e size:0x0002 C-string:'IsHW'
-//           WDA12  codep:0x1d29 parp:0xda12 size:0x0002 C-string:'WDA12'
-//           WDA16  codep:0x1d29 parp:0xda16 size:0x0002 C-string:'WDA16'
-//            %ACC  codep:0x744d parp:0xda1a size:0x0003 C-string:'_pe_ACC'
-//        %HEADING  codep:0x744d parp:0xda1f size:0x0003 C-string:'_pe_HEADING'
-//         %ENGINE  codep:0x744d parp:0xda24 size:0x0003 C-string:'_pe_ENGINE'
-//         %ACLASS  codep:0x744d parp:0xda29 size:0x0003 C-string:'_pe_ACLASS'
-//            SCNT  codep:0x744d parp:0xda2e size:0x0003 C-string:'SCNT'
-//         %SCLASS  codep:0x744d parp:0xda33 size:0x0003 C-string:'_pe_SCLASS'
-//            ACNT  codep:0x744d parp:0xda38 size:0x0003 C-string:'ACNT'
-//           WDA3D  codep:0x744d parp:0xda3d size:0x0003 C-string:'WDA3D'
-//           WDA42  codep:0x744d parp:0xda42 size:0x0003 C-string:'WDA42'
-//          DEST-X  codep:0x744d parp:0xda47 size:0x0003 C-string:'DEST_dash_X'
-//          DEST-Y  codep:0x744d parp:0xda4c size:0x0003 C-string:'DEST_dash_Y'
-//    ?HOME-PLANET  codep:0x744d parp:0xda51 size:0x0003 C-string:'IsHOME_dash_PLANET'
-//           WDA56  codep:0x744d parp:0xda56 size:0x0003 C-string:'WDA56'
-//      ORBIT-MASK  codep:0x744d parp:0xda5b size:0x0003 C-string:'ORBIT_dash_MASK'
-//       FLAREDATE  codep:0x744d parp:0xda60 size:0x0003 C-string:'FLAREDATE'
-//           WDA65  codep:0x73ea parp:0xda65 size:0x0006 C-string:'WDA65'
-//             BET  codep:0x744d parp:0xda6d size:0x0003 C-string:'BET'
-//         @COORDS  codep:0x224c parp:0xda72 size:0x0008 C-string:'GetCOORDS'
-//         !COORDS  codep:0x224c parp:0xda7c size:0x0008 C-string:'StoreCOORDS'
-//         !XYTRNS  codep:0x224c parp:0xda86 size:0x000a C-string:'StoreXYTRNS'
-//          @XYABS  codep:0x224c parp:0xda92 size:0x000a C-string:'GetXYABS'
-//          @XYSHP  codep:0x224c parp:0xda9e size:0x0008 C-string:'GetXYSHP'
-//           CTXT#  codep:0x224c parp:0xdaa8 size:0x0006 C-string:'CTXT_n_'
-//          !XYSHP  codep:0x224c parp:0xdab0 size:0x0008 C-string:'StoreXYSHP'
-//       !%HEADING  codep:0x224c parp:0xdaba size:0x000a C-string:'Store_pe_HEADING'
-//         ?XIDENC  codep:0x224c parp:0xdac6 size:0x0008 C-string:'IsXIDENC'
-//          0XYCRS  codep:0x224c parp:0xdad0 size:0x000c C-string:'_0XYCRS'
-//         ?PLANET  codep:0x224c parp:0xdade size:0x000a C-string:'IsPLANET'
-//        ?*ORPLAN  codep:0x224c parp:0xdaea size:0x000e C-string:'Is_star_ORPLAN'
-//          ?HYPER  codep:0x224c parp:0xdafa size:0x0008 C-string:'IsHYPER'
-//        ORBSETUP  codep:0x224c parp:0xdb04 size:0x002c C-string:'ORBSETUP'
-//           WDB32  codep:0x224c parp:0xdb32 size:0x002c C-string:'WDB32'
-//           WDB60  codep:0x224c parp:0xdb60 size:0x0010 C-string:'WDB60'
-//        .AUXSHIP  codep:0x224c parp:0xdb72 size:0x005e C-string:'DrawAUXSHIP'
-//       MAX#SHIPS  codep:0x744d parp:0xdbd2 size:0x0003 C-string:'MAX_n_SHIPS'
-// #SHIPS-DESTROYED  codep:0x744d parp:0xdbd7 size:0x0003 C-string:'_n_SHIPS_dash_DESTROYED'
-//        BASE-EDL  codep:0x744d parp:0xdbdc size:0x0003 C-string:'BASE_dash_EDL'
-//             NAV  codep:0x744d parp:0xdbe1 size:0x0003 C-string:'NAV'
-//            ^NAV  codep:0x744d parp:0xdbe6 size:0x0003 C-string:'_h_NAV'
-//           WDBEB  codep:0x224c parp:0xdbeb size:0x002c C-string:'WDBEB'
-//           WDC19  codep:0x224c parp:0xdc19 size:0x002a C-string:'WDC19'
-//        CHARGE-D  codep:0x224c parp:0xdc45 size:0x0034 C-string:'CHARGE_dash_D'
-//            PS>C  codep:0x4a4f parp:0xdc82 size:0x0018 C-string:'PS_gt_C'
-//      >CONS-DISP  codep:0x224c parp:0xdc9c size:0x0028 C-string:'_gt_CONS_dash_DISP'
-//      ENCCLEANUP  codep:0x224c parp:0xdcc6 size:0x00a2 C-string:'ENCCLEANUP'
-//        ENCSETUP  codep:0x224c parp:0xdd6a size:0x0058 C-string:'ENCSETUP'
-//        PRTSETUP  codep:0x224c parp:0xddc4 size:0x0014 C-string:'PRTSETUP'
-//      PRTCLEANUP  codep:0x224c parp:0xddda size:0x0016 C-string:'PRTCLEANUP'
-//       MAKE-STAR  codep:0x224c parp:0xddf2 size:0x001e C-string:'MAKE_dash_STAR'
-//       KILL-STAR  codep:0x224c parp:0xde12 size:0x0016 C-string:'KILL_dash_STAR'
-//      PREV-ORBIT  codep:0x1d29 parp:0xde2a size:0x0002 C-string:'PREV_dash_ORBIT'
-//          ORBITs  codep:0x1d29 parp:0xde2e size:0x0002 C-string:'ORBITs'
-//      GET-ORBIT#  codep:0x224c parp:0xde32 size:0x002a C-string:'GET_dash_ORBIT_n_'
-//        (>ORBIT)  codep:0x224c parp:0xde5e size:0x004c C-string:'_ro__gt_ORBIT_rc_'
-//          ORBIT>  codep:0x224c parp:0xdeac size:0x0028 C-string:'ORBIT_gt_'
-//         >ORBITS  codep:0x224c parp:0xded6 size:0x001e C-string:'_gt_ORBITS'
-//         ?-ORBIT  codep:0x224c parp:0xdef6 size:0x001e C-string:'Is_dash_ORBIT'
-//           WDF16  codep:0x224c parp:0xdf16 size:0x001e C-string:'WDF16'
-//           WDF36  codep:0x224c parp:0xdf36 size:0x0008 C-string:'WDF36'
-//        SETRNDXY  codep:0x224c parp:0xdf40 size:0x001c C-string:'SETRNDXY'
-//           WDF5E  codep:0x224c parp:0xdf5e size:0x0050 C-string:'WDF5E'
-//         OCOORDS  codep:0x224c parp:0xdfb0 size:0x0016 C-string:'OCOORDS'
-//             >XY  codep:0x4a4f parp:0xdfce size:0x000c C-string:'_gt_XY'
-//        SETPLNXY  codep:0x224c parp:0xdfdc size:0x001c C-string:'SETPLNXY'
-//            SC>C  codep:0x4a4f parp:0xe001 size:0x001c C-string:'SC_gt_C'
-//            .SUN  codep:0x224c parp:0xe01f size:0x0012 C-string:'DrawSUN'
-//         .PLANET  codep:0x224c parp:0xe033 size:0x0064 C-string:'DrawPLANET'
-//         .AUXSYS  codep:0x224c parp:0xe0a3 size:0x0062 C-string:'DrawAUXSYS'
-//        SYSSETUP  codep:0x224c parp:0xe107 size:0x0022 C-string:'SYSSETUP'
-//      SYSCLEANUP  codep:0x224c parp:0xe12b size:0x0028 C-string:'SYSCLEANUP'
-//          RNDCPT  codep:0x224c parp:0xe155 size:0x004a C-string:'RNDCPT'
-//   ?CAN-NAVIGATE  codep:0x224c parp:0xe1a1 size:0x000c C-string:'IsCAN_dash_NAVIGATE'
-//      >[CONTEXT]  codep:0x224c parp:0xe1af size:0x001a C-string:'_gt__bo_CONTEXT_bc_'
-//           CTX>C  codep:0x224c parp:0xe1cb size:0x0006 C-string:'CTX_gt_C'
-//      ![CONTEXT]  codep:0x224c parp:0xe1d3 size:0x000a C-string:'Store_bo_CONTEXT_bc_'
-//           RADII  codep:0x4a4f parp:0xe1e7 size:0x0014 C-string:'RADII'
-//            IVAR  codep:0x4a4f parp:0xe204 size:0x0014 C-string:'IVAR'
-//         #CPARMS  codep:0x224c parp:0xe21a size:0x001e C-string:'_n_CPARMS'
-//         !CPARMS  codep:0x224c parp:0xe23a size:0x0016 C-string:'StoreCPARMS'
-//           WE252  codep:0x224c parp:0xe252 size:0x0004 C-string:'WE252'
-//           WE258  codep:0x224c parp:0xe258 size:0x0008 C-string:'WE258'
-//           WE262  codep:0x224c parp:0xe262 size:0x0018 C-string:'WE262'
-//          XYCASE  codep:0x4a4f parp:0xe285 size:0x000c C-string:'XYCASE'
-//    .COORDINATES  codep:0x224c parp:0xe293 size:0x0066 C-string:'DrawCOORDINATES'
-//            XBND  codep:0x2214 parp:0xe2fb size:0x0002 C-string:'XBND'
-//            YBND  codep:0x2214 parp:0xe2ff size:0x0002 C-string:'YBND'
-//            XLIM  codep:0x2214 parp:0xe303 size:0x0002 C-string:'XLIM'
-//            YLIM  codep:0x2214 parp:0xe307 size:0x0002 C-string:'YLIM'
-//           SDUST  codep:0x1d29 parp:0xe30b size:0x0018 C-string:'SDUST'
-//           >DUST  codep:0x224c parp:0xe325 size:0x002a C-string:'_gt_DUST'
-//           ?DUST  codep:0x224c parp:0xe351 size:0x0022 C-string:'IsDUST'
-//         (.DUST)  codep:0x224c parp:0xe375 size:0x0052 C-string:'_ro__dot_DUST_rc_'
-//           .DUST  codep:0x224c parp:0xe3c9 size:0x0024 C-string:'DrawDUST'
-//            .MVS  codep:0x224c parp:0xe3f6 size:0x004a C-string:'DrawMVS'
-//      .FLUX-ICON  codep:0x224c parp:0xe442 size:0x0076 C-string:'DrawFLUX_dash_ICON'
-//       ?CHANGEXY  codep:0x224c parp:0xe4ba size:0x003e C-string:'IsCHANGEXY'
-//    (?NEWHEADXY)  codep:0x224c parp:0xe4fa size:0x0064 C-string:'_ro__ask_NEWHEADXY_rc_'
-//      >NEWHEADXY  codep:0x224c parp:0xe560 size:0x000e C-string:'_gt_NEWHEADXY'
-//          #SLOPE  codep:0x224c parp:0xe570 size:0x001c C-string:'_n_SLOPE'
-//          #RELXY  codep:0x224c parp:0xe58e size:0x000e C-string:'_n_RELXY'
-//           #QUAD  codep:0x224c parp:0xe59e size:0x004e C-string:'_n_QUAD'
-//        #HEADING  codep:0x224c parp:0xe5ee size:0x006e C-string:'_n_HEADING'
-//        HEADDXDY  codep:0x1d29 parp:0xe65e size:0x0010 C-string:'HEADDXDY'
-//       #HEADDXDY  codep:0x224c parp:0xe670 size:0x0012 C-string:'_n_HEADDXDY'
-//         #NEXTXY  codep:0x224c parp:0xe684 size:0x001a C-string:'_n_NEXTXY'
-//         #VECTXY  codep:0x224c parp:0xe6a0 size:0x001c C-string:'_n_VECTXY'
-//           #DIST  codep:0x224c parp:0xe6be size:0x0024 C-string:'_n_DIST'
-//          #SPEED  codep:0x224c parp:0xe6e4 size:0x0012 C-string:'_n_SPEED'
-//      #NEWHEADXY  codep:0x224c parp:0xe6f8 size:0x002e C-string:'_n_NEWHEADXY'
-//         DWITHIN  codep:0x224c parp:0xe728 size:0x0018 C-string:'DWITHIN'
-//     (-ENDURIUM)  codep:0x224c parp:0xe742 size:0x00a8 C-string:'_ro__dash_ENDURIUM_rc_'
-//       -ENDURIUM  codep:0x224c parp:0xe7ec size:0x0012 C-string:'_dash_ENDURIUM'
-//           USE-E  codep:0x224c parp:0xe808 size:0x0054 C-string:'USE_dash_E'
-//         ?IN-NEB  codep:0x224c parp:0xe85e size:0x0092 C-string:'IsIN_dash_NEB'
-//      #VES-SPEED  codep:0x224c parp:0xe8f2 size:0x0012 C-string:'_n_VES_dash_SPEED'
-//          TWELVE  codep:0x2214 parp:0xe906 size:0x0002 C-string:'TWELVE'
-//          CSPEED  codep:0x4a4f parp:0xe913 size:0x000c C-string:'CSPEED'
-//            #ACC  codep:0x1d29 parp:0xe921 size:0x0002 C-string:'_n_ACC'
-//          KEYINC  codep:0x1d29 parp:0xe925 size:0x0002 C-string:'KEYINC'
-//       !MAXSPEED  codep:0x224c parp:0xe929 size:0x0014 C-string:'StoreMAXSPEED'
-//            !S/A  codep:0x224c parp:0xe93f size:0x001e C-string:'StoreS_slash_A'
-//      ACCELERATE  codep:0x224c parp:0xe95f size:0x003a C-string:'ACCELERATE'
-//      NEST-SETUP  codep:0x4a4f parp:0xe9a5 size:0x0014 C-string:'NEST_dash_SETUP'
-//    NEST-SPACEXY  codep:0x224c parp:0xe9bb size:0x002c C-string:'NEST_dash_SPACEXY'
-//            NEST  codep:0x224c parp:0xe9f0 size:0x0068 C-string:'NEST'
-//      >ENCOUNTER  codep:0x224c parp:0xea5a size:0x0024 C-string:'_gt_ENCOUNTER'
-//       ?BOX-NEST  codep:0x224c parp:0xea80 size:0x0022 C-string:'IsBOX_dash_NEST'
-//  SET-FLUX-STATE  codep:0x224c parp:0xeaa4 size:0x0034 C-string:'SET_dash_FLUX_dash_STATE'
-//          JMPSHP  codep:0x224c parp:0xeae3 size:0x0038 C-string:'JMPSHP'
-//      >FLUX-NODE  codep:0x224c parp:0xeb1d size:0x002a C-string:'_gt_FLUX_dash_NODE'
-//         COLLIDE  codep:0x4a4f parp:0xeb53 size:0x0018 C-string:'COLLIDE'
-//          ?-*BOX  codep:0x224c parp:0xeb6d size:0x0010 C-string:'Is_dash__star_BOX'
-//             ?~C  codep:0x4a4f parp:0xeb85 size:0x0010 C-string:'Is_t_C'
-//      ?COLLISION  codep:0x224c parp:0xeb97 size:0x00a0 C-string:'IsCOLLISION'
-//           WEC39  codep:0x224c parp:0xec39 size:0x0022 C-string:'WEC39'
-//      ?2NEST.ETC  codep:0x224c parp:0xec5d size:0x004a C-string:'Is2NEST_dot_ETC'
-//       ?STARPORT  codep:0x224c parp:0xeca9 size:0x007d C-string:'IsSTARPORT'
-//    UNNEST-CLEAN  codep:0x4a4f parp:0xed32 size:0x0014 C-string:'UNNEST_dash_CLEAN'
-//  UNNEST-SPACEXY  codep:0x224c parp:0xed48 size:0x0022 C-string:'UNNEST_dash_SPACEXY'
-//         ?UNNEST  codep:0x224c parp:0xed6c size:0x0054 C-string:'IsUNNEST'
-//  ?DOUBLE-UNNEST  codep:0x224c parp:0xedc2 size:0x0016 C-string:'IsDOUBLE_dash_UNNEST'
-//          UNNEST  codep:0x224c parp:0xede3 size:0x006e C-string:'UNNEST'
-//           WEE53  codep:0x224c parp:0xee53 size:0x0028 C-string:'WEE53'
-//        (GET-AUX  codep:0x224c parp:0xee87 size:0x0012 C-string:'_ro_GET_dash_AUX'
-//           WEE9B  codep:0x224c parp:0xee9b size:0x0026 C-string:'WEE9B'
-//             FLY  codep:0x224c parp:0xeec9 size:0x0046 C-string:'FLY'
-//           WEF11  codep:0x224c parp:0xef11 size:0x001a C-string:'WEF11'
-// SET-DESTINATION  codep:0x224c parp:0xef37 size:0x00c0 C-string:'SET_dash_DESTINATION'
-//       SETUP-MOV  codep:0x224c parp:0xf003 size:0x009c C-string:'SETUP_dash_MOV'
-//     CLEANUP-MOV  codep:0x224c parp:0xf0ab size:0x006e C-string:'CLEANUP_dash_MOV'
-//         CHK-MOV  codep:0x224c parp:0xf125 size:0x008e C-string:'CHK_dash_MOV'
-//           WF1B5  codep:0x224c parp:0xf1b5 size:0x002f C-string:'WF1B5'
-//           +NEST  codep:0x224c parp:0xf1ee size:0x000a C-string:'_plus_NEST'
-//     COME-HITHER  codep:0x224c parp:0xf204 size:0x0000 C-string:'COME_dash_HITHER'
+//   SET-'EXTERNAL  codep:0x224c wordp:0xd976 size:0x0008 C-string:'SET_dash__i_EXTERNAL'
+//           SHP>C  codep:0x224c wordp:0xd980 size:0x0006 C-string:'SHP_gt_C'
+//           PLN>C  codep:0x224c wordp:0xd988 size:0x0006 C-string:'PLN_gt_C'
+//           ORB>C  codep:0x224c wordp:0xd990 size:0x0006 C-string:'ORB_gt_C'
+//           SYS>C  codep:0x224c wordp:0xd998 size:0x0006 C-string:'SYS_gt_C'
+//           ENC>C  codep:0x224c wordp:0xd9a0 size:0x0006 C-string:'ENC_gt_C'
+//         2ICLOSE  codep:0x224c wordp:0xd9a8 size:0x0006 C-string:'_2ICLOSE'
+//        RCOLLIDE  codep:0x2214 wordp:0xd9b0 size:0x0002 C-string:'RCOLLIDE'
+//       PRTRADIUS  codep:0x2214 wordp:0xd9b4 size:0x0002 C-string:'PRTRADIUS'
+//       DEFRADIUS  codep:0x2214 wordp:0xd9b8 size:0x0002 C-string:'DEFRADIUS'
+//       ORBRADIUS  codep:0x2214 wordp:0xd9bc size:0x0002 C-string:'ORBRADIUS'
+//       ENCRADIUS  codep:0x2214 wordp:0xd9c0 size:0x0002 C-string:'ENCRADIUS'
+//       SYSRADIUS  codep:0x2214 wordp:0xd9c4 size:0x0002 C-string:'SYSRADIUS'
+//       VISLENGTH  codep:0x2214 wordp:0xd9c8 size:0x0002 C-string:'VISLENGTH'
+//        VISWIDTH  codep:0x2214 wordp:0xd9cc size:0x0002 C-string:'VISWIDTH'
+//         BVISOFF  codep:0x2214 wordp:0xd9d0 size:0x0002 C-string:'BVISOFF'
+//         LVISOFF  codep:0x2214 wordp:0xd9d4 size:0x0002 C-string:'LVISOFF'
+//        MAXSPEED  codep:0x2214 wordp:0xd9d8 size:0x0002 C-string:'MAXSPEED'
+//        (RADIUS)  codep:0x1d29 wordp:0xd9dc size:0x0002 C-string:'_ro_RADIUS_rc_'
+//       [CONTEXT]  codep:0x1d29 wordp:0xd9e0 size:0x0002 C-string:'_bo_CONTEXT_bc_'
+//           WD9E4  codep:0x1d29 wordp:0xd9e4 size:0x0002 C-string:'WD9E4'
+//           WD9E8  codep:0x1d29 wordp:0xd9e8 size:0x0002 C-string:'WD9E8'
+//           WD9EC  codep:0x1d29 wordp:0xd9ec size:0x0002 C-string:'WD9EC'
+//       (COLLIDE)  codep:0x1d29 wordp:0xd9f0 size:0x0004 C-string:'_ro_COLLIDE_rc_'
+//            XCRS  codep:0x1d29 wordp:0xd9f6 size:0x0002 C-string:'XCRS'
+//            YCRS  codep:0x1d29 wordp:0xd9fa size:0x0002 C-string:'YCRS'
+//       NAV-SKILL  codep:0x1d29 wordp:0xd9fe size:0x0002 C-string:'NAV_dash_SKILL'
+//      'AUX-CLEAN  codep:0x1d29 wordp:0xda02 size:0x0002 C-string:'_i_AUX_dash_CLEAN'
+// ?HAS-RING-DEVICE  codep:0x1d29 wordp:0xda06 size:0x0002 C-string:'IsHAS_dash_RING_dash_DEVICE'
+//          ESPEED  codep:0x1d29 wordp:0xda0a size:0x0002 C-string:'ESPEED'
+//             ?HW  codep:0x1d29 wordp:0xda0e size:0x0002 C-string:'IsHW'
+//           WDA12  codep:0x1d29 wordp:0xda12 size:0x0002 C-string:'WDA12'
+//           WDA16  codep:0x1d29 wordp:0xda16 size:0x0002 C-string:'WDA16'
+//            %ACC  codep:0x744d wordp:0xda1a size:0x0003 C-string:'_pe_ACC'
+//        %HEADING  codep:0x744d wordp:0xda1f size:0x0003 C-string:'_pe_HEADING'
+//         %ENGINE  codep:0x744d wordp:0xda24 size:0x0003 C-string:'_pe_ENGINE'
+//         %ACLASS  codep:0x744d wordp:0xda29 size:0x0003 C-string:'_pe_ACLASS'
+//            SCNT  codep:0x744d wordp:0xda2e size:0x0003 C-string:'SCNT'
+//         %SCLASS  codep:0x744d wordp:0xda33 size:0x0003 C-string:'_pe_SCLASS'
+//            ACNT  codep:0x744d wordp:0xda38 size:0x0003 C-string:'ACNT'
+//           WDA3D  codep:0x744d wordp:0xda3d size:0x0003 C-string:'WDA3D'
+//           WDA42  codep:0x744d wordp:0xda42 size:0x0003 C-string:'WDA42'
+//          DEST-X  codep:0x744d wordp:0xda47 size:0x0003 C-string:'DEST_dash_X'
+//          DEST-Y  codep:0x744d wordp:0xda4c size:0x0003 C-string:'DEST_dash_Y'
+//    ?HOME-PLANET  codep:0x744d wordp:0xda51 size:0x0003 C-string:'IsHOME_dash_PLANET'
+//           WDA56  codep:0x744d wordp:0xda56 size:0x0003 C-string:'WDA56'
+//      ORBIT-MASK  codep:0x744d wordp:0xda5b size:0x0003 C-string:'ORBIT_dash_MASK'
+//       FLAREDATE  codep:0x744d wordp:0xda60 size:0x0003 C-string:'FLAREDATE'
+//           WDA65  codep:0x73ea wordp:0xda65 size:0x0006 C-string:'WDA65'
+//             BET  codep:0x744d wordp:0xda6d size:0x0003 C-string:'BET'
+//         @COORDS  codep:0x224c wordp:0xda72 size:0x0008 C-string:'GetCOORDS'
+//         !COORDS  codep:0x224c wordp:0xda7c size:0x0008 C-string:'StoreCOORDS'
+//         !XYTRNS  codep:0x224c wordp:0xda86 size:0x000a C-string:'StoreXYTRNS'
+//          @XYABS  codep:0x224c wordp:0xda92 size:0x000a C-string:'GetXYABS'
+//          @XYSHP  codep:0x224c wordp:0xda9e size:0x0008 C-string:'GetXYSHP'
+//           CTXT#  codep:0x224c wordp:0xdaa8 size:0x0006 C-string:'CTXT_n_'
+//          !XYSHP  codep:0x224c wordp:0xdab0 size:0x0008 C-string:'StoreXYSHP'
+//       !%HEADING  codep:0x224c wordp:0xdaba size:0x000a C-string:'Store_pe_HEADING'
+//         ?XIDENC  codep:0x224c wordp:0xdac6 size:0x0008 C-string:'IsXIDENC'
+//          0XYCRS  codep:0x224c wordp:0xdad0 size:0x000c C-string:'_0XYCRS'
+//         ?PLANET  codep:0x224c wordp:0xdade size:0x000a C-string:'IsPLANET'
+//        ?*ORPLAN  codep:0x224c wordp:0xdaea size:0x000e C-string:'Is_star_ORPLAN'
+//          ?HYPER  codep:0x224c wordp:0xdafa size:0x0008 C-string:'IsHYPER'
+//        ORBSETUP  codep:0x224c wordp:0xdb04 size:0x002c C-string:'ORBSETUP'
+//           WDB32  codep:0x224c wordp:0xdb32 size:0x002c C-string:'WDB32'
+//           WDB60  codep:0x224c wordp:0xdb60 size:0x0010 C-string:'WDB60'
+//        .AUXSHIP  codep:0x224c wordp:0xdb72 size:0x005e C-string:'DrawAUXSHIP'
+//       MAX#SHIPS  codep:0x744d wordp:0xdbd2 size:0x0003 C-string:'MAX_n_SHIPS'
+// #SHIPS-DESTROYED  codep:0x744d wordp:0xdbd7 size:0x0003 C-string:'_n_SHIPS_dash_DESTROYED'
+//        BASE-EDL  codep:0x744d wordp:0xdbdc size:0x0003 C-string:'BASE_dash_EDL'
+//             NAV  codep:0x744d wordp:0xdbe1 size:0x0003 C-string:'NAV'
+//            ^NAV  codep:0x744d wordp:0xdbe6 size:0x0003 C-string:'_h_NAV'
+//           WDBEB  codep:0x224c wordp:0xdbeb size:0x002c C-string:'WDBEB'
+//           WDC19  codep:0x224c wordp:0xdc19 size:0x002a C-string:'WDC19'
+//        CHARGE-D  codep:0x224c wordp:0xdc45 size:0x0034 C-string:'CHARGE_dash_D'
+//            PS>C  codep:0x4a4f wordp:0xdc82 size:0x0018 C-string:'PS_gt_C'
+//      >CONS-DISP  codep:0x224c wordp:0xdc9c size:0x0028 C-string:'_gt_CONS_dash_DISP'
+//      ENCCLEANUP  codep:0x224c wordp:0xdcc6 size:0x00a2 C-string:'ENCCLEANUP'
+//        ENCSETUP  codep:0x224c wordp:0xdd6a size:0x0058 C-string:'ENCSETUP'
+//        PRTSETUP  codep:0x224c wordp:0xddc4 size:0x0014 C-string:'PRTSETUP'
+//      PRTCLEANUP  codep:0x224c wordp:0xddda size:0x0016 C-string:'PRTCLEANUP'
+//       MAKE-STAR  codep:0x224c wordp:0xddf2 size:0x001e C-string:'MAKE_dash_STAR'
+//       KILL-STAR  codep:0x224c wordp:0xde12 size:0x0016 C-string:'KILL_dash_STAR'
+//      PREV-ORBIT  codep:0x1d29 wordp:0xde2a size:0x0002 C-string:'PREV_dash_ORBIT'
+//          ORBITs  codep:0x1d29 wordp:0xde2e size:0x0002 C-string:'ORBITs'
+//      GET-ORBIT#  codep:0x224c wordp:0xde32 size:0x002a C-string:'GET_dash_ORBIT_n_'
+//        (>ORBIT)  codep:0x224c wordp:0xde5e size:0x004c C-string:'_ro__gt_ORBIT_rc_'
+//          ORBIT>  codep:0x224c wordp:0xdeac size:0x0028 C-string:'ORBIT_gt_'
+//         >ORBITS  codep:0x224c wordp:0xded6 size:0x001e C-string:'_gt_ORBITS'
+//         ?-ORBIT  codep:0x224c wordp:0xdef6 size:0x001e C-string:'Is_dash_ORBIT'
+//           WDF16  codep:0x224c wordp:0xdf16 size:0x001e C-string:'WDF16'
+//           WDF36  codep:0x224c wordp:0xdf36 size:0x0008 C-string:'WDF36'
+//        SETRNDXY  codep:0x224c wordp:0xdf40 size:0x001c C-string:'SETRNDXY'
+//           WDF5E  codep:0x224c wordp:0xdf5e size:0x0050 C-string:'WDF5E'
+//         OCOORDS  codep:0x224c wordp:0xdfb0 size:0x0016 C-string:'OCOORDS'
+//             >XY  codep:0x4a4f wordp:0xdfce size:0x000c C-string:'_gt_XY'
+//        SETPLNXY  codep:0x224c wordp:0xdfdc size:0x001c C-string:'SETPLNXY'
+//            SC>C  codep:0x4a4f wordp:0xe001 size:0x001c C-string:'SC_gt_C'
+//            .SUN  codep:0x224c wordp:0xe01f size:0x0012 C-string:'DrawSUN'
+//         .PLANET  codep:0x224c wordp:0xe033 size:0x0064 C-string:'DrawPLANET'
+//         .AUXSYS  codep:0x224c wordp:0xe0a3 size:0x0062 C-string:'DrawAUXSYS'
+//        SYSSETUP  codep:0x224c wordp:0xe107 size:0x0022 C-string:'SYSSETUP'
+//      SYSCLEANUP  codep:0x224c wordp:0xe12b size:0x0028 C-string:'SYSCLEANUP'
+//          RNDCPT  codep:0x224c wordp:0xe155 size:0x004a C-string:'RNDCPT'
+//   ?CAN-NAVIGATE  codep:0x224c wordp:0xe1a1 size:0x000c C-string:'IsCAN_dash_NAVIGATE'
+//      >[CONTEXT]  codep:0x224c wordp:0xe1af size:0x001a C-string:'_gt__bo_CONTEXT_bc_'
+//           CTX>C  codep:0x224c wordp:0xe1cb size:0x0006 C-string:'CTX_gt_C'
+//      ![CONTEXT]  codep:0x224c wordp:0xe1d3 size:0x000a C-string:'Store_bo_CONTEXT_bc_'
+//           RADII  codep:0x4a4f wordp:0xe1e7 size:0x0014 C-string:'RADII'
+//            IVAR  codep:0x4a4f wordp:0xe204 size:0x0014 C-string:'IVAR'
+//         #CPARMS  codep:0x224c wordp:0xe21a size:0x001e C-string:'_n_CPARMS'
+//         !CPARMS  codep:0x224c wordp:0xe23a size:0x0016 C-string:'StoreCPARMS'
+//           WE252  codep:0x224c wordp:0xe252 size:0x0004 C-string:'WE252'
+//           WE258  codep:0x224c wordp:0xe258 size:0x0008 C-string:'WE258'
+//           WE262  codep:0x224c wordp:0xe262 size:0x0018 C-string:'WE262'
+//          XYCASE  codep:0x4a4f wordp:0xe285 size:0x000c C-string:'XYCASE'
+//    .COORDINATES  codep:0x224c wordp:0xe293 size:0x0066 C-string:'DrawCOORDINATES'
+//            XBND  codep:0x2214 wordp:0xe2fb size:0x0002 C-string:'XBND'
+//            YBND  codep:0x2214 wordp:0xe2ff size:0x0002 C-string:'YBND'
+//            XLIM  codep:0x2214 wordp:0xe303 size:0x0002 C-string:'XLIM'
+//            YLIM  codep:0x2214 wordp:0xe307 size:0x0002 C-string:'YLIM'
+//           SDUST  codep:0x1d29 wordp:0xe30b size:0x0018 C-string:'SDUST'
+//           >DUST  codep:0x224c wordp:0xe325 size:0x002a C-string:'_gt_DUST'
+//           ?DUST  codep:0x224c wordp:0xe351 size:0x0022 C-string:'IsDUST'
+//         (.DUST)  codep:0x224c wordp:0xe375 size:0x0052 C-string:'_ro__dot_DUST_rc_'
+//           .DUST  codep:0x224c wordp:0xe3c9 size:0x0024 C-string:'DrawDUST'
+//            .MVS  codep:0x224c wordp:0xe3f6 size:0x004a C-string:'DrawMVS'
+//      .FLUX-ICON  codep:0x224c wordp:0xe442 size:0x0076 C-string:'DrawFLUX_dash_ICON'
+//       ?CHANGEXY  codep:0x224c wordp:0xe4ba size:0x003e C-string:'IsCHANGEXY'
+//    (?NEWHEADXY)  codep:0x224c wordp:0xe4fa size:0x0064 C-string:'_ro__ask_NEWHEADXY_rc_'
+//      >NEWHEADXY  codep:0x224c wordp:0xe560 size:0x000e C-string:'_gt_NEWHEADXY'
+//          #SLOPE  codep:0x224c wordp:0xe570 size:0x001c C-string:'_n_SLOPE'
+//          #RELXY  codep:0x224c wordp:0xe58e size:0x000e C-string:'_n_RELXY'
+//           #QUAD  codep:0x224c wordp:0xe59e size:0x004e C-string:'_n_QUAD'
+//        #HEADING  codep:0x224c wordp:0xe5ee size:0x006e C-string:'_n_HEADING'
+//        HEADDXDY  codep:0x1d29 wordp:0xe65e size:0x0010 C-string:'HEADDXDY'
+//       #HEADDXDY  codep:0x224c wordp:0xe670 size:0x0012 C-string:'_n_HEADDXDY'
+//         #NEXTXY  codep:0x224c wordp:0xe684 size:0x001a C-string:'_n_NEXTXY'
+//         #VECTXY  codep:0x224c wordp:0xe6a0 size:0x001c C-string:'_n_VECTXY'
+//           #DIST  codep:0x224c wordp:0xe6be size:0x0024 C-string:'_n_DIST'
+//          #SPEED  codep:0x224c wordp:0xe6e4 size:0x0012 C-string:'_n_SPEED'
+//      #NEWHEADXY  codep:0x224c wordp:0xe6f8 size:0x002e C-string:'_n_NEWHEADXY'
+//         DWITHIN  codep:0x224c wordp:0xe728 size:0x0018 C-string:'DWITHIN'
+//     (-ENDURIUM)  codep:0x224c wordp:0xe742 size:0x00a8 C-string:'_ro__dash_ENDURIUM_rc_'
+//       -ENDURIUM  codep:0x224c wordp:0xe7ec size:0x0012 C-string:'_dash_ENDURIUM'
+//           USE-E  codep:0x224c wordp:0xe808 size:0x0054 C-string:'USE_dash_E'
+//         ?IN-NEB  codep:0x224c wordp:0xe85e size:0x0092 C-string:'IsIN_dash_NEB'
+//      #VES-SPEED  codep:0x224c wordp:0xe8f2 size:0x0012 C-string:'_n_VES_dash_SPEED'
+//          TWELVE  codep:0x2214 wordp:0xe906 size:0x0002 C-string:'TWELVE'
+//          CSPEED  codep:0x4a4f wordp:0xe913 size:0x000c C-string:'CSPEED'
+//            #ACC  codep:0x1d29 wordp:0xe921 size:0x0002 C-string:'_n_ACC'
+//          KEYINC  codep:0x1d29 wordp:0xe925 size:0x0002 C-string:'KEYINC'
+//       !MAXSPEED  codep:0x224c wordp:0xe929 size:0x0014 C-string:'StoreMAXSPEED'
+//            !S/A  codep:0x224c wordp:0xe93f size:0x001e C-string:'StoreS_slash_A'
+//      ACCELERATE  codep:0x224c wordp:0xe95f size:0x003a C-string:'ACCELERATE'
+//      NEST-SETUP  codep:0x4a4f wordp:0xe9a5 size:0x0014 C-string:'NEST_dash_SETUP'
+//    NEST-SPACEXY  codep:0x224c wordp:0xe9bb size:0x002c C-string:'NEST_dash_SPACEXY'
+//            NEST  codep:0x224c wordp:0xe9f0 size:0x0068 C-string:'NEST'
+//      >ENCOUNTER  codep:0x224c wordp:0xea5a size:0x0024 C-string:'_gt_ENCOUNTER'
+//       ?BOX-NEST  codep:0x224c wordp:0xea80 size:0x0022 C-string:'IsBOX_dash_NEST'
+//  SET-FLUX-STATE  codep:0x224c wordp:0xeaa4 size:0x0034 C-string:'SET_dash_FLUX_dash_STATE'
+//          JMPSHP  codep:0x224c wordp:0xeae3 size:0x0038 C-string:'JMPSHP'
+//      >FLUX-NODE  codep:0x224c wordp:0xeb1d size:0x002a C-string:'_gt_FLUX_dash_NODE'
+//         COLLIDE  codep:0x4a4f wordp:0xeb53 size:0x0018 C-string:'COLLIDE'
+//          ?-*BOX  codep:0x224c wordp:0xeb6d size:0x0010 C-string:'Is_dash__star_BOX'
+//             ?~C  codep:0x4a4f wordp:0xeb85 size:0x0010 C-string:'Is_t_C'
+//      ?COLLISION  codep:0x224c wordp:0xeb97 size:0x00a0 C-string:'IsCOLLISION'
+//           WEC39  codep:0x224c wordp:0xec39 size:0x0022 C-string:'WEC39'
+//      ?2NEST.ETC  codep:0x224c wordp:0xec5d size:0x004a C-string:'Is2NEST_dot_ETC'
+//       ?STARPORT  codep:0x224c wordp:0xeca9 size:0x007d C-string:'IsSTARPORT'
+//    UNNEST-CLEAN  codep:0x4a4f wordp:0xed32 size:0x0014 C-string:'UNNEST_dash_CLEAN'
+//  UNNEST-SPACEXY  codep:0x224c wordp:0xed48 size:0x0022 C-string:'UNNEST_dash_SPACEXY'
+//         ?UNNEST  codep:0x224c wordp:0xed6c size:0x0054 C-string:'IsUNNEST'
+//  ?DOUBLE-UNNEST  codep:0x224c wordp:0xedc2 size:0x0016 C-string:'IsDOUBLE_dash_UNNEST'
+//          UNNEST  codep:0x224c wordp:0xede3 size:0x006e C-string:'UNNEST'
+//           WEE53  codep:0x224c wordp:0xee53 size:0x0028 C-string:'WEE53'
+//        (GET-AUX  codep:0x224c wordp:0xee87 size:0x0012 C-string:'_ro_GET_dash_AUX'
+//           WEE9B  codep:0x224c wordp:0xee9b size:0x0026 C-string:'WEE9B'
+//             FLY  codep:0x224c wordp:0xeec9 size:0x0046 C-string:'FLY'
+//           WEF11  codep:0x224c wordp:0xef11 size:0x001a C-string:'WEF11'
+// SET-DESTINATION  codep:0x224c wordp:0xef37 size:0x00c0 C-string:'SET_dash_DESTINATION'
+//       SETUP-MOV  codep:0x224c wordp:0xf003 size:0x009c C-string:'SETUP_dash_MOV'
+//     CLEANUP-MOV  codep:0x224c wordp:0xf0ab size:0x006e C-string:'CLEANUP_dash_MOV'
+//         CHK-MOV  codep:0x224c wordp:0xf125 size:0x008e C-string:'CHK_dash_MOV'
+//           WF1B5  codep:0x224c wordp:0xf1b5 size:0x002f C-string:'WF1B5'
+//           +NEST  codep:0x224c wordp:0xf1ee size:0x000a C-string:'_plus_NEST'
+//     COME-HITHER  codep:0x224c wordp:0xf204 size:0x0000 C-string:'COME_dash_HITHER'
 
 // =================================
 // ============= EXTERN ============
@@ -501,7 +501,7 @@ const unsigned short int cc_TWELVE = 0xe906; // TWELVE
 // 0xd972: db 0x91 0x01 '  '
 
 // ================================================
-// 0xd974: WORD 'SET-'EXTERNAL' codep=0x224c parp=0xd976 params=0 returns=0
+// 0xd974: WORD 'SET-'EXTERNAL' codep=0x224c wordp=0xd976 params=0 returns=0
 // ================================================
 
 void SET_dash__i_EXTERNAL() // SET-'EXTERNAL
@@ -512,7 +512,7 @@ void SET_dash__i_EXTERNAL() // SET-'EXTERNAL
 
 
 // ================================================
-// 0xd97e: WORD 'SHP>C' codep=0x224c parp=0xd980 params=0 returns=0
+// 0xd97e: WORD 'SHP>C' codep=0x224c wordp=0xd980 params=0 returns=0
 // ================================================
 
 void SHP_gt_C() // SHP>C
@@ -523,7 +523,7 @@ void SHP_gt_C() // SHP>C
 
 
 // ================================================
-// 0xd986: WORD 'PLN>C' codep=0x224c parp=0xd988 params=0 returns=0
+// 0xd986: WORD 'PLN>C' codep=0x224c wordp=0xd988 params=0 returns=0
 // ================================================
 
 void PLN_gt_C() // PLN>C
@@ -534,7 +534,7 @@ void PLN_gt_C() // PLN>C
 
 
 // ================================================
-// 0xd98e: WORD 'ORB>C' codep=0x224c parp=0xd990 params=0 returns=0
+// 0xd98e: WORD 'ORB>C' codep=0x224c wordp=0xd990 params=0 returns=0
 // ================================================
 
 void ORB_gt_C() // ORB>C
@@ -545,7 +545,7 @@ void ORB_gt_C() // ORB>C
 
 
 // ================================================
-// 0xd996: WORD 'SYS>C' codep=0x224c parp=0xd998 params=0 returns=0
+// 0xd996: WORD 'SYS>C' codep=0x224c wordp=0xd998 params=0 returns=0
 // ================================================
 
 void SYS_gt_C() // SYS>C
@@ -556,7 +556,7 @@ void SYS_gt_C() // SYS>C
 
 
 // ================================================
-// 0xd99e: WORD 'ENC>C' codep=0x224c parp=0xd9a0 params=0 returns=0
+// 0xd99e: WORD 'ENC>C' codep=0x224c wordp=0xd9a0 params=0 returns=0
 // ================================================
 
 void ENC_gt_C() // ENC>C
@@ -567,7 +567,7 @@ void ENC_gt_C() // ENC>C
 
 
 // ================================================
-// 0xd9a6: WORD '2ICLOSE' codep=0x224c parp=0xd9a8 params=0 returns=0
+// 0xd9a6: WORD '2ICLOSE' codep=0x224c wordp=0xd9a8 params=0 returns=0
 // ================================================
 
 void _2ICLOSE() // 2ICLOSE
@@ -578,224 +578,224 @@ void _2ICLOSE() // 2ICLOSE
 
 
 // ================================================
-// 0xd9ae: WORD 'RCOLLIDE' codep=0x2214 parp=0xd9b0
+// 0xd9ae: WORD 'RCOLLIDE' codep=0x2214 wordp=0xd9b0
 // ================================================
 // 0xd9b0: dw 0x0003
 
 // ================================================
-// 0xd9b2: WORD 'PRTRADIUS' codep=0x2214 parp=0xd9b4
+// 0xd9b2: WORD 'PRTRADIUS' codep=0x2214 wordp=0xd9b4
 // ================================================
 // 0xd9b4: dw 0x0000
 
 // ================================================
-// 0xd9b6: WORD 'DEFRADIUS' codep=0x2214 parp=0xd9b8
+// 0xd9b6: WORD 'DEFRADIUS' codep=0x2214 wordp=0xd9b8
 // ================================================
 // 0xd9b8: dw 0x004b
 
 // ================================================
-// 0xd9ba: WORD 'ORBRADIUS' codep=0x2214 parp=0xd9bc
+// 0xd9ba: WORD 'ORBRADIUS' codep=0x2214 wordp=0xd9bc
 // ================================================
 // 0xd9bc: dw 0x0000
 
 // ================================================
-// 0xd9be: WORD 'ENCRADIUS' codep=0x2214 parp=0xd9c0
+// 0xd9be: WORD 'ENCRADIUS' codep=0x2214 wordp=0xd9c0
 // ================================================
 // 0xd9c0: dw 0x0016
 
 // ================================================
-// 0xd9c2: WORD 'SYSRADIUS' codep=0x2214 parp=0xd9c4
+// 0xd9c2: WORD 'SYSRADIUS' codep=0x2214 wordp=0xd9c4
 // ================================================
 // 0xd9c4: dw 0x0190
 
 // ================================================
-// 0xd9c6: WORD 'VISLENGTH' codep=0x2214 parp=0xd9c8
+// 0xd9c6: WORD 'VISLENGTH' codep=0x2214 wordp=0xd9c8
 // ================================================
 // 0xd9c8: dw 0x0040
 
 // ================================================
-// 0xd9ca: WORD 'VISWIDTH' codep=0x2214 parp=0xd9cc
+// 0xd9ca: WORD 'VISWIDTH' codep=0x2214 wordp=0xd9cc
 // ================================================
 // 0xd9cc: dw 0x003e
 
 // ================================================
-// 0xd9ce: WORD 'BVISOFF' codep=0x2214 parp=0xd9d0
+// 0xd9ce: WORD 'BVISOFF' codep=0x2214 wordp=0xd9d0
 // ================================================
 // 0xd9d0: dw 0x0009
 
 // ================================================
-// 0xd9d2: WORD 'LVISOFF' codep=0x2214 parp=0xd9d4
+// 0xd9d2: WORD 'LVISOFF' codep=0x2214 wordp=0xd9d4
 // ================================================
 // 0xd9d4: dw 0x0008
 
 // ================================================
-// 0xd9d6: WORD 'MAXSPEED' codep=0x2214 parp=0xd9d8
+// 0xd9d6: WORD 'MAXSPEED' codep=0x2214 wordp=0xd9d8
 // ================================================
 // 0xd9d8: dw 0x000c
 
 // ================================================
-// 0xd9da: WORD '(RADIUS)' codep=0x1d29 parp=0xd9dc
+// 0xd9da: WORD '(RADIUS)' codep=0x1d29 wordp=0xd9dc
 // ================================================
 // 0xd9dc: db 0x00 0x00 '  '
 
 // ================================================
-// 0xd9de: WORD '[CONTEXT]' codep=0x1d29 parp=0xd9e0
+// 0xd9de: WORD '[CONTEXT]' codep=0x1d29 wordp=0xd9e0
 // ================================================
 // 0xd9e0: db 0x8c 0x63 ' c'
 
 // ================================================
-// 0xd9e2: WORD 'WD9E4' codep=0x1d29 parp=0xd9e4
+// 0xd9e2: WORD 'WD9E4' codep=0x1d29 wordp=0xd9e4
 // ================================================
 // 0xd9e4: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xd9e6: WORD 'WD9E8' codep=0x1d29 parp=0xd9e8
+// 0xd9e6: WORD 'WD9E8' codep=0x1d29 wordp=0xd9e8
 // ================================================
 // 0xd9e8: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xd9ea: WORD 'WD9EC' codep=0x1d29 parp=0xd9ec
+// 0xd9ea: WORD 'WD9EC' codep=0x1d29 wordp=0xd9ec
 // ================================================
 // 0xd9ec: db 0x00 0x00 '  '
 
 // ================================================
-// 0xd9ee: WORD '(COLLIDE)' codep=0x1d29 parp=0xd9f0
+// 0xd9ee: WORD '(COLLIDE)' codep=0x1d29 wordp=0xd9f0
 // ================================================
 // 0xd9f0: db 0x00 0x00 0x00 0x62 '   b'
 
 // ================================================
-// 0xd9f4: WORD 'XCRS' codep=0x1d29 parp=0xd9f6
+// 0xd9f4: WORD 'XCRS' codep=0x1d29 wordp=0xd9f6
 // ================================================
 // 0xd9f6: db 0xff 0xff '  '
 
 // ================================================
-// 0xd9f8: WORD 'YCRS' codep=0x1d29 parp=0xd9fa
+// 0xd9f8: WORD 'YCRS' codep=0x1d29 wordp=0xd9fa
 // ================================================
 // 0xd9fa: db 0x00 0x00 '  '
 
 // ================================================
-// 0xd9fc: WORD 'NAV-SKILL' codep=0x1d29 parp=0xd9fe
+// 0xd9fc: WORD 'NAV-SKILL' codep=0x1d29 wordp=0xd9fe
 // ================================================
 // 0xd9fe: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xda00: WORD ''AUX-CLEAN' codep=0x1d29 parp=0xda02
+// 0xda00: WORD ''AUX-CLEAN' codep=0x1d29 wordp=0xda02
 // ================================================
 // 0xda02: db 0xa3 0xe0 '  '
 
 // ================================================
-// 0xda04: WORD '?HAS-RING-DEVICE' codep=0x1d29 parp=0xda06
+// 0xda04: WORD '?HAS-RING-DEVICE' codep=0x1d29 wordp=0xda06
 // ================================================
 // 0xda06: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xda08: WORD 'ESPEED' codep=0x1d29 parp=0xda0a
+// 0xda08: WORD 'ESPEED' codep=0x1d29 wordp=0xda0a
 // ================================================
 // 0xda0a: db 0x02 0x00 '  '
 
 // ================================================
-// 0xda0c: WORD '?HW' codep=0x1d29 parp=0xda0e
+// 0xda0c: WORD '?HW' codep=0x1d29 wordp=0xda0e
 // ================================================
 // 0xda0e: db 0x00 0x00 '  '
 
 // ================================================
-// 0xda10: WORD 'WDA12' codep=0x1d29 parp=0xda12
+// 0xda10: WORD 'WDA12' codep=0x1d29 wordp=0xda12
 // ================================================
 // 0xda12: db 0x00 0x00 '  '
 
 // ================================================
-// 0xda14: WORD 'WDA16' codep=0x1d29 parp=0xda16
+// 0xda14: WORD 'WDA16' codep=0x1d29 wordp=0xda16
 // ================================================
 // orphan
 // 0xda16: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xda18: WORD '%ACC' codep=0x744d parp=0xda1a
+// 0xda18: WORD '%ACC' codep=0x744d wordp=0xda1a
 // ================================================
 IFieldType _pe_ACC = {SHIPIDX, 0x25, 0x02};
 
 // ================================================
-// 0xda1d: WORD '%HEADING' codep=0x744d parp=0xda1f
+// 0xda1d: WORD '%HEADING' codep=0x744d wordp=0xda1f
 // ================================================
 IFieldType _pe_HEADING = {SHIPIDX, 0x49, 0x01};
 
 // ================================================
-// 0xda22: WORD '%ENGINE' codep=0x744d parp=0xda24
+// 0xda22: WORD '%ENGINE' codep=0x744d wordp=0xda24
 // ================================================
 IFieldType _pe_ENGINE = {SHIPIDX, 0x13, 0x02};
 
 // ================================================
-// 0xda27: WORD '%ACLASS' codep=0x744d parp=0xda29
+// 0xda27: WORD '%ACLASS' codep=0x744d wordp=0xda29
 // ================================================
 IFieldType _pe_ACLASS = {SHIPIDX, 0x12, 0x01};
 
 // ================================================
-// 0xda2c: WORD 'SCNT' codep=0x744d parp=0xda2e
+// 0xda2c: WORD 'SCNT' codep=0x744d wordp=0xda2e
 // ================================================
 IFieldType SCNT = {SHIPIDX, 0x30, 0x02};
 
 // ================================================
-// 0xda31: WORD '%SCLASS' codep=0x744d parp=0xda33
+// 0xda31: WORD '%SCLASS' codep=0x744d wordp=0xda33
 // ================================================
 IFieldType _pe_SCLASS = {SHIPIDX, 0x1a, 0x01};
 
 // ================================================
-// 0xda36: WORD 'ACNT' codep=0x744d parp=0xda38
+// 0xda36: WORD 'ACNT' codep=0x744d wordp=0xda38
 // ================================================
 IFieldType ACNT = {SHIPIDX, 0x32, 0x02};
 
 // ================================================
-// 0xda3b: WORD 'WDA3D' codep=0x744d parp=0xda3d
+// 0xda3b: WORD 'WDA3D' codep=0x744d wordp=0xda3d
 // ================================================
 IFieldType WDA3D = {SHIPIDX, 0x43, 0x02};
 
 // ================================================
-// 0xda40: WORD 'WDA42' codep=0x744d parp=0xda42
+// 0xda40: WORD 'WDA42' codep=0x744d wordp=0xda42
 // ================================================
 IFieldType WDA42 = {SHIPIDX, 0x45, 0x04};
 
 // ================================================
-// 0xda45: WORD 'DEST-X' codep=0x744d parp=0xda47
+// 0xda45: WORD 'DEST-X' codep=0x744d wordp=0xda47
 // ================================================
 IFieldType DEST_dash_X = {FLUX_NODEIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xda4a: WORD 'DEST-Y' codep=0x744d parp=0xda4c
+// 0xda4a: WORD 'DEST-Y' codep=0x744d wordp=0xda4c
 // ================================================
 IFieldType DEST_dash_Y = {FLUX_NODEIDX, 0x11, 0x02};
 
 // ================================================
-// 0xda4f: WORD '?HOME-PLANET' codep=0x744d parp=0xda51
+// 0xda4f: WORD '?HOME-PLANET' codep=0x744d wordp=0xda51
 // ================================================
 IFieldType IsHOME_dash_PLANET = {ENCOUNTERIDX, 0x0b, 0x01};
 
 // ================================================
-// 0xda54: WORD 'WDA56' codep=0x744d parp=0xda56
+// 0xda54: WORD 'WDA56' codep=0x744d wordp=0xda56
 // ================================================
 IFieldType WDA56 = {ENCOUNTERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xda59: WORD 'ORBIT-MASK' codep=0x744d parp=0xda5b
+// 0xda59: WORD 'ORBIT-MASK' codep=0x744d wordp=0xda5b
 // ================================================
 IFieldType ORBIT_dash_MASK = {STARSYSTEMIDX, 0x11, 0x01};
 
 // ================================================
-// 0xda5e: WORD 'FLAREDATE' codep=0x744d parp=0xda60
+// 0xda5e: WORD 'FLAREDATE' codep=0x744d wordp=0xda60
 // ================================================
 IFieldType FLAREDATE = {STARSYSTEMIDX, 0x0b, 0x02};
 
 // ================================================
-// 0xda63: WORD 'WDA65' codep=0x73ea parp=0xda65
+// 0xda63: WORD 'WDA65' codep=0x73ea wordp=0xda65
 // ================================================
 LoadDataType WDA65 = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xda6b: WORD 'BET' codep=0x744d parp=0xda6d
+// 0xda6b: WORD 'BET' codep=0x744d wordp=0xda6d
 // ================================================
 // orphan
 IFieldType BET = {ORIGINATORIDX, 0x14, 0x01};
 
 // ================================================
-// 0xda70: WORD '@COORDS' codep=0x224c parp=0xda72 params=0 returns=2
+// 0xda70: WORD '@COORDS' codep=0x224c wordp=0xda72 params=0 returns=2
 // ================================================
 
 void GetCOORDS() // @COORDS
@@ -807,7 +807,7 @@ void GetCOORDS() // @COORDS
 
 
 // ================================================
-// 0xda7a: WORD '!COORDS' codep=0x224c parp=0xda7c params=2 returns=0
+// 0xda7a: WORD '!COORDS' codep=0x224c wordp=0xda7c params=2 returns=0
 // ================================================
 
 void StoreCOORDS() // !COORDS
@@ -819,7 +819,7 @@ void StoreCOORDS() // !COORDS
 
 
 // ================================================
-// 0xda84: WORD '!XYTRNS' codep=0x224c parp=0xda86 params=2 returns=0
+// 0xda84: WORD '!XYTRNS' codep=0x224c wordp=0xda86 params=2 returns=0
 // ================================================
 
 void StoreXYTRNS() // !XYTRNS
@@ -832,7 +832,7 @@ void StoreXYTRNS() // !XYTRNS
 
 
 // ================================================
-// 0xda90: WORD '@XYABS' codep=0x224c parp=0xda92 params=0 returns=2
+// 0xda90: WORD '@XYABS' codep=0x224c wordp=0xda92 params=0 returns=2
 // ================================================
 
 void GetXYABS() // @XYABS
@@ -843,7 +843,7 @@ void GetXYABS() // @XYABS
 
 
 // ================================================
-// 0xda9c: WORD '@XYSHP' codep=0x224c parp=0xda9e params=0 returns=2
+// 0xda9c: WORD '@XYSHP' codep=0x224c wordp=0xda9e params=0 returns=2
 // ================================================
 
 void GetXYSHP() // @XYSHP
@@ -855,7 +855,7 @@ void GetXYSHP() // @XYSHP
 
 
 // ================================================
-// 0xdaa6: WORD 'CTXT#' codep=0x224c parp=0xdaa8 params=0 returns=1
+// 0xdaa6: WORD 'CTXT#' codep=0x224c wordp=0xdaa8 params=0 returns=1
 // ================================================
 
 void CTXT_n_() // CTXT#
@@ -865,7 +865,7 @@ void CTXT_n_() // CTXT#
 
 
 // ================================================
-// 0xdaae: WORD '!XYSHP' codep=0x224c parp=0xdab0 params=2 returns=0
+// 0xdaae: WORD '!XYSHP' codep=0x224c wordp=0xdab0 params=2 returns=0
 // ================================================
 
 void StoreXYSHP() // !XYSHP
@@ -877,7 +877,7 @@ void StoreXYSHP() // !XYSHP
 
 
 // ================================================
-// 0xdab8: WORD '!%HEADING' codep=0x224c parp=0xdaba params=1 returns=0
+// 0xdab8: WORD '!%HEADING' codep=0x224c wordp=0xdaba params=1 returns=0
 // ================================================
 
 void Store_pe_HEADING() // !%HEADING
@@ -890,7 +890,7 @@ void Store_pe_HEADING() // !%HEADING
 
 
 // ================================================
-// 0xdac4: WORD '?XIDENC' codep=0x224c parp=0xdac6 params=0 returns=1
+// 0xdac4: WORD '?XIDENC' codep=0x224c wordp=0xdac6 params=0 returns=1
 // ================================================
 
 void IsXIDENC() // ?XIDENC
@@ -901,7 +901,7 @@ void IsXIDENC() // ?XIDENC
 
 
 // ================================================
-// 0xdace: WORD '0XYCRS' codep=0x224c parp=0xdad0 params=0 returns=0
+// 0xdace: WORD '0XYCRS' codep=0x224c wordp=0xdad0 params=0 returns=0
 // ================================================
 
 void _0XYCRS() // 0XYCRS
@@ -915,7 +915,7 @@ void _0XYCRS() // 0XYCRS
 
 
 // ================================================
-// 0xdadc: WORD '?PLANET' codep=0x224c parp=0xdade params=0 returns=1
+// 0xdadc: WORD '?PLANET' codep=0x224c wordp=0xdade params=0 returns=1
 // ================================================
 
 void IsPLANET() // ?PLANET
@@ -926,7 +926,7 @@ void IsPLANET() // ?PLANET
 
 
 // ================================================
-// 0xdae8: WORD '?*ORPLAN' codep=0x224c parp=0xdaea params=0 returns=1
+// 0xdae8: WORD '?*ORPLAN' codep=0x224c wordp=0xdaea params=0 returns=1
 // ================================================
 
 void Is_star_ORPLAN() // ?*ORPLAN
@@ -939,7 +939,7 @@ void Is_star_ORPLAN() // ?*ORPLAN
 
 
 // ================================================
-// 0xdaf8: WORD '?HYPER' codep=0x224c parp=0xdafa params=0 returns=1
+// 0xdaf8: WORD '?HYPER' codep=0x224c wordp=0xdafa params=0 returns=1
 // ================================================
 
 void IsHYPER() // ?HYPER
@@ -950,7 +950,7 @@ void IsHYPER() // ?HYPER
 
 
 // ================================================
-// 0xdb02: WORD 'ORBSETUP' codep=0x224c parp=0xdb04
+// 0xdb02: WORD 'ORBSETUP' codep=0x224c wordp=0xdb04
 // ================================================
 
 void ORBSETUP() // ORBSETUP
@@ -979,7 +979,7 @@ void ORBSETUP() // ORBSETUP
 
 
 // ================================================
-// 0xdb30: WORD 'WDB32' codep=0x224c parp=0xdb32 params=0 returns=0
+// 0xdb30: WORD 'WDB32' codep=0x224c wordp=0xdb32 params=0 returns=0
 // ================================================
 
 void WDB32() // WDB32
@@ -1008,7 +1008,7 @@ void WDB32() // WDB32
 
 
 // ================================================
-// 0xdb5e: WORD 'WDB60' codep=0x224c parp=0xdb60 params=1 returns=0
+// 0xdb5e: WORD 'WDB60' codep=0x224c wordp=0xdb60 params=1 returns=0
 // ================================================
 // orphan
 
@@ -1024,7 +1024,7 @@ void WDB60() // WDB60
 
 
 // ================================================
-// 0xdb70: WORD '.AUXSHIP' codep=0x224c parp=0xdb72 params=0 returns=0
+// 0xdb70: WORD '.AUXSHIP' codep=0x224c wordp=0xdb72 params=0 returns=0
 // ================================================
 
 void DrawAUXSHIP() // .AUXSHIP
@@ -1062,32 +1062,32 @@ void DrawAUXSHIP() // .AUXSHIP
 
 
 // ================================================
-// 0xdbd0: WORD 'MAX#SHIPS' codep=0x744d parp=0xdbd2
+// 0xdbd0: WORD 'MAX#SHIPS' codep=0x744d wordp=0xdbd2
 // ================================================
 IFieldType MAX_n_SHIPS = {ENCOUNTERIDX, 0x13, 0x01};
 
 // ================================================
-// 0xdbd5: WORD '#SHIPS-DESTROYED' codep=0x744d parp=0xdbd7
+// 0xdbd5: WORD '#SHIPS-DESTROYED' codep=0x744d wordp=0xdbd7
 // ================================================
 IFieldType _n_SHIPS_dash_DESTROYED = {ENCOUNTERIDX, 0x14, 0x01};
 
 // ================================================
-// 0xdbda: WORD 'BASE-EDL' codep=0x744d parp=0xdbdc
+// 0xdbda: WORD 'BASE-EDL' codep=0x744d wordp=0xdbdc
 // ================================================
 IFieldType BASE_dash_EDL = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
-// 0xdbdf: WORD 'NAV' codep=0x744d parp=0xdbe1
+// 0xdbdf: WORD 'NAV' codep=0x744d wordp=0xdbe1
 // ================================================
 IFieldType NAV = {ASSIGN_CREWIDX, 0x17, 0x03};
 
 // ================================================
-// 0xdbe4: WORD '^NAV' codep=0x744d parp=0xdbe6
+// 0xdbe4: WORD '^NAV' codep=0x744d wordp=0xdbe6
 // ================================================
 IFieldType _h_NAV = {CREWMEMBERIDX, 0x1b, 0x01};
 
 // ================================================
-// 0xdbe9: WORD 'WDBEB' codep=0x224c parp=0xdbeb params=0 returns=0
+// 0xdbe9: WORD 'WDBEB' codep=0x224c wordp=0xdbeb params=0 returns=0
 // ================================================
 
 void WDBEB() // WDBEB
@@ -1116,7 +1116,7 @@ void WDBEB() // WDBEB
 
 
 // ================================================
-// 0xdc17: WORD 'WDC19' codep=0x224c parp=0xdc19 params=0 returns=0
+// 0xdc17: WORD 'WDC19' codep=0x224c wordp=0xdc19 params=0 returns=0
 // ================================================
 
 void WDC19() // WDC19
@@ -1140,7 +1140,7 @@ void WDC19() // WDC19
 
 
 // ================================================
-// 0xdc43: WORD 'CHARGE-D' codep=0x224c parp=0xdc45 params=0 returns=0
+// 0xdc43: WORD 'CHARGE-D' codep=0x224c wordp=0xdc45 params=0 returns=0
 // ================================================
 
 void CHARGE_dash_D() // CHARGE-D
@@ -1161,7 +1161,7 @@ void CHARGE_dash_D() // CHARGE-D
 
 
 // ================================================
-// 0xdc79: WORD 'PS>C' codep=0x4a4f parp=0xdc82
+// 0xdc79: WORD 'PS>C' codep=0x4a4f wordp=0xdc82
 // ================================================
 
 void PS_gt_C() // PS>C
@@ -1191,7 +1191,7 @@ void PS_gt_C() // PS>C
 }
 
 // ================================================
-// 0xdc9a: WORD '>CONS-DISP' codep=0x224c parp=0xdc9c params=0 returns=0
+// 0xdc9a: WORD '>CONS-DISP' codep=0x224c wordp=0xdc9c params=0 returns=0
 // ================================================
 
 void _gt_CONS_dash_DISP() // >CONS-DISP
@@ -1216,7 +1216,7 @@ void _gt_CONS_dash_DISP() // >CONS-DISP
 
 
 // ================================================
-// 0xdcc4: WORD 'ENCCLEANUP' codep=0x224c parp=0xdcc6 params=0 returns=1
+// 0xdcc4: WORD 'ENCCLEANUP' codep=0x224c wordp=0xdcc6 params=0 returns=1
 // ================================================
 
 void ENCCLEANUP() // ENCCLEANUP
@@ -1284,7 +1284,7 @@ void ENCCLEANUP() // ENCCLEANUP
 
 
 // ================================================
-// 0xdd68: WORD 'ENCSETUP' codep=0x224c parp=0xdd6a
+// 0xdd68: WORD 'ENCSETUP' codep=0x224c wordp=0xdd6a
 // ================================================
 
 void ENCSETUP() // ENCSETUP
@@ -1332,7 +1332,7 @@ void ENCSETUP() // ENCSETUP
 
 
 // ================================================
-// 0xddc2: WORD 'PRTSETUP' codep=0x224c parp=0xddc4 params=0 returns=0
+// 0xddc2: WORD 'PRTSETUP' codep=0x224c wordp=0xddc4 params=0 returns=0
 // ================================================
 
 void PRTSETUP() // PRTSETUP
@@ -1350,7 +1350,7 @@ void PRTSETUP() // PRTSETUP
 
 
 // ================================================
-// 0xddd8: WORD 'PRTCLEANUP' codep=0x224c parp=0xddda params=0 returns=0
+// 0xddd8: WORD 'PRTCLEANUP' codep=0x224c wordp=0xddda params=0 returns=0
 // ================================================
 
 void PRTCLEANUP() // PRTCLEANUP
@@ -1369,7 +1369,7 @@ void PRTCLEANUP() // PRTCLEANUP
 
 
 // ================================================
-// 0xddf0: WORD 'MAKE-STAR' codep=0x224c parp=0xddf2
+// 0xddf0: WORD 'MAKE-STAR' codep=0x224c wordp=0xddf2
 // ================================================
 
 void MAKE_dash_STAR() // MAKE-STAR
@@ -1390,7 +1390,7 @@ void MAKE_dash_STAR() // MAKE-STAR
 
 
 // ================================================
-// 0xde10: WORD 'KILL-STAR' codep=0x224c parp=0xde12
+// 0xde10: WORD 'KILL-STAR' codep=0x224c wordp=0xde12
 // ================================================
 
 void KILL_dash_STAR() // KILL-STAR
@@ -1409,17 +1409,17 @@ void KILL_dash_STAR() // KILL-STAR
 
 
 // ================================================
-// 0xde28: WORD 'PREV-ORBIT' codep=0x1d29 parp=0xde2a
+// 0xde28: WORD 'PREV-ORBIT' codep=0x1d29 wordp=0xde2a
 // ================================================
 // 0xde2a: db 0x07 0x00 '  '
 
 // ================================================
-// 0xde2c: WORD 'ORBITs' codep=0x1d29 parp=0xde2e
+// 0xde2c: WORD 'ORBITs' codep=0x1d29 wordp=0xde2e
 // ================================================
 // 0xde2e: db 0x75 0x00 'u '
 
 // ================================================
-// 0xde30: WORD 'GET-ORBIT#' codep=0x224c parp=0xde32 params=0 returns=1
+// 0xde30: WORD 'GET-ORBIT#' codep=0x224c wordp=0xde32 params=0 returns=1
 // ================================================
 
 void GET_dash_ORBIT_n_() // GET-ORBIT#
@@ -1450,7 +1450,7 @@ void GET_dash_ORBIT_n_() // GET-ORBIT#
 
 
 // ================================================
-// 0xde5c: WORD '(>ORBIT)' codep=0x224c parp=0xde5e
+// 0xde5c: WORD '(>ORBIT)' codep=0x224c wordp=0xde5e
 // ================================================
 
 void _ro__gt_ORBIT_rc_() // (>ORBIT)
@@ -1496,7 +1496,7 @@ void _ro__gt_ORBIT_rc_() // (>ORBIT)
 
 
 // ================================================
-// 0xdeaa: WORD 'ORBIT>' codep=0x224c parp=0xdeac
+// 0xdeaa: WORD 'ORBIT>' codep=0x224c wordp=0xdeac
 // ================================================
 
 void ORBIT_gt_() // ORBIT>
@@ -1526,7 +1526,7 @@ void ORBIT_gt_() // ORBIT>
 
 
 // ================================================
-// 0xded4: WORD '>ORBITS' codep=0x224c parp=0xded6
+// 0xded4: WORD '>ORBITS' codep=0x224c wordp=0xded6
 // ================================================
 
 void _gt_ORBITS() // >ORBITS
@@ -1546,7 +1546,7 @@ void _gt_ORBITS() // >ORBITS
 
 
 // ================================================
-// 0xdef4: WORD '?-ORBIT' codep=0x224c parp=0xdef6 params=0 returns=0
+// 0xdef4: WORD '?-ORBIT' codep=0x224c wordp=0xdef6 params=0 returns=0
 // ================================================
 
 void Is_dash_ORBIT() // ?-ORBIT
@@ -1566,7 +1566,7 @@ void Is_dash_ORBIT() // ?-ORBIT
 
 
 // ================================================
-// 0xdf14: WORD 'WDF16' codep=0x224c parp=0xdf16 params=0 returns=0
+// 0xdf14: WORD 'WDF16' codep=0x224c wordp=0xdf16 params=0 returns=0
 // ================================================
 
 void WDF16() // WDF16
@@ -1591,7 +1591,7 @@ void WDF16() // WDF16
 
 
 // ================================================
-// 0xdf34: WORD 'WDF36' codep=0x224c parp=0xdf36 params=0 returns=2
+// 0xdf34: WORD 'WDF36' codep=0x224c wordp=0xdf36 params=0 returns=2
 // ================================================
 // orphan
 
@@ -1604,7 +1604,7 @@ void WDF36() // WDF36
 
 
 // ================================================
-// 0xdf3e: WORD 'SETRNDXY' codep=0x224c parp=0xdf40 params=0 returns=0
+// 0xdf3e: WORD 'SETRNDXY' codep=0x224c wordp=0xdf40 params=0 returns=0
 // ================================================
 
 void SETRNDXY() // SETRNDXY
@@ -1624,7 +1624,7 @@ void SETRNDXY() // SETRNDXY
 
 
 // ================================================
-// 0xdf5c: WORD 'WDF5E' codep=0x224c parp=0xdf5e params=0 returns=0
+// 0xdf5c: WORD 'WDF5E' codep=0x224c wordp=0xdf5e params=0 returns=0
 // ================================================
 
 void WDF5E() // WDF5E
@@ -1662,7 +1662,7 @@ void WDF5E() // WDF5E
 
 
 // ================================================
-// 0xdfae: WORD 'OCOORDS' codep=0x224c parp=0xdfb0 params=0 returns=0
+// 0xdfae: WORD 'OCOORDS' codep=0x224c wordp=0xdfb0 params=0 returns=0
 // ================================================
 
 void OCOORDS() // OCOORDS
@@ -1681,7 +1681,7 @@ void OCOORDS() // OCOORDS
 
 
 // ================================================
-// 0xdfc6: WORD '>XY' codep=0x4a4f parp=0xdfce
+// 0xdfc6: WORD '>XY' codep=0x4a4f wordp=0xdfce
 // ================================================
 
 void _gt_XY() // >XY
@@ -1702,7 +1702,7 @@ void _gt_XY() // >XY
 }
 
 // ================================================
-// 0xdfda: WORD 'SETPLNXY' codep=0x224c parp=0xdfdc params=0 returns=0
+// 0xdfda: WORD 'SETPLNXY' codep=0x224c wordp=0xdfdc params=0 returns=0
 // ================================================
 
 void SETPLNXY() // SETPLNXY
@@ -1726,7 +1726,7 @@ void SETPLNXY() // SETPLNXY
 
 
 // ================================================
-// 0xdff8: WORD 'SC>C' codep=0x4a4f parp=0xe001
+// 0xdff8: WORD 'SC>C' codep=0x4a4f wordp=0xe001
 // ================================================
 
 void SC_gt_C() // SC>C
@@ -1759,7 +1759,7 @@ void SC_gt_C() // SC>C
 }
 
 // ================================================
-// 0xe01d: WORD '.SUN' codep=0x224c parp=0xe01f
+// 0xe01d: WORD '.SUN' codep=0x224c wordp=0xe01f
 // ================================================
 
 void DrawSUN() // .SUN
@@ -1774,7 +1774,7 @@ void DrawSUN() // .SUN
 
 
 // ================================================
-// 0xe031: WORD '.PLANET' codep=0x224c parp=0xe033
+// 0xe031: WORD '.PLANET' codep=0x224c wordp=0xe033
 // ================================================
 
 void DrawPLANET() // .PLANET
@@ -1825,7 +1825,7 @@ void DrawPLANET() // .PLANET
 
 
 // ================================================
-// 0xe097: WORD '.AUXSYS' codep=0x224c parp=0xe0a3 params=0 returns=0
+// 0xe097: WORD '.AUXSYS' codep=0x224c wordp=0xe0a3 params=0 returns=0
 // ================================================
 // entry
 
@@ -1880,7 +1880,7 @@ void DrawAUXSYS() // .AUXSYS
 
 
 // ================================================
-// 0xe105: WORD 'SYSSETUP' codep=0x224c parp=0xe107
+// 0xe105: WORD 'SYSSETUP' codep=0x224c wordp=0xe107
 // ================================================
 
 void SYSSETUP() // SYSSETUP
@@ -1903,7 +1903,7 @@ void SYSSETUP() // SYSSETUP
 
 
 // ================================================
-// 0xe129: WORD 'SYSCLEANUP' codep=0x224c parp=0xe12b
+// 0xe129: WORD 'SYSCLEANUP' codep=0x224c wordp=0xe12b
 // ================================================
 
 void SYSCLEANUP() // SYSCLEANUP
@@ -1929,7 +1929,7 @@ void SYSCLEANUP() // SYSCLEANUP
 
 
 // ================================================
-// 0xe153: WORD 'RNDCPT' codep=0x224c parp=0xe155 params=1 returns=2
+// 0xe153: WORD 'RNDCPT' codep=0x224c wordp=0xe155 params=1 returns=2
 // ================================================
 // orphan
 
@@ -1975,7 +1975,7 @@ void RNDCPT() // RNDCPT
 
 
 // ================================================
-// 0xe19f: WORD '?CAN-NAVIGATE' codep=0x224c parp=0xe1a1 params=0 returns=1
+// 0xe19f: WORD '?CAN-NAVIGATE' codep=0x224c wordp=0xe1a1 params=0 returns=1
 // ================================================
 
 void IsCAN_dash_NAVIGATE() // ?CAN-NAVIGATE
@@ -1989,7 +1989,7 @@ void IsCAN_dash_NAVIGATE() // ?CAN-NAVIGATE
 
 
 // ================================================
-// 0xe1ad: WORD '>[CONTEXT]' codep=0x224c parp=0xe1af params=0 returns=0
+// 0xe1ad: WORD '>[CONTEXT]' codep=0x224c wordp=0xe1af params=0 returns=0
 // ================================================
 
 void _gt__bo_CONTEXT_bc_() // >[CONTEXT]
@@ -2009,7 +2009,7 @@ void _gt__bo_CONTEXT_bc_() // >[CONTEXT]
 
 
 // ================================================
-// 0xe1c9: WORD 'CTX>C' codep=0x224c parp=0xe1cb params=0 returns=0
+// 0xe1c9: WORD 'CTX>C' codep=0x224c wordp=0xe1cb params=0 returns=0
 // ================================================
 // orphan
 
@@ -2021,7 +2021,7 @@ void CTX_gt_C() // CTX>C
 
 
 // ================================================
-// 0xe1d1: WORD '![CONTEXT]' codep=0x224c parp=0xe1d3 params=0 returns=0
+// 0xe1d1: WORD '![CONTEXT]' codep=0x224c wordp=0xe1d3 params=0 returns=0
 // ================================================
 
 void Store_bo_CONTEXT_bc_() // ![CONTEXT]
@@ -2033,7 +2033,7 @@ void Store_bo_CONTEXT_bc_() // ![CONTEXT]
 
 
 // ================================================
-// 0xe1dd: WORD 'RADII' codep=0x4a4f parp=0xe1e7
+// 0xe1dd: WORD 'RADII' codep=0x4a4f wordp=0xe1e7
 // ================================================
 
 void RADII() // RADII
@@ -2060,7 +2060,7 @@ void RADII() // RADII
 }
 
 // ================================================
-// 0xe1fb: WORD 'IVAR' codep=0x4a4f parp=0xe204
+// 0xe1fb: WORD 'IVAR' codep=0x4a4f wordp=0xe204
 // ================================================
 
 void IVAR() // IVAR
@@ -2087,7 +2087,7 @@ void IVAR() // IVAR
 }
 
 // ================================================
-// 0xe218: WORD '#CPARMS' codep=0x224c parp=0xe21a
+// 0xe218: WORD '#CPARMS' codep=0x224c wordp=0xe21a
 // ================================================
 
 void _n_CPARMS() // #CPARMS
@@ -2111,7 +2111,7 @@ void _n_CPARMS() // #CPARMS
 
 
 // ================================================
-// 0xe238: WORD '!CPARMS' codep=0x224c parp=0xe23a params=5 returns=0
+// 0xe238: WORD '!CPARMS' codep=0x224c wordp=0xe23a params=5 returns=0
 // ================================================
 
 void StoreCPARMS() // !CPARMS
@@ -2131,7 +2131,7 @@ void StoreCPARMS() // !CPARMS
 
 
 // ================================================
-// 0xe250: WORD 'WE252' codep=0x224c parp=0xe252 params=0 returns=2
+// 0xe250: WORD 'WE252' codep=0x224c wordp=0xe252 params=0 returns=2
 // ================================================
 
 void WE252() // WE252
@@ -2141,7 +2141,7 @@ void WE252() // WE252
 
 
 // ================================================
-// 0xe256: WORD 'WE258' codep=0x224c parp=0xe258 params=0 returns=2
+// 0xe256: WORD 'WE258' codep=0x224c wordp=0xe258 params=0 returns=2
 // ================================================
 
 void WE258() // WE258
@@ -2153,7 +2153,7 @@ void WE258() // WE258
 
 
 // ================================================
-// 0xe260: WORD 'WE262' codep=0x224c parp=0xe262 params=0 returns=2
+// 0xe260: WORD 'WE262' codep=0x224c wordp=0xe262 params=0 returns=2
 // ================================================
 
 void WE262() // WE262
@@ -2173,7 +2173,7 @@ void WE262() // WE262
 
 
 // ================================================
-// 0xe27a: WORD 'XYCASE' codep=0x4a4f parp=0xe285
+// 0xe27a: WORD 'XYCASE' codep=0x4a4f wordp=0xe285
 // ================================================
 
 void XYCASE() // XYCASE
@@ -2194,7 +2194,7 @@ void XYCASE() // XYCASE
 }
 
 // ================================================
-// 0xe291: WORD '.COORDINATES' codep=0x224c parp=0xe293 params=0 returns=2
+// 0xe291: WORD '.COORDINATES' codep=0x224c wordp=0xe293 params=0 returns=2
 // ================================================
 
 void DrawCOORDINATES() // .COORDINATES
@@ -2245,32 +2245,32 @@ void DrawCOORDINATES() // .COORDINATES
 
 
 // ================================================
-// 0xe2f9: WORD 'XBND' codep=0x2214 parp=0xe2fb
+// 0xe2f9: WORD 'XBND' codep=0x2214 wordp=0xe2fb
 // ================================================
 // 0xe2fb: dw 0x0048
 
 // ================================================
-// 0xe2fd: WORD 'YBND' codep=0x2214 parp=0xe2ff
+// 0xe2fd: WORD 'YBND' codep=0x2214 wordp=0xe2ff
 // ================================================
 // 0xe2ff: dw 0x0078
 
 // ================================================
-// 0xe301: WORD 'XLIM' codep=0x2214 parp=0xe303
+// 0xe301: WORD 'XLIM' codep=0x2214 wordp=0xe303
 // ================================================
 // 0xe303: dw 0x00ff
 
 // ================================================
-// 0xe305: WORD 'YLIM' codep=0x2214 parp=0xe307
+// 0xe305: WORD 'YLIM' codep=0x2214 wordp=0xe307
 // ================================================
 // 0xe307: dw 0x00ff
 
 // ================================================
-// 0xe309: WORD 'SDUST' codep=0x1d29 parp=0xe30b
+// 0xe309: WORD 'SDUST' codep=0x1d29 wordp=0xe30b
 // ================================================
 // 0xe30b: db 0x07 0xc6 0x7c 0xa9 0xaa 0xbf 0x2b 0x18 0x2d 0x0a 0x13 0x4b 0x13 0x1a 0xd8 0x56 0x21 0xa4 0x5f 0x8d 0x59 0x9d 0xca 0x85 '  |   + -  K   V! _ Y   '
 
 // ================================================
-// 0xe323: WORD '>DUST' codep=0x224c parp=0xe325 params=0 returns=0
+// 0xe323: WORD '>DUST' codep=0x224c wordp=0xe325 params=0 returns=0
 // ================================================
 
 void _gt_DUST() // >DUST
@@ -2303,7 +2303,7 @@ void _gt_DUST() // >DUST
 
 
 // ================================================
-// 0xe34f: WORD '?DUST' codep=0x224c parp=0xe351 params=2 returns=2
+// 0xe34f: WORD '?DUST' codep=0x224c wordp=0xe351 params=2 returns=2
 // ================================================
 
 void IsDUST() // ?DUST
@@ -2328,7 +2328,7 @@ void IsDUST() // ?DUST
 
 
 // ================================================
-// 0xe373: WORD '(.DUST)' codep=0x224c parp=0xe375 params=2 returns=0
+// 0xe373: WORD '(.DUST)' codep=0x224c wordp=0xe375 params=2 returns=0
 // ================================================
 
 void _ro__dot_DUST_rc_() // (.DUST)
@@ -2366,7 +2366,7 @@ void _ro__dot_DUST_rc_() // (.DUST)
 
 
 // ================================================
-// 0xe3c7: WORD '.DUST' codep=0x224c parp=0xe3c9 params=0 returns=0
+// 0xe3c7: WORD '.DUST' codep=0x224c wordp=0xe3c9 params=0 returns=0
 // ================================================
 
 void DrawDUST() // .DUST
@@ -2394,7 +2394,7 @@ void DrawDUST() // .DUST
 
 
 // ================================================
-// 0xe3ed: WORD '.MVS' codep=0x224c parp=0xe3f6 params=0 returns=0
+// 0xe3ed: WORD '.MVS' codep=0x224c wordp=0xe3f6 params=0 returns=0
 // ================================================
 // entry
 
@@ -2438,7 +2438,7 @@ void DrawMVS() // .MVS
 
 
 // ================================================
-// 0xe440: WORD '.FLUX-ICON' codep=0x224c parp=0xe442
+// 0xe440: WORD '.FLUX-ICON' codep=0x224c wordp=0xe442
 // ================================================
 // orphan
 
@@ -2502,7 +2502,7 @@ void DrawFLUX_dash_ICON() // .FLUX-ICON
 
 
 // ================================================
-// 0xe4b8: WORD '?CHANGEXY' codep=0x224c parp=0xe4ba params=3 returns=3
+// 0xe4b8: WORD '?CHANGEXY' codep=0x224c wordp=0xe4ba params=3 returns=3
 // ================================================
 
 void IsCHANGEXY() // ?CHANGEXY
@@ -2527,7 +2527,7 @@ void IsCHANGEXY() // ?CHANGEXY
 
 
 // ================================================
-// 0xe4f8: WORD '(?NEWHEADXY)' codep=0x224c parp=0xe4fa
+// 0xe4f8: WORD '(?NEWHEADXY)' codep=0x224c wordp=0xe4fa
 // ================================================
 
 void _ro__ask_NEWHEADXY_rc_() // (?NEWHEADXY)
@@ -2579,7 +2579,7 @@ void _ro__ask_NEWHEADXY_rc_() // (?NEWHEADXY)
 
 
 // ================================================
-// 0xe55e: WORD '>NEWHEADXY' codep=0x224c parp=0xe560 params=3 returns=2
+// 0xe55e: WORD '>NEWHEADXY' codep=0x224c wordp=0xe560 params=3 returns=2
 // ================================================
 
 void _gt_NEWHEADXY() // >NEWHEADXY
@@ -2593,7 +2593,7 @@ void _gt_NEWHEADXY() // >NEWHEADXY
 
 
 // ================================================
-// 0xe56e: WORD '#SLOPE' codep=0x224c parp=0xe570 params=2 returns=1
+// 0xe56e: WORD '#SLOPE' codep=0x224c wordp=0xe570 params=2 returns=1
 // ================================================
 
 void _n_SLOPE() // #SLOPE
@@ -2614,7 +2614,7 @@ void _n_SLOPE() // #SLOPE
 
 
 // ================================================
-// 0xe58c: WORD '#RELXY' codep=0x224c parp=0xe58e params=4 returns=2
+// 0xe58c: WORD '#RELXY' codep=0x224c wordp=0xe58e params=4 returns=2
 // ================================================
 
 void _n_RELXY() // #RELXY
@@ -2630,7 +2630,7 @@ void _n_RELXY() // #RELXY
 
 
 // ================================================
-// 0xe59c: WORD '#QUAD' codep=0x224c parp=0xe59e params=2 returns=1
+// 0xe59c: WORD '#QUAD' codep=0x224c wordp=0xe59e params=2 returns=1
 // ================================================
 
 void _n_QUAD() // #QUAD
@@ -2670,7 +2670,7 @@ void _n_QUAD() // #QUAD
 
 
 // ================================================
-// 0xe5ec: WORD '#HEADING' codep=0x224c parp=0xe5ee params=4 returns=1
+// 0xe5ec: WORD '#HEADING' codep=0x224c wordp=0xe5ee params=4 returns=1
 // ================================================
 
 void _n_HEADING() // #HEADING
@@ -2729,12 +2729,12 @@ void _n_HEADING() // #HEADING
 
 
 // ================================================
-// 0xe65c: WORD 'HEADDXDY' codep=0x1d29 parp=0xe65e
+// 0xe65c: WORD 'HEADDXDY' codep=0x1d29 wordp=0xe65e
 // ================================================
 // 0xe65e: db 0x01 0x00 0x01 0x01 0x00 0x01 0xff 0x01 0xff 0x00 0xff 0xff 0x00 0xff 0x01 0xff '                '
 
 // ================================================
-// 0xe66e: WORD '#HEADDXDY' codep=0x224c parp=0xe670 params=1 returns=2
+// 0xe66e: WORD '#HEADDXDY' codep=0x224c wordp=0xe670 params=1 returns=2
 // ================================================
 
 void _n_HEADDXDY() // #HEADDXDY
@@ -2749,7 +2749,7 @@ void _n_HEADDXDY() // #HEADDXDY
 
 
 // ================================================
-// 0xe682: WORD '#NEXTXY' codep=0x224c parp=0xe684 params=2 returns=2
+// 0xe682: WORD '#NEXTXY' codep=0x224c wordp=0xe684 params=2 returns=2
 // ================================================
 
 void _n_NEXTXY() // #NEXTXY
@@ -2769,7 +2769,7 @@ void _n_NEXTXY() // #NEXTXY
 
 
 // ================================================
-// 0xe69e: WORD '#VECTXY' codep=0x224c parp=0xe6a0 params=4 returns=2
+// 0xe69e: WORD '#VECTXY' codep=0x224c wordp=0xe6a0 params=4 returns=2
 // ================================================
 
 void _n_VECTXY() // #VECTXY
@@ -2790,7 +2790,7 @@ void _n_VECTXY() // #VECTXY
 
 
 // ================================================
-// 0xe6bc: WORD '#DIST' codep=0x224c parp=0xe6be params=4 returns=1
+// 0xe6bc: WORD '#DIST' codep=0x224c wordp=0xe6be params=4 returns=1
 // ================================================
 
 void _n_DIST() // #DIST
@@ -2816,7 +2816,7 @@ void _n_DIST() // #DIST
 
 
 // ================================================
-// 0xe6e2: WORD '#SPEED' codep=0x224c parp=0xe6e4 params=0 returns=1
+// 0xe6e2: WORD '#SPEED' codep=0x224c wordp=0xe6e4 params=0 returns=1
 // ================================================
 
 void _n_SPEED() // #SPEED
@@ -2831,7 +2831,7 @@ void _n_SPEED() // #SPEED
 
 
 // ================================================
-// 0xe6f6: WORD '#NEWHEADXY' codep=0x224c parp=0xe6f8 params=0 returns=3
+// 0xe6f6: WORD '#NEWHEADXY' codep=0x224c wordp=0xe6f8 params=0 returns=3
 // ================================================
 
 void _n_NEWHEADXY() // #NEWHEADXY
@@ -2860,7 +2860,7 @@ void _n_NEWHEADXY() // #NEWHEADXY
 
 
 // ================================================
-// 0xe726: WORD 'DWITHIN' codep=0x224c parp=0xe728 params=6 returns=1
+// 0xe726: WORD 'DWITHIN' codep=0x224c wordp=0xe728 params=6 returns=1
 // ================================================
 
 void DWITHIN() // DWITHIN
@@ -2879,7 +2879,7 @@ void DWITHIN() // DWITHIN
 
 
 // ================================================
-// 0xe740: WORD '(-ENDURIUM)' codep=0x224c parp=0xe742 params=0 returns=0
+// 0xe740: WORD '(-ENDURIUM)' codep=0x224c wordp=0xe742 params=0 returns=0
 // ================================================
 
 void _ro__dash_ENDURIUM_rc_() // (-ENDURIUM)
@@ -2958,7 +2958,7 @@ void _ro__dash_ENDURIUM_rc_() // (-ENDURIUM)
 
 
 // ================================================
-// 0xe7ea: WORD '-ENDURIUM' codep=0x224c parp=0xe7ec params=0 returns=0
+// 0xe7ea: WORD '-ENDURIUM' codep=0x224c wordp=0xe7ec params=0 returns=0
 // ================================================
 
 void _dash_ENDURIUM() // -ENDURIUM
@@ -2971,7 +2971,7 @@ void _dash_ENDURIUM() // -ENDURIUM
 
 
 // ================================================
-// 0xe7fe: WORD 'USE-E' codep=0x224c parp=0xe808
+// 0xe7fe: WORD 'USE-E' codep=0x224c wordp=0xe808
 // ================================================
 // entry
 
@@ -3017,7 +3017,7 @@ void USE_dash_E() // USE-E
 
 
 // ================================================
-// 0xe85c: WORD '?IN-NEB' codep=0x224c parp=0xe85e params=0 returns=1
+// 0xe85c: WORD '?IN-NEB' codep=0x224c wordp=0xe85e params=0 returns=1
 // ================================================
 
 void IsIN_dash_NEB() // ?IN-NEB
@@ -3052,7 +3052,7 @@ void IsIN_dash_NEB() // ?IN-NEB
 
 
 // ================================================
-// 0xe8f0: WORD '#VES-SPEED' codep=0x224c parp=0xe8f2 params=0 returns=2
+// 0xe8f0: WORD '#VES-SPEED' codep=0x224c wordp=0xe8f2 params=0 returns=2
 // ================================================
 
 void _n_VES_dash_SPEED() // #VES-SPEED
@@ -3068,12 +3068,12 @@ void _n_VES_dash_SPEED() // #VES-SPEED
 
 
 // ================================================
-// 0xe904: WORD 'TWELVE' codep=0x2214 parp=0xe906
+// 0xe904: WORD 'TWELVE' codep=0x2214 wordp=0xe906
 // ================================================
 // 0xe906: dw 0x000c
 
 // ================================================
-// 0xe908: WORD 'CSPEED' codep=0x4a4f parp=0xe913
+// 0xe908: WORD 'CSPEED' codep=0x4a4f wordp=0xe913
 // ================================================
 
 void CSPEED() // CSPEED
@@ -3094,17 +3094,17 @@ void CSPEED() // CSPEED
 }
 
 // ================================================
-// 0xe91f: WORD '#ACC' codep=0x1d29 parp=0xe921
+// 0xe91f: WORD '#ACC' codep=0x1d29 wordp=0xe921
 // ================================================
 // 0xe921: db 0x00 0x00 '  '
 
 // ================================================
-// 0xe923: WORD 'KEYINC' codep=0x1d29 parp=0xe925
+// 0xe923: WORD 'KEYINC' codep=0x1d29 wordp=0xe925
 // ================================================
 // 0xe925: db 0x00 0x00 '  '
 
 // ================================================
-// 0xe927: WORD '!MAXSPEED' codep=0x224c parp=0xe929
+// 0xe927: WORD '!MAXSPEED' codep=0x224c wordp=0xe929
 // ================================================
 
 void StoreMAXSPEED() // !MAXSPEED
@@ -3121,7 +3121,7 @@ void StoreMAXSPEED() // !MAXSPEED
 
 
 // ================================================
-// 0xe93d: WORD '!S/A' codep=0x224c parp=0xe93f
+// 0xe93d: WORD '!S/A' codep=0x224c wordp=0xe93f
 // ================================================
 
 void StoreS_slash_A() // !S/A
@@ -3141,7 +3141,7 @@ void StoreS_slash_A() // !S/A
 
 
 // ================================================
-// 0xe95d: WORD 'ACCELERATE' codep=0x224c parp=0xe95f params=0 returns=0
+// 0xe95d: WORD 'ACCELERATE' codep=0x224c wordp=0xe95f params=0 returns=0
 // ================================================
 
 void ACCELERATE() // ACCELERATE
@@ -3173,7 +3173,7 @@ void ACCELERATE() // ACCELERATE
 
 
 // ================================================
-// 0xe999: WORD 'NEST-SETUP' codep=0x4a4f parp=0xe9a5
+// 0xe999: WORD 'NEST-SETUP' codep=0x4a4f wordp=0xe9a5
 // ================================================
 
 void NEST_dash_SETUP() // NEST-SETUP
@@ -3200,7 +3200,7 @@ void NEST_dash_SETUP() // NEST-SETUP
 }
 
 // ================================================
-// 0xe9b9: WORD 'NEST-SPACEXY' codep=0x224c parp=0xe9bb params=1 returns=0
+// 0xe9b9: WORD 'NEST-SPACEXY' codep=0x224c wordp=0xe9bb params=1 returns=0
 // ================================================
 
 void NEST_dash_SPACEXY() // NEST-SPACEXY
@@ -3226,7 +3226,7 @@ void NEST_dash_SPACEXY() // NEST-SPACEXY
 
 
 // ================================================
-// 0xe9e7: WORD 'NEST' codep=0x224c parp=0xe9f0
+// 0xe9e7: WORD 'NEST' codep=0x224c wordp=0xe9f0
 // ================================================
 
 void NEST() // NEST
@@ -3282,7 +3282,7 @@ void NEST() // NEST
 
 
 // ================================================
-// 0xea58: WORD '>ENCOUNTER' codep=0x224c parp=0xea5a params=2 returns=0
+// 0xea58: WORD '>ENCOUNTER' codep=0x224c wordp=0xea5a params=2 returns=0
 // ================================================
 
 void _gt_ENCOUNTER() // >ENCOUNTER
@@ -3307,7 +3307,7 @@ void _gt_ENCOUNTER() // >ENCOUNTER
 
 
 // ================================================
-// 0xea7e: WORD '?BOX-NEST' codep=0x224c parp=0xea80 params=2 returns=0
+// 0xea7e: WORD '?BOX-NEST' codep=0x224c wordp=0xea80 params=2 returns=0
 // ================================================
 
 void IsBOX_dash_NEST() // ?BOX-NEST
@@ -3329,7 +3329,7 @@ void IsBOX_dash_NEST() // ?BOX-NEST
 
 
 // ================================================
-// 0xeaa2: WORD 'SET-FLUX-STATE' codep=0x224c parp=0xeaa4
+// 0xeaa2: WORD 'SET-FLUX-STATE' codep=0x224c wordp=0xeaa4
 // ================================================
 
 void SET_dash_FLUX_dash_STATE() // SET-FLUX-STATE
@@ -3366,7 +3366,7 @@ void SET_dash_FLUX_dash_STATE() // SET-FLUX-STATE
 
 
 // ================================================
-// 0xead8: WORD 'JMPSHP' codep=0x224c parp=0xeae3
+// 0xead8: WORD 'JMPSHP' codep=0x224c wordp=0xeae3
 // ================================================
 // entry
 
@@ -3397,7 +3397,7 @@ void JMPSHP() // JMPSHP
 
 
 // ================================================
-// 0xeb1b: WORD '>FLUX-NODE' codep=0x224c parp=0xeb1d
+// 0xeb1b: WORD '>FLUX-NODE' codep=0x224c wordp=0xeb1d
 // ================================================
 
 void _gt_FLUX_dash_NODE() // >FLUX-NODE
@@ -3420,7 +3420,7 @@ void _gt_FLUX_dash_NODE() // >FLUX-NODE
 
 
 // ================================================
-// 0xeb47: WORD 'COLLIDE' codep=0x4a4f parp=0xeb53
+// 0xeb47: WORD 'COLLIDE' codep=0x4a4f wordp=0xeb53
 // ================================================
 
 void COLLIDE() // COLLIDE
@@ -3450,7 +3450,7 @@ void COLLIDE() // COLLIDE
 }
 
 // ================================================
-// 0xeb6b: WORD '?-*BOX' codep=0x224c parp=0xeb6d
+// 0xeb6b: WORD '?-*BOX' codep=0x224c wordp=0xeb6d
 // ================================================
 
 void Is_dash__star_BOX() // ?-*BOX
@@ -3465,7 +3465,7 @@ void Is_dash__star_BOX() // ?-*BOX
 
 
 // ================================================
-// 0xeb7d: WORD '?~C' codep=0x4a4f parp=0xeb85
+// 0xeb7d: WORD '?~C' codep=0x4a4f wordp=0xeb85
 // ================================================
 
 void Is_t_C() // ?~C
@@ -3489,7 +3489,7 @@ void Is_t_C() // ?~C
 }
 
 // ================================================
-// 0xeb95: WORD '?COLLISION' codep=0x224c parp=0xeb97
+// 0xeb95: WORD '?COLLISION' codep=0x224c wordp=0xeb97
 // ================================================
 
 void IsCOLLISION() // ?COLLISION
@@ -3577,7 +3577,7 @@ void IsCOLLISION() // ?COLLISION
 
 
 // ================================================
-// 0xec37: WORD 'WEC39' codep=0x224c parp=0xec39 params=0 returns=2
+// 0xec37: WORD 'WEC39' codep=0x224c wordp=0xec39 params=0 returns=2
 // ================================================
 
 void WEC39() // WEC39
@@ -3594,7 +3594,7 @@ void WEC39() // WEC39
 
 
 // ================================================
-// 0xec5b: WORD '?2NEST.ETC' codep=0x224c parp=0xec5d params=0 returns=1
+// 0xec5b: WORD '?2NEST.ETC' codep=0x224c wordp=0xec5d params=0 returns=1
 // ================================================
 
 void Is2NEST_dot_ETC() // ?2NEST.ETC
@@ -3640,7 +3640,7 @@ void Is2NEST_dot_ETC() // ?2NEST.ETC
 
 
 // ================================================
-// 0xeca7: WORD '?STARPORT' codep=0x224c parp=0xeca9 params=0 returns=1
+// 0xeca7: WORD '?STARPORT' codep=0x224c wordp=0xeca9 params=0 returns=1
 // ================================================
 
 void IsSTARPORT() // ?STARPORT
@@ -3703,7 +3703,7 @@ void IsSTARPORT() // ?STARPORT
 
 
 // ================================================
-// 0xed26: WORD 'UNNEST-CLEAN' codep=0x4a4f parp=0xed32
+// 0xed26: WORD 'UNNEST-CLEAN' codep=0x4a4f wordp=0xed32
 // ================================================
 
 void UNNEST_dash_CLEAN() // UNNEST-CLEAN
@@ -3730,7 +3730,7 @@ void UNNEST_dash_CLEAN() // UNNEST-CLEAN
 }
 
 // ================================================
-// 0xed46: WORD 'UNNEST-SPACEXY' codep=0x224c parp=0xed48 params=1 returns=0
+// 0xed46: WORD 'UNNEST-SPACEXY' codep=0x224c wordp=0xed48 params=1 returns=0
 // ================================================
 
 void UNNEST_dash_SPACEXY() // UNNEST-SPACEXY
@@ -3750,7 +3750,7 @@ void UNNEST_dash_SPACEXY() // UNNEST-SPACEXY
 
 
 // ================================================
-// 0xed6a: WORD '?UNNEST' codep=0x224c parp=0xed6c params=0 returns=1
+// 0xed6a: WORD '?UNNEST' codep=0x224c wordp=0xed6c params=0 returns=1
 // ================================================
 
 void IsUNNEST() // ?UNNEST
@@ -3800,7 +3800,7 @@ void IsUNNEST() // ?UNNEST
 
 
 // ================================================
-// 0xedc0: WORD '?DOUBLE-UNNEST' codep=0x224c parp=0xedc2 params=0 returns=1
+// 0xedc0: WORD '?DOUBLE-UNNEST' codep=0x224c wordp=0xedc2 params=0 returns=1
 // ================================================
 
 void IsDOUBLE_dash_UNNEST() // ?DOUBLE-UNNEST
@@ -3813,7 +3813,7 @@ void IsDOUBLE_dash_UNNEST() // ?DOUBLE-UNNEST
 
 
 // ================================================
-// 0xedd8: WORD 'UNNEST' codep=0x224c parp=0xede3
+// 0xedd8: WORD 'UNNEST' codep=0x224c wordp=0xede3
 // ================================================
 // entry
 
@@ -3873,7 +3873,7 @@ void UNNEST() // UNNEST
 
 
 // ================================================
-// 0xee51: WORD 'WEE53' codep=0x224c parp=0xee53 params=0 returns=0
+// 0xee51: WORD 'WEE53' codep=0x224c wordp=0xee53 params=0 returns=0
 // ================================================
 
 void WEE53() // WEE53
@@ -3894,7 +3894,7 @@ void WEE53() // WEE53
 
 
 // ================================================
-// 0xee7b: WORD '(GET-AUX' codep=0x224c parp=0xee87 params=0 returns=0
+// 0xee7b: WORD '(GET-AUX' codep=0x224c wordp=0xee87 params=0 returns=0
 // ================================================
 // entry
 
@@ -3907,7 +3907,7 @@ void _ro_GET_dash_AUX() // (GET-AUX
 
 
 // ================================================
-// 0xee99: WORD 'WEE9B' codep=0x224c parp=0xee9b
+// 0xee99: WORD 'WEE9B' codep=0x224c wordp=0xee9b
 // ================================================
 
 void WEE9B() // WEE9B
@@ -3933,7 +3933,7 @@ void WEE9B() // WEE9B
 
 
 // ================================================
-// 0xeec1: WORD 'FLY' codep=0x224c parp=0xeec9
+// 0xeec1: WORD 'FLY' codep=0x224c wordp=0xeec9
 // ================================================
 // entry
 
@@ -3974,7 +3974,7 @@ void FLY() // FLY
 
 
 // ================================================
-// 0xef0f: WORD 'WEF11' codep=0x224c parp=0xef11 params=2 returns=2
+// 0xef0f: WORD 'WEF11' codep=0x224c wordp=0xef11 params=2 returns=2
 // ================================================
 
 void WEF11() // WEF11
@@ -3991,7 +3991,7 @@ void WEF11() // WEF11
 
 
 // ================================================
-// 0xef2b: WORD 'SET-DESTINATION' codep=0x224c parp=0xef37
+// 0xef2b: WORD 'SET-DESTINATION' codep=0x224c wordp=0xef37
 // ================================================
 
 void SET_dash_DESTINATION() // SET-DESTINATION
@@ -4078,7 +4078,7 @@ void SET_dash_DESTINATION() // SET-DESTINATION
 
 
 // ================================================
-// 0xeff7: WORD 'SETUP-MOV' codep=0x224c parp=0xf003
+// 0xeff7: WORD 'SETUP-MOV' codep=0x224c wordp=0xf003
 // ================================================
 
 void SETUP_dash_MOV() // SETUP-MOV
@@ -4154,7 +4154,7 @@ void SETUP_dash_MOV() // SETUP-MOV
 
 
 // ================================================
-// 0xf09f: WORD 'CLEANUP-MOV' codep=0x224c parp=0xf0ab
+// 0xf09f: WORD 'CLEANUP-MOV' codep=0x224c wordp=0xf0ab
 // ================================================
 
 void CLEANUP_dash_MOV() // CLEANUP-MOV
@@ -4212,7 +4212,7 @@ void CLEANUP_dash_MOV() // CLEANUP-MOV
 
 
 // ================================================
-// 0xf119: WORD 'CHK-MOV' codep=0x224c parp=0xf125
+// 0xf119: WORD 'CHK-MOV' codep=0x224c wordp=0xf125
 // ================================================
 // entry
 
@@ -4276,7 +4276,7 @@ void CHK_dash_MOV() // CHK-MOV
 
 
 // ================================================
-// 0xf1b3: WORD 'WF1B5' codep=0x224c parp=0xf1b5
+// 0xf1b3: WORD 'WF1B5' codep=0x224c wordp=0xf1b5
 // ================================================
 
 void WF1B5() // WF1B5
@@ -4304,7 +4304,7 @@ void WF1B5() // WF1B5
 
 
 // ================================================
-// 0xf1e4: WORD '+NEST' codep=0x224c parp=0xf1ee
+// 0xf1e4: WORD '+NEST' codep=0x224c wordp=0xf1ee
 // ================================================
 // entry
 
@@ -4318,7 +4318,7 @@ void _plus_NEST() // +NEST
 
 
 // ================================================
-// 0xf1f8: WORD 'COME-HITHER' codep=0x224c parp=0xf204
+// 0xf1f8: WORD 'COME-HITHER' codep=0x224c wordp=0xf204
 // ================================================
 // entry
 

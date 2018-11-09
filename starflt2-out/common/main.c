@@ -92,7 +92,7 @@ void STARTGA(); // STARTGA
 
 
 // ================================================
-// 0xd5c0: WORD 'LET-THE' codep=0x224c parp=0xd5cc
+// 0xd5c0: WORD 'LET-THE' codep=0x224c wordp=0xd5cc
 // ================================================
 
 void LET_dash_THE() // LET-THE
