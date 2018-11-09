@@ -109,7 +109,18 @@ and the corresponding code
 
 At this time the register bx contains the word address 0x53a3. So this code just pushes the address 0x53a5 on top of the stack.  What we have done is to provide the program a pointer to a variable. The variable has the content 0x0001. The Forth word '@' would pop the address from the stack, reads its content and pushes it back on the stack.
 
-There are around a hundred of these code blocks scattered in the executable all defining the machine code for specific Forth words. All other Forth words are implemented in Forth itself. And that's actually all you need to know about the code structure.
+So far I could identify 6834 words that contain either code or data.
+
+* 3430 are words, which execute other words. I guess you can call them functions.
+* 843 16-Bit variables or data arrays. In very rare cases (~20) the data array contain x86 machine code
+* 343 data strucutre which define content of the tables (see below)
+* 299 data structures which define content of the instance tree data structure (see below)
+* 260 words contain x86 machine code
+* 206 16-Bit constants
+* 103 switch-case expressions
+* the other words are of different type
+
+And that's actually all you need to know about the code structure.
 As you can see this can be a space efficient encoding, but speedwise it is a catastrophe. Every few machine code instructions you have to jump to a different code block.
 
 The equivalent of indirect threading in C would look like this.
