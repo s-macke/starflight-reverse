@@ -1,5 +1,5 @@
 #include"global.h"
-#include"vocabulary.h"
+#include"dictionary.h"
 #include"parser.h"
 #include"utils.h"
 #include"extract.h"
@@ -14,12 +14,12 @@ void CalcConnections()
 {
   for(int i=0; i<nwords; i++)
   {
-    if (vocabulary[i].ovidx != -1) continue; // starflight.com file
-    if (vocabulary[i].codep != CODECALL) continue;
-    if (vocabulary[i].wordp == 0x84fa) continue; // MSET-CO
-    if (vocabulary[i].wordp == 0x253e) continue; // []
+    if (dictionary[i].ovidx != -1) continue; // starflight.com file
+    if (dictionary[i].codep != CODECALL) continue;
+    if (dictionary[i].wordp == 0x84fa) continue; // MSET-CO
+    if (dictionary[i].wordp == 0x253e) continue; // []
 
-    int j = vocabulary[i].wordp;
+    int j = dictionary[i].wordp;
     while(!pline[j].iswordheader && j<(FILESTAR0SIZE+0x100))
     {
       if (pline[j].word)
@@ -72,13 +72,13 @@ void WriteCallGraph()
 
       for(int i=0; i<nwords; i++)
       {
-          if (vocabulary[i].ovidx != -1) continue;
-          if (vocabulary[i].codep != CODECALL) continue;
-          if (vocabulary[i].wordp == 0x84fa) continue; // MSET-CO
-          if (vocabulary[i].wordp == 0x253e) continue; // []
-          if (vocabulary[i].nconnections > 5) continue;
+          if (dictionary[i].ovidx != -1) continue;
+          if (dictionary[i].codep != CODECALL) continue;
+          if (dictionary[i].wordp == 0x84fa) continue; // MSET-CO
+          if (dictionary[i].wordp == 0x253e) continue; // []
+          if (dictionary[i].nconnections > 5) continue;
 
-          int j = vocabulary[i].wordp;
+          int j = dictionary[i].wordp;
           while(!pline[j].iswordheader && j<(FILESTAR0SIZE+0x100))
           {
             //if (pline[j].word) printf("%s\n", GetWordNameByAddr(pline[j].word, -1));
@@ -96,14 +96,14 @@ void WriteCallGraph()
               if (e->codep == CODECALL)
               {
                 //printf("  %s\n", Forth2CString(GetWordName(e)));
-                fprintf(fp, "  %s -> ", Forth2CString(GetWordName(&vocabulary[i])));
+                fprintf(fp, "  %s -> ", Forth2CString(GetWordName(&dictionary[i])));
                 fprintf(fp, "%s;\n", Forth2CString(GetWordName(e)));
-                //fprintf(fp, "%s -- %s;\n", GetWordName(&vocabulary[i]), GetWordName(e));
+                //fprintf(fp, "%s -- %s;\n", GetWordName(&dictionary[i]), GetWordName(e));
               }
             }
             j++;
           }
-          printf("0x%04x %s %i\n", vocabulary[i].wordp, GetWordName(&vocabulary[i]), j-vocabulary[i].wordp);
+          printf("0x%04x %s %i\n", dictionary[i].wordp, GetWordName(&dictionary[i]), j-dictionary[i].wordp);
       }
 
   fprintf(fp, "}\n");

@@ -2,7 +2,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include"global.h"
-#include"vocabulary.h"
+#include"dictionary.h"
 #include"parser.h"
 #include"transpile2C.h"
 #include"extract.h"
@@ -26,7 +26,7 @@ void LoadOverlayDict(int ovidx)
         if (vocofs == 0) continue;
         ParseVocabulary(mem, vocofs - 2, 0, ovidx);
     }
-    SortVocabulary();
+    SortDictionary();
 }
 
 void ParseOverlay(int ovidx)
@@ -43,12 +43,12 @@ void ParseOverlay(int ovidx)
 
     InitParser();
 
-    SortVocabulary();
+    SortDictionary();
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortVocabulary();
+    SortDictionary();
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortVocabulary();
+    SortDictionary();
     sprintf(filename, OUTDIR"/overlays/%s", overlays[ovidx].name);
     StackAnalysis(ovidx);
     Transpile(filename, &head, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_HEADER | WRITE_EXTERN | WRITE_VARIABLES);
@@ -76,8 +76,8 @@ void ParseStarFltDict()
     ParseVocabulary(mem, DICTLIST3-2, 1, -1);
     ParseVocabulary(mem, DICTLIST4-2, 1, -1);
 
-    SortVocabulary();
-    vocabulary[nwords-1].size = FILESTAR0SIZE+0x100-vocabulary[nwords-1].wordp;
+    SortDictionary();
+    dictionary[nwords-1].size = FILESTAR0SIZE+0x100-dictionary[nwords-1].wordp;
 }
 
 void DisasStarflt()
@@ -91,12 +91,12 @@ void DisasStarflt()
 
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
-    SortVocabulary();
-    vocabulary[nwords-1].size = maxaddr-vocabulary[nwords-1].wordp;
+    SortDictionary();
+    dictionary[nwords-1].size = maxaddr-dictionary[nwords-1].wordp;
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);
-    SortVocabulary();
+    SortDictionary();
     StackAnalysis(ovidx);
     Transpile(OUTDIR"/starflt", NULL, ovidx, minaddr, maxaddr, WRITE_DICT | WRITE_VARIABLES);
 
@@ -209,11 +209,11 @@ int main()
         fflush(stdout);
         fflush(stderr);
     }
-    WriteAllVocabulary(OUTDIR"/data/vocabulary.h");
+    WriteAllDictionary(OUTDIR"/data/dictionary.h");
 #ifdef STARFLT1
     DisasmEGA();
 #endif
-    VocabularyConsistencyCheck();
+    DictionaryConsistencyCheck();
 
     //WriteCallGraph();
     return 0;

@@ -2,7 +2,7 @@
 #define PARSER_H
 #include<stdbool.h>
 
-#include"vocabulary.h"
+#include"dictionary.h"
 
 typedef enum {  NONE=0, DO=1, LOOP=2, GOTO=3, IFGOTO=4, IFEXIT=5, EXIT=6, FUNCEND=7,
                 IFNOT=8, IFELSE=9,

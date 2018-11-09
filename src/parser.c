@@ -231,13 +231,13 @@ WORD* FindClosestFunction(unsigned short int addr, int ovidx)
     WORD *result = NULL;
     for(i=0; i<nwords; i++)
     {
-        if (vocabulary[i].wordp > addr) continue;
-        if (vocabulary[i].codep != CODECALL) continue;
-        if ((vocabulary[i].ovidx != ovidx) && (vocabulary[i].ovidx != -1)) continue;
+        if (dictionary[i].wordp > addr) continue;
+        if (dictionary[i].codep != CODECALL) continue;
+        if ((dictionary[i].ovidx != ovidx) && (dictionary[i].ovidx != -1)) continue;
 
-        if (dist > (addr-vocabulary[i].wordp)) {
-            result = &vocabulary[i];
-            dist = addr-vocabulary[i].wordp;
+        if (dist > (addr-dictionary[i].wordp)) {
+            result = &dictionary[i];
+            dist = addr-dictionary[i].wordp;
         }
     }
 
@@ -761,10 +761,11 @@ void InitParser()
     memset(pline, 0, 0x10000*sizeof(LineDesc));
     for(i=0; i<nwords; i++)
     {
-        vocabulary[i].nlabel = 0;
-        vocabulary[i].nloopvars = 0;
-        vocabulary[i].nstackvariables = 0;
-        vocabulary[i].isextern = 0;
+        dictionary[i].nlabel = 0;
+        dictionary[i].nloopvars = 0;
+        dictionary[i].nstackvariables = 0;
+        dictionary[i].nconnections = 0;
+        dictionary[i].isextern = 0;
     }
 }
 
@@ -773,9 +774,9 @@ void SetWordHeader(int ovidx)
     int i, j;
     for(i=0; i<nwords; i++)
     {
-        if (vocabulary[i].ovidx != ovidx) continue;
-        for(j=vocabulary[i].addr; j<vocabulary[i].wordp; j++) pline[j].done = 1;
-        pline[vocabulary[i].wordp-2].iswordheader = TRUE;
+        if (dictionary[i].ovidx != ovidx) continue;
+        for(j=dictionary[i].addr; j<dictionary[i].wordp; j++) pline[j].done = 1;
+        pline[dictionary[i].wordp-2].iswordheader = TRUE;
     }
 }
 
@@ -784,40 +785,40 @@ void SetStructDone(int ovidx)
     int i;
     for(i=0; i<nwords; i++)
     {
-        int wordp = vocabulary[i].wordp;
-        if (vocabulary[i].ovidx != ovidx) continue;
-        if (vocabulary[i].codep == CODELOADDATA)
+        int wordp = dictionary[i].wordp;
+        if (dictionary[i].ovidx != ovidx) continue;
+        if (dictionary[i].codep == CODELOADDATA)
         {
             for(int i=0; i<=5; i++) pline[wordp+i].done = 1;
         }
-        if (vocabulary[i].codep == CODEIFIELD)
+        if (dictionary[i].codep == CODEIFIELD)
         {
             for(int i=0; i<=2; i++) pline[wordp+i].done = 1;
         }
-        if (vocabulary[i].codep == CODECONSTANT)
+        if (dictionary[i].codep == CODECONSTANT)
         {
             pline[wordp+0].done = TRUE;
             pline[wordp+1].done = TRUE;
         }
-        if (vocabulary[i].codep == CODELOADOVERLAY)
+        if (dictionary[i].codep == CODELOADOVERLAY)
         {
             pline[wordp+0].done = TRUE;
             pline[wordp+1].done = TRUE;
         }
-        if (vocabulary[i].codep == CODEEXEC)
+        if (dictionary[i].codep == CODEEXEC)
         {
             pline[wordp+0].done = TRUE;
             pline[wordp+1].done = TRUE;
         }
-        if (vocabulary[i].codep == CODEGETCOLOR)
+        if (dictionary[i].codep == CODEGETCOLOR)
         {
             pline[wordp+0].done = TRUE;
         }
-        if (vocabulary[i].codep == CODEPUSH2WORDS)
+        if (dictionary[i].codep == CODEPUSH2WORDS)
         {
             for(int i=0; i<=3; i++) pline[wordp+i].done = 1;
         }
-        if (vocabulary[i].codep == CODE2DARRAY)
+        if (dictionary[i].codep == CODE2DARRAY)
         {
             for(int i=0; i<=7; i++) pline[wordp+i].done = 1;
         }
@@ -833,19 +834,19 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
     SetStructDone(ovidx);
     for(i=0; i<nwords; i++)
     {
-        if (vocabulary[i].ovidx != ovidx) continue;
-        if (vocabulary[i].codep == CODECALL)
+        if (dictionary[i].ovidx != ovidx) continue;
+        if (dictionary[i].codep == CODECALL)
         {
             Variables vars = GetEmptyVariables();
-            ParsePartFunction(vocabulary[i].wordp, minaddr, maxaddr, &vocabulary[i], vocabulary[i].ovidx, vars);
+            ParsePartFunction(dictionary[i].wordp, minaddr, maxaddr, &dictionary[i], dictionary[i].ovidx, vars);
         }
-        if (vocabulary[i].codep == CODECASE)
+        if (dictionary[i].codep == CODECASE)
         {
-            ParseCaseFunction(minaddr, maxaddr, &vocabulary[i], vocabulary[i].ovidx);
+            ParseCaseFunction(minaddr, maxaddr, &dictionary[i], dictionary[i].ovidx);
         }
-        if (vocabulary[i].codep == CODERULE)
+        if (dictionary[i].codep == CODERULE)
         {
-            ParseRuleFunction(minaddr, maxaddr, &vocabulary[i], vocabulary[i].ovidx);
+            ParseRuleFunction(minaddr, maxaddr, &dictionary[i], dictionary[i].ovidx);
         }
     }
     SetWordHeader(ovidx);
@@ -1010,9 +1011,9 @@ void ParseAsmFunctions(int ovidx, int minaddr, int maxaddr)
     int i;
     for(i=0; i<nwords; i++)
     {
-        if ((vocabulary[i].ovidx != ovidx) && (ovidx != -1)) continue;
+        if ((dictionary[i].ovidx != ovidx) && (ovidx != -1)) continue;
         //printf("disasm dict entry %i\n", i);
-        DisasmRange(vocabulary[i].codep, 0x100000, ovidx, minaddr, maxaddr);
+        DisasmRange(dictionary[i].codep, 0x100000, ovidx, minaddr, maxaddr);
     }
     if (ovidx == -1)
     {

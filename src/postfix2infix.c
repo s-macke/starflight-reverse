@@ -130,10 +130,10 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         int i = 0;
         for(i=0; i<nwords; i++)
         {
-            if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
-            if (vocabulary[i].wordp == value)
+            if ((dictionary[i].ovidx == -1) || (dictionary[i].ovidx == currentovidx))
+            if (dictionary[i].wordp == value)
             {
-                snprintf(ret, STRINGLEN, "Push(%s); // '%s'\n", numberstring, GetWordName(&vocabulary[i]));
+                snprintf(ret, STRINGLEN, "Push(%s); // '%s'\n", numberstring, GetWordName(&dictionary[i]));
                 break;
             }
         }
@@ -213,7 +213,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
     }
     if (e->codep == CODESETVOCABULARY)
     {
-        snprintf(ret, STRINGLEN, "SetVocabulary(\"%s\");\n", s);
+        snprintf(ret, STRINGLEN, "Setdictionary(\"%s\");\n", s);
         return;
     }
     if (e->codep == CODEIFIELD)
@@ -385,12 +385,12 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
         int i = 0;
         for(i=0; i<nwords; i++)
         {
-            if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
-            if (vocabulary[i].wordp == value)
+            if ((dictionary[i].ovidx == -1) || (dictionary[i].ovidx == currentovidx))
+            if (dictionary[i].wordp == value)
             {
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);
-                fprintf(fp, "Push(%s); // '%s'\n", numberstring, GetWordName(&vocabulary[i]));
+                fprintf(fp, "Push(%s); // '%s'\n", numberstring, GetWordName(&dictionary[i]));
                 return;
             }
         }
