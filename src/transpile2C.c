@@ -130,9 +130,9 @@ void SetExtern(int ovidx, int minaddr, int maxaddr)
         if (efunc == NULL) continue;
         if (efunc->codep == CODELIT) continue;
         if (efunc->codep == CODE2LIT) continue;
-        if (efunc->parp == PARPRINT) continue;
+        if (efunc->wordp == wordpRINT) continue;
         if ((efunc->codep >= minaddr) && (efunc->codep <= maxaddr)) efunc->isextern = TRUE;
-        if ((efunc->parp >= minaddr) && (efunc->parp <= maxaddr)) continue;
+        if ((efunc->wordp >= minaddr) && (efunc->wordp <= maxaddr)) continue;
         efunc->isextern = TRUE;
     }
 }
@@ -243,32 +243,32 @@ void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
     for(i=0; i<nwords; i++)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
-        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if ((vocabulary[i].wordp < minaddr) || (vocabulary[i].wordp > maxaddr)) continue;
         if (vocabulary[i].codep != CODEPOINTER) continue;
         fprintf(fp, "const unsigned short int pp_%s = 0x%04x; // %s size: %i\n// {",
             Forth2CString(GetWordName(&vocabulary[i])),
-            vocabulary[i].parp,
+            vocabulary[i].wordp,
             GetWordName(&vocabulary[i]),
             vocabulary[i].size
         );
-        for(j=0; j<vocabulary[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(vocabulary[i].parp+j));
-        fprintf(fp, "0x%02x}\n\n", Read8(vocabulary[i].parp+j));
+        for(j=0; j<vocabulary[i].size-1 ; j++) fprintf(fp, "0x%02x, ", Read8(vocabulary[i].wordp+j));
+        fprintf(fp, "0x%02x}\n\n", Read8(vocabulary[i].wordp+j));
     }
     fprintf(fp, "\n");
     for(i=0; i<nwords; i++)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
-        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if ((vocabulary[i].wordp < minaddr) || (vocabulary[i].wordp > maxaddr)) continue;
         if (vocabulary[i].codep != CODECONSTANT) continue;
-        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), vocabulary[i].parp, GetWordName(&vocabulary[i]));
+        fprintf(fp, "const unsigned short int cc_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), vocabulary[i].wordp, GetWordName(&vocabulary[i]));
     }
     fprintf(fp, "\n");
     for(i=0; i<nwords; i++)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
-        if ((vocabulary[i].parp < minaddr) || (vocabulary[i].parp > maxaddr)) continue;
+        if ((vocabulary[i].wordp < minaddr) || (vocabulary[i].wordp > maxaddr)) continue;
         if (vocabulary[i].codep != CODEDI) continue;
-        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), Read16(vocabulary[i].parp)+REGDI, GetWordName(&vocabulary[i]));
+        fprintf(fp, "const unsigned short int user_%s = 0x%04x; // %s\n", Forth2CString(GetWordName(&vocabulary[i])), Read16(vocabulary[i].wordp)+REGDI, GetWordName(&vocabulary[i]));
     }
     fprintf(fp, "\n");
 }
@@ -279,7 +279,7 @@ void WriteVariables(FILE *fp, int ovidx, int minaddr, int maxaddr)
 
 int IsLabelStillInUse(WORD *e, int labeladdr)
 {
-    int addr = e->parp;
+    int addr = e->wordp;
     while(!ContainsFlow(&pline[addr], FUNCEND))
     {
         if (ContainsFlow(&pline[addr], IFGOTO) || ContainsFlow(&pline[addr], GOTO))
@@ -379,7 +379,7 @@ void TreatIfElseGoto(WORD *e, int ifgotoaddr)
 
 void RemoveGotos(WORD *e)
 {
-    int addr = e->parp;
+    int addr = e->wordp;
     while(!ContainsFlow(&pline[addr], FUNCEND))
     {
         if (ContainsFlow(&pline[addr], IFGOTO))
@@ -408,8 +408,8 @@ void WriteWordHeader(FILE *fp, WORD *e)
     }
     char *s = GetWordName(e);
     fprintf(fp, "\n// ================================================\n");
-    fprintf(fp, "// 0x%04x: WORD '%s' codep=0x%04x parp=0x%04x", e->addr, s, e->codep, e->parp);
-    if (e->stackin != 0xFFFF && (e->codep == CODECALL || pline[e->parp].isasm) )
+    fprintf(fp, "// 0x%04x: WORD '%s' codep=0x%04x wordp=0x%04x", e->addr, s, e->codep, e->wordp);
+    if (e->stackin != 0xFFFF && (e->codep == CODECALL || pline[e->wordp].isasm) )
     {
          fprintf(fp, " params=%i returns=%i", e->stackin, e->stackout);
     }
@@ -421,7 +421,7 @@ void WriteWordHeader(FILE *fp, WORD *e)
 int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
 {
     int j;
-    int addr = efunc->parp;
+    int addr = efunc->wordp;
     char *s = GetWordName(efunc);
     fprintf(fp, "\nvoid %s() // %s\n{\n", Forth2CString(s), s);
     for(j=0; j<8; j++)
@@ -668,54 +668,54 @@ void WriteParsedFile(FILE *fp, int ovidx, int minaddr, int maxaddr)
                 case CODELOADDATA:
                     fprintf(fp, "LoadDataType %s = {%sIDX, 0x%02x, 0x%02x, 0x%02x, 0x%04x};\n",
                     Forth2CString(s),
-                    GetDirNameByIdx(Read8(efunc->parp+0)),
-                    Read8(efunc->parp+1),
-                    Read8(efunc->parp+2),
-                    Read8(efunc->parp+3),
-                    Read16(efunc->parp+4));
+                    GetDirNameByIdx(Read8(efunc->wordp+0)),
+                    Read8(efunc->wordp+1),
+                    Read8(efunc->wordp+2),
+                    Read8(efunc->wordp+3),
+                    Read16(efunc->wordp+4));
 
-                    addr = efunc->parp+6-1;
+                    addr = efunc->wordp+6-1;
                     continue;
 
                 case CODEIFIELD:
                     fprintf(fp, "IFieldType %s = {%sIDX, 0x%02x, 0x%02x};\n",
                     Forth2CString(s),
-                    GetDirNameByIdx(Read8(efunc->parp+0)),
-                    Read8(efunc->parp+1),
-                    Read8(efunc->parp+2));
+                    GetDirNameByIdx(Read8(efunc->wordp+0)),
+                    Read8(efunc->wordp+1),
+                    Read8(efunc->wordp+2));
 
-                    addr = efunc->parp+3-1;
+                    addr = efunc->wordp+3-1;
                     continue;
 
                 case CODEEXEC:
                 case CODECONSTANT:
-                    fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->parp, Read16(efunc->parp+0));
-                    addr = efunc->parp+2-1;
+                    fprintf(fp, "// 0x%04x: dw 0x%04x\n", efunc->wordp, Read16(efunc->wordp+0));
+                    addr = efunc->wordp+2-1;
                     continue;
 
                 case CODELOADOVERLAY:
-                    fprintf(fp, "// Overlay %s = 0x%04x\n", Forth2CString(s), Read16(efunc->parp+0));
-                    addr = efunc->parp+2-1;
+                    fprintf(fp, "// Overlay %s = 0x%04x\n", Forth2CString(s), Read16(efunc->wordp+0));
+                    addr = efunc->wordp+2-1;
                     continue;
 
                 case CODEGETCOLOR:
-                    fprintf(fp, "Color %s = 0x%02x\n", Forth2CString(s), Read8(efunc->parp+0));
-                    addr = efunc->parp+1-1;
+                    fprintf(fp, "Color %s = 0x%02x\n", Forth2CString(s), Read8(efunc->wordp+0));
+                    addr = efunc->wordp+1-1;
                     continue;
 
                 case CODEPUSH2WORDS:
-                    fprintf(fp, "// 0x%04x: dw 0x%04x 0x%04x\n", efunc->parp, Read16(efunc->parp+0), Read16(efunc->parp+2));
-                    addr = efunc->parp+4-1;
+                    fprintf(fp, "// 0x%04x: dw 0x%04x 0x%04x\n", efunc->wordp, Read16(efunc->wordp+0), Read16(efunc->wordp+2));
+                    addr = efunc->wordp+4-1;
                     continue;
 
                 case CODE2DARRAY:
                     fprintf(fp, "ArrayType %s = {0x%04x, 0x%04x, 0x%04x, 0x%04x};\n",
                     Forth2CString(s),
-                    Read16(efunc->parp+0),
-                    Read16(efunc->parp+2),
-                    Read16(efunc->parp+4),
-                    Read16(efunc->parp+6));
-                    addr = efunc->parp+8-1;
+                    Read16(efunc->wordp+0),
+                    Read16(efunc->wordp+2),
+                    Read16(efunc->wordp+4),
+                    Read16(efunc->wordp+6));
+                    addr = efunc->wordp+8-1;
                     continue;
           }
         }

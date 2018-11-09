@@ -10,17 +10,17 @@
 #include"stack.h"
 #include"../emul/cpu.h"
 
-void FunctionStackAnalysis(int parp, int ovidx)
+void FunctionStackAnalysis(int wordp, int ovidx)
 {
-    WORD *dd = GetWordByAddr(parp, ovidx);
+    WORD *dd = GetWordByAddr(wordp, ovidx);
 
-    int addr = dd->parp;
+    int addr = dd->wordp;
     char *s = GetWordName(dd);
     if (dd->codep != CODECALL) return;
     if (dd->stackin != STACKINVALID) return;
     if (dd->stackout != STACKINVALID) return;
 
-    //printf("Analyze %s of ov=%i parp=0x%04x\n", GetWordName(dd), ovidx, dd->parp);
+    //printf("Analyze %s of ov=%i wordp=0x%04x\n", GetWordName(dd), ovidx, dd->wordp);
 
     int stack = 0;
     int stackmin = 0;
@@ -49,11 +49,11 @@ void FunctionStackAnalysis(int parp, int ovidx)
         {
             return;
         }
-        //printf("word %20s codep=%04x parp=%04x stack=%i in=%i out=%i \n", GetWordName(d), d->codep, d->parp, stack, d->stackin, d->stackout);
+        //printf("word %20s codep=%04x wordp=%04x stack=%i in=%i out=%i \n", GetWordName(d), d->codep, d->wordp, stack, d->stackin, d->stackout);
 
         if (d->codep == CODEEXEC)
         {
-            int par = Read16(Read16(d->parp)+REGDI);
+            int par = Read16(Read16(d->wordp)+REGDI);
             d = GetWordByAddr(par, ovidx);
             if (d == NULL)
             {
@@ -128,7 +128,7 @@ void IterateFunctions(int ovidx)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
         if ((vocabulary[i].codep == CODECALL) && (vocabulary[i].stackin != STACKINVALID)) n++;
-        FunctionStackAnalysis(vocabulary[i].parp, ovidx);
+        FunctionStackAnalysis(vocabulary[i].wordp, ovidx);
     }
 
     //printf("%i\n", n);

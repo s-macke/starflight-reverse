@@ -201,7 +201,7 @@ int GetWordInstructionLength(int addr, WORD *e, int ovidx)
     {
         return Read8(addr+2) + 3;
     }
-    if (e->parp == PARPRINT)
+    if (e->wordp == wordpRINT)
     {
         return Read8(addr+2) + 3;
     }
@@ -231,13 +231,13 @@ WORD* FindClosestFunction(unsigned short int addr, int ovidx)
     WORD *result = NULL;
     for(i=0; i<nwords; i++)
     {
-        if (vocabulary[i].parp > addr) continue;
+        if (vocabulary[i].wordp > addr) continue;
         if (vocabulary[i].codep != CODECALL) continue;
         if ((vocabulary[i].ovidx != ovidx) && (vocabulary[i].ovidx != -1)) continue;
 
-        if (dist > (addr-vocabulary[i].parp)) {
+        if (dist > (addr-vocabulary[i].wordp)) {
             result = &vocabulary[i];
-            dist = addr-vocabulary[i].parp;
+            dist = addr-vocabulary[i].wordp;
         }
     }
 
@@ -248,7 +248,7 @@ WORD* FindClosestFunction(unsigned short int addr, int ovidx)
 
     //test if there is another function in between not yet analyzed
     WORD *result2 = result;
-    for(i=result->parp; i<addr-2; i+=2) {
+    for(i=result->wordp; i<addr-2; i+=2) {
         if (Read16(i) == CODECALL) {
             result2 = GetWordByAddr(i+2, ovidx);
         }
@@ -263,10 +263,10 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 {
     int i = 0;
     int j = 0;
-    unsigned char RULEIM = Read8(d->parp+0);
-    unsigned char CONDLIM = Read8(d->parp+1);
-    unsigned char RULECNT = Read8(d->parp+2);
-    unsigned short RULEARRp = d->parp+3;
+    unsigned char RULEIM = Read8(d->wordp+0);
+    unsigned char CONDLIM = Read8(d->wordp+1);
+    unsigned char RULECNT = Read8(d->wordp+2);
+    unsigned short RULEARRp = d->wordp+3;
     unsigned short CONDARRp = RULEARRp + 2*RULEIM;
 
     // following array has size of CONDLIM
@@ -274,14 +274,14 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
     // Set by the function DISTRACT
     unsigned short CFLGARRp = CONDARRp + 2*CONDLIM;
 
-    pline[d->parp+0].done = 1;
-    pline[d->parp+1].done = 1;
-    pline[d->parp+2].done = 1;
-    pline[d->parp+0].str = malloc(STRINGLEN);
-    snprintf(pline[d->parp+0].str, STRINGLEN, "\nvoid %s() // %s rule\n{\n  int b;\n\n", Forth2CString(GetWordName(d)), GetWordName(d));
+    pline[d->wordp+0].done = 1;
+    pline[d->wordp+1].done = 1;
+    pline[d->wordp+2].done = 1;
+    pline[d->wordp+0].str = malloc(STRINGLEN);
+    snprintf(pline[d->wordp+0].str, STRINGLEN, "\nvoid %s() // %s rule\n{\n  int b;\n\n", Forth2CString(GetWordName(d)), GetWordName(d));
 
     /*
-    0xeab7: WORD 'LIFE-SIM' codep=0xb869 parp=0xeac4
+    0xeab7: WORD 'LIFE-SIM' codep=0xb869 wordp=0xeac4
     0xeac4  0x01
     0xeac5  0x03
     0xeac6  0x01  RULECNT
@@ -302,7 +302,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
     */
 
     /*
-    0xeaf8: WORD '?REDUCE-PO' codep=0xb869 parp=0xeb07
+    0xeaf8: WORD '?REDUCE-PO' codep=0xb869 wordp=0xeb07
     0xeb07  0x03
     0xeb08  0x05
             0x02  RULECNT
@@ -332,7 +332,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 
     */
 
-    //printf("0x%04x: %20s RULEIM:%2i CONDLIM:%2i RULECNT:%2i\n", d->parp, GetWordName(d), RULEIM, CONDLIM, RULECNT);
+    //printf("0x%04x: %20s RULEIM:%2i CONDLIM:%2i RULECNT:%2i\n", d->wordp, GetWordName(d), RULEIM, CONDLIM, RULECNT);
 
     for(i=0; i<RULECNT; i++)
     {
@@ -356,7 +356,7 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
         char func[STRINGLEN*2];
 
         SetWordExtern(rulep + 1, e, e->ovidx);
-        GetMacro(e->parp, e, d, func, e->ovidx);
+        GetMacro(e->wordp, e, d, func, e->ovidx);
         if (i < RULECNT-1) sprintf(ifthen, "  if (b)\n  {\n    %s  }\n\n", func);
         else sprintf(ifthen, "  if (b)\n  {\n    %s  }\n}\n\n", func);
 
@@ -396,8 +396,8 @@ void ParseRuleFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 
 void ParseCaseFunction(int minaddr, int maxaddr, WORD *d, int ovidx)
 {
-    int par = d->parp;
-    int ofs = d->parp;
+    int par = d->wordp;
+    int ofs = d->wordp;
     char *s = GetWordName(d);
     pline[ofs].str = (char*)malloc(4096);
     pline[ofs].str[0] = 0;
@@ -451,7 +451,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
         exit(1);
     }
 
-    if (offset == d->parp) // is head of function
+    if (offset == d->wordp) // is head of function
     {
         AddUnnamedVariable(&vars, d, -2);
         AddUnnamedVariable(&vars, d, -3);
@@ -493,7 +493,7 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
         // add new word which is executed to the list
         if (e->codep == CODEEXEC)
         {
-            int par = Read16(Read16(e->parp)+REGDI);
+            int par = Read16(Read16(e->wordp)+REGDI);
             GetWordNameByAddr(par, ovidx);
         }
 
@@ -774,8 +774,8 @@ void SetWordHeader(int ovidx)
     for(i=0; i<nwords; i++)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
-        for(j=vocabulary[i].addr; j<vocabulary[i].parp; j++) pline[j].done = 1;
-        pline[vocabulary[i].parp-2].iswordheader = TRUE;
+        for(j=vocabulary[i].addr; j<vocabulary[i].wordp; j++) pline[j].done = 1;
+        pline[vocabulary[i].wordp-2].iswordheader = TRUE;
     }
 }
 
@@ -784,42 +784,42 @@ void SetStructDone(int ovidx)
     int i;
     for(i=0; i<nwords; i++)
     {
-        int parp = vocabulary[i].parp;
+        int wordp = vocabulary[i].wordp;
         if (vocabulary[i].ovidx != ovidx) continue;
         if (vocabulary[i].codep == CODELOADDATA)
         {
-            for(int i=0; i<=5; i++) pline[parp+i].done = 1;
+            for(int i=0; i<=5; i++) pline[wordp+i].done = 1;
         }
         if (vocabulary[i].codep == CODEIFIELD)
         {
-            for(int i=0; i<=2; i++) pline[parp+i].done = 1;
+            for(int i=0; i<=2; i++) pline[wordp+i].done = 1;
         }
         if (vocabulary[i].codep == CODECONSTANT)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
+            pline[wordp+0].done = TRUE;
+            pline[wordp+1].done = TRUE;
         }
         if (vocabulary[i].codep == CODELOADOVERLAY)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
+            pline[wordp+0].done = TRUE;
+            pline[wordp+1].done = TRUE;
         }
         if (vocabulary[i].codep == CODEEXEC)
         {
-            pline[parp+0].done = TRUE;
-            pline[parp+1].done = TRUE;
+            pline[wordp+0].done = TRUE;
+            pline[wordp+1].done = TRUE;
         }
         if (vocabulary[i].codep == CODEGETCOLOR)
         {
-            pline[parp+0].done = TRUE;
+            pline[wordp+0].done = TRUE;
         }
         if (vocabulary[i].codep == CODEPUSH2WORDS)
         {
-            for(int i=0; i<=3; i++) pline[parp+i].done = 1;
+            for(int i=0; i<=3; i++) pline[wordp+i].done = 1;
         }
         if (vocabulary[i].codep == CODE2DARRAY)
         {
-            for(int i=0; i<=7; i++) pline[parp+i].done = 1;
+            for(int i=0; i<=7; i++) pline[wordp+i].done = 1;
         }
     }
 }
@@ -837,7 +837,7 @@ void ParseForthFunctions(int ovidx, int minaddr, int maxaddr)
         if (vocabulary[i].codep == CODECALL)
         {
             Variables vars = GetEmptyVariables();
-            ParsePartFunction(vocabulary[i].parp, minaddr, maxaddr, &vocabulary[i], vocabulary[i].ovidx, vars);
+            ParsePartFunction(vocabulary[i].wordp, minaddr, maxaddr, &vocabulary[i], vocabulary[i].ovidx, vars);
         }
         if (vocabulary[i].codep == CODECASE)
         {
@@ -895,7 +895,7 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
         {
             WORD *e = GetWordByAddr(Read16(i+2), ovidx);
             Variables vars = GetEmptyVariables();
-            ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+            ParsePartFunction(e->wordp, minaddr, maxaddr, e, e->ovidx, vars);
         }
         if ((Read16(Read16(i+2)-2)) == CODEPOINTER)
             GetWordByAddr(Read16(i+2), ovidx);
@@ -938,14 +938,14 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
                     WORD *e = GetWordByAddr(i+3+4, ovidx);
                     e->isorphan = 1;
                     Variables vars = GetEmptyVariables();
-                    ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+                    ParsePartFunction(e->wordp, minaddr, maxaddr, e, e->ovidx, vars);
                 }
                 if (Read16(i+1+6) == CODECALL)
                 {
                     WORD *e = GetWordByAddr(i+3+6, ovidx);
                     e->isorphan = 1;
                     Variables vars = GetEmptyVariables();
-                    ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+                    ParsePartFunction(e->wordp, minaddr, maxaddr, e, e->ovidx, vars);
                 }
               }
 
@@ -958,7 +958,7 @@ void FindOrphanWords(int minaddr, int maxaddr, int ovidx)
                 WORD *e = GetWordByAddr(i+3, ovidx);
                 e->isorphan = 1;
                 Variables vars = GetEmptyVariables();
-                ParsePartFunction(e->parp, minaddr, maxaddr, e, e->ovidx, vars);
+                ParsePartFunction(e->wordp, minaddr, maxaddr, e, e->ovidx, vars);
             }
             if (Read16(i+1) == CODEGETCOLOR)
             {

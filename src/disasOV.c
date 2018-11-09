@@ -77,7 +77,7 @@ void ParseStarFltDict()
     ParseVocabulary(mem, DICTLIST4-2, 1, -1);
 
     SortVocabulary();
-    vocabulary[nwords-1].size = FILESTAR0SIZE+0x100-vocabulary[nwords-1].parp;
+    vocabulary[nwords-1].size = FILESTAR0SIZE+0x100-vocabulary[nwords-1].wordp;
 }
 
 void DisasStarflt()
@@ -92,7 +92,7 @@ void DisasStarflt()
     ParseForthFunctions(ovidx, minaddr, maxaddr);
 
     SortVocabulary();
-    vocabulary[nwords-1].size = maxaddr-vocabulary[nwords-1].parp;
+    vocabulary[nwords-1].size = maxaddr-vocabulary[nwords-1].wordp;
 
     ParseAsmFunctions(ovidx, minaddr, maxaddr);
     ParseForthFunctions(ovidx, minaddr, maxaddr);

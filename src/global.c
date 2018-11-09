@@ -557,7 +557,7 @@ WORDRENAME renamewords[] =
     {0xff, 0xb503, "CONFIGURE-SYSTEM"}, // "CONFIGU"
     {0xff, 0x54a1, "1BUFADR"}, // "W54a1"
     {0xff, 0x54a5, "2BUFADR"}, // "W54a5"
-    {0xff, PARPRINT, "SET_STR_AS_PARAM"}, // "W3f3b"
+    {0xff, wordpRINT, "SET_STR_AS_PARAM"}, // "W3f3b"
     {0xff, 0xb2cb, "LFCLAIM"}, // "Wb2cb"
     {0xff, 0xb2dd, "AINSTALL"}, // "Wb2dd"
     {0xff, 0xb2ff, "BINSTALL"}, // "Wb2ff"
@@ -1041,7 +1041,7 @@ WORDRENAME renamewords[] =
     {0xff, 0xc728, "DTA_2" }, // DTA
     {0xff, 0x06ac, "KEY_1" }, // KEY
     {0xff, 0x4999, "KEY_2" }, // KEY
-    {0xff, PARPRINT, "SET_STR_AS_PARAM"}, // "W3f09"
+    {0xff, wordpRINT, "SET_STR_AS_PARAM"}, // "W3f09"
     {0xff, 0x4e13, "!OFFSETS"}, // "!OFFSET"
     {0xff, 0xb0c1, "LFCLAIM"}, // "Wb0c1"
     {0xff, 0xb0d3, "AINSTALL"}, // "Wb0d3"

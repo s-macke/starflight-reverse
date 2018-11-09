@@ -16,10 +16,10 @@ void CalcConnections()
   {
     if (vocabulary[i].ovidx != -1) continue; // starflight.com file
     if (vocabulary[i].codep != CODECALL) continue;
-    if (vocabulary[i].parp == 0x84fa) continue; // MSET-CO
-    if (vocabulary[i].parp == 0x253e) continue; // []
+    if (vocabulary[i].wordp == 0x84fa) continue; // MSET-CO
+    if (vocabulary[i].wordp == 0x253e) continue; // []
 
-    int j = vocabulary[i].parp;
+    int j = vocabulary[i].wordp;
     while(!pline[j].iswordheader && j<(FILESTAR0SIZE+0x100))
     {
       if (pline[j].word)
@@ -74,11 +74,11 @@ void WriteCallGraph()
       {
           if (vocabulary[i].ovidx != -1) continue;
           if (vocabulary[i].codep != CODECALL) continue;
-          if (vocabulary[i].parp == 0x84fa) continue; // MSET-CO
-          if (vocabulary[i].parp == 0x253e) continue; // []
+          if (vocabulary[i].wordp == 0x84fa) continue; // MSET-CO
+          if (vocabulary[i].wordp == 0x253e) continue; // []
           if (vocabulary[i].nconnections > 5) continue;
 
-          int j = vocabulary[i].parp;
+          int j = vocabulary[i].wordp;
           while(!pline[j].iswordheader && j<(FILESTAR0SIZE+0x100))
           {
             //if (pline[j].word) printf("%s\n", GetWordNameByAddr(pline[j].word, -1));
@@ -103,7 +103,7 @@ void WriteCallGraph()
             }
             j++;
           }
-          printf("0x%04x %s %i\n", vocabulary[i].parp, GetWordName(&vocabulary[i]), j-vocabulary[i].parp);
+          printf("0x%04x %s %i\n", vocabulary[i].wordp, GetWordName(&vocabulary[i]), j-vocabulary[i].wordp);
       }
 
   fprintf(fp, "}\n");

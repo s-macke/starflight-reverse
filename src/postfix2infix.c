@@ -131,7 +131,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         for(i=0; i<nwords; i++)
         {
             if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
-            if (vocabulary[i].parp == value)
+            if (vocabulary[i].wordp == value)
             {
                 snprintf(ret, STRINGLEN, "Push(%s); // '%s'\n", numberstring, GetWordName(&vocabulary[i]));
                 break;
@@ -177,7 +177,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
     }
     if (e->codep == CODELOADDATA)
     {
-        int idx = Read8(e->parp);
+        int idx = Read8(e->wordp);
         snprintf(ret, STRINGLEN, "LoadData(%s); // from '%s'\n", Forth2CString(s), GetDirNameByIdx(idx));
         return;
     }
@@ -240,7 +240,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         Push(ds);
         Push(dx);
         */
-        //snprintf(ret, STRINGLEN, "ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->parp, Read16(e->parp + 4), s);
+        //snprintf(ret, STRINGLEN, "ReadArray(Read16(0x%04x + 6), 0x%04x); // %s\n", e->wordp, Read16(e->wordp + 4), s);
         snprintf(ret, STRINGLEN, "ReadArray(%s); // %s\n", Forth2CString(s), s);
         return;
     }
@@ -256,7 +256,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
     }
     if (e->codep == CODEEXEC)
     {
-        int par = Read16(Read16(e->parp)+REGDI);
+        int par = Read16(Read16(e->wordp)+REGDI);
         snprintf(ret, STRINGLEN, "Exec(\"%s\"); // call of word 0x%04x '%s'\n",
             Forth2CString(s), par, GetWordNameByAddr(par, currentovidx));
         return;
@@ -349,7 +349,7 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
         snprintf(ret, STRINGLEN, "PRINT(\"%s\", %i); // (.\")\n", Escape(str), length);
         return;
     }
-    if (e->parp == PARPRINT)
+    if (e->wordp == wordpRINT)
     {
         int length = Read8(addr+2);
         char str[0x100];
@@ -386,7 +386,7 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
         for(i=0; i<nwords; i++)
         {
             if ((vocabulary[i].ovidx == -1) || (vocabulary[i].ovidx == currentovidx))
-            if (vocabulary[i].parp == value)
+            if (vocabulary[i].wordp == value)
             {
                 Postfix2InfixReset(fp, nspc);
                 Spc(fp, nspc);

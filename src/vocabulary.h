@@ -8,7 +8,7 @@ typedef struct WORD
     int addr;   // address of word in code
     int codep;  // code pointer
     int linkp;  // link pointer
-    int parp;   // word content pointer
+    int wordp;  // word content pointer
     int bits;   // bitfield
     char r[64]; // short name
     int size;   // probable size of the word

@@ -20,8 +20,8 @@ extern OVERLAYS overlays[];
 
 typedef struct
 {
-    int ovidx; /* the ovidx and the parp defines a word */
-    int parp;
+    int ovidx; /* the ovidx and the wordp defines a word */
+    int wordp;
     char *newword;
 
 } WORDRENAME;
@@ -39,7 +39,7 @@ extern WORDRENAME renamewords[];
     #define CODEPOINTER 0x1d29 // push pointer on stack of (probably constant) variable or pointer.
     #define CODECONSTANT 0x2214 // const variable.
     #define CODEDI 0x1792 // read constants from WORD OPERATOR
-    #define PARPRINT 0x3f3B
+    #define wordpRINT 0x3f3B
 
     #define FILESTAR0 "starflt1-in/STARFLT.COM"
     #define FILESTAR0SIZE 54183
@@ -78,7 +78,7 @@ extern WORDRENAME renamewords[];
     #define CODEPOINTER 0x1d29 // push pointer on stack of (probably constant) variable or pointer.
     #define CODECONSTANT 0x2214 // const variable.
     #define CODEDI 0x1792 // read constants from WORD OPERATOR
-    #define PARPRINT 0x3f09
+    #define wordpRINT 0x3f09
 
     #define FILESTAR0 "starflt2-in/STARFLT2.COM"
     #define FILESTAR0SIZE 54512

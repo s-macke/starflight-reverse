@@ -14,10 +14,9 @@ char* GetWordName(WORD *word)
     int i;
     for(i = 0; renamewords[i].newword != NULL; i++)
     {
-        if ((word->ovidx == (signed char)renamewords[i].ovidx) && (word->parp == renamewords[i].parp))
+        if ((word->ovidx == (signed char)renamewords[i].ovidx) && (word->wordp == renamewords[i].wordp))
             return renamewords[i].newword;
     }
-
     return word->r;
 }
 
@@ -28,14 +27,15 @@ WORD* GetWordByAddr(unsigned short addr, int ovidx)
     for(i=0; i<nwords; i++)
     {
         if ((vocabulary[i].ovidx != ovidx) && (vocabulary[i].ovidx != -1)) continue;
-        if (vocabulary[i].parp == addr) return &vocabulary[i];
+        if (vocabulary[i].wordp == addr) return &vocabulary[i];
     }
     unsigned short codep = Read16(addr-2);
     if (codep == 0x0) return NULL;
 
+    memset(&vocabulary[nwords], 0, sizeof(WORD));
     snprintf(vocabulary[nwords].r, 64, "W%04X", addr);
     vocabulary[nwords].codep = codep;
-    vocabulary[nwords].parp = addr;
+    vocabulary[nwords].wordp = addr;
     vocabulary[nwords].addr = addr-2;
     vocabulary[nwords].ovidx = ovidx;
     vocabulary[nwords].stackin = STACKINVALID;
@@ -101,17 +101,17 @@ int AddDirectory(int addr, unsigned char *mem, int decrypt, int ovidx)
     } while ((Read8(addr+2+i)&128) == 0);
     int varp = addr + i + 3;
     vocabulary[nwords].codep = (mem[varp+1]<<8) | mem[varp+0];
-    vocabulary[nwords].parp = addr+5+n;
+    vocabulary[nwords].wordp = addr+5+n;
 
     // find duplicate word labels
     /*
     for(i=0; i<nwords; i++) {
         if ((vocabulary[i].ovidx == ovidx) && (strcmp(GetWordName(&vocabulary[i]), GetWordName(&vocabulary[nwords])) == 0)) {
-            fprintf(stderr, "found duplicate:\n", ovidx, vocabulary[i].r, vocabulary[nwords].parp, vocabulary[i].parp);
+            fprintf(stderr, "found duplicate:\n", ovidx, vocabulary[i].r, vocabulary[nwords].wordp, vocabulary[i].wordp);
             fprintf(stderr, "{0x%02x, 0x%04x, \"%s_1\" }, // %s\n",
-            (unsigned char)ovidx, vocabulary[nwords].parp, GetWordName(&vocabulary[nwords]), vocabulary[nwords].r);
+            (unsigned char)ovidx, vocabulary[nwords].wordp, GetWordName(&vocabulary[nwords]), vocabulary[nwords].r);
             fprintf(stderr, "{0x%02x, 0x%04x, \"%s_2\" }, // %s\n",
-            (unsigned char)ovidx, vocabulary[i].parp, GetWordName(&vocabulary[i]), vocabulary[i].r);
+            (unsigned char)ovidx, vocabulary[i].wordp, GetWordName(&vocabulary[i]), vocabulary[i].r);
         }
     }
     */
@@ -153,12 +153,12 @@ void WriteVocabulary(unsigned char *mem, FILE *fp, int ovidx)
     {
         if (vocabulary[i].ovidx != ovidx) continue;
         fprintf(fp, "// %15s", GetWordName(&vocabulary[i]));
-        fprintf(fp, "  codep:0x%04x parp:0x%04x size:0x%04x C-string:'%s'",
-        vocabulary[i].codep, vocabulary[i].parp, vocabulary[i].size, Forth2CString(GetWordName(&vocabulary[i])));
+        fprintf(fp, "  codep:0x%04x wordp:0x%04x size:0x%04x C-string:'%s'",
+        vocabulary[i].codep, vocabulary[i].wordp, vocabulary[i].size, Forth2CString(GetWordName(&vocabulary[i])));
 /*
-        fprintf(fp, " bitfield: %i %i %i  codep:0x%04x parp:0x%04x size:0x%04x",
+        fprintf(fp, " bitfield: %i %i %i  codep:0x%04x wordp:0x%04x size:0x%04x",
         (bitfield>>7)&1, (bitfield>>6)&1, (bitfield>>5)&1,
-        vocabulary[i].codep, vocabulary[i].parp, vocabulary[i].size);
+        vocabulary[i].codep, vocabulary[i].wordp, vocabulary[i].size);
 */
         fprintf(fp, "\n");
     }
@@ -205,7 +205,7 @@ void WriteAllVocabulary(char* filename)
         fprintf(fp, "  { .ov = %2i, .code = 0x%04x, .word = 0x%04x, .name = \"%s\"",
             vocabulary[i].ovidx,
             vocabulary[i].codep,
-            vocabulary[i].parp,
+            vocabulary[i].wordp,
             escapedname);
             fprintf(fp, " },\n");
     }
@@ -221,7 +221,7 @@ cmpdictp(const void *p1, const void *p2)
     WORD *a = (WORD*)p1;
     WORD *b = (WORD*)p2;
 
-    return (a->parp-b->parp) + (a->ovidx-b->ovidx)*0x10000;
+    return (a->wordp-b->wordp) + (a->ovidx-b->ovidx)*0x10000;
 }
 
 void SortVocabulary()
@@ -233,7 +233,7 @@ void SortVocabulary()
     {
         if (vocabulary[i].ovidx == vocabulary[i+1].ovidx)
         {
-            vocabulary[i].size = vocabulary[i+1].addr - vocabulary[i].parp;
+            vocabulary[i].size = vocabulary[i+1].addr - vocabulary[i].wordp;
         } else
         {
             vocabulary[i].size = 0;
@@ -258,7 +258,7 @@ void VocabularyConsistencyCheck()
     for(int i=0; i<nwords; i++)
     for(int j=i+1; j<nwords; j++)
     {
-        if (vocabulary[i].parp == vocabulary[j].parp)
+        if (vocabulary[i].wordp == vocabulary[j].wordp)
         if (vocabulary[i].ovidx == vocabulary[j].ovidx)
         {
             fprintf(stderr, "Error: Found duplicate word\n");
