@@ -8,7 +8,7 @@ typedef struct WORD
     int addr;   // address of word in code
     int codep;  // code pointer
     int linkp;  // link pointer
-    int parp;   // parameter pointer
+    int parp;   // word content pointer
     int bits;   // bitfield
     char r[64]; // short name
     int size;   // probable size of the word
@@ -21,6 +21,7 @@ typedef struct WORD
     int nstackvariables;
     int isextern;
     int isorphan; // word seems not to be used
+    int nconnections; // used for statistics to count the number of connections to this word
 
     // stack information of this word. For word '+' stackin=2 and stackout=1
     int stackin, stackout;

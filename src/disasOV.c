@@ -214,10 +214,7 @@ int main()
     DisasmEGA();
 #endif
     VocabularyConsistencyCheck();
-/*
-    LoadSTARFLT();
-    DisasStarflt();
-    WriteCallGraph();
-*/
+
+    //WriteCallGraph();
     return 0;
 }
