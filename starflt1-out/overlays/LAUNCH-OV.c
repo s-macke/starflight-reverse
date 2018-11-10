@@ -19,8 +19,8 @@
 //       COUNTDOWN  codep:0x224c wordp:0xf09a size:0x0032 C-string:'COUNTDOWN'
 //          LAUNCH  codep:0x224c wordp:0xf0ce size:0x0042 C-string:'LAUNCH'
 //           WF112  codep:0x224c wordp:0xf112 size:0x003e C-string:'WF112'
-//           WF152  codep:0x224c wordp:0xf152 size:0x000e C-string:'WF152'
-//           WF162  codep:0x224c wordp:0xf162 size:0x005c C-string:'WF162'
+//         VSXLINE  codep:0x224c wordp:0xf152 size:0x000e C-string:'VSXLINE'
+//       .STARLINE  codep:0x224c wordp:0xf162 size:0x005c C-string:'DrawSTARLINE'
 //           WF1C0  codep:0x224c wordp:0xf1c0 size:0x001c C-string:'WF1C0'
 //           WF1DE  codep:0x224c wordp:0xf1de size:0x001c C-string:'WF1DE'
 //           WF1FC  codep:0x1d29 wordp:0xf1fc size:0x0032 C-string:'WF1FC'
@@ -284,10 +284,10 @@ void WF112() // WF112
 
 
 // ================================================
-// 0xf150: WORD 'WF152' codep=0x224c wordp=0xf152 params=1 returns=0
+// 0xf150: WORD 'VSXLINE' codep=0x224c wordp=0xf152 params=1 returns=0
 // ================================================
 
-void WF152() // WF152
+void VSXLINE() // VSXLINE
 {
   Push(4);
   SWAP(); // SWAP
@@ -298,15 +298,15 @@ void WF152() // WF152
 
 
 // ================================================
-// 0xf160: WORD 'WF162' codep=0x224c wordp=0xf162 params=1 returns=0
+// 0xf160: WORD '.STARLINE' codep=0x224c wordp=0xf162 params=1 returns=0
 // ================================================
 
-void WF162() // WF162
+void DrawSTARLINE() // .STARLINE
 {
   GetColor(BLACK);
   StoreCOLOR(); // !COLOR
   Push(Read16(regsp)); // DUP
-  WF152(); // WF152
+  VSXLINE(); // VSXLINE
   Push(0);
   Push(0x000a);
   RRND(); // RRND
@@ -358,7 +358,7 @@ void WF1C0() // WF1C0
   Push(0x00bf);
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
-  WF162(); // WF162
+  DrawSTARLINE(); // .STARLINE
 }
 
 
@@ -378,7 +378,7 @@ void WF1DE() // WF1DE
   Push(a - 1); // I 1-
   LCOPYBLK(); // LCOPYBLK
   Push(a); // R>
-  WF162(); // WF162
+  DrawSTARLINE(); // .STARLINE
 }
 
 
@@ -572,9 +572,9 @@ void WF393() // WF393
   } while(i<imax); // (LOOP)
 
   Push(0x00bf);
-  WF162(); // WF162
+  DrawSTARLINE(); // .STARLINE
   Push(0x0048);
-  WF162(); // WF162
+  DrawSTARLINE(); // .STARLINE
   BEEPOFF(); // BEEPOFF
   Push(0x00fa);
   MS(); // MS
@@ -656,9 +656,9 @@ void _and_RETURN() // &RETURN
   if (Pop() != 0)
   {
     Push(0x00bf);
-    WF152(); // WF152
+    VSXLINE(); // VSXLINE
     Push(0x0048);
-    WF152(); // WF152
+    VSXLINE(); // VSXLINE
     Push(0x7148);
     TONE(); // TONE
     BEEPON(); // BEEPON
