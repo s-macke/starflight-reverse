@@ -210,11 +210,12 @@ int main()
         fflush(stderr);
     }
     WriteAllDictionary(OUTDIR"/data/dictionary.h");
+    DictionaryConsistencyCheck();
+    //WriteCallGraph();
+
 #ifdef STARFLT1
     DisasmEGA();
 #endif
-    DictionaryConsistencyCheck();
 
-    //WriteCallGraph();
     return 0;
 }
