@@ -6,7 +6,7 @@
 
 #include"cpu.h"
 #include"graphics.h"
-#include"../starflt1-out/data/vocabulary.h"
+#include"../starflt1-out/data/dictionary.h"
 #include"../starflt1-out/data/directory.h"
 #include"../src/global.h"
 
@@ -61,9 +61,9 @@ char* FindWord(int word, int ovidx)
     int i = 0;
     do
     {
-        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
-        if (word == vocabulary[i].word) return vocabulary[i].name;
-    } while(vocabulary[++i].name != NULL);
+        if ((dictionary[i].ov != ovidx) && (dictionary[i].ov != -1)) continue;
+        if (word == dictionary[i].word) return dictionary[i].name;
+    } while(dictionary[++i].name != NULL);
     if (word == 0x0) return "";
     fprintf(stderr, "Error: Cannot find word 0x%04x\n", word);
     exit(1);
@@ -82,9 +82,9 @@ int FindWordByName(char* s, int n)
     int i = 0;
     do
     {
-        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
-        if (strcasecmp(vocabulary[i].name, temp) == 0) return vocabulary[i].word;
-    } while(vocabulary[++i].name != NULL);
+        if ((dictionary[i].ov != ovidx) && (dictionary[i].ov != -1)) continue;
+        if (strcasecmp(dictionary[i].name, temp) == 0) return dictionary[i].word;
+    } while(dictionary[++i].name != NULL);
     //fprintf(stderr, "Error: Cannot find string %s\n", s);
     return 0;
 }
@@ -139,15 +139,15 @@ int FindClosestWord(int si, int ovidx)
     int word = -1;
     do
     {
-        if ((vocabulary[i].ov != ovidx) && (vocabulary[i].ov != -1)) continue;
-        int d = si - vocabulary[i].word;
+        if ((dictionary[i].ov != ovidx) && (dictionary[i].ov != -1)) continue;
+        int d = si - dictionary[i].word;
         if (d < 0) continue;
         if (d < dist)
         {
             dist = d;
-            word = vocabulary[i].word;
+            word = dictionary[i].word;
         }
-    } while(vocabulary[++i].name != NULL);
+    } while(dictionary[++i].name != NULL);
     return word;
 }
 
