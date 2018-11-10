@@ -109,15 +109,16 @@ and the corresponding code
 
 At this time the register bx contains the word address 0x53a3. So this code just pushes the address 0x53a5 on top of the stack.  What we have done is to provide the program a pointer to a variable. The variable has the content 0x0001. The Forth word '@' would pop the address from the stack, reads its content and pushes it back on the stack.
 
-So far I could identify 6834 words that contain either code or data.
+So far I could identify 6256 words that contain either code or data.
 
-* 3430 are words, which execute other words. I guess you can call them functions.
-* 843 16-Bit variables or data arrays. In very rare cases (~20) the data array contain x86 machine code
-* 343 data strucutre which define content of the tables (see below)
-* 299 data structures which define content of the instance tree data structure (see below)
-* 260 words contain x86 machine code
-* 206 16-Bit constants
-* 103 switch-case expressions
+* 3711 are words, which execute other words. I guess you can call them functions.
+* 906 16-Bit variables or data arrays. In very rare cases (~20) the data array contains x86 machine code
+* 356 data structures which define content of the tables stored on disk (see below)
+* 346 data structures which define content of the instance tree data structure (see below)
+* 278 words contain x86 machine code
+* 235 16-Bit constants
+* 127 switch-case expressions
+* 105 words contain data structures to define the code overlays
 * the other words are of different type
 
 And that's actually all you need to know about the code structure.
