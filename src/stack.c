@@ -379,6 +379,7 @@ void StackAnalysis(int ovidx)
     Set("LFILLPOLY", 0, 0);
     Set("CAPSON", 0, 0);
     Set("PRTSCR", 0, 0);
+    //Set("WE3A6", 0, 4);
 
 #endif
 #ifdef STARFLT2

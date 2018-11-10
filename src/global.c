@@ -161,7 +161,6 @@ WORDRENAME renamewords[] =
     {0x21, 0xe6be, "#DIST"}, // We6be
     {0x21, 0xe6e4, "#SPEED"}, // We6e4
 
-
     {0x2a, 0xdfda, "VECTORERRORS"}, // "VECTOR"
     {0x2a, 0xee15, "LOAD.GAME"}, // "LOAD.G"
     {0x2a, 0xef5a, "SET.DISPLAY.MODE"}, // "SET.DI"
@@ -864,10 +863,105 @@ WORDRENAME renamewords[] =
     {0x26, 0xe01b, "inst-plan#"}, // We01b
     {0x26, 0xdff7, "volume"}, // Wdff7
 
+    {0x23, 0xf152, "VSXLINE"}, // WF152
+    {0x23, 0xf162, ".STARLINE"}, // WF152
 
-
-
-
+    {0x02, 0xe39a, "SETSCALE"}, // WE39A
+    {0x02, 0xe35a, "STD"}, // WE35A
+    {0x02, 0xe35e, "RATIO"}, // WE35e
+    {0x02, 0xe3a6, "GENANCHORS"}, // WE3A6
+    {0x02, 0xe3c0, "[RRND]"}, // WE3C0
+    {0x02, 0xe3fa, "DISPLACEMENT"}, // WE3FA
+    {0x02, 0xe356, "XYANCHOR"}, // WE356
+    {0x02, 0xe370, "X0'"}, // WE370
+    {0x02, 0xe374, "Y0'"}, // WE374
+    {0x02, 0xe364, "FNULL"}, // WE364
+    {0x02, 0xe380, "MERCATOR-RATIO"}, // WE380
+    {0x02, 0xe386, "MERCATOR-SCALE"}, // WE386
+    {0x02, 0xe541, "SETANCHORS"}, // WE541
+    {0x02, 0xe537, "!HEIGHT"}, // WE537
+    {0x02, 0xe78c, "FRACT-REGION"}, // WE78C
+    {0x02, 0xe75e, "FRACTALIZE"}, // WE75E
+    {0x02, 0xe770, "FILLARRAY"}, // WE770
+    {0x02, 0xf049, "SCRLXCON"}, // WF049
+    {0x02, 0xf08b, "SCRLYCON"}, // WF08B
+    {0x02, 0xea21, "ANCHOR_CONTOUR"}, // WEA21
+    {0x02, 0xea97, "FRACT_CONTOUR"}, // WEA97
+    {0x02, 0xefb5, "UPSCRL"}, // WEFB5
+    {0x02, 0xefd9, "DNSCRL"}, // WEFD9
+    {0x02, 0xeffb, "RTSCRL"}, // WEFFB
+    {0x02, 0xf023, "LFSCRL"}, // WF023
+    {0x02, 0xecc6, "BUILD-CONTINENTS"}, // WECC6
+    {0x02, 0xef86, "REDUCE-ALL"}, // WEF86
+    {0x02, 0xeefa, "REDUCE-FACE"}, // WEEFA
+    {0x02, 0xed85, "TAD"}, // WED85
+    {0x02, 0xed89, "#POL"}, // WED89
+    {0x02, 0xeecc, "?MCLR"}, // WEECC
+    {0x02, 0xeec2, "DROP-POLY"}, // WEEC2
+    {0x02, 0xee96, "POP-POLY"}, // WEE96
+    {0x02, 0xee65, "PUSH-POLY"}, // WEE65
+    {0x02, 0xeee5, "MAINPOLY"}, // WEEE5
+    {0x02, 0xed81, "MAINCOLOR"}, // WED81
+    {0x02, 0xed8d, "CACCUM"}, // WED8D
+    {0x02, 0xedd9, "MAJOR-COLOR"}, // WEDD9
+    {0x02, 0xed34, "+TMP"}, // WED34
+    {0x02, 0xed30, "[TMP]"}, // WED30
+    {0x02, 0xed50, "@TMP"}, // WED50
+    {0x02, 0xed62, "!TMP"}, // WED62
+    {0x02, 0xed44, "-TMP"}, // WED44
+    {0x02, 0xeb84, "POLYCOUNTER"}, // WEB84
+    {0x02, 0xead1, "+FRAME"}, // WEAD1
+    {0x02, 0xebfc, "?HOMOGENOUS"}, // WEBFC
+    {0x02, 0xeb90, "OUTPOLY"}, // WEB90
+    {0x02, 0xeb5e, "MIDPTT"}, // WEB5E
+    {0x02, 0xeb06, "@X1"}, // WEB06
+    {0x02, 0xeb20, "@Y1"}, // WEB20
+    {0x02, 0xeb0e, "@X2"}, // WEB0E
+    {0x02, 0xeb28, "@Y2"}, // WEB28
+    {0x02, 0xeb16, "@XMID"}, // WEB16
+    {0x02, 0xeb30, "@YMID"}, // WEB30
+    {0x02, 0xeadc, "-FRAME"}, // WEADC
+    {0x02, 0xeb54, "!STD"}, // WEB54
+    {0x02, 0xeb38, "@STD"}, // WEB38
+    {0x02, 0xeb42, "!XMID"}, // WEB42
+    {0x02, 0xeb4C, "!YMID"}, // WEB4C
+    {0x02, 0xeb88, "ULY"}, // WEB88
+    {0x02, 0xeb8c, "ULX"}, // WEB8C
+    {0x02, 0xeaf8, "!FRAME"}, // WEAF8
+    {0x02, 0xeaea, "@FRAME"}, // WEAEA
+    {0x02, 0xeacd, "FRAME"}, // WEACD
+    {0x02, 0xe7f7, "CONTOUR-RATIO"}, // WE7F7
+    {0x02, 0xe7fd, "CONTOUR-SCALE"}, // WE7FD
+    {0x02, 0xe801, "INIT-CONTOUR"}, // WE801
+    {0x02, 0xea37, "SUB-CON-FRACT"}, // WEA37
+    {0x02, 0xe8a1, "CONANCHOR-HOR"}, // WE8A1
+    {0x02, 0xe8f7, "CONANCHOR-VER"}, // WE8F7
+    {0x02, 0xe921, "CONANCHOR-CNT1"}, // WE921
+    {0x02, 0xe94f, "CONANCHOR-CNT2"}, // WE94F
+    {0x02, 0xe985, "CONANCHOR>CONTOUR"}, // WE985
+    {0x02, 0xe80f, "MERC>CONANCHOR"}, // WE80F
+    {0x02, 0xe979, "SETRELORIGIN"}, // WE979
+    {0x02, 0xe86f, "AV-MIDPT"}, // WE86F
+    {0x02, 0xe392, "RTEMP"}, // WE392
+    {0x02, 0xe6c2, "[FRACTAL]"}, // WE6C2
+    {0x02, 0xe6aa, "NEWSTD"}, // WE6AA
+    {0x02, 0xe691, "MIDPT"}, // WE691
+    {0x02, 0xe630, "CENTER"}, // WE630
+    {0x02, 0xe5fb, "EDGES"}, // WE5FB
+    {0x02, 0xe368, "DY>1"}, // WE368
+    {0x02, 0xe36c, "DX>1"}, // WE36C
+    {0x02, 0xe5b4, "YSHIFT"}, // WE5B4
+    {0x02, 0xe56d, "XSHIFT"}, // WE56D
+    {0x02, 0xe50f, "[!HEIGHT]"}, // WE50F
+    {0x02, 0xe38e, "RT1"}, // WE38
+    {0x02, 0xe4ef, "[A@]"}, // WE4EF
+    {0x02, 0xe37c, "OCELL"}, // WE37C
+    {0x02, 0xe378, "SCELL"}, // WE378
+    {0x02, 0xe4b9, "[ACELLADDR]"}, // WE4B9
+    {0x02, 0xe469, "[SWRAP]"}, // WE469
+    {0x02, 0xe3e0, "C+LIMIT"}, // WE3E0
+    {0x02, 0xe38a, "RT0"}, // WE38A
+    {0x02, 0xe396, "TY"}, // WE396
 
     // named by me
     {0xff, 0xbc87, "HUFF_LSCAN_INIT"}, // Wbc87
@@ -945,7 +1039,8 @@ OVERLAYS overlays[] =
 {0x0, 0x0000, NULL},
 };
 
-#else
+#else // Starflight 2
+
 
 WORDRENAME renamewords[] =
 {
