@@ -371,11 +371,9 @@ void WEE44() // WEE44
     Push(0);
     ICLOSE(); // ICLOSE
     Push(Read16(0x65e1+WEE09.offset)&0xFF); // WEE09<IFIELD> C@
-    Push(9);
-    Push(1);
 
-    i = Pop();
-    imax = Pop();
+    i = 1;
+    imax = 9;
     do // (DO)
     {
       Push(Read16(regsp)); // DUP

@@ -313,11 +313,9 @@ void WF480() // WF480
   Push(0x03e8);
   Push(pp_WF434); // WF434
   _st__ex__gt_(); // <!>
-  Push(Read16(pp_IGLOBAL)); // IGLOBAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_IGLOBAL); // IGLOBAL @
   do // (DO)
   {
     Push(i); // I

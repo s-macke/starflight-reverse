@@ -613,18 +613,14 @@ void WEC32() // WEC32
 {
   unsigned short int i, imax, j, jmax, a, b, c, d;
   Push(Read16(pp_BLTSEG)); // BLTSEG @
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
-    Push(8);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 8;
     do // (DO)
     {
       Push(Read16(pp_XLL) + j); // XLL @ I +
@@ -1568,11 +1564,9 @@ void WF25F() // WF25F
   Push(Read16(pp_Get_co_0_star_1_sc_)); // @,0*1; @
   if (Pop() == 0) return;
   BEEPON_2(); // BEEPON_2
-  Push(0x07d0);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x07d0;
   do // (DO)
   {
     Push(0);

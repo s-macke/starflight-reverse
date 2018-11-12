@@ -783,9 +783,8 @@ void WF070() // WF070
   unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -927,9 +926,8 @@ void WF12E() // WF12E
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -993,11 +991,9 @@ void WF18C() // WF18C
   WEF81(); // WEF81
   BEEPON_2(); // BEEPON_2
   WF166(); // WF166
-  Push(Read16(pp_WEDD9)); // WEDD9 @
-  Push(0x0064);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0064;
+  imax = Read16(pp_WEDD9); // WEDD9 @
   do // (DO)
   {
     Push(i); // I
@@ -1417,11 +1413,9 @@ void WF482() // WF482
   Push(0x01f4);
   Push(pp_BEEPTONE); // BEEPTONE
   Store_2(); // !_2
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     Push(0x0025);

@@ -547,11 +547,9 @@ void WEB5B() // WEB5B
 void WEBB5() // WEBB5
 {
   unsigned short int i, imax;
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(6);
@@ -815,11 +813,9 @@ void WED6A() // WED6A
     WE99E(); // WE99E
     WE9D0(); // WE9D0
     Push(1);
-    Push(0x0010);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 0x0010;
     do // (DO)
     {
       Push(Read16(regsp)); // DUP
@@ -1091,11 +1087,9 @@ void WF041() // WF041
   Push(Pop() & Read16(0x63ef+WE9FD.offset)); //  WE9FD<IFIELD> @ AND
   if (Pop() != 0)
   {
-    Push(1);
-    Push(0x0010);
 
-    i = Pop();
-    imax = Pop();
+    i = 0x0010;
+    imax = 1;
     do // (DO)
     {
       Push(i); // I
@@ -1323,11 +1317,9 @@ void WF226() // WF226
 {
   unsigned short int i, imax;
   Push2Words("NULL");
-  Push(6);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -1419,11 +1411,9 @@ void WF2FA() // WF2FA
   FILL_1(); // FILL_1
   Push(pp_IsREPAIR); // ?REPAIR
   OFF(); // OFF
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push((0x63ef+WE9DA.offset) + i); // WE9DA<IFIELD> I +

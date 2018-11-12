@@ -389,11 +389,9 @@ void WAD3F() // WAD3F
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(-1);
-  Push(Read16(pp_WAB57) * 2); // WAB57 @ 2*
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WAB57) * 2; // WAB57 @ 2*
   do // (DO)
   {
     Push(Read16(Read16(cc_WAB7B) + i)==a?1:0); // WAB7B I + @ J =

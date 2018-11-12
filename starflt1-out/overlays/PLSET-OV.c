@@ -428,11 +428,9 @@ void WED2E() // WED2E
     Push(0);
     ICLOSE(); // ICLOSE
     Push(Read16(0x63ef+WECF3.offset)&0xFF); // WECF3<IFIELD> C@
-    Push(9);
-    Push(1);
 
-    i = Pop();
-    imax = Pop();
+    i = 1;
+    imax = 9;
     do // (DO)
     {
       Push(Read16(regsp)); // DUP

@@ -295,11 +295,9 @@ void WEE70() // WEE70
   Push(pp_XORMODE); // XORMODE
   ON_3(); // ON_3
   WEE2C(); // WEE2C
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     PRINT("ATTENTION", 9); // (.")

@@ -283,11 +283,9 @@ void WE3FE() // WE3FE
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -327,11 +325,9 @@ void WE43A() // WE43A
   PAD_v_16(); // PAD|16
   Push(Pop() + 6); //  6 +
   PAD_v_16(); // PAD|16
-  Push(Read16(Pop() + 4)); //  4 + @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop() + 4); //  4 + @
   do // (DO)
   {
     Push(Read16(pp_YBLT) - i); // YBLT @ I -
@@ -342,9 +338,8 @@ void WE43A() // WE43A
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      j = Pop();
+      j = 0;
       jmax = Pop();
       do // (DO)
       {
@@ -804,11 +799,9 @@ void WE6C9() // WE6C9
   GetColor(DK_dash_BLUE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(i + 1); // I 1+
@@ -1341,11 +1334,9 @@ void WEC39() // WEC39
   CTINIT(); // CTINIT
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(3);
@@ -1684,11 +1675,9 @@ void WEFD8() // WEFD8
   CI(); // CI
   _gt_C(); // >C
   Push(1);
-  Push(0x0019);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0019;
   do // (DO)
   {
     Push(0x65e1+WE689.offset); // WE689<IFIELD>

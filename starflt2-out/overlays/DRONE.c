@@ -402,11 +402,9 @@ void WECA2() // WECA2
   MS(); // MS
   WEC90(); // WEC90
   WEC90(); // WEC90
-  Push(7);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -434,11 +432,9 @@ void WECF1() // WECF1
   if (Pop() == 0) return;
   WEC90(); // WEC90
   WEC90(); // WEC90
-  Push(0);
-  Push(5);
 
-  i = Pop();
-  imax = Pop();
+  i = 5;
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -712,11 +708,9 @@ void WEE2F() // WEE2F
 {
   unsigned short int i, imax;
   WEE19(); // WEE19
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @

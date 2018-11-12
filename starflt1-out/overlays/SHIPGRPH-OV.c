@@ -417,9 +417,8 @@ void WEF90() // WEF90
 void WF014() // WF014
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -516,11 +515,9 @@ void _ro__dot_PODS_rc_() // (.PODS)
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(1);
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(i * 3 + 0x0076); // I 3 * 0x0076 +
@@ -825,11 +822,9 @@ void WF40F() // WF40F
 {
   unsigned short int i, imax;
   WF310(); // WF310
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(0x000f);

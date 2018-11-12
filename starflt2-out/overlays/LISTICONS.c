@@ -77,11 +77,9 @@ void BLT(); // BLT
 void WF2C6() // WF2C6
 {
   unsigned short int i, imax;
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(pp_CMAP + i * 8); // CMAP I 8 * +
@@ -174,11 +172,9 @@ void WF36F() // WF36F
 void WF3E6() // WF3E6
 {
   unsigned short int i, imax;
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(Read16(regsp)); // DUP

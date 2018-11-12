@@ -518,11 +518,9 @@ void WEDB5() // WEDB5
 void WEE25() // WEE25
 {
   unsigned short int i, imax;
-  Push(0x003c);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x003c;
   do // (DO)
   {
     Push(pp_WED5D + i); // WED5D I +
@@ -595,11 +593,9 @@ void WEEBD() // WEEBD
     DARK(); // DARK
   }
   RNDCLR(); // RNDCLR
-  Push(0x003c);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x003c;
   do // (DO)
   {
     Push(i); // I
@@ -801,11 +797,9 @@ void WF078() // WF078
 void WF098() // WF098
 {
   unsigned short int i, imax;
-  Push(0x0020);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0020;
   do // (DO)
   {
     RNDCLR(); // RNDCLR
@@ -849,11 +843,9 @@ void WF0CA() // WF0CA
   _099(); // 099
   _gt_MAINVI(); // >MAINVI
   BEEPON_2(); // BEEPON_2
-  Push(0x001e);
-  Push(0x0168);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0168;
+  imax = 0x001e;
   do // (DO)
   {
     Push(i); // I

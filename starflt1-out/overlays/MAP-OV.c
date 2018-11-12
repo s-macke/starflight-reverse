@@ -410,11 +410,9 @@ void WE687() // WE687
   Push(0x0011);
   Push(0x001e);
   LLINE(); // LLINE
-  Push(0x00c7);
-  Push(0x002b);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x002b;
+  imax = 0x00c7;
   do // (DO)
   {
     Push(0x0012);
@@ -426,11 +424,9 @@ void WE687() // WE687
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Push(0x00c7);
-  Push(0x0053);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0x0053;
+  jmax = 0x00c7;
   do // (DO)
   {
     Push(0x0013);
@@ -447,11 +443,9 @@ void WE687() // WE687
   Push(0x0011);
   Push(0x001d);
   LLINE(); // LLINE
-  Push(0x009c);
-  Push(0x0019);
 
-  k = Pop();
-  kmax = Pop();
+  k = 0x0019;
+  kmax = 0x009c;
   do // (DO)
   {
     Push(k); // I
@@ -465,11 +459,9 @@ void WE687() // WE687
     if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
   } while(1); // (+LOOP)
 
-  Push(0x009c);
-  Push(0x002d);
 
-  l = Pop();
-  lmax = Pop();
+  l = 0x002d;
+  lmax = 0x009c;
   do // (DO)
   {
     Push(l); // I
@@ -667,11 +659,9 @@ void WE8A8() // WE8A8
   GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Push(0x009c);
-  Push(0x0028);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0028;
+  imax = 0x009c;
   do // (DO)
   {
     Push(i); // I
@@ -710,11 +700,9 @@ void WE8F2() // WE8F2
   GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Push(0x00c7);
-  Push(0x0055);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0055;
+  imax = 0x00c7;
   do // (DO)
   {
     Push(4);
@@ -759,9 +747,8 @@ void WE942() // WE942
   IsICONSI(); // ?ICONSI
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -797,9 +784,8 @@ void WE97E() // WE97E
   IsICONSI(); // ?ICONSI
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -927,11 +913,9 @@ void WEA70() // WEA70
   unsigned short int i, imax;
   GetColor(GREY1);
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_ILOCAL)); // ILOCAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL); // ILOCAL @
   do // (DO)
   {
     Push(i); // I
@@ -1288,11 +1272,9 @@ void WECC0() // WECC0
 void WED4C() // WED4C
 {
   unsigned short int i, imax;
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     WE818(); // WE818

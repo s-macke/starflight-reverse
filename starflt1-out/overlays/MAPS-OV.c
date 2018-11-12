@@ -660,18 +660,14 @@ void _4X4CONTOUR() // 4X4CONTOUR
 void WF007() // WF007
 {
   unsigned short int i, imax, j, jmax, a, b, c, d;
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
-    Push(8);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 8;
     do // (DO)
     {
       Push(Read16(pp_XLL) + j); // XLL @ I +

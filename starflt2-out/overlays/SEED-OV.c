@@ -881,11 +881,9 @@ void WEF94() // WEF94
 {
   unsigned short int i, imax, a;
   WEEEE(); // WEEEE
-  Push(0x005b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x005b;
   do // (DO)
   {
     WED8E(); // WED8E
@@ -1102,9 +1100,8 @@ void WF0DA() // WF0DA
     Push(0);
     SWAP(); // SWAP
     RRND(); // RRND
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1670,9 +1667,8 @@ void WF41E() // WF41E
   _099(); // 099
   WED8E(); // WED8E
   ROT(); // ROT
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1783,9 +1779,8 @@ void WF4C0() // WF4C0
   Push(!(Pop()==0?1:0) & Read16(pp_WEC42)); //  0= NOT WEC42 @ AND
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

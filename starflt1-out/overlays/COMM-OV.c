@@ -1722,11 +1722,9 @@ void WE014() // WE014
   Push(0x63ef+WD9A7.offset); // WD9A7<IFIELD>
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-  Push(0x0020);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0020;
   do // (DO)
   {
     Push((0x63ef+WD936.offset) + 1); // WD936<IFIELD> 1+
@@ -1779,11 +1777,9 @@ void WE068() // WE068
   Push(Read16(regsp)); // DUP
   Push(a); // R>
   MOD(); // MOD
-  Push(Pop() + 2); //  2+
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = Pop() + 2; //  2+
   do // (DO)
   {
     _2DUP(); // 2DUP
@@ -1934,9 +1930,8 @@ void WE160() // WE160
 {
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2105,11 +2100,9 @@ void CTSCROLL() // CTSCROLL
     Push(pp_WDADB); // WDADB
     OFF(); // OFF
   }
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(3);
@@ -5177,11 +5170,9 @@ void WF330() // WF330
   _do__ex_(); // $!
   ICLOSE(); // ICLOSE
   Push(0);
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push((0x63ef+WD9C0.offset) + i); // WD9C0<IFIELD> I +
@@ -5357,11 +5348,9 @@ void WF4C6() // WF4C6
     Push(0x63ef+WD9C0.offset); // WD9C0<IFIELD>
     Get_gt_C_plus_S(); // @>C+S
     Push(0);
-    Push((0x63ef+WD9BB.offset) + 5); // WD9BB<IFIELD> 5 +
-    Push(0x63ef+WD9BB.offset); // WD9BB<IFIELD>
 
-    i = Pop();
-    imax = Pop();
+    i = 0x63ef+WD9BB.offset; // WD9BB<IFIELD>
+    imax = (0x63ef+WD9BB.offset) + 5; // WD9BB<IFIELD> 5 +
     do // (DO)
     {
       Push(Pop() + (Read16(i)&0xFF)); //  I C@ +

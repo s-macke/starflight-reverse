@@ -647,9 +647,8 @@ void WE78A() // WE78A
   OVER(); // OVER
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1380,9 +1379,8 @@ void WEB9B() // WEB9B
   if (Pop() == 0) return;
   Push(0);
   SWAP(); // SWAP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1984,9 +1982,8 @@ void WEEE2() // WEEE2
   if (Pop() != 0)
   {
     ABS(); // ABS
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2136,11 +2133,9 @@ void WEFC4() // WEFC4
 {
   unsigned short int i, imax;
   WEDF0(); // WEDF0
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -2741,11 +2736,9 @@ void WF35C() // WF35C
 void WF37E() // WF37E
 {
   unsigned short int i, imax, a;
-  Push(Read16(pp_ILOCAL)); // ILOCAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL); // ILOCAL @
   do // (DO)
   {
     Push(i); // I

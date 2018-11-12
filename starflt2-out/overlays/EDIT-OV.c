@@ -614,9 +614,8 @@ void WEF96() // WEF96
   {
     Push(Pop() + 1); //  1+
   }
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -703,9 +702,8 @@ void WF00C() // WF00C
   WEFFC(); // WEFFC
   WEEA8(); // WEEA8
   WEF70(); // WEF70
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -831,9 +829,8 @@ void _ro_DUPL_rc_() // (DUPL)
   WEF70(); // WEF70
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -904,9 +901,8 @@ void XL() // XL
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1060,11 +1056,9 @@ void EOL() // EOL
 void PUT() // PUT
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WEE6A)); // WEE6A
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WEE6A); // WEE6A
   do // (DO)
   {
     WEE94(); // WEE94

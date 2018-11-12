@@ -656,9 +656,8 @@ void WDE7E() // WDE7E
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -682,9 +681,8 @@ void WDE7E() // WDE7E
     Pop(); // DROP
   } else
   {
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {
@@ -1067,11 +1065,9 @@ void WE1AF() // WE1AF
   imax = Pop();
   do // (DO)
   {
-    Push(0x0140);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x0140;
     do // (DO)
     {
       Push(Pop() + 1); //  1+
@@ -2069,9 +2065,8 @@ void WEA31() // WEA31
 void WEA3F() // WEA3F
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2162,11 +2157,9 @@ void WEAAD() // WEAAD
   WEA79(); // WEA79
   Push(Read16(pp__3DSEG)); // 3DSEG @
   WEA79(); // WEA79
-  Push(Read16(cc_WDF25)); // WDF25
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WDF25); // WDF25
   do // (DO)
   {
     Push(i); // I
@@ -2185,11 +2178,9 @@ void WEAAD() // WEAAD
 void WEAD7() // WEAD7
 {
   unsigned short int i, imax;
-  Push(0);
-  Push(Read16(cc_WDF25) - 1); // WDF25 1-
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(cc_WDF25) - 1; // WDF25 1-
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -2395,9 +2386,8 @@ void WEC7A() // WEC7A
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2744,11 +2734,9 @@ void WEE40() // WEE40
 void WEE50() // WEE50
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WDEFA)); // WDEFA
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WDEFA); // WDEFA
   do // (DO)
   {
     Push(i); // I
@@ -2768,11 +2756,9 @@ void WEE50() // WEE50
 void WEE66() // WEE66
 {
   unsigned short int i, imax;
-  Push(0);
-  Push(Read16(cc_WDEFA) - 1); // WDEFA 1-
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(cc_WDEFA) - 1; // WDEFA 1-
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -2934,11 +2920,9 @@ void WEF54() // WEF54
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(a); // I'
   WEF06(); // WEF06
-  Push(b); // R>
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = b; // R>
   do // (DO)
   {
     SWAP(); // SWAP
@@ -3013,18 +2997,14 @@ void WEFDD() // WEFDD
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0x0064);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0064;
   do // (DO)
   {
-    Push(0x03e8);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x03e8;
     do // (DO)
     {
       NOP(); // NOP

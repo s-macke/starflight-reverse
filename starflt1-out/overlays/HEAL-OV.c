@@ -266,11 +266,9 @@ void WF139() // WF139
 void WF147() // WF147
 {
   unsigned short int i, imax;
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -354,11 +352,9 @@ void ROLE_dash_C() // ROLE-C
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push((0x63ef+INST_dash_SIB.offset) + 0x0011); // INST-SIB<IFIELD> 0x0011 +
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -392,11 +388,9 @@ void WF23C() // WF23C
   a = Pop(); // >R
   Push(1);
   Push(pp_ROSTER); // ROSTER
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -486,11 +480,9 @@ void WF2CD() // WF2CD
   Push(!Pop()); //  NOT
   if (Pop() != 0)
   {
-    Push(6);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 6;
     do // (DO)
     {
       Push(i); // I
@@ -567,11 +559,9 @@ void DrawVITS() // .VITS
   Push(0);
   Push(1);
   WF0CE(); // WF0CE
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     GCR(); // GCR
@@ -595,9 +585,8 @@ void DrawVITS() // .VITS
       if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
       if (Pop() != 0)
       {
-        Push(0);
 
-        j = Pop();
+        j = 0;
         jmax = Pop();
         do // (DO)
         {
@@ -701,11 +690,9 @@ void WF42F() // WF42F
   Push(pp_WF42A); // WF42A
   _1_dot_5_ex_(); // 1.5!
   Push((0x63ef+INST_dash_SIB.offset) + 0x0011); // INST-SIB<IFIELD> 0x0011 +
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -791,11 +778,9 @@ void WF4C1() // WF4C1
   _gt_C(); // >C
   SET_dash_CURRENT(); // SET-CURRENT
   Push(0x63ef+WF0F0.offset); // WF0F0<IFIELD>
-  Push(6);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I

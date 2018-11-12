@@ -751,11 +751,9 @@ void WEAA0() // WEAA0
   Push(Read16(cc_WE79A)); // WE79A
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -1471,11 +1469,9 @@ void WEF47() // WEF47
 void WEF57() // WEF57
 {
   unsigned short int i, imax;
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(i); // I
@@ -1530,11 +1526,9 @@ void WEFA9() // WEFA9
 {
   unsigned short int i, imax;
   Push(0);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -1594,11 +1588,9 @@ void WEFF5() // WEFF5
   Push(4);
   Push(0);
   FILL_1(); // FILL_1
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -1971,11 +1963,9 @@ void WF23C() // WF23C
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
   LoadData(WE872); // from 'REGIONS'
-  Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = (Read16(Pop())&0xFF) + 1; //  C@ 1+
   do // (DO)
   {
     Push(i); // I
@@ -2007,11 +1997,9 @@ void WF286() // WF286
 {
   unsigned short int i, imax;
   Push(Read16(regsp)); // DUP
-  Push(Read16(Pop()) + 1); //  @ 1+
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = Read16(Pop()) + 1; //  @ 1+
   do // (DO)
   {
     WF1B5(); // WF1B5
@@ -2059,9 +2047,8 @@ void WF286() // WF286
 void WF2DA() // WF2DA
 {
   unsigned short int i, imax;
-  Push(1);
 
-  i = Pop();
+  i = 1;
   imax = Pop();
   do // (DO)
   {
@@ -2252,11 +2239,9 @@ void WF40C() // WF40C
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   IOPEN(); // IOPEN
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(Read16(cc_WE79A)); // WE79A

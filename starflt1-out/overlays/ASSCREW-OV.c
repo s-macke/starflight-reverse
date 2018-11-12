@@ -360,11 +360,9 @@ void WEB81() // WEB81
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(i); // I
@@ -616,11 +614,9 @@ void WEDF8() // WEDF8
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
   PRINT("ASSIGNMENT", 10); // (.")
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(0x009c);
@@ -789,11 +785,9 @@ void WF019() // WF019
   GetColor(WHITE);
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(3);
@@ -928,11 +922,9 @@ void WF192() // WF192
   CTINIT(); // CTINIT
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push((0x63ef+WEB68.offset) + i * 3); // WEB68<IFIELD> I 3 * +
@@ -1168,11 +1160,9 @@ void WF3D7() // WF3D7
   OFF(); // OFF
   IFIRST(); // IFIRST
   Push(0);
-  Push(0x0019);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0019;
   do // (DO)
   {
     Push(((Read16(0x63ef+WEB5E.offset)&0xFF) & 3) + 3==2?1:0); // WEB5E<IFIELD> C@ 3 AND 3 XOR 2 =
@@ -1207,11 +1197,9 @@ void WF409() // WF409
   } while(Pop() == 0);
   CDROP(); // CDROP
   ICLOSE(); // ICLOSE
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push((0x63ef+WEB68.offset) + i); // WEB68<IFIELD> I +
@@ -1273,11 +1261,9 @@ void _ro_U_dash_ASSCREW_rc_() // (U-ASSCREW)
     WF1EC(); // WF1EC
     Push2Words("*ASSIGN-CREW");
     _gt_C_plus_S(); // >C+S
-    Push(6);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 6;
     do // (DO)
     {
       Push((0x63ef+WEB68.offset) + i * 3); // WEB68<IFIELD> I 3 * +

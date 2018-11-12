@@ -656,18 +656,14 @@ void WE7F0() // WE7F0
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   Push(0);
-  Push(Read16(pp_YUR) + 1); // YUR @ 1+
-  Push(Read16(pp_YLL)); // YLL @
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_YLL); // YLL @
+  imax = Read16(pp_YUR) + 1; // YUR @ 1+
   do // (DO)
   {
-    Push(Read16(pp_XUR) + 1); // XUR @ 1+
-    Push(Read16(pp_XLL)); // XLL @
 
-    j = Pop();
-    jmax = Pop();
+    j = Read16(pp_XLL); // XLL @
+    jmax = Read16(pp_XUR) + 1; // XUR @ 1+
     do // (DO)
     {
       Push(j); // I
@@ -1895,9 +1891,8 @@ void DMSG() // DMSG
   Push(Read16(pp_YABS)); // YABS @
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   IsICONS_dash__2(); // ?ICONS-_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2313,11 +2308,9 @@ void TRAK_dash_E() // TRAK-E
   {
     Push(pp_ILOCAL); // ILOCAL
   }
-  Push(Read16(Pop()) - 1); //  @ 1-
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop()) - 1; //  @ 1-
   do // (DO)
   {
     Push(i); // I
@@ -2459,9 +2452,8 @@ void _plus_A_dash_VESS() // +A-VESS
   Push(Read16(regsp)); // DUP
   Push(pp__n_VESS); // #VESS
   _plus__ex__2(); // +!_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2552,11 +2544,9 @@ IFieldType WF42B = {STARSYSTEMIDX, 0x11, 0x01};
 void WF438() // WF438
 {
   unsigned short int i, imax;
-  Push(9);
-  Push(Read16(pp_WF430) + 1); // WF430 @ 1+
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_WF430) + 1; // WF430 @ 1+
+  imax = 9;
   do // (DO)
   {
     Push(i); // I

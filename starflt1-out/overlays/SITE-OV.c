@@ -244,11 +244,9 @@ void WEED3() // WEED3
   Store_3(); // !_3
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(Read16(pp_CMAP + i * 8)&0xFF); // CMAP I 8 * + C@
@@ -714,18 +712,14 @@ void WF290() // WF290
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("THE RED CYLINDER IS FLASHING");
   DrawTTY(); // .TTY
-  Push(0x0050);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0050;
   do // (DO)
   {
-    Push(0x0010);
-    Push(0x000c);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0x000c;
+    jmax = 0x0010;
     do // (DO)
     {
       Push((j >> 4) + j); // I 16* I +
@@ -801,18 +795,14 @@ void WF311() // WF311
   SWAP(); // SWAP
   Push(Pop() + 2); //  2+
   POS_dot_(); // POS.
-  Push(0x0050);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0050;
   do // (DO)
   {
-    Push(0x0010);
-    Push(0x000c);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0x000c;
+    jmax = 0x0010;
     do // (DO)
     {
       Push((j >> 4) + j); // I 16* I +

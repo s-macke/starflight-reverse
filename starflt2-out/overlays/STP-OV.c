@@ -607,9 +607,8 @@ void WF2F5() // WF2F5
   {
     Push(pp_WF188); // WF188
     _099(); // 099
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

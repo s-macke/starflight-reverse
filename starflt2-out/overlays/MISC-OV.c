@@ -390,11 +390,9 @@ void WEF6E() // WEF6E
   Push(pp_WEE46); // WEE46
   ON_2(); // ON_2
   SAVE_dash_OV(); // SAVE-OV
-  Push(7);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -763,11 +761,9 @@ void RSTE() // RSTE
 {
   unsigned short int i, imax;
   WEFA6(); // WEFA6
-  Push(7);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -871,11 +867,9 @@ void WF2F1() // WF2F1
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON_2(); // BEEPON_2
-  Push(9);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I

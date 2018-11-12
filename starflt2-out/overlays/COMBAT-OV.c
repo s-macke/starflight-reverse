@@ -2108,9 +2108,8 @@ void WE49A() // WE49A
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2212,22 +2211,18 @@ void WE536() // WE536
   unsigned short int i, imax, j, jmax;
   Push(Read16(pp_Get_co_0_star_1_sc_)); // @,0*1; @
   if (Pop() == 0) return;
-  Push(0x03e8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x03e8;
   do // (DO)
   {
     BEEPON_2(); // BEEPON_2
     Push(i); // I
     TONE(); // TONE
     DISPLAY(); // DISPLAY
-    Push(0x000c * Read16(cc_MPS)); // 0x000c MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x000c * Read16(cc_MPS); // 0x000c MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -2279,11 +2274,9 @@ void WE572() // WE572
     Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
-    Push(3 * Read16(cc_MPS)); // 3 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3 * Read16(cc_MPS); // 3 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -2373,9 +2366,8 @@ void WE61A() // WE61A
   OVER(); // OVER
   a = Pop(); // >R
   SWAP(); // SWAP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2648,9 +2640,8 @@ void WE7A8() // WE7A8
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      i = Pop();
+      i = 0;
       imax = Pop();
       do // (DO)
       {
@@ -3075,9 +3066,8 @@ void WEA5E() // WEA5E
   Push(2 * Read16(cc_MPS)); // 2 MPS *
   Push(5);
   MAX(); // MAX
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -3116,11 +3106,9 @@ void WEA90() // WEA90
   Push(pp_WEA2C); // WEA2C
   _2_at_(); // 2@
   WLD_gt_SCR(); // WLD>SCR
-  Push(4);
-  Push(-3);
 
-  i = Pop();
-  imax = Pop();
+  i = -3;
+  imax = 4;
   do // (DO)
   {
     _2OVER(); // 2OVER
@@ -3216,21 +3204,17 @@ void WEB45() // WEB45
   unsigned short int i, imax, j, jmax;
   Push(Read16(pp_Get_co_0_star_1_sc_)); // @,0*1; @
   if (Pop() == 0) return;
-  Push(0);
-  Push(0x03e8);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x03e8;
+  imax = 0;
   do // (DO)
   {
     BEEPON_2(); // BEEPON_2
     Push(i); // I
     TONE(); // TONE
-    Push(0x00c8 * Read16(cc_MPS)); // 0x00c8 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x00c8 * Read16(cc_MPS); // 0x00c8 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -3868,11 +3852,9 @@ void WEE8F() // WEE8F
   RRND(); // RRND
   _gt_FLAG(); // >FLAG
   Push(Pop() & Pop()); // AND
-  Push(Read16(pp_ILOCAL) - 1); // ILOCAL @ 1-
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL) - 1; // ILOCAL @ 1-
   do // (DO)
   {
     Push(i); // I
@@ -4341,9 +4323,8 @@ void WF1CA() // WF1CA
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

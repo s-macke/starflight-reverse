@@ -440,11 +440,9 @@ void WF01C() // WF01C
 {
   unsigned short int i, imax;
   Push(-1);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I

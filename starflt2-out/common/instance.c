@@ -187,9 +187,8 @@ void ICLOSE() // ICLOSE
 void _star_CLOSE() // *CLOSE
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -405,9 +404,8 @@ void W7B50() // W7B50
   Push(Read16(pp_W56E0)); // W56E0 @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

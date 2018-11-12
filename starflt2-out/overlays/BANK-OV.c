@@ -295,11 +295,9 @@ void TRANSACT() // TRANSACT
     _star_CREATE(); // *CREATE
     IFIRST(); // IFIRST
     Push(0);
-    Push(9);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 9;
     do // (DO)
     {
       INEXT(); // INEXT
@@ -549,11 +547,9 @@ void WF27F() // WF27F
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   ON_2(); // ON_2
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     Push(1 + i); // 1 I +

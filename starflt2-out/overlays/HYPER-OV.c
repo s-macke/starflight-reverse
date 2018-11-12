@@ -1779,11 +1779,9 @@ void DrawAUXSYS() // .AUXSYS
   WDFD5(); // WDFD5
   Push(Read16(0x65e1+WDA6E.offset)&0xFF); // WDA6E<IFIELD> C@
   IOPEN(); // IOPEN
-  Push(9);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I
@@ -2210,11 +2208,9 @@ void WE23B() // WE23B
 void WE2D7() // WE2D7
 {
   unsigned short int i, imax;
-  Push(pp_WE2BD + 0x0018); // WE2BD 0x0018 +
-  Push(pp_WE2BD); // WE2BD
 
-  i = Pop();
-  imax = Pop();
+  i = pp_WE2BD; // WE2BD
+  imax = pp_WE2BD + 0x0018; // WE2BD 0x0018 +
   do // (DO)
   {
     Push(0);
@@ -2308,11 +2304,9 @@ void WE37B() // WE37B
   unsigned short int i, imax;
   GetColor(GREY1);
   StoreCOLOR(); // !COLOR
-  Push(pp_WE2BD + 0x0021); // WE2BD 0x0021 +
-  Push(pp_WE2BD); // WE2BD
 
-  i = Pop();
-  imax = Pop();
+  i = pp_WE2BD; // WE2BD
+  imax = pp_WE2BD + 0x0021; // WE2BD 0x0021 +
   do // (DO)
   {
     Push(Read16(i)&0xFF); // I C@
@@ -2408,11 +2402,9 @@ void WE3F6() // WE3F6
     Push(6);
     Push(0x0064);
     _star__slash_(); // */
-    Push(Pop() + 1); //  1+
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = Pop() + 1; //  1+
     do // (DO)
     {
       _2DUP(); // 2DUP
@@ -3458,9 +3450,8 @@ void WEB1A() // WEB1A
   IsICONS_dash__2(); // ?ICONS-_2
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -3593,9 +3584,8 @@ void WEBDB() // WEBDB
     Push2Words("NULL");
     Push(pp_WDA14); // WDA14
     _1_dot_5_ex__2(); // 1.5!_2
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -3874,9 +3864,8 @@ void WEDB8() // WEDB8
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      i = Pop();
+      i = 0;
       imax = Pop();
       do // (DO)
       {

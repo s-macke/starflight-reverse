@@ -150,11 +150,9 @@ void WF3A0() // WF3A0
 void WF406() // WF406
 {
   unsigned short int i, imax;
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(pp_WF356 + i); // WF356 I +
@@ -220,11 +218,9 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   {
     DARK(); // DARK
   }
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(i); // I
@@ -257,11 +253,9 @@ void FLUX() // FLUX
   Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
-  Push(0x0096);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0096;
   do // (DO)
   {
     HYPER_dash_FRAME(); // HYPER-FRAME
@@ -287,11 +281,9 @@ void WF4E5() // WF4E5
   {
     DARK(); // DARK
   }
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     RNDCLR(); // RNDCLR
@@ -321,11 +313,9 @@ void JUMPFX() // JUMPFX
   Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
-  Push(Pop() * 2); //  2*
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Pop() * 2; //  2*
   do // (DO)
   {
     WF4E5(); // WF4E5

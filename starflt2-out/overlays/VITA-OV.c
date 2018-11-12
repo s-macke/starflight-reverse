@@ -609,11 +609,9 @@ void WF440() // WF440
   Push(Read16(cc_WF18A)); // WF18A
   Push(pp_FILE_n_); // FILE#
   Store_2(); // !_2
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I

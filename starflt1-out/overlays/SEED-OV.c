@@ -670,11 +670,9 @@ void WEE91() // WEE91
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
   Push(0);
-  Push(Read16(pp_PLHI)); // PLHI @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_PLHI); // PLHI @
   do // (DO)
   {
     Push(i); // I
@@ -997,9 +995,8 @@ void WF079() // WF079
   LoadData(WEC5A); // from 'REGIONS'
   Push(Read16(Pop())&0xFF); //  C@
   SWAP(); // SWAP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1011,11 +1008,9 @@ void WF079() // WF079
     {
       b = Pop(); // >R
       WF02B(); // WF02B
-      Push(b); // R>
-      Push(0);
 
-      j = Pop();
-      jmax = Pop();
+      j = 0;
+      jmax = b; // R>
       do // (DO)
       {
         WEE4D(); // WEE4D
@@ -1205,9 +1200,8 @@ void WF1C1() // WF1C1
     Push(0);
     SWAP(); // SWAP
     RRND(); // RRND
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

@@ -169,11 +169,9 @@ void MESSPREFIX() // MESSPREFIX
   unsigned short int i, imax;
   _gt_MAINVIEW(); // >MAINVIEW
   _gt_2FONT(); // >2FONT
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     Push(Read16(cc_HIBEEP)); // HIBEEP
@@ -304,9 +302,8 @@ void DrawPHRASES() // .PHRASES
   _dash_(); // -
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -518,11 +515,9 @@ void DrawBOMBMESS() // .BOMBMESS
   DrawTTY(); // .TTY
   SET_STR_AS_PARAM("THE BLACK EGG... ");
   DrawTTY(); // .TTY
-  Push(1);
-  Push(5);
 
-  i = Pop();
-  imax = Pop();
+  i = 5;
+  imax = 1;
   do // (DO)
   {
     Push(i); // I
@@ -564,11 +559,9 @@ void EXPLOSION() // EXPLOSION
   unsigned short int i, imax, j, jmax;
   SET_STR_AS_PARAM("BOOM!");
   DrawTTY(); // .TTY
-  Push(3 * Read16(cc_MPS)); // 3 MPS *
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3 * Read16(cc_MPS); // 3 MPS *
   do // (DO)
   {
     GetColor(BLACK);
@@ -581,11 +574,9 @@ void EXPLOSION() // EXPLOSION
     GetColor(WHITE);
     GetColor(YELLOW);
     GetColor(WHITE);
-    Push(0x000a);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x000a;
     do // (DO)
     {
       FLASHCOLOR(); // FLASHCOLOR

@@ -661,9 +661,8 @@ void OVTRIMS() // OVTRIMS
 {
   unsigned short int i, imax;
   LoadOverlay(MISC_dash_OV); // MISC-OV
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

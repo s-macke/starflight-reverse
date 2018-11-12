@@ -1181,11 +1181,9 @@ void WE921() // WE921
   WE2FA(); // WE2FA
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -1681,11 +1679,9 @@ void WECFC() // WECFC
   Push(Read16(pp_WLEFT)); // WLEFT @
   Push(Read16(pp_WTOP) - 0x000e); // WTOP @ 0x000e -
   POS_dot_(); // POS.
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     LoadData(WE383); // from 'ANALYZE_TEXT'
@@ -2101,9 +2097,8 @@ void WF0AA() // WF0AA
   {
     SAVE_dash_SCR(); // SAVE-SCR
     _gt_HIDDEN(); // >HIDDEN
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

@@ -591,18 +591,14 @@ void WE0AB() // WE0AB
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   Push(0);
-  Push(Read16(pp_YUR) + 1); // YUR @ 1+
-  Push(Read16(pp_YLL)); // YLL @
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_YLL); // YLL @
+  imax = Read16(pp_YUR) + 1; // YUR @ 1+
   do // (DO)
   {
-    Push(Read16(pp_XUR) + 1); // XUR @ 1+
-    Push(Read16(pp_XLL)); // XLL @
 
-    j = Pop();
-    jmax = Pop();
+    j = Read16(pp_XLL); // XLL @
+    jmax = Read16(pp_XUR) + 1; // XUR @ 1+
     do // (DO)
     {
       Push(j); // I
@@ -820,11 +816,9 @@ void WE213() // WE213
 {
   unsigned short int i, imax;
   Push2Words("NULL");
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push(Read16(((0x65e1+WE008.offset) + i) + 1)&0xFF); // WE008<IFIELD> I + 1+ C@
@@ -1110,11 +1104,9 @@ void WE448() // WE448
 {
   unsigned short int i, imax;
   SWAP(); // SWAP
-  Push(Pop() + 0x008f); //  0x008f +
-  Push(0x008f);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x008f;
+  imax = Pop() + 0x008f; //  0x008f +
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -1143,9 +1135,8 @@ void WE46C() // WE46C
   Push(0x00a8);
   SWAP(); // SWAP
   _dash_(); // -
-  Push(0x00a7);
 
-  i = Pop();
+  i = 0x00a7;
   imax = Pop();
   do // (DO)
   {
@@ -1292,9 +1283,8 @@ void WE573() // WE573
 void WE58D() // WE58D
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1546,9 +1536,8 @@ void WE79E() // WE79E
   WE780(); // WE780
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1575,9 +1564,8 @@ void WE7BA() // WE7BA
   _dash_(); // -
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1605,9 +1593,8 @@ void WE7DE() // WE7DE
   Push(pp_WE746); // WE746
   Push(pp_ABLT); // ABLT
   Store_2(); // !_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1635,9 +1622,8 @@ void WE804() // WE804
   Push(pp_WE74A); // WE74A
   Push(pp_ABLT); // ABLT
   Store_2(); // !_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1687,11 +1673,9 @@ void WE84C() // WE84C
   PAD_v_16(); // PAD|16
   Push(Pop() + 6); //  6 +
   PAD_v_16(); // PAD|16
-  Push(Read16(Pop() + 4)); //  4 + @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop() + 4); //  4 + @
   do // (DO)
   {
     Push(Read16(pp_YBLT) - i); // YBLT @ I -
@@ -1702,9 +1686,8 @@ void WE84C() // WE84C
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      j = Pop();
+      j = 0;
       jmax = Pop();
       do // (DO)
       {
@@ -1767,11 +1750,9 @@ void WE8C0() // WE8C0
     GetRECORD(); // @RECORD
     Push(Pop() + 7); //  7 +
     Push(0);
-    Push(7);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 7;
     do // (DO)
     {
       OVER(); // OVER
@@ -2026,11 +2007,9 @@ void WEABC() // WEABC
   Push(0);
   TONE(); // TONE
   BEEPON_2(); // BEEPON_2
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(0xfffb);
@@ -2078,9 +2057,8 @@ void WEABC() // WEABC
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {
@@ -2463,11 +2441,9 @@ void WEDAE() // WEDAE
   Get_gt_C_plus_S(); // @>C+S
   SET_STR_AS_PARAM("LITHOSPHERE");
   WED6D(); // WED6D
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     LoadData(WE09B); // from 'PLANET'
@@ -2544,11 +2520,9 @@ void WEE8F() // WEE8F
       Push(6);
       WED4D(); // WED4D
     }
-    Push(3);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 3;
     do // (DO)
     {
       Push(0);
@@ -2717,9 +2691,8 @@ void WEFB2() // WEFB2
   {
     Push(0x0096);
     MAX(); // MAX
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2960,11 +2933,9 @@ void WF20E() // WF20E
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push(i); // I
@@ -3030,11 +3001,9 @@ void WF268() // WF268
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push(i); // I
@@ -3440,16 +3409,14 @@ void WF4E7() // WF4E7
   WE2C9(); // WE2C9
   Push(Read16(0x65e1+WE003.offset) * 2); // WE003<IFIELD> @ 2*
   Push(Read16(regsp)); // DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {

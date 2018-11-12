@@ -576,11 +576,9 @@ void WRITE_dash_PHRASE() // WRITE-PHRASE
   Push(pp_PHRASE_dash_MEM); // PHRASE-MEM
   Push(pp_PM_dash_PTR); // PM-PTR
   _st__ex__gt_(); // <!>
-  Push(Read16(pp_LINE_dash_COUNT)); // LINE-COUNT @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_LINE_dash_COUNT); // LINE-COUNT @
   do // (DO)
   {
     Push(Read16(pp_PM_dash_PTR)); // PM-PTR @
@@ -802,9 +800,8 @@ void WE0DD() // WE0DD
   OVER(); // OVER
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1505,9 +1502,8 @@ void _1_do__eq_() // 1$=
   LoadData(SPEC_dash_NAME); // from 'SPECIMEN'
   Push(3);
   PICK(); // PICK
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1586,11 +1582,9 @@ void _do_match() // $match
   Push(0x0028);
   Push(pp_FILE_n_); // FILE#
   _st__ex__gt_(); // <!>
-  Push(0x0040);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 0x0040;
   do // (DO)
   {
     Push(i); // I
@@ -2300,9 +2294,8 @@ void Isdeposited() // ?deposited
   if (Pop() == 0) return;
   Push(0);
   SWAP(); // SWAP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2392,11 +2385,9 @@ LoadDataType art_dash_text = {ARTIFACTIDX, 0x18, 0x01, 0x1e, 0x652c};
 void arttalk() // arttalk
 {
   unsigned short int i, imax;
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -3046,9 +3037,8 @@ void WEEE4() // WEEE4
   if (Pop() != 0)
   {
     ABS(); // ABS
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -3203,11 +3193,9 @@ void WEFD4() // WEFD4
 {
   unsigned short int i, imax;
   WEE00(); // WEE00
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -3793,11 +3781,9 @@ void WF36A() // WF36A
   Push(0x7d00);
   Push(pp_ELEM_dash_AM); // ELEM-AM
   _st__ex__gt_(); // <!>
-  Push(Read16(pp_ILOCAL)); // ILOCAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL); // ILOCAL @
   do // (DO)
   {
     Push(i); // I

@@ -879,9 +879,8 @@ void WEE99() // WEE99
   WEE31(); // WEE31
   Push2Words("*4SALE");
   WEE57(); // WEE57
-  Push(1);
 
-  i = Pop();
+  i = 1;
   imax = Pop();
   do // (DO)
   {
@@ -966,11 +965,9 @@ void WEF03() // WEF03
   LoadData(WEBC6); // from 'TRADERS'
   Push(Read16((Read16(Pop())&0xFF) + pp_WEE2A)&0xFF); //  C@ WEE2A + C@
   ICLOSE(); // ICLOSE
-  Push(0x0018);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 0x0018;
   do // (DO)
   {
     WEE3F(); // WEE3F
@@ -1091,9 +1088,8 @@ void WEFAD() // WEFAD
   {
     Push(Pop() + 1); //  1+
   }
-  Push(1);
 
-  i = Pop();
+  i = 1;
   imax = Pop();
   do // (DO)
   {

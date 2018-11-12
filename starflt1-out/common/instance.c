@@ -411,9 +411,8 @@ void IC_gt_DSK() // IC>DSK
   Push(Read16(pp_QTYINST)); // QTYINST @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

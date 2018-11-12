@@ -201,11 +201,9 @@ void WF1E1() // WF1E1
   Store_2(); // !_2
   Push(pp_XORMODE); // XORMODE
   _099(); // 099
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(Read16(pp_CMAP + i * 8)&0xFF); // CMAP I 8 * + C@

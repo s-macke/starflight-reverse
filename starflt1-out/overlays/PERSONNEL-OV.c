@@ -585,11 +585,9 @@ void WE6C5() // WE6C5
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(i + 1); // I 1+
@@ -1133,11 +1131,9 @@ void WEC5D() // WEC5D
   CTINIT(); // CTINIT
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(3);
@@ -1478,11 +1474,9 @@ void WEFFF() // WEFFF
   CI(); // CI
   _gt_C(); // >C
   Push(1);
-  Push(0x0019);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0019;
   do // (DO)
   {
     Push(0x63ef+WE680.offset); // WE680<IFIELD>

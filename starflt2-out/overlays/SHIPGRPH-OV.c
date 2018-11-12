@@ -539,9 +539,8 @@ void WEFB0() // WEFB0
 void WF034() // WF034
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -640,9 +639,8 @@ void WF106() // WF106
   unsigned short int i, imax;
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -987,11 +985,9 @@ void WF478() // WF478
 {
   unsigned short int i, imax;
   WF376(); // WF376
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(0x000f);

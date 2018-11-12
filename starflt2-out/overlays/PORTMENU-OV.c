@@ -327,9 +327,8 @@ void WED62() // WED62
   Push(2);
   MAX(); // MAX
   Push(Pop() * Pop()); // *
-  Push(0x0064);
 
-  i = Pop();
+  i = 0x0064;
   imax = Pop();
   do // (DO)
   {
@@ -761,11 +760,9 @@ void WF02E() // WF02E
   Push(Read16(pp_WEED0)==0?1:0); // WEED0 @ 0=
   if (Pop() != 0)
   {
-    Push(Read16(pp_WEED4)&0xFF); // WEED4 C@
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = Read16(pp_WEED4)&0xFF; // WEED4 C@
     do // (DO)
     {
       Push(i); // I
@@ -1167,9 +1164,8 @@ void WF3D0() // WF3D0
   WEF23(); // WEF23
   Push(pp_WF1BE); // WF1BE
   Store_2(); // !_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1240,11 +1236,9 @@ void WF42A() // WF42A
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      Push(4);
-      Push(0);
 
-      i = Pop();
-      imax = Pop();
+      i = 0;
+      imax = 4;
       do // (DO)
       {
         WF2AA(); // WF2AA

@@ -302,9 +302,8 @@ void WE484() // WE484
 void WE494() // WE494
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -717,11 +716,9 @@ void WE856() // WE856
 void WE866() // WE866
 {
   unsigned short int i, imax;
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(0);
@@ -1270,11 +1267,9 @@ void WED0C() // WED0C
   WE81C(); // WE81C
   SET_STR_AS_PARAM("DUE TO");
   WEC30(); // WEC30
-  Push(7);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I

@@ -991,9 +991,8 @@ void WD963() // WD963
   FILL_2(); // FILL_2
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1944,11 +1943,9 @@ void WDF4E() // WDF4E
   Push(0x65e1+WD87A.offset); // WD87A<IFIELD>
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
-  Push(0x0010);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0010;
   do // (DO)
   {
     Push(0x65e1+PHRASE_do_.offset); // PHRASE$<IFIELD>
@@ -2019,11 +2016,9 @@ void WDFBD() // WDFBD
   Push(Read16(regsp)); // DUP
   Push(a); // R>
   MOD(); // MOD
-  Push(Pop() + 2); //  2+
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = Pop() + 2; //  2+
   do // (DO)
   {
     _2DUP(); // 2DUP
@@ -2247,9 +2242,8 @@ void WE13D() // WE13D
 {
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -5673,11 +5667,9 @@ void WF3CE() // WF3CE
   _do__ex_(); // $!
   ICLOSE(); // ICLOSE
   Push(0);
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push((0x65e1+WD898.offset) + i); // WD898<IFIELD> I +

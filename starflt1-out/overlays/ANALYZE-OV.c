@@ -1293,11 +1293,9 @@ void WF2C8() // WF2C8
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(2);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(Pop() + 1); //  1+

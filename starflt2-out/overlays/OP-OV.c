@@ -337,9 +337,8 @@ void WE5D4() // WE5D4
 void WE5EC() // WE5EC
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -786,11 +785,9 @@ void WE9B0() // WE9B0
 void WE9C0() // WE9C0
 {
   unsigned short int i, imax;
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(0);
@@ -1443,11 +1440,9 @@ void WEF2D() // WEF2D
   WE96C(); // WE96C
   SET_STR_AS_PARAM("DUE TO");
   WEDC8(); // WEDC8
-  Push(9);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I

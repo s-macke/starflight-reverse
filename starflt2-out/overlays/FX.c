@@ -873,9 +873,8 @@ void WF4EC() // WF4EC
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   WF2D8(); // WF2D8
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

@@ -494,11 +494,9 @@ void WE760() // WE760
 {
   unsigned short int i, imax;
   Push2Words("NULL");
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push(Read16(((0x63ef+WE60A.offset) + i) + 1)&0xFF); // WE60A<IFIELD> I + 1+ C@
@@ -739,11 +737,9 @@ void WE950() // WE950
 {
   unsigned short int i, imax;
   SWAP(); // SWAP
-  Push(Pop() + 0x0088); //  0x0088 +
-  Push(0x0088);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0088;
+  imax = Pop() + 0x0088; //  0x0088 +
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -772,9 +768,8 @@ void WE974() // WE974
   Push(0x00a4);
   SWAP(); // SWAP
   _dash_(); // -
-  Push(0x00a3);
 
-  i = Pop();
+  i = 0x00a3;
   imax = Pop();
   do // (DO)
   {
@@ -880,9 +875,8 @@ void WEA26() // WEA26
 void WEA40() // WEA40
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1302,11 +1296,9 @@ void WEDD0() // WEDD0
   Push(0);
   TONE(); // TONE
   BEEPON(); // BEEPON
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(0xfffb);
@@ -1354,9 +1346,8 @@ void WEDD0() // WEDD0
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {
@@ -1741,11 +1732,9 @@ void WF0DE() // WF0DE
   Get_gt_C_plus_S(); // @>C+S
   SET_STR_AS_PARAM("LITHOSPHERE");
   WF0BD(); // WF0BD
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     LoadData(WE68E); // from 'PLANET'
@@ -1825,11 +1814,9 @@ void WF1D3() // WF1D3
     Push(6);
     WF09D(); // WF09D
   }
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     LoadData(WE654); // from 'VESSEL'
@@ -1987,9 +1974,8 @@ void WF2DC() // WF2DC
   {
     Push(0x0096);
     MAX(); // MAX
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2053,9 +2039,8 @@ void WF39C() // WF39C
   Push(Read16(pp_WE606)); // WE606 @
   Push(0x0064);
   _star__slash_(); // */
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

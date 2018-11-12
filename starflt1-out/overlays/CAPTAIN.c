@@ -462,11 +462,9 @@ void WDE7E() // WDE7E
   unsigned short int a, i, imax, b, c;
   StoreCOLOR(); // !COLOR
   a = Pop(); // >R
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(Read16(i + a)&0xFF); // I J + C@
@@ -499,11 +497,9 @@ void WDE7E() // WDE7E
 void WDEBC() // WDEBC
 {
   unsigned short int i, imax;
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     OVER(); // OVER
@@ -571,11 +567,9 @@ void WDEBC() // WDEBC
 void WDF3E() // WDF3E
 {
   unsigned short int i, imax;
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(-3);
@@ -629,11 +623,9 @@ void WDFB6() // WDFB6
   DARK(); // DARK
   V_gt_DISPLAY(); // V>DISPLAY
   _gt_DISPLAY(); // >DISPLAY
-  Push(0x000a);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000a;
   do // (DO)
   {
     Push(pp_WDE44); // WDE44
@@ -872,11 +864,9 @@ void WE0F9() // WE0F9
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   CI(); // CI
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(0);
@@ -1479,11 +1469,9 @@ void WE4EE() // WE4EE
 {
   unsigned short int i, imax;
   CTINIT(); // CTINIT
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -1818,9 +1806,8 @@ void WE709() // WE709
   if (Pop() != 0)
   {
     WE6C9(); // WE6C9
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1873,9 +1860,8 @@ void WE767() // WE767
 {
   unsigned short int i, imax, j, jmax;
   WE6C9(); // WE6C9
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1908,11 +1894,9 @@ void WE767() // WE767
         C_ex_(); // C!
       } else
       {
-        Push(3);
-        Push(0);
 
-        j = Pop();
-        jmax = Pop();
+        j = 0;
+        jmax = 3;
         do // (DO)
         {
           Push((Read16((0x63ef+WE081.offset) + j)&0xFF)==0?1:0); // WE081<IFIELD> I + C@ 0=
@@ -1987,9 +1971,8 @@ void WE823() // WE823
   }
   ICLOSE(); // ICLOSE
   WE6C9(); // WE6C9
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2000,11 +1983,9 @@ void WE823() // WE823
       GetIL(); // @IL
       GetIH(); // @IH
       _gt_C_plus_S(); // >C+S
-      Push(4);
-      Push(0);
 
-      j = Pop();
-      jmax = Pop();
+      j = 0;
+      jmax = 4;
       do // (DO)
       {
         Push(Read16(((0x63ef+WE081.offset) + 3) + j)&0xFF); // WE081<IFIELD> 3 + I + C@
@@ -2191,9 +2172,8 @@ void WE9E2() // WE9E2
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2271,11 +2251,9 @@ void WEA62() // WEA62
     Push(0);
     Push(2);
     CTPOS_dot_(); // CTPOS.
-    Push(0x00be);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 0x00be;
     do // (DO)
     {
       LoadData(WE04C); // from 'ANALYZE_TEXT'

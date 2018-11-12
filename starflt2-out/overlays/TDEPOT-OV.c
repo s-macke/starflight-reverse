@@ -1136,11 +1136,9 @@ void WEBEB() // WEBEB
   WE644(); // WE644
   IsMRC(); // ?MRC
   StoreCOLOR(); // !COLOR
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -1844,9 +1842,8 @@ void WF174() // WF174
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

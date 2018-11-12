@@ -878,11 +878,9 @@ void WEB87() // WEB87
 void WEBCB() // WEBCB
 {
   unsigned short int i, imax;
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     Push(6);
@@ -1235,11 +1233,9 @@ void WEDDE() // WEDDE
     WE71E(); // WE71E
     WE750(); // WE750
     Push(1);
-    Push(0x0010);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 0x0010;
     do // (DO)
     {
       Push(Read16(regsp)); // DUP
@@ -1503,11 +1499,9 @@ void WF047() // WF047
   Push(Pop() & Read16(0x65e1+WE77D.offset)); //  WE77D<IFIELD> @ AND
   if (Pop() != 0)
   {
-    Push(1);
-    Push(0x0010);
 
-    i = Pop();
-    imax = Pop();
+    i = 0x0010;
+    imax = 1;
     do // (DO)
     {
       Push(i); // I
@@ -1762,11 +1756,9 @@ void WF24D() // WF24D
 {
   unsigned short int i, imax;
   Push2Words("NULL");
-  Push(6);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -1858,11 +1850,9 @@ void WF321() // WF321
   FILL_2(); // FILL_2
   Push(pp_IsREPAIR); // ?REPAIR
   _099(); // 099
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push((0x65e1+WE75A.offset) + i); // WE75A<IFIELD> I +

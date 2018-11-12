@@ -317,11 +317,9 @@ void DBARS() // DBARS
   unsigned short int i, imax;
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(i); // I
@@ -377,11 +375,9 @@ void WEEB8() // WEEB8
   Push2Words("*SHIP");
   _gt_C_plus_S(); // >C+S
   Push(0);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push((Read16(((0x65e1+WECC0.offset) + i * 2) + 1)&0xFF) & a); // WECC0<IFIELD> I 2* + 1+ C@ J AND

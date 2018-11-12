@@ -330,11 +330,9 @@ void WEF4A() // WEF4A
   CTERASE(); // CTERASE
   _gt_1FONT(); // >1FONT
   WEF0C(); // WEF0C
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     PRINT("ATTENTION", 9); // (.")

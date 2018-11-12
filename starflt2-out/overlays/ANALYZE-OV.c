@@ -1261,11 +1261,9 @@ void WF3B8() // WF3B8
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(2);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     Push(Pop() + 1); //  1+

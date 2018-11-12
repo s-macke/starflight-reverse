@@ -451,18 +451,14 @@ void CSCR_gt_EGA() // CSCR>EGA
   _gt_HIDDEN(); // >HIDDEN
   DARK(); // DARK
   Push(-1);
-  Push(0x00c8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x00c8;
   do // (DO)
   {
-    Push(0x0050);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x0050;
     do // (DO)
     {
       Push(Pop() + 1); //  1+
@@ -681,11 +677,9 @@ void BRMOVE() // BRMOVE
   SWAP(); // SWAP
   Push(Read16(pp_HBUF_dash_SEG)); // HBUF-SEG @
   Push(0);
-  Push(Read16(pp_WE6C0)); // WE6C0 @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WE6C0); // WE6C0 @
   do // (DO)
   {
     _2OVER(); // 2OVER
@@ -725,11 +719,9 @@ void WE7CD() // WE7CD
   D_plus_(); // D+
   do
   {
-    Push(0x000b);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 0x000b;
     do // (DO)
     {
       Push(i); // I
@@ -763,11 +755,9 @@ void WE7CD() // WE7CD
 void WE813() // WE813
 {
   unsigned short int i, imax;
-  Push(0x000b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000b;
   do // (DO)
   {
     Push(i); // I
@@ -895,11 +885,9 @@ void WE928() // WE928
   _gt_DISPLAY(); // >DISPLAY
   Push(pp_WE6E0); // WE6E0
   OFF(); // OFF
-  Push(0x000d);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000d;
   do // (DO)
   {
     Push(Read16(i + (pp_XOFFS + i))); // I XOFFS I + + @

@@ -345,11 +345,9 @@ void WE9C9() // WE9C9
   StoreCOLOR(); // !COLOR
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
-  Push(0x1388);
-  Push(0x7530);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x7530;
+  imax = 0x1388;
   do // (DO)
   {
     Push(i); // I
@@ -363,11 +361,9 @@ void WE9C9() // WE9C9
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Push(0x04e2);
-  Push(0x0064);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0x0064;
+  jmax = 0x04e2;
   do // (DO)
   {
     Push(j); // I
@@ -1020,11 +1016,9 @@ void WEE6F() // WEE6F
   Push(Read16(pp_WECED)==0?1:0); // WECED @ 0=
   if (Pop() != 0)
   {
-    Push(Read16(pp_WECF1)&0xFF); // WECF1 C@
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = Read16(pp_WECF1)&0xFF; // WECF1 C@
     do // (DO)
     {
       Push(i); // I
@@ -1402,11 +1396,9 @@ void WF239() // WF239
   unsigned short int i, imax, a;
   Push(pp_WEA73); // WEA73
   OFF(); // OFF
-  Push((Read16(pp_WEEB5)&0xFF) * 7); // WEEB5 C@ 7 *
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = (Read16(pp_WEEB5)&0xFF) * 7; // WEEB5 C@ 7 *
   do // (DO)
   {
     Push((pp_WEEB5 + 1) + i); // WEEB5 1+ I +
@@ -1525,9 +1517,8 @@ void WF30B() // WF30B
   WED4E(); // WED4E
   Push(pp_WF09F); // WF09F
   Store_3(); // !_3
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1644,11 +1635,9 @@ void WF3A9() // WF3A9
     Push(Pop() & Pop()); // AND
     if (Pop() != 0)
     {
-      Push(4);
-      Push(0);
 
-      i = Pop();
-      imax = Pop();
+      i = 0;
+      imax = 4;
       do // (DO)
       {
         WF18B(); // WF18B

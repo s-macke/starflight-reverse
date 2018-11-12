@@ -1300,11 +1300,9 @@ void WEC56() // WEC56
   Push(pp_WE83E); // WE83E
   _099(); // 099
   Push(0);
-  Push(9);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I
@@ -1424,9 +1422,8 @@ void WED68() // WED68
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1620,9 +1617,8 @@ void WEED5() // WEED5
   MAX(); // MAX
   Push(0x03e8);
   MIN(); // MIN
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1630,11 +1626,9 @@ void WEED5() // WEED5
     Push(i + 0x03e8); // I 0x03e8 +
     RRND(); // RRND
     TONE(); // TONE
-    Push(5 * Read16(cc_MPS)); // 5 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 5 * Read16(cc_MPS); // 5 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -1673,9 +1667,8 @@ void WEF1F() // WEF1F
       Push(0x0514 * (Read16(cc_MPS) - 1)); // 0x0514 MPS 1- *
       Push(0x01f4);
       MAX(); // MAX
-      Push(0);
 
-      i = Pop();
+      i = 0;
       imax = Pop();
       do // (DO)
       {
@@ -1713,9 +1706,8 @@ void WEF73() // WEF73
   {
     Push(Read16(a)); // R@
     SWAP(); // SWAP
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2096,9 +2088,8 @@ void WF1B5() // WF1B5
     Push(Read16(pp_XWLD_c_XP)); // XWLD:XP @
     Push(6);
     MIN(); // MIN
-    Push(2);
 
-    i = Pop();
+    i = 2;
     imax = Pop();
     do // (DO)
     {
@@ -2224,9 +2215,8 @@ void WF283() // WF283
   {
     Push(Read16(a)); // R@
     SWAP(); // SWAP
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

@@ -197,11 +197,9 @@ void WF47C() // WF47C
   unsigned short int i, imax;
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push((0x65e1+WF3C6.offset) + i); // WF3C6<IFIELD> I +

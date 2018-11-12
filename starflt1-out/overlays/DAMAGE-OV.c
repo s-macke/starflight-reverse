@@ -1115,11 +1115,9 @@ void WEF3C() // WEF3C
   Push(pp_WEBD6); // WEBD6
   OFF(); // OFF
   Push(0);
-  Push(9);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I
@@ -1224,9 +1222,8 @@ void WF02E() // WF02E
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1429,9 +1426,8 @@ void WF19A() // WF19A
       Push(0x0514 * (Read16(cc_MPS) - 1)); // 0x0514 MPS 1- *
       Push(0x01f4);
       MAX(); // MAX
-      Push(0);
 
-      i = Pop();
+      i = 0;
       imax = Pop();
       do // (DO)
       {
@@ -1469,9 +1465,8 @@ void WF1EC() // WF1EC
   {
     Push(Read16(a)); // R@
     SWAP(); // SWAP
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1835,9 +1830,8 @@ void WF404() // WF404
   Push(Read16(pp_XWLD_c_XPIX)); // XWLD:XPIX @
   Push(6);
   MIN(); // MIN
-  Push(2);
 
-  i = Pop();
+  i = 2;
   imax = Pop();
   do // (DO)
   {
@@ -1902,9 +1896,8 @@ void WF47F() // WF47F
   {
     Push(Read16(a)); // R@
     SWAP(); // SWAP
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

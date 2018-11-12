@@ -533,11 +533,9 @@ void WED61() // WED61
   unsigned short int i, imax, j, jmax;
   Push(pp_WED5D); // WED5D
   _099(); // 099
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push(pp_EYEXY); // EYEXY
@@ -548,9 +546,8 @@ void WED61() // WED61
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      j = Pop();
+      j = 0;
       jmax = Pop();
       do // (DO)
       {
@@ -701,11 +698,9 @@ void WEE5F() // WEE5F
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     CTERASE(); // CTERASE
@@ -915,11 +910,9 @@ void WEFA4() // WEFA4
 {
   unsigned short int i, imax, j, jmax;
   CTERASE(); // CTERASE
-  Push(0x000e);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000e;
   do // (DO)
   {
     Push(pp_EYEXY); // EYEXY
@@ -930,9 +923,8 @@ void WEFA4() // WEFA4
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      j = Pop();
+      j = 0;
       jmax = Pop();
       do // (DO)
       {
@@ -961,9 +953,8 @@ void WEFD4() // WEFD4
   Push(0x2710);
   Push(Read16(cc_MPS)); // MPS
   _slash_(); // /
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -990,11 +981,9 @@ void WEFFC() // WEFFC
   WEF24(); // WEF24
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x001e);
-  Push(2);
 
-  i = Pop();
-  imax = Pop();
+  i = 2;
+  imax = 0x001e;
   do // (DO)
   {
     Push(pp_EYEXY); // EYEXY
@@ -1314,11 +1303,9 @@ void WF20C() // WF20C
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -1499,11 +1486,9 @@ void WF306() // WF306
   Push(Read16(0x65e1+INST_dash_X.offset)); // INST-X<IFIELD> @
   Push(Read16(0x65e1+INST_dash_Y.offset)); // INST-Y<IFIELD> @
   WECAB(); // WECAB
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
     GetColor(VIOLET);

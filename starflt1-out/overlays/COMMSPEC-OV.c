@@ -746,11 +746,9 @@ void WECCE() // WECCE
   _i_KEY(); // 'KEY
   Pop(); // DROP
   Push(1);
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     WEAC1(); // WEAC1
@@ -1580,9 +1578,8 @@ void WF312() // WF312
     Push(1);
     Push(0x000a);
     RRND(); // RRND
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

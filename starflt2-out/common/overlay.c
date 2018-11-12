@@ -443,9 +443,8 @@ void WL() // WL
 void WB56D() // WB56D
 {
   unsigned short int i, imax;
-  Push(Pop() - 2); //  2-
 
-  i = Pop();
+  i = Pop() - 2; //  2-
   imax = Pop();
   do // (DO)
   {
@@ -683,9 +682,8 @@ void OVTRIM_1() // OVTRIM_1
 {
   unsigned short int i, imax;
   LoadOverlay(MISC_dash_OV); // MISC-OV
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

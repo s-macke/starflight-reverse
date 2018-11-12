@@ -423,11 +423,9 @@ void SETSCALE() // SETSCALE
 void GENANCHORS() // GENANCHORS
 {
   unsigned short int i, imax;
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
     Push(Read16(pp_STD)); // STD @
@@ -1035,18 +1033,14 @@ void MERC_gt_CONANCHOR() // MERC>CONANCHOR
   ON_3(); // ON_3
   Push(0x6a99); // 'MERCATOR'
   SETLARRAY(); // SETLARRAY
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
-    Push(3);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3;
     do // (DO)
     {
       Push(j + Read16(pp_X2)); // I X2 @ +
@@ -1104,18 +1098,14 @@ void AV_dash_MIDPT() // AV-MIDPT
 void CONANCHOR_dash_HOR() // CONANCHOR-HOR
 {
   unsigned short int i, imax, j, jmax;
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
-    Push(2);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 2;
     do // (DO)
     {
       Push(j * 4); // I 4 *
@@ -1152,18 +1142,14 @@ void CONANCHOR_dash_HOR() // CONANCHOR-HOR
 void CONANCHOR_dash_VER() // CONANCHOR-VER
 {
   unsigned short int i, imax, j, jmax;
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
-    Push(3);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3;
     do // (DO)
     {
       Push(j * 4); // I 4 *
@@ -1188,18 +1174,14 @@ void CONANCHOR_dash_VER() // CONANCHOR-VER
 void CONANCHOR_dash_CNT1() // CONANCHOR-CNT1
 {
   unsigned short int i, imax, j, jmax;
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
-    Push(2);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 2;
     do // (DO)
     {
       Push(j * 4); // I 4 *
@@ -1224,18 +1206,14 @@ void CONANCHOR_dash_CNT1() // CONANCHOR-CNT1
 void CONANCHOR_dash_CNT2() // CONANCHOR-CNT2
 {
   unsigned short int i, imax, j, jmax;
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
-    Push(4);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 4;
     do // (DO)
     {
       Push(j * 2 + 1); // I 2* 1+
@@ -1302,18 +1280,14 @@ void CONANCHOR_gt_CONTOUR() // CONANCHOR>CONTOUR
   Push(a); // R>
   SWAP(); // SWAP
   SETRELORIGIN(); // SETRELORIGIN
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
-    Push(6);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 6;
     do // (DO)
     {
       OVER(); // OVER
@@ -1411,18 +1385,14 @@ void FRACT_CONTOUR() // FRACT_CONTOUR
   Push2Words("CONTOUR-RATIO");
   Push(Read16(cc_CONTOUR_dash_SCALE)); // CONTOUR-SCALE
   SETSCALE(); // SETSCALE
-  Push(5);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 5;
   do // (DO)
   {
-    Push(5);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 5;
     do // (DO)
     {
       Push(j); // I
@@ -1799,11 +1769,9 @@ void BUILD_dash_CONTINENTS() // BUILD-CONTINENTS
   unsigned short int i, imax;
   Push(pp_POLYPTR); // POLYPTR
   OFF(); // OFF
-  Push(0x0048);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0048;
   do // (DO)
   {
     Push(0);
@@ -1926,11 +1894,9 @@ void BUILD_dash_CONTINENTS() // BUILD-CONTINENTS
 void CACCUM() // CACCUM
 {
   unsigned short int i, imax;
-  Push(0x0020);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0020;
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -1987,11 +1953,9 @@ void MAJOR_dash_COLOR() // MAJOR-COLOR
   Push(0);
   FILL_1(); // FILL_1
   Push(b); // R>
-  Push(a); // R>
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = a; // R>
   do // (DO)
   {
     XHBUF_dash_SEG(); // XHBUF-SEG
@@ -2004,11 +1968,9 @@ void MAJOR_dash_COLOR() // MAJOR-COLOR
   } while(i<imax); // (LOOP)
 
   Pop(); // DROP
-  Push(0x0020);
-  Push(0);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0;
+  jmax = 0x0020;
   do // (DO)
   {
     Push(j); // I
@@ -2160,11 +2122,9 @@ void REDUCE_dash_FACE() // REDUCE-FACE
   MAJOR_dash_COLOR(); // MAJOR-COLOR
   Push(pp_MAINCOLOR); // MAINCOLOR
   Store_3(); // !_3
-  Push(a); // I
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = a; // I
   do // (DO)
   {
     Push(Read16(pp_TAD)); // TAD @
@@ -2183,11 +2143,9 @@ void REDUCE_dash_FACE() // REDUCE-FACE
   Push(pp__n_POL); // #POL
   Store_3(); // !_3
   POP_dash_POLY(); // POP-POLY
-  Push(a); // R>
-  Push(0);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0;
+  jmax = a; // R>
   do // (DO)
   {
     IsMCLR(); // ?MCLR
@@ -2231,11 +2189,9 @@ void REDUCE_dash_ALL() // REDUCE-ALL
   Push(0);
   Push(pp_FADDR); // FADDR
   Store_3(); // !_3
-  Push(0x0048);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0048;
   do // (DO)
   {
     Push(i); // I
@@ -2315,9 +2271,8 @@ void RTSCRL() // RTSCRL
 {
   unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2348,9 +2303,8 @@ void LFSCRL() // LFSCRL
 {
   unsigned short int i, imax;
   _n_ROWZ(); // #ROWZ
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

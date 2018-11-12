@@ -590,11 +590,9 @@ void WE012() // WE012
 void WE026() // WE026
 {
   unsigned short int i, imax;
-  Push(0x0010);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0010;
   do // (DO)
   {
     Push(0x0010 + i); // 0x0010 I +
@@ -818,18 +816,14 @@ void SCR_gt_CG() // SCR>CG
 {
   unsigned short int i, imax, j, jmax;
   Push(-1);
-  Push(0x00c8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x00c8;
   do // (DO)
   {
-    Push(0x0050);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x0050;
     do // (DO)
     {
       Push(Pop() + 1); //  1+
@@ -1634,18 +1628,14 @@ void SCR_gt_EG() // SCR>EG
   Push(pp_XORMODE); // XORMODE
   OFF(); // OFF
   Push(-1);
-  Push(0x00c8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x00c8;
   do // (DO)
   {
-    Push(0x0050);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x0050;
     do // (DO)
     {
       Push(Pop() + 1); //  1+
@@ -1798,9 +1788,8 @@ void ONCACHE() // ONCACHE
 void CHECKSUM() // CHECKSUM
 {
   unsigned short int i, imax;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1891,11 +1880,9 @@ void PUSHVECT() // PUSHVECT
   WE9F3(); // WE9F3
   Push(Read16(pp__3DSEG)); // 3DSEG @
   WE9F3(); // WE9F3
-  Push(Read16(cc_WDFAE)); // WDFAE
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WDFAE); // WDFAE
   do // (DO)
   {
     Push(i); // I
@@ -1914,11 +1901,9 @@ void PUSHVECT() // PUSHVECT
 void POPVECT() // POPVECT
 {
   unsigned short int i, imax;
-  Push(0);
-  Push(Read16(cc_WDFAE) - 1); // WDFAE 1-
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(cc_WDFAE) - 1; // WDFAE 1-
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -2125,9 +2110,8 @@ void _v_DISK() // |DISK
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2450,11 +2434,9 @@ void WED92() // WED92
 void WEDA2() // WEDA2
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WDFAA)); // WDFAA
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WDFAA); // WDFAA
   do // (DO)
   {
     Push(i); // I
@@ -2474,11 +2456,9 @@ void WEDA2() // WEDA2
 void WEDB8() // WEDB8
 {
   unsigned short int i, imax;
-  Push(0);
-  Push(Read16(cc_WDFAA) - 1); // WDFAA 1-
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(cc_WDFAA) - 1; // WDFAA 1-
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -2644,11 +2624,9 @@ void BOX() // BOX
   Exec("POSITION"); // call of word 0x2767 '(POSITION)'
   Push(a); // I'
   WEE63(); // WEE63
-  Push(b); // R>
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = b; // R>
   do // (DO)
   {
     SWAP(); // SWAP
@@ -2785,18 +2763,14 @@ void WF069() // WF069
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0x0064);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0064;
   do // (DO)
   {
-    Push(0x03e8);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x03e8;
     do // (DO)
     {
       NOP(); // NOP

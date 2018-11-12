@@ -766,11 +766,9 @@ void WE657() // WE657
 {
   unsigned short int i, imax;
   CTINIT(); // CTINIT
-  Push(Read16(pp_WLINES)); // WLINES @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_WLINES); // WLINES @
   do // (DO)
   {
     Push(Read16(pp_WLEFT)); // WLEFT @
@@ -1105,9 +1103,8 @@ void WE872() // WE872
   if (Pop() != 0)
   {
     WE832(); // WE832
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1160,9 +1157,8 @@ void WE8D0() // WE8D0
 {
   unsigned short int i, imax, j, jmax;
   WE832(); // WE832
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1195,11 +1191,9 @@ void WE8D0() // WE8D0
         C_ex__2(); // C!_2
       } else
       {
-        Push(3);
-        Push(0);
 
-        j = Pop();
-        jmax = Pop();
+        j = 0;
+        jmax = 3;
         do // (DO)
         {
           Push((Read16((0x65e1+WE4EC.offset) + j)&0xFF)==0?1:0); // WE4EC<IFIELD> I + C@ 0=
@@ -1274,9 +1268,8 @@ void WE98C() // WE98C
   }
   ICLOSE(); // ICLOSE
   WE832(); // WE832
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1287,11 +1280,9 @@ void WE98C() // WE98C
       GetIL(); // @IL
       GetIH(); // @IH
       _gt_C_plus_S(); // >C+S
-      Push(4);
-      Push(0);
 
-      j = Pop();
-      jmax = Pop();
+      j = 0;
+      jmax = 4;
       do // (DO)
       {
         Push(Read16(((0x65e1+WE4EC.offset) + 3) + j)&0xFF); // WE4EC<IFIELD> 3 + I + C@

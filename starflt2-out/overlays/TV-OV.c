@@ -352,11 +352,9 @@ void WE6EA() // WE6EA
     Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
-    Push(3 * Read16(cc_MPS)); // 3 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3 * Read16(cc_MPS); // 3 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -959,9 +957,8 @@ void WEA6A() // WEA6A
   OVER(); // OVER
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -982,11 +979,9 @@ void WEA6A() // WEA6A
 void WEA94() // WEA94
 {
   unsigned short int i, imax;
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push((Read16(pp_WLEFT) - 2) + i); // WLEFT @ 2- I +
@@ -1946,11 +1941,9 @@ void WF1E5() // WF1E5
 void WF21B() // WF21B
 {
   unsigned short int i, imax;
-  Push(0x000b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000b;
   do // (DO)
   {
     BLT(); // BLT
@@ -2302,9 +2295,8 @@ void WF472() // WF472
   {
     Push(Read16(pp_IINDEX)); // IINDEX @
     a = Pop(); // >R
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

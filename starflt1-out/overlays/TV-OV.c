@@ -734,9 +734,8 @@ void WEA67() // WEA67
   OVER(); // OVER
   _dash_(); // -
   Push(Pop() + Pop()); // +
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -757,11 +756,9 @@ void WEA67() // WEA67
 void WEA91() // WEA91
 {
   unsigned short int i, imax;
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push((Read16(pp_WLEFT) - 2) + i); // WLEFT @ 2- I +
@@ -1653,11 +1650,9 @@ void WF184() // WF184
 void WF1BA() // WF1BA
 {
   unsigned short int i, imax;
-  Push(0x000b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000b;
   do // (DO)
   {
     BLT(); // BLT
@@ -1679,9 +1674,8 @@ void WF1D2() // WF1D2
   BEEPON(); // BEEPON
   Push(0x0064);
   Push(Read16(regsp)); // DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

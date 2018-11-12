@@ -201,11 +201,9 @@ void WF07B() // WF07B
   Push(Read16(cc_BL)); // BL
   FILL_2(); // FILL_2
   Push(pp_WF068); // WF068
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     Push(i); // I
@@ -232,11 +230,9 @@ void WF07B() // WF07B
   OVER(); // OVER
   C_ex__2(); // C!_2
   Push(Pop() + 1); //  1+
-  Push(3);
-  Push(0);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0;
+  jmax = 3;
   do // (DO)
   {
     Push(j); // I
@@ -532,11 +528,9 @@ void WF280() // WF280
   BMBYTES(); // BMBYTES
   C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
-  Push(Read16(Pop())); //  @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop()); //  @
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -594,11 +588,9 @@ void WF30A() // WF30A
 {
   unsigned short int i, imax, j, jmax;
   BMHIGH(); // BMHIGH
-  Push(Read16(Pop())&0xFF); //  C@
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop())&0xFF; //  C@
   do // (DO)
   {
     Push(Read16(pp_SRC)); // SRC @
@@ -606,9 +598,8 @@ void WF30A() // WF30A
     BMBYTES(); // BMBYTES
     Push(Read16(Pop())&0xFF); //  C@
     Push(Read16(regsp)); // DUP
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {

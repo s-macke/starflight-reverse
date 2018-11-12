@@ -127,11 +127,9 @@ void WF0A6() // WF0A6
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0);
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push((0x65e1+WF08D.offset) + i * 3); // WF08D<IFIELD> I 3 * +

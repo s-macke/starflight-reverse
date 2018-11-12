@@ -943,9 +943,8 @@ void WE1B8() // WE1B8
 {
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2540,11 +2539,9 @@ void WEA6A() // WEA6A
   unsigned short int i, imax;
   Push(Read16(pp_XBLT)); // XBLT @
   Push(Read16(pp_YBLT)); // YBLT @
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     _2DUP(); // 2DUP

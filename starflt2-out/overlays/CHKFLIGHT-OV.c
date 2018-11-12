@@ -439,11 +439,9 @@ void WF462() // WF462
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push(0);
-  Push((0x65e1+WF18B.offset) + 0x0012); // WF18B<IFIELD> 0x0012 +
-  Push(0x65e1+WF18B.offset); // WF18B<IFIELD>
 
-  i = Pop();
-  imax = Pop();
+  i = 0x65e1+WF18B.offset; // WF18B<IFIELD>
+  imax = (0x65e1+WF18B.offset) + 0x0012; // WF18B<IFIELD> 0x0012 +
   do // (DO)
   {
     Push(i); // I

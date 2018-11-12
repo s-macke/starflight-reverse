@@ -1053,11 +1053,9 @@ void WE867() // WE867
   Push(pp_WE6C9); // WE6C9
   Push(pp_PM_dash_PTR); // PM-PTR
   Store_3(); // !_3
-  Push(Read16(pp_LINE_dash_COUNT)); // LINE-COUNT @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_LINE_dash_COUNT); // LINE-COUNT @
   do // (DO)
   {
     Push(Read16(pp_PM_dash_PTR)); // PM-PTR @
@@ -2530,9 +2528,8 @@ void IsTALK() // ?TALK
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

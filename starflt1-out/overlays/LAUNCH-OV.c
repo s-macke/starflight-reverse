@@ -131,11 +131,9 @@ void WF026() // WF026
 void WF034() // WF034
 {
   unsigned short int i, imax;
-  Push(0x0010);
-  Push(0x000b);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x000b;
+  imax = 0x0010;
   do // (DO)
   {
     Push((i >> 4) + i); // I 16* I +
@@ -205,11 +203,9 @@ void COUNTDOWN() // COUNTDOWN
   unsigned short int i, imax;
   Push(0x2710);
   TONE(); // TONE
-  Push(1);
-  Push(5);
 
-  i = Pop();
-  imax = Pop();
+  i = 5;
+  imax = 1;
   do // (DO)
   {
     V_gt_DISPLAY(); // V>DISPLAY
@@ -553,11 +549,9 @@ void WF393() // WF393
     V_gt_DISPLAY(); // V>DISPLAY
     return;
   }
-  Push(0x003b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x003b;
   do // (DO)
   {
     Push(0x0084 + i); // 0x0084 I +
@@ -622,9 +616,8 @@ void _and_RETURN() // &RETURN
   Push(6);
   Push(0x0012);
   RRND(); // RRND
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -662,11 +655,9 @@ void _and_RETURN() // &RETURN
     Push(0x7148);
     TONE(); // TONE
     BEEPON(); // BEEPON
-    Push(0x003b);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x003b;
     do // (DO)
     {
       Push(0x003c + j); // 0x003c I +

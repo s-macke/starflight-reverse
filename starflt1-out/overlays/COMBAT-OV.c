@@ -1765,11 +1765,9 @@ void WE4E8() // WE4E8
 void WE500() // WE500
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WE1FB)); // WE1FB
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WE1FB); // WE1FB
   do // (DO)
   {
     Push(i); // I
@@ -1867,9 +1865,8 @@ void WE58E() // WE58E
   WE167(); // WE167
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1984,22 +1981,18 @@ void WE624() // WE624
   unsigned short int i, imax, j, jmax;
   Push(Read16(pp_IsSOUND)); // ?SOUND @
   if (Pop() == 0) return;
-  Push(0x03e8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x03e8;
   do // (DO)
   {
     BEEPON(); // BEEPON
     Push(i); // I
     TONE(); // TONE
     DISPLAY_dash_WAIT(); // DISPLAY-WAIT
-    Push(0x000c * Read16(cc_MPS)); // 0x000c MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x000c * Read16(cc_MPS); // 0x000c MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -2051,11 +2044,9 @@ void WE660() // WE660
     Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
-    Push(3 * Read16(cc_MPS)); // 3 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3 * Read16(cc_MPS); // 3 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -2091,11 +2082,9 @@ void WE6B4() // WE6B4
   unsigned short int a, i, imax;
   Push(Read16(pp_WE1F7)); // WE1F7 @
   a = Pop(); // >R
-  Push(Read16(cc_WE1FB)); // WE1FB
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WE1FB); // WE1FB
   do // (DO)
   {
     Push(i); // I
@@ -2194,9 +2183,8 @@ void WE744() // WE744
   OVER(); // OVER
   a = Pop(); // >R
   SWAP(); // SWAP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2236,11 +2224,9 @@ void WE744() // WE744
 void WE798() // WE798
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WE1FB)); // WE1FB
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WE1FB); // WE1FB
   do // (DO)
   {
     Push(i); // I
@@ -2412,11 +2398,9 @@ void WE8E1() // WE8E1
   a = Pop(); // >R
   Push(pp_WE6B0); // WE6B0
   OFF(); // OFF
-  Push(Read16(cc_WE1FB)); // WE1FB
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WE1FB); // WE1FB
   do // (DO)
   {
     Push(i); // I
@@ -2485,11 +2469,9 @@ void WE929() // WE929
 void WE94D() // WE94D
 {
   unsigned short int i, imax;
-  Push(Read16(cc_WE1FB)); // WE1FB
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(cc_WE1FB); // WE1FB
   do // (DO)
   {
     Push(i); // I
@@ -2534,9 +2516,8 @@ void WE97D() // WE97D
   Push(Read16(pp_WE6B0)); // WE6B0 @
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2879,11 +2860,9 @@ void WEC0B() // WEC0B
   Push(0x03e8);
   Push(pp_WEBBF); // WEBBF
   _st__ex__gt_(); // <!>
-  Push(Read16(pp_ILOCAL)); // ILOCAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL); // ILOCAL @
   do // (DO)
   {
     Push(i); // I
@@ -3698,9 +3677,8 @@ void WF11E() // WF11E
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {

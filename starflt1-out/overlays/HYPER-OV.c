@@ -1425,11 +1425,9 @@ void KILL_dash_STAR() // KILL-STAR
 void GET_dash_ORBIT_n_() // GET-ORBIT#
 {
   unsigned short int i, imax;
-  Push(9);
-  Push(Read16(pp_PREV_dash_ORBIT) + 1); // PREV-ORBIT @ 1+
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_PREV_dash_ORBIT) + 1; // PREV-ORBIT @ 1+
+  imax = 9;
   do // (DO)
   {
     Push(i); // I
@@ -1846,11 +1844,9 @@ void DrawAUXSYS() // .AUXSYS
   DrawSUN(); // .SUN
   Push(Read16(0x63ef+ORBIT_dash_MASK.offset)&0xFF); // ORBIT-MASK<IFIELD> C@
   IOPEN(); // IOPEN
-  Push(9);
-  Push(1);
 
-  i = Pop();
-  imax = Pop();
+  i = 1;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I
@@ -2276,11 +2272,9 @@ void DrawCOORDINATES() // .COORDINATES
 void _gt_DUST() // >DUST
 {
   unsigned short int i, imax;
-  Push(pp_SDUST + 0x0018); // SDUST 0x0018 +
-  Push(pp_SDUST); // SDUST
 
-  i = Pop();
-  imax = Pop();
+  i = pp_SDUST; // SDUST
+  imax = pp_SDUST + 0x0018; // SDUST 0x0018 +
   do // (DO)
   {
     Push(0);
@@ -2374,11 +2368,9 @@ void DrawDUST() // .DUST
   unsigned short int i, imax;
   GetColor(GREY1);
   StoreCOLOR(); // !COLOR
-  Push(pp_SDUST + 0x0021); // SDUST 0x0021 +
-  Push(pp_SDUST); // SDUST
 
-  i = Pop();
-  imax = Pop();
+  i = pp_SDUST; // SDUST
+  imax = pp_SDUST + 0x0021; // SDUST 0x0021 +
   do // (DO)
   {
     Push(Read16(i)&0xFF); // I C@
@@ -2475,9 +2467,8 @@ void DrawFLUX_dash_ICON() // .FLUX-ICON
     Push(Pop() + 1); //  1+
     Push(Read16(pp_IsHAS_dash_RING_dash_DEVICE)); // ?HAS-RING-DEVICE @
     MAX(); // MAX
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -3339,9 +3330,8 @@ void SET_dash_FLUX_dash_STATE() // SET-FLUX-STATE
   IsICONS_dash_AT(); // ?ICONS-AT
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -3505,9 +3495,8 @@ void IsCOLLISION() // ?COLLISION
     Push2Words("NULL");
     Push(pp__ro_COLLIDE_rc_); // (COLLIDE)
     _1_dot_5_ex_(); // 1.5!
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -3775,9 +3764,8 @@ void IsUNNEST() // ?UNNEST
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     if (Pop() != 0)
     {
-      Push(0);
 
-      i = Pop();
+      i = 0;
       imax = Pop();
       do // (DO)
       {

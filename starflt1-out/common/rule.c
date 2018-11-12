@@ -368,11 +368,9 @@ void IsINDEX() // ?INDEX
   unsigned short int a, i, imax;
   a = Pop(); // >R
   Push(-1);
-  Push(Read16(pp_COND_dash_CNT) * 2); // COND-CNT @ 2*
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_COND_dash_CNT) * 2; // COND-CNT @ 2*
   do // (DO)
   {
     Push(Read16(Read16(cc_CONDARR) + i)==a?1:0); // CONDARR I + @ J =

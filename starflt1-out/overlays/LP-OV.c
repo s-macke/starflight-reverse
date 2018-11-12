@@ -301,11 +301,9 @@ void WE121() // WE121
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop())&0xFF); //  C@
   _3_star_(); // 3*
-  Push(Pop() + 3); //  3+
-  Push(3);
 
-  i = Pop();
-  imax = Pop();
+  i = 3;
+  imax = Pop() + 3; //  3+
   do // (DO)
   {
     Push(Read16(regsp)); // DUP

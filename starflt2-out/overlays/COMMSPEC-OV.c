@@ -414,19 +414,16 @@ void WE59E() // WE59E
   MAX(); // MAX
   Push(0x05dc);
   MIN(); // MIN
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
     Push(i); // I
     TONE(); // TONE
-    Push(0x000a * Read16(cc_MPS)); // 0x000a MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x000a * Read16(cc_MPS); // 0x000a MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -1436,11 +1433,9 @@ void WEBF6() // WEBF6
   Push(0x000e);
   Push(Read16(cc_BL)); // BL
   FILL_2(); // FILL_2
-  Push(2);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 2;
   do // (DO)
   {
     Push(0xbf8f); // '1SYL'
@@ -1664,11 +1659,9 @@ void WED71() // WED71
   WE58A(); // WE58A
   IOPEN(); // IOPEN
   ILAST(); // ILAST
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
     WE935(); // WE935
@@ -1793,11 +1786,9 @@ void WEE17() // WEE17
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(6);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 6;
   do // (DO)
   {
     Push(i); // I
@@ -2307,11 +2298,9 @@ void WF190() // WF190
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push(i); // I

@@ -617,11 +617,9 @@ void WF319() // WF319
   StoreCOLOR(); // !COLOR
   _gt_2FONT(); // >2FONT
   BEEPON(); // BEEPON
-  Push(9);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 9;
   do // (DO)
   {
     Push(i); // I

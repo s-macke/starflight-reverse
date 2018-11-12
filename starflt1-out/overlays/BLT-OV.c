@@ -325,9 +325,8 @@ void DrawHYBRID() // .HYBRID
   Push(a); // R>
   Push(4);
   LC_at_(); // LC@
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

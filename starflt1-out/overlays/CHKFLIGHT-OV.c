@@ -389,11 +389,9 @@ void WF450() // WF450
   Push2Words("*ASSIGN-CREW");
   _gt_C_plus_S(); // >C+S
   Push(0);
-  Push((0x63ef+WF1BB.offset) + 0x0012); // WF1BB<IFIELD> 0x0012 +
-  Push(0x63ef+WF1BB.offset); // WF1BB<IFIELD>
 
-  i = Pop();
-  imax = Pop();
+  i = 0x63ef+WF1BB.offset; // WF1BB<IFIELD>
+  imax = (0x63ef+WF1BB.offset) + 0x0012; // WF1BB<IFIELD> 0x0012 +
   do // (DO)
   {
     Push(i); // I

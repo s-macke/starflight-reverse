@@ -657,9 +657,8 @@ void WE797() // WE797
 {
   unsigned short int i, imax, a;
   _2DUP(); // 2DUP
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1657,11 +1656,9 @@ void WECBD() // WECBD
   Push(0x000b);
   Push(0x0013);
   Push(5);
-  Push(0x000b);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000b;
   do // (DO)
   {
     a = Pop(); // >R
@@ -1709,9 +1706,8 @@ void WED17() // WED17
   Push(Read16(pp_WLINES)); // WLINES @
   Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
   MIN(); // MIN
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2234,18 +2230,14 @@ void WEFE2() // WEFE2
   FULLARR(); // FULLARR
   SETREGI(); // SETREGI
   Push(0);
-  Push(Read16(pp_YUR) + 1); // YUR @ 1+
-  Push(Read16(pp_YLL)); // YLL @
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_YLL); // YLL @
+  imax = Read16(pp_YUR) + 1; // YUR @ 1+
   do // (DO)
   {
-    Push(Read16(pp_XUR) + 1); // XUR @ 1+
-    Push(Read16(pp_XLL)); // XLL @
 
-    j = Pop();
-    jmax = Pop();
+    j = Read16(pp_XLL); // XLL @
+    jmax = Read16(pp_XUR) + 1; // XUR @ 1+
     do // (DO)
     {
       Push(j); // I
@@ -2315,11 +2307,9 @@ void WF054() // WF054
   GetRECORD(); // @RECORD
   Push(Pop() + 7); //  7 +
   Push(0);
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     OVER(); // OVER
@@ -2582,11 +2572,9 @@ void WF1EC() // WF1EC
     Push(Pop() + 0x0078); //  0x0078 +
     SWAP(); // SWAP
     WF02E(); // WF02E
-    Push(6);
-    Push(0);
 
-    i = Pop();
-    imax = Pop();
+    i = 0;
+    imax = 6;
     do // (DO)
     {
       _2DUP(); // 2DUP
@@ -3031,9 +3019,8 @@ void DESCRIBE() // DESCRIBE
   Push(Read16(pp_COLOR)); // COLOR @
   a = Pop(); // >R
   CTINIT(); // CTINIT
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

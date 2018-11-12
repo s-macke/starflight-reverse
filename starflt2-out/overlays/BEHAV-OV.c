@@ -1508,11 +1508,9 @@ void WEA45() // WEA45
 void WEA86() // WEA86
 {
   unsigned short int i, imax, j, jmax;
-  Push(0x03e8);
-  Push(0x0064);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0064;
+  imax = 0x03e8;
   do // (DO)
   {
     BEEPON_2(); // BEEPON_2
@@ -1520,11 +1518,9 @@ void WEA86() // WEA86
     Push(i * 2); // I 2*
     RRND(); // RRND
     TONE(); // TONE
-    Push(3 * Read16(cc_MPS)); // 3 MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 3 * Read16(cc_MPS); // 3 MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -1938,9 +1934,8 @@ void WECA4() // WECA4
   IsICONS_dash__1(); // ?ICONS-_1
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1976,9 +1971,8 @@ void WECE0() // WECE0
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2081,11 +2075,9 @@ void CIRCLES() // CIRCLES
       BEEPON_2(); // BEEPON_2
       _gt_MAINVI(); // >MAINVI
       WE6BA(); // WE6BA
-      Push(0x0064);
-      Push(0);
 
-      i = Pop();
-      imax = Pop();
+      i = 0;
+      imax = 0x0064;
       do // (DO)
       {
         RNDCLR(); // RNDCLR
@@ -2353,9 +2345,8 @@ void WEF4C() // WEF4C
       {
         Push(0);
         SWAP(); // SWAP
-        Push(0);
 
-        i = Pop();
+        i = 0;
         imax = Pop();
         do // (DO)
         {
@@ -2687,9 +2678,8 @@ void WF19A() // WF19A
       {
         Push(0);
         SWAP(); // SWAP
-        Push(0);
 
-        i = Pop();
+        i = 0;
         imax = Pop();
         do // (DO)
         {
@@ -2859,11 +2849,9 @@ void WF312() // WF312
   Push2Words("*ASSIGN");
   _gt_C_plus_S(); // >C+S
   Push((0x65e1+INST_dash_SI.offset) + 0x0011); // INST-SI<IFIELD> 0x0011 +
-  Push(0x0012);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0012;
   do // (DO)
   {
     Push(i); // I

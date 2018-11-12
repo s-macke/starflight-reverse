@@ -1846,9 +1846,8 @@ void WE9B4() // WE9B4
   C_ex_(); // C!
   WE80B(); // WE80B
   WE86F(); // WE86F
-  Push(1);
 
-  i = Pop();
+  i = 1;
   imax = Pop();
   do // (DO)
   {

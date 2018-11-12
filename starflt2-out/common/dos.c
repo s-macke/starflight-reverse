@@ -754,11 +754,9 @@ void SETMAXD() // SETMAXD
   Store(); // !
   W4480(); // W4480
   if (Pop() == 0) return;
-  Push(7);
-  Push(Read16(pp_MAXDRV) + 1); // MAXDRV @ 1+
 
-  i = Pop();
-  imax = Pop();
+  i = Read16(pp_MAXDRV) + 1; // MAXDRV @ 1+
+  imax = 7;
   do // (DO)
   {
     Push(i); // I

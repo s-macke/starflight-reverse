@@ -430,19 +430,16 @@ void WE86A() // WE86A
   MAX(); // MAX
   Push(0x09c4);
   MIN(); // MIN
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
     Push(i); // I
     TONE(); // TONE
-    Push(0x000a * Read16(cc_MPS)); // 0x000a MPS *
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x000a * Read16(cc_MPS); // 0x000a MPS *
     do // (DO)
     {
       NOP(); // NOP
@@ -1262,22 +1259,18 @@ void WED33() // WED33
 void WED8D() // WED8D
 {
   unsigned short int i, imax, j, jmax;
-  Push(0x012c * Read16(cc_MPS)); // 0x012c MPS *
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x012c * Read16(cc_MPS); // 0x012c MPS *
   do // (DO)
   {
     Push(0x0032);
     Push(0x05dc);
     RRND(); // RRND
     TONE(); // TONE
-    Push(Read16(cc_MPS)); // MPS
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = Read16(cc_MPS); // MPS
     do // (DO)
     {
       NOP(); // NOP
@@ -1298,9 +1291,8 @@ void WEDB9() // WEDB9
 {
   unsigned short int i, imax;
   BEEPON_2(); // BEEPON_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1552,9 +1544,8 @@ void WEF5D() // WEF5D
   unsigned short int i, imax, a;
   Push(pp_LSCAN); // LSCAN
   _099(); // 099
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1637,11 +1628,9 @@ void WEFDB() // WEFDB
   Push(0x00cd);
   WE83C(); // WE83C
   INEXT(); // INEXT
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
     WEFAB(); // WEFAB
@@ -1852,11 +1841,9 @@ void WF15C() // WF15C
   TIME(); // TIME
   StoreD(); // D!
   MOUNTB(); // MOUNTB
-  Push(0x000a);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x000a;
   do // (DO)
   {
     Push(i); // I
@@ -2032,22 +2019,18 @@ void WF264() // WF264
   WF24E(); // WF24E
   V_gt_DISPL(); // V>DISPL
   BEEPON_2(); // BEEPON_2
-  Push(4);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 4;
   do // (DO)
   {
     WED8D(); // WED8D
     i++;
   } while(i<imax); // (LOOP)
 
-  Push(9);
-  Push(4);
 
-  j = Pop();
-  jmax = Pop();
+  j = 4;
+  jmax = 9;
   do // (DO)
   {
     _gt_MAINVI(); // >MAINVI
@@ -2095,11 +2078,9 @@ void WF2B0() // WF2B0
   Push(Read16(regsp)); // DUP
   Push(Pop() + 0x0064); //  0x0064 +
   RRND(); // RRND
-  Push(0x03e8 * Read16(cc_MPS)); // 0x03e8 MPS *
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x03e8 * Read16(cc_MPS); // 0x03e8 MPS *
   do // (DO)
   {
     Push(0x0032);
@@ -2132,9 +2113,8 @@ void WF2FA() // WF2FA
     Push(0);
     Push(4);
     RRND(); // RRND
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -2182,11 +2162,9 @@ void WF33E() // WF33E
   Push(0x00ce);
   WE83C(); // WE83C
   ILAST(); // ILAST
-  Push(8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 8;
   do // (DO)
   {
     WF2FA(); // WF2FA

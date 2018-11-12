@@ -691,11 +691,9 @@ void WE585() // WE585
   Push(0x0011);
   Push(0x001e);
   LLINE(); // LLINE
-  Push(0x00c7);
-  Push(0x002b);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x002b;
+  imax = 0x00c7;
   do // (DO)
   {
     Push(0x0012);
@@ -707,11 +705,9 @@ void WE585() // WE585
     if (((step>=0) && (i>=imax)) || ((step<0) && (i<=imax))) break;
   } while(1); // (+LOOP)
 
-  Push(0x00c7);
-  Push(0x0053);
 
-  j = Pop();
-  jmax = Pop();
+  j = 0x0053;
+  jmax = 0x00c7;
   do // (DO)
   {
     Push(0x0013);
@@ -728,11 +724,9 @@ void WE585() // WE585
   Push(0x0011);
   Push(0x001d);
   LLINE(); // LLINE
-  Push(0x009c);
-  Push(0x0019);
 
-  k = Pop();
-  kmax = Pop();
+  k = 0x0019;
+  kmax = 0x009c;
   do // (DO)
   {
     Push(k); // I
@@ -746,11 +740,9 @@ void WE585() // WE585
     if (((step>=0) && (k>=kmax)) || ((step<0) && (k<=kmax))) break;
   } while(1); // (+LOOP)
 
-  Push(0x009c);
-  Push(0x002d);
 
-  l = Pop();
-  lmax = Pop();
+  l = 0x002d;
+  lmax = 0x009c;
   do // (DO)
   {
     Push(l); // I
@@ -950,11 +942,9 @@ void WE7B4() // WE7B4
   GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Push(0x009c);
-  Push(0x0028);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0028;
+  imax = 0x009c;
   do // (DO)
   {
     Push(i); // I
@@ -993,11 +983,9 @@ void WE7FE() // WE7FE
   GetColor(GREY2);
   StoreCOLOR(); // !COLOR
   _gt_1FONT(); // >1FONT
-  Push(0x00c7);
-  Push(0x0055);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0055;
+  imax = 0x00c7;
   do // (DO)
   {
     Push(4);
@@ -1093,9 +1081,8 @@ void WE89C() // WE89C
   IsICONSI(); // ?ICONSI
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -1138,9 +1125,8 @@ void WE8E6() // WE8E6
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
-    Push(0);
 
-    i = Pop();
+    i = 0;
     imax = Pop();
     do // (DO)
     {
@@ -1287,11 +1273,9 @@ void WEA04() // WEA04
   GetColor(GREY1);
   StoreCOLOR(); // !COLOR
   _1PIX(); // 1PIX
-  Push(Read16(pp_ILOCAL)); // ILOCAL @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(pp_ILOCAL); // ILOCAL @
   do // (DO)
   {
     Push(i); // I
@@ -1864,9 +1848,8 @@ void WEE51() // WEE51
   IsICONS_dash__1(); // ?ICONS-_1
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() == 0) return;
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2256,11 +2239,9 @@ void WF085() // WF085
 void WF11B() // WF11B
 {
   unsigned short int i, imax;
-  Push(3);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 3;
   do // (DO)
   {
     WE722(); // WE722

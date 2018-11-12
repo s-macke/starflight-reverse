@@ -502,11 +502,9 @@ void WEEA9() // WEEA9
 void WEEC1() // WEEC1
 {
   unsigned short int i, imax;
-  Push(0x001e * Read16(cc_MPS)); // 0x001e MPS *
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x001e * Read16(cc_MPS); // 0x001e MPS *
   do // (DO)
   {
     NOP(); // NOP
@@ -526,11 +524,9 @@ void WEED7() // WEED7
   WEEA9(); // WEEA9
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
-  Push(0);
-  Push(0x03e8);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x03e8;
+  imax = 0;
   do // (DO)
   {
     Push(i); // I
@@ -556,11 +552,9 @@ void WEEF9() // WEEF9
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
   BEEPON_2(); // BEEPON_2
-  Push(0x07d0);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x07d0;
   do // (DO)
   {
     WEEC1(); // WEEC1
@@ -590,11 +584,9 @@ void WEF2B() // WEF2B
   WEEA9(); // WEEA9
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
-  Push(0x03e8);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x03e8;
   do // (DO)
   {
     Push(0x0064);
@@ -802,11 +794,9 @@ void WF071() // WF071
 {
   unsigned short int i, imax, j, jmax;
   BMHIGH(); // BMHIGH
-  Push(Read16(Pop())&0xFF); //  C@
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop())&0xFF; //  C@
   do // (DO)
   {
     Push(Read16(pp_SRC)); // SRC @
@@ -814,9 +804,8 @@ void WF071() // WF071
     BMBYTES(); // BMBYTES
     Push(Read16(Pop())&0xFF); //  C@
     Push(Read16(regsp)); // DUP
-    Push(0);
 
-    j = Pop();
+    j = 0;
     jmax = Pop();
     do // (DO)
     {
@@ -892,11 +881,9 @@ void WF0D5() // WF0D5
   BMBYTES(); // BMBYTES
   C_ex__2(); // C!_2
   BMHIGH(); // BMHIGH
-  Push(Read16(Pop())); //  @
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop()); //  @
   do // (DO)
   {
     Push(Read16(regsp)); // DUP
@@ -1342,18 +1329,14 @@ void WF430() // WF430
   Push(0x1bee);
   TIME(); // TIME
   _2_at_(); // 2@
-  Push(0x0064);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0064;
   do // (DO)
   {
-    Push(0x03e8);
-    Push(0);
 
-    j = Pop();
-    jmax = Pop();
+    j = 0;
+    jmax = 0x03e8;
     do // (DO)
     {
       NOP(); // NOP

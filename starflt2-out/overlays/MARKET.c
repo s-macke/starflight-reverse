@@ -1371,11 +1371,9 @@ void WEE33() // WEE33
 void WEE4B() // WEE4B
 {
   unsigned short int i, imax;
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     WEE19(); // WEE19
@@ -1392,11 +1390,9 @@ void WEE4B() // WEE4B
 void WEE5B() // WEE5B
 {
   unsigned short int i, imax;
-  Push(7);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 7;
   do // (DO)
   {
     WEE33(); // WEE33
@@ -1527,9 +1523,8 @@ void WEF14() // WEF14
   Push(Read16(pp_SCROLL_dash_)); // SCROLL- @
   Push(Read16(pp_WLINES)); // WLINES @
   MIN(); // MIN
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {

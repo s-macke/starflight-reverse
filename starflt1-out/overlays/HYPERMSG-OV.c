@@ -587,9 +587,8 @@ void _plus_A_dash_VESS() // +A-VESS
   Push(Read16(regsp)); // DUP
   Push(pp__n_VESS); // #VESS
   _plus__ex__2(); // +!_2
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -647,11 +646,9 @@ void WE73A() // WE73A
 {
   unsigned short int a, i, imax;
   a = Pop(); // >R
-  Push(0);
-  Push(0x000f);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x000f;
+  imax = 0;
   do // (DO)
   {
     Push(i + (i >> 4)); // I I 16* +
@@ -703,11 +700,9 @@ void IsPRL() // ?PRL
   SET_STR_AS_PARAM("THE CRYSTAL PEARL IS PULSING!");
   DrawTTY(); // .TTY
   GetCRS(); // @CRS
-  Push(1);
-  Push(0x0010);
 
-  i = Pop();
-  imax = Pop();
+  i = 0x0010;
+  imax = 1;
   do // (DO)
   {
     Push(i); // I
@@ -979,11 +974,9 @@ void DO_dash_FLARE() // DO-FLARE
   unsigned short int i, imax;
   _gt_DISPLAY(); // >DISPLAY
   BEEPOFF(); // BEEPOFF
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(0x000c);
@@ -1552,11 +1545,9 @@ void WEE3B() // WEE3B
   WEDD2(); // WEDD2
   PRINT("IS ... AHHHHHH!", 15); // (.")
   BEEPON(); // BEEPON
-  Push(0x9c40);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x9c40;
   do // (DO)
   {
     Push(-1);
@@ -2103,9 +2094,8 @@ void DMSG() // DMSG
   Push(Read16(pp_YABS)); // YABS @
   Push(Read16(pp_ILOCAL)); // ILOCAL @
   IsICONS_dash_AT(); // ?ICONS-AT
-  Push(0);
 
-  i = Pop();
+  i = 0;
   imax = Pop();
   do // (DO)
   {
@@ -2493,11 +2483,9 @@ void TRAK_dash_E() // TRAK-E
   {
     Push(pp_ILOCAL); // ILOCAL
   }
-  Push(Read16(Pop()) - 1); //  @ 1-
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = Read16(Pop()) - 1; //  @ 1-
   do // (DO)
   {
     Push(i); // I

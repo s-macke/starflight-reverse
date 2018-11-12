@@ -133,11 +133,9 @@ void NOVA() // NOVA
 void INIT_dash_HYPER_dash_STARS() // INIT-HYPER-STARS
 {
   unsigned short int i, imax;
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(pp_HYPER_dash_DOTS + i); // HYPER-DOTS I +
@@ -203,11 +201,9 @@ void HYPER_dash_FRAME() // HYPER-FRAME
   {
     DARK(); // DARK
   }
-  Push(0x0032);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0032;
   do // (DO)
   {
     Push(i); // I
@@ -243,11 +239,9 @@ void FLUX() // FLUX
   Push(0);
   TONE(); // TONE
   BEEPON(); // BEEPON
-  Push(0x0096);
-  Push(0);
 
-  i = Pop();
-  imax = Pop();
+  i = 0;
+  imax = 0x0096;
   do // (DO)
   {
     HYPER_dash_FRAME(); // HYPER-FRAME
