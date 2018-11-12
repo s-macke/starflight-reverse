@@ -437,26 +437,26 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
         fprintf(fp, "%s;\n", efunc->vars[efunc->nvars-1]);
     }
 
-    Postfix2InfixReset(fp, 0); // this should not print anything
+    Postfix2InfixReset(fp, 0, NONE, NULL, NULL); // this should not print anything
 
     int nspc = 1;
     while(1)
     {
         if (pline[addr].done == FALSE)
         {
-            Postfix2InfixReset(fp, nspc);
+            Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
             fprintf(fp, "// db 0x%02x\n", Read8(addr));
         }
         if (pline[addr].iswordheader)
         {
-            Postfix2InfixReset(fp, nspc);
+            Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
             fprintf(fp, "}\n\n");
             return addr;
         }
 
         if (pline[addr].labelid)
         {
-            Postfix2InfixReset(fp, nspc);
+            Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
             fprintf(fp, "\n");
             Spc(fp, nspc);
             fprintf(fp, "label%i:\n", pline[addr].labelid);
@@ -465,7 +465,10 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
         switch(pline[addr].flow.flow)
         {
             case DO:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, DO,
+                  GetVariableName(efunc, pline[addr].variableidx+0),
+                  GetVariableName(efunc, pline[addr].variableidx+1));
+/*
                 fprintf(fp, "\n");
                 Spc(fp, nspc);
                 fprintf(fp, "%s = Pop();\n", GetVariableName(efunc, pline[addr].variableidx+0));
@@ -475,11 +478,13 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 fprintf(fp, "do // (DO)\n");
                 Spc(fp, nspc);
                 fprintf(fp, "{\n");
+*/
                 nspc++;
+
                 break;
 
             case DOSIMPLE:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "do\n");
                 Spc(fp, nspc);
@@ -488,14 +493,14 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 break;
 
             case LOOPTEST:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 nspc--;
                 Spc(fp, nspc);
                 fprintf(fp, "} while(Pop() == 0);\n");
                 break;
 
             case DOENDLESS:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "while(1)\n");
                 Spc(fp, nspc);
@@ -505,7 +510,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
 
             case LOOP:
             {
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 WORD *e = GetWordByAddr(Read16(addr)+2, pline[addr].ovidx);
                 if (strcmp(e->r, "(/LOOP)") == 0)
                 {
@@ -550,43 +555,43 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 break;
             }
             case IFGOTO:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "if (Pop() == 0) goto label%i;\n", pline[pline[addr].gotoaddr].labelid);
                 break;
 
             case IFBREAK:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "if (Pop() == 0) break;\n\n");
                 break;
 
             case IFEXIT:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "if (Pop() == 0) return;\n");
                 break;
 
             case GOTO:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "goto label%i;\n", pline[pline[addr].gotoaddr].labelid);
                 break;
 
             case FUNCEND:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 fprintf(fp, "}\n\n");
                 return addr;
                 break;
 
             case EXIT:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "return;\n");
                 break;
 
             case IFNOT:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "if (Pop() != 0)\n");
                 Spc(fp, nspc);
@@ -595,7 +600,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 break;
 
             case IFELSE:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 nspc--;
                 Spc(fp, nspc);
                 fprintf(fp, "} else\n");
@@ -605,7 +610,7 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                 break;
 
             case CLOSE:
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 for(j=0; j<pline[addr].flow.nclosing; j++)
                 {
                     nspc--;
@@ -622,13 +627,13 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
         }
         if ((pline[addr].str != NULL) && (pline[addr].str[0] != 0))
         {
-            Postfix2InfixReset(fp, nspc);
+            Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
             Spc(fp, nspc);
             fprintf(fp, "%s", pline[addr].str);
         }
         if (pline[addr].isasm)
         {
-            Postfix2InfixReset(fp, nspc);
+            Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
             char buffer[0x80];
             disasm(0x0, (unsigned)addr, mem, buffer);
             fprintf(fp, "// 0x%04x: %s\n", addr, buffer);

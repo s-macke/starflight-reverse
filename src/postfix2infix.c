@@ -388,7 +388,7 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
             if ((dictionary[i].ovidx == -1) || (dictionary[i].ovidx == currentovidx))
             if (dictionary[i].wordp == value)
             {
-                Postfix2InfixReset(fp, nspc);
+                Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
                 Spc(fp, nspc);
                 fprintf(fp, "Push(%s); // '%s'\n", numberstring, GetWordName(&dictionary[i]));
                 return;
@@ -664,7 +664,7 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
     */
     // TODO OVER MAX, !, SWAP, DUP +@, ...
 
-    Postfix2InfixReset(fp, nspc);
+    Postfix2InfixReset(fp, nspc, NONE, NULL, NULL);
 
     char func[STRINGLEN*2];
     GetMacro(addr, e, efunc, func, pline[addr].ovidx);
@@ -672,16 +672,80 @@ void Postfix2Infix(unsigned short addr, WORD *e, WORD *efunc, int currentovidx, 
     fprintf(fp, "%s", func);
 }
 
-void Postfix2InfixReset(FILE *fp, int nspc)
+
+void RemoveTrivialPopFromStack()
 {
-    for(int i=0; i<stackoffset; i++)
-    {
-        if (strcmp(stack[i].expr, "Pop()") == 0) continue; // This is a simple Push(Pop()); and can be ignored
-        Spc(fp, nspc);
-        fprintf(fp, "Push(%s);", stack[i].expr);
-        if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
+  for(int i=0; i<stackoffset; i++)
+  {
+      // This is a simple Push(Pop()); and can be ignored
+      if (strcmp(stack[i].expr, "Pop()") != 0) continue;
+      for(int j=i+1; j<stackoffset; j++)
+      {
+        memcpy(&stack[j-1], &stack[j], sizeof(Intermediate));
+      }
+      stackoffset--;
+  }
+}
+
+void Postfix2InfixReset(FILE *fp, int nspc, controlflowenum flow, char* flowstr1, char* flowstr2)
+{
+  RemoveTrivialPopFromStack();
+
+  switch(flow)
+  {
+    case NONE:
+      for(int i=0; i<stackoffset; i++)
+      {
+          Spc(fp, nspc);
+          fprintf(fp, "Push(%s);", stack[i].expr);
+          if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
+          fprintf(fp, "\n");
+      }
+      break;
+
+      case DO:
+        for(int i=0; i<stackoffset-2; i++)
+        {
+            Spc(fp, nspc);
+            fprintf(fp, "Push(%s);", stack[i].expr);
+            if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
+            fprintf(fp, "\n");
+        }
+
         fprintf(fp, "\n");
-    }
+        //Spc(fp, nspc);
+
+          Spc(fp, nspc);
+          if (stackoffset>=1)
+          {
+            fprintf(fp, "%s = %s;", flowstr1, stack[stackoffset-1].expr);
+            if (stack[stackoffset-1].forth[0] != 0 && !stack[stackoffset-1].isnumber) fprintf(fp, " // %s", stack[stackoffset-1].forth);
+          } else
+          {
+            fprintf(fp, "%s = Pop();", flowstr1);
+          }
+          fprintf(fp, "\n");
+
+
+          Spc(fp, nspc);
+          if (stackoffset>=2)
+          {
+            fprintf(fp, "%s = %s;", flowstr2, stack[stackoffset-2].expr);
+            if (stack[stackoffset-2].forth[0] != 0 && !stack[stackoffset-2].isnumber) fprintf(fp, " // %s", stack[stackoffset-2].forth);
+          } else
+          {
+            fprintf(fp, "%s = Pop();", flowstr2);
+          }
+          //if (stack[i].forth[0] != 0 && !stack[i].isnumber) fprintf(fp, " // %s", stack[i].forth);
+          fprintf(fp, "\n");
+
+        Spc(fp, nspc);
+        fprintf(fp, "do // (DO)\n");
+        Spc(fp, nspc);
+        fprintf(fp, "{\n");
+        break;
+
+   }
 
     // default is one Pop() on the stack. Be careful here. Not every operation is possible here
     sprintf(stack[0].expr, "Pop()");
