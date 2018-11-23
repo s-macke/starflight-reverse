@@ -81,11 +81,14 @@ char* GetVariableName(WORD *efunc, int varidx)
     static char *default1 = "unknown";
     static char *default2 = "callp1";
     static char *default3 = "callp0";
+    static char *default4 = "never";
+
     if (varidx >= 0) return &efunc->vars[varidx][0];
 
     if (varidx == -1) return default1;
     if (varidx == -2) return default2;
     if (varidx == -3) return default3;
+    return default4;
 }
 
 
@@ -743,6 +746,9 @@ void Postfix2InfixReset(FILE *fp, int nspc, controlflowenum flow, char* flowstr1
         fprintf(fp, "do // (DO)\n");
         Spc(fp, nspc);
         fprintf(fp, "{\n");
+        break;
+
+        default:
         break;
 
    }

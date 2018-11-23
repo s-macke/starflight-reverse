@@ -23,7 +23,7 @@ typedef struct
 } OVLHeader;
 
 void LoadDir(FILE *fp);
-char* Extract(int diridx, int *size);
+unsigned char* Extract(int diridx, int *size);
 unsigned short GetStartAddress(int diridx);
 DIRENTRY* GetDirByAddr(int startaddr);
 DIRENTRY* GetDirByIdx(int idx);

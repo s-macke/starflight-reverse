@@ -138,7 +138,7 @@ void LoadDir(FILE *fp)
     fprintf(fp, "};\n");
 }
 
-char* Extract(int fileidx, int *size)
+unsigned char* Extract(int fileidx, int *size)
 {
     int i, j;
     DIRENTRY *de = GetDirByIdx(fileidx);
@@ -156,7 +156,7 @@ char* Extract(int fileidx, int *size)
     int l = ((de->end - de->start)+1)*16;
     *size = l;
 
-    char *buf = malloc(l);
+    unsigned char *buf = malloc(l);
     memset(buf, 0, l);
 
     fseek(file, start, SEEK_SET);

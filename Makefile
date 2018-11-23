@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -O2
 
-all: disasOV1 disasOV2 emulate
+all: disasOV1 disasOV2 emulate emulatesdl
 
 disasm.o: src/disasm/debugger.c
 	$(CC) $(CFLAGS) -c src/disasm/debugger.c -o disasm.o
@@ -76,9 +76,9 @@ emulate: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
 	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate
 
 emulatesdl: emul/emul.c emul/cpu.c src/global.c emul/graphics.c
-	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulate -lSDL2
+	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL emul/emul.c emul/cpu.c src/global.c emul/graphics.c -o emulatesdl -lSDL2
 
-.PHONY: clean
+.PHONY: clean all
 
 clean:
 	rm -f *.o

@@ -27,6 +27,7 @@ char* GetVariable(Variables *vars, WORD *e, int stackidxfromtop)
     static char *default1 = "unknown";
     static char *default2 = "callp1";
     static char *default3 = "callp0";
+    static char *default4 = "never";
     int varidx;
     int stackidx = vars->nstack - 1 - stackidxfromtop;
     if (stackidx < 0)
@@ -39,6 +40,7 @@ char* GetVariable(Variables *vars, WORD *e, int stackidxfromtop)
     if (varidx == -1) return default1;
     if (varidx == -2) return default2;
     if (varidx == -3) return default3;
+    return default4;
 }
 
 void AddLoopVariables(Variables *vars, WORD *e)

@@ -135,7 +135,7 @@ void DisasmEGA()
 {
     int size;
     printf("Disassemble EGA\n");
-    char* data = Extract(0x91, &size);
+    unsigned char* data = Extract(0x91, &size);
     memcpy(&mem[0x0], data, size);
     InitParser();
     for(int i=0; i<15; i++)

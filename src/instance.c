@@ -73,7 +73,7 @@ void HuffmanDecode(FILE* fp, char* buf, int n)
     int byteoffset = 0;
     for(int i=0; i<n; i++)
     {
-        char c = HuffmanDecodeChar(buf, &byteoffset, &bits);
+        char c = HuffmanDecodeChar((unsigned char*)buf, &byteoffset, &bits);
         fprintf(fp, "%c", c);
     }
 }
@@ -145,16 +145,16 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         }
         if (class == 0x35) // message
         {
-            HuffmanDecode(fp, &buf[a+26], buf[a+25]);
+            HuffmanDecode(fp, (char*)&buf[a+26], buf[a+25]);
         }
         if (class == 0x1b) // message
         {
-            HuffmanDecode(fp, &buf[a+41], buf[a+40]);
+            HuffmanDecode(fp, (char*)&buf[a+41], buf[a+40]);
         }
 #ifdef STARFLT1
         if (class == 0x30) // string
         {
-            HuffmanDecode(fp, &buf[a+13], buf[a+12]);
+            HuffmanDecode(fp, (char*)&buf[a+13], buf[a+12]);
         }
 #endif
 
@@ -197,4 +197,3 @@ void ExtractInstance(const char* filename)
     printf("\n");
     */
 }
-

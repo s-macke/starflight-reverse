@@ -618,6 +618,9 @@ int WriteParsedFunction(FILE *fp, WORD *efunc, int ovidx)
                     fprintf(fp, "}\n");
                 }
                 break;
+
+            default:
+                break;
         }
 
         if (pline[addr].istrivialword)

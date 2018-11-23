@@ -9,6 +9,7 @@ static SDL_Texture *texture;
 #include<stdlib.h>
 #include<string.h>
 #include<stdint.h>
+#include<math.h>
 #include"graphics.h"
 
 #define WIDTH 640
@@ -360,8 +361,9 @@ void GraphicsInit()
         printf("SDL_Init Error: %s\n", SDL_GetError());
         return;
     }
-    freopen("stdout", "w", stdout); // redirects stdout
-    freopen("stderr", "w", stderr); // redirects stderr
+    FILE* file;
+    file = freopen("stdout", "w", stdout); // redirects stdout
+    file = freopen("stderr", "w", stderr); // redirects stderr
     GraphicsInitThread(NULL);
 #else
     GraphicsInitThread(NULL);
@@ -475,8 +477,8 @@ void GraphicsLine(int x1, int y1, int x2, int y2, int color, int xormode)
     float y = y1;
     float dx = (x2 - x1);
     float dy = (y2 - y1);
-    int n = abs(dx);
-    if (abs(dy) > n) n = abs(dy);
+    int n = fabs(dx);
+    if (fabs(dy) > n) n = fabs(dy);
     if (n == 0) return;
     dx /= n;
     dy /= n;

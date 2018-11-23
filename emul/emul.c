@@ -428,7 +428,7 @@ void Find() // "(FIND)"
         Push(1);
         return;
     }
-    int word = FindWordByName(&mem[cx+1], n);
+    int word = FindWordByName((char*)&mem[cx+1], n);
     //printf("Found 0x%04x\n", word);
     if (word == 0x0)
     {
@@ -602,7 +602,7 @@ void Call(unsigned short addr, unsigned short bx)
                 int offset = Read16(regsp+2);
                 for(int i=0; i<n; i++)
                     printf("%c", Read8(offset+i));
-                GraphicsText(&mem[offset], n);
+                GraphicsText((char*)&mem[offset], n);
             }
             if (strcmp(s, "(CR)") == 0)
             {
@@ -1571,7 +1571,7 @@ void Call(unsigned short addr, unsigned short bx)
             int w = Read16(0x5887);
             int h = Read16(0x5892);
             //printf("blt xblt=%i yblt=%i lblt=%i wblt=%i color=%i 0x%04x:0x%04x\n", x0, y0, w, h, color, bltseg, bltoffs);
-            GraphicsBLT(x0, y0, w, h, &m[(bltseg<<4) + bltoffs], color);
+            GraphicsBLT(x0, y0, w, h, (char*)&m[(bltseg<<4) + bltoffs], color);
             }
             //exit(1);
         break;
@@ -2259,9 +2259,11 @@ int main()
     LoadSTARFLT();
     GraphicsInit();
 
-    // Patch to start Forth interpreter
+#ifndef SDL
+// Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
     Write16(0x2420, 0x0F22-2); // "0"
+#endif
 
     /*
     // default interrupt vector
