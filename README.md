@@ -15,7 +15,7 @@ To find out more about the game check the following links:
   * [Technical Articles Saved from Oblivion](https://github.com/s-macke/starflight-reverse/tree/master/webarchive)
   * [Review of Starflight 1](http://crpgaddict.blogspot.de/search/label/Starflight)
   * [Review of Starflight 2](http://crpgaddict.blogspot.de/search/label/Starflight%20II)
-  * Other fan sites or projects [1](http://bravearmy.com/starflight/) [2](http://otherelectricities.com/neckdeep/starflight.html) [3](https://www.dosgameclub.com/starflight/) [4](http://blakessanctum.x10.mx/Games/Starflight/) [5]https://www.starflight3.com/
+  * Other fan sites or projects [1](http://bravearmy.com/starflight/) [2](http://otherelectricities.com/neckdeep/starflight.html) [3](https://www.dosgameclub.com/starflight/) [4](http://blakessanctum.x10.mx/Games/Starflight/) [5](https://www.starflight3.com/)
 
 You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
