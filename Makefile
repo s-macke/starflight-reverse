@@ -85,3 +85,4 @@ clean:
 	rm -f disasOV1
 	rm -f disasOV2
 	rm -f emulate
+	rm -rf emulatesdl
