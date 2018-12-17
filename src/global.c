@@ -225,7 +225,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x629f, "(SYSTEM)"}, // (SYSTEM
     {0xff, 0x62df, "(ENCOUNTER)"}, // "(ENCOUN"
     {0xff, 0x62ef, "(SHIPBOX)"}, // "(SHIPBO"
-    {0xff, 0x62ff, "(AORIGINATOR"}, // "(AORIGI"
+    {0xff, 0x62ff, "(AORIGINATOR)"}, // "(AORIGI"
     {0xff, 0x6a99, "MERCATOR"}, // "MERCATO"
     {0xff, 0x6aad, "CONANCHOR"}, // "CONANCH"
     {0xff, 0x6b31, "GVERTEX>GRIDCOLOR"}, // "GVERTEX"
@@ -962,6 +962,30 @@ WORDRENAME renamewords[] =
     {0x02, 0xe3e0, "C+LIMIT"}, // WE3E0
     {0x02, 0xe38a, "RT0"}, // WE38A
     {0x02, 0xe396, "TY"}, // WE396
+
+    {0x14, 0xeefd, ".COMM-PIC"}, // WEEFD
+    {0x14, 0xd97f, "CPIC"}, // WD97F
+    {0x14, 0xdadf, "OBSEQUIOUS"}, // WDADF
+    {0x14, 0xdae3, "FRIENDLY"}, // WDAE3
+    {0x14, 0xdae7, "NEUTRAL"}, // WDAE7
+    {0x14, 0xdaeb, "HOSTILE"}, // WDAEB
+    {0x14, 0xdaef, "FIGHT"}, // WDAEF
+
+    {0x14, 0xdaf3, "THEMSELVES"}, // WDAF7
+    {0x14, 0xdaf7, "OTHER_RACES"}, // WDAF7
+    {0x14, 0xdafb, "GEN'L-INFO"}, // WDAFB
+    {0x14, 0xdaff, "ANCIENTS"}, // WDAFF
+    {0x14, 0xdb03, "OLD-EMPIRE"}, // WDB03
+
+    {0x14, 0xdb6a, "P>ORIGINATOR"}, // WDB6A
+    {0x14, 0xda13, "P-POSTURE"}, // WDA13
+    {0x14, 0xda2f, "POSTURE"}, // WDA2F
+    {0x14, 0xda1b, "P-SUBJECT"}, // WDA1B
+    {0x14, 0xda3f, "SUBJECT"}, // WDA3F
+
+    {0x14, 0xd998, "FPE"}, // WD998
+    {0x14, 0xd99d, "HPE"}, // WD99D
+    {0x14, 0xdbc9, "POSTURE-EFFECT"}, // WDBC9
 
     // named by me
     {0xff, 0xbc87, "HUFF_LSCAN_INIT"}, // Wbc87
