@@ -69,6 +69,7 @@ char HuffmanDecodeChar(unsigned char *buf, int *byteoffset, int *bits)
 
 void HuffmanDecode(FILE* fp, char* buf, int n)
 {
+    fprintf(fp, "    '");
     int bits = 0x80;
     int byteoffset = 0;
     for(int i=0; i<n; i++)
@@ -76,15 +77,16 @@ void HuffmanDecode(FILE* fp, char* buf, int n)
         char c = HuffmanDecodeChar((unsigned char*)buf, &byteoffset, &bits);
         fprintf(fp, "%c", c);
     }
+    fprintf(fp, "'");
 }
 
 /*
-standard instands fields:
+standard instance fields:
 IFieldType INST_dash_SIB     = {DIRECTORYIDX, 0x00, 0x03};
 IFieldType INST_dash_PREV    = {DIRECTORYIDX, 0x03, 0x03};
 IFieldType INST_dash_OFF     = {DIRECTORYIDX, 0x06, 0x03};
 IFieldType INST_dash_CLASS   = {DIRECTORYIDX, 0x09, 0x01};
-IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};
+IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};  <- lsize starts from here
 IFieldType INST_dash_QTY     = {DIRECTORYIDX, 0x0b, 0x02};
 IFieldType INST_dash_X       = {DIRECTORYIDX, 0x0d, 0x02};
 IFieldType INST_dash_Y       = {DIRECTORYIDX, 0x0f, 0x02};
@@ -110,12 +112,12 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         next = ((buf[a+0])<<0) | ((buf[a+1])<<8) | ((buf[a+2])<<16);
         previous = ((buf[a+3])<<0) | ((buf[a+4])<<8) | ((buf[a+5])<<16);
         children = ((buf[a+6])<<0) | ((buf[a+7])<<8) | ((buf[a+8])<<16);
-        unsigned int class = buf[a+9];
-        unsigned int species = buf[a+10];
+        unsigned int class = buf[a+0x9];
+        unsigned int species = buf[a+0xa];
         DIRENTRY *de = GetDirByIdx(class);
+        /*
         char dummy[256];
         sprintf(dummy, "%02x %02x %02x ", class, species, buf[a+11]);
-        /*
         for(int i=0; i<=10; i++)
             instancedone[a+i] = 1;
         for(int i=11; i<de->lsize+11; i++)
@@ -128,20 +130,18 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         instancedone[a+7] = dummy[6];
         instancedone[a+8] = dummy[7];
     */
+        int indent=0;
         for(i=0; i<iter; i++) fprintf(fp, "  ");
         //fprintf(fp, "0x%06x: 0x%06x 0x%06x 0x%06x 0x%02x 0x%02x %s\n", addr, next, previous, children, class, species, GetDirByIdx(class));
-        fprintf(fp, "%s species:%i size:%i   ", de->name, species, de->lsize);
-        if (class == 0x17) // starsystem lsize=8 for starflt1, lsize=9 for starflt2
-        {
-            fprintf(fp, "%i %i %i %i %i %i %i", buf[a+11], buf[a+12], buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17]);
-        }
+        for(int i=0; i<strlen(de->name); i++)
+            if (de->name[i] != ' ') fprintf(fp, "%c", de->name[i]);
         if (class == 0x0d) // bank lsize=9
         {
-            fprintf(fp, "%i %i balance:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+            fprintf(fp, "    %i %i balance:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
         }
         if (class == 0x0e) // bank-trans lsize=6
         {
-            fprintf(fp, "%i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+            fprintf(fp, "    %i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
         }
         if (class == 0x35) // message
         {
@@ -151,10 +151,29 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         {
             HuffmanDecode(fp, (char*)&buf[a+41], buf[a+40]);
         }
+        if (class == 0x20) // planet lsize=0
+        {
+            fprintf(fp, "    species=0x%02x", buf[a+0xa]);
+        }
 #ifdef STARFLT1
         if (class == 0x30) // string
         {
             HuffmanDecode(fp, (char*)&buf[a+13], buf[a+12]);
+        }
+        if (class == 0x17) // starsystem lsize=8 for starflt1, lsize=9 for starflt2
+        {
+            fprintf(fp, "    species=%2i flaredate=%4i x=%4i y=%4i orbitmask=0x%02x loggedmask=%i",
+                buf[a+0xa],
+                ((signed char)buf[a+0xb] + ((signed char)buf[a+0xc]<<8)),
+                buf[a+0xd] + (buf[a+0xe]<<8),
+                buf[a+0xf] + (buf[a+0x10]<<8),
+                buf[a+0x11],
+                buf[a+0x12]);
+        }
+#else
+        if (class == 0x17) // starsystem lsize=9 for starflt2
+        {
+            fprintf(fp, "    %i %i %i %i %i %i %i", buf[a+11], buf[a+12], buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17]);
         }
 #endif
 
