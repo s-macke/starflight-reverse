@@ -278,7 +278,7 @@ extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
-extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
+extern const unsigned short int pp__ro_AORIGINATOR_rc_; // (AORIGINATOR)
 extern const unsigned short int pp_LASTAP; // LASTAP
 extern Color BLACK; // BLACK
 extern Color DK_dash_GREEN; // DK-GREEN
@@ -1147,7 +1147,7 @@ void WE019() // WE019
 
 void WE025() // WE025
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
   Push(Read16(0x63ef+WE00A.offset)&0xFF); // WE00A<IFIELD> C@

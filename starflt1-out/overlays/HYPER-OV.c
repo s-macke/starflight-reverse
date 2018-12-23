@@ -262,7 +262,7 @@ extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
 extern const unsigned short int pp__ro_SHIPBOX_rc_; // (SHIPBOX)
-extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
+extern const unsigned short int pp__ro_AORIGINATOR_rc_; // (AORIGINATOR)
 extern const unsigned short int pp_YTABLE; // YTABLE
 extern const unsigned short int pp_IsCALLING; // ?CALLING
 extern LoadDataType _1BTN; // 1BTN
@@ -1244,7 +1244,7 @@ void ENCCLEANUP() // ENCCLEANUP
   Push(!Pop() & Read16(pp_WD9EC) | Read16(pp_SKIP2NEST)); //  NOT WD9EC @ AND SKIP2NEST @ OR
   Push(pp_SKIP2NEST); // SKIP2NEST
   Store_3(); // !_3
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(pp_EDL) - (Read16(0x63ef+BASE_dash_EDL.offset)&0xFF)); // EDL @ BASE-EDL<IFIELD> C@ -
   Push(Read16(regsp)); // DUP
@@ -1274,7 +1274,7 @@ void ENCCLEANUP() // ENCCLEANUP
   Push(0xc1f3); // '>HAIL'
   MODULE(); // MODULE
   Push2Words("NULL");
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_ex_(); // 1.5!
   Push2Words("NULL");
   Push(pp_SENSE_dash_ADDR); // SENSE-ADDR

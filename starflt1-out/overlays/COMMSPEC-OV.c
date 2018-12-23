@@ -109,7 +109,7 @@ extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp__i_RSIDE; // 'RSIDE
 extern const unsigned short int pp_TIRED_dash_T; // TIRED-T
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
-extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
+extern const unsigned short int pp__ro_AORIGINATOR_rc_; // (AORIGINATOR)
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType ART_dash_NAME; // ART-NAME
 extern LoadDataType ART_dash_VAL; // ART-VAL
@@ -444,7 +444,7 @@ void WEB3F() // WEB3F
   Push(Read16(pp_IsSPHEXI)); // ?SPHEXI @
   _0_gt_(); // 0>
   Push(Pop() & Pop()); // AND
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@
   Push2Words("WEABB");
   D_eq_(); // D=
@@ -1868,7 +1868,7 @@ void WF4DE() // WF4DE
 void _ro_XCOMM_rc_() // (XCOMM)
 {
   WF4DE(); // WF4DE
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   GetINST_dash_SPECIES(); // @INST-SPECIES
   ICLOSE(); // ICLOSE

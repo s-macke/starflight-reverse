@@ -1171,7 +1171,7 @@
 //       (SURFACE)  codep:0x1d29 wordp:0x62cf size:0x0004 C-string:'_ro_SURFACE_rc_'
 //     (ENCOUNTER)  codep:0x1d29 wordp:0x62df size:0x0004 C-string:'_ro_ENCOUNTER_rc_'
 //       (SHIPBOX)  codep:0x1d29 wordp:0x62ef size:0x0004 C-string:'_ro_SHIPBOX_rc_'
-//    (AORIGINATOR  codep:0x1d29 wordp:0x62ff size:0x0004 C-string:'_ro_AORIGINATOR'
+//   (AORIGINATOR)  codep:0x1d29 wordp:0x62ff size:0x0004 C-string:'_ro_AORIGINATOR_rc_'
 //         THIS-RE  codep:0x1d29 wordp:0x630f size:0x0004 C-string:'THIS_dash_RE'
 //         (THIS-I  codep:0x1d29 wordp:0x631f size:0x0004 C-string:'_ro_THIS_dash_I'
 //      KEYINTADDR  codep:0x1d29 wordp:0x6325 size:0x0002 C-string:'KEYINTADDR'
@@ -3430,7 +3430,7 @@ const unsigned short int pp__ro_ENCOUNTER_rc_ = 0x62df; // (ENCOUNTER) size: 4
 const unsigned short int pp__ro_SHIPBOX_rc_ = 0x62ef; // (SHIPBOX) size: 4
 // {0xbc, 0x9a, 0x00, 0x65}
 
-const unsigned short int pp__ro_AORIGINATOR = 0x62ff; // (AORIGINATOR size: 4
+const unsigned short int pp__ro_AORIGINATOR_rc_ = 0x62ff; // (AORIGINATOR) size: 4
 // {0x00, 0x00, 0x00, 0x00}
 
 const unsigned short int pp_THIS_dash_RE = 0x630f; // THIS-RE size: 4
@@ -15822,7 +15822,7 @@ void COLORCA() // COLORCA
 // 0x62ef: db 0xbc 0x9a 0x00 0x65 '   e'
 
 // ================================================
-// 0x62f3: WORD '(AORIGINATOR' codep=0x1d29 wordp=0x62ff
+// 0x62f3: WORD '(AORIGINATOR)' codep=0x1d29 wordp=0x62ff
 // ================================================
 // 0x62ff: db 0x00 0x00 0x00 0x00 '    '
 

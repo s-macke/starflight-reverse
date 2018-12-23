@@ -23,13 +23,13 @@
 //           WD970  codep:0x744d wordp:0xd970 size:0x0003 C-string:'WD970'
 //           WD975  codep:0x744d wordp:0xd975 size:0x0003 C-string:'WD975'
 //           WD97A  codep:0x744d wordp:0xd97a size:0x0003 C-string:'WD97A'
-//           WD97F  codep:0x744d wordp:0xd97f size:0x0003 C-string:'WD97F'
+//            CPIC  codep:0x744d wordp:0xd97f size:0x0003 C-string:'CPIC'
 //           WD984  codep:0x744d wordp:0xd984 size:0x0003 C-string:'WD984'
 //           WD989  codep:0x744d wordp:0xd989 size:0x0003 C-string:'WD989'
 //           WD98E  codep:0x744d wordp:0xd98e size:0x0003 C-string:'WD98E'
 //           WD993  codep:0x744d wordp:0xd993 size:0x0003 C-string:'WD993'
-//           WD998  codep:0x744d wordp:0xd998 size:0x0003 C-string:'WD998'
-//           WD99D  codep:0x744d wordp:0xd99d size:0x0003 C-string:'WD99D'
+//             FPE  codep:0x744d wordp:0xd998 size:0x0003 C-string:'FPE'
+//             HPE  codep:0x744d wordp:0xd99d size:0x0003 C-string:'HPE'
 //           WD9A2  codep:0x744d wordp:0xd9a2 size:0x0003 C-string:'WD9A2'
 //           WD9A7  codep:0x744d wordp:0xd9a7 size:0x0003 C-string:'WD9A7'
 //           WD9AC  codep:0x744d wordp:0xd9ac size:0x0003 C-string:'WD9AC'
@@ -51,18 +51,18 @@
 //           WDA05  codep:0x1d29 wordp:0xda05 size:0x0004 C-string:'WDA05'
 //           WDA0B  codep:0x1d29 wordp:0xda0b size:0x0002 C-string:'WDA0B'
 //           WDA0F  codep:0x2214 wordp:0xda0f size:0x0002 C-string:'WDA0F'
-//           WDA13  codep:0x1d29 wordp:0xda13 size:0x0002 C-string:'WDA13'
+//       P-POSTURE  codep:0x1d29 wordp:0xda13 size:0x0002 C-string:'P_dash_POSTURE'
 //           WDA17  codep:0x1d29 wordp:0xda17 size:0x0002 C-string:'WDA17'
-//           WDA1B  codep:0x1d29 wordp:0xda1b size:0x0002 C-string:'WDA1B'
+//       P-SUBJECT  codep:0x1d29 wordp:0xda1b size:0x0002 C-string:'P_dash_SUBJECT'
 //           WDA1F  codep:0x1d29 wordp:0xda1f size:0x0002 C-string:'WDA1F'
 //           WDA23  codep:0x1d29 wordp:0xda23 size:0x0002 C-string:'WDA23'
 //           WDA27  codep:0x1d29 wordp:0xda27 size:0x0002 C-string:'WDA27'
 //           WDA2B  codep:0x1d29 wordp:0xda2b size:0x0002 C-string:'WDA2B'
-//           WDA2F  codep:0x1d29 wordp:0xda2f size:0x0002 C-string:'WDA2F'
+//         POSTURE  codep:0x1d29 wordp:0xda2f size:0x0002 C-string:'POSTURE'
 //           WDA33  codep:0x1d29 wordp:0xda33 size:0x0002 C-string:'WDA33'
 //           WDA37  codep:0x2214 wordp:0xda37 size:0x0002 C-string:'WDA37'
 //           WDA3B  codep:0x2214 wordp:0xda3b size:0x0002 C-string:'WDA3B'
-//           WDA3F  codep:0x1d29 wordp:0xda3f size:0x0002 C-string:'WDA3F'
+//         SUBJECT  codep:0x1d29 wordp:0xda3f size:0x0002 C-string:'SUBJECT'
 //           WDA43  codep:0x1d29 wordp:0xda43 size:0x0002 C-string:'WDA43'
 //           WDA47  codep:0x1d29 wordp:0xda47 size:0x0002 C-string:'WDA47'
 //           WDA4B  codep:0x1d29 wordp:0xda4b size:0x0002 C-string:'WDA4B'
@@ -87,27 +87,27 @@
 //           WDAD3  codep:0x2214 wordp:0xdad3 size:0x0002 C-string:'WDAD3'
 //           WDAD7  codep:0x1d29 wordp:0xdad7 size:0x0002 C-string:'WDAD7'
 //           WDADB  codep:0x1d29 wordp:0xdadb size:0x0002 C-string:'WDADB'
-//           WDADF  codep:0x2214 wordp:0xdadf size:0x0002 C-string:'WDADF'
-//           WDAE3  codep:0x2214 wordp:0xdae3 size:0x0002 C-string:'WDAE3'
-//           WDAE7  codep:0x2214 wordp:0xdae7 size:0x0002 C-string:'WDAE7'
-//           WDAEB  codep:0x2214 wordp:0xdaeb size:0x0002 C-string:'WDAEB'
-//           WDAEF  codep:0x2214 wordp:0xdaef size:0x0002 C-string:'WDAEF'
-//           WDAF3  codep:0x2214 wordp:0xdaf3 size:0x0002 C-string:'WDAF3'
-//           WDAF7  codep:0x2214 wordp:0xdaf7 size:0x0002 C-string:'WDAF7'
-//           WDAFB  codep:0x2214 wordp:0xdafb size:0x0002 C-string:'WDAFB'
-//           WDAFF  codep:0x2214 wordp:0xdaff size:0x0002 C-string:'WDAFF'
-//           WDB03  codep:0x2214 wordp:0xdb03 size:0x0002 C-string:'WDB03'
+//      OBSEQUIOUS  codep:0x2214 wordp:0xdadf size:0x0002 C-string:'OBSEQUIOUS'
+//        FRIENDLY  codep:0x2214 wordp:0xdae3 size:0x0002 C-string:'FRIENDLY'
+//         NEUTRAL  codep:0x2214 wordp:0xdae7 size:0x0002 C-string:'NEUTRAL'
+//         HOSTILE  codep:0x2214 wordp:0xdaeb size:0x0002 C-string:'HOSTILE'
+//           FIGHT  codep:0x2214 wordp:0xdaef size:0x0002 C-string:'FIGHT'
+//      THEMSELVES  codep:0x2214 wordp:0xdaf3 size:0x0002 C-string:'THEMSELVES'
+//     OTHER_RACES  codep:0x2214 wordp:0xdaf7 size:0x0002 C-string:'OTHER_RACES'
+//      GEN'L-INFO  codep:0x2214 wordp:0xdafb size:0x0002 C-string:'GEN_i_L_dash_INFO'
+//        ANCIENTS  codep:0x2214 wordp:0xdaff size:0x0002 C-string:'ANCIENTS'
+//      OLD-EMPIRE  codep:0x2214 wordp:0xdb03 size:0x0002 C-string:'OLD_dash_EMPIRE'
 //           WDB07  codep:0x744d wordp:0xdb07 size:0x0003 C-string:'WDB07'
 //           WDB0C  codep:0x224c wordp:0xdb0c size:0x0006 C-string:'WDB0C'
 //    ORIGINATOR>C  codep:0x224c wordp:0xdb23 size:0x0014 C-string:'ORIGINATOR_gt_C'
 //    A>ORIGINATOR  codep:0x224c wordp:0xdb48 size:0x0020 C-string:'A_gt_ORIGINATOR'
-//           WDB6A  codep:0x224c wordp:0xdb6a size:0x0018 C-string:'WDB6A'
+//    P>ORIGINATOR  codep:0x224c wordp:0xdb6a size:0x0018 C-string:'P_gt_ORIGINATOR'
 //           WDB84  codep:0x224c wordp:0xdb84 size:0x0006 C-string:'WDB84'
 //           WDB8C  codep:0x224c wordp:0xdb8c size:0x000c C-string:'WDB8C'
 //           WDB9A  codep:0x224c wordp:0xdb9a size:0x000c C-string:'WDB9A'
 //           WDBA8  codep:0x224c wordp:0xdba8 size:0x0006 C-string:'WDBA8'
 //        P>AFIELD  codep:0x4a4f wordp:0xdbbb size:0x000c C-string:'P_gt_AFIELD'
-//           WDBC9  codep:0x224c wordp:0xdbc9 size:0x0010 C-string:'WDBC9'
+//  POSTURE-EFFECT  codep:0x224c wordp:0xdbc9 size:0x0010 C-string:'POSTURE_dash_EFFECT'
 //           WDBDB  codep:0x224c wordp:0xdbdb size:0x000e C-string:'WDBDB'
 //           WDBEB  codep:0x224c wordp:0xdbeb size:0x0012 C-string:'WDBEB'
 //           WDBFF  codep:0x224c wordp:0xdbff size:0x000a C-string:'WDBFF'
@@ -270,7 +270,7 @@
 //           WEE7C  codep:0x224c wordp:0xee7c size:0x0016 C-string:'WEE7C'
 //         EDL+AUX  codep:0x224c wordp:0xee9e size:0x0022 C-string:'EDL_plus_AUX'
 //    COMM-EXPERTS  codep:0x224c wordp:0xeed1 size:0x002a C-string:'COMM_dash_EXPERTS'
-//           WEEFD  codep:0x224c wordp:0xeefd size:0x002e C-string:'WEEFD'
+//       .COMM-PIC  codep:0x224c wordp:0xeefd size:0x002e C-string:'DrawCOMM_dash_PIC'
 //           WEF2D  codep:0x224c wordp:0xef2d size:0x003e C-string:'WEF2D'
 //           WEF6D  codep:0x224c wordp:0xef6d size:0x002e C-string:'WEF6D'
 //           WEF9D  codep:0x224c wordp:0xef9d size:0x0024 C-string:'WEF9D'
@@ -332,7 +332,7 @@ extern const unsigned short int pp__ro_ORIGIN; // (ORIGIN
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
-extern const unsigned short int pp__ro_AORIGINATOR; // (AORIGINATOR
+extern const unsigned short int pp__ro_AORIGINATOR_rc_; // (AORIGINATOR)
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern const unsigned short int pp_CTTOP; // CTTOP
 extern const unsigned short int pp_CTBOT; // CTBOT
@@ -448,13 +448,13 @@ const unsigned short int pp_WDA05 = 0xda05; // WDA05 size: 4
 const unsigned short int pp_WDA0B = 0xda0b; // WDA0B size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_WDA13 = 0xda13; // WDA13 size: 2
+const unsigned short int pp_P_dash_POSTURE = 0xda13; // P-POSTURE size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_WDA17 = 0xda17; // WDA17 size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_WDA1B = 0xda1b; // WDA1B size: 2
+const unsigned short int pp_P_dash_SUBJECT = 0xda1b; // P-SUBJECT size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_WDA1F = 0xda1f; // WDA1F size: 2
@@ -469,13 +469,13 @@ const unsigned short int pp_WDA27 = 0xda27; // WDA27 size: 2
 const unsigned short int pp_WDA2B = 0xda2b; // WDA2B size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_WDA2F = 0xda2f; // WDA2F size: 2
+const unsigned short int pp_POSTURE = 0xda2f; // POSTURE size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_WDA33 = 0xda33; // WDA33 size: 2
 // {0x3a, 0x20}
 
-const unsigned short int pp_WDA3F = 0xda3f; // WDA3F size: 2
+const unsigned short int pp_SUBJECT = 0xda3f; // SUBJECT size: 2
 // {0x3a, 0x20}
 
 const unsigned short int pp_WDA43 = 0xda43; // WDA43 size: 2
@@ -549,16 +549,16 @@ const unsigned short int cc_WDA6D = 0xda6d; // WDA6D
 const unsigned short int cc_WDA75 = 0xda75; // WDA75
 const unsigned short int cc_WDA79 = 0xda79; // WDA79
 const unsigned short int cc_WDAD3 = 0xdad3; // WDAD3
-const unsigned short int cc_WDADF = 0xdadf; // WDADF
-const unsigned short int cc_WDAE3 = 0xdae3; // WDAE3
-const unsigned short int cc_WDAE7 = 0xdae7; // WDAE7
-const unsigned short int cc_WDAEB = 0xdaeb; // WDAEB
-const unsigned short int cc_WDAEF = 0xdaef; // WDAEF
-const unsigned short int cc_WDAF3 = 0xdaf3; // WDAF3
-const unsigned short int cc_WDAF7 = 0xdaf7; // WDAF7
-const unsigned short int cc_WDAFB = 0xdafb; // WDAFB
-const unsigned short int cc_WDAFF = 0xdaff; // WDAFF
-const unsigned short int cc_WDB03 = 0xdb03; // WDB03
+const unsigned short int cc_OBSEQUIOUS = 0xdadf; // OBSEQUIOUS
+const unsigned short int cc_FRIENDLY = 0xdae3; // FRIENDLY
+const unsigned short int cc_NEUTRAL = 0xdae7; // NEUTRAL
+const unsigned short int cc_HOSTILE = 0xdaeb; // HOSTILE
+const unsigned short int cc_FIGHT = 0xdaef; // FIGHT
+const unsigned short int cc_THEMSELVES = 0xdaf3; // THEMSELVES
+const unsigned short int cc_OTHER_RACES = 0xdaf7; // OTHER_RACES
+const unsigned short int cc_GEN_i_L_dash_INFO = 0xdafb; // GEN'L-INFO
+const unsigned short int cc_ANCIENTS = 0xdaff; // ANCIENTS
+const unsigned short int cc_OLD_dash_EMPIRE = 0xdb03; // OLD-EMPIRE
 
 
 // 0xd932: db 0xc4 0x01 '  '
@@ -635,9 +635,9 @@ IFieldType WD975 = {ORIGINATORIDX, 0x0d, 0x01};
 IFieldType WD97A = {ORIGINATORIDX, 0x12, 0x01};
 
 // ================================================
-// 0xd97d: WORD 'WD97F' codep=0x744d wordp=0xd97f
+// 0xd97d: WORD 'CPIC' codep=0x744d wordp=0xd97f
 // ================================================
-IFieldType WD97F = {ORIGINATORIDX, 0x1d, 0x01};
+IFieldType CPIC = {ORIGINATORIDX, 0x1d, 0x01};
 
 // ================================================
 // 0xd982: WORD 'WD984' codep=0x744d wordp=0xd984
@@ -660,14 +660,14 @@ IFieldType WD98E = {ORIGINATORIDX, 0x15, 0x01};
 IFieldType WD993 = {ORIGINATORIDX, 0x16, 0x01};
 
 // ================================================
-// 0xd996: WORD 'WD998' codep=0x744d wordp=0xd998
+// 0xd996: WORD 'FPE' codep=0x744d wordp=0xd998
 // ================================================
-IFieldType WD998 = {ORIGINATORIDX, 0x17, 0x01};
+IFieldType FPE = {ORIGINATORIDX, 0x17, 0x01};
 
 // ================================================
-// 0xd99b: WORD 'WD99D' codep=0x744d wordp=0xd99d
+// 0xd99b: WORD 'HPE' codep=0x744d wordp=0xd99d
 // ================================================
-IFieldType WD99D = {ORIGINATORIDX, 0x18, 0x01};
+IFieldType HPE = {ORIGINATORIDX, 0x18, 0x01};
 
 // ================================================
 // 0xd9a0: WORD 'WD9A2' codep=0x744d wordp=0xd9a2
@@ -777,7 +777,7 @@ LoadDataType WD9FD = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 // 0xda0f: dw 0x0000
 
 // ================================================
-// 0xda11: WORD 'WDA13' codep=0x1d29 wordp=0xda13
+// 0xda11: WORD 'P-POSTURE' codep=0x1d29 wordp=0xda13
 // ================================================
 // 0xda13: db 0x3a 0x20 ': '
 
@@ -787,7 +787,7 @@ LoadDataType WD9FD = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 // 0xda17: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xda19: WORD 'WDA1B' codep=0x1d29 wordp=0xda1b
+// 0xda19: WORD 'P-SUBJECT' codep=0x1d29 wordp=0xda1b
 // ================================================
 // 0xda1b: db 0x3a 0x20 ': '
 
@@ -812,7 +812,7 @@ LoadDataType WD9FD = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 // 0xda2b: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xda2d: WORD 'WDA2F' codep=0x1d29 wordp=0xda2f
+// 0xda2d: WORD 'POSTURE' codep=0x1d29 wordp=0xda2f
 // ================================================
 // 0xda2f: db 0x3a 0x20 ': '
 
@@ -832,7 +832,7 @@ LoadDataType WD9FD = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 // 0xda3b: dw 0x0000
 
 // ================================================
-// 0xda3d: WORD 'WDA3F' codep=0x1d29 wordp=0xda3f
+// 0xda3d: WORD 'SUBJECT' codep=0x1d29 wordp=0xda3f
 // ================================================
 // 0xda3f: db 0x3a 0x20 ': '
 
@@ -957,52 +957,52 @@ LoadDataType WD9FD = {VESSELIDX, 0x05, 0x01, 0x49, 0x6491};
 // 0xdadb: db 0x3a 0x20 ': '
 
 // ================================================
-// 0xdadd: WORD 'WDADF' codep=0x2214 wordp=0xdadf
+// 0xdadd: WORD 'OBSEQUIOUS' codep=0x2214 wordp=0xdadf
 // ================================================
 // 0xdadf: dw 0x0001
 
 // ================================================
-// 0xdae1: WORD 'WDAE3' codep=0x2214 wordp=0xdae3
+// 0xdae1: WORD 'FRIENDLY' codep=0x2214 wordp=0xdae3
 // ================================================
 // 0xdae3: dw 0x0002
 
 // ================================================
-// 0xdae5: WORD 'WDAE7' codep=0x2214 wordp=0xdae7
+// 0xdae5: WORD 'NEUTRAL' codep=0x2214 wordp=0xdae7
 // ================================================
 // 0xdae7: dw 0x0004
 
 // ================================================
-// 0xdae9: WORD 'WDAEB' codep=0x2214 wordp=0xdaeb
+// 0xdae9: WORD 'HOSTILE' codep=0x2214 wordp=0xdaeb
 // ================================================
 // 0xdaeb: dw 0x0008
 
 // ================================================
-// 0xdaed: WORD 'WDAEF' codep=0x2214 wordp=0xdaef
+// 0xdaed: WORD 'FIGHT' codep=0x2214 wordp=0xdaef
 // ================================================
 // 0xdaef: dw 0x0010
 
 // ================================================
-// 0xdaf1: WORD 'WDAF3' codep=0x2214 wordp=0xdaf3
+// 0xdaf1: WORD 'THEMSELVES' codep=0x2214 wordp=0xdaf3
 // ================================================
 // 0xdaf3: dw 0x0007
 
 // ================================================
-// 0xdaf5: WORD 'WDAF7' codep=0x2214 wordp=0xdaf7
+// 0xdaf5: WORD 'OTHER_RACES' codep=0x2214 wordp=0xdaf7
 // ================================================
 // 0xdaf7: dw 0x0008
 
 // ================================================
-// 0xdaf9: WORD 'WDAFB' codep=0x2214 wordp=0xdafb
+// 0xdaf9: WORD 'GEN'L-INFO' codep=0x2214 wordp=0xdafb
 // ================================================
 // 0xdafb: dw 0x0009
 
 // ================================================
-// 0xdafd: WORD 'WDAFF' codep=0x2214 wordp=0xdaff
+// 0xdafd: WORD 'ANCIENTS' codep=0x2214 wordp=0xdaff
 // ================================================
 // 0xdaff: dw 0x000b
 
 // ================================================
-// 0xdb01: WORD 'WDB03' codep=0x2214 wordp=0xdb03
+// 0xdb01: WORD 'OLD-EMPIRE' codep=0x2214 wordp=0xdb03
 // ================================================
 // 0xdb03: dw 0x000a
 
@@ -1047,15 +1047,15 @@ void ORIGINATOR_gt_C() // ORIGINATOR>C
 
 void A_gt_ORIGINATOR() // A>ORIGINATOR
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@
   Push(pp__ro_ORIGIN); // (ORIGIN
   _1_dot_5_ex_(); // 1.5!
   Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
-  Push(pp_WDA2F); // WDA2F
+  Push(pp_POSTURE); // POSTURE
   Store_3(); // !_3
   Push(Read16(pp_WDA27)); // WDA27 @
-  Push(pp_WDA3F); // WDA3F
+  Push(pp_SUBJECT); // SUBJECT
   Store_3(); // !_3
   Push(0xda5d); // 'WDA5D'
   ON_3(); // ON_3
@@ -1063,19 +1063,19 @@ void A_gt_ORIGINATOR() // A>ORIGINATOR
 
 
 // ================================================
-// 0xdb68: WORD 'WDB6A' codep=0x224c wordp=0xdb6a params=0 returns=0
+// 0xdb68: WORD 'P>ORIGINATOR' codep=0x224c wordp=0xdb6a params=0 returns=0
 // ================================================
 
-void WDB6A() // WDB6A
+void P_gt_ORIGINATOR() // P>ORIGINATOR
 {
   Push2Words("*COMM-OFF");
   Push(pp__ro_ORIGIN); // (ORIGIN
   _1_dot_5_ex_(); // 1.5!
-  Push(Read16(pp_WDA13)); // WDA13 @
-  Push(pp_WDA2F); // WDA2F
+  Push(Read16(pp_P_dash_POSTURE)); // P-POSTURE @
+  Push(pp_POSTURE); // POSTURE
   Store_3(); // !_3
-  Push(Read16(pp_WDA1B)); // WDA1B @
-  Push(pp_WDA3F); // WDA3F
+  Push(Read16(pp_P_dash_SUBJECT)); // P-SUBJECT @
+  Push(pp_SUBJECT); // SUBJECT
   Store_3(); // !_3
 }
 
@@ -1139,10 +1139,10 @@ void P_gt_AFIELD() // P>AFIELD
   switch(Pop()) // P>AFIELD
   {
   case 2:
-    Push(0x63ef+WD998.offset); // IFIELD
+    Push(0x63ef+FPE.offset); // IFIELD
     break;
   case 8:
-    Push(0x63ef+WD99D.offset); // IFIELD
+    Push(0x63ef+HPE.offset); // IFIELD
     break;
   default:
     Push(0x63ef+WD993.offset); // IFIELD
@@ -1152,14 +1152,14 @@ void P_gt_AFIELD() // P>AFIELD
 }
 
 // ================================================
-// 0xdbc7: WORD 'WDBC9' codep=0x224c wordp=0xdbc9
+// 0xdbc7: WORD 'POSTURE-EFFECT' codep=0x224c wordp=0xdbc9
 // ================================================
 
-void WDBC9() // WDBC9
+void POSTURE_dash_EFFECT() // POSTURE-EFFECT
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(pp_WDA13)); // WDA13 @
+  Push(Read16(pp_P_dash_POSTURE)); // P-POSTURE @
   P_gt_AFIELD(); // P>AFIELD case
   _plus__dash__at_(); // +-@
   ICLOSE(); // ICLOSE
@@ -1203,7 +1203,7 @@ void WDBEB() // WDBEB
 
 void WDBFF() // WDBFF
 {
-  WDB6A(); // WDB6A
+  P_gt_ORIGINATOR(); // P>ORIGINATOR
   GetColor(WHITE);
   Push(pp_CTCOLOR); // CTCOLOR
   Store_3(); // !_3
@@ -1280,19 +1280,19 @@ void N_gt_POST() // N>POST
   switch(Pop()) // N>POST
   {
   case 0:
-    Push(Read16(cc_WDAE3)); // WDAE3
+    Push(Read16(cc_FRIENDLY)); // FRIENDLY
     break;
   case 1:
-    Push(Read16(cc_WDAE7)); // WDAE7
+    Push(Read16(cc_NEUTRAL)); // NEUTRAL
     break;
   case 2:
-    Push(Read16(cc_WDAEB)); // WDAEB
+    Push(Read16(cc_HOSTILE)); // HOSTILE
     break;
   case 3:
-    Push(Read16(cc_WDAEF)); // WDAEF
+    Push(Read16(cc_FIGHT)); // FIGHT
     break;
   default:
-    Push(Read16(cc_WDADF)); // WDADF
+    Push(Read16(cc_OBSEQUIOUS)); // OBSEQUIOUS
     break;
 
   }
@@ -1304,7 +1304,7 @@ void N_gt_POST() // N>POST
 
 void WDC6F() // WDC6F
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(pp_EDL)); // EDL @
   Push(Read16(regsp)); // DUP
@@ -1371,14 +1371,14 @@ void _plus__ex_EDL() // +!EDL
   Push(pp_EDL); // EDL
   Store_3(); // !_3
   WDC6F(); // WDC6F
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   OFF(); // OFF
   Push(Read16(pp_WDA71)==3?1:0); // WDA71 @ 3 =
   Push(2);
   WDCD7(); // WDCD7
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   Push(1);
   Push(0x63ef+WD97A.offset); // WD97A<IFIELD>
@@ -1487,7 +1487,7 @@ void WDDBF() // WDDBF
     Push(Read16(0x63ef+WD957.offset)&0xFF); // WD957<IFIELD> C@
     Push(Read16(pp_WDA4B)); // WDA4B @
     _st_(); // <
-    Push((Read16(0x63ef+WD952.offset)&0xFF) & (Read16(pp_WDA2F)&0xFF)); // WD952<IFIELD> C@ WDA2F C@ AND
+    Push((Read16(0x63ef+WD952.offset)&0xFF) & (Read16(pp_POSTURE)&0xFF)); // WD952<IFIELD> C@ POSTURE C@ AND
     _0_gt_(); // 0>
     Push(Pop() & Pop()); // AND
     Push((Read16(0x63ef+WD94D.offset)&0xFF) & Read16(pp_WDA59)); // WD94D<IFIELD> C@ WDA59 @ AND
@@ -1516,7 +1516,7 @@ void WDDBF() // WDDBF
 
 void WDE11() // WDE11
 {
-  Push(Read16(pp_WDA3F)); // WDA3F @
+  Push(Read16(pp_SUBJECT)); // SUBJECT @
   Push(Read16(regsp)); // DUP
   Push(1);
   Push(2);
@@ -1534,7 +1534,7 @@ void WDE11() // WDE11
 
 void WDE2B() // WDE2B
 {
-  Push(Read16(pp_WDA3F)); // WDA3F @
+  Push(Read16(pp_SUBJECT)); // SUBJECT @
   Push(0x0033);
   OVER(); // OVER
   IFIND(); // IFIND
@@ -1555,7 +1555,7 @@ void WDE2B() // WDE2B
   IFIND(); // IFIND
   Pop(); // DROP
   Push(5);
-  Push(pp_WDA3F); // WDA3F
+  Push(pp_SUBJECT); // SUBJECT
   Store_3(); // !_3
 }
 
@@ -1585,7 +1585,7 @@ void WDE6D() // WDE6D
       {
         ICLOSE(); // ICLOSE
         Push(5);
-        Push(pp_WDA3F); // WDA3F
+        Push(pp_SUBJECT); // SUBJECT
         Store_3(); // !_3
         WDE2B(); // WDE2B
         IOPEN(); // IOPEN
@@ -1905,7 +1905,7 @@ void WE12A() // WE12A
   ICLOSE(); // ICLOSE
   Push(pp__ro_ORIGIN); // (ORIGIN
   _1_dot_5_at_(); // 1.5@
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@
   D_eq_(); // D=
   if (Pop() != 0)
@@ -2591,10 +2591,10 @@ void WE526() // WE526
 
 void WE52E() // WE52E
 {
-  WDBC9(); // WDBC9
+  POSTURE_dash_EFFECT(); // POSTURE-EFFECT
   _plus__ex_EDL(); // +!EDL
   Push(pp_WDA17); // WDA17
-  Push(Read16(pp_WDA13)); // WDA13 @
+  Push(Read16(pp_P_dash_POSTURE)); // P-POSTURE @
   OVER(); // OVER
   Push(Read16(Pop())); //  @
   Push(Pop() | Pop()); // OR
@@ -2609,7 +2609,7 @@ void WE52E() // WE52E
 
 void WE546() // WE546
 {
-  WDBC9(); // WDBC9
+  POSTURE_dash_EFFECT(); // POSTURE-EFFECT
   _plus__ex_EDL(); // +!EDL
   Push(0xda0f); // 'WDA0F'
   OFF(); // OFF
@@ -2622,7 +2622,7 @@ void WE546() // WE546
 
 void WE554() // WE554
 {
-  WDBC9(); // WDBC9
+  POSTURE_dash_EFFECT(); // POSTURE-EFFECT
   Push(Read16(pp_WDA23)&0xFF); // WDA23 C@
   _slash_(); // /
   _plus__ex_EDL(); // +!EDL
@@ -2637,7 +2637,7 @@ void WE562() // WE562
 {
   Push(Read16(cc_WDAD3)); // WDAD3
   if (Pop() == 0) return;
-  WDBC9(); // WDBC9
+  POSTURE_dash_EFFECT(); // POSTURE-EFFECT
   Push(Read16(pp_WDA23)&0xFF); // WDA23 C@
   _slash_(); // /
   Push(Pop() >> 1); //  2/
@@ -3259,7 +3259,7 @@ void WE868() // WE868
   Push(4);
   RRND(); // RRND
   WDB0C(); // WDB0C
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   IsCHILD(); // ?CHILD
   Push(Pop() & Pop()); // AND
@@ -3431,7 +3431,7 @@ void WE954() // WE954
 
 void WE962() // WE962
 {
-  Push((Read16(pp_WDA1B)&0xFF)==0x000d?1:0); // WDA1B C@ 0x000d =
+  Push((Read16(pp_P_dash_SUBJECT)&0xFF)==0x000d?1:0); // P-SUBJECT C@ 0x000d =
 }
 
 
@@ -3451,7 +3451,7 @@ void WE970() // WE970
 
 void WE97C() // WE97C
 {
-  Push((Read16(pp_WDA13) & Read16(pp_WDA17))==0?1:0); // WDA13 @ WDA17 @ AND 0=
+  Push((Read16(pp_P_dash_POSTURE) & Read16(pp_WDA17))==0?1:0); // P-POSTURE @ WDA17 @ AND 0=
 }
 
 
@@ -3528,7 +3528,7 @@ void WE9CE() // WE9CE
   WDBA8(); // WDBA8
   A_gt_ORIGINATOR(); // A>ORIGINATOR
   WDE6D(); // WDE6D
-  Push(!(Read16(pp_WDA3F)==0x000e?1:0)); // WDA3F @ 0x000e = NOT
+  Push(!(Read16(pp_SUBJECT)==0x000e?1:0)); // SUBJECT @ 0x000e = NOT
 }
 
 
@@ -3538,7 +3538,7 @@ void WE9CE() // WE9CE
 
 void WEA0C() // WEA0C
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   Push(Read16(0x63ef+WD975.offset)&0xFF); // WD975<IFIELD> C@
   ICLOSE(); // ICLOSE
@@ -4222,10 +4222,10 @@ void WECBF() // WECBF
   Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
   DrawON(); // .ON
   WECA9(); // WECA9
-  WDB6A(); // WDB6A
+  P_gt_ORIGINATOR(); // P>ORIGINATOR
   WDE6D(); // WDE6D
   WE482(); // WE482
-  Push(!(Read16(pp_WDA1B)==1?1:0)); // WDA1B @ 1 = NOT
+  Push(!(Read16(pp_P_dash_SUBJECT)==1?1:0)); // P-SUBJECT @ 1 = NOT
   Push(pp_WDA23); // WDA23
   _plus__ex__2(); // +!_2
   WDD47(); // WDD47
@@ -4329,7 +4329,7 @@ void WED77() // WED77
   INIT_dash_BU(); // INIT-BU
   WDBEB(); // WDBEB
   Push(Read16(pp_WED72 + Read16(pp_THIS_dash_BU))&0xFF); // WED72 THIS-BU @ + C@
-  Push(pp_WDA13); // WDA13
+  Push(pp_P_dash_POSTURE); // P-POSTURE
   Store_3(); // !_3
   Push(5);
   WE998(); // WE998
@@ -4349,19 +4349,19 @@ void _ro__gt__ask__rc_() // (>?)
   switch(Pop()) // (>?)
   {
   case 0:
-    Push(Read16(cc_WDAF3)); // WDAF3
+    Push(Read16(cc_THEMSELVES)); // THEMSELVES
     break;
   case 1:
-    Push(Read16(cc_WDAF7)); // WDAF7
+    Push(Read16(cc_OTHER_RACES)); // OTHER_RACES
     break;
   case 2:
-    Push(Read16(cc_WDB03)); // WDB03
+    Push(Read16(cc_OLD_dash_EMPIRE)); // OLD-EMPIRE
     break;
   case 3:
-    Push(Read16(cc_WDAFF)); // WDAFF
+    Push(Read16(cc_ANCIENTS)); // ANCIENTS
     break;
   default:
-    Push(Read16(cc_WDAFB)); // WDAFB
+    Push(Read16(cc_GEN_i_L_dash_INFO)); // GEN'L-INFO
     break;
 
   }
@@ -4384,7 +4384,7 @@ void WEDBC() // WEDBC
   Push(pp_WDA1F); // WDA1F
   Store_3(); // !_3
   Push(0x000e);
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   Store_3(); // !_3
   WECBF(); // WECBF
   Push(9);
@@ -4400,7 +4400,7 @@ void WEDBC() // WEDBC
 void WEDEA() // WEDEA
 {
   Push(0x000d);
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   Store_3(); // !_3
   WECBF(); // WECBF
 }
@@ -4513,7 +4513,7 @@ void WEE62() // WEE62
   CTERASE(); // CTERASE
   WED77(); // WED77
   Push(1);
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   Store_3(); // !_3
   WECBF(); // WECBF
   Push(1);
@@ -4532,7 +4532,7 @@ void WEE7C() // WEE7C
 {
   WED77(); // WED77
   Push(2);
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   Store_3(); // !_3
   WECBF(); // WECBF
   Push(0xda0f); // 'WDA0F'
@@ -4588,10 +4588,10 @@ void COMM_dash_EXPERTS() // COMM-EXPERTS
 
 
 // ================================================
-// 0xeefb: WORD 'WEEFD' codep=0x224c wordp=0xeefd params=0 returns=0
+// 0xeefb: WORD '.COMM-PIC' codep=0x224c wordp=0xeefd params=0 returns=0
 // ================================================
 
-void WEEFD() // WEEFD
+void DrawCOMM_dash_PIC() // .COMM-PIC
 {
   Push(Read16(pp__i_CC)); // 'CC @
   MODULE(); // MODULE
@@ -4599,9 +4599,9 @@ void WEEFD() // WEEFD
   DARK(); // DARK
   _gt_DISPLAY(); // >DISPLAY
   V_gt_DISPLAY(); // V>DISPLAY
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
-  Push(Read16(0x63ef+WD97F.offset)&0xFF); // WD97F<IFIELD> C@
+  Push(Read16(0x63ef+CPIC.offset)&0xFF); // CPIC<IFIELD> C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   if (Pop() != 0)
   {
@@ -4769,7 +4769,7 @@ void WEFC3() // WEFC3
 
 void WF061() // WF061
 {
-  WEEFD(); // WEEFD
+  DrawCOMM_dash_PIC(); // .COMM-PIC
   Push(9);
   DrawBTN_dash_TE(); // .BTN-TE
   INIT_dash_BU(); // INIT-BU
@@ -4935,7 +4935,7 @@ void CL1() // CL1
   ON_3(); // ON_3
   do
   {
-    Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+    Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
     _1_dot_5_at_(); // 1.5@
     Push(Pop() | Pop()); // OR
     if (Pop() != 0)
@@ -4950,7 +4950,7 @@ void CL1() // CL1
       _ro_CBTN_rc_(); // (CBTN) case
     }
     Push(Read16(pp_WDA23) | Read16(pp_WDA2B)); // WDA23 @ WDA2B @ OR
-    Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+    Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
     _1_dot_5_at_(); // 1.5@
     D0_eq_(); // D0=
     WDB0C(); // WDB0C
@@ -5005,7 +5005,7 @@ void CL1() // CL1
 
 void WF228() // WF228
 {
-  Push(pp__ro_AORIGINATOR); // (AORIGINATOR
+  Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_ex_(); // 1.5!
   TIME(); // TIME
   _2_at_(); // 2@
@@ -5151,7 +5151,7 @@ void WF330() // WF330
   OFF(); // OFF
   Push(pp_WDA23); // WDA23
   OFF(); // OFF
-  Push(pp_WDA1B); // WDA1B
+  Push(pp_P_dash_SUBJECT); // P-SUBJECT
   OFF(); // OFF
   Push(pp_WDA1F); // WDA1F
   OFF(); // OFF
