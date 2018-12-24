@@ -174,6 +174,7 @@ char* ExtractRecord(int fileidx, int recordidx)
     memset(record, 0, 512);
 
     DIRENTRY *de = GetDirByIdx(fileidx);
+    //printf("de blocksize=%i start=0x%04x\n", de->blocksize, de->start);
     if (de == NULL) exit(1);
     FILE *file;
     int start = de->start*16;
@@ -186,20 +187,44 @@ char* ExtractRecord(int fileidx, int recordidx)
         file = fopen(FILESTARA, "rb");
     }
 
-    if ((start&(~1023)) != ((start+de->blocksize-1)&(~1023)))
+
+    // code in RECADD
+    int offset = start & (~0x3FF);
+    unsigned short sp2 = start&0x3FF;
+    //printf("start=0x%04x sp2=0x%04x\n", start, sp2);
+
+    unsigned short ax = 1024 - sp2;
+    ax = ax / de->blocksize;
+    if (ax > recordidx)
     {
-        start = (start+de->blocksize)&(~1023);
+        sp2 += recordidx * de->blocksize;
+    } else
+    {
+        recordidx -= ax;
+        offset += 1024;
+        sp2 = 0;
+        ax = 1024 / de->blocksize;
+        unsigned short cx = ax;
+        ax = recordidx / cx;
+        offset += (int)ax*1024;
+        sp2 = (recordidx%cx) * de->blocksize;
+    }
+
+/*
+    if ((start&(~1023)) != ((start + de->blocksize-1)&(~1023)))
+    {
+        start = (start + de->blocksize) & (~1023);
     }
     for(i=0; i<recordidx; i++)
     {
-        start = start+de->blocksize;
-        if ((start&(~1023)) != ((start+de->blocksize-1)&(~1023)))
+        start = start + de->blocksize;
+        if ((start&(~1023)) != ((start + de->blocksize-1)&(~1023)))
         {
-            start = (start+de->blocksize)&(~1023);
+            start = (start + de->blocksize) & (~1023);
         }
     }
-
-    fseek(file, start, SEEK_SET);
+*/
+    fseek(file, offset+sp2, SEEK_SET);
     int ret = fread(record, de->blocksize, 1, file);
     fclose(file);
     return record;
@@ -283,6 +308,41 @@ void ExtractTextRecords(FILE *fp, int idx, const char *label, int containslength
     fprintf(fp, "};\n\n");
 }
 
+void ExtractPlanets(FILE *fp, int idx)
+{
+    fprintf(fp, "typedef struct { int idx; int d1, surftype, mass, lseed, tseed, d8, min, d2, d3, d4, d5, d6, coldest, warmest, atmoactivity, atmodensity, d7 } PLANETENTRY;\n");
+
+    fprintf(fp, "\nPLANETENTRY planets[]=\n{\n");
+
+    DIRENTRY *de = GetDirByIdx(idx);
+    for(int i=0; i<de->nblocks; i++)
+    {
+        unsigned char* buf = ExtractRecord(idx, i);
+        fprintf(fp, "  {.idx=%2i .d1=%2i .surftype=%2i .mass=%4i .lseed=%3i %5i .tseed=0x%04x .d8=%3i .min=%3i .d2=%3i .d3=%3i .d4=%2i .d5=%2i .d6=%2i .coldest=%2i .warmest=%2i .atmoactivity=%2i .atmodensity=%2i .d7=%2i},\n",
+        i,
+        buf[0x0],
+        buf[0x1], // surftype
+        buf[0x2] + (buf[0x3]<<8), // mass
+        buf[0x4],               // life or lseed
+        buf[0x5] + (buf[0x6]<<8),
+        buf[0x7] + (buf[0x8]<<8), // tseed
+        buf[0x9],  // min
+        buf[0xa],
+        buf[0xb],
+        buf[0xc],
+        buf[0xd],
+        buf[0xe],
+        buf[0xf], // coldest
+        buf[0x10], // warmest
+        buf[0x11] + (buf[0x12]<<8), // atmo.activity
+        buf[0x13], // atmo.density
+        buf[0x14],
+        buf[0x15]
+        );
+    }
+    fprintf(fp, "};\n\n");
+}
+
 void ExtractDataFile(const char* filename)
 {
     int idx, j;
@@ -322,16 +382,17 @@ void ExtractDataFile(const char* filename)
     //ExtractTextRecords(fp, 0x1c, "ARTIFACT", 0);
     //ExtractTextRecords(fp, 0x10, "CREWMEMBER", 0);
     //ExtractTextRecords(fp, 0x19, "VESSEL", 0);
-    //ExtractTextRecords(fp, 0x20, "PLANET", 0);
     //ExtractTextRecords(fp, 0x43, "REGIONS", 0);
     //ExtractTextRecords(fp, 0x87, "PSTATS", 0);
 
 #ifdef STARFLT1
     ExtractTextRecords(fp, 0x39, "ANALYZETEXT", 0);
     ExtractTextRecords(fp, 0x28, "SPECIMEN", 0);
+    ExtractPlanets(fp, 0x20);
     //ExtractTextRecords(fp, 0x2b, "BIODATA", 0); // points to the same data as specimen
     //ExtractTextRecords(fp, 0x82, "COMPOUNDS", 0);
 #else
+    //ExtractPlanets(fp, 0x20);
     //ExtractTextRecords(fp, 0x09, "STIS", 0);
     //ExtractTextRecords(fp, 0x15, "TRADERS", 0);
     //ExtractTextRecords(fp, 0x1e, "COMPOUNDS", 0);
