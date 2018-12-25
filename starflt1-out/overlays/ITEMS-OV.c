@@ -222,7 +222,7 @@ extern const unsigned short int pp_PM_dash_PTR; // PM-PTR
 extern const unsigned short int pp_STAR_dash_HR; // STAR-HR
 extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp_IsFLAT; // ?FLAT
-extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
+extern const unsigned short int pp__ro_SCROLL_dash_BOX_rc_; // (SCROLL-BOX)
 extern const unsigned short int pp__ro_BOMB_rc_; // (BOMB)
 extern const unsigned short int pp_LAST_dash_UPDATE; // LAST-UPDATE
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
@@ -233,7 +233,7 @@ extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
 extern const unsigned short int pp__ro_SURFACE_rc_; // (SURFACE)
-extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
+extern const unsigned short int pp_THIS_dash_REGION; // THIS-REGION
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
@@ -3113,7 +3113,7 @@ void WEF32() // WEF32
 
 void WEF62() // WEF62
 {
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0x63ef+TEXT_dash_IN.offset); // TEXT-IN<IFIELD>
@@ -3217,7 +3217,7 @@ void WEFD4() // WEFD4
 
 void WF002() // WF002
 {
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI
@@ -3699,7 +3699,7 @@ void WF2DA() // WF2DA
 
 void WF2EE() // WF2EE
 {
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   WF252(); // WF252
   _2DUP(); // 2DUP
@@ -3845,7 +3845,7 @@ void WF3D6() // WF3D6
     Store_3(); // !_3
   }
   _ro_BOX_gt__rc_(); // (BOX>)
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
 }
@@ -3981,7 +3981,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
     {
       WE044(); // WE044
       art_dash_analyz(); // art-analyz
-      Push(pp__ro_SCROLL_1); // (SCROLL_1
+      Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
       _1_dot_5_at_(); // 1.5@
       Push(Pop() | Pop()); // OR
       Push(Pop()==0?1:0); //  0=
@@ -4009,7 +4009,7 @@ void _ro__slash_ITEMS_rc_() // (/ITEMS)
     qtbtn(); // qtbtn
     delete_dash_scroll_dash_box(); // delete-scroll-box
     Push2Words("0.");
-    Push(pp__ro_SCROLL_1); // (SCROLL_1
+    Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
     _1_dot_5_ex_(); // 1.5!
     return_dash_items(); // return-items
     CDROP(); // CDROP

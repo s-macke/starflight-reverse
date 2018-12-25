@@ -139,7 +139,7 @@ extern const unsigned short int pp_EYEXY; // EYEXY
 extern const unsigned short int pp_WEAPXY; // WEAPXY
 extern const unsigned short int pp__10_star_END; // 10*END
 extern const unsigned short int pp_LKEYTIM; // LKEYTIM
-extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
+extern const unsigned short int pp__ro_SCROLL_dash_BOX_rc_; // (SCROLL-BOX)
 extern const unsigned short int pp_XWLD_c_XPIX; // XWLD:XPIX
 extern const unsigned short int pp_YWLD_c_YPIX; // YWLD:YPIX
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
@@ -148,7 +148,7 @@ extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp_TV_dash_HOLD; // TV-HOLD
 extern const unsigned short int pp_SUPER_dash_BOX; // SUPER-BOX
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
-extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
+extern const unsigned short int pp_THIS_dash_REGION; // THIS-REGION
 extern Color BLACK; // BLACK
 extern Color DK_dash_BLUE; // DK-BLUE
 extern Color RED; // RED
@@ -1841,7 +1841,7 @@ void TV_dash_DISP() // TV-DISP
   SET_STR_AS_PARAM("ACTIVATING TERRAIN VEHICLE");
   DrawTTY(); // .TTY
   Push2Words("0.");
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   _1_dot_5_ex_(); // 1.5!
   Push(pp_IsNEW); // ?NEW
   ON_3(); // ON_3
@@ -1861,7 +1861,7 @@ void TV_dash_DISP() // TV-DISP
   WF0F9(); // WF0F9
   WF0A5(); // WF0A5
   Push2Words("0.");
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_ex_(); // 1.5!
   Push(0xcf62); // '?POPULA'
   MODULE(); // MODULE

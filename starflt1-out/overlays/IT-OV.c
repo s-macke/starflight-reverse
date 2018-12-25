@@ -63,8 +63,8 @@ extern const unsigned short int pp__pe_VAL; // %VAL
 extern const unsigned short int pp_SCROLL_dash_; // SCROLL-
 extern const unsigned short int pp_ESC_dash_EN; // ESC-EN
 extern const unsigned short int pp_TIME_dash_PASSING; // TIME-PASSING
-extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
-extern const unsigned short int pp__ro_SCROLL_2; // (SCROLL_2
+extern const unsigned short int pp__ro_SCROLL_dash_BOX_rc_; // (SCROLL-BOX)
+extern const unsigned short int pp__ro_SCROLL_dash_CONT_rc_; // (SCROLL-CONT)
 extern const unsigned short int pp_CTTOP; // CTTOP
 extern LoadDataType SHAPE; // SHAPE
 extern LoadDataType RESEMBLES; // RESEMBLES
@@ -658,7 +658,7 @@ void WF157() // WF157
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-    Push(pp__ro_SCROLL_1); // (SCROLL_1
+    Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
     Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     Push(0x0038);
@@ -762,10 +762,10 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
   Push(1);
   _star_CREATE(); // *CREATE
   CI(); // CI
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   _1_dot_5_ex_(); // 1.5!
   CI_i_(); // CI'
-  Push(pp__ro_SCROLL_2); // (SCROLL_2
+  Push(pp__ro_SCROLL_dash_CONT_rc_); // (SCROLL-CONT)
   _1_dot_5_ex_(); // 1.5!
   Push(pp_SCROLL_dash_); // SCROLL-
   OFF(); // OFF
@@ -781,10 +781,10 @@ void MAKE_dash_SCROLL_dash_BOX() // MAKE-SCROLL-BOX
 
 void DELETE_dash_SCROLL_dash_BOX() // DELETE-SCROLL-BOX
 {
-  Push(pp__ro_SCROLL_2); // (SCROLL_2
+  Push(pp__ro_SCROLL_dash_CONT_rc_); // (SCROLL-CONT)
   _1_dot_5_at_(); // 1.5@
   _gt_C(); // >C
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_(); // >C+
   SET_dash_CURRENT(); // SET-CURRENT

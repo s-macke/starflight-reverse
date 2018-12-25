@@ -2230,91 +2230,91 @@ IROOT
           STRING
     BOX
       STARSYSTEM    129 32 8 0 192 0 255
-        PLANET    species=0x01
-        PLANET    species=0x03
-        PLANET    species=0x08
-        PLANET    species=0x06
-        PLANET    species=0x31
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0d
+        PLANET    species=0x01 seed=0x1b869
+        PLANET    species=0x03 seed=0x1b854
+        PLANET    species=0x08 seed=0x1b83f
+        PLANET    species=0x06 seed=0x1b82a
+        PLANET    species=0x31 seed=0x1b815
+        PLANET    species=0x11 seed=0x1b800
+        PLANET    species=0x11 seed=0x1b7dc
+        PLANET    species=0x0d seed=0x1b7c7
       STARSYSTEM    129 32 16 0 96 2 175
-        PLANET    species=0x05
-        PLANET    species=0x06
-        PLANET    species=0x07
-        PLANET    species=0x07
-        PLANET    species=0x10
-        PLANET    species=0x11
+        PLANET    species=0x05 seed=0x1b8fb
+        PLANET    species=0x06 seed=0x1b8e6
+        PLANET    species=0x07 seed=0x1b8d1
+        PLANET    species=0x07 seed=0x1b8bc
+        PLANET    species=0x10 seed=0x1b8a7
+        PLANET    species=0x11 seed=0x1b892
         ENCOUNTER
       STARSYSTEM    129 32 16 0 192 4 52
-        PLANET    species=0x04
-        PLANET    species=0x06
-        PLANET    species=0x08
+        PLANET    species=0x04 seed=0x1b94e
+        PLANET    species=0x06 seed=0x1b939
+        PLANET    species=0x08 seed=0x1b924
       STARSYSTEM    129 32 32 0 200 0 156
-        PLANET    species=0x09
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x09 seed=0x1b9b6
+        PLANET    species=0x11 seed=0x1b9a1
+        PLANET    species=0x11 seed=0x1b98c
+        PLANET    species=0x11 seed=0x1b977
       STARSYSTEM    129 32 32 0 208 6 0
       STARSYSTEM    129 32 56 0 184 4 36
-        PLANET    species=0x1d
-        PLANET    species=0x0b
+        PLANET    species=0x1d seed=0x1ba08
+        PLANET    species=0x0b seed=0x1b9f3
         ENCOUNTER
       STARSYSTEM    129 32 72 0 160 4 75
-        PLANET    species=0x06
-        PLANET    species=0x07
-        PLANET    species=0x05
-        PLANET    species=0x11
+        PLANET    species=0x06 seed=0x1ba70
+        PLANET    species=0x07 seed=0x1ba5b
+        PLANET    species=0x05 seed=0x1ba46
+        PLANET    species=0x11 seed=0x1ba31
       STARSYSTEM    129 32 88 0 104 6 97
-        PLANET    species=0x02
-        PLANET    species=0x0a
-        PLANET    species=0x11
+        PLANET    species=0x02 seed=0x1bac3
+        PLANET    species=0x0a seed=0x1baae
+        PLANET    species=0x11 seed=0x1ba99
       STARSYSTEM    129 32 96 0 240 4 41
-        PLANET    species=0x01
-        PLANET    species=0x2a
+        PLANET    species=0x01 seed=0x1bb16
+        PLANET    species=0x2a seed=0x1bb01
           ARTIFACT
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1baec
       STARSYSTEM    129 32 96 0 96 6 16
-        PLANET    species=0x10
+        PLANET    species=0x10 seed=0x1bb3f
       STARSYSTEM    129 32 96 0 104 6 238
-        PLANET    species=0x05
-        PLANET    species=0x07
-        PLANET    species=0x15
-        PLANET    species=0x10
-        PLANET    species=0x11
-        PLANET    species=0x10
+        PLANET    species=0x05 seed=0x1bbd1
+        PLANET    species=0x07 seed=0x1bbbc
+        PLANET    species=0x15 seed=0x1bba7
+        PLANET    species=0x10 seed=0x1bb92
+        PLANET    species=0x11 seed=0x1bb7d
+        PLANET    species=0x10 seed=0x1bb68
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 104 0 232 2 88
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1bc2a
+        PLANET    species=0x11 seed=0x1bc15
+        PLANET    species=0x11 seed=0x1bc00
       STARSYSTEM    129 32 120 0 232 2 20
-        PLANET    species=0x0b
-        PLANET    species=0x09
+        PLANET    species=0x0b seed=0x1bc68
+        PLANET    species=0x09 seed=0x1bc53
       STARSYSTEM    129 32 160 0 72 1 31
-        PLANET    species=0x01
-        PLANET    species=0x02
-        PLANET    species=0x04
-        PLANET    species=0x03
-        PLANET    species=0x11
+        PLANET    species=0x01 seed=0x1bce5
+        PLANET    species=0x02 seed=0x1bcd0
+        PLANET    species=0x04 seed=0x1bcbb
+        PLANET    species=0x03 seed=0x1bca6
+        PLANET    species=0x11 seed=0x1bc91
         ENCOUNTER
       STARSYSTEM    1 32 192 0 48 6 173
-        PLANET    species=0x06
-        PLANET    species=0x01
-        PLANET    species=0x08
-        PLANET    species=0x0d
-        PLANET    species=0x10
+        PLANET    species=0x06 seed=0x1bd62
+        PLANET    species=0x01 seed=0x1bd4d
+        PLANET    species=0x08 seed=0x1bd38
+        PLANET    species=0x0d seed=0x1bd23
+        PLANET    species=0x10 seed=0x1bd0e
       STARSYSTEM    1 32 208 0 32 0 65
-        PLANET    species=0x03
-        PLANET    species=0x0a
+        PLANET    species=0x03 seed=0x1bda0
+        PLANET    species=0x0a seed=0x1bd8b
       STARSYSTEM    129 32 224 0 120 2 92
-        PLANET    species=0x07
-        PLANET    species=0x06
-        PLANET    species=0x06
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1be08
+        PLANET    species=0x06 seed=0x1bdf3
+        PLANET    species=0x06 seed=0x1bdde
+        PLANET    species=0x11 seed=0x1bdc9
           ENCOUNTER
         ENCOUNTER
         ENCOUNTER
@@ -2322,36 +2322,36 @@ IROOT
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 232 0 80 2 8
-        PLANET    species=0x12
+        PLANET    species=0x12 seed=0x1be31
           ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 0 1 216 2 38
-        PLANET    species=0x03
-        PLANET    species=0x08
-        PLANET    species=0x07
+        PLANET    species=0x03 seed=0x1be84
+        PLANET    species=0x08 seed=0x1be6f
+        PLANET    species=0x07 seed=0x1be5a
         ENCOUNTER
       STARSYSTEM    129 32 16 1 56 2 106
-        PLANET    species=0x0f
-        PLANET    species=0x11
-        PLANET    species=0x0f
-        PLANET    species=0x11
+        PLANET    species=0x0f seed=0x1beec
+        PLANET    species=0x11 seed=0x1bed7
+        PLANET    species=0x0f seed=0x1bec2
+        PLANET    species=0x11 seed=0x1bead
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 16 1 80 2 85
-        PLANET    species=0x02
-        PLANET    species=0x04
-        PLANET    species=0x08
-        PLANET    species=0x11
+        PLANET    species=0x02 seed=0x1bf54
+        PLANET    species=0x04 seed=0x1bf3f
+        PLANET    species=0x08 seed=0x1bf2a
+        PLANET    species=0x11 seed=0x1bf15
         ENCOUNTER
       STARSYSTEM    129 32 24 1 40 2 202
-        PLANET    species=0x05
-        PLANET    species=0x13
+        PLANET    species=0x05 seed=0x1bfbc
+        PLANET    species=0x13 seed=0x1bfa7
           ENCOUNTER
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1bf92
+        PLANET    species=0x11 seed=0x1bf7d
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
@@ -2360,7 +2360,7 @@ IROOT
         BOX
           STAR
         BOX
-          PLANET    species=0x11
+          PLANET    species=0x11 seed=0x1bfe5
             STARPORT
               BANK    0 0 balance:25000 0 0
                 BANK-TRANS    0 0 amount:50 0 0
@@ -2523,74 +2523,74 @@ IROOT
             MESSAGE    'NOTICE TO ALL SPEMIN WORSHIPPERS WHO HAVE COME HERE TO THESE SACRED LEGHK RUINS TO GAZE UPON THE MOST VALUABLE THING'
         ENCOUNTER
       STARSYSTEM    129 32 24 1 72 3 255
-        PLANET    species=0x01
-        PLANET    species=0x0a
-        PLANET    species=0x07
-        PLANET    species=0x0e
-        PLANET    species=0x0f
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0d
+        PLANET    species=0x01 seed=0x1c0a7
+        PLANET    species=0x0a seed=0x1c092
+        PLANET    species=0x07 seed=0x1c07d
+        PLANET    species=0x0e seed=0x1c068
+        PLANET    species=0x0f seed=0x1c053
+        PLANET    species=0x11 seed=0x1c03e
+        PLANET    species=0x11 seed=0x1c029
+        PLANET    species=0x0d seed=0x1c014
       STARSYSTEM    129 32 48 1 184 2 225
-        PLANET    species=0x02
-        PLANET    species=0x0e
-        PLANET    species=0x0f
-        PLANET    species=0x0d
+        PLANET    species=0x02 seed=0x1c10f
+        PLANET    species=0x0e seed=0x1c0fa
+        PLANET    species=0x0f seed=0x1c0e5
+        PLANET    species=0x0d seed=0x1c0d0
       STARSYSTEM    129 32 48 1 240 5 117
-        PLANET    species=0x05
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x0f
-        PLANET    species=0x11
+        PLANET    species=0x05 seed=0x1c18c
+        PLANET    species=0x06 seed=0x1c177
+        PLANET    species=0x11 seed=0x1c162
+        PLANET    species=0x0f seed=0x1c14d
+        PLANET    species=0x11 seed=0x1c138
       STARSYSTEM    129 32 120 1 144 6 239
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x09
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1c233
+        PLANET    species=0x11 seed=0x1c21e
+        PLANET    species=0x09 seed=0x1c209
+        PLANET    species=0x11 seed=0x1c1f4
+        PLANET    species=0x11 seed=0x1c1df
+        PLANET    species=0x11 seed=0x1c1ca
+        PLANET    species=0x11 seed=0x1c1b5
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 136 1 112 4 30
-        PLANET    species=0x01
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x04
+        PLANET    species=0x01 seed=0x1c29b
+        PLANET    species=0x02 seed=0x1c286
+        PLANET    species=0x03 seed=0x1c271
+        PLANET    species=0x04 seed=0x1c25c
       STARSYSTEM    129 32 152 1 8 1 47
-        PLANET    species=0x01
-        PLANET    species=0x04
-        PLANET    species=0x04
-        PLANET    species=0x06
-        PLANET    species=0x10
+        PLANET    species=0x01 seed=0x1c318
+        PLANET    species=0x04 seed=0x1c303
+        PLANET    species=0x04 seed=0x1c2ee
+        PLANET    species=0x06 seed=0x1c2d9
+        PLANET    species=0x10 seed=0x1c2c4
       STARSYSTEM    129 32 152 1 16 6 80
-        PLANET    species=0x05
-        PLANET    species=0x0e
+        PLANET    species=0x05 seed=0x1c356
+        PLANET    species=0x0e seed=0x1c341
       STARSYSTEM    129 32 160 1 216 1 164
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x06 seed=0x1c3a9
+        PLANET    species=0x11 seed=0x1c394
+        PLANET    species=0x11 seed=0x1c37f
       STARSYSTEM    129 32 160 1 240 4 108
-        PLANET    species=0x06
-        PLANET    species=0x0e
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x06 seed=0x1c415
+        PLANET    species=0x0e seed=0x1c400
+        PLANET    species=0x11 seed=0x1c3e7
+        PLANET    species=0x0f seed=0x1c3d2
       STARSYSTEM    129 32 160 1 240 5 58
-        PLANET    species=0x07
-        PLANET    species=0x0e
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1c47d
+        PLANET    species=0x0e seed=0x1c468
+        PLANET    species=0x11 seed=0x1c453
+        PLANET    species=0x11 seed=0x1c43e
       STARSYSTEM    129 32 176 1 64 3 112
-        PLANET    species=0x32
+        PLANET    species=0x32 seed=0x1c4d0
           MESSAGE    'NINITGR^ISPE^SI9IIII^ISIIO^I? AI'
             MESSAGE'    '...UNABLE TO DETERMINE ITS ORIGIN, ITS MOTIVATIONS, OR ITS PRECISE NATURE. WE DO NOT EVEN KNOW IF IT IS SENTIENT. ALL WE KNOW IS THAT IT PERVADES OUR SPACE AND THREATENS OUR EXISTENCE. MILLIONS HAVE GONE INSANE. PLEASE, WE NEED ASSISTANCE...'
           RUIN
-        PLANET    species=0x09
-        PLANET    species=0x0a
+        PLANET    species=0x09 seed=0x1c4bb
+        PLANET    species=0x0a seed=0x1c4a6
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 176 1 24 6 32
-        PLANET    species=0x14
+        PLANET    species=0x14 seed=0x1c4f9
           ENCOUNTER
           ENCOUNTER
         ENCOUNTER
@@ -2598,93 +2598,93 @@ IROOT
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 184 1 232 0 5
-        PLANET    species=0x03
-        PLANET    species=0x11
+        PLANET    species=0x03 seed=0x1c537
+        PLANET    species=0x11 seed=0x1c522
       STARSYSTEM    129 32 192 1 8 1 253
-        PLANET    species=0x0a
-        PLANET    species=0x07
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x10
-        PLANET    species=0x0e
-        PLANET    species=0x0d
+        PLANET    species=0x0a seed=0x1c5de
+        PLANET    species=0x07 seed=0x1c5c9
+        PLANET    species=0x11 seed=0x1c5b4
+        PLANET    species=0x10 seed=0x1c59f
+        PLANET    species=0x10 seed=0x1c58a
+        PLANET    species=0x0e seed=0x1c575
+        PLANET    species=0x0d seed=0x1c560
       STARSYSTEM    129 32 192 1 216 5 105
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x07
-        PLANET    species=0x11
+        PLANET    species=0x02 seed=0x1c646
+        PLANET    species=0x03 seed=0x1c631
+        PLANET    species=0x07 seed=0x1c61c
+        PLANET    species=0x11 seed=0x1c607
       STARSYSTEM    129 32 200 1 160 3 56
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1c699
+        PLANET    species=0x11 seed=0x1c684
+        PLANET    species=0x11 seed=0x1c66f
       STARSYSTEM    129 32 216 1 192 5 255
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x04
-        PLANET    species=0x07
-        PLANET    species=0x11
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x02 seed=0x1c755
+        PLANET    species=0x03 seed=0x1c740
+        PLANET    species=0x04 seed=0x1c72b
+        PLANET    species=0x07 seed=0x1c716
+        PLANET    species=0x11 seed=0x1c701
+        PLANET    species=0x08 seed=0x1c6ec
+        PLANET    species=0x11 seed=0x1c6d7
+        PLANET    species=0x0f seed=0x1c6c2
       STARSYSTEM    129 32 224 1 208 0 128
-        PLANET    species=0x0e
+        PLANET    species=0x0e seed=0x1c77e
       STARSYSTEM    1 32 224 1 224 4 231
-        PLANET    species=0x22
-        PLANET    species=0x09
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x10
+        PLANET    species=0x22 seed=0x1c815
+        PLANET    species=0x09 seed=0x1c800
+        PLANET    species=0x06 seed=0x1c7e6
+        PLANET    species=0x11 seed=0x1c7d1
+        PLANET    species=0x11 seed=0x1c7bc
+        PLANET    species=0x10 seed=0x1c7a7
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 0 2 48 0 9
-        PLANET    species=0x02
-        PLANET    species=0x2b
+        PLANET    species=0x02 seed=0x1c853
+        PLANET    species=0x2b seed=0x1c83e
       STARSYSTEM    129 32 56 2 104 6 2
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1c87c
       STARSYSTEM    129 32 64 2 216 1 63
-        PLANET    species=0x04
-        PLANET    species=0x02
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x04 seed=0x1c90e
+        PLANET    species=0x02 seed=0x1c8f9
+        PLANET    species=0x06 seed=0x1c8e4
+        PLANET    species=0x11 seed=0x1c8cf
+        PLANET    species=0x11 seed=0x1c8ba
+        PLANET    species=0x0f seed=0x1c8a5
       STARSYSTEM    129 32 80 2 80 2 42
-        PLANET    species=0x01
-        PLANET    species=0x07
-        PLANET    species=0x09
+        PLANET    species=0x01 seed=0x1c961
+        PLANET    species=0x07 seed=0x1c94c
+        PLANET    species=0x09 seed=0x1c937
       STARSYSTEM    1 32 96 2 32 5 0
       STARSYSTEM    1 32 104 2 144 5 152
-        PLANET    species=0x11
-        PLANET    species=0x0d
-        PLANET    species=0x0e
+        PLANET    species=0x11 seed=0x1c9c8
+        PLANET    species=0x0d seed=0x1c9b3
+        PLANET    species=0x0e seed=0x1c99e
       STARSYSTEM    1 32 160 2 128 5 115
-        PLANET    species=0x02
-        PLANET    species=0x04
-        PLANET    species=0x0b
-        PLANET    species=0x3a
+        PLANET    species=0x02 seed=0x1ca45
+        PLANET    species=0x04 seed=0x1ca30
+        PLANET    species=0x0b seed=0x1ca1b
+        PLANET    species=0x3a seed=0x1ca06
           MESSAGE    ''
             MESSAGE'    'WE KNOW THAT THE HALLS ARE LOCATED SOMEWHERE NEAR THE COORDINATES 30S X 134E.'
             MESSAGE'    'WE HAVE ASCERTAINED THAT THE STAR SYSTEM THAT THE HALLS OF MEMORY ARE IN IS A GREEN CLASS-A STAR AND FORMS AN EQUILATERAL TRIANGLE WITH THE HOOK AND THE 6 YELLOW STONES.'
             MESSAGE'    'WE SURMISE THAT THESE WERE CONSTELLATIONS IN THE LEGHK COSMOLOGY, BUT AS TO WHERE THESE ARE ... PERHAPS THOSE ABOARD THE ELTHAR-ESH WILL BE ABLE TO ANSWER THE QUESTION ... '
             MESSAGE'    'TO ANY WHO MAY COME AFTER US. WE HAVE BUILT THIS STRUCTURE AND STOPPED HERE TO REST AND REPAIR OUR SHIP. WE HAVE STUDIED THE GUARDIAN TRANSMITTER KEY AND HAVE MADE A DUPLICATE FOR OUR OWN NEEDS.'
           RUIN
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1c9f1
         ENCOUNTER
       STARSYSTEM    129 32 200 2 240 0 193
-        PLANET    species=0x03
-        PLANET    species=0x07
-        PLANET    species=0x07
+        PLANET    species=0x03 seed=0x1ca98
+        PLANET    species=0x07 seed=0x1ca83
+        PLANET    species=0x07 seed=0x1ca6e
       STARSYSTEM    129 32 216 2 144 6 48
-        PLANET    species=0x11
-        PLANET    species=0x05
+        PLANET    species=0x11 seed=0x1cad6
+        PLANET    species=0x05 seed=0x1cac1
       STARSYSTEM    129 32 216 2 152 6 206
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x11
-        PLANET    species=0x0c
-        PLANET    species=0x16
+        PLANET    species=0x02 seed=0x1cb53
+        PLANET    species=0x03 seed=0x1cb3e
+        PLANET    species=0x11 seed=0x1cb29
+        PLANET    species=0x0c seed=0x1cb14
+        PLANET    species=0x16 seed=0x1caff
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
@@ -2693,208 +2693,208 @@ IROOT
         ENCOUNTER
       STARSYSTEM    129 32 216 2 208 6 0
       STARSYSTEM    129 32 232 2 40 1 189
-        PLANET    species=0x04
-        PLANET    species=0x06
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x1c
-        PLANET    species=0x0d
+        PLANET    species=0x04 seed=0x1cc00
+        PLANET    species=0x06 seed=0x1cbe4
+        PLANET    species=0x08 seed=0x1cbcf
+        PLANET    species=0x11 seed=0x1cbba
+        PLANET    species=0x1c seed=0x1cba5
+        PLANET    species=0x0d seed=0x1cb90
         ENCOUNTER
       STARSYSTEM    1 32 232 2 160 3 24
-        PLANET    species=0x01
-        PLANET    species=0x03
+        PLANET    species=0x01 seed=0x1cc3e
+        PLANET    species=0x03 seed=0x1cc29
       STARSYSTEM    1 32 240 2 104 4 146
-        PLANET    species=0x07
-        PLANET    species=0x10
-        PLANET    species=0x0e
+        PLANET    species=0x07 seed=0x1cc91
+        PLANET    species=0x10 seed=0x1cc7c
+        PLANET    species=0x0e seed=0x1cc67
       STARSYSTEM    1 32 0 3 104 4 8
-        PLANET    species=0x26
+        PLANET    species=0x26 seed=0x1ccba
         ENCOUNTER
       STARSYSTEM    129 32 24 3 136 2 101
-        PLANET    species=0x01
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x01 seed=0x1cd22
+        PLANET    species=0x06 seed=0x1cd0d
+        PLANET    species=0x11 seed=0x1ccf8
+        PLANET    species=0x0f seed=0x1cce3
       STARSYSTEM    1 32 24 3 128 4 20
-        PLANET    species=0x07
-        PLANET    species=0x07
+        PLANET    species=0x07 seed=0x1cd60
+        PLANET    species=0x07 seed=0x1cd4b
       STARSYSTEM    1 32 40 3 168 2 8
-        PLANET    species=0x21
+        PLANET    species=0x21 seed=0x1cd89
           ARTIFACT
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    1 32 48 3 88 4 255
-        PLANET    species=0x02
-        PLANET    species=0x06
-        PLANET    species=0x0b
-        PLANET    species=0x0c
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x0d
+        PLANET    species=0x02 seed=0x1ce45
+        PLANET    species=0x06 seed=0x1ce30
+        PLANET    species=0x0b seed=0x1ce1b
+        PLANET    species=0x0c seed=0x1ce06
+        PLANET    species=0x11 seed=0x1cdf1
+        PLANET    species=0x11 seed=0x1cddc
+        PLANET    species=0x10 seed=0x1cdc7
+        PLANET    species=0x0d seed=0x1cdb2
       STARSYSTEM    129 32 56 3 104 2 132
-        PLANET    species=0x11
-        PLANET    species=0x0d
+        PLANET    species=0x11 seed=0x1ce83
+        PLANET    species=0x0d seed=0x1ce6e
       STARSYSTEM    129 32 64 3 136 0 64
-        PLANET    species=0x0e
+        PLANET    species=0x0e seed=0x1ceac
       STARSYSTEM    129 32 64 3 72 2 131
-        PLANET    species=0x02
-        PLANET    species=0x04
-        PLANET    species=0x08
+        PLANET    species=0x02 seed=0x1ceff
+        PLANET    species=0x04 seed=0x1ceea
+        PLANET    species=0x08 seed=0x1ced5
       STARSYSTEM    129 32 72 3 136 0 188
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x11 seed=0x1cf7c
+        PLANET    species=0x11 seed=0x1cf67
+        PLANET    species=0x11 seed=0x1cf52
+        PLANET    species=0x11 seed=0x1cf3d
+        PLANET    species=0x0f seed=0x1cf28
       STARSYSTEM    129 32 72 3 88 2 221
-        PLANET    species=0x01
-        PLANET    species=0x04
-        PLANET    species=0x04
-        PLANET    species=0x11
+        PLANET    species=0x01 seed=0x1d015
+        PLANET    species=0x04 seed=0x1d000
+        PLANET    species=0x04 seed=0x1cfe4
+        PLANET    species=0x11 seed=0x1cfcf
           ENCOUNTER
-        PLANET    species=0x0b
-        PLANET    species=0x39
+        PLANET    species=0x0b seed=0x1cfba
+        PLANET    species=0x39 seed=0x1cfa5
         ENCOUNTER
       STARSYSTEM    129 32 80 3 112 0 204
-        PLANET    species=0x38
+        PLANET    species=0x38 seed=0x1d07d
           MESSAGE    'WE SHALL LEAVE THE ORIGINAL HERE IN CASE WE ARE UNSUCCESFUL AND ANY OTHER ATTEMPTS ARE MADE AFTER US. NOW, WE SHALL PROCEED ON TO THE HALLS OF MEMORY, AND HOPEFULLY THIS TIME WE SHALL BE ABLE TO GET PAST THE GUARDIAN SATELLITE.'
             MESSAGE'    'IF WE ARE UNSUCCESFUL, THEN IT WILL BE TOO LATE FOR OUR RACE. WHOEVER YOU ARE, IF YOU ARE NOT UHL, GOOD LUCK AND WISH US LUCK IF YOU CAN. - CAPTAIN OF THE ELTHAR-ESH.'
             MESSAGE'    '9 DAYS WE HAVE SPENT HERE TRYING TO FIGURE OUT WHERE WE COULD HAVE GONE WRONG. I AM CERTAIN THAT THOSE ON ELTHESH COULD NOT HAVE BEEN MISTAKEN. THE HALLS OF MEMORY SHOULD BE HERE.'
           RUIN
           ARTIFACT
-        PLANET    species=0x08
-        PLANET    species=0x08
-        PLANET    species=0x06
+        PLANET    species=0x08 seed=0x1d068
+        PLANET    species=0x08 seed=0x1d053
+        PLANET    species=0x06 seed=0x1d03e
         ENCOUNTER
       STARSYSTEM    129 32 80 3 72 2 48
-        PLANET    species=0x28
-        PLANET    species=0x06
+        PLANET    species=0x28 seed=0x1d0bb
+        PLANET    species=0x06 seed=0x1d0a6
       STARSYSTEM    129 32 80 3 80 2 36
-        PLANET    species=0x02
-        PLANET    species=0x06
+        PLANET    species=0x02 seed=0x1d0f9
+        PLANET    species=0x06 seed=0x1d0e4
       STARSYSTEM    129 32 88 3 136 0 0
       STARSYSTEM    129 32 88 3 0 2 110
-        PLANET    species=0x01
-        PLANET    species=0x04
-        PLANET    species=0x07
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x01 seed=0x1d18a
+        PLANET    species=0x04 seed=0x1d175
+        PLANET    species=0x07 seed=0x1d160
+        PLANET    species=0x11 seed=0x1d14b
+        PLANET    species=0x11 seed=0x1d136
         ENCOUNTER
       STARSYSTEM    129 32 96 3 112 2 64
-        PLANET    species=0x0f
+        PLANET    species=0x0f seed=0x1d1b3
       STARSYSTEM    1 32 128 3 40 4 71
-        PLANET    species=0x01
-        PLANET    species=0x03
-        PLANET    species=0x03
-        PLANET    species=0x25
+        PLANET    species=0x01 seed=0x1d21b
+        PLANET    species=0x03 seed=0x1d206
+        PLANET    species=0x03 seed=0x1d1f1
+        PLANET    species=0x25 seed=0x1d1dc
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    1 32 128 3 48 5 2
-        PLANET    species=0x03
+        PLANET    species=0x03 seed=0x1d244
       STARSYSTEM    1 32 168 3 200 4 119
-        PLANET    species=0x02
-        PLANET    species=0x24
+        PLANET    species=0x02 seed=0x1d2d6
+        PLANET    species=0x24 seed=0x1d2c1
           ENCOUNTER
-        PLANET    species=0x01
-        PLANET    species=0x03
+        PLANET    species=0x01 seed=0x1d2ac
+        PLANET    species=0x03 seed=0x1d297
           ENCOUNTER
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1d282
+        PLANET    species=0x11 seed=0x1d26d
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    1 32 176 3 88 6 0
       STARSYSTEM    129 32 232 3 248 2 146
-        PLANET    species=0x30
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x30 seed=0x1d33d
+        PLANET    species=0x11 seed=0x1d328
+        PLANET    species=0x0f seed=0x1d313
       STARSYSTEM    129 32 240 3 224 0 131
-        PLANET    species=0x02
-        PLANET    species=0x06
-        PLANET    species=0x0f
+        PLANET    species=0x02 seed=0x1d390
+        PLANET    species=0x06 seed=0x1d37b
+        PLANET    species=0x0f seed=0x1d366
       STARSYSTEM    1 32 248 3 200 3 16
-        PLANET    species=0x06
+        PLANET    species=0x06 seed=0x1d3b9
       STARSYSTEM    1 32 0 4 8 1 0
       STARSYSTEM    1 32 16 4 216 3 127
-        PLANET    species=0x02
-        PLANET    species=0x05
-        PLANET    species=0x11
-        PLANET    species=0x0b
-        PLANET    species=0x11
-        PLANET    species=0x0d
-        PLANET    species=0x0d
+        PLANET    species=0x02 seed=0x1d47e
+        PLANET    species=0x05 seed=0x1d469
+        PLANET    species=0x11 seed=0x1d454
+        PLANET    species=0x0b seed=0x1d43f
+        PLANET    species=0x11 seed=0x1d42a
+        PLANET    species=0x0d seed=0x1d415
+        PLANET    species=0x0d seed=0x1d400
       STARSYSTEM    1 32 16 4 112 5 66
-        PLANET    species=0x03
-        PLANET    species=0x0e
+        PLANET    species=0x03 seed=0x1d4bc
+        PLANET    species=0x0e seed=0x1d4a7
       STARSYSTEM    129 32 24 4 40 0 3
-        PLANET    species=0x03
-        PLANET    species=0x05
+        PLANET    species=0x03 seed=0x1d4fa
+        PLANET    species=0x05 seed=0x1d4e5
       STARSYSTEM    129 32 24 4 56 0 45
-        PLANET    species=0x01
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x34
+        PLANET    species=0x01 seed=0x1d562
+        PLANET    species=0x06 seed=0x1d54d
+        PLANET    species=0x11 seed=0x1d538
+        PLANET    species=0x34 seed=0x1d523
       STARSYSTEM    1 32 24 4 216 6 224
-        PLANET    species=0x11
-        PLANET    species=0x36
+        PLANET    species=0x11 seed=0x1d5b5
+        PLANET    species=0x36 seed=0x1d5a0
           RUIN
           ENCOUNTER
           ENCOUNTER
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1d58b
       STARSYSTEM    129 32 32 4 48 0 255
-        PLANET    species=0x01
-        PLANET    species=0x03
-        PLANET    species=0x07
-        PLANET    species=0x0b
-        PLANET    species=0x37
-        PLANET    species=0x0f
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x01 seed=0x1d671
+        PLANET    species=0x03 seed=0x1d65c
+        PLANET    species=0x07 seed=0x1d647
+        PLANET    species=0x0b seed=0x1d632
+        PLANET    species=0x37 seed=0x1d61d
+        PLANET    species=0x0f seed=0x1d608
+        PLANET    species=0x11 seed=0x1d5f3
+        PLANET    species=0x11 seed=0x1d5de
       STARSYSTEM    129 32 40 4 56 0 38
-        PLANET    species=0x04
-        PLANET    species=0x05
-        PLANET    species=0x07
+        PLANET    species=0x04 seed=0x1d6c4
+        PLANET    species=0x05 seed=0x1d6af
+        PLANET    species=0x07 seed=0x1d69a
       STARSYSTEM    1 32 40 4 16 1 230
-        PLANET    species=0x03
-        PLANET    species=0x03
-        PLANET    species=0x11
-        PLANET    species=0x0e
-        PLANET    species=0x0e
+        PLANET    species=0x03 seed=0x1d741
+        PLANET    species=0x03 seed=0x1d72c
+        PLANET    species=0x11 seed=0x1d717
+        PLANET    species=0x0e seed=0x1d702
+        PLANET    species=0x0e seed=0x1d6ed
         ENCOUNTER
       STARSYSTEM    1 32 40 4 144 3 36
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x11 seed=0x1d77f
+        PLANET    species=0x0f seed=0x1d76a
       STARSYSTEM    1 32 56 4 176 5 0
       STARSYSTEM    129 32 64 4 24 0 168
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x08 seed=0x1d7e6
+        PLANET    species=0x11 seed=0x1d7d1
+        PLANET    species=0x11 seed=0x1d7bc
       STARSYSTEM    1 32 64 4 128 4 70
-        PLANET    species=0x05
-        PLANET    species=0x07
-        PLANET    species=0x0e
+        PLANET    species=0x05 seed=0x1d83e
+        PLANET    species=0x07 seed=0x1d829
+        PLANET    species=0x0e seed=0x1d814
       STARSYSTEM    129 32 72 4 224 1 250
-        PLANET    species=0x09
-        PLANET    species=0x0a
-        PLANET    species=0x10
-        PLANET    species=0x10
-        PLANET    species=0x10
-        PLANET    species=0x0d
+        PLANET    species=0x09 seed=0x1d8d0
+        PLANET    species=0x0a seed=0x1d8bb
+        PLANET    species=0x10 seed=0x1d8a6
+        PLANET    species=0x10 seed=0x1d891
+        PLANET    species=0x10 seed=0x1d87c
+        PLANET    species=0x0d seed=0x1d867
       STARSYSTEM    1 32 72 4 176 2 20
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1d90e
+        PLANET    species=0x11 seed=0x1d8f9
       STARSYSTEM    1 32 80 4 136 4 226
-        PLANET    species=0x09
-        PLANET    species=0x0e
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x09 seed=0x1d976
+        PLANET    species=0x0e seed=0x1d961
+        PLANET    species=0x11 seed=0x1d94c
+        PLANET    species=0x0f seed=0x1d937
       STARSYSTEM    1 32 88 4 56 4 102
-        PLANET    species=0x01
-        PLANET    species=0x04
-        PLANET    species=0x06
-        PLANET    species=0x27
+        PLANET    species=0x01 seed=0x1d9de
+        PLANET    species=0x04 seed=0x1d9c9
+        PLANET    species=0x06 seed=0x1d9b4
+        PLANET    species=0x27 seed=0x1d99f
           MESSAGE    'TAKE NOTE- BEWARE THE SHYNEUM PLANET IN THE SYSTEM 117,153. THERE RESIDES AN AWFUL THING.'
             MESSAGE'    '... HAVE DISCOVERED THAT THERE EXISTS A PLACE BUILT BY THE LEGHK, AND REFERRED TO THEM AS THE HALLS OF MEMORY. THIS, WE HAVE DETERMINED, WAS THE REPOSITORY OF ALL THE CUMULATIVE LEARNING OF THE ANCIENT LEGHK CIVILIZATION.'
           RUIN
@@ -2904,334 +2904,334 @@ IROOT
         ENCOUNTER
       STARSYSTEM    1 32 136 4 80 5 0
       STARSYSTEM    1 32 152 4 88 5 77
-        PLANET    species=0x0a
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x10
+        PLANET    species=0x0a seed=0x1da5a
+        PLANET    species=0x11 seed=0x1da45
+        PLANET    species=0x10 seed=0x1da30
+        PLANET    species=0x10 seed=0x1da1b
       STARSYSTEM    129 32 224 4 0 1 2
-        PLANET    species=0x08
+        PLANET    species=0x08 seed=0x1da83
       STARSYSTEM    129 32 240 4 184 5 255
-        PLANET    species=0x05
-        PLANET    species=0x23
+        PLANET    species=0x05 seed=0x1db3f
+        PLANET    species=0x23 seed=0x1db2a
           MESSAGE    ' UPON CLOSER EXAMINATION WE, THE HIGH BLOB COUNCIL, HAVE DETERMINED THAT THE MOST VALUABLE THING IS ACTUALLY JUST A WORTHLESS LUMP OF SHINEY GREEN GLASS.'
             MESSAGE'    'IN OUR TYPICALLY CLEVER FASHION WE HAVE SOLD IT TO THE FOOLISH G'NUNK WHO WERE WILLING TO PAY AN EXORBITANT AMT. PRAISE THE GREAT BLOB GODDESS.'
             MESSAGE'    'BUOB,UILLIN^IELINIIIIIIONI^NININ'
-        PLANET    species=0x08
-        PLANET    species=0x0c
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x0d
-        PLANET    species=0x10
+        PLANET    species=0x08 seed=0x1db15
+        PLANET    species=0x0c seed=0x1db00
+        PLANET    species=0x11 seed=0x1daeb
+        PLANET    species=0x10 seed=0x1dad6
+        PLANET    species=0x0d seed=0x1dac1
+        PLANET    species=0x10 seed=0x1daac
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 248 4 176 0 93
-        PLANET    species=0x03
-        PLANET    species=0x07
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x0d
+        PLANET    species=0x03 seed=0x1dbbc
+        PLANET    species=0x07 seed=0x1dba7
+        PLANET    species=0x11 seed=0x1db92
+        PLANET    species=0x10 seed=0x1db7d
+        PLANET    species=0x0d seed=0x1db68
       STARSYSTEM    129 32 248 4 240 0 173
-        PLANET    species=0x0b
-        PLANET    species=0x17
+        PLANET    species=0x0b seed=0x1dc3f
+        PLANET    species=0x17 seed=0x1dc2a
           ARTIFACT
           ENCOUNTER
-        PLANET    species=0x0e
-        PLANET    species=0x0e
-        PLANET    species=0x11
+        PLANET    species=0x0e seed=0x1dc15
+        PLANET    species=0x0e seed=0x1dc00
+        PLANET    species=0x11 seed=0x1dbe5
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 8 5 168 1 2
-        PLANET    species=0x33
+        PLANET    species=0x33 seed=0x1dc68
           ENCOUNTER
       STARSYSTEM    1 32 8 5 96 3 0
       STARSYSTEM    129 32 24 5 32 1 0
       STARSYSTEM    1 32 24 5 56 3 92
-        PLANET    species=0x05
-        PLANET    species=0x0b
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x05 seed=0x1dcf8
+        PLANET    species=0x0b seed=0x1dce3
+        PLANET    species=0x11 seed=0x1dcce
+        PLANET    species=0x0f seed=0x1dcb9
       STARSYSTEM    1 32 32 5 144 1 11
-        PLANET    species=0x01
-        PLANET    species=0x03
-        PLANET    species=0x04
+        PLANET    species=0x01 seed=0x1dd4b
+        PLANET    species=0x03 seed=0x1dd36
+        PLANET    species=0x04 seed=0x1dd21
       STARSYSTEM    129 32 40 5 216 6 34
-        PLANET    species=0x02
-        PLANET    species=0x08
+        PLANET    species=0x02 seed=0x1dd89
+        PLANET    species=0x08 seed=0x1dd74
       STARSYSTEM    129 32 136 5 64 0 191
-        PLANET    species=0x03
-        PLANET    species=0x03
-        PLANET    species=0x01
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x0a
-        PLANET    species=0x0d
+        PLANET    species=0x03 seed=0x1de30
+        PLANET    species=0x03 seed=0x1de1b
+        PLANET    species=0x01 seed=0x1de06
+        PLANET    species=0x08 seed=0x1ddf1
+        PLANET    species=0x11 seed=0x1dddc
+        PLANET    species=0x0a seed=0x1ddc7
+        PLANET    species=0x0d seed=0x1ddb2
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 144 5 48 0 54
-        PLANET    species=0x04
-        PLANET    species=0x01
-        PLANET    species=0x0d
-        PLANET    species=0x0d
+        PLANET    species=0x04 seed=0x1de98
+        PLANET    species=0x01 seed=0x1de83
+        PLANET    species=0x0d seed=0x1de6e
+        PLANET    species=0x0d seed=0x1de59
       STARSYSTEM    129 32 144 5 200 1 144
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x11 seed=0x1ded6
+        PLANET    species=0x0f seed=0x1dec1
       STARSYSTEM    129 32 160 5 0 6 128
-        PLANET    species=0x10
+        PLANET    species=0x10 seed=0x1deff
       STARSYSTEM    129 32 168 5 40 6 62
-        PLANET    species=0x03
-        PLANET    species=0x01
-        PLANET    species=0x35
-        PLANET    species=0x0a
-        PLANET    species=0x0e
+        PLANET    species=0x03 seed=0x1df7c
+        PLANET    species=0x01 seed=0x1df67
+        PLANET    species=0x35 seed=0x1df52
+        PLANET    species=0x0a seed=0x1df3d
+        PLANET    species=0x0e seed=0x1df28
         ENCOUNTER
       STARSYSTEM    129 32 184 5 24 6 138
-        PLANET    species=0x07
-        PLANET    species=0x09
-        PLANET    species=0x10
+        PLANET    species=0x07 seed=0x1dfcf
+        PLANET    species=0x09 seed=0x1dfba
+        PLANET    species=0x10 seed=0x1dfa5
       STARSYSTEM    129 32 184 5 56 6 129
-        PLANET    species=0x01
-        PLANET    species=0x0d
+        PLANET    species=0x01 seed=0x1e015
+        PLANET    species=0x0d seed=0x1e000
       STARSYSTEM    129 32 192 5 160 4 114
-        PLANET    species=0x02
-        PLANET    species=0x07
-        PLANET    species=0x2d
-        PLANET    species=0x07
+        PLANET    species=0x02 seed=0x1e07d
+        PLANET    species=0x07 seed=0x1e068
+        PLANET    species=0x2d seed=0x1e053
+        PLANET    species=0x07 seed=0x1e03e
         ENCOUNTER
       STARSYSTEM    129 32 200 5 176 5 0
       STARSYSTEM    129 32 232 5 64 6 152
-        PLANET    species=0x04
-        PLANET    species=0x07
-        PLANET    species=0x0e
+        PLANET    species=0x04 seed=0x1e0e4
+        PLANET    species=0x07 seed=0x1e0cf
+        PLANET    species=0x0e seed=0x1e0ba
       STARSYSTEM    129 32 40 6 112 3 40
-        PLANET    species=0x06
-        PLANET    species=0x06
+        PLANET    species=0x06 seed=0x1e122
+        PLANET    species=0x06 seed=0x1e10d
       STARSYSTEM    129 32 48 6 64 3 123
-        PLANET    species=0x05
-        PLANET    species=0x05
-        PLANET    species=0x0a
-        PLANET    species=0x11
-        PLANET    species=0x0d
-        PLANET    species=0x0d
+        PLANET    species=0x05 seed=0x1e1b4
+        PLANET    species=0x05 seed=0x1e19f
+        PLANET    species=0x0a seed=0x1e18a
+        PLANET    species=0x11 seed=0x1e175
+        PLANET    species=0x0d seed=0x1e160
+        PLANET    species=0x0d seed=0x1e14b
       STARSYSTEM    129 32 48 6 208 4 4
-        PLANET    species=0x03
+        PLANET    species=0x03 seed=0x1e1dd
           ENCOUNTER
       STARSYSTEM    129 32 56 6 144 2 180
-        PLANET    species=0x07
-        PLANET    species=0x2c
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1e245
+        PLANET    species=0x2c seed=0x1e230
+        PLANET    species=0x11 seed=0x1e21b
+        PLANET    species=0x11 seed=0x1e206
       STARSYSTEM    129 32 64 6 96 3 80
-        PLANET    species=0x08
-        PLANET    species=0x11
+        PLANET    species=0x08 seed=0x1e283
+        PLANET    species=0x11 seed=0x1e26e
       STARSYSTEM    129 32 72 6 72 3 55
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x05
-        PLANET    species=0x2f
-        PLANET    species=0x0f
+        PLANET    species=0x02 seed=0x1e300
+        PLANET    species=0x03 seed=0x1e2eb
+        PLANET    species=0x05 seed=0x1e2d6
+        PLANET    species=0x2f seed=0x1e2c1
+        PLANET    species=0x0f seed=0x1e2ac
       STARSYSTEM    129 32 80 6 72 3 144
-        PLANET    species=0x1f
+        PLANET    species=0x1f seed=0x1e33e
           ENCOUNTER
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1e329
       STARSYSTEM    129 32 88 6 80 3 182
-        PLANET    species=0x07
-        PLANET    species=0x05
-        PLANET    species=0x2e
-        PLANET    species=0x11
-        PLANET    species=0x10
+        PLANET    species=0x07 seed=0x1e3bb
+        PLANET    species=0x05 seed=0x1e3a6
+        PLANET    species=0x2e seed=0x1e391
+        PLANET    species=0x11 seed=0x1e37c
+        PLANET    species=0x10 seed=0x1e367
       STARSYSTEM    129 32 120 6 40 1 200
-        PLANET    species=0x02
-        PLANET    species=0x06
-        PLANET    species=0x0d
+        PLANET    species=0x02 seed=0x1e415
+        PLANET    species=0x06 seed=0x1e400
+        PLANET    species=0x0d seed=0x1e3e4
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 176 6 120 1 18
-        PLANET    species=0x07
-        PLANET    species=0x0b
+        PLANET    species=0x07 seed=0x1e453
+        PLANET    species=0x0b seed=0x1e43e
       STARSYSTEM    129 32 176 6 168 4 4
-        PLANET    species=0x29
+        PLANET    species=0x29 seed=0x1e47c
       STARSYSTEM    129 32 176 6 144 5 43
-        PLANET    species=0x02
-        PLANET    species=0x03
-        PLANET    species=0x11
-        PLANET    species=0x18
+        PLANET    species=0x02 seed=0x1e4e4
+        PLANET    species=0x03 seed=0x1e4cf
+        PLANET    species=0x11 seed=0x1e4ba
+        PLANET    species=0x18 seed=0x1e4a5
           ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 184 6 96 1 194
-        PLANET    species=0x01
-        PLANET    species=0x07
-        PLANET    species=0x05
+        PLANET    species=0x01 seed=0x1e537
+        PLANET    species=0x07 seed=0x1e522
+        PLANET    species=0x05 seed=0x1e50d
       STARSYSTEM    129 32 184 6 208 6 64
-        PLANET    species=0x0d
+        PLANET    species=0x0d seed=0x1e560
       STARSYSTEM    129 32 192 6 104 1 238
-        PLANET    species=0x07
-        PLANET    species=0x06
-        PLANET    species=0x19
+        PLANET    species=0x07 seed=0x1e5f2
+        PLANET    species=0x06 seed=0x1e5dd
+        PLANET    species=0x19 seed=0x1e5c8
           ENCOUNTER
-        PLANET    species=0x3b
-        PLANET    species=0x3c
-        PLANET    species=0x0e
+        PLANET    species=0x3b seed=0x1e5b3
+        PLANET    species=0x3c seed=0x1e59e
+        PLANET    species=0x0e seed=0x1e589
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 192 6 120 1 20
-        PLANET    species=0x08
-        PLANET    species=0x10
+        PLANET    species=0x08 seed=0x1e630
+        PLANET    species=0x10 seed=0x1e61b
       STARSYSTEM    129 32 192 6 168 3 237
-        PLANET    species=0x02
-        PLANET    species=0x01
-        PLANET    species=0x04
-        PLANET    species=0x11
-        PLANET    species=0x07
-        PLANET    species=0x0b
+        PLANET    species=0x02 seed=0x1e6c2
+        PLANET    species=0x01 seed=0x1e6ad
+        PLANET    species=0x04 seed=0x1e698
+        PLANET    species=0x11 seed=0x1e683
+        PLANET    species=0x07 seed=0x1e66e
+        PLANET    species=0x0b seed=0x1e659
       STARSYSTEM    129 32 200 6 48 5 0
       STARSYSTEM    129 32 216 6 96 5 77
-        PLANET    species=0x02
-        PLANET    species=0x05
+        PLANET    species=0x02 seed=0x1e73e
+        PLANET    species=0x05 seed=0x1e729
           ENCOUNTER
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x11 seed=0x1e714
+        PLANET    species=0x0f seed=0x1e6ff
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 232 6 40 6 7
-        PLANET    species=0x03
-        PLANET    species=0x01
-        PLANET    species=0x02
+        PLANET    species=0x03 seed=0x1e791
+        PLANET    species=0x01 seed=0x1e77c
+        PLANET    species=0x02 seed=0x1e767
       STARSYSTEM    129 32 248 6 144 0 80
-        PLANET    species=0x07
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1e7cf
+        PLANET    species=0x11 seed=0x1e7ba
       STARSYSTEM    129 32 248 6 64 2 16
-        PLANET    species=0x08
+        PLANET    species=0x08 seed=0x1e800
       STARSYSTEM    129 32 8 7 16 1 254
-        PLANET    species=0x02
-        PLANET    species=0x04
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x0d
+        PLANET    species=0x02 seed=0x1e8a7
+        PLANET    species=0x04 seed=0x1e892
+        PLANET    species=0x08 seed=0x1e87d
+        PLANET    species=0x11 seed=0x1e868
+        PLANET    species=0x11 seed=0x1e853
+        PLANET    species=0x10 seed=0x1e83e
+        PLANET    species=0x0d seed=0x1e829
       STARSYSTEM    129 32 64 7 24 1 6
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x11 seed=0x1e8e5
+        PLANET    species=0x11 seed=0x1e8d0
       STARSYSTEM    129 32 72 7 232 0 87
-        PLANET    species=0x07
-        PLANET    species=0x08
-        PLANET    species=0x07
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1e962
+        PLANET    species=0x08 seed=0x1e94d
+        PLANET    species=0x07 seed=0x1e938
+        PLANET    species=0x11 seed=0x1e923
+        PLANET    species=0x11 seed=0x1e90e
       STARSYSTEM    129 32 88 7 64 1 40
-        PLANET    species=0x0d
-        PLANET    species=0x0f
+        PLANET    species=0x0d seed=0x1e9a0
+        PLANET    species=0x0f seed=0x1e98b
       STARSYSTEM    129 32 104 7 72 1 105
-        PLANET    species=0x07
-        PLANET    species=0x20
-        PLANET    species=0x0d
-        PLANET    species=0x11
+        PLANET    species=0x07 seed=0x1ea08
+        PLANET    species=0x20 seed=0x1e9f3
+        PLANET    species=0x0d seed=0x1e9de
+        PLANET    species=0x11 seed=0x1e9c9
         ENCOUNTER
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 104 7 192 2 129
-        PLANET    species=0x03
-        PLANET    species=0x1b
+        PLANET    species=0x03 seed=0x1ea46
+        PLANET    species=0x1b seed=0x1ea31
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 112 7 168 1 218
-        PLANET    species=0x03
-        PLANET    species=0x05
-        PLANET    species=0x08
-        PLANET    species=0x06
-        PLANET    species=0x11
+        PLANET    species=0x03 seed=0x1eac3
+        PLANET    species=0x05 seed=0x1eaae
+        PLANET    species=0x08 seed=0x1ea99
+        PLANET    species=0x06 seed=0x1ea84
+        PLANET    species=0x11 seed=0x1ea6f
       STARSYSTEM    129 32 120 7 192 6 45
-        PLANET    species=0x05
-        PLANET    species=0x11
-        PLANET    species=0x1e
-        PLANET    species=0x10
+        PLANET    species=0x05 seed=0x1eb2b
+        PLANET    species=0x11 seed=0x1eb16
+        PLANET    species=0x1e seed=0x1eb01
+        PLANET    species=0x10 seed=0x1eaec
       STARSYSTEM    129 32 136 7 32 1 191
-        PLANET    species=0x05
-        PLANET    species=0x05
-        PLANET    species=0x0c
-        PLANET    species=0x11
-        PLANET    species=0x10
-        PLANET    species=0x0e
-        PLANET    species=0x0e
+        PLANET    species=0x05 seed=0x1ebd2
+        PLANET    species=0x05 seed=0x1ebbd
+        PLANET    species=0x0c seed=0x1eba8
+        PLANET    species=0x11 seed=0x1eb93
+        PLANET    species=0x10 seed=0x1eb7e
+        PLANET    species=0x0e seed=0x1eb69
+        PLANET    species=0x0e seed=0x1eb54
       STARSYSTEM    1 32 136 7 24 5 66
-        PLANET    species=0x08
-        PLANET    species=0x11
+        PLANET    species=0x08 seed=0x1ec15
+        PLANET    species=0x11 seed=0x1ec00
       STARSYSTEM    129 32 144 7 32 5 254
-        PLANET    species=0x1a
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x11
+        PLANET    species=0x1a seed=0x1ecbc
+        PLANET    species=0x11 seed=0x1eca7
+        PLANET    species=0x11 seed=0x1ec92
+        PLANET    species=0x11 seed=0x1ec7d
+        PLANET    species=0x11 seed=0x1ec68
+        PLANET    species=0x11 seed=0x1ec53
+        PLANET    species=0x11 seed=0x1ec3e
       STARSYSTEM    1 32 144 7 40 5 30
-        PLANET    species=0x07
-        PLANET    species=0x07
-        PLANET    species=0x0a
-        PLANET    species=0x07
+        PLANET    species=0x07 seed=0x1ed24
+        PLANET    species=0x07 seed=0x1ed0f
+        PLANET    species=0x0a seed=0x1ecfa
+        PLANET    species=0x07 seed=0x1ece5
       STARSYSTEM    1 32 152 7 32 5 203
-        PLANET    species=0x01
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x01 seed=0x1eda1
+        PLANET    species=0x06 seed=0x1ed8c
+        PLANET    species=0x11 seed=0x1ed77
+        PLANET    species=0x11 seed=0x1ed62
+        PLANET    species=0x0f seed=0x1ed4d
       STARSYSTEM    129 32 152 7 176 6 66
-        PLANET    species=0x03
-        PLANET    species=0x07
+        PLANET    species=0x03 seed=0x1eddf
+        PLANET    species=0x07 seed=0x1edca
       STARSYSTEM    129 32 176 7 224 3 0
       STARSYSTEM    129 32 200 7 160 4 38
-        PLANET    species=0x01
-        PLANET    species=0x01
-        PLANET    species=0x0b
+        PLANET    species=0x01 seed=0x1ee46
+        PLANET    species=0x01 seed=0x1ee31
+        PLANET    species=0x0b seed=0x1ee1c
         ENCOUNTER
         ENCOUNTER
       STARSYSTEM    129 32 200 7 8 0 255
-        PLANET    species=0x07
-        PLANET    species=0x08
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0e
-        PLANET    species=0x0f
-        PLANET    species=0x11
-        PLANET    species=0x0e
+        PLANET    species=0x07 seed=0x1ef02
+        PLANET    species=0x08 seed=0x1eeed
+        PLANET    species=0x11 seed=0x1eed8
+        PLANET    species=0x11 seed=0x1eec3
+        PLANET    species=0x0e seed=0x1eeae
+        PLANET    species=0x0f seed=0x1ee99
+        PLANET    species=0x11 seed=0x1ee84
+        PLANET    species=0x0e seed=0x1ee6f
       STARSYSTEM    129 32 160 1 232 0 0
       STARSYSTEM    129 32 200 6 32 2 128
-        PLANET    species=0x0d
+        PLANET    species=0x0d seed=0x1ef3f
       STARSYSTEM    0 32 232 3 72 4 203
-        PLANET    species=0x01
-        PLANET    species=0x06
-        PLANET    species=0x11
-        PLANET    species=0x11
-        PLANET    species=0x0f
+        PLANET    species=0x01 seed=0x1efbc
+        PLANET    species=0x06 seed=0x1efa7
+        PLANET    species=0x11 seed=0x1ef92
+        PLANET    species=0x11 seed=0x1ef7d
+        PLANET    species=0x0f seed=0x1ef68
       STARSYSTEM    0 32 232 3 96 4 66
-        PLANET    species=0x03
-        PLANET    species=0x11
+        PLANET    species=0x03 seed=0x1f000
+        PLANET    species=0x11 seed=0x1efe5
       STARSYSTEM    0 32 240 3 80 4 0
       STARSYSTEM    0 32 240 3 88 4 255
-        PLANET    species=0x03
-        PLANET    species=0x06
+        PLANET    species=0x03 seed=0x1f0d0
+        PLANET    species=0x06 seed=0x1f0bb
           ENCOUNTER
-        PLANET    species=0x0a
-        PLANET    species=0x11
-        PLANET    species=0x0e
-        PLANET    species=0x11
-        PLANET    species=0x0f
-        PLANET    species=0x0f
+        PLANET    species=0x0a seed=0x1f0a6
+        PLANET    species=0x11 seed=0x1f091
+        PLANET    species=0x0e seed=0x1f07c
+        PLANET    species=0x11 seed=0x1f067
+        PLANET    species=0x0f seed=0x1f052
+        PLANET    species=0x0f seed=0x1f03d
       STARSYSTEM    0 32 248 3 80 4 15
-        PLANET    species=0x02
-        PLANET    species=0x08
-        PLANET    species=0x05
-        PLANET    species=0x11
+        PLANET    species=0x02 seed=0x1f138
+        PLANET    species=0x08 seed=0x1f123
+        PLANET    species=0x05 seed=0x1f10e
+        PLANET    species=0x11 seed=0x1f0f9
       STARSYSTEM    0 32 248 3 96 4 16
-        PLANET    species=0x0c
+        PLANET    species=0x0c seed=0x1f161
       FLUX-NODE
       FLUX-NODE
       FLUX-NODE

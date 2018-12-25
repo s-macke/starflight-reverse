@@ -124,7 +124,7 @@ extern const unsigned short int pp_XABS; // XABS
 extern const unsigned short int pp_YABS; // YABS
 extern const unsigned short int pp_PLHI; // PLHI
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
-extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
+extern const unsigned short int pp_THIS_dash_REGION; // THIS-REGION
 extern LoadDataType ART_dash_VOL; // ART-VOL
 extern IFieldType INST_dash_QTY; // INST-QTY
 extern IFieldType INST_dash_X; // INST-X
@@ -575,7 +575,7 @@ void WEDE1() // WEDE1
 
 void WEE01() // WEE01
 {
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0xede1); // 'WEDE1'
@@ -1109,7 +1109,7 @@ void WF143() // WF143
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   if (Pop() == 0) return;
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   Push(0x5239); // '*SP'
   _2_ex_(); // 2!
@@ -1126,7 +1126,7 @@ void WF163() // WF163
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -1235,7 +1235,7 @@ void WF1C1() // WF1C1
 void WF207() // WF207
 {
   unsigned short int a, b;
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0);
@@ -1304,7 +1304,7 @@ void WF26B() // WF26B
   WF245(); // WF245
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -1360,7 +1360,7 @@ void WF2BB() // WF2BB
     SWAP(); // SWAP
     ICREATE(); // ICREATE
     _2DUP(); // 2DUP
-    Push(pp_THIS_dash_RE); // THIS-RE
+    Push(pp_THIS_dash_REGION); // THIS-REGION
     _1_dot_5_at_(); // 1.5@
     IINSERT(); // IINSERT
     _gt_C_plus_S(); // >C+S
@@ -1398,7 +1398,7 @@ void WF2ED() // WF2ED
 
 void WF30D() // WF30D
 {
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   Get_gt_C_plus_S(); // @>C+S
   WED31(); // WED31
   WF2ED(); // WF2ED
@@ -1437,7 +1437,7 @@ void WF327() // WF327
   SWAP(); // SWAP
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
@@ -1491,7 +1491,7 @@ void IsEXIST() // ?EXIST
         WF143(); // WF143
         IEXTRACT(); // IEXTRACT
         IPREV(); // IPREV
-        Push(pp_THIS_dash_RE); // THIS-RE
+        Push(pp_THIS_dash_REGION); // THIS-REGION
         _1_dot_5_at_(); // 1.5@
         IINSERT(); // IINSERT
         Push(!(a==0x0029?1:0)); // I' 0x0029 = NOT
@@ -1607,7 +1607,7 @@ void WF442() // WF442
   Push(0x63ef+INST_dash_DATE.offset); // INST-DATE<IFIELD>
   OFF(); // OFF
   IEXTRACT(); // IEXTRACT
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
 }

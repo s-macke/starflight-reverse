@@ -328,7 +328,7 @@ extern const unsigned short int pp_STARDATE; // STARDATE
 extern const unsigned short int pp__i_EXTERNAL_dash_EVENTS; // 'EXTERNAL-EVENTS
 extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp_TOWFINE; // TOWFINE
-extern const unsigned short int pp__ro_ORIGIN; // (ORIGIN
+extern const unsigned short int pp__ro_ORIGINATOR_rc_; // (ORIGINATOR)
 extern const unsigned short int pp_OK_dash_TALK; // OK-TALK
 extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ENCOUNTER_rc_; // (ENCOUNTER)
@@ -1029,7 +1029,7 @@ void WDB0C() // WDB0C
 
 void ORIGINATOR_gt_C() // ORIGINATOR>C
 {
-  Push(pp__ro_ORIGIN); // (ORIGIN
+  Push(pp__ro_ORIGINATOR_rc_); // (ORIGINATOR)
   Get_gt_C_plus_S(); // @>C+S
   GetColor(WHITE);
   GetColor(WHITE);
@@ -1049,7 +1049,7 @@ void A_gt_ORIGINATOR() // A>ORIGINATOR
 {
   Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@
-  Push(pp__ro_ORIGIN); // (ORIGIN
+  Push(pp__ro_ORIGINATOR_rc_); // (ORIGINATOR)
   _1_dot_5_ex_(); // 1.5!
   Push(Read16(pp_A_dash_POSTU)); // A-POSTU @
   Push(pp_POSTURE); // POSTURE
@@ -1069,7 +1069,7 @@ void A_gt_ORIGINATOR() // A>ORIGINATOR
 void P_gt_ORIGINATOR() // P>ORIGINATOR
 {
   Push2Words("*COMM-OFF");
-  Push(pp__ro_ORIGIN); // (ORIGIN
+  Push(pp__ro_ORIGINATOR_rc_); // (ORIGINATOR)
   _1_dot_5_ex_(); // 1.5!
   Push(Read16(pp_P_dash_POSTURE)); // P-POSTURE @
   Push(pp_POSTURE); // POSTURE
@@ -1903,7 +1903,7 @@ void WE12A() // WE12A
   Push(0x63ef+WD95C.offset); // WD95C<IFIELD>
   _plus__dash__at_(); // +-@
   ICLOSE(); // ICLOSE
-  Push(pp__ro_ORIGIN); // (ORIGIN
+  Push(pp__ro_ORIGINATOR_rc_); // (ORIGINATOR)
   _1_dot_5_at_(); // 1.5@
   Push(pp__ro_AORIGINATOR_rc_); // (AORIGINATOR)
   _1_dot_5_at_(); // 1.5@

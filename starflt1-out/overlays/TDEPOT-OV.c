@@ -130,8 +130,8 @@ extern const unsigned short int pp_CRSCOLO; // CRSCOLO
 extern const unsigned short int pp__pe_VAL; // %VAL
 extern const unsigned short int pp_SCROLL_dash_; // SCROLL-
 extern const unsigned short int pp_IsEGA; // ?EGA
-extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
-extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
+extern const unsigned short int pp__ro_SCROLL_dash_BOX_rc_; // (SCROLL-BOX)
+extern const unsigned short int pp__ro_THIS_dash_ITEM_rc_; // (THIS-ITEM)
 extern const unsigned short int pp_IsTANDRG; // ?TANDRG
 extern LoadDataType ELEM_dash_VAL; // ELEM-VAL
 extern LoadDataType ART_dash_VAL; // ART-VAL
@@ -1018,7 +1018,7 @@ void WE835() // WE835
 
 void WE83F() // WE83F
 {
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -1033,7 +1033,7 @@ void WE847() // WE847
   _gt_C_plus_S(); // >C+S
   INEXT(); // INEXT
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -1049,7 +1049,7 @@ void WE859() // WE859
   _gt_C_plus_S(); // >C+S
   IPREV(); // IPREV
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -1206,11 +1206,11 @@ void WE921() // WE921
 void WE957() // WE957
 {
   unsigned short int a;
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   Push(0);
   do

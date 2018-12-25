@@ -196,11 +196,11 @@ extern const unsigned short int pp_E_dash_USE; // E-USE
 extern const unsigned short int pp_IsSECURE; // ?SECURE
 extern const unsigned short int pp__10_star_CARGO; // 10*CARGO
 extern const unsigned short int pp_STIME; // STIME
-extern const unsigned short int pp__ro_SCROLL_1; // (SCROLL_1
+extern const unsigned short int pp__ro_SCROLL_dash_BOX_rc_; // (SCROLL-BOX)
 extern const unsigned short int pp__ro_SYSTEM_rc_; // (SYSTEM)
 extern const unsigned short int pp__ro_ORBIT_rc_; // (ORBIT)
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
-extern const unsigned short int pp__ro_THIS_dash_I; // (THIS-I
+extern const unsigned short int pp__ro_THIS_dash_ITEM_rc_; // (THIS-ITEM)
 extern const unsigned short int pp_LSCAN; // LSCAN
 extern LoadDataType _1BTN; // 1BTN
 extern Color BLACK; // BLACK
@@ -1350,7 +1350,7 @@ void _ro__slash_CAPT_dash_LOG_rc_() // (/CAPT-LOG)
 
 void WE462() // WE462
 {
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_at_(); // 1.5@
 }
 
@@ -1365,7 +1365,7 @@ void WE46A() // WE46A
   _gt_C_plus_S(); // >C+S
   INEXT(); // INEXT
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -1381,7 +1381,7 @@ void WE47C() // WE47C
   _gt_C_plus_S(); // >C+S
   IPREV(); // IPREV
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   ICLOSE(); // ICLOSE
 }
@@ -1494,11 +1494,11 @@ void WE4EE() // WE4EE
 void WE51A() // WE51A
 {
   unsigned short int a;
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI
-  Push(pp__ro_THIS_dash_I); // (THIS-I
+  Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
   _1_dot_5_ex_(); // 1.5!
   Push(0);
   do
@@ -1618,7 +1618,7 @@ void WE5C6() // WE5C6
   _1_dot_5_at_(); // 1.5@
   Push2Words("*STARSHIP-HOLD");
   WE596(); // WE596
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   CI(); // CI
@@ -1674,7 +1674,7 @@ void WE633() // WE633
   unsigned short int a;
   GetINST_dash_SPECIES(); // @INST-SPECIES
   a = Pop(); // >R
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   Get_gt_C_plus_S(); // @>C+S
   IOPEN(); // IOPEN
   Push(0);
@@ -1699,7 +1699,7 @@ void WE633() // WE633
     if (Pop() != 0)
     {
       CI(); // CI
-      Push(pp__ro_THIS_dash_I); // (THIS-I
+      Push(pp__ro_THIS_dash_ITEM_rc_); // (THIS-ITEM)
       _1_dot_5_ex_(); // 1.5!
     }
     INEXT(); // INEXT
@@ -1731,7 +1731,7 @@ void WE68B() // WE68B
     {
       WE5C6(); // WE5C6
     }
-    Push(pp__ro_SCROLL_1); // (SCROLL_1
+    Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
     Get_gt_C_plus_S(); // @>C+S
     IOPEN(); // IOPEN
     WE5EF(); // WE5EF
@@ -2148,7 +2148,7 @@ void WE9BA() // WE9BA
   ICLOSE(); // ICLOSE
   Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
-  Push(pp__ro_SCROLL_1); // (SCROLL_1
+  Push(pp__ro_SCROLL_dash_BOX_rc_); // (SCROLL-BOX)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_(); // >C+
   WE462(); // WE462

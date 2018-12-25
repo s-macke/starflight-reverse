@@ -76,7 +76,7 @@ extern const unsigned short int pp_QTYINST; // QTYINST
 extern const unsigned short int pp_IsREUSE; // ?REUSE
 extern const unsigned short int pp_IsRECYCLED; // ?RECYCLED
 extern const unsigned short int pp_W6162; // W6162
-extern const unsigned short int pp_W6329; // W6329
+extern const unsigned short int pp_CXS; // CXS
 extern const unsigned short int pp_IBFR; // IBFR
 void M_plus_(); // M+
 void D_st_(); // D<
@@ -252,7 +252,7 @@ void CCLR() // CCLR
   Push(Read16(cc_END_dash_CX)); // END-CX
   Push(pp_CXSP); // CXSP
   _st__ex__gt_(); // <!>
-  Push(pp_W6329); // W6329
+  Push(pp_CXS); // CXS
   Push(0x0078);
   Push(0);
   FILL_1(); // FILL_1

@@ -158,7 +158,7 @@ extern const unsigned short int pp_LAST_dash_UPDATE; // LAST-UPDATE
 extern const unsigned short int pp_ANCHOR_dash_CONTOUR; // ANCHOR-CONTOUR
 extern const unsigned short int pp_TVEHICLE; // TVEHICLE
 extern const unsigned short int pp__ro_PLANET_rc_; // (PLANET)
-extern const unsigned short int pp_THIS_dash_RE; // THIS-RE
+extern const unsigned short int pp_THIS_dash_REGION; // THIS-REGION
 extern LoadDataType ART_dash_VOL; // ART-VOL
 extern Color BLACK; // BLACK
 extern Color GREEN; // GREEN
@@ -1294,7 +1294,7 @@ void WED4C() // WED4C
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _2DUP(); // 2DUP
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_ex_(); // 1.5!
   _2DUP(); // 2DUP
   _gt_C(); // >C
@@ -1314,7 +1314,7 @@ void WED4C() // WED4C
 
 void WED7A() // WED7A
 {
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   WEC88(); // WEC88
   Push(Pop() | Pop()); // OR
@@ -1477,7 +1477,7 @@ void IsPOPULA() // ?POPULA
     return;
   }
   WEE34(); // WEE34
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -1570,7 +1570,7 @@ void WEF48() // WEF48
   Push(0x0033);
   ICREATE(); // ICREATE
   _2DUP(); // 2DUP
-  Push(pp_THIS_dash_RE); // THIS-RE
+  Push(pp_THIS_dash_REGION); // THIS-REGION
   _1_dot_5_at_(); // 1.5@
   IINSERT(); // IINSERT
   _gt_C_plus_S(); // >C+S
