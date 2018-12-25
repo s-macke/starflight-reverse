@@ -5,6 +5,7 @@
 unsigned char m[1024*1024];
 unsigned char *mem;
 unsigned short regsp;
+unsigned short regbp;
 
 void Write8(unsigned short offset, unsigned char x)
 {

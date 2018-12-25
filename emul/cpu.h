@@ -4,6 +4,7 @@
 extern unsigned char *mem;
 extern unsigned char m[1024*1024];
 extern unsigned short regsp;
+extern unsigned short regbp;
 
 void Write8(unsigned short offset, unsigned char x);
 void Write8Long(unsigned short s, unsigned short o, unsigned char x);

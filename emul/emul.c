@@ -9,12 +9,12 @@
 #include"../starflt1-out/data/dictionary.h"
 #include"../starflt1-out/data/directory.h"
 #include"../src/global.h"
+#include"fract.h"
 
 const unsigned short cs = 0x192;
 const unsigned short ds = 0x192;
 
 unsigned short int regdi = REGDI; // points to word "OPERATOR"
-unsigned short int bp = 0xd4a7 + 0x100 + 0x80; // call stack
 unsigned short int si = 0x129; // current vocabulary address (the forth pc pointer)
 unsigned short int cx = 0x0;
 unsigned short int dx = 0x0;
@@ -112,7 +112,7 @@ void SetBPBase(int bp)
     const unsigned short int bpbase2 = 0xd4a7 + 0x100 + 0x80+8615; // late call stack base
 
     bpbase = bpbase1;
-    if (bp > bpbase)
+    if (regbp > bpbase)
     {
         bpbase = bpbase2;
     }
@@ -160,7 +160,7 @@ char* GetOverlayName(int word, int ovidx)
 void PrintCallstacktrace(int bx)
 {
     int ovidx = GetOverlayIndex(Read16(0x55a5));
-    SetBPBase(bp);
+    SetBPBase(regbp);
     printf("========================================\n");
     printf("              Callstack\n");
     printf("  Address         Overlay   Word \n");
@@ -169,7 +169,7 @@ void PrintCallstacktrace(int bx)
 
     int word = FindClosestWord(si, ovidx);
     printf("  0x%04x  %15s   %s\n", word, GetOverlayName(word, ovidx), FindWord(word, ovidx));
-    for(int i=bp; i<bpbase; i += 2)
+    for(int i=regbp; i<bpbase; i += 2)
     {
         if (iscall[(bpbase-i)>>1])
         {
@@ -355,9 +355,9 @@ void ParameterCall(unsigned short bx, unsigned short addr)
     // call word 0x1649;
     //printf("Parametercall addr=%04x, si=%04x bx=%04x content=0x%04x\n", addr, si, bx+2, Read16(bx+2));
 
-    bp -= 2;
-    Write16(bp, si);
-    DefineCallStack(bp, 1);
+    regbp -= 2;
+    Write16(regbp, si);
+    DefineCallStack(regbp, 1);
 
     // next address after the call contains forth code, so change pointer
     Push(addr+3);
@@ -530,15 +530,15 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x224c: // call
             bx += 2;
-            bp -= 2;
-            Write16(bp, si);
+            regbp -= 2;
+            Write16(regbp, si);
             si = bx;
-            DefineCallStack(bp, 1);
+            DefineCallStack(regbp, 1);
         break;
 
         case 0x1692: // "EXIT"
-            si = Read16(bp);
-            bp += 2;
+            si = Read16(regbp);
+            regbp += 2;
         break;
 
         // --- branching ---
@@ -548,23 +548,23 @@ void Call(unsigned short addr, unsigned short bx)
 
         // --- callstack operations mainly for loops ---
 
-        case 0x0E52: Push(Read16(bp+0)); break; // "I"
-        case 0x0E62: Push(Read16(bp+2)); break; // "I'"
-        case 0x0E70: Push(Read16(bp+4)); break; // "J"
+        case 0x0E52: Push(Read16(regbp+0)); break; // "I"
+        case 0x0E62: Push(Read16(regbp+2)); break; // "I'"
+        case 0x0E70: Push(Read16(regbp+4)); break; // "J"
 
         // ---- call stack operations ---
 
-        case 0x0EA4: Push(Read16(bp+0)); break; // "R@"
+        case 0x0EA4: Push(Read16(regbp+0)); break; // "R@"
         case 0x0E92: // "R>" pop variables from the callstack
-            Push(Read16(bp));
-            bp += 2;
+            Push(Read16(regbp));
+            regbp += 2;
         break;
 
         case 0xDB6: // ">R" push variables on the callstack
             bx = Pop();
-            bp -= 2;
-            Write16(bp, bx);
-            DefineCallStack(bp, 0);
+            regbp -= 2;
+            Write16(regbp, bx);
+            DefineCallStack(regbp, 0);
         break;
 
         // ------------------------------
@@ -671,8 +671,8 @@ void Call(unsigned short addr, unsigned short bx)
             exit(0);
         break;
 
-        case 0x174C: Write16(bp+2, Read16(bp)); break; // "(LEAVE)"
-        case 0x0EC8: bp = Read16(regdi+2); break; // RP!
+        case 0x174C: Write16(regbp+2, Read16(regbp)); break; // "(LEAVE)"
+        case 0x0EC8: regbp = Read16(regdi+2); break; // RP!
 
         case 0x83f8: // all overlays
             printf("Load overlay '%s'\n", FindWord(bx+2, -1));
@@ -919,14 +919,13 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x718d: // "RECADD"
         {
-            int sp0 = Pop(); // has something to do with OFFBLK
-            int sp2 = Pop(); // has something to do with OFFBLK
+            // transforms the result of "BVSA>OFFBLK" to position on disk in chunks of 1024 dependend on the record alignment
+            int sp0 = Pop();
+            int sp2 = Pop();
             int recordsize = Pop();
             int recordidx = Pop();
 
-            printf("RECADD 0x%04x 0x%04x recordsize=%i recordidx=%i\n", sp0, sp2, recordsize, recordidx);
-            //  { .idx=0x0e, .name="BANK-TRANS  ", .fileno=2, .start=0x064800, .end=0x064880, .size=0x00090, .nblocks=   7, .blocksize=  19, .lsize=0x06 },
-            //RECADD 0x0098 0x0100 recordsize=19 recordidx=6
+            //printf("RECADD 0x%04x 0x%04x recordsize=%i recordidx=%i\n", sp0, sp2, recordsize, recordidx);
 
             unsigned short ax = 1024 - sp2;
             ax = ax / recordsize;
@@ -947,69 +946,15 @@ void Call(unsigned short addr, unsigned short bx)
             Push(sp2);
             Push(sp0);
         }
-
-// 0x718d: mov    bx,sp
-// 0x718f: mov    ax,0400
-// 0x7192: sub    ax,[bx+02]
-// 0x7195: xor    dx,dx
-// 0x7197: mov    cx,[bx+04]
-// 0x719a: div    cx
-// 0x719c: cmp    ax,[bx+06]
-// 0x719f: jle    71AB
-
-// 0x71a1: mov    ax,[bx+06]
-// 0x71a4: mul    cx
-// 0x71a6: add    [bx+02],ax
-// 0x71a9: jmp    71CF
-
-// 0x71ab: sub    [bx+06],ax
-// 0x71ae: inc    word ptr [bx]
-// 0x71b0: mov    word ptr [bx+02],0000
-// 0x71b5: mov    ax,0400
-// 0x71b8: xor    dx,dx
-// 0x71ba: div    cx
-
-// 0x71bc: mov    cx,ax
-// 0x71be: mov    ax,[bx+06]
-// 0x71c1: xor    dx,dx
-// 0x71c3: div    cx
-// 0x71c5: add    [bx],ax
-// 0x71c7: mov    ax,dx
-// 0x71c9: mul    word ptr [bx+04]
-// 0x71cc: mov    [bx+02],ax
-
-// 0x71cf: pop    ax
-// 0x71d0: pop    cx
-// 0x71d1: add    sp,04
-// 0x71d4: push   cx
-// 0x71d5: push   ax
-// 0x71d6: lodsw
-// 0x71d7: mov    bx,ax
-// 0x71d9: jmp    word ptr [bx]
-            //exit(1);
             break;
 
-        case 0x7295: // "BVSA>OFFBLK". Input: offset in file divided by 16
+        case 0x7295: // "BVSA>OFFBLK". Input: offset in file divided by 16, Prepare for "RECADD"
         {
-            printf("BVSA>OFFBLK 0x%04x\n", Read16(regsp));
+            //printf("BVSA>OFFBLK 0x%04x 0x%04x 0x%04x\n", Read16(regsp), ((Read16(regsp)-0x3e80)& 0x3F)<<4, (Read16(regsp)-0x3e80)>>6);
             unsigned short ax = Pop() - 0x3e80; // BLOVSA
             Push((ax & 0x3F) << 4);
             Push(ax >> 6);
         }
-// 0x7295: pop    ax
-// 0x7296: sub    ax,3E80
-// 0x7299: mov    cx,0006
-// 0x729c: xor    dx,dx
-
-// 0x729e: shr    ax,1
-// 0x72a0: rcr    dl,1
-// 0x72a2: loop   729E
-
-// 0x72a4: shl    dx,1
-// 0x72a6: shl    dx,1
-
-// 0x72a8: push   dx
-// 0x72a9: push   ax
             break;
 
         case 0x7684: // "PRIORITIZE"
@@ -1301,28 +1246,28 @@ void Call(unsigned short addr, unsigned short bx)
                 dx = Pop();
                 Push(regdi);
                 Push(si);
-                Push(bp);
+                Push(regbp);
                 cx = Read16(0x2B3A); // #FILES
                 regdi = 0x2D74;
                 bx = 0;
                 //0x368C:
                 for(;cx!=0; cx--)
                 {
-                    bp = (cx-1)<<1;
-                    si = 0x2D74 + bp;
+                    regbp = (cx-1)<<1;
+                    si = 0x2D74 + regbp;
                     ax = dx;
                     ax = ax - Read16(si);
                     if (ax&0x8000) continue;
-                    si = 0x2D4C + bp;
+                    si = 0x2D4C + regbp;
                     if (ax >= Read16(si)) continue;
                     bx++;
                     break;
                 }
 
                 //x36AA:
-                bp >>= 1;
-                cx = bp;
-                bp = Pop();
+                regbp >>= 1;
+                cx = regbp;
+                regbp = Pop();
                 si = Pop();
                 regdi = Pop();
                 Push(ax);
@@ -1918,28 +1863,28 @@ void Call(unsigned short addr, unsigned short bx)
             dx = Pop();
             unsigned short ax = Pop();
             int temp = regsp;
-            regsp = bp;
+            regsp = regbp;
             Push(ax);
             Push(dx);
-            bp = regsp;
+            regbp = regsp;
             regsp = temp;
-            DefineCallStack(bp, 0);
-            DefineCallStack(bp+2, 0);
+            DefineCallStack(regbp, 0);
+            DefineCallStack(regbp+2, 0);
         }
         break;
 
         case 0x1593: // "(/LOOP)"
         {
-            unsigned short ax = Pop() + Read16(bp);
+            unsigned short ax = Pop() + Read16(regbp);
 
-            if ((signed short int)ax >= (signed short int)Read16(bp+2))
+            if ((signed short int)ax >= (signed short int)Read16(regbp+2))
             {
                 // exit loop
-                bp += 4;
+                regbp += 4;
                 si += 2;
             } else
             {
-                Write16(bp, ax);
+                Write16(regbp, ax);
                 si += Read16(si);
             }
         }
@@ -1948,37 +1893,37 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x155E: // "(+LOOP)"
         {
             bx = Pop();  // stepsize
-            unsigned short ax = Read16(bp) + bx;
-            //printf("stepsize %i, comparison index: %x dest: %x \n", (short)bx, Read16(bp), Read16(bp+2));
+            unsigned short ax = Read16(regbp) + bx;
+            //printf("stepsize %i, comparison index: %x dest: %x \n", (short)bx, Read16(regbp), Read16(regbp+2));
             if (bx&0x8000) // if stepsize is negative
             {
                 //0x1577:
-                if ((signed short)ax >= (signed short)Read16(bp+2))
+                if ((signed short)ax >= (signed short)Read16(regbp+2))
                 {
                     //0x156D:
-                    Write16(bp, ax);
+                    Write16(regbp, ax);
                     si += Read16(si);
                 } else
                 {
                     //0x157C: loop finished
                     // exit loop
-                    bp += 4;
+                    regbp += 4;
                     si += 2;
                 }
 
             } else
             {
                 //0x1568:
-                if ((signed short)ax >= (signed short)Read16(bp+2))
+                if ((signed short)ax >= (signed short)Read16(regbp+2))
                 {
                     //0x157C:
                     // exit loop
-                    bp += 4; // loop finished
+                    regbp += 4; // loop finished
                     si += 2;
                 } else
                 {
                     //0x156D:
-                    Write16(bp, ax);
+                    Write16(regbp, ax);
                     si += Read16(si);
                 }
             }
@@ -1987,16 +1932,16 @@ void Call(unsigned short addr, unsigned short bx)
 
         case 0x15D2: // "(LOOP)"
         {
-            unsigned short ax = Read16(bp)+1; // index
-            bx = Read16(bp+2);
+            unsigned short ax = Read16(regbp)+1; // index
+            bx = Read16(regbp+2);
             if ((signed short int)ax >= (signed short int)bx)
             {
                 // exit loop
-                bp += 4;
+                regbp += 4;
                 si += 2;
             } else
             {
-                Write16(bp, ax);
+                Write16(regbp, ax);
                 si += Read16(si);
             }
         }
@@ -2217,6 +2162,11 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x4abb: Push(rand()); break; // "FRND"
         case 0x4892: break; // "CAPSON" Turn on caps
 
+        // ------- fract-ov operations -------
+        case 0xe770: FRACT_FILLARRAY(); break;
+        case 0xe537: FRACT_StoreHeight(); break;
+        case 0xe75e: FRACT_FRACTALIZE(); break;
+
         default:
             printf("unknown opcode 0x%04x at si = 0x%04x\n", addr, si);
             PrintCallstacktrace(bx);
@@ -2244,6 +2194,8 @@ void Step()
 
 int main()
 {
+    regbp = 0xd4a7 + 0x100 + 0x80; // call stack
+
     setvbuf(stdout, NULL, _IONBF, 0);
     printf("Try the following commands:\n");
     printf("'2 3 + .'\n");
