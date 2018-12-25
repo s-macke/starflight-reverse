@@ -214,6 +214,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x60da, "SENSE-ADDR"}, // "SENSE-A"
     {0xff, 0x6126, "ENC-TIME"}, // "ENC-TIM"
     {0xff, 0x6136, "NAV-TIME"}, // "NAV-TIM"
+    {0xff, 0x61a2, "(ORIGINATOR)"}, // "(ORIGIN"
     {0xff, 0x61d2, "BOX-IADDR"}, // "BOX-IAD"
     {0xff, 0x6201, "LAST-UPDATE"}, // "LAST-UP"
     {0xff, 0x6211, "XWLD:XPIX"}, // "XWLD:XP"
@@ -226,6 +227,10 @@ WORDRENAME renamewords[] =
     {0xff, 0x62df, "(ENCOUNTER)"}, // "(ENCOUN"
     {0xff, 0x62ef, "(SHIPBOX)"}, // "(SHIPBO"
     {0xff, 0x62ff, "(AORIGINATOR)"}, // "(AORIGI"
+    {0xff, 0x630f, "THIS-REGION"}, // "THIS-RE"
+    {0xff, 0x631f, "(THIS-ITEM)"}, // "(THIS-I"
+    {0xff, 0x6329, "CXS"}, // W6329
+    {0xff, 0x63a3, "VSTK"}, // W63a3
     {0xff, 0x6a99, "MERCATOR"}, // "MERCATO"
     {0xff, 0x6aad, "CONANCHOR"}, // "CONANCH"
     {0xff, 0x6b31, "GVERTEX>GRIDCOLOR"}, // "GVERTEX"
@@ -245,7 +250,6 @@ WORDRENAME renamewords[] =
     {0xff, 0x7520, "@INST-CLASS"}, // "@INST-C"
     {0xff, 0x7532, "@INST-SPECIES"}, // "@INST-S"
     {0xff, 0x798c, "SET-CURRENT"}, // "SET-CUR"
-    {0xff, 0x7b4f, "SAVE-BUFFERS"}, // "SAVE-BU"
     {0xff, 0x7bf5, "IEXTRACT"}, // "IEXTRAC"
     {0xff, 0x7c49, "@NEWSPACE"}, // "@NEWSPA"
     {0xff, 0x7c5b, "!NEWSPACE"}, // "!NEWSPA"
@@ -462,8 +466,8 @@ WORDRENAME renamewords[] =
     {0x18, 0xf417, "plan-tseed"}, // "Wf417" MOVE-OV
     {0x04, 0xf423, "GETSITE_1"}, // "GETSITE" SITE-OV
     {0x04, 0xf537, "GETSITE_2"}, // "GETSITE"
-    {0xff, 0x6192, "(SCROLL_1"}, // "(SCROLL" maybe (SCROLL-BOX)
-    {0xff, 0x61b2, "(SCROLL_2"}, // "(SCROLL"
+    {0xff, 0x6192, "(SCROLL-BOX)"}, // "(SCROLL"
+    {0xff, 0x61b2, "(SCROLL-CONT)"}, // "(SCROLL"
     {0xff, 0x1320, "OFF_1"}, // "OFF"
     {0xff, 0x4886, "OFF_2"}, // "OFF"
     {0xff, 0x6dc7, "OFF"}, // "OFF"
@@ -512,9 +516,9 @@ WORDRENAME renamewords[] =
     {0xff, 0xc8b7, "DAMAGE_2"}, // "DAMAGE-"
 
     {0xff, 0x5a5c, "CONTEXT-ID#"}, // "CONTEXT"
-    {0xff, 0x05ac, "CONTEXT_2"}, // "CONTEXT"
-    {0xff, 0x38ad, "SAVE-BU_1"}, // "SAVE-BU"
-    {0xff, 0x7b4f, "SAVE-BU_2"}, // "SAVE-BU"
+    {0xff, 0x05ac, "CONTEXT"}, // "CONTEXT"
+    {0xff, 0x38ad, "SAVE-BUFFERS2"}, // "SAVE-BU"
+    {0xff, 0x7b4f, "SAVE-BUFFERS"}, // "SAVE-BU"
     {0xff, 0x385f, "BLOCK_1"}, // "BLOCK"
     {0xff, 0x6e21, "BLOCK_2"}, // "BLOCK"
     {0xff, 0x06ac, "KEY_1"}, // "KEY"
