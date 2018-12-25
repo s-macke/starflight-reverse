@@ -86,8 +86,8 @@ IFieldType INST_dash_SIB     = {DIRECTORYIDX, 0x00, 0x03};
 IFieldType INST_dash_PREV    = {DIRECTORYIDX, 0x03, 0x03};
 IFieldType INST_dash_OFF     = {DIRECTORYIDX, 0x06, 0x03};
 IFieldType INST_dash_CLASS   = {DIRECTORYIDX, 0x09, 0x01};
-IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};  <- lsize starts from here
-IFieldType INST_dash_QTY     = {DIRECTORYIDX, 0x0b, 0x02};
+IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};
+IFieldType INST_dash_QTY     = {DIRECTORYIDX, 0x0b, 0x02};  <- lsize starts from here
 IFieldType INST_dash_X       = {DIRECTORYIDX, 0x0d, 0x02};
 IFieldType INST_dash_Y       = {DIRECTORYIDX, 0x0f, 0x02};
 IBFR
@@ -153,7 +153,7 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         }
         if (class == 0x20) // planet lsize=0
         {
-            fprintf(fp, "    species=0x%02x", buf[a+0xa]);
+            fprintf(fp, "    species=0x%02x seed=0x%04x", buf[a+0xa], addr);
         }
 #ifdef STARFLT1
         if (class == 0x30) // string
