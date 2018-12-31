@@ -12,12 +12,12 @@ void Step()
 {
     int i;
 
-    unsigned short ax = Read16(si); // si is the forth program counter
-    si += 2;
+    unsigned short ax = Read16(regsi); // si is the forth program counter
+    regsi += 2;
     unsigned short bx = ax;
     unsigned short execaddr = Read16(bx);
 #ifdef DEBUG
-    printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, si-2, bx+2, regsp);
+    printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, regsi-2, bx+2, regsp);
     printf(" %s\n", FindWord(bx+2, -1));
 #endif
     Call(execaddr, bx);

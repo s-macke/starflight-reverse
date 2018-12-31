@@ -44,9 +44,9 @@ void PrintCallstacktrace(int bx)
     printf("              Callstack\n");
     printf("  Address         Overlay   Word \n");
     printf("========================================\n");
-    printf("  0x%04x  %15s   %s\n", si, GetOverlayName(si, ovidx), FindWord(bx+2, ovidx));
+    printf("  0x%04x  %15s   %s\n", regsi, GetOverlayName(regsi, ovidx), FindWord(bx+2, ovidx));
 
-    int word = FindClosestWord(si, ovidx);
+    int word = FindClosestWord(regsi, ovidx);
     printf("  0x%04x  %15s   %s\n", word, GetOverlayName(word, ovidx), FindWord(word, ovidx));
     for(int i=regbp; i<bpbase; i += 2)
     {

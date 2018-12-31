@@ -6,7 +6,7 @@ unsigned char m[1024*1024];
 unsigned char *mem;
 unsigned short regsp;
 unsigned short regbp;
-unsigned short int si = 0x129; // current vocabulary address (the forth pc pointer)
+unsigned short int regsi = 0x129; // current vocabulary address (the forth pc pointer)
 
 void Write8(unsigned short offset, unsigned char x)
 {
