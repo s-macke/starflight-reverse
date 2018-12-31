@@ -778,25 +778,24 @@ void Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-        case 0x4DA4: // "!OFFSET"
+        case 0x4DA4: // "!OFFSET" sets 2D array pointers for faster access, like in C
         {
-            //printf("!OFFSET}n");
             unsigned short ax;
             bx = Pop();
             int tempsi = Read16(bx);
             int tempcx = Read16(bx+2);
             int tempbp = Read16(bx+4);
-            int es = Read16(bx+6);
-            int tempdi = (cx<<1)+tempbp;
-            for(;cx>0; cx--)
+            unsigned short es = Read16(bx+6);
+            int tempdi = (tempcx<<1)+tempbp;
+            do
             {
-                ax = si*cx;
+                ax = tempsi*tempcx;
                 Write16Long(es, tempdi, ax);
                 tempdi-=2;
-            }
+                tempcx--;
+            } while(tempcx != 0);
             ax = 0;
             Write16Long(es, tempdi, ax);
-            tempdi-=2;
         }
         break;
 
@@ -1425,6 +1424,42 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x2618: Pop(); break; // "TONE"
 
         // --- graphics ---
+        case 0x97cc: // COLORMAP. Determine color from given value. For example from landscape height
+        {
+            bx = Pop();
+            if (bx&0x8000) // is negative
+            {
+                bx = 0;
+            } else
+            {
+                bx = (bx >> 1) & 0x38;
+            }
+            bx += 0x6a3f; // CMAP
+            Write16(0x58cd, bx);
+            unsigned short ax = Read8(bx);
+            Write16(0x55f2, ax); // COLOR
+            bx += 2;
+            ax = Read8(bx);
+            Write16(0x55ff, ax); // DCOLOR
+        }
+        break;
+// 0x97cc: pop    bx
+// 0x97cd: or     bx,bx
+// 0x97cf: jns    97D6
+// 0x97d1: mov    bx,0000
+// 0x97d4: jmp    97DB
+
+// 0x97d6: shr    bx,1
+// 0x97d8: and    bx,38
+
+// 0x97db: add    bx,6A3F // CMAP
+// 0x97df: mov    [58CD],bx // TILE-PTR
+// 0x97e3: xor    ax,ax
+// 0x97e5: mov    al,[bx]
+// 0x97e7: mov    [55F2],ax // COLOR
+// 0x97eb: add    bx,02
+// 0x97ee: mov    al,[bx]
+// 0x97f0: mov    [55FF],ax // DCOLOR
 
         case 0x8E4F:  // Move entire display to/from seg
             //printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n",
@@ -2159,7 +2194,25 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x4873: Write16(Pop(), 1); break; // ON
         case 0x4886: Write16(Pop(), 0); break; // "OFF"
         case 0x0D7C: Push((Pop()-cs)<<4); break; // "SEG>ADDR"
-        case 0x4abb: Push(rand()); break; // "FRND"
+        case 0x4abb: // FRND
+        {
+            unsigned short ax, cx;
+            ax = Read16(0x4ab0); // SEED
+            cx = 0x7abd;
+            ax = ((signed short)cx) * ((signed short)ax);
+            ax += 0x1b0f;
+            Write16(0x4ab0, ax); // SEED
+            Push(ax);
+
+            //Push(rand()); break; // "FRND"
+            // 0x4abb: mov    ax,[4AB0] // SEED
+            // 0x4abf: mov    cx,7ABD
+            // 0x4ac2: imul   cx
+            // 0x4ac4: add    ax,1B0F
+            // 0x4ac7: mov    [4AB0],ax // SEED
+            // 0x4acb: push   ax
+        }
+        break;
         case 0x4892: break; // "CAPSON" Turn on caps
 
         // ------- fract-ov operations -------
