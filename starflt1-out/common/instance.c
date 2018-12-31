@@ -80,7 +80,7 @@ extern const unsigned short int pp_CXS; // CXS
 extern const unsigned short int pp_IBFR; // IBFR
 void M_plus_(); // M+
 void D_st_(); // D<
-void SAVE_dash_BU_1(); // SAVE-BU_1
+void SAVE_dash_BUFFERS2(); // SAVE-BUFFERS2
 void EMPTY_dash_BUFFERS(); // EMPTY-BUFFERS
 void IsUNRAVEL(); // ?UNRAVEL
 void PICK(); // PICK
@@ -432,7 +432,7 @@ void IC_gt_DSK() // IC>DSK
 
 void SAVE_dash_BUFFERS() // SAVE-BUFFERS
 {
-  SAVE_dash_BU_1(); // SAVE-BU_1
+  SAVE_dash_BUFFERS2(); // SAVE-BUFFERS2
   INIT(); // INIT
 }
 

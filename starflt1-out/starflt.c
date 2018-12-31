@@ -105,7 +105,7 @@
 //             SCR  codep:0x1792 wordp:0x0587 size:0x0002 C-string:'SCR'
 //            SSCR  codep:0x1792 wordp:0x0592 size:0x0002 C-string:'SSCR'
 //           STATE  codep:0x1792 wordp:0x059e size:0x0002 C-string:'STATE'
-//       CONTEXT_2  codep:0x1792 wordp:0x05ac size:0x0002 C-string:'CONTEXT_2'
+//         CONTEXT  codep:0x1792 wordp:0x05ac size:0x0002 C-string:'CONTEXT'
 //             CSP  codep:0x1792 wordp:0x05b6 size:0x0002 C-string:'CSP'
 //         CURRENT  codep:0x1792 wordp:0x05c4 size:0x0002 C-string:'CURRENT'
 //          LFALEN  codep:0x1792 wordp:0x05d1 size:0x0002 C-string:'LFALEN'
@@ -521,7 +521,7 @@
 //           W3849  codep:0x224c wordp:0x3849 size:0x000c C-string:'W3849'
 //         BLOCK_1  codep:0x224c wordp:0x385f size:0x0016 C-string:'BLOCK_1'
 //        LBLOCK_1  codep:0x224c wordp:0x3880 size:0x001c C-string:'LBLOCK_1'
-//       SAVE-BU_1  codep:0x224c wordp:0x38ad size:0x003e C-string:'SAVE_dash_BU_1'
+//   SAVE-BUFFERS2  codep:0x224c wordp:0x38ad size:0x003e C-string:'SAVE_dash_BUFFERS2'
 //   EMPTY-BUFFERS  codep:0x224c wordp:0x38fd size:0x000c C-string:'EMPTY_dash_BUFFERS'
 //           FLUSH  codep:0x224c wordp:0x3913 size:0x0006 C-string:'FLUSH'
 //            COPY  codep:0x224c wordp:0x3922 size:0x0012 C-string:'COPY'
@@ -3718,7 +3718,7 @@ const unsigned short int user_R_n_ = 0x07c0; // R#
 const unsigned short int user_SCR = 0x07c2; // SCR
 const unsigned short int user_SSCR = 0x07c4; // SSCR
 const unsigned short int user_STATE = 0x07c6; // STATE
-const unsigned short int user_CONTEXT_2 = 0x07c8; // CONTEXT_2
+const unsigned short int user_CONTEXT = 0x07c8; // CONTEXT
 const unsigned short int user_CSP = 0x07ca; // CSP
 const unsigned short int user_CURRENT = 0x07cc; // CURRENT
 const unsigned short int user_LFALEN = 0x07ce; // LFALEN
@@ -4170,7 +4170,7 @@ void SET_dash_BUFFERS() // SET-BUFFERS
 // 0x059e: db 0x3a 0x00 ': '
 
 // ================================================
-// 0x05a0: WORD 'CONTEXT_2' codep=0x1792 wordp=0x05ac
+// 0x05a0: WORD 'CONTEXT' codep=0x1792 wordp=0x05ac
 // ================================================
 // 0x05ac: db 0x3c 0x00 '< '
 
@@ -4436,7 +4436,7 @@ void W0939() // W0939
   Push(Read16(cc_INITIAL_dash_DPB)); // INITIAL-DPB
   Store(); // !
   _i_FORTH(); // 'FORTH
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   Store(); // !
   DEFINITIONS(); // DEFINITIONS
   FREEZE(); // FREEZE
@@ -6439,12 +6439,12 @@ void _plus_FIND() // +FIND
 void _ro__dash_FIND_rc_() // (-FIND)
 {
   HERE(); // HERE
-  Push(Read16(user_CONTEXT_2)); // CONTEXT_2 @
+  Push(Read16(user_CONTEXT)); // CONTEXT @
   _bo__dash_FINDS_bc_(); // [-FINDS]
   Push(Read16(regsp)); // DUP
   Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
-  Push(!(Read16(user_CONTEXT_2)==Read16(user_CURRENT)?1:0)); // CONTEXT_2 @ CURRENT @ = NOT
+  Push(!(Read16(user_CONTEXT)==Read16(user_CURRENT)?1:0)); // CONTEXT @ CURRENT @ = NOT
   if (Pop() == 0) return;
   Pop(); // DROP
   HERE(); // HERE
@@ -6512,12 +6512,12 @@ void _ro_FORGET_rc_() // (FORGET)
 {
   unsigned short int i, imax;
   Push(Read16(regsp)); // DUP
-  Push(Read16(user_CONTEXT_2)); // CONTEXT_2 @
+  Push(Read16(user_CONTEXT)); // CONTEXT @
   U_st_(); // U<
   if (Pop() != 0)
   {
     _i_FORTH(); // 'FORTH
-    Push(user_CONTEXT_2); // CONTEXT_2
+    Push(user_CONTEXT); // CONTEXT
     Store(); // !
   }
   Push(Read16(regsp)); // DUP
@@ -6661,7 +6661,7 @@ void Is_bo_PTR_bc_() // ?[PTR]
 
 void DEFINITIONS() // DEFINITIONS
 {
-  Push(Read16(user_CONTEXT_2)); // CONTEXT_2 @
+  Push(Read16(user_CONTEXT)); // CONTEXT @
   Push(user_CURRENT); // CURRENT
   Store(); // !
 }
@@ -6797,7 +6797,7 @@ void VOCABULARY() // VOCABULARY
   Exec("LINKS_gt_"); // call of word 0x1a5c 'W1A5C'
   CODE(); // (;CODE) inlined assembler code
 // 0x1ab5: call   1649
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   Store(); // !
 }
 
@@ -7702,7 +7702,7 @@ void _c_() // :
   Push(user_CSP); // CSP
   Store(); // !
   Push(Read16(user_CURRENT)); // CURRENT @
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   Store(); // !
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   SMUDGE(); // SMUDGE
@@ -10526,10 +10526,10 @@ void LBLOCK_1() // LBLOCK_1
 
 
 // ================================================
-// 0x389c: WORD 'SAVE-BU_1' codep=0x224c wordp=0x38ad params=0 returns=0
+// 0x389c: WORD 'SAVE-BUFFERS2' codep=0x224c wordp=0x38ad params=0 returns=0
 // ================================================
 
-void SAVE_dash_BU_1() // SAVE-BU_1
+void SAVE_dash_BUFFERS2() // SAVE-BUFFERS2
 {
   unsigned short int i, imax;
   Push(Read16(pp__i_SVBUF)); // 'SVBUF @
@@ -10583,7 +10583,7 @@ void EMPTY_dash_BUFFERS() // EMPTY-BUFFERS
 
 void FLUSH() // FLUSH
 {
-  SAVE_dash_BU_1(); // SAVE-BU_1
+  SAVE_dash_BUFFERS2(); // SAVE-BUFFERS2
   EMPTY_dash_BUFFERS(); // EMPTY-BUFFERS
 }
 
@@ -10649,7 +10649,7 @@ void BLOCKS() // BLOCKS
 
   }
   Pop(); Pop(); // 2DROP
-  SAVE_dash_BU_1(); // SAVE-BU_1
+  SAVE_dash_BUFFERS2(); // SAVE-BUFFERS2
 }
 
 
@@ -11100,7 +11100,7 @@ void T_c_() // T:
   Push(user_CSP); // CSP
   Store(); // !
   Push(Read16(user_CURRENT)); // CURRENT @
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   Store(); // !
   _bc_(); // ]
 }
@@ -18204,7 +18204,7 @@ void IC_gt_DSK() // IC>DSK
 
 void SAVE_dash_BUFFERS() // SAVE-BUFFERS
 {
-  SAVE_dash_BU_1(); // SAVE-BU_1
+  SAVE_dash_BUFFERS2(); // SAVE-BUFFERS2
   INIT(); // INIT
 }
 
@@ -19435,7 +19435,7 @@ void OV_dash_CANCEL() // OV-CANCEL
   Push(Read16(regsp)); // DUP
   Push(user_CURRENT); // CURRENT
   _st__ex__gt_(); // <!>
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   _st__ex__gt_(); // <!>
 }
 
@@ -19537,7 +19537,7 @@ void LOAD_dash_OVERLAY() // LOAD-OVERLAY
   _plus__at_(); // +@
   Push(Pop() - 2); //  2-
   Push(Read16(regsp)); // DUP
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   _st__ex__gt_(); // <!>
   Push(user_CURRENT); // CURRENT
   _st__ex__gt_(); // <!>
@@ -19658,7 +19658,7 @@ void OPEN_dash_OVERLAY() // OPEN-OVERLAY
 void DrawCVSAS() // .CVSAS
 {
   Exec("CR"); // call of word 0x26ee '(CR)'
-  Push(Read16(user_CONTEXT_2)); // CONTEXT_2 @
+  Push(Read16(user_CONTEXT)); // CONTEXT @
   NFA(); // NFA
   ID_dot_(); // ID.
   OVA_at_(); // OVA@
@@ -25681,7 +25681,7 @@ void XOR_ex_() // XOR!
 void HEAD_ex_() // HEAD!
 {
   unsigned short int i, imax;
-  Push(Read16(user_CONTEXT_2) + 6); // CONTEXT_2 @ 6 +
+  Push(Read16(user_CONTEXT) + 6); // CONTEXT @ 6 +
   PAD(); // PAD
   Push(8);
   CMOVE(); // CMOVE

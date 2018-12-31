@@ -68,7 +68,7 @@ extern const unsigned short int pp__i_SETUP_plus_; // 'SETUP+
 extern const unsigned short int pp_BOOT_dash_HOOK; // BOOT-HOOK
 extern const unsigned short int pp_BOOT_dash_LOAD; // BOOT-LOAD
 extern const unsigned short int user_DP; // DP
-extern const unsigned short int user_CONTEXT_2; // CONTEXT_2
+extern const unsigned short int user_CONTEXT; // CONTEXT
 void AUTO_dash_CACHE(); // AUTO-CACHE
 void AUTO_dash_LIMIT(); // AUTO-LIMIT
 void AUTO_dash_SCREEN(); // AUTO-SCREEN
@@ -158,7 +158,7 @@ void W0939() // W0939
   Push(Read16(cc_INITIAL_dash_DPB)); // INITIAL-DPB
   Store(); // !
   _i_FORTH(); // 'FORTH
-  Push(user_CONTEXT_2); // CONTEXT_2
+  Push(user_CONTEXT); // CONTEXT
   Store(); // !
   DEFINITIONS(); // DEFINITIONS
   FREEZE(); // FREEZE
