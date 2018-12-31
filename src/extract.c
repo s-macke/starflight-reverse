@@ -343,6 +343,25 @@ void ExtractPlanets(FILE *fp, int idx)
     fprintf(fp, "};\n\n");
 }
 
+void ExtractColorMap(FILE *fp, int idx)
+{
+    fprintf(fp, "\nchar cmap[][0x40]=\n{\n");
+
+    DIRENTRY *de = GetDirByIdx(idx);
+    for(int i=0; i<de->nblocks; i++)
+    {
+        unsigned char* buf = ExtractRecord(idx, i);
+        fprintf(fp, "  {");
+        for(int j=0; j<64; j++)
+        {
+            fprintf(fp, "0x%02x", buf[j]);
+            if (j != 63) fprintf(fp, ", ");
+        }
+        fprintf(fp, "},\n");
+    }
+    fprintf(fp, "};\n\n");
+}
+
 void ExtractDataFile(const char* filename)
 {
     int idx, j;
@@ -389,6 +408,7 @@ void ExtractDataFile(const char* filename)
     ExtractTextRecords(fp, 0x39, "ANALYZETEXT", 0);
     ExtractTextRecords(fp, 0x28, "SPECIMEN", 0);
     ExtractPlanets(fp, 0x20);
+    ExtractColorMap(fp, 0x74);
     //ExtractTextRecords(fp, 0x2b, "BIODATA", 0); // points to the same data as specimen
     //ExtractTextRecords(fp, 0x82, "COMPOUNDS", 0);
 #else
