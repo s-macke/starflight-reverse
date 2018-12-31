@@ -6,7 +6,7 @@
 #include"parser.h"
 #include"postfix2infix.h"
 #include"../emul/cpu.h"
-#include"disasm/debugger.h"
+#include"../disasm/debugger.h"
 
 void SetExtern(int ovidx, int minaddr, int maxaddr);
 void WriteExtern(FILE *fp, int ovidx);

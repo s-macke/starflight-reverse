@@ -7,7 +7,7 @@
 #include"extract.h"
 #include"utils.h"
 #include"../emul/cpu.h"
-#include"disasm/debugger.h"
+#include"../disasm/debugger.h"
 #include"postfix2infix.h"
 
 LineDesc pline[0x10000];

@@ -6,9 +6,9 @@
 
 #include"cpu.h"
 #include"graphics.h"
-#include"../starflt1-out/data/dictionary.h"
-#include"../starflt1-out/data/directory.h"
-#include"../src/global.h"
+#include"../../starflt1-out/data/dictionary.h"
+#include"../../starflt1-out/data/directory.h"
+#include"../disasOV/global.h"
 #include"fract.h"
 
 const unsigned short cs = 0x192;

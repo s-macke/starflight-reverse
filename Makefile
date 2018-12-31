@@ -6,77 +6,77 @@ all: disasOV1 disasOV2 emulate emulatesdl
 disasm.o: src/disasm/debugger.c
 	$(CC) $(CFLAGS) -c src/disasm/debugger.c -o disasm.o
 
-utils.o: src/utils.c src/utils.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/utils.c -o utils.o
+utils.o: src/disasOV/utils.c src/disasOV/utils.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/utils.c -o utils.o
 
-cpu.o: emul/cpu.c
-	$(CC) $(CFLAGS) -c emul/cpu.c -o cpu.o
+cpu.o: src/emul/cpu.c
+	$(CC) $(CFLAGS) -c src/emul/cpu.c -o cpu.o
 
-transpile2C1.o: src/transpile2C.c src/transpile2C.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/transpile2C.c -o transpile2C1.o
+transpile2C1.o: src/disasOV/transpile2C.c src/disasOV/transpile2C.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/transpile2C.c -o transpile2C1.o
 
-transpile2C2.o: src/transpile2C.c src/transpile2C.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/transpile2C.c -o transpile2C2.o
+transpile2C2.o: src/disasOV/transpile2C.c src/disasOV/transpile2C.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/transpile2C.c -o transpile2C2.o
 
-dictionary1.o: src/dictionary.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/dictionary.c -o dictionary1.o
+dictionary1.o: src/disasOV/dictionary.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/dictionary.c -o dictionary1.o
 
-dictionary2.o: src/dictionary.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/dictionary.c -o dictionary2.o
+dictionary2.o: src/disasOV/dictionary.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/dictionary.c -o dictionary2.o
 
-parser1.o: src/parser.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/parser.c -o parser1.o
+parser1.o: src/disasOV/parser.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/parser.c -o parser1.o
 
-parser2.o: src/parser.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/parser.c -o parser2.o
+parser2.o: src/disasOV/parser.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/parser.c -o parser2.o
 
-extract1.o: src/extract.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/extract.c -o extract1.o
+extract1.o: src/disasOV/extract.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/extract.c -o extract1.o
 
-extract2.o: src/extract.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/extract.c -o extract2.o
+extract2.o: src/disasOV/extract.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/extract.c -o extract2.o
 
-global1.o: src/global.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/global.c -o global1.o
+global1.o: src/disasOV/global.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/global.c -o global1.o
 
-global2.o: src/global.c src/global.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/global.c -o global2.o
+global2.o: src/disasOV/global.c src/disasOV/global.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/global.c -o global2.o
 
-stack1.o: src/stack.c src/stack.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/stack.c -o stack1.o
+stack1.o: src/disasOV/stack.c src/disasOV/stack.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/stack.c -o stack1.o
 
-stack2.o: src/stack.c src/stack.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/stack.c -o stack2.o
+stack2.o: src/disasOV/stack.c src/disasOV/stack.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/stack.c -o stack2.o
 
-postfix2infix1.o: src/postfix2infix.c src/postfix2infix.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/postfix2infix.c -o postfix2infix1.o
+postfix2infix1.o: src/disasOV/postfix2infix.c src/disasOV/postfix2infix.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/postfix2infix.c -o postfix2infix1.o
 
-postfix2infix2.o: src/postfix2infix.c src/postfix2infix.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/postfix2infix.c -o postfix2infix2.o
+postfix2infix2.o: src/disasOV/postfix2infix.c src/disasOV/postfix2infix.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/postfix2infix.c -o postfix2infix2.o
 
-instance1.o: src/instance.c src/instance.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/instance.c -o instance1.o
+instance1.o: src/disasOV/instance.c src/disasOV/instance.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/instance.c -o instance1.o
 
-instance2.o: src/instance.c src/instance.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/instance.c -o instance2.o
+instance2.o: src/disasOV/instance.c src/disasOV/instance.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/instance.c -o instance2.o
 
-graph1.o: src/graph.c src/graph.h
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/graph.c -o graph1.o
+graph1.o: src/disasOV/graph.c src/disasOV/graph.h
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/graph.c -o graph1.o
 
-graph2.o: src/graph.c src/graph.h
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/graph.c -o graph2.o
+graph2.o: src/disasOV/graph.c src/disasOV/graph.h
+	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/graph.c -o graph2.o
 
-disasOV1: src/disasOV.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
+disasOV1: src/disasOV/disasOV.c disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV/disasOV.c -o disasOV1 disasm.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
 
-disasOV2: src/disasOV.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
+disasOV2: src/disasOV/disasOV.c disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV/disasOV.c -o disasOV2 disasm.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o instance2.o graph2.o
 
-emulate: emul/emul.c emul/cpu.c src/global.c emul/graphics.c emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 emul/emul.c emul/cpu.c src/global.c emul/graphics.c emul/fract.c -o emulate
+emulate: src/emul/emul.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
+	$(CC) $(CFLAGS) -DSTARFLT1 src/emul/emul.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulate
 
-emulatesdl: emul/emul.c emul/cpu.c src/global.c emul/graphics.c emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL emul/emul.c emul/cpu.c src/global.c emul/graphics.c emul/fract.c -o emulatesdl -lSDL2
+emulatesdl: src/emul/emul.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
+	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL src/emul/emul.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulatesdl -lSDL2
 
 .PHONY: clean all
 
