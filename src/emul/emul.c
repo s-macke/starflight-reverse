@@ -25,16 +25,16 @@ int main()
 #ifndef SDL
     EnableInterpreter();
 #endif
-
     /*
     // default interrupt vector
     Write16Long(0, 0x1C*4+2, 0xF000);
     Write16Long(0, 0x1C*4+0, 0x1280);
     */
-    while(1)
+    enum RETURNCODE ret;
+    do
     {
-        Step();
-    }
+       ret = Step();
+    } while (ret == OK);
 
     //GraphicsWait();
     GraphicsQuit();

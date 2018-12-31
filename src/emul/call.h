@@ -1,8 +1,10 @@
 #ifndef CALL_H
 #define CALL_H
 
-void Call(unsigned short addr, unsigned short bx);
-void Step();
+enum RETURNCODE {OK, ERROR, EXIT};
+
+enum RETURNCODE Call(unsigned short addr, unsigned short bx);
+enum RETURNCODE Step();
 void InitEmulator();
 void EnableInterpreter();
 

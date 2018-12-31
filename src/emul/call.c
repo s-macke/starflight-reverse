@@ -164,7 +164,6 @@ void HandleInterrupt()
 
         ax = 0;
         bx = 0;
-        //exit(1);
     } else
     {
         fprintf(stderr, "unknown interrupt request\n");
@@ -351,7 +350,7 @@ void Find() // "(FIND)"
 }
 
 
-void Call(unsigned short addr, unsigned short bx)
+enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 {
     unsigned short i;
 
@@ -360,7 +359,7 @@ void Call(unsigned short addr, unsigned short bx)
     {
         fprintf(stderr, "Error: stack pointer in invalid area: sp=0x%04x\n", regsp);
         PrintCallstacktrace(bx);
-        exit(1);
+        return ERROR;
     }
     switch(addr)
     {
@@ -506,7 +505,7 @@ void Call(unsigned short addr, unsigned short bx)
         case 0x16a3: // "GO"
             bx = Pop();
             printf("jump to %x. Either stop (0x0) or restart (0x100)\n", bx);
-            exit(0);
+            return EXIT;
         break;
 
         case 0x174C: Write16(regbp+2, Read16(regbp)); break; // "(LEAVE)"
@@ -2063,9 +2062,10 @@ void Call(unsigned short addr, unsigned short bx)
             PrintCallstacktrace(bx);
             fflush(stdout);
             GraphicsGetChar();
-            exit(1);
+            return EXIT;
         break;
     }
+    return OK;
 }
 
 
@@ -2082,7 +2082,7 @@ void LoadSTARFLT()
     fclose(fp);
 }
 
-void Step()
+enum RETURNCODE Step()
 {
     int i;
 
@@ -2094,9 +2094,8 @@ void Step()
     printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, regsi-2, bx+2, regsp);
     printf(" %s\n", FindWord(bx+2, -1));
 #endif
-    Call(execaddr, bx);
+    return Call(execaddr, bx);
 }
-
 
 void InitEmulator()
 {
