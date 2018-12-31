@@ -20,7 +20,7 @@ uint32_t* pixels;
 int cursorx = 0;
 int cursory = 0;
 
-static int colortable[16] =
+int colortable[16] =
 {
 0x000000,
 0x0000AA,
@@ -39,27 +39,6 @@ static int colortable[16] =
 0xFFFF55,
 0xFFFFFF,
 };
-
-static int colortable2[16] =
-{
-0x000000,
-0x00AA00,
-0x0000AA,
-0x5555FF,
-0xAA0000,
-0xAA5500,
-0x555555,
-0x55FF55,
-0xAA00AA,
-0xAAAAAA,
-0x55FFFF,
-0x00AAAA,
-0xFFFF55,
-0xFF5555,
-0xFFFFFF,
-};
-
-
 
 static char vgafont8[256*8] =
 {

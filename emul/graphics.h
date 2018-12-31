@@ -1,6 +1,8 @@
 #ifndef GRAPHICS_H
 #define GRAPHICS_H
 
+    extern int colortable[16];
+
     void GraphicsInit();
     void GraphicsUpdate();
     void GraphicsWait();
