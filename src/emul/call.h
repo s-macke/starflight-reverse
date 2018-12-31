@@ -3,6 +3,7 @@
 
 void Call(unsigned short addr, unsigned short bx);
 void InitEmulator();
+void EnableInterpreter();
 
 #endif
 

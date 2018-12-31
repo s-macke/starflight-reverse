@@ -36,13 +36,10 @@ int main()
 
     InitCPU();
     InitEmulator();
-
     GraphicsInit();
 
 #ifndef SDL
-// Patch to start Forth interpreter
-    Write16(0x0a53, 0x0000); // BOOT-HOOK
-    Write16(0x2420, 0x0F22-2); // "0"
+    EnableInterpreter();
 #endif
 
     /*

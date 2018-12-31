@@ -2088,3 +2088,10 @@ void InitEmulator()
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
     LoadSTARFLT();
 }
+
+void EnableInterpreter()
+{
+    // Patch to start Forth interpreter
+    Write16(0x0a53, 0x0000); // BOOT-HOOK
+    Write16(0x2420, 0x0F22-2); // "0"
+}
