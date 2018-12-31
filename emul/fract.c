@@ -7,20 +7,21 @@ void RRND()
     unsigned short ax, bx, cx, dx;
     ax = Read16(0x4ab0); // SEED
     cx = 0x7abd;
-    ax = (signed short)cx * (signed short)ax;
+    ax = ((signed short)cx) * ((signed short)ax);
     ax += 0x1b0f;
     Write16(0x4ab0, ax); // SEED
 
-    dx = Pop();
+    //dx = Pop();
     bx = Pop();
     cx = Pop();
-    Push(dx);
+    //Push(dx);
     bx -= cx;
-    unsigned int mul = (unsigned int)ax * (unsigned int)bx;
+    unsigned int mul = ((unsigned int)ax) * ((unsigned int)bx);
     dx = (mul >> 16) + cx;
-    ax = Pop();
+    //printf("RRND %i %i %i\n", (signed short)(bx+cx), (signed short)cx, (signed short)dx);
+    //ax = Pop();
     Push(dx);
-    Push(ax);
+    //Push(ax);
 // 0xe3c0: mov    ax,[4AB0] // SEED
 // 0xe3c4: mov    cx,7ABD
 // 0xe3c7: imul   cx
@@ -43,7 +44,7 @@ void RRND()
 void C_PLUS_LIMIT()
 {
     signed short bx, ax, cx;
-    bx = Pop();
+    //bx = Pop();
     ax = Pop();
     cx = Pop();
     ax += cx;
@@ -56,17 +57,18 @@ void C_PLUS_LIMIT()
         ax = -0x7F;
     }
     Push(ax);
-    Push(bx);
+    //Push(bx);
 }
 
 void DISPLACEMENT()
 {
     unsigned short bx, ax, cx, dx;
-    bx = Pop();
+    //bx = Pop();
     ax = Pop();
     cx = Pop();
-    Push(bx);
+    //Push(bx);
     dx = Read16(0xe356); // XYANCHOR
+    //printf("XYANCHOR %i\n", dx);
     if (dx)
     {
         cx += Read16(0xe370); // X0'
@@ -87,40 +89,45 @@ void DISPLACEMENT()
         }
         Write16(0x4ab0, ax); // SEED
         Push(cx);
+
         ax = 1;
         Push(ax);
         ax = -1;
         Push(ax);
         RRND();
+
         cx = Pop();
         Write16(0x4ab0, Pop()); // SEED
         Push(cx);
+
         ax = 1;
         Push(ax);
         ax = -1;
         Push(ax);
         RRND();
+
         ax = Pop();
         cx = Pop();
         ax = ax ^ Read16(0x5979); // GLOBALSEED
         ax = ax ^ cx;
         Write16(0x4ab0, ax); // SEED
     }
+
     ax = Read16(regbp+0xe);
     cx = -ax;
     Push(cx);
     Push(ax);
     RRND();
     ax = Pop();
-    cx = Pop();
+    //cx = Pop();
     Push(ax);
-    Push(cx);
+    //Push(cx);
 }
 
 void SWRAP()
 {
     unsigned short dx, ax, bx, cx;
-    dx = Pop();
+    //dx = Pop();
     ax = Pop();
     cx = Pop();
     if (ax >= 0x8000)
@@ -130,14 +137,14 @@ void SWRAP()
         cx += bx;
     } else
     {
-        bx = Read16(Read16(0x4CF1)+2);
+        bx = Read16(Read16(0x4CF1)+2); // 'ARRAY
     // 0xe486: cmp    ax,bx
     // 0xe488: js     E49B
         if (bx <= ax)
         {
             // 0xe48a
             ax = bx - ax + bx + 1;
-            bx = Read16(Read16(0x4CF1));
+            bx = Read16(Read16(0x4CF1)); // 'ARRAY
             bx = bx >> 1;
             cx += bx;
         }
@@ -145,25 +152,26 @@ void SWRAP()
 
     if (cx >= 0x8000)
     {
-        cx += Read16(Read16(0x4CF1));
+        cx += Read16(Read16(0x4CF1)); // 'ARRAY
     } else
     {
-        bx = Read16(Read16(0x4CF1));
+        bx = Read16(Read16(0x4CF1)); // 'ARRAY
         if (bx <= cx) {
             cx -= bx;
         }
     }
     Push(cx);
     Push(ax);
-    Push(dx);
+    //Push(dx);
 }
 
 void ACELLADDR()
 {
     unsigned short ax, bx, cx, dx;
 
-    Write16(0xe38a, Pop()); // RT0
-    ax = Read16(0x4CCa); // SPHEREWRAP
+    //Write16(0xe38a, Pop()); // RT0
+
+    ax = Read16(0x4cca); // SPHEREWRAP
     if (ax) SWRAP();
     bx = Read16(0x4cf1); // 'ARRAY
     ax = Read16(bx+6);
@@ -171,47 +179,50 @@ void ACELLADDR()
     cx = Pop() << 1;
     bx += cx;
     cx = Read16Long(ax, bx);
+    //printf("ACELLADDR 0x%04x:0x%04x %i\n", ax, bx, cx);
     dx = Pop();
     cx += dx;
     Write16(0xe378, ax); // SCELL
-    Write16(0xe37C, cx); // OCELL
-    Push(Read16(0xe38a));
+    Write16(0xe37c, cx); // OCELL
+    //printf("0x%04x:0x%04x\n", ax, cx);
+
+    //Push(Read16(0xe38a));
 }
 
 void AGet() // [A@]
 {
     unsigned short ax, cx, temp;
     unsigned char al;
-    temp = Pop();
+    //temp = Pop();
 
     al = Read8Long(Read16(0xe378), Read16(0xe37c)); // SCELL OCELL
-    cx = Read16(0x4CD8); // SIGNEXTEND
-    if (cx) // not sure here
+    cx = Read16(0x4cD8); // SIGNEXTEND
+
+    if (cx)
     {
         ax = (signed short)((signed char)al);
     } else
     {
         ax = al;
     }
+    //printf("AGet 0x%04x:0x%04x  0x%04x\n", Read16(0xe378), Read16(0xe37c), ax);
 
     Push(ax);
-    Push(temp);
+    //Push(temp);
 }
 
 void FRACT_StoreHeight() // Set Anchor
 {
     unsigned short ax;
-    /*
-    unsigned short x, y;
-    y = Pop();
-    x = Pop();
-    printf("StoreHeight x=%i y=%i\n", x, y);
-*/
-    Write16(0xe38e, Pop()); // RT1
+
+    //printf("StoreHeight x=%i y=%i\n", Read16(regsp+2), Read16(regsp+0));
+
+    //Write16(0xe38e, Pop()); // RT1
     ACELLADDR();
     AGet();
     ax = Pop();
-    if (ax == 0xFF80)
+    //printf("SCELL 0x%04x %i\n", Read16(0xe378), ax);
+    if (ax == 0xFF80) // not set yet
     {
         ax = Pop();
         Write8Long(Read16(0xe378), Read16(0xe37c), ax&0xFF); // SCELL OCELL
@@ -220,15 +231,15 @@ void FRACT_StoreHeight() // Set Anchor
     {
         ax = Pop();
     }
-    Push(Read16(0xe38e)); // RT1
+    //Push(Read16(0xe38e)); // RT1
 }
 
 void XSHIFT()
 {
     unsigned short ax, bx, cx;
-    cx = Pop();
+    //cx = Pop();
     Write16(0xe396, Pop()); // TY
-    Push(cx);
+    //Push(cx);
     Push(Read16(regbp+8));
     Push(Read16(0xe396)); // TY
     ACELLADDR();
@@ -248,6 +259,7 @@ void XSHIFT()
     bx += Read16(regbp+4);
     bx = ((signed short)bx) >> 1;
     Push(bx);
+
     Push(Read16(0xe396)); // TY
 
     DISPLACEMENT();
@@ -261,9 +273,9 @@ void XSHIFT()
 void YSHIFT()
 {
     unsigned short ax, bx, cx;
-    cx = Pop();
+    //cx = Pop();
     Write16(0xe396, Pop()); // TY
-    Push(cx);
+    //Push(cx);
     Push(Read16(0xe396)); // TY
     Push(Read16(regbp+6));
     ACELLADDR();
@@ -327,35 +339,37 @@ void CENTER()
     unsigned short ax, cx;
     ax = Read16(0xe368) & Read16(0xe36c); // DY>1 and DX>1
     if (ax == 0) return;
+
     Push(Read16(regbp+0xC));
     Push(Read16(regbp+0x6));
     ACELLADDR();
     AGet();
+
     Push(Read16(regbp+0xC));
     Push(Read16(regbp+0x2));
     ACELLADDR();
     AGet();
+
     Push(Read16(regbp+0x8));
     Push(Read16(regbp+0xA));
     ACELLADDR();
     AGet();
+
     Push(Read16(regbp+0x4));
     Push(Read16(regbp+0xA));
     ACELLADDR();
     AGet();
-    ax = Pop();
-    cx = Pop();
-    ax += cx;
-    cx = Pop();
-    ax += cx;
-    cx = Pop();
-    ax += cx;
+
+    // calculate average
+    ax = Pop() + Pop() + Pop() + Pop();
     ax = ((signed short)ax) >> 2;
     Push(ax);
+
     Push(Read16(regbp+0xC));
     Push(Read16(regbp+0xA));
     DISPLACEMENT();
     C_PLUS_LIMIT();
+
     Push(Read16(regbp+0xC));
     Push(Read16(regbp+0xA));
     FRACT_StoreHeight();
@@ -368,6 +382,7 @@ void MIDPT()
     ax += Read16(regbp+4);
     ax = ((signed short)ax) >> 1;
     Write16(regbp+0xC, ax);
+
     ax = Read16(regbp+6);
     ax += Read16(regbp+2);
     ax = ((signed short)ax) >> 1;
@@ -377,13 +392,22 @@ void MIDPT()
 void NEWSTD()
 {
     unsigned int ax = Read16(regbp + 0xe);
-    unsigned int ratio = Read16(0xe360); // RATIO
-    ax = (ax * ratio) / ratio;
-    if (((signed int)ax) <= 0) // not sure
+    unsigned int ratio1 = Read16(0xe35e); // RATIO
+    unsigned int ratio2 = Read16(0xe360); // RATIO
+    //printf("NEWSTD %i %i %i\n", ax, ratio2, ratio1);
+    ax = (ax * ratio2) / ratio1;
+    if (ax == 0) // not sure
     {
         ax = 1;
     }
     Write16(regbp+0xe, ax);
+// 0xe6aa: mov    ax,[bp+0E]
+// 0xe6ad: mul    word ptr [E360] // RATIO
+// 0xe6b1: div    word ptr [E35E] // RATIO
+// 0xe6b5: or     ax,ax
+// 0xe6b7: jg     E6BC
+// 0xe6b9: mov    ax,0001
+// 0xe6bc: mov    [bp+0E],ax
 }
 
 void FRACTAL()
@@ -392,6 +416,7 @@ void FRACTAL()
     regsp -= 2; // instruction pointer
 
     regbp = regsp;
+
     ax = Read16(regbp+4) - Read16(regbp+8) - 1;
     if ((signed short)ax <= 0) ax = 0; else ax = 1; // not sure
     Write16(0xe36c, ax); // DX>1
@@ -399,13 +424,13 @@ void FRACTAL()
     cx = Read16(regbp+4) - Read16(regbp+8) - 1;
     if ((signed short)cx <= 0) cx = 0; else cx = 1; // not sure
     Write16(0xe368, cx); // DY>1
-
+/*
     printf("FRACTAL DX>1: %i DY>1: %i %i %i %i %i\n", Read16(0xe36c), Read16(0xe368),
         Read16(regbp+8),
         Read16(regbp+4),
         Read16(regbp+6),
         Read16(regbp+2));
-
+*/
     if (cx > 0 || ax > 0)
     {
         MIDPT();
