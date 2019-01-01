@@ -22,6 +22,31 @@ unsigned short int dx = 0x0;
 
 // ------------------------------------------------
 
+unsigned short int inputbuffer[256];
+
+void FillKeyboardBufferString(char *str)
+{
+    int n = strlen(str);
+    memset(inputbuffer, 0, sizeof(inputbuffer));
+    for(int i=0; i<n; i++)
+    {
+        int c = str[i];
+        if (c == 0xa) c = 0xd;
+        inputbuffer[i] = c;
+    }
+    inputbuffer[n] = 0;
+}
+
+void FillKeyboardBufferKey(unsigned short c)
+{
+    memset(inputbuffer, 0, sizeof(inputbuffer));
+    if (c == 0xa) c = 0xd;
+    inputbuffer[0] = c;
+    inputbuffer[1] = 0;
+}
+
+// ------------------------------------------------
+
 void HandleInterrupt()
 {
     static int disktransferaddress_segment = -1;
@@ -353,6 +378,7 @@ void Find() // "(FIND)"
 enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 {
     unsigned short i;
+    enum RETURNCODE ret;
 
     // bx contains pointer to WORD
     if ((regsp < FILESTAR0SIZE+0x100) || (regsp > (0xF6F4)))
@@ -408,20 +434,23 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x3A39: // "@EXECUTE"
             bx = Read16(Pop()) - 2;
-            //printf("jump to %x\n", ax);
-            Call(Read16(bx), bx);
+            //printf("jump to %x\n", bx);
+            ret = Call(Read16(bx), bx);
+            if (ret != OK) return ret;
         break;
 
         case 0x1675: // "CFAEXEC"
             bx = Pop();
-            //printf("jump to %x\n", addr);
-            Call(Read16(bx), bx);
+            //printf("jump to %x\n", bx);
+            ret = Call(Read16(bx), bx);
+            if (ret != OK) return ret;
             break;
 
         case 0x1684: // "EXECUTE"
             bx = Pop() - 2;
-            //printf("execute %s\n", FindWord(bx+2));
-            Call(Read16(bx), bx);
+            //printf("execute %s\n", FindWord(bx+2, -1));
+            ret = Call(Read16(bx), bx);
+            if (ret != OK) return ret;
         break;
 
         case 0x17B7: // Exec function pointers "CREATE" "TYPE", "CALL", "ABORT" "PAGE", ...
@@ -464,7 +493,17 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 //printf("%i offset %i\n", Read16(regsp), offset);
                 //exit(1);
             }
-            Call(Read16(bx), bx);
+            if (strcmp(s, "(KEY)") == 0)
+            {
+                if (inputbuffer[0] == 0)
+                {
+                    regsi -= 2;
+                    return INPUT;
+                }
+            }
+
+            ret = Call(Read16(bx), bx);
+            if (ret != OK) return ret;
         break;
 
         case 0x21C9: // TODO for forth interpreter, is incomplete
@@ -548,19 +587,39 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x25D7: // "KEY" read keyboard endless loop, executed by "0x17B7"
+        {
+            //printf("key %i\n", inputbuffer[0]);
+            // 1. either low byte ascii, high byte 0
+            // 2. or low byte scancode, high byte 1
+            if (inputbuffer[0] == 0)
             {
-                // 1. either low byte ascii, high byte 0
-                // 2. or low byte scancode, high byte 1
-                unsigned short c;
-                c = GraphicsGetChar();
-                //printf("key %i\n", c);
-                if (c == 0xa) c = 0xd;
-                Push(c);
+                //regsi -= 2;
+                Push(0);
+                return INPUT;
             }
+            Push(inputbuffer[0]);
+            for(int i = 0; i < 256-1; i++)
+                inputbuffer[i] = inputbuffer[i+1];
+            /*
+            // 1. either low byte ascii, high byte 0
+            // 2. or low byte scancode, high byte 1
+            unsigned short c;
+            c = GraphicsGetChar();
+            //printf("key %i\n", c);
+            if (c == 0xa) c = 0xd;
+            Push(c);
+            */
+        }
         break;
 
         case 0x25bc: // "(?TERMINAL)" keyboard check buffer
-            Push(GraphicsCharsInBuffer());
+            if (inputbuffer[0] != 0)
+            {
+                Push(1);
+            } else
+            {
+                Push(GraphicsCharsInBuffer());
+            }
         break;
 
         case 0x1508:  // "S->D"
@@ -1172,7 +1231,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             // cx = 0x5eed [KEYINT]
             // cx = 0x613c W613C
             cx = Pop();
-            printf("?Update of 0x%x\n", cx);
+            //printf("?Update of 0x%x\n", cx);
             if (cx&0x8000)
             {
             }
@@ -2084,8 +2143,6 @@ void LoadSTARFLT()
 
 enum RETURNCODE Step()
 {
-    int i;
-
     unsigned short ax = Read16(regsi); // si is the forth program counter
     regsi += 2;
     unsigned short bx = ax;
@@ -2102,6 +2159,7 @@ void InitEmulator()
     regbp = 0xd4a7 + 0x100 + 0x80; // call stack
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
     LoadSTARFLT();
+    memset(inputbuffer, 0, sizeof(inputbuffer));
 }
 
 void EnableInterpreter()
