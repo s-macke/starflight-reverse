@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<stdlib.h>
 
 #include "fract.h"
 
@@ -12,12 +13,12 @@ void RRND()
     Write16(0x4ab0, ax); // SEED
 
     //dx = Pop();
-    bx = Pop();
-    cx = Pop();
+    bx = Pop(); // range
+    cx = Pop(); // low
     //Push(dx);
     bx -= cx;
     unsigned int mul = ((unsigned int)ax) * ((unsigned int)bx);
-    dx = (mul >> 16) + cx;
+    dx = ((mul >> 16)&0xFFFF) + cx;
     //printf("RRND %i %i %i\n", (signed short)(bx+cx), (signed short)cx, (signed short)dx);
     //ax = Pop();
     Push(dx);
@@ -118,19 +119,19 @@ void DISPLACEMENT()
     Push(cx);
     Push(ax);
     RRND();
-    ax = Pop();
+    //ax = Pop();
     //cx = Pop();
-    Push(ax);
+    //Push(ax);
     //Push(cx);
 }
 
 void SWRAP()
 {
-    unsigned short dx, ax, bx, cx;
-    //dx = Pop();
-    ax = Pop();
-    cx = Pop();
-    if (ax >= 0x8000)
+    signed short ax, cx, bx;
+    ax = Pop(); // y
+    cx = Pop(); // x
+    //printf("%i %i\n", ax, cx);
+    if (ax < 0)
     {
         ax = -(ax+1);
         bx = Read16(Read16(0x4CF1)) >> 1; // 'ARRAY
@@ -140,7 +141,7 @@ void SWRAP()
         bx = Read16(Read16(0x4CF1)+2); // 'ARRAY
     // 0xe486: cmp    ax,bx
     // 0xe488: js     E49B
-        if (bx <= ax)
+        if ((unsigned short)bx <= (unsigned short)ax)
         {
             // 0xe48a
             ax = bx - ax + bx + 1;
@@ -150,19 +151,18 @@ void SWRAP()
         }
     }
 
-    if (cx >= 0x8000)
+    if (cx < 0)
     {
         cx += Read16(Read16(0x4CF1)); // 'ARRAY
     } else
     {
         bx = Read16(Read16(0x4CF1)); // 'ARRAY
-        if (bx <= cx) {
+        if ((unsigned short)bx <= (unsigned short)cx) {
             cx -= bx;
         }
     }
     Push(cx);
     Push(ax);
-    //Push(dx);
 }
 
 void ACELLADDR()
@@ -216,8 +216,6 @@ void FRACT_StoreHeight() // Set Anchor
     unsigned short ax;
 
     //printf("StoreHeight x=%i y=%i\n", Read16(regsp+2), Read16(regsp+0));
-
-    //Write16(0xe38e, Pop()); // RT1
     ACELLADDR();
     AGet();
     ax = Pop();
@@ -231,7 +229,6 @@ void FRACT_StoreHeight() // Set Anchor
     {
         ax = Pop();
     }
-    //Push(Read16(0xe38e)); // RT1
 }
 
 void XSHIFT()
@@ -396,7 +393,7 @@ void NEWSTD()
     unsigned int ratio2 = Read16(0xe360); // RATIO
     //printf("NEWSTD %i %i %i\n", ax, ratio2, ratio1);
     ax = (ax * ratio2) / ratio1;
-    if (ax == 0) // not sure
+    if (((signed int)ax) <= 0) // not sure
     {
         ax = 1;
     }
@@ -421,7 +418,7 @@ void FRACTAL()
     if ((signed short)ax <= 0) ax = 0; else ax = 1; // not sure
     Write16(0xe36c, ax); // DX>1
 
-    cx = Read16(regbp+4) - Read16(regbp+8) - 1;
+    cx = Read16(regbp+2) - Read16(regbp+6) - 1;
     if ((signed short)cx <= 0) cx = 0; else cx = 1; // not sure
     Write16(0xe368, cx); // DY>1
 /*
