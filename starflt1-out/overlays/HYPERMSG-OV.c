@@ -88,9 +88,9 @@
 //           WEE3B  codep:0x224c wordp:0xee3b size:0x005e C-string:'WEE3B'
 //           HCASE  codep:0x4a4f wordp:0xeea3 size:0x0014 C-string:'HCASE'
 //            HEAT  codep:0x224c wordp:0xeec0 size:0x0010 C-string:'HEAT'
-//           WEED2  codep:0x73ea wordp:0xeed2 size:0x0006 C-string:'WEED2'
+//         P-TSEED  codep:0x73ea wordp:0xeed2 size:0x0006 C-string:'P_dash_TSEED'
 //         P-LSEED  codep:0x73ea wordp:0xeee4 size:0x0006 C-string:'P_dash_LSEED'
-//           WEEEC  codep:0x73ea wordp:0xeeec size:0x0006 C-string:'WEEEC'
+//          P-SURF  codep:0x73ea wordp:0xeeec size:0x0006 C-string:'P_dash_SURF'
 //           WEEF4  codep:0x744d wordp:0xeef4 size:0x0003 C-string:'WEEF4'
 //           WEEF9  codep:0x744d wordp:0xeef9 size:0x0003 C-string:'WEEF9'
 //           WEEFE  codep:0x224c wordp:0xeefe size:0x0012 C-string:'WEEFE'
@@ -1619,9 +1619,9 @@ void HEAT() // HEAT
 
 
 // ================================================
-// 0xeed0: WORD 'WEED2' codep=0x73ea wordp=0xeed2
+// 0xeed0: WORD 'P-TSEED' codep=0x73ea wordp=0xeed2
 // ================================================
-LoadDataType WEED2 = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
+LoadDataType P_dash_TSEED = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
 
 // ================================================
 // 0xeed8: WORD 'P-LSEED' codep=0x73ea wordp=0xeee4
@@ -1629,9 +1629,9 @@ LoadDataType WEED2 = {PLANETIDX, 0x07, 0x02, 0x16, 0x658f};
 LoadDataType P_dash_LSEED = {PLANETIDX, 0x04, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xeeea: WORD 'WEEEC' codep=0x73ea wordp=0xeeec
+// 0xeeea: WORD 'P-SURF' codep=0x73ea wordp=0xeeec
 // ================================================
-LoadDataType WEEEC = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
+LoadDataType P_dash_SURF = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xeef2: WORD 'WEEF4' codep=0x744d wordp=0xeef4
@@ -1690,7 +1690,7 @@ void S_gt_CM() // S>CM
 
 void WEF2B() // WEF2B
 {
-  LoadData(WEEEC); // from 'PLANET'
+  LoadData(P_dash_SURF); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
   S_gt_CM(); // S>CM case
 }
@@ -1723,7 +1723,7 @@ void OSET() // OSET
       Pop(); // DROP
     } else
     {
-      LoadData(WEED2); // from 'PLANET'
+      LoadData(P_dash_TSEED); // from 'PLANET'
       Push(Read16(Pop())); //  @
     }
     Push(Read16(regsp)); // DUP
