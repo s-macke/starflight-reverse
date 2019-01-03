@@ -944,19 +944,35 @@ int main()
         if (planetseeds[idx].species == -1) return 0;
         char dummy[128];
         sprintf(dummy, "mountb\n%i\nmercator-gen\n", planetseeds[idx].seed);
-        
+
         FillKeyboardBufferString(dummy);
         Continue();
 
-        sprintf(dummy, OUTDIR"/maps/planet_%i_%i_%i_%i_%i.ppm",
+        if (planetseeds[idx].species == 18)
+            memcpy(&m[0x7e51<<4], earthmap, 24*48);
+
+        sprintf(dummy, OUTDIR"/maps/planet_%i_%i_%i.ppm",
             planetseeds[idx].x/8,
             planetseeds[idx].y/8,
-            planetseeds[idx].orbit,
-            planetseeds[idx].species,
-            planets[planetseeds[idx].species].surftype);
+            planetseeds[idx].orbit);
+
+            int clrmap = 0;
+            switch(planets[planetseeds[idx].species].surftype)
+            {
+              case 4: clrmap = 4; break;
+              case 1: clrmap = 5; break;
+              case 3: clrmap = 3; break;
+              default:
+                if ((planets[planetseeds[idx].species].lseed&0xFF) != 0)
+                  clrmap = 1;
+                else
+                  clrmap = 2;
+              break;
+            }
         //char* palette = &cmap[planets[planetseeds[idx].species].surftype+9][0];
-        //char* palette = &cmap[planets[planetseeds[idx].species].d1 + 10][0];
-        char* palette = &cmap[10][0];
+        char* palette = &cmap[clrmap + 9][0];
+        //char* palette = &cmap[10][0];
+
         FILE *fp = fopen(dummy, "wb");
         fprintf(fp, "P3\n48 48\n255\n");
         for(int j=23; j>=0; j--)
@@ -982,6 +998,3 @@ int main()
 
     return 0;
 }
-
-
-
