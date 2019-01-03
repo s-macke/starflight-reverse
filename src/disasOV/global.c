@@ -991,6 +991,9 @@ WORDRENAME renamewords[] =
     {0x14, 0xd99d, "HPE"}, // WD99D
     {0x14, 0xdbc9, "POSTURE-EFFECT"}, // WDBC9
 
+    {0x05, 0xeed2, "P-TSEED"}, // WEED2
+    {0x05, 0xeeec, "P-SURF"}, // WEEEC
+
     // named by me
     {0xff, 0xbc87, "HUFF_LSCAN_INIT"}, // Wbc87
     {0xff, 0xbca5, "HUFF_LSCAN_FINISH"}, // Wbca5
