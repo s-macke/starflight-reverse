@@ -561,6 +561,9 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CASE:"
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
         case 0x73ea: ParameterCall(bx, 0x73ea); break; // "TRANSTEXT" ....
+        case 0x4e00: ParameterCall(bx, 0x4e00); break; // Arrays
+        case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
+        //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
         case 0x7227:
             //printf("Receive %s from STAR*.COM dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
             printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
@@ -568,8 +571,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
             ParameterCall(bx, 0x7227);
         break;
-        //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
-        case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
 
         // -----------------------------------
 
@@ -622,11 +623,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             }
         break;
 
-        case 0x1508:  // "S->D"
-            if (Read16(regsp)&0x8000) Push(0xFFFF); else Push(0x0);
-        break;
-
-        case 0x1D29: Push(bx+2); break; // ???  // get pointer to variable or table
+        case 0x1D29: Push(bx+2); break; // get pointer to variable or table
 
         case 0x2214: Push(Read16(bx+2)); break; // get constant
 
@@ -644,14 +641,14 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             regsi += 2;
         break;
 
-        case 0xC3A: // 2@ write
+        case 0xC3A: // 2@
             bx = Pop();
             Push(Read16(bx+2));
             Push(Read16(bx));
             //printf("read address %x:%x\n", Read16(bx+2), Read16(bx));
         break;
 
-        case 0xC24: // read
+        case 0xC24: // 2!_2
         {
             bx = Pop();
             unsigned short ax = Pop();
@@ -671,6 +668,47 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 LXCHG16(Read16(0x2C04), bx, ax); // BLKCACHE
                 LXCHG16(Read16(0x2C9D), bx, ax); // SEGCACHE
             }
+        }
+        break;
+
+        case 0x4D5C:  // Get segment:offset in array
+        {
+          unsigned short ax;
+          // get Segment
+          bx = Pop()+6;
+          ax = Read16(bx);
+
+          // get size of array or pointer to pointer array
+          bx -= 2;
+          cx = Read16(bx);
+          bx = cx;
+
+          cx = Pop() << 1;
+          bx += cx;
+          cx = Read16Long(ax, bx);
+          cx += Pop();
+          Push(ax);
+          Push(cx);
+
+// 0x4d5c: pop    bx
+// 0x4d5d: add    bx,06
+// 0x4d60: mov    ax,[bx]
+// 0x4d62: sub    bx,02
+// 0x4d65: mov    cx,[bx]
+// 0x4d67: mov    bx,cx
+
+// 0x4d69: pop    cx
+// 0x4d6a: shl    cx,1
+// 0x4d6c: add    bx,cx
+
+// 0x4d6e: push   ds
+// 0x4d6f: mov    ds,ax
+// 0x4d71: mov    cx,[bx]
+// 0x4d73: pop    ds
+// 0x4d74: pop    dx
+// 0x4d75: add    cx,dx
+// 0x4d77: push   ax
+// 0x4d78: push   cx
         }
         break;
 
@@ -898,7 +936,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 // 0x76b2: mov    bx,ax
 // 0x76b4: jmp    word ptr [bx]
 
-
         case 0x143A: // ">UPPERCASE"
             cx = Pop();
             bx = Pop();
@@ -984,14 +1021,14 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0xF62: // "/MOD"
         {
-            bx = Pop();
-            unsigned short ax = Pop();
-            Push((signed short int)ax%(signed short int)bx);
-            Push((signed short int)ax/(signed short int)bx);
+            signed short divisor = Pop(); // bx
+            signed short ax = Pop();
+            Push(ax%divisor);
+            Push(ax/divisor);
         }
         break;
 
-        case 0x1261: // "-"
+        case 0x1261: // "="
         {
             unsigned short ax = Pop();
             dx = Pop();
@@ -1218,9 +1255,9 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-        case 0x1FA:
-        /*Push(0x20F);Push(0x7246);Push(0x1FE);Push(0x1CF);Pop();Pop();Pop();Pop(); */
-        break; // overwrite interrupt 0 to and div 0?
+        case 0x1FA: // overwrite interrupt 0 to and div 0?
+            /*Push(0x20F);Push(0x7246);Push(0x1FE);Push(0x1CF);Pop();Pop();Pop();Pop(); */
+        break;
 
         case 0x6D12: // "?UPDATE" converts addr to addr
             // if addr is in a block buffer or instance buffer set the update flag
@@ -1357,7 +1394,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 // 0x97ee: mov    al,[bx]
 // 0x97f0: mov    [55FF],ax // DCOLOR
 
-        case 0x8E4F:  // Move entire display to/from seg
+        case 0x8E4F:  // TODO Move entire display to/from seg
             //printf("move display from 0x%04x:0x%04x to 0x%04x:0x%04x\n",
             //    Read16(regsp+2), Read16(regsp+0), Read16(regsp+6), Read16(regsp+4));
             Pop();
@@ -1747,6 +1784,8 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             Write16(bx+0, Pop());
         break;
 
+// -------------------------------
+
         case 0x763a: // "@[IOFF]"
             Push(Read16(0x558C)); // [IOFF]
         break;
@@ -1880,12 +1919,16 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
 // ------------------------------------
 
+        case 0x1508:  // "S->D"
+            if (Read16(regsp)&0x8000) Push(0xFFFF); else Push(0x0);
+        break;
+
         case 0x1067: // "D+"
         {
-            unsigned short ax = Pop();
-            dx = Pop();
-            bx = Pop();
-            cx = Pop();
+            unsigned int ax = Pop();
+            unsigned int dx = Pop();
+            unsigned int bx = Pop();
+            unsigned int cx = Pop();
             unsigned int l = (ax << 16) | dx;
             unsigned int r = (bx << 16) | cx;
             l += r;
@@ -1896,8 +1939,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x10B9: // "DNEGATE"
         {
-            unsigned short ax = 0;
-            cx = Pop();
+            unsigned int cx = Pop();
             dx = Pop();
             //printf("neg: 0x%x 0x%x\n", cx, dx);
             int x = (cx << 16) | dx;
@@ -1909,7 +1951,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x495E: // "D16*"
         {
-            unsigned short ax = Pop();
+            unsigned int ax = Pop();
             dx = Pop();
             unsigned int x = (ax << 16) | dx;
             x = x << 4;
@@ -1917,6 +1959,8 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             Push((x>>16)&0xFFFF);
             break;
         }
+
+// -----------------------------------
 
         case 0x6f49: // "VA>BLK"
         {
@@ -1956,6 +2000,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x1818: Find(); break; // "(FIND)" finds a word in the vocabulary
 
         // -----------------------------------
+
         case 0x0F22: Push(0x0); break; // 0
         case 0x0F30: Push(0x1); break; // 1
         case 0x0F3F: Push(0x2); break; // 2
@@ -2000,7 +2045,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x2EB8: // "L!"
         {
             bx = Pop();
-            int ds = Pop();
+            unsigned short ds = Pop();
             unsigned short ax = Pop();
             Write16Long(ds, bx, ax);
             //printf("Write16Long to 0x%04x:0x%04x = %x\n", ds, bx, ax);
@@ -2009,7 +2054,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x2EA4: // "L@"
         {
             bx = Pop();
-            int ds = Pop();
+            unsigned short ds = Pop();
             //printf("Read16 to 0x%x:0x%x\n", ds, bx);
             //unsigned short int x = m[(ds<<4)+bx] | (m[(ds<<4)+bx+1]<<8);
             unsigned short int x = Read16Long(ds, bx);
@@ -2019,20 +2064,30 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x2EE5: // "LC!"
         {
             bx = Pop();
-            int ds = Pop();
+            unsigned short ds = Pop();
             unsigned short ax = Pop();
             Write8Long(ds, bx, ax&0xFF);
-            //printf("Write8Long to 0x%x:0x%x = %x\n", ds, bx, ax);
+            //printf("Write8Long to 0x%x:0x%x = %02x\n", ds, bx, ax&0xFF);
         }
         break;
         case 0x2eCD: // "LC@"
         {
             bx = Pop();
-            int ds = Pop();
+            unsigned short ds = Pop();
             unsigned short ax = Read8Long(ds, bx);
             Push(ax);
         }
         break;
+
+        case 0x49f0: // 'L+-@'
+        {
+            bx = Pop();
+            unsigned short ds = Pop();
+            signed short int ax = (signed short int)((signed char)Read8Long(ds, bx));
+            Push(ax);
+        }
+        break;
+
         case 0x0F85:  // "+!"
         {
             bx = Pop();
@@ -2099,14 +2154,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             ax += 0x1b0f;
             Write16(0x4ab0, ax); // SEED
             Push(ax);
-
-            //Push(rand()); break; // "FRND"
-            // 0x4abb: mov    ax,[4AB0] // SEED
-            // 0x4abf: mov    cx,7ABD
-            // 0x4ac2: imul   cx
-            // 0x4ac4: add    ax,1B0F
-            // 0x4ac7: mov    [4AB0],ax // SEED
-            // 0x4acb: push   ax
         }
         break;
         case 0x4892: break; // "CAPSON" Turn on caps
@@ -2121,7 +2168,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             PrintCallstacktrace(bx);
             fflush(stdout);
             GraphicsGetChar();
-            return EXIT;
+            return ERROR;
         break;
     }
     return OK;
@@ -2147,6 +2194,8 @@ enum RETURNCODE Step()
     regsi += 2;
     unsigned short bx = ax;
     unsigned short execaddr = Read16(bx);
+    //if (regsi-2 == 0xea37) printf(" enter %s\n", FindWord(bx+2, -1));
+
 #ifdef DEBUG
     printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, regsi-2, bx+2, regsp);
     printf(" %s\n", FindWord(bx+2, -1));
