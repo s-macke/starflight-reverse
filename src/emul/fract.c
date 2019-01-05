@@ -74,6 +74,8 @@ void DISPLACEMENT()
     {
         cx += Read16(0xe370); // X0'
         ax += Read16(0xe374); // Y0'
+        //cx = 0;
+        //ax = 0;
         if (ax&0x8000)
         {
             ax = -(ax + 1);
@@ -215,7 +217,7 @@ void FRACT_StoreHeight() // Set Anchor
 {
     unsigned short ax;
 
-    //printf("StoreHeight x=%i y=%i\n", Read16(regsp+2), Read16(regsp+0));
+    //printf("StoreHeight x=%i y=%i cs=0x%04x\n", Read16(regsp+2), Read16(regsp+0), Read16(0xe378));
     ACELLADDR();
     AGet();
     ax = Pop();
@@ -485,17 +487,15 @@ void FRACTAL()
 
 void FRACT_FRACTALIZE()
 {
-    /*
     unsigned short int yur, xur, yll, xll, dummy1, dummy2, std;
-    yur = Pop();
-    xur = Pop();
-    yll = Pop();
-    xll = Pop();
-    dummy1 = Pop();
-    dummy2 = Pop();
-    std = Pop();
-    printf("FRACTALIZE xll=%i yll=%i xur=%i yur=%i std=%i\n", xll, yll, xur, yur, std);
-    */
+    yur = Read16(regsp+0);
+    xur = Read16(regsp+2);
+    yll = Read16(regsp+4);
+    xll = Read16(regsp+6);
+    dummy1 = Read16(regsp+8);
+    dummy2 = Read16(regsp+10);
+    std = Read16(regsp+12);
+    //printf("FRACTALIZE xll=%i yll=%i xur=%i yur=%i std=%i\n", xll, yll, xur, yur, std);
     Write16(0xe392, regbp); // RTEMP
     FRACTAL();
     regbp = Read16(0xe392); // RTEMP
@@ -511,4 +511,3 @@ void FRACT_FILLARRAY()
     printf("FRACT_FILLARRAY count=%i es=0x%04x al=%i\n", cx, bx, ax&0xFF);
     for(int i=0; i<cx; i++) Write8Long(bx, i, ax&0xFF);
 }
-
