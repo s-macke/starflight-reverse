@@ -9,21 +9,20 @@
 
 int main()
 {
+    InitCPU();
+    InitEmulator();
+    GraphicsInit();
+
+#ifndef SDL
     //setvbuf(stdout, NULL, _IONBF, 0);
     printf("Try the following commands:\n");
     printf("'2 3 + .'\n");
-    printf("'STARTER'\n");
     printf("'mountb bank-ov d@balance d.'\n");
     printf("'mounta PM-OV PORT-PIC'\n");
     printf("'mounta music-OV 141 cscr>ega'\n");
     printf("'mounta u-b\n");
     printf("'mountb\n mercator-gen\n");
 
-    InitCPU();
-    InitEmulator();
-    GraphicsInit();
-
-#ifndef SDL
     EnableInterpreter();
     //FillKeyboardBufferString("MOUNTB CFIGARRAYS\n");
     FillKeyboardBufferString("?EGA ON STARTER\nMOUNTB\n");
