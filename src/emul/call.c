@@ -107,9 +107,9 @@ void HandleInterrupt()
     if ((interrupt == 0x21) && ((ax>>8) == 0x22))
     {
         // random write
-        int size = Read16(dx+0x0E);
-        int block = Read16(dx+0x21) + (mem[dx+0x23]<<16);
-        //printf("  size %i block %i write to 0x%x\n", size, block, disktransferaddress);
+        //int size = Read16(dx+0x0E);
+        //int block = Read16(dx+0x21) + ((unsigned int)Read8(dx+0x23)<<16);
+        //printf("  size %i block %i write\n", size, block);
         //char filename[] = "STARA.COM";
         //filename[4] = Read8(dx+5);
         //printf("  Write %s", filename);
@@ -125,7 +125,6 @@ void HandleInterrupt()
         char filename[] = "starflt1-in/STARA.COM";
         filename[16] = Read8(dx+5);
         //printf(" random read of file %s: size %i block %i (offset=0x%06x) write to 0x%04x:0x%04x\n", filename, size, block, block*size, disktransferaddress_segment, disktransferaddress_offset);
-
         //printf("  Read %s", filename);
         /*
         for(i=0; i<11; i++) printf("%c", mem[dx+1+i]);
@@ -560,7 +559,8 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x3b68: ParameterCall(bx, 0x3b68); break; // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CASE:"
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
-        case 0x73ea: ParameterCall(bx, 0x73ea); break; // "TRANSTEXT" ....
+        case 0xeca2: ParameterCall(bx, 0xeca2); break; // in PL-SET Overlay
+
         case 0x4e00: ParameterCall(bx, 0x4e00); break; // Arrays
         case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
         //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
@@ -571,6 +571,10 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
             ParameterCall(bx, 0x7227);
         break;
+        case 0x73ea: // load data
+          printf("load adata FILE# %i RECORD# %i\n", Read16(0x548f), Read16(0x549d));
+          ParameterCall(bx, 0x73ea);
+          break;
 
         // -----------------------------------
 
@@ -887,13 +891,24 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             unsigned short ax = Pop() - 0x3e80; // BLOVSA
             Push((ax & 0x3F) << 4);
             Push(ax >> 6);
+            // 0x7295: pop    ax
+            // 0x7296: sub    ax,3E80
+            // 0x7299: mov    cx,0006
+            // 0x729c: xor    dx,dx
+            // 0x729e: shr    ax,1
+            // 0x72a0: rcr    dl,1
+            // 0x72a2: loop   729E
+            // 0x72a4: shl    dx,1
+            // 0x72a6: shl    dx,1
+            // 0x72a8: push   dx
+            // 0x72a9: push   ax
         }
             break;
 
         case 0x7684: // "PRIORITIZE"
             {
                 unsigned short ax = Pop();
-                printf("PRIORITIZE %i\n", ax);
+                //printf("PRIORITIZE %i\n", ax);
                 if (ax == 0)
                 {
                     Push(ax);
@@ -1172,26 +1187,29 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             }
             break;
 
-            case 0x367F: // ???
+            case 0x367F: // ??? something with file content. Probably traverse directory of STARA.COM or STARB.COM
             {
                 unsigned short ax;
                 dx = Pop();
+                //printf("search %i\n", dx);
+                //exit(1);
                 Push(regdi);
                 Push(regsi);
                 Push(regbp);
-                cx = Read16(0x2B3A); // #FILES
-                regdi = 0x2D74;
+                cx = Read16(0x2B3A); // #FILES This is always 4
+                regdi = 0x2D74; // OFFSETS
                 bx = 0;
                 //0x368C:
                 for(;cx!=0; cx--)
                 {
                     regbp = (cx-1)<<1;
                     regsi = 0x2D74 + regbp;
+                    //printf("%i %i %i\n", cx, regbp, Read16(regsi));
                     ax = dx;
                     ax = ax - Read16(regsi);
                     if (ax&0x8000) continue;
                     regsi = 0x2D4C + regbp;
-                    if (ax >= Read16(regsi)) continue;
+                    if (ax > Read16(regsi)) continue;
                     bx++;
                     break;
                 }
@@ -1205,6 +1223,31 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 Push(ax);
                 Push(cx);
                 Push(bx);
+
+                // 0x368c: mov    bp,cx
+                // 0x368e: dec    bp
+                // 0x368f: shl    bp,1
+                // 0x3691: mov    si,di
+                // 0x3693: add    si,bp
+                // 0x3695: mov    ax,dx
+                // 0x3697: sub    ax,[si]
+                // 0x3699: js     36A8
+                // 0x369b: mov    si,2D4C
+                // 0x369e: add    si,bp
+                // 0x36a0: cmp    [si],ax
+                // 0x36a2: js     36A8
+                // 0x36a4: inc    bx
+                // 0x36a5: mov    cx,0001
+                // 0x36a8: loop   368C
+
+                // 0x36aa: shr    bp,1
+                // 0x36ac: mov    cx,bp
+                // 0x36ae: pop    bp
+                // 0x36af: pop    si
+                // 0x36b0: pop    di
+                // 0x36b1: push   ax
+                // 0x36b2: push   cx
+                // 0x36b3: push   bx
             }
             break;
 
@@ -1329,6 +1372,63 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 00006D63  jmp word [bx]
 */
 
+        case 0x4c87: // (SLIPPER), please check
+        {
+          unsigned short ax = Pop();
+          bx = ax;
+          cx = Read16(0x4c57); // pp_PEAK
+          bx -= cx;
+          bx += 0x80;
+          if ((bx&0xFF00) == 0)
+          {
+            dx = bx & 0x7;
+            bx >> 3;
+            cx = (cx & 0xFF00) | Read16(bx+0x4C5B); // CURVE
+            bx = Read16(0x4c4d); // FILTER
+            unsigned short temp;
+            temp = dx;
+            dx = cx;
+            cx = temp;
+            bx >= cx&0xFF;
+            // 0x4cab: xchg   dx,cx
+            // 0x4cad: shr    bx,cl
+          } else
+          {
+            bx = 0;
+          }
+
+          bx = bx & dx;
+          if (bx != 0)
+          {
+            Push(ax);
+          }
+          Push(bx);
+        // 0x4c87: pop    ax
+        // 0x4c88: mov    bx,ax
+        // 0x4c8a: mov    cx,[4C57] // PEAK
+        // 0x4c8e: sub    bx,cx
+        // 0x4c90: add    bx,0080
+        // 0x4c94: cmp    bh,00
+        // 0x4c97: jnz    4CB1
+
+        // 0x4c99: mov    dx,bx
+        // 0x4c9b: and    dx,0007
+        // 0x4c9f: mov    cl,03
+        // 0x4ca1: shr    bx,cl
+        // 0x4ca3: mov    cl,[bx+4C5B]
+        // 0x4ca7: mov    bx,[4C4C] // FILTER
+        // 0x4cab: xchg   dx,cx
+        // 0x4cad: shr    bx,cl
+
+        // 0x4caf: jmp    4CB3
+        // 0x4cb1: sub    bx,bx
+
+        // 0x4cb3: and    bx,dx
+        // 0x4cb5: jz     4CB8
+        // 0x4cb7: push   ax
+        // 0x4cb8: push   bx
+        }
+        break;
 // ---------------------------------------------
 // timer stuff
 
@@ -1611,6 +1711,19 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             //printf("lline %i %i %i %i\n", x1, y1, x2, y2);
             GraphicsLine(x1, y1, x2, y2, Read16(0x55F2), Read16(0x587C));
         }
+        break;
+
+        case 0x90c3: // TODO EEXTENT
+          printf("TODO EEXTENT\n");
+          Push(0);
+          Push(0);
+          Push(0);
+          Push(0);
+          // 2 pop, 4 Push, 2 push
+        break;
+
+        case 0x90f9: // TODO ARC
+          printf("TODO ARC\n");
         break;
 
         case 0x8D09: // "DISPLAY" wait for vertical retrace
@@ -1960,6 +2073,19 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             break;
         }
 
+        case 0x4b08: // D2*
+        {
+          unsigned int ax = Pop();
+          unsigned short cx = Pop();
+
+          unsigned int x = (ax<<16)|cx;
+          x <<= 1;
+          Push(x&0xFFFF);
+          Push(x>>16);
+        }
+        break;
+
+
 // -----------------------------------
 
         case 0x6f49: // "VA>BLK"
@@ -2158,6 +2284,102 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         break;
         case 0x4892: break; // "CAPSON" Turn on caps
 
+        case 0x6cd6: // TODO E>CGA
+        // 0x6cd6: pop    dx
+        // 0x6cd7: and    dx,0F
+        // 0x6cda: push   si
+        // 0x6cdb: xor    ax,ax
+        // 0x6cdd: push   ax
+        // 0x6cde: mov    cx,0010
+        // 0x6ce1: std
+        // 0x6ce2: mov    si,4FDC
+        // 0x6ce5: lodsb
+        // 0x6ce6: and    ax,000F
+        // 0x6ce9: cmp    ax,dx
+        // 0x6ceb: jnz    6CF4
+        // 0x6ced: pop    ax
+        // 0x6cee: mov    ax,cx
+        // 0x6cf0: push   ax
+        // 0x6cf1: mov    cx,0001
+        // 0x6cf4: loop   6CE5
+        // 0x6cf6: pop    ax
+        // 0x6cf7: mov    si,4FBB
+        // 0x6cfa: add    si,ax
+        // 0x6cfc: dec    si
+        // 0x6cfd: lodsb
+        // 0x6cfe: pop    si
+        // 0x6cff: cld
+        // 0x6d00: push   ax
+        // 0x6d01: lodsw
+        // 0x6d02: mov    bx,ax
+        // 0x6d04: jmp    word ptr [bx]
+        break;
+
+        case 0x910f: // TODO L@PIXEL
+          //printf("L@PIXEL sp=0x%04x 0x%02x\n", regsp, Read8(0x910f));
+          //printf("0x%04x\n", Read16(0x910f+1));
+          //printf("0x%04x\n", Read16(0x910f+3));
+          //exit(1);
+          Pop();
+          Pop();
+          Push(0);
+        break;
+
+        case 0x4b17: // TODO EASY-BITS for SQRT
+        {
+          cx = Pop();
+          unsigned short ax = Pop();
+          dx = Pop();
+          bx = Pop();
+          do
+          {
+            unsigned int x = (dx<<16) | bx;
+            x <<= 2;
+            dx = x >> 16;
+            bx = x&0xFFFF;
+
+            dx -= ax;
+            if (dx&0x8000)
+            {
+              dx += ax;
+              ax <<=1;
+              ax--;
+            } else
+            {
+              ax++;
+              ax <<= 1;
+              ax++;
+            }
+            cx--;
+          } while(cx > 0);
+
+          Push(bx);
+          Push(dx);
+          Push(ax);
+
+        // 0x4b1b: shl    bx,1
+        // 0x4b1d: rcl    dx,1
+        // 0x4b1f: shl    bx,1
+        // 0x4b21: rcl    dx,1
+
+        // 0x4b23: sub    dx,ax
+        // 0x4b25: jns    4B2E
+        // 0x4b27: add    dx,ax
+        // 0x4b29: shl    ax,1
+        // 0x4b2b: dec    ax
+        // 0x4b2c: jmp    4B32
+        // 0x4b2e: inc    ax
+        // 0x4b2f: shl    ax,1
+        // 0x4b31: inc    ax
+        // 0x4b32: loop   4B1B
+
+        // 0x4b34: push   bx
+        // 0x4b35: push   dx
+        // 0x4b36: push   ax
+        }
+        break;
+
+
         // ------- fract-ov operations -------
         case 0xe770: FRACT_FILLARRAY(); break;
         case 0xe537: FRACT_StoreHeight(); break;
@@ -2215,5 +2437,11 @@ void EnableInterpreter()
 {
     // Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
-    Write16(0x2420, 0x0F22-2); // "0"
+
+    //Write16(0x2420, 0x0F22-2); // "0"
+
+    Write16(0x2420, 0x3a48-2); // "NOP"
+    Write16(0x2422, 0x3a48-2); // "NOP"
+    Write16(0x2424, 0x3a48-2); // "NOP"
+
 }
