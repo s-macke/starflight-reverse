@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -O2
 
-all: disasOV1 disasOV2 emulate emulatesdl extractplanets1
+all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1
 
 disasmX86.o: src/disasmX86/debugger.c
 	$(CC) $(CFLAGS) -c src/disasmX86/debugger.c -o disasmX86.o
@@ -80,6 +80,9 @@ emulatesdl: src/emul/emul.c src/emul/call.c src/emul/cpu.c src/emul/findword.c s
 
 extractplanets1: src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
 	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanets1
+
+extractplanetsdata1: src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
+		$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanetsdata1
 
 .PHONY: clean all
 
