@@ -308,6 +308,51 @@ void ExtractTextRecords(FILE *fp, int idx, const char *label, int containslength
     fprintf(fp, "};\n\n");
 }
 
+void ExtractElements(FILE *fp, int idx)
+{
+    int i;
+    fprintf(fp, "char *elements[] =\n{ // 7 bytes of information are missing here\n");
+    DIRENTRY *de = GetDirByIdx(idx);
+    int size;
+
+    for(int i=0; i<de->nblocks; i++)
+    {
+        char* buf = ExtractRecord(de->idx, i);
+        fprintf(fp, "  \"");
+        for(int j=0; j<16; j++)
+            fprintf(fp, "%c", buf[j]);
+        if (i != de->nblocks-1) fprintf(fp, "\",\n"); else fprintf(fp, "\"\n");
+    }
+    fprintf(fp, "};\n\n");
+}
+
+void ExtractCompounds(FILE *fp, int idx)
+{
+    int i;
+    fprintf(fp, "char *compounds[] =\n{\n");
+    DIRENTRY *de = GetDirByIdx(idx);
+    int size;
+
+    for(int i=0; i<de->nblocks; i++)
+    {
+        unsigned char* buf = ExtractRecord(de->idx, i);
+        fprintf(fp, "  \"");
+        int offset = buf[0] | (buf[1]<<8) | (buf[2]<<16);
+
+        FILE *file = fopen(FILESTARB, "rb");
+        fseek(file, offset, SEEK_SET);
+        int ret = fread(buf, 512, 1, file);
+        fclose(file);
+
+        for(int i=0; i<buf[11]; i++)
+        {
+          fprintf(fp, "%c", buf[12+i]);
+        }
+        if (i != de->nblocks-1) fprintf(fp, "\",\n"); else fprintf(fp, "\"\n");
+    }
+    fprintf(fp, "};\n\n");
+}
+
 void ExtractPlanets(FILE *fp, int idx)
 {
     fprintf(fp, "typedef struct { int idx; int d1, surftype, mass, lseed, tseed, d8, min, d2, d3, d4, d5, d6, coldest, warmest, atmoactivity, atmodensity, d7; } PLANETENTRY;\n");
@@ -415,7 +460,7 @@ void ExtractDataFile(const char* filename)
 
     //ExtractTextRecords(fp, 0x3a, "BUTTONS", 0);
     //ExtractTextRecords(fp, 0x44, "CREATURE", 0);
-    //ExtractTextRecords(fp, 0x1a, "ELEMENT", 0);
+
     //ExtractTextRecords(fp, 0x1c, "ARTIFACT", 0);
     //ExtractTextRecords(fp, 0x10, "CREWMEMBER", 0);
     //ExtractTextRecords(fp, 0x19, "VESSEL", 0);
@@ -429,7 +474,10 @@ void ExtractDataFile(const char* filename)
     ExtractColorMap(fp, 0x74);
     ExtractEarthMap(fp, 0x8a);
     //ExtractTextRecords(fp, 0x2b, "BIODATA", 0); // points to the same data as specimen
-    //ExtractTextRecords(fp, 0x82, "COMPOUNDS", 0);
+    ExtractCompounds(fp, 0x82);
+    ExtractElements(fp, 0x1a);
+    ExtractTextRecords(fp, 0x39, "ANALYZE_TEXT", 0);
+    //ExtractTextRecords(fp, 0x45, "PHAZES", 0);
 #else
     //ExtractPlanets(fp, 0x20);
     //ExtractTextRecords(fp, 0x09, "STIS", 0);
