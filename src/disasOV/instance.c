@@ -165,8 +165,20 @@ void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
 #ifdef STARFLT1
         if (class == 0x30) // string
         {
-            HuffmanDecode(fp, (char*)&buf[a+13], buf[a+12]);
+          //if (species == 32)
+              HuffmanDecode(fp, (char*)&buf[a+13], buf[a+12]);
+              /*
+          else
+          {
+            fprintf(fp, " ");
+            for(int i=0; i<buf[a+11]; i++)
+            {
+              fprintf(fp, "%c", buf[a+12+i]);
+            }
+          }
+          */
         }
+
         if (class == 0x17) // starsystem lsize=8 for starflt1, lsize=9 for starflt2
         {
             fprintf(fp, "    species=%2i flaredate=%4i x=%4i y=%4i orbitmask=0x%02x loggedmask=%i",
@@ -227,6 +239,7 @@ void ExtractInstance(const char* filenametxt, const char* filenameh)
     int size;
     unsigned char* buf = Extract(0x1, &size);
     IterSibling(fptxt, fph, buf, 0, 0x1006);
+    //IterSibling(fptxt, fph, buf, 0, 0x01c29b);
 
     fprintf(fph, "  { .instanceoffset=-1, .sib=-1, .prev=-1, .off=-1, .class=-1, .species=-1 }\n");
     fprintf(fph, "};\n");
