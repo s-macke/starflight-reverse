@@ -7,6 +7,17 @@
 #include"findword.h"
 #include"graphics.h"
 
+void Continue()
+{
+    while(1)
+    {
+       enum RETURNCODE ret = Step();
+       if (ret == ERROR) exit(1);
+       if (ret != OK) return;
+    }
+}
+
+
 int main()
 {
     InitCPU();
@@ -20,13 +31,58 @@ int main()
     printf("'mountb bank-ov d@balance d.'\n");
     printf("'mounta PM-OV PORT-PIC'\n");
     printf("'mounta music-OV 141 cscr>ega'\n");
-    printf("'mounta u-b\n");
-    printf("'mountb\n mercator-gen\n");
+    printf("'mounta u-b'\n");
+    printf("'mountb\n 1234 mercator-gen'\n");
+    printf("'SCI-OV 32 .READINGS'\n"); // 32 is the planet class
 
     EnableInterpreter();
-    //FillKeyboardBufferString("MOUNTB CFIGARRAYS\n");
-    FillKeyboardBufferString("?EGA ON STARTER\nMOUNTB\n");
+    //FillKeyboardBufferString("STARTER\nMOUNTA\nLDFONTS\nMOUNTB\n?EGA ON\nSET.COLORS\nLOAD-CO\nSETDBUF\n>DISPLAY\n");
+    FillKeyboardBufferString("STARTER\n");
+    Continue();
+    //FillKeyboardBufferString("RELAXTIME ON\n");
+    //Continue();
+
+    FillKeyboardBufferString("MOUNTA\nLDFONTS\n");
+    Continue();
+
+    //FillKeyboardBufferString("RELAXTIME OFF\n");
+    //Continue();
+    FillKeyboardBufferString("GAME-OV\nMOUNTB\n?EGA ON\nGDE\n");
+    Continue();
+
 #endif
+
+
+// Load Compound
+/*
+FillKeyboardBufferString("130 FILE# ! 40 RECORD# !\n");
+Continue();
+FillKeyboardBufferString("SCI-OV WE696 @ .\n");
+Continue();
+*/
+/*
+FillKeyboardBufferString("SCI-OV WE696 @ .\n");
+Continue();
+*/
+/*
+// planet data earth
+FillKeyboardBufferString("32 FILE# ! 18 RECORD# !\n");
+Continue();
+
+// Load mass
+FillKeyboardBufferString("SCI-OV WE676 @ .\n");
+Continue();
+*/
+/*
+FillKeyboardBufferString("(SYSTEM) 1.5@ >C+S @INST-SPECIES\n");
+Continue();
+*/
+/*
+// Load one element from a starsystem
+FillKeyboardBufferString("4195 0 >C+S @INST-SPECIES\n");
+Continue();
+*/
+
 
     /*
     // default interrupt vector
