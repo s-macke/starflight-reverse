@@ -101,7 +101,7 @@ IADDR
 
 //char instancedone[1024*1024];
 
-void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
+void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
 {
     int addr = first;
     unsigned int next, previous, children;
@@ -115,6 +115,13 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
         unsigned int class = buf[a+0x9];
         unsigned int species = buf[a+0xa];
         DIRENTRY *de = GetDirByIdx(class);
+
+        fprintf(fph, "  { .instanceoffset=0x%06x, .sib=0x%06x, .prev=0x%06x, .off=0x%06x, .class=0x%02x, .species=0x%02x }, // ",
+          addr, next, previous, children, class, species);
+          for(int i=0; i<strlen(de->name); i++)
+              if (de->name[i] != ' ') fprintf(fph, "%c", de->name[i]);
+        fprintf(fph, "\n");
+
         /*
         char dummy[256];
         sprintf(dummy, "%02x %02x %02x ", class, species, buf[a+11]);
@@ -179,26 +186,53 @@ void IterSibling(FILE *fp, unsigned char *buf, int iter, int first)
 
         fprintf(fp, "\n");
 
-        if (children != 0) IterSibling(fp, buf, iter+1, children);
+        if (children != 0) IterSibling(fp, fph, buf, iter+1, children);
         addr = next;
         if (next == 0) return;
 
     } while(next != first);
 }
 
-void ExtractInstance(const char* filename)
+void ExtractInstance(const char* filenametxt, const char* filenameh)
 {
-    FILE *fp = fopen(filename, "w");
-    if (fp == NULL)
+    FILE *fptxt = fopen(filenametxt, "w");
+    if (fptxt == NULL)
     {
-        fprintf(stderr, "Error: Cannot write file %s\n", filename);
+        fprintf(stderr, "Error: Cannot write file %s\n", filenametxt);
         exit(1);
     }
 
+    FILE *fph = fopen(filenameh, "w");
+    if (fph == NULL)
+    {
+        fprintf(stderr, "Error: Cannot write file %s\n", filenameh);
+        exit(1);
+    }
+
+    fprintf(fph, "// =====================================\n");
+    fprintf(fph, "// =========== Instance Tree ===========\n");
+    fprintf(fph, "// =====================================\n\n");
+
+    fprintf(fph, "typedef struct { int instanceoffset, sib, prev, off, class, species; } INSTANCEENTRY;\n\n");
+
+    fprintf(fph, "INSTANCEENTRY instance[]=\n{\n");
+/*
+    IFieldType INST_dash_SIB = {DIRECTORYIDX, 0x00, 0x03};
+    IFieldType INST_dash_PREV = {DIRECTORYIDX, 0x03, 0x03};
+    IFieldType INST_dash_OFF = {DIRECTORYIDX, 0x06, 0x03};
+    IFieldType INST_dash_CLASS = {DIRECTORYIDX, 0x09, 0x01};
+    IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};
+*/
+
     int size;
     unsigned char* buf = Extract(0x1, &size);
-    IterSibling(fp, buf, 0, 0x1006);
-    fclose(fp);
+    IterSibling(fptxt, fph, buf, 0, 0x1006);
+
+    fprintf(fph, "  { .instanceoffset=-1, .sib=-1, .prev=-1, .off=-1, .class=-1, .species=-1 }\n");
+    fprintf(fph, "};\n");
+
+    fclose(fptxt);
+    fclose(fph);
     /*
     for(int i=0; i<size; i++)
     {

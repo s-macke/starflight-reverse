@@ -6,6 +6,7 @@
 #include"parser.h"
 #include"transpile2C.h"
 #include"extract.h"
+#include"instance.h"
 #include"utils.h"
 #include"stack.h"
 #include"graph.h"
@@ -156,8 +157,6 @@ void DisasmEGA()
     Transpile(OUTDIR"/ega.asm", NULL, -1, 0, size, 0);
 }
 
-
-
 int main()
 {
     int i = 0;
@@ -169,7 +168,7 @@ int main()
 
     ExtractDirectory();
     ExtractDataFile(OUTDIR"/data.h");
-    ExtractInstance(OUTDIR"/data/instance.txt");
+    ExtractInstance(OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
 #ifdef STARFLT2
     ExtractDictionary(OUTDIR"/data/dictionary.txt");
 #endif
