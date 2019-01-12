@@ -444,4 +444,78 @@ char earthmap[]=
 0x78, 0x78, 0x78, 0x78, 0x78, 0x78, 0x78, 0x78, 0x78, 0x78, 0x92, 0x78, 0x78, 0x78, 0x78, 0x78
 };
 
+char *compounds[] =
+{
+  "NONE",
+  "NITROGEN",
+  "OXYGEN",
+  "METHANE",
+  "CARBON MONOXIDE",
+  "WATER",
+  "AMMONIA COMPOUNDS",
+  "CHLORINE COMPOUNDS",
+  "METHANOL, ETHANOL",
+  "SULFUR COMPOUNDS",
+  "SILICON COMPOUNDS",
+  "SODIUM COMPOUNDS",
+  "FLUORINE COMPOUNDS",
+  "METAL COMPOUNDS",
+  "HYDROGEN, HELIUM",
+  "NITROGEN, OXYGEN",
+  "OXYGEN, CARBON DIOXIDE",
+  "AMMONIA, HYDROGEN",
+  "METHANE, AMMONIA, ARGON",
+  "FLUORINE, CHLORINE",
+  "METHANE, HYDROGEN CYANIDE",
+  "OXYGEN, HYDROGEN",
+  "HYDROGEN"
+};
+
+char *elements[] =
+{ // 7 bytes of information are missing here
+  "                ",
+  "ALUMINUM........",
+  "ANTIMONY........",
+  "CHROMIUM........",
+  "COBALT..........",
+  "COPPER..........",
+  "ENDURIUM (FUEL).",
+  "GOLD............",
+  "IRON............",
+  "LEAD............",
+  "MAGNESIUM.......",
+  "MERCURY.........",
+  "MOLYBDENUM......",
+  "NICKEL..........",
+  "PLATINUM........",
+  "PLUTONIUM.......",
+  "PROMETHIUM......",
+  "RODNIUM.........",
+  "SILVER..........",
+  "TIN.............",
+  "TITANIUM........",
+  "TUNGSTEN........",
+  "ZINC............"
+};
+
+char *ANALYZE_TEXT_STRINGS[] =
+{
+  "ANALYSIS OF THIS ARTIFACT HAS REVEALEDVERY LITTLE OF INTEREST. IT HAS SLIGHTVALUE AS AN ALIEN CURIO, BUT OTHERWISEIS TOTALLY USELESS TO US.                                                   ",
+  "OUR GUESS IS THIS IS SOME DEVICE OF   THE ANCIENTS. BEYOND THAT, WE CAN'T   TELL.                                                                                                             ",
+  "THIS APPEARS TO BE A BOMB OF SOME     SORT. THE TYPE IS UNFAMILIAR. TO      ACTIVATE IT, YOU MUST DROP IT.                                                                                    ",
+  "THIS IS CRAFTED OF ENDURIUM. IT       DOESN'T APPEAR TO HAVE ANY FUNCTION   OTHER THAN BEING DECORATIVE.                                                                                      ",
+  "THIS WAS FOUND IN THE UNDERGROUND     COLONY. WE'RE NOT SURE WHAT IS DOES.  WE THINK IT HAS SOMETHING TO DO WITH  COMMUNICATION.                                                              ",
+  "THIS DEVICE WILL PROJECT A SHIELD     AROUND YOUR TERRAIN VEHICLE WHICH     MAKES IT DIFFICULT FOR DANGEROUS      LIFEFORMS TO ATTACK YOU.                                                    ",
+  "THIS APPEARS TO BE A DEVICE OF THE OLDEMPIRE THAT PROJECTS AN ENHANCED LASERSHIELD AROUND A SPACESHIP.                                                                                        ",
+  "THIS IS A DEVICE OF THE OLD EMPIRE    THAT PROJECTS A FIELD WHICH DOUBLES   THE ENERGY EFFICIENCY OF A SHIP'S     ENGINES.                                                                    ",
+  "THIS IS AN ANCIENT SHIP NAVIGATIONAL  AID. IT WILL IDENTIFY ANY NEARBY      CONTINUUM FLUX.                                                                                                   ",
+  "THIS APPEARS TO BE A 4-DIMENSIONAL    PUZZLE COMPOSED OF MANY MULTI-COLORED CUBES. ITS USE PRODUCES AN OVER-      WHELMING FEELING OF ATARAXIA.                                               ",
+  "THIS ARTIFACT SEEMS TO BE A CLOAKING  DEVICE. AS FAR AS WE CAN TELL IT      SHOULD OPERATE AUTOMATICALLY DURING   COMBAT.                                                                     ",
+  "WE CAN'T FIGURE OUT EXACTLY WHAT THIS IS. IT SLICES, IT DICES, IT EVEN MAKESJULIENNE FRIES!                                                                                                   ",
+  "THIS SEEMS TO BE AN ORBITAL SCANNER OFSOME SORT. WE'RE NOT SURE WHAT IT'S   TUNED TO LOCATE THOUGH.                                                                                           ",
+  "THIS IS SOME SORT OF TRANSMITTER. IT  IS BROADCASTING CONTINUALLY ON SEVERALBANDS. THE NET EFFECT SHOULD BE THAT  IT WILL ATTRACT THE ATTENTION OF      ANYONE IN THE AREA.                   ",
+  "THIS SEEMS TO BE A DEVICE OF THE      ANCIENTS, BUT WE CAN'T FIGURE OUT WHATIT DOES. IT CONTAINS A TREMENDOUS     AMOUNT OF ENERGY.                                                           ",
+  "THE REMAINS OF AN OLDER, INFERIOR     MODEL TERRAIN VEHICLE, DOUBTLESSLY    LEFT HERE BY SOME PRIOR EXPLORATION   PARTY TOO FOOLISH TO RETURN TO THEIR  SHIP BEFORE EXHAUSTING THEIR ENERGY.  "
+};
+
 #endif
