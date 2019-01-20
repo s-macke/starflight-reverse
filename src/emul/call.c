@@ -13,12 +13,15 @@
 #include"findword.h"
 #include"../disasOV/global.h"
 
+unsigned int debuglevel = 0;
+
 const unsigned short cs = 0x192;
 const unsigned short ds = 0x192;
 
 unsigned short int regdi = REGDI; // points to word "OPERATOR"
 unsigned short int cx = 0x0;
 unsigned short int dx = 0x0;
+
 
 // ------------------------------------------------
 
@@ -44,6 +47,57 @@ void FillKeyboardBufferKey(unsigned short c)
     inputbuffer[0] = c;
     inputbuffer[1] = 0;
 }
+
+// ------------------------------------------------
+
+void PrintCStack()
+{
+  int cxsp = Read16(0x54B0);
+  int n = ((0x6398 - cxsp)&0xFF)/3;
+  printf("=== CSTACK ===\n");
+  for(int i=0; i<n; i++)
+  {
+    cxsp += 3;
+    printf(" %i: 0x%06x\n", n-i-1, ((Read16(cxsp+2)&0xFF)<<16) | Read16(cxsp));
+  }
+  printf("==============\n");
+}
+// ------------------------------------------------
+void PrintCache()
+{
+  /*
+  : .BUFSTUFF ( SEG -- )
+    >R  I 0 L@ 6 .R
+        I 2 LC@ 5 .R
+        I 3 LC@ 5 .R
+        R> 6 L@ OFFSET @ - 5 .R ;
+
+  : .CACHE
+    CR ."  C#   SEG   UPDATE  MT   BLK "
+    CR ." LPREV:" LPREV @ .BUFSTUFF
+    CR ." PREV :" PREV  @ .BUFSTUFF
+    CR ." USE  :" USE   @ .BUFSTUFF
+    #CACHE @ 0 DO CR I 5 .R  I 'CACHE ! [SEGCACHE] L@
+                  .BUFSTUFF KEY DROP LOOP ;
+  */
+  // Logic from word .CACHE in disys.txt
+  printf("C#     SEG    UPDATE MT   BLK\n");
+  unsigned short seg = Read16(0x2c6c);
+  printf("LPREV: 0x%04x 0x%02x   0x%02x 0x%04x\n", Read16Long(seg, 0), Read8Long(seg, 2), Read8Long(seg, 3), (unsigned short int)Read16Long(seg, 6)-Read16(0x2c79));
+  seg = Read16(0x2c84);
+  printf("PREV : 0x%04x 0x%02x   0x%02x 0x%04x\n", Read16Long(seg, 0), Read8Long(seg, 2), Read8Long(seg, 3), (unsigned short int)Read16Long(seg, 6)-Read16(0x2c79));
+  seg = Read16(0x2cbe);
+  printf("USE  : 0x%04x 0x%02x   0x%02x 0x%04x\n", Read16Long(seg, 0), Read8Long(seg, 2), Read8Long(seg, 3), (unsigned short int)Read16Long(seg, 6)-Read16(0x2c79));
+  int ncache = Read16(0x09ef);
+  for(int i=0; i<ncache; i++)
+  {
+    seg = Read16Long(Read16(0x2c9d), 2*i); // SEGCACHE:2*i
+    printf("%5i  ", i);
+    printf("0x%04x 0x%02x   0x%02x 0x%04x\n", Read16Long(seg, 0), Read8Long(seg, 2), Read8Long(seg, 3), (unsigned short int)Read16Long(seg, 6)-Read16(0x2c79));
+  }
+
+}
+
 
 // ------------------------------------------------
 
@@ -205,7 +259,7 @@ void HandleInterrupt()
 
 void XCHG(unsigned short *a, unsigned short *b)
 {
-    short temp = *a;
+    unsigned short temp = *a;
     *a = *b;
     *b = temp;
 }
@@ -230,13 +284,10 @@ void ParameterCall(unsigned short bx, unsigned short addr)
 
 void LXCHG16(unsigned short es, unsigned short bx, unsigned short ax) //  "{LXCHG}"
 {
-    cx = Read16Long(es, bx);
-    XCHG(&bx, &ax);
-    unsigned short temp = Read16Long(es, bx);
-    XCHG(&cx, &temp);
+    unsigned short cx = Read16Long(es, bx);
+    unsigned short temp = Read16Long(es, ax);
+    Write16Long(es, ax, cx);
     Write16Long(es, bx, temp);
-    XCHG(&bx, &ax);
-    Write16Long(es, bx, cx);
 // 0x2f36: push   cx
 // 0x2f38: mov    cx,es:[bx]
 // 0x2f3a: xchg   ax,bx
@@ -250,12 +301,9 @@ void LXCHG16(unsigned short es, unsigned short bx, unsigned short ax) //  "{LXCH
 void LXCHG8(unsigned short es, unsigned short bx, unsigned short ax)
 {
     unsigned short cx = Read8Long(es, bx);
-    XCHG(&bx, &ax);
-    unsigned short temp = Read8Long(es, bx);
-    XCHG(&cx, &temp);
+    unsigned short temp = Read8Long(es, ax);
+    Write8Long(es, ax, cx&0xFF);
     Write8Long(es, bx, temp&0xFF);
-    XCHG(&bx, &ax);
-    Write8Long(es, bx, cx&0xFF);
 // 0x49cc: mov    cl,es:[bx]
 // 0x49ce: xchg   ax,bx
 // 0x49d1: xchg   es:[bx],cl
@@ -457,16 +505,32 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             //exit(1);
             bx += 2;  // points to data in word
             bx = Read16(bx);
+
+            if (bx == 0x6e) // Type
+            {
+              int n = Read16(regsp);
+              int offset = Read16(regsp+2);
+              printf("(TYPE): ");
+              for(int i=0; i<n; i++)
+                  printf("%c", Read8(offset+i));
+              if (Read8(offset+n-1) != '\n') printf("\n");
+            }
+
             bx = Read16(bx+regdi);
             bx -= 2;
+
             char *s = FindWord(bx+2, -1);
             //printf("Execute %s\n", s);
             if (strcmp(s, "(TYPE)") == 0)
             {
                 int n = Read16(regsp);
                 int offset = Read16(regsp+2);
+                /*
+                printf("(TYPE): ");
                 for(int i=0; i<n; i++)
                     printf("%c", Read8(offset+i));
+                printf("\n");
+                */
                 GraphicsText((char*)&mem[offset], n);
             }
             if (strcmp(s, "(CR)") == 0)
@@ -483,7 +547,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             {
                 GraphicsChar(Read16(regsp));
                 GraphicsUpdate();
-                //printf("print char %i\n", Read16(regsp));
+                //printf("(EMIT) %i\n", Read16(regsp));
             }
             if (strcmp(s, "(WORD)") == 0) // scans input stream for char and copies
             {
@@ -560,20 +624,37 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CASE:"
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
         case 0xeca2: ParameterCall(bx, 0xeca2); break; // in PL-SET Overlay
-
         case 0x4e00: ParameterCall(bx, 0x4e00); break; // Arrays
         case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
         //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
         case 0x7227:
+        {
             //printf("Receive %s from STAR*.COM dictionary for index 0x%x: '%s'\n", FindWord(bx+2, -1), Read16(regsp), FindDirectoryName(Read16(regsp)));
-            printf("Load data    '%s'\n", FindDirectoryName(Read16(regsp)));
             //PrintCallstacktrace(bx);
+            //printf("slen of =%i regsp=%i\n", Read16(regsp), regsp);
+            char *s = FindDirectoryName(Read16(regsp));
+            if (s == NULL)
+            {
+              PrintCallstacktrace(bx);
+              return ERROR;
+            }
+
+            printf("Load data    '%s'\n", s);
             // "FILE-NA FILE-TY FILE-ST FILE-EN FILE-#R FILE-RL FILE-SL"
             ParameterCall(bx, 0x7227);
+          }
         break;
         case 0x73ea: // load data
-          printf("load adata FILE# %i RECORD# %i\n", Read16(0x548f), Read16(0x549d));
+        {
+          char *s = FindDirectoryName(Read16(0x548f));
+          if (s == NULL)
+          {
+            PrintCallstacktrace(bx);
+            return ERROR;
+          }
+          printf("load adata FILE# '%s' RECORD# %i at regsi=0x%04x\n", s, Read16(0x549d), regsi);
           ParameterCall(bx, 0x73ea);
+        }
           break;
 
         // -----------------------------------
@@ -737,7 +818,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-
         case 0x160:  // "(!OLD)" read interrupt vector table
             bx = Pop();
             //printf("read interrupt %x\n", bx);
@@ -782,7 +862,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-
         case 0x14BD: // "DIGIT"
         {
             // TODO: handle base if decimal or hex
@@ -800,7 +879,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             //printf("Digit base=%i ascii=%i\n", dx, ax);
         break;
 
-        case 0x22AB: // ENCLOSE  TODO: check
+        case 0x22AB: // ENCLOSE
         {
             unsigned short ax = Pop() & 0xFF;
             bx = Pop();
@@ -815,6 +894,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 bx++;
                 dx++;
                 if ((ax&0xFF) == mem[bx]) goto x22b4;
+
             Push(dx);
 
             if ((ax>>8) == mem[bx])
@@ -971,12 +1051,12 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             bx = Read16(regdi + 0x1A);
             unsigned char bh = (bx >> 8);
             unsigned char bl = (bx & 0xFF);
-            unsigned short ax = Read16(regdi + 0x1C) & 0xFF;
+            unsigned short ax = Read8(regdi + 0x1C);
             ax = (ax + bl) & 0xFF;
             bl = 0x50;
             ax *= bl;
             bl = bh;
-            bh = Read16(regdi + 0x1D) & 0xFF;
+            bh = Read8(regdi + 0x1D);
             bl += bh;
             bh = 0;
             ax += (bh << 8) | bl;
@@ -1020,34 +1100,32 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             bx = Pop();
             dx = Pop();
             unsigned short ax = Pop();
-            unsigned int nom = ax | (dx<<16);
-            Push(nom % bx);
-            Push(nom / bx);
+            unsigned int dividend = ax | ((unsigned int)dx<<16);
+            Push(dividend % bx);
+            Push(dividend / bx);
         }
         break;
 
         case 0xF4E: // "/"
         {
-            bx = Pop();
-            unsigned short ax = Pop();
-            Push((signed short int)ax/(signed short int)bx);
+            signed short divisor = Pop();
+            signed short dividend = Pop();
+            Push(dividend/divisor);
         }
         break;
 
         case 0xF62: // "/MOD"
         {
             signed short divisor = Pop(); // bx
-            signed short ax = Pop();
-            Push(ax%divisor);
-            Push(ax/divisor);
+            signed short dividend = Pop();
+            Push(dividend%divisor);
+            Push(dividend/divisor);
         }
         break;
 
         case 0x1261: // "="
         {
-            unsigned short ax = Pop();
-            dx = Pop();
-            if (ax == dx) Push(1); else Push(0);
+            if (Pop() == Pop()) Push(1); else Push(0);
         }
         break;
 
@@ -1055,15 +1133,37 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             Push((Pop()&0x8000)?1:0);
         break;
 
-        case 0x71DD: // "W71DD" gets the idx from the dictionary in STARX.com
+        case 0x71DD: // "DOFFBLK" gets the idx from the dictionary in STARX.com
         {
-            //WriteCallGraph();
-            //exit(1);
+          // 0x71dd: pop    ax
+          // 0x71de: cmp    ax,0090
+          // 0x71e1: js     71EF
+          // 0x71e3: mov    bx,[535E] // DIRBLK
+          // 0x71e7: add    bx,03
+          // 0x71ea: sub    ax,0090
+          // 0x71ed: jmp    7213
+          // 0x71ef: cmp    ax,0060
+          // 0x71f2: js     7200
+          // 0x71f4: mov    bx,[535E] // DIRBLK
+          // 0x71f8: add    bx,02
+          // 0x71fb: sub    ax,0060
+          // 0x71fe: jmp    7213
+          // 0x7200: cmp    ax,0030
+          // 0x7203: js     720F
+          // 0x7205: mov    bx,[535E] // DIRBLK
+          // 0x7209: inc    bx
+          // 0x720a: sub    ax,0030
+          // 0x720d: jmp    7213
+          // 0x720f: mov    bx,[535E] // DIRBLK
+          // 0x7213: mov    cx,0015
+          // 0x7216: imul   cx
+          // 0x7218: push   ax
+          // 0x7219: push   bx
             unsigned short ax = Pop();
-            //printf("read idx 0x%x  from STARA.COM or STARB.COM FILE\n", ax);
+            //printf("DOFFBLK: read idx 0x%x  from STARA.COM or STARB.COM FILE\n", ax);
             if (ax >= 0x90)
             {
-                bx = Read16(0x535e) + 3;
+                bx = Read16(0x535e) + 3; // DIRBLK
                 ax -= 0x90;
             } else
             if (ax >= 0x60)
@@ -1114,23 +1214,66 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x3048: // "(BUFFER)"
         {
+          // print CACHE
+          //PrintCache();
+          // 0x3048: pop    cx
+          // 0x3049: mov    dx,es
+          // 0x304b: xor    bx,bx
+          // 0x304d: xor    ax,ax
+          // 0x304f: push   word ptr [2C84] // PREV
+          // 0x3053: pop    es
+
+          // 0x3054: es:
+          // 0x3055: cmp    [bx+06],cx
+          // 0x3058: jnz    3064
+          // cmp     byte ptr es:[bx+3], 0
+          // jnz     short loc_3062
+          // 0x3061: inc    ax
+          // 0x3062: jmp    3084
+
+          // 0x3064: push   word ptr [2CBE] // USE
+          // 0x3068: pop    es
+          // 0x306a: cmp    [es:bx+06],cx
+          // 0x306d: jnz    3084
+          //         cmp     byte ptr es:[bx+3], 0
+          //         jnz     short loc_3084
+
+          // 0x3076: inc    ax
+          // 0x3077: push   word ptr [2C84] // PREV
+          // 0x307b: push   es
+          // 0x307c: pop    word ptr [2C84] // PREV
+          // 0x3080: pop    word ptr [2CBE] // USE
+
+          // 0x3084: or     ax,ax
+          // 0x3086: jnz    308B
+
+          // 0x3088: push   cx
+          // 0x3089: jmp    3094
+
+          // 0x308b: push   es
+          // 0x308c: mov    cx,[2C84] // PREV
+          // 0x3090: mov    [2C6C],cx // LPREV
+
+          // 0x3094: push   ax
+          // 0x3095: mov    es,dx
+
             cx = Pop();
-            //dx = /*es*/0x1FE;
-            bx = 0;
+            //printf("Buffer 0x%04x\n", cx-Read16(0x2c79));
+
             unsigned short ax = 0;
-            int es = Read16(0x2c84); // "PREV"
+            unsigned short es = Read16(0x2c84); // "PREV"
             //printf("es : 0x%04x check with 0x%04x\n", es, cx);
-            if (Read16Long(es, bx+6) == cx)
+            if (Read16Long(es, 6) == cx)
             {
-                if (Read8Long(es, bx+3) == 0) ax++;
+                if (Read8Long(es, 3) == 0) ax++;
                 //goto x3084;
             } else
             {
                 // 0x3064:
                 es = Read16(0x2cbe); // "USE"
                 //printf("es : 0x%04x check with 0x%04x\n", es, cx);
-                if (Read16Long(es, bx+6) == cx)
-                if (Read8Long(es, bx+3) == 0)
+                if (Read16Long(es, 6) == cx)
+                if (Read8Long(es, 3) == 0)
                 {
                     ax++;
                     Write16(0x2CBE, Read16(0x2c84));
@@ -1192,7 +1335,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 unsigned short ax;
                 dx = Pop();
                 //printf("search %i\n", dx);
-                //exit(1);
                 Push(regdi);
                 Push(regsi);
                 Push(regbp);
@@ -1239,21 +1381,17 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
                 // 0x36a4: inc    bx
                 // 0x36a5: mov    cx,0001
                 // 0x36a8: loop   368C
-
-                // 0x36aa: shr    bp,1
-                // 0x36ac: mov    cx,bp
-                // 0x36ae: pop    bp
-                // 0x36af: pop    si
-                // 0x36b0: pop    di
-                // 0x36b1: push   ax
-                // 0x36b2: push   cx
-                // 0x36b3: push   bx
             }
             break;
 
         case 0x36BB: // ???
-            cx = mem[Pop() + 0x2D23];
-            if (cx == 0) cx = Read16(0x2C15);
+            if (Read16(regsp) > 3)
+            {
+              fprintf(stderr, "Error: %i larger than expected\n", Read16(regsp));
+              exit(1);
+            }
+            cx = Read8(Pop() + 0x2D23); // =DRIVENUMBERS
+            if (cx == 0) cx = Read16(0x2C15); // DEFAULTDRV
             cx--;
             Push(cx);
             break;
@@ -1289,7 +1427,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 // 0x12a9: mov    bx,ax
 // 0x12ab: jmp    word ptr [bx]
 
-
         case 0x12E1: // "U<"
         {
             unsigned short ax = Pop();
@@ -1298,9 +1435,62 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
+        case 0x11D8: // "U*"
+        {
+            unsigned int ax = Pop();
+            unsigned int dx = Pop();
+            unsigned int x = ax * dx;
+            Push(x&0xFFFF);
+            Push((x>>16)&0xFFFF);
+            break;
+        }
+
+
         case 0x1FA: // overwrite interrupt 0 to and div 0?
             /*Push(0x20F);Push(0x7246);Push(0x1FE);Push(0x1CF);Pop();Pop();Pop();Pop(); */
         break;
+
+        /*
+        00006D12  pop cx
+        00006D13  or cx,cx
+        00006D15  jns 0x6d4d
+
+        00006D17  mov bx,[0x54a1]
+        00006D1B  mov dx,bx
+        00006D1D  add dx,byte +0x7
+        00006D20  cmp cx,dx
+        00006D22  jng 0x6d4b
+
+        00006D24  add dx,0x401
+        00006D28  cmp dx,cx
+        00006D2A  jng 0x6d32
+        00006D2C  mov byte [bx+0x2],0xff
+        00006D30  jmp short 0x6d4b
+
+        00006D32  mov bx,[0x54a5]
+        00006D36  mov dx,bx
+        00006D38  add dx,byte +0x7
+        00006D3B  cmp cx,dx
+        00006D3D  jng 0x6d4b
+        00006D3F  add dx,0x401
+        00006D43  cmp dx,cx
+        00006D45  jng 0x6d4b
+        00006D47  mov byte [bx+0x2],0xff
+
+        00006D4B  jmp short 0x6d5f
+
+        00006D4D  cmp cx,0x63ef
+        00006D51  js 0x6d5f
+        00006D53  cmp cx,0x64fd
+        00006D57  jns 0x6d5f
+        00006D59  mov bx,0x63ee
+        00006D5C  mov byte [bx],0xff
+
+        00006D5F  push cx
+        00006D60  lodsw
+        00006D61  mov bx,ax
+        00006D63  jmp word [bx]
+        */
 
         case 0x6D12: // "?UPDATE" converts addr to addr
             // if addr is in a block buffer or instance buffer set the update flag
@@ -1330,50 +1520,35 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             //Push(0x5eed);
         break;
 
-/*
-00006D12  pop cx
-00006D13  or cx,cx
-00006D15  jns 0x6d4d
-
-00006D17  mov bx,[0x54a1]
-00006D1B  mov dx,bx
-00006D1D  add dx,byte +0x7
-00006D20  cmp cx,dx
-00006D22  jng 0x6d4b
-
-00006D24  add dx,0x401
-00006D28  cmp dx,cx
-00006D2A  jng 0x6d32
-00006D2C  mov byte [bx+0x2],0xff
-00006D30  jmp short 0x6d4b
-
-00006D32  mov bx,[0x54a5]
-00006D36  mov dx,bx
-00006D38  add dx,byte +0x7
-00006D3B  cmp cx,dx
-00006D3D  jng 0x6d4b
-00006D3F  add dx,0x401
-00006D43  cmp dx,cx
-00006D45  jng 0x6d4b
-00006D47  mov byte [bx+0x2],0xff
-
-00006D4B  jmp short 0x6d5f
-
-00006D4D  cmp cx,0x63ef
-00006D51  js 0x6d5f
-00006D53  cmp cx,0x64fd
-00006D57  jns 0x6d5f
-00006D59  mov bx,0x63ee
-00006D5C  mov byte [bx],0xff
-
-00006D5F  push cx
-00006D60  lodsw
-00006D61  mov bx,ax
-00006D63  jmp word [bx]
-*/
-
-        case 0x4c87: // (SLIPPER), please check
+        case 0x4c87: // (SLIPPER)
         {
+          // 0x4c87: pop    ax
+          // 0x4c88: mov    bx,ax
+          // 0x4c8a: mov    cx,[4C57] // PEAK
+          // 0x4c8e: sub    bx,cx
+          // 0x4c90: add    bx,0080
+          // 0x4c94: cmp    bh,00
+          // 0x4c97: jnz    4CB1
+
+          // 0x4c99: mov    dx,bx
+          // 0x4c9b: and    dx,0007
+          // 0x4c9f: mov    cl,03
+          // 0x4ca1: shr    bx,cl
+          // 0x4ca3: mov    cl,[bx+4C5B]
+          // 0x4ca7: mov    bx,[4C4C] // FILTER
+          // 0x4cab: xchg   dx,cx
+          // 0x4cad: shr    bx,cl
+
+          // 0x4caf: jmp    4CB3
+
+          // 0x4cb1: sub    bx,bx
+
+          // 0x4cb3: and    bx,dx
+
+          // 0x4cb5: jz     4CB8
+          // 0x4cb7: push   ax
+          // 0x4cb8: push   bx
+
           unsigned short ax = Pop();
           bx = ax;
           cx = Read16(0x4c57); // pp_PEAK
@@ -1382,16 +1557,14 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
           if ((bx&0xFF00) == 0)
           {
             dx = bx & 0x7;
-            bx >> 3;
-            cx = (cx & 0xFF00) | Read16(bx+0x4C5B); // CURVE
-            bx = Read16(0x4c4d); // FILTER
+            bx >>= 3;
+            cx = (cx & 0xFF00) | Read8(bx+0x4C5B); // CURVE
+            bx = Read16(0x4c4c); // FILTER
             unsigned short temp;
             temp = dx;
             dx = cx;
             cx = temp;
-            bx >= cx&0xFF;
-            // 0x4cab: xchg   dx,cx
-            // 0x4cad: shr    bx,cl
+            bx >>= cx&0xFF;
           } else
           {
             bx = 0;
@@ -1403,30 +1576,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             Push(ax);
           }
           Push(bx);
-        // 0x4c87: pop    ax
-        // 0x4c88: mov    bx,ax
-        // 0x4c8a: mov    cx,[4C57] // PEAK
-        // 0x4c8e: sub    bx,cx
-        // 0x4c90: add    bx,0080
-        // 0x4c94: cmp    bh,00
-        // 0x4c97: jnz    4CB1
-
-        // 0x4c99: mov    dx,bx
-        // 0x4c9b: and    dx,0007
-        // 0x4c9f: mov    cl,03
-        // 0x4ca1: shr    bx,cl
-        // 0x4ca3: mov    cl,[bx+4C5B]
-        // 0x4ca7: mov    bx,[4C4C] // FILTER
-        // 0x4cab: xchg   dx,cx
-        // 0x4cad: shr    bx,cl
-
-        // 0x4caf: jmp    4CB3
-        // 0x4cb1: sub    bx,bx
-
-        // 0x4cb3: and    bx,dx
-        // 0x4cb5: jz     4CB8
-        // 0x4cb7: push   ax
-        // 0x4cb8: push   bx
+          //printf("SLIPPER %i %i\n", ax, bx);
         }
         break;
 // ---------------------------------------------
@@ -1619,13 +1769,18 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x906b: // 'LCOPYBLK' TODO
-            printf("LCOPYBLK %i %i %i %i %i %i\n", Pop(), Pop(), Pop(), Pop(), Pop(), Pop());
+            Pop();
+            Pop();
+            Pop();
+            Pop();
+            Pop();
+            Pop();
+            //printf("LCOPYBLK %i %i %i %i %i %i\n", Pop(), Pop(), Pop(), Pop(), Pop(), Pop());
             //exit(1);
         break;
 
         case 0x6C86: // "C>EGA" // TODO???
         {
-            //printf("c>ega\n");
             dx = Pop() & 0xF;
             Push(regsi);
             unsigned short ax = 0;
@@ -1860,15 +2015,33 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         // ---- 3 byte stack ---
         case 0x753F: // ">C"
+        /*
+            if (Read16(regsp+2) == 0)
+            {
+              printf("Error: push zero to stack\n");
+              PrintCallstacktrace(bx);
+              exit(1);
+            }
+            */
             bx = Read16(0x54b0); // CXSP
-            Write16(bx+2, Pop()&0xFF);
+            Write8(bx+2, Pop()&0xFF);
             Write16(bx, Pop());
             Write16(0x54b0, bx-3);
+            //printf("PushC\n");
+            //PrintCStack();
         break;
 
         case 0x755A: // "C>"
-            bx = Read16(0x54b0); // CXSP
-            Write16(0x54b0, bx+3);
+        // 0x755a: add    word ptr [54B0],03 // CXSP
+        // 0x755f: mov    bx,[54B0] // CXSP
+        // 0x7563: push   word ptr [bx]
+        // 0x7565: xor    ax,ax
+        // 0x7567: mov    al,[bx+02]
+        // 0x756a: push   ax
+            //printf("PopC\n");
+            //PrintCStack();
+            bx = Read16(0x54b0)+3; // CXSP
+            Write16(0x54b0, bx);
             Push(Read16(bx));
             Push(Read8(bx+2));
         break;
@@ -1876,7 +2049,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x7577: // "CI"
             bx = Read16(0x54b0); // CXSP
             Push(Read16(bx+3));
-            Push(Read8(bx+5));
+            Push(Read16(bx+5)&0xFF);
         break;
 
         case 0x75d7: // "CDEPTH"
@@ -1888,7 +2061,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x4997: // "1.5@"
             bx = Pop();
             Push(Read16(bx));
-            Push(Read8(bx+2));
+            Push(Read16(bx+2)&0xFF);
         break;
 
         case 0x49ae: // "1.5!_2"
@@ -2085,42 +2258,20 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-
 // -----------------------------------
 
         case 0x6f49: // "VA>BLK"
         {
-            unsigned short ax = Pop();
-            dx = Pop();
-            bx = 0;
-            long long x = (((long long)ax) << 32) | ((long long)dx << 16);
-            //printf("%x %x 0x%llx %i\n", (int)ax, (int)dx, x, sizeof(x));
+            unsigned long long int ax = Pop();
+            unsigned long long int dx = Pop();
+            long long x = (ax << 32) | (dx << 16);
+            //printf("VA>BLK %04x %04x 0x%llx %i\n", (int)ax, (int)dx, x, (int)sizeof(x));
             x = x >> 0xA;
             Push((x&0xFFFF) >> 6);
             Push((x>>16)&0xFFFF);
             break;
         }
-// 0x6f49: pop    ax
-// 0x6f4a: pop    dx
-// 0x6f4b: mov    cx,000A
-// 0x6f4e: shr    ax,1
-// 0x6f50: rcr    dx,1
-// 0x6f52: rcr    bx,1
-// 0x6f54: loop   6F4E
-// 0x6f56: mov    cx,0006
-// 0x6f59: shr    bx,cl
-// 0x6f5b: push   bx
-// 0x6f5c: push   dx
 
-        case 0x11D8: // "U*"
-        {
-            unsigned short ax = Pop();
-            bx = Pop();
-            unsigned int x = (unsigned int)ax * (unsigned int)bx;
-            Push(x&0xFFFF);
-            Push((x>>16)&0xFFFF);
-            break;
-        }
         // ---- Special Forth interpreter functions ---
 
         case 0x1818: Find(); break; // "(FIND)" finds a word in the vocabulary
@@ -2135,18 +2286,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x1366: Push(Pop() ^ Pop()); break; // XOR
         case 0x0F74: Push(Pop() + Pop()); break; // "+"
         case 0x4bc5: Push((signed short)((char)Read8(Pop()))); break; // "+-@" sign extend
-        case 0x1355:  // "TOGGLE"
-        {
-            unsigned short ax = Pop();
-            bx = Pop();
-            Write8(bx, Read8(bx)^(ax&0xFF));
-        }
-        break;
-
-        case 0x0F94: // "-"
-            bx = Pop();
-            Push(Pop() - bx);
-        break;
+        case 0x0F94: bx = Pop(); Push(Pop() - bx); break; // "-"
         case 0x0FB5: Push(Pop() * Pop()); break; // *
         case 0x11C8: Push(-Pop()); break; // NEGATE
         case 0x1309: if (Pop() == 0) Push(1); else Push(0); break;// "NOT"
@@ -2158,8 +2298,15 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x1017: Push(Pop()+2); break; // "2+"
         case 0x1027: Push(Pop()-2); break; // "2-"
         case 0x4935: Push(Pop()>>4); break; // 16/
-        case 0x1037: Push(Pop()>>1); break; // "2/"
+        case 0x1037: Push(((signed short int)Pop())>>1); break; // "2/"
         case 0x4949: Push(Pop() << 4); break; // "16*"
+        case 0x1355:  // "TOGGLE"
+        {
+            unsigned short ax = Pop();
+            bx = Pop();
+            Write8(bx, Read8(bx)^(ax&0xFF));
+        }
+        break;
 
         // ----- memory operations -----
 
@@ -2223,8 +2370,8 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         break;
 
         // ------ standard stack operations ------
-        case 0x0E34: regsp += 2; break; // "DROP"
-        case 0x0DE0: regsp += 4; break; // "2DROP"
+        case 0x0E34: Pop(); break; // "DROP"
+        case 0x0DE0: Pop(); Pop(); break; // "2DROP"
         case 0x0E81: Push(Read16(regsp+2)); break; // "OVER"
         case 0x0E43: Push(Read16(regsp)); break; // "DUP"
         case 0x0DF2: bx = regsp; Push(Read16(bx+2)); Push(Read16(bx)); break; // "2DUP"
@@ -2283,11 +2430,11 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
         case 0x4892: break; // "CAPSON" Turn on caps
-
+/*
         case 0x6cd6: // TODO E>CGA
         // 0x6cd6: pop    dx
         // 0x6cd7: and    dx,0F
-        // 0x6cda: push   si
+        // 0x6cda: push   sisar
         // 0x6cdb: xor    ax,ax
         // 0x6cdd: push   ax
         // 0x6cde: mov    cx,0010
@@ -2314,7 +2461,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         // 0x6d02: mov    bx,ax
         // 0x6d04: jmp    word ptr [bx]
         break;
-
+*/
         case 0x910f: // TODO L@PIXEL
           //printf("L@PIXEL sp=0x%04x 0x%02x\n", regsp, Read8(0x910f));
           //printf("0x%04x\n", Read16(0x910f+1));
@@ -2327,13 +2474,37 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x4b17: // TODO EASY-BITS for SQRT
         {
+          // 0x4b17: pop    cx
+          // 0x4b18: pop    ax
+          // 0x4b19: pop    dx
+          // 0x4b1a: pop    bx
+          // 0x4b1b: shl    bx,1
+          // 0x4b1d: rcl    dx,1
+          // 0x4b1f: shl    bx,1
+          // 0x4b21: rcl    dx,1
+          // 0x4b23: sub    dx,ax
+          // 0x4b25: jns    4B2E
+
+          // 0x4b27: add    dx,ax
+          // 0x4b29: shl    ax,1
+          // 0x4b2b: dec    ax
+
+          // 0x4b2c: jmp    4B32
+          // 0x4b2e: inc    ax
+          // 0x4b2f: shl    ax,1
+          // 0x4b31: inc    ax
+
+          // 0x4b32: loop   4B1B
+          // 0x4b34: push   bx
+          // 0x4b35: push   dx
+          // 0x4b36: push   ax
           cx = Pop();
           unsigned short ax = Pop();
           dx = Pop();
           bx = Pop();
           do
           {
-            unsigned int x = (dx<<16) | bx;
+            unsigned int x = ((unsigned int)dx<<16) | bx;
             x <<= 2;
             dx = x >> 16;
             bx = x&0xFFFF;
@@ -2342,7 +2513,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             if (dx&0x8000)
             {
               dx += ax;
-              ax <<=1;
+              ax <<= 1;
               ax--;
             } else
             {
@@ -2379,7 +2550,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
-
         // ------- fract-ov operations -------
         case 0xe770: FRACT_FILLARRAY(); break;
         case 0xe537: FRACT_StoreHeight(); break;
@@ -2396,7 +2566,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
     return OK;
 }
 
-
 void LoadSTARFLT()
 {
     memset(mem, 0, 0x10000);
@@ -2410,6 +2579,11 @@ void LoadSTARFLT()
     fclose(fp);
 }
 
+void EnableDebug()
+{
+  debuglevel = 1;
+}
+
 enum RETURNCODE Step()
 {
     unsigned short ax = Read16(regsi); // si is the forth program counter
@@ -2417,12 +2591,14 @@ enum RETURNCODE Step()
     unsigned short bx = ax;
     unsigned short execaddr = Read16(bx);
     //if (regsi-2 == 0xea37) printf(" enter %s\n", FindWord(bx+2, -1));
-
-#ifdef DEBUG
-    printf("pc=0x%04x si=0x%04x word=0x%04x sp=0x%04x", execaddr, regsi-2, bx+2, regsp);
-    printf(" %s\n", FindWord(bx+2, -1));
-#endif
-    return Call(execaddr, bx);
+    if (debuglevel)
+    {
+      int ovidx = GetOverlayIndex(Read16(0x55a5));
+      printf("si=0x%04x exec=0x%04x word=0x%04x sp=0x%04x ov=%2i", regsi-2, execaddr, bx+2, regsp, ovidx);
+      printf(" %s\n", FindWord(bx+2, -1));
+    }
+    enum RETURNCODE ret = Call(execaddr, bx);
+    return ret;
 }
 
 void InitEmulator()
@@ -2438,10 +2614,10 @@ void EnableInterpreter()
     // Patch to start Forth interpreter
     Write16(0x0a53, 0x0000); // BOOT-HOOK
 
-    //Write16(0x2420, 0x0F22-2); // "0"
-
+    Write16(0x2420, 0x0F22-2); // "0"
+/*
     Write16(0x2420, 0x3a48-2); // "NOP"
     Write16(0x2422, 0x3a48-2); // "NOP"
     Write16(0x2424, 0x3a48-2); // "NOP"
-
+*/
 }

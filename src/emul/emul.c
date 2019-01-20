@@ -52,7 +52,6 @@ int main()
 
 #endif
 
-
 // Load Compound
 /*
 FillKeyboardBufferString("130 FILE# ! 40 RECORD# !\n");
@@ -82,6 +81,7 @@ Continue();
 FillKeyboardBufferString("4195 0 >C+S @INST-SPECIES\n");
 Continue();
 */
+
 
 
     /*

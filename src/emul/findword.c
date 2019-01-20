@@ -3,6 +3,7 @@
 #include<string.h>
 
 #include"cpu.h"
+#include"callstack.h"
 #include"../disasOV/global.h"
 
 #include"../../starflt1-out/data/dictionary.h"
@@ -99,5 +100,5 @@ char *FindDirectoryName(int idx)
         if (idx == dir[i].idx) return dir[i].name;
     } while(dir[++i].name != NULL);
     fprintf(stderr, "Error: Cannot find directory entry %i\n", idx);
-    exit(1);
+    return NULL;
 }

@@ -7,10 +7,9 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx);
 enum RETURNCODE Step();
 void InitEmulator();
 void EnableInterpreter();
+void EnableDebug();
 
 void FillKeyboardBufferString(char *str);
 void FillKeyboardBufferKey(unsigned short key);
 
 #endif
-
-
