@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -O2
 
-all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1
+all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1 extractdata1
 
 disasmX86.o: src/disasmX86/debugger.c
 	$(CC) $(CFLAGS) -c src/disasmX86/debugger.c -o disasmX86.o
@@ -65,6 +65,9 @@ graph1.o: src/disasOV/graph.c src/disasOV/graph.h
 
 graph2.o: src/disasOV/graph.c src/disasOV/graph.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/graph.c -o graph2.o
+
+extractdata1: src/extract/extractdata.c
+		$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractdata.c -o extractdata1
 
 disasOV1: src/disasOV/disasOV.c disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o
 	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV/disasOV.c -o disasOV1 disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o instance1.o graph1.o

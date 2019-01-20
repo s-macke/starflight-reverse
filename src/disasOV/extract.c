@@ -355,7 +355,7 @@ void ExtractCompounds(FILE *fp, int idx)
 
 void ExtractPlanets(FILE *fp, int idx)
 {
-    fprintf(fp, "typedef struct { int idx; int d1, surftype, mass, lseed, tseed, d8, min, d2, d3, d4, d5, d6, coldest, warmest, atmoactivity, atmodensity, d7; } PLANETENTRY;\n");
+    fprintf(fp, "typedef struct { int idx; int d1, surftype, mass, lseed, tseed, d8, min, d2, d3, element1, element2, element1, coldest, warmest, atmoactivity, atmodensity, d7; } PLANETENTRY;\n");
 
     fprintf(fp, "\nPLANETENTRY planets[]=\n{\n");
 
@@ -363,7 +363,7 @@ void ExtractPlanets(FILE *fp, int idx)
     for(int i=0; i<de->nblocks; i++)
     {
         unsigned char* buf = ExtractRecord(idx, i);
-        fprintf(fp, "  {.idx=%2i, .d1=%2i, .surftype=%2i, .mass=%4i, .lseed=%3i, .d8=%5i, .tseed=0x%04x, .d8=%3i, .min=%3i, .d2=%3i, .d3=%3i, .d4=%2i, .d5=%2i, .d6=%2i, .coldest=%2i, .warmest=%2i, .atmoactivity=%2i, .atmodensity=%2i, .d7=%2i},\n",
+        fprintf(fp, "  {.idx=%2i, .d1=%2i, .surftype=%2i, .mass=%4i, .lseed=%3i, .d8=%5i, .tseed=0x%04x, .d8=%3i, .min=%3i, .d2=%3i, .d3=%3i, .element1=%2i, .element2=%2i, .element3=%2i, .coldest=%2i, .warmest=%2i, .atmoactivity=%2i, .atmodensity=%2i, .d7=%2i},\n",
         i,
         buf[0x0],
         buf[0x1], // surftype
