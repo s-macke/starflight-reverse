@@ -11,6 +11,10 @@
 #include"data.h"
 #include"../../starflt1-out/data/starsystem.h"
 
+/*
+ ./extractplanetsdata1 | grep '===\|TYPE' | grep -v "(TYPE):  OK"
+*/
+
 void Continue()
 {
     while(1)
@@ -73,45 +77,62 @@ int main()
     FillKeyboardBufferString(str);
     Continue();
 
-    sprintf(str, "%i %i (ORBIT) 1.5!\n",
+    // 123 101 1 (ORBIT) 0x1dc1 0x6502
+    // 123 101 2 (ORBIT) 0x1dae 0x6502
+    // 123 101 3 (ORBIT) 0x1d9b 0x6502
+    // 123 101 4 (ORBIT) 0x1d88 0x6502
+    // 125 100 5 (ORBIT) 0x1d9b 0x6502
+    // 123 101 6 (ORBIT) 0x1d75 0x6502
+    // 123 101 7 (ORBIT) 0x1dd4 0x6502
+    // 123 101 8 (ORBIT) 0x1de7 0x6502
+
+    FillKeyboardBufferString("7541 25858 (ORBIT) 1.5!\n");
+
+    sprintf(str, "(ORBIT) @>C+S %i INST-QTY !_3 ICLOSE\n", planets[idx].orbit);
+    FillKeyboardBufferString(str);
+    Continue();
+/*
+    FillKeyboardBufferString("(ORBIT) @>C+S INST-QTY @ . ICLOSE\n");
+    Continue();
+*/
+/*
+    // random generator if (ORBIT)=0
+    FillKeyboardBufferString("PLSET-OV (PLANET) @>C+S WEC62\n");
+    Continue();
+*/
+
+    FillKeyboardBufferString("PLSET-OV\n");
+    Continue();
+
+    //if (idx == 235) EnableDebug();
+    FillKeyboardBufferString("PLAN-RUL\n");
+    Continue();
+    /*
+    FillKeyboardBufferString("SET-PLANET\n");
+    Continue();
+    */
+
+    printf("=== SCIENCE READING ===\n");
+    FillKeyboardBufferString("SCI-OV 32 .READINGS\n");
+    Continue();
+
+    sprintf(str, "%i %i SENSE-ADDR 1.5!\n",
       planets[idx].instanceoffset&0xFFFF, planets[idx].instanceoffset>>16
     );
     FillKeyboardBufferString(str);
     Continue();
-/*
-    FillKeyboardBufferString("(ORBIT) @>C+S INST-QTY . ICLOSE\n");
+
+    FillKeyboardBufferString("AN-OV\n");
     Continue();
-*/
-/*
-    FillKeyboardBufferString("PLSET-OV (PLANET) @>C+S WEC62\n");
+
+    // Patch science level
+    Write16(0xedc9, 0x0f30-2); // 1
+    Write16(0xedc9+2, 0x1692-2); // EXIT
+
+    printf("=== SENSOR READING ===\n");
+    FillKeyboardBufferString("32 (/ANALYSIS)\n");
     Continue();
-*/
-//    FillKeyboardBufferString("PLSET-OV\n");
-//    Continue();
-/*
-    FillKeyboardBufferString("PLAN-RUL\n");
-*/
-    FillKeyboardBufferString("SET-PLANET CCLR\n");
-    Continue();
-    //EnableDebug();
-/*
-    FillKeyboardBufferString("(PLANET) @>C+S\n");
-    Continue();
-    FillKeyboardBufferString("(SYSTEM) @>C+S\n");
-    Continue();
-    FillKeyboardBufferString("ICLOSE\n");
-    Continue();
-    FillKeyboardBufferString("ICLOSE\n");
-    Continue();
-*/
-/*
-    FillKeyboardBufferString("SCI-OV 32 .READINGS\n");
-    Continue();
-*/
-/*
-    FillKeyboardBufferString("ATMO @ .\nHYDRO @ .\n");
-    Continue();
-*/
+
     idx++;
   }
   return 0;
