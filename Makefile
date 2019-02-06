@@ -81,11 +81,11 @@ extractplanets1: src/extract/extractplanets.c src/emul/call.c src/emul/findword.
 extractplanetsdata1: src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
 	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanetsdata1
 
-extractinstance1: src/extract/instance.c
-	$(CC) $(CFLAGS) -DSTARFLT1 -c src/extract/instance.c -o extractinstance1
+extractinstance1: src/extract/instance.c extract1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/instance.c -o extractinstance1 extract1.o global1.o
 
-extractinstance2: src/extract/instance.c
-	$(CC) $(CFLAGS) -DSTARFLT2 -c src/extract/instance.c -o extractinstance2
+extractinstance2: src/extract/instance.c extract2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/extract/instance.c -o extractinstance2 extract2.o global1.o
 
 
 .PHONY: clean all

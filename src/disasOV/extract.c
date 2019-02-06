@@ -107,7 +107,7 @@ void LoadDir(FILE *fp)
     }
 
     fclose(file);
-
+    if (fp == NULL) return;
     //SortDirectory();
 
     fprintf(fp, "// =====================================\n");

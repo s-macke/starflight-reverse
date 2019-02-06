@@ -263,6 +263,9 @@ void ExtractInstance(const char* filenametxt, const char* filenameh)
 
 int main()
 {
+  printf("Load Directory\n");
+  LoadDir(NULL);
+  printf("Store instance into '%s' and '%s'\n", OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
   ExtractInstance(OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
   return 0;
 }
