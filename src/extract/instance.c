@@ -2,11 +2,8 @@
 #include<stdlib.h>
 #include<string.h>
 
-#include"global.h"
-#include"extract.h"
-
-#include"instance.h"
-
+#include"../disasOV/global.h"
+#include"../disasOV/extract.h"
 
 #ifdef STARFLT1
     unsigned char huffmantable[100] =
@@ -262,4 +259,10 @@ void ExtractInstance(const char* filenametxt, const char* filenameh)
     }
     printf("\n");
     */
+}
+
+int main()
+{
+  ExtractInstance(OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
+  return 0;
 }
