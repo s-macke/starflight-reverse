@@ -407,6 +407,26 @@ void ExtractColorMap(FILE *fp, int idx)
     fprintf(fp, "};\n\n");
 }
 
+void ExtractCreatures(FILE *fp, int idx)
+{
+    fprintf(fp, "\nchar creatures[][156]=\n{\n");
+
+    DIRENTRY *de = GetDirByIdx(idx);
+    for(int i=0; i<de->nblocks; i++)
+    {
+        unsigned char* buf = ExtractRecord(idx, i);
+        fprintf(fp, "  {");
+        for(int j=0; j<156; j++)
+        {
+            fprintf(fp, "0x%02x", buf[j]);
+            if (j != 155) fprintf(fp, ", ");
+        }
+        fprintf(fp, "},\n");
+    }
+    fprintf(fp, "};\n\n");
+}
+
+
 void ExtractEarthMap(FILE *fp, int idx)
 {
     fprintf(fp, "\nchar earthmap[]=\n{\n");
@@ -459,7 +479,6 @@ void ExtractDataFile(const char* filename)
     ExtractTextRecords(fp, 0x0e, "BANKTRANS", 1);
 
     //ExtractTextRecords(fp, 0x3a, "BUTTONS", 0);
-    //ExtractTextRecords(fp, 0x44, "CREATURE", 0);
 
     //ExtractTextRecords(fp, 0x1c, "ARTIFACT", 0);
     //ExtractTextRecords(fp, 0x10, "CREWMEMBER", 0);
@@ -470,6 +489,7 @@ void ExtractDataFile(const char* filename)
 #ifdef STARFLT1
     ExtractTextRecords(fp, 0x39, "ANALYZETEXT", 0);
     ExtractTextRecords(fp, 0x28, "SPECIMEN", 0);
+    ExtractTextRecords(fp, 0x2b, "BIODATA", 0);
     ExtractPlanets(fp, 0x20);
     ExtractColorMap(fp, 0x74);
     ExtractEarthMap(fp, 0x8a);
@@ -477,7 +497,10 @@ void ExtractDataFile(const char* filename)
     ExtractCompounds(fp, 0x82);
     ExtractElements(fp, 0x1a);
     ExtractTextRecords(fp, 0x39, "ANALYZE_TEXT", 0);
+    //ExtractCreatures(fp, 0x44);
+
     //ExtractTextRecords(fp, 0x45, "PHAZES", 0);
+
 #else
     //ExtractPlanets(fp, 0x20);
     //ExtractTextRecords(fp, 0x09, "STIS", 0);

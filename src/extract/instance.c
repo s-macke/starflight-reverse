@@ -186,6 +186,16 @@ void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
                 buf[a+0x11],
                 buf[a+0x12]);
         }
+/*
+        if (class == 0x44) // creatures lsize=17 for starflt1
+        {
+            fprintf(fp, "    species=%2i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i",
+              (int)buf[a+0xa], (int)buf[a+11], (int)buf[a+12], (int)buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17],
+              buf[a+18], buf[a+19], buf[a+20], buf[a+21], buf[a+22], buf[a+23], buf[a+24],
+              buf[a+25], buf[a+26], buf[a+27]
+            );
+        }
+        */
 #else
         if (class == 0x17) // starsystem lsize=9 for starflt2
         {

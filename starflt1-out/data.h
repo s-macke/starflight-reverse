@@ -280,6 +280,38 @@ char *SPECIMEN_STRINGS[] =
   "ANEMONE-LIKE...."
 };
 
+char *BIODATA_STRINGS[] =
+{
+  "                ",
+  "AMORPHOUS.......",
+  "IRREGULAR.......",
+  "SPHERICAL.......",
+  "RADIAL..........",
+  "BILATERAL.......",
+  "AMOEBOID........",
+  "TREE-LIKE.......",
+  "BALLOON-LIKE....",
+  "ANTELOPE-LIKE...",
+  "BIRD-LIKE.......",
+  "DINOSAUR-LIKE...",
+  "HUMANOID........",
+  "INSECTOID.......",
+  "PLANT-LIKE......",
+  "BEAR-LIKE.......",
+  "REPTILIAN.......",
+  "RODENT-LIKE.....",
+  "SLUG-LIKE.......",
+  "SNAIL-LIKE......",
+  "SNAKE-LIKE......",
+  "SPIDER-LIKE.....",
+  "TURTLE-LIKE.....",
+  "ROCK-LIKE.......",
+  "FUNGOID.........",
+  "EWOK-LIKE.......",
+  "STARFISH-LIKE...",
+  "ANEMONE-LIKE...."
+};
+
 typedef struct { int idx; int d1, surftype, mass, lseed, tseed, d8, min, d2, d3, element1, element2, element1, coldest, warmest, atmoactivity, atmodensity, d7; } PLANETENTRY;
 
 PLANETENTRY planets[]=
