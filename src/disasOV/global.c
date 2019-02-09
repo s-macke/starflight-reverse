@@ -835,6 +835,7 @@ WORDRENAME renamewords[] =
     {0x26, 0xdfd5, "planet"}, // Wdfd5
     {0x26, 0xdfd9, "creature"}, // Wdfd9
     {0x26, 0xe020, "whichguy"}, // We020
+
     {0x26, 0xe034, "reorg"}, // We034
     {0x26, 0xeb86, "art.desc"}, // Web86
     {0x26, 0xe05e, "werase"}, // We05e
@@ -994,6 +995,127 @@ WORDRENAME renamewords[] =
     {0x05, 0xeed2, "P-TSEED"}, // WEED2
     {0x05, 0xeeec, "P-SURF"}, // WEEEC
 
+    {0x11, 0xe4b6, "whichguy"}, // We4b6
+    {0x11, 0xe0da, "creature"}, // WE0DA
+    {0x11, 0xe0d6, "planet"}, // WE0D6
+
+    {0x11, 0xf162, "set-size"}, // WF162
+    {0x11, 0xebb3, "squish"}, // WEBB3
+    {0x11, 0xec3f, "anger"}, // WEC3F
+    {0x11, 0xec81, "durable"}, // WEC81
+    {0x11, 0xec8b, "stunable"}, // WEC8B
+    {0x11, 0xec95, "movers"}, // WEC95
+    {0x11, 0xef31, "set.icon"}, // WEF31
+    {0x11, 0xf0b0, "highness"}, // WF0B0
+    {0x11, 0xf14a, "smarts"}, // WF14A
+    {0x11, 0xf17a, "sculpts"}, // WF17A
+    {0x11, 0xf4cc, "similarity"}, // WF4CC
+    {0x11, 0xed37, "modify"}, // WED37
+    {0x11, 0xedaf, "colorant"}, // WEDAF
+    {0x11, 0xefdb, "paint"}, // WEFDB
+    {0x11, 0xf11e, "sizer"}, // WF11E
+    {0x11, 0xf1b6, "?plant"}, // WF1B6
+    {0x11, 0xf256, "?icky"}, // WF256
+    {0x11, 0xf384, "?something"}, // WF384
+    {0x11, 0xe2de, "atmo.density"}, // WE2DE
+    {0x11, 0xe2e6, "narrowest"}, // WE2E6
+    {0x11, 0xe2ee, "flattest"}, // WE2EE
+    {0x11, 0xe2c7, "%%"}, // WE2C7
+    {0x11, 0xe2bb, "slip!"}, // WE2BB
+    {0x11, 0xe2b3, "slipper"}, // WE2B3
+    {0x11, 0xe29d, "scale"}, // WE29D
+    {0x11, 0xe121, "lookup"}, // WE121
+    {0x11, 0xe0f4, "rput"}, // WE0F4
+    {0x11, 0xe100, "rget"}, // WE100
+    {0x11, 0xe10c, "iaddr-array"}, // WE10C
+    {0x11, 0xe285, "rand%"}, // WE285
+    {0x11, 0xe5fe, "retrieve"}, // WE5FE
+    {0x11, 0xebe7, "madness"}, // WEBE7
+    {0x11, 0xef99, "colorize"}, // WEF99
+    {0x11, 0xed63, "customize"}, // WED63
+    {0x11, 0xedef, "1image"}, // WEDEF
+    {0x11, 0xee1d, "2image"}, // WEE1D
+    {0x11, 0xee77, "3image"}, // WEE77
+    {0x11, 0xeeb1, "4image"}, // WEEB1
+    {0x11, 0xe27b, "coin"}, // WE27B
+    {0x11, 0xeb97, "?pure"}, // WEB97
+    {0x11, 0xe598, "result"}, // WE598
+    {0x11, 0xecf9, "(modify)"}, // WECF9
+    {0x11, 0xe0e6, "?2dup"}, // WE0E6
+    {0x11, 0xec57, "strength-rule"}, // WEC57
+    {0x11, 0xE5A6, "rollem"}, // WE5A6
+    {0x11, 0xE570, "CHANCE"}, // WE570
+    {0x11, 0xE4D8, "PROPS"}, // WE4D8
+    {0x11, 0xE4CA, "MAPS"}, // WE4CA
+    {0x11, 0xE291, "crandom"}, // WE291
+    {0x11, 0xE0DE, "difind"}, // WE0DE
+    {0x11, 0xF0FA, "(size)"}, // WF0FA
+
+    //{0xff, 0xD875, "does>"}, // WD875 //very strange word in LP-OV
+
+    // creature data
+    {0x11, 0xE2F6, "shape"}, // WE2F6
+    {0x11, 0xE2FE, "exterior"}, // WE2FE
+    {0x11, 0xE306, "size.index"}, // WE306
+    {0x11, 0xE316, "reddest"}, // WE316
+    {0x11, 0xE31E, "bluest"}, // WE31E
+    {0x11, 0xE326, "texture"}, // WE326
+    {0x11, 0xE3AE, "i.level"}, // WE3AE
+    {0x11, 0xE3BE, "proportion"}, // WE3BE
+    {0x11, 0xe30e, "niche"}, // WE30E
+    {0x11, 0xE346, "d#"}, // WE346
+    {0x11, 0xE33E, "d.append"}, // WE33E
+    {0x11, 0xE3DE, "d.struc"}, // WE3DE
+    {0x11, 0xE3E6, "d.propor"}, // WE3E6
+    {0x11, 0xE3EE, "d.size"}, // WE3FE
+    {0x11, 0xE3C6, "d.hue"}, // WE3C6
+    {0x11, 0xE3CE, "d.tint"}, // WE3CE
+    {0x11, 0xE3D6, "d.lumens"}, // WE3D6
+    {0x11, 0xE336, "w#"}, // WE336
+    {0x11, 0xE32E, "w.append"}, // WE32E
+    {0x11, 0xE40E, "w.struc"}, // WE40E
+    {0x11, 0xE416, "w.propor"}, // WE416
+    {0x11, 0xE41E, "w.size"}, // WE42E
+    {0x11, 0xE3F6, "w.hue"}, // WE3F6
+    {0x11, 0xE3FE, "w.tint"}, // WE3FE
+    {0x11, 0xE3F6, "w.lumens"}, // WE3F6
+    {0x11, 0xE356, "a#"}, // WE356
+    {0x11, 0xE34E, "a.append"}, // WE34E
+    {0x11, 0xE43E, "a.struc"}, // WE43E
+    {0x11, 0xE446, "a.propor"}, // WE446
+    {0x11, 0xE44E, "a.size"}, // WE45E
+    {0x11, 0xE426, "a.hue"}, // WE426
+    {0x11, 0xE42E, "a.tint"}, // WE42E
+    {0x11, 0xE436, "a.lumens"}, // WE436
+    {0x11, 0xE366, "g#"}, // WE366
+    {0x11, 0xE35E, "g.append"}, // WE35E
+    {0x11, 0xE46E, "g.struc"}, // WE47E
+    {0x11, 0xE476, "g.propor"}, // WE476
+    {0x11, 0xE47E, "g.size"}, // WE48E
+    {0x11, 0xE456, "g.hue"}, // WE456
+    {0x11, 0xE45E, "g.tint"}, // WE45E
+    {0x11, 0xE466, "g.lumens"}, // WE466
+    {0x11, 0xE36E, "g.mobility"}, // WE36E
+    {0x11, 0xe4a6, "resembles"}, // WE4A6
+    {0x11, 0xE4AE, "size"}, // WE4AE
+    {0x11, 0xE39E, "i.level"}, // WE39E
+    {0x11, 0xE49E, "icon"}, // WE49E
+    {0x11, 0xE486, "s.hue"}, // WE486
+    {0x11, 0xE48E, "s.tint"}, // WE48E
+    {0x11, 0xE496, "s.lumens"}, // WE496
+    {0x11, 0xE37E, "slowest"}, // WE37E
+    {0x11, 0xE386, "fastest"}, // WE386
+    {0x11, 0xE376, "a.mobility"}, // WE376
+    {0x11, 0xE3A6, "a.level"}, // WE3A6
+    {0x11, 0xE38E, "stun.effect"}, // WE38E
+    {0x11, 0xE396, "hit.points"}, // WE396
+    {0x11, 0xE3B6, "volume"}, // WE3B6
+/*
+    {0x11, 0xE37E, "orlo"}, // WE37E
+    {0x11, 0xE386, "orhi"}, // WE386
+    {0x11, 0xE3BE, "height"}, // WE3BE
+*/
+
     // named by me
     {0xff, 0xbc87, "HUFF_LSCAN_INIT"}, // Wbc87
     {0xff, 0xbca5, "HUFF_LSCAN_FINISH"}, // Wbca5
@@ -1005,6 +1127,9 @@ WORDRENAME renamewords[] =
     {0xff, 0xbba0, "HUFF_ACTIVE_POINTER_BYTE"}, // Wbba0
     {0xff, 0xbb9c, "HUFF_BT_POINTER"}, // Wbb9c
     {0xff, 0xbbb8, "HUFF_MOVE_ACTIVE_POINTER"}, // Wbbb8
+    {0x2b, 0xEC72, "ATMO.ACTIVITY"}, // WEC72
+    {0x2b, 0xEC7A, "ATMO.DENSITY"}, // WEC7A
+    {0x2b, 0xEC5A, "SURFTYPE"}, // WEC5A
     {0x0, 0x0, NULL}
 };
 
