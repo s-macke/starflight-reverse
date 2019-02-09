@@ -11,127 +11,127 @@
 // =================================
 // =========== Dictionary ==========
 // =================================
-//           WE0D6  codep:0x2214 wordp:0xe0d6 size:0x0002 C-string:'WE0D6'
-//           WE0DA  codep:0x2214 wordp:0xe0da size:0x0002 C-string:'WE0DA'
-//           WE0DE  codep:0x224c wordp:0xe0de size:0x0006 C-string:'WE0DE'
-//           WE0E6  codep:0x224c wordp:0xe0e6 size:0x000c C-string:'WE0E6'
-//           WE0F4  codep:0x224c wordp:0xe0f4 size:0x000a C-string:'WE0F4'
-//           WE100  codep:0x224c wordp:0xe100 size:0x000a C-string:'WE100'
-//           WE10C  codep:0x224c wordp:0xe10c size:0x0013 C-string:'WE10C'
-//           WE121  codep:0x224c wordp:0xe121 size:0x0071 C-string:'WE121'
+//          planet  codep:0x2214 wordp:0xe0d6 size:0x0002 C-string:'planet'
+//        creature  codep:0x2214 wordp:0xe0da size:0x0002 C-string:'creature'
+//          difind  codep:0x224c wordp:0xe0de size:0x0006 C-string:'difind'
+//           ?2dup  codep:0x224c wordp:0xe0e6 size:0x000c C-string:'Is2dup'
+//            rput  codep:0x224c wordp:0xe0f4 size:0x000a C-string:'rput'
+//            rget  codep:0x224c wordp:0xe100 size:0x000a C-string:'rget'
+//     iaddr-array  codep:0x224c wordp:0xe10c size:0x0013 C-string:'iaddr_dash_array'
+//          lookup  codep:0x224c wordp:0xe121 size:0x0071 C-string:'lookup'
 //           >SIZE  codep:0xe114 wordp:0xe19c size:0x001e C-string:'_gt_SIZE'
 //          >MOVER  codep:0xe114 wordp:0xe1c5 size:0x0021 C-string:'_gt_MOVER'
 //          ?COLOR  codep:0xe114 wordp:0xe1f1 size:0x0054 C-string:'IsCOLOR'
 //           >PROP  codep:0xe114 wordp:0xe24f size:0x002a C-string:'_gt_PROP'
-//           WE27B  codep:0x224c wordp:0xe27b size:0x0008 C-string:'WE27B'
-//           WE285  codep:0x224c wordp:0xe285 size:0x000a C-string:'WE285'
-//           WE291  codep:0x224c wordp:0xe291 size:0x000a C-string:'WE291'
-//           WE29D  codep:0x224c wordp:0xe29d size:0x0014 C-string:'WE29D'
-//           WE2B3  codep:0x224c wordp:0xe2b3 size:0x0006 C-string:'WE2B3'
-//           WE2BB  codep:0x224c wordp:0xe2bb size:0x000a C-string:'WE2BB'
-//           WE2C7  codep:0x224c wordp:0xe2c7 size:0x0015 C-string:'WE2C7'
-//           WE2DE  codep:0x73ea wordp:0xe2de size:0x0006 C-string:'WE2DE'
-//           WE2E6  codep:0x73ea wordp:0xe2e6 size:0x0006 C-string:'WE2E6'
-//           WE2EE  codep:0x73ea wordp:0xe2ee size:0x0006 C-string:'WE2EE'
-//           WE2F6  codep:0x73ea wordp:0xe2f6 size:0x0006 C-string:'WE2F6'
-//           WE2FE  codep:0x73ea wordp:0xe2fe size:0x0006 C-string:'WE2FE'
-//           WE306  codep:0x73ea wordp:0xe306 size:0x0006 C-string:'WE306'
-//           WE30E  codep:0x73ea wordp:0xe30e size:0x0006 C-string:'WE30E'
-//           WE316  codep:0x73ea wordp:0xe316 size:0x0006 C-string:'WE316'
-//           WE31E  codep:0x73ea wordp:0xe31e size:0x0006 C-string:'WE31E'
-//           WE326  codep:0x73ea wordp:0xe326 size:0x0006 C-string:'WE326'
-//           WE32E  codep:0x73ea wordp:0xe32e size:0x0006 C-string:'WE32E'
-//           WE336  codep:0x73ea wordp:0xe336 size:0x0006 C-string:'WE336'
-//           WE33E  codep:0x73ea wordp:0xe33e size:0x0006 C-string:'WE33E'
-//           WE346  codep:0x73ea wordp:0xe346 size:0x0006 C-string:'WE346'
-//           WE34E  codep:0x73ea wordp:0xe34e size:0x0006 C-string:'WE34E'
-//           WE356  codep:0x73ea wordp:0xe356 size:0x0006 C-string:'WE356'
-//           WE35E  codep:0x73ea wordp:0xe35e size:0x0006 C-string:'WE35E'
-//           WE366  codep:0x73ea wordp:0xe366 size:0x0006 C-string:'WE366'
-//           WE36E  codep:0x73ea wordp:0xe36e size:0x0006 C-string:'WE36E'
-//           WE376  codep:0x73ea wordp:0xe376 size:0x0006 C-string:'WE376'
-//           WE37E  codep:0x73ea wordp:0xe37e size:0x0006 C-string:'WE37E'
-//           WE386  codep:0x73ea wordp:0xe386 size:0x0006 C-string:'WE386'
-//           WE38E  codep:0x73ea wordp:0xe38e size:0x0006 C-string:'WE38E'
-//           WE396  codep:0x73ea wordp:0xe396 size:0x0006 C-string:'WE396'
-//           WE39E  codep:0x73ea wordp:0xe39e size:0x0006 C-string:'WE39E'
-//           WE3A6  codep:0x73ea wordp:0xe3a6 size:0x0006 C-string:'WE3A6'
-//           WE3AE  codep:0x73ea wordp:0xe3ae size:0x0006 C-string:'WE3AE'
-//           WE3B6  codep:0x73ea wordp:0xe3b6 size:0x0006 C-string:'WE3B6'
-//           WE3BE  codep:0x73ea wordp:0xe3be size:0x0006 C-string:'WE3BE'
-//           WE3C6  codep:0x73ea wordp:0xe3c6 size:0x0006 C-string:'WE3C6'
-//           WE3CE  codep:0x73ea wordp:0xe3ce size:0x0006 C-string:'WE3CE'
-//           WE3D6  codep:0x73ea wordp:0xe3d6 size:0x0006 C-string:'WE3D6'
-//           WE3DE  codep:0x73ea wordp:0xe3de size:0x0006 C-string:'WE3DE'
-//           WE3E6  codep:0x73ea wordp:0xe3e6 size:0x0006 C-string:'WE3E6'
-//           WE3EE  codep:0x73ea wordp:0xe3ee size:0x0006 C-string:'WE3EE'
-//           WE3F6  codep:0x73ea wordp:0xe3f6 size:0x0006 C-string:'WE3F6'
-//           WE3FE  codep:0x73ea wordp:0xe3fe size:0x0006 C-string:'WE3FE'
+//            coin  codep:0x224c wordp:0xe27b size:0x0008 C-string:'coin'
+//           rand%  codep:0x224c wordp:0xe285 size:0x000a C-string:'rand_pe_'
+//         crandom  codep:0x224c wordp:0xe291 size:0x000a C-string:'crandom'
+//           scale  codep:0x224c wordp:0xe29d size:0x0014 C-string:'scale'
+//         slipper  codep:0x224c wordp:0xe2b3 size:0x0006 C-string:'slipper'
+//           slip!  codep:0x224c wordp:0xe2bb size:0x000a C-string:'slip_ex_'
+//              %%  codep:0x224c wordp:0xe2c7 size:0x0015 C-string:'_pe__pe_'
+//    atmo.density  codep:0x73ea wordp:0xe2de size:0x0006 C-string:'atmo_dot_density'
+//       narrowest  codep:0x73ea wordp:0xe2e6 size:0x0006 C-string:'narrowest'
+//        flattest  codep:0x73ea wordp:0xe2ee size:0x0006 C-string:'flattest'
+//           shape  codep:0x73ea wordp:0xe2f6 size:0x0006 C-string:'shape'
+//        exterior  codep:0x73ea wordp:0xe2fe size:0x0006 C-string:'exterior'
+//      size.index  codep:0x73ea wordp:0xe306 size:0x0006 C-string:'size_dot_index'
+//           niche  codep:0x73ea wordp:0xe30e size:0x0006 C-string:'niche'
+//         reddest  codep:0x73ea wordp:0xe316 size:0x0006 C-string:'reddest'
+//          bluest  codep:0x73ea wordp:0xe31e size:0x0006 C-string:'bluest'
+//         texture  codep:0x73ea wordp:0xe326 size:0x0006 C-string:'texture'
+//        w.append  codep:0x73ea wordp:0xe32e size:0x0006 C-string:'w_dot_append'
+//              w#  codep:0x73ea wordp:0xe336 size:0x0006 C-string:'w_n_'
+//        d.append  codep:0x73ea wordp:0xe33e size:0x0006 C-string:'d_dot_append'
+//              d#  codep:0x73ea wordp:0xe346 size:0x0006 C-string:'d_n_'
+//        a.append  codep:0x73ea wordp:0xe34e size:0x0006 C-string:'a_dot_append'
+//              a#  codep:0x73ea wordp:0xe356 size:0x0006 C-string:'a_n_'
+//        g.append  codep:0x73ea wordp:0xe35e size:0x0006 C-string:'g_dot_append'
+//              g#  codep:0x73ea wordp:0xe366 size:0x0006 C-string:'g_n_'
+//      g.mobility  codep:0x73ea wordp:0xe36e size:0x0006 C-string:'g_dot_mobility'
+//      a.mobility  codep:0x73ea wordp:0xe376 size:0x0006 C-string:'a_dot_mobility'
+//         slowest  codep:0x73ea wordp:0xe37e size:0x0006 C-string:'slowest'
+//         fastest  codep:0x73ea wordp:0xe386 size:0x0006 C-string:'fastest'
+//     stun.effect  codep:0x73ea wordp:0xe38e size:0x0006 C-string:'stun_dot_effect'
+//      hit.points  codep:0x73ea wordp:0xe396 size:0x0006 C-string:'hit_dot_points'
+//         i.level  codep:0x73ea wordp:0xe39e size:0x0006 C-string:'i_dot_level'
+//         a.level  codep:0x73ea wordp:0xe3a6 size:0x0006 C-string:'a_dot_level'
+//         i.level  codep:0x73ea wordp:0xe3ae size:0x0006 C-string:'i_dot_level'
+//          volume  codep:0x73ea wordp:0xe3b6 size:0x0006 C-string:'volume'
+//      proportion  codep:0x73ea wordp:0xe3be size:0x0006 C-string:'proportion'
+//           d.hue  codep:0x73ea wordp:0xe3c6 size:0x0006 C-string:'d_dot_hue'
+//          d.tint  codep:0x73ea wordp:0xe3ce size:0x0006 C-string:'d_dot_tint'
+//        d.lumens  codep:0x73ea wordp:0xe3d6 size:0x0006 C-string:'d_dot_lumens'
+//         d.struc  codep:0x73ea wordp:0xe3de size:0x0006 C-string:'d_dot_struc'
+//        d.propor  codep:0x73ea wordp:0xe3e6 size:0x0006 C-string:'d_dot_propor'
+//          d.size  codep:0x73ea wordp:0xe3ee size:0x0006 C-string:'d_dot_size'
+//           w.hue  codep:0x73ea wordp:0xe3f6 size:0x0006 C-string:'w_dot_hue'
+//          w.tint  codep:0x73ea wordp:0xe3fe size:0x0006 C-string:'w_dot_tint'
 //           WE406  codep:0x73ea wordp:0xe406 size:0x0006 C-string:'WE406'
-//           WE40E  codep:0x73ea wordp:0xe40e size:0x0006 C-string:'WE40E'
-//           WE416  codep:0x73ea wordp:0xe416 size:0x0006 C-string:'WE416'
-//           WE41E  codep:0x73ea wordp:0xe41e size:0x0006 C-string:'WE41E'
-//           WE426  codep:0x73ea wordp:0xe426 size:0x0006 C-string:'WE426'
-//           WE42E  codep:0x73ea wordp:0xe42e size:0x0006 C-string:'WE42E'
-//           WE436  codep:0x73ea wordp:0xe436 size:0x0006 C-string:'WE436'
-//           WE43E  codep:0x73ea wordp:0xe43e size:0x0006 C-string:'WE43E'
-//           WE446  codep:0x73ea wordp:0xe446 size:0x0006 C-string:'WE446'
-//           WE44E  codep:0x73ea wordp:0xe44e size:0x0006 C-string:'WE44E'
-//           WE456  codep:0x73ea wordp:0xe456 size:0x0006 C-string:'WE456'
-//           WE45E  codep:0x73ea wordp:0xe45e size:0x0006 C-string:'WE45E'
-//           WE466  codep:0x73ea wordp:0xe466 size:0x0006 C-string:'WE466'
-//           WE46E  codep:0x73ea wordp:0xe46e size:0x0006 C-string:'WE46E'
-//           WE476  codep:0x73ea wordp:0xe476 size:0x0006 C-string:'WE476'
-//           WE47E  codep:0x73ea wordp:0xe47e size:0x0006 C-string:'WE47E'
-//           WE486  codep:0x73ea wordp:0xe486 size:0x0006 C-string:'WE486'
-//           WE48E  codep:0x73ea wordp:0xe48e size:0x0006 C-string:'WE48E'
-//           WE496  codep:0x73ea wordp:0xe496 size:0x0006 C-string:'WE496'
-//           WE49E  codep:0x73ea wordp:0xe49e size:0x0006 C-string:'WE49E'
-//           WE4A6  codep:0x73ea wordp:0xe4a6 size:0x0006 C-string:'WE4A6'
-//           WE4AE  codep:0x73ea wordp:0xe4ae size:0x0006 C-string:'WE4AE'
-//           WE4B6  codep:0x224c wordp:0xe4b6 size:0x0012 C-string:'WE4B6'
-//           WE4CA  codep:0x224c wordp:0xe4ca size:0x000c C-string:'WE4CA'
-//           WE4D8  codep:0x224c wordp:0xe4d8 size:0x0096 C-string:'WE4D8'
-//           WE570  codep:0x224c wordp:0xe570 size:0x0026 C-string:'WE570'
-//           WE598  codep:0x224c wordp:0xe598 size:0x000c C-string:'WE598'
-//           WE5A6  codep:0x224c wordp:0xe5a6 size:0x0056 C-string:'WE5A6'
-//           WE5FE  codep:0x224c wordp:0xe5fe size:0x001a C-string:'WE5FE'
+//         w.struc  codep:0x73ea wordp:0xe40e size:0x0006 C-string:'w_dot_struc'
+//        w.propor  codep:0x73ea wordp:0xe416 size:0x0006 C-string:'w_dot_propor'
+//          w.size  codep:0x73ea wordp:0xe41e size:0x0006 C-string:'w_dot_size'
+//           a.hue  codep:0x73ea wordp:0xe426 size:0x0006 C-string:'a_dot_hue'
+//          a.tint  codep:0x73ea wordp:0xe42e size:0x0006 C-string:'a_dot_tint'
+//        a.lumens  codep:0x73ea wordp:0xe436 size:0x0006 C-string:'a_dot_lumens'
+//         a.struc  codep:0x73ea wordp:0xe43e size:0x0006 C-string:'a_dot_struc'
+//        a.propor  codep:0x73ea wordp:0xe446 size:0x0006 C-string:'a_dot_propor'
+//          a.size  codep:0x73ea wordp:0xe44e size:0x0006 C-string:'a_dot_size'
+//           g.hue  codep:0x73ea wordp:0xe456 size:0x0006 C-string:'g_dot_hue'
+//          g.tint  codep:0x73ea wordp:0xe45e size:0x0006 C-string:'g_dot_tint'
+//        g.lumens  codep:0x73ea wordp:0xe466 size:0x0006 C-string:'g_dot_lumens'
+//         g.struc  codep:0x73ea wordp:0xe46e size:0x0006 C-string:'g_dot_struc'
+//        g.propor  codep:0x73ea wordp:0xe476 size:0x0006 C-string:'g_dot_propor'
+//          g.size  codep:0x73ea wordp:0xe47e size:0x0006 C-string:'g_dot_size'
+//           s.hue  codep:0x73ea wordp:0xe486 size:0x0006 C-string:'s_dot_hue'
+//          s.tint  codep:0x73ea wordp:0xe48e size:0x0006 C-string:'s_dot_tint'
+//        s.lumens  codep:0x73ea wordp:0xe496 size:0x0006 C-string:'s_dot_lumens'
+//            icon  codep:0x73ea wordp:0xe49e size:0x0006 C-string:'icon'
+//       resembles  codep:0x73ea wordp:0xe4a6 size:0x0006 C-string:'resembles'
+//            size  codep:0x73ea wordp:0xe4ae size:0x0006 C-string:'size'
+//        whichguy  codep:0x224c wordp:0xe4b6 size:0x0012 C-string:'whichguy'
+//            MAPS  codep:0x224c wordp:0xe4ca size:0x000c C-string:'MAPS'
+//           PROPS  codep:0x224c wordp:0xe4d8 size:0x0096 C-string:'PROPS'
+//          CHANCE  codep:0x224c wordp:0xe570 size:0x0026 C-string:'CHANCE'
+//          result  codep:0x224c wordp:0xe598 size:0x000c C-string:'result'
+//          rollem  codep:0x224c wordp:0xe5a6 size:0x0056 C-string:'rollem'
+//        retrieve  codep:0x224c wordp:0xe5fe size:0x001a C-string:'retrieve'
 //       ADDITIONS  codep:0x1d29 wordp:0xe626 size:0x0532 C-string:'ADDITIONS'
 //          LIGHTS  codep:0xe4f0 wordp:0xeb63 size:0x0032 C-string:'LIGHTS'
-//           WEB97  codep:0x224c wordp:0xeb97 size:0x001a C-string:'WEB97'
-//           WEBB3  codep:0x224c wordp:0xebb3 size:0x0032 C-string:'WEBB3'
-//           WEBE7  codep:0x224c wordp:0xebe7 size:0x0056 C-string:'WEBE7'
-//           WEC3F  codep:0x224c wordp:0xec3f size:0x0016 C-string:'WEC3F'
-//           WEC57  codep:0x224c wordp:0xec57 size:0x0028 C-string:'WEC57'
-//           WEC81  codep:0x224c wordp:0xec81 size:0x0008 C-string:'WEC81'
-//           WEC8B  codep:0x224c wordp:0xec8b size:0x0008 C-string:'WEC8B'
-//           WEC95  codep:0x224c wordp:0xec95 size:0x0062 C-string:'WEC95'
-//           WECF9  codep:0x224c wordp:0xecf9 size:0x003c C-string:'WECF9'
-//           WED37  codep:0x224c wordp:0xed37 size:0x002a C-string:'WED37'
-//           WED63  codep:0x224c wordp:0xed63 size:0x004a C-string:'WED63'
-//           WEDAF  codep:0x224c wordp:0xedaf size:0x003e C-string:'WEDAF'
-//           WEDEF  codep:0x224c wordp:0xedef size:0x002c C-string:'WEDEF'
-//           WEE1D  codep:0x224c wordp:0xee1d size:0x0016 C-string:'WEE1D'
+//           ?pure  codep:0x224c wordp:0xeb97 size:0x001a C-string:'Ispure'
+//          squish  codep:0x224c wordp:0xebb3 size:0x0032 C-string:'squish'
+//         madness  codep:0x224c wordp:0xebe7 size:0x0056 C-string:'madness'
+//           anger  codep:0x224c wordp:0xec3f size:0x0016 C-string:'anger'
+//   strength-rule  codep:0x224c wordp:0xec57 size:0x0028 C-string:'strength_dash_rule'
+//         durable  codep:0x224c wordp:0xec81 size:0x0008 C-string:'durable'
+//        stunable  codep:0x224c wordp:0xec8b size:0x0008 C-string:'stunable'
+//          movers  codep:0x224c wordp:0xec95 size:0x0062 C-string:'movers'
+//        (modify)  codep:0x224c wordp:0xecf9 size:0x003c C-string:'_ro_modify_rc_'
+//          modify  codep:0x224c wordp:0xed37 size:0x002a C-string:'modify'
+//       customize  codep:0x224c wordp:0xed63 size:0x004a C-string:'customize'
+//        colorant  codep:0x224c wordp:0xedaf size:0x003e C-string:'colorant'
+//          1image  codep:0x224c wordp:0xedef size:0x002c C-string:'_1image'
+//          2image  codep:0x224c wordp:0xee1d size:0x0016 C-string:'_2image'
 //       PLANT.ICO  codep:0xe4f0 wordp:0xee41 size:0x0034 C-string:'PLANT_dot_ICO'
-//           WEE77  codep:0x224c wordp:0xee77 size:0x0038 C-string:'WEE77'
-//           WEEB1  codep:0x224c wordp:0xeeb1 size:0x007e C-string:'WEEB1'
-//           WEF31  codep:0x224c wordp:0xef31 size:0x0066 C-string:'WEF31'
-//           WEF99  codep:0x224c wordp:0xef99 size:0x0040 C-string:'WEF99'
-//           WEFDB  codep:0x224c wordp:0xefdb size:0x004a C-string:'WEFDB'
+//          3image  codep:0x224c wordp:0xee77 size:0x0038 C-string:'_3image'
+//          4image  codep:0x224c wordp:0xeeb1 size:0x007e C-string:'_4image'
+//        set.icon  codep:0x224c wordp:0xef31 size:0x0066 C-string:'set_dot_icon'
+//        colorize  codep:0x224c wordp:0xef99 size:0x0040 C-string:'colorize'
+//           paint  codep:0x224c wordp:0xefdb size:0x004a C-string:'paint'
 //         TALLEST  codep:0xe2cf wordp:0xf031 size:0x0016 C-string:'TALLEST'
 //        SHORTEST  codep:0xe2cf wordp:0xf054 size:0x0016 C-string:'SHORTEST'
 //         STALKER  codep:0xe2cf wordp:0xf076 size:0x0016 C-string:'STALKER'
 //         LOSTALK  codep:0xe2cf wordp:0xf098 size:0x0016 C-string:'LOSTALK'
-//           WF0B0  codep:0x224c wordp:0xf0b0 size:0x0048 C-string:'WF0B0'
-//           WF0FA  codep:0x224c wordp:0xf0fa size:0x0022 C-string:'WF0FA'
-//           WF11E  codep:0x224c wordp:0xf11e size:0x002a C-string:'WF11E'
-//           WF14A  codep:0x224c wordp:0xf14a size:0x0016 C-string:'WF14A'
-//           WF162  codep:0x224c wordp:0xf162 size:0x0016 C-string:'WF162'
-//           WF17A  codep:0x224c wordp:0xf17a size:0x003a C-string:'WF17A'
-//           WF1B6  codep:0x224c wordp:0xf1b6 size:0x009e C-string:'WF1B6'
-//           WF256  codep:0x224c wordp:0xf256 size:0x012c C-string:'WF256'
-//           WF384  codep:0x224c wordp:0xf384 size:0x0146 C-string:'WF384'
-//           WF4CC  codep:0x224c wordp:0xf4cc size:0x0024 C-string:'WF4CC'
+//        highness  codep:0x224c wordp:0xf0b0 size:0x0048 C-string:'highness'
+//          (size)  codep:0x224c wordp:0xf0fa size:0x0022 C-string:'_ro_size_rc_'
+//           sizer  codep:0x224c wordp:0xf11e size:0x002a C-string:'sizer'
+//          smarts  codep:0x224c wordp:0xf14a size:0x0016 C-string:'smarts'
+//        set-size  codep:0x224c wordp:0xf162 size:0x0016 C-string:'set_dash_size'
+//         sculpts  codep:0x224c wordp:0xf17a size:0x003a C-string:'sculpts'
+//          ?plant  codep:0x224c wordp:0xf1b6 size:0x009e C-string:'Isplant'
+//           ?icky  codep:0x224c wordp:0xf256 size:0x012c C-string:'Isicky'
+//      ?something  codep:0x224c wordp:0xf384 size:0x0146 C-string:'Issomething'
+//      similarity  codep:0x224c wordp:0xf4cc size:0x0024 C-string:'similarity'
 //       SPEC.PARM  codep:0x224c wordp:0xf4fe size:0x0000 C-string:'SPEC_dot_PARM'
 
 // =================================
@@ -204,29 +204,29 @@ const unsigned short int pp_ADDITIONS = 0xe626; // ADDITIONS size: 1330
 // {0x9c, 0x00, 0x01, 0x00, 0x17, 0xcd, 0xc4, 0xe6, 0x01, 0x00, 0x62, 0xcd, 0xe4, 0xe6, 0x01, 0x00, 0xba, 0xcb, 0x08, 0xe7, 0x01, 0x00, 0xcb, 0xcb, 0x54, 0xe7, 0x01, 0x00, 0x8b, 0xcd, 0x84, 0xe7, 0x01, 0x00, 0xe9, 0xde, 0xa4, 0xe7, 0x01, 0x00, 0xa9, 0xcb, 0xd4, 0xe7, 0x01, 0x00, 0x87, 0xcb, 0x14, 0xe8, 0x01, 0x00, 0x52, 0xde, 0x3c, 0xe8, 0x01, 0x00, 0x18, 0xde, 0x5c, 0xe8, 0x01, 0x00, 0x48, 0xdf, 0x7c, 0xe8, 0x01, 0x00, 0xfe, 0xde, 0xa8, 0xe8, 0x01, 0x00, 0x98, 0xcb, 0xe0, 0xe8, 0x01, 0x00, 0x21, 0xdf, 0x08, 0xe9, 0x01, 0x00, 0xb0, 0xcc, 0x2c, 0xe9, 0x01, 0x00, 0x59, 0xdf, 0x4c, 0xe9, 0x01, 0x00, 0xe1, 0xcb, 0x98, 0xe9, 0x01, 0x00, 0x10, 0xcc, 0x98, 0xe9, 0x01, 0x00, 0x6b, 0xdf, 0xcc, 0xe9, 0x01, 0x00, 0x00, 0xcc, 0xec, 0xe9, 0x01, 0x00, 0x07, 0xcd, 0x10, 0xea, 0x01, 0x00, 0x77, 0xde, 0x2c, 0xea, 0x01, 0x00, 0x8b, 0xde, 0x6c, 0xea, 0x01, 0x00, 0xc4, 0xde, 0xa4, 0xea, 0x01, 0x00, 0xc2, 0xdf, 0x24, 0xeb, 0x01, 0x00, 0x27, 0xcd, 0x44, 0xeb, 0x0a, 0x2d, 0xd5, 0x01, 0x14, 0x0b, 0xda, 0x01, 0x1d, 0x98, 0xd9, 0x01, 0x26, 0xb2, 0xd9, 0x01, 0x30, 0xc6, 0xd9, 0x01, 0x39, 0xdb, 0xd9, 0x01, 0x43, 0xf8, 0xd9, 0x01, 0x64, 0x1c, 0xda, 0x01, 0x09, 0x2c, 0xd9, 0x01, 0x12, 0x01, 0xd5, 0x01, 0x1b, 0x2e, 0xda, 0x01, 0x23, 0x5a, 0xd9, 0x01, 0x2c, 0x6e, 0xd9, 0x01, 0x35, 0x81, 0xd9, 0x01, 0x3d, 0x5a, 0xd5, 0x01, 0x46, 0xc6, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x05, 0x65, 0xd8, 0x01, 0x09, 0x75, 0xd8, 0x01, 0x0d, 0x8b, 0xd8, 0x01, 0x11, 0xc0, 0xd4, 0x01, 0x15, 0xa1, 0xd8, 0x01, 0x19, 0x18, 0xd4, 0x01, 0x1d, 0xb4, 0xd8, 0x01, 0x21, 0xdd, 0xd8, 0x01, 0x24, 0xf2, 0xd8, 0x01, 0x27, 0xd5, 0xd4, 0x01, 0x2a, 0x05, 0xd9, 0x01, 0x2d, 0x1a, 0xd9, 0x01, 0x30, 0x2f, 0xd4, 0x01, 0x33, 0x81, 0xd9, 0x01, 0x36, 0xb2, 0xd9, 0x01, 0x39, 0xc6, 0xd9, 0x01, 0x3d, 0xc7, 0xd8, 0x01, 0x41, 0xdb, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x07, 0xc6, 0xd3, 0x01, 0x0e, 0x28, 0xd8, 0x01, 0x15, 0xe0, 0xd3, 0x01, 0x1b, 0x00, 0xd4, 0x01, 0x21, 0x51, 0xd8, 0x01, 0x28, 0x1a, 0xd9, 0x01, 0x2f, 0x2f, 0xd4, 0x01, 0x35, 0x6e, 0xd9, 0x01, 0x3b, 0x81, 0xd9, 0x01, 0x42, 0x05, 0xd9, 0x01, 0x49, 0x3d, 0xd8, 0x01, 0x64, 0xd5, 0xd4, 0x01, 0x0a, 0x5a, 0xd9, 0x01, 0x14, 0x6e, 0xd9, 0x01, 0x1d, 0x98, 0xd9, 0x01, 0x26, 0xb2, 0xd9, 0x01, 0x30, 0x5a, 0xd5, 0x01, 0x39, 0xc6, 0xd9, 0x01, 0x43, 0xdb, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x07, 0xe9, 0xd7, 0x01, 0x0e, 0x96, 0xd3, 0x01, 0x15, 0x00, 0xd8, 0x01, 0x1b, 0x14, 0xd8, 0x01, 0x21, 0xdd, 0xd8, 0x01, 0x28, 0xf2, 0xd8, 0x01, 0x2f, 0x1a, 0xd9, 0x01, 0x35, 0x2f, 0xd4, 0x01, 0x3b, 0x5a, 0xd9, 0x01, 0x42, 0xf8, 0xd9, 0x01, 0x49, 0xaf, 0xd3, 0x01, 0x64, 0x6e, 0xd9, 0x01, 0x06, 0x59, 0xd7, 0x01, 0x0a, 0x73, 0xd7, 0x01, 0x0e, 0x86, 0xd7, 0x01, 0x13, 0x98, 0xd7, 0x01, 0x17, 0xac, 0xd7, 0x01, 0x1b, 0xbf, 0xd7, 0x01, 0x20, 0xd7, 0xd7, 0x01, 0x24, 0x00, 0xd8, 0x01, 0x28, 0x14, 0xd8, 0x01, 0x2d, 0xc7, 0xd8, 0x01, 0x31, 0x7c, 0xd3, 0x01, 0x35, 0xdd, 0xd8, 0x01, 0x3a, 0xf2, 0xd8, 0x01, 0x3f, 0x2f, 0xd4, 0x01, 0x43, 0x5a, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x09, 0x86, 0xd7, 0x01, 0x10, 0x98, 0xd7, 0x01, 0x18, 0xac, 0xd7, 0x01, 0x1f, 0xbf, 0xd7, 0x01, 0x27, 0xd7, 0xd7, 0x01, 0x2e, 0x14, 0xd8, 0x01, 0x36, 0xf2, 0xd8, 0x01, 0x3d, 0x5a, 0xd9, 0x01, 0x45, 0xdb, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x0a, 0xac, 0xd7, 0x01, 0x14, 0xbf, 0xd7, 0x01, 0x1d, 0xd7, 0xd7, 0x01, 0x26, 0x14, 0xd8, 0x01, 0x30, 0xb4, 0xd8, 0x01, 0x39, 0xb2, 0xd9, 0x01, 0x43, 0xc6, 0xd9, 0x01, 0x64, 0xdb, 0xd9, 0x01, 0x0a, 0x2f, 0xd7, 0x01, 0x14, 0xeb, 0xd4, 0x01, 0x1d, 0xa9, 0xd4, 0x01, 0x26, 0x7c, 0xd3, 0x01, 0x30, 0xbf, 0xd7, 0x01, 0x39, 0xd7, 0xd7, 0x01, 0x43, 0x14, 0xd8, 0x01, 0x64, 0x92, 0xd4, 0x01, 0x08, 0x73, 0xd7, 0x01, 0x0f, 0x14, 0xd8, 0x01, 0x15, 0x18, 0xd4, 0x01, 0x1b, 0xdd, 0xd8, 0x01, 0x21, 0xf2, 0xd8, 0x01, 0x28, 0x05, 0xd9, 0x01, 0x2f, 0x01, 0xd5, 0x01, 0x35, 0x43, 0xd9, 0x01, 0x3b, 0x6e, 0xd9, 0x01, 0x41, 0xc6, 0xd9, 0x01, 0x64, 0xdb, 0xd9, 0x01, 0x06, 0xf3, 0xd6, 0x01, 0x0c, 0x07, 0xd7, 0x01, 0x11, 0x32, 0xd3, 0x01, 0x16, 0x4a, 0xd3, 0x01, 0x1c, 0x62, 0xd3, 0x01, 0x21, 0x14, 0xd8, 0x01, 0x26, 0xa1, 0xd8, 0x01, 0x2c, 0x18, 0xd4, 0x01, 0x31, 0xb4, 0xd8, 0x01, 0x37, 0xd5, 0xd4, 0x01, 0x3d, 0x05, 0xd9, 0x01, 0x42, 0x43, 0xd9, 0x01, 0x48, 0x5a, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x09, 0xdc, 0xd6, 0x01, 0x10, 0xeb, 0xd4, 0x01, 0x18, 0xac, 0xd7, 0x01, 0x1f, 0x00, 0xd8, 0x01, 0x27, 0x14, 0xd8, 0x01, 0x2e, 0xdd, 0xd8, 0x01, 0x36, 0xf2, 0xd8, 0x01, 0x3d, 0x5a, 0xd9, 0x01, 0x45, 0x59, 0xd7, 0x01, 0x64, 0x14, 0xd8, 0x01, 0x09, 0xdc, 0xd6, 0x01, 0x12, 0x86, 0xd7, 0x01, 0x1b, 0x98, 0xd7, 0x01, 0x23, 0x14, 0xd8, 0x01, 0x2c, 0x51, 0xd8, 0x01, 0x35, 0x43, 0xd9, 0x01, 0x3d, 0x81, 0xd9, 0x01, 0x46, 0xc6, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x0a, 0xdc, 0xd6, 0x01, 0x14, 0x86, 0xd7, 0x01, 0x1d, 0x98, 0xd7, 0x01, 0x26, 0x14, 0xd8, 0x01, 0x30, 0x51, 0xd8, 0x01, 0x39, 0x43, 0xd9, 0x01, 0x43, 0x81, 0xd9, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x05, 0x7a, 0xd6, 0x01, 0x09, 0x90, 0xd6, 0x01, 0x0d, 0xa3, 0xd6, 0x01, 0x11, 0xb5, 0xd6, 0x01, 0x15, 0xcb, 0xd6, 0x01, 0x19, 0x1a, 0xd3, 0x01, 0x1d, 0x32, 0xd3, 0x01, 0x21, 0x4a, 0xd3, 0x01, 0x24, 0x62, 0xd3, 0x01, 0x27, 0x5a, 0xd9, 0x01, 0x2a, 0x59, 0xd7, 0x01, 0x2d, 0x98, 0xd7, 0x01, 0x30, 0xe0, 0xd3, 0x01, 0x33, 0xc7, 0xd8, 0x01, 0x36, 0x2f, 0xd4, 0x01, 0x39, 0x73, 0xd7, 0x01, 0x3d, 0x00, 0xd4, 0x01, 0x41, 0x6e, 0xd9, 0x01, 0x64, 0xb2, 0xd9, 0x01, 0x07, 0x28, 0xd8, 0x01, 0x0d, 0x3d, 0xd8, 0x01, 0x12, 0x51, 0xd8, 0x01, 0x17, 0xc0, 0xd4, 0x01, 0x1d, 0xd5, 0xd4, 0x01, 0x23, 0x05, 0xd9, 0x01, 0x28, 0x2c, 0xd9, 0x01, 0x2d, 0x6e, 0xd9, 0x01, 0x33, 0x81, 0xd9, 0x01, 0x39, 0x2d, 0xd5, 0x01, 0x3e, 0x5a, 0xd9, 0x01, 0x43, 0x5a, 0xd5, 0x01, 0x64, 0xf8, 0xd9, 0x01, 0x0a, 0x5e, 0xd6, 0x01, 0x14, 0x1a, 0xd7, 0x01, 0x1d, 0x73, 0xd7, 0x01, 0x26, 0xc0, 0xd4, 0x01, 0x30, 0xd5, 0xd4, 0x01, 0x39, 0x6e, 0xd9, 0x01, 0x43, 0x81, 0xd9, 0x01, 0x64, 0x05, 0xd9, 0x01, 0x09, 0x65, 0xd4, 0x01, 0x12, 0x1a, 0xd3, 0x01, 0x1b, 0x07, 0xd7, 0x01, 0x23, 0x14, 0xd8, 0x01, 0x2c, 0xa1, 0xd8, 0x01, 0x35, 0x18, 0xd4, 0x01, 0x3d, 0x05, 0xd9, 0x01, 0x46, 0x81, 0xd9, 0x01, 0x64, 0xdc, 0xd6, 0x01, 0x0c, 0x32, 0xd6, 0x01, 0x16, 0x47, 0xd6, 0x01, 0x20, 0x65, 0xd4, 0x01, 0x2b, 0xcb, 0xd6, 0x01, 0x36, 0xdc, 0xd6, 0x01, 0x40, 0x62, 0xd3, 0x01, 0x64, 0x3d, 0xd8, 0x01, 0x06, 0x01, 0xd3, 0x01, 0x0a, 0xc7, 0xd5, 0x01, 0x0e, 0xb5, 0xd6, 0x01, 0x13, 0x1a, 0xd3, 0x01, 0x17, 0x07, 0xd7, 0x01, 0x1b, 0x4a, 0xd3, 0x01, 0x20, 0x41, 0xd7, 0x01, 0x24, 0x62, 0xd3, 0x01, 0x28, 0xc6, 0xd3, 0x01, 0x2d, 0x00, 0xd4, 0x01, 0x31, 0x18, 0xd4, 0x01, 0x35, 0x5e, 0xd6, 0x01, 0x3a, 0x81, 0xd9, 0x01, 0x3f, 0x32, 0xd3, 0x01, 0x43, 0x05, 0xd9, 0x01, 0x64, 0x59, 0xd7, 0x01, 0x06, 0x90, 0xd6, 0x01, 0x0c, 0xa3, 0xd6, 0x01, 0x11, 0xcb, 0xd6, 0x01, 0x16, 0x4a, 0xd3, 0x01, 0x1c, 0x62, 0xd3, 0x01, 0x21, 0xc6, 0xd3, 0x01, 0x26, 0x28, 0xd8, 0x01, 0x2c, 0x00, 0xd4, 0x01, 0x31, 0x51, 0xd8, 0x01, 0x37, 0xf2, 0xd8, 0x01, 0x3d, 0xaf, 0xd3, 0x01, 0x42, 0x2c, 0xd9, 0x01, 0x48, 0x5a, 0xd9, 0x01, 0x64, 0x6e, 0xd9, 0x01, 0x03, 0xe6, 0xd2, 0x01, 0x06, 0xb4, 0xd5, 0x01, 0x08, 0xc7, 0xd5, 0x01, 0x0a, 0x06, 0xd6, 0x01, 0x0d, 0x1b, 0xd6, 0x01, 0x0f, 0x7a, 0xd6, 0x01, 0x11, 0xa3, 0xd6, 0x01, 0x14, 0xb5, 0xd6, 0x01, 0x16, 0xcb, 0xd6, 0x01, 0x18, 0x1a, 0xd3, 0x01, 0x1b, 0x07, 0xd7, 0x01, 0x1d, 0x32, 0xd3, 0x01, 0x1f, 0x59, 0xd7, 0x01, 0x22, 0xbf, 0xd7, 0x01, 0x24, 0x96, 0xd3, 0x01, 0x26, 0xaf, 0xd3, 0x01, 0x29, 0x14, 0xd8, 0x01, 0x2b, 0x28, 0xd8, 0x01, 0x2d, 0xa1, 0xd8, 0x01, 0x30, 0xc7, 0xd8, 0x01, 0x32, 0xf2, 0xd8, 0x01, 0x34, 0x2f, 0xd4, 0x01, 0x37, 0x6e, 0xd9, 0x01, 0x39, 0x81, 0xd9, 0x01, 0x3c, 0x05, 0xd9, 0x01, 0x3f, 0x01, 0xd3, 0x01, 0x41, 0x62, 0xd3, 0x01, 0x44, 0x4a, 0xd3, 0x01, 0x47, 0x7c, 0xd3, 0x01, 0x49, 0x00, 0xd4, 0x01, 0x4c, 0x18, 0xd4, 0x01, 0x64, 0x1a, 0xd9, 0x01, 0x0a, 0x1b, 0xd6, 0x01, 0x14, 0xcb, 0xd6, 0x01, 0x1d, 0x41, 0xd7, 0x01, 0x26, 0x98, 0xd7, 0x01, 0x30, 0x28, 0xd8, 0x01, 0x39, 0xe0, 0xd3, 0x01, 0x43, 0x51, 0xd8, 0x01, 0x64, 0x5a, 0xd9, 0x01, 0x10, 0xdd, 0xd5, 0x01, 0x1f, 0xf3, 0xd5, 0x01, 0x2e, 0x4e, 0xd4, 0x01, 0x3d, 0x06, 0xd6, 0x01, 0x64, 0x1b, 0xd6, 0x01}
 
 
-const unsigned short int cc_WE0D6 = 0xe0d6; // WE0D6
-const unsigned short int cc_WE0DA = 0xe0da; // WE0DA
+const unsigned short int cc_planet = 0xe0d6; // planet
+const unsigned short int cc_creature = 0xe0da; // creature
 
 
 // 0xe0d2: db 0x47 0x01 'G '
 
 // ================================================
-// 0xe0d4: WORD 'WE0D6' codep=0x2214 wordp=0xe0d6
+// 0xe0d4: WORD 'planet' codep=0x2214 wordp=0xe0d6
 // ================================================
 // orphan
 // 0xe0d6: dw 0x0020
 
 // ================================================
-// 0xe0d8: WORD 'WE0DA' codep=0x2214 wordp=0xe0da
+// 0xe0d8: WORD 'creature' codep=0x2214 wordp=0xe0da
 // ================================================
 // 0xe0da: dw 0x0044
 
 // ================================================
-// 0xe0dc: WORD 'WE0DE' codep=0x224c wordp=0xe0de
+// 0xe0dc: WORD 'difind' codep=0x224c wordp=0xe0de
 // ================================================
 // orphan
 
-void WE0DE() // WE0DE
+void difind() // difind
 {
   _2DUP(); // 2DUP
   IFIND(); // IFIND
@@ -234,10 +234,10 @@ void WE0DE() // WE0DE
 
 
 // ================================================
-// 0xe0e4: WORD 'WE0E6' codep=0x224c wordp=0xe0e6 params=2 returns=2
+// 0xe0e4: WORD '?2dup' codep=0x224c wordp=0xe0e6 params=2 returns=2
 // ================================================
 
-void WE0E6() // WE0E6
+void Is2dup() // ?2dup
 {
   _2DUP(); // 2DUP
   Push(Pop() | Pop()); // OR
@@ -247,10 +247,10 @@ void WE0E6() // WE0E6
 
 
 // ================================================
-// 0xe0f2: WORD 'WE0F4' codep=0x224c wordp=0xe0f4 params=0 returns=2
+// 0xe0f2: WORD 'rput' codep=0x224c wordp=0xe0f4 params=0 returns=2
 // ================================================
 
-void WE0F4() // WE0F4
+void rput() // rput
 {
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   Push(Read16(pp_FILE_n_)); // FILE# @
@@ -258,10 +258,10 @@ void WE0F4() // WE0F4
 
 
 // ================================================
-// 0xe0fe: WORD 'WE100' codep=0x224c wordp=0xe100 params=2 returns=0
+// 0xe0fe: WORD 'rget' codep=0x224c wordp=0xe100 params=2 returns=0
 // ================================================
 
-void WE100() // WE100
+void rget() // rget
 {
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
@@ -271,11 +271,11 @@ void WE100() // WE100
 
 
 // ================================================
-// 0xe10a: WORD 'WE10C' codep=0x224c wordp=0xe10c
+// 0xe10a: WORD 'iaddr-array' codep=0x224c wordp=0xe10c
 // ================================================
 // orphan
 
-void WE10C() // WE10C
+void iaddr_dash_array() // iaddr-array
 {
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(0);
@@ -289,13 +289,13 @@ void WE10C() // WE10C
 
 
 // ================================================
-// 0xe11f: WORD 'WE121' codep=0x224c wordp=0xe121 params=3 returns=2
+// 0xe11f: WORD 'lookup' codep=0x224c wordp=0xe121 params=3 returns=2
 // ================================================
 
-void WE121() // WE121
+void lookup() // lookup
 {
   unsigned short int a, b, i, imax, c;
-  WE0F4(); // WE0F4
+  rput(); // rput
   a = Pop(); // >R
   b = Pop(); // >R
   Push(Read16(regsp)); // DUP
@@ -329,7 +329,7 @@ void WE121() // WE121
   } while(1); // (+LOOP)
 
   c = Pop(); // >R
-  WE0E6(); // WE0E6
+  Is2dup(); // ?2dup
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
@@ -350,7 +350,7 @@ void WE121() // WE121
   _slash_(); // /
   Push(a); // R>
   Push(callp0); // R>
-  WE100(); // WE100
+  rget(); // rget
 }
 
 
@@ -375,10 +375,10 @@ void WE121() // WE121
 // 0xe24f: db 0x0d 0x00 0x00 0x21 0xe0 0x01 0x37 0xe0 0x01 0x48 0xe0 0x01 0x59 0xe0 0x01 0x6b 0xe0 0x01 0x7d 0xe0 0x01 0x93 0xe0 0x01 0xa6 0xe0 0x01 0xba 0xe0 0x01 0xcf 0xe0 0x01 0xe0 0xe0 0x01 0xf4 0xe0 0x01 0x08 0xe1 0x01 '   !  7  H  Y  k  }                       '
 
 // ================================================
-// 0xe279: WORD 'WE27B' codep=0x224c wordp=0xe27b params=0 returns=1
+// 0xe279: WORD 'coin' codep=0x224c wordp=0xe27b params=0 returns=1
 // ================================================
 
-void WE27B() // WE27B
+void coin() // coin
 {
   Push(0);
   Push(2);
@@ -387,10 +387,10 @@ void WE27B() // WE27B
 
 
 // ================================================
-// 0xe283: WORD 'WE285' codep=0x224c wordp=0xe285 params=0 returns=1
+// 0xe283: WORD 'rand%' codep=0x224c wordp=0xe285 params=0 returns=1
 // ================================================
 
-void WE285() // WE285
+void rand_pe_() // rand%
 {
   Push(1);
   Push(0x0064);
@@ -399,10 +399,10 @@ void WE285() // WE285
 
 
 // ================================================
-// 0xe28f: WORD 'WE291' codep=0x224c wordp=0xe291 params=0 returns=1
+// 0xe28f: WORD 'crandom' codep=0x224c wordp=0xe291 params=0 returns=1
 // ================================================
 
-void WE291() // WE291
+void crandom() // crandom
 {
   Push(0);
   Push(0x0100);
@@ -411,10 +411,10 @@ void WE291() // WE291
 
 
 // ================================================
-// 0xe29b: WORD 'WE29D' codep=0x224c wordp=0xe29d params=3 returns=1
+// 0xe29b: WORD 'scale' codep=0x224c wordp=0xe29d params=3 returns=1
 // ================================================
 
-void WE29D() // WE29D
+void scale() // scale
 {
   unsigned short int a;
   a = Pop(); // >R
@@ -429,36 +429,36 @@ void WE29D() // WE29D
 
 
 // ================================================
-// 0xe2b1: WORD 'WE2B3' codep=0x224c wordp=0xe2b3
+// 0xe2b1: WORD 'slipper' codep=0x224c wordp=0xe2b3
 // ================================================
 
-void WE2B3() // WE2B3
+void slipper() // slipper
 {
-  WE291(); // WE291
+  crandom(); // crandom
   _ro_SLIPPER_rc_(); // (SLIPPER)
 }
 
 
 // ================================================
-// 0xe2b9: WORD 'WE2BB' codep=0x224c wordp=0xe2bb
+// 0xe2b9: WORD 'slip!' codep=0x224c wordp=0xe2bb
 // ================================================
 
-void WE2BB() // WE2BB
+void slip_ex_() // slip!
 {
   do
   {
-    WE2B3(); // WE2B3
+    slipper(); // slipper
   } while(Pop() == 0);
-  WE29D(); // WE29D
+  scale(); // scale
 }
 
 
 // ================================================
-// 0xe2c5: WORD 'WE2C7' codep=0x224c wordp=0xe2c7
+// 0xe2c5: WORD '%%' codep=0x224c wordp=0xe2c7
 // ================================================
 // orphan
 
-void WE2C7() // WE2C7
+void _pe__pe_() // %%
 {
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
   Push(0);
@@ -473,199 +473,199 @@ void WE2C7() // WE2C7
 
 
 // ================================================
-// 0xe2dc: WORD 'WE2DE' codep=0x73ea wordp=0xe2de
+// 0xe2dc: WORD 'atmo.density' codep=0x73ea wordp=0xe2de
 // ================================================
 // orphan
-LoadDataType WE2DE = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
+LoadDataType atmo_dot_density = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xe2e4: WORD 'WE2E6' codep=0x73ea wordp=0xe2e6
+// 0xe2e4: WORD 'narrowest' codep=0x73ea wordp=0xe2e6
 // ================================================
-LoadDataType WE2E6 = {PLANETIDX, 0x14, 0x03, 0x16, 0x658f};
+LoadDataType narrowest = {PLANETIDX, 0x14, 0x03, 0x16, 0x658f};
 
 // ================================================
-// 0xe2ec: WORD 'WE2EE' codep=0x73ea wordp=0xe2ee
+// 0xe2ec: WORD 'flattest' codep=0x73ea wordp=0xe2ee
 // ================================================
-LoadDataType WE2EE = {PLANETIDX, 0x15, 0x02, 0x16, 0x658f};
+LoadDataType flattest = {PLANETIDX, 0x15, 0x02, 0x16, 0x658f};
 
 // ================================================
-// 0xe2f4: WORD 'WE2F6' codep=0x73ea wordp=0xe2f6
+// 0xe2f4: WORD 'shape' codep=0x73ea wordp=0xe2f6
 // ================================================
-LoadDataType WE2F6 = {CREATUREIDX, 0x04, 0x03, 0x9c, 0x69d8};
+LoadDataType shape = {CREATUREIDX, 0x04, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe2fc: WORD 'WE2FE' codep=0x73ea wordp=0xe2fe
+// 0xe2fc: WORD 'exterior' codep=0x73ea wordp=0xe2fe
 // ================================================
-LoadDataType WE2FE = {CREATUREIDX, 0x07, 0x03, 0x9c, 0x69d8};
+LoadDataType exterior = {CREATUREIDX, 0x07, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe304: WORD 'WE306' codep=0x73ea wordp=0xe306
+// 0xe304: WORD 'size.index' codep=0x73ea wordp=0xe306
 // ================================================
-LoadDataType WE306 = {CREATUREIDX, 0x0b, 0x01, 0x9c, 0x69d8};
+LoadDataType size_dot_index = {CREATUREIDX, 0x0b, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe30c: WORD 'WE30E' codep=0x73ea wordp=0xe30e
+// 0xe30c: WORD 'niche' codep=0x73ea wordp=0xe30e
 // ================================================
-LoadDataType WE30E = {CREATUREIDX, 0x0c, 0x01, 0x9c, 0x69d8};
+LoadDataType niche = {CREATUREIDX, 0x0c, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe314: WORD 'WE316' codep=0x73ea wordp=0xe316
+// 0xe314: WORD 'reddest' codep=0x73ea wordp=0xe316
 // ================================================
-LoadDataType WE316 = {CREATUREIDX, 0x0d, 0x03, 0x9c, 0x69d8};
+LoadDataType reddest = {CREATUREIDX, 0x0d, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe31c: WORD 'WE31E' codep=0x73ea wordp=0xe31e
+// 0xe31c: WORD 'bluest' codep=0x73ea wordp=0xe31e
 // ================================================
-LoadDataType WE31E = {CREATUREIDX, 0x10, 0x03, 0x9c, 0x69d8};
+LoadDataType bluest = {CREATUREIDX, 0x10, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe324: WORD 'WE326' codep=0x73ea wordp=0xe326
+// 0xe324: WORD 'texture' codep=0x73ea wordp=0xe326
 // ================================================
-LoadDataType WE326 = {CREATUREIDX, 0x13, 0x03, 0x9c, 0x69d8};
+LoadDataType texture = {CREATUREIDX, 0x13, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe32c: WORD 'WE32E' codep=0x73ea wordp=0xe32e
+// 0xe32c: WORD 'w.append' codep=0x73ea wordp=0xe32e
 // ================================================
-LoadDataType WE32E = {CREATUREIDX, 0x16, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_append = {CREATUREIDX, 0x16, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe334: WORD 'WE336' codep=0x73ea wordp=0xe336
+// 0xe334: WORD 'w#' codep=0x73ea wordp=0xe336
 // ================================================
 // orphan
-LoadDataType WE336 = {CREATUREIDX, 0x19, 0x01, 0x9c, 0x69d8};
+LoadDataType w_n_ = {CREATUREIDX, 0x19, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe33c: WORD 'WE33E' codep=0x73ea wordp=0xe33e
+// 0xe33c: WORD 'd.append' codep=0x73ea wordp=0xe33e
 // ================================================
-LoadDataType WE33E = {CREATUREIDX, 0x1a, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_append = {CREATUREIDX, 0x1a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe344: WORD 'WE346' codep=0x73ea wordp=0xe346
+// 0xe344: WORD 'd#' codep=0x73ea wordp=0xe346
 // ================================================
 // orphan
-LoadDataType WE346 = {CREATUREIDX, 0x1d, 0x01, 0x9c, 0x69d8};
+LoadDataType d_n_ = {CREATUREIDX, 0x1d, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe34c: WORD 'WE34E' codep=0x73ea wordp=0xe34e
+// 0xe34c: WORD 'a.append' codep=0x73ea wordp=0xe34e
 // ================================================
-LoadDataType WE34E = {CREATUREIDX, 0x1e, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_append = {CREATUREIDX, 0x1e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe354: WORD 'WE356' codep=0x73ea wordp=0xe356
+// 0xe354: WORD 'a#' codep=0x73ea wordp=0xe356
 // ================================================
-LoadDataType WE356 = {CREATUREIDX, 0x21, 0x01, 0x9c, 0x69d8};
+LoadDataType a_n_ = {CREATUREIDX, 0x21, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe35c: WORD 'WE35E' codep=0x73ea wordp=0xe35e
+// 0xe35c: WORD 'g.append' codep=0x73ea wordp=0xe35e
 // ================================================
-LoadDataType WE35E = {CREATUREIDX, 0x22, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_append = {CREATUREIDX, 0x22, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe364: WORD 'WE366' codep=0x73ea wordp=0xe366
+// 0xe364: WORD 'g#' codep=0x73ea wordp=0xe366
 // ================================================
-LoadDataType WE366 = {CREATUREIDX, 0x25, 0x01, 0x9c, 0x69d8};
+LoadDataType g_n_ = {CREATUREIDX, 0x25, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe36c: WORD 'WE36E' codep=0x73ea wordp=0xe36e
+// 0xe36c: WORD 'g.mobility' codep=0x73ea wordp=0xe36e
 // ================================================
-LoadDataType WE36E = {CREATUREIDX, 0x26, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_mobility = {CREATUREIDX, 0x26, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe374: WORD 'WE376' codep=0x73ea wordp=0xe376
+// 0xe374: WORD 'a.mobility' codep=0x73ea wordp=0xe376
 // ================================================
-LoadDataType WE376 = {CREATUREIDX, 0x29, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_mobility = {CREATUREIDX, 0x29, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe37c: WORD 'WE37E' codep=0x73ea wordp=0xe37e
+// 0xe37c: WORD 'slowest' codep=0x73ea wordp=0xe37e
 // ================================================
-LoadDataType WE37E = {CREATUREIDX, 0x30, 0x01, 0x9c, 0x69d8};
+LoadDataType slowest = {CREATUREIDX, 0x30, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe384: WORD 'WE386' codep=0x73ea wordp=0xe386
+// 0xe384: WORD 'fastest' codep=0x73ea wordp=0xe386
 // ================================================
-LoadDataType WE386 = {CREATUREIDX, 0x31, 0x01, 0x9c, 0x69d8};
+LoadDataType fastest = {CREATUREIDX, 0x31, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe38c: WORD 'WE38E' codep=0x73ea wordp=0xe38e
+// 0xe38c: WORD 'stun.effect' codep=0x73ea wordp=0xe38e
 // ================================================
-LoadDataType WE38E = {CREATUREIDX, 0x33, 0x01, 0x9c, 0x69d8};
+LoadDataType stun_dot_effect = {CREATUREIDX, 0x33, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe394: WORD 'WE396' codep=0x73ea wordp=0xe396
+// 0xe394: WORD 'hit.points' codep=0x73ea wordp=0xe396
 // ================================================
-LoadDataType WE396 = {CREATUREIDX, 0x34, 0x01, 0x9c, 0x69d8};
+LoadDataType hit_dot_points = {CREATUREIDX, 0x34, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe39c: WORD 'WE39E' codep=0x73ea wordp=0xe39e
+// 0xe39c: WORD 'i.level' codep=0x73ea wordp=0xe39e
 // ================================================
-LoadDataType WE39E = {CREATUREIDX, 0x36, 0x01, 0x9c, 0x69d8};
+LoadDataType i_dot_level = {CREATUREIDX, 0x36, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3a4: WORD 'WE3A6' codep=0x73ea wordp=0xe3a6
+// 0xe3a4: WORD 'a.level' codep=0x73ea wordp=0xe3a6
 // ================================================
-LoadDataType WE3A6 = {CREATUREIDX, 0x37, 0x01, 0x9c, 0x69d8};
+LoadDataType a_dot_level = {CREATUREIDX, 0x37, 0x01, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3ac: WORD 'WE3AE' codep=0x73ea wordp=0xe3ae
+// 0xe3ac: WORD 'i.level' codep=0x73ea wordp=0xe3ae
 // ================================================
-LoadDataType WE3AE = {CREATUREIDX, 0x38, 0x02, 0x9c, 0x69d8};
+LoadDataType i_dot_level = {CREATUREIDX, 0x38, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3b4: WORD 'WE3B6' codep=0x73ea wordp=0xe3b6
+// 0xe3b4: WORD 'volume' codep=0x73ea wordp=0xe3b6
 // ================================================
-LoadDataType WE3B6 = {CREATUREIDX, 0x3a, 0x02, 0x9c, 0x69d8};
+LoadDataType volume = {CREATUREIDX, 0x3a, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3bc: WORD 'WE3BE' codep=0x73ea wordp=0xe3be
+// 0xe3bc: WORD 'proportion' codep=0x73ea wordp=0xe3be
 // ================================================
-LoadDataType WE3BE = {CREATUREIDX, 0x3c, 0x02, 0x9c, 0x69d8};
+LoadDataType proportion = {CREATUREIDX, 0x3c, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3c4: WORD 'WE3C6' codep=0x73ea wordp=0xe3c6
+// 0xe3c4: WORD 'd.hue' codep=0x73ea wordp=0xe3c6
 // ================================================
 // orphan
-LoadDataType WE3C6 = {CREATUREIDX, 0x3f, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_hue = {CREATUREIDX, 0x3f, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3cc: WORD 'WE3CE' codep=0x73ea wordp=0xe3ce
+// 0xe3cc: WORD 'd.tint' codep=0x73ea wordp=0xe3ce
 // ================================================
 // orphan
-LoadDataType WE3CE = {CREATUREIDX, 0x42, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_tint = {CREATUREIDX, 0x42, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3d4: WORD 'WE3D6' codep=0x73ea wordp=0xe3d6
+// 0xe3d4: WORD 'd.lumens' codep=0x73ea wordp=0xe3d6
 // ================================================
 // orphan
-LoadDataType WE3D6 = {CREATUREIDX, 0x45, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_lumens = {CREATUREIDX, 0x45, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3dc: WORD 'WE3DE' codep=0x73ea wordp=0xe3de
+// 0xe3dc: WORD 'd.struc' codep=0x73ea wordp=0xe3de
 // ================================================
-LoadDataType WE3DE = {CREATUREIDX, 0x48, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_struc = {CREATUREIDX, 0x48, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3e4: WORD 'WE3E6' codep=0x73ea wordp=0xe3e6
+// 0xe3e4: WORD 'd.propor' codep=0x73ea wordp=0xe3e6
 // ================================================
 // orphan
-LoadDataType WE3E6 = {CREATUREIDX, 0x4b, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_propor = {CREATUREIDX, 0x4b, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3ec: WORD 'WE3EE' codep=0x73ea wordp=0xe3ee
+// 0xe3ec: WORD 'd.size' codep=0x73ea wordp=0xe3ee
 // ================================================
 // orphan
-LoadDataType WE3EE = {CREATUREIDX, 0x4e, 0x03, 0x9c, 0x69d8};
+LoadDataType d_dot_size = {CREATUREIDX, 0x4e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3f4: WORD 'WE3F6' codep=0x73ea wordp=0xe3f6
+// 0xe3f4: WORD 'w.hue' codep=0x73ea wordp=0xe3f6
 // ================================================
 // orphan
-LoadDataType WE3F6 = {CREATUREIDX, 0x51, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_hue = {CREATUREIDX, 0x51, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe3fc: WORD 'WE3FE' codep=0x73ea wordp=0xe3fe
+// 0xe3fc: WORD 'w.tint' codep=0x73ea wordp=0xe3fe
 // ================================================
 // orphan
-LoadDataType WE3FE = {CREATUREIDX, 0x54, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_tint = {CREATUREIDX, 0x54, 0x03, 0x9c, 0x69d8};
 
 // ================================================
 // 0xe404: WORD 'WE406' codep=0x73ea wordp=0xe406
@@ -674,129 +674,129 @@ LoadDataType WE3FE = {CREATUREIDX, 0x54, 0x03, 0x9c, 0x69d8};
 LoadDataType WE406 = {CREATUREIDX, 0x57, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe40c: WORD 'WE40E' codep=0x73ea wordp=0xe40e
+// 0xe40c: WORD 'w.struc' codep=0x73ea wordp=0xe40e
 // ================================================
-LoadDataType WE40E = {CREATUREIDX, 0x5a, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_struc = {CREATUREIDX, 0x5a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe414: WORD 'WE416' codep=0x73ea wordp=0xe416
+// 0xe414: WORD 'w.propor' codep=0x73ea wordp=0xe416
 // ================================================
 // orphan
-LoadDataType WE416 = {CREATUREIDX, 0x5d, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_propor = {CREATUREIDX, 0x5d, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe41c: WORD 'WE41E' codep=0x73ea wordp=0xe41e
+// 0xe41c: WORD 'w.size' codep=0x73ea wordp=0xe41e
 // ================================================
 // orphan
-LoadDataType WE41E = {CREATUREIDX, 0x60, 0x03, 0x9c, 0x69d8};
+LoadDataType w_dot_size = {CREATUREIDX, 0x60, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe424: WORD 'WE426' codep=0x73ea wordp=0xe426
+// 0xe424: WORD 'a.hue' codep=0x73ea wordp=0xe426
 // ================================================
 // orphan
-LoadDataType WE426 = {CREATUREIDX, 0x63, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_hue = {CREATUREIDX, 0x63, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe42c: WORD 'WE42E' codep=0x73ea wordp=0xe42e
+// 0xe42c: WORD 'a.tint' codep=0x73ea wordp=0xe42e
 // ================================================
 // orphan
-LoadDataType WE42E = {CREATUREIDX, 0x66, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_tint = {CREATUREIDX, 0x66, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe434: WORD 'WE436' codep=0x73ea wordp=0xe436
+// 0xe434: WORD 'a.lumens' codep=0x73ea wordp=0xe436
 // ================================================
 // orphan
-LoadDataType WE436 = {CREATUREIDX, 0x69, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_lumens = {CREATUREIDX, 0x69, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe43c: WORD 'WE43E' codep=0x73ea wordp=0xe43e
+// 0xe43c: WORD 'a.struc' codep=0x73ea wordp=0xe43e
 // ================================================
-LoadDataType WE43E = {CREATUREIDX, 0x6c, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_struc = {CREATUREIDX, 0x6c, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe444: WORD 'WE446' codep=0x73ea wordp=0xe446
+// 0xe444: WORD 'a.propor' codep=0x73ea wordp=0xe446
 // ================================================
 // orphan
-LoadDataType WE446 = {CREATUREIDX, 0x6f, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_propor = {CREATUREIDX, 0x6f, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe44c: WORD 'WE44E' codep=0x73ea wordp=0xe44e
+// 0xe44c: WORD 'a.size' codep=0x73ea wordp=0xe44e
 // ================================================
 // orphan
-LoadDataType WE44E = {CREATUREIDX, 0x72, 0x03, 0x9c, 0x69d8};
+LoadDataType a_dot_size = {CREATUREIDX, 0x72, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe454: WORD 'WE456' codep=0x73ea wordp=0xe456
+// 0xe454: WORD 'g.hue' codep=0x73ea wordp=0xe456
 // ================================================
 // orphan
-LoadDataType WE456 = {CREATUREIDX, 0x75, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_hue = {CREATUREIDX, 0x75, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe45c: WORD 'WE45E' codep=0x73ea wordp=0xe45e
+// 0xe45c: WORD 'g.tint' codep=0x73ea wordp=0xe45e
 // ================================================
 // orphan
-LoadDataType WE45E = {CREATUREIDX, 0x78, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_tint = {CREATUREIDX, 0x78, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe464: WORD 'WE466' codep=0x73ea wordp=0xe466
+// 0xe464: WORD 'g.lumens' codep=0x73ea wordp=0xe466
 // ================================================
 // orphan
-LoadDataType WE466 = {CREATUREIDX, 0x7b, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_lumens = {CREATUREIDX, 0x7b, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe46c: WORD 'WE46E' codep=0x73ea wordp=0xe46e
+// 0xe46c: WORD 'g.struc' codep=0x73ea wordp=0xe46e
 // ================================================
-LoadDataType WE46E = {CREATUREIDX, 0x7e, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_struc = {CREATUREIDX, 0x7e, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe474: WORD 'WE476' codep=0x73ea wordp=0xe476
+// 0xe474: WORD 'g.propor' codep=0x73ea wordp=0xe476
 // ================================================
 // orphan
-LoadDataType WE476 = {CREATUREIDX, 0x81, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_propor = {CREATUREIDX, 0x81, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe47c: WORD 'WE47E' codep=0x73ea wordp=0xe47e
+// 0xe47c: WORD 'g.size' codep=0x73ea wordp=0xe47e
 // ================================================
 // orphan
-LoadDataType WE47E = {CREATUREIDX, 0x84, 0x03, 0x9c, 0x69d8};
+LoadDataType g_dot_size = {CREATUREIDX, 0x84, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe484: WORD 'WE486' codep=0x73ea wordp=0xe486
+// 0xe484: WORD 's.hue' codep=0x73ea wordp=0xe486
 // ================================================
-LoadDataType WE486 = {CREATUREIDX, 0x87, 0x03, 0x9c, 0x69d8};
+LoadDataType s_dot_hue = {CREATUREIDX, 0x87, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe48c: WORD 'WE48E' codep=0x73ea wordp=0xe48e
+// 0xe48c: WORD 's.tint' codep=0x73ea wordp=0xe48e
 // ================================================
-LoadDataType WE48E = {CREATUREIDX, 0x8a, 0x03, 0x9c, 0x69d8};
+LoadDataType s_dot_tint = {CREATUREIDX, 0x8a, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe494: WORD 'WE496' codep=0x73ea wordp=0xe496
+// 0xe494: WORD 's.lumens' codep=0x73ea wordp=0xe496
 // ================================================
-LoadDataType WE496 = {CREATUREIDX, 0x8d, 0x03, 0x9c, 0x69d8};
+LoadDataType s_dot_lumens = {CREATUREIDX, 0x8d, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe49c: WORD 'WE49E' codep=0x73ea wordp=0xe49e
+// 0xe49c: WORD 'icon' codep=0x73ea wordp=0xe49e
 // ================================================
-LoadDataType WE49E = {CREATUREIDX, 0x90, 0x02, 0x9c, 0x69d8};
+LoadDataType icon = {CREATUREIDX, 0x90, 0x02, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe4a4: WORD 'WE4A6' codep=0x73ea wordp=0xe4a6
+// 0xe4a4: WORD 'resembles' codep=0x73ea wordp=0xe4a6
 // ================================================
-LoadDataType WE4A6 = {CREATUREIDX, 0x92, 0x03, 0x9c, 0x69d8};
+LoadDataType resembles = {CREATUREIDX, 0x92, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe4ac: WORD 'WE4AE' codep=0x73ea wordp=0xe4ae
+// 0xe4ac: WORD 'size' codep=0x73ea wordp=0xe4ae
 // ================================================
-LoadDataType WE4AE = {CREATUREIDX, 0x95, 0x03, 0x9c, 0x69d8};
+LoadDataType size = {CREATUREIDX, 0x95, 0x03, 0x9c, 0x69d8};
 
 // ================================================
-// 0xe4b4: WORD 'WE4B6' codep=0x224c wordp=0xe4b6 params=0 returns=0
+// 0xe4b4: WORD 'whichguy' codep=0x224c wordp=0xe4b6 params=0 returns=0
 // ================================================
 
-void WE4B6() // WE4B6
+void whichguy() // whichguy
 {
-  Push(Read16(cc_WE0DA)); // WE0DA
+  Push(Read16(cc_creature)); // creature
   Push(Read16(regsp)); // DUP
   Push(pp_FILE_n_); // FILE#
   Store_3(); // !_3
@@ -807,10 +807,10 @@ void WE4B6() // WE4B6
 
 
 // ================================================
-// 0xe4c8: WORD 'WE4CA' codep=0x224c wordp=0xe4ca params=1 returns=2
+// 0xe4c8: WORD 'MAPS' codep=0x224c wordp=0xe4ca params=1 returns=2
 // ================================================
 
-void WE4CA() // WE4CA
+void MAPS() // MAPS
 {
   Push(Read16(regsp)); // DUP
   Push(Read16(Pop()) + 2); //  @ 2+
@@ -820,11 +820,11 @@ void WE4CA() // WE4CA
 
 
 // ================================================
-// 0xe4d6: WORD 'WE4D8' codep=0x224c wordp=0xe4d8
+// 0xe4d6: WORD 'PROPS' codep=0x224c wordp=0xe4d8
 // ================================================
 // orphan
 
-void WE4D8() // WE4D8
+void PROPS() // PROPS
 {
   unsigned short int i, imax, a;
   Exec("CREATE"); // call of word 0x1cbb '(CREATE)'
@@ -846,7 +846,7 @@ void WE4D8() // WE4D8
   ROLL(); // ROLL
   Push(4);
   ROLL(); // ROLL
-  WE4CA(); // WE4CA
+  MAPS(); // MAPS
 
   i = Pop();
   imax = Pop();
@@ -892,10 +892,10 @@ void WE4D8() // WE4D8
 
 
 // ================================================
-// 0xe56e: WORD 'WE570' codep=0x224c wordp=0xe570 params=2 returns=2
+// 0xe56e: WORD 'CHANCE' codep=0x224c wordp=0xe570 params=2 returns=2
 // ================================================
 
-void WE570() // WE570
+void CHANCE() // CHANCE
 {
   unsigned short int a;
   while(1)
@@ -915,12 +915,12 @@ void WE570() // WE570
 
 
 // ================================================
-// 0xe596: WORD 'WE598' codep=0x224c wordp=0xe598 params=2 returns=2
+// 0xe596: WORD 'result' codep=0x224c wordp=0xe598 params=2 returns=2
 // ================================================
 
-void WE598() // WE598
+void result() // result
 {
-  WE570(); // WE570
+  CHANCE(); // CHANCE
   Push(Pop() + 1); //  1+
   _1_dot_5_at_(); // 1.5@
   ROT(); // ROT
@@ -929,10 +929,10 @@ void WE598() // WE598
 
 
 // ================================================
-// 0xe5a4: WORD 'WE5A6' codep=0x224c wordp=0xe5a6 params=3 returns=1
+// 0xe5a4: WORD 'rollem' codep=0x224c wordp=0xe5a6 params=3 returns=1
 // ================================================
 
-void WE5A6() // WE5A6
+void rollem() // rollem
 {
   unsigned short int i, imax, a;
   Push(0);
@@ -942,7 +942,7 @@ void WE5A6() // WE5A6
   ROLL(); // ROLL
   Push(4);
   ROLL(); // ROLL
-  WE4CA(); // WE4CA
+  MAPS(); // MAPS
 
   i = Pop();
   imax = Pop();
@@ -986,12 +986,12 @@ void WE5A6() // WE5A6
 
 
 // ================================================
-// 0xe5fc: WORD 'WE5FE' codep=0x224c wordp=0xe5fe params=4 returns=2
+// 0xe5fc: WORD 'retrieve' codep=0x224c wordp=0xe5fe params=4 returns=2
 // ================================================
 
-void WE5FE() // WE5FE
+void retrieve() // retrieve
 {
-  WE5A6(); // WE5A6
+  rollem(); // rollem
   Push(Read16(regsp)); // DUP
   Push(Pop()==-1?1:0); //  -1 =
   if (Pop() != 0)
@@ -1001,7 +1001,7 @@ void WE5FE() // WE5FE
     Push(0);
     return;
   }
-  WE598(); // WE598
+  result(); // result
 }
 
 
@@ -1016,13 +1016,13 @@ void WE5FE() // WE5FE
 // 0xeb63: db 0x0c 0x00 0x00 0x00 0x01 0x00 0x71 0xeb 0x00 0x00 0x02 0x00 0x7d 0xeb 0x1a 0xcd 0xca 0x01 0x33 0x19 0xcb 0x01 0x64 0xf2 0xca 0x01 0x0e 0x04 0xcb 0x01 0x1a 0x19 0xcb 0x01 0x27 0x2c 0xcb 0x01 0x33 0x40 0xcb 0x01 0x40 0x58 0xcb 0x01 0x64 0x70 0xcb 0x01 '      q     }     3   d           ',  3@  @X  dp  '
 
 // ================================================
-// 0xeb95: WORD 'WEB97' codep=0x224c wordp=0xeb97 params=2 returns=3
+// 0xeb95: WORD '?pure' codep=0x224c wordp=0xeb97 params=2 returns=3
 // ================================================
 
-void WEB97() // WEB97
+void Ispure() // ?pure
 {
   unsigned short int a, b;
-  WE0F4(); // WE0F4
+  rput(); // rput
   a = Pop(); // >R
   b = Pop(); // >R
   _2DUP(); // 2DUP
@@ -1032,15 +1032,15 @@ void WEB97() // WEB97
   ICLOSE(); // ICLOSE
   Push(b); // R>
   Push(a); // R>
-  WE100(); // WE100
+  rget(); // rget
 }
 
 
 // ================================================
-// 0xebb1: WORD 'WEBB3' codep=0x224c wordp=0xebb3
+// 0xebb1: WORD 'squish' codep=0x224c wordp=0xebb3
 // ================================================
 
-void WEBB3() // WEBB3
+void squish() // squish
 {
   unsigned short int a;
   Push(Read16(pp_RECORD_n_)); // RECORD# @
@@ -1048,9 +1048,9 @@ void WEBB3() // WEBB3
   Push(pp__ro_PLANET_rc_); // (PLANET)
   _1_dot_5_at_(); // 1.5@
   _gt_C_plus_S(); // >C+S
-  LoadData(WE2EE); // from 'PLANET'
+  LoadData(flattest); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
-  LoadData(WE2E6); // from 'PLANET'
+  LoadData(narrowest); // from 'PLANET'
   Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
   RRND(); // RRND
   ICLOSE(); // ICLOSE
@@ -1060,19 +1060,19 @@ void WEBB3() // WEBB3
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  WE4B6(); // WE4B6
-  LoadData(WE3BE); // from 'CREATURE'
+  whichguy(); // whichguy
+  LoadData(proportion); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
-  LoadData(WE3B6); // from 'CREATURE'
+  LoadData(volume); // from 'CREATURE'
   Store_3(); // !_3
 }
 
 
 // ================================================
-// 0xebe5: WORD 'WEBE7' codep=0x224c wordp=0xebe7 params=1 returns=2
+// 0xebe5: WORD 'madness' codep=0x224c wordp=0xebe7 params=1 returns=2
 // ================================================
 
-void WEBE7() // WEBE7
+void madness() // madness
 {
   Push(2);
   OVER(); // OVER
@@ -1112,38 +1112,38 @@ void WEBE7() // WEBE7
 
 
 // ================================================
-// 0xec3d: WORD 'WEC3F' codep=0x224c wordp=0xec3f
+// 0xec3d: WORD 'anger' codep=0x224c wordp=0xec3f
 // ================================================
 
-void WEC3F() // WEC3F
+void anger() // anger
 {
-  LoadData(WE30E); // from 'CREATURE'
+  LoadData(niche); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
-  WEBE7(); // WEBE7
+  madness(); // madness
   Push(0x0080);
   Push(pp_PEAK); // PEAK
   Store_3(); // !_3
-  WE2BB(); // WE2BB
-  LoadData(WE3A6); // from 'CREATURE'
+  slip_ex_(); // slip!
+  LoadData(a_dot_level); // from 'CREATURE'
   C_ex_(); // C!
 }
 
 
 // ================================================
-// 0xec55: WORD 'WEC57' codep=0x224c wordp=0xec57
+// 0xec55: WORD 'strength-rule' codep=0x224c wordp=0xec57
 // ================================================
 
-void WEC57() // WEC57
+void strength_dash_rule() // strength-rule
 {
   Push(0);
   Push(pp_PEAK); // PEAK
   Store_3(); // !_3
   Push(0);
   Push(0x0055);
-  WE2BB(); // WE2BB
-  LoadData(WE306); // from 'CREATURE'
+  slip_ex_(); // slip!
+  LoadData(size_dot_index); // from 'CREATURE'
   Push((Read16(Pop())&0xFF) * 0x0012); //  C@ 0x0012 *
-  LoadData(WE3A6); // from 'CREATURE'
+  LoadData(a_dot_level); // from 'CREATURE'
   Push((Read16(Pop())&0xFF) >> 1); //  C@ 2/
   Push(Pop() + Pop()); // +
   Push(Pop() + Pop()); // +
@@ -1153,38 +1153,38 @@ void WEC57() // WEC57
 
 
 // ================================================
-// 0xec7f: WORD 'WEC81' codep=0x224c wordp=0xec81
+// 0xec7f: WORD 'durable' codep=0x224c wordp=0xec81
 // ================================================
 
-void WEC81() // WEC81
+void durable() // durable
 {
-  WEC57(); // WEC57
-  LoadData(WE396); // from 'CREATURE'
+  strength_dash_rule(); // strength-rule
+  LoadData(hit_dot_points); // from 'CREATURE'
   C_ex_(); // C!
 }
 
 
 // ================================================
-// 0xec89: WORD 'WEC8B' codep=0x224c wordp=0xec8b
+// 0xec89: WORD 'stunable' codep=0x224c wordp=0xec8b
 // ================================================
 
-void WEC8B() // WEC8B
+void stunable() // stunable
 {
-  WEC57(); // WEC57
-  LoadData(WE38E); // from 'CREATURE'
+  strength_dash_rule(); // strength-rule
+  LoadData(stun_dot_effect); // from 'CREATURE'
   C_ex_(); // C!
 }
 
 
 // ================================================
-// 0xec93: WORD 'WEC95' codep=0x224c wordp=0xec95
+// 0xec93: WORD 'movers' codep=0x224c wordp=0xec95
 // ================================================
 
-void WEC95() // WEC95
+void movers() // movers
 {
-  LoadData(WE36E); // from 'CREATURE'
+  LoadData(g_dot_mobility); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  WE0E6(); // WE0E6
+  Is2dup(); // ?2dup
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
@@ -1196,7 +1196,7 @@ void WEC95() // WEC95
     {
       Push(0);
       _gt_MOVER(); // >MOVER
-      WE121(); // WE121
+      lookup(); // lookup
     } else
     {
       Pop(); Pop(); // 2DROP
@@ -1206,11 +1206,11 @@ void WEC95() // WEC95
   {
     Push(0);
   }
-  LoadData(WE37E); // from 'CREATURE'
+  LoadData(slowest); // from 'CREATURE'
   C_ex_(); // C!
-  LoadData(WE376); // from 'CREATURE'
+  LoadData(a_dot_mobility); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  WE0E6(); // WE0E6
+  Is2dup(); // ?2dup
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
@@ -1227,16 +1227,16 @@ void WEC95() // WEC95
   {
     Push(0);
   }
-  LoadData(WE386); // from 'CREATURE'
+  LoadData(fastest); // from 'CREATURE'
   C_ex_(); // C!
 }
 
 
 // ================================================
-// 0xecf7: WORD 'WECF9' codep=0x224c wordp=0xecf9
+// 0xecf7: WORD '(modify)' codep=0x224c wordp=0xecf9
 // ================================================
 
-void WECF9() // WECF9
+void _ro_modify_rc_() // (modify)
 {
   unsigned short int a, b;
   IFLD_at_(); // IFLD@
@@ -1269,61 +1269,61 @@ void WECF9() // WECF9
 
 
 // ================================================
-// 0xed35: WORD 'WED37' codep=0x224c wordp=0xed37
+// 0xed35: WORD 'modify' codep=0x224c wordp=0xed37
 // ================================================
 
-void WED37() // WED37
+void modify() // modify
 {
-  Push(0xe3e6); // 'WE3E6'
-  Push(0xe33e); // 'WE33E'
-  WECF9(); // WECF9
-  Push(0xe416); // 'WE416'
-  Push(0xe32e); // 'WE32E'
-  WECF9(); // WECF9
-  Push(0xe446); // 'WE446'
-  Push(0xe34e); // 'WE34E'
-  WECF9(); // WECF9
-  Push(0xe476); // 'WE476'
-  Push(0xe35e); // 'WE35E'
-  WECF9(); // WECF9
+  Push(0xe3e6); // 'd.propor'
+  Push(0xe33e); // 'd.append'
+  _ro_modify_rc_(); // (modify)
+  Push(0xe416); // 'w.propor'
+  Push(0xe32e); // 'w.append'
+  _ro_modify_rc_(); // (modify)
+  Push(0xe446); // 'a.propor'
+  Push(0xe34e); // 'a.append'
+  _ro_modify_rc_(); // (modify)
+  Push(0xe476); // 'g.propor'
+  Push(0xe35e); // 'g.append'
+  _ro_modify_rc_(); // (modify)
 }
 
 
 // ================================================
-// 0xed61: WORD 'WED63' codep=0x224c wordp=0xed63 params=4 returns=0
+// 0xed61: WORD 'customize' codep=0x224c wordp=0xed63 params=4 returns=0
 // ================================================
 
-void WED63() // WED63
+void customize() // customize
 {
   unsigned short int a;
-  WEB97(); // WEB97
+  Ispure(); // ?pure
   a = Pop(); // >R
   Pop(); Pop(); // 2DROP
   Push(a); // R>
   if (Pop() != 0)
   {
-    WE27B(); // WE27B
+    coin(); // coin
     if (Pop() != 0)
     {
-      WE285(); // WE285
+      rand_pe_(); // rand%
       Push(1);
       Push(0);
       LIGHTS(); // LIGHTS
-      WE598(); // WE598
+      result(); // result
       ROT(); // ROT
       IFLD_ex_(); // IFLD!
       Pop(); // DROP
     } else
     {
-      WE27B(); // WE27B
+      coin(); // coin
       if (Pop() != 0)
       {
         Pop(); // DROP
-        WE285(); // WE285
+        rand_pe_(); // rand%
         Push(2);
         Push(0);
         LIGHTS(); // LIGHTS
-        WE598(); // WE598
+        result(); // result
         ROT(); // ROT
         IFLD_ex_(); // IFLD!
       } else
@@ -1338,48 +1338,48 @@ void WED63() // WED63
 
 
 // ================================================
-// 0xedad: WORD 'WEDAF' codep=0x224c wordp=0xedaf
+// 0xedad: WORD 'colorant' codep=0x224c wordp=0xedaf
 // ================================================
 
-void WEDAF() // WEDAF
+void colorant() // colorant
 {
   unsigned short int a;
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   a = Pop(); // >R
-  LoadData(WE316); // from 'CREATURE'
+  LoadData(reddest); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
-  LoadData(WE31E); // from 'CREATURE'
+  LoadData(bluest); // from 'CREATURE'
   Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
   RRND(); // RRND
   IsCOLOR(); // ?COLOR
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
-  LoadData(WE486); // from 'CREATURE'
+  LoadData(s_dot_hue); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
   Push2Words("0.");
-  LoadData(WE48E); // from 'CREATURE'
+  LoadData(s_dot_tint); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
   Push2Words("0.");
-  LoadData(WE496); // from 'CREATURE'
+  LoadData(s_dot_lumens); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
-  Push(0xe496); // 'WE496'
-  Push(0xe48e); // 'WE48E'
+  Push(0xe496); // 's.lumens'
+  Push(0xe48e); // 's.tint'
   Push(a); // R>
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  WE4B6(); // WE4B6
+  whichguy(); // whichguy
   _2SWAP(); // 2SWAP
-  WED63(); // WED63
+  customize(); // customize
 }
 
 
 // ================================================
-// 0xeded: WORD 'WEDEF' codep=0x224c wordp=0xedef
+// 0xeded: WORD '1image' codep=0x224c wordp=0xedef
 // ================================================
 
-void WEDEF() // WEDEF
+void _1image() // 1image
 {
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   Push(Pop()==0?1:0); //  0=
@@ -1400,12 +1400,12 @@ void WEDEF() // WEDEF
 
 
 // ================================================
-// 0xee1b: WORD 'WEE1D' codep=0x224c wordp=0xee1d
+// 0xee1b: WORD '2image' codep=0x224c wordp=0xee1d
 // ================================================
 
-void WEE1D() // WEE1D
+void _2image() // 2image
 {
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   if (Pop() != 0)
   {
@@ -1422,13 +1422,13 @@ void WEE1D() // WEE1D
 // 0xee41: db 0x12 0x00 0x01 0x00 0x38 0xe2 0x55 0xee 0x01 0x00 0x5c 0xe1 0x6d 0xee 0x00 0x00 0x00 0x00 0x00 0x00 0x0e 0x00 0x00 0x00 0x1a 0x01 0x00 0x00 0x27 0x02 0x00 0x00 0x33 0x03 0x00 0x00 0x40 0x04 0x00 0x00 0x64 0x05 0x00 0x00 0x27 0x04 0x00 0x00 0x64 0x05 0x00 0x00 '    8 U   \ m               '   3   @   d   '   d   '
 
 // ================================================
-// 0xee75: WORD 'WEE77' codep=0x224c wordp=0xee77
+// 0xee75: WORD '3image' codep=0x224c wordp=0xee77
 // ================================================
 
-void WEE77() // WEE77
+void _3image() // 3image
 {
-  WE27B(); // WE27B
-  LoadData(WE36E); // from 'CREATURE'
+  coin(); // coin
+  LoadData(g_dot_mobility); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xe15c); Push(0x0001);
   D_eq_(); // D=
@@ -1444,7 +1444,7 @@ void WEE77() // WEE77
     return;
   }
   Push(9);
-  LoadData(WE306); // from 'CREATURE'
+  LoadData(size_dot_index); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   _dash_(); // -
   Push(3);
@@ -1457,18 +1457,18 @@ void WEE77() // WEE77
 
 
 // ================================================
-// 0xeeaf: WORD 'WEEB1' codep=0x224c wordp=0xeeb1
+// 0xeeaf: WORD '4image' codep=0x224c wordp=0xeeb1
 // ================================================
 
-void WEEB1() // WEEB1
+void _4image() // 4image
 {
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
   Push(Pop()==0?1:0); //  0=
   if (Pop() != 0)
   {
-    LoadData(WE3BE); // from 'CREATURE'
+    LoadData(proportion); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
     Push(0xe07d); Push(0x0001);
     D_eq_(); // D=
@@ -1524,13 +1524,13 @@ void WEEB1() // WEEB1
 
 
 // ================================================
-// 0xef2f: WORD 'WEF31' codep=0x224c wordp=0xef31
+// 0xef2f: WORD 'set.icon' codep=0x224c wordp=0xef31
 // ================================================
 
-void WEF31() // WEF31
+void set_dot_icon() // set.icon
 {
   unsigned short int a, b;
-  LoadData(WE2F6); // from 'CREATURE'
+  LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
   Push(0xddc9); Push(0x0001);
@@ -1543,7 +1543,7 @@ void WEF31() // WEF31
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    WEDEF(); // WEDEF
+    _1image(); // 1image
   } else
   {
     _2DUP(); // 2DUP
@@ -1555,40 +1555,40 @@ void WEF31() // WEF31
     Push(Pop() | b); //  R> OR
     if (Pop() != 0)
     {
-      WEE1D(); // WEE1D
+      _2image(); // 2image
     } else
     {
-      LoadData(WE30E); // from 'CREATURE'
+      LoadData(niche); // from 'CREATURE'
       Push(Read16(Pop())&0xFF); //  C@
       Push(4);
       MOD(); // MOD
       if (Pop() != 0)
       {
-        WEE77(); // WEE77
+        _3image(); // 3image
       } else
       {
-        WEEB1(); // WEEB1
+        _4image(); // 4image
       }
     }
   }
-  LoadData(WE49E); // from 'CREATURE'
+  LoadData(icon); // from 'CREATURE'
   Store_3(); // !_3
 }
 
 
 // ================================================
-// 0xef97: WORD 'WEF99' codep=0x224c wordp=0xef99
+// 0xef97: WORD 'colorize' codep=0x224c wordp=0xef99
 // ================================================
 
-void WEF99() // WEF99
+void colorize() // colorize
 {
   IFLD_at_(); // IFLD@
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-    LoadData(WE316); // from 'CREATURE'
+    LoadData(reddest); // from 'CREATURE'
     Push(Read16(Pop())&0xFF); //  C@
-    LoadData(WE31E); // from 'CREATURE'
+    LoadData(bluest); // from 'CREATURE'
     Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
     RRND(); // RRND
     IsCOLOR(); // ?COLOR
@@ -1597,7 +1597,7 @@ void WEF99() // WEF99
     Push(5);
     ROLL(); // ROLL
     IFLD_ex_(); // IFLD!
-    WED63(); // WED63
+    customize(); // customize
     return;
   }
   Push(0);
@@ -1616,31 +1616,31 @@ void WEF99() // WEF99
 
 
 // ================================================
-// 0xefd9: WORD 'WEFDB' codep=0x224c wordp=0xefdb
+// 0xefd9: WORD 'paint' codep=0x224c wordp=0xefdb
 // ================================================
 
-void WEFDB() // WEFDB
+void paint() // paint
 {
-  Push(0xe436); // 'WE436'
-  Push(0xe42e); // 'WE42E'
-  Push(0xe426); // 'WE426'
-  Push(0xe34e); // 'WE34E'
-  WEF99(); // WEF99
-  Push(0xe466); // 'WE466'
-  Push(0xe45e); // 'WE45E'
-  Push(0xe456); // 'WE456'
-  Push(0xe35e); // 'WE35E'
-  WEF99(); // WEF99
-  Push(0xe3d6); // 'WE3D6'
-  Push(0xe3ce); // 'WE3CE'
-  Push(0xe3c6); // 'WE3C6'
-  Push(0xe33e); // 'WE33E'
-  WEF99(); // WEF99
+  Push(0xe436); // 'a.lumens'
+  Push(0xe42e); // 'a.tint'
+  Push(0xe426); // 'a.hue'
+  Push(0xe34e); // 'a.append'
+  colorize(); // colorize
+  Push(0xe466); // 'g.lumens'
+  Push(0xe45e); // 'g.tint'
+  Push(0xe456); // 'g.hue'
+  Push(0xe35e); // 'g.append'
+  colorize(); // colorize
+  Push(0xe3d6); // 'd.lumens'
+  Push(0xe3ce); // 'd.tint'
+  Push(0xe3c6); // 'd.hue'
+  Push(0xe33e); // 'd.append'
+  colorize(); // colorize
   Push(0xe406); // 'WE406'
-  Push(0xe3fe); // 'WE3FE'
-  Push(0xe3f6); // 'WE3F6'
-  Push(0xe32e); // 'WE32E'
-  WEF99(); // WEF99
+  Push(0xe3fe); // 'w.tint'
+  Push(0xe3f6); // 'w.hue'
+  Push(0xe32e); // 'w.append'
+  colorize(); // colorize
 }
 
 
@@ -1665,15 +1665,15 @@ void WEFDB() // WEFDB
 // 0xf098: db 0x00 0x00 0x01 0x00 0x15 0x00 0x47 0x00 0xdd 0x00 0xbd 0x02 0x09 0x07 0x75 0x0e 0xeb 0x16 0x1e 0x22 0x92 0x30 '      G       u    " 0'
 
 // ================================================
-// 0xf0ae: WORD 'WF0B0' codep=0x224c wordp=0xf0b0
+// 0xf0ae: WORD 'highness' codep=0x224c wordp=0xf0b0
 // ================================================
 
-void WF0B0() // WF0B0
+void highness() // highness
 {
   unsigned short int a;
-  LoadData(WE306); // from 'CREATURE'
+  LoadData(size_dot_index); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
-  LoadData(WE30E); // from 'CREATURE'
+  LoadData(niche); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(4);
   MOD(); // MOD
@@ -1699,30 +1699,30 @@ void WF0B0() // WF0B0
   Push(Pop() + 1); //  1+
   RRND(); // RRND
   Push(Read16(regsp)); // DUP
-  LoadData(WE3AE); // from 'CREATURE'
+  LoadData(i_dot_level); // from 'CREATURE'
   Store_3(); // !_3
-  LoadData(WE3B6); // from 'CREATURE'
+  LoadData(volume); // from 'CREATURE'
   Push(Read16(Pop())); //  @
   _slash_(); // /
   Push(1);
   MAX(); // MAX
-  LoadData(WE3B6); // from 'CREATURE'
+  LoadData(volume); // from 'CREATURE'
   Store_3(); // !_3
 }
 
 
 // ================================================
-// 0xf0f8: WORD 'WF0FA' codep=0x224c wordp=0xf0fa
+// 0xf0f8: WORD '(size)' codep=0x224c wordp=0xf0fa
 // ================================================
 
-void WF0FA() // WF0FA
+void _ro_size_rc_() // (size)
 {
   IFLD_at_(); // IFLD@
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
     Push(1);
-    LoadData(WE306); // from 'CREATURE'
+    LoadData(size_dot_index); // from 'CREATURE'
     Push((Read16(Pop())&0xFF) + 1); //  C@ 1+
     RRND(); // RRND
     _gt_SIZE(); // >SIZE
@@ -1737,51 +1737,51 @@ void WF0FA() // WF0FA
 
 
 // ================================================
-// 0xf11c: WORD 'WF11E' codep=0x224c wordp=0xf11e
+// 0xf11c: WORD 'sizer' codep=0x224c wordp=0xf11e
 // ================================================
 
-void WF11E() // WF11E
+void sizer() // sizer
 {
-  Push(0xe47e); // 'WE47E'
-  Push(0xe35e); // 'WE35E'
-  WF0FA(); // WF0FA
-  Push(0xe44e); // 'WE44E'
-  Push(0xe34e); // 'WE34E'
-  WF0FA(); // WF0FA
-  Push(0xe3ee); // 'WE3EE'
-  Push(0xe33e); // 'WE33E'
-  WF0FA(); // WF0FA
-  Push(0xe41e); // 'WE41E'
-  Push(0xe32e); // 'WE32E'
-  WF0FA(); // WF0FA
+  Push(0xe47e); // 'g.size'
+  Push(0xe35e); // 'g.append'
+  _ro_size_rc_(); // (size)
+  Push(0xe44e); // 'a.size'
+  Push(0xe34e); // 'a.append'
+  _ro_size_rc_(); // (size)
+  Push(0xe3ee); // 'd.size'
+  Push(0xe33e); // 'd.append'
+  _ro_size_rc_(); // (size)
+  Push(0xe41e); // 'w.size'
+  Push(0xe32e); // 'w.append'
+  _ro_size_rc_(); // (size)
 }
 
 
 // ================================================
-// 0xf148: WORD 'WF14A' codep=0x224c wordp=0xf14a
+// 0xf148: WORD 'smarts' codep=0x224c wordp=0xf14a
 // ================================================
 
-void WF14A() // WF14A
+void smarts() // smarts
 {
-  LoadData(WE30E); // from 'CREATURE'
+  LoadData(niche); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
-  WEBE7(); // WEBE7
+  madness(); // madness
   Push(0x0080);
   Push(pp_PEAK); // PEAK
   Store_3(); // !_3
-  WE2BB(); // WE2BB
-  LoadData(WE39E); // from 'CREATURE'
+  slip_ex_(); // slip!
+  LoadData(i_dot_level); // from 'CREATURE'
   C_ex_(); // C!
 }
 
 
 // ================================================
-// 0xf160: WORD 'WF162' codep=0x224c wordp=0xf162
+// 0xf160: WORD 'set-size' codep=0x224c wordp=0xf162
 // ================================================
 
-void WF162() // WF162
+void set_dash_size() // set-size
 {
-  LoadData(WE306); // from 'CREATURE'
+  LoadData(size_dot_index); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(1);
   MAX(); // MAX
@@ -1789,62 +1789,62 @@ void WF162() // WF162
   MIN(); // MIN
   _gt_SIZE(); // >SIZE
   _1_dot_5_at_(); // 1.5@
-  LoadData(WE4AE); // from 'CREATURE'
+  LoadData(size); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
 }
 
 
 // ================================================
-// 0xf178: WORD 'WF17A' codep=0x224c wordp=0xf17a
+// 0xf178: WORD 'sculpts' codep=0x224c wordp=0xf17a
 // ================================================
 
-void WF17A() // WF17A
+void sculpts() // sculpts
 {
-  WE285(); // WE285
-  LoadData(WE33E); // from 'CREATURE'
+  rand_pe_(); // rand%
+  LoadData(d_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(pp_ADDITIONS); // ADDITIONS
-  WE5FE(); // WE5FE
-  LoadData(WE3DE); // from 'CREATURE'
+  retrieve(); // retrieve
+  LoadData(d_dot_struc); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
-  WE285(); // WE285
-  LoadData(WE32E); // from 'CREATURE'
+  rand_pe_(); // rand%
+  LoadData(w_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(pp_ADDITIONS); // ADDITIONS
-  WE5FE(); // WE5FE
-  LoadData(WE40E); // from 'CREATURE'
+  retrieve(); // retrieve
+  LoadData(w_dot_struc); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
-  WE285(); // WE285
-  LoadData(WE35E); // from 'CREATURE'
+  rand_pe_(); // rand%
+  LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(pp_ADDITIONS); // ADDITIONS
-  WE5FE(); // WE5FE
-  LoadData(WE46E); // from 'CREATURE'
+  retrieve(); // retrieve
+  LoadData(g_dot_struc); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
-  WE285(); // WE285
-  LoadData(WE34E); // from 'CREATURE'
+  rand_pe_(); // rand%
+  LoadData(a_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(pp_ADDITIONS); // ADDITIONS
-  WE5FE(); // WE5FE
-  LoadData(WE43E); // from 'CREATURE'
+  retrieve(); // retrieve
+  LoadData(a_dot_struc); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
 }
 
 
 // ================================================
-// 0xf1b4: WORD 'WF1B6' codep=0x224c wordp=0xf1b6
+// 0xf1b4: WORD '?plant' codep=0x224c wordp=0xf1b6
 // ================================================
 
-void WF1B6() // WF1B6
+void Isplant() // ?plant
 {
   unsigned short int a, b;
-  LoadData(WE35E); // from 'CREATURE'
+  LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xdec4); Push(0x0001);
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    LoadData(WE306); // from 'CREATURE'
+    LoadData(size_dot_index); // from 'CREATURE'
     Push(Read16(Pop())&0xFF); //  C@
     Push(5);
     _st_(); // <
@@ -1857,24 +1857,24 @@ void WF1B6() // WF1B6
     }
     return;
   }
-  LoadData(WE34E); // from 'CREATURE'
+  LoadData(a_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcbcb); Push(0x0001);
   D_eq_(); // D=
   a = Pop(); // >R
-  LoadData(WE356); // from 'CREATURE'
+  LoadData(a_n_); // from 'CREATURE'
   Push(((Read16(Pop())&0xFF)==1?1:0) & a); //  C@ 1 = R> AND
   if (Pop() != 0)
   {
     Push(0xc591); Push(0x0001);
     return;
   }
-  LoadData(WE35E); // from 'CREATURE'
+  LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcd62); Push(0x0001);
   D_eq_(); // D=
   b = Pop(); // >R
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(5);
   _gt_(); // >
@@ -1885,7 +1885,7 @@ void WF1B6() // WF1B6
     return;
   }
   Push(0x0014);
-  WE285(); // WE285
+  rand_pe_(); // rand%
   _st_(); // <
   if (Pop() != 0)
   {
@@ -1897,17 +1897,17 @@ void WF1B6() // WF1B6
 
 
 // ================================================
-// 0xf254: WORD 'WF256' codep=0x224c wordp=0xf256
+// 0xf254: WORD '?icky' codep=0x224c wordp=0xf256
 // ================================================
 
-void WF256() // WF256
+void Isicky() // ?icky
 {
   unsigned short int a, b, c, d;
-  LoadData(WE2F6); // from 'CREATURE'
+  LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xdd9d); Push(0x0001);
   D_eq_(); // D=
-  LoadData(WE2FE); // from 'CREATURE'
+  LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   a = Pop(); // >R
   b = Pop(); // >R
@@ -1941,11 +1941,11 @@ void WF256() // WF256
     Push(0xc6ee); Push(0x0001);
     return;
   }
-  LoadData(WE2F6); // from 'CREATURE'
+  LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xe07d); Push(0x0001);
   D_eq_(); // D=
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
@@ -1953,11 +1953,11 @@ void WF256() // WF256
     Push(0xc718); Push(0x0001);
     return;
   }
-  LoadData(WE2F6); // from 'CREATURE'
+  LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xdd1f); Push(0x0001);
   D_eq_(); // D=
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(Read16(regsp)); // DUP
   Push(3);
@@ -1972,16 +1972,16 @@ void WF256() // WF256
     Push(0xc609); Push(0x0001);
     return;
   }
-  LoadData(WE3BE); // from 'CREATURE'
+  LoadData(proportion); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xe093); Push(0x0001);
   D_eq_(); // D=
-  LoadData(WE35E); // from 'CREATURE'
+  LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcd17); Push(0x0001);
   D_eq_(); // D=
   c = Pop(); // >R
-  LoadData(WE366); // from 'CREATURE'
+  LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(4);
   _gt_(); // >
@@ -1992,17 +1992,17 @@ void WF256() // WF256
     Push(0xc6be); Push(0x0001);
     return;
   }
-  LoadData(WE35E); // from 'CREATURE'
+  LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcd17); Push(0x0001);
   D_eq_(); // D=
   d = Pop(); // >R
-  LoadData(WE33E); // from 'CREATURE'
+  LoadData(d_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcd8b); Push(0x0001);
   D_eq_(); // D=
   Push(Pop() & d); //  R> AND
-  LoadData(WE2F6); // from 'CREATURE'
+  LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xdddc); Push(0x0001);
   D_eq_(); // D=
@@ -2017,19 +2017,19 @@ void WF256() // WF256
 
 
 // ================================================
-// 0xf382: WORD 'WF384' codep=0x224c wordp=0xf384
+// 0xf382: WORD '?something' codep=0x224c wordp=0xf384
 // ================================================
 
-void WF384() // WF384
+void Issomething() // ?something
 {
   unsigned short int a;
-  LoadData(WE2FE); // from 'CREATURE'
+  LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xddf2); Push(0x0001);
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    LoadData(WE306); // from 'CREATURE'
+    LoadData(size_dot_index); // from 'CREATURE'
     Push(Read16(Pop())&0xFF); //  C@
     Push(3);
     _gt_(); // >
@@ -2038,7 +2038,7 @@ void WF384() // WF384
       Push(0xc5da); Push(0x0001);
     } else
     {
-      LoadData(WE33E); // from 'CREATURE'
+      LoadData(d_dot_append); // from 'CREATURE'
       _1_dot_5_at_(); // 1.5@
       Push(0xdf59); Push(0x0001);
       D_eq_(); // D=
@@ -2052,11 +2052,11 @@ void WF384() // WF384
     }
     return;
   }
-  LoadData(WE2FE); // from 'CREATURE'
+  LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xd905); Push(0x0001);
   D_eq_(); // D=
-  LoadData(WE34E); // from 'CREATURE'
+  LoadData(a_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xcbba); Push(0x0001);
   D_eq_(); // D=
@@ -2066,13 +2066,13 @@ void WF384() // WF384
     Push(0xc5c4); Push(0x0001);
     return;
   }
-  LoadData(WE326); // from 'CREATURE'
+  LoadData(texture); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xceb6); Push(0x0001);
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    LoadData(WE33E); // from 'CREATURE'
+    LoadData(d_dot_append); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
     Push(0xdf59); Push(0x0001);
     D_eq_(); // D=
@@ -2085,13 +2085,13 @@ void WF384() // WF384
     }
     return;
   }
-  LoadData(WE2FE); // from 'CREATURE'
+  LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   Push(0xe000); Push(0x0001);
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    LoadData(WE306); // from 'CREATURE'
+    LoadData(size_dot_index); // from 'CREATURE'
     Push(3);
     _st_(); // <
     if (Pop() != 0)
@@ -2099,12 +2099,12 @@ void WF384() // WF384
       Push(0xc662); Push(0x0001);
     } else
     {
-      LoadData(WE35E); // from 'CREATURE'
+      LoadData(g_dot_append); // from 'CREATURE'
       _1_dot_5_at_(); // 1.5@
       Push(0xcd17); Push(0x0001);
       D_eq_(); // D=
       a = Pop(); // >R
-      LoadData(WE366); // from 'CREATURE'
+      LoadData(g_n_); // from 'CREATURE'
       Push(Read16(Pop())&0xFF); //  C@
       Push(Read16(regsp)); // DUP
       Push(Pop()==3?1:0); //  3 =
@@ -2114,7 +2114,7 @@ void WF384() // WF384
       Push(Pop() & a); //  R> AND
       if (Pop() != 0)
       {
-        LoadData(WE3BE); // from 'CREATURE'
+        LoadData(proportion); // from 'CREATURE'
         _1_dot_5_at_(); // 1.5@
         _2DUP(); // 2DUP
         _2DUP(); // 2DUP
@@ -2132,7 +2132,7 @@ void WF384() // WF384
         {
           Push(0);
           _gt_PROP(); // >PROP
-          WE121(); // WE121
+          lookup(); // lookup
           Push(8);
           _gt_(); // >
           if (Pop() != 0)
@@ -2155,29 +2155,29 @@ void WF384() // WF384
 
 
 // ================================================
-// 0xf4ca: WORD 'WF4CC' codep=0x224c wordp=0xf4cc
+// 0xf4ca: WORD 'similarity' codep=0x224c wordp=0xf4cc
 // ================================================
 
-void WF4CC() // WF4CC
+void similarity() // similarity
 {
-  LoadData(WE30E); // from 'CREATURE'
+  LoadData(niche); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
   Push(4);
   MOD(); // MOD
   if (Pop() != 0)
   {
-    WF1B6(); // WF1B6
+    Isplant(); // ?plant
   } else
   {
-    WF256(); // WF256
+    Isicky(); // ?icky
     if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
     Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
     {
-      WF384(); // WF384
+      Issomething(); // ?something
     }
   }
-  LoadData(WE4A6); // from 'CREATURE'
+  LoadData(resembles); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
 }
 
@@ -2189,25 +2189,25 @@ void WF4CC() // WF4CC
 
 void SPEC_dot_PARM() // SPEC.PARM
 {
-  WE4B6(); // WE4B6
+  whichguy(); // whichguy
   Push(Read16(pp_RECORD_n_)); // RECORD# @
   Push(pp_SEED); // SEED
   _st__ex__gt_(); // <!>
-  WF162(); // WF162
-  WEBB3(); // WEBB3
-  WEC3F(); // WEC3F
-  WEC81(); // WEC81
-  WEC8B(); // WEC8B
-  WEC95(); // WEC95
-  WEF31(); // WEF31
-  WF0B0(); // WF0B0
-  WF14A(); // WF14A
-  WF17A(); // WF17A
-  WF4CC(); // WF4CC
-  WED37(); // WED37
-  WEDAF(); // WEDAF
-  WEFDB(); // WEFDB
-  WF11E(); // WF11E
+  set_dash_size(); // set-size
+  squish(); // squish
+  anger(); // anger
+  durable(); // durable
+  stunable(); // stunable
+  movers(); // movers
+  set_dot_icon(); // set.icon
+  highness(); // highness
+  smarts(); // smarts
+  sculpts(); // sculpts
+  similarity(); // similarity
+  modify(); // modify
+  colorant(); // colorant
+  paint(); // paint
+  sizer(); // sizer
 }
 
 // 0xf528: db 0x4c 0x4f 0x50 0x41 0x52 0x4d 0x53 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x5f 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x2d 0x32 0x32 0x31 0x38 0x2d 0x2d 0x2d 0x2d 0x00 'LOPARMS________________________________---------2218---- '

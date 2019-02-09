@@ -21,11 +21,11 @@
 //           WEC42  codep:0x73ea wordp:0xec42 size:0x0006 C-string:'WEC42'
 //           WEC4A  codep:0x73ea wordp:0xec4a size:0x0006 C-string:'WEC4A'
 //           WEC52  codep:0x73ea wordp:0xec52 size:0x0006 C-string:'WEC52'
-//           WEC5A  codep:0x73ea wordp:0xec5a size:0x0006 C-string:'WEC5A'
+//        SURFTYPE  codep:0x73ea wordp:0xec5a size:0x0006 C-string:'SURFTYPE'
 //           WEC62  codep:0x73ea wordp:0xec62 size:0x0006 C-string:'WEC62'
 //           WEC6A  codep:0x73ea wordp:0xec6a size:0x0006 C-string:'WEC6A'
-//           WEC72  codep:0x73ea wordp:0xec72 size:0x0006 C-string:'WEC72'
-//           WEC7A  codep:0x73ea wordp:0xec7a size:0x0006 C-string:'WEC7A'
+//   ATMO.ACTIVITY  codep:0x73ea wordp:0xec72 size:0x0006 C-string:'ATMO_dot_ACTIVITY'
+//    ATMO.DENSITY  codep:0x73ea wordp:0xec7a size:0x0006 C-string:'ATMO_dot_DENSITY'
 //           WEC82  codep:0x73ea wordp:0xec82 size:0x0006 C-string:'WEC82'
 //           WEC8A  codep:0x73ea wordp:0xec8a size:0x0006 C-string:'WEC8A'
 //           WEC92  codep:0x73ea wordp:0xec92 size:0x0006 C-string:'WEC92'
@@ -245,9 +245,9 @@ LoadDataType WEC4A = {PLANETIDX, 0x02, 0x02, 0x16, 0x658f};
 LoadDataType WEC52 = {PLANETIDX, 0x04, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xec58: WORD 'WEC5A' codep=0x73ea wordp=0xec5a
+// 0xec58: WORD 'SURFTYPE' codep=0x73ea wordp=0xec5a
 // ================================================
-LoadDataType WEC5A = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
+LoadDataType SURFTYPE = {PLANETIDX, 0x01, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec60: WORD 'WEC62' codep=0x73ea wordp=0xec62
@@ -260,14 +260,14 @@ LoadDataType WEC62 = {PLANETIDX, 0x0f, 0x01, 0x16, 0x658f};
 LoadDataType WEC6A = {PLANETIDX, 0x10, 0x01, 0x16, 0x658f};
 
 // ================================================
-// 0xec70: WORD 'WEC72' codep=0x73ea wordp=0xec72
+// 0xec70: WORD 'ATMO.ACTIVITY' codep=0x73ea wordp=0xec72
 // ================================================
-LoadDataType WEC72 = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
+LoadDataType ATMO_dot_ACTIVITY = {PLANETIDX, 0x11, 0x02, 0x16, 0x658f};
 
 // ================================================
-// 0xec78: WORD 'WEC7A' codep=0x73ea wordp=0xec7a
+// 0xec78: WORD 'ATMO.DENSITY' codep=0x73ea wordp=0xec7a
 // ================================================
-LoadDataType WEC7A = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
+LoadDataType ATMO_dot_DENSITY = {PLANETIDX, 0x13, 0x01, 0x16, 0x658f};
 
 // ================================================
 // 0xec80: WORD 'WEC82' codep=0x73ea wordp=0xec82
@@ -647,7 +647,7 @@ void WEE92() // WEE92
     Push(1);
     MAX(); // MAX
   }
-  LoadData(WEC7A); // from 'PLANET'
+  LoadData(ATMO_dot_DENSITY); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -808,7 +808,7 @@ void WEFEA() // WEFEA
   _dash_(); // -
   WEF8A(); // WEF8A
   SWAP(); // SWAP
-  LoadData(WEC7A); // from 'PLANET'
+  LoadData(ATMO_dot_DENSITY); // from 'PLANET'
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() != 0)
   {
@@ -834,7 +834,7 @@ void WEFEA() // WEFEA
 
 void WF01C() // WF01C
 {
-  LoadData(WEC7A); // from 'PLANET'
+  LoadData(ATMO_dot_DENSITY); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
   Push(4);
   MIN(); // MIN
@@ -847,7 +847,7 @@ void WF01C() // WF01C
   }
   Push(0);
   MAX(); // MAX
-  LoadData(WEC72); // from 'PLANET'
+  LoadData(ATMO_dot_ACTIVITY); // from 'PLANET'
   C_ex_(); // C!
 }
 
@@ -1015,7 +1015,7 @@ void WF128() // WF128
 void WF162() // WF162
 {
   unsigned short int a;
-  LoadData(WEC5A); // from 'PLANET'
+  LoadData(SURFTYPE); // from 'PLANET'
   Push(!((Read16(Pop())&0xFF)==2?1:0)); //  C@ 2 = NOT
   a = Pop(); // >R
   while(1)
@@ -1079,7 +1079,7 @@ void WF18E() // WF18E
 
 void WF1C8() // WF1C8
 {
-  LoadData(WEC7A); // from 'PLANET'
+  LoadData(ATMO_dot_DENSITY); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
   if (Pop() != 0)
   {
@@ -1444,7 +1444,7 @@ void _ro_TERRAIN() // (TERRAIN
 
 void WF46D() // WF46D
 {
-  LoadData(WEC5A); // from 'PLANET'
+  LoadData(SURFTYPE); // from 'PLANET'
   Push(Read16(Pop())&0xFF); //  C@
   _ro_TERRAIN(); // (TERRAIN case
 }
