@@ -101,6 +101,9 @@ void PrintCache()
 
 // ------------------------------------------------
 
+unsigned char STARA[256000];
+unsigned char STARB[362496];
+
 void HandleInterrupt()
 {
     static int disktransferaddress_segment = -1;
@@ -161,14 +164,11 @@ void HandleInterrupt()
     if ((interrupt == 0x21) && ((ax>>8) == 0x22))
     {
         // random write
-        //int size = Read16(dx+0x0E);
-        //int block = Read16(dx+0x21) + ((unsigned int)Read8(dx+0x23)<<16);
-        //printf("  size %i block %i write\n", size, block);
-        //char filename[] = "STARA.COM";
-        //filename[4] = Read8(dx+5);
-        //printf("  Write %s", filename);
-        printf("Write");
-        exit(1);
+        int size = Read16(dx+0x0E);
+        int block = Read16(dx+0x21) + (mem[dx+0x23]<<16);
+        printf("Write %c block=%i size=%i\n", Read8(dx+5), block, size);
+        char *star = Read8(dx+5)=='A'?STARA:STARB;
+        memcpy(&star[block*size], &m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size);
         ax = 0x0;
     } else
     if ((interrupt == 0x21) && ((ax>>8) == 0x21))
@@ -177,14 +177,18 @@ void HandleInterrupt()
         //record size
         int size = Read16(dx+0x0E);
         int block = Read16(dx+0x21) + (mem[dx+0x23]<<16);
-
+        char *star = Read8(dx+5)=='A'?STARA:STARB;
+        memcpy(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], &star[block*size], size);
+/*
         char filename[] = "starflt1-in/STARA.COM";
         filename[16] = Read8(dx+5);
+*/
         //printf(" random read of file %s: size %i block %i (offset=0x%06x) write to 0x%04x:0x%04x\n", filename, size, block, block*size, disktransferaddress_segment, disktransferaddress_offset);
         //printf("  Read %s", filename);
         /*
         for(i=0; i<11; i++) printf("%c", mem[dx+1+i]);
         printf("\n");*/
+        /*
         FILE *fp = fopen(filename, "rb");
         if (fp == NULL)
         {
@@ -194,6 +198,7 @@ void HandleInterrupt()
         fseek (fp, block*size, SEEK_SET);
         int ret = fread(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size, 1, fp);
         fclose(fp);
+        */
         ax = 0x0;
     } else
     if ((interrupt == 0x21) && ((ax>>8) == 0x11)) // find first file
@@ -622,10 +627,13 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x5275: ParameterCall(bx, 0x5275); break; // "OVT" "IARRAYS"
         case 0x4ef5: ParameterCall(bx, 0x4ef5); break; // "BLACK DK-BLUE DL-GREE GREEN RED VIOLET BROWN ... WHITE"
         case 0x6ec1: ParameterCall(bx, 0x6ec1); break; // ":TIMEST :SIGNAT :CKSUM :SAVE :VERSIO"
+        case 0x3aec: ParameterCall(bx, 0x3aec); break; // D@ V= C= <OFF> <ON> <BLOCK>
         case 0x3b68: ParameterCall(bx, 0x3b68); break; // "(2C:) NULL 0. VANEWSP IROOT .... *EOL"
         case 0x4a96: ParameterCall(bx, 0x4a96); break; // "CASE:"
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
         case 0xeca2: ParameterCall(bx, 0xeca2); break; // in PL-SET Overlay
+        case 0xe114: ParameterCall(bx, 0xe114); break; // in LP Overlay
+        case 0xf0cc: ParameterCall(bx, 0xf0cc); break; // in STORM-OV
         case 0x4e00: ParameterCall(bx, 0x4e00); break; // Arrays
         case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
         //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
@@ -653,7 +661,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
           {
             PrintCallstacktrace(bx);
             return ERROR;
-
           }
           printf("load adata FILE# '%s' RECORD# %i at regsi=0x%04x\n", s, Read16(0x549d), regsi-2);
           /*
@@ -1543,7 +1550,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
               00006D1D  add dx,byte +0x7
 
               00006D20  cmp cx,dx
-              00006D22  jng 0x6d4b
+              00006D22  jng 0x6d4b // jle
 
               00006D24  add dx,0x401
               00006D28  cmp dx,cx
@@ -1599,7 +1606,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             }
             //x6D5F:
             Push(cx);
-            //Push(0x5eed);
         break;
 
         case 0x4c87: // (SLIPPER)
@@ -2517,6 +2523,10 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x4892: break; // "CAPSON" Turn on caps
 
         case 0x6cd6: // TODO E>CGA
+        printf("TODO E>CGA\n");
+        PrintCallstacktrace(bx);
+        PrintCStack();
+        exit(1);
         // 0x6cd6: pop    dx
         // 0x6cd7: and    dx,0F
         // 0x6cda: push   sisar
@@ -2676,14 +2686,18 @@ enum RETURNCODE Step()
     unsigned short bx = ax;
     unsigned short execaddr = Read16(bx);
     //if (regsi-2 == 0xea37) printf(" enter %s\n", FindWord(bx+2, -1));
+
     if (debuglevel)
     {
       int ovidx = GetOverlayIndex(Read16(0x55a5));
       printf("si=0x%04x exec=0x%04x word=0x%04x sp=0x%04x ov=%2i", regsi-2, execaddr, bx+2, regsp, ovidx);
       printf(" %s\n", FindWord(bx+2, -1));
     }
+    if (bx == 0x79f4-2) // >C+S
+    {
+      printf(">C+S 0x%02x 0x%02x\n", Read16(regsp), Read16(regsp+2));
+    }
     enum RETURNCODE ret = Call(execaddr, bx);
-
     return ret;
 }
 
@@ -2693,6 +2707,25 @@ void InitEmulator()
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
     LoadSTARFLT();
     memset(inputbuffer, 0, sizeof(inputbuffer));
+
+    FILE *fp = fopen("starflt1-in/STARA.COM", "rb");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Cannot open file STARA.COM\n");
+        exit(1);
+    }
+    int ret = fread(STARA, 256000, 1, fp);
+    fclose(fp);
+
+    fp = fopen("starflt1-in/STARB.COM", "rb");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Cannot open file STARB.COM\n");
+        exit(1);
+    }
+    ret = fread(STARB, 362496, 1, fp);
+    fclose(fp);
+
 }
 
 void EnableInterpreter()
