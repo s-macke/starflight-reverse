@@ -39,7 +39,6 @@
         0x2c, 0x81, 0x81, 0x58, 0x27, 0x81, 0x81, 0x21,
         0x35, 0x81, 0x26, 0x81, 0x29, 0x2f
     };
-
 #endif
 
 char HuffmanDecodeChar(unsigned char *buf, int *byteoffset, int *bits)
@@ -66,7 +65,6 @@ char HuffmanDecodeChar(unsigned char *buf, int *byteoffset, int *bits)
 
 void HuffmanDecode(FILE* fp, char* buf, int n)
 {
-    fprintf(fp, "    '");
     int bits = 0x80;
     int byteoffset = 0;
     for(int i=0; i<n; i++)
@@ -74,7 +72,6 @@ void HuffmanDecode(FILE* fp, char* buf, int n)
         char c = HuffmanDecodeChar((unsigned char*)buf, &byteoffset, &bits);
         fprintf(fp, "%c", c);
     }
-    fprintf(fp, "'");
 }
 
 /*
@@ -98,20 +95,30 @@ IADDR
 
 //char instancedone[1024*1024];
 
-void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
+unsigned char starb[362496];
+
+void IHeader(int a, unsigned int *next, unsigned int *previous, unsigned int *children, unsigned int *class, unsigned int *species, DIRENTRY **de)
+{
+  *next = ((starb[a+0])<<0) | ((starb[a+1])<<8) | ((starb[a+2])<<16);
+  *previous = ((starb[a+3])<<0) | ((starb[a+4])<<8) | ((starb[a+5])<<16);
+  *children = ((starb[a+6])<<0) | ((starb[a+7])<<8) | ((starb[a+8])<<16);
+  *class = starb[a+0x9];
+  *species = starb[a+0xa];
+  *de = GetDirByIdx(*class);
+}
+
+void IterSibling(FILE *fp, FILE *fph, int iter, int first)
 {
     int addr = first;
-    unsigned int next, previous, children;
+
+    unsigned int next, previous, children, class, species;
+    DIRENTRY *de;
+
     int i;
     do
     {
-        int a = addr - 0x1000;
-        next = ((buf[a+0])<<0) | ((buf[a+1])<<8) | ((buf[a+2])<<16);
-        previous = ((buf[a+3])<<0) | ((buf[a+4])<<8) | ((buf[a+5])<<16);
-        children = ((buf[a+6])<<0) | ((buf[a+7])<<8) | ((buf[a+8])<<16);
-        unsigned int class = buf[a+0x9];
-        unsigned int species = buf[a+0xa];
-        DIRENTRY *de = GetDirByIdx(class);
+        unsigned int a = addr;
+        IHeader(a, &next, &previous, &children, &class, &species, &de);
 
         fprintf(fph, "  { .instanceoffset=0x%06x, .sib=0x%06x, .prev=0x%06x, .off=0x%06x, .class=0x%02x, .species=0x%02x }, // ",
           addr, next, previous, children, class, species);
@@ -121,7 +128,7 @@ void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
 
         /*
         char dummy[256];
-        sprintf(dummy, "%02x %02x %02x ", class, species, buf[a+11]);
+        sprintf(dummy, "%02x %02x %02x ", class, species, starb[a+11]);
         for(int i=0; i<=10; i++)
             instancedone[a+i] = 1;
         for(int i=11; i<de->lsize+11; i++)
@@ -141,36 +148,42 @@ void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
             if (de->name[i] != ' ') fprintf(fp, "%c", de->name[i]);
         if (class == 0x0d) // bank lsize=9
         {
-            fprintf(fp, "    %i %i balance:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+            fprintf(fp, "    %i %i balance:%i %i %i", starb[a+11], starb[a+12], starb[a+13]|(starb[a+14]<<8), starb[a+15], starb[a+16]);
         }
         if (class == 0x0e) // bank-trans lsize=6
         {
-            fprintf(fp, "    %i %i amount:%i %i %i", buf[a+11], buf[a+12], buf[a+13]|(buf[a+14]<<8), buf[a+15], buf[a+16]);
+            fprintf(fp, "    %i %i amount:%i %i %i", starb[a+11], starb[a+12], starb[a+13]|(starb[a+14]<<8), starb[a+15], starb[a+16]);
         }
         if (class == 0x35) // message
         {
-            HuffmanDecode(fp, (char*)&buf[a+26], buf[a+25]);
+            fprintf(fp, "    '");
+            HuffmanDecode(fp, (char*)&starb[a+26], starb[a+25]);
+            fprintf(fp, "'");
         }
         if (class == 0x1b) // message
         {
-            HuffmanDecode(fp, (char*)&buf[a+41], buf[a+40]);
+            fprintf(fp, "    '");
+            HuffmanDecode(fp, (char*)&starb[a+41], starb[a+40]);
+            fprintf(fp, "'");
         }
         if (class == 0x20) // planet lsize=0
         {
-            fprintf(fp, "    species=0x%02x seed=0x%04x", buf[a+0xa], addr);
+            fprintf(fp, "    species=0x%02x seed=0x%04x", starb[a+0xa], addr);
         }
 #ifdef STARFLT1
         if (class == 0x30) // string
         {
           //if (species == 32)
-              HuffmanDecode(fp, (char*)&buf[a+13], buf[a+12]);
+              fprintf(fp, "    '");
+              HuffmanDecode(fp, (char*)&starb[a+13], starb[a+12]);
+              fprintf(fp, "'");
               /*
           else
           {
             fprintf(fp, " ");
-            for(int i=0; i<buf[a+11]; i++)
+            for(int i=0; i<starb[a+11]; i++)
             {
-              fprintf(fp, "%c", buf[a+12+i]);
+              fprintf(fp, "%c", starb[a+12+i]);
             }
           }
           */
@@ -179,33 +192,33 @@ void IterSibling(FILE *fp, FILE *fph, unsigned char *buf, int iter, int first)
         if (class == 0x17) // starsystem lsize=8 for starflt1, lsize=9 for starflt2
         {
             fprintf(fp, "    species=%2i flaredate=%4i x=%4i y=%4i orbitmask=0x%02x loggedmask=%i",
-                buf[a+0xa],
-                ((signed char)buf[a+0xb] + ((signed char)buf[a+0xc]<<8)),
-                buf[a+0xd] + (buf[a+0xe]<<8),
-                buf[a+0xf] + (buf[a+0x10]<<8),
-                buf[a+0x11],
-                buf[a+0x12]);
+                starb[a+0xa],
+                ((signed char)starb[a+0xb] + ((signed char)starb[a+0xc]<<8)),
+                starb[a+0xd] + (starb[a+0xe]<<8),
+                starb[a+0xf] + (starb[a+0x10]<<8),
+                starb[a+0x11],
+                starb[a+0x12]);
         }
 /*
         if (class == 0x44) // creatures lsize=17 for starflt1
         {
             fprintf(fp, "    species=%2i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i %i",
-              (int)buf[a+0xa], (int)buf[a+11], (int)buf[a+12], (int)buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17],
-              buf[a+18], buf[a+19], buf[a+20], buf[a+21], buf[a+22], buf[a+23], buf[a+24],
-              buf[a+25], buf[a+26], buf[a+27]
+              (int)starb[a+0xa], (int)starb[a+11], (int)starb[a+12], (int)starb[a+13], starb[a+14], starb[a+15], starb[a+16], starb[a+17],
+              starb[a+18], starb[a+19], starb[a+20], starb[a+21], starb[a+22], starb[a+23], starb[a+24],
+              starb[a+25], starb[a+26], starb[a+27]
             );
         }
         */
 #else
         if (class == 0x17) // starsystem lsize=9 for starflt2
         {
-            fprintf(fp, "    %i %i %i %i %i %i %i", buf[a+11], buf[a+12], buf[a+13], buf[a+14], buf[a+15], buf[a+16], buf[a+17]);
+            fprintf(fp, "    %i %i %i %i %i %i %i", starb[a+11], starb[a+12], starb[a+13], starb[a+14], starb[a+15], starb[a+16], starb[a+17]);
         }
 #endif
 
         fprintf(fp, "\n");
 
-        if (children != 0) IterSibling(fp, fph, buf, iter+1, children);
+        if (children != 0) IterSibling(fp, fph, iter+1, children);
         addr = next;
         if (next == 0) return;
 
@@ -242,11 +255,8 @@ void ExtractInstance(const char* filenametxt, const char* filenameh)
     IFieldType INST_dash_CLASS = {DIRECTORYIDX, 0x09, 0x01};
     IFieldType INST_dash_SPECIES = {DIRECTORYIDX, 0x0a, 0x01};
 */
-
     int size;
-    unsigned char* buf = Extract(0x1, &size);
-    IterSibling(fptxt, fph, buf, 0, 0x1006);
-    //IterSibling(fptxt, fph, buf, 0, 0x01c29b);
+    IterSibling(fptxt, fph, 0, 0x1006);
 
     fprintf(fph, "  { .instanceoffset=-1, .sib=-1, .prev=-1, .off=-1, .class=-1, .species=-1 }\n");
     fprintf(fph, "};\n");
@@ -271,11 +281,77 @@ void ExtractInstance(const char* filenametxt, const char* filenameh)
     */
 }
 
+void ExtractStrings(const char* filenameh)
+{
+  unsigned int next, previous, children, class, species;
+  DIRENTRY *de;
+
+  FILE *fp = fopen(filenameh, "w");
+  if (fp == NULL)
+  {
+      fprintf(stderr, "Error: Cannot write file %s\n", filenameh);
+      exit(1);
+  }
+
+  #ifdef STARFLT1
+  unsigned int initaddress = 0x01c29b;
+  unsigned int limitaddress = 0x01e624; // addres at which there is no longer a huffman encoding
+  #else
+  unsigned int initaddress = 0x02468e;
+  unsigned int limitaddress = 0x024a04;
+  #endif
+
+  unsigned int a = initaddress;
+
+  fprintf(fp, "typedef struct { int offset; char* string } STRINGENTRY;\n\n");
+  fprintf(fp, "STRINGENTRY strings[]=\n{\n");
+
+  do
+  {
+    IHeader(a, &next, &previous, &children, &class, &species, &de);
+    fprintf(fp, "  { .offset=0x%06x, .string=\"", a);
+    if (species == 32 && a < limitaddress)
+    {
+          HuffmanDecode(fp, (char*)&starb[a+13], starb[a+12]);
+    }
+    else
+    {
+      for(int i=0; i<starb[a+11]; i++)
+      {
+        fprintf(fp, "%c", starb[a+12+i]);
+      }
+    }
+    fprintf(fp, "\"}\n");
+
+    a = next;
+  } while (a != initaddress);
+
+  fprintf(fp, "  { .offset=-1, .string=NULL}\n");
+  fprintf(fp, "};\n");
+
+}
+
+void LoadSTARB()
+{
+  FILE *fp = fopen(FILESTARB, "rb");
+  if (fp == NULL)
+  {
+    fprintf(stderr, "Error: Cannot open file %s\n", FILESTARB);
+    exit(1);
+  }
+  int ret = fread(starb, 362496, 1, fp);
+  fclose(fp);
+}
+
 int main()
 {
+  printf("Load STARB\n");
+  LoadSTARB();
   printf("Load Directory\n");
   LoadDir(NULL);
   printf("Store instance into '%s' and '%s'\n", OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
   ExtractInstance(OUTDIR"/data/instance.txt", OUTDIR"/data/instance.h");
+  printf("Store further strings into '%s'\n", OUTDIR"/data/strings.h");
+  ExtractStrings(OUTDIR"/data/strings.h");
   return 0;
 }
