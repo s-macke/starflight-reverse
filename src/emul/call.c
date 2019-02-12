@@ -29,6 +29,7 @@ unsigned short int inputbuffer[256];
 
 void FillKeyboardBufferString(char *str)
 {
+  printf("Interpret '%s'\n", str);
     int n = strlen(str);
     memset(inputbuffer, 0, sizeof(inputbuffer));
     for(int i=0; i<n; i++)
@@ -166,8 +167,14 @@ void HandleInterrupt()
         // random write
         int size = Read16(dx+0x0E);
         int block = Read16(dx+0x21) + (mem[dx+0x23]<<16);
+
         printf("Write %c block=%i size=%i\n", Read8(dx+5), block, size);
         char *star = Read8(dx+5)=='A'?STARA:STARB;
+        if (((size+1)*block) > sizeof(STARB))
+        {
+          printf("write above limit\n");
+          exit(1);
+        }
         memcpy(&star[block*size], &m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size);
         ax = 0x0;
     } else
@@ -175,30 +182,16 @@ void HandleInterrupt()
     {
         // random read
         //record size
+
         int size = Read16(dx+0x0E);
         int block = Read16(dx+0x21) + (mem[dx+0x23]<<16);
         char *star = Read8(dx+5)=='A'?STARA:STARB;
-        memcpy(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], &star[block*size], size);
-/*
-        char filename[] = "starflt1-in/STARA.COM";
-        filename[16] = Read8(dx+5);
-*/
-        //printf(" random read of file %s: size %i block %i (offset=0x%06x) write to 0x%04x:0x%04x\n", filename, size, block, block*size, disktransferaddress_segment, disktransferaddress_offset);
-        //printf("  Read %s", filename);
-        /*
-        for(i=0; i<11; i++) printf("%c", mem[dx+1+i]);
-        printf("\n");*/
-        /*
-        FILE *fp = fopen(filename, "rb");
-        if (fp == NULL)
+        if (((size+1)*block) > sizeof(STARB))
         {
-            fprintf(stderr, "Cannot open file\n");
-            exit(1);
+          printf("read above limit\n");
+          exit(1);
         }
-        fseek (fp, block*size, SEEK_SET);
-        int ret = fread(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], size, 1, fp);
-        fclose(fp);
-        */
+        memcpy(&m[(disktransferaddress_segment<<4)+disktransferaddress_offset], &star[block*size], size);
         ax = 0x0;
     } else
     if ((interrupt == 0x21) && ((ax>>8) == 0x11)) // find first file
@@ -633,7 +626,13 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x4a4f: ParameterCall(bx, 0x4a4f); break; // "CASE"
         case 0xeca2: ParameterCall(bx, 0xeca2); break; // in PL-SET Overlay
         case 0xe114: ParameterCall(bx, 0xe114); break; // in LP Overlay
+        case 0xe2cf: ParameterCall(bx, 0xe2cf); break; // in LP Overlay
+        case 0xe4f0: ParameterCall(bx, 0xe4f0); break; // in LP Overlay
         case 0xf0cc: ParameterCall(bx, 0xf0cc); break; // in STORM-OV
+        case 0xe940: ParameterCall(bx, 0xe940); break; // in VITA-OV
+        case 0xe555: ParameterCall(bx, 0xe555); break; // in HP-OV
+        case 0xe420: ParameterCall(bx, 0xe420); break; // in HP-OV
+        case 0xea73: ParameterCall(bx, 0xea73); break; // in SENT-OV
         case 0x4e00: ParameterCall(bx, 0x4e00); break; // Arrays
         case 0x744d: ParameterCall(bx, 0x744d); break; // "INST-SI" "INST-PR" "%NAME" "PHR-CNT" "TEXT-CO" "PHRASE$" ...
         //case 0x1AB5: ParameterCall(bx, 0x1AB5); break; // "FORTH MUSIC IT-VOC MISC-"
@@ -1814,7 +1813,6 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 // 0x93ad: jmp    word ptr [bx]
 
         case 0x902b: // "{BLT}" plot a bit pattern given parameters
-            //PrintCallstacktrace(bx);
             {
             int color = Read16(0x55F2); // COLOR
             int bltseg = Read16(0x58aa); // BLTSEG
@@ -2107,12 +2105,19 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         case 0x753F: // ">C"
             //printf("PushC at 0x%04x\n", regsi-2);
             //PrintCallstacktrace(bx);
+/*
+            if (((Read16(regsp)&0xFF) == 0) && (Read16(regsp+2) == 0))
+            {
+              printf("Error, try to push illegal stack value\n");
+              PrintCallstacktrace(bx);
+              PrintCStack();
+              exit(1);
+            }
+*/
             bx = Read16(0x54b0); // CXSP
             Write8(bx+2, Pop()&0xFF);
             Write16(bx, Pop());
             Write16(0x54b0, bx-3);
-            //PrintCStack();
-
         break;
 
         case 0x755A: // "C>"
@@ -2645,6 +2650,53 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         }
         break;
 
+        case 0x992d: // "?INVIS"
+        {
+          unsigned short ax = 0;
+          dx = Pop();
+          if (dx < Read16(0x5B31)) ax |= 4; // BVIS
+          if ((short int)dx > (short int)Read16(0x5B22)) ax |= 8;
+          dx = Pop();
+          if (dx < Read16(0x5B3C)) ax |= 1; // LVIS
+          if ((short int)dx > (short int)Read16(0x5B26)) ax |= 2;
+
+          if (ax == 0)
+          {
+            ax++;
+          } else
+          {
+            ax = 0;
+          }
+          Push(ax);
+
+        // 0x992d: sub    ax,ax
+        // 0x992f: pop    dx
+        // 0x9930: cmp    dx,[5B31] // BVIS
+        // 0x9934: jns    9939
+        // 0x9936: or     ax,0004
+
+        // 0x9939: cmp    dx,[5B22] // W5B22
+        // 0x993d: jle    9942
+        // 0x993f: or     ax,0008
+
+        // 0x9942: pop    dx
+        // 0x9943: cmp    dx,[5B3C] // LVIS
+        // 0x9947: jns    994C
+        // 0x9949: or     ax,0001
+
+        // 0x994c: cmp    dx,[5B26] // W5B26
+        // 0x9950: jle    9955
+        // 0x9952: or     ax,0002
+
+        // 0x9955: or     ax,ax
+        // 0x9957: jnz    995C
+        // 0x9959: inc    ax
+        // 0x995a: jmp    995E
+        // 0x995c: xor    ax,ax
+        // 0x995e: push   ax
+        }
+        break;
+
         // ------- fract-ov operations -------
         case 0xe770: FRACT_FILLARRAY(); break;
         case 0xe537: FRACT_StoreHeight(); break;
@@ -2663,15 +2715,37 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
 void LoadSTARFLT()
 {
+    FILE *fp;
+    int ret;
     memset(mem, 0, 0x10000);
-    FILE *fp = fopen(FILESTAR0, "rb");
+    fp = fopen(FILESTAR0, "rb");
     if (fp == NULL)
     {
         fprintf(stderr, "Error: Cannot find file %s\n", FILESTAR0);
         exit(1);
     }
-    int ret = fread(&mem[0x100], FILESTAR0SIZE, 1, fp);
+    ret = fread(&mem[0x100], FILESTAR0SIZE, 1, fp);
     fclose(fp);
+
+    fp = fopen(FILESTARA, "rb");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s\n", FILESTARA);
+        exit(1);
+    }
+    ret = fread(STARA, 256000, 1, fp);
+    fclose(fp);
+
+    fp = fopen(FILESTARB, "rb");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s\n", FILESTARB);
+        exit(1);
+    }
+    ret = fread(STARB, 362496, 1, fp);
+    fclose(fp);
+
+
 }
 
 void EnableDebug()
@@ -2693,10 +2767,23 @@ enum RETURNCODE Step()
       printf("si=0x%04x exec=0x%04x word=0x%04x sp=0x%04x ov=%2i", regsi-2, execaddr, bx+2, regsp, ovidx);
       printf(" %s\n", FindWord(bx+2, -1));
     }
+
+    if (bx == 0xe121-2)
+    {
+      printf("lookup 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
+    }
+    if (execaddr == 0xe114)
+    {
+      printf("iaddr 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
+    }
+
+/*
     if (bx == 0x79f4-2) // >C+S
     {
       printf(">C+S 0x%02x 0x%02x\n", Read16(regsp), Read16(regsp+2));
+      PrintCallstacktrace(bx);
     }
+*/
     enum RETURNCODE ret = Call(execaddr, bx);
     return ret;
 }
@@ -2707,25 +2794,6 @@ void InitEmulator()
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
     LoadSTARFLT();
     memset(inputbuffer, 0, sizeof(inputbuffer));
-
-    FILE *fp = fopen("starflt1-in/STARA.COM", "rb");
-    if (fp == NULL)
-    {
-        fprintf(stderr, "Cannot open file STARA.COM\n");
-        exit(1);
-    }
-    int ret = fread(STARA, 256000, 1, fp);
-    fclose(fp);
-
-    fp = fopen("starflt1-in/STARB.COM", "rb");
-    if (fp == NULL)
-    {
-        fprintf(stderr, "Cannot open file STARB.COM\n");
-        exit(1);
-    }
-    ret = fread(STARB, 362496, 1, fp);
-    fclose(fp);
-
 }
 
 void EnableInterpreter()

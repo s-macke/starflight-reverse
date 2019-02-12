@@ -8,6 +8,7 @@ enum RETURNCODE Step();
 void InitEmulator();
 void EnableInterpreter();
 void EnableDebug();
+void PrintCStack();
 
 void FillKeyboardBufferString(char *str);
 void FillKeyboardBufferKey(unsigned short key);
