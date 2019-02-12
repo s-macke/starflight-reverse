@@ -97,7 +97,21 @@ void GetScienceAndSensorReading(int idx)
   printf("=== SENSOR READING ===\n");
   FillKeyboardBufferString("32 (/ANALYSIS)\n");
   Continue();
+  fflush(stdout);
+}
 
+void GetRegions()
+{
+  FillKeyboardBufferString("BIO\n");
+  Continue();
+
+  printf("=== MAPS READING ===\n");
+  FillKeyboardBufferString("MAPS- WF4F4\n");
+  Continue();
+
+  FillKeyboardBufferString("DPART-OV WF166 OTHER-DELETE\n");
+  Continue();
+  fflush(stdout);
 }
 
 int main()
@@ -162,10 +176,14 @@ int main()
     // 123 101 8 (ORBIT) 0x1de7 0x6502
 
     FillKeyboardBufferString("7541 25858 (ORBIT) 1.5!\n");
+    Continue();
 
     sprintf(str, "(ORBIT) @>C+S %i INST-QTY !_3 ICLOSE\n", planets[idx].orbit);
     FillKeyboardBufferString(str);
     Continue();
+    //PrintCStack();
+    //exit(1);
+
 /*
     FillKeyboardBufferString("(ORBIT) @>C+S INST-QTY @ . ICLOSE\n");
     Continue();
@@ -178,38 +196,69 @@ int main()
 
     FillKeyboardBufferString("SET-PLANET\n");
     Continue();
+
+
 /*
     GetAtmosphericActivity();
     exit(1);
 */
     //GetAtmosphere(idx);
     GetScienceAndSensorReading(idx);
-
+    GetRegions();
 /*
     FillKeyboardBufferString("MAPS- WF4F4\n");
     Continue();
     exit(1);
-    */
-
-
-/*
-    FillKeyboardBufferString("LP-OV\n");
-    Continue();
-    */
-/*
-    Write16(0xef31, 0x1692-2);
-    Write16(0xf0b0, 0x1692-2);
 */
-    //EnableDebug();
-    /*
-    FillKeyboardBufferString("42 SPEC.PARM .\n");
+/*
+    FillKeyboardBufferString("?POPULA\n");
+    Continue();
+*/
+/*
+FillKeyboardBufferString("POPULA\n");
+Continue();
+*/
+
+/*
+    FillKeyboardBufferString("BIO\n");
+    Continue();
+
+    FillKeyboardBufferString("0. THIS-REGION 1.5!\n");
+    Continue();
+
+    FillKeyboardBufferString("POPULA\n");
     Continue();
     */
-    /*
-    FillKeyboardBufferString("42 BIO .\n");
+/*
+    FillKeyboardBufferString("?POPULA\n");
     Continue();
+*/
+/*
+    FillKeyboardBufferString("32 RECORD# ! 68 SAYIT\n");
+    Continue();
+
     exit(1);
+
+    FillKeyboardBufferString("DPART-OV WF166 OTHER-DELETE\n");
+    Continue();
+*/
+/*
+    FillKeyboardBufferString("SAVE-BUFFERS\n");
+    Continue();
+*/
+/*
+    FillKeyboardBufferString("POPULA\n");
+    Continue();
     */
+/*
+    FillKeyboardBufferString("0 RECORD# !\n");
+    Continue();
+
+    FillKeyboardBufferString("OTHER-PAR\n"); // LP-OV
+    Continue();
+*/
+    //exit(1);
+
     idx++;
   }
   return 0;
