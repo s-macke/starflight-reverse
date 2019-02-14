@@ -1189,7 +1189,7 @@ void movers() // movers
   if (Pop() != 0)
   {
     _2DUP(); // 2DUP
-    Push(0xe238); Push(0x0001);
+    Push(0xe238); Push(0x0001); // 'SESSILE'
     D_eq_(); // D=
     Push(Pop()==0?1:0); //  0=
     if (Pop() != 0)
@@ -1214,7 +1214,7 @@ void movers() // movers
   Push(Pop() | Pop()); // OR
   if (Pop() != 0)
   {
-    Push(0xe1fb); Push(0x0001);
+    Push(0xe1fb); Push(0x0001); // 'FLOATING'
     D_eq_(); // D=
     if (Pop() != 0)
     {
@@ -1249,7 +1249,7 @@ void _ro_modify_rc_() // (modify)
   D_eq_(); // D=
   Push(b); // R>
   Push(a); // R>
-  Push(0xdf48); Push(0x0001);
+  Push(0xdf48); Push(0x0001); // 'TAIL'
   D_eq_(); // D=
   Push(Pop() | Pop()); // OR
   Push(!Pop()); //  NOT
@@ -1430,7 +1430,7 @@ void _3image() // 3image
   coin(); // coin
   LoadData(g_dot_mobility); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe15c); Push(0x0001);
+  Push(0xe15c); Push(0x0001); // 'CRAWLING'
   D_eq_(); // D=
   if (Pop() != 0)
   {
@@ -1470,7 +1470,7 @@ void _4image() // 4image
   {
     LoadData(proportion); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
-    Push(0xe07d); Push(0x0001);
+    Push(0xe07d); Push(0x0001); // 'ELONGATED'
     D_eq_(); // D=
     if (Pop() != 0)
     {
@@ -1533,11 +1533,11 @@ void set_dot_icon() // set.icon
   LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
   _2DUP(); // 2DUP
-  Push(0xddc9); Push(0x0001);
+  Push(0xddc9); Push(0x0001); // 'RADIAL'
   D_eq_(); // D=
   a = Pop(); // >R
   _2DUP(); // 2DUP
-  Push(0xddb3); Push(0x0001);
+  Push(0xddb3); Push(0x0001); // 'SPHERICAL'
   D_eq_(); // D=
   Push(Pop() | a); //  R> OR
   if (Pop() != 0)
@@ -1547,10 +1547,10 @@ void set_dot_icon() // set.icon
   } else
   {
     _2DUP(); // 2DUP
-    Push(0xdd87); Push(0x0001);
+    Push(0xdd87); Push(0x0001); // 'AMORPHOUS'
     D_eq_(); // D=
     b = Pop(); // >R
-    Push(0xdd9d); Push(0x0001);
+    Push(0xdd9d); Push(0x0001); // 'IRREGULAR'
     D_eq_(); // D=
     Push(Pop() | b); //  R> OR
     if (Pop() != 0)
@@ -1840,7 +1840,7 @@ void Isplant() // ?plant
   unsigned short int a, b;
   LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xdec4); Push(0x0001);
+  Push(0xdec4); Push(0x0001); // 'LEAVES'
   D_eq_(); // D=
   if (Pop() != 0)
   {
@@ -1850,28 +1850,28 @@ void Isplant() // ?plant
     _st_(); // <
     if (Pop() != 0)
     {
-      Push(0xc61f); Push(0x0001);
+      Push(0xc61f); Push(0x0001); // 'PLANT-LIKE'
     } else
     {
-      Push(0xc57b); Push(0x0001);
+      Push(0xc57b); Push(0x0001); // 'TREE-LIKE'
     }
     return;
   }
   LoadData(a_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcbcb); Push(0x0001);
+  Push(0xcbcb); Push(0x0001); // 'FLOAT SAC'
   D_eq_(); // D=
   a = Pop(); // >R
   LoadData(a_n_); // from 'CREATURE'
   Push(((Read16(Pop())&0xFF)==1?1:0) & a); //  C@ 1 = R> AND
   if (Pop() != 0)
   {
-    Push(0xc591); Push(0x0001);
+    Push(0xc591); Push(0x0001); // 'BALLOON-LIKE'
     return;
   }
   LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcd62); Push(0x0001);
+  Push(0xcd62); Push(0x0001); // 'TENTACLE'
   D_eq_(); // D=
   b = Pop(); // >R
   LoadData(g_n_); // from 'CREATURE'
@@ -1881,7 +1881,7 @@ void Isplant() // ?plant
   Push(Pop() & b); //  R> AND
   if (Pop() != 0)
   {
-    Push(0xc748); Push(0x0001);
+    Push(0xc748); Push(0x0001); // 'ANEMONE-LIKE'
     return;
   }
   Push(0x0014);
@@ -1889,10 +1889,10 @@ void Isplant() // ?plant
   _st_(); // <
   if (Pop() != 0)
   {
-    Push(0xc704); Push(0x0001);
+    Push(0xc704); Push(0x0001); // 'FUNGOID'
     return;
   }
-  Push(0xc61f); Push(0x0001);
+  Push(0xc61f); Push(0x0001); // 'PLANT-LIKE'
 }
 
 
@@ -1905,7 +1905,7 @@ void Isicky() // ?icky
   unsigned short int a, b, c, d;
   LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xdd9d); Push(0x0001);
+  Push(0xdd9d); Push(0x0001); // 'IRREGULAR'
   D_eq_(); // D=
   LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
@@ -1913,23 +1913,23 @@ void Isicky() // ?icky
   b = Pop(); // >R
   Push(a); // I'
   Push(b); // I
-  Push(0xcf93); Push(0x0001);
+  Push(0xcf93); Push(0x0001); // 'HARD'
   D_eq_(); // D=
   Push(a); // I'
   Push(b); // I
-  Push(0xd220); Push(0x0001);
+  Push(0xd220); Push(0x0001); // 'ROUGH'
   D_eq_(); // D=
   Push(a); // I'
   Push(b); // I
-  Push(0xd0aa); Push(0x0001);
+  Push(0xd0aa); Push(0x0001); // 'COARSE'
   D_eq_(); // D=
   Push(a); // I'
   Push(b); // I
-  Push(0xd0f3); Push(0x0001);
+  Push(0xd0f3); Push(0x0001); // 'CRUSTY'
   D_eq_(); // D=
   Push(b); // R>
   Push(a); // R>
-  Push(0xd166); Push(0x0001);
+  Push(0xd166); Push(0x0001); // 'CRACKED'
   D_eq_(); // D=
   Push(Pop() | Pop()); // OR
   Push(Pop() | Pop()); // OR
@@ -1938,24 +1938,24 @@ void Isicky() // ?icky
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc6ee); Push(0x0001);
+    Push(0xc6ee); Push(0x0001); // 'ROCK-LIKE'
     return;
   }
   LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe07d); Push(0x0001);
+  Push(0xe07d); Push(0x0001); // 'ELONGATED'
   D_eq_(); // D=
   LoadData(g_n_); // from 'CREATURE'
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc718); Push(0x0001);
+    Push(0xc718); Push(0x0001); // 'STARFISH-LIKE'
     return;
   }
   LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xdd1f); Push(0x0001);
+  Push(0xdd1f); Push(0x0001); // 'EXOSKELETON'
   D_eq_(); // D=
   LoadData(g_n_); // from 'CREATURE'
   Push(Read16(Pop())&0xFF); //  C@
@@ -1969,16 +1969,16 @@ void Isicky() // ?icky
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc609); Push(0x0001);
+    Push(0xc609); Push(0x0001); // 'INSECTOID'
     return;
   }
   LoadData(proportion); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe093); Push(0x0001);
+  Push(0xe093); Push(0x0001); // 'NARROW'
   D_eq_(); // D=
   LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcd17); Push(0x0001);
+  Push(0xcd17); Push(0x0001); // 'LEG'
   D_eq_(); // D=
   c = Pop(); // >R
   LoadData(g_n_); // from 'CREATURE'
@@ -1989,27 +1989,27 @@ void Isicky() // ?icky
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc6be); Push(0x0001);
+    Push(0xc6be); Push(0x0001); // 'SPIDER-LIKE'
     return;
   }
   LoadData(g_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcd17); Push(0x0001);
+  Push(0xcd17); Push(0x0001); // 'LEG'
   D_eq_(); // D=
   d = Pop(); // >R
   LoadData(d_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcd8b); Push(0x0001);
+  Push(0xcd8b); Push(0x0001); // 'ARM'
   D_eq_(); // D=
   Push(Pop() & d); //  R> AND
   LoadData(shape); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xdddc); Push(0x0001);
+  Push(0xdddc); Push(0x0001); // 'BILATERAL'
   D_eq_(); // D=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc5f4); Push(0x0001);
+    Push(0xc5f4); Push(0x0001); // 'HUMANOID'
     return;
   }
   Push(0);
@@ -2025,7 +2025,7 @@ void Issomething() // ?something
   unsigned short int a;
   LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xddf2); Push(0x0001);
+  Push(0xddf2); Push(0x0001); // 'SCALES'
   D_eq_(); // D=
   if (Pop() != 0)
   {
@@ -2035,59 +2035,59 @@ void Issomething() // ?something
     _gt_(); // >
     if (Pop() != 0)
     {
-      Push(0xc5da); Push(0x0001);
+      Push(0xc5da); Push(0x0001); // 'DINOSAUR-LIKE'
     } else
     {
       LoadData(d_dot_append); // from 'CREATURE'
       _1_dot_5_at_(); // 1.5@
-      Push(0xdf59); Push(0x0001);
+      Push(0xdf59); Push(0x0001); // 'SHELL'
       D_eq_(); // D=
       if (Pop() != 0)
       {
-        Push(0xc6d6); Push(0x0001);
+        Push(0xc6d6); Push(0x0001); // 'TURTLE-LIKE'
       } else
       {
-        Push(0xc64c); Push(0x0001);
+        Push(0xc64c); Push(0x0001); // 'REPTILIAN'
       }
     }
     return;
   }
   LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xd905); Push(0x0001);
+  Push(0xd905); Push(0x0001); // 'FEATHERY'
   D_eq_(); // D=
   LoadData(a_dot_append); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xcbba); Push(0x0001);
+  Push(0xcbba); Push(0x0001); // 'WING'
   D_eq_(); // D=
   Push(Pop() & Pop()); // AND
   if (Pop() != 0)
   {
-    Push(0xc5c4); Push(0x0001);
+    Push(0xc5c4); Push(0x0001); // 'BIRD-LIKE'
     return;
   }
   LoadData(texture); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xceb6); Push(0x0001);
+  Push(0xceb6); Push(0x0001); // 'MUCOUSY'
   D_eq_(); // D=
   if (Pop() != 0)
   {
     LoadData(d_dot_append); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
-    Push(0xdf59); Push(0x0001);
+    Push(0xdf59); Push(0x0001); // 'SHELL'
     D_eq_(); // D=
     if (Pop() != 0)
     {
-      Push(0xc690); Push(0x0001);
+      Push(0xc690); Push(0x0001); // 'SNAIL-LIKE'
     } else
     {
-      Push(0xc67a); Push(0x0001);
+      Push(0xc67a); Push(0x0001); // 'SLUG-LIKE'
     }
     return;
   }
   LoadData(exterior); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe000); Push(0x0001);
+  Push(0xe000); Push(0x0001); // 'FUR'
   D_eq_(); // D=
   if (Pop() != 0)
   {
@@ -2096,12 +2096,12 @@ void Issomething() // ?something
     _st_(); // <
     if (Pop() != 0)
     {
-      Push(0xc662); Push(0x0001);
+      Push(0xc662); Push(0x0001); // 'RODENT-LIKE'
     } else
     {
       LoadData(g_dot_append); // from 'CREATURE'
       _1_dot_5_at_(); // 1.5@
-      Push(0xcd17); Push(0x0001);
+      Push(0xcd17); Push(0x0001); // 'LEG'
       D_eq_(); // D=
       a = Pop(); // >R
       LoadData(g_n_); // from 'CREATURE'
@@ -2118,16 +2118,16 @@ void Issomething() // ?something
         _1_dot_5_at_(); // 1.5@
         _2DUP(); // 2DUP
         _2DUP(); // 2DUP
-        Push(0xe059); Push(0x0001);
+        Push(0xe059); Push(0x0001); // 'THICK'
         D_eq_(); // D=
         _2SWAP(); // 2SWAP
-        Push(0xe06b); Push(0x0001);
+        Push(0xe06b); Push(0x0001); // 'SQUAT'
         D_eq_(); // D=
         Push(Pop() | Pop()); // OR
         if (Pop() != 0)
         {
           Pop(); // DROP
-          Push(0xc636); Push(0x0001);
+          Push(0xc636); Push(0x0001); // 'BEAR-LIKE'
         } else
         {
           Push(0);
@@ -2137,7 +2137,7 @@ void Issomething() // ?something
           _gt_(); // >
           if (Pop() != 0)
           {
-            Push(0xc5aa); Push(0x0001);
+            Push(0xc5aa); Push(0x0001); // 'ANTELOPE-LIKE'
           } else
           {
             Push2Words("0.");

@@ -907,7 +907,7 @@ void pelts() // pelts
     outfit(); // outfit
   } else
   {
-    Push(0xdd55); Push(0x0001);
+    Push(0xdd55); Push(0x0001); // 'SURFACE'
   }
   LoadData(exterior); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
@@ -1516,12 +1516,12 @@ void elevate() // elevate
       _st_(); // <
       if (Pop() != 0)
       {
-        Push(0xcbba); Push(0x0001);
-        Push(0xe1e8); Push(0x0001);
+        Push(0xcbba); Push(0x0001); // 'WING'
+        Push(0xe1e8); Push(0x0001); // 'FLYING'
       } else
       {
-        Push(0xcbcb); Push(0x0001);
-        Push(0xe1fb); Push(0x0001);
+        Push(0xcbcb); Push(0x0001); // 'FLOAT SAC'
+        Push(0xe1fb); Push(0x0001); // 'FLOATING'
       }
       WE3B8(); // WE3B8
       Push((Pop() + 1) * 2); //  1+ 2*
@@ -1540,8 +1540,8 @@ void elevate() // elevate
         WE3B8(); // WE3B8
         if (Pop() != 0)
         {
-          Push(0xcbcb); Push(0x0001);
-          Push(0xe1fb); Push(0x0001);
+          Push(0xcbcb); Push(0x0001); // 'FLOAT SAC'
+          Push(0xe1fb); Push(0x0001); // 'FLOATING'
           Push(1);
         } else
         {
@@ -1622,14 +1622,14 @@ void nubile() // nubile
     _gt_(); // >
     if (Pop() != 0)
     {
-      Push(0xe225); Push(0x0001);
+      Push(0xe225); Push(0x0001); // 'MOBILE'
     } else
     {
-      Push(0xe238); Push(0x0001);
+      Push(0xe238); Push(0x0001); // 'SESSILE'
     }
   } else
   {
-    Push(0xe225); Push(0x0001);
+    Push(0xe225); Push(0x0001); // 'MOBILE'
   }
   LoadData(g_dot_mobility); // from 'CREATURE'
   _1_dot_5_ex_(); // 1.5!
@@ -1667,7 +1667,7 @@ void stroll() // stroll
   {
     LoadData(g_dot_mobility); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
-    Push(0xe225); Push(0x0001);
+    Push(0xe225); Push(0x0001); // 'MOBILE'
     D_eq_(); // D=
     if (Pop() != 0)
     {
@@ -1676,14 +1676,14 @@ void stroll() // stroll
       _st_(); // <
       if (Pop() != 0)
       {
-        Push(0xe238); Push(0x0001);
+        Push(0xe238); Push(0x0001); // 'SESSILE'
         LoadData(g_dot_mobility); // from 'CREATURE'
         _1_dot_5_ex_(); // 1.5!
         Push(0);
         Push(0);
       } else
       {
-        Push(0xcd62); Push(0x0001);
+        Push(0xcd62); Push(0x0001); // 'TENTACLE'
       }
     } else
     {
@@ -1703,34 +1703,34 @@ void stroll() // stroll
 
 void WF2D2() // WF2D2
 {
-  Push(0xcd62); Push(0x0001);
+  Push(0xcd62); Push(0x0001); // 'TENTACLE'
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    Push(0xe15c); Push(0x0001);
+    Push(0xe15c); Push(0x0001); // 'CRAWLING'
     return;
   }
-  Push(0xcd4c); Push(0x0001);
+  Push(0xcd4c); Push(0x0001); // 'PSEUDOPOD'
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    Push(0xe11d); Push(0x0001);
+    Push(0xe11d); Push(0x0001); // 'OOZING'
     return;
   }
-  Push(0xdf0f); Push(0x0001);
+  Push(0xdf0f); Push(0x0001); // 'CILIA'
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() != 0)
   {
     Pop(); Pop(); // 2DROP
-    Push(0xe130); Push(0x0001);
+    Push(0xe130); Push(0x0001); // 'CREEPING'
     return;
   }
-  Push(0xcd17); Push(0x0001);
+  Push(0xcd17); Push(0x0001); // 'LEG'
   _2OVER(); // 2OVER
   D_eq_(); // D=
   if (Pop() != 0)
@@ -1763,22 +1763,22 @@ void WF2D2() // WF2D2
     LoadData(shape); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
-    Push(0xddb3); Push(0x0001);
+    Push(0xddb3); Push(0x0001); // 'SPHERICAL'
     D_eq_(); // D=
     if (Pop() != 0)
     {
       Pop(); Pop(); // 2DROP
-      Push(0xe171); Push(0x0001);
+      Push(0xe171); Push(0x0001); // 'ROLLING'
     } else
     {
-      Push(0xdddc); Push(0x0001);
+      Push(0xdddc); Push(0x0001); // 'BILATERAL'
       D_eq_(); // D=
       if (Pop() != 0)
       {
-        Push(0xe145); Push(0x0001);
+        Push(0xe145); Push(0x0001); // 'SLITHERING'
       } else
       {
-        Push(0xe185); Push(0x0001);
+        Push(0xe185); Push(0x0001); // 'MOVING'
       }
     }
     return;
@@ -1798,7 +1798,7 @@ void WF3C2() // WF3C2
   Push((Read16(Pop())&0xFF)==0?1:0); //  C@ 0=
   if (Pop() != 0)
   {
-    Push(0xe185); Push(0x0001);
+    Push(0xe185); Push(0x0001); // 'MOVING'
     return;
   }
   LoadData(g_dot_append); // from 'CREATURE'
@@ -1815,14 +1815,14 @@ void WF3E0() // WF3E0
 {
   LoadData(g_dot_mobility); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe225); Push(0x0001);
+  Push(0xe225); Push(0x0001); // 'MOBILE'
   D_eq_(); // D=
   if (Pop() != 0)
   {
-    Push(0xe15c); Push(0x0001);
+    Push(0xe15c); Push(0x0001); // 'CRAWLING'
     return;
   }
-  Push(0xe238); Push(0x0001);
+  Push(0xe238); Push(0x0001); // 'SESSILE'
 }
 
 

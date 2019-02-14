@@ -1460,7 +1460,7 @@ void WEB4D() // WEB4D
   WE413(); // WE413
   if (Pop() == 0) return;
   Push2Words("WE6BF");
-  Push(0xdcba); Push(0x0001);
+  Push(0xdcba); Push(0x0001); // 'MANY'
 }
 
 
@@ -1499,7 +1499,7 @@ void WEB79() // WEB79
   WEB6F(); // WEB6F
   Push(!Pop()); //  NOT
   if (Pop() == 0) return;
-  Push(0xdbc3); Push(0x0001);
+  Push(0xdbc3); Push(0x0001); // ','
 }
 
 
@@ -1518,7 +1518,7 @@ void WEB8B() // WEB8B
   if (Pop() == 0) return;
   Push(Read16(pp_WEA63)); // WEA63 @
   if (Pop() == 0) return;
-  Push(0xdac2); Push(0x0001);
+  Push(0xdac2); Push(0x0001); // 'S'
   _2SWAP(); // 2SWAP
 }
 
@@ -1532,10 +1532,10 @@ void WEBB1() // WEBB1
   WEAFB(); // WEAFB
   if (Pop() != 0)
   {
-    Push(0xdad0); Push(0x0001);
+    Push(0xdad0); Push(0x0001); // 'AN'
   } else
   {
-    Push(0xdadf); Push(0x0001);
+    Push(0xdadf); Push(0x0001); // 'A'
   }
   Push2Words("WE6BF");
   _2SWAP(); // 2SWAP
@@ -1694,10 +1694,10 @@ void WECA3() // WECA3
   Push(Pop()==pp_PLANTS?1:0); //  PLANTS =
   if (Pop() != 0)
   {
-    Push(0xdb13); Push(0x0001);
+    Push(0xdb13); Push(0x0001); // 'LIFEFORM'
     return;
   }
-  Push(0xdafe); Push(0x0001);
+  Push(0xdafe); Push(0x0001); // 'CREATURE'
 }
 
 
@@ -1718,7 +1718,7 @@ void WECC5() // WECC5
     LoadData(SHAPE); // from 'CREATURE'
     _1_dot_5_at_(); // 1.5@
     _2DUP(); // 2DUP
-    Push(0xdddc); Push(0x0001);
+    Push(0xdddc); Push(0x0001); // 'BILATERAL'
     D_eq_(); // D=
     a = Pop(); // >R
     LoadData(WE4E0); // from 'CREATURE'
@@ -1741,7 +1741,7 @@ void WECC5() // WECC5
 void WECFD() // WECFD
 {
   Push2Words("WE6BF");
-  Push(0xdcf4); Push(0x0001);
+  Push(0xdcf4); Push(0x0001); // 'WITH'
   Push2Words("WE6BF");
   WEB79(); // WEB79
   WECA3(); // WECA3
@@ -1861,7 +1861,7 @@ void WED95() // WED95
   WE3CF(); // WE3CF
   Push(Pop()==0?1:0); //  0=
   d = Pop(); // >R
-  Push(0xdfb1); Push(0x0001);
+  Push(0xdfb1); Push(0x0001); // 'BARK'
   D_eq_(); // D=
   Push(!Pop() & (d & c)); //  NOT R> R> AND AND
   if (Pop() != 0)
@@ -1884,7 +1884,7 @@ void WEDED() // WEDED
   Push((Read16(0x63ef+HITS.offset)&0xFF)==0?1:0); // HITS<IFIELD> C@ 0=
   if (Pop() != 0)
   {
-    Push(0xcaa8); Push(0x0001);
+    Push(0xcaa8); Push(0x0001); // 'DEAD'
   } else
   {
     Push(Read16(0x63ef+WE680.offset)&0xFF); // WE680<IFIELD> C@
@@ -1893,13 +1893,13 @@ void WEDED() // WEDED
     _st_(); // <
     if (Pop() != 0)
     {
-      Push(0xe262); Push(0x0001);
+      Push(0xe262); Push(0x0001); // 'STUNNED'
     } else
     {
       Push((Read16(0x63ef+WE68A.offset)&0xFF) & 1); // WE68A<IFIELD> C@ 1 AND
       if (Pop() != 0)
       {
-        Push(0xe24c); Push(0x0001);
+        Push(0xe24c); Push(0x0001); // 'ATTACKING'
       } else
       {
         Push(Read16(0x63ef+WE685.offset)&0xFF); // WE685<IFIELD> C@
@@ -1916,7 +1916,7 @@ void WEDED() // WEDED
     }
   }
   Push2Words("WE6BF");
-  Push(0xdd05); Push(0x0001);
+  Push(0xdd05); Push(0x0001); // 'APPEARS TO BE'
   Push2Words("WE6BF");
   PRONOUN(); // PRONOUN
 }
@@ -1971,7 +1971,7 @@ void WEEAD() // WEEAD
   Push(Read16(pp_WEEA9)); // WEEA9 @
   if (Pop() != 0)
   {
-    Push(0xdb5b); Push(0x0001);
+    Push(0xdb5b); Push(0x0001); // 'AND'
     Push2Words("WE6BF");
   } else
   {
@@ -2123,7 +2123,7 @@ void WEFEC() // WEFEC
   a = Pop(); // >R
   Push(9);
   WE68F(); // WE68F
-  Push(0xdc9d); Push(0x0001);
+  Push(0xdc9d); Push(0x0001); // 'M.'
   D_eq_(); // D=
   if (Pop() != 0)
   {
@@ -2184,7 +2184,7 @@ void WF06E() // WF06E
 {
   unsigned short int a, b;
   Push2Words("WEA2F");
-  Push(0xdc7c); Push(0x0001);
+  Push(0xdc7c); Push(0x0001); // 'TALL'
   Push2Words("WE6BF");
   LoadData(WE580); // from 'CREATURE'
   Push(Read16(Pop())); //  @
@@ -2194,26 +2194,26 @@ void WF06E() // WF06E
   if (Pop() != 0)
   {
     a = Pop(); // >R
-    Push(0xdc8d); Push(0x0001);
+    Push(0xdc8d); Push(0x0001); // 'CM.'
   } else
   {
     Push(0x0064);
     _slash_MOD(); // /MOD
     b = Pop(); // >R
-    Push(0xdc8d); Push(0x0001);
+    Push(0xdc8d); Push(0x0001); // 'CM.'
     Push2Words("WE6BF");
     Push(5);
     ROLL(); // ROLL
     WEA35(); // WEA35
     Push2Words("WE6BF");
-    Push(0xdc9d); Push(0x0001);
+    Push(0xdc9d); Push(0x0001); // 'M.'
   }
   Push2Words("WE6BF");
   Push(a); // R>
   WEA35(); // WEA35
   Push2Words("WE6BF");
   WEFEC(); // WEFEC
-  Push(0xcab9); Push(0x0001);
+  Push(0xcab9); Push(0x0001); // 'HEIGHT:'
 }
 
 
@@ -2256,7 +2256,7 @@ void WF166() // WF166
   WF06E(); // WF06E
   WEC79(); // WEC79
   WEC3B(); // WEC3B
-  Push(0xca39); Push(0x0001);
+  Push(0xca39); Push(0x0001); // 'NICHE: '
   WEBCF(); // WEBCF
   WE8C7(); // WE8C7
   ICLOSE(); // ICLOSE
@@ -2269,7 +2269,7 @@ void WF166() // WF166
   ICLOSE(); // ICLOSE
   WE867(); // WE867
   WEC3B(); // WEC3B
-  Push(0xca66); Push(0x0001);
+  Push(0xca66); Push(0x0001); // 'AGGRESSION ANALOG: '
   WEBCF(); // WEBCF
   WE8C7(); // WE8C7
   ICLOSE(); // ICLOSE
@@ -2283,7 +2283,7 @@ void WF166() // WF166
   ICLOSE(); // ICLOSE
   WE867(); // WE867
   WEC3B(); // WEC3B
-  Push(0xca86); Push(0x0001);
+  Push(0xca86); Push(0x0001); // 'INTELLIGENCE ANALOG: '
   WEBCF(); // WEBCF
   WE8C7(); // WE8C7
   ICLOSE(); // ICLOSE

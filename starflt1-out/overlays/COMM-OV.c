@@ -4259,7 +4259,7 @@ void WECF3() // WECF3
   if (Pop() != 0)
   {
     Push(!Pop()); //  NOT
-    Push(0xd4c0); Push(0x0001);
+    Push(0xd4c0); Push(0x0001); // 'FIN-LIKE'
     WE1F0(); // WE1F0
     return;
   }

@@ -1041,7 +1041,7 @@ void WE4AC() // WE4AC
 {
   LoadData(WE175); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe1e8); Push(0x0001);
+  Push(0xe1e8); Push(0x0001); // 'FLYING'
   D_eq_(); // D=
 }
 
@@ -1054,7 +1054,7 @@ void WE4BC() // WE4BC
 {
   LoadData(WE175); // from 'CREATURE'
   _1_dot_5_at_(); // 1.5@
-  Push(0xe1fb); Push(0x0001);
+  Push(0xe1fb); Push(0x0001); // 'FLOATING'
   D_eq_(); // D=
 }
 

@@ -1183,7 +1183,7 @@ void WF39A() // WF39A
 
 void WF409() // WF409
 {
-  Push(0x4a89); Push(0x0002);
+  Push(0x4a89); Push(0x0002); // 'CRACKED PLAINS AND HILLS OF'
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_ex__2(); // 1.5!_2
   Push(pp_CLIST1); // CLIST1
@@ -1225,11 +1225,11 @@ void WF43A() // WF43A
       _2_at_(); // 2@
     } else
     {
-      Push(0x4a70); Push(0x0002);
+      Push(0x4a70); Push(0x0002); // 'ROCK AND DIRT'
     }
   } else
   {
-    Push(0x4a3e); Push(0x0002);
+    Push(0x4a3e); Push(0x0002); // 'CRATERED ROCK AND DUST'
     Push2Words("0.");
     Push(pp_P_dash_COLOR); // P-COLOR
     _1_dot_5_ex__2(); // 1.5!_2
@@ -1259,10 +1259,10 @@ void WF48E() // WF48E
 
 void WF49C() // WF49C
 {
-  Push(0x4ab0); Push(0x0002);
+  Push(0x4ab0); Push(0x0002); // 'VOLCANIC ROCK, STEAMING VENTS,'
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_ex__2(); // 1.5!_2
-  Push(0x4ada); Push(0x0002);
+  Push(0x4ada); Push(0x0002); // 'BOILING POOLS AND FLOWING LAVA'
   Push(pp_P_dash_COLOR); // P-COLOR
   _1_dot_5_ex__2(); // 1.5!_2
 }
@@ -1274,7 +1274,7 @@ void WF49C() // WF49C
 
 void WF4B4() // WF4B4
 {
-  Push(0x4b77); Push(0x0002);
+  Push(0x4b77); Push(0x0002); // 'SMOOTH AND FEATURELESS'
   Push(pp_P_dash_PHRAS); // P-PHRAS
   _1_dot_5_ex__2(); // 1.5!_2
   Push2Words("NULL");

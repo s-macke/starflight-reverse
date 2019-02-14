@@ -846,7 +846,7 @@ void WF1BD() // WF1BD
 
 void WF20D() // WF20D
 {
-  Push(0x4a1c); Push(0x0002);
+  Push(0x4a1c); Push(0x0002); // 'BLACK AND STAR-FILLED.'
 }
 
 
@@ -856,7 +856,7 @@ void WF20D() // WF20D
 
 void WF217() // WF217
 {
-  Push(0x4f68); Push(0x0002);
+  Push(0x4f68); Push(0x0002); // 'IT IS HAZY.'
 }
 
 
@@ -866,7 +866,7 @@ void WF217() // WF217
 
 void WF221() // WF221
 {
-  Push(0x4f99); Push(0x0002);
+  Push(0x4f99); Push(0x0002); // 'IT IS CLEAR.'
 }
 
 
@@ -876,7 +876,7 @@ void WF221() // WF221
 
 void WF22B() // WF22B
 {
-  Push(0x4e1b); Push(0x0002);
+  Push(0x4e1b); Push(0x0002); // 'IT IS OVERCAST.'
 }
 
 
@@ -886,7 +886,7 @@ void WF22B() // WF22B
 
 void WF235() // WF235
 {
-  Push(0x4e36); Push(0x0002);
+  Push(0x4e36); Push(0x0002); // 'IT IS SNOWING LIGHTLY.'
 }
 
 
@@ -896,7 +896,7 @@ void WF235() // WF235
 
 void WF23F() // WF23F
 {
-  Push(0x4e58); Push(0x0002);
+  Push(0x4e58); Push(0x0002); // 'IT IS MISTY.'
 }
 
 
@@ -906,7 +906,7 @@ void WF23F() // WF23F
 
 void WF249() // WF249
 {
-  Push(0x4e70); Push(0x0002);
+  Push(0x4e70); Push(0x0002); // 'YOU ARE IN AN ELECTRICAL STORM.'
 }
 
 
@@ -916,7 +916,7 @@ void WF249() // WF249
 
 void WF253() // WF253
 {
-  Push(0x4f06); Push(0x0002);
+  Push(0x4f06); Push(0x0002); // 'YOU ARE IN A THUNDER STORM.'
 }
 
 
@@ -926,7 +926,7 @@ void WF253() // WF253
 
 void WF25D() // WF25D
 {
-  Push(0x4e9b); Push(0x0002);
+  Push(0x4e9b); Push(0x0002); // 'THE GROUND IS SHAKING AND RUMBLING.'
 }
 
 
@@ -936,7 +936,7 @@ void WF25D() // WF25D
 
 void WF267() // WF267
 {
-  Push(0x4eec); Push(0x0002);
+  Push(0x4eec); Push(0x0002); // 'IT IS HAILING.'
 }
 
 
@@ -946,7 +946,7 @@ void WF267() // WF267
 
 void WF271() // WF271
 {
-  Push(0x4f2d); Push(0x0002);
+  Push(0x4f2d); Push(0x0002); // 'YOU ARE IN A WINDSTORM.'
 }
 
 
@@ -956,7 +956,7 @@ void WF271() // WF271
 
 void WF27B() // WF27B
 {
-  Push(0x4eca); Push(0x0002);
+  Push(0x4eca); Push(0x0002); // 'IT IS SNOWING HEAVILY.'
 }
 
 
@@ -966,7 +966,7 @@ void WF27B() // WF27B
 
 void WF285() // WF285
 {
-  Push(0x4f50); Push(0x0002);
+  Push(0x4f50); Push(0x0002); // 'IT IS FOGGY.'
 }
 
 
@@ -976,7 +976,7 @@ void WF285() // WF285
 
 void WF28F() // WF28F
 {
-  Push(0x4f7f); Push(0x0002);
+  Push(0x4f7f); Push(0x0002); // 'IT IS RAINING.'
 }
 
 
@@ -1086,7 +1086,7 @@ void DrawLIQUID() // .LIQUID
   _1_dot_5_at_(); // 1.5@
   WEE72(); // WEE72
   SPACE(); // SPACE
-  Push(0x4b60); Push(0x0002);
+  Push(0x4b60); Push(0x0002); // 'OCEANS AND '
   WEE72(); // WEE72
   GCR(); // GCR
   DrawROCK(); // .ROCK
@@ -1099,7 +1099,7 @@ void DrawLIQUID() // .LIQUID
 
 void DrawCRYSTAL() // .CRYSTAL
 {
-  Push(0x4b77); Push(0x0002);
+  Push(0x4b77); Push(0x0002); // 'SMOOTH AND FEATURELESS'
   WEE72(); // WEE72
 }
 
@@ -1118,7 +1118,7 @@ void DrawICE() // .ICE
   _1_dot_5_at_(); // 1.5@
   WEE72(); // WEE72
   SPACE(); // SPACE
-  Push(0x4a04); Push(0x0002);
+  Push(0x4a04); Push(0x0002); // 'SNOW AND ICE'
   WEE72(); // WEE72
 }
 
@@ -1153,12 +1153,12 @@ void DrawCARPET() // .CARPET
   {
     PRINT(", ", 2); // (.")
     GCR(); // GCR
-    Push(0x4de8); Push(0x0002);
+    Push(0x4de8); Push(0x0002); // 'WITH '
     WEE72(); // WEE72
     SPACE(); // SPACE
     WEE72(); // WEE72
     SPACE(); // SPACE
-    Push(0x4dcd); Push(0x0002);
+    Push(0x4dcd); Push(0x0002); // 'CARPET LIFEFORM'
     WEE72(); // WEE72
   }
   PRINT(".", 1); // (.")
