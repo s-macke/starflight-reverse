@@ -160,7 +160,21 @@ void GetMacro(unsigned short addr, WORD *e, WORD *efunc, char *ret, int currento
 
     if (e->codep == CODE2LIT) // constant number
     {
-        snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
+        // a 2lit word sometime references to a string in the instance.
+        // the strings array contains such strings.
+        int offset = Read16(addr + 2) | (Read16(addr + 4)<<16);
+        i=0;
+        while(strings[i].offset != -1)
+        {
+          if (strings[i].offset == offset)
+          {
+            snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x); // '%s'\n", Read16(addr + 2), Read16(addr + 4), strings[i].string);
+            return;
+          }
+          i++;
+        }
+        if (strings[i].offset == -1)
+          snprintf(ret, STRINGLEN, "Push(0x%04x); Push(0x%04x);\n", Read16(addr + 2), Read16(addr + 4));
         return;
     }
     if (e->codep == CODEPOINTER) // pointer to variable or table
