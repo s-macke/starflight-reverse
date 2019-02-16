@@ -846,7 +846,7 @@
 //           AVCNT  codep:0x1d29 wordp:0x5477 size:0x0002 C-string:'AVCNT'
 //          LFILE#  codep:0x1d29 wordp:0x547b size:0x0002 C-string:'LFILE_n_'
 //        LRECORD#  codep:0x1d29 wordp:0x547f size:0x0002 C-string:'LRECORD_n_'
-//        LRECORD#  codep:0x1d29 wordp:0x5483 size:0x0002 C-string:'LRECORD_n_'
+//       LRECORD#2  codep:0x1d29 wordp:0x5483 size:0x0002 C-string:'LRECORD_n_2'
 //           FILE#  codep:0x1d29 wordp:0x548f size:0x0002 C-string:'FILE_n_'
 //         RECORD#  codep:0x1d29 wordp:0x549d size:0x0002 C-string:'RECORD_n_'
 //         1BUFADR  codep:0x1d29 wordp:0x54a1 size:0x0002 C-string:'_1BUFADR'
@@ -2473,7 +2473,7 @@ const unsigned short int pp_LFILE_n_ = 0x547b; // LFILE# size: 2
 const unsigned short int pp_LRECORD_n_ = 0x547f; // LRECORD# size: 2
 // {0x00, 0x00}
 
-const unsigned short int pp_LRECORD_n_ = 0x5483; // LRECORD# size: 2
+const unsigned short int pp_LRECORD_n_2 = 0x5483; // LRECORD#2 size: 2
 // {0x76, 0xf9}
 
 const unsigned short int pp_FILE_n_ = 0x548f; // FILE# size: 2
@@ -7172,7 +7172,7 @@ void _ro_EXPECT_rc_() // (EXPECT)
       if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
       if (Pop() != 0)
       {
-        Exec("EMIT"); // call of word 0x2731 '(EMIT)'
+        Pop(); // DROP
         Push(1);
         SWAP(); // SWAP
       } else
@@ -14140,7 +14140,7 @@ void TABLE() // TABLE
 // 0x547f: db 0x00 0x00 '  '
 
 // ================================================
-// 0x5481: WORD 'LRECORD#' codep=0x1d29 wordp=0x5483
+// 0x5481: WORD 'LRECORD#2' codep=0x1d29 wordp=0x5483
 // ================================================
 // 0x5483: db 0x76 0xf9 'v '
 
@@ -17065,7 +17065,7 @@ void _v_REC() // |REC
   BLOCK_1(); // BLOCK_1
   Push(Pop() + Pop()); // +
   Push(Read16(regsp)); // DUP
-  Push(pp_LRECORD_n_); // LRECORD#
+  Push(pp_LRECORD_n_2); // LRECORD#2
   _st__ex__gt_(); // <!>
   SWAP(); // SWAP
   Push(pp_LFILE_n_); // LFILE#
@@ -17108,7 +17108,7 @@ void GetRECORD() // @RECORD
     return;
   }
   Pop(); Pop(); // 2DROP
-  Push(Read16(pp_LRECORD_n_)); // LRECORD# @
+  Push(Read16(pp_LRECORD_n_2)); // LRECORD#2 @
 }
 
 
@@ -17149,7 +17149,7 @@ void AFIELD() // AFIELD
   } else
   {
     Pop(); Pop(); // 2DROP
-    Push(Read16(pp_LRECORD_n_)); // LRECORD# @
+    Push(Read16(pp_LRECORD_n_2)); // LRECORD#2 @
   }
   Push(Pop() + (Read16(b + 1)&0xFF)); //  R> 1+ C@ +
 }

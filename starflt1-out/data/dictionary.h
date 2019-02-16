@@ -792,7 +792,7 @@ WORD dictionary[]=
   { .ov = -1, .code = 0x1d29, .word = 0x5477, .name = "AVCNT" },
   { .ov = -1, .code = 0x1d29, .word = 0x547b, .name = "LFILE#" },
   { .ov = -1, .code = 0x1d29, .word = 0x547f, .name = "LRECORD#" },
-  { .ov = -1, .code = 0x1d29, .word = 0x5483, .name = "LRECORD#" },
+  { .ov = -1, .code = 0x1d29, .word = 0x5483, .name = "LRECORD#2" },
   { .ov = -1, .code = 0x1d29, .word = 0x548f, .name = "FILE#" },
   { .ov = -1, .code = 0x1d29, .word = 0x549d, .name = "RECORD#" },
   { .ov = -1, .code = 0x1d29, .word = 0x54a1, .name = "1BUFADR" },

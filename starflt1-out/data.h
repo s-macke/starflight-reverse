@@ -530,24 +530,37 @@ char *elements[] =
   "ZINC............"
 };
 
-char *ANALYZE_TEXT_STRINGS[] =
+typedef struct { int idx; int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15; } VESSELENTRY;
+
+//not complete
+VESSELENTRY vessels[]=
 {
-  "ANALYSIS OF THIS ARTIFACT HAS REVEALEDVERY LITTLE OF INTEREST. IT HAS SLIGHTVALUE AS AN ALIEN CURIO, BUT OTHERWISEIS TOTALLY USELESS TO US.                                                   ",
-  "OUR GUESS IS THIS IS SOME DEVICE OF   THE ANCIENTS. BEYOND THAT, WE CAN'T   TELL.                                                                                                             ",
-  "THIS APPEARS TO BE A BOMB OF SOME     SORT. THE TYPE IS UNFAMILIAR. TO      ACTIVATE IT, YOU MUST DROP IT.                                                                                    ",
-  "THIS IS CRAFTED OF ENDURIUM. IT       DOESN'T APPEAR TO HAVE ANY FUNCTION   OTHER THAN BEING DECORATIVE.                                                                                      ",
-  "THIS WAS FOUND IN THE UNDERGROUND     COLONY. WE'RE NOT SURE WHAT IS DOES.  WE THINK IT HAS SOMETHING TO DO WITH  COMMUNICATION.                                                              ",
-  "THIS DEVICE WILL PROJECT A SHIELD     AROUND YOUR TERRAIN VEHICLE WHICH     MAKES IT DIFFICULT FOR DANGEROUS      LIFEFORMS TO ATTACK YOU.                                                    ",
-  "THIS APPEARS TO BE A DEVICE OF THE OLDEMPIRE THAT PROJECTS AN ENHANCED LASERSHIELD AROUND A SPACESHIP.                                                                                        ",
-  "THIS IS A DEVICE OF THE OLD EMPIRE    THAT PROJECTS A FIELD WHICH DOUBLES   THE ENERGY EFFICIENCY OF A SHIP'S     ENGINES.                                                                    ",
-  "THIS IS AN ANCIENT SHIP NAVIGATIONAL  AID. IT WILL IDENTIFY ANY NEARBY      CONTINUUM FLUX.                                                                                                   ",
-  "THIS APPEARS TO BE A 4-DIMENSIONAL    PUZZLE COMPOSED OF MANY MULTI-COLORED CUBES. ITS USE PRODUCES AN OVER-      WHELMING FEELING OF ATARAXIA.                                               ",
-  "THIS ARTIFACT SEEMS TO BE A CLOAKING  DEVICE. AS FAR AS WE CAN TELL IT      SHOULD OPERATE AUTOMATICALLY DURING   COMBAT.                                                                     ",
-  "WE CAN'T FIGURE OUT EXACTLY WHAT THIS IS. IT SLICES, IT DICES, IT EVEN MAKESJULIENNE FRIES!                                                                                                   ",
-  "THIS SEEMS TO BE AN ORBITAL SCANNER OFSOME SORT. WE'RE NOT SURE WHAT IT'S   TUNED TO LOCATE THOUGH.                                                                                           ",
-  "THIS IS SOME SORT OF TRANSMITTER. IT  IS BROADCASTING CONTINUALLY ON SEVERALBANDS. THE NET EFFECT SHOULD BE THAT  IT WILL ATTRACT THE ATTENTION OF      ANYONE IN THE AREA.                   ",
-  "THIS SEEMS TO BE A DEVICE OF THE      ANCIENTS, BUT WE CAN'T FIGURE OUT WHATIT DOES. IT CONTAINS A TREMENDOUS     AMOUNT OF ENERGY.                                                           ",
-  "THE REMAINS OF AN OLDER, INFERIOR     MODEL TERRAIN VEHICLE, DOUBTLESSLY    LEFT HERE BY SOME PRIOR EXPLORATION   PARTY TOO FOOLISH TO RETURN TO THEIR  SHIP BEFORE EXHAUSTING THEIR ENERGY.  "
+  {.idx= 0, .d1=32, .d2=32, .d3= 32, .d4=32, .d5= 8224, .d6=32, .d7= 8224, .d8= 8224, .d9=32, .d10=32, .d11=32, .d12=32, .element1=32, .element2=32, .element3=32, .d16=  32, .d17= 32},
+  {.idx= 1, .d1= 6, .d2= 1, .d3=  0, .d4= 1, .d5=  800, .d6= 7, .d7=  200, .d8=    0, .d9= 1, .d10= 0, .d11= 0, .d12= 0, .element1= 9, .element2= 8, .element3= 4, .d16=  30, .d17=  1},
+  {.idx= 2, .d1= 6, .d2= 2, .d3=  5, .d4= 3, .d5=  400, .d6= 7, .d7=  500, .d8=    0, .d9= 1, .d10= 2, .d11= 0, .d12= 0, .element1= 9, .element2= 8, .element3= 0, .d16=  10, .d17=  1},
+  {.idx= 3, .d1= 6, .d2= 3, .d3= 10, .d4= 5, .d5=  700, .d6= 7, .d7= 1000, .d8=    0, .d9= 1, .d10= 2, .d11= 1, .d12= 0, .element1= 9, .element2= 8, .element3= 4, .d16=  50, .d17=  1},
+  {.idx= 4, .d1= 3, .d2= 2, .d3=200, .d4= 6, .d5=  200, .d6= 7, .d7=  100, .d8=  400, .d9= 1, .d10= 0, .d11= 2, .d12= 0, .element1= 8, .element2=10, .element3= 0, .d16=  30, .d17=  1},
+  {.idx= 5, .d1= 1, .d2= 1, .d3=  0, .d4= 9, .d5=  350, .d6= 5, .d7=   50, .d8=  600, .d9= 1, .d10= 0, .d11= 0, .d12= 0, .element1=13, .element2=12, .element3=15, .d16=  30, .d17=  1},
+  {.idx= 6, .d1= 1, .d2= 2, .d3=  5, .d4=18, .d5=   50, .d6= 5, .d7=   50, .d8=  800, .d9= 1, .d10= 0, .d11= 2, .d12= 0, .element1=13, .element2=12, .element3=15, .d16=  10, .d17=  1},
+  {.idx= 7, .d1= 1, .d2= 3, .d3= 15, .d4=14, .d5=  150, .d6= 5, .d7=   50, .d8= 1000, .d9= 1, .d10= 0, .d11= 3, .d12= 0, .element1=13, .element2=12, .element3=15, .d16=  60, .d17=  1},
+  {.idx= 8, .d1= 7, .d2= 1, .d3=  8, .d4= 3, .d5=  600, .d6= 5, .d7=  300, .d8=  200, .d9= 1, .d10= 2, .d11= 0, .d12= 0, .element1= 5, .element2=22, .element3=10, .d16=  40, .d17=  1},
+  {.idx= 9, .d1= 7, .d2= 2, .d3= 15, .d4= 6, .d5=  200, .d6= 5, .d7=  400, .d8=  400, .d9= 1, .d10= 5, .d11= 0, .d12= 0, .element1= 5, .element2=22, .element3=10, .d16=  20, .d17=  1},
+  {.idx=10, .d1= 7, .d2= 3, .d3= 22, .d4= 6, .d5=  400, .d6= 5, .d7=  500, .d8=  600, .d9= 1, .d10= 5, .d11= 3, .d12= 0, .element1= 5, .element2=22, .element3=10, .d16=  70, .d17=  1},
+  {.idx=11, .d1= 8, .d2= 1, .d3= 10, .d4= 7, .d5=  700, .d6= 5, .d7=  200, .d8=  400, .d9= 1, .d10= 1, .d11= 0, .d12= 0, .element1= 4, .element2=12, .element3= 0, .d16=  40, .d17=  1},
+  {.idx=12, .d1= 8, .d2= 2, .d3= 20, .d4=13, .d5=  300, .d6= 5, .d7=  100, .d8=  600, .d9= 1, .d10= 0, .d11= 2, .d12= 0, .element1= 4, .element2=12, .element3= 0, .d16=  30, .d17=  1},
+  {.idx=13, .d1= 8, .d2= 3, .d3= 25, .d4=11, .d5=  500, .d6= 5, .d7=  500, .d8=  800, .d9= 1, .d10= 3, .d11= 4, .d12= 0, .element1= 4, .element2=12, .element3= 0, .d16=  80, .d17=  1},
+  {.idx=14, .d1= 2, .d2= 2, .d3= 80, .d4= 8, .d5=30000, .d6= 4, .d7=  500, .d8=  200, .d9= 0, .d10= 4, .d11= 0, .d12= 0, .element1=12, .element2=19, .element3=10, .d16= 100, .d17=  1},
+  {.idx=15, .d1= 2, .d2= 3, .d3=120, .d4= 6, .d5=45000, .d6= 4, .d7=  800, .d8=  200, .d9= 0, .d10= 5, .d11= 0, .d12= 0, .element1=12, .element2=19, .element3=10, .d16= 150, .d17=  1},
+  {.idx=16, .d1= 9, .d2= 2, .d3=255, .d4=20, .d5= 1000, .d6= 3, .d7= 1000, .d8= 1000, .d9= 1, .d10= 0, .d11= 5, .d12= 0, .element1= 1, .element2=20, .element3= 0, .d16= 150, .d17=  1},
+  {.idx=17, .d1= 9, .d2= 3, .d3=255, .d4=12, .d5= 5000, .d6= 3, .d7= 1000, .d8= 1400, .d9= 1, .d10= 0, .d11= 5, .d12= 1, .element1= 1, .element2=20, .element3= 0, .d16= 250, .d17=  1},
+  {.idx=18, .d1=10, .d2= 0, .d3=255, .d4=15, .d5=  100, .d6= 3, .d7= 1000, .d8= 1000, .d9= 1, .d10= 3, .d11= 3, .d12= 0, .element1= 4, .element2=12, .element3= 0, .d16= 100, .d17=  1},
+  {.idx=19, .d1= 5, .d2= 0, .d3=255, .d4= 2, .d5=   20, .d6= 0, .d7=    5, .d8=    0, .d9= 1, .d10= 0, .d11= 0, .d12= 0, .element1= 8, .element2=10, .element3= 0, .d16=  10, .d17=  1},
+  {.idx=20, .d1= 4, .d2= 0, .d3=  0, .d4=25, .d5=62000, .d6= 0, .d7=15000, .d8=15000, .d9= 0, .d10= 0, .d11= 0, .d12= 0, .element1=17, .element2=17, .element3=17, .d16=   0, .d17=  1},
+  {.idx=21, .d1=18, .d2= 0, .d3=255, .d4=17, .d5=19000, .d6= 3, .d7= 1000, .d8= 1000, .d9= 1, .d10= 5, .d11= 5, .d12= 0, .element1=16, .element2=21, .element3=20, .d16=   0, .d17=  1},
+  {.idx=22, .d1=11, .d2= 0, .d3=  0, .d4= 1, .d5=    2, .d6= 0, .d7=    5, .d8=    0, .d9= 1, .d10= 0, .d11= 0, .d12= 0, .element1= 0, .element2= 0, .element3= 0, .d16=   0, .d17=  1},
+  {.idx=23, .d1=19, .d2= 1, .d3=  0, .d4= 0, .d5= 2000, .d6= 0, .d7=  100, .d8=    0, .d9= 1, .d10= 0, .d11= 0, .d12= 0, .element1= 0, .element2= 0, .element3= 0, .d16=   0, .d17=  1},
+  {.idx=24, .d1=20, .d2= 0, .d3=  0, .d4= 0, .d5=    0, .d6= 0, .d7=    0, .d8=    0, .d9= 0, .d10= 0, .d11= 0, .d12= 0, .element1= 0, .element2= 0, .element3= 0, .d16=   0, .d17=  0},
+  {.idx=25, .d1=21, .d2= 0, .d3=255, .d4=50, .d5=  300, .d6= 1, .d7=15000, .d8=15000, .d9= 0, .d10= 0, .d11= 3, .d12= 0, .element1= 7, .element2=18, .element3=14, .d16= 250, .d17=  1},
 };
 
 #endif
