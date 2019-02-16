@@ -7,6 +7,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx);
 enum RETURNCODE Step();
 void InitEmulator();
 void EnableInterpreter();
+void DisableInterpreterOutput();
 void EnableDebug();
 void PrintCStack();
 

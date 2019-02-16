@@ -731,7 +731,7 @@ WORDRENAME renamewords[] =
     {0xff, 0x7357, "|REC"}, // W7357
     {0xff, 0x547f, "LRECORD#"}, // W547f
     {0xff, 0x547b, "LFILE#"}, // W547b
-    {0xff, 0x5483, "LRECORD#"}, // W5483
+    {0xff, 0x5483, "LRECORD#2"}, // W5483
     {0xff, 0x7379, "?-RECINBUF"}, // W7379
     {0xff, 0x7425, "IFLDADR"}, // W7425
     {0xff, 0x790C, "DISK>IBFR"}, // W790c

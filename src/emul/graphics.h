@@ -19,6 +19,7 @@
     void GraphicsBLT(int x1, int y1, int w, int h, char* image, int color);
     unsigned short GraphicsGetChar();
     int GraphicsCharsInBuffer();
+    void GraphicsSave(char *filename);
 
 
 #endif

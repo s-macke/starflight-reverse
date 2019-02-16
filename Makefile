@@ -1,7 +1,7 @@
 CC = gcc
 CFLAGS = -O2
 
-all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1 extractdata1 extractinstance1 extractinstance2
+all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1 extractdata1 extractinstance1 extractinstance2 extractvessels1
 
 disasmX86.o: src/disasmX86/debugger.c
 	$(CC) $(CFLAGS) -c src/disasmX86/debugger.c -o disasmX86.o
@@ -87,6 +87,8 @@ extractinstance1: src/extract/instance.c extract1.o
 extractinstance2: src/extract/instance.c extract2.o
 	$(CC) $(CFLAGS) -DSTARFLT2 src/extract/instance.c -o extractinstance2 extract2.o global1.o
 
+extractvessels1: src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
+	$(CC) $(CFLAGS) -DSDL -DSTARFLT1 src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractvessels1 -lSDL2
 
 .PHONY: clean all
 
@@ -99,3 +101,5 @@ clean:
 	rm -f emulate
 	rm -f emulatesdl
 	rm -f extractplanets1
+	rm -f extractplanetsdata1
+	rm -f extractvessels1

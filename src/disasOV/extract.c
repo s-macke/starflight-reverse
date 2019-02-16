@@ -445,6 +445,43 @@ void ExtractEarthMap(FILE *fp, int idx)
     fprintf(fp, "};\n\n");
 }
 
+void ExtractVessels(FILE *fp, int idx)
+{
+fprintf(fp, "typedef struct { int idx; int d1, d2, d3, d4, d5, d6, d7, d8, d9, d10, d11, d12, d13, d14, d15; } VESSELENTRY;\n");
+
+fprintf(fp, "\n//not complete\n");
+fprintf(fp, "VESSELENTRY vessels[]=\n{\n");
+
+DIRENTRY *de = GetDirByIdx(idx);
+for(int i=0; i<de->nblocks; i++)
+{
+    unsigned char* buf = ExtractRecord(idx, i);
+    fprintf(fp, "  {.idx=%2i, .d1=%2i, .d2=%2i, .d3=%3i, .d4=%2i, .d5=%5i, .d6=%2i, .d7=%5i, .d8=%5i, .d9=%2i, .d10=%2i, .d11=%2i, .d12=%2i, .element1=%2i, .element2=%2i, .element3=%2i, .d16=%4i, .d17=%3i},\n",
+    i,
+    buf[0x0],
+    buf[0x4],
+    buf[0x5],
+    buf[0x6],
+    buf[0x7] + (buf[0x8]<<8),
+    buf[0xb],
+    buf[0xc] + (buf[0xd]<<8),
+    buf[0xe] + (buf[0xf]<<8),
+    buf[0x10],
+    buf[0x12],
+    buf[0x13],
+    buf[0x14],
+    buf[0x15], // element1
+    buf[0x16], // element2
+    buf[0x17], // element3
+    buf[0x18],
+    buf[0x1c]
+    );
+}
+fprintf(fp, "};\n\n");
+
+}
+
+
 void ExtractDataFile(const char* filename)
 {
     int idx, j;
@@ -496,7 +533,8 @@ void ExtractDataFile(const char* filename)
     //ExtractTextRecords(fp, 0x2b, "BIODATA", 0); // points to the same data as specimen
     ExtractCompounds(fp, 0x82);
     ExtractElements(fp, 0x1a);
-    ExtractTextRecords(fp, 0x39, "ANALYZE_TEXT", 0);
+    ExtractVessels(fp, 0x19);
+    //ExtractTextRecords(fp, 0x39, "ANALYZE_TEXT", 0);
     //ExtractCreatures(fp, 0x44);
 
     //ExtractTextRecords(fp, 0x45, "PHAZES", 0);

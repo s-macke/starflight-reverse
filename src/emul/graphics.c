@@ -22,15 +22,15 @@ int cursory = 0;
 
 int colortable[16] =
 {
-0x000000,
-0x0000AA,
-0x00AA00,
-0x00AAAA,
-0xAA0000,
-0xAA00AA,
-0xAA5500,
-0xAAAAAA,
-0x555555,
+0x000000, // black
+0x0000AA, // blue
+0x00AA00, // green
+0x00AAAA, // cyan
+0xAA0000, // red
+0xAA00AA, // magenta
+0xAA5500, // brown
+0xAAAAAA, // light gray
+0x555555, // dark gray
 0x5555FF,
 0x55FF55,
 0x55FFFF,
@@ -609,4 +609,29 @@ int GraphicsCharsInBuffer()
     #else
     return 0;
     #endif
+}
+
+void GraphicsSave(char *filename)
+{
+  FILE *file = fopen(filename, "w");
+  if (file == NULL) {
+      fprintf(stderr, "Error: Cannot write file\n");
+      exit(1);
+  }
+  printf("Store image %s\n", filename);
+
+  fprintf(file, "P3\n");
+  fprintf(file, "%i %i\n", WIDTH, HEIGHT);
+  fprintf(file, "255\n");
+
+  for(int j=0; j<HEIGHT; j++)
+  {
+      for(int i=0; i<WIDTH; i++)
+      {
+          int c = pixels[j * WIDTH + i];
+          fprintf(file, "%i %i %i ", (c>>16)&0xFF, (c>>8)&0xFF, (c>>0)&0xFF);
+      }
+      fprintf(file, "\n");
+  }
+  fclose(file);
 }

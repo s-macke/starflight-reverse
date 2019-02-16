@@ -501,12 +501,19 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         break;
 
         case 0x17B7: // Exec function pointers "CREATE" "TYPE", "CALL", "ABORT" "PAGE", ...
+        {
             //printf("%04x\n", bx);
             //exit(1);
+            int bxtemp = bx;
             bx += 2;  // points to data in word
             bx = Read16(bx);
+            if (bx == 0x5a) // EMIT
+            {
+              //printf("EMIT: \n");
+              //PrintCallstacktrace(bxtemp);
+            }
 
-            if (bx == 0x6e) // Type
+            if (bx == 0x6e) // TYPE
             {
               int n = Read16(regsp);
               int offset = Read16(regsp+2);
@@ -567,6 +574,7 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
             ret = Call(Read16(bx), bx);
             if (ret != OK) return ret;
+        }
         break;
 
         case 0x21C9: // TODO for forth interpreter, is incomplete
@@ -653,15 +661,17 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             ParameterCall(bx, 0x7227);
           }
         break;
+
         case 0x73ea: // load data
         {
-          char *s = FindDirectoryName(Read16(0x548f));
+          char *s = FindDirectoryName(Read16(0x548f)); // FILE#
           if (s == NULL)
           {
             PrintCallstacktrace(bx);
             return ERROR;
           }
           printf("load adata FILE# '%s' RECORD# %i at regsi=0x%04x\n", s, Read16(0x549d), regsi-2);
+          //printf("%i %i\n", Read16(0x547b), Read16(0x547f));
           /*
           if ((Read16(0x549d) == 51) && (regsi == 0xf01c+2))
           {
@@ -964,6 +974,12 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             //printf("RECADD 0x%04x 0x%04x recordsize=%i recordidx=%i\n", sp0, sp2, recordsize, recordidx);
 
             unsigned short ax = 1024 - sp2;
+            if (recordsize == 0)
+            {
+              printf("Integer divide by zero\n");
+              PrintCallstacktrace(bx);
+              exit(1);
+            }
             ax = ax / recordsize;
             if (ax > recordidx)
             {
@@ -1139,6 +1155,12 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0x11ED: // "U/MOD"
         {
+          if (Read16(regsp) == 0)
+          {
+            printf("Integer divide by zero\n");
+            PrintCallstacktrace(bx);
+            exit(1);
+          }
             bx = Pop();
             dx = Pop();
             unsigned short ax = Pop();
@@ -1152,6 +1174,12 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         {
             signed short divisor = Pop();
             signed short dividend = Pop();
+            if (divisor == 0)
+            {
+              printf("Integer divide by zero\n");
+              PrintCallstacktrace(bx);
+              exit(1);
+            }
             Push(dividend/divisor);
         }
         break;
@@ -1160,6 +1188,12 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
         {
             signed short divisor = Pop(); // bx
             signed short dividend = Pop();
+            if (divisor == 0)
+            {
+              printf("Integer divide by zero\n");
+              PrintCallstacktrace(bx);
+              exit(1);
+            }
             Push(dividend%divisor);
             Push(dividend/divisor);
         }
@@ -2064,7 +2098,9 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
 
         case 0xf379: // ".EGARUNBIT" from BLT-OV\n
         {
-            int color = Read16(0x55F2);
+            int color = Read8(0x55F2)&0xF;
+            //printf(".EGARUNBIT color=0x%04x\n", color);
+            //int bright = Read8(0x535C);
             int XBLT = Read16(0x586E);
             int YBLT = Read16(0x5863);
             int WBLT = Read16(0x5892);
@@ -2807,4 +2843,11 @@ void EnableInterpreter()
     Write16(0x2422, 0x3a48-2); // "NOP"
     Write16(0x2424, 0x3a48-2); // "NOP"
 
+}
+
+void DisableInterpreterOutput()
+{
+  Write16(0x2420+34, 0x3a46); // CR in QUIT word
+  Write16(0x03c3, 0x1692-2); // print "ok"
+  Write16(0x1d3e + 114, 0xe32); // Drop EMIT in (EXPECT)
 }
