@@ -1744,7 +1744,7 @@ void WED4B() // WED4B
 
 void WED5D() // WED5D
 {
-  Push(0x53a4); Push(0x0002);
+  Push(0x53a4); Push(0x0002); // '____,<-033_!#___,/><:=>-_+0_,:3:<+_'
   WE606(); // WE606
   DrawTTY(); // .TTY
 }
@@ -1942,7 +1942,7 @@ void WEE4E() // WEE4E
 
 void WEE8C() // WEE8C
 {
-  Push(0x5400); Push(0x0002);
+  Push(0x5400); Push(0x0002); // ',+->18:_>,,&2:+-6<>3_=*63;618_09_;:1,:_=3><4_,+01:_):61:;_(6+7_>_,63):-&_261:->3Q_6+_,::2,_+0_=:_>=>1;01:;Q'
   WE606(); // WE606
 }
 
@@ -1977,7 +1977,7 @@ void IsCOMSG() // ?COMSG
 
 void WEEC1() // WEEC1
 {
-  Push(0x5478); Push(0x0002);
+  Push(0x5478); Push(0x0002); // '-:2>61,_09_>_30(>-6>1_:1<>2/2:1+_+7>+_6,_>=0*+_M_&:>-,_03;Q'
   WE606(); // WE606
 }
 
@@ -1988,7 +1988,7 @@ void WEEC1() // WEEC1
 
 void WEECD() // WEECD
 {
-  Push(0x54c0); Push(0x0002);
+  Push(0x54c0); Push(0x0002); // '>1_:'+-:2:3&_>1<6:1+_3004618_/&->26;_,7>/:;_<-&,+>3361:_,+-*<+*-:Q_0-6861_6;E_+7:_>1<6:1+,Q_:,+62>+:;_>8:E_8-:>+:-_+7>1_MK_2633601_&:>-,Q'
   WE606(); // WE606
 }
 
@@ -1999,7 +1999,7 @@ void WEECD() // WEECD
 
 void WEED9() // WEED9
 {
-  Push(0x5556); Push(0x0002);
+  Push(0x5556); Push(0x0002); // ',+->18:_>,,&2:+-6<>3_-*61,_09_;:1,:_=3><4_,+01:_):61:;_(6+7_>_,63):-&_261:->3Q_0-6861_6;E_+7:_3:874Q_:,+62>+:;_>8:E_FJOSOOO_&:>-,Q'
   WE606(); // WE606
 }
 
@@ -2010,7 +2010,7 @@ void WEED9() // WEED9
 
 void WEEE5() // WEEE5
 {
-  Push(0x55e5); Push(0x0002);
+  Push(0x55e5); Push(0x0002); // '-*61,_09_(7>+_(>,_01<:_>_=:>*+69*33&_;:36<>+:_,+-*<+*-:_09_>_+->1,3*<:1+_2>+:-6>3Q_0-6861_6;E_+7:_30(>-Q_:,+62>+:;_>8:E_KOO_&:>-,Q'
   WE606(); // WE606
 }
 
@@ -2021,7 +2021,7 @@ void WEEE5() // WEEE5
 
 void WEEF1() // WEEF1
 {
-  Push(0x5674); Push(0x0002);
+  Push(0x5674); Push(0x0002); // '+-:2:1;0*,_)>*3+:;_>1;_;02:;_,+-*<+*-:_09_=3><4_,+01:_):61:;_(6+7_,63):-Q_6;:1+696<>+601E_+7:_7>33,_09_2:20-&_R_3:874_;>+>_-:/0,6+0-&Q'
   WE606(); // WE606
 }
 
@@ -2032,7 +2032,7 @@ void WEEF1() // WEEF1
 
 void WEEFD() // WEEFD
 {
-  Push(0x5707); Push(0x0002);
+  Push(0x5707); Push(0x0002); // '+7:_-*61,_09_(7>+_(>,_01<:_+7:_7>33,_09_2:20-&Q_6+_6,_>=0*+_FJOSOOO_&:>-,_03;Q_+7:-:_6,_10+7618_09_)>3*:_7:-:_>1&20-:Q'
   WE606(); // WE606
 }
 
@@ -2128,7 +2128,7 @@ void WEF51() // WEF51
 
 void WEF75() // WEF75
 {
-  Push(0x578a); Push(0x0002);
+  Push(0x578a); Push(0x0002); // '8>,'
   WE606(); // WE606
 }
 
@@ -2139,7 +2139,7 @@ void WEF75() // WEF75
 
 void WEF81() // WEF81
 {
-  Push(0x579a); Push(0x0002);
+  Push(0x579a); Push(0x0002); // '9-0%:1'
   WE606(); // WE606
 }
 
@@ -2150,7 +2150,7 @@ void WEF81() // WEF81
 
 void WEF8D() // WEF8D
 {
-  Push(0x57ad); Push(0x0002);
+  Push(0x57ad); Push(0x0002); // '36.*6;'
   WE606(); // WE606
 }
 
@@ -2161,7 +2161,7 @@ void WEF8D() // WEF8D
 
 void WEF99() // WEF99
 {
-  Push(0x57c0); Push(0x0002);
+  Push(0x57c0); Push(0x0002); // '203+:1'
   WE606(); // WE606
 }
 
@@ -2172,7 +2172,7 @@ void WEF99() // WEF99
 
 void WEFA5() // WEFA5
 {
-  Push(0x57d3); Push(0x0002);
+  Push(0x57d3); Push(0x0002); // '-0<4'
   WE606(); // WE606
 }
 
@@ -2183,7 +2183,7 @@ void WEFA5() // WEFA5
 
 void WEFB1() // WEFB1
 {
-  Push(0x57e4); Push(0x0002);
+  Push(0x57e4); Push(0x0002); // '*1410(1'
   WE606(); // WE606
 }
 
@@ -2329,10 +2329,10 @@ void WF054() // WF054
 
 void WF094() // WF094
 {
-  Push(0x5800); Push(0x0002);
+  Push(0x5800); Push(0x0002); // '<022>1;:-S_(:_2*,+_=:_61_0/:1_,/><:'
   WE606(); // WE606
   DrawTTY(); // .TTY
-  Push(0x5830); Push(0x0002);
+  Push(0x5830); Push(0x0002); // '(6+761_>_,&,+:2_+0_*,:_+7:_,<>11:-Q'
   WE606(); // WE606
   DrawTTY(); // .TTY
 }
@@ -2349,7 +2349,7 @@ void WF094() // WF094
 
 void WF0B0() // WF0B0
 {
-  Push(0x5860); Push(0x0002);
+  Push(0x5860); Push(0x0002); // '/3>1:+E_'
   WE606(); // WE606
   DrawTTY(); // .TTY
   Push(Read16(pp_WF0AC)); // WF0AC @
@@ -2363,7 +2363,7 @@ void WF0B0() // WF0B0
 
 void WF0C4() // WF0C4
 {
-  Push(0x5875); Push(0x0002);
+  Push(0x5875); Push(0x0002); // '/-:;0261>1+_+:-->61E_'
   WE606(); // WE606
   DrawTTY(); // .TTY
   LoadData(WE622); // from 'PLANET'
@@ -2379,7 +2379,7 @@ void WF0C4() // WF0C4
 
 void WF0DA() // WF0DA
 {
-  Push(0x5897); Push(0x0002);
+  Push(0x5897); Push(0x0002); // '=60;:1,6+&E_'
   WE606(); // WE606
   DrawTTY(); // .TTY
   WF054(); // WF054
@@ -2393,7 +2393,7 @@ void WF0DA() // WF0DA
 
 void WF0EC() // WF0EC
 {
-  Push(0x58b0); Push(0x0002);
+  Push(0x58b0); Push(0x0002); // '261:->3_;:1,6+&E_'
   WE606(); // WE606
   DrawTTY(); // .TTY
   LoadData(WE63A); // from 'PLANET'
@@ -2413,7 +2413,7 @@ void WF0EC() // WF0EC
 
 void WF10E() // WF10E
 {
-  Push(0x58ce); Push(0x0002);
+  Push(0x58ce); Push(0x0002); // ',:1+6:1+,E_'
   WE606(); // WE606
   DrawTTY(); // .TTY
   LoadData(WE642); // from 'PLANET'
@@ -2422,11 +2422,11 @@ void WF10E() // WF10E
   Push(Pop() & !Read16(pp_PAST)); //  PAST @ NOT AND
   if (Pop() != 0)
   {
-    Push(0x58e6); Push(0x0002);
+    Push(0x58e6); Push(0x0002); // '/-:,:1+'
     WE606(); // WE606
   } else
   {
-    Push(0x58fa); Push(0x0002);
+    Push(0x58fa); Push(0x0002); // '101:'
     WE606(); // WE606
   }
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
@@ -2815,7 +2815,7 @@ void WF3A5() // WF3A5
   _gt_(); // >
   if (Pop() != 0)
   {
-    Push(0x590b); Push(0x0002);
+    Push(0x590b); Push(0x0002); // '_61_>_):76<3:Q'
     WE606(); // WE606
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     return;
@@ -2893,7 +2893,7 @@ void WF437() // WF437
   Push(1);
   MAX(); // MAX
   Draw(); // .
-  Push(0x5926); Push(0x0002);
+  Push(0x5926); Push(0x0002); // '<*=6<_2:+:-W,V_'
   WE606(); // WE606
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   LoadData(WE6AB); // from 'ELEMENT'
@@ -2910,7 +2910,7 @@ void WF437() // WF437
 
 void WF461() // WF461
 {
-  Push(0x5942); Push(0x0002);
+  Push(0x5942); Push(0x0002); // '&0*-_+:-->61_):76<3:'
   WE606(); // WE606
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }

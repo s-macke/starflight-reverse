@@ -350,10 +350,10 @@ void WF166() // WF166
 
 void WF194() // WF194
 {
-  Push(0x69fe); Push(0x0002);
+  Push(0x69fe); Push(0x0002); // 'PLACE DEVICE SO LOWER LEFT CORNER'
   WF166(); // WF166
   DrawTTY(); // .TTY
-  Push(0x6a2c); Push(0x0002);
+  Push(0x6a2c); Push(0x0002); // 'IS AT COORDINATES '
   WF166(); // WF166
   DrawTTY(); // .TTY
   PRINT("]", 1); // (.")
@@ -680,7 +680,7 @@ void WF365() // WF365
 
 void WF38F() // WF38F
 {
-  Push(0x6a4b); Push(0x0002);
+  Push(0x6a4b); Push(0x0002); // 'WHAT IS NUMBER OF '
   WF166(); // WF166
   DrawTTY(); // .TTY
   Push(Read16(pp_WF180)); // WF180 @
@@ -700,7 +700,7 @@ void WF38F() // WF38F
 void WF3BC() // WF3BC
 {
   unsigned short int i, imax;
-  Push(0x6a6a); Push(0x0002);
+  Push(0x6a6a); Push(0x0002); // 'NUMBER: '
   WF166(); // WF166
   DrawTTY(); // .TTY
   Push(-1);
@@ -746,7 +746,7 @@ void WF3BC() // WF3BC
 void WF414() // WF414
 {
   CTINIT(); // CTINIT
-  Push(0x6a7f); Push(0x0002);
+  Push(0x6a7f); Push(0x0002); // 'RE-ENTER:'
   WF166(); // WF166
   DrawTTY(); // .TTY
   WF38F(); // WF38F
@@ -766,7 +766,7 @@ void WF42A() // WF42A
   D0_eq_(); // D0=
   if (Pop() != 0)
   {
-    Push(0x6a95); Push(0x0002);
+    Push(0x6a95); Push(0x0002); // 'CALIBRATING NAVIGATIONAL SYSTEM...'
     WF166(); // WF166
     DrawTTY(); // .TTY
   }
@@ -797,16 +797,16 @@ void WF42A() // WF42A
 void WF464() // WF464
 {
   CTINIT(); // CTINIT
-  Push(0x6ac4); Push(0x0002);
+  Push(0x6ac4); Push(0x0002); // 'VERIFYING:'
   WF166(); // WF166
   DrawTTY(); // .TTY
   WF38F(); // WF38F
-  Push(0x6adb); Push(0x0002);
+  Push(0x6adb); Push(0x0002); // 'NUMBER ENTERED: '
   WF166(); // WF166
   DrawTTY(); // .TTY
   Push(pp_WF190); // WF190
   Is(); // ?
-  Push(0x6af8); Push(0x0002);
+  Push(0x6af8); Push(0x0002); // 'CONFIRM [N Y]'
   WF166(); // WF166
   DrawTTY(); // .TTY
   _i_KEY(); // 'KEY

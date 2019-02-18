@@ -814,7 +814,7 @@ void WEEA1() // WEEA1
 
 void WEECD() // WEECD
 {
-  Push(0x6813); Push(0x0002);
+  Push(0x6813); Push(0x0002); // 'HIT ] TO ESCAPE.'
   WED1F(); // WED1F
 }
 
@@ -825,7 +825,7 @@ void WEECD() // WEECD
 
 void WEED9() // WEED9
 {
-  Push(0x6830); Push(0x0002);
+  Push(0x6830); Push(0x0002); // '^\ TO SCROLL ITEMS'
   WED1F(); // WED1F
 }
 
@@ -965,12 +965,12 @@ void WEF85() // WEF85
   CTINIT(); // CTINIT
   WEED9(); // WEED9
   DrawTTY(); // .TTY
-  Push(0x684f); Push(0x0002);
+  Push(0x684f); Push(0x0002); // 'SPACE BAR TO TOGGLE CHOICE ON AND OFF'
   WED1F(); // WED1F
   DrawTTY(); // .TTY
   WEECD(); // WEECD
   DrawTTY(); // .TTY
-  Push(0x6881); Push(0x0002);
+  Push(0x6881); Push(0x0002); // 'NOW, PRESS ANY KEY TO CONTINUE'
   WED1F(); // WED1F
   DrawTTY(); // .TTY
   KEY_2(); // KEY_2
@@ -998,7 +998,7 @@ void WEFAD() // WEFAD
 
 void WEFBB() // WEFBB
 {
-  Push(0x68ac); Push(0x0002);
+  Push(0x68ac); Push(0x0002); // 'COLLECT USING CURRENT MINERAL SETTINGS'
   WED1F(); // WED1F
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -1010,7 +1010,7 @@ void WEFBB() // WEFBB
 
 void WEFC9() // WEFC9
 {
-  Push(0x68df); Push(0x0002);
+  Push(0x68df); Push(0x0002); // 'CHANGE MINERAL SETTINGS FOR SEARCH'
   WED1F(); // WED1F
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -1022,7 +1022,7 @@ void WEFC9() // WEFC9
 
 void WEFD7() // WEFD7
 {
-  Push(0x690e); Push(0x0002);
+  Push(0x690e); Push(0x0002); // 'DOCK DRONE AND DEACTIVATE'
   WED1F(); // WED1F
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }

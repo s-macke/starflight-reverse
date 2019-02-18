@@ -130,7 +130,7 @@ void DrawNOFUN() // .NOFUN
       _gt_SSCT(); // >SSCT
     }
     CTINIT(); // CTINIT
-    Push(0x5242); Push(0x0002);
+    Push(0x5242); Push(0x0002); // 'FUNCTION NOT AVAILABLE'
     WF37B(); // WF37B
     DrawTTY(); // .TTY
     return;
@@ -149,10 +149,10 @@ void WF3C8() // WF3C8
   if (Pop() == 0) return;
   Push(Read16(pp_PAST)); // PAST @
   if (Pop() == 0) return;
-  Push(0x5265); Push(0x0002);
+  Push(0x5265); Push(0x0002); // 'THERE'S NOTHING BUT STATIC'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
-  Push(0x528c); Push(0x0002);
+  Push(0x528c); Push(0x0002); // 'ON THAT CHANNEL'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
   Push(0x07d0);
@@ -234,7 +234,7 @@ void WF436() // WF436
 
 void WF46C() // WF46C
 {
-  Push(0x52a8); Push(0x0002);
+  Push(0x52a8); Push(0x0002); // 'RETRIEVAL COMPLETE, CREW REVIVED'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
@@ -249,7 +249,7 @@ void WF47A() // WF47A
   Push(Read16(regsp)); // DUP
   Push(Pop() & (Read16(pp_CONTEXT_3)==5?1:0)); //  CONTEXT_3 @ 5 = AND
   if (Pop() == 0) return;
-  Push(0x52d5); Push(0x0002);
+  Push(0x52d5); Push(0x0002); // 'WE'RE ALREADY HOME!'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
   Push(0x07d0);
@@ -266,7 +266,7 @@ void WF4A0() // WF4A0
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(0x52f5); Push(0x0002);
+  Push(0x52f5); Push(0x0002); // 'TRANSMIT EMERGENCY DISTRESS CALL'
   WF37B(); // WF37B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -278,7 +278,7 @@ void WF4A0() // WF4A0
 
 void WF4B2() // WF4B2
 {
-  Push(0x5322); Push(0x0002);
+  Push(0x5322); Push(0x0002); // 'TRANSMISSION IS BEING JAMMED'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
@@ -290,7 +290,7 @@ void WF4B2() // WF4B2
 
 void WF4C0() // WF4C0
 {
-  Push(0x534b); Push(0x0002);
+  Push(0x534b); Push(0x0002); // 'INITIATING CRYOGENIC STASIS'
   WF37B(); // WF37B
   DrawTTY(); // .TTY
 }
@@ -305,7 +305,7 @@ void TOW_dash_US() // TOW-US
 {
   WF4A0(); // WF4A0
   CTCR(); // CTCR
-  Push(0x5373); Push(0x0002);
+  Push(0x5373); Push(0x0002); // 'CONFIRM: [N Y]'
   WF37B(); // WF37B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
@@ -341,7 +341,7 @@ void TOW_dash_US() // TOW-US
   } else
   {
     CTERASE(); // CTERASE
-    Push(0x538e); Push(0x0002);
+    Push(0x538e); Push(0x0002); // 'CANCELLED'
     WF37B(); // WF37B
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   }

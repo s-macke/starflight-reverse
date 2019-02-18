@@ -2048,7 +2048,7 @@ void WE005() // WE005
   Push(pp_LINE_dash_CO); // LINE-CO
   Store_2(); // !_2
   CTINIT(); // CTINIT
-  Push(0x5963); Push(0x0002);
+  Push(0x5963); Push(0x0002); // 'TRANSMITTING:'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
   Push(0x01f4);
@@ -2069,7 +2069,7 @@ void WE021() // WE021
   Push(Pop() & Pop()); // AND
   if (Pop() == 0) return;
   WE005(); // WE005
-  Push(0x597d); Push(0x0002);
+  Push(0x597d); Push(0x0002); // 'FAREWELL. WE WILL MEET AGAIN.'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
 }
@@ -2523,7 +2523,7 @@ void WE2E3() // WE2E3
 
 void WE305() // WE305
 {
-  Push(0x59a7); Push(0x0002);
+  Push(0x59a7); Push(0x0002); // 'YOURSELVES'
   WD80E(); // WD80E
 }
 
@@ -2858,7 +2858,7 @@ void WE4C9() // WE4C9
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    Push(0x59be); Push(0x0002);
+    Push(0x59be); Push(0x0002); // 'NO RECORDINGS'
     WD80E(); // WD80E
     DrawTTY(); // .TTY
   } else
@@ -2933,7 +2933,7 @@ void WE4C9() // WE4C9
 void WE567() // WE567
 {
   CTINIT(); // CTINIT
-  Push(0x59d8); Push(0x0002);
+  Push(0x59d8); Push(0x0002); // 'RECEIVING:'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
   Push(0x01f4);
@@ -3343,7 +3343,7 @@ void WE752() // WE752
 void WE75E() // WE75E
 {
   CTINIT(); // CTINIT
-  Push(0x59ef); Push(0x0002);
+  Push(0x59ef); Push(0x0002); // 'COMMANDER,'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
 }
@@ -3370,7 +3370,7 @@ void WE77F() // WE77F
   ON_2(); // ON_2
   WE75E(); // WE75E
   WE76E(); // WE76E
-  Push(0x5a06); Push(0x0002);
+  Push(0x5a06); Push(0x0002); // 'RAISED THEIR SHIELDS.'
   WD80E(); // WD80E
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -3386,7 +3386,7 @@ void WE797() // WE797
   _099(); // 099
   WE75E(); // WE75E
   WE76E(); // WE76E
-  Push(0x5a28); Push(0x0002);
+  Push(0x5a28); Push(0x0002); // 'LOWERED THEIR SHIELDS.'
   WD80E(); // WD80E
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -3402,7 +3402,7 @@ void WE7AF() // WE7AF
   ON_2(); // ON_2
   WE75E(); // WE75E
   WE76E(); // WE76E
-  Push(0x5a4b); Push(0x0002);
+  Push(0x5a4b); Push(0x0002); // 'ARMED THEIR WEAPONS.'
   WD80E(); // WD80E
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -3418,7 +3418,7 @@ void WE7C7() // WE7C7
   _099(); // 099
   WE75E(); // WE75E
   WE76E(); // WE76E
-  Push(0x5a6c); Push(0x0002);
+  Push(0x5a6c); Push(0x0002); // 'DIS-ARMED THEIR WEAPONS.'
   WD80E(); // WD80E
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -3433,7 +3433,7 @@ void WE7DF() // WE7DF
   Push(0x52bd); // '?CALLED'
   ON_2(); // ON_2
   WE75E(); // WE75E
-  Push(0x5a91); Push(0x0002);
+  Push(0x5a91); Push(0x0002); // 'I'M PICKING UP AN ALIEN DISTRESS CALL.'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
 }
@@ -3450,7 +3450,7 @@ void WE7F5() // WE7F5
   Push(0x52bd); // '?CALLED'
   _099(); // 099
   WE75E(); // WE75E
-  Push(0x5ac4); Push(0x0002);
+  Push(0x5ac4); Push(0x0002); // 'MORE ALIEN SHIPS HAVE WARPED IN.'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
 }
@@ -3465,7 +3465,7 @@ void WE811() // WE811
   Push(0xda03); // 'WDA03'
   ON_2(); // ON_2
   WE75E(); // WE75E
-  Push(0x5af1); Push(0x0002);
+  Push(0x5af1); Push(0x0002); // 'WE'RE BEING SCANNED.'
   WD80E(); // WD80E
   DrawTTY(); // .TTY
 }
@@ -5338,7 +5338,7 @@ void WF165() // WF165
   }
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Push(0x5b12); Push(0x0002);
+  Push(0x5b12); Push(0x0002); // 'THERE'S NO ONE TO HAIL'
   WD80E(); // WD80E
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   GetColor(BLACK);
@@ -5466,7 +5466,7 @@ void CL1() // CL1
     {
       WF0DF(); // WF0DF
       CTINIT(); // CTINIT
-      Push(0x5b35); Push(0x0002);
+      Push(0x5b35); Push(0x0002); // 'COMMUNICATIONS HAVE BEEN TERMINATED'
       WD80E(); // WD80E
       DrawTTY(); // .TTY
       WF1DC(); // WF1DC

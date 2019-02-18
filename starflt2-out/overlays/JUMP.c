@@ -632,10 +632,10 @@ void WEF81() // WEF81
   CTINIT(); // CTINIT
   SET_STR_AS_PARAM("JUMP POD ENGAGED");
   DrawTTY(); // .TTY
-  Push(0x6b12); Push(0x0002);
+  Push(0x6b12); Push(0x0002); // 'GRAVITATIONAL MATRIX ANALYSIS'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
-  Push(0x6b3c); Push(0x0002);
+  Push(0x6b3c); Push(0x0002); // 'COMPUTING % ACCURACY OF JUMP'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
 }
@@ -1278,7 +1278,7 @@ void WF398() // WF398
   if (Pop() != 0)
   {
     CTINIT(); // CTINIT
-    Push(0x6b65); Push(0x0002);
+    Push(0x6b65); Push(0x0002); // 'INSUFFICIENT FUEL'
     WEE31(); // WEE31
     DrawTTY(); // .TTY
   }
@@ -1315,7 +1315,7 @@ void WF3D4() // WF3D4
   Push(Read16(regsp)); // DUP
   Push(Pop()==0?1:0); //  0=
   if (Pop() == 0) return;
-  Push(0x6b83); Push(0x0002);
+  Push(0x6b83); Push(0x0002); // 'NO JUMP PODS AVAILABLE'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
 }
@@ -1348,15 +1348,15 @@ void WF40A() // WF40A
   Push(Read16(pp_WEDD5)==0?1:0); // WEDD5 @ 0=
   if (Pop() != 0)
   {
-    Push(0x6ba6); Push(0x0002);
+    Push(0x6ba6); Push(0x0002); // 'JUMP SUCCESSFUL! '
     WEE31(); // WEE31
     DrawTTY(); // .TTY
     return;
   }
-  Push(0x6bc4); Push(0x0002);
+  Push(0x6bc4); Push(0x0002); // 'GRAVITATIONAL DISTORTION ENCOUNTERED'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
-  Push(0x6c00); Push(0x0002);
+  Push(0x6c00); Push(0x0002); // 'WE HAVE MISSED THE TARGET SITE'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
 }
@@ -1368,12 +1368,12 @@ void WF40A() // WF40A
 
 void WF440() // WF440
 {
-  Push(0x6c2b); Push(0x0002);
+  Push(0x6c2b); Push(0x0002); // 'ACTIVATING STARMAP'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
   Push(0x03e8);
   MS(); // MS
-  Push(0x6c4a); Push(0x0002);
+  Push(0x6c4a); Push(0x0002); // 'SELECT DESTINATION'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
   Push(0x03e8);
@@ -1389,10 +1389,10 @@ void WF464() // WF464
 {
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x6c69); Push(0x0002);
+  Push(0x6c69); Push(0x0002); // 'JUMP PODS CONSUME 15 CM OF SHYNEUM.'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
-  Push(0x6c99); Push(0x0002);
+  Push(0x6c99); Push(0x0002); // 'PROCEED?  [NO   YES]'
   WEE31(); // WEE31
   DrawTTY(); // .TTY
   Y_slash_N(); // Y/N

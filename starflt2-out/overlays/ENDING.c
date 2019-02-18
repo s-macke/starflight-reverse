@@ -1121,7 +1121,7 @@ void WEC78() // WEC78
   DrawTTY(); // .TTY
   Push(0x1388);
   MS(); // MS
-  Push(0x6733); Push(0x0002);
+  Push(0x6733); Push(0x0002); // 'CREW KILLED - GAME OVER'
   WEA44(); // WEA44
   DrawTTY(); // .TTY
   KEY_2(); // KEY_2
@@ -1504,7 +1504,7 @@ void WEED1() // WEED1
       C_ex__2(); // C!_2
       ICLOSE(); // ICLOSE
       CTINIT(); // CTINIT
-      Push(0x6757); Push(0x0002);
+      Push(0x6757); Push(0x0002); // 'ENGINES RESTORED!!'
       WEA44(); // WEA44
       DrawTTY(); // .TTY
     }
@@ -2275,14 +2275,14 @@ void BOLT() // BOLT
       WE92E(); // WE92E
       WF15C(); // WF15C
       CTINIT(); // CTINIT
-      Push(0x6776); Push(0x0002);
+      Push(0x6776); Push(0x0002); // 'CONFIRMING - UHL WEAPON FIRED'
       WEA44(); // WEA44
       BEEP(); // BEEP
       DrawTTY(); // .TTY
       WEB62(); // WEB62
       Push(pp_IsAF); // ?AF
       ON_2(); // ON_2
-      Push(0x67a0); Push(0x0002);
+      Push(0x67a0); Push(0x0002); // 'UHL WEAPON IN PLACE'
       WEA44(); // WEA44
       DrawTTY(); // .TTY
       Push(0x07d0);

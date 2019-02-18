@@ -536,7 +536,7 @@ IFieldType WE639 = {ENCOUNTERIDX, 0x1b, 0x01};
 void WE642() // WE642
 {
   CTINIT(); // CTINIT
-  Push(0x5bbc); Push(0x0002);
+  Push(0x5bbc); Push(0x0002); // 'TRANSMITTING:'
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   Push(0x01f4);
@@ -927,7 +927,7 @@ void WE815() // WE815
 
 void WE841() // WE841
 {
-  Push(0x5c00); Push(0x0002);
+  Push(0x5c00); Push(0x0002); // 'WE PERCEIVE THAT YOU HAVE SOME NID BERRY BUSHES. WOULD YOU PLEASE BE SO KIND AS TO GIVE THEM TO US?'
   WE5E2(); // WE5E2
   WE6BA(); // WE6BA
 }
@@ -1045,7 +1045,7 @@ void WE8F1() // WE8F1
 void WE8FB() // WE8FB
 {
   CTERASE(); // CTERASE
-  Push(0x5c70); Push(0x0002);
+  Push(0x5c70); Push(0x0002); // 'NEW CREWMEMBER '
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   Push(0x65e1+WE62F.offset); // WE62F<IFIELD>
@@ -1155,7 +1155,7 @@ void WE959() // WE959
 void WE9B3() // WE9B3
 {
   WE935(); // WE935
-  Push(0x5c8c); Push(0x0002);
+  Push(0x5c8c); Push(0x0002); // 'WE CAN TELL THAT YOU HAVE POSSESSION OF THE MOST VALUABLE THING. YOU MUST RETURN IT TO US IMMEDIATELY, OR FACE THE CONSEQUENCES.'
   WE5E2(); // WE5E2
   WE6BA(); // WE6BA
 }
@@ -1282,7 +1282,7 @@ void WEA63() // WEA63
   C_ex__2(); // C!_2
   UPDATE(); // UPDATE
   SAVE_dash_BU(); // SAVE-BU
-  Push(0x5d19); Push(0x0002);
+  Push(0x5d19); Push(0x0002); // 'GORZEK UHL WEAPON.......'
   WE5E2(); // WE5E2
   Push(0x001c);
   Push(0x0036);
@@ -1313,7 +1313,7 @@ IFieldType WEA9C = {CREWMEMBERIDX, 0x1f, 0x01};
 void WEAA1() // WEAA1
 {
   CTINIT(); // CTINIT
-  Push(0x5d3e); Push(0x0002);
+  Push(0x5d3e); Push(0x0002); // 'MY CAPABILITIES ARE: '
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   SET_STR_AS_PARAM("SCIENCE: ");
@@ -1328,14 +1328,14 @@ void WEAA1() // WEAA1
   WE5FE(); // WE5FE
   Push((0x65e1+WEA97.offset) + 1); // WEA97<IFIELD> 1+
   C_ex__2(); // C!_2
-  Push(0x5d60); Push(0x0002);
+  Push(0x5d60); Push(0x0002); // 'ENGINEERING: '
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   Push(Read16((0x65e1+WEA97.offset) + 2)&0xFF); // WEA97<IFIELD> 2+ C@
   WE5FE(); // WE5FE
   Push((0x65e1+WEA97.offset) + 2); // WEA97<IFIELD> 2+
   C_ex__2(); // C!_2
-  Push(0x5d7a); Push(0x0002);
+  Push(0x5d7a); Push(0x0002); // 'COMMUNICATING: '
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   Push(Read16((0x65e1+WEA97.offset) + 3)&0xFF); // WEA97<IFIELD> 3+ C@
@@ -1374,7 +1374,7 @@ void GORZEK_gt_UHL() // GORZEK>UHL
   WE935(); // WE935
   Push(0xbe45); // '.HUFF'
   MODULE(); // MODULE
-  Push(0x5d96); Push(0x0002);
+  Push(0x5d96); Push(0x0002); // 'GRANTED?'
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
   Push(0);
@@ -1591,14 +1591,14 @@ void WECDD() // WECDD
   Push(1);
   Push(0x0015);
   CMESS(); // CMESS
-  Push(0x5dab); Push(0x0002);
+  Push(0x5dab); Push(0x0002); // 'CHOOSE CREWMEMBER ^\'
   WE5E2(); // WE5E2
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   StoreCRS(); // !CRS
   Push(2);
   Push(0x0012);
   CMESS(); // CMESS
-  Push(0x5dcc); Push(0x0002);
+  Push(0x5dcc); Push(0x0002); // 'AND PRESS SPACEBAR'
   WE5E2(); // WE5E2
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   StoreCRS(); // !CRS
@@ -1845,7 +1845,7 @@ void WEE5B() // WEE5B
 void WEE7B() // WEE7B
 {
   Pop(); // DROP
-  Push(0x5deb); Push(0x0002);
+  Push(0x5deb); Push(0x0002); // 'VERY WELL'
   WE5E2(); // WE5E2
   WE6BA(); // WE6BA
 }
@@ -1858,7 +1858,7 @@ void WEE7B() // WEE7B
 
 void WEE8B() // WEE8B
 {
-  Push(0x5e01); Push(0x0002);
+  Push(0x5e01); Push(0x0002); // 'WOULD YOU BE INTERESTED IN PURCHASING '
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
 }
@@ -1902,7 +1902,7 @@ void WEEBD() // WEEBD
 
 void WEEE1() // WEEE1
 {
-  Push(0x5e34); Push(0x0002);
+  Push(0x5e34); Push(0x0002); // 'YOU DO NOT HAVE ENOUGH. DO NOT TRY TO DECEIVE US.'
   WE5E2(); // WE5E2
 }
 
@@ -2059,10 +2059,10 @@ void WEF4F() // WEF4F
 
 void WEFE9() // WEFE9
 {
-  Push(0x5e72); Push(0x0002);
+  Push(0x5e72); Push(0x0002); // 'IT MIGHT BE SUGGESTED THAT AS FURTHER'
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
-  Push(0x5ea4); Push(0x0002);
+  Push(0x5ea4); Push(0x0002); // 'DEMONSTRATION OF GOODWILL ON YOUR PART'
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
 }
@@ -2077,7 +2077,7 @@ void WF001() // WF001
 {
   SET_STR_AS_PARAM("OF, SAY XX UNITS OF SHYNEUM MIGHT ");
   DrawTTY(); // .TTY
-  Push(0x5ed7); Push(0x0002);
+  Push(0x5ed7); Push(0x0002); // 'CONSIDERABLY FACILITATE DISCUSSIONS.'
   WE5E2(); // WE5E2
   DrawTTY(); // .TTY
 }
@@ -2228,7 +2228,7 @@ void WF11A() // WF11A
   Push(0x002d);
   WE556(); // WE556
   if (Pop() == 0) return;
-  Push(0x5f08); Push(0x0002);
+  Push(0x5f08); Push(0x0002); // 'GORZEK DETECTS PRESENCE OF MOST VALUABLE THING. SUGGEST THAT IT BE RETURNED TO TANDELOU IMMEDIATELY.'
   WE5E2(); // WE5E2
   WE6BA(); // WE6BA
   Push(0x2710); Push(0x0000);
@@ -2462,7 +2462,7 @@ void _n__gt_PRO() // #>PRO
 
 void WF27E() // WF27E
 {
-  Push(0x6000); Push(0x0002);
+  Push(0x6000); Push(0x0002); // 'ALL YOUR ASSETS AT STARPORT HAVE BEEN SEIZED. YOUR SHIP WILL BE IMPOUNDED. WE HAVE REMOTELY DISABLED YOUR ENGINES. ANY ATTEMPT AT RESISTANCE WILL BE MET WITH FORCE. DO YOU AGREE TO COME ALONG PEACEFULLY?'
   WE5E2(); // WE5E2
 }
 
@@ -2490,10 +2490,10 @@ void WF28A() // WF28A
     Push(0x4fa9); // 'BLACK'
     Store_2(); // !_2
     CTERASE(); // CTERASE
-    Push(0x60d8); Push(0x0002);
+    Push(0x60d8); Push(0x0002); // 'CREW ARRESTED'
     WE5E2(); // WE5E2
     DrawTTY(); // .TTY
-    Push(0x60f2); Push(0x0002);
+    Push(0x60f2); Push(0x0002); // 'GAME OVER'
     WE5E2(); // WE5E2
     DrawTTY(); // .TTY
     _i_KEY(); // 'KEY
@@ -2519,7 +2519,7 @@ void WF28A() // WF28A
 
 void WF2DE() // WF2DE
 {
-  Push(0x6108); Push(0x0002);
+  Push(0x6108); Push(0x0002); // 'OKAY, BUDDY. LET'S SEE YOUR SECURITY CODE.'
   WE5E2(); // WE5E2
 }
 
@@ -2531,7 +2531,7 @@ void WF2DE() // WF2DE
 
 void WF2EA() // WF2EA
 {
-  Push(0x613f); Push(0x0002);
+  Push(0x613f); Push(0x0002); // 'OUR APOLOGIES COMMANDER, THERE'S BEEN SOME KIND OF MISTAKE. YOU CAN GO. HAVE A SAFE VOYAGE.'
   WE5E2(); // WE5E2
 }
 
@@ -2577,7 +2577,7 @@ void WF2F6() // WF2F6
 
 void WF332() // WF332
 {
-  Push(0x61a7); Push(0x0002);
+  Push(0x61a7); Push(0x0002); // 'TO HELP YOU OVERCOME YOUR GUILT FOR WRONGFULLY MISTREATING OUR GREAT SPEMIN ANCESTORS, WE DEMAND A PAYMENT'
   WE5E2(); // WE5E2
 }
 
@@ -2652,7 +2652,7 @@ void WF394() // WF394
     WE7B9(); // WE7B9
     WE59E(); // WE59E
     CTINIT(); // CTINIT
-    Push(0x621e); Push(0x0002);
+    Push(0x621e); Push(0x0002); // 'SHYNEUM EXCHANGED'
     WE5E2(); // WE5E2
     DrawTTY(); // .TTY
     return;

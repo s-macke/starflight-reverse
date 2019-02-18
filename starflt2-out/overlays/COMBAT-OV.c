@@ -2860,7 +2860,7 @@ void WE8FA() // WE8FA
     Push(5);
     Push(4);
     POS_dot_(); // POS.
-    Push(0x661b); Push(0x0002);
+    Push(0x661b); Push(0x0002); // 'LASER REFLECTED!'
     WDE37(); // WDE37
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     return;
@@ -3307,7 +3307,7 @@ void WEBDD() // WEBDD
   WE966(); // WE966
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x6638); Push(0x0002);
+  Push(0x6638); Push(0x0002); // 'LASER CLASS '
   WDE37(); // WDE37
   DrawTTY(); // .TTY
   LoadData(WDD9C); // from 'VESSEL'
@@ -3792,7 +3792,7 @@ void WEE11() // WEE11
       GetColor(YELLOW);
       StoreCOLOR(); // !COLOR
     }
-    Push(0x6651); Push(0x0002);
+    Push(0x6651); Push(0x0002); // 'SHIELDS OPERATIVE'
     WDE37(); // WDE37
     DrawTTY(); // .TTY
     return;
@@ -4392,7 +4392,7 @@ void WF250() // WF250
 {
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x666f); Push(0x0002);
+  Push(0x666f); Push(0x0002); // 'NO TARGET PRESENT'
   WDE37(); // WDE37
   DrawTTY(); // .TTY
 }
@@ -4505,7 +4505,7 @@ void WF2B6() // WF2B6
             {
               GetColor(WHITE);
               StoreCOLOR(); // !COLOR
-              Push(0x668d); Push(0x0002);
+              Push(0x668d); Push(0x0002); // 'WEAPON NOT AVAILABLE'
               WDE37(); // WDE37
               DrawTTY(); // .TTY
             }
@@ -4519,7 +4519,7 @@ void WF2B6() // WF2B6
     {
       GetColor(WHITE);
       StoreCOLOR(); // !COLOR
-      Push(0x66ae); Push(0x0002);
+      Push(0x66ae); Push(0x0002); // 'WEAPONS NOT ARMED '
       WDE37(); // WDE37
       DrawTTY(); // .TTY
     }
@@ -4527,7 +4527,7 @@ void WF2B6() // WF2B6
   }
   GetColor(RED);
   StoreCOLOR(); // !COLOR
-  Push(0x66cd); Push(0x0002);
+  Push(0x66cd); Push(0x0002); // 'NO FUEL! '
   WDE37(); // WDE37
   DrawTTY(); // .TTY
 }
@@ -4718,10 +4718,10 @@ void WF4A8() // WF4A8
   WE4F0(); // WE4F0
   _gt_DISPLA(); // >DISPLA
   CTINIT(); // CTINIT
-  Push(0x66e3); Push(0x0002);
+  Push(0x66e3); Push(0x0002); // 'HIT SPACE BAR TO FIRE WEAPON'
   WDE37(); // WDE37
   DrawTTY(); // .TTY
-  Push(0x670c); Push(0x0002);
+  Push(0x670c); Push(0x0002); // 'HIT RETURN TO EXIT COMBAT '
   WDE37(); // WDE37
   DrawTTY(); // .TTY
   WEF07(); // WEF07

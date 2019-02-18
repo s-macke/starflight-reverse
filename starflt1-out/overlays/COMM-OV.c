@@ -2477,7 +2477,7 @@ void WE482() // WE482
 void StoreA_dash_SUBJECT() // !A-SUBJECT
 {
   CTINIT(); // CTINIT
-  Push(0x0eca); Push(0x0002);
+  Push(0x0eca); Push(0x0002); // 'RECEIVING:'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
   Push(0x01f4);
@@ -2813,7 +2813,7 @@ void WE61A() // WE61A
   ON_3(); // ON_3
   WE5F6(); // WE5F6
   WE609(); // WE609
-  Push(0x0ee1); Push(0x0002);
+  Push(0x0ee1); Push(0x0002); // 'RAISED THEIR SHIELDS.'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -2829,7 +2829,7 @@ void WE632() // WE632
   OFF(); // OFF
   WE5F6(); // WE5F6
   WE609(); // WE609
-  Push(0x0f03); Push(0x0002);
+  Push(0x0f03); Push(0x0002); // 'LOWERED THEIR SHIELDS.'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -2845,7 +2845,7 @@ void WE64A() // WE64A
   ON_3(); // ON_3
   WE5F6(); // WE5F6
   WE609(); // WE609
-  Push(0x0f26); Push(0x0002);
+  Push(0x0f26); Push(0x0002); // 'ARMED THEIR WEAPONS.'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -2861,7 +2861,7 @@ void WE662() // WE662
   OFF(); // OFF
   WE5F6(); // WE5F6
   WE609(); // WE609
-  Push(0x0f47); Push(0x0002);
+  Push(0x0f47); Push(0x0002); // 'DIS-ARMED THEIR WEAPONS.'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }
@@ -2876,7 +2876,7 @@ void WE67A() // WE67A
   Push(0xda75); // 'WDA75'
   ON_3(); // ON_3
   WE5F6(); // WE5F6
-  Push(0x0f6c); Push(0x0002);
+  Push(0x0f6c); Push(0x0002); // 'I'M PICKING UP AN ALIEN DISTRESS CALL.'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
 }
@@ -2893,7 +2893,7 @@ void WE690() // WE690
   Push(0xda75); // 'WDA75'
   OFF(); // OFF
   WE5F6(); // WE5F6
-  Push(0x0f9f); Push(0x0002);
+  Push(0x0f9f); Push(0x0002); // 'MORE ALIEN SHIPS HAVE WARPED IN.'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
 }
@@ -2908,7 +2908,7 @@ void WE6AC() // WE6AC
   Push(0xda79); // 'WDA79'
   ON_3(); // ON_3
   WE5F6(); // WE5F6
-  Push(0x0fcc); Push(0x0002);
+  Push(0x0fcc); Push(0x0002); // 'WE'RE BEING SCANNED.'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
 }
@@ -4204,7 +4204,7 @@ void _st_COMM_gt_() // <COMM> rule
 void WECA9() // WECA9
 {
   CTINIT(); // CTINIT
-  Push(0x1000); Push(0x0002);
+  Push(0x1000); Push(0x0002); // 'TRANSMITTING:'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
   Push(0x01f4);
@@ -4300,7 +4300,7 @@ void WED28() // WED28
     Push(Read16(regsp)); // DUP
     if (Pop() != 0)
     {
-      Push(0x101a); Push(0x0002);
+      Push(0x101a); Push(0x0002); // 'THERE'S NO RESPONSE!'
       WD93B(); // WD93B
       DrawTTY(); // .TTY
       Push(0x07d0);
@@ -4689,7 +4689,7 @@ void WEF9D() // WEF9D
   Push(Read16(regsp)); // DUP
   Push(Pop() & (Read16(pp_CONTEXT_dash_ID_n_)==5?1:0)); //  CONTEXT-ID# @ 5 = AND
   if (Pop() == 0) return;
-  Push(0x103b); Push(0x0002);
+  Push(0x103b); Push(0x0002); // 'WE'RE ALREADY HOME!'
   WD93B(); // WD93B
   DrawTTY(); // .TTY
   Push(0x07d0);
@@ -4706,11 +4706,11 @@ void WEFC3() // WEFC3
 {
   CTINIT(); // CTINIT
   CTERASE(); // CTERASE
-  Push(0x105b); Push(0x0002);
+  Push(0x105b); Push(0x0002); // 'TRANSMIT EMERGENCY DISTRESS CALL'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   CTCR(); // CTCR
-  Push(0x1088); Push(0x0002);
+  Push(0x1088); Push(0x0002); // 'CONFIRM: [N Y]'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Y_slash_N(); // Y/N
@@ -4727,12 +4727,12 @@ void WEFC3() // WEFC3
     Push(Pop() | (Read16(pp__i_EXTERNAL_dash_EVENTS)==Read16(pp__i_HEAT)?1:0)); //  'EXTERNAL-EVENTS @ 'HEAT @ = OR
     if (Pop() != 0)
     {
-      Push(0x10a3); Push(0x0002);
+      Push(0x10a3); Push(0x0002); // 'TRANSMISSION IS BEING JAMMED'
       WD93B(); // WD93B
       DrawTTY(); // .TTY
     } else
     {
-      Push(0x10cc); Push(0x0002);
+      Push(0x10cc); Push(0x0002); // 'INITIATING CRYOGENIC STASIS'
       WD93B(); // WD93B
       DrawTTY(); // .TTY
       WEF6D(); // WEF6D
@@ -4741,7 +4741,7 @@ void WEFC3() // WEFC3
       Push(Read16(pp__i_YANK)); // 'YANK @
       MODULE(); // MODULE
       CTINIT(); // CTINIT
-      Push(0x10f4); Push(0x0002);
+      Push(0x10f4); Push(0x0002); // 'RETRIEVAL COMPLETE, CREW REVIVED'
       WD93B(); // WD93B
       DrawTTY(); // .TTY
       WECEB(); // WECEB
@@ -4753,7 +4753,7 @@ void WEFC3() // WEFC3
   } else
   {
     CTERASE(); // CTERASE
-    Push(0x1121); Push(0x0002);
+    Push(0x1121); Push(0x0002); // 'CANCELLED'
     WD93B(); // WD93B
     Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   }
@@ -4856,7 +4856,7 @@ void WF0D5() // WF0D5
   }
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Push(0x1137); Push(0x0002);
+  Push(0x1137); Push(0x0002); // 'THERE'S NO ONE TO HAIL'
   WD93B(); // WD93B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   GetColor(BLACK);
@@ -4970,7 +4970,7 @@ void CL1() // CL1
     {
       WF061(); // WF061
       CTINIT(); // CTINIT
-      Push(0x115a); Push(0x0002);
+      Push(0x115a); Push(0x0002); // 'COMMUNICATIONS HAVE BEEN TERMINATED'
       WD93B(); // WD93B
       DrawTTY(); // .TTY
       WF13E(); // WF13E

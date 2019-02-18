@@ -450,7 +450,7 @@ void WECC5() // WECC5
 
 void WED01() // WED01
 {
-  Push(0x6285); Push(0x0002);
+  Push(0x6285); Push(0x0002); // 'EXTREME DANGER'
   WEC7B(); // WEC7B
   GetColor(RED);
 }
@@ -462,7 +462,7 @@ void WED01() // WED01
 
 void WED0F() // WED0F
 {
-  Push(0x62a0); Push(0x0002);
+  Push(0x62a0); Push(0x0002); // 'SHIP WILL SUSTAIN DAMAGE'
   WEC7B(); // WEC7B
   GetColor(RED);
 }
@@ -474,7 +474,7 @@ void WED0F() // WED0F
 
 void WED1D() // WED1D
 {
-  Push(0x62c5); Push(0x0002);
+  Push(0x62c5); Push(0x0002); // 'ARMOR WILL BE DAMAGED'
   WEC7B(); // WEC7B
   GetColor(YELLOW);
 }
@@ -486,7 +486,7 @@ void WED1D() // WED1D
 
 void WED2B() // WED2B
 {
-  Push(0x62e7); Push(0x0002);
+  Push(0x62e7); Push(0x0002); // 'SHIELDS WILL BE AFFECTED'
   WEC7B(); // WEC7B
   GetColor(YELLOW);
 }
@@ -498,7 +498,7 @@ void WED2B() // WED2B
 
 void WED39() // WED39
 {
-  Push(0x630c); Push(0x0002);
+  Push(0x630c); Push(0x0002); // 'SAFE DISTANCE'
   WEC7B(); // WEC7B
   GetColor(GREEN);
 }
@@ -511,7 +511,7 @@ void WED39() // WED39
 void WED47() // WED47
 {
   CTERASE(); // CTERASE
-  Push(0x6326); Push(0x0002);
+  Push(0x6326); Push(0x0002); // 'FIRING CANCELLED BY SAFETY OVERRIDE'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
   Push(0x07d0);
@@ -736,10 +736,10 @@ void WEEAC() // WEEAC
   Draw(); // .
   SPACE(); // SPACE
   ICLOSE(); // ICLOSE
-  Push(0x6356); Push(0x0002);
+  Push(0x6356); Push(0x0002); // 'BLASTOPODS REMAINING.'
   WEC7B(); // WEC7B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
-  Push(0x6378); Push(0x0002);
+  Push(0x6378); Push(0x0002); // 'PLEASE CONFIRM ACTIVATION [NO  YES]'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
 }
@@ -1281,7 +1281,7 @@ void WF172() // WF172
   {
     CTINIT(); // CTINIT
     CTERASE(); // CTERASE
-    Push(0x63a8); Push(0x0002);
+    Push(0x63a8); Push(0x0002); // 'NO BLASTOPODS LEFT!'
     WEC7B(); // WEC7B
     DrawTTY(); // .TTY
   }
@@ -1564,10 +1564,10 @@ void WF374() // WF374
   StoreD(); // D!
   GetColor(YELLOW);
   StoreCOLOR(); // !COLOR
-  Push(0x63c8); Push(0x0002);
+  Push(0x63c8); Push(0x0002); // 'ALIEN SHIELDS ARE DOWN'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x6400); Push(0x0002);
+  Push(0x6400); Push(0x0002); // 'FOR DURATION OF TONE'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
 }
@@ -1582,16 +1582,16 @@ void WF3BC() // WF3BC
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
   WECBB(); // WECBB
-  Push(0x6421); Push(0x0002);
+  Push(0x6421); Push(0x0002); // 'NULLIFIER DROPS ALL OTHER SHIELDS'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x644f); Push(0x0002);
+  Push(0x644f); Push(0x0002); // 'IN AREA FOR 10 SECONDS. IT REQUIRES'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x647f); Push(0x0002);
+  Push(0x647f); Push(0x0002); // '20 UNITS OF COBALT.'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x649f); Push(0x0002);
+  Push(0x649f); Push(0x0002); // 'ACTIVATE?  [NO YES]'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
   Y_slash_N(); // Y/N
@@ -1604,15 +1604,15 @@ void WF3BC() // WF3BC
 
 void WF3F0() // WF3F0
 {
-  Push(0x64bf); Push(0x0002);
+  Push(0x64bf); Push(0x0002); // 'COMMANDER, THERE IS SOMETHING WRONG'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x64ef); Push(0x0002);
+  Push(0x64ef); Push(0x0002); // 'WITH THE SHIELD NULLIFIER. IT IS'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
   Push(0x07d0);
   MS(); // MS
-  Push(0x651c); Push(0x0002);
+  Push(0x651c); Push(0x0002); // 'ABOUT TO EXPLODE...'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
   Push(0x0bb8);
@@ -1627,7 +1627,7 @@ void WF3F0() // WF3F0
   CTERASE(); // CTERASE
   GetColor(RED);
   StoreCOLOR(); // !COLOR
-  Push(0x653c); Push(0x0002);
+  Push(0x653c); Push(0x0002); // 'SHIP EXPLODED. GAME OVER!'
   WEC7B(); // WEC7B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   KEY_2(); // KEY_2
@@ -1644,13 +1644,13 @@ void WF448() // WF448
 {
   CTINIT(); // CTINIT
   WECBB(); // WECBB
-  Push(0x6562); Push(0x0002);
+  Push(0x6562); Push(0x0002); // 'COMMANDER, WITHOUT A GNUNK CREWMEMBER'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x6594); Push(0x0002);
+  Push(0x6594); Push(0x0002); // 'WE ARE NOT SURE HOW TO USE IT.'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
-  Push(0x65bf); Push(0x0002);
+  Push(0x65bf); Push(0x0002); // 'SHOULD WE PROCEED?   [ NO   YES ]'
   WEC7B(); // WEC7B
   DrawTTY(); // .TTY
   Y_slash_N(); // Y/N
@@ -1667,7 +1667,7 @@ void WF476() // WF476
 {
   CTERASE(); // CTERASE
   CTINIT(); // CTINIT
-  Push(0x65ed); Push(0x0002);
+  Push(0x65ed); Push(0x0002); // 'INSUFFICIENT COBALT FOR NULLIFIER'
   WEC7B(); // WEC7B
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
 }

@@ -1327,7 +1327,7 @@ void IsPOPULA() // ?POPULA
     if (Pop() != 0)
     {
       WEA76(); // WEA76
-      Push(0x6934); Push(0x0002);
+      Push(0x6934); Push(0x0002); // 'SCANNING NEW TERRAIN '
       WED8A(); // WED8A
       Exec("TYPE"); // call of word 0x2690 '(TYPE)'
     }
@@ -1470,7 +1470,7 @@ void WF1BD() // WF1BD
 void WF1D9() // WF1D9
 {
   WEA76(); // WEA76
-  Push(0x6956); Push(0x0002);
+  Push(0x6956); Push(0x0002); // 'TELEPORT ?   [NO  YES] '
   WED8A(); // WED8A
   DrawTTY(); // .TTY
   Y_slash_N(); // Y/N
@@ -1593,14 +1593,14 @@ void WF25F() // WF25F
 void WF295() // WF295
 {
   WEA76(); // WEA76
-  Push(0x697a); Push(0x0002);
+  Push(0x697a); Push(0x0002); // 'OUT OF FUEL '
   WED8A(); // WED8A
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   GCR(); // GCR
   Push(1);
   Push(pp_XBLT); // XBLT
   _plus__ex__2(); // +!_2
-  Push(0x6993); Push(0x0002);
+  Push(0x6993); Push(0x0002); // 'RETURNING TO SHIP ON FOOT '
   WED8A(); // WED8A
   Exec("TYPE"); // call of word 0x2690 '(TYPE)'
   Push(0x03e8);
@@ -1666,7 +1666,7 @@ void WF30D() // WF30D
     WF1D9(); // WF1D9
     if (Pop() != 0)
     {
-      Push(0x69ba); Push(0x0002);
+      Push(0x69ba); Push(0x0002); // 'TELEPORTING BACK TO SHIP '
       WED8A(); // WED8A
       DrawTTY(); // .TTY
       WF25F(); // WF25F
@@ -1729,7 +1729,7 @@ void WF383() // WF383
   Push(Pop() & a); //  R> AND
   if (Pop() == 0) return;
   BEEP(); // BEEP
-  Push(0x69e0); Push(0x0002);
+  Push(0x69e0); Push(0x0002); // 'HALF OF FUEL USED'
   WED8A(); // WED8A
   DrawTTY(); // .TTY
   Push(-1);

@@ -1576,7 +1576,7 @@ void WF28D() // WF28D
 {
   GetColor(WHITE);
   StoreCOLOR(); // !COLOR
-  Push(0x5b65); Push(0x0002);
+  Push(0x5b65); Push(0x0002); // 'DOWNLOADING SATELLITE DATA...'
   WED70(); // WED70
   DrawTTY(); // .TTY
   Push(2);
@@ -1595,7 +1595,7 @@ void WF2A3() // WF2A3
   Push(2);
   LC_ex_(); // LC!
   BEEPOFF(); // BEEPOFF
-  Push(0x5b8f); Push(0x0002);
+  Push(0x5b8f); Push(0x0002); // '...CULTURAL INFORMATION RECEIVED'
   WED70(); // WED70
   DrawTTY(); // .TTY
 }
