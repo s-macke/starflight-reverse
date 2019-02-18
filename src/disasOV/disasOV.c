@@ -164,9 +164,11 @@ int main()
     FILE *fph;
 
     InitCPU();
+    InitExtract();
 
     ExtractDirectory();
     ExtractDataFile(OUTDIR"/data.h");
+
 #ifdef STARFLT2
     ExtractDictionary(OUTDIR"/data/dictionary.txt");
 #endif

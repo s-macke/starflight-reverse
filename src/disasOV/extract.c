@@ -7,6 +7,33 @@
 DIRENTRY dir[512];
 int ndir = 0;
 
+unsigned char STARA[256000];
+unsigned char STARB[362496];
+
+void InitExtract()
+{
+  FILE *fp;
+  int ret;
+  //printf("Load files\n");
+  fp = fopen(FILESTARA, "rb");
+  if (fp == NULL)
+  {
+      fprintf(stderr, "Cannot open file %s\n", FILESTARA);
+      exit(1);
+  }
+  ret = fread(STARA, 256000, 1, fp);
+  fclose(fp);
+
+  fp = fopen(FILESTARB, "rb");
+  if (fp == NULL)
+  {
+      fprintf(stderr, "Cannot open file %s\n", FILESTARB);
+      exit(1);
+  }
+  ret = fread(STARB, 362496, 1, fp);
+  fclose(fp);
+}
+
 void SortDirectory()
 {
     DIRENTRY temp;
@@ -83,30 +110,25 @@ void LoadDir(FILE *fp)
     int i,j, k;
     DIRENTRY de;
 
-    FILE *file = fopen(FILESTARA, "rb");
-
     for(k=0; k<=3; k++)
     {
-        fseek(file, 1024*k, SEEK_SET);
         for(i=0; i<48; i++)
         {
-            int pos = ftell(file);
             memset(&de, 0, sizeof(de));
             int ret;
-            ret = fread(de.name, 12, 1, file);
-            ret = fread(&de.fileno, 1, 1, file);
-            ret = fread(&de.start, 2, 1, file);
-            ret = fread(&de.end, 2, 1, file);
-            ret = fread(&de.nblocks, 2, 1, file);
-            ret = fread(&de.blocksize, 1, 1, file);
-            ret = fread(&de.lsize, 1, 1, file);
+            memcpy(&de.name,      &STARA[k*1024 + i*21 +  0], 12);
+            memcpy(&de.fileno,    &STARA[k*1024 + i*21 + 12], 1);
+            memcpy(&de.start,     &STARA[k*1024 + i*21 + 13], 2);
+            memcpy(&de.end,       &STARA[k*1024 + i*21 + 15], 2);
+            memcpy(&de.nblocks,   &STARA[k*1024 + i*21 + 17], 2);
+            memcpy(&de.blocksize, &STARA[k*1024 + i*21 + 19], 1);
+            memcpy(&de.lsize,     &STARA[k*1024 + i*21 + 20], 1);
             de.idx = ndir;
             memcpy((void*)&dir[ndir], (void*)&de, sizeof(DIRENTRY));
             ndir++;
         }
     }
 
-    fclose(file);
     if (fp == NULL) return;
     //SortDirectory();
 
@@ -143,54 +165,40 @@ unsigned char* Extract(int fileidx, int *size)
     int i, j;
     DIRENTRY *de = GetDirByIdx(fileidx);
     if (de == NULL) exit(1);
-    FILE *file;
+
     int start = de->start*16;
+    unsigned char *filedata;
     if (start >= 256000)
     {
-        file = fopen(FILESTARB, "rb");
+        filedata = STARB;
         start -= 256000;
     } else
     {
-        file = fopen(FILESTARA, "rb");
+        filedata = STARA;
     }
     int l = ((de->end - de->start)+1)*16;
     *size = l;
-
-    unsigned char *buf = malloc(l);
-    memset(buf, 0, l);
-
-    fseek(file, start, SEEK_SET);
-    int ret = fread(buf, l, 1, file);
-    fclose(file);
-    if (l == 0) return buf;
-
-    return buf;
+    return &filedata[start];
 }
 
 char* ExtractRecord(int fileidx, int recordidx)
 {
-    int i;
-    static char record[512];
-    memset(record, 0, 512);
-
     DIRENTRY *de = GetDirByIdx(fileidx);
     //printf("de blocksize=%i start=0x%04x\n", de->blocksize, de->start);
     if (de == NULL) exit(1);
-    FILE *file;
     int start = de->start*16;
+    unsigned char *filedata;
     if (start >= 256000)
     {
-        file = fopen(FILESTARB, "rb");
+        filedata = STARB;
         start -= 256000;
     } else
     {
-        file = fopen(FILESTARA, "rb");
+        filedata = STARA;
     }
-
-
     // code in RECADD
     int offset = start & (~0x3FF);
-    unsigned short sp2 = start&0x3FF;
+    unsigned short sp2 = start & 0x3FF;
     //printf("start=0x%04x sp2=0x%04x\n", start, sp2);
 
     unsigned short ax = 1024 - sp2;
@@ -224,10 +232,14 @@ char* ExtractRecord(int fileidx, int recordidx)
         }
     }
 */
+
+    return &filedata[offset+sp2];
+/*
     fseek(file, offset+sp2, SEEK_SET);
     int ret = fread(record, de->blocksize, 1, file);
     fclose(file);
     return record;
+    */
 }
 
 unsigned short GetStartAddress(int diridx)
@@ -242,6 +254,11 @@ void ExtractOverlay(int ovidx, OVLHeader *head, unsigned char *mem)
 
     head->storeofs = head->buf[0x4] | (head->buf[0x5]<<8);
     head->ovlsize = (head->buf[0x2] | (head->buf[0x3]<<8))*16;
+    if (head->ovlsize != head->size)
+    {
+      fprintf(stderr, "sizes don't match for directory idx=%i\n", overlays[ovidx].id);
+      exit(1);
+    }
 
     memcpy(&mem[head->storeofs], head->buf, head->ovlsize);
 }
@@ -335,18 +352,14 @@ void ExtractCompounds(FILE *fp, int idx)
 
     for(int i=0; i<de->nblocks; i++)
     {
-        unsigned char* buf = ExtractRecord(de->idx, i);
+        unsigned char* buf1 = ExtractRecord(de->idx, i);
         fprintf(fp, "  \"");
-        int offset = buf[0] | (buf[1]<<8) | (buf[2]<<16);
+        int offset = buf1[0] | (buf1[1]<<8) | (buf1[2]<<16);
+        unsigned char* buf2 = &STARB[offset];
 
-        FILE *file = fopen(FILESTARB, "rb");
-        fseek(file, offset, SEEK_SET);
-        int ret = fread(buf, 512, 1, file);
-        fclose(file);
-
-        for(int i=0; i<buf[11]; i++)
+        for(int i=0; i<buf2[11]; i++)
         {
-          fprintf(fp, "%c", buf[12+i]);
+          fprintf(fp, "%c", buf2[12+i]);
         }
         if (i != de->nblocks-1) fprintf(fp, "\",\n"); else fprintf(fp, "\"\n");
     }
