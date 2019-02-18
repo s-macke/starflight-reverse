@@ -736,6 +736,10 @@ WORDRENAME renamewords[] =
     {0xff, 0x7425, "IFLDADR"}, // W7425
     {0xff, 0x790C, "DISK>IBFR"}, // W790c
     {0xff, 0xc4e5, "OVFLUX-EFFECT"}, // OVFLU
+    {0xff, 0x5ba3, "THIS-BUTTON"}, // THIS-BU
+    {0xff, 0x608b, "TIRED-TIME"}, // TIRED-T
+    {0xff, 0xa8c0, "INIT-BUTTON"}, // INIT-BU
+    {0xff, 0xab1c, ".BTN-TEXT"}, // .BTN-TE
 
     {0x00, 0xef66, "HIBEEP"}, // Wef66
     {0x00, 0xef6a, "LOBEEP"}, // Wef6a
@@ -987,10 +991,44 @@ WORDRENAME renamewords[] =
     {0x14, 0xda2f, "POSTURE"}, // WDA2F
     {0x14, 0xda1b, "P-SUBJECT"}, // WDA1B
     {0x14, 0xda3f, "SUBJECT"}, // WDA3F
+    {0x14, 0xdbeb, ">BUTTON"}, // WDBEB
+
 
     {0x14, 0xd998, "FPE"}, // WD998
     {0x14, 0xd99d, "HPE"}, // WD99D
     {0x14, 0xdbc9, "POSTURE-EFFECT"}, // WDBC9
+    {0x14, 0xee7c, ">RESPOND"}, // WEE7C
+    {0x14, 0xed77, ">P-POSTURE"}, // WED77
+    {0x14, 0xad43, "#A-HAILS"}, // WDA43
+    {0x14, 0xee10, ">YES"}, // WEE10
+    {0x14, 0xee23, ">NO"}, // WEE23
+    {0x14, 0xee41, ">TERMINATE"}, // WEE41
+    {0x14, 0xee35, ">IMPATIENT"}, // WEE35
+    {0x14, 0xe51e, "YES>EDL"}, // WE51E
+    {0x14, 0xe526, "NO-EDL"}, // WE526
+    {0x14, 0xecbf, "P-PHRASE"}, // WECBF
+    {0x14, 0xedea, ">STATEMENT"}, // WEDEA
+    {0x14, 0xedbc, ">QUESTION"}, // WEDBC
+    {0x14, 0xe0f8, "TERMINATE"}, // WE0F8
+    {0x14, 0xda1f, "P-QUES"}, // WDA1F
+    {0x14, 0xe774, "TIRED-OF-TALKING"}, // WE774
+    {0x14, 0xe762, "TIRED-OF-WAITING"}, // WE762
+    {0x14, 0xe4b6, "!A-SUBJECT"}, // WE4B6
+    {0x14, 0xdd69, "SET-TIRED-TIME"}, // WDD69
+    {0x14, 0xdd47, "SET-OK-TIME"}, // WDD47
+    {0x14, 0xda43, "#A-HAILS"}, // WDA43
+    {0x14, 0xe72e, "QUESTION"}, // WE72E
+    {0x14, 0xda05, "(PHRASE)"}, // WDA05
+    {0x14, 0xdac5, "A-QUES"}, // WDAC5
+    {0x14, 0xda2b, "#A-PHRASES"}, // WDA2B
+    {0x14, 0xe71c, "STATEMENT"}, // WE71C
+    {0x14, 0xe6f2, "RESPOND"}, // WE6F2
+    {0x14, 0xe706, "ANSWER"}, // WE706
+    {0x14, 0xe4fa, "+4/9>EDL"}, // WE4FA
+    {0x14, 0xe6c2, "HAIL"}, // WE6C2
+    {0x14, 0xe4b2, "?COMM-BTNS"}, // WE4B2
+    {0x14, 0xda0b, "HAILER"}, // WDA0B
+    {0x14, 0xdec7, ">RESPOND$"}, // WDEC7
 
     {0x05, 0xeed2, "P-TSEED"}, // WEED2
     {0x05, 0xeeec, "P-SURF"}, // WEEEC
@@ -1110,12 +1148,45 @@ WORDRENAME renamewords[] =
     {0x11, 0xE38E, "stun.effect"}, // WE38E
     {0x11, 0xE396, "hit.points"}, // WE396
     {0x11, 0xE3B6, "volume"}, // WE3B6
+
+    {0x15, 0xF454, "SA-ELOWAN"}, // WF454
+    {0x15, 0xF45F, "SA-THRYNN"}, // WF45F
+    {0x15, 0xF46C, "SA-VELOX"}, // WF46C
+    {0x15, 0xF475, "SA-MECHAN"}, // WF475
+    {0x15, 0xF47A, "SA-VPROBE"}, // WF47A
+    //{0x15, 0xF47F, "SA-ELOWAN"}, // WF47F
+    {0x15, 0xF486, "DO-SA"}, // WF486
+    {0x15, 0xECCA, "STOP-SA"}, // WECCA
+    {0x15, 0xEC6E, "+ELEMENT"}, // WEC6E
+    {0x15, 0xEC8E, "-ARTIFACT"}, // WEC8E
+    {0x15, 0xECCE, "VPROBE#"}, // WECCE
+    {0x15, 0xeaa0, "BASE-EDL"}, // WEAA0
+    {0x15, 0xeaa5, "AET"}, // WEAA5
+    {0x15, 0xeb7b, "(>BUTTON)"}, // WEB7B
+    {0x15, 0xea84, "+!EDL"}, // WEA84
+    {0x15, 0xefc0, "CRYSTAL-ORB"}, // WEFC0
+    {0x15, 0xea46, "?ARTIFACT"}, // WEA46
+    {0x15, 0xeadc, "(PHRASE>CT)"}, // WEADC
+    {0x15, 0xefb4, "ORB#"}, // WEFB4
+    {0x15, 0xea70, "A>ORIGINATOR"}, // WEA70
+    {0x15, 0xea7a, "ORIGINATOR>C"}, // WEA7A
+    {0x15, 0xf002, "EnQTY"}, // WF002
+    {0x15, 0xf006, "PLUTONIUM$"}, // WF006
+    {0x15, 0xf012, "PLUTONIUM"}, // WF012
+    {0x15, 0xebe6, "?>=ELEMENT"}, // WEBE6
+    {0x15, 0xebce, "QTY"}, // WEBCE
+    {0x15, 0xec4e, "+ELEMENT"}, // WEC4E
+    {0x15, 0xf0a6, "NEED-ENERGY"}, // WF0A6
+    /*
+    {0x15, 0xf08a, "?BLACK-BOX"}, // WF08A
+    {0x15, 0xf08e, "!BLACK-BOX"}, // WF08E
+    {0x15, 0xf09a, "2BLACK-BOX$"}, // WF09A
+    */
 /*
     {0x11, 0xE37E, "orlo"}, // WE37E
     {0x11, 0xE386, "orhi"}, // WE386
     {0x11, 0xE3BE, "height"}, // WE3BE
 */
-
     // named by me
     {0xff, 0xbc87, "HUFF_LSCAN_INIT"}, // Wbc87
     {0xff, 0xbca5, "HUFF_LSCAN_FINISH"}, // Wbca5

@@ -22,6 +22,8 @@ typedef struct
     unsigned char *buf;
 } OVLHeader;
 
+void InitExtract();
+
 void LoadDir(FILE *fp);
 unsigned char* Extract(int diridx, int *size);
 unsigned short GetStartAddress(int diridx);
