@@ -89,7 +89,7 @@ extern const unsigned short int pp_IsLANDED; // ?LANDED
 extern const unsigned short int pp_GWF; // GWF
 extern const unsigned short int pp_CONTEXT_dash_ID_n_; // CONTEXT-ID#
 extern const unsigned short int pp_FORCEPTASK; // FORCEPTASK
-extern const unsigned short int pp_THIS_dash_BU; // THIS-BU
+extern const unsigned short int pp_THIS_dash_BUTTON; // THIS-BUTTON
 extern const unsigned short int pp_IsON_dash_PLA; // ?ON-PLA
 extern const unsigned short int pp_IsRECALL; // ?RECALL
 extern const unsigned short int pp__i_BUTTON; // 'BUTTON
@@ -136,12 +136,12 @@ void ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
 void DrawHIGHLI(); // .HIGHLI
 void DrawON(); // .ON
 void CLR_dash_BUT(); // CLR-BUT
-void INIT_dash_BU(); // INIT-BU
+void INIT_dash_BUTTON(); // INIT-BUTTON
 void _ro_SHIP_dash_C(); // (SHIP-C
 void _i_KEY(); // 'KEY
 void IsTRIG(); // ?TRIG
 void DrawABTN(); // .ABTN
-void DrawBTN_dash_TE(); // .BTN-TE
+void DrawBTN_dash_TEXT(); // .BTN-TEXT
 void NEW_dash_BUT(); // NEW-BUT
 void CFIGARRAYS(); // CFIGARRAYS
 void GET_dash_HAUX(); // GET-HAUX
@@ -386,7 +386,7 @@ void WEEE2() // WEEE2
       WEE6C(); // WEE6C
     }
   }
-  DrawBTN_dash_TE(); // .BTN-TE
+  DrawBTN_dash_TEXT(); // .BTN-TEXT
 }
 
 
@@ -401,7 +401,7 @@ void WEF06() // WEF06
   Store_3(); // !_3
   V_gt_(); // V>
   Push(Read16(regsp)); // DUP
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(pp_THIS_dash_BUTTON); // THIS-BUTTON
   Store_3(); // !_3
   V_gt_(); // V>
   Push(Read16(regsp)); // DUP
@@ -429,7 +429,7 @@ void WEF3A() // WEF3A
 {
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   _gt_V(); // >V
-  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+  Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
   _gt_V(); // >V
   Push(Read16(pp__i_BUTTON)); // 'BUTTON @
   _gt_V(); // >V
@@ -444,7 +444,7 @@ void WEF50() // WEF50
 {
   WEF3A(); // WEF3A
   WEEE2(); // WEEE2
-  INIT_dash_BU(); // INIT-BU
+  INIT_dash_BUTTON(); // INIT-BUTTON
   Push(pp__i_BUTTON); // 'BUTTON
   Store_3(); // !_3
 }
@@ -456,7 +456,7 @@ void WEF50() // WEF50
 
 void WEF5E() // WEF5E
 {
-  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+  Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
   DrawON(); // .ON
 }
 
@@ -478,7 +478,7 @@ void WEF68() // WEF68
   if (Pop() == 0) return;
   GetColor(BLUE);
   WEF5E(); // WEF5E
-  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+  Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
   WEE24(); // WEE24
   GetColor(BLACK);
   WEF5E(); // WEF5E
@@ -547,7 +547,7 @@ void WEFC2() // WEFC2
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   WEEE2(); // WEEE2
   GetColor(BLUE);
-  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+  Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
   DrawHIGHLI(); // .HIGHLI
 }
 

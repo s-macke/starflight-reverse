@@ -1030,7 +1030,7 @@
 //         ?REPAIR  codep:0x1d29 wordp:0x5b7d size:0x0002 C-string:'IsREPAIR'
 //           ?HEAL  codep:0x1d29 wordp:0x5b89 size:0x0002 C-string:'IsHEAL'
 //           MXNEB  codep:0x1d29 wordp:0x5b95 size:0x0002 C-string:'MXNEB'
-//         THIS-BU  codep:0x1d29 wordp:0x5ba3 size:0x0002 C-string:'THIS_dash_BU'
+//     THIS-BUTTON  codep:0x1d29 wordp:0x5ba3 size:0x0002 C-string:'THIS_dash_BUTTON'
 //            NCRS  codep:0x1d29 wordp:0x5bae size:0x0002 C-string:'NCRS'
 //            OCRS  codep:0x1d29 wordp:0x5bb9 size:0x0002 C-string:'OCRS'
 //            WTOP  codep:0x1d29 wordp:0x5bc4 size:0x0002 C-string:'WTOP'
@@ -1128,7 +1128,7 @@
 //           W6043  codep:0x224c wordp:0x6043 size:0x0006 C-string:'W6043'
 //           CCASE  codep:0x4a96 wordp:0x6053 size:0x0010 C-string:'CCASE'
 //         COLORCA  codep:0x224c wordp:0x606f size:0x0010 C-string:'COLORCA'
-//         TIRED-T  codep:0x1d29 wordp:0x608b size:0x0004 C-string:'TIRED_dash_T'
+//      TIRED-TIME  codep:0x1d29 wordp:0x608b size:0x0004 C-string:'TIRED_dash_TIME'
 //         LASTREP  codep:0x1d29 wordp:0x609b size:0x0004 C-string:'LASTREP'
 //         TALKCOU  codep:0x1d29 wordp:0x60ab size:0x0004 C-string:'TALKCOU'
 //          VSTIME  codep:0x1d29 wordp:0x60ba size:0x0004 C-string:'VSTIME'
@@ -1637,7 +1637,7 @@
 //           WA84A  codep:0x224c wordp:0xa84a size:0x002a C-string:'WA84A'
 //             .ON  codep:0x224c wordp:0xa87c size:0x0016 C-string:'DrawON'
 //         CLR-BUT  codep:0x224c wordp:0xa89e size:0x0016 C-string:'CLR_dash_BUT'
-//         INIT-BU  codep:0x224c wordp:0xa8c0 size:0x000e C-string:'INIT_dash_BU'
+//     INIT-BUTTON  codep:0x224c wordp:0xa8c0 size:0x000e C-string:'INIT_dash_BUTTON'
 //         (SHIP-C  codep:0x224c wordp:0xa8da size:0x002c C-string:'_ro_SHIP_dash_C'
 //    SHIP-CONSOLE  codep:0x224c wordp:0xa912 size:0x0006 C-string:'SHIP_dash_CONSOLE'
 //            'KEY  codep:0x224c wordp:0xa921 size:0x006a C-string:'_i_KEY'
@@ -1659,7 +1659,7 @@
 //     NEXT-BUTTON  codep:0x224c wordp:0xaa98 size:0x0012 C-string:'NEXT_dash_BUTTON'
 //      XEQ-BUTTON  codep:0x224c wordp:0xaaac size:0x0006 C-string:'XEQ_dash_BUTTON'
 //           .ABTN  codep:0x224c wordp:0xaabc size:0x0054 C-string:'DrawABTN'
-//         .BTN-TE  codep:0x224c wordp:0xab1c size:0x004e C-string:'DrawBTN_dash_TE'
+//       .BTN-TEXT  codep:0x224c wordp:0xab1c size:0x004e C-string:'DrawBTN_dash_TEXT'
 //         NEW-BUT  codep:0x224c wordp:0xab76 size:0x0044 C-string:'NEW_dash_BUT'
 //     CURSORSPACE  codep:0x224c wordp:0xabc6 size:0x000c C-string:'CURSORSPACE'
 //         BLD-CRS  codep:0x224c wordp:0xabde size:0x0052 C-string:'BLD_dash_CRS'
@@ -3025,7 +3025,7 @@ const unsigned short int pp_IsHEAL = 0x5b89; // ?HEAL size: 2
 const unsigned short int pp_MXNEB = 0x5b95; // MXNEB size: 2
 // {0x41, 0x53}
 
-const unsigned short int pp_THIS_dash_BU = 0x5ba3; // THIS-BU size: 2
+const unsigned short int pp_THIS_dash_BUTTON = 0x5ba3; // THIS-BUTTON size: 2
 // {0x4f, 0x4e}
 
 const unsigned short int pp_NCRS = 0x5bae; // NCRS size: 2
@@ -3301,7 +3301,7 @@ const unsigned short int pp_BITS = 0x601f; // BITS size: 2
 const unsigned short int pp__n_BITS = 0x602b; // #BITS size: 2
 // {0x20, 0x20}
 
-const unsigned short int pp_TIRED_dash_T = 0x608b; // TIRED-T size: 4
+const unsigned short int pp_TIRED_dash_TIME = 0x608b; // TIRED-TIME size: 4
 // {0x79, 0xe9, 0x00, 0x56}
 
 const unsigned short int pp_LASTREP = 0x609b; // LASTREP size: 4
@@ -7172,7 +7172,7 @@ void _ro_EXPECT_rc_() // (EXPECT)
       if (Read16(regsp) != 0) Push(Read16(regsp)); // ?DUP
       if (Pop() != 0)
       {
-        Pop(); // DROP
+        Exec("EMIT"); // call of word 0x2731 '(EMIT)'
         Push(1);
         SWAP(); // SWAP
       } else
@@ -15084,7 +15084,7 @@ void TABLE() // TABLE
 // 0x5b95: db 0x41 0x53 'AS'
 
 // ================================================
-// 0x5b97: WORD 'THIS-BU' codep=0x1d29 wordp=0x5ba3
+// 0x5b97: WORD 'THIS-BUTTON' codep=0x1d29 wordp=0x5ba3
 // ================================================
 // 0x5ba3: db 0x4f 0x4e 'ON'
 
@@ -15607,7 +15607,7 @@ void COLORCA() // COLORCA
 
 
 // ================================================
-// 0x607f: WORD 'TIRED-T' codep=0x1d29 wordp=0x608b
+// 0x607f: WORD 'TIRED-TIME' codep=0x1d29 wordp=0x608b
 // ================================================
 // 0x608b: db 0x79 0xe9 0x00 0x56 'y  V'
 
@@ -24298,13 +24298,13 @@ void CLR_dash_BUT() // CLR-BUT
 
 
 // ================================================
-// 0xa8b4: WORD 'INIT-BU' codep=0x224c wordp=0xa8c0 params=0 returns=0
+// 0xa8b4: WORD 'INIT-BUTTON' codep=0x224c wordp=0xa8c0 params=0 returns=0
 // ================================================
 
-void INIT_dash_BU() // INIT-BU
+void INIT_dash_BUTTON() // INIT-BUTTON
 {
   CLR_dash_BUT(); // CLR-BUT
-  Push(pp_THIS_dash_BU); // THIS-BU
+  Push(pp_THIS_dash_BUTTON); // THIS-BUTTON
   OFF(); // OFF
   GetColor(BLUE);
   Push(0);
@@ -24338,7 +24338,7 @@ void _ro_SHIP_dash_C() // (SHIP-C
   ERASE_dash_AUXILLARY(); // ERASE-AUXILLARY
   CTERASE(); // CTERASE
   CLR_dash_BUT(); // CLR-BUT
-  INIT_dash_BU(); // INIT-BU
+  INIT_dash_BUTTON(); // INIT-BUTTON
 }
 
 
@@ -24704,10 +24704,10 @@ void DrawABTN() // .ABTN
 
 
 // ================================================
-// 0xab10: WORD '.BTN-TE' codep=0x224c wordp=0xab1c
+// 0xab10: WORD '.BTN-TEXT' codep=0x224c wordp=0xab1c
 // ================================================
 
-void DrawBTN_dash_TE() // .BTN-TE
+void DrawBTN_dash_TEXT() // .BTN-TEXT
 {
   unsigned short int i, imax;
   Push(0x003a);
@@ -24759,7 +24759,7 @@ void NEW_dash_BUT() // NEW-BUT
   Push(Read16(pp_BTN_dash_REC)); // BTN-REC @
   Push(pp_RECORD_n_); // RECORD#
   Store_3(); // !_3
-  Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+  Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
   SWAP(); // SWAP
   _dash_(); // -
   Push(Read16(regsp)); // DUP
@@ -24772,10 +24772,10 @@ void NEW_dash_BUT() // NEW-BUT
     GetColor(BLUE);
     OVER(); // OVER
     GetColor(BLACK);
-    Push(Read16(pp_THIS_dash_BU)); // THIS-BU @
+    Push(Read16(pp_THIS_dash_BUTTON)); // THIS-BUTTON @
     DrawHIGHLI(); // .HIGHLI
     DrawHIGHLI(); // .HIGHLI
-    Push(pp_THIS_dash_BU); // THIS-BU
+    Push(pp_THIS_dash_BUTTON); // THIS-BUTTON
     Store_3(); // !_3
     CLICK(); // CLICK
   } else

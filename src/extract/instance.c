@@ -345,6 +345,7 @@ void LoadSTARB()
 
 int main()
 {
+  InitExtract();
   printf("Load STARB\n");
   LoadSTARB();
   printf("Load Directory\n");
