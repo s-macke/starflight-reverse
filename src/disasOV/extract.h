@@ -34,5 +34,6 @@ char* GetDirNameByIdx(int idx);
 void ExtractOverlay(int ovidx, OVLHeader *head, unsigned char *mem);
 void ExtractDictionary(const char* filename);
 void ExtractDataFile(const char* filename);
+char* ExtractString(int offset, int ovidx);
 
 #endif

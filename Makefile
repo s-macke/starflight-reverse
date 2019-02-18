@@ -48,6 +48,12 @@ stack1.o: src/disasOV/stack.c src/disasOV/stack.h
 stack2.o: src/disasOV/stack.c src/disasOV/stack.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/stack.c -o stack2.o
 
+huffman1.o: src/extract/huffman.c src/extract/huffman.h
+		$(CC) $(CFLAGS) -DSTARFLT1 -c src/extract/huffman.c -o huffman1.o
+
+huffman2.o: src/extract/huffman.c src/extract/huffman.h
+		$(CC) $(CFLAGS) -DSTARFLT2 -c src/extract/huffman.c -o huffman2.o
+
 postfix2infix1.o: src/disasOV/postfix2infix.c src/disasOV/postfix2infix.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/postfix2infix.c -o postfix2infix1.o
 
@@ -63,11 +69,11 @@ graph2.o: src/disasOV/graph.c src/disasOV/graph.h
 extractdata1: src/extract/extractdata.c
 		$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractdata.c -o extractdata1
 
-disasOV1: src/disasOV/disasOV.c disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o graph1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV/disasOV.c -o disasOV1 disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o graph1.o
+disasOV1: src/disasOV/disasOV.c disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o graph1.o huffman1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/disasOV/disasOV.c -o disasOV1 disasmX86.o global1.o dictionary1.o extract1.o parser1.o cpu.o utils.o stack1.o postfix2infix1.o transpile2C1.o graph1.o  huffman1.o
 
-disasOV2: src/disasOV/disasOV.c disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV/disasOV.c -o disasOV2 disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o
+disasOV2: src/disasOV/disasOV.c disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o huffman2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV/disasOV.c -o disasOV2 disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o huffman2.o
 
 emulate: src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
 	$(CC) $(CFLAGS) -DSTARFLT1 src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulate
@@ -81,11 +87,11 @@ extractplanets1: src/extract/extractplanets.c src/emul/call.c src/emul/findword.
 extractplanetsdata1: src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
 	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanetsdata1
 
-extractinstance1: src/extract/instance.c extract1.o
-	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/instance.c -o extractinstance1 extract1.o global1.o
+extractinstance1: src/extract/instance.c extract1.o huffman1.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/instance.c -o extractinstance1 extract1.o global1.o huffman1.o
 
-extractinstance2: src/extract/instance.c extract2.o
-	$(CC) $(CFLAGS) -DSTARFLT2 src/extract/instance.c -o extractinstance2 extract2.o global1.o
+extractinstance2: src/extract/instance.c extract2.o huffman2.o
+	$(CC) $(CFLAGS) -DSTARFLT2 src/extract/instance.c -o extractinstance2 extract2.o global2.o huffman2.o
 
 extractvessels1: src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
 	$(CC) $(CFLAGS) -DSDL -DSTARFLT1 src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractvessels1 -lSDL2

@@ -30,12 +30,6 @@ extern WORDRENAME renamewords[];
 
 // ----------------------------------------------
 
-typedef struct { int offset; char* string; } STRINGENTRY;
-
-extern STRINGENTRY strings[];
-
-// ----------------------------------------------
-
 #ifdef STARFLT1
     #define CODECALL 0x224c
     #define CODEEXIT 0x1692 // exit function
@@ -118,6 +112,5 @@ extern STRINGENTRY strings[];
 #else
     #error no starfleet defined
 #endif
-
 
 #endif
