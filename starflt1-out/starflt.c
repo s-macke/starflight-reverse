@@ -767,8 +767,8 @@
 //          MUSSEG  codep:0x2214 wordp:0x5071 size:0x0002 C-string:'MUSSEG'
 //         #REMOTE  codep:0x2214 wordp:0x507f size:0x0002 C-string:'_n_REMOTE'
 //            #HRS  codep:0x2214 wordp:0x508a size:0x0002 C-string:'_n_HRS'
-//         ?FIRED-  codep:0x2214 wordp:0x5098 size:0x0002 C-string:'IsFIRED_dash_'
-//         ?A-SHIE  codep:0x2214 wordp:0x50a6 size:0x0002 C-string:'IsA_dash_SHIE'
+//  ?FIRED-WEAPONS  codep:0x2214 wordp:0x5098 size:0x0002 C-string:'IsFIRED_dash_WEAPONS'
+//   ?A-SHIELDS-UP  codep:0x2214 wordp:0x50a6 size:0x0002 C-string:'IsA_dash_SHIELDS_dash_UP'
 //         ?A-WEAP  codep:0x2214 wordp:0x50b4 size:0x0002 C-string:'IsA_dash_WEAP'
 //       DBUF-SIZE  codep:0x2214 wordp:0x50c2 size:0x0002 C-string:'DBUF_dash_SIZE'
 //       NULL-ICON  codep:0x2214 wordp:0x50d0 size:0x0002 C-string:'NULL_dash_ICON'
@@ -3649,8 +3649,8 @@ const unsigned short int cc__i_OVBACK = 0x5064; // 'OVBACK
 const unsigned short int cc_MUSSEG = 0x5071; // MUSSEG
 const unsigned short int cc__n_REMOTE = 0x507f; // #REMOTE
 const unsigned short int cc__n_HRS = 0x508a; // #HRS
-const unsigned short int cc_IsFIRED_dash_ = 0x5098; // ?FIRED-
-const unsigned short int cc_IsA_dash_SHIE = 0x50a6; // ?A-SHIE
+const unsigned short int cc_IsFIRED_dash_WEAPONS = 0x5098; // ?FIRED-WEAPONS
+const unsigned short int cc_IsA_dash_SHIELDS_dash_UP = 0x50a6; // ?A-SHIELDS-UP
 const unsigned short int cc_IsA_dash_WEAP = 0x50b4; // ?A-WEAP
 const unsigned short int cc_DBUF_dash_SIZE = 0x50c2; // DBUF-SIZE
 const unsigned short int cc_NULL_dash_ICON = 0x50d0; // NULL-ICON
@@ -13734,12 +13734,12 @@ Color WHITE = 0x0f
 // 0x508a: dw 0x0001
 
 // ================================================
-// 0x508c: WORD '?FIRED-' codep=0x2214 wordp=0x5098
+// 0x508c: WORD '?FIRED-WEAPONS' codep=0x2214 wordp=0x5098
 // ================================================
 // 0x5098: dw 0x0000
 
 // ================================================
-// 0x509a: WORD '?A-SHIE' codep=0x2214 wordp=0x50a6
+// 0x509a: WORD '?A-SHIELDS-UP' codep=0x2214 wordp=0x50a6
 // ================================================
 // 0x50a6: dw 0x0000
 

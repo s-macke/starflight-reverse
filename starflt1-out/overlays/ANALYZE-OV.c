@@ -107,7 +107,7 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc_IsA_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc_IsA_dash_SHIELDS_dash_UP; // ?A-SHIELDS-UP
 extern const unsigned short int cc_IsA_dash_WEAP; // ?A-WEAP
 extern const unsigned short int pp_FILE_n_; // FILE#
 extern const unsigned short int pp_RECORD_n_; // RECORD#
@@ -698,7 +698,7 @@ void DrawSHIELDS() // .SHIELDS
       _slash_(); // /
       Draw(); // .
       PRINT("EQUIVALENT ", 11); // (.")
-      Push(Read16(cc_IsA_dash_SHIE)); // ?A-SHIE
+      Push(Read16(cc_IsA_dash_SHIELDS_dash_UP)); // ?A-SHIELDS-UP
       if (Pop() != 0)
       {
         PRINT("RAISED", 6); // (.")

@@ -740,6 +740,8 @@ WORDRENAME renamewords[] =
     {0xff, 0x608b, "TIRED-TIME"}, // TIRED-T
     {0xff, 0xa8c0, "INIT-BUTTON"}, // INIT-BU
     {0xff, 0xab1c, ".BTN-TEXT"}, // .BTN-TE
+    {0xff, 0x5098, "?FIRED-WEAPONS"}, // ?FIRED-
+    {0xff, 0x50a6, "?A-SHIELDS-UP"}, // ?A-SHIE
 
     {0x00, 0xef66, "HIBEEP"}, // Wef66
     {0x00, 0xef6a, "LOBEEP"}, // Wef6a
@@ -1029,6 +1031,69 @@ WORDRENAME renamewords[] =
     {0x14, 0xe4b2, "?COMM-BTNS"}, // WE4B2
     {0x14, 0xda0b, "HAILER"}, // WDA0B
     {0x14, 0xdec7, ">RESPOND$"}, // WDEC7
+
+    {0x14, 0xda59, "SPECIAL-CONTEXT"}, // WDA59
+    {0x14, 0xf228, "INIT_ACOMM"}, // WF228
+    {0x14, 0xdba8, "!A-SUBJECT"}, // WDBA8
+    {0x14, 0xd970, "T%"}, // WD970
+    {0x14, 0xda69, "%TALK"}, // WDA69
+    {0x14, 0xd97a, "BASE-EDL"}, // WD97A
+    {0x14, 0xf330, "INIT_GCOMM"}, // WF330
+    {0x14, 0xdacb, "COMM-OFF-SKILL"}, // WDACB
+    {0x14, 0xdacf, "COMM-RACE"}, // WDACF
+    {0x14, 0xf3c2, "INIT-MCOMM"}, // WF3C2
+    {0x14, 0xdad7, "P-STRENGTH"}, // WDAD7
+    {0x14, 0xdad3, "(LOCK-OUT)"}, // WDAD3
+    {0x14, 0xda55, "?WAITING-FOR-ANSWER"}, // WDA55
+    {0x14, 0xda17, "P-POSTURES"}, // WDA17
+    {0x14, 0xda6d, "?HAS-SURRENDERED"}, // WDA6D
+    {0x14, 0xdab3, "P-SHIP"}, // WDAB3
+    {0x14, 0xda23, "P-PHRASES"}, // WDA23
+    {0x14, 0xf061, "COMM-LOOP2"}, // WF061
+    {0x14, 0xdbdb, "(>BUTTON)"}, // WDBDB
+    {0x14, 0xecf3, "?TRIG"}, // WECF3
+    {0x14, 0xe946, "?TIRED-OF-WAITING"}, // WE946
+    {0x14, 0xe8b6, "?REPEAT"}, // WE8B6
+    {0x14, 0xdbff, "CAPT:"}, // WDBFF
+    {0x14, 0xe9b6, "?TERMINATED"}, // WE9B6
+    {0x14, 0xf0d5, "COMMUNICATE"}, // WF0D5
+    {0x14, 0xee62, ">HAIL"}, // WEE62
+    {0x14, 0xeceb, "STOP-COMM"}, // WECEB
+    {0x14, 0xe998, "?IN-COMM"}, // WE998
+    {0x14, 0xe7f2, "TALKATIVENESS"}, // WE7F2
+    {0x14, 0xe7fe, "?TIRED-OF-TALKING"}, // WE7FE
+    {0x14, 0xe954, "?WANT-TO-TALK"}, // WE954
+    {0x14, 0xe970, "?WAS-QUESTIONED"}, // WE970
+    {0x14, 0xe9ce, "?MAKE-STATEMENT"}, // WE9CE
+    {0x14, 0xe92e, "?P-HAILED"}, // WE92E
+    {0x14, 0xe868, "?OK-TO-TALK"}, // WE868
+    {0x14, 0xe93a, "?A-HAILED"}, // WE93A
+    {0x14, 0xe7d0, "?FRIENDLY"}, // WE7D0
+    {0x14, 0xe7d8, "?NEUTRAL"}, // WE7D8
+    {0x14, 0xe7e0, "?HOSTILE"}, // WE7E0
+    {0x14, 0xe7e8, "?FIGHT"}, // WE7E8
+    {0x14, 0xe7c8, "?OBSEQUIOUS"}, // WE7C8
+    {0x14, 0xea0c, "?CAN-SURRENDER"}, // WEA0C
+    {0x14, 0xe5da, "70>T%"}, // WE5DA
+    {0x14, 0xe5e4, "100>T%"}, // WE5E4
+    {0x14, 0xe5a8, "1.5*T%"}, // WE5A8
+    {0x14, 0xe5b2, "2*T%"}, // WE5B2
+    {0x14, 0xe5c6, "1*T%"}, // WE5C6
+    {0x14, 0xe5d0, "0.5*T%"}, // WE5D0
+    {0x14, 0xe5ee, "0>T%"}, // WE5EE
+    {0x14, 0xe5bc, "2.5>T%"}, // WE5BC
+    {0x14, 0xe632, "LOWER-SHIELDS"}, // WE632
+    {0x14, 0xe8ea, "?SHIELDS-FLAG"}, // WE8EA
+    {0x14, 0xe8de, "?SHIELDS-UP"}, // WE8DE
+    {0x14, 0xe912, "?WEAPON-FLAG"}, // WE912
+    {0x14, 0xe906, "?WEAPON-ARMED"}, // WE906
+    {0x14, 0xe97c, "?NEW-POSTURE"}, // WE97C
+    {0x14, 0xe962, "?P-STATEMENT"}, // WE962
+    {0x14, 0xda0f, "?P-RESPOND"}, // WDA0F
+    {0x14, 0xe4d4, "+5>EDL"}, // WE4D4
+    {0x14, 0xd975, "CSF"}, // WD975
+    {0x14, 0xe98c, "<3SHIPS"}, // WE98C
+
 
     {0x05, 0xeed2, "P-TSEED"}, // WEED2
     {0x05, 0xeeec, "P-SURF"}, // WEEEC

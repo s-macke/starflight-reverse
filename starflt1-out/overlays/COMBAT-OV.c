@@ -3748,7 +3748,7 @@ void WF18C() // WF18C
 void WF1AA() // WF1AA
 {
   Push(1);
-  Push(0x5098); // '?FIRED-'
+  Push(0x5098); // '?FIRED-WEAPONS'
   Store_3(); // !_3
 }
 

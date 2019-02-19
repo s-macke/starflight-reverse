@@ -135,7 +135,7 @@
 // =================================
 // ============= EXTERN ============
 // =================================
-extern const unsigned short int cc_IsA_dash_SHIE; // ?A-SHIE
+extern const unsigned short int cc_IsA_dash_SHIELDS_dash_UP; // ?A-SHIELDS-UP
 extern const unsigned short int cc_MPS; // MPS
 extern const unsigned short int pp_IsSOUND; // ?SOUND
 extern const unsigned short int pp_A_dash_STRENGTH; // A-STRENGTH
@@ -1387,7 +1387,7 @@ void WF136() // WF136
 
 void WF162() // WF162
 {
-  Push(((Read16(0x63ef+WEB40.offset)==0?1:0) | (Read16(cc_IsA_dash_SHIE)==0?1:0)) | Read16(pp_IsNEB)); // WEB40<IFIELD> @ 0= ?A-SHIE 0= OR ?NEB @ OR
+  Push(((Read16(0x63ef+WEB40.offset)==0?1:0) | (Read16(cc_IsA_dash_SHIELDS_dash_UP)==0?1:0)) | Read16(pp_IsNEB)); // WEB40<IFIELD> @ 0= ?A-SHIELDS-UP 0= OR ?NEB @ OR
   if (Pop() != 0)
   {
     Push(0xeb3b); // 'WEB3B'
