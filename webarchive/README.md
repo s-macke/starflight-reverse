@@ -19,7 +19,6 @@ found partially on archive.org. These are the remainings.
    
 ## 3. SFFiles
 
-*www.starflt.com* (Fan page, found in an old resources folder I guess)
+*http://www.oocities.org/timessquare/maze/4979/lee.html*
 
-Other Design documents by an unknown author.
-
+Design documents by Tim Lee. 
