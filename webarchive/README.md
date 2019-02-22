@@ -5,14 +5,14 @@ the Internet but is no longer available. This archive is intended to store this 
 
 ## 1. migblog
 
-*migblog.blog.com*
+*http://migblog.blog.com*
 
 This were some blog articles about starflight by an unknown author. He partially reverse engineered 
 the binaries.
 
 ## 2. sonic
 
-*www.sonic.net/~sage/sf*
+*http://www.sonic.net/~sage/sf*
    
 Partial source code and design documents published by Tim Lee. Today the website can only be 
 found partially on archive.org. These are the remainings.
