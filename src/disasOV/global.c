@@ -998,6 +998,7 @@ WORDRENAME renamewords[] =
 
     {0x14, 0xd998, "FPE"}, // WD998
     {0x14, 0xd99d, "HPE"}, // WD99D
+    {0x14, 0xd993, "OPE"}, // WD993
     {0x14, 0xdbc9, "POSTURE-EFFECT"}, // WDBC9
     {0x14, 0xee7c, ">RESPOND"}, // WEE7C
     {0x14, 0xed77, ">P-POSTURE"}, // WED77
@@ -1015,7 +1016,6 @@ WORDRENAME renamewords[] =
     {0x14, 0xda1f, "P-QUES"}, // WDA1F
     {0x14, 0xe774, "TIRED-OF-TALKING"}, // WE774
     {0x14, 0xe762, "TIRED-OF-WAITING"}, // WE762
-    {0x14, 0xe4b6, "!A-SUBJECT"}, // WE4B6
     {0x14, 0xdd69, "SET-TIRED-TIME"}, // WDD69
     {0x14, 0xdd47, "SET-OK-TIME"}, // WDD47
     {0x14, 0xda43, "#A-HAILS"}, // WDA43
@@ -1031,10 +1031,8 @@ WORDRENAME renamewords[] =
     {0x14, 0xe4b2, "?COMM-BTNS"}, // WE4B2
     {0x14, 0xda0b, "HAILER"}, // WDA0B
     {0x14, 0xdec7, ">RESPOND$"}, // WDEC7
-
-    {0x14, 0xda59, "SPECIAL-CONTEXT"}, // WDA59
+    {0x14, 0xda59, "SPACIAL-CONTEXT"}, // WDA59
     {0x14, 0xf228, "INIT_ACOMM"}, // WF228
-    {0x14, 0xdba8, "!A-SUBJECT"}, // WDBA8
     {0x14, 0xd970, "T%"}, // WD970
     {0x14, 0xda69, "%TALK"}, // WDA69
     {0x14, 0xd97a, "BASE-EDL"}, // WD97A
@@ -1042,11 +1040,14 @@ WORDRENAME renamewords[] =
     {0x14, 0xdacb, "COMM-OFF-SKILL"}, // WDACB
     {0x14, 0xdacf, "COMM-RACE"}, // WDACF
     {0x14, 0xf3c2, "INIT-MCOMM"}, // WF3C2
-    {0x14, 0xdad7, "P-STRENGTH"}, // WDAD7
-    {0x14, 0xdad3, "(LOCK-OUT)"}, // WDAD3
+    {0x14, 0xdad7, "(LOCK-OUT)"}, // WDAD7
+    {0x14, 0xdad3, "P-STRENGTH"}, // WDAD3
     {0x14, 0xda55, "?WAITING-FOR-ANSWER"}, // WDA55
     {0x14, 0xda17, "P-POSTURES"}, // WDA17
     {0x14, 0xda6d, "?HAS-SURRENDERED"}, // WDA6D
+    {0x14, 0xda7d, "A-CAPT"}, // WDA7D
+    {0x14, 0xda8f, "A-SHIP"}, // WDA8F
+    {0x14, 0xdaa1, "P-CAPT"}, // WDAA1
     {0x14, 0xdab3, "P-SHIP"}, // WDAB3
     {0x14, 0xda23, "P-PHRASES"}, // WDA23
     {0x14, 0xf061, "COMM-LOOP2"}, // WF061
@@ -1093,6 +1094,95 @@ WORDRENAME renamewords[] =
     {0x14, 0xe4d4, "+5>EDL"}, // WE4D4
     {0x14, 0xd975, "CSF"}, // WD975
     {0x14, 0xe98c, "<3SHIPS"}, // WE98C
+    {0x14, 0xd96b, "TC"}, // WD96B
+    {0x14, 0xda27, "A-SUBJECT"}, // WDA27
+    {0x14, 0xdba8, "!A-SUBJECT"}, // WDBA8
+    {0x14, 0xe4b6, "!A-SUBJECT+"}, // WE4B6
+    {0x14, 0xda5d, "?A-TALKING"}, // WDA5D
+    {0x14, 0xdb84, "PHRASE>C"}, // WDB84
+    {0x14, 0xdb8c, "DELTA-NO"}, // WDB8C
+    {0x14, 0xdb9a, "DELTA-YES"}, // WDB9A
+    {0x14, 0xd961, "DEDLN"}, // WD961
+    {0x14, 0xd966, "DEDLY"}, // WD966
+    {0x14, 0xdc0b, "OP#"}, // WDC0B
+    {0x14, 0xdc11, "FP#"}, // WDC11
+    {0x14, 0xdc17, "NP#"}, // WDC17
+    {0x14, 0xdc1d, "HP#"}, // WDC1D
+    {0x14, 0xdc40, "GET-PHRASE-LIMIT"}, // WDC40
+    {0x14, 0xda47, "#A-PHRASES-LIMIT"}, // WDA47
+    {0x14, 0xdc59, "N-POSTURE"}, // N-POST
+    {0x14, 0xdc6f, "EDL>POSTURE"}, // WDC6F
+    {0x14, 0xd984, "AET"}, // WD984
+    {0x14, 0xd989, "BET"}, // WD989
+    {0x14, 0xd98e, "CET"}, // WD98E
+    {0x14, 0xda71, "ALIEN-RACE"}, // WDA71
+    {0x14, 0xda33, "LAST-LEN"}, // WDA33
+    {0x14, 0xda4f, "TIRED-TIME"}, // WDA4F
+    {0x14, 0xdd7d, "?LOCKED-OUT"}, // WDD7D
+    {0x14, 0xddbf, "FIND-PHRASE"}, // WDDBF
+    {0x14, 0xda4b, "LEAST-USED"}, // WDA4B
+    {0x14, 0xd957, "FC"}, // WD957
+    {0x14, 0xd952, "LP"}, // WD952
+    {0x14, 0xd94d, "LSC"}, // WD94D
+    {0x14, 0xde11, "?SPACE<>SUBJ"}, // WDE11
+    {0x14, 0xde2b, "FIND-SUBJECT"}, // WDE2B
+    {0x14, 0xde6d, "PHRASE-SEARCH"}, // WDE6D
+    {0x14, 0xdea9, "COMM$"}, // WDEA9
+    {0x14, 0xdebb, "]COMM$"}, // WDEBB
+    {0x14, 0xdf32, "A-SYLLABLES"}, // WDF32
+    {0x14, 0xdef4, "PAD+WORD"}, // WDEF4
+    {0x14, 0xdf14, "HASH-WORD"}, // WDF14
+    {0x14, 0xe014, "MOVE-SYLLABLES"}, // WE014
+    {0x14, 0xd9a7, "VST-PTR"}, // WD9A7
+    {0x14, 0xd936, "PHRASE$"}, // WD936
+    {0x14, 0xe05a, "A-SYLL"}, // WE05A
+    {0x14, 0xe068, "A-WORD"}, // WE068
+    {0x14, 0xd9a2, "MSW"}, // WD9A2
+    {0x14, 0xe0c6, "?SCRAMBLE"}, // WE0C6
+    {0x14, 0xe0c6, "?FOREIGN-LANGUAGE"}, // WDA61
+    {0x14, 0xe10c, "A>TERMINATE"}, // WE10C
+    {0x14, 0xe11c, "ACTION-CASE"}, // ACASE
+    {0x14, 0xe12a, "DO-UA"}, // WE12A
+    {0x14, 0xd95c, "UA"}, // WD95C
+    {0x14, 0xe160, "-LEADING"}, // WE160
+    {0x14, 0xe190, "PARSE"}, // WE190
+    {0x14, 0xe1e4, "+1CHAR"}, // WE1E4
+    {0x14, 0xe246, "?WORD-FIT"}, // WE246
+    {0x14, 0xdadb, "CTCNT"}, // WDADB
+    {0x14, 0xe2a5, "WORD>CT"}, // WE2A5
+    {0x14, 0xe2e9, "ANAME"}, // ANAME
+    {0x14, 0xe2f7, "ASHIP"}, // ASHIP
+    {0x14, 0xe305, "CNAME"}, // CNAME
+    {0x14, 0xe313, "SNAME"}, // SNAME
+    {0x14, 0xe329, ">ENDOPTION"}, // WE329
+    {0x14, 0xe34b, "OPTION$"}, // WE34B
+    {0x14, 0xe365, "YOU$"}, // WE365
+    {0x14, 0xe379, "OTHER$"}, // WE379
+    {0x14, 0xe38f, "OEMP"}, // WE38F
+    {0x14, 0xe3ac, "ANC$"}, // WE3AC
+    {0x14, 0xe3c3, "NO$"}, // WE3C3
+    {0x14, 0xe3d0, "(?SUBJECT)"}, // ?S
+    {0x14, 0xe3e6, "?SUBJECT"}, // WE3E6
+    {0x14, 0xe3f6, "SPECIAL-CASE"}, // SPL
+    {0x14, 0xe41c, "SPECIAL"}, // WE41C
+    {0x14, 0xe482, "PHRASE>CT"}, // WE482
+    {0x14, 0xe52e, "NEW-POSTURE>EDL"}, // WE52E
+    {0x14, 0xe546, "RESPOND>EDL"}, // WE546
+    {0x14, 0xe554, "STATEMENT-EDL"}, // WE554
+    {0x14, 0xe57e, "@T%"}, // WE57E
+    {0x14, 0xe58c, "#!%TALK"}, // WE58C
+    {0x14, 0xe5a0, "!%TALK"}, // WE5A0
+    {0x14, 0xe61a, "RAISE-SHIELDS"}, // WE61A
+    {0x14, 0xe64a, "ARM-WEAPONS"}, // WE64A
+    {0x14, 0xe662, "DISARM-WEAPONS"}, // WE662
+    {0x14, 0xda75, "?CALLED"}, // 0xda75
+    {0x14, 0xe67a, "CALL-FOR-SHIPS"}, // WE67A
+    {0x14, 0xe690, "SHIPS-ARRIVE"}, // WE690
+    {0x14, 0xe6ac, "SCAN-PLAYER"}, // WE6AC
+    {0x14, 0xda79, "?SCANNED"}, // WDA79
+    {0x14, 0xe5f6, "CAPT:"}, // WE5F6
+    {0x14, 0xe9c2, "?ALIEN-RACE-6"}, // WE9C2 named by me
+    {0x14, 0xd9ac, "COMM-SKILL"}, // WD9AC named by me
 
 
     {0x05, 0xeed2, "P-TSEED"}, // WEED2
