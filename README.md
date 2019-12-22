@@ -28,7 +28,7 @@ For this game expect the unexpected. Normally when you reverse engineer such an 
 
 ## Forth ##
 
-Forth is the language with the ultimate milimanism regarding syntax. There is no more syntax than the space between "words". You can write a Forth reader and interpreter basically in a few lines of code.
+Forth is the language with the ultimate minimalism regarding syntax. There is no more syntax than the space between "words". You can write a Forth reader and interpreter basically in a few lines of code.
 
 In a modern language you write something like
 
