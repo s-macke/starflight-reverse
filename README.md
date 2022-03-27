@@ -187,41 +187,41 @@ Forth code:
 
 Transformation:
 
-| 16-Bit Pointers | FORTH     | C      |
-| -------- | ----------- | ------ |
-|          | : .C ( -- ) |`void DrawC() { `|
-|          |             |`  unsigned short int i, imax; `|
-| 0x0642   | CR          |`  Exec("CR"); `|
-| 0x75d5   | CDEPTH      |`  CDEPTH(); `|
-| 0x15fa 0x0020 | IF          |`  if (Pop() != 0) { `|
-| 0x54ae   | CXSP        |`    Push(Read16(pp_CXSP) + 3);`|
-| 0xbae    | @           | |
-| 0x3b73   | 3           | |
-| 0x0f72   | +           | |
-| 0x4ffd   | END-CX      |`    Push(Read16(cc_END_dash_CX));`|
-| 0x15b8   | DO          |`    i = Pop();`|
-|          |             |`    imax = Pop();`|
-|          |             |`    do {`|
-| 0x50e0   | I           |`        Push(i);`|
-| 0x4995   | 1.5@        |`        _1_dot_5_at_();`|
-| 0x81d5   | .DRJ        |`        DrawDRJ();`|
-| 0x175d 0xfffd | -3          |`        Push(-3);`|
-| 0x155c 0xffff | +LOOP       |`    int step = Pop();`|
-|               |             |`    i += step;`|
-|          |             |`    if (((step>=0) && (i>=imax)) \|\| ((step<0) && (i<=imax))) break;`|
-|          |             |`    } while(1);`|
-| 0x1660 0x000b | ELSE        |`  } else {`|
-| 0x1bdc   | " MT STK"   |`    PRINT("MT STK", 6);`|
-| 0x06     |             ||
-| 0x4d     | 'M'         ||
-| 0x54     | 'T'         ||
-| 0x20     | ' '         ||
-| 0x53     | 'S'         ||
-| 0x54     | 'T'         ||
-| 0x4b     | 'K'         ||
-|          | THEN        |`  }`|
-| 0x0642   | CR          |`  Exec("CR");`|
-| 0x1690   | EXIT        |`}`|
+| 16-Bit Pointers | FORTH       | C                                                                       |
+|-----------------|-------------|-------------------------------------------------------------------------|
+|                 | : .C ( -- ) | `void DrawC() { `                                                       |
+|                 |             | `  unsigned short int i, imax; `                                        |
+| 0x0642          | CR          | `  Exec("CR"); `                                                        |
+| 0x75d5          | CDEPTH      | `  CDEPTH(); `                                                          |
+| 0x15fa 0x0020   | IF          | `  if (Pop() != 0) { `                                                  |
+| 0x54ae          | CXSP        | `    Push(Read16(pp_CXSP) + 3);`                                        |
+| 0xbae           | @           |                                                                         |
+| 0x3b73          | 3           |                                                                         |
+| 0x0f72          | +           |                                                                         |
+| 0x4ffd          | END-CX      | `    Push(Read16(cc_END_dash_CX));`                                     |
+| 0x15b8          | DO          | `    i = Pop();`                                                        |
+|                 |             | `    imax = Pop();`                                                     |
+|                 |             | `    do {`                                                              |
+| 0x50e0          | I           | `        Push(i);`                                                      |
+| 0x4995          | 1.5@        | `        _1_dot_5_at_();`                                               |
+| 0x81d5          | .DRJ        | `        DrawDRJ();`                                                    |
+| 0x175d 0xfffd   | -3          | `        Push(-3);`                                                     |
+| 0x155c 0xffff   | +LOOP       | `    int step = Pop();`                                                 |
+|                 |             | `    i += step;`                                                        |
+|                 |             | `    if (((step>=0) && (i>=imax)) \|\| ((step<0) && (i<=imax))) break;` |
+|                 |             | `    } while(1);`                                                       |
+| 0x1660 0x000b   | ELSE        | `  } else {`                                                            |
+| 0x1bdc          | " MT STK"   | `    PRINT("MT STK", 6);`                                               |
+| 0x06            |             |                                                                         |
+| 0x4d            | 'M'         |                                                                         |
+| 0x54            | 'T'         |                                                                         |
+| 0x20            | ' '         |                                                                         |
+| 0x53            | 'S'         |                                                                         |
+| 0x54            | 'T'         |                                                                         |
+| 0x4b            | 'K'         |                                                                         |
+|                 | THEN        | `  }`                                                                   |
+| 0x0642          | CR          | `  Exec("CR");`                                                         |
+| 0x1690          | EXIT        | `}`                                                                     |
 
 ## Files ##
 
@@ -233,124 +233,124 @@ The game comes in 3 Files
 
 Content of STARA.com
 
-| entry        | size   | description |
-|--------------|--------|-------------|
-| DIRECTORY    | 4096   | contains directory of STARA and STARB |
-| ELO-CPIC     | 4816   |             |
-| GAZ-CPIC     | 3120   |             |
-| MEC-CPIC     | 2848   |             |
-| MYS-CPIC     | 6064   |             |
-| NOM-CPIC     | 1136   |             |
-| SPE-CPIC     | 1888   |             |
-| THR-CPIC     | 2480   |             |
-| VEL-CPIC     | 4672   |             |
-| VPR-CPIC     | 1248   |             |
-| MIN-CPIC     | 2096   |             |
-| SPLASH       | 16384  | Picture     |
-| MED-PIC      | 2048   | Picture     |
-| PHAZES       | 6144   |             |
-| HUM-PIC      | 480    | Picture     |
-| VEL-PIC      | 432    | Picture     |
-| THR-PIC      | 272    | Picture     |
-| ELO-PIC      | 608    | Picture     |
-| AND-PIC      | 640    | Picture     |
-| SAVE         | 124000 |             |
-| MUSIC        | 4960   | Code Overlay |
-| EARTH        | 1152   | Map of the planet earth |
-| GALAXY       | 6304   |             |
-| CREDITS      | 16384  | picture     |
-| COP-CPIC     | 2928   |             |
-| FONTS        | 768    |             |
-| CGA          | 3600   | Machine Code routines for the CGA graphics card            |
-| EGA          | 3600   | Machine Code routines for the EGA graphics card |
+| entry     | size   | description                                     |
+|-----------|--------|-------------------------------------------------|
+| DIRECTORY | 4096   | contains directory of STARA and STARB           |
+| ELO-CPIC  | 4816   |                                                 |
+| GAZ-CPIC  | 3120   |                                                 |
+| MEC-CPIC  | 2848   |                                                 |
+| MYS-CPIC  | 6064   |                                                 |
+| NOM-CPIC  | 1136   |                                                 |
+| SPE-CPIC  | 1888   |                                                 |
+| THR-CPIC  | 2480   |                                                 |
+| VEL-CPIC  | 4672   |                                                 |
+| VPR-CPIC  | 1248   |                                                 |
+| MIN-CPIC  | 2096   |                                                 |
+| SPLASH    | 16384  | Picture                                         |
+| MED-PIC   | 2048   | Picture                                         |
+| PHAZES    | 6144   |                                                 |
+| HUM-PIC   | 480    | Picture                                         |
+| VEL-PIC   | 432    | Picture                                         |
+| THR-PIC   | 272    | Picture                                         |
+| ELO-PIC   | 608    | Picture                                         |
+| AND-PIC   | 640    | Picture                                         |
+| SAVE      | 124000 |                                                 |
+| MUSIC     | 4960   | Code Overlay                                    |
+| EARTH     | 1152   | Map of the planet earth                         |
+| GALAXY    | 6304   |                                                 |
+| CREDITS   | 16384  | picture                                         |
+| COP-CPIC  | 2928   |                                                 |
+| FONTS     | 768    |                                                 |
+| CGA       | 3600   | Machine Code routines for the CGA graphics card |
+| EGA       | 3600   | Machine Code routines for the EGA graphics card |
 
 Content of STARB.COM
 
-| entry        | size   | description |
-|--------------|--------|-------------|
-| DIRECTORY    | 4096   | contains directory of STARA and STARB |
+| entry        | size   | description                                         |
+|--------------|--------|-----------------------------------------------------|
+| DIRECTORY    | 4096   | contains directory of STARA and STARB               |
 | INSTANCE     | 150528 | Tree structure with most of the content of the game |
-| BOX          | 1024   | Table       |
-| BANK-TRANS   | 144    | Table       |
-| CREWMEMBER   | 128    | Table       |
-| VESSEL       | 1936   | Table       |
-| ELEMENT      | 544    | Table       |
-| ARTIFACT     | 1584   | Table       |
-| PLANET       | 1360   | Table       |
-| SPECIMEN     | 448    | Table       |
-| BIO-DATA     | 448    | Table       |
-| TPORT-PIC    | 2416   | Picture     |
-| BPORT-PIC    | 3984   | Picture     |
-| ANALYZE-TEXT | 3200   | Table       |
-| BUTTONS      | 944    | Table       |
-| ICON1:1      | 912    |             |
-| ICON1:2      | 912    |             |
-| ICON1:4      | 912    |             |
-| ICON-NAME    | 736    |             |
-| DPART-OV     | 1552   | Code Overlay |
-| REGIONS      | 176    | Table       |
-| CREATURE     | 17024  | Table       |
-| CHKFLIGHT-OV | 960    | Code Overlay |
-| FRACT-OV     | 4640   | Code Overlay |
-| ICONP-OV     | 832    | Code Overlay |
-| SITE-OV      | 1888   | Code Overlay |
-| HYPERMSG-OV  | 4112   | Code Overlay |
-| GPOLY        | 368    |             |
-| FACET        | 288    |             |
-| VERTEX       | 416    |             |
-| BLT-OV       | 864    | Code Overlay |
-| MISC-OV      | 1440   | Code Overlay |
-| BANK-OV      | 1520   | Code Overlay |
-| ASSCREW-OV   | 2800   | Code Overlay |
-| PERSONNEL-OV | 4192   | Code Overlay |
-| SHIPGRPH-OV  | 2112   | Code Overlay |
-| CONFIG-OV    | 3072   | Code Overlay |
-| TDEPOT-OV    | 4800   | Code Overlay |
-| PORTMENU-OV  | 3120   | Code Overlay |
-| VITA-OV      | 3552   | Code Overlay |
-| HP-OV        | 4832   | Code Overlay |
-| LP-OV        | 5280   | Code Overlay |
-| SENT-OV      | 4784   | Code Overlay |
-| TV-OV        | 3472   | Code Overlay |
-| COMM-OV      | 7232   | Code Overlay |
-| COMMSPEC-OV  | 2864   | Code Overlay |
-| SEED-OV      | 2400   | Code Overlay |
-| LISTICONS    | 720    | Code Overlay |
-| MOVE-OV      | 3808   | Code Overlay |
-| ENGINEER     | 2320   | Code Overlay |
-| DOCTOR       | 1280   | Code Overlay |
-| ORBIT-OV     | 6640   | Code Overlay |
-| CAPTAIN      | 5952   | Code Overlay |
-| SCIENCE      | 3952   | Code Overlay |
-| NAVIGATR     | 880    | Code Overlay |
-| SHIPBUTTONS  | 1984   |             |
-| MAP-OV       | 4160   | Code Overlay |
-| HYPER-OV     | 7168   | Code Overlay |
-| ANALYZE-OV   | 2560   | Code Overlay |
-| LAUNCH-OV    | 1360   | Code Overlay |
-| FLUX-EFFECT  | 464    |             |
-| OP-OV        | 4400   | Code Overlay |
-| ITEMS-OV     | 6016   | Code Overlay |
-| LSYSICON     | 752    |             |
-| MSYSICON     | 448    |             |
-| SSYSICON     | 176    |             |
-| BEHAV-OV     | 5360   |             |
-| CMAP         | 1008   |             |
-| INSTALL      | 800    |             |
-| HEAL-OV      | 1232   | Code Overlay |
-| REPAIR-OV    | 1696   | Code Overlay |
-| GAME-OV      | 5920   | Code Overlay |
-| PLSET-OV     | 2400   | Code Overlay |
-| MAPS-OV      | 2240   | Code Overlay |
-| VES-BLT      | 4528   |              |
-| STORM-OV     | 1232   | Code Overlay |
-| COMPOUNDS    | 176    | Table        |
-| IT-OV        | 1936   | Code Overlay |
-| COMBAT-OV    | 6192   | Code Overlay |
-| DAMAGE-OV    | 2752   | Code Overlay |
-| LAND-OV      | 1088   | Code Overlay |
-| PSTATS       | 64     | Table        |
-| STP-OV       | 1440   | Code Overlay |
+| BOX          | 1024   | Table                                               |
+| BANK-TRANS   | 144    | Table                                               |
+| CREWMEMBER   | 128    | Table                                               |
+| VESSEL       | 1936   | Table                                               |
+| ELEMENT      | 544    | Table                                               |
+| ARTIFACT     | 1584   | Table                                               |
+| PLANET       | 1360   | Table                                               |
+| SPECIMEN     | 448    | Table                                               |
+| BIO-DATA     | 448    | Table                                               |
+| TPORT-PIC    | 2416   | Picture                                             |
+| BPORT-PIC    | 3984   | Picture                                             |
+| ANALYZE-TEXT | 3200   | Table                                               |
+| BUTTONS      | 944    | Table                                               |
+| ICON1:1      | 912    |                                                     |
+| ICON1:2      | 912    |                                                     |
+| ICON1:4      | 912    |                                                     |
+| ICON-NAME    | 736    |                                                     |
+| DPART-OV     | 1552   | Code Overlay                                        |
+| REGIONS      | 176    | Table                                               |
+| CREATURE     | 17024  | Table                                               |
+| CHKFLIGHT-OV | 960    | Code Overlay                                        |
+| FRACT-OV     | 4640   | Code Overlay                                        |
+| ICONP-OV     | 832    | Code Overlay                                        |
+| SITE-OV      | 1888   | Code Overlay                                        |
+| HYPERMSG-OV  | 4112   | Code Overlay                                        |
+| GPOLY        | 368    |                                                     |
+| FACET        | 288    |                                                     |
+| VERTEX       | 416    |                                                     |
+| BLT-OV       | 864    | Code Overlay                                        |
+| MISC-OV      | 1440   | Code Overlay                                        |
+| BANK-OV      | 1520   | Code Overlay                                        |
+| ASSCREW-OV   | 2800   | Code Overlay                                        |
+| PERSONNEL-OV | 4192   | Code Overlay                                        |
+| SHIPGRPH-OV  | 2112   | Code Overlay                                        |
+| CONFIG-OV    | 3072   | Code Overlay                                        |
+| TDEPOT-OV    | 4800   | Code Overlay                                        |
+| PORTMENU-OV  | 3120   | Code Overlay                                        |
+| VITA-OV      | 3552   | Code Overlay                                        |
+| HP-OV        | 4832   | Code Overlay                                        |
+| LP-OV        | 5280   | Code Overlay                                        |
+| SENT-OV      | 4784   | Code Overlay                                        |
+| TV-OV        | 3472   | Code Overlay                                        |
+| COMM-OV      | 7232   | Code Overlay                                        |
+| COMMSPEC-OV  | 2864   | Code Overlay                                        |
+| SEED-OV      | 2400   | Code Overlay                                        |
+| LISTICONS    | 720    | Code Overlay                                        |
+| MOVE-OV      | 3808   | Code Overlay                                        |
+| ENGINEER     | 2320   | Code Overlay                                        |
+| DOCTOR       | 1280   | Code Overlay                                        |
+| ORBIT-OV     | 6640   | Code Overlay                                        |
+| CAPTAIN      | 5952   | Code Overlay                                        |
+| SCIENCE      | 3952   | Code Overlay                                        |
+| NAVIGATR     | 880    | Code Overlay                                        |
+| SHIPBUTTONS  | 1984   |                                                     |
+| MAP-OV       | 4160   | Code Overlay                                        |
+| HYPER-OV     | 7168   | Code Overlay                                        |
+| ANALYZE-OV   | 2560   | Code Overlay                                        |
+| LAUNCH-OV    | 1360   | Code Overlay                                        |
+| FLUX-EFFECT  | 464    |                                                     |
+| OP-OV        | 4400   | Code Overlay                                        |
+| ITEMS-OV     | 6016   | Code Overlay                                        |
+| LSYSICON     | 752    |                                                     |
+| MSYSICON     | 448    |                                                     |
+| SSYSICON     | 176    |                                                     |
+| BEHAV-OV     | 5360   |                                                     |
+| CMAP         | 1008   |                                                     |
+| INSTALL      | 800    |                                                     |
+| HEAL-OV      | 1232   | Code Overlay                                        |
+| REPAIR-OV    | 1696   | Code Overlay                                        |
+| GAME-OV      | 5920   | Code Overlay                                        |
+| PLSET-OV     | 2400   | Code Overlay                                        |
+| MAPS-OV      | 2240   | Code Overlay                                        |
+| VES-BLT      | 4528   |                                                     |
+| STORM-OV     | 1232   | Code Overlay                                        |
+| COMPOUNDS    | 176    | Table                                               |
+| IT-OV        | 1936   | Code Overlay                                        |
+| COMBAT-OV    | 6192   | Code Overlay                                        |
+| DAMAGE-OV    | 2752   | Code Overlay                                        |
+| LAND-OV      | 1088   | Code Overlay                                        |
+| PSTATS       | 64     | Table                                               |
+| STP-OV       | 1440   | Code Overlay                                        |
 
 
 ## Usage ##
