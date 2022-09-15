@@ -373,7 +373,7 @@
 //           UNTIL  codep:0x224c wordp:0x2503 size:0x0010 C-string:'UNTIL'
 //        VARIABLE  codep:0x224c wordp:0x2520 size:0x0008 C-string:'VARIABLE'
 //           WHILE  codep:0x224c wordp:0x2532 size:0x0006 C-string:'WHILE'
-//                 codep:0x224c wordp:0x253e size:0x0014 C-string:''
+// zero_length_unknown  codep:0x224c wordp:0x253e size:0x0014 C-string:'zero_length_unknown'
 //               [  codep:0x224c wordp:0x2558 size:0x0008 C-string:'_bo_'
 //       [COMPILE]  codep:0x224c wordp:0x256e size:0x000a C-string:'_bo_COMPILE_bc_'
 //               \  codep:0x224c wordp:0x257e size:0x001e C-string:'_bs_'
@@ -7033,7 +7033,7 @@ void Draw_qm_() // ."
   Push(Read16(user_STATE)); // STATE @
   if (Pop() != 0)
   {
-    COMPILE(0x1bdc); // compile?
+    COMPILE("(.")"); // ' (.")
   }
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
   Push(Read16(regsp)); // DUP
@@ -7382,7 +7382,7 @@ void _plus_LOOP() // +LOOP
 {
   Push(3);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x155c); // compile?
+  COMPILE("(+LOOP)"); // ' (+LOOP)
   HERE(); // HERE
   _dash_(); // -
   _co_(); // ,
@@ -7412,7 +7412,7 @@ void _slash_LOOP() // /LOOP
 {
   Push(3);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x1591); // compile?
+  COMPILE("(/LOOP)"); // ' (/LOOP)
   HERE(); // HERE
   _dash_(); // -
   _co_(); // ,
@@ -7426,7 +7426,7 @@ void _slash_LOOP() // /LOOP
 void _sc_() // ;
 {
   IsCSP(); // ?CSP
-  COMPILE(0x1690); // compile?
+  COMPILE("EXIT"); // ' EXIT
   SMUDGE(); // SMUDGE
   _bo_(); // [
 }
@@ -7540,7 +7540,7 @@ void W20C6() // W20C6
 void ABORT_qm_() // ABORT"
 {
   IsCOMP(); // ?COMP
-  COMPILE(0x1c13); // compile?
+  COMPILE("(ABORT")"); // ' (ABORT")
   _i_STREAM(); // 'STREAM
   Push((Read16(Pop())&0xFF)==0x0022?1:0); //  C@ 0x0022 =
   if (Pop() != 0)
@@ -7573,7 +7573,7 @@ void AGAIN() // AGAIN
 {
   Push(1);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x1660); // compile?
+  COMPILE("BRANCH"); // ' BRANCH
   HERE(); // HERE
   _dash_(); // -
   _co_(); // ,
@@ -7686,7 +7686,7 @@ void CONSTANT() // CONSTANT
 
 void DO() // DO
 {
-  COMPILE(0x15b8); // compile?
+  COMPILE("(DO)"); // ' (DO)
   HERE(); // HERE
   Push(3);
 }
@@ -7727,7 +7727,7 @@ void _c_() // :
 void DOES_gt_() // DOES>
 {
   IsCSP(); // ?CSP
-  COMPILE(0x1bfa); // compile?
+  COMPILE("(;CODE)"); // ' (;CODE)
   Push(0x00e8);
   C_co_(); // C,
   Push(0x1649);
@@ -7746,7 +7746,7 @@ void ELSE() // ELSE
 {
   Push(2);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x1660); // compile?
+  COMPILE("BRANCH"); // ' BRANCH
   HERE(); // HERE
   Push(0);
   _co_(); // ,
@@ -7828,7 +7828,7 @@ void HEX() // HEX
 
 void IF() // IF
 {
-  COMPILE(0x15fa); // compile?
+  COMPILE("0BRANCH"); // ' 0BRANCH
   HERE(); // HERE
   Push(0);
   _co_(); // ,
@@ -7878,7 +7878,7 @@ void LITERAL() // LITERAL
   Push(Read16(user_STATE)); // STATE @
   if (Pop() != 0)
   {
-    COMPILE(0x175d); // compile?
+    COMPILE("LIT"); // ' LIT
     _co_(); // ,
     return;
   }
@@ -7894,7 +7894,7 @@ void LOOP() // LOOP
 {
   Push(3);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x15d0); // compile?
+  COMPILE("(LOOP)"); // ' (LOOP)
   HERE(); // HERE
   _dash_(); // -
   _co_(); // ,
@@ -7910,7 +7910,7 @@ void _2LITERAL() // 2LITERAL
   Push(Read16(user_STATE)); // STATE @
   if (Pop() != 0)
   {
-    COMPILE(0x1616); // compile?
+    COMPILE("2LIT"); // ' 2LIT
     SWAP(); // SWAP
     _co_(); // ,
     _co_(); // ,
@@ -8103,7 +8103,7 @@ void UNTIL() // UNTIL
 {
   Push(1);
   IsPAIRS(); // ?PAIRS
-  COMPILE(0x15fa); // compile?
+  COMPILE("0BRANCH"); // ' 0BRANCH
   HERE(); // HERE
   _dash_(); // -
   _co_(); // ,
@@ -8134,10 +8134,10 @@ void WHILE() // WHILE
 
 
 // ================================================
-// 0x2538: WORD '' codep=0x224c wordp=0x253e params=0 returns=0
+// 0x2538: WORD 'zero_length_unknown' codep=0x224c wordp=0x253e params=0 returns=0
 // ================================================
 
-void () // 
+void zero_length_unknown() // zero_length_unknown
 {
   Push(Read16(user_BLK)); // BLK @
   if (Pop() != 0)
@@ -11113,7 +11113,7 @@ void T_c_() // T:
 void T_sc_() // T;
 {
   IsCSP(); // ?CSP
-  COMPILE(0x1690); // compile?
+  COMPILE("EXIT"); // ' EXIT
   _bo_(); // [
 }
 
@@ -11461,7 +11461,7 @@ void _qm_() // "
   Push(Read16(user_STATE)); // STATE @
   if (Pop() != 0)
   {
-    COMPILE(0x3f39); // compile?
+    COMPILE("SET_STR_AS_PARAM"); // ' SET_STR_AS_PARAM
   }
   Push(0x0022);
   Exec("WORD"); // call of word 0x1f06 '(WORD)'
