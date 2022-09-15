@@ -1,7 +1,7 @@
 #ifndef FRACT_H
 #define FRACT_H
 
-#include"cpu.h"
+#include"../cpu/cpu.h"
 
 void FRACT_FILLARRAY();
 void FRACT_StoreHeight();

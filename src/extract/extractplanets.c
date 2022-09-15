@@ -1,12 +1,11 @@
 #include<stdio.h>
-#include<stdlib.h>
 #include<string.h>
 
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 #include"../emul/call.h"
-#include"../emul/findword.h"
 #include"../emul/graphics.h"
 #include"../disasOV/global.h"
+#include"../patch/patch.h"
 #include"data.h"
 
 void Continue()

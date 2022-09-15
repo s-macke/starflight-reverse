@@ -10,6 +10,7 @@ typedef struct WORD
     int linkp;  // link pointer
     int wordp;  // word content pointer
     int bits;   // bitfield
+    int namelength; // the actual size of the name in the original code. The short name might be cut.
     char r[64]; // short name
     int size;   // probable size of the word
     int ovidx;  // overlay index

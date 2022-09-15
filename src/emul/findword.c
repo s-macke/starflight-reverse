@@ -2,13 +2,12 @@
 #include<stdlib.h>
 #include<string.h>
 
-#include"cpu.h"
+#include"../cpu/cpu.h"
 #include"callstack.h"
 #include"../disasOV/global.h"
 
 #include"../../starflt1-out/data/dictionary.h"
 #include"../../starflt1-out/data/directory.h"
-
 
 char* GetOverlayName(int word, int ovidx)
 {

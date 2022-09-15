@@ -6,7 +6,7 @@
 #include<sys/time.h>
 
 #include"call.h"
-#include"cpu.h"
+#include"../cpu/cpu.h"
 #include"fract.h"
 #include"graphics.h"
 #include"callstack.h"
@@ -29,7 +29,7 @@ unsigned short int inputbuffer[256];
 
 void FillKeyboardBufferString(char *str)
 {
-  printf("Interpret '%s'\n", str);
+  //printf("Interpret '%s'\n", str);
     int n = strlen(str);
     memset(inputbuffer, 0, sizeof(inputbuffer));
     for(int i=0; i<n; i++)
@@ -517,10 +517,10 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             {
               int n = Read16(regsp);
               int offset = Read16(regsp+2);
-              printf("(TYPE): ");
+              //printf("(TYPE): ");
               for(int i=0; i<n; i++)
                   printf("%c", Read8(offset+i));
-              if (Read8(offset+n-1) != '\n') printf("\n");
+              //if (Read8(offset+n-1) != '\n') printf("\n");
             }
 
             bx = Read16(bx+regdi);
@@ -552,6 +552,9 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
             }
             if (strcmp(s, "(EMIT)") == 0) // print one char
             {
+                // TODO if terminal mode
+                printf("%c", Read16(regsp));
+                // TODO otherwise
                 GraphicsChar(Read16(regsp));
                 GraphicsUpdate();
                 //printf("(EMIT) %i\n", Read16(regsp));
@@ -2749,6 +2752,20 @@ enum RETURNCODE Call(unsigned short addr, unsigned short bx)
     return OK;
 }
 
+void SaveSTARFLT()
+{
+    FILE *fp;
+    int ret;
+    fp = fopen("starflt1-in/STARPAT.COM", "wb");
+    if (fp == NULL)
+    {
+        fprintf(stderr, "Error: Cannot write file %s\n", FILESTAR0);
+        exit(1);
+    }
+    ret = fwrite(&mem[0x100], FILESTAR0SIZE, 1, fp);
+    fclose(fp);
+}
+
 void LoadSTARFLT()
 {
     FILE *fp;
@@ -2780,8 +2797,6 @@ void LoadSTARFLT()
     }
     ret = fread(STARB, 362496, 1, fp);
     fclose(fp);
-
-
 }
 
 void EnableDebug()
@@ -2804,14 +2819,8 @@ enum RETURNCODE Step()
       printf(" %s\n", FindWord(bx+2, -1));
     }
 
-    if (bx == 0xe121-2)
-    {
-      printf("lookup 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
-    }
-    if (execaddr == 0xe114)
-    {
-      printf("iaddr 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
-    }
+    if (bx == 0xe121-2) printf("lookup 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
+    if (execaddr == 0xe114) printf("iaddr 0x%04x 0x%04x 0x%04x\n", Read16(regsp), Read16(regsp+2), Read16(regsp+4));
 
 /*
     if (bx == 0x79f4-2) // >C+S
@@ -2830,24 +2839,4 @@ void InitEmulator()
     regsp = 0xd4a7 + 0x100;  // initial parameter stack
     LoadSTARFLT();
     memset(inputbuffer, 0, sizeof(inputbuffer));
-}
-
-void EnableInterpreter()
-{
-    // Patch to start Forth interpreter
-    Write16(0x0a53, 0x0000); // BOOT-HOOK
-
-    //Write16(0x2420, 0x0F22-2); // "0"
-
-    Write16(0x2420, 0x3a48-2); // "NOP"
-    Write16(0x2422, 0x3a48-2); // "NOP"
-    Write16(0x2424, 0x3a48-2); // "NOP"
-
-}
-
-void DisableInterpreterOutput()
-{
-  Write16(0x2420+34, 0x3a46); // CR in QUIT word
-  Write16(0x03c3, 0x1692-2); // print "ok"
-  Write16(0x1d3e + 114, 0xe32); // Drop EMIT in (EXPECT)
 }

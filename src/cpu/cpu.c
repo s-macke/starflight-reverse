@@ -1,6 +1,5 @@
 #include"cpu.h"
 #include<string.h>
-#include<stdio.h>
 
 unsigned char m[1024*1024];
 unsigned char *mem;
@@ -15,7 +14,7 @@ void Write8(unsigned short offset, unsigned char x)
 
 void Write8Long(unsigned short s, unsigned short o, unsigned char x)
 {
-    m[(s<<4) + o] = x;
+    m[((unsigned int)s<<4) + o] = x;
 }
 
 void Write16(unsigned short offset, unsigned short x)
@@ -26,8 +25,8 @@ void Write16(unsigned short offset, unsigned short x)
 
 void Write16Long(unsigned short s, unsigned short o, unsigned short x)
 {
-    m[(s<<4)+o+0] = x&0xFF;
-    m[(s<<4)+o+1] = x>>8;
+    m[((unsigned int)s<<4)+o+0] = x&0xFF;
+    m[((unsigned int)s<<4)+o+1] = x>>8;
 }
 
 unsigned char Read8(unsigned short offset)

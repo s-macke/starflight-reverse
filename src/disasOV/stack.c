@@ -8,7 +8,7 @@
 #include"dictionary.h"
 #include"parser.h"
 #include"stack.h"
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 
 void FunctionStackAnalysis(int wordp, int ovidx)
 {

@@ -491,7 +491,6 @@ unsigned disasm(unsigned seg, unsigned off, BYTE *memory, char *buffer)
 
     return off;
 
-return 1;
 }
 
 static unsigned disassemble(unsigned seg, unsigned off, BYTE *memory, int count)

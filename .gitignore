@@ -11,3 +11,14 @@ starflt1-in/*.COM
 starflt2-in/*.COM
 starflt2-in/*.OVL
 starflt2-in/*.VGA
+disasOV1
+disasOV2
+emulate
+emulatecomm1
+emulatesdl
+extractdata1
+extractinstance1
+extractinstance2
+extractplanets1
+extractplanetsdata1
+extractvessels1

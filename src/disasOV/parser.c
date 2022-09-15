@@ -6,7 +6,7 @@
 #include"parser.h"
 #include"extract.h"
 #include"utils.h"
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 #include"../disasmX86/debugger.h"
 #include"postfix2infix.h"
 
@@ -552,14 +552,14 @@ void ParsePartFunction(int offset, int minaddr, int maxaddr, WORD *d, int ovidx,
             DisasmRange(offset, 0x100000, ovidx, minaddr, maxaddr);
             return;
         } else
-        if (strcmp(s, "COMPILE") == 0) // maybe inlined code
+        if (strcmp(s, "COMPILE") == 0) // TICK "'" word maybe
         {
+            char* s1 = GetWordNameByAddr(Read16(offset+2) + 2, ovidx);
             pline[offset].str = malloc(STRINGLEN);
-            snprintf(pline[offset].str, STRINGLEN, "%s(0x%04x); // compile?\n", s, Read16(offset+2));
+            snprintf(pline[offset].str, STRINGLEN, "%s(\"%s\"); // ' %s\n", s, s1, s1);
             pline[offset+2].done = 1;
             pline[offset+3].done = 1;
             offset += 4;
-            //return;
         } else
         if (e->codep == CODELOADOVERLAY) // This code loads the overlay
         {

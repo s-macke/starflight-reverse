@@ -1,14 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
 
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 #include"../emul/call.h"
-#include"../emul/findword.h"
 #include"../emul/graphics.h"
-#include"../disasOV/global.h"
-#include"../emul/callstack.h"
-#include"data.h"
+#include"../patch/patch.h"
 
 /*
 cat stdout | grep -a '===\|TYPE' | grep -a -v "(TYPE):  OK"
@@ -92,7 +88,7 @@ int main()
   Continue();
   FillKeyboardBufferString("GAME-OV\nMOUNTB\nGDE\n");
   Continue();
-  FillKeyboardBufferString("?EGA ON\n3 MONITOR !\nMONITOR\nSETDBUF\n");
+  FillKeyboardBufferString("?EGA ON\n3 MONITOR !\nSETDBUF\n");
   Continue();
   FillKeyboardBufferString("ESC-EN OFF\n");
   Continue();

@@ -2,13 +2,10 @@
 #include<stdlib.h>
 #include<string.h>
 
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 #include"../emul/call.h"
-#include"../emul/findword.h"
 #include"../emul/graphics.h"
-#include"../disasOV/global.h"
-#include"../emul/callstack.h"
-#include"data.h"
+#include"../patch/patch.h"
 #include"../../starflt1-out/data/starsystem.h"
 
 /*

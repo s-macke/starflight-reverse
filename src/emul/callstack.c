@@ -2,7 +2,7 @@
 
 #include"callstack.h"
 #include"findword.h"
-#include"cpu.h"
+#include"../cpu/cpu.h"
 
 // ------------------------------------------------
 // Functions to print the call stack properly

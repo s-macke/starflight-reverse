@@ -2,10 +2,11 @@
 #include<stdlib.h>
 #include<string.h>
 
-#include"cpu.h"
+#include"../cpu/cpu.h"
 #include"call.h"
 #include"findword.h"
 #include"graphics.h"
+#include"../patch/patch.h"
 
 void Continue()
 {
@@ -34,8 +35,10 @@ int main()
     printf("'mounta u-b'\n");
     printf("'mountb\n 1234 mercator-gen'\n");
     printf("'SCI-OV 32 .READINGS'\n"); // 32 is the planet class
+    printf("-----------------------------\n");
 
     EnableInterpreter();
+    SaveSTARFLT();
     //FillKeyboardBufferString("STARTER\nMOUNTA\nLDFONTS\nMOUNTB\n?EGA ON\nSET.COLORS\nLOAD-CO\nSETDBUF\n>DISPLAY\n");
     FillKeyboardBufferString("STARTER\n");
     Continue();
@@ -81,8 +84,6 @@ Continue();
 FillKeyboardBufferString("4195 0 >C+S @INST-SPECIES\n");
 Continue();
 */
-
-
 
     /*
     // default interrupt vector

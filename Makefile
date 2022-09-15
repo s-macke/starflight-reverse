@@ -1,7 +1,7 @@
 CC = gcc
-CFLAGS = -O2
+CFLAGS = -O2 -Werror-implicit-function-declaration
 
-all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1 extractdata1 extractinstance1 extractinstance2 extractvessels1
+all: disasOV1 disasOV2 emulate emulatesdl extractplanets1 extractplanetsdata1 extractdata1 extractinstance1 extractinstance2 extractvessels1 emulatecomm1
 
 disasmX86.o: src/disasmX86/debugger.c
 	$(CC) $(CFLAGS) -c src/disasmX86/debugger.c -o disasmX86.o
@@ -9,8 +9,11 @@ disasmX86.o: src/disasmX86/debugger.c
 utils.o: src/disasOV/utils.c src/disasOV/utils.h
 	$(CC) $(CFLAGS) -DSTARFLT2 -c src/disasOV/utils.c -o utils.o
 
-cpu.o: src/emul/cpu.c
-	$(CC) $(CFLAGS) -c src/emul/cpu.c -o cpu.o
+cpu.o: src/cpu/cpu.c
+	$(CC) $(CFLAGS) -c src/cpu/cpu.c -o cpu.o
+
+patch.o: src/patch/patch.c
+	$(CC) $(CFLAGS) -DSTARFLT1 -c src/patch/patch.c -o patch.o
 
 transpile2C1.o: src/disasOV/transpile2C.c src/disasOV/transpile2C.h
 	$(CC) $(CFLAGS) -DSTARFLT1 -c src/disasOV/transpile2C.c -o transpile2C1.o
@@ -75,17 +78,17 @@ disasOV1: src/disasOV/disasOV.c disasmX86.o global1.o dictionary1.o extract1.o p
 disasOV2: src/disasOV/disasOV.c disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o huffman2.o
 	$(CC) $(CFLAGS) -DSTARFLT2 src/disasOV/disasOV.c -o disasOV2 disasmX86.o global2.o dictionary2.o extract2.o parser2.o cpu.o utils.o stack2.o postfix2infix2.o transpile2C2.o graph2.o huffman2.o
 
-emulate: src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulate
+emulate: src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o -o emulate
 
-emulatesdl: src/emul/emul.c src/emul/call.c src/emul/cpu.c src/emul/findword.c src/emul/callstack.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulatesdl -lSDL2
+emulatesdl: src/emul/emul.c src/emul/call.c cpu.o src/emul/findword.c src/emul/callstack.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
+	$(CC) $(CFLAGS) -DSTARFLT1 -DSDL src/emul/emul.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o emulatesdl -lSDL2
 
-extractplanets1: src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanets1
+extractplanets1: src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanets.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o -o extractplanets1
 
-extractplanetsdata1: src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
-	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractplanetsdata1
+extractplanetsdata1: src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/extractplanetsdata.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o -o extractplanetsdata1
 
 extractinstance1: src/extract/instance.c extract1.o huffman1.o
 	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/instance.c -o extractinstance1 extract1.o global1.o huffman1.o
@@ -93,8 +96,11 @@ extractinstance1: src/extract/instance.c extract1.o huffman1.o
 extractinstance2: src/extract/instance.c extract2.o huffman2.o
 	$(CC) $(CFLAGS) -DSTARFLT2 src/extract/instance.c -o extractinstance2 extract2.o global2.o huffman2.o
 
-extractvessels1: src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c
-	$(CC) $(CFLAGS) -DSDL -DSTARFLT1 src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c src/emul/cpu.c src/disasOV/global.c src/emul/graphics.c src/emul/fract.c -o extractvessels1 -lSDL2
+extractvessels1: src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o
+	$(CC) $(CFLAGS) -DSDL -DSTARFLT1 src/extract/extractvessels.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o -o extractvessels1 -lSDL2
+
+emulatecomm1: src/extract/emulatecomm.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o
+	$(CC) $(CFLAGS) -DSTARFLT1 src/extract/emulatecomm.c src/emul/call.c src/emul/findword.c src/emul/callstack.c cpu.o src/disasOV/global.c src/emul/graphics.c src/emul/fract.c patch.o -o emulatecomm1
 
 .PHONY: clean all
 
@@ -109,3 +115,4 @@ clean:
 	rm -f extractplanets1
 	rm -f extractplanetsdata1
 	rm -f extractvessels1
+	rm -f emulatecomm1

@@ -4,7 +4,7 @@
 #include"global.h"
 #include"dictionary.h"
 #include"utils.h"
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 
 struct WORD dictionary[10000];
 int nwords = 0;
@@ -66,10 +66,12 @@ int AddVocabulary(int addr, unsigned char *mem, int decrypt, int ovidx)
 {
     unsigned short linkp = Read16(addr);
     unsigned char bitfield = Read8(addr+2);
-    unsigned int length = bitfield & 0x3F;
+    // The length is the actual size of the word string in the original code. However, it might be cut by the compiler
+    int length = bitfield & 0x1F; // The SMUDGE flag is 0x20. So I think the length is just 0x1f
     int i = 0;
     memset(&dictionary[nwords], 0, sizeof(WORD));
     dictionary[nwords].addr = addr;
+    dictionary[nwords].namelength = length;
     dictionary[nwords].linkp = linkp;
     dictionary[nwords].bits = bitfield;
     dictionary[nwords].ovidx = ovidx;
@@ -83,18 +85,21 @@ int AddVocabulary(int addr, unsigned char *mem, int decrypt, int ovidx)
         i++;
         if (decrypt)
         {
+            if (length == 0) {
+                strcpy(dictionary[nwords].r, "zero_length_unknown");
+            } else
             if (length == 1)
             {
                 dictionary[nwords].r[n] = Read8(addr+2+i) & 0x7F;
             } else
             {
                 dictionary[nwords].r[n] = (Read8(addr+2+i) ^ 0x7F) & 0x7F;
-                mem[addr+2+i] = ((Read8(addr+2+i)^0x7F)&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
+                //mem[addr+2+i] = ((Read8(addr+2+i)^0x7F)&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
             }
         } else
         {
             dictionary[nwords].r[n] = (Read8(addr+2+i)) & 0x7F;
-            mem[addr+2+i] = ((Read8(addr+2+i))&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
+            //mem[addr+2+i] = ((Read8(addr+2+i))&0x7F) | (Read8(addr+2+i)&0x80); // restore upper bit
         }
 
         n++;
@@ -180,7 +185,7 @@ void WriteAllDictionary(char* filename)
     fprintf(fp, "// =========== Dictionary ==========\n");
     fprintf(fp, "// =================================\n\n");
 
-    fprintf(fp, "typedef struct { int ov; unsigned short code, word; char* name; } WORD;\n\n");
+    fprintf(fp, "typedef struct { int ov; unsigned short code, word; char immediate; unsigned char flags; char* name; } WORD;\n\n");
 
     fprintf(fp, "WORD dictionary[]=\n{\n");
     for(i=0; i<nwords; i++)
@@ -202,14 +207,17 @@ void WriteAllDictionary(char* filename)
         }
         escapedname[offset] = 0;
 
-        fprintf(fp, "  { .ov = %2i, .code = 0x%04x, .word = 0x%04x, .name = \"%s\"",
+        fprintf(fp, "  { .ov = %2i, .code = 0x%04x, .word = 0x%04x, .immediate=%i, .flags=0x%02x, .name = \"%s\"",
             dictionary[i].ovidx,
             dictionary[i].codep,
             dictionary[i].wordp,
+            (dictionary[i].bits&0x40)?1:0,
+            dictionary[i].bits&~(0x40 | 0x1F), // last
+
             escapedname);
             fprintf(fp, " },\n");
     }
-    fprintf(fp, "  { .ov = -2, .code = 0x0000, .word = 0x0000, .name = NULL }\n");
+    fprintf(fp, "  { .ov = -2, .code = 0x0000, .word = 0x0000, .immediate = 0x00, .flags=0x00, .name = NULL }\n");
 
     fprintf(fp, "};\n");
     fclose(fp);

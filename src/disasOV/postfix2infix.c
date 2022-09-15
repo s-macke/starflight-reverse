@@ -3,7 +3,7 @@
 #include"global.h"
 #include"utils.h"
 #include"extract.h"
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 #include"parser.h"
 
 #define STACKSTRINGLEN 512

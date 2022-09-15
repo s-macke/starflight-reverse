@@ -9,7 +9,7 @@
 #include"utils.h"
 #include"stack.h"
 #include"graph.h"
-#include"../emul/cpu.h"
+#include"../cpu/cpu.h"
 
 // ---------------------------------
 
