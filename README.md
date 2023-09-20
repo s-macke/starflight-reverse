@@ -21,7 +21,7 @@ You can buy the game at [GoG](https://www.gog.com/game/starflight_1_2)
 
 ## What is this project about? ##
 
-The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 later I tried again and it was a very pleasant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
+The first time I heard about the game I wanted to play it. However, I was too young and could not speak English. 20 years later I tried again and it was a very pleasant experience. The exploration is fun, the storyline is epic and ends with a surprise, that is one of the best I have experienced. Sure, the game hasn't aged well, but you can feel the devotion of the developers to the game. There’s an art aspect to this game as well as a craftman’s attention to detail.
 
 As much as playing this truly amazing game is fun, so is reverse engineering this game. You follow in the footsteps of the developers and experience their thought processes as if it were the year 1985 again.
 For this game expect the unexpected. Normally when you reverse engineer such an old game you have to receive ten thousands of lines of pure assembler code, which you can analyze with the usual tools such as IDA Pro. But not this time. Actually for this game you can throw the usual tools away. They are useless. You are on your own. The reason is that Starflight was written in [Forth](https://en.wikipedia.org/wiki/Forth_(programming_language)), a language I barely knew about.
